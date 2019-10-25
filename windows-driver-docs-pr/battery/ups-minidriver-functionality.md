@@ -3,15 +3,15 @@ title: UPS ミニドライバーの機能
 description: UPS ミニドライバーの機能
 ms.assetid: a93dbada-bcf7-4963-ba57-c6db5922c66b
 keywords:
-- UPS のミニドライバー WDK、機能
+- UPS ミニドライバー WDK, 機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14acc80101a87b3ed0e614bd81b1288458969699
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d558da26414534e54ee86fb10c56df6fa59439ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364710"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833961"
 ---
 # <a name="ups-minidriver-functionality"></a>UPS ミニドライバーの機能
 
@@ -19,25 +19,25 @@ ms.locfileid: "67364710"
 ## <span id="ddk_ups_minidriver_functionality_kg"></span><span id="DDK_UPS_MINIDRIVER_FUNCTIONALITY_KG"></span>
 
 
-UPS ミニドライバーは、UPS システム提供サービスによって呼び出される関数の次のセットをエクスポートする必要があります。
+UPS ミニドライバーは、システム提供の UPS サービスによって呼び出される次の一連の関数をエクスポートする必要があります。
 
--   [**UPSInit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upsinit)
+-   [**UPSInit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upsinit)
 
--   [**UPSGetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upsgetstate)
+-   [**UPSGetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upsgetstate)
 
--   [**UPSWaitForStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upswaitforstatechange)
+-   [**UPSWaitForStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upswaitforstatechange)
 
--   [**UPSCancelWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upscancelwait)
+-   [**UPSCancelWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upscancelwait)
 
--   [**UPSTurnOff**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upsturnoff)
+-   [**Up・ Noff**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upsturnoff)
 
--   [**UPSStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/upssvc/nf-upssvc-upsstop)
+-   [**UPSStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/upssvc/nf-upssvc-upsstop)
 
-ミニドライバーがさらに、エクスポートする必要があります、 [ **DLLMain** ](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)関数は、Microsoft Windows SDK のドキュメントで説明されているとします。
+さらに、Microsoft Windows SDK のドキュメントで説明されているように、ミニドライバーは[**DLLMain**](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)関数をエクスポートする必要があります。
 
-これらの関数をエクスポートするだけでなく、ミニドライバーはの初期値を提供する必要があります[UPS レジストリ エントリ](ups-registry-entries.md)および UPS 状態の変更を反映するために必要に応じて、値を変更します。
+これらの関数をエクスポートするだけでなく、ミニドライバーは[ups レジストリエントリ](ups-registry-entries.md)の初期値を指定し、必要に応じて値を変更して、ups の状態の変更を反映する必要があります。
 
-通常、UPS ミニドライバーと通信する COM ポートを介して UPS ユニットを呼び出して、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 [ **ReadFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)、および[**WriteFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)関数 (Windows SDK のドキュメントで説明)。 ミニドライバーはどのような通信プロトコル、UPS 単位のサポートを実装する責任を負います。
+通常、UPS ミニドライバーは、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 [**ReadFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)、および[**WriteFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)関数 (Windows SDK ドキュメントで説明) を呼び出すことによって、COM ポートを介して ups ユニットと通信します。 ミニドライバーは、UPS ユニットがサポートするすべての通信プロトコルを実装する役割を担います。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDIOMODULE\_コマンド
-description: KSPROPERTY\_AUDIOMODULE\_コマンド プロパティは、コマンド プロパティを取得し、バッファーと指示 (暗証番号 (pin) のハンドル) のハードウェアまたはソフトウェアのキャッシュ (フィルター ハンドル) を設定するために使用します。
+title: KSK プロパティ\_AUDIOMODULE\_コマンド
+description: KSK プロパティ\_AUDIOMODULE\_コマンドプロパティは、ハードウェア (ピンハンドル) またはソフトウェアキャッシュ (フィルターハンドル) のバッファーと命令を取得および設定するために使用されるコマンドプロパティです。
 ms.assetid: 90C69481-A3DF-4801-8733-C417950880E5
 keywords:
-- KSPROPERTY_AUDIOMODULE_COMMAND オーディオ デバイス
+- KSPROPERTY_AUDIOMODULE_COMMAND オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee8d4f69c37602d9b150979645ad9a209c2ba063
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f1626793bee02a406cc062e0a3b1b9e5c376403e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358825"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832865"
 ---
-# <a name="kspropertyaudiomodulecommand"></a>KSPROPERTY\_AUDIOMODULE\_コマンド
+# <a name="ksproperty_audiomodule_command"></a>KSK プロパティ\_AUDIOMODULE\_コマンド
 
 
-**KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、コマンドのプロパティを取得し、バッファーと指示 (暗証番号 (pin) のハンドル) のハードウェアまたはソフトウェアのキャッシュ (フィルター ハンドル) を設定するために使用します。
+**Ksk プロパティ\_AUDIOMODULE\_コマンド**プロパティは、ハードウェア (ピンハンドル) またはソフトウェアキャッシュ (フィルターハンドル) のバッファーと命令を取得および設定するために使用されるコマンドプロパティです。
 
-*設定*値は、コマンドの一部として提供されます。 ときに、*取得*が使用すると、このコマンドの結果を返します。
+*設定*値は、コマンドの一部として提供されます。 *Get*を使用すると、このコマンドの結果が返されます。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67358825"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -47,29 +47,29 @@ ms.locfileid: "67358825"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>フィルターまたはピン留めします。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong> </a> + [省略可能なカスタム モジュールの引数]</p></td>
-<td align="left"><p>未定義</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>フィルターまたはピン留め</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong></a> + [省略可能なカスタムモジュール引数]</p></td>
+<td align="left"><p>シンボル</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値の型は、定義されていません。 実装者は、モジュールの特定のカスタム コマンドの構造を作成できます。
+プロパティ値の型が未定義です。 実装者は、モジュール固有のカスタムコマンド構造を作成できます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-**KSPROPERTY\_AUDIOMODULE\_コマンド**オーディオ モジュールのコマンド固有の情報を返します。
+**Ksk プロパティ\_audiomodule\_command**は、オーディオモジュールコマンド固有の情報を返します。
 
 <a name="remarks"></a>注釈
 -------
 
-サポート、 **KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [ **KSAUDIOMODULE\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 **KSAUDIOMODULE\_プロパティ**カスタム コマンドを送信する入力バッファーにします。
+**Ksk プロパティ\_audiomodule\_COMMAND**プロパティのサポートにより、オーディオモジュールクライアントは、オーディオモジュールのクエリおよび設定パラメーターにカスタムコマンドを送信できます。 プロパティは、フィルターまたはピンハンドルを介して送信できます。また、 [**KSAUDIOMODULE\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)は、DeviceIoControl 呼び出しの入力バッファーとして渡されます。 クライアントは、必要に応じて、入力バッファーの**KSAUDIOMODULE\_プロパティ**に隣接する追加情報を送信して、カスタムコマンドを送信できます。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオモジュールの詳細については、「[オーディオモジュール検出の実装](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -90,12 +90,12 @@ ms.locfileid: "67358825"
 </tr>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10 バージョン 1703</p></td>
+<td align="left"><p>Windows 10 バージョン1703</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [KSPROPSETID\_AudioModule](kspropsetid-audiomodule.md)

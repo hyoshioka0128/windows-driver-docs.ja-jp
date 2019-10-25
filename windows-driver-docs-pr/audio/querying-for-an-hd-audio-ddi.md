@@ -3,34 +3,34 @@ title: HD オーディオ DDI のクエリ
 description: HD オーディオ DDI のクエリ
 ms.assetid: 972bce92-0ecd-486a-a9a8-fcd434ad12a5
 keywords:
-- HD オーディオ、クエリを実行します。
-- 高解像度オーディオ (HD オーディオ) クエリを実行します。
-- クエリの WDK オーディオ
+- HD audio, クエリ
+- High Definition Audio (HD audio)、クエリ
+- WDK オーディオを照会する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e61ddceb239d25bdc7d59c1c5f8f82dc81bd66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92f093863cd5b0478a8071acbfe5a16dcc1b35d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355282"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832443"
 ---
 # <a name="querying-for-an-hd-audio-ddi"></a>HD オーディオ DDI のクエリ
 
 
-関数のドライバー、オーディオまたはモデムのコーデックを送信します、HD オーディオ DDI を持つオブジェクトへの参照をカウントを取得する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)HD オーディオ バス ドライバーに IOCTL します。
+HD audio DDI を使用してオブジェクトへのカウントされた参照を取得するために、オーディオまたはモデムコーデックの関数ドライバーは、 [**IRP\_\_のクエリを\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)して hd オーディオバスドライバーに送信します。
 
-Windows Vista 以降では、HD オーディオ バス ドライバーのサポート、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)と[ **HDAUDIO\_バス\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) DDI のバージョン。 サポートされていません、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)バージョン。
+Windows Vista 以降では、HD オーディオバスドライバーは、 [**hdaudio\_bus\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface)、および[**hdaudio\_bus\_インターフェイス\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)バージョンの DDI をサポートしています。 [**Hdaudio\_BUS\_INTERFACE\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)バージョンはサポートされていません。
 
-HD オーディオのバス ドライバーは、Windows Server 2003 および Windows XP でのアップグレードとしてインストールできます。 このバス ドライバーには、両方の DDI バージョンがサポートしています。
+HD オーディオバスドライバーは、Windows Server 2003 および Windows XP でアップグレードとしてインストールできます。 このバスドライバーでは、両方の DDI バージョンがサポートされています。
 
-HDAUDIO への参照を取得するためのプロシージャ\_BUS\_インターフェイス、HDAUDIO\_BUS\_インターフェイス\_V2 および、HDAUDIO\_BUS\_インターフェイス\_DDI の BDL バージョンは次のセクションで説明します。
+HDAUDIO\_BUS\_インターフェイスへの参照を取得する手順、HDAUDIO\_BUS\_INTERFACE\_V2、および HDAUDIO\_BUS\_INTERFACE\_BDL バージョンの DDI の詳細については、「」を参照してください。次のセクション:
 
-[取得、HDAUDIO\_BUS\_インターフェイス DDI オブジェクト](obtaining-an-hdaudio-bus-interface-ddi-object.md)
+[HDAUDIO\_BUS\_INTERFACE DDI オブジェクトの取得](obtaining-an-hdaudio-bus-interface-ddi-object.md)
 
-[取得、HDAUDIO\_BUS\_インターフェイス\_V2 DDI オブジェクト](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)
+[\_V2 DDI オブジェクトの HDAUDIO\_BUS\_INTERFACE の取得](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)
 
-[取得、HDAUDIO\_BUS\_インターフェイス\_BDL DDI オブジェクト](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)
+[HDAUDIO\_BUS\_インターフェイス\_BDL DDI オブジェクトの取得](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)
 
  
 

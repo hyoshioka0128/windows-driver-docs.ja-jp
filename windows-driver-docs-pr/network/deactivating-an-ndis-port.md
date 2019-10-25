@@ -5,16 +5,16 @@ ms.assetid: 2a5d288f-b6ea-4b63-91a3-44155aae8064
 keywords:
 - ポート WDK NDIS、非アクティブ化
 - NDIS ポート WDK、非アクティブ化
-- WDK NDIS をポート NDIS を非アクティブ化
-- 非アクティブ化の PnP イベント WDK NDIS ポート
+- NDIS ポート WDK NDIS の非アクティブ化
+- PnP イベントの非アクティブ化 WDK の NDIS ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f33b764df50767d659d6cc7bc6e07208d9e0930
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 73c0df73910ad0432900f31f45acc0019320a313
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354601"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834955"
 ---
 # <a name="deactivating-an-ndis-port"></a>NDIS ポートの非アクティブ化
 
@@ -22,47 +22,47 @@ ms.locfileid: "67354601"
 
 
 
-NDIS ポートを非アクティブ化には、ミニポート ドライバーは、NDIS にポートの非アクティブ化プラグ アンド プレイ (PnP) イベントを送信します。 ミニポート ドライバーにポートが正常にアクティブ化した後、ドライバーする必要がありますを非アクティブ化ポート前に、そのポートを解放することができます。 また、ドライバーには、アプリケーション固有の理由のポートが非アクティブ化可能性があります。 非アクティブ化が解放される場合は、ポートを再アクティブ化できません後は、ポートを再びアクティブにできます。
+NDIS ポートを非アクティブ化するために、ミニポートドライバーはポートの非アクティブ化プラグアンドプレイ (PnP) イベントを NDIS に送信します。 ミニポートドライバーによってポートが正常にアクティブ化された後、ドライバーはポートを解放する前にポートを非アクティブ化する必要があります。 また、ドライバーは、アプリケーション固有の理由によりポートを非アクティブにする場合があります。 ポートは非アクティブ化した後で再アクティブ化できますが、ポートが解放されている場合は再アクティブ化できません。
 
-ポートの非アクティブ化の PnP イベントを送信するミニポート ドライバーを使用して、 **NetEventPortDeactivation**イベント コードの呼び出しでの PnP、 [ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)関数。 ミニポート ドライバー、ポートを無効にするのメンバーを設定する必要があります、 [ **NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)構造体、 *NetPnPEvent*パラメーターの**NdisMNetPnPEvent**を次のようにポイントします。
+ポートの非アクティブ化の PnP イベントを送信するために、ミニポートドライバーは、 [**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)関数の呼び出しで**NetEventPortDeactivation** PnP イベントコードを使用します。 ポートを非アクティブ化するには、 **NdisMNetPnPEvent**の*NetPnPEvent*パラメーターで次のように、 [**NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)構造のメンバーを設定する必要があります。
 
 <a href="" id="portnumber"></a>**PortNumber**  
-イベント通知の送信元ポート。 ポート番号がで提供されるため、このメンバーを 0 に設定、**バッファー** 、構造体のメンバーを**NetPnPEvent**メンバーを指定します。
+イベント通知の送信元ポート。 ポート番号は**NetPnPEvent**メンバーが指定する構造体の**バッファー**メンバーで指定されるため、このメンバーを0に設定します。
 
 <a href="" id="netpnpevent"></a>**NetPnPEvent**  
-A [ **NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)ポートの非アクティブ化イベントを記述する構造体。 この構造体のメンバーを次のように設定します。
+ポートの非アクティブ化イベントを記述する[**NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)構造。 この構造体のメンバーを次のように設定します。
 
 <a href="" id="netevent"></a>**NetEvent**  
-イベントを説明するイベント コードを指定します。 このメンバーを設定**NetEventPortDeactivation**します。
+イベントを説明するイベントコード。 このメンバーを**NetEventPortDeactivation**に設定します。
 
-<a href="" id="buffer"></a>**バッファー**  
-NDIS の配列へのポインター\_ポート\_数の型の要素。 配列には、ミニポート ドライバーを非アクティブ化するポートのすべてのポート番号が含まれています。
+<a href="" id="buffer"></a>**格納**  
+NUMBER 型の要素\_の NDIS\_ポートの配列へのポインター。 配列には、ミニポートドライバーが非アクティブ化しているすべてのポートのポート番号が含まれています。
 
 <a href="" id="bufferlength"></a>**BufferLength**  
-指定されているバイト数**バッファー**します。 設定**BufferLength** 、配列のサイズを**バッファー**を指します。 配列内の要素の数を取得するには、値を除算**BufferLength** NDIS のサイズによって\_ポート\_数値データ型。
+**Buffer**に指定されているバイト数。 **Bufferlength**を、**バッファー**が指す配列のサイズに設定します。 配列内の要素の数を取得するには、 **Bufferlength**の値を、NDIS\_PORT\_number データ型のサイズに除算します。
 
-<a href="" id="other-members"></a>他のメンバー  
-NET の残りのメンバーを設定\_PNP\_イベント**NULL**します。
+<a href="" id="other-members"></a>その他のメンバー  
+NET\_PNP\_イベントの残りのメンバーを**NULL**に設定します。
 
-ミニポート ドライバーでは、非アクティブ化するポートの一覧を含む配列を提供できます。 ただし、ミニポート アダプターの既定のポートのターゲットであるかどうか、 **NetEventPortDeactivation** PnP イベントは、既定のポートは、配列で指定されている唯一のポートである必要があります。
+ミニポートドライバーは、非アクティブ化するポートの一覧を含む配列を提供できます。 ただし、ミニポートアダプターの既定のポートが**NetEventPortDeactivation** PnP イベントのターゲットである場合、既定のポートは、配列で指定されている唯一のポートである必要があります。
 
-ミニポート ドライバーは、いつでも、アクティブなポートを非アクティブ化できます。 ただし、ミニポート ドライバーには、ポートが非アクティブ化、前に、未処理の状態インジケーターがないまたは受信ポートに関連付けられている表示があることが確認する必要があります。 ミニポート ドライバーが、ポートの非アクティブ化の PnP イベントを送信した後、すべての状態を開始または受信ポートを非アクティブ化に関連付けられている表示しないください。
+ミニポートドライバーは、いつでもアクティブなポートを非アクティブにすることができます。 ただし、ミニポートドライバーがポートを非アクティブ化する前に、そのポートに関連付けられている未処理のステータスの表示や受信通知がないことを確認する必要があります。 ポートの非アクティブ化の PnP イベントはミニポートドライバーによって送信されますが、非アクティブ化されたポートに関連付けられている状態や受信の通知を開始することはできません。
 
-ミニポート ドライバーには、ポートも再アクティブ化できます。 NDIS ポートをアクティブ化についての詳細については、次を参照してください。[ライセンス NDIS ポート](activating-an-ndis-port.md)します。
+また、ポートを再アクティブ化することもできます。 NDIS ポートのアクティブ化の詳細については、「 [Ndis ポートのアクティブ化](activating-an-ndis-port.md)」を参照してください。
 
-NDIS ミニポート ドライバーにバインドされているプロトコル ドライバーのすべてに通知ミニポート ドライバーには、ポートが非アクティブ化、ときに、 **NetEventPortDeactivation** PnP イベント。 この PnP イベントでは、ポートが割り当てられている状態に変更され、ポートは既に非アクティブ化するには含まれませんが一覧表示します。 プロトコル ドライバーでのポートの非アクティブ化イベントの処理の詳細については、次を参照してください。[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)します。
+ミニポートドライバーによってポートが非アクティブになると、NDIS は**NetEventPortDeactivation** PnP イベントを使用して、ミニポートドライバーにバインドされているすべてのプロトコルドライバーに通知します。 この PnP イベントは、割り当て済みの状態に変更されたポートを一覧表示し、既に非アクティブ化されているポートは含まれません。 プロトコルドライバーでポートの非アクティブ化イベントを処理する方法の詳細については、「[ポートの非アクティブ化の PnP イベントの処理](handling-the-port-deactivation-pnp-event.md)」を参照してください。
 
-ミニポート ドライバーは、NDIS ポートを割り当てる、前に、ドライバーを呼び出す必要があります、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)の登録を設定する関数の属性、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 ミニポート ドライバーは、NDIS を設定して、既定のポートのアクティブ化を制御できます\_ミニポート\_コントロール\_既定\_ポート属性フラグの呼び出し時に**NdisMSetMiniportAttributes**. 戻る前に、既定のポートを無効する必要がありますミニポート ドライバーには、既定のポートをアクティブ化を担当し、ミニポート ドライバーには、既定のポートがアクティブ化される場合、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。
+ミニポートドライバーが NDIS ポートを割り当てる前に、ドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出して、 [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)の登録属性を設定する必要があります。データ. ミニポートドライバーは、既定のポートのアクティブ化を制御できます。そのためには、 **NdisMSetMiniportAttributes**を呼び出すときに、NDIS\_ミニポート\_コントロール\_既定の\_ポート属性フラグを設定します。 ミニポートドライバーが既定のポートをアクティブ化することを前提としていて、ミニポートドライバーが既定のポートをアクティブ化した場合は、既定のポートを非アクティブ化してから、ミニ[*Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数から戻る必要があります。
 
-すべての NDIS の配列で指定されているポート\_ポート\_要素の数がアクティブ化された状態である必要があります。 ミニポート ドライバーは、ポートが既に非アクティブ化を非アクティブ化しないようにします。
+NDIS\_PORT\_NUMBER 要素の配列によって指定されるすべてのポートは、アクティブ化された状態である必要があります。 ミニポートドライバーは、既に非アクティブ化されているポートの非アクティブ化を試みることはできません。
 
-NDIS は、ポート配列内の任意のポートを非アクティブ化に失敗すると、ポート配列内のポートは状態を変更します。 指定したポートの一部が存在しないため、非アクティブ化に失敗した場合、 [ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)関数は、NDIS を返します\_状態\_無効な\_ポート値を返します。 ポートの一部がアクティブ化された状態でないため、非アクティブ化に失敗した場合**NdisMNetPnPEvent**返します NDIS\_状態\_無効な\_ポート\_状態の戻り値。
+NDIS がポート配列内のポートの非アクティブ化に失敗した場合、ポート配列内のポートはいずれも状態を変更しません。 指定されたポートの一部が存在しないために非アクティブ化が失敗した場合、 [**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)関数は NDIS\_STATUS\_無効な\_ポートの戻り値を返します。 一部のポートがアクティブ化されていない状態であるために非アクティブ化が失敗した場合、 **NdisMNetPnPEvent**は NDIS\_STATUS\_無効な\_ポート\_状態の戻り値を返します。
 
-呼び出されるまで、 **NdisMNetPnPEvent**返します、ポートが非アクティブ化しないと、ミニポート ドライバーは、OID 要求を処理し、そのポートに関連付けられている要求を送信することである必要があります。
+**NdisMNetPnPEvent**への呼び出しによってが返されるまで、ポートは非アクティブ化されず、ミニポートドライバーは OID 要求を処理し、そのポートに関連付けられている要求を送信できる必要があります。
 
-ミニポート ドライバーには、既定のポートが非アクティブ化、すべての上位のプロトコル ドライバーとミニポート アダプター間のバインド NDIS 終了します。 場合、ミニポート ドライバーの既定のポートを非アクティブ化しようとして、既定のポートは既に非アクティブ化、 [ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)は失敗し、NDIS を返します\_状態\_が無効です\_ポート\_状態の戻り値。 ミニポート ドライバーが既定のポートを非アクティブ化しようし、既定のポートは、NDIS の配列で指定されている唯一のポートではない場合\_ポート\_要素の数、 **NdisMNetPnPEvent**失敗し、返します、NDIS\_状態\_無効な\_ポートの戻り値。 ミニポート ドライバーが設定されている場合、**バッファー**メンバー **NULL**または**BufferLength**をゼロにメンバーは、NDIS 失敗、 **NdisMNetPnPEvent**を呼び出すとNDIS を返します\_状態\_無効な\_パラメーター値を返します。
+ミニポートドライバーが既定のポートを非アクティブにすると、NDIS は、それ以降のプロトコルドライバーとミニポートアダプター間のすべてのバインドを閉じます。 ミニポートドライバが既定のポートを非アクティブ化しようとし、既定のポートが既に非アクティブ化されている場合、 [**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)は失敗し、NDIS\_STATUS\_無効\_ポート\_状態の戻り値が返されます。 ミニポートドライバが既定のポートを非アクティブ化しようとしたときに、既定のポートが NDIS\_PORT\_NUMBER 要素の配列に指定されている唯一のポートではない場合、 **NdisMNetPnPEvent**は失敗し、ndis\_の状態が返され\_\_ポートの戻り値が無効です。 ミニポートドライバーによって**バッファー**メンバーが**NULL**または**bufferlength**メンバーにゼロに設定されている場合、ndis は**NdisMNetPnPEvent**呼び出しに失敗し、ndis\_STATUS\_無効な\_パラメーターの戻り値を返します。
 
-ポートが正常に非アクティブ化した後、ポートが割り当て済みの状態です。 ミニポート ドライバーには、受信したデータまたは割り当てられている状態で、ポートの状態を示すことはできません。
+ポートが正常に非アクティブ化されると、ポートは [割り当て済み] 状態になります。 ミニポートドライバーは、割り当てられた状態のポートの受信データまたは状態を示すことはできません。
 
  
 

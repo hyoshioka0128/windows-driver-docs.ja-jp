@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_優先\_キャプチャ\_画面
-description: KSPROPERTY\_優先\_キャプチャ\_サーフェスのプロパティを返しますキャプチャ ドライバーには、キャプチャするためのメモリ ターゲットの優先 VRAM またはシステム メモリの種類のいずれか。VRAM トランスポートを使用するには、キャプチャ ミニドライバーは、このプロパティをサポートする必要があります。
+title: KSK プロパティ\_\_キャプチャ\_サーフェイス
+description: KSK プロパティ\_使用することをお勧め\_キャプチャ\_SURFACE プロパティは、キャプチャのためのキャプチャドライバーの優先メモリターゲット (VRAM またはシステムメモリの種類) を返します。VRAM トランスポートを使用するには、capture ミニドライバーがこのプロパティをサポートしている必要があります。
 ms.assetid: ed41c456-279d-4728-a85b-f651361ef8e9
 keywords:
-- KSPROPERTY_PREFERRED_CAPTURE_SURFACE ストリーミング メディア デバイス
+- KSPROPERTY_PREFERRED_CAPTURE_SURFACE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd8080045a16de2a2dd171a3c816b9a22d27b06b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0751713fd001120cd98e6fa10b9d0fd700bf1c9a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361062"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838839"
 ---
-# <a name="kspropertypreferredcapturesurface"></a>KSPROPERTY\_優先\_キャプチャ\_画面
+# <a name="ksproperty_preferred_capture_surface"></a>KSK プロパティ\_\_キャプチャ\_サーフェイス
 
 
-KSPROPERTY\_優先\_キャプチャ\_サーフェスのプロパティを返しますキャプチャ ドライバーには、キャプチャするためのメモリ ターゲットの優先 VRAM またはシステム メモリの種類のいずれか。
+KSK プロパティ\_使用することをお勧め\_キャプチャ\_SURFACE プロパティは、キャプチャのためのキャプチャドライバーの優先メモリターゲット (VRAM またはシステムメモリの種類) を返します。
 
-VRAM トランスポートを使用するには、キャプチャ ミニドライバーは、このプロパティをサポートする必要があります。
+VRAM トランスポートを使用するには、capture ミニドライバーがこのプロパティをサポートしている必要があります。
 
 ### <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -40,7 +40,7 @@ VRAM トランスポートを使用するには、キャプチャ ミニドラ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -49,27 +49,27 @@ VRAM トランスポートを使用するには、キャプチャ ミニドラ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_優先\_キャプチャ\_サーフェスのステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー コードを返します。
+\_をキャプチャ\_サーフェイスプロパティ\_、正常に完了したことを示す状態\_成功を返します。 それ以外の場合、要求は適切なエラーコードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-無効な値は 0 です[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)します。
+0は、 [**CAPTURE\_MEMORY\_ALLOCATION\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags)に対して無効な値です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -80,7 +80,7 @@ KSPROPERTY\_優先\_キャプチャ\_サーフェスのステータスを返し�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -88,9 +88,9 @@ KSPROPERTY\_優先\_キャプチャ\_サーフェスのステータスを返し�
 ## <a name="see-also"></a>関連項目
 
 
-[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)
+[ **\_メモリ\_割り当て\_フラグをキャプチャする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

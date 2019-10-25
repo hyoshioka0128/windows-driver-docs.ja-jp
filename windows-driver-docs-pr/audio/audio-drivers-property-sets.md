@@ -4,12 +4,12 @@ description: オーディオ ドライバーのプロパティ セット
 ms.assetid: bac74ad5-3a9b-40b1-ae49-c86558c34e94
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae64886c0e4d1aea7d1a32d02a9aca0dbf85ef72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bbd279a2b5bfeec24d975a837d5068c3377f768d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355719"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831359"
 ---
 # <a name="audio-drivers-property-sets"></a>オーディオ ドライバーのプロパティ セット
 
@@ -17,54 +17,54 @@ ms.locfileid: "67355719"
 ## <span id="ddk_audio_drivers_property_sets_ks"></span><span id="DDK_AUDIO_DRIVERS_PROPERTY_SETS_KS"></span>
 
 
-このセクションでは、WDM カーネル ストリーミング サービス Microsoft Windows 2000 以降を使用するオーディオ ドライバー、および Windows Millennium Edition (me) および Windows 98 で使用可能なオーディオ固有のプロパティ セットについて説明します。
+このセクションでは、Microsoft Windows 2000 以降、および Windows Millennium Edition (Me) および Windows 98 で WDM カーネルストリーミングサービスを使用するオーディオドライバーで使用できるオーディオ固有のプロパティセットについて説明します。
 
-各プロパティのリファレンス ページには、次の列見出しのテーブルが含まれています。
+各プロパティの参照ページには、次の列見出しを持つテーブルが含まれています。
 
 
-| 取得 | 設定 | 対象 | プロパティ記述子の型 | プロパティ値の型 |
+| [購入] | 設定 | 対象 | プロパティ記述子の型 | プロパティ値の型 |
 |-----|-----|--------|--------------------------|---------------------|
 |     |     |        |                          |                     |
 
-これらの見出しには、次の意味があります。
+これらの見出しの意味は次のとおりです。
 
 -   **取得**
 
-    KS ターゲット オブジェクトのサポート、KSPROPERTY\_型\_プロパティの GET 要求ですか? (Yes または no を指定します。)
+    ターゲットの KS オブジェクトは、プロパティの取得\_\_型の KSK プロパティをサポートしていますか? ("Yes" または "no" を指定します)。
 
--   **設定**
+-   **一連**
 
-    KS ターゲット オブジェクトのサポート、KSPROPERTY\_型\_セット プロパティ要求でしょうか。 (Yes または no を指定します。)
+    ターゲットの KS オブジェクトでは、プロパティ\_型\_SET プロパティがサポートされているかどうかを確認できます。 ("Yes" または "no" を指定します)。
 
--   **移行先**
+-   **接続**
 
-    要求のターゲットは、プロパティの要求に送信される KS オブジェクトです。 オーディオのプロパティの対象は、フィルターまたは pin のいずれかです。 (プロパティ要求を指定します、ターゲット オブジェクトがカーネル ハンドルによって。)
+    要求のターゲットは、プロパティ要求の送信先となる KS オブジェクトです。 オーディオプロパティのターゲットは、フィルターまたはピンです。 (プロパティ要求では、カーネルハンドルによってターゲットオブジェクトが指定されます)。
 
 -   **プロパティ記述子の型**
 
-    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子が常に始まり、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造がいくつかの型記述子の追加情報を格納します。 たとえば、 [ **KSNODEPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)構造体は、プロパティ記述子を KSPROPERTY 構造で始まりますが、ノード ID も含まれています
+    プロパティ記述子は、プロパティと、そのプロパティに対して実行する操作を指定します。 記述子は常に[**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造で始まりますが、一部の種類の記述子には追加情報が含まれています。 たとえば、 [**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)構造体は、ksk プロパティ構造体で始まるプロパティ記述子ですが、ノード ID も含まれています。
 
 -   **プロパティ値の型**
 
-    プロパティは通常の値を持つし、この値の型は、プロパティによって異なります。 たとえば、オンまたはオフ----だけ 2 つの状態のいずれかの可能性のあるプロパティには、ブール値通常があります。 ULONG 値 0 の整数値を 0 xffffffff にことが前提としているプロパティがあります。 複雑なプロパティは、配列や構造体の値があります。
+    通常、プロパティには値があり、この値の型はプロパティによって異なります。 たとえば、2つの状態 (on または off) のいずれかであるプロパティは、通常、ブール値を持ちます。 0から0xFFFFFFFF の整数値を想定できるプロパティは、ULONG 値を持つ場合があります。 より複雑なプロパティには、配列または構造体の値が含まれる場合があります。
 
-上記のプロパティ記述子とプロパティの値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)します。
+前のプロパティ記述子とプロパティ値は、 [「KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)」で説明されている、インスタンス仕様および操作データバッファーのプロパティ固有バージョンです。
 
-プロパティ要求は、次のフラグのいずれかの関数を使用して、プロパティに対して実行される操作を指定します。
+プロパティ要求では、次のいずれかのフラグを使用して、プロパティに対して実行する操作を指定します。
 
--   KSPROPERTY\_型\_BASICSUPPORT
+-   KSPROPERTY\_TYPE\_BASICSUPPORT
 
--   KSPROPERTY\_型\_取得
+-   KSK プロパティ\_TYPE\_GET
 
--   KSPROPERTY\_型\_設定
+-   KSK プロパティ\_TYPE\_SET
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 Get をサポートし、操作を設定するかどうかは、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 オーディオのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。[オーディオ エンドポイント、プロパティおよびイベント](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-endpoints--properties-and-events)します。
+すべてのフィルターオブジェクトとピンオブジェクトは、そのプロパティに対する基本サポート操作をサポートしています。 Get 操作と set 操作をサポートするかどうかは、プロパティによって異なります。 Filter オブジェクトまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、設定操作のみを必要とする場合がありますが、get 操作は現在の設定の読み取りにも便利な場合があります。 オーディオプロパティでの get、set、および basic サポート操作の使用の詳細については、「[オーディオエンドポイント、プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-endpoints--properties-and-events)、およびイベント」を参照してください。
 
-オーディオ ドライバーには、次のプロパティのセットが定義されています。
+オーディオドライバーには、次のプロパティセットが定義されています。
 
 [KSPROPSETID\_AC3](kspropsetid-ac3.md)
 
-[KSPROPSETID\_音響\_エコー\_キャンセル](kspropsetid-acoustic-echo-cancel.md)
+[KSPROPSETID\_音響\_Echo\_キャンセル](kspropsetid-acoustic-echo-cancel.md)
 
 [KSPROPSETID\_オーディオ](kspropsetid-audio.md)
 
@@ -88,7 +88,7 @@ ms.locfileid: "67355719"
 
 [KSPROPSETID\_RTAudio](kspropsetid-rtaudio.md)
 
-[KSPROPSETID\_SoundDetector](kspropsetid-sounddetector.md)
+[KSPROPSETID\_SoundDetector 器](kspropsetid-sounddetector.md)
 
 [KSPROPSETID\_シンセサイザー](kspropsetid-synth.md)
 
@@ -98,7 +98,7 @@ ms.locfileid: "67355719"
 
 [KSPROPSETID\_Sysaudio](kspropsetid-sysaudio.md)
 
-[KSPROPSETID\_Sysaudio\_暗証番号 (pin)](kspropsetid-sysaudio-pin.md)
+[KSPROPSETID\_Sysaudio\_Pin](kspropsetid-sysaudio-pin.md)
 
 [KSPROPSETID\_TelephonyControl](kspropsetid-telephonycontrol.md)
 

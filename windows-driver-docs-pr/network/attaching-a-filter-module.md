@@ -3,18 +3,18 @@ title: フィルター モジュールのアタッチ
 description: フィルター モジュールのアタッチ
 ms.assetid: 4441383e-cc22-4fe1-9c46-28d405736daa
 keywords:
-- WDK のモジュールをフィルター処理ネットワーク、アタッチ
-- フィルター モジュールのアタッチ
-- フィルター ドライバー WDK ネットワークは、フィルター モジュールのアタッチ
-- NDIS フィルター ドライバー WDK、フィルター モジュールのアタッチ
+- フィルターモジュール WDK ネットワーク、アタッチ
+- フィルターモジュールのアタッチ
+- フィルタードライバーの WDK ネットワーク, フィルターモジュールのアタッチ
+- NDIS フィルタードライバー WDK、アタッチ (フィルターモジュールを)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d79679b3c08cc1b425d9c0a09aa3d83f4b0449
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f85bf31442549b5211cd1d270bf265743b22542
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384415"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835283"
 ---
 # <a name="attaching-a-filter-module"></a>フィルター モジュールのアタッチ
 
@@ -22,31 +22,31 @@ ms.locfileid: "67384415"
 
 
 
-NDIS フィルター ドライバーの呼び出しのドライバー スタックにフィルター モジュールを挿入するプロセスを開始する[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)関数。 実行の開始時、 *FilterAttach*関数の場合、フィルター モジュールが入力、*アタッチ*状態。 ドライバー スタックへのフィルター モジュールのインポートに関する詳細については、次を参照してください。[開始ドライバー スタック](starting-a-driver-stack.md)します。
+フィルターモジュールをドライバースタックに挿入するプロセスを開始するために、NDIS はフィルタードライバーの[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数を呼び出します。 *Filterattach*関数での実行の開始時に、フィルターモジュールは*アタッチ*状態に入ります。 フィルターモジュールをドライバースタックにアタッチする方法の詳細については、「[ドライバースタックを開始](starting-a-driver-stack.md)する」を参照してください。
 
-フィルター ドライバーで NDIS を渡すと、ハンドルを使用して、 *NdisFilterHandle*パラメーターの[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)将来のすべての**NdisXxx**このフィルター モジュールを参照する関数の呼び出し。 このような関数は、状態インジケーターを含める、要求を送信する、インジケーター、および OID 要求を受信します。
+フィルタードライバーは、このハンドルを使用します。このハンドルは、このフィルターモジュールを参照するすべての将来の**NdisXxx**関数呼び出しで[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)の*NdisFilterHandle*パラメーターに渡されます。 このような関数には、状態の表示、送信要求、受信通知、OID 要求などがあります。
 
-フィルター モジュールが、*アタッチ*状態では、ドライバー。
+フィルターモジュールが*アタッチ*状態のとき、ドライバーは次のようになります。
 
--   フィルター モジュールのコンテキストの領域を作成し、バッファー プールと他のフィルター モジュールに固有のリソースを割り当てます。 バッファー プールの詳細については、次を参照してください。[フィルター ドライバー バッファー管理](filter-driver-buffer-management.md)します。
+-   フィルターモジュールのコンテキスト領域を作成し、バッファープールとその他のフィルターモジュール固有のリソースを割り当てます。 バッファープールの詳細については、「[フィルタードライバーのバッファー管理](filter-driver-buffer-management.md)」を参照してください。
 
--   呼び出し、 [ **NdisFSetAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsetattributes)関数を使用して、 *NdisFilterHandle*に渡される NDIS 値[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach). *FilterModuleContext*パラメーターの**NdisFSetAttributes**このフィルター モジュールのフィルター ドライバーのコンテキストの領域を指定します。 NDIS フィルター ドライバーのこのコンテキストの領域を渡す*FilterXxx*関数。
+-   NDIS が[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)に渡された*NdisFilterHandle*値を使用して、 [**NdisFSetAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsetattributes)関数を呼び出します。 **NdisFSetAttributes**の*filtermodulecontext*パラメーターは、このフィルターモジュールのフィルタードライバーのコンテキスト領域を指定します。 NDIS は、このコンテキスト領域をフィルタードライバーの*Filterxxx*関数に渡します。
 
--   必要に応じて、このフィルター モジュールの構成パラメーターをレジストリから読み取ります。 詳細については、次を参照してください。[フィルター ドライバーの構成の情報にアクセスする](accessing-configuration-information-for-a-filter-driver.md)します。
+-   必要に応じて、レジストリからこのフィルターモジュールの構成パラメーターを読み取ります。 詳細については、「[フィルタードライバーの構成情報へのアクセス](accessing-configuration-information-for-a-filter-driver.md)」を参照してください。
 
--   かどうか上述の操作を正常に完了して、フィルター モジュールが、 *Paused*状態。
+-   上記の操作が正常に完了した場合、フィルターモジュールは*一時停止*状態になります。
 
--   フィルター ドライバーに割り当て、リソースを解放する必要があります、上述の操作に失敗した場合、 [ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)関数し、フィルター モジュールを返す、 *Detached*状態。
+-   上記の操作が失敗した場合、フィルタードライバーは、 [*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数で割り当てられたリソースを解放し、フィルターモジュールを*デタッチ*された状態に戻す必要があります。
 
--   NDIS 返します\_状態\_成功または適切なエラー コード。 ドライバーは、エラー コードを返します、NDIS ドライバー スタックを終了します。
+-   NDIS\_STATUS\_SUCCESS または適切なエラーコードを返します。 ドライバーがエラーコードを返した場合、NDIS はドライバースタックを終了します。
 
-**注**  レジストリは、フィルター モジュールが省略可能なことを指定するフラグを含めることができます。 オプションのフィルター モジュールがアタッチされず、NDIS ドライバー スタックの残りの部分は終了しません。
+レジストリにフラグを含めること  できます。これは、フィルターモジュールが省略可能で**あることを**指定します。 オプションのフィルターモジュールがアタッチされていない場合、NDIS はドライバースタックの残りの部分を終了しません。
 
  
 
-フィルター ドライバーが要求を送信、受信したデータを示す、OID 要求を実行する、またはからの状態インジケーターを行うことはできません、*アタッチ*状態。 送信および受信操作ではサポートされて、*を実行している*と*一時停止中*状態。 OID 要求と状態インジケーターがでサポートされている、*一時停止*、*再開中*、*を実行している*、および*一時停止中*状態。
+フィルタードライバーは、送信要求を行ったり、受信データを指定したり、OID 要求を行ったり、状態を*添付*状態から確認したりすることはできません。 送信および受信操作は、*実行中*と*一時停止*中の状態でサポートされています。 OID 要求と状態のインジケーターは、*一時停止*、*再起動*、*実行中*、および*一時停止*状態でサポートされています。
 
-NDIS 呼び出し、 [ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)関数で NDIS が接続されているフィルター モジュールをデタッチする[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)します。 詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。
+NDIS は、 [*Filterdetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)関数を呼び出して、Ndis が[*filterdetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)にアタッチしたフィルターモジュールをデタッチします。 詳細については、「[フィルターモジュールのデタッチ](detaching-a-filter-module.md)」を参照してください。
 
  
 

@@ -3,51 +3,51 @@ title: AVStream コーデックの動的形式変更のサポート
 description: AVStream コーデックの動的形式変更のサポート
 ms.assetid: ae222512-fd19-404a-aaf8-6fbfa2a3349e
 keywords:
-- ハードウェアのコーデック サポート WDK AVStream、動的形式の変更
+- ハードウェアコーデックのサポート WDK AVStream、動的な形式の変更
 - 動的形式変更 WDK AVStream のサポート
-- WDK AVStream 動的形式の変更
-- AVStream ハードウェア コーデック サポート WDK、動的形式の変更をサポートしています。
+- 動的な形式変更 WDK AVStream
+- AVStream ハードウェアコーデックサポート WDK、動的な形式変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feab607e1e5d2b67d32040e646099843df0170f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc5beaad8ab5fa95cbde4823680775446ff6d8ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377760"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837665"
 ---
 # <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>AVStream コーデックの動的形式変更のサポート
 
 
-実行中のメディア ストリームの動的形式の変更が発生したときにキャプチャ pin に新しい形式が許容されるかどうかを判断するシステム提供の Devproxy モジュールをネゴシエートします。
+実行中のメディアストリームで動的な形式の変更が発生すると、システムによって提供される Devproxy モジュールはキャプチャ pin とネゴシエートし、新しい形式が許容されるかどうかを判断します。
 
-メディア ソースから動的形式変更の発生元と、次の一連のイベントが発生します。
+次の一連のイベントは、メディアソースから動的な形式の変更が行われた場合に発生します。
 
-1.  ドライバーが受信、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)入力 KS 暗証番号 (pin) が、新しいメディアの種類をサポートしているかどうかを判断する要求。 ドライバーは、このプロパティをサポートする必要があります。
+1.  ドライバーは、入力 KS pin が新しいメディアの種類をサポートしているかどうかを判断するために、 [**PROPOSEDATAFORMAT 要求\_Ksk プロパティ\_接続**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)します。 ドライバーは、このプロパティをサポートする必要があります。
 
-2.  入力ピンが新しいメディアの種類、KSPROPERTY をサポートしているか\_接続\_PROPOSEDATAFORMAT ハンドラーは、状態を返す必要があります\_成功します。 ドライバーでは、現在選択されている出力メディアの種類と提案された入力を使用して、ストリームを再開できるかどうかを決定します。 場合は、ストリームを再開します。
+2.  入力ピンが新しいメディアの種類をサポートしている場合は、PROPOSEDATAFORMAT ハンドラーの KSK プロパティ\_接続\_handler が成功のステータス\_を返す必要があります。 次に、ドライバーは、提案された入力を現在選択されている出力メディアの種類と共に使用して、ストリームを再開できるかどうかを判断します。 Yes の場合、ストリームは再開されます。
 
-3.  入力ピンに新しく提案されたメディアの種類、KSPROPERTY、サポートされていない場合\_接続\_PROPOSEDATAFORMAT ハンドラーがエラーを返す必要があります。 HW MFT には、メディアの種類で、接続されているコンポーネントから、再度ネゴシエートします。
+3.  入力ピンが新しく提案されたメディアの種類をサポートしていない場合は、PROPOSEDATAFORMAT ハンドラーの KSK プロパティ\_接続\_handler がエラーを返す必要があります。 次に、HW MFT は、接続されたコンポーネントでメディアの種類を再度ネゴシエートします。
 
-4.  入力ピンには、新しいメディア入力の種類がサポートしている場合は、KS フィルターには、別の出力の種類のメディアが必要なドライバーを生成する必要があります、 [ **KSEVENT\_動的\_形式\_変更**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-dynamic-format-change)イベント、メディアの種類の変更に関する HW MFT に通知する、このトピックの後半で詳しく説明します。
+4.  入力ピンが新しいメディア入力の種類をサポートしているが、KS フィルタで別の出力メディアの種類が必要な場合、ドライバーは、このトピックで後述するように、このトピックの後半で説明するように、 [**KSEVENT\_動的\_フォーマット\_変更**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-dynamic-format-change)イベントを生成して、HW MFT に通知する必要があります。メディアの種類の変更について。
 
-5.  HW MFT KSEVENT 通知を受け取ると、出力ピンが移行**KSSTATE\_実行**KSSTATE に\_を停止します。
+5.  HW MFT は、KSEVENT 通知を受信すると、出力ピンを**ksk\_状態**から ksk 状態\_停止に移行します。
 
-6.  HW MFT は、これは、ドライバーの呼び出しに変換されます。 使用可能なメディアの種類、ドライバーを照会し[ *AVStrMiniIntersectHandlerEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksintersecthandlerex)交差ハンドラー。 ドライバーは、優先順位の順序の優先出力メディアの種類を報告する必要があります。
+6.  次に、HW MFT はドライバーに対して、使用可能なメディアの種類を照会します。これは、ドライバーの[*AVStrMiniIntersectHandlerEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksintersecthandlerex)の交差ハンドラーの呼び出しに変換されます。 ドライバーは、優先される出力メディアの種類を優先順位に従って報告する必要があります。
 
-7.  ユーザー モードのクライアントは、メディアの種類を選択し、HW MFT の出力ピンに新しいメディアの種類を設定します。 これは、結果、ドライバーの呼び出しで[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)ルーチンをディスパッチします。 状態を返すことによって、ドライバーが、形式を受け入れる場合\_成功すると、新しいメディアの種類と再開をストリーミングします。 呼び出しが失敗した場合、形式の変更に関連するコンポーネントにメディアの種類が再ネゴシエートする必要があります。
+7.  ユーザーモードクライアントは、メディアの種類を選択し、HW MFT の出力ピンに新しいメディアの種類を設定します。 その結果、ドライバーの[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)ディスパッチルーチンが呼び出されます。 ドライバーが状態\_SUCCESS を返すことによって形式を受け入れる場合、ストリーミングは新しいメディアの種類で再開されます。 呼び出しが失敗した場合、形式の変更に関係するコンポーネントは、メディアの種類を再ネゴシエーションする必要があります。
 
-8.  HW MFT は、接続されたメディアに変更があるかどうかを確認します。 選択したメディアの種類、暗証番号 (pin) を設定し、KSSTATE に配置の変更がない場合は、\_を実行します。 接続されたメディアに変更がある場合、HW MFT は、暗証番号 (pin) を破棄し、新しく選択されたメディアの種類とメディアを再作成します。 MFT は KSSTATE に、暗証番号 (pin) を格納する、\_を実行します。
+8.  HW MFT は、接続されたメディアに何らかの変更があるかどうかを確認します。 変更がない場合は、選択したメディアの種類を pin に設定し、それを KSK 状態に\_実行します。 接続されたメディアに変更がある場合、HW MFT は pin を破棄し、新しく選択されたメディアの種類とメディアを使用して pin を再作成します。 その後、MFT によって、pin が KSK 状態になり\_実行されます。
 
-9.  再開をストリーミングします。
+9.  ストリーミングが再開されます。
 
-特定の状況でメディア ソースの形式変更、検出可能性があります。 など、MPEG2 デコーダーは、任意の形式の変更を検索するには、各パケットをデコードする必要があります。
+場合によっては、メディアソースによって形式の変更が検出されないことがあります。 たとえば、MPEG2 デコーダーでは、すべての形式の変更を見つけるために各パケットをデコードする必要があります。
 
-このような場合は、ドライバー形式の変更を検出した場合、ハードウェア ドライバーが生成されます KSEVENT 動的形式の変更。 HW MFT は、サポートされているメディアの種類の暗証番号 (pin) を照会します。 Pin では、優先順位の順序の優先されるメディアの種類を返す必要があります。 HW MFT は、手順 4 ~ 9 の前のセクションで説明されているイベントのシーケンスをしに従います。
+このような場合、ドライバーが形式の変更を検出すると、ハードウェアドライバーは動的な形式の変更 KSEVENT を生成する必要があります。 その後、HW MFT は、サポートされているメディアの種類の pin を照会します。 Pin は優先順位に従って優先メディアの種類を返します。 次に、ハードウェア MFT は、前のセクションの手順 4. ~ 9. で説明した一連のイベントに従います。
 
-ドライバーは、このような形式の変更を処理できない場合は、MF に伝達し、ストリーミングのエラーを返します。
+ドライバーがこのような形式の変更を処理できない場合は、ストリーミングエラーが返されます。これは、MF に反映されます。
 
-次のコード例を KSEVENT を使用して、新しい動的形式の変更を定義する方法を示します。
+次のコード例は、KSEVENT を使用して、動的な形式の新しい変更を定義する方法を示しています。
 
 ```cpp
 // {162AC456-83D7-4239-96DF-C75FFA138BC6}
@@ -82,11 +82,11 @@ KSEVENT_SET PinEventTable[] =
 };
 ```
 
-各ピンには、その pin 記述子では、このイベントを公開する必要があります。 イベントは型 KSEVENTF\_イベント\_を処理します。
+各 pin は、pin 記述子でこのイベントを公開する必要があります。 イベントの種類は、KSEVENTF\_EVENT\_HANDLE です。
 
-ドライバーは、このイベントを生成、前に、優先のメディアの種類、現在選択されている入力メディアの種類に基づいて、KS pin の設定があります。 使用してこれを行う、 [  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)暗証番号 (pin) の記述子の関数。
+ドライバーは、このイベントを生成する前に、現在選択されている入力メディアの種類に基づいて、KS pin に優先するメディアの種類を設定する必要があります。 これを行うには、pin の記述子に対して[ **\_KsEdit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit)関数を使用します。
 
-イベントを生成するドライバーを呼び出す必要があります[ **KsGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgenerateevents)します。
+イベントを生成するには、ドライバーは[**Ksk Generateevents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksgenerateevents)を呼び出す必要があります。
 
  
 

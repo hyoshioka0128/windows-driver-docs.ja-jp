@@ -4,42 +4,42 @@ description: Hyper-V 拡張可能スイッチの保存操作
 ms.assetid: 7148B094-2551-4035-A6BE-141DD01BEA14
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b480581ad55b75f0b9ae6f37cd989e132aabd6d2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c92171a843685c950d157fe3472741fdd273a8a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386539"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823830"
 ---
 # <a name="hyper-v-extensible-switch-save-operations"></a>Hyper-V 拡張可能スイッチの保存操作
 
 
-HYPER-V 子パーティションは、停止、保存されている、またはライブ移行、パーティションの実行時の状態が保存されます。 保存中に操作を HYPER-V 拡張可能スイッチの拡張機能は、拡張可能スイッチのネットワーク アダプター (NIC) の実行時のデータを保存できます。
+Hyper-v の子パーティションが停止、保存、またはライブマイグレーションされると、パーティションの実行時の状態が保存されます。 保存操作中、Hyper-v 拡張可能スイッチ拡張機能は、拡張スイッチネットワークアダプター (NIC) に関する実行時データを保存できます。
 
-保存時に操作が実行される HYPER-V 子パーティションでは、拡張可能スイッチのインターフェイスは、操作に関する拡張機能を通知します。 拡張機能は、次のオブジェクト識別子 (OID) 要求で通知されます。
+Hyper-v 子パーティションで保存操作が実行されている場合、拡張可能スイッチインターフェイスは、操作について拡張機能に通知します。 拡張機能には、次のオブジェクト識別子 (OID) 要求を通じて通知されます。
 
 <a href="" id="oid-switch-nic-save"></a>[OID\_スイッチ\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)  
-保存中にこの OID を発行する拡張可能スイッチのプロトコルの端を通知する拡張可能スイッチのインターフェイスの拡張可能スイッチの NIC の操作 この OID 要求を処理する場合、拡張機能が NIC の実行時のデータを返します 実行時のデータを保存すると後の OID のセット要求を通じた復元[OID\_スイッチ\_NIC\_復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)します。
+拡張可能スイッチのインターフェイスは、拡張可能スイッチのプロトコルエッジに対して、拡張可能スイッチ NIC の保存操作中にこの OID を発行するように通知します。 この OID 要求を処理するときに、拡張機能は NIC のランタイムデータを返します。 実行時のデータが保存されると、 [oid\_スイッチ\_\_NIC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)の設定要求によって復元されます。
 
-受信した場合、 [OID\_スイッチ\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)メソッド要求を拡張機能は、次のいずれかを行うことができます。
+[OID\_スイッチ\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)メソッドの要求を受信すると、拡張機能は次のいずれかの操作を実行できます。
 
--   拡張機能に保存する実行時データがある場合は、初期化、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造体であり、さまざまな設定メンバーなど、 **ExtensionId**自体とそれを保存するデータを識別するために、メンバー。 拡張機能内のデータを保存します、 **NDIS\_スイッチ\_NIC\_保存\_状態**、構造体の先頭から開始 SaveDataOffset バイト構造体と完了。NDIS に OID メソッド要求\_状態\_成功します。
+-   拡張機能に保存するランタイムデータがある場合は、 [**NDIS\_スイッチ\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)を初期化して\_状態構造を保存し、 **extensionid**メンバーなどのさまざまなメンバーを設定して、それ自体とデータを識別します。短縮. また、この拡張機能によって、 **ndis\_スイッチ\_\_** のデータが保存されます。これにより、構造の先頭から SaveDataOffset バイトが開始され\_状態構造が保存されます。その後、NDIS\_STATUS を使用して OID メソッド要求を完了します。\_成功します。
 
--   場合、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造が NDISで列挙、十分なバッファーサイズを提供していない\_オブジェクト\_ヘッダー**サイズ**、拡張機能の実行時状態を保持するためにメンバー セットのメソッドの構造体の*BytesNeeded*フィールド NDIS を\_SIZEOF\_NDIS\_スイッチ\_NIC\_保存\_状態\_リビジョン\_1 および保存を保持するために必要なバッファーのデータ、NDIS に OID が完了して\_ステータス\_バッファー\_すぎます\_短い。 必要なサイズの OID を再発行します。
--   呼び出す必要がありますが、拡張機能では、実行時のデータを保存することはない場合、 [ **NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)します。 これは、基になる拡張機能は拡張可能スイッチ ドライバー スタックの OID メソッド要求を転送します。 この手順の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
+-   [**Ndis\_スイッチ\_NIC\_SAVE\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造体では十分なバッファーサイズが提供されません。これは、NDIS\_OBJECT\_HEADER **size**メンバーで列挙され、実行時の状態を保持します。拡張機能は、メソッド構造体の*Bytesneeded 必要な*フィールドを NDIS\_SIZEOF\_NDIS\_スイッチに設定し\_NIC\_\_の状態\_リビジョン\_1 に保存するために必要なバッファーの量に加えて、データを保存し、NDIS\_STATUS\_BUFFER の OID を短時間で\_\_します。 OID は必要なサイズで再発行されます。
+-   保存するランタイムデータが拡張機能にない場合は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す必要があります。 これにより、OID メソッド要求が拡張可能なスイッチドライバースタック内の基になる拡張機能に転送されます。 この手順の詳細については、「 [NDIS フィルタードライバーでの OID 要求のフィルター処理](filtering-oid-requests-in-an-ndis-filter-driver.md)」を参照してください。
 
-この OID 要求の詳細については、次を参照してください。[処理 OID\_スイッチ\_NIC\_保存要求](handling-the-oid-switch-nic-save-request.md)します。
+この OID 要求の詳細については、「 [oid の処理\_スイッチ\_NIC\_保存要求](handling-the-oid-switch-nic-save-request.md)」を参照してください。
 
-<a href="" id="oid-switch-nic-save-complete"></a>[OID\_スイッチ\_NIC\_保存\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)  
-拡張可能スイッチのインターフェイス、保存の完了時に、この OID を発行する拡張可能スイッチのプロトコルの端を通知する拡張可能スイッチの NIC の実行時のデータの操作
+<a href="" id="oid-switch-nic-save-complete"></a>[OID\_\_NIC の切り替え\_保存\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)  
+拡張可能スイッチのインターフェイスは、拡張可能スイッチのプロトコルエッジに対して、拡張可能スイッチの NIC の実行時データの保存操作の完了時にこの OID を発行するように通知します。
 
-この OID 要求が、拡張機能を通知するファイルの指定した拡張可能スイッチの NIC に対してのみ操作が完了しました。
+この OID 要求は、指定された拡張スイッチ NIC に対してのみ保存操作が完了したことを通知します。
 
-この OID 要求の詳細については、次を参照してください。[処理 OID\_スイッチ\_NIC\_保存\_要求を完了](handling-the-oid-switch-nic-save-complete-request.md)します。
+この OID 要求の詳細については、次を参照してください。 [oid の処理\_スイッチ\_NIC\_保存\_要求を保存](handling-the-oid-switch-nic-save-complete-request.md)します。
 
-保存中に実行時のデータの操作は、拡張可能スイッチのプロトコルのエッジがの OID 要求を発行する[OID\_切り替える\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)と OID\_切り替える\_NIC\_保存\_HYPER-V 子パーティションのネットワーク インターフェイスが接続されているを完了します。 プロトコルのエッジの問題が OID のセットを分離する場合は、複数の HYPER-V 子パーティションが停止している、またはライブ移行、\_スイッチ\_NIC\_の保存および OID\_スイッチ\_NIC\_保存\_完全な要求の各ネットワーク インターフェイスの接続。
+実行時データの保存操作では、拡張可能スイッチのプロトコルエッジによって oid の oid 要求が\_されます。 [\_nic\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)および OID\_スイッチ\_nic\_保存し、ネットワークに対して\_を保存します。Hyper-v 子パーティションのインターフェイスが接続されています。 複数の Hyper-v 子パーティションが停止またはライブマイグレーションされている場合は、プロトコルエッジによって個別の OID セットが発行されます。\_NIC\_保存および OID\_スイッチを\_し、各ネットワークに対して完全な要求を保存\_ます。インターフェイス接続。
 
-**注**  拡張可能スイッチのプロトコルの端をインターリーブ保存実行時のデータの操作を同一の NIC には プロトコルのエッジは、同じ NIC で以前保存操作が完了した後にのみ、保存、NIC の操作の実行時のデータは開始します。 プロトコルのエッジが、保存を開始するただし、別の保存操作中に、NIC の操作がもう 1 つの NIC の進行状況 このため、強くお勧め保存操作が非インターリーブ方式で拡張機能を実行することです。 たとえば、拡張機能を想定しないでください、新しい保存操作を開始できませんもう 1 つの NIC で別の NIC の中で保存操作が完了する前に、
+拡張可能スイッチのプロトコルエッジでは、同じ NIC の実行時データに対して保存操作がインターリーブされない  に**注意**してください。 プロトコルエッジは、前回の保存操作が同じ NIC で完了した後にのみ、NIC に対して実行時のデータ保存操作を開始します。 ただし、別の NIC に対して別の保存操作が実行されている間に、プロトコルエッジが NIC に対して保存操作を開始する場合があります。 このため、拡張機能ではインターリーブなしの方法で保存操作を実行することを強くお勧めします。 たとえば、拡張機能では、別の nic に対して実行中の保存操作が完了する前に、別の NIC で新しい保存操作を開始できないことを想定しないでください。
 
  
 

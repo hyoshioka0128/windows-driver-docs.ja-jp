@@ -4,47 +4,47 @@ description: セキュリティ記述子
 ms.assetid: a5edd5e8-6fc7-4ab0-aebc-f0cd8e9299b6
 keywords:
 - セキュリティ記述子 WDK オブジェクト
-- システムの ACL の WDK オブジェクト
-- オブジェクトの SACL の WDK
+- システム ACL WDK オブジェクト
+- SACL WDK オブジェクト
 - 随意 ACL WDK オブジェクト
-- DACL の WDK オブジェクト
-- WDK のオブジェクトのアクセス制御リストします。
-- ACL の WDK オブジェクト
+- DACL WDK オブジェクト
+- アクセス制御リスト WDK オブジェクト
+- ACL WDK オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe6669c7d315c4a105d449a9bcb670e9733ff08
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a671b5eccc1b7e38622836fcf817cb8ce8f77a64
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373365"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838449"
 ---
 # <a name="security-descriptors"></a>セキュリティ記述子
 
 
-すべてのオブジェクトが、*セキュリティ記述子*オブジェクトのセキュリティ設定が含まれています。 カーネル モード、不透明で[**セキュリティ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_security_descriptor)データ型は、セキュリティ記述子を表します。
+すべてのオブジェクトには、オブジェクトのセキュリティ設定を含む*セキュリティ記述子*があります。 カーネルモードの場合、不透明[**セキュリティ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor)のデータ型はセキュリティ記述子を表します。
 
-セキュリティ記述子の情報が格納されている*アクセス制御リスト*(Acl)。 一連のアクセス制御リストから成る*アクセス制御エントリ*(Ace)。
+セキュリティ記述子の情報は、*アクセス制御リスト*(acl) に格納されます。 アクセス制御リストは、一連の*アクセス制御エントリ*(ace) で構成されます。
 
-セキュリティ記述子には、2 つの個別の Acl があります。
+セキュリティ記述子には、次の2つの異なる Acl があります。
 
--   A*システム ACL* (SACL) オブジェクトの操作がログに記録されますを決定します。
+-   *システム ACL* (SACL)。オブジェクトのどの操作をログに記録するかを決定します。
 
--   A*随意 ACL* (DACL) のオブジェクトの特定の操作を実行できるユーザーを決定します。
+-   *随意 ACL* (DACL)。オブジェクトに対して特定の操作を実行できるユーザーを決定します。
 
-通常、ドライバー開発者向けでは、随意 Acl で懸念のみです。 システムの Acl の詳細については、Microsoft Windows SDK を参照してください。
+通常、ドライバー開発者は随意 Acl のみを使用します。 システム Acl の詳細については、Microsoft Windows SDK を参照してください。
 
-随意 ACL、ACE には、3 つ情報にはが含まれています。
+随意 ACL の場合、各 ACE には次の3つの情報が含まれます。
 
--   A*セキュリティ識別子*(SID)。 セキュリティ識別子は、ACE を適用するユーザーを決定します。 SID は、1 人のユーザーまたはユーザーのグループを表すことができます。 たとえば、世界の SID は、すべてのユーザーのセットを表します。
+-   *セキュリティ識別子*(SID)。 セキュリティ識別子は、ACE が適用されるユーザーを決定します。 SID は、1人のユーザー、またはユーザーのグループを表すことができます。 たとえば、World SID は、すべてのユーザーのセットを表します。
 
--   アクセス権のセット。 アクセス権については、次を参照してください。[アクセス権](access-rights.md)します。
+-   一連のアクセス権。 アクセス権の詳細については、「[アクセス権](access-rights.md)」を参照してください。
 
--   アクセス権のセットが許可または拒否するかどうか。
+-   アクセス権のセットを許可するか、拒否するかを指定します。
 
-最も重要なセキュリティ記述子ではされる、ドライバーのドライバーのデバイス オブジェクトです。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)します。
+ドライバーの場合、最も重要なセキュリティ記述子は、ドライバーのデバイスオブジェクトのものです。 詳細については、「[デバイスオブジェクトのセキュリティ保護](securing-device-objects.md)」を参照してください。
 
-記述子のセキュリティの詳細については、Windows SDK は一般を参照してください。
+一般的なセキュリティ記述子の詳細については、Windows SDK を参照してください。
 
  
 

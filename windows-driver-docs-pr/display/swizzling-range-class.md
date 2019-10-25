@@ -3,24 +3,24 @@ title: スウィズリング範囲クラス
 description: スウィズリング範囲クラス
 ms.assetid: 2f5d5b91-ebd8-4242-8719-8a21bc3e9888
 keywords:
-- スウィズ リング範囲クラス WDK の表示
+- スウィズリング範囲クラスの WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a4babc427745f13fe736227da9cd6a53f877c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3dc6ffabc3a670520d5aa889f70f1a33a4b1936b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372056"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829540"
 ---
 # <a name="swizzling-range-class"></a>スウィズリング範囲クラス
 
 
-Windows Display Driver Model (WDDM) は許可されていません、スウィズ リングのいずれかへの呼び出しを範囲クラス関数再入可能な方法で。 つまりが最大で 1 つのスレッド実行できる内で、次の関数のいずれかの特定の時点で。
+Windows Display Driver Model (WDDM) では、スウィズリング range クラス関数のいずれかを再入可能な方法で呼び出すことは許可されていません。 つまり、最大で1つのスレッドは、特定の時点で次のいずれかの関数内で実行できます。
 
--   [*DxgkDdiAcquireSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_acquireswizzlingrange)
+-   [*DxgkDdiAcquireSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_acquireswizzlingrange)
 
--   [*DxgkDdiReleaseSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)
+-   [*DxgkDdiReleaseSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)
 
  
 

@@ -1,18 +1,18 @@
 ---
-title: 方法 2 を使用して IoIs32bitProcess
-description: 方法 2 を使用して IoIs32bitProcess
+title: IoIs32bitProcess を使用した手法2
+description: IoIs32bitProcess を使用した手法2
 ms.assetid: 41e9c0e6-59dd-4e01-9c82-5aba40d8b97f
 keywords:
-- 32 ビットの I/O は、WDK の 64 ビット、IoIs32bitProcess をサポートします。
+- 32ビット i/o サポート WDK 64 ビット、IoIs32bitProcess
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 296c8ca40fc530fead46a45c5be8499c62e7d77a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cf5a4facc4fdce8c17abcf749f130b41796003c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382961"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838389"
 ---
 # <a name="technique-2-using-iois32bitprocess"></a>方法 2: IoIs32bitProcess の使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "67382961"
 
 
 
-32 ビットおよび 64 ビットのアプリケーションからの I/O 要求を別の IOCTL または FSCTL コントロールのコードを定義するは実用的がない場合、ドライバーの I/O 要求を送信するアプリケーションの種類を決定することは左側です。 Microsoft Windows の 64 ビット バージョンには、新しいカーネル モードのルーチンが導入されています[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)、32 ビット ユーザー モード プロセスで現在の I/O 要求が発生したかどうかを検出します。 そのプロトタイプは。
+32ビットアプリケーションと64ビットアプリケーションからの i/o 要求に対して個別の IOCTL または FSCTL 制御コードを定義するのは現実的ではない場合、ドライバーは、i/o 要求を送信したアプリケーションの種類を特定するために残されています。 64ビットバージョンの Microsoft Windows では、現在の i/o 要求が32ビットのユーザーモードプロセスで発生したかどうかを検出する新しいカーネルモードルーチン[**IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)が導入されています。 プロトタイプは次のとおりです。
 
 ```cpp
 BOOLEAN
@@ -29,9 +29,9 @@ BOOLEAN
     );
 ```
 
-**IoIs32bitProcess**返します**TRUE**かどうか、現在の I/O 要求の発信元は、32 ビット ユーザー モード アプリケーション。
+**IoIs32bitProcess**は、現在の i/o 要求の発信者が32ビットのユーザーモードアプリケーションである場合に**TRUE**を返します。
 
-次のコード サンプルは、使用する方法を示します**IoIs32bitProcess**:
+次のコードサンプルは、 **IoIs32bitProcess**の使用方法を示しています。
 
 ```cpp
 typedef UINT32 POINTER_32 PVOID32;

@@ -3,17 +3,17 @@ title: パケットベース バス マスター DMA の使用
 description: パケットベース バス マスター DMA の使用
 ms.assetid: 57b37103-8ae0-4c54-b613-55b1a629d9ae
 keywords:
-- バス マスター DMA WDK カーネル
-- DMA は、WDK カーネル、バス マスター DMA を転送します。
-- アダプター オブジェクトの WDK カーネル、バス マスター DMA
+- バスマスタ DMA WDK カーネル
+- DMA 転送 WDK カーネル、バスマスタ DMA
+- アダプタオブジェクト WDK カーネル、バスマスタ DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b213afcdf1981dc7fdab1aac272fef151924cb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58b34c66c4dd1d7e744d56750899f95b67b24422
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381598"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835941"
 ---
 # <a name="using-packet-based-bus-master-dma"></a>パケットベース バス マスター DMA の使用
 
@@ -21,27 +21,27 @@ ms.locfileid: "67381598"
 
 
 
-パケットに基づく DMA を使用するには、バス マスター DMA のデバイスのドライバーは IRP DMA 転送の要求を処理するときにサポート ルーチンの次の一般的なシーケンスを呼び出します。
+パケットベースの DMA を使用するには、バスマスタ DMA デバイスのドライバーが、DMA 転送を要求する IRP を処理するときに、次の一般的なサポートルーチンを呼び出します。
 
--   [**KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)転送要求をマップ レジスタを割り当て前だけですに、(詳細については、次を参照してください[キャッシュの一貫性を維持](maintaining-cache-coherency.md))。
+-   [**Keflushiobuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers)は、転送要求のマップレジスタの割り当てを試行する直前に実行します (詳細については、「[キャッシュの一貫性の維持](maintaining-cache-coherency.md)」を参照してください)。
 
--   [**AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)ときに、ドライバーは DMA のバス マスター アダプターをプログラムする準備が
+-   ドライバーが DMA 用のバスマスターアダプターをプログラミングする準備ができたときの[**Allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)
 
--   [**MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)への最初のパラメーターとして必要な MDL にインデックスを取得する[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)、および**MapTransfer**にデバイスからアクセス可能な IRP のバッファーをサポートするシステムの物理メモリを作成します。
+-   [**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用して、MDL へのインデックスを取得します。これは、 [**maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)の初期パラメーターとして必要であり、IRP のバッファーデバイスにアクセス可能なシステム物理メモリを確保するために**maptransfer**によって使用されます。
 
-    すべてのドライバーで説明したように、現在の IRP を満たすためには、複数の転送操作を実行する必要がありますので注意[転送要求の分割](splitting-dma-transfer-requests.md)します。 機能を呼び出すことがないデバイスのドライバー スキャッター/ギャザー **MapTransfer** 1 回あたりの操作を転送します。 機能を呼び出すことができるデバイスのドライバー スキャッター/ギャザー **MapTransfer**各転送操作を設定する 2 回以上。 また、これらのドライバーを使用で説明されている、システムの組み込みのスキャッター/ギャザー サポート[を使用してスキャッター/ギャザー DMA](using-scatter-gather-dma.md)します。
+    すべてのドライバーは、「[転送要求の分割](splitting-dma-transfer-requests.md)」で説明されているように、現在の IRP を満たすために複数の転送操作を実行することが必要になる場合があることに注意してください。 スキャッター/ギャザー機能がないデバイスのドライバーは、転送操作ごとに**Maptransfer**を呼び出すことができます。 スキャッター/ギャザー機能が搭載されているデバイスのドライバーは、各転送操作を設定するために**Maptransfer**を複数回呼び出すことができます。 また、これらのドライバーでは、「[スキャッター/ギャザー DMA の使用](using-scatter-gather-dma.md)」で説明されているシステムの組み込みのスキャッター/ギャザーサポートを使用できます。
 
--   [**FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)各 DMA 転送操作と要求されたすべてのデータが完全に転送されるかどうかを判断するために、ターゲット デバイスからの最後に
+-   要求されたすべてのデータが完全に転送されたかどうかを判断するために、ターゲットデバイスとの間で各 DMA 転送操作が終了したときの[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)
 
--   [**FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)ドライバーは IRP がデバイスのために失敗する必要がありますまたはバスの I/O エラーのため、または要求されたすべてのデータが完全に転送されるため、現在 IRP のすべての DMA 操作を実行するようになります
+-   要求されたすべてのデータが完全に転送されているか、デバイスまたはバス i/o エラーのためにドライバーが IRP を失敗させる必要があるため、現在の IRP のすべての DMA 操作が完了するとすぐに[**FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers) 。
 
-によって返されるアダプター オブジェクト ポインター [ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)に必要なパラメーターは、 **AllocateAdapterChannel**、 **MapTransfer**、 **FlushAdapterBuffers**、および**FreeMapRegisters**します。 Windows 2000 より前の Windows NT のバージョンでは、バス マスター デバイスでした渡すことに注意してください、 **NULL**アダプター オブジェクト ポインター **MapTransfer**と**FlushAdapterBuffers**します。 Windows 2000 以降では、ドライバー不要になった実行できます。
+[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)によって返されるアダプターオブジェクトポインターは、 **Allocateadapterchannel**、 **maptransfer**、 **flushadapterbuffers**、および**FreeMapRegisters**の必須パラメーターです。 Windows 2000 より前のバージョンの Windows NT では、バスマスタデバイスが、 **Maptransfer** **バッファーと Flushadapterbuffers**に**NULL**のアダプターオブジェクトポインターを渡す可能性があることに注意してください。 Windows 2000 以降では、ドライバーはこれを実行できなくなります。
 
-**KeFlushIoBuffers**と**MmGetMdlVirtualAddress**で MDL へのポインターを必要と**Irp -&gt;MdlAddress**します。
+**Keflushiobuffers**と**Mmgetmdlvirtualaddress**には、 **Irp (&gt;mdladdress)** へのポインターが必要です。
 
-個々 のドライバーでは、そのデバイスのサービスを提供する各ドライバーの実装方法に応じて、さまざまな時点でこのサポート ルーチンのシーケンスを呼び出します。 たとえば、1 つのドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンへの呼び出しを行うことがあります**AllocateAdapterChannel**、別のドライバーを削除するルーチンからのこの呼び出しを行う可能性がありますインタロックされたキューのドライバーが作成またはデバイスのキューから Irp します。
+個々のドライバーは、各ドライバーがどのように実装されているかに応じて、さまざまな時点でこの一連のサポートルーチンを呼び出します。 たとえば、あるドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンが**Allocateadapterchannel**を呼び出す可能性があり、別のドライバーは、ドライバーで作成されたインタロックされたキューまたはデバイスキューから irp を削除するルーチンからこの呼び出しを行う場合があります。
 
-使用する代わりには、ルーチンは、任意のドライバーを使用してパケットに基づく DMA サポート ルーチンが効率化するためのものを使用できますスキャッター/ギャザー DMA では、そのデバイスがスキャッター/ギャザーの組み込みサポートを持つかどうかに関係なくをこのセクションで説明します。 参照してください[を使用してスキャッター/ギャザー DMA](using-scatter-gather-dma.md)詳細についてはします。
+このセクションで説明されているルーチンを使用する代わりに、パケットベースの DMA を使用するドライバーでは、デバイスにスキャッター/ギャザーサポートが組み込まれているかどうかに関係なく、スキャッター/ギャザー DMA を効率化するためのサポートルーチンを使用できます。 詳細については、「[スキャッター/GATHER DMA の使用](using-scatter-gather-dma.md)」を参照してください。
 
  
 

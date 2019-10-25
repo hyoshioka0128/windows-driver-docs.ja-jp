@@ -1,9 +1,9 @@
 ---
-title: ndiskd.nbpool
-description: Ndiskd.nbpool 拡張機能では、NET_BUFFER (NB) プールに関する情報が表示されます。
+title: ndiskd nbpool
+description: Ndiskd nbpool 拡張機能には、NET_BUFFER (NB) プールに関する情報が表示されます。
 ms.assetid: 4FCD48B7-C469-4057-A279-20522B00E80B
 keywords:
-- デバッグ ndiskd.nbpool Windows
+- ndiskd nbpool Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,48 +12,48 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ee8ac41184b7db179940b42931e27eab5bd76de9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fecfca6443ed17826e5f2be2887daf369e0bf833
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826606"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 
 
-**! Ndiskd.nbpool**拡張機能に関する情報を表示する、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) (NB) プール。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd はシステムに割り当てられているすべての NB プールの一覧を表示します。
+**! Ndiskd nbpool**拡張機能には、 [**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) (NB) プールに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、システムに割り当てられているすべての NB プールの一覧がに表示されます。
 
 ```console
 !ndiskd.nbpool [-handle <x>] [-allocations] [-find <str>] [-findva <x>] [-findpa <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 NB プールのハンドル。
 
-<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-allocations*   
-すべての表示には、おり、nbs 経由が割り当てられます。
+<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-割り当て*   
+割り当てられたすべての NBs を表示します。
 
 <span id="_______-find______"></span><span id="_______-FIND______"></span> *-検索*   
-デバッガー式を使用して割り当てられたおり、nbs 経由の一覧をフィルター処理します。
+デバッガー式を使用して、割り当てられた NBs の一覧をフィルター処理します。
 
 <span id="_______-findva______"></span><span id="_______-FINDVA______"></span> *-findva*   
-指定した仮想アドレスにまたがるおり、nbs 経由を検索します。
+指定された仮想アドレスをまたがるする NBs を検索します。
 
 <span id="_______-findpa______"></span><span id="_______-FINDPA______"></span> *-findpa*   
-特定の物理アドレスにまたがるおり、nbs 経由を検索します。
+指定された物理アドレスをまたがるする NBs を検索します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-入力、 **! ndiskd.nbpool**コマンドとパラメーターのないすべての割り当てられた NB プールの一覧を参照してください。 この例では、Nnbf タグを持つ Netio サービスによって割り当てられた NB プールを探します。 そのハンドルは、ffffdf801308ca40 です。
+割り当てられているすべての NB プールの一覧を表示するには、パラメーターを指定せずに **! ndiskd nbpool**コマンドを入力します。 この例では、Netio サービスによって、Nnbf タグを使用して割り当てられた NB プールを探します。 そのハンドルは ffffdf801308ca40 です。
 
 ```console
 2: kd> !ndiskd.nbpool
@@ -65,7 +65,7 @@ Ndiskd.dll
     ffffdf80131cba40   NDnd                ndis!DriverEntry+615
 ```
 
-NB プールのハンドルをクリックするか、入力、 **! ndiskd.nbpool-処理**コマンドの詳細を確認します。
+NB プールのハンドルをクリックするか、 **! ndiskd. nbpool-handle**コマンドを入力して詳細を確認します。
 
 ```console
 2: kd> !ndiskd.nbpool ffffdf801308ca40
@@ -85,7 +85,7 @@ NB POOL
     All allocated NBs
 ```
 
-この NB プールに含まれている、おり、nbs 経由を調べるには、下部にある「すべての割り当てられたおり、nbs 経由」のリンクをクリックします。 また、入力することも、 **! ndiskd.nbpool-処理 - 割り当て**コマンド。 次の例に示すようにこの NB プールが含まれる 1024 を超えており、nbs 経由のため! ndiskd が早期に終了します。 使用することができます force オプションを指定するには、この制限を回避しており、この NB プール nbs 経由のすべてを参照してください。
+この NB プールに含まれる NBs を探索するには、下部にある [割り当て済みのすべての NBs] リンクをクリックします。 または、 **! ndiskd. nbpool-ハンドル割り当て**コマンドを入力することもできます。 次の例に示すように、この NB プールには1024を超える NBs が含まれています。 ndiskd は早期に終了します。 -Force オプションを使用してこの制限を回避し、この NB プール内のすべての NBs を表示できます。
 
 ```console
 2: kd> !ndiskd.nbpool ffffdf801308ca40 -allocations
@@ -135,18 +135,18 @@ ALL ALLOCATED NBs
     to bypass this limit.]
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 

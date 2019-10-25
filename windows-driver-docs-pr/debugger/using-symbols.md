@@ -3,16 +3,16 @@ title: シンボルの使用
 description: シンボルの使用
 ms.assetid: 1de1441f-b4d7-49e9-87ad-392a75b3d4be
 keywords:
-- デバッガー エンジン、シンボル
-- シンボル
+- デバッガーエンジン、シンボル
+- 文字
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46aca9704ee5a17e310f046187d6828eaf0f704b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8763269c8fd8a8d17996879b54ca494d46cf37d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368614"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838801"
 ---
 # <a name="using-symbols"></a>シンボルの使用
 
@@ -20,47 +20,47 @@ ms.locfileid: "67368614"
 ## <span id="ddk_symbols_dbx"></span><span id="DDK_SYMBOLS_DBX"></span>
 
 
-シンボル、シンボル ファイルとシンボル サーバーの使用などの概要については、次を参照してください。[シンボル](symbols.md)します。
+シンボルファイルやシンボルサーバーの使用など、シンボルの概要については、「[シンボル](symbols.md)」を参照してください。
 
-### <a name="span-idsymbolnamesandlocationsspanspan-idsymbolnamesandlocationsspansymbol-names-and-locations"></a><span id="symbol_names_and_locations"></span><span id="SYMBOL_NAMES_AND_LOCATIONS"></span>シンボルの名前と場所
+### <a name="span-idsymbol_names_and_locationsspanspan-idsymbol_names_and_locationsspansymbol-names-and-locations"></a><span id="symbol_names_and_locations"></span><span id="SYMBOL_NAMES_AND_LOCATIONS"></span>シンボル名と場所
 
-指定した名前のシンボルの場所を検索する使用[ **GetOffsetByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getoffsetbyname)します。 シンボル名を指定するために使用する構文の詳細については、「[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
+名前を指定してシンボルの場所を検索するには、 [**GetOffsetByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getoffsetbyname)を使用します。 シンボル名の指定に使用される構文の詳細については、「[シンボルの構文とシンボルの一致](symbol-syntax-and-symbol-matching.md)」を参照してください。
 
-シンボルの正確な名前が不明、または複数のシンボルが同じ名前を持つ場合[ **StartSymbolMatch** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-startsymbolmatch)名前を持つ指定したパターンに一致するシンボルの検索を開始します。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+シンボルの正確な名前がわからない場合、または複数の記号が同じ名前の場合、 [**Startsymbol match**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-startsymbolmatch)は、指定されたパターンに一致する名前を持つシンボルの検索を開始します。 構文の詳細については、「[文字列ワイルドカード構文](string-wildcard-syntax.md)」を参照してください。
 
-その場所が指定されたシンボルの名前を確認する[ **GetNameByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getnamebyoffset)します。 特定の場所の近くのモジュールのシンボルの名前を検索するには使用[ **GetNearNamebyOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getnearnamebyoffset)します。
+場所を指定してシンボルの名前を検索するには、 [**Getnamebyoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getnamebyoffset)を使用します。 指定された場所付近のモジュールのシンボル名を検索するには、 [**GetNearNamebyOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getnearnamebyoffset)を使用します。
 
-**注**  可能であれば、たとえばモジュール名 - のシンボルを修飾**mymodule! メイン**します。 それ以外の場合、(たとえば、入力ミス エラー) ため、シンボルが存在しない場合、エンジンが読み込むし、すべてのモジュールのシンボルを検索する必要これは、特にカーネル モードのデバッグ用の低速なプロセスです。 モジュールの名前のシンボル名を修飾すると場合、エンジンのみをモジュールのシンボルを検索する必要があります。
+**注**   できる限り、シンボルをモジュール名で修飾してください (例: **mymodule! main**)。 そうしないと、シンボルが存在しない場合 (たとえば、タイポグラフィエラーが発生した場合)、エンジンはすべてのモジュールのシンボルを読み込んで検索する必要があります。これは、特にカーネルモードのデバッグでは、処理が遅くなることがあります。 シンボル名がモジュール名で修飾されている場合、エンジンはそのモジュールのシンボルのみを検索する必要があります。
 
  
 
-シンボルの構造を使用して、一意に識別[**デバッグ\_モジュール\_AND\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_module_and_id)します。 この構造体は、メソッドによって返される[ **GetSymbolEntriesByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentriesbyname)と[ **GetSymbolEntriesByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentriesbyoffset)、検索します。それぞれの名前と場所に基づく記号。
+シンボルは、structure [**DEBUG\_MODULE\_と\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_module_and_id)を使用して一意に識別されます。 この構造体は、メソッド[**GetSymbolEntriesByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentriesbyname)と[**Getsymbols byoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentriesbyoffset)によって返されます。このメソッドは、それぞれの名前と場所に基づいてシンボルを検索します。
 
-メソッド[ **GetSymbolEntryInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)を使用して、シンボルの説明を返します、 [**デバッグ\_シンボル\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_entry)構造体。
+[**Getsymbol Entryinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)メソッドは、[**デバッグ\_シンボル\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_entry)構造を使用してシンボルの説明を返します。
 
-構造体のフィールドのオフセットを確認する[ **GetFieldOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols-getfieldoffset)します。 指定されたインデックス構造内のフィールドの名前を確認する[ **GetFieldName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getfieldname)します。 その値を指定された列挙定数の名前を確認する[ **GetConstantName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getconstantname)します。
+構造体内のフィールドのオフセットを調べるには、 [**GetFieldOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols-getfieldoffset)を使用します。 構造体内でインデックスが指定されているフィールドの名前を検索するには、 [**Getfieldname**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getfieldname)を使用します。 値を指定して列挙定数の名前を検索するには、 [**GetConstantName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getconstantname)を使用します。
 
-メソッド[ **GetSymbolInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugadvanced3-getsymbolinformation)シンボルに関する情報をいくつかの要求を実行できます。
+[**Getsymbols information**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-getsymbolinformation)メソッドは、シンボルに関する情報に対して複数の要求を実行できます。
 
-### <a name="span-idsymboloptionsspanspan-idsymboloptionsspansymbol-options"></a><span id="symbol_options"></span><span id="SYMBOL_OPTIONS"></span>シンボルのオプション
+### <a name="span-idsymbol_optionsspanspan-idsymbol_optionsspansymbol-options"></a><span id="symbol_options"></span><span id="SYMBOL_OPTIONS"></span>シンボルのオプション
 
-さまざまなオプションは、シンボルが読み込まれ、アンロードする方法を制御します。 これらのオプションの説明は、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
+いくつかのオプションで、シンボルの読み込みとアンロードの方法を制御します。 これらのオプションの詳細については、「[シンボルオプションの設定](symbol-options.md)」を参照してください。
 
-使用してシンボル オプションを有効に[ **AddSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-addsymboloptions)を使用してになっていると[ **RemoveSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-removesymboloptions)します。
+シンボルオプションは、 [**AddSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addsymboloptions)を使用して有効にし、 [**RemoveSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removesymboloptions)を使用して無効にすることができます。
 
-[**GetSymbolOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymboloptions)現在のシンボル オプションを返します。 一度にすべてのシンボル オプションを設定するには、使用[ **SetSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-setsymboloptions)します。
+[**GetSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymboloptions)は、現在のシンボルオプションを返します。 すべてのシンボルオプションを一度に設定するには、 [**SetSymbolOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setsymboloptions)を使用します。
 
-### <a name="span-idreloadingsymbolsspanspan-idreloadingsymbolsspanreloading-symbols"></a><span id="reloading_symbols"></span><span id="RELOADING_SYMBOLS"></span>シンボルの再読み込み
+### <a name="span-idreloading_symbolsspanspan-idreloading_symbolsspanreloading-symbols"></a><span id="reloading_symbols"></span><span id="RELOADING_SYMBOLS"></span>再読み込み (シンボルを)
 
-シンボル ファイルを読み込んだ後は、エンジンは、内部キャッシュにシンボル情報を格納します。 このキャッシュをフラッシュするには使用[**再読み込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-reload)します。 これらのシンボルは、もう一度今すぐまたは後で読み込まれる必要があります。
+シンボルファイルを読み込んだ後、エンジンはシンボル情報を内部キャッシュに格納します。 このキャッシュをフラッシュするには、 [**Reload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-reload)を使用します。 これらのシンボルは、後で再度読み込むか、後で読み込む必要があります。
 
-### <a name="span-idsyntheticsymbolsspanspan-idsyntheticsymbolsspan-synthetic-symbols"></a><span id="synthetic_symbols"></span><span id="SYNTHETIC_SYMBOLS"></span> 合成のシンボル
+### <a name="span-idsynthetic_symbolsspanspan-idsynthetic_symbolsspan-synthetic-symbols"></a><span id="synthetic_symbols"></span><span id="SYNTHETIC_SYMBOLS"></span>合成シンボル
 
-*代理シンボル*は簡単に参照を任意のアドレスにラベルを付ける方法です。 任意の既存のモジュールでは、合成のシンボルを作成できます。 メソッド[ **AddSyntheticSymbol** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticsymbol)新しい代理記号を作成します。 使用して代理のシンボルを削除できる[ **RemoveSyntheticSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticsymbol)します。 モジュールのシンボルを再読み込み、そのモジュールに関連付けられているすべての合成シンボルを削除します。
+*合成シンボル*は、簡単に参照できるように任意のアドレスにラベルを付ける方法です。 合成シンボルは、任意の既存のモジュールで作成できます。 新しい合成[**シンボルが作成され**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticsymbol)ます。 合成シンボルは、 [**RemoveSyntheticSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticsymbol)を使用して削除できます。 モジュールのシンボルを再読み込みすると、そのモジュールに関連付けられているすべての合成シンボルが削除されます。
 
-### <a name="span-idsymbolpathspanspan-idsymbolpathspansymbol-path"></a><span id="symbol_path"></span><span id="SYMBOL_PATH"></span>シンボル パス
+### <a name="span-idsymbol_pathspanspan-idsymbol_pathspansymbol-path"></a><span id="symbol_path"></span><span id="SYMBOL_PATH"></span>シンボルパス
 
-シンボル パスには、ディレクトリまたはシンボル サーバーを追加するには、メソッドを使用して[ **AppendSymbolPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-appendsymbolpath)します。 全体のシンボル パスがによって返される[ **GetSymbolPath** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolpath)を使用して変更できる[ **SetSymbolPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-setsymbolpath)します。
+シンボルパスにディレクトリまたはシンボルサーバーを追加するには、 [**Appendsymbol path**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-appendsymbolpath)メソッドを使用します。 シンボルパス全体は[**Getsymbol path**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolpath)によって返され、 [**setsymbol path**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setsymbolpath)を使用して変更できます。
 
  
 

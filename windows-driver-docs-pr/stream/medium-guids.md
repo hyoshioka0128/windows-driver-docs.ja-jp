@@ -3,67 +3,67 @@ title: メディアの GUID
 description: メディアの GUID
 ms.assetid: 4209952c-0ba5-4359-b612-91529a0a46f1
 keywords:
-- ビデオ キャプチャ WDK AVStream、メディア
-- ビデオの WDK AVStream、メディアのキャプチャ
-- メディアの WDK ビデオのキャプチャ
-- 暗証番号 (pin) の接続の WDK ビデオ キャプチャ
-- Guid の WDK ビデオのキャプチャ
+- ビデオキャプチャ WDK AVStream、メディア
+- ビデオのキャプチャ WDK AVStream、メディア
+- メディア WDK ビデオキャプチャ
+- ピン接続の WDK ビデオキャプチャ
+- Guid WDK ビデオキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0f609f9cfe0a8ce45d6c6bcadda5413e35c023
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e15b7a2bb052fd8b31789a122d94b7a1cb8dbadb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386633"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838040"
 ---
 # <a name="medium-guids"></a>メディアの GUID
 
 
-ミニドライバーは、複数のデバイスをサポートできる必要があります。 さらに、フィルターをストリーミングする別のカーネルには、テレビやラジオ チューナー、テレビのオーディオ、クロスバー、およびビデオ キャプチャ コンポーネントが区切られた、ため、メソッドが正しくでこれらのコンポーネント間の位相的なハードウェアの接続を記述するために必要なデバイスも複数のデバイスで同様です。 たとえば、2 つのビルドが実行されていないフィルター グラフを FM ラジオをサポートしてと TV キャプチャは、共存できる必要があります。 ミニドライバーは、これらのシナリオに対応するのにメディアを使用します。 フィルターのグラフなど、アプリケーションの構築も、*グラフの編集*フィルターのグラフの構築時にメディアを使用して、別のデバイスのフィルターに 1 つのデバイスのフィルターが正常に接続していることを確認します。 たとえば、デバイスの 1 つのチューナーのフィルターする必要がありますを別のデバイスのクロスバー フィルターは接続できません。
+ミニドライバーは、複数のデバイスをサポートできる必要があります。 さらに、テレビ/ラジオチューナー、テレビオーディオ、クロスバー、およびビデオキャプチャのコンポーネントが異なるカーネルストリーミングフィルターに分割されているため、次のコンポーネント間のトポロジハードウェア接続を正しく記述する必要があります。デバイスに加えて、複数のデバイスにも対応します。 たとえば、FM ラジオとテレビキャプチャをサポートする、2つのビルドされたが実行されていないフィルターグラフは、共存させることができなければなりません。 ミニドライバーは、これらのシナリオに対応するためにメディアを使用します。 また、*グラフの編集*などのフィルターグラフ作成アプリケーションでは、フィルターグラフの構築時にメディアを使用して、あるデバイスのフィルターが別のデバイスのフィルターに正しく接続されるようにします。 たとえば、あるデバイスのチューナーフィルターでは、別のデバイスのクロスバーフィルターに接続することはできません。
 
-ミニドライバーでメディアの説明、 [ **KSPIN\_MEDIUM** ](https://docs.microsoft.com/previous-versions/ff563538(v=vs.85)) GUID データ型のメンバーで構成される構造 (**設定**) 後に 2 つの ULONG メンバー (**Id**と**フラグ**)。
+ミニドライバーは、GUID データ型のメンバー (**セット**) と2つの ULONG メンバー (**Id**と**フラグ**) で構成される[**kspin\_MEDIUM**](https://docs.microsoft.com/previous-versions/ff563538(v=vs.85))構造のメディアについて説明します。
 
--   **設定**位相的なハードウェアの接続を表す GUID をメンバーに割り当てる必要があります。
+-   **Set**メンバーには、トポロジハードウェア接続を表す GUID を割り当てる必要があります。
 
--   ミニドライバーを設定する必要があります、 **Id**デバイス インスタンスの一意の値のメンバー。
+-   ミニドライバーでは、 **Id**メンバーをデバイスインスタンスの一意の値に設定する必要があります。
 
--   **フラグ**メンバーは、システムの使用に予約されているし、0 に設定する必要があります。
+-   **Flags**メンバーはシステム使用のために予約されており、0に設定する必要があります。
 
-システムでは、存在する複数のデバイスでフィルター グラフの構築が適切なことを確認する、**設定**、KSPIN のメンバー\_中規模の構造はデバイスのインスタンスごとに同じです。 ただし、ミニドライバーは、一意の値を割り当てる必要があります、 **Id** 、KSPIN のメンバー\_デバイス インスタンスごとの中規模の構造体。 設定に失敗した、 **Id**一意の値にメンバーが複数のデバイスがシステムに存在する場合に問題になります。 システムでは、2 つのデバイスがインストールされている場合、ミニドライバーを設定する必要があります、 **Id**デバイス インスタンスごとに別の値にメンバー。 なお、 **Id**同じ 1 つのチューナーと置き換えてなどのハードウェア上に存在するデバイスのフィルターのメンバーは同じである必要があります。 いることを確認する方法の 1 つ、 **Id**メンバーは、デバイスのインスタンス間で異なれば、ミニドライバーにグローバル カウンタがあり、設定する前に、デバイス プラグ アンド プレイの開始時にそのカウンターをインクリメントする**Id**の値にします。
+システム内に複数のデバイスを含むフィルターグラフを適切に構築するために、KSPIN\_MEDIUM 構造体の**セット**メンバーは、各デバイスインスタンスで同じままです。 ただし、ミニドライバーでは、デバイスインスタンスごとに KSPIN\_MEDIUM 構造の**Id**メンバーに一意の値を割り当てる必要があります。 **Id**メンバーを一意の値に設定できないと、システムに複数のデバイスが存在する場合に問題が発生します。 2つのデバイスがシステムにインストールされている場合、ミニドライバーは、デバイスインスタンスごとに**Id**メンバーを別の値に設定する必要があります。 チューナーやクロスバーなど、同じハードウェア上にあるデバイスのフィルターの**Id**メンバーは同じであることに注意してください。 **Id**メンバーがデバイスインスタンス間で異なることを保証する方法の1つは、 **id**を値に設定する前に、ミニドライバーにグローバルカウンターを設定し、デバイスプラグアンドプレイの開始時刻にそのカウンターをインクリメントすることです。
 
-ストリーム、ミニドライバーに続くインターフェイス (AVStream または Stream クラス)、カーネルによって、ミニドライバーの値を指定する必要があります、 **Id**メンバーが異なります。
+ミニドライバーが従うカーネルストリーミングインターフェイス (AVStream または Stream クラス) に応じて、ミニドライバーは**Id**メンバーの値を別の方法で指定する必要があります。
 
--   Stream クラス ミニドライバーが処理するときに、値を指定[ **SRB\_取得\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-stream-info)します。
+-   Stream クラスミニドライバーを処理するときに値を指定し[ **\_ストリーム\_情報を取得\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-stream-info)ます。
 
--   AVStream ミニドライバーの値を指定する、 [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 KSPIN で値を指定する AVStream ミニドライバーの独立した 2 つの方法があります\_記述子\_構造 EX:
+-   AVStream ミニドライバー [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の値を指定します。 AVStream ミニドライバーには、KSPIN\_記述子\_EX 構造体の値を指定する2つの異なる方法があります。
 
-    1.  グローバルで静的な記述子を提供**Id**カウンターと呼び出し[  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)中に*追加*または*開始*を変更するハンドラーのディスパッチ、 **Id**メンバーを一意の値。
-    2.  呼び出す[ **KsCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatefilterfactory)中に/ピン留めするフィルター記述子を動的に構築する*追加*または*開始*ハンドラーにディスパッチします。
+    1.  グローバル**id**カウンターを使用して静的な記述子を指定し、 *Add*または*Start*ディスパッチハンドラーで[**KsEdit を\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit)呼び出して**Id**メンバーを一意の値に変更します。
+    2.  [**KsCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatefilterfactory)を呼び出して、 *Add*または*Start*ディスパッチハンドラーの間にフィルター/ピン記述子を動的に構築します。
 
-ミニドライバーは、アプリケーションが実際に作成しないため、テレビやラジオ チューナー、テレビのオーディオ クロスバー フィルターとフィルターのグラフが自動的に作成できるようにする Microsoft DirectShow に自身を登録、特殊な関数を呼び出す必要がありますもカーネル ストリーミングの入力と出力の pin。 設定する必要がありますが、ミニドライバーは、これらのフィルターを登録する場合、 **Id** 、KSPIN のメンバー\_中規模の構造を一意の値。 ミニドライバーが設定されていない場合、 **Id** 、KSPIN のメンバー\_中は、自動グラフのアプリケーションを構築が必要な隣接するフィルターの読み込みに失敗することができますし、一意の値構造体します。 ただし、手動フィルター-グラフの作成、グラフの編集で、動作もあります。
+また、ミニドライバーは、Microsoft DirectShow に登録する特別な関数を呼び出す必要があります。これにより、アプリケーションは実際には作成されないため、テレビ/ラジオチューナー、テレビオーディオ、およびクロスバーフィルターを使用してフィルターグラフを自動的に作成することができます。入力と出力のためのカーネルストリーミングピン。 ミニドライバーがこれらのフィルターを登録すると、KSPIN\_中構造体の**Id**メンバーが一意の値に設定されます。 ミニドライバーが KSPIN\_MEDIUM 構造体の**Id**メンバーを一意の値に設定していない場合、graph の自動構築アプリケーションは、必要な隣接するフィルターの読み込みに失敗する可能性があります。 ただし、たとえば、グラフの編集では、手動フィルター (グラフの作成) が引き続き機能する場合があります。
 
-DirectShow: ミニドライバーに登録するには
+ミニドライバーを DirectShow に登録するには:
 
--   Stream クラス ミニドライバーの呼び出し、 [ **StreamClassRegisterFilterWithNoKSPins** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassregisterfilterwithnokspins) DirectShow にフィルターを登録する関数。
+-   Stream クラスミニドライバーは、 [**StreamClassRegisterFilterWithNoKSPins**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassregisterfilterwithnokspins)関数を呼び出して、フィルターを DirectShow に登録します。
 
--   AVStream ミニドライバーの呼び出し、 [ **KsRegisterFilterWithNoKSPins** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksregisterfilterwithnokspins) DirectShow にフィルターを登録する関数。
+-   AVStream ミニドライバー [**KsRegisterFilterWithNoKSPins**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksregisterfilterwithnokspins)関数を呼び出して、フィルターを DirectShow に登録します。
 
--   または、ミニドライバー BDA モデル、および特定の複数のインスタンスに従う場合[ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)特定構造[ **KSDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice)構造がカテゴリをストリーミングする同じカーネルで登録すると、呼び出し、 [ **KsFilterFactoryUpdateCacheData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilterfactoryupdatecachedata) (または[**BdaFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) には、DirectShow フィルターを登録する関数。
+-   また、ミニドライバーが BDA モデルに従っていて、特定の[**Ksfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)構造の下にある特定の[**KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造の複数のインスタンスが同じカーネルストリーミングカテゴリ[**に登録されている場合は、KsFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterfactoryupdatecachedata) (または[**BdaFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) 関数は、フィルターを DirectShow に登録します。
 
-KSPIN\_SRB のいずれかから中規模の構造が返される\_取得\_ストリーム\_(の Stream クラス ミニドライバー) の情報または KSPIN\_記述子\_(AVStream ミニドライバーの場合) の例に一致する必要がありますKSPIN\_中程度のメンバーは、次のプロパティで返されます。
+SRB\_GET\_STREAM\_INFO (ストリームクラスミニドライバーの場合)、または KSPIN\_記述子\_EX (AVStream ミニドライバーの場合) から返される KSPIN\_MEDIUM 構造体は、KSPIN\_MEDIUM メンバーと一致している必要があります。次のプロパティで返されます。
 
--   **Medium**のメンバー、 [ **KSPROPERTY\_クロスバー\_PININFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_pininfo_s)の構造[ **KSPROPERTY\_クロスバー\_PININFO**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-pininfo)します。 メディアが一致しない場合、グラフの構築は、ミニドライバーのフィルターと、グラフの横にあるフィルター間フェールオーバーできます。
+-   Ksk プロパティの**Medium**メンバーは、 [**KSK プロパティ\_クロスバー\_pininfo**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-pininfo)の[ **\_クロスバー\_pininfo\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_pininfo_s)構造体を持ちます。 メディアが一致しない場合、グラフの作成はミニドライバーのフィルターとグラフ内の隣接するフィルターの間で失敗する可能性があります。
 
--   **VideoMedium**と**AudioMedium**のメンバー、 [ **KSPROPERTY\_チューナー\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_caps_s)の構造[ **KSPROPERTY\_チューナー\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-caps)します。
+-   Ksk プロパティ\_チューナーの**videomedium**メンバーと**audiomedium**メンバーは、 [ **\_caps\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_caps_s)構造体の[**ksk プロパティ\_チューナー\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-caps)を持ちます。
 
--   **InputMedium**と**OutputMedium**のメンバー、 [ **KSPROPERTY\_TVAUDIO\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)の構造[ **KSPROPERTY\_TVAUDIO\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tvaudio-caps)します。
+-   Ksk プロパティの**inputmedium**メンバーと**outputmedium**メンバー\_、 [**TVAUDIO\_Caps**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tvaudio-caps)の[ **\_caps\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)構造体を\_します。
 
-メディアと中程度の Guid を正しく実装するだけでなく、プロセスは、複数のグラフをフィルターを使用できることを確認するには、その他のガイドラインに従うために必要なは。 ミニドライバーは、フィルターのグラフに遷移するまで、ハードウェア リソースをロックする必要があります、 **KSSTATE\_ACQUIRE** KSSTATE の値。 これにより、構築された、2 つが、互いに干渉することがなく共存できるグラフのフィルターが実行されていません。
+メディアとメディアの Guid を正しく実装するだけでなく、プロセスが複数のフィルターグラフで動作することを確認するために、他のガイドラインに従う必要があります。 ミニドライバーは、フィルターグラフが**Ksk 状態**に遷移するまで、ハードウェアリソースをロックしないようにする必要があります。この場合\_ksk 状態の値を取得します。 これにより、2つのビルドされた (ただし、実行されていない) フィルターグラフを相互に干渉することなく共存させることができます。
 
-その実装方法などのメディアの詳細については、次を参照してください。、 [AVStream シミュレートされたハードウェア ドライバーのサンプル (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)します。
+メディアの実装方法など、メディアの詳細については、 [Avstream のシミュレートされたハードウェアサンプルドライバー (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)に関する説明を参照してください。
 
-**注**  :Windows Driver Kit でサンプル コードから新しいミニドライバーを派生している場合は、デバイスの一意のハードウェア トポロジを反映するようにメディアの新しい GUID 値を生成する必要があります。 そのために発生する可能性が 1 つのデバイスが競合する別のデバイスに対して定義されているメディアのメディア。
+**注**  : Windows Driver Kit のサンプルコードから新しいミニドライバーを派生させる場合は、デバイスの一意のハードウェアトポロジを反映するために、メディアの新しい GUID 値を生成する必要があります。 そうしないと、別のデバイスに対して定義されているメディアと1つのデバイスのメディアが衝突する可能性があります。
 
  
 

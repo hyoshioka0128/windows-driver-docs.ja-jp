@@ -4,19 +4,19 @@ description: WDI_TLV_DISCONNECT_PARAMETERS は、OID_WDI_TASK_DISCONNECT のパ�
 ms.assetid: D0FF83A0-CD3B-47A6-BB08-842927F1D3BC
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DISCONNECT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_DISCONNECT_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 975574b9e5630ce733e6db9e668b5785a9472640
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bfd0a2435a3e26708cf95c62efeea279f04a8e3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358569"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834127"
 ---
-# <a name="wditlvdisconnectparameters"></a>WDI\_TLV\_切断\_パラメーター
+# <a name="wdi_tlv_disconnect_parameters"></a>WDI\_TLV\_\_パラメーターの切断
 
 
-WDI\_TLV\_切断\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-disconnect)します。
+WDI\_TLV\_DISCONNECT\_PARAMETERS は、 [OID\_WDI\_タスク\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-disconnect)のパラメーターを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,19 +26,19 @@ WDI\_TLV\_切断\_パラメーターはパラメーターを含む TLV [OID\_WDI
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                              | 説明                                                                                                                                                                         |
+| タスクバーの検索ボックスに                                              | 説明                                                                                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 関連付けを解除するピアの MAC アドレス。                                                                                                                                        |
-| UINT16                                            | ホストによってトリガーされる関連付け解除の理由です。 この値は、リトル エンディアン バイト順で提供される、送信の枠の理由コードに適切にコピーする必要があります。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 関連付けを解除するピアの MAC アドレス。                                                                                                                                        |
+| UINT16                                            | ホストによってトリガーされる関連付けの理由。 この値は、リトルエンディアンバイト順に記述されており、送信フレームの理由コードに適切にコピーされる必要があります。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -57,7 +57,7 @@ WDI\_TLV\_切断\_パラメーターはパラメーターを含む TLV [OID\_WDI
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

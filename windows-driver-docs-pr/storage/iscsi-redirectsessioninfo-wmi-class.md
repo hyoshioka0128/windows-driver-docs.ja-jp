@@ -4,17 +4,17 @@ description: ISCSI\_RedirectSessionInfo WMI クラス
 ms.assetid: eb1ec866-2dcd-4099-a24f-ae1d0c702b95
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 02e743a20cc96fecbc9d0b6eee41e262c5e48e51
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cda9df1cb43db76a03016c39fa4a2ffe820087a3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378408"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823689"
 ---
-# <a name="iscsiredirectsessioninfo-wmi-class"></a>ISCSI\_RedirectSessionInfo WMI クラス
+# <a name="iscsi_redirectsessioninfo-wmi-class"></a>ISCSI\_RedirectSessionInfo WMI クラス
 
 
-ISCSI\_RedirectSessionInfo WMI クラスには、iSCSI セッションの接続のコレクションが含まれています。 このクラスが次のように定義されている*Mgmt.mof します。*
+ISCSI\_RedirectSessionInfo WMI クラスには、iSCSI セッションの接続のコレクションが含まれています。 このクラスは、管理 .mof で次のように定義されてい*ます。*
 
 ```cpp
 class ISCSI_RedirectSessionInfo
@@ -47,7 +47,7 @@ class ISCSI_RedirectSessionInfo
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_RedirectSessionInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_redirectsessioninfo)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**ISCSI\_RedirectSessionInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectsessioninfo)データ構造を生成します。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: GetBindingSupport 関数
-description: GetBindingSupport メソッドは、指定されたポートが現在有効になっているバインディング機能を取得します。
+description: GetBindingSupport メソッドは、指定されたポートに対して現在有効なバインディング機能を取得します。
 ms.assetid: 50c90379-613f-42f1-80fe-7bc1b77a53bf
 keywords:
-- 記憶装置の GetBindingSupport 関数
+- GetBindingSupport 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f584dfe7cd7c9a6173bac951a6113b7d757c16b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1cb462f87b521ca83e316ace0d68eec018371938
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378553"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837852"
 ---
 # <a name="getbindingsupport-function"></a>GetBindingSupport 関数
 
 
-**GetBindingSupport**メソッドは、指定されたポートが現在有効になっているバインディング機能を取得します。
+**Getbindingsupport**メソッドは、指定されたポートに対して現在有効なバインディング機能を取得します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ void GetBindingSupport(
 ----------
 
 *PortWWN\[8\]*    
-永続的なバインドを取得するポートを示す世界中の名前。
+永続的なバインドを取得するポートを示す、世界規模の名前。
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Getbindingsupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)構造体の**hbastatus**メンバーでこの情報を返します。
 
-*BindType*   
-永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、の説明を参照して、 [HBA\_バインド\_型](hba-bind-type.md)WMI クラスの修飾子。
+*Bindtype*   
+永続的バインディングに関連する特定の機能セットを提供する、HBA とそのミニポートドライバーの機能を示すビットマップ。 このパラメーターに指定できる値の一覧については、「WMI クラス修飾子の[\_バインド\_HBA](hba-bind-type.md)の説明を参照してください。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -58,9 +58,9 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-これは、 **GetBindingSupport**メソッド返すは、現在有効になっているバインディング機能に対し、 [ **GetBindingCapability** ](getbindingcapability.md)メソッドは、バインドを示します特定のバインドが有効かどうかを指定せず、ポートの機能です。
+この**Getbindingsupport**メソッドは、現在有効になっているバインディング機能を返します。一方、 [**getbindingsupport**](getbindingcapability.md)メソッドは、特定のバインドが有効になっているかどうかを参照せずに、ポートのバインディング機能を示します。じゃない。
 
-この WMI メソッドが属する、 [MSFC\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -77,25 +77,25 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**GetBindingCapability**](getbindingcapability.md)
+[**GetBindingCapability ビリティ**](getbindingcapability.md)
 
 [**GetBindingSupport**](getbindingsupport.md)
 
-[**GetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getbindingsupport_in)
+[**GetBindingSupport\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_in)
 
-[**GetBindingSupport\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)
+[**GetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)
 
  
 

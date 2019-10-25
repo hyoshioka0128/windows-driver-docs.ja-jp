@@ -3,17 +3,17 @@ title: ボリューム テクスチャに対するサポートのレポート
 description: ボリューム テクスチャに対するサポートのレポート
 ms.assetid: da0c1c88-504e-4293-96ca-65cac2e0fe97
 keywords:
-- WDK DirectX 8.0 のテクスチャ
-- Windows 2000 の WDK の表示、ボリュームのテクスチャの DirectX 8.0 リリース ノートします。
-- ボリューム テクスチャ WDK DirectX 8.0
+- テクスチャ WDK DirectX 8.0
+- DirectX 8.0 リリースノート WDK Windows 2000 display、volume テクスチャ
+- ボリュームテクスチャ WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 287348917bb8f931d902824dc0fa51450c8124df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 941c0f411d56f1159a682bc6c3478ac3d704d41b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384262"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829578"
 ---
 # <a name="reporting-support-for-volume-textures"></a>ボリューム テクスチャに対するサポートのレポート
 
@@ -21,17 +21,17 @@ ms.locfileid: "67384262"
 ## <span id="ddk_reporting_support_for_volume_textures_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_VOLUME_TEXTURES_GG"></span>
 
 
-DirectX 8.0 ではボリューム テクスチャのサポートを示すため、ドライバーを設定する 2 つの新しいプリミティブ テクスチャ機能フラグが導入されています。 これらのフラグは D3DPTEXTURECAPS\_VOLUMEMAP と D3DPTEXTURECAPS\_MIPVOLUMEMAP します。 D3DPTEXTURECAPS\_VOLUMEMAP 設定する必要があります、 **dwTextureCaps** D3DPRIMCAPS8 構造 (D3DCAPS8 の一部) の場合、ハードウェアはボリューム テクスチャのサポート フィールド。 D3DPTEXTURECAPS\_MIPVOLUMEMAP はボリューム テクスチャが MIP ドライバーのサポートにマップされていることを示します。
+DirectX 8.0 では、ドライバーがボリュームテクスチャのサポートを示すために設定する2つの新しいプリミティブテクスチャ機能フラグが導入されています。 これらのフラグは、D3DPTEXTURECAPS\_VOLUMEMAP と D3DPTEXTURECAPS\_MIPVOLUMEMAP になります。 ハードウェアがボリュームテクスチャをサポートしている場合は、D3DPRIMCAPS8 構造体 (D3DCAPS8 の一部) の**Dwtexturecaps**フィールドに D3DPTEXTURECAPS\_volumemap を設定する必要があります。 D3DPTEXTURECAPS\_MIPVOLUMEMAP は、ドライバーが MIP マップボリュームテクスチャをサポートしていることを示します。
 
-ボリューム テクスチャをサポートするハードウェアでは、(他のボリューム テクスチャまたはテクスチャ 2D と組み合わせて) マルチ テクスチャ リングのシナリオでもボリューム テクスチャの使用をサポートする必要があります。 このシナリオは、ハードウェアでサポートされていない、ドライバーは D3DPTEXTURECAPS を設定できません\_VOLUMEMAP します。
+ボリュームテクスチャをサポートするハードウェアでは、マルチテクスチャのシナリオでのボリュームテクスチャの使用もサポートする必要があります (他のボリュームテクスチャや2D テクスチャと組み合わせて)。 このシナリオがハードウェアでサポートされていない場合、ドライバーは D3DPTEXTURECAPS\_VOLUMEMAP を設定できません。
 
-D3DPTEXTURECAPS プリミティブ テクスチャ機能を設定して 2 の累乗であることをボリューム テクスチャの大きさが必要である、ドライバーが分かります\_VOLUMEMAP\_POW2 します。
+ドライバーは、プリミティブテクスチャ機能 D3DPTEXTURECAPS\_VOLUMEMAP\_POW2 に設定することによって、ボリュームテクスチャの大きさを2の累乗にする必要があることを示している可能性があります。
 
-ボリューム テクスチャをサポートしているドライバーがサポートされる最小値と最大ボリューム テクスチャの大きさを指定するも必要です。 フィールド**MaxVolumeExtent**ボリューム テクスチャのサポートされている最大サイズに設定する必要があります。 ボリュームのテクスチャ (幅、高さ、深度) の 3 つすべてのディメンションに同じ制約を適用する必要があります。
+ボリュームテクスチャをサポートするドライバーは、サポートされる最小および最大のボリュームテクスチャの寸法を指定するためにも必要です。 **Maxvolumeextent**フィールドは、ボリュームテクスチャのサポートされている最大サイズに設定する必要があります。 同じ制約は、ボリュームテクスチャの3次元すべて (幅、高さ、および深度) に適用する必要があります。
 
-ドライバーはボリューム テクスチャ フィルタ リングとテクスチャを設定して、ハードウェアでサポートされるモードをアドレス指定のランタイムを通知、 **VolumeTextureFilterCaps**と**VolumeTextureAddressCaps**に、フラグの適切な組み合わせです。
+ドライバーは、ボリュームテクスチャのフィルター処理と、ハードウェアでサポートされているテクスチャのアドレス指定モードをランタイムに通知します。これを行うには、 **volumetexを**適切なフラグの**組み合わせに設定**します。
 
-最後に、ドライバーに通知についてどのような画面が書式設定、ランタイムは、設定、D3DFORMAT ボリューム テクスチャで使用できる\_OP\_で VOLUMETEXTURE、 **dwOperations**サーフェイス形式ののフィールド[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)します。
+最後に、ドライバーは、surface 形式の[**Ddのピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)の**dwoperations**フィールドで D3DFORMAT\_OP\_volumetexture を設定することによって、ボリュームテクスチャで使用できるサーフェイス形式をランタイムに通知します。
 
  
 

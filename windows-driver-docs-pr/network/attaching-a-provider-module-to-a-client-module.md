@@ -3,50 +3,50 @@ title: クライアント モジュールへのプロバイダー モジュー�
 description: クライアント モジュールへのプロバイダー モジュールのアタッチ
 ms.assetid: 5c68273e-d343-4d83-8703-957960934136
 keywords:
-- ネットワーク モジュールのアタッチ
-- ネットワーク モジュールの登録
-- ネットワーク モジュール レジストラー WDK は、ネットワーク モジュールのアタッチ
-- ネットワーク モジュールのアタッチ、NMR WDK
-- プロバイダー モジュール アタッチ WDK ネットワーク モジュール レジストラー
-- ネットワーク モジュール WDK ネットワーク モジュールの登録、添付ファイル
+- ネットワークモジュールの接続
+- 登録 (ネットワークモジュールを)
+- ネットワークモジュールレジストラー WDK、ネットワークモジュールの接続
+- NMR WDK、アタッチ (ネットワークモジュールを)
+- プロバイダーモジュール WDK ネットワークモジュールレジストラー、アタッチ
+- ネットワークモジュール WDK ネットワークモジュールレジストラー、添付ファイル
 - NmrClientAttachProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b86d68fbdd57f01a859393c07d96efad1aa1f798
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 09c7aaa8a31e0038ebcc780b84c81a71a3431a0b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384421"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838224"
 ---
 # <a name="attaching-a-provider-module-to-a-client-module"></a>クライアント モジュールへのプロバイダー モジュールのアタッチ
 
 
-クライアント モジュールを呼び出す、 [ **NmrClientAttachProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientattachprovider)プロバイダー モジュールに接続する関数。 クライアント モジュールをプロバイダー モジュールに接続する方法の詳細については、次を参照してください。[プロバイダー モジュールへのクライアント モジュール](attaching-a-client-module-to-a-provider-module.md)します。
+クライアントモジュールは、 [**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)関数を呼び出して、プロバイダーモジュールにそれ自体をアタッチします。 クライアントモジュールをプロバイダーモジュールにアタッチする方法の詳細については、「[プロバイダーモジュールへのクライアントモジュールのアタッチ](attaching-a-client-module-to-a-provider-module.md)」を参照してください。
 
-クライアント モジュールを呼び出すと[ **NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientattachprovider)、NMR 呼び出し、プロバイダー モジュールの[ *ProviderAttachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数。 NMR がプロバイダーのモジュールを呼び出したときに*ProviderAttachClient*コールバック関数では、合格したで、 *ClientRegistrationInstance*パラメーターへのポインター、 [ **NPI\_登録\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance)を呼び出したクライアント モジュールに関連付けられている構造**NmrClientAttachProvider**します。 プロバイダー モジュールの*ProviderAttachClient*コールバック関数は、データを使用して、クライアントのモジュールで**NPI\_登録\_インスタンス**データを構成します。[**NPI\_MODULEID** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))構造と[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)-特定のクライアントの特性構造が、が指す**ModuleId**と**NpiSpecificCharacteristics**クライアントのモジュールのメンバー **NPI\_登録\_インスタンス**構造体かどうかは、クライアント モジュールに接続を確認します。
+クライアントモジュールが[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)を呼び出すと、NMR はプロバイダーモジュールの[*providerattachclient*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数を呼び出します。 NMR は、プロバイダーモジュールの*Providerattachclient*コールバック関数を呼び出すと、 *clientregistrationinstance*パラメーターに、関連付けられている[**NPI\_REGISTRATION\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance)構造へのポインターを渡します。クライアントモジュールで**NmrClientAttachProvider**を呼び出します。 プロバイダーモジュールの*Providerattachclient*コールバック関数は、クライアントモジュールの**NPI\_登録\_インスタンス**構造のデータ、MODULEID 構造体とネットワークの[ **\_** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))データを使用できます。 [プログラミングインターフェイス (NPI)](network-programming-interface.md)固有のクライアント特性構造によってポイントされている**ModuleId**と**npiNPI の特性**のメンバーは、クライアントモジュールの **\_登録\_インスタンス**クライアントモジュールにアタッチするかどうかを決定する構造体。
 
-プロバイダーのモジュール プロバイダー モジュールのクライアントのモジュールを接続すると判断した場合[ *ProviderAttachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数は、次を実行する必要があります。
+プロバイダーモジュールによってクライアントモジュールにアタッチされることが判断された場合、プロバイダーモジュールの[*Providerattachclient*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数は次の操作を行う必要があります。
 
--   割り当ておよびクライアント モジュールに添付ファイルのバインド コンテキストの構造体を初期化します。
+-   クライアントモジュールに、添付ファイルのバインディングコンテキスト構造を割り当てて初期化します。
 
--   渡されたバインド ハンドルを保存、 *NmrBindingHandle*パラメーター。
+-   *NmrBindingHandle*パラメーターで渡されたバインドハンドルを保存します。
 
--   渡されたポインターを保存、 *ClientBindingContext*と*ClientDispatch*パラメーター プロバイダー モジュールは、クライアントのモジュールの NPI コールバック関数への呼び出しを行うことができるようにします。
+-   プロバイダーモジュールがクライアントモジュールの NPI コールバック関数を呼び出すことができるように、 *ClientBindingContext*パラメーターと*clientdispatch*パラメーターに渡されたポインターを保存します。
 
--   指す変数を設定、 *ProviderBindingContext*プロバイダー モジュールをポイントするパラメーターの context 構造にバインドします。
+-   *ProviderBindingContext*パラメーターが指す変数を、プロバイダーモジュールのバインディングコンテキスト構造を指すように設定します。
 
--   指す変数を設定、 *ProviderDispatch* NPI 関数のプロバイダー モジュールのディスパッチ テーブルを格納する構造体をポイントするパラメーター。
+-   プロバイダーモジュールの NPI functions のディスパッチテーブルを含む構造体を指すように、 *Providerdispatch*パラメーターが指す変数を設定します。
 
--   状態を返す\_成功します。
+-   STATUS\_SUCCESS に戻ります。
 
-プロバイダー モジュールでは、クライアント モジュールに添付ファイルのバインド コンテキストのクライアント ディスパッチ構造に、バインド ハンドル、クライアントのバインド コンテキストへのポインターとポインターが通常保存します。
+プロバイダーモジュールは通常、バインドハンドル、クライアントバインドコンテキストへのポインター、クライアントモジュールへのアタッチのバインドコンテキストにおけるクライアントディスパッチ構造へのポインターを保存します。
 
-プロバイダー モジュールの場合、 [ *ProviderAttachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数が返すステータス\_成功した場合、クライアントのモジュールおよびプロバイダー モジュールが正常に相互に接続されています。
+プロバイダーモジュールの[*Providerattachclient*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数が STATUS\_SUCCESS を返した場合、クライアントモジュールとプロバイダーモジュールは相互に正常にアタッチされています。
 
-プロバイダー モジュールを決定し、クライアントのモジュール、プロバイダー モジュールのアタッチがない場合[ *ProviderAttachClient* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数は、状態を返す必要があります\_NOINTERFACE します。
+プロバイダーモジュールがクライアントモジュールにアタッチされないと判断した場合、プロバイダーモジュールの[*Providerattachclient*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_provider_attach_client_fn)コールバック関数はステータス\_nointerface を返す必要があります。
 
-たとえば、"EXNPI"ネットワーク プログラミング インターフェイス (NPI) Exnpi.h のヘッダー ファイルで、次を定義します。
+たとえば、"EXNPI" ネットワークプログラミングインターフェイス (NPI) で、ヘッダーファイル Exnpi に次のものが定義されているとします。
 
 ```C++
 // EXNPI client characteristics structure
@@ -74,7 +74,7 @@ typedef struct EXNPI_PROVIDER_DISPATCH_ {
 } EXNPI_PROVIDER_DISPATCH, *PEXNPI_PROVIDER_DISPATCH;
 ```
 
-次のコード例では、どのように EXNPI NPI のプロバイダーとして登録されているプロバイダー モジュールに接続できる EXNPI NPI のクライアントとして登録されているクライアント モジュールには示しています。
+次のコード例は、EXNPI NPI のプロバイダーとして登録されているプロバイダーモジュールを、EXNPI NPI のクライアントとして登録されているクライアントモジュールにアタッチする方法を示しています。
 
 ```C++
 // Context structure for the provider

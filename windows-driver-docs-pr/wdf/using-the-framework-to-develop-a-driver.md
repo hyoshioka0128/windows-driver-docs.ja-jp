@@ -1,77 +1,77 @@
 ---
 title: WDF を使用したドライバーの開発
-description: このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーの開発に使用するフレームワーク オブジェクトの概要を説明します。
+description: このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーを開発するために使用するフレームワークオブジェクトの概要について説明します。
 ms.assetid: 421b7eb8-11d3-4a37-8ae8-e2d3d216c9c7
 keywords:
-- カーネル モード ドライバー WDK KMDF、開発手順
+- カーネルモードドライバー WDK KMDF、開発手順
 - KMDF WDK、開発手順
-- カーネル モード ドライバー フレームワーク WDK の開発手順
-- フレームワーク ベースのドライバー WDK KMDF、開発手順
+- カーネルモードドライバーフレームワーク WDK、開発手順
+- フレームワークベースのドライバー WDK KMDF、開発手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49901c8d3e27e388caee596d2fae5a3b42dcad0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b509745bced00ed952b294b862bd13c843ccde01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372201"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831967"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>WDF を使用したドライバーの開発
 
 
-このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーの開発に使用するフレームワーク オブジェクトの概要を説明します。 場所が示されるように、除く以降 UMDF バージョン 2 では、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーを開発するのに同じオブジェクトを使用します。
+このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーを開発するために使用するフレームワークオブジェクトの概要について説明します。 指定されている場合を除き、同じオブジェクトを使用して、UMDF バージョン2以降のユーザーモードドライバーフレームワーク (UMDF) ドライバーを開発します。
 
-Windows Driver Frameworks (WDF) ドライバーから成る、 [ **DriverEntry ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)と一連のイベントのコールバック関数で定義されている、 [Windows Driver Framework オブジェクト](wdf-objects.md)framework ベースのドライバーが使用されます。 コールバック関数では、フレームワークをエクスポートするオブジェクトのメソッドを呼び出します。 Windows Driver Kit (WDK) には、ドライバーのイベントのコールバック関数を実装する方法を示すサンプル WDF ドライバーが含まれています。 これらのサンプルをダウンロードすることができます、 [Windows デベロッパー センター - ハードウェア](https://go.microsoft.com/fwlink/p/?linkid=256387)します。 どのようなサンプルが使用可能な方法の詳細については、次を参照してください。[サンプル KMDF ドライバー](sample-kmdf-drivers.md)と[サンプル UMDF ドライバー](sample-umdf-drivers.md)します。
+Windows Driver framework (WDF) ドライバーは、 [**Driverentry ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)と、フレームワークベースのドライバーが使用する[windows ドライバーフレームワークオブジェクト](wdf-objects.md)によって定義される一連のイベントコールバック関数で構成されています。 コールバック関数は、フレームワークによってエクスポートされるオブジェクトメソッドを呼び出します。 Windows Driver Kit (WDK) には、ドライバーのイベントコールバック関数を実装する方法を示すサンプル WDF ドライバーが含まれています。 これらのサンプルは、 [Windows デベロッパーセンターのハードウェア](https://go.microsoft.com/fwlink/p/?linkid=256387)からダウンロードできます。 使用できるサンプルの詳細については、「 [KMDF ドライバー](sample-kmdf-drivers.md)のサンプル」および「サンプルの[UMDF ドライバー](sample-umdf-drivers.md)」を参照してください。
 
-WDF のドライバーを作成するときに通常、以下の。
+WDF ドライバーを作成する場合は、通常、次の操作を行います。
 
--   使用して、 *framework ドライバー オブジェクト*ドライバーを表すため。
+-   *フレームワークドライバーオブジェクト*を使用して、ドライバーを表します。
 
-    ドライバーの[ **DriverEntry ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)呼び出す必要があります[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)を表すフレームワーク ドライバー オブジェクトを作成しますドライバー。 **WdfDriverCreate**メソッドには、ドライバーの登録も[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数は、各フレームワークの時間をプラグ アンド プレイ (PnP)マネージャーは、ドライバーがサポートするデバイスの存在をレポートします。
+    ドライバーの[**Driverentry ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)は、 [**wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出して、ドライバーを表すフレームワークドライバーオブジェクトを作成する必要があります。 また、 **Wdfdrivercreate**メソッドは、ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数も登録します。これは、プラグアンドプレイ (PnP) マネージャーが、ドライバーがサポートするデバイスの存在を報告するたびに呼び出されます。
 
--   使用*framework デバイス オブジェクト*ドライバー、PnP や電源管理をサポートするためにします。
+-   *フレームワークデバイスオブジェクト*を使用して、ドライバーの PnP および電源管理をサポートします。
 
-    すべてのドライバーを呼び出す必要があります[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)各デバイス ドライバーをサポートするフレームワーク デバイス オブジェクトを作成します。 デバイスは、コンピューターに接続されているハードウェアを指定できますか、ソフトウェア専用デバイスであることができます。 PnP デバイス オブジェクトのフレームワークをサポートし、電源管理操作とドライバーは、デバイスに入るか出るの稼働状態になったときに、ドライバーを通知するイベントのコールバック関数を登録できます。
+    すべてのドライバーは[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、ドライバーがサポートする各デバイスのフレームワークデバイスオブジェクトを作成する必要があります。 デバイスは、コンピューターに接続されているハードウェアの一部である場合もあれば、ソフトウェアのみのデバイスである場合もあります。 フレームワークデバイスオブジェクトは、PnP および電源管理操作をサポートしています。また、ドライバーは、デバイスが動作状態に入ったとき、または動作状態から出たときにドライバーに通知するイベントコールバック関数を登録できます。
 
-    Framework デバイス オブジェクトの詳細については、次を参照してください。 [PnP をサポートしていると、ドライバーでの電源管理](supporting-pnp-and-power-management-in-your-driver.md)します。
+    フレームワークデバイスオブジェクトの詳細については、「[ドライバーでの PnP および電源管理のサポート](supporting-pnp-and-power-management-in-your-driver.md)」を参照してください。
 
--   使用*framework キュー オブジェクト*と*framework 要求オブジェクト*ドライバー、I/O 操作をサポートするためにします。
+-   *フレームワークキューオブジェクト*と*フレームワーク要求オブジェクト*を使用して、ドライバーの i/o 操作をサポートします。
 
-    読み取り、書き込み、またはデバイスの I/O を受信するすべてのドライバーがアプリケーションからの要求を制御したり、他のドライバーを呼び出す必要があります[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)フレームワークの I/O キューを表すキュー オブジェクトを作成します。 通常、ドライバーは、1 つまたは複数を登録[要求ハンドラー](request-handlers.md) I/O キューごとにします。 I/O マネージャーでは、ドライバー、I/O 要求を送信するときにフレームワークは要求に対するフレームワークの要求オブジェクトを作成、要求オブジェクトを I/O キューに配置し、要求が使用できることをドライバーに通知するために、ドライバーの要求ハンドラーの 1 つを呼び出します。 ドライバーは、I/O 要求を取得およびことができますをもう一度キュー、完了、キャンセル、または要求を転送します。
+    アプリケーションまたはその他のドライバーからの読み取り、書き込み、またはデバイスの i/o 制御要求を受信するすべてのドライバーは、 [**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)を呼び出して、i/o キューを表すフレームワークキューオブジェクトを作成する必要があります。 通常、ドライバーは、i/o キューごとに1つまたは複数の[要求ハンドラー](request-handlers.md)を登録します。 I/o マネージャーがドライバーに i/o 要求を送信すると、フレームワークは要求のフレームワーク要求オブジェクトを作成し、要求オブジェクトを i/o キューに配置して、ドライバーの要求ハンドラーの1つを呼び出して、要求が使用可能であることをドライバーに通知します。 ドライバーは i/o 要求を取得し、要求のキューへ、完了、取り消し、または転送を行うことができます。
 
-    詳細については、フレームワークのキュー オブジェクトとの要求オブジェクトを使用して、次を参照してください。 [Framework キュー オブジェクト](framework-queue-objects.md)と[Framework 要求オブジェクト](framework-request-objects.md)します。
+    フレームワークのキューオブジェクトと要求オブジェクトの使用の詳細については、「[フレームワークキューオブジェクト](framework-queue-objects.md)」と「[フレームワーク要求オブジェクト](framework-request-objects.md)」を参照してください。
 
--   使用*framework 割り込みオブジェクト*デバイス割り込みを処理します。
+-   デバイスの割り込みを処理するには、*フレームワークの interrupt オブジェクト*を使用します。
 
-    デバイスの割り込みを処理するドライバーを呼び出す必要があります[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)を各割り込みの framework 割り込みオブジェクトを作成し、コールバック関数を登録します。 これらのコールバック関数を有効にして、割り込みを無効にする割り込みサービス ルーチン (ISR) として機能し、割り込みのプロシージャ呼び出し (DPC) の遅延。
+    デバイスの割り込みを処理するドライバーは、 [**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)を呼び出して、各割り込みのフレームワーク割り込みオブジェクトを作成し、コールバック関数を登録する必要があります。 これらのコールバック関数は、割り込みを有効または無効にし、割り込みの割り込みサービスルーチン (ISR) と遅延プロシージャ呼び出し (DPC) として機能します。
 
-    フレームワークの割り込みのオブジェクトの詳細については、次を参照してください。[ハードウェアの割り込み処理](handling-hardware-interrupts.md)します。
+    フレームワークの割り込みオブジェクトの詳細については、「[ハードウェア割り込みの処理](handling-hardware-interrupts.md)」を参照してください。
 
--   KMDF ドライバーは、framework を使用して*DMA イネーブラー オブジェクト*と*DMA トランザクション オブジェクト*デバイスのダイレクト メモリ アクセス (DMA) 操作を処理します。
+-   KMDF ドライバーでは、フレームワークの*dma イネーブラーオブジェクト*と*dma トランザクションオブジェクト*を使用して、デバイスのダイレクトメモリアクセス (dma) 操作を処理できます。
 
-    KMDF ドライバーのデバイスでは、DMA 操作をサポートする場合、ドライバーを呼び出す必要があります[ **WdfDmaEnablerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate) DMA イネーブラー オブジェクトを作成して[ **WdfDmaTransactionCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate) 1 つまたは複数の DMA トランザクション オブジェクトを作成します。 DMA のトランザクション オブジェクトを定義、 [ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma) DMA 操作を実行するデバイスのハードウェアをプログラムするコールバック関数。
+    KMDF ドライバーのデバイスが DMA 操作をサポートしている場合、ドライバーは[**WdfDmaEnablerCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate)を呼び出して dma イネーブラーオブジェクトと[**Wdfdmatransactioncreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate)を作成し、1つまたは複数の dma トランザクションオブジェクトを作成する必要があります。 DMA トランザクションオブジェクトは、デバイスハードウェアが DMA 操作を実行するようにプログラムする[*Evtprogramdma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)コールバック関数を定義します。
 
-    DMA 操作のサポートの詳細については、次を参照してください。 [Framework ベースのドライバーの DMA 操作を処理](handling-dma-operations-in-kmdf-drivers.md)します。
+    DMA 操作のサポートの詳細については、「[フレームワークベースのドライバーでの Dma 操作の処理](handling-dma-operations-in-kmdf-drivers.md)」を参照してください。
 
--   使用して、フレームワークの*I/O ターゲット オブジェクト*I/O 要求を他のドライバーに送信します。
+-   フレームワークの i/o*ターゲットオブジェクト*を使用して、他のドライバーに i/o 要求を送信します。
 
-    I/O 要求を他のドライバー (通常、[次へ] 下位のドライバーはドライバー スタックで) で渡すには、ドライバーは、I/O のターゲット オブジェクトに、要求を送信します。
+    I/o 要求を他のドライバー (通常はドライバースタック内の次の下位のドライバー) に渡すために、ドライバーは i/o ターゲットオブジェクトに要求を送信します。
 
-    I/O ターゲット オブジェクトの詳細については、次を参照してください。[を使用して I/O ターゲット](using-i-o-targets.md)します。
+    I/o ターゲットオブジェクトの詳細については、「 [I/o ターゲットの使用](using-i-o-targets.md)」を参照してください。
 
--   フレームワークのことができます、KMDF ドライバーを使用して、 *WMI プロバイダー オブジェクト*と*WMI インスタンス オブジェクト*Windows Management Instrumentation (WMI) の機能をサポートします。
+-   KMDF ドライバーは、フレームワークの*wmi プロバイダーオブジェクト*と*wmi インスタンスオブジェクト*を使用して、Windows Management Instrumentation (wmi) 機能をサポートできます。
 
-    KMDF ドライバーのほとんどは、WMI をサポートする必要があり、呼び出す必要があります[ **WdfWmiInstanceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)送信または WMI データを受信するコールバック関数を登録します。
+    ほとんどの KMDF ドライバーは WMI をサポートしている必要があり、 [**WdfWmiInstanceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)を呼び出して、wmi データを送受信するコールバック関数を登録する必要があります。
 
-    WMI の詳細については、次を参照してください。 [Framework ベースのドライバーでサポートしている WMI](supporting-wmi-in-kmdf-drivers.md)します。
+    WMI の詳細については、「[フレームワークベースのドライバーでの wmi のサポート](supporting-wmi-in-kmdf-drivers.md)」を参照してください。
 
 -   フレームワークの同期機能を使用します。
 
-    すべてのドライバーのマルチプロセッサ同期の問題に注意する必要があり、使用する必要があります[同期手法](synchronization-techniques-for-wdf-drivers.md)フレームワークを提供します。
+    すべてのドライバーは、マルチプロセッサの同期の問題を認識している必要があり、フレームワークが提供する[同期手法](synchronization-techniques-for-wdf-drivers.md)を使用する必要があります。
 
--   その他のオブジェクトとフレームワークを提供する機能を使用します。
+-   フレームワークによって提供される追加のオブジェクトと機能を使用します。
 
-    フレームワークは、ドライバーを使用して追加のオブジェクトを提供します。 これらのオブジェクトの詳細については、次を参照してください。 [WDF サポート オブジェクト](wdf-support-objects.md)します。
+    このフレームワークには、ドライバーが使用できる追加のオブジェクトが用意されています。 これらのオブジェクトの詳細については、「 [WDF Support objects](wdf-support-objects.md)」を参照してください。
 
  
 

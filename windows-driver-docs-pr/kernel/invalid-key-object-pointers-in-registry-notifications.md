@@ -4,39 +4,39 @@ description: レジストリ通知内の無効なキー オブジェクト ポ�
 ms.assetid: 96709c34-63a7-4b4e-8588-c7e8b41b5dea
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7598a0837c6666f8422e3779cbeefa2d737cdd01
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e27951dd07df2182492e3e72ff922367df229d74
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381695"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828164"
 ---
 # <a name="invalid-key-object-pointers-in-registry-notifications"></a>レジストリ通知内の無効なキー オブジェクト ポインター
 
 
-致命的なエラーやメモリ破損の可能性を避けるため、無効なオブジェクト ポインターを使用して、キー オブジェクトへのアクセスにレジストリのフィルター ドライバーしないでください。 このトピックでは、状況、**オブジェクト**レジストリ コールバック通知構造体のメンバーを含む可能性があります、未定義以外**NULL**値。
+致命的なエラーやメモリ破損の可能性を回避するために、レジストリフィルタリングドライバーは、無効なオブジェクトポインターを使用してキーオブジェクトにアクセスしようとすることはできません。 このトピックでは、レジストリコールバックの通知構造体の**オブジェクト**メンバーに、未定義の**NULL**でない値が含まれている可能性がある状況を示します。
 
-ドライバーの 2 番目のパラメーターをフィルター処理、レジストリで、 [ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)ルーチンは、 [ **REG\_通知\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_reg_notify_class)列挙値。 この値は、構造体の 3 番目のパラメーターをレジストリ コールバック通知の種類を示します、 *RegistryCallback*ルーチンをポイントします。 通知の構造体には、レジストリの操作に関する情報が含まれています。 この構造体の型は、実行されているレジストリ操作によって異なります。
+レジストリフィルタリングドライバーでは、 [*Registrycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function)ルーチンの2番目のパラメーターは、 [**REG\_NOTIFY\_CLASS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_reg_notify_class)列挙値です。 この値は、 *registrycallback*ルーチンの3番目のパラメーターが指しているレジストリコールバック通知構造の種類を示します。 通知構造体には、レジストリ操作に関する情報が含まれます。 この構造体の型は、実行されているレジストリ操作によって異なります。
 
-多くの通知の種類の構造を含む、**オブジェクト**キー オブジェクトを指すメンバー。 場合によってで、**オブジェクト**メンバー以外の値を含めることができます**NULL**が有効なキー オブジェクトへのポインターではありません。
+多くの通知構造体の型には、キーオブジェクトを指す**オブジェクト**メンバーが含まれています。 場合によっては、**オブジェクト**メンバーに**NULL**以外の値を含めることができますが、有効なキーオブジェクトへのポインターではありません。
 
-### <a name="key-object-value-is-undefined"></a>キー オブジェクトの値は未定義
+### <a name="key-object-value-is-undefined"></a>キーオブジェクトの値が定義されていません
 
-場合の呼び出しでは、2 番目のパラメーター、 *RegistryCallback*フィルター ドライバーのレジストリのルーチンは、 **REG\_通知\_クラス**列挙値の**RegNtPostCreateKeyEx**または**RegNtPostOpenKeyEx**、3 番目のパラメーターはへのポインターを[ **REG\_POST\_操作\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)構造体。 **オブジェクト**この構造体のメンバーは有効な場合にのみ、**状態**構造体のメンバーの状態に設定されます\_成功します。 その他の**状態**を 0 以外のステータス コードを含め、値、 **NT\_成功**に評価されるマクロ**TRUE**、ことを示します、の値**オブジェクト**メンバーは定義されていません。
+レジストリフィルタードライバーの*Registrycallback*ルーチンの呼び出しの2番目のパラメーターが、 **REG\_NOTIFY\_CLASS**列挙値の**regntpostcreatekeyex**または**regntpostcreatekeyex**の場合、3番目のパラメーターになります。パラメーターは、 [**REG\_POST\_操作\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)構造体へのポインターです。 この構造体の**オブジェクト**メンバーは、構造体の**STATUS**メンバーが status\_SUCCESS に設定されている場合にのみ有効です。 **NT\_SUCCESS**マクロが**TRUE**と評価される0以外のステータスコードを含む、その他の**ステータス**値は、**オブジェクト**メンバーの値が未定義であることを示します。
 
-### <a name="key-object-value-is-not-in-a-valid-state"></a>キー オブジェクトの値が有効な状態にありません。
+### <a name="key-object-value-is-not-in-a-valid-state"></a>キーオブジェクトの値が有効な状態ではありません
 
-レジストリのコールバックでは、2 番目のパラメーターは、次のいずれかのかどうかは**REG\_通知\_クラス**列挙の値、**オブジェクト**レジストリ コールバック通知のメンバー構造体は、キー オブジェクトが破棄されると、参照カウントがゼロにポイントします。
+レジストリコールバックの2番目のパラメーターが、次のいずれかの**REG\_通知\_クラス**列挙値の場合、レジストリコールバック通知構造の**オブジェクト**メンバーは、破棄されているキーオブジェクトを指します。参照カウントが0の場合:
 
--   **RegNtPreKeyHandleClose** ([**REG\_キー\_処理\_閉じる\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_key_handle_close_information)構造)
+-   **Regntprekeyhandleclose** ([**REG\_KEY\_ハンドル\_閉じ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_key_handle_close_information)構造)
 
--   **RegNtPostKeyHandleClose** ([**REG\_POST\_操作\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)構造)
+-   **Regntpostkeyhandleclose** ([**REG\_POST\_操作\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)構造)
 
--   **RegNtCallbackObjectContextCleanup** ([**REG\_コールバック\_コンテキスト\_クリーンアップ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_callback_context_cleanup_information)構造)
+-   **Regntcallback Objectcontextcleanup** ([**REG\_コールバック\_コンテキスト\_クリーンアップ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_callback_context_cleanup_information)構造)
 
-**オブジェクト**ドライバーをフィルター処理、レジストリ、有効な状態でないキー オブジェクトへのポインターをメンバーに渡す必要がありますいない、**オブジェクト**ポインター値をパラメーターとして、 [Windows ドライバールーチンをサポートして](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)(たとえば、 **ObReferenceObjectByPointer**)。
+**オブジェクト**メンバーは、有効な状態ではないキーオブジェクトを指しているため、レジストリフィルタリングドライバーは、**オブジェクト**ポインター値をパラメーターとして[Windows ドライバーサポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)に渡す必要があります (たとえば、 **ObReferenceObjectByPointer**)。
 
-ただし、中に、 [ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)処理への呼び出しを**RegNtPreKeyHandleClose**または**RegNtPostKeyHandleClose**通知では、レジストリのフィルター ドライバーを呼び出すことができます、 [configuration manager のルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)(たとえば、 [ **CmGetBoundTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmgetboundtransaction)) を受け取ると、レジストリ オブジェクトとして、パラメーター。
+ただし、 [*Registrycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function)呼び出しで**regntprekeyhandleclose**または**regntprekeyhandleclose**通知を処理するときに、レジストリフィルタドライバが[configuration manager ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を呼び出すことができます (たとえば、 [**CmGetBoundTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmgetboundtransaction))。レジストリオブジェクトをパラメーターとして受け取ります。
 
  
 

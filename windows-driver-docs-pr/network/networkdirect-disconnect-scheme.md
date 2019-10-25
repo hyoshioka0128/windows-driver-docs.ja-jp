@@ -1,44 +1,44 @@
 ---
 title: NetworkDirect 切断スキーム
-description: このセクションには、NetworkDirect の切断スキームがについて説明します
+description: このセクションでは、NetworkDirect 切断スキームについて説明します。
 ms.assetid: A7973588-5AED-494E-92CA-D5EFB2C7950A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76dcb490e174d25ef47b8f24dd20d0cab985217a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5aa61dc132426049d7e3f1169434b5b90ecf0393
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371216"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827127"
 ---
 # <a name="networkdirect-disconnect-scheme"></a>NetworkDirect 切断スキーム
 
 
-ここで説明されているスキームは、両方に適用されます[NDSPI](https://docs.microsoft.com/previous-versions/windows/desktop/cc904391(v=vs.85))バージョン 2 と[NDKPI](network-direct-kernel-programming-interface--ndkpi-.md)します。 次の用語が使用されます。
+ここで説明するスキームは、 [Ndspi](https://docs.microsoft.com/previous-versions/windows/desktop/cc904391(v=vs.85))バージョン2と[ndspi](network-direct-kernel-programming-interface--ndkpi-.md)の両方に適用されます。 使用される用語は次のとおりです。
 
--   ND は NDSPI または NDK を参照するために使用します。
--   *NdDisconnect* ND コンシューマーは正常な切断を開始するには、関数呼び出しを参照するために使用します。 これは、NDSPI [ **INDConnector::Disconnect**](https://docs.microsoft.com/previous-versions/windows/desktop/cc904364(v=vs.85))します。 NDKPI *NdkDisconnect* ([*NDK\_FN\_切断*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_disconnect))。
--   *NdDisconnectIndication* ND プロバイダーが正常に受信すると、ND プロバイダーによって、ND コンシューマーに配信を示す値を参照するために使用または何らかの理由 (以外のローカル接続が中止されたことを検出した場合、ピアから切断NDK コンシューマーの発行などの開始を所有*NdDisconnect*または*NdCloseConnector*)。
+-   ND は、NDSPI または NDK を参照するために使用されます。
+-   *Nddisconnect*は、正常な切断を開始するために ND コンシューマーが行う関数呼び出しを参照するために使用されます。 NDSPI の場合、これは[**Indconnector::D isconnect**](https://docs.microsoft.com/previous-versions/windows/desktop/cc904364(v=vs.85))です。 NDKPI の場合は、 *Ndkdisconnect* ([*NDK\_FN\_DISCONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_disconnect)) になります。
+-   *Nddisconnect を示す*値は、nd プロバイダーがピアからの正常な切断を受け取ったとき、または何らかの理由 (ローカル NDK 以外) によって接続が中止されたことを検出したときに、nd プロバイダーによって nd コンシューマーによって提供される指示を参照するために使用されます。独自の開始 ( *Nddisconnect*または*NdCloseConnector*の発行など)。
 
-以下は、A と B は、ND 接続の両側を参照してください。 A のコンシューマーが ND コンシューマー側に、プロバイダー、側に、ND プロバイダーを参照およびコンシューマー B/プロバイダー B が B. 側でこれらの同じエンティティを指す同様にA のコンシューマーを呼び出すと*NdDisconnect*、プロバイダーの A を正常に送信する必要がありますが B の側に通知を切断し、コンシューマー A の完了*NdDisconnect*要求のみの両方の次の条件が発生した場合。
+次に、A と B は ND 接続の両側を示しています。 コンシューマー A は側 A の ND コンシューマーを参照し、プロバイダー A は側 A の ND プロバイダーを参照します。同様のコンシューマー B/プロバイダー B は、B 側で同じエンティティを参照します。コンシューマー A が*Nddisconnect*を呼び出すと、プロバイダー a は、次の両方の条件が発生した場合にのみ、正常な切断通知をサイド B に送信し、コンシューマー a の*nddisconnect*要求を完了する必要があります。
 
--   次のいずれかの操作を行います。
-    -   正常な切断通知 B から受信した (A のコンシューマーが正常に完了につながる*NdDisconnect*)、または
-    -   接続の中断やタイムアウトなど、エラーが発生しました (A のコンシューマーにつながる*NdDisconnect*エラーで完了する)。
--   (サイレント成功フラグで投稿された作業要求 DMA アクティビティ) を含む QP 上のすべての DMA アクティビティが終了しました。
+-   次のいずれかを行います。
+    -   B (コンシューマー A の*Nddisconnect*が正常に完了することにつながる) からの正常な切断通知を受信します。
+    -   接続 abortion、タイムアウトなどのエラーが発生しました (コンシューマー A の*Nddisconnect*がエラーで完了するのを招きます)。
+-   QP のすべての DMA アクティビティが完了しました (サイレント-成功フラグが付けられた作業要求の DMA アクティビティを含む)。
 
-プロバイダ B が正常に受信すると、A から通知を切断またはことは、接続が中止され、B のプロバイダーが提供する必要がありますが検出された*NdDisconnectIndication*コンシューマー B コンシューマー B が呼び出されていない場合に*NdDisconnect*プロバイダー B は既ににします。 正常な受信後、通知を切断または中止イベントがローカルのコンシューマーを開始すると競合できます*NdDisconnect*、ローカルのコンシューマーが処理する準備をする必要があります、 *NdDisconnectIndication*ローカルのコンシューマーの呼び出し後に到着した*NdDisconnect*します。 なお、 *NdDisconnectIndication*作業要求が完了に関して一切の保証を行いません。
+プロバイダー b がに対して正常な切断通知を受け取ったとき、または接続が中止されたことが検出されると、プロバイダー b が既に "プロバイダー B に*Nddisconnect* *を呼び出し*ました" というメッセージが表示されます。 着信の正常な切断通知または abort イベントは、ローカルコンシューマーが*Nddisconnect*を開始したときに発生する可能性があるため、ローカルコンシューマーは、ローカルコンシューマーの呼び出し *後に到着した nddisconnect 通知を処理するように準備する必要があります。NdDisconnect*。 *Ndno*の表示では、作業要求の完了に関して保証が提供されないことに注意してください。
 
-コンシューマーでは、切断された QP またはコネクタを再利用することはできません。
+切断された QP またはコネクタをコンシューマーが再利用することはできません。
 
-NetworkDirect は、半分に閉じられた接続の概念はありません。 1 回*NdDisconnect*が完了した、接続が閉じられる完全 (成功または失敗) を使用します。
+NetworkDirect には、ハーフクローズ接続の概念がありません。 *Nddisconnect*が完了すると (成功または失敗)、接続は完全に閉じられます。
 
-コンシューマーは呼び出す必要があります通常*NdDisconnect*発信側キューにポストされた、すべての作業要求用の入力候補を取得した後にのみです。 それ以外の場合、 *NdDisconnect* true 正常な切断していない可能性があります。 プロバイダーにする必要はありません、コンシューマーがこのような作業要求未処理の場合は正常なサポートを切断します。
+通常、コンシューマーは、発信側キューにポストされたすべての作業要求に対して入力候補を取得した後に、 *Nddisconnect*を呼び出す必要があります。 そうしないと、 *Nddisconnect*が真の正常な切断につながることはありません。 コンシューマーがそのような作業要求を未処理のままにする場合、プロバイダーは正常な切断をサポートする必要はありません。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

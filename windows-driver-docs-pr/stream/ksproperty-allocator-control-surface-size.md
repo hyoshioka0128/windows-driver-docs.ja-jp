@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ
-description: KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパティは、キャプチャ操作が進行状況とすること (オーバーレイ Mixer) など、DirectDraw surface アロケーターを提供するフィルターをクライアントに通知オーバーレイの現在のサイズに関係なく固定サイズでは、Microsoft DirectDraw サーフェスを割り当てる必要があります。 このプロパティは省略可能です。
+title: KSK プロパティ\_アロケーター\_コントロール\_サーフェイス\_サイズ
+description: '\_アロケータープロパティ\_CONTROL\_SURFACE\_SIZE プロパティは、キャプチャ操作が進行中であること、および Microsoft DirectDraw が実行中であることを示す DirectDraw SURFACE アロケーター (オーバーレイミキサーなど) を提供するクライアントフィルターに通知します。サーフェイスは、オーバーレイの現在のサイズに関係なく、固定サイズで割り当てる必要があります。 このプロパティは省略可能です。'
 ms.assetid: fc759013-9dd7-44fc-a0d7-fd2585975966
 keywords:
-- KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE ストリーミング メディア デバイス
+- KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1b310806e9fac7a9cc10e1012f3b955cb18d804
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec8f3001e3c09a185323ff663d7912f8fab011bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386931"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832002"
 ---
-# <a name="kspropertyallocatorcontrolsurfacesize"></a>KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ
+# <a name="ksproperty_allocator_control_surface_size"></a>KSK プロパティ\_アロケーター\_コントロール\_サーフェイス\_サイズ
 
 
-KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパティは、キャプチャ操作が進行状況とすること (オーバーレイ Mixer) など、DirectDraw surface アロケーターを提供するフィルターをクライアントに通知オーバーレイの現在のサイズに関係なく固定サイズでは、Microsoft DirectDraw サーフェスを割り当てる必要があります。 このプロパティは省略可能です。
+\_アロケータープロパティ\_CONTROL\_SURFACE\_SIZE プロパティは、キャプチャ操作が進行中であること、および Microsoft DirectDraw が実行中であることを示す DirectDraw SURFACE アロケーター (オーバーレイミキサーなど) を提供するクライアントフィルターに通知します。サーフェイスは、オーバーレイの現在のサイズに関係なく、固定サイズで割り当てる必要があります。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_allocator_control_surface_size_ks"></span><span id="DDK_KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S</strong></a></p></td>
 <td><p>ULONGs のペア</p></td>
 </tr>
 </tbody>
@@ -61,14 +61,14 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 
  
 
-プロパティの値 (データの操作) は、1 組の幅を指定する ULONGs とオーバーレイ サーフェスの高さが。
+プロパティ値 (操作データ) は、オーバーレイサーフェスの幅と高さを指定する ULONGs のペアです。
 
 <a name="remarks"></a>注釈
 -------
 
-このプロパティをサポートするミニドライバーは、KSPROPERTY を返す\_アロケーター\_コントロール\_画面\_サイズ\_幅と高さのオーバーレイが必要なサーフェスを記述する S 構造体。 オーバーレイ Mixer では、このサイズのオーバーレイのサーフェスを割り当てます。 暗証番号 (pin) の接続中に、メディアの種類で指定されたサイズでない場合、ビデオはビデオ ポートではこのサイズに拡大縮小します。 その他のビデオ ポートでのスケーリングは行われません、VGA チップのスケーリング能力に関係なく。
+このプロパティをサポートするミニドライバーは、必要なオーバーレイサーフェイスの幅と高さを記述する\_コントロール\_\_\_SURFACE プロパティ\_アロケーターを返します。 オーバーレイミキサーは、このサイズのオーバーレイサーフェスを割り当てます。 Pin 接続中に MediaType で指定されたサイズでない場合、ビデオはビデオポートでこのサイズにスケーリングされます。 VGA チップのスケーリング機能に関係なく、ビデオポートでのその他のスケーリングは発生しません。
 
-ミキサーがその主な入力ピンのビデオ ポートを使用してこのプロパティのアップ ストリーム フィルターに接続されている場合、オーバーレイ Mixer は常にこの新しいプロパティを照会します。 そのフィルターがこのプロパティを実装していない場合、オーバーレイ Mixer でデータをキャプチャしていないととして正しく表示されるビデオを保持するために必要なビデオ ポートにビデオを拡大または縮小します。
+オーバーレイミキサーは、ミキサーがプライマリ入力ピンのビデオポートを介してこのプロパティの上流フィルターに接続されている場合、常にこの新しいプロパティを照会します。 このフィルターでこのプロパティが実装されていない場合、オーバーレイミキサーは、ビデオが正しく表示されるように、必要に応じてビデオポートでビデオのサイズを調整します。
 
 <a name="requirements"></a>要件
 ------------
@@ -81,7 +81,7 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)
+[**KSK プロパティ\_アロケーター\_コントロール\_サーフェイス\_サイズ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)
 
  
 

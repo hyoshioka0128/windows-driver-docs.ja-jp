@@ -3,75 +3,75 @@ title: ドライバーでの WMI のデータ ブロックとイベントのサ�
 description: ドライバーでの WMI のデータ ブロックとイベントのサポート
 ms.assetid: a5138413-3ec4-4c61-9f00-6604759532e9
 keywords:
-- WMI の WDK KMDF、データのブロック
-- WMI の WDK KMDF、イベント
-- WMI データ ブロック WDK KMDF の読み取り/書き込み
-- 読み取り専用の WMI データ ブロックの WDK KMDF
-- WDK KMDF、WMI のイベント
+- WMI WDK KMDF、データブロック
+- WMI WDK KMDF、イベント
+- WMI データブロックの読み取り/書き込み (WDK KMDF)
+- 読み取り専用 WMI データブロック WDK KMDF
+- イベント WDK KMDF、WMI
 - WDK KMDF のトレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b61ff8d7148b180071c6452e08e75b2ee851e937
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bb2c26586dcec4ff04ac83fb49b7b78c48a54122
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355923"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831678"
 ---
 # <a name="supporting-wmi-data-blocks-and-events-in-your-driver"></a>ドライバーでの WMI のデータ ブロックとイベントのサポート
 
 
-\[KMDF にのみ適用されます。\]
+\[は KMDF にのみ適用され\]
 
-フレームワーク ベースのドライバーでは、イベントのコールバック関数を提供することで WMI データ ブロックをサポートします。 ドライバーは、イベントを WMI クライアントに送信するオブジェクトのメソッドを呼び出すことによって WMI イベントをサポートします。
+フレームワークベースのドライバーは、イベントコールバック関数を提供することによって、WMI データブロックをサポートします。 ドライバーは、WMI クライアントにイベントを送信するオブジェクトメソッドを呼び出すことによって、WMI イベントをサポートします。
 
-### <a href="" id="supporting-read-write-wmi-data-blocks"></a> WMI データ ブロックの読み取り/書き込みをサポートしています。
+### <a href="" id="supporting-read-write-wmi-data-blocks"></a>読み取り/書き込み WMI データブロックのサポート
 
-WMI データ ブロック内の情報が読み取り可能で、WMI クライアントが書き込み可能な場合は、ドライバーが提供する必要があります、 [ *EvtWmiInstanceQueryInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)サービス クライアントのコールバック関数の読み取り要求、plus [ *EvtWmiInstanceSetInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)または[ *EvtWmiInstanceSetItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item)サービスをコールバック関数 (または両方)、クライアントの要求を記述します。
+Wmi データブロック内の情報が、WMI クライアントによって読み取りと書き込みが可能である場合、ドライバーは、クライアントの読み取り要求と[*Evtwmiinstancequeryinstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)を処理する[*Evtwmiinstancequeryinstance コールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)[*関数を提供する必要があります。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item)クライアントの書き込み要求を処理する EvtWmiInstanceSetItem コールバック関数 (またはその両方)。
 
-ドライバーが提供する必要がありますも、データ ブロックにドライバーは、クライアントの要求で実行するメソッドが含まれている場合、 [ *EvtWmiInstanceExecuteMethod* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)コールバック関数。
+ドライバーがクライアントの要求で実行するメソッドがデータブロックに含まれている場合、ドライバーは[*Evtwmiinstanceexecutemethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)コールバック関数も提供する必要があります。
 
-WMI データ ブロックが書き込み専用の場合 (つまり、WMI クライアント情報をデータ ブロックに書き込むことができますが、データ ブロックを読み取ることができません)、ドライバーが提供されない、 [ *EvtWmiInstanceQueryInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)コールバック関数。
+WMI データブロックが書き込み専用の場合 (つまり、WMI クライアントがデータブロックに情報を書き込むことができても、データブロックを読み取ることができない場合)、ドライバーは[*Evtwmiinstancequeryinstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)コールバック関数を提供しません。
 
-### <a href="" id="supporting-read-only-wmi-data-blocks"></a> 読み取り専用の WMI データ ブロックをサポートしています。
+### <a href="" id="supporting-read-only-wmi-data-blocks"></a>読み取り専用の WMI データブロックのサポート
 
-WMI データ ブロックの情報は、WMI クライアントによって変更できない場合、ドライバーが提供されない[ *EvtWmiInstanceSetInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)または[ *EvtWmiInstanceSetItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item)コールバック関数。 WMI クライアントからのデータ ブロックの情報の要求をサポートするために、ドライバーは、次のいずれかを実行できます。
+Wmi データブロック内の情報を WMI クライアントで変更できない場合、ドライバーは[*Evtwmiinstancesetinstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)または[*EvtWmiInstanceSetItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item) callback 関数を提供しません。 WMI クライアントからのデータブロック情報の要求をサポートするために、ドライバーは次のいずれかを実行できます。
 
--   提供、 [ *EvtWmiInstanceQueryInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance) WMI が指定したバッファーにドライバーが提供するデータをコピーするコールバック関数。
+-   ドライバーが提供するデータを WMI によって提供されるバッファーにコピーするために、 [*Evtwmiinstancequeryinstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)コールバック関数を指定します。
 
--   WMI インスタンス オブジェクトのデータ ブロックの情報を格納[コンテキスト領域](framework-object-context-space.md)、設定、 **UseContextForQuery**のインスタンスのメンバー [ **WDF\_WMI\_インスタンス\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/ns-wdfwmi-_wdf_wmi_instance_config)構造体を**TRUE**します。
+-   データブロックの情報を WMI インスタンスオブジェクトの[コンテキスト空間](framework-object-context-space.md)に格納し、インスタンスの[**WDF\_WMI\_\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_instance_config)の**UseContextForQuery**メンバーを**TRUE**に設定します。
 
-ドライバーが設定されている場合**UseContextForQuery**に**TRUE**フレームワークは、WMI クライアント インスタンスの情報を要求すると、WMI が指定したバッファーにインスタンス オブジェクトのコンテキストの領域をコピーします。 いいえ*EvtWmiInstanceXxx*ドライバーには、そのオブジェクト コンテキストの領域からの読み取り専用の固定長のデータを提供する 1 つの WMI インスタンスのみが含まれている場合は、コールバックが必要です。
+ドライバーで**UseContextForQuery**が**TRUE**に設定されている場合、wmi クライアントがインスタンスの情報を要求すると、インスタンスオブジェクトのコンテキスト空間が wmi によって指定されたバッファーにコピーされます。 ドライバーに、オブジェクトコンテキスト領域からの読み取り専用の固定長データを提供する単一の WMI インスタンスしかない場合、 *EvtWmiInstanceXxx*コールバックは必要ありません。
 
-ドライバーを提供できますも読み取り専用データ ブロックにドライバーは、クライアントの要求で実行するメソッドが含まれている場合、 [ *EvtWmiInstanceExecuteMethod* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)コールバック関数。
+読み取り専用のデータブロックに、ドライバーがクライアントの要求で実行するメソッドが含まれている場合、ドライバーは[*Evtwmiinstanceexecutemethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)コールバック関数を提供することもできます。
 
-### <a name="supporting-expensive-wmi-data-blocks"></a>高価な WMI データ ブロックをサポートしています。
+### <a name="supporting-expensive-wmi-data-blocks"></a>高価な WMI データブロックのサポート
 
-ドライバーは、その WMI データ ブロックの 1 つをサポートする比較的大量の動的なデータを収集し、ドライバーが、次の操作にする必要があります。
+ドライバーが WMI データブロックの1つをサポートするために比較的大量の動的データを収集する場合、ドライバーは次の操作を実行する必要があります。
 
--   設定して「コスト」するデータ ブロックを宣言、 **WdfWmiProviderExpensive**フラグ、**フラグ**WMI プロバイダー オブジェクトのメンバー [ **WDF\_WMI\_プロバイダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)構造体。
+-   WMI プロバイダーオブジェクトの[**WDF\_wmi\_provider\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)構造体の**Flags**メンバーに**WdfWmiProviderExpensive**フラグを設定して、データブロックを "高額" に宣言します。
 
--   提供、 [ *EvtWmiProviderFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)コールバック関数を有効にし、データのブロック、または呼び出しのデータ収集を無効にします[ **WdfWmiProviderIsEnabled。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiproviderisenabled)ドライバーが有効にする必要がありますまたはデータの収集を無効にするかどうかを判断します。
+-   データブロックのデータ収集を有効または無効にする[*Evtwmiproviderfunctioncontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)コールバック関数を指定するか、 [**WdfWmiProviderIsEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiproviderisenabled)を呼び出して、ドライバーでデータ収集を有効にするか無効にするかを決定します。
 
-ドライバーが設定されている場合、 **WdfWmiProviderExpensive**フラグ、フレームワークによって、 [ *EvtWmiProviderFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)を WMI クライアントの登録時にコールバック関数データ ブロックにアクセスします。 コールバック関数には、データを収集するドライバーの機能が有効にする必要があります。 WMI のすべてのクライアントは、データ ブロックの登録を削除する場合、フレームワーク、 *EvtWmiProviderFunctionControl*コールバック関数を再度、ドライバーはデータ収集を停止できるようにします。
+ドライバーで**WdfWmiProviderExpensive**フラグが設定されている場合、フレームワークは、WMI クライアントがデータブロックにアクセスするために登録するときに、 [*Evtwmiproviderfunctioncontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)コールバック関数を呼び出します。 コールバック関数では、ドライバーがデータを収集する機能を有効にする必要があります。 すべての WMI クライアントがデータブロックの登録を削除した場合、フレームワークは*Evtwmiproviderfunctioncontrol*コールバック関数を再度呼び出して、ドライバーがデータの収集を停止できるようにします。
 
-### <a name="supporting-wmi-events"></a>対応する WMI イベント
+### <a name="supporting-wmi-events"></a>WMI イベントのサポート
 
-ドライバーは、例外的な条件の WMI クライアントに通知するのに WMI イベントを使用できます。 (する必要がありますいないイベントを使用する WMI エラーのログ記録する代わりにします。)データ項目のように、WMI イベントは、管理オブジェクト フォーマット (.mof) ファイル内で WMI データ ブロックで定義されます。
+ドライバーは WMI イベントを使用して、WMI クライアントに例外条件を通知することができます。 (エラーをログに記録する代わりに、WMI イベントを使用しないでください)。データ項目と同様に、WMI イベントは、マネージオブジェクト形式 (.mof) ファイル内の WMI データブロックで定義されます。
 
-WMI クライアントは、WMI イベントの通知を登録します。 に登録されている WMI クライアントを、イベントを送信するには、ドライバーを呼び出し、 [ **WdfWmiInstanceFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiinstancefireevent)メソッド。 このメソッドは、必要に応じて、クライアントにイベント固有のデータを送信するドライバーを使用します。
+Wmi クライアントは、WMI イベントの通知を登録します。 登録されている WMI クライアントにイベントを送信するために、ドライバーは[**WdfWmiInstanceFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancefireevent)メソッドを呼び出します。 このメソッドを使用すると、ドライバーは必要に応じて、イベント固有のデータをクライアントに送信できます。
 
-イベントを定義する WMI データ ブロックには、WMI データ項目またはメソッドの項目も含まれています、ドライバーは、適切な WMI のコールバック関数を提供します。 データ ブロックでイベントを定義している場合、データまたはメソッドのアイテムが含まれていないには、ドライバーを設定する必要があります、 **WdfWmiProviderEventOnly**フラグ、**フラグ**WMI プロバイダー オブジェクトのメンバー [ **WDF\_WMI\_プロバイダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)構造体。
+イベントを定義する WMI データブロックにも WMI データ項目またはメソッド項目が含まれている場合、ドライバーは適切な WMI コールバック関数を提供します。 データブロックにイベントが定義されていても、データやメソッドの項目が含まれていない場合、ドライバーは wmi プロバイダーオブジェクトの[**WDF\_wmi\_provider\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)の**Flags**メンバーにある**WdfWmiProviderEventOnly**フラグを設定する必要があります。データ.
 
-ドライバーを呼び出す必要があります[ **WdfWmiInstanceFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiinstancefireevent)を WMI クライアントがイベント通知に登録されている場合にのみです。 ドライバーを調べるかどうかは呼び出す必要があります**WdfWmiInstanceFireEvent**指定するかによって、 [ *EvtWmiProviderFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)コールバック関数または呼び出し[**WdfWmiProviderIsEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiproviderisenabled)します。
+WMI クライアントがイベント通知用に登録されている場合にのみ、ドライバーは[**WdfWmiInstanceFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancefireevent)を呼び出す必要があります。 ドライバーは、 [*Evtwmiproviderfunctioncontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)コールバック関数を指定するか、 [**WdfWmiProviderIsEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiproviderisenabled)を呼び出すことによって、 **WdfWmiInstanceFireEvent**を呼び出す必要があるかどうかを判断できます。
 
-### <a name="supporting-wmi-event-tracing"></a>WMI イベントのトレースをサポートしています。
+### <a name="supporting-wmi-event-tracing"></a>サポート (WMI イベントトレースを)
 
-トレース イベントは、その他の WMI イベントと同様に、.mof ファイルで定義されます。 ドライバーは、トレース イベントの WMI プロバイダー オブジェクトを作成するときに設定する必要があります、 **WdfWmiProviderTracing**フラグ、**フラグ**プロバイダー オブジェクトのメンバー [ **WDF\_WMI\_プロバイダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)構造体。
+トレースイベントは、他の WMI イベントと同じ方法で、.mof ファイルで定義されます。 ドライバーがトレースイベントの WMI プロバイダーオブジェクトを作成するときは、プロバイダーオブジェクトの[**WDF\_wmi\_provider\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_provider_config)構造体の**Flags**メンバーで、 **WdfWmiProviderTracing**フラグを設定する必要があります。
 
-プロバイダーのインスタンスが登録されたら、ドライバーを呼び出すことが[ **WdfWmiProviderGetTracingHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiprovidergettracinghandle)トレース ハンドルを取得します。 ドライバーは、トレースのハンドルを使用してへの入力として、 [ **WmiTraceMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)ルーチン。
+プロバイダーインスタンスが登録されると、ドライバーは[**WdfWmiProviderGetTracingHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiprovidergettracinghandle)を呼び出してトレースハンドルを取得できます。 ドライバーは、 [**WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessage)ルーチンへの入力としてトレースハンドルを使用できます。
 
-イベントのトレースの詳細についてを参照してください。
+イベントトレースの詳細については、以下を参照してください。
 
 -   [WMI イベントのトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)
 

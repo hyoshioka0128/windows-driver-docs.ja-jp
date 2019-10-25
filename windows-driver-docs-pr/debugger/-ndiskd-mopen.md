@@ -1,9 +1,9 @@
 ---
-title: ndiskd.mopen
-description: Ndiskd.mopen 拡張機能には、ミニポートおよびプロトコル間のバインド情報が表示されます。
+title: ndiskd mopen
+description: Ndiskd mopen 拡張機能は、ミニポートとプロトコルの間のバインディングに関する情報を表示します。
 ms.assetid: 439c4647-8f3e-4473-aca8-364b5d2206e9
 keywords:
-- デバッグ ndiskd.mopen Windows
+- ndiskd mopen Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a27002fa3dec2f7cbf8e211de1912485066ce785
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 018e4917a2049e81bd74b742f99142140c4c2396
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364284"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837589"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
 
 
-**! Ndiskd.mopen**拡張機能は、ミニポートおよびプロトコル間のバインドに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd NDIS ミニポート ドライバーとプロトコル ドライバーのすべての開いているバインディングの一覧が表示されます。
+**! Ndiskd mopen**拡張機能には、ミニポートとプロトコルの間のバインディングに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、NDIS ミニポートドライバーとプロトコルドライバーの間のすべての開いているバインドの一覧が表示されます。
 
 ```console
 !ndiskd.mopen [-handle <x>] [-ref] 
 ```
 
-## <a name="span-idddkndiskdmopendbgspanspan-idddkndiskdmopendbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>パラメーター
+## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-NDIS のハンドルは、バインドを開きます。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+NDIS オープンバインドのハンドル。
 
 <span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
-開いているバインディングの refcounts を示しています。
+開いているバインドの refcounts を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-入力、! ndiskd.mopen コマンドは、開いているすべてのバインドの一覧を取得します。 この例では、Microsoft ISATAP アダプター間のバインドを探します\#2 ミニポートと TCPIP6TUNNEL プロトコル。 そのハンドルは、ffff8083e56b8110 です。
+! Ndiskd mopen コマンドを入力して、開いているすべてのバインドの一覧を取得します。 この例では、Microsoft ISATAP アダプター \#2 のミニポートと TCPIP6TUNNEL プロトコルの間のバインドを探します。 そのハンドルは ffff8083e56b8110 です。
 
 ```console
 3: kd> !ndiskd.mopen
@@ -77,7 +77,7 @@ Open ffff8083e504c770
   Protocol: ffff8083e19bfc10 - TCPIP6
 ```
 
-これで、ハンドルをクリックしますか、ハンドルを使用して、入力、 **! ndiskd.mopen-処理**コマンドで、データパス状態などの開いているそのバインドに関する詳細情報を確認し、パス情報を受信することができます。
+これでハンドルをクリックするか、ハンドルを使用して **! ndiskd. mopen-handle**コマンドを入力することができます。これにより、データパスの状態や受信パスの情報など、開いているバインドの詳細を確認できます。
 
 ```console
 3: kd> !ndiskd.mopen ffff8083e56b8110
@@ -104,18 +104,18 @@ RECEIVE PATH
     Frame Type(s)      0x86dd
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
  
 

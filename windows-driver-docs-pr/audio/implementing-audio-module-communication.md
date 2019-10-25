@@ -1,97 +1,97 @@
 ---
 title: オーディオ モジュール通信の実装
-description: オーディオのモジュールは、distinct、オーディオ処理ロジックの比較的アトミックな関数を実行するのです。
+description: オーディオモジュールは、比較的アトミックな関数を実行する、個別のオーディオ処理ロジックです。
 ms.date: 07/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f6d887cab55793345dd36fc677004cdd577d863
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7cda3dcefe3597ba6ffd5b2a10b051a435985b90
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359914"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833252"
 ---
 <a name="implementing-audio-module-communication"></a>オーディオ モジュール通信の実装
 ========================================================================================
 
-オーディオのモジュールは、distinct、オーディオ処理ロジックの比較的アトミックな関数を実行するのです。 オーディオのモジュールは、オーディオ ドライバーまたはオーディオ DSP に存在する可能性があります。 オーディオ モジュールの例は、オーディオ処理の DSP ベースになります。
+オーディオモジュールは、比較的アトミックな関数を実行する、個別のオーディオ処理ロジックです。 オーディオモジュールは、オーディオドライバーまたはオーディオ DSP に存在する場合があります。 オーディオモジュールの例としては、DSP ベースのオーディオ処理があります。
 
-1703 をリリース以降、Windows 10 では、Api と Ddi の両方からユニバーサル Windows プラットフォーム (UWP) アプリとカーネル モード デバイス ドライバーの通信をサポートするためには。
+Windows 10、リリース1703以降では、ユニバーサル Windows プラットフォーム (UWP) アプリおよびカーネルモードデバイスドライバーからの通信をサポートする Api と DDIs の両方が用意されています。
 
-このトピックでは、カーネル デバイス ドライバーのオーディオ モジュール通信を実装する情報を提供します。 
+このトピックでは、カーネルデバイスドライバーでのオーディオモジュール通信の実装について説明します。 
 
-コマンドを送信し、UWP アプリを使用してオーディオ デバイス モジュールからの変更通知を受信する方法については、次を参照してください。[とクエリの構成のオーディオ デバイス モジュール](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)します。
+UWP アプリを使用して、オーディオデバイスモジュールからコマンドを送信したり変更通知を受信したりする方法については、「[オーディオデバイスモジュールの構成とクエリ](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)」を参照してください。
 
-## <a name="why-use-audio-modules"></a>オーディオのモジュールを使用する理由
+## <a name="why-use-audio-modules"></a>オーディオモジュールを使用する理由
 
-Oem は通常により、お客様はこのオーディオ システムの側面をコントロールにユーザーのシステム構成アプリケーションをバンドルし、優先順位を調整します。 オーディオのサブシステムは、ホスト上のオーディオ オブジェクト、ハードウェアの DSP 処理、および (すべてのオーディオ コーデック自体だけでなく) スマート amp などの特殊なハードウェアの処理などのさまざまなコンポーネントを含めることができます。 ほとんどの場合これらのコンポーネントが作成され、さまざまなベンダーが販売されています。 従来、Ihv は、プライベート Api を 1 つ別と統合し、個々 のコンポーネント間で情報の送信を作成しました。 既存の WIN32 アプリケーションが構成し、これらのプライベート Api を活用します。
+Oem は、通常、ユーザーがこのオーディオシステムの側面を制御し、好みに合わせて調整できるように、システムに構成アプリケーションをバンドルします。 オーディオサブシステムには、ホスト上のオーディオ処理オブジェクト、ハードウェア DSP 処理、スマート amp などの特殊なハードウェア (オーディオコーデック自体に加えて、すべて) などのさまざまなコンポーネントを含めることができます。 ほとんどの場合、これらのコンポーネントは異なるベンダーによって作成および販売されます。 これまで、Ihv は独自のプライベート Api を作成して相互に統合し、個々のコンポーネント間で情報を送信していました。 その後、既存の WIN32 構成アプリケーションは、これらのプライベート Api を活用します。
 
-[ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)広範なデバイス間で実行する 1 つのアプリケーションを有効にする Api のセットを提供します。 UWP には、新しいと外観を Windows 10 で実行されるアプリケーションの顧客の期待になったも導入されました。 非常に多くの Oem は、UWP のオーディオ設定アプリケーションをビルドするようです。 ただし、UWP (AppContainer サンド ボックス) のコア セキュリティ機能は、オーディオのサブシステムでは、その他のコンポーネントをアプリケーションからの通信を防止します。 これは、UWP でアクセスできない構成アプリで使用していたプライベート Api を表示します。 
+[ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)は、1つのアプリケーションを幅広いデバイスで実行できるようにする api のセットを提供します。 UWP では、Windows 10 で実行されているアプリケーションに対する顧客の期待になる新しいルックアンドフィールも導入されました。 多くの Oem は、UWP でオーディオ構成アプリケーションを構築したいと考えています。 ただし、UWP (AppContainer サンドボックス) のコアセキュリティ機能は、アプリケーションからオーディオサブシステム内の他のコンポーネントへの通信を防止します。 これにより、UWP では構成アプリによって使用されていたプライベート Api がレンダリングされます。 
 
-1703 のリリース以降、Windows 10 では、オーディオ モジュールの UWP API は新しい KS プロパティ セットを探索可能である、カーネルおよびハードウェア層でのモジュールと通信するアプリケーションとユーザー モードのコンポーネントの構成を使用できます。
-オーディオの IHV、Isv は、アプリケーションと Windows によって提供される、明確に定義されたインターフェイスを使用して、ハードウェア モジュールと通信できるサービスを記述できます。 オーディオ モジュール API の詳細については、次を参照してください[Windows.Media.Devices Namespace。](https://docs.microsoft.com/uwp/api/Windows.Media.Devices)
+Windows 10 リリース1703以降、Audio Modules UWP API を使用すると、構成アプリケーションとユーザーモードコンポーネントは、新しい KS プロパティセットを使用して検出可能なカーネルおよびハードウェアレイヤー内のモジュールと通信できます。
+オーディオ IHV と Isv は、Windows によって提供される適切に定義されたインターフェイスを使用して、ハードウェアモジュールと通信できるアプリケーションやサービスを作成できます。 Audio modules API の詳細については、「 [Windows. Media. Devices 名前空間](https://docs.microsoft.com/uwp/api/Windows.Media.Devices)」を参照してください。
 
 
-<a name="span-idaudiomoduledefinitionsspanaudio-module-definitions"></a><span id="Audio_Module_Definitions"></span>オーディオのモジュールの定義
+<a name="span-idaudio_module_definitionsspanaudio-module-definitions"></a><span id="Audio_Module_Definitions"></span>オーディオモジュール定義
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-これらの定義は、オーディオのモジュールに固有です。
+これらの定義は、オーディオモジュールに固有のものです。
 
 用語 | 定義
 ------------ | -------------
-オーディオのモジュール    | オーディオの処理ロジックの比較的アトミックな関数の実行の個別の一部。 オーディオ ドライバーまたはオーディオ DSP があります。 オーディオ モジュールの例は、オーディオ処理オブジェクト (APO) になります。
+オーディオモジュール    | 比較的アトミックな関数を実行する、個別のオーディオ処理ロジック。 オーディオドライバーまたはオーディオ DSP に存在する可能性があります。 オーディオモジュールの例としては、オーディオ処理オブジェクト (APO) などがあります。
 
 
-<a name="span-idcommondefinitionsspancommon-audio-definitions"></a><span id="Common_Definitions"></span>オーディオの一般的な定義
+<a name="span-idcommon_definitionsspancommon-audio-definitions"></a><span id="Common_Definitions"></span>一般的なオーディオ定義
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-これらの定義は、通常、オーディオ ドライバーを使用する場合に使用されます。
+これらの定義は、通常、オーディオドライバーを操作するときに使用されます。
 
 用語 | 定義
 ------------ | -------------
 OEM | Original Equipment Manufacturer (相手先ブランド供給)
-IHV | 独立系ハードウェア ベンダー
-ISV | 独立系ソフトウェア ベンダー
+IHV | 独立系ハードウェアベンダー
+ISV | 独立系ソフトウェアベンダー
  |
-HSA | ハードウェア サポートのアプリケーション
+HSA | ハードウェアサポートアプリケーション
 UWP | ユニバーサル Windows プラットフォーム
  | 
-APO | オーディオ処理オブジェクト
+郵便局 | オーディオ処理オブジェクト
 DSP | デジタル信号処理
 
-<a name="span-idarchitecturespanarchitecture"></a><span id="Architecture"></span>アーキテクチャ 
+<a name="span-idarchitecturespanarchitecture"></a><span id="Architecture"></span>構造 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-オーディオのモジュールは、インプレース オーディオ コンポーネントのユーザー モードとカーネル モードの間でメッセージを送信する Windows のサポートされているメカニズムを配置します。 重要な違いは、オーディオのモジュールが、トランスポート パイプラインを標準化します。 そのトランスポート経由で通信プロトコルを確立しませんし、プロトコルを定義するには、Isv および ihv 向けに依存しています。 目的は、非常に小さな変更で、オーディオ モジュールを簡単に移行する既存のサード パーティ製の設計を許可します。
+オーディオモジュールは、ユーザーモードとカーネルモードのオーディオコンポーネント間でメッセージを送信するために、Windows でサポートされているメカニズムを配置します。 重要な違いは、オーディオモジュールはトランスポートパイプラインを標準化することです。 このトランスポートでは通信プロトコルが確立されず、Isv と Ihv に依存してプロトコルが定義されます。 この目的は、既存のサードパーティ製のデザインを簡単にオーディオモジュールに移行できるようにすることです。変更はほとんどありません。
 
 <Diagram Pending>
 
-オーディオ モジュール API は、2 つの異なるターゲット方法、モジュールへのアクセスを提供します。、KS wave フィルターと初期化の KS pin (ストリーム)。 配置と特定のモジュールへのアクセスは、特定の実装です。
+オーディオモジュール API は、2つの異なるターゲットメソッド (KS wave フィルターと初期化された KS pin (stream)) を介してモジュールにアクセスできるようにします。 特定のモジュールへの配置とアクセスは、実装固有のものです。
 
-HSAs や他のアプリケーションはのみにアクセスできる使用可能なモジュール フィルター ハンドルを使用します。 ストリームに読み込まれる個々 の画像は、ストリームにアクセスできるオブジェクトのみがオーディオのモジュールを対象とします。
+HSAs とその他のアプリケーションは、フィルターハンドルを通じて使用可能なモジュールにしかアクセスできません。 ストリームに読み込まれた個々の APOs は、ストリーム対象のオーディオモジュールにアクセスできる唯一のオブジェクトです。
 
-パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/audio/windows-audio-processing-objects)します。
+APOs の詳細については、「 [Windows オーディオ処理オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/audio/windows-audio-processing-objects)」を参照してください。
 
-### <a name="sending-commands"></a>コマンドを送信します。
+### <a name="sending-commands"></a>コマンドの送信
 
-オーディオのサブシステムのカーネルとハードウェア コンポーネントでオーディオのモジュールにコマンドを送信するオーディオ モジュールのクライアントの手段をクエリおよびパラメーターを変更することです。 オーディオ モジュール API のコマンド構造は、広義し、モジュールが検出され、自身を識別する方法を形式化します。 ただし、詳細なコマンド構造に設計されています、関連する ISV および IHV のプロトコルをどのようなメッセージを送信できるを確立するために、想定される応答によって実装される必要があります。
+オーディオモジュールクライアントがパラメーターを照会および変更するには、オーディオサブシステムのカーネルおよびハードウェアコンポーネントのオーディオモジュールにコマンドを送信します。 オーディオモジュール API のコマンド構造は、厳密に定義されており、モジュールの検出方法を形式化し、自身を識別します。 ただし、詳細なコマンドの構造は、関連する ISV と IHV によって設計および実装されている必要があります。これにより、送信できるメッセージと想定される応答のプロトコルが確立されます。
 
-### <a name="module-notifications-to-audio-module-clients"></a>オーディオのモジュールのクライアントに通知をモジュール
+### <a name="module-notifications-to-audio-module-clients"></a>オーディオモジュールクライアントへのモジュール通知
 
-オーディオのミニポートに連絡して、クライアントは、特定のモジュールでの通知にサブスクライブしている場合は、オーディオのモジュールのクライアントに情報を渡す方法があります。 これらの通知に渡された情報は、オーディオ モジュール API によって定義されていないではなく、ISV および IHV によって定義されます。
+また、オーディオミニポートには、クライアントが特定のモジュールで通知をサブスクライブしている場合に、オーディオモジュールクライアントに情報を通知して渡す方法もあります。 これらの通知で渡される情報は、音声モジュール API によって定義されるのではなく、ISV や IHV によって定義されます。
 
-### <a name="enable-disable-and-general-topology-information"></a>有効化、無効化、および一般的なトポロジの情報
+### <a name="enable-disable-and-general-topology-information"></a>有効化、無効化、および全般的なトポロジ情報
 
-オーディオ モジュール Api は、列挙、およびモジュールにコマンドを送信する方法を定義します。 ただし、Api は明示的に定義オーディオ モジュールのクライアントが有効にまたは特定のモジュールを無効にする方法。 また、クライアントがトポロジ情報または相互の関連モジュールの配置を検索するための方法は確立しません。 Ihv、Isv を調べるかどうかはこの機能が実装する方法を判断が必要です。
+オーディオモジュール Api は、モジュールにコマンドを列挙して送信する方法を定義します。 ただし、Api では、オーディオモジュールクライアントが特定のモジュールを有効または無効にする方法が明示的に定義されていません。 また、クライアントがトポロジ情報や、相互に関連するモジュールの配置を検索する方法を確立することもありません。 Ihv および Isv は、この機能が必要かどうかを判断し、実装方法を決定できます。
 
-推奨される方法には、ドライバーのグローバル モジュールが公開します。 ドライバーのグローバル モジュールは、これらトポロジの特定の要求にカスタム コマンドを処理します。
+グローバルドライバーモジュールを公開する方法をお勧めします。 グローバルドライバーモジュールは、これらのトポロジ固有の要求のカスタムコマンドを処理します。
 
-<a name="span-idaudiomoduleddisspanaudio-module-ddis"></a><span id="Audio_Module_DDIs"></span>オーディオ モジュール Ddi
+<a name="span-idaudio_module_ddisspanaudio-module-ddis"></a><span id="Audio_Module_DDIs"></span>オーディオモジュール DDIs
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
-**オーディオのモジュールのプロパティをストリーミングするカーネル** 
+**カーネルストリーミングオーディオモジュールのプロパティ** 
 
-新しい KS プロパティ セットで識別される[KSPROPSETID_AudioModule](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audiomodule)、オーディオのモジュールに固有の 3 つのプロパティが定義されています。 
+[KSPROPSETID_AudioModule](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audiomodule)によって識別される新しい KS プロパティセットが、オーディオモジュールに固有の3つのプロパティに対して定義されています。 
 
-PortCls ミニポート ドライバーでは、直接ヘルパー インターフェイスが指定されていない各プロパティの応答を処理する必要があります。
+PortCls ミニポートドライバーは、ヘルパーインターフェイスが提供されていないため、各プロパティの応答を直接処理する必要があります。
 
-#### <a name="ksmediah"></a>ksmedia.h:
+#### <a name="ksmediah"></a>ksmedia. h:
 
 ``` C++
 #define STATIC_KSPROPSETID_AudioModule \
@@ -106,11 +106,11 @@ typedef enum {
 } KSPROPERTY_AUDIOMODULE;
 ```
 
-### <a name="audio-module-descriptors"></a>オーディオ モジュール記述子
+### <a name="audio-module-descriptors"></a>オーディオモジュール記述子
 
-サポート、 [KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-descriptors)プロパティとして、オーディオのモジュールが認識されているドライバーを識別します。 フィルターまたは暗証番号 (pin) のハンドルを使用してクエリを実行する、プロパティと、KSPROPERTY、DeviceIoControl の呼び出しの入力バッファーとして渡されます。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)が定義されているオーディオ ハードウェア内で各モジュールについて説明します。 これらの記述子の配列は、この要求に応答で返される
+[KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-descriptors)プロパティのサポートによって、オーディオモジュール対応としてドライバーが識別されます。 プロパティは、フィルターまたはピンハンドルを介してクエリされ、DeviceIoControl 呼び出しの入力バッファーとして KSK プロパティが渡されます。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)は、オーディオハードウェア内の各モジュールを記述するように定義されています。 この要求に応答して、これらの記述子の配列が返されます。
 
-#### <a name="ksmediah"></a>ksmedia.h:
+#### <a name="ksmediah"></a>ksmedia. h:
 
 ``` C++
 #define AUDIOMODULE_MAX_NAME_SIZE 128
@@ -124,13 +124,13 @@ typedef struct _KSAUDIOMODULE_DESCRIPTOR
     WCHAR   Name[AUDIOMODULE_MAX_NAME_SIZE];
 } KSAUDIOMODULE_DESCRIPTOR, *PKSAUDIOMODULE_DESCRIPTOR;
 ```
-詳細については、次を参照してください。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)します。
+詳細については、「 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)」を参照してください。
 
-### <a name="audio-module-command"></a>オーディオのモジュールのコマンド
+### <a name="audio-module-command"></a>オーディオモジュールコマンド
 
-サポート、 [KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command)プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)カスタム コマンドを送信する入力バッファーにします。
+[KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command)プロパティをサポートすることで、オーディオモジュールクライアントがカスタムコマンドを送信し、オーディオモジュールのパラメーターを照会および設定できるようになります。 プロパティは、フィルターまたはピンハンドルを介して送信できます。 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)は、DeviceIoControl 呼び出しの入力バッファーとして渡されます。 クライアントは、必要に応じて、入力バッファー内の[KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)に隣接する追加情報を送信して、カスタムコマンドを送信できます。
 
-#### <a name="ksmediah"></a>ksmedia.h:
+#### <a name="ksmediah"></a>ksmedia. h:
 
 ``` C++
 #define AUDIOMODULE_MAX_DATA_SIZE 64000
@@ -143,21 +143,21 @@ typedef struct _KSPAUDIOMODULE_PROPERTY
 } KSAUDIOMODULE_PROPERTY, *PKSPAUDIOMODULE_PROPERTY;
 
 ```
-詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)します。
+詳細については、「 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)」を参照してください。
 
 
-### <a name="audio-module-notification-device-id"></a>オーディオ モジュール通知デバイスの ID
+### <a name="audio-module-notification-device-id"></a>オーディオモジュール通知デバイス ID
 
-サポート、 [KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-notification-device-id)ミニポート シグナル通知を有効にして、オーディオのモジュールのクライアントに情報を渡すに必要です。 この ID の有効期間が公開されていると、Windows オーディオ スタックをアクティブにされているオーディオ デバイスの有効期間に関連付けられています。 フィルターまたは暗証番号 (pin) のハンドルを使用して、プロパティを送信することができます、KSPROPERTY が DeviceIoControl の呼び出しの入力バッファーとして渡されます。
+ミニポートが通知に信号を送信し、オーディオモジュールクライアントに情報を渡すことができるようにするには、 [KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-notification-device-id)のサポートが必要です。 この ID の有効期間は、オーディオデバイスが公開され、Windows オーディオスタックに対してアクティブになっている有効期間に関連付けられています。 プロパティは、フィルターまたはピンハンドルを介して送信できます。また、DeviceIoControl 呼び出しの入力バッファーとして KSK プロパティが渡されます。
 
-詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)します。
+詳細については、「 [KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)」を参照してください。
 
 
-<a name="span-idportclshelperspanportcls-helper---audio-module-notifications"></a><span id="PortCls_Helper"></span>PortCls ヘルパー - オーディオ モジュールの通知
+<a name="span-idportcls_helperspanportcls-helper---audio-module-notifications"></a><span id="PortCls_Helper"></span>PortCls Helper-Audio モジュール通知
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- オーディオのモジュールのクライアントに通知を送信するドライバー開発者を支援するために、新しいポートのインターフェイスが追加されました。 
+ ドライバー開発者がオーディオモジュールクライアントに通知を送信できるように、新しいポートインターフェイスが追加されました。 
 
-#### <a name="portclsh"></a>PortCls.h:
+#### <a name="portclsh"></a>PortCls:
 
 ``` C++
 typedef struct _PCNOTIFICATION_BUFFER 
@@ -212,19 +212,19 @@ typedef struct _KSAUDIOMODULE_NOTIFICATION {
 ```
 詳しくは、次のトピックをご覧ください。
 
- [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsnotifications)
+ [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsnotifications)
     
- [IPortClsNotifications::AllocNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-allocnotificationbuffer)
+ [IPortClsNotifications:: AllocNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsnotifications-allocnotificationbuffer)
 
- [IPortClsNotifications::FreeNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-freenotificationbuffer)   
+ [IPortClsNotifications:: FreeNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsnotifications-freenotificationbuffer)   
     
- [IPortClsNotifications::SendNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-sendnotification) 
+ [IPortClsNotifications:: SendNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsnotifications-sendnotification) 
 
 ### <a name="calling-sequence"></a>呼び出しシーケンス
 
-そのポートを作成し、通知を送信するのには、ミニポートを呼び出します。  一般的な呼び出しシーケンスは、次の図に表示されます。
+ミニポートは、通知を作成して送信するために、ポートを呼び出します。  一般的な呼び出しシーケンスを次の図に示します。
 
-![AudioIPortClsNotifications の呼び出しシーケンス](images/AudioIPortClsNotificationsCallingSequenceDiagram.png)
+![AudioIPortClsNotifications 呼び出しシーケンス](images/AudioIPortClsNotificationsCallingSequenceDiagram.png)
 
 
 

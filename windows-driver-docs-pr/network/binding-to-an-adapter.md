@@ -3,17 +3,17 @@ title: アダプターへのバインド
 description: アダプターへのバインド
 ms.assetid: 583b7c73-fbc7-4d25-95f7-973cede61ec8
 keywords:
-- プロトコル ドライバー WDK ネットワークは、アダプターへのバインド
-- NDIS プロトコル ドライバー WDK、アダプターへのバインド
-- バインディング操作の WDK ネットワーク
+- プロトコルドライバー WDK ネットワーク、アダプターへのバインド
+- NDIS プロトコルドライバー WDK、アダプターへのバインド
+- バインド操作 (WDK ネットワーク)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e99891f580090206f9d745374a792cc5ef636e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 95b0c9f15e7fb5cc865b5c4b199432b882ec2478
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386355"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838215"
 ---
 # <a name="binding-to-an-adapter"></a>アダプターへのバインド
 
@@ -21,35 +21,35 @@ ms.locfileid: "67386355"
 
 
 
-NDIS 呼び出しプロトコル ドライバーの[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数バインディングを開くたびに、基になるアダプター ドライバーをバインドすることができるようになります。 NDIS 後*ProtocolBindAdapterEx*バインディングが Opening 状態に遷移します。 *開く*状態では、プロトコル ドライバーのバインディングのためのリソースの割り当てし、アダプターが表示されます。
+NDIS は、プロトコルドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出して、ドライバーのバインド先となる基になるアダプターが使用可能になるたびにバインドを開きます。 NDIS が*Protocolbindadapterex*を呼び出した後、バインドは開始状態になります。 *オープン*状態では、プロトコルドライバーによってバインドのリソースが割り当てられ、アダプターが開きます。
 
-NDIS に渡します*ProtocolBindAdapterEx* NDIS コンテキストへのポインターと同様に、バインド操作を[ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。 この構造体には、アダプターに関する情報にはなどが含まれます。
+NDIS が*Protocolbindadapterex*に渡されます。これに加えて、バインド操作の ndis コンテキストと、 [**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体へのポインターが渡されます。 この構造体には、次のようなアダプターに関する情報が含まれています。
 
 -   アダプターの名前。
 
--   レジストリのプロトコル サービスのエントリの下には、このバインディングに固有のパラメーターのレジストリの場所。
+-   レジストリのプロトコルサービスエントリで、このバインディングに固有のパラメーターのレジストリの場所。
 
--   アダプターの物理デバイス オブジェクト。
+-   アダプターの物理デバイスオブジェクト。
 
-アダプターを開くには、プロトコルのドライバーの呼び出し、 [ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)関数。 プロトコル ドライバーには、次の渡します**NdisOpenAdapterEx**:
+アダプターを開くために、プロトコルドライバーは[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)関数を呼び出します。 プロトコルドライバーは、次のものを**NdisOpenAdapterEx**に渡します。
 
--   NDIS にドライバーに返されたハンドルは、 *NdisProtocolHandle*のパラメーター、 **NdisRegisterProtocolDriver**関数。
+-   NDIS が**NdisRegisterProtocolDriver**関数の*NdisProtocolHandle*パラメーターでドライバーに返すハンドル。
 
--   このバインドのプロトコル ドライバーのコンテキスト。
+-   このバインディングのプロトコルドライバーのコンテキスト。
 
--   型の構造体へのポインター [ **NDIS\_オープン\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_open_parameters)します。
+-   [ **\_パラメーターを開く\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_open_parameters)の構造体へのポインター。
 
-[**NDIS\_開く\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_open_parameters)アダプターの名前などの情報が含まれていますを**NdisOpenAdapterEx**する必要がありますオープン、中規模の配列型をプロトコル ドライバーサポートと、必要に応じて、ドライバーは、このバインディングで受信できるフレームの種類の配列。
+[**NDIS\_open\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_open_parameters)には、 **NdisOpenAdapterEx**が開くアダプターの名前、プロトコルドライバーでサポートされている中程度の種類の配列、およびドライバーがサポートするフレームの種類の配列 (省略可能) などの情報が含まれています。は、このバインディングでを受け取ることができます。
 
-プロトコル ドライバーに返された NDIS 場合\_状態\_から PENDING *ProtocolBindAdapterEx*、呼び出す必要があります[ **NdisCompleteBindAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletebindadapterex)バインド要求を完了する最終的な状態です。
+プロトコルドライバーが*Protocolbindadapterex*から保留中の NDIS\_STATUS\_を返した場合、バインド要求を完了するには、最終的な状態で[**NdisCompleteBindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletebindadapterex)を呼び出す必要があります。
 
-NDIS NDIS を返す場合\_状態\_から PENDING **NdisOpenAdapterEx**、NDIS 呼び出しプロトコル ドライバーの[ *ProtocolOpenAdapterCompleteEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_open_adapter_complete_ex)オープン要求が完了した後、最終的な状態での関数。
+Ndis が NDIS\_STATUS\_**NdisOpenAdapterEx**から PENDING を返した場合、ndis は、open 要求が完了した後で、プロトコルドライバーの[*ProtocolOpenAdapterCompleteEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_open_adapter_complete_ex)関数を最後のステータスで呼び出します。
 
-ドライバーでは、アダプターにバインドが正常に開いたら、バインディングは一時停止状態です。
+ドライバーがアダプターへのバインドを正常に開くと、バインドは一時停止状態になります。
 
-プロトコル ドライバーに呼び出し、 [ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)アダプターを閉じます。 ドライバーが呼び出せる**NdisCloseAdapterEx**から、 *ProtocolBindAdapterEx*関数または[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)関数。
+プロトコルドライバーは、アダプターを閉じるために[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)関数を呼び出します。 ドライバーは、 *Protocolbindadapterex*関数または[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)関数から**NdisCloseAdapterEx**を呼び出すことができます。
 
-場合、アダプターを起動して、バインド要求を完了する前に*ProtocolBindAdapterEx* 、エラーが発生し、バインドを閉じる必要があります、アダプターを呼び出すことができます**NdisCloseAdapterEx**します。 アダプターの終了についての詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
+アダプターを開いた後にバインド要求を完了する前に、 *Protocolbindadapterex*でエラーが発生し、アダプターへのバインドを閉じる必要があります。これにより、 **NdisCloseAdapterEx**を呼び出すことができます。 アダプターを閉じる方法の詳細については、「[アダプターからのバインド](unbinding-from-an-adapter.md)解除」を参照してください。
 
  
 

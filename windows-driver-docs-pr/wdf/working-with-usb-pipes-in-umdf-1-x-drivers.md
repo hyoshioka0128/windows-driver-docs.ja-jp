@@ -4,116 +4,116 @@ description: UMDF 1.x ドライバーでの USB パイプの操作
 ms.assetid: face26da-fa79-4d32-8ad1-9e8022bb23b3
 keywords:
 - UMDF WDK、USB パイプ
-- ユーザー モード ドライバー フレームワーク WDK、USB パイプ
-- ユーザー モード ドライバー WDK UMDF、USB パイプ
+- ユーザーモードドライバーフレームワーク WDK、USB パイプ
+- ユーザーモードドライバー WDK UMDF、USB パイプ
 - USB パイプ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a94ee95a4ee674ce77e419224444cb6a9744e19b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65a3ffc5b5bfae081a6e7f06e6da35a94812bbc2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371740"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823499"
 ---
 # <a name="working-with-usb-pipes-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでの USB パイプの操作
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークは、フレームワークの USB パイプ オブジェクトとして USB インターフェイスで各パイプを表します。 ドライバーは、USB デバイスを構成、するときに、フレームワークは、選択した各インターフェイスで各パイプのフレームワークの USB パイプ オブジェクトを作成します。 パイプ オブジェクトのメソッドでは、ドライバーを有効にします。
+フレームワークは、USB インターフェイス内の各パイプをフレームワークの USB パイプオブジェクトとして表します。 ドライバーが USB デバイスを構成すると、フレームワークは、選択された各インターフェイスの各パイプに対してフレームワークの USB パイプオブジェクトを作成します。 パイプオブジェクトのメソッドを使用すると、ドライバーは次のことを実行できます。
 
--   [パイプの情報を取得](#obtaining-umdf-usb-pipe-information)します。
+-   [パイプ情報を取得](#obtaining-umdf-usb-pipe-information)します。
 
--   [パイプから読み取る](#reading-from-a-umdf-usb-pipe)します。
+-   [パイプからの読み取り](#reading-from-a-umdf-usb-pipe)。
 
--   [パイプに書き込む](#writing-to-a-umdf-usb-pipe)します。
+-   [パイプに書き込み](#writing-to-a-umdf-usb-pipe)ます。
 
--   [停止、フラッシュ、またはパイプのリセット](#stopping-flushing)します。
+-   [パイプを停止、フラッシュ、またはリセット](#stopping-flushing)します。
 
--   [パイプのポリシー設定](#setting-pipe-policy)します。
+-   [パイプポリシーを設定](#setting-pipe-policy)します。
 
--   [処理のパイプ エラー](#handling-pipe-errors)します。
+-   [パイプエラーを処理](#handling-pipe-errors)します。
 
-### <a name="obtaining-umdf-usb-pipe-information"></a>UMDF USB パイプの情報を取得します。
+### <a name="obtaining-umdf-usb-pipe-information"></a>UMDF USB パイプ情報の取得
 
-UMDF ドライバーを呼び出してから、 [ **IWDFUsbInterface::RetrieveUsbPipeObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)へのポインターを取得するメソッド、 [IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)を USB パイプ オブジェクトのインターフェイスをドライバーは、USB パイプに関する情報を取得するため、USB パイプ オブジェクトを定義する次のメソッドを呼び出すことができます。
+UMDF ドライバーが[**IWDFUsbInterface:: RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)メソッドを呼び出して、usb パイプオブジェクトの[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)インターフェイスへのポインターを取得した後、ドライバーは、usb パイプオブジェクトで定義されている次のメソッドを呼び出すことができます。USB パイプに関する情報の取得:
 
-<a href="" id="iwdfusbtargetpipe--getinformation"></a>[**IWDFUsbTargetPipe::GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)  
-USB パイプとエンドポイントに関する情報を取得します。
+<a href="" id="iwdfusbtargetpipe--getinformation"></a>[**IWDFUsbTargetPipe:: GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)  
+USB パイプとそのエンドポイントに関する情報を取得します。
 
-<a href="" id="iwdfusbtargetpipe--gettype"></a>[**IWDFUsbTargetPipe::GetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-gettype)  
-USB パイプの型を返します。
+<a href="" id="iwdfusbtargetpipe--gettype"></a>[**IWDFUsbTargetPipe:: GetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-gettype)  
+USB パイプの種類を返します。
 
-<a href="" id="iwdfusbtargetpipe--isinendpoint"></a>[**IWDFUsbTargetPipe::IsInEndPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-isinendpoint)  
-入力エンドポイントには USB パイプが接続されているかどうかを判断します。
+<a href="" id="iwdfusbtargetpipe--isinendpoint"></a>[**IWDFUsbTargetPipe::IsInEndPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-isinendpoint)  
+USB パイプが入力エンドポイントに接続されているかどうかを判断します。
 
-<a href="" id="iwdfusbtargetpipe--isoutendpoint"></a>[**IWDFUsbTargetPipe::IsOutEndPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-isoutendpoint)  
+<a href="" id="iwdfusbtargetpipe--isoutendpoint"></a>[**IWDFUsbTargetPipe:: IsOutEndPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-isoutendpoint)  
 USB パイプが出力エンドポイントに接続されているかどうかを判断します。
 
-<a href="" id="iwdfusbtargetpipe--retrievepipepolicy"></a>[**IWDFUsbTargetPipe::RetrievePipePolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-retrievepipepolicy)  
-WinUsb パイプのポリシーを取得します。
+<a href="" id="iwdfusbtargetpipe--retrievepipepolicy"></a>[**IWDFUsbTargetPipe::RetrievePipePolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-retrievepipepolicy)  
+WinUsb パイプポリシーを取得します。
 
 ### <a name="reading-from-a-umdf-usb-pipe"></a>UMDF USB パイプからの読み取り
 
-USB 入力パイプからデータを読み取るには、ドライバーは、次の手法のいずれか (または両方) を使用できます。
+USB 入力パイプからデータを読み取るには、次の方法のいずれか (または両方) をドライバーで使用できます。
 
--   同期的にデータを読み取ります。
+-   データを同期的に読み取ります。
 
-    UMDF ドライバーの最初の呼び出しデータを同期的に USB 入力パイプから読み取りするには、 [ **IWDFIoTarget::FormatRequestForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)読み取り要求を構築するメソッド。 ドライバーの呼び出し後、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send) 、WDF を指定して、メソッド\_要求\_送信\_オプション\_同期フラグを送信するには要求に同期的にします。
+    USB 入力パイプからデータを同期的に読み取るには、まず、UMDF ドライバーは[**Iwdfiotarget:: FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)メソッドを呼び出して読み取り要求を作成します。 次に、ドライバーは[**IWDFIoRequest:: send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出し、WDF\_REQUEST\_SEND\_オプション\_同期フラグを指定して、要求を同期的に送信します。
 
--   データを非同期的に読み取ります。
+-   データを非同期に読み取ります。
 
-    UMDF ドライバーの最初の呼び出し USB 入力パイプからデータを非同期的に読み取りするには、 [ **IWDFIoTarget::FormatRequestForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)読み取り要求を構築するメソッド。 ドライバーの呼び出し後、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッド、WDF を指定せず\_要求\_送信\_オプション\_同期フラグ。
+    USB 入力パイプからデータを非同期に読み取るには、まず、UMDF ドライバーが[**Iwdfiotarget:: FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)メソッドを呼び出して読み取り要求を作成します。 次に、ドライバーは WDF\_REQUEST\_SEND\_オプション\_同期フラグを指定せずに、 [**IWDFIoRequest:: send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出します。
 
--   同期と継続的にデータを読み取ります。
+-   データを同期的かつ継続的に読み取ります。
 
-    A*継続的なリーダー* USB パイプが常に読み取り要求に確実に framework が指定したメカニズムです。 このメカニズムは、ドライバーは、非同期、要請されていない入力ストリームを提供するデバイスからデータを受信する準備が常に保証されます。 たとえばのネットワーク インターフェイス カード (NIC) ドライバーで継続的なリーダーを使用して、入力データを受信する可能性があります。
+    *継続的リーダー*は、USB パイプで読み取り要求を常に使用できるようにするフレームワークによって提供されるメカニズムです。 このメカニズムにより、ドライバーは、非同期の要請されていない入力ストリームを提供するデバイスからデータを受信する準備が常に整っていることが保証されます。 たとえば、ネットワークインターフェイスカード (NIC) のドライバーは、連続リーダーを使用して入力データを受信する場合があります。
 
-    入力のパイプをドライバーの継続的なリーダーを構成する[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数を呼び出す必要があります、 [ **IWDFUsbTargetPipe2: ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッド。 このメソッドは、一連のデバイスの I/O ターゲットへの読み取り要求をキューします。
+    入力パイプの連続リーダーを構成するには、ドライバーの[**IPnpCallbackHardware:: OnIWDFUsbTargetPipe2 ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数で、 [ **:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドを呼び出す必要があります。 このメソッドは、デバイスの i/o ターゲットに対する一連の読み取り要求をキューに置いています。
 
-    また、ドライバーの[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)コールバック関数を呼び出す必要があります[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を開始するには継続的なリーダーとドライバーの[ **IPnpCallback::OnD0Exit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)コールバック関数を呼び出す必要があります[ **IWDFIoTargetStateManagement::Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を継続的なリーダーを停止します。
+    また、ドライバーの[**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) callback 関数は、 [**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出して継続的リーダーを開始する必要があり、ドライバーの[**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit) callback 関数はを呼び出す[**必要があります。IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を実行して、継続的リーダーを停止します。
 
-    データは、デバイスから使用するたびにでは、I/O ターゲットは、読み取り要求を完了し、フレームワークは 2 つのコールバック関数のいずれかで呼び出されます。[**IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) I/O ターゲットは、データを正常に読み取られた場合、または[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure) I/O ターゲットは、エラーを報告する場合。
+    デバイスからデータが使用可能になるたびに、i/o ターゲットは読み取り要求を完了し、フレームワークは2つのコールバック関数のいずれかを呼び出します: [**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) (i/o ターゲットの場合)i/o ターゲットでエラーが報告された場合、データ、または[**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)が正常に読み取られました。
 
-    ドライバーが呼び出された後[ **IWDFUsbTargetPipe2::ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)、ドライバーを使用できない[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)しない限り、パイプする I/O 要求を送信するドライバーの[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)コールバック関数と呼びます返します **。FALSE**します。
+    ドライバーが[**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)を呼び出した後、ドライバーの IUsbTargetPipeContinuousReaderCallbackReadersFailed:: O を使用しない限り、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を使用してパイプに i/o 要求を送信することはできません。 [**nReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)コールバック関数が呼び出され、 **FALSE**が返されます。
 
-    継続的なリーダーは、UMDF バージョン 1.9 でサポートされている以降です。
+    継続的リーダーは、UMDF バージョン1.9 以降でサポートされています。
 
 ### <a name="writing-to-a-umdf-usb-pipe"></a>UMDF USB パイプへの書き込み
 
-USB 出力パイプにデータの書き込みに UMDF ドライバーは呼び出すことができます最初、 [ **IWDFIoTarget::FormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)書き込み要求を構築するメソッド。 ドライバーを呼び出すことができ、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)要求を非同期的に送信するメソッド。
+USB 出力パイプにデータを書き込むには、まず、UMDF ドライバーが[**Iwdfiotarget:: FormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)メソッドを呼び出して書き込み要求を作成します。 次に、ドライバーは[**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、要求を非同期的に送信できます。
 
-### <a href="" id="stopping-flushing"></a>停止、フラッシュ、および UMDF USB パイプをリセットします。
+### <a href="" id="stopping-flushing"></a>UMDF USB パイプの停止、フラッシュ、およびリセット
 
-UMDF ドライバーでは、停止、フラッシュ、または USB パイプをリセットするには、次のメソッドを呼び出すことができます。
+UMDF ドライバーは、次のメソッドを呼び出して、USB パイプを停止、フラッシュ、またはリセットできます。
 
-<a href="" id="iwdfusbtargetpipe--abort"></a>[**IWDFUsbTargetPipe::Abort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-abort)  
+<a href="" id="iwdfusbtargetpipe--abort"></a>[**IWDFUsbTargetPipe:: Abort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-abort)  
 USB パイプで保留中のすべての転送を停止する要求を同期的に送信します。
 
-<a href="" id="iwdfusbtargetpipe--flush"></a>[**IWDFUsbTargetPipe::Flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-flush)  
-同期的に、デバイスには、クライアントが要求されたより多くのデータが返されるときに、WinUsb が保存されているデータを破棄する要求を送信します。
+<a href="" id="iwdfusbtargetpipe--flush"></a>[**IWDFUsbTargetPipe:: Flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-flush)  
+クライアントから要求されたデータよりも多くのデータが返された場合に、WinUsb によって保存されたデータを破棄する要求を同期的に送信します。
 
-<a href="" id="iwdfusbtargetpipe--reset"></a>[**IWDFUsbTargetPipe::Reset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-reset)  
-USB パイプにリセットする要求を同期的に送信します。
+<a href="" id="iwdfusbtargetpipe--reset"></a>[**IWDFUsbTargetPipe:: Reset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-reset)  
+USB パイプをリセットする要求を同期的に送信します。
 
-### <a href="" id="setting-pipe-policy"></a>UMDF USB パイプのポリシーの設定
+### <a href="" id="setting-pipe-policy"></a>UMDF USB パイプのポリシーを設定する
 
-UMDF ドライバーを呼び出すことができます、 [ **IWDFUsbTargetPipe::SetPipePolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-setpipepolicy) USB パイプ (タイムアウト、パケットの短い処理、およびその他の動作など) の WinUsb によって使用される動作を制御する方法.
+UMDF ドライバーは、 [**IWDFUsbTargetPipe:: SetPipePolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-setpipepolicy)メソッドを呼び出して、usb パイプ用に winusb によって使用される動作 (タイムアウト、短いパケットの処理、その他の動作など) を制御できます。
 
-### <a name="handling-pipe-errors"></a>パイプ エラーの処理
+### <a name="handling-pipe-errors"></a>パイプエラーの処理
 
-場合は、ドライバーの USB ターゲット[完了](completing-i-o-requests.md)エラー状態の値を持つ、I/O 要求には、ドライバーは、次を行う必要があります。
+ドライバーの USB ターゲットが、エラー状態の値を含む i/o 要求を[完了](completing-i-o-requests.md)した場合、ドライバーは次のことを行う必要があります。
 
-1.  呼び出す[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)で、 **WdfIoTargetCancelSentIo**フラグを設定します。 この呼び出しは、パイプを停止し、ターゲットが、要求を完了していない場合、ドライバーが、USB ターゲットに送信する追加の I/O 要求をキャンセルします。
+1.  **WdfIoTargetCancelSentIo**フラグを設定して、 [**IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を呼び出します。 この呼び出しは、パイプを停止し、ターゲットが要求を完了していない場合に、ドライバーが USB ターゲットに送信した追加の i/o 要求をキャンセルします。
 
-2.  呼び出す[ **IWDFUsbTargetPipe::Abort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-abort)パイプに中断要求を送信します。
+2.  [**IWDFUsbTargetPipe:: abort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-abort)を呼び出して、中止要求をパイプに送信します。
 
-3.  呼び出す[ **IWDFUsbTargetPipe::Reset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-reset)パイプへのリセット要求を送信します。
+3.  [**IWDFUsbTargetPipe:: reset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-reset)を呼び出して、パイプにリセット要求を送信します。
 
-4.  呼び出す[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)パイプを再起動します。
+4.  [**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出して、パイプを再起動します。
 
-5.  失敗した場合、I/O 要求と失敗した要求の後にすべての I/O 要求を再送信します。
+5.  失敗した i/o 要求と、失敗した要求に続くすべての i/o 要求を再送信します。
 
  
 

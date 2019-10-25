@@ -3,16 +3,16 @@ title: 特定のアロケーターのフィルター処理
 description: 特定のアロケーターのフィルター処理
 ms.assetid: 581f3000-4e66-4ba0-979d-b187115a30b2
 keywords:
-- 特定のアロケーター WDK カーネルのストリーミングをフィルター処理します。
-- フィルターのアロケーターの WDK カーネルがストリーミング
+- 特定のアロケーター WDK カーネルストリーミングをフィルター処理する
+- フィルターアロケーター WDK カーネルストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da2183f14a73a53e33369adb37aa5852a44d33a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b2dac1763825a42d6ab31b17452bf67405e324a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384055"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834389"
 ---
 # <a name="filter-specific-allocators"></a>特定のアロケーターのフィルター処理
 
@@ -20,25 +20,25 @@ ms.locfileid: "67384055"
 
 
 
-オンボード メモリやその他のデバイスの依存するストレージ メソッドのアロケーターを必要とするフィルターは、アロケーターをサポートすることで特定のアロケーターを提供できます[プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-streamallocator)と[メソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-streamallocator)します。 詳細については、次を参照してください。 [ **KSPROPERTY\_ストリーム\_アロケーター**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-allocator)します。
+オンボードメモリまたはその他のデバイスに依存するストレージメソッドにアロケーターを必要とするフィルターは、アロケーターの[プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-streamallocator)と[メソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-streamallocator)をサポートすることによって特定のアロケーターを提供できます。 詳細については、「 [**Ksk プロパティ\_STREAM\_アロケーター**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-allocator)」を参照してください。
 
-フィルターは IRP を受信\_MJ\_KSCREATE の種類の作成\_要求\_アロケーターは、アロケーターのフレームのオプションを指定します。 ミニドライバーのアロケーター作成ルーチンを呼び出して、要求の作成を検証する[ **KsValidateAllocatorCreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksvalidateallocatorcreaterequest)します。 このルーチンが、関連するへのポインターを返します、呼び出しが成功した場合[ **KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)構造体。
+フィルターは、\_IRP のフレームオプションを指定する\_型 KSK CREATE\_要求\_アロケーターの MJ を受け取ります。 ミニドライバーのアロケーター作成ルーチンは、 [**KsValidateAllocatorCreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksvalidateallocatorcreaterequest)を呼び出して作成要求を検証します。 呼び出しが成功した場合、このルーチンは関連する[**Ksallocator\_フレーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)構造体へのポインターを返します。
 
-フィルターは、フレームの要件を満たすことができない、IRP への応答でエラー コードが返されます。 それ以外の場合、フィルターを構造体へのポインターを接続、 **FsContext**ファイル オブジェクトおよびサービスのメンバーの結果として得られるアロケーターを要求します。
+フィルターがフレームの要件を満たすことができない場合、IRP に応答してエラーコードが返されます。 それ以外の場合、フィルターは構造体へのポインターをファイルオブジェクトの**Fscontext**メンバーにアタッチし、結果として得られるアロケーター要求を処理します。
 
-渡されたバッファーの場合は、ストリーミング インターフェイスを変更する必要がありますインプレースでのフィルターによって、ユーザー モードのクライアント設定、KSALLOCATOR\_REQUIREMENTF\_インプレース\_に関連する修飾子フラグ[ **KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)構造体。
+ストリーミングインターフェイスに渡されたバッファーをフィルターによってインプレースで変更する必要がある場合、ユーザーモードクライアントは、関連する[**ksallocator\_フレーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)で ksallocator\_REQUIREMENTF\_インプレース\_MODIFIER フラグを設定します。データ.
 
-2 つのインターフェイスは、アロケーター使用できます。 最初に、すべてのアロケーターは IRP ベースをサポートする必要があります[KSMETHODSETID\_StreamAllocator](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-streamallocator)します。 このメカニズムを使用するアロケーターは、割り当て済みのフレームの最大数に制限されます。 この制限を超えるフレームの割り当てを要求は保留中のマークにされます。
+アロケーターに使用できるインターフェイスは2つあります。 まず、すべてのアロケーターは、IRP ベースの[Ksk Methodsetid\_StreamAllocator](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-streamallocator)をサポートする必要があります。 このメカニズムを使用するアロケーターは、割り当てられたフレームの最大数に制限されています。 この制限を超えてフレームを割り当てる要求は、保留中とマークされます。
 
-次に、ミニドライバー アクセスをサポートできます関数テーブル ディスパッチでプールの割り当ての種類が処理される場合\_レベル。 関数のテーブル アクセスの提供は省略可能です。 これには、プロパティをサポートしている、 [KSPROPSETID\_StreamAllocator](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-streamallocator)します。
+次に、ミニドライバーは、割り当てプールの種類をディスパッチ\_レベルで処理できる場合、関数テーブルへのアクセスをサポートできます。 関数テーブルへのアクセスの提供は省略可能です。 これを行うには、 [Kspropsetid\_StreamAllocator](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-streamallocator)のプロパティをサポートします。
 
-ディスパッチ\_レベルのインターフェイスは次のように動作します。
+ディスパッチ\_レベルのインターフェイスは、次のように動作します。
 
-アロケーターに、割り当て要求が送信されると、アロケーターは 1 つが使用可能な場合は、フレームにポインターを返します。 すぐに返されたそうでない場合は**NULL**します。
+割り当て要求がアロケーターに送信されると、アロケーターは、使用可能な場合はフレームへのポインターを返します。 そうでない場合は、直ちに**NULL**が返されます。
 
-アロケーターに無料の要求が送信されると、アロケーターは、無料のフレームが使用できることをクライアントに通知するストリーム アロケーター「無料フレーム」イベントを通知します。 さらに、割り当て要求の Irp の完了を待機している、アロケーターは、作業項目をスケジュールする必要がある場合 (現在の IRQL がパッシブでない場合\_レベル) および無料のフレームを使用して要求を完了します。
+解放要求がアロケーターに送信されると、アロケーターは、解放されたフレームが使用可能であることをクライアントに通知するストリームアロケーター "free frame" イベントを通知します。 また、完了を待機している割り当て要求の Irp がある場合は、アロケーターがワーカー項目をスケジュールする必要があります (現在の IRQL がパッシブ\_レベルでない場合)。その後、解放フレームで要求を完了します。
 
-両方のディスパッチ\_レベルのインターフェイスとフレームを無料 IRP ベースのインターフェイス。 KS では、キャンセルのスピン ロックを使用して、このキューを同期します。
+ディスパッチ\_レベルのインターフェイスと、IRP ベースのインターフェイスの両方が、空きフレームに対して競合する可能性があります。 KS は、このキューをキャンセルスピンロックを使用して同期します。
 
  
 

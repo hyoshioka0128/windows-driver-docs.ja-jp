@@ -4,57 +4,57 @@ description: TPS コンポーネントの概要
 ms.assetid: 4bc962fa-8c05-4b0f-b634-9c0f435907b7
 keywords:
 - トランザクション処理システム WDK KTM、コンポーネント
-- TP WDK KTM、コンポーネント
+- TPS WDK KTM、コンポーネント
 - トランザクション処理システム WDK KTM、シナリオ
-- TP WDK KTM、シナリオ
-- リソース マネージャーでの TP の WDK KTM
+- TPS WDK KTM、シナリオ
+- リソースマネージャー WDK KTM、TP 内
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed116920d1437ee962b9ca306b675bfeb204475
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b95cb452906859bedf6bee584e41a97e6de1a892
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382949"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836096"
 ---
 # <a name="understanding-tps-components"></a>TPS コンポーネントの概要
 
 
-すべて[*トランザクション処理システム*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TP) カーネル トランザクション マネージャー (KTM) を使用して、 [Common Log File System](using-common-log-file-system.md) (CLFS) は、次を含める必要があります重要なコンポーネント:
+カーネルトランザクションマネージャー (KTM) と[共通ログファイルシステム](using-common-log-file-system.md)(CLFS) を使用する[*トランザクション処理システム*](transaction-processing-terms.md#ktm-term-transaction-processing-system)(TPS) には、次の重要なコンポーネントが含まれている必要があります。
 
--   A [*トランザクション マネージャー* ](transaction-processing-terms.md#ktm-term-transaction-manager) (KTM)
+-   [*トランザクションマネージャー*](transaction-processing-terms.md#ktm-term-transaction-manager) (KTM)
 
-    KTM では、各トランザクションの状態を追跡し、システム障害後の回復操作を調整します。
+    KTM は、各トランザクションの状態を追跡し、システムのクラッシュ後の復旧操作を調整します。
 
--   1 つまたは複数[*リソース マネージャー*](transaction-processing-terms.md#ktm-term-resource-manager)
+-   1つまたは複数の[*リソースマネージャー*](transaction-processing-terms.md#ktm-term-resource-manager)
 
-    指定すると、リソース マネージャーは、各トランザクションに関連付けられているデータを管理します。
+    提供するリソースマネージャーは、各トランザクションに関連付けられているデータを管理します。
 
--   1 つまたは複数の CLFS [*ログ ストリーム*](transaction-processing-terms.md#ktm-term-log-stream)
+-   1つ以上の CLFS [*ログストリーム*](transaction-processing-terms.md#ktm-term-log-stream)
 
-    トランザクション マネージャーとリソース マネージャーは、コミット、ロールバック、または、トランザクションの復旧に使用できる情報を記録 CLFS ログ ストリームを使用します。
+    トランザクションマネージャーとリソースマネージャーは、CLFS ログストリームを使用して、トランザクションのコミット、ロールバック、または復旧に使用できる情報を記録します。
 
--   1 つまたは複数[*トランザクション クライアント*](transaction-processing-terms.md#ktm-term-transactional-client)
+-   1つ以上の[*トランザクションクライアント*](transaction-processing-terms.md#ktm-term-transactional-client)
 
-    通常、トランザクションを作成し、トランザクションのコンテキスト内でのデータに対して操作を実行して、トランザクションのコミットまたはロールバックのいずれかの操作を開始しする、TP の各トランザクションのクライアントことができますと。
+    通常、TP の各トランザクションクライアントは、トランザクションを作成し、トランザクションのコンテキスト内でデータに対して操作を実行してから、トランザクションのコミットまたはロールバック操作を開始できます。
 
-ここで紹介する、[単純な TP](#simple-tps) 1 つのリソース マネージャーを使ってより複雑な TP を格納している[複数のリソース マネージャー](#multiple-resource-managers-in-a-tps)、およびいくつか[TP の他のシナリオ](#other-tps-scenarios)。
+このトピックでは、1つのリソースマネージャーを使用した[単純な tps](#simple-tps) 、[複数のリソース](#multiple-resource-managers-in-a-tps)マネージャーを含むより複雑な tp、および[その他の tp シナリオ](#other-tps-scenarios)について説明します。
 
-[KTM を使用して](using-ktm.md)セクション KTM を使用して、TP コンポーネントを作成する方法の詳細について説明します。
+Ktm の[使用](using-ktm.md)に関するセクションでは、ktm を使用して tp コンポーネントを作成する方法について詳しく説明します。
 
-### <a name="simple-tps"></a>単純な TP
+### <a name="simple-tps"></a>単純な TPS
 
-単純な TP KTM、1 つのリソース マネージャーでは、CLFS から構成されます。 トランザクションのクライアントは、リソース マネージャーを提供するインターフェイスによって、リソース マネージャーと通信できます。
+単純な TPS は、KTM、1つの resource manager、CLFS で構成されます。 トランザクションクライアントは、リソースマネージャーによって提供されるインターフェイスによって、リソースマネージャーと通信できます。
 
-たとえば、データベース管理システムを作成するとします。 システムのクライアントが読み取りおよび書き込み、オブジェクトの操作を実行するデータベース オブジェクトを識別するハンドルを開くと、オブジェクト ハンドルを終了して、データベースにアクセスします。
+たとえば、データベース管理システムを作成するとします。 データベースオブジェクトへのハンドルを開き、オブジェクトに対して読み取りおよび書き込み操作を実行し、オブジェクトハンドルを閉じることで、システムのクライアントがデータベースにアクセスできるようにします。
 
-容器から読み取りのセットをクリックし、書き込み操作をアトミックにように、システムの他のユーザーは、最終的な結果のみを参照してください。 クライアント トランザクションにデータベース操作のセットをバインドできるようにする TP を設計することで、その目的を達成できます。
+ここで、読み取り操作と書き込み操作のセットをアトミックに実行して、システムの他のユーザーが最終的な結果のみを表示するようにするとします。 この目的を実現するには、クライアントがデータベース操作のセットをトランザクションにバインドできるようにする TP を設計します。
 
-システムでは、読み取りおよび書き込みのクライアントから要求への応答に、データベース内のデータを管理するリソース マネージャーを含める必要があります。 このリソース マネージャーは、クライアント トランザクションを関連付ける一連の読み取りと書き込み操作をできるようにするアプリケーション プログラミング インターフェイス (API) をエクスポートできました。
+システムには、クライアントからの読み取りおよび書き込み要求に応答して、データベース内のデータを管理するリソースマネージャーを含める必要があります。 このリソースマネージャーは、クライアントが読み取りおよび書き込み操作のセットにトランザクションを関連付けることができるようにするアプリケーションプログラミングインターフェイス (API) をエクスポートできます。
 
-リソース マネージャーが読み込まれるときにする必要があります自体が登録 KTM を呼び出して[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)と[ **ZwCreateResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager). 次に、リソース マネージャーは、トランザクションに参加できます。
+リソースマネージャーが読み込まれるときに、 [**Zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)および[**Zwcreateresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)を呼び出して、それ自体を KTM に登録する必要があります。 次に、リソースマネージャーをトランザクションに参加させることができます。
 
-リソース マネージャーでデータ オブジェクトを作成、読み取り、データ オブジェクトに関連付けられているデータを書き込むようクライアントを有効にする関数のセットをサポートして、データ オブジェクトを閉じることがあります。 次の疑似コードは、クライアントからのコード シーケンスの例を示しています。
+リソースマネージャーでは、クライアントがデータオブジェクトの作成、データオブジェクトに関連付けられたデータの読み取りと書き込み、およびデータオブジェクトの終了を可能にする一連の関数をサポートする必要がある場合があります。 次の擬似コードは、クライアントからのコードシーケンスの例を示しています。
 
 ```cpp
 CreateDataObject (IN TransactionID, OUT DataHandle);
@@ -65,19 +65,19 @@ WriteData (IN DataHandle, IN Data);
 CloseDataObject (IN DataHandle);
 ```
 
-呼び出す前に、クライアント、リソース マネージャーの*CreateDataObject* 、日常的なクライアントする必要がありますトランザクション オブジェクトを作成の KTM を呼び出すことによって[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)ルーチンを呼び出して、トランザクション オブジェクトの識別子を取得および[ **ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)します。
+クライアントは、リソースマネージャーの*Createdataobject*ルーチンを呼び出すことができるようにするために、KTM の[**Zwcreatetransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)ルーチンを呼び出してトランザクションオブジェクトを作成し、を呼び出し[**てトランザクションオブジェクトの識別子を取得する必要があります。ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)。
 
-クライアントを呼び出すと、リソース マネージャーの*CreateDataObject* 、日常的なクライアントに渡すと、トランザクション オブジェクトの識別子、リソース マネージャー。 リソース マネージャーを呼び出すことができます[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)トランザクション オブジェクト、しを識別するハンドルを取得することができますを呼び出す[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)トランザクションに参加登録します。
+クライアントがリソースマネージャーの*Createdataobject*ルーチンを呼び出すと、クライアントは、トランザクションオブジェクトの識別子をリソースマネージャーに渡します。 リソースマネージャーは、 [**Zwopentransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)を呼び出してトランザクションオブジェクトへのハンドルを取得し、 [**Zwopentransaction リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)を呼び出してトランザクションへの参加を登録できます。
 
-この時点では、クライアントは、データ オブジェクトに対する操作の実行を開始できます。 クライアントでは、データ オブジェクトが作成されたときにトランザクション識別子が指定されて、ために、リソース マネージャーは、トランザクションにすべての読み取りおよび書き込み操作を割り当てることができます。
+この時点で、クライアントはデータオブジェクトに対する操作の実行を開始できます。 クライアントは、データオブジェクトの作成時にトランザクション識別子を提供したため、リソースマネージャーは、すべての読み取り操作と書き込み操作をトランザクションに割り当てることができます。
 
-Resource manager では、クライアントが永続的な結果を加えずを指定するデータ操作のすべての結果を記録する必要があります。 通常、リソース マネージャーは、トランザクション ログのストリームを操作の結果を記録するのに CLFS を使用します。
+リソースマネージャーは、結果を永続的に作成せずに、クライアントが指定したデータ操作のすべての結果を記録する必要があります。 通常、リソースマネージャーは CLFS を使用して、操作の結果をトランザクションログストリームに記録します。
 
-KTM の呼び出し、クライアントは、マネージャーがトランザクションの操作を実行するリソースの呼び出しが完了したら、 [ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)ルーチン。 この時点では、KTM[通知](transaction-notifications.md)にする必要がありますように操作永続的なリソース マネージャー。 リソース マネージャーではログ ストリームから操作の結果が、データの永続的なストレージ メディアに移動します。 リソース マネージャーは、最後に、 [ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)コミット操作が完了した KTM を通知するためにします。
+クライアントは、トランザクション操作を実行するためにリソースマネージャーの呼び出しを完了すると、KTM の[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)ルーチンを呼び出します。 この時点で、KTM は、操作を永続的にする必要があることをリソースマネージャーに[通知](transaction-notifications.md)します。 次に、リソースマネージャーは、操作の結果をログストリームからデータの永続的なストレージメディアに移動します。 最後に、リソースマネージャーは[**Zwcommitcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)を呼び出して、コミット操作が完了したことを KTM に通知します。
 
-Resource manager へのクライアントの呼び出しのいずれかのエラーを報告する場合の対処*ReadData*または*WriteData*でしょうか。 クライアントが呼び出すことができます[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)トランザクションをロールバックします。 その呼び出しの結果としては、KTM は、元の状態にデータを復元する必要がありますが、リソース マネージャーで通知します。 次に、クライアントでは、同じ操作用の新しいトランザクションを作成できますかまたは続行することも可能です。
+リソースマネージャーがクライアントの*ReadData*または*writedata*の呼び出しのいずれかでエラーを報告するとどうなりますか。 クライアントは[**ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)を呼び出して、トランザクションをロールバックできます。 この呼び出しの結果として、KTM は、データを元の状態に復元する必要があることをリソースマネージャーに通知します。 次に、クライアントは、同じ操作に対して新しいトランザクションを作成することも、続行しないように選択することもできます。
 
-次の疑似コードは、クライアントのトランザクション操作のより詳細なシーケンスの例を示します。
+次の擬似コードは、クライアントのトランザクション操作のより詳細なシーケンスの例を示しています。
 
 ```cpp
     ZwCreateTransaction (&TransactionHandle, ...);
@@ -100,23 +100,23 @@ Leave:
     return;
 ```
 
-コミットまたはロールバック前に、トランザクションを作成した後、システムがクラッシュした場合はどうなりますか 呼び出す必要があります、リソース マネージャーが読み込まれるたびに[ **ZwRecoverTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)と[ **ZwRecoverResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager). 呼び出す**ZwRecoverTransactionManager**をそのログ ストリームを開いて、トランザクション履歴を読み取る KTM をによりします。 呼び出す**ZwRecoverResourceManager** KTM に参加しているトランザクションが、クラッシュ前に進行中のリソース マネージャーに通知すると、トランザクション リソース マネージャーが回復する必要がありますしたがってとします。
+トランザクションが作成されてからコミットまたはロールバックされる前に、システムがクラッシュした場合はどうなりますか? リソースマネージャーが読み込まれるたびに、 [**zwを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)呼び出す必要があり[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager) **Zw回復 transactionmanager**を呼び出すと、KTM はログストリームを開き、トランザクション履歴を読み取ります。 **Zw回復マネージャー**を呼び出すと、KTM は、クラッシュ前に進行中だったすべての参加済みトランザクションとリソースマネージャーが復旧する必要があるトランザクションをリソースマネージャーに通知します。
 
-トランザクションのクライアントが呼び出された場合[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)クラッシュの前にトランザクションがトランザクションのコミット操作の処理を開始した、リソース マネージャーは、復元できる必要があります、クラッシュする直前にポイントするトランザクションの状態。 クライアントが、クラッシュ前にトランザクションをコミットする準備完了でない場合、リソース マネージャーは、データを破棄し、トランザクションをロールバックします。
+トランザクションクライアントが、クラッシュ前のトランザクションに対して[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出し、トランザクションのコミット操作の処理を開始した場合、リソースマネージャーは、トランザクションの状態を、クラッシュ. クライアントがクラッシュする前にトランザクションをコミットする準備ができていなかった場合、リソースマネージャーはデータを破棄し、トランザクションをロールバックできます。
 
-トランザクションのクライアントを記述する方法の詳細については、次を参照してください。[トランザクションのクライアントを作成する](creating-a-transactional-client.md)します。
+トランザクションクライアントを作成する方法の詳細については、「[トランザクションクライアントの作成](creating-a-transactional-client.md)」を参照してください。
 
-リソース マネージャーを作成する方法の詳細については、次を参照してください。[リソース マネージャーを作成する](creating-a-resource-manager.md)します。
+リソースマネージャーの作成方法の詳細については、「[リソースマネージャーの作成](creating-a-resource-manager.md)」を参照してください。
 
-### <a name="multiple-resource-managers-in-a-tps"></a>複数のリソース マネージャーで、TP
+### <a name="multiple-resource-managers-in-a-tps"></a>TP 内の複数のリソースマネージャー
 
-ここで、TP により、両方のデータベースの変更が成功する場合にのみ、トランザクションが成功するようにクライアントは、単一のトランザクション内で 2 つの独立したデータベース内の情報を変更することをとします。
+ここで、TP によって、クライアントが1つのトランザクション内の2つの異なるデータベース内の情報を変更できるようになったので、両方のデータベースの変更が成功した場合にのみトランザクションが成功するとします。
 
-この場合、データベースごとに 2 つのリソース マネージャー、TP ことができます。 各リソース マネージャーは、クライアントは、リソース マネージャーのデータベースへのアクセスに使用できる API をエクスポートできます。
+この場合、TP は、データベースごとに1つずつ、2つのリソースマネージャーを持つことができます。 各リソースマネージャーは、クライアントがリソースマネージャーのデータベースにアクセスするために使用できる API をエクスポートできます。
 
-次の疑似コードは、クライアントが 2 つのリソース マネージャーをサポートする 2 つのデータベースでの操作を含む 1 つのトランザクションを作成する方法を示しています。
+次の擬似コードは、2つのリソースマネージャーがサポートする2つのデータベースに対する操作を含む1つのトランザクションをクライアントが作成する方法を示しています。
 
-この例では、クライアントは、最初のデータベースからデータを読み取るし、2 番目のデータベースに書き込みます。 次に、クライアントは、2 番目のデータベースからデータを読み取るし、最初のデータベースに書き込みます。 (最初のリソース マネージャーで始まる関数をエクスポートする**Rm1**、実行して、2 番目のリソース マネージャーで始まる関数をエクスポートする**Rm2**)。
+この例では、クライアントは最初のデータベースからデータを読み取り、2番目のデータベースに書き込みます。 次に、クライアントは2番目のデータベースからデータを読み取り、最初のデータベースに書き込みます。 (最初の resource manager は、 **Rm1**で始まる関数をエクスポートします。2つ目の resource manager は、 **Rm2**で始まる関数をエクスポートします)。
 
 ```cpp
     ZwCreateTransaction (&TransactionHandle, ...);
@@ -140,23 +140,23 @@ Leave:
     return;
 ```
 
-両方のリソース マネージャーを呼び出すことができますので、両方のリソース マネージャーに、クライアントが同じトランザクションの識別子を渡すと、 [ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)と[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)トランザクションに参加します。 クライアントが最終的に呼び出すと[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)、KTM[通知](transaction-notifications.md)操作恒久的なと、各マネージャーを作成する必要があること、各リソース マネージャーresource manager の呼び出し[ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)が完了するとします。
+クライアントは両方のリソースマネージャーに同じトランザクション識別子を渡すため、両方のリソースマネージャーが[**Zwopentransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)と[**zwopentransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)を呼び出して、トランザクションに参加できます。 クライアントが最終的に[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出すと、KTM は、マネージャーが操作を永続的にする必要があることを各リソースマネージャーに[通知](transaction-notifications.md)します。各リソースマネージャーは、完了したときに[**zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)を呼び出します。
 
 ### <a name="other-tps-scenarios"></a>その他の TP のシナリオ
 
-KTM では、他の TP のシナリオをサポートします。 たとえば、次のシナリオでは、コンポーネントが含まれる、TP について説明します。
+KTM では、他の TP シナリオがサポートされています。 たとえば、次のシナリオでは、TP に含まれる可能性のあるコンポーネントについて説明します。
 
--   複数のデータベースを管理する 1 つのリソース マネージャー。
+-   複数のデータベースを管理する1つのリソースマネージャー。
 
-    Resource manager の API には、クライアントを開き、一度に 1 つ以上のデータベースへのアクセスが有効にする可能性があり、クライアントは、単一のトランザクションで複数のデータベースへのアクセスを組み合わせることができました。
+    リソースマネージャーの API を使用すると、クライアントが一度に複数のデータベースを開いてアクセスできるようになり、クライアントは1つのトランザクションで複数のデータベースへのアクセスを組み合わせることができます。
 
--   1 つのリソース マネージャー api を呼び出すと、クライアントと最初のリソース マネージャーは、Api を使用した追加のリソース マネージャー。
+-   1つのリソースマネージャー。クライアントが呼び出す API と、最初のリソースマネージャーが呼び出す Api を含む追加のリソースマネージャー。
 
-    クライアントは、最初のリソース マネージャーとのみ通信します。 リソース マネージャーがクライアントからの要求を処理するとき、クライアントの要求を処理する、必要に応じて、追加のリソース マネージャーにアクセスできます。 たとえば、リソース マネージャーは、クライアントで使用可能でない 2 つ目のリソース マネージャーからのバックアップやデータの検証操作を必要とするクライアントからアクセス可能なデータベースを管理します。
+    クライアントは、最初のリソースマネージャーとのみ通信します。 リソースマネージャーは、クライアントからの要求を処理するときに、必要に応じて、クライアントの要求を処理するために、追加のリソースマネージャーにアクセスできます。 たとえば、リソースマネージャーは、クライアントからアクセスできるデータベースを管理します。このデータベースは、クライアントが使用できない2番目のリソースマネージャーからバックアップまたはデータの検証操作を行う必要があります。
 
--   KTM を使用してリソース マネージャーの追加のセットで、既存のクライアントと、KTM を使用して resource manager が統合されています。
+-   Ktm を使用しない既存のクライアントとリソースマネージャーが、KTM を使用する追加のリソースマネージャーのセットと統合されている。
 
-    ここでは、通常は変更する必要が既存の resource manager になるように、[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md) KTM と通信します。
+    この場合、通常は、既存の resource manager を変更して、KTM と通信する[上位のトランザクションマネージャー](creating-a-superior-transaction-manager.md)になるようにする必要があります。
 
  
 

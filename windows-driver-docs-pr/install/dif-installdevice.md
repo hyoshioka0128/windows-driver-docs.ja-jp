@@ -14,23 +14,23 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9d4229684528d2c527dd0567adfef96506f13b93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 285238b8e27db90db58c2bba3169a81c763c6eca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828852"
 ---
-# <a name="difinstalldevice"></a>DIF_INSTALLDEVICE
+# <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
 
-DIF_INSTALLDEVICE 要求は、デバイスをインストールした後または前に、のタスクを実行するインストーラーを許可します。
+DIF_INSTALLDEVICE 要求を使用すると、デバイスのインストールの前または後に、インストーラーでタスクを実行できます。
 
 ### <a name="when-sent"></a>送信時
 
-ドライバーを選択した後、デバイスの共同インストーラーを登録して、任意のデバイスの登録がインターフェイスです。
+ドライバーを選択し、デバイスの共同インストーラーを登録して、デバイスインターフェイスを登録します。
 
-### <a name="who-handles"></a>処理します。
+### <a name="who-handles"></a>処理対象
 
 <table>
 <colgroup>
@@ -40,15 +40,15 @@ DIF_INSTALLDEVICE 要求は、デバイスをインストールした後また�
 <tbody>
 <tr class="odd">
 <td align="left"><p>クラスの共同インストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>デバイスの共同インストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>クラスのインストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>クラスインストーラー</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,79 +58,79 @@ DIF_INSTALLDEVICE 要求は、デバイスをインストールした後また�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)格納しているデバイスをインストールします。
+インストールするデバイスを含む[デバイス情報セット](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)へのハンドルを提供します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセットでのデバイスの構造体。
+デバイス情報セット内のデバイスの[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体へのポインターを提供します。
 
-<a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
+<a href="" id="device-installation-parameters-"></a>デバイスのインストールパラメーター   
+*Deviceinfodata*には、デバイスインストールパラメーター ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) が関連付けられています。
 
-<a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
+<a href="" id="class-installation-parameters"></a>クラスのインストールパラメーター  
 なし
 
 ### <a name="installer-output"></a>インストーラーの出力
 
-<a href="" id="device-installation-parameters"></a>デバイスのインストール パラメーター  
-インストーラーでのデバイスのインストール パラメーターを変更できます、 *DeviceInfoData*します。 たとえば、インストーラーは DI_NEEDREBOOT フラグを設定可能性があります。 または、Windows が、新しくインストールされたドライバーと設定を動的にデバイスをオンラインにすることを防ぐために DI_DONOTCALLCONFIGMG フラグを設定、可能性があります。
+<a href="" id="device-installation-parameters"></a>デバイスのインストールパラメーター  
+インストーラーでは、 *Deviceinfodata*のデバイスインストールパラメーターを変更できます。 たとえば、インストーラーで DI_NEEDREBOOT フラグを設定したり、DI_DONOTCALLCONFIGMG フラグを設定して、新しくインストールされたドライバーと設定を使用してデバイスを自動的にオンラインにしないようにすることができます。
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
-共同インストーラーは、通常、NO_ERROR または ERROR_DI_POSTPROCESSING_REQUIRED を返します。 共同インストーラーは、Win32 エラー コードを返すも可能性があります。
+通常、共同インストーラーは、NO_ERROR または ERROR_DI_POSTPROCESSING_REQUIRED を返します。 また、共同インストーラーも Win32 エラーコードを返す場合があります。
 
-クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+クラスインストーラーがこの要求を正常に処理し、 [**Setupdicallclassinstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)がその後既定のハンドラーを呼び出す必要がある場合、クラスインストーラーは ERROR_DI_DO_DEFAULT を返します。
 
-クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
+クラスインストーラーが、既定のハンドラーを直接呼び出すなど、この要求を正常に処理した場合、クラスインストーラーは NO_ERROR を返し、 **Setupdicallclassinstaller**はその後、既定のハンドラーを再び呼び出します。
 
-**注**  クラスのインストーラーは、既定のハンドラーを直接呼び出すことができますが、既定のハンドラーの操作を優先するクラスのインストーラーはいけません。 既定の差分コード ハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
+クラスインストーラーでは既定のハンドラーを直接呼び出すことができますが、クラスインストーラーでは既定のハンドラーの操作を置き換えないようにする必要**が   ます**。 既定の差分コードハンドラーを呼び出す方法の詳細については、「[既定の差分コードハンドラーの呼び出し](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)」を参照してください。
 
  
 
-クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
+クラスインストーラーでエラーが発生した場合、インストーラーは適切な Win32 エラーコードを返す必要があります。また、 **Setupdicallclassinstaller**は、その後、既定のハンドラーを呼び出しません。
 
-### <a name="default-dif-code-handler"></a>既定の差分コード ハンドラー
+### <a name="default-dif-code-handler"></a>既定の差分コードハンドラー
 
 [**SetupDiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-DIF_INSTALLDEVICE 要求への応答で、インストーラーでは、既定のハンドラーは、デバイスをインストールする前に、最終インストール操作が通常実行します。 たとえば、インストーラーは、チェックして、可能性がある変更、上位フィルター ドライバーと、レジストリに記載されているデバイスの低いフィルター ドライバー。
+DIF_INSTALLDEVICE 要求に応答して、インストーラーは通常、既定のハンドラーがデバイスをインストールする前に最終的なインストール操作を実行します。 たとえば、インストーラーは、レジストリに一覧表示されているデバイスの上位フィルタードライバーと下位フィルタードライバーを確認し、変更する場合があります。
 
-DI_NOFILECOPY フラグが設定されて、デバイスのインストール パラメータでない限り、この差分要求を処理するインストーラーは、ドライバー ファイル、コントロール パネルのファイルなど、デバイスに必要なファイルをコピーする必要があります。
+デバイスのインストールパラメーターに DI_NOFILECOPY フラグが設定されていない限り、この差分要求を処理するインストーラーは、ドライバーファイルやコントロールパネルファイルなど、デバイスに必要なファイルをコピーする必要があります。
 
-DI_NOFILECOPY フラグがオフ、DI_NOVCP フラグが設定されている場合、インストーラーはファイル操作を指定したファイルのキューにエンキューする必要がありますが、キューにコミットする必要があります。
+DI_NOFILECOPY フラグがクリアされていても、DI_NOVCP フラグが設定されている場合、インストーラーは、指定されたファイルキューにファイル操作をエンキューする必要がありますが、キューをコミットすることはできません。
 
-共同インストーラーには、前処理のパスで、または処理後のパスでは、この差分要求を処理できます。 前処理のパスでは、共同インストーラーは、Windows はドライバーをロードし、デバイスを起動する前に行う必要のあるすべての操作を実行します。
+共同インストーラーは、そのプリプロセスパスまたはその後処理パスで、この差分要求を処理できます。 前処理パスでは、共同インストーラーは、Windows がドライバーを読み込み、デバイスを起動する前に実行する必要があるすべての操作を実行します。
 
-処理後のパスで、デバイスが稼働している DI_NEEDREBOOT フラグが設定された場合を除き、します。 このフラグが設定されている場合 Windows だったことはありません、デバイスがオンラインに動的にします。
+その後処理パスでは、DI_NEEDREBOOT フラグが設定されていない限り、デバイスは稼働しています。 このフラグが設定されている場合、Windows はデバイスを動的にオンラインにできませんでした。
 
-インストーラーでは、Win32 エラー コードが返された場合、Windows は、インストールを破棄します。
+インストーラーが Win32 エラーコードを返した場合、Windows はインストールを破棄します。
 
-インストールするために DIF_INSTALLDEVICE 送信 Windows では、新しいデバイスに対して、INF ファイルで特定できない場合、 *null ドライバー*します。 既定のハンドラー (**SetupDiInstallDevice**か、非 PnP デバイス (によって報告された[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice))、後者の場合、Windows インストール用のドライバーを nullデバイスです。
+新しいデバイスの INF ファイルが見つからない場合は、 *null ドライバー*をインストールしようとすると DIF_INSTALLDEVICE が送信されます。 既定のハンドラー (**Setupdiinstalldevice**またはは、 [**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)によって報告された非 PnP デバイス) です。後者の場合、Windows はデバイス用に null ドライバーをインストールします。
 
-この試行が失敗した場合は、Windows の送信 DIF_INSTALLDEVICE もう一度、DI_FLAGSEX_SETFAILEDINSTALL フラグでは、この時点で設定、 [ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体。 ここでは、既定のハンドラーだけ FAILEDINSTALL 内フラグを設定、デバイスの**ConfigFlags**レジストリ値。 DI_FLAGSEX_SETFAILEDINSTALL フラグが設定されている場合は、クラスのインストーラーは NO_ERROR を返す必要があります。 または ERROR_DI_DO_DEFAULT と共同インストーラーには NO_ERROR を返す必要があります。
+この試行が失敗した場合、Windows は DIF_INSTALLDEVICE をもう一度送信します。このとき、 [**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体に DI_FLAGSEX_SETFAILEDINSTALL フラグが設定されています。 この場合、既定のハンドラーは、デバイスの**configflags**レジストリ値に、失敗したインストールフラグだけを設定します。 DI_FLAGSEX_SETFAILEDINSTALL フラグが設定されている場合、クラスインストーラーは NO_ERROR または ERROR_DI_DO_DEFAULT を返す必要があり、共同インストーラーは NO_ERROR を返す必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
+差分コードの詳細については、「[差分コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)」を参照してください。
 
-### <a name="calling-the-default-handler-setupdiinstalldevice"></a>**既定のハンドラー SetupDiInstallDevice を呼び出す**
+### <a name="calling-the-default-handler-setupdiinstalldevice"></a>**既定のハンドラー SetupDiInstallDevice を呼び出しています**
 
-呼び出すタイミングと方法に関する一般的な情報を**SetupDiInstallDevice**を参照してください[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
+**Setupdiinstalldevice**を呼び出すタイミングと方法に関する一般的な情報については、「[既定の差分コードハンドラーの呼び出し](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)」を参照してください。
 
-クラスのインストーラーがする必要があります操作をすべて実行まれな状況で**SetupDiInstallDevice**以降のデバイスを除く、操作が完了すると、クラスのインストーラーにする必要があります。
+デバイスの開始を除き、すべての**Setupdiinstalldevice**操作が完了した後に、クラスインストーラーが操作を実行することが必要なまれな状況では、クラスインストーラーは次のことを行う必要があります。
 
-1.  操作を呼び出す前に行う必要がある実行**SetupDiInstallDevice**します。
+1.  **Setupdiinstalldevice**を呼び出す前に実行する必要がある操作を実行します。
 
-2.  SP_DEVINSTALL_PARAMS DI_DONOTCALLCONFIGMGR フラグを設定します。**フラグ**デバイスのメンバー。 このフラグが設定されている場合**SetupDiInstallDevice**デバイスの開始を除くすべての既定のインストール操作を実行します。
+2.  SP_DEVINSTALL_PARAMS に DI_DONOTCALLCONFIGMGR フラグを設定します。デバイスの**フラグ**メンバー。 このフラグが設定されている場合、 **Setupdiinstalldevice**は、デバイスを起動する場合を除き、既定のインストール操作をすべて実行します。
 
-3.  呼び出す**SetupDiInstallDevice**デバイスの開始を除くすべての既定のインストール操作を実行します。
+3.  **Setupdiinstalldevice**を呼び出して、デバイスの起動以外のすべての既定のインストール操作を実行します。
 
-4.  以降のデバイスを除く、すべての既定インストール操作が完了した後に行う必要がある操作を実行します。
+4.  デバイスの起動以外のすべての既定のインストール操作が完了した後に実行する必要がある操作を実行します。
 
-5.  呼び出す[ **SetupDiRestartDevices** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdirestartdevices)デバイスを起動します。
+5.  [**SetupDiRestartDevices**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdirestartdevices)を呼び出して、デバイスを起動します。
 
-6.  NO_ERROR を返す場合は、クラスのインストーラーがインストール操作を正常に完了またはインストール操作が失敗した場合は、Win32 のエラーを返します。
+6.  クラスインストーラーによってインストール操作が正常に完了した場合、またはインストール操作が失敗した場合に Win32 エラーが返された場合は、NO_ERROR を返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -145,7 +145,7 @@ DI_NOFILECOPY フラグがオフ、DI_NOVCP フラグが設定されている場
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h (Setupapi.h を含む)</td>
+<td align="left">Setupapi.log (Setupapi.log を含む)</td>
 </tr>
 </tbody>
 </table>

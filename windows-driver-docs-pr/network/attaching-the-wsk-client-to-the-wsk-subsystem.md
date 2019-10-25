@@ -3,38 +3,38 @@ title: WSK サブシステムへの WSK クライアントのアタッチ
 description: WSK サブシステムへの WSK クライアントのアタッチ
 ms.assetid: 752d204f-3022-48b0-9237-707b753a7ad3
 keywords:
-- ネットワーク モジュール レジストラー WDK Winsock カーネル
+- ネットワークモジュールレジストラー WDK Winsock カーネル
 - NMR WDK Winsock カーネル
-- アンロード WSK クライアント
+- WSK クライアントのアンロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b71e4690dfde5d598b0c7589a653024b358c0bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4872bc1ad829e78eadb2837050f4d1355c17b0ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354641"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835272"
 ---
 # <a name="attaching-the-wsk-client-to-the-wsk-subsystem"></a>WSK サブシステムへの WSK クライアントのアタッチ
 
 
-アプリケーションが登録されて、Winsock カーネル (WSK) した後、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md) WSK NPI のクライアントとして、NMR すぐに呼び出し、アプリケーションの[ *ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_attach_provider_fn) WSK サブシステムが読み込まれ、NMR に登録した場合、コールバック関数。 WSK サブシステムが、NMR で登録されていない場合、NMR がアプリケーションを呼び出しません*ClientAttachProvider* NMR WSK サブシステムに登録されるまで、コールバック関数。
+Winsock カーネル (WSK) アプリケーションが WSK NPI のクライアントとして[ネットワークモジュールレジストラー (NMR)](network-module-registrar2.md)に登録されると、NMR は wsk サブシステムが読み込まれた場合、アプリケーションの[*clientattachprovider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)コールバック関数を直ちに呼び出します。NMR に登録されています。 WSK サブシステムが NMR に登録されていない場合、NMR は WSK サブシステムが NMR に登録するまで、アプリケーションの*Clientattachprovider*コールバック関数を呼び出しません。
 
-WSK アプリケーションでは、次の一連の呼び出しが、添付ファイルの手順を完了するを実行する必要があります。
+WSK アプリケーションは、添付ファイルの手順を完了するために、次の一連の呼び出しを行う必要があります。
 
-1.  NMR が WSK アプリケーションを呼び出すときに*ClientAttachProvider*コールバック関数へのポインターを渡しますが、 [ **NPI\_登録\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance) WSK サブシステムに関連付けられている構造体。 WSK アプリケーションの*ClientAttachProvider*コールバック関数は、NMR によって渡されたデータを使用して、WSK サブシステムにアタッチができるかどうかを判断します。 通常、WSK アプリケーションでのみに含まれるバージョン情報が必要、 [ **WSK\_プロバイダー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_characteristics) を指しています構造**NpiSpecificCharacteristics** WSK サブシステムの NPI のメンバー\_登録\_インスタンス構造体。
+1.  NMR は WSK アプリケーションの*Clientattachprovider*コールバック関数を呼び出すと、wsk サブシステムに関連付けられている[**NPI\_REGISTRATION\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance)構造体へのポインターを渡します。 WSK アプリケーションの*Clientattachprovider*コールバック関数は、NMR によって渡されたデータを使用して、wsk サブシステムにアタッチできるかどうかを判断できます。 通常、wsk アプリケーションで必要なのは、wsk [ **\_プロバイダーの\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_characteristics)の構造に含まれているバージョン情報だけです。この構造体は wsk サブシステムの NPI**のメンバーに**よってポイントされ\_登録\_インスタンス構造。
 
-2.  WSK アプリケーションが、WSK サブシステムに、WSK アプリケーションのアタッチすることができますを指定する場合*ClientAttachProvider*コールバック関数は、割り当て、WSK サブシステムに添付ファイルのバインド コンテキストの構造体を初期化します. その後、アプリケーションを呼び出す、 [ **NmrClientAttachProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientattachprovider)添付ファイルの処理を続行する関数。
+2.  Wsk アプリケーションが wsk サブシステムにアタッチできると判断した場合、WSK アプリケーションの*Clientattachprovider*コールバック関数は wsk サブシステムへの添付ファイルのバインドコンテキスト構造を割り当てて初期化します。 次に、アプリケーションは[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)関数を呼び出して、添付ファイルの処理を続行します。
 
-    場合**NmrClientAttachProvider**ステータスを返します\_成功すると、WSK アプリケーションが正常にアタッチ WSK サブシステムにします。 このような状況で、WSK アプリケーションの*ClientAttachProvider*コールバック関数に渡された、NMR バインド ハンドルを保存する必要があります、 *NmrBindingHandle*パラメーター、NMR が呼び出されたときに、アプリケーションの*ClientAttachProvider*コールバック関数。 WSK アプリケーションの*ClientAttachProvider*コールバック関数ではクライアント オブジェクトへのポインターを保存してもする必要があります ( [ **WSK\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) とプロバイダーディスパッチ テーブル ( [ **WSK\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)) に渡される、アプリケーション変数に返される、 **NmrClientAttachProvider**で機能、 *ProviderBindingContext*と*ProviderDispatch*パラメーター。 通常、WSK アプリケーションでは、このデータが WSK サブシステムに添付ファイルのバインド コンテキストに保存します。 WSK 後にアプリケーションが正常に WSK サブシステムに、WSK アプリケーションのアタッチ*ClientAttachProvider*コールバック関数は、状態を返す必要があります\_成功します。
+    **NmrClientAttachProvider**が STATUS\_SUCCESS を返した場合、wsk アプリケーションは wsk サブシステムに正常にアタッチされています。 この場合、WSK アプリケーションの*clientattachprovider*コールバック関数は、NMR がアプリケーションの*clientattachprovider*を呼び出したときに、NMR が*NmrBindingHandle*パラメーターに渡したバインドハンドルを保存する必要があります。コールバック関数。 WSK アプリケーションの*Clientattachprovider*コールバック関数は、クライアントオブジェクト ( [**wsk\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) へのポインターと、で返されるプロバイダーディスパッチテーブル ( [**WSK\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)) にも保存する必要があります。アプリケーションが*ProviderBindingContext*および*Providerdispatch*パラメーターの**NmrClientAttachProvider**関数に渡された変数。 WSK アプリケーションは、通常、WSK サブシステムへの添付ファイルのバインドコンテキストにこのデータを保存します。 Wsk アプリケーションが WSK サブシステムに正常にアタッチされた後、WSK アプリケーションの*Clientattachprovider*コールバック関数は、STATUS\_SUCCESS を返す必要があります。
 
-3.  場合**NmrClientAttachProvider**ステータスを返します\_NOINTERFACE、WSK アプリケーションが呼び出すことによって、WSK サブシステムにアタッチする別の試行を行うことができます、 **NmrClientAttachProvider**渡すことをもう一度、関数、 *ClientDispatch*別へのポインター [ **WSK\_クライアント\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)構造体アプリケーションでサポートされている WSK NPI の別のバージョンを指定します。
+3.  **NmrClientAttachProvider**が STATUS\_nointerface を返した場合、wsk アプリケーションはもう一度**NmrClientAttachProvider**関数を呼び出し、 *clientdispatch*を渡すことによって wsk サブシステムへのアタッチを試みることができます。アプリケーションでサポートされている WSK NPI の代替バージョンを指定する別の[**wsk\_クライアント\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_dispatch)構造体へのポインター。
 
-4.  呼び出し、 **NmrClientAttachProvider**関数には、状態は返しません\_成功すると、WSK アプリケーションはさらに、WSK サブシステムに、WSK アプリケーションの接続試行はすべてを行わない *。ClientAttachProvider*コールバック関数のクリーンアップおよびと呼ばれる前に、割り当てられているすべてのリソースの割り当てを解除する必要があります**NmrClientAttachProvider**します。 このような状況で、WSK アプリケーションの*ClientAttachProvider*コールバック関数は、最後の呼び出しによって返されたステータス コードを返す必要があります、 **NmrClientAttachProvider**関数。
+4.  **NmrClientAttachProvider**関数の呼び出しで STATUS\_SUCCESS が返されず、wsk アプリケーションが wsk サブシステムへのアタッチをそれ以上試行していない場合、wsk アプリケーションの*clientattachprovider*コールバック関数は、 **NmrClientAttachProvider**を呼び出す前に割り当てられたすべてのリソースをクリーンアップし、割り当てを解除する必要があります。 この場合、WSK アプリケーションの*Clientattachprovider*コールバック関数は、 **NmrClientAttachProvider**関数の最後の呼び出しによって返されたステータスコードを返す必要があります。
 
-5.  プロバイダー モジュールに、アプリケーションの接続にすることはできません、WSK アプリケーションと判断した場合*ClientAttachProvider*コールバック関数は、状態を返す必要があります\_NOINTERFACE します。
+5.  WSK アプリケーションがプロバイダーモジュールにアタッチできないと判断した場合、アプリケーションの*Clientattachprovider*コールバック関数はステータス\_nointerface を返す必要があります。
 
-次のコード例では、どのように WSK アプリケーションにアタッチできる自体、WSK サブシステムを示します。
+WSK アプリケーションを WSK サブシステムにアタッチする方法を次のコード例に示します。
 
 ```C++
 // Context structure type for the WSK application's

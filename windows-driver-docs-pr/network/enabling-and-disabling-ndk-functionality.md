@@ -1,60 +1,60 @@
 ---
 title: NDK 機能の有効化と無効化
-description: 有効または NDK 機能を無効にする場合は、NDIS は、OID_NDK_SET_STATE OID 要求を発行します。 NDK 対応のミニポート ドライバーでは、その MiniportOidRequest 関数でこの OID のサポートを登録する必要があります。
+description: NDK 機能を有効または無効にするために、NDIS は OID_NDK_SET_STATE OID 要求を発行します。 NDK 対応のミニポートドライバーは、この OID のサポートを MiniportOidRequest 関数に登録する必要があります。
 ms.assetid: A72AD98E-FF84-48FF-B627-5534231244B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d1da6f3753cd4770e69bdc1567ff13350f7a49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db6915b5d8aa8d3fc41db792b3e2e1277d94d2b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378687"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838123"
 ---
 # <a name="enabling-and-disabling-ndk-functionality"></a>NDK 機能の有効化と無効化
 
 
-NDK 機能、NDIS 問題有効または無効にする[OID\_NDK\_設定\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID 要求。 NDK 対応のミニポート ドライバーでは、この OID のサポートを登録する必要があります、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
+NDK 機能を有効または無効にするために、NDIS は\_状態 oid 要求の[oid\_\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)します。 NDK 対応のミニポートドライバーは、この OID のサポートを[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数に登録する必要があります。
 
-## <a name="determining-whether-ndk-functionality-can-be-enabled"></a>NDK 機能を有効にするかどうかを決定します。
+## <a name="determining-whether-ndk-functionality-can-be-enabled"></a>NDK 機能を有効にするかどうかを判断する
 
 
-**\*NetworkDirect** キーワードは、ミニポート ドライバーの NDK 機能を有効にするかどうかを判断します。
+**\*NetworkDirect**キーワードは、ミニポートドライバーの NDK 機能を有効にできるかどうかを決定します。
 
-このキーワードの値が 1 ("Enabled") に設定されている場合は、NDK 機能を有効にできます。
+このキーワード値が 1 ("Enabled") に設定されている場合、NDK 機能を有効にすることができます。
 
 0 ("Disabled") に設定されている場合、NDK 機能を有効にすることはできません。
 
-ミニポート ドライバーがインストールされているときに、INF ファイルは、既定では 1 ("Enabled") にこのキーワードの値を設定します。 詳細については、次を参照してください。 [NDKPI の INF 要件](inf-requirements-for-ndkpi.md)します。
+ミニポートドライバーがインストールされると、その INF ファイルでは、このキーワードの値が既定で 1 ("有効") に設定されます。 詳細については、「 [NDKPI の INF 要件](inf-requirements-for-ndkpi.md)」を参照してください。
 
-管理者を更新できますミニポート ドライバーをインストールした後、  **\*NetworkDirect**キーワードの値で新しい値を設定して、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+ミニポートドライバーをインストールした後で、管理者はアダプターの **[詳細**設定] プロパティページで新しい値を設定することによって、 **\*の NetworkDirect**キーワード値を更新できます。 詳細プロパティの詳細については、「 [[詳細プロパティ] ページの構成パラメーターの指定](specifying-configuration-parameters-for-the-advanced-properties-page.md)」を参照してください。
 
-**注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
+アダプターの **[詳細設定**] プロパティページで変更が行われた後に、ミニポートドライバーが自動的に再起動  **ことに注意**してください。
 
  
 
-## <a name="when-to-enable-or-disable-ndk-functionality"></a>有効または NDK 機能を無効にするタイミング
+## <a name="when-to-enable-or-disable-ndk-functionality"></a>NDK 機能を有効または無効にする場合
 
 
-この状態の変更をトリガーできます、 [OID\_NDK\_設定\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID の要求、成功またはエラー アダプター自体にします。
+この状態の変更は、 [oid\_NDK\_設定\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)oid 要求、またはアダプター自体の成功または失敗によってトリガーできます。
 
-## <a name="enabling-or-disabling-ndk-functionality"></a>有効化または NDK 機能を無効にします。
+## <a name="enabling-or-disabling-ndk-functionality"></a>NDK 機能の有効化または無効化
 
 
-有効または NDK 機能を無効にする、ミニポート ドライバーに送信する必要があります、 **NetEventNDKEnable**または**NetEventNDKDisable** NDIS にプラグ アンド プレイ (PnP) イベント。
+NDK 機能を有効または無効にするには、ミニポートドライバーが NDIS に**NetEventNDKEnable**または**NetEventNDKDisable**プラグアンドプレイ (PnP) イベントを送信する必要があります。
 
-PnP、イベントをミニポート ドライバーの呼び出しを送信する、 [ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)関数の場合、設定、 **NetPnPEvent**のメンバー、 [ **NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)構造体、 *NetPnPEvent*パラメーターは次の手順を指します。
+PnP イベントを送信するために、ミニポートドライバー[**は NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)関数を呼び出し、 *NetPnPEvent*パラメーターを指定して、 [**NET\_PnP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)構造体の**NetPnPEvent**メンバーを設定します。次のようにを指します。
 
--   **NetEventNDKEnable** NDK の機能が有効にする場合。
+-   NDK 機能が有効になっている場合は**NetEventNDKEnable** 。
 
--   **NetEventNDKDisable** NDK の機能が無効にする場合。
+-   NDK 機能を無効にする場合は**NetEventNDKDisable** 。
 
-**NetEventNDKDisable** PnP イベントは、開かれた終了を開始するには、NDIS および上位レイヤー ドライバー トリガー [ **NDK\_アダプター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)アダプター上でインスタンスNDK 機能が無効されている場所です。 PnP イベントが保留中に残りますまですべての開かれている**NDK\_アダプター**アダプター上でインスタンスが閉じられます。
+**NetEventNDKDisable** PnP イベントは、ndk 機能が無効になっているアダプタ上で、開かれた[**ndk\_アダプタ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)インスタンスを終了するために、NDIS および上位レイヤードライバをトリガーします。 PnP イベントは、アダプターを介して開かれたすべての**NDK\_アダプター**インスタンスが閉じられるまで、保留中のままになります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

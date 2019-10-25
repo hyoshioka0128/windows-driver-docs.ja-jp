@@ -3,25 +3,25 @@ title: コンテキストとデータ フローの関連付け
 description: コンテキストとデータ フローの関連付け
 ms.assetid: 75f5838e-626d-4a59-810e-fec9a40640ed
 keywords:
-- WDK Windows フィルタ リング プラットフォーム、データ フローに関連付けられたコンテキストのコールアウトを分類します。
-- コンテキスト WDK Windows フィルタ リング プラットフォーム
-- flowContext パラメーター WDK Windows フィルタ リング プラットフォーム
-- WDK Windows Filtering Platform のデータ フローとコンテキストの関連付け
+- コールアウトの分類 WDK Windows フィルタリングプラットフォーム、データフローに関連付けられたコンテキスト
+- コンテキスト WDK Windows フィルタリングプラットフォーム
+- flowContext パラメーター WDK Windows フィルタリングプラットフォーム
+- コンテキストとデータフローの関連付け (WDK Windows フィルタリングプラットフォーム)
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ce4858b40210b124a53cff2f0529cb106859bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92dda65f7dce594d8e7bc0535a5b115a80ae3326
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384419"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838233"
 ---
 # <a name="associating-context-with-a-data-flow"></a>コンテキストとデータ フローの関連付け
 
 
-データ フローをサポートするフィルタ リング層でデータを処理する吹き出し、コールアウト ドライバーは、各データ フローでコンテキストを関連付けることができます。 このようなコンテキストでは、フィルター エンジンに対して非透過的です。 吹き出しの[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数はこのコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に、データ フローに固有の状態情報を保存します。 フィルター エンジンでは、このコンテキストを渡しますを通じて吹き出しの classifyFn コールアウト関数に、 *flowContext*パラメーター。 コンテキストが、データ フローに関連付けられていない場合、 *flowContext*パラメーターが 0 です。
+データフローをサポートするフィルター処理レイヤーでデータを処理するコールアウトの場合、コールアウトドライバーは、コンテキストを各データフローに関連付けることができます。 このようなコンテキストは、フィルターエンジンに対して非透過的です。 コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、このコンテキストを使用して、次にそのデータフローのフィルターエンジンによって呼び出されたときのデータフローに固有の状態情報を保存できます。 フィルターエンジンは、 *flowcontext*パラメーターを使用して、コールアウトの classid 関数にこのコンテキストを渡します。 コンテキストがデータフローに関連付けられていない場合、 *Flowcontext*パラメーターは0になります。
 
-Flow では、データ、吹き出しのコンテキストの関連付け[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数呼び出し、 [ **FwpsFlowAssociateContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)関数。 例:
+コンテキストをデータフローに関連付けるために、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)は、 [**FwpsFlowAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)関数を呼び出します。 次に、例を示します。
 
 ```cpp
 // Context structure to be associated with data flows
@@ -101,7 +101,7 @@ VOID NTAPI
 }
 ```
 
-コンテキストが既にデータ フローに関連付けられている場合にする必要がありますまず前に削除する新しいコンテキストをデータ フローを関連付けることができます。 データ フロー、吹き出しからのコンテキストを削除する[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数呼び出し、 [ **FwpsFlowRemoveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数。 例:
+コンテキストが既にデータフローに関連付けられている場合、新しいコンテキストがデータフローに関連付けられるようにするには、まずそのコンテキストを削除する必要があります。 データフローからコンテキストを削除するために、コールアウトの[classid の classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、 [**FwpsFlowRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数を呼び出します。 次に、例を示します。
 
 ```C++
 // Context structure to be associated with data flows
@@ -172,4 +172,4 @@ VOID NTAPI
 }
 ```
 
-前の例で、 *calloutId*変数にはコールアウトのランタイム識別子が含まれています。 ランタイム識別子は、フィルター エンジンに登録される引き出し線とコールアウト ドライバー コールアウト ドライバーに返された同じ識別子です。
+前の例では、 *Calloutid*変数にコールアウトの実行時識別子が含まれています。 実行時識別子は、コールアウトドライバーがコールアウトをフィルターエンジンに登録したときにコールアウトドライバーに返されたものと同じ識別子です。

@@ -4,16 +4,16 @@ description: 必要なバッテリ ミニクラス ドライバー機能の提�
 ms.assetid: d33d3c8c-f867-40dc-901c-6b0dd5d57dac
 keywords:
 - バッテリ miniclass ドライバー WDK、ルーチン
-- ルーチンの WDK バッテリ
+- ルーチン WDK バッテリ
 - バッテリ miniclass ドライバー WDK、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e42ab0d8d273fd18246bdc84432b3366f3ef888b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dfb9b8412006ea94828fc5a034a805eeeaf258a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364724"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832218"
 ---
 # <a name="supplying-required-battery-miniclass-driver-functionality"></a>必要なバッテリ ミニクラス ドライバー機能の提供
 
@@ -21,7 +21,7 @@ ms.locfileid: "67364724"
 ## <span id="ddk_supplying_required_battery_miniclass_driver_functionality_dg"></span><span id="DDK_SUPPLYING_REQUIRED_BATTERY_MINICLASS_DRIVER_FUNCTIONALITY_DG"></span>
 
 
-サポートに必要なルーチンに加え[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)バッテリの miniclass ドライバーは、次のルーチンをいる必要があります。
+[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)をサポートするために必要なルーチンに加えて、バッテリ miniclass ドライバーには次のルーチンが必要です。
 
 [DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)
 
@@ -43,17 +43,17 @@ ms.locfileid: "67364724"
 
 [*BatteryMiniDisableStatusNotify*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback)
 
-[アンロード](unload-routine-of-a-battery-miniclass-driver.md)
+[取り除き](unload-routine-of-a-battery-miniclass-driver.md)
 
-[DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)、[アンロード](unload-routine-of-a-battery-miniclass-driver.md)、 [DispatchDeviceControl](dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md)、および[AddDevice](adddevice-routine-of-a-battery-miniclass-driver.md)は標準のドライバー ルーチン。 DriverEntry 名が必要です、ため、オペレーティング システムを使用すると、ドライバーの開始時に呼び出すことができます。 適切なデータ構造のアドレスが正しく読み込まれている限り、各自の判断でその他のドライバーのルーチンの名前を選択できます。
+[Driverentry](driverentry-routine-of-a-battery-miniclass-driver.md)、 [Unload](unload-routine-of-a-battery-miniclass-driver.md)、 [DispatchDeviceControl](dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md)、および[AddDevice](adddevice-routine-of-a-battery-miniclass-driver.md)は、標準ドライバールーチンです。 ドライバーの開始時にオペレーティングシステムが呼び出しを行うことができるように、名前 DriverEntry が必要です。 適切なデータ構造に適切に読み込まれていれば、他のドライバールーチンの名前を自由に選択できます。
 
-[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)ルーチンが miniclass ドライバーによって提供され、バッテリのクラス ドライバーによって呼び出されます。 Miniclass ドライバーを記述する場合は、これらのルーチンのいずれかの機能を実装するには、しないこともできます。ただし、ルーチンのエントリ ポイントを指定する必要がありますそれにもかかわらず、およびルーチンは、状態を返す必要があります\_いない\_サポートされています。 これらのルーチンのプロトタイプは Batclass.h に表示されます。
+[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_battery/)ルーチンは、miniclass ドライバーによって提供され、バッテリクラスドライバーによって呼び出されます。 Miniclass ドライバーを作成する場合は、これらのルーチンの機能を実装しないことを選択できます。ただし、ルーチンのエントリポイントを指定する必要があります。ルーチンは、サポートされて\_いない状態\_返す必要があります。 これらのルーチンのプロトタイプは、Batclass に表示されます。
 
-バッテリ miniclass ドライバーでは、次のヘッダー ファイルを含める必要があります。
+バッテリ miniclass ドライバーには、次のヘッダーファイルが含まれている必要があります。
 
--   Batclass.h
+-   Batclass
 
--   Ntddk.h または Wdm.h
+-   Ntddk または Wdm
 
  
 

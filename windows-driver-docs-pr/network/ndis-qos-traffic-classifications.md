@@ -4,47 +4,47 @@ description: NDIS QoS トラフィック分類
 ms.assetid: 62D7B69F-A64E-4E3C-9AEA-8C56495E3FF5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85f598d539068418c0755b8c5b7b555ca4120bde
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e73997b4c89156475665ff7efde7215cc00a3a74
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369160"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833767"
 ---
 # <a name="ndis-qos-traffic-classifications"></a>NDIS QoS トラフィック分類
 
 
-NDIS サービスの品質 (QoS) は、送信、分類または*エグレス*パケットのネットワーク アダプターで優先順位の高い配信します。 各トラフィックの分類では、次の項目を指定します。
+NDIS Quality of Service (QoS) は、ネットワークアダプターによる優先順位の高い送信*パケットまたは*送信パケットを分類します。 各トラフィック分類では、次のことを指定します。
 
--   分類を*条件*エグレス パケット データ内のデータのパターンに基づきます。
+-   送信パケットデータ内のデータパターンに基づく分類*条件*。
 
-    NDIS 6.30 以降、分類の条件は、16 ビット値に基づくが、UDP または TCP 宛先ポートなど、メディア アクセス制御 (MAC) EtherType します。
+    NDIS 6.30 以降では、分類条件は、UDP または TCP 宛先ポートやメディアアクセス制御 (MAC) EtherType などの16ビット値に基づいています。
 
--   分類を*アクション*エグレス パケットを処理するために使用されるトラフィック クラスを定義します。
+-   送信パケットの処理に使用する traffic クラスを定義する分類*アクション*。
 
-    NDIS 6.30 以降、分類アクションは、802.1 p の優先度レベルを指定します。
+    NDIS 6.30 以降では、分類アクションは 802.1 p 優先度レベルを指定します。
 
-**注**  トラフィックの分類は、IEEE 802.1 仕様で「アプリケーションの優先順位」でとも呼ばれます。
+**注**  トラフィックの分類は、IEEE 802.1 仕様では "アプリケーションの優先度" とも呼ばれます。
 
  
 
-NDIS QoS トラフィックの分類は、次の種類のパケットのエグレス トラフィックを意図しています。
+NDIS QoS トラフィック分類は、次の種類の送信パケットトラフィックを対象としています。
 
--   Fibre Channel over Ethernet (FCoE)、iSCSI のパケットなど、ミニポート ドライバーにオフロードされるトラフィックに基づいてパケット。
+-   ミニポートドライバーにオフロードされたトラフィックに基づくパケット (ファイバーチャネル over Ethernet (FCoE) や iSCSI パケットなど)。
 
--   パケットを管理および RDMA など、ミニポート ドライバーによって適用されている接続に基づきます。
+-   RDMA などのミニポートドライバーによって管理および適用される接続に基づくパケット。
 
-NDIS QoS トラフィックの分類は、オペレーティング システムによって生成された TCP/IP トラフィック用のものではありません、ため、ミニポート ドライバーがパケット インスペクションを実行する必要はありません。 代わりに、分類の条件には、オフロードまたはドライバーによって管理されたパケットの種類が一致すると、単に適用できる分類アクションその型に属しているすべてのパケットに。 たとえば、FCoE オフロードと分類の条件のミニポート ドライバーが有効になっている場合は、iSCSI の TCP ポート番号 (860 または 3260)、ドライバー エグレス iSCSI のすべてのパケットを分類アクションに対して定義された優先順位の優先順位を指定します。
+NDIS QoS トラフィック分類は、オペレーティングシステムによって生成される TCP/IP トラフィックを想定していないため、ミニポートドライバーはパケット検査を実行する必要はありません。 その代わりに、ドライバーによってオフロードまたは管理されているパケットの種類に分類条件が一致する場合は、その種類に属するすべてのパケットに分類アクションを適用するだけで済みます。 たとえば、ミニポートドライバーで FCoE のオフロードが有効になっていて、分類条件で iSCSI TCP ポート番号 (860 または 3260) が指定されている場合、ドライバーは、分類アクションに対して定義された優先度レベルで、すべての送信 iSCSI パケットの優先順位を設定します。
 
-DCB コンポーネント (Msdcb.sys) の OID メソッド要求を通じてトラフィックの分類を指定する[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)します。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体の配列を指定する[ **NDIS\_QOS\_分類\_要素**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_classification_element)構造体。 各構造体には、トラフィックの分類を定義します。
+DCB コンポーネント (Msdcb) は、 [oid\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)を使用して、トラフィックの分類を指定します。 この OID 要求には、ndis [ **\_qos\_分類\_要素**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)構造の配列を指定する、 [**ndis\_qos\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体が含まれています。 これらの各構造体は、トラフィックの分類を定義します。
 
-DCB のコンポーネントを指定します、*既定*トラフィックの分類を他の分類の条件と一致しないすべての送信パケットに適用されます。 この場合、ネットワーク アダプターは、これらの送信パケットに既定の分類に関連付けられている IEEE 802.1p の優先度レベルを割り当てます。 既定のトラフィックの分類には、次の属性があります。
+DCB コンポーネントは、他の分類条件に一致しないすべての送信パケットに適用される*既定*のトラフィック分類を指定します。 この場合、ネットワークアダプターによって、既定の分類に関連付けられている IEEE 802.1 p の優先度レベルが、これらの送信パケットに割り当てられます。 既定のトラフィック分類には、次の属性があります。
 
--   NDIS の種類のトラフィックの分類の条件が\_QOS\_条件\_既定します。
+-   これには、種類が NDIS\_QOS\_CONDITION のトラフィック分類条件\_既定値が含まれています。
 
--   配列で定義されている最初のトラフィックの分類が[ **NDIS\_QOS\_分類\_要素**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_classification_element)構造体。
+-   これは、 [**NDIS\_QOS\_分類\_要素**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)構造体の配列で定義されている最初のトラフィック分類です。
 
-DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
+DCB コンポーネントの詳細については、「[データセンターブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)」を参照してください。
 
  
 

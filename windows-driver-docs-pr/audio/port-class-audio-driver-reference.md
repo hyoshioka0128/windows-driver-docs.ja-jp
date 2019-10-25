@@ -4,12 +4,12 @@ description: ポート クラス オーディオ ドライバー リファレン
 ms.assetid: ce68e3fd-9d7e-4d9e-b30a-09c07a3bb805
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4a92558cb07b090cd0562528c6d000a82710a5b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1af3a304eb0cf511a20992a574279c1024bd7ac4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362568"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830235"
 ---
 # <a name="port-class-audio-driver-reference"></a>ポート クラス オーディオ ドライバー リファレンス
 
@@ -19,33 +19,33 @@ ms.locfileid: "67362568"
 
 ここでは、次の項目について説明します。
 
--   PortCls システム ドライバーによって実装される関数。
+-   PortCls システムドライバーによって実装される関数。
 
--   互いに通信するポートおよびミニポートのドライバーを使用するインターフェイスです。
+-   ポートとミニポートドライバーが相互に通信するために使用するインターフェイス。
 
-さまざまな PortCls 関数およびインターフェイスが、オペレーティング システムのバージョンがサポートについては、次を参照してください。[オペレーティング システムによって PortCls サポート](https://docs.microsoft.com/windows-hardware/drivers/audio/portcls-support-by-operating-system)します。
+さまざまな PortCls 関数とインターフェイスをサポートするオペレーティングシステムのバージョンの一覧については、「 [PortCls support By オペレーティング system](https://docs.microsoft.com/windows-hardware/drivers/audio/portcls-support-by-operating-system)」を参照してください。
 
-このセクションでは、次のトピックが表示されます。
+ここでは、次のトピックについて説明します。
 
-[オーディオ ポート クラス関数](audio-port-class-functions.md)
+[オーディオポートクラス関数](audio-port-class-functions.md)
 
-[オーディオのヘルパー オブジェクト インターフェイス](audio-helper-object-interfaces.md)
+[オーディオヘルパーオブジェクトインターフェイス](audio-helper-object-interfaces.md)
 
-[オーディオ ポート オブジェクト インターフェイス](audio-port-object-interfaces.md)
+[オーディオポートオブジェクトインターフェイス](audio-port-object-interfaces.md)
 
-[オーディオ ミニポート オブジェクト インターフェイス](audio-miniport-object-interfaces.md)
+[オーディオミニポートオブジェクトインターフェイス](audio-miniport-object-interfaces.md)
 
-[オーディオ ミニポート補助インターフェイス](audio-miniport-auxiliary-interfaces.md)
+[オーディオミニポート補助インターフェイス](audio-miniport-auxiliary-interfaces.md)
 
-[オーディオの Stream オブジェクト インターフェイス](audio-stream-object-interfaces.md)
+[オーディオストリームオブジェクトインターフェイス](audio-stream-object-interfaces.md)
 
-[ユーザー モードの DirectMusic シンセサイザーとシンセサイザー シンク インターフェイス](directmusic-user-mode-synth-and-synth-sink-interfaces.md)
+[DirectMusic ユーザーモードのシンセおよびシンセサイザーシンクインターフェイス](directmusic-user-mode-synth-and-synth-sink-interfaces.md)
 
-[オーディオの電源管理のインターフェイス](audio-power-management-interfaces.md)
+[オーディオ電源管理インターフェイス](audio-power-management-interfaces.md)
 
-[オーディオのポートのクラス構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/)
+[オーディオポートクラスの構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/)
 
-[廃止された関数のマクロの定義](macro-definitions-for-obsolete-functions.md)
+[互換性のために残されている関数のマクロ定義](macro-definitions-for-obsolete-functions.md)
 
  
 

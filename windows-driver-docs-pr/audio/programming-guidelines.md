@@ -1,20 +1,20 @@
 ---
-title: HD audio DDI プログラミングガイドライン
-description: HD audio DDI プログラミングガイドライン
+title: HD オーディオ DDI のプログラミング ガイドライン
+description: HD オーディオ DDI のプログラミング ガイドライン
 ms.assetid: 289bdf85-9138-4920-a61f-050c51077d3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af7de6291f0a7a6f669bc321b508e637c442ec2
-ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
+ms.openlocfilehash: 4827dded98bcab494efc207e4174eaef46af9a1c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319914"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832445"
 ---
-# <a name="hd-audio-ddi-programming-guidelines"></a>HD audio DDI プログラミングガイドライン
+# <a name="hd-audio-ddi-programming-guidelines"></a>HD オーディオ DDI のプログラミング ガイドライン
 
 
-このセクションでは、HD オーディオ DDI バージョンを使用するためのプログラミングガイドラインを示します ( [ **\_hdaudio bus\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)、 [**hdaudio\_bus\_interface\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) 、[**Hdaudio\_businterface\_bdl 構造体) を使って、HD オーディオバスインターフェイスコントローラーに接続されているオーディオおよびモデムコーデックを制御します。\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)
+このセクションでは、HD Audio DDI バージョンを使用するためのプログラミングガイドラインを示します ( [**hdaudio\_bus\_interface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface)、 [**HDAUDIO\_BUS\_INTERFACE\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)および[**hdaudio\_BUS によって定義されて\_インターフェイス\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造体) を、HD オーディオバスインターフェイスコントローラーに接続されているオーディオおよびモデムコーデックを制御します。
 
 HD オーディオバスドライバーは、HD オーディオ DDI の一方または両方のバージョンをその子に公開します。これは、オーディオおよびモデムコーデックのカーネルモード関数ドライバーです。 (これらの子の1つは、UAA HD オーディオクラスドライバーである可能性があります)。これらのドライバーは、HD オーディオコントローラーデバイスのハードウェア機能にアクセスするために、DDIs のルーチンを呼び出します。
 

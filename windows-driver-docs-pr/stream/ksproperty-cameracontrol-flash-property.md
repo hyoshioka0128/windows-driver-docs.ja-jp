@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ
-description: ユーザー モードのクライアントでは、このプロパティを使用して取得またはカメラのフラッシュのコントロールの特性を設定します。 このプロパティは省略可能です。
+title: KSK プロパティ\_CAMERACONTROL\_FLASH\_プロパティ
+description: ユーザーモードのクライアントは、このプロパティを使用して、カメラのフラッシュコントロール特性を取得または設定します。 このプロパティは省略可能です。
 ms.assetid: 33B4B9DF-D3B4-4990-A625-D632F30284AA
 keywords:
-- KSPROPERTY_CAMERACONTROL_FLASH_PROPERTY ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_FLASH_PROPERTY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8065ca34e75da3dd975d44c7916a83b754067841
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96ef2bef6193d5a84b39da0e353f0447605bd2ed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356635"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837551"
 ---
-# <a name="kspropertycameracontrolflashproperty"></a>KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ
+# <a name="ksproperty_cameracontrol_flash_property"></a>KSK プロパティ\_CAMERACONTROL\_FLASH\_プロパティ
 
 
-ユーザー モードのクライアントでは、このプロパティを使用して取得またはカメラのフラッシュのコントロールの特性を設定します。 このプロパティは省略可能です。
+ユーザーモードのクライアントは、このプロパティを使用して、カメラのフラッシュコントロール特性を取得または設定します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_cameracontrol_pan_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_PAN_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67356635"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67356635"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ ms.locfileid: "67356635"
 <a name="remarks"></a>注釈
 -------
 
-ID がプロパティ**KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ\_ID**します。
+プロパティ ID は**Ksk プロパティ\_CAMERACONTROL\_FLASH\_プロパティ\_ID**です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ ID がプロパティ**KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ\_ID**�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +85,9 @@ ID がプロパティ**KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ\_ID**�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_FLASH\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
+[**KSK プロパティ\_CAMERACONTROL\_FLASH\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
 
  
 

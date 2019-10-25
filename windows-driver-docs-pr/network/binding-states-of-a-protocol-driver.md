@@ -3,20 +3,20 @@ title: プロトコル ドライバーのバインディングの状態
 description: プロトコル ドライバーのバインディングの状態
 ms.assetid: 15bc6217-e258-4e07-abc8-6c46fd01d85b
 keywords:
-- プロトコル ドライバー WDK ネットワークは、バインドの状態
-- NDIS プロトコル ドライバー WDK には、バインドを状態します。
-- バインドは、WDK ネットワークを状態します。
-- プロトコル バインド WDK ネットワーク
-- プロトコル ドライバー WDK ネットワー キング、プロトコル バインド
-- NDIS プロトコル ドライバー WDK、プロトコル
+- プロトコルドライバー WDK ネットワーク、バインドの状態
+- NDIS プロトコルドライバー WDK、バインドの状態
+- バインドの状態 WDK ネットワーク
+- プロトコルバインドの WDK ネットワーク
+- プロトコルドライバー WDK ネットワーク, プロトコルバインド
+- NDIS プロトコルドライバー WDK、プロトコル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b91088e7214ad7cbd7303abea035c95302fcad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8e47cfc9c543c58d7049c191918d44dd1c3f829
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354643"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838219"
 ---
 # <a name="binding-states-of-a-protocol-driver"></a>プロトコル ドライバーのバインディングの状態
 
@@ -24,55 +24,55 @@ ms.locfileid: "67354643"
 
 
 
-[NDIS プロトコル ドライバー](ndis-protocol-drivers2.md)ドライバーを管理する各バインドに次の操作の状態をサポートする必要があります。
+[NDIS プロトコルドライバー](ndis-protocol-drivers2.md)では、ドライバーが管理する各バインドについて、次の動作状態がサポートされている必要があります。
 
--   バインドされていません。
+-   非バインド
 
--   開始
+-   左中
 
--   実行中
+-   Running
 
--   閉じる
-
--   一時停止
+-   右山
 
 -   一時停止
 
--   再起動します。
+-   一時停止
 
-次の図は、これらの状態間の関係を示します。
+-   再起動
 
-![バインドの状態を示す図](images/protocolstate.png)
+次の図は、これらの状態の関係を示しています。
 
-次に、プロトコル ドライバーにバインドの状態を定義します。
+![バインド状態ダイアグラムを示す図](images/protocolstate.png)
 
-<a href="" id="unbound"></a>バインドされていません。  
-*未バインド*状態は、バインディングの初期状態です。 この状態は、NDIS を呼び出すが待機プロトコル ドライバー、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。 NDIS 後*ProtocolBindAdapterEx*バインディングが Opening 状態に遷移します。 バインドの解除後に操作が完了すると、バインド状態に戻ります、非連結 Closing 状態から。
+プロトコルドライバーのバインドの状態は、次のように定義されています。
 
-<a href="" id="opening"></a>開始  
-*開く*状態では、プロトコル ドライバーを選択して、バインド用リソースを割り当てますミニポート アダプターを開こうとするとします。 NDIS ドライバーを呼び出してから*ProtocolBindAdapterEx*関数の場合、バインディングが Opening 状態に遷移します。 プロトコル ドライバーには、ミニポート アダプターにバインドできない場合、非連結の状態にバインディングを返します。 ドライバーは正常にミニポート アダプターにバインドした場合、バインドは一時停止状態になります。
+<a href="" id="unbound"></a>非バインド  
+バインド解除され*た状態は、バインディング*の初期状態です。 この状態では、プロトコルドライバーは NDIS が[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出すまで待機します。 NDIS が*Protocolbindadapterex*を呼び出した後、バインドは開始状態になります。 バインド解除操作が完了すると、バインドは終了状態から非バインド状態に戻ります。
 
-<a href="" id="running"></a>実行しています。  
-*を実行している*状態では、通常の送信を実行するプロトコル ドライバーとバインドの処理を受信します。 バインディングを再開中状態にして、ドライバーが送信を実行し、受信操作に準備ができたら、ときに、バインドが実行状態になります。
+<a href="" id="opening"></a>左中  
+*オープン*状態では、プロトコルドライバーによってバインディングのリソースが割り当てられ、ミニポートアダプターを開こうとします。 NDIS がドライバーの*Protocolbindadapterex*関数を呼び出した後、バインディングは開始状態になります。 プロトコルドライバーがミニポートアダプターへのバインドに失敗した場合、バインドはバインドされていない状態に戻ります。 ドライバーがミニポートアダプターに正常にバインドされている場合、バインドは一時停止状態になります。
 
-<a href="" id="closing"></a>閉じる  
-*閉じる*状態では、プロトコル ドライバーがミニポート アダプターへのバインドを終了し、バインド用のリソースを解放します。 NDIS 呼び出しプロトコル ドライバーの後に[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)関数の場合、バインディングが Closing 状態に遷移します。 プロトコル ドライバーには、バインドの解除操作が完了すると、バインディングは連結なし状態になります。
+<a href="" id="running"></a>起動  
+*実行*状態では、プロトコルドライバーはバインドに対して通常の送受信処理を実行します。 バインドが再開中の状態で、ドライバーが送信および受信操作を実行する準備ができたら、バインドは実行中の状態になります。
+
+<a href="" id="closing"></a>右山  
+*終了*状態では、プロトコルドライバーはミニポートアダプターへのバインディングを閉じ、バインディングのリソースを解放します。 NDIS がプロトコルドライバーの[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)関数を呼び出した後、バインディングは終了状態になります。 プロトコルドライバーがバインド解除操作を完了すると、バインドはバインドされていない状態になります。
 
 <a href="" id="pausing"></a>一時停止  
-*一時停止中*状態では、プロトコル ドライバーに送信を停止し、受信バインドの操作に必要なすべての操作が完了するとします。 バインドが実行中の状態では、NDIS はプロトコル ドライバーの PnP の一時停止の通知を送信します、バインドは一時停止状態になります。 プロトコル ドライバーには、そのすべての未処理の送信要求が完了するを待つ必要があります。 プロトコル ドライバーには、一時停止操作が失敗することはできません。 一時停止操作が完了した後、バインドは一時停止状態になります。
+*一時停止*中の状態では、バインドの送信および受信操作を停止するために必要なすべての操作が、プロトコルドライバーによって完了されます。 バインドが Running 状態で、NDIS がプロトコルドライバーを PnP 一時停止通知に送信すると、バインドは一時停止中の状態になります。 プロトコルドライバーは、すべての未処理の送信要求が完了するまで待機する必要があります。 プロトコルドライバーは、一時停止操作を失敗することはできません。 一時停止操作が完了すると、バインドは一時停止状態になります。
 
-<a href="" id="paused"></a>一時停止  
-*Paused*状態では、プロトコルのドライバーが送信を実行またはバインディングの操作を受信していません。 バインディングが一時停止状態と、一時停止操作が完了すると、バインドは一時停止状態になります。 バインディングが Opening 状態と開く操作が正常に完了すると、バインドは一時停止状態になります。 NDIS は、プロトコル ドライバーにバインディングの PnP 再起動通知を送信する場合、バインドは再開中状態になります。 NDIS ドライバーの場合[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)関数の場合、バインディングが Closing 状態に遷移します。
+<a href="" id="paused"></a>中  
+*一時停止*状態では、プロトコルドライバーはバインドに対して送信操作または受信操作を実行しません。 バインディングが一時停止中の状態で、一時停止操作が完了すると、バインディングは一時停止状態になります。 バインディングが開始状態で、開いている操作が正常に完了すると、バインディングは一時停止状態になります。 NDIS がプロトコルドライバーにバインドの PnP 再起動通知を送信すると、バインドは再起動状態になります。 NDIS がドライバーの[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)関数を呼び出すと、バインディングは終了状態になります。
 
-<a href="" id="restarting"></a>再起動します。  
-*再起動*状態では、プロトコル ドライバーに送信を再起動し、受信バインドの操作に必要なすべての操作が完了するとします。 バインドは一時停止状態であり、NDIS プロトコル ドライバーに送信、PnP 再起動の通知、バインディングは、再開中状態になります。 再起動が失敗した場合、バインディングが一時停止状態に戻ります。 再起動が成功した場合、バインドが実行状態になります。
+<a href="" id="restarting"></a>再起動  
+*再起動*状態では、プロトコルドライバーは、バインディングの送信および受信操作を再開するために必要なすべての操作を完了します。 バインドが一時停止状態であり、NDIS がプロトコルドライバーを PnP 再起動通知に送信すると、バインドは再起動状態になります。 再起動が失敗した場合、バインディングは一時停止状態に戻ります。 再起動が成功した場合、バインディングは実行中の状態になります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ドライバー スタックの管理](driver-stack-management.md)
+[ドライバースタックの管理](driver-stack-management.md)
 
-[NDIS プロトコル ドライバー](ndis-protocol-drivers2.md)
+[NDIS プロトコルドライバー](ndis-protocol-drivers2.md)
 
  
 

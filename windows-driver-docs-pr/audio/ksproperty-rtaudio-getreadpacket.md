@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_GETREADPACKET
-description: KSPROPERTY\_RTAUDIO\_GETREADPACKET がキャプチャされたオーディオ パケットに関する情報を返します。
+title: KSK プロパティ\_RTAUDIO\_GETREADPACKET
+description: KSK プロパティ\_RTAUDIO\_GETREADPACKET は、キャプチャされたオーディオパケットに関する情報を返します。
 ms.assetid: BA52CDCE-0178-4C90-A82C-15800DD3709E
 keywords:
-- KSPROPERTY_RTAUDIO_GETREADPACKET オーディオ デバイス
+- KSPROPERTY_RTAUDIO_GETREADPACKET オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,46 +14,46 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 99aebaa6f982d69670aa11172194fb2400e9c3eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed12673544f73943fc14ae1b77a3b466cea74498
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830684"
 ---
-# <a name="kspropertyrtaudiogetreadpacket"></a>KSPROPERTY\_RTAUDIO\_GETREADPACKET
+# <a name="ksproperty_rtaudio_getreadpacket"></a>KSK プロパティ\_RTAUDIO\_GETREADPACKET
 
 
-KSPROPERTY\_RTAUDIO\_GETREADPACKET がキャプチャされたオーディオ パケットに関する情報を返します。
+KSK プロパティ\_RTAUDIO\_GETREADPACKET は、キャプチャされたオーディオパケットに関する情報を返します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
  
-|取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
+|[購入]|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|〇|いいえ|Pin|[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
+|[はい]|必須ではない|Pin|[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
 
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を示す値を含む構造体を読み込みます。
+プロパティ記述子 (インスタンスデータ) は、 [**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体です。 クライアントは、要求を送信する前に、パケット番号、パケット長、およびその他の情報を示す値を使用して構造体を読み込みます。
 
-プロパティの値は型の変数[ **KSRTAUDIO\_GETREADPACKET\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)します。
+プロパティ値は、 [**Ksrtaudio\_GETREADPACKET\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)型の変数です。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_RTAUDIO\_GETREADPACKET プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+RTAUDIO\_GETREADPACKET プロパティ要求\_KSK プロパティは、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-ステータス\_デバイス\_いない\_準備 - ドライバーは、新しいデータが使用できない場合にこのエラーを返します。
+状態\_デバイス\_準備ができていませ\_ん-新しいデータが利用できない場合、ドライバーはこのエラーを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-読み取りが WaveRT バッファーからのオーディオ データをキャプチャする前に、OS は、使用できるデータに関する情報を取得するには、このルーチンを呼び出します。
+WaveRT バッファーからキャプチャされたオーディオデータを読み取る前に、OS はこのルーチンを呼び出して、使用可能なデータに関する情報を取得します。
 
-パケット番号は、ストリーム内のパケットを識別します。 ストリームが KSSTATE の場合 0 にリセットされます\_を停止します。 数は、キャプチャされた各バッファーで進めます。 パケット番号からは、OS は WaveRT バッファー内のパケットの場所を派生させることができ、ストリームの先頭にパケット相対のストリームの位置を派生させることもできます。
+パケット番号は、ストリーム内のパケットを識別します。 ストリームが KSSTATE\_STOP の場合、この値は0にリセットされます。 この数値は、キャプチャされたバッファーごとに進められます。 パケット番号からは、OS は WaveRT バッファー内のパケットの場所を取得できます。また、ストリームの開始を基準としてパケットのストリームの位置を派生させることもできます。
 
-パケット サイズは、WaveRT バッファー サイズで割った値に渡される NotificationCount [ **KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md). OS は、いつでもこのルーチンを呼び出すことができます。 通常の運用では、OS は、ドライバーは、バッファーの通知イベントを設定後、または前回の呼び出しが MoreData に対して true を返しますにこのルーチンを呼び出します。 オペレーティング システムがこのルーチンを呼び出すと、ドライバーは、OS の以前のすべてのパケットの読み取りが完了したことを担うことができます。 ハードウェアに十分なデータがキャプチャした場合、ドライバー可能性がありますすぐに次の完全なパケット WaveRT バッファーへのバーストし、もう一度バッファー イベントを設定します。 (OS がデータを迅速に読み取るいない) 場合、キャプチャ オーバーフローの場合、オーディオ ドライバーの削除またはオーディオ データの一部を上書きする可能性があります。 オーディオ ドライバーを削除または最も古いデータをまず上書き、オーディオ ドライバーの場合でも、OS にデータを読み取ることがないことができますが、その内部のパケット カウンターを進みが継続します。
+パケットサイズは、 [ **\_通知を使用して、Ksk プロパティ\_RTAUDIO\_\_buffer**](ksproperty-rtaudio-buffer-with-notification.md)に渡される notificationcount で割った、walastbuffer のサイズです。 OS は、いつでもこのルーチンを呼び出すことができます。 通常の操作では、ドライバーによってバッファー通知イベントが設定された後、または以前の呼び出しがより詳細なデータに対して true を返すと、OS はこのルーチンを呼び出します。 OS がこのルーチンを呼び出すと、ドライバーは OS が以前のすべてのパケットの読み取りを終了したと見なします。 ハードウェアに十分なデータがキャプチャされている場合、ドライバーは次の完全なパケットをすぐに WaveRT バッファーにバーストし、バッファーイベントを再度設定します。 キャプチャオーバーフローの場合 (OS がデータを十分に読み取ることができない場合)、オーディオドライバーは一部のオーディオデータを破棄または上書きする可能性があります。 オーディオドライバーは、古いデータを最初に削除するか上書きします。そのため、データが読み取られていない場合でも、オーディオドライバーは内部パケットカウンターをさらに進めることができます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -64,7 +64,7 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET プロパティ要求がステータスを返
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10 以降の Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows 10 以降の Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
@@ -73,10 +73,10 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET プロパティ要求がステータスを返
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSPROPERTY\_RTAUDIO\_SETWRITEPACKET**](ksproperty-rtaudio-setwritepacket.md)
+[**KSK プロパティ\_RTAUDIO\_SETWRITEPACKET**](ksproperty-rtaudio-setwritepacket.md)
 
 [UsePositionLock](usepositionlock.md)
 

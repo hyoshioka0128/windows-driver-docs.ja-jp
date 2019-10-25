@@ -3,18 +3,18 @@ title: ボタン機能配列
 description: ボタン機能配列
 ms.assetid: 139324e5-4d46-4d00-9f5a-fd0313fc109a
 keywords:
-- WDK の HID ボタンの機能を配列します。
-- WDK の HID 配列
-- コレクションの WDK を非表示の機能
-- WDK の HID ボタンの使用
+- ボタン機能配列 WDK HID
+- アレイ WDK HID
+- 機能 WDK HID コレクション
+- ボタンの使用法 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02bce9ff79c1cf92e1a5e5c00bc483ace6f512ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 851ec3f35cf3d147fc872c15989b5003fcce8d4e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375764"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824850"
 ---
 # <a name="button-capability-arrays"></a>ボタン機能配列
 
@@ -22,59 +22,59 @@ ms.locfileid: "67375764"
 
 
 
-A*ボタン機能配列*でサポートされているボタンの使用状況に関する情報を格納、[最上位のコレクション](top-level-collections.md)HID レポートの特定の種類。 コレクションの機能に関する情報が含まれているその[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)構造体。
+*ボタン機能の配列*には、特定の種類の HID レポートの[最上位のコレクション](top-level-collections.md)でサポートされているボタンの使用法に関する情報が含まれています。 コレクションの機能に関する情報は、 [**Hidp\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)構造体に含まれています。
 
-ユーザー モード アプリケーションまたはカーネル モード ドライバーは、次のいずれかを使用して[HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ボタンの機能情報を取得します。
+ユーザーモードのアプリケーションまたはカーネルモードドライバーは、次のいずれかの[HIDClass サポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を使用して、ボタンの機能情報を取得します。
 
--   [**HidP\_GetButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)レポートの指定した型に含まれるすべてのボタン使用法を説明するボタンの機能の配列を返します。
+-   [**Hidp\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps)は、指定されたレポートの種類に含まれるすべてのボタンの使用法を記述するボタン機能の配列を返します。
 
--   [**HidP\_GetSpecificButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)呼び出し元が指定した使用状況 ページ、使用状況の ID を返します、ボタンの機能情報をフィルター処理と[リンク コレクション](link-collections.md)します。
+-   [**Hidp\_Get固有の Buttoncaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)は、呼び出し元が指定した使用状況ページ、使用 ID、および[リンクコレクション](link-collections.md)によって返されるボタン機能情報をフィルター処理します。
 
-ボタンの機能の配列に含まれる[ **HIDP\_ボタン\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_button_caps)うちそれぞれに関する次の情報を格納する構造を[するHID使用法](hid-usages.md)または[使用範囲](hid-usages.md#usage-range):
+ボタン機能配列には、 [**Hidp\_button\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_button_caps)構造体が含まれています。それぞれには、 [HID の使用法](hid-usages.md)または[使用状況の範囲](hid-usages.md#usage-range)に関する次の情報が含まれています。
 
--   使用状況または使用状況の範囲の使用状況 ページ
+-   使用状況または使用状況の範囲の [使用状況] ページ
 
--   ボタンのデータを含む、レポートのレポート ID
+-   ボタンデータを含むレポートのレポート ID
 
 -   使用状況 ID または使用状況の範囲
 
--   使用方法は、かどうかを示すフラグを[別名の使用状況](hid-usages.md#aliased-usages)
+-   使用法が[別名で使用](hid-usages.md#aliased-usages)されるかどうかを示すフラグ
 
--   使用状況や使用状況の範囲を含むリンク コレクション
+-   使用状況または使用状況の範囲を含むリンクコレクション
 
--   文字列記述子と使用状況や使用状況の範囲に関連付けられている指定子 (指定子のインデックスの項目と文字列のインデックスの項目を参照してください)
+-   使用量または使用範囲に関連付けられている文字列記述子と指定子 (「指定子インデックス項目」および「文字列インデックス項目」を参照)
 
--   [データのインデックス](data-indices.md)HID パーサーが使用または使用状況の範囲に割り当てられています。
+-   HID パーサーによって使用状況または使用状況の範囲に割り当てられた[データインデックス](data-indices.md)
 
-一般に、次の条件は、ボタンの機能の配列で説明されているすべての使用状況の保持します。
+一般に、ボタン機能配列で記述されているすべての使用について、次の条件が保持されます。
 
--   各機能の構造は、1 つの使用状況または変数の主な項目または配列の主な項目に関連付けられている使用量の範囲を表します。
+-   各機能構造は、変数のメイン項目または配列のメイン項目に関連付けられている1つの使用状況または使用状況の範囲を表します。
 
--   エイリアスの使用法は、変数の主な項目で使用できます。 配列の項目に関連付けられている使用量は、エイリアスにすることはできません。 使用状況の範囲は、エイリアスにすることはできません。
+-   エイリアス化された使用法は、変数のメイン項目と共に使用できます。 配列項目に関連付けられている使用法にエイリアスを付けることはできません。 使用範囲のエイリアスを指定することはできません。
 
--   HID パーサーでは、使用法の最低限必要な数のみを使用して、使用状況を各ボタンに割り当てます。 パーサーでは、使用状況レポート記述子で指定されている順序で割り当てられます。 必要でない使用状況のレポート記述子は破棄されます。 ボタンの機能の配列では、破棄された使用状況に関する情報は含まれません。
+-   HID パーサーは、必要最小限の使用回数のみを使用して、各ボタンに使用状況を割り当てます。 パーサーは、使用法をレポート記述子で指定されている順序で割り当てます。 不要なレポート記述子での使用は破棄されます。 ボタン機能の配列には、破棄された使用法に関する情報は含まれていません。
 
--   機能の配列には変数の項目に指定された使用法の数が、項目内のボタンの数よりも小さい場合は、ボタン使用法 (、最終使用、変数がメインのレポート記述子で指定された 1 つを記述する 1 つだけの機能の構造体が含まれています項目の場合)。 ただしを参照してください[値配列の使用状況](value-capability-arrays.md#usage-value-array)使用方法については、レポートの値を 1 より大きいカウントです。
+-   変数項目に指定された使用量が項目内のボタン数よりも少ない場合、機能配列には、1つのボタンの使用法を記述する機能構造が1つだけ含まれます (これは、最初に変数のレポート記述子に指定された最後の使用方法です)。項目)。 ただし、レポート数が1より大きい使用状況値の詳細については、「[使用状況値の配列](value-capability-arrays.md#usage-value-array)」を参照してください。
 
--   HID パーサーでは、機能の配列で説明されている各使用法に一意のデータのインデックスを割り当てます。
+-   HID パーサーは、機能配列に記述されている各使用方法に一意のデータインデックスを割り当てます。
 
-次のトピックでは、機能の構造を整理し、ボタンの機能の配列に設定する方法について説明します。
+次のトピックでは、ボタン機能配列での機能構造の編成方法と設定方法について説明します。
 
-[変数の主な項目でボタンの使用](#button-usages-in-a-variable-main-item)
+[変数のメイン項目でのボタンの使用法](#button-usages-in-a-variable-main-item)
 
-[配列の主な項目でボタンの使用](#button-usages-in-an-array-main-item)
+[配列のメイン項目でのボタンの使用法](#button-usages-in-an-array-main-item)
 
-### <a href="" id="button-usages-in-a-variable-main-item"></a> 変数の主な項目でボタンの使用
+### <a href="" id="button-usages-in-a-variable-main-item"></a>変数のメイン項目でのボタンの使用法
 
-各[使用状況](hid-usages.md)または[使用状況の範囲](hid-usages.md#usage-range)が指定されているレポートの記述子がボタンの機能の配列で、独自機能の構造によって記述されます。
+レポート記述子に指定されている[使用状況](hid-usages.md)または[使用状況の範囲](hid-usages.md#usage-range)はそれぞれ、ボタン機能の配列で独自の機能構造によって記述されます。
 
-**IsAlias**機能の構造体のメンバーのセットを指定に使用されます*n*次のように、別名の使用法。
+機能構造体の**Isalias**メンバーは、次のように*n 個*の別名の使用を指定するために使用されます。
 
--   **IsAlias**に設定されている**TRUE**最初*n*-1 機能の構造体の機能の配列に追加します。 **IsAlias**設定**FALSE**で、 *n*th 機能の構造体。 推奨される使用方法は、シーケンスの最後の別名の使用状況です。
+-   **Isalias**は、機能配列に追加された最初の*n*-1 機能構造体で**TRUE**に設定されています。 *N*番目の機能構造で**Isalias**が**FALSE**に設定されています。 優先される使用方法は、シーケンス内で最後にエイリアス化された使用方法です。
 
-アプリケーション、ドライバーは、どのボタンの使用方法は、このようなシーケンスをスキャンしてエイリアスは判断できます。
+アプリケーションまたはドライバーは、そのようなシーケンスをスキャンすることで、どのボタンの使用方法がエイリアス化されているかを判断できます。
 
-次の表では、次の 3 つの別名の使用状況の例をまとめたものです。
+次の表に、エイリアス化された3つの使用例の概要を示します。
 
 <table>
 <colgroup>
@@ -84,25 +84,25 @@ A*ボタン機能配列*でサポートされているボタンの使用状況�
 </colgroup>
 <thead>
 <tr class="header">
-<th>レポート記述子の別名の使用状況の順序</th>
-<th>機能の配列内の使用状況の順序</th>
-<th>IsAlias メンバー値</th>
+<th>レポート記述子での別名使用順序</th>
+<th>機能配列の使用順序</th>
+<th>IsAlias メンバーの値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用率 1</p></td>
-<td><p>使用状況 3</p></td>
-<td><p><strong>TRUE</strong></p></td>
+<td><p>使用法1</p></td>
+<td><p>使用量3</p></td>
+<td><p><strong>本来</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>使用量 2</p></td>
-<td><p>使用量 2</p></td>
-<td><p><strong>TRUE</strong></p></td>
+<td><p>使用状況2</p></td>
+<td><p>使用状況2</p></td>
+<td><p><strong>本来</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p>使用状況 3</p></td>
-<td><p>使用率 1</p></td>
+<td><p>使用量3</p></td>
+<td><p>使用法1</p></td>
 <td><p><strong>FALSE</strong></p></td>
 </tr>
 </tbody>
@@ -110,13 +110,13 @@ A*ボタン機能配列*でサポートされているボタンの使用状況�
 
  
 
-使用法とデータのインデックスは相互参照する方法については、次を参照してください。[データのインデックス](data-indices.md)します。
+使用状況とデータインデックスを相互参照する方法については、「[データインデックス](data-indices.md)」を参照してください。
 
-### <a href="" id="button-usages-in-an-array-main-item"></a> 配列の主な項目でボタンの使用
+### <a href="" id="button-usages-in-an-array-main-item"></a>配列のメイン項目でのボタンの使用法
 
-各[使用状況](hid-usages.md)または[使用範囲](hid-usages.md#usage-range)ボタン機能の配列で、独自機能の構造によって、レポートで指定したボタン配列主な項目の記述子が説明されています。 機能の配列に、機能の構造を追加する順序は、主な項目の使用法を指定する順の逆です。
+レポート記述子に指定されているボタン配列のメイン項目の[使用状況](hid-usages.md)または[使用状況の範囲](hid-usages.md#usage-range)はそれぞれ、ボタン機能配列で独自の機能構造によって記述されます。 機能構造が機能配列に追加される順序は、メイン項目に対して使用される順序と逆になります。
 
-HID パーサーを割り当てます、[データ インデックス](data-indices.md)の使用状況がレポート記述子で指定されている順序で配列の項目に関連付けられている各使用法をします。 たとえば、次の表は、一連のレポート記述子、および使用法で指定されている、使用状況と機能の配列で指定されている、データのインデックスの対応を示します。 (この表で、 *n*は配列の項目に関連付けられている最初の使用にパーサーを代入する最初のデータ インデックスです)。
+HID パーサーは、配列項目に関連付けられている各使用状況に、レポート記述子で指定されている順序で[データインデックス](data-indices.md)を割り当てます。 たとえば、次の表は、レポート記述子で指定されている一連の使用方法と、機能配列で指定されている使用状況とデータインデックスとの対応を示しています。 (この表では、 *n*は、配列項目に関連付けられた最初の使用状況にパーサーが割り当てた最初のデータインデックスです)。
 
 <table>
 <colgroup>
@@ -126,30 +126,30 @@ HID パーサーを割り当てます、[データ インデックス](data-indi
 </colgroup>
 <thead>
 <tr class="header">
-<th>使用状況レポート記述子の順番</th>
-<th>機能の配列内の使用状況の順序</th>
-<th>DataIndex または DatatIndexMax に DataIndexMin から</th>
+<th>レポート記述子の使用順序</th>
+<th>機能配列の使用順序</th>
+<th>DataIndex または DataIndexMin から DatatIndexMax へ</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用率 1</p></td>
-<td><p>範囲 2 の使用状況</p></td>
-<td><p><em>n</em>を + 7 <em>n</em>+8</p></td>
+<td><p>使用法1</p></td>
+<td><p>使用範囲2</p></td>
+<td><p><em>n</em>+ 7 から<em>n</em>+ 8</p></td>
 </tr>
 <tr class="even">
-<td><p>(4 の使用法) の使用状況の範囲 1</p></td>
-<td><p>使用量 2</p></td>
-<td><p><em>n</em>+5</p></td>
+<td><p>使用範囲 1 (4 使用)</p></td>
+<td><p>使用状況2</p></td>
+<td><p><em>n</em>+ 5</p></td>
 </tr>
 <tr class="odd">
-<td><p>使用量 2</p></td>
-<td><p>使用状況の範囲 1</p></td>
-<td><p><em>n</em>を +1 <em>n</em>+4</p></td>
+<td><p>使用状況2</p></td>
+<td><p>使用範囲1</p></td>
+<td><p><em>n</em>+ 1 から<em>n</em>+ 4 まで</p></td>
 </tr>
 <tr class="even">
-<td><p>(2 つの使用法) の使用範囲 2</p></td>
-<td><p>使用率 1</p></td>
+<td><p>使用範囲 2 (使用量 2)</p></td>
+<td><p>使用法1</p></td>
 <td><p><em>n</em></p></td>
 </tr>
 </tbody>

@@ -3,16 +3,16 @@ title: テレビ コネクタおよびコピー防止ハードウェアのクエ
 description: テレビ コネクタおよびコピー防止ハードウェアのクエリ
 ms.assetid: 7812a3ba-42f1-4872-bfe8-08933802f0c1
 keywords:
-- テレビ コネクタ WDK ビデオのミニポート
-- コピー防止の WDK のビデオのミニポート、クエリを実行します。
+- TV コネクタ WDK ビデオミニポート
+- コピー防止 WDK ビデオミニポート、クエリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f81405aa63368913528ac8ec5d0e74d957de64
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b475722e3bb701783d400cb1631334714fb4d8e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385045"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829653"
 ---
 # <a name="querying-tv-connector-and-copy-protection-hardware"></a>テレビ コネクタおよびコピー防止ハードウェアのクエリ
 
@@ -20,51 +20,51 @@ ms.locfileid: "67385045"
 ## <span id="ddk_querying_tv_connector_and_copy_protection_hardware_gg"></span><span id="DDK_QUERYING_TV_CONNECTOR_AND_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-テレビ コネクタがあるアダプターのビデオのミニポート ドライバーを処理する必要があります、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)要求でその[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)関数。 ときに、IOCTL 要求は、IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS、 **InputBuffer**のメンバー、 [**ビデオ\_要求\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)へのポインターを構造体、 [ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)構造体。 **DwCommand** VIDEOPARAMETERS 構造体のメンバーでは、ミニポート ドライバーがテレビ コネクタに関する情報を提供する必要があるかどうかを指定します (VP\_コマンド\_取得) または TV に指定した設定を適用コネクタ (担当副社長\_コマンド\_設定)。
+TV コネクタがあるアダプターのビデオミニポートドライバーは、 [*HwVidStartIO*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io)関数の VIDEOPARAMETERS 要求\_処理するために、 [**IOCTL\_\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)を処理する必要があります。 IOCTL 要求が\_ビデオ\_ハンドル\_VIDEOPARAMETERS を処理する場合、 [**video\_要求\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)構造の**InputBuffer**メンバーは[**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)構造体を指します。 VIDEOPARAMETERS 構造体の**Dwcommand**メンバーは、ミニポートドライバーが tv コネクタ (VP\_コマンド\_GET) に関する情報を提供する必要があるかどうか、または指定された設定をテレビコネクタ (VP\_コマンドに適用するかどうかを指定し @no__ の設定)。
 
-ときに、 **dwCommand** VIDEOPARAMETERS 構造体のメンバーは担当副社長\_コマンド\_GET、ミニポート ドライバーでは、次を実行する必要があります。
+VIDEOPARAMETERS 構造体の**Dwcommand**メンバーが VP\_COMMAND\_GET の場合、ミニポートドライバーは次の操作を行う必要があります。
 
--   確認、 **Guid** VIDEOPARAMETERS 構造体のメンバー。
+-   VIDEOPARAMETERS 構造体の**Guid**メンバーを確認します。
 
--   テレビ コネクタでサポートされる機能ごと対応するフラグを設定する、 **dwFlags** VIDEOPARAMETERS 構造体のメンバー。
+-   TV コネクタがサポートする機能ごとに、VIDEOPARAMETERS 構造体の**dwFlags**メンバーに対応するフラグを設定します。
 
--   各フラグ設定、 **dwFlags**メンバー、機能とそのフラグに関連付けられている現在の設定を示す VIDEOPARAMETERS 構造体の対応するメンバーに値を代入します。 参照してください、 [ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)リファレンス ページの特定のフラグに対応する構造体のメンバーの一覧。
+-   **DwFlags**メンバーで設定されている各フラグについて、VIDEOPARAMETERS 構造体の対応するメンバーに値を割り当てて、そのフラグに関連付けられている機能と現在の設定を示します。 特定のフラグに対応する構造体メンバーの一覧については、 [**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)のリファレンスページを参照してください。
 
-**寸法**VIDEOPARAMETERS 構造体のメンバーでは、テレビがビデオの再生または Windows デスクトップを表示するために最適化を出力するかどうかを指定します。 ビデオの値を\_モード\_テレビ\_再生、テレビは、ビデオの再生に適した出力を指定します (つまり、ちらつきのフィルターが無効になっていますおよびオーバーが有効になっている)。 ビデオの値を\_モード\_WIN\_グラフィックスでは、テレビは、Windows グラフィックス用に最適化された出力を指定します (は、最大ちらつきフィルターが有効になっているし、オーバー スキャンが無効になっています)。
+VIDEOPARAMETERS 構造体の**Dwmode**メンバーは、テレビ出力をビデオ再生用に最適化するか、Windows デスクトップを表示するかを指定します。 ビデオ\_モードの値\_テレビ\_再生では、テレビ出力がビデオ再生用に最適化されていることを指定します (つまり、ちらつきフィルターが無効になっており、オーバースキャンが有効になっています)。 [ビデオ\_モード] の値\_WIN\_グラフィックスは、テレビ出力が Windows グラフィックス用に最適化されていることを指定します (つまり、最大のちらつきフィルターが有効で、オーバースキャンが無効になっています)。
 
-担当副社長への応答で\_コマンド\_GET、ミニポート ドライバーでは、担当副社長を設定する必要があります\_フラグ\_テレビ\_モード フラグ**dwFlags** 、担当副社長を設定する必要があります\_モード\_WIN\_グラフィックス ビット**dwAvailableModes**します。 設定、担当副社長\_モード\_テレビ\_再生ビット**dwAvailableModes**は省略可能です。 さらに、ミニポート ドライバーは、担当副社長を設定する必要があります\_フラグ\_最大\_でフラグを調整**dwFlags** VIDEOPARAMETERS 構造体の対応するメンバーに値を代入する必要があります。
+VP\_コマンド\_GET の応答として、ミニポートドライバーで VP\_フラグ\_TV\_MODE フラグを設定する必要があります **。また、** **dwAvailableModes**で VP\_モード\_WIN\_GRAPHICS ビットに設定する必要があります。 **DwAvailableModes**で\_\_モードを TV\_再生ビットに設定することは任意です。 さらに、ミニポートドライバーでは、\_\_フラグを設定する必要があります。このフラグは、 **dwFlags**では最大\_スケーリングされていません。また、VIDEOPARAMETERS 構造体の対応するメンバーに値を割り当てる必要があります。
 
-担当副社長への応答で\_コマンド\_ミニポート ドライバーを設定する必要があります、テレビの出力が現在無効になっている場合は、GET、**寸法**を 0 に設定**dwTVStandard**担当副社長に\_標準\_WIN\_VGA、設定と**dwAvailableTVStandard**担当副社長に\_標準\_WIN\_VGA します。
+VP\_コマンド\_GET の応答として、TV 出力が現在無効になっている場合は、ミニポートドライバーで**Dwmode**を0に設定し、 **dwTVStandard**を VP\_STANDARD\_WIN\_VGA に設定して、 **Dwmode ab vstandard を設定する必要があります。** VP\_STANDARD\_WIN\_VGA に勝利します。
 
-例 1:アダプターは、現在無効になっているテレビ出力をサポートします。 ミニポート ドライバーは、担当副社長への応答では、次を行う必要があります\_コマンド\_を取得します。
+例 1: アダプターが TV 出力をサポートしています。これは現在無効になっています。 ミニポートドライバーは、VP\_コマンド\_GET に応答して、次の操作を行う必要があります。
 
--   **DwFlags**、担当副社長設定\_フラグ\_テレビ\_モードでは、担当副社長\_フラグ\_テレビ\_STANDARD、およびテレビでサポートされている機能を表すその他のすべてのフラグコネクタです。
+-   **DwFlags**で、VP\_フラグ\_テレビ\_モード、VP\_フラグ\_テレビ\_標準、および tv コネクタでサポートされている機能を表すその他すべてのフラグを設定します。
 
--   設定**寸法**を 0 にします。
+-   **Dwmode**を0に設定します。
 
--   **DwAvailableModes**、担当副社長設定\_モード\_WIN\_グラフィックス。 ハードウェアは、担当副社長をサポートしている場合\_モード\_テレビ\_ビットも再生を設定します。
+-   **DwAvailableModes**で、VP\_モード\_WIN\_グラフィックスに設定します。 ハードウェアで VP\_モード\_テレビ\_再生がサポートされている場合は、そのビットも設定します。
 
--   設定**dwTVStandard**担当副社長に\_テレビ\_標準\_WIN\_VGA します。
+-   **DwTVStandard**を VP\_TV\_STANDARD\_WIN\_VGA に設定します。
 
--   **DwAvailableTVStandard**、テレビ コネクタでサポートされるテレビ標準を表すすべてのビットを設定します。
+-   **Dwavailability Ab・ Vstandard**では、テレビコネクタでサポートされているテレビ標準を表すすべてのビットを設定します。
 
--   すべてのフラグがセット**dwFlags** (担当副社長以外\_フラグ\_テレビ\_モードと担当副社長\_フラグ\_テレビ\_STANDARD で、既に説明しました)、割り当てるVIDEOPARAMETERS 構造体の対応するメンバーの値です。
+-   \_**dwFlags**で設定されているすべてのフラグについては、\_テレビの\_モードおよび VP\_フラグ\_既に説明されているフラグ\_VIDEOPARAMETERS) に対して、対応するメンバーに値を割り当てます。データ.
 
-例 2:テレビの出力を有効にするのには、呼び出し元 (ミニポート ドライバーではなく) が、以下を実行しました。
+例 2: テレビ出力を有効にするには、(ミニポートドライバーではなく) 呼び出し元が次の操作を行う必要があります。
 
--   **DwFlags**、担当副社長設定\_フラグ\_テレビ\_モードと担当副社長\_フラグ\_テレビ\_標準。 その他のすべてのフラグをオフにします。
+-   **DwFlags**では、\_テレビ\_モードおよび VP\_フラグ\_TV\_STANDARD に\_フラグを設定します。 他のすべてのフラグをクリアします。
 
--   設定**寸法**か担当副社長に\_モード\_WIN\_グラフィックスや担当副社長\_モード\_テレビ\_再生します。 両方のビットを設定しないでください。
+-   **Dwmode**を VP\_モードに設定し\_WIN\_GRAPHICS または VP\_モード\_テレビ\_の再生します。 両方のビットを設定しないでください。
 
--   設定**dwTvStandard**標準を目的に (たとえば VP\_テレビ\_標準\_NTSC\_M)。 その他のすべてのビットを設定しないでください**dwTvStandard**します。
+-   **DwTvStandard**を目的の標準 (たとえば、VP\_TV\_STANDARD\_NTSC\_M) に設定します。 **DwTvStandard**の他のビットは設定しないでください。
 
-例 3: テレビの出力を無効にするには、呼び出し元 (ミニポート ドライバーではなく) が、以下を実行します。
+例 3: テレビ出力を無効にするには、(ミニポートドライバーではなく) 呼び出し元が次の操作を行う必要があります。
 
--   **DwFlags**、担当副社長設定\_フラグ\_テレビ\_モードと担当副社長\_フラグ\_テレビ\_標準。 その他のすべてのフラグをオフにします。
+-   **DwFlags**では、\_テレビ\_モードおよび VP\_フラグ\_TV\_STANDARD に\_フラグを設定します。 他のすべてのフラグをクリアします。
 
--   設定**寸法**を 0 にします。
+-   **Dwmode**を0に設定します。
 
--   **DwTvStandard**、担当副社長設定\_テレビ\_標準\_WIN\_VGA します。 その他のすべてのビットをオフに**dwTvStandard**します。
+-   **DwTvStandard**で、VP\_TV\_STANDARD\_WIN\_VGA に設定します。 **DwTvStandard**の他のすべてのビットをクリアします。
 
  
 

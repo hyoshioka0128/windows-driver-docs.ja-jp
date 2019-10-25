@@ -3,24 +3,24 @@ title: プリンターの色機能を特定する
 description: プリンターの色機能を特定する
 ms.assetid: 24abf76d-c0f9-440e-b825-8b39ea9ab807
 keywords:
-- プリンター インターフェイス DLL の WDK、サポートされている色の機能
-- WDK の印刷、機能の特定の色の管理
-- プリンターの色の機能を識別します。
-- プリンターのカラー機能 WDK
+- プリンターインターフェイス DLL WDK、カラー機能がサポートされています
+- 色の管理 WDK 印刷、機能の識別
+- プリンターの色の機能を特定する
+- プリンターの色の機能 WDK
 - dmColor
 - DC_COLORDEVICE
 - DrvDeviceCapabilities
-- モノクロ出力 WDK プリンター
-- モノクロ印刷の WDK プリンター
-- グレースケール印刷 WDK のプリンター
+- モノクロ出力の WDK プリンター
+- noncolor 出力 WDK プリンター
+- グレースケール出力 WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f50078222e1b210934e8d803adf0011c80dd8686
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41329f7d18464ff53dfe03ed402dac446a430aa4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382563"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837721"
 ---
 # <a name="identifying-a-printers-color-capability"></a>プリンターの色機能を特定する
 
@@ -28,13 +28,13 @@ ms.locfileid: "67382563"
 
 
 
-色とモノクロ (モノクロまたはグレースケール) デバイス、Windows 2000、および後で NT ベースのオペレーティング システムのバージョンの呼び出しを区別する、 [ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities) DC を渡す関数\_呼び出しで COLORDEVICE 定数。 この関数は、デバイスは、モノクロまたはグレースケールの出力を生成した場合の色、および 0 をデバイスがサポートする場合に、1 を返します。 すべてのプリンター ドライバーがへの呼び出しをサポートすることをお勧め**DrvDeviceCapabilities** 、DC の\_COLORDEVICE 定数。
+カラーと noncolor (モノクロまたはグレースケール) デバイスを区別するには、Windows 2000 以降の NT ベースのオペレーティングシステムバージョンで[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)関数を呼び出し、DC\_colordevice 定数を呼び出しで渡します。 デバイスでカラーがサポートされている場合、この関数は1を返し、デバイスがモノクロまたはグレースケールの出力を生成する場合は0を返します。 すべてのプリンタードライバーで、DC\_COLORDEVICE 定数の**DrvDeviceCapabilities**の呼び出しをサポートすることをお勧めします。
 
-実装するドライバーを非常に重要ですが、 [ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)関数。 色とモノクロの間の次の理由から、デバイスを区別するために、オペレーティング システムの場合はそれ以外の場合です。
+[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)関数を実装するには、ドライバーが非常に重要です。 そうしないと、次のような理由から、オペレーティングシステムが color デバイスと noncolor デバイスを区別することが難しくなります。
 
--   呼び出し、**調べるため**関数 (Windows SDK のドキュメントで説明)、NUMCOLORS 定数が渡されます、通常は戻り値の結果値のほとんどのモノクロ デバイスとの 2 より大きい 2 未満デバイスの色。 オペレーティング システムは、モノクロおよびグレースケールのデバイスを区別することができます。
+-   NUMCOLORS 定数が渡される**GetDeviceCaps**関数 (Windows SDK ドキュメントで説明されています) への呼び出しでは、通常、ほとんどの noncolor デバイスについては戻り値が2以下、カラーデバイスでは2以上になります。 オペレーティングシステムは、モノクロデバイスとグレースケールデバイスを区別できません。
 
--   値、 **dmColor**のメンバー、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造がないかどうか、デバイスは、カラーかモノクロ デバイスの信頼性の高いインジケーター。 特定のプリンター ドライバーでは、このメンバーを設定する DMCOLOR\_対応の色を生成していないデバイスの場合でも色。
+-   [**Devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体の**dmcolor**メンバーの値は、デバイスが color または noncolor のどちらであるかを示す reliable indicator ではありません。 特定のプリンタードライバーは、色を作成できないデバイスでも、このメンバーを DMCOLOR\_色に設定します。
 
  
 

@@ -3,23 +3,23 @@ title: I/O 制御コードの定義
 description: I/O 制御コードの定義
 ms.assetid: 967b0199-e9a0-4c8d-9130-c81436c59ca3
 keywords:
-- I/O 制御コード WDK のカーネルを定義します。
-- 制御コードを定義する、WDK の Ioctl
-- Ioctl WDK のカーネルを定義します。
+- I/o 制御コード WDK カーネル、定義
+- コントロールコード WDK Ioctl、定義
+- Ioctl WDK カーネル、定義
 - CTL_CODE マクロ
-- Ioctl WDK ユーザー モード
-- ユーザー モード コンポーネント WDK Ioctl
-- I/O 制御コード WDK ユーザー モード
-- 制御コード WDK ユーザー モード
-- WDK の Ioctl のレイアウト
+- Ioctl WDK ユーザーモード
+- ユーザーモードコンポーネント WDK Ioctl
+- I/o 制御コード WDK ユーザーモード
+- コントロールコード WDK ユーザーモード
+- レイアウト WDK Ioctl
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a1eeda9cd5696ca2660c0a87949ee64d2dc1bc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e2717c85abad25fb68011b0d497d2005c9c8f04
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377114"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828423"
 ---
 # <a name="defining-io-control-codes"></a>I/O 制御コードの定義
 
@@ -27,82 +27,82 @@ ms.locfileid: "67377114"
 
 
 
-新しい Ioctl を定義するときに、次の規則に注意してください。
+新しい Ioctl を定義するときは、次の規則に注意することが重要です。
 
--   ユーザー モード ソフトウェア コンポーネントで使用できる新しい IOCTL 場合で、IOCTL を使用する必要があります[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求。 ユーザー モード コンポーネント送信**IRP\_MJ\_デバイス\_コントロール**呼び出すことによって要求、 [ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)、これは、Win32 関数。
--   IOCTL で使用する必要がありますカーネル モード ドライバー コンポーネントにのみ使用可能な新しい IOCTL では場合、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求。 カーネル モード コンポーネント作成**IRP\_MJ\_内部\_デバイス\_コントロール**を呼び出して要求**IoBuildDeviceIoControlRequest**します。 詳細については、次を参照してください。[ドライバー IOCTL 要求を作成する](creating-ioctl-requests-in-drivers.md)します。
+-   ユーザーモードのソフトウェアコンポーネントが新しい IOCTL を使用できるようにするには、IOCTL を[**IRP\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求と共に使用する必要があります。 ユーザーモードコンポーネントは、Win32 関数である[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を呼び出すことによって、 **IRP\_MJ\_デバイス\_制御**要求を送信します。
+-   新しい IOCTL をカーネルモードドライバーコンポーネントのみで使用できるようにするには、IOCTL を[**IRP\_MJ\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求で使用する必要があります。 カーネルモードコンポーネントは、 **IoBuildDeviceIoControlRequest**を呼び出すことによって、**内部\_デバイス\_制御要求を\_\_IRP MJ**を作成します。 詳細については、「[ドライバーで IOCTL 要求を作成する](creating-ioctl-requests-in-drivers.md)」を参照してください。
 
-I/O の制御コードは、いくつかのフィールドで構成される 32 ビット値です。 次の図は、I/O 制御コードのレイアウトを示します。
+I/o 制御コードは、複数のフィールドで構成される32ビット値です。 次の図は、i/o 制御コードのレイアウトを示しています。
 
-![i/o 制御コードのレイアウトを示す図](images/ioctl-1.png)
+![i/o 制御コードレイアウトを示す図](images/ioctl-1.png)
 
-システム提供の使用**CTL\_コード**マクロで、新しい I/O 制御コードを定義するには、Wdm.h および Ntddk.h で定義されています。 新しい IOCTL の定義をコードで使用するためのものかどうか**IRP\_MJ\_デバイス\_コントロール**または**IRP\_MJ\_内部\_デバイス\_コントロール**要求、次の形式が使用されます。
+Ntddk およびで定義されているシステム指定の**CTL\_コード**マクロを使用して、新しい i/o 制御コードを定義します。 新しい IOCTL コードの定義は、 **IRP\_\_MJ**での使用を想定しているかどうかにかかわらず、デバイス\_コントロールまたは**irp\_MJ\_内部\_デバイス\_コントロール**要求で使用するように指定されている場合、次の形式を使用します。:
 
 ```cpp
 #define IOCTL_Device_Function CTL_CODE(DeviceType, Function, Method, Access)
 ```
 
-フォーム IOCTL の IOCTL のわかりやすい定数名を選択\_*デバイス*\_*関数*ここで、*デバイス*の種類を示しますデバイスと*関数*操作を示します。 例の定数名は、IOCTL\_ビデオ\_を有効にする\_カーソル。
+Ioctl のわかりやすい定数名を選択します。 ioctl\_*device*\_*function*という形式*で指定します。 device は*デバイスの種類を示し、*関数*は操作を示します。 定数名の例としては、\_カーソルを有効にするビデオ\_\_があります。
 
-次のパラメーターを指定、 **CTL\_コード**マクロ。
+**CTL\_コード**マクロに次のパラメーターを指定します。
 
-<a href="" id="devicetype"></a>*DeviceType*  
-デバイスの種類を識別します。 この値に設定されている値と一致する必要があります、 **DeviceType**のドライバーのメンバー [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 (を参照してください[デバイスの種類を指定する](specifying-device-types.md))。 0x8000 未満の値は、Microsoft の予約されています。 0x8000 以降の値は、ベンダーで使用できます。 仕入先によって割り当てられた値の設定に注意してください、**共通**ビット。
+<a href="" id="devicetype"></a> *(Devicetype*  
+デバイスの種類を識別します。 この値は、ドライバーの[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)構造の **(devicetype**メンバーに設定されている値と一致する必要があります。 (「[デバイスの種類の指定」を](specifying-device-types.md)参照してください)。 0x8000 未満の値は、Microsoft 用に予約されています。 ベンダーは、0x8000 以上の値を使用できます。 ベンダーによって割り当てられた値によって**共通**ビットが設定されることに注意してください。
 
 <a href="" id="functioncode"></a>*FunctionCode*  
-ドライバーで実行される関数を識別します。 Microsoft では、0x800 未満の値は予約されます。 0x800 以降の値は、ベンダーで使用できます。 仕入先によって割り当てられた値の設定に注意してください、**カスタム**ビット。
+ドライバーによって実行される関数を識別します。 0x800 未満の値は、Microsoft 用に予約されています。 0x800 以上の値は、ベンダーが使用できます。 ベンダーによって割り当てられた値によって**カスタム**ビットが設定されることに注意してください。
 
 <a href="" id="transfertype"></a>*TransferType*  
-システムが、呼び出し元の間でデータを渡す方法を示します[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (または[ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)) とこのドライバーは IRP を処理します。
+システムが[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (または[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)) の呼び出し元と IRP を処理するドライバーの間でデータを渡す方法を示します。
 
-次のシステム定義の定数のいずれかを使用します。
+次のシステム定義定数のいずれかを使用します。
 
-<a href="" id="method-buffered"></a>メソッド\_バッファーに格納されました。  
-指定します、 [I/O バッファー](methods-for-accessing-data-buffers.md)メソッドは、少量のデータを 1 回の要求を転送するために使われます。 デバイスとドライバーの中間のほとんどの I/O 制御コードを使用してこの*TransferType*値。
+<a href="" id="method-buffered"></a>メソッド\_バッファーされる  
+バッファーされた[i/o](methods-for-accessing-data-buffers.md)メソッドを指定します。通常は、要求ごとに少量のデータを転送するために使用されます。 デバイスと中間ドライバーの i/o 制御コードのほとんどは、この*Transfertype*値を使用します。
 
-システムがメソッドのデータ バッファーを指定する方法については\_バッファー I/O 制御コードを参照してください[I/O 制御コードの説明をバッファー](buffer-descriptions-for-i-o-control-codes.md)します。
+メソッド\_バッファー i/o 制御コードのデータバッファーを指定する方法については、「 [I/o 制御コードのバッファーの説明](buffer-descriptions-for-i-o-control-codes.md)」を参照してください。
 
-バッファー内の I/O の詳細については、次を参照してください。[を使用してバッファー I/O](using-buffered-i-o.md)します。
+バッファーされた i/o の詳細については、「[バッファー i/o の使用](using-buffered-i-o.md)」を参照してください。
 
-<a href="" id="method-in-direct-or-method-out-direct"></a>メソッド\_IN\_ダイレクトまたはメソッド\_アウト\_ダイレクト  
-指定します、[ダイレクト I/O](methods-for-accessing-data-buffers.md)メソッドは、通常、読み取りまたは書き込み DMA または PIO、すばやく転送する必要がありますを使用して、データの大量に使用します。
+<a href="" id="method-in-direct-or-method-out-direct"></a>\_直接またはメソッドでのメソッド\_\_OUT\_DIRECT  
+[ダイレクト i/o](methods-for-accessing-data-buffers.md)方式を指定します。この方法は、通常、DMA または PIO を使用して大量のデータの読み取りや書き込みを行う場合に使用します。これは、迅速に転送する必要があります。
 
-メソッドを指定\_IN\_ダイレクトの場合、呼び出し元の[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**ドライバーにデータを渡します。
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**の呼び出し元がデータをドライバーに渡す場合は、\_DIRECT でメソッド\_を指定します。
 
-メソッドを指定\_アウト\_ダイレクトの場合、呼び出し元の[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**からデータを取得する、ドライバー。
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**の呼び出し元がドライバーからデータを受信する場合は、メソッド\_OUT\_DIRECT に指定します。
 
-システムがメソッドのデータ バッファーを指定する方法については\_IN\_ダイレクトとメソッド\_アウト\_ダイレクト I/O 制御コードを参照してください[I/O 制御コードバッファー説明](buffer-descriptions-for-i-o-control-codes.md).
+システムでメソッドのデータバッファーを指定する方法の詳細については\_ダイレクト i/o 制御コードの\_OUT\_ダイレクト i/o 制御コードの\_を参照してください。 [I/o 制御コードのバッファーの説明](buffer-descriptions-for-i-o-control-codes.md)を参照してください。
 
-ダイレクト I/O の詳細については、次を参照してください。[を使用して直接 I/O](using-direct-i-o.md)します。
+ダイレクト i/o の詳細については、「 [direct i/o の使用](using-direct-i-o.md)」を参照してください。
 
-<a href="" id="method-neither"></a>メソッド\_NEITHER  
-指定します[バッファーも直接 I/O](using-neither-buffered-nor-direct-i-o.md)します。 I/O マネージャーでは、任意のシステムのバッファーまたは MDLs は提供されません。 IRP が提供するために指定された入力と出力バッファーのユーザー モード仮想アドレス[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**、検証またはマッピングすることです。
+<a href="" id="method-neither"></a>メソッド\_ません。  
+[バッファーも直接 i/o も](using-neither-buffered-nor-direct-i-o.md)指定しません。 I/o マネージャーでは、システムバッファーや MDLs は提供されません。 IRP は、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)または**IoBuildDeviceIoControlRequest**に指定された入力バッファーと出力バッファーのユーザーモード仮想アドレスを、検証やマッピングを行わずに提供します。
 
-システムがメソッドのデータ バッファーを指定する方法については\_も I/O 制御コードを参照してください[I/O 制御コードの説明をバッファー](buffer-descriptions-for-i-o-control-codes.md)します。
+I/o 制御コードでも\_メソッドのデータバッファーを指定する方法の詳細については、「 [I/o 制御コードのバッファーの説明](buffer-descriptions-for-i-o-control-codes.md)」を参照してください。
 
-このメソッドは、ドライバーを保証して I/O 制御要求を生成したスレッドのコンテキストで実行されている場合にのみ使用できます。 最上位レベルのカーネル モード ドライバーのみをそのメソッドのこの条件を満たすことが保証\_低レベル デバイス ドライバーに渡される I/O コントロール コードのどちらもめったに使用します。
+このメソッドは、ドライバーが i/o 制御要求を発信したスレッドのコンテキストで実行されていることを保証できる場合にのみ使用できます。 最上位レベルのカーネルモードドライバーのみがこの条件を満たしていることが保証されるため、メソッド\_、低レベルのデバイスドライバーに渡される i/o 制御コードにはほとんど使用されません。
 
-この方法で、最上位レベルのドライバーする必要がありますを決定するバッファーを設定するかどうかまたは可能性があります、要求の受信時にユーザー データへの直接アクセスは、ユーザー バッファーをロックダウンする必要があり、構造化例外ハンドラーでユーザー バッファーへのアクセスをラップする必要があります (を参照してください「。[例外を処理する](handling-exceptions.md))。 それ以外の場合、元のユーザー モードの呼び出し元は、ドライバーが使用、またはドライバーがユーザー バッファーへのアクセスと同様、呼び出し元をスワップ アウトする可能性があります前に、バッファー内のデータを変更可能性があります。
+この方法では、最上位レベルのドライバーで、要求の受信時にバッファーまたはユーザーデータへの直接アクセスを設定するかどうかを決定する必要があります。また、ユーザーバッファーをロックダウンする必要があり、構造化例外ハンドラーでユーザーバッファーへのアクセスをラップする必要があります (「」を参照してください[)。例外の処理](handling-exceptions.md)。 それ以外の場合、元のユーザーモードの呼び出し元は、ドライバーが使用できるようになる前にバッファー内のデータを変更したり、ドライバーがユーザーバッファーにアクセスしたときと同じように呼び出し元を交換したりすることができます。
 
-詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](using-neither-buffered-nor-direct-i-o.md)します。
+詳細については、「[バッファーと直接 i/o の両方を使用する](using-neither-buffered-nor-direct-i-o.md)」を参照してください。
 
 <a href="" id="requiredaccess"></a>*RequiredAccess*  
-呼び出し元が要求する必要がありますアクセスの種類を示すデバイスを表すファイル オブジェクトを開くときに (を参照してください[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create))。 I/O マネージャー Irp が作成され、呼び出し元が指定したアクセス権を要求した場合にのみ使用してドライバーを特定の I/O 制御コードを呼び出します。 *RequiredAccess*は、次のシステム定義の定数を使用して指定します。
+デバイスを表すファイルオブジェクトを開くときに、呼び出し元が要求するアクセスの種類を示します (「 [**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create))」を参照してください。 I/o マネージャーは、Irp を作成し、呼び出し元が指定されたアクセス権を要求した場合にのみ、特定の i/o 制御コードを使用してドライバーを呼び出します。 *Requiredaccess*は、次のシステム定義定数を使用して指定します。
 
-<a href="" id="file-any-access"></a>ファイル\_ANY\_アクセス  
-I/O マネージャーでは、ターゲット デバイス オブジェクトを表すファイル オブジェクトへのハンドルを持つ呼び出し元の IRP が送信されます。
+<a href="" id="file-any-access"></a>ファイル\_\_アクセス  
+I/o マネージャーは、ターゲットデバイスオブジェクトを表すファイルオブジェクトへのハンドルを持つ任意の呼び出し元に対して、IRP を送信します。
 
 <a href="" id="file-read-data"></a>ファイル\_読み取り\_データ  
-I/O マネージャーは、デバイスからシステム メモリにデータを転送する基になるデバイス ドライバーをできるように、読み取りアクセス権を持つ呼び出し元に対してのみ、IRP を送信します。
+I/o マネージャーは、読み取りアクセス権を持つ呼び出し元に対してのみ IRP を送信します。これにより、基になるデバイスドライバーは、デバイスからシステムメモリにデータを転送できます。
 
-<a href="" id="file-write-data"></a>ファイル\_書き込み\_データ  
-I/O マネージャーは、システム メモリからそのデバイスにデータを転送する基になるデバイス ドライバーを許可する、書き込みアクセス権を持つ呼び出し元に対してのみ、IRP を送信します。
+<a href="" id="file-write-data"></a>ファイル\_\_データを書き込む  
+I/o マネージャーは、書き込みアクセス権を持つ呼び出し元に対してのみ IRP を送信します。これにより、基になるデバイスドライバーがシステムメモリからデバイスにデータを転送できるようになります。
 
-ファイル\_読み取り\_データとファイル\_書き込み\_できるデータ//まとめて、呼び出し元には読み取りおよび書き込みアクセス権が必要がある場合。
+呼び出し元が読み取りと書き込みの両方のアクセス権を持つ必要がある場合は、ファイル\_読み取り\_データおよびファイル\_書き込み\_データを書き込むことができます。
 
-システム定義の I/O 制御コードが、 *RequiredAccess*ファイルの値\_ANY\_呼び出し側が付与されるアクセス権に関係なく、特定の IOCTL をデバイスに送信するためのアクセス。 例としては、I/O 制御コードのドライバーに送信される*排他デバイス*します。
+システムで定義された i/o 制御コードの中には、\_ファイルの*requiredaccess*値\_アクセス権があります。これにより、呼び出し元は、デバイスに付与されたアクセス権に関係なく、特定の IOCTL を送信できます。 たとえば、*排他的なデバイス*のドライバーに送信される i/o 制御コードがこれに含まれます。
 
-その他のシステム定義の I/O 制御コードには、呼び出し元に読み取りアクセス権や、書き込みアクセス権が必要です。 次のパブリックの I/O 制御コード IOCTL の定義など、\_ディスク\_設定\_パーティション\_この I/O 要求送信できることをドライバーに呼び出し元である場合にのみ読み取り/書き込みアクセス両方の情報が表示されます権限:
+システムによって定義されたその他の i/o 制御コードでは、呼び出し元に読み取りアクセス権、書き込みアクセス権、またはその両方を与える必要があります。 たとえば、次のパブリック i/o 制御コードの\_ディスク\_設定\_パーティション\_情報は、呼び出し元が読み取りと書き込みの両方のアクセス権を持っている場合にのみ、この i/o 要求をドライバーに送信できることを示しています。:
 
 ```cpp
 #define IOCTL_DISK_SET_PARTITION_INFO\
@@ -110,23 +110,23 @@ I/O マネージャーは、システム メモリからそのデバイスにデ
         FILE_READ_DATA | FILE_WRITE_DATA)
 ```
 
-**注**  ファイルを指定する前に\_ANY\_へのアクセスに新しい IOCTL コードを行うために、デバイスへの無制限のアクセス許可も悪意のあるユーザーの可能なパスは作成されませんが特定システムが侵害されます。
+**注**   新しい IOCTL コードに\_アクセスする場合は、ファイル\_指定する前に、デバイスへの無制限のアクセスを許可しても、悪意のあるユーザーがシステムを危険にさらす可能性のあるパスを作成しないようにする必要があります。
 
  
 
-ドライバーを使用できる[ **IoValidateDeviceIoControlAccess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)より厳密なアクセスを実行する IOCTL のによって提供されるよりもチェック*RequiredAccess*ビット。
+ドライバーは、 [**IoValidateDeviceIoControlAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)を使用して、IOCTL の*requiredaccess*ビットによって提供されるより厳しいアクセスチェックを実行できます。
 
 ## <a name="other-useful-macros"></a>その他の便利なマクロ
 
 
-次のマクロは、16 ビットを抽出するために役立ちます*DeviceType*と 2 ビット*TransferType* IOCTL コードからのフィールド。
+次のマクロは、IOCTL コードから16ビットの *(devicetype*および2ビットの*transfertype*フィールドを抽出する場合に役立ちます。
 
 ```cpp
 #define DEVICE_TYPE_FROM_CTL_CODE(ctrlCode)   (((ULONG)(ctrlCode & 0xffff0000)) >> 16)
 #define METHOD_FROM_CTL_CODE(ctrlCode)        ((ULONG)(ctrlCode & 3))
 ```
 
-これらのマクロは、Wdm.h と Ntddk.h で定義されます。
+これらのマクロは、Wdm および Ntddk で定義されています。
 
  
 

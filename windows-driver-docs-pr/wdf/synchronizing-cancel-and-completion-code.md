@@ -3,20 +3,20 @@ title: キャンセルと完了コードの同期
 description: キャンセルと完了コードの同期
 ms.assetid: 4c302fc5-cb14-46e5-80c8-8dbf62486905
 keywords:
-- 要求の WDK KMDF、キャンセル要求を処理します。
-- I/O 要求のキャンセルの WDK KMDF
+- WDK KMDF の要求の処理、要求の取り消し
+- I/o 要求 WDK KMDF、取り消し
 - WDK KMDF の同期
-- WDK KMDF を要求する I/O の完了
-- WDK KMDF、同期処理を要求します。
-- I/O は、WDK KMDF、同期を要求します。
+- i/o 要求の完了 (WDK KMDF)
+- 要求の処理 WDK KMDF、同期
+- I/o 要求 WDK KMDF、同期
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f41140dc368057be4446ad964e35b5713bd9ee45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03e37cf0ea5e71db85410bc0c594a749f5d4b132
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369499"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831661"
 ---
 # <a name="synchronizing-cancel-and-completion-code"></a>キャンセルと完了コードの同期
 
@@ -24,15 +24,15 @@ ms.locfileid: "67369499"
 
 
 
-ドライバーを呼び出す場合[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)または[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)する I/O 要求をキャンセル可能ながあります同期の問題の潜在的なです。 など、ドライバーとデバイスの方法では、非同期的にデバイス I/O 操作を実行可能性があります[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)と[ *EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数、および、 *EvtInterruptDpc*と[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数が呼び出しを含む可能性があります[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+ドライバーが[**Wdfrequestmarkcancelableex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)または[**Wdfrequestmarkcancelableex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)を呼び出して i/o 要求をキャンセルできる場合、同期の問題が発生する可能性があります。 たとえば、ドライバーとデバイスは、 [*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)と[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)のコールバック関数によってデバイスの i/o 操作を非同期に実行し、 *EvtInterruptDpc*と[*evtrequestcancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)の両方のコールバックを実行することがあります。関数には、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)の呼び出しを含めることができます。
 
-ドライバーを呼び出す必要があります[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 1 回だけするか、完了またはキャンセル要求。 しかし、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)と[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数が、相互フレームワークと同期されていません。呼び出すことができますいずれか、その他の実行中にします。
+ドライバーは、要求を完了またはキャンセルするために、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を1回だけ呼び出す必要があります。 ただし、 [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数と[*evtrequestcancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)関数が相互に同期されていない場合、フレームワークは、もう一方のを実行している間に1つを呼び出すことができます。
 
-簡単に、ドライバー、フレームワークを使用している場合は、この問題を回避する[自動同期](using-automatic-synchronization.md)自動同期により、コールバック関数が呼び出される 1 つずつためです。
+自動同期によってコールバック関数が一度に1つずつ呼び出されるため、ドライバーでフレームワークの[自動同期](using-automatic-synchronization.md)を使用すると、この問題を簡単に回避できます。
 
-使用できる場合は、ドライバーでは、framework の自動同期を使用しない[framework ロック](using-framework-locks.md)キャンセルおよび終了コードを同期します。
+ドライバーがフレームワークの自動同期を使用しない場合は、[フレームワークロック](using-framework-locks.md)を使用してキャンセルと完了コードを同期できます。
 
-かどうか、ドライバーのフレームワークの自動同期が使用または独自同期化も、ドライバーを提供します[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数を呼び出す必要があります[  **。WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)要求をキャンセルします。 ドライバーの[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数を呼び出す必要があります[ **WdfRequestUnmarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)次のようにします。
+ドライバーがフレームワークの自動同期を使用するか、独自の同期を提供するかにかかわらず、ドライバーの[*Evtrequestcancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)コールバック関数は[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出して要求をキャンセルする必要があります。 ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、次のように[**Wdfrequestunmarkcancelable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)を呼び出す必要があります。
 
 ```cpp
 Status = WdfRequestUnmarkCancelable(Request);
@@ -41,9 +41,9 @@ if( Status != STATUS_CANCELLED ) {
     }
 ```
 
-このコードにより、ドライバーは呼び出しません[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)ドライバーが既に呼び出されている要求をキャンセルする場合は、要求を完了します。
+このコードにより、ドライバーが要求をキャンセルするために既に呼び出されている場合、その要求を完了するために、ドライバーが[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出さないようにします。
 
-呼び出しには、ドライバーは従う必要があるときにルールの詳細については**WdfRequestUnmarkCancelable**を参照してください[ **WdfRequestUnmarkCancelable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)します。
+ドライバーが**wdfrequestunmarkmarkを**呼び出すときに従う必要がある規則の詳細については、「 [**wdfrequestunmarkcancelable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)可能」を参照してください。
 
  
 

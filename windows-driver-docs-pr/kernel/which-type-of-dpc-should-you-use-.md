@@ -1,20 +1,20 @@
 ---
-title: DPC の種類を使用する必要があります。
-description: DPC の種類を使用する必要があります。
+title: 使用する必要がある DPC の種類
+description: 使用する必要がある DPC の種類
 ms.assetid: 7a8e6d75-5573-4a94-a895-fa2f70856807
 keywords:
-- 遅延プロシージャ呼び出しの WDK カーネル
+- 遅延プロシージャ呼び出し WDK カーネル
 - Dpc WDK カーネル
 - DpcForIsr
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 854c21f68a5b4b77893780291f37443b80dc7a75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e8178244e1f939b6a9a40aaecb5afa571b39d3f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358098"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838315"
 ---
 # <a name="which-type-of-dpc-should-you-use"></a>使用すべき DPC の種類
 
@@ -22,25 +22,25 @@ ms.locfileid: "67358098"
 
 
 
-ドライバーの設計によって、次のことができます。
+ドライバーの設計によっては、次のいずれかを使用できます。
 
--   1 つ[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)割り込み駆動のすべての I/O 操作を完了するには
+-   すべての割り込みドリブン i/o 操作を完了するための単一の[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)
 
--   1 つまたは複数のセット[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
+-   1つ以上の[*Customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンのセット。
 
--   両方を*DpcForIsr*と一連の操作に固有の*CustomDpc*ルーチン
+-   *DpcForIsr*と一連の操作固有の*customdpc*ルーチン
 
-ドライバーが 1 つを持つかどうか*DpcForIsr*ルーチン、一連の*CustomDpc*ルーチン、またはその両方が、基になるデバイスの性質に依存し、一連の I/O 要求がサポートする必要がある必要があります。
+ドライバーに1つの*DpcForIsr*ルーチン、一連の*customdpc*ルーチン、またはその両方が含まれているかどうかは、基になるデバイスの性質と、それがサポートする必要がある i/o 要求のセットによって異なります。
 
-ほとんどの最下位レベルのデバイス ドライバーがある、1 つ*DpcForIsr*ルーチンを I/O がそれぞれのデバイスで 1 つまたは複数の操作を必要とする各 IRP の処理を完了します。 1 つを使用して*DpcForIsr*要求を完了するは一度に 1 つの操作をデバイス上の I/O 操作の割り込み駆動は比較的簡単です。 このようなドライバーの ISR を呼び出すだけ[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)割り込み駆動の I/O 操作ごとにします。
+最も下位レベルのデバイスドライバーには、それぞれのデバイスで1つ以上の操作を必要とする各 IRP の i/o 処理を完了するための*DpcForIsr*ルーチンが1つあります。 1つの*DpcForIsr*を使用して、一度に1つの操作を実行するデバイス上で、要求ごとの割り込みドリブン i/o 操作を完了することは比較的簡単です。 このようなドライバーの ISR では、割り込みドリブン i/o 操作ごとに[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)を呼び出す必要があります。
 
-最下位レベルのいくつかのドライバーが*CustomDpc*ルーチンがデバイスの I/O 操作の割り込み駆動の多様なセットを完了する 1 つ以上の DPC を必要としない限り、します。
+いくつかの下位レベルのドライバーでは、デバイスで割り込みドリブン i/o 操作のさまざまなセットを完了するために複数の DPC が必要でない限り、 *Customdpc*ルーチンがあります。
 
-1 つを使用して*DpcForIsr*同時操作を実行できるデバイスでの操作、割り込み駆動のオーバー ラップ I/O の完了を慎重に設計でできることが比較的難しいことができます。 他に、またはキューではなく、 *DpcForIsr*、ドライバーによって提供される、操作に固有の一連のキューに配置できます ISR *CustomDpc*ルーチンを呼び出すことによって[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc).
+1つの*DpcForIsr*を使用して、同時操作を行うことができるデバイスでの割り込みドリブン i/o 操作を完了するには、慎重に設計する必要がありますが、比較的困難になることがあります。 ISR では、 *DpcForIsr*をキューに追加するだけでなく、 [**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)を呼び出すことによって、ドライバーが提供する一連の*customdpc*ルーチンをキューに追加できます。
 
-たとえば、デザインの課題のいくつかシリアル ドライバーの記述に関連します。 全二重デバイスのドライバーとしてシリアル ドライバーは Irp をキューには、順序、一対一で対応に依存できない、 *StartIo*ルーチンとマルチタスクでそのデバイスからの割り込みのシーケンスマルチプロセッサ システムです。 さらに、シリアル ドライバーは、バッファー内のデータを削除するには、要求と、以前要求した操作をキャンセルする非同期のユーザーが生成した要求のタイムアウトを処理する必要がありますなどとします。
+たとえば、シリアルドライバーの作成に関係する設計上の課題の一部を考えてみましょう。 全二重デバイスのドライバーとして、シリアルドライバーは、Irp が*StartIo*ルーチンにキューに置かれている順序と、マルチタスキングのマルチプロセッサシステムでデバイスからの割り込みのシーケンスとの間に1対1で対応することはできません。 さらに、シリアルドライバーは、前に要求された操作をキャンセルしたり、バッファー内のデータを消去したりするために、タイムアウト要求と非同期のユーザー生成要求を処理する必要があります。
 
-その結果、シリアル ドライバーは、読み取り用の内部キューの記述、消去、およびユーザー モードの COM ポートのアプリケーションが要求できる操作の待機を維持する可能性があります。 でした参照カウントを維持するか、または、内部キューに Irp の一連のフラグなどの他の追跡メカニズムを使用します。 その ISR を呼び出して**KeInsertQueueDpc**と複数のドライバーに割り当てられた、初期化の DPC オブジェクトのそれぞれに関連付けられているドライバーによって提供される*CustomDpc*ルーチン。
+その結果、シリアルドライバーは、ユーザーモードの COM ポートアプリケーションが要求できる読み取り、書き込み、消去、待機の各操作に対して内部キューを維持する場合があります。 また、参照カウントを維持したり、内部キュー内の Irp に対して、一連のフラグなどの他の追跡メカニズムを使用したりすることもできます。 その ISR は、ドライバーによって提供される*customdpc*ルーチンに関連付けられている、さまざまなドライバー割り当ておよび初期化済み dpc オブジェクトを使用して**KeInsertQueueDpc**を呼び出します。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_LOOPEDSTREAMING\_位置
-description: KSEVENT\_LOOPEDSTREAMING\_位置イベントは、オーディオのストリーム バッファーをループ内の指定位置に達したことを示します。使用状況概要 TableTargetEvent 記述子 TypeEvent 値 TypePinKSEVENTLOOPEDSTREAMING\_位置\_イベント\_データ イベント値の型 (データの操作) は、LOOPEDSTREAMING\_の位置\_イベント\_位置イベントが発生したときに、システムがクライアントに送信する通知の種類を次の情報を含むデータ構造です。イベントをトリガーするバッファーの位置。
+title: KSEVENT\_LOOPEDSTREAMING\_POSITION
+description: KSEVENT\_LOOPEDSTREAMING\_POSITION イベントは、オーディオストリームがループバッファー内の指定された位置に達したことを示します。使用状況の概要 TableTargetEvent Descriptor TypeEvent Value TypePinKSEVENTLOOPEDSTREAMING\_POSITION\_イベント\_データイベントの値の種類 (操作データ) は、イベント\_データ\_イベントの\_位置にあります次の情報を含む構造体は、位置イベントが発生したときにシステムがクライアントに送信する通知の種類を示します。イベントをトリガーするバッファー位置。
 ms.assetid: 6609ddac-e506-4fab-b580-0def30be2e9c
 keywords:
-- KSEVENT_LOOPEDSTREAMING_POSITION オーディオ デバイス
+- KSEVENT_LOOPEDSTREAMING_POSITION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b99906618a060df0626c319e91652b672c1fadcc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 941c651f54369090bf05892cda10465056f51fe7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391536"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833139"
 ---
-# <a name="kseventloopedstreamingposition"></a>KSEVENT\_LOOPEDSTREAMING\_位置
+# <a name="ksevent_loopedstreaming_position"></a>KSEVENT\_LOOPEDSTREAMING\_POSITION
 
 
-KSEVENT\_LOOPEDSTREAMING\_位置イベントは、オーディオのストリーム バッファーをループ内の指定位置に達したことを示します。
+KSEVENT\_LOOPEDSTREAMING\_POSITION イベントは、オーディオストリームがループバッファー内の指定された位置に達したことを示します。
 
 **使用状況の概要テーブル**
 
@@ -38,38 +38,38 @@ KSEVENT\_LOOPEDSTREAMING\_位置イベントは、オーディオのストリー
 <tr class="header">
 <th align="left">対象</th>
 <th align="left">イベント記述子の種類</th>
-<th align="left">イベント値の型</th>
+<th align="left">イベント値の種類</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-イベント値の型 (データの操作) は、LOOPEDSTREAMING\_位置\_イベント\_次の情報を含むデータ構造です。
+イベント値の種類 (操作データ) は、次の情報を含むイベント\_データ構造\_LOOPEDSTREAMING\_位置です。
 
--   位置のイベントが発生したときに、システムがクライアントに送信する通知の種類。
+-   位置イベントが発生したときにシステムがクライアントに送信する通知の種類。
 
--   イベントをトリガーするバッファーの位置。
+-   イベントをトリガーするバッファー位置。
 
-このイベントは、システム内部使用のみのものです。
+このイベントは、システムによる内部使用のみを目的としています。
 
 <a name="remarks"></a>注釈
 -------
 
-WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、Windows XP、Windows 2000、Windows Me、および Windows 98、KSEVENT の独自の組み込みハンドラーが含まれて\_LOOPEDSTREAMING\_イベントの位置。 WavePci と WaveCyclic ミニポート ドライバーは、これらのイベント ハンドラーを実装しないでください。
+Windows Server 2003、Windows XP、Windows 2000、Windows Me、および Windows 98 では、WavePci および WaveCyclic port ドライバーに KSEVENT\_LOOPEDSTREAMING\_POSITION イベント用の独自の組み込みハンドラーが含まれています。 WavePci および WaveCyclic ミニポートドライバーは、これらのイベントのハンドラーを実装することはできません。
 
-波のいずれも Windows Vista で*Xxx*ポート ドライバーは、イベント ハンドラーまたは KSEVENT の他のサポートを実装\_LOOPEDSTREAMING\_イベントの位置。
+Windows Vista では、Wave*Xxx*ポートドライバーでは、イベントハンドラーや、KSEVENT\_LOOPEDSTREAMING\_POSITION イベントに対するその他のサポートは実装されていません。
 
-ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)します。 Play またはカーソルの記録がループのバッファーの末尾に達すると、カーソルは、バッファーの先頭にラップします。
+ループバッファーは、型[**Ksinterface\_標準\_ループ\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)のオーディオストリームのデータバッファーです。 再生カーソルまたはレコードカーソルがループバッファーの最後に達すると、カーソルがバッファーの先頭に折り返されます。
 
-ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、次を参照してください。[オーディオ位置プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)します。
+ループバッファー、バッファー位置、および再生およびレコードのカーソルの詳細については、「 [Audio Position プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -82,19 +82,19 @@ WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、W
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
+[**KSK インターフェイス\_STANDARD\_ループ\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
 
-[**LOOPEDSTREAMING\_位置\_イベント\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
+[**LOOPEDSTREAMING\_POSITION\_イベント\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
 
  
 

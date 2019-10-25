@@ -3,24 +3,24 @@ title: 同期ドライバー通知登録
 description: 同期ドライバー通知登録
 ms.assetid: 852a2b69-c71f-4127-946e-8179954d504c
 keywords:
-- ドライバーの通知の WDK が動的なハードウェア パーティション分割、登録します。
-- 同期の通知 WDK 動的ハードウェア パーティション分割、登録します。
-- 通知 WDK 動的ハードウェア パーティション分割、登録します。
-- ドライバーの同期の通知の WDK が動的なハードウェア パーティション分割、登録します。
-- ドライバーの通知の WDK の動的なハードウェア パーティショニングの登録
+- ドライバー通知 WDK 動的ハードウェアパーティション分割、登録
+- 同期通知 WDK 動的ハードウェアのパーティション分割、登録
+- 通知 WDK 動的ハードウェアのパーティション分割、登録
+- 同期ドライバー通知 WDK 動的ハードウェアパーティション分割、登録
+- ドライバー通知の登録 WDK 動的ハードウェアパーティション分割
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f5b8865e4fbae5c422f79a101b140c7ef7ae9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e78a186b86d56a0f1d1d03336f0dde6821a0eb15
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373448"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838461"
 ---
 # <a name="registering-for-synchronous-driver-notification"></a>同期ドライバー通知登録
 
 
-ドライバーの同期の通知を使用するには、デバイス ドライバーは、ハードウェア パーティションに新しいプロセッサを動的に追加するときに、オペレーティング システムが呼び出すコールバック関数を実装します。 次のコード例では、このようなコールバック関数のプロトタイプを示します。
+同期ドライバー通知を使用するために、デバイスドライバーは、新しいプロセッサをハードウェアパーティションに動的に追加するときにオペレーティングシステムによって呼び出されるコールバック関数を実装します。 次のコード例は、このようなコールバック関数のプロトタイプです。
 
 ```cpp
 // Prototype for the synchronous
@@ -33,7 +33,7 @@ VOID
     );
 ```
 
-デバイス ドライバーを呼び出すことによって同期ドライバー通知の登録、 [ **KeRegisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterprocessorchangecallback)関数。 デバイス ドライバーの通常の呼び出し、 **KeRegisterProcessorChangeCallback**関数内からその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 デバイス ドライバーが、キーを指定する場合\_プロセッサ\_変更\_追加\_既存フラグは、現在のハードウェアのパーティションに存在するアクティブな各プロセッサのコールバック関数を呼び出すすぐに新しいプロセッサがハードウェアのパーティションに追加されたときに呼び出されるに追加します。 次のコード例では、ドライバーの同期の通知に登録する方法を示します。
+デバイスドライバーは、 [**KeRegisterProcessorChangeCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterprocessorchangecallback)関数を呼び出すことによって、同期ドライバーの通知を登録します。 通常、デバイスドライバーは[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数内から**KeRegisterProcessorChangeCallback**関数を呼び出します。 デバイスドライバーで KE\_プロセッサが指定されている場合\_\_既存のフラグを追加\_には、現在ハードウェアパーティションに存在するアクティブな各プロセッサに対して、コールバック関数が呼び出されます。新しいプロセッサがハードウェアパーティションに追加されたとき。 次のコード例は、同期ドライバー通知を登録する方法を示しています。
 
 ```cpp
 PVOID CallbackRegistrationHandle;
@@ -80,7 +80,7 @@ NTSTATUS  DriverEntry(
 }
 ```
 
-ときにデバイス ドライバをする必要がありますの受信を停止ドライバーの同期の通知など、呼び出すことによってコールバック関数を解除する必要がありますアンロードされているときに、 [ **KeDeregisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterprocessorchangecallback)関数。 デバイス ドライバーの通常の呼び出し、 **KeDeregisterProcessorChangeCallback**関数内からその[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数。 次のコード例では、コールバック関数を登録解除する方法を示します。
+デバイスドライバーが、アンロード中などの同期ドライバーの通知の受信を停止する必要がある場合は、 [**KeDeregisterProcessorChangeCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterprocessorchangecallback)関数を呼び出すことによって、コールバック関数の登録を解除する必要があります。 通常、デバイスドライバーは、 [*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)関数内から**KeDeregisterProcessorChangeCallback**関数を呼び出します。 次のコード例は、コールバック関数の登録を解除する方法を示しています。
 
 ```cpp
 // The driver's Unload routine

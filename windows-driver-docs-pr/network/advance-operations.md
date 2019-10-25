@@ -3,22 +3,22 @@ title: アドバンス操作
 description: アドバンス操作
 ms.assetid: 42554221-201d-4014-900d-435a47b3afa1
 keywords:
-- ネットワーク データ WDK、高度な操作
-- データの WDK ネットワーク、高度な操作
-- パケットの WDK ネットワーク、高度な操作
-- 高度な操作の WDK ネットワーク
-- WDK ネットワークのデータを送信します。
-- 受信側のデータの WDK ネットワーク
+- ネットワークデータ WDK, 事前操作
+- データ WDK ネットワーク, 事前操作
+- パケット WDK ネットワーク、事前操作
+- 高度操作 WDK ネットワーク
+- データの送信 (WDK ネットワーク)
+- データを受信する WDK ネットワーク
 - MDLs の解放
-- 使用回数を少なく
+- 使用量の削減
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 188bc3d019608b365cdd84391df91347c3021910
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3dd93025b08dae8f6e8fd7a01431e7a8699c87b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382923"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838235"
 ---
 # <a name="advance-operations"></a>アドバンス操作
 
@@ -26,21 +26,21 @@ ms.locfileid: "67382923"
 
 
 
-高度な操作で使用されるデータ領域のサイズを小さく、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体またはすべての NET\_内バッファーの構造体、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
+Advance 操作は、net [ **\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造、または[**net\_buffer\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造内のすべての net\_バッファー構造で使用されるデータ領域のサイズを縮小します。
 
-ドライバーは、次の高度な関数を使用します。
+ドライバーは、次のように高度に機能します。
 
-[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferdatastart)
+[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart)
 
-[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
+[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
 
-高度な操作ことができます、NET に関連付けられている MDLs が解放される場合があります\_バッファーの構造体。 ドライバー MDLs を解放するための機構を提供するための省略可能なエントリ ポイントを提供できます、 [ **NetFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_free_mdl_handler)関数。 エントリ ポイントがある場合**NULL**NDIS では、既定のメソッドを使用して、MDLs を割り当てます。 MDLs は内でのみ解放する必要があります、 *NetFreeMdl*で MDL の割り当てに使用されたメカニズムの逆数を使用して、 [ **NetAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_allocate_mdl_handler)関数。
+詳細な操作では、NET\_のバッファー構造に関連付けられている MDLs が解放される場合があります。 MDLs を解放するためのメカニズムを提供するために、ドライバーは[**Netfreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_free_mdl_handler)関数の省略可能なエントリポイントを提供できます。 エントリポイントが**NULL**の場合、NDIS は既定のメソッドを使用して mdls を割り当てます。 MDLs は、 [**NetAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_allocate_mdl_handler)関数での MDL の割り当てに使用されたメカニズムの逆数を使用して、 *Netfreemdl*内でのみ解放する必要があります。
 
-新しいを取得する**DataLength**、NDIS ドライバーが指定したを減算します*DataOffsetDelta*現在から**DataLength**します。 前の撤退操作に新しいデータ領域が割り当てられている場合、高度な操作は、このような以前に割り当てられたメモリを解放できます。 NDIS が単純に追加する高度な操作がメモリを確保できない場合、 *DataOffsetDelta*現在**DataOffset**新しいを取得する**DataOffset**します。 NDIS を調整します。 高度な操作は、メモリを解放する場合、 **DataOffset**それに応じて。
+新しい**datalength**を取得するために、NDIS はドライバーによって指定された*DataOffsetDelta*を現在の**datalength**から減算します。 前の retreat 操作によって新しいデータ領域が割り当てられた場合、事前操作によって、以前に割り当てられたメモリが解放される可能性があります。 アドバンス操作でメモリが解放されない場合、NDIS は*DataOffsetDelta*を現在の**DataOffset**に追加して新しい**DataOffset**を取得します。 Advance 操作によってメモリが解放された場合、NDIS はそれに応じて**DataOffset**を調整します。
 
-送信の完全なケースでは、高度な操作は前撤退操作で割り当てられたメモリを解放できます。 パフォーマンスの向上のため、ドライバーは、すべての基になるドライバーの撤退操作に対応するために送信する前に十分なデータの合計サイズを割り当てる必要があります。
+Send complete の場合は、前の retreat 操作で割り当てられたメモリを解放できます。 パフォーマンスを向上させるために、ドライバーは、すべての基になるドライバーの retreat 操作に対応するために、送信前に十分なデータサイズを割り当てておく必要があります。
 
-受信を示す値の場合、高度な操作を単純に調整する、 **DataOffset**と**DataLength**それに応じて。 高度な操作後に下位層のヘッダーのままで、*未使用データ領域*します。
+受信を示す場合、アドバンス操作では、それに応じて**DataOffset**と**DataLength**を調整するだけです。 事前操作の後、下位層のヘッダーは*未使用のデータ領域*に残ります。
 
  
 

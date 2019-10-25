@@ -1,66 +1,66 @@
 ---
 title: NFC CX クイック スタート ガイド
 author: EliotSeattle
-description: NFC クラスの拡張機能を使用して、NFC 機能ドライバーを記述するためのクイック スタート ガイドです。
+description: NFC クラス拡張を使用して NFC 機能ドライバーを作成するためのクイックスタートガイドです。
 keywords:
 - NFC
 - 近距離無線通信
 - proximity
 - 近距離近接通信
 - NFP
-- CX
+- シリーズ
 ms.author: eliotgra
 ms.date: 12/10/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: 7fab3eb7b3e5d420717f88a7deab73b9687bdc9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c335cf7386a33fddbe11316b5727938e12065191
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378885"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831891"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX クイック スタート ガイド
 
-このガイドでは、NFC クラスの拡張機能 (NFC CX) ドライバーを使用して、NFC 機能ドライバーを作成する方法を示します。
+このガイドでは、nfc クラス拡張 (NFC CX) ドライバーを使用して、NFC 機能ドライバーを記述する方法について説明します。
 
 > [!NOTE]
-> 実装クラスの拡張機能ドライバーを使用するドライバーは、クライアント ドライバーと呼ばれます。 つまり、クライアント クラスの拡張機能ドライバー。
+> 実装でクラス拡張ドライバーを使用するドライバーは、"クライアントドライバー" と呼ばれます。 つまり、クラス拡張ドライバーのクライアントであるとします。
 
 ## <a name="prerequisites"></a>前提条件
 
-* NFC コント ローラーのファームウェアが NFC フォーラムを実装する必要があります[NFC コント ローラー インターフェイス (NCI)](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/)プロトコル。
+* NFC コントローラーのファームウェアは、NFC フォーラムの[Nfc コントローラーインターフェイス (NCI)](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/)プロトコルを実装する必要があります。
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) (またはそれ以降)。
-* [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)します。
-* [10 Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。
+* [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
+* [Windows 10 Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 
-## <a name="client-driver-responsibilities"></a>クライアント ドライバーの責任
+## <a name="client-driver-responsibilities"></a>クライアントドライバーの役割
 
-NFC CX ドライバーは I/O に要求を処理、ドライバーに送信され、関連する NCI コマンド パケットを作成します。 クライアント ドライバーは、NFC コント ローラーに、NCI パケットを送信し、NFC CX ドライバーに戻る NCI 応答パケットを送信します。
+NFC CX ドライバーは、ドライバーに送信された i/o 要求の処理と、関連する NCI コマンドパケットの作成を担当します。 クライアントドライバーは、これらの NCI パケットを NFC コントローラーに送信し、NCI 応答パケットを NFC CX ドライバーに送り返します。
 
-NFC コント ローラーに NCI パケットを送信する方法を決定するクライアント ドライバーの責任です。 これについては、使用、ハードウェア バスの種類によって異なります。 NFC のコント ローラーで使用される共通のバスを含めるは<sup>2</sup>C、SPI および USB です。
+NCI パケットを NFC コントローラーに送信する方法は、クライアントドライバーによって決定されます。 これは、使用されるハードウェアバスの種類によって異なります。 NFC コントローラーで使用される一般的なバスには、I<sup>2</sup>C、SPI、USB があります。
 
-## <a name="complete-project-code"></a>完全なプロジェクト コード
+## <a name="complete-project-code"></a>完成したプロジェクトコード
 
-このサンプル コードの完全なバージョンは、GitHub で入手できます。[クライアント ドライバーのサンプルの NFC CX](https://github.com/Microsoft/Windows-driver-samples/tree/master/nfc/NfcCxSample)します。
+このサンプルコードの完全なバージョンについては、GitHub: [NFC CX クライアントドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/nfc/NfcCxSample)を参照してください。
 
 ## <a name="project-setup"></a>プロジェクトのセットアップ
 
-1. Visual Studio で、作成、新しい「ユーザー モード ドライバー、空 (UMDF V2)」プロジェクト。
+1. Visual Studio で、新しい "User Mode Driver, Empty (UMDF V2)" プロジェクトを作成します。
 
-    **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。 **Visual C**ノード [ **Windows ドライバー**、] をクリックして**WDF**、順にクリックします**ユーザー モード ドライバー、空 (UMDF V2)**
+    **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。 **ビジュアルC++** ノードの **[Windows ドライバー]** で、 **[WDF]** をクリックし、[**ユーザーモードドライバー]、[空 (UMDF V2)** ] の順にクリックします。
 
     ![image](images/quick-start-new-project.png)
 
 2. INF ファイルを開きます。
 
-   **ソリューション エクスプ ローラー**下で、 **\<プロジェクト名 >** ノードで、**ドライバー ファイル**フォルダーをダブルクリック **\<プロジェクト名 > .inf**します。
+   **ソリューションエクスプローラー**で、[ **\<プロジェクト名 >** ] ノードの下の **[ドライバーファイル]** フォルダーで、[ **\<プロジェクト名 > .inf**] をダブルクリックします。
 
-3. INF ファイルでは、次の手順を使用して、カスタムのデバイス クラスを削除します。
+3. INF ファイルで、次の手順に従ってカスタムデバイスクラスを削除します。
 
-    1. 次の 2 つのセクションを削除します。
+    1. 次の2つのセクションを削除します。
 
         ```inf
         [ClassInstall32]
@@ -71,17 +71,17 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         HKR,,Icon,,"-10"
         ```
 
-    2. で、`[Strings]`セクションで、次の行を削除します。 
+    2. [`[Strings]`] セクションで、次の行を削除します。 
 
         ```inf
         ClassName="Samples" ; TODO: edit ClassName
         ```
 
-4. INF ファイルでドライバーのデバイス クラスを設定**近接**:
+4. INF ファイルで、ドライバーの device クラスを**近接**に設定します。
 
-    1. 値を変更`Class`に `Proximity`
-    2. 値を変更`ClassGuid`に `{5630831C-06C9-4856-B327-F5D32586E060}`
-        - これは、近接デバイス クラスの GUID です。
+    1. `Class` の値をに変更し `Proximity`
+    2. `ClassGuid` の値をに変更し `{5630831C-06C9-4856-B327-F5D32586E060}`
+        - これは近接デバイスクラスの GUID です。
 
     ```ini
     [Version]
@@ -91,10 +91,10 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     ...
     ```
 
-5. INF ファイルでは、NFC クラスの拡張機能への参照を追加します。 これには、クライアント ドライバーの読み込み時に、Windows Driver Framework (WDF) が、NFC CX ドライバーを読み込むことにより保証されます。
+5. INF ファイルで、NFC クラス拡張への参照を追加します。 これにより、クライアントドライバーの読み込み時に Windows Driver Framework (WDF) が NFC CX ドライバーを読み込むようになります。
   
-    1. 検索、`<project-name>_Install`セクション。
-    2. 追加`UmdfExtensions=NfcCx0102`します。
+    1. `<project-name>_Install` セクションを見つけます。
+    2. `UmdfExtensions=NfcCx0102`を追加します。
 
     ```ini
     [<project-name>_Install]
@@ -102,18 +102,18 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     UmdfExtensions=NfcCx0102
     ```
 
-6. ドライバーのビルド設定、NFC クラスの拡張機能にリンクします。 これには、コードのコンパイル時に、NFC CX API があるにより保証されます。
+6. ドライバーのビルド設定で、NFC クラス拡張にリンクします。 これにより、コードのコンパイル中に NFC CX API を使用できるようになります。
 
-    1. **ソリューション エクスプ ローラー**、プロジェクトを右クリックし、クリックして、**プロパティ**します。 **構成プロパティ**[**ドライバー設定**、] をクリックして**NFC**します。
-    2. いることを確認**構成**に設定されている`All Configurations`します。
-    3. いることを確認**プラットフォーム**に設定する`All Platforms`します。
-    4. 設定**NFC クラスの拡張機能へのリンク**に`Yes`します。
+    1. **ソリューションエクスプローラー**で、プロジェクトを右クリックし、 **[プロパティ]** をクリックします。 **[構成プロパティ]** の **[ドライバーの設定]** で、 **[NFC]** をクリックします。
+    2. **構成**が `All Configurations`に設定されていることを確認します。
+    3. **プラットフォーム**が `All Platforms`に設定されていることを確認します。
+    4. **NFC クラス拡張へのリンク**を `Yes`に設定します。
 
     ![image](images/quick-start-link-to-nfc-cx.png)
 
-7. という名前のファイルを追加`Driver.cpp`をプロジェクトにします。
+7. `Driver.cpp` という名前のファイルをプロジェクトに追加します。
 
-8. 作成、`DriverEntry`で日常的な`Driver.cpp`します。 これは、ドライバーのエントリ ポイントです。 主な目的は WDF を初期化するために登録して、 [ `EvtDriverDeviceAdd` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+8. `Driver.cpp`に `DriverEntry` ルーチンを作成します。 これは、ドライバーのエントリポイントです。 主な目的は、WDF を初期化し、 [`EvtDriverDeviceAdd`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を登録することです。
 
     ```cpp
     #include <windows.h>
@@ -150,9 +150,9 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     }
     ```
 
-9. という名前の 2 つのファイルを追加`Device.cpp`と`Device.h`をプロジェクトにします。
+9. `Device.cpp` と `Device.h` という名前の2つのファイルをプロジェクトに追加します。
 
-10. `Device.h`、定義、`DeviceContext`クラス。
+10. `Device.h`で、`DeviceContext` クラスを定義します。
 
     ```cpp
     #pragma once
@@ -203,7 +203,7 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(DeviceContext, DeviceGetContext);
     ```
 
-11. `Device.cpp`、開始、`DeviceContext::AddDevice`関数の定義。
+11. `Device.cpp`で、`DeviceContext::AddDevice` 関数の定義を開始します。
 
     ```cpp
     #include "Device.h"
@@ -216,7 +216,7 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
 
     ```
 
-12. NFC CX のデバイスの構成を設定します。 デバイスの構成には、提供することが含まれています、 [ `EvtNfcCxWriteNciPacket` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)コールバック関数。 このコールバックは、クライアント ドライバーは、NFC コント ローラーに転送する必要があります、NFC CX ドライバーから NCI パケットを受信します。
+12. NFC CX デバイス構成を設定します。 デバイス構成には、 [`EvtNfcCxWriteNciPacket`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)コールバック関数の提供が含まれます。 このコールバックは、クライアントドライバーが NFC コントローラーに転送する必要がある、NFC CX ドライバーからの NCI パケットを受信します。
 
     ```cpp
         // Create the NfcCx config.
@@ -233,9 +233,9 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         }
     ```
 
-13. 登録、 [power コールバックの PnP](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-function-drivers)クライアント ドライバーで必要です。
+13. クライアントドライバーに必要な[PnP 電源コールバック](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-function-drivers)を登録します。
 
-    一般的なクライアント ドライバーの方が、 [ `EvtDevicePrepareHardware` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)、 [ `EvtDeviceReleaseHardware` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)、 [ `EvtDeviceD0Entry` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[ `EvtDeviceD0Exit`](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)関数。 要件は、クライアント ドライバーによる電源管理の処理方法によって異なります。
+    一般的なクライアントドライバーでは、 [`EvtDevicePrepareHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)、 [`EvtDeviceReleaseHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)、 [`EvtDeviceD0Entry`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 、および[`EvtDeviceD0Exit`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)の機能が必要になる可能性があります。 要件は、クライアントドライバーが電源管理を処理する方法によって異なります。
 
     ```cpp
         // Create the PnP power callbacks configuration.
@@ -250,7 +250,7 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         WdfDeviceInitSetPnpPowerEventCallbacks(DeviceInit, &pnpCallbacks);
     ```
 
-14. 呼び出す、 [ `WdfDeviceCreate` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)関数を作成する、 [ `WDFDEVICE` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/)オブジェクト。
+14. [`WdfDeviceCreate`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)関数を呼び出して、 [`WDFDEVICE`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)オブジェクトを作成します。
 
     ```cpp
         // Create WDF object attributes for the WDFDEVICE object.
@@ -266,9 +266,9 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         }
     ```
 
-15. 呼び出す、 [ `NfcCxDeviceInitialize` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxdeviceinitialize)関数。
+15. [`NfcCxDeviceInitialize`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxdeviceinitialize)関数を呼び出します。
 
-    後に、この関数を呼び出す必要があります、 [ `WDFDEVICE` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/) NFC CX ドライバーがデバイスのインスタンスの初期化を完了するを許可するオブジェクトが作成されています。
+    この関数は、 [`WDFDEVICE`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)オブジェクトが作成された後に呼び出され、NFC CX ドライバーがデバイスインスタンスの初期化を完了できるようにします。
 
     ```cpp
         // Let NFC CX finish initializing the device instance.
@@ -279,7 +279,7 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         }
     ```
 
-16. 呼び出す[ `NfcCxSetRfDiscoveryConfig` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig) NFC テクノロジと NFC コント ローラーでサポートされるプロトコルを指定します。
+16. [`NfcCxSetRfDiscoveryConfig`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig)を呼び出して、nfc コントローラーでサポートされている nfc テクノロジとプロトコルを指定します。
 
     ```cpp
         // Create the RF config. (Enable everything.)
@@ -310,16 +310,16 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
         }
     ```
 
-17. 終了、`DeviceContext::AddDevice`関数。
+17. `DeviceContext::AddDevice` 関数を終了します。
 
     ```cpp
         return STATUS_SUCCESS;
     }
     ```
 
-18. 実装、 [ `PrepareHardware` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)と[ `ReleaseHardware` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数。
+18. [`PrepareHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)および[`ReleaseHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数を実装します。
 
-    これら 2 つの関数は、デバイスの NFC コント ローラーのインスタンスに割り当てられたハードウェア リソースを初期化してに使用されます。 その実装に、デバイスが接続されているバスの種類によって異なります (例: は<sup>2</sup>C、SPI および USB)。
+    この2つの関数は、NFC コントローラーのデバイスインスタンスに割り当てられたハードウェアリソースの初期化と初期化解除に使用されます。 これらの実装は、デバイスが接続されているバスの種類 (例: I<sup>2</sup>C、SPI、USB) によって異なります。
 
     ```cpp
     NTSTATUS DeviceContext::PrepareHardware(
@@ -340,9 +340,9 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     }
     ```
 
-19. 呼び出す、 [ `NfcCxHardwareEvent` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxhardwareevent)関数と[ `HostActionStart` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/ne-nfccx-_nfc_cx_host_action)と[ `HostActionStop` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/ne-nfccx-_nfc_cx_host_action)を起動し、適切なタイミングで NCI のステート マシンを停止します。
+19. NCI ステートマシンを適切なタイミングで開始および停止するには、 [`HostActionStart`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action)と[`HostActionStop`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action)を使用して[`NfcCxHardwareEvent`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxhardwareevent)関数を呼び出します。
 
-    一部のドライバーはこの中に、 [ `D0Entry` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[ `D0Exit` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) PnP power コールバック。 これには、クライアント ドライバーがただし、電源管理を処理によって異なります。
+    一部のドライバーは、 [`D0Entry`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)中にこの処理を行い、PnP 電源コールバックを[`D0Exit`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)します。 ただし、クライアントドライバーが電源管理を処理する方法によって異なります。
 
     ```cpp
     // Device exiting low power state (or is booting up).
@@ -392,9 +392,9 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     }
     ```
 
-20. 実装、 [ `WriteNciPacket` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)関数。
+20. [`WriteNciPacket`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)関数を実装します。
 
-    このコールバックは、NFC コント ローラーに送信する、NCI パケットがある場合に、NFC CX によって呼び出されます。
+    このコールバックは、nfc コントローラーに送信する NCI パケットがある場合に、NFC CX によって呼び出されます。
 
     ```cpp
     void DeviceContext::WriteNciPacket(
@@ -420,12 +420,12 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     };
     ```
 
-21. 呼び出す、 [ `NfcCxNciReadNotification` ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxncireadnotification)関数の NFC コント ローラーが、NCI パケット NFC CX に送信する必要があります。 これは通常、ハードウェア イベントのコールバックで行われます。
+21. Nfc コントローラーの NCI パケットが NFC CX に送信される必要がある場合は、 [`NfcCxNciReadNotification`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)関数を呼び出します。 これは通常、ハードウェアイベントコールバックで行われます。
 
     次に、例を示します。
-    - A [GPIO 割り込み](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)イベント コールバック。 (は<sup>2</sup>C および SPI)
-    - A [USB の継続的なリーダー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-)コールバック。
+    - [GPIO interrupt](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)イベントのコールバック。 (I<sup>2</sup>C と SPI)
+    - [USB 連続リーダー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-)コールバック。
 
-## <a name="logging"></a>ログの記録
+## <a name="logging"></a>ログ
 
-デバッグを容易にできるように、クライアント ドライバーへのログ記録の追加を検討してください。 両方[ETW トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)と[WPP トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)優れたオプションです。
+デバッグを容易にするために、クライアントドライバーにログ記録を追加することを検討してください。 [ETW トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)と[WPP トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)はどちらも適切なオプションです。

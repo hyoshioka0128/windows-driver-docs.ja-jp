@@ -3,19 +3,19 @@ title: MIDI トランスポート
 description: MIDI トランスポート
 ms.assetid: ce9ec589-0aea-4ed9-a60d-50f2ddfb0c13
 keywords:
-- ポート ドライバー WDK のオーディオ、シンセサイザー
-- ミニポート ドライバー WDK のオーディオ、シンセサイザー
+- ポートドライバー WDK オーディオ、シンセサイザー
+- ミニポートドライバー WDK オーディオ、シンセサイザー
 - MIDI トランスポート WDK オーディオ
-- wave オーディオ、MIDI トランスポートの WDK をシンクします。
+- wave シンク WDK オーディオ、MIDI トランスポート
 - シンセサイザー WDK オーディオ、MIDI トランスポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1626ea40ace629e12b28601399af5d488ddcfa33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c7093218d39a15842028a8d58ae132ee1e52e83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363238"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830359"
 ---
 # <a name="midi-transport"></a>MIDI トランスポート
 
@@ -23,23 +23,23 @@ ms.locfileid: "67363238"
 ## <span id="midi_transport"></span><span id="MIDI_TRANSPORT"></span>
 
 
-Dmu ポート ドライバーは、Dmu ミニポート ドライバーのシンセサイザーの作業のフロント エンドとバックエンドの辺に関与します。 ポート ドライバーでは、MIDI データのタイムスタンプ付きで構成され、sequencer をストリームをルーティングする MIDI ストリームを入力します。 Sequencer は、タイムスタンプを削除し、そのタイムスタンプが期限、ミニポート ドライバーに生 MIDI メッセージを渡します。 (DLS 通過したデータの右ポート ドライバーなしの前処理のミニポート ドライバーにします。)
+DMus ポートドライバーは、DMus ミニポートドライバーのシンセサイザー作業の前後に関係しています。 ポートドライバーは、タイムスタンプ付きの MIDI データで構成される MIDI ストリームを入力し、そのストリームを sequencer にルーティングします。 Sequencer はタイムスタンプを削除し、タイムスタンプが期限切れになったときに未処理の MIDI メッセージをミニポートドライバーに渡します。 (DLS データは、ポートドライバーを使用して、前処理を行わずにミニポートドライバーに渡されます)。
 
-Dmu ミニポート ドライバー MIDI 入力ストリームは、wave データに変換を取得するときは、その出力が (「シンセサイザー シンク」または「レンダリング シンク」とも呼ばれます)、wave シンクによって管理されます。
+DMus ミニポートドライバーの MIDI 入力ストリームが wave データに変換されると、その出力は wave シンク ("シンセサイザーシンク" または "レンダーシンク" とも呼ばれます) によって管理されます。
 
-Dmu ポート ドライバーでは、DirectMusic ユーザー モード コンポーネントから DirectMusic データを受け取る入力ピンとカーネル ストリーミング フィルター dmusic.dll します。 ポートのドライバーでは、合成されたオーディオ ストリームに出力を wave 出力ピンもあります。 Wave シンクは、この暗証番号 (pin) を管理し、そのデータを記述するためのメモリ内、シンセサイザーを指示します。 この配置では、カーネルのストリーミングの詳細をシンセサイザー切り離しています。 Dmu ミニポート ドライバーでは、のみ、MIDI の入力ストリームからデータを wave を合成することの詳細を処理する必要があります。 ポート ドライバーをシステムに、波形データを送信して、SysAudio のフィルターのグラフに接続するすべてのフィルター正しくフローします。 次の図に示すように、MIDI データは Dmu ポート ドライバーにし、シーケンス処理には、Dmu ミニポート ドライバーに渡されます。
+DMus ポートドライバーは、DirectMusic ユーザーモードコンポーネント (dmusic .dll) からの DirectMusic データを受け付ける入力ピンを持つカーネルストリーミングフィルタを実装します。 ポートドライバーには、合成されたオーディオストリームを出力する wave 出力ピンもあります。 Wave シンクはこの pin を管理し、メモリ内でデータを書き込む場所をシンセに指示します。 このようにすることで、カーネルストリーミングの詳細からシンセを分離できます。 DMus ミニポートドライバーは、入力 MIDI ストリームからのから wave データの詳細を処理するためだけに必要です。 ポートドライバーは wave データをシステムに送信し、SysAudio のフィルターグラフは、すべてのフローが正しくなるようにフィルターに接続します。 次の図に示すように、MIDI データは DMus ポートドライバーにあり、シーケンス処理後に DMus ミニポートドライバーに渡されます。
 
-![portdmus ドライバーを通じて midi と dl のデータの流れを示す図](images/dmportmi.png)
+![portdmus ドライバーを使用した midi と dls データのフローを示す図](images/dmportmi.png)
 
-ミニポート ドライバーに MIDI データ ポート ドライバーの別の部分で指定されているバッファーにレンダリングされるは、wave 形式に変換します。 wave シンク。 、DirectSound へとユーザー モードでは、出て、ではなく wave 出力に移動して、オーディオ ハードウェア、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)します。 DirectSound は実際には、KMixer を公開する API と DirectSound アクセラレータは、KMixer によってハードウェアでエミュレートされたソフトウェアではなく高速化されているミキサー関数で構成されています。
+ミニポートドライバーは、MIDI データを wave 形式に変換します。これは、ポートドライバーの別の部分 (wave シンク) で指定されたバッファーにレンダリングされます。 次に、ユーザーモードでの動作と同じように DirectSound に移動するのではなく、 [KMixer システムドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)を使用してオーディオハードウェアに出力します。 DirectSound は、KMixer を公開する API にすぎません。 DirectSound アクセラレーションは、KMixer によってソフトウェアでエミュレートされるのではなく、ハードウェアで加速するミキサー関数で構成されています。
 
-[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)、Dmu ポート ドライバー、オーディオ フィルター グラフでは、どのビルドのハードウェアに接続します。 ポート ドライバーのウェーブ シンク部分では、ハードウェア デバイスに接続できる SysAudio wave アウト pin を取得するには、使用データを渡します。 (かどうかがハードウェアまたはソフトウェアのシンセサイザー) に関係なく Dmu ミニポート ドライバーから wave データをプルし、すべてのタイミングの問題を処理します。 ユーザー モードと比較して、ミニポート ドライバーに似ています、シンセサイザー wave シンクは同じポート ドライバーの一部です。
+オーディオフィルターグラフを構築する[sysaudio システムドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)は、dmus ポートドライバーをハードウェアに接続します。 ポートドライバーの wave シンク部分では、SysAudio がハードウェアデバイスに接続できる、wave out pin を使用してデータを送信します。 これは、(ハードウェアまたはソフトウェアのシンセサイザーであるかどうかに関係なく) DMus ミニポートドライバーからウェーブデータをプルし、すべてのタイミングの問題を処理します。 ユーザーモードと比較すると、ミニポートドライバーは、シンセに似ています。一方、wave シンクはポートドライバーの一部にすぎません。
 
-Wave pin KSPIN のデータ方向の公開 Dmu のミニポート ドライバーでは、ホストにその出力を提供できる場合、\_データフロー\_OUT (を参照してください[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin))、どの SysAudio認識して KMixer に接続します。
+DMus ミニポートドライバーが出力をホストに渡すことができる場合、その出力は KSPIN\_データフロー\_のデータの方向を持つ wave ピンを公開します (「 [**kspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)」を参照)。 sysaudio は、KMixer を認識して接続します。
 
-Wave シンクの詳細については、次を参照してください。[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
+Wave シンクの詳細については、「[カーネルモードのソフトウェアシンセサイザーの Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)」を参照してください。
 
-このセクションが含まれています。
+このセクションには次のものも含まれます。
 
 [IMXF インターフェイス](imxf-interfaces.md)
 

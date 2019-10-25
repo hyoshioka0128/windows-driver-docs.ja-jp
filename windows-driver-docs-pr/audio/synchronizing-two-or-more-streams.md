@@ -4,30 +4,30 @@ description: 2 つ以上のストリームの同期
 ms.assetid: c25f4ca2-8a9f-43bc-a1bf-b71826b446ff
 keywords:
 - HD オーディオ、ストリームの同期
-- 高解像度オーディオ (HD オーディオ) のストリームの同期
-- WDK オーディオのストリームの同期
-- ストリームの同期の WDK オーディオ
+- High Definition Audio (HD audio)、ストリームの同期
+- ストリームの同期 WDK オーディオ
+- ストリーム同期 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e11d64b1a78cf796e43116aae18b52d356d03ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a3acb484f2d6bebc5e88848068c3c37b18bb6dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354218"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832339"
 ---
 # <a name="synchronizing-two-or-more-streams"></a>2 つ以上のストリームの同期
 
 
-[ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンは、次のいずれか 1 つまたは複数の DMA エンジンの状態を設定: 実行を一時停止、停止、またはリセットします。 このルーチンの呼び出しでは、1 つ以上の DMA エンジンを指定する場合、すべて DMA エンジンの状態遷移同期的にします。
+[**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンは、1つまたは複数の DMA エンジンの状態を、次のいずれかに設定します。実行中、一時停止、停止、またはリセットします。 このルーチンへの呼び出しで複数の DMA エンジンが指定されている場合は、すべての DMA エンジンによって状態が同期的に移行されます。
 
-ストリームのグループを同期する機能は、オーディオ アプリケーションによって必要があります。 たとえば、オーディオ ドライバーは、2 つのオーディオ コーデックを結合する論理サラウンド サウンド オーディオ デバイスを作成するコーデック結合を使用可能性があります。 1 つのコーデックが前面のスピーカーをドライブや 2 つ目のオーディオ コーデックがバック スピーカーをドライブ。 コーデックの機能、によって、オーディオ ドライバーに各コーデックの 1 つ、2 つのストリームの元のサラウンド サウンド オーディオ ストリームを分割する必要があります。 使用して、 [ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンの開始し、同時にストリームを停止する、2 つのストリームは同期を維持します。
+一部のオーディオアプリケーションでは、ストリームのグループを同期する機能が必要です。 たとえば、オーディオドライバーは、コーデックの組み合わせを使用して2つのオーディオコーデックを結合する論理サラウンドサウンドオーディオデバイスを作成する場合があります。1つはフロントスピーカーを、もう1つは2番目のオーディオコーデックはバックスピーカーを駆動するコーデックです。 コーデックの機能によっては、元のサラウンドサウンドオーディオストリームを、コーデックごとに1つずつ、2つのストリームに分割することが必要になる場合があります。 [**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンを使用してストリームの開始と停止を連携させることで、2つのストリームを同期したままにすることができます。
 
-同期にもいくつかのサンプルでは、2 つのストリームを許可すると、各オーディオ成果物の望ましくない可能性があります。
+いくつかのサンプルでも、2つのストリームを同期させることができない場合、望ましくないオーディオアイテムが発生する可能性があります。
 
-[ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンは、HD オーディオ DDI の両方のバージョンで使用できます。
+[**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)ルーチンは、HD audio DDI の両方のバージョンで使用できます。
 
-UAA HD オーディオ クラス ドライバーは、コーデック結合を実行しません。
+UAA HD オーディオクラスドライバーは、コーデックの組み合わせを実行しません。
 
  
 

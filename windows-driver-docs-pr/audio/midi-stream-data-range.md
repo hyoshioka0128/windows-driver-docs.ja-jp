@@ -3,15 +3,15 @@ title: MIDI ストリームのデータ範囲
 description: MIDI ストリームのデータ範囲
 ms.assetid: 392eadf7-9c6e-4527-bc84-a2916623c154
 keywords:
-- MIDI ストリーム データの範囲の WDK オーディオ
+- MIDI ストリームデータ範囲 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4fbd7b6e970c41657336c8b22573fe18d10873b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1aee90488778740f6354679527315bd223081ec0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364335"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832581"
 ---
 # <a name="midi-stream-data-range"></a>MIDI ストリームのデータ範囲
 
@@ -19,7 +19,7 @@ ms.locfileid: "67364335"
 ## <span id="midi_stream_data_range"></span><span id="MIDI_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE\_音楽**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music) MIDI ストリームのデータ範囲を記述する構造体。
+この例では、 [**ksk の\_ミュージック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)構造体を使用して、MIDI ストリームのデータ範囲を記述します。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_MUSIC);

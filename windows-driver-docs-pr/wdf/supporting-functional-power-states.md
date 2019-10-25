@@ -4,23 +4,23 @@ description: 機能電源状態のサポート
 ms.assetid: F96214C9-702D-402E-B873-5DF57C521B34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79bf569f7c99db281d18e59c71cc09f153bcac48
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a551255747202404e10beb02d7a49c99e96dcd27
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368646"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831799"
 ---
 # <a name="supporting-functional-power-states"></a>機能電源状態のサポート
 
 
-Windows 8 以降、電源マネージャーには、実行時の電源管理フレームワーク (PoFx) が含まれています。 PoFx では、コンポーネント (またはサブデバイス) レベルでの電源とクロックの管理をサポートします。
+Windows 8 以降では、power manager にはランタイム電源管理フレームワーク (PoFx) が含まれています。 PoFx は、コンポーネント (またはサブデバイス) レベルでの電源とクロックの管理をサポートしています。
 
-KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoFx を提供する詳細な電源管理の。 具体的には、KMDF ドライバーでは、それぞれが個別にできます電源管理の対象を 1 つのデバイス内の複数の論理コンポーネントを定義できます。
+Kmdf バージョン1.11 以降、KMDF ドライバーは、PoFx によって提供される詳細な電源管理機能を利用できます。 特に、KMDF ドライバーでは、1つのデバイス内に複数の論理コンポーネントを定義できます。これらはそれぞれ独立した電源管理を行うことができます。
 
-たとえば、関数ドライバーは一意のデバイスの論理コンポーネントで各機能の電源状態のセットを定義する可能性があります。 デバイスとシステムの電源状態と同様に、F0 ことを示しますコンポーネントが完全に中は、省略可能な状態ながら F1、f2 キーには、段階的に低電力状態を示します。 [Fx] の状態をサポートするには、ドライバーは、デバイスの電源ポリシー所有者にある必要があります。
+たとえば、関数ドライバーでは、デバイスの各論理コンポーネントに対して、機能的な電源状態の一意のセットを定義できます。 デバイスとシステムの電源状態と同様、F0 はコンポーネントが完全にオンになっていることを示し、オプションの状態 F1、F2 などは、徐々に低い電力状態を示します。 Fx の状態をサポートするには、ドライバーがデバイスの電源ポリシーの所有者である必要があります。
 
-次の表は、さまざまな機能の電源状態のシナリオのフレームワークのサポートをまとめたものです。
+次の表は、さまざまな機能の電源状態のシナリオに対するフレームワークのサポートをまとめたものです。
 
 <table>
 <colgroup>
@@ -31,45 +31,45 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">種類</th>
-<th align="left">KMDF サポート</th>
+<th align="left">タスクバーの検索ボックスに</th>
+<th align="left">KMDF のサポート</th>
 <th align="left">UMDF サポート</th>
-<th align="left">使用方法を実装する場合</th>
+<th align="left">使用するタイミング/実装方法</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, single state (F0)](supporting-multiple-functional-power-states-for-single-component-devices.md)">1 つのコンポーネント、1 つの状態 (F0)</a></p></td>
-<td align="left"><p>サポート対象</p></td>
-<td align="left"><p>サポート対象</p></td>
-<td align="left"><p>電源エンジン プラグイン (PEP) をアイドル タイムアウト値を判断して、ドライバーが 1 つだけの F 状態。</p>
-<p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>または<strong>SystemManagedIdleTimoutWithHint</strong>します。</p></td>
+<td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, single state (F0)](supporting-multiple-functional-power-states-for-single-component-devices.md)">単一コンポーネント、単一状態 (F0)</a></p></td>
+<td align="left"><p>サポートされる</p></td>
+<td align="left"><p>サポートされる</p></td>
+<td align="left"><p>電源エンジンプラグイン (PEP) を使用してアイドルタイムアウト値を決定し、ドライバーに1つだけの F 状態がある場合。</p>
+<p><em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>または<strong>SystemManagedIdleTimoutWithHint</strong>を使用して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"><strong>WdfDeviceAssignS0IdleSettings</strong></a>を呼び出します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, multiple states (F0, F1, F2…)](supporting-multiple-functional-power-states-for-single-component-devices.md)">1 つのコンポーネントでは、複数の状態 (F0、F1、F2...)</a></p></td>
-<td align="left"><p>サポート対象</p></td>
+<td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, multiple states (F0, F1, F2…)](supporting-multiple-functional-power-states-for-single-component-devices.md)">単一コンポーネント、複数の状態 (F0、F1、F2...)</a></p></td>
+<td align="left"><p>サポートされる</p></td>
 <td align="left"><p>サポートされない</p></td>
-<td align="left"><p>ドライバーは、1 つ以上の F 状態が場合。</p>
+<td align="left"><p>ドライバーに複数の F 状態がある場合。</p>
 <ul>
-<li>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings)"> <strong>WdfDeviceWdmAssignPowerFrameworkSettings</strong> </a> WDM PoFx コールバックを登録します。</li>
-<li>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings)"><strong>Wdfdevicewdm割り当て Powerframeworksettings</strong></a>を呼び出して、WDM pofx コールバックを登録します。</li>
+<li><em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>を使用して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"><strong>WdfDeviceAssignS0IdleSettings</strong></a>を呼び出します。</li>
 </ul>
-<p>この場合は、KMDF、PoFx やり取りのほとんどを処理します。</p>
-<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
+<p>この場合、KMDF は PoFx とのほとんどのやり取りを処理します。</p>
+<p>サンプルコードについては、「 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">Pofx サンプルドライバー</a>」を参照してください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="supporting-multiple-functional-power-states-for-multiple-component-devices.md" data-raw-source="[Multiple components, single or multiple states](supporting-multiple-functional-power-states-for-multiple-component-devices.md)">複数のコンポーネント、1 つまたは複数の状態</a></p></td>
-<td align="left"><p>WDM インターフェイスを使用してサポートされています。</p></td>
+<td align="left"><p><a href="supporting-multiple-functional-power-states-for-multiple-component-devices.md" data-raw-source="[Multiple components, single or multiple states](supporting-multiple-functional-power-states-for-multiple-component-devices.md)">複数のコンポーネント、1つまたは複数の状態</a></p></td>
+<td align="left"><p>サポート (WDM インターフェイスを使用)</p></td>
 <td align="left"><p>サポートされない</p></td>
-<td align="left"><p>ドライバーは、複数のコンポーネントが場合。 この場合、PoFx インターフェイスを直接使用する必要があります。</p>
-<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
+<td align="left"><p>ドライバーに複数のコンポーネントがある場合。 この場合は、PoFx インターフェイスを直接使用する必要があります。</p>
+<p>サンプルコードについては、「 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">Pofx サンプルドライバー</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-KMDF PoFx 上に最小限の抽象化を追加するためには、ドライバーを記述する前に PoFx の基本を理解することをお勧めします。 確認すること勧めその結果、 [、電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)これらのトピックを読む前にします。
+KMDF では、PoFx の上に最小限の抽象化が追加されるため、ドライバーを記述する前に、PoFx に関する基本的な知識があることをお勧めします。 そのため、これらのトピックを読む前に、 [「電源管理フレームワークの概要」](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)をお読みになることをお勧めします。
 
  
 

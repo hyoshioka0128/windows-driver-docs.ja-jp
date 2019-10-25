@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_プレゼンテーション\_位置
-description: KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ要求をエンドポイントにレンダリングされるオーディオ データ内の現在位置を指定する構造体を取得します。
+title: KSK プロパティ\_オーディオ\_プレゼンテーション\_位置
+description: KSK プロパティ\_AUDIO\_PRESENTATION\_POSITION プロパティ要求は、エンドポイントにレンダリングされるオーディオデータ内の現在位置を指定する構造体を取得します。
 ms.assetid: 21067580-12FF-4327-B9AA-D16E2635FA12
 keywords:
-- KSPROPERTY_AUDIO_PRESENTATION_POSITION オーディオ デバイス
+- KSPROPERTY_AUDIO_PRESENTATION_POSITION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52857e0fe55e700bb224ea28f4aa4aff5a6f2de1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35991324b393ced5ffbd569e2497c03b43f89dfa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360588"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832935"
 ---
-# <a name="kspropertyaudiopresentationposition"></a>KSPROPERTY\_オーディオ\_プレゼンテーション\_位置
+# <a name="ksproperty_audio_presentation_position"></a>KSK プロパティ\_オーディオ\_プレゼンテーション\_位置
 
 
-KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ要求をエンドポイントにレンダリングされるオーディオ データ内の現在位置を指定する構造体を取得します。
+KSK プロパティ\_AUDIO\_PRESENTATION\_POSITION プロパティ要求は、エンドポイントにレンダリングされるオーディオデータ内の現在位置を指定する構造体を取得します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -47,25 +47,25 @@ KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>暗証番号 (pin) のインスタンスを使用してノード</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>ピンのインスタンスによるノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AUDIO\_PRESENTATION\_POSITION プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,10 +85,10 @@ KSPROPERTY\_オーディオ\_プレゼンテーション\_位置プロパティ�
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSAUDIO\_プレゼンテーション\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)
+[**KSAUDIO\_プレゼンテーション\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position)
 
  
 

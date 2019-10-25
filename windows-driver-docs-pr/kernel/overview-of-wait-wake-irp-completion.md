@@ -3,21 +3,21 @@ title: 待機/ウェイク IRP 完了の概要
 description: 待機/ウェイク IRP 完了の概要
 ms.assetid: a5e09fda-f722-4335-8576-7b058b2f7a21
 keywords:
-- 電源管理の WDK カーネル、ウェイク アップ機能
-- 外部ウェイク信号 WDK
-- アクティブになるデバイス
-- 電源管理のウェイク アップ機能 WDK
-- デバイスのスリープ解除 ups WDK 電源管理
+- 電源管理 WDK カーネル、ウェイクアップ機能
+- 外部ウェイクアップシグナル WDK
+- 復帰デバイス
+- ウェイクアップ機能 WDK の電源管理
+- デバイスのウェイクアップと WDK の電源管理
 - IRP_MN_WAIT_WAKE
-- Irp WDK の電源管理のウェイク/待機の完了
+- 待機/ウェイク Irp WDK 電源管理、完了
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 141aa21f05f788181a878742f1338ef09cb8ab01
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85da38055708b5f8b16dd7f0cc9ffae6a7393a7c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384928"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827726"
 ---
 # <a name="overview-of-waitwake-irp-completion"></a>待機/ウェイク IRP 完了の概要
 
@@ -25,21 +25,21 @@ ms.locfileid: "67384928"
 
 
 
-待機/ウェイク IRP をウェイク アップの信号が到着すると完了します。 ウェイク アップ通知は、デバイスに固有ですは通常、デバイスの通常のサービス イベント。 たとえば、受信のリングは、スリープ状態のモデムがスリープ解除する場合があります。
+ウェイクアップシグナルが到着すると、待機/ウェイク IRP が完了します。 ウェイクアップ信号はデバイス固有ですが、通常はデバイスの通常のサービスイベントです。 たとえば、着信音によって、スリープ状態のモデムがスリープ解除される場合があります。
 
-次の図は、待機/ウェイク IRP の完了手順を示します。
+次の図は、待機/ウェイク IRP を完了する手順を示しています。
 
 ![待機/ウェイク irp を完了するための手順](images/comp-waitwake.png)
 
-シグナルが発生したときにコントロールをバス ドライバー、バスが、デバイスが起こさになっていることを検出する時点で再入力します。 バス ドライバー サービスの必要なイベントと呼び出し[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)を完了する、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) IRP の PDO をします。
+シグナルが発生すると、デバイスがスリープ状態になったことをバスが検出した時点で、制御がバスドライバーに再入力されます。 バスドライバーは、必要に応じてイベントを処理し、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して\_irp を完了します。これにより、PDO に[ **\_WAKE IRP\_待機**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)ます。
 
-I/O マネージャーを呼び出して、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン デバイス スタックの上位のドライバーによって設定します。 *IoCompletion*日常的なそのドライバー サービス、必要に応じてウェイク アップのシグナルと呼び出し**IoCompleteRequest** IRP を完了します。 I/O マネージャーを呼び出し続けます*IoCompletion*操作ルーチンは、すべてのドライバーが IRP を完了するまで、デバイス スタックをバックアップします。
+次に、i/o マネージャーは、デバイススタック内の次の上位のドライバーによって設定された[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを呼び出します。 *Iocompletion*ルーチンでは、そのドライバーは必要に応じてウェイクアップシグナルを処理し、 **IoCompleteRequest**を呼び出して IRP を完了します。 I/o マネージャーは引き続き*Iocompletion*ルーチンを呼び出し、すべてのドライバーが IRP を完了するまで、デバイススタックをバックアップします。
 
-その*IoCompletion* 、日常的な (1 つ以上の PDO を作成します)、1 つ以上の子デバイスを列挙し、このような 1 つ以上のデバイスからの待機またはスリープ解除要求を受け取ったドライバー送信する必要が自体待機/ウェイク再待機自体を arm に IRP/別の子でスリープを解除します。 詳細については、次を参照してください。[デバイス ツリーを通じて待機/ウェイク Irp のパスを理解する](understanding-the-path-of-wait-wake-irps-through-a-device-tree.md)します。
+*Iocompletion*ルーチンでは、複数の子デバイス (複数の PDO を作成) を列挙し、複数のデバイスから受信した待機/ウェイク要求を受け取るドライバーは、別の子の待機/ウェイクのために、待機/ウェイク IRP を再起動する必要があります. 詳細については、「[デバイスツリーを使用した待機/ウェイク irp のパスについ](understanding-the-path-of-wait-wake-irps-through-a-device-tree.md)て」を参照してください。
 
-呼び出した後*IoCompletion* IRP が下位のスタックに渡されるときに、ドライバーによって設定ルーチンでは、I/O マネージャーが待機/ウェイク IRP が要求されたときに、電源ポリシーの所有者によって設定するコールバック ルーチンを呼び出します。 コールバック ルーチンでポリシー所有者は、デバイスを動作状態に戻すし、存在する場合、その子の pdo 保留中待機/ウェイクの IRP を完了する必要があります。
+ドライバーによって設定された*Iocompletion*ルーチンがスタックに渡されたときに、そのルーチンを呼び出した後、i/o マネージャーは、待機/ウェイク IRP を要求したときに、電源ポリシー所有者によって設定されたコールバックルーチンを呼び出します。 コールバックルーチンでは、ポリシーの所有者がそのデバイスを動作中の状態に戻し、子の PDO (存在する場合) に対して保留中の待機/ウェイク IRP を完了する必要があります。
 
-子の IRP の完了が原因でを呼び出す I/O マネージャー *IoCompletion*ルーチンは、子のデバイスのスタックのドライバーによって設定され、具合です。 最終的には、devnode で元待機/ウェイク IRP を開始したポリシー所有者には、そのデバイスには、ウェイク アップの信号がアサートされ、すべての保留中待機/ウェイク Irp を完了することが決定します。
+子の IRP を完了すると、i/o マネージャーは、子のデバイススタック内のドライバーによって設定された*Iocompletion*ルーチンを呼び出すようになります。 最終的には、devnode で元の待機/ウェイク IRP を開始したポリシー所有者が、デバイスがウェイクアップシグナルをアサートしたこと、および保留中の待機/ウェイク Irp がすべて完了したと判断します。
 
  
 

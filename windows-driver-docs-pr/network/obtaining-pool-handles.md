@@ -3,20 +3,20 @@ title: プール ハンドルの取得
 description: プール ハンドルの取得
 ms.assetid: 752b0d64-2ca3-4dc0-a6cd-642e96af1f8f
 keywords:
-- プールの WDK ネットワークを処理します。
-- プロトコル ドライバー WDK ネットワー キング、ハンドルのプール
-- NDIS プロトコル ドライバー WDK には、プールを処理します。
-- ミニポート ドライバー WDK ネットワー キング、ハンドルのプール
-- NDIS ミニポート ドライバー WDK、ハンドルをプールします。
+- プールは WDK ネットワークを処理します
+- プロトコルドライバー WDK ネットワーク、プールハンドル
+- NDIS プロトコルドライバー WDK、プールハンドル
+- ミニポートドライバー WDK ネットワーク、プールハンドル
+- NDIS ミニポートドライバー WDK、プールハンドル
 - 中間ドライバー WDK ネットワーク、po
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a2b132d4f371e0461511950017cd60e16a32fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3afff6a3b6b5f7616f47ca54e080ae917ad8d1ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354508"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837744"
 ---
 # <a name="obtaining-pool-handles"></a>プール ハンドルの取得
 
@@ -24,28 +24,28 @@ ms.locfileid: "67354508"
 
 
 
-次の NDIS プール割り当て関数には、リソースの割り当てを識別するハンドルが必要です。
+次の NDIS プール割り当て関数では、リソースを割り当てるハンドルが必要です。
 
--   [**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferpool)
+-   [**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferpool)
 
--   [**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)
+-   [**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)
 
-NDIS 6.0 のドライバーは、次のようなハンドルを取得します。
+NDIS 6.0 ドライバーは、次のようにハンドルを取得します。
 
-<a href="" id="protocol-drivers"></a>プロトコル ドライバー  
-プロトコルのドライバーの呼び出し、 [ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)ハンドルを取得する関数。
+<a href="" id="protocol-drivers"></a>プロトコルドライバー  
+プロトコルドライバーは、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)関数を呼び出してハンドルを取得します。
 
-<a href="" id="miniport-drivers"></a>ミニポート ドライバー  
-NDIS 呼び出し、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)ミニポート ドライバーにハンドルを渡す関数。
+<a href="" id="miniport-drivers"></a>ミニポートドライバー  
+NDIS は、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出して、ハンドルをミニポートドライバーに渡します。
 
 <a href="" id="intermediate-drivers"></a>中間ドライバー  
-中級レベルのドライバーの呼び出し、 [ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)プールで使用される送信操作と NDIS のハンドルを取得する関数を呼び出す*MiniportInitializeEx*にプールで使用される受信操作のため、中間のドライバーにハンドルを渡します。
+中間ドライバーは、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)関数を呼び出して、送信操作で使用されるプールと、受信操作で使用されるプールの中間ドライバーにハンドルを渡す*MiniportInitializeEx*のハンドルを取得します。
 
-<a href="" id="filter-drivers"></a>フィルター ドライバー  
-NDIS 呼び出し、 [ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)フィルター ドライバーにハンドルを渡す関数。
+<a href="" id="filter-drivers"></a>ドライバーのフィルター  
+NDIS は、フィルタードライバーにハンドルを渡す[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数を呼び出します。
 
 <a href="" id="other-drivers"></a>その他のドライバー  
-ドライバーを呼び出すことができる場合、ドライバーは、上記の方法のいずれかで、ハンドルを取得することはできません、 [ **NdisAllocateGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocategenericobject)ハンドルを取得する関数。
+ドライバーが、上記のいずれかの方法でハンドルを取得できない場合、ドライバーは[**NdisAllocateGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocategenericobject)関数を呼び出してハンドルを取得できます。
 
  
 

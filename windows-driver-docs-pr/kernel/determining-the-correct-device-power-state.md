@@ -4,16 +4,16 @@ description: 正しいデバイス電源状態の判断
 ms.assetid: 4acefe93-1d7a-4c12-8701-03c2a8929591
 keywords:
 - DEVICE_CAPABILITIES 構造体
-- 適切なデバイスの電源状態が WDK 電源管理
-- デバイスの電源状態が WDK 電源管理
+- デバイスの電源状態の修正 WDK 電源管理
+- デバイスの電源状態 WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d52a4beea6eb55f1e75bdc37fa76a8f127d804c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f3891c9a4cb775be0a4071d402ec01f0719d4f4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371271"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836939"
 ---
 # <a name="determining-the-correct-device-power-state"></a>正しいデバイス電源状態の判断
 
@@ -21,19 +21,19 @@ ms.locfileid: "67371271"
 
 
 
-電源ポリシーの所有者のチェック、 [ **DeviceState** ](devicestate.md)配列、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)を決定します。各システムの電源状態のデバイスの電源状態の有効な範囲です。 配列には、各システムの電源状態の基になるデバイスをサポートできる最も高いデバイスの電源状態が一覧表示します。
+電源ポリシーの所有者は、[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造の[**devicestate**](devicestate.md)配列を調べて、各システム電源状態のデバイスの電源状態の有効範囲を判断します。 配列には、基になるデバイスがシステムの電源状態ごとにサポートできるデバイスの最大電源状態が一覧表示されます。
 
-この範囲から特定の状態を選択するときに、次の操作を考慮してください。
+この範囲から特定の状態を選択する場合は、次の点を考慮してください。
 
--   ほとんどのデバイスは、システム S0 状態になったときに、D0 状態を入力します。
+-   ほとんどのデバイスは、システムが S0 状態になったときに、D0 状態に入ります。
 
--   ほとんどのデバイスは、システムがスリープ状態に入ったときに、D3 の状態を入力します。 ただし、このような状態をサポートしている場合、ウェイク アップを有効になっているデバイスは D1 または D2 を代わりに、入力する必要あります。 詳細については、次を参照してください。[デバイスの電源機能の報告](reporting-device-power-capabilities.md)します。
+-   ほとんどのデバイスは、システムがスリープ状態になると D3 状態に入ります。 ただし、ウェイクアップが有効になっているデバイスでは、このような状態がサポートされている場合は、代わりに D1 または D2 を入力する必要があります。 詳細については、「[デバイスの電源機能の報告](reporting-device-power-capabilities.md)」を参照してください。
 
--   休止状態ファイルを保持するデバイスの特別な規則が適用されます。 システム IRP を要求した場合**PowerSystemHibernate**、休止状態ファイルを保持するデバイスの電源を切らないでする必要があります。 このようなデバイスの電源ポリシー所有者必要があります D3 デバイスの電源状態を要求し、コンテキストを保存が、デバイスのドライバーのデバイスの電源を電源する必要があります。
+-   休止状態ファイルを保持するデバイスには、特別な規則が適用されます。 システムの IRP が**Powersystemhibernate**を要求する場合、休止状態ファイルを保持するデバイスの電源をオフにすることはできません。 このようなデバイスの電源ポリシーの所有者は、デバイスの電源状態 D3 を要求してコンテキストを保存する必要がありますが、デバイスのドライバーはデバイスの電源をオフにしないでください。
 
-システム IRP を要求する場合**PowerSystemShutdown**、ドライバーは、電源を確認する必要があります\_のアクション値**Irp -&gt;Parameters.Power.ShutdownType**原因を特定するには状態の変更。 詳細については、次を参照してください。[システム電源操作](system-power-actions.md)します。
+システムの IRP が**Powersystemshutdown**を要求した場合、ドライバーは、 **Irp-&gt;Parameters.-shutdowntype**の電源\_アクションの値をチェックして、状態変更の理由を判断する必要があります。 詳細については、「[システム電源動作](system-power-actions.md)」を参照してください。
 
-デバイスの電源ポリシー所有者は、デバイスを送信する必要がありますの各システム セット power IRP セット power IRP、デバイスは既に正しいデバイスの電源状態の場合でも。 以前に、ドライバーは、デバイスの操作を中断クエリ power IRP への応答で、セット power IRP によって Irp のキューを停止して、現在の電源状態の通常の操作に戻ることが通知されます。 唯一の例外は、デバイスが、D3 状態ときに発生します。この場合、ドライバー必要がある送信しない追加[ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) D3 を要求します。
+デバイスの電源ポリシーの所有者は、デバイスが既に正しいデバイスの電源状態にある場合でも、各システムセット-電源 IRP に対してデバイスセット-電源 IRP を送信する必要があります。 ドライバーがクエリ-電源 IRP に応答してデバイスの操作を以前に中断した場合、set-power irp は、Irp Irp を停止し、現在の電源状態の通常の動作に戻るように通知します。 この例外は、デバイスが D3 状態にある場合にのみ発生します。この場合、ドライバーは、D3 の[**パワー要求\_\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された追加の IRP\_送信する必要はありません。
 
  
 

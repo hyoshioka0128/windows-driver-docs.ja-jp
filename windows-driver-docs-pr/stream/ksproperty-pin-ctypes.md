@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_PIN\_CTYPES
-description: クライアントの使用、KSPROPERTY\_PIN\_CTYPES プロパティ数の pin KS フィルターの種類をサポートしています。
+title: KSK プロパティ\_ピン\_CTYPES
+description: クライアントは、KSK プロパティ\_ピン\_CTYPES プロパティを使用して、KS フィルターがサポートする pin の種類の数を決定します。
 ms.assetid: 2aa93591-9fe6-453f-bc50-871972cb3e50
 keywords:
-- KSPROPERTY_PIN_CTYPES ストリーミング メディア デバイス
+- KSPROPERTY_PIN_CTYPES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0965ac3cbfa779f4a3ddf9238ad7f1d32fc6f0fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e56fc1ab3b2815adcf8a0820ce4c1185df5904af
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346388"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827424"
 ---
-# <a name="kspropertypinctypes"></a>KSPROPERTY\_PIN\_CTYPES
+# <a name="ksproperty_pin_ctypes"></a>KSK プロパティ\_ピン\_CTYPES
 
 
-クライアントの使用、KSPROPERTY\_PIN\_CTYPES プロパティ数の pin KS フィルターの種類をサポートしています。
+クライアントは、KSK プロパティ\_ピン\_CTYPES プロパティを使用して、KS フィルターがサポートする pin の種類の数を決定します。
 
 ## <span id="ddk_ksproperty_pin_ctypes_ks"></span><span id="DDK_KSPROPERTY_PIN_CTYPES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "63346388"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "63346388"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ ms.locfileid: "63346388"
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_PIN\_CTYPES がピン留めするファクトリ、KS フィルターのサポートの番号を指定する ULONG 型の値を返します。
+KSK プロパティ\_ピン\_CTYPES は ULONG 型の値を返し、KS フィルターでサポートされているピンファクトリの数を指定します。
 
-Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
+Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリームクラスドライバーは、ストリーム要求ブロックを使用してこのプロパティを処理し、詳細情報を照会します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ Stream ミニドライバーは、このプロパティを直接処理する必�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ Stream ミニドライバーは、このプロパティを直接処理する必�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

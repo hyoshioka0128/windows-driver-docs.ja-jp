@@ -3,41 +3,41 @@ title: Bluetooth IOCTL
 description: Bluetooth IOCTL
 ms.assetid: 384ea4bb-863c-4da7-bf81-85d2de734ef7
 keywords:
-- Bluetooth の WDK、Ioctl
+- Bluetooth WDK、Ioctl
 - Ioctl WDK Bluetooth
 - ローカル Bluetooth WDK
-- リモートの Bluetooth WDK
+- リモート Bluetooth WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff7fdfc192e2b5c9897dbd562317484b996e48d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8668dc295be7ea1470fc9da78d5e3176dce9986d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364654"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832138"
 ---
 # <a name="bluetooth-ioctls"></a>Bluetooth IOCTL
 
 
-Bluetooth ドライバー スタックに関する情報を収集するいくつかの Ioctl でプロファイルのドライバーを提供します。
+Bluetooth ドライバースタックには、次の情報を収集するために、いくつかの Ioctl を持つプロファイルドライバーが用意されています。
 
--   ローカル Bluetooth 無線とシステム。
+-   ローカル Bluetooth ラジオとシステム。
 
--   リモートの Bluetooth デバイス。
+-   リモート Bluetooth デバイス。
 
--   プラグ アンド プレイ (PnP) プロファイルのドライバーの読み込みにマネージャーの原因となったデバイス。
+-   プラグアンドプレイ (PnP) マネージャーによってプロファイルドライバーが読み込まれる原因となったデバイス。
 
-プロファイルのドライバーが使用するには、ローカルの Bluetooth 無線とシステムに関する情報を収集するには、 [ **IOCTL\_両方\_取得\_ローカル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_get_local_info)します。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーにはへのポインターが含まれています、 [**両方\_ローカル\_ラジオ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ns-bthioctl-_bth_local_radio_info)、Bluetooth 無線のローカルとローカルの無線の検出し、に接続されているかどうかを示すフラグを含む、システムに関する情報を含む構造体。 返される両方\_ローカル\_ラジオ\_情報構造体が含まれています、[両方\_デバイス\_情報](https://go.microsoft.com/fwlink/p/?linkid=50713)構造体は、システムに固有の情報、および、が含まれています[**両方\_ラジオ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ns-bthioctl-_bth_radio_info)構造体は、ローカル オプションに固有の情報が含まれています。
+ローカル Bluetooth ラジオとシステムに関する情報を収集するために、プロファイルドライバーは[**IOCTL\_BTH\_使用して\_ローカル\_情報を取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_local_info)します。 IOCTL が返された後、その AssociatedIrp のメンバーには、ローカルの Bluetooth ラジオとシステムに関する情報を含む[**Bth\_ローカル\_RADIO\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_local_radio_info)構造体へのポインターが含まれてい**ます。** これには、ローカルラジオを検出して接続できるかどうかを示します。 返された BTH\_ローカル\_RADIO\_INFO 構造体には、システム固有の情報と[**bth\_RADIO\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_radio_info)構造体を含む[BTH\_デバイス\_info](https://go.microsoft.com/fwlink/p/?linkid=50713)構造体が含まれています。ローカルラジオ固有の情報が含まれています。
 
-プロファイルのドライバーが使用するには、特定のリモートの Bluetooth デバイスに関する情報を収集するには、 [ **IOCTL\_両方\_取得\_ラジオ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_get_radio_info)します。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーの両方へのポインターを格納する\_ラジオ\_特定のリモート オプションに関する情報を提供する情報の構造体かどうかなど、リモート ラジオの検出し、に接続されていることができます。
+特定のリモート Bluetooth デバイスに関する情報を収集するために、プロファイルドライバーは[**IOCTL\_BTH\_GET\_ラジオ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_radio_info)を使用します。 IOCTL が返された後、その AssociatedIrp のメンバーには、リモートラジオを検出できるかどうかなど、特定のリモートラジオに関する情報を提供する BTH\_RADIO\_INFO 構造体へのポインターが含まれてい**ます。** に接続しました。
 
-プロファイルのドライバーが使用するには検出されたすべてのリモート ラジオに関する情報を収集するには、 [ **IOCTL\_両方\_取得\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_get_device_info)します。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーにはへのポインターが含まれています、 [**両方\_デバイス\_情報\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ns-bthioctl-_bth_device_info_list)両方の配列を含む構造体\_デバイス\_情報構造体。 両方の\_デバイス\_情報\_リスト構造がリモート無線を検出した各配列エントリが 1 つ含まれています。 ユーザー モード[BluetoothGetDeviceInfo](https://go.microsoft.com/fwlink/p/?linkid=74493) API はこの機能を使用して、すべてのリモート ラジオに関する情報を返します。
+検出されたすべてのリモートラジオに関する情報を収集するために、プロファイルドライバーは[**IOCTL\_BTH\_使用して\_デバイス\_情報を取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_device_info)します。 IOCTL が返された後、その**AssociatedIrp**のメンバーには、bth\_デバイス\_info 構造体の配列を含む[**BTH\_デバイス\_INFO\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_device_info_list)構造体へのポインターが含まれています。 BTH\_DEVICE\_INFO\_LIST 構造体には、検出された各リモートラジオの配列エントリが1つ含まれています。 ユーザーモードの[BluetoothGetDeviceInfo](https://go.microsoft.com/fwlink/p/?linkid=74493) API は、この機能を使用して、すべてのリモートラジオに関する情報を返します。
 
-プロファイルのドライバーが使用するには、PnP マネージャー ファイルを読み込むことが原因となったリモート デバイスに関する情報を収集するには、 [ **IOCTL\_内部\_BTHENUM\_取得\_DEVINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_devinfo). IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーの両方へのポインターを格納する\_デバイス\_の Bluetooth デバイスを含め、リモート デバイスに関する情報を含む情報構造体アドレス、デバイスの状態、およびそのクラスのデバイス (CoD) 設定します。
+PnP マネージャーによって読み込まれる原因となったリモートデバイスに関する情報を収集するために、プロファイルドライバーは[**IOCTL\_内部\_BTHENUM\_\_DEVINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_devinfo)を使用します。 IOCTL が返された後、その AssociatedIrp のメンバーには、デバイスの Bluetooth デバイスのアドレス、デバイスの状態、その他のデバイスに関する情報を含む BTH\_デバイス\_情報構造体へのポインターが含まれてい**ます。** デバイスのクラス (CoD) 設定。
 
-プロファイルのドライバーを使用して[ **IOCTL\_内部\_BTHENUM\_取得\_ENUMINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_enuminfo)基になるデバイスとサービスに関する情報を取得するにはPnP マネージャー プロファイルのドライバーの読み込みを原因となったとします。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーにはへのポインターが含まれています、 [**両方\_列挙子\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_bth_enumerator_info)構造体ポート番号、デバイスのフラグ、仕入先 ID、および製品 ID など、デバイスに関するベンダー提供の情報を格納します。
+プロファイルドライバーは、 [**IOCTL\_内部\_BTHENUM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_enuminfo)を使用して\_ENUMINFO を取得し、基になるデバイスとサービスに関する情報を取得します。これにより、PnP マネージャーによるプロファイルドライバーの読み込みが発生します。 IOCTL が返された後、その AssociatedIrp のメンバーには、デバイスに関するベンダーから提供された情報を含む[**Bth\_列挙子\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_enumerator_info)構造体へのポインターが含まれてい**ます。** これには、ポート番号、デバイスフラグ、ベンダー ID と製品 ID。
 
-Bluetooth の Ioctl および BRBs の使用に関する詳細については、次を参照してください。[のビルドと送信を BRB](building-and-sending-a-brb.md)します。
+Bluetooth Ioctl および BRBs の使用方法の詳細については、「 [brbs の構築と送信](building-and-sending-a-brb.md)」を参照してください。
 
  
 

@@ -4,22 +4,22 @@ description: AC-3 データ範囲の指定
 ms.assetid: 87d59554-43fa-4d61-9829-c38691d0a525
 keywords:
 - S/PDIF パススルー WDK オーディオ
-- AC-3-フェールオーバー-S/PDIF 形式の WDK オーディオ
-- PCM 以外のオーディオ形式 WDK
-- 非 PCM オーディオの形式、WDK S/PDIF
+- AC-3-over S/PDIF 形式 WDK オーディオ
+- 非 PCM 形式のオーディオ (WDK)
+- PCM 以外のオーディオ形式 WDK、S/PDIF
 - WMA Pro WDK オーディオ
-- Ac-3 WDK オーディオ
-- Sony/Philips デジタル インターフェイス
-- データ範囲の WDK オーディオ、ac-3
-- 非 PCM オーディオの形式、WDK ac-3
+- AC 3 WDK オーディオ
+- Sony/お持ちのデジタルインターフェイス
+- データ範囲 WDK オーディオ、AC-3
+- PCM 以外のオーディオ形式 WDK、AC-3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c011f5ac71cd472652f5dc6dd8e2295e22c4da0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e7fd788269cc3c571a72e1190875aa7e836c177
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354292"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830116"
 ---
 # <a name="specifying-ac-3-data-ranges"></a>AC-3 データ範囲の指定
 
@@ -27,22 +27,22 @@ ms.locfileid: "67354292"
 ## <span id="specifying_ac_3_data_ranges"></span><span id="SPECIFYING_AC_3_DATA_RANGES"></span>
 
 
-ヘッダー ファイル Mmreg.h 0x0092 AC-3-フェールオーバー-S/PDIF を wave 形式のタグの値を定義します。
+ヘッダーファイル Mmreg は、値0x0092 を定義します。この値は、AC-3-over S/PDIF の wave 形式タグになります。
 
 ```cpp
     #define WAVE_FORMAT_DOLBY_AC3_SPDIF  0x0092
 ```
 
-0x0240 および 0x0241、Wave 形式のタグが 0x0092 と同義にあり、多くの DVD アプリケーションとして同じ 3 つのタグを処理します。 ただし、冗長性をなくすため、ドライバーとアプリケーションする必要があります 0x0092 タグのみをサポート (および 0x0240 および 0x0241 タグをサポートしていません)。
+波形式タグ0x0240 および0x0240 は0x0092 と同義であり、多くの DVD アプリケーションは同じように3つのタグを扱います。 ただし、冗長性を排除するために、ドライバーとアプリケーションはタグ0x0092 のみをサポートする必要があります (タグ0x0240 および0x0240 をサポートしていません)。
 
-定義を使用して wave 形式のタグの観点から対応する形式とサブタイプの GUID を指定できます\_WAVEFORMATEX\_ヘッダーから GUID マクロ ファイル Ksmedia.h は次のようにします。
+対応する形式とサブタイプの GUID は、次\_のように、ヘッダーファイルの WAVEFORMATEX\_GUID マクロを使用して、wave 形式のタグの観点から指定できます。
 
 ```cpp
   #define KSDATAFORMAT_SUBTYPE_AC3_SPDIF    \
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_DOLBY_AC3_SPDIF)
 ```
 
-次のコード例は、WaveCyclic または WavePci ミニポート ドライバーを指定する方法を示しています、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) AC-3-フェールオーバー-S/PDIF 形式をサポートする、暗証番号 (pin) のエントリをテーブルします。
+次のコード例は、WaveCyclic または WavePci ミニポートドライバーが、AC-3 over S/PDIF 形式をサポートしている pin に対して、 [**ksk の\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)テーブルエントリを指定する方法を示しています。
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =
@@ -89,11 +89,11 @@ static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =
 };
 ```
 
-上記の表に、2 番目のデータ範囲エントリは、Windows 2000 sp2、および Microsoft Windows 98 SE + 修正プログラムで非 PCM AC-3-フェールオーバー-S/PDIF 形式を処理するために、DirectSound を有効にする必要があります。
+前の表の2番目のデータ範囲エントリは、DirectSound が Windows 2000 SP2 および Microsoft Windows 98 SE + 修正プログラムで、PCM 以外の AC 3 over S/PDIF 形式を処理できるようにするために必要です。
 
-KSDATAFORMAT ミニポート ドライバーを指定する各データ範囲の\_指定子\_WAVEFORMATEX、ポートのドライバーを自動的に追加 KSDATAFORMAT で指定されている 2 番目のデータ範囲\_指定子\_DSOUND がそれ以外の場合、最初と同じです。 (これを確認するにを使用して、 [KsStudio ユーティリティ](ksstudio-utility.md)データ範囲の一覧を表示します)。ポート ドライバーを Windows 2000 および Windows 98 では、KSDATAFORMAT を作成します\_指定子\_DSOUND バージョン KSDATAFORMAT のみのデータ範囲の\_サブタイプ\_PCM ために、フォーマットする前に、DirectSound のバージョンDirectSound 8 では、PCM のみをサポートします。 この制限は、Windows XP では削除し、以降と Windows me で ただし、Windows 2000 SP2 または Windows 98 SE、ホット フィックス プレゼンテーションでは削除されませんし、これらの Windows バージョンを DirectSound で非 PCM をサポートするドライバーが明示的に一覧表示は、各 PCM 以外のデータの形式 - KSDATAFORMATで1つの2つのデータ範囲\_指定子\_、WAVEFORMATEX、もう KSDATAFORMAT\_指定子\_DSOUND します。
+ミニポートドライバーで KSDATAFORMAT\_指定子\_WAVEFORMATEX が指定されているデータ範囲ごとに、DSOUND\_\_で指定された2番目のデータ範囲が自動的に追加されます。それ以外の場合は、最初のと同じです。 (これを確認するには、 [Ksstudio ユーティリティ](ksstudio-utility.md)を使用してデータ範囲の一覧を表示します)。Windows 2000 および Windows 98 では、DirectSound 8 より前の DirectSound バージョンでは PCM のみがサポートされているため、ポートドライバーは KSDATAFORMAT\_のサブタイプ\_PCM 形式に対してのみ、KSDATAFORMAT\_指定子\_DSOUND バージョンのデータ範囲を作成します。 この制限は、Windows XP 以降および Windows Me では削除されています。 ただし、windows 2000 SP2 または Windows 98 SE 用のホットフィックスパッケージでは削除されません。また、これらの Windows バージョンで DirectSound の PCM 以外のデータ範囲をサポートするには、ドライバーが PCM 以外のデータ形式ごとに2つのデータ範囲を明示的にリストする必要があり\_指定子\_WAVEFORMATEX、および KSDATAFORMAT\_指定子を持つ別の指定子\_DSOUND です。
 
-説明したよう[非 PCM ストリームのパススルー送信を S/PDIF](s-pdif-pass-through-transmission-of-non-pcm-streams.md)、2 つ AC-3-フェールオーバー-S/PDIF データの範囲両方は、次の PCM パラメーターを使用: 2 つのチャネルとチャネルあたり 16 ビット。
+「[非 PCM ストリームの s/PDIF パススルー伝送](s-pdif-pass-through-transmission-of-non-pcm-streams.md)」で説明されているように、2つの AC-3 over S/pdif データ範囲では、2つのチャネルと、チャネルあたり16ビットの両方の pcm パラメーターが使用されます。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: bugdump
-description: Bugdump 拡張機能では、書式設定し、バグ チェック コールバック バッファーに含まれる情報を表示します。
+title: バグダンプ
+description: バグダンプ拡張機能は、バグチェックコールバックバッファーに格納されている情報を書式設定して表示します。
 ms.assetid: cbea92de-e45b-416c-87f1-6faba95788d0
 keywords:
-- Windows デバッグ bugdump
+- Windows デバッグのバグダンプ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f5a2916529f95aaa945dbce03bc9e10555067f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7ca89bba30361213d77ecc6a788a985eb6dc4b62
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363171"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837606"
 ---
 # <a name="bugdump"></a>!bugdump
 
 
-**! Bugdump**拡張機能のフォーマットし、バグ チェック コールバック バッファーに含まれている情報が表示されます。
+**! Bug dump**拡張機能は、バグチェックコールバックバッファーに格納されている情報を書式設定して表示します。
 
 ```dbgsyntax
     !bugdump [Component] 
 ```
 
-## <a name="span-idddkbugdumpdbgspanspan-idddkbugdumpdbgspanparameters"></a><span id="ddk__bugdump_dbg"></span><span id="DDK__BUGDUMP_DBG"></span>パラメーター
+## <a name="span-idddk__bugdump_dbgspanspan-idddk__bugdump_dbgspanparameters"></a><span id="ddk__bugdump_dbg"></span><span id="DDK__BUGDUMP_DBG"></span>パラメータ
 
 
-<span id="_______Component______"></span><span id="_______component______"></span><span id="_______COMPONENT______"></span> *コンポーネント*   
-コールバック データを調査するが、コンポーネントを指定します。 省略した場合、すべてのバグ チェック コールバック データが表示されます。
+<span id="_______Component______"></span><span id="_______component______"></span><span id="_______COMPONENT______"></span>*コンポーネント*の   
+コールバックデータを検査するコンポーネントを指定します。 省略した場合、すべてのバグチェックコールバックデータが表示されます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -44,31 +44,31 @@ ms.locfileid: "67363171"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[バグ チェック コールバックのデータの読み取り](reading-bug-check-callback-data.md)します。
+詳細については、「[バグチェックのコールバックデータの読み取り](reading-bug-check-callback-data.md)」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-この拡張機能は、バグ チェックが行われた後、またはカーネル モードのクラッシュ ダンプ ファイルをデバッグするときにのみ使用できます。
+この拡張機能は、バグチェックが発生した後、またはカーネルモードのクラッシュダンプファイルをデバッグしている場合にのみ使用できます。
 
-*コンポーネント*パラメーターで使用される最後のパラメーターに対応[ **KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)します。
+*Component*パラメーターは、 [**KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback)で使用される最後のパラメーターに対応します。
 
-最小メモリ ダンプには、コールバックのデータを保持するバッファーを使用できません。 これらのバッファーは、カーネル メモリ ダンプし、完全メモリ ダンプに存在します。 ただし、Windows XP SP1、Windows Server 2003、および以降のバージョンの Windows、ダンプ ファイルが作成されるドライバーの前に**BugCheckCallback**ルーチンが呼び出され、そのため、これらのバッファーにはこれらによって書き込まれたデータは含まないルーチン。
+コールバックデータを保持するバッファーは、小さいメモリダンプでは使用できません。 これらのバッファーは、カーネルメモリダンプとフルメモリダンプに存在します。 ただし、Windows XP SP1、Windows Server 2003、およびそれ以降のバージョンの Windows では、ドライバーの**バグチェックコールバック**ルーチンが呼び出される前にダンプファイルが作成されるため、これらのバッファーにはこれらのルーチンによって書き込まれたデータが含まれません。
 
-クラッシュしたシステムのライブ デバッグを実行する場合は、すべてのコールバック データが表示されます。
+クラッシュしたシステムのライブデバッグを実行している場合は、すべてのコールバックデータが表示されます。
 
  
 

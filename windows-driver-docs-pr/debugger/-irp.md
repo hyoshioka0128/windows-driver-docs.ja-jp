@@ -15,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aaecd8295d8ad58a0fcdf6746535d2ce2a684a1
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 9ce7587c842bf269e91cb941d2cab478f7317f55
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70025230"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837601"
 ---
 # <a name="irp"></a>!irp
 
@@ -61,7 +61,7 @@ IRP の16進数のアドレスを指定します。
 
 この拡張機能コマンドのアプリケーションについては、「プラグアンドプレイの[割り込みストーム](debugging-an-interrupt-storm.md)の[デバッグ](plug-and-play-debugging.md)とデバッグ」を参照してください。 Irp の詳細については、Windows Driver Kit (WDK) のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。 主要な関数コードとマイナー関数コードの詳細については、Windows Driver Kit (WDK) のドキュメントを参照してください。
 
-このトピックでは、irp 構造体、 [**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)について説明します。
+このトピックでは、irp 構造体、 [**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)について説明します。
 
 返された引数を含む IRP 構造体のデコードの詳細については、次のリソースを参照してください。
 
@@ -69,7 +69,7 @@ IRP の16進数のアドレスを指定します。
 - Windows Driver Foundation Guy Smith および小額 Orwick を使用したドライバーの開発
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 また、IRP の完了後にスタックの場所が処理されると、各スタックの場所の完了ルーチンが呼び出される条件も示されます。 次の3つの可能性があります。
@@ -102,7 +102,7 @@ Irp is active with 2 stacks 1 is current (= 0xac598e38)
             Args: 00000000 00000000 0x00110008 00000000
 ```
 
-Windows 10 以降では、irp のメジャーとマイナーのコードテキストが表示されます\_。\_たとえば、\_"irp MJ FILE\_SYSTEM CONTROL" というコード値も16進数で表示されます (この例では "(d)")。
+Windows 10 以降では、IRP のメジャーおよびマイナーコードテキストが表示されます。たとえば、"IRP\_MJ\_FILE\_SYSTEM\_CONTROL" というコード値も16進数で示されます (この例では "(d)")。
 
 出力に表示される3番目の引数は、IOCTL コードです。 IOCTL に関する情報を表示するには、 [ **! ioctldecode**](-ioctldecode.md)コマンドを使用します。
 
@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-ドライバー名の横にある完了ルーチンはスタックの場所に設定され、次の行のドライバーによって設定されていることに注意してください。 前の例では、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**が **\\ファイルシステム\\ntfs**によって設定されていました。 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**の上の**完了コンテキスト**エントリ ( **847 eeed0-829e2ba8**) は、完了ルーチンのアドレスと、ntfs に渡されるコンテキストを示します **。NtfsMasterIrpSyncCompletionRoutine**。 これにより、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**のアドレスが**847 eeed0**であることがわかります。このルーチンが呼び出されたときにこのルーチンに渡されるコンテキストは**829e2ba8**です。
+ドライバー名の横にある完了ルーチンはスタックの場所に設定され、次の行のドライバーによって設定されていることに注意してください。 前の例では、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**が**Ntfs\\\\ファイルシステム**によって設定されていました。 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**の上の**完了コンテキスト**エントリ ( **847 eeed0-829e2ba8**) は、完了ルーチンのアドレスと、ntfs に渡されるコンテキストを示します **。NtfsMasterIrpSyncCompletionRoutine**。 これにより、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**のアドレスが**847 eeed0**であることがわかります。このルーチンが呼び出されたときにこのルーチンに渡されるコンテキストは**829e2ba8**です。
 
 **IRP 主要関数コード**
 
@@ -513,7 +513,7 @@ SCSI のマイナー関数のコードは次のとおりです。
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [ **! irpfind**](-irpfind.md)
 

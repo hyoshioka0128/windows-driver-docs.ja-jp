@@ -1,20 +1,20 @@
 ---
 title: 互換性 ID
-description: 互換性のある ID は、Windows を使用して、INF ファイルをデバイスに一致するベンダ定義の識別文字列です。
+description: 互換性のある ID とは、Windows がデバイスを INF ファイルに一致させるために使用するベンダー定義の識別文字列です。
 ms.assetid: 3d20b43a-9e2b-4a8d-9a1a-eb9217233405
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca1396eab5f1f442f791a7bf8323771823c96079
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aacb5ed0833711d7c054b8f39f32a5d46ecf25a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361158"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837533"
 ---
 # <a name="compatible-id"></a>互換性 ID
 
-互換性のある ID は、Windows を使用して、INF ファイルをデバイスに一致するベンダ定義の識別文字列です。 デバイスを関連付けることができますと互換性のある Id の一覧。 互換性 Id は、適合性が高い順に表示する必要があります。 Windows では、デバイスのハードウェア Id のいずれかに一致する INF ファイルで特定できない場合は、INF ファイルを検索する互換性 Id が使用されます。 互換性のある Id と同じ形式である[ハードウェア Id](hardware-ids.md)します。 ただし、互換性 Id は通常、ハードウェア Id よりも汎用的な。
+互換性のある ID とは、Windows がデバイスを INF ファイルに一致させるために使用するベンダー定義の識別文字列です。 デバイスは、互換性のある Id の一覧に関連付けることができます。 互換性 Id は、適合性を下げるためにリストされている必要があります。 デバイスのハードウェア Id のいずれかに一致する INF ファイルが見つからない場合は、互換性のある Id を使用して INF ファイルを見つけます。 互換性 Id は、[ハードウェア id](hardware-ids.md)と同じ形式です。 ただし、互換性のある Id は通常、ハードウェア Id よりも一般的です。
 
-仕入先には、互換性のあるドライバー ノードの ID を指定する INF ファイルが付属しています場合、は、仕入先が、INF ファイルで互換性のある ID と一致するすべてのハードウェアがサポートしていることを確認する必要がありますください。
+ベンダーからドライバーノードの互換性のある ID を指定する INF ファイルが提供されている場合、ベンダーは、その INF ファイルが互換性 ID と一致するすべてのハードウェアをサポートしているかどうかを確認する必要があります。
 
-デバイスの互換性 Id の一覧を取得する呼び出し[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)で、 *DeviceProperty*パラメーターに設定**DevicePropertyCompatibleID**します。 このルーチンを取得する互換性 Id の一覧は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値。 互換性のある各 ID と最終的な NULL 終端文字の後に、NULL 終端文字を含む、互換性のある ID 一覧内の文字の最大数は、REGSTR_VAL_MAX_HCID_LEN です。 互換性 Id の一覧で、Id の考えられる最大数は、64 です。
+デバイスの互換性のある Id の一覧を取得するには、 *deviceproperty*パラメーターを**Devicepropertyの id**に設定して[**iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出します。 このルーチンが取得する互換性 Id の一覧は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値です。 互換性 id リストに含まれる最大文字数は、互換性のある各 ID と最後の NULL 終端文字の後の NULL 終端文字を含む、REGSTR_VAL_MAX_HCID_LEN です。 互換性 Id のリストに含まれる Id の最大数は64です。

@@ -3,39 +3,39 @@ title: ディスプレイ ミニポート ドライバーでの回転のサポ�
 description: ディスプレイ ミニポート ドライバーでの回転のサポート
 ms.assetid: 0c9bdd42-aeaf-4cc8-a979-9ed8eeda3811
 keywords:
-- ミニポート ドライバー WDK 表示の回転
-- WDK の表示の回転
-- 複製モード WDK ビデオ存在するネットワーク
-- 画面の回転 WDK の表示
+- ミニポートドライバー WDK ディスプレイ、ローテーション
+- ローテーション WDK ディスプレイ
+- 複製モード WDK ビデオの現在のネットワーク
+- surface ローテーション WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dddf397edcea681a63b7d21fe1c1bc6dc8c4166e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1952a1eccfc39e79dcce8a1dd0b0f7dbcf1e6d67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380522"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825604"
 ---
 # <a name="supporting-rotation-in-a-display-miniport-driver"></a>ディスプレイ ミニポート ドライバーでの回転のサポート
 
 
-ディスプレイ ミニポート ドライバーの[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)関数呼び出し、 [ **pfnUpdatePathSupportInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_updatepathsupportinfo)関数ビデオの表示 (VidPN) のネットワーク トポロジ内の各パスのレポートの回転のサポート。 レポートのローテーションのサポートの詳細については、次を参照してください。 [Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)します。
+ディスプレイミニポートドライバーの[**DxgkDdiEnumVidPnCofuncModality**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)関数は、 [**Pfnupdatepathsupportinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_updatepathsupportinfo)関数を呼び出して、ビデオの存在するネットワーク (VidPN) トポロジの各パスのローテーションサポートを報告します。 ローテーションサポートのレポートの詳細については、「 [Cofunctional な VidPN ソースモードとターゲットモードの列挙](enumerating-cofunctional-vidpn-source-and-target-modes.md)」を参照してください。
 
-Microsoft DirectX グラフィックスのカーネル サブシステムは、共有のプライマリ画面を作成するのに画面ディメンションの非回転を使用します。 DirectX グラフィックスのカーネル サブシステムの指定、画面の回転をディスプレイ ミニポート ドライバーを通知する[ **D3DKMDT\_VIDPN\_存在\_パス\_回転** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation)-型指定された値で、**回転**のメンバー、 [ **D3DKMDT\_VIDPN\_存在\_パス\_変換**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_transformation)構造体で指定されている、 **ContentTransformation**のメンバー、 [ **D3DKMDT\_VIDPN\_存在する\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)ディスプレイ ミニポート ドライバーの呼び出しで構造[ **DxgkDdiCommitVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)と[ **DxgkDdiUpdateActiveVidPnPresentPath** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)関数。
+Microsoft DirectX graphics カーネルサブシステムでは、回転されていない表面の寸法を使用して、共有プライマリサーフェスを作成します。 ディスプレイミニポートドライバーに画面を回転させるように通知するために、DirectX グラフィックスのカーネルサブシステムでは、D3DKMDT の**ローテーション**メンバーに[ **\_パス\_回転型の値を D3DKMDT\_VIDPN\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation)指定しています。 [ **\_VIDPN\_存在\_パス\_変換**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_transformation)構造を指定します。これは、 [**D3DKMDT\_VIDPN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)の**contenttransformation**メンバーに指定されています。ミニポートドライバーの[**DxgkDdiCommitVidPn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)関数と[**DxgkDdiUpdateActiveVidPnPresentPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)関数を呼び出します。
 
-**注**  すべて回転の角度は、反時計回りの方向は、GDI が回転をどのように定義する方法と整合性がで定義されます。
+**   すべて**の回転角度は反時計回りの方向に定義されます。これは、GDI が回転を定義する方法と同じです。
 
  
 
-Surface データのみの場合、画面の回転をディスプレイ ミニポート ドライバーに通知する DirectX サブシステム、ドライバーのローテーションが必要、**回転**でビット フィールドのフラグが設定された、**フラグ**のメンバー[**DXGKARG\_存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_present)構造体、 *pPresent*ドライバーの呼び出しでパラメーターが指す[ **DxgkDdiPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_present)関数。 ドライバーでは、プレゼンテーション データから、画面の向きを回転するかを決定します。 場合でも、**回転**がセットされていなかった、ドライバーは、データを回転する必要があります。
+DirectX サブシステムがディスプレイミニポートドライバーに画面を回転させるように通知する場合、ドライバーは、 [**Dxgkarg\_現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_present)の構造体の**Flags**メンバーで [ビットフィールドの**回転**] フラグが設定されている場合にのみ、画面のデータを回転させる必要があります。*Ppresent*パラメーターが、ドライバーの[**DxgkDdiPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_present)関数の呼び出しでを指すことを示します。 ドライバーが、画面の現在の向きがプレゼンテーションデータから回転していると判断し、 **[回転]** が設定されていない場合でも、ドライバーはデータをローテーションしません。
 
-### <a name="span-idclone-modebehaviorspanspan-idclone-modebehaviorspanspan-idclone-modebehaviorspanclone-mode-behavior"></a><span id="Clone-mode_behavior"></span><span id="clone-mode_behavior"></span><span id="CLONE-MODE_BEHAVIOR"></span>複製モードの動作
+### <a name="span-idclone-mode_behaviorspanspan-idclone-mode_behaviorspanspan-idclone-mode_behaviorspanclone-mode-behavior"></a><span id="Clone-mode_behavior"></span><span id="clone-mode_behavior"></span><span id="CLONE-MODE_BEHAVIOR"></span>複製モードの動作
 
-*複製モード*ビデオ存在するネットワークに複数のパスを複数のビデオの存在ターゲットに接続するビデオの存在するソース モードです。 (ビデオの存在するネットワークの詳細については、次を参照してください[複数のモニターとビデオの存在するネットワーク](multiple-monitors-and-video-present-networks.md)。)。
+*複製モード*は、ビデオの存在するソースがビデオの現在のネットワーク内の複数のパスを介して複数のビデオの存在に接続するためのモードです。 (ビデオの現在のネットワークの詳細については、「[マルチモニターとビデオの現在のネットワーク](multiple-monitors-and-video-present-networks.md)」を参照してください)。
 
-ディスプレイのミニポート ドライバーは各ターゲットは、さまざまな回転を必要がありますので、複製モードで動作する場合、回転を異なる方法で処理します。 オペレーティング システムでは、さまざまなバージョンの Microsoft DirectX のランタイム、およびユーザー モードのクライアントは、プライマリのビデオの存在ターゲットの向きのみを検出します。 したがって、存在するソース ビデオ内コンテンツは常にプライマリのビデオの存在ターゲットの向きを一致します。
+各ターゲットで異なるローテーションが必要になる可能性があるため、表示ミニポートドライバーでは、複製モードで動作する場合、回転が異なる方法で処理されます。 オペレーティングシステム、さまざまなバージョンの Microsoft DirectX ランタイム、およびユーザーモードクライアントは、ビデオの現在のターゲットの向きのみを検出します。 したがって、ビデオの表示ソースのコンテンツは、常にプライマリビデオの現在のターゲットの向きと一致します。
 
-次の表では、すべての関連する状況の複製モードでのディスプレイのミニポート ドライバーの動作方法を示します。 設定、**回転**フラグの設定は、**回転**ビット フィールドで、**フラグ**のメンバー、 [ **DXGKARG\_存在する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_present)構造体。
+次の表は、関連するすべての状況について、表示ミニポートドライバーが複製モードでどのように動作するかを示しています。 **回転**フラグの設定は、 [**Dxgkarg\_現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_present)の構造体の**Flags**メンバーの **[回転]** ビットフィールドの設定です。
 
 <table>
 <colgroup>
@@ -46,83 +46,83 @@ Surface データのみの場合、画面の回転をディスプレイ ミニ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プライマリ ターゲット</th>
-<th align="left">セカンダリ ターゲット</th>
-<th align="left">フラグを回転します。</th>
+<th align="left">プライマリターゲット</th>
+<th align="left">セカンダリターゲット</th>
+<th align="left">回転フラグ</th>
 <th align="left">ドライバーの動作</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>回転していません</p></td>
-<td align="left"><p>回転していません</p></td>
-<td align="left"><p>設定されていません</p></td>
-<td align="left"><p>ドライバーには、ローテーションは実行されません。</p></td>
+<td align="left"><p>回転しない</p></td>
+<td align="left"><p>回転しない</p></td>
+<td align="left"><p>未設定</p></td>
+<td align="left"><p>ドライバーは回転を実行しません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>回転していません</p></td>
-<td align="left"><p>回転</p></td>
-<td align="left"><p>設定されていません</p></td>
-<td align="left"><p>ドライバーが場合でも、セカンダリのターゲットを回転、<strong>回転</strong>フラグは設定されません。</p></td>
+<td align="left"><p>回転しない</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>未設定</p></td>
+<td align="left"><p><strong>回転</strong>フラグが設定されていない場合でも、ドライバーはセカンダリターゲットを回転します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>回転</p></td>
-<td align="left"><p>回転していません</p></td>
-<td align="left"><p>Set</p></td>
-<td align="left"><p>プライマリ ターゲットですがセカンダリのターゲットではなく、ドライバーが回転します。</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>回転しない</p></td>
+<td align="left"><p>設定</p></td>
+<td align="left"><p>ドライバーはプライマリターゲットをローテーションしますが、セカンダリターゲットは回転しません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>回転</p></td>
-<td align="left"><p>回転していません</p></td>
-<td align="left"><p>設定されていません</p></td>
-<td align="left"><p><strong>回転</strong>が設定された場合、ドライバーでは、プライマリのターゲットは回転しません。 セカンダリのターゲットがソースのコンテンツの方向が一致しないため、ドライバーはセカンダリのターゲットを回転する必要があります。</p>
-<p>このような状況は、クライアントは回転に対応してとは、コンテンツ ソースの既に指向正しく発生します。 そのため、オペレーティング システムは設定しません<strong>回転</strong>します。</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>回転しない</p></td>
+<td align="left"><p>未設定</p></td>
+<td align="left"><p>[<strong>回転</strong>] が設定されていないため、ドライバーはプライマリターゲットを回転しません。 セカンダリターゲットがソース内のコンテンツの方向と一致しないため、ドライバーはセカンダリターゲットを回転させる必要があります。</p>
+<p>この状況は、クライアントがローテーション対応であり、既にソースの内容を適切に配置している場合に発生します。 そのため、オペレーティングシステムは<strong>回転</strong>を設定しません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>回転</p></td>
-<td align="left"><p>回転</p></td>
-<td align="left"><p>Set</p></td>
-<td align="left"><p>ドライバーは、プライマリとセカンダリの両方のターゲットを回転します。</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>設定</p></td>
+<td align="left"><p>ドライバーは、プライマリターゲットとセカンダリターゲットの両方をローテーションします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>回転</p></td>
-<td align="left"><p>回転</p></td>
-<td align="left"><p>設定されていません</p></td>
-<td align="left"><p>回転対応のクライアントは、ソースのコンテンツを既に正しく指向が。 そのため、追加の回転を必要はありません。</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>あふれ</p></td>
+<td align="left"><p>未設定</p></td>
+<td align="left"><p>ローテーション対応のクライアントは、ソースのコンテンツを既に適切に配置しています。 そのため、追加のローテーションは必要ありません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idclone-moderequirementsspanspan-idclone-moderequirementsspanclone-mode-requirements-starting-with-windows81-update"></a><span id="clone-mode_requirements"></span><span id="CLONE-MODE_REQUIREMENTS"></span>Windows 8.1 Update 以降複製モードの要件
+## <a name="span-idclone-mode_requirementsspanspan-idclone-mode_requirementsspanclone-mode-requirements-starting-with-windows81-update"></a><span id="clone-mode_requirements"></span><span id="CLONE-MODE_REQUIREMENTS"></span>Windows 8.1 の更新で始まる複製モードの要件
 
 
-Windows 8.1 Update 以降では、ドライバーは、これらの要件を満たす必要があります。 テスト署名が有効になっている場合、ドライバーがこれらの要件を満たすために失敗した場合、システムでバグチェックが発生します。
+Windows 8.1 Update 以降では、ドライバーがこれらの要件を満たしている必要があります。 テスト署名が有効になっている場合、ドライバーがこれらの要件を満たしていないと、システムのバグチェックが発生します。
 
-<span id="Primary_clone_path"></span><span id="primary_clone_path"></span><span id="PRIMARY_CLONE_PATH"></span>*プライマリの複製のパス*  
-**定義:** ソースの表示に重複するターゲットのモニターを含むパス-外部モニターに表示するには、ラップトップ コンピューターに重複するなど。
+<span id="Primary_clone_path"></span><span id="primary_clone_path"></span><span id="PRIMARY_CLONE_PATH"></span>*プライマリ複製パス*  
+**定義:** ソース表示を複製するターゲットモニターを含むパス。たとえば、ラップトップコンピューターのディスプレイを複製する外部モニターです。
 
-**要件:** プライマリの複製のパスにドライバーを設定する必要があります**Offset0**に**TRUE**および、その他の 3 つのオフセット値で[ **D3DKMDT\_VIDPN\_PRESENT\_パス\_回転\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)に**FALSE**します。
+**要件:** プライマリ複製パスでは、ドライバーは**Offset0**を**TRUE**に設定する必要があります。また、D3DKMDT\_\_VIDPN のその他の3つのオフセット値は[ **\_パス\_ローテーション\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)を**FALSE**に設定する必要があります。
 
-場合は縦最初のソースの表示では、プライマリの複製のパスしない回転軸相殺されます。 つまり、プライマリの複製のパスがゼロのオフセットを常が ([**D3DKMDT\_VIDPN\_存在\_パス\_回転\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support).**Offset0**は**TRUE**)、し、デスクトップ ウィンドウ マネージャー (DWM) は、適切な方向が一致するように事前にそのコンテンツを回転します。
+縦方向のソース表示の場合、プライマリ複製パスは rotationally offset ではありません。 これは、プライマリ複製パスのオフセットが常にゼロ (D3DKMDT\_VIDPN\_存在することを意味します。[ **\_パス\_ローテーション\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)です。**Offset0**は**TRUE**)、デスクトップウィンドウマネージャー (DWM) は、適切な向きに合わせて事前にコンテンツを回転させます。
 
-プライマリの複製のパスは、すべてのプライマリとセカンダリの複製のターゲットのモニターのリフレッシュ レートを決定します。
+プライマリ複製パスによって、すべてのプライマリおよびセカンダリ複製ターゲットのモニターのリフレッシュレートが決まります。
 
-<span id="Secondary_clone_path"></span><span id="secondary_clone_path"></span><span id="SECONDARY_CLONE_PATH"></span>*セカンダリの複製のパス*  
-**定義:** 含む、他のターゲットのモニター、ソースの表示にも重複する主な複製のパスに含まれていないパス。
+<span id="Secondary_clone_path"></span><span id="secondary_clone_path"></span><span id="SECONDARY_CLONE_PATH"></span>*セカンダリ複製パス*  
+**定義:** プライマリ複製パスの一部ではなく、ソース表示も複製する、追加のターゲットモニタを含むパス。
 
-**要件:** セカンダリの複製のパスにドライバーを設定する必要がありますで 4 つのオフセット値の少なくとも 1 つ[ **D3DKMDT\_VIDPN\_存在\_パス\_回転\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)に**TRUE**します。 設定する必要がありますが、ドライバーがパスに依存しない回転をサポートしていない場合**Offset0**に**TRUE**ですべてのセカンダリの複製のパス。
+**要件:** セカンダリ複製パスでは、ドライバーは、D3DKMDT\_\_VIDPN の4つのオフセット値のうち少なくとも1つを設定する必要があります。 [ **\_パス\_ローテーション\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)が**TRUE**になります。 ドライバーがパスに依存しないローテーションをサポートしていない場合は、すべてのセカンダリ複製パスで**Offset0**を**TRUE**に設定する必要があります。
 
-パスに依存しない回転をサポートしている場合、ドライバーを作成する必要があります設定の 2 つの例を次に示します。
+パスに依存しないローテーションがサポートされている場合にドライバーが行う設定の例を2つ示します。
 
-<span id="Landscape-first_example"></span><span id="landscape-first_example"></span><span id="LANDSCAPE-FIRST_EXAMPLE"></span>**ランドス ケープ最初の例**  
-ソースの表示とセカンダリの複製のパスのターゲットは、両方のランドス ケープ-1 つ目のモニターには、場合、セカンダリの複製のパス、ドライバーは設定[ **D3DKMDT\_VIDPN\_存在\_のパス\_回転\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support).**Offset0**に**TRUE**および、その他の 3 つのオフセット値で**D3DKMDT\_VIDPN\_存在\_パス\_回転\_サポート**に**FALSE**します。 またはここでは、セカンダリの複製のパスで、ドライバーが両方設定**Offset0**と**Offset180**に**TRUE**とその他のオフセット値を**FALSE**.
+<span id="Landscape-first_example"></span><span id="landscape-first_example"></span><span id="LANDSCAPE-FIRST_EXAMPLE"></span>**横向き-最初の例**  
+セカンダリ複製パスのソース表示とターゲットが両方とも横向きに設定されている場合、セカンダリ複製パスでは、ドライバーは[**D3DKMDT\_VIDPN\_\_パス\_ローテーション\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_rotation_support)を設定します。**Offset0**に**TRUE**を指定すると、D3DKMDT\_VIDPN の他の3つのオフセット値は **\_パス\_\_ローテーション\_存在**し**ます。** また、この場合、セカンダリ複製パスでは、ドライバーは**Offset0**と**Offset180**の両方を**TRUE**に設定し、もう一方のオフセット値を**FALSE**に設定します。
 
-<span id="Portrait-first_example"></span><span id="portrait-first_example"></span><span id="PORTRAIT-FIRST_EXAMPLE"></span>**縦最初の例**  
-ソースの表示が縦最初のデバイスで、ランドス ケープ最初外部モニターに接続する場合、セカンダリの複製のパスにドライバーは設定**Offset270**または**Offset90**に**TRUE**します。
+<span id="Portrait-first_example"></span><span id="portrait-first_example"></span><span id="PORTRAIT-FIRST_EXAMPLE"></span>**縦-最初の例**  
+ソースディスプレイが縦向きのデバイスで、横向きの外部モニターに接続している場合、ドライバーは**Offset270**または**Offset90**を**TRUE**に設定します。
 
-詳細については、次を参照してください。[をサポートしているパスに依存しない回転](supporting-path-independent-rotation.md)します。
+詳細については、「[パスに依存しないローテーションのサポート](supporting-path-independent-rotation.md)」を参照してください。
 
  
 

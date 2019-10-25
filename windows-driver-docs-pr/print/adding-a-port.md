@@ -3,17 +3,17 @@ title: ポートの追加
 description: ポートの追加
 ms.assetid: ec908ddd-761b-4a82-8fc3-ac45c39a0571
 keywords:
-- ポート管理 WDK の印刷、ポートの追加
+- ポート管理 WDK 印刷、ポートの追加
 - ポートの追加
 - AddPort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cfd3480d7f509280c5cbd43f2e925b784d80747
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2f12c5a784dcd61b9934c1fc3ad10c903bfa588
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369008"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824784"
 ---
 # <a name="adding-a-port"></a>ポートの追加
 
@@ -21,21 +21,21 @@ ms.locfileid: "67369008"
 
 
 
-ポートの追加は、ポートの名前とポート モニター サーバー DLL のローカル ストレージ内またはレジストリ内のユーザーが変更可能な構成情報を格納するので構成されます。
+ポートを追加するには、ポートモニターサーバー DLL のローカルストレージまたはレジストリ内に、ポートの名前とユーザーが変更可能な構成情報を格納します。
 
-アプリケーション (Microsoft Windows SDK のドキュメントで説明)、印刷スプーラー AddPort 関数を呼び出すときに、関数の引数としてポート モニターの名前を指定します。 スプーラ呼び出し、 [ **AddPortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)ポート モニターは、指定されたポート モニタの UI の DLL に含まれる関数。
+アプリケーションが印刷スプーラの AddPort 関数 (Microsoft Windows SDK のドキュメントで説明されています) を呼び出すと、ポートモニターの名前が関数の引数として指定されます。 スプーラは、指定されたポートモニタのポートモニタ UI DLL に含まれる[**AddPortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)関数を呼び出します。
 
-ポート モニター UI の DLL の[ **AddPortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)関数は、次の操作を実行する必要があります。
+ポートモニターの UI DLL の[**AddPortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)関数は、次の操作を実行する必要があります。
 
-1.  関数を呼び出して印刷スプーラーのようになりました (Windows SDK のドキュメントで説明)、これにより、 [ **XcvOpenPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvopenport)ポート監視のサーバー DLL を呼び出す関数。
+1.  (Windows SDK のドキュメントで説明されている) 印刷スプーラの OpenPrinter 関数を呼び出します。これにより、ポートモニターサーバー DLL の[**XcvOpenPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvopenport)関数が呼び出されます。
 
-2.  印刷スプーラーを呼び出す[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))を複数回にポート監視サーバーのポートを追加して、UI の DLL と、サーバー DLL 間構成情報を転送する DLL を要求する機能します。 **XcvData**関数呼び出しのサーバー DLL の[ **XcvDataPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvdataport)関数。 [ **AddPortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)関数通常構成情報を取得、ユーザーからのダイアログ ボックスを表示することで。
+2.  印刷スプーラの[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数を複数回呼び出して、ポートモニタサーバー dll にポートを追加し、UI dll とサーバー dll 間で構成情報を転送するように要求します。 **XcvData**関数は、サーバー DLL の[**XcvDataPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)関数を呼び出します。 [**AddPortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)関数は、通常、ダイアログボックスを表示して、ユーザーから構成情報を取得します。
 
-3.  関数を呼び出して、印刷スプーラー ClosePrinter (Windows SDK のドキュメントで説明)、これにより、 [ **XcvClosePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvcloseport)ポート監視のサーバー DLL を呼び出す関数。
+3.  (Windows SDK のドキュメントで説明されている) 印刷スプーラの ClosePrinter 関数を呼び出します。これにより、ポートモニターサーバー DLL の[**XcvClosePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvcloseport)関数が呼び出されます。
 
-これらの操作の詳細については、の説明を参照してください。 [ **AddPortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)します。 参照してください[ポートの構成情報を格納する](storing-port-configuration-information.md)します。
+これらの操作の詳細については、 [**AddPortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)の説明を参照してください。 「[ポート構成情報の格納](storing-port-configuration-information.md)」も参照してください。
 
-ポート モニタを[ **EnumPorts** ](https://docs.microsoft.com/previous-versions/ff548754(v=vs.85))関数が追加されているすべてのポートを列挙する必要があります。 各ポート モニターを呼び出すことができます、スプーラー **EnumPorts**プリント サーバーでサポートされているポートのセットを決定する関数。
+ポートモニターの[**enumports**](https://docs.microsoft.com/previous-versions/ff548754(v=vs.85))関数は、追加されたすべてのポートを列挙する必要があります。 スプーラは、各ポートモニタの**Enumports**関数を呼び出して、プリントサーバーでサポートされているポートのセットを特定できます。
 
  
 

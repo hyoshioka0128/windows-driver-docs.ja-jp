@@ -5,47 +5,47 @@ ms.assetid: 58f65138-abb9-4bb8-bf9b-14f17347e309
 keywords:
 - IRP_MN_SET_POWER
 - IRP_MN_QUERY_POWER
-- デバイスの電源状態の WDK カーネル
-- クエリ power Irp WDK の電源管理
-- 電源 Irp WDK カーネル、デバイス クエリ
-- 電源状態のクエリを実行します。
+- デバイスの電源状態 WDK カーネル
+- クエリ-電源 Irp の WDK 電源管理
+- 電源 Irp WDK カーネル、デバイスクエリ
+- 電源状態のクエリ
 - キューの Irp
-- デバイス クエリ power Irp WDK カーネル
-- Irp の電源状態を送信します。
-- セット power Irp WDK カーネル
-- デバイスが電源 Irp WDK カーネルを設定
+- デバイスクエリの電源 Irp WDK カーネル
+- 電源状態 Irp の送信
+- パワー Irp WDK カーネル
+- デバイスセットの電源 Irp WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb2774e44eeeaf61d3ab45dbe6aadb3f543d27d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2bacf191fd94b5eea0aaf70e64e9da48029b9f07
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364080"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836365"
 ---
-# <a name="sending-irpmnquerypower-or-irpmnsetpower-for-device-power-states"></a>IRP を送信する\_MN\_クエリ\_電源や IRP\_MN\_設定\_電源状態のデバイスの電源
+# <a name="sending-irp_mn_query_power-or-irp_mn_set_power-for-device-power-states"></a>IRP\_\_クエリ\_電力または\_IRP に送信し、デバイスの電源状態に\_電力を設定する
 
 
 
 
 
-デバイスの電源ポリシー所有者は、デバイスを送信しますクエリ power IRP ([**IRP\_MN\_クエリ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)) の変更の下位のドライバーに対応できるかどうかを判断するには。デバイスの電源の状態とデバイスのセット電源 IRP ([**IRP\_MN\_設定\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) デバイスの電源状態を変更します。 (このドライバーでは、待機/ウェイク IRP がスリープ解除するには、そのデバイスを有効にするのには送信もできます外部からの信号に対して、次を参照してください。[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)詳細についてはします。)。
+デバイスの電源ポリシー所有者は、デバイスクエリ-電源 IRP ([**irp\_\_クエリ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)) を送信して、下位のドライバーがデバイスの電源状態の変化に対応できるかどうかを判断し、デバイスセット-電源 Irp ([**irp\_の\_セット\_電力**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) デバイスの電源状態を変更します。 (このドライバーは、待機/ウェイク IRP を送信して、外部信号に応答してデバイスをウェイクアップできるようにすることもできます。詳細については、「[ウェイクアップ機能のあるデバイスのサポート](supporting-devices-that-have-wake-up-capabilities.md)」を参照してください)。
 
-ドライバーを送信する必要があります、 [ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)要求、次のいずれかが true の場合。
+次のいずれかに該当する場合は、ドライバーが[**IRP\_\_クエリ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)要求を送信する必要があります。
 
--   ドライバーがシステムを受け取るクエリ power IRP します。
+-   ドライバーはシステムクエリ-電源 IRP を受信します。
 
--   ドライバーは、スリープ状態、下位のドライバーを見つけるかどうかを行うのため不可能にクエリを実行する必要がありますようにアイドル状態のデバイスを配置する準備中です。
+-   ドライバーは、アイドル状態のデバイスをスリープ状態にする準備をしています。そのため、それが可能であるかどうかを確認するために、下位のドライバーに対してクエリを実行する必要があります。
 
-ドライバーを送信する必要があります、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求時に、次のいずれかが true:
+次のいずれかに該当する場合は、ドライバーが[**IRP\_\_設定\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求を送信する必要があります。
 
--   ドライバーは、デバイスがアイドル状態で、スリープ状態に配置できることを判断しました。
+-   ドライバーは、デバイスがアイドル状態で、スリープ状態になる可能性があると判断しました。
 
--   デバイスがスリープ状態と、待機中の I/O を処理する作業の状態を再入力する必要があります。
+-   デバイスはスリープ状態であり、待機中の i/o を処理するために作業中の状態に再入力する必要があります。
 
--   ドライバーがシステムを受信 IRP の出力を設定します。
+-   ドライバーはシステムセット-電源 IRP を受信します。
 
-ドライバーは、独自の電源 IRP; を割り当てる必要がありますされません。電源マネージャーは、提供、 [ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)この目的のために日常的な。 として[Power Irp の処理の規則](rules-for-handling-power-irps.md)説明しますが、 **PoRequestPowerIrp**を割り当てるし、IRP を送信およびと組み合わせて**保留**(Windows 7 および Windows Vista) にまたは**PoCallDriver** (で Windows Server 2003、Windows XP、および Windows 2000)、電源のすべての要求が正しく同期されていることを確認します。 呼び出し元**PoRequestPowerIrp** IRQL で実行する必要があります&lt;= ディスパッチ\_レベル。
+ドライバーは独自の電源 IRP を割り当てることはできません。この目的のために、電源マネージャーには[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)ルーチンが用意されています。 [電源 irp を処理するためのルール](rules-for-handling-power-irps.md)として、 **PoRequestPowerIrp**は IRP を割り当てて送信します。また、 **IoCallDriver** (windows 7 と windows Vista の場合) または**POCALLDRIVER** (windows Server 2003、windows XP、および) を組み合わせて送信します。Windows 2000) では、すべての電源要求が正しく同期されていることを確認します。 **PoRequestPowerIrp**の呼び出し元は、IRQL &lt;= ディスパッチ\_レベルで実行されている必要があります。
 
 このルーチンのプロトタイプを次に示します。
 
@@ -61,23 +61,23 @@ PoRequestPowerIrp (
     );
 ```
 
-IRP がドライバーの呼び出しを送信する**PoRequestPowerIrp**、対象のデバイス オブジェクトへのポインターを指定する*デバイス オブジェクト*、マイナー IRP コード IRP\_MN\_セット\_電源や IRP\_MN\_クエリ\_で電源*MinorFunction*、値**DevicePowerState**で、 <em>PowerState</em> **.型**、およびデバイスの電源状態で<em>PowerState</em>**します。状態**します。 Windows 98/、*デバイス オブジェクト*する必要がありますは、基になるデバイスの PDO を指定して、Windows 2000 および以降のバージョンの Windows では、この値は PDO または同じデバイス スタック内のドライバーの FDO をポイントできます。
+IRP を送信するために、ドライバーは**PoRequestPowerIrp**を呼び出し、 *DeviceObject*内のターゲットデバイスオブジェクトへのポインターを指定します。また、マイナー irp コード IRP\_\_設定\_電力または IRP を\_ *\_します。MinorFunction*,、値**DevicePowerState** 、 <em>PowerState</em>**です。** <em>PowerState</em>のデバイスの電源状態を入力し**ます。状態**。 Windows 98/Me では、 *DeviceObject*は、基になるデバイスの PDO を指定する必要があります。windows 2000 以降のバージョンの Windows では、この値は、同じデバイススタック内の PDO または FDO のいずれかを指すことができます。
 
-電源完了関数へのポインターを渡す必要がある場合は、ドライバーは、その他のすべてのドライバーは IRP を完了した後、追加のタスクを実行する必要があります、 *CompletionFunction*します。 I/O マネージャーの呼び出し、 *CompletionFunction*すべてを呼び出した後、 *IoCompletion* IRP が渡されるときに、ドライバーによって設定ルーチンがスタックをダウンします。
+他のすべてのドライバーが IRP を完了した後に、ドライバーが追加のタスクを実行する必要がある場合は、入力候補の関数にポインターを渡す必要が*あります。* I/o マネージャーは、ドライバーが IRP をスタックに渡したときに、ドライバーによって設定されたすべての*Iocompletion*ルーチンを呼び出した後に、completion*関数*を呼び出します。
 
-デバイスが送信する必要があります、その後、デバイスの電源ポリシー所有者は IRP デバイス電源クエリを送信するたびに、コールバック ルーチンからセット power IRP (*CompletionFunction*) への呼び出しで、指定されている**PoRequestPowerIrp**します。 クエリが成功した場合、セット power IRP は照会された電源の状態を指定します。 クエリが失敗した場合セット power IRP は現在のデバイスの電源状態を再アサートします。 ドライバーでは、I/O をキュー; クエリへの応答であるため、現在の状態を再アサートすることが重要です。ポリシー所有者は、セット power IRP がキューに登録された I/O 要求の処理を開始するには、そのデバイス スタックのドライバーに通知するを送信する必要があります。
+デバイスの電源ポリシー所有者がデバイスの power query IRP を送信するたびに、 **PoRequestPowerIrp**への呼び出しで指定されたコールバックルーチン (*補完機能*) からデバイスセット-電源 irp を送信する必要があります。 クエリが成功した場合、set-power IRP はクエリされた電源の状態を指定します。 クエリが失敗した場合、set-power IRP は現在のデバイスの電源状態を再アサートします。 ドライバーがクエリに応答して i/o をキューに置いているため、現在の状態を再アサートすることが重要です。ポリシーの所有者は、キューに入っている i/o 要求の処理を開始するために、デバイススタックでドライバーに通知するために set-power IRP を送信する必要があります。
 
-デバイスのポリシーの所有者だけでなくデバイスの電源 IRP を送信しますがデバイス スタックを渡される IRP の処理も留意してください。 このようなドライバーが多くの場合、設定、 *IoCompletion*ルーチン (で[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)) その IRP 処理コードの一部として、特に、デバイスがの場合電源を投入します。 *IoCompletion*での順序でルーチンを呼び出す*IoCompletion*ルーチンを設定して他のドライバーとの前に、 *CompletionFunction*します。 詳細については、次を参照してください。[デバイス電源 Irp の IoCompletion ルーチン](iocompletion-routines-for-device-power-irps.md)します。
+デバイスのポリシー所有者は、デバイスの電源 IRP を送信するだけでなく、デバイススタックに渡されるときにも IRP を処理することに注意してください。 そのため、このようなドライバーでは、通常、デバイスの電源が入っているときに、IRP 処理コードの一部として*Iocompletion*ルーチン ( [**iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)) を設定します。 *Iocompletion*ルーチンは、他のドライバーによって設定された*iocompletion*ルーチンと、入力候補*機能*の前に順番に呼び出されます。 詳細については、「[デバイスの電源 irp の Iocompletion ルーチン](iocompletion-routines-for-device-power-irps.md)」を参照してください。
 
-すべてのドライバーが IRP が完了したため、ときに、 *CompletionFunction*が呼び出される、 *CompletionFunction*を呼び出してはならない**保留**、 **PoCallDriver**、または**PoStartNextPowerIrp**出所 IRP にします。 (呼び出すことが、ただし、これらのルーチンのさまざまな電源 IRP。)代わりに、このルーチンは IRP を発生させたドライバーで必要な追加の操作を実行します。 ドライバーは IRP、システムへの応答でデバイス IRP を送信する場合、 *CompletionFunction*システム IRP を完了することがあります。 詳細については、次を参照してください。[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)します。
+入力関数が呼び出されたときに、すべての*ドライバーが irp*を完了しているため、 **IoCallDriver**、 **Pocalldriver**、または**postartnextpowerirp**を呼び出し元の irp で呼び出す*ことはでき*ません。 (ただし、別の電源 IRP に対してこれらのルーチンを呼び出すこともできます)。代わりに、このルーチンは、IRP を発信したドライバーに必要な追加の操作を実行します。 ドライバーがシステムの irp に応答してデバイスの IRP を送信した場合、*補完機能*はシステムの irp を完了する可能性があります。 詳細については、「[デバイスの電源ポリシー所有者におけるシステムセット-電源 IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)」を参照してください。
 
-呼び出しに応答**PoRequestPowerIrp**、電源マネージャー能力 IRP を割り当て、およびデバイスのデバイス スタックの一番上に送信します。 電源マネージャーは、割り当てられた IRP へのポインターを返します。
+**PoRequestPowerIrp**への呼び出しに応答して、電源管理者は電源 IRP を割り当てて、デバイスのデバイススタックの一番上に送信します。 電源マネージャーは、割り当てられた IRP へのポインターを返します。
 
-エラーが発生しなかった場合**PoRequestPowerIrp**ステータスを返します\_保留します。 この状態は、IRP が正常に送信され、完了待ちの状態を意味します。 電源マネージャーは IRP を割り当てることができませんか、呼び出し元が、無効なマイナー power IRP のコードを指定した場合、呼び出しが失敗します。
+エラーが発生しなかった場合、 **PoRequestPowerIrp**は STATUS\_PENDING を返します。 この状態は、IRP が正常に送信され、完了待ちになっていることを意味します。 電源マネージャーが IRP を割り当てられない場合、または呼び出し元が無効なマイナー電源 IRP コードを指定した場合、呼び出しは失敗します。
 
-デバイスの電源を要求は、デバイスの基になるバス ドライバー、続いて各順次上位ドライバー スタックで、最初に処理する必要があります。 そのため、送信するときに、 **PowerDeviceD0**ドライバーを確認する必要がありますを要求します。 その*CompletionFunction* IRP が完了し、デバイスの電源がオンにした後、必要なタスクを実行します。
+デバイスの電源投入要求は、まず、デバイスの基盤となるバスドライバーによって処理され、次にスタック内の上位のドライバーごとに処理される必要があります。 そのため、 **PowerDeviceD0**要求を送信する場合、ドライバーは、IRP の完了後にデバイスの電源がオンになった後に、必要なタスク*を実行する*ようにドライバーに要求します。
 
-デバイスの電源を切るとき (**PowerDeviceD3**)、デバイス スタックでは、各ドライバーが、必要なコンテキストのすべてを保存して、行うために必要なクリーンアップ IRP を次の下位ドライバーに送信する前にする必要があります。 コンテキスト情報とクリーンアップのエクステントは、ドライバーの種類によって異なります。 関数のドライバーがハードウェアのコンテキストを保存する必要があります。フィルター ドライバーは、独自のソフトウェア コンテキストを保存する必要があります。 A *CompletionFunction*セットをこのような状況では、完成した電源、IRP に関連付けられているアクションを実行できますが、ドライバーがデバイスにアクセスできません。
+デバイス (**PowerDeviceD3**) の電源をオフにする場合、デバイススタック内の各ドライバーは、IRP を次の下位のドライバーに送信する前に、必要なすべてのコンテキストを保存し、必要なクリーンアップを実行する必要があります。 コンテキスト情報とクリーンアップの範囲は、ドライバーの種類によって異なります。 関数ドライバーは、ハードウェアコンテキストを保存する必要があります。フィルタードライバーでは、独自のソフトウェアコンテキストを保存することが必要になる場合があります。 この状況で設定された入力*関数*は、完了した電源 IRP に関連する操作を実行できますが、ドライバーはデバイスにアクセスできません。
 
  
 

@@ -3,16 +3,16 @@ title: コールバック オブジェクトの定義
 description: コールバック オブジェクトの定義
 ms.assetid: 9717795b-dd62-4f17-b931-5ca2b1237e60
 keywords:
-- コールバック オブジェクトの WDK カーネル
-- コールバック通知を登録します。
+- コールバックオブジェクト WDK カーネル
+- コールバック通知の登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb49c1adb58f555aab2c0afd139ca8018c5c8e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c1d678d5f792cf69dc59a4bfc4cd78cb379fbe11
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377134"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828436"
 ---
 # <a name="defining-a-callback-object"></a>コールバック オブジェクトの定義
 
@@ -20,17 +20,17 @@ ms.locfileid: "67377134"
 
 
 
-ドライバーは、他のドライバーがドライバーを作成して定義された条件の通知を要求するコールバック オブジェクトを作成できます。 次の図は、コールバック オブジェクトの定義に関連する手順を示します。
+ドライバーはコールバックオブジェクトを作成できます。これにより、他のドライバーは、作成するドライバーによって定義された条件の通知を要求できます。 次の図は、コールバックオブジェクトの定義に関連する手順を示しています。
 
-![コールバック オブジェクトの定義を示す図](images/3crt-cbk.png)
+![コールバックオブジェクトの定義を示す図](images/3crt-cbk.png)
 
-オブジェクトを作成する前に、ドライバーが呼び出す[ **InitializeObjectAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)その属性を設定します。 コールバック オブジェクトには、システム定義のコールバック; の名前に一致することはできませんが、名前が必要です。どのようなその他の属性の作成者を対象と、適切な通常 OBJ ことができます\_ケース\_INSENSITIVE です。 次に、ドライバーを呼び出す[ **ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)、初期化された属性と、コールバック オブジェクトを識別するハンドルを取得する位置にポインターを渡すことです。 また、このような名前付きオブジェクトが存在しないとかどうか、オブジェクトを行えるように 1 つ以上登録されたコールバック ルーチン場合に、システムがコールバック オブジェクトを作成する必要があるかどうかを示す 2 つのブール値を渡します。
+オブジェクトを作成する前に、ドライバーは[**Initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)を呼び出して属性を設定します。 コールバックオブジェクトには、システム定義のコールバックの名前と一致しない名前を指定する必要があります。作成者が適切な属性を持つことができます。通常、OBJ\_大文字と小文字\_区別されません。 次に、ドライバーは[**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)を呼び出し、初期化された属性へのポインターと、コールバックオブジェクトへのハンドルを受け取る位置を渡します。 また、2つのブール値も渡します。これは、このような名前付きオブジェクトがまだ存在しない場合や、オブジェクトが複数の登録済みコールバックルーチンを許可するかどうかを示す、システムがコールバックオブジェクトを作成する必要があるかどうかを示します。
 
-ドライバーは、登録されたコールバック ルーチンを呼び出してその条件を定義します。 2 つの引数の形式の条件をコールバックを作成するドライバーで定義された各パラメーターをポイントします。 コールバック オブジェクトと、ドライバーのクライアントに対して、通知要求の IRQL の名前と共に、これらの条件を文書化する必要があります。
+ドライバーは、登録されているコールバックルーチンを呼び出す条件を定義します。 これらの条件は、2つの引数の形式になります。各引数は、コールバックを作成するドライバーによって定義されたパラメーターを指します。 これらの条件は、コールバックオブジェクトの名前と、ドライバーのクライアントが通知を要求する IRQL を記録する必要があります。
 
-コールバック状態が発生すると、ドライバー呼び出し[ **ExNotifyCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exnotifycallback)、コールバック オブジェクトと 2 つの引数をそのハンドルを渡します。 システムは、コールバック ルーチンをすべてで登録された、順番に、コールバック オブジェクトに登録されている 2 つの引数およびポインターのルーチンの登録時に指定されたコンテキストを渡すことを呼び出します。 ドライバーを呼び出す必要があります**ExNotifyCallback** IRQL で&lt;= ディスパッチ\_レベルは、システムは、ドライバーがこの呼び出しが行われた同じ IRQL でコールバック ルーチンを呼び出します。
+コールバック条件が発生すると、ドライバーは[**Exnotifycallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exnotifycallback)を呼び出し、そのハンドルをコールバックオブジェクトと2つの引数に渡します。 次に、コールバックオブジェクトに登録されているすべてのコールバックルーチンが、登録された順序で呼び出され、ルーチンが登録されたときに指定されたコンテキストへの2つの引数とポインターが渡されます。 ドライバーは、IRQL &lt;= DISPATCH\_LEVEL; で**Exnotifycallback**を呼び出す必要があります。システムは、ドライバーがこの呼び出しを行ったのと同じ IRQL でコールバックルーチンを呼び出します。
 
-コールバックを作成するドライバーを呼び出す必要がありますのコールバック オブジェクトとすべての操作が完了したら、 [ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)の参照カウントをデクリメントし、オブジェクトがあることを確認するには削除されます。
+コールバックオブジェクトを使用してすべての操作が完了したら、コールバックを作成したドライバーは[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出してその参照カウントをデクリメントし、オブジェクトが削除されていることを確認する必要があります。
 
  
 

@@ -3,18 +3,18 @@ title: 記憶域クラス ドライバーでの PnP 開始の処理
 description: 記憶域クラス ドライバーでの PnP 開始の処理
 ms.assetid: 8d4ccd09-c5d2-4c9b-b94d-e22c916f0043
 keywords:
-- 記憶域クラス ドライバー WDK、PnP
-- ドライバー WDK の記憶域クラス PnP
+- ストレージクラスドライバー WDK、PnP
+- クラスドライバー WDK storage、PnP
 - PnP WDK ストレージ
-- プラグ アンド プレイ WDK ストレージ
+- WDK ストレージのプラグアンドプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaedafacfcdfe970cee4bf83554126327ee723f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c86bab639bba90c3ba0f7cb0d0876d935f14d63
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378499"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837555"
 ---
 # <a name="handling-pnp-start-in-a-storage-class-driver"></a>記憶域クラス ドライバーでの PnP 開始の処理
 
@@ -22,17 +22,17 @@ ms.locfileid: "67378499"
 ## <span id="ddk_handling_pnp_start_in_a_storage_class_driver_kg"></span><span id="DDK_HANDLING_PNP_START_IN_A_STORAGE_CLASS_DRIVER_KG"></span>
 
 
-ストレージ クラス ドライバー、PnP マネージャーが、クラス ドライバーを呼び出すときに、デバイスに固有の初期化を実行します[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)開始要求をルーチン (IRP\_MJ\_PNP[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device))。 記憶域クラス ドライバーの*DispatchPnP*日常的ないずれかを呼び出す内部*StartDevice*ルーチンまたは同じ機能のインラインを実装します。 FDO に送信された要求を開始する必要があるによって処理されるため最初に、最も低いドライバー スタックでは、記憶域クラス ドライバーの*DispatchPnP*ルーチンで、次の下位ドライバーに要求を転送する[ **保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)呼び出す前に*StartDevice*します。 場合は、要求は、PDO に送信されて、ドライバー必要がありますそれを処理する前に、要求を転送しません。
+ストレージクラスドライバーは、PnP マネージャーが開始要求を使用してクラスドライバーの[**DispatchPnP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを呼び出したときに、デバイス固有の初期化を実行します (IRP\_MJ\_Pnp と[**irp\_は\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device))。 ストレージクラスドライバーの*DispatchPnP*ルーチンは、内部*startdevice*ルーチンを呼び出すか、同じ機能をインラインで実装します。 FDO に送信された開始要求は、スタック内の最下位のドライバーによって最初に処理される必要があるため、ストレージクラスドライバーの*DispatchPnP*ルーチンは、 *startdevice*を呼び出す前に[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して、次の下位のドライバーに要求を転送します。 要求が PDO に送信された場合、ドライバーは、要求を処理する前に転送する必要がありません。
 
-ストレージ クラス ドライバーの内部*StartDevice*ルーチンは、デバイスの I/O 要求を管理するドライバーにより決定されたデータをその FDO のデバイスの拡張機能を設定します。 詳細については、次を参照してください。[デバイス拡張機能の設定を、記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)します。
+ストレージクラスドライバーの内部*Startdevice*ルーチンは、デバイスの i/o 要求を管理するために、ドライバーによって決定されたデータを使用して、その FDO のデバイス拡張機能を設定します。 詳細については、「[ストレージクラスドライバーのデバイス拡張機能](setting-up-a-storage-class-driver-s-device-extension.md)のセットアップ」を参照してください。
 
-A *StartDevice*ルーチンは、ドライバーに登録されている任意のデバイスのインターフェイスを有効にする必要があります、 *AddDevice*ルーチン。 (を参照してください[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes))。そのデバイス オブジェクトのシンボリック リンクを作成することも可能性があります。
+*Startdevice*ルーチンは、ドライバーによって*AddDevice*ルーチンに登録されたデバイスインターフェイスを有効にする必要があります。 (「[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)」を参照してください)。また、デバイスオブジェクトのシンボリックリンクを作成する場合もあります。
 
-下のデバイスの開始が完了すると、ドライバーは、ほとんどの場合、デバイスが、D0 電源状態で (上に完全に operational) があると想定できます。 デバイスは完全に電源されませんが、ポート ドライバーは、デバイスが準備できるまでに、要求をキューします。 ただし場合、ドライバーの*StartDevice*ルーチンが突入電流を必要とする操作を実行する必要があります--、たとえば、ディスク ドライブの起動にドライバーする必要があります D0 power に要求を送信、次の下位ドライバー実行する前に、操作です。
+低いデバイスの開始が完了した後、ドライバーはデバイスが D0 (完全に動作) されていると想定できます。 デバイスの電源が完全に切れていない場合、ポートドライバーはデバイスの準備が整うまで要求をキューに入れます。 ただし、ドライバーの*Startdevice*ルーチンで、突入電流を必要とする操作 (ディスクドライブのスピンアップなど) を実行する必要がある場合は、操作を実行する前に、ドライバーが次の下位のドライバーに D0 の電源要求を送信する必要があります。
 
-ファイルの種類のデバイスのドライバー\_デバイス\_ディスクまたはファイル\_デバイス\_大容量\_ストレージがアイドル状態検出の登録し、標準電源ポリシーのタイムアウトを指定してデバイス クラスの使用-1 の節約とパフォーマンスのタイムアウト値、 **PoRegisterDeviceforIdleDetection**呼び出します。
+デバイスの種類がファイル\_デバイスのドライバー\_ディスクまたはファイル\_デバイス\_大容量\_ストレージでは、アイドル検出に登録して、節約とパフォーマンスを指定することにより、デバイスクラスの標準の電源ポリシーのタイムアウトを使用することができます。**PoRegisterDeviceforIdleDetection**呼び出しのタイムアウト値-1。
 
-記憶域クラス ドライバーの詳細については*DispatchPnP*ルーチンを参照してください[記憶域周辺機器への PnP の要求を処理](handling-pnp-requests-to-storage-peripherals.md)します。 PnP 開始要求の処理の詳細については、次を参照してください。[デバイスを起動](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)します。
+ストレージクラスドライバーの*DispatchPnP*ルーチンの詳細については、「[ストレージ周辺機器への PnP 要求の処理](handling-pnp-requests-to-storage-peripherals.md)」を参照してください。 PnP 開始要求の処理の詳細については、「[デバイスを開始する](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)」を参照してください。
 
  
 

@@ -3,16 +3,16 @@ title: ネットワーク接続ウィザード内のカスタム UI ページの
 description: ネットワーク接続ウィザード内のカスタム UI ページの表示
 ms.assetid: 102f142a-91d1-4b55-a111-15a297c03e23
 keywords:
-- カスタム UI WDK ネイティブ 802.11 IHV UI 拡張機能の DLL、ネットワーク接続ウィザード
+- カスタム UI WDK ネイティブ 802.11 IHV UI Extensions DLL、ネットワーク接続ウィザード
 - ネットワーク接続ウィザード WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 449b78226a5b97742a35806fca07839daceb73db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97c9f3e183fdfb1f356625d978b6c787d5e20478
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386559"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834826"
 ---
 # <a name="displaying-custom-ui-pages-within-the-network-connection-wizard"></a>ネットワーク接続ウィザード内のカスタム UI ページの表示
 
@@ -21,37 +21,37 @@ ms.locfileid: "67386559"
 
  
 
-802.11 IHV UI 拡張機能のネイティブ DLL でサポートされているカスタム ユーザー インターフェイス (UI) は、UI の要求がいずれかで行われたときに、オペレーティング システムのネットワーク接続ウィザード内で表示できます。
+ネイティブ 802.11 IHV UI 拡張 DLL でサポートされているカスタムユーザーインターフェイス (UI) は、次のいずれかの方法で UI の要求が行われたときに、オペレーティングシステムのネットワーク接続ウィザード内に表示されます。
 
--   呼び出し[ **Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)、ネイティブの 802.11 IHV 拡張機能の DLL によって行われました。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
+-   ネイティブ 802.11 IHV Extensions DLL によって作成された[**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)の呼び出し。 このプロセスの詳細については、「[カスタム UI の表示の要求](requesting-the-display-of-a-custom-ui.md)」を参照してください。
 
--   ネイティブ 802.11 IHV 拡張 DLL の呼び出し**Dot11ExtQueryUIRequest**オペレーティング システムによって行われた、IHV ハンドラー関数。 このプロセスの詳細については、次を参照してください。[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)します。
+-   オペレーティングシステムによって作成された、ネイティブ 802.11 IHV Extensions DLL の**Dot11ExtQueryUIRequest** ihv ハンドラー関数の呼び出し。 このプロセスの詳細については、「[カスタム UI の表示のクエリ](querying-for-the-display-of-a-custom-ui.md)」を参照してください。
 
-オペレーティング システムでは、ワイヤレス ネットワークに接続しようとして、ワイヤレス LAN (WLAN) アダプター場合に、ネットワーク接続ウィザード内でカスタムの UI が表示されます。 このような状況では、カスタム UI の要求が期間内のバルーン通知として表示されます。
+ワイヤレス LAN (WLAN) アダプターがワイヤレスネットワークに接続しようとしている場合、オペレーティングシステムは、ネットワーク接続ウィザード内にカスタム UI を表示します。 この場合、カスタム UI の要求は、次の期間内にバルーン通知として表示されます。
 
--   オペレーティング システム DLL を呼び出すネイティブ 802.11 IHV 拡張機能の後に[ *Dot11ExtIhvPerformPreAssociate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate)ワイヤレス ネットワークの関連付け前の操作を開始する IHV ハンドラー関数。
+-   オペレーティングシステムがネイティブ 802.11 IHV Extensions DLL の[*Dot11ExtIhvPerformPreAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate) ihv ハンドラー関数を呼び出して、ワイヤレスネットワークとの関連付け前の操作を開始した後。
 
--   ネイティブの 802.11 IHV 拡張 DLL の呼び出しの前に[ **Dot11ExtPostAssociateCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_post_associate_completion)後関連付け操作を正常に完了します。
+-   ネイティブ 802.11 IHV 拡張 DLL が[**Dot11ExtPostAssociateCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_post_associate_completion)を呼び出してから、関連付け後の操作を正常に完了する前。
 
-ネットワークの接続ウィザード内でカスタム UI 要求を挿入するときに、オペレーティング システムは、次を行います。
+ネットワーク接続ウィザードでカスタム UI 要求を挿入すると、オペレーティングシステムは次の処理を実行します。
 
-1.  DLL を呼び出すネイティブ 802.11 IHV 拡張機能の[ *Dot11ExtIhvIsUIRequestPending* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending) IHV ハンドラー関数 UI 要求がまだがかどうかを判断する保留中です。 オペレーティング システムに渡されるグローバル一意識別子 (GUID) を使用して UI 要求を指定する[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request) 802.11 IHV 拡張機能のネイティブ DLL でします。
+1.  ネイティブ 802.11 IHV 拡張 DLL の[*Dot11ExtIhvIsUIRequestPending*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending) ihv ハンドラー関数を呼び出して、UI 要求がまだ保留中かどうかを確認します。 オペレーティングシステムは、ネイティブ 802.11 IHV 拡張 DLL によって[**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)に渡されるグローバル一意識別子 (GUID) を使用して、UI 要求を指定します。
 
-2.  場合[ *Dot11ExtIhvIsUIRequestPending* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending)返します**TRUE**オペレーティング システムを要求されたインスタンスの指定した UI 要求**IWizardExtension** COM インターフェイスと、ネットワーク接続ウィザードのフロー、現在の UI にバインドします。 呼び出し時に[ **Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)、ネイティブの 802.11 IHV 拡張 DLL のクラス id (CLSID) を指定します、 **IWizardExtension**実装内のネイティブ 802.11 IHV UI 拡張 DLL。
+2.  指定された UI 要求に対して[*Dot11ExtIhvIsUIRequestPending*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending)が**TRUE**を返した場合、オペレーティングシステムは、要求された**IWizardExtension** COM インターフェイスをインスタンス化し、ネットワーク接続ウィザードの現在の UI フローにバインドします。 [**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)を呼び出すと、802.11 ネイティブ 802.11 Ihv UI 拡張 dll 内で**IWizardExtension**実装のクラス識別子 (CLSID) が指定されます。
 
-    オペレーティング システムも呼び出して、 **IWizardExtension::AddPages**メソッドを使用する 802.11 IHV UI 拡張機能のネイティブ DLL がカスタム UI ページを表す PROPSHEETPAGE 構造体のハンドルの配列を返します。
+    また、オペレーティングシステムは**IWizardExtension:: AddPages**メソッドも呼び出します。このメソッドは、ネイティブ 802.11 IHV UI 拡張 DLL が、カスタム UI ページを表す propsheet ページ構造体のハンドルの配列を返します。
 
-    詳細については、 **IWizardExtension** COM インターフェイスを参照してください[IWizardExtension COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)します。
+    **IWizardExtension** com インターフェイスの詳細については、「 [IWizardExtension com インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)」を参照してください。
 
-3.  を介してネイティブ 802.11 IHV UI 拡張 DLL で制御される UI ページ間を移動、 **IWizardSite** COM インターフェイスです。 このインターフェイスの詳細については、次を参照してください。 [IWizardSite COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56608)します。
+3.  **Iwizardsite** COM インターフェイスを使用して、ネイティブ 802.11 IHV UI 拡張 DLL によって制御される ui ページを移動します。 このインターフェイスの詳細については、「 [Iwizardsite COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56608)」を参照してください。
 
-802.11 IHV UI 拡張機能のネイティブ DLL の読み取りまたは書き込みをコンテキストに固有のデータ、カスタム UI が表示されている間、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)します。 このプロセスの詳細については、次を参照してください。[へのアクセス プロファイルとコンテキスト データ](accessing-profile-and-context-data.md)します。
+カスタム UI が表示されている間、ネイティブ 802.11 IHV UI 拡張 DLL は[IPROPERTYBAG COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)を使用して、コンテキスト固有のデータを読み書きできます。 このプロセスの詳細については、「[プロファイルとコンテキストデータへのアクセス](accessing-profile-and-context-data.md)」を参照してください。
 
-802.11 IHV UI 拡張機能のネイティブ DLL が呼び出すことによって、802.11 IHV 拡張機能のネイティブ DLL にユーザーが入力した応答データを返すことができます、カスタム UI が表示されたら、 **WlanSendUIResponse**します。 DLL では、応答データを格納するバッファーへのポインターと同様に、UI 要求の GUID に渡します。
+カスタム UI が表示された後、ネイティブ 802.11 IHV UI 拡張 DLL は、 **WlanSendUIResponse**を呼び出すことによって、ユーザーが入力した応答データをネイティブ 802.11 IHV 拡張 dll に返すことができます。 DLL は、UI 要求の GUID と、応答データを格納しているバッファーへのポインターを渡します。
 
-802.11 IHV UI 拡張機能のネイティブ DLL 後**WlanSendUIResponse**、オペレーティング システム DLL を呼び出すネイティブ 802.11 IHV 拡張機能の[ *Dot11ExtIhvProcessUIResponse* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)カスタム UI の応答データを転送する IHV ハンドラー関数。
+ネイティブ 802.11 IHV UI 拡張 DLL が**WlanSendUIResponse**を呼び出すと、オペレーティングシステムはネイティブ 802.11 IHV Extension Dll の[*Dot11ExtIhvProcessUIResponse*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) ihv ハンドラ関数を呼び出して、カスタム UI の応答データを転送します。
 
-詳細については、 **WlanSendUIResponse** API、Microsoft Windows SDK のドキュメントを参照してください。
+**WlanSendUIResponse** API の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCOMPRESSION\_品質
-description: KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質の設定を制御します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_VIDEOCOMPRESSION\_品質
+description: KSK プロパティ\_VIDECOMPRESSION\_QUALITY プロパティは、ビデオの圧縮品質設定を制御します。 このプロパティを実装する必要があります。
 ms.assetid: 7566f60e-fe49-4009-bd61-b29d2adb4e8c
 keywords:
-- KSPROPERTY_VIDEOCOMPRESSION_QUALITY ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCOMPRESSION_QUALITY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8952168e20cf84728306aac83d5be0364c772481
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 79ad71a6dde954232db80118201ce690150d0bfd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382012"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837880"
 ---
-# <a name="kspropertyvideocompressionquality"></a>KSPROPERTY\_VIDEOCOMPRESSION\_品質
+# <a name="ksproperty_videocompression_quality"></a>KSK プロパティ\_VIDEOCOMPRESSION\_品質
 
 
-KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質の設定を制御します。 このプロパティを実装する必要があります。
+KSK プロパティ\_VIDECOMPRESSION\_QUALITY プロパティは、ビデオの圧縮品質設定を制御します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_videocompression_quality_ks"></span><span id="DDK_KSPROPERTY_VIDEOCOMPRESSION_QUALITY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,31 +50,31 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、ビデオの圧縮品質の値を指定する LONG が。
+プロパティ値 (操作データ) は、ビデオ圧縮の品質値を指定する LONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_構造が品質基準を指定します。
+KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、品質評価基準を指定します。
 
-このプロパティ範囲を 0 から 10000 の値。 0 は、最低の品質、10000 を示します。 最高の値。 ミニドライバーは、既定値を決定します。
+このプロパティの値の範囲は 0 ~ 1万です。 0は、最も低い品質を示し、最大値は1万です。 ミニドライバーによって、独自の既定値が決定されます。
 
-このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanQuality**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーは、KS を設定する場合\_CompressionCaps\_CanQuality をサポートすることが両方を取得し、要求のプロパティを設定します。
+このプロパティをサポートするミニドライバーは、 [**ksproperty\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)構造体の**機能**メンバーで**KS\_CompressionCaps\_canquality**フラグを設定する必要があります。ミニドライバーのビデオ圧縮機能を取得します。 ミニドライバーで KS\_CompressionCaps\_CanQuality が設定されている場合は、プロパティに対して get と set の両方の要求をサポートする必要があります。
 
-このプロパティ範囲を 0 から 10000 の値。 0 は、最低の品質、10000 を示します。 最高の値。 ミニドライバーは、既定値を決定します。
+このプロパティの値の範囲は 0 ~ 1万です。 0は、最も低い品質を示し、最大値は1万です。 ミニドライバーによって、独自の既定値が決定されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,11 +93,11 @@ KSPROPERTY\_VIDECOMPRESSION\_品質プロパティは、ビデオの圧縮品質
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

@@ -3,17 +3,17 @@ title: サブデバイスの作成
 description: サブデバイスの作成
 ms.assetid: e4ba1209-adc6-48c3-9633-247e9e3849bc
 keywords:
-- オーディオ アダプター WDK、サブデバイス
-- アダプターのドライバー WDK のオーディオ、サブデバイス
+- オーディオアダプター WDK、サブデバイス
+- アダプタードライバー WDK オーディオ、サブデバイス
 - サブデバイス WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c718dacfaf5064d8e820eef41027ce4d48797885
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b66c8b9d7c71316c78d3cfec59ab68780c68b36b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354247"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832351"
 ---
 # <a name="subdevice-creation"></a>サブデバイスの作成
 
@@ -21,7 +21,7 @@ ms.locfileid: "67354247"
 ## <span id="subdevice_creation"></span><span id="SUBDEVICE_CREATION"></span>
 
 
-用語*サブデバイス*次の表に記載されている 4 つのコンポーネントのバインディングを記述するために使用します。
+*サブデバイス*という用語は、次の表に示す4つのコンポーネントのバインドを記述するために使用されます。
 
 <table>
 <colgroup>
@@ -36,33 +36,33 @@ ms.locfileid: "67354247"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ミニポート オブジェクト</p></td>
-<td align="left"><p>ミニポート ドライバーの IMiniport を公開するオブジェクトを<em>Xxx</em>インターフェイス</p></td>
+<td align="left"><p>ミニポートオブジェクト</p></td>
+<td align="left"><p>ミニポートドライバーの IMiniport<em>Xxx</em>インターフェイスを公開するオブジェクト</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ポート オブジェクト</p></td>
-<td align="left"><p>ポート ドライバーの IPort を公開するオブジェクトを<em>Xxx</em>インターフェイス</p></td>
+<td align="left"><p>ポートオブジェクト</p></td>
+<td align="left"><p>ポートドライバーの IPort<em>Xxx</em>インターフェイスを公開するオブジェクト。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>リソース リスト オブジェクト</p></td>
-<td align="left"><p>サブデバイスに割り当てられているアダプターのドライバー リソースの一覧を格納するオブジェクト</p></td>
+<td align="left"><p>リソースリストオブジェクト</p></td>
+<td align="left"><p>サブデバイスに割り当てられているアダプタードライバーリソースのリストを格納しているオブジェクト。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>参照文字列</p></td>
-<td align="left"><p>フィルターの作成中に、サブデバイスを指定するデバイスのパス名に追加の名前</p></td>
+<td align="left"><p>フィルターの作成時にサブデバイスを指定するためにデバイスパス名に追加された名前</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-サブデバイスの IMiniport*Xxx*と IPort*Xxx*基底インターフェイスから継承するインターフェイス[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)と[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)、それぞれします。
+サブデバイスの IMiniport*Xxx*インターフェイスと IPort*xxx*インターフェイスは、それぞれ基本インターフェイス[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)と[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)を継承します。
 
-PortCls システム ドライバーでは、ポート ドライバーとミニポート ドライバーが区別されません。 システムによって生成された要求を処理できるインターフェイスで、ポート オブジェクトなどのオブジェクトだけが必要です。
+PortCls システムドライバーは、ポートドライバーとミニポートドライバーを区別しません。 これには、ポートオブジェクトなどのオブジェクトと、システムによって生成された要求を処理できるインターフェイスが必要です。
 
-同様に、PortCls 直接に関係のないリソースを管理します。 のみ、リソースの一覧に、要求ハンドラー (ポート ドライバー) をバインドする必要があります。 アダプターのドライバーは、ポート、ミニポート、およびリスト オブジェクトのリソースをまとめてバインドします。
+同様に、PortCls はリソースの管理に直接は関与しません。 要求ハンドラー (ポートドライバー) をリソースリストにバインドするだけで済みます。 アダプタードライバーは、ポート、ミニポート、およびリソースリストオブジェクトをまとめてバインドします。
 
-次のコード例では、アダプターのドライバーがこれらのアクションを実行する方法を示します。
+次のコード例は、アダプタードライバーがこれらのアクションを実行する方法を示しています。
 
 ```cpp
   //
@@ -123,7 +123,7 @@ PortCls システム ドライバーでは、ポート ドライバーとミニ�
   }
 ```
 
-PortCls 関数の詳細については、上記のコード例の呼び出し、に対するを参照してください[ **PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)、 [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)、および。[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)します。
+前のコード例の PortCls 関数呼び出しの詳細については、「 [**Pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)、 [**pcnewport ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)、および[**Pcregiのサブデバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)」を参照してください。
 
  
 

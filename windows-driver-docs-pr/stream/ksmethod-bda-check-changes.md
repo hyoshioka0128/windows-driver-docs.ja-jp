@@ -1,9 +1,9 @@
 ---
-title: KSMETHOD\_BDA\_確認\_の変更
-description: クライアントを使用して、KSMETHOD\_BDA\_確認\_変更要求された変更の一覧は作業になっているかどうかを判別します。
+title: KSK メソッド\_BDA\_チェック\_変更
+description: クライアントは KSK メソッド\_BDA\_使用して\_の変更をチェックし、要求された変更の一覧が機能するかどうかを判断します。
 ms.assetid: 00a2d0ca-0ede-4ae5-ab2a-95d19143ea7c
 keywords:
-- KSMETHOD_BDA_CHECK_CHANGES ストリーミング メディア デバイス
+- KSMETHOD_BDA_CHECK_CHANGES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,35 +14,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbeba422263f0fb3b0ecd275e9505c2e24421538
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0579adf7ddda38b0294aa4f90a4e4d427f9794a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838863"
 ---
-# <a name="ksmethodbdacheckchanges"></a>KSMETHOD\_BDA\_確認\_の変更
+# <a name="ksmethod_bda_check_changes"></a>KSK メソッド\_BDA\_チェック\_変更
 
 
-クライアントを使用して、KSMETHOD\_BDA\_確認\_変更要求された変更の一覧は作業になっているかどうかを判別します。
+クライアントは KSK メソッド\_BDA\_使用して\_の変更をチェックし、要求された変更の一覧が機能するかどうかを判断します。
 
 ## <span id="ddk_ksmethod_bda_check_changes_ks"></span><span id="DDK_KSMETHOD_BDA_CHECK_CHANGES_KS"></span>
 
 
-### <a name="span-idspecifyingthismethodspanspan-idspecifyingthismethodspanspan-idspecifyingthismethodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>この方法を指定します。
+### <a name="span-idspecifying_this_methodspanspan-idspecifying_this_methodspanspan-idspecifying_this_methodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>このメソッドの指定
 
-KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
+**フラグ**メンバーが ksk メソッドに設定されている ksk メソッド\_型\_NONE。
 
-### <a name="span-idmethoddataspanspan-idmethoddataspanspan-idmethoddataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドのデータ
+### <a name="span-idmethod_dataspanspan-idmethod_dataspanspan-idmethod_dataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドデータ
 
 なし
 
 <a name="remarks"></a>注釈
 -------
 
-変更の一覧をコミットする前に、ネットワーク プロバイダーを KSMETHOD\_BDA\_確認\_要求された変更が作業になっているかどうかを判別要求を変更します。 ミニドライバーは、リソースが使用できることを保証するために、この要求が行われたときにリソースを確保することができます。
+変更の一覧をコミットする前に、ネットワークプロバイダーによって KSK メソッド\_BDA\_チェックされ、要求された変更が機能するかどうかを判断するための\_変更要求が作成されます。 ミニドライバーは、リソースが使用可能であることを保証するために、この要求が行われたときにリソースを予約することがあります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,7 +53,7 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -61,7 +61,7 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaCheckChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacheckchanges)
+[**BdaCheckChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacheckchanges)
 
 [**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 

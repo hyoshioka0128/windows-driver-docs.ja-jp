@@ -3,19 +3,19 @@ title: プリフェッチ オフセット
 description: プリフェッチ オフセット
 ms.assetid: 92a0163f-29b1-4e15-88ab-67e1097d015e
 keywords:
-- ハードウェア アクセラレータ WDK DirectSound、プリフェッチ オフセット
-- オフセットの WDK オーディオをプリフェッチします。
-- 書き込みカーソル オフセット WDK オーディオ
-- カーソル オフセット WDK オーディオを再生します。
-- オフセットの WDK オーディオ
+- ハードウェア高速化 WDK DirectSound、プリフェッチオフセット
+- プリフェッチオフセット WDK オーディオ
+- 書き込みカーソルオフセット WDK オーディオ
+- カーソルオフセット WDK オーディオを再生する
+- WDK オーディオをオフセットする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9271059269d2a1b476e16b4498eb23303fe8311
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d34d23a8348617dc93fdcfef6e8a39253eac6614
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362538"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830227"
 ---
 # <a name="prefetch-offsets"></a>プリフェッチ オフセット
 
@@ -23,27 +23,27 @@ ms.locfileid: "67362538"
 ## <span id="prefetch_offsets"></span><span id="PREFETCH_OFFSETS"></span>
 
 
-WavePci のミニポート ドライバーは呼び出し、 [ **IPreFetchOffset::SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)ハードウェア アクセラレータによる DirectSound のプリフェッチのオフセットを指定するメソッドの出力ストリーム。 このオフセットには、書き込みカーソルを分離するオーディオ デバイスのハードウェアのバッファーでプレイ カーソルからのデータのバイト数です。 書き込みカーソルでは、先 DirectSound アプリケーションは安全に次のサウンドのサンプルを書き込むバッファーの位置を指定します。 再生のカーソルでは、オーディオ デバイスが現在再生されるサウンドのサンプルのバッファーの位置を指定します。
+WavePci ミニポートドライバーは、 [**Iprefetchoffset:: setprefetchoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)メソッドを呼び出して、ハードウェアアクセラレータによる DirectSound 出力ストリームのプリフェッチオフセットを指定します。 このオフセットは、オーディオデバイスのハードウェアバッファー内の再生カーソルから書き込みカーソルを分離するデータのバイト数です。 書き込みカーソルは、DirectSound アプリケーションが次のサウンドサンプルを安全に書き込むことができるバッファー位置を指定します。 Play カーソルは、オーディオデバイスによって現在再生されているサウンドサンプルのバッファー位置を指定します。
 
-DirectSound クエリ、WavePci、プレイの現在の位置のドライバーのポートし、送信することによって書き込みカーソルを[ **KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)プロパティ要求。 この要求に応答して、ポート ドライバーを取得、現在の再生位置、ミニポート ドライバーから呼び出すことによって[ **IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)します。 かどうかによって異なりますポート ドライバーが、書き込み位置を決定する方法[ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)が呼び出されました。
+DirectSound は、 [**Ksk プロパティ\_AUDIO\_POSITION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)プロパティ要求を送信することにより、再生および書き込みカーソルの現在の位置を WavePci port ドライバーに照会します。 この要求に応答して、ポートドライバーは[**IMiniportWavePciStream:: GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getposition)を呼び出すことによって、ミニポートドライバーから現在の再生位置を取得します。 ポートドライバーが書き込み位置を決定する方法は、 [**Setprefetchoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)が呼び出されたかどうかによって異なります。
 
-既定では、ポート ドライバーは、ミニポート ドライバーによって要求された最後のマッピングで書き込みカーソルを移動します。 呼び出すごとに[ **IPortWavePciStream::GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)既定のプリフェッチのオフセットを大ききます。 WavePci ミニポート ドライバーでは、多数のマッピングを取得、既定のオフセットが非常に大きくなることができます。
+既定では、ポートドライバーは、ミニポートドライバーによって要求された最後のマッピングに書き込みカーソルを位置付けます。 [**Iportwavepcistream:: GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)を呼び出すたびに、既定のプリフェッチオフセットが大きくなります。 WavePci ミニポートドライバーが大量のマッピングを取得すると、既定のオフセットが非常に大きくなる可能性があります。
 
-呼び出す[ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)既定値よりも優先されます。 この呼び出しでは、次のポートのドライバーは、(を考慮して、周回、DirectSound のバッファーの末尾) の再生位置に指定されたプリフェッチ オフセットを追加することで、書き込み位置を計算します。
+[**Setprefetchoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)を呼び出すと、既定値がオーバーライドされます。 この呼び出しの後、ポートドライバーは、指定されたプリフェッチオフセットを再生位置に追加することによって書き込み位置を計算します (DirectSound バッファーの最後にあるラップアラウンドを考慮します)。
 
-ミニポート ドライバーは理由はいくつかの多数のマッピングを割り当てる可能性があります。 システム プロセッサのオーディオの操作のオーバーヘッドを軽減する 1 つです。 詳細マッピングは、ドライバーが少ない割り込み継続的にデータを指定するオーディオ デバイスを保持する必要があります。 別の理由は、複数のマッピングが減少が発生する可能性を割り当てるオーディオの再生が低下故障短期間のシステムの動作が不適切なデバイス ドライバー分け合う場合。
+ミニポートドライバーでは、いくつかの理由により、多数のマッピングが割り当てられる場合があります。 1つは、システムプロセッサに対するオーディオ操作のオーバーヘッドを軽減することです。 多くのマッピングでは、オーディオデバイスを継続的にデータと共に提供するために、ドライバーの割り込み回数が少なくて済みます。 もう1つの理由は、複数のマッピングを割り当てることによって、デバイスドライバーが正しく動作しないと、システムが短時間実行される場合に、オーディオ再生が悪影響を受ける可能性が低下することです。
 
-問題の 1 つ大きいプリフェッチ オフセットは、DirectSound アプリケーションによってできますなった、プレイの相対位置について混乱して書き込みカーソル。 Windows 95/98 では、オーディオ Vxd が比較的小さいプリフェッチのオフセットを維持し、オフセットが期待されるよりも大きい場合、これらのオペレーティング システム用に記述された DirectSound アプリケーションが正しく動作しない可能性があります。
+プリフェッチオフセットが大きい場合の問題の1つは、一部の DirectSound アプリケーションが再生カーソルと書き込みカーソルの相対的な位置を混同する可能性があることです。 Windows 95/98 では、オーディオ Vxd は比較的小さいプリフェッチオフセットを維持します。これらのオペレーティングシステム用に作成された DirectSound アプリケーションは、オフセットが予想よりも大きい場合に正しく動作しない可能性があります。
 
-たとえば、アプリケーションに分割 DirectSound バッファー上の半分と下半分と、"ping pong"し、アプリケーションとデバイスの 2 つの要素。 書き込みカーソルが最初、バッファーの上限や下限の半分に入ると、その半分のバッファーに、半分のバッファーの分のデータを書き込みます。 このスキームでは、バッファーに書き込まれていないが半分の他の半分でのプレイ カーソルの位置が常に前提としています。 この前提がプリフェッチ オフセットが、バッファー サイズの半分を超えた場合は、正しくないことに注意してください。 その場合は、書き込みカーソルは DirectSound バッファーの最後に達するし、バッファーの先頭に戻って、再生カーソルとして、バッファーの同じ半分のことができます。 アプリケーションでは、新しい書き込みカーソルの位置を半分のバッファーの分のデータを書き込みます、再生のカーソル位置を上書きして、まだ再生されていないデータは破棄を終了します。
+たとえば、アプリケーションで DirectSound バッファーを上半分に分割してから半分にし、その後、アプリケーションとデバイスの2つの部分を "ping を" します。 書き込みカーソルは、バッファーの上限または下限を最初に入力したときに、バッファーの半分に分のデータを書き込みます。 このスキームは、再生カーソルが常にバッファーの残りの半分に配置されていることを前提としています。つまり、書き込まれていない半分です。 プリフェッチオフセットがバッファーサイズの半分を超える場合、この想定は正しくないことに注意してください。 この場合、書き込みカーソルは DirectSound バッファーの最後に到達し、バッファーの先頭をラップすると、再生カーソルと同じ半分のバッファーに配置されます。 アプリケーションでは、バッファーの残りのデータを新しい書き込みカーソルの位置に書き込むときに、再生カーソルの位置を上書きし、まだ再生されていないデータを破棄します。
 
-WavePci ミニポート ドライバーが呼び出すだけで、障害モードを排除できますが、アプリケーション自体は、この種類の障害を確実に見下すことができます、 [ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)プリフェッチを設定するには値を小さくするオフセットします。
+アプリケーション自体はこの種の障害に対してなりになる可能性がありますが、WavePci ミニポートドライバーでは、 [**Setprefetchoffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)を呼び出してプリフェッチオフセットをより小さい値に設定するだけで、エラーモードを排除できます。
 
-値を小さくするプリフェッチ オフセットを設定すると、play カーソルに近い結果として得られる書き込みカーソルが移動します。 ハードウェアの FIFO サイズには、プリフェッチ オフセットを設定する必要があります。 一般的なプリフェッチ オフセットは、DMA エンジンのハードウェアの設計によって、約 64 のサンプルです。
+プリフェッチオフセットを小さい値に設定すると、結果として得られる書き込みカーソルが再生カーソルの近くに移動します。 プリフェッチオフセットは、ハードウェアの FIFO サイズに設定する必要があります。 一般的なプリフェッチオフセットは、DMA エンジンのハードウェア設計によって異なり、約64のサンプルです。
 
-特定の古い DirectSound アプリケーションと互換性を保つ、DirectSound は現在 10 ミリ秒でハードウェア アクセラレータを使用した pin の書き込みカーソルを埋めます。 埋め込みの量が、後で変わる可能性がありますに注意してください。
+特定の古い DirectSound アプリケーションとの互換性を維持するために、DirectSound は現在、ハードウェアアクセラレータのピンの書き込みカーソルを10ミリ秒間隔で埋め込みます。 埋め込みの量は今後変わる可能性があることに注意してください。
 
-書き込みカーソルとドライバー レベルでプレイ カーソルの管理に関する詳細については、次を参照してください。[オーディオ位置プロパティ](audio-position-property.md)します。
+ドライバーレベルでカーソルの書き込みと再生カーソルを管理する方法の詳細については、「 [Audio Position プロパティ](audio-position-property.md)」を参照してください。
 
  
 

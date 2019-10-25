@@ -1,9 +1,9 @@
 ---
-title: ndiskd.rcvqueue
-description: Ndiskd.rcvqueue コマンドでは、受信キューに関する情報が表示されます。
+title: ndiskd rcvqueue
+description: Ndiskd rcvqueue コマンドは、受信キューに関する情報を表示します。
 ms.assetid: 776A459F-A698-4BF6-8DAD-BEB15858AD7F
 keywords:
-- デバッグ ndiskd.rcvqueue Windows
+- ndiskd rcvqueue Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,49 +12,49 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7c4fee97298d7c4d7aadb929fec845d8a42cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fe45892232bac37a9ff651403f31093490c7d25
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362452"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837653"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
 
-**! Ndiskd.rcvqueue**コマンドは、受信キューに関する情報を表示します。
+**! Ndiskd rcvqueue**コマンドは、受信キューに関する情報を表示します。
 
 ```console
 !ndiskd.rcvqueue [-handle <x>] [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 必須。 受信キューのハンドル。
 
 <span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-フィルター*   
-キューにフィルターを示しています。
+キューのフィルターを表示します。
 
-<span id="_______-mem______"></span><span id="_______-MEM______"></span> *-mem*   
-表示は、メモリの割り当てを共有します。
+<span id="_______-mem______"></span><span id="_______-MEM______"></span> *-メモリ*   
+共有メモリの割り当てを表示します。
 
 <span id="_______-verbose______"></span><span id="_______-VERBOSE______"></span> *-verbose*   
-追加の詳細を示します。
+追加の詳細を表示します。
 
 <span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span> *-rcvqueueverbosity*   
-表示する詳細のレベルです。
+表示する詳細レベル。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-受信キュー ハンドルを取得するには、まず入力、 [ **! ndiskd.netadapter** ](-ndiskd-netadapter.md)コマンドとパラメーターのないネットワーク アダプター、ドライバー、およびそのハンドルの一覧を参照してください。 次の例では、検索、Microsoft の ISATAP アダプター \#2 の ffff8083e02ce1a0 NetAdapter ハンドル。
+受信キューハンドルを取得するには、まず、パラメーターを指定せずに[ **! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを入力して、ネットアダプター、ドライバー、およびそれらのハンドルの一覧を表示します。 次の例では、Microsoft ISATAP アダプター \#2 の NetAdapter ハンドル ffff8083e02ce1a0 を探します。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -63,7 +63,7 @@ Ndiskd.dll
     ffff8083e210fae0   ffff8083e0f501a0    Microsoft Kernel Debug Network Adapter
 ```
 
-次に、ネット アダプターのハンドルを使用して、 **! ndiskd.netadapter-処理 - rcvqueues**そのハンドルと共にこのネット アダプターの受信キューの一覧を取得するコマンド。 この例では、1 つしかない ffff8083e3a3d3a0 のハンドルを持つキュー (いずれかの既定) を受信します。
+次に、net アダプターのハンドルを使用して、 **! ndiskd. netadapter-handle-rcvqueues**コマンドを使用して、このネットアダプターの受信キューの一覧をハンドルと共に取得します。 この例では、ffff8083e3a3d3a0 のハンドルを持つ受信キューが1つだけ (既定値) 存在します。
 
 ```console
 3: kd> !ndiskd.netadapter ffff8083e02ce1a0 -rcvqueues
@@ -77,7 +77,7 @@ RECEIVE QUEUES
                        VM Name:            [Zero-length string]
 ```
 
-キュー ハンドルを使用して、受信キューの詳細を確認する、 **! ndiskd.rcvqueue**コマンド。
+キューハンドルを使用して、 **! ndiskd rcvqueue**コマンドで受信キューの詳細を調べることができるようになりました。
 
 ```console
 3: kd> !ndiskd.rcvqueue ffff8083e3a3d3a0
@@ -109,20 +109,20 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
 
  
 

@@ -1,22 +1,22 @@
 ---
 title: Direct3D 9 の必須機能
 ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
-description: Direct3D 9 へのアクセスをユーザー モード ドライバーの機能に必要な機能です。
+description: ユーザーモードドライバーが Direct3D 9 の機能にアクセスするために必要な機能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eef9102eef5761f7f71fa2bccb8c5385002dccc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9586d4678596660a15ca356eab52914056064f32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376614"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825923"
 ---
 # <a name="required-direct3d-9-capabilities"></a>Direct3D 9 の必須機能
 
 
-マイクロソフトの Direct3D のバージョン 9 の機能を完全にアクセスするアプリケーションの\_1, 9\_2、および 9\_3、ユーザー モード ドライバーは、特定のハードウェア機能を公開する必要があります。 これらの機能の観点で表される、 [ **D3DCAPS9** ](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)ユーザー モード ドライバーのによって返される構造体[ *GetCaps* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数。 機能のサポートを示すために、ドライバーがのこれらのメンバーを設定する必要があります**D3DCAPS9**の各フラグの値のすべてのビット演算 OR に。
+アプリケーションが Microsoft Direct3D バージョン 9\_1、9\_2、9\_3 の機能に完全にアクセスするには、ユーザーモードドライバーが特定のハードウェア機能を公開する必要があります。 これらの機能は、ユーザーモードドライバーの[*Getcaps*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数によって返される[**D3DCAPS9**](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)構造体の観点から表現されます。 機能のサポートを示すために、ドライバーは、 **D3DCAPS9**のこれらのメンバーを、それぞれのフラグ値のビットごとの or に設定する必要があります。
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanminimum-capabilities-for-direct3d-level-91"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D の最低限の機能レベルの 9\_1
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanminimum-capabilities-for-direct3d-level-9_1"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D レベル 9\_1 の最小機能
 
 
 <table>
@@ -26,8 +26,8 @@ ms.locfileid: "67376614"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
-<th align="left">フラグの値</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>メンバー</th>
+<th align="left">フラグ値</th>
 </tr>
 </thead>
 <tbody>
@@ -37,7 +37,7 @@ ms.locfileid: "67376614"
 <p>D3DCAPS2_FULLSCREENGAMMA</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>PresentationIntervals</strong></td>
+<td align="left"><strong>プレゼンテーション間隔</strong></td>
 <td align="left"><p>D3DPRESENT_INTERVAL_IMMEDIATE</p>
 <p>D3DPRESENT_INTERVAL_ONE</p></td>
 </tr>
@@ -60,8 +60,8 @@ ms.locfileid: "67376614"
 <p>D3DPTFILTERCAPS_MAGFPOINT</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>TextureCaps</strong>
-<p>(以下の「メモ」を参照)。</p></td>
+<td align="left"><strong>Texturecaps</strong>
+<p>(注を参照)。</p></td>
 <td align="left"><p>D3DPTEXTURECAPS_ALPHA</p>
 <p>D3DPTEXTURECAPS_CUBEMAP</p>
 <p>D3DPTEXTURECAPS_MIPMAP</p>
@@ -82,7 +82,7 @@ ms.locfileid: "67376614"
 <p>D3DTEXOPCAPS_SELECTARG2</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>SrcBlendCaps</strong></td>
+<td align="left"><strong>SrcBlendCaps キャップ</strong></td>
 <td align="left"><p>D3DPBLENDCAPS_INVDESTALPHA</p>
 <p>D3DPBLENDCAPS_INVDESTCOLOR</p>
 <p>D3DPBLENDCAPS_INVSRCALPHA</p>
@@ -91,7 +91,7 @@ ms.locfileid: "67376614"
 <p>D3DPBLENDCAPS_ZERO</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>DestBlendCaps</strong></td>
+<td align="left"><strong>DestBlendCaps キャップ</strong></td>
 <td align="left"><p>D3DPBLENDCAPS_ONE</p>
 <p>D3DPBLENDCAPS_INVSRCALPHA</p>
 <p>D3DPBLENDCAPS_INVSRCCOLOR</p>
@@ -141,7 +141,7 @@ ms.locfileid: "67376614"
 </tr>
 <tr class="even">
 <td align="left"><strong>PixelShaderVersion</strong></td>
-<td align="left"><p>D3DPS_VERSION(2,0)</p></td>
+<td align="left"><p>D3DPS_VERSION (2, 0)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxPrimitiveCount</strong></td>
@@ -157,7 +157,7 @@ ms.locfileid: "67376614"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>0、または 128 である必要がありますまたはそれ以上。</p></td>
+<td align="left"><p>0、128、またはそれ以上である必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxAnisotropy</strong></td>
@@ -165,23 +165,23 @@ ms.locfileid: "67376614"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxVertexW</strong></td>
-<td align="left"><p>0.f</p></td>
+<td align="left"><p>0. f</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**これらの要件も適用されます。
--   ドライバーを設定する必要がありますも、 **TextureCaps** D3DPTEXTURECAPS の値にメンバー\_NONPOW2CONDITIONAL と D3DPTEXTURECAPS\_POW2、またはどちらもします。
--   ドライバーは、イベントに応答するとき、 [ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery).**QueryType**は D3DDDIQUERYTYPE\_イベント、設定があります常に、イベントの**BOOL**値を**TRUE**の応答時にします。 参照してください[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_CREATEQUERY**します。
+**メモ** 次の要件も適用されます。
+-   また、ドライバーは、 **Texturecaps**メンバーを D3DPTEXTURECAPS\_NONPOW2CONDITIONAL および D3DPTEXTURECAPS\_POW2 の値、またはその両方に設定する必要があります。
+-   ドライバーがイベントに応答するときに、 [**D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)です。**QueryType**は、**イベントの応答**時に常に**TRUE**に設定されている必要があります。これは、イベントのが\_D3DDDIQUERYTYPE であるためです。 「 [*Createquery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_createquery**」を参照してください。
 
  
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel92spanspan-idminimumcapabilitiesfordirect3dlevel92spanspan-idminimumcapabilitiesfordirect3dlevel92spanminimum-capabilities-for-direct3d-level-92"></a><span id="Minimum_capabilities_for_Direct3D_level_9_2"></span><span id="minimum_capabilities_for_direct3d_level_9_2"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_2"></span>Direct3D の最低限の機能レベルの 9\_2
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_2spanspan-idminimum_capabilities_for_direct3d_level_9_2spanspan-idminimum_capabilities_for_direct3d_level_9_2spanminimum-capabilities-for-direct3d-level-9_2"></a><span id="Minimum_capabilities_for_Direct3D_level_9_2"></span><span id="minimum_capabilities_for_direct3d_level_9_2"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_2"></span>Direct3D レベル 9\_2 の最小機能
 
 
-Direct3D レベル 9 に記載されているこれらの機能をさらに設定する必要があります\_1。
+これらの機能は、Direct3D レベル 9\_1 に記載されているものに加えて設定する必要があります。
 
 <table>
 <colgroup>
@@ -190,8 +190,8 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
-<th align="left">フラグの値</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>メンバー</th>
+<th align="left">フラグ値</th>
 </tr>
 </thead>
 <tbody>
@@ -208,7 +208,7 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 <td align="left"><p>D3DPTADDRESSCAPS_MIRRORONCE</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>VolumeTextureAddressCaps</strong></td>
+<td align="left"><strong>Volumetexの Addresscaps</strong></td>
 <td align="left"><p>D3DPTADDRESSCAPS_MIRRORONCE</p></td>
 </tr>
 <tr class="odd">
@@ -221,11 +221,11 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>0、または 2048 にする必要がありますまたはそれ以上。</p></td>
+<td align="left"><p>0、2048、またはそれ以上である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>VertexShaderVersion</strong></td>
-<td align="left"><p>D3DVS_VERSION(2,0)</p></td>
+<td align="left"><p>D3DVS_VERSION (2, 0)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxAnisotropy</strong></td>
@@ -241,22 +241,22 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxVertexW</strong></td>
-<td align="left"><p>10000000000.f</p></td>
+<td align="left"><p>10000000000</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**この要件も適用されます。
--   ドライバーに応答するときに、 *z*-クエリのテスト場所[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery).**QueryType**は D3DDDIQUERYTYPE\_オクルー ジョン、設定があります常に、クエリの**UINT**値を 0 以外の値の応答時にします。 参照してください[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_CREATEQUERY**します。
+**メモ** この要件も適用されます。
+-   ドライバーが*z*検定クエリに応答する場合 ( [**D3DDDIARG\_createquery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery))。**QueryType**は D3DDDIQUERYTYPE\_オクルージョンで、応答時にクエリの**UINT**値を0以外の値に設定する必要があります。 「 [*Createquery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)と**D3DDDIARG\_createquery**」を参照してください。
 
  
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel93spanspan-idminimumcapabilitiesfordirect3dlevel93spanspan-idminimumcapabilitiesfordirect3dlevel93spanminimum-capabilities-for-direct3d-level-93"></a><span id="Minimum_capabilities_for_Direct3D_level_9_3"></span><span id="minimum_capabilities_for_direct3d_level_9_3"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_3"></span>Direct3D の最低限の機能レベルの 9\_3
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_3spanspan-idminimum_capabilities_for_direct3d_level_9_3spanspan-idminimum_capabilities_for_direct3d_level_9_3spanminimum-capabilities-for-direct3d-level-9_3"></a><span id="Minimum_capabilities_for_Direct3D_level_9_3"></span><span id="minimum_capabilities_for_direct3d_level_9_3"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_3"></span>Direct3D レベル 9\_3 の最小機能
 
 
-Direct3D レベル 9 に記載されているこれらの機能をさらに設定する必要があります\_1 から 9\_2。
+これらの機能は、Direct3D レベル 9\_1 および 9\_2 に記載されているものに加えて設定する必要があります。
 
 <table>
 <colgroup>
@@ -265,8 +265,8 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>メンバー</th>
-<th align="left">フラグの値</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>メンバー</th>
+<th align="left">フラグ値</th>
 </tr>
 </thead>
 <tbody>
@@ -293,38 +293,38 @@ Direct3D レベル 9 に記載されているこれらの機能をさらに設�
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>0、または、8192 を指定する必要がありますまたはそれ以上。</p></td>
+<td align="left"><p>0、8192、またはそれ以上である必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>NumSimultaneousRTs</strong></td>
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>PS20Caps</strong>-&gt;<strong>NumInstructionSlots</strong></td>
-<td align="left"><p>512 (ピクセル シェーダーのバージョン 2 b)</p></td>
+<td align="left"><p>512 (ピクセルシェーダーバージョン 2b)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>PS20Caps</strong>-&gt;<strong>NumTemps</strong></td>
-<td align="left"><p>32 (ピクセル シェーダーのバージョン 2 b)</p></td>
+<td align="left"><strong>PS20Caps</strong>-&gt;<strong>numtemps</strong></td>
+<td align="left"><p>32 (ピクセルシェーダーバージョン 2b)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>VS20Caps</strong>-&gt;<strong>NumTemps</strong></td>
-<td align="left"><p>32 (頂点シェーダーのバージョン 2 a)</p></td>
+<td align="left"><strong>VS20Caps</strong>-&gt;<strong>numtemps</strong></td>
+<td align="left"><p>32 (頂点シェーダーバージョン 2a)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxVertexShaderConst</strong></td>
-<td align="left"><p>256 (頂点シェーダーのバージョン 2 a)</p></td>
+<td align="left"><p>256 (頂点シェーダーバージョン 2a)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>VertexShaderVersion</strong></td>
-<td align="left"><p>D3DVS_VERSION(3,0) (注を参照してください)。</p></td>
+<td align="left"><p>D3DVS_VERSION (3, 0) (注を参照してください。)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**、 **VertexShaderVersion** D3DVS @property\_VERSION(3,0) がインスタンス化のサポートが保証されます。 Direct3D 10Level 9 は、シェーダー モデル 3.0 を公開しません。
+**メモ** D3DVS\_VERSION (3, 0) の**VertexShaderVersion**値は、インスタンス化のサポートを保証します。 Direct3D 10Level 9 では、シェーダーモデル3.0 は公開されません。
 
  
 

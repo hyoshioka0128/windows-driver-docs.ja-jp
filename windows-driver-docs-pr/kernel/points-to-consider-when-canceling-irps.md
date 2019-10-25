@@ -3,18 +3,18 @@ title: IRP をキャンセルするときに考慮すべき点
 description: IRP をキャンセルするときに考慮すべき点
 ms.assetid: 16a47033-7147-43a2-a9f8-a215f7e90ff1
 keywords:
-- Irp、ガイドラインのキャンセル
-- キャンセル ルーチン、ガイドライン
-- Irp WDK のキャンセル可能なカーネル
-- 現在の状態で WDK Irp
+- Irp の取り消し、ガイドライン
+- キャンセルルーチン、ガイドライン
+- 取り消し可能 Irp WDK カーネル
+- 現在の状態 WDK Irp
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 916542aad7c197f5b060d24a558ce5a89bb55bc4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 204fede34d4eee53b48e570630e45659a6dcca00
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369716"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827667"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>IRP をキャンセルするときに考慮すべき点
 
@@ -22,67 +22,67 @@ ms.locfileid: "67369716"
 
 
 
-このセクションを実装するためのガイドラインをについて説明します、*キャンセル*ルーチンとキャンセル可能な Irp の処理します。 キャンセル可能な Irp の処理の詳細については、次を参照してください。、[キャンセル セーフ IRP のキューのフローの制御](https://go.microsoft.com/fwlink/p/?linkid=57844)します。
+ここでは、キャンセルルーチンを実装し、*キャンセル*可能な irp を処理するためのガイドラインについて説明します。 取り消し可能な Irp の処理の詳細については、「[キャンセルセーフ Irp キューの制御フロー](https://go.microsoft.com/fwlink/p/?linkid=57844)」を参照してください。
 
-### <a name="general-guidelines-for-all-cancel-routines"></a>すべてのキャンセル ルーチンの一般的なガイドライン
+### <a name="general-guidelines-for-all-cancel-routines"></a>すべてのキャンセルルーチンに関する一般的なガイドライン
 
-ドライバーを呼び出して、いつでもキャンセル スピン ロックを保持する I/O マネージャー*キャンセル*ルーチン。 その結果、すべて*キャンセル*ルーチンにする必要があります。
+I/o マネージャーは、ドライバーの*キャンセル*ルーチンを呼び出すたびに、キャンセルスピンロックを保持します。 そのため、すべての*キャンセル*ルーチンは次のことを行う必要があります。
 
--   呼び出す[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))前に、コントロールを返します。
+-   制御を返す前に[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))を呼び出してください。
 
--   呼び出さない[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))を呼び出す場合を除き、 **IoReleaseCancelSpinLock**最初。
+-   **IoReleaseCancelSpinLock**を最初に呼び出す場合を除き、 [**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))を呼び出しません。
 
--   相互に呼び出す**IoReleaseCancelSpinLock**に各呼び出しに対して**IoAcquireCancelSpinLock**します。
+-   **IoAcquireCancelSpinLock**に対して行われる各呼び出しに対して、 **IoReleaseCancelSpinLock**の相互呼び出しを作成します。
 
-毎回、*キャンセル*ルーチンの呼び出し**IoReleaseCancelSpinLock**、最新の呼び出しによって返される IRQL を渡す必要があります**IoAcquireCancelSpinLock**します。 I/O マネージャーによって取得されたスピン ロックを解放するときに (ときに保持されていると、*キャンセル*ルーチンが呼び出された)、*キャンセル*ルーチンに渡す必要があります**Irp-&gt;CancelIrql**.
+*キャンセル*ルーチンが**IoReleaseCancelSpinLock**を呼び出すたびに、最後の呼び出しによって返された IRQL を**IoAcquireCancelSpinLock**に渡す必要があります。 I/o マネージャーによって取得された (*キャンセル*ルーチンが呼び出されたときに保持されていた) スピンロックを解除する場合、*キャンセル*ルーチンは、 **Irp&gt;cancelirql**に渡す必要があります。
 
-ドライバーでは外部ルーチンを呼び出す必要がありますされません (など**IoCompleteRequest**)、デッドロックにつながるために、スピン ロックを保持しているときにします。
+デッドロックが発生する可能性があるため、スピンロックを保持したまま、ドライバーが外部ルーチン ( **IoCompleteRequest**など) を呼び出すことはできません。
 
-### <a href="" id="using-the-queue-defined-by-the-i-o-manager-"></a>I/O マネージャーによって定義されているキューを使用します。
+### <a href="" id="using-the-queue-defined-by-the-i-o-manager-"></a>I/o マネージャーによって定義されたキューを使用する
 
-ドライバーは Irp の独自の内部キューを管理しない限り、その*キャンセル*ルーチンは、次のいずれかの可能性がある着信 IRP で呼び出されます。
+ドライバーが Irp の内部キューを管理する場合を除き、*キャンセル*ルーチンは次のいずれかの受信 irp で呼び出されます。
 
--   **CurrentIrp**入力対象のデバイス オブジェクトに
+-   入力ターゲットデバイスオブジェクトの中**Entirp**
 
--   ターゲット デバイス オブジェクトに関連付けられているデバイスのキュー内のエントリ
+-   ターゲットデバイスオブジェクトに関連付けられているデバイスキュー内のエントリ
 
-ドライバーは Irp の独自の内部キューを管理しない限り、その*キャンセル*ルーチンを呼び出す必要があります[ **KeRemoveEntryDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremoveentrydevicequeue) IRP 内のエントリがあるかどうかをテストするは入力ターゲット デバイス オブジェクトに関連付けられているデバイスのキュー。 ドライバーの*キャンセル*ルーチン*できません*呼び出す**KeRemoveDeviceQueue**または**KeRemoveByKeyDeviceQueue**が仮定することはできませんできないためです特定の IRP では、デバイスのキュー内の任意の特定位置にあります。
+ドライバーが Irp の内部キューを管理する場合を除き、*キャンセル*ルーチンは、ターゲットデバイスオブジェクトに関連付けられたデバイスキュー内のエントリであるかどうかをテストするために、入力 IRP で[**Keremoveentrydevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremoveentrydevicequeue)を呼び出す必要があります。 ドライバーの*キャンセル*ルーチンは、指定された IRP がデバイスキュー内の特定の位置にあることを想定できないため、 **keremovedevicequeue**または**keremovebykeydevicequeue**を呼び出す*ことができません*。
 
 ### <a name="current-state-of-the-input-irp"></a>入力 IRP の現在の状態
 
-場合、*キャンセル*ルーチンを呼び出す、ドライバーが既に開始された I/O IRP の処理と、要求が完了する、すぐに、*キャンセル*ルーチンは、システムのキャンセル スピン ロックを解放する必要がありますとコントロールを返します。
+ドライバーが既に i/o 処理を開始している IRP で*キャンセル*ルーチンが呼び出され、要求が間もなく完了する場合、*キャンセル*ルーチンはシステムのキャンセルスピンロックを解除し、制御を戻します。
 
-入力 IRP の現在の状態が、保留中の場合、*キャンセル*ルーチンは、次を実行する必要があります。
+入力 IRP の現在の状態が保留中の場合、*キャンセル*ルーチンは次の操作を行う必要があります。
 
-1.  状態が入力の IRP の I/O の状態のブロックを設定\_の中止された**状態**の場合は 0 と**情報**します。
+1.  **ステータスが [キャンセル**] で、**情報**が0の場合は、入力 IRP の i/o 状態ブロックを\_に設定します。
 
-2.  これが保持している、システムのキャンセル スピン ロックを含むスピン ロックを解除します。
+2.  システムのキャンセルスピンロックを含め、保持しているすべてのスピンロックを解除します。
 
-3.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)特定の IRP でします。
+3.  指定された IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。
 
-### <a name="holding-irps-in-a-cancelable-state"></a>Irp を取り消しできる状態で保持します。
+### <a name="holding-irps-in-a-cancelable-state"></a>Irp をキャンセル可能な状態に保持する
 
-キャンセル可能な状態では IRP を保持するドライバーのルーチンを呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)呼び出す必要がありますと[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)に場合は、そのエントリ ポイントの設定、*キャンセル*IRP の日常的な。 のみそのドライバーのルーチンを呼び出すことの追加サポート ルーチンなど**IoStartPacket**、 **IoAllocateController**、または**ExInterlockedInsert.リスト**ルーチン。
+キャンセル可能な状態の IRP を保持するドライバールーチンは、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出す必要があります。また、irp 内の*キャンセル*ルーチンのエントリポイントを設定するには、 [**iosetcancelルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)を呼び出す必要があります。 その後は、そのドライバールーチンが**Iostartpacket**、 **IoAllocateController**、ExInterlockedInsert などの追加のサポートルーチンを呼び出すことができます。 **リスト**ルーチン。
 
-キャンセル可能な Irp を後で処理するドライバーのルーチンでは、IRP は、要求を満たすための操作を開始する前に既にキャンセルされているかどうかを確認する必要があります。 ルーチンを呼び出す必要があります**IoSetCancelRoutine**の場合は、そのエントリ ポイントをリセットする、*キャンセル*ルーチンを**NULL** IRP にします。 ルーチンは、I/O IRP の入力を処理を開始できます。
+その後、キャンセル可能な Irp を処理するすべてのドライバールーチンは、要求を満たすために操作を開始する前に、IRP が既にキャンセルされているかどうかを確認する必要があります。 ルーチンは、IRP 内の*Cancel*ルーチンのエントリポイントを**NULL**にリセットするために**iosetcancelroutine**を呼び出す必要があります。 そのルーチンが、入力 IRP の i/o 処理を開始できるようになります。
 
-ルーチンは、のエントリ ポイントをリセットする必要があります、*キャンセル*IRP 合格した場合、すぎる、Irp さらに処理するための日常的なその他のドライバーによってルーチンとそれらの Irp 保持されている取り消しできる状態にします。
+場合によっては、IRP 内の*キャンセル*ルーチンのエントリポイントもリセットする必要があります。これにより、他のドライバールーチンによってさらに処理するために irp が渡され、それらの irp がキャンセル可能な状態で保持される場合があります。
 
-キャンセル可能な状態では IRP を保持する任意の高度なドライバーをリセットする必要があります、*キャンセル*へのエントリ ポイント**NULL** IRP が使用してドライバーを次の下位に渡す前に**保留**.
+IRP をキャンセル可能な状態に保持する上位レベルのドライバーは、 **IoCallDriver**を使用して irp を次の下位のドライバーに渡す前に、その*取り消し*エントリポイントを**NULL**にリセットする必要があります。
 
-### <a name="canceling-an-irp"></a>IRP のキャンセル
+### <a name="canceling-an-irp"></a>IRP をキャンセルする
 
-高度なドライバーを呼び出すことができます[ **IoCancelIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp) IRP を割り当てられたを持ち、さらに下位レベルのドライバーで処理するため渡されるとします。 ただし、このようなドライバーがステータスの特定の IRP が完了することを想定することはできません\_下位のドライバーによって取り消されました。
+上位レベルのドライバーはいずれも、割り当てられて渡された IRP を使用して[**Iocancelirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)を呼び出し、下位レベルのドライバーによる処理をさらに進めることができます。 ただし、このようなドライバーでは、指定された IRP が、下位のドライバーによってキャンセルされた状態\_、完了したと見なすことはできません。
 
 ### <a name="synchronization"></a>同期
 
-ドライバーできます (またはその設計によって、必要があります)、Irp のキャンセル可能な状態を追跡するためにそのデバイスの拡張機能の追加の状態情報を維持します。 かどうか、この状態は、IRQL で実行されているドライバー ルーチンによって共有されます&lt;= ディスパッチ\_ドライバーに割り当てられた、初期化のスピン ロックでの共有データの保護レベル、します。
+ドライバーは、Irp の取り消し可能な状態を追跡するために、デバイス拡張機能に追加の状態情報を保持します (または、その設計によっては必要があります)。 この状態が、IRQL &lt;= ディスパッチ\_レベルで実行されているドライバールーチンによって共有されている場合は、ドライバーによって割り当てられた、初期化されたスピンロックを使用して共有データを保護する必要があります。
 
-ドライバーの買収を管理する必要があり、システムのリリースはスピン ロックし、スピン ロックを慎重にキャンセルします。 最短の間隔のシステム キャンセル スピン ロックを保持する必要があります。 キャンセル可能な IRP をアクセスする前にこのようなドライバーを必ずチェックの戻り値[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)を決定するかどうか、*キャンセル*ルーチンが既にには実行している (またはが実行しようとしています)。できるようにする必要がありますので場合、*キャンセル*ルーチンが IRP を完了します。
+ドライバーは、システムのキャンセルスピンロックとその独自のスピンロックの購入とリリースを慎重に管理する必要があります。 システムのキャンセルスピンロックは、可能な限り最短の間隔で保持する必要があります。 取り消し可能な IRP にアクセスする前に、このようなドライバーは常に[**Iosetcancelroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)の戻り値をチェックして、*キャンセル*ルーチンが既に実行されている (または実行しようとしている) かどうかを確認する必要があります。その場合は、*キャンセル*ルーチンで IRP を完了させる必要があります。
 
-これらの他のルーチンが ISR と共有状態へのアクセスを同期する必要がありますデバイス ドライバーがドライバーのさまざまなルーチンは、ISR と共有するキャンセル可能な Irp に関する状態情報を保持する場合 のみ、ドライバーによって提供される*SynchCritSection*ルーチンは、ISR マルチプロセッサの安全な方法で共有される状態情報にアクセスできます。
+デバイスドライバーが、さまざまなドライバールーチンが ISR と共有するキャンセル可能な Irp に関する状態情報を保持する場合、これらのルーチンは、ISR との共有状態へのアクセスを同期する必要があります。 マルチプロセッサセーフな方法で、ISR と共有されている状態情報にアクセスできるのは、ドライバーによって提供される*SynchCritSection*ルーチンだけです。
 
-詳細については、次を参照してください。[同期手法](synchronization-techniques.md)します。
+詳細については、「[同期の手法](synchronization-techniques.md)」を参照してください。
 
  
 

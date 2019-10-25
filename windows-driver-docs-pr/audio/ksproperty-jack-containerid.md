@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ジャック\_CONTAINERID
-description: KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハンドルを使用してアクセスされる pin-wise プロパティとして実装されます。
+title: KSK プロパティ\_ジャック\_CONTAINERID
+description: KSK プロパティ\_JACK\_CONTAINERID プロパティは、フィルターハンドルを使用してアクセスされるピン方向のプロパティとして実装されます。
 ms.assetid: 01A157B0-41EE-4713-B5D3-B9BF9C2B80CE
 keywords:
-- KSPROPERTY_JACK_CONTAINERID オーディオ デバイス
+- KSPROPERTY_JACK_CONTAINERID オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b741cc917ea2c737c27aa1f9163b012a2a067175
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 74037d3400203ef5e32178311a15fd33efdba61e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358772"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832747"
 ---
-# <a name="kspropertyjackcontainerid"></a>KSPROPERTY\_ジャック\_CONTAINERID
+# <a name="ksproperty_jack_containerid"></a>KSK プロパティ\_ジャック\_CONTAINERID
 
 
-KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハンドルを使用してアクセスされる pin-wise プロパティとして実装されます。
+KSK プロパティ\_JACK\_CONTAINERID プロパティは、フィルターハンドルを使用してアクセスされるピン方向のプロパティとして実装されます。
 
-このプロパティは、1 つまたは複数の物理ジャック、またはその他のワイヤード (有線) またはワイヤレス接続に関連付けられているブリッジ暗証番号 (pin) をサポートできます。
+このプロパティは、1つまたは複数の物理ジャック、または他のワイヤード (有線) またはワイヤレス接続に関連付けられている任意のブリッジピンでサポートできます。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -49,10 +49,10 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>(フィルターのハンドル) を使用してファクトリをピン留めします。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>Pin ファクトリ (フィルターハンドル経由)</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td align="left"><p><strong>GUID</strong></p></td>
 </tr>
 </tbody>
@@ -60,22 +60,22 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハ
 
  
 
-プロパティの値 (インスタンス データ) は、GUID です。
+プロパティ値 (インスタンスデータ) は GUID です。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_ジャック\_CONTAINERID プロパティ要求が物理ジャック、またはその他のワイヤード (有線) またはワイヤレス接続に関連付けられているデバイスのコンテナーの ID を持つ GUID を返します。
+KSK プロパティ\_JACK\_CONTAINERID プロパティ要求は、物理ジャック、またはその他のワイヤード (有線) またはワイヤレス接続に関連付けられているデバイスのコンテナー ID を持つ GUID を返します。
 
 <a name="remarks"></a>注釈
 -------
 
-オーディオ ドライバーは、次の条件に当てはまる場合にのみ、このプロパティをサポートする必要があります。
+オーディオドライバーは、次の条件に該当する場合にのみ、このプロパティをサポートする必要があります。
 
--   関連付けられているオーディオ デバイスのコンテナー ID は、オーディオ ドライバーが読み込まれる対象のデバイス ノードのコンテナーの ID と異なるです。
+-   関連付けられたオーディオデバイスのコンテナー ID が、オーディオドライバーが読み込まれるデバイスノードのコンテナー ID と異なります。
 
--   ドライバーは、他の手段で適切なコンテナー ID を取得できます。
+-   ドライバーは、他の方法で正しいコンテナー ID を取得できます。
 
-KSPROPERTY\_ジャック\_CONTAINERID プロパティは、オーディオのエンドポイントがプラスチックのオーディオのアダプターからのさまざまな部分にある場合に設定されることにのみ必要があります。 既定では、オーディオのエンドポイントは、親のコンテナーの ID を継承します。
+オーディオエンドポイントがオーディオアダプターの別のプラスチック部分にある場合にのみ、KSK プロパティ\_ジャック\_CONTAINERID プロパティに値を設定する必要があります。 既定では、オーディオエンドポイントは親のコンテナー ID を継承します。
 
 <a name="requirements"></a>要件
 ------------
@@ -101,12 +101,12 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、オーディオのエ
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**BTHHFP\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)
+[**BTHHFP\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONTAINERID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_containerid)
+[**IOCTL\_BTHHFP\_デバイス\_\_の CONTAINERID を取得する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_containerid)
 
  
 

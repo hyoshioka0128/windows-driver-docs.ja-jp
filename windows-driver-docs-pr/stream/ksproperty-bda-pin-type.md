@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_PIN\_型
-description: クライアントを使用して、KSPROPERTY\_BDA\_PIN\_暗証番号 (pin) の種類を示す値を取得する型。
+title: KSK プロパティ\_BDA\_PIN\_型
+description: クライアントは、KSK プロパティ\_BDA\_\_PIN の種類を指定する値を取得するために使用します。
 ms.assetid: 3d2a976b-67ff-4469-aa96-7aa8bd5f229e
 keywords:
-- KSPROPERTY_BDA_PIN_TYPE ストリーミング メディア デバイス
+- KSPROPERTY_BDA_PIN_TYPE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2a06f0bbd9dc88698a61242966e3263c29e8b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8b2db83db07dc62fc1db06d8a65e653852a8759
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368134"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827456"
 ---
-# <a name="kspropertybdapintype"></a>KSPROPERTY\_BDA\_PIN\_型
+# <a name="ksproperty_bda_pin_type"></a>KSK プロパティ\_BDA\_PIN\_型
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_PIN\_暗証番号 (pin) の種類を示す値を取得する型。
+クライアントは、KSK プロパティ\_BDA\_\_PIN の種類を指定する値を取得するために使用します。
 
 ## <span id="ddk_ksproperty_bda_pin_type_ks"></span><span id="DDK_KSPROPERTY_BDA_PIN_TYPE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67368134"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67368134"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>ULONG</p></td>
@@ -64,11 +64,11 @@ ms.locfileid: "67368134"
 <a name="remarks"></a>注釈
 -------
 
-返される値は、暗証番号 (pin) の種類を指定します。
+戻り値は、pin の種類を指定します。
 
-ネットワーク プロバイダーが KSMETHOD を使用してフィルターの暗証番号 (pin) を作成するときに\_BDA\_作成\_PIN\_ファクトリ、フィルターの BDA テンプレートのトポロジに含まれる暗証番号 (pin) の種類の一覧からの暗証番号 (pin) 型を指定します。 KSPROPERTY\_BDA\_PIN\_型は、このピンの型を返します。 BDA テンプレート トポロジでは、フィルターの各ピンの型は 1 回だけが実際のトポロジで複数回が発生することができます。 暗証番号 (pin) の型の値は、暗証番号 (pin) の型の 0 から始まる配列内の要素のインデックスに対応します。 このピンの型の配列は配列 KSPIN の\_記述子\_EX 構造体。
+ネットワークプロバイダーが KSK メソッドを使用してフィルターの pin を作成し\_BDA\_作成\_PIN\_ファクトリでは、フィルターの BDA テンプレートトポロジに含まれる pin の種類の一覧から pin の種類を指定します。 KSK プロパティ\_BDA\_PIN\_型は、この pin の種類を返します。 フィルターの BDA テンプレートトポロジでは、各ピンの種類は1回しか実行できませんが、実際のトポロジでは複数回発生する可能性があります。 ピンの種類の値は、ピンの種類の0から始まる配列内の要素のインデックスに対応します。 このピンの種類の配列は、KSPIN\_記述子\_EX 構造体の配列です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ ms.locfileid: "67368134"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,11 +87,11 @@ ms.locfileid: "67368134"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSMETHOD\_BDA\_作成\_PIN\_ファクトリ**](ksmethod-bda-create-pin-factory.md)
+[**KSK メソッド\_BDA\_作成\_PIN\_ファクトリ**](ksmethod-bda-create-pin-factory.md)
 
-[**KSPIN\_記述子\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
+[**KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

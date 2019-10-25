@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT
-description: KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設定します。 形式で、1 つと一致する必要がありますが、以前の KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT の Get 要求が返されます。
+title: KSK プロパティの\_VPCONFIG\_SETVIDEOFORMAT
+description: KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設定します。 この形式は、以前の KSK プロパティ\_の VPCONFIG\_GETVIDEOFORMAT Get 要求が返されたものと一致している必要があります。
 ms.assetid: f701ad32-ba85-4766-ac6b-11744af8fc0d
 keywords:
-- KSPROPERTY_VPCONFIG_SETVIDEOFORMAT ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_SETVIDEOFORMAT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 761d3142ea889dc39296f052dfd78002d71bb777
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6da877bb342aa25a3205af65ff645173481a863d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380604"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823622"
 ---
-# <a name="kspropertyvpconfigsetvideoformat"></a>KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT
+# <a name="ksproperty_vpconfig_setvideoformat"></a>KSK プロパティの\_VPCONFIG\_SETVIDEOFORMAT
 
 
-KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設定します。 形式で、1 つと一致する必要がありますが、以前の KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT**取得**返された要求。
+KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設定します。 この形式は、以前の KSK プロパティ\_の VPCONFIG\_GETVIDEOFORMAT **Get**要求が返されたものと一致している必要があります。
 
 ## <span id="ddk_ksproperty_vpconfig_setvideoformat_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_SETVIDEOFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)"><strong>DDPIXELFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)"><strong>DDピクセル形式</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、使用するビデオ形式を指定する DDPIXELFORMAT 構造です。
+プロパティ値 (操作データ) は、使用するビデオ形式を指定する、DDピクセル形式の構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT プロパティは、ビデオ形式を設�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)
+[**DDピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)
 
  
 

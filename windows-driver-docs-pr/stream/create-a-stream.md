@@ -3,17 +3,17 @@ title: ストリームの作成
 description: ストリームの作成
 ms.assetid: 9984275f-7ead-4df2-aa98-a3b4e5e85ae0
 keywords:
-- Avcstrm.sys フィルター ドライバー WDK のストリーミング、ストリームを作成します。
-- 作成 C/WDK AV ストリーミングをストリーミングします。
-- C/WDK AV ストリーミングのコンテキスト
+- Avcstrm .sys ストリーミングフィルタードライバー WDK、ストリームの作成
+- stream 作成 WDK AV/C streaming
+- コンテキスト WDK AV/C ストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88034e603e687d16be8ddf832c2272e7968c8b44
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3191e828bda2a6a26a0ea11c1e590d586ae4058
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378392"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827126"
 ---
 # <a name="create-a-stream"></a>ストリームの作成
 
@@ -21,9 +21,9 @@ ms.locfileid: "67378392"
 
 
 
-AV/C ストリーミング フィルター ドライバーで、前にデータのストリーム コンテキストを作成する必要があります*Avcstrm.sys*サービスを提供することができます。 コンテキストは、要求されたデータ形式、データ ストリームの状態、およびストリームの拡張機能のようなプロパティを含む非透過構造体を指します。 データ形式の構造とデータ フローの方向は、その入力パラメーターが。 ストリームを正常に作成できる場合は、ストリーム コンテキストを返します。 このコンテキストでは、サブユニット ドライバーによってキャッシュされ、AV/C ストリーミングの後続の要求のために使用します。
+データストリームコンテキストは、AV/C ストリーミングフィルタードライバー ( *Avcstrm .sys*) がサービスを提供する前に作成する必要があります。 コンテキストは、ストリーム拡張と同様に、要求されたデータ形式、データストリームの状態、およびプロパティを含む不透明な構造体を指します。 データ形式の構造とデータフローの方向は、入力パラメーターです。 ストリームを正常に作成できる場合は、ストリームコンテキストが返されます。 このコンテキストは、サブユニットドライバーによってキャッシュされ、後続の AV/C ストリーミング要求に使用されます。
 
-これは、同期操作です。 操作は、最初のストリームを開くストリーム要求の構造を作成します。 ユーザー定義 IRP 同期ルーチンを呼び出す特定のデータ フローの方向とで定義されているデータ形式に基づいているデータ ストリームを作成する下位のドライバーを呼び出して[ **AVCSTRM\_形式\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info). 次のコード サンプルでは、データのストリーム コンテキストを開く方法を示します。
+これは同期操作です。 操作は、ストリームを開くためのストリーム要求構造を最初に作成します。 次に、ユーザー定義の IRP 同期ルーチンを呼び出して下位ドライバーを呼び出し、 [**Avcstrm\_形式\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avcstrm_format_info)で定義されているデータフローの方向とデータ形式に基づいてデータストリームを作成します。 次のコードサンプルは、データストリームコンテキストを開く方法を示しています。
 
 ```cpp
 #include <avcstrm.h>

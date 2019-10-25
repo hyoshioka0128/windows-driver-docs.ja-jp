@@ -3,34 +3,34 @@ title: トランスポート アドレスへのソケットのバインド
 description: トランスポート アドレスへのソケットのバインド
 ms.assetid: b76bb601-536f-43de-b91c-932f4f08c274
 keywords:
-- Winsock カーネル WDK がネットワーク、ローカル トランスポート アドレス
-- ネットワーク、WSK WDK ローカル トランスポート アドレス
-- ソケット WDK Winsock Kernel のバインド
-- ローカル トランスポート アドレス バインド WDK Winsock カーネル
-- トランスポート アドレス WDK Winsock カーネル
+- Winsock カーネル WDK ネットワーク、ローカルトランスポートアドレス
+- WSK WDK ネットワーク、ローカルトランスポートアドレス
+- バインドソケット WDK Winsock カーネル
+- ローカルトランスポートアドレスバインド WDK Winsock カーネル
+- トランスポートアドレス WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8426226782a66bb545bac440823549745e952e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f29c8b98e24064fa3e3aad3f8364e62ac33947db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354635"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838221"
 ---
 # <a name="binding-a-socket-to-a-transport-address"></a>トランスポート アドレスへのソケットのバインド
 
 
-Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、ローカル トランスポート アドレスにソケットをバインドできます。 着信接続を受け入れることができます、前に、ローカル トランスポート アドレスをリッスンしているソケットをバインドする必要があります。 データグラム ソケットは、送信、データグラムを受信する前に、ローカル トランスポート アドレスにバインドする必要があります。 接続指向のソケットは、リモートのトランスポート アドレスに接続する前に、ローカル トランスポート アドレスにバインドする必要があります。
+Winsock カーネル (WSK) アプリケーションでソケットが正常に作成された後、そのソケットをローカルトランスポートアドレスにバインドできます。 リッスンソケットは、受信接続を受け入れる前に、ローカルトランスポートアドレスにバインドされている必要があります。 データグラムを送信または受信するには、データグラムソケットがローカルトランスポートアドレスにバインドされている必要があります。 リモートトランスポートアドレスに接続するには、接続指向のソケットがローカルトランスポートアドレスにバインドされている必要があります。
 
-**注**  ネットワーク データを送受信する基本的なソケットがサポートされません。 そのため、WSK アプリケーションでは、ローカル トランスポート アドレスに基本的なソケットをバインドすることはできません。
+**注**  基本ソケットは、ネットワークデータの送受信をサポートしていません。 そのため、WSK アプリケーションでは、基本ソケットをローカルトランスポートアドレスにバインドすることはできません。
 
  
 
-WSK アプリケーションでは、ローカル トランスポート アドレスにソケットをバインドを呼び出して、 [ **WskBind** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_bind)関数。 **WskBind**関数で指し示されます、 **WskBind**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) によって返された、ソケットの作成時に WSK サブシステムです。
+WSK アプリケーションは、 [**Wskbind**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_bind)関数を呼び出して、ソケットをローカルトランスポートアドレスにバインドします。 **Wskbind**関数は、ソケットのプロバイダーディスパッチ構造体の**wskbind**メンバーによってポイントされます。 ソケットの作成時に WSK サブシステムによって返されたソケットオブジェクト構造 ( [**wsk\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket)) の**ディスパッチ**メンバーによって、ソケットのプロバイダーディスパッチ構造体がポイントされます。
 
-ソケットは、ローカルのワイルドカード アドレスにバインドできます。 ローカルのワイルドカード アドレスにバインドされたソケットの動作に関する詳細については、次を参照してください。 **WskBind**します。
+ソケットは、ローカルのワイルドカードアドレスにバインドできます。 ローカルのワイルドカードアドレスにバインドされているソケットの動作の詳細については、「 **Wskbind**」を参照してください。
 
-次のコード例では、ローカル トランスポート アドレスを WSK アプリケーションがリスニング ソケットをバインドする方法を示します。
+次のコード例は、WSK アプリケーションがリッスンソケットをローカルトランスポートアドレスにバインドする方法を示しています。
 
 ```C++
 // Prototype for the bind IoCompletion routine
@@ -131,7 +131,7 @@ NTSTATUS
 }
 ```
 
-接続指向のソケット WSK アプリケーションを呼び出すことができます、 [ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成し、バインドして、1 つの関数の呼び出しでソケットを接続します。
+接続指向のソケットの場合、WSK アプリケーションは[**Wsksocketconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)関数を呼び出して、1つの関数呼び出しでソケットを作成、バインド、および接続することができます。
 
  
 

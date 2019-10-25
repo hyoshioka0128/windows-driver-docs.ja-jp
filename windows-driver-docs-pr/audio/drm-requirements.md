@@ -3,21 +3,21 @@ title: DRM の要件
 description: DRM の要件
 ms.assetid: 312b943b-f280-4b29-a5d4-e78c7088bb22
 keywords:
-- WHQL テスト WDK オーディオ
-- デジタル権利管理の WDK オーディオ、コンプライアンスのテスト
-- DRM WDK オーディオ、コンプライアンスのテスト
-- コンプライアンス テスト WDK オーディオ
-- DRM コンプライアンス WDK オーディオのテスト
-- Windows XP ロゴの WDK オーディオのテスト用に設計されました。
-- ロゴ テスト WDK オーディオ
+- WHQL テスト (WDK オーディオ)
+- デジタル Rights Management WDK オーディオ、コンプライアンステスト
+- DRM WDK オーディオ, コンプライアンステスト
+- WDK オーディオの準拠テスト
+- DRM 準拠の WDK オーディオのテスト
+- Windows XP ロゴテスト用 WDK オーディオ用に設計
+- ロゴテスト WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43fd2c78006662f49e1b40abae894afbbf72dade
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6c68740d885ba8d751d5e5d70ca891ee46a069ed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833430"
 ---
 # <a name="drm-requirements"></a>DRM の要件
 
@@ -25,25 +25,25 @@ ms.locfileid: "67360088"
 ## <span id="drm_requirements"></span><span id="DRM_REQUIREMENTS"></span>
 
 
-このセクションでは、Microsoft Windows Hardware Quality Lab (WHQL) によって渡す DRM 対応がテストされたオーディオのミニポート ドライバーが満たす必要のある要件を表示します。 WaveCyclic と WavePci を具体的にはこれらの要件が適用[オーディオ ミニポート ドライバー](audio-miniport-drivers.md)ポートのクラス ライブラリ (Portcls.sys) WavePci と WaveCyclic ポート ドライバーに対応するハードウェアに固有であります。 DRM 対応のテストでは、USB ドライバーを現在使用できません。
+このセクションでは、Microsoft Windows Hardware Quality Lab (WHQL) による DRM 準拠テストに合格するために、オーディオミニポートドライバーが満たす必要のある要件を示します。 これらの要件は、特に、WaveCyclic および WavePci[オーディオミニポートドライバー](audio-miniport-drivers.md)に適用されます。これは、ポートクラスライブラリ (Portcls) の WavePci および WaveCyclic ポートドライバーに対応するハードウェア固有のものです。 DRM 準拠テストは、現在 USB ドライバーでは使用できません。
 
-Windows Me と Windows xp 以降で、信頼済みのオーディオ ドライバーのみが DRM で保護されたコンテンツを再生できます。 Windows では、ドライバーの .cat (カタログ) ファイルに格納されている DRM に固有のデジタル署名を使用して信頼されたドライバーを識別します。 Microsoft では、WHQL によって管理されるハードウェアの互換性テストの一部として DRM 準拠テストに合格するドライバーに対してのみ DRM 署名を発行します。
+Windows Me および Windows XP 以降では、信頼できるオーディオドライバーのみが DRM で保護されたコンテンツを再生できます。 Windows は、ドライバーの .cat (カタログ) ファイルに保存されている DRM 固有のデジタル署名を使って、信頼されたドライバーを識別します。 Microsoft は、WHQL によって管理されるハードウェア互換性テストの一部として DRM 準拠テストに合格するドライバーに対してのみ DRM 署名を発行します。
 
-Windows Me ドライバー、DRM 準拠テストは省略可能であり、ハードウェア ベンダーの要求でのみ実行されます。 DRM 署名は、Windows ロゴの署名に加え、およびから分離されています。 渡しますが、Windows ロゴ テスト、DRM 準拠テストではないドライバーもコンテンツを再生できます DRM セキュリティで保護されていないに注意してください。
+Windows Me ドライバーの場合、DRM 準拠テストはオプションであり、ハードウェアベンダーの要求でのみ実行されます。 DRM 署名は、Windows ロゴ署名に加えて、とは別のものです。 Windows ロゴテストに合格しても DRM 準拠テストではないドライバーは、DRM セキュリティで保護されていないコンテンツを再生できることに注意してください。
 
-Windows XP 以降、DRM 準拠テストが WHQL テストに必要です。 ドライバーは、"Windows XP 用に設計されています"のロゴの対象にするには、DRM 準拠テストを渡す必要があります。
+ただし、Windows XP 以降では、DRM 準拠テストは、WHQL テストの必須部分です。 ドライバーは、"Windows XP 用に設計" ロゴを修飾するために、DRM 準拠テストに合格する必要があります。
 
-DRM 対応のテストには、以下を行う場合は、信頼されたオーディオ ドライバーが必要です。
+DRM 準拠テストでは、次の操作を行うために、信頼できるオーディオドライバーが必要です。
 
--   オーディオのミニポート ドライバーを実装する必要があります、 [IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)インターフェイスの IID のクエリを実行している場合、IDrmAudioStream 型のオブジェクトを返す必要があります、そのストリーム オブジェクト\_IDrmAudioStream します。
+-   オーディオミニポートドライバーは、 [IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/drmk/nn-drmk-idrmaudiostream)インターフェイスをそのストリームオブジェクトに実装する必要があります。この場合、IID\_IDrmAudioStream に対してクエリを実行する場合は、IDrmAudioStream 型のオブジェクトを返す必要があります。
 
--   コピー防止が要求された場合 ([**DRMRIGHTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights).**CopyProtect** = **TRUE**)、オーディオ ドライバーには、現在の再生中のストリームをキャプチャする機能が無効にする必要があります。 これは、ドライバーがハード ディスク、EEPROM、メモリ カード、およびメモリ スティックが含まれていますが、不揮発性ストレージの形態に保護されていないデジタル コンテンツを保存する必要があることを意味します。 また、ドライバーは出力の D のコンバーターのマルチプレクサーのキャプチャを無効にし、できないデジタル コンテンツのループバックする必要があります。
+-   コピー防止が要求された場合 ([**Drmrights**](https://docs.microsoft.com/windows-hardware/drivers/ddi/drmk/ns-drmk-tagdrmrights))。**CopyProtect** = **TRUE**)、オーディオドライバーは、現在再生されているストリームをキャプチャする機能を無効にする必要があります。 つまり、ドライバーは、保護されていないデジタルコンテンツを、ハードディスク、EEPROM、メモリカード、メモリスティックを含む任意の形式の不揮発性ストレージに保存することはできません。 また、ドライバーは出力 D/A コンバーターで capture マルチプレクサーを無効にし、それ以外の場合はデジタルコンテンツのループバックを防止する必要があります。
 
--   オーディオ ドライバーは、デバイスのデジタル オーディオ出力を無効にするように求められます (DRMRIGHTS **。DigitalOutputDisable** = **TRUE**)、標準の相互接続スキームを通じて標準的なインターフェイス経由でコンテンツを転送することができるすべてのデジタル オーディオ出力が無効にする必要があります。 デジタル出力は--を含めるし、--S/PDIF、IEEE 1394、パラレル、シリアル、モデムに厳密に限定されませんが、ネットワーク ポート。 (この要件は現在当てはまりません usb。)
+-   オーディオドライバーからデバイスのデジタルオーディオ出力を無効にするように求められた場合 (DRMRIGHTS)。**DigitalOutputDisable** = **TRUE**) では、標準の相互接続スキームを使用して標準インターフェイス経由でコンテンツを送信できるすべてのデジタルオーディオ出力を無効にする必要があります。 デジタル出力は、--S/PDIF、IEEE 1394、パラレル、シリアル、モデム、およびネットワークポートに厳密に限定されていません。 (現時点では、この要件は USB には適用されません)。
 
--   セキュリティで保護されたコンテンツを処理するときに、オーディオ ドライバーがそのスタックに、信頼されていないドライバーを関連付ける必要があることはありません。 つまり、オーディオ ドライバーは、DRM 署名を含めることもその他のコンポーネントのみに依存する必要があります。 ドライバーでは、DRM 署名がない任意のコンポーネントへのオーディオ データの転送を容易にする必要があることはありません。 具体的には、ドライバーは、デジタル コンテンツを別のコンポーネントに合格した場合、ドライバーする必要があります、DRM Api を使用してカーネルの通知、 [DRMK システム ドライバー](kernel-mode-wdm-audio-components.md#drmk_system_driver)この事実です。
+-   セキュリティで保護されたコンテンツを処理する場合、オーディオドライバーは、信頼されていないドライバーをそのスタックにアタッチすることはできません。 つまり、オーディオドライバーは、DRM 署名も含まれる他のコンポーネントのみに依存する必要があります。 このドライバーでは、DRM 署名のないコンポーネントへのオーディオデータの転送を容易にすることはできません。 特に、ドライバーがデジタルコンテンツを別のコンポーネントに渡す場合、ドライバーはカーネルの DRM Api を使用して、この事実を[Drmk システムドライバー](kernel-mode-wdm-audio-components.md#drmk_system_driver)に通知する必要があります。
 
-DRM 準拠テストを渡すだけでなく、ユーザーの操作モードを選択してそのララェホを許可しない必要があります、オーディオ デバイスとドライバーまたは subverts カーネルの DRM コンポーネント。 具体的には、レジストリ設定、ユーザー コントロール パネル、または DRM 関数を無効にするには、他の手段、ドライバーを提供しない必要があります。
+DRM 準拠テストを渡すだけでなく、オーディオデバイスとドライバーでは、カーネル内の DRM コンポーネントを無効にしたり、管理したりする操作のモードをユーザーが選択できないようにする必要があります。 具体的には、ドライバーは、レジストリ設定、ユーザーコントロールパネル、または DRM 機能を無効にするその他の手段を提供してはなりません。
 
  
 

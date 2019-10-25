@@ -3,31 +3,31 @@ title: 双方向通信スキーマ クエリを作成する
 description: 双方向通信スキーマ クエリを作成する
 ms.assetid: b18fc69a-652c-4e36-83b3-fc4715b03c0f
 keywords:
-- 双方向通信スキーマ WDK の印刷
-- 双方向通信スキーマ WDK の印刷
+- 双方向通信スキーマ WDK 印刷
+- bidi 通信スキーマ WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c80df6ad72475dd04ba62c9a68ba729bde778309
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d51b0188dbdf1e064d831e006c1942f909589a96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374664"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831821"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>双方向通信スキーマ クエリを作成する
 
 
-双方向通信のスキーマのクエリを構築する際に次の 3 つの点があります。
+Bidi 通信スキーマクエリを構築する場合、次の3つの点に注意してください。
 
-1.  クエリが始まり、`Printer`プロパティで、前に円記号が必要 (`\`)。
+1.  クエリは `Printer` プロパティから始める必要があります。このプロパティの前には円記号 (`\`) を付ける必要があります。
 
-2.  クエリ内の任意のプロパティは、ピリオド文字で区切る必要があります (`.`)。
+2.  クエリ内のすべてのプロパティは、ピリオド文字 (`.`) で区切る必要があります。
 
-3.  値を親プロパティから、コロンで区切る必要があります、クエリには、値が含まれている場合 (`:`)。
+3.  クエリに値が含まれている場合は、その親プロパティから値をコロン (`:`) で区切る必要があります。
 
-### <a href="" id="example-request-and-response"></a> 要求と応答例
+### <a href="" id="example-request-and-response"></a>要求と応答の例
 
-必要とされる XML クエリと応答の形式の例を次に、[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)、IBidiSpl2 COM インターフェイスで具体的には。 最初の例は、2 つのスキーマを含む要求です。 最初のスキーマは、両面印刷ユニットがインストールされているかどうかを判断します。 2 つ目のスキーマは、ハード ディスクに関連付けられている値を決定します。
+次に、 [bidi 通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)で必要とされる XML クエリと応答形式の例と、特に IBidiSpl2 COM インターフェイスの例を示します。 最初の例は、2つのスキーマを含む要求です。 最初のスキーマでは、双方向ユニットがインストールされているかどうかを判断します。 2番目のスキーマは、ハードディスクに関連付けられている値を決定します。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -36,7 +36,7 @@ ms.locfileid: "67374664"
 </bidi:Get>
 ```
 
-次の例は、最初の例ではスキーマから一般的な応答のセットです。 最初の応答では、両面印刷ユニットがインストールされていることを示します。 残りの応答は、ハード ディスクがインストールされていることと、容量が 20 MB、うちが 10 MB 使用を示します。
+次の例は、最初の例のスキーマからの一連の一般的な応答です。 最初の応答は、二重ユニットがインストールされていることを示します。 残りの応答は、ハードディスクがインストールされており、その容量が 20 MB であることを示しています。そのうち 10 MB は未使用です。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -59,36 +59,36 @@ ms.locfileid: "67374664"
 </bidi:Get>
 ```
 
-### <a href="" id="additional-query-examples"></a> 追加のクエリ例
+### <a href="" id="additional-query-examples"></a>その他のクエリの例
 
-一般的なタスクと関連付けられているクエリの一覧を次には。
+一般的なタスクと関連付けられているクエリの一覧を次に示します。
 
 <a href="" id="determine-whether-a-duplex-unit-is-installed-"></a>両面印刷ユニットがインストールされているかどうかを確認します。  
 ```cpp
 \Printer.Configuration.DuplexUnit:Installed
 ```
 
-<a href="" id="determine-which-input-bins-are-present-"></a>どの入力ビンが存在するかを決定します。  
+<a href="" id="determine-which-input-bins-are-present-"></a>どの入力ビンが存在するかを判断します。  
 ```cpp
 \Printer.Layout.InputBins
 ```
 
-<a href="" id="determine-all-information-about-the-tray1-input-bin-"></a>トレイ 1 入力ビンに関するすべての情報を決定します。  
+<a href="" id="determine-all-information-about-the-tray1-input-bin-"></a>Tray1 入力ビンに関するすべての情報を確認します。  
 ```cpp
 \Printer.Layout.InputBins.Tray1
 ```
 
-<a href="" id="determine-whether-the-tray1-input-bin-is-installed-"></a>トレイ 1 入力ビンがインストールされているかどうかを確認します。  
+<a href="" id="determine-whether-the-tray1-input-bin-is-installed-"></a>Tray1 の入力ビンがインストールされているかどうかを確認します。  
 ```cpp
 \Printer.Layout.InputBins.Tray1:Installed
 ```
 
-<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>識別される黒のトナーのレベルを決定する\[名前\]Blk3E します。  
+<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>\[名\] Blk3E によって識別される黒のトナーのレベルを決定します。  
 ```cpp
 \Printer.Consumables.Blk3E:Level
 ```
 
-<a href="" id="determine-the-level-of-fuser-oil-"></a>定着オイルのレベルを決定します。  
+<a href="" id="determine-the-level-of-fuser-oil-"></a>フューザーオイルのレベルを決定します。  
 ```cpp
 \Printer.Consumables.FuserOil:Level
 ```

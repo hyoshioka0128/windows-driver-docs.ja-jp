@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_場合\_中
-description: KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチューニングをサポートするデバイスの中間頻度暗証番号 (pin) の中をについて説明します。 このプロパティは省略可能です。
+title: KSK プロパティ\_チューナー\_(\_中)
+description: KSK プロパティ\_チューナー\_\_メディアは、デジタルテレビのチューニングをサポートするデバイスの中間周波数の pin のメディアを表します。 このプロパティは省略可能です。
 ms.assetid: 1144777c-e81c-4b8f-a634-411591c71356
 keywords:
-- KSPROPERTY_TUNER_IF_MEDIUM ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_IF_MEDIUM ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c139d99cb5a274dc7426d9e593430a34c41f8114
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: d21ef1f5a5d48c2525c3d4a74b54e447da431b3e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394018"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837915"
 ---
-# <a name="kspropertytunerifmedium"></a>KSPROPERTY\_チューナー\_場合\_中
+# <a name="ksproperty_tuner_if_medium"></a>KSK プロパティ\_チューナー\_(\_中)
 
 
-KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチューニングをサポートするデバイスの中間頻度暗証番号 (pin) の中をについて説明します。 このプロパティは省略可能です。
+KSK プロパティ\_チューナー\_\_メディアは、デジタルテレビのチューニングをサポートするデバイスの中間周波数の pin のメディアを表します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_tuner_if_medium_ks"></span><span id="DDK_KSPROPERTY_TUNER_IF_MEDIUM_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチュー
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチュー
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_IF_MEDIUM_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s)"><strong>KSPROPERTY_TUNER_IF_MEDIUM_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_IF_MEDIUM_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s)"><strong>KSPROPERTY_TUNER_IF_MEDIUM_S</strong></a></p></td>
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff563538(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPIN_MEDIUM&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff563538(v=vs.85))"><strong>KSPIN_MEDIUM</strong></a></p></td>
 </tr>
 </tbody>
@@ -61,16 +61,16 @@ KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチュー
 
  
 
-プロパティの値 (データの操作) は、KSPIN\_が中間の頻度にチューニングをサポートできる暗証番号 (pin) の中の GUID を指定する中規模の構造体。
+プロパティ値 (操作データ) は、中間周波数へのチューニングをサポートできるピンの中程度の GUID を指定する KSPIN\_中構造です。
 
 <a name="remarks"></a>注釈
 -------
 
-**IFMedium** 、KSPROPERTY のメンバー\_チューナー\_場合\_MEDIUM\_構造が中間頻度の暗証番号 (pin) の中の GUID を指定します。
+中\_S 構造体\_場合は、KSK プロパティの**ifmedium**メンバー\_\_チューナーは、中間周波数の Pin の中程度の GUID を指定します。
 
-ビデオ キャプチャ ミニドライバー KSPROPERTY をサポートしている場合\_チューナー\_場合\_中]、[ *kstvtune.ax*ハードウェア ベースの mpeg-2 トランスポート ストリームを表す追加の pin を作成します。チューナーで発生します。 この pin は、グラフのトポロジを定義するためだけに使用されます。 データのサンプルで、この暗証番号 (pin) からユーザー モードのストリームを通過*kstvtune.ax*から成る[ **KS\_tv チューナー\_変更\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)構造体。
+ビデオキャプチャミニドライバーで KSK プロパティ\_チューナー\_サポートされている場合は、[メディア\_] を選択すると、*チューナーから送信*されたハードウェアベースの mpeg-2 トランスポートストリームを表す追加の pin が作成されます。 この pin は、グラフトポロジを定義するためだけに使用されます。 *Kstvtune.ax*のこの pin からユーザーモードストリームを通過するデータサンプルは、 [**KS\_TVTUNER\_CHANGE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)構造体で構成されています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチュー
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_チューナー\_場合\_中は、デジタル テレビのチュー
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_場合\_MEDIUM\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s)
+[ **\_中\_S の場合は、KSK プロパティ\_チューナー\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_if_medium_s)
 
  
 

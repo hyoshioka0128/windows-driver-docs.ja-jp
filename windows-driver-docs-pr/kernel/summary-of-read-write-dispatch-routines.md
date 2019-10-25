@@ -6,22 +6,22 @@ keywords:
 - DispatchRead ルーチン
 - DispatchWrite ルーチン
 - DispatchReadWrite ルーチン
-- ディスパッチ ルーチンの WDK カーネル、DispatchReadWrite ルーチン
-- ディスパッチ ルーチンの WDK カーネル、DispatchWrite ルーチン
-- ディスパッチ ルーチンの WDK カーネル、DispatchRead ルーチン
-- 読み取り/書き込みディスパッチ ルーチン WDK カーネル
-- IRP_MJ_WRITE I/O 関数のコード
-- IRP_MJ_READ I/O 関数のコード
-- データ転送の WDK カーネル、読み取り/書き込みディスパッチ ルーチン
-- データ転送の WDK カーネル、読み取り/書き込みディスパッチ ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchReadWrite ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchWrite ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchRead ルーチン
+- 読み取り/書き込みディスパッチルーチン WDK カーネル
+- IRP_MJ_WRITE i/o 関数コード
+- IRP_MJ_READ i/o 関数コード
+- データ転送 WDK カーネル、読み取り/書き込みディスパッチルーチン
+- データの転送 WDK カーネル、読み取り/書き込みディスパッチルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58a0af9f13253aeadbabaeef3f46897a402442d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 087db34294c7d5c9047af976da4af2ac0979cfec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382965"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838401"
 ---
 # <a name="summary-of-readwrite-dispatch-routines"></a>読み取り/書き込みディスパッチ ルーチンの概要
 
@@ -29,29 +29,29 @@ ms.locfileid: "67382965"
 
 
 
-実装する場合、次の点を留意してください、 [ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 [ *DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、または[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、または[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを実装する場合は、次の点に注意してください。
 
--   受信した読み取り/書き込み Irp の IRP で、[次へ] の下位レベルのドライバーの I/O スタックの場所を設定する前に有効性のパラメーターをチェックする階層型のドライバーのチェーンの最上位レベルのドライバーの役目です。
+-   複数の階層化されたドライバーのチェーンにおいて、IRP で次に下位レベルのドライバーの i/o スタックの場所を設定する前に、受信した読み取り/書き込み Irp のパラメーターを確認して有効性を確認する必要があります。
 
--   一般に、中間および最下位レベルのドライバーは有効なパラメーターでの転送要求を渡す、チェーン内の最上位レベルのドライバーを使用できます。 ただし、ドライバーは、I/O スタックの場所、IRP ので、パラメーターの正当性チェックを実行できるし、各デバイス ドライバーのデバイスによって課せられる制限に違反する可能性がありますの条件のパラメーターを確認する必要があります。
+-   一般に、中間レベルと最下位レベルのドライバーは、チェーン内の最上位レベルのドライバーに依存して、有効なパラメーターで転送要求を渡すことができます。 ただし、すべてのドライバーは、IRP の i/o スタックの場所にあるパラメーターに対して正常性チェックを実行できます。また、各デバイスドライバーは、デバイスによって設定された制限に違反する可能性がある条件のパラメーターをチェックする必要があります。
 
--   場合、 *DispatchReadWrite*ルーチンがエラーでは IRP を完了すると、I/O スタックの場所を設定する必要がある**状態**NTSTATUS 型の適切な値を持つメンバーの設定、 **情報**メンバー 0、および呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP と*PriorityBoost* IO の\_いいえ\_増分値です。
+-   *DispatchReadWrite*ルーチンがエラーで IRP を完了した場合、i/o スタックの場所の**状態**のメンバーに適切な NTSTATUS の種類の値を設定し、**情報**メンバーを0に設定し、を使用して[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出す必要があります。IO\_の IRP と優先*順位の上昇*は\_インクリメントされません。
 
--   ドライバーは、バッファー内の I/O を使用している場合、転送されるデータを格納する構造体を定義する必要があり、いくつかのこれらの構造を内部的にバッファーする必要があります。
+-   ドライバーがバッファーされた i/o を使用する場合、転送するデータを格納する構造体を定義することが必要になる場合があります。また、これらの構造体の数を内部でバッファーする必要がある場合もあります。
 
--   確認する必要がありますが、ドライバーは、ダイレクト I/O を使用している場合かどうかに MDL **Irp -&gt;MdlAddress**転送が 1 回で処理するために、基になるデバイスのデータが多すぎる (または多数の改ページ) を格納するバッファーをについて説明します。操作です。 そうである場合、ドライバーが小さな転送操作のシーケンスには、元の転送要求を分割する必要があります。
+-   ドライバーが直接 i/o を使用する場合、基になるデバイスが1回の転送操作で処理するのに必要なデータが多すぎる (または、改ページが多すぎる) バッファーに記述さ **&gt;** れているかどうかを確認する必要がある場合があります。 その場合、ドライバーは元の転送要求を、より小さな転送操作のシーケンスに分割する必要があります。
 
-    密接に結合されたクラス ドライバーを分割で要求する可能性があります、 *DispatchReadWrite*その基になるポート ドライバーの日常的な。 SCSI クラス ドライバーでは、特に、大容量記憶装置の場合は、これを行う必要があります。 SCSI ドライバーの要件の詳細については、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
+    密接に結合されたクラスドライバーは、基になるポートドライバーの*DispatchReadWrite*ルーチンでこのような要求を分割することがあります。 これを行うには、SCSI クラスドライバー (特に大容量記憶装置用) が必要です。 SCSI ドライバーの要件の詳細については、「[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)」を参照してください。
 
--   低レベル デバイス ドライバーの*DispatchReadWrite*ルーチンが他のドライバー ルーチン デキュー IRP が転送用にデバイスを設定するまで、部分的な転送に大きな転送要求を分割を延期する必要があります。
+-   低レベルのデバイスドライバーの*DispatchReadWrite*ルーチンでは、別のドライバールーチンによって、転送用にデバイスを設定するように IRP がデキューされるまで、大規模な転送要求を部分的な転送に分割する必要があります。
 
--   下位レベルのデバイス ドライバーは、読み取り/書き込み IRP を独自のルーチンによってさらに処理キューで場合、呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending) IRP をキューに配置する前にします。 *DispatchReadWrite*ルーチンも状態を持つコントロールを返す必要があります\_このような状況で保留されます。
+-   下位レベルのデバイスドライバーが、独自のルーチンによってさらに処理するために読み取り/書き込みの IRP をキューに置いている場合、IRP をキューに追加する前に[**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出す必要があります。 また、このような状況では、 *DispatchReadWrite*ルーチンは状態\_保留中のコントロールを返す必要があります。
 
--   場合、 *DispatchReadWrite*ルーチンに下位のドライバーは IRP を通過する、次の下位 IRP がドライバーの I/O スタックの場所を設定する必要があります。 高度なドライバーも設定するかどうか、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)で渡す前に IRP の日常的な[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)その下にある階層化されたドライバーの設計に依存します。
+-   *DispatchReadWrite*ルーチンが irp を下位のドライバーに渡す場合、irp 内の次に小さいドライバーの i/o スタックの場所を設定する必要があります。 上位レベルのドライバーも、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)で渡す前に IRP で[*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定するかどうかは、ドライバーの設計とその下にあるレイヤーの設計によって異なります。
 
-    ただしより高度なドライバーを呼び出す必要があります[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を呼び出す前に[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)いずれかを割り当てる場合Irp やメモリなどのリソース。 その*IoCompletion*下位のドライバーでは、要求をする前に完了した場合に、ルーチンはドライバーによって割り当てられたリソースを解放する必要があります、 *IoCompletion*ルーチンの呼び出し[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)元 IRP にします。
+    ただし、より高いレベルのドライバーは、Irp やメモリなどのリソースを割り当てる場合は、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出す前に[**Ioset補完ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出す必要があります。 低レベルのドライバーが要求を完了した後、 *Iocompletion*ルーチンが元の IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出す前に、その*iocompletion*ルーチンは、ドライバーで割り当てられたリソースを解放する必要があります。
 
--   基になるリムーバブル メディア デバイス ドライバーを含む場合がある下位のドライバーのより高度なドライバーが Irp を割り当てると、割り当て、ドライバーは割り当てる各 IRP のスレッド コンテキストを確立する必要があります。
+-   上位レベルのドライバーが、基になるリムーバブルメディアデバイスドライバーを含む可能性のある下位のドライバーに対して Irp を割り当てる場合、割り当てドライバーは、割り当てられる各 IRP でスレッドコンテキストを確立する必要があります。
 
  
 

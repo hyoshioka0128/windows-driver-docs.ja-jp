@@ -3,23 +3,23 @@ title: DirectMusic ミニポート ドライバー インターフェイス
 description: DirectMusic ミニポート ドライバー インターフェイス
 ms.assetid: a3532993-732a-4a7e-82bc-fc4199ec23dd
 keywords:
-- ミニポート ドライバー WDK のオーディオ、シンセサイザー
-- シンセサイザー WDK オーディオ、ミニポート ドライバー
-- wave シンク WDK オーディオ、ミニポート ドライバー
-- DirectMusic カーネル モードの WDK オーディオ、ミニポート ドライバー
-- カーネル モードのシンセサイザー WDK オーディオ、ミニポート ドライバー
-- ポート ドライバー WDK のオーディオ、シンセサイザー
-- ハードウェア アクセラレータ WDK オーディオ
-- ミニポート ドライバー WDK オーディオ、カーネル モード ハードウェア アクセラレーション
-- シンセサイザー WDK オーディオ、カーネル モードのハードウェア アクセラレーション
+- ミニポートドライバー WDK オーディオ、シンセサイザー
+- シンセサイザー WDK オーディオ、ミニポートドライバー
+- wave シンク WDK オーディオ、ミニポートドライバー
+- DirectMusic カーネルモード WDK オーディオ、ミニポートドライバー
+- カーネルモード synths WDK オーディオ、ミニポートドライバー
+- ポートドライバー WDK オーディオ、シンセサイザー
+- ハードウェア高速化の WDK オーディオ
+- ミニポートドライバー WDK オーディオ、カーネルモードハードウェアアクセラレーション
+- シンセサイザー WDK オーディオ、カーネルモードハードウェアアクセラレーション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa0ee272b18374c5e34ca88f26e7e5c4fc80425
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dca0a36472226617807c1440af25d6134f99187d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359056"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833549"
 ---
 # <a name="directmusic-miniport-driver-interface"></a>DirectMusic ミニポート ドライバー インターフェイス
 
@@ -27,45 +27,45 @@ ms.locfileid: "67359056"
 ## <span id="directmusic_miniport_driver_interface"></span><span id="DIRECTMUSIC_MINIPORT_DRIVER_INTERFACE"></span>
 
 
-Dmu のミニポート ドライバー インターフェイス、MIDI ミニポート ドライバー インターフェイスに基づいていますが、高度なシンセサイザーをサポートするために次の拡張機能を追加します。
+DMus ミニポートドライバーのインターフェイスは、MIDI ミニポートドライバーのインターフェイスに基づいていますが、高度なシンセサイザーをサポートするために次の拡張機能が追加されています。
 
--   インスタンスあたり 16 チャネルより大きい DLS ダウンロード
+-   1インスタンスあたり16を超えるチャネルをダウンロードする
 
--   ハードウェアの注イベントのシーケンス処理
+-   ハードウェアでのノートイベントのシーケンス処理
 
-Dmu のミニポート ドライバー インターフェイスは、いくつかの方法では、MIDI ミニポート ドライバー インターフェイスによって異なります。 Dmu のミニポート ドライバー インターフェイスを実装する[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)ではなく[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)します。 このインターフェイスはのような**IMiniportMidi**が、 [ **IMiniportDMus::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)メソッドを作成、 [IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf) (MIDI 変換フィルター) インターフェイスに接続して、 [IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf) Dmu ポート ドライバーの実装ではなく、インターフェイス、 [IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)インターフェイス。 **IAllocatorMXF**と**IMXF** 、標準のラップ**GetMessage**と**PutMessage**呼び出し (を参照してください[ **IAllocatorMXF:。GetMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)と[ **IMXF::PutMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage))。 これらの呼び出しでは、MIDI の実際のバイト数ではなく、パッケージ化されたイベントを処理します。
+DMus ミニポートドライバーインターフェイスは、MIDI ミニポートドライバーインターフェイスとはいくつかの点で異なります。 DMus ミニポートドライバーは、 [IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)ではなく、インターフェイス[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)を実装します。 このインターフェイスは**IMiniportMidi**に似ていますが、 [**IMiniportDMus:: Newstream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)メソッドは[imxf](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf) (MIDI 変換フィルター) インターフェイスを作成し、dmus ポートドライバーの[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf)インターフェイスに接続します。[IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidistream)インターフェイスを実装します。 **IAllocatorMXF**と**imxf**は、標準の**GetMessage**および**putmessage**呼び出しをラップします ( [**IAllocatorMXF:: GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getmessage)および[**imxf::P utmessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-putmessage)を参照)。 これらの呼び出しは、未加工の MIDI バイトではなく、パッケージ化されたイベントを処理します。
 
-シンセサイザーの Dmu ミニポート ドライバーには、DirectMusic プロパティの一部またはすべてを実装できます。 これらのプロパティは、DL のダウンロードとデバイスのチャネルの割り当てを管理するシステムを許可します。 Dmusprop.h ヘッダー ファイルでは、DirectMusic 固有のプロパティ項目を定義します。 これらのプロパティの一覧は、次を参照してください。 [KSPROPSETID\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)と[KSPROPSETID\_シンセサイザー\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)します。
+シンセサイザー用の DMus ミニポートドライバーは、一部またはすべての DirectMusic プロパティを実装できます。 これらのプロパティを使用すると、システムはデバイスの DLS ダウンロードとチャネル割り当てを管理できます。 Dマス、.h ヘッダーファイルは、DirectMusic 固有のプロパティアイテムを定義します。 これらのプロパティの一覧については、「 [kspropsetid\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth) 」と「 [kspropsetid\_シンセサイザー\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)」を参照してください。
 
-Dmu のミニポート ドライバーは、複数の暗証番号 (pin) インスタンスの作成を許可する必要があります。 各ピンのインスタンスが 1 つの仮想シンセサイザーとして機能し、チャネルのセットを格納し、DLS ダウンロードの暗証番号 (pin) のインスタンスの独立したします。
+DMus ミニポートドライバーでは、複数の pin インスタンスを作成できます。 各 pin インスタンスは1つの仮想シンセサイザーとして機能し、他の pin インスタンスとは独立した一連のチャネルと DLS ダウンロードを含みます。
 
-説明されているシンセサイザー プロパティの一部[オーディオ ドライバーのプロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)暗証番号 (pin) のインスタンスで動作させ、他のユーザーはグローバルです。 グローバル プロパティを処理するには、そのトポロジでシンセサイザー ノード シンセサイザーが必要です。 各プロパティ項目の説明では、その項目をシンセサイザー ノードまたは暗証番号 (pin) のインスタンスに送信されるかどうかを示します。 合成をサポートするハードウェアの各部分では、存在ポート ドライバー オブジェクトおよびミニポート ドライバー オブジェクトでは、次の図に示すようにします。
+「[オーディオドライバー」プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)で説明されている一部のシンセサイザープロパティは、pin インスタンスで動作し、その他はグローバルです。 グローバルプロパティを処理するには、シンセサイザーのトポロジにシンセサイザーノードが必要です。 各プロパティ項目の説明は、その項目がシンセサイザーノードに送信されるか、または pin インスタンスに送信されるかを示します。 合成をサポートするハードウェアの各部分について、次の図に示すように、ポートドライバーオブジェクトとミニポートドライバーオブジェクトが存在します。
 
-![directmusic シンセサイザーのポートおよびミニポートのドライバーを示す図](images/dmkmport.png)
+![directmusic シンセサイザーのポートとミニポートドライバーを示す図](images/dmkmport.png)
 
-ポート ドライバー オブジェクトが 1 つのインスタンスを公開、 [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)インターフェイスで、ミニポート ドライバー オブジェクトによって保持されます。 ミニポート ドライバーが 1 つのインスタンスをエクスポート、 **IMiniportDMus**インターフェイスで、ポート、ドライバーによって保持されます。 すべてのインスタンス化された pin では、ポート ドライバー要求に対応する**IMXF**インターフェイス。 とこのインスタンスと、システム間の通信は、暗証番号 (pin) とイベントの間をフローに宛てられたプロパティ要求の組み合わせ、 **IMXF**ストリーム インターフェイス。
+ポートドライバーオブジェクトは、ミニポートドライバーオブジェクトによって保持されている[Iportdmus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)インターフェイスの1つのインスタンスを公開します。 ミニポートドライバーは、ポートドライバーによって保持されている**IMiniportDMus**インターフェイスの1つのインスタンスをエクスポートします。 インスタンス化されたすべてのピンについて、ポートドライバーは一致する**Imxf**インターフェイスを要求します。 システムとこのインスタンス間の通信は、ピンに宛てられたプロパティ要求と、 **Imxf** stream インターフェイスとの間でやり取りされるイベントの組み合わせです。
 
-2 つのオブジェクトは、作成時にそのミニポート ドライバーに渡す必要があります。
+ミニポートドライバーの作成時には、次の2つのオブジェクトをミニポートドライバーに渡す必要があります。
 
 -   時計
 
--   アロケーター オブジェクト
+-   アロケーターオブジェクト
 
-クロックがレンダリングの非常に重要な操作をキャプチャするとします。 指定したノートを表示するために、ミニポート ドライバーが必要な時間です。ミニポート ドライバーは MIDI のデータを読み取り、タイムスタンプのカーネル イベントをできるように時間を把握し、必要があります。 詳細については、次を参照してください。[待機時間のクロック](latency-clocks.md)します。
+この時計は、レンダリング操作とキャプチャ操作に非常に重要です。 ミニポートドライバーは、指定された時刻にメモをレンダリングする必要があります。ミニポートドライバーが MIDI データを読み取るときは、カーネルイベントにタイムスタンプをかけることができるように、時間を把握しておく必要があります。 詳細については、「[待機時間クロック](latency-clocks.md)」を参照してください。
 
-[アロケーター](allocator.md)を持つオブジェクトを**IAllocatorMXF**インターフェイス、メモリをリサイクルするメモリのプールとして使用されます。 システム内のすべての MIDI メッセージは、この共通のプールから割り当てられます。 作成または個々 のメッセージを破棄するには、アロケーター オブジェクトを使用してください。
+**IAllocatorMXF**インターフェイスを持つ[アロケーター](allocator.md)オブジェクトは、メモリプールとして使用され、メモリをリサイクルします。 システム内のすべての MIDI メッセージは、この共通プールから割り当てられます。 個々のメッセージを作成または破棄するには、アロケーターオブジェクトを使用する必要があります。
 
 このセクションの内容:
 
 [MIDI トランスポート](midi-transport.md)
 
-[クロックの待機時間](latency-clocks.md)
+[待機時間のクロック](latency-clocks.md)
 
-[ミニポート ドライバーのプロパティ項目を要求](miniport-driver-property-item-requests.md)
+[ミニポートドライバーのプロパティ項目の要求](miniport-driver-property-item-requests.md)
 
-[PortDMus DirectMusic ポートの既定のドライバーの作成](making-portdmus-the-default-directmusic-port-driver.md)
+[PortDMus を既定の DirectMusic ポートドライバーにする](making-portdmus-the-default-directmusic-port-driver.md)
 
-[レガシ デバイスとして、シンセサイザーを公開します。](exposing-your-synthesizer-as-a-legacy-device.md)
+[従来のデバイスとしてシンセサイザーを公開する](exposing-your-synthesizer-as-a-legacy-device.md)
 
  
 

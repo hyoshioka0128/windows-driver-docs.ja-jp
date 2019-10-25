@@ -6,17 +6,17 @@ ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f6036e30fc3dbef2423e2a4e1b254a25e4ddbb
-ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
+ms.openlocfilehash: 865ea1d3d8190311018c5f576241362cd626f9f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390724"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838596"
 ---
-# <a name="irp_mj_shutdown"></a>IRP @ no__t-0MJ @ no__t-1SHUTDOWN
+# <a name="irp_mj_shutdown"></a>IRP\_MJ\_シャットダウン
 
 
-データの内部キャッシュがある大容量記憶装置のドライバーは、 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンでこの要求を処理する必要があります。 基になるドライバーがデータの内部バッファーを保持している場合は、大容量記憶装置と中間ドライバーのドライバーもこの要求を処理する必要があります。
+データの内部キャッシュがある大容量記憶装置のドライバーは、 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンでこの要求を処理する必要があります。 基になるドライバーがデータの内部バッファーを保持している場合は、大容量記憶装置と中間ドライバーのドライバーもこの要求を処理する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
@@ -42,7 +42,7 @@ PnP マネージャーは、任意のスレッドコンテキストで、IRQL < 
 
 ドライバーは、シャットダウン要求を完了する前に、デバイスに現在キャッシュされているデータ、またはドライバーの内部バッファーに保持されているデータの転送を完了する必要があります。
 
-ドライバーは、 [**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)または[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)のいずれかを使用して登録する場合を除き、デバイスオブジェクトの**IRP @ no__t-1MJ @ no__t-2shutdown**要求を受け取りません。
+ドライバーは、 [**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)または[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)のいずれかを使用して登録する場合を除き、デバイスオブジェクトに対して**IRP\_MJ\_のシャットダウン**要求を受信しません。
 
 <a name="requirements"></a>要件
 ------------
@@ -63,11 +63,11 @@ PnP マネージャーは、任意のスレッドコンテキストで、IRQL < 
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
+[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
 
-[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)
+[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)
 
  
 

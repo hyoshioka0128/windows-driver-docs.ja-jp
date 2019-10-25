@@ -1,9 +1,9 @@
 ---
-title: ndiskd.protocol
-description: Ndiskd.protocol コマンドでは、NDIS プロトコル ドライバーに関する情報が表示されます。
+title: ndiskd プロトコル
+description: Ndiskd protocol コマンドは、NDIS プロトコルドライバーに関する情報を表示します。
 ms.assetid: c1d349d5-b0ba-4665-a399-1bc5cd55dde6
 keywords:
-- デバッグ ndiskd.protocol Windows
+- ndiskd プロトコル Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9967afc8bcb392bc473b548b84a63da969a5b289
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9929fd946d63653c9bad051d9080fea404cf307f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363108"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837655"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
 
 
-**! Ndiskd.protocol**コマンドは、NDIS プロトコル ドライバーに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd システムでアクティブな NDIS プロトコル ドライバーの一覧が表示されます。
+**! Ndiskd protocol**コマンドは、NDIS プロトコルドライバーに関する情報を表示します。 パラメーターを使用せずにこの拡張機能を実行すると、システムでアクティブになっている NDIS プロトコルドライバーの一覧がに表示されます。
 
 ```console
 !ndiskd.protocol [-handle <x>] [-findname <any>] 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-NDIS のプロトコルのハンドル。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+NDIS プロトコルのハンドル。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
-プロトコルを名のプレフィックスでフィルター処理します。
+名前プレフィックスでプロトコルをフィルター処理します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-入力、 **! ndiskd.protocol**コマンドをそのハンドルでは、すべての NDIS プロトコルの一覧を表示し、(ある場合)、ミニポートへのバインドを開きます。 次の例では、TCPIP6TUNNEL プロトコルのハンドル、ffff8083e1a95c00 を探します。
+**! Ndiskd protocol**コマンドを入力して、すべての NDIS プロトコルとそのハンドル、およびミニポートへのオープンバインド (存在する場合) の一覧を表示します。 次の例では、TCPIP6TUNNEL プロトコルの handle、ffff8083e1a95c00 を探します。
 
 ```console
 3: kd> !ndiskd.protocol
@@ -79,7 +79,7 @@ ffff8083e11cec10 - TCPIP
   ffff8083e0c565a0 - Microsoft Kernel Debug Network Adapter
 ```
 
-プロトコルのハンドルを入力できるようになりましたハンドルをクリックしてまたはのいずれかを入力、 **! ndiskd.protocol-処理**コマンドにバインドされているミニポートのハンドルなど、そのプロトコルの情報を確認します。
+プロトコルのハンドルを使用して、ハンドルをクリックするか、 **! ndiskd プロトコルハンドル**コマンドを入力して、そのプロトコルにバインドされているミニポートのハンドルなどの情報を確認できます。
 
 ```console
 3: kd> !ndiskd.protocol ffff8083e1a95c00
@@ -120,18 +120,18 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
  
 

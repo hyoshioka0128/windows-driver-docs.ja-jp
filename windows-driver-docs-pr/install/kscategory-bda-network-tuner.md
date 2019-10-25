@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ba9dac2aaae838a4cbae58592b136c5612dfbb11
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 117cd1684637f8c5d299aafe64c2f3a890c90a85
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366710"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837454"
 ---
-# <a name="kscategorybdanetworktuner"></a>KSCATEGORY_BDA_NETWORK_TUNER
+# <a name="kscategory_bda_network_tuner"></a>KSCATEGORY_BDA_NETWORK_TUNER
 
 
-KSCATEGORY_BDA_NETWORK_TUNER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)でネットワーク チューナー (KS) 機能のカテゴリ、[ブロードキャストのドライバーのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index) (性 BDA)。
+KSCATEGORY_BDA_NETWORK_TUNER [device インターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)は、[ブロードキャストドライバーアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)(BDA) のネットワークチューナーの[カーネルストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 機能カテゴリに対して定義されています。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_NETWORK_TUNER[デバイス インターフェイス クラス](ht
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">備わっている</th>
 <th align="left">設定</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_BDA_NETWORK_TUNER[デバイス インターフェイス クラス](ht
 <a name="remarks"></a>注釈
 -------
 
-BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA ネットワーク チューナー フィルターをサポートすることを示す KSCATEGORY_BDA_NETWORK_TUNER のインスタンスを登録します。
+BDA デバイス用のドライバーは、デバイスが BDA ネットワークチューナーフィルターをサポートしていることをオペレーティングシステムに示すために、KSCATEGORY_BDA_NETWORK_TUNER のインスタンスを登録します。
 
-INF ファイルでこの機能のカテゴリを登録する方法の例は、INF ファイルを参照してください。 *BDASwTunerATSC.inf*します。 *BDASwTunerATSC.inf*で BDA サンプルの汎用的なチューナーに含まれている、 *src\\swtuner\\BDAtuner\\gentuner* WDK のサブディレクトリ。
+この機能カテゴリを INF ファイルに登録する方法の例については、INF ファイル*BDASwTunerATSC*を参照してください。 *BDASwTunerATSC*は、 *BDAtuner の src\\Swtuner\\\\gentuner*サブディレクトリにある BDA サンプル汎用チューナーに含まれています。
 
-ネットワークのチューナー フィルター KS 機能のカテゴリの詳細については、次を参照してください。[一般的なコントロールのノードとフィルター](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)と[BDA フィルター カテゴリ Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)します。
+ネットワークチューナーフィルターの KS 機能カテゴリの詳細については、「[コモンコントロールノードとフィルター](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)および[BDA フィルターカテゴリ guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -71,11 +71,11 @@ INF ファイルでこの機能のカテゴリを登録する方法の例は、I
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows XP、DirectX 9.0 a がインストールされている、Windows 2000 以降のバージョンの Windows で使用できます。</p></td>
+<td align="left"><p>Windows XP、Windows 2000 (DirectX 9.0 がインストールされている)、およびそれ以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Bdamedia.h (Bdamedia.h を含む)</td>
+<td align="left">Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>

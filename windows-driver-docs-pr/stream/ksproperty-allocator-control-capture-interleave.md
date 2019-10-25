@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インターリーブ
-description: KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インターリーブ プロパティは、通知オーバーレイ Mixer インターリーブされる場合はキャプチャします。
+title: KSK プロパティ\_アロケーター\_コントロール\_キャプチャ\_インターリーブ
+description: KSK プロパティ\_アロケーター\_コントロール\_\_CAPTURE プロパティは、インターリーブキャプチャが可能な場合にオーバーレイミキサーに通知します。
 ms.assetid: ea38289f-2d4e-4613-ba08-c8ab49f6fce7
 keywords:
-- KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE ストリーミング メディア デバイス
+- KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be9e48fe82fae41a82ceca316bd4764fb8fca631
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f90750744062dc0de3b7f112f44fa773701977a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386927"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832007"
 ---
-# <a name="kspropertyallocatorcontrolcaptureinterleave"></a>KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インターリーブ
+# <a name="ksproperty_allocator_control_capture_interleave"></a>KSK プロパティ\_アロケーター\_コントロール\_キャプチャ\_インターリーブ
 
 
-KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インターリーブ プロパティは、通知オーバーレイ Mixer インターリーブされる場合はキャプチャします。
+KSK プロパティ\_アロケーター\_コントロール\_\_CAPTURE プロパティは、インターリーブキャプチャが可能な場合にオーバーレイミキサーに通知します。
 
 ## <span id="ddk_ksproperty_allocator_control_capture_interleave_ks"></span><span id="DDK_KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インタ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インタ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,9 +61,9 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インタ�
 
  
 
-プロパティの値 (データの操作) は、ULONG、インターリーブのキャプチャができるかどうかを指定します。
+プロパティ値 (操作データ) は、インターリーブキャプチャが可能かどうかを指定する ULONG です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インタ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インタ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_インターリーブ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)
+[**KSK プロパティ\_アロケーター\_コントロール\_キャプチャ\_インターリーブ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)
 
  
 

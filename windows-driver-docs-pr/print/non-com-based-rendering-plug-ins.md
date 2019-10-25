@@ -3,16 +3,16 @@ title: 非 COM ベースのレンダリング プラグイン
 description: 非 COM ベースのレンダリング プラグイン
 ms.assetid: 435f9754-50be-4a4b-a5b4-b2bc8d66f034
 keywords:
-- レンダリングの COM ベースのプラグインを WDK の印刷
-- COM ベースのレンダリング プラグイン WDK 印刷
+- 非 COM ベースのレンダリングプラグイン WDK 印刷
+- レンダリングプラグイン WDK print、非 COM ベース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8f0c019f5ea6951d76a0c6f8c55b7344aab901
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: edba3952df5128892839b25d378ee8429c0157c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716981"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837563"
 ---
 # <a name="non-com-based-rendering-plug-ins"></a>非 COM ベースのレンダリング プラグイン
 
@@ -20,15 +20,15 @@ ms.locfileid: "67716981"
 
 
 
-プリンター ミニドライバーは、実装することでその機能の中核となるドライバーを通知、 [ **OEMEnableDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemenabledriver)のメンバーを設定する関数を[ **DRVENABLEDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)構造体。 **Pdrvfn**の配列のアドレスを持つこの構造体のメンバーを設定する必要があります[ **DRVFN** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)構造体。 関数インデックスでは、およびアドレスのいずれかのこの配列の各要素を初期化する必要があります、 **OEM**_Xxx_それぞれ IHV が実装する関数。 (それぞれの詳細については、 **OEM**_Xxx_関数を参照してください[DDI フックの非 COM ベースの機能を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index))。
+Printer ミニドライバーは、 [**Oemenabledriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/nf-printoem-oemenabledriver)関数を実装することによって、その機能のコアドライバーに通知します。この関数は、 [**Dr abledata**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)構造体のメンバーを入力します。 この構造体の**pdrvfn**メンバーは、 [**DRVFN**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)構造体の配列アドレスを使用して設定する必要があります。 この配列の各要素は、関数インデックスと、IHV が実装している**OEM**_Xxx_関数のいずれかのアドレスを使用して初期化する必要があります。 (各**OEM**_Xxx_関数の詳細な説明については、「[非 COM ベースの DDI フック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)」を参照してください)。
 
-アプリケーションがさらに、Win32 の GDI レンダリング タスクを実行する Microsoft Win32 GDI を呼び出すときに、通常のタスクを処理 Unidrv または Pscript5 コア ドライバーを呼び出します。 ただし、プリンターのミニドライバーが、特定の表示操作をフックすることは、コア ドライバーはプラグインのレンダリングの IHV にレンダリング タスクを渡すことに示されるかどうか。
+アプリケーションが Microsoft Win32 GDI を呼び出してレンダリングタスクを実行すると、Win32 GDI は、通常、タスクを処理する Unidrv または Pscript5 core ドライバーを呼び出します。 ただし、プリンターミニドライバーが特定のレンダリング操作をフックできることを示している場合、コアドライバーは、レンダリングタスクを IHV レンダリングプラグインに渡します。
 
-たとえば、Win32 への呼び出しを作成するアプリケーションを**LineTo** API (Windows SDK のドキュメントで説明)。 一般に、この結果として別の呼び出しを中核となるドライバーの[ **DrvLineTo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto) DDI 線を描画します。 プリンター ミニドライバーに予定ただし、この DDI への呼び出しをフックすることが示される場合**DrvLineTo** IHV への呼び出しをすぐに転送[ **OEMLineTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemlineto)関数。
+たとえば、Win32 **LineTo** API (Windows SDK のドキュメントで説明) を呼び出すアプリケーションを考えてみます。 通常、このような場合は、コアドライバーの[**DrvLineTo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto) DDI を呼び出して、直線を描画します。 ただし、プリンタミニドライバーがこの DDI への呼び出しをフックするように指定している場合、 **DrvLineTo**は直ちに IHV の[**oemlineto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/nf-printoem-oemlineto)関数への呼び出しを転送します。
 
-IHV を実装できます**OEMLineTo**で説明されているその他のアウト用のフック関数のいずれかまたは[DDI フックの非 COM ベースの機能を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)されるため、レンダリング処理を完全に処理できるか、戻るで呼び出すことができますコアには、ドライバーは、その操作を処理します。
+IHV は、 **Oemlineto**を実装できます。または、[非 COM ベースの DDI フック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)に記述されている他のすべてのフック関数を実装して、レンダリング操作を完全に処理できるようにするか、コールバックしてコアドライバーがその操作を処理できるようにすることができます。
 
-**OEMLineTo**の擬似コード例を次に示すように実装できます。
+次の擬似コード例に示すように、 **Oemlineto**を実装できます。
 
 ```cpp
 BOOL APIENTRY
@@ -68,9 +68,9 @@ else
 poempdev->pfnUnidrv[UD_DrvLineTo]
 ```
 
-中核となるドライバーのアドレスに評価される**DrvLineTo** DDI します。 (**PFN\_DrvLineTo**) 前にある式は、適切な型への関数ポインターをキャストします。 各ここで示したアウト用のフック関数は、独自の関数ポインターに関連付けられます。
+コアドライバーの**DrvLineTo** DDI のアドレスに評価されます。 関数ポインターを適切な型にキャストする (**PFN\_DrvLineTo**) 式。 このセクションに記載されている各フック関数は、独自の関数ポインターに関連付けられています。
 
-場合、 **OEM**_Xxx_ Unidrv core ドライバーと、画面に戻ります DDI 呼び出しデバイス管理の画面は、関連する、返すことによって、呼び出しを単純に無視できます Unidrv **FALSE**.
+**OEM**_Xxx_ DDI が Unidrv コアドライバーにコールバックし、関連するサーフェイスがデバイスで管理されている場合、Unidrv は**FALSE**を返すことによって、単に呼び出しを無視することに注意してください。
 
  
 

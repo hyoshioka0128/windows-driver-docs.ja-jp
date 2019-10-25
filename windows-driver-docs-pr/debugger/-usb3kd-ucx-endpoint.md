@@ -1,9 +1,9 @@
 ---
-title: usb3kd.ucx_endpoint
-description: Usb3kd.ucx_endpoint コマンドでは、USB 3.0 ツリー内の USB デバイスをエンドポイントに関する情報が表示されます。 表示は、UcxVersion.sys によって維持されるデータに基づきます。
+title: usb3kd エンドポイント (_d)
+description: Usb3kd コマンドを実行すると、usb 3.0 ツリーの USB デバイスのエンドポイントに関する情報が表示されます。 表示は、UcxVersion. sys によって保持されているデータに基づいています。
 ms.assetid: 37667665-ACA1-48D3-B79E-5B9BBD689034
 keywords:
-- デバッグ usb3kd.ucx_endpoint Windows
+- usb3kd Windows デバッグ (_r)
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac241bdc8e19e08be992c6bf79f78d782a02050
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31f067172eb8e297d45292ffc5da977772566254
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359779"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837839"
 ---
-# <a name="usb3kducxendpoint"></a>!usb3kd.ucx\_endpoint
+# <a name="usb3kducx_endpoint"></a>! usb3kd\_エンドポイント
 
 
-[ **! Usb3kd.ucx\_エンドポイント**](-usb3kd-device-info.md)コマンドは、USB デバイスで、エンドポイントに関する情報を表示、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)します。 USB ホスト コント ローラーの拡張機能ドライバーによって管理されるデータ構造に基づいて表示 (Ucx*バージョン*.sys)。
+[ **! Usb3kd\_endpoint**](-usb3kd-device-info.md)コマンドは、usb [3.0 ツリー](usb-3-extensions.md#usb-3-tree)の usb デバイス上のエンドポイントに関する情報を表示します。 この表示は、USB ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) によって管理されるデータ構造に基づいています。
 
 ```dbgcmd
 !usb3kd.ucx_endpoint UcxEndpointPrivContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______UcxEndpointPrivContext______"></span><span id="_______ucxendpointprivcontext______"></span><span id="_______UCXENDPOINTPRIVCONTEXT______"></span> *UcxEndpointPrivContext*   
-アドレス、 \_UCXENDPOINT\_エンドポイントを表す PRIVCONTEXT 構造体。
+<span id="_______UcxEndpointPrivContext______"></span><span id="_______ucxendpointprivcontext______"></span><span id="_______UCXENDPOINTPRIVCONTEXT______"></span>*Ucxendpointprivcontext*   
+エンドポイントを表す \_UCXENDPOINT\_PRIVCONTEXT 構造体のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-USB ホスト コント ローラーの拡張機能ドライバー (Ucx*バージョン*.sys) コント ローラーのドライバーの USB 3.0 ハブのドライバーと USB 3.0 ホスト間の抽象化レイヤーを提供します。 拡張機能ドライバーが、ホスト コント ローラー、デバイス、およびエンドポイントの独自の表現。 出力、 **! ucx\_エンドポイント**コマンドは、拡張機能ドライバーによって管理されるデータ構造に基づきます。 USB ホスト コント ローラーの拡張機能ドライバーと USB 3.0 ホスト コント ローラーのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+Usb ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) は、usb 3.0 ハブドライバーと usb 3.0 ホストコントローラードライバーの間に抽象層を提供します。 拡張機能ドライバーは、ホストコントローラー、デバイス、およびエンドポイントを独自に表現したものです。 **! Ucx\_endpoint**コマンドの出力は、拡張機能ドライバーによって保持されているデータ構造に基づいています。 Usb ホストコントローラー拡張機能ドライバーおよび USB 3.0 ホストコントローラードライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-UCX エンドポイントのプライベート コンテキストのアドレスを取得する出力の確認、 [ **! ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)コマンド。 次の例では、2 つ目のデバイス上の最初のエンドポイントのプライベート コンテキストのアドレスは、0xfffffa8003694860 です。
+UCX エンドポイントのプライベートコンテキストのアドレスを取得するには、 [ **! ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)コマンドの出力を確認します。 次の例では、2番目のデバイスの最初のエンドポイントのプライベートコンテキストのアドレスは0xfffffa8003694860 です。
 
 ```dbgcmd
 3: kd> !ucx_controller_list
@@ -69,7 +69,7 @@ UCX エンドポイントのプライベート コンテキストのアドレス
         .!ucx_endpoint 0xfffffa80036a20c0 [Blk Out], UcxEndpointStateStale
 ```
 
-UCX エンドポイントのプライベート コンテキストへのアドレスを渡すことができますので、 **! ucx\_エンドポイント**コマンド。
+これで、UCX エンドポイントのプライベートコンテキストのアドレスを **! ucx\_endpoint**コマンドに渡すことができるようになりました。
 
 ```dbgcmd
 3: kd> !ucx_endpoint 0xfffffa8003694860
@@ -97,14 +97,14 @@ EventCallbacks:
     EvtEndpointReset: (0xfffff880044bb854) USBXHCI!Endpoint_UcxEvtEndpointReset
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ **! usb3kd.ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)
+[ **! usb3kd\_controller\_list**](-usb3kd-ucx-controller-list.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
 
  
 

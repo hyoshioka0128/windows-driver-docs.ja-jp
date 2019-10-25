@@ -3,34 +3,34 @@ title: 印刷機能の Win32 API サポート
 description: 印刷機能の Win32 API サポート
 ms.assetid: 1b40cc3e-c6f6-460f-b514-4ef3a001f563
 keywords:
-- 印刷機能の WDK、Win32 API のサポート
+- 印刷機能 WDK、Win32 API サポート
 - DrvDeviceCapabilities
-- WDK の Win32 アプリケーションを印刷します。
+- Win32 アプリケーションの WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bc1c3fc6afccf301ab2e2709a88fcbd7573d84e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 805009910be2e66e3c554b446d1fa4da8dd12ed8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368971"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832109"
 ---
 # <a name="win32-api-support-for-print-capabilities"></a>印刷機能の Win32 API サポート
 
 
-Windows Vista の印刷サブシステムを GDI ベースの印刷ドライバーを使用する Windows Presentation Foundation (WPF) アプリケーションと可能 XPSDrv プリンター ドライバーを使用する Microsoft Win32 ベースのアプリケーションの互換性サポートを提供します。 この互換性は、ソフトウェアの shim のレイヤーによって提供されます。 Shim とは、互換性のないソフトウェアがそれ以外の場合と相互運用できるように、データに対する変換操作を実行するソフトウェア モジュールです。 次の図は、この印刷機能の実装のデータ パスを示します。
+Windows Vista 印刷サブシステムは、Windows Presentation Foundation (WPF) アプリケーションが GDI ベースの印刷ドライバーを使用できるようにする互換性サポートを提供し、Microsoft Win32 ベースのアプリケーションで XPSDrv 印刷ドライバーを使用できるようにします。 この互換性は、ソフトウェア shim のレイヤーを通じて提供されます。 Shim は、データに対して変換操作を実行するソフトウェアモジュールであり、互換性のないソフトウェアが相互運用できるようにします。 次の図は、印刷機能のためのこの実装のデータパスを示しています。
 
-![印刷機能のデータ フローを示す図](images/ptpccomp.gif)
+![印刷機能のデータフローを示す図](images/ptpccomp.gif)
 
-両方[XPSDrv プリンター ドライバー](xpsdrv-printer-drivers.md)と GDI ベースのバージョン 3 の印刷ドライバーのサポート、 [ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)関数。 Win32 アプリケーションを呼び出すと**DrvDeviceCapabilities**または**GetDevCap**関数、印刷サブシステムが呼び出す**DrvDeviceCapabilities**デバイスを収集するにはプリンター ドライバーから機能情報。
+[XPSDrv 印刷ドライバー](xpsdrv-printer-drivers.md)と GDI ベース、バージョン3印刷ドライバーはどちらも、 [**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)関数をサポートしています。 Win32 アプリケーションが**DrvDeviceCapabilities**または**getdevcap**関数を呼び出すと、印刷サブシステムは**DrvDeviceCapabilities**を呼び出して、印刷ドライバーからデバイスの機能情報を収集します。
 
-WPF アプリケーションを要求すると、PrintCapabilities ドキュメントを印刷ドライバーから印刷サブシステムは、次のいずれかには。
+WPF アプリケーションが印刷ドライバーから PrintCapabilities ドキュメントを要求すると、印刷サブシステムは次のいずれかの操作を実行します。
 
--   印刷ドライバーがサポートしている場合、 [IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))、印刷サブシステムを使用して PrintCapabilities ドキュメントの印刷ドライバーをクエリは、 [ **IPrintTicketProvider:。GetPrintCapabilities** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554365(v=vs.85))メソッド。
+-   印刷ドライバーで[IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))がサポートされている場合、印刷サブシステムは[**IPrintTicketProvider:: GetPrintCapabilities**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554365(v=vs.85))メソッドを使用して、PrintCapabilities ドキュメントの印刷ドライバーを照会します。
 
--   印刷ドライバーがサポートされていない場合、 **IPrintTicketProvider**インターフェイス、チケットのプリント マネージャーは照会、 [ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)印刷の関数ドライバーとアプリケーションに返される PrintTicket ドキュメントを作成する返される情報を使用します。
+-   印刷ドライバーで**IPrintTicketProvider**インターフェイスがサポートされていない場合、印刷チケットマネージャーは印刷ドライバーの[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)関数に対してクエリを実行し、返された情報を使用して、アプリケーションに返されます。
 
-方法の詳細については**IPrintTicketProvider**インターフェイスが Microsoft の印刷ドライバーによってサポートされているを参照してください[プリンター ドライバーと Windows Vista のプラグイン インターフェイスのデザイン](printer-driver-and-plug-in-helper-interfaces.md)します。
+Microsoft 印刷ドライバーで**IPrintTicketProvider**インターフェイスをサポートする方法の詳細については、「 [Windows Vista でのプリンタードライバーとプラグインインターフェイスの設計](printer-driver-and-plug-in-helper-interfaces.md)」を参照してください。
 
  
 

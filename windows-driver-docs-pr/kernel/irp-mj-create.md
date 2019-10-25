@@ -1,38 +1,38 @@
 ---
 title: IRP_MJ_CREATE
-description: すべてのカーネル モード ドライバーでは、DispatchCreate または DispatchCreateClose ルーチンで irp_mj_create 用の要求を処理する必要があります。
+description: すべてのカーネルモードドライバーは、DispatchCreate または DispatchCreateClose ルーチンで IRP_MJ_CREATE 要求を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 2947f8dc-2e7d-401e-8014-6140cac6905f
 keywords:
-- IRP_MJ_CREATE Kernel-Mode Driver Architecture
+- IRP_MJ_CREATE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 74709d1b4e63bf7a74b659ef55930f057782a9fd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66c9f4346fd7c5fae0e8107e2e216f5c7f88015a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370910"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828125"
 ---
-# <a name="irpmjcreate"></a>IRP\_MJ\_CREATE
+# <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
 
 
-すべてのカーネル モード ドライバーを処理する必要があります**IRP\_MJ\_作成**で要求を[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)コールバック関数。
+すべてのカーネルモードドライバーは、 [*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)コールバック関数で要求を**作成\_IRP\_MJ**を処理する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-オペレーティング システムの送信、 **IRP\_MJ\_作成**ファイル オブジェクトまたはデバイス オブジェクトを識別するハンドルを開く要求。 たとえば、ドライバーを呼び出すと[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、オペレーティング システムの送信、 **IRP\_MJ\_作成**実際の実行を要求操作を開きます。
+オペレーティングシステムは、 **IRP\_MJ\_CREATE**要求を送信して、ファイルオブジェクトまたはデバイスオブジェクトへのハンドルを開きます。 たとえば、ドライバーが[**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)を呼び出すと、オペレーティングシステムは、実際に開く操作を実行するための**IRP\_MJ\_CREATE**要求を送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.Create.SecurityContext**へのポインター、 [ **IO\_セキュリティ\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)セキュリティを記述する構造体要求のコンテキスト。 **Parameters.Create.SecurityContext -&gt;DesiredAccess**メンバーは、呼び出し元が要求されているアクセス権を指定するアクセス マスク。
+**SecurityContext**メンバーは、要求のセキュリティコンテキストを記述する[**IO\_セキュリティ\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_security_context)構造を指します。 **SecurityContext-&gt;DesiredAccess**メンバーは、呼び出し元によって要求されているアクセス権を指定するアクセスマスクです。
 
-**Parameters.Create.Options**メンバーがハンドルを開くときに使用されるオプションについて説明する ULONG 値。 値に対応している上位の 8 ビット、 *CreateDisposition*パラメーターの**ZwCreateFile**、低 24 ビットの値に対応し、 *CreateOptions*パラメーターの**ZwCreateFile**します。
+**Parameters. Create. Options**メンバーは、ハンドルを開くときに使用されるオプションを示す ULONG 値です。 上位8ビットは**Zwcreatefile**の*CreateDisposition*パラメーターの値に対応し、下位24ビットは**Zwcreatefile**の*createoptions*パラメーターの値に対応します。
 
-**Parameters.Create.ShareAccess**メンバーが共有へのアクセスの種類を記述する USHORT 値。 この値の値に対応、 *ShareAccess*パラメーターの**ZwCreateFile**します。
+これらの**パラメーター**は、共有アクセスの種類を記述する USHORT 値です。 この値は、 **Zwcreatefile**の/の*アクセス*パラメーターの値に対応します。
 
-**Parameters.Create.FileAttributes**と**Parameters.Create.EaLength**メンバーはファイル システムで使用するために予約されている、ファイル システム フィルター ドライバー。 詳細については、次を参照してください。、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)インストール可能なファイル システム (IFS) ドキュメントのトピックです。
+**EaLength**メンバー**は、ファイル**システムおよびファイルシステムフィルタードライバーによって使用されるように予約されています。 詳細については、「インストール可能ファイルシステム (IFS)」ドキュメントの「 [**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create) 」を参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -42,7 +42,7 @@ ms.locfileid: "67370910"
 <a name="operation"></a>操作
 ---------
 
-ほとんどのデバイスとドライバーの中間状態を設定します\_が I/O のステータスに成功 IRP のブロックと、作成要求を完了、ドライバーを使用できます必要に応じて、 [ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) 。そのハンドルの後続の I/O 要求のリソースを占有するコールバック関数。 たとえば、システム シリアル ドライバーは、ページ アウト コードをマップし、入力と出力のデバイスを開こうとした場合は、ユーザー モードのスレッドの後続の I/O 要求を処理するために必要なすべてのリソースを割り当てます。
+ほとんどのデバイスと中間のドライバーは、IRP の i/o 状態ブロックの状態\_SUCCESS に設定し、作成要求を完了しますが、ドライバーは[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) callback 関数を使用して後続の i/o のためにリソースを予約できます。そのハンドルに対する要求。 たとえば、システムのシリアルドライバーは、ページアウトされたコードをマップし、入力と出力のためにデバイスを開こうとしているユーザーモードスレッドに対する後続の i/o 要求を処理するために必要なリソースを割り当てます。
 
 <a name="requirements"></a>要件
 ------------
@@ -55,7 +55,7 @@ ms.locfileid: "67370910"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -63,13 +63,13 @@ ms.locfileid: "67370910"
 ## <a name="see-also"></a>関連項目
 
 
-[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[*DispatchCreateClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchCreateClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IO\_セキュリティ\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)
+[**IO\_セキュリティ\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_security_context)
 
-[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)
 
  
 

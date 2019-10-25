@@ -3,16 +3,16 @@ title: Windows NT 4.0 ミニポート ドライバーから Windows 2000 への�
 description: Windows NT 4.0 ミニポート ドライバーから Windows 2000 への変換
 ms.assetid: a55192c6-3de4-4433-8825-3393f2bce04a
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000、Windows NT 4.0 のドライバーを変換する、複数の Windows バージョン
-- ビデオのミニポート ドライバー WDK Windows 2000 に変換します。
+- ビデオミニポートドライバー WDK Windows 2000、複数の Windows バージョン、Windows NT 4.0 ドライバーの変換
+- ビデオミニポートドライバーの変換 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f882013ada48a4bd7337f99a26748fd98a735432
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98899f89dc10d711d4030cf341a56b5f887cbdda
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370290"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839041"
 ---
 # <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>Windows NT 4.0 ミニポート ドライバーから Windows 2000 への変換
 
@@ -20,22 +20,22 @@ ms.locfileid: "67370290"
 ## <span id="ddk_converting_a_windows_nt_4_0_miniport_driver_to_windows_2000_gg"></span><span id="DDK_CONVERTING_A_WINDOWS_NT_4_0_MINIPORT_DRIVER_TO_WINDOWS_2000_GG"></span>
 
 
-適切な Windows NT 4.0 と以前のミニポート ドライバーは Windows 2000 と以降のバージョンのミニポート ドライバーに簡単になります。 Windows 2000 およびそれ以降のミニポート ドライバーで必要なプラグ アンド プレイのサポートを提供するために必要な更新プログラムの一部を次に示します。
+優れた Windows NT 4.0 および以前のミニポートドライバーは、Windows 2000 以降のミニポートドライバーに簡単になることができます。 Windows 2000 以降のミニポートドライバーで必要なプラグアンドプレイサポートを提供するために必要な更新プログラムの一部を次に示します。
 
--   参照してください[プラグ アンド プレイとビデオのミニポート ドライバー (Windows 2000 モデル) での電源管理](plug-and-play-and-power-management-in-video-miniport-drivers--windows-.md)に対して一連の新しい関数が実装する必要があります。 新しいメンバーを初期化するために必ず[**ビデオ\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)これらの新しい関数を指すようにします。
+-   実装する必要がある新しい関数の一覧については、「[ビデオミニポートドライバー (Windows 2000 モデル) のプラグアンドプレイと電源管理](plug-and-play-and-power-management-in-video-miniport-drivers--windows-.md)」を参照してください。 これらの新しい関数を指すように、 [**VIDEO\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)の新しいメンバーを必ず初期化してください。
 
--   呼び出しを更新して[ **VideoPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportinitialize)で、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)関数。 4 番目のパラメーター (*HwContext*) する必要があります**NULL** Windows 2000 以降。
+-   [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)関数で[**videoportinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)の呼び出しを更新します。 4番目のパラメーター (*HwContext*) は、Windows 2000 以降では**NULL**にする必要があります。
 
--   更新プログラム、 [ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)関数。 列挙可能なバスでは、上のデバイス用*HwVidFindAdapter*ように変更する必要があります。
+-   [*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)関数を更新します。 列挙可能なバス上のデバイスの場合、 *HwVidFindAdapter*は次のように変更する必要があります。
 
-    -   ほとんどのデバイス検出コードを削除します。 これは、ためへの呼び出し[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter) Windows 2000 で PnP マネージャーで、デバイスが既に検出されたことを意味します。
-    -   呼び出す[ **VideoPortGetAccessRanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetaccessranges)デバイスが応答するバス相対物理アドレスを取得します。 PnP マネージャーでは、これらのアドレスが割り当てられます。
-    -   ドライバーは、1 つ以上のデバイスの種類をサポートする場合は、デバイスの種類を決定します。
-    -   無視する、 [*再度*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)パラメーター。 これは、システムが呼び出すため*HwVidFindAdapter*デバイスあたり 1 回だけです。
+    -   ほとんどのデバイス検出コードを削除します。 これは、Windows 2000 で[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)を呼び出すと、PnP マネージャーがデバイスを既に検出したことを意味します。
+    -   [**Videoportgetaccessranges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetaccessranges)を呼び出して、デバイスが応答するバス相対物理アドレスを取得します。 これらのアドレスは、PnP マネージャーによって割り当てられます。
+    -   ドライバーが複数のデバイスの種類をサポートしている場合は、デバイスの種類を決定します。
+    -   [*もう一度*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)パラメーターを無視します。 これは、システムがデバイスごとに1回だけ*HwVidFindAdapter*を呼び出すためです。
 
-    PnP 静止しようと、デバイスを開始する責任が nonenumerable バス ISA などのデバイスは、 [ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)をデバイスが実際に存在するかどうかを判断します。
+    ISA など、列挙されていないバス上のデバイスの場合、PnP はデバイスの起動を試行しますが、デバイスが実際に存在するかどうかを判断するのは[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)の役割です。
 
--   更新プログラム、**します。製造**デバイスとベンダーの ID を含むように、ドライバーの INF ファイルのセクション これは、機能は、PnP マネージャーは、INF ファイルをデバイスに関連付けることができること必要です。 Windows NT 4.0 と更新された Windows 2000 以降のサンプル**します。製造**セクションに従ってください。
+-   を更新**します。** デバイスとベンダー ID を含むドライバーの INF ファイルの製造セクション。 これは、PnP マネージャーがデバイスをその INF ファイルに関連付けることができるようにするために必要です。 Windows NT 4.0 および更新された Windows 2000 以降のサンプル **。製造**セクションは次のとおりです。
 
     ```cpp
     [ABC.Mfg]   ; Windows NT V4.0 INF
@@ -47,9 +47,9 @@ ms.locfileid: "67370290"
     %ABC% ABC Graphics Accelerator B = abc, PCI\VEN_ABCD&DEV_4567
     ```
 
-使用することができます、 *geninf.exe* INF を生成するドライバー開発キット (DDK) に含まれているツールです。 (前に、DDK、Windows Driver Kit \[WDK\])。留意して、ただしを*geninf.exe* Windows NT 4.0 の INF は作成されません。 によって生成される INF ファイルを変更する必要があります*geninf.exe* Windows NT 4.0 をサポートする場合。 参照してください[グラフィックス INF ファイルの作成](creating-graphics-inf-files.md)の詳細。
+ドライバー開発キット (DDK) に含まれている*geninf .exe*ツールを使用して、INF を生成できます。 (DDK は Windows Driver Kit \[WDK\]の前にあります)。ただし、 *geninf*は Windows NT 4.0 用の inf を作成しないことに注意してください。 Windows NT 4.0 をサポートする場合は、 *geninf .exe*によって生成される INF ファイルを変更する必要があります。 詳細については、「[グラフィックス INF ファイルの作成](creating-graphics-inf-files.md)」を参照してください。
 
-Windows 2000 とビデオ ポートを後では、従来のドライバーと Windows NT 4.0 のミニポート ドライバーをサポートします。 システムが実行されていることもレガシ ミニポート ドライバーは実行中のシステムに追加されたときに自動的に検出中に、システムからレガシ ミニポート ドライバーのグラフィックス アダプターを削除できません。
+Windows 2000 以降のビデオポートでは、従来のドライバーとして Windows NT 4.0 ミニポートドライバーがサポートされています。 システムの実行中に、レガシミニポートドライバーのグラフィックスアダプターをシステムから削除することはできません。また、実行中のシステムに追加したときに、レガシミニポートドライバーが自動的に検出されることもありません。
 
  
 

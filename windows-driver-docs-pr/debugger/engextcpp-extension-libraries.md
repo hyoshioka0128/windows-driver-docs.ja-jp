@@ -3,15 +3,15 @@ title: EngExtCpp 拡張機能ライブラリ
 description: EngExtCpp 拡張機能ライブラリ
 ms.assetid: 8c7ce3f8-46c4-408c-aab5-00d654bddfcd
 keywords:
-- EngExtCpp 拡張機能ライブラリ
+- EngExtCpp 拡張機能、ライブラリ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 681047814d353cc91177bf04ad324b143f1f905e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f345fb6d9e66cf21e706c1b5f510618f2befb3f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366894"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837760"
 ---
 # <a name="engextcpp-extension-libraries"></a>EngExtCpp 拡張機能ライブラリ
 
@@ -19,31 +19,31 @@ ms.locfileid: "67366894"
 ## <span id="ddk_anatomy_of_a_dbgeng_extension_dll_dbx"></span><span id="DDK_ANATOMY_OF_A_DBGENG_EXTENSION_DLL_DBX"></span>
 
 
-EngExtCpp 拡張ライブラリは、EngExtCpp.h で見つかった EngExtCpp 拡張機能フレームワークを使用する DLL です。 デバッガー エンジンによってこのライブラリが読み込まれると、そのメソッドおよび関数を提供できます余分な機能やユーザー モードまたはカーネル モードの Microsoft Windows のデバッグの実行中にタスクの自動化。
+EngExtCpp 拡張ライブラリは、EngExtCpp で見つかった EngExtCpp extension フレームワークを使用する DLL です。 このライブラリがデバッガーエンジンによって読み込まれると、そのメソッドと関数は、Microsoft Windows でユーザーモードまたはカーネルモードのデバッグを実行しているときに、追加の機能を提供したりタスクを自動化したりすることができます。
 
-EngExtCpp 拡張機能フレームワークがの上に構築された、 [DbgEng 拡張フレームワーク](writing-dbgeng-extension-code.md)します。 デバッガー エンジンとの対話のと同じデバッガー エンジン API を提供します。 一般的なタスクを簡素化する追加機能も用意されています。
+EngExtCpp extension framework は、 [Dbgeng 拡張機能フレームワーク](writing-dbgeng-extension-code.md)の上に構築されています。 デバッガーエンジンとの対話には、同じデバッガーエンジン API が用意されています。 ただし、一般的なタスクをより簡単にするための追加機能も用意されています。
 
-"Extcpp"と呼ばれる EngExtCpp 拡張子のサンプルは sdk にありますツールを Windows のデバッグのフル インストールを実行した場合\\サンプル\\インストール ディレクトリの extcpp サブディレクトリ。
+Windows 用デバッグツールの完全インストールを実行した場合、"extcpp" という名前のサンプル EngExtCpp 拡張機能は、インストールディレクトリの [sdk\\samples]\\extcpp サブディレクトリにあります。
 
-### <a name="span-idextclassandextextensionspanspan-idextclassandextextensionspanextclass-and-extextension"></a><span id="ext_class_and_extextension"></span><span id="EXT_CLASS_AND_EXTEXTENSION"></span>EXT\_クラスと ExtExtension
+### <a name="span-idext_class_and_extextensionspanspan-idext_class_and_extextensionspanext_class-and-extextension"></a><span id="ext_class_and_extextension"></span><span id="EXT_CLASS_AND_EXTEXTENSION"></span>EXT\_クラスと ExtExtension
 
-ライブラリは 1 つのインスタンスを EngExtCpp 拡張機能の中核に、 [ **EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラス。 EngExtCpp 拡張ライブラリには、すべての拡張機能コマンドと、ライブラリによってエクスポートされる構造体を書式設定するためのメソッドが含まれていますが、このクラスの実装が提供されます。
+EngExtCpp 拡張ライブラリの中核となるのは、 [**EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスの1つのインスタンスです。 EngExtCpp 拡張ライブラリは、このクラスの実装を提供します。このクラスには、ライブラリによってエクスポートされる構造体を書式設定するためのすべての拡張コマンドとメソッドが含まれています。
 
-EXT\_クラスのサブクラスは、 [ **ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)します。 使用してこのクラスの 1 つのインスタンスを作成、 [ **EXT\_DECLARE\_GLOBALS** ](https://docs.microsoft.com/previous-versions/ff544527(v=vs.85))マクロ拡張機能ライブラリのソース ファイルに 1 回だけ表示する必要があります。
+EXT\_クラスは、 [**Extextension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)のサブクラスです。 このクラスの単一のインスタンスは、 [**EXT\_DECLARE\_GLOBALS**](https://docs.microsoft.com/previous-versions/ff544527(v=vs.85))マクロを使用して作成されます。このマクロは、拡張ライブラリのソースファイルに1回だけ記述する必要があります。
 
-拡張ライブラリが読み込まれるときに、 [**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))クラスのメソッドは、エンジンによって呼び出されます、 [**非**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))メソッドは、クラスのアンロードの前に呼び出されます。 メソッドではさらに、 [ **OnSessionActive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))、 [ **OnSessionInactive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552318(v=vs.85))、 [ **OnSessionAccessible**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552310(v=vs.85))、および[ **OnSessionInaccessible** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552315(v=vs.85))デバッグ セッションの状態の拡張機能ライブラリに通知する、エンジンによって呼び出されます。
+拡張ライブラリが読み込まれると、クラスの[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドがエンジンによって呼び出され、クラスのアンロード前に[**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))解除メソッドが呼び出されます。 さらに、 [**Onsessionactive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))、 [**onsessionactive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552318(v=vs.85))、 [**onsessionactive 可能**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552310(v=vs.85))、および[**onsessionactive アクセスでき**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552315(v=vs.85))ないメソッドがエンジンによって呼び出され、デバッグセッションの状態が拡張ライブラリに通知されます。
 
-### <a name="span-idextensioncommandsspanspan-idextensioncommandsspanextension-commands"></a><span id="extension_commands"></span><span id="EXTENSION_COMMANDS"></span>拡張コマンド
+### <a name="span-idextension_commandsspanspan-idextension_commandsspanextension-commands"></a><span id="extension_commands"></span><span id="EXTENSION_COMMANDS"></span>拡張機能コマンド
 
-[ **EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスは、多数の拡張機能コマンドの実行に使用されるメソッドを含めることができます。 各拡張機能のコマンドは、外部で宣言されて\_クラスを使用して、 [ **EXT\_コマンド\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/nf-engextcpp-ext_command_method)マクロ。 使用して、コマンドの実装が定義されている、 [ **EXT\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/nf-engextcpp-ext_command)マクロ。
+[**EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスには、拡張コマンドを実行するために使用されるいくつかのメソッドを含めることができます。 各拡張機能コマンドは、ext [ **\_コマンド\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/engextcpp/nf-engextcpp-ext_command_method)マクロを使用して、EXT\_クラスクラスで宣言します。 コマンドの実装は、 [**EXT\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/engextcpp/nf-engextcpp-ext_command)マクロを使用して定義します。
 
-### <a name="span-idknownstructuresspanspan-idknownstructuresspanknown-structures"></a><span id="known_structures"></span><span id="KNOWN_STRUCTURES"></span>既知の構造
+### <a name="span-idknown_structuresspanspan-idknown_structuresspanknown-structures"></a><span id="known_structures"></span><span id="KNOWN_STRUCTURES"></span>既知の構造体
 
-[ **EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスは、さまざまな使用方法を含めることができます、 [ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))プロトタイプ。 メソッドは、特定の構造体の型の形式のインスタンスにエンジンが出力に使用できます。
+[**EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスには、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))プロトタイプを使用するいくつかのメソッドを含めることができます。 メソッドは、特定の構造体型のインスタンスを出力用に書式設定するためにエンジンによって使用できます。
 
-### <a name="span-idprovidedvaluesspanspan-idprovidedvaluesspanprovided-values"></a><span id="provided_values"></span><span id="PROVIDED_VALUES"></span>値を指定
+### <a name="span-idprovided_valuesspanspan-idprovided_valuesspanprovided-values"></a><span id="provided_values"></span><span id="PROVIDED_VALUES"></span>指定された値
 
-[ **EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスは、さまざまな使用方法を含めることができます、 **ExtProvideValueMethod**プロトタイプ。 メソッドは、拡張機能によって提供される一部の擬似レジスタを評価するエンジンで使用できます。
+[**EXT\_クラス**](https://docs.microsoft.com/previous-versions/ff544508(v=vs.85))クラスには、 **ExtProvideValueMethod**プロトタイプを使用するいくつかのメソッドを含めることができます。 メソッドは、拡張機能によって提供されるいくつかの擬似レジスタを評価するためにエンジンによって使用できます。
 
  
 

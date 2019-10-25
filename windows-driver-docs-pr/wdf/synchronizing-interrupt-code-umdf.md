@@ -4,39 +4,39 @@ description: 割り込みコードの同期
 ms.assetid: 5E2D0063-2251-40B3-8982-46001E67EB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b583ea939379978923687acbf9d674ea98b18a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 50a82eea2a4c9e051724943da2b4573960804f2e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375036"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831641"
 ---
 # <a name="synchronizing-interrupt-code"></a>割り込みコードの同期
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ルーチンを 1 つだけでデータにアクセスできるように、割り込みのデータ バッファーにアクセスするすべてのドライバー コードを同期する必要があります。
+割り込みデータバッファーにアクセスするすべてのドライバーコードは、一度に1つのルーチンのみがデータにアクセスするように同期する必要があります。
 
-手動の割り込みのロックまたは自動のコールバックのシリアル化のいずれかを使用して、割り込みのコードを同期できます。
+割り込みコードを同期するには、手動割り込みロックまたは自動コールバックシリアル化を使用します。
 
-## <a name="manual-interrupt-locking"></a>手動の割り込みのロック
+## <a name="manual-interrupt-locking"></a>手動による割り込みロック
 
 
-UMDF が呼び出す前に割り込みロックを取得、 [ *OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)、 [ *OnInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_disable)、または[ *OnInterruptEnable* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_enable)コールバック。
+UMDF は、 [*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)、 [*OnInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_disable)、または[*OnInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_enable)コールバックを呼び出す前に、割り込みロックを取得します。
 
-ドライバーを同期する必要がある場合は、割り込みのロックを使用してコードを呼び出します[ **IWDFInterrupt::AcquireInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-acquireinterruptlock)と[ **IWDFInterrupt::ReleaseInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-releaseinterruptlock). たとえば、ドライバーを取得し、割り込みのロックを解放その[ *OnInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)これらのメソッドを使用してコールバック ルーチン。 ただし、I/O のコールバックをディスパッチ (など[ **OnRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackread-onread)と[ **OnWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite))、ドライバーの最初の呼び出し[ **IWDFInterrupt::TryToAcquireInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-trytoacquireinterruptlock)をキューに作業項目または潜在的なデッドロックを回避するために同じスレッドで作業するかどうかを決定します。 呼び出すことによって生じるおそれのあるデッドロックのシナリオの例については**IWDFInterrupt::AcquireInterruptLock**任意のスレッド コンテキストからの「解説」を参照してください。 [ **IWDFInterrupt:。AcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-acquireinterruptlock)します。
+ドライバーが割り込みロックを使用してコードを同期する必要がある場合は、 [**Iwdfinterrupt:: AcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-acquireinterruptlock)と[**Iwdfinterrupt:: ReleaseInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-releaseinterruptlock)を呼び出します。 たとえば、ドライバーは、これらのメソッドを使用して、 [*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)コールバックルーチンの割り込みロックを取得し、解放します。 ただし、i/o ディスパッチコールバック ( [**Onread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)や[**onread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)など) では、ドライバーはまず[**Iwdfinterrupt:: TryToAcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-trytoacquireinterruptlock)を呼び出して、作業項目をキューに含めるか、またはデッドロックの可能性を回避するために同じスレッドで作業するかを決定します。 任意のスレッドコンテキストから**Iwdfinterrupt:: AcquireInterruptLock**を呼び出すことによって発生する可能性のあるデッドロックシナリオの例については、 [**Iwdfinterrupt:: AcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-acquireinterruptlock)の「解説」を参照してください。
 
-場合[ **IWDFInterrupt::TryToAcquireInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-trytoacquireinterruptlock)返します**TRUE**ドライバーが同じスレッドで割り込みロックを獲得します。 この場合、ドライバーを呼び出して、そのロックを必要な作業を実行します。 [ **ReleaseInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-releaseinterruptlock)します。 場合**IWDFInterrupt::TryToAcquireInterruptLock**返します**FALSE**、ドライバー、作業項目をキューに配置しで作業を実行しますその[ *OnWorkItem* 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)コールバック。 この場合は、作業項目は自動シリアル化を使用する必要があります。
+[**Iwdfinterrupt:: TryToAcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-trytoacquireinterruptlock)が**TRUE**を返した場合、ドライバーは同じスレッドで割り込みロックを取得しました。 この場合、ドライバーは、そのロックを必要とする作業を実行し、 [**ReleaseInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-releaseinterruptlock)を呼び出します。 **Iwdfinterrupt:: TryToAcquireInterruptLock**が**FALSE**を返す場合、ドライバーは作業項目をキューに置いて、その[*onworkitem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)コールバックで作業を実行します。 この場合、作業項目で自動シリアル化を使用することはできません。
 
 ## <a name="using-automatic-serialization"></a>自動シリアル化の使用
 
 
-UMDF ドライバーは、呼び出すことによってコールバックの自動同期を要求できます[ **IWDFDeviceInitialize::SetLockingConstraint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)で、 *LockType*パラメーターに設定**WdfDeviceLevel**します。
+UMDF ドライバーは、 *LockType*パラメーターを**WdfDeviceLevel**に設定して[**Iwdfdeviceinitialize:: setlocktype constraint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)を呼び出して、自動コールバック同期を要求できます。
 
-ドライバーを設定し、 **AutomaticSerialization**のメンバー、 [ **WUDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を**は TRUE。** 呼び出す前に[ **CreateInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)します。
+次に、 [**Createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)を呼び出す前に、ドライバーは wudf の自動**シリアル化**メンバー [ **\_割り込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を**TRUE**に設定します。
 
-その結果、UMDF がドライバーのシリアル化します[ *OnInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem) I/O キューを使用したコールバック要求の取り消し、およびオブジェクトのコールバック ルーチンをファイルします。 このシナリオでは、UMDF は割り込みオブジェクトのロックではなく、コールバックのロックを使用します。
+その結果、UMDF は、i/o キュー、要求の取り消し、およびファイルオブジェクトのコールバックルーチンを使用して、ドライバーの[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)コールバックをシリアル化します。 このシナリオでは、UMDF は、割り込みごとのオブジェクトロックではなく、コールバックロックを使用します。
 
  
 

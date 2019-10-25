@@ -4,34 +4,34 @@ description: MSiSCSI\_TargetMappings WMI クラス
 ms.assetid: 12bfe80a-8431-4607-99f5-ddd6815aecc6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 106ace48cc639d24bbbc3d7c7679463e47801a17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 73aeb9a6f69518a8b8775ce96ac69c5c383437e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384665"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838871"
 ---
-# <a name="msiscsitargetmappings-wmi-class"></a>MSiSCSI\_TargetMappings WMI クラス
+# <a name="msiscsi_targetmappings-wmi-class"></a>MSiSCSI\_TargetMappings WMI クラス
 
 
 ## <span id="ddk_msiscsi_targetmappings_wmi_class_kr"></span><span id="DDK_MSISCSI_TARGETMAPPINGS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_TargetMappings WMI クラスには、一連セッションに関連付けられている iSCSI の論理ユニット番号 (LUN) マッピングにはが含まれています。 イニシエーターが確立されているログインのセッションによって公開される各 LUN のマッピングがあります。 各セッションのマッピングがのインスタンスによって説明されている、 [ISCSI\_TargetMapping WMI クラス](iscsi-targetmapping-wmi-class.md)、MSiSCSI 内で埋め込みクラスは\_TargetMappings WMI クラスです。
+MSiSCSI\_TargetMappings WMI クラスには、セッションに関連付けられている一連の iSCSI 論理ユニット番号 (LUN) マッピングが含まれています。 イニシエーターが確立したログインセッションによって公開されている各 LUN のマッピングがあります。 各セッションのマッピングは、MSiSCSI\_Targetmapping WMI クラス内の埋め込みクラスである[ISCSI\_TargetMapping wmi クラス](iscsi-targetmapping-wmi-class.md)のインスタンスによって記述されます。
 
-すべての iSCSI イニシエーターは、MSiSCSI を実装する必要があります\_TargetMappings クラス。 ISCSI イニシエーター サービスは、HBA イニシエーターと通信するには、このクラスに依存します。
+すべての iSCSI イニシエーターは、MSiSCSI\_TargetMappings クラスを実装する必要があります。 ISCSI イニシエーターサービスは、このクラスを使用して HBA イニシエーターと通信します。
 
-1 つのインスタンス、MSiSCSI の必要があります\_HBA イニシエーターを管理するミニポート ドライバーの読み込まれた各インスタンスについて TargetMappings WMI クラスです。 ミニポート ドライバーは、MSiSCSI を登録する必要があります\_TargetMappings クラスのミニポート ドライバーを管理する特定の物理デバイス オブジェクト (PDO) の名前を使用します。
+開始側 HBA を管理するミニポートドライバーの各インスタンスに対して、MSiSCSI\_TargetMappings WMI クラスのインスタンスが1つ存在する必要があります。 ミニポートドライバーは、ミニポートドライバーが管理する特定の物理デバイスオブジェクト (PDO) の名前を使用して、MSiSCSI\_TargetMappings クラスを登録する必要があります。
 
-MSiSCSI\_TargetMappings クラスは発行されませんしで定義されている*Operations.mof*します。
+MSiSCSI\_TargetMappings クラスは発行されていないため、*操作 .mof*で定義されています。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **MSiSCSI\_TargetMappings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_msiscsi_targetmappings)データ構造体。
+WMI ツールスイートは、このクラス定義をコンパイルするときに、 [**msiscsi\_TargetMappings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_msiscsi_targetmappings)データ構造を生成します。
 
-イニシエーターは、MSiSCSI を実装する必要は\_TargetMappings クラス。
+MSiSCSI\_TargetMappings クラスを実装するには、イニシエーターが必要です。
 
-ISCSI イニシエーター サービスが依存、MSiSCSI\_HBA イニシエーターとの通信に TargetMappings クラス。 HBA イニシエーターを管理するミニポート ドライバーは、MSiSCSI の 1 つのインスタンスを実装する必要があります\_HBA あたり TargetMappings クラス。
+ISCSI イニシエーターサービスは、MSiSCSI\_TargetMappings クラスに依存して、HBA イニシエーターと通信します。 HBA イニシエーターを管理するミニポートドライバーは、HBA ごとに MSiSCSI\_TargetMappings クラスの1つのインスタンスを実装する必要があります。
 
-イニシエーターは、MSiSCSI を登録する必要があります\_TargetMappings クラスの HBA の PDO の名前を使用します。
+イニシエーターは、HBA の PDO の名前を使用して、MSiSCSI\_TargetMappings クラスを登録する必要があります。
 
  
 

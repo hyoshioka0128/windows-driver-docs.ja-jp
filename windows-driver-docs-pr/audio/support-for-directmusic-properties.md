@@ -3,20 +3,20 @@ title: DirectMusic プロパティのサポート
 description: DirectMusic プロパティのサポート
 ms.assetid: f44cf9a9-bdfc-4794-b064-4d1126fb83aa
 keywords:
-- ハードウェア アクセラレータ WDK オーディオ
-- ミニポート ドライバー WDK オーディオ、カーネル モード ハードウェア アクセラレーション
-- シンセサイザー WDK オーディオ、カーネル モードのハードウェア アクセラレーション
-- シンセサイザー WDK のオーディオ、プロパティのサポート
+- ハードウェア高速化の WDK オーディオ
+- ミニポートドライバー WDK オーディオ、カーネルモードハードウェアアクセラレーション
+- シンセサイザー WDK オーディオ、カーネルモードハードウェアアクセラレーション
+- シンセサイザー WDK audio、プロパティのサポート
 - IKsControl インターフェイス
-- プロパティ セット Guid の WDK オーディオ
+- プロパティセット Guid WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 854c1a876db2cd3f71fc8582558d3dc9b69c3e20
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 79eedcd1d98a356d89aa1a6412bd0bdf6b17a801
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832350"
 ---
 # <a name="support-for-directmusic-properties"></a>DirectMusic プロパティのサポート
 
@@ -24,71 +24,71 @@ ms.locfileid: "67354243"
 ## <span id="support_for_directmusic_properties"></span><span id="SUPPORT_FOR_DIRECTMUSIC_PROPERTIES"></span>
 
 
-DirectMusic 合成ミニポート ドライバーでは、プロパティ項目の配列の形式でそのハードウェアの機能を指定します。 プロパティの各項目は、 [ **PCPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcproperty_item)次を含む構造体。
+DirectMusic 合成ミニポートドライバーは、プロパティ項目の配列の形式でハードウェア機能を指定します。 各プロパティ項目は、次の項目を含む[**Pcproperty\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)構造体です。
 
--   プロパティは、DirectMusic で定義されている特定のハードウェア機能を定義する GUID を設定します。
+-   DirectMusic によって定義される特定のハードウェア機能を定義するプロパティセット GUID。
 
--   ドライバー内で実装されているプロパティ ハンドラー メソッドへのポインター。
+-   ドライバー内に実装されているプロパティハンドラーメソッドへのポインター。
 
--   ハンドラーが、プロパティを取得するかどうかを指定するフラグのセットは、プロパティの設定し、プロパティの基本的なサポートを示します。
+-   ハンドラーがプロパティを取得し、プロパティを設定し、プロパティの基本サポートを示すことができるかどうかを指定するフラグのセット。
 
-### <a name="span-idpropertysetguidsspanspan-idpropertysetguidsspanproperty-set-guids"></a><span id="property_set_guids"></span><span id="PROPERTY_SET_GUIDS"></span>プロパティ セット Guid
+### <a name="span-idproperty_set_guidsspanspan-idproperty_set_guidsspanproperty-set-guids"></a><span id="property_set_guids"></span><span id="PROPERTY_SET_GUIDS"></span>プロパティセット Guid
 
-DirectMusic では、次のプロパティ セット Guid が定義されています。
+次のプロパティセット Guid は、DirectMusic によって定義されます。
 
--   GUID\_DMU\_PROP\_DLS1
+-   \_\_PROP\_DLS1 の GUID
 
--   GUID\_DMU\_PROP\_DLS2
+-   \_\_PROP\_DLS2 の GUID
 
--   GUID\_DMU\_PROP\_効果
+-   \_DMUS\_PROP\_効果の GUID
 
--   GUID\_DMU\_PROP\_GM\_ハードウェア
+-   \_DMUS\_PROP\_GM\_ハードウェアの GUID
 
--   GUID\_DMU\_PROP\_GS\_対応
+-   \_DMUS\_PROP\_GS\_可能な GUID
 
--   GUID\_DMU\_PROP\_GS\_ハードウェア
+-   GUID\_DMUS\_PROP\_GS\_ハードウェア
 
--   GUID\_DMU\_PROP\_INSTRUMENT2
+-   \_\_PROP\_INSTRUMENT2 の GUID
 
--   GUID\_DMU\_PROP\_LegacyCaps
+-   \_\_PROP\_LegacyCaps の GUID
 
--   GUID\_DMU\_PROP\_%memorysize
+-   \_DMUS\_PROP\_MemorySize の GUID
 
--   GUID\_DMU\_PROP\_SampleMemorySize
+-   \_\_PROP\_SampleMemorySize の GUID
 
--   GUID\_DMU\_PROP\_SamplePlaybackRate
+-   \_DMUS\_PROP\_SamplePlaybackRate の GUID
 
--   GUID\_DMU\_PROP\_SetSynthSink
+-   \_DMUS\_PROP\_SetSynthSink の GUID
 
--   GUID\_DMU\_PROP\_SynthSink\_DSOUND
+-   \_DMUS\_PROP\_SynthSink\_DSOUND の GUID
 
--   GUID\_DMUS\_PROP\_SynthSink\_WAVE
+-   \_DMUS\_PROP\_SynthSink\_WAVE の GUID
 
--   GUID\_DMU\_PROP\_ボリューム
+-   \_\_PROP\_ボリュームの GUID
 
--   GUID\_DMU\_PROP\_WavesReverb
+-   \_\_PROP\_WavesReverb の GUID
 
--   GUID\_DMU\_PROP\_WriteLatency
+-   \_PROP\_の\_の GUID
 
--   GUID\_DMU\_PROP\_WritePeriod
+-   \_DMUS\_PROP\_WritePeriod の GUID
 
--   GUID\_DMU\_PROP\_XG\_対応
+-   \_DMUS\_PROP\_XG\_対応する GUID
 
--   GUID\_DMU\_PROP\_XG\_ハードウェア
+-   \_PROP\_XG\_ハードウェアの GUID\_DMUS
 
-上記のプロパティの定義セット Guid は、の説明を参照してください。、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) DirectX 8.0 プログラマーズ リファレンス、Microsoft Windows sdk で構造体。 上記の Guid のそれぞれのプロパティの設定は、インデックスはゼロで識別される 1 つの要素で構成されます。
+前のプロパティセット Guid の定義については、Microsoft Windows SDK の「DirectX 8.0 プログラマーリファレンス」にある[**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体の説明を参照してください。 上記の Guid のそれぞれに対して設定されるプロパティは、0のインデックスによって識別される1つの要素で構成されます。
 
-### <a name="span-idikscontrolinterfacespanspan-idikscontrolinterfacespanikscontrol-interface"></a><span id="ikscontrol_interface"></span><span id="IKSCONTROL_INTERFACE"></span>IKsControl インターフェイス
+### <a name="span-idikscontrol_interfacespanspan-idikscontrol_interfacespanikscontrol-interface"></a><span id="ikscontrol_interface"></span><span id="IKSCONTROL_INTERFACE"></span>IKsControl インターフェイス
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)インターフェイスを取得し、設定、または、プロパティ、イベント、およびメソッドの基本的なサポートのクエリに使用されます。 このインターフェイスでは、(KS) アーキテクチャでは、ストリーミング WDM カーネルの一部ですが、DirectMusic ポートのプロパティを公開する DirectMusic でも使用されます。 このインターフェイスを取得する、 **IDirectMusicPort::QueryInterface**メソッド (Windows SDK のドキュメントで説明) を*riid*パラメーターに設定**IID\_IKsControl**します。
+[Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)インターフェイスは、プロパティ、イベント、およびメソッドの基本サポートを取得、設定、または照会するために使用されます。 このインターフェイスは、WDM カーネルストリーミング (KS) アーキテクチャの一部ですが、directmusic が DirectMusic ポートのプロパティを公開するためにも使用されます。 このインターフェイスを取得するには、Windows SDK ドキュメントで説明されているように、 **IDirectMusicPort:: QueryInterface**メソッドを呼び出します。このメソッドは、 *Riid*パラメーターを**IID\_iksk コントロール**に設定したものです。
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)インターフェイスが 3 つのメソッドには。[**KsProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [ **KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksevent)、および[ **KsMethod**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksmethod)します。 現在、のみ**KsProperty** DirectMusic でサポートされています。
+[Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)インターフェイスには、 [**ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [**KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)、および[**ksk メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksmethod)の3つのメソッドがあります。 現時点では、 **"ksk" プロパティ**のみが DirectMusic でサポートされています。
 
-[ **IKsControl::KsProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ikscontrol-ksproperty)メソッドを取得またはプロパティの値を設定します。 特定の DirectMusic ポートにプロパティ項目要求をルーティングする方法は、ポートの実装方法によって異なります。
+[**Ikscontrol:: Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ikscontrol-ksproperty)メソッドは、プロパティの値を取得または設定します。 プロパティ項目要求が特定の DirectMusic ポートにルーティングされる方法は、ポートの実装方法によって異なります。
 
--   Microsoft Win32 ハンドルに基づくマルチ メディアの呼び出し (midiOut および midiIn Api) の上に DirectMusic エミュレーションを表すポートでプロパティがサポートされていません。 使用して、 **GUID\_DMU\_PROP\_LegacyCaps**プロパティ セット GUID を Win32 マルチ メディアの呼び出しで実装されているかどうかのポートを照会します。
+-   Microsoft Win32 ハンドルベースのマルチメディア呼び出し (midiOut Api と Midiout Api) 上で DirectMusic エミュレーションを表すポートでは、プロパティはサポートされません。 **Guid\_DMUS\_PROP\_LegacyCaps**プロパティセット guid を使用して、Win32 マルチメディア呼び出しで実装されているかどうかをポートに照会します。
 
--   プロパティ項目の要求を表すプラグ可能なソフトウェアのシンセサイザーのポートには、ユーザー モードで完全処理されます。 ポートの種類のトポロジはシンセサイザー (によって表される、 [IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)インターフェイス) シンク ノードに接続されている (、 [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)インターフェイス)。 プロパティ要求が与えられます最初シンセサイザーのノードにシンク ノードにし、シンセサイザーでが認識されない場合。
+-   プラグ可能なソフトウェアシンセサイザーを表すポートに対するプロパティ項目要求は、ユーザーモードで完全に処理されます。 この種類のポートのトポロジは、シンクノード ( [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)インターフェイス) に接続されているシンセサイザー ( [IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)インターフェイスによって表されます) です。 プロパティ要求は、最初にシンセサイザーノードに与えられ、次にシンセサイザーによって認識されない場合はシンクノードに渡されます。
 
  
 

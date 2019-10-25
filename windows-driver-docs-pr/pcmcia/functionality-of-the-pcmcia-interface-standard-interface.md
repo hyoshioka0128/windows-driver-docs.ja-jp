@@ -4,28 +4,28 @@ description: PCMCIA_INTERFACE_STANDARD インターフェイスの機能
 ms.assetid: 301b4165-4753-4d55-9760-17628174c043
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5075c1648b8b7c78132227b50acf58abd56e1e4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a117be23c9f5122f713a3c992a5f75f21afaded
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386198"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837729"
 ---
-# <a name="functionality-of-the-pcmciainterfacestandard-interface"></a>PCMCIA の機能\_インターフェイス\_標準インターフェイス
+# <a name="functionality-of-the-pcmcia_interface_standard-interface"></a>PCMCIA\_インターフェイス\_標準インターフェイスの機能
 
 
 
 
 
-このセクションで、PCMCIA の機能を説明する\_インターフェイス\_標準インターフェイス PCMCIA バス ドライバーを Windows 2000 以降のオペレーティング システムでサポートしています。 PCMCIA\_インターフェイス\_標準インターフェイス PCMCIA ドライバーによって直接呼び出すことができるルーチンのセットを提供します。 これらのインターフェイスのルーチンでは、次の操作をサポートします。
+このセクションでは、Windows 2000 以降のオペレーティングシステムで PCMCIA バスドライバーがサポートする PCMCIA\_インターフェイス\_標準インターフェイスの機能について説明します。 PCMCIA\_INTERFACE\_STANDARD インターフェイスには、PCMCIA ドライバーによって直接呼び出すことができる一連のルーチンが用意されています。 これらのインターフェイスルーチンは、次の操作をサポートします。
 
--   PCMCIA バス ドライバーによってマップされているメモリ ウィンドウの属性を変更します。
+-   PCMCIA バスドライバーによってマップされている [メモリ] ウィンドウの属性を変更する
 
--   設定、 *Vpp*デバイスの (セカンダリ電源) レベル
+-   デバイスの*Vpp* (2 次電源) レベルを設定する
 
--   カードのメモリが書き込み保護されているか判断します。
+-   カードメモリが書き込み禁止になっているかどうかを判断する
 
-PCMCIA によって提供されるルーチンの詳細については\_インターフェイス\_標準的なインターフェイスを参照してください[PCMCIA\_インターフェイス\_標準のインターフェイスのメモリ カード ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+PCMCIA\_INTERFACE\_STANDARD インターフェイスによって提供されるルーチンの詳細については、「 [pcmcia\_interface\_Standard Interface Memory Card ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
  
 

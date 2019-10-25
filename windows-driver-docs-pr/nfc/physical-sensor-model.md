@@ -10,22 +10,22 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ad14402cee7f7d867c3544df56ff9926d71cd9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9808776e342698949d587a4093c4f62f451bbb0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386531"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831547"
 ---
 # <a name="physical-sensor-model"></a>物理センサー モデル
 
 
-NFC を実装する 1 つの NFP プロバイダーは、システムで一般的な構成です。 ただしがあります複数 NFP プロバイダー別または同じ NFP テクノロジは、各サポート、特定のシステム。 など特定タブレット フォーム ファクターのシステムは、エッジ、周囲に複数の NFC アンテナを必要があり、タブレットの背面がポイントを使用して追加結合 NFC/TransferJet タッチ - ワイヤレス ドッキング ステーションに接続するために使用します。 この例のシステムで NFP の物理的なモデリングでは、これらの追加のアンテナは 1 つのプロバイダー内で個別にアドレス指定可能ではありません。 システムのメーカーが個別にアドレス可能な配慮を提供するには、アンテナと NFP テクノロジごとに特定 NFP プロバイダーのインスタンスを実装する必要があります。 任意のデバイスは、これらのプロバイダーのいずれかの間で近接になると、公開されたメッセージは、すべてのサブスクライバーに送信されます。
+システムでの一般的な構成では、NFC を実装する NFP プロバイダーが1つ必要です。 ただし、特定のシステムに複数の NFP プロバイダーが存在し、それぞれが異なるまたは同じ NFP テクノロジをサポートしている場合があります。 たとえば、特定のタブレットフォームファクターシステムでは、エッジ周辺に複数の NFC アンテナが配置されている場合があります。また、タブレットの背面には、ワイヤレスドックへの接続に使用される追加の追加の NFC/TransferJet タッチポイントが必要になる場合があります。 この例のシステムでは、NFP の物理的なモデリングで、このような追加のアンテナを1つのプロバイダー内で個別にアドレス指定することはできません。 個別にアドレス指定可能な個々を提供するには、システムメーカーは、アンテナおよび NFP テクノロジごとに特定の NFP プロバイダーインスタンスを実装する必要があります。 これらのプロバイダーのいずれかでデバイスが近接されると、公開されたメッセージはすべてのサブスクライバーに送信されます。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

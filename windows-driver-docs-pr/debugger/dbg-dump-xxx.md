@@ -1,10 +1,10 @@
 ---
-title: DBG\_ダンプ\_XXX
-description: DBG\_ダンプ\_XXX
+title: DBG\_DUMP\_XXX
+description: DBG\_DUMP\_XXX
 ms.assetid: d34ecf95-3aea-4850-a2de-76f239e8b8a0
 ms.date: 12/07/2017
 keywords:
-- デバッグ DBG_DUMP_XXX Windows
+- DBG_DUMP_XXX Windows のデバッグ
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bbcf11ad55aa35858ef903d7aea2c77693acb86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cec17542dc42a26d5514b54e6b08ff560f93d5a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361448"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837804"
 ---
-# <a name="dbgdumpxxx"></a>DBG\_ダンプ\_XXX
+# <a name="dbg_dump_xxx"></a>DBG\_DUMP\_XXX
 
 
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-DBG\_ダンプ\_*XXX*ビット フラグを使って、**オプション**、SYM のメンバー\_ダンプ\_の動作を制御するパラメーターの構造体[**IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作。
+DBG\_DUMP\_PARAM 構造体の**Options**メンバーは、DBG\_Dump\_*XXX*ビットフラグを使用して、 [**IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)の動作を制御します。運用.
 
-次のフラグは、存在することができます。
+次のフラグを使用できます。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ DBG\_ダンプ\_*XXX*ビット フラグを使って、**オプション**、SYM
 <tbody>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_NO_INDENT</p></td>
-<td align="left"><p>メンバーは、出力にインデントされません。</p></td>
+<td align="left"><p>出力では、メンバーはインデントされません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_NO_OFFSET</p></td>
@@ -53,64 +53,64 @@ DBG\_ダンプ\_*XXX*ビット フラグを使って、**オプション**、SYM
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_VERBOSE</p></td>
-<td align="left"><p>詳細な出力。</p></td>
+<td align="left"><p>詳細出力。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_CALL_FOR_EACH</p></td>
-<td align="left"><p>コールバック関数は、各メンバーに対して呼び出されます。</p></td>
+<td align="left"><p>コールバック関数は、メンバーごとに呼び出されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_LIST</p></td>
-<td align="left"><p>シンボルは、リンクされたリストで、IG_DUMP_SYMBOL_INFO エントリ<strong>Ioctl</strong>操作はこのリストに対して反復処理します。 一覧の次の項目を指すメンバーの説明が指定された、 <strong>linkList</strong> SYM_DUMP_PARAM 構造体のメンバー。</p></td>
+<td align="left"><p>シンボルはリンクリスト内のエントリであり、IG_DUMP_SYMBOL_INFO <strong>Ioctl</strong>操作はこのリストを反復処理します。 リスト内の次の項目を指すメンバーの説明は、SYM_DUMP_PARAM 構造体の<strong>Linklist</strong>メンバーによって指定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_NO_PRINT</p></td>
-<td align="left"><p>(コールバック関数を呼び出すし、データのコピーが実行される) だけは、何も出力されません。</p></td>
+<td align="left"><p>何も出力されません (コールバック関数だけが呼び出され、データのコピーが実行されます)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_GET_SIZE_ONLY</p></td>
-<td align="left"><p><strong>Ioctl</strong>操作は、のみのシンボルのサイズを返します。 メンバーの情報または呼び出しのコールバック関数は印刷されません。</p></td>
+<td align="left"><p><strong>Ioctl</strong>操作は、シンボルのサイズのみを返します。メンバー情報を出力したり、コールバック関数を呼び出したりすることはありません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_COMPACT_OUT</p></td>
-<td align="left"><p>各メンバーの後に改行文字は印刷されません。</p></td>
+<td align="left"><p>各メンバーの後に改行は出力されません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_ARRAY</p></td>
-<td align="left"><p>シンボルは、配列です。 配列内の要素の数が、メンバーで指定された<strong>listLink -&gt;サイズ</strong>SYM_DUMP_PARAM 構造体の。</p></td>
+<td align="left"><p>記号は配列です。 配列内の要素の数は、SYM_DUMP_PARAM 構造体のメンバー <strong>Listlink&gt;サイズ</strong>によって指定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_ADDRESS_OF_FIELD</p></td>
-<td align="left"><p>値<strong>addr</strong>メンバーのアドレスでは実際には、 <strong>listLink -&gt;fName</strong> SYM_DUMP_PARAM 構造とシンボルの先頭ではありません。</p></td>
+<td align="left"><p><strong>Addr</strong>の値は実際には、SYM_DUMP_PARAM 構造体のメンバー <strong>listlink-&gt;fName</strong>で、シンボルの先頭ではありません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_ADDRESS_AT_END</p></td>
-<td align="left"><p>値<strong>addr</strong>は実際には、シンボルの終了とシンボルの先頭ではないアドレスです。</p></td>
+<td align="left"><p><strong>Addr</strong>の値は、実際にはシンボルの先頭ではなく、シンボルの末尾のアドレスです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_COPY_TYPE_DATA</p></td>
-<td align="left"><p>シンボルの値がメンバーにコピーされます<strong>pBuffer</strong>します。 これはのみ使用できますのプリミティブ型は--の ULONG または PVOID--では使用できません構造体。</p></td>
+<td align="left"><p>シンボルの値は、メンバー <strong>Pbuffer</strong>にコピーされます。 これは、プリミティブ型 (たとえば、ULONG や PVOID) に対してのみ使用できます。構造体では使用できません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_READ_PHYSICAL</p></td>
-<td align="left"><p>シンボルの値については、ターゲットの物理メモリから直接読み取ります。</p></td>
+<td align="left"><p>シンボルの値は、ターゲットの物理メモリから直接読み込まれます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_FUNCTION_FORMAT</p></td>
-<td align="left"><p>関数型を持つシンボルを書式設定時に関数の形式が適用されます、たとえば、 <code>function(arg1, arg2, ...)</code></p></td>
+<td align="left"><p>関数の型を持つシンボルを書式設定すると、関数の形式が使用されます (たとえば、<code>function(arg1, arg2, ...)</code></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_BLOCK_RECURSE</p></td>
-<td align="left"><p>入れ子になった構造で再帰処理します。ポインターに従っていません。</p></td>
+<td align="left"><p>入れ子構造体を使用して再帰的に実行します。ただし、ポインターには従いません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-また、DBG マクロの結果\_ダンプ\_RECUR\_レベル (*レベル*) 構造体を再帰の深さを指定するビット セットに追加できます。 *レベル*0 ~ 15 の数値を指定できます。
+さらに、マクロ DBG\_DUMP\_繰り返し\_レベル (*レベル*) の結果をビットセットに追加して、再帰する構造の深さを指定できます。 *レベル*0 から15までの数値を指定できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -121,17 +121,17 @@ DBG\_ダンプ\_*XXX*ビット フラグを使って、**オプション**、SYM
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Wdbgexts.h (Wdbgexts.h、Wdbgexts.h、Dbgeng.h など)</td>
+<td align="left">Wdbgexts (wdbgexts .h、Wdbgexts .h、または Dbgeng .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)
+[**IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)
 
-[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
+[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
 
  
 

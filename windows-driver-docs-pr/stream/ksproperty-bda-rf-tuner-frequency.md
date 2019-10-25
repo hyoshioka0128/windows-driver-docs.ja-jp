@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_RF\_チューナー\_頻度
-description: クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_KSPROPERTY と共に頻度\_BDA\_RF\_チューナー\_頻度\_乗数チューナーのノードの頻度の設定を制御します。
+title: KSK プロパティ\_BDA\_RF\_チューナー\_頻度
+description: クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY と共に、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY\_を使用して、チューナーノードの周波数設定を制御します。
 ms.assetid: 0bcecf33-06d5-4b07-8602-da97db5c1306
 keywords:
-- KSPROPERTY_BDA_RF_TUNER_FREQUENCY ストリーミング メディア デバイス
+- KSPROPERTY_BDA_RF_TUNER_FREQUENCY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad98d3a8ad0d35ff82e63001b260fc4dd372b061
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 43ae1820760974f980b1a18c10e7bd8907671095
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368850"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838076"
 ---
-# <a name="kspropertybdarftunerfrequency"></a>KSPROPERTY\_BDA\_RF\_チューナー\_頻度
+# <a name="ksproperty_bda_rf_tuner_frequency"></a>KSK プロパティ\_BDA\_RF\_チューナー\_頻度
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_KSPROPERTY と共に頻度\_BDA\_RF\_チューナー\_頻度\_乗数チューナーのノードの頻度の設定を制御します。
+クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY と共に、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY\_を使用して、チューナーノードの周波数設定を制御します。
 
 ## <span id="ddk_ksproperty_bda_rf_tuner_frequency_ks"></span><span id="DDK_KSPROPERTY_BDA_RF_TUNER_FREQUENCY_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67368850"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67368850"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -61,22 +61,22 @@ ms.locfileid: "67368850"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、チューナーノードの識別子を指定します。
 
-プロパティの値を設定する基本の頻度を指定します。
+プロパティ値は、設定する基本頻度を指定します。
 
-KSPROPERTY を指定する\_BDA\_RF\_チューナー\_使用頻度のプロパティ。
+KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY プロパティを次のように指定します。
 
--   BDA\_頻度\_いない\_セット (-1) では、頻度が設定されていないことを示します。
+-   BDA\_FREQUENCY\_\_設定されていません (− 1) は、頻度が設定されていないことを示します。
 
--   BDA\_頻度\_いない\_定義 (0) では、頻度が定義されていないことを示します。
+-   BDA\_FREQUENCY\_\_定義されていません (0) は、頻度が定義されていないことを示します。
 
-場合、KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_乗数プロパティ BDA の乗数を指定する\_頻度\_乗数\_いない\_セット (− 1) または BDA\_頻度\_乗数\_いない\_(0) を定義し、KSPROPERTY\_BDA\_RF\_チューナー\_頻度プロパティキロ ヘルツ (kHz) で、頻度を指定します。 また、ミニドライバーがハンドラーを設定 ([*KStrSetPropertyHandler*](https://docs.microsoft.com/previous-versions/ff567200(v=vs.85))) 頻度の乗数のプロパティが呼び出されないため、ミニドライバーが指定された頻度が表されることを決定する必要がありますkHz (1 Hz x 1000) の単位。 実際には、既定の乗数値は 1000 です。 詳細については、次を参照してください。 [BDA チューナーのノードの周波数のプロパティにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/stream/accessing-frequency-properties-of-a-bda-tuner-node)します。
+KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数プロパティによって、BDA\_FREQUENCY\_の乗数が指定されている場合\_設定 (− 1) または BDA\_FREQUENCY\_乗数\_\_定義されていません (0)。次に、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY プロパティは、キロヘルツ (kHz) 単位で頻度を指定します。 さらに、frequency 乗数プロパティのミニドライバーのセットハンドラー ([*Kstrsetpropertyhandler*](https://docs.microsoft.com/previous-versions/ff567200(v=vs.85))) が呼び出されていない場合、ミニドライバーは、指定された頻度が KHz (1Hz x 1000) 単位で表されることを判断する必要があります。 実際には、既定の乗数値は1000です。 詳細については、「 [BDA チューナーノードの周波数プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/stream/accessing-frequency-properties-of-a-bda-tuner-node)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ KSPROPERTY を指定する\_BDA\_RF\_チューナー\_使用頻度のプロパ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -95,9 +95,9 @@ KSPROPERTY を指定する\_BDA\_RF\_チューナー\_使用頻度のプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
-[**KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_乗数**](ksproperty-bda-rf-tuner-frequency-multiplier.md)
+[**KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数**](ksproperty-bda-rf-tuner-frequency-multiplier.md)
 
  
 

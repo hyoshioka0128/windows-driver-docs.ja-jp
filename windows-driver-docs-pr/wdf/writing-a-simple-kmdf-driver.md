@@ -1,48 +1,48 @@
 ---
 title: 簡単な WDF ドライバーの作成
-description: このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーを作成する必要がある最小限の機能について説明します。 UMDF バージョン 2 で始まるユーザー モード ドライバー フレームワーク (UMDF) ドライバーを作成する同じ最小限の機能を必要とします。
+description: このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーを記述するために必要な最小限の機能について説明します。 UMDF バージョン2以降では、ユーザーモードドライバーフレームワーク (UMDF) ドライバーを記述するのに必要な最小限の機能が必要です。
 ms.assetid: 6225b81c-e0da-473a-ba38-24846436dae7
 keywords:
-- カーネル モード ドライバー WDK KMDF、単純なドライバーの作成
-- KMDF WDK、単純なドライバーの作成
-- カーネル モード ドライバー フレームワーク WDK は、単純なドライバーの作成
-- フレームワーク ベースのドライバー WDK KMDF、単純なドライバーの作成
+- カーネルモードドライバー WDK KMDF、シンプルなドライバーの作成
+- KMDF WDK、シンプルなドライバーの作成
+- カーネルモードドライバーフレームワーク WDK、単純なドライバーの作成
+- フレームワークベースのドライバー WDK KMDF、シンプルなドライバーの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8c5f470d5bb7e60af0acff5f6ac190d55947454
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eeacb11bdfc4cf2033b6177779ba2802ecd28f6c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386113"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823490"
 ---
 # <a name="writing-a-simple-wdf-driver"></a>簡単な WDF ドライバーの作成
 
 
-このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーを作成する必要がある最小限の機能について説明します。 UMDF バージョン 2 で始まるユーザー モード ドライバー フレームワーク (UMDF) ドライバーを作成する同じ最小限の機能を必要とします。
+このトピックでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーを記述するために必要な最小限の機能について説明します。 UMDF バージョン2以降では、ユーザーモードドライバーフレームワーク (UMDF) ドライバーを記述するのに必要な最小限の機能が必要です。
 
 
 
 
-新しい KMDF ドライバーか UMDF ドライバーを作成する場合、32 文字以下のドライバー名を選ぶ必要があります。 この長さの制限は、wdfglobals.h で定義されています。 ドライバー名は、最大長を超えている場合、ドライバーは読み込みに失敗します。
+新しい KMDF ドライバーか UMDF ドライバーを作成する場合、32 文字以下のドライバー名を選ぶ必要があります。 この長さの制限は、wdfglobals.h で定義されています。 ドライバー名が最大長を超えていると、ドライバーの読み込みに失敗します。
 
-各フレームワーク ベースのドライバーから成る、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンと一連のオブジェクトに固有のイベントが発生したときにフレームワークから呼び出されるイベント コールバック関数。 たとえば、単純なフレームワーク ベースのドライバーの可能性がありますで構成されます。
+各フレームワークベースのドライバーは、 [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンと、オブジェクト固有のイベントが発生したときにフレームワークが呼び出す一連のイベントコールバック関数で構成されます。 たとえば、単純なフレームワークベースのドライバーは次のように構成されます。
 
--   A [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンで、ドライバーが読み込まれるときに呼び出されると呼び出し[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。
+-   [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。ドライバーが読み込まれ、 [**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出すときに呼び出されます。
 
--   [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベント コールバック関数は、プラグ アンド プレイ (PnP) マネージャーが、ハードウェアに一致するハードウェア識別子 (ID) を使用したデバイスの検出を報告したときにフレームワークドライバーがサポートする ID です。
+-   [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベントコールバック関数。この関数は、プラグアンドプレイ (PnP) マネージャーが、ドライバーがサポートするハードウェア id と一致するデバイスの検出をハードウェア識別子 (id) で報告したときに呼び出します。
 
-    ハードウェア、オペレーティング システムを使用して初めてコンピューターに接続しているデバイスのいずれかのドライバーをインストールする INF ファイルを提供することで、ドライバーをサポートする Id を指定します。 システムが INF ファイルとハードウェア Id を使用する方法の詳細については、次を参照してください。[セットアップによるドライバーの選択](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-selects-drivers)します。
+    ドライバーがサポートするハードウェア Id を指定するには、INF ファイルを提供します。このファイルは、デバイスの1つがコンピューターに初めて接続されたときに、オペレーティングシステムがドライバーをインストールするために使用します。 システムで INF ファイルとハードウェア Id を使用する方法の詳細については、「[セットアップでドライバーを選択する方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-selects-drivers)」を参照してください。
 
-    ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数の呼び出し[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)の framework デバイス オブジェクトを作成しますデバイスが検出されました。
+    ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数は、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、検出されたデバイスのフレームワークデバイスオブジェクトを作成します。
 
--   A の要求ハンドラーなど、 [ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default) I/O マネージャーがドライバーに I/O 要求を送信するときにフレームワークから呼び出されるコールバック関数。
+-   I/o マネージャーがドライバーに i/o 要求を送信したときにフレームワークが呼び出す、 [*Evtiodefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)コールバック関数などの要求ハンドラー。
 
-    I/O マネージャーは、ドライバーに、I/O 要求を送信するとき、フレームワークは I/O キューに要求を配置し、し、要求ハンドラーを呼び出すことによって、ドライバーを通知します。
+    I/o マネージャーがドライバーに i/o 要求を送信すると、フレームワークは要求を i/o キューに配置し、要求ハンドラーを呼び出してドライバーに通知します。
 
-    ドライバーは、ドライバーは、デバイスの I/O 要求を受信できるように、デバイスごとに少なくとも 1 つの I/O キューを作成する必要があります。 I/O キューをドライバーの呼び出しを作成する[ **WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)、framework キュー オブジェクトを作成して、デバイスの要求ハンドラーを登録します。
+    ドライバーは、デバイスの i/o 要求を受信できるように、デバイスごとに1つ以上の i/o キューを作成する必要があります。 I/o キューを作成するために、ドライバーは[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)を呼び出します。これにより、フレームワークキューオブジェクトが作成され、デバイスの要求ハンドラーが登録されます。
 
-フレームワーク ベースのドライバーの記述方法の詳細については、次を参照してください。[ドライバーを開発するフレームワークを使用して](using-the-framework-to-develop-a-driver.md)します。
+フレームワークベースのドライバーの記述の詳細については、「フレームワークを使用した[ドライバーの開発](using-the-framework-to-develop-a-driver.md)」を参照してください。
 
  
 

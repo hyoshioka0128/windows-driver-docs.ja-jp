@@ -6,16 +6,16 @@ keywords:
 - AcceptProcessorNotification コールバック
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de659a59961c532f5ee7ada4232c55496ce6f61
-ms.sourcegitcommit: faa6d153560d96504216df0609ed7c05d7c39b34
+ms.openlocfilehash: 1d2ccfc2fd1da5950a0162148f864f5607e2c6b2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72427589"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838495"
 ---
 # <a name="processor-power-management-ppm-notifications"></a>プロセッサ電源管理 (PPM) の通知
 
-PEP の[*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)コールバックルーチンが受信する各プロセッサ電源管理 (PPM) 通知には、通知の種類を示す通知パラメーターと、データを指すデータパラメーターが付属しています。指定された通知の種類の情報を格納する構造体。
+PEP の[*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)コールバックルーチンが受信する各プロセッサ電源管理 (PPM) 通知には、通知の種類を示す通知パラメーターと、データを指すデータパラメーターが付属しています。指定された通知の種類の情報を格納する構造体。
 
 この呼び出しでは、通知パラメーターは、通知の種類を示す PEP_NOTIFY_PPM_XXX 定数値に設定されます。 データパラメーターが、この通知の種類に関連付けられている PEP_PPM_XXX 構造体の型を指しています。
 
@@ -319,7 +319,7 @@ PEP_NOTIFY_PPM_PERF_CONSTRAINTS 通知の場合、AcceptProcessorNotification �
  
 この通知は、プロセッサの現在の動作パフォーマンスを変更する必要があることを PEP に通知します。
 
-次に、 [*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)のパラメーターについて説明します。
+次に、 [*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)のパラメーターについて説明します。
 
 *扱え*
 
@@ -331,7 +331,7 @@ PEP_NOTIFY_PPM_PERF_CONSTRAINTS 通知の場合、AcceptProcessorNotification �
 
 *データ*
 
-[**PEP_PPM_PERF_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pep_x/ns-pep_x-_pep_ppm_perf_set)構造体へのポインター。
+[**PEP_PPM_PERF_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set)構造体へのポインター。
 
 **注釈**
 
@@ -883,7 +883,7 @@ DISPATCH_LEVEL
  
 ## <a name="pep_notify_ppm_perf_set_state"></a>PEP_NOTIFY_PPM_PERF_SET_STATE 
 
-次に、 [*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)のパラメーターについて説明します。
+次に、 [*Acceptprocessornotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)のパラメーターについて説明します。
 
 *扱え*
 
@@ -895,7 +895,7 @@ DISPATCH_LEVEL
 
 *データ*
 
-[**PEP_PPM_PERF_SET_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pep_x/ns-pep_x-_pep_ppm_perf_set_state)構造体へのポインター。
+[**PEP_PPM_PERF_SET_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set_state)構造体へのポインター。
 
 **注釈**
 

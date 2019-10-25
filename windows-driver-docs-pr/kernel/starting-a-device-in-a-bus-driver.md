@@ -3,15 +3,15 @@ title: バス ドライバーでのデバイスの開始
 description: バス ドライバーでのデバイスの開始
 ms.assetid: 1babeabb-1866-4ca5-b5a3-380c246596e5
 keywords:
-- バス ドライバー WDK PnP
+- バスドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd9c5f558bff02c2197ababdb3464bbe9c5befa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2719ef400061892af5df236cd64880f87f25bac2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382997"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838413"
 ---
 # <a name="starting-a-device-in-a-bus-driver"></a>バス ドライバーでのデバイスの開始
 
@@ -19,21 +19,21 @@ ms.locfileid: "67382997"
 
 
 
-子のデバイスを起動するバス ドライバー (子*PDO*)、次のようなプロシージャを使ってその[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+バスドライバーは、子デバイス (子*PDO*) を起動します。その際、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで次のような手順を実行します。
 
 1.  デバイスを起動します。
 
-    正確な手順では、デバイスからデバイスが異なります。
+    正確な手順は、デバイスによって異なります。
 
-    たとえば、PCI バス ドライバーは、PCI バス上の要求を有効にするには、そのマッピング レジスタをプログラムします。 PnP ISA バス ドライバーにより、関数のドライバーがアクセスできるように、PnP ISA カード。
+    たとえば、pci バスドライバープログラムは、PCI バス上の要求を有効にするために、そのマッピングを登録します。 PnP isa バスドライバーは、関数ドライバーがアクセスできるように、PnP ISA カードを有効にします。
 
 2.  IRP を完了します。
 
-    バス ドライバーの開始操作が成功した場合、ドライバーは設定**Irp -&gt;IoStatus.Status**ステータス\_成功と呼び出し[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IO の優先順位を指定する\_いいえ\_インクリメントします。 バス ドライバーのステータスを返します\_成功からその*DispatchPnP*ルーチン。
+    バスドライバーの開始操作が成功した場合、ドライバーは**Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定し、IO\_\_priority boost を指定して[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。 バスドライバーは、 *DispatchPnP*ルーチンから STATUS\_SUCCESS を返します。
 
-    バス ドライバーには、その開始操作中にエラーが発生すると、ドライバーが IRP の呼び出しではエラー状態を設定**IoCompleteRequest** IO と\_いいえ\_インクリメントし、そのからエラーを返します*DispatchPnP*ルーチン。
+    バスドライバーが開始操作中にエラーを検出した場合、ドライバーは IRP にエラー状態を設定し、 **IoCompleteRequest**を呼び出して IO\_\_インクリメントを呼び出し、その*DispatchPnP*ルーチンからエラーを返します。
 
-バス ドライバーには、デバイスを起動するまでに時間が必要とする場合、IRP を保留中のマークを付けるし、状態を返す\_保留します。
+バスドライバーによってデバイスの起動に時間がかかる場合は、IRP を保留中としてマークし、状態\_保留中としてマークできます。
 
  
 

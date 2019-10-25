@@ -1,40 +1,40 @@
 ---
 title: OID_GEN_DISCONTINUITY_TIME
-description: クエリとして OID_GEN_DISCONTINUITY_TIME OID を使用して、(RFC 2863 から ifCounterDiscontinuityTime) のネットワーク インターフェイスの以降の不連続性の時間を決定します。
+description: クエリとして、OID_GEN_DISCONTINUITY_TIME OID を使用して、ネットワークインターフェイス (RFC 2863 から ifCounterDiscontinuityTime) の不連続時間を決定します。
 ms.assetid: 3eac6818-c346-47f6-b812-f98b808dc36a
 ms.date: 08/08/2017
-keywords: -OID_GEN_DISCONTINUITY_TIME ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_DISCONTINUITY_TIME ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b11a4694eac734ce093c0863188676dc3c02ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6cf543aaf140cf97d63d7891ee30c3e395f6aed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369118"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837985"
 ---
-# <a name="oidgendiscontinuitytime"></a>OID\_GEN\_以降の不連続性\_時間
+# <a name="oid_gen_discontinuity_time"></a>OID\_GEN\_不連続\_時間
 
 
-クエリとして、OID を使用して、\_GEN\_以降の不連続性\_ネットワーク インターフェイスの以降の不連続性の時間を確認する時間の OID (*ifCounterDiscontinuityTime*から[RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)).
+クエリとして、OID\_GEN\_不連続\_時間 OID を使用して、ネットワークインターフェイス ( [RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)からの*ifCounterDiscontinuityTime* ) の不連続時間を決定します。
 
 **バージョン情報**
 
 <a href="" id="windows-vista-and-later"></a>Windows Vista 以降  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。 NDIS インターフェイス プロバイダーのみです。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。 NDIS インターフェイスプロバイダーのみ。
 
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+この OID を OID 要求としてサポートする必要があるのは、 [NDIS ネットワークインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダーだけです。そのため、ミニポートドライバーやフィルタードライバーはサポートされません。
 
-この OID は、インターフェイスがある、統計カウンターを維持する上で連続していない場合に、最後のコンピューターの再起動から開始時間を返します。 インターフェイスが無効になっているか、関連付けられているアダプターがコンピューターから削除されたため、以降の不連続性がありましたなど。 統計カウンターの詳細については、次を参照してください。 [OID\_GEN\_統計](oid-gen-statistics.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)関数。
+この OID は、前回のコンピューターの再起動からの時間を返します。これは、インターフェイスが統計カウンターを維持する際に不連続性を持っていた場合に発生します。 たとえば、インターフェイスが無効になっていたか、関連付けられているアダプターがコンピューターから削除されたため、不連続性が発生しました。 統計カウンターの詳細については、「 [OID\_GEN\_statistics](oid-gen-statistics.md)」を参照してください。 現在の時刻を取得するために、インターフェイスプロバイダーは[**NdisGetSystemUpTimeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetsystemuptimeex)関数を呼び出すことができます。
 
-インターフェイスの最後の再初期化後にこのような不連続性が発生していない場合は、この値は 0 にする必要があります。 インターフェイス プロバイダーは、以降の不連続性の時間を追跡していない、この値は 0 にする必要があります。
+インターフェイスの前回の再初期化以降にこのような不連続性が発生しなかった場合は、この値を0にする必要があります。 インターフェイスプロバイダーで不連続性時間が追跡されない場合、この値は0にする必要があります。
 
-インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、以降の不連続性の時間を最後のコンピューターの再起動 (ミリ秒単位) を指定する ULONG64 値。
+インターフェイスプロバイダーが NDIS\_STATUS\_SUCCESS を返した場合、クエリの結果は、最後のコンピューターが再起動してからの、ULONG64 の時間をミリ秒単位で指定する値になります。
 
 <a name="requirements"></a>要件
 ------------
@@ -47,7 +47,7 @@ ms.locfileid: "67369118"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +55,7 @@ ms.locfileid: "67369118"
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
+[NDIS ネットワークインターフェイス Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

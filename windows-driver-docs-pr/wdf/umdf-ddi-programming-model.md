@@ -4,38 +4,38 @@ description: UMDF DDI プログラミング モデル
 ms.assetid: d4bf0791-d2c4-4504-84ad-020880124363
 keywords:
 - UMDF オブジェクト WDK、DDI
-- オブジェクトは、フレームワークの WDK の UMDF DDI
+- フレームワークオブジェクト WDK UMDF、DDI
 - UMDF DDI WDK
 - DDI WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2085af1a240daa48edc265cd4a40d2ddf3d4cd99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c4c8981385b75875ab44db2715834d03e2c7c6d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372302"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831601"
 ---
 # <a name="umdf-ddi-programming-model"></a>UMDF DDI プログラミング モデル
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークと UMDF ドライバー UMDF DDI 経由で通信します。 UMDF DDI は COM をベースにする点を除いて、UMDF DDI は KMDF DDI に似ています そのため、KMDF 慣れてドライバー開発者は、UMDF を理解できます。
+フレームワークと UMDF ドライバーは、UMDF DDI を介して通信します。 UMDF ddi は KMDF DDI に似ていますが、UMDF DDI は COM に基づいている点が異なります。 そのため、KMDF に精通しているドライバーライターは、UMDF を理解します。
 
-Framework のオブジェクトの種類ごと、UMDF はオブジェクトのインスタンスを操作するためのインターフェイスを定義します。 各インターフェイスには、メソッドとプロパティがサポートしています。 メソッドは、オブジェクトの代わりに実行できるアクションを定義し、プロパティを設定およびオブジェクトの特性を取得します。 一部のインターフェイスは、フレームワークによって実装され、他のユーザーは、ドライバーによって実装します。 Framework オブジェクトによって公開されるインターフェイスはフォーム IWDF&lt;オブジェクト&gt;はの形式は、ドライバーによって公開されるイベントのコールバック インターフェイス&lt;オブジェクト&gt;&lt;アクション&gt;、場所&lt;オブジェクト&gt;表しますキュー、要求、および、および&lt;アクション&gt;インターフェイスの動作を示します。 コールバック インターフェイスのメソッドは、"On"で始まります。
+UMDF は、フレームワークオブジェクトの種類ごとに、オブジェクトのインスタンスを操作するためのインターフェイスを定義します。 各インターフェイスは、メソッドとプロパティをサポートしています。 メソッドは、オブジェクトの代わりに実行できるアクションと、オブジェクトの特性を設定および取得するプロパティを定義します。 一部のインターフェイスは、フレームワークによって実装され、他のインターフェイスはドライバーによって実装されます。 フレームワークオブジェクトによって公開されるインターフェイスは、IWDF&lt;object&gt;という形式になっていますが、ドライバーによって公開されるイベントコールバックインターフェイスは、I&lt;オブジェクト&gt;&lt;アクションの形式です&gt;。 &lt;オブジェクト&gt; はキュー、要求などを表し、&lt;アクション&gt; はインターフェイスの動作を示します。 コールバックインターフェイスのメソッドは、"On" で始まります。
 
-UMDF ドライバーは、メソッド、プロパティを通じて、framework のオブジェクトと通信します。 フレームワークは、イベント通知は、特定のイベントのドライバーに通知するために、フレームワークを呼び出すことができるコールバック関数を使ってドライバーと通信します。 コールバック関数を登録するドライバーが呼び出すには、たとえば、framework オブジェクトの次のメソッドへのポインターを渡すことができます、 **IUnknown**されるコールバック関数には、すべてのインターフェイスに関連付けられているインターフェイス ドライバーサポートされています。
+UMDF ドライバーは、メソッドとプロパティを通じて、フレームワークのオブジェクトと通信します。 フレームワークは、イベント通知を使用してドライバーと通信します。これは、フレームワークが特定のイベントについてドライバーに通知するために呼び出すことができるコールバック関数です。 コールバック関数を登録するために、ドライバーは、たとえば次のフレームワークオブジェクトメソッドを呼び出すことができ、ドライバーがサポートするコールバック関数のすべてのインターフェイスに関連付けられた**IUnknown**インターフェイスへのポインターを渡すことができます。
 
--   [**IWDFDevice::CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)
+-   [**IWDFDevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)
 
--   [**IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)
+-   [**IWDFDriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)
 
--   [**IWDFDriver::CreateWdfObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createwdfobject)
+-   [**IWDFDriver:: CreateWdfObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createwdfobject)
 
-フレームワークの通信をドライバーの例は、デバイスの既定の I/O キューのオブジェクトについて考えてみます。 ドライバーはなどのメソッドを呼び出すことができます[ **IWDFIoQueue::GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-getstate)I/O キューに関するステータス情報を取得する、または[ **IWDFIoQueue::RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest) I/O キューからの要求を取得します。 呼び出すことによって、ドライバーは I/O キュー上の通知の要求もできる、 [ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドなど、コールバック インターフェイスを登録する[IQueueCallbackRead](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackread)と[IQueueCallbackWrite](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackwrite)します。 これらのインターフェイスのメソッドは、アプリケーションに送信される読み取りときに、その後、フレームワークによって呼び出されますおよび書き込み要求。
+ドライバーからフレームワークへの通信の例として、デバイスの既定の i/o キューオブジェクトについて考えてみましょう。 ドライバーは、 [**Iwdfioqueue:: GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-getstate)などのメソッドを呼び出して、i/o キューに関する状態情報を取得したり、 [**Iwdfioqueue:: RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)を呼び出して i/o キューから要求を取得したりできます。 また、 [Iqueuecallbackread](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackread)や[Iqueuecallbackwrite](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackwrite)などのコールバックインターフェイスを登録するために、 [**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して、i/o キューでの通知を要求することもできます。 これらのインターフェイスのメソッドは、アプリケーションが読み取り要求と書き込み要求を送信するときに、フレームワークによって呼び出されます。
 
-フレームワークは、ドライバーのコールバック メソッドで必要なすべての同期を提供します。 既定では、フレームワークをデバイス オブジェクト レベルで同期します。つまり、フレームワークは同時に呼び出しませんイベント デバイス オブジェクトのレベル以下でコールバック メソッド。 ドライバーは、同期を要求しないによってこの既定をオーバーライドできます。 詳細については、次を参照してください。[コールバックの同期モードを指定する](specifying-a-callback-synchronization-mode.md)します。
+フレームワークは、ドライバーコールバックメソッド間で必要な同期を提供します。 既定では、フレームワークはデバイスのオブジェクトレベルで同期します。つまり、フレームワークは、デバイスオブジェクトレベル以下のイベントコールバックメソッドを同時に呼び出すことはありません。 ドライバーは、同期を要求することによって、この既定値を上書きできます。 詳細については、「[コールバック同期モードの指定](specifying-a-callback-synchronization-mode.md)」を参照してください。
 
  
 

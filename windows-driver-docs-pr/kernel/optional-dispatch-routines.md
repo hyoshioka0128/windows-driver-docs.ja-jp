@@ -3,17 +3,17 @@ title: オプションのディスパッチ ルーチン
 description: オプションのディスパッチ ルーチン
 ms.assetid: 38a3fcc9-237d-432d-85db-1594697c96a5
 keywords:
-- ルーチンの WDK カーネルをディスパッチする、省略可能
-- 省略可能なディスパッチ ルーチン WDK カーネル
-- 大容量記憶装置デバイス WDK ディスパッチ ルーチン
+- ディスパッチルーチン WDK カーネル、省略可能
+- オプションのディスパッチルーチン WDK カーネル
+- 大容量記憶装置デバイス WDK ディスパッチルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5061b7a9807d8c37da9a93cf507425a000a4ed36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91eab670c8d73244748bd778682aa5ce5daeb065
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384921"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827723"
 ---
 # <a name="optional-dispatch-routines"></a>オプションのディスパッチ ルーチン
 
@@ -21,33 +21,33 @@ ms.locfileid: "67384921"
 
 
 
-ドライバーには、次のディスパッチ ルーチンが含まれます。
+ドライバーには、次のディスパッチルーチンが含まれる場合があります。
 
--   [*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+-   [*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-    [**IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)ターゲット デバイス オブジェクトに関連付けられているファイル オブジェクトの最後のハンドルが閉じられることを示します。 ファイル オブジェクトの未処理の I/O 要求される可能性があります。 ドライバーが実装できる、 *DispatchCleanup*ルーチンは特定のファイル ハンドルのいずれかに固有のクリーンアップを実行します。 ドライバーを使用することも、 [ *DispatchClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)同じ目的で、日常的な。
+    [**IRP\_MJ\_CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)は、ターゲットデバイスオブジェクトに関連付けられているファイルオブジェクトの最後のハンドルが閉じられていることを示します。 ファイルオブジェクトに対する未処理の i/o 要求がまだ存在している可能性があります。 ドライバーは、特定のファイルハンドルに固有ではないクリーンアップを実行する*DispatchCleanup*ルーチンを実装できます。 ドライバーは、同じ目的で[*DispatchClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを使用することもできます。
 
--   [*DispatchQueryInformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 [ *DispatchSetInformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+-   [*DispatchQueryInformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [ *DispatchSetInformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-    一部の最上位レベルのドライバーがあるプロセスに[ **IRP\_MJ\_クエリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)と[ **IRP\_MJ\_設定\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-set-information) Irp します。 このような要求がユーザー モード アプリケーション、カーネル モード コンポーネント、またはドライバーがユーザー モードの要求者がハンドル、または対象のファイル オブジェクト (ドライバーのデバイス オブジェクトを表す) の長さに関する情報を要求ことを示すため、ユーザー モード要求元がそのファイルのオブジェクトで、ファイルの終わり-を設定しようとしています。
+    一部の最上位レベルのドライバーでは、 [**irp\_MJ\_クエリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)、および[**irp\_MJ\_設定\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-set-information)irp を処理する必要がある場合があります。 このような要求は、ユーザーモードのアプリケーション、カーネルモードコンポーネント、またはドライバーが、ユーザーモードの要求者がハンドルを持っている (ドライバーのデバイスオブジェクトを表す) ファイルオブジェクトの長さに関する情報を要求していること、またはユーザーモードであることを示しています。リクエスターが、そのファイルオブジェクトにファイルの終わりを設定しようとしています。
 
-    Parallel クラスやシリアル デバイス ドライバーは、設定してこれらの要求を処理、 [**ファイル\_標準\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)または[ **ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)長さまたは 0 に位置します。 他の最上位レベルのデバイス ドライバーは、これらの要求をサポートする場合、ユーザー モード アプリケーションまたはカーネル モード ドライバーは、ファイル オブジェクトを操作する C ランタイム関数を呼び出すことができます。 ファイル システム ドライバーは、これらの要求を最上位レベルのこれらのデバイス ドライバーよりも完全にサポートする必要があります。
+    並列クラスおよびシリアルデバイスドライバーは、[**ファイル\_標準\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_standard_information)またはファイルを設定することによって、これらの要求を処理します。これには、情報の長さや位置を示す0に[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)ます。 その他の最上位レベルのデバイスドライバーでは、特にユーザーモードアプリケーションやカーネルモードドライバーが C ランタイム関数を呼び出してファイルオブジェクトを操作する場合に、これらの要求をサポートする必要があります。 ファイルシステムドライバーは、これらの最高レベルのデバイスドライバーよりも多くの要求をサポートする必要があります。
 
--   [*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+-   [*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-    ドライバーのデバイスでデータをキャッシュまたはドライバーに割り当てられたメモリにデータを内部的にバッファーを受け取ることがあります[ **IRP\_MJ\_フラッシュ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)します。 この要求の受信は、ドライバーは、バッファー内のデータを書き込む必要があります、またはバッファー処理またはキャッシュされたデバイスから読み取られたデータをフラッシュ、キャッシュされたデータ、デバイスを out または破棄する必要がありますを示します。
+    デバイスにデータをキャッシュしたり、ドライバーによって割り当てられたメモリ内にデータをバッファーしたりするドライバーは、 [**IRP\_MJ\_フラッシュ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)を受け取る可能性があります。 この要求を受信すると、ドライバーがバッファー内のデータを書き込んだり、キャッシュされたデータをデバイスにフラッシュしたり、デバイスから読み取られたバッファーまたはキャッシュされたデータを破棄したりする必要があることを示します。
 
-    たとえば、システム キーボードとマウス クラス ドライバーを自分のデバイスからの入力データの内部リング バッファーを持ちは、フラッシュの要求をサポートします。 大容量記憶装置のドライバーとドライバーがそれらの上に配置は、この要求もサポートします。
+    たとえば、システムキーボードおよびマウスクラスドライバーは、デバイスからの入力データの内部リングバッファーがあるため、フラッシュ要求をサポートしています。 その上にある大容量記憶装置とドライバーのドライバーも、この要求をサポートしています。
 
--   [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+-   [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-    システムがシャット ダウン前に呼び出される可能性がある任意のドライバーを処理する必要があります[ **IRP\_MJ\_シャット ダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)します。 *DispatchShutdown*ルーチンが電源マネージャー、システムに送信する前に必要になどのドライバーにより決定されたクリーンアップを行う必要がありますセット power IRP、システムをシャット ダウンします。 ドライバーが呼び出せる[ **IoRegisterShutdownNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)または[ **IoRegisterLastChanceShutdownNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)に登録するにはシャット ダウンの通知。
+    システムがシャットダウンする前に呼び出される可能性のあるすべてのドライバーは、 [**IRP\_MJ\_のシャットダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)を処理する必要があります。 *DispatchShutdown*ルーチンは、電源マネージャーがシステムをシャットダウンするシステムセット-電源 IRP を送信する前に、ドライバーによって決定されたすべてのクリーンアップを実行する必要があります。 ドライバーは、 [**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)または[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)を呼び出して、シャットダウン通知を登録できます。
 
-大容量記憶装置のドライバーと上層にあるそれらの中間ドライバーは、システムをシャット ダウンするときにシャット ダウンの Irp に送信するファイル システム ドライバーを最上位レベルに依存できます。 つまり、FSD 担当の周辺機器に、キャッシュされたファイルのデータを書き込むことを確認する場合、システムがシャット ダウンする前に、デバイスのキャッシュまたはバッファー (ある場合)、およびなどからのデータのフラッシュを基になるドライバーの呼び出し。
+大容量記憶装置のドライバーと中間のドライバーは、システムがシャットダウンされるときに、最上位レベルのファイルシステムドライバーを使用してシャットダウン Irp を送信することができます。 つまり、FSD は、システムがシャットダウンされる前に、キャッシュされたファイルデータが周辺機器に書き込まれることを確認し、基になるドライバーを呼び出してデバイスのキャッシュまたはバッファーからデータをフラッシュする必要があります。
 
-内部的にデータをキャッシュする大容量記憶装置のドライバーを提供する必要があります*DispatchShutdown*と*DispatchFlushBuffers*ルーチン。 大容量記憶装置ドライバーがメモリにデータをバッファーのデバイスには、内部キャッシュにない場合は、またする必要があります提供*DispatchShutdown*と*DispatchFlushBuffers*ルーチン。
+データを内部的にキャッシュする大容量記憶装置のドライバーは、 *DispatchShutdown*および*DispatchFlushBuffers*ルーチンを提供する必要があります。 大容量記憶装置ドライバーがメモリ内のデータをバッファーするが、そのデバイスに内部キャッシュがない場合は、 *DispatchShutdown*ルーチンと*DispatchFlushBuffers*ルーチンも提供する必要があります。
 
-任意の中間ドライバーが処理するドライバーの上に配置[ **IRP\_MJ\_フラッシュ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)と[ **IRP\_MJ\_シャット ダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)要求も提供*DispatchShutdown*と*DispatchFlushBuffers*ルーチン。
+Irp\_MJ を処理するドライバーの上に階層化された中間ドライバー [ **\_フラッシュ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)および[**irp\_MJ\_シャットダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)要求も*DispatchShutdown*と*DispatchFlushBuffers*を提供します。ルーチン.
 
  
 

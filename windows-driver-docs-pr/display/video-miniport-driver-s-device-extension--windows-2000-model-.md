@@ -1,21 +1,21 @@
 ---
-title: ビデオのミニポート ドライバーのデバイスの拡張機能 (XDDM)
+title: ビデオミニポートドライバーのデバイス拡張機能 (XDDM)
 description: ビデオのミニポート ドライバーのデバイス拡張機能 (Windows 2000 モデル)
 ms.assetid: 4d7841d1-39e2-4bdf-b79b-3feb363a0fe5
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、デバイスの拡張機能
-- デバイスの拡張機能の WDK ビデオ ミニポート
-- 拡張機能の WDK ビデオのミニポート
-- アダプター状態 WDK のビデオのミニポート
+- ビデオミニポートドライバー WDK Windows 2000、デバイス拡張機能
+- デバイス拡張機能 WDK ビデオミニポート
+- 拡張機能の WDK ビデオミニポート
+- アダプターの状態 WDK ビデオミニポート
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7a21b78fafd8d6f79f6c29937aaa086d453e0714
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: dfa5bb113cc24451d2e115825fe3cbf8a0100e44
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716898"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829191"
 ---
 # <a name="video-miniport-drivers-device-extension-windows-2000-model"></a>ビデオのミニポート ドライバーのデバイス拡張機能 (Windows 2000 モデル)
 
@@ -23,11 +23,11 @@ ms.locfileid: "67716898"
 ## <span id="ddk_video_miniport_driver_s_device_extension_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_S_DEVICE_EXTENSION_WINDOWS_2000_MODEL__GG"></span>
 
 
-デバイスの拡張機能は、アダプター固有の状態情報の各ミニポート ドライバーの唯一のグローバル プライマリ ストレージの領域です。
+デバイス拡張機能は、各ミニポートドライバーのプライマリと、アダプター固有の状態情報のグローバルストレージ領域のみです。
 
-各ミニポート ドライバーでは、サイズ、内部構造、およびそのデバイスの拡張機能の内容を定義します。 ビデオ ポート ドライバーは、ポインターをデバイスの拡張機能を除くすべてのシステム定義のミニポート ドライバー関数への入力パラメーターとして渡します**DriverEntry** 、実装されている場合、 [ *HwVidSynchronizeExecutionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_synchronize_routine)と*SvgaHwIoPortXxx*関数。 多く**ビデオ ポート**_Xxx_関数も引数としてこのポインターを必要とします。
+各ミニポートドライバーは、デバイス拡張機能のサイズ、内部構造、および内容を定義します。 ビデオポートドライバーは、 **Driverentry**を除くすべてのシステム定義のミニポートドライバー関数への入力パラメーターとしてデバイス拡張機能へのポインターを渡します。また、実装されている場合は、 [*HwVidSynchronizeExecutionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pminiport_synchronize_routine)と*Svガス hwioportxxx を返します。* 関数。 多くの**VideoPort**_Xxx_関数では、このポインターが引数としても必要です。
 
-ミニポート ドライバーは、デバイスの拡張機能を使用して、アダプターが 1 つの状態情報を維持するためにする必要があります。 システムによって検出された各アダプターには、別のデバイスの拡張機能で管理されている別の状態情報があります。 ミニポート ドライバー、アダプターの状態を格納するのにグローバル変数を使用する必要があります。 これは、シームレスな複数を提供するために特に重要なサポートを監視します。
+また、ミニポートドライバーは、デバイス拡張機能を使用して、1つのアダプターの状態情報を維持する必要があります。 システムによって検出された各アダプターには、個別のデバイス拡張機能で保持される個別の状態情報が含まれます。 ミニポートドライバーは、アダプターごとの状態を格納するためにグローバル変数を使用することはできません。 これは、複数のモニターをシームレスにサポートするために特に重要です。
 
  
 

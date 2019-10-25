@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_バッファー
-description: KSPROPERTY\_RTAUDIO\_バッファー プロパティは、ドライバーによって割り当てられた循環バッファーのオーディオ データを指定します。次の表では、このプロパティの機能をまとめたものです。
+title: KSK プロパティ\_RTAUDIO\_BUFFER
+description: KSK プロパティ\_RTAUDIO\_BUFFER プロパティは、ドライバーで割り当てられたオーディオデータ用の循環バッファーを指定します。次の表は、このプロパティの機能をまとめたものです。
 ms.assetid: e2c78849-1a34-446c-9f44-012f36ddafa5
 keywords:
-- KSPROPERTY_RTAUDIO_BUFFER オーディオ デバイス
+- KSPROPERTY_RTAUDIO_BUFFER オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ce24658adf6bb1f772f18b24a222ec51f2fc09f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c468124a7df73b79c443d7c4706e56767ef40ecf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358755"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830697"
 ---
-# <a name="kspropertyrtaudiobuffer"></a>KSPROPERTY\_RTAUDIO\_バッファー
+# <a name="ksproperty_rtaudio_buffer"></a>KSK プロパティ\_RTAUDIO\_BUFFER
 
 
-KSPROPERTY\_RTAUDIO\_バッファー プロパティは、ドライバーによって割り当てられた循環バッファーのオーディオ データを指定します。
+KSK プロパティ\_RTAUDIO\_BUFFER プロパティは、ドライバーで割り当てられたオーディオデータ用の循環バッファーを指定します。
 
-次の表では、このプロパティの機能をまとめたものです。
+次の表は、このプロパティの機能をまとめたものです。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティは、ドライバーによ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -49,24 +49,24 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティは、ドライバーによ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="ksrtaudio-buffer-property.md" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY&lt;/strong&gt;](ksrtaudio-buffer-property.md)"><strong>KSRTAUDIO_BUFFER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_バッファー\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))の他のメンバーと構造体。 クライアントは、構造体に、要求されたバッファー サイズを書き込みます。 としてベース アドレスを指定する必要があります、クライアントは、特定のベース アドレスを使用する必要はない場合、 **NULL**します。
+プロパティ記述子 (インスタンスデータ) は、他のメンバーと共に[**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体を含む KSRTAUDIO\_バッファー\_プロパティ構造で構成されます。 クライアントは、要求されたバッファーサイズを構造体に書き込みます。 クライアントが特定のベースアドレスを使用する必要がない場合は、ベースアドレスを**NULL**として指定する必要があります。
 
-プロパティの値 (データの操作) は型 KSRTAUDIO の構造体\_バッファー。 ドライバーは、実際のバッファー サイズ、ベース アドレスは、割り当て済み循環バッファーのメモリ バリアのフラグと、この構造体を格納します。
+プロパティ値 (操作データ) は、KSRTAUDIO\_BUFFER 型の構造体です。 ドライバーは、この構造体に、割り当てられている循環バッファーの実際のバッファーサイズ、ベースアドレス、およびメモリバリアフラグを設定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー状態コードの一部を示します。
+RTAUDIO\_BUFFER property 要求\_は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、発生する可能性のあるエラー状態コードを示します。
 
 <table>
 <colgroup>
@@ -76,21 +76,21 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>バッファーの属性の組み合わせを指定して循環バッファーを割り当てることはできません。</p></td>
+<td align="left"><p>指定されたバッファー属性の組み合わせを持つ循環バッファーを割り当てることができません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_INSUFFICIENT_RESOURCES</p></td>
-<td align="left"><p>メモリ バッファーを割り当てられません。</p></td>
+<td align="left"><p>バッファーのメモリを割り当てることができません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_DEVICE_NOT_READY</p></td>
-<td align="left"><p>デバイス準備ができていません</p></td>
+<td align="left"><p>デバイスの準備ができていません</p></td>
 </tr>
 </tbody>
 </table>
@@ -100,19 +100,19 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 <a name="remarks"></a>注釈
 -------
 
-ベース アドレスは、循環バッファーの先頭にある仮想メモリ アドレスです。 クライアントは、このアドレスにバッファーに直接アクセスできます。 バッファーが仮想メモリ内で連続しています。 物理メモリ内で連続してバッファーを作成するかどうかは、ドライバーに委ね意思決定します。
+ベースアドレスは、循環バッファーの開始時の仮想メモリアドレスです。 クライアントはこのアドレスでバッファーに直接アクセスできます。 バッファーは仮想メモリ内で連続しています。 バッファーを物理メモリ内で連続して使用するかどうかは、ドライバーによって決まります。
 
-クライアントをプロパティ記述子のベース アドレスを設定する必要があります**NULL**します。 ドライバーは、割り当てられたバッファーの仮想アドレスにプロパティ値のベース アドレスを設定します。
+クライアントは、プロパティ記述子のベースアドレスを**NULL**に設定する必要があります。 ドライバーは、プロパティ値のベースアドレスを、割り当てられたオーディオバッファーの仮想アドレスに設定します。
 
-通常、オーディオ ハードウェアでは、いずれかを開始し、サンプルの境界の終了または他の種類のハードウェアに依存する配置の制約を満たしているオーディオ バッファーが必要です。 十分なメモリを使用できる場合、バッファーの実際のサイズは (増減) を最も近いサンプルまたは他のハードウェアに制約がある境界に丸められたもの、要求されたサイズにします。 実際のサイズが少なくとも; 要求されたサイズである必要があります。それ以外の場合、オーディオ セッション API (WASAPI) オーディオ エンジンは、バッファーを使用しないし、ストリームの作成は失敗します。
+通常、オーディオハードウェアでは、サンプル境界で開始および終了するために、またはハードウェアに依存する他のアラインメント制約を満たすために、オーディオバッファーを必要とします。 十分なメモリが使用可能な場合、最も近いサンプルまたはその他のハードウェアの制限付き境界に対して、要求されたサイズ (上または下) がバッファーの実際のサイズになります。 実際のサイズは、要求されたサイズ以上である必要があります。それ以外の場合、Audio Session API (オーバー API) オーディオエンジンはバッファーを使用せず、ストリームの作成は失敗します。
 
-場合、KSPROPERTY\_RTAUDIO\_バッファー プロパティの要求が成功すると、型 KSRTAUDIO の構造体であるプロパティ値\_バッファー、ドライバーによって割り当てられたバッファーのサイズとアドレスが含まれています。
+RTAUDIO\_バッファーのプロパティ要求が正常に\_場合、プロパティの値 (KSRTAUDIO\_BUFFER 型の構造) には、ドライバーによって割り当てられたバッファーのアドレスとサイズが含まれます。
 
-このプロパティを介して割り当てられたバッファーを解放、暗証番号 (pin) を自動的に終了します。
+Pin を閉じると、このプロパティを通じて割り当てられたバッファーが自動的に解放されます。
 
-呼び出す必要があるイベント通知を実行する場合に、 [ **KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md) KSPROPERTYではなく\_RTAUDIO\_バッファー。
+イベント通知が必要な場合は、ksk プロパティ\_RTAUDIO\_BUFFER ではなく[ **\_通知を使用して、Ksk プロパティ\_rtaudio\_buffer\_** ](ksproperty-rtaudio-buffer-with-notification.md)を呼び出す必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -123,7 +123,7 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista 以降の Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降の Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
@@ -132,14 +132,14 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSRTAUDIO\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)
+[**KSRTAUDIO\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer)
 
-[**KSRTAUDIO\_バッファー\_プロパティ**](ksrtaudio-buffer-property.md)
+[**KSRTAUDIO\_BUFFER\_プロパティ**](ksrtaudio-buffer-property.md)
 
-[**KSPROPERTY\_RTAUDIO\_BUFFER\_WITH\_NOTIFICATION**](ksproperty-rtaudio-buffer-with-notification.md)
+[ **\_通知での RTAUDIO\_バッファー\_\_KSK プロパティ**](ksproperty-rtaudio-buffer-with-notification.md)
 
  
 

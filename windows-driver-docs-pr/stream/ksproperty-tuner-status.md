@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_状態
-description: KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含め、チューニング処理に関する情報を取得、フェーズには、ループ (PLL) オフセット、および信号の強さがロックされています。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_チューナー\_の状態
+description: KSK プロパティ\_チューナー\_STATUS プロパティは、現在の頻度、フェーズロックループ (PLL) オフセット、およびシグナルの強さを含むチューニングプロセスに関する情報を取得します。 このプロパティを実装する必要があります。
 ms.assetid: 8613cda2-f39b-4363-a1c7-ac91162b9fca
 keywords:
-- KSPROPERTY_TUNER_STATUS ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_STATUS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 004e62b00873753c107155391de3c1c311f67274
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 358cb7a7bf765895d945d05c5cae8ed2e1b37809
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355956"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837898"
 ---
-# <a name="kspropertytunerstatus"></a>KSPROPERTY\_チューナー\_状態
+# <a name="ksproperty_tuner_status"></a>KSK プロパティ\_チューナー\_の状態
 
 
-KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含め、チューニング処理に関する情報を取得、フェーズには、ループ (PLL) オフセット、および信号の強さがロックされています。 このプロパティを実装する必要があります。
+KSK プロパティ\_チューナー\_STATUS プロパティは、現在の頻度、フェーズロックループ (PLL) オフセット、およびシグナルの強さを含むチューニングプロセスに関する情報を取得します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_tuner_status_ks"></span><span id="DDK_KSPROPERTY_TUNER_STATUS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSPROPERTY\_チューナー\_状態\_構造を現在の頻度、PLL オフセット、および信号を指定する強度。
+プロパティ値 (操作データ) は、現在の頻度、PLL オフセット、およびシグナルの強さを指定する\_チューナー\_ステータス\_S 構造体の KSK プロパティです。
 
 <a name="remarks"></a>注釈
 -------
@@ -77,7 +77,7 @@ KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +85,9 @@ KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)
+[**KSK プロパティ\_チューナー\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)
 
  
 

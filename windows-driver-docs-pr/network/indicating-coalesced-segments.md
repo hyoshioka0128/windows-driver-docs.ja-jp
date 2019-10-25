@@ -1,58 +1,58 @@
 ---
 title: 結合されたセグメントの表示
-description: このセクションは、まとめられたセグメントを指定する方法を説明します
+description: このセクションでは、結合されるセグメントを指定する方法について説明します。
 ms.assetid: 79A37DAB-D9B3-4FA2-8258-05E10BD6E3CB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be13f521a54a65da4942868bb7331321993471f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed232fca02ada29091367011c92376d44f2335d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374828"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824723"
 ---
 # <a name="indicating-coalesced-segments"></a>結合されたセグメントの表示
 
 
-1 つのまとめられた単位 (SCU) で定義されたルールに従って 1 つの TCP セグメントとして結合 TCP セグメントのシーケンスは、 [TCP/IP セグメントの結合規則](rules-for-coalescing-tcp-ip-packets.md)します。 このセクションでは、結果として得られるまとめられたセグメントを指定する方法について説明します。
+1つの結合された単位 (SCU) は、tcp/ip[セグメントを結合するための規則](rules-for-coalescing-tcp-ip-packets.md)で定義されている規則に従って1つの tcp セグメントに結合される一連の tcp セグメントです。 このセクションでは、結合されたセグメントを示す方法について説明します。
 
-SCU 必要があります。
+SCU には次のものが必要です。
 
--   呼び出すことによって示される[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)します。
+-   [**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出すことによって示されます。
 
--   通常、ネットワーク経由で受信された TCP セグメントのようになります。
+-   ネットワーク経由で受信される通常の TCP セグメントのように見えます。
 
--   セクション 3.1 で定義されている有効な最大の IP データグラム長を超えるする[RFC 791](http://www.ietf.org/rfc/rfc791.txt)します。
+-   [RFC 791](http://www.ietf.org/rfc/rfc791.txt)のセクション3.1 で定義されているように、有効な IP データグラムの最大長を超えることはできません。
 
-    **注**  IPv6 拡張ヘッダーを持つセグメントを結合できないため、(を参照してください[例外条件がその終了結合](exception-conditions-that-terminate-coalescing.md))、IPv6 データグラム SCU のサイズ、最大の法律によって制限されますデータグラムの長さ。
+    **注**  ipv6 拡張ヘッダーを持つセグメントは結合できないため (「[結合を終了する例外条件](exception-conditions-that-terminate-coalescing.md)」を参照)、IPV6 データグラムの scu のサイズも、有効なデータグラムの最大長によって制限されます。
 
      
 
-NIC またはミニポート ドライバーする必要があります値を再計算と IPv4 の TCP チェックサム、該当する場合、まとめられたセグメントを示す前にします。 NIC またはミニポート ドライバーでは、TCP と IPv4 のチェックサムを検証しますが、まとめられたセグメントの再計算してされない場合に、設定する必要があります、 **TcpChecksumValueInvalid**と**IpChecksumValueInvalid**のフラグ[ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体。 さらに、この場合、NIC またはミニポート ドライバー可能性があります必要に応じてをゼロに TCP と IPv4 ヘッダーのチェックサム値セグメント。
+NIC またはミニポートドライバーは、結合されたセグメントを示す前に、該当する場合は TCP および IPv4 チェックサムを再計算する必要があります。 NIC またはミニポートドライバーが TCP および IPv4 チェックサムを検証しても、結合されたセグメントの再計算が行われない場合は、 [**NDIS\_TCP\_IP の TcpChecksumValueInvalid および IpChecksumValueInvalid フラグを設定する必要があり\_CHECKSUM\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体です。 また、この場合、NIC またはミニポートドライバーでは、必要に応じて、セグメント内の TCP および IPv4 ヘッダーのチェックサム値をゼロにすることができます。
 
-NIC とミニポート ドライバーが常に設定する必要があります、 **IpChecksumSucceeded**と**TcpChecksumSucceeded**のフラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)まとめられたセグメントを示す前に構造体。
+NIC とミニポートドライバーは、 [**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体の中で、常に**IpChecksumSucceeded**フラグと**TcpChecksumSucceeded**フラグを設定する必要があります。結合されたセグメントを示す前。
 
-結合規則の詳細については、次を参照してください。 [TCP/IP セグメントの結合規則](rules-for-coalescing-tcp-ip-packets.md)します。
+結合規則の詳細については、「 [Tcp/ip セグメントを結合するための規則](rules-for-coalescing-tcp-ip-packets.md)」を参照してください。
 
-例外の詳細については、次を参照してください。[例外条件がその終了結合](exception-conditions-that-terminate-coalescing.md)します。
+例外の詳細については、「[合体を終了する例外条件](exception-conditions-that-terminate-coalescing.md)」を参照してください。
 
-ベスト エフォートで実行する結合が必要です。 ハードウェアが、coalesce では、場合によっては、たとえばによりリソースの不足ができません。 要件は、ここでは、主に coalesce をしない場合と結合する方法を指定すると述べています。
+結合は、ベストエフォート方式で実行されることが想定されています。 リソースが不足しているなどの原因で、ハードウェアが合体できない場合があります。 ここでは、結合しない場合と結合する方法を指定するための要件について説明します。
 
-大まかに言えば、NIC とミニポート ドライバーする必要があります TCP セグメントの受信、ネットワーク経由でよう処理。
+大まかに言えば、NIC とミニポートドライバーは、次のようにネットワーク経由での TCP セグメントの受信を処理する必要があります。
 
--   次のように、例外の受信のセグメントを確認します。
+-   次のようにして、受信セグメントで例外を確認します。
 
-    1.  例外が発生しなかった場合は、規則に従って同じ TCP 接続を受信した最後のセグメントのセグメントを結合しているかどうかを確認します。
+    1.  例外が検出されなかった場合は、規則に従って、同じ TCP 接続で受信した最後のセグメントでセグメントを結合できるかどうかを確認します。
 
-    2.  セグメントには、例外がトリガーされた場合、または、以前に受信したセグメントでの結合が不可能な場合は、セグメントを個別に示すします。
+    2.  セグメントが例外をトリガーした場合、または以前に受信したセグメントと結合できない場合は、セグメントを個別に指定します。
 
--   プロトコル ドライバーが」の説明に従って、RSC を有効になるまで、NIC とミニポート ドライバーする必要がありますまとめられたセグメントを示しません[クエリの実行と RSC の状態を変更する](querying-and-changing-rsc-state.md)します。
+-   「 [Rsc の状態の照会と変更](querying-and-changing-rsc-state.md)」の説明に従って、プロトコルドライバーによって rsc が有効になるまで、NIC とミニポートドライバーは、結合されたセグメントを示すことはできません。
 
--   特定の TCP 接続のホストの TCP/IP スタックにミニポート アダプターからのデータ表示が 1 つまたは複数結合されたセグメントの結合されたいない 1 つまたは複数の個別セグメントで区切られたで構成されます。
+-   特定の TCP 接続の場合、ミニポートアダプターからホスト TCP/IP スタックへのデータ表示は、1つまたは複数の結合セグメントで構成されている可能性があります。これは、1つまたは複数の個別のセグメントによって分割されます。
 
--   ひとまとめにするかどうかどうか、NIC とミニポート ドライバーは、TCP セグメントを示す値を遅延しない必要があります。 具体的には、NIC とミニポート ドライバーでは、1 つの遅延プロシージャ呼び出し (DPC) をセグメントを結合するために、次のセグメントを示す値が遅延しない必要があります。
+-   NIC とミニポートドライバーは、結合されているかどうかにかかわらず、TCP セグメントを示す値を遅延させないようにする必要があります。 具体的には、NIC とミニポートドライバーは、セグメントの結合を試行するために、1つの遅延プロシージャ呼び出し (DPC) から次のセグメントへのセグメントの通知を遅らせないようにする必要があります。
 
--   NIC とミニポート ドライバーは、結合の末尾を決定するのにタイマーを使用する場合があります。 ただし、待機時間の機密性の高いワークロードの処理は、DPC 境界の要件として効果的である必要があります。
+-   NIC とミニポートドライバーは、結合の終了を判断するためにタイマーを使用する場合があります。 ただし、待機時間に依存するワークロードの処理は、DPC の境界要件と同じように有効にする必要があります。
 
  
 

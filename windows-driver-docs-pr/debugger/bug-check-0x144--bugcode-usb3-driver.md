@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x144 BUGCODE_USB3_DRIVER
-description: BUGCODE_USB3_DRIVER のバグ チェックでは、0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。
+title: バグチェック 0x144 BUGCODE_USB3_DRIVER
+description: BUGCODE_USB3_DRIVER のバグチェックの値は0x00000144 です。 これは、すべての USB 3 バグチェックに使用されるコードです。
 ms.assetid: 39414287-3E20-405B-846A-B7F9F8AEE078
 keywords:
-- バグ チェック 0x144 BUGCODE_USB3_DRIVER
+- バグチェック 0x144 BUGCODE_USB3_DRIVER
 - BUGCODE_USB3_DRIVER
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f15c50c5da6354677cd7c6016becdc0f17697519
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 74c25bd7361e531d0fdf0fa1316267cbe733edf5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837635"
 ---
-# <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144:BUGCODE\_USB3\_ドライバー
+# <a name="bug-check-0x144-bugcode_usb3_driver"></a>バグチェック 0x144: バグコード\_USB3\_ドライバー
 
 
-**BUGCODE\_USB3\_ドライバー**バグ チェックが 0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。 パラメーター 1 は、USB 3 のバグ チェックの種類を指定し、その他のパラメーターの意味では、パラメーター 1 に依存します。
+バグ**コード\_USB3\_ドライバー**のバグチェックには、0x00000144 という値が指定されています。 これは、すべての USB 3 バグチェックに使用されるコードです。 パラメーター1は、USB 3 のバグチェックの種類を指定し、その他のパラメーターの意味はパラメーター1に依存します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_ドライバーのパラメーター
+## <a name="bugcode_usb3_driver-parameters"></a>USB3\_ドライバーパラメーター\_のバグコード
 
 
 <table>
@@ -42,356 +42,356 @@ ms.locfileid: "67520162"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">エラーの原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>(省略可能)。 IRP へのポインター、URB を再送信するために使用</p></td>
+<td align="left"><p>(省略可能)。 URB を再送信するために使用される IRP へのポインター</p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーでは、core スタックすることが以前に送信する、URB を使用します。</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーは、以前にコアスタックに送信した URB を使用しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>ブート デバイスの物理デバイス オブジェクト (PDO) へのポインター</p></td>
+<td align="left"><p>ブートデバイスの物理デバイスオブジェクト (PDO) へのポインター</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ブートまたはページングのデバイスは再列挙に失敗しました。</p></td>
+<td align="left"><p>ブートデバイスまたはページングデバイスを再列挙できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>(省略可能)。 IRP へのポインター、URB を送信するために使用</p></td>
+<td align="left"><p>(省略可能)。 URB の送信に使用される IRP へのポインター</p></td>
 <td align="left"><p>破損した URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーでは、core スタックに破損した URB が送信されます。 クライアント ドライバーを使用して、URB も割り当てられませんでしたので、これに<strong>USBD_<em>xxx</em>UrbAllocate</strong>またはクライアント ドライバーが、バッファー アンダーラン URB の。</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーが、破損した URB をコアスタックに送信しました。 これは、クライアントドライバーが<strong>USBD_<em>xxx</em>ur・</strong>を使用して urb を割り当てなかったか、クライアントドライバーが urb 用のバッファーアンダーランを使用したために発生する可能性があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x800</p></td>
-<td align="left"><p>IRQL は静的、開いているストリーム要求の送信</p></td>
+<td align="left"><p>オープンスタティックストリーム要求が送信された IRQL</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>IRQL で、静的、開いているストリームの要求が送信された&gt;パッシブ レベル。</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>オープンスタティックストリーム要求が、IRQL &gt; パッシブレベルで送信されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x801</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
-<td align="left"><p>開いている静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーでは、ストリームの機能のクエリを実行する前に静的ストリームを開こうとしました。 クライアント ドライバー開くことができませんまで静的ストリーム後に正常にストリームの機能のためのクエリ。 詳細については、「解説」を参照してください。</p></td>
+<td align="left"><p>開いている静的ストリームの URB へのポインター</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーがストリームの機能を照会する前に、静的ストリームを開こうとしました。 クライアントドライバーは、ストリーム機能のクエリが正常に実行されるまで、静的ストリームを開くことができません。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x802</p></td>
-<td align="left"><p>クライアント ドライバーを開こうとした静的のストリームの数</p></td>
-<td align="left"><p>クライアント ドライバーに与えられていた静的ストリームの数</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーでは、静的なストリームの数が無効を開こうとしました。 ストリームの数は 0 にすることはできませんし、クエリ機能の呼び出しを USB クライアント ドライバーに返される値より大きくすることはできません。</p></td>
+<td align="left"><p>クライアントドライバーが開こうとした静的ストリームの数</p></td>
+<td align="left"><p>クライアントドライバーに付与された静的ストリームの数</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーが、無効な数の静的ストリームを開こうとしました。 ストリームの数を0にすることはできません。また、クエリの USB 機能呼び出しでクライアントドライバーに返される値よりも大きくすることはできません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x803</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
-<td align="left"><p>開いている静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーは、静的なストリームを開く、静的なストリームが既に存在するエンドポイントを開こうとしました。 静的ストリームを開く前に、クライアント ドライバーは、以前に開かれた静的ストリームを閉じる必要があります。</p></td>
+<td align="left"><p>開いている静的ストリームの URB へのポインター</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーが、既に静的ストリームを開いているエンドポイントの静的ストリームを開こうとしました。 静的ストリームを開く前に、クライアントドライバーは、前に開いていた静的ストリームを閉じる必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x804</p></td>
-<td align="left"><p>漏洩したハンドル コンテキスト。 実行<strong>! usbanalyze v</strong>漏洩ハンドルと翻訳に関する情報を取得します。 クライアント ドライバーをドライバーの検証を有効にする必要があります。</p></td>
-<td align="left"><p>デバイス オブジェクトに渡される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>します。</p></td>
+<td align="left"><p>リークされたハンドルコンテキスト。 リークしたハンドルと URBs に関する情報を取得するには、 <strong>! usbanalyze-v</strong>を実行します。 クライアントドライバーのドライバー検証を有効にする必要があります。</p></td>
+<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>に渡されるデバイスオブジェクト。</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>使用して作成された、ハンドルを閉じることを忘れた場合、クライアント ドライバー <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong> URB、割り当てを解放していませんか。</p></td>
+<td align="left"><p>クライアントドライバーは、以前に<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>を使用して作成したハンドルを閉じることを忘れたか、割り当てた URB の解放を忘れました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x805</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects" data-raw-source="[WDFREQUEST](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)">WDFREQUEST</a>閉じる静的ストリーム URB の処理</p></td>
-<td align="left"><p>閉じる静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーでは、(たとえば、D0 の終了を処理) 後、無効な状態で閉じる静的ストリーム URB を送信します。</p></td>
+<td align="left"><p>閉じる静的ストリームの URB の<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects" data-raw-source="[WDFREQUEST](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)">Wdfrequest</a>ハンドル</p></td>
+<td align="left"><p>閉じる静的ストリームの URB へのポインター</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーが、無効な状態 (たとえば、D0 Exit の処理後) に、閉じた静的ストリームの URB を送信しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x806</p></td>
 <td align="left"><p>IRP へのポインター</p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーが、チェーンを送信しようとしています。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>チェーンのクエリを実行する前に<strong>MDL</strong>機能します。 クライアント ドライバーは、連鎖送信できない<strong>MDL</strong> 、チェーンを正常に照会した後まで<strong>MDL</strong>機能します。 詳細については、「解説」を参照してください。</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター</p></td>
+<td align="left"><p>クライアントドライバーがチェーンされた<strong>mdl 機能の</strong>クエリを実行する前に、チェーンされた<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)">mdl</a></strong>を送信しようとしました。 クライアントドライバーは、チェーンされた<strong>mdl</strong>機能のクエリが正常に行われるまで、チェーンされた<strong>mdl</strong>を送信できません。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x807</p></td>
-<td align="left"><p>連鎖的に呼び出すへのポインター  <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong></p></td>
+<td align="left"><p>チェーンされた <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)">MDL</a>へのポインター</strong></p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>使用可能な場合に、クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバー、URB に送信、転送 core スタック バッファー長をバイト数よりも長い (によって返される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount" data-raw-source="[MmGetMdlByteCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount)">MmGetMdlByteCount</a></strong>) の <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>で渡されます。 詳細については、「解説」を参照してください。</p></td>
+<td align="left"><p>クライアントドライバーのデバイスオブジェクトへのポインター (使用可能な場合)</p></td>
+<td align="left"><p>クライアントドライバーが、渡された<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)">MDL</a></strong>のバイト数 ( <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetmdlbytecount" data-raw-source="[MmGetMdlByteCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetmdlbytecount)">MmGetMdlByteCount</a></strong>によって返されたバイト数) よりも長い転送バッファー長を持つコアスタックに URB を送信しました。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1001</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI コント ローラーは、ホスト システムのエラーを示す HSE ビットをアサートします。</p></td>
+<td align="left"><p>XHCI コントローラーは、ホストシステムエラーを示す HSE ビットをアサートします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1002</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI コント ローラーは、ホスト コント ローラーのエラーを示す HCE ビットをアサートします。</p></td>
+<td align="left"><p>XHCI コントローラーは、ホストコントローラーエラーを示す HCE ビットをアサートします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1003</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI stop エンドポイントのコマンドでは、ハンドルされていない終了コードが返されます。</p></td>
+<td align="left"><p>XHCI stop endpoint コマンドにより、未処理の完了コードが返されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1004</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI のエンドポイントの状態では、xHCI エンドポイントの停止コマンドが実行された後にコンテキストの状態エラーが発生します。</p></td>
+<td align="left"><p>XHCI エンドポイントの状態は、xHCI endpoint stop コマンドが発行された後にコンテキスト状態エラーを受信しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1005</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>セットには、ポインターがコントロール エンドポイントの停止をオフの試行中に失敗しましたがキューから削除します。</p></td>
+<td align="left"><p>コントロールエンドポイントの停止を解除しようとしたときに、デキューポインターを設定できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1006</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コントロール エンドポイントの停止をオフにしようとリセット EP に失敗しました。</p></td>
+<td align="left"><p>コントロールエンドポイントの停止を解除しようとしたときに、EP をリセットできませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1007</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>中に失敗しました xHCI コント ローラーのリセットでは、復旧をリセットします。</p></td>
+<td align="left"><p>リセットの復旧中に、xHCI コントローラーをリセットできませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1008</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>中に失敗しました xHCI コント ローラーの再起動は、復旧をリセットします。</p></td>
+<td align="left"><p>リセットの復旧中に、xHCI コントローラーの再起動に失敗しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1009</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI コント ローラーのコマンドをコマンドのタイムアウトを中止後に完了できませんでした。</p></td>
+<td align="left"><p>コマンドタイムアウトの中止後、xHCI controller コマンドを完了できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x100A</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>エンドポイントの停止完了後にデキュー ポインターの設定の試行中に失敗しましたデキュー ポインターを設定します。</p></td>
+<td align="left"><p>エンドポイントの停止完了後にデキューポインターを設定しようとしたときに、デキューポインターを設定できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x100B</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>中に失敗しました xHCI コント ローラーの停止は、復旧をリセットします。</p></td>
+<td align="left"><p>リセットの復旧中に、xHCI コントローラーの停止に失敗しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x100C</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI コント ローラーのファームウェアがサポートされていません。 ファームウェアを更新しない限り、このコント ローラーで、xHCI ドライバーは読み込まれません。</p></td>
+<td align="left"><p>XHCI コントローラーのファームウェアはサポートされていません。 ファームウェアが更新されない限り、xHCI ドライバーはこのコントローラーに読み込まれません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x100D</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>物理的に削除するコント ローラーが検出されました。</p></td>
+<td align="left"><p>コントローラーが物理的に削除されたことが検出されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x100E</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ドライバーは、ストリームが有効になっているエンドポイントでエラーを検出します。</p></td>
+<td align="left"><p>ドライバーは、ストリームが有効なエンドポイントでエラーを検出します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x100F</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI コント ローラーのファームウェアが切れています。 XHCI ドライバーでは、このコント ローラーの操作を続行しますが、いくつかの問題が遭遇する可能性があります。 ファームウェアの更新をお勧めします。</p></td>
+<td align="left"><p>XHCI コントローラーのファームウェアが古くなっています。 XHCI ドライバーはこのコントローラーの操作を続行しますが、いくつかの問題が発生する可能性があります。 ファームウェアを更新することをお勧めします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1010</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>転送イベント TRB ハンドルされていない終了コードを正常に完了します。</p></td>
+<td align="left"><p>未処理の完了コードを使用して、転送イベントが完了しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1011</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーは、イベントのリングが満杯を報告します。 コント ローラーは、このような場合にイベントを削除するも呼ばれます。</p></td>
+<td align="left"><p>コントローラーは、イベントリングがいっぱいになったことを報告しました。 コントローラーは、この発生時にイベントを削除することも知られています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1012</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーには、誤順序のコマンドが完了しました。</p></td>
+<td align="left"><p>コントローラーはコマンドの順序が正常に完了しませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1013</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コマンドのリングがデキュー コマンドが完了を中止後、コント ローラーによって報告されたポインターが正しくありません。</p></td>
+<td align="left"><p>コマンドの中止が完了すると、コントローラーによって報告されたコマンドリングデキューポインターが正しくありません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1014</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>有効にするスロットの完了後にコント ローラーくれました不適切なスロット id。</p></td>
+<td align="left"><p>スロットの有効化を有効にした後、コントローラーから無効なスロット id が与えられました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1015</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーには、BSR1 SetAddress コマンドが失敗しました。 予想されるではありません。</p></td>
+<td align="left"><p>コントローラーが BSR1 で SetAddress コマンドを実行できませんでした。 これは予期されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1016</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーは、usbdevice のリセット中に、スロットを有効にできませんでした。 これは、予期されていません。</p></td>
+<td align="left"><p>Usb デバイスのリセット中にコントローラーがスロットを有効にできませんでした。 これは予期されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1017</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーには、エンドポイントが失敗しました。 エンドポイントを deconfiguring 私たちがコマンドを構成します。 予想されるではありません。</p></td>
+<td align="left"><p>コントローラーが、エンドポイントを構成するコマンドを構成できませんでした。エンドポイントを deconfiguring しました。 これは予期されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1018</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーには、無効にするスロットのコマンドが失敗しました。 予想されるではありません。</p></td>
+<td align="left"><p>コントローラーがスロットの無効化コマンドを実行できませんでした。 これは予期されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1019</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>コント ローラーには、USB デバイスのリセット コマンドが失敗しました。 予想されるではありません。</p></td>
+<td align="left"><p>コントローラーで USB デバイスのリセットコマンドを実行できませんでした。 これは予期されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x101A</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>エンドポイントをリセットした後は、デキュー ポインターの設定コマンドが失敗しました。</p></td>
+<td align="left"><p>エンドポイントのリセット後に、デキューポインターの設定コマンドが失敗しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101B</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>XHCI では、ハンドルされていない終了コードが返されたエンドポイントのコマンドをリセットします。</p></td>
+<td align="left"><p>XHCI reset endpoint コマンドにより、未処理の完了コードが返されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x101C</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>Xhci D0Entry に失敗しました。</p></td>
+<td align="left"><p>XHCI の D0Entry が失敗しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101D</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>一時的に削除し、要求のキャンセル中にデキュー ポインターの設定ではなく、エンドポイントの構成コマンドを使用する場合に失敗しました (2 つのコマンド) としてストリームのエンドポイントを追加します。</p></td>
+<td align="left"><p>要求のキャンセル時にデキューポインターを設定するのではなく、エンドポイントの構成コマンドを使用すると、ストリームエンドポイント (2 つのコマンドとして) を一時的に削除して、追加できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x101E</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>示された転送の完了が保留中のコント ローラー、コント ローラーにします。 EventData 1 = = (転送イベント TRB のポインターの逆参照が発生しますが、バグチェック)</p></td>
+<td align="left"><p>コントローラーで、コントローラーで保留されていない転送完了が示されました。 EventData = = 1 (転送イベント TRB のポインターを逆参照すると、バグチェックが発生しました)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101F</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>示された転送の完了が保留中のコント ローラー、コント ローラーにします。 EventData = 0 (転送イベントと一致しない TRB の論理アドレス)</p></td>
+<td align="left"><p>コントローラーで、コントローラーで保留されていない転送完了が示されました。 EventData = = 0 (転送イベントの論理アドレス TRB が一致しません)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0x1020</p></td>
+<td align="left"><p>0x0</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>示された転送の完了が保留中のコント ローラー、コント ローラーにします。 EventData (転送イベントと一致しない TRB の論理アドレス) の 0 を = =、転送イベント TRB 冗長 (最近完了した要求のどこかに近いポイント) があります。</p></td>
+<td align="left"><p>コントローラーで、コントローラーで保留されていない転送完了が示されました。 EventData = = 0 (転送イベント TRB の論理アドレスが一致しません) 転送イベント TRB は冗長になる可能性があります (最近完了した要求の近くの場所を指します)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0x1021</p></td>
+<td align="left"><p>0x-1</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>一時的に削除して (2 つのコマンド) としてストリーム エンドポイントの追加に失敗が停止されていないエンドポイントのリセットの一環としてエンドポイントの構成コマンドを使用する場合。</p></td>
+<td align="left"><p>停止していないエンドポイントのリセットの一環として [エンドポイントの構成] コマンドを使用すると、ストリームエンドポイント (2 つのコマンドとして) を一時的に削除して追加できませんでした。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0x1022</p></td>
+<td align="left"><p>0x1024 x 2</p></td>
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>削除して、(1 つのコマンド) と同じエンドポイントを追加することができませんでした。</p></td>
+<td align="left"><p>(1 つのコマンドとして) 同じエンドポイントを削除して追加できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3000</p></td>
 <td align="left"><p>USBHUB3_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>不適切な動作のハブはハブのドライバーが正常にリセットされました。</p></td>
+<td align="left"><p>ハブドライバーによって不適切なハブが正常にリセットされました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3001</p></td>
 <td align="left"><p>USBHUB3_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>不適切な動作のハブは、ハブのドライバーによって正常にリセットできませんでした。</p></td>
+<td align="left"><p>ハブドライバによって不適切なハブを正常にリセットできませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3002</p></td>
 <td align="left"><p>USBHUB3_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>関数ではない SuperSpeed ハブは、ハブのドライバーにより無効にされました。</p></td>
+<td align="left"><p>非関数 SuperSpeed hub はハブドライバーによって無効にされました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3003</p></td>
 <td align="left"><p>USBHUB3_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>USB デバイスには、列挙が失敗しました。</p></td>
+<td align="left"><p>USB デバイスの列挙に失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -401,11 +401,11 @@ ms.locfileid: "67520162"
 <a name="remarks"></a>注釈
 -------
 
-USB 機能の 1 つのクエリを実行するクライアント ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)または[ **USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))
+USB 機能を照会するには、クライアントドライバーが[**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)または[**USBD\_queryusbcapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))を呼び出す必要があります。
 
-チェーンを送信する[ **MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)、クライアント ドライバーを呼び出す必要があります[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))して**URB\_関数\_一括\_OR\_INTERRUPT\_転送\_USING\_連結された\_MDL**または**URB\_関数\_アイソクロナス\_転送\_USING\_連結された\_MDL**します。
+チェーン化された[**mdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)を送信するには、クライアントドライバーは[**USBD\_queryusbcapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))を呼び出し、 **URB\_関数を使用\_一括\_または\_\_のチェーン化された\_を使用して\_を転送\_転送する必要があります。** または **\_関数\_ISOCH\_転送\_を使用して**\_にチェーン化します。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)

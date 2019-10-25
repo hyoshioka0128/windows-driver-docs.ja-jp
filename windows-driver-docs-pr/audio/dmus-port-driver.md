@@ -3,19 +3,19 @@ title: DMus ポート ドライバー
 description: DMus ポート ドライバー
 ms.assetid: 19828364-1b0d-4fc0-b142-9d776cbf1ada
 keywords:
-- DirectMusic WDK のオーディオ、ポートのドライバー
-- Dmu ポート ドライバー WDK オーディオ
-- PortCls WDK のオーディオ、ポートのドライバー
-- オーディオのミニポート ドライバー WDK、ポート ドライバー
-- ミニポート ドライバー WDK のオーディオ、ポートのドライバー
+- DirectMusic WDK オーディオ、ポートドライバー
+- DMus ポートドライバー WDK オーディオ
+- PortCls WDK オーディオ、ポートドライバー
+- オーディオミニポートドライバー WDK、ポートドライバー
+- ミニポートドライバー WDK オーディオ、ポートドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8953a0132ad1c8acd0e20002d6b9623731798c3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40ec3ee54d3bf7c80013f7f25d7e60000411f9c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360113"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833444"
 ---
 # <a name="dmus-port-driver"></a>DMus ポート ドライバー
 
@@ -23,41 +23,41 @@ ms.locfileid: "67360113"
 ## <span id="dmus_port_driver"></span><span id="DMUS_PORT_DRIVER"></span>
 
 
-Dmu ポート ドライバーでは、Microsoft DirectMusic シンセサイザーまたはキャプチャ デバイスを管理します。 単純な MIDI デバイスのみをサポートしている、MIDI ポート ドライバーとは異なりは、Dmu のポート ドライバーは、有効桁数 sequencer のタイミング、ダウンロード可能なサウンド (DL) チャネル グループなどの高度な MIDI 機能を備えたデバイスをサポートします。 アダプター ドライバーでは、対応する[Dmu ミニポート ドライバー](dmus-miniport-driver.md) DirectMusic フィルターを形成する Dmu ポート ドライバーをバインドする (を参照してください[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)) レンダリングまたは MIDI をキャプチャすることができますストリーム。
+DMus ポートドライバーは、Microsoft DirectMusic シンセサイザーまたはキャプチャデバイスを管理します。 MIDI ポートドライバーは、単純な MIDI デバイスのみをサポートしていますが、DMus ポートドライバーは、精度のあるシーケンサーのタイミング、ダウンロード可能なサウンド (DLS)、チャネルグループなどの高度な MIDI 機能を搭載したデバイスをサポートしています。 アダプタードライバーは、対応する[dmus ミニポートドライバー](dmus-miniport-driver.md)を実装します。これは、dmus ポートドライバーにバインドして、midi ストリームをレンダリングまたはキャプチャできる directmusic フィルター ( [Midi フィルターと directmusic フィルター](midi-and-directmusic-filters.md)を参照) を形成します。
 
-Dmu ポート ドライバーが公開、 [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)ミニポート ドライバーへのインターフェイス。 **IPortDMus**基底インターフェイスでメソッドを継承[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)します。 **IPortDMus**次の追加のメソッドを提供します。
+DMus ポートドライバーは、ミニポートドライバーに[Iportdmus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)インターフェイスを公開します。 **Iportdmus**は、基本インターフェイス[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)のメソッドを継承します。 **Iportdmus**には、次の追加のメソッドが用意されています。
 
-[**IPortDMus::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iportdmus-notify)
+[**IPortDMus:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-notify)
 
-MIDI ストリーム内の新しい位置に、MIDI シンセサイザーまたはキャプチャ デバイスに高度なポート ドライバーに通知します。
+MIDI シンセサイザーまたはキャプチャデバイスが MIDI ストリーム内の新しい位置に進んでいることをポートドライバーに通知します。
 
-[**IPortDMus::RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
+[**IPortDMus:: RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
 
-ポート ドライバーとサービスのグループ オブジェクトを登録します。
-登録されているサービス グループは、ミニポート ドライバーを呼び出すときに、ポート ドライバーによって呼び出される 1 つまたは複数のサービス ルーチンの一覧を含む**通知**; 詳細についてを参照してください[サービスがシンク オブジェクトとサービスのグループ オブジェクト](service-sink-and-service-group-objects.md).
+サービスグループオブジェクトをポートドライバーに登録します。
+登録済みサービスグループには、ミニポートドライバーが**通知**を呼び出すときにポートドライバーによって呼び出される1つ以上のサービスルーチンの一覧が含まれています。詳細については、「[サービスシンクおよびサービスグループオブジェクト](service-sink-and-service-group-objects.md)」を参照してください。
 
-Dmu ポート ドライバーは、メモリも作成[アロケーター](allocator.md)各ストリームし、公開、アロケーターの[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)ミニポート ドライバーのストリーム オブジェクトへのインターフェイス。 **IAllocatorMXF**基底インターフェイスでメソッドを継承[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)します。 **IAllocatorMXF**次の追加のメソッドを提供します。
+また、DMus ポートドライバーは、各ストリームのメモリ[アロケーター](allocator.md)を作成し、アロケーターの[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf)インターフェイスをミニポートドライバーのストリームオブジェクトに公開します。 **IAllocatorMXF**は、基本インターフェイス[imxf](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)のメソッドを継承します。 **IAllocatorMXF**には、次の追加のメソッドが用意されています。
 
-[**IAllocatorMXF::GetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getbuffer)
+[**IAllocatorMXF:: GetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getbuffer)
 
-MIDI イベントまたは大きすぎる内に収まるイベントの一覧のバッファーを取得、 [ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)構造体。
+[**Dmus\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/ns-dmusicks-_dmus_kernel_event)構造内に収まりきらない、MIDI イベントまたはイベントのリストのバッファーを取得します。
 
-[**IAllocatorMXF::GetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getbuffersize)
+[**IAllocatorMXF:: GetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getbuffersize)
 
-によって取得されたバッファーのバイト サイズを取得、 **GetBuffer**メソッド。
+**GetBuffer**メソッドによって取得されるバッファーのサイズ (バイト単位) を取得します。
 
-[**IAllocatorMXF::GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)
+[**IAllocatorMXF:: GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getmessage)
 
-DMU の種類の 1 つの構造の記憶域を含むメッセージ バッファーを取得\_カーネル\_イベント。
+種類が DMUS\_カーネル\_イベントの1つの構造体のストレージを格納するメッセージバッファーを取得します。
 
-[**IAllocatorMXF::PutBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-putbuffer)
+[**IAllocatorMXF::P utBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-putbuffer)
 
-使用されていません。
-Dmu のポートおよびミニポート ドライバー オブジェクトが、それぞれを互い通信**IPortDMus**と[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)インターフェイス。 さらに、ポート ドライバーと通信を介して、ミニポート ドライバーのストリーム オブジェクト、 [IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)インターフェイス、およびストリーム オブジェクトのミニポート ドライバーの通信ポート ドライバーのアロケーターをその**IAllocatorMXF**インターフェイス。
+使用しません。
+DMus ポートとミニポートドライバーオブジェクトは、それぞれの**Iportdmus**インターフェイスと[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)インターフェイスを介して相互に通信します。 さらに、ポートドライバーは、 [Imxf](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)インターフェイスを介してミニポートドライバーのストリームオブジェクトと通信します。また、ミニポートドライバーのストリームオブジェクトは、 **IAllocatorMXF**インターフェイスを介してポートドライバーのアロケーターと通信します。
 
-DirectMusic のドライバー サポートについての詳細については、次を参照してください。[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)します。
+DirectMusic のドライバーサポートの詳細については、「[シンセサイザーミニポートドライバーの概要](synthesizer-miniport-driver-overview.md)」を参照してください。
 
-Windows XP 以降では、 **IPortDMus**と[IPortMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportmidi)インターフェイスはいずれも 1 つの内部ドライバー モジュールに実装します。 この統合は、これら 2 つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドは、両方のインターフェイスに対して定義されます。 Windows の以前のバージョンが表示されないの動作の変更用に記述されたアプリケーション、 **IPortMidi**と**IPortDMus**インターフェイス MIDI と Dmu ポート ドライバーの統合に起因します。
+Windows XP 以降では、 **Iportdmus**インターフェイスと[iportmidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi)インターフェイスの両方が1つの内部ドライバーモジュールに実装されています。 この統合は、この2つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドが両方のインターフェイスに対して定義されているとします。 以前のバージョンの Windows 用に作成されたアプリケーションでは、MIDI および DMus ポートドライバーを統合した結果として得られる**Iportmidi**および**Iportdmus**インターフェイスの動作が変更されていないことを確認できます。
 
  
 

@@ -3,29 +3,29 @@ title: トポロジ フィルター
 description: トポロジ フィルター
 ms.assetid: 1b3d35e9-5858-407c-9cd0-06307d82ce58
 keywords:
-- オーディオは、WDK のオーディオ、トポロジのフィルターをフィルター処理します。
-- トポロジのフィルターの WDK オーディオ
-- WDK のオーディオ、トポロジをフィルター処理します。
-- ストリームの WDK オーディオのレンダリングを混在させる
-- 多重化するストリーム WDK オーディオのキャプチャ
-- ブリッジ ピン WDK オーディオ
-- 接続の WDK オーディオ
-- フィルター ファクトリ WDK オーディオ
-- WDK のオーディオ、トポロジのフィルターをピン留め
-- ノードの WDK オーディオ
+- オーディオフィルター WDK オーディオ、トポロジフィルター
+- トポロジフィルター WDK オーディオ
+- WDK オーディオ、トポロジをフィルター処理します
+- レンダリングストリームの混合 WDK オーディオ
+- キャプチャストリームの多重化 WDK オーディオ
+- ブリッジピン WDK オーディオ
+- WDK オーディオの接続
+- ファクトリ WDK オーディオをフィルター処理する
+- WDK オーディオ、トポロジフィルターをピン留めする
+- ノード WDK オーディオ
 - 入力ピン WDK オーディオ
-- 出力ピンの WDK オーディオ
+- 出力ピン WDK オーディオ
 - PCCONNECTION_DESCRIPTOR 配列
-- WDK のオーディオ ジャック
-- デジタル コネクタ WDK オーディオ
+- オーディオジャック WDK
+- デジタルコネクタ WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6241b7ba2b57c223f0b74b0fdaeb4ff31aa67168
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d860aa8c23be7e5670322a4652420dfa7f517da
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354196"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830001"
 ---
 # <a name="topology-filters"></a>トポロジ フィルター
 
@@ -33,35 +33,35 @@ ms.locfileid: "67354196"
 ## <span id="topology_filters"></span><span id="TOPOLOGY_FILTERS"></span>
 
 
-A*トポロジ フィルター*さまざまな wave と、カード上で管理される MIDI ストリーム間の相互作用を処理するオーディオ アダプター カードの回路の部分を表します。 この回路はレンダリング ストリームが混在すると、キャプチャのストリームを多重化します。
+*トポロジフィルター*は、カードで管理されているさまざまな wave ストリームと MIDI ストリームの間の相互作用を処理するオーディオアダプターカード上の回路の部分を表します。 この回路では、レンダリングストリームとキャプチャストリームの多重化が混在しています。
 
-トポロジのフィルターを提供します、*ピンをブリッジ*(を参照してください[オーディオ フィルター グラフ](audio-filter-graphs.md)) 外部デバイスにオーディオのアダプターの物理接続を表します。 通常、これらの接続は、スピーカーを駆動するアナログ出力信号とマイクからのアナログ入力信号を実行します。 トポロジ フィルターのブリッジのピンは、アナログのライン入力とライン出力ジャックを表す場合も、デジタル入力さらしとコネクタの出力を可能性があります。
+トポロジフィルターは、外部デバイスへのオーディオアダプターの物理的な接続を表す*ブリッジピン*(「[オーディオフィルターグラフ](audio-filter-graphs.md)」を参照) を提供します。 これらの接続には、通常、スピーカーやマイクからのアナログ入力信号を駆動するアナログ出力信号が付属しています。 トポロジフィルターのブリッジピンは、アナログの linein ジャックや lineout ジャック、場合によってはデジタル入出力コネクタも表すことができます。
 
-「トポロジ フィルター」という用語は、名称を 1 つの意味では。 その名前にもかかわらずトポロジ フィルターとは、その内部のトポロジやレイアウトを公開するオーディオ フィルターのいくつかの型の 1 つだけです。 トポロジのフィルターには、キー トポロジの機能が含まれますが、必ずしもがない、アダプターのトポロジ全体。 Wave および MIDI フィルターは、独自のトポロジを持ちます。 たとえば、最小 WaveCyclic または WavePci フィルター (を参照してください[Wave フィルター](wave-filters.md)) かどうかに応じて、2 つの pin がおよび DAC (アナログ デジタル コンバーター) または ADC (アナログ/デジタル コンバーター) で構成されるトポロジを公開する可能性があります、基になるデバイスはオーディオ レンダリングまたはキャプチャします。
+"トポロジフィルター" という用語は、1つの意味で名称ます。 名前にかかわらず、トポロジフィルターは、内部トポロジまたはレイアウトを公開する、いくつかの種類のオーディオフィルターの1つにすぎません。 トポロジフィルターには主要なトポロジ機能が含まれていますが、アダプター全体のトポロジが必ずしも含まれるとは限りません。 Wave フィルターと MIDI フィルターには、独自のトポロジがあります。 たとえば、最小の WaveCyclic または WavePci フィルター (「 [Wave フィルター](wave-filters.md)」を参照) は、基になるデバイスが使用しているかどうかに応じて、2つのピンと DAC (デジタル-アナログコンバーター) または ADC (アナログ-デジタルコンバーター) で構成されるトポロジを公開する可能性があります。オーディオレンダリングまたはキャプチャ。
 
-トポロジのフィルターは、ポート/ミニポート ペアとして実装されます。 トポロジ フィルター ファクトリは、次のようにトポロジ フィルターを作成します。
+トポロジフィルターは、ポートとミニポートのペアとして実装されます。 トポロジフィルターファクトリは、次のようにトポロジフィルターを作成します。
 
--   トポロジのミニポート ドライバー オブジェクトがインスタンス化します。
+-   トポロジミニポートドライバーオブジェクトをインスタンス化します。
 
--   呼び出すことによって、トポロジ ポート ドライバー オブジェクトをインスタンス化[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値**CLSID\_PortTopology**します。
+-   このメソッドは、GUID 値**CLSID\_PortTopology**を持つ[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、トポロジポートドライバーオブジェクトをインスタンス化します。
 
--   ポート ドライバーの呼び出す[ **iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)ポート ドライバーに、ミニポート ドライバーをバインドするメソッド。
+-   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
-コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。
+[サブデバイス作成](subdevice-creation.md)のコード例では、このプロセスを示しています。
 
-トポロジのポートおよびミニポートのドライバーが、それぞれ経由の相互通信[IPortTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iporttopology)と[IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiporttopology)インターフェイス。 これらのインターフェイスは、トポロジのフィルターは、自分の pin を通過するストリームを明示的に管理する必要はないために、wave と MIDI ポートおよびミニポートのドライバーに比べると比較的簡単です。 トポロジ フィルターのピンは、アダプターのハードウェアで有線接続を表します。 通常トポロジ フィルター暗証番号 (pin) を基になる物理接続は、アナログのオーディオ信号の伝送が、ハードウェアの実装によってデジタル オーディオ ストリームを代わりに、実行可能性があります。
+トポロジポートとミニポートドライバーは、それぞれの[Iporttopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology)インターフェイスと[IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology)インターフェイスを介して相互に通信します。 これらのインターフェイスは、ピンを通過するストリームをトポロジフィルターが明示的に管理する必要がないため、wave および MIDI ポートおよびミニポートドライバーのインターフェイスと比べて比較的単純です。 トポロジフィルターのピンは、アダプターハードウェアでの配線された接続を表します。 トポロジフィルターピンの基になる物理接続には、通常、アナログオーディオ信号が適用されますが、ハードウェアの実装によっては、代わりにデジタルオーディオストリームが適用される場合があります。
 
-異なり、 [IMiniportWaveCyclic](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclic)、 [IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepci)、 [IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)、および[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus) インターフェイス[IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiporttopology)インターフェイスを持たない**NewStream**メソッド。
+[IMiniportWaveCyclic](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic)、 [IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)、 [IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)、 [IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)の各インターフェイスとは対照的に、 [IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology)インターフェイスに**newstream**メソッドはありません。
 
-トポロジのフィルターの機能のほとんどは、そのプロパティのハンドラーによって提供されます。 トポロジの情報を提供するには、主に、トポロジのフィルターが存在する、 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)と Microsoft Windows のマルチ メディア ミキサー API を使用するアプリケーションにします。 トポロジのフィルターのプロパティのハンドラーは、通常、オーディオのアダプターを提供するさまざまなコントロール (ボリューム、イコライゼーション リバーブなど) へのアクセスを提供します。 プロパティの要求を使用ミキサー API ことができます、アダプターのハードウェアでコントロールのノードを列挙、ノード間の接続の検出および両方クエリを実行し、ノードのコントロールのパラメーターを設定します。 SndVol32 アプリケーション (を参照してください[システム トレイと SndVol32](systray-and-sndvol32.md)) ミキサー API を使用して、アダプターのストリームごとのボリュームと、ミュート ボタン コントロールを検出します。
+トポロジフィルターの機能のほとんどは、そのプロパティハンドラーによって提供されます。 トポロジフィルターは主に、 [Sysaudio システムドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)および Microsoft Windows マルチメディアミキサー API を使用するアプリケーションにトポロジ情報を提供するために存在します。 トポロジフィルターのプロパティハンドラーは、オーディオアダプターが通常提供するさまざまなコントロール (ボリューム、イコライゼーション、リバーブなど) へのアクセスを提供します。 ミキサ API は、プロパティ要求を使用して、アダプターハードウェア内の制御ノードの列挙、ノード間の接続の検出、およびノードのコントロールパラメーターの設定を行うことができます。 SndVol32 アプリケーション (「 [SysTray と SndVol32](systray-and-sndvol32.md)」を参照) では、ミキサー API を使用して、アダプターのストリームごとのボリュームとミュートの制御を検出します。
 
-SysAudio のトポロジのフィルター処理するクエリ フィルター グラフを作成するときに、 [ **KSPROPERTY\_PIN\_PHYSICALCONNECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection) wave、MIDI を判断するには、そのピンでのプロパティ、または DirectMusic フィルター暗証番号 (pin) がどのトポロジ フィルター ピンに接続されています。
+フィルターグラフを構築するときに、SysAudio は Ksk プロパティのトポロジフィルターを照会し、そのピンで[ **\_PHYSICALCONNECTION プロパティを\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)留めして、どのような電波、MIDI、または DirectMusic フィルターピンがどのトポロジフィルターピンに接続されているかを判断します。
 
-Wave とは異なり、MIDI または DirectMusic がフィルター、フィルターをトポロジにピンがインスタンス化できません。 そのため、トポロジ フィルターの pin のプロパティのクエリを処理するの暗証番号 (pin) のオブジェクトはありません。 トポロジ フィルター自体では、そのピンに物理的な接続に関するすべてのクエリを処理します。 詳細については、次を参照してください。 [KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)します。
+Wave、MIDI、または DirectMusic フィルターとは異なり、トポロジフィルターではピンがインスタンス化されません。 したがって、トポロジフィルターの pin プロパティに対するクエリを処理するために使用できるピンオブジェクトはありません。 トポロジフィルター自体は、そのピンでの物理接続に関するすべてのクエリを処理します。 詳細については、「 [Ksk Propsetid\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)」を参照してください。
 
-その他の種類のオーディオ フィルターと同様に、トポロジのフィルターを使用して配列の[ **PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))内部のトポロジを記述する構造体。 ミニポート ドライバーでは、この配列を公開する、 [ **PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)から出力の構造、 [ **IMiniport::GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)メソッド。 配列は、トポロジのフィルターのノードと pin の間の接続の一覧としてトポロジを指定します (を参照してください[ノードと接続](nodes-and-connections.md))。 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)ミキサーの線およびミキサー API をアプリケーションに公開するコントロールにこれらの接続とノードを変換します。 説明したよう[オーディオ フィルター](audio-filters.md)KS フィルターの入力ピンが SRC ミキサー行にマップし、上の出力ピン留め、フィルターが DST ミキサーの行にマップされます。
+他の種類のオーディオフィルターと同様に、トポロジフィルターは[**Pcconnection\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))構造体の配列を使用して内部トポロジを記述します。 ミニポートドライバーは、 [**IMiniport:: GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)メソッドから出力する[**PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)構造体でこの配列を公開します。 この配列は、トポロジフィルターのノードと pin の間の接続の一覧としてトポロジを指定します (「[ノードと接続](nodes-and-connections.md)」を参照してください)。 [WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)は、これらの接続とノードを、ミキサー API がアプリケーションに公開するミキサーの線とコントロールに変換します。 「[オーディオフィルター](audio-filters.md)」で説明されているように、KS フィルターの入力ピンは SRC ミキサ線にマップされ、フィルターの出力ピンは DST ミキサーラインにマップされます。
 
-一般的なのオーディオ アダプターでは、wave とを通じて、講演者、MIDI ファイルを再生できるし、MIDI シンセサイザー マイクからオーディオ信号をキャプチャできます。 次のコード例は、PCCONNECTION を含む\_これらの機能を公開するトポロジ フィルター記述子の配列。
+一般的なオーディオアダプターは、スピーカーを介して wave および MIDI ファイルを再生し、マイクと MIDI シンセサイザーからオーディオ信号をキャプチャできます。 次のコード例には、これらの機能を公開するトポロジフィルターの PCCONNECTION\_記述子配列が含まれています。
 
 ```cpp
     // topology pins
@@ -114,43 +114,43 @@ Wave とは異なり、MIDI または DirectMusic がフィルター、フィル
     };
 ```
 
-定数[ **PCFILTER\_ノード**](https://docs.microsoft.com/previous-versions/ff537695(v=vs.85))上記のコード例が null のノード ID と Portcls.h のヘッダー ファイルで定義されます。 ノードの論理ピンから外部 pin では、フィルターを区別するためにこの定数を使用する方法については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))します。
+前のコード例の定数[**Pcfilter\_ノード**](https://docs.microsoft.com/previous-versions/ff537695(v=vs.85))は、NULL ノード ID であり、ヘッダーファイル Portcls で定義されています。 この定数を使用して、フィルターの外部 pin とノードの論理ピンを区別する方法の詳細については、「 [**Pcconnection\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))」を参照してください。
 
-上記のコード例では、各暗証番号 (pin) 名は、ミキサー API が送信元または送信先ミキサーの行に、暗証番号 (pin) をマップするかどうかに応じて、"SRC"または"DST"のいずれかで終了します。 そのソースと宛先ミキサーに注意してください、混乱を避けるシンク (入力) とソース (出力) KS フィルターのピンのマッピングをそれぞれ行します。 詳細については、次を参照してください。[オーディオ フィルター](audio-filters.md)します。
+前のコード例の各 pin 名は、ミキサー API がピンを変換元または変換先のミキサーラインにマップするかどうかによって、"SRC" または "DST" で終了します。 混乱を避けるために、ソースとターゲットのミキサーの線はそれぞれ、シンク (入力) と送信元 (出力) の各 KS フィルターのピンにマップされていることに注意してください。 詳細については、「[オーディオフィルター](audio-filters.md)」を参照してください。
 
-PCCONNECTION\_記述子の配列を上記のコード例では、次の図にトポロジのフィルターをについて説明します。
+前のコード例の PCCONNECTION\_記述子配列は、次の図のトポロジフィルターについて説明しています。
 
-![pcconnection で説明されているトポロジ フィルターの接続を示す図\-記述子の配列](images/topofilt.png)
+![pcconnection\-記述子配列によって記述されるトポロジフィルター接続を示す図](images/topofilt.png)
 
-図にトポロジ フィルター左の 4 つの (シンク) の入力ピンには、および 2 つの出力ピンが右側の (ソース)。 最上位の 2 つの入力ピンと最上位の出力ピンを接続するデータ パスは、wave および再生中、MIDI ストリームから表示されている 2 つのアナログ信号を混在させます。 下部にある 2 つの入力ピンと下部にある出力ピンを接続するデータ パスでは、キャプチャされたアナログ信号が記録されているを多重化します。
+図のトポロジフィルターには、左側に4つの入力 (シンク) ピンがあり、右側に2つの出力 (ソース) ピンがあります。 上部の2つの入力ピンと上部の出力ピンを接続するデータパスは、再生されている wave ストリームと MIDI ストリームからレンダリングされた2つのアナログ信号をミックスします。 下部の2つの入力ピンおよび下部の出力ピンを接続するデータパスは、記録されているキャプチャされたアナログ信号を多重化します。
 
-4 つの入力ピンが次のように動作します。
+4つの入力ピンは次のように動作します。
 
--   KSPIN\_TOPO\_WAVEOUT\_SRC 暗証番号 (pin) がアナログ信号に pin を生成するために .wav ファイルなどのソースからのウェーブ ストリームを表示、波形のフィルターの出力ピンに物理的に接続されています。
+-   KSPIN\_TOPO\_WAVEOUT\_SRC pin は、wave フィルターの出力ピンに物理的に接続されています。これにより、.wav ファイルなどのソースから wave ストリームがレンダリングされ、アナログ信号がピンで生成されます。
 
--   KSPIN\_TOPO\_SYNTHOUT\_SRC 暗証番号 (pin) がストリームをレンダリング、たとえば、MIDI、暗証番号 (pin) では、アナログのシグナルを生成するために .mid ファイルなどのソースから、シンセサイザーのフィルターの出力ピンに物理的に接続されています。
+-   KSPIN\_TOPO\_SYNTHOUT\_SRC ピンは、シンセフィルターの出力ピンに物理的に接続されます。これは、たとえば、中間ファイルなどのソースからの MIDI ストリームを使用して、pin でアナログ信号を生成することがあります。
 
--   KSPIN\_TOPO\_SYNTHIN\_SRC 暗証番号 (pin) がアナログ信号を生成するシンセサイザーに物理的に接続されています。 (より実際的なハードウェアの設計が片方 MIDI インターフェイスから MIDI 入力ストリームを取得し、トポロジ フィルターを完全にバイパス、wave 形式に直接変換する可能性がありますに注意してください)。
+-   KSPIN\_TOPO\_SYNTHIN\_SRC ピンは、アナログ信号を生成するシンセサイザーに物理的に接続されています。 (実際のハードウェア設計では、MPU-401 MIDI インターフェイスから MIDI 入力ストリームを取得し、それを直接 wave 形式に変換して、トポロジフィルターを完全にバイパスすることに注意してください)。
 
--   KSPIN\_TOPO\_MIC\_SRC 暗証番号 (pin) は、マイク アナログ信号を受け取る入力のジャックに物理的に接続します。
+-   KSPIN\_TOPO\_MIC\_SRC pin は、マイクからアナログ信号を受け取る入力ジャックに物理的に接続されています。
 
-2 つの出力ピンが次のように動作します。
+2つの出力ピンは次のように動作します。
 
--   KSPIN\_TOPO\_ライン出力\_DST 暗証番号 (pin) が通常一組のスピーカーを駆動するアナログのライン出力ジャックに物理的に接続されています。
+-   KSPIN\_TOPO\_LINEOUT\_DST pin は、通常はスピーカーのセットをドライブするアナログ LINEOUT ジャックに物理的に接続されています。
 
--   KSPIN\_TOPO\_WAVEIN\_DST 暗証番号 (pin) がアナログ信号を wave ストリームに変換し、.wav ファイルなどの変換先に書き込みます wave フィルターの入力ピンに物理的に接続されています。
+-   KSPIN\_TOPO\_WAVEIN\_DST pin は、wave フィルターの入力ピンに物理的に接続されています。これにより、アナログ信号が wave ストリームに変換され、.wav ファイルなどの宛先に書き込まれます。
 
-ボリュームとミュート ノード (を参照してください[ **KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)と[ **KSNODETYPE\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute)) ために使用されますさまざまなストリームのボリューム レベルを制御します。 合計ノード (を参照してください[ **KSNODETYPE\_合計**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)) から、wave および MIDI 入力オーディオ ストリームが混在します。 MUX ノード (を参照してください[ **KSNODETYPE\_MUX**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux)) の 2 つの入力ストリームを選択します。
+さまざまなストリームのボリュームレベルを制御するには、[ボリューム] ノードと [ミュート] ノード (「 [**KSNODETYPE\_volume**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume) and [**KSNODETYPE\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute)」を参照) を使用します。 SUM ノード (「 [**KSNODETYPE\_sum**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)」を参照) は、WAVE および MIDI 入力のオーディオストリームをミックスします。 MUX ノード (「 [**KSNODETYPE\_MUX**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux))」を参照して、2つの入力ストリームを選択します。
 
-図では、破線の矢印を使用して、2 つのノード間または pin とノード間の接続を示します。 矢印は、データ フローの方向を指し示します。 図は、PCCONNECTION で 13 個の要素のいずれかに対応するそれぞれの 13 の接続の合計を示しています。\_前のコード例では、記述子の配列。
+この図では、破線の矢印を使用して、2つのノード間またはピンとノードの間の接続を示しています。 矢印は、データフローの方向を指します。 図には合計13個の接続が示されています。各接続は、前のコード例の PCCONNECTION\_記述子配列内の13個の要素のいずれかに対応しています。
 
-だけでなく、トポロジのフィルターは、アダプター ドライバーは、その他のフィルター - wave、FM シンセサイザー、wave テーブル、およびようになって、トポロジのフィルターのピンに接続を作成します。
+トポロジフィルターに加えて、アダプタードライバーでは、トポロジフィルターのピンに接続する他のフィルター (wave、FM シンセサイザー、wave テーブルなど) が作成されます。
 
-Wave フィルターなど、トポロジのフィルターの KSPIN に物理的に接続されている\_TOPO\_WAVEOUT\_SRC pin には、DAC が含まれています (によって表される、 [ **KSNODETYPE\_DAC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)ノード) トポロジ フィルターの暗証番号 (pin) を出力するアナログ信号に PCM のデータを変換します。 FM シンセサイザーまたはトポロジのフィルターの KSPIN に物理的に接続されているウェーブ シンセサイザー フィルター\_TOPO\_SYNTHOUT\_SRC 暗証番号 (pin) が MIDI のデータをトポロジ フィルターの暗証番号 (pin) を出力するアナログ信号に同様に変換します。 トポロジのフィルターは、これら 2 つの pin をアナログ信号が混在し、スピーカーを混在信号を出力します。
+たとえば、トポロジフィルターの KSPIN\_TOPO\_WAVEOUT\_SRC pin に物理的に接続されている wave フィルターには、PCM データをアナログ信号に変換する DAC ( [**KSNODETYPE\_DAC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)ノードによって表される) が含まれています。トポロジフィルターの pin に出力します。 Wavetable は、トポロジフィルターの KSPIN\_TOPO\_SYNTHOUT\_SRC pin に物理的に接続されている FM シンセサイザーまたはシンセサイザーフィルターと同様に、MIDI データを、トポロジフィルターの pin に出力するアナログ信号に変換します。 トポロジフィルターでは、これら2つの pin からのアナログ信号をミキシングし、混合信号をスピーカーに出力します。
 
-同じアダプター カードの場合は、他のハードウェア デバイスを表すその他のフィルターにトポロジ フィルターの物理的な接続は、他の種類の接続のフィルターと区別する必要があります。 たとえば、特定のピン wave、MIDI、および DirectMusic でフィルターでく接続または切断ソフトウェア管理下にあります。
+トポロジフィルターでは、同じアダプターカードにある他のハードウェアデバイスを表す他のフィルターへの物理接続を、フィルターに対する他の種類の接続と区別する必要があります。 たとえば、wave、MIDI、および DirectMusic フィルターの特定のピンは、ソフトウェアコントロールで接続したり切断したりすることができます。
 
-アダプターのドライバー、デバイスの起動中に呼び出すことによって、トポロジのフィルターの物理的な接続を登録します[ **PcRegisterPhysicalConnection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)接続ごとに 1 回です。 ポート ドライバーに応答するためにこの情報が必要[ **KSPROPERTY\_PIN\_PHYSICALCONNECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)プロパティの get 要求。
+デバイスの起動時に、アダプタードライバーは、接続ごとに1回の[**Pcregiphysicalconnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection)を呼び出して、トポロジフィルターの物理接続を登録します。 ポートドライバーは、 [ **\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)の get プロパティ要求を\_に、ksk プロパティに応答するためにこの情報を必要とします。
 
  
 

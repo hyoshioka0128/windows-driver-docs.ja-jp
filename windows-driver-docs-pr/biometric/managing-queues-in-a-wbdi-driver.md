@@ -3,25 +3,25 @@ title: WBDI ドライバーでのキューの管理
 description: WBDI ドライバーでのキューの管理
 ms.assetid: f0434581-8492-42e1-ae50-4114e7b8b202
 keywords:
-- 生体認証ドライバー WDK、キューを管理します。
-- キュー WDK 生体認証を管理します。
+- 生体認証ドライバー WDK、キューの管理
+- キューの管理 (WDK 生体認証)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37351b27d8ca02c4def553b19131f09425ce6b60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f299272b90ccd690a5a81e965528d807f28c4ffd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364690"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833952"
 ---
 # <a name="managing-queues-in-a-wbdi-driver"></a>WBDI ドライバーでのキューの管理
 
 
-WBDI ドライバーでは、サービスから複数の同時要求を処理するために少なくとも 1 つのキューを作成する必要があります。 UMDF を使用している場合、キューの管理サポートの利用できます。
+WBDI ドライバーは、サービスからの複数の同時要求を処理するために、少なくとも1つのキューを作成する必要があります。 UMDF を使用している場合は、キュー管理サポートを利用できます。
 
-[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)、CBiometricIoQueue クラスは、I/O キューのインターフェイスを実装します。
+[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)では、CBiometricIoQueue クラスは i/o queue インターフェイスを実装します。
 
-メソッドで`CBiometricIoQueue::Initialize`、具体的には、ドライバーへのポインターを所有している CBiometricIoQueue オブジェクトのクエリ実行、 [IQueueCallbackDeviceIoControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)フレームワークがイベントのコールバック関数の決定に使用するインターフェイスドライバーは、キューをサブスクライブします。
+メソッド `CBiometricIoQueue::Initialize`では、ドライバーは、CBiometricIoQueue オブジェクトに対してクエリを行って、ドライバーがサブスクライブするイベントコールバック関数を決定するためにフレームワークが使用する[IQueueCallbackDeviceIoControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)インターフェイスへのポインターを検索します。キューに対して:
 
 ```cpp
 if (SUCCEEDED(hr)) 
@@ -30,7 +30,7 @@ hr = this->QueryInterface(__uuidof(IUnknown), (void **)&unknown);
 }
 ```
 
-そのドライバー呼び出し[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)既定の I/O キューを構成します。
+次に、ドライバーは[**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)を呼び出して、既定の i/o キューを構成します。
 
 ```cpp
 hr = FxDevice->CreateIoQueue(unknown,
@@ -42,9 +42,9 @@ FALSE,
 BiometricSafeRelease(unknown);
 ```
 
-呼び出しでは、要求を利用するとすぐに、ドライバーの I/O キューのコールバック関数への要求が表示されます、framework ように WdfIoQueueDispatchParallel を指定します。
+この呼び出しでは、要求が使用可能になるとすぐに、フレームワークがドライバーの i/o キューコールバック関数に要求を提示するように、WdfIoQueueDispatchParallel を指定します。
 
-次に、ドライバーを呼び出す[ **IWDFDevice::ConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-configurerequestdispatching)をすべてのデバイスの I/O 要求をフィルター処理するキューを構成します。
+次に、ドライバーは[**Iwdfdevice:: ConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-configurerequestdispatching)を呼び出して、すべてのデバイス i/o 要求をフィルター処理するようにキューを構成します。
 
 ```cpp
 hr = FxDevice->ConfigureRequestDispatching(fxQueue,
@@ -52,23 +52,23 @@ WdfRequestDeviceIoControl,
 TRUE);
 ```
 
-ドライバーでは、この呼び出しで WdfRequestDeviceIoControl を指定します、ため、提供、 [ **OnDeviceIoControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)フレームワークからの I/O の通知を処理するハンドラー。 これでは、 **IQueueCallbackDeviceIoControl::OnDeviceIoControl**以前 CreateIoQueue への呼び出しで「不明」のパラメーターの一部であるメソッド。
+ドライバーはこの呼び出しで WdfRequestDeviceIoControl を指定しているため、フレームワークからの i/o 通知を処理する[**OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)ハンドラーを提供します。 これは、以前の CreateIoQueue の呼び出しの "unknown" パラメーターの一部である**IQueueCallbackDeviceIoControl:: OnDeviceIoControl**メソッドで実行されます。
 
-のみ考え未処理[ **IOCTL\_生体認証の\_キャプチャ\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_capture_data)時に要求します。 ドライバーは、IOCTL を追跡する必要があります\_生体認証の\_キャプチャ\_データ要求、内部的に保留中の要求へのポインターを保持することで、またはそれらの要求を処理するために別のフレームワークのキューを使用して、いずれか。
+[**生体認証\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_capture_data)の未処理の IOCTL は、一度に1つの\_データ要求をキャプチャすることだけができます。 ドライバーは、保留中の要求へのポインターを内部的に保持するか、別のフレームワークキューを使用してそれらの要求を処理することによって、データ要求\_キャプチャ\_IOCTL\_生体認証を追跡する必要があります。
 
-サンプルでは、保留中の I/O 要求がある場合、サンプルは、CBiometricDevice クラスのメンバーでは、要求へのポインター Device.h で定義されています。
+このサンプルでは、保留中の i/o 要求がある場合、CBiometricDevice で定義されているように、このサンプルでは、要求へのポインターを、このクラスのメンバーに保持します。
 
 ```cpp
 IWDFIoRequest *m_PendingRequest;
 ```
 
-1 つのセンサー データ コレクション I/O は保留中ですが、データ コレクションに後続の呼び出し Ioctl が失敗します。
+1つのセンサーデータ収集 i/o が保留中ですが、その後のデータコレクション Ioctl への呼び出しは失敗します。
 
 ```cpp
 FxRequest->Complete(WINBIO_E_DATA_COLLECTION_IN_PROGRESS);
 ```
 
-この値に設定のキャプチャ要求が完了またはキャンセル時**NULL**:
+キャプチャ要求が完了するか取り消されると、この値は**NULL**に設定されます。
 
 ```cpp
 IWDFIoRequest *FxRequest = (IWDFIoRequest *)InterlockedExchangePointer((PVOID *)&m_PendingRequest, NULL);

@@ -3,16 +3,16 @@ title: CoNDIS ミニポート ドライバーの状態表示
 description: CoNDIS ミニポート ドライバーの状態表示
 ms.assetid: 1f1174ba-8b0a-4d43-96c9-2d92f50a22c4
 keywords:
-- ミニポート ドライバー WDK ネットワー キング、いる CoNDIS
-- NDIS ミニポート ドライバー WDK、いる CoNDIS
+- ミニポートドライバー WDK ネットワーク、CoNDIS
+- NDIS ミニポートドライバー WDK、CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 056a44c41b2a82ab05681e209399e2702d9b9da9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 95bfba37c3f77585a3aaa934f084e2be5b74350b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385112"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835101"
 ---
 # <a name="condis-miniport-driver-status-indications"></a>CoNDIS ミニポート ドライバーの状態表示
 
@@ -20,11 +20,11 @@ ms.locfileid: "67385112"
 
 
 
-ミニポート ドライバーの呼び出し、 [ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)ミニポート アダプターの状態の変更を報告する関数。 ミニポート ドライバー パス**NdisMCoIndicateStatusEx**へのポインター、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)を含む構造体、状態情報。
+ミニポートドライバーは、 [**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)関数を呼び出して、ミニポートアダプターの状態の変化を報告します。 ミニポートドライバーは、状態情報を格納していることを示す\_**NdisMCoIndicateStatusEx**の[**状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)にポインターを渡します。
 
-状態の表示には、状態と状態の変更の理由の種類を識別する情報が含まれます。
+状態の表示には、状態の種類と状態の変更の理由を識別するための情報が含まれます。
 
-ミニポート ドライバーを設定する必要があります、 **SourceHandle**の NDIS メンバー\_状態\_に渡される NDIS ハンドルを示す値構造体、 *MiniportAdapterHandle*パラメーター、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。 状態の表示が OID 要求に関連付けられている場合は、ミニポート ドライバーを設定できます、 **DestinationHandle**と**RequestId** NDIS のメンバー\_状態\_INDICATION ようにその NDIS は、特定のプロトコル バインドを状態を示す値を提供できます。 OID 要求の詳細については、次を参照してください。[いる CoNDIS ミニポート ドライバーの OID 要求](condis-miniport-driver-oid-requests.md)します。
+ミニポートドライバーでは、ndis\_ステータス\_表示構造体の**Sourcehandle**メンバーを、Ndis が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数の*miniportadapterhandle*パラメーターに渡すハンドルに設定する必要があります。 状態の表示が OID 要求に関連付けられている場合、ミニポートドライバーでは **、ndis**が特定のについての状態を示すことができるように、ndis\_ステータス\_を示す値を指定できます。プロトコルのバインド。 OID 要求の詳細については、「 [Condis ミニポートドライバー Oid 要求](condis-miniport-driver-oid-requests.md)」を参照してください。
 
  
 

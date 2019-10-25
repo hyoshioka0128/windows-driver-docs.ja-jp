@@ -1,53 +1,53 @@
 ---
 title: ハイブリッド システムでのクロス アダプター リソースの使用
-description: Windows Display Driver Model (WDDM) ドライバーは、ハイブリッド システムでは、統合の GPU と独立した GPU の間のクロス アダプターのリソースの共有場所をサポートできます。
+description: Windows Display Driver Model (WDDM) ドライバーは、クロスアダプターリソースが統合 GPU と別個の GPU の間で共有されるハイブリッドシステムをサポートできます。
 ms.assetid: ECBB0AA7-50C2-41C8-9DC6-6EEFC5CEEB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3970fae802be698797d295a53192fae0c02b3c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f828150a97a283d8238b6f3c3dbea69828df42b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373571"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829277"
 ---
-# <a name="span-iddisplayusingcross-adapterresourcesinahybridsystemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>ハイブリッド システムでクロス アダプター リソースの使用
+# <a name="span-iddisplayusing_cross-adapter_resources_in_a_hybrid_systemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>ハイブリッドシステムでのクロスアダプターリソースの使用
 
 
-Windows Display Driver Model (WDDM) ドライバーをサポートできる Windows 8.1 以降、*ハイブリッド システム*ここで、*クロス アダプター リソース*統合の GPU と、独立した GPU の間で共有されると、アプリケーションは、アプリケーションのニーズに応じて、いずれかの GPU 上で実行できます。 オペレーティング システムとドライバーをまとめて、GPU でアプリケーションを実行する必要がありますを決定します。
+Windows 8.1 以降では、Windows Display Driver Model (WDDM) ドライバーは、*クロスアダプターリソース*が統合 gpu と別個の gpu の間で共有される*ハイブリッドシステム*をサポートできます。また、アプリケーションは、アプリケーションのニーズ。 オペレーティングシステムとドライバーの組み合わせによって、アプリケーションを実行する必要がある GPU が決まります。
 
-ディスプレイのミニポート ドライバーはクロス アダプター リソースのサポートを設定して express する必要があります、 **CrossAdapterResource**のメンバー、 [ **DXGK\_VIDMMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)構造体。
+ディスプレイミニポートドライバーは、 [**DXGK\_VIDMMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)構造体のクロス**adapterresource**メンバーを設定することによって、クロスアダプターリソースのサポートを表す必要があります。
 
-ドライバーは、割り当ての種類に応じて異なる方法で情報を取得します。 ユーザー モードのディスプレイ ドライバーがプライマリ フラグ、ビデオのネットワーク (VidPN) 存在するソース ID、リフレッシュ レート、および回転など、プライマリの作成時に、通常提供される情報を取得、割り当てが、従来の全画面表示のプライマリの場合は、情報。 ただし、割り当てが、直接に反転するプライマリの場合は、クロス アダプターの割り当ては、プライマリとして使用することがユーザー モードのディスプレイ ドライバーは、プライマリが作成されるときに提供される一般的な情報を得られません。 また、ここでは、個別のユーザー モードのディスプレイ ドライバー プライマリに関する情報を受け取るが検証されない必要があります。 統合されたドライバーは、プライマリであるかを示す情報を受信しません。
+ドライバーは、割り当ての種類に応じて、さまざまな方法で情報を取得します。 割り当てが従来の全画面のプライマリである場合、プライマリフラグ、ビデオの存在するネットワーク (VidPN) ソース ID、リフレッシュレート、およびローテーションなど、プライマリの作成時に通常提供される情報がユーザーモード表示ドライバーによって取得されます。参照. ただし、割り当てが直接フリッププライマリである場合、アダプター間の割り当てはプライマリとして使用できますが、ユーザーモードの表示ドライバーは、プライマリの作成時に提供される通常の情報を取得しません。 また、この場合、個別のユーザーモード表示ドライバーはプライマリに関する情報を受け取りますが、検証する必要はありません。 統合ドライバーは、それがプライマリであることを示す情報を受信しません。
 
-これら以降のトピックでは、ハイブリッド システムのドライバーの実装の詳細が得られます。
+次のトピックでは、ハイブリッドシステムのドライバー実装の詳細について説明します。
 
--   [ハイブリッド システム構成の検証](validating-a-hybrid-system-configuration.md)
--   [クロス アダプターのリソースを使用して、独立した GPU でのレンダリング](rendering-on-a-discrete-gpu-using-cross-adapter-resources.md)
--   [ハイブリッド システム DDI](hybrid-system-ddi.md)
+-   [ハイブリッドシステム構成の検証](validating-a-hybrid-system-configuration.md)
+-   [クロスアダプターリソースを使用した個別の GPU でのレンダリング](rendering-on-a-discrete-gpu-using-cross-adapter-resources.md)
+-   [ハイブリッドシステム DDI](hybrid-system-ddi.md)
 
-## <a name="span-iddefinitionofahybridsystemspanspan-iddefinitionofahybridsystemspandefinition-and-properties-of-a-hybrid-system"></a><span id="definition_of_a_hybrid_system"></span><span id="DEFINITION_OF_A_HYBRID_SYSTEM"></span>定義とハイブリッド システムのプロパティ:
-
-
--   システムには、単一の統合された GPU と 1 つの独立した GPU が含まれています。*GPU を統合*は CPU チップセットと、統合表示パネル LCD パネルなどの出力に統合されています。
-    *独立した GPU*は通常 PCI などのバスを介してマザーボード チップセットの north ブリッジに接続するリムーバブル カード。
--   独立した GPU が、統合の GPU よりパフォーマンスが大幅に向上します。
--   不連続の GPU でレンダリング専用デバイスでは、あり表示出力が接続されていません。
--   Gpu が同じハウジングに物理的に囲まれていると、独立した GPU を接続または切断、コンピューターが動作していることはできません。
--   オペレーティング システムは、新しいドライバーがインストールされているときに電源投入時の自己テスト (POST) のルーチンの実行時に、またはディスプレイ アダプターを有効または無効になっているときに、ハイブリッド システムの構成を検出します。
-
-## <a name="span-iddefinitionofacrossadapterresourcespanspan-iddefinitionofacrossadapterresourcespandefinition-and-properties-of-a-cross-adapter-resource"></a><span id="definition_of_a_cross_adapter_resource"></span><span id="DEFINITION_OF_A_CROSS_ADAPTER_RESOURCE"></span>定義とアダプター間のリソースのプロパティ:
+## <a name="span-iddefinition_of_a_hybrid_systemspanspan-iddefinition_of_a_hybrid_systemspandefinition-and-properties-of-a-hybrid-system"></a><span id="definition_of_a_hybrid_system"></span><span id="DEFINITION_OF_A_HYBRID_SYSTEM"></span>ハイブリッドシステムの定義とプロパティ:
 
 
--   アダプターが複数のリソースは、以降 Windows 8.1 でのみ使用できます。
--   Aperture GPU メモリ セグメントにのみにページングできます。
+-   システムには1つの統合 GPU と1つの独立した GPU が含まれています。*統合 gpu*は CPU チップセットに統合され、LCD パネルなどの統合されたディスプレイパネルに出力されます。
+    *個々の GPU*は通常、PCI などのバスを介してマザーボードチップセットの北ブリッジに接続するリムーバブルカードです。
+-   離散 GPU は、統合 GPU よりも大幅に高いパフォーマンスを備えています。
+-   個別の GPU はレンダリング専用のデバイスであり、表示出力は接続されていません。
+-   両方の Gpu が物理的に同じハウジングに入っており、コンピューターの実行中に個別の GPU が接続または切断されることはありません。
+-   オペレーティングシステムは、新しいドライバーがインストールされたとき、またはディスプレイアダプターが有効または無効になっているときに、電源オン自己テスト (POST) ルーチンを実行すると、ハイブリッドシステムの構成を検出します。
+
+## <a name="span-iddefinition_of_a_cross_adapter_resourcespanspan-iddefinition_of_a_cross_adapter_resourcespandefinition-and-properties-of-a-cross-adapter-resource"></a><span id="definition_of_a_cross_adapter_resource"></span><span id="DEFINITION_OF_A_CROSS_ADAPTER_RESOURCE"></span>クロスアダプターリソースの定義とプロパティ:
+
+
+-   クロスアダプタリソースは Windows 8.1 からのみ使用できます。
+-   これは、絞り GPU メモリセグメントにのみページングされます。
 -   共有リソースとして割り当てられます。
--   線形の形式で、1 つだけ割り当てがあります。
--   128 バイトの標準的なピッチの配置 (によって定義された、 **D3DKMT\_クロス\_アダプター\_リソース\_ピッチ\_配置**定数)。
--   4 行の高さの標準的な配置が (によって定義された、 **D3DKMT\_クロス\_アダプター\_リソース\_高さ\_配置**定数)。
--   そのメモリの開始アドレスは、1 ページ境界に配置されます。
--   ディスプレイのミニポート ドライバーによってカーネル モードから標準的な割り当てとして作成する場合があり、後で開いて、ユーザー モードのディスプレイ ドライバー。
--   これは、ユーザー モードのディスプレイ ドライバーによって作成されます。
+-   線形形式の割り当ては1つだけです。
+-   これには、128バイトの標準ピッチアラインメントがあります ( **D3DKMT\_クロス\_アダプター\_リソース\_ピッチ\_アラインメント**定数)。
+-   これには、4行の標準の高さアラインメントが用意されています ( **D3DKMT\_クロス\_アダプター\_リソース\_高さ\_アラインメント**定数)。
+-   メモリの開始アドレスは、1ページの境界に合わせて調整されます。
+-   これは、ディスプレイミニポートドライバーによってカーネルモードから標準の割り当てとして作成され、後でユーザーモードのディスプレイドライバーによって開かれる場合があります。
+-   これは、ユーザーモードの表示ドライバーによって作成される場合があります。
 
  
 

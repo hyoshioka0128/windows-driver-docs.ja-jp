@@ -4,12 +4,12 @@ description: IRP の主要な関数コード
 ms.date: 08/12/2017
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
-ms.openlocfilehash: 0730d2e2664bcd00e8d4c18067ccc526ae3d2746
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: e89c464ff82bfa3834501b54a2c1a8796087164b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716926"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838610"
 ---
 # <a name="irp-major-function-codes"></a>IRP の主要な関数コード
 
@@ -17,23 +17,23 @@ ms.locfileid: "67716926"
 
 
 
-各ドライバー固有の I/O スタックの場所 (**IO\_スタック\_場所**主な機能がコードをサポートする必要があります。
+それぞれのドライバー固有の i/o スタックの場所 (**IO\_スタック**は、サポートする必要がある主要な関数コードの場所\_ます。
 
-特定の操作の実行をドライバーを指定した**IRP\_MJ\_<em>XXX</em>** コードでは、基になるデバイスにある程度を左右の特に[ **IRP\_MJ\_デバイス\_コントロール**](irp-mj-device-control.md)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](irp-mj-internal-device-control.md)要求。 たとえば、キーボード ドライバーに送信された要求は必ずしも少し異なるディスク ドライバーに送信されたものです。 ただし、I/O マネージャーは、パラメーターと主要な関数のシステム定義の各コードの I/O スタックの場所の内容を定義します。
+特定の**irp\_MJ\_<em>XXX</em>** コードが実行する特定の操作は、基になるデバイスによって多少異なります。特に、 [**irp\_MJ\_デバイス\_コントロール**](irp-mj-device-control.md)および[**IRP\_MJ @no内部\_デバイス\_制御要求を管理する (_s)** ](irp-mj-internal-device-control.md) 。 たとえば、キーボードドライバーに送信される要求は、必ずしもディスクドライバーに送信される要求とは多少異なることがあります。 ただし、i/o マネージャーは、システム定義の主要な関数コードごとに、パラメーターと i/o スタックの場所の内容を定義します。
 
-上位レベルのすべてのドライバーが、下位レベルの次のドライバーと呼び出しの Irp で適切なの I/O のスタックの場所を設定する必要があります[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)、各入力の IRP またはドライバーが作成した IRP のいずれか (場合、高度なドライバーを保持したまま IRP の入力)。 その結果、すべての中間ドライバーには、基になるデバイス ドライバーを処理する各メジャーの関数コードのディスパッチ ルーチンが必要です。 それ以外の場合、新しい中間ドライバー「チェーンが破壊」されるたびに、アプリケーションのまたはまだより高度なドライバーが、デバイス ドライバーを基になるまでの I/O 要求を送信しようとしています。 します。
+上位レベルのすべてのドライバーは、次の下位レベルのドライバーに対して Irp 内に適切な i/o スタックの場所を設定し、各入力 IRP で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出すか、またはドライバーによって作成された irp (上位レベルのドライバーが入力 irp に保持している場合) を呼び出します。 そのため、すべての中間ドライバーは、基になるデバイスドライバーが処理する主要な関数コードごとにディスパッチルーチンを提供する必要があります。 そうしないと、アプリケーションまたは上位レベルのドライバーが、基になるデバイスドライバーに i/o 要求を送信しようとするたびに、新しい中間ドライバーが "チェーンを中断" します。
 
-ファイル システム ドライバーが必要なシステム定義のサブセットを処理も**IRP\_MJ\_<em>XXX</em>** 関数コード、従属要素を使用して一部**IRP\_MN\_ <em>XXX</em>** コードに機能します。
+また、ファイルシステムドライバーでは **\_\_**  、システム定義の**irp\_MJ\_<em>xxx</em>** 関数コードに必要なサブセットが処理されます
 
-ドライバーは Irp が次の主要な機能コードの一部またはすべての設定を処理します。
+ドライバーは、次の主要な関数コードの一部またはすべてで設定された Irp を処理します。
 
 [**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)
 
-[**IRP\_MJ\_CLOSE**](irp-mj-close.md)
+[**IRP\_MJ\_閉じる**](irp-mj-close.md)
 
-[**IRP\_MJ\_CREATE**](irp-mj-create.md)
+[**IRP\_MJ\_作成**](irp-mj-create.md)
 
-[**IRP\_MJ\_DEVICE\_CONTROL**](irp-mj-device-control.md)
+[**IRP\_MJ\_デバイス\_コントロール**](irp-mj-device-control.md)
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 
@@ -43,23 +43,23 @@ ms.locfileid: "67716926"
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)
 
-[**IRP\_MJ\_電源**](irp-mj-power.md)
+[**IRP\_MJ\_の電源**](irp-mj-power.md)
 
 [**IRP\_MJ\_クエリ\_情報**](irp-mj-query-information.md)
 
-[**IRP\_MJ\_READ**](irp-mj-read.md)
+[**IRP\_MJ\_読み取り**](irp-mj-read.md)
 
-[**IRP\_MJ\_SET\_INFORMATION**](irp-mj-set-information.md)
+[**IRP\_MJ\_設定\_情報**](irp-mj-set-information.md)
 
-[**IRP\_MJ\_シャット ダウン**](irp-mj-shutdown.md)
+[**IRP\_MJ\_シャットダウン**](irp-mj-shutdown.md)
 
 [**IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)
 
-[**IRP\_MJ\_WRITE**](irp-mj-write.md)
+[**IRP\_MJ\_書き込み**](irp-mj-write.md)
 
-このセクションで説明されているパラメーターの入力と出力のパラメーターは、IRP の関数に固有のパラメーターです。
+このセクションで説明する入力パラメーターと出力パラメーターは、IRP 内の関数固有のパラメーターです。
 
-Irp の詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)します。
+Irp の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)」を参照してください。
 
  
 

@@ -3,17 +3,17 @@ title: ビデオ ミニポート ドライバーのタイマー
 description: ビデオ ミニポート ドライバーのタイマー
 ms.assetid: 257ea76e-7be6-4895-8e83-0f50c96e5969
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、タイマー
-- タイマー WDK ビデオのミニポート
+- ビデオミニポートドライバー WDK Windows 2000、タイマー
+- タイマー WDK ビデオミニポート
 - HwVidTimer
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 633464727896f2aa3e0c1d02975515a806525f8f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e917c96fe18156d60323c807ab8c45979ed4e3c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385655"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825426"
 ---
 # <a name="timers-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーのタイマー
 
@@ -21,13 +21,13 @@ ms.locfileid: "67385655"
 ## <span id="ddk_timers_in_video_miniport_drivers_gg"></span><span id="DDK_TIMERS_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>
 
 
-ビデオのミニポート ドライバーが持つことができます、 [ **HwVidTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_timer)ドライバー開発者の判断での関数。 A *HwVidTimer*関数により、タイムアウトになる操作や状態を監視するミニポート ドライバーは、呼び出すことによってよりも細かい単位の間隔の経過と共に変化[ **VideoPortStallExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstallexecution). *HwVidTimer*からとして発生している場合は、他のシステム操作を妨げませんも**VideoPortStallExecution**は。
+ビデオミニポートドライバーは、ドライバーライターの裁量で[**HwVidTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_timer)関数を持つことができます。 *HwVidTimer*関数を使用すると、ミニポートドライバーは、 [**Videoportstallexecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportstallexecution)を呼び出すことによって可能な時間よりも粗い間隔で、状態の変化を監視することができます。 また、 *HwVidTimer*では、 **Videoportstallexecution**と同様に、他のシステム操作が発生するのを防ぐことはできません。
 
-たとえば、VGA 機能をエミュレートするアダプターのミニポート ドライバーがある、 *HwVidTimer*ドライバーは、VGA スタイルのグラフィックスをエミュレートできるようにそのアダプターの"VGA"の状態を監視する関数は定期的に登録します。
+たとえば、VGA 機能をエミュレートするアダプターのミニポートドライバーには、アダプターの "VGA" レジスタの状態を定期的に監視し、ドライバーが VGA スタイルのグラフィックスをエミュレートできるようにする*HwVidTimer*関数が含まれている場合があります。
 
-呼び出しの後に[ **VideoPortStartTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstarttimer)、ビデオ ポート ドライバー呼び出し*HwVidTimer*ビデオのミニポート ドライバー呼び出されるまで毎秒 1 回[ **VideoPortStopTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstoptimer)します。 ビデオのミニポート ドライバーが有効にしてへの呼び出しを無効にする、 *HwVidTimer*繰り返し関数。
+[**Videoportstarttimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportstarttimer)を呼び出した後、ビデオのミニポートドライバーが[**videoportstarttimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportstoptimer)*を呼び出すまで*、ビデオポートドライバーは毎秒1回呼び出します。 ビデオミニポートドライバーは、 *HwVidTimer*関数への呼び出しを繰り返し有効または無効にすることができます。
 
-なお、 *HwVidTimer*関数自体への呼び出しを無効にできません**VideoPortStopTimer**します。 別のビデオのミニポート ドライバー関数は、有効化、またはへの呼び出しの無効化を制御する必要があります、 *HwVidTimer*関数の使用により**VideoPortStartTimer**と**VideoPortStopTimer**.
+*HwVidTimer*関数は、 **Videoportst er**でそれ自体への呼び出しを無効にすることはできないことに注意してください。 別のビデオミニポートドライバー関数は、 **Videoportstarttimer**と**Videoportstarttimer er**を使用して *、関数の*呼び出しの有効化または無効化を制御する必要があります。
 
  
 

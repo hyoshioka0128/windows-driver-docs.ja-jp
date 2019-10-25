@@ -3,19 +3,19 @@ title: ユーザー モード ディスプレイ ドライバー
 description: ユーザー モード ディスプレイ ドライバー
 ms.assetid: cb4e8fb9-a2f0-43b2-ae9e-ccffa850ccd7
 keywords:
-- ドライバー モデル WDK Windows Vista では、ユーザー モードのディスプレイ ドライバーの表示します。
-- Windows Vista のディスプレイ ドライバー モデル WDK、ディスプレイ ドライバーのユーザー モード
-- ユーザー モード ドライバー WDK Windows Vista の表示、ユーザー モードの詳細については、ディスプレイ ドライバー
-- ディスプレイ ドライバー WDK Windows Vista のユーザー モード
-- Direct3D の WDK の表示
+- ディスプレイドライバーモデル WDK Windows Vista、ユーザーモード表示ドライバー
+- Windows Vista display driver model WDK、ユーザーモード表示ドライバー
+- ユーザーモード表示ドライバー WDK Windows Vista、ユーザーモード表示ドライバーについて
+- ユーザーモード表示ドライバー WDK Windows Vista
+- Direct3D WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 637bd7e27d01a6a452bdd12c90bc5f4c9878b580
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a302a8dda67e3fb2e9174ee5aed066389baa493
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373612"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829296"
 ---
 # <a name="user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバー
 
@@ -23,41 +23,41 @@ ms.locfileid: "67373612"
 ## <span id="ddk_user_mode_display_drivers_gg"></span><span id="DDK_USER_MODE_DISPLAY_DRIVERS_GG"></span>
 
 
-グラフィックス ハードウェア ベンダーは、そのディスプレイ アダプターのユーザー モードのディスプレイ ドライバーを記述する必要があります。 ユーザー モードのディスプレイ ドライバーは、マイクロソフトの Direct3D ランタイムによって読み込まれるダイナミック リンク ライブラリ (DLL) です。 ユーザー モードのディスプレイ ドライバーをサポートする必要がありますには少なくとも、 [Direct3D のバージョン 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)します。 ユーザー モードのディスプレイ ドライバーがサポートしているのも、 [Direct3D のバージョン 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 ユーザー モードのディスプレイ ドライバーは、Direct3D バージョン 9 DDI と Direct3D のバージョンの両方のバージョン 9 のいずれかとその他の Direct3D DDI 10 のバージョンの 2 つの独立した Dll で構成できます DDI 10 またはをサポートする 1 つの DLL で構成できます。 次のトピックでは、ユーザー モードのディスプレイ ドライバーのさまざまな側面について説明します。
+グラフィックスハードウェアベンダーは、ディスプレイアダプター用のユーザーモードの表示ドライバーを作成する必要があります。 ユーザーモードの表示ドライバーは、Microsoft Direct3D ランタイムによって読み込まれるダイナミックリンクライブラリ (DLL) です。 ユーザーモードの表示ドライバーは、少なくとも[Direct3D バージョン 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/index)をサポートしている必要があります。 ユーザーモードの表示ドライバーでは、 [Direct3D バージョン 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)もサポートされています。 ユーザーモード表示ドライバーは、Direct3D version 9 DDI と Direct3D version 10 DDI の両方をサポートする1つの DLL で構成できます。また、2つの異なる Dll (バージョン9用と Direct3D DDI のバージョン10用) で構成することもできます。 次のトピックでは、ユーザーモードの表示ドライバーのさまざまな側面について説明します。
 
-[ランタイム関数から受信したエラー コードを返す](returning-error-codes-received-from-runtime-functions.md)
+[ランタイム関数から受け取ったエラーコードを返す](returning-error-codes-received-from-runtime-functions.md)
 
-[E を処理\_INVALIDARG 戻り値](handling-the-e-invalidarg-return-value.md)
+[E\_INVALIDARG の戻り値の処理](handling-the-e-invalidarg-return-value.md)
 
-[シェーダー コードの処理](processing-shader-codes.md)
+[シェーダーコードの処理](processing-shader-codes.md)
 
-[Direct3D の固定機能の状態に変換します。](converting-the-direct3d-fixed-function-state.md)
+[Direct3D の固定関数の状態の変換](converting-the-direct3d-fixed-function-state.md)
 
-[深度ステンシルの値のコピー](copying-depth-stencil-values.md)
+[深度ステンシルの値をコピーしています](copying-depth-stencil-values.md)
 
 [インデックス値の検証](validating-index-values.md)
 
-[複数のプロセッサをサポートしています。](supporting-multiple-processors.md)
+[複数のプロセッサのサポート](supporting-multiple-processors.md)
 
-[複数のロックを処理します。](handling-multiple-locks.md)
+[複数のロックの処理](handling-multiple-locks.md)
 
-[DirectX のビデオ アクセラレータ 2.0](directx-video-acceleration-2-0.md)
+[DirectX ビデオアクセラレーション2.0](directx-video-acceleration-2-0.md)
 
-[Direct3D のバージョン 10 のサポート](supporting-direct3d-version-10.md)
+[サポート (Direct3D バージョン10を)](supporting-direct3d-version-10.md)
 
-[サポートの Direct3D バージョン 10.1](supporting-direct3d-version-10-1.md)
+[サポート (Direct3D バージョン10.1 を)](supporting-direct3d-version-10-1.md)
 
-[Direct3D のバージョン 11 をサポートしています。](supporting-direct3d-version-11.md)
+[サポート (Direct3D バージョン11を)](supporting-direct3d-version-11.md)
 
 [高解像度ビデオの処理](processing-high-definition-video.md)
 
-[ビデオ コンテンツを保護します。](protecting-video-content.md)
+[ビデオコンテンツの保護](protecting-video-content.md)
 
-[オーバーレイのサポートを確認しています](verifying-overlay-support.md)
+[オーバーレイサポートの確認](verifying-overlay-support.md)
 
-[OpenGL のサポートの強化](supporting-opengl-enhancements.md)
+[OpenGL の拡張機能のサポート](supporting-opengl-enhancements.md)
 
-[複数の GPU シナリオのリソースを管理します。](managing-resources-for-multiple-gpu-scenarios.md)
+[複数の GPU シナリオ用のリソースの管理](managing-resources-for-multiple-gpu-scenarios.md)
 
  
 

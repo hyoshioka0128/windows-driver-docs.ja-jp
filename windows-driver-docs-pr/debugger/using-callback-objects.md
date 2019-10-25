@@ -3,53 +3,53 @@ title: コールバック オブジェクトの使用
 description: コールバック オブジェクトの使用
 ms.assetid: 9090a465-b6ab-4e99-8155-b0abdb729468
 keywords:
-- デバッガー エンジン API、コールバック オブジェクト
-- コールバック オブジェクト
-- コールバック オブジェクト、イベントのコールバック
-- イベントのコールバック
-- コールバック オブジェクト、入力のコールバック
-- 入力のコールバック
-- コールバック オブジェクト、出力のコールバック
-- 出力のコールバック
+- デバッガーエンジン API, コールバックオブジェクト
+- コールバックオブジェクト
+- コールバックオブジェクト、イベントコールバック
+- イベントコールバック
+- コールバックオブジェクト、入力コールバック
+- 入力コールバック
+- コールバックオブジェクト、出力コールバック
+- 出力コールバック
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c293fff01458b000002857bececceca2e62e8f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7592c8fdf79fc4f85a22a6e1b92d6d15a13c515
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368629"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834251"
 ---
 # <a name="using-callback-objects"></a>コールバック オブジェクトの使用
 
 
-これには、エンジンによって使用されるインターフェイスのように 3 つのコールバック COM があります。[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)に通知するため[拡張機能をデバッガー](debugger-extensions.md)エンジンまたはターゲットに変更のアプリケーションと[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebuginputcallbacks)要求元の入力と[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugoutputcallbacks)出力を送信するためです。
+エンジンによって使用されるコールバック COM インターフェイスには、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)によってエンジンまたはターゲットに対する変更[の通知、](debugger-extensions.md)入力要求の[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 、出力を送信するための[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 。
 
-コールバック オブジェクトは、クライアントで登録されます。 最大で (Unicode および ASCII のバージョンと同じインターフェイスとしてインターフェイスの数) の各クライアントでの各 3 つのコールバック インターフェイスの 1 つのインスタンスを登録できます。
+コールバックオブジェクトは、クライアントに登録されます。 最大で、3つのコールバックインターフェイスの1つのインスタンスを各クライアントに登録できます (同じインターフェイスとして、インターフェイス数の Unicode および ASCII バージョン)。
 
-クライアントが作成されたときに、エンジンが作成されたスレッドを記憶します。 コールバック インスタンスがクライアントに登録する呼び出しを実行するたびに、エンジンはこの同じスレッドを使用します。 スレッドが使用中の場合は、キュー、エンジンを実行すると、呼び出しにします。 これらのエンジンを許可するメソッドを呼び出し、 [ *DispatchCallbacks* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-dispatchcallbacks)クライアントのスレッドがアイドル状態のときに呼び出す必要があります。 メソッド[ **ExitDispatch** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-exitdispatch)により*DispatchCallbacks*を返します。 スレッドが同じスレッドでデバッガー セッションを開始するために使用された場合、エンジンは、中にコールバックの呼び出しを行うことができます、 [ **WaitForEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)メソッドをおよび*DispatchCallbacks*呼び出される必要はありません。
+クライアントが作成されると、エンジンは、作成されたスレッドを記憶します。 エンジンは、クライアントに登録されているコールバックインスタンスを呼び出すたびに、この同じスレッドを使用します。 スレッドが使用中の場合、エンジンは、必要な呼び出しをキューに置いています。 エンジンがこれらの呼び出しを実行できるようにするには、クライアントのスレッドがアイドル状態になるたびに、メソッド[*DispatchCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-dispatchcallbacks)を呼び出す必要があります。 [**Exitdispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-exitdispatch)メソッドによって、 *DispatchCallbacks*が返されます。 スレッドが、デバッガーセッションを開始するために使用されたスレッドと同じである場合、エンジンは[**Waitforevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)メソッド中にコールバック呼び出しを行うことができ、 *DispatchCallbacks*を呼び出す必要はありません。
 
-メソッド[ **FlushCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)バッファリングされているすべての出力の出力のコールバックを送信するエンジンに指示します。
+メソッド[**Flushcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)は、バッファリングされたすべての出力を出力コールバックに送信するようにエンジンに指示します。
 
-### <a name="span-ideventcallbacksspanspan-ideventcallbacksspanevent-callback-objects"></a><span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>イベントのコールバック オブジェクト
+### <a name="span-idevent_callbacksspanspan-idevent_callbacksspanevent-callback-objects"></a><span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>イベントコールバックオブジェクト
 
-[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイスは、デバッガーの拡張機能とのアプリケーションに通知する、エンジンによって使用[イベント](events.md#events)と、エンジンとターゲットを変更します。 実装**IDebugEventCallbacks**を使用してクライアントに登録できる[ *SetEventCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetEventCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-geteventcallbacks)します。 使用して検出できるすべてのクライアントで登録されたイベントのコールバック数[ *GetNumberEventCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getnumbereventcallbacks)します。
+エンジンは、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイスを使用して、[イベント](events.md#events)およびエンジンとターゲットへの変更をデバッガーに通知します。 **IDebugEventCallbacks**の実装は、 [*seteventcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)を使用してクライアントに登録できます。 クライアントに登録されている現在の実装は、 [*Geteventcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-geteventcallbacks)を使用して見つけることができます。 すべてのクライアントに対して登録されているイベントコールバックの数は、 [*Getnumber Eventコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumbereventcallbacks)を使用して検出できます。
 
-エンジンがイベントを管理する方法について詳しくは、次を参照してください。[監視イベント](monitoring-events.md)します。
+エンジンがイベントを管理する方法の詳細については、「[イベントの監視](monitoring-events.md)」を参照してください。
 
-### <a name="span-idinputcallbacksspanspan-idinputcallbacksspaninput-callback-objects"></a><span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>コールバック オブジェクトを入力します。
+### <a name="span-idinput_callbacksspanspan-idinput_callbacksspaninput-callback-objects"></a><span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>入力コールバックオブジェクト
 
-[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebuginputcallbacks)インターフェイスは、デバッガーの拡張機能とアプリケーションからの入力を要求する、エンジンによって使用されます。 実装**IDebugInputCallbacks**を使用してクライアントに登録できる[ *SetInputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetInputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getinputcallbacks)します。 使用して検出できるすべてのクライアントで登録された入力のコールバック数[ *GetNumberInputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getnumberinputcallbacks)します。
+[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks)インターフェイスは、デバッガーの拡張機能とアプリケーションからの入力を要求するためにエンジンによって使用されます。 **IDebugInputCallbacks**の実装は、 [*setinputcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)を使用してクライアントに登録できます。 クライアントに登録されている現在の実装は、 [*Getinputcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getinputcallbacks)を使用して見つけることができます。 すべてのクライアントに対して登録されている入力コールバックの数は、 [*Getnumber Inputコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberinputcallbacks)を使用して見つけることができます。
 
-エンジンが入力を管理する方法について詳しくは、次を参照してください。[入力と出力](using-input-and-output.md)します。
+エンジンが入力を管理する方法の詳細については、「[入力と出力](using-input-and-output.md)」を参照してください。
 
-### <a name="span-idoutputcallbacksspanspan-idoutputcallbacksspanoutput-callback-objects"></a><span id="output_callbacks"></span><span id="OUTPUT_CALLBACKS"></span>コールバック オブジェクトを出力します。
+### <a name="span-idoutput_callbacksspanspan-idoutput_callbacksspanoutput-callback-objects"></a><span id="output_callbacks"></span><span id="OUTPUT_CALLBACKS"></span>出力コールバックオブジェクト
 
-**IDebugOutputCallbacks**インターフェイスは、デバッガーの拡張機能とアプリケーションに出力を送信する、エンジンによって使用されます。 実装**IDebugOutputCallbacks**を使用してクライアントに登録できる[ *SetOutputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetOutputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getoutputcallbacks)します。 使用して検出できるすべてのクライアントで登録されている出力コールバック数[ *GetNumberOutputCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getnumberoutputcallbacks)します。
+**IDebugOutputCallbacks**インターフェイスは、デバッガーの拡張機能とアプリケーションに出力を送信するためにエンジンによって使用されます。 **IDebugOutputCallbacks**の実装は、 [*setoutputcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)を使用してクライアントに登録できます。 クライアントに登録されている現在の実装は、 [*Getoutputcallbacks バック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputcallbacks)を使用して見つけることができます。 すべてのクライアントに対して登録されている出力コールバックの数は、 [*Getnumber Outputコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberoutputcallbacks)を使用して見つけることができます。
 
-エンジンが出力を管理する方法について詳しくは、次を参照してください。[入力と出力](using-input-and-output.md)します。
+エンジンが出力を管理する方法の詳細については、「[入力と出力](using-input-and-output.md)」を参照してください。
 
-**注**   、エンジンを呼び出して、COM オブジェクトの一般的なものは、 **iunknown::addref**クライアント、登録されている場合、コールバック COM オブジェクトでと **:release**ときオブジェクトを交換するか、クライアントが削除されます。
+**注**   COM オブジェクトの場合と同様に、エンジンは、コールバック COM オブジェクトがクライアントに登録されている場合は、そのオブジェクトに対して**Iunknown:: AddRef**を呼び出し、オブジェクトが置換されるか、クライアントが削除されるときに**iunknown:: Release**を呼び出します。
 
  
 

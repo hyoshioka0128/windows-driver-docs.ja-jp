@@ -1,6 +1,6 @@
 ---
 title: デバッグ\_シンボル\_XXX
-description: デバッグ\_シンボル\_XXX 定数は、シンボルのフラグのビット セットを使用します。 (一部)、シンボルのグループ内のシンボルでシンボルのフラグがについて説明します。
+description: シンボルフラグのビットセットには、DEBUG\_SYMBOL\_XXX 定数が使用されます。 シンボルフラグは、シンボルグループ内の記号を部分的に記述します。
 ms.assetid: de1988f8-6a4d-43a3-856a-0543ecaaf06f
 ms.date: 12/07/2017
 topic_type:
@@ -17,25 +17,25 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb7f8916d775432b10917ce9b0028c29e49adef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6718007776f21cb51a89eb8f30785ec240efe051
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366965"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837784"
 ---
-# <a name="debugsymbolxxx"></a>デバッグ\_シンボル\_XXX
+# <a name="debug_symbol_xxx"></a>デバッグ\_シンボル\_XXX
 
 
-デバッグ\_シンボル\_*XXX*定数は、シンボルのフラグのビット セットを使用します。 (一部)、シンボルのグループ内のシンボルでシンボルのフラグがについて説明します。
+シンボルフラグのビットセットには、DEBUG\_SYMBOL\_*XXX*定数が使用されます。 シンボルフラグは、シンボルグループ内の記号を部分的に記述します。
 
-シンボルの最下位ビット フラグ--ビットがデバッグで見つかった\_シンボル\_拡張\_レベル\_マスク--数値、記号、シンボルのグループ内の展開の深さを表すフォーム。 子のシンボルの深さは、常に 1 つ以上の親のシンボルの深さ。 たとえば、変数のフラグが含まれているシンボルの深さを検索する*フラグ*、次のステートメントを使用します。
+シンボルフラグの最下位ビット (デバッグ\_シンボル\_拡張\_レベル\_マスク) で見つかったビットは、シンボルグループ内のシンボルの拡張深度を表す数値を形成します。 子シンボルの深さは、常にその親シンボルの深さよりも1だけ大きくなります。 たとえば、変数*フラグ*に含まれるフラグを持つシンボルの深さを調べるには、次のステートメントを使用します。
 
 ```dbgcmd
 depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 ```
 
-シンボルのフラグのビット セットの残りの部分は、次のビット フラグを含めることができます。
+残りのシンボルフラグのビットセットには、次のビットフラグを含めることができます。
 
 <table>
 <colgroup>
@@ -52,17 +52,17 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 <tr class="odd">
 <td align="left"><span id="DEBUG_SYMBOL_EXPANDED"></span><span id="debug_symbol_expanded"></span>
 <strong>DEBUG_SYMBOL_EXPANDED</strong></td>
-<td align="left"><p>シンボルの子は、シンボルのグループの一部です。</p></td>
+<td align="left"><p>シンボルの子は、シンボルグループに含まれています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_SYMBOL_READ_ONLY"></span><span id="debug_symbol_read_only"></span>
 <strong>DEBUG_SYMBOL_READ_ONLY</strong></td>
-<td align="left"><p>シンボルは、読み取り専用変数を表します。</p></td>
+<td align="left"><p>シンボルは、読み取り専用の変数を表します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_SYMBOL_IS_ARRAY"></span><span id="debug_symbol_is_array"></span>
 <strong>DEBUG_SYMBOL_IS_ARRAY</strong></td>
-<td align="left"><p>シンボルは、配列変数を表します。</p></td>
+<td align="left"><p>シンボルは配列変数を表します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_SYMBOL_IS_FLOAT"></span><span id="debug_symbol_is_float"></span>
@@ -82,7 +82,7 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 </tbody>
 </table>
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -93,15 +93,15 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h (DbgEng.h を含む)</td>
+<td align="left">DbgEng .h (DbgEng .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**デバッグ\_シンボル\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_parameters)
+[**デバッグ\_シンボル\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_parameters)
 
  
 

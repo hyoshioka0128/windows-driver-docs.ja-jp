@@ -1,23 +1,23 @@
 ---
-title: ISCSI\_IP\_アドレスの WMI クラス
-description: ISCSI\_IP\_アドレスの WMI クラス
+title: ISCSI\_IP\_アドレス WMI クラス
+description: ISCSI\_IP\_アドレス WMI クラス
 ms.assetid: 3ceeb54f-ecc5-40c5-b0a8-8c6f86203f1c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cfd81209cf19e9884ad4aeab26eff35ff18a679a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69048e90dc9e8ff2e3177353c56e474a9eec2c30
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826314"
 ---
-# <a name="iscsiipaddress-wmi-class"></a>ISCSI\_IP\_アドレスの WMI クラス
+# <a name="iscsi_ip_address-wmi-class"></a>ISCSI\_IP\_アドレス WMI クラス
 
 
 ## <span id="ddk_iscsi_ip_address_wmi_class_kr"></span><span id="DDK_ISCSI_IP_ADDRESS_WMI_CLASS_KR"></span>
 
 
-ISCSI\_IP\_Address クラスが使用されている IP プロトコルのバージョンから独立している IP アドレスの定義を提供します。 このクラスで定義されます*Common.mof*します。
+ISCSI\_IP\_Address クラスは、使用されている IP プロトコルのバージョンに依存しない IP アドレスの定義を提供します。 このクラスは、*一般的な .mof*で定義されています。
 
 ```cpp
 class ISCSI_IP_Address {
@@ -58,7 +58,7 @@ class ISCSI_IP_Address {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_IP\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsidef/ns-iscsidef-_iscsi_ip_address)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**ISCSI\_IP\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsidef/ns-iscsidef-_iscsi_ip_address)データ構造を生成します。
 
  
 

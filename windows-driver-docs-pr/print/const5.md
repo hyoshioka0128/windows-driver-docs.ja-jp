@@ -1,22 +1,22 @@
 ---
 title: Const (WSD)
-description: Devices (WSD) Const コンストラクトの Web サービスでは、データ型と返される必要がある値を定義します。
+description: Web Services for Devices (WSD) Const コンストラクトでは、返される必要があるデータ型と値が定義されています。
 ms.assetid: e9bcf007-0117-48a9-9873-a9bbc5702e29
 keywords:
-- Const のコンストラクト
+- Const コンストラクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 608c8b54be0dde51b37b1117366428f7c328d4b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc318ab074a0f1d0fd3cb733539be011f85a9742
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374676"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831860"
 ---
 # <a name="const-wsd"></a>Const (WSD)
 
 
-Devices (WSD) Const コンストラクトの Web サービスでは、データ型と返される必要がある値を定義します。 Const 要素の値に変更されないためです。 Const のコンス トラクターは、WsdBidi.xsd で定義されます。
+Web Services for Devices (WSD) Const コンストラクトでは、返される必要があるデータ型と値が定義されています。 Const は、値が変更されない要素に使用されます。 Const コンストラクトは WsdBidi で定義されています。
 
 <table>
 <colgroup>
@@ -25,22 +25,22 @@ Devices (WSD) Const コンストラクトの Web サービスでは、データ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>name</strong></p></td>
-<td><p>スキーマの値の名前。</p></td>
+<td><p>スキーマ値の名前です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p><strong>Value</strong>属性のデータの型。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>列挙体の値。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>
-<td><p>定数の値を含む文字列。</p></td>
+<td><p>定数値を格納している文字列。</p></td>
 </tr>
 </tbody>
 </table>
@@ -49,7 +49,7 @@ Devices (WSD) Const コンストラクトの Web サービスでは、データ�
 
 ### <a name="code-example"></a>コード例
 
-次のコード例では、特定の bidi スキーマ クエリの bidi 拡張ファイルで定義されている定数値を返します。
+次のコード例では、特定の bidi スキーマクエリの bidi 拡張ファイルで定義されている定数値を返します。
 
 ```cpp
 <Property name="Printer">
@@ -59,7 +59,7 @@ Devices (WSD) Const コンストラクトの Web サービスでは、データ�
 </Property>
 ```
 
-この例では、次のクエリ結果します。
+この例では、次のクエリが実行されます。
 
 ```cpp
 \Printer.Extension.Version:1

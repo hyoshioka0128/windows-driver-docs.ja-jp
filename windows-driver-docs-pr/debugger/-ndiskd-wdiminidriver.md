@@ -1,9 +1,9 @@
 ---
-title: ndiskd.wdiminidriver
-description: Ndiskd.wdiminidriver 拡張機能には、1 つまたは複数の CMiniportDriver 構造に関する情報が表示されます。
+title: ndiskd wdiminidriver
+description: Wdiminidriver 拡張機能には、1つ以上の CMiniportDriver 構造に関する情報が表示されます。
 ms.assetid: C7022CD7-6F3A-485B-8686-A686A5305DA5
 keywords:
-- デバッグ ndiskd.wdiminidriver Windows
+- wdiminidriver Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +12,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4af011cb79092c1483f34cda8c0ad4c100ce10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 050836ff1ff43cf0bebcd10a40d2a734dafca369
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363094"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837647"
 ---
 # <a name="ndiskdwdiminidriver"></a>!ndiskd.wdiminidriver
 
 
-**! Ndiskd.wdiminidriver**拡張機能は、1 つまたは複数の CMiniportDriver 構造に関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd CMiniportDriver 構造体のすべての一覧が表示されます。
+**! Ndiskd**拡張機能には、1つ以上の CMiniportDriver 構造に関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべての CMiniportDriver 構造体の一覧が表示されます。
 
-WDI ミニポート ドライバーの詳細については、次を参照してください。、 [WDI ミニポート ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)します。
+WDI ミニポートドライバーの詳細については、「 [WDI ミニポートドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)」を参照してください。
 
-WDI ミニポート ドライバー リファレンスの詳細については、次を参照してください。 [WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+WDI ミニポートドライバーリファレンスの詳細については、「 [WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
 ```console
 !ndiskd.wdiminidriver [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 CMiniportDriver オブジェクトのハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
-ミニポート ドライバーに関する基本情報が表示されます。
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+ミニポートドライバーに関する基本的な情報を表示します。
 
 <span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-ハンドラー*   
-このドライバーのミニポート ハンドラーが表示されます。
+このドライバーのミニポートハンドラーを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-実行、 **! ndiskd.wdiminidriver** CMiniportDriver のすべてのオブジェクトの一覧を表示するパラメーターなしで拡張機能。 次の例では、1 つだけの CMiniportDriver オブジェクトがあります。 その WdiMiniDriver のハンドルは、ffffc804b8ce7c40 です。
+すべての CMiniportDriver オブジェクトの一覧を表示するには、パラメーターを使用せずに **! ndiskd wdiminidriver**拡張機能を実行します。 次の例では、CMiniportDriver オブジェクトが1つだけ存在します。 WdiMiniDriver のハンドルは ffffc804b8ce7c40 です。
 
 ```console
 1: kd> !ndiskd.wdiminidriver
@@ -59,7 +59,7 @@ Ndiskd.dll
     ffffc804b8ce7c40 - WDI MiniDriver
 ```
 
-WdiMiniDriver のハンドルをクリックするか、入力、 **! ndiskd.wdiminidriver-処理**WDI ミニポート ドライバーの詳細を表示するコマンド。
+WdiMiniDriver のハンドルをクリックするか、 **! ndiskd WdiMiniDriver**コマンドを入力して、この WDI ミニポートドライバーの詳細を確認します。
 
 ```console
 1: kd> !ndiskd.wdiminidriver ffffc804b8ce7c40
@@ -79,7 +79,7 @@ WDI MINIPORT DRIVER
     Handlers
 ```
 
-WDI ミニポート ドライバーの詳細情報の下部にある「ハンドラー」リンクをクリックするようになりましたまたはハンドルを使用して入力することができます、 **! ndiskd.wdiminidriver-処理 - ハンドラー**コマンドは、すべてこの WDI ミニポート ドライバーのハンドラーの一覧を表示します。
+これで、WDI ミニポートドライバーの詳細の下部にある [ハンドラー] リンクをクリックしたり、ハンドルを使用して **! ndiskd**コマンドを入力して、この WDI ミニポートドライバーのすべてのハンドラーの一覧を表示したりすることができます。
 
 ```console
 1: kd> !ndiskd.wdiminidriver ffffc804b8ce7c40 -handlers
@@ -125,22 +125,22 @@ HANDLERS
     CloseAdapterCompleteHandler            fffff80965fface0   wdiwifi!WDICloseAdapterCompleteHandler
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[WDI ミニポート ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
+[WDI ミニポートドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
-[WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

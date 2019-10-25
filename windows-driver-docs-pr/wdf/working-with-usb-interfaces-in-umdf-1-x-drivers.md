@@ -4,62 +4,62 @@ description: UMDF 1.x ドライバーでの USB インターフェイスの操�
 ms.assetid: fc25e3b2-1631-445e-9340-a8cc92c68733
 keywords:
 - UMDF WDK、USB インターフェイス
-- ユーザー モード ドライバー フレームワーク WDK、USB インターフェイス
-- ユーザー モード ドライバー WDK UMDF、USB インターフェイス
+- ユーザーモードドライバーフレームワーク WDK、USB インターフェイス
+- ユーザーモードドライバー WDK UMDF、USB インターフェイス
 - USB インターフェイス WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 837a1c1b7de9be46dca929cbf9119676c3eabb53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9182e90910e774d9c66f87ff4095eb2b4d286795
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355913"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823516"
 ---
 # <a name="working-with-usb-interfaces-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでの USB インターフェイスの操作
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークは、フレームワークの USB インターフェイス オブジェクトとして各 USB インターフェイスを表します。 UMDF ドライバー フレームワークの USB デバイス オブジェクトを作成する場合、フレームワークは、デバイスをサポートする USB インターフェイスごとには、framework USB インターフェイス オブジェクトを作成します。
+フレームワークは、各 USB インターフェイスをフレームワークの USB インターフェイスオブジェクトとして表します。 UMDF ドライバーがフレームワークの USB デバイスオブジェクトを作成すると、フレームワークは、デバイスがサポートする各 USB インターフェイスのフレームワークの USB インターフェイスオブジェクトを作成します。
 
-ほとんどの USB デバイスが 1 つだけのインターフェイスを持ち、インターフェイスが 1 つだけの代替設定には. このようなデバイス ドライバーは通常、フレームワークの USB インターフェイス オブジェクトを定義するオブジェクトのメソッドを使用する必要はありません。
+ほとんどの USB デバイスにはインターフェイスが1つだけあり、インターフェイスには代替の設定が1つしかありません。 通常、このようなデバイスのドライバーは、フレームワークの USB インターフェイスオブジェクトが定義するオブジェクトメソッドを使用する必要はありません。
 
-UMDF ドライバーでは、複数のインターフェイスまたは代替の設定を提供する USB デバイスをサポートする場合、インターフェイス オブジェクトのメソッドには、ドライバーが有効にします。
+UMDF ドライバーが複数のインターフェイスまたは代替設定を提供する USB デバイスをサポートしている場合、インターフェイスオブジェクトのメソッドを使用すると、次のことを行うことができます。
 
--   [インターフェイスの情報を取得](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers#obtaining-umdf-usb-interface-information)します。
+-   [インターフェイス情報を取得](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers#obtaining-umdf-usb-interface-information)します。
 
--   [USB インターフェイスの別の設定を選択](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers#selecting-an-alternate-setting-for-a-umdf-usb-interface)します。
+-   [USB インターフェイスの別の設定を選択して](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers#selecting-an-alternate-setting-for-a-umdf-usb-interface)ください。
 
-### <a name="obtaining-umdf-usb-interface-information"></a>UMDF USB インターフェイスの情報を取得します。
+### <a name="obtaining-umdf-usb-interface-information"></a>UMDF USB インターフェイス情報の取得
 
-後、UMDF ドライバーが呼び出されて、 [ **IWDFUsbTargetFactory::CreateUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice) UMDF USB ターゲット デバイス オブジェクト、ドライバーを作成するメソッドを呼び出すことができます、 [ **IWDFUsbTargetDevice::GetNumInterfaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getnuminterfaces)デバイスをサポートする USB インターフェイスの数を取得します。 次に、ドライバーがへの呼び出しを行うことができます、 [ **IWDFUsbTargetDevice::RetrieveUsbInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrieveusbinterface)へのポインターを取得するメソッド、 [IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)インターフェイスを公開する、USB デバイスをサポートするインターフェイス。 ドライバーは、USB インターフェイスに関する情報を取得するため各 USB インターフェイス オブジェクトを定義する次のメソッドを呼び出すことができます。
+UMDF ドライバーが[**IWDFUsbTargetFactory:: CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)メソッドを呼び出して、umdf usb ターゲットデバイスオブジェクトを作成した後、ドライバーは[**IWDFUsbTargetDevice:: getnuminterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getnuminterfaces)メソッドを呼び出して usb インターフェイスの数を取得できます。デバイスでサポートされている。 次に、ドライバーは[**IWDFUsbTargetDevice:: RetrieveUsbInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrieveusbinterface)メソッドを呼び出して、デバイスがサポートしている USB インターフェイスを公開する[IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)インターフェイスへのポインターを取得できます。 次に、ドライバーは、各 USB インターフェイスオブジェクトが USB インターフェイスに関する情報を取得するために定義する次のメソッドを呼び出すことができます。
 
-<a href="" id="iwdfusbinterface--getinterfacenumber"></a>[**IWDFUsbInterface::GetInterfaceNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacenumber)  
-USB インターフェイスのオブジェクトに関連付けられている USB インターフェイスの数を取得します。
+<a href="" id="iwdfusbinterface--getinterfacenumber"></a>[**IWDFUsbInterface::GetInterfaceNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacenumber)  
+USB インターフェイスオブジェクトに関連付けられている USB インターフェイス番号を取得します。
 
-<a href="" id="iwdfusbinterface--getinterfacedescriptor"></a>[**IWDFUsbInterface::GetInterfaceDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor)  
-USB インターフェイスの設定のいずれかに関連付けられているその USB インターフェイス記述子を取得します。
+<a href="" id="iwdfusbinterface--getinterfacedescriptor"></a>[**IWDFUsbInterface:: GetInterfaceDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor)  
+USB インターフェイスの代替設定のいずれかに関連付けられている USB インターフェイス記述子を取得します。
 
-<a href="" id="iwdfusbinterface--getnumendpoints"></a>[**IWDFUsbInterface::GetNumEndPoints**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getnumendpoints)  
-USB インターフェイスの設定のいずれかに関連付けられているエンドポイント (パイプとも呼ばれます) の数を取得します。
+<a href="" id="iwdfusbinterface--getnumendpoints"></a>[**IWDFUsbInterface:: GetNumEndPoints**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getnumendpoints)  
+USB インターフェイスの代替設定の1つに関連付けられているエンドポイント (パイプとも呼ばれます) の数を取得します。
 
-<a href="" id="iwdfusbinterface--getconfiguredsettingindex"></a>[**IWDFUsbInterface::GetConfiguredSettingIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex)  
-USB インターフェイスの現在選択されている別の設定を識別するインデックス値を取得します。
+<a href="" id="iwdfusbinterface--getconfiguredsettingindex"></a>[**IWDFUsbInterface::GetConfiguredSettingIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex)  
+USB インターフェイスに対して現在選択されている別の設定を識別するインデックス値を取得します。
 
-<a href="" id="iwdfusbinterface--retrieveusbpipeobject"></a>[**IWDFUsbInterface::RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)  
-ポインターを取得、 [IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)指定した USB デバイス インターフェイスとパイプ インデックスに関連付けられている framework パイプ オブジェクトを公開するインターフェイス。
+<a href="" id="iwdfusbinterface--retrieveusbpipeobject"></a>[**IWDFUsbInterface::RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)  
+指定した USB デバイスインターフェイスとパイプインデックスに関連付けられているフレームワークパイプオブジェクトを公開する、 [IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)インターフェイスへのポインターを取得します。
 
-<a href="" id="iwdfusbinterface--getwinusbhandle"></a>[**IWDFUsbInterface::GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)  
-USB インターフェイスに関連付けられている WinUsb インターフェイスのハンドルを取得します。
+<a href="" id="iwdfusbinterface--getwinusbhandle"></a>[**IWDFUsbInterface:: GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)  
+USB インターフェイスに関連付けられている WinUsb インターフェイスハンドルを取得します。
 
-### <a name="selecting-an-alternate-setting-for-a-umdf-usb-interface"></a>UMDF USB インターフェイスの代替設定を選択します。
+### <a name="selecting-an-alternate-setting-for-a-umdf-usb-interface"></a>UMDF USB インターフェイスの別の設定を選択する
 
-UMDF ドライバーを呼び出すことができます、 [ **IWDFUsbInterface::SelectSetting** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting)デバイスを USB のいずれかのインターフェイスの代替の設定を選択するメソッドをサポートしています。
+UMDF ドライバーは、 [**IWDFUsbInterface:: SelectSetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting)メソッドを呼び出して、デバイスがサポートしているいずれかの USB インターフェイスに対して別の設定を選択できます。
 
-デバイスの代替設定は、0 から始まる連続して番号する必要があります。
+デバイスの代替設定には、ゼロから始まる番号を連続して指定する必要があります。
 
-**重要な**  インターフェイスとエンドポイントに関する情報を無効にする設定を選択します。 そのため、ドライバーでは、再度この情報を取得する必要があります。 ドライバーは、取得したすべての USB パイプ オブジェクトの破棄し、再作成する必要がありますも。
+**重要**   設定を選択すると、インターフェイスとエンドポイントに関するすべての情報が無効になります。 そのため、ドライバーはこの情報を再度取得する必要があります。 また、ドライバーは、以前に取得したすべての USB パイプオブジェクトを破棄して再作成する必要があります。
 
  
 

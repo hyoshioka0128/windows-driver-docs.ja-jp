@@ -4,25 +4,25 @@ description: NDIS ウェイク理由状態表示
 ms.assetid: 2F79CB52-0359-4E14-B7A2-49CA55568C44
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc2b34004d9d5c9e257b4223371a8ad7281cbe7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91bf24d1152bae2694577cfca486e1b373feb2df
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383689"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834642"
 ---
 # <a name="ndis-wake-reason-status-indications"></a>NDIS ウェイク理由状態表示
 
 
-このセクションには、NDIS ウェイク理由状態インジケーターで使用されるデータ型は、次の参照トピックが含まれています。
+このセクションでは、次の参照トピックを使用して、NDIS ウェイク理由の状態の表示に使用されるデータ型について説明します。
 
-[**NDIS\_状態\_PM\_WAKE\_理由**](ndis-status-pm-wake-reason.md)
+[**NDIS\_STATUS\_PM\_WAKE\_REASON**](ndis-status-pm-wake-reason.md)
 
-[**NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)
+[**NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)
 
-[**NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)
+[**NDIS\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)
 
-[**NDIS\_PM\_WAKE\_理由\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_pm_wake_reason_type)
+[**NDIS\_PM\_WAKE\_REASON\_種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_wake_reason_type)
 
  
 

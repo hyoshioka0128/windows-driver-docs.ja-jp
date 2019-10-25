@@ -3,19 +3,19 @@ title: DMA 転送要求の分割
 description: DMA 転送要求の分割
 ms.assetid: 7d5b1649-1021-4876-a9c0-e6b156785ef2
 keywords:
-- I/O WDK カーネルでは、転送要求を分割
-- 分割の転送要求
-- 譲渡要求は WDK カーネルの分割
-- データ転送の要求を分割、WDK のカーネル
-- データ WDK カーネルでは、分割要求を転送します。
+- I/o WDK カーネル, 転送要求の分割
+- 転送要求の分割
+- 転送要求の分割 WDK カーネル
+- データ転送 WDK カーネル、分割要求
+- データの転送 WDK カーネル、分割要求
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f5980a2e3fc2a8a887673415e26ef0e6889301
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2397b370ae88a9a941a9b787fc85edd7c7cadf81
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383002"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836266"
 ---
 # <a name="splitting-dma-transfer-requests"></a>DMA 転送要求の分割
 
@@ -23,59 +23,59 @@ ms.locfileid: "67383002"
 
 
 
-すべてのドライバーは、転送要求を分割によっては、次の特定の IRP を満たすために、1 つ以上の DMA 転送操作を実行する必要があります。
+すべてのドライバーは、次のようにして、転送要求を分割し、特定の IRP を満たすために複数の DMA 転送操作を実行することが必要になる場合があります。
 
--   数[レジスタにマップ](map-registers.md)によって返される[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
+-   [**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)によって返される[マップレジスタ](map-registers.md)の数
 
--   転送されるデータのバイト数に含まれる、**長さ**IRP のドライバーの I/O スタックの場所のメンバー
+-   IRP のドライバーの i/o スタック位置の**長さ**のメンバーに含まれる転送されるデータのバイト数
 
--   ドライバーがデータを転送するには先、または元のバッファーのシステムの物理メモリ内でのページ境界の数
+-   ドライバーがデータを転送する対象となる、システムの物理メモリ内のページ境界の数
 
--   ドライバーの DMA 操作でデバイス固有の制約。 たとえば、「アット」ディスク ドライバー システムは、256 個を超えるセクター ディスク コント ローラーの制限のための転送要求を分割する必要があります。
+-   ドライバーの DMA 操作に対するデバイス固有の制約。 たとえば、システムの "AT" ディスクドライバーでは、ディスクコントローラーの制限により、256セクターを超える転送要求を分割する必要があります。
 
-ドライバーは IRP で次のように指定されたすべてのデータを転送するために必要なマップのレジスタの数を特定できます。
+ドライバーは、次のように、IRP によって指定されたすべてのデータを転送するために必要なマップレジスタの数を決定できます。
 
-1.  呼び出す[ **MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で MDL にポインターを渡す**Irp の&gt;MdlAddress**バッファーの開始仮想アドレスを取得します。 ドライバーがこの仮想アドレスを使用してメモリへのアクセスを試みる必要がありますいないに注意してください。 によって返される値**MmGetMdlVirtualAddress** MDL、必ずしも有効なアドレスへのインデックスします。
+1.  [**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出し、 **Irp-&gt;MDLADDRESS**の MDL へのポインターを渡して、バッファーの開始仮想アドレスを取得します。 ドライバーは、この仮想アドレスを使用してメモリにアクセスしないようにする必要があることに注意してください。 **Mmgetmdlvirtualaddress**によって返される値は、必ずしも有効なアドレスではなく、MDL のインデックスです。
 
-2.  返されるインデックスとの値を渡す**長さ**ドライバーの I/O でスタックに IRP の場所、 [**アドレス\_AND\_サイズ\_TO\_スパン\_ページ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロ。
+2.  返されたインデックスと**長さ**の値\_を、IRP のドライバーの i/o スタック位置に渡し、 [ **\_SIZE\_を\_SPAN\_PAGES マクロに**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)渡します。
 
-値がによって返される場合**アドレス\_AND\_サイズ\_TO\_スパン\_ページ**がより大きい、 *NumberOfMapRegisters*値によって返される**IoGetDmaAdapter**ドライバーは、単一の DMA 操作では、この IRP の要求されたすべてのデータを転送することはできません。 代わりに、次の方法にする必要があります。
+アドレス\_によって返される値**と\_サイズ\_\_スパンの\_ページ**が、 **IoGetDmaAdapter**によって返される*numberofmapregisters*値より大きい場合、ドライバーは要求されたすべてのデータを転送できません単一の DMA 操作でのこの IRP の場合。 代わりに、次の操作を行う必要があります。
 
-1.  バッファーが使用可能なマップのレジスタ (および、そのデバイスに固有の DMA 制約) の数に合わせて設定されている部分に分割します。
+1.  バッファーを、使用可能なマップレジスタ (およびデバイス固有の DMA 制約) の数に合わせてサイズ設定される断片に分割します。
 
-2.  転送要求を満たすために多くの DMA 操作を実行します。
+2.  転送要求を満たすために必要な数の DMA 操作を実行します。
 
-たとえば、**アドレス\_AND\_サイズ\_TO\_スパン\_ページ**12 個のマップのレジスタは、譲渡要求が、を満たすために必要であることを示します。*NumberOfMapRegisters*によって返される値**IoGetDmaAdapter**は 5 つのみです。 (と仮定しないデバイスに固有の DMA 制約。)ここでは、ドライバーを呼び出す DMA 転送の 3 つの操作する必要があります実行[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer) IRP から要求されたすべてのデータを転送する 3 回です。
+たとえば、 **ADDRESS\_と\_SIZE\_を\_\_スパンのページにするとし**ます。これは、転送要求を満たすために12個のマップレジスタが必要であることを示しますが、 *numberofmapregisters*値はによって**返されます。IoGetDmaAdapter**は5つだけです。 (デバイス固有の DMA の制約がないと仮定します)。この場合、ドライバーは3つの DMA 転送操作を実行し、 [**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)を呼び出して、IRP によって要求されたすべてのデータを転送する必要があります。
 
-システムの DMA のデバイス ドライバーは、単一の I/O 操作には IRP を満たすために十分なマップのレジスタがある場合、DMA の転送を分割するさまざまな手法を使用します。 1 つの方法を使用して、次に示します。
+システムの DMA デバイスドライバーは、1つの i/o 操作で IRP を満たすのに十分なマップレジスタがない場合に、DMA 転送を分割するためにさまざまな手法を使用します。 使用する1つの方法は次のとおりです。
 
-1.  呼び出す[ **IoAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)ユーザー バッファーの一部を説明する、MDL を割り当てることです。
+1.  [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)を呼び出して、ユーザーバッファーの一部を記述する MDL を割り当てます。
 
-2.  呼び出す[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)ユーザー バッファーの部分をロックダウンします。
+2.  [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)を呼び出して、ユーザーバッファーのその部分をロックダウンします。
 
-3.  バッファーの部分のデータを転送します。
+3.  バッファーのその部分のデータを転送します。
 
-4.  呼び出す[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)し、次のいずれかの操作を行います。
-    -   手順 1 で、ドライバーが割り当てられている MDL が転送の次のコンポーネントに対して十分な大きさの場合は、呼び出す[ **MmPrepareMdlForReuse** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)手順 2 ~ 4 を繰り返します。
-    -   それ以外の場合、呼び出す[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)手順 1. ~ 4. を繰り返します。
+4.  [**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)を呼び出して、次のいずれかの操作を行います。
+    -   手順 1. で割り当てたドライバーが次の転送に十分な大きさの MDL を使用している場合は、 [**mm/** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) * を呼び出して、手順 2. ~ 4. を繰り返します。
+    -   それ以外の場合は、 [**Iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl)を呼び出し、手順 1. ~ 4. を繰り返します。
 
-5.  呼び出す[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)と[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)すべてのデータが転送されたとき。
+5.  すべてのデータが転送されたときに、 [**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)と[**Iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl)を呼び出します。
 
-最上位レベルのドライバーの全体のユーザー バッファーできませんロックダウン[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)限られたメモリ使用のマシンで、次の操作ができます。
+最上位レベルのドライバーが、メモリが制限されているコンピューターの[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)を使用してユーザーバッファー全体をロックダウンできない場合は、次の操作を実行できます。
 
-1.  呼び出す[ **IoBuildSynchronousFsdRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)部分転送 IRP およびロック ダウン ユーザー バッファーの一部を割り当てます。 ロックされた領域は、の倍数では、通常**ページ\_サイズ**または基になるデバイスの転送の容量に合わせてサイズです。
+1.  [**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)を呼び出して、部分転送の IRP を割り当て、ユーザーバッファーの一部をロックダウンします。 ロックダウン領域は、通常、**ページ\_サイズ**の倍数か、基になるデバイスの転送容量に合わせてサイズが調整されます。
 
-2.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)の部分的な転送、IRP と呼び出し[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)イベント オブジェクトを待機する、下位のドライバーが状態を返す場合、その部分転送 IRP に関連するセットアップ ドライバー\_保留します。
+2.  部分転送の IRP に対して[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出し、 [**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)を呼び出して、ドライバーが部分転送の irp と関連付けられるように設定されているイベントオブジェクトを待機します。これにより、低いドライバーがステータス\_PENDING を返します。
 
-3.  手順 1 と 2 まで、データを転送すると、すべてを制御します。 を再びときに、次に、元の IRP を完了します。
+3.  制御が再び行われたら、すべてのデータが転送されるまで手順 1. と手順 2. を繰り返し、元の IRP を完了します。
 
-ストレージ クラス ドライバーは、基になる SCSI ポート/ミニポート ドライバーの大きな転送要求を分割、転送要求の各部分の追加の IRP が割り当てられます。 登録、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)各ドライバーに割り当てられた IRP、完全転送要求の状態を追跡し、ドライバーによって割り当てられた Irp を解放するための日常的な。 送信これら Irp ポート ドライバーを使用して、ログオンし、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+ストレージクラスドライバーは、基になる SCSI ポート/ミニポートドライバーに対して大きな転送要求を分割するときに、転送要求の各部分に対して追加の IRP を割り当てます。 ドライバーによって割り当てられた各 IRP の[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを登録して、完全転送要求の状態を追跡し、ドライバーによって割り当てられた irp を解放します。 次に、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して、これらの irp をポートドライバーに送信します。
 
-その他のクラス/ポート ドライバーがこの手法を使用できるは、クラス ドライバーがマップの数を決定することができる場合にのみレジスタがポート ドライバーを使用します。 ポートのドライバーは、ペアになっているクラス ドライバーのレジストリでこの構成情報を格納する必要があるか、ペアになっているドライバーの数に関する構成情報を渡す内部デバイス I/O 制御の要求を使用して、プライベート インターフェイスを定義する必要があります。クラスのドライバーにポート ドライバーから使用可能なマップを登録します。
+その他のクラス/ポートドライバーは、クラスドライバーがポートドライバーで使用可能なマップレジスタの数を特定できる場合にのみ、この手法を使用できます。 ポートドライバーは、この構成情報をペアのクラスドライバーのレジストリに格納する必要があります。または、ペアリングされたドライバーは、内部デバイス i/o 制御要求を使用してプライベートインターフェイスを定義し、次の数に関する構成情報を渡す必要があります。使用可能なマップは、ポートドライバーからクラスドライバーに登録されます。
 
-DMA デバイス用のモノリシックなドライバー (つまり、ドライバー クラスとポートのペアの一部ではない) は、自身の大きな転送要求を分割する必要があります。 このようなドライバーは通常の部分に大きな要求を分割して、IRP を満たすために一連の DMA 操作を実行します。
+1つのモノリシックドライバー (つまり、クラスとポートのペアの一部ではないドライバー) は、それ自体に対して大きな転送要求を分割する必要があります。 このようなドライバーは通常、大きな要求を分割し、IRP を満たすために一連の DMA 操作を実行します。
 
-高度なドライバーを呼び出すことができる場合、譲渡要求が大きすぎて、基になるデバイス ドライバーを処理するのに[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)、部分的な転送 Irp の基になるデバイス ドライバーのシーケンスを設定します。
+転送要求が大きすぎて、基になるデバイスドライバーが処理できない場合、上位レベルのドライバーは[**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[**Iobuildpartialmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl)を呼び出し、基になるデバイスドライバーに対して部分転送 irp のシーケンスを設定します。
 
  
 

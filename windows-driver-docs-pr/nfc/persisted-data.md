@@ -1,6 +1,6 @@
 ---
 title: 永続化されたデータ
-description: データ永続化されます。
+description: データの永続化はです。
 ms.assetid: 61C3C55C-00DC-4A8C-B235-7C0391FB5119
 keywords:
 - NFC
@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0750a0e9d3b56c004b172ec297e6123461cd02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9475f20a802adec7143a609ce510e86ae7cec4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379110"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834055"
 ---
 # <a name="persisted-data"></a>永続化されたデータ
 
 
-レジストリの場所のデータの永続化は次のように説明します。
+レジストリの場所に関するデータの永続化については、次の説明を参照してください。
 
 <table>
 <colgroup>
@@ -32,22 +32,22 @@ ms.locfileid: "67379110"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Location</th>
-<th align="left">内容、使用状況、既定値</th>
-<th align="left">アクセス (ない場合は既定値)</th>
-<th align="left">PII が格納されているか。</th>
-<th align="left">この設定を移行しますか。</th>
+<th align="left">位置情報</th>
+<th align="left">コンテンツ、使用法、既定値</th>
+<th align="left">アクセス (既定ではない場合)</th>
+<th align="left">PII は保存されていますか?</th>
+<th align="left">この設定は移行されていますか?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">デバイス ノードのレジストリの場所</td>
+<td align="left">デバイスノードのレジストリの場所</td>
 <td align="left">NfcRadioTurnedOff、DWORD:
-<p>TRUE:NFC RM はオフです。</p>
-<p>FALSE:NFC RM アイドル状態の電源管理対象となるは、します。</p></td>
-<td align="left">デバイスの列挙型ツリー、特別な ACL が設定されていませんから継承します。</td>
-<td align="left">なし</td>
-<td align="left">X</td>
+<p>TRUE: NFC RM がオフになっています</p>
+<p>FALSE: NFC RM はオンになっており、アイドル状態の電源管理が適用されます</p></td>
+<td align="left">デバイスの列挙ツリーから継承します。特別な ACL セットはありません。</td>
+<td align="left">該当なし</td>
+<td align="left">必須ではない</td>
 </tr>
 </tbody>
 </table>
@@ -58,6 +58,6 @@ ms.locfileid: "67379110"
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

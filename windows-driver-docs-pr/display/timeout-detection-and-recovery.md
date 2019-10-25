@@ -1,58 +1,58 @@
 ---
-title: タイムアウト検出と復旧 (TDR)
-description: タイムアウト検出と復旧 (TDR)
+title: タイムアウトの検出と復旧 (TDR)
+description: タイムアウトの検出と復旧 (TDR)
 ms.assetid: f410eec7-026f-41e0-8c60-72f651659ead
 keywords:
-- (タイムアウト検出と回復) TDR WDK の表示、説明
+- TDR (タイムアウト検出と復旧) WDK 表示、説明
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42468138a6fdef65f9ee4ea9ef49a761754a99c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 474467b6860913a78a7f66c2ef4e2501545e4e32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375779"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829320"
 ---
-# <a name="timeout-detection-and-recovery-tdr"></a>タイムアウト検出と復旧 (TDR)
+# <a name="timeout-detection-and-recovery-tdr"></a>タイムアウトの検出と復旧 (TDR)
 
 
-グラフィックスの安定性の最も一般的な問題の 1 つには、コンピューターが「ハング」または実際には、エンドユーザーのコマンドまたは操作を処理している間は、完全に「固定」が表示されるときに発生します。 エンドユーザーは、通常数秒を待機し、コンピューターを再起動することにしました。 コンピューターの固定された外観は、GPU がゲーム プレイ中に処理を要するのグラフィカルな操作を通常処理でビジー状態のために通常発生します。 GPU がディスプレイの画面を更新できませんし、固定された、コンピューターが表示されます。
+グラフィックスにおける最も一般的な安定性の問題の1つは、コンピューターが "ハング" するか、完全に "フリーズ" されているときです。実際には、エンドユーザーのコマンドまたは操作を処理しています。 通常、エンドユーザーは数秒待ってから、コンピューターの再起動を決定します。 通常、コンピューターがフリーズしている状況は、GPU が通常はゲーム再生中に大量のグラフィック操作を処理するためにビジー状態であるために発生します。 GPU はディスプレイ画面を更新せず、コンピューターがフリーズした状態で表示されます。
 
-Windows Vista 以降では、オペレーティング システムを完全に「停止」コンピューターが表示される状況を検出しようとします。 オペレーティング システムは、動的にデスクトップが再び応答するために固定された状況から回復を試みます。 このプロセスの検出と回復と呼ばれる*タイムアウト検出と回復*(TDR)。 TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバーを再初期化し、GPU をリセットする関数。 そのため、エンドユーザーでは、エクスペリエンスが大幅に改善オペレーティング システムを再起動する必要はありません。
+Windows Vista 以降では、オペレーティングシステムは、コンピューターが完全に "フリーズ" されていると思われる状況を検出しようとします。 次に、オペレーティングシステムは、デスクトップが再び応答するように、凍結された状況から動的に回復しようとします。 この検出と復旧のプロセスは *、タイムアウトの検出と復旧*(TDR) と呼ばれています。 TDR プロセスでは、オペレーティングシステムの GPU スケジューラがディスプレイミニポートドライバーの[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数を呼び出して、ドライバーを再初期化し、GPU をリセットします。 そのため、エンドユーザーはオペレーティングシステムを再起動する必要がなく、エクスペリエンスが大幅に向上します。
 
-ハング検出からのみ表示される成果物は、回復には、画面のちらつきです。 この画面では、オペレーティング システムは、これにより、画面の再描画されるグラフィックス スタックの一部をリセットしたときに結果がちらつきます。 Windows 表示 Driver Model (WDDM) 1.2 以降がディスプレイのミニポート ドライバーに準拠している場合、ちらつきがなくなります (を参照してください[WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md))。 一部のレガシ Microsoft DirectX アプリケーション (たとえば、9.0 より前の DirectX のバージョンに準拠している DirectX アプリケーション) は、この回復の最後に黒の画面に表示可能性があります。 エンドユーザーは、これらのアプリケーションを再起動する必要があります。
+ハング検出から回復まで表示されるアイテムは、画面のちらつきだけです。 この画面では、オペレーティングシステムによってグラフィックススタックの一部がリセットされ、画面が再描画されると、結果がちらつきます。 ディスプレイミニポートドライバーが Windows Display Driver Model (WDDM) 1.2 以降に準拠している場合は、このちらつきが解消されます (「 [wddm 1.2 以降でのシームレスな状態遷移の提供](seamless-state-transitions-in-wddm-1-2-and-later.md)」を参照してください)。 一部のレガシ Microsoft DirectX アプリケーション (たとえば、9.0 より前の DirectX バージョンに準拠する DirectX アプリケーションなど) は、この回復の最後に黒い画面に表示されることがあります。 エンドユーザーは、これらのアプリケーションを再起動する必要があります。
 
-このシーケンス TDR プロセスを簡単に説明します。
+このシーケンスでは、TDR プロセスについて簡単に説明します。
 
-## <a name="span-idtimeoutdetectioninthewindowsdisplaydrivermodelwddmspanspan-idtimeoutdetectioninthewindowsdisplaydrivermodelwddmspanspan-idtimeoutdetectioninthewindowsdisplaydrivermodelwddmspantimeout-detection-in-the-windows-display-driver-model-wddm"></a><span id="Timeout_detection_in_the_Windows_Display_Driver_Model__WDDM_"></span><span id="timeout_detection_in_the_windows_display_driver_model__wddm_"></span><span id="TIMEOUT_DETECTION_IN_THE_WINDOWS_DISPLAY_DRIVER_MODEL__WDDM_"></span>Windows Display Driver Model (WDDM) のタイムアウト検出
-
-
-DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) の一部では、GPU スケジューラは、GPU に特定のタスクの実行にかかる時間の許容時間より長い時間ことを検出します。 GPU のスケジューラは、し、この特定のタスクを切断しようとします。 切断操作には、実際の TDR タイムアウトである「待機」のタイムアウトがあります。 この手順は、プロセスのタイムアウト検出フェーズではこのためです。 Windows Vista 以降のオペレーティング システムで既定のタイムアウト期間は、2 秒です。 GPU は、完了または TDR のタイムアウト期間内の現在のタスクを横取りできることはできません、GPU が固定されているオペレーティング システムを診断します。
-
-タイムアウト検出の発生を防ぐためには、ハードウェア ベンダーはグラフィック操作 (つまり、ダイレクト メモリ アクセス (DMA) バッファー完了) に取る生産性とゲーム プレイなどのエンド ユーザー シナリオの 2 秒確認してください。
-
-## <a name="span-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanpreparation-for-recovery"></a><span id="Preparation_for_recovery"></span><span id="preparation_for_recovery"></span><span id="PREPARATION_FOR_RECOVERY"></span>復旧の準備
+## <a name="span-idtimeout_detection_in_the_windows_display_driver_model__wddm_spanspan-idtimeout_detection_in_the_windows_display_driver_model__wddm_spanspan-idtimeout_detection_in_the_windows_display_driver_model__wddm_spantimeout-detection-in-the-windows-display-driver-model-wddm"></a><span id="Timeout_detection_in_the_Windows_Display_Driver_Model__WDDM_"></span><span id="timeout_detection_in_the_windows_display_driver_model__wddm_"></span><span id="TIMEOUT_DETECTION_IN_THE_WINDOWS_DISPLAY_DRIVER_MODEL__WDDM_"></span>Windows Display Driver Model (WDDM) でのタイムアウトの検出
 
 
-オペレーティング システムの GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバー、オペレーティング システムにタイムアウトが検出されたことを通知する関数。 ドライバーはそれ自体を再初期化する必要がありますし、GPU をリセットします。 さらに、ドライバーはメモリへのアクセスを停止する必要があり、ハードウェアにはアクセスする必要があります。 オペレーティング システムとドライバー ハードウェアと事後の診断に役立つ可能性があるその他の状態情報を収集します。
+DirectX グラフィックスカーネルサブシステム (Dxgkrnl) の一部である GPU スケジューラは、GPU が特定のタスクを実行するのに許容される時間を超えていることを検出します。 次に、GPU スケジューラは、この特定のタスクを横取りしようとします。 プリエンプト操作には、実際の TDR タイムアウトである "wait" タイムアウトがあります。 この手順は、プロセスのタイムアウト検出フェーズです。 Windows Vista 以降のオペレーティングシステムの既定のタイムアウト期間は2秒です。 GPU が TDR のタイムアウト期間内に現在のタスクを完了またはプリエンプトできない場合、オペレーティングシステムは GPU が固定されていることを診断します。
 
-## <a name="span-iddesktoprecoveryspanspan-iddesktoprecoveryspanspan-iddesktoprecoveryspandesktop-recovery"></a><span id="Desktop_recovery"></span><span id="desktop_recovery"></span><span id="DESKTOP_RECOVERY"></span>デスクトップの修復
+タイムアウトの検出が行われないように、ハードウェアベンダーは、グラフィックス操作 (つまり、ダイレクトメモリアクセス (DMA) バッファーの完了) がエンドユーザーのシナリオ (生産性やゲームプレイなど) で2秒以内に実行されることを保証する必要があります。
 
-
-オペレーティング システムでは、グラフィックス スタックの適切な状態をリセットします。 これは Dxgkrnl.sys の一部でも、ビデオ メモリ マネージャーは、ビデオ メモリからのすべての割り当てを削除します。 ディスプレイのミニポート ドライバーでは、GPU ハードウェアの状態をリセットします。 グラフィックス スタックは、最終的な操作を実行し、応答性の状態にデスクトップを復元します。 前述のように、一部のレガシ DirectX アプリケーションをこの回復では、これらのアプリケーションを再起動するには、エンドユーザーが必要ですが、最後に黒いだけレンダリング可能性があります。 適切に記述された DirectX 9Ex と DirectX 10 テクノロジのデバイスの削除を処理する以降のアプリケーションは引き続き正常に動作します。 アプリケーションは、リリースし、マイクロソフトの Direct3D デバイスとすべてのデバイスのオブジェクトを再作成する必要があります。 DirectX アプリケーションの回復方法の詳細については、Windows SDK を参照してください。
-
-## <a name="span-idrelatedtdrtopicsspanspan-idrelatedtdrtopicsspanspan-idrelatedtdrtopicsspanrelated-tdr-topics"></a><span id="Related_TDR_topics"></span><span id="related_tdr_topics"></span><span id="RELATED_TDR_TOPICS"></span>TDR の関連トピック
+## <a name="span-idpreparation_for_recoveryspanspan-idpreparation_for_recoveryspanspan-idpreparation_for_recoveryspanpreparation-for-recovery"></a><span id="Preparation_for_recovery"></span><span id="preparation_for_recovery"></span><span id="PREPARATION_FOR_RECOVERY"></span>回復の準備
 
 
-TDR プロセスを説明し、レジストリ キーの TDR デバッグを有効にします。
+オペレーティングシステムの GPU スケジューラは、ディスプレイミニポートドライバーの[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数を呼び出して、オペレーティングシステムがタイムアウトを検出したことをドライバーに通知します。 ドライバーは、それ自体を再初期化し、GPU をリセットする必要があります。 また、ドライバーはメモリへのアクセスを停止する必要があり、ハードウェアにアクセスすることはできません。 オペレーティングシステムとドライバーによってハードウェアおよびその他の状態情報が収集され、事後診断に役立つ可能性があります。
 
-[繰り返し発生する GPU のハングと復元の制限](limiting-repetitive-gpu-hangs-and-recoveries.md)
+## <a name="span-iddesktop_recoveryspanspan-iddesktop_recoveryspanspan-iddesktop_recoveryspandesktop-recovery"></a><span id="Desktop_recovery"></span><span id="desktop_recovery"></span><span id="DESKTOP_RECOVERY"></span>デスクトップの回復
 
-[TDR エラー メッセージング](tdr-error-messaging.md)
 
-[TDR レジストリ キー](tdr-registry-keys.md)
+オペレーティングシステムによって、グラフィックススタックの適切な状態がリセットされます。 Dxgkrnl の一部でもあるビデオメモリマネージャーは、ビデオメモリからすべての割り当てを削除します。 ディスプレイミニポートドライバーは、GPU ハードウェアの状態をリセットします。 グラフィックススタックは最後のアクションを実行し、デスクトップを応答性の高い状態に復元します。 既に説明したように、一部のレガシ DirectX アプリケーションは、この回復の最後に黒のみを表示することがあります。この場合、エンドユーザーはこれらのアプリケーションを再起動する必要があります。 適切に記述された DirectX 9Ex および DirectX 10 以降のデバイスの削除テクノロジを処理するアプリケーションは、引き続き正常に動作します。 アプリケーションは、Microsoft Direct3D デバイスとデバイスのすべてのオブジェクトを解放してから、再作成する必要があります。 DirectX アプリケーションの回復方法の詳細については、Windows SDK を参照してください。
 
-[Windows 8 での TDR の変更](tdr-changes-in-windows-8.md)
+## <a name="span-idrelated_tdr_topicsspanspan-idrelated_tdr_topicsspanspan-idrelated_tdr_topicsspanrelated-tdr-topics"></a><span id="Related_TDR_topics"></span><span id="related_tdr_topics"></span><span id="RELATED_TDR_TOPICS"></span>関連する TDR のトピック
+
+
+これらのトピックでは、TDR のデバッグを有効にする TDR プロセスとレジストリキーについて説明します。
+
+[繰り返し発生する GPU のハングと回復の制限](limiting-repetitive-gpu-hangs-and-recoveries.md)
+
+[TDR のエラーメッセージ](tdr-error-messaging.md)
+
+[TDR レジストリキー](tdr-registry-keys.md)
+
+[Windows 8 での TDR の変更点](tdr-changes-in-windows-8.md)
 
  
 

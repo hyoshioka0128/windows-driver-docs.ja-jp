@@ -3,17 +3,17 @@ title: 仮想メモリと物理メモリ
 description: 仮想メモリと物理メモリ
 ms.assetid: 346a46ea-9d44-4e12-8623-d118cd0c7e25
 keywords:
-- メモリ アクセス、仮想および物理メモリ
-- 仮想メモリへのアクセス
-- 物理メモリへのアクセス
+- メモリアクセス、仮想メモリ、物理メモリ
+- 仮想メモリアクセス
+- 物理メモリアクセス
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4488b599f1a4fcf9c7019efd5c2aa5cbe0100617
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1abf5894b6a8e70c98a924f6f85332f14fa5efa9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369428"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838798"
 ---
 # <a name="virtual-and-physical-memory"></a>仮想メモリと物理メモリ
 
@@ -21,39 +21,39 @@ ms.locfileid: "67369428"
 ## <span id="ddk_virtual_and_physical_memory_dbx"></span><span id="DDK_VIRTUAL_AND_PHYSICAL_MEMORY_DBX"></span>
 
 
-エンジンは、多数の読み取りとターゲットの仮想および物理メモリの書き込みメソッドを提供します。
+エンジンには、ターゲットの仮想メモリと物理メモリの読み取りと書き込みを行うためのさまざまなメソッドが用意されています。
 
-### <a name="span-idvirtualmemoryspanspan-idvirtualmemoryspanvirtual-memory"></a><span id="virtual_memory"></span><span id="VIRTUAL_MEMORY"></span>仮想メモリ
+### <a name="span-idvirtual_memoryspanspan-idvirtual_memoryspanvirtual-memory"></a><span id="virtual_memory"></span><span id="VIRTUAL_MEMORY"></span>仮想メモリ
 
-ターゲットの仮想メモリの場所を指定する、ターゲットの仮想アドレス空間が使用されます。 ユーザー モードのデバッグは、これは、現在のプロセスの仮想アドレス空間です。 カーネル モードのデバッグは、これは、暗黙的なプロセスの仮想アドレス空間です。 参照してください[スレッドとプロセス](controlling-threads-and-processes.md)詳細については、現在と暗黙的なプロセスです。
+ターゲットの仮想メモリ内の場所を指定すると、ターゲットの仮想アドレス空間が使用されます。 ユーザーモードデバッグでは、これは現在のプロセスの仮想アドレス空間です。 カーネルモードのデバッグでは、これは暗黙的なプロセスの仮想アドレス空間です。 現在のプロセスと暗黙のプロセスの詳細については、「[スレッドとプロセス](controlling-threads-and-processes.md)」を参照してください。
 
-使用して読み取ることができます (ターゲット) の仮想メモリ[ **ReadVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)を使用して記述および[ **WriteVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-writevirtual)します。
+仮想メモリ (ターゲット) は[**Readvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)を使用して読み取ることができ、 [**writevirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-writevirtual)を使用して書き込まれます。
 
-ターゲットのメモリ内のポインターを読み取り、便利なメソッドを使用して記述できる[**されるため、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readpointersvirtual)と[ **WritePointersVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-writepointersvirtual). これらのメソッドは、エンジンによって使用される 64 ビット ポインターと、ターゲットによって使用されるネイティブ ポインターの間に自動的に変換されます。 これらのメソッドは、たとえば、文字列へのポインターに--の後続の要求の使用はポインターが格納されたメモリを要求するときに便利です。
+ターゲットのメモリ内のポインターは、 [**ReadPointersVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readpointersvirtual)および[**WritePointersVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-writepointersvirtual)という便利なメソッドを使用して読み書きできます。 これらのメソッドは、エンジンによって使用される64ビットポインターとターゲットによって使用されるネイティブポインターとの間で自動的に変換されます。 これらのメソッドは、後続の要求に使用されるポインター (文字列へのポインターなど) を格納するメモリを要求するときに役立ちます。
 
-[ **SearchVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual)と[ **SearchVirtual2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual2)メソッドは、ターゲットの仮想メモリのバイト パターンを検索するために使用できます。
+[**Searchvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual)メソッドと[**SearchVirtual2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual2)メソッドを使用して、ターゲットの仮想メモリでバイトのパターンを検索できます。
 
-[ **FillVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-fillvirtual)メソッドは、ターゲットの仮想メモリ (バイト単位) のパターンを複数回にコピーするために使用できます。
+[**Fillvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-fillvirtual)メソッドを使用すると、バイトのパターンをターゲットの仮想メモリに複数回コピーできます。
 
-ターゲットの仮想メモリも読み取り、メソッドを使用して、デバッガー エンジンの仮想メモリ キャッシュをバイパスする方法で記述された[ **ReadVirtualUncached** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtualuncached)と[ **WriteVirtualUncached**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-writevirtualuncached)します。 これらのキャッシュされていないバージョンは、デバイスのメモリ マップ領域など、本質的に揮発性に悪影響を及ぼしてまたはキャッシュを無効にせずは、仮想メモリの読み取りに役立ちます。 キャッシュされていないアクセスのパフォーマンスと、必要なときにアクセスの状況で使用する必要がありますはだけキャッシュされていないメモリをキャッシュされたアクセスを大幅に下回ることはできます。
+ターゲットの仮想メモリは、 [**Readvirtualuncached**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtualuncached)メソッドと[**writevirtualuncached**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-writevirtualuncached)メソッドを使用してデバッガーエンジンの仮想メモリキャッシュをバイパスするように読み取りおよび書き込みを行うこともできます。 これらのキャッシュされていないバージョンは、メモリマップトデバイスなど、本質的に揮発性の仮想メモリを読み取る場合に便利です。キャッシュを汚染したり、無効にしたりする必要はありません。 キャッシュされていないアクセスのパフォーマンスはキャッシュされたアクセスより大幅に低くなる可能性があるため、キャッシュされていないメモリアクセスは、必要な場合にのみ使用してください。
 
-エンジンは、ターゲットの仮想メモリから文字列を読み取るには、いくつか便利なメソッドを提供します。 ターゲットからマルチバイト文字列を読み取るには使用[ **ReadMultiByteStringVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readmultibytestringvirtual)と[ **ReadMultiByteStringVirtualWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readmultibytestringvirtualwide)します。 ターゲットから Unicode 文字列を読み取るには使用[ **ReadUnicodeStringVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readunicodestringvirtual)と[ **ReadUnicodeStringVirtualWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readunicodestringvirtualwide)します。
+エンジンには、ターゲットの仮想メモリから文字列を読み取るための便利なメソッドがいくつか用意されています。 ターゲットからマルチバイト文字列を読み取るには、 [**ReadMultiByteStringVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readmultibytestringvirtual)と[**ReadMultiByteStringVirtualWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readmultibytestringvirtualwide)を使用します。 ターゲットから Unicode 文字列を読み取るには、 [**ReadUnicodeStringVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readunicodestringvirtual)と[**ReadUnicodeStringVirtualWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readunicodestringvirtualwide)を使用します。
 
-メモリの場所に関する情報を確認する[ **GetOffsetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-getoffsetinformation)します。 すべてのターゲットの仮想アドレス空間には、有効なメモリが含まれています。 有効なメモリ領域内を検索する使用[ **GetValidRegionVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-getvalidregionvirtual)します。 ターゲット、メソッドで有効なメモリを手動で検索するときに[ **GetNextDifferentlyValidOffsetVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-getnextdifferentlyvalidoffsetvirtual)有効性の変更可能性がありますが、次の場所を検索します。
+メモリ位置に関する情報を検索するには、 [**Getoffsetinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-getoffsetinformation)を使用します。 ターゲット内のすべての仮想アドレス空間に有効なメモリが含まれていません。 リージョン内の有効なメモリを見つけるには、 [**Getvalidregionvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-getvalidregionvirtual)を使用します。 ターゲットで有効なメモリを手動で検索する場合、 [**GetNextDifferentlyValidOffsetVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-getnextdifferentlyvalidoffsetvirtual)メソッドは、有効期間が変更される次の場所を検索します。
 
-### <a name="span-idphysicalmemoryspanspan-idphysicalmemoryspanphysical-memory"></a><span id="physical_memory"></span><span id="PHYSICAL_MEMORY"></span>物理メモリ
+### <a name="span-idphysical_memoryspanspan-idphysical_memoryspanphysical-memory"></a><span id="physical_memory"></span><span id="PHYSICAL_MEMORY"></span>物理メモリ
 
-カーネル モードのデバッグで物理メモリに直接アクセスのみできます。
+物理メモリには、カーネルモードのデバッグでのみ直接アクセスできます。
 
-使用して、ターゲット上の物理メモリが読み取れる[ **ReadPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readphysical)と[ **ReadPhysical2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-readphysical2)を使用して記述および[**WritePhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writephysical)と[ **WritePhysical2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-writephysical2)します。
+ターゲットの物理メモリは、 [**Readphysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readphysical)と[**ReadPhysical2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readphysical2)を使用して読み取ることができ、 [**writephysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nf-wdbgexts-writephysical)と[**WritePhysical2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-writephysical2)を使用して書き込まれます。
 
-[ **FillPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-fillphysical)ターゲットの物理メモリ (バイト単位) のパターンを複数回にコピーするメソッドを使用できます。
+[**Fillphysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-fillphysical)メソッドを使用すると、バイトのパターンをターゲットの物理メモリに複数回コピーできます。
 
-ターゲットの仮想アドレス空間内のアドレスを使用して、ターゲットの物理アドレスに変換できる、 [ **VirtualToPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)メソッド。 使用して、システムのページングの構造体を物理アドレスの仮想アドレスに変換するために使用を検出できる[ **GetVirtualTranslationPhysicalOffsets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugdataspaces4-getvirtualtranslationphysicaloffsets)します。
+ターゲットの仮想アドレス空間内のアドレスは、 [**Virtualtophysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)メソッドを使用してターゲットの物理アドレスに変換できます。 物理アドレスへの仮想アドレスの変換に使用されるシステムのページング構造は、 [**GetVirtualTranslationPhysicalOffsets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-getvirtualtranslationphysicaloffsets)を使用して見つけることができます。
 
-### <a name="span-ideventsspanspan-ideventsspanevents"></a><span id="events"></span><span id="EVENTS"></span>イベント
+### <a name="span-ideventsspanspan-ideventsspanevents"></a><span id="events"></span><span id="EVENTS"></span>記録
 
-ターゲットの仮想または物理メモリが変更されたときに、 [ **IDebugEventCallbacks::ChangeDebuggeeState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugeventcallbacks-changedebuggeestate)コールバック メソッドが呼び出されます。
+ターゲットの仮想メモリまたは物理メモリが変更されると、 [**IDebugEventCallbacks:: ChangeDebuggeeState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugeventcallbacks-changedebuggeestate)コールバックメソッドが呼び出されます。
 
  
 

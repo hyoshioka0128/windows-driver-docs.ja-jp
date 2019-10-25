@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_VPDATAINFO
-description: KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期構成の状態を示します。
+title: KSK プロパティ\_VPCONFIG\_VPDATAINFO
+description: KSK プロパティ\_VPCONFIG\_VPDATAINFO プロパティは、ビデオポートの初期構成の状態を示します。
 ms.assetid: 66419d5a-c701-45f4-9ac6-322997e2f000
 keywords:
-- KSPROPERTY_VPCONFIG_VPDATAINFO ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_VPDATAINFO ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3ba62ee2336dfd432c79cf3777e637490f0654
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a99d0ee32321ecfacf6c58547d824226562bed12
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368822"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823604"
 ---
-# <a name="kspropertyvpconfigvpdatainfo"></a>KSPROPERTY\_VPCONFIG\_VPDATAINFO
+# <a name="ksproperty_vpconfig_vpdatainfo"></a>KSK プロパティ\_VPCONFIG\_VPDATAINFO
 
 
-KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期構成の状態を示します。
+KSK プロパティ\_VPCONFIG\_VPDATAINFO プロパティは、ビデオポートの初期構成の状態を示します。
 
 ## <span id="ddk_ksproperty_vpconfig_vpdatainfo_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_VPDATAINFO_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo" data-raw-source="[&lt;strong&gt;KS_AMVPDATAINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo)"><strong>KS_AMVPDATAINFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpdatainfo" data-raw-source="[&lt;strong&gt;KS_AMVPDATAINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpdatainfo)"><strong>KS_AMVPDATAINFO</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KS\_AMVPDATAINFO 構造体のビデオ ポートのプロパティについて説明します。
+プロパティ値 (操作データ) は、ビデオポートのプロパティを記述する KS\_AMVPDATAINFO 構造体です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KS\_AMVPDATAINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo)
+[**KS\_AMVPDATAINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpdatainfo)
 
  
 

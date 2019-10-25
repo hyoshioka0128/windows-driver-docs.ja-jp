@@ -3,17 +3,17 @@ title: インタロック キューのセットアップと使用
 description: インタロック キューのセットアップと使用
 ms.assetid: af44a4c0-5aa7-40aa-b511-df95c9bfe9bb
 keywords:
-- インタロックされた IRP キュー WDK カーネル
-- ダブルリンク Irp WDK カーネル
-- WDK Irp ドライバー専用のスレッド
+- インタロック IRP キュー WDK カーネル
+- 二重リンクされた Irp WDK カーネル
+- ドライバー専用スレッドの WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b289a6c08a15cd1dcda5d8992088ec91e364d8e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7335fdbbd1d37fe9ef9878e1b8677ac46507616f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371250"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838425"
 ---
 # <a name="setting-up-and-using-interlocked-queues"></a>インタロック キューのセットアップと使用
 
@@ -21,41 +21,41 @@ ms.locfileid: "67371250"
 
 
 
-新しいドライバーを使用する必要があります、[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)メソッドのこのセクションで概説した方が優先的フレームワーク。
+新しいドライバーでは、このセクションで説明する方法を優先して、[キャンセルセーフの IRP キュー](cancel-safe-irp-queues.md)フレームワークを使用する必要があります。
 
-デバイス専用のスレッドでのドライバーまたは fsd に対して表示される、ほとんどのシステムなどの実行ワーカー スレッドを使用するドライバーは、最も可能性の高いキューを管理する独自ランタイム内部 Irp のインタロックされたキューにドライバーの種類です。 WDM ドライバーなど、すべての PnP ドライバーもする必要があります内部キューに配置特定の Irp PnP および電源の状態遷移中にします。
+デバイス専用のスレッドを使用するドライバーまたは executive ワーカースレッド (ほとんどのシステム FSDs など) を使用するドライバーは、インタロックされたキュー内の Irp の独自のランタイム内部キューを管理するための最も可能性の高い種類のドライバーです。 また、WDM ドライバーを含むすべての PnP ドライバーは、PnP と電源状態の移行中に特定の Irp を内部にキューに入れなければなりません。
 
-これらのドライバーは、通常、ダブルリンク インタロックされたキューを設定すべての IRP には型のメンバーが含まれています[**一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)が現在保持している Irp を二重にリンクするドライバーを使用できます。 ドライバーは、シングル リンク インタロックされたキューを設定する場合、再試行の Irp を入れることはできません。
+通常、これらのドライバーは、二重にリンクされたインタロックされたキューを設定します。各 IRP には、 [**LIST\_ENTRY**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)型のメンバーが含まれています。このエントリは、ドライバーが現在保持している irp を二重にリンクするために使用できます。 単一のリンクされたインタロックされたキューを設定すると、ドライバーが Irp をキューへして再試行することはできません。
 
 ### <a href="" id="ddk-using-an-interlocked-queue-kg"></a>
 
-ドライバーは、デバイスの初期化時、インタロックされたキューを設定する必要があります。 次の図は、インタロックされたキューを二重にリンクされた、サポート ルーチン ドライバーは、このようなキュー、および一連のセットアップを呼び出す必要があります**ExInterlocked * Xxx*** ルーチンに Irp の挿入およびから Irp を削除するドライバーを呼び出すことができます、キューです。
+ドライバーは、デバイスの初期化時に、インタロックされたキューを設定する必要があります。 次の図は、二重にリンクされたインタロックされたキュー、ドライバーがこのようなキューを設定するために呼び出す必要があるサポートルーチン、およびドライバーが Irp を挿入してキューから Irp を削除するために呼び出すことができる一連の**Exinterlocked ロック * Xxx*** ルーチンを示しています。
 
-![インタロックされたキューを使用して説明する図](images/3intlokq.png)
+![インタロックキューの使用を示す図](images/3intlokq.png)
 
-この図に示すようにドライバーをする必要がありますストレージを提供、キュー自体と、次のダブルリンク インタロックされたキューを設定するには。
+この図に示すように、ドライバーは、二重にリンクされたインタロックキューを設定するために、キュー自体と次のストレージを提供する必要があります。
 
--   ドライバーを呼び出す必要があります executive スピン ロックを[ **KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)を初期化します。 ドライバーがスピン ロックを初期化するのには、そのデバイス オブジェクトのデバイスの拡張機能を設定するときに通常は、その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。
+-   Executive スピンロック。ドライバーは初期化のために[**keinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializespinlock)を呼び出す必要があります。 通常、ドライバーは、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンでデバイスオブジェクトのデバイス拡張機能を設定するときに、スピンロックを初期化します。
 
--   呼び出すことによって、ドライバーを初期化する必要がありますキューのリストの先頭[ **InitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializelisthead)します。
+-   キューのリストの先頭。ドライバーは[**InitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializelisthead)を呼び出すことによって初期化する必要があります。
 
-ダブルリンク インタロックされたキューを使用するほとんどのドライバーでは、デバイスのドライバーが作成したオブジェクトのデバイスの拡張機能に必要なストレージを提供します。 キューおよび executive スピン ロックに代わりに、コント ローラーの拡張機能にできます (ドライバーで使用する場合、[コント ローラー オブジェクト](using-controller-objects.md)) またはドライバーによって割り当てられた非ページ プール。
+ダブルリンクインタロックされたインタロックキューを使用するほとんどのドライバーは、ドライバーによって作成されたデバイスオブジェクトのデバイス拡張機能に必要な記憶域を提供します。 代わりに、コントローラー拡張機能 (ドライバーが[コントローラーオブジェクト](using-controller-objects.md)を使用している場合)、またはドライバーによって割り当てられた非ページプールで、キューおよび executive スピンロックを使用できます。
 
-ドライバーでは、I/O 要求を受け付けて、中にそのキューの IRP が挿入場合、次のサポート ルーチンのいずれかを呼び出すことによって、 *ListHead*の種類は**一覧\_エントリ**ように、前の図。
+ドライバーは i/o 要求を受け入れていますが、次のいずれかのサポートルーチンを呼び出すことによって、IRP をキューに挿入することができます。これには、前の図に示すように、 *ListHead*の型が**LIST\_ENTRY**である必要があります。
 
-[**ExInterlockedInsertTailList** ](https://msdn.microsoft.com/library/windows/hardware/ff545402) IRP をキューの末尾に配置するには
+[**ExInterlockedInsertTailList**](https://msdn.microsoft.com/library/windows/hardware/ff545402)は、IRP をキューの末尾に配置します。
 
-[**ExInterlockedInsertHeadList** ](https://msdn.microsoft.com/library/windows/hardware/ff545397) IRP をキューの先頭に配置します。 特定の要求を再試行する必要がある場合にのみ、ドライバーは、通常、このルーチンを呼び出します。
+[**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)は、IRP をキューの先頭に配置します。 通常、ドライバーは、特定の要求を再試行する必要がある場合にのみ、このルーチンを呼び出します。
 
-ドライバーは IRP にポインターを渡す必要があります (*ListEntry*)、および、 *ListHead*と executive スピン ロック (*ロック*) には既に初期化されて、これらの各ポインター**ExInterlockedInsert*Xxx*一覧**ルーチン。 ポインターのみ、 *ListHead*と*ロック*ドライバーを呼び出して、IRP をデキューするときに必要な[ **ExInterlockedRemoveHeadList** ](https://msdn.microsoft.com/library/windows/hardware/ff545427). デッドロックを防ぐためには、ドライバーする必要がありますいないを保持しているいずれかに渡される、ExecutiveSpinLock **ExInterlocked * Xxx*** ルーチン。
+ドライバーは、これらの各**ExInterlockedInsert*Xxx*リスト**ルーチンに対して、以前に初期化された*ListHead*および executive スピンロック (*ロック*) ポインターに加えて、IRP (*ListEntry*) へのポインターを渡す必要があります。 [**ExInterlockedRemoveHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545427)を呼び出すことによってドライバーが IRP をデキュー場合は、 *ListHead*と*Lock*へのポインターのみが必要です。 デッドロックを防ぐために、ドライバーは、任意の**Exinterlocked ロック * Xxx*** ルーチンに渡す、execuに適合する inlock を保持しないようにする必要があります。
 
-ドライバーが Irp を二重にリンクされた、キューに挿入し、マルチプロセッサ セーフ方式で実行中に以下よりまたは IRQL と等しく、ドライバー ルーチンから削除、インタロックされたキューが executive スピン ロックで保護されているために = ディスパッチ\_レベル。
+インタロックされたキューは executive スピンロックによって保護されているため、ドライバーは Irp をダブルリンクされたキューに挿入し、IRQL = ディスパッチ\_レベル以下で実行されている任意のドライバールーチンから、マルチプロセッサセーフな方法で Irp を削除できます。
 
-型の listhead の位置を持つキュー**一覧\_エントリ**前の図に示すようはダブルリンク リストです。 1 つの種類の ListHead [ **SLIST\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)シーケンスをシングル リンク リストです。 ドライバーの順序付けされたシングル リンクされたインタロックされたキューを呼び出して、ListHead を初期化します[ **ExInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializeslisthead)します。
+前の図に示したように、 **list\_ENTRY**型の ListHead を持つキューは、ダブルリンクリストです。 ListHead という[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)型のを持つ1つは、シーケンス処理された単一のリンクリストです。 ドライバーは、 [**ExInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializeslisthead)を呼び出すことによって、シーケンスされた単一の連結されたインタロックキューの ListHead を初期化します。
 
-I/O 操作を再試行しないドライバーを使用できます[ **ExInterlockedPushEntrySList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpushentryslist)と[ **ExInterlockedPopEntrySList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpopentryslist)にそのキュー Irp の内部シーケンスをシングル リンク インタロックされたキューでを管理します。 インタロックされたキューのこの型を使用する任意のドライバーには型の ListHead の常駐記憶域を提供する必要がありますもできます。 **SLIST\_ヘッダー** 、のように、ExecutiveSpinLock、[前図](#ddk-using-an-interlocked-queue-kg)します。 スピン ロックを初期化し、呼び出す前にそのキューを設定する必要があります、 **ExInterlockedPushEntrySList**そのキューに初期のエントリを挿入します。
+I/o 操作を再試行しないドライバーでは、 [**ExInterlockedPushEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpushentryslist)と[**ExInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpopentryslist)を使用して、シーケンス処理された単一リンクのインタロックされたキューで内部的に irp のキューを管理できます。 この種類のインタロックされたキューを使用するすべてのドライバーは、[前の図](#ddk-using-an-interlocked-queue-kg)に示すように、ListHead ヘッダー型および Execu対応の inlock **\_** 型ののための常駐ストレージも提供する必要があります。 **ExInterlockedPushEntrySList**を呼び出して最初のエントリをキューに挿入する前に、スピンロックを初期化し、そのキューを設定する必要があります。
 
-詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)します。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
+詳細については、「[ハードウェアの優先順位](managing-hardware-priorities.md)と[スピンロック](spin-locks.md)の管理」を参照してください。 特定のサポートルーチンの IRQL 要件については、ルーチンのリファレンスページを参照してください。
 
  
 

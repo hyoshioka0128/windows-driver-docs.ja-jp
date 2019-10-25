@@ -3,22 +3,22 @@ title: DirectMusic DDI の概要
 description: DirectMusic DDI の概要
 ms.assetid: 95870103-197c-4b7c-b6ee-cac176b62dfc
 keywords:
-- DirectMusic WDK オーディオ、DirectMusic DDI について
-- ユーザー モード シンセサイザー WDK オーディオ
-- カーネル モード シンセサイザー WDK オーディオ
-- ユーザー モード インターフェイス WDK オーディオ
-- Dmu ポート ドライバー WDK オーディオ
-- カーネル モード インターフェイス WDK オーディオ
-- カスタムのシンセサイザー WDK オーディオ
-- Dmu ミニポート ドライバー WDK オーディオ
+- Directmusic WDK audio, DirectMusic DDI について
+- ユーザーモード synths WDK オーディオ
+- カーネルモード synths WDK audio
+- ユーザーモードインターフェイス WDK オーディオ
+- DMus ポートドライバー WDK オーディオ
+- カーネルモードインターフェイス WDK オーディオ
+- custom synths WDK audio
+- DMus ミニポートドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2194a22d2540aeac8d0c89890d879bb2a63ff2e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9f0e69c0db64e1281c607992de9464eec1808ab3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359051"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833545"
 ---
 # <a name="directmusic-ddi-overview"></a>DirectMusic DDI の概要
 
@@ -26,41 +26,41 @@ ms.locfileid: "67359051"
 ## <span id="directmusic_ddi_overview"></span><span id="DIRECTMUSIC_DDI_OVERVIEW"></span>
 
 
-カーネル モードのシンセサイザーもに、通常ユーザー モードのシンセサイザー機能を実装するために必要なデザインの原則が適用されます。 このため、このガイドは、ユーザー モードの実装とカーネル モードの特定のトピックへの進行状況の説明で始まります。
+ユーザーモードの synths を実装するために必要な設計原則は、通常、カーネルモードの synths にも適用されます。 このため、このガイドでは、ユーザーモードの実装について説明し、特定のカーネルモードのトピックに進みます。
 
-最初に、DirectMusic のソフトウェアの実装を記述する最適な設計戦略では通常、*デバイス ドライバー インターフェイス (DDI)* ユーザー モードで実行します。 最終的な製品がカーネル モードの実装のハードウェア コンポーネントを使用する場合でも、このアプローチの使用をお勧めします。 ユーザー モードのバージョンが完了すると、ソフトウェアは、カーネル モード ドライバーとハードウェア、一度に 1 つの機能によって確立された接続に変換できます。 詳細については、次を参照してください。[ユーザー モードとカーネル モード](user-mode-versus-kernel-mode.md)します。
+通常、最良の設計方法は、ユーザーモードで実行される DirectMusic*デバイスドライバーインターフェイス (DDI)* のソフトウェア実装を作成することです。 このアプローチは、最終的な製品がハードウェアコンポーネントを使用するカーネルモードの実装である場合でも有益です。 ユーザーモードのバージョンが完了すると、ソフトウェアをカーネルモードに変換し、ハードウェアで確立された接続を一度に1つの機能に変換することができます。 詳細については、「[ユーザーモードとカーネルモード](user-mode-versus-kernel-mode.md)」を参照してください。
 
-DirectMusic は、次のユーザー モード インターフェイスをユーザー モードのシンセサイザーのコントロールを使用して、カーネル ストリーミング ドライバーの通信。
+DirectMusic は、次のユーザーモードのインターフェイスを使用して、ユーザーモードのシンセサイザーを制御し、カーネルストリーミングドライバーと通信します。
 
 [IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)
 
-これは、カスタム ソフトウェア シンセサイザー機能を実装するため、ユーザー モード インターフェイスです。
+これは、カスタムソフトウェア synths を実装するためのユーザーモードインターフェイスです。
 
 [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)
 
-これは、Microsoft DirectX 6.1 と DirectX 7 でカスタム wave シンクを実装するため、ユーザー モード インターフェイスです。 DirectX 8 以降では、DirectMusic は常に、ユーザー モード シンセサイザーでそのプライベート wave シンクを使用し、ユーザー モード wave シンクのパブリック インターフェイスはサポートされていません。
+これは、Microsoft DirectX 6.1 および DirectX 7 でカスタム wave シンクを実装するためのユーザーモードインターフェイスです。 DirectX 8 以降では、DirectMusic は常にユーザーモードのシンセサイザーでプライベート wave シンクを使用します。ユーザーモードの wave シンクでは、パブリックインターフェイスはサポートされていません。
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)
+[Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)
 
-DirectMusic では、このインターフェイスを使用して、DirectX 6.1 以降のユーザー モードからカーネル ストリーミング ドライバーのプロパティにアクセスします。
+DirectMusic は、このインターフェイスを使用して、DirectX 6.1 以降のユーザーモードからカーネルストリームドライバーのプロパティにアクセスします。
 
-カーネル モードの用語とは若干異なりますユーザー モード ポート ミニポート ドライバー モデルであるため (を参照してください[ポート クラスの概要](introduction-to-port-class.md))、カーネル ストリーミングの一般的なタスクを委任する、 [Dmu ポート ドライバー](dmus-port-driver.md)ハードウェア固有の関数を Dmu のミニポート ドライバーに割り当てます。 ポートおよびミニポート ドライバーではのシンセサイザーの責任を共有します。 カーネル モードのウェーブ シンクは、カーネル常駐ポート ドライバーの一部です。 カーネル モードのウェーブ シンクとは異なり、ユーザー モード wave のシンク DirectX 6.1 と DirectX 7 には、置き換え可能なされません。 カスタム カーネル モード ドライバーをビルドするために必要な作業のほとんどは、ミニポート ドライバーの執筆中です。 ほとんどの場合、ミニポート ドライバーはドライバー ライターがのハードウェアをサポートするために、または DirectMusic のカスタム ソフトウェア シンセサイザーを実装するために実装する必要がある唯一のコンポーネント。
+カーネルモードの用語は、ポートミニポートドライバーモデル (「 [Port クラスの概要](introduction-to-port-class.md)」を参照) によってユーザーモードと若干異なります。これは、一般的なカーネルストリーミングタスクを[dmus ポートドライバー](dmus-port-driver.md)に委任し、ハードウェア固有の割り当てを行います。DMus ミニポートドライバーに対して機能します。 ポートとミニポートドライバーは、シンセの役割を共有します。 カーネルモード wave シンクは、カーネル常駐ポートドライバーの一部です。 DirectX 6.1 および DirectX 7 のユーザーモードの wave シンクとは異なり、カーネルモードの wave シンクは置き換えられません。 カスタムカーネルモードドライバーを構築するために必要な作業の大部分は、ミニポートドライバーの書き込みです。 ほとんどの場合、ミニポートドライバーは、ドライバーライターがハードウェアをサポートするために実装する必要がある唯一のコンポーネントであるか、または DirectMusic 用のカスタムソフトウェアシンセサイザーを実装するために実装する必要があります。
 
-カスタムの Dmu ミニポート ドライバーでは、次のカーネル モード インターフェイスを使用します。
+カスタム DMus ミニポートドライバーは、次のカーネルモードインターフェイスを使用します。
 
-[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)
+[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)
 
-[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-isynthsinkdmus)
 
-[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)
 
-[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imasterclock)
 
-[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)
 
-Dmu ミニポート ドライバーを実装して、 **IMiniportDMus**、 **ISynthSinkDMus**、および**IMXF**インターフェイス。 Dmu ポート ドライバーの実装、 **IAllocatorMXF**、 **IMasterClock**、および**IPortDMus**インターフェイスおよびミニポート ドライバーを許すことにします。
+DMus ミニポートドライバーは、 **IMiniportDMus**、 **ISynthSinkDMus**、 **imxf**の各インターフェイスを実装します。 DMus ポートドライバーは、 **IAllocatorMXF**、 **Imasterclock**、および**iportdmus**の各インターフェイスを実装し、それらをミニポートドライバーに公開します。
 
  
 

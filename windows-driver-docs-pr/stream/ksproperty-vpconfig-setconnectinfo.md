@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_VPCONFIG\_SETCONNECTINFO
-description: KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を持つビデオ ポートの構成を設定します。 DDVIDEOPORTCONNECT 構造体の配列へのポインターである、KSPROPERTY によって返される\_VPCONFIG\_GETCONNECTINFO プロパティ。
+description: KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を使用してビデオポート構成を設定します。 これは、KSK プロパティ\_VPCONFIG\_GETCONNECTINFO プロパティによって返される、DDVIDEOPORTCONNECT 構造体の配列へのポインターです。
 ms.assetid: 120f6889-cd67-4c05-b4b8-adab3efd7f2c
 keywords:
-- KSPROPERTY_VPCONFIG_SETCONNECTINFO ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_SETCONNECTINFO ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d178326d19c55be663fde05c0333e143519fa7e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5e98ec6b7ff3815b740910ef17b66ab6d444683
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358419"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823663"
 ---
-# <a name="kspropertyvpconfigsetconnectinfo"></a>KSPROPERTY\_VPCONFIG\_SETCONNECTINFO
+# <a name="ksproperty_vpconfig_setconnectinfo"></a>KSPROPERTY\_VPCONFIG\_SETCONNECTINFO
 
 
-KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を持つビデオ ポートの構成を設定します。 配列へのポインターが[ **DDVIDEOPORTCONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)構造体を KSPROPERTY によって返されると\_VPCONFIG\_GETCONNECTINFO プロパティ。
+KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を使用してビデオポート構成を設定します。 これは、KSK プロパティ\_VPCONFIG\_GETCONNECTINFO プロパティによって返される、 [**Ddvideoportconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)構造体の配列へのポインターです。
 
 ## <span id="ddk_ksproperty_vpconfig_setconnectinfo_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_SETCONNECTINFO_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、ビデオ ポート接続の構成を記述する DDVIDEOPORTCONNECT 構造です。
+プロパティ値 (操作データ) は、ビデオポート接続の構成を記述する DDVIDEOPORTCONNECT 構造体です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 ## <a name="see-also"></a>関連項目
 
 
-[**DDVIDEOPORTCONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)
+[**DDVIDEOPORTCONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)
 
-[**KSPROPERTY\_VPCONFIG\_GETCONNECTINFO**](ksproperty-vpconfig-getconnectinfo.md)
+[**KSK プロパティ\_VPCONFIG\_GETCONNECTINFO**](ksproperty-vpconfig-getconnectinfo.md)
 
  
 

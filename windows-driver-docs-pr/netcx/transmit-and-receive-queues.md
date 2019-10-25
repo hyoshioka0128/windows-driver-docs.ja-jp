@@ -3,16 +3,16 @@ title: 要求の送信と受信
 description: 要求の送信と受信
 ms.assetid: 4BF61CDF-4B62-47EB-936A-7DE81D62678A
 keywords:
-- NetAdapterCx 送信し受信キュー、NetCx 送信および受信キュー
+- NetAdapterCx 送受信キュー、NetCx 送受信キュー
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 14bc9211d3ccfc8f0cf39a601a1183a906a351ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebc4e0bb998a10b326b83e504b45ac11a6305bbe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835413"
 ---
 # <a name="transmit-and-receive-queues"></a>要求の送信と受信
 
@@ -20,36 +20,36 @@ ms.locfileid: "67382816"
 
 ## <a name="overview"></a>概要
 
-*パケット キュー*、または*データパス キュー* NetAdapterCx ハードウェアなどのハードウェア機能をモデル化するクライアント ドライバーを有効にするので導入されたオブジェクトの送信し、ソフトウェア ドライバーで、キューをより明示的に受信には. このトピックでは、送信操作および NetAdapterCx でキューを受信する方法について説明します。 
+*パケットキュー*(*データパス queue* ) は、NetAdapterCx で導入されたオブジェクトです。これにより、クライアントドライバーは、ハードウェアの送信キューや受信キューなどのハードウェア機能をソフトウェアドライバーでより明確にモデル化できるようになります。 このトピックでは、NetAdapterCx で転送キューと受信キューを使用する方法について説明します。 
 
-クライアント ドライバーを呼び出すと[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)、通常はからその[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベントのコールバック関数では、2 つのキューの作成のコールバックを提供します。[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)と[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)します。 クライアントは、転送を作成し、これらのコールバックで受信したキューは、それぞれします。
+クライアントドライバーは、通常、 [*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベントコールバック関数から[**NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)を呼び出すと、2つのキュー作成コールバックを提供します。 [*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)と[*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)。 クライアントは、これらのコールバックにそれぞれ送信キューと受信キューを作成します。
 
-フレームワークは、低電力状態に遷移する前にキューを空にし、アダプターを削除する前にそれらを削除します。
+このフレームワークは、低電力状態に移行する前にキューを空にして、アダプターを削除する前にキューを削除します。
 
-## <a name="creating-packet-queues"></a>パケット キューの作成
+## <a name="creating-packet-queues"></a>パケットキューの作成
 
-送信キュー、または受信キューでは、パケットのキューを作成するときに、クライアントは、次の 3 つのコールバック関数へのポインターを提供する必要があります。
+パケットキュー (送信キューまたは受信キュー) を作成する場合、クライアントは次の3つのコールバック関数へのポインターを提供する必要があります。
 
-- [*EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)
-- [*EVT_PACKET_QUEUE_SET_NOTIFICATION_ENABLED*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)
-- [*EVT_PACKET_QUEUE_CANCEL*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)
+- [*EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)
+- [*EVT_PACKET_QUEUE_SET_NOTIFICATION_ENABLED*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)
+- [*EVT_PACKET_QUEUE_CANCEL*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)
 
-さらに、クライアントは、キューの構成構造を初期化した後にこれらのオプションのコールバック関数を指定できます。
+また、クライアントは、キュー構成構造を初期化した後で、次のオプションのコールバック関数を提供できます。
 
-- [*EVT_PACKET_QUEUE_START*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_start)
-- [*EVT_PACKET_QUEUE_STOP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_stop)
+- [*EVT_PACKET_QUEUE_START*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_start)
+- [*EVT_PACKET_QUEUE_STOP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_stop)
 
-### <a name="creating-a-transmit-queue"></a>送信キューを作成します。
+### <a name="creating-a-transmit-queue"></a>送信キューの作成
 
-NetAdapterCx 呼び出し[ *EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)の非常に最後に、[電源投入シーケンス](power-up-sequence-for-a-netadaptercx-client-driver.md)します。 このコールバック中にクライアント ドライバー通常以下に示します。
+NetAdapterCx は、[パワーアップシーケンス](power-up-sequence-for-a-netadaptercx-client-driver.md)の最後に[*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)を呼び出します。 このコールバック中に、クライアントドライバーは通常、次の操作を実行します。
 
-- 必要に応じて登録を開始し、キューのコールバックを停止します。
-- 呼び出す[ **NetTxQueueInitGetQueueId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueueinitgetqueueid)を設定する送信キューの識別子を取得します。
-- 呼び出す[ **NetTxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuecreate)キューを割り当てることです。 
-    - 場合[ **NetTxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuecreate)が失敗した、 *EvtNetAdapterCreateTxQueue*コールバック関数がエラー コードを返す必要があります。
-- パケットの拡張機能のオフセットを照会します。
+- 必要に応じて、キューの開始と停止のコールバックを登録します。
+- [**Nettxqueueinitgetqueueid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueueinitgetqueueid)を呼び出して、設定する送信キューの識別子を取得します。
+- [**NetTxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuecreate)を呼び出してキューを割り当てます。 
+    - [**NetTxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuecreate)が失敗した場合、 *EvtNetAdapterCreateTxQueue* callback 関数はエラーコードを返す必要があります。
+- パケットの拡張オフセットを照会します。
 
-次の例では、コード内の次の手順が検索する方法を示します。 エラー処理コードは、わかりやすくするためには、この例から除外されています。
+次の例では、これらの手順がコードでどのように表示されるかを示します。 わかりやすくするために、エラー処理コードはこの例から除外されています。
 
 ```C++
 NTSTATUS
@@ -110,11 +110,11 @@ EvtAdapterCreateTxQueue(
 }
 ```
 
-### <a name="creating-a-receive-queue"></a>受信キューを作成します。
+### <a name="creating-a-receive-queue"></a>受信キューの作成
 
-受信キューを作成する[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)、送信キューの呼び出しと同じパターンを使用して[ **NetRxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuecreate). 
+[*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)から受信キューを作成するには、送信キューと同じパターンを使用し、 [**NetRxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuecreate)を呼び出します。 
 
-次の例では、コードで受信キューを作成する表示方法を示します。 エラー処理コードは、わかりやすくするためには、この例から除外されています。
+次の例では、受信キューを作成する方法を示します。 わかりやすくするために、エラー処理コードはこの例から除外されています。
 
 ```c++
 NTSTATUS
@@ -167,39 +167,39 @@ EvtAdapterCreateRxQueue(
 }
 ```
 
-## <a name="polling-model"></a>ポーリング モデル
+## <a name="polling-model"></a>ポーリングモデル
 
-NetAdapter データ パスは、ポーリング モデル、および 1 つのパケットのキューでポーリング操作は他のキューの完全に独立しています。 ポーリング モデルは、次の図に示すように、クライアント ドライバーのキューに事前のコールバックを呼び出すことによって実装されます。
+NetAdapter データパスはポーリングモデルであり、1つのパケットキューでのポーリング操作は、他のキューから完全に独立しています。 ポーリングモデルは、次の図に示すように、クライアントドライバーのキューのアドバンスコールバックを呼び出すことによって実装されます。
 
-![ポーリングのフロー](images/polling.png)
+![ポーリングフロー](images/polling.png)
 
-## <a name="advancing-packet-queues"></a>先行するパケット キュー
+## <a name="advancing-packet-queues"></a>パケットキューを進める
 
-パケット キューでポーリング操作のシーケンスは次のとおりです。
+パケットキューでのポーリング操作の順序は次のとおりです。
 
-1. OS は、送信または受信のいずれかのクライアント ドライバーにバッファーを示します。
-2. クライアント ドライバーでは、ハードウェアにパケットをプログラムします。
-3. クライアント ドライバーでは、OS に完了したパケットを返します。
+1. OS は、送信または受信のためにクライアントドライバーにバッファーを提供します。
+2. クライアントドライバーは、パケットをハードウェアに対してプログラムします。
+3. クライアントドライバーは、完了したパケットを OS に返します。
 
-クライアント ドライバーの内で発生するポーリング操作[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック関数。 クライアント ドライバーでは、各パケット キューのバックアップと呼ばれる、基になるデータ構造で*net リング*が含まれている、またはシステム メモリ内で実際のネットワーク データ バッファーへのリンクします。 中に*EvtPacketQueueAdvance*、クライアント ドライバーは、送信を実行し、正味のリングでの操作を使用して、受信*リングを行う反復子を net*ハードウェアと OS 間データが格納されるバッファーの所有権を転送します。送信または受信します。
+ポーリング操作は、クライアントドライバーの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック関数内で発生します。 クライアントドライバーの各パケットキューは、ネットワーク*リング*と呼ばれる基になるデータ構造によって支えられています。これには、システムメモリ内の実際のネットワークデータバッファーを格納したり、そのデータをリンクしたりします。 *Evtpacketqueueadvance*の実行中に、クライアントドライバーは、*ネットワークリング反復子*を使用して、ハードウェアと OS 間のバッファーの所有権を転送することによって、ネットワークリングに対して送信と受信の操作を実行します。
 
-Net のリングと net リングを行う反復子の詳細については、次を参照してください。[リングと net リングを行う反復子を Net](net-rings-and-net-ring-iterators.md)します。
+Net リングと net ring 反復子の詳細については、「 [net リングと net ring 反復子](net-rings-and-net-ring-iterators.md)」を参照してください。
 
-実装の例の*EvtPacketQueueAdvance*送信キューでは、次を参照してください。 [net リングでネットワーク データを送信する](sending-network-data-with-net-rings.md)します。 実装の例の*EvtPacketQueueAdvance*受信キューでは、次を参照してください。 [net リングでネットワーク データを受信して](receiving-network-data-with-net-rings.md)します。
+送信キューに*Evtpacketqueueadvance*を実装する例については、「 [net リングを使用したネットワークデータの送信](sending-network-data-with-net-rings.md)」を参照してください。 受信キューに対して*Evtpacketqueueadvance*を実装する例については、「 [net リングを使用したネットワークデータの受信](receiving-network-data-with-net-rings.md)」を参照してください。
 
-## <a name="enabling-and-disabling-packet-queue-notification"></a>有効にして、パケットのキュー通知を無効化
+## <a name="enabling-and-disabling-packet-queue-notification"></a>パケットキュー通知の有効化と無効化
 
-クライアント ドライバーでは、新しいパケットを受信パケット キューの net リングで、NetAdapterCx 呼び出しますクライアント ドライバーの[ *EvtPacketQueueSetNotificationEnabled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)コールバック関数。 このコールバックでクライアント ドライバーをポーリングすることを示します (の*EvtPacketQueueAdvance*または*EvtPacketQueueCancel*) は停止し、クライアント ドライバーは続行されません[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)または[ **NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)します。 通常、PCI デバイスでは、コールバックを使用して送信を有効にするか、Rx の中断します。 割り込みをもう一度無効にし、クライアント ドライバーは呼び出し、割り込みを受信すると、 **NetTxQueueNotifyMoreCompletedPacketsAvailable**または**NetRxQueueNotifyMoreReceivedPacketsAvailable**再度ポーリングを開始するためにフレームワークをトリガーします。
+クライアントドライバーがパケットキューのネットワークリングで新しいパケットを受信すると、NetAdapterCx はクライアントドライバーの[*Evtpacketqueuesetnotificationenabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)コールバック関数を呼び出します。 このコールバックは、クライアントドライバーがポーリング (of *Evtpacketqueueadvance*または*EvtPacketQueueCancel*) を停止し、クライアントドライバーが[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)または[**を呼び出すまで続行されないことを示します。NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)。 通常、PCI デバイスはこのコールバックを使用して、Tx または Rx の割り込みを有効にします。 割り込みが受信されると、割り込みを再び無効にし、クライアントドライバーが**NetTxQueueNotifyMoreCompletedPacketsAvailable**または**NetRxQueueNotifyMoreReceivedPacketsAvailable**を呼び出して、ポーリングを開始するようにフレームワークをトリガーすることができます。戻す.
 
-### <a name="enabling-and-disabling-notification-for-a-transmit-queue"></a>有効にして、送信キューの通知を無効化
+### <a name="enabling-and-disabling-notification-for-a-transmit-queue"></a>送信キューの通知を有効または無効にする
 
-PCI の NIC の送信キューの通知を有効にする、通常は、送信キューのハードウェア割り込みを有効にするを意味します。 ハードウェアの割り込みが発生したとき、クライアントが呼び出す[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)その DPC から。
+PCI NIC の場合、送信キュー通知を有効にすることは、通常、送信キューのハードウェア割り込みを有効にすることを意味します。 ハードウェアの割り込みが発生すると、クライアントは DPC から[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)を呼び出します。
 
-同様に、PCI NIC では、キューの通知を無効にするとは、割り込みを無効にすると、キューに関連付けられています。
+同様に、PCI NIC の場合、キュー通知を無効にすると、キューに関連付けられている割り込みが無効になります。
 
-通常、クライアントは非同期の I/O モデルのあるデバイスの場合、有効な状態を追跡するために内部フラグを使用します。 このフラグと呼び出し、非同期操作が完了したら、完了ハンドラーを確認します[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)設定されている場合。
+非同期 i/o モデルを持つデバイスの場合、クライアントは通常、内部フラグを使用して有効な状態を追跡します。 非同期操作が完了すると、完了ハンドラーがこのフラグをチェックし、設定されている場合は[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)を呼び出します。
 
-NetAdapterCx を呼び出す場合*EvtPacketQueueSetNotificationEnabled*で*NotificationEnabled*設定**FALSE**、クライアントが呼び出す必要がありますいない[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable) NetAdapterCx が次では、このコールバック関数を呼び出すまで*NotificationEnabled*設定**TRUE**.
+NetAdapterCx が*Notificationenabled*が**FALSE**に設定された*Evtpacketqueuesetnotificationenabled*を呼び出す場合、NetAdapterCx next が this を呼び出すまでは、クライアントは[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)を呼び出すことはできません。*Notificationenabled*が**TRUE**に設定されたコールバック関数。
 
 次に、例を示します。
 
@@ -229,9 +229,9 @@ MyEvtTxInterruptDpc(
 }
 ```
 
-### <a name="enabling-and-disabling-notification-for-a-receive-queue"></a>有効にして、受信キューの通知を無効化
+### <a name="enabling-and-disabling-notification-for-a-receive-queue"></a>受信キューの通知を有効または無効にする
 
-PCI の NIC のキューの通知は送信キューによく似ていますが受信を有効にします。 これは、受信キューのハードウェア割り込みを有効にすると通常意味します。 ハードウェアの割り込みが発生したとき、クライアントが呼び出す[ **NetRxQueueNotifyMoreReceivedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)その DPC から。
+PCI NIC の場合、受信キュー通知の有効化は Tx キューと非常によく似ています。 これは通常、受信キューのハードウェア割り込みを有効にすることを意味します。 ハードウェアの割り込みが発生すると、クライアントは DPC から[**NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)を呼び出します。
 
 次に、例を示します。
 
@@ -261,7 +261,7 @@ MyEvtRxInterruptDpc(
 }
 ```
 
-USB デバイス、または、ソフトウェアとその他のキューの受信完了メカニズムは、キューの通知が有効になっているかどうか、クライアント ドライバーが独自のコンテキストで追跡する必要があります。 (、メッセージが、USB の継続的なリーダーで使用できるようになるときに、たとえばトリガーされます)、完了ルーチンから呼び出して[ **NetRxQueueNotifyMoreReceivedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)通知された場合有効になります。 次の例では、これ行う方法を示します。
+USB デバイス、またはソフトウェアの受信完了メカニズムを持つその他のキューの場合、クライアントドライバーは、キューの通知が有効になっているかどうかを独自のコンテキストで追跡する必要があります。 完了ルーチンから (たとえば、USB 連続リーダーでメッセージが使用可能になったときにトリガーされる)、通知が有効になっている場合は[**NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)を呼び出します。 次の例は、その方法を示しています。
 
 ```C++
 VOID
@@ -294,10 +294,10 @@ UsbEvtReaderCompletionRoutine(
 }
 ```
 
-## <a name="canceling-packet-queues"></a>パケット キューのキャンセル
+## <a name="canceling-packet-queues"></a>パケットキューの取り消し
 
-呼び出して、クライアント ドライバーの開始、OS では、データ パスが停止したら、 [ *EvtPacketQueueCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)コールバック関数。 このコールバックは、クライアント ドライバーが、フレームワークは、パケットのキューを削除する前に必要な処理を実行します。 送信キューのキャンセルは省略可能で、ハードウェアで実行中の送信のキャンセルをサポートするかどうかによって異なりますが、受信キューのキャンセルが必要です。 
+OS は、データパスを停止すると、クライアントドライバーの[*EvtPacketQueueCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)コールバック関数を呼び出すことによって開始されます。 このコールバックは、フレームワークがパケットキューを削除する前に、クライアントドライバーが必要な処理を実行します。 送信キューのキャンセルはオプションであり、ハードウェアがフライト中の送信のキャンセルをサポートしているかどうかによって異なりますが、受信キューのキャンセルが必要になります。 
 
-中に*EvtPacketQueueCancel*ドライバーでは、net リングを行う反復子を使用して、必要に応じて、OS にパケットを返します。 送信のコード例では、キューおよびキューのキャンセルの受信を参照してください。 [net リングとネットワーク データをキャンセル](canceling-network-data-with-net-rings.md)します。
+*EvtPacketQueueCancel*中、ドライバーは、必要に応じて、net ring 反復子を使用して、OS にパケットを返します。 転送キューと受信キューのキャンセルのコード例については、「 [net リングを使用したネットワークデータの取り消し](canceling-network-data-with-net-rings.md)」を参照してください。
 
-ドライバーの呼び出し後*EvtPacketQueueCancel*コールバック、フレームワークが、ドライバーのポーリングを継続[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)までのすべてのパケットのコールバックとOS には、バッファーが返されました。
+ドライバーの*EvtPacketQueueCancel*コールバックを呼び出した後、すべてのパケットとバッファーが OS に返されるまで、フレームワークはドライバーの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバックをポーリングし続けます。

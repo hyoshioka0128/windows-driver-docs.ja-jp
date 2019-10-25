@@ -3,90 +3,90 @@ title: オーディオの位置プロパティ
 description: オーディオの位置プロパティ
 ms.assetid: 893fea84-9136-4107-96d2-8a4e2ab7bd2a
 keywords:
-- 位置の WDK オーディオを再生します。
-- WDK のオーディオのレコードの位置
-- WDK、ストリーム内の位置のオーディオのプロパティ
-- WDM オーディオ プロパティ WDK、ストリーム内の位置
-- WDK オーディオの位置を読み取る
-- WDK オーディオの位置を書き込む
-- ループのクライアント側のバッファーの WDK オーディオ
-- nonlooped クライアント バッファー WDK オーディオ
-- クライアント バッファー WDK オーディオ
-- ストリームの位置の WDK オーディオ
-- 位置プロパティ WDK オーディオ
-- ストリームの位置の WDK オーディオをキャプチャします。
-- ポート ドライバー WDK オーディオの位置プロパティ
+- play position WDK audio
+- レコード位置 WDK オーディオ
+- オーディオプロパティ WDK、ストリーム内の位置
+- WDM オーディオプロパティ WDK、stream 内の位置
+- 読み取り位置 WDK オーディオ
+- 書き込み位置 WDK オーディオ
+- クライアントバッファーをループする WDK オーディオ
+- 非ループクライアントバッファー WDK オーディオ
+- クライアントが WDK オーディオをバッファーする
+- ストリーミング位置 WDK オーディオ
+- position プロパティ WDK audio
+- キャプチャストリームの位置 WDK オーディオ
+- ポートドライバー WDK オーディオ、位置プロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e84e529ff08ec81a265cfad712276f314c04ba19
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2aa7b7f9883ee5748f2c801c81db3c51831d67e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355679"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831358"
 ---
 # <a name="audio-position-property"></a>オーディオの位置プロパティ
 
 
-オーディオ ドライバーのクライアントを使用して、 [ **KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)プロパティを取得およびオーディオ ストリーム内の現在位置を設定します。 プロパティで使用する[ **KSAUDIO\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)現在位置を表す構造体。 構造体には、2 つのメンバーが含まれています。**PlayOffset**と**WriteOffset**します。
+オーディオドライバーのクライアントは、 [**Ksk プロパティ\_audio\_POSITION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)プロパティを使用して、オーディオストリーム内の現在位置を取得して設定します。 プロパティは、 [**Ksaudio\_position**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_position)構造体を使用して、現在の位置を記述します。 構造体には、 **playoffset**と**writeoffset**の2つのメンバーが含まれています。
 
-**PlayOffset**と**WriteOffset**メンバーが排他的に使用するオーディオ デバイス用に予約されているクライアントのバッファーの領域の境界を定義します。 クライアントは、あるデバイスが現在にアクセスするこのリージョン内のデータのいずれかを想定する必要があります。 そのため、このリージョンの外にあるバッファーの部分のみをクライアントにアクセスする必要があります。 ストリームが進むと、領域の境界が移動します。
+**Playoffset**メンバーと**writeoffset**メンバーは、現在オーディオデバイスを排他的に使用するために予約されているクライアントバッファーの領域の境界を定義します。 クライアントは、デバイスが現在このリージョンに含まれるデータにアクセスしている可能性があることを前提としています。 このため、クライアントは、このリージョンの外部にあるバッファーの部分のみにアクセスする必要があります。 ストリームが進むにつれて、領域の境界が移動します。
 
-クライアント バッファーをループ処理している場合 (つまり、ストリームの種類が[ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming))、 **PlayOffset**と**WriteOffset**バッファーの相対オフセットします。 つまり、これらはループ クライアント バッファーの先頭からのバイト オフセットとして指定します。 バッファーの末尾にインクリメントをオフセットするか、バッファーの先頭にラップします。 (バッファーの先頭オフセットは 0 です)。したがって、どちらのオフセットには、バッファー サイズは、これまで超えています。
+クライアントバッファーがループしている場合 (つまり、ストリーム型が[**Ksk インターフェイス\_標準\_ループ\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming))、 **Playoffset**と**writeoffset**はバッファー相対オフセットです。 つまり、ループクライアントバッファーの先頭からのバイトオフセットとして指定されます。 オフセットがバッファーの末尾までインクリメントされると、バッファーの先頭に折り返されます。 (バッファーの先頭のオフセットは0です)。したがって、オフセットがバッファーサイズを超えることはありません。
 
-クライアント バッファーが場合 nonlooped (つまり、ストリームの種類が[ **KSINTERFACE\_標準\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-streaming))、 **PlayOffset**と**WriteOffset**ストリームの相対オフセットします。 つまり、これらはストリームの先頭からのバイト オフセットとして指定します。 これらのオフセットはストリーム全体が含まれており、最初から最後までの連続する理想的なバッファーにオフセットとしての考えることができます。
+クライアントバッファーが非ループになっている場合 (つまり、ストリームの種類が[**Ksk interface\_STANDARD\_STREAMING**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-streaming))、 **Playoffset**と**writeoffset**はストリーム相対オフセットです。 つまり、ストリームの先頭からのバイトオフセットとして指定されます。 これらのオフセットは、ストリーム全体を格納し、先頭から末尾まで連続している、構成可能なバッファーへのオフセットと考えることができます。
 
-レンダリング ストリームの場合、 **PlayOffset**メンバーは、ストリームの再生位置を指定し、 **WriteOffset**メンバーが、ストリームの書き込み位置を指定します。 次の図は、クライアント バッファー内の再生、書き込み位置を示します。
+レンダリングストリームの場合、 **Playoffset**メンバーはストリームの再生位置を指定し、 **writeoffset**メンバーはストリームの書き込み位置を指定します。 次の図は、クライアントバッファーの再生位置と書き込み位置を示しています。
 
-![再生位置とレンダリングのストリームに書き込み位置を示す図](images/playoffset.png)
+![レンダリングストリーム内の再生位置と書き込み位置を示す図](images/playoffset.png)
 
-再生位置が現在再生中のサンプルのバイト オフセット (アナログ デジタル コンバーター、または DAC の入力はラッチ サンプル)。 書き込み位置は、これを超えるクライアントは安全にバッファーに書き込む位置です。 再生、書き込み位置左から右に移動、ストリームの再生中、上記の図。 クライアントの書き込みは、書き込み位置を行く必要があります。 さらに、バッファーをループすると、クライアントの書き込みに再生位置が登場しない必要があります。
+再生位置は、現在再生されているサンプルのバイトオフセット (つまり、デジタル-アナログコンバーターまたは DAC の入力でラッチされるサンプル) のバイトオフセットです。 書き込み位置は、クライアントがバッファーに安全に書き込むことができる位置を超えています。 ストリームが再生されると、前の図では再生位置と書き込み位置が左から右に移動します。 クライアントの書き込みは、書き込み位置の前に置かれている必要があります。 また、バッファーがループされている場合、クライアントの書き込みで再生位置を overtake することはできません。
 
-WaveCyclic または WavePci ポート ドライバーがの再生位置を追跡するミニポート ドライバーに依存していますが、ポート ドライバーの追跡、書き込み位置。 WaveCyclic と WavePci ポート ドライバーは、次のような書き込み位置を更新します。
-
--   **WaveCyclic**
-
-    WaveCyclic ポート ドライバーの呼び出しごとに[ **IDmaChannel::CopyTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto) (クライアントの場所に書き込み位置を進めます (クライアントのバッファー) からに循環バッファーを新しいデータのブロックをコピーするにはバッファー) のデータ ブロックの最後のバイト。
-
--   **WavePci**
-
-    既定では、毎回 WavePci のミニポート ドライバー呼び出し[ **IPortWavePciStream::GetMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping) (クライアント バッファーの一部) の新しいマッピングと呼び出しの取得に成功すると、書き込み位置の進歩新しいマッピングの最後のバイトの (クライアントのバッファー) の場所。
-
-    WavePci ミニポート ドライバーでは、プリフェッチ ポート ドライバーにオフセットを指定することで、既定の動作をオーバーライドする場合は常に、現在の書き込み位置を現在の再生位置とプリフェッチ オフセットの合計を等しくします。 詳細については、次を参照してください。[プリフェッチ オフセット](prefetch-offsets.md)します。
-
-キャプチャのストリームの場合、 **PlayOffset**メンバーは、ストリームのレコードの位置を指定し、 **WriteOffset**メンバーが、ストリームの読み取り位置を指定します。 次の図は、レコードを表示し、クライアント バッファー内の位置を読み取る。
-
-![キャプチャ ストリーム内の位置を読んで、レコードの位置を示す図](images/recordoffset.png)
-
-レコードの位置は、アナログ/デジタル変換、または ADC の出力にラッチを最新のサンプルのバイト オフセットです。 (この位置は、オーディオ デバイスの DMA エンジンが、サンプルを書かなければ先バッファーの場所を指定します)。読み取り位置が、位置を超えると、クライアントは、バッファーから読み取り安全にことはできません。 ストリームの進行状況の記録として、読み取りレコードの位置を進めると左から右に上記の図。 クライアントの読み取りには、読み取り位置を記録する必要があります。 さらに、バッファーをループすると、クライアントの読み取りが、レコードの位置の前ままする必要があります。
-
-WaveCyclic または WavePci ポート ドライバーが、レコードの位置を追跡するミニポート ドライバーに依存していますが、ポート ドライバーの追跡、読み取り位置。 WaveCyclic と WavePci ポート ドライバーは、次のような読み取り位置を更新します。
+WaveCyclic または WavePci ポートドライバーは、再生位置を追跡するためにミニポートドライバーに依存しますが、ポートドライバーは書き込み位置を追跡します。 WaveCyclic および WavePci ポートドライバーは、次のように書き込み位置を更新します。
 
 -   **WaveCyclic**
 
-    WaveCyclic ポート ドライバーの呼び出しごとに[ **IDmaChannel::CopyFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom) (クライアントの場所に、読み取り位置を進めます (クライアントのバッファー) に、循環バッファーからデータの新しいブロックをコピーバッファー) のデータ ブロックの最後のバイト。
+    WaveCyclic port ドライバーが[**IDmaChannel:: CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)を呼び出して、新しいデータブロックを循環バッファー (クライアントバッファーから) にコピーするたびに、書き込み位置はデータブロックの最後のバイトの (クライアントバッファー内の) 位置に進みます。
 
 -   **WavePci**
 
-    WavePci ミニポート ドライバーの呼び出しごとに[ **IPortWavePciStream::ReleaseMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-releasemapping)読み取り位置に進めます (クライアント バッファーの一部) の前に取得したマッピングをリリースする、リリースのマッピングでは、最後のバイトの (クライアントのバッファー) 内の位置。
+    既定では、WavePci ミニポートドライバーが[**Iportwavepcistream:: GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)を呼び出して新しいマッピング (クライアントバッファーの一部) を取得し、呼び出しが成功するたびに、書き込み位置がの最後のバイトの (クライアントバッファー内の) 場所に進みます。新しいマッピング。
 
-ミニポート ドライバーは KSPROPERTY のハンドラー ルーチンを実装する必要はありません\_オーディオ\_位置プロパティ要求。 代わりに、WaveCyclic と WavePci ポート ドライバーは、ミニポート ドライバーに代わってこれらの要求を処理します。 WaveCyclic または WavePci ポート ドライバーは既に計算に必要なすべての情報プロパティの get 要求を処理する際、 **WriteOffset**値が、を計算するミニポートドライバーからの情報を必要があります。**PlayOffset**値。 この情報を取得するポート ドライバーに呼び出し、ミニポート ドライバーの[ **IMiniportWaveCyclicStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)または[ **IMiniportWavePciStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)メソッド。
+    WavePci ミニポートドライバーが、ポートドライバーへのプリフェッチオフセットを指定することによって既定の動作を上書きする場合、現在の書き込み位置は常に現在の再生位置とプリフェッチオフセットの合計と等しくなります。 詳細については、「[プリフェッチオフセット](prefetch-offsets.md)」を参照してください。
 
-ストリームについては、レンダリング、 **GetPosition**メソッドは、現在再生中で、DAC を使用するサンプルのバイト オフセットの再生位置を取得します。 ストリームについては、キャプチャ、 **GetPosition**メソッドは、レコードの位置の ADC によってキャプチャされる最新のサンプルのバイト オフセットを取得します。
+キャプチャストリームの場合、 **Playoffset**メンバーはストリームのレコード位置を指定し、 **writeoffset**メンバーはストリームの読み取り位置を指定します。 次の図は、クライアントバッファーのレコードと読み取り位置を示しています。
 
-オフセットの値を取得するメモを**GetPosition**呼び出しは現在、スピーカーのジャックから送信されるシグナルに対応する再生位置または現在シグナルに対応するレコードの位置マイクのジャックから受信しました。 DMA 位置ではありません。 (DMA 位置は、DMA バッファーとの間で、オーディオ デバイス DMA エンジンが転送中のサンプルのバイト オフセットです)。
+![キャプチャストリーム内のレコードの位置と読み取り位置を示す図](images/recordoffset.png)
 
-一部のオーディオ ハードウェアには追跡のサンプルでは、各 DAC または ADC、現在のバイト オフセット後者に位置登録が含まれています、 **GetPosition**メソッドは単の位置のレジスタの内容を取得します適切なストリーム。 その他のオーディオ ハードウェアのみを提供するドライバー、DMA の位置をその場合、 **GetPosition**メソッドは、DMA の現在の位置を考慮して、DAC または ADC でサンプルのバイト オフセットの最適な見積もりを入力する必要があり、デバイスの内部バッファリングの遅延。
+レコード位置は、アナログ-デジタルコンバーター (ADC) の出力でラッチされる最新のサンプルのバイトオフセットです。 (この位置によって、オーディオデバイスの DMA エンジンが最終的にサンプルを書き込むバッファー位置が指定されます)。読み取り位置は、クライアントがバッファーから安全に読み取ることができない位置です。 ストリームの記録が進むにつれて、前の図では、読み取り位置とレコード位置が左から右に進みます。 クライアントの読み取りは、読み取り位置を記録する必要があります。 また、バッファーがループされている場合は、クライアントの読み取りがレコードの位置を超えている必要があります。
 
-WaveCyclic または WavePci ポート ドライバー プロパティ ハンドラーがかどうかストリーム相対スケールまたは相対パスのバッファーのバイトを提供するオフセット、この詳細を確認するループと nonlooped バッファー間で区別する必要がありますが (バッファーをループ処理するかどうか、またはnonlooped) は、ミニポート ドライバーに対して透過的です。
+WaveCyclic または WavePci ポートドライバーは、レコードの位置を追跡するためにミニポートドライバーに依存しますが、ポートドライバーは読み取り位置を追跡します。 WaveCyclic および WavePci port ドライバーは、次のように読み取り位置を更新します。
 
-**IMiniportWaveCyclicStream::GetPosition**メソッドは常にバッファーの相対 play またはクライアントのバッファーは、ループまたは nonlooped かどうかに関係なく、レコードの位置を報告します。 クライアント バッファーをループすると、プロパティ ハンドラーは、ハンドラー、へ書き込みますクライアントバッファーへのオフセットを循環バッファーのオフセットとして表現されたミニポートドライバーによって報告されたバッファーの相対位置を変換**PlayOffset**メンバー。 クライアント バッファーが場合 nonlooped、プロパティ ハンドラーに変換バッファーの相対の再生位置プレイのストリームの相対位置に書き込む前に、 **PlayOffset**メンバー。
+-   **WaveCyclic**
 
-**IMiniportWavePciStream::GetPosition**メソッドは常に相対ストリーム再生またはクライアントのバッファーは、ループまたは nonlooped かどうかに関係なく、レコードの位置を報告します。 クライアント バッファーをループすると、プロパティ ハンドラー再生のストリームの相対位置に変換 (クライアント バッファーのオフセットとして表されます) の相対パスのバッファーの再生位置に書き込む前に、 **PlayOffset**内のメンバー、KSAUDIO\_プロパティ要求内の位置の構造体。 クライアント バッファーの場合、nonlooped プロパティ ハンドラー書き込みますにストリームの相対位置、 **PlayOffset**メンバー。
+    WaveCyclic port ドライバーが[**IDmaChannel:: CopyFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyfrom)を呼び出して、循環バッファー (クライアントバッファー) から新しいデータブロックをコピーするたびに、読み取り位置はデータブロックの最後のバイトの (クライアントバッファー内の) 位置に進みます。
 
-Play またはレコードの位置はストリームの次のすぐにゼロ初期化です。 KSSTATE への遷移\_停止状態 (を参照してください[ **KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)) 位置を 0 にリセットします。 KSSTATE からの移行によって、ストリームを停止するときに\_KSSTATE に実行\_を一時停止または KSSTATE\_ACQUIRE、位置がフリーズします。 ストリームが遷移 KSSTATE ときの凍結が\_を一時停止または KSSTATE\_KSSTATE に取得\_を実行します。
+-   **WavePci**
 
-実装例**GetPosition** WaveCyclic と WavePci ミニポート ドライバーでは、メソッドは、Windows Driver Kit (WDK) のサンプル オーディオ ドライバーを参照してください。
+    WavePci ミニポートドライバーが[**Iportwavepcistream:: ReleaseMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-releasemapping)を呼び出して、以前に取得したマッピング (クライアントバッファーの一部) を解放するたびに、読み取り位置は、の最後のバイトの (クライアントバッファー内の) 場所に進みます。解放されたマッピング。
+
+ミニポートドライバーは、KSK プロパティ\_AUDIO\_POSITION プロパティ要求のハンドラールーチンを実装する必要はありません。 代わりに、WaveCyclic および WavePci ポートドライバーは、ミニポートドライバーに代わってこれらの要求を処理します。 Get property 要求を処理する場合、WaveCyclic または WavePci port ドライバーは**writeoffset**値を計算するために必要なすべての情報を既に持っていますが、それでも、 **playoffset**値を計算するためにミニポートドライバーからの情報が必要です。 この情報を取得するために、ポートドライバーは、ミニポートドライバーの[**IMiniportWaveCyclicStream:: GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclicstream-getposition)メソッドまたは[**IMiniportWavePciStream:: GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getposition)メソッドを呼び出します。
+
+レンダリングストリームの場合、 **GetPosition**メソッドは、再生位置 (DAC を通じて現在再生されているサンプルのバイトオフセット) を取得します。 キャプチャストリームの場合、 **GetPosition**メソッドは、レコードの位置を取得します。これは、ADC によってキャプチャされる最新のサンプルのバイトオフセットです。
+
+**GetPosition**呼び出しによって取得されるオフセット値は、現在、スピーカージャックを介して送信されている信号に対応する再生位置か、またはマイクのジャック。 これは DMA の位置ではありません。 (DMA 位置は、オーディオデバイスの DMA エンジンが DMA バッファーとの間で現在やり取りしているサンプルのバイトオフセットです)。
+
+一部のオーディオハードウェアには、現在各 DAC または ADC にあるサンプルのバイトオフセットを追跡する位置登録が含まれています。この場合、 **GetPosition**メソッドは、適切なストリームの位置レジスタの内容を取得するだけです。 その他のオーディオハードウェアでは、DMA 位置でのみドライバーを提供できます。その場合、現在の DMA の位置とバッファリングの遅延を考慮して、DAC または ADC 内のサンプルのバイトオフセットの最大の推定値を**GetPosition**メソッドで提供する必要があります。デバイスの内部。
+
+WaveCyclic または WavePci port ドライバーのプロパティハンドラーは、ループバッファーと非ループバッファーを区別して、ストリーム相対またはバッファー相対のバイトオフセットを提供するかどうかを決定する必要がありますが、この詳細 (つまり、バッファーがループされているかどうかを判断します。非ループ) はミニポートドライバーに対して透過的です。
+
+**IMiniportWaveCyclicStream:: GetPosition**メソッドは、クライアントバッファーがループされているかどうかに関係なく、常にバッファー相対再生またはレコード位置を報告します。 クライアントバッファーがループされている場合、プロパティハンドラーはミニポートドライバーによって報告されたバッファー相対位置を変換します。これは、循環バッファーへのオフセットとして表され、クライアントバッファーへのオフセットとして表されます。この位置は、ハンドラーによって次の**ように書き込まれます。PlayOffset**メンバー。 クライアントバッファーがループされていない場合、プロパティハンドラーは、再生**オフセット**メンバーに書き込む前に、バッファー相対再生位置をストリーム相対再生位置に変換します。
+
+**IMiniportWavePciStream:: GetPosition**メソッドは、クライアントバッファーがループされているかどうかに関係なく、常にストリーム相対再生またはレコード位置を報告します。 クライアントバッファーがループしている場合、プロパティハンドラーは、KSK オーディオの**Playoffset**メンバーに書き込む前に、ストリーム相対再生位置をバッファー相対再生位置 (クライアントバッファーへのオフセットとして表現) に変換し\_プロパティ要求の位置構造。 クライアントバッファーがループ処理されない場合、プロパティハンドラーは、ストリーム相対位置を**Playoffset**メンバーに書き込みます。
+
+再生またはレコードの位置は、ストリームの初期化直後にゼロになります。 KSK 状態への遷移\_停止状態 ( [**Ksk 状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)を参照) は、位置をゼロにリセットします。 \_KSK 状態からの遷移によってストリームが停止されると、\_一時停止または KSSTATE\_取得した場合、位置がフリーズします。 この unfreezes は、ストリームが KSK 状態\_PAUSE または KSSTATE から遷移して、\_KSK 状態\_実行された場合に発生します。
+
+WaveCyclic および WavePci ミニポートドライバーの**GetPosition**メソッドの実装例については、「Windows Driver KIT (WDK) のオーディオドライバーの例」を参照してください。
 
  
 

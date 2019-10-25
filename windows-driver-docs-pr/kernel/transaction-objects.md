@@ -3,35 +3,35 @@ title: トランザクション オブジェクト
 description: トランザクション オブジェクト
 ms.assetid: 124105bd-70be-49b1-8ea4-af6ba1f3cf16
 keywords:
-- WDK KTM、オブジェクトのトランザクション
-- WDK KTM トランザクション
-- トランザクション クライアント WDK KTM をトランザクションの作成
-- カーネル トランザクション マネージャ WDK、トランザクション
-- WDK の KTM をトランザクション
-- トランザクション オブジェクト WDK KTM
+- トランザクション WDK KTM、オブジェクト
+- トランザクション WDK KTM
+- トランザクションクライアント WDK KTM、トランザクションの作成
+- カーネルトランザクションマネージャー WDK、トランザクション
+- KTM WDK、トランザクション
+- トランザクションオブジェクト WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0a41d448e01bb13d5fe6dae95ed0d661605e3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 642eb1da820e1bbcdaa207bedd72874bd824eab6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382941"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838382"
 ---
 # <a name="transaction-objects"></a>トランザクション オブジェクト
 
 
-*トランザクション オブジェクト*トランザクションを表します。 トランザクション クライアント トランザクションを作成するには、何らかの動作をし、いずれかのコミットを実行します。 または、トランザクションをロールバックします。
+*トランザクションオブジェクト*はトランザクションを表します。 トランザクションクライアントはトランザクションを作成し、何らかの処理を実行します。また、トランザクションをコミットするか、ロールバックします。
 
-KTM のセットを提供する[トランザクション オブジェクト ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)カーネル モードのトランザクションのクライアントが呼び出すことができます。 KTM では、ユーザー モード アプリケーションを呼び出すことができるユーザー モード ルーチンのようなセットも提供します。 ユーザー モードのルーチンの詳細については、Microsoft Windows SDK を参照してください。
+KTM には、カーネルモードのトランザクションクライアントが呼び出すことができる一連の[トランザクションオブジェクトルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)が用意されています。 また、KTM は、ユーザーモードアプリケーションが呼び出すことができる同様のユーザーモードルーチンのセットも提供します。 ユーザーモードルーチンの詳細については、「Microsoft Windows SDK」を参照してください。
 
-クライアントを呼び出すと KTM トランザクション オブジェクトが作成[ **ZwCreateTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)します。 クライアントは、いずれかを呼び出すことができます[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)または[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)をコミットまたはトランザクションをロールバックします。
+クライアントが[**Zwcreatetransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)を呼び出すときに、KTM はトランザクションオブジェクトを作成します。 クライアントは、 [**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)または[**ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)を呼び出して、トランザクションをコミットまたはロールバックできます。
 
-[TP コンポーネント](understanding-tps-components.md)呼び出すことができます[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)トランザクション オブジェクトへの追加のハンドルを開きます。
+[Tp コンポーネント](understanding-tps-components.md)は、 [**zwopentransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)を呼び出して、トランザクションオブジェクトに対する追加ハンドルを開くことができます。
 
-クライアントが呼び出すことでトランザクション オブジェクトへのハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 KTM をトランザクション オブジェクトがコミットされる前に最後のハンドルが閉じている場合、トランザクションを送信します\_通知\_をトランザクションの参加リストを持つすべてのリソース マネージャーにロールバック通知します。
+クライアントは[**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出して、トランザクションオブジェクトに対するハンドルを閉じます。 トランザクションオブジェクトがコミットされる前に最後のハンドルを閉じた場合、KTM はトランザクションを送信して、トランザクションの参加リストを持つすべてのリソースマネージャーに\_ロールバック通知を通知\_ます。
 
-オペレーティング システムは、最後のハンドルが閉じられ、KTM には、オブジェクトへのすべての参照がリリース後に、オブジェクトを削除します。
+最後のハンドルが閉じられ、KTM によってオブジェクトへのすべての参照が解放された後、オペレーティングシステムによってオブジェクトが削除されます。
 
  
 

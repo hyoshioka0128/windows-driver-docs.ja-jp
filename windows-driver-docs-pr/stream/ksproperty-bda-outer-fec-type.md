@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_OUTER\_FEC\_型
-description: クライアントを使用して、KSPROPERTY\_BDA\_OUTER\_FEC\_復調器ノードの外部の転送エラーの修正 (FEC) の種類を制御する型。
+title: KSK プロパティ\_BDA\_外部\_FEC\_型
+description: クライアントは、KSK プロパティ\_BDA\_OUTER\_FEC\_TYPE を使用して、demodulator ノードの外部前方エラー修正 (FEC) 型を制御します。
 ms.assetid: 952fd2d6-20c8-4fb3-a92a-1e6bcedfd68b
 keywords:
-- KSPROPERTY_BDA_OUTER_FEC_TYPE ストリーミング メディア デバイス
+- KSPROPERTY_BDA_OUTER_FEC_TYPE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fcfca490da356051b080f0d6687bc70a3421fd3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f83a3e7d13303067f27c8efbce04a671ec5f1f53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368156"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837615"
 ---
-# <a name="kspropertybdaouterfectype"></a>KSPROPERTY\_BDA\_OUTER\_FEC\_型
+# <a name="ksproperty_bda_outer_fec_type"></a>KSK プロパティ\_BDA\_外部\_FEC\_型
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_OUTER\_FEC\_復調器ノードの外部の転送エラーの修正 (FEC) の種類を制御する型。
+クライアントは、KSK プロパティ\_BDA\_OUTER\_FEC\_TYPE を使用して、demodulator ノードの外部前方エラー修正 (FEC) 型を制御します。
 
 ## <span id="ddk_ksproperty_bda_outer_fec_type_ks"></span><span id="DDK_KSPROPERTY_BDA_OUTER_FEC_TYPE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67368156"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67368156"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>FECMethod</p></td>
@@ -64,11 +64,11 @@ ms.locfileid: "67368156"
 <a name="remarks"></a>注釈
 -------
 
-FECMethod 列挙型から返される値は、FEC 型を認識します。
+FECMethod 列挙型から返された値は、FEC 型を識別します。
 
-**NodeId** KSP のメンバー\_ノード復調器ノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、demodulator ノードの識別子を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ FECMethod 列挙型から返される値は、FEC 型を認識します。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ FECMethod 列挙型から返される値は、FEC 型を認識します。
 
 [**FECMethod**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/fecmethod)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

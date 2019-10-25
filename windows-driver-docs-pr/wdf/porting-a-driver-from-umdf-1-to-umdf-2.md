@@ -1,22 +1,22 @@
 ---
 title: UMDF 1 から UMDF 2 へのドライバーの移植
-description: このトピックでは、UMDF 2 に、ユーザー モード ドライバー フレームワーク (UMDF) 1 ドライバーを移植する方法について説明します。
+description: このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) 1 ドライバーを UMDF 2 に移植する方法について説明します。
 ms.assetid: 99D20B4C-17C4-42AC-B4D9-F5FD64E10723
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d6c876db37ea56358e6dc85c6afc474238caae4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 36c9231ab2c56167c2f2b245dfecc990ea812bab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379668"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827248"
 ---
 # <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>UMDF 1 から UMDF 2 へのドライバーの移植
 
 
-このトピックでは、UMDF 2 に、ユーザー モード ドライバー フレームワーク (UMDF) 1 ドライバーを移植する方法について説明します。 ソース ディレクトリ/ファイル (Visual Studio プロジェクトされません) を使用する 1 の UMDF ドライバーで開始できます。 または、Visual Studio プロジェクトに含まれている 1 の UMDF ドライバーを変換することができます。 結果は、Visual Studio で 2 の UMDF ドライバーのプロジェクトになります。 2 の UMDF ドライバーは、デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合は、どちらも Windows 10 および Windows 10 Mobile を実行します。
+このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) 1 ドライバーを UMDF 2 に移植する方法について説明します。 (Visual Studio プロジェクトではなく) ソース/ディレクトリファイルを使用する UMDF 1 ドライバーから始めることができます。また、Visual Studio プロジェクトに含まれている UMDF 1 ドライバーを変換することもできます。 結果は、Visual Studio の UMDF 2 ドライバープロジェクトになります。 UMDF 2 ドライバーは、Windows 10 for desktop エディション (Home、Pro、Enterprise、および教育) と Windows 10 Mobile の両方で実行されます。
 
-エコー ドライバーのサンプルでは、UMDF 2 UMDF 1 から移植されたドライバーの例を示します。
+Echo driver サンプルは、UMDF 1 から UMDF 2 に移植されたドライバーの例です。
 
 -   [Echo サンプル (UMDF バージョン 1)](https://go.microsoft.com/fwlink/p/?LinkId=617707)
 -   [Echo サンプル (UMDF バージョン 2)](https://go.microsoft.com/fwlink/p/?LinkId=617708)
@@ -24,79 +24,79 @@ ms.locfileid: "67379668"
 ## <a name="getting-started"></a>作業の開始
 
 
-開始するには、Visual Studio で新しいドライバーのプロジェクトを開きます。 選択、 **Visual C++ -&gt;Windows ドライバー -&gt;WDF -&gt;ユーザー モード ドライバー (UMDF 2)** テンプレート。 Visual Studio は、ドライバーを実装する必要があるコールバック関数のスタブを含む部分的に設定されているテンプレートを開きます。 この新しいドライバーのプロジェクトには、2 の UMDF ドライバーの基盤となります。 コードを導入する必要がありますの種類のガイドとして UMDF 2 Echo サンプルを使用します。
+まず、Visual Studio で新しいドライバープロジェクトを開きます。 **Visual C++&gt;Windows DRIVER-&gt;WDF-&gt;User MODE Driver (UMDF 2)** テンプレートを選択します。 Visual Studio では、部分的に設定されたテンプレートが開き、ドライバーが実装する必要のあるコールバック関数のスタブが含まれます。 この新しいドライバープロジェクトは、UMDF 2 ドライバーの基礎となります。 使用するコードの種類については、UMDF 2 Echo サンプルを参考にしてください。
 
-次に、既存の 1 の UMDF ドライバー コードを確認し、オブジェクトのマッピングを判断します。 UMDF 1 内の各 COM オブジェクトでは、UMDF 2 に対応する WDF オブジェクトがあります。 たとえば、 **IWDFDevice**インターフェイスが表される WDF デバイス オブジェクトにマップ WDFDEVICE ハンドルでします。 UMDF 1 でのほぼすべてのフレームワークが指定したインターフェイス メソッドでは、UMDF 2 に対応する方法があります。 たとえば、 [ **IWDFDevice::GetDefaultIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-getdefaultioqueue)マップ[ **WdfDeviceGetDefaultQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdefaultqueue)します。
+次に、既存の UMDF 1 ドライバーコードを確認し、オブジェクトマッピングを決定します。 UMDF 1 の各 COM オブジェクトには、UMDF 2 に対応する WDF オブジェクトがあります。 たとえば、 **Iwdfdevice**インターフェイスは、wdfdevice ハンドルによって表される WDF device オブジェクトにマップされます。 UMDF 1 でフレームワークによって提供されるほとんどすべてのインターフェイスメソッドには、UMDF 2 の対応するメソッドがあります。 たとえば、 [**Iwdfdevice:: GetDefaultIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-getdefaultioqueue)は[**WdfDeviceGetDefaultQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdefaultqueue)にマップされます。
 
-同様に、ドライバーによって提供されるコールバック関数では、2 つのバージョンに対応があります。 第 1 UMDF ドライバーによって提供されるインターフェイスの名前付け規則 (以外の**IDriverEntry**) は*は*オブジェクト*コールバック*Xxx<strong>UMDF 2 の名前付け中に、ドライバーによって提供されるルーチンの規則は*Evt*ObjectXxx</strong>します。 たとえば、 [ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック メソッドには、マップ[ *EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)します。
+同様に、ドライバーによって提供されるコールバック関数は、2つのバージョンに相当します。 UMDF 1 では、ドライバーによって提供されるインターフェイス ( **Idriverentry**を除く) の名前付け規則は*I*オブジェクト*コールバック*Xxx ですが、umdf 2 では、ドライバーによって<strong>提供されるルーチンの名前付け規則は *.evt*objectxxx</strong>です。 たとえば、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバックメソッドは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)にマップされます。
 
-ドライバーでは、UMDF 1 と 2 の両方でコールバック関数が実装されていますが、ドライバーがそのコールバックへのポインターを提供する方法は異なります。 UMDF 1 では、ドライバーはドライバーによって提供されるインターフェイスのメンバーとしてコールバック メソッドを実装します。 ドライバーは、呼び出すことによって、framework のオブジェクトのなどの作成時に、フレームワークでこれらのインターフェイスを登録[ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)します。
+ドライバーは、UMDF 1 と2の両方でコールバック関数を実装しますが、ドライバーがコールバックへのポインターを提供する方法は異なります。 UMDF 1 では、ドライバーによって提供されるインターフェイスのメンバーとしてコールバックメソッドが実装されます。 このドライバーは、 [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出すなどして、フレームワークオブジェクトを作成するときにこれらのインターフェイスをフレームワークに登録します。
 
-UMDF 2 で、ドライバーには構成構造でのドライバーが提供するコールバック関数へのポインターなど[ **WDF\_ドライバー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)と[ **WDF\_IO\_キュー\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)します。
+UMDF 2 では、ドライバーが提供するドライバーのコールバック関数へのポインターが、 [**WDF\_driver\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)や[**WDF\_IO\_QUEUE\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)などの構成構造に含まれています。
 
-## <a name="managing-object-lifetime"></a>オブジェクトの有効期間を管理します。
+## <a name="managing-object-lifetime"></a>オブジェクトの有効期間の管理
 
 
-UMDF 1 を使用するドライバーは、参照オブジェクトを削除する安全なタイミングを決定するためにカウントを実装する必要があります。 フレームワークは、ドライバーの代わりに、オブジェクト参照を追跡しているために、2 の UMDF ドライバーでは、参照をカウントする必要はありません。
+UMDF 1 を使用するドライバーは、オブジェクトを安全に削除できるかどうかを判断するために、参照カウントを実装する必要があります。 フレームワークはドライバーの代わりにオブジェクト参照を追跡するため、UMDF 2 ドライバーは参照をカウントする必要がありません。
 
-UMDF 2 では、各フレームワーク オブジェクトは、既定の親オブジェクトを持ちます。 親オブジェクトが削除されたときに、フレームワークには、関連付けられている子オブジェクトが削除されます。 ときにオブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)、既定の親を受け入れることができます、またはカスタムの親で指定できます、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。 Framework のオブジェクトとその既定の親オブジェクトの一覧は、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
+UMDF 2 では、各フレームワークオブジェクトに既定の親オブジェクトがあります。 親オブジェクトが削除されると、フレームワークによって、関連付けられている子オブジェクトが削除されます。 ドライバーが[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)などのオブジェクトの作成方法を呼び出すと、既定の親を受け入れることができます。また、 [**WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)の構造体でカスタムの親を指定することもできます。 フレームワークオブジェクトとその既定の親オブジェクトの一覧については、「 [Framework オブジェクトの概要](summary-of-framework-objects.md)」を参照してください。
 
 ## <a name="driver-initialization"></a>ドライバーの初期化
 
 
-1 の UMDF ドライバーでは実装、 [ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス。 その[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック メソッド、ドライバー通常。
+UMDF 1 ドライバーは、 [**Idriverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)インターフェイスを実装します。 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバックメソッドでは、ドライバーは通常次のようになります。
 
--   作成し、デバイスのコールバック オブジェクトのインスタンスを初期化します。
--   呼び出して新しい framework デバイス オブジェクトを作成します。 [ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)します。
--   デバイスのキューとその対応するコールバック オブジェクトを設定します。
--   呼び出してデバイスのインターフェイス クラスのインスタンスを作成します。 [ **IWDFDevice::CreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface)します。
+-   デバイスコールバックオブジェクトのインスタンスを作成して初期化します。
+-   [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出すことによって、新しいフレームワークデバイスオブジェクトを作成します。
+-   デバイスのキューとそれに対応するコールバックオブジェクトを設定します。
+-   [**Iwdfdevice:: CreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface)を呼び出すことによって、デバイスインターフェイスクラスのインスタンスを作成します。
 
-2 の UMDF ドライバーでは実装[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)と[ *EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)します。 その**DriverEntry**日常的な 2 の UMDF ドライバーを呼び出す通常[ **WDF\_ドライバー\_CONFIG\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdf_driver_config_init)初期化するために、ドライバーの[ **WDF\_ドライバー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)構造体。 この構造体を渡します[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。
+UMDF 2 ドライバーは[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)と[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)を実装します。 その**Driverentry**ルーチンでは、通常、UMDF 2 ドライバーは[**WDF\_driver\_config\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdf_driver_config_init)を呼び出して、ドライバーの[**WDF\_driver\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)構造体を初期化します。 次に、この構造体を[**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)に渡します。
 
-その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)関数の場合、ドライバーには、次のいくつか実行可能性があります。
+[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)関数では、ドライバーが次の一部を実行する場合があります。
 
--   入力、 [WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体は、デバイス オブジェクトを作成するために使用する情報を提供します。 WDFDEVICE の使用の詳細については\_INIT を参照してください[Framework デバイス オブジェクトを作成する](creating-a-framework-device-object.md)します。
--   デバイス オブジェクトの領域のコンテキストを設定します。 割り当てとフレームワーク オブジェクト コンテキストの領域にアクセスする方法については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
--   [デバイス オブジェクトを作成](creating-a-framework-device-object.md)です。
--   指定[要求ハンドラー](request-handlers.md)デバイス オブジェクト。
--   [I/O キューを作成する](creating-i-o-queues.md)します。
--   [デバイスのインターフェイスを作成](using-device-interfaces.md)です。
--   設定[アイドル状態のデバイス ポリシー](supporting-idle-power-down.md)と[wake 設定](supporting-system-wake-up.md)デバイス オブジェクトには、電源ポリシーが所有している場合、します。
--   [割り込みオブジェクトを作成する](creating-an-interrupt-object.md)ハードウェア割り込みをサポートしている場合、します。
+-   [Wdfdevice\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体に入力します。これにより、デバイスオブジェクトの作成に使用される情報が提供されます。 WDFDEVICE\_INIT の使用方法の詳細については、「 [Framework デバイスオブジェクトの作成](creating-a-framework-device-object.md)」を参照してください。
+-   デバイスオブジェクトのコンテキスト領域を設定します。 フレームワークオブジェクトのコンテキスト空間の割り当てとアクセスについては、「[フレームワークオブジェクトコンテキスト空間](framework-object-context-space.md)」を参照してください。
+-   [デバイスオブジェクトを作成](creating-a-framework-device-object.md)します。
+-   デバイスオブジェクトの[要求ハンドラー](request-handlers.md)を指定します。
+-   [I/o キューを作成](creating-i-o-queues.md)します。
+-   [デバイスインターフェイスを作成](using-device-interfaces.md)します。
+-   デバイスオブジェクトが電源ポリシーを所有している場合は、[デバイスのアイドルポリシー](supporting-idle-power-down.md)と[ウェイク設定](supporting-system-wake-up.md)を設定します。
+-   割り込み[オブジェクトを作成](creating-an-interrupt-object.md)します (ハードウェアで割り込みがサポートされている場合)。
 
-## <a name="installing-your-driver"></a>ドライバーをインストールします。
-
-
-Visual Studio で新しいドライバーのプロジェクトを作成すると、新しいプロジェクトには、.inx ファイルが含まれています。 ドライバーをビルドすると、Visual Studio は、ドライバー パッケージの一部として使用できる INF ファイルに、.inx ファイルをコンパイルします。
-
-1 の UMDF ドライバーに対して、INF ファイルには、ドライバーのクラス ID を含める必要があります、中に、DriverCLSID は 2 の UMDF ドライバーの INF ファイルでは必要ありません。
-
-また、1 の UMDF ドライバーの INF ファイルで共同インストーラーを参照する必要があります、constaller 参照は必要ありません UMDF 2 INF ファイル。 共同インストーラーの参照を 2 の UMDF ドライバーの INF ファイルに表示されることが 1 つは必要ありません。
-
-## <a name="storing-device-context"></a>デバイス コンテキストを格納します。
+## <a name="installing-your-driver"></a>ドライバーのインストール
 
 
-UMDF 1 で、ドライバー通常格納、ドライバーが作成したコールバック オブジェクト内のデバイス コンテキストなど、デバイス コールバック オブジェクトのクラスのプライベート メンバーを指定することでします。 また、1 の UMDF ドライバーを呼び出すことができます、 [ **IWDFObject::AssignContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-assigncontext)フレームワーク オブジェクト コンテキストを登録します。
+Visual Studio で新しいドライバープロジェクトを作成すると、新しいプロジェクトには inx ファイルが含まれます。 ドライバーをビルドすると、Visual Studio は、ドライバーパッケージの一部として使用できる INF ファイルに inx ファイルをコンパイルします。
 
-UMDF 2 では、フレームワークはに基づいて省略可能なコンテキストの領域を割り当てます[ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)オブジェクトの作成を呼び出すときに、ドライバーが提供する構造体。メソッド。 オブジェクトを呼び出すと、メソッドの作成、ドライバーを呼び出すことが[ **WdfObjectAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)特定のオブジェクトに追加のコンテキストの領域を割り当てるための 1 つまたは複数の時間。 コンテキストの構造およびアクセサー メソッドを定義する、手順 2.、UMDF ドライバーを使用する必要がありますを参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
+UMDF 1 ドライバーの INF ファイルにはドライバークラス ID を含める必要がありますが、UMDF 2 ドライバーの INF ファイルでは DriverCLSID は必要ありません。
+
+また、UMDF 1 ドライバーは、その INF ファイル内の共同インストーラーを参照する必要がありますが、UMDF 2 INF ファイルでは constaller 参照を必要としません。 の共同インストーラー参照は、UMDF 2 ドライバーの INF ファイルに表示できますが、必須ではありません。
+
+## <a name="storing-device-context"></a>デバイスコンテキストの格納
+
+
+UMDF 1 では、通常、ドライバーによって作成されたコールバックオブジェクトにデバイスコンテキストが格納されます。たとえば、デバイスコールバックオブジェクトクラスのプライベートメンバーを指定します。 また、UMDF 1 ドライバーは、 [**Iwdfobject:: 割り当てコンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-assigncontext)メソッドを呼び出して、フレームワークオブジェクトにコンテキストを登録できます。
+
+UMDF 2 では、フレームワークは、オプションの[**WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)の構造に基づいて、オブジェクトの作成メソッドを呼び出すときにドライバーが提供するコンテキスト空間を割り当てます。 オブジェクトの create メソッドを呼び出した後、ドライバーは[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)を1回以上呼び出して、特定のオブジェクトに追加のコンテキスト空間を割り当てることができます。 UMDF 2 ドライバーがコンテキスト構造とアクセサーメソッドを定義するために使用する手順については、「[フレームワークオブジェクトコンテキスト空間](framework-object-context-space.md)」を参照してください。
 
 ## <a name="debugging-your-driver"></a>ドライバーのデバッグ
 
 
-2 の UMDF ドライバーをデバッグするには、Wudfext.dll ではなく Wdfkd.dll で拡張機能を使用します。 Wudfext.dll 拡張機能に関する詳細については、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)します。
+UMDF 2 ドライバーをデバッグするには、Wudfext dll ではなく、Wdfkd .dll の拡張機能を使用します。 Wudfext dll の拡張機能の詳細については、「 [Wdfkd のデバッガー拡張機能の概要](debugger-extensions-for-kmdf-drivers.md)」を参照してください。
 
-UMDF 2 で取得することも追加のドライバーがデバッグ情報を転送トレース レコーダー (), 違います」の説明に従って[KMDF および UMDF 2 ドライバーで Inflight トレースの記録機能を使用して](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)します。 フレームワークの独自の使用も、*インフライト レコーダー* (IFR)。 参照してください[フレームワークのイベントのロガーを使用して](using-the-framework-s-event-logger.md)します。
+UMDF 2 では、「 [KMDF と UMDF 2 ドライバーでの Inflight トレースレコーダーの使用](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)」で説明されているように、Inflight トレースレコーダー (IFR) を介して追加のドライバーデバッグ情報を取得することもできます。 また、フレームワーク独自の*インフライトレコーダー* (IFR) を使用することもできます。 「[フレームワークのイベントロガーの使用」を](using-the-framework-s-event-logger.md)参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
 
 [UMDF の概要](getting-started-with-umdf-version-2.md)
 
-[フレームワーク オブジェクト コンテキストの領域](framework-object-context-space.md)
+[フレームワークオブジェクトコンテキスト空間](framework-object-context-space.md)
 
 [UMDF バージョン履歴](umdf-version-history.md)
 
-[Framework のオブジェクト](framework-objects.md)
+[フレームワークオブジェクト](framework-objects.md)
 
  
 

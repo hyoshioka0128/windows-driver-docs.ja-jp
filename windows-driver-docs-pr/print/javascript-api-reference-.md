@@ -1,30 +1,30 @@
 ---
 title: JavaScript API リファレンス
-description: 印刷デバイスを USB 接続経由でサポートを提供するのに Bidi XML ファイルでは、JavaScript API を組み合わせて使用します。
+description: JavaScript API と Bidi XML ファイルを組み合わせて使用して、印刷デバイスへの USB 接続をサポートします。
 ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23a7fd4ed3049d0ef6f001925586eff95079b22d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a4c46ecc767bdb45718e39e2e25bf818b1bc107
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377532"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828932"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API リファレンス
 
 
-製造元は、印刷デバイスを USB 接続経由で双方向のサポートを提供する Bidi XML ファイルと組み合わせて、ここでは、表示、JavaScript API を使用できます。
+製造元は、ここに記載されている JavaScript API を Bidi XML ファイルと組み合わせて使用して、印刷デバイスへの USB 接続を介した Bidi のサポートを提供できます。
 
-印刷デバイスとの USB の双方向通信の詳細については、次を参照してください。 [USB Bidi エクステンダー](usb-bidi-extender.md)します。
+印刷デバイスとの USB Bidi 通信の詳細については、「 [Usb Bidi Extender](usb-bidi-extender.md)」を参照してください。
 
-## <a name="bidi-over-usb"></a>USB 経由での Bidi
+## <a name="bidi-over-usb"></a>Bidi over USB
 
 
 ## <a name="getschemas-method"></a>getSchemas メソッド
 
 
-このメソッドは双方向を取得するクエリ処理など\\Printer.Consumables.YellowInk:Level します。 JavaScript コードは、USB バスを使用してプリンターにクエリを行い、応答を読み取るように再びアクセスすることです。
+このメソッドは、\\YellowInk: Level などの Bidi GET クエリを処理します。 JavaScript コードは、USB バスを使用してプリンターに対してクエリを実行し、応答が返されたときに応答を読み取ることができます。
 
 構文
 
@@ -34,89 +34,89 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 
 パラメーター
 
-*scriptContext*
+*Scriptcontext.echo*
 
-\[\] 、 [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
-*printerStream*
+関連するプロパティバッグへのアクセスを提供する[**Iプリンター Scriptcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)オブジェクトを\] に \[します。
+*プリンターストリーム*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
+USB バスへの読み取りおよび書き込みアクセスを許可する[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)オブジェクト\] の \[ます。
 *schemaRequests*
 
-\[\]双方向の要求のクエリ文字列のすべてを含む配列オブジェクト。
+要求されたすべての Bidi クエリ文字列を含む\] 配列オブジェクトの \[。
 *printerBidiSchemaResponses*
 
-\[out\]オブジェクトのクエリ キーをすべての応答を格納する、スクリプトを使用します。
+スクリプトがクエリキーへのすべての応答を格納するために使用する\] オブジェクトを \[します。
 戻り値
 
 | 戻り値 | 説明                                                                                                                                                                             |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0            | スクリプトが正常に完了しました。                                                                                                                                                      |
-| 1            | 要求されたいくつかの情報を提供する接続しているデバイスができていません。 印刷システムがもう一度処理中に追加された任意の Requery キーを使用して関数を呼び出すことを示します。 |
+| 0            | スクリプトは正常に完了しました。                                                                                                                                                      |
+| 1            | アタッチされたデバイスは、要求された情報を提供する準備ができていませんでした。 処理中に追加された再クエリキーを使用して、印刷システムが関数を再度呼び出す必要があることを示します。 |
 
 
 
 ## <a name="setschema-method"></a>setSchema メソッド
 
 
-このメソッドは、双方向の設定の操作を処理します。 スクリプトは、デバイスでデータを設定するか、クリーンアップと同様に、デバイスで何らかのアクションを実行する受信の Bidi スキーマ値を決定できますヘッドをインクします。
+このメソッドは、Bidi の設定操作を処理します。 このスクリプトでは、着信 Bidi スキーマ値を決定して、デバイスにデータを設定したり、デバイスで何らかのアクション (クリーンインクヘッドなど) を実行したりすることができます。
 
-デバイスが、指定されたデータを処理する準備されていない場合は、メソッドは待機期間の後の呼び出しを再試行するかを示す 1 の値を返すことができます。
+デバイスが指定されたデータを処理する準備ができていない場合、メソッドは値1を返すことができます。これは、待機期間後に呼び出しを再試行する必要があることを示します。
 
 パラメーター
 
-*scriptContext*
+*Scriptcontext.echo*
 
-\[\] 、 [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)関連するプロパティ バッグへのアクセスを提供するオブジェクト。
-*printerStream*
+関連するプロパティバッグへのアクセスを提供する[**Iプリンター Scriptcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)オブジェクトを\] に \[します。
+*プリンターストリーム*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
+USB バスへの読み取りおよび書き込みアクセスを許可する[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)オブジェクト\] の \[ます。
 *printerBidiSchemaElement*
 
-\[\] 、 [IPrinterBidiSchemaElement](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaelement-interface) Bidi スキーマの値を設定するに関連付けられているすべてのデータを格納しているオブジェクト。
+設定する Bidi スキーマ値に関連付けられているすべてのデータを含む[IPrinterBidiSchemaElement](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaelement-interface)オブジェクト\] で \[します。
 戻り値
 
 | 戻り値 | 説明                                                                                                                                                                          |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0            | スクリプトが正常に完了しました。                                                                                                                                                   |
-| 1            | 要求されたいくつかの情報を提供する接続しているデバイスができていません。 印刷システムがもう一度指定 printerBidiSchemaElement を使用して関数を呼び出すことを示します。 |
+| 0            | スクリプトは正常に完了しました。                                                                                                                                                   |
+| 1            | アタッチされたデバイスは、要求された情報を提供する準備ができていませんでした。 指定された printerBidiSchemaElement を使用して、印刷システムが関数を再度呼び出す必要があることを示します。 |
 
 
 
 ## <a name="getstatus-method"></a>getStatus メソッド
 
 
-このメソッドは、デバイスが印刷中に、プリンターから要請されていない状態を取得に使用されます。 この関数は印刷時にのみ呼び出されます。 デバイスは、Bidi スキーマの値にこのスクリプトを解釈する読み取りのチャネルでデータを提供する必要があります。 印刷データをデバイスに書き込みチャネルがブロックされているためには、ここでは要請されていない状態のみがサポートします。
+このメソッドは、デバイスの印刷中にプリンターから要求されていない状態を取得するために使用します。 この関数は、印刷中にのみ呼び出されます。 デバイスは、このスクリプトが Bidi スキーマ値に解釈できる読み取りチャネルにデータを提供する必要があります。 デバイスへの書き込みチャネルは印刷データによってブロックされるため、ここでは要請されていない状態のみがサポートされています。
 
-このメソッドは、印刷時に繰り返し呼び出されます。 デバイスはデータのみを返す場合、使用可能になるし、スクリプトが理解できると想定されます。 デバイスが要請されていない状態をサポートしていない、またはこの関数を再度呼び出す必要はありません、スクリプトは 2 の値を返す必要があります、 **getStatus**実行スレッドが正常に終了する USBMon でします。
+このメソッドは、印刷中に繰り返し呼び出されます。 使用可能な場合はデバイスがデータを返すだけで、スクリプトではそれを理解できることが想定されています。 デバイスが要請されていない状態をサポートしていない場合、またはこの関数を再度呼び出す必要がない場合、スクリプトは値2を返す必要があります。これにより、 **getStatus**実行スレッドが usbmon で正常に終了するように指示されます。
 
 パラメーター
 
-*scriptContext*
+*Scriptcontext.echo*
 
-\[\] 、 **IPrinterScriptContext**関連するプロパティ バッグへのアクセスを提供するオブジェクト。
-*printerStream*
+関連するプロパティバッグへのアクセスを提供する**Iプリンター Scriptcontext**オブジェクトを\] に \[します。
+*プリンターストリーム*
 
-\[\] 、 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream) USB バスへの読み取りアクセスを許可するオブジェクト。
+USB バスへの読み取りアクセスを許可する[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)オブジェクト\] の \[ます。
 *printerBidiSchemaResponses*
 
-\[out\]オブジェクトのクエリ キーをすべての応答を格納する、スクリプトを使用します。
+スクリプトがクエリキーへのすべての応答を格納するために使用する\] オブジェクトを \[します。
 戻り値
 
 | 戻り値 | 説明                                                                                             |
 |--------------|---------------------------------------------------------------------------------------------------------|
-| 0            | スクリプトが正常に完了しました。                                                                      |
-| 2            | 接続しているデバイスが不要になった要請されていない状態をサポートし、この関数が再度呼び出されません。 |
+| 0            | スクリプトは正常に完了しました。                                                                      |
+| 2            | アタッチされたデバイスは、要請されていない状態をサポートしなくなったため、この関数を再度呼び出すことはできません。 |
 
 
 
 ## <a name="startprintjob-method"></a>startPrintJob メソッド
 
 
-USBMon は、StartDocPort 中にこのメソッドを呼び出します。 呼び出す**startPrintJob**印刷ストリームを変更するか、印刷デバイスのジョブを印刷中に使用するホスト ベースの要求/応答プロトコルを実装するために、ドライバーを使用します。 ジョブのコンテキスト オブジェクトは、製造元の JavaScript コードと永続的なデータ ストリームへのアクセスを取得するジョブのプロパティを管理できるようにする関数に渡されます。 印刷データを処理する JavaScript コードの JavaScript 配列として渡されます。 **startPrintJob**も次の方法でプリンター デバイスへのアクセスを提供します。
+USBMon は、StartDocPort 中にこのメソッドを呼び出します。 **StartPrintJob**を呼び出すと、ドライバーは印刷ストリームを変更したり、印刷デバイスがジョブを印刷するときに使用されるホストベースの要求/応答プロトコルを実装したりすることができます。 ジョブコンテキストオブジェクトが関数に渡され、製造元の JavaScript コードがジョブのプロパティを管理し、永続データストリームにアクセスできるようにします。 印刷データは、javascript コードが処理するための JavaScript 配列として渡されます。 **startPrintJob**は、次の方法でプリンターデバイスへのアクセスも提供します。
 
--   印刷のストリームを使用して
+-   印刷ストリーム経由
 
--   処理する USBMon の Bidi スキーマの応答を返す可能性のあるオブジェクトを使って
+-   USBMon が処理するための Bidi スキーマ応答を返すことができるオブジェクト経由
 
 構文
 
@@ -128,29 +128,29 @@ function startPrintJob(jobScriptContext, printerStream, printerBidiSchemaRespons
 
 *jobScriptContext*
 
-\[\] 、 [ **IPrinterScriptUsbJobContext** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterscriptusbjobcontext)ジョブのプロパティ バッグと永続的なデータ ストリームを製造元の JavaScript コードへのアクセスを提供するオブジェクト。
-*printerStream*
+を \[、 [**Iprinterscriptusbjobcontext**](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterscriptusbjobcontext)オブジェクトを\] します。これにより、製造元の JavaScript コードがジョブプロパティバッグと永続データストリームにアクセスできるようになります。
+*プリンターストリーム*
 
-\[\] 、 **IPrinterScriptableSequentialStream**オブジェクト、製造元の JavaScript コードが、印刷デバイスにデータの読み書きに使用できます。
+製造元の JavaScript コードで印刷デバイスのデータの読み取りと書き込みを行うために使用できる**IPrinterScriptableSequentialStream**オブジェクト\] の \[ます。
 *printerBidiSchemaResponses*
 
-\[out\] 、 [ **IPrinterBidiSchemaResponses** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaresponses) Bidi スキーマの値の変更/更新を返す、製造元の JavaScript コードを使用しているオブジェクトします。
+製造元の JavaScript コードで Bidi スキーマ値の変更/更新を返すために使用できる[**IPrinterBidiSchemaResponses**](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaresponses)オブジェクト\] \[します。
 
 | 戻り値 | 説明                                                                             |
 |--------------|-----------------------------------------------------------------------------------------|
-| 0            | 成功しました。                                                                                |
-| 1            | 失敗時-クリーンアップ ジョブのコンテキスト オブジェクトと、印刷スプーラーをエラー コードを返します。 |
+| 0            | ブランド.                                                                                |
+| 1            | 失敗–ジョブコンテキストオブジェクトをクリーンアップし、エラーコードを印刷スプーラに返します。 |
 
 
 
 ## <a name="writeprintdata-method"></a>writePrintData メソッド
 
 
-USBMon は、writePort 中にこのメソッドを呼び出します。 呼び出す**writePrintData**印刷ストリームを変更するか、印刷デバイスのジョブを印刷中に使用するホスト ベースの要求/応答プロトコルを実装するために、ドライバーを使用します。 ジョブのコンテキスト オブジェクトは、製造元の JavaScript コードと永続的なデータ ストリームへのアクセスを取得するジョブのプロパティを管理できるようにするメソッドに渡されます。 印刷データを処理する JavaScript コードの JavaScript 配列として渡されます。 **writePrintData**も次の方法でプリンター デバイスへのアクセスを提供します。
+USBMon は、writePort 中にこのメソッドを呼び出します。 **Writeprintdata**を呼び出すと、ドライバーは印刷ストリームを変更したり、印刷デバイスがジョブを印刷している間に使用されるホストベースの要求/応答プロトコルを実装したりすることができます。 ジョブコンテキストオブジェクトはメソッドに渡され、製造元の JavaScript コードがジョブのプロパティを管理し、永続データストリームにアクセスできるようにします。 印刷データは、javascript コードが処理するための JavaScript 配列として渡されます。 **Writeprintdata**は、次の方法でプリンターデバイスへのアクセスも提供します。
 
--   印刷のストリームを使用して
+-   印刷ストリーム経由
 
--   処理する USBMon の Bidi スキーマの応答を返す可能性のあるオブジェクトを使って
+-   USBMon が処理するための Bidi スキーマ応答を返すことができるオブジェクト経由
 
 ```javascript
 function writePrintData(jobScriptContext, writePrintDataProgress, printData, printerStream, printerBidiSchemaResponses);
@@ -160,19 +160,19 @@ function writePrintData(jobScriptContext, writePrintDataProgress, printData, pri
 
 *jobScriptContext*
 
-\[\] 、 **IPrinterScriptUsbJobContext**ジョブのプロパティ バッグと永続的なデータ ストリームを製造元の JavaScript コードへのアクセスを提供するオブジェクト。
+を \[、 **Iprinterscriptusbjobcontext**オブジェクトを\] します。これにより、製造元の JavaScript コードがジョブプロパティバッグと永続データストリームにアクセスできるようになります。
 *writePrintDataProgress*
 
-\[\] 、 **IPrinterScriptableSequentialStream**オブジェクト、製造元の JavaScript コードは、印刷デバイスにデータの読み書きに使用できます。
+製造元の JavaScript コードが印刷デバイスに対してデータの読み取りと書き込みを行うために使用できる**IPrinterScriptableSequentialStream**オブジェクト\] で \[します。
 *printData*
 
-\[\] 、 **IDispatch**オブジェクト、現在の印刷データの JavaScript 配列。 *PrintData*パラメーターは、いずれか 1 つのデータ ストリームにキャッシュする前にデータを操作する JavaScript コードを使用できます*jobScriptContext*経由でプリンターに送信したり *。printerStream*します。
-*printerStream*
+現在の印刷データの JavaScript 配列である**IDispatch**オブジェクト\] で \[ます。 *Printdata*パラメーターを使用すると、JavaScript コードでデータを操作してから、 *jobscriptcontext*内のいずれかのデータストリームにキャッシュするか、またはプリンター*ストリーム*を使用してプリンターに送信することができます。
+*プリンターストリーム*
 
-\[\] 、 **IPrinterScriptableSequentialStream**オブジェクト、製造元の JavaScript コードは、印刷デバイスにデータの読み書きに使用できます。
+製造元の JavaScript コードが印刷デバイスに対してデータの読み取りと書き込みを行うために使用できる**IPrinterScriptableSequentialStream**オブジェクト\] で \[します。
 *printerBidiSchemaResponses*
 
-\[out\] 、 **IPrinterBidiSchemaResponses** Bidi スキーマを返す値の変更または更新プログラム、製造元の JavaScript コードを使用しているオブジェクトします。
+製造元の JavaScript コードで Bidi スキーマ値の変更または更新を返すために使用できる**IPrinterBidiSchemaResponses**オブジェクト\] \[します。
 <table>
 <colgroup>
 <col width="50%" />
@@ -187,25 +187,25 @@ function writePrintData(jobScriptContext, writePrintDataProgress, printData, pri
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td>成功しました。 印刷データ ストリームからバイト数の処理 (<em>printData</em>) 経由で返されます<em>writePrintDataProgress</em>します。</td>
+<td>ブランド. 印刷データストリームから処理されたバイト数 (<em>printdata</em>) は、 <em>Writeprintdataprogress</em>を通じて返されます。</td>
 </tr>
 <tr class="even">
 <td>1</td>
-<td>失敗時-印刷スプーラーには、エラー コードを返します。</td>
+<td>失敗–印刷スプーラにエラーコードを返します。</td>
 </tr>
 <tr class="odd">
 <td>2</td>
-<td><p>再試行 - (Bidi イベントを含む) における Bidi スキーマ更新プログラムで処理<em>printerBidiSchemaResponses</em>、データの処理を続行する製造元のコードを許可するには、もう一度 JavaScript 関数を呼び出します。</p>
-<p>印刷データ ストリームからバイト数の処理 (<em>printData</em>) 経由で返されます<em>writePrintDataProgress</em>します。</p></td>
+<td><p>再試行- <em>printerBidiSchemaResponses</em>の bidi スキーマ更新 (bidi イベントを含む) をすべて処理してから、JavaScript 関数を再度呼び出して、製造元のコードがデータの処理を続行できるようにします。</p>
+<p>印刷データストリームから処理されたバイト数 (<em>printdata</em>) は、 <em>Writeprintdataprogress</em>を通じて返されます。</p></td>
 </tr>
 <tr class="even">
 <td>3</td>
-<td><p>DeviceBusy – デバイスの通信チャネルを受け入れていませんデータこの時点で。 これは、操作では、エラーは示されません。 USBMon は、デバイスがビジー状態でと、後でもう一度、関数を呼び出す、スプーラーを知らせる必要があります。</p>
-<p>印刷データ ストリームからバイト数の処理 (<em>printData</em>) 経由で返されます<em>writePrintDataProgress</em>します。</p></td>
+<td><p>DeviceBusy –デバイスの通信チャネルは、現時点ではデータを受け入れていません。 これはエラーを示すものではありません。 USBMon は、デバイスがビジー状態であることをスプーラに知らせ、後で再び関数を呼び出します。</p>
+<p>印刷データストリームから処理されたバイト数 (<em>printdata</em>) は、 <em>Writeprintdataprogress</em>を通じて返されます。</p></td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>AbortTheJob – デバイスを続行できません、ジョブを処理または、ユーザーが印刷デバイスの前面パネルを使用してジョブをキャンセルします。 USBMon では、印刷ジョブを中止するメッセージを受信したときに、印刷スプーラーを返す前に、ジョブを中止する情報を渡します。</td>
+<td>ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td>ジョブのキャンセル–デバイスはジョブの処理を続行できません。または、ユーザーが印刷デバイスの前面パネルを使用してジョブを取り消しました。 USBMon は、印刷ジョブを中止するためのメッセージを受信すると、ジョブを中止するために情報を印刷スプーラに渡してから制御を戻します。</td>
 </tr>
 </tbody>
 </table>
@@ -215,13 +215,13 @@ function writePrintData(jobScriptContext, writePrintDataProgress, printData, pri
 ## <a name="endprintjob-method"></a>endPrintJob メソッド
 
 
-USBMon は、endDocPort 中にこのメソッドを呼び出します。 呼び出す**endPrintJob**印刷ストリームを変更するか、印刷デバイスのジョブを印刷中に使用するホスト ベースの要求/応答プロトコルを実装するために、ドライバーを使用します。 ジョブ コンテキスト オブジェクトは、製造元の JavaScript コードを許可するメソッドに渡されます。
+USBMon は、endDocPort 中にこのメソッドを呼び出します。 **EndPrintJob**を呼び出すと、ドライバーは印刷ストリームを変更したり、印刷デバイスがジョブを印刷するときに使用されるホストベースの要求/応答プロトコルを実装したりすることができます。 ジョブコンテキストオブジェクトがメソッドに渡され、製造元の JavaScript コードで次のことを行うことができます。
 
--   印刷データが永続化の処理が完了します。
+-   保存されているすべての印刷データの処理を完了する
 
--   印刷のストリームを使用してプリンター デバイスへのアクセスします。
+-   印刷ストリーム経由でプリンターデバイスにアクセスする
 
--   応答を処理する USBMon Bidi スキーマを渡すことができるオブジェクトへのアクセスします。
+-   USBMon に対する Bidi スキーマ応答を渡すことができるオブジェクトへのアクセス
 
 ```javascript
 function endPrintJob(jobScriptContext, printerStream, printerBidiSchemaResponses);
@@ -231,62 +231,62 @@ function endPrintJob(jobScriptContext, printerStream, printerBidiSchemaResponses
 
 *jobScriptContext*
 
-\[\] An IPrinterScriptUsbJobContext オブジェクト、ジョブのプロパティ バッグと永続的なデータ ストリームに、製造元の JavaScript コードのアクセスです。
-*printerStream*
+を \[、IPrinterScriptUsbJobContext オブジェクトを\] します。これにより、製造元の JavaScript コードがジョブプロパティバッグと永続データストリームにアクセスできるようになります。
+*プリンターストリーム*
 
-\[\]製造元の JavaScript コードは、印刷デバイスにデータの読み書きに使用できる、IPrinterScriptableSequentialStream オブジェクト。
+製造元の JavaScript コードが印刷デバイスに対してデータの読み取りと書き込みを行うために使用できる IPrinterScriptableSequentialStream オブジェクト\] で \[します。
 *printerBidiSchemaResponses*
 
-\[out\] An IPrinterBidiSchemaResponses オブジェクト、製造元の JavaScript コードが、Bidi スキーマを返す値の変更または更新プログラムを使用できます。
+製造元の JavaScript コードで Bidi スキーマ値の変更または更新を返すために使用できる IPrinterBidiSchemaResponses オブジェクト\] \[します。
 
 | 戻り値 | 説明                                                                                                                                                                                                               |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0            | 成功時-クリーンアップ ジョブのコンテキスト オブジェクトと、印刷スプーラーを戻り値の成功します。                                                                                                                                         |
-| 1            | 失敗時-クリーンアップ ジョブのコンテキスト オブジェクトと、印刷スプーラーをエラー コードを返します。                                                                                                                                   |
-| 2            | 再試行 - (Bidi イベントを含む) における Bidi スキーマ更新プログラムで処理*printerBidiSchemaResponses*、データの処理を続行する製造元の JavaScript コードを許可するには、もう一度 JavaScript 関数を呼び出します。 |
+| 0            | 成功–ジョブコンテキストオブジェクトをクリーンアップし、印刷スプーラに成功を返します。                                                                                                                                         |
+| 1            | 失敗–ジョブコンテキストオブジェクトをクリーンアップし、エラーコードを印刷スプーラに返します。                                                                                                                                   |
+| 2            | 再試行- *printerBidiSchemaResponses*の bidi スキーマ更新 (bidi イベントを含む) をすべて処理してから、javascript 関数を再度呼び出して、製造元の javascript コードがデータの処理を続行できるようにします。 |
 
 
 
-## <a name="bidi-over-secondary-usb"></a>セカンダリ USB 経由での Bidi
+## <a name="bidi-over-secondary-usb"></a>セカンダリ USB 経由の Bidi
 
 
-デバイスが、セカンダリの USB インターフェイスをサポートしているデバイスを使用できるかどうか、 **getSchemas**と**setSchema**に加え、前のセクションで説明した方法、 **requestStatus**メソッド。
+デバイスでセカンダリ USB インターフェイスがサポートされている場合、デバイスは、 **Requeststatus**メソッドに加えて、前のセクションで説明した**Getschemas**および**setschema**メソッドを使用できます。
 
 ## <a name="requeststatus-method"></a>requestStatus メソッド
 
 
-代わりにこのメソッドが呼び出されます**getStatus**場合、 **BidiUSBStatusInterface** v4 ドライバーのマニフェスト ファイルでディレクティブが指定されています。 **requestStatus**デバイスが印刷中に、印刷デバイスからステータスを取得するために使用します。
+このメソッドは、 **getStatus**ではなく、 **Bidiusbstatusinterface**ディレクティブが v4 ドライバーのマニフェストファイルで指定されている場合に呼び出されます。 **Requeststatus**は、デバイスの印刷中に印刷デバイスから状態を取得するために使用されます。
 
-次の図は、シナリオを示す双方向の USB 拡張機能のアーキテクチャの概要を**BidiUSBStatusInterface**ディレクティブが指定されており、別の USB 経由で通信がルーティングされるためインターフェイスです。
+次の図は、USB Bidi 拡張アーキテクチャの概要を示しています。これは、 **Bidiusbstatusinterface**ディレクティブが指定されていて、通信が代替の usb インターフェイスを経由してルーティングされるシナリオを示しています。
 
-![requeststatus メソッドを使用した usb bidi エクステンダーのアーキテクチャ](images/usbbidiext-arch2.png)
+![requeststatus メソッドを使用した usb bidi エクステンダーアーキテクチャ](images/usbbidiext-arch2.png)
 
-このメソッドは、印刷時に繰り返し呼び出されます。 デバイスはデータのみを返す場合、使用可能になるし、スクリプトが理解できると想定されます。 デバイスが要請された状態をサポートしていない、またはこのメソッドをもう一度呼び出す必要はありません、スクリプトは 2 の値を返す必要があります、 **getStatus**実行スレッドが正常に終了する USBMon でします。
+このメソッドは、印刷中に繰り返し呼び出されます。 使用可能な場合はデバイスがデータを返すだけで、スクリプトではそれを理解できることが想定されています。 デバイスが要請された状態をサポートしていない場合、またはこのメソッドを再度呼び出す必要がない場合、スクリプトは値2を返す必要があります。これにより、 **getStatus**実行スレッドが usbmon で正常に終了するように指示されます。
 
 パラメーター
 
-*scriptContext*
+*Scriptcontext.echo*
 
-\[\] 、 **IPrinterScriptContext**関連するプロパティ バッグへのアクセスを提供するオブジェクト。
-*printerStream*
+関連するプロパティバッグへのアクセスを提供する**Iプリンター Scriptcontext**オブジェクトを\] に \[します。
+*プリンターストリーム*
 
-\[\] 、 **IPrinterScriptableSequentialStream**読み取りおよび USB バスへの書き込みアクセスを許可するオブジェクト。
+USB バスへの読み取りおよび書き込みアクセスを許可する**IPrinterScriptableSequentialStream**オブジェクト\] の \[ます。
 *printerBidiSchemaResponses*
 
-\[out\]オブジェクトのクエリ キーをすべての応答を格納する、スクリプトを使用します。
+スクリプトがクエリキーへのすべての応答を格納するために使用する\] オブジェクトを \[します。
 戻り値
 
 | 戻り値 | 説明                                                                                           |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| 0            | スクリプトが正常に完了しました。                                                                    |
-| 2            | 接続しているデバイスが不要になった要請された状態をサポートし、この関数が再度呼び出されません。 |
+| 0            | スクリプトは正常に完了しました。                                                                    |
+| 2            | アタッチされたデバイスは、要請された状態をサポートしなくなったため、この関数を再度呼び出すことはできません。 |
 
 
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
-[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)  
-[USB Bidi エクステンダー](usb-bidi-extender.md)  
+[**Iプリンター Scriptcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
+[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)  
+[USB Bidi Extender](usb-bidi-extender.md)  
 
 
 

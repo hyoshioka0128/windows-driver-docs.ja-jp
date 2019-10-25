@@ -1,9 +1,9 @@
 ---
-title: ndiskd.wdiadapter
-description: Ndiskd.wdiadapter 拡張機能では、WDIWiFi CAdapter 構造に関する情報が表示されます。 パラメーターなしでこの拡張機能を実行する場合 ndiskd WDIWiFi CAdapter 構造体のすべての一覧が表示されます。
+title: ndiskd wdiadapter
+description: Ndiskd 拡張機能は、WDIWiFi CAdapter 構造体に関する情報を表示します。 パラメーターを使用せずにこの拡張機能を実行すると、ndiskd には、すべての WDIWiFi CAdapter 構造の一覧が表示されます。
 ms.assetid: 1AC069E8-CF87-459B-9C56-DDC1A6F765A8
 keywords:
-- デバッグ ndiskd.wdiadapter Windows
+- wdiadapter Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +12,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 725e0e92174b84ea40619ac40609358a5d63b22f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a79188b8a0b08cdbde7862714b8c67d289705a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362453"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837649"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
 
 
-**! Ndiskd.wdiadapter**拡張機能が、WDIWiFi に関する情報を表示します。CAdapter 構造体。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべて WDIWiFi の一覧が表示されます。CAdapter 構造体。
+**! Ndiskd**拡張機能は、WDIWiFi に関する情報を表示します。CAdapter 構造体。 パラメーターを使用せずにこの拡張機能を実行すると、! ndiskd にはすべての WDIWiFi の一覧が表示されます。CAdapter 構造体。
 
-WDI ミニポート ドライバーの詳細については、次を参照してください。、 [WDI ミニポート ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)します。
+WDI ミニポートドライバーの詳細については、「 [WDI ミニポートドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)」を参照してください。
 
-WDI ミニポート ドライバー リファレンスの詳細については、次を参照してください。 [WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+WDI ミニポートドライバーリファレンスの詳細については、「 [WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
 ```console
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 CAdapter オブジェクトのハンドル。
 
 <span id="_______-pm______"></span><span id="_______-PM______"></span> *-pm*   
-電源管理の状態と機能を示しています。
+電源管理の状態と機能を表示します。
 
 <span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span> *-rcvfilter*   
-表示には、フィルター処理機能が表示されます。
+受信フィルター処理機能を示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-実行、 **! ndiskd.wdiadapter**ごと、WDI アダプターの詳細情報と共に、すべての CAdapter オブジェクトの一覧を表示するパラメーターなしで拡張機能。 次の例では、1 つだけ CAdapter 構造ですがあります。 関連付けられている、WDI アダプターのハンドルは、ffffc804af396000 です。
+パラメーターを付けずに **! ndiskd wdiadapter**拡張機能を実行すると、すべての cadapter オブジェクトの一覧と、それぞれの WDI アダプターの詳細が表示されます。 次の例では、CAdapter 構造体が1つしかありません。 関連付けられている WDI アダプターのハンドルは ffffc804af396000 です。
 
 ```console
 1: kd> !ndiskd.wdiadapter
@@ -108,7 +108,7 @@ MORE INFORMATION
     Power management                       Receive filtering
 ```
 
-「電源管理」CAdapter 構造体の説明の下部にある「フィルター処理を受信」のリンクをクリックするか、または入力することができますので、 **! ndiskd.wdiadapter-処理**コマンドかと、 *pm*または *- rcvfilter*オプション。 次の例の出力を示しています、 *- rcvfilter*オプション。
+ここで、CAdapter 構造の説明の下部にある [電源管理] リンクと [受信フィルター処理] リンクをクリックするか、 *-pm*または *-rcvfilter*オプションを使用して **! ndiskd**コマンドを入力できます。 次の例は、 *-rcvfilter*オプションの出力を示しています。
 
 ```console
 1: kd> !ndiskd.wdiadapter ffffc804af396000 -rcvfilter
@@ -134,22 +134,22 @@ RECEIVE FILTER
     Max lookahead split size               0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[WDI ミニポート ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
+[WDI ミニポートドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
-[WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: KSK プロパティ\_CAMERACONTROL\_拡張\_VFR
-description: Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VFR
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。
 ms.assetid: 9B528421-B5AA-4092-9F7B-71A18732ABA8
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_VFR ストリーミングメディアデバイス
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 726865d7e1ffb492026bf1f55172ca39b038d49d
-ms.sourcegitcommit: 96592088b276de87fc88dea3bb037654c9b31b11
+ms.openlocfilehash: 0b13e59c269bd345f045af64461cb8b768246e9b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248409"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823934"
 ---
-# <a name="ksproperty_cameracontrol_extended_vfr"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_VFR
+# <a name="ksproperty_cameracontrol_extended_vfr"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VFR
 
-Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。 これは、ビデオ pin の pin レベルコントロールです。 プレビューと写真の場合、フレームレートの変動は完全にドライバーによって異なり、クライアントが制御することはできません。
+KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変フレームレートが必要かどうかを指定するために使用されるプロパティ ID です。 これは、ビデオ pin の pin レベルコントロールです。 プレビューと写真の場合、フレームレートの変動は完全にドライバーによって異なり、クライアントが制御することはできません。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変
 </colgroup>
 <thead>
 <tr class="header">
-<th>スコープ</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変
 </tbody>
 </table>
 
-次のフラグは、 **KSCAMERA\_extendedprop\_ヘッダーに配置できます。Flags**フィールド。ビデオの可変フレームレートをオンまたはオフにするために使用されます。 既定では、ドライバーによって設定されます。
+次のフラグは、 **KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。Flags**フィールド。ビデオの可変フレームレートをオンまたはオフにするために使用されます。 既定では、ドライバーによって設定されます。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VFR_OFF   0x0000000000000000  
@@ -57,7 +57,7 @@ Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_VFR は、ドライバーで可変
 ```
 VFR\_オフに設定した場合、ドライバーはビデオ pin の固定フレームレートを提供します。
 
-[VFR\_] を [オン] に設定した場合、フレームレートはドライバーによって自動的に決定され、ビデオ pin のキャプチャ条件とシナリオによって異なります。 VFR\_オンが設定されている場合、許可される最大フレームレートは、ビデオ記録用に選択したメディアの種類に埋め込まれている固定フレームレートによってさらに決まります。
+VFR\_に設定した場合、フレームレートはドライバーによって自動的に決定され、ビデオ pin のキャプチャ条件とシナリオに応じて変化することがあります。 [VFR\_オン] が設定されている場合、許可される最大フレームレートは、ビデオ記録用に選択したメディアの種類に埋め込まれている固定フレームレートによってさらに決まります。
 
 ドライバーがビデオの可変フレームレートをサポートしていない場合、ドライバーはこのコントロールを実装しないようにし、可変フレームレートを暗黙的に指定します。
 
@@ -65,7 +65,7 @@ VFR\_オフに設定した場合、ドライバーはビデオ pin の固定フ�
 
 これは同期コントロールであり、キャンセルできません。 このコントロールに定義されている機能はありません。
 
-次の表に、コントロールを使用する場合[**の\_KSCAMERA extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件を示します。
+次の表に、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体のフィールドの説明と要件を示します。
 
 <table>
 <colgroup>
@@ -88,7 +88,7 @@ VFR\_オフに設定した場合、ドライバーはビデオ pin の固定フ�
 <td><p>これは、ビデオ pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
+<td><p>Size</p></td>
 <td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">

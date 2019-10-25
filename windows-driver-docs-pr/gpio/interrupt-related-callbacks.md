@@ -1,51 +1,51 @@
 ---
 title: 割り込み関連のコールバック
-description: オプションとして、汎用入出力 (GPIO) コント ローラーのドライバーは、GPIO 割り込みのサポートを提供できます。
+description: オプションとして、汎用 i/o (GPIO) コントローラーのドライバーは、GPIO 割り込みをサポートすることができます。
 ms.assetid: 638B52A0-CB8D-4A79-B7D1-ED2474E46DAE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4260c1ce47ee9d560b3a3c6a985b023995ee4959
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0ac79e60cda3c81ae5835cb8d748ad1450a84cf1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363574"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824940"
 ---
 # <a name="interrupt-related-callbacks"></a>割り込み関連のコールバック
 
 
-オプションとして、汎用入出力 (GPIO) コント ローラーのドライバーは、GPIO 割り込みのサポートを提供できます。 GPIO 割り込みをサポートするためには、GPIO コント ローラーのドライバーは、これらの割り込みを管理するコールバック関数のセットを実装します。 ドライバーには、GPIO フレームワークの拡張機能 (GpioClx) のクライアントとして自身を登録するときに、ドライバーが提供する登録パケット内のこれらのコールバック関数へのポインターが含まれています。 この登録パケットの詳細については、次を参照してください。 [ **GPIO\_クライアント\_登録\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_gpio_client_registration_packet)します。
+オプションとして、汎用 i/o (GPIO) コントローラーのドライバーは、GPIO 割り込みをサポートすることができます。 Gpio 割り込みをサポートするために、GPIO コントローラードライバーは、これらの割り込みを管理するためのコールバック関数のセットを実装します。 ドライバーには、そのドライバーが GPIO framework extension (GpioClx) のクライアントとして登録するときに提供される、登録パケット内のこれらのコールバック関数へのポインターが含まれています。 この登録パケットの詳細については、「 [**GPIO\_CLIENT\_registration\_packet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_gpio_client_registration_packet)」を参照してください。
 
-原則としては、チップ (SoC) チップでのシステムの一部として統合されている GPIO コント ローラーは、SoC チップでのプロセッサによって直接アクセスできるメモリ マップト ハードウェア レジスタを持ちます。 ただし、GPIO コント ローラーは別のデバイス可能性がありますに接続する外部 SoC チップを介してシリアル バスでは、次の図に示すように。
+原則として、チップ (SoC) チップ上のシステムに統合されている GPIO コントローラーには、SoC チップのプロセッサが直接アクセスできるメモリマップトハードウェアレジスタがあります。 ただし、次の図に示すように、別の GPIO コントローラーデバイスがシリアルバスを介して SoC チップに外部接続されている可能性があります。
 
-![統合の gpio コント ローラーと外部の gpio コント ローラー](images/gpioconnects.png)
+![統合された gpio コントローラーと外部 gpio コントローラー](images/gpioconnects.png)
 
-この図では、外部の GPIO コント ローラーは I²C バスに接続されます。 このバスは、SoC、チップの一部として統合されて I²C バス コント ローラーによって制御されます。 外部の GPIO コント ローラーからの割り込み要求行は、統合の GPIO コント ローラー上のピンに接続されます。 [GpioClx DDI](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi)統合 GPIO コント ローラーとこの例では、外部の GPIO コント ローラーの両方に対応できます。
+この図では、外部 GPIO コントローラーが I ² C バスに接続されています。 このバスは、SoC チップの統合された部分である I ² C バスコントローラーによって制御されます。 外部 GPIO コントローラーからの割り込み要求行は、統合された GPIO コントローラーのピンに接続されています。 [Gpioclx DDI](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi)は、この例の統合された gpio コントローラーと外部 gpio コントローラーの両方に対応できます。
 
-GPIO コント ローラーのデバイスがメモリ マップされている場合は、GPIO コント ローラーのドライバーは DIRQL でコント ローラーのハードウェア レジスタを直接アクセスできます。 ただし、GPIO コント ローラーが順番に接続されている場合、GPIO コント ローラー ドライバー アクセス IRQL でのみハードウェア レジスタ = パッシブ\_レベルで説明したよう[パッシブ レベル Isr](https://docs.microsoft.com/windows-hardware/drivers/gpio/passive-level-isrs)します。
+GPIO コントローラーデバイスがメモリにマップされている場合、GPIO コントローラードライバーは DIRQL のコントローラーのハードウェアレジスタに直接アクセスできます。 ただし、GPIO コントローラーが直列に接続されている場合、GPIO コントローラードライバーは、「[受動レベル isr](https://docs.microsoft.com/windows-hardware/drivers/gpio/passive-level-isrs)」で説明されているように、IRQL = パッシブ\_レベルでのみハードウェアレジスタにアクセスできます。
 
-持つメモリ マップト ハードウェア GPIO コント ローラーの登録のドライバーを設定する必要があります、 **MemoryMappedController** GpioClx にドライバーを提供するデバイス情報でフラグ ビットです。 GpioClx がハードウェア レジスタはメモリ マップがないと IRQL でのみ登録、ドライバーがこれらをアクセスできることを想定するそれ以外の場合、パッシブ =\_レベル。 このフラグのビットの詳細については、次を参照してください。 [**コント ローラー\_属性\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags)します。
+メモリマップトハードウェアレジスタがある GPIO コントローラーのドライバーは、ドライバーが GpioClx に提供するデバイス情報に**MemoryMappedController**フラグビットを設定する必要があります。 そうしないと、GpioClx はハードウェアレジスタがメモリマップトではないと想定し、ドライバーは IRQL = パッシブ\_レベルでのみこれらのレジスタにアクセスできます。 このフラグビットの詳細については、「 [**CONTROLLER\_ATTRIBUTE\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_controller_attribute_flags)」を参照してください。
 
-GpioClx では、GPIO コント ローラーから割り込み要求を処理する割り込みサービス ルーチン (ISR) を実装します。 この ISR では、次の割り込みに関連するコールバック関数を呼び出します。
+GpioClx は、GPIO コントローラーからの割り込み要求を処理するための割り込みサービスルーチン (ISR) を実装します。 この ISR は、次の割り込みに関連するコールバック関数を呼び出します。
 
-[*クライアント\_ClearActiveInterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts)
-[*クライアント\_MaskInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_mask_interrupts) 
- [ *クライアント\_QueryActiveInterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts)
-[*クライアント\_QueryEnabledInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts) 
-[*クライアント\_UnmaskInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt) DIRQL またはパッシブのいずれかでこれらの関数を呼び出す\_DIRQL で GpioClx の ISR を実行するかどうかに応じて、レベル、またはパッシブ\_レベル。 場合は、ISR で DIRQL でこれらの関数が呼び出す**MemoryMappedController** = 1、およびパッシブ\_レベル**MemoryMappedController** = 0。 いずれの場合も、ISR 自動的にシリアル化のコールバックにこれらの関数のもう 1 つの呼び出しの途中でこれらの関数の 1 つの呼び出しは行われないようにします。
+クライアント[ *\_clearactiveinterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts)
+[*Client\_Maskinterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_mask_interrupts)
+[*client\_Queryactiveinterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts)
+[*client\_queryactiveinterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts)
+[*クライアント\_UnmaskInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt)これらの関数は、GpioClx の ISR が dirql またはパッシブ\_レベルで実行されるかどうかに応じて、DIRQL またはパッシブ\_レベルで呼び出されます。 ISR は、 **MemoryMappedController** = 1 の場合は Dirql、 **MemoryMappedController** = 0 の場合はパッシブ\_レベルでこれらの関数を呼び出します。 どちらの場合も、ISR は自動的にコールバックをシリアル化して、これらの関数のいずれかの呼び出しが、これらの関数の別の呼び出しの途中で発生しないようにします。
 
-GPIO フレームワークの拡張機能がパッシブにのみ、次の割り込みに関連するコールバック関数を呼び出す\_かどうかに関係なく、レベル、 **MemoryMappedController** フラグの設定。
+GPIO framework 拡張機能は、 **MemoryMappedController** フラグが設定されているかどうかに関係なく、パッシブ\_レベルでのみ、次の割り込み関連のコールバック関数を呼び出します。
 
-[*クライアント\_DisableInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disable_interrupt)
-[*クライアント\_EnableInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)場合、 **MemoryMappedController**フラグが設定されていない、すべての割り込みに関連するコールバック関数はパッシブで呼び出されます\_レベル。 GpioClx は、これらの関数のもう 1 つの呼び出しの途中でこれらの関数の 1 つの呼び出しが行われないように、これらの関数の呼び出しを自動的にシリアル化します。
+[*クライアント\_disableinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disable_interrupt)
+[*Client\_enableinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt) **MemoryMappedController**フラグが設定されていない場合は、割り込みに関連するすべてのコールバック関数がパッシブ\_レベルで呼び出されます。 GpioClx はこれらの関数の呼び出しを自動的にシリアル化して、これらの関数のいずれかの呼び出しの途中でこれらの関数を呼び出すことができないようにします。
 
-ただし場合、 **MemoryMappedController**フラグが設定されて、*クライアント\_EnableInterrupt*と*クライアント\_DisableInterrupt*関数必要があります明示的に同期の割り込みの有効化し DIRQL で他の 4 つの割り込みに関連するコールバック関数を呼び出す GpioClx ISR に操作を無効にします。
+ただし、 **MemoryMappedController**フラグが設定されている場合、*クライアント\_enableinterrupt*関数と*クライアント\_disableinterrupt* functions は明示的に割り込みの有効化と無効化の操作を gpioclx に同期する必要があります。ISR: DIRQL で、他の4つの割り込み関連のコールバック関数を呼び出します。
 
-通常、他<em>クライアント\_</em>Xxx コールバック関数 (名前にが含まれていません"*割り込み*") 割り込みに関連する処理を実行しないと、そのため、同期させる必要はありませんGpioClx ISR に ただし、いずれかの場合これらの関数がパッシブで呼び出されます\_レベルと DIRQL に割り込み関連の関数によってアクセスされる割り込み設定にアクセスするコードを含めることが、このコードは、ISR に同期する必要があります
+通常、他の<em>クライアント\_</em>Xxx コールバック関数 (名前に "*interrupt*" が含まれていない) は割り込みに関連する処理を実行しないため、GpioClx ISR と同期する必要はありません。 ただし、これらの関数のいずれかがパッシブ\_レベルで呼び出された場合に、DIRQL で割り込みに関連する関数によってアクセスされる割り込み設定にアクセスするコードが含まれていると、このコードを ISR に同期する必要があります。
 
-割り込みの同期をサポートするためには、GpioClx は、一連の割り込みのロックを実装します。 パッシブで実行されているコールバック関数\_レベルを呼び出すことができます、 [ **GPIO\_CLX\_AcquireInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_acquireinterruptlock)割り込みのロックを取得するメソッドを呼び出すと、[ **GPIO\_CLX\_ReleaseInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_releaseinterruptlock)ロックを解放するメソッド。 関数は、割り込みのロックを保持しているときに、GpioClx ISR を実行できず、この ISR、割り込みに関連するコールバック関数を呼び出すことはできません。 迅速に処理する GPIO 割り込みを有効にするには、ドライバーする必要があります、割り込みに対してロックを保持されなくが必要です。
+割り込み同期をサポートするために、GpioClx は一連の割り込みロックを実装します。 パッシブ\_レベルで実行されるコールバック関数は、 [**gpio\_clx\_AcquireInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_acquireinterruptlock)メソッドを呼び出して割り込みロックを取得し、 [**gpio\_Clx\_ReleaseInterruptLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_releaseinterruptlock)メソッドを呼び出して、制限. 関数が割り込みロックを保持している場合、GpioClx ISR を実行できず、この ISR は割り込みに関連するコールバック関数を呼び出すことができません。 GPIO 割り込みが適時に処理されるようにするには、ドライバーが必要以上に割り込みロックを保持する必要があります。
 
-詳細については、次を参照してください。 [GPIO コント ローラーのドライバーの同期を中断](https://docs.microsoft.com/windows-hardware/drivers/gpio/interrupt-synchronization-for-gpio-controller-drivers)します。
+詳細については、「 [GPIO Controller ドライバーの割り込み同期](https://docs.microsoft.com/windows-hardware/drivers/gpio/interrupt-synchronization-for-gpio-controller-drivers)」を参照してください。
 
  
 

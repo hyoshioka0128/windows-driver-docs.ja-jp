@@ -3,32 +3,32 @@ title: エラーの挿入への参加
 description: エラーの挿入への参加
 ms.assetid: 0bd9efbd-e98d-457a-a28f-e09dcb5ae24d
 keywords:
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラーの挿入
-- WHEA WDK、エラーの挿入
-- ハードウェア エラー WDK WHEA、エラーの挿入
-- エラー WDK WHEA、エラーの挿入
-- プラットフォーム固有のハードウェア エラー ドライバー プラグインを WDK WHEA、エラーの挿入
-- PSHED プラグイン WDK WHEA、エラーの挿入
-- WDK WHEA エラーの挿入
+- Windows ハードウェアエラーアーキテクチャ WDK、エラー挿入
+- WHEA WDK、エラー挿入
+- ハードウェアエラー WDK WHEA、エラー挿入
+- エラー WDK WHEA、エラー挿入
+- プラットフォーム固有のハードウェアエラードライバープラグイン WDK WHEA、エラー挿入
+- PSHED プラグイン WDK WHEA、エラー挿入
+- エラー挿入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1163a64508a4f003f3ad12d76d81925cff0c762d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35dd295977e61e374606baa3d82e1f4fb51d527c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826187"
 ---
 # <a name="participating-in-error-injection"></a>エラーの挿入への参加
 
 
-エラー情報の取得に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
+エラー情報の取得に参加するには、次のコールバック関数を実装する必要があります。
 
-[*GetInjectionCapabilities*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
+[*GetInjectionCapabilities*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
 
-[*InjectError*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_inject_error)
+[*InjectError*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_inject_error)
 
-次のコード例では、これらのコールバック関数を実装する方法を示します。
+これらのコールバック関数を実装する方法を次のコード例に示します。
 
 ```cpp
 //
@@ -87,7 +87,7 @@ NTSTATUS
 }
 ```
 
-エラーの挿入に参加している PSHED プラグインを指定する必要があります、 **PshedFAErrorInjection**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)オペレーティング システム自体。
+エラー挿入に参加する**PshedFAErrorInjection**は、オペレーティングシステムに[登録](registering-a-pshed-plug-in.md)するときに、フラグを指定する必要があります。
 
  
 

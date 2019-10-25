@@ -3,18 +3,18 @@ title: バッテリ クラス デバイスの初期化
 description: バッテリ クラス デバイスの初期化
 ms.assetid: d385533e-790a-47b3-a3d2-d620cbd40a4d
 keywords:
-- バッテリ クラス ドライバー WDK、デバイスの初期化
-- バッテリ miniclass ドライバー WDK を登録します。
-- バッテリのデバイスの登録
-- デバイスのバッテリの初期化
+- バッテリクラスドライバー WDK、デバイスの初期化
+- バッテリ miniclass ドライバー WDK、登録
+- バッテリデバイスの登録
+- バッテリデバイスの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2c65fe4a1f52fee005f115d1c8cc9b0603cb539
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f62d7119927220f90512f29a0bbefcb38d968f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354063"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832220"
 ---
 # <a name="initializing-the-battery-class-device"></a>バッテリ クラス デバイスの初期化
 
@@ -22,35 +22,35 @@ ms.locfileid: "67354063"
 ## <span id="ddk_initializing_the_battery_class_device_dg"></span><span id="DDK_INITIALIZING_THE_BATTERY_CLASS_DEVICE_DG"></span>
 
 
-[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンがバッテリ クラスのデバイスを初期化し、クラス ドライバーを miniclass ドライバーに登録する必要があります。 そのため、miniclass ドライバーを呼び出すには、 [ **BatteryClassInitializeDevice** ](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)ルーチン。 この呼び出しは、2 つのドライバーのサポート ルーチンを使用できるように、クラスのドライバーと miniclass ドライバーを登録します。 この呼び出しは、複合バッテリと電源メーターでわかるようにもバッテリ デバイスと、システムに登録します。
+[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンは、バッテリクラスデバイスを初期化し、miniclass ドライバーをクラスドライバーに登録する必要があります。 これを行うために、miniclass ドライバーは[**BatteryClassInitializeDevice**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)ルーチンを呼び出します。 この呼び出しは、miniclass ドライバーをクラスドライバーに登録して、2つのドライバーが互いのサポートルーチンを使用できるようにします。 また、この呼び出しによって、バッテリデバイスがシステムに登録され、複合バッテリと電力メーターで認識できるようになります。
 
-**BatteryClassInitializeDevice**へのポインターが必要です、 [**バッテリ\_ミニポート\_情報**](https://docs.microsoft.com/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)次の情報を含む構造体。
+**BatteryClassInitializeDevice**には、次の情報を含む[**バッテリ\_ミニポート\_情報**](https://docs.microsoft.com/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)構造体へのポインターが必要です。
 
--   **MajorVersion**と**MinorVersion**、この miniclass ドライバーがサポートするクラス ドライバーのメジャーおよびマイナー バージョン番号。
+-   **MajorVersion**と**MinorVersion**で、この miniclass ドライバーがサポートするクラスドライバーのメジャーバージョン番号とマイナーバージョン番号。
 
-    バージョン番号はバッテリとして Batclass.h で定義されている\_クラス\_メジャー\_バージョンとバッテリ\_クラス\_マイナー\_バージョンについては、それぞれします。
+    バージョン番号は Batclass として定義されています。これは、\_メジャー\_バージョンとバッテリ\_クラス\_マイナー\_バージョンにそれぞれ\_クラスです。
 
--   **QueryTag**、miniclass ドライバーのエントリ ポイント[ *BatteryMiniQueryTag* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)ルーチン。
+-   **Querytag**で、miniclass ドライバーの[*BatteryMiniQueryTag*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)ルーチンのエントリポイント。
 
--   **QueryInformation**、miniclass ドライバーのエントリ ポイント[ *BatteryMiniQueryInformation* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback)ルーチン。
+-   **Queryinformation**で、miniclass ドライバーの[*BatteryMiniQueryInformation*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback)ルーチンのエントリポイント。
 
--   **SetInformation**、miniclass ドライバーのエントリ ポイント[ *BatteryMiniSetInformation* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_information_callback)ルーチン。
+-   **Setinformation**で、miniclass ドライバーの[*BatteryMiniSetInformation*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_information_callback)ルーチンのエントリポイント。
 
--   **SetStatusNotify**、miniclass ドライバーのエントリ ポイント[ *BatteryMiniSetStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)ルーチン。
+-   **Setstatusnotify**で、miniclass ドライバーの[*BatteryMiniSetStatusNotify*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)ルーチンのエントリポイント。
 
--   **DisableStatusNotify**、miniclass ドライバーのエントリ ポイント[ *BatteryMiniDisableStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback)ルーチン。
+-   **Disablestatusnotify**で、miniclass ドライバーの[*BatteryMiniDisableStatusNotify*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback)ルーチンのエントリポイント。
 
--   **コンテキスト**、miniclass ドライバーのコンテキスト情報へのポインター。
+-   **コンテキスト**では、miniclass ドライバーのコンテキスト情報へのポインター。
 
-    コンテキスト情報は、クラス ドライバーを呼び出すたびに、miniclass ドライバーに戻されるデバイス拡張機能 FDO へのポインターでは通常、 [BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)ルーチン。
+    コンテキスト情報は通常、FDO デバイス拡張機能へのポインターであり、クラスドライバーが[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_battery/)ルーチンを呼び出すたびに miniclass ドライバーに渡されます。
 
--   **Pdo**デバイスの PDO へのポインター。
+-   **Pdo**では、デバイスの pdo へのポインター。
 
--   **DeviceName**、NULL パラメーター。PnP デバイスの名前ではありません。
+-   **DeviceName**では、NULL パラメーターです。PnP デバイスに名前を指定することはできません。
 
-この構造体を設定した後、miniclass ドライバーをアタッチします自体、バッテリ クラス ドライバーを呼び出すことによって**BatteryClassInitializeDevice**、バッテリにポインターを渡すことと\_ミニポート\_情報構造体。 代わりに、バッテリ クラス ドライバー サポート ルーチンへの後続の呼び出しで使用するを識別するハンドルを受け取ります。 Miniclass ドライバーでは、非ページ メモリで返されるクラス ハンドルを格納する必要があります。
+この構造体を設定した後、miniclass ドライバーは**BatteryClassInitializeDevice**を呼び出し、バッテリ\_ミニポート\_情報構造体へのポインターを渡すことによって、それ自体をバッテリクラスドライバーにアタッチします。 返されると、バッテリクラスドライバーのサポートルーチンへの後続の呼び出しで使用されるハンドルを受け取ります。 Miniclass ドライバーは、返されたクラスハンドルを非ページメモリに格納する必要があります。
 
-呼び出した後**BatteryClassInitializeDevice**、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンが他のデバイスに固有のデータを初期化する必要もあります。
+**BatteryClassInitializeDevice**を呼び出した後、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンは、デバイス固有のその他のデータを初期化する必要がある場合もあります。
 
  
 

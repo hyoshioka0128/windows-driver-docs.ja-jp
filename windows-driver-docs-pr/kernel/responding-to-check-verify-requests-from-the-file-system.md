@@ -3,19 +3,19 @@ title: ファイル システムからの検証チェック要求への応答
 description: ファイル システムからの検証チェック要求への応答
 ms.assetid: 227e65d6-d746-4b16-978d-4d42be9aeb2c
 keywords:
-- リムーバブル メディア、WDK のカーネルは、要求をチェック-検証します。
-- WDK のリムーバブル メディアの要求をチェックことを確認します。
-- 変更要求 WDK リムーバブル メディアをメディア
-- リムーバブル メディアへの変更の確認
-- リムーバブル メディアへの変更を確認しています
+- リムーバブルメディアの WDK カーネル、確認-確認要求
+- 確認-確認要求 WDK リムーバブルメディア
+- メディア変更要求 WDK リムーバブルメディア
+- リムーバブルメディアの変更の確認
+- リムーバブルメディアの変更の確認
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62e86aee271216507619a3825b0b24e5071f946
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8bf2df0db0d517079ab1c5254dbda682522ec949
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373392"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838445"
 ---
 # <a name="responding-to-check-verify-requests-from-the-file-system"></a>ファイル システムからの検証チェック要求への応答
 
@@ -23,14 +23,14 @@ ms.locfileid: "67373392"
 
 
 
-独自の裁量では、ファイル システムは、デバイス ドライバーのディスパッチ エントリ ポイントに IRP を送信できる[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) による要求**Parameters.DeviceIoControl.IoControlCode** I/O スタックを次の設定の場所。
+また、ファイルシステムは、irp [ **\_MJ\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)に対して、デバイスドライバーのディスパッチエントリポイントに irp を送信することができます。これにより、i/o スタックの場所に**DeviceIoControl コード**が設定されています。示し
 
-<a href="" id="ioctl-xxx-check-verify"></a>IOCTL\_*XXX*\_CHECK\_VERIFY  
-場所*XXX*ディスク、テープ、または cd-rom ドライブなどのデバイスの種類です。
+<a href="" id="ioctl-xxx-check-verify"></a>IOCTL\_*XXX*\_チェック\_確認  
+ここで、 *XXX*は、DISK、TAPE、または CDROM などのデバイスの種類です。
 
-ディスクの種類には、両方 unpartitionable (フロッピー) が含まれていると分割可能なリムーバブル メディア デバイス。
+このタイプのディスクには、パーティション分割解除された (フロッピー) デバイスとパーティション分割されたリムーバブルメディアデバイスの両方が含まれています。
 
-基になるデバイス ドライバーが、メディアが変更されていないと判断した場合、ドライバーを返す、IRP を完了する必要があります、 **IoStatus**次の値をブロックします。
+基になるデバイスドライバーによってメディアが変更されていないと判断された場合、ドライバーは IRP を完了し、 **Iostatus**ブロックを次の値で返します。
 
 <table>
 <colgroup>
@@ -43,27 +43,27 @@ ms.locfileid: "67373392"
 <td><p>STATUS_SUCCESS に設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>情報</strong></p></td>
-<td><p>0 に設定します。</p></td>
+<td><p><strong>参照</strong></p></td>
+<td><p>0に設定</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-さらに、デバイスの種類がディスク、cd-rom ドライブと、呼び出し元は、出力バッファーを指定しますまたは、ドライバーを返します、メディア、バッファー内の数を変更する**Irp -&gt;AssociatedIrp.SystemBuffer**設定と**Irp。&gt;IoStatus.Information**に**sizeof**(ULONG)。 この数を返すことによって、ドライバーはその観点から、メディアが変更されたかどうかを判断する機会に、呼び出し元を示します。
+さらに、デバイスの種類が DISK または CDROM で、呼び出し元によって出力バッファーが指定されている場合、ドライバーは**irp-&gt;AssociatedIrp**のバッファーにあるメディア変更数を返し、 **Irp&gt;iostatus**を設定します。**sizeof**(ULONG)。 このカウントを返すことにより、ドライバーは、メディアがパースペクティブから変更されたかどうかを判断する機会を呼び出し元に提供します。
 
-基になるデバイス ドライバーは、メディアが変更されたことを判断した場合、ボリュームがマウントされているかどうかに応じて、別のアクションがかかります。 ボリュームがマウントされている場合 (、VPB\_VPB にマウント済みフラグが設定)、ドライバーは、次を行う必要があります。
+基になるデバイスドライバーによってメディアが変更されたと判断された場合、ボリュームがマウントされているかどうかによって異なる操作が行われます。 ボリュームがマウントされている (VPB\_マウントされたフラグが VPB で設定されている) 場合、ドライバーは次の操作を実行する必要があります。
 
-1.  設定、**フラグ**で、**デバイス オブジェクト**Or で**フラグ**か\_確認\_ボリューム。
+1.  **DeviceObject**でフラグを設定するには **、\_** ボリュームを確認\_で**フラグ**を設定します。
 
-2.  設定、 **IoStatus** IRP が、次のブロックします。
-    -   **ステータス**状態に設定\_確認\_必要な作業
-    -   **情報**を 0 に設定
+2.  IRP の**Iostatus**ブロックを次のように設定します。
+    -   **状態を状態に設定\_** 確認\_必要
+    -   0に設定される**情報**
 
-3.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP の入力を使用します。
+3.  入力 IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。
 
-ドライバーは設定しないで、ボリュームがマウントされていない場合\_確認\_ボリューム ビット。 ドライバーを設定する必要があります**IoStatus.Status**ステータス\_IO\_デバイス\_セットのエラー、 **IoStatus.Information**をゼロにして呼び出す**IoCompleteRequest** IRP にします。
+ボリュームがマウントされていない場合、ドライバーは DO\_VERIFY\_ボリュームビットを設定しないようにする必要があります。 ドライバーは**Iostatus. status**を STATUS\_IO\_デバイス\_エラーに設定し、 **Iostatus. 情報**を0に設定し、IRP で**IoCompleteRequest**を呼び出します。
 
  
 

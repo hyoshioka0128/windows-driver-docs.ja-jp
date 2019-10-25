@@ -3,19 +3,19 @@ title: アーカイブの CLFS サポート
 description: アーカイブの CLFS サポート
 ms.assetid: 5a07d7d2-4939-48f8-bd4c-855af61034fb
 keywords:
-- 共通のログ ファイル システムの WDK カーネルのアーカイブ
-- CLFS WDK のカーネルのアーカイブ
-- アーカイブの WDK CLFS
-- 非一時的なログ WDK CLFS
-- アーカイブ末尾 WDK CLFS
+- WDK カーネルの共通ログファイルシステムアーカイブ
+- CLFS WDK カーネル、アーカイブ
+- WDK CLFS のアーカイブ
+- 非短期ログ WDK CLFS
+- アーカイブテール WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59889d83cffa1a22aee9653c8d1fe3eaa039a2b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8310ff02d3160beaef5abfb70b47652a289305c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837095"
 ---
 # <a name="clfs-support-for-archiving"></a>アーカイブの CLFS サポート
 
@@ -23,15 +23,15 @@ ms.locfileid: "67383354"
 
 
 
-Common Log File System (CLFS) は、専用のログをアーカイブ末尾を保持することでアーカイブをサポートします。 呼び出すと[ **ClfsCreateLogFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatelogfile)専用のログを作成するには、ファイルを設定することができます\_属性\_のアーカイブ フラグ、 *fFlagsAndAttributes*CLFS がログのアーカイブ末尾を維持する必要がありますを指定するパラメーター。 CLFS は、アーカイブ末尾を保持するログと呼ばれる、*短期間ではないログ*します。
+共通ログファイルシステム (CLFS) では、アーカイブテールを保持することで、専用ログのアーカイブをサポートしています。 [**ClfsCreateLogFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile)を呼び出して専用ログを作成する場合は、 *FFLAGSANDATTRIBUTES*パラメーターのファイル\_属性\_archive フラグを設定して、CLFS がログのアーカイブテールを保持するように指定できます。 CLFS がアーカイブテールを保持しているログは、*非短期ログ*と呼ばれます。
 
-データベースでトランザクションを実行して、各トランザクションがログ レコードによって記述される更新プログラムをいくつかあるとします。 特定のトランザクションがコミットし、安定したストレージに書き込まれた後、は、そのトランザクションをかどうかを記述するログ レコードを必要はありません。 ログの中にレコードは必要ありませんは、システム障害が発生した場合の回復を再起動します。 ただし、データベースを保持する安定したストレージ メディアが失敗して、データベース アーカイブされていない最近のメディアで、データベースの更新は失われる可能性があります。
+たとえば、データベースでトランザクションを実行していて、各トランザクションにログレコードで記述された複数の更新が含まれているとします。 特定のトランザクションがコミットされ、安定したストレージに書き込まれた後は、そのトランザクションを記述したログレコードが不要になることがあります。 つまり、システム障害が発生した場合、復旧の再開中にログレコードが必要になることはありません。 ただし、データベースを保持している安定したストレージメディアに障害が発生し、データベースが最近別のメディアに保存されていない場合、データベースの更新が失われる可能性があります。
 
-前の段落には、アーカイブ データベースのレコードがについて説明しますが、他のシナリオでログ レコードをアーカイブする場合があります。 いずれの場合も、アーカイブと、クライアント (ソフトウェア) の役割です。 追跡できますアーカイブ ログのアーカイブ末尾を設定して行いました。 アーカイブ末尾のアーカイブがまだ完了していない、最も古いレコードのログ シーケンス番号 (LSN) では。
+前の段落では、データベースレコードのアーカイブについて説明していますが、他のシナリオではログレコードをアーカイブすることもできます。 どちらの場合も、アーカイブはクライアント (ソフトウェア) の責任です。 ログのアーカイブテールを設定して、実行したアーカイブを追跡することができます。 Archive tail は、アーカイブがまだ完了していない最も古いレコードのログシーケンス番号 (LSN) です。
 
-実際には、2 つの尾部短期間ではないログ: ベース LSN とアーカイブ末尾でマークされた 1 つで 1 つをマークします。 2 つの末尾が離れを配置するには、必要に応じて呼び出すことによって[ **ClfsAdvanceLogBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsadvancelogbase) (または[ **ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfswriterestartarea))、および[ **ClfsSetArchiveTail**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfssetarchivetail)します。 通常、基本の LSN は、トランザクション ロールバックのために必要になりますもまたは回復、および対象のアーカイブが実行されていない最も古いレコードをアーカイブ末尾のポイントを再起動する最も古いレコードを指します。 アーカイブ末尾には、ベースの LSN よりも小さくすることがありますまたはベースの LSN よりも大きいことが考えられますことに注意してください。
+非短期ログには、実際には2つの末尾があります。1つはベース LSN、もう1つはアーカイブテールでマークされています。 [**ClfsAdvanceLogBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsadvancelogbase) (または[**ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfswriterestartarea)) と[**ClfsSetArchiveTail**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfssetarchivetail)を呼び出すことによって、2つの尾部を配置できます。 通常、ベース LSN はトランザクションのロールバックまたは再起動に必要な最も古いレコードを指し、アーカイブテールはアーカイブが実行されていない最も古いレコードを指しています。 アーカイブの末尾がベース LSN よりも小さいか、またはベース LSN よりも大きい可能性があることに注意してください。
 
-ベースの LSN とアーカイブ末尾が重要なを呼び出すと[ **ClfsReadNextLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadnextlogrecord)繰り返しを前の Lsn によってリンクされているレコードのチェーンを読み取るには、元に戻す next Lsn、またはユーザーの Lsn。 **ClfsReadNextLogRecord**はアーカイブ末尾とベースの LSN よりも小さい LSN を持つレコードを読み取れません。 ただし、アーカイブ末尾とベースの LSN 間の LSN がレコードを読み取ります。 次のレコードのチェーンの詳細については、次を参照してください。 [CLFS Stream からのデータ レコードの読み取り](reading-data-records-from-a-clfs-stream.md)します。
+ベース LSN とアーカイブテールは、 [**ClfsReadNextLogRecord**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsreadnextlogrecord)を繰り返し呼び出して、前の lsn、undo-Next lsns、または user lsn によってリンクされたレコードのチェーンを読み取るときに重要です。 **ClfsReadNextLogRecord**は、lsn が archive tail と base lsn の両方より小さいレコードを読み取りません。 ただし、アーカイブテールとベース LSN の間に LSN があるレコードが読み取られます。 次のレコードチェーンの詳細については、「 [CLFS ストリームからのデータレコードの読み取り](reading-data-records-from-a-clfs-stream.md)」を参照してください。
 
  
 

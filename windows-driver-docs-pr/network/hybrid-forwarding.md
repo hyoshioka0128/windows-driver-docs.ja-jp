@@ -1,75 +1,75 @@
 ---
-title: ハイブリッド転送の HYPER-V 拡張可能スイッチ
-description: このセクションには、HYPER-V 拡張可能なスイッチを使用してハイブリッド転送がについて説明します
+title: Hyper-v 拡張可能スイッチのハイブリッド転送
+description: このセクションでは、Hyper-v 拡張可能スイッチを使用したハイブリッド転送について説明します。
 ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4a3b1d2f49e6d3ec2e4717ffe2085e74eb66b68
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 919163be546e9ead02ae862bc2d9f040bf579799
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383704"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823922"
 ---
 # <a name="hybrid-forwarding"></a>ハイブリッド転送
 
 
-NDIS 6.40 以降 (Windows Server 2012 R2、HYPER-V 拡張可能スイッチのアーキテクチャをサポート ハイブリッド転送転送拡張機能と拡張可能スイッチの HYPER-V ネットワーク仮想化 (HNV) コンポーネントによってします。
+NDIS 6.40 (Windows Server 2012 R2 以降の Hyper-v 拡張可能スイッチアーキテクチャでは、拡張可能スイッチの Hyper-v ネットワーク仮想化 (HNV) コンポーネントによるハイブリッド転送と、拡張機能の転送がサポートされています。
 
-**注**  このページに精通していることを前提としています[Network Virtualization using Generic Routing Encapsulation (NVGRE) タスク オフロード](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)と[Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)。
-
- 
-
-## <a name="nvgre-and-non-nvgre-packets"></a>NVGRE と非 NVGRE パケット
-
-
-転送のハイブリッド環境では、入力し、HYPER-V 拡張可能スイッチのままにしたパケットの 2 つの種類があります。NVGRE パケットと非 NVGRE パケットの場合:
-
--   NVGRE パケット カプセル化された形式で指定されているである、 [NVGRE:Generic Routing Encapsulation によるネットワーク仮想化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)インターネット ドラフトです。 NVGRE パケットは、HYPER-V 拡張可能スイッチの HNV コンポーネントによって転送されます。
--   非 NVGRE パケットは、ごく普通のネットワーク パケットをされます。 非 NVGRE パケットは、転送拡張機能によって転送されます (またはの転送拡張機能がない場合、拡張可能なスイッチ自体)。
-
-## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>スイッチを介して NVGRE と非 NVGRE パケットのフロー
-
-
-イングレス データ パスで、キャプチャおよびフィルター処理拡張機能が、転送拡張機能の前にパケットが、NVGRE パケットの場合、拡張可能スイッチ設定、 **NativeForwardingRequired**フラグ、 [ **NDIS\_スイッチ\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)パケットの構造体。 この構造体に含まれている、 **NetBufferListInfo**のパケットのメンバー [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
-
-**注**  、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)とも呼ばしますパケットの「アウト オブ バンド (OOB) データ」
+**注**  このページは、[汎用ルーティングカプセル化 (Nvgre) タスクオフロードを使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)について理解していること、および[Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)を前提としています。
 
  
 
-場合、 **NativeForwardingRequired**パケットの OOB データにフラグが設定、パケットは、NVGRE パケット。 設定されていない場合、パケットは、非 NVGRE パケットです。
-
-拡張機能を使用する必要があります、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロ、の値を確認するには**NativeForwardingRequired**フラグ。
-
-NVGRE と非 NVGRE パケットは、次のように扱われます。
-
--   HYPER-V 拡張可能スイッチの HNV のコンポーネントに転送されます (つまりの変換先テーブルを決定する) すべての NVGRE パケット
--   HNV のコンポーネントは、NVGRE カプセル化し、必要に応じて、カプセル化解除を実行します。
--   転送拡張機能は、すべての非 NVGRE パケットを転送します。
--   転送拡張機能は、NVGRE パケットを転送できませんが、フィルター拡張機能の追加または変換先のポートを除くやパケットを破棄してもなどのフィルター処理操作を実行できます。
--   転送拡張機能がない場合は、HYPER-V 拡張可能スイッチは、すべてのパケットを転送します。
-
-詳細については、次を参照してください。[パケットがスイッチの拡張のデータ パスを通過](packet-flow-through-the-extensible-switch-data-path.md)します。
-
-## <a name="support-for-third-party-network-virtualization"></a>サードパーティ製のネットワーク仮想化のサポート
+## <a name="nvgre-and-non-nvgre-packets"></a>NVGRE および NVGRE 以外のパケット
 
 
-A **VirtualSubnetId**外部の仮想サブネットと VM ネットワーク アダプターのポートで構成できます。 サードパーティ製のネットワーク仮想化ソリューションを提供する転送拡張機能を有効にするこの機能が追加されました。 受信時、HYPER-V 拡張可能スイッチを設定しません、 **NativeForwardingRequired**フラグ、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)これらのパケットの構造体。 転送拡張機能は、転送中に、必要に応じて、パケット ヘッダーを変更できます。 変更されるパケットを複製して、その**ParentNetBufferList**ポインターは、元に設定**NET\_バッファー\_一覧**。 (を参照してください[パケット トラフィックを複製](cloning-or-duplicating-packet-traffic.md))。
+ハイブリッド転送環境では、次の2種類のパケットを使用して Hyper-v 拡張可能スイッチを入力し、そのままにします。 NVGRE パケットと非 NVGRE パケット:
+
+-   NVGRE パケットのカプセル化された形式は、 [nvgre: ネットワーク仮想化で汎用ルーティングカプセル化インターネットドラフトを使用](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)して指定されます。 NVGRE パケットは、Hyper-v 拡張可能スイッチの HNV コンポーネントによって転送されます。
+-   NVGRE 以外のパケットは、通常のネットワークパケットにすぎません。 非 NVGRE パケットは転送拡張機能によって転送されます (または、転送拡張機能がない場合は、拡張可能なスイッチ自体が存在します)。
+
+## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>スイッチを介した NVGRE パケットと NVGRE 以外のパケットのフロー
+
+
+受信データパスでは、拡張機能のキャプチャとフィルター処理の後、転送拡張機能の前に、パケットが NVGRE パケットの場合、拡張可能スイッチは NDIS\_スイッチに**NativeForwardingRequired**フラグを設定し[ **\_\_詳細\_NET\_\_BUFFER に転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)し、パケットの\_情報構造を一覧表示します。 この構造体は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NetBufferListInfo**メンバーに含まれています。
+
+[**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)の**NetBufferListInfo**メンバーは、パケットの "帯域外 (OOB) データ" と呼ば**れることが**あります。  
+
+ 
+
+パケットの OOB データに**NativeForwardingRequired**フラグが設定されている場合、パケットは nvgre パケットです。 設定されていない場合、パケットは NVGRE 以外のパケットです。
+
+拡張機能では、NET\_BUFFER\_LIST を使用して、 **NativeForwardingRequired**フラグの値を確認するために[ **\_転送\_詳細マクロ\_切り替える**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)必要があります。
+
+NVGRE パケットと NVGRE 以外のパケットは、次のように処理されます。
+
+-   Hyper-v 拡張可能スイッチの HNV コンポーネントは、すべての NVGRE パケットを転送します (つまり、によって宛先テーブルが決定されます)。
+-   HNV コンポーネントは、必要に応じて NVGRE カプセル化とカプセル化解除を実行します。
+-   転送拡張機能は、NVGRE 以外のすべてのパケットを転送します。
+-   転送拡張機能は NVGRE パケットを転送できませんが、宛先ポートの追加や除外、パケットの破棄など、フィルター拡張と同じフィルター処理操作を実行できます。
+-   転送拡張機能がない場合、Hyper-v 拡張可能スイッチはすべてのパケットを転送します。
+
+詳細については、「[拡張可能スイッチのデータパスを介したパケットフロー](packet-flow-through-the-extensible-switch-data-path.md)」を参照してください。
+
+## <a name="support-for-third-party-network-virtualization"></a>サードパーティのネットワーク仮想化のサポート
+
+
+**VirtualSubnetId**は、VM ネットワークアダプターポートで外部仮想サブネットとして構成できます。 この機能は、転送拡張機能を使用してサードパーティのネットワーク仮想化ソリューションを提供するために追加されました。 受信時には、Hyper-v 拡張可能スイッチは、これらのパケットの**NativeForwardingRequired**フラグを[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体に設定しません。 転送拡張機能は、転送中に必要に応じてパケットヘッダーを変更できます。 変更されるパケットは複製され、その**ParentNetBufferList**ポインターが元の**NET\_BUFFER\_LIST**に設定されている必要があります。 (「[パケットトラフィックの複製](cloning-or-duplicating-packet-traffic.md)」を参照してください)。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[拡張可能スイッチの宛先ポート データ パケットを追加します。](adding-extensible-switch-destination-port-data-to-a-packet.md)
+[拡張可能なスイッチの宛先ポートデータをパケットに追加する](adding-extensible-switch-destination-port-data-to-a-packet.md)
 
-[トラフィックのパケットの複製](cloning-or-duplicating-packet-traffic.md)
+[パケットトラフィックの複製](cloning-or-duplicating-packet-traffic.md)
 
-[転送拡張機能](forwarding-extensions.md)
+[拡張機能の転送](forwarding-extensions.md)
 
-[拡張可能スイッチのデータ パスを通じてパケットのフロー](packet-flow-through-the-extensible-switch-data-path.md)
+[拡張可能なスイッチのデータパスを介したパケットフロー](packet-flow-through-the-extensible-switch-data-path.md)
 
-[**NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)
+[**NET\_BUFFER\_LIST\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)
 
-[**NDIS\_スイッチ\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)
+[**NDIS\_スイッチ\_転送\_詳細\_NET\_BUFFER\_LIST\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)
 
  
 

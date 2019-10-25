@@ -4,12 +4,12 @@ description: HBAFCPBindingEntry WMI クラス
 ms.assetid: 58993d0d-2044-430d-b8f6-5ea3b68d460b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f41288392d17d8e8f78775a76a2ed0ad5f6de83a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3cc16cb697fa673a08d8d5eef9e066accf44f845
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353498"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823808"
 ---
 # <a name="hbafcpbindingentry-wmi-class"></a>HBAFCPBindingEntry WMI クラス
 
@@ -17,9 +17,9 @@ ms.locfileid: "67353498"
 ## <span id="ddk_hbafcpbindingentry_wmi_class_kr"></span><span id="DDK_HBAFCPBINDINGENTRY_WMI_CLASS_KR"></span>
 
 
-T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPBindingEntry クラスを使用して、オペレーティング システムが SCSI デバイスを識別するために使用する情報の間のバインドを定義し、ファイバー チャネル プロトコル (FCP) は、デバイスの識別子。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。 論理ユニットを識別するオペレーティング システムのデータと FCP id の間には、このバインディングの詳細については、T11 委員会を参照してください。*ファイバー チャネル HBA API*仕様。
+T11 委員会の*ファイバーチャネル HBA API*仕様をサポートする hba ミニポートドライバーは、HBAFCPBindingEntry クラスを使用して、オペレーティングシステムが SCSI デバイスを識別するために使用する情報とのバインドを定義しファイバーチャネルデバイスのプロトコル (FCP) 識別子。 ファイバーチャネルプロトコルの詳細については、「SCSI 仕様」の「T11 委員会の*Dpans ファイバーチャネルプロトコル*」を参照してください。 論理ユニットと FCP 識別子を識別するオペレーティングシステムデータ間のこのバインドの詳細については、「T11 委員会の*ファイバーチャネル HBA API*仕様」を参照してください。
 
-HBAFCPBindingEntry クラスは次のように定義されている*Hbaapi.mof*:
+HBAFCPBindingEntry クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class HBAFCPBindingEntry {
@@ -32,9 +32,9 @@ class HBAFCPBindingEntry {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**HBAFCPBindingEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)
+[**HBAFCPBindingEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

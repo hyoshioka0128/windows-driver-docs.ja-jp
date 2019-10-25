@@ -3,22 +3,22 @@ title: WMI 登録情報の更新
 description: WMI 登録情報の更新
 ms.assetid: d24688e5-bb50-4bce-a4d4-4a3bf886f86d
 keywords:
-- WMI の WDK カーネルでは、WMI に登録します。
-- WMI データ プロバイダーを登録します。
-- WDK の WMI のデータ プロバイダー
-- ドライバー WDK WMI の登録
-- イベントは、WDK の WMI をブロックします。
-- WDK の WMI をブロックします。
-- ブロックを登録します。
-- WMI の登録情報を更新しています
+- WMI WDK カーネル、WMI への登録
+- WMI データプロバイダーの登録
+- データプロバイダー WDK WMI
+- ドライバー登録 WDK WMI
+- イベントブロック WDK WMI
+- WDK WMI をブロックする
+- 登録 (ブロックを)
+- WMI 登録情報を更新しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e22cc2c783ffaaf961959b5fe5e280dff5d73cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e8d65d605333c9f6ce08704f7042a2075165046
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382927"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836089"
 ---
 # <a name="updating-wmi-registration-information"></a>WMI 登録情報の更新
 
@@ -26,29 +26,29 @@ ms.locfileid: "67382927"
 
 
 
-WMI での初期登録後、ドライバーは呼び出すことによってその登録情報を変更[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)次の操作のいずれかの。
+WMI による最初の登録後、ドライバーは、次のいずれかのアクションを使用して[**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)を呼び出して、登録情報を変更します。
 
--   WMIREG\_アクション\_置換した新しい情報で、ドライバーによって提供されるすべての登録情報を登録します。
+-   WMI REG\_アクションは、ドライバーによって以前に提供されたすべての登録情報を新しい情報に置き換えるために再登録\_ます。
 
-    応答、WMI を送信するか、 [ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)要求または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex) 、ドライバーへの要求**Parameters.WMI.DataPath** WMIREGISTER に設定します。 (システムは Windows 98 および Windows 2000 で、送信、 **IRP\_MN\_REGINFO**要求。 Windows XP のシステムは、後で、送信と、 **IRP\_MN\_REGINFO\_EX**要求します)。
+    応答として、WMI は、 [ **\_reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)要求または[**Irp\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)データパスを持つ reginfo\_EX 要求をドライバーに\_送信します。これは、に設定されています。 (Windows 98 および Windows 2000 では、システムは**IRP\_\_REGINFO**要求を送信します。 Windows XP 以降では、システムが**IRP\_\_REGINFO\_EX**要求に送信します。)
 
-    ドライバーを提供 WMI 新しい登録情報でサポートされており、ブロックをすべての」の説明に従って[ブロックの登録に WMI ライブラリを使用して](using-the-wmi-library-to-register-blocks.md)と[IRP の処理\_MN\_REGINFO と IRP\_MN\_REGINFO\_ブロックを登録する例:](handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md)します。
+    このドライバーは、サポートされているすべてのブロックの新しい登録情報を WMI に提供します。詳細については、「 [Wmi ライブラリを使用](using-the-wmi-library-to-register-blocks.md)したブロックの登録と[irp\_\_\_\_\_の処理」を参照してください。レジスタブロック](handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md)。
 
--   WMIREG\_アクション\_UPDATE\_ブロックのサポートを追加または削除または登録済みのブロックの静的インスタンスの名前を変更する GUID。
+-   WMI REG\_アクション\_ブロックのサポートを追加または削除したり、登録されているブロックの静的インスタンス名を変更したりするために、\_GUID を更新します。
 
-    WMI では、応答、送信、 [ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_例** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex) 、ドライバーへの要求**Parameters.Wmi.DataPath** WMIUPDATE に設定します。
+    応答として、WMI は、 [ **\_reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[**irp\_データパス\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)要求を、ドライバーに\_送信します。これは、を設定しています。
 
-    ドライバー、更新された登録情報を WMI を指定します。
+    ドライバーは、次の更新された登録情報を使用して WMI を提供します。
 
-    -   ドライバー設定 WMIREG\_フラグ\_削除\_そのブロックのサポートを削除する GUID。
+    -   ドライバーは、このブロックのサポートを削除するために、\_フラグを設定して\_GUID\_削除します。
 
-    -   WMIREG はクリアされます\_フラグ\_削除\_新しいブロックを追加または既存のブロックを更新する GUID。
+    -   ドライバーは、\_GUID\_削除して新しいブロックを追加するか、既存のブロックを更新するために、WMI の\_フラグをクリアします。
 
-    -   ドライバーを設定またはクリア WMIREG\_フラグ\_インスタンス\_*XXX*し、ブロックの静的インスタンスの名前を変更するか動的インスタンスを使用するように変更するために必要なインスタンス名情報を提供名前。
+    -   このドライバーは、インスタンス\_\_インスタンスの\_フラグを設定またはクリアし、必要なインスタンス名情報を指定*して、* ブロックの静的インスタンス名を変更するか、動的インスタンス名を使用するように変更します。
 
--   WMIREG\_アクション\_ドライバーでは、WMI 情報は提供されなくを WMI に指示する登録解除します。
+-   Wmi REG\_アクション\_登録を解除して、ドライバーが WMI 情報を提供しなくなることを WMI に指示します。
 
-    WMI は送信しません、 **IRP\_MN\_REGINFO**または**IRP\_MN\_REGINFO\_EX**のため、この呼び出しに応答を要求、ドライバーから詳細情報は必要ありません。 ドライバーの通常のブロックへの応答で登録を解除する[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)要求。 デバイスへのすべての WMI Irp が完了するまで、登録解除呼び出しがブロックされるように注意してください。 ドライバーは、WMI の Irp をキューでの場合は、呼び出す前にキャンセルにする必要があります[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)の登録を解除します。
+    WMI は、この呼び出しへの応答として、 **\_reginfo**または**irp\_\_\_** によって出力される irp\_を送信しません。これは、ドライバーに関する情報がこれ以上必要ないからです。 通常、ドライバーは\_デバイスの要求を[**削除\_\_IRP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)に応答してブロックを解除します。 登録解除呼び出しは、デバイスへのすべての WMI Irp が完了するまでブロックされることに注意してください。 ドライバーが WMI Irp をキューに登録する場合は、 [**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)を呼び出して登録を解除する前に、それらをキャンセルする必要があります。
 
  
 

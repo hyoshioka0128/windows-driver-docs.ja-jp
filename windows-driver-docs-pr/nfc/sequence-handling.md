@@ -1,6 +1,6 @@
 ---
 title: シーケンス処理
-description: NFC CX によって公開されている特定のドライバーのシーケンスを登録することで NCI の非標準の拡張機能のサポートについて説明します。
+description: NFC CX によって公開されている特定のドライバーシーケンスを登録することによる、非標準の NCI 拡張機能のサポートについて説明します。
 ms.assetid: D0BE9827-2A15-4AA5-ADB9-80071ED37583
 keywords:
 - NFC
@@ -10,38 +10,38 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 970c46b7769b7c742430fdead9b686169684071f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a615b56a746b8f508e655aadb9e0f60a9b35979
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386503"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834533"
 ---
 # <a name="sequence-handling"></a>シーケンス処理
 
 
-最も非標準の NCI 機能と拡張機能のさまざまなベンダーから NFCC ファームウェアによって実装されるチップセットの設定、ファームウェアのダウンロード、およびハードウェアのチューニングに関連しています。 これらの非標準の拡張機能は、NFC CX によって公開されている特定のドライバーのシーケンスを登録することによって、NFC クライアント ドライバーによってサポートできます。 クライアント ドライバーはを通じて特定のシーケンスのハンドラーの登録、 [ **NfcCxRegisterSequenceHandler** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxregistersequencehandler)関数。 通常初期化中に行われ、後に呼び出す必要がある[ **NfcCxDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxdeviceinitialize)します。 これらのハンドラーが呼び出すことで登録解除[ **NfcCxUnRegisterSequenceHandler** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxunregistersequencehandler)デバイスのシャット ダウン中にします。 クライアント ドライバーのシーケンスのハンドラーのコールバックが呼び出された後、NFC CX ドライバーは発行されません NCI コマンド NFC クライアント ドライバーがその処理が完了するまで。 NFC CX の完了を通知する前に、コント ローラーを任意の数の I/O 要求を発行するクライアントにより、非同期にするのには、これらのシーケンス ハンドラー コールバックが設計されています。 NFC CX では、ウォッチドッグのタイマー機構を使用して、ハングした状態を調べます。 ウォッチドッグ タイマーは、クライアントがシーケンスのハンドラーの完了前に期限が切れると、バグ チェックがトリガーされ、UMDF フレームワークによって UMDF ホスト プロセスが終了します。
+異なるベンダーの NFCC ファームウェアによって実装されている標準以外の NCI 機能と拡張機能のほとんどは、チップセットの構成、ファームウェアのダウンロード、およびハードウェアのチューニングに関連しています。 このような非標準の拡張機能は、nfc CX によって公開されている特定のドライバーシーケンスに登録することによって、NFC クライアントドライバーでサポートできます。 クライアントドライバーは、 [**Nfccxregistersequencehandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxregistersequencehandler)関数を介して特定のシーケンスハンドラーを登録します。 通常は初期化中に実行され、 [**Nfccxdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxdeviceinitialize)の後に呼び出す必要があります。 これらのハンドラーは、デバイスのシャットダウン中に[**Nfccxunregistersequencehandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxunregistersequencehandler)を呼び出すことによって登録解除されます。 クライアントドライバーのシーケンスハンドラーコールバックが呼び出されると、nfc CX ドライバーは、NFC クライアントドライバーの処理を完了するまで、NCI コマンドを発行しません。 これらのシーケンスハンドラーのコールバックは非同期になるように設計されているため、クライアントは任意の数の i/o 要求をコントローラーに発行できます。これにより、クライアントは、NFC の完了を通知する前に任意の数の i/o 要求を発行できます。 NFC CX は、ウォッチドッグタイマー機構を使用して、ハング状態を判断します。 クライアントによるシーケンスハンドラーの完了前にウォッチドッグタイマーが期限切れになると、バグチェックがトリガーされ、umdf ホストプロセスは UMDF フレームワークによって終了されます。
 
-シーケンスのハンドラーの一部として追加のロジックを実装する NFC クライアント ドライバーの要件を次に示します。
+次に、シーケンスハンドラーの一部として追加のロジックを実装するときの NFC クライアントドライバーの要件を示します。
 
--   これらのシーケンスを処理するときに、NFC クライアントから送信された任意の NCI コマンドでは、NFC CX で指定された現在の状態の整合性に違反しないことを確認してください。 そのため、NFC のデバイスの適切に機能していることを確認するには、この要件の NFC クライアントを処理する必要があります。 たとえば、完全なシーケンスの初期化を処理するときに、クライアント ドライバー発行する NCI CORE\_リセット\_チップセットをリセットするには、「cmd」。
--   NFC クライアント ドライバーは、NCI 応答と、コント ローラーに送信する NCI コマンドによって生成される通知が NFC CX に送信しないことを確認する必要がある[ **NfcCxNciReadNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxncireadnotification)関数。 それ以外の場合、NFC CX NCI のステート マシンが、NFCC と交換コマンドを使用して同期が取得するために必要です。
+-   これらのシーケンスを処理するときに NFC クライアントによって送信された NCI コマンドは、NFC CX によって指定された現在の状態の整合性に違反しないようにする必要があります。 そのため、nfc クライアントはこの要件に対処して、NFC デバイスが正しく機能するようにする必要があります。 例として、初期化の完了シーケンスを処理する場合、クライアントドライバーは NCI CORE\_リセット\_CMD を発行してチップセットをリセットする必要があります。
+-   NFC クライアントドライバーは、コントローラーに送信する NCI コマンドによって生成される NCI の応答と通知が、NFC CX の[**Nfccxncireadnotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)関数に送信されないようにする必要があります。 そうしないと、NFC CX NCI ステートマシンが NFCC と交換するコマンドと同期しなくなるため、この操作が必要になります。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [シーケンス](sequences.md)
--   [シーケンスのフラグ](sequence-flags.md)
+-   [文字列](sequences.md)
+-   [シーケンスフラグ](sequence-flags.md)
 -   [初期化シーケンス](initialization-sequence.md)
--   [NFCEE 探索シーケンス](nfcee-discovery-sequence.md)
--   [RF 探索シーケンス](rf-discovery-sequence.md)
--   [RF タグ データの交換シーケンス](tag-rf-data-exchange-sequence.md)
--   [P2P RF データの交換シーケンス](p2p-rf-data-exchange-sequence.md)
--   [カードのエミュレーション RF シーケンス](card-emulation-rf-sequence.md)
+-   [NFCEE 検出シーケンス](nfcee-discovery-sequence.md)
+-   [RF 検出シーケンス](rf-discovery-sequence.md)
+-   [RF データ交換シーケンスにタグを付ける](tag-rf-data-exchange-sequence.md)
+-   [P2P RF データ交換シーケンス](p2p-rf-data-exchange-sequence.md)
+-   [カードエミュレーション RF シーケンス](card-emulation-rf-sequence.md)
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

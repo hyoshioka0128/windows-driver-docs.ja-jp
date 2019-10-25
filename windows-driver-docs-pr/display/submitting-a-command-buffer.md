@@ -3,17 +3,17 @@ title: コマンド バッファーの送信
 description: コマンド バッファーの送信
 ms.assetid: 3622697a-3989-4756-89d4-c67c81815d49
 keywords:
-- コマンドの送信、WDK のバッファーを表示
-- WDK の表示コマンド バッファーを送信します。
-- WDK の表示をコマンド バッファーに渡す
+- コマンドバッファー WDK 表示、送信
+- コマンドバッファーの送信 WDK 表示
+- コマンドバッファーを渡す WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f45a3349afd5c4a1362615f44719c07284266bdd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 473ec72edca76056ae70e81df6c665021669acac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379867"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829428"
 ---
 # <a name="submitting-a-command-buffer"></a>コマンド バッファーの送信
 
@@ -21,38 +21,38 @@ ms.locfileid: "67379867"
 ## <span id="ddk_submitting_a_command_buffer_gg"></span><span id="DDK_SUBMITTING_A_COMMAND_BUFFER_GG"></span>
 
 
-次の一連の操作を実行して、Windows Vista のグラフィックス スタックをコマンド バッファーを渡す必要があります。
+Windows Vista のグラフィックススタックを使用してコマンドバッファーを渡すには、次の一連の操作を実行する必要があります。
 
-1.  ユーザー モードのディスプレイ ドライバーは、Direct3D ランタイムが、指定された操作を実行する次のユーザー モード ディスプレイ ドライバーの関数の 1 つを呼び出す場合のコマンド バッファーの送信を開始します。
+1.  ユーザーモードの表示ドライバーは、指定された操作を実行するために、Direct3D ランタイムが次のユーザーモード表示ドライバー関数のいずれかを呼び出すと、コマンドバッファーの送信を開始します。
 
-    -   [**存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_present)グラフィックスを表示する関数。
-    -   [**フラッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_flush)ハードウェア コマンドを送信する関数。
-    -   [**ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)関数は、現在のコマンド バッチで使用されているリソースをロックします。
+    -   グラフィックスを表示する[**現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present)の関数。
+    -   ハードウェアコマンドを送信するための[**フラッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_flush)関数。
+    -   現在のコマンドバッチで使用されているリソースをロックするための[**ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)関数。
 
-    コマンド バッファーがいっぱいのときに、ユーザー モードのディスプレイ ドライバーがそのコマンド バッファーの送信も常に開始されるに注意してください。
+    ユーザーモードの表示ドライバーは、コマンドバッファーがいっぱいになったときに常にコマンドバッファーの送信を開始することにも注意してください。
 
-2.  Direct3D ランタイムを呼び出して、ユーザー モードのディスプレイ ドライバー [ **pfnRenderCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)ランタイムをコマンド バッファーを送信する関数。
+2.  ユーザーモード表示ドライバーは、Direct3D ランタイムの[**Pfnrendercb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)関数を呼び出して、コマンドバッファーをランタイムに送信します。
 
-3.  DirectX グラフィックスのカーネル サブシステム呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiRender** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_render)または[ **DxgkDdiRenderKm** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)関数DMA バッファーを記述、ハードウェアの形式でのコマンド バッファーの検証、および使用のサーフェスを記述した割り当て一覧を生成します。 ある DMA バッファーがまだされてパッチは適用されません (つまり、物理アドレスが割り当てられた) に注意してください。
-    **注**  場合は、ランタイムは、ユーザー モードのディスプレイ ドライバーを呼び出すことによって、コマンド バッファーの送信を開始[**存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_present)関数では、グラフィックス サブシステムの呼び出し、ディスプレイ ミニポート ドライバーの[ **DxgkDdiPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_present)関数、なく[ **DxgkDdiRender** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_render)または[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)します。
+3.  DirectX graphics カーネルサブシステムは、ディスプレイミニポートドライバーの[**DxgkDdiRender**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)または[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)関数を呼び出して、コマンドバッファーを検証し、ハードウェアの形式で DMA バッファーを書き込み、割り当てリストを生成します。使用されるサーフェイス。 DMA バッファーにはまだパッチが適用されていないことに注意してください (つまり、割り当てられた物理アドレス)。
+    **メモ**ランタイムがユーザーモード表示ドライバーの[**Present**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present)関数を呼び出すことによってコマンドバッファーの送信を開始した場合  、グラフィックスサブシステムは、ではなく、ディスプレイミニポートドライバーの[**DxgkDdiPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_present)関数を呼び出します。[**DxgkDdiRender**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)または[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)。
 
      
 
-4.  ビデオ メモリ マネージャーには、ディスプレイのミニポート ドライバーの[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) DMA バッファー、指定された割り当てを移動するページング バッファーと呼ばれる特殊な目的を作成する関数DMA バッファーと GPU からアクセス可能なメモリの間に付属している割り当てリストします。 詳細については、次を参照してください。[ビデオ メモリ リソースのページング](paging-video-memory-resources.md)します。
+4.  ビデオメモリマネージャーは、ディスプレイミニポートドライバーの[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を呼び出して、dma バッファーに付随する割り当てリストで指定された割り当てを移動する、ページングバッファーと呼ばれる特殊な目的の DMA バッファーを作成します。GPU からアクセス可能なメモリへの送受信。 詳細については、「[ビデオメモリリソースのページング](paging-video-memory-resources.md)」を参照してください。
 
-5.  GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiPatch** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_patch) DMA バッファー内のリソースへの物理アドレスを割り当てる関数。 ただし、スケジューラを呼び出す必要はありません**DxgkDdiPatch**ページング バッファーの物理アドレスが渡され、中に割り当てられているため、ページング バッファーへの物理アドレスを割り当てる、 [ *DxgkDdiBuildPagingBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)呼び出します。
+5.  GPU スケジューラは、ディスプレイミニポートドライバーの[**DxgkDdiPatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_patch)関数を呼び出して、DMA バッファー内のリソースに物理アドレスを割り当てます。 ただし、ページングバッファーの物理アドレスが渡され、 [*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)呼び出し中に割り当てられたため、スケジューラは**DxgkDdiPatch**を呼び出して物理アドレスをページングバッファーに割り当てる必要はありません。
 
-6.  GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiSubmitCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)ドライバーが GPU 実行単位にページング バッファーをキューに要求します。
+6.  GPU スケジューラは、ディスプレイミニポートドライバーの[**DxgkDdiSubmitCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)関数を呼び出して、ドライバーが GPU 実行単位へのページングバッファーをキューに格納するように要求します。
 
-7.  GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiSubmitCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)ドライバーが GPU 実行単位に DMA バッファーをキューに要求します。 GPU に送信される各 DMA バッファーには、フェンス識別子が含まれています。 GPU では、DMA バッファーの処理が完了すると、GPU は、割り込みを生成します。
+7.  GPU スケジューラは、ディスプレイミニポートドライバーの[**DxgkDdiSubmitCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)関数を呼び出して、ドライバーが GPU 実行単位に対して DMA バッファーをキューに格納するように要求します。 GPU に送信される各 DMA バッファーには、フェンス識別子が含まれます。 GPU が DMA バッファーの処理を終了すると、GPU によって割り込みが生成されます。
 
-8.  ディスプレイのミニポート ドライバーは、割り込みの通知、 [ **DxgkDdiInterruptRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)関数。 ディスプレイのミニポート ドライバーから読み取ら GPU、完了した DMA バッファーをフェンスの識別子。
+8.  ディスプレイミニポートドライバーには、 [**DxgkDdiInterruptRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)関数の割り込みが通知されます。 表示ミニポートドライバーは、完了したばかりの DMA バッファーのフェンス識別子を GPU から読み取る必要があります。
 
-9.  ディスプレイのミニポート ドライバーを呼び出す必要があります、 [ **DxgkCbNotifyInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_notify_interrupt) DMA バッファーが完了している GPU スケジューラに通知します。
+9.  ディスプレイミニポートドライバーは、 [**Dxgkcbnotifyinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_notify_interrupt)関数を呼び出して、DMA バッファーが完了したことを GPU スケジューラに通知する必要があります。
 
-10. ディスプレイのミニポート ドライバーを呼び出す必要があります、 [ **DxgkCbQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_queue_dpc)関数遅延プロシージャ呼び出し (DPC) をキューに登録します。
+10. ディスプレイミニポートドライバーは、遅延プロシージャ呼び出し (DPC) をキューにするために[**DxgkCbQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_queue_dpc)関数を呼び出す必要があります。
 
-11. DMA バッファー処理のほとんどを処理するために、表示ミニポート ドライバーの DPC に通知されます。
+11. ディスプレイミニポートドライバーの DPC には、DMA バッファー処理のほとんどを処理するように通知されます。
 
  
 

@@ -1,32 +1,32 @@
 ---
 title: IRP_MN_EJECT
-description: バス ドライバーは、通常は、デバイスの取り出しをサポートする子デバイス (子 Pdo) は、この要求を処理します。 関数とフィルター ドライバーは、この要求を受信しません。
+description: 通常、バスドライバーは、デバイスの取り出しをサポートする子デバイス (子 PDOs) に対してこの要求を処理します。 関数ドライバーとフィルタードライバーは、この要求を受信しません。
 ms.date: 08/12/2017
 ms.assetid: 2807eeca-c614-469a-baeb-3d2d65416c57
 keywords:
-- IRP_MN_EJECT カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_EJECT カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fc9f3343ef77b93ee63aff6a29d69ee099ef1ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5848375fc53b681ca5633d1ba8c16d5ee03ae2d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838585"
 ---
-# <a name="irpmneject"></a>IRP\_MN\_EJECT
+# <a name="irp_mn_eject"></a>IRP\_\_排出
 
 
-バス ドライバーは、通常は、デバイスの取り出しをサポートする子デバイス (子 Pdo) は、この要求を処理します。 関数とフィルター ドライバーは、この要求を受信しません。
+通常、バスドライバーは、デバイスの取り出しをサポートする子デバイス (子 PDOs) に対してこの要求を処理します。 関数ドライバーとフィルタードライバーは、この要求を受信しません。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーでは、適切なドライバーまたはそのスロットからデバイスを取り出すようドライバーに出力するためには、この IRP を送信します。
+PnP マネージャーは、この IRP を送信して適切なドライバーをダイレクトし、スロットからデバイスを取り出します。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意のスレッド コンテキストでします。
+PnP マネージャーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -41,28 +41,28 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-バス ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態にします。
+バスドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS または適切なエラー状態に設定します。
 
-成功した場合、バス ドライバーの設定**Irp -&gt;IoStatus.Information**をゼロにします。
+成功した場合、バスドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
 
-バス ドライバーがこの IRP を処理しない場合の外に出て**Irp -&gt;IoStatus.Status** IRP の完了であり。
+バスドライバーがこの IRP を処理しない場合は、 **irp&gt;iostatus**がそのままの状態になり、irp が完了します。
 
 <a name="operation"></a>操作
 ---------
 
-取り出すには、デバイスのデバイスが (オフ)、D3 デバイスの電源状態である必要がありする必要がありますロックを解除する (この場合、デバイスのロックをサポートしています)。
+デバイスを取り出すには、デバイスが D3 デバイスの電源状態 (オフ) になっている必要があります。また、デバイスがロックをサポートしている場合は、ロックを解除する必要があります。
 
-この IRP の成功を返す任意のドライバーは IRP を完了する前に、デバイスが排出されまで待つ必要があります。
+この IRP の成功を返すドライバーは、IRP を完了する前にデバイスが取り出されるまで待機する必要があります。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
-代わりのリファレンス ページを参照してください、 [ **IoRequestDeviceEject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject)ルーチン。
+代わりに、 [**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)ルーチンのリファレンスページを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -73,7 +73,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="see-also"></a>関連項目
 
 
-[**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject)
+[**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)
 
  
 

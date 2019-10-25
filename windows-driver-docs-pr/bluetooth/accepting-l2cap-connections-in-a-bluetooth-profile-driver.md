@@ -3,56 +3,56 @@ title: Bluetooth プロファイル ドライバーでの L2CAP 接続の受け�
 description: Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
 ms.assetid: 26a8238d-717a-438f-84d0-047ce9618928
 keywords:
-- L2CAP プロファイル ドライバー WDK Bluetooth
-- 論理リンク コント ローラーとプロトコルの適応 WDK Bluetooth
-- 着信 L2CAP 接続要求が WDK Bluetooth
+- L2CAP プロファイルドライバー WDK Bluetooth
+- 論理リンクコントローラーとアダプテーションプロトコル WDK Bluetooth
+- 受信 L2CAP 接続要求 WDK Bluetooth
 - 接続 WDK Bluetooth
-- リモート接続通知 WDK Bluetooth
-- WDK の Bluetooth の通知
+- リモート接続の通知 WDK Bluetooth
+- 通知 WDK Bluetooth
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4243a5b520ba07fa3558b5c7d64eb9c16892467
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd7a85e4f601a78181d1b11414291df4c4288bfa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354044"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833901"
 ---
 # <a name="accepting-l2cap-connections-in-a-bluetooth-profile-driver"></a>Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
 
 
-L2CAP サーバー プロファイル ドライバーは、リモート デバイスからの受信の論理リンク コントロールと適応プロトコル (L2CAP) 接続要求に応答します。 たとえば、PDA の L2CAP サーバー プロファイル ドライバーに PDA から受信接続要求に応答。
+L2CAP サーバープロファイルドライバーは、リモートデバイスからの受信論理リンク制御とアダプテーションプロトコル (L2CAP) 接続要求に応答します。 たとえば、PDA の L2CAP server プロファイルドライバーは、PDA からの着信接続要求に応答します。
 
-**L2CAP 接続要求を受信するには**
+**受信 L2CAP 接続要求を受信するには**
 
-1.  **着信 L2CAP 接続要求を受信する*任意*特定 PSM 用のリモート デバイス**、プロファイルのドライバーはまず必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_登録\_SERVER** ](https://docs.microsoft.com/previous-versions/ff536618(v=vs.85))要求を指定する**NULL**で、 **BtAddress**メンバーと 0 で、**Psm**の要求のメンバー \_BRB\_L2CA\_登録\_サーバー構造体。 プロファイルのドライバーを登録する必要がありますも、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback) Bluetooth ドライバー スタックに送信するときに、 **BRB\_L2CA\_レジスタ\_SERVER**要求。 これにより、Bluetooth ドライバー スタック L2CAP 接続要求のプロファイルのドライバーに通知します。
+1.  **特定の PSM のリモートデバイスから着信 L2CAP 接続要求を受信するに**は、まずプロファイルドライバーが\_L2CA を[作成して\_送信し](building-and-sending-a-brb.md)、 [ **\_サーバー**](https://docs.microsoft.com/previous-versions/ff536618(v=vs.85))要求を登録して、NULL を指定する必要があります。要求の \_BRB\_L2CA の**btaddress** **メンバーと**0 にある\_\_サーバー構造に登録します。 また、プロファイルドライバーは、 **Brb\_L2CA**を送信するときに[*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を Bluetooth ドライバースタックに登録し、\_サーバー要求を登録\_必要があります。 これにより、Bluetooth ドライバースタックは、受信 L2CAP 接続要求のプロファイルドライバーに通知できます。
 
-    次に、プロファイルのドライバーが必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_登録\_PSM** ](https://docs.microsoft.com/previous-versions/ff536621(v=vs.85)) Bluetooth ドライバー スタックはそのまま使用するための要求要求によって登録された PSM から接続します。 Bluetooth ドライバー スタックが不明 (未登録) があるすべての接続要求を拒否する場合は、接続要求。 PSMs の詳細については、次を参照してください。、 [  **\_BRB\_PSM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_psm)構造体。
+    次に、プロファイルドライバーは、Brb を[ビルドして送信し](building-and-sending-a-brb.md) [ **\_\_PSM**](https://docs.microsoft.com/previous-versions/ff536621(v=vs.85))要求に登録します。これにより、Bluetooth ドライバースタックは、要求によって登録された psm からの接続を受け入れるようになります。 それ以外の場合、Bluetooth ドライバースタックは、不明な (未登録) 接続要求を持つすべての接続要求を拒否します。 PSMs の詳細については、 [ **\_BRB\_PSM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_psm)の構造を参照してください。
 
-2.  **着信 L2CAP 接続要求を受信する、*特定*リモート デバイス/PSM ペア**、プロファイルのドライバーにする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_登録\_SERVER** ](https://docs.microsoft.com/previous-versions/ff536618(v=vs.85))でリモート デバイスのアドレスを指定する要求、 **BtAddress**メンバー、および PSM、 **Psm**要求のメンバーに付属の\_BRB\_L2CA\_登録\_サーバー構造体。 プロファイルのドライバーを登録する必要がありますも、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback) Bluetooth ドライバー スタックに送信するときに、 **BRB\_L2CA\_レジスタ\_SERVER**要求。 これにより、Bluetooth ドライバー スタック L2CAP 接続要求のプロファイルのドライバーに通知します。
+2.  ***特定*のリモートデバイス/PSM ペアから着信 L2CAP 接続要求を受信するに**は、プロファイルドライバーが\_L2CA を[作成して\_送信](building-and-sending-a-brb.md)する必要があります。 [ **\_サーバー**](https://docs.microsoft.com/previous-versions/ff536618(v=vs.85))要求を登録し、リモートデバイスを指定して、**btaddress**メンバーのアドレス、および**PSM**メンバーの psm に付随する \_brb\_L2CA\_REGISTER\_サーバー構造に登録します。 また、プロファイルドライバーは、 **Brb\_L2CA**を送信するときに[*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を Bluetooth ドライバースタックに登録し、\_サーバー要求を登録\_必要があります。 これにより、Bluetooth ドライバースタックは、受信 L2CAP 接続要求のプロファイルドライバーに通知できます。
 
-3.  プロファイルのドライバーを発行する必要があります、 [ **IOCTL\_両方\_SDP\_送信\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_sdp_submit_record)します。 プロファイルのドライバーは、リモート システムは、SDP を使用して、新しいサービスを検出できるようにプロファイルのドライバーがサポートするサービスを記述した SDP レコードを登録できます。
+3.  プロファイルドライバーは、 [**IOCTL\_BTH\_SDP\_送信\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_submit_record)を発行する必要があります。 プロファイルドライバーは、プロファイルドライバーがサポートするサービスを説明する SDP レコードを登録できます。これにより、リモートシステムが SDP を使用して新しいサービスを検出できるようになります。
 
-4.  Bluetooth ドライバー スタックは、リモート デバイスから受信 L2CAP 接続要求を受け取り、Bluetooth ドライバー スタックが呼び出し、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)プロファイルによって以前に登録ドライバー。 Bluetooth ドライバー スタックは、値を渡します**IndicationRemoteConnect**を*Indication*コールバック関数のパラメーター。
+4.  Bluetooth ドライバースタックは、リモートデバイスから受信 L2CAP 接続要求を受信すると、プロファイルドライバーによって以前に登録された[*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を呼び出します。 Bluetooth ドライバースタックは、コールバック関数の表示*パラメーターに* **IndicationRemoteConnect**値を渡します。
 
-5.  受信接続要求に応答して、プロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_オープン\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536616(v=vs.85))要求。 サーバー プロファイルのドライバーに Bluetooth ドライバー スタックから渡された値を使用して、*パラメーター*リモート デバイスと接続の設定をネゴシエートするコールバック関数のパラメーター。 値に基づいて、**応答**のメンバー、 [  **\_BRB\_L2CA\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_l2ca_open_channel)構造体この要求で渡されると、サーバー プロファイルのドライバーを受け入れるか、接続要求を拒否します。
+5.  着信接続要求に応答するには、プロファイルドライバーは Brb\_L2CA を[ビルドして送信し](building-and-sending-a-brb.md) [ **\_\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536616(v=vs.85))要求を開く必要があります。 サーバープロファイルドライバーは、コールバック関数の*Parameters*パラメーターにある Bluetooth ドライバースタックから渡された値を使用して、接続設定をリモートデバイスとネゴシエートします。 この要求で渡された[ **\_BRB\_L2CA\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_open_channel)構造の**応答**メンバーの値に基づいて、サーバープロファイルドライバーは接続要求を受け入れたり拒否したりします。
 
-6.  Bluetooth ドライバー スタックが呼び出すことができますし、サーバー プロファイルのドライバーが接続を受け入れる場合、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)で指定されている、**コールバック**のメンバー、[  **\_BRB\_L2CA\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_l2ca_open_channel)構造体。 Bluetooth ドライバー スタックは、この関数を使用して、L2CAP 接続への変更のサーバーのプロファイルのドライバーに通知します。
+6.  サーバープロファイルドライバーが接続を受け入れると、Bluetooth ドライバースタックは[ **\_BRB\_L2CA\_OPEN\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_open_channel)の**コールバック**メンバーで指定されているように、 [*L2CAP callback 関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を呼び出すことができます。データ. Bluetooth ドライバースタックは、この関数を使用して、L2CAP 接続に対する変更をサーバープロファイルドライバーに通知します。
 
 **注:**  
--   1 つのプロファイルのドライバーが複数の L2CAP 接続要求の受信に登録できますを構築し、複数の送信の異なるリモート デバイス/PSM ペア**BRB\_L2CA\_登録\_SERVER** PSM のペアと一意のリモート デバイスのアドレスを指定する、複数の L2CAP サーバーを登録する要求、 **BtAddress**と**Psm**要求のメンバー。
+-   1つのプロファイルドライバーは、複数の**Brb\_\_\_L2CA**を作成して送信することによって、複数の異なるリモートデバイス/PSM ペアから着信 L2CAP 接続要求を受信するように登録できます。L2CAP サーバー。 **Btaddress**と psm members に一意のリモートデバイスアドレスと psm ペアを**指定します**。
 
--   1 つのプロファイルのドライバーがからの着信 L2CAP 接続要求を受信登録できます*任意*特定の 2.1.X 用のリモート デバイス、複数の異なるリモート デバイス/PSM ペアから L2CAP 接続要求が受信した受信も、任意のリモート デバイスからの特定の 2.1.X L2CAP 接続要求を受信する最初の登録し登録することで特定のリモートから L2CAP 接続要求を受信するデバイス/PSM ペアに登録されている特定の PSM 限り最初の手順がもう一度登録されていません。
+-   1つのプロファイルドライバーは、特定の PSM のリモートデバイス*から着信*L2CAP 接続要求を受信するように登録できます。また、最初に登録して、複数の異なるリモートデバイス/PSM ペアから着信 L2CAP 接続要求を受信することもできます。特定の psm のリモートデバイスから着信 L2CAP 接続要求を受信し、最初の手順で登録されている特定の PSM が特定のリモートデバイス/PSM ペアから受信 L2CAP 接続要求を受信するように登録するには再登録されました。
 
--   任意のリモート デバイスから同じ PSM L2CAP 接続要求を受信する複数のプロファイルのドライバーを登録できません。 Bluetooth ドライバー スタックは、任意のリモート デバイスから特定 PSM L2CAP 接続要求を受信する 1 つのプロファイル ドライバーのみを許可します。
+-   複数のプロファイルドライバーが、同じ PSM のリモートデバイスから着信 L2CAP 接続要求を受信するように登録することはできません。 Bluetooth ドライバースタックでは、特定の PSM のリモートデバイスから着信 L2CAP 接続要求を受信するプロファイルドライバーが1つだけ許可されます。
 
  
 
-プロファイル ドライバーが接続要求を受け入れた後、新しく確立された L2CAP 接続経由でデータを送受信するその他の BRBs を使用できます。
+プロファイルドライバーは接続要求を受け入れると、他の BRBs を使用して、新しく確立された L2CAP 接続でデータの送受信を行うことができます。
 
-リモート デバイス L2CAP 接続試行の通知の受信を停止するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_登録解除\_SERVER** ](https://docs.microsoft.com/previous-versions/ff536619(v=vs.85))プロファイル ドライバーが処理するときに、サーバーの登録を解除する要求[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)プラグ アンド プレイが通知を削除します。
+リモートデバイス L2CAP 接続試行の通知の受信を停止するには、プロファイルドライバが\_サーバーの要求の登録を解除し、プロファイルドライバが処理されたときにサーバーの登録を解除するために、 [**Brb\_\_L2CA**](https://docs.microsoft.com/previous-versions/ff536619(v=vs.85))を[作成して送信](building-and-sending-a-brb.md)する必要があります。[**IRP\_\_\_デバイスの削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)プラグアンドプレイの通知を削除します。
 
-通知とコールバック関数の詳細については、次を参照してください。 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)します。
+通知とコールバック関数の詳細については、「 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)」を参照してください。
 
  
 

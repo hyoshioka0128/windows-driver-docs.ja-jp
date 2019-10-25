@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cbe459095b0e498b8895d445a115ea50785582f
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: e2db8736b25b6615c793625f5f2248e47ccb4629
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025233"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826688"
 ---
 # <a name="irql"></a>!irql
 
@@ -67,14 +67,14 @@ ms.locfileid: "70025233"
 
 IRQLs の詳細については、Windows Driver Kit (WDK) のドキュメントおよび*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 対象のコンピューターがデバッガーに侵入すると、IRQL は変わりますが、デバッガーの中断直前に有効だった IRQL が保存されます。 **! Irql** extension には、保存された irql が表示されます。
 
-同様に、バグチェックが発生し、クラッシュダンプファイルが作成された場合、クラッシュダンプファイルに保存されている IRQL は、 [**kebug Checkex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex)ルーチンが実行された irql ではなく、バグチェックの直前のものになります。
+同様に、バグチェックが発生し、クラッシュダンプファイルが作成された場合、クラッシュダンプファイルに保存されている IRQL は、 [**kebug Checkex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex)ルーチンが実行された irql ではなく、バグチェックの直前のものになります。
 
-どちらの場合も、x86 アーキテクチャを除き、現在\_の IRQL はディスパッチレベルに発生します。 そのため、このようなイベントが複数発生した場合、表示される\_IRQL はディスパッチレベルでもあり、デバッグ目的では役に立ちません。
+どちらの場合も、x86 アーキテクチャを除き、\_レベルをディスパッチするために現在の IRQL が発生します。 そのため、このようなイベントが複数発生した場合、表示される IRQL もディスパッチ\_レベルになるため、デバッグ目的では役に立ちません。
 
 [ **! Pcr**](-pcr.md)拡張機能では、すべてのバージョンの Windows で現在の irql が表示されますが、現在の irql は通常は役に立ちません。 バグチェックまたはデバッガー接続の直前に存在していた IRQL はさらに興味深いものであり、 **! irql**を使用した場合にのみ表示されます。
 

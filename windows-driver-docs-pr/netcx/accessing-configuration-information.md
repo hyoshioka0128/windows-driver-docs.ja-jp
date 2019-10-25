@@ -3,25 +3,25 @@ title: 構成情報へのアクセス
 description: 構成情報へのアクセス
 ms.assetid: ABEC75AE-9CE3-4574-B388-BC48D2BC8154
 keywords:
-- NetAdapterCx NetCx 構成情報へのアクセスの構成情報にアクセスします。
+- 構成情報にアクセスする NetAdapterCx、NetCx が構成情報にアクセスする
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f2e09537287771d493419bd55d84051b6beba4a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 193a2e454fd79ff4cc75042623822427f85fde48
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386372"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838294"
 ---
 # <a name="accessing-configuration-information"></a>構成情報へのアクセス
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-NetAdapterCx クラスの拡張機能には、一連のクライアント ドライバーのレジストリ パラメーターへのアクセスを提供する関数がサポートしています。
+NetAdapterCx クラス拡張は、クライアントドライバーのレジストリパラメーターへのアクセスを提供する一連の関数をサポートしています。
 
-通常、クライアント ドライバーがから構成情報を読み取り、 [ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+通常、クライアントドライバーは、 [*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数から構成情報を読み取ります。
 
-NetAdapter オブジェクトで呼び出すことによって開始[ **NetAdapterOpenConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapteropenconfiguration)構成オブジェクトを識別するハンドルを取得します。  これを照会できます。
+NetAdapter オブジェクトの場合は、まず[**NetAdapterOpenConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapteropenconfiguration)を呼び出して、構成オブジェクトへのハンドルを取得します。  その後、次のクエリを実行できます。
 
 ```C++
 NETCONFIGURATION configuration;
@@ -41,7 +41,7 @@ status = NetConfigurationQueryUlong(configuration,
 NetConfigurationClose(configuration);
 ```
 
-開くと、ネットワーク デバイスの構成オブジェクトのクエリを実行するには、似ています。
+ネットワークデバイスの構成オブジェクトを開いてクエリを実行すると、次のようになります。
 
 ```C++
 status = NetDeviceOpenConfiguration(Device, 
@@ -62,16 +62,16 @@ status = NetConfigurationQueryMultiString(configuration,
                                           myStrings);
 ```
 
-ある`NetConfiguration*`ULONG データ、文字列、(REG_MULTI_SZ と同様に) 複数の文字列、バイナリの blob、およびソフトウェア構成可能なネットワーク アドレスを照会するための機能。
+ULONG データ、文字列、複数文字列 (REG_MULTI_SZ に似ています)、バイナリ blob、およびソフトウェア構成可能なネットワークアドレスに対してクエリを実行するための `NetConfiguration*` 関数があります。
 
-* [**NetConfigurationAssignBinary**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationassignbinary)
-* [**NetConfigurationAssignMultiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationassignmultistring)
-* [**NetConfigurationAssignUlong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationassignulong)
-* [**NetConfigurationAssignUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationassignunicodestring)
-* [**NetConfigurationClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationclose)
-* [**NetConfigurationOpenSubConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationopensubconfiguration)
-* [**NetConfigurationQueryBinary**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationquerybinary)
-* [**NetConfigurationQueryMultiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationquerymultistring)
-* [**NetConfigurationQueryLinkLayerAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationquerylinklayeraddress)
-* [**NetConfigurationQueryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationquerystring)
-* [**NetConfigurationQueryUlong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netconfiguration/nf-netconfiguration-netconfigurationqueryulong)
+* [**Netconfiguration割り当てバイナリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignbinary)
+* [**Netconfiguration割り当ての文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignmultistring)
+* [**Netconfiguration割り当て Ulong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignulong)
+* [**NetConfigurationAssignUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignunicodestring)
+* [**NetConfigurationClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationclose)
+* [**NetConfigurationOpenSubConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationopensubconfiguration)
+* [**NetConfigurationQueryBinary**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationquerybinary)
+* [**NetConfigurationQueryMultiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationquerymultistring)
+* [**Netconfigurationquerylinkレイヤーアドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationquerylinklayeraddress)
+* [**NetConfigurationQueryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationquerystring)
+* [**NetConfigurationQueryUlong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationqueryulong)

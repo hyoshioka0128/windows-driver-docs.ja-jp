@@ -1,24 +1,24 @@
 ---
 title: ACPI_MANIPULATE_LOCK_BUFFER 構造体
-description: ACPI_MANIPULATE_LOCK_BUFFER マクロは、IOCTL_ACPI_ACQUIRE_GLOBAL_LOCK と IIOCTL_ACPI_RELEASE_GLOBAL_LOCK でのみ内部使用のため予約されています。
+description: ACPI_MANIPULATE_LOCK_BUFFER マクロは、IOCTL_ACPI_ACQUIRE_GLOBAL_LOCK および IIOCTL_ACPI_RELEASE_GLOBAL_LOCK でのみ、内部で使用するために予約されています。
 ms.assetid: 7af24f15-66e1-4f68-8d8a-d22617616806
 keywords:
-- ACPI_MANIPULATE_LOCK_BUFFER 構造 ACPI デバイス
+- ACPI_MANIPULATE_LOCK_BUFFER structure ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aae8a0a4b844f28d552771f9dbfffee81dffee42
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b200380a80e0427190c81ad29bdb39108ab0b8a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824093"
 ---
-# <a name="acpimanipulatelockbuffer-structure"></a>ACPI\_操作\_ロック\_バッファーの構造体
+# <a name="acpi_manipulate_lock_buffer-structure"></a>ACPI\_\_ロック\_バッファー構造を操作する
 
 
-ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約されています、 [ **IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)と[ **IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)します。
+ACPI\_操作\_ロック\_バッファーマクロは、内部でのみ使用するために予約されています。このマクロは、[**グローバル\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)および IOCTL\_ACPI\_リリース\_グローバル\_に取得\_ます。 [**ロックを\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -29,7 +29,7 @@ ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約
 <tbody>
 <tr>
 <td><p>Header</p></td>
-<td>Acpiioct.h (Acpiioct.h を含む)</td>
+<td>Acpiioct (Acpiioct を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -37,9 +37,9 @@ ACPI\_操作\_ロック\_バッファー マクロは内部使用のみに予約
 ## <a name="see-also"></a>関連項目
 
 
-[**IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)
+[**IOCTL\_ACPI\_\_グローバル\_ロックを取得する**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)
 
-[**IOCTL\_ACPI\_リリース\_GLOBAL\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)
+[**IOCTL\_ACPI\_リリース\_グローバル\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)
 
  
 

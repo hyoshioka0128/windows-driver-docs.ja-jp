@@ -3,20 +3,20 @@ title: システム領域メモリの割り当て
 description: システム領域メモリの割り当て
 ms.assetid: eee425b3-6ddd-4e9d-b51d-1f2c9ea106a5
 keywords:
-- メモリ管理の WDK カーネル、システムによって割り当てられた領域
-- システムによって割り当てられた領域の WDK カーネル
-- システム容量のメモリの割り当てください。
-- I/O バッファー メモリの割り当て
-- I/O バッファーのメモリ割り当ての WDK カーネル
-- バッファー メモリの割り当ての WDK カーネル
+- メモリ管理 WDK カーネル、システムによって割り当てられた領域
+- システムによって割り当てられた領域 (WDK カーネル)
+- システム領域メモリの割り当て
+- i/o バッファーメモリの割り当て
+- I/o バッファーメモリ割り当て (WDK カーネル)
+- バッファーメモリ割り当て (WDK カーネル)
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 536766a2d2f2f85dc90f87f73c9622173eb933cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1f00fcdad9405abf62c25c522b25a6586be03d1f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369968"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837234"
 ---
 # <a name="allocating-system-space-memory"></a>システム領域メモリの割り当て
 
@@ -24,39 +24,39 @@ ms.locfileid: "67369968"
 
 
 
-ドライバー内でシステムによって割り当てられた領域を使用できます、[デバイス拡張機能](device-extensions.md)としてデバイスに固有の情報のグローバル ストレージ領域。 ドライバーは、カーネル スタックのみを使用して、その内部のルーチンに少量のデータを渡します。 一部のドライバーは、I/O バッファーの通常システム容量のメモリ量が、追加の拡大を割り当てる必要です。
+ドライバーは、デバイスの[拡張機能](device-extensions.md)内のシステム割り当て領域を、デバイス固有の情報のグローバルストレージ領域として使用できます。 ドライバーは、カーネルスタックのみを使用して、少量のデータを内部ルーチンに渡すことができます。 一部のドライバーでは、多くの場合、i/o バッファー用に追加の大量のシステム領域メモリを割り当てる必要があります。
 
-使用する最適なメモリ割り当てルーチンには I/O バッファーの容量の割り当て、 [ **MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer) (かどうか、ドライバーのデバイスではバス マスター DMA またはシステム DMA コント ローラーの自動初期化モード)、または[ **Exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。
+I/o バッファー領域を割り当てるには、使用する最適なメモリ割り当てルーチンは、 [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) (ドライバーのデバイスでバスマスタ dma またはシステム DMA が使用されている場合) です。コントローラーの自動初期化モード)、または[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)。
 
-システムを実行すると、そのために、非ページ プールが通常断片化がドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、ドライバーを長期的な I/O バッファーを設定するこれらのルーチンを呼び出す必要があります必要があります。 これらのルーチンの各を除く[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)最高を提供 (プロセッサのキャッシュ ラインのデータのサイズによって決まります) プロセッサに固有の境界に配置されるメモリを割り当てますパフォーマンス。
+通常、非ページプールはシステムの実行中に断片化されます。そのため、ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンは、これらのルーチンを呼び出して、ドライバーが必要とするすべての長期的な i/o バッファーを設定する必要があります。 これらの各ルーチン ( [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を除く) は、最適なパフォーマンスを提供するために、プロセッサ固有の境界 (プロセッサのデータキャッシュラインサイズによって決まります) にアラインされたメモリを割り当てます。
 
-ドライバーは、非ページ プール メモリが限られたシステム リソースであるために、I/O バッファーをできるだけ経済的割り当てる必要があります。 通常、ドライバーがこれらの呼び出しを回避する必要がありますページ未満の割り当てを要求するには、繰り返しのルーチンをサポートして\_ため各割り当てページよりも小さい\_サイズに内部的に使用するプールのヘッダーも付属しています割り当てを管理します。
+非ページプールメモリはシステムリソースが限られているので、ドライバーは可能な限り経済的に i/o バッファーを割り当てる必要があります。 通常、ドライバーでは、これらのサポートルーチンを繰り返し呼び出して、ページ\_サイズ未満の割り当てを要求することを回避する必要があります。これは、ページ\_サイズよりも小さい割り当てには、内部管理に使用されるプールヘッダーも付属しているためです。割当て.
 
-### <a name="tips-for-allocating-driver-buffer-space-economically"></a>経済的ドライバー バッファー領域を割り当てるためのヒント
+### <a name="tips-for-allocating-driver-buffer-space-economically"></a>ドライバーのバッファー領域を経済的に割り当てるためのヒント
 
-経済的な I/O バッファーのメモリを割り当てに、次の注意。
+I/o バッファーメモリを経済的に割り当てるには、次の点に注意してください。
 
--   呼び出しごとに[ **MmAllocateNonCachedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)または[ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)の完全な倍数は常に返しますシステムの非ページ システム領域のメモリ、要求された割り当てのサイズはどのようなページ サイズ。 そのため、完全なページとページの残りの部分 (バイト) が無駄になります。 ページが最大に丸められますよりも少ないの要求します。これらは、関数を呼び出すし、他のカーネル モード コードでは使用できませんが、ドライバーによってアクセスできません。
+-   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)または[**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)を呼び出すたびに、システムのページサイズの倍数が、要求された割り当てのサイズに関係なく、システムのページサイズの非ページシステムメモリの完全な倍数で返されます。 したがって、ページより小さい要求ではページ数がいっぱいになり、ページの残りのバイトは無駄になります。関数を呼び出したドライバーからはアクセスできません。また、他のカーネルモードコードでは使用できません。
 
--   呼び出しごとに[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)少なくとも 1 バイト、最大で 1 つのページにマップするには少なくとも 1 つのアダプター オブジェクト マップ レジスタ使用します。 マップの詳細についてを登録し、一般的なバッファーを使用して、参照してください[アダプター オブジェクトと DMA](adapter-objects-and-dma.md)します。
+-   [**Allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer)を呼び出すたびに、少なくとも1つのバイトと1つのページをマップする、少なくとも1つのアダプターオブジェクトマップレジスタが使用されます。 マップレジスタと一般的なバッファーの使用の詳細については、「[アダプタオブジェクトと DMA](adapter-objects-and-dma.md)」を参照してください。
 
-### <a name="allocating-memory-with-exallocatepoolwithtag"></a>Exallocatepoolwithtag とメモリの割り当てください。
+### <a name="allocating-memory-with-exallocatepoolwithtag"></a>ExAllocatePoolWithTag を使用したメモリの割り当て
 
-ドライバーを呼び出すことも[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、システム定義の次のいずれかを示す[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)の値を*PoolType*パラメーター。
+また、ドライバーは、次のシステム定義のプールのいずれかを指定して、 *Pooltype*パラメーターの[ **\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)の値を指定して、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を呼び出すこともできます。
 
--   *PoolType* = **NonPagedPool**オブジェクト、またはデバイスの拡張機能または IRQL での実行中に、ドライバーにアクセスするコント ローラー拡張機能に格納されていないリソース&gt;APC\_レベル。
+-   *Pooltype* = 、ドライバーが IRQL &gt; APC\_レベルで実行されているときに、ドライバーがアクセスする可能性のある、デバイス拡張機能またはコントローラー拡張機能に格納されていないすべてのオブジェクトまたはリソースに対して**NonPagedPool**です。
 
-    この*PoolType*値、 [ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)場合に要求したメモリを割り当てて、指定した*NumberOfBytes*がページに小さい\_サイズ。 最後に割り当てられたページの残りの部分 (バイト) が浪費され、それ以外の場合: 呼び出し元にアクセスできないと他のカーネル モード コードで使用できなくなります。
+    この*Pooltype*値の場合、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)は、指定された*NUMBEROFBYTES*がページ\_サイズ以下である場合に要求されるメモリ量を割り当てます。 それ以外の場合、最後に割り当てられたページの残りのバイトは無駄になります。呼び出し元はアクセスできず、他のカーネルモードコードでは使用できません。
 
-    たとえば、x86、5 キロバイト (KB) の割り当て要求に 2 つの 4 KB のページが返されます。 2 番目のページの最後の 3 KB では、呼び出し元または他の呼び出し元を使用できません。 非ページ プールの浪費を回避するには、は、ドライバーが、複数のページを効率的に割り当てる必要があります。 この場合、たとえば、ドライバーは、ページに 1 つずつ、2 つの割り当て\_サイズおよびその他、1 KB の文字数は 5 KB を割り当てます。
+    たとえば、x86 では、割り当て要求が5キロバイト (KB) の場合、4 KB のページが2つ返されます。 2番目のページの最後の 3 KB は、呼び出し元または別の呼び出し元には使用できません。 非ページプールを無駄にしないように、ドライバーは複数のページを効率的に割り当てる必要があります。 この場合、たとえば、ドライバーは2つの割り当てを行うことができます。1つはページ\_サイズ用で、もう1つは 1 KB です。これにより、合計 5 KB が割り当てられます。
 
-    **注**  以降 Windows Vista では、自動的に追加されます追加のメモリのため、2 つの割り当てが必要ではありません。
+    **注**  Windows Vista 以降では、2つの割り当てが不要になるように、システムによって追加のメモリが自動的に追加されます。
 
      
 
--   *PoolType* = **プール**IRQL で常にアクセスされるメモリの&lt;APC を =\_レベルが、ファイル システムの書き込みパスにないとします。
+-   *Pooltype* = 、IRQL &lt;= APC\_レベルで常にアクセスされ、ファイルシステムの書き込みパスにはないメモリの**PagedPool**です。
 
-**Exallocatepoolwithtag に**を返します、 **NULL**ポインターの場合は、要求されたバイト数を割り当てることができません。 ドライバーでは、返されたポインターを常に確認する必要があります。 その値が場合**NULL**、 **DriverEntry**ルーチン (または NTSTATUS 値を返す他のドライバー ルーチン) は、状態を返す必要があります\_不十分\_リソースまたはハンドル、エラー状態で可能な場合。
+要求されたバイト数を割り当てることができない場合、 **Exallocatepoolwithtag**は**NULL**ポインターを返します。 ドライバーは、返されたポインターを常に確認する必要があります。 値が**NULL**の場合、 **driverentry**ルーチン (または、NTSTATUS 値を返すその他のドライバールーチン) は、不足している\_リソース\_不足しているか、可能であればエラー状態を処理する必要があります。
 
  
 

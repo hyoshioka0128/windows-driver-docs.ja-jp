@@ -1,191 +1,191 @@
 ---
-title: ソフトウェアには、バッテリが定義されています。
-description: ソフトウェアには、バッテリが定義されています。
+title: ソフトウェア定義のバッテリ
+description: ソフトウェア定義のバッテリ
 keywords:
-- ソフトウェアには、バッテリが定義されています。
+- ソフトウェア定義のバッテリ
 - SDB
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d0abf944253f55920126b5a48483fe24ee9196
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2cc44dfff5e2fe72b95010538488ee3f0472d156
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376963"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829037"
 ---
-# <a name="software-defined-battery"></a>ソフトウェアには、バッテリが定義されています。
+# <a name="software-defined-battery"></a>ソフトウェア定義のバッテリ
 
 >[!NOTE]
-> 一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
+> 一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
 ## <a name="introduction"></a>概要
 
-このトピックの目的は、ソフトウェア定義されているバッテリ (SDB) を導入し、Windows SDB アーキテクチャをについて説明し、Windows API と DDI コントラクトは、この機能の詳細です。 
+このトピックの目的は、ソフトウェアで定義された電池 (SDB) について説明し、Windows SDB アーキテクチャについて説明し、この機能のための Windows API と DDI コントラクトの詳細を説明することです。 
 
-トピックは、架空の 2 つのバッテリ システムの有効期間の単純な分散 SDB アルゴリズムを導入することで開始します。 アーキテクチャが続きます SDB アルゴリズムを実装するために必要なレイアウトと API コントラクト。
+このトピックでは、最初に、仮定の2つのバッテリシステムの単純な Age バランシングの SDB アルゴリズムを紹介します。 これには、SDB アルゴリズムを実装するために必要なアーキテクチャレイアウトと API コントラクトが続きます。
 
-## <a name="nomenclature"></a>命名規則
+## <a name="nomenclature"></a>区別
 
-- BattC - バッテリ クラス ドライバー
+- BattC-バッテリクラスドライバー
 
-- CAD - 料金調停ドライバー (CAD) は USB レガシ、USB 型-c およびワイヤレスの充電ソース間で電力を調停する Microsoft のドライバー
+- CAD-課金調停ドライバー (CAD) は、USB レガシ、USB タイプ C、およびワイヤレス充電ソース間の電源を判別する Microsoft ドライバーです。
 
-- コールド ホットスワップ可能なバッテリ - バッテリ サージや総電力障害のリスクを負うことがなく、システムから削除することはできません。
+- コールドスワップ可能な電池-brownouts または合計電源障害が発生してもシステムから削除できないバッテリ
 
-- サイクル カウント - ACPI 仕様」の説明に従って、バッテリによって行われました完全充電放電サイクルの数
+- [サイクル数]-ACPI 仕様で説明されているように、バッテリによって行われた完全な充電放電サイクルの数
 
-- ホット スワップ可能なバッテリのバッテリをシステムがサージの危険を冒さずの操作中に安全に削除できます。
+- ホットスワップ可能な電池-システムの動作中に安全に削除できる電池です。 brownouts のリスクはありません。
 
-- HPMI - ハードウェアの電源マネージャー インターフェイス
+- HPMI-ハードウェア電源マネージャーインターフェイス
 
-- 非ホット スワップ可能なバッテリの 1 つ以上コールド Swappable と、システムにインストールされている非 Swappable バッテリ
+- ホットスワップが可能でない電池-システムに取り付けられている、1つまたは複数のコールドスワップ可能なバッテリ
 
-- 非 Swappable バッテリ - バッテリでを設計およびエンド ユーザーによって削除するためのものはありません。
+- スワップできないバッテリ-エンドユーザーによって削除されないように設計されていないバッテリ
 
 ## <a name="sdb-overview"></a>SDB の概要
-ソフトウェア定義されているバッテリで MSR 研究論文をこちら: [ https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf](https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf)します。 
+ソフトウェアで定義されている電池の MSR research のドキュメントについては、「 [https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf](https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf)」を参照してください。 
 
-このトピックでこのホワイト ペーパーで説明されている選択のアイデアを再開し productizing 分散ラップトップの機能とその他のモバイル デバイス ベースのソフトウェアのバッテリ寿命のビューに提示します。 
+このトピックでは、このホワイトペーパーで説明されているアイデアを選択し、ノート pc やその他のモバイルデバイスでのソフトウェアベースのバッテリ寿命分散機能のビューを示します。 
 
-2 つのバッテリ システムを想像してください。 1 つのバッテリが SOC – の横にある、非リムーバブル バッテリましょうこの*内部バッテリ*します。 その他のバッテリがホット スワップ可能なバッテリ、このリムーバブル キーボード – の横にあるましょう*外部バッテリ*します。 
+2つのバッテリシステムを想像してください。 1つのバッテリがリムーバブルバッテリ以外で、SOC の横にある場合は、この*内部バッテリ*を呼び出します。 もう1つのバッテリは、ホットスワップが可能なバッテリで、リムーバブルキーボードの横にあります。この*外部バッテリ*を呼び出します。 
 
-*複数のバッテリ システム*
+*マルチバッテリシステム*
 
-![内部および外部のバッテリを示す複数のバッテリ システム](images/powermeter-multi-battery.png)
+![内部および外部のバッテリを示すマルチバッテリシステム](images/powermeter-multi-battery.png)
 
-キーボードは期間のアタッチ、デタッチ、異なる方法で時代には、2 つのバッテリを強制します。 これには、年齢、バッテリを分散して、分散アルゴリズム SDB シンプル有効期間を使用し、システムの使いやすさの期間を延長するためのスコープが作成されます。
+キーボードが接続されると、一定の時間にわたって接続が切断されるため、2つの電池の有効期間が異なります。 これにより、SDB の単純な age 均衡アルゴリズムを採用して、バッテリと長引くシステムの使いやすさをバランスを調整するためのスコープが作成されます。
 
-## <a name="simple-age-balancing-sdb-algorithm"></a>単純な年齢分散 SDB アルゴリズム
+## <a name="simple-age-balancing-sdb-algorithm"></a>単純な Age バランシングの SDB アルゴリズム
 
-アルゴリズムと呼ばれる*年齢の単純な分散*しようとするバッテリ寿命のバランスを取るためです。 分散アルゴリズムの単純な時代は、期限切れが最も低いのバッテリの放電を優先するシステムです。 バッテリが小さい方のサイクル数を計上するには、保持、電源ですがも通常より効率的に機能を提供するために容量の増加だけでなくが。 これにより、システムがバッテリで維持できる時間を延長します。
+このアルゴリズムは、バッテリの寿命とのバランスを取るため、*単純な age 分散*と呼ばれます。 単純な age 均衡アルゴリズムによって、システムは最低でも期限切れになったバッテリの放電を優先します。 低いサイクルカウントを持つバッテリは、電力を保持するための容量が増加するだけでなく、一般に電力を供給する場合にも効率的です。 これにより、システムがバッテリで維持できる時間が長引くます。
 
-*単純な年齢分散 SDB アルゴリズム*
+*単純な Age バランシングの SDB アルゴリズム*
 
-![単純な年齢分散 SDB アルゴリズム](images/powermeter-simple-age-balancing-algorithm.png)
+![単純な Age バランシングの SDB アルゴリズム](images/powermeter-simple-age-balancing-algorithm.png)
 
-分散アルゴリズムの単純な時代の背後にあるという考え方は、単に最小限のバッテリ サイクルが発生する、バッテリを使用するカウントで意思決定ボックス (2) 上記のフローチャートで示したします。 この例では、仮想的なシステムは、内蔵または外付けのバッテリを排他的に使用できます。 ただし、これができないのすべてのシステムの場合は true。 その他のシステムでは、柔軟性ができないか、バッテリの使用方法の電気の制約があります。 このような場合は、アルゴリズムには、年齢の分散の最善の試みが期待しています。 たとえば、次の点を検討してください。  
+単純な年齢分散アルゴリズムの基礎となる中心的な考え方は、上のフローチャートの決定ボックス (2) で示されているように、バッテリ残量が少なくなるバッテリを使用することです。 この例の架空のシステムでは、内部または外部のバッテリを排他的に使用することができます。 ただし、すべてのシステムでこれが当てはまるとは限りません。 その他のシステムは、柔軟性が高くない場合や、バッテリの使用に対して電気的な制限を受ける場合があります。 このような場合、アルゴリズムでは、最大限のバランスを取る必要があります。 たとえば、次の点を考慮してください。  
 
-1. 電源 (補助 power ソースのみを使用する外部のバッテリが設計されているので可能性があります)、外部のバッテリを排他的に耐えることがあるシステム。 このシステムは、分散アルゴリズムを同時に両方のプロセス ブロック (A) 上のフローチャートで内部および外部バッテリは放電してで単純な時代を実装することができます。
+1. 外部バッテリ上で排他的に電力を維持できないシステム (外付けバッテリが補助電源専用になるように設計されていることが原因である可能性があります)。 このシステムでは、上のフローチャートで、プロセスブロック (A) の内部バッテリと外部電池の両方を同時に放電することで、単純な age バランシングアルゴリズムを実装できます。
 
-2. 存在するときに、外部のバッテリを必要とするシステムを使用する (電源がオンにリムーバブル キーボードの維持に関連する追加の電力が原因ででもかまいません)。このシステムは、分散アルゴリズムを同時に両方のプロセス ブロック (B) 上のフローチャートで内部および外部のバッテリは放電してで単純な時代を実装することができます。
+2. 外部のバッテリを必要とするシステムは、いつでも使用できます (リムーバブルキーボードの電源を維持するために追加の電源描画があることが原因である可能性があります)。このシステムは、単純な期間分散アルゴリズムを同時に実装する場合があります。上のフローチャートで、プロセスブロック (B) の内部バッテリと外部電池の両方を放電します。
 
-意思決定のボックス (1) 上のフローチャートには、この条件チェックを示し、システムを実行する内部および外部のバッテリに存在するための十分な料金がある場合にのみ使用する分散アルゴリズムの単純な時代を配置することがあります。 例 (もう一度仮想的なシステムに移動) は、外部のバッテリの充電がなければ、バッテリの分散の有効期間の範囲はありませんし、意思決定ボックス (1) は"NO"ブランチの結果は。
+単純な age バランスアルゴリズムは、システムを実行するための十分な料金が内部および外部のバッテリに存在する場合にのみ使用することができます。決定ボックス (1) は、上記のフローチャートでこの条件チェックを表します。 たとえば (この場合も、仮に仮定のシステムに戻ります)、外部バッテリに課金されない場合は、バッテリの寿命と、判断ボックス (1) によって "NO" 分岐が発生するという範囲はありません。
 
-OEM では自由に分散アルゴリズムの単純な時代には配置されません効果、それに内蔵または外付けのバッテリが電源がときに、制約と条件を選択します。 たとえば、OEM は、年齢の分散を実行しないように選択できます。
+OEM は、内部または外部の電池の電源が入っていない場合を含めて、単純な年齢バランスアルゴリズムを有効にしない場合に、制約と条件を自由に選択できます。 たとえば、次の場合には、OEM は年齢分散を実行しないように選択できます。
 
-1.  SOC/プロセッサが高パフォーマンス モードで実行されています。
-2.  システムが不安定サーマル
+1.  SOC/プロセッサは高パフォーマンスモードで実行されています
+2.  システムがサーマル不安定
 
-分散アルゴリズムの単純な時代は (上記 1 つまたは複数の条件) のため配置で使用しない、ロジックは OEM の独自のバッテリ使用ポリシーによってプロセス ボックス (3) 上のフローチャートの図のように戻ります。 プロセス ボックス (3) は、OEM が有効になる SDB がサポートされていない場合、ロジックです。
-
-
-## <a name="span-idadapting-sdbspanspan-idadapting-sdbspanadapting-sdb-algorithm-for-use-with-hot-swappable-batteries"></a><span id="adapting-sdb"></span><span id="ADAPTING-SDB"></span>SDB アルゴリズムを適合させるホット スワップ可能なバッテリでの使用
-
-分散 SDB アルゴリズムの単純な時代は、この方法は、動作が良好、バッテリを使用しようとしました。 長期的なバッテリの寿命を向上させるために深刻な影響を与える可能性、システムの短期的なユーザビリティ次のシナリオで説明したようにします。
-
-上記で説明した 2 つのバッテリ システムでは、次のような状況を考慮してください。
-
-1.  内部および外部の両方のバッテリの充電がなくなるまで、十分な長さのシステムを使用して、ユーザーが必要です。
-
-2.  外部のバッテリは内部のバッテリと比較してよりを期限切れです。
-
-分散アルゴリズムの単純な時代がこのシステムで実行されるときに最初のバッテリを内部に格納されている料金 (1 と 2 上に示したに基づいて条件) を使い果たすを試みます。 デタッチをユーザーが決定したときに内部のバッテリ使用すると、しばらくすると、この結果は不正なユーザー エクスペリエンスを外部 1 回のバッテリが大幅に削減するバッテリ容量が使用できるため、外部のバッテリが切り離されます。
-
-SDB 以外のシステムでは、この一般には発生しません、内部のバッテリが使用する前にほとんどの場合、外部のバッテリが使い果たされているためです。
-
-選択的に負荷分散アルゴリズムのシナリオを超える場合に発生する可能性が単純な時代を無効にする必要があるためです。 
-
-まとめると、外部のバッテリを削除に長い期間をシステムを使用するユーザーが期待どおりたびに、SDB アルゴリズムを無効にして、OEM のバッテリ使用ポリシー (これは通常、最初に、外部のバッテリを使用が優先されます) を使用してに最適な方法があります。
-
-Windows では、バッテリの可用性を計算し、「保持する非ホット スワップ可能なバッテリ」ヒントを生成します。 このヒントが SDB アルゴリズムによって使用される次のフロー図では決定ボックス (X) で示すようにします。
-
-*単純な有効期間がホット スワップ可能なバッテリの応用 SDB アルゴリズムの分散*
-
-![単純な有効期間がホット スワップ可能なバッテリの応用 SDB アルゴリズムの分散](images/powermeter-simple-age-balancing-algorithm-hot-swap.png)
+単純な age 均衡アルゴリズムが使用されない場合 (上記の1つ以上の条件により)、ロジックは、前述のフローチャートの「プロセスボックス (3)」に示されているように、OEM の独自のバッテリ使用ポリシーに戻ります。 プロセスボックス (3) は、SDB がサポートされていない場合に、ロジックが有効になります。
 
 
-## <a name="span-idimplementing-sdbspanspan-idimplementing-sdbspanimplementing-sdb-algorithm-in-firmware"></a><span id="implementing-sdb"></span><span id="IMPLEMENTING-SDB"></span>ファームウェアで SDB アルゴリズムを実装します。
+## <a name="span-idadapting-sdbspanspan-idadapting-sdbspanadapting-sdb-algorithm-for-use-with-hot-swappable-batteries"></a><span id="adapting-sdb"></span><span id="ADAPTING-SDB"></span>ホットスワップが可能な電池で使用する SDB アルゴリズムを適合させる
 
-このセクションでは、システム ファームウェアで実装された完全なバッテリの放電制御ロジックを示しています。 これは、バッテリ寿命を分散して ((Y) のブロックにマークされている) 既存の複数のバッテリの放電ロジックを組み込むと方法をデモンストレーションするための前述のロジックに基づいています。
+Simple age balancing SDB アルゴリズムでは、healthiest のバッテリを使用しようとしますが、この方法は長期のバッテリ寿命を向上させるのに適していますが、次のシナリオで説明するように、システムの短期的な有用性に深刻な影響を与える可能性があります。
 
-SDB 動作を説明するために使用されるこのセクションで説明されている単純な仮想的な複数のバッテリのデバイスの包括的な例ではなく、Oem によって SDB アルゴリズムを実装する方法の処方ではないことに注意してください。
+上記で説明した2つのバッテリシステムでは、次の状況を考慮してください。
+
+1.  ユーザーは、内部と外部の両方のバッテリが消費されるまで、システムを十分に使用することを想定しています。
+
+2.  外部のバッテリが、内部のバッテリと比較して期限切れになっています。
+
+このシステムで simple age balancing アルゴリズムが実行されると、最初に内部のバッテリに格納されている料金を消費します (上記の条件 #1 と #2 に基づいて)。 ユーザーがしばらくした後に外部バッテリを切断することを決定した場合、内部バッテリが使用されているために外部バッテリが切断されると、使用可能なバッテリ容量が大幅に減少するため、ユーザーエクスペリエンスが悪くなります。
+
+SDB 以外のシステムでは、通常、この問題は発生しません。これは、ほとんどの場合、内部バッテリが使用される前に外部バッテリが使い果たされるためです。
+
+このため、上記のシナリオが発生する可能性が高い場合は、単純な age 均衡アルゴリズムを選択的に無効にする必要があります。 
+
+要約すると、ユーザーが外部のバッテリを取り外した長時間にシステムを使用することが予想される場合は、SDB アルゴリズムを無効にして、OEM バッテリ使用ポリシーを使用するように戻すことをお勧めします (通常は、最初に外部バッテリの使用を優先します)。
+
+Windows によってバッテリの可用性が計算され、"ホットスワップされていない電池を保持する" ヒントが生成されます。 このヒントが SDB アルゴリズムによって使用される場合、次のフロー図の決定ボックス (X) に示されます。
+
+*ホットスワップが可能な電池用に適応した、シンプルな Age バランシングの SDB アルゴリズム*
+
+![ホットスワップが可能な電池用に適応した、シンプルな Age バランシングの SDB アルゴリズム](images/powermeter-simple-age-balancing-algorithm-hot-swap.png)
 
 
-*分散 SDB アルゴリズムの単純な有効期間の完全なファームウェアの実装*
+## <a name="span-idimplementing-sdbspanspan-idimplementing-sdbspanimplementing-sdb-algorithm-in-firmware"></a><span id="implementing-sdb"></span><span id="IMPLEMENTING-SDB"></span>ファームウェアでの SDB アルゴリズムの実装
 
-![分散 SDB アルゴリズムの単純な有効期間の完全なファームウェアの実装](images/powermeter-firmware-age-balancing-algorithm-hot-swap.png)
+このセクションでは、システムファームウェアに実装されているバッテリ放電制御ロジック全体を示します。 これは、前に説明したバッテリの使用期間分散ロジックに基づいており、(Y) ブロックでマークされた) 既存のマルチバッテリ放電ロジックがどのように組み込まれるかを示しています。
 
-
-## <a name="power-stack-architecture"></a>スタックの電源のアーキテクチャ
-
-このセクションでは、電源スタックとの相対関係で相互に参加しているすべてのコンポーネントのコンポーネントのレイアウトについて説明します。
-
-![HPMI を示す power スタック アーキテクチャ](images/powermeter-hpmi-stack-architecture.png)
+これは、SDB アルゴリズムを Oem が実装する方法を示すものではなく、SDB の動作を示すために使用される、このセクションで説明する単純な仮定のマルチバッテリデバイスの包括的な例であることに注意してください。
 
 
-### <a name="battery-miniport"></a>バッテリ ミニポート
+*Simple Age Balancing SDB アルゴリズムの完全なファームウェア実装*
 
-バッテリのミニポート インターフェイスは、同じになります。
+![Simple Age Balancing SDB アルゴリズムの完全なファームウェア実装](images/powermeter-firmware-age-balancing-algorithm-hot-swap.png)
 
-SDB インターフェイスに影響を与えるまたはしないで ACPI/CmBatt メカニズムに依存する、または、独自のミニポートを開発する OEM の要望に影響を与えます。
 
-注:Windows 転送すべて[IOCTL_BATTERY_SET_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/ioctl-battery-set-information)システムに列挙されているすべてのバッテリ デバイスにコマンド。
+## <a name="power-stack-architecture"></a>電源スタックのアーキテクチャ
+
+このセクションでは、電源スタックに参加しているすべてのコンポーネントのコンポーネントレイアウトと、それらの相対的な関係について説明します。
+
+![HPMI を示す電源スタックのアーキテクチャ](images/powermeter-hpmi-stack-architecture.png)
+
+
+### <a name="battery-miniport"></a>バッテリミニポート
+
+バッテリミニポートインターフェイスは変わりません。
+
+SDB インターフェイスは、ACPI/CmBatt メカニズムに依存したり、独自のミニポートを開発したりする OEM の要望に影響を与えることはありません。
+
+注: Windows は、すべての[IOCTL_BATTERY_SET_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/ioctl-battery-set-information)コマンドを、システムで列挙されたすべてのバッテリデバイスに転送します。
 
 ### <a name="hpmi"></a>HPMI
 
-ハードウェアの電源マネージャー インターフェイス (HPMI) は、電源のスタックで導入された新しいコンポーネントです。
+ハードウェア電源マネージャーインターフェイス (HPMI) は、パワースタックで導入された新しいコンポーネントです。
 
-HPMI は、開発および OEM/デバイスの製造元によって所有されているドライバーです。
+HPMI は、OEM/デバイスの製造元によって開発および所有されているドライバーです。
 
-HPMI は、基になるハードウェアの構成と状態に関する詳細な知識を備え、システム ファームウェアにアクセスします。 
+HPMI は、基礎となるハードウェアの構成と状態に関する知識を持っており、システムファームウェアにアクセスできます。 
 
-HPMI ドライバーは SDB 機能を実装するには。
+SDB 機能を実装するために、HPMI ドライバーは次のことを行います。
 
-1.  Windows の登録にします。
-2.  SDB サポートを提供します。
-3.  Windows で提供される SDB 制御パラメーターを使用します。
+1.  それ自体を Windows に登録します。
+2.  SDB のサポートを提供します。
+3.  Windows によって提供される SDB コントロールパラメーターを使用します。
 
-SDB をサポートする複数のバッテリ システムは、今後 HPMI インターフェイスを実装する必要があります。 HPMI API プロトコルは、複数のバッテリ システムを実装するための新しい標準です。
+前もって HPMI インターフェイスを実装するには、SDB をサポートするマルチバッテリシステムが必要です。 HPMI API プロトコルは、複数のバッテリシステムを実装するための新しい標準です。
 
-プランがあるその他の充電中、放電をサポートし、管理機能の課金 HPMI を更新できる、将来、ようにします。
+今後、他の課金、放電、および課金の管理機能をサポートするように HPMI が更新される予定です。
 
 ### <a name="driver-characteristics"></a>ドライバーの特性
 
-HPMI ドライバーの複数のインスタンスは、システムに存在する必要があります。
-HPMI は、ユーザー モードまたはカーネル モード ドライバーのいずれかとして実装することがあります。
+システム上には、HPMI ドライバーのインスタンスが1つだけ存在している必要があります。
+HPMI は、ユーザーモードまたはカーネルモードドライバーとして実装されている場合があります。
 
 ### <a name="installation"></a>インストール
 
-HPMI は、ACPI デバイスとして明示可能性があります。 またはルートのいずれかの他のサービス/oem が OEM の裁量によって列挙します。
+HPMI は、OEM の裁量により、ACPI デバイスとして、または他の OEM サービス/ドライバーのいずれかによって、ルートとして列挙される場合があります。
 
 ### <a name="implementation-of-sdb-algorithm"></a>SDB アルゴリズムの実装
 
-ファームウェア コンポーネントは、バッテリの制御ロジックの大部分を既にホストされている場合、SDB アルゴリズムが実装する方法の 2 つの例を次の図に示します。
+次の図は、ファームウェアコンポーネントが多数のバッテリ制御ロジックを既にホストしている場合に、SDB アルゴリズムを実装する方法の2つの例を示しています。
 
-![HPMI およびファームウェア例 SDB アルゴリズム スタックの使用例](images/powermeter-firmware-and-hpmi-implementation.png)
+![HPMI とファームウェアの例 SDB アルゴリズムスタックの例](images/powermeter-firmware-and-hpmi-implementation.png)
 
 
-### <a name="hpmi-implements-sdb-algorithm"></a>HPMI 実装 SDB アルゴリズム
+### <a name="hpmi-implements-sdb-algorithm"></a>HPMI での SDB アルゴリズムの実装
 
-HPMI SDB アルゴリズムを実装することもできます、これには、ファームウェアに転送の料金/放電ヒントに HPMI が必要です。 
+HPMI では、SDB アルゴリズムを実装することを選択できます。これには、料金/放電ヒントをファームウェアに転送するために HPMI が必要です。 
 
-### <a name="firmware-implements-sdb-algorithm"></a>ファームウェアの実装 SDB アルゴリズム
+### <a name="firmware-implements-sdb-algorithm"></a>ファームウェアが SDB アルゴリズムを実装する
 
-または、HPMI は、フォワーダとして機能し、Windows バッテリを単に、SDB アルゴリズムが実装されているファームウェアへの使用率のヒント転送上の図に示すように可能性があります。 このモデルの使用は、次の理由からお勧めします。
+または、HPMI はフォワーダーとして機能し、前の図に示すように、SDB アルゴリズムが実装されているファームウェアに Windows バッテリ使用率ヒントを転送するだけです。 このモデルの使用は、次の理由で推奨されます。
 
-1. SDB アルゴリズムを実装するために必要な情報がすぐに使用できる – HPMI までには、この情報を渡す必要はありません。
+1. SDB アルゴリズムを実装するために必要な情報は、すぐに使用できます。この情報を HPMI に渡す必要はありません。
 
-2. SDB アルゴリズムは、複数のバッテリ システムで既に実装されているロジックを退院の拡張機能です。
+2. SDB アルゴリズムは、マルチバッテリシステムに既に実装されている放電ロジックの拡張です。
 
-完全なフローチャート モデルをした SDB アルゴリズムを実装する方法を示すを示した[ファームウェアで SDB アルゴリズムを実装する](#IMPLEMENTING-SDB)します。
+SDB アルゴリズムの実装方法を示す完全なフローチャートモデルは、[ファームウェアでの Sdb アルゴリズムの実装](#IMPLEMENTING-SDB)に示されています。
 
 
 
 ## <a name="interface-definitions"></a>インターフェイスの定義
 
-HPMI デバイスの新しいデバイスのインターフェイスのクラス GUID が導入されました。 実装として自身 HPMI デバイスを識別する必要があります、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)します。 詳細については、次を参照してください。[を使用してデバイスのインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-device-interfaces)WDK に含まれています。
+HPMI デバイス用の新しいデバイスインターフェイスクラス GUID が導入されました。 HPMI デバイスは、[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を実装するものとして識別する必要があります。 詳細については、「WDK での[デバイスインターフェイスの使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-device-interfaces)」を参照してください。
 
-Windows では、クエリを実行すると、HPMI デバイスを構成するデバイスの組み込みの通知を使用します。
+Windows では、HPMI デバイスのクエリと構成にデバイスの到着通知を使用します。
 
 ```cpp
 //
@@ -197,15 +197,15 @@ DEFINE_GUID(GUID_DEVINTERFACE_HPMI,
             0xdedae202, 0x1d20, 0x4c40, 0xa6, 0xf3, 0x18, 0x97, 0xe3, 0x19, 0xd5, 0x4f);
 ```
 
-HPMI のことができるようサービスの複数の同時 IOCTL 呼び出し。
+HPMI では、複数の同時 IOCTL 呼び出しを行うことができます。
 
-デバイスのインデックスを 0 に設定することに注意してください。
+デバイスインデックスは0に設定する必要があることに注意してください。
 
 ### <a name="feature-discovery"></a>機能の検出
 
-[IOCTL_HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities) HPMI でサポートされる機能を検出するために使用します。 IOCTL_HPMI_QUERY_CAPABILITIES では、必要な IOCTL です。
+[IOCTL_HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities)は、hpmi でサポートされている機能を検出するために使用されます。 IOCTL_HPMI_QUERY_CAPABILITIES は必須の IOCTL です。
 
-Windows は発行この IOCL HPMI に 1 回新しい HPMI ドライバーのインスタンスが検出されるとします。 
+新しい HPMI ドライバーインスタンスが検出された後、Windows はこの IOCL を HPMI に発行します。 
 
 
 ```cpp
@@ -277,27 +277,27 @@ typedef struct _HPMI_QUERY_CAPABILITIES_RESPONSE {
 
 ### <a name="command-format"></a>コマンドの形式
 
-Windows の問題では、この IOCTL [HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities)します。
+Windows は、この IOCTL と[HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities)を発行します。
 
-バージョンは、HPMI_QUERY_CAPABILITIES_VERSION_1 に設定されます。
-
-
-### <a name="response-format"></a>応答の形式 
-
-HPMI は、STATUS_SUCCESS コードを返す必要があります。
-
-HPMI の応答で、次の値を設定して[HPMI_QUERY_CAPABILITIES_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities_response)構造体。
-
-- HPMI_QUERY_CAPABILITIES_RESPONSE_VERSION_1 にバージョンが設定されています。
-- RequestService HPMI ドライバーを受け取るように HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS に設定されている[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)します。
-- SdbCapabilities は HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING のバッテリ寿命の分散のサポートを示すために設定します。
+バージョンは HPMI_QUERY_CAPABILITIES_VERSION_1 に設定されています。
 
 
-#### <a name="battery-utilization"></a>バッテリの使用率
+### <a name="response-format"></a>応答形式 
 
-Windows 問題[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint) HPMI に更新されたバッテリ最も使用率のヒントを提供します。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT では、必要な IOCTL です。
+HPMI は STATUS_SUCCESS コードを返す必要があります。
 
-」の説明に従って、HPMI は PreserveNonHotSwappableBatteries ヒントを利用できる[適応 SDB アルゴリズムを使用してホット スワップ可能なバッテリ](#ADAPTING-SDB)内部のバッテリを節約するためにします。
+HPMI は、 [HPMI_QUERY_CAPABILITIES_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities_response)構造体で次の値を設定することによって応答します。
+
+- バージョンは HPMI_QUERY_CAPABILITIES_RESPONSE_VERSION_1 に設定されています。
+- RequestService は HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS に設定され、HPMI ドライバーが[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)を受け取るようにします。
+- SdbCapabilities は HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING に設定され、バッテリの残量分散のサポートを示します。
+
+
+#### <a name="battery-utilization"></a>バッテリ使用率
+
+Windows では、最新のバッテリ使用状況に関するヒントを提供するために HPMI に[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)があります。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT は必須の IOCTL です。
+
+HPMI では、内蔵の電池を節約するために、「[ホットスワップ可能な電池で使用する SDB アルゴリズムの適応](#ADAPTING-SDB)」で説明されているように、PreserveNonHotSwappableBatteries ヒントを利用できます。
 
 ```cpp
 //
@@ -376,31 +376,31 @@ typedef struct _HPMI_BATTERY_UTILIZATION_HINT {
 
 ### <a name="command-format"></a>コマンドの形式 
 
-Windows では、この IOCTL HPMI_BATTERY_UTILIZATION_HINT を発行します。 設定されているバージョン*HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*します。
+Windows は、この IOCTL と HPMI_BATTERY_UTILIZATION_HINT を発行します。 バージョンは*HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*に設定されています。
 
-[HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
+[HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
 
-PreserveNonHotSwappableBatteries は、次の値のいずれかに設定されます。
+PreserveNonHotSwappableBatteries は、次のいずれかの値に設定されます。
 
-- HpmiBoolUnavailable:バッテリの使用率のヒントを指定しない場合に設定します。 応答として HPMI/ファームウェアは、事実上放電ポリシーを一般に連携する必要があります。
-- HpmiBoolFalse:Windows はバッテリの寿命が発生する分散のチャンスが判断した場合に設定します。
-- HpmiBoolTrue:Windows が判断した場合のセットは、内部のバッテリに格納されているエネルギーを節約するために必要があります。
+- Hpmiブール使用不可: バッテリ使用状況のヒントを提供できない場合に設定します。 応答として、HPMI/Fimware は、一般に事実上の放電ポリシーに関与する必要があります。
+- Hpmiブール値: Windows がバッテリのいえるを発生させるタイミングを決定するときに設定します。
+- Hpmiブール True: Windows が内部のバッテリに格納されているエネルギーを節約する必要がある場合に設定します。
 
-### <a name="response-format"></a>応答の形式
+### <a name="response-format"></a>応答形式
 
-HPMI は、STATUS_SUCCESS コードを返す必要があります。
+HPMI は STATUS_SUCCESS コードを返す必要があります。
 
-応答には、データは返されません。
+応答にデータが返されません。
 
 
-## <a name="sample-interface-contract"></a>サンプル インターフェイス コントラクト
+## <a name="sample-interface-contract"></a>サンプルインターフェイスコントラクト
 
-参照してください[HMPI.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/index)完全 (サンプル) API コントラクト インターフェイスの定義をここで説明をします。
+ここで説明するインターフェイス定義の完全な (サンプル) API コントラクトについては、 [Hmpi .h](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/index)を参照してください。
 
 
 
 >[!NOTE]
-> このドキュメントの内容は、予告なく変更される可能性が。
+> このドキュメントの内容は、予告なしに変更される可能性があります。
 
 
 

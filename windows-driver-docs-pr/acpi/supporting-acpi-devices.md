@@ -3,54 +3,54 @@ title: ACPI デバイスをサポートする
 description: ACPI デバイスをサポートする
 ms.assetid: ebaf2e66-4f56-48ca-93ca-f34e694c0d73
 keywords:
-- Advanced Configuration and Power Interface Specification WDK
+- 高度な構成と電源インターフェイスの仕様 WDK
 - ACPI デバイス WDK
 - ACPI デバイス WDK、ACPI デバイスについて
-- 定義は、WDK ACPI をブロックします。
-- 操作のリージョン WDK ACPI
-- 操作リージョン ハンドラー WDK ACPI
-- 機能ドライバー WDK ACPI
+- 定義が WDK ACPI をブロックする
+- 操作リージョン WDK ACPI
+- 操作領域ハンドラー WDK ACPI
+- 関数ドライバー WDK ACPI
 - WDM 関数ドライバー WDK ACPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e12356fa23256abf0a4e9692876f24a56afa56a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6f7281617d6143c544f67b797f4bfd02b6d567e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355805"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831443"
 ---
 # <a name="supporting-acpi-devices"></a>ACPI デバイスをサポートする
 
 
-このセクションでは、仕入先 WDM 関数ドライバー内での使い方 Windows Advanced Configuration and Power Interface (ACPI) デバイスの機能を強化するためにについて説明します。
+このセクションでは、ベンダーが Windows の WDM 関数ドライバーを使用して、Advanced Configuration and Power Interface (ACPI) デバイスの機能を強化する方法について説明します。
 
-ACPI のデバイスには、バッテリ、熱ゾーンは、システムを ACPI 名前空間で定義されているその他のデバイスなどの低レベルのシステム デバイスが含まれます。 ACPI の名前空間は、ACPI BIOS を使用してオブジェクトを参照する階層の名前空間です。
+ACPI デバイスには、バッテリ、サーマルゾーン、システムの ACPI 名前空間で定義されているその他のデバイスなどの低レベルのシステムデバイスが含まれます。 ACPI 名前空間は、ACPI BIOS がオブジェクトを参照するために使用する階層的な名前空間です。
 
-システム提供の結合操作[ACPI ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)と ACPI BIOS は ACPI デバイスの基本的な機能をサポートし、オペレーティング システムの残りの部分に対して透過的です。 ACPI のデバイスを ACPI システムの説明テーブルの定義のブロックを指定します。 デバイスの定義のブロックには、デバイス データにアクセスするために使用するデバイスのメモリの連続したブロックを指定する操作領域が、特に指定します。
+システム提供の[acpi ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)と acpi BIOS の組み合わせ操作は、acpi デバイスの基本的な機能をサポートしており、オペレーティングシステムの他の部分に対して透過的です。 Acpi デバイスは、ACPI システムの説明テーブルの定義ブロックによって指定されます。 デバイスの定義ブロックは、特に、デバイスデータへのアクセスに使用されるデバイスメモリの連続したブロックを指定する操作領域を指定します。
 
-ACPI デバイスの機能を強化するために、ベンダーは WDM 関数ドライバー、ドライバーによって提供される操作のリージョンの ACPI BIOS と通信を指定できます。 ACPI ドライバーでは、関数のドライバーによって提供される操作リージョン ハンドラーを呼び出すことによって操作の領域にアクセスします。
+ACPI デバイスの機能を強化するために、ベンダーは、ドライバーによって提供される操作領域を通じて ACPI BIOS と通信する WDM 関数ドライバーを提供できます。 ACPI ドライバーは、関数ドライバーによって提供される操作領域ハンドラーを呼び出すことによって、操作領域にアクセスします。
 
-ACPI 操作リージョン経由の通信、によって関数ドライバー直接にアクセスできるは、通常はデバイスのみ、BIOS によって制御され、BIOS は、ドライバーと、ホスト システムの構成に依存しているデバイスに固有の操作を呼び出すことができます。 基本的な動作メカニズムは次のとおりです。
+ACPI 操作リージョンを介して通信することにより、関数ドライバーは通常、BIOS によってのみ制御されるデバイスに間接的にアクセスできます。また、BIOS は、ドライバーおよびホストシステムの構成に依存するデバイス固有の操作を呼び出すことができます。 基本的な動作メカニズムは次のとおりです。
 
-1.  ACPI BIOS では、読み取るか、デバイスの操作のリージョンにデータを書き込みます。
+1.  ACPI BIOS は、デバイスの操作領域内のデータの読み取りまたは書き込みを行います。
 
-2.  営業地域にアクセスするには、ACPI ドライバーは、function ドライバーの操作のリージョン ハンドラーを呼び出します。
+2.  操作領域にアクセスするために、ACPI ドライバーは関数ドライバーの操作領域ハンドラーを呼び出します。
 
-3.  操作のリージョンのハンドラーは任意のアクションへのアクセスは、設定し、アクセスに関連する情報を返します。
+3.  操作領域ハンドラーは、アクセスに対してプログラミングされているすべてのアクションを実行し、アクセスに関連付けられている情報を返します。
 
-次の 2 つの例では、ACPI デバイスの機能を強化するために、仕入先が関数のドライバーを使用する方法を示します。
+次の2つの例は、ベンダーが関数ドライバーを使用して、ACPI デバイスの機能を強化する方法を示しています。
 
-1.  ACPI、デバイス ドライバーがプレインストールされているソフトウェアのベンダーのサウンド カード ボリューム コントロールを有効にすると、function ドライバーの操作のリージョン内のインデックスにアクセスできます。
+1.  ACPI デバイスは、ドライバーが製造元のプレインストールされたソフトウェアでサウンドカードのボリューム制御を有効にする関数ドライバーの操作領域内のインデックスにアクセスできます。
 
-2.  ドライバーは、バッテリ、熱のゾーンの温度および他の操作が、通常の残りの容量を監視、BIOS でのみアクセスします。
+2.  ドライバーは、バッテリの残りの容量、温度のあるゾーンの温度、および通常 BIOS によってのみアクセスされるその他の処理を監視します。
 
-次のトピックでは、デバイスの ACPI 関数ドライバーを提供する方法について説明します。
+次のトピックでは、ACPI デバイスの関数ドライバーを指定する方法について説明します。
 
-[デバイスの ACPI デバイス スタック](device-stacks-for-an-acpi-device.md)
+[ACPI デバイスのデバイススタック](device-stacks-for-an-acpi-device.md)
 
-[ACPI 関数デバイスの操作](operation-of-an-acpi-device-function-driver.md)
+[ACPI デバイス関数ドライバーの操作](operation-of-an-acpi-device-function-driver.md)
 
-システム提供についてサポートを参照してください、ACPI デバイス関数のドライバーをサポートするルーチン[ACPI 操作リージョン ハンドラーの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi/index)します。
+ACPI デバイス関数ドライバーをサポートするシステム提供のサポートルーチンの詳細については、「 [Acpi 操作領域ハンドラーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_acpi/index)」を参照してください。
 
-ACPI のデバイスと名前空間の詳細については、次を参照してください。、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)します。
+ACPI デバイスと名前空間の詳細については、「 [Advanced Configuration And Power Interface (acpi) の仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)」を参照してください。

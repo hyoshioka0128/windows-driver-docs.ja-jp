@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_品質\_エラー
-description: KSPROPERTY\_品質\_エラー プロパティが省略可能なプロパティ、暗証番号 (pin) は、品質管理をサポートしている場合に実装する必要があります。
+title: KSK プロパティ\_品質\_エラー
+description: KSK プロパティ\_QUALITY\_ERROR プロパティは、pin が品質管理をサポートしている場合に実装する必要があるオプションのプロパティです。
 ms.assetid: a918ef13-f0a7-4eb9-b6ec-dcfec3098c1e
 keywords:
-- KSPROPERTY_QUALITY_ERROR ストリーミング メディア デバイス
+- KSPROPERTY_QUALITY_ERROR ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 147599dd0742fbad7ce702af2b35cd479bb428c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a92d7376998ee7e26e550140e0f1bcc9d69b0bb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361050"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838837"
 ---
-# <a name="kspropertyqualityerror"></a>KSPROPERTY\_品質\_エラー
+# <a name="ksproperty_quality_error"></a>KSK プロパティ\_品質\_エラー
 
 
-KSPROPERTY\_品質\_エラー プロパティが省略可能なプロパティ、暗証番号 (pin) は、品質管理をサポートしている場合に実装する必要があります。
+KSK プロパティ\_QUALITY\_ERROR プロパティは、pin が品質管理をサポートしている場合に実装する必要があるオプションのプロパティです。
 
 ## <span id="ddk_ksproperty_quality_error_ks"></span><span id="DDK_KSPROPERTY_QUALITY_ERROR_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_品質\_エラー プロパティが省略可能なプロパティ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_品質\_エラー プロパティが省略可能なプロパティ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality" data-raw-source="[&lt;strong&gt;KSQUALITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)"><strong>KSQUALITY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksquality" data-raw-source="[&lt;strong&gt;KSQUALITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksquality)"><strong>KSK 品質</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_品質\_エラー プロパティが省略可能なプロパティ�
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_品質\_エラーは、型のプロパティの値を持つ[ **KSQUALITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)構造体。 取得または現在使用されているフレームの割合と最適なフレームの受信時刻からデルタを設定するには、この構造体を使用します。
+KSK プロパティ\_品質\_エラーには、 [**Ksk 品質**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksquality)構造型のプロパティ値があります。 この構造体を使用して、現在使用されているフレームの割合と、最適なフレームの受信時刻からのデルタを取得または設定します。
 
-クラス ドライバーは、このプロパティを処理しませんストリームのミニドライバーは、独自の処理を提供する必要があります。
+クラスドライバーは、このプロパティを処理しません。stream ミニドライバーは、独自の処理を提供する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_品質\_エラーは、型のプロパティの値を持つ[ **KSQUA
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_品質\_エラーは、型のプロパティの値を持つ[ **KSQUA
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSQUALITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)
+[**KSK 品質**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksquality)
 
  
 

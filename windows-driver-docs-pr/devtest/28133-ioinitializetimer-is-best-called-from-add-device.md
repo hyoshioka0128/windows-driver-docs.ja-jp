@@ -1,25 +1,25 @@
 ---
 title: C28133
-description: 警告 C28133 IoInitializeTimer は AddDevice から最も呼び出されます。
+description: 警告 C28133 IoInitializeTimer は AddDevice から呼び出すことをお勧めします。
 ms.assetid: c832cf67-1fc2-491b-a9e3-d35c5d9f6b73
 keywords:
-- '警告は、WDK: PREfast for Drivers を一覧表示'
-- 'エラーは、WDK: PREfast for Drivers を一覧表示'
+- ドライバーの WDK PREfast の一覧に警告が表示される
+- ドライバーの WDK PREfast の一覧にエラーが表示される
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28133
-ms.openlocfilehash: 3a91c7a2698fe50347940e0c02cf5b753c73bf64
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b07ca8a0cb47481e0b5673938d8a292b604cbd5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364144"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839595"
 ---
 # <a name="c28133"></a>C28133
 
 
-C28133 を警告します。IoInitializeTimer は AddDevice から最もと呼ばれます。
+警告 C28133: IoInitializeTimer は AddDevice から呼び出すことをお勧めします。
 
 <table>
 <colgroup>
@@ -29,14 +29,14 @@ C28133 を警告します。IoInitializeTimer は AddDevice から最もと呼�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>追加情報</strong></p></td>
-<td align="left"><p>IoInitializeTimer は、デバイス オブジェクトあたり 1 回のみ呼び出すことができます。 ルーチン、AddDevice から呼び出すことが呼び出されない点が予期せず複数回の保証役立ちます。</p></td>
+<td align="left"><p>IoInitializeTimer は、デバイスオブジェクトごとに1回だけ呼び出すことができます。 AddDevice ルーチンからこのメソッドを呼び出すと、予期せずに複数回呼び出されないようにすることができます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ドライバーを呼び出す[ **IoInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializetimer)以外のルーチンでその**AddDevice**ルーチン。 コード分析ツールは、エラーを防止し、ドライバー コードの信頼性を高めることができますベスト プラクティス推奨事項を提案する、この機会を使用しています。
+ドライバーは、 **AddDevice**ルーチン以外のルーチンで[**ioinitializetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializetimer)を呼び出しています。 コード分析ツールは、この機会を使用して、エラーを回避し、ドライバーコードの信頼性を高めるためのベストプラクティスの推奨事項を提案します。
 
  
 

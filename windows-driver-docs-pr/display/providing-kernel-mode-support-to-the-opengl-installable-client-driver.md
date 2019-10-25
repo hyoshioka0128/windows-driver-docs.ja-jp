@@ -1,28 +1,28 @@
 ---
 title: OpenGL のインストール可能なクライアント ドライバーに対するカーネル モードのサポート
-description: OpenGL インストール可能なクライアント ドライバーにカーネル モードのサポートを提供します。
+description: OpenGL インストール可能なクライアントドライバーにカーネルモードのサポートを提供する
 ms.assetid: 1871594a-ca4d-4a3c-bf12-bbf80fecefe9
 keywords:
-- OpenGL ICD WDK の表示
-- カーネル モードの OpenGL ICD WDK の表示
-- ICD WDK の表示
-- インストール可能なクライアント ドライバー WDK の表示
+- OpenGL ICD WDK ディスプレイ
+- カーネルモード OpenGL ICD WDK ディスプレイ
+- の場合 WDK の表示
+- インストール可能なクライアントドライバーの WDK ディスプレイ
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 4bdcd1d595ed3e9d8c506aaac6a6fb7854593f2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e0e6ed3a8e1acf684e7233fbb0a5e38cc14de9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385053"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829671"
 ---
 # <a name="kernel-mode-support-to-the-opengl-installable-client-driver"></a>OpenGL のインストール可能なクライアント ドライバーに対するカーネル モードのサポート
 
 
-OpenGL インストール可能なクライアント ドライバー (ICD) は、同じレベルのとしてのカーネル モードのサービスを呼び出すためのサポートを取得できます[Direct3D ユーザー モードのディスプレイ ドライバー](initializing-communication-with-the-direct3d-user-mode-display-driver.md)します。 アクセスなど、マイクロソフトの Direct3D ランタイムのコールバック関数を使用してカーネル モードのサービスを介して提供ではなく、ただし、 **pAdapterCallbacks**のメンバー、 [ **D3DDDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)構造と**pCallbacks**のメンバー、 [ **D3DDDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)構造体、OpenGL ICD が Gdi32.dll を読み込みの使用を初期化する必要があります、 [OpenGL カーネル-モード-アクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)次のコード例に示すようにします。 このコードを実装しません[OpenGL で Windows 8 の機能強化](supporting-opengl-enhancements.md)します。
+OpenGL のインストール可能なクライアントドライバー (ICD) では、 [Direct3D ユーザーモードディスプレイドライバー](initializing-communication-with-the-direct3d-user-mode-display-driver.md)と同じレベルのカーネルモードサービスを呼び出すことができます。 ただし、Microsoft Direct3D ランタイムなどのコールバック関数を介してカーネルモードサービスにアクセスするのではなく、 [**D3DDDIARG\_OPENADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)構造体の**padaptercallbacks**メンバーと [**D3DDDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)構造体の pcallbacks バックメンバー。 Opengl ICD は Gdi32 を読み込んで、次のコード例に示すように、 [opengl カーネルモードアクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)の使用を初期化する必要があります。 このコード[では、OpenGL で Windows 8 の機能強化](supporting-opengl-enhancements.md)が実装されていません。
 
-**注**   OpenGL ICD Development kit のライセンスを取得するには、 [OpenGL 問題](mailto:opengl@microsoft.com)チーム。
+**注**   Opengl ICD Development Kit のライセンスを取得するには、 [opengl の問題](mailto:opengl@microsoft.com)チームにお問い合わせください。
 
  
 

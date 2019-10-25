@@ -3,22 +3,22 @@ title: 精度が固定されているデータ型の不整合回避
 description: 精度が固定されているデータ型の不整合回避
 ms.assetid: 4e214bd8-b622-447a-b484-bd1d5d239de7
 keywords:
-- WDK の 64 ビットのコードをファイル システムの制御
-- FSCTL WDK 64 ビット
-- 制御コード WDK 64 ビット
-- I/O 制御コード WDK カーネル、64 ビット ドライバーで 32 ビットの I/O
-- Ioctl WDK カーネルでは、64 ビット ドライバーで 32 ビットの I/O
-- ポインターの精度を WDK の 64 ビット
-- 固定精度のデータ型を WDK の 64 ビット
-- 不整合の固定精度のデータ型
+- ファイルシステム制御コード WDK 64 ビット
+- FSCTL WDK 64-bit
+- コントロールコード WDK 64-bit
+- I/o 制御コード WDK カーネル、64ビットドライバーでの32ビット i/o
+- Ioctl WDK カーネル、64ビットドライバーの32ビット i/o
+- ポインターの有効桁数 WDK 64-bit
+- 固定精度データ型 WDK 64 ビット
+- 固定精度のデータ型の不整合
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ede0f9383951c48f9979084767c203f7f6cd8e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b9fcd0eb33b92456e51f4e048b0f5e47666659a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837177"
 ---
 # <a name="avoiding-misalignment-of-fixed-precision-data-types"></a>精度が固定されているデータ型の不整合回避
 
@@ -26,23 +26,23 @@ ms.locfileid: "67369939"
 
 
 
-残念ながら、データ型の同じサイズが 32 ビットおよび 64 ビット プログラミングのさまざまな配置要件があることができます。 そのため固定精度の型へのポインターの有効桁数のデータ型を変更することですべての IOCTL/FSCTL バッファー不整合の問題を回避できます。 つまり、カーネル モード ドライバーの Ioctl と FSCTLs 特定固定有効桁数のデータ型 (またはそれらへのポインター) を格納するバッファーを渡すこともできますが thunked する必要があります。
+残念ながら、32ビットおよび64ビットのプログラミングでは、データ型のサイズは同じですが、アラインメント要件が異なる可能性があります。 したがって、ポインターの有効桁数のデータ型を固定精度の型に変更することで、IOCTL/FSCTL バッファーの不整合の問題を回避することはできません。 これは、特定の固定精度データ型 (またはポインターへのポインター) を含むバッファーを渡すカーネルモードドライバーの Ioctl と FSCTLs も、thunked である必要があることを意味します。
 
-### <a name="which-data-types-are-affected"></a>どの種類のデータが影響を受ける
+### <a name="which-data-types-are-affected"></a>影響を受けるデータ型
 
-問題は、固定有効桁数のデータ型は構造体に影響します。 これは、構造体のアラインメント要件を決定するルールがプラットフォームに固有であるためです。
+この問題は、それ自体が構造体である固定精度データ型に影響します。 これは、構造体の配置要件を決定するための規則がプラットフォーム固有であるためです。
 
-たとえば、  **\_ \_int64**大きな\_整数、および KFLOATING\_保存は x86 上で 4 バイト境界に合わせて調整する必要がありますプラットフォーム。 ただし、Itanium ベースのコンピューターにそれらは、8 バイト境界に合わせて調整する必要があります。
+たとえば、 **\_\_int64**、LARGE\_INTEGER、および kfloating\_SAVE は、x86 プラットフォームの4バイト境界でアラインする必要があります。 ただし、Itanium ベースのコンピューターでは、8バイトの境界上に配置する必要があります。
 
-特定のプラットフォーム上の特定のデータ型のアラインメント要件を確認するのには、使用、**型\_配置**プラットフォームでのマクロ。
+特定のプラットフォームの特定のデータ型のアラインメント要件を判断するには、そのプラットフォームで**型\_アラインメント**マクロを使用します。
 
-### <a name="how-to-fix-the-problem"></a>問題を解決するには、方法
+### <a name="how-to-fix-the-problem"></a>問題を解決する方法
 
-IOCTL はメソッドを次の例で\_どちらの IOCTL のため、 **Irp -&gt;UserBuffer**カーネル モード ドライバーにユーザー モード アプリケーションから直接ポインターが渡されます。 Ioctl および FSCTLs で使用されるバッファーでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)バッファー ポインターは、安全に逆参照が必要です。
+次の例では、IOCTL は IOCTL\_メソッドではないため、 **Irp&gt;の UserBuffer**ポインターはユーザーモードアプリケーションからカーネルモードドライバーに直接渡されます。 Ioctl および FSCTLs で使用されるバッファーに対しては、検証は実行されません。 したがって、バッファーポインターを安全に逆参照するには、 [**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)または[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)を呼び出す必要があります。
 
-いると仮定すると、32 ビット アプリケーション有効な値に渡すことが**Irp -&gt;UserBuffer**、LARGE\_によって示される整数構造**p -&gt;DeviceTime**されます4 バイト境界上にアラインされます。 **ProbeForRead**で渡される値に対しては、この配置を確認します。 その*配置*パラメーターで、ここでは**型\_配置**(LARGE\_整数)。 X86 プラットフォームでは、このマクロの式は、4 (バイト単位) を返します。 ただし、Itanium ベースのマシンでは、上に 8 が返されます、原因**ProbeForRead**状態を発生させる\_DATATYPE\_の不整合例外。
+32ビットアプリケーションが**Irp&gt;UserBuffer**の有効な値を渡したと仮定した場合、 **p&gt;DEVICETIME**が指す大きな\_整数構造体は、4バイトの境界に配置されます。 **ProbeForRead** *は、アラインメントパラメーターで*渡された値に対してこの配置を確認します。この例では、**型\_アラインメント**(LARGE\_INTEGER) です。 X86 プラットフォームでは、このマクロ式は 4 (バイト) を返します。 ただし、Itanium ベースのコンピューターでは8が返され、 **ProbeForRead**によって\_データ型\_不整合例外の状態が発生します。
 
-**注**  削除して、 **ProbeForRead**呼び出しも、問題が解決しないが、のみと、診断が困難になります。
+**ProbeForRead**の呼び出しを削除しても問題は解決されませんが、診断が難しくなるだけです **。  **
 
  
 
@@ -71,11 +71,11 @@ case IOCTL_SETTIME:
  } except( EXCEPTION_EXECUTE_HANDLER ) {
 ```
 
-次のセクションでは、上記で説明した問題を解決する方法を説明します。 簡潔にするためのすべてのコード スニペットを編集したことに注意してください。
+以下のセクションでは、上記の問題の解決方法について説明します。 すべてのコードスニペットが簡潔になるように編集されていることに注意してください。
 
-### <a name="solution-1-copy-the-buffer"></a>解決方法 1:バッファーにコピーします。
+### <a name="solution-1-copy-the-buffer"></a>解決策 1: バッファーをコピーする
 
-不整合の問題を回避するために最も安全な方法では、次の例のように、その内容にアクセスする前に、バッファーのコピーを作成します。
+不整合の問題を回避する最も安全な方法は、次の例のように、バッファーのコピーを作成してからその内容にアクセスすることです。
 
 ```cpp
 case IOCTL_SETTIME: {
@@ -92,7 +92,7 @@ case IOCTL_SETTIME: {
 }
 ```
 
-このソリューションは、バッファーの内容が正しく配置されているかどうかに、まず調べることによってパフォーマンスを向上させる最適化できます。 そうである場合は、バッファーが使用できます。 それ以外の場合、ドライバーは、バッファーのコピーを作成します。
+このソリューションは、バッファーの内容が適切にアラインされているかどうかを最初に確認することで、パフォーマンスを向上させるために最適化できます。 その場合は、バッファーをそのように使用できます。 それ以外の場合は、ドライバーによってバッファーのコピーが作成されます。
 
 ```cpp
 case IOCTL_SETTIME: {
@@ -114,9 +114,9 @@ case IOCTL_SETTIME: {
 }
 ```
 
-### <a name="solution-2-use-the-unaligned-macro"></a>解決方法 2:アラインされていないマクロを使用します。
+### <a name="solution-2-use-the-unaligned-macro"></a>解決方法 2: 整列されていないマクロを使用する
 
-**整列されていない**マクロにアクセスできるコードを生成する C コンパイラに指示、 **DeviceTime**アラインメント エラーにすることがなくフィールド。 Itanium ベースのプラットフォームでこのマクロを使用して、ドライバーを大幅に拡大し、低速の可能性があるに注意してください。
+整列**されていないマクロは**、アラインメントエラーを発生させることなく**devicetime**フィールドにアクセスできるコードを生成するように C コンパイラに指示します。 Itanium ベースのプラットフォームでこのマクロを使用すると、ドライバーのサイズが大幅に大きくなり、速度が低下する可能性があることに注意してください。
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS2 {
@@ -125,9 +125,9 @@ typedef struct _IOCTL_PARAMETERS2 {
 typedef IOCTL_PARAMETERS2 UNALIGNED *PIOCTL_PARAMETERS2;
 ```
 
-### <a name="pointers-are-also-affected"></a>ポインターも影響を受けます
+### <a name="pointers-are-also-affected"></a>ポインターも影響を受けます。
 
-前に説明した、不整合の問題は、バッファー内の I/O 要求でも発生することができます。 次の例では、IOCTL バッファーには大規模に埋め込みのポインターが含まれています\_整数構造体。
+前に説明した不整合の問題は、バッファーされた i/o 要求でも発生する可能性があります。 次の例では、IOCTL バッファーに、大きな\_整数構造体への埋め込みポインターが含まれています。
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS3 {
@@ -139,11 +139,11 @@ typedef struct _IOCTL_PARAMETERS3 {
             COUNT_FUNCTION, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-メソッドのような\_も IOCTL と FSCTL バッファー ポインターの前に説明した、カーネル モード ドライバーにユーザー モード アプリケーションから直接 I/O 要求をバッファー内に埋め込まれているポインターが渡されるもします。 これらのポインターでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)で囲まれている、**試用/を除く**ブロック、埋め込みポインターを安全に逆参照する前に必要です。
+メソッドと同様に、前に説明した IOCTL および FSCTL バッファーポインターのいずれ\_も、バッファー i/o 要求に埋め込まれているポインターは、ユーザーモードアプリケーションからカーネルモードドライバーに直接渡されます。 これらのポインターに対して検証は実行されません。 したがって、埋め込みポインターを安全に逆参照するには、 **try/except**ブロックで囲まれた[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)または[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)の呼び出しが必要です。
 
-32 ビット アプリケーションが有効な値に成功したと仮定すると、前の例のように**pDeviceCount**、LARGE、\_によって示される整数構造**pDeviceCount** 4 - 上に配置されバイトの境界。 **ProbeForRead**と**ProbeForWrite**の値に対しては、この配置の確認、*配置*型をここでは、パラメーター\_配置 (LARGE\_整数)。 X86 プラットフォームでは、このマクロの式は、4 (バイト単位) を返します。 ただし、Itanium ベースのマシンでは、上に 8 が返されます、原因**ProbeForRead**または**ProbeForWrite**状態を発生させる\_DATATYPE\_の不整合例外。
+前の例と同様に、32ビットアプリケーションが**pdevicecount**の有効な値を渡していると仮定すると、 **PDEVICECOUNT**が指す大きな\_整数構造体は、4バイトの境界に配置されます。 **ProbeForRead**と**ProbeForWrite**アラインメントパラメーターの値に対してこの配置を確認します。この例では、型 *\_アラインメント (* LARGE\_INTEGER) です。 X86 プラットフォームでは、このマクロ式は 4 (バイト) を返します。 ただし、Itanium ベースのコンピューターでは8が返され、 **ProbeForRead**または**ProbeForWrite**はステータス\_DATATYPE\_ミスアライメント例外を発生させます。
 
-適切に配置された、LARGE のコピーを作成してこの問題を解決できます\_整数構造体、または次のようにアラインされていないマクロを使用して、ソリューションの 1 のようにします。
+この問題を解決するには、ソリューション1と同様に、大きな\_整数構造体の適切にアラインされたコピーを作成するか、または次のように整列されていないマクロを使用します。
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS3 {

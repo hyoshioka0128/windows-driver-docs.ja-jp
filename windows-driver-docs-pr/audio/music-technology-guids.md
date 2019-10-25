@@ -3,21 +3,21 @@ title: 音楽テクノロジ GUID
 description: 音楽テクノロジ GUID
 ms.assetid: 3b7c2907-e67f-458e-809d-080dcc30be1a
 keywords:
-- WDM オーディオ拡張 WDK、音楽テクノロジ Guid
+- WDM オーディオ拡張機能 WDK、ミュージックテクノロジ Guid
 - 音楽テクノロジ Guid WDK オーディオ
 - KSDATARANGE_MUSIC 構造体
-- シンセサイザー WDK オーディオ、テクノロジの Guid
-- MIDI ストリームのデータ形式の WDK オーディオ
-- DirectMusic WDK のオーディオ ストリームのデータを形式します。
-- Dmu は、WDK のデータ形式をストリームします。
+- シンセサイザー WDK オーディオ、テクノロジ Guid
+- MIDI ストリームデータ形式 WDK オーディオ
+- DirectMusic WDK audio、stream データ形式
+- DMus ストリームデータ形式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16d8c72c16106d7200a87094cff9fe25eda35030
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93fe47da2f387fb4dca311b7dce95c884f09fe9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363209"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832566"
 ---
 # <a name="music-technology-guids"></a>音楽テクノロジ GUID
 
@@ -25,7 +25,7 @@ ms.locfileid: "67363209"
 ## <span id="music_technology_guids"></span><span id="MUSIC_TECHNOLOGY_GUIDS"></span>
 
 
-MIDI または Dmu のミニポート ドライバーでは、そのピンのそれぞれで処理できること、stream の形式の範囲を指定する必要があります。 」の説明に従って[Pin ファクトリ](pin-factories.md)、ドライバーは、型の構造体は、それぞれが 1 つまたは複数のデータ範囲の記述子の配列としてこの情報を指定します[ **KSDATARANGE\_音楽**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music). この構造体の**テクノロジ**シンセサイザー テクノロジの種類、MIDI または DirectMusic デバイスを使用してメンバーを示します。 ミニポート ドライバーを設定できる、**テクノロジ**(左の列) の次の表に示すように GUID 値の 1 つのメンバー。
+MIDI または DMus ミニポートドライバーでは、各ピンが処理できるストリーム形式の範囲を指定する必要があります。 「 [Pin ファクトリ](pin-factories.md)」で説明されているように、ドライバーは、1つまたは複数のデータ範囲記述子の配列としてこの情報を指定します。それぞれの記述子は、型[**ksdatarange\_MUSIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)の構造です。 この構造体の**テクノロジ**メンバーは、MIDI または DirectMusic デバイスが使用するシンセサイザーテクノロジの種類を示します。 ミニポートドライバーは、次の表に示すいずれかの GUID 値に**テクノロジ**メンバーを設定できます (左側の列)。
 
 <table>
 <colgroup>
@@ -36,56 +36,56 @@ MIDI または Dmu のミニポート ドライバーでは、そのピンのそ
 <thead>
 <tr class="header">
 <th align="left">KSDATARANGE_MUSIC テクノロジ GUID</th>
-<th align="left">MIDIOUTCAPS wTechnology 値</th>
-<th align="left">説明</th>
+<th align="left">MIDIOUTCAPS wTechnology の値</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_PORT</p></td>
 <td align="left"><p>MOD_MIDIPORT</p></td>
-<td align="left"><p>デバイスは、片方デバイスです。</p></td>
+<td align="left"><p>デバイスは MPU-401 デバイスです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_SYNTH</p></td>
 <td align="left"><p>MOD_SYNTH</p></td>
-<td align="left"><p>デバイスは、シンセサイザーです。</p></td>
+<td align="left"><p>デバイスはシンセサイザーです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_SQSYNTH</p></td>
 <td align="left"><p>MOD_SQSYNTH</p></td>
-<td align="left"><p>デバイスは、正方形 wave シンセサイザーです。</p></td>
+<td align="left"><p>デバイスは、正方形のシンセサイザーです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_FMSYNTH</p></td>
 <td align="left"><p>MOD_FMSYNTH</p></td>
-<td align="left"><p>デバイスでは、FM シンセサイザーです。</p></td>
+<td align="left"><p>デバイスは FM シンセサイザーです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_MAPPER</p></td>
 <td align="left"><p>MOD_MAPPER</p></td>
-<td align="left"><p>デバイスは、Microsoft MIDI マッパーです。</p></td>
+<td align="left"><p>デバイスは Microsoft MIDI マッパーです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_WAVETABLE</p></td>
 <td align="left"><p>MOD_WAVETABLE</p></td>
-<td align="left"><p>デバイスは、ハードウェアのウェーブ シンセサイザーです。</p></td>
+<td align="left"><p>デバイスはハードウェア wavetable シンセサイザーです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSMUSIC_TECHNOLOGY_SWSYNTH</p></td>
 <td align="left"><p>MOD_SWSYNTH</p></td>
-<td align="left"><p>デバイスは、ソフトウェアのシンセサイザーです。</p></td>
+<td align="left"><p>デバイスはソフトウェアシンセサイザーです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**MidiOutGetDevCaps**関数変換テクノロジに書き込みを行うインデックスに、ドライバーから受信した GUID、 **wTechnology**に出力する MIDIOUTCAPS 構造体のメンバー、呼び出し元。 上記の表に示す、 **wTechnology** GUID は、それぞれのテクノロジに対応する値 (中央の列)。 詳細については**midiOutGetDevCaps** MIDIOUTCAPS、Microsoft Windows SDK のマニュアルを参照するとします。
+**Midioutgetdevcaps**関数は、ドライバーから受け取ったテクノロジ GUID を、呼び出し元に出力する midioutcaps 構造体の**wtechnology**メンバーに書き込むインデックスに変換します。 上の表は、各テクノロジ GUID に対応する**Wtechnology**値 (センター列) を示しています。 **Midioutgetdevcaps**と MIDIOUTCAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-デバイスを列挙する場合、Windows マルチ メディア midiOut または midiIn API を使用して、MIDI アプリケーションは MIDI のピンが DirectMusic ピンいないを確認できます。 DirectMusic アプリケーションでは、MIDI と DirectMusic の両方の pin を確認できます。 MIDI または Dmu のミニポート ドライバーでは、MIDI 暗証番号 (pin) を識別 KSDATAFORMAT に暗証番号 (pin) のデータ範囲のサブタイプの GUID を設定して\_サブタイプ\_MIDI します。 Dmu のミニポート ドライバー KSDATAFORMAT サブタイプ GUID に設定して DirectMusic 暗証番号 (pin) を識別する\_サブタイプ\_DIRECTMUSIC します。 MIDI と DirectMusic ピンのデータ範囲の例については、次を参照してください。 [MIDI Stream データ範囲](midi-stream-data-range.md)と[DirectMusic Stream データ範囲](directmusic-stream-data-range.md)します。
+デバイスを列挙するときに、Windows マルチメディア midiOut または Midiout API を使用する MIDI アプリケーションは、MIDI pin を参照できますが、DirectMusic pin は参照できません。 DirectMusic アプリケーションは、MIDI ピンと DirectMusic pin の両方を参照できます。 Midi または DMus ミニポートドライバーは、pin のデータ範囲のサブタイプ GUID を KSDATAFORMAT\_SUBTYPE\_MIDI に設定することにより、MIDI pin を識別します。 DMus ミニポートドライバーは、サブタイプ GUID を KSDATAFORMAT\_SUBTYPE\_DIRECTMUSIC に設定することによって、DirectMusic pin を識別します。 MIDI と DirectMusic の pin のデータ範囲の例については、「 [Midi ストリームのデータ範囲](midi-stream-data-range.md)」と「 [Directmusic ストリームのデータ範囲](directmusic-stream-data-range.md)」を参照してください。
 
-説明したよう[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)、アダプタのドライバを呼び出す、 [ **PcNewMiniport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)システム提供のミニポートのいずれかのインスタンスを作成する関数Portcls.sys でドライバー。 呼び出し元のインスタンスを作成するミニポート ドライバーを指定するには、次の表で、ドライバーの Guid のいずれかを指定します。
+「 [MIDI And DirectMusic Filters](midi-and-directmusic-filters.md)」で説明されているように、アダプタードライバーは[**pcnewminiport ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)関数を呼び出して、Portcls にシステムが提供するミニポートドライバーの1つのインスタンスを作成します。 呼び出し元は、次の表に示すいずれかのドライバー Guid を指定して、インスタンス化するミニポートドライバーを指定します。
 
 <table>
 <colgroup>
@@ -94,8 +94,8 @@ MIDI または Dmu のミニポート ドライバーでは、そのピンのそ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ドライバーの GUID</th>
-<th align="left">GUID のテクノロジ</th>
+<th align="left">ドライバー GUID</th>
+<th align="left">テクノロジ GUID</th>
 </tr>
 </thead>
 <tbody>
@@ -124,15 +124,15 @@ MIDI または Dmu のミニポート ドライバーでは、そのピンのそ
 
  
 
-上記の表の右側の列では、テクノロジ、対応するミニポート ドライバーがそのピンのデータ範囲を指定する GUID を示します。 たとえば、FmSynth ミニポート ドライバーに割り当てます GUID KSMUSIC テクノロジ\_テクノロジ\_FMSYNTH そのピンを。
+上の表の右側の列は、対応するミニポートドライバーがそのピンのデータ範囲で指定しているテクノロジの GUID を示しています。 たとえば、FmSynth ミニポートドライバーは、テクノロジ GUID KSMUSIC\_テクノロジ\_FMSYNTH をその pin に割り当てます。
 
-片方デバイスとしてアプリケーションに、一部のウェーブ シンセサイザー デバイスが公開自体 (テクノロジ GUID KSMUSIC\_テクノロジ\_ポート)。 外部のシンセサイザーがない場合はウェーブ シンセサイザーを通じて生 MIDI バイト ストリームを再生することです。
+一部の wavetable シンセサイザーデバイスは、MPU-401 デバイス (テクノロジ GUID KSMUSIC\_テクノロジ\_ポート) としてアプリケーションに公開します。 外部シンセサイザーが存在しない場合は、wavetable シンセサイザーを介して生の MIDI バイトストリームを再生できます。
 
-MidiOut API がウェーブ シンセサイザー デバイスを希望するただし、(テクノロジ GUID KSMUSIC\_テクノロジ\_ウェーブ) 既定 (推奨)、MIDI 再生デバイスを選択するとします。 明示的に、片方デバイスを既定のデバイスの選択を回避します。
+ただし、midiOut API は、既定 (推奨) の MIDI 再生デバイスを選択するときに、wavetable シンセサイザーデバイス (テクノロジ GUID KSMUSIC\_テクノロジ\_WAVETABLE) を優先します。 これにより、既定のデバイスとして MPU-401 デバイスの選択が明示的に回避されます。
 
-自体を既定のデバイスを対象にするをウェーブ デバイス生 MIDI を再生できる必要があります自体として公開ウェーブ デバイス、片方のデバイスではありません。 ただし、アダプターのドライバーは、システム提供片方ミニポート ドライバーを使用して、DMusUART、そのウェーブ シンセサイザー デバイスを管理する場合ミニポート ドライバー静的に割り当てる GUID KSMUSIC テクノロジ\_テクノロジ\_ポートへのpin。
+既定のデバイスとして使用できるようにするには、未加工の MIDI を再生できる wavetable デバイスは、wavetable デバイスとして公開する必要があります。これは、MPU-401 デバイスではありません。 ただし、アダプタードライバーがシステムによって提供されている MPU-401 ミニポートドライバーである Dマス wavetable を使用している場合、そのシンセサイザーデバイスを管理するために、そのミニポートドライバーは、テクノロジ GUID KSMUSIC\_テクノロジ\_ポートをその pin に静的に割り当てます。
 
-呼び出すことによって、 [ **IMusicTechnology::SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)メソッドでは、アダプターのドライバーは、ミニポート ドライバーのデータの範囲で、テクノロジの Guid を上書きできます。 次のコード例でアダプターのドライバーは KSMUSIC、既定値から DMusUART ミニポート ドライバーのデータの範囲でテクノロジの GUID を変更\_テクノロジ\_KSMUSIC 値に、ポート\_テクノロジ\_ウェーブ テーブル。 この新しい設定では、MPU のようなウェーブ デバイスは midiOut API には、既定の MIDI デバイスによって選択される対象。
+[**Imusictechnology:: SetTechnology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-imusictechnology-settechnology)メソッドを呼び出すことにより、アダプタードライバーはミニポートドライバーのデータ範囲内のテクノロジ guid を上書きできます。 次のコード例では、アダプタードライバーによって Dマス Uart ドライバーのデータ範囲のテクノロジ GUID が既定値である KSMUSIC\_テクノロジ\_ポートから、WAVETABLE の値 KSMUSIC\_\_テクノロジに変更されます。 この新しい設定では、MPU のような wavetable デバイスを既定の MIDI デバイスとして midiOut API で選択できます。
 
 ```cpp
   // Create the miniport object.
@@ -157,7 +157,7 @@ MidiOut API がウェーブ シンセサイザー デバイスを希望するた
   }
 ```
 
-アダプタのドライバを呼び出す必要があります前のコード例ではコメントで示されるように、 [ **SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)ポート ドライバーを呼び出す前に`Init`メソッド (これは、ミニポートを呼び出しますドライバーの`Init`メソッド)。 システム提供 DMusUART と UART ミニポート ドライバー両方のサポート、 [IMusicTechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-imusictechnology)インターフェイス。 その他のミニポート ドライバー IMusicTechnology は省略可能なサポートします。 詳細については、の実装を参照してください、 **SetTechnology** DMusUART サンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) でのメソッド。
+前のコード例のコメントに示されているように、アダプタードライバーは、ポートドライバーの `Init` メソッドを呼び出す前に、(次にミニポートドライバーの `Init` メソッドを呼び出す[**ために)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-imusictechnology-settechnology)呼び出しを呼び出す必要があります。 システム提供の Dマス Uart および UART ミニポートドライバーは、どちらも[Imusictechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-imusictechnology)インターフェイスをサポートしています。 その他のミニポートドライバーでは、IMusicTechnology のサポートは省略可能です。 詳細については、Microsoft Windows Driver Kit (WDK) の Dマス Uart サンプルオーディオドライバーの**settを**実装する方法に関する説明を参照してください。
 
  
 

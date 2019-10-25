@@ -1,40 +1,40 @@
 ---
 title: エラー分析エントリ
-description: DebugFailureAnalysis オブジェクトには、エラーの分析のエントリのコレクションがあります。
+description: DebugFailureAnalysis オブジェクトには、エラー分析エントリのコレクションが含まれています。
 ms.assetid: 759DE159-F2A8-4BB1-AAF5-B2B91C4F91B0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976d5ce21c7ce92c7e452974669bb5d45422ae39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b87a01c4d49daff9981a95c6dcd8315056a72370
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366831"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826418"
 ---
 # <a name="failure-analysis-entries"></a>エラー分析エントリ
 
 
-A [ **DebugFailureAnalysis** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nn-extsfns-idebugfailureanalysis2)オブジェクトがエラーの分析のエントリのコレクション。 詳細については、次を参照してください。[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)します。
+[**Debugfailureanalysis**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nn-extsfns-idebugfailureanalysis2)オブジェクトには、エラー分析エントリのコレクションが含まれています。 詳細については、「[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)」を参照してください。
 
-A*エラー分析のエントリ*(とも呼ばれる、 *FA エントリ*) は、次のいずれか。
+*エラー分析エントリ*( *FA エントリ*とも呼ばれます) は、次のいずれかになります。
 
--   [ **FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ns-extsfns-_fa_entry)構造体
--   [ **FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ns-extsfns-_fa_entry)構造にデータ ブロックを続ける
+-   [**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ns-extsfns-_fa_entry)の構造
+-   データブロックが続く[**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ns-extsfns-_fa_entry)構造
 
-**DataSize**のメンバー、 [ **FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ns-extsfns-_fa_entry)構造体は、データ ブロックのバイト単位のサイズを保持します。 データのブロックが存在しない場合**DataSize**が 0 です。 **タグ**のメンバー、 **FA\_エントリ**構造 FA エントリに格納されている情報の種類を識別します。 タグなど**デバッグ\_FLR\_バグチェック\_コード**データ ブロックのことを示します、 **FA\_エントリ**バグ チェックのコードを保持します。
+[**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ns-extsfns-_fa_entry)構造の**DataSize**メンバーは、データブロックのサイズ (バイト単位) を保持します。 データブロックがない場合、 **DataSize**は0に等しくなります。 **Fa\_エントリ**構造の**タグ**メンバーは、fa エントリに格納されている情報の種類を識別します。 たとえば、タグ**DEBUG\_FLR\_バグチェック\_コード**は、 **FA\_エントリ**のデータブロックがバグチェックコードを保持することを示します。
 
-場合によってはデータ ブロックの必要はありません。すべての情報を伝達するには、タグを使用しています。 たとえば、 [ **FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ns-extsfns-_fa_entry)タグを持つ**デバッグ\_FLR\_カーネル\_VERIFIER\_有効**データ ブロックがありません。
+場合によっては、データブロックは必要ありません。すべての情報は、タグによって伝達されます。 たとえば、タグ**DEBUG\_FLR\_カーネル\_検証\_ツールが有効になっ**ている[**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ns-extsfns-_fa_entry)には、データブロックがありません。
 
-各タグは内のデータ型のいずれかに関連付け、 [ **FA\_エントリ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ne-extsfns-_fa_entry_type)列挙体。 たとえば、タグ**デバッグ\_FLR\_バグチェック\_コード**データ型に関連付けられた**デバッグ\_FA\_エントリ\_ULONG**. タグのデータ型を確認するのには、呼び出し、 [ **GetType** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nf-extsfns-idebugfaentrytags-gettype)のメソッド、 [IDebugFAEntryTags](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nn-extsfns-idebugfaentrytags)インターフェイス。
+各タグは、 [**FA\_ENTRY\_TYPE 列挙型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ne-extsfns-_fa_entry_type)のいずれかのデータ型に関連付けられています。 たとえば、タグ**debug\_FLR\_バグチェック\_コード**は、データ型**debug\_FA\_ENTRY\_ULONG**に関連付けられています。 タグのデータ型を特定するには、 [IDebugFAEntryTags](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nn-extsfns-idebugfaentrytags)インターフェイスの[**GetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nf-extsfns-idebugfaentrytags-gettype)メソッドを呼び出します。
 
-取得または FA のエントリのデータ ブロックを設定しを使用して、 [ **IDebugFailureAnalysis2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nn-extsfns-idebugfailureanalysis2)インターフェイス。
+FA エントリのデータブロックを取得または設定するには、 [**IDebugFailureAnalysis2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nn-extsfns-idebugfailureanalysis2)インターフェイスを使用します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[分析の拡張機能プラグインを拡張する記述! 分析](writing-an-analysis-extension-to-extend--analyze.md)
+[拡張用の分析拡張機能プラグインを記述しています。](writing-an-analysis-extension-to-extend--analyze.md)
 
-[**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/ns-extsfns-_fa_entry)
+[**FA\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/ns-extsfns-_fa_entry)
 
  
 

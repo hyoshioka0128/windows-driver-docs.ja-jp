@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置
-description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティは、3 D リスナーの位置を指定します。
+title: KSK プロパティ\_DIRECTSOUND3DLISTENER\_POSITION
+description: KSK プロパティ\_DIRECTSOUND3DLISTENER\_POSITION プロパティは、3D リスナーの位置を指定します。
 ms.assetid: c2cb6bc2-e983-49c8-a251-ab28879b4fcd
 keywords:
-- KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION オーディオ デバイス
+- KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf16a4ea8ed1ad28f4406a3d5ee40eda380183aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31f184849499bb56867d7f2e292c7443e8788ff5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361007"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830759"
 ---
-# <a name="kspropertydirectsound3dlistenerposition"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置
+# <a name="ksproperty_directsound3dlistener_position"></a>KSK プロパティ\_DIRECTSOUND3DLISTENER\_POSITION
 
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティは、3 D リスナーの位置を指定します。
+KSK プロパティ\_DIRECTSOUND3DLISTENER\_POSITION プロパティは、3D リスナーの位置を指定します。
 
 ## <span id="ddk_ksproperty_directsound3dlistener_position_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティは、3 D リスナー�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティは、3 D リスナー�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ds3dvector" data-raw-source="[&lt;strong&gt;DS3DVECTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ds3dvector)"><strong>DS3DVECTOR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ds3dvector" data-raw-source="[&lt;strong&gt;DS3DVECTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ds3dvector)"><strong>DS3DVECTOR</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、リスナーの位置を示す DS3DVECTOR 型の構造です。 位置座標は、現在の距離単位で表現されます。 距離単位については、次を参照してください。 [ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)します。
+プロパティ値 (操作データ) は、リスナーの位置を指定する DS3DVECTOR 型の構造体です。 位置座標は、現在の距離単位で表されます。 距離単位の詳細については、「 [**Ksk プロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)」を参照してください。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_DIRECTSOUND3DLISTENER\_POSITION プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-DirectSound は、このプロパティを使用して、実装する、 **IDirectSound3DListener::GetPosition**と**IDirectSound3DListener::SetPosition**メソッドは、Microsoft Windows SDK で説明されています。ドキュメントです。
+DirectSound は、このプロパティを使用して**IDirectSound3DListener:: GetPosition**メソッドと**IDirectSound3DListener:: setposition**メソッドを実装します。これについては、Microsoft Windows SDK のドキュメントを参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -83,17 +83,17 @@ DirectSound は、このプロパティを使用して、実装する、 **IDire
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**DS3DVECTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ds3dvector)
+[**DS3DVECTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ds3dvector)
 
 [**KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)
 

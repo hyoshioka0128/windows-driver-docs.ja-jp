@@ -4,17 +4,17 @@ description: Windows カーネル ランタイム ライブラリの古いルー
 ms.assetid: cd9aa441-a7f2-42b1-8319-611bf53c995d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 288b4145db7542de3dec4a22e0e33e4eeedb1837
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8483871000f19484106d3eb358532988efd156fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373398"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836409"
 ---
 # <a name="windows-kernel-run-time-library-obsolete-routines"></a>Windows カーネル ランタイム ライブラリの古いルーチン
 
 
-既存のドライバー バイナリをサポートするために、次のランタイム ライブラリの古いルーチンがエクスポートされます。
+次のランタイムライブラリの古いルーチンは、既存のドライバーバイナリをサポートするためにエクスポートされます。
 
 <table>
 <colgroup>
@@ -23,122 +23,122 @@ ms.locfileid: "67373398"
 </colgroup>
 <thead>
 <tr class="header">
-<th>古いルーチン</th>
+<th>廃止されたルーチン</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>RtlEnlargedIntegerMultiply</strong></td>
-<td><p>パフォーマンスの向上のため、使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntintsafe/nf-ntintsafe-rtlulongmult" data-raw-source="[&lt;strong&gt;RtlLongMult&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntintsafe/nf-ntintsafe-rtlulongmult)"> <strong>RtlLongMult</strong> </a>ルーチンの場合は、結果は 32 ビット符号付き整数に表示されます。 それ以外の場合、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるために、結果が32ビット符号付き整数になる場合は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntintsafe/nf-ntintsafe-rtlulongmult" data-raw-source="[&lt;strong&gt;RtlLongMult&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntintsafe/nf-ntintsafe-rtlulongmult)"><strong>RtlLongMult</strong></a>ルーチンを使用します。 それ以外の場合は、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlEnlargedUnsignedDivide</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlEnlargedUnsignedMultiply</strong></td>
-<td><p>パフォーマンスの向上のため、使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntintsafe/nf-ntintsafe-rtlulongmult" data-raw-source="[&lt;strong&gt;RtlULongMult&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntintsafe/nf-ntintsafe-rtlulongmult)"> <strong>RtlULongMult</strong> </a>ルーチンの場合は、結果は 32 ビット符号なし整数に表示されます。 それ以外の場合、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるために、結果が32ビットの符号なし整数に適合する場合は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntintsafe/nf-ntintsafe-rtlulongmult" data-raw-source="[&lt;strong&gt;RtlULongMult&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntintsafe/nf-ntintsafe-rtlulongmult)"><strong>RtlULongMult</strong></a>ルーチンを使用します。 それ以外の場合は、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
-<td><strong>RtlExtendedIntegerMultiply</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtlextended整数乗算</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlExtendedLargeIntegerDivide</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlExtendedMagicDivide</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlFillBytes</strong></td>
-<td><p>呼び出し元が指定のバッファーを指定した符号なし文字に設定します。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlfillmemory" data-raw-source="[&lt;strong&gt;RtlFillMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlfillmemory)"> <strong>RtlFillMemory</strong> </a>代わりにします。</p></td>
+<td><p>呼び出し元が指定したバッファーに、指定した符号なし文字を格納します。 代わりに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlfillmemory" data-raw-source="[&lt;strong&gt;RtlFillMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlfillmemory)"><strong>Rtlfillmemory</strong></a>を使用してください。</p></td>
 </tr>
 <tr class="even">
-<td><strong>RtlLargeIntegerAdd</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数の追加</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><strong>RtlLargeIntegerAnd</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数と</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerArithmeticShift</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><strong>RtlLargeIntegerDivide</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数除算</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerEqualTo</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlLargeIntegerEqualToZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerGreaterOrEqualToZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlLargeIntegerGreaterThan</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerGreaterThanOrEqualTo</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlLargeIntegerGreaterThanZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerLessOrEqualToZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><strong>RtlLargeIntegerLessThan</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数は、</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerLessThanOrEqualTo</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><strong>RtlLargeIntegerLessThanZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数はゼロではありません</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
-<td><strong>RtlLargeIntegerNegate</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数の符号を反転します。</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlLargeIntegerNotEqualTo</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerNotEqualToZero</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RtlLargeIntegerShiftLeft</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlLargeIntegerShiftRight</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><strong>RtlLargeIntegerSubtract</strong></td>
-<td><p>パフォーマンスの向上のためには、64 ビット整数演算のコンパイラ サポートを使用します。</p></td>
+<td><strong>Rtllarge整数減算</strong></td>
+<td><p>パフォーマンスを向上させるには、64ビット整数演算のコンパイラサポートを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RtlZeroBytes</strong></td>
-<td><p>ブロックおよび長さを格納するバイト数で指定してポインター ゼロ メモリのブロックを設定します。 パフォーマンスの向上のため、使用して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlzeromemory" data-raw-source="[&lt;strong&gt;RtlZeroMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlzeromemory)"> <strong>RtlZeroMemory</strong></a>します。</p></td>
+<td><p>ブロックへのポインターと、入力する長さ (バイト単位) を指定して、メモリブロックに0を設定します。 パフォーマンスを向上させるには、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlzeromemory" data-raw-source="[&lt;strong&gt;RtlZeroMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlzeromemory)"><strong>Rtlゼロメモリ</strong></a>を使用します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -146,9 +146,9 @@ ms.locfileid: "67373398"
  
 
 ## <a name="related-topics"></a>関連トピック
-[**RtlFillMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlfillmemory)  
-[**RtlLongMult**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntintsafe/nf-ntintsafe-rtlulongmult)  
-[**RtlZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlzeromemory)  
+[**RtlFillMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlfillmemory)  
+[**RtlLongMult**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntintsafe/nf-ntintsafe-rtlulongmult)  
+[**Rtlゼロメモリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlzeromemory)  
 
 
 

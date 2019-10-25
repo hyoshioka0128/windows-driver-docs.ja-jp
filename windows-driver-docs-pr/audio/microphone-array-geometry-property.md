@@ -3,32 +3,32 @@ title: マイク配列ジオメトリのプロパティ
 description: マイク配列ジオメトリのプロパティ
 ms.assetid: 7f280677-f86d-4687-b992-e2580046bd57
 keywords:
-- mic の配列の WDK オーディオ
-- geometry 記述子 WDK オーディオ
-- マイク配列 WDK オーディオ
+- mic 配列 WDK オーディオ
+- ジオメトリ記述子 WDK オーディオ
+- マイクアレイ WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 187d66850be8f88f728efcd2026633174b37ba16
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e792335f5b5029cfa9398bf00ba6b4988f41b02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362586"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830388"
 ---
 # <a name="microphone-array-geometry-property"></a>マイク配列ジオメトリのプロパティ
 
 
-Windows Vista 以降では、マイク配列のサポートが提供されます。 ほとんどの場合、ラップトップ コンピューターやモニターに埋め込まれている 1 つのマイクをキャプチャしませんサウンドも非常にします。 マイクの配列が優れてをサウンドのソースを特定し、アンビエント ノイズとリバーブを拒否します。 [ **KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)プロパティがマイク配列のジオメトリを指定します。 プロパティの値[ **KSAUDIO\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)配列型 (線形、平面、)、マイク、配列内の数を記述し、その他の機能です。
+Windows Vista 以降では、マイク配列のサポートが提供されています。 ほとんどの場合、ラップトップまたはモニターに埋め込まれている1つのマイクは、サウンドを十分にキャプチャしません。 マイクの配列は、サウンドソースを分離し、アンビエントノイズとリバーブを拒否するためにパフォーマンスを向上させます。 [**Ksk プロパティ\_AUDIO\_MIC\_配列\_geometry**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)プロパティは、マイク配列のジオメトリを指定します。 プロパティ値、 [**Ksk audio\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)は、配列の型 (線形、平面など)、配列内のマイクの数、およびその他の機能について説明します。
 
-このトピックでは、外部 USB マイクが配列を使用できます Windows Vista で提供されているマイク配列のサポートについて説明します。 外部 USB マイク配列は、ジオメトリとその配列への応答の他の機能を説明するために必要なパラメーターを指定する必要があります、**取得\_MEM**要求。
+このトピックでは、Windows Vista に付属しているマイクアレイサポートを外部 USB マイクアレイで使用する方法について説明します。 外部 USB マイク配列は、 **GET\_MEM**要求に応答して、配列のジオメトリおよびその他の機能を記述するために必要なパラメーターを提供する必要があります。
 
-USB のマイク配列は、ジオメトリの情報を提供するのに標準書式指定を使用します。 Windows Vista の USB オーディオ クラス ドライバーは、ジオメトリの情報を読み取る際に、同じ形式を使用する必要があります。 標準の形式の詳細については、次を参照してください。[マイク配列 Geometry 記述子形式](microphone-array-geometry-descriptor-format.md)します。
+USB マイク配列では、標準形式を使用してジオメトリ情報を指定します。 Windows Vista USB オーディオクラスドライバーは、ジオメトリ情報を読み取るときに同じ形式を使用する必要があります。 標準形式の詳細については、「[マイク配列のジオメトリ記述子の形式](microphone-array-geometry-descriptor-format.md)」を参照してください。
 
-アプリケーションが呼び出すことができます[IPart::GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)ジャック、ジャックに接続されたデバイスがマイク配列かどうかを決定に関する情報を取得します。 **IPart::GetSubType**入力ジャックに接続の種類を表す暗証番号 (pin) カテゴリの GUID を返します。 接続されているデバイスのマイク配列が返される GUID は KSNODETYPE に等しく\_マイク\_配列。 アプリケーションは、マイク配列を間違ったジャックに接続したかどうかを判断することができます。 後者のシナリオでは、返された pin のカテゴリの GUID は、別のデバイスのいずれかまたはマイクのジャックに接続されたデバイスがないことを示します。 暗証番号 (pin) カテゴリの Guid の詳細については、次を参照してください。 [Pin Category プロパティ](pin-category-property.md)します。
+アプリケーションでは、 [Ipart:: GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)を呼び出してジャックに関する情報を取得し、ジャックに接続されているデバイスがマイク配列であるかどうかを判断できます。 **Ipart:: GetSubType**は、入力ジャックの種類を表すピンカテゴリの GUID を返します。 接続されているデバイスがマイク配列の場合、返される GUID は、KSNODETYPE\_マイク\_配列と同じになります。 また、マイク配列を間違ったジャックに接続しているかどうかを判断するのにも役立ちます。 後者のシナリオでは、返されるピンカテゴリの GUID は、別のデバイス用か、マイクジャックに接続されているデバイスがないことを示します。 Pin カテゴリの Guid の詳細については、「[ピンカテゴリのプロパティ](pin-category-property.md)」を参照してください。
 
-アプリケーションが適切な入力ジャックに接続されているマイク配列を検出した後、次の手順では、配列のジオメトリを決定します。 次の 3 つの基本的なジオメトリがある:*線形*、*平面*、および*3 次元 (3 D)* します。 ジオメトリの情報には、周波数の範囲と各マイクの x、y、z 座標などの詳細情報も提供します。
+アプリケーションが、正しい入力ジャックに接続されているマイク配列を検出したら、次の手順では配列のジオメトリを決定します。 基本ジオメトリには、*線形*、*平面*、 *3 次元 (3-d)* の3つがあります。 また、各マイクの周波数範囲や x-y 座標などの詳細も表示されます。
 
-次のコード例に示します、KSAUDIO\_MIC\_配列\_オーディオ ドライバーを使用して外部 USB マイク配列を記述する GEOMETRY 構造体。
+次のコード例は、外部 USB マイク配列の記述にオーディオドライバーが使用する KSK AUDIO\_MIC\_配列\_GEOMETRY 構造体を示しています。
 
 ```cpp
 KSAUDIO_MIC_ARRAY_GEOMETRY mic_Array =
@@ -46,9 +46,9 @@ KSAUDIO_MIC_ARRAY_GEOMETRY mic_Array =
 };
 ```
 
-上記のコード例で、ar\_mic\_座標の変数が配列の KSAUDIO\_マイク\_座標の構造とそのマイク配列のマイクの座標が含まれています。
+上記のコード例では、ar\_mic\_座標変数は、KSK オーディオ\_マイク\_座標構造の配列であり、マイク配列内のマイクの座標が含まれています。
 
-次のコード例は、ar\_mic\_Coordinates 配列は、上記のコード例」の説明に従って、マイク、マイク配列内のジオメトリの場所を記述するために使用します。
+次のコード例では、前のコード例で説明したように、ar\_mic\_座標配列を使用して、マイク配列内のマイクのジオメトリック位置を記述する方法を示します。
 
 ```cpp
 KsMicCoord ar_mic_Coordinates[] =
@@ -74,11 +74,11 @@ KsMicCoord ar_mic_Coordinates[] =
 };
 ```
 
-上記のコード例では、垂直および水平方向の角度、効果的な作業領域を記述すると共に、マイク配列内の各マイクの x、y、z 座標が与えられます。
+前のコード例では、マイク配列の各マイクに対して、有効な作業領域を示す垂直方向と水平方向の角度で、x-y 座標が指定されています。
 
-仮想のマイク配列の配列のジオメトリの情報を提供する Micarray MSVAD サンプル ドライバーを変更するには、次のタスクを実行する必要があります。
+Micarray MSVAD サンプルドライバーを変更して、仮想マイク配列の配列ジオメトリ情報を提供するには、次のタスクを実行する必要があります。
 
-まず、Src に移動します\\オーディオ\\Msvad\\Micarray Mintopo.cpp ファイルを見つけます。 Mintopo.cpp プロパティ ハンドラー セクションを編集できるように、KSAUDIO\_MIC\_配列\_GEOMETRY 構造にはについてには、マイク配列が含まれています。 変更する必要がありますコードの特定のセクションは、次のコード例に示されます。
+まず、Src\\Audio\\Msvad\\Micarray に移動し、Mintopo. .cpp ファイルを見つけます。 Mintopo .cpp のプロパティハンドラーセクションを編集して、KSAUDIO\_MIC\_配列\_GEOMETRY 構造体に、マイク配列に関する情報が含まれるようにします。 変更する必要があるコードの特定のセクションを次のコード例に示します。
 
 ```cpp
 // Modify this portion of PropertyHandlerMicArrayGeometry
@@ -111,29 +111,29 @@ pMAG->KsMicCoord[1].wVerticalAngle = 0;
 pMAG->KsMicCoord[1].wHorizontalAngle = 0;
 ```
 
-上記のコード例がそれぞれ cardioid 型であり、配列の中心から 100 mm にある 2 つのマイク要素を線形のマイク配列の指定された情報が表示されます。
+前のコード例では、2つのマイク要素を持つ線形マイク配列に提供された情報を示しています。これらはそれぞれ cardioid 型で、配列の中心から 100 mm に位置しています。
 
-2 番目の変更のようにに Msvad.inf ファイルを編集[MSVAD Micarray の変更の INF](modified-inf-for-msvad-micarray.md)します。
+2番目の変更については、「 [Msvad Micarray 用に変更](modified-inf-for-msvad-micarray.md)された inf」に示されているように Msvad ファイルを編集します。
 
-ファイルの変更を完了すると、ビルドし、マイク配列のサンプル ドライバーをインストールするには、次の手順を完了します。
+ファイルの変更が完了したら、次の手順を実行して、マイク配列用のサンプルドライバーをビルドしてインストールします。
 
-1.  作業する WDK ビルド環境を起動します。 たとえば、x86 ビルド環境。
+1.  作業する WDK ビルド環境を開始します。 たとえば、x86 の無料ビルド環境です。
 
-2.  Src に移動します\\オーディオ\\Msvad フォルダー。
+2.  Src\\Audio\\Msvad フォルダーに移動します。
 
-3.  型、**ビルド**コマンドを使用し、Enter キーを押します。
+3.  **[ビルド]** コマンドを入力し、enter キーを押します。
 
-4.  ビルド プロセスによって作成された次のフォルダーに変更した Msvad.inf ファイルをコピーします。
+4.  変更した Msvad ファイルを、ビルドプロセスによって作成された次のフォルダーにコピーします。
 
-    Src\\オーディオ\\Msvad\\Micarray\\objfre\_wlh\_x86\\i386
+    Src\\Audio\\Msvad\\Micarray\\objfre\_wlh\_x86\\i386
 
-5.  手順 4. でフォルダーが Vadarray.sys という名前のファイルが含まれていることを確認します。
+5.  手順 4. のフォルダーに、Vadarray. sys という名前のファイルが含まれていることを確認します。
 
-6.  コントロール パネルを開きを使用して、**ハードウェアの追加**サンプル ドライバーを手動でインストールします。
+6.  コントロールパネルを開き、 **[ハードウェアの追加]** を使用して、サンプルドライバーを手動でインストールします。
 
-7.  開く、**サウンド**アプレット コントロール パネル をクリックして、**記録**配列だけをインストールする仮想マイクを表示できることを確認するには、タブ。
+7.  コントロールパネルの **[サウンド]** アプレットを開き、 **[録音]** タブをクリックして、先ほどインストールした仮想マイクアレイが表示されることを確認します。
 
-マイクのアレイを検出するアプリケーションを開発する方法については、付録 C を参照してください。[方法の構築および Windows Vista のマイク配列を使用して](https://go.microsoft.com/fwlink/p/?linkid=306613)します。
+マイクアレイを検出するアプリケーションを開発する方法の詳細については、「 [Windows Vista のマイク配列を構築して使用する方法](https://go.microsoft.com/fwlink/p/?linkid=306613)」の付録 C を参照してください。
 
  
 

@@ -3,132 +3,132 @@ title: リソース マネージャーの作成
 description: リソース マネージャーの作成
 ms.assetid: b2841d56-650a-487c-a002-2521cd1b461b
 keywords:
-- リソース マネージャー WDK KTM、リソース マネージャーの作成
-- WDK KTM、読み取り専用の参加リストの登録
+- リソースマネージャー WDK KTM、リソースマネージャーの作成
+- WDK KTM の参加、読み取り専用の参加
 - 読み取り専用の参加リスト WDK KTM
-- WDK KTM、揮発性リソース マネージャーのリソース マネージャー
-- 揮発性リソース マネージャー WDK KTM
-- リソース マネージャー、TP への追加の WDK KTM
-- トランザクション処理システム リソース マネージャーの追加の WDK KTM
-- TP WDK KTM、リソース マネージャーの追加
+- リソースマネージャー WDK KTM、揮発性リソースマネージャー
+- 揮発性リソースマネージャー WDK KTM
+- リソースマネージャー WDK KTM、TP への追加
+- トランザクション処理システム WDK KTM、リソースマネージャーの追加
+- TP WDK KTM、リソースマネージャーの追加
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec02fc0e4216f894599125a9079bd3a4e5dc5ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d152ede92254bf463182300c9a9c2f6c167b6669
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377176"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837021"
 ---
 # <a name="creating-a-resource-manager"></a>リソース マネージャーの作成
 
 
-[*リソース マネージャー* ](transaction-processing-terms.md#ktm-term-resource-manager)各トランザクションのデータを維持し、トランザクションの操作を記録します。 トランザクション処理システム (TPS) で、複数のリソース マネージャーにある場合、各リソース マネージャーは、各トランザクションのコミット、ロールバック、および回復操作に参加できます。
+[*リソースマネージャー*](transaction-processing-terms.md#ktm-term-resource-manager)は、各トランザクションのデータを管理し、トランザクションの操作をログに記録します。 トランザクション処理システム (TPS) に複数のリソースマネージャーがある場合、各リソースマネージャーは各トランザクションのコミット、ロールバック、および復旧操作に参加できます。
 
-各リソース マネージャーは、データベースまたはその他のリソース マネージャーを保持するリソースにアクセスするトランザクションのクライアントが使用できるインターフェイスをエクスポートする必要があります。
+各リソースマネージャーは、トランザクションクライアントが、リソースマネージャーが管理するデータベースやその他のリソースにアクセスするために使用できるインターフェイスをエクスポートする必要があります。
 
-通常、カーネル モードのリソース マネージャーでは、一覧の順序で次のタスクを実行する必要があります。
+通常、カーネルモードのリソースマネージャーは、次のタスクを一覧の順序で実行する必要があります。
 
-1.  ログ ストリームを作成します。
+1.  ログストリームを作成します。
 
-    リソース マネージャーが使用できる、 [Common Log File System](using-common-log-file-system.md) (CLFS)、またはそのログ ストリームを維持するために他のログ機能。 呼び出し[ **ClfsCreateLogFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatelogfile) CLFS ログのストリームを作成します。 リソース マネージャーは、コミット、ロールバック、またはトランザクションの復旧のために必要なすべての情報を記録するのにログ ストリームを使用する必要があります。 さらに、KTM では、トランザクションを復旧するのにために必要になる可能性がある内部状態変更を記録するのにログ ストリームを使用します。
+    リソースマネージャーは、[共通ログファイルシステム](using-common-log-file-system.md)(CLFS) またはその他のログ記録機能を使用して、ログストリームを維持できます。 [**ClfsCreateLogFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile)を呼び出すと、CLFS ログストリームが作成されます。 リソースマネージャーは、トランザクションのコミット、ロールバック、または復旧に必要な情報を記録するために、ログストリームを使用する必要があります。 また、KTM はログストリームを使用して、トランザクションの復旧に必要となる可能性がある内部状態の変更を記録します。
 
-2.  トランザクション マネージャー オブジェクトを作成します。
+2.  トランザクションマネージャーオブジェクトを作成します。
 
-    呼び出し[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)トランザクション マネージャー オブジェクトを作成し、リソース マネージャーを指定する追加の CLFS ログ ストリームに、resource manager を接続します。
+    [**Zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)を呼び出すと、トランザクションマネージャーオブジェクトが作成され、resource manager によって指定された追加の CLFS log ストリームに接続されます。
 
-3.  トランザクション マネージャーの状態を回復します。
+3.  トランザクションマネージャーの状態を回復します。
 
-    呼び出し[ **ZwRecoverTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)トランザクション マネージャー (KTM を保持) するオブジェクトのログ ストリームを読み取ると、すべてのトランザクションが完了した (前に、TP がシャット ダウンするかどうかを決定します。システムがクラッシュしました) たとえば、原因。 KTM では、ログ ストリームの情報に基づく内部の状態を復元します。
+    [**Zwを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)呼び出すと、トランザクションマネージャーオブジェクトのログストリーム (KTM によって管理される) が読み取られ、すべてのトランザクションが完了する前に tp がシャットダウンされたかどうかが判断されます (たとえば、システムがクラッシュした場合など)。 KTM は、ログストリーム内の情報に基づいて内部状態を復元します。
 
-4.  リソース マネージャー オブジェクトを作成します。
+4.  Resource manager オブジェクトを作成します。
 
-    呼び出し[ **ZwCreateResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager)リソース マネージャー オブジェクトを作成し、以前に作成したトランザクション マネージャー オブジェクトに関連付けます。
+    [**Zwcreateresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)を呼び出すと、resource manager オブジェクトが作成され、以前に作成したトランザクションマネージャーオブジェクトに関連付けられます。
 
-5.  リソース マネージャーの状態を回復します。
+5.  Resource manager の状態を復旧します。
 
-    呼び出し[ **ZwRecoverResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager) KTM トランザクション リソース マネージャーを送信すると、\_通知\_トランザクションが進行中の回復の通知最後に、リソース マネージャーがシャット ダウンします。 リソース マネージャーがこれらの通知に応答する方法については、次を参照してください。[回復操作の処理](handling-recovery-operations.md)します。
+    [**Zw回復マネージャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)を呼び出すと、KTM によって RESOURCE manager トランザクションが送信され、前回リソースマネージャーがシャットダウンしたときに進行中だったすべてのトランザクションについて通知\_復旧するように通知され\_ます。 リソースマネージャーがこれらの通知に応答する方法については、「[復旧操作の処理](handling-recovery-operations.md)」を参照してください。
 
 6.  クライアントからトランザクションを受信します。
 
-    通常、クライアントは、トランザクション オブジェクトを作成し、リソース マネージャーのクライアント インターフェイスを使用して、リソース マネージャーにトランザクション オブジェクトの GUID を渡します。 たとえば、リソース マネージャーを取得、 *CreateDataObject*はのようなルーチンを[TP コンポーネントについて](understanding-tps-components.md)トピックについて説明します。
+    通常、クライアントはトランザクションオブジェクトを作成し、リソースマネージャーのクライアントインターフェイスを使用して、トランザクションオブジェクトの GUID をリソースマネージャーに渡します。 たとえば、リソースマネージャーは、「 [TPS コンポーネント](understanding-tps-components.md)について」トピックで説明されているような*createdataobject*ルーチンを提供する場合があります。
 
 7.  各トランザクションに参加します。
 
-    呼び出し[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction) 、トランザクション オブジェクトを識別するハンドルとしへの呼び出しを開きます[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)を作成します。トランザクションに参加します。 参加リストにより、リソース マネージャーは、指定された一連の受信[トランザクション通知](transaction-notifications.md)します。
+    [**Zwopentransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)を呼び出すと、トランザクションオブジェクトへのハンドルが開き、 [**Zwopentransaction リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)を呼び出すと、トランザクションの参加リストが作成されます。 この参加により、リソースマネージャーは、指定された一連の[トランザクション通知](transaction-notifications.md)を受け取ることができます。
 
 8.  トランザクション通知の受信を有効にします。
 
-    リソース マネージャーを呼び出すことができます[ **ZwGetNotificationResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntgetnotificationresourcemanager)同期的に、通知を取得するか、呼び出すことができます[ **TmEnableCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmenablecallbacks)を登録する、 *ResourceManagerNotification* KTM を呼び出すたびに、通知が使用可能なコールバック ルーチン。
+    リソースマネージャーは[**Zwgetnotificationresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)を呼び出して通知を同期的に取得できます。または、 [**Tmenablecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)を呼び出して、 *ResourceManagerNotification*コールバックルーチンを登録し、通知を利用できます。
 
-9.  サービス リソースへのアクセスをクライアントから要求が、変更しないでください、永続的です。
+9.  クライアントからのサービスリソースへのアクセス要求ですが、変更は永続的ではありません。
 
-    クライアントがトランザクション オブジェクトを作成した後は通常、リソース マネージャーのリソースにアクセスするリソース マネージャーのインターフェイスを呼び出します。 たとえば、データベースのリソース マネージャーからの読み取りをデータベースに書き込む要求を受信する可能性があります。
+    クライアントは、トランザクションオブジェクトを作成した後、リソースマネージャーのリソースにアクセスするために、resource manager のインターフェイスを呼び出します。 たとえば、データベースのリソースマネージャーは、データベースに対する読み取りと書き込みの要求を受け取る場合があります。
 
-    リソース マネージャーは、読み取りの結果を記録する必要があり、書き込み操作、 [CLFS ログ ストリーム](using-log-streams-with-ktm.md)またはその他のログ機能となる操作のトランザクションのコミットをロールバックし、通知を受信するまで、または回復します。
+    リソースマネージャーは、トランザクションの操作がコミット、ロールバック、または復旧されるという通知を受信するまで、読み取り操作と書き込み操作の結果を[CLFS ログストリーム](using-log-streams-with-ktm.md)またはその他のログ機能に記録する必要があります。
 
-10. コミットまたはクライアントの操作をロールバックします。
+10. クライアント操作をコミットまたはロールバックします。
 
-    リソース マネージャーが開始する通知を受け取る最終的には、コミットや、クライアントが実行される操作をロールバックします。 応答では、resource manager は必要があります、永続的なクライアント操作を行うまたはいずれかして破棄します。 コミットとロールバック通知を処理する方法の詳細については、次を参照してください。[トランザクション操作の処理](handling-transaction-operations.md)します。
+    最終的に、リソースマネージャーは、クライアントが実行した操作のコミットまたはロールバックを開始する通知を受け取ります。 応答として、リソースマネージャーは、クライアント操作を永続的にするか破棄するかのどちらかにする必要があります。 コミットとロールバックの通知を処理する方法の詳細については、「[トランザクション操作の処理](handling-transaction-operations.md)」を参照してください。
 
-    場合によっては、リソース マネージャーは、迅速に、リソース マネージャーがデバイスでは、突然削除されたことを確認するため、commit または rollback の通知をおそらく提供 KTM を強制しようとする必要があります。 このような場合は、resource manager を呼び出すことができます[ **TmRequestOutcomeEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmrequestoutcomeenlistment)します。
+    場合によっては、リソースマネージャーが、コミットまたはロールバックの通知を迅速に提供するように、KTM に強制することが必要になることがあります。これは、リソースマネージャーが、デバイスが突然削除されたと判断したためです。 このような場合、リソースマネージャーは[**TmRequestOutcomeEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmrequestoutcomeenlistment)を呼び出すことができます。
 
-11. 参加リスト オブジェクトのハンドルを閉じます。
+11. 参加リストオブジェクトハンドルを閉じます。
 
-    呼び出す必要がありますが、リソース マネージャーは、トランザクションの処理が終了したら、 [ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)を参加オブジェクトのハンドルを閉じる
+    リソースマネージャーがトランザクションの処理を完了したら、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出して、参加オブジェクトのハンドルを閉じる必要があります。
 
-12. Resource manager のオブジェクトのハンドルと、トランザクション マネージャー オブジェクトのハンドルを閉じます。
+12. Resource manager オブジェクトハンドルとトランザクションマネージャーオブジェクトハンドルを閉じます。
 
-    リソース マネージャーをアンロードする前に呼び出す必要があります[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)リソース マネージャー オブジェクトのハンドルと、トランザクション マネージャー オブジェクトのハンドルを閉じます。
+    リソースマネージャーがアンロードされる前に、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出して、resource manager オブジェクトのハンドルとトランザクションマネージャーオブジェクトのハンドルを閉じる必要があります。
 
-リソース マネージャーの初期化コードでは、手順 1. ~ 5. を実行する必要があります。 たとえば、リソース マネージャーが、カーネル モード ドライバーの場合は、初期化コードは、ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
+手順 1. ~ 5. は、resource manager の初期化コードで実行する必要があります。 たとえば、リソースマネージャーがカーネルモードドライバーの場合、初期化コードはドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンです。
 
-手順 6 ~ 11 は通常、トランザクションのクライアントからの要求に応答するコードで実行されます。
+手順 6 ~ 11 は、通常、トランザクションクライアントからの要求に応答するコードで実行されます。
 
-手順 12 は、カーネル モード ドライバーのなどのリソース マネージャーの最終的なクリーンアップ コードで実行する必要があります[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。
+手順12は、カーネルモードドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンなど、リソースマネージャーの最終的なクリーンアップコードで実行する必要があります。
 
-## <a href="" id="kernel-creating-a-read-only-enlistment"></a> 読み取り専用の参加リストを作成します。
-
-
-A*読み取り専用の参加*KTM から通知を受信しませんが、参加リストであります。 リソース マネージャーと、任意参加読み取り専用呼び出して[ **ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)します。 この呼び出しにより、KTM をリソース マネージャーへの通知の配信を停止します。
-
-マネージャーが呼び出されて、リソースの後に[ **ZwCreateEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)、呼び出すことができます**ZwReadOnlyEnlistment**を呼び出す場合と通常時点までいつでも[**ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)します。
-
-Resource manager を呼び出すかを 2 つの理由がある**ZwReadOnlyEnlistment**します。
-
--   リソース マネージャーがされた参加しているトランザクションで、ある時点でトランザクションを受信する前に\_通知\_不要になったことへのトランザクションの参加がコミット通知では、リソース マネージャーを決定します操作をコミットします。
-
-    たとえば、リソース マネージャーがトランザクションを受信すると\_通知\_PREPARE 通知を受け取る可能性がありますを確認し、リソース マネージャーのデータベースを変更されていないトランザクションの操作のことです。 リソース マネージャーを呼び出すことができます**ZwReadOnlyEnlistment**の代わりに**ZwPrepareComplete**自体をトランザクションから削除します。
-
--   リソース マネージャーは、任意のトランザクションのコミット操作で関与しません。
-
-    たとえば、resource manager は、格納されているデータベースを変更することがなく、クライアントが送信するデータを監視する可能性があります。 この場合は、resource manager を呼び出すことができます**ZwReadOnlyEnlistment**を呼び出した後にすぐに**ZwCreateEnlistment**します。 さらに、そのようなリソース マネージャーを選択する可能性があります*揮発性*、このトピックの次のセクションで説明します。
-
-リソース後マネージャーが呼び出されて**ZwReadOnlyEnlistment**、呼び出すことができます[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)登録ハンドルを閉じます。
-
-## <a href="" id="kernel-creating-a-volatile-resource-manager"></a> 揮発性リソース マネージャーの作成
+## <a href="" id="kernel-creating-a-read-only-enlistment"></a>読み取り専用の参加リストの作成
 
 
-A*揮発性リソース マネージャー*リソース マネージャーであり、永続的なデータを保持しません。 たとえば、リソース マネージャーは、永続的に格納されているデータベースを変更しない場合は、揮発性リソース マネージャーは、クライアントから送信された監視データを作成する場合があります。 揮発性リソース マネージャーは、通常のトランザクション アクティビティを記録しないと、復元またはロールバック操作を実行できません。
+読み取り専用の*参加リスト*は、KTM からの通知を受け取らない参加リストです。 リソースマネージャーは、 [**ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment)を呼び出すことによって、任意の参加を読み取り専用にすることができます。 この呼び出しにより、KTM はリソースマネージャーへの通知の配信を停止します。
 
-揮発性リソース マネージャーは、リソースを設定する必要があります\_MANAGER\_を呼び出すときに、揮発性フラグ[ **ZwCreateResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager)します。 このフラグが設定されている場合、KTM は、関連付けられているトランザクション マネージャー オブジェクトのログ ストリームでは、リソース マネージャーに関する情報を記録しません。
+リソースマネージャーが[**Zwcreateenlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)を呼び出した後は、通常、 [**ZwZwReadOnlyEnlistment complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)を呼び出した時点まで、いつでも呼び出しを行うことができます。
 
-リソース マネージャーがトランザクションを設定できますも\_MANAGER\_を呼び出すときに、揮発性フラグ[ **ZwCreateTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)。 このフラグを設定すると、KTM トランザクション マネージャー オブジェクトのログ ストリームは作成されません。 さらに、トランザクション マネージャーのオブジェクトに接続されている任意の他のリソース マネージャする必要がありますもを volatile にして、リソースの設定\_MANAGER\_揮発性のフラグ。
+リソースマネージャーで**ZwReadOnlyEnlistment**を呼び出す必要がある理由は2つあります。
 
-## <a name="adding-a-resource-manager-to-an-existing-tps"></a>既存の TP へのリソース マネージャーの追加
+-   リソースマネージャーがトランザクションに参加しています。トランザクションを受信する前に、コミット通知\_通知\_トランザクションを受け取ると、リソースマネージャーは、トランザクションのコミットに参加する必要がなくなったと判断します。運用.
+
+    たとえば、リソースマネージャーがトランザクションを受信して、通知を準備\_通知\_場合、トランザクションの操作によってリソースマネージャーのデータベースが変更されていないと判断されることがあります。 リソースマネージャーは、 **ZwZwReadOnlyEnlistment complete**の代わりにを呼び出して、トランザクションから自身を削除できます。
+
+-   リソースマネージャーは、どのトランザクションのコミット操作にも参加しません。
+
+    たとえば、リソースマネージャーが、格納されているデータベースを変更せずに、クライアントが送信するデータを監視する場合があります。 この場合、リソースマネージャーは、 **Zwcreateenlistment**を呼び出した直後に**ZwReadOnlyEnlistment**を呼び出す可能性があります。 また、このトピックの次のセクションで説明するように、このようなリソースマネージャーを*揮発性*にすることもできます。
+
+リソースマネージャーは**ZwReadOnlyEnlistment**を呼び出した後、 [**zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出して参加ハンドルを閉じることができます。
+
+## <a href="" id="kernel-creating-a-volatile-resource-manager"></a>揮発性リソースマネージャーの作成
 
 
-既存の TP に他のリソース マネージャーを追加する場合は、2 つの選択肢があります。
+*揮発性リソースマネージャー*は、持続性のあるデータを保持しないリソースマネージャーです。 たとえば、リソースマネージャーによって永続的に格納データベースが変更されない場合、クライアントから送信されるデータを監視するための揮発性リソースマネージャーを作成することができます。 通常、揮発性リソースマネージャーはトランザクションの利用状況をログに記録しないため、復旧操作やロールバック操作を実行できません。
 
--   新しい resource manager 呼び出し[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)独自のトランザクション マネージャー オブジェクトを作成します。
+Volatile リソースマネージャーは、 [**Zwcreateresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)を呼び出すときに、RESOURCE\_MANAGER\_volatile フラグを設定する必要があります。 このフラグが設定されている場合、KTM は、関連付けられているトランザクションマネージャーオブジェクトのログストリーム内のリソースマネージャーに関する情報をログに記録しません。
 
-    リソース マネージャーが、TP では、他のリソース マネージャーと通信できない場合は、この選択を使用します。
+リソースマネージャーは、 [**Zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)を呼び出すときに、トランザクション\_マネージャー\_VOLATILE フラグを設定することもできます。 このフラグが設定されている場合、KTM はトランザクションマネージャーオブジェクトのログストリームを作成しません。 さらに、トランザクションマネージャーオブジェクトに接続されている追加のリソースマネージャーも揮発性である必要があります。また、RESOURCE\_MANAGER\_VOLATILE フラグを設定する必要があります。
 
--   新しい resource manager 呼び出し[ **ZwOpenTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransactionmanager)既存のトランザクション マネージャー オブジェクトへの接続にします。
+## <a name="adding-a-resource-manager-to-an-existing-tps"></a>既存の TP へのリソースマネージャーの追加
 
-    この選択を使用して場合は、リソース マネージャーが、TP では、他のリソース マネージャーと通信する必要があります。 リソース マネージャーを呼び出す**ZwCreateTransactionManager**他のリソース マネージャーを呼び出すことができるように、トランザクション マネージャー オブジェクトの GUID、ログのストリーム名、またはオブジェクト名を共有する必要があります**ZwOpenTransactionManager**. これら他のリソース マネージャーを呼び出すことができます[ **ZwQueryInformationTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransactionmanager)トランザクション マネージャーのオブジェクトに関する追加情報を取得します。
 
-Tp、リソース マネージャーを追加した後、リソース マネージャーの対応するクライアントは、リソース マネージャーのクライアント インターフェイスを呼び出すことができます。
+既存の TP にリソースマネージャーを追加する必要がある場合は、次の2つの選択肢があります。
+
+-   新しいリソースマネージャーは、 [**Zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)を呼び出して、独自のトランザクションマネージャーオブジェクトを作成します。
+
+    リソースマネージャーが TP 内の他のリソースマネージャーと通信しない場合は、このオプションを使用します。
+
+-   新しいリソースマネージャーが[**Zwopentransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransactionmanager)を呼び出して、既存のトランザクションマネージャーオブジェクトに接続します。
+
+    リソースマネージャーが TP 内の他のリソースマネージャーと通信する必要がある場合は、このオプションを使用します。 **Zwcreatetransactionmanager**を呼び出すリソースマネージャーは、トランザクションマネージャーオブジェクトの GUID、ログストリーム名、またはオブジェクト名を共有して、他のリソースマネージャーが**Zwcreatetransactionmanager**を呼び出せるようにする必要があります。 これらの他のリソースマネージャーは、 [**Zwqueryinformationtransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransactionmanager)を呼び出して、トランザクションマネージャーオブジェクトに関する追加情報を取得できます。
+
+リソースマネージャーを TP に追加した後、リソースマネージャーを認識しているクライアントは、リソースマネージャーのクライアントインターフェイスを呼び出すことができます。
 
  
 

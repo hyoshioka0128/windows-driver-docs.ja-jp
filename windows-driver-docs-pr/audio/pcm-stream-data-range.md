@@ -3,15 +3,15 @@ title: PCM ストリームのデータ範囲
 description: PCM ストリームのデータ範囲
 ms.assetid: e8a9b681-3bd2-46ed-970f-5217dbfb2e4e
 keywords:
-- PCM のストリーム データ範囲 WDK
+- PCM ストリームデータ範囲 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a1ec3bd2509a541d2b4292c935b3fd492ece7b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abc5efafc6c94de751b1064085dc15e760bed4fd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355311"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830249"
 ---
 # <a name="pcm-stream-data-range"></a>PCM ストリームのデータ範囲
 
@@ -19,7 +19,7 @@ ms.locfileid: "67355311"
 ## <span id="pcm_stream_data_range"></span><span id="PCM_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) PCM ストリームのデータ範囲を記述する構造体。
+この例では、 [**ksk の\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造体を使用して、PCM ストリームのデータ範囲を記述します。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);

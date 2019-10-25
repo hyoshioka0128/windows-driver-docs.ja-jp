@@ -1,41 +1,41 @@
 ---
 title: IRP_MN_START_DEVICE
-description: すべての PnP ドライバーでは、この IRP を処理する必要があります。
+description: すべての PnP ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
-- IRP_MN_START_DEVICE カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_START_DEVICE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d182f36599bff8df3a14b308903684a30161184
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23ca09dabcc2000a75662db4a632a0ffc3908cb9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371848"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827946"
 ---
-# <a name="irpmnstartdevice"></a>IRP\_MN\_開始\_デバイス
+# <a name="irp_mn_start_device"></a>\_デバイスを起動\_IRP\_
 
 
-すべての PnP ドライバーでは、この IRP を処理する必要があります。
+すべての PnP ドライバーは、この IRP を処理する必要があります。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーは、デバイスに存在する場合は、ハードウェア リソースが割り当てられるこの IRP を送信します。 デバイスが最近列挙され、は、最初の起動中またはリソースが再調整のために停止した後は、デバイスを再起動する可能性があります。
+PnP マネージャーは、デバイスにハードウェアリソースが割り当てられた後、この IRP を送信します。 デバイスが最近列挙され、初めて起動されているか、リソースの再調整のために停止した後にデバイスが再起動している可能性があります。
 
-PnP マネージャーが送信することがあります、 **IRP\_MN\_開始\_デバイス**既に開始されているデバイスにデバイスが現在使用してよりに異なる一連のリソースを指定します。 ドライバーは、呼び出すことによってこの操作を開始する[ **IoInvalidateDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)とそれに続く対応[ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md) PNP 要求\_リソース\_要件\_CHANGED フラグを設定します。 バス ドライバーは PCI の PCI ブリッジで新しい aperture を開くなど、このメカニズムを使用可能性があります。
+PnP マネージャーが、既に開始されているデバイスに\_デバイスを起動して、現在使用されているものとは異なるリソースのセットを提供することにより、IRP\_が実行されている場合は、そのデバイスに対して**デバイスを起動\_** ドライバーは、 [**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)を呼び出し、PNP\_リソースを使用して、後続の[**IRP\_\_クエリ\_pnp\_デバイス\_状態**](irp-mn-query-pnp-device-state.md)要求に応答することによって、このアクションを開始\_要件\_フラグセットが変更されました。 バスドライバーでは、このメカニズムを使用して、たとえば PCI から PCI へのブリッジで新しいアパーチャを開くことができます。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.StartDevice.AllocatedResources**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) を指す構造体[ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list) PnP マネージャーがデバイスに割り当てられたハードウェア リソースを記述します。 この一覧には、未加工の形式でリソースが含まれています。 生のリソースを使用して、デバイスをプログラミングします。
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)の構造体の AllocatedResources メンバーは、 [**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)を指します。この一覧には、PnP マネージャーによって割り当てられたハードウェアリソースが記述されて**います。** ドライブ. この一覧には、未加工の形式のリソースが含まれています。 生のリソースを使用してデバイスをプログラミングします。
 
-**Parameters.StartDevice.AllocatedResourcesTranslated**を指す、 [ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)ハードウェア リソースを記述するを PnP マネージャーデバイスに割り当てられます。 この一覧には、翻訳された形式でリソースが含まれています。 翻訳されたリソースを使用して、割り込みのベクターを接続し、I/O の領域をマップし、メモリをマップします。
+**AllocatedResourcesTranslated**は、PnP マネージャーによってデバイスに割り当てられたハードウェアリソースが記述されている[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)を指します。 この一覧には、翻訳された形式のリソースが含まれています。 変換されたリソースを使用して、割り込みベクター、map i/o space、および map メモリを接続します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -45,26 +45,26 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功や状態などの適切なエラー状態に\_失敗またはステータス\_不十分\_リソース。
+ドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。または、状態\_失敗、状態\_不足しているリソース\_リソースなど、適切なエラー状態に設定します。
 
-ドライバーは、デバイスの場合は、その開始操作を実行すると時間を必要とする場合、保留中の IRP のマークし、状態を返す\_保留します。
+ドライバーがデバイスの開始操作を実行するのに時間がかかる場合は、IRP pending および return STATUS\_PENDING としてマークできます。
 
 <a name="operation"></a>操作
 ---------
 
-この IRP は、デバイスの親のバス ドライバー、続いてデバイス スタックの各以上のドライバー最初に処理する必要があります。
+この IRP は、デバイスの親バスドライバーによって最初に処理され、その後、デバイススタック内の上位の各ドライバーによって処理される必要があります。
 
-この IRP への応答、ドライバーは、最初にデバイスを起動または停止していたデバイスを再起動します。 デバイスを起動するために必要な操作は、デバイスからデバイスへの変更が、デバイスの電源を入れて、デバイス固有の初期化を実行して、割り込みの接続を含めることができます。
+この IRP に応答して、ドライバーはデバイスを初めて起動するか、停止したデバイスを再起動します。 デバイスを起動するために必要な操作は、デバイスによって異なりますが、デバイスの電源をオンにしたり、デバイス固有の初期化を実行したり、割り込みを接続したりすることができます。
 
-ドライバーは、通常が最初にデバイスを起動または後にデバイスを再起動するかどうかと同じ方法でこの IRP を処理できる、 [ **IRP\_MN\_停止\_デバイス**](irp-mn-stop-device.md)、ドライバーは、停止した後、再起動時にデバイスの状態を復元する必要がある場合を除きます。
+通常、ドライバーは、デバイスを初めて起動するか、または[**irp\_\_\_** ](irp-mn-stop-device.md)完了後にデバイスを再起動した場合と同じ方法で、この irp を処理できます。ただし、ドライバーが停止後に再起動時にデバイスの状態を復元する必要がある場合を除きます。
 
-Windows Vista およびそれ以降のオペレーティング システムでは、ことをお勧めドライバー保留常に、 **IRP\_MN\_開始\_デバイス**IRP 後でその処理を完了します。 この順序により、デバイスの再起動を非同期に処理するシステムです。 (Windows Vista より前に、のオペレーティング システムでは、ドライバーが状態を返すことができます\_PENDING からは、ディスパッチ ルーチンが PnP マネージャーには、他の操作と、デバイスの再起動が重複していない)。
+Windows Vista 以降のオペレーティングシステムでは、デバイスの irp\_開始し、後で処理を完了するために、ドライバーは常に**irp\_** を保留\_ことをお勧めします。 この順序を使用すると、システムはデバイスの再起動を非同期に処理できます。 (Windows Vista より前のオペレーティングシステムでは、ドライバーはディスパッチルーチンから状態\_PENDING を返すことができますが、その他の操作では、PnP マネージャーがデバイスの再起動と重複することはありません)。
 
-開始 IRP の処理の詳細については、次を参照してください。[デバイスを起動](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)します。
+開始 IRP の処理の詳細については、「[デバイスを開始する](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
 <a name="requirements"></a>要件
 ------------
@@ -77,7 +77,7 @@ Windows Vista およびそれ以降のオペレーティング システムで�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ Windows Vista およびそれ以降のオペレーティング システムで�
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_停止\_デバイス**](irp-mn-stop-device.md)
+[**IRP\_\_\_デバイスの停止**](irp-mn-stop-device.md)
 
  
 

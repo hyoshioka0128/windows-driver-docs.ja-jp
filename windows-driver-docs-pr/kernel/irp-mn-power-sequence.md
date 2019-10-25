@@ -1,34 +1,34 @@
 ---
 title: IRP_MN_POWER_SEQUENCE
-description: この IRP では、デバイスの電源のシーケンス値を返します。
+description: この IRP は、デバイスの電源シーケンス値を返します。
 ms.date: 08/12/2017
 ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
-- IRP_MN_POWER_SEQUENCE カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_POWER_SEQUENCE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: cc80b848a2e4b93ae8d6c33651d8caffa23a1f7b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70cbc1f1ea39ecd512b4c6cce9780de7d00f6c2e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383309"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828045"
 ---
-# <a name="irpmnpowersequence"></a>IRP\_MN\_POWER\_シーケンス
+# <a name="irp_mn_power_sequence"></a>IRP\_\_電源\_シーケンス
 
 
-この IRP では、デバイスの電源のシーケンス値を返します。
+この IRP は、デバイスの電源シーケンス値を返します。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_POWER** ](irp-mj-power.md)送信されるときに
+[**IRP\_MJ\_の電源**](irp-mj-power.md)送信時
 ---------
 
-ドライバーは、そのデバイスが特定の電源状態を実際に入力されたかどうかを判断するよう最適化として、この IRP を送信します。 この IRP のサポートは、省略可能です。
+ドライバーは、この IRP を最適化として送信し、デバイスが実際に特定の電源状態を入力したかどうかを判断します。 この IRP のサポートは省略可能です。
 
-この IRP を送信するドライバーを呼び出す必要があります[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)を主要な IRP のコードを指定する、IRP を割り当てる[ **IRP\_MJ\_POWER**](irp-mj-power.md)と IRP コードの軽微な**IRP\_MN\_POWER\_シーケンス**します。 ドライバーは呼び出す必要がありますし、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (Windows Vista) または[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (の Windows Server 2003、Windows XP、および Windows 2000) [次へ] の下位のドライバーに IRP を渡す。 電源マネージャーは、この IRP を送信できません。
+この IRP を送信するには、ドライバーは[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)を呼び出して、irp を割り当てる必要があります。これには、主な Irp コード[**irp\_MJ\_POWER**](irp-mj-power.md)および minor irp code **IRP\_全\_の電源\_シーケンス**を指定します。 次に、ドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) (windows Vista) または[**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (Windows SERVER 2003、Windows XP、および windows 2000) を呼び出して、IRP を次の下位のドライバーに渡す必要があります。 電源マネージャーは、この IRP を送信できません。
 
-この IRP の送信者は IRQL で実行する必要があります&lt;= ディスパッチ\_レベル。
+この IRP の送信者は、IRQL &lt;= ディスパッチ\_レベルで実行されている必要があります。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -38,38 +38,38 @@ ms.locfileid: "67383309"
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-**Parameters.PowerSequence**を指す、 **POWER\_シーケンス**次のメンバーを含む構造体。
+**Parameters。 PowerSequence**は、次のメンバーを持つ**POWER\_のシーケンス**構造を指します。
 
 <a href="" id="sequenced1"></a>**SequenceD1**  
-デバイスが D1 またはそれ以下の電源状態であった時間数。
+デバイスの電源状態が D1 以下の回数。
 
 <a href="" id="sequenced2"></a>**SequenceD2**  
-デバイスが D2 またはそれ以下の電源状態であった時間数。
+デバイスの電源状態が D2 以下になっている回数。
 
 <a href="" id="sequenced3"></a>**SequenceD3**  
-デバイスが D3 の電源状態であった時間数。
+デバイスが電力状態 D3 になった回数。
 
-シーケンス値は、デバイスが対応する電源状態または低電力状態にあった時間の最小数を追跡します。
+シーケンス値は、デバイスが対応する電源状態または低電力状態にある最小回数を追跡します。
 
-バス ドライバーの値をインクリメントする**SequenceD1**、 **SequenceD2**、および**SequenceD3**デバイスが対応する電源状態または低には、少なくとも毎回電源の状態。
+バスドライバーは、デバイスが対応する電源状態または低電力状態に入るたびに、 **SequenceD1**、 **SequenceD2**、 **SequenceD3**の値を少なくとも1つインクリメントします。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp の&gt;IoStatus.Status**ステータス\_を要求された情報が返されることを示すために成功またはステータス\_いない\_実装されていることを示すこの IRP をサポートしません。
+ドライバーは、 **irp&gt;iostatus. status**を STATUS\_SUCCESS に設定して、要求された情報が返されたことを示します。または、この irp がサポートされていないことを示すために実装\_されていない状態\_します。
 
 <a name="operation"></a>操作
 ---------
 
-この IRP では、デバイスの電源のシーケンス値を返します。 バス ドライバーが必要に応じて処理します。関数とフィルター ドライバーは、必要に応じてに送信できます。
+この IRP は、デバイスの電源シーケンス値を返します。 バスドライバーは必要に応じて処理できます。関数とフィルタードライバーは必要に応じて送信できます。
 
-デバイスの状態を変更する時間が長い場合は、この IRP は有効な最適化を提供します。 デバイスに電源状態が変更されるたび、バス ドライバーは、その電源状態のシーケンス値をインクリメントします。 バス ドライバーがブート時に、シーケンス値を初期化し、それ以降は継続的に増加0 にリセットする必要がありますされません。
+状態の変更に時間がかかるデバイスの場合、この IRP は便利な最適化を提供します。 デバイスの電源状態が変わるたびに、バスドライバーはその電源状態のシーケンス値を増やします。 バスドライバーは、起動時にシーケンス値を初期化し、それ以降は継続的にインクリメントします。0にリセットする必要はありません。
 
-デバイスのポリシー所有者は、デバイスの電源をシャット ダウンする前に、シーケンス値を取得して、デバイスに電源を復元する場合は、新しい値を取得するもう一度この IRP を 1 回送信できます。 2 つの値のセットを比較すると、ドライバーは、デバイスが低電力状態を実際に入力されたかどうかを判断できます。 デバイスでは、電源は失われませんでした、D0 状態に戻ると、デバイス、ドライバーは、時間のかかる再初期化を回避できます。
+デバイスポリシーの所有者は、デバイスをシャットダウンする前にシーケンス値を取得するためにこの IRP を1回送信し、デバイスに電力を復元するときに新しい値を取得することができます。 2つの値のセットを比較することで、ドライバーは、デバイスが実際に低電力状態に入ったかどうかを判断できます。 デバイスの電源が切断されていない場合、デバイスが D0 状態に戻ったときに、ドライバーによって時間がかかる再初期化が回避される可能性があります。
 
-などの場合は、デバイス D2 状態に達すると、電源を復旧する時間がかかる、ドライバー格納できる、 **SequenceD2** D2 状態または低のデバイスを設定する前に、の値します。 後で、デバイスに電源が復旧されるときに、ドライバーを比較できる新しい**SequenceD2**デバイスの状態が実際に D2 下にドロップするかどうかを判断する格納されている値を持つ値。 値が一致した場合は、デバイス実際に入力しなかった D2 の電源状態または低の状態と、ドライバーがデバイスを再初期化を回避することができます。
+たとえば、デバイスが D2 状態に達したときに電力を復元するのに長い時間がかかる場合、ドライバーはデバイスの状態を D2 以下に設定する前に**SequenceD2**の値を格納できます。 その後、電源がデバイスに復元されるときに、ドライバーは新しい**SequenceD2**の値と格納されている値を比較して、デバイスの状態が D2 未満で実際に削除されたかどうかを判断できます。 値が一致した場合、デバイスは実際には電力状態 D2 またはそれよりも低い状態になることはなく、ドライバーはデバイスの再初期化を回避できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -80,7 +80,7 @@ ms.locfileid: "67383309"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>

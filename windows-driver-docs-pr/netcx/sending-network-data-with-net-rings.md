@@ -1,60 +1,60 @@
 ---
-title: Net リングを使用したネットワーク データを送信します。
-description: このトピックでは、ネットワーク データを送信する、NetAdapterCx クライアント ドライバーが純リングと net リングを行う反復子を使用する方法について説明します。
+title: ネットリングを使用したネットワークデータの送信
+description: このトピックでは、NetAdapterCx クライアントドライバーがネットワークデータを送信するために、ネットリングと net ring 反復子を使用する方法について説明します。
 ms.assetid: 2F3DA1A5-D0C1-4928-80B2-AF41F949FF14
 keywords:
-- NetAdapterCx Net リングと net リングを行う反復子、NetCx Net リング、net のリングの反復子 NetAdapterCx PCI デバイス net リング、NetAdapterCx 非同期 I/O
+- NetAdapterCx Net リングと net ring 反復子、NetCx Net リングと net ring 反復子、NetAdapterCx PCI devices net ring、NetAdapterCx 非同期 i/o
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5c53052e59474ab79bbb7745508d28795a37ca75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5a242f5f3c62d5e39141c48e0d8ed14efbd152c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369947"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835424"
 ---
 # <a name="sending-network-data-with-net-rings"></a>ネット リングを使用したネットワーク データの送信
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-NetAdapterCx クライアント ドライバーは、フレームワークを呼び出すときに、ネットワーク データを送信、 [ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)送信キューのコールバック関数。 このコールバック中にクライアント ドライバーはハードウェア キューのフラグメントのリングからバッファーを投稿し、完了したパケットと、OS に返すフラグメントのドレインを実行します。
+NetAdapterCx クライアントドライバーは、フレームワークが送信キューの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック関数を呼び出すと、ネットワークデータを送信します。 このコールバック中に、クライアントドライバーは、キューのフラグメントリングからハードウェアにバッファーをポストし、完了したパケットをドレインしてから OS に戻します。
 
-## <a name="transmit-tx-post-and-drain-operation-overview"></a>(テキサス州) の投稿を送信し、操作の概要のドレイン
+## <a name="transmit-tx-post-and-drain-operation-overview"></a>送信 (Tx) の post とドレイン操作の概要
 
-次のアニメーションは、単純な PCI ネットワーク インターフェイス カード (NIC) のクライアント ドライバーが post して実行する方法と送信 (テキサス州) キューのドレイン操作を示します。  
+次のアニメーションは、単純な PCI ネットワークインターフェイスカード (NIC) のクライアントドライバーが送信 (Tx) キューの post 操作とドレイン操作を実行する方法を示しています。  
 
-![Net リング post と送信 (送信) するための操作をドレイン](images/net_ring_post_and_drain_operations_tx.gif "Net リング post と送信 (送信) するための操作をドレイン")
+![送信のための Net ring の post およびドレイン操作 (Tx)](images/net_ring_post_and_drain_operations_tx.gif "送信のための Net ring の post およびドレイン操作 (Tx)")
 
-このアニメーションでは、クライアント ドライバーによって所有されているパケットが薄い青とダークで強調表示青、およびクライアント ドライバーによって所有されているフラグメントは、黄、オレンジ色で強調表示されます。 薄い色の表現、*ドレイン*暗い色を表すときに、ドライバーを所有する要素のサブセクション、*投稿*ドライバーを所有する要素のサブセクションです。
+このアニメーションでは、クライアントドライバーが所有するパケットが薄い青と濃い青で強調表示され、クライアントドライバーによって所有されているフラグメントが黄色とオレンジで強調表示されます。 薄い色は、ドライバーが所有する要素の*ドレイン*サブセクションを表します。濃い色は、ドライバーが所有する要素の*post*サブセクションを表します。
 
-## <a name="sending-data-in-order"></a>順序でデータを送信します。
+## <a name="sending-data-in-order"></a>送信 (データを順に)
 
-一般的な post とドレインのシーケンスがデバイスなど、単純な PCI NIC の順序でデータを送信するドライバーを次に示します
+次に示すのは、デバイスがデータを順に転送するドライバー (単純な PCI NIC など) の一般的な post とドレインシーケンスです。
 
-1. 呼び出す**NetTxQueueGetRingCollection**送信キューのリングのコレクション構造体を取得します。 これは、ドライバーからの呼び出しを減らすことに、キューのコンテキストの領域に格納できます。 
-2. ハードウェアに post データ。    
-    1. リングのコレクションを使用して呼び出すことによって、送信キューのパケットのリングの投稿の反復子を取得する[ **NetRingGetPostPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetpostpackets)します。
-    2. ループでは、次の操作を行います。
-        1. パケットを呼び出して取得[ **NetPacketIteratorGetPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)パケット反復子とします。
-        2. かどうか、このパケットを無視するかを確認します。 無視する場合は、このループの 6 の手順に進みます。 ない場合は、続行します。
-        3. このパケットのフラグメントのフラグメントの反復子を呼び出すことで取得[ **NetPacketIteratorGetFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorgetfragments)します。
-        4. ループ内で次の手順を実行します。
-            1. 呼び出す[ **NetFragmentIteratorGetFragment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)のフラグメントを取得するフラグメントの反復子とします。
-            2. 変換、 **NET_FRAGMENT**記述子に関連付けられたハードウェア フラグメントの記述子。
-            3. 呼び出す[ **NetFragmentIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratoradvance)このパケットの次のフラグメントに移動します。
-        5. 更新プログラムのフラグメントのリングの**次**フラグメントの反復子が一致するインデックスの現在**インデックス**ハードウェアには、その投稿を示しますが、完了します。
-        6. 呼び出す[ **NetPacketIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratoradvance)次のパケットに移動します。
-    3. 呼び出す[ **NetPacketIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorset)ハードウェアに転記パケットを最終処理します。
-3. ドレインが完了は、OS にパケットを送信します。
-    1. リングのコレクションを使用して、呼び出すことによって、送信キューのパケットのリングのドレイン反復子を取得する[ **NetRingGetDrainPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetdrainpackets)します。
-    2. ループでは、次の操作を行います。
-        1. パケットを呼び出して取得[ **NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)します。
-        2. パケットの送信が完了したかどうかを確認します。 されていない場合は、ループから抜け出します。
-        2. 呼び出す[ **NetPacketIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratoradvance)次のパケットに移動します。
-    3. 呼び出す[ **NetPacketIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorset) OS にドレイン中のパケットを最終処理します。
+1. **NetTxQueueGetRingCollection**を呼び出して、送信キューのリングコレクション構造を取得します。 これをキューのコンテキスト空間に格納して、ドライバーからの呼び出しを減らすことができます。 
+2. データをハードウェアに投稿する:    
+    1. 発信キューのパケットリングのポスト反復子を取得するには、ring コレクションを[**使用します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetpostpackets)。
+    2. ループで次の操作を実行します。
+        1. パケット反復子を使用して[**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)を呼び出すことにより、パケットを取得します。
+        2. このパケットを無視するかどうかを確認してください。 無視する場合は、このループの手順6に進みます。 それ以外の場合は、続行します。
+        3. [**NetPacketIteratorGetFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetfragments)を呼び出して、このパケットのフラグメントのフラグメント反復子を取得します。
+        4. ループで次の操作を実行します。
+            1. フラグメントを取得するには、フラグメント反復子を使用して[**NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)を呼び出します。
+            2. **NET_FRAGMENT**記述子を、関連付けられているハードウェアフラグメント記述子に変換します。
+            3. このパケットの次のフラグメントに移動するには、 [**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を呼び出します。
+        5. フラグメントの反復子の現在の**インデックス**に一致するように、フラグメントリングの**次**のインデックスを更新します。これは、ハードウェアへのポストが完了したことを示します。
+        6. [**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)を呼び出して、次のパケットに移動します。
+    3. [**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset)を呼び出して、ハードウェアへのパケットの送信を完了します。
+3. 完了した送信パケットを OS にドレインします:
+    1. 発信キューのパケットリングのドレイン反復子を取得するには、ring コレクションを[**使用します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetdrainpackets)。
+    2. ループで次の操作を実行します。
+        1. [**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)を呼び出してパケットを取得します。
+        2. パケットの送信が完了したかどうかを確認します。 そうでない場合は、ループを中断します。
+        2. [**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)を呼び出して、次のパケットに移動します。
+    3. [**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset)を呼び出して、OS へのパケットのドレインを完了します。
 
-次の手順をコードで次のようになります。 ハードウェアまたは post が成功したトランザクションをフラッシュする記述子を投稿する方法などのハードウェアに固有の詳細がわかりやすくするために残さことに注意してください。
+これらの手順は、コードでは次のようになります。 ハードウェア固有の詳細 (ハードウェアに記述子をポストする方法や、正常な post トランザクションをフラッシュする方法など) は、わかりやすくするために残されています。
 
 ```cpp
 void
@@ -118,8 +118,8 @@ MyEvtTxQueueAdvance(
 }
 ```
 
-## <a name="sending-data-out-of-order"></a>誤順序のデータの送信
+## <a name="sending-data-out-of-order"></a>データを順不同で送信する
 
-デバイスが順不同の転送を完了可能性がありますドライバーについては、順序でデバイスからプライマリの違いは、送信バッファーを割り当てるユーザーと、ドライバーが、テストの送信完了を処理する方法にあります。 DMA 対応している PCI NIC の順序で上での転送は、OS は通常を割り当てます、アタッチ、最終的にフラグメント バッファーを所有します。 次に、順番にクライアント ドライバーをテストできます各フラグメントの対応するハードウェアの所有権フラグ中に*EvtPacketQueueAdvance*します。
+デバイスが順不同で転送を完了する可能性のあるドライバーの場合、インオーダーデバイスとの主な違いは、送信バッファーを割り当てるユーザーと、ドライバーが送信完了のテストを処理する方法です。 DMA 対応の PCI NIC を使用したインオーダー転送の場合、OS は通常、フラグメントバッファーを割り当て、アタッチし、最終的に所有します。 次に、クライアントドライバーは、 *Evtpacketqueueadvance*中に、各フラグメントの対応するハードウェア所有権フラグをテストできます。
 
-このモデルとは異なり、一般的な USB ベースの NIC を検討してください。 このような状況で USB スタックは、伝送用のメモリ バッファーを所有しているし、これらのバッファーがシステム メモリ内で別の場所にあります。 USB スタックは、クライアント ドライバーは、その完了コールバック ルーチンの中に、個別にパケットの完了ステータスを記録する必要があるために、誤順序のクライアント ドライバーに入力候補を示します。 これを行うには、クライアント ドライバーを使用できます、パケットの**スクラッチ**フィールド、またはそれには、そのキューのコンテキストの領域に情報を格納するように他の方法を使用できます。 次の呼び出しで、 [ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)、クライアント ドライバーがパケットの完了をテストするためには、この情報を確認します。 
+このモデルとは対照的に、一般的な USB ベースの NIC について考えてみましょう。 この場合、USB スタックは転送用のメモリバッファーを所有しており、これらのバッファーはシステムメモリ内の他の場所に配置される可能性があります。 USB スタックは、クライアントドライバーが順番どおりに完了していることを示します。そのため、クライアントドライバーは、完了コールバックルーチンの間に、パケットの完了ステータスを個別に記録する必要があります。 そのためには、クライアントドライバーはパケットの**スクラッチ**フィールドを使用するか、キューのコンテキスト空間に情報を格納するなどの他の方法を使用できます。 次に、 [*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)の呼び出しで、クライアントドライバーがこの情報をチェックしてパケット完了テストを行います。 

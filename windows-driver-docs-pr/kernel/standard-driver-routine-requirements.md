@@ -3,17 +3,17 @@ title: 標準ドライバー ルーチンの要件
 description: 標準ドライバー ルーチンの要件
 ms.assetid: 49b382ad-c282-41d2-b8b3-68eca4e12b9c
 keywords:
-- 標準のドライバー ルーチン WDK カーネルの要件
-- ドライバー ルーチン WDK カーネルの要件
-- ルーチンの WDK カーネルの要件
+- 標準ドライバールーチン WDK カーネル、要件
+- ドライバールーチン WDK カーネル、要件
+- ルーチン WDK カーネル、要件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d03fa6b24e16f70de95db610d2b69c1e1638034e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0870238d846b4f0813ce5c4df07770ef807e7075
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383003"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838412"
 ---
 # <a name="standard-driver-routine-requirements"></a>標準ドライバー ルーチンの要件
 
@@ -21,21 +21,21 @@ ms.locfileid: "67383003"
 
 
 
-カーネル モード ドライバーを設計するときに、次の点に注意してくださいにしてください。
+カーネルモードドライバーを設計するときは、次の点に注意してください。
 
--   各ドライバーが必要、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンで、ドライバー レベルのデータ構造とリソースを初期化します。 I/O マネージャーの呼び出し、 **DriverEntry**ルーチン、ドライバーの読み込み時にします。
+-   各ドライバーには、ドライバー全体のデータ構造とリソースを初期化する[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンが必要です。 I/o マネージャーは、ドライバーの読み込み時に**Driverentry**ルーチンを呼び出します。
 
--   すべてのドライバーには、少なくとも 1 つのディスパッチ ルーチンを受け取って I/O 要求パケット (Irp) を処理する必要があります。 各ドライバーのディスパッチ ルーチンのエントリ ポイントを配置する必要があります、 [**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)構造体には、各[IRP の主な機能コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)ドライバーができます。表示されます。 ドライバーには各 IRP の主な機能コードの別のディスパッチ ルーチンまたはいくつかの関数コードを処理する 1 つまたは複数のディスパッチ ルーチンことができます。
+-   すべてのドライバーには、i/o 要求パケット (Irp) を受信して処理するディスパッチルーチンが少なくとも1つ必要です。 各ドライバーは、ドライバー [ **\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)構造にディスパッチルーチンのエントリポイントを配置する必要があります。これは、ドライバーが受け取ることができる各[IRP 主要な関数コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)に適用されます。 ドライバーは、各 IRP 主要な関数コードに対して個別のディスパッチルーチンを持つことができます。または、複数の関数コードを処理する1つ以上のディスパッチルーチンを持つことができます。
 
--   すべての WDM ドライバーが必要、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。 ドライバーを配置する必要があります、*アンロード*ドライバーのドライバー オブジェクトのルーチンのエントリ ポイント。 役割を[PnP ドライバーのアンロード ルーチン](pnp-driver-s-unload-routine.md)わずかですが、[非 PnP ドライバーのアンロード ルーチン](non-pnp-driver-s-unload-routine.md)ドライバーを使用しているすべてのシステム リソースを解放する必要があります。
+-   すべての WDM ドライバーには、[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンが必要です。 ドライバーは、*アンロード*ルーチンのエントリポイントをドライバーのドライバーオブジェクトに配置する必要があります。 [Pnp ドライバーのアンロードルーチン](pnp-driver-s-unload-routine.md)の役割は最小限ですが、 [pnp 以外のドライバーのアンロードルーチン](non-pnp-driver-s-unload-routine.md)は、ドライバーが使用しているシステムリソースを解放する必要があります。
 
--   すべての WDM ドライバーが必要、 *AddDevice*ドライバー オブジェクトの。 *AddDevice*ルーチンが作成を担当し、各 PnP デバイス ドライバーのコントロール オブジェクト、デバイスを初期化します。
+-   すべての WDM ドライバーには、ドライバーオブジェクトの*AddDevice*が必要です。 *AddDevice*ルーチンは、ドライバーによって制御される PnP デバイスごとにデバイスオブジェクトの作成と初期化を行います。
 
--   ドライバーが持つことができます、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) 、日常的な I/O マネージャーが Irp の I/O 操作を開始するドライバーを呼び出しますがキューに登録するシステム提供の IRP キュー。 任意のドライバーがない、 *StartIo*そのディスパッチ ルーチン内のすべての IRP を完了する必要がありますまたはルーチンを設定し、受信 Irp の内部キューを管理する必要があります。 高度なドライバーがない、 *StartIo*ルーチン、単に渡される Irp 下位レベルのドライバーがディスパッチ ルーチンから直接場合。
+-   ドライバーは、 [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンを持つことができます。このルーチンは、ドライバーがシステムによって提供される irp キューに対してキューに登録されている irp の i/o 操作を開始するために、i/o マネージャーが呼び出します。 *StartIo*ルーチンが含まれていないドライバーは、受信する irp の内部キューを設定して管理するか、ディスパッチルーチン内のすべての irp を完了する必要があります。 上位レベルのドライバーは、ディスパッチルーチンから直接 Irp を下位レベルのドライバーに渡すだけで、 *StartIo*ルーチンを持つことはできません。
 
--   特定のミニポート ドライバーとは、上記の要件の例外です。 デバイス固有の種類のドキュメントのミニポート ドライバーの要件については Windows Driver Kit (WDK) を参照してください。
+-   特定のミニポートドライバーは、上記の要件の例外です。 ミニポートドライバーの要件の詳細については、Windows Driver Kit (WDK) のデバイスタイプ固有のドキュメントを参照してください。
 
--   その機能と (たとえば、かどうかと相互運用システムから提供されたドライバー) システムには、ドライバーの適合、ドライバーに他の種類の標準のルーチンが含まれているかどうかによって異なります。 詳細については、WDK で特定のデバイスの種類のドキュメントを参照してください。
+-   ドライバーが他の種類の標準ルーチンを持っているかどうかは、そのドライバーがシステムにどのように適合しているか (たとえば、システムが提供するドライバーと相互運用しているかどうか) によって、そのドライバーの機能によって異なります。 詳細については、WDK のデバイスタイプに固有のドキュメントを参照してください。
 
  
 

@@ -3,46 +3,46 @@ title: 複数プロセッサのサポート
 description: 複数プロセッサのサポート
 ms.assetid: 906d6b31-a447-4a94-b1a5-cd3028722db7
 keywords:
-- ユーザー モードのディスプレイ ドライバー WDK Windows Vista では、複数のプロセッサ
-- 複数のプロセッサ サポート WDK の表示
-- 複数プロセッサの最適化のランタイム処理 WDK の表示
-- ドライバーで処理される複数のプロセッサの最適化 WDK の表示します。
-- 複数プロセッサの最適化 WDK を表示します。
+- ユーザーモードディスプレイドライバー WDK Windows Vista、複数プロセッサ
+- マルチプロセッササポート WDK ディスプレイ
+- 実行時に処理されたマルチプロセッサの最適化の WDK ディスプレイ
+- ドライバーで処理されたマルチプロセッサの最適化の WDK ディスプレイ
+- マルチプロセッサの最適化 WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d2d04c42b662d4aa3688b27619a1cf964b86f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d15fdcbc5df5e086b72087f908e4fcca653b572
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380551"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829392"
 ---
 # <a name="supporting-multiple-processors"></a>複数プロセッサのサポート
 
 
-マルチ プロセッサ コンピューターでユーザー モードのディスプレイ ドライバーが、マイクロソフトの Direct3D ランタイムの複数プロセッサの最適化を処理できます。 または、ドライバーは、独自のマルチ プロセッサの最適化を実行できます。
+マルチプロセッサコンピューター上のユーザーモード表示ドライバーは、Microsoft Direct3D ランタイムがマルチプロセッサの最適化を処理できるようにしたり、ドライバーが独自のマルチプロセッサの最適化を実行したりすることができます。
 
-### <a name="span-idruntime-handledmultiple-processoroptimizationsspanspan-idruntime-handledmultiple-processoroptimizationsspanspan-idruntime-handledmultiple-processoroptimizationsspanruntime-handled-multiple-processor-optimizations"></a><span id="Runtime-Handled_Multiple-Processor_Optimizations"></span><span id="runtime-handled_multiple-processor_optimizations"></span><span id="RUNTIME-HANDLED_MULTIPLE-PROCESSOR_OPTIMIZATIONS"></span>ランタイムで処理される複数プロセッサの最適化
+### <a name="span-idruntime-handled_multiple-processor_optimizationsspanspan-idruntime-handled_multiple-processor_optimizationsspanspan-idruntime-handled_multiple-processor_optimizationsspanruntime-handled-multiple-processor-optimizations"></a><span id="Runtime-Handled_Multiple-Processor_Optimizations"></span><span id="runtime-handled_multiple-processor_optimizations"></span><span id="RUNTIME-HANDLED_MULTIPLE-PROCESSOR_OPTIMIZATIONS"></span>実行時に処理されたマルチプロセッサの最適化
 
-サポートするドライバーだけで Direct3D ランタイムによって処理される複数のプロセッサの最適化が有効になっている、 [ **LockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)、 [ **UnlockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)、および[**の名前を変更**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rename)関数。 これらの関数は、頻繁に動的リソースをロックするアプリケーションでうまく機能する複数プロセッサの最適化を有効にします。 *LockAsync*と*UnlockAsync*関数--と共にで、 [ **GetQueryData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getquerydata)関数 - ドライバーの再入可能である必要がありますが以上の 0x0000000B DDI バージョンを公開します。 ドライバーが DDI バージョン値を返します、 **DriverVersion**のメンバー、 [ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)ドライバーのへの呼び出しで構造体[**OpenAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数。 ランタイムが再入可能な方法でドライバー関数を呼び出すときに、1 つのスレッドは内に別のドライバー関数内で同じディスプレイ デバイスを参照する別のスレッドの実行中の関数を実行できます。
+Direct3D ランタイムによって処理されるマルチプロセッサの最適化は、 [**Lockasync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)、 [**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)、および[**Rename**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rename)の各関数をサポートするドライバーでのみ有効になります。 これらの関数を使用すると、動的リソースを頻繁にロックするアプリケーションでマルチプロセッサの最適化を効果的に行うことができます。 *Lockasync*関数と*UnlockAsync*関数は、 [**getquerydata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getquerydata)関数と共に、0x0000000B 以上の DDI バージョンを公開するドライバーで再入可能である必要があります。 ドライバーは、ドライバーの[**openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数の呼び出しで、 [**D3D10DDIARG\_openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造体の**driverversion**メンバーの DDI バージョンの値を返します。 ランタイムが再入可能な方法でドライバー関数を呼び出すと、同じディスプレイデバイスを参照する別のスレッドが別のドライバー関数内で実行されている間に、その関数内で1つのスレッドが実行される可能性があります。
 
-Direct3D のランタイムを別々 のプロセッサに作業をオフロードし、コンピューターのパフォーマンスを向上させるいくつかの状況でマルチ プロセッサの最適化を使用します。 複数プロセッサの最適化を有効にすると、Direct3D のランタイムと、ユーザー モードのディスプレイ ドライバーの間、追加のソフトウェア レイヤーが追加されます。 このソフトウェアのレイヤーでは、Direct3D ランタイムは、ユーザー モードのディスプレイ ドライバーの機能を構成するそれ以外の場合、すべての呼び出しをインターセプトします。
+Direct3D ランタイムは、状況によっては複数プロセッサの最適化を使用して、作業を別のプロセッサにオフロードし、コンピューターのパフォーマンスを向上させます。 マルチプロセッサの最適化を有効にすると、Direct3D ランタイムとユーザーモードの表示ドライバーの間に追加のソフトウェアレイヤーが追加されます。 このソフトウェアレイヤーは、Direct3D ランタイムがユーザーモードの表示ドライバーの機能に対して行うすべての呼び出しをインターセプトします。
 
-ソフトウェアのレイヤーは、ワーカー スレッドを非同期的に処理するバッチにコマンドをキュー、ユーザー モードを呼び出す代わりには、ドライバーを直接表示されます。 ただし、ソフトウェア レイヤーは、ユーザー モードのディスプレイ ドライバーの機能に加えられたすべての呼び出しをバッチすることはできません。 具体的には、ソフトウェアのレイヤーが情報を返す関数への呼び出しをバッチことはできません (たとえば、 [ **CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource))。 ソフトウェアのレイヤーには、これらの種類のドライバーの関数のいずれかを呼び出す必要がありますと、ワーカー スレッドですべてのキューに置かれたコマンドをフラッシュ ソフトウェア レイヤーがメイン アプリケーション スレッドでドライバー関数を呼び出すし。
+ユーザーモードの表示ドライバーを直接呼び出すのではなく、ソフトウェアレイヤーは、ワーカースレッドが非同期的に処理するバッチにコマンドをキューに入れます。 ただし、ソフトウェアレイヤーでは、ユーザーモードの表示ドライバーの機能に対して行われたすべての呼び出しをバッチ処理することはできません。 特に、情報を返す関数 ( [**Createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)など) の呼び出しをソフトウェアレイヤーでバッチ処理することはできません。 ソフトウェアレイヤーは、これらの種類のドライバー関数のいずれかを呼び出す必要がある場合、キューに置かれているすべてのコマンドをワーカースレッドからフラッシュし、ソフトウェアレイヤーがメインアプリケーションスレッドでドライバーの機能を呼び出します。
 
-### <a name="span-iddriver-handledmultiple-processoroptimizationsspanspan-iddriver-handledmultiple-processoroptimizationsspanspan-iddriver-handledmultiple-processoroptimizationsspandriver-handled-multiple-processor-optimizations"></a><span id="Driver-Handled_Multiple-Processor_Optimizations"></span><span id="driver-handled_multiple-processor_optimizations"></span><span id="DRIVER-HANDLED_MULTIPLE-PROCESSOR_OPTIMIZATIONS"></span>ドライバーで処理される複数のプロセッサの最適化
+### <a name="span-iddriver-handled_multiple-processor_optimizationsspanspan-iddriver-handled_multiple-processor_optimizationsspanspan-iddriver-handled_multiple-processor_optimizationsspandriver-handled-multiple-processor-optimizations"></a><span id="Driver-Handled_Multiple-Processor_Optimizations"></span><span id="driver-handled_multiple-processor_optimizations"></span><span id="DRIVER-HANDLED_MULTIPLE-PROCESSOR_OPTIMIZATIONS"></span>ドライバーで処理されたマルチプロセッサの最適化
 
-場合、ドライバーは、独自のマルチ プロセッサの最適化を実行する必要がありますを実装していない[ **LockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)、 [ **UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)と[**の名前を変更**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rename)関数。 このような状況で、ドライバーを呼び出す必要があります、 [ **pfnSetAsyncCallbacksCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setasynccallbackscb)ランタイムを開始または受信を停止するかどうか、ランタイムに通知する関数呼び出しからの実行時のコールバック関数をワーカー スレッド。
+ドライバーが独自のマルチプロセッサの最適化を実行する場合、 [**Lockasync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)、 [**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)、 [**Rename**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rename)の各関数を実装する必要はありません。 この場合、ドライバーは、ランタイムがワーカースレッドからランタイムのコールバック関数への呼び出しの受信を開始または停止するかどうかをランタイムに通知するために、 [**pfnSetAsyncCallbacksCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setasynccallbackscb)関数を呼び出す必要があります。
 
-ドライバーは、独自のマルチ プロセッサの最適化を実行する場合は、Direct3D ランタイムが複数プロセッサの最適化を有効にすると判断した場合に使用する同じポリシーに従う必要があります。 このポリシーは、すべてのプロセスでシステム リソースの公正な共有を有効します。 具体的には、ドライバーは、次の状況での複数プロセッサの最適化を無効にする必要があります。
+ドライバーが独自のマルチプロセッサの最適化を実行する場合は、Direct3D ランタイムがマルチプロセッサの最適化を有効にすることを決定するときに使用するのと同じポリシーに従う必要があります。 このポリシーにより、すべてのプロセスでシステムリソースを公平に共有できるようになります。 特に、次のような場合に、ドライバーはマルチプロセッサの最適化を無効にする必要があります。
 
--   アプリケーションは、ウィンドウ表示モードで実行されます。
+-   アプリケーションはウィンドウモードで実行されます。
 
--   コンピューターには、1 つだけプロセッサ (またはプロセッサ コア) が含まれています。ドライバーは、ハイパー スレッディング シングル プロセッサ コンピューターでの最適化を無効にする必要があります。
+-   コンピューターにはプロセッサ (またはプロセッサコア) が1つだけ含まれています。ドライバーは、ハイパースレッディングを使用するシングルプロセッサコンピューターでの最適化を無効にする必要があります。
 
--   アプリケーションでは、複数プロセッサの最適化を有効にするありません、要求されたか、アプリケーションは、ソフトウェアの頂点の処理を使用してこの情報は、ドライバーの[ **CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数。
+-   アプリケーションは、マルチプロセッサの最適化が有効になっていないことを要求したか、アプリケーションがソフトウェアの頂点処理を使用しています。この情報は、ドライバーの[**CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数に渡されます。
 
-ベンダーは、このような状況のいずれかでマルチ プロセッサの最適化を有効にする場合、Microsoft 最初に接続する必要があります。
+これらのいずれかの状況でベンダーがマルチプロセッサの最適化を有効にする場合は、最初に Microsoft に問い合わせる必要があります。
 
  
 

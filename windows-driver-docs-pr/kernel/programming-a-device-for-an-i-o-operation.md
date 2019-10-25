@@ -3,16 +3,16 @@ title: I/O 操作のためのデバイスのプログラミング
 description: I/O 操作のためのデバイスのプログラミング
 ms.assetid: 952b07d8-81e3-40ec-8acd-be1143a7d2a2
 keywords:
-- クリティカル セクション ルーチン WDK カーネル
-- I/O WDK カーネル、デバイスのプログラミング
+- クリティカルセクションルーチン WDK カーネル
+- I/o WDK カーネル、デバイスプログラミング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62d4a425124dcdca06df6766ef70c17448edd0e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52de1a5d3ddc562fb7b97db825d8174442151e04
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838485"
 ---
 # <a name="programming-a-device-for-an-io-operation"></a>I/O 操作のためのデバイスのプログラミング
 
@@ -20,19 +20,19 @@ ms.locfileid: "67378788"
 
 
 
-次の一般的なガイドラインを使用して、設計、書き込み、および呼び出しの[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine) I/O 操作のデバイスのプログラミング ルーチン。
+I/o 操作用にデバイスをプログラミングする[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンを設計、記述、および呼び出すには、次の一般的なガイドラインを使用します。
 
--   A *SynchCritSection* I/O 操作のデバイスをプログラムするルーチンができるだけ早く制御を返す必要があります。
+-   I/o 操作用にデバイスをプログラムする*SynchCritSection*ルーチンは、できるだけ早く制御を返す必要があります。
 
-    このため、 *SynchCritSection*ルーチンは、I/O のデバイスを設定する必要なだけ行う必要があります。 すべて IRP の前処理、他のドライバーのルーチンの状態情報を初期化およびを呼び出す前に、ハードウェア リソースを取得そのため、ドライバーを実行する必要があります、 *SynchCritSection*ルーチン。
+    このため、 *SynchCritSection*ルーチンでは、i/o 用にデバイスを設定するために必要なもののみを実行する必要があります。 そのため、ドライバーは、 *SynchCritSection*ルーチンを呼び出す前に、すべての IRP のプリプロセスを実行し、他のドライバールーチンの状態情報を初期化し、ハードウェアリソースを取得する必要があります。
 
--   デバイス ドライバーでは複数*SynchCritSection*デバイスのプログラミング ルーチンです。
+-   デバイスドライバーは、デバイスをプログラミングするために複数の*SynchCritSection*ルーチンを持つことができます。
 
-    などの読み取り要求の設定とは異なる著しく特定デバイス制御要求の設定からデバイスのドライバーが個別あります*SynchCritSection*要求の種類ごとにそのデバイスのプログラミング ルーチンです。
+    たとえば、読み取り要求を設定するデバイスのドライバーは、特定のデバイス制御要求を設定した場合には、要求の種類ごとにデバイスをプログラミングするための個別の*SynchCritSection*ルーチンを持つことがあります。
 
--   すべて*SynchCritSection*ルーチン返す必要があります制御可能な限り、早く実行しているため、 *SynchCritSection*ルーチンが、ドライバーの ISR 実行されないようにします。
+-   *SynchCritSection*ルーチンを実行すると、ドライバーの ISR が実行されないため、すべての*SynchCritSection*ルーチンはできるだけ早く制御を返す必要があります。
 
-    1 つの大規模で汎用を記述しないでください*SynchCritSection*ルーチンを**スイッチ**または複数のステートメントが入れ子になった**場合..そうしたら..else**ステートメントを実行するどのような操作または更新するには、どのような状態情報を判断します。 多数の書き込みを避ける必要がありますこれに対して、 *SynchCritSection*ルーチン プログラムの 1 つのデバイスを登録します。
+    **Switch**ステートメントを使用して、または入れ子になっ **た if.. を含む、1つの大規模な汎用 SynchCritSection ルーチンを記述しないでください。そうしたら。。else**ステートメントを実行して、実行される操作や更新する状態情報を決定します。 一方、1つのデバイスレジスタだけをプログラミングする多くの*SynchCritSection*ルーチンを記述することは避けてください。
 
  
 

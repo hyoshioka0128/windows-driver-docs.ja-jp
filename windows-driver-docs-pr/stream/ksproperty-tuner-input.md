@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_入力
-description: KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアンテナのケーブル チューナーの入力間での選択など、現在のチューニング モードでの入力をについて説明します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_チューナー\_入力
+description: KSK プロパティ\_チューナー\_入力プロパティは、ケーブルやアンテナチューナーの入力を選択するなど、現在のチューニングモードでのチューナーの入力を記述します。 このプロパティを実装する必要があります。
 ms.assetid: b2c92531-ad1f-4152-a98d-7cae9c2c940c
 keywords:
-- KSPROPERTY_TUNER_INPUT ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_INPUT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eea1bcbab898e77728a3270469ee86da52ca59fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 392e327406b8b2022468e94e1881082792128b6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354809"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837910"
 ---
-# <a name="kspropertytunerinput"></a>KSPROPERTY\_チューナー\_入力
+# <a name="ksproperty_tuner_input"></a>KSK プロパティ\_チューナー\_入力
 
 
-KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアンテナのケーブル チューナーの入力間での選択など、現在のチューニング モードでの入力をについて説明します。 このプロパティを実装する必要があります。
+KSK プロパティ\_チューナー\_入力プロパティは、ケーブルやアンテナチューナーの入力を選択するなど、現在のチューニングモードでのチューナーの入力を記述します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_tuner_input_ks"></span><span id="DDK_KSPROPERTY_TUNER_INPUT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアン
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアン
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_input_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_INPUT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_input_s)"><strong>KSPROPERTY_TUNER_INPUT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_input_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_INPUT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_input_s)"><strong>KSPROPERTY_TUNER_INPUT_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,14 +61,14 @@ KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアン
 
  
 
-プロパティの値 (データの操作) は、物理的なチューナーの入力の数値インデックスを指定する ULONG です。 この値は 0 (数の入力-1) までの範囲でなければなりません。
+プロパティ値 (操作データ) は、物理的なチューナー入力の数値インデックスを指定する ULONG です。 この値は、0から (入力数-1) の範囲内である必要があります。
 
 <a name="remarks"></a>注釈
 -------
 
-**InputIndex** 、KSPROPERTY のメンバー\_チューナー\_入力\_S 構造体が現在チューナー入力インデックスを指定します。
+KSK プロパティ\_チューナー\_入力\_S 構造体の**Inputindex**メンバーは、現在のチューナー入力インデックスを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアン
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_チューナー\_入力プロパティは、チューナーとアン
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_入力\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_input_s)
+[**KSK プロパティ\_チューナー\_入力\_S)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_input_s)
 
  
 

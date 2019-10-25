@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_PRESENTATIONTIME
-description: KSPROPERTY\_ストリーム\_PRESENTATIONTIME プロパティの使用を取得し、フィルターの暗証番号 (pin) の現在のプレゼンテーション時間を設定します。
+title: KSK プロパティ\_ストリーム\_のプレゼンテーション時間
+description: KSK プロパティ\_STREAM\_presentation TIME プロパティは、フィルターの pin の現在のプレゼンテーション時間を取得して設定するために使用されます。
 ms.assetid: fb7bcd04-e600-4bab-b7e7-2b99e2bc0a6c
 keywords:
-- KSPROPERTY_STREAM_PRESENTATIONTIME ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_PRESENTATIONTIME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b0d2e67ac8f31d56dcd16bd706f2caf63055038
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 520c08105c6be153d4432cb116b7bfd5c3bdd1f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376347"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837945"
 ---
-# <a name="kspropertystreampresentationtime"></a>KSPROPERTY\_ストリーム\_PRESENTATIONTIME
+# <a name="ksproperty_stream_presentationtime"></a>KSK プロパティ\_ストリーム\_のプレゼンテーション時間
 
 
-KSPROPERTY\_ストリーム\_PRESENTATIONTIME プロパティの使用を取得し、フィルターの暗証番号 (pin) の現在のプレゼンテーション時間を設定します。
+KSK プロパティ\_STREAM\_presentation TIME プロパティは、フィルターの pin の現在のプレゼンテーション時間を取得して設定するために使用されます。
 
 ## <span id="ddk_ksproperty_stream_presentationtime_ks"></span><span id="DDK_KSPROPERTY_STREAM_PRESENTATIONTIME_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ストリーム\_PRESENTATIONTIME プロパティの使用を取得�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_ストリーム\_PRESENTATIONTIME プロパティの使用を取得�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,15 +64,15 @@ KSPROPERTY\_ストリーム\_PRESENTATIONTIME プロパティの使用を取得�
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_ストリーム\_PRESENTATIONTIME は pin が位置情報を保持またはタイムスタンプ形式は、位相的に異なる時間に異なるインターフェイスを使用して実装される、省略可能なプロパティに関連する pin。 そのため、時間することはシークのプレゼンテーション時間が発生すると、スタンプが変換されます。
+KSK プロパティ\_ストリーム\_プレゼンテーション時間は、pin が位置情報を保持する場合、または位相的関連の pin でタイムスタンプ形式が異なる別のインターフェイスを使用する場合に実装する必要がある省略可能なプロパティです。 そのため、シークプレゼンテーション時間に応じてタイムスタンプを変換する必要があります。
 
-としてフィルターの暗証番号 (pin) のプレゼンテーション時間が指定されて、 [ **KSTIME** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime)構造を解釈が使用されるインターフェイスに依存します。 標準のストリーミング インターフェイスの時刻が指定されて 100 ナノ秒単位で (指定いない限り、分子と分母) が現在処理中または処理が求めているストリームのフィルターのプレゼンテーションの位置を表します。 表示フィルターの場合は、この位置は現在レンダリングされているデータを表します。 この配置の情報は、マスターのクロックのプレゼンテーション時間と同期されます。 プレゼンテーション時間は通常は 0 から始まるし、ファイル データに時間オフセットを表す場合があります。 インターフェイスを強制するブロック配置を指定するのには、分子と分母を使用できます。
+フィルターピンのプレゼンテーション時間は、使用されるインターフェイスによって解釈が異なる[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)構造体として指定されます。 標準ストリーミングインターフェイスでは、時間は100ナノ秒単位で指定されます (分子と分母がそれ以外の値を指定している場合を除きます)。フィルターが現在処理している、または処理するためにシークしているストリームのプレゼンテーション位置を表します。 これがレンダリングフィルターである場合、この位置は現在表示されているデータを表します。 この配置情報は、マスタークロックのプレゼンテーション時間と同期されます。 通常、プレゼンテーション時間は0から始まり、ファイルデータへの時間オフセットを表すことができます。 分子と分母を使用すると、インターフェイスで適用されるブロックの配置を指定できます。
 
-このプロパティは、シーク要求の伝播時に、位置指定値を変換するときにも使用されます。 1 つのピンでシーク位置指定値は、フィルターを位相的に関連するピンのプレゼンテーション時間内で変換されます。 クライアントは、シークするために、新しいストリームの位置では、このプロパティを設定します。 これは、通常が呼び出されます、プロキシで未処理の I/O をキャンセルし、デバイスの状態をリセットした後、シークが必要です。 リセットが実行されていない場合は、フィルターが自動的にキャンセルし、適切にリセットする必要があります。 プロパティには、接続で使用されるインターフェイスと同じ単位で、新しいストリームの位置を格納している KSTIME が渡されます。
+このプロパティは、シーク要求の伝達時に位置指定値を変換する場合にも使用されます。 1つのピンのシーク位置の値は、位相的関連のピンのプレゼンテーション時間にフィルターで変換されます。 クライアントは、シークするために、このプロパティに新しいストリームの位置を設定します。 これは通常、未処理の i/o をキャンセルし、デバイスの状態をリセットした後にシークが必要になったときにプロキシによって呼び出されます。 リセットが実行されていない場合は、フィルターが自動的にキャンセルされ、適切にリセットされることがあります。 プロパティには、接続で使用されるインターフェイスと一貫性のある単位での新しいストリームの位置を含む KSTIME が渡されます。
 
-クライアント (DirectShow プロキシなど) では、シーク要求が 1 つの接続に書き込む後から、プレゼンテーション時間に位相的に関連するその他の接続を照会します。 成功した読み取り要求を実行する他の接続は、その接続のもう一方の端に結果の位置を渡すプロキシをください。 この方法でシーク位置は、クライアントによって渡される最初の単体形式以外の単位の形式を知らなくても (たとえば、DirectShow グラフ) 全体で反映されます。 翻訳は、フィルター内でトポロジによる位置指定の情報が伝達される、フィルター内に発生します。 このまわりくどい方法は、通信方法は、グラフを使用するインターフェイスによって、さまざまなフィルター間に限定される可能性があるために使用されます。 シークの新しい位置を設定するときに、分子と分母のペアは、暗証番号 (pin) を満たすものである必要があります。
+クライアント (たとえば、DirectShow プロキシ) が1つの接続にシーク要求を書き込むと、他の位相的関連接続に対してプレゼンテーション時間に対してクエリを実行します。 読み取り要求が正常に実行される他の接続では、プロキシがその接続のもう一方の端に結果の位置を渡します。 この方法では、クライアントによって渡された初期単位形式以外の単位形式を知らなくても、シーク位置が (たとえば、DirectShow グラフ全体で) 伝達されます。 フィルター内では、位置情報がフィルター内のトポロジを通じて伝達されるため、フィルター内で変換が行われます。 このまわりくどいメソッドは、使用するインターフェイスに応じて、グラフ内のさまざまなフィルター間で通信メソッドが制限される可能性があるため、使用されます。 新しいシーク位置を設定するときは、pin の分子と分母のペアを受け入れる必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,7 +83,7 @@ KSPROPERTY\_ストリーム\_PRESENTATIONTIME は pin が位置情報を保持�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,9 +91,9 @@ KSPROPERTY\_ストリーム\_PRESENTATIONTIME は pin が位置情報を保持�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime)
+[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

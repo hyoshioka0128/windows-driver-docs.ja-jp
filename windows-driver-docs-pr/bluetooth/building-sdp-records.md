@@ -3,78 +3,78 @@ title: SDP レコードの構築
 description: SDP レコードの構築
 ms.assetid: ca3c0483-6193-4683-94bb-15466a8f332e
 keywords:
-- Bluetooth の WDK、SDP サーバー間の通信
+- Bluetooth WDK、SDP サーバー通信
 - SDP WDK Bluetooth
-- サービス探索プロトコルの WDK Bluetooth
-- WDK Bluetooth サービスを参照
-- WDK Bluetooth サービスを検索
-- WDK の Bluetooth の参照サービス
-- WDK の Bluetooth の広告サービス
-- WDK の Bluetooth の広告サービス
+- サービス検出プロトコル WDK Bluetooth
+- サービスの参照 (WDK) Bluetooth
+- サービスの検索 WDK Bluetooth
+- サービス閲覧 WDK Bluetooth
+- アドバタイズサービス WDK Bluetooth
+- WDK Bluetooth を提供するサービス
 - SdpCreateNodeTree
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 716ea2d15fbf601a69b4c5de85c69dafcc105854
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 217e63ec512fe88797b4794cdffa83b759998774
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354023"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832125"
 ---
 # <a name="building-sdp-records"></a>SDP レコードの構築
 
 
-自社のサービスをアドバタイズするプロファイルのドライバーでは、Service Discovery Protocol (SDP) ツリー階層をゼロから構築でき、SDP のレコードのストリームに変換することができます。 まず、プロファイルのドライバーを呼び出す必要があります、 [ **SdpCreateNodeTree** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodetree)関数。 **SdpCreateNodeTree**関数の戻り値を割り当てられた空[ **SDP\_ツリー\_ルート\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdpnode/ns-sdpnode-_sdp_tree_root_node)構造体、プロファイルのドライバーは、次の関数を使用して設定できます。
+サービスを提供するプロファイルドライバーは、サービス検出プロトコル (SDP) ツリー階層をゼロから構築し、それを SDP レコードストリームに変換できます。 プロファイルドライバーは、まず[**SdpCreateNodeTree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodetree)関数を呼び出す必要があります。 **SdpCreateNodeTree**関数は、プロファイルドライバーが次の関数を使用して設定できる、割り当てられた空の[**SDP\_ツリー\_ルート\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdpnode/ns-sdpnode-_sdp_tree_root_node)構造を返します。
 
-[**SdpAddAttributeToTree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpaddattributetotree)
+[**SdpAddAttributeToTree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpaddattributetotree)
 
-[**SdpAppendNodeToContainerNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpappendnodetocontainernode)
+[**SdpAppendNodeToContainerNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpappendnodetocontainernode)
 
-[**SdpCreateNodeAlternative**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodealternative)
+[**Sdpcreatの代替**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodealternative)
 
-[**SdpCreateNodeBoolean**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeboolean)
+[**Sdpcreat/Boolean**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeboolean)
 
-[**SdpCreateNodeInt128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeint128)
+[**SdpCreateNodeInt128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeint128)
 
-[**SdpCreateNodeInt16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeint16)
+[**SdpCreateNodeInt16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeint16)
 
-[**SdpCreateNodeInt32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeint32)
+[**SdpCreateNodeInt32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeint32)
 
-[**SdpCreateNodeInt64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeint64)
+[**SdpCreateNodeInt64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeint64)
 
-[**SdpCreateNodeInt8**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeint8)
+[**SdpCreateNodeInt8**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeint8)
 
-[**SdpCreateNodeNil**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodenil)
+[**Sdpcreat"Il"** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodenil)
 
-[**SdpCreateNodeSequence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodesequence)
+[**Sdpcreatの手順**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodesequence)
 
-[**SdpCreateNodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodestring)
+[**Sdpcreatの文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodestring)
 
-[**SdpCreateNodeUInt128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuint128)
+[**SdpCreateNodeUInt128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuint128)
 
-[**SdpCreateNodeUInt16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuint16)
+[**SdpCreateNodeUInt16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuint16)
 
-[**SdpCreateNodeUInt32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuint32)
+[**SdpCreateNodeUInt32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuint32)
 
-[**SdpCreateNodeUInt64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuint64)
+[**SdpCreateNodeUInt64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuint64)
 
-[**SdpCreateNodeUInt8**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuint8)
+[**SdpCreateNodeUInt8**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuint8)
 
-[**SdpCreateNodeUrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeurl)
+[**Sdpcreatの Url**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeurl)
 
-[**SdpCreateNodeUUID128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuuid128)
+[**SdpCreateNodeUUID128**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuuid128)
 
-[**SdpCreateNodeUUID16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuuid16)
+[**SdpCreateNodeUUID16**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuuid16)
 
-[**SdpCreateNodeUUID32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpcreatenodeuuid32)
+[**SdpCreateNodeUUID32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpcreatenodeuuid32)
 
-プロファイルのドライバーでは、SDP のツリーに基づくレコードの作成が完了すると、呼び出し、 [ **SdpConvertTreeToStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/nc-bthsdpddi-pconverttreetostream) SDP レコードの生のバイト ストリーム バージョンを生成する関数。 このフォームで、SDP レコードがプロファイル ドライバーがローカル SDP サーバーにパブリッシュするために準備します。 このプロセスはストリームとして、SDP のレコードを構築するよりも使用するプロファイルのドライバーの方が便利にすることはできます。
+プロファイルドライバーは、ツリーベースの SDP レコードの構築を完了した後、 [**Sdpconverttreetostream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/nc-bthsdpddi-pconverttreetostream)関数を呼び出して、sdp レコードの未加工のバイトストリームバージョンを生成します。 この形式では、SDP レコードはプロファイルドライバーがローカル SDP サーバーに発行する準備ができています。 このプロセスは、ストリームとして SDP レコードを構築するよりも、プロファイルドライバーが使用する方が便利です。
 
-**SdpConvertTreeToStream**関数は、SDP のレコードのストリームのバージョンを格納するために必要なメモリを割り当てます。 使用して、メモリが解放する必要がありますプロファイル ドライバーでは、SDP レコードが必要なくなる、 [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)します。
+**Sdpconverttreetostream**関数は、SDP レコードのストリームバージョンを格納するために必要なメモリを割り当てます。 プロファイルドライバーが SDP レコードを必要としなくなった場合は、 [**Exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)を使用してメモリを解放する必要があります。
 
-さらに、不要になった、プロファイル ドライバーには、SDP のレコードのツリー ベースのバージョンが必要とするときに呼び出す必要があります[ **SdpFreeTree** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sdplib/nf-sdplib-sdpfreetree)関連付けられている SDP で割り当てられたメモリを解放する\_ツリー\_ルート\_ノード構造体。
+また、プロファイルドライバーが、ツリーベースの SDP レコードのバージョンを必要としなくなった場合は、 [**Sdpfreetree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sdplib/nf-sdplib-sdpfreetree)を呼び出して、関連付けられている SDP\_ツリー\_ルート\_ノード構造で割り当てられたメモリを解放する必要があります。
 
-プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、次を参照してください。 [Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
+プロファイルドライバーは、このトピックで説明されているすべての関数へのポインターを取得できます。そのためには、 [**bthddi\_sdp\_PARSE\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)と[**bthddi\_SDP\_NODE\_INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)インターフェイスを照会します。 これらのインターフェイスのクエリを実行する方法の詳細については、「 [Bluetooth インターフェイスの](querying-for-bluetooth-interfaces.md)クエリ」を参照してください。
 
  
 

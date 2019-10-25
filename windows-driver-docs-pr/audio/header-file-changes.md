@@ -3,46 +3,46 @@ title: ヘッダー ファイルの変更
 description: ヘッダー ファイルの変更
 ms.assetid: 9212aa8d-bb11-4ade-a70c-274a7ffe83ef
 keywords:
-- データ形式の WDK オーディオ
-- WDK のオーディオ、データを書式設定します。
-- オーディオ データ形式 WDK
-- WDK のオーディオ、マルチ チャネルを書式設定します。
-- マルチ チャネルの形式の WDK オーディオ
-- ホーム シアター システム WDK オーディオ
-- スピーカーの WDK オーディオ、ホーム threater システム
-- オーディオ ドライバー WDK、ホーム シアター システム
-- WDM オーディオ ドライバー WDK、ホーム シアター システム
-- ホーム シアターを 7.1 スピーカー WDK オーディオ
-- 全体の構成を 7.1 スピーカー WDK オーディオ
-- スピーカー WDK オーディオの全体の構成
-- 5.1 サラウンド サウンド スピーカー WDK オーディオ
-- サラウンド サウンド スピーカー WDK オーディオ
-- ヘッダー ファイルの WDK オーディオ
+- データ形式 WDK オーディオ
+- WDK オーディオ、データをフォーマットします
+- WDK のオーディオデータ形式
+- WDK オーディオ、マルチチャネルをフォーマットします。
+- マルチチャネル形式 WDK オーディオ
+- ホームシアターシステム WDK オーディオ
+- スピーカー WDK オーディオ、ホーム-月、システム
+- オーディオドライバー WDK、ホームシアターシステム
+- WDM オーディオドライバー WDK、ホームシアターシステム
+- 7.1 ホームシアタースピーカー WDK オーディオ
+- 7.1 wide 構成スピーカー WDK オーディオ
+- wide 構成スピーカー WDK オーディオ
+- 5.1 サラウンドサウンドスピーカー WDK オーディオを挿入する
+- サウンドスピーカーを囲む WDK オーディオ
+- ヘッダーファイル WDK オーディオ
 - Ksmedia.h
-- Dsound.h
-- チャネル マスク WDK オーディオ
-- WDK オーディオの位置
-- オーディオ データ形式の WDM WDK
-- データ形式の WDK オーディオ、ヘッダー ファイル
+- Dsound
+- チャネルマスク WDK オーディオ
+- WDK オーディオを配置する
+- WDM オーディオデータ形式 WDK
+- データ形式 WDK オーディオ、ヘッダーファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 918a25db793aff9ba6225a3e5c742a5c79a56a08
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cac6b949cb493e0b71e48c39f64a731aed130bb3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831196"
 ---
 # <a name="header-file-changes"></a>ヘッダー ファイルの変更
 
 
-Windows Driver Kit (WDK) には、Windows のマルチ メディアのコントロール パネルでサポートされているスピーカー構成を定義する 2 つのヘッダー ファイルが含まれています。
+Windows Driver Kit (WDK) には、Windows マルチメディアコントロールパネルでサポートされているスピーカー構成を定義する2つのヘッダーファイルが含まれています。
 
--   Ksmedia.h 定義のチャネル マスク、 [ **KSAUDIO\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)構造で使用される、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティ要求。
+-   Ksmedia. h は、ksk[**プロパティ\_AUDIO\_channel\_config**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティ要求で使用される[**KSK AUDIO\_channel\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)構造体のチャネルマスクを定義します。
 
--   Dsound.h に送信できるスピーカー構成識別子のリストを定義する、 **IDirectSound::SetSpeakerConfig**メソッド。 この方法の詳細については、Windows SDK のドキュメントを参照してください。
+-   Dsound は、 **Idirectsound:: SetSpeakerConfig**メソッドに送信できるスピーカー構成識別子のリストを定義します。 このメソッドの詳細については、Windows SDK のドキュメントを参照してください。
 
-Windows Server 2003、Windows XP SP1、Windows 2000、および Windows Me/98、Ksmedia.h 5.1 と 7.1 チャネル ストリームの次の表に示すチャネル マスクを定義します。
+Windows Server 2003、Windows XP SP1、Windows 2000、および Windows Me/98 では、次の表に示す5.1 および7.1 チャネルストリームのチャネルマスクが定義されています。
 
 <table>
 <colgroup>
@@ -53,8 +53,8 @@ Windows Server 2003、Windows XP SP1、Windows 2000、および Windows Me/98、
 <thead>
 <tr class="header">
 <th align="left">パラメーター名</th>
-<th align="left">チャネル マスク</th>
-<th align="left">スピーカー位置</th>
+<th align="left">チャネルマスク</th>
+<th align="left">スピーカーの位置</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ Windows Server 2003、Windows XP SP1、Windows 2000、および Windows Me/98、
 </tr>
 <tr class="even">
 <td align="left"><p>KSAUDIO_SPEAKER_7POINT1</p></td>
-<td align="left"><p>0 xff の場合</p></td>
+<td align="left"><p>0xFF</p></td>
 <td align="left"><p>FL、FR、FC、LFE、BL、BR、FLC、FRC</p></td>
 </tr>
 </tbody>
@@ -73,14 +73,14 @@ Windows Server 2003、Windows XP SP1、Windows 2000、および Windows Me/98、
 
  
 
-上記の表に、2 つのチャネル マスクは、5.1 スピーカーの構成と 7.1 スピーカーの構成を表します。 同じ 2 つのスピーカー構成を特定するには、Dsound.h は、次のスピーカー構成 Id を定義します。
+前の表の2つのチャネルマスクは、5.1 スピーカー構成と7.1 スピーカー構成を表しています。 同じ2つのスピーカー構成を識別するために、Dsound は次のスピーカー構成 Id を定義します。
 
 ```cpp
   #define DSSPEAKER_5POINT1      0x00000006
   #define DSSPEAKER_7POINT1      0x00000007
 ```
 
-Windows XP SP2、および以降のバージョンの Windows では、Ksmedia.h 5.1 と 7.1 チャネル ストリームの次の表に示すようにチャネル マスクを定義します。
+Windows XP SP2 以降のバージョンの Windows では、Ksmedia. h は、5.1 と7.1 のチャネルのストリームについて、次の表に示すチャネルマスクを定義します。
 
 <table>
 <colgroup>
@@ -91,8 +91,8 @@ Windows XP SP2、および以降のバージョンの Windows では、Ksmedia.h
 <thead>
 <tr class="header">
 <th align="left">パラメーター名</th>
-<th align="left">チャネル マスク</th>
-<th align="left">スピーカー位置</th>
+<th align="left">チャネルマスク</th>
+<th align="left">スピーカーの位置</th>
 </tr>
 </thead>
 <tbody>
@@ -111,17 +111,17 @@ Windows XP SP2、および以降のバージョンの Windows では、Ksmedia.h
 
  
 
-上記の 2 つのテーブルを比較すると、次の点が明らかに。
+上記の2つのテーブルを比較することで、次の点が明らかになります。
 
--   最初のテーブル内のチャネル マスク 0x3F の意味が変わらない 2 番目のテーブルであっても、Windows SP2 および以降のバージョンの Windows、KSAUDIO\_スピーカー\_BL および BR. ではなく SL と SR スピーカーを使用する 5POINT1 が解釈されます
+-   2番目のテーブルでは、最初のテーブルのチャネルマスク0x3F の意味が変更されていません。ただし、Windows SP2 以降のバージョンの Windows では、KSK オーディオ\_スピーカー\_5POINT1 は、BL や BR ではなく、SL と SR のスピーカーを使用するように解釈されます。
 
--   0x63F の値を持つ新しいチャネル マスクがサポートされています。 このチャネル マスクは、ホーム シアターを 7.1 スピーカーの構成を表します。
+-   値0x63F を持つ新しいチャネルマスクがサポートされています。 このチャンネルマスクは、7.1 ホームシアタースピーカー構成を表します。
 
--   **注**  で Windows Vista と以降のバージョンの Windows で、KSAUDIO\_スピーカー\_7POINT1 スピーカーの構成はサポートされていません。 その結果、コントロール パネルで、使用可能なオプションではありません。
+-   **注**   windows Vista 以降のバージョンの windows では、ksk AUDIO\_スピーカー\_7POINT1 スピーカーの構成はサポートされなくなりました。 そのため、コントロールパネルでは使用できないオプションです。
 
      
 
-スピーカーの構成の同じセットを表す、Dsound.h には次のスピーカー構成 Id を定義します。
+同じスピーカー構成のセットを表すために、Dsound は次のスピーカー構成 Id を定義します。
 
 ```cpp
   #define DSSPEAKER_5POINT1             0x00000006
@@ -130,9 +130,9 @@ Windows XP SP2、および以降のバージョンの Windows では、Ksmedia.h
   #define DSSPEAKER_7POINT1_WIDE        DSSPEAKER_7POINT1
 ```
 
-DSSPEAKER\_7POINT1\_ブロックの挿入は、コントロール パネルの 新しいホーム シアターを 7.1 スピーカーの構成を表します。 DSSPEAKER\_7POINT1 と DSSPEAKER\_7POINT1\_ワイド同じ全体の構成を 7.1 スピーカー構成の両方の名前が。
+DSSPEAKER\_7POINT1\_サラウンドは、コントロールパネルの新しい7.1 ホームシアタースピーカー構成を表します。 DSSPEAKER\_7POINT1 と DSSPEAKER\_7POINT1\_WIDE は両方とも、同じ 7.1 wide configuration スピーカー構成の名前です。
 
-DirectSound のスピーカーの構成の詳細については、次を参照してください。 [DirectSound スピーカー構成設定](directsound-speaker-configuration-settings.md)します。
+DirectSound のスピーカー構成の詳細については、「 [Directsound スピーカー構成設定](directsound-speaker-configuration-settings.md)」を参照してください。
 
  
 

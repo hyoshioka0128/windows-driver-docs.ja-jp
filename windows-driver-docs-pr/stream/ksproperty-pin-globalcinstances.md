@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_PIN\_GLOBALCINSTANCES
-description: クライアントの使用、KSPROPERTY\_PIN\_このピンの工場出荷時の pin の最大数と同様に、暗証番号 (pin) ファクトリによってインスタンス化ピンの現在の数を決定する GLOBALCINSTANCES をインスタンス化できます。 このプロパティは省略可能です。
+title: KSK プロパティ\_\_GLOBALCINSTANCES にピン留めする
+description: クライアントは、KSK プロパティを使用して\_GLOBALCINSTANCES\_ピン留めして、ピンファクトリによってインスタンス化された現在の pin の数と、このピンファクトリがインスタンス化できる pin の最大数を決定します。 このプロパティは省略可能です。
 ms.assetid: 888b8ddf-aa36-4e2f-a74c-ab4ee693bb36
 keywords:
-- KSPROPERTY_PIN_GLOBALCINSTANCES ストリーミング メディア デバイス
+- KSPROPERTY_PIN_GLOBALCINSTANCES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23ee0e85078b007897d5925dcf73829efd08be9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b1c95334a1a667caf9c089a028c7d98c96d3a65
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361096"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838855"
 ---
-# <a name="kspropertypinglobalcinstances"></a>KSPROPERTY\_PIN\_GLOBALCINSTANCES
+# <a name="ksproperty_pin_globalcinstances"></a>KSK プロパティ\_\_GLOBALCINSTANCES にピン留めする
 
 
-クライアントの使用、KSPROPERTY\_PIN\_このピンの工場出荷時の pin の最大数と同様に、暗証番号 (pin) ファクトリによってインスタンス化ピンの現在の数を決定する GLOBALCINSTANCES をインスタンス化できます。 このプロパティは省略可能です。
+クライアントは、KSK プロパティを使用して\_GLOBALCINSTANCES\_ピン留めして、ピンファクトリによってインスタンス化された現在の pin の数と、このピンファクトリがインスタンス化できる pin の最大数を決定します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_pin_globalcinstances_ks"></span><span id="DDK_KSPROPERTY_PIN_GLOBALCINSTANCES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361096"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "67361096"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ ms.locfileid: "67361096"
 <a name="remarks"></a>注釈
 -------
 
-KSP を使用してこのプロパティを指定\_暗証番号 (pin)、場所、 **PinId**メンバーが、ピン留めするファクトリを指定します。
+このプロパティは、KSP\_PIN を使用して指定します。 **Pinid**メンバーは、pin ファクトリを指定します。
 
-KSPIN\_CINSTANCES はフォームのデータ構造体。
+KSPIN\_CINSTANCES は、次の形式のデータ構造です。
 
 ```cpp
 typedef struct {
@@ -75,19 +75,19 @@ typedef struct {
 } KSPIN_CINSTANCES;
 ```
 
-次に、KSPIN の各メンバーの説明\_CINSTANCES 構造体。
+KSPIN\_CINSTANCES 構造体の各メンバーの説明を次に示します。
 
 <span id="PossibleCount"></span><span id="possiblecount"></span><span id="POSSIBLECOUNT"></span>**PossibleCount**  
-ドライバー、または KSINTANCE にピン留めする、ピン留めするファクトリをインスタンス化の最大数を指定します\_中間状態の最大値がない場合。
+Pin ファクトリがドライバーでインスタンス化できる pin の最大数を指定します。最大数を指定しない場合は、KSK が\_不確定であることを示します。
 
 <span id="CurrentCount"></span><span id="currentcount"></span><span id="CURRENTCOUNT"></span>**CurrentCount**  
-ドライバーの pin の pin のファクトリがインスタンス化の現在の数を指定します。
+Pin ファクトリがドライバーでインスタンス化した現在の pin の数を指定します。
 
-クラス ドライバーは、このプロパティを処理しませんストリームのミニドライバーは、独自の処理を提供する必要があります。
+クラスドライバーは、このプロパティを処理しません。stream ミニドライバーは、独自の処理を提供する必要があります。
 
-KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタンスに対するインスタンスの絶対と現在の最大数を指定します。 フィルターごとの値を調べるには[ **KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)します。
+KSK プロパティ\_ピン\_GLOBALCINSTANCES は、フィルターのすべてのインスタンスについて、現在および最大のインスタンス数を指定します。 フィルターごとの値を決定するには、 [**Ksk プロパティ\_使用して\_CINSTANCES にピン留め**](ksproperty-pin-cinstances.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -98,7 +98,7 @@ KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタン�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -106,9 +106,9 @@ KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタン�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
+[**KSP\_ピン留め**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
-[**KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)
+[**KSK プロパティ\_ピン\_CINSTANCES**](ksproperty-pin-cinstances.md)
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: ndiskd.nb
-description: Ndiskd.nb 拡張機能では、NET_BUFFER (NB) 構造に関する情報が表示されます。
+title: ndiskd nb
+description: Ndiskd nb 拡張機能には、NET_BUFFER (NB) 構造に関する情報が表示されます。
 ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
-- デバッグ ndiskd.nb Windows
+- ndiskd nb Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,55 +12,55 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 551b052fd37431742bcbe75d9789c3f8b5fb9b92
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fb01044dde6b95e312f1de17561d5ac9515c3b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363136"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826650"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
 
 
-**! Ndiskd.nb**拡張機能に関する情報を表示する、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) (NB) 構造体。
+**! Ndiskd nb**拡張機能には、 [**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) (nb) 構造に関する情報が表示されます。
 
 ```console
 !ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-必須。 アドレスを**NET\_バッファー**構造体。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+必須。 **NET\_のバッファー**構造のアドレス。
 
-<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-verbosity*   
-表示する詳細のレベルです。
+<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-詳細*   
+表示する詳細レベル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
-NB. に関する基本情報を表示します。
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+NB に関する基本的な情報を表示します。
 
-<span id="_______-chain______"></span><span id="_______-CHAIN______"></span> *チェーン*   
-関連付けられた、NB. MDLs をすべてを表示します。
+<span id="_______-chain______"></span><span id="_______-CHAIN______"></span> *-チェーン*   
+NB に関連付けられているすべての MDLs を表示します。
 
-<span id="_______-data______"></span><span id="_______-DATA______"></span> *-data*   
-NB. の実際のデータ ペイロードをダンプします。
+<span id="_______-data______"></span><span id="_______-DATA______"></span> *-データ*   
+NB の実際のデータペイロードをダンプします。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-**NET\_バッファー**から取得された次の例では、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)の例」の「[ **! ndiskd.nbl** ](-ndiskd-nbl.md)トピック。 NB のハンドルは、ffffdf8014952610 です。
+次の例の**net\_バッファー**は、 [**nbl**](-ndiskd-nbl.md)トピックの「例」セクションの[**net\_buffer\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)から取得されました。 NB のハンドルは ffffdf8014952610 です。
 
 ```console
 2: kd> !ndiskd.nbl ffffdf80149524a0 -data
 NET_BUFFER ffffdf8014952610
 ```
 
-クリックすることができます、 **NET\_バッファー**のハンドルまたはを実行、 **! ndiskd.nb-処理**コマンドをその詳細を参照してください。
+**NET\_バッファー**のハンドルをクリックするか、 **! ndiskd. nb-handle**コマンドを実行して詳細を確認できます。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610
@@ -72,7 +72,7 @@ NET_BUFFER ffffdf8014952610
     View associated NBL
 ```
 
-使用して、 **! ndiskd.nb-チェーン**これを確認するコマンド**NET\_バッファー**のだけでなく、基本的な詳細 MDL チェーン。 次の例では、1 つだけ MDL があります。 そのハンドルは、ffffdf8014a37930 です。
+**! Ndiskd nb**チェーンコマンドを使用して、その基本的な詳細に加えて、この**NET\_バッファー**の MDL チェーンを表示します。 次の例では、MDL が1つしかありません。 そのハンドルは ffffdf8014a37930 です。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610 -chain
@@ -85,24 +85,24 @@ NET_BUFFER ffffdf8014952610
         Process            [System process]    ByteOffset         0n36  
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
-[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[ **!ndiskd.nbl**](-ndiskd-nbl.md)
+[ **! ndiskd nbl**](-ndiskd-nbl.md)
 
  
 

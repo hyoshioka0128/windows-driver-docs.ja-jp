@@ -1,71 +1,71 @@
 ---
 title: SpbCx インターフェイス
-description: SPB フレームワーク拡張機能 (SpbCx) は、2 つのインターフェイスです。
+description: SPB framework extension (SpbCx) には、2つのインターフェイスがあります。
 ms.assetid: 2449BB88-1912-43F9-97E6-B56158D92E55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f61af2e1411da98ab270bf529052c3062140d188
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 857ed210558c1da8bc1b20879b43aa1f2c5139ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376912"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839625"
 ---
 # <a name="spbcx-interfaces"></a>SpbCx インターフェイス
 
 
-SPB フレームワーク拡張機能 (SpbCx) は、2 つのインターフェイスです。 最初は、SpbCx がバスに接続されている周辺機器に SPB コント ローラーのクライアント (周辺ドライバー) を送信する I/O の要求を受け入れる、I/O 要求インターフェイスです。 2 番目のインターフェイスは、SpbCx が SPB コント ローラーのドライバーとの通信に使用するデバイス ドライバー インターフェイス (DDI) です。
+SPB framework extension (SpbCx) には、2つのインターフェイスがあります。 1つは、SPB コントローラーのクライアント (周辺ドライバー) がバスに接続されている周辺機器に送信する i/o 要求を SpbCx が受け入れる i/o 要求インターフェイスです。 2番目のインターフェイスは、SpbCx が SPB コントローラードライバーと通信するデバイスドライバーインターフェイス (DDI) です。
 
-2 つの SpbCx インターフェイスは、Spbcx.h と Spb.h ヘッダー ファイルで定義されます。 Spbcx.h は、SpbCx と SPB のコント ローラー ドライバー間 DDI を定義します。 Spb.h は、SpbCx I/O 要求のインターフェイスでサポートされている SPB 固有 I/O 制御コードを定義します。
+2つの SpbCx インターフェイスは、Spbcx および Spb .h ヘッダーファイルで定義されています。 Spbcx は、SpbCx と SPB コントローラードライバーの間の DDI を定義します。 Spb は、SpbCx i/o 要求インターフェイスによってサポートされる SPB 固有の i/o 制御コードを定義します。
 
--   [SpbCx デバイス ドライバー インターフェイス (DDI)](#spbcx-device-driver-interface-ddi)
--   [SPB の I/O 要求インターフェイス](#spb-io-request-interface)
+-   [SpbCx Device Driver Interface (DDI)](#spbcx-device-driver-interface-ddi)
+-   [SPB i/o 要求インターフェイス](#spb-io-request-interface)
 
-## <a name="spbcx-device-driver-interface-ddi"></a>SpbCx デバイス ドライバー インターフェイス (DDI)
-
-
-SPB フレームワーク拡張機能モジュール、Spbcx.sys、およびイベント コールバック関数、SPB コント ローラー用ドライバーを実装するによって実装されるメソッドの SpbCx デバイス ドライバー インターフェイス (DDI) で構成されます。 SPB コント ローラーのドライバーは、SpbCx で DDI の初期化中にそのコールバック関数を登録します。
-
-SpbCx、SPB コント ローラーのドライバーの呼び出しからサービスを要求する、 [SpbCx ドライバー サポート メソッド](https://docs.microsoft.com/previous-versions/hh450910(v=vs.85))します。 たとえば、SPB コント ローラーのドライバーでは、SPB コント ローラー用ドライバーの構成オプションを設定するか、I/O 要求に関する追加情報を取得するメソッドが呼び出されます。
-
-SpbCx 呼び出し (たとえば、クライアントからの I/O 要求の到着)、イベントの SPB コント ローラーのドライバーに通知する、[イベント コールバック関数](https://docs.microsoft.com/previous-versions/hh450911(v=vs.85))SPB コント ローラーのドライバーによって実装されます。
-
-SpbCx からのコールバック中には、SPB コント ローラーのドライバーのコードは、任意のスレッド コンテキストで実行されます。 SpbCx では、SPB コント ローラー ドライバーによって処理が必要な I/O 要求を受信した後は SpbCx 呼び出される前に、要求の前処理が必要な*EvtSpb*Xxx 関数は、要求された操作を実行します。 たとえば、ユーザー モード バッファーをコールバック関数を使用できるようにには、SpbCx が I/O 要求を生成したスレッドのコンテキストで実行する必要があります。 (、 [ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) SpbCx 要求プリプロセスを実行するには依存できませんある唯一のコールバック関数です)。
-
-セットを登録する*EvtSpb*Xxx コールバック関数では、SPB コント ローラーのドライバーの呼び出し、 [ **SpbDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbdeviceinitialize)メソッド。 このドライバーは呼び出し、 [ **SpbControllerSetIoOtherCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbcontrollersetioothercallback)を登録するメソッド、 *EvtIoInCallerContext*コールバック関数。
-
-SpbCx DDI SPB コント ローラーのデバイス オブジェクトを表す WDFDEVICE オブジェクトのハンドル型を使用します。 WDFDEVICE と他の KMDF オブジェクト ハンドル型を定義する Wdf.h ヘッダー ファイルが含まれます。 DDI が 2 つの SPB 固有オブジェクト ハンドル型を使用してさらに、 [ **SPBREQUEST** ](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)と[ **SPBTARGET**](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)に似ていますが、WDFREQUEST と WDFTARGET オブジェクトは、KMDF によって定義されている型を処理します。 SPBREQUEST ハンドルは、I/O 要求を表します。 SPBTARGET ハンドルでは、開かれたバス上の I/O 操作の周辺機器への論理接続を表します。
-
-単純な周辺機器のバス I²C および SPI は通常、システムで使用されるチップ (SoC) モジュールでは、上でなど、どの低暗証番号 (pin) をカウントするは重要です。 SoC のモジュールは、低電力消費量を必要とするハンドヘルド デバイスでプロセッサとして頻繁に使用します。 SPB コント ローラーの回線は、比較的小さな電力を消費するため、SpbCx で電源管理のコードを比較的シンプルにすることができます。 既定では、SpbCx により、SPB コント ローラーのドライバーでコールバック メソッドをイベントのいずれかの呼び出す前に、SPB コント ローラーの電源が有効であります。 詳細については、の説明を参照して、 **PowerManaged**メンバー [ **SPB\_コント ローラー\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/ns-spbcx-_spb_controller_config)します。
-
-必要に応じて、SPB コント ローラーのドライバーを明示的に電源オンとオフをコント ローラーを呼び出すことによって、 [ **WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)と[ **WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)メソッド。
-
-SPB コント ローラーのドライバーは、カーネル モード ドライバーであるため、ファイル オブジェクトに、適切なセキュリティ記述子を割り当てる、必要があります。 この記述子には、ユーザー モードから SPB の周辺機器への不正アクセスができないようにします。 たとえば、サンプル SPB のコント ローラー ドライバー WDK に含まれてはセキュリティに適した一般的な SPB コント ローラーのドライバーの既定のレベルを提供します。 次の SDDL 文字列を使用します。
-
-"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;UD)"
-
-この SDDL 文字列がオペレーティング システム (およびそのユーザー モード コンポーネント) では、Administrators グループのメンバーへのアクセスを制限し、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)(UMDF) ドライバー。 SDDL 文字列の詳細については、次を参照してください。[デバイス オブジェクトの SDDL](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects)します。
-
-さらに、 [ *EvtSpbControllerIoOther* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_other)関数は、ユーザー モードのクライアントから受信した、カスタム コントロールの I/O 要求のすべてのパラメーターを検証する必要があります。 他のすべての*EvtSpb*Xxx 関数、SpbCx パラメーターを検証、ユーザー モードのクライアントからの I/O 要求で SPB コント ローラーのドライバーにこれらのパラメーターが渡される前にします。 デバイスのセキュリティの詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)します。
-
-すべてのメソッドと状態コードを返す SpbCx DDI でコールバック関数は、NTSTATUS 値を返します。 この DDI のドライバー サポート メソッドは、KMDF インターフェイスでは、一般的な規則に従うし、SpbCx によって使用されているすべてのオブジェクトが KMDF オブジェクトの通常の規則に従ってください。 詳細については、次を参照してください。 [Framework オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)します。
-
-## <a name="spb-io-request-interface"></a>SPB の I/O 要求インターフェイス
+## <a name="spbcx-device-driver-interface-ddi"></a>SpbCx Device Driver Interface (DDI)
 
 
-I/O 要求インターフェイスを実装するには、SpbCx は SPB コント ローラーの I/O キューを管理し、SPB コント ローラーのクライアントからの I/O 要求をこのキューを監視します。 これらのクライアントは、sp B に接続されている周辺機器のユーザー モードとカーネル モードのドライバーです。 アプリケーションは、SPB の I/O 要求インターフェイスを通じて SPB 接続の周辺機器と直接通信できません。
+SpbCx device driver interface (DDI) は、spb コントローラードライバーが実装する、SPB フレームワーク拡張モジュール、Spbcx .sys、およびイベントコールバック関数によって実装されるメソッドで構成されます。 SPB コントローラードライバーは、DDI の初期化中に、そのコールバック関数を SpbCx に登録します。
 
-SpbCx は、可能性があります、これらの I/O 要求の一部のすべての処理を実行し、要求が SPB コント ローラーのドライバーに渡される前に、他の要求の前処理を実行します。 SPB コント ローラーのドライバーは SpbCx から受信した要求を完了します。
+SpbCx からサービスを要求するために、SPB コントローラードライバーは[spbcx ドライバーのサポートメソッド](https://docs.microsoft.com/previous-versions/hh450910(v=vs.85))を呼び出します。 たとえば、SPB コントローラードライバーは、SPB コントローラーのドライバー構成オプションを設定したり、i/o 要求に関する追加情報を取得したりするために、これらのメソッドを呼び出します。
 
-クライアントでは、読み取りを送信でき、SPB に接続されている周辺機器に要求を記述することができます。 応答、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)) SPB コント ローラーは、指定したバイト数を周辺機器のデバイスからクライアント バッファーに転送を要求します。 応答、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))要求、SPB コント ローラーは、周辺機器のデバイスにクライアント バッファーから指定したバイト数を転送します。
+クライアントからの i/o 要求の到着など、イベントの SPB コントローラードライバーに通知するために、SpbCx は SPB コントローラードライバーによって実装される[イベントコールバック関数](https://docs.microsoft.com/previous-versions/hh450911(v=vs.85))を呼び出します。
 
-単純な読み取りおよび書き込み操作では、に加えては、SpbCx I/O 要求インターフェイスは、I/O 転送シーケンスは、1 つ以上単純な転送 (は、読み取りし、書き込み) にバスの単一のアトミック操作の結合をサポートします。 この操作中に、バスは、ターゲットの周辺機器と転送専用に使用し、バス上の他のターゲットのアクセスが一時的にロックアウト、操作が完了するまでします。 SpbCx をサポートしています、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857) I/O 制御コードは、クライアントを使用して、の間に固定長の転送の順序を指定します。1 つの I/O 要求内のターゲット デバイス。 この I/O 制御要求には、一連のパフォーマンスを向上させるためにバスの転送を最適化するために、コント ローラー ドライバーができます。
+SpbCx からのコールバック中に、SPB コントローラードライバーコードは任意のスレッドコンテキストで実行されます。 SPB コントローラードライバーによる処理を必要とする i/o 要求を受信した後、spbcx は、要求された操作を実行するために*Evtspb*Xxx 関数を呼び出す前に、要求の必須のプリプロセスを実行します。 たとえば、コールバック関数でユーザーモードバッファーを使用できるようにするには、i/o 要求を発信したスレッドのコンテキストで SpbCx を実行しなければならないことがあります。 ( [*Evtioincallercontext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)関数は、SpbCx を使用して要求を前処理することができない唯一のコールバック関数です)。
 
-SpbCx I/O 要求インターフェイスをサポートしています、 [ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)と[ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859) I/O 制御コード、ロックおよび SPB コント ローラーのロックを解除します。 これらのロックおよびロック解除要求 I/O の転送シーケンスを実行するクライアントを別の方法を提供します。 ここでは、各読み取りまたはシーケンスの書き込み操作は個別の読み取りまたは書き込み要求で指定します。 クライアントは、ロックされているコント ローラーには、他のクライアントは、バス上のデバイスにアクセスできません。 ロックを保持して、クライアントは、バス上の I/O 操作を実行できます。 このため、クライアントは短い期間にのみ、コント ローラーをロックする必要があります。 クライアントには、転送シーケンスの完了後にロックされているコント ローラーしないままにしてください。 詳細については、次を参照してください。 [I/O 転送シーケンス](https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences)します。
+*Evtspb*Xxx コールバック関数のセットを登録するために、SPB コントローラードライバーは[**Spbdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbdeviceinitialize)メソッドを呼び出します。 このドライバーは、 [**Spbコントローラー Setioofunctions コール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbcontrollersetioothercallback)バックメソッドを呼び出して、 *Evtioincallercontext*コールバック関数を登録します。
 
-SpbCx でサポートされている I/O 制御 (IOCTL) のコードだけでなく SPB コント ローラーのドライバーは、カスタムの Ioctl をサポートできます。 クライアントは、バス上のターゲット デバイスを表すファイル オブジェクトに IOCTL 要求を送信することができ、SpbCx によって管理されている I/O 要求キュー内でこれらの要求が到着します。 サポートされていない IOCTL コードが要求を受け取った SpbCx SpbCx は要求のすべての処理を実行するコント ローラー ドライバーに直接要求を渡します。
+SpbCx DDI は、WDFDEVICE オブジェクトハンドル型を使用して、SPB コントローラーのデバイスオブジェクトを表します。 Wdf ヘッダーファイルをインクルードして、WDFDEVICE およびその他の KMDF オブジェクトハンドル型を定義します。 さらに、DDI は、SP 固有の2つのオブジェクトハンドル型である[**Spbrequest**](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)と[**spbrequest**](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)を使用します。これは、kmdf によって定義される WDFREQUEST および wdfrequest オブジェクトハンドル型に似ています。 SPBREQUEST ハンドルは、i/o 要求を表します。 SPBTARGET ハンドルは、i/o 操作用に開かれているバス上の周辺機器への論理接続を表します。
 
-SpbCx I/O のカーネル モードのクライアント要求インターフェイスは、いずれかパッシブの割り込み要求レベル (IRQL) I/O 要求を送信できる\_レベルまたはディスパッチ\_レベル。 ユーザー モードのクライアントはパッシブでのみ I/O 要求を送信できる\_レベル。 パッシブで発生することが I/O 完了\_レベルまたはディスパッチ\_レベル。 すべての I/O 要求が状態を返せる\_保留します。
+I ² C や SPI などの単純な周辺機器は、通常、システムによって使用されます。これは、低 pin のカウントが重要なチップ (SoC) モジュールで使用されます。 SoC モジュールは、電力消費量が少ないハンドヘルドデバイスのプロセッサとして頻繁に使用されます。 SPB コントローラー回線の電力消費は比較的少ないため、SpbCx の電源管理コードは比較的単純なものにすることができます。 既定では、SpbCx は、spb コントローラードライバー内のイベントコールバックメソッドを呼び出す前に、SPB コントローラーの電源がオンになっていることを保証します。 詳細については、 [**SPB\_CONTROLLER\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/ns-spbcx-_spb_controller_config)の**powermanaged**メンバーの説明を参照してください。
+
+必要に応じて、SPB コントローラードライバーは、 [**Wdfdevicestopidle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)メソッドと[**WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)メソッドを呼び出すことによって、コントローラーの電源を明示的にオンおよびオフにすることができます。
+
+SPB コントローラードライバーはカーネルモードドライバーであるため、適切なセキュリティ記述子をそのファイルオブジェクトに割り当てる必要があります。 この記述子は、SPB 上の周辺機器へのユーザーモードからの不正アクセスを防止します。 たとえば、WDK のサンプルの SPB コントローラードライバーは、次の SDDL 文字列を使用します。これは、一般的な SPB コントローラードライバーに適した既定のセキュリティレベルを提供します。
+
+"D: P (A;;GA、;、SY) (A;;GA、;、BA) (A;;GA、;、UD) "
+
+この SDDL 文字列を使用すると、オペレーティングシステム (およびそのユーザーモードコンポーネント)、Administrators グループのメンバー、および[ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)(UMDF) ドライバーへのアクセスが制限されます。 SDDL 文字列の詳細については、「[デバイスオブジェクトの sddl](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects)」を参照してください。
+
+さらに、 [*EvtSpbControllerIoOther*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other)関数は、ユーザーモードクライアントから受信するカスタム i/o 制御要求のすべてのパラメーターを検証する必要があります。 その他のすべての*Evtspb*Xxx 関数では、これらのパラメーターが SPB コントローラードライバーに渡される前に、SpbCx がユーザーモードクライアントからの i/o 要求のパラメーターを検証します。 デバイスのセキュリティの詳細については、「[デバイスオブジェクト](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)のセキュリティ保護」を参照してください。
+
+ステータスコードを返す SpbCx DDI 内のすべてのメソッドとコールバック関数は、NTSTATUS 値を返します。 この DDI のドライバーサポートメソッドは、KMDF インターフェイスの通常の規則に従います。また、SpbCx で使用されるすべてのオブジェクトは、KMDF オブジェクトの通常の規則に従います。 詳細については、「[フレームワークオブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)」を参照してください。
+
+## <a name="spb-io-request-interface"></a>SPB i/o 要求インターフェイス
+
+
+I/o 要求インターフェイスを実装するために、SpbCx は SPB コントローラーの i/o キューを管理し、このキューで SPB コントローラーのクライアントからの i/o 要求を監視します。 これらのクライアントは、SPB に接続されている周辺機器のユーザーモードとカーネルモードのドライバーです。 アプリケーションは、spb i/o 要求インターフェイスを介して、SPB に接続されている周辺機器と直接通信することはできません。
+
+SpbCx は、これらの i/o 要求の一部に対してすべての処理を実行し、要求が SPB コントローラードライバーに渡される前に他の要求の前処理を行う場合があります。 SPB コントローラードライバーは、SpbCx から受信した要求を完了する役割を担います。
+
+クライアントは、SPB に接続されている周辺機器に読み取り/書き込み要求を送信できます。 SP 1 コントローラーは、 [**IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))要求に応答して、指定されたバイト数を周辺機器からクライアントバッファーに転送します。 SP 1 コントローラーは、 [**IRP\_MJ\_書き込み**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))要求に応答して、指定されたバイト数をクライアントバッファーから周辺機器に転送します。
+
+単純な読み取りおよび書き込み操作に加え、SpbCx i/o 要求インターフェイスは、1つ以上の単純な転送 (つまり、読み取りと書き込み) を1つのアトミックバス操作に結合する i/o 転送シーケンスをサポートしています。 この操作では、バスはターゲット周辺機器との間の転送にのみ使用され、バス上の他のターゲットへのアクセスは、操作が完了するまで一時的にロックアウトされます。 SpbCx では、\_シーケンス I/o 制御コードを[**実行\_IOCTL\_SPB**](https://msdn.microsoft.com/library/windows/hardware/hh450857)がサポートされています。これは、1つの i/o 要求で、ターゲットデバイスとの間で固定長転送シーケンスを指定するためにクライアントが使用します。 この i/o 制御要求により、コントローラードライバーは、パフォーマンスを向上させるためにバス転送のシーケンスを最適化できます。
+
+SpbCx i/o 要求インターフェイスでは、 [**ioctl\_spb\_ロック\_コントローラー**](https://msdn.microsoft.com/library/windows/hardware/hh450858)と[**ioctl\_SPB\_ロック解除\_コントローラー**](https://msdn.microsoft.com/library/windows/hardware/hh450859) i/o 制御コードをロックして、spb コントローラーをロックおよびロック解除することがサポートされています。 これらのロック要求とロック解除要求は、クライアントが i/o 転送シーケンスを実行するための別の方法を提供します。 この場合、シーケンス内の各読み取り操作または書き込み操作は、個別の読み取り要求または書き込み要求によって指定されます。 クライアントにコントローラーがロックされている間、他のクライアントはバス上のデバイスにアクセスできません。 バスで i/o 操作を実行できるのは、ロックを保持しているクライアントだけです。 このため、クライアントは、短い期間だけコントローラーをロックする必要があります。 クライアントは、転送シーケンスの完了後にコントローラーをロックしたままにしないでください。 詳細については、「 [I/o 転送シーケンス](https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences)」を参照してください。
+
+SpbCx でサポートされている i/o 制御 (IOCTL) コードに加えて、SPB コントローラードライバーはカスタム Ioctl をサポートできます。 クライアントは、バス上のターゲットデバイスを表すファイルオブジェクトに IOCTL 要求を送信できます。これらの要求は、SpbCx で管理されている i/o 要求キューに到着します。 サポートされていない IOCTL コードを含む要求を SpbCx が受信した場合、SpbCx は要求をコントローラードライバーに直接渡します。これにより、要求のすべての処理が実行されます。
+
+SpbCx i/o 要求インターフェイスのカーネルモードクライアントは、パッシブ\_レベルまたはディスパッチ\_レベルの割り込み要求レベル (IRQL) で i/o 要求を送信できます。 ユーザーモードのクライアントは、パッシブ\_レベルでのみ i/o 要求を送信できます。 I/o の完了は、パッシブ\_レベルまたはディスパッチ\_レベルで発生する可能性があります。 すべての i/o 要求は、状態\_保留中として返すことができます。
 
  
 

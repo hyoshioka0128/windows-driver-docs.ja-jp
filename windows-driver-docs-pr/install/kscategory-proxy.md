@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c90c965b430d6bb3cb9b2ce1fef711ed62e478b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a418364c1e2ca4b5e984cf60cb9fb6a49590319
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355013"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837441"
 ---
-# <a name="kscategoryproxy"></a>KSCATEGORY_PROXY
+# <a name="kscategory_proxy"></a>KSCATEGORY_PROXY
 
 
-KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を表す、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)で排他的に使用するために予約されている (KS) 機能のカテゴリ、[ストリーミング プロキシ モジュールカーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
+KSCATEGORY_PROXY [device インターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)は、[カーネルストリーミングプロキシモジュール](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)によって排他的に使用されるように予約されている[カーネルストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 機能カテゴリを表します。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://docs.m
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">備わっている</th>
 <th align="left">設定</th>
 </tr>
 </thead>
@@ -51,7 +51,7 @@ KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://docs.m
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -62,7 +62,7 @@ KSCATEGORY_PROXY[デバイス インターフェイス クラス](https://docs.m
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ks.h (Ks.h を含む)</td>
+<td align="left">Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>

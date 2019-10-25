@@ -1,77 +1,77 @@
 ---
-title: Net のリングと net リングを行う反復子の概要
-description: このトピックでは、net のリングと net リングを行う反復子について説明します。
+title: ネット リングとネット リングの反復子の概要
+description: このトピックでは、ネットワークリングと net リング反復子について説明します。
 ms.assetid: 8A56AA21-264C-4C1A-887E-92C9071E8AB8
 keywords:
-- リングと net リングを行う反復子、net のリングと net リングを行う反復子、NetAdapterCx PCI NetCx 概要デバイス net リング、NetAdapterCx 非同期 I/O を net NetAdapterCx の概要
+- NetAdapterCx net リングと net ring 反復子の概要、NetCx のネットリングと net ring 反復子の概要、NetAdapterCx PCI デバイスの net ring、NetAdapterCx 非同期 i/o
 ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e67eaf4d6e21b4ad7e291e8a627b25f696fd1035
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: 7ece878b12451d110a9f247e36ba654b3fde28b2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608514"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835524"
 ---
-# <a name="introduction-to-net-rings-and-net-ring-iterators"></a>Net のリングと net リングを行う反復子の概要
+# <a name="introduction-to-net-rings-and-net-ring-iterators"></a>ネット リングとネット リングの反復子の概要
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-## <a name="netring-overview"></a>NET_RING の概要
+## <a name="net_ring-overview"></a>NET_RING の概要
 
-A **NET_RING** NetAdapterCx と、クライアント ドライバーとの間で共有されるネットワーク データの循環バッファーします。 クライアント ドライバーでのすべてのパケット キューが 2 つのリング:*パケット リング*core パケットの記述子を*フラグメント リング*各パケットのフラグメントの記述子。
+**NET_RING**は、NetAdapterCx とクライアントドライバー間で共有されるネットワークデータの循環バッファーです。 クライアントドライバーのすべてのパケットキューには、コアパケット記述子用の*パケットリング*と、各パケットのフラグメント記述子の*フラグメントリング*という2つのリングがあります。
 
-パケットの記述子の詳細については、次を参照してください。[パケット記述子と拡張機能](packet-descriptors-and-extensions.md)します。
+パケット記述子の詳細については、「[パケット記述子と拡張機能](packet-descriptors-and-extensions.md)」を参照してください。
 
-パケットのリング内のすべてのコア記述子が、そのパケットのフラグメントの記述子を検索するため、フラグメント リングへのインデックス。 別のデータ構造体、 **NET_RING_COLLECTION**、次の図に示すように、パケットのリングとフラグメント リング パケット キューの連携をグループ化します。
+パケットリング内のすべてのコア記述子は、そのパケットのフラグメント記述子を特定するためにフラグメントリングにインデックスを持ちます。 もう1つのデータ構造である**NET_RING_COLLECTION**は、次の図に示すように、特定のパケットキューに対してパケットリングとフラグメントリングをまとめてグループ化します。
 
-![複数のリングのレイアウト](images/multi-ring.png) 
+![マルチリングレイアウト](images/multi-ring.png) 
 
-すべてのパケットのキューには、独自**NET_RING_COLLECTION**構造、および、その結果、独自のパケット リング フラグメント リング、およびそれらのリング内の記述子。 そのため、各パケット キューのネットワーク データ転送操作では完全に独立してます。 パケット キューの詳細については、次を参照してください。[送信および受信キュー](transmit-and-receive-queues.md)します。
+各パケットキューには、独自の**NET_RING_COLLECTION**構造体があります。その結果、独自のパケットリング、フラグメントリング、およびそれらのリングの記述子があります。 このため、各パケットキューのネットワークデータ転送操作は完全に独立しています。 パケットキューの詳細については、「[キューの送信と受信](transmit-and-receive-queues.md)」を参照してください。
 
-## <a name="netring-element-ownership"></a>NET_RING 要素の所有権
+## <a name="net_ring-element-ownership"></a>NET_RING 要素の所有権
 
-内の各要素を**NET_RING**クライアント ドライバーまたは NetAdapterCx のいずれかによって所有されています。 所有権がのセクションをマークする 3 つのインデックスによって制御される、 **NET_RING**します。 これらのインデックスは、次の表で説明します。 呼び出すにどのドライバーがクライアントには、これらのインデックスを移動する操作、 [Net リング反復子インターフェイス](#net-ring-iterator-interface-overview)、によって定義された*投稿*と*ドレイン*セマンティクスです。 
+**NET_RING**内の各要素は、クライアントドライバーまたは NetAdapterCx のいずれかによって所有されています。 所有権は、 **NET_RING**のセクションをマークする3つのインデックスによって制御されます。 これらのインデックスについては、次の表で説明します。 これらのインデックスを移動する操作 (クライアントドライバーが[Net Ring 反復子インターフェイス](#net-ring-iterator-interface-overview)を呼び出すことによって行われる処理) は、 *post*と*ドレイン*のセマンティクスによって記述されます。 
 
-| **NET_RING**インデックス名 | 説明 | ネットワーク データを転送するために必要な | ［更新者］ |
+| **NET_RING**インデックス名 | 説明 | ネットワークデータの転送に必要 | ［更新者］ |
 | --- | --- | --- | --- |
-| BeginIndex | 内の要素の範囲の先頭、 **NET_RING** NIC クライアント ドライバーが所有しています。 **BeginIndex**の先頭ではまた、*ドレイン*のセクション、 **NET_RING**します。 ときに**BeginIndex**が増分され、ドライバー*放電*OS にそれらのリングと転送の所有権の要素。 | 〇 | Net リング反復子インターフェイスの API 呼び出しを介して、NIC のクライアント ドライバー |
-| NextIndex | 先頭、*投稿*のセクション、 **NET_RING**します。 **NextIndex**投稿、ドレインのサブセクションに、クライアント ドライバーが所有しているリングのセクションに分割します。 ときに**NextIndex**が増分され、ドライバー*投稿*ハードウェアと、リングのドレイン セクションへの転送、バッファーをバッファーします。 | X | Net リング反復子インターフェイスの API 呼び出しを介して、NIC のクライアント ドライバー |
-| EndIndex | 内の要素の範囲の末尾、 **NET_RING** NIC クライアント ドライバーが所有しています。 クライアント ドライバーが最大の要素を所有**EndIndex - 1**包括的です。 | 〇 | NetAdapterCx |
+| BeginIndex | NIC クライアントドライバーが所有する**NET_RING**内の要素の範囲の先頭。 **Beginindex**は、 **NET_RING**の*ドレイン*セクションの先頭でもあります。 **Beginindex**がインクリメントされると、ドライバーはリングから要素を*ドレイン*し、その所有権を OS に転送します。 | [はい] | NIC クライアントドライバー (Net Ring 反復子インターフェイス API 呼び出しを使用) |
+| NextIndex | **NET_RING**の*post*セクションの先頭。 **Nextindex**は、クライアントドライバーが所有するリングのセクションを、post およびドレインサブセクションに分割します。 **Nextindex**がインクリメントされると、ドライバーはバッファーをハードウェアに*ポスト*し、バッファーをリングのドレインセクションに転送します。 | 必須ではない | NIC クライアントドライバー (Net Ring 反復子インターフェイス API 呼び出しを使用) |
+| EndIndex | NIC クライアントドライバーが所有する**NET_RING**内の要素の範囲の末尾。 クライアントドライバーは **、EndIndex**を含む要素を所有します。 | [はい] | NetAdapterCx |
 
-パケット キューの中に、net のリングの反復子でこれらのインデックスを操作する[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバックは、クライアント ドライバーがシステムとネットワーク インターフェイスのネットワーク データを転送する方法カード (NIC) のハードウェア。
+パケットキューの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック中に、これらのインデックスを net ring 反復子で操作することは、クライアントドライバーがシステムとネットワークインターフェイスカード (NIC) ハードウェアの間でネットワークデータを転送する方法です。
 
-クライアント ドライバーからのすべての要素を所有する**BeginIndex**に**EndIndex - 1**包括的です。 たとえば場合、 **BeginIndex** 2 と**EndIndex**が 5 の場合、クライアント ドライバーは、3 つの要素を所有している。 2、3、および 4 のインデックス値を持つ要素。
+クライアントドライバーは、 **Beginindex**から**EndIndex**へのすべての要素を所有します。 たとえば、 **Beginindex**が2で**EndIndex**が5の場合、クライアントドライバーは、インデックス値が2、3、および4の要素の3つの要素を所有します。
 
-場合**BeginIndex**と等しい**EndIndex**、クライアント ドライバーが任意の要素を所有していません。
+**Beginindex**が**EndIndex**と等しい場合、クライアントドライバーは要素を所有していません。
 
-NetAdapterCx 増分することで、リング バッファーに要素を投稿する**EndIndex**します。 クライアント ドライバーは、バッファーをドレインし、進めるリングのドレイン反復子をインクリメントすることで、要素の所有権を返します**BeginIndex**します。
+NetAdapterCx は、 **EndIndex**をインクリメントして、要素をリングバッファーにポストします。 クライアントドライバーは、リングのドレイン反復子を進めることで、バッファーをドレインし、要素の所有権を返します。これにより、 **Beginindex**がインクリメントされます。
 
-**NextIndex**はクライアント ドライバーを使用する省略可能ですし、リングのクライアント ドライバーのセクションの post とドレインのサブセクションを分離しやすくするために提供されます。
+**Nextindex**は、クライアントドライバーが使用する場合は省略可能であり、リングのクライアントドライバーのセクションの post サブセクションとドレインサブセクションを分離するために用意されています。
 
-要素のインデックス値を持つ**NextIndex**と**EndIndex - 1**包括的なクライアントによって所有されますが、ハードウェアに投稿されていません。 場合**NextIndex**と等しい**BeginIndex**、クライアント ドライバーには、OS への転送を完了したバッファーはありません。 場合**NextIndex**と等しい**EndIndex**、クライアント ドライバーには、ハードウェアに投稿するすべてのバッファーはありません。
+**Nextindex**と**EndIndex**の間のインデックス値を含む要素は、クライアントによって所有されていますが、まだハードウェアにポストされていません。 **Nextindex**が**beginindex**と等しい場合、クライアントドライバーには、OS に転送するための完了したバッファーがありません。 **Nextindex**が**EndIndex**と等しい場合、クライアントドライバーにはハードウェアに post するバッファーがありません。
 
-Net のリングが循環のため、最終的にインデックス値はバッファーの末尾をラップし、先頭に戻っています。 NetAdapterCx では、次のセクションで説明したクライアント ドライバーは、適切なメソッドを呼び出す場合リング内のインデックス値をラッピングが自動的に処理します。
+ネットワークリングは循環しているため、最終的にはインデックス値がバッファーの末尾をラップし、先頭に戻ります。 NetAdapterCx は、次のセクションで説明するように、クライアントドライバーが適切なメソッドを呼び出すと、リングの周りのインデックス値のラップを自動的に処理します。
 
-Net のリング内の要素を管理する詳細については、次を参照してください。[リング要素の管理を Net](net-ring-element-management.md)します。
+ネットワークリングの要素の管理に関する具体的な情報については、「 [net ring 要素の管理](net-ring-element-management.md)」を参照してください。
 
-## <a name="net-ring-iterator-interface-overview"></a>Net のリングの反復子インターフェイスの概要
+## <a name="net-ring-iterator-interface-overview"></a>Net Ring 反復子インターフェイスの概要
 
-NIC クライアント ドライバーは post を実行し、net リングでの操作をドレインを呼び出すことによって、 *Net リング反復子インターフェイス*します。 A [ **NET_RING_ITERATOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/ns-netringiterator-_net-ring-iterator)の投稿、ドレイン インデックスへの参照を格納する小さな構造体には、 **NET_RING**属しています。 
+NIC クライアントドライバーは、 *Net Ring 反復子インターフェイス*を呼び出すことによって、ネットリングに対して post およびドレイン操作を実行します。 [**NET_RING_ITERATOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/ns-netringiterator-_net-ring-iterator)は、所属する**NET_RING**の post およびドレインインデックスへの参照を含む小さな構造です。 
 
-各**NET_RING**複数の反復子を持つことができます。 たとえば、パケットのリングは、リングのドレイン セクションをカバーする反復子がある (、*反復子をドレイン*)、リングの後のセクションをカバーする反復子 (、*反復子を投稿*)、および反復子投稿、ドレインの両方のセクションについて説明します。 同様に、フラグメントのリングでは、反復子と同じことができます。
+各**NET_RING**には複数の反復子を含めることができます。 たとえば、パケットリングには、リングのドレインセクション (*ドレイン反復子*)、リングの post セクション (*ポスト反復*子) をカバーする反復子、および post セクションとドレインセクションの両方をカバーする反復子があります。 同様に、フラグメントリングは同じ反復子を持つことができます。
 
-各反復子の各リングを制御するためのクライアント ドライバーを簡単には、ネットの反復子インターフェイスのリングは反復子を 2 つのカテゴリに分割します。[**NET_RING_PACKET_ITERATOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/ns-netringiterator-_net-ring-packet-iterator)と[ **NET_RING_FRAGMENT_ITERATOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/ns-netringiterator-_net-ring-fragment-iterator)します。 これらは、周囲のラッパーの構造体、 **NET_RING_ITERATOR**すべての Net リング反復子インターフェイスの API 呼び出しで使用されます。 クライアント ドライバーを使用する必要があります、 **NET_RING_ITERATOR**直接します。 代わりに、反復子の適切な型指定 net のリング (パケットまたはフラグメント) の使用する必要があります。
+クライアントドライバーが各リングの各反復子を簡単に制御できるようにするため、Net Ring 反復子インターフェイスは反復子を[**NET_RING_PACKET_ITERATOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/ns-netringiterator-_net-ring-packet-iterator)と[**NET_RING_FRAGMENT_ITERATOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/ns-netringiterator-_net-ring-fragment-iterator)の2つのカテゴリに分けます。 これらは**NET_RING_ITERATOR**のラッパー構造であり、すべての NET RING 反復子インターフェイスの呼び出しで使用されます。 クライアントドライバーは、 **NET_RING_ITERATOR**を直接使用することはできません。 代わりに、特定のネットリング (パケットまたはフラグメント) に対して適切な反復子を使用する必要があります。
 
-取得して、先行するには、net リング反復子の設定、クライアント ドライバーは、送信し、そのパケットのキューでネットワーク データを受信します。 クライアント ドライバーは、リングの要素にアクセスする net リング反復子にもメソッドを呼び出します。
+クライアントドライバーは、net ring 反復子を取得、昇格、および設定することによって、パケットキュー内のネットワークデータを送受信します。 クライアントドライバーは、リングの要素にアクセスするために、net ring 反復子のメソッドも呼び出します。
 
-Net リング反復子のデータ構造とメソッドの完全な一覧を参照してください。 [Netringiterator.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/)します。
+Net ring 反復子のデータ構造体とメソッドの完全な一覧については、「 [Netringiterator. h](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/)」を参照してください。
 
-## <a name="sending-and-receiving-network-data-with-net-rings-and-net-ring-iterators"></a>Net のリングと net リングを行う反復子のネットワーク データを送受信します。
+## <a name="sending-and-receiving-network-data-with-net-rings-and-net-ring-iterators"></a>ネットワークリングと net ring 反復子を使用したネットワークデータの送受信
 
-Net のリングでネットワーク データを送信および受信しているに関する詳細情報とコードのサンプルについては、次のトピックを参照してください。
+ネットワークデータをネットリングで送信および受信する方法の詳細とコードサンプルについては、次のトピックを参照してください。
 
-[Net のリングとネットワーク データを送信します。](sending-network-data-with-net-rings.md)
+[ネットワークリングを使用したネットワークデータの送信](sending-network-data-with-net-rings.md)
 
-[Net のリングとネットワーク データの受信](receiving-network-data-with-net-rings.md)
+[ネットワークリングを使用したネットワークデータの受信](receiving-network-data-with-net-rings.md)

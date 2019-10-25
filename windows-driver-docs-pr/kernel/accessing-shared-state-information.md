@@ -3,17 +3,17 @@ title: 共有している状態情報へのアクセス
 description: 共有している状態情報へのアクセス
 ms.assetid: f3e5ac07-cab1-4f66-90e4-88b2e28079a5
 keywords:
-- クリティカル セクション ルーチン WDK カーネル
-- タイマー カウンター WDK カーネル
-- 共有状態情報の WDK カーネル
+- クリティカルセクションルーチン WDK カーネル
+- タイマーカウンター WDK カーネル
+- 共有状態情報 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a3a21892aaba925d4987de51317c6d800cbe77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 04a7b9ba98ae50837e0cb5a98a0b7887737c49a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363448"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828682"
 ---
 # <a name="accessing-shared-state-information"></a>共有している状態情報へのアクセス
 
@@ -21,37 +21,37 @@ ms.locfileid: "67363448"
 
 
 
-次の一般的なガイドラインを使用して、設計および作成の[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)状態を維持するルーチン。
+状態を維持する[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンの設計と作成には、次の一般的なガイドラインを使用します。
 
--   ドライバーのルーチンを呼び出す必要がありますにもアクセス ISR データにアクセスする、 *SynchCritSection*ルーチン。 非クリティカル セクションのコードが中断されることができます。 Isr を特定の実行 DIRQL とスピン ロックを取得するために、isr を特定のアクセスも、データを保護するスピン ロックの取得を単純にするのに十分ではありません ([**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)) のみを IRQL を発生させます。ディスパッチ\_レベル、割り込みを現在のプロセッサで ISR を呼び出します。
+-   また、ISR がアクセスするデータにアクセスするには、ドライバールーチンで*SynchCritSection*ルーチンを呼び出す必要があります。 重要ではないセクションコードは中断できます。 Isr でもアクセスされるデータを保護するためにスピンロックを取得するだけでは十分ではないことに注意してください。これは、Isr が DIRQL で実行され、スピンロック ([**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)) を取得するための\_IRQL のみを発生させ、割り込みを可能にするためです。現在のプロセッサで ISR を呼び出します。
 
--   付けます*SynchCritSection*状態情報を担当して個別の状態変数のセットを保持するルーチン。 つまり、書き込みを回避する*SynchCritSection*重複を維持するルーチンに状態情報。
+-   状態変数の個別のセットについて、状態情報を保持する各*SynchCritSection*ルーチンを提供します。 つまり、重複する状態情報を保持する*SynchCritSection*ルーチンを記述することは避けてください。
 
-    これにより、競合、および場合によって競合状態、間*SynchCritSection*ルーチン (および ISR) がアクセスしようとしました。 状態を同時にします。
+    これにより、 *SynchCritSection*ルーチン (および ISR) 間の競合 (場合によっては競合状態) が同じ状態に同時にアクセスしようとします。
 
-    これにより、各*SynchCritSection*ルーチンを返します制御可能な限り早くため、1 つ*SynchCritSection*ルーチンが同じ状態の一部を更新する別の待つ必要はありませんコントロールが返される情報。
+    また、1つの*SynchCritSection*ルーチンは、同じ状態情報の一部を更新して制御を返すことができないため、各*SynchCritSection*ルーチンはできるだけ早く制御を戻します。
 
--   1 つの大規模で汎用の書き込みを回避*SynchCritSection*ルーチンが実際に有用な処理よりも処理を決定する条件の詳細をテストします。 その一方で、回避が多数ある*SynchCritSection*ことはありませんので、更新プログラムの状態情報の 1 バイトだけに条件付きステートメントを実行するルーチン。
+-   実際に有用な作業を実行するよりも、条件のテストを実行する単一の大規模な汎用*SynchCritSection*ルーチンを作成するのは避けてください。 一方、条件付きステートメントを実行しない*SynchCritSection*ルーチンが多数ある場合は、それぞれが1バイトの状態情報を更新するだけで済みます。
 
--   すべて*SynchCritSection*ルーチン返す必要があります制御可能な限り、早く実行しているため、 *SynchCritSection*ルーチンが、ドライバーの ISR 実行されないようにします。
+-   *SynchCritSection*ルーチンを実行すると、ドライバーの ISR が実行されないため、すべての*SynchCritSection*ルーチンはできるだけ早く制御を返す必要があります。
 
-タイマー カウンターでは、デバイスの拡張機能を維持するための手法を次に示します。 ドライバーは、I/O 操作がタイムアウトしてかどうかを決定するカウンターを使用するものとします。また、ドライバーには、I/O 操作が重複するいないとします。
+次に、デバイス拡張機能でタイマーカウンターを維持する方法を示します。 ドライバーがカウンターを使用して、i/o 操作がタイムアウトしたかどうかを判断します。また、ドライバーが i/o 操作と重複しないことを想定しています。
 
--   ドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンが I/O 要求ごとにカウンターをいくつかの初期値、タイマーを初期化します。 ドライバーの場合、デバイスのタイムアウト値に 2 つ目が追加されます、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンにコントロールが返されるだけです。
+-   ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンは、それぞれの i/o 要求に対してタイマーカウンターを初期値に初期化します。 その後、 [*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンが制御を返しただけの場合、ドライバーはデバイスのタイムアウト値に秒を追加します。
 
--   ドライバーの ISR から 1 を引いたにこのタイマー カウンターを設定する必要があります。
+-   ドライバーの ISR は、このタイマーカウンターを1から引いた値に設定する必要があります。
 
--   ドライバーの[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンは time カウンタを読み取って、かどうか、ISR は既に設定してから 1 を引いたを決定する毎秒 1 回呼び出されます。 ない場合、 *IoTimer*ルーチンをデクリメントを使用して、カウンター [ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出す、SynchCritSection\_1 ルーチン。
+-   ドライバーの[*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンは1秒間に1回呼び出され、時間カウンターを読み取り、ISR で既にマイナス1に設定されているかどうかを確認します。 それ以外の場合、 *Iotimer*ルーチンは、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を使用して SynchCritSection\_1 ルーチンを呼び出すことによってカウンターをデクリメントします。
 
-    場合は、カウンターが、要求がタイムアウトしたことを示す 0 に、SynchCritSection\_1 ルーチンの呼び出しを SynchCritSection\_デバイスのリセット操作をプログラムする 2 つのルーチンです。 1 つのカウンターがの場合、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンを単純に返します。
+    カウンターがゼロに設定され、要求がタイムアウトしたことが示された場合、SynchCritSection\_1 ルーチンは SynchCritSection\_2 ルーチンを呼び出して、デバイスのリセット操作をプログラムします。 カウンターが1を引いた場合、 [*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンは単にを返します。
 
--   場合、ドライバーの[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチンが部分的な転送操作を開始するデバイスを再設定する必要があります、として、タイマー カウンターを再初期化する必要がありますが、 [ *StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンでした。
+-   部分転送操作を開始するために、ドライバーの[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンがデバイスを再プログラミングする必要がある場合は、 [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンと同様にタイマーカウンターを再初期化する必要があります。
 
-    [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチンも使用する必要があります[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出す、SynchCritSection\_2 ルーチンは、SynchCritSection 可能性がありますまたは\_転送操作をもう 1 つのデバイスのプログラミングの 3 つのルーチンです。
+    また、 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンは、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を使用して SynchCritSection\_2 ルーチンを呼び出すか、場合によっては SynchCritSection\_3 ルーチンを呼び出して、別の転送操作のためにデバイスをプログラミングする必要があります。
 
-ドライバーでは、このシナリオでは 1 つ以上*SynchCritSection* 、それぞれ独立した、特定の責任; そのタイマー カウンターを維持するために 1 つと 1 つ以上他のユーザー、デバイスのプログラミング ルーチンです。 各*SynchCritSection*ルーチンを返せるコントロール迅速に、1 つの個別のタスクを実行するためです。
+このシナリオでは、ドライバーに複数の*SynchCritSection*ルーチンがあり、それぞれに個別の責任があります。1つはタイマーカウンターを維持するためのもので、もう1つはデバイスをプログラミングするためのものです。 各*SynchCritSection*ルーチンは、単一の個別のタスクを実行するため、制御を迅速に返すことができます。
 
-ドライバーは 1 つ SynchCritSection\_1 ルーチンは、ドライバーの ISR、と共にタイマー カウンターに状態を保持します。 したがって、いくつかの間で、タイマー カウンターへのアクセスの競合がない*SynchCritSection*ルーチンと ISR
+ドライバーには単一の SynchCritSection\_1 ルーチンがあり、ドライバーの ISR と共にタイマーカウンターの状態が維持されることに注意してください。 そのため、複数の*SynchCritSection*ルーチンと ISR 間でのタイマーカウンターへのアクセスに競合は発生しません。
 
  
 

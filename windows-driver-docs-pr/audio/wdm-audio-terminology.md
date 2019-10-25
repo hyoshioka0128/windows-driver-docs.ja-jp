@@ -3,29 +3,29 @@ title: WDM オーディオの用語
 description: WDM オーディオの用語
 ms.assetid: bb36a66a-84dc-46c2-adcb-761d0acec3a1
 keywords:
-- WDM オーディオ ドライバー WDK、WDM オーディオ ドライバーについて
-- オーディオ ドライバー WDK、オーディオ ドライバーについて
-- 一般的なドライバーのアーキテクチャの WDK オーディオ
-- ミニポート ドライバー WDK オーディオの一般的な vs です。WDM オーディオ
-- ポート ドライバー WDK オーディオの一般的な vs です。WDM オーディオ
+- WDM オーディオドライバー WDK、WDM オーディオドライバーについて
+- オーディオドライバー WDK、オーディオドライバーについて
+- 汎用ドライバーアーキテクチャ WDK オーディオ
+- ミニポートドライバー WDK オーディオ、汎用および WDM オーディオ
+- ポートドライバー WDK オーディオ、汎用および WDM オーディオ
 - ミニドライバー WDK オーディオ
-- バス ドライバー WDK オーディオ
-- アダプターのドライバー WDK オーディオ
-- クラス ドライバー WDK オーディオ
-- 上端インターフェイス WDK オーディオ
-- 下位 edge インターフェイスの WDK オーディオ
-- スタックの WDK オーディオ
-- ドライバー スタックの WDK オーディオ
-- システム バス ドライバー WDK オーディオ
+- バスドライバー WDK オーディオ
+- アダプタードライバー WDK オーディオ
+- クラスドライバー WDK オーディオ
+- 最先端インターフェイス WDK audio
+- 低エッジインターフェイスの WDK オーディオ
+- スタック WDK オーディオ
+- ドライバースタック WDK オーディオ
+- システムバスドライバー WDK オーディオ
 - サブデバイス WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d39c39ee12f453b2d3ca1e5f54b09d7cacbc93a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01113712ce5c9c9aa67e1b90f4e832cb0493f3c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364778"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832248"
 ---
 # <a name="wdm-audio-terminology"></a>WDM オーディオの用語
 
@@ -33,101 +33,101 @@ ms.locfileid: "67364778"
 ## <span id="wdm_audio_terminology"></span><span id="WDM_AUDIO_TERMINOLOGY"></span>
 
 
-このセクションでは、Microsoft Windows Driver Model (WDM) オーディオ ドライバーのアーキテクチャと一般的な階層型 Windows ドライバーのアーキテクチャでは、用語の違いについて説明します。 SCSI ポート/ミニポート ドライバーによって、汎用ドライバー アーキテクチャが典型的な例 (を参照してください[ストレージ ドライバーのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-driver-architecture))。
+このセクションでは、Microsoft Windows Driver Model (WDM) オーディオドライバーアーキテクチャと汎用 Windows レイヤードドライバーアーキテクチャとの用語の違いについて説明します。 汎用ドライバーのアーキテクチャは、SCSI ポート/ミニポートドライバーによって例示されます (「[ストレージドライバーのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-driver-architecture)」を参照してください)。
 
-ジェネリックと WDM オーディオ ドライバーのアーキテクチャによって定義されている用語は似ていますが、いくつかの重要な相違点を以下に示す必要が。
+Generic および WDM オーディオドライバーアーキテクチャで定義されている用語は似ていますが、以下に示すように、いくつかの重要な違いがあります。
 
-### <a name="span-idminiportdrivergenericspanspan-idminiportdrivergenericspanspan-idminiportdrivergenericspanminiport-driver-generic"></a><span id="Miniport_Driver__Generic_"></span><span id="miniport_driver__generic_"></span><span id="MINIPORT_DRIVER__GENERIC_"></span>ミニポート ドライバー (汎用)
+### <a name="span-idminiport_driver__generic_spanspan-idminiport_driver__generic_spanspan-idminiport_driver__generic_spanminiport-driver-generic"></a><span id="Miniport_Driver__Generic_"></span><span id="miniport_driver__generic_"></span><span id="MINIPORT_DRIVER__GENERIC_"></span>ミニポートドライバー (汎用)
 
-ミニポート ドライバー (ジェネリック) は、(たとえば、PCI または ISA など) のシステム バス上に存在するアダプターのハードウェアに固有のドライバーです。 このドライバーは、1 つのエントリ ポイント[ *DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ポートのドライバーを使用した関数のテーブルを登録します。 この関数のテーブルは、ミニポート ドライバーの上端のインターフェイスとして機能します。
+ミニポートドライバー (generic) は、システムバス上に存在するアダプターのハードウェア固有のドライバー (PCI や ISA など) です。 このドライバーは、エントリポイントと[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)を1つ持ち、関数のテーブルをポートドライバーに登録します。 この関数の表は、ミニポートドライバーの上端のインターフェイスとして機能します。
 
-ミニポート ドライバーがドライバー スタックでポート ドライバーの下に配置されます。 つまり、ミニポート ドライバーのすべての呼び出しは、ポート ドライバーから行われ、ミニポート ドライバーからのすべての呼び出しは、ポート ドライバーの下位 edge インターフェイスには。
+ミニポートドライバーは、ドライバースタックのポートドライバーの下に置かれます。 つまり、ミニポートドライバーへのすべての呼び出しはポートドライバーから行われ、ミニポートドライバーからのすべての呼び出しは、ポートドライバーの下端のインターフェイスに対して行われます。
 
-次の図は、用語の意味を示します*スタック*、*上端インターフェイス*、および*下 edge インターフェイス*このコンテキストで使用するためです。 ポートのドライバーを表すブロックはミニポート ドライバーを表すブロックの上に積み上げ横します。 そのため、ミニポート ドライバーでは、「スタック」でポート ドライバーの下に配置されます。
+次の図は、このコンテキストで使用される、用語*スタック*、*上部エッジインターフェイス*、および下端の*インターフェイス*の意味を示しています。 ポートドライバーを表すブロックは、ミニポートドライバーを表すブロックの上に積み重ねられます。 そのため、ミニポートドライバーは、"スタック" のポートドライバーの下にあります。
 
-![ドライバー スタックの用語を示す図](images/drvstack.png)
+![ドライバースタックの用語を示す図](images/drvstack.png)
 
-ポートおよびミニポートのドライバーは、相互に公開されるソフトウェア インターフェイスを介して通信します。 上記の図では、これらのインターフェイスは、ポート ドライバーとミニポート ドライバーを表すブロックの上端を表すブロックの下端に関連付けられます。 この表現は、「低 edge インターフェイス」と「上端インターフェイス」のソースです。
+ポートとミニポートドライバーは、相互に公開されているソフトウェアインターフェイスを介して通信します。 上の図では、これらのインターフェイスは、ポートドライバーを表すブロックの下端と、ミニポートドライバーを表すブロックの上端に関連付けられています。 この表現は、"下端のインターフェイス" と "上端のインターフェイス" という用語のソースです。
 
-### <a name="span-idportdrivergenericspanspan-idportdrivergenericspanspan-idportdrivergenericspanport-driver-generic"></a><span id="Port_Driver__Generic_"></span><span id="port_driver__generic_"></span><span id="PORT_DRIVER__GENERIC_"></span>ポート ドライバー (汎用)
+### <a name="span-idport_driver__generic_spanspan-idport_driver__generic_spanspan-idport_driver__generic_spanport-driver-generic"></a><span id="Port_Driver__Generic_"></span><span id="port_driver__generic_"></span><span id="PORT_DRIVER__GENERIC_"></span>ポートドライバー (汎用)
 
-(ジェネリック) のポート ドライバーには、ミニポート ドライバーが囲まれます。
+ポートドライバー (汎用) は、ミニポートドライバーを囲みます。
 
-ポート ドライバー:
+ポートドライバー:
 
--   WDM ストリーミングのフィルターを実装します。
+-   WDM ストリーミングフィルターを実装します。
 
--   オペレーティング システムの残りの部分に共通のインターフェイスを提供します。
+-   オペレーティングシステムの残りの部分に共通のインターフェイスを提供します。
 
--   システムからの I/O 要求を処理し、ミニポート ドライバーの関数のテーブルへの呼び出しとしてこれらの要求を recasts します。
+-   システムからの i/o 要求を処理し、これらの要求をミニポートドライバーの関数テーブルへの呼び出しとして処理します。
 
--   ミニポート ドライバーのサポート関数 (ポート ドライバーの下位 edge インターフェイス) のライブラリを提供します。
+-   ミニポートドライバーに、サポート機能のライブラリ (ポートドライバーの下端のインターフェイス) を提供します。
 
-ポート ドライバーは、ミニポート ドライバーからオペレーティング システムの詳細の多くを非表示にし、ミニポート ドライバー、ポート ドライバーから基になるハードウェアの詳細を非表示にします。 ポートのドライバーの実装は、別のオペレーティング システムのリリースの変更を行うこともできますが、ミニポート ドライバーにポート ドライバーのインターフェイスはより未満、変更なしにほとんどのプラットフォームに依存しないミニポート ドライバーを有効にします。
+ポートドライバーは、オペレーティングシステムの詳細の多くをミニポートドライバーから隠します。また、ミニポートドライバーは、基になるハードウェアの詳細をポートドライバーから隠します。 ポートドライバーの実装では、オペレーティングシステムのリリースごとに変更が行われる場合がありますが、ミニポートドライバーに対するポートドライバーのインターフェイスはそのままであるか、または低いため、ミニポートドライバーはプラットフォームに依存しません。
 
-### <a name="span-idminidrivergenericspanspan-idminidrivergenericspanspan-idminidrivergenericspanminidriver-generic"></a><span id="Minidriver__Generic_"></span><span id="minidriver__generic_"></span><span id="MINIDRIVER__GENERIC_"></span>ミニドライバー (汎用)
+### <a name="span-idminidriver__generic_spanspan-idminidriver__generic_spanspan-idminidriver__generic_spanminidriver-generic"></a><span id="Minidriver__Generic_"></span><span id="minidriver__generic_"></span><span id="MINIDRIVER__GENERIC_"></span>ミニドライバー (ジェネリック)
 
-(ジェネリック) のミニドライバーは、バス上のハードウェア コンポーネントを表します。 ミニドライバーは、バス経由で物理デバイスとの通信に、バス ドライバーを使用し、バス ドライバーと 1 つまたは複数のクラス ドライバーをまとめて、バインドします。
+ミニドライバー (generic) は、バス上のハードウェアコンポーネントを表します。 ミニドライバーはバスドライバーを使用してバスを介して物理デバイスと通信し、バスドライバーと1つ以上のクラスドライバーをバインドします。
 
-*クラスのドライバー*ヘルプ、ミニドライバーは、論理デバイスの種類としてクライアントに物理デバイスを表示します。 WDM 環境で、ミニドライバーは通常クラスのドライバーから IRP フォームで要求を受信し、バス ドライバーに IRP のフォームで要求を送信します。
+*クラスドライバー*は、ミニドライバーが物理デバイスを論理デバイスの種類としてクライアントに提示するのに役立ちます。 WDM 環境では、ミニドライバーは通常、クラスドライバーから IRP 形式の要求を受け取り、IRP 形式の要求をバスドライバーに送信します。
 
-ミニドライバーは、いくつかのクラス ドライバーとの通信にもあります。 複数のクラス ドライバーにバインドするミニドライバーの例では、IEEE 1394 バス上の CD-ROM ドライブ、ミニドライバーです。 ドライブは、ファイル システムからアクセスできるように、ファイル システム ドライバーにバインドがあります。 ただしもにバインドする、 [Redbook システム ドライバー](kernel-mode-wdm-audio-components.md#redbook_system_driver) Cd からオーディオをストリーミングできるようにします。
+ミニドライバーは、いくつかのクラスドライバーと通信する必要がある場合もあります。 複数のクラスドライバーにバインドするミニドライバーの例として、IEEE 1394 バス上の CD-ROM ドライブのミニドライバーがあります。 ファイルシステムドライバーにバインドして、ファイルシステムからドライブにアクセスできるようにすることができます。 ただし、オーディオを Cd からストリーミングできるように、 [Redbook システムドライバー](kernel-mode-wdm-audio-components.md#redbook_system_driver)にもバインドされています。
 
-### <a name="span-idbusdrivergenericspanspan-idbusdrivergenericspanspan-idbusdrivergenericspanbus-driver-generic"></a><span id="Bus_Driver__Generic_"></span><span id="bus_driver__generic_"></span><span id="BUS_DRIVER__GENERIC_"></span>バス ドライバー (汎用)
+### <a name="span-idbus_driver__generic_spanspan-idbus_driver__generic_spanspan-idbus_driver__generic_spanbus-driver-generic"></a><span id="Bus_Driver__Generic_"></span><span id="bus_driver__generic_"></span><span id="BUS_DRIVER__GENERIC_"></span>バスドライバー (汎用)
 
-(ジェネリック)、バス ドライバーでは、物理バスにミニドライバー アクセスを提供します。 Microsoft Windows*ハードウェア アブストラクション レイヤー (HAL)* とも呼ば、*システム バス ドライバー*システム バスへのアクセスを提供するためです。 詳細については、次を参照してください。[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)します。
+バスドライバー (generic) は、物理バスへのミニドライバーアクセスを提供します。 Microsoft Windows*ハードウェアアブストラクションレイヤー (HAL)* は、システムバスへのアクセスを提供するため、*システムバスドライバー*と呼ばれることがあります。 詳細については、「[バスドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)」を参照してください。
 
-### <a name="span-idclassdrivergenericspanspan-idclassdrivergenericspanspan-idclassdrivergenericspanclass-driver-generic"></a><span id="Class_Driver__Generic_"></span><span id="class_driver__generic_"></span><span id="CLASS_DRIVER__GENERIC_"></span>クラスのドライバー (汎用)
+### <a name="span-idclass_driver__generic_spanspan-idclass_driver__generic_spanspan-idclass_driver__generic_spanclass-driver-generic"></a><span id="Class_Driver__Generic_"></span><span id="class_driver__generic_"></span><span id="CLASS_DRIVER__GENERIC_"></span>クラスドライバー (ジェネリック)
 
-(ジェネリック) のクラス ドライバーは、類似するデバイスのクラス間で共通する動作を実装します。
+クラスドライバー (ジェネリック) は、類似したデバイスのクラス全体で共通の動作を実装します。
 
-クラス ドライバー:
+クラスドライバー:
 
 -   ハードウェア固有のドライバーの機能の重複を排除します。
 
--   バスに固有ではありません。
+-   はバス固有ではありません。
 
--   リソースの問題 (たとえば、DMA および割り込みなど) の認識しません。
+-   は、リソースの問題 (DMA や割り込みなど) を認識していません。
 
-### <a name="span-idminiportdriverwdmaudiospanspan-idminiportdriverwdmaudiospanspan-idminiportdriverwdmaudiospanminiport-driver-wdm-audio"></a><span id="Miniport_Driver__WDM_Audio_"></span><span id="miniport_driver__wdm_audio_"></span><span id="MINIPORT_DRIVER__WDM_AUDIO_"></span>ミニポート ドライバー (WDM オーディオ)
+### <a name="span-idminiport_driver__wdm_audio_spanspan-idminiport_driver__wdm_audio_spanspan-idminiport_driver__wdm_audio_spanminiport-driver-wdm-audio"></a><span id="Miniport_Driver__WDM_Audio_"></span><span id="miniport_driver__wdm_audio_"></span><span id="MINIPORT_DRIVER__WDM_AUDIO_"></span>ミニポートドライバー (WDM オーディオ)
 
-ミニポート ドライバー (WDM オーディオ) は、システム バス上に存在するオーディオ アダプター カードの関数の関数に固有のインターフェイスを実装します。 ミニポート ドライバーは、アダプタのドライバのコンポーネントです。 オペレーティング システムによってドライバーでことはありません。 この点で、オーディオのミニポート ドライバーは、ジェネリック ミニポート ドライバーによって異なります。
+ミニポートドライバー (WDM オーディオ) は、システムバス上に存在するオーディオアダプターカード上の関数に対して関数固有のインターフェイスを実装します。 ミニポートドライバーは、アダプタードライバーのコンポーネントです。 オペレーティングシステムによってドライバーとして認識されません。 この点で、オーディオミニポートドライバーは汎用ミニポートドライバーとは異なります。
 
-ジェネリックのミニポート ドライバーとは異なりオーディオ ミニポート ドライバーを実装しません[ *DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、登録されていないと、それぞれポート ドライバー サポートを完全に依存しないでください。 複数のオーディオのミニポート ドライバーが複数の関数のアドレスを 1 つのアダプターのドライバーにリンク (でき、1 つのデバイス オブジェクトに関連付けられている)。
+汎用ミニポートドライバーとは異なり、オーディオミニポートドライバーは[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)を実装しておらず、登録されていません。また、サポート用にそれぞれのポートドライバーに依存しません。 複数の関数に対応する複数のオーディオミニポートドライバーは、1つのアダプタードライバー (および1つのデバイスオブジェクトに関連付けられている) にリンクできます。
 
-### <a name="span-idadapterdriverwdmaudiospanspan-idadapterdriverwdmaudiospanspan-idadapterdriverwdmaudiospanadapter-driver-wdm-audio"></a><span id="Adapter_Driver__WDM_Audio_"></span><span id="adapter_driver__wdm_audio_"></span><span id="ADAPTER_DRIVER__WDM_AUDIO_"></span>アダプターのドライバー (WDM オーディオ)
+### <a name="span-idadapter_driver__wdm_audio_spanspan-idadapter_driver__wdm_audio_spanspan-idadapter_driver__wdm_audio_spanadapter-driver-wdm-audio"></a><span id="Adapter_Driver__WDM_Audio_"></span><span id="adapter_driver__wdm_audio_"></span><span id="ADAPTER_DRIVER__WDM_AUDIO_"></span>アダプタードライバー (WDM オーディオ)
 
-アダプターのドライバー (WDM オーディオ) は、指定したアダプターに関連付けられているすべてのミニポート ドライバーのコンテナーとして機能します。 このアダプターのドライバーでは、ドライバーとしてオペレーティング システムによって認識され、独自の .sys ファイルに含まれます。
+アダプタードライバー (WDM オーディオ) は、特定のアダプターに関連付けられているすべてのミニポートドライバーのコンテナーとして機能します。 このアダプタドライバは、オペレーティングシステムによってドライバとして認識され、独自の .sys ファイルに含まれています。
 
-オーディオ ドライバーは、一連のミニポート ドライバーと初期化の問題に対応するコードを追加で構成されます。 たとえば、アダプターのドライバーを実装する、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)エントリ ポイント。
+オーディオアダプタードライバーは、一連のミニポートドライバーと、初期化の問題に対処する追加のコードで構成されています。 たとえば、アダプタードライバーは[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)エントリポイントを実装します。
 
-### <a name="span-idportdriverwdmaudiospanspan-idportdriverwdmaudiospanspan-idportdriverwdmaudiospanport-driver-wdm-audio"></a><span id="Port_Driver__WDM_Audio_"></span><span id="port_driver__wdm_audio_"></span><span id="PORT_DRIVER__WDM_AUDIO_"></span>ポート ドライバー (WDM オーディオ)
+### <a name="span-idport_driver__wdm_audio_spanspan-idport_driver__wdm_audio_spanspan-idport_driver__wdm_audio_spanport-driver-wdm-audio"></a><span id="Port_Driver__WDM_Audio_"></span><span id="port_driver__wdm_audio_"></span><span id="PORT_DRIVER__WDM_AUDIO_"></span>ポートドライバー (WDM オーディオ)
 
-ポート ドライバー (WDM オーディオ) では、ミニポート ドライバーに代わって KS フィルターを実装し、ポートのクラス ドライバーのコンテキストで動作します。 ポート ドライバーでは、システムに KS フィルターとして、ミニポート ドライバーの関数に固有のコードを公開してがアダプターに依存しない機能を実装する責任を負います。
+ポートドライバー (WDM オーディオ) は、ミニポートドライバーに代わって KS フィルターを実装し、ポートクラスドライバーのコンテキストで動作します。 ポートドライバーは、ミニポートドライバーの関数固有のコードを KS フィルターとしてシステムに公開し、アダプターに依存しない機能を実装します。
 
-汎用ポート ドライバーとは異なりオーディオ ポート ドライバーはデバイス オブジェクトを共有し、したがって、異なる方法でインスタンス化します。 類似するジェネリック クラス ドライバー (バスに依存しないではありません) デバイスのクラスの想定される動作を実装するという点では、汎用ポート ドライバーよりも、オーディオ ポート ドライバーもです。
+汎用ポートドライバーとは異なり、オーディオポートドライバーはデバイスオブジェクトを共有するため、異なる方法でインスタンス化されます。 オーディオポートドライバーは、汎用的なクラスドライバーに似ています。これは、一般的なポートドライバーが、デバイスのクラス (バスに依存しない) の動作を実装するということです。
 
-### <a name="span-idportclassdriverwdmaudiospanspan-idportclassdriverwdmaudiospanspan-idportclassdriverwdmaudiospanport-class-driver-wdm-audio"></a><span id="Port_Class_Driver__WDM_Audio_"></span><span id="port_class_driver__wdm_audio_"></span><span id="PORT_CLASS_DRIVER__WDM_AUDIO_"></span>ポート クラス ドライバー (WDM オーディオ)
+### <a name="span-idport_class_driver__wdm_audio_spanspan-idport_class_driver__wdm_audio_spanspan-idport_class_driver__wdm_audio_spanport-class-driver-wdm-audio"></a><span id="Port_Class_Driver__WDM_Audio_"></span><span id="port_class_driver__wdm_audio_"></span><span id="PORT_CLASS_DRIVER__WDM_AUDIO_"></span>ポートクラスドライバー (WDM オーディオ)
 
-ポート クラス ドライバー (WDM オーディオ) は、さまざまな種類のオーディオ ハードウェア関数のサポートを提供のポートのドライバーのコレクションのコンテナーとして機能します。 次の図では、オーディオのポートのクラスとアダプターのドライバーの間のリレーションシップを示します。
+ポートクラスドライバー (WDM オーディオ) は、ポートドライバーのコレクションのコンテナーとして機能し、それぞれが異なる種類のオーディオハードウェア機能のサポートを提供します。 次の図は、オーディオポートクラスとアダプタードライバーの関係を示しています。
 
-![オーディオのポートのクラスとアダプターのドライバーの間の関係を示す図](images/wdmaumi.png)
+![オーディオポートクラスとアダプタードライバーの関係を示す図](images/wdmaumi.png)
 
-アダプターのドライバーでは、いくつかの異なるハードウェア関数を含む可能性があるアダプター カードを管理します。 上記の図に示すように、アダプターのドライバーには、ハードウェアの機能の種類ごとの管理に、ミニポート ドライバーが含まれています。 同様に、ポートのクラス ドライバーは複数のハードウェア機能にアダプター カードのサポートを提供する設計されています。 ポート クラス ドライバーは、サポートされている適切に定義された関数型の各ポート ドライバーを提供します。 アダプターのドライバーでは、その関数の種類のポートに対応するドライバーを特定の関数に対して、ミニポート ドライバーをバインドします。 各関数のポートのドライバーでは、関数を使用している WDM オーディオ クライアントとの通信を処理します。 ミニポート ドライバーでは、その関数を管理するためのハードウェア固有のコードがすべて含まれます。
+アダプタードライバーは、複数の異なるハードウェア機能を含む可能性のあるアダプターカードを管理します。 上の図に示すように、アダプタードライバーには、各種類のハードウェア機能を管理するためのミニポートドライバーが含まれています。 同様に、ポートクラスドライバーは、複数のハードウェア機能を備えたアダプターカードに対してサポートを提供するように設計されています。 Port クラス driver は、サポートする適切に定義された関数の種類ごとにポートドライバーを提供します。 アダプタードライバーは、特定の関数のミニポートドライバーを、その関数の種類の対応するポートドライバーにバインドします。 各関数のポートドライバーは、その関数を使用する WDM オーディオクライアントとの通信を処理します。 ミニポートドライバーには、その機能を管理するためのハードウェア固有のコードがすべて含まれています。
 
-ポート クラス ドライバー (WDM オーディオ) は、主に、1 つのデバイス オブジェクトに関連付けられているサブデバイスを複数のコンテナーとして機能します。 バス ドライバーの作成、1 つ*物理デバイス オブジェクト (PDO)* プラグ アンド プレイ (PnP) ノードごとにそれらを列挙します。
+ポートクラスドライバー (WDM オーディオ) は、主に1つのデバイスオブジェクトに関連付けられている複数のサブデバイスのコンテナーとして機能します。 バスドライバーは、列挙するプラグアンドプレイ (PnP) ノードごとに1つの*物理デバイスオブジェクト (PDO)* を作成します。
 
-PnP の単一のノードには、オーディオのアダプターの場合、複数のオーディオ関数頻繁に含まれています。 ノードに関連付けられた、個別のデバイスとして通常、さまざまな関数を公開するには、アダプター用のバス ドライバーの記述が必要です。 バス ドライバーでは、ハードウェアの機能を列挙し、対応する Pdo を作成します。 このシナリオで 1 つまたは複数の関数に固有のドライバーは、Pdo にバインドし、アダプターの共有リソースにアクセスするため、バス ドライバーとネゴシエートする必要があります。
+オーディオアダプターの場合、1つの PnP ノードに複数のオーディオ機能が含まれることがよくあります。 ノードに関連付けられているさまざまな関数を個別のデバイスとして公開するには、通常、アダプターのバスドライバーを書き込む必要があります。 バスドライバーは、ハードウェア機能を列挙し、対応する PDOs を作成します。 このシナリオでは、1つまたは複数の関数固有のドライバーが、アダプター上の共有リソースにアクセスするために、PDOs にバインドし、バスドライバーとネゴシエートする必要があります。
 
-ポート クラス ドライバーは、オペレーティング システムでは、個別のサブデバイスのセットとして、デバイスを認識する 1 つのデバイス オブジェクトのさまざまな側面を公開するのに、カーネル ドライバーの機能のストリーミングを使用します。
+Port クラスドライバーは、カーネルストリーミングドライバーの機能を使用して、オペレーティングシステムがデバイスを個別のサブデバイスのセットとして認識するように、1つのデバイスオブジェクトのさまざまな側面を公開します。
 
-参照文字列は、目的のサブデバイスを指定する、デバイス名に追加されます。 カーネルのストリーミング ドライバーは Irp がこの参照文字列に基づく作成をディスパッチします。 ファイル オブジェクトを作成した後、サブデバイスを表すファイル オブジェクトを対象とする Irp のディスパッチ、カーネル ドライバーのストリーミングを提供します。 さらに、ポートのクラス ドライバーは、パッケージ化サブデバイスの COM ベースのモデルを実装します。
+目的のサブデバイスを指定するために、デバイス名に参照文字列が追加されます。 カーネルストリーミングドライバーは、この参照文字列に基づいて作成 Irp をディスパッチします。 ファイルオブジェクトが作成された後、カーネルストリーミングドライバーは、サブデバイスを表すファイルオブジェクトを対象とする Irp のディスパッチを提供します。 また、ポートクラスドライバーは、サブデバイスをパッケージ化するための COM ベースのモデルを実装します。
 
-アダプターのドライバーがポート ドライバーとミニポート ドライバーをインスタンス化し、ポート ドライバーの初期化関数のパラメーターとして、ミニポート ドライバーにポインターを渡すことによって、それらをまとめてバインド (のコード例を参照してください[サブデバイス作成](subdevice-creation.md)。). 結果として得られるポート/ミニポート ドライバー スタックは、ポートのクラス ドライバーがサポートするサブデバイス型のいずれかを表す KS フィルターを構成します。
+アダプタードライバーは、ポートドライバーとミニポートドライバーをインスタンス化し、ポートドライバーの初期化関数のパラメーターとしてミニポートドライバーへのポインターを渡すことによって、それらをバインドします ([サブデバイスの作成](subdevice-creation.md)に関するコード例を参照してください)。 生成されたポート/ミニポートドライバースタックは、ポートクラスドライバーがサポートするサブデバイスの種類の1つを表す KS フィルターを構成します。
 
-ポート クラス ドライバーの[ **PcRegisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)関数は、システムの残りの部分によってデバイスとして認識されていると、サブデバイスを登録します。 ポート ドライバーでは、作成、デバイス オブジェクトが、サブデバイスが登録されている参照文字列で指定されている Irp のみを対象となる Irp を受信します。 ポート ドライバーは Irp をサブデバイスに関連付けられているファイル オブジェクトを対象としても受信します。 ポート ドライバーは、KS フィルターとサブデバイスのように動作し、ミニポート ドライバーを適切に通信するためです。
+Port クラスドライバーの[**Pcregistersubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)関数は、サブデバイスを登録します。これは、システムの残りの部分でデバイスとして認識されます。 ポートドライバーは、デバイスオブジェクトを対象とした作成 Irp を受信しますが、サブデバイスが登録されている参照文字列で指定されている Irp に対してのみ使用されます。 また、ポートドライバーは、サブデバイスに関連付けられているファイルオブジェクトを対象とする Irp を受信します。 ポートドライバーは、サブデバイスの動作を KS フィルターとして、およびミニポートドライバーと適切に通信する役割を担います。
 
-多機能オーディオ カードのドライバーを設計の詳細については、次を参照してください。[多機能オーディオ デバイス](multifunction-audio-devices.md)します。
+多機能オーディオカード用ドライバーの設計の詳細については、「[多機能オーディオデバイス](multifunction-audio-devices.md)」を参照してください。
 
  
 

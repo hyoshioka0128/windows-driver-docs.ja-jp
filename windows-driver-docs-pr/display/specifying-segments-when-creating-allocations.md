@@ -3,16 +3,16 @@ title: 割り当て作成時のセグメントの指定
 description: 割り当て作成時のセグメントの指定
 ms.assetid: 31bfbfd9-89e5-42fe-90bc-8ff54bac4f8b
 keywords:
-- メモリのセグメントの WDK 表示、割り当ての作成
-- WDK の割り当てを表示します。
+- メモリセグメント WDK ディスプレイ、割り当ての作成
+- 割り当て WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56c7362a14741ba4ca5a7dce396a2fddedf6d915
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 86fdda890a99b56d812a02a0c2431b1668debe7f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376062"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829441"
 ---
 # <a name="specifying-segments-when-creating-allocations"></a>割り当て作成時のセグメントの指定
 
@@ -20,9 +20,9 @@ ms.locfileid: "67376062"
 ## <span id="ddk_specifying_segments_for_creating_and_rendering_allocations_gg"></span><span id="DDK_SPECIFYING_SEGMENTS_FOR_CREATING_AND_RENDERING_ALLOCATIONS_GG"></span>
 
 
-ディスプレイのミニポート ドライバーを指定し、ビデオ メモリ マネージャーの使用が推奨ビデオ メモリ マネージャーがドライバーを呼び出すときにそのメモリ セグメントに関する情報を返します[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数。 呼び出しで*DxgkDdiCreateAllocation*ドライバーがビデオ リソースの割り当てを作成します。 ドライバーがサポートされるセグメントとセグメント各自の好みの識別子を返します、 [ **DXGK\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当てを記述する構造体。
+ディスプレイミニポートドライバーは、ビデオメモリマネージャーがドライバーの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数を呼び出したときに、ビデオメモリマネージャーによって使用されることが推奨されるメモリセグメントに関する情報を指定して返します。 *DxgkDdiCreateAllocation*の呼び出しでは、ドライバーはビデオリソースの割り当てを作成します。 ドライバーは、割り当てを記述する[**DXGK\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当て情報の構造体でサポートされているセグメントとセグメントの設定の識別子を返します。
 
-返されるセグメントの情報からは、ビデオ メモリ マネージャーは、指定された操作のページで、適切なメモリ セグメントを決定します。
+ビデオメモリマネージャーは、返されたセグメント情報から、指定された操作のための適切なメモリセグメントを特定のページに配置します。
 
  
 

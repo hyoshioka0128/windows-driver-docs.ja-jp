@@ -10,12 +10,12 @@ keywords:
 - Intel High Definition Audio 仕様
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 578a3b3c419359223b7be49dfec6a20a349c8716
-ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
+ms.openlocfilehash: ad7e057ccee87c58901696d32b17a04897083d06
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319920"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831165"
 ---
 # <a name="high-definition-audio-ddi"></a>High Definition Audio DDI
 
@@ -32,17 +32,17 @@ Hd オーディオバスドライバーは、hd audio device driver interface (D
 
 Windows Server 2003 および Windows XP で実行されている HD オーディオバスドライバーのバージョンでは、3種類の HD audio DDI がサポートされています。
 
--   [**Hdaudio\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造によって定義される DDI。 この DDI は、Windows Vista の HD Audio DDI と同じです。
+-   [**Hdaudio\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造によって定義される DDI。 この DDI は、Windows Vista の HD Audio DDI と同じです。
 
--   [**Hdaudio\_BUS\_INTERFACEV2構造体で定義されているDDI。\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) この DDI は、Windows Vista 以降のバージョンの Windows で使用できます。
+-   [**Hdaudio\_BUS\_INTERFACE\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)構造体で定義されている DDI。 この DDI は、Windows Vista 以降のバージョンの Windows で使用できます。
 
--   [**Hdaudio\_BUS\_インターフェイスのbdl構造によって定義されるDDI。\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl) この DDI は、windows XP 以降のバージョンの Windows で使用できます。
+-   [**Hdaudio\_BUS\_インターフェイス\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造体で定義されている DDI。 この DDI は、windows XP 以降のバージョンの Windows で使用できます。
 
 3つの DDIs の違いは軽微であり、 [HD AUDIO DDI のバージョンの違い](differences-between-the-hd-audio-ddi-versions.md)について説明しています。
 
-Windows Vista では、HD オーディオバスドライバーは、hdaudio\_bus\_インターフェイスと hdaudio\_bus\_interface\_V2 構造体で定義されている DDI をサポートしています。
+Windows Vista では、HD オーディオバスドライバーは、HDAUDIO\_BUS\_インターフェイスおよび HDAUDIO\_バス\_インターフェイス\_V2 構造体で定義されている DDI をサポートしています。
 
-Windows Vista、windows Server 2003、および windows XP では、uaa クラスドライバーは、hdaudio\_BUS\_インターフェイス構造によって定義された DDI を使用して、uaa 準拠のオーディオコーデックを管理します。 また、ハードウェアベンダーは、これらの DDIs のいずれかまたは両方を使用するカスタムデバイスドライバーを作成して、オーディオとモデムのコーデックを管理することもできます。
+Windows Vista、Windows Server 2003、および Windows XP では、UAA クラスドライバーは、HDAUDIO\_BUS\_インターフェイス構造によって定義された DDI を使用して、UAA 準拠のオーディオコーデックを管理します。 また、ハードウェアベンダーは、これらの DDIs のいずれかまたは両方を使用するカスタムデバイスドライバーを作成して、オーディオとモデムのコーデックを管理することもできます。
 
 ハードウェアベンダーは、UAA ハードウェア要件ドキュメント (公開対象) に準拠するようにオーディオコーデックを設計する必要があります。 ベンダーのカスタムオーディオドライバーが存在しない場合、ユーザーは、システムによって提供される UAA HD オーディオクラスドライバーを利用して、UAA 準拠のオーディオコーデックを管理できます。 ただし、オーディオコーデックには、ベンダーのカスタムドライバーを通じてのみアクセスできる独自の機能が含まれている場合があります。
 

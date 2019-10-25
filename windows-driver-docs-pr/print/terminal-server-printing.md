@@ -3,16 +3,16 @@ title: ターミナル サーバーの印刷
 description: ターミナル サーバーの印刷
 ms.assetid: 627d05f6-1499-4645-ad9a-b1a09f41b0c9
 keywords:
-- プリンター ドライバー WDK、ターミナル サーバー
-- ターミナル サーバーの WDK の印刷
+- プリンタードライバー WDK、ターミナルサーバー
+- ターミナルサーバー印刷 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74cb02a357bacca18ee00d08559d9a1b339db193
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f81a0ce66f484174f263796ed538e092b9a00d6b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372360"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838781"
 ---
 # <a name="terminal-server-printing"></a>ターミナル サーバーの印刷
 
@@ -20,13 +20,13 @@ ms.locfileid: "67372360"
 
 
 
-Microsoft Windows 2000 以降では、ターミナル サービスを 1 台のサーバー システムに接続する複数のユーザーをできるようにするテクノロジをサポートします。 このサーバーのシステムには、ターミナル サーバーは呼び出されます。 ターミナル サービスの詳細については、Windows SDK のドキュメントを参照してください。
+Microsoft Windows 2000 以降では、複数のユーザーが単一のサーバーシステムに接続できるようにするテクノロジであるターミナルサービスがサポートされています。 このサーバーシステムは、ターミナルサーバーと呼ばれます。 ターミナルサービスの詳細については、Windows SDK のドキュメントを参照してください。
 
-プリンター ミニドライバーまたは Windows 2000 またはそれ以降のドライバーを開発している場合は、ターミナル サーバーに接続されているプリンターをサポートするために特別な処理を実行する必要はありません。 ただし、Windows Driver Kit (WDK) で指定されたすべての設計、実装、およびインストールのガイドラインに従う必要があります。 具体的には、次の規則を使用する必要があります。
+Windows 2000 以降のプリンターミニドライバーまたはドライバーを開発している場合は、ターミナルサーバーに接続されているプリンターをサポートするために特別な操作を行う必要はありません。 ただし、Windows Driver Kit (WDK) に指定されているすべての設計、実装、およびインストールのガイドラインに従う必要があります。 具体的には、次の規則を使用する必要があります。
 
--   可能であれば、次の Microsoft 提供のドライバーのいずれかで動作するミニドライバーを用意するだけで、プリンターをサポートしてください。
+-   可能であれば、次の Microsoft 提供のドライバーのいずれかで動作するミニドライバーを提供するだけで、プリンターをサポートします。
 
-    [Microsoft XPS プリンター ドライバー](xpsdrv-printer-driver.md)
+    [Microsoft XPS プリンタードライバー](xpsdrv-printer-driver.md)
 
     [Microsoft ユニバーサル プリンター ドライバー](microsoft-universal-printer-driver.md)
 
@@ -34,48 +34,48 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
 
     [Microsoft プロッター ドライバー](microsoft-plotter-driver.md)
 
--   Windows Vista では、プリンター グラフィックス ユーザー モードで実行するための DLL を設計する必要があります。 参照してください[ユーザー モードまたはカーネル モードの選択](choosing-user-mode-or-kernel-mode.md)します。
+-   Windows Vista では、ユーザーモードで実行するようにプリンターグラフィックス DLL を設計する必要があります。 「[ユーザーモードまたはカーネルモードの選択](choosing-user-mode-or-kernel-mode.md)」を参照してください。
 
--   デバイスは、カスタム ドライバーによってサポートされている必要がある場合に、ドライバーが Microsoft's に正確に従う必要があります[プリンター ドライバーのアーキテクチャ](printer-driver-architecture.md)します。 具体的には、次のとおりです。
-    1.  作成する必要があります、[プリンター インターフェイス DLL](printer-interface-dll.md)します。
-    2.  作成する必要があります、[プリンター グラフィックス DLL](printer-graphics-dll.md)します。 この DLL は、ユーザー モードまたはカーネル モードのいずれかで実行できますが、ユーザー モードをお勧めします。
-    3.  カーネル モード コードを作成する場合を使用してコードをテストする必要があります[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
-    4.  」の説明に従って、セットアップ INF ファイルに基づくインストール手順を提供する必要があります[のインストールと構成のプリンター ドライバー](installing-and-configuring-printer-drivers.md)します。
+-   デバイスがカスタムドライバーでサポートされている必要がある場合は、ドライバーが Microsoft の[プリンタードライバーのアーキテクチャ](printer-driver-architecture.md)に厳密に準拠している必要があります。 具体的には、次のとおりです。
+    1.  [プリンターインターフェイス DLL](printer-interface-dll.md)を作成する必要があります。
+    2.  [プリンターグラフィックス DLL](printer-graphics-dll.md)を作成する必要があります。 この DLL は、ユーザーモードまたはカーネルモードで実行できますが、ユーザーモードをお勧めします。
+    3.  カーネルモードコードを作成する場合は、[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)を使用してコードをテストする必要があります。
+    4.  「[プリンタードライバーのインストールと構成](installing-and-configuring-printer-drivers.md)」で説明されているように、セットアップの INF ファイルに基づいてインストール手順を指定する必要があります。
 
-すべてのカスタム ドライバー コードは、再入可能である必要があります。 ユーザー モードのコードでは、クリティカル セクション オブジェクトの (Windows SDK のドキュメントで説明) を使用する必要があります。 カーネル モード コードは、セマフォを使用する必要があります (を参照してください[ **EngCreateSemaphore** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatesemaphore)および関連する関数)。
+すべてのカスタムドライバーコードは再入可能である必要があります。 ユーザーモードのコードでは、重要なセクションオブジェクト (Windows SDK のドキュメントで説明) を使用する必要があります。 カーネルモードのコードでは、セマフォを使用する必要があります (「 [**EngCreateSemaphore**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatesemaphore) and related functions」を参照してください)。
 
-プリンター ドライバーとカスタム スプーラー コンポーネントする必要がありますレジストリへのアクセス、これらのドライバーとスプーラー コンポーネントの場合は、専用のインターフェイスを介してのみ、WDK の適切なセクションで説明します。
+プリンタードライバーおよびカスタムスプーラコンポーネントは、WDK の該当するセクションで説明されているように、これらのドライバーおよびスプーラコンポーネント専用のインターフェイスを介してのみレジストリにアクセスする必要があります。
 
 ### <a name="installation-considerations"></a>インストールに関する考慮事項
 
-ユーザーが呼び出すときに、Microsoft のプリンター クラスのインストーラーによって読み取ることができる INF ファイルを指定のインストールを行う必要があるすべては、通常、**プリンターの追加**ウィザード。 場合によっては、カスタム セットアップ コード (共同インストーラーまたはクラスのインストーラー) はも必要です。 カスタム セットアップ コードを作成する必要がある場合、次に注意してください。
+通常、インストールに必要なのは、ユーザーが**プリンターの追加**ウィザードを起動したときに Microsoft のプリンタークラスインストーラーが読み取ることができる INF ファイルです。 カスタムセットアップコード (共同インストーラーまたはクラスインストーラー) も必要になる場合があります。 カスタムセットアップコードを作成する必要がある場合は、次の点に注意してください。
 
--   ユーザーまたはセットアップ コードは、ターミナル サーバーをインストール モードに切り替える必要があります。 (詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
+-   ユーザーまたはセットアップコードがターミナルサーバーをインストールモードにする必要があります。 (詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
 
--   システム ファイルを置換しようとしないでください。 Windows ファイル保護には、システム ファイルの置換が禁止されています。
+-   システムファイルの置換を試行しないでください。 Windows ファイル保護では、システムファイルの置換が禁止されています。
 
--   可能な限りシステムの再起動を要求しないでください。 次のガイドラインに従ってください。
-    1.  ドライバー ファイルが変更されていないことを置き換えないでください。 たとえば、いくつかのデバイスで共有されるファイルは、最新バージョンが既にインストールされている場合にいない更新する必要があります。
-    2.  ファイルを置き換える必要がある場合、セットアップ コードは、古いバージョンをアンロードし、(たとえば、サービスを再起動し、ファイルを置き換える、ドライバー サービスを停止する) を新しいバージョンを読み込む手順を実行する必要があります。
-    3.  再記録オフ ログオンするユーザーを要求するには、はシステムの再起動を必要とすることをお勧めします。
+-   システムの再起動をできるだけ避けてください。 次のガイドラインに従ってください。
+    1.  変更されていないドライバーファイルは置き換えないでください。 たとえば、最新バージョンが既にインストールされている場合、複数のデバイスで共有されているファイルを更新することはできません。
+    2.  ファイルを置き換える必要がある場合は、セットアップコードで古いバージョンをアンロードしてから新しいバージョンを読み込む必要があります (たとえば、ドライバーサービスを停止し、ファイルを置き換え、サービスを再起動します)。
+    3.  システムの再起動を必要とする場合は、ユーザーがログオフしてから再度ログオンする必要があります。
 
-共同インストーラーとクラスのインストーラーの詳細については、次を参照してください。[クラスのインストーラーを執筆および共同インストーラー](https://docs.microsoft.com/windows-hardware/drivers/install/writing-class-installers-and-co-installers)します。
+共同インストーラーとクラスインストーラーの詳細については、「[クラスインストーラーと共同インストーラーの記述](https://docs.microsoft.com/windows-hardware/drivers/install/writing-class-installers-and-co-installers)」を参照してください。
 
-**注**  カスタム セットアップ コードを記述する前に、Windows SDK のドキュメントで説明するガイドラインをプログラミングするターミナル サービスを読み取る必要があります。
+**メモ**   カスタムセットアップコードを記述する前に、Windows SDK のドキュメントに記載されているターミナルサービスのプログラミングガイドラインを読むことが重要です。
 
  
 
-### <a name="user-interface-considerations"></a>ユーザー インターフェイスに関する考慮事項
+### <a name="user-interface-considerations"></a>ユーザーインターフェイスに関する考慮事項
 
-ユーザーによって実行されるカスタム セットアップ コードは、ユーザー インターフェイスを表示できます。
+ユーザーが実行するカスタムセットアップコードでは、ユーザーインターフェイスを表示できます。
 
-ほぼすべてのプリンター ドライバーのコードでは、スプーラーの実行コンテキストで実行され、そのため、ユーザー インターフェイスを表示することはできません。 プリンター インターフェイス Dll、およびのみ内からのみ、ユーザー インターフェイスが表示されることができます、次の機能。
+ほとんどすべてのプリンタドライバコードはスプーラの実行コンテキストで実行されるため、ユーザーインターフェイスを表示することはできません。 ユーザーインターフェイスを表示できるのは、プリンターインターフェイス Dll だけで、次の関数の中からだけです。
 
--   [ **DrvDevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicepropertysheets)と[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)関数で、プロパティ ページを作成します。
+-   [**DrvDevicePropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)関数と[**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。プロパティページを作成します。
 
--   [ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数で、プリンターのイベントを識別するイベント コードを受信します。 関数が、プリンターに対してのみユーザー インターフェイスを表示できます\_イベント\_追加\_接続とプリンターの\_イベント\_削除\_イベント コードを接続します。
+-   [**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)関数。プリンターイベントを識別するイベントコードを受け取ります。 関数は、PRINTER\_イベントに対してのみユーザーインターフェイスを表示できることに注意してください\_接続とプリンターの\_イベント\_追加して\_接続イベントコードを削除します。
 
-その他のすべてのプリンター ドライバーのコードは、スプーラーのコンテキストで実行します。 このコンテキストから呼び出し**メッセージ ボックス**または**MessageBoxEx**が許可されている MB に設定する必要がありますが、\_サービス\_通知。 これらの関数は、Windows SDK のドキュメントで説明します。
+その他のすべてのプリンタードライバーコードは、スプーラのコンテキストで実行されます。 このコンテキストでは、 **MessageBox**または**messageboxex**を呼び出すことができますが、MB\_サービス\_通知を設定する必要があります。 これらの関数については、Windows SDK のドキュメントを参照してください。
 
  
 

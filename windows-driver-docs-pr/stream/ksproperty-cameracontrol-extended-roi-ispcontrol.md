@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL プロパティ ID、KSPROPERTY で定義されている\_CAMERACONTROL\_拡張\_プロパティ列挙は、取得または ROI 設定を構成し、目的の処理の適用に使用されます。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL
+description: KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL に定義されている ISPCONTROL プロパティ ID\_CAMERACONTROL\_拡張\_プロパティ列挙を使用して、ROI 設定を取得または構成します。必要な処理を適用します。
 ms.assetid: 47F6C327-3279-44C2-9B18-50E6EC9C5E77
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_ISPCONTROL ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_ISPCONTROL ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd09ba9f2267d5a5e78493eff0b4ae42aa35715
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b8e79ec63ea37191d1038c9498e18bf0725a140
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351850"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823954"
 ---
-# <a name="kspropertycameracontrolextendedroiispcontrol"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL
+# <a name="ksproperty_cameracontrol_extended_roi_ispcontrol"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)を取得または ROI 設定を構成して、目的の処理を適用する列挙を使用します。
+**Ksk プロパティ\_CAMERACONTROL\_拡張\_ROI\_ispcontrol**に定義されている ISPCONTROL プロパティ ID [ **\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙を使用して、またはを取得します。ROI 設定を構成し、必要な処理を適用します。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,37 +35,37 @@ ms.locfileid: "63351850"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン 1</p></td>
 <td><p>フィルター</p></td>
-<td><p>非同期のキャンセル</p></td>
+<td><p>非同期、キャンセル可能</p></td>
 </tr>
 </tbody>
 </table>
 
-ドライバーから現在の ROI 設定を取得または ROI 設定を構成し、目的の処理 (3As) を適用する、 **KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL**拡張プロパティのコントロールを標準と共にドライバーに送信[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 続く構造体[**KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROLHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrolheader)構造が続く、 [ **KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrol)構造体とし、1 つ以上の対応する ISP の特定のコントロールのペイロード構造。 次の一覧は、1 つのフォーカス ROI と Roi の 2 つの公開データ構造体のレイアウトを示しています。
+現在の ROI 設定をドライバーから取得するか、ROI 設定を構成して必要な処理 (3As) を適用するには、 **Ksk プロパティ\_CAMERACONTROL\_extended\_ROI\_ISPCONTROL**拡張プロパティコントロールがに送信されます。ドライバーと共に、標準の[**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と共に、 [**KSCAMERA\_EXTENDEDPROP\_ROI\_ispcontrolheader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrolheader)構造体の後に[**KSCAMERA\_EXTENDEDPROP は、\_ISPCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrol)構造を\_し、次に1つ以上の対応する ISP 固有のコントロールペイロード構造を指定します。 次の一覧は、1つのフォーカス ROI と2つの露出 ROIs を持つデータ構造のレイアウトを示しています。
 
 -   **KSCAMERA\_EXTENDEDPROP\_ヘッダー**
 
 -   **KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROLHEADER**
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL** (フォーカス設定)
+-   **KSCAMERA\_EXTENDEDPROP の\_ROI\_ISPCONTROL** (フォーカス)
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_フォーカス**
+-   **KSCAMERA\_EXTENDEDPROP\_ROI\_焦点**
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL** (2 Roi による公開)
+-   **KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL** (2 つの ROIs で公開)
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_露出**(ROI 1)
+-   **KSCAMERA\_EXTENDEDPROP\_roi\_露出**(roi 1)
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_露出**(ROI 2)
+-   **KSCAMERA\_EXTENDEDPROP\_roi\_露出**(roi 2)
 
-次の表には、説明と要件が含まれています、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー**フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_ISPCONTROL**拡張、ROI コントロールのプロパティ。
+次の表には、Ksk プロパティ\_CAMERACONTROL\_拡張\_の ROI\_ISPCONTROL を使用する場合の**KSCAMERA\_EXTENDEDPROP\_ヘッダー**構造のフィールドの説明と要件が含まれています。拡張された ROI コントロールのプロパティ。
 
 <table>
 <colgroup>
@@ -74,35 +74,35 @@ ms.locfileid: "63351850"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1、</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これでなければなりません<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0 xffffffff)</p></td>
+<td><p>これは<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>最初の GET 呼び出し (設定の呼び出しがこれまで行われていない) 場合これあります sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER</strong>)。 さらに、ドライバーは、その ISO コントロールのヘッダーのペイロードで ControlCount 内の 0 を返す必要があります。</p>
-<p>その他の SET または GET 呼び出し、に対する sizeof があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ ROI_ISPCONTROLHEADER</strong>) + ControlCount * sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_FOCUS</strong>) * ROICount(focus) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_EXPOSURE</strong>) * ROICount (露出) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_WHITEBALANCE</strong>) * ROICount(whitebalance) します。</p></td>
+<td><p>Size</p></td>
+<td><p>最初の GET 呼び出しの場合 (SET 呼び出しが行われていない場合) は、sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER</strong>) である必要があります。 さらに、ドライバーは、ISO コントロールヘッダーペイロードの ControlCount 内で0を返す必要があります。</p>
+<p>その他の SET または GET 呼び出しでは、sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<strong>KSCAMERA_EXTENDEDPROP_ ROI_ISPCONTROLHEADER</strong>) + Controlcount * sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_FOCUS</strong>) * ROICount (FOCUS) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_EXPOSURE</strong>) * ROICount (露出) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_WHITEBALANCE</strong>) * ROICount (ホワイトバランス)。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。 値 0 は、構成されているすべての ISP コントロールのエラーが検出されなかったことを示します。</p></td>
+<td><p>これは、最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。 値0は、構成されているすべての ISP コントロールでエラーが検出されなかったことを示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>ビットごとの OR の必要があります<strong>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCONTROL</strong>と<strong>KSCAMERA_EXTENDEDPROP_CAPS_CANCELLABLE</strong>します。</p></td>
+<td><p>これは、ビット単位または<strong>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCONTROL</strong>と<strong>KSCAMERA_EXTENDEDPROP_CAPS_CANCELLABLE</strong>である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは読み取り/書き込みフィールドがあります<strong>KSCAMERA_EXTENDEDPROP_FLAG_CANCELOPERATION</strong>セット呼び出し。 これは、GET 呼び出しの場合は 0 でなければなりません。</p></td>
+<td><p>これは読み取り/書き込みフィールドです。これは、SET 呼び出しの<strong>KSCAMERA_EXTENDEDPROP_FLAG_CANCELOPERATION</strong>である可能性があります。 GET 呼び出しの場合は、0である必要があります。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金
-description: KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能なフレーム レートを列挙します。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOCONTROL\_フレーム\_レート
+description: KSK プロパティ\_VIDEOCONTROL\_FRAME\_率プロパティは、使用可能なフレームレートを列挙します。 このプロパティは省略可能です。
 ms.assetid: f2b6fabc-c03b-4fa5-9e5b-43d7a1c26578
 keywords:
-- KSPROPERTY_VIDEOCONTROL_FRAME_RATES ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCONTROL_FRAME_RATES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfec663015f615077acea8bdac8f2c8a886864ce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 319d5dec3856aadd69eef5ae84d78a495737e503
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355927"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837873"
 ---
-# <a name="kspropertyvideocontrolframerates"></a>KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金
+# <a name="ksproperty_videocontrol_frame_rates"></a>KSK プロパティ\_VIDEOCONTROL\_フレーム\_レート
 
 
-KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能なフレーム レートを列挙します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOCONTROL\_FRAME\_率プロパティは、使用可能なフレームレートを列挙します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videocontrol_frame_rates_ks"></span><span id="DDK_KSPROPERTY_VIDEOCONTROL_FRAME_RATES_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,29 +50,29 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong> </a>配列</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>配列</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSMULTIPLE\_を 100 ナノ秒単位で使用可能なフレーム レートを記述する項目の配列。
+プロパティ値 (操作データ) は、100ナノ秒単位で使用可能なフレームレートを示す KSMULTIPLE\_ITEM 配列です。
 
 <a name="remarks"></a>注釈
 -------
 
-使用可能なフレーム レートが、KSMULTIPLE で返される\_アイテムの配列。 アプリケーションに送信、ミニドライバーを KSPROPERTY\_VIDEOCONTROL\_フレーム\_、KSPROPERTY でストリームのインデックスとイメージのサイズを指定するレート要求\_VIDEOCONTROL\_フレーム\_料金\_S 構造体。 ミニドライバーは、呼び出し元の KSMULTIPLE でフレーム レート情報を返します\_項目配列バッファー。 このバッファーは固定ヘッダー (KSMULTIPLE\_項目)、およびそれに続くデータの可変長の量 (、KSMULTIPLE の値に基づいて\_項目の構造)。
+使用可能なフレームレートは、KSMULTIPLE\_ITEM 配列に返されます。 アプリケーションは、ミニドライバー a KSK プロパティ\_VIDEOCONTROL\_フレーム\_レート要求を送信します。この要求は、KSK プロパティのストリームインデックスとイメージのサイズを指定し\_VIDEOCONTROL\_FRAME\_率\_S 構造体を指定します。 ミニドライバーは、呼び出し元の KSMULTIPLE\_ITEM 配列バッファーのフレームレート情報を返します。 このバッファーには固定ヘッダー (KSMULTIPLE\_ITEM) と、その後に続く可変長のデータ (KSK MULTIPLE\_ITEM 構造の値に基づく) があります。
 
-個々 の値では、100 nansecond 単位です。
+個々の値は、100 nansecond 単位で指定します。
 
-バッファーのサイズが渡された場合、ミニドライバーは、0、ようにミニドライバーに設定する必要があります、 **NumberOfBytesToTransfer**ハードウェア ベースのメンバー\_ストリーム\_要求\_に渡されるブロック構造、ミニドライバー バッファーのサイズが必要なし、状態を返す\_バッファー\_オーバーフローが発生します。
+ミニドライバーに渡されたバッファーのサイズが0の場合、ミニドライバーは、ミニドライバーに渡される要求\_ブロック構造体を、必要なバッファーのサイズに\_\_設定して、に渡すように、**に渡し**ます。バッファー\_オーバーフロー\_状態を返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,7 +83,7 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,9 +91,9 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s)
+[**KSK プロパティ\_VIDEOCONTROL\_フレーム\_レート\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_frame_rates_s)
 
  
 

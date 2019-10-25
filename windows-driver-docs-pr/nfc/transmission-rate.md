@@ -1,6 +1,6 @@
 ---
-title: NFP 転送速度
-description: 各プロバイダーの実装では、おおよその転送間隔を指定できます。
+title: NFP 転送率
+description: 各プロバイダーの実装では、おおよその伝送速度を指定できます。
 ms.assetid: 85E85DBA-8A88-4738-8B4E-A04F4A82808F
 keywords:
 - NFC
@@ -10,21 +10,21 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c72d8e08f0970fcaf72c87513b882251d583d84
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 041a8d169bb70702c7f881af208554118ee5d12f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829028"
 ---
-# <a name="nfp-transmission-rate"></a>NFP 転送速度
+# <a name="nfp-transmission-rate"></a>NFP 転送率
 
 
-各プロバイダーの実装では、おおよその転送間隔を指定できます。
+各プロバイダーの実装では、おおよその伝送速度を指定できます。
 
  
 ## <a name="related-topics"></a>関連トピック
-[IOCTL\_NFP\_GET\_KILO\_BYTES\_PER\_SECOND](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_kilo_bytes_per_second)  
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[IOCTL\_NFP\_\_秒あたり\_キロバイト\_バイトを取得する](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_kilo_bytes_per_second)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR
-description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の値に適用されるまでの距離係数を指定します。
+description: KSK プロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の値に適用する距離を指定します。
 ms.assetid: 38daa5d8-d70f-4484-bf5a-a9a365296313
 keywords:
-- KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR オーディオ デバイス
+- KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe6dfe30ade6190f2056c5a5f753533192a4458
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c445e8cb7ea20179faa3d665b3133e4a59d10f5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360550"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832814"
 ---
-# <a name="kspropertydirectsound3dlistenerdistancefactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR
+# <a name="ksproperty_directsound3dlistener_distancefactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR
 
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の値に適用されるまでの距離係数を指定します。
+KSK プロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の値に適用する距離を指定します。
 
 ## <span id="ddk_ksproperty_directsound3dlistener_distancefactor_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>FLOAT</p></td>
 </tr>
 </tbody>
@@ -61,24 +61,24 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の
 
  
 
-プロパティ値 (データの操作) は FLOAT 型の距離の係数を指定します。
+プロパティ値 (操作データ) は FLOAT 型で、距離係数を指定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-KSPROPSETID の距離\_DirectSound3DBuffer と KSPROPSETID\_DirectSound3DListener プロパティは、メーター距離係数時間の単位で表されます。
+KSPROPSETID\_DirectSound3DBuffer と kspropsetid SETID の距離、DirectSound3DListener プロパティは、距離係数のメートル単位で表現されます。
 
-既定では、距離の係数は 1、メートル単位で距離の単位はそのためです。 (また、ベロシティの既定の単位は 1 秒あたりのメートル数) です。
+既定では、距離係数は1で、距離はメートル単位で表されます。 (また、既定の速度単位は、1秒あたりのメーターです)。
 
-クライアントの距離単位を変更することができます、 **KSPROPSETID\_DirectSound3DBuffer**と**KSPROPSETID\_DirectSound3DListener** KSPROPERTYを送信することによってプロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティの設定要求さまざまな distance 係数を指定します。
+クライアントは、KSK プロパティ\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR を送信することで、 **kspropsetid\_DirectSound3DBuffer**と**kspropsetid\_DirectSound3DListener**プロパティの距離単位を変更できます。異なる距離係数を指定する set プロパティの要求です。
 
-DirectSound は、このプロパティを使用して、実装する、 **IDirectSound3DListener::GetDistanceFactor**と**IDirectSound3DListener::SetDistanceFactor**メソッドで、Microsoft に記載されていますWindows SDK のドキュメントです。
+DirectSound は、このプロパティを使用して**IDirectSound3DListener:: GetDistanceFactor**メソッドと**IDirectSound3DListener:: SetDistanceFactor**メソッドを実装します。これについては、Microsoft Windows SDK のドキュメントを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -89,15 +89,15 @@ DirectSound は、このプロパティを使用して、実装する、 **IDire
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

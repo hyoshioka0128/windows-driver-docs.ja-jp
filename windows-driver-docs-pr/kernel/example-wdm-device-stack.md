@@ -3,24 +3,24 @@ title: WDM デバイス スタックの例
 description: WDM デバイス スタックの例
 ms.assetid: 1128e098-9ef4-4bc3-aa09-74df3142fb11
 keywords:
-- デバイス履歴の WDK カーネル、例
-- ジョイスティック WDK デバイス スタック
-- 機能のデバイス オブジェクトの WDK カーネル
+- デバイススタック WDK カーネル、例
+- ジョイスティックの WDK デバイススタック
+- 機能デバイスオブジェクト WDK カーネル
 - FDO WDK カーネル
-- 物理デバイス オブジェクトの WDK カーネル
-- Pdo WDK カーネル
-- フィルター DOs WDK カーネル
-- USB ハブ デバイス スタック WDK カーネル
-- USB ホスト コント ローラー デバイス スタック WDK カーネル
-- PCI バス デバイス スタック WDK カーネル
+- 物理デバイスオブジェクト WDK カーネル
+- PDOs WDK カーネル
+- DOs WDK カーネルをフィルター処理する
+- USB ハブデバイススタックの WDK カーネル
+- USB ホストコントローラーデバイススタックの WDK カーネル
+- PCI バスデバイススタック WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a6322774673e9dea5a34c892054b96a25d0ab2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e125f85bf82705e8c961d625d447c10ddf608b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386629"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836729"
 ---
 # <a name="example-wdm-device-stack"></a>WDM デバイス スタックの例
 
@@ -28,53 +28,53 @@ ms.locfileid: "67386629"
 
 
 
-このセクションでは、可能な一連の WDM デバイス オブジェクトと階層化する方法を説明するために USB ハードウェアのドライバーによって作成されたデバイス オブジェクトについて説明します。
+ここでは、WDM デバイスオブジェクトとその階層化の方法を示すために、USB ハードウェア用の一連のドライバーによって作成されるデバイスオブジェクトについて説明します。
 
-次の図で説明されているサンプル ドライバーによって作成されたデバイス オブジェクト[WDM ドライバー レイヤー。たとえば](wdm-driver-layers---an-example.md)します。
+次の図は、「 [WDM ドライバーレイヤー: 例](wdm-driver-layers---an-example.md)」で説明されているサンプルドライバーによって作成されたデバイスオブジェクトを示しています。
 
-![usb ジョイスティックのサンプル wdm デバイス オブジェクト レイヤーを示す図](images/joydobj.png)
+![usb ジョイスティックのサンプルの wdm デバイスオブジェクトレイヤーを示す図](images/joydobj.png)
 
-この図の下部にある以降は、サンプル デバイス スタックでデバイス オブジェクトが含まれます。
+この図の下部から、デバイスのサンプルスタックには次のオブジェクトが含まれています。
 
-1.  PDO の PCI バス FDO.
+1.  PCI バスの PDO と FDO。
 
-    ルートのバス ドライバーでは、内部システム バス (ルート バス) を列挙し、見つかった各デバイスの PDO を作成します。 これらの Pdo の 1 つは、PCI バスです。 (PDO とルート bus FDO は表示されません図。)
+    ルートバスドライバーは、内部システムバス (ルートバス) を列挙し、検出された各デバイスの PDO を作成します。 これらの PDOs の1つは PCI バス用です。 (ルートバスの PDO と FDO は、図には示されていません)。
 
-    PnP マネージャーは、PCI バスの機能のドライバーには (これはまだ読み込まれていない) 場合、ドライバーが読み込まれる PCI ドライバを識別し、PCI ドライバーの PDO を渡します。 その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、PCI バス FDO は PCI ドライバに作成します ([**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)) し、デバイスに、FDO をアタッチします。スタック ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)) PCI バス。 PCI ドライバは、作成し、PCI バスの機能のドライバーとしての役割の一部としてこの FDO をアタッチします。
+    PnP マネージャは pci ドライバを PCI バスのファンクションドライバとして識別し、ドライバを読み込んで (まだ読み込まれていない場合)、PDO を PCI ドライバに渡します。 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンでは、pci ドライバーは pci バス ([**IOCREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) の FDO を作成し、pci バスのデバイススタック ([**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)) に FDO を関連付けます。 Pci ドライバーは、PCI バスの関数ドライバーとして、この FDO を作成し、その役割の一部としてアタッチします。
 
-    この例では、PCI バスのフィルター ドライバーはありません。
+    この例では、PCI バス用のフィルタードライバーはありません。
 
-2.  PDO の USB ホスト コント ローラー FDO.
+2.  USB ホストコントローラーの PDO と FDO。
 
-    PnP マネージャーがそのデバイスを開始する PCI ドライバを指示 ([**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)) とその子の PCI ドライバをクエリ ([ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)の関係の種類と**BusRelations**)。 応答では、PCI ドライバは、そのバス上のデバイスを列挙します。 この例では、PCI ドライバは、USB ホスト コント ローラーを検索し、そのデバイス用の PDO を作成します。 幅の広い矢印の図には、USB ホスト コント ローラーが PCI バスの「子」であることを示します。 PCI ドライバは、PCI バスのバス ドライバー コンポーネントの役割の一部としてデバイス、その子の Pdo を作成します。
+    PnP マネージャは、PCI ドライバにデバイスを起動するように指示します (Irp\_によって[ **\_デバイスが起動さ\_開始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)されます)。次に、その子に対して pci ドライバにクエリを実行します ([**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations) 、\_デバイス\_の関係**Busrelations**の関係の種類。 応答として、PCI ドライバーはバス上のデバイスを列挙します。 この例では、PCI ドライバーが USB ホストコントローラーを検出し、そのデバイス用の PDO を作成します。 図の幅の広い矢印は、USB ホストコントローラーが PCI バスの "子" であることを示しています。 PCI ドライバーは、PCI バスのバスドライバーとしての役割の一部として、その子デバイスの PDOs を作成します。
 
-    PnP マネージャーでは、関数のドライバーを USB ホスト コント ローラーとして、USB ホスト コント ローラー miniclass/クラス ドライバーのペアを識別し、ドライバーのペアを読み込みます。 PnP マネージャーでは、作成して FDO の USB ホスト コント ローラーを接続する適切なタイミングでドライバーのペアを呼び出します。
+    PnP マネージャーは、usb ホストコントローラーの miniclass/クラスドライバーペアを USB ホストコントローラーの関数ドライバーとして識別し、ドライバーのペアを読み込みます。 PnP マネージャーは、適切なタイミングでドライバーペアを呼び出して、USB ホストコントローラーの FDO を作成して接続します。
 
-    この例では、USB ホスト コント ローラーのフィルター ドライバーはありません。
+    この例では、USB ホストコントローラー用のフィルタードライバーはありません。
 
-3.  PDO の USB ハブ FDO.
+3.  USB ハブの PDO と FDO。
 
-    USB ホスト コント ローラーは、バスを列挙、唯一のポートに USB ハブを検索し、ハブの PDO を作成します。 USB ハブのドライバーでは、作成し、ハブの FDO をアタッチします。
+    USB ホストコントローラーは、そのバスを列挙し、唯一のポートで USB ハブを特定し、ハブ用の PDO を作成します。 USB ハブドライバーは、ハブの FDO を作成して接続します。
 
-    この例では、USB ハブ用のフィルター ドライバーはありません。
+    この例では、USB ハブ用のフィルタードライバーはありません。
 
-4.  PDO、FDO、および 2 つは、DOs ジョイスティック デバイスのフィルター処理します。
+4.  ジョイスティックデバイス用の PDO、FDO、および2つのフィルター DOs。
 
-    USB ハブのドライバーは、そのバスを列挙、HID デバイス (ジョイスティック) を検索し、ジョイスティックの PDO を作成します。
+    USB ハブドライバーは、バスを列挙し、HID デバイス (ジョイスティック) を特定して、ジョイスティック用の PDO を作成します。
 
-    この例では、下位レベルのフィルター ドライバーが設定されてジョイスティックのデバイス用にレジストリで、PnP マネージャーが、フィルター ドライバーを読み込むように。 フィルター ドライバーと判断がデバイスに関連して作成し、デバイス スタックにはフィルターをアタッチします。
+    この例では、ジョイスティックデバイスの下位レベルのフィルタードライバーがレジストリに設定されているため、PnP マネージャーはフィルタードライバーを読み込みます。 フィルタードライバーは、デバイスに関連するものと判断し、デバイススタックに対してフィルター処理を作成してアタッチします。
 
-    PnP マネージャーでは、ジョイスティックのデバイスの機能のドライバーは HID クラス/miniclass ドライバーのペアは、し、それらのドライバーを読み込みますを決定します。 ドライバーのペアから成るクラス ドライバー DLL にリンクされている miniclass ドライバーまとめて、デバイスの 1 つの関数ドライバーとして機能します。 クラス/miniclass ドライバーのペアは、FDO、1 つのデバイス オブジェクトを作成し、デバイス スタックに結び付けます。
+    PnP マネージャーは、ジョイスティックデバイスの関数ドライバーが HID class/miniclass ドライバーのペアであることを判断し、それらのドライバーを読み込みます。 ドライバーのペアは、クラスドライバーの DLL にリンクされている miniclass ドライバーで構成されます。同時に、デバイスの1つの関数ドライバーとして機能します。 クラス/miniclass ドライバーのペアは、1つのデバイスオブジェクトと FDO を作成し、デバイススタックにアタッチします。
 
-    上位レベルのフィルター ドライバーは、作成し、下位レベルのフィルターと同様の方法で、デバイス スタックにフィルター操作を結び付けます。
+    上位レベルのフィルタードライバーは、下位レベルのフィルターと同様の方法で、フィルターを作成してデバイススタックにアタッチします。
 
-親のバス ドライバーによって作成された PDO は常に特定のデバイスのデバイス スタックの下部にあることに注意してください。 ドライバーの PnP 処理ときに、または電源 Irp、デバイス スタックの一番下には、各 IRP PDO とその関連付けられているバス ドライバーに渡す必要があります。
+親バスドライバーによって作成される PDO は、常に特定のデバイスのデバイススタックの一番下にあることに注意してください。 ドライバーが PnP または電源 Irp を処理するときは、各 IRP を、デバイススタックから PDO および関連付けられているバスドライバーに渡す必要があります。
 
-次の図は、前の図と同じデバイス スタックを示していますが、デバイス オブジェクトが作成され、どのドライバーによって管理される強調されています。
+次の図は、前の図と同じデバイススタックを示していますが、どのデバイスオブジェクトがどのドライバーによって作成および管理されているかを強調しています。
 
-![ドライバーの観点からのサンプル デバイス オブジェクト レイヤーを示す図](images/joydobj2.png)
+![ドライバーの観点から見たサンプルデバイスオブジェクトレイヤーを示す図](images/joydobj2.png)
 
-バス ドライバーでは、1 つ以上のデバイス スタックにまたがります。 バス ドライバーでは、そのバス アダプタ/コント ローラーの FDO を作成し、デバイスごとの子の PDO を作成します。
+バスドライバーが複数のデバイススタックにまたがっています。 バスドライバーは、バスアダプター/コントローラーの FDO を作成し、その子デバイスごとに PDO を作成します。
 
  
 

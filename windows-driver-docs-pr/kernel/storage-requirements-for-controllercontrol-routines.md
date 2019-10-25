@@ -3,18 +3,18 @@ title: ControllerControl ルーチンの記憶域の要件
 description: ControllerControl ルーチンの記憶域の要件
 ms.assetid: 1ee69144-5f52-4d61-ad30-02e8fbe1f91e
 keywords:
-- コント ローラー オブジェクトの WDK カーネル、ControllerControl ルーチンを記述
-- 書き込みの ControllerControl ルーチン
-- ControllerControl ルーチンでは、ストレージ
-- ストレージの WDK コント ローラーのオブジェクト
+- コントローラーオブジェクト WDK カーネル、コントローラー制御ルーチンの記述
+- コントローラー制御ルーチン、書き込み
+- コントローラーコントロールルーチン、ストレージ
+- storage WDK コントローラーオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a7a545b209d7e1717ca00123207e1991602ae3c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7eb446fb89b492040f49a6660d92ff274e6a824d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382986"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838403"
 ---
 # <a name="storage-requirements-for-controllercontrol-routines"></a>ControllerControl ルーチンの記憶域の要件
 
@@ -22,13 +22,13 @@ ms.locfileid: "67382986"
 
 
 
-ある場合、 *ControllerControl* 、日常的な非 WDM ドライバーはの常駐記憶域を提供する必要があります、 *ControllerObject*によって返されたポインター [ **IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller).
+*コントローラーに制御*ルーチンがある場合、WDM 以外のドライバーは、 [**IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatecontroller)によって返される*コントローラーオブジェクト*ポインターの常駐ストレージを提供する必要があります。
 
-ドライバーは、デバイスの拡張機能またはドライバーによって割り当てられた非ページ プールのために必要な記憶域を提供できます。 通常、コント ローラーのオブジェクトを使用するドライバー、保存、 *ControllerObject*各コント ローラーによって表されるハードウェアによって制御される論理または物理デバイスを表すデバイス オブジェクトの拡張機能でデバイスのポインターオブジェクト。
+ドライバーは、デバイス拡張機能またはドライバーによって割り当てられた非ページプールで、必要な記憶域を提供できます。 通常、コントローラーオブジェクトを使用するドライバーは、コントローラーオブジェクトによって表されるハードウェアによって制御される物理デバイスまたは論理デバイスを表すデバイスの拡張機能*に、コントローラー*オブジェクトを格納します。
 
-ドライバーの作成者は、サイズとの内部構造を決定、 *ControllerObject*-&gt;**ControllerExtension**します。
+ドライバーライターは、*コントローラー*-&gt;**コントローラー拡張機能**のサイズと内部構造を決定します。
 
-できないと、名前を指定する、コント ローラー オブジェクトは、I/O 要求のターゲットにすることはできません。 表す、通常はハードウェアでは、一連の I/O 要求の実際の対象となっている同種のデバイスを制御します。
+名前を指定できないコントローラーオブジェクトは、i/o 要求のターゲットにすることはできません。 このようなハードウェアは通常、i/o 要求の実際のターゲットである同種のデバイスのセットを制御します。
 
  
 

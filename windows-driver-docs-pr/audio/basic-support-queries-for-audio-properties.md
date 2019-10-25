@@ -3,20 +3,20 @@ title: オーディオのプロパティに対してサポートされる基本�
 description: オーディオのプロパティに対してサポートされる基本的なクエリ
 ms.assetid: d08b6f86-e4fd-4b2c-bfaa-191bcbac3ff8
 keywords:
-- WDK、クエリが basic サポートのオーディオのプロパティ
-- WDM オーディオ プロパティ WDK、basic のサポート クエリ
-- basic - クエリ WDK オーディオをサポート
-- WDK オーディオのプロパティの設定
-- 有効な範囲の WDK オーディオ
-- 範囲値の WDK オーディオ
+- オーディオプロパティ WDK、基本サポートクエリ
+- WDM オーディオプロパティ WDK、基本サポートクエリ
+- basic-サポートクエリ WDK オーディオ
+- set プロパティ WDK audio
+- WDK audio の有効範囲
+- 範囲値 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f8495132bfbb8e048257f2dabfc28d023df19e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b64b6cffc67b018e8ba684f3e4375cc6e691ad5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355621"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831261"
 ---
 # <a name="basic-support-queries-for-audio-properties"></a>オーディオのプロパティに対してサポートされる基本的なクエリ
 
@@ -24,43 +24,43 @@ ms.locfileid: "67355621"
 ## <span id="basic_support_queries_for_audio_properties"></span><span id="BASIC_SUPPORT_QUERIES_FOR_AUDIO_PROPERTIES"></span>
 
 
-フィルター、pin、またはノードに対するプロパティの設定要求のデータを指定するときに、プロパティの指定された値の有効なデータ範囲を把握する頻繁に、クライアントが必要です。 範囲には、同じデバイスでデバイスからデバイス、およびノードでも、おそらくは異なります。
+フィルター、ピン、またはノードに対するプロパティの設定要求のデータを指定する場合、クライアントは、プロパティに対して指定された値または値の有効なデータ範囲を頻繁に認識する必要があります。 範囲はデバイスごとに異なり、場合によっては、同じデバイス内のノード間でも異なる可能性があります。
 
-一部のプロパティを定義して、プロパティの設定要求は範囲外の値を指定することができますが、ミニポート ドライバーがサイレント モードでサポートされている範囲をこれらの値をクランプ (たとえばを参照してください[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel))。 同じプロパティに対して後続の get 要求では、値または値で、クライアントが要求のセットで指定する値の固定されたバージョンがあります。 ドライバーの実際の設定を取得します。
+一部のプロパティは、セットプロパティの要求で範囲外の値を指定できるように定義されていますが、ミニポートドライバーは、これらの値をサポートされている範囲 (例: [**Ksk プロパティ\_AUDIO\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)) に自動的に固定します。 同じプロパティに対する後続の get 要求では、ドライバーの値の実際の設定が取得されます。これは、クライアントが設定要求で指定した値の固定バージョンである可能性があります。
 
-ただし、クライアントは、単に、範囲外の値を自動的にクランプするミニポート ドライバーに依存するのではなく、プロパティ値の範囲を把握する必要があります。 たとえば、オーディオ デバイスのボリューム コントロールのスライダーを表示するウィンドウを持つアプリケーションは、スライダーの長さに範囲をマップするために、デバイスのボリュームの範囲を把握する必要があります。
+ただし、クライアントは、単にミニポートドライバーに依存して範囲外の値を自動的にクランプするのではなく、プロパティ値の範囲を知る必要がある場合があります。 たとえば、オーディオデバイスのボリュームコントロールスライダーを表示するウィンドウアプリケーションでは、その範囲をスライダーの完全な長さにマップするために、デバイスのボリューム範囲を把握しておく必要がある場合があります。
 
-特定のプロパティ、ドライバーのハンドラー ルーチンは、範囲のプロパティの基本サポートの要求に応答の情報を提供できる必要があります (KSPROPERTY\_型\_BASICSUPPORT)。 クライアントはこれには、プロパティ ハンドラーはで構成される basic サポート情報を書き込みます値のバッファーを提供ドライバーに basic サポート プロパティ要求を送信するときに、 [ **KSPROPERTY\_の説明。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description)プロパティに固有のデータの後に指定する構造体。 このデータは通常、プロパティに応じて、1 つまたは複数のパラメーター範囲の仕様で構成されます。
+特定のプロパティのドライバーのハンドラールーチンは、基本サポートプロパティ要求 (KSK プロパティ\_型\_BASICSUPPORT) に応答して範囲情報を提供できる必要があります。 基本サポートプロパティ要求をドライバーに送信すると、クライアントは、プロパティハンドラーが基本サポート情報を書き込むための値バッファーを提供します。この情報は、次のように指定される[**Ksk プロパティ\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)構造体で構成されます。プロパティ固有のデータ。 このデータは、通常、プロパティに応じて1つ以上のパラメーター範囲の仕様で構成されます。
 
-一般に、クライアントは、この値のバッファーが事前にどれくらいあります把握していないと、値のサイズを決定するプロパティのハンドラーに 1 つまたは 2 つの準備要求を送信する必要があります。 これらの事前要求の形式が定義されています。 クライアントには、これらの規則に従う basic サポート要求を処理するときにドライバーが想定されます。
+一般に、クライアントはこの値バッファーの大きさを事前に把握しておらず、プロパティハンドラーに1つまたは2つの予備の要求を送信して値のサイズを決定する必要があります。 これらの暫定的な要求の形式は、適切に定義されています。 クライアントは、基本サポート要求を処理するときに、ドライバーが次の規則に従うことを想定しています。
 
--   要求と値のサイズを指定する場合**sizeof**(ULONG) し、プロパティ ハンドラーの値を書き込む必要があります、 **AccessFlags** 、KSPROPERTY のメンバー\_に構造を説明しますULONG サイズの値のバッファー。 ハンドラーの設定、KSPROPERTY\_型\_BASICSUPPORT フラグ ビットの場合は、では、さらに basic サポート プロパティ要求。
+-   要求で値のサイズが**sizeof**(ulong) として指定されている場合、プロパティハンドラーは、ksk プロパティ\_DESCRIPTION 構造体の**accessflags**メンバーの値を ulong サイズの値バッファーに書き込みます。 ハンドラーは、基本サポートのプロパティ要求をさらにサポートする場合に、\_型\_BASICSUPPORT flag bit を設定します。
 
--   要求と値のサイズを指定する場合**sizeof**(KSPROPERTY\_説明)、ハンドラーは、KSPROPERTY を記述する必要があります\_データ バッファーの構造を説明します。 ハンドラーのセット、 **DescriptionSize**構造体のサイズと、追加のプロパティに固有の情報のすべてのサイズと等しく、構造体のフィールド ハンドラーには、データ バッファーの次に読み込む構造体。 これは、クライアントは、プロパティの基本サポート情報の格納に割り当てる必要がある値のバッファーのサイズです。
+-   要求で値のサイズが**sizeof**(ksk プロパティ\_DESCRIPTION) として指定されている場合、ハンドラーは ksk プロパティ\_description 構造体をデータバッファーに書き込む必要があります。 このハンドラーは、構造体のサイズに、構造体の後のデータバッファーへの読み込みに使用できる追加のプロパティ固有の情報すべてのサイズに加えて、構造体の**descriptionsize**フィールドを設定します。 これは、プロパティの基本サポート情報を格納するためにクライアントが割り当てる必要がある値バッファーのサイズです。
 
--   要求が、両方の KSPROPERTY を格納するのに十分な大きさである値のサイズを指定する場合\_、ハンドラーが、KSPROPERTY を書き込む必要がありますの説明の構造とプロパティに固有の情報、\_説明の構造体の先頭にバッファー、また、KSPROPERTY の末尾に続くデータ バッファーの一部にプロパティに固有の情報を書き込む必要があります\_構造を定義します。 KSPROPERTY の書き込み中に\_説明構造体、ハンドラーを設定する必要があります、 **DescriptionSize**フィールドをその構造体のサイズ、構造に従ってプロパティに固有の情報のサイズの合計。
+-   要求で、KSK プロパティ\_DESCRIPTION 構造体とプロパティ固有の情報の両方を格納するのに十分な大きさの値が指定されている場合、ハンドラーは KSK プロパティ\_DESCRIPTION 構造体をバッファーの先頭に書き込む必要があります。また、プロパティ固有の情報は、KSK プロパティ\_DESCRIPTION 構造体の末尾に続くデータバッファーの部分に書き込む必要があります。 KSK プロパティ\_DESCRIPTION 構造体を書き込むときは、ハンドラーが**descriptionsize**フィールドにその構造体のサイズに加えて、構造体に続くプロパティ固有の情報のサイズを設定する必要があります。
 
-要求は、これら 3 つのケースのいずれかに一致しない値のサイズを指定する場合、プロパティ ハンドラーは要求は拒否され、ステータス コードの状態を返します\_バッファー\_すぎます\_小さい。
+この要求で、この3つのケースのいずれにも一致しない値のサイズが指定されている場合、プロパティハンドラーは要求を拒否し、ステータスコードの状態\_バッファー\_\_小さすぎます。
 
-プロパティに固有の情報をハンドラーが値のバッファーに書き込むには、プロパティ値のデータ範囲を含めることができます。 **MembersSize** KSPROPERTY のメンバー\_MEMBERSHEADER では、データの範囲が含まれるかどうかを示します。
+ハンドラーが値バッファーに書き込むプロパティ固有の情報には、プロパティ値のデータ範囲が含まれている場合があります。 KSK プロパティの**Memberssize**メンバー\_MEMBERSSIZE は、データ範囲が含まれているかどうかを示します。
 
--   **MembersSize**範囲が必要ない場合は 0。 これは、場合は、たとえば、プロパティの値は、BOOL 型の場合です。
+-   範囲が不要な場合、 **Memberssize**は0です。 たとえば、プロパティ値が BOOL 型の場合などです。
 
--   **MembersSize**が 0 でない場合、KSPROPERTY\_MEMBERSHEADER 構造体の 1 つまたは複数のプロパティ値の範囲の記述子が続きます。
+-   **Memberssize**\_MEMBERSSIZE 構造体の後に1つ以上のプロパティ値の範囲記述子が続いている場合は、0以外の値になります。
 
-、BOOL 型のプロパティの値の範囲の記述子は必要ありませんので、範囲は、値に暗黙的に限定**TRUE**と**FALSE**します。 ただし、整数型を持つプロパティ値の範囲を指定する範囲の記述子が必要です。
+ブール型のプロパティ値の場合、範囲は暗黙的に**TRUE**と**FALSE**の値に制限されるため、範囲記述子は必要ありません。 ただし、整数型のプロパティ値の範囲を指定するには、範囲記述子が必要です。
 
-たとえば、basic サポート要求を[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)ボリューム ノードのプロパティ ([**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) そのノードの最小値と最大のボリュームの設定を取得します。 この場合、クライアントは、次の構造を格納するのに十分な大きさである値のバッファーを割り当てることが必要です。
+たとえば、ボリュームノード ([**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) の[**KSK プロパティ\_AUDIO\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)プロパティに対する基本サポート要求では、そのノードの最小ボリューム設定と最大ボリューム設定が取得されます。 この場合、クライアントは、次の構造を格納するのに十分な大きさの値バッファーを割り当てる必要があります。
 
-[**KSPROPERTY\_の説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description)
+[**KSK プロパティ\_の説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)
 
-[**KSPROPERTY\_MEMBERSLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_memberslist)
+[**KSK プロパティ\_メンバーのプロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_memberslist)
 
-[**KSPROPERTY\_ステッピング\_長**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)
+[**KSK プロパティ\_ステップ実行\_長い**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)
 
-上記の一覧で示されている順序で、バッファー内の隣接する場所には、次の 3 つの構造がまとめられます。 ミニポート ドライバー書き込みますに最小値と最大のボリューム レベルで要求を処理する際、**境界**、KSPROPERTY のメンバー\_ステッピング\_時間構造体します。
+上記の一覧に示されている順序で、3つの構造体がバッファー内の隣接する位置にパックされます。 要求を処理するときに、ミニポートドライバーは、\_の長い構造体\_、KSK プロパティの**境界**メンバーに最小ボリュームレベルと最大ボリュームレベルを書き込みます。
 
-範囲の記述子の配列で basic サポート要求の例で図を参照してください。[マルチ チャネルのノードを公開する](exposing-multichannel-nodes.md)します。 Basic サポート プロパティ要求の詳細については、次を参照してください。 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。 コード例については、プロパティ ハンドラーの実装を参照してください、[オーディオ ドライバーのサンプル](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK)。
+範囲記述子の配列を使用した基本的なサポート要求の例については、「[マルチチャネルノードを公開](exposing-multichannel-nodes.md)する」の図を参照してください。 基本サポートのプロパティ要求の詳細については、「 [KS のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)」を参照してください。 コード例については、Microsoft Windows Driver Kit (WDK) の[サンプルオーディオドライバー](sample-audio-drivers.md)のプロパティハンドラーの実装に関する記述を参照してください。
 
  
 

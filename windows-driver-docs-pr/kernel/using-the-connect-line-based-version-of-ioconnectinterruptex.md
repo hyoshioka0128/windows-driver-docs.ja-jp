@@ -5,37 +5,37 @@ ms.assetid: 245be266-f76c-43f6-9ea7-2dc853b1d5e2
 keywords:
 - IoConnectInterruptEx
 - CONNECT_LINE_BASED
-- 行ベースの割り込み WDK カーネル
-- 割り込みを自動検出の WDK カーネル
+- 行ベースの割り込み (WDK カーネル)
+- 自動割り込み検出 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ed0fa2d386c3c9d30f8f6e0ceb28d4c4d4ace4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b11f541600ce432672b4dedb569f1e2d8b42505
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358185"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835867"
 ---
-# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>接続を使用して\_行\_IoConnectInterruptEx のベース バージョン
+# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>IoConnectInterruptEx の接続\_行\_ベースバージョンの使用
 
 
-Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_行\_ベース バージョンの[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 [ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)行ベースのドライバーの割り込みのルーチンです。 (以前のオペレーティング システム用のドライバーの接続を使用できる\_完全\_の指定されたバージョン**IoConnectInterruptEx**)。
+Windows Vista 以降のオペレーティングシステムでは、ドライバーは、接続\_ライン\_ベースバージョンの[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を使用して、ドライバーのラインベースの割り込みに[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)ルーチンを登録できます。 (以前のオペレーティングシステムのドライバーでは、接続\_\_指定されたバージョンの**IoConnectInterruptEx**を完全に使用できます)。
 
-**注**  すべての行ベースの割り込みの 1 つの割り込みサービス ルーチン (ISR) を登録するドライバーに対してだけ、このメソッドを使用することができます。 接続を使用する必要があります、ドライバーは、複数の割り込みを受け取ることが場合、\_完全\_の指定されたバージョン**IoConnectInterruptEx**します。
+この方法は、すべての行ベースの割り込みに対して1つの割り込みサービスルーチン (ISR) を登録するドライバーに対してのみ**使用   こと**ができます。 ドライバーが複数の割り込みを受信できる場合、指定されたバージョンの**IoConnectInterruptEx**\_完全に接続\_を使用する必要があります。
 
  
 
-ドライバーの接続の値を指定する\_行\_に基づくの*パラメーター*-&gt;**バージョン**のメンバーを使用して*パラメーター*-&gt;**LineBased**操作の他のパラメーターを指定します。
+ドライバーは&gt;**バージョン**-*パラメーター*に基づいて CONNECT\_LINE\_の値を指定し、*パラメーター*のメンバー-**linebased**を使用して、その他のパラメーターを指定します。運用
 
--   *パラメーター*-&gt;**LineBased.PhysicalDeviceObject**デバイスの物理デバイス オブジェクト (PDO) を指定する ISR サービス。 デバイス オブジェクトは、行ベースのデバイスの割り込みを自動的に識別するために使用されます。
+-   *パラメーター*-&gt;**Linebased. PHYSICALDEVICEOBJECT**は、ISR がサービスを使用するデバイスの物理デバイスオブジェクト (PDO) を指定します。 システムは、デバイスオブジェクトを使用して、デバイスの回線ベースの割り込みを自動的に識別します。
 
--   *パラメーター*-&gt;**LineBased.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター*- &gt; **LineBased**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター*-&gt;**Lineeroutine**は*InterruptService*ルーチンをポイントしますが、*パラメーター*-&gt;**linebased**です。**ServiceContext**は、システムが*ServiceContext*パラメーターとして*InterruptService*に渡す値を指定します。 ドライバーはこれを使用してコンテキスト情報を渡すことができます。 コンテキスト情報を渡す方法の詳細については、「 [ISR コンテキスト情報の提供](providing-isr-context-information.md)」を参照してください。
 
--   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター * **-&gt;LineBased.InterruptObject**します。 **IoConnectInterruptEx** ISR を削除するときに使用できると、割り込みの割り込みのオブジェクト をポイントするには、この変数を設定 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
+-   ドライバーは、* Parameters * **-&gt;LineBased. InterruptObject**の pkinterrupt 変数へのポインターを提供します。 **IoConnectInterruptEx**は、この変数を割り込みの interrupt オブジェクトを指すように設定します。これは、ISR を削除するときに使用できます。 詳細については、「 [ISR の削除](removing-an-isr.md)」を参照してください。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;LineBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーでは、必要に応じて、*パラメーター * * *-&gt;LineBased. スピン*ロックを指定できます。これは、システムが ISR と同期するときに使用します。 ほとんどのドライバーでは、 **NULL**を指定するだけで、ドライバーの代わりにスピンロックを割り当てることができます。 ISR との同期の詳細については、「[デバイスデータへのアクセスの同期](synchronizing-access-to-device-data.md)」を参照してください。
 
-次のコード例は、登録する方法を示します、 *InterruptService* CONNECT を使用してルーチン\_行\_ベース。
+次のコード例は、CONNECT\_LINE\_を使用して*InterruptService*ルーチンを登録する方法を示しています。
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

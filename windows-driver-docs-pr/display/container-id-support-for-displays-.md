@@ -1,73 +1,73 @@
 ---
 title: ディスプレイ用のコンテナー ID のサポート
-description: 表示またはモニターのデバイス内に埋め込まれたデバイスのビジュアル表現が表示されます - のコンテナー ID サポートについて説明します。
+description: 表示に対するコンテナー ID のサポートについて説明します。ディスプレイまたはモニターデバイスに埋め込まれているデバイスを視覚的に表現したものです。
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8e69a9d4f4b144ee561c4f080643e3d1f8d780
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 532a5f82f73183cecc9dad4634d99b92a5ba03a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356383"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839807"
 ---
 # <a name="container-id-support-for-displays"></a>ディスプレイ用のコンテナー ID のサポート
 
 
-このトピックでは、ディスプレイのコンテナーの ID のサポートを説明します: ディスプレイやモニターのデバイス内に埋め込まれたデバイスのビジュアル表現。
+このトピックでは、表示のためのコンテナー ID のサポートについて説明します。ディスプレイデバイスまたはモニターデバイスに埋め込まれているデバイスを視覚的に表現したものです。
 
 |                                                                                   |                                          |
 |-----------------------------------------------------------------------------------|------------------------------------------|
 | Windows Display Driver Model (WDDM) の最小バージョン                               | 1.2                                      |
 | Windows の最小バージョン                                                           | 8                                        |
-| ドライバーの実装: 完全なグラフィックスおよび表示のみ                              | 必須                                |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要件とテスト |  [モニター コンテナー ID の機能テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
+| ドライバーの実装—完全なグラフィックスと表示のみ                              | Mandatory                                |
+| [必要条件](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)とテスト |  [モニター コンテナー ID の機能テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
 
  
 
-## <a name="span-idcontaineriddevicedriverinterfaceddispanspan-idcontaineriddevicedriverinterfaceddispanspan-idcontaineriddevicedriverinterfaceddispancontainer-id-device-driver-interface-ddi"></a><span id="Container_ID_device_driver_interface__DDI_"></span><span id="container_id_device_driver_interface__ddi_"></span><span id="CONTAINER_ID_DEVICE_DRIVER_INTERFACE__DDI_"></span>コンテナー ID デバイス ドライバー インターフェイス (DDI)
+## <a name="span-idcontainer_id_device_driver_interface__ddi_spanspan-idcontainer_id_device_driver_interface__ddi_spanspan-idcontainer_id_device_driver_interface__ddi_spancontainer-id-device-driver-interface-ddi"></a><span id="Container_ID_device_driver_interface__DDI_"></span><span id="container_id_device_driver_interface__ddi_"></span><span id="CONTAINER_ID_DEVICE_DRIVER_INTERFACE__DDI_"></span>コンテナー ID device driver interface (DDI)
 
 
-ディスプレイ ミニポート ドライバーでは、この関数と構造体を実装します。
+ディスプレイミニポートドライバーで、次の関数と構造を実装します。
 
--   [*DxgkDdiGetChildContainerId*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_get_child_container_id)
--   [**DXGK\_子\_コンテナー\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_child_container_id)
+-   [*DxgkDdiGetChildContainerId*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_get_child_container_id)
+-   [**DXGK\_子\_コンテナー\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_container_id)
 
-## <a name="span-idcontaineriddescriptionspanspan-idcontaineriddescriptionspanspan-idcontaineriddescriptionspancontainer-id-description"></a><span id="Container_ID_description"></span><span id="container_id_description"></span><span id="CONTAINER_ID_DESCRIPTION"></span>コンテナー ID の説明
-
-
-モニターのデバイスの新しい機能では、優れたユーザー エクスペリエンスを提供できます。 具体的には、ユニバーサル シリアル バス (USB) ハブは人気のコネクタ モニター、マウスとキーボードを接続するためです。 また、HDMI などのコネクタをサポートして、オーディオとオーディオ スピーカーがものモニターに埋め込まれているためです。 新しい表示デバイスの多くは、タッチ機能をサポートします。 これは、ユーザーのデスクトップのワイヤの乱雑さを減らすことで優れたユーザー エクスペリエンスを提供します。
-
-直感的な方法でユーザーに接続し、これらのデバイスの状態を視覚的に表現に重要です。 **デバイスとプリンター**ページは Windows 7 で導入されました。 ここで示すように、**デバイスとプリンター**フォルダーを示しています、ユーザー、PC に接続されているインストールされているデバイス、プリンター、ミュージック プレーヤー、カメラ、マウス、またはデジタル画像 (少しだけ名前) を確認する簡単な方法を提供します。 同時に、このページは、すべてのドライバーを検出するユーザーを容易にできるようにハードウェアの同じ部分内に含まれるこれらのデバイスをグループ化します。
-
-![デバイスとプリンター フォルダーの視覚的表現](images/visualdevicesprintersfolder.jpg)
-
-Windows 7 のマイクロソフトとの概念が導入され、*コンテナー ID*デバイス:"システム提供のデバイスの識別文字列を単一関数または多機能に関連付けられている機能のデバイスを一意にグループ化デバイス、コンピューターにインストールします。" (を参照してください[コンテナー Id](https://go.microsoft.com/fwlink/p/?linkid=327784))。同じコンテナー ID が含まれている場合に、デバイスがグループ化します。
-
-成功すると、コンテナー ID の概念については、Windows のすべてのデバイス クラスをサポートし、エコシステム全体がハードウェアで実装する必要があります。 Windows 7 で、オーディオをサポートする複数のモニターが接続されている場合簡単ではありませんのどのディスプレイにマップするオーディオの終了点を確認します。 同じ問題には、タッチ デジタイザーが存在します。 Windows 8、ディスプレイ デバイスのクラスがコンテナー ID のサポートを追加します。 これにより、同じコンテナー ID を報告し、Windows のユーザー インターフェイスと、Api 取得視覚的にペアになっているディスプレイ デバイスのすべての関数。
-
-## <a name="span-idcontaineriduserscenariosspanspan-idcontaineriduserscenariosspanspan-idcontaineriduserscenariosspancontainer-id-user-scenarios"></a><span id="Container_ID_user_scenarios"></span><span id="container_id_user_scenarios"></span><span id="CONTAINER_ID_USER_SCENARIOS"></span>コンテナー ID のユーザー シナリオ
+## <a name="span-idcontainer_id_descriptionspanspan-idcontainer_id_descriptionspanspan-idcontainer_id_descriptionspancontainer-id-description"></a><span id="Container_ID_description"></span><span id="container_id_description"></span><span id="CONTAINER_ID_DESCRIPTION"></span>コンテナー ID の説明
 
 
-オーディオ スピーカーが埋め込まれているモニターの次のワークフローを検討してください。
+モニタデバイスの新機能により、ユーザーエクスペリエンスが向上します。 特に、ユニバーサルシリアルバス (USB) ハブは、マウスとキーボードを接続するモニター上のよく使用されるコネクタです。 また、HDMI サポートオーディオなどのコネクタと、オーディオスピーカーもモニターに埋め込まれています。 多くの新しいディスプレイデバイスは、タッチ機能をサポートしています。 これにより、ユーザーのデスクトップでネットワークが乱雑になるため、優れたユーザーエクスペリエンスが提供されます。
+
+これらのデバイスの接続と状態を、直感的な方法で視覚的に表現することが重要です。 **[デバイスとプリンター]** ページは、Windows 7 で導入されました。 次に示すように、 **[デバイスとプリンター]** フォルダーには、PC に接続されているインストール済みのデバイスが表示されます。これにより、プリンター、音楽プレーヤー、カメラ、マウス、またはデジタル画像フレームを簡単に確認できます (名前をほんの少しにすることができます)。 同時に、このページでは、同じハードウェア内に含まれているデバイスをグループ化して、ユーザーがすべてのドライバーを簡単に検出できるようにします。
+
+![[デバイスとプリンター] フォルダーの視覚的表現](images/visualdevicesprintersfolder.jpg)
+
+Windows 7 では、デバイスの*コンテナー ID*として、次のような概念が導入されました。 "システムによって提供されるデバイス id 文字列を使用して、コンピューター。 " (「[コンテナー id](https://go.microsoft.com/fwlink/p/?linkid=327784)」を参照してください)。同じコンテナー ID を含むデバイスがグループ化されます。
+
+コンテナー ID の概念を成功させるには、Windows のすべてのデバイスクラスがサポートしている必要があります。また、エコシステム全体でハードウェアを実装する必要があります。 Windows 7 では、オーディオをサポートする複数のモニターが接続されている場合、どのディスプレイがどのオーディオエンドポイントにマップされているかをユーザーが判断するのは簡単ではありません。 タッチデジタイザーにも同じ難易度があります。 Windows 8 では、display device クラスによってコンテナー ID のサポートが追加されます。 これにより、ディスプレイデバイスのすべての機能で同じコンテナー ID を報告し、Windows ユーザーインターフェイスと Api で視覚的に対応させることができます。
+
+## <a name="span-idcontainer_id_user_scenariosspanspan-idcontainer_id_user_scenariosspanspan-idcontainer_id_user_scenariosspancontainer-id-user-scenarios"></a><span id="Container_ID_user_scenarios"></span><span id="container_id_user_scenarios"></span><span id="CONTAINER_ID_USER_SCENARIOS"></span>コンテナー ID のユーザーシナリオ
+
+
+オーディオスピーカーが埋め込まれているモニターについて、次のワークフローを考えてみましょう。
 
 1.  ユーザーは、HDMI ケーブルを使用してモニターを接続します。
-2.  WDDM ドライバーでは、Windows グラフィックス スタックをディスプレイ デバイスの存在を報告します。
-3.  Windows グラフィックスでは、Windows 8 で導入されたデバイス ドライバー インターフェイス (Ddi) を使用して、コンテナー ID のクエリ WDDM ドライバーをスタックします。
-4.  ディスプレイ ドライバーは、コンテナー ID のモニターを照会し、Windows に戻してします。
-5.  同時に、オーディオ ドライバーは、Windows オーディオ スタックに正確な同じコンテナー ID を渡す必要があります。
-6.  表示する場合、**デバイスとプリンター**コントロール パネル、表示、およびスピーカー グループ化されます。
+2.  WDDM ドライバーは、Windows グラフィックスタックに表示デバイスの存在を報告します。
+3.  Windows グラフィックスタックは、Windows 8 で導入されたデバイスドライバーインターフェイス (DDIs) を使用して、コンテナー ID の WDDM ドライバーを照会します。
+4.  ディスプレイドライバーは、このモニターに対してコンテナー ID を照会し、Windows に戻します。
+5.  同時に、オーディオドライバーは、完全に同じコンテナー ID を Windows オーディオスタックに渡す必要があります。
+6.  **[デバイスとプリンター]** コントロールパネルで表示すると、ディスプレイとスピーカーがグループ化されます。
 
-場合によっては、ディスプレイ デバイスが含まれず、コンテナーの id。 この場合は、Windows は、製造元 ID、製品 ID、およびシリアル番号の取得から、拡張 Display Identification Data (EDID) を使用してコンテナーの一意の ID を自動的に生成します。 これらの値は一意であるため、コンテナー ID も一意にです。 Windows 8 は、同じコンテナー ID を生成するオーディオ ドライバーに渡せるように、WDDM ドライバーに同じ情報を渡す DDI を提供します。
+場合によっては、表示デバイスにコンテナー ID が含まれていないことがあります。 この場合、Windows は、拡張ディスプレイ識別データ (EDID) から取得された製造元 ID、製品 ID、およびシリアル番号を使用して、一意のコンテナー ID を自動的に生成します。 これらの値は一意であるため、コンテナー ID も一意です。 Windows 8 は、同じ情報を WDDM ドライバーに渡し、同じコンテナー ID を生成するためにオーディオドライバーに渡すことができるようにする DDI を提供します。
 
-いくつかのシナリオで、ディスプレイを駆動の所有権は、Windows 間で切り替えは、WDDM ドライバーとファームウェアの表示。 これらの遷移は、ハードウェアまたはソフトウェアがリセットまたは再構成し、画面の点滅やちらつきの原因に関連付けられます。 考えられる移行シナリオとその動作は、後ほど[WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md)します。
+いくつかのシナリオでは、ディスプレイを運転する所有権は、Windows、WDDM ディスプレイドライバー、ファームウェアの間で切り替えられます。 これらの移行は、リセットまたは再構成されるハードウェアまたはソフトウェアに関連付けられており、画面の点滅やちらつきの原因になる可能性があります。 移行シナリオとその動作については、「 [WDDM 1.2 以降でのシームレスな状態遷移の提供](seamless-state-transitions-in-wddm-1-2-and-later.md)」で説明されています。
 
-## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
+## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定の要件
 
 
-この機能を実装するときにハードウェア デバイスが満たす必要のある要件については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で[モニター コンテナー ID の機能テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)します。
+ハードウェアデバイスがこの機能を実装するときに満たす必要がある要件の詳細については、[モニターコンテナー ID の機能テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)に関する関連する[whck ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)を参照してください。
 
-参照してください[WDDM 1.2 機能](wddm-v1-2-features.md)に Windows 8 で追加された機能の説明。
+Windows 8 で追加された機能の確認については、「 [WDDM 1.2 の機能](wddm-v1-2-features.md)」を参照してください。
 
  
 

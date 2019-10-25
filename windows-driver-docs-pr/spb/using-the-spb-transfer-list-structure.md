@@ -1,41 +1,41 @@
 ---
 title: カスタム IOCTL に対する SPB_TRANSFER_LIST 構造体の使用
-description: シンプルな周辺機器バス (SPB) コント ローラーのドライバーでは、1 つ以上のカスタム I/O 制御 (IOCTL) 要求をサポートする場合は、SPB_TRANSFER_LIST 構造を使用して、読み取りを記述し、これらの要求でバッファーを記述します。
+description: シンプルな周辺機器バス (SPB) コントローラードライバーで1つ以上のカスタム i/o 制御 (IOCTL) 要求がサポートされている場合は、SPB_TRANSFER_LIST 構造体を使用して、これらの要求の読み取りバッファーと書き込みバッファーを記述します。
 ms.assetid: 577122CC-D1F8-41C5-BE77-A22FC8516B82
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fc55613b702f848d12368e434e9f19b2c1c8a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db2c5048a1d3c0ad49e880f31d57a5bfc6bddc30
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383493"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839620"
 ---
-# <a name="using-the-spbtransferlist-structure-for-custom-ioctls"></a>SPB を使用して\_転送\_カスタム Ioctl のリストの構造
+# <a name="using-the-spb_transfer_list-structure-for-custom-ioctls"></a>カスタム Ioctl の SPB\_TRANSFER\_LIST 構造の使用
 
 
-シンプルな周辺機器バス (SPB) コント ローラーのドライバーが 1 つをサポートまたは複数のカスタム I/O 制御 (IOCTL) を要求、使用、 [ **SPB\_転送\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spb/ns-spb-spb_transfer_list)構造を記述する、これらの要求でバッファーを読み書きします。 この構造体は、要求内のバッファーを記述する一貫した方法を提供し、バッファーのコピー メソッドに関連付けられたオーバーヘッドを回避できます\_バッファー I/O 操作。
+シンプルな周辺機器バス (SPB) コントローラードライバーで1つ以上のカスタム i/o 制御 (IOCTL) 要求がサポートされている場合は、 [**SPB\_TRANSFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list)構造体を使用して、これらの要求の読み取りバッファーと書き込みバッファーを記述します。 この構造体は、要求内のバッファーを記述するための統一された方法を提供し、メソッド\_バッファー i/o 操作に関連するバッファーコピーのオーバーヘッドを回避します。
 
-カスタム、IOCTL が使用を要求した場合、 **SPB\_転送\_一覧**SPB コント ローラーのドライバーを呼び出す必要があります、構造、 [ **SpbRequestCaptureIoOtherTransferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbrequestcaptureioothertransferlist)メソッド要求の送信元のプロセスのコンテキストでこれらのバッファーをキャプチャします。 ドライバーを呼び出すことができます、 [ **SpbRequestGetTransferParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbrequestgettransferparameters)これらのバッファーにアクセスするメソッド。
+カスタム IOCTL 要求で**spb\_TRANSFER\_LIST**構造体を使用する場合、spb コントローラードライバーは、要求のプロセスコンテキストでこれらのバッファーをキャプチャするために[**SpbRequestCaptureIoOtherTransferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbrequestcaptureioothertransferlist)メソッドを呼び出す必要があります。送信者. ドライバーは、これらのバッファーにアクセスするために、 [**Spbrequestgettransferparameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbrequestgettransferparameters)メソッドを呼び出すことができます。
 
-[ **IOCTL\_SPB\_完全\_双方向**](https://msdn.microsoft.com/library/windows/hardware/hh974774)と[ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857) 、要求の一部として定義されている、 [SPB の I/O 要求インターフェイス](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))を使用して、 **SPB\_転送\_一覧**説明の読み取りおよび書き込みバッファーの構造体。 **SPB\_転送\_一覧**用の構造、 **IOCTL\_SPB\_完全\_双方向**要求には、書き込みバッファーがについて説明します、要求に (この順序で) で読み取りバッファー。 **SPB\_転送\_一覧**用の構造、 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求を任意に記述できますシーケンスでは、読み取りおよび書き込みバッファー。
+[**Ioctl\_spb\_完全\_双**](https://msdn.microsoft.com/library/windows/hardware/hh974774)方向および[**ioctl\_Spb\_** ](https://msdn.microsoft.com/library/windows/hardware/hh450857) 、 [sp b i/o 要求インターフェイス](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))の一部として定義されている\_シーケンス要求を実行\_@no__ の転送を使用**t_13_** の読み取りバッファーと書き込みバッファーを記述する構造体。 **IOCTL\_spb\_FULL\_双**方向要求の **\_のリスト構造\_転送**は、書き込みバッファーと、要求内の読み取りバッファーの両方を記述します。 **\_シーケンス要求を実行する IOCTL\_\_spb**の**spb\_TRANSFER\_LIST**構造体は、任意のシーケンスの読み取りバッファーと書き込みバッファーを記述できます。
 
-同様を必要とする、カスタムの Ioctl を定義することができます、 **SPB\_転送\_一覧**読み取りのいくつかの組み合わせを使用し、バッファーの書き込みと一覧内のバッファーの任意の順序の指定の構造を必要な場合があります。
+同様に、カスタム Ioctl を定義して、その**SPB\_転送**し、読み取りバッファーと書き込みバッファーの組み合わせを使用するようにリスト構造\_転送する必要があります。また、必要に応じてリスト内のバッファーの順序を指定することもできます。
 
-SPB の周辺機器のカーネル モード ドライバー Foundation (KMDF) ドライバーなどのメソッドの呼び出し[ **WdfIoTargetSendIoctlSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) SPB コント ローラーに IOCTL 要求を送信します。 このメソッドは*InputBuffer*と*OutputBuffer*パラメーター。 一部の種類のデバイス ドライバーは、これら 2 つのパラメーターを使用して、書き込みバッファーを指すを IOCTL 要求のそれぞれに、バッファーを読み取る可能性があります。 ただし、SPB コント ローラーに IOCTL 要求を送信する SPB の周辺機器のデバイス ドライバ設定、 *InputBuffer*パラメーターが指すメモリ記述子を**SPB\_転送\_リスト**構造体。 構造体が記述いずれかの読み取りまたは書き込み I/O の管理操作に必要なバッファー。 ドライバーのセット、 *OutputBuffer*パラメーターを NULL にします。
+SPB 周辺機器のカーネルモードドライバー基盤 (KMDF) ドライバーは、 [**Wdfiotargetsendioctlsynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)のメソッドを同期的に呼び出して、IOCTL 要求を spb コントローラーに送信します。 このメソッドには、 *InputBuffer*パラメーターと*outputbuffer*パラメーターがあります。 一部の種類のデバイスのドライバーでは、これら2つのパラメーターを使用して、IOCTL 要求に対してそれぞれ書き込みバッファーと読み取りバッファーをポイントすることがあります。 ただし、IOCTL 要求を SPB コントローラーに送信するために、SPB 周辺機器ドライバーは、 *InputBuffer*パラメーターを設定して、 **spb\_転送\_リスト**構造を指すメモリ記述子をポイントします。 この構造体は、i/o 制御操作に必要な読み取りバッファーまたは書き込みバッファーを記述します。 ドライバーは*Outputbuffer*パラメーターを NULL に設定します。
 
-同様に、メソッドを呼び出す SPB の周辺機器デバイスのユーザー モード ドライバー Foundation (UMDF) ドライバーなど[ **IWDFIoTarget::FormatRequestForIoctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl) I/O コントロールの I/O 要求を書式設定するには操作です。 このメソッドは*pInputMemory*と*pOutputMemory*パラメーター。 一部の種類のデバイス ドライバーは、これら 2 つのパラメーターを使用して、書き込みバッファーをポイントして、IOCTL 要求用のバッファーを読み取る可能性があります。 ただし、SPB コント ローラーに IOCTL 要求を送信する SPB の周辺機器のデバイス ドライバ設定、 *pInputMemory*パラメーターを格納しているメモリ オブジェクトを指す、 **SPB\_転送\_一覧**構造体。 構造体が記述いずれかの読み取りまたは書き込み I/O の管理操作に必要なバッファー。 ドライバーのセット、 *pOutputMemory*パラメーターを NULL にします。
+同様に、SPB 周辺機器のユーザーモードドライバー基盤 (UMDF) ドライバーは、 [**Iwdfiotarget:: FormatRequestForIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)などのメソッドを呼び出して、i/o 制御操作の i/o 要求の形式を設定します。 このメソッドには、 *Pinputmemory*パラメーターと*poutputmemory*パラメーターがあります。 一部の種類のデバイスのドライバーでは、これら2つのパラメーターを使用して、IOCTL 要求の書き込みバッファーと読み取りバッファーをポイントする場合があります。 ただし、spb コントローラーに IOCTL 要求を送信するために、SPB 周辺機器ドライバーは、 *Pinputmemory*パラメーターを、 **spb\_TRANSFER\_LIST**構造体を含むメモリオブジェクトを指すように設定します。 この構造体は、i/o 制御操作に必要な読み取りバッファーまたは書き込みバッファーを記述します。 ドライバーは*Poutputmemory*パラメーターを NULL に設定します。
 
-## <a name="parameter-checking-and-buffer-capture"></a>パラメーターのチェックとバッファーのキャプチャ
+## <a name="parameter-checking-and-buffer-capture"></a>パラメーターチェックとバッファーキャプチャ
 
 
-SPB フレームワーク拡張機能 (SpbCx) を受信すると、 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求、SpbCx SPB コント ローラーのドライバーをドライバーのを呼び出すことによってこの要求を通過する[ *EvtSpbControllerIoSequence* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_sequence)関数。 SpbCx を調べ、この呼び出しの前に、 **SPB\_転送\_一覧**要求内のバッファーを記述する構造体。 SpbCx では、要求の送信元のプロセスのコンテキストでこれらのバッファーをキャプチャします。 (ユーザー モードのメモリ内のバッファーはメモリを割り当てがプロセスでのみアクセスできます)。さらに、SpbCx は、要求内のパラメーター値が有効かどうかを確認します。
+SPB フレームワーク拡張機能 (SpbCx) が **\_シーケンス要求を実行\_IOCTL\_spb**を受け取ると、この要求は、ドライバーの[*EvtSpbControllerIoSequence*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_sequence)関数を呼び出すことによって、spb コントローラードライバーに渡されます。 この呼び出しの前に、SpbCx は SPB を検査して、要求内のバッファーを記述する **\_リスト構造を\_転送**します。 SpbCx は、要求の発信元のプロセスコンテキストでこれらのバッファーをキャプチャします。 (ユーザーモードメモリ内のバッファーには、メモリが割り当てられているプロセス内でのみアクセスできます)。さらに、SpbCx は、要求のパラメーター値が有効かどうかを確認します。
 
-SpbCx を受信すると、 **IOCTL\_SPB\_完全\_双方向**IOCTL 要求の要求またはカスタム、SpbCx SPB コント ローラーのドライバーを呼び出してドライバーのこの要求を通過する[ *EvtSpbControllerIoOther* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_other)コールバック関数。 この呼び出しを行う前に SpbCx は、要求内のパラメーター値の検証は行われません、発信元のコンテキストでは、要求のバッファーをキャプチャしません。 これらの要求パラメーターをチェックし、バッファーのキャプチャでは、SPB コント ローラーのドライバーの役目です。
+SpbCx が完全\_双方向の要求またはカスタム IOCTL 要求 **\_の ioctl\_spb**を受け取ると、この要求は、ドライバーの[*EvtSpbControllerIoOther*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other) callback 関数を呼び出すことによって spb コントローラードライバーに渡されます。 この呼び出しを行う前に、SpbCx は要求内のパラメーター値の検証チェックを行わず、発信元のコンテキストで要求のバッファーをキャプチャしません。 これらの要求のパラメーターチェックとバッファーキャプチャは、SPB コントローラードライバーの役割です。
 
-SPB のコント ローラー ドライバーがサポートしている場合、 **IOCTL\_SPB\_完全\_双方向**要求、またはを使用するカスタムの IOCTL 要求をサポートしている、 **SPB\_転送\_リスト**構造、そのバッファーのドライバーを実装する必要があります、 [ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)コールバック関数。 ドライバーによって、この関数へのポインターへの呼び出しの入力パラメーターとして、 [ **SpbControllerSetIoOtherCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbcontrollersetioothercallback)ドライバーの登録メソッド*EvtSpbControllerIoOther*コールバック関数。 SpbCx を受信すると、 **IOCTL\_SPB\_完全\_双方向**IOCTL 要求の要求またはカスタム、SpbCx 呼び出しのドライバーの*EvtIoInCallerContext*関数で、発信元のコンテキスト。 IOCTL 要求で使用する場合、 **SPB\_転送\_一覧**構造、 *EvtIoInCallerContext*関数呼び出し、 [ **SpbRequestCaptureIoOtherTransferList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbrequestcaptureioothertransferlist)要求内のバッファーをキャプチャするメソッド。 *EvtIoInCallerContext*関数は、要求のいくつかの暫定的な処理も実行可能性があります。
+SPB コントローラードライバーが、**完全\_双方向要求\_IOCTL\_spb**をサポートしている場合、または、 **\_sp b**を使用してバッファーの\_リスト構造を転送するカスタム IOCTL 要求がサポートされている場合、ドライバーはを実装する必要があります。[*Evtioincallercontext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)コールバック関数。 ドライバーは、この関数へのポインターを入力パラメーターとして提供します。このメソッドは、ドライバーの*EvtSpbControllerIoOther* callback 関数を登録する[**spbコントローラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbcontrollersetioothercallback)を呼び出します。 SpbCx が、完全\_双方向の要求またはカスタム IOCTL 要求 **\_の ioctl\_SPB**を受け取ると、SpbCx は、発信者のコンテキストでドライバーの*Evtioincallercontext*関数を呼び出します。 IOCTL 要求で**SPB\_TRANSFER\_LIST**構造体が使用されている場合、 *Evtioincallercontext*関数は、要求内のバッファーをキャプチャするために[**SpbRequestCaptureIoOtherTransferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbrequestcaptureioothertransferlist)メソッドを呼び出します。 また、 *Evtioincallercontext*関数は、要求の一部の予備処理も実行できます。
 
-次のコード例は、 *EvtIoInCallerContext* SPB のコント ローラー ドライバーによって実装されている関数。
+次のコード例は、SPB コントローラードライバーによって実装される*Evtioincallercontext*関数を示しています。
 
 ```cpp
 VOID
@@ -104,9 +104,9 @@ exit:
 }
 ```
 
-上記のコード例で、**切り替える**ステートメントでは、IOCTL SPB のコント ローラー ドライバーが認識するが、要求に含まれていることを確認します。 (簡潔にするため、本文、**切り替える**ステートメントが示されていません)。次への呼び出し、 **SpbRequestCaptureIoOtherTransferList**メソッドは、要求内のバッファーをキャプチャします。 この呼び出しに成功した場合は、要求が SPB コント ローラーの I/O キューに追加されます。 それ以外の場合、要求がエラー状態コードで完了します。
+前のコード例では、 **switch**ステートメントは、SPB コントローラードライバーが認識する IOCTL が要求に含まれていることを確認します。 (簡潔にするために、 **switch**ステートメントの本体は表示されません)。次に、 **SpbRequestCaptureIoOtherTransferList**メソッドの呼び出しによって、要求内のバッファーがキャプチャされます。 この呼び出しが成功すると、要求は SPB コントローラーの i/o キューに追加されます。 それ以外の場合、要求はエラー状態コードを使用して完了します。
 
-[のコード例](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests#code-example)パラメーターによってチェックを示す、 *EvtSpbControllerIoOther*関数を参照してください[処理**IOCTL\_SPB\_完全\_双方向**要求](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests)します。
+*EvtSpbControllerIoOther*関数によるパラメーターチェックを示す[コード例](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests#code-example)については、「 [**完全\_双方向要求\_IOCTL\_SPB**の処理](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests)」を参照してください。
 
  
 

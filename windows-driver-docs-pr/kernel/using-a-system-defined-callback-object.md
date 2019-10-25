@@ -3,16 +3,16 @@ title: システムによって定義されたコールバック オブジェク
 description: システムによって定義されたコールバック オブジェクトの使用
 ms.assetid: 1f1a2fc1-e698-41f7-84e4-9db091def690
 keywords:
-- コールバック オブジェクトの WDK カーネル
-- システム定義のコールバック オブジェクトの WDK カーネル
+- コールバックオブジェクト WDK カーネル
+- システム定義のコールバックオブジェクトの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbfdde80eb93a862937c09c63d034c6e1f93ccf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e5686dd3a37f86e8a2a8db7f87d162eac5c785e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385103"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836024"
 ---
 # <a name="using-a-system-defined-callback-object"></a>システムによって定義されたコールバック オブジェクトの使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "67385103"
 
 
 
-システムでは、ドライバーを使用するための 3 つのコールバック オブジェクトを定義します。
+システムは、ドライバーで使用する3つのコールバックオブジェクトを定義します。
 
 **\\コールバック\\SetSystemTime**
 
@@ -28,23 +28,23 @@ ms.locfileid: "67385103"
 
 **\\コールバック\\ProcessorAdd**
 
-登録可能性があります (たとえば、ファイル システム ドライバー) のシステム時刻を使用するドライバー、 **\\コールバック\\SetSystemTime**コールバック オブジェクト。 このコールバックは、システム時刻が変更されたときに、通知を提供します。
+システム時刻 (ファイルシステムドライバーなど) を使用するドライバーは、 **\\コールバック\\SetSystemTime**コールバックオブジェクトに登録できます。 このコールバックは、システム時刻が変更されたときの通知を提供します。
 
-**\\コールバック\\PowerState**次のいずれかが発生すると、通知のコールバック オブジェクトを提供します。
+次のいずれかが発生した場合に通知を行うために、 **\\コールバック\\PowerState** callback オブジェクトによって提供されます。
 
--   システムは、または DC 電源 AC から切り替わります。
+-   システムは AC 電源から DC 電源へ、またはその逆に切り替わります。
 
--   ユーザーまたはアプリケーションの要求の結果としてシステム電源ポリシーの変更。
+-   システムの電源ポリシーは、ユーザーまたはアプリケーションの要求の結果として変更されます。
 
--   システムのスリープ状態またはシャット ダウン状態に遷移が迫っていないか。 ドライバーは、シャット ダウンに応じるためにメモリにコードをロックすることができるように、通知を要求できます。 電源マネージャー、システムに送信する前に、コールバック ルーチンを通知は IRP の出力を設定します。
+-   システムのスリープ状態またはシャットダウン状態への移行は、間もなく終了します。 ドライバーは、シャットダウンを見越してコードをメモリにロックできるように通知を要求できます。 コールバックルーチンは、電源マネージャーがシステム設定-電源 IRP を送信する前に通知されます。
 
-**\\コールバック\\ProcessorAdd**コールバックは、新しいプロセッサがシステムに追加されたときに通知を提供します。
+新しいプロセッサがシステムに追加されると、 **\\コールバック\\ProcessorAdd**コールバックによって通知が提供されます。
 
-システム定義のコールバックを使用するには、ドライバーは、属性ブロックを初期化します ([**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes))、コールバックの名前を持つコールバック オブジェクトを表示し ([ **ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)) で、ドライバーの定義済みのコールバックとのみ。 ドライバーは、コールバック オブジェクトを作成することを要求する必要があります。
+システム定義のコールバックを使用するために、ドライバーは、ドライバー定義のコールバックの場合と同様に、コールバックの名前を使用して属性ブロック ([**Initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)) を初期化し、コールバックオブジェクト ([**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)) を開きます。 ドライバーは、コールバックオブジェクトを作成するように要求することはできません。
 
-によって返されるハンドルを持つ**ExCreateCallback**、ドライバー呼び出し[ **ExRegisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exregistercallback)任意のコンテキストにポインターを渡すことを通知ルーチンを登録するにはそのルーチンへのポインター。 ドライバーは、いつでも、コールバック ルーチンを登録できます。 システム IRQL で登録されたコールバック ルーチンを呼び出すと、指定された条件が発生したときに&lt;= ディスパッチ\_レベル。
+**ExCreateCallback**によって返されるハンドルを使用すると、ドライバーは[**exregistercallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exregistercallback)を呼び出して通知ルーチンを登録し、任意のコンテキストへのポインターとルーチンへのポインターを渡します。 ドライバーは、いつでもコールバックルーチンを登録できます。 指定された条件が発生すると、システムは IRQL&lt;= ディスパッチ\_レベルで登録されているコールバックルーチンを呼び出します。
 
-呼び出す必要がありますが、ドライバーでは、通知が必要なくなる、 [ **ExUnregisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exunregistercallback)登録されたコールバックの一覧から、コールバック ルーチンを削除して、コールバックへの参照を削除するにはオブジェクト。
+ドライバーが通知を必要としなくなった場合は、 [**Exunregistercallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exunregistercallback)を呼び出して、登録されているコールバックの一覧からコールバックルーチンを削除し、コールバックオブジェクトへの参照を削除する必要があります。
 
  
 

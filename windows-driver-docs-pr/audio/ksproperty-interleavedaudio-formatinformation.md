@@ -1,8 +1,8 @@
 ---
-title: KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION
-description: KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティは、ループバック オーディオとオーディオのキャプチャのインターリーブに関する追加情報を提供します。
+title: KSK プロパティ\_INTERLEAVEDAUDIO_FORMATINFORMATION
+description: KSK プロパティ\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティは、ループバックオーディオとキャプチャオーディオのインターリーブに関する追加情報を提供します。
 keywords:
-- KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION オーディオ デバイス
+- KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -13,50 +13,50 @@ api_type:
 - HeaderDef
 ms.date: 07/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 58aa4738f6e6bab6c8a7f511470403cac2adb4d3
-ms.sourcegitcommit: 68544e8bc6f236758a5b74d46d69a4c1402bea42
+ms.openlocfilehash: dbe5bad0c640763188ca6d34ee14bcd590a3f652
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828364"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832750"
 ---
-# <a name="kspropertyinterleavedaudioformatinformation"></a>KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 
+# <a name="ksproperty_interleavedaudio_formatinformation"></a>KSK プロパティ\_INTERLEAVEDAUDIO_FORMATINFORMATION 
 
-**KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**プロパティはループバック オーディオとオーディオのキャプチャのインターリーブに関する追加情報を提供します。
+**Ksk プロパティ\_INTERLEAVEDAUDIO_FORMATINFORMATION**プロパティは、ループバックオーディオとキャプチャオーディオのインターリーブに関する追加情報を提供します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
- |取得|Set|移行先|プロパティ記述子の型|プロパティ値の型|
+ |[購入]|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|はい|いいえ|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)|
+|[はい]|必須ではない|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_interleaved_audio_format_information)|
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
- Get、 **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**を返します、 [INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)に関する追加情報を格納する構造体、ループバック オーディオとオーディオのストリームでのオーディオのキャプチャのインターリーブします。 
+ Get, **Ksk プロパティ\_INTERLEAVEDAUDIO_FORMATINFORMATION**は、 [INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_interleaved_audio_format_information)構造体を返します。これには、ループバックオーディオのインターリーブに関する追加情報が含まれています。オーディオストリーム。 
 
-Windows 10 以降 19 H 1、設定、KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティのキーが 1 つのストリームに、ハードウェア キーワード Spotter (HW KWS) その結合マイクとループバック オーディオをサポートするシステムの要件キーワードのバースト出力時に、AEC APO を使用するにはします。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
+Windows 10 19H1 以降では、INTERLEAVEDAUDIO_FORMATINFORMATION プロパティキーに KSK\_プロパティを設定する必要があります。これは、マイクとループバックオーディオを1つのストリームに結合して、キーワードバースト出力で AEC APO を使用する順序。 詳細については、「[音声ライセンス認証](voice-activation.md)」を参照してください。
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-このプロパティは、専用ハードウェア キーワード Spotter pin ですし、ループバックのオーディオ、マイクのオーディオと交互に配置を追加する方法を提供します。 これはハードウェア キーワード Spotter 暗証番号 (pin) オーディオとオーディオのループバックをまとめて 1 つの PCM のオーディオ ストリームをインターリーブし、経由で通信するこのプロパティは、ループバックとマイクのオーディオを含むチャネルを実行します。
+このプロパティは、ハードウェアキーワードをスポット留めすることのみを目的としています。また、ループバックオーディオをマイクオーディオに組み込む方法を提供します。 これを行うには、ハードウェアキーワードをインターリーブします。オーディオとループバックオーディオを1つの PCM オーディオストリームにピン留めし、このプロパティを介して、ループバックとマイクのオーディオを含むチャネルを通信します。
 
-サンプル APO では、このプロパティを使用する使用できます。 Sysvad サンプル ドライバーの一部としては GitHub と呼びますが*KWSApo*します。 サンプル APO だけを取り除きループバック オーディオ、のみプライマリ マイク オーディオ アップ ストリームを提供します。
+このプロパティを使用するサンプル APO を利用できます。 Sysvad サンプルドライバーの一部として GitHub にあり、 *Kwsapo*と呼ばれています。 サンプル APO は、ループバックオーディオを除去するだけで、プライマリマイクオーディオアップストリームのみを提供します。
 
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 |||
 |--- |--- |
-|サポートされている最小のクライアント|Windows 10 のバージョン 1 の 19 H|
+|サポートされている最小のクライアント|Windows 10 バージョン19H1|
 |Header|Ksmedia.h|
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 [KSPROPSETID\_INTERLEAVEDAUDIO](kspropsetid-interleavedaudio.md)
 
-[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
+[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
-[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information) 
+[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_interleaved_audio_format_information) 

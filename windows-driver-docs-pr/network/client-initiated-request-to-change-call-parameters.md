@@ -3,16 +3,16 @@ title: 呼び出しパラメーターを変更するためのクライアント�
 description: 呼び出しパラメーターを変更するためのクライアントが開始した要求
 ms.assetid: 1534dbf9-3ee0-490a-9633-55827ffbcb1a
 keywords:
-- WDK いる CoNDIS 呼び出しのパラメーターの変更
-- クライアントが開始した呼び出しのパラメーターは、WDK いる CoNDIS を変更します。
+- パラメーター変更の呼び出し WDK の変更
+- クライアントによって開始された呼び出しパラメーターの変更 (WDK)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e0bf10fdaba812a0fea23f29b3a2ef40527a372
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f07ef7fda177a0f97747820dd6e0326bf8e07604
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374973"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838201"
 ---
 # <a name="client-initiated-request-to-change-call-parameters"></a>呼び出しパラメーターを変更するためのクライアントが開始した要求
 
@@ -20,49 +20,49 @@ ms.locfileid: "67374973"
 
 
 
-クライアントで、アクティブな接続 (VC) 上のサービス (QoS) の品質の変更を要求する[ **NdisClModifyCallQoS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmodifycallqos)します。
+クライアントは、 [**NdisClModifyCallQoS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmodifycallqos)を使用して、アクティブな仮想接続 (VC) でのサービス品質 (QoS) の変更を要求します。
 
-次の図は、サービスの品質の変更の要求のコール マネージャーのクライアントを示します。
+次の図は、サービス品質の変更を要求している呼び出しマネージャーのクライアントを示しています。
 
-![サービスの品質の変更の要求のコール マネージャーのクライアントを示す図](images/cm-15.png)
+![サービス品質の変更を要求しているコールマネージャーのクライアントを示す図](images/cm-15.png)
 
-次の図は、サービスの品質の変更の要求、MCM ドライバーのクライアントを示します。
+次の図は、サービス品質の変更を要求している MCM ドライバーのクライアントを示しています。
 
-![サービスの品質の変更の要求、mcm ドライバーのクライアントを示す図](images/fig1-15.png)
+![サービス品質の変更を要求している mcm ドライバーのクライアントを示す図](images/fig1-15.png)
 
-呼び出しで**NdisClModifyCallQoS**クライアントを提供します。
+**NdisClModifyCallQoS**の呼び出しでは、クライアントは次のものを提供します。
 
--   *NdisVcHandle* VC を識別するパラメーター。
+-   VC を識別する*NdisVcHandle*パラメーター。
 
--   ポインターを[ **CO\_呼び出す\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))クライアントが要求呼び出しのパラメーターを含む構造体。
+-   クライアントが要求している呼び出しパラメーターを格納している\_パラメーター構造体への[**CO\_呼び出し**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))を指すポインター。
 
-クライアントが QoS の変更を要求する場合は、信号のプロトコルによって決定されます。
+クライアントが QoS の変化を要求できる状況は、シグナリングプロトコルによって決まります。
 
-呼び出し**NdisClModifyCallQoS**と呼び出しを上司に NDIS または MCM ドライバーの[ **ProtocolCmModifyCallQoS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_modify_qos_call)関数は、どの入力、 *NdisVcHandle* 、CO バッファー\_呼び出す\_、クライアントに渡すパラメーターの構造体**NdisClModifyCallQoS**します。 **ProtocolCmModifyQoS**仮想確立された接続のメディア固有の呼び出しのパラメーターを変更する、メディアが行えるように、ネットワーク デバイスの制御、またはその他のメディア固有エージェントと通信します。
+**NdisClModifyCallQoS**を呼び出すと、NDIS は call manager または mcm ドライバーの[**Protocolcmmodifycallqos**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_modify_qos_call)関数を呼び出します。この関数は、クライアントが*NDISVCHANDLE*とバッファー内の CO\_呼び出し\_パラメーターの構造を入力します。**NdisClModifyCallQoS**に渡します。 **Protocolcmmodifyqos**は、ネットワーク制御デバイスや、メディアによって使用されるその他のメディア固有のエージェントと通信し、確立された仮想接続のメディア固有の呼び出しパラメーターを変更します。
 
-ネットワークと通信すると、変更が成功したことを決定する、コール マネージャーを呼び出す必要があります[ **NdisCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmactivatevc)(MCM にドライバーを呼び出す必要がありますと[ **NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)) 新しい呼び出しパラメーターで指定された VC をアクティブ化します。
+ネットワークと通信し、変更が成功したことを確認した後、呼び出しマネージャーは[**NdisCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmactivatevc)を呼び出す必要があります (また、mcm ドライバーは[**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)を呼び出す必要があります)。これにより、新しい呼び出しパラメーターを使用して、指定された VC をアクティブ化できます。
 
-かどうか、ネットワークが、新しい呼び出しパラメーターを受け入れませんや基になるミニポート ドライバーでは、パラメーターを受け入れることはできません、コール マネージャーまたは MCM ドライバーする必要があります、VC をすべての変更が複数回試行する前に存在していた状態に復元 NDISを返す\_状態\_失敗します。
+ネットワークが新しい呼び出しパラメーターを受け入れない場合、または基になるミニポートドライバーがパラメーターを受け入れられない場合、呼び出しマネージャーまたは MCM ドライバーは、変更が試行される前に存在していた状態に VC を復元し、NDIS を返す必要があり\_状態\_エラーです。
 
-コール マネージャーは、QoS を変更する、クライアントの要求の状態を示す、 [ **NdisCmModifyCallQoSComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmmodifycallqoscomplete)、し、MCM のドライバーを呼び出して[ **NdisMCmModifyCallQoSComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmmodifycallqoscomplete)します。 この呼び出しで、コール マネージャーまたは MCM ドライバーに渡します。
+クライアントの QoS 変更要求の状態を示すために、呼び出しマネージャーは[**NdisCmModifyCallQoSComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmmodifycallqoscomplete)を呼び出し、mcm ドライバーは[**NdisMCmModifyCallQoSComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmmodifycallqoscomplete)を呼び出します。 この呼び出しでは、呼び出しマネージャーまたは MCM ドライバーによって次のように渡されます。
 
--   NDIS\_要求の状態を示す状態。
+-   要求の状態を示す NDIS\_の状態。
 
--   *NdisVcHandle* VC を識別します。
+-   VC を識別する*NdisVcHandle* 。
 
--   CO へのポインター\_呼び出す\_VC の呼び出しのパラメーターを含むパラメーター構造体。
+-   VC の呼び出しパラメーターを格納している\_パラメーターの構造体への CO\_呼び出しを指すポインター。
 
-シグナリング プロトコルによって許可されている場合は、クライアントに、コール マネージャーまたは MCM ドライバーが変更された呼び出しパラメーターを渡すことができます。 このような変更は、ネットワークとのネゴシエーションの製品またはコール マネージャーまたは MCM ドライバー自体によってそれらを指定することができます。 コール マネージャーまたは MCM のドライバーの呼び出しを設定して、呼び出しのパラメーターが変更されていることを示す必要があります\_パラメーター\_CO で変更されたフラグ\_呼び出す\_パラメーター構造体。
+シグナリングプロトコルで許可されている場合、呼び出しマネージャーまたは MCM ドライバーは、変更された呼び出しパラメーターをクライアントに返すことができます。 これらの変更は、ネットワークとのネゴシエーションの製品である場合もあれば、呼び出しマネージャーまたは MCM ドライバー自体によって提供される場合もあります。 呼び出しマネージャーまたは MCM ドライバーは、呼び出しパラメーターが変更されたことを示す必要があります。そのためには、\_パラメーター構造で CO\_呼び出しの\_パラメーター\_CHANGED フラグを設定します。
 
-呼び出し**Ndis (M) CmModifyCallQoSComplete**を呼び出すクライアントの NDIS と[ **ProtocolClModifyCallQoSComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_modify_call_qos_complete)関数。 NDIS に次のコードに渡します*ProtocolClModifyCallQoSComplete*:
+**Ndis (M) CmModifyCallQoSComplete**の呼び出しが完了すると、ndis はクライアントの[**protocolclmodifycallqoscomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_modify_call_qos_complete)関数を呼び出します。 NDIS は、次のものを*Protocolclmodifycallqoscomplete*に渡します。
 
--   NDIS\_QoS を変更する、クライアントの要求の状態を示す状態。
+-   QoS を変更するクライアントの要求のステータスを示す NDIS\_の状態。
 
--   A *ProtocolVcContext* VC を識別するハンドル。
+-   VC を識別する*Protocolvccontext*ハンドル。
 
--   CO へのポインター\_呼び出す\_コール マネージャーまたは MCM ドライバーによって渡される呼び出しのパラメーターを含むパラメーター構造体**Ndis (M) CmModifyCallQoSComplete**します。
+-   呼び出しマネージャーまたは MCM ドライバーによって**Ndis (M) CmModifyCallQoSComplete**に渡される呼び出しパラメーターを格納する CO\_呼び出し\_パラメーター構造体へのポインター。
 
-場合、呼び出し\_パラメーター\_CO に変更されたフラグが設定\_呼び出す\_パラメーター構造体、クライアントを確認する必要があります、返されたパラメーターを呼び出すし、変更が許容されるかどうかを判断します。 場合に、クライアントの呼び出し**NdisClModifyCallQoS**成功すると、 *ProtocolClModifyCallQoSComplete* QoS が制御を返すだけで変更を受け入れることができます。 それ以外の場合、 *ProtocolClModifyCallQoSComplete*シグナリング プロトコルによって許可されている場合、クライアントの開発者では、合理的ないくつかの制限を配置可能な限りの数に限り、コール マネージャーでそれ以上のネゴシエーションに関与できますrenegotiations します。 または、 *ProtocolClModifyCallQoSComplete*の呼び出しを破棄できるだけ[ **NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)(を参照してください[Client-Initiated を要求するには呼び出しを閉じます](client-initiated-request-to-close-a-call.md)) されるたびにコール マネージャーは、QoS を変更する要求を拒否し、以前に確立された QoS は、クライアントに膨大です。
+CO\_CALL\_PARAMETERS 構造体で\_PARAMETERS\_CHANGED フラグを呼び出すように設定されている場合、クライアントは返された呼び出しパラメーターを調べて、変更が許容されるかどうかを判断する必要があります。 クライアントの**NdisClModifyCallQoS**への呼び出しが成功した場合、 *Protocolclmodifycallqoscomplete*は制御を返すだけで QoS の変化を受け入れることができます。 そうしないと、 *Protocolclmodifycallqoscomplete*は、シグナル化プロトコルによって許可されている場合、またはクライアントの開発者が可能な renegotiations の数に妥当な制限を設定している限り、呼び出しマネージャーとのさらなる交渉に関与できます。 または、 *Protocolclmodifycallqoscomplete*は、呼び出しマネージャーが QoS を変更する要求を拒否し、以前の状態になったときに、 [**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)で呼び出しを破棄するだけです (「クライアントが開始した[呼び出しを閉じる要求](client-initiated-request-to-close-a-call.md)」を参照してください)。確立された QoS がクライアントに許容できなくなりました。
 
  
 

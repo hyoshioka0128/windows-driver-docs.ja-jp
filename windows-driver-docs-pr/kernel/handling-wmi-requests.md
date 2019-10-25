@@ -3,17 +3,17 @@ title: WMI 要求の処理
 description: WMI 要求の処理
 ms.assetid: d95b736c-045d-4888-8bab-b0a6201f8830
 keywords:
-- WMI の WDK カーネルでは、要求
-- WDK の WMI の要求
+- WMI WDK カーネル、要求
+- WDK WMI を要求する
 - Irp WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 753875dc7ea41999a30c83daeccb8e2122f258b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3fd1080ce6c5df2a2abb6ba99e4290b0bf192f29
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371891"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838652"
 ---
 # <a name="handling-wmi-requests"></a>WMI 要求の処理
 
@@ -21,29 +21,29 @@ ms.locfileid: "67371891"
 
 
 
-すべてのドライバーのディスパッチ テーブル エントリ ポイントを設定する必要があります、 [ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) WMI 要求を処理するルーチン。 場合、ドライバー [WMI データ プロバイダーとして登録](registering-as-a-wmi-data-provider.md)WMI のすべての要求を処理する必要があります。 それ以外の場合、ドライバーでは、[次へ] の下位のドライバーをすべての WMI 要求を転送する必要があります。
+すべてのドライバーで、 [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが WMI 要求を処理するためのディスパッチテーブルのエントリポイントを設定する必要があります。 ドライバーが[wmi データプロバイダーとして登録](registering-as-a-wmi-data-provider.md)されている場合は、すべての wmi 要求を処理する必要があります。 それ以外の場合、ドライバーは、すべての WMI 要求を次の下位ドライバーに転送する必要があります。
 
-主要なコードであるすべての WMI Irp [ **IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)と次の小さなコードの 1 つ。
+すべての WMI Irp には、 [**MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)の主要なコード irp\_、次のいずれかのマイナーコードがあります。
 
--   [**IRP\_MN\_REGINFO**](irp-mn-reginfo.md)、 [ **IRP\_MN\_REGINFO\_EX**](irp-mn-reginfo-ex.md): クエリまたはドライバーの更新ドライバーが呼び出された後に、登録情報[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。
+-   [**Irp\_** ](irp-mn-reginfo.md)は、ドライバーが[**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)を呼び出した後に、ドライバーの登録情報を照会または更新します。 reginfo、 [**irp\_\_\_** ](irp-mn-reginfo-ex.md)は、\_になります。
 
--   [**IRP\_MN\_クエリ\_すべて\_データ**](irp-mn-query-all-data.md)、 [ **IRP\_MN\_クエリ\_単一\_インスタンス**](irp-mn-query-single-instance.md)-すべてのインスタンスまたは指定されたデータ ブロックの 1 つのインスタンスに対してクエリします。
+-   [**Irp\_\_クエリ\_すべての\_データ**](irp-mn-query-all-data.md)、IRP\_すべての\_の[**クエリ\_単一の\_インスタンス**](irp-mn-query-single-instance.md)(特定のデータブロックのすべてのインスタンスまたは1つのインスタンスに対するクエリ)。
 
--   [**IRP\_MN\_変更\_単一\_項目**](irp-mn-change-single-item.md)、 [ **IRP\_MN\_変更\_単一\_インスタンス**](irp-mn-change-single-instance.md)— 1 つの項目またはデータ ブロックのインスタンスの複数の項目を変更するドライバーを要求します。
+-   [**Irp\_\_変更\_1 つの\_項目**](irp-mn-change-single-item.md)、 [**irp\_\_1 つの単一\_インスタンス**](irp-mn-change-single-instance.md)の変更\_、1つの項目またはデータブロックのインスタンス内の複数の項目を変更するようにドライバーに要求します。
 
--   [**IRP\_MN\_を有効にする\_コレクション**](irp-mn-enable-collection.md)、 [ **IRP\_MN\_を無効にする\_コレクション**](irp-mn-disable-collection.md)— データを収集するか、このようなブロックのデータの蓄積を停止する高価なとしてドライバーが登録されているブロック用の累積を開始するドライバーを要求します。
+-   [**Irp\_\_有効にすると、\_collection**](irp-mn-enable-collection.md)、 [**IRP\_\_コレクションの無効化\_収集**](irp-mn-disable-collection.md)を有効にします。ドライバーが収集にかかるコストとして登録されたブロックのデータの累積を開始するようにドライバーに要求するか、または停止します。このようなブロックのデータを累積しています。
 
--   [**IRP\_MN\_を有効にする\_イベント**](irp-mn-enable-events.md)、 [ **IRP\_MN\_を無効にする\_イベント**](irp-mn-disable-events.md)有効な場合、イベントが発生した場合、指定されたイベントの通知の送信を開始するか、このようなイベントの通知の送信を停止、ドライバーを要求します。
+-   [**Irp\_\_有効にすると、\_イベントを有効に**](irp-mn-enable-events.md)し、 [**irp\_、\_イベントの無効化**](irp-mn-disable-events.md)を有効にします。イベントが有効になっている場合、または通知の送信を停止する場合は、特定のイベントの通知の送信を開始するようドライバーに要求します。このようなイベントの。
 
--   [**IRP\_MN\_EXECUTE\_メソッド**](irp-mn-execute-method.md)— データ ブロックに関連付けられているメソッドの実行にドライバーを要求します。
+-   [**IRP\_\_実行\_メソッド**](irp-mn-execute-method.md): データブロックに関連付けられているメソッドを実行するようにドライバーに要求します。
 
-WMI のカーネル モード コンポーネント送信 WMI Irp いつを以下に、ドライバーの登録に成功した WMI データ プロバイダーは、通常ユーザー モードのデータ コンシューマーには、ドライバーのデバイスの WMI 情報が要求されました。 かどうか、ドライバーが呼び出すことによって WMI データ プロバイダーとして登録します[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)、次の方法のいずれかで後続の WMI 要求を処理にする必要があります。
+Wmi カーネルモードコンポーネントは、ドライバーが正常に登録されたことを示す wmi データプロバイダーとして、通常、ユーザーモードデータコンシューマーがドライバーのデバイスの WMI 情報を要求したときに、WMI Irp を送信します。 ドライバーが[**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)を呼び出して wmi データプロバイダーとして登録する場合は、次のいずれかの方法で、後続の各 wmi 要求を処理する必要があります。
 
--   カーネル モードの WMI ライブラリ ルーチンを呼び出す**WmiSystemControl** PDO の。 詳細については、次を参照してください。 [WMI Irp の処理を呼び出す WmiSystemControl](calling-wmisystemcontrol-to-handle-wmi-irps.md)します。
+-   PDO のカーネルモード WMI ライブラリルーチンの呼び出し**システムコントロール**を呼び出します。 詳細については、「 [WMI irp を処理するための呼び出しの呼び出し](calling-wmisystemcontrol-to-handle-wmi-irps.md)」を参照してください。
 
--   その[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが処理し、そのドライバーが呼び出しで渡されるデバイス オブジェクトへのポインターでタグ付けされた該当する要求を完了**IoWMIRegistrationControl**、およびその他の転送[ **IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control) [次へ] の下のドライバーに要求します。 詳細については、次を参照してください。 [DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)します。
+-   [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで、デバイスオブジェクトへのポインターでタグ付けされた要求を処理して完了します。これにより、ドライバーは**Iowmiregistrationcontrol**への呼び出しで渡され、他の[**IRP\_MJ\_システムに転送されます。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)次に低いドライバーに要求を制御\_ます。 詳細については、「 [DispatchSystemControl ルーチンでの WMI irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)」を参照してください。
 
-WMI のマイナー Irp の一覧は、次を参照してください。 [WMI マイナー Irp](wmi-minor-irps.md)します。 
+WMI の軽微な Irp の一覧については、「 [Wmi Minor irp](wmi-minor-irps.md)」を参照してください。 
 
  
 

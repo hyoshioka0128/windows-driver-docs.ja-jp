@@ -1,9 +1,9 @@
 ---
 title: SendRPL 関数
-description: SendRPL WMI メソッドでは、読み取りのポートの一覧 (RPL) コマンドを指定されたポートを通じて指定された宛先ポートに送信します。
+description: SendRPL WMI メソッドは、指定されたポートを使用して、指定された宛先ポートに読み取りポートリスト (RPL) コマンドを送信します。
 ms.assetid: 3cf3dfe2-6ff9-431f-b6bf-66ef8dd77df3
 keywords:
-- 記憶装置の SendRPL 関数
+- SendRPL 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 58dfbf3c944f2e73a48f534fb3980d26c1d5cbbc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58460bbed809a64ea313cde127218e10f197bff8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362659"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832012"
 ---
 # <a name="sendrpl-function"></a>SendRPL 関数
 
 
-**SendRPL** WMI メソッドは、指定された宛先ポートに指定されたポートを通じて読み取りポート一覧 (RPL) コマンドを送信します。
+**Sendrpl** WMI メソッドは、指定されたポートを使用して、指定された宛先ポートに読み取りポートリスト (RPL) コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,29 +46,29 @@ void SendRPL(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Sendrpl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造の**hbastatus**メンバーにこの情報を返します。
 
 *PortWWN*   
-世界中の名前読み取りのポートを使用するには、(RPL) コマンドを一覧表示、ローカル ポートに送信されます。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)構造体。
+読み取りポート一覧 (RPL) コマンドが送信されるローカルポートの世界規模の名前。 この情報は、構造[**内の Sendrpl\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)の**PortWWN**メンバーのミニポートドライバーに配信されます。
 
-*AgentWWN*   
-ポート種類 FC のポートの一覧を照会するのには、世界中の名前\_ポート。 FC の定義については\_ポートを参照してください、T11 委員会の*ファイバー チャネル HBA API*仕様。 この情報は、ミニポート ドライバーに配信される、 **AgentWWN**のメンバー、 [ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)構造体。
+*Agentwwn*   
+FC\_ポートの種類のポートの一覧を照会するポートの世界規模の名前。 FC\_ポートの定義については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、構造[**内の Sendrpl\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)の**agentwwn**メンバーのミニポートドライバーに配信されます。
 
 *エージェント\_ドメイン*   
-FC の種類のポートの一覧を照会するのには、ドメイン コント ローラーのドメイン数\_ポート。 FC の定義については\_ポートを参照してください、T11 委員会の*ファイバー チャネル HBA API*仕様。 この情報は、ミニポート ドライバーに配信される、**エージェント\_ドメイン**のメンバー、 [ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)構造体。
+FC\_ポートの種類のポートの一覧を照会するドメインコントローラーのドメイン番号。 FC\_ポートの定義については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、構造[**内の Sendrpl\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)の**エージェント\_ドメイン**メンバーのミニポートドライバーに配信されます。
 
-*portIndex*   
-FC の種類のポートの一覧で最初のポートのポート インデックス\_返されるポート。 この情報は、ミニポート ドライバーに配信される、 **portIndex**のメンバー、 [ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)構造体。
+*Portindex*   
+返される FC\_ポートの種類のポートの一覧にある、最初のポートのポートインデックス。 この情報は、構造[**内の Sendrpl\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)の**portindex**メンバーのミニポートドライバーに配信されます。
 
-*TotalRspBufferSize*   
-読み取りのポートの一覧 (RPL) コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendRPL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体。
+*Totalrspbuffersize*   
+読み取りポートリスト (RPL) コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendrpl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体の**Totalrspbuffersize**メンバーにこの情報を返します。
 
-*ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendRPL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体。
+*Actualrspbuffersize*   
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendrpl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体の**Actualrspbuffersize**メンバーにこの情報を返します。
 
-*RspBuffer*   
-読み取りの結果は、list (RPL) コマンドを移植します。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendRPL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体。
+*Rspbuffer*   
+読み取りポートリスト (RPL) コマンドの結果。 ミニポートドライバーは、 [**Sendrpl\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)構造体の**rspbuffer**メンバーでこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -78,7 +78,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -95,23 +95,23 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SendRPL\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)
+[**の SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)
 
-[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)
+[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)
 
  
 

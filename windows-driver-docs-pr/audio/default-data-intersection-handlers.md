@@ -3,17 +3,17 @@ title: 既定のデータ交差ハンドラー
 description: 既定のデータ交差ハンドラー
 ms.assetid: 5c70a6e4-702f-4fd0-bb3e-2cde2955b2ad
 keywords:
-- 交差部分のデータ ハンドラー WDK のオーディオ、既定値
-- 既定の交差部分のデータ ハンドラー
-- 最小限のデータの積集合ハンドラー WDK オーディオ
+- データ交差ハンドラー WDK audio、既定値
+- 既定のデータ積集合ハンドラー
+- 最小データ交差ハンドラー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60459d8b33e75b509dd77c526ae47f4c66f1e3f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe9d764e06dacfe4c2afd01acf701a2919acfc16
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359069"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833559"
 ---
 # <a name="default-data-intersection-handlers"></a>既定のデータ交差ハンドラー
 
@@ -21,29 +21,29 @@ ms.locfileid: "67359069"
 ## <span id="default_data_intersection_handlers"></span><span id="DEFAULT_DATA_INTERSECTION_HANDLERS"></span>
 
 
-アダプターの独自のデータの積集合のハンドラー (ミニポート ドライバー オブジェクトの[ **IMiniport::DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)メソッド) を返すことによってデータ交差チェックを実行することができますを拒否しますステータス\_いない\_実装されている状態コード。 ここでは、ポート ドライバーの既定の交差部分のデータ ハンドラーは、アダプターに代わって、チェックを実行します。
+アダプターの独自のデータの交差ハンドラー (ミニポートドライバーオブジェクトの[**IMiniport::D ataRangeIntersection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)ポート) は、実装された状態を\_\_ステータスを返すことによって、データの交差チェックを拒否することがあります。コード. この場合、ポートドライバーの既定のデータ積集合ハンドラーは、アダプターの代わりにチェックを実行します。
 
-最小限のデータの積集合のハンドラーを実装するには、アダプターのドライバーとして、 **DataRangeIntersection**状態を返すことによってデータの積集合のすべての要求を拒否したメソッド\_いない\_実装されていません。
+アダプタードライバーの最小データ共通部分を実装するには、状態\_\_を返すことによってすべてのデータの交差要求を拒否する**Datarangeintersection**集合メソッドとして実装します。
 
-ポート ドライバーの既定のハンドラーの現在の実装を処理できるデータ範囲の種類が制限されています。
+ポートドライバーの既定のハンドラーの現在の実装は、処理できるデータ範囲の種類によって制限されます。
 
--   PCM のデータ形式のみ
+-   PCM データ形式のみ
 
--   Mono とステレオ オーディオ ストリームのみ
+-   Mono およびステレオオーディオストリームのみ
 
-PCM 以外またはマルチ チャネルの形式をサポートするアダプター ドライバーは、これらの形式のデータの交差部分を処理するためにポート ドライバーではなく独自のデータの積集合ハンドラーを実装する必要があります。
+PCM またはマルチチャネル形式をサポートするアダプタードライバーでは、ポートドライバーを使用してこれらの形式のデータの共通部分を処理するのではなく、独自のデータの共通部分ハンドラーを実装する必要があります。
 
-さらに、既定のハンドラーがで指定できるオーディオ形式のみをサポートする[ **KSDATAFORMAT\_DSOUND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound)または[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造体。 任意の形式を含むことはできません、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)に必要なたとえば、3 つ以上のチャネルを形式チャネル マスクを指定する構造体。
+また、既定のハンドラーは、 [**KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)または[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造体で指定できるオーディオ形式のみをサポートしています。 [**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)構造体を含むどの形式もサポートされていません。たとえば、3つ以上のチャネルを持つ形式のチャネルマスクを指定する場合などです。
 
-2 つのデータ範囲の交差部分から一般的な形式を選択するときにポート ドライバーの既定のハンドラーは常に積集合の各パラメーターの領域での最も大きい値を選択します。
+2つのデータ範囲の交差部分から共通の形式を選択すると、ポートドライバーの既定のハンドラーによって、各パラメーターの共通部分の最大値が常に選択されます。
 
--   交差部分が 1 つ以上の有効な頻度のサンプルにまたがるかどうか、既定のハンドラーは最高周波数を取得 (11、22、および例については、44 kHz)。
+-   交差部分が複数の有効なサンプル周波数 (11、22、および 44 kHz など) にまたがっている場合、既定のハンドラーは最も高い頻度を選択します。
 
--   積集合は、1 つ以上の有効なサンプルあたりのビット値 (8、16、32 ビット、たとえば) にまたがっている場合、既定のハンドラーは、最大値を取得します。
+-   交差部分が複数の有効なサンプルのビットごとの値 (8、16、および32ビットなど) にまたがっている場合、既定のハンドラーは最大値を取得します。
 
--   Mono とステレオの両方の形式の交差部分にまたがっている場合、既定のハンドラーは、ステレオを取得します。
+-   交差部分が mono 形式とステレオ形式の両方にまたがっている場合、既定のハンドラーはステレオを選択します。
 
-アダプター ドライバーが失敗したことで、形式を拒否するオプションで、既定のハンドラーが十分でない形式を選択した場合、 **NewStream**呼び出し (たとえばを参照してください[ **IMiniportWavePci::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)) SysAudio が形式でシンク暗証番号 (pin) を作成しようとしたとき。 呼び出しが失敗した場合、SysAudio にはデータの交差部分を探しては続行されません。 代わりに、アダプターのシンクの暗証番号 (pin) もサポートするものが見つかるまで KMixer などのシステムのフィルターでサポートされている PCM 形式のリストを反復処理する接続を作成することを試みます。 一覧より高い品質の形式に並んでいます。 失敗したことで、アダプターが不十分な形式の一覧でを拒否する前に、 **NewStream**それらの形式を呼び出します。
+既定のハンドラーが使用できない形式を選択した場合、SysAudio がシンク pin を作成しようとしたときに、アダプタードライバーで**Newstream**の呼び出し (例[ **: IMiniportWavePci:: newstream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)) を失敗させることで形式を拒否するオプションがあります。形式で指定します。 呼び出しが失敗した場合、SysAudio はデータの交差部分の検索を続行しません。 代わりに、アダプターのシンクピンがサポートできる PCM 形式の一覧を検索するまで、KMixer などのシステムフィルターでサポートされている PCM 形式のリストを反復処理することで、接続の作成が試行されます。 リストは、高い品質形式で並べ替えられます。 以前と同様に、アダプターは、これらの形式の**Newstream**呼び出しを失敗させることによって、一覧内の不足している形式を拒否します。
 
  
 

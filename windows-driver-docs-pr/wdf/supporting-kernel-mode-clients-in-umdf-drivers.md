@@ -1,50 +1,50 @@
 ---
 title: UMDF ドライバーでのカーネルモード クライアントのサポート
-description: このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーが UMDF バージョン 2 以降、カーネル モードのクライアントをサポートする方法について説明します。
+description: このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) ドライバーでカーネルモードクライアントがどのようにサポートされるかについて説明します。これは、UMDF バージョン2から始まります。
 ms.assetid: 5C0180BF-F0C7-4225-8388-C3315C282516
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f07439199ff0d88df69d6a6736181baaa1c1597
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a4f309a5f9f1f902de04fa300538f01ac660921
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368083"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831763"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-drivers"></a>UMDF ドライバーでのカーネルモード クライアントのサポート
 
 
-このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーをサポートする方法について説明します*カーネル モードのクライアント*、UMDF バージョン 2 で開始します。
+このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) ドライバーで*カーネルモードクライアント*がどのようにサポートされるかについて説明します。これは、umdf バージョン2から始まります。
 
-A*カーネル モードのクライアント*は UMDF ドライバーに I/O 要求を送信するカーネル モード ドライバーです。 上で、同じデバイス スタック、UMDF ドライバー、カーネル モード ドライバーがあるか、別のデバイス スタックにする必要があります。
+*カーネルモードクライアント*は、UMDF ドライバーに i/o 要求を送信するカーネルモードドライバーです。 カーネルモードドライバーが、同じデバイススタック内の UMDF ドライバーの上にあるか、または別のデバイススタックにある可能性があります。
 
-カーネル モード ドライバーことができます、ユーザー モード アプリケーションから受信した I/O 要求を転送または新しい I/O 要求を作成でき、ユーザー モード ドライバーに送信できます。
+カーネルモードドライバーは、ユーザーモードアプリケーションから受信した i/o 要求を転送したり、新しい i/o 要求を作成してユーザーモードドライバーに送信したりすることができます。
 
-### <a href="" id="how-to-support-kernel-mode-clients-in-a-umdf-based-driver"></a>UMDF ドライバーでカーネル モードのクライアントをサポートする方法
+### <a href="" id="how-to-support-kernel-mode-clients-in-a-umdf-based-driver"></a>UMDF ドライバーでカーネルモードクライアントをサポートする方法
 
-カーネル モードのクライアントの UMDF ドライバーのサポートを有効にする UMDF ドライバーの INF ファイルを含める必要があります、 [UmdfKernelModeClientPolicy](specifying-wdf-directives-in-inf-files.md)ディレクティブ、INF で*DDInstall*.**WDF**セクション。
+UMDF ドライバーによるカーネルモードクライアントのサポートを有効にするには、UMDF ドライバーの INF ファイルに、その INF *Ddinstall*に[Umdfkernel Modeclientpolicy](specifying-wdf-directives-in-inf-files.md)ディレクティブが含まれている必要があります。**WDF**セクション。
 
-フレームワークは、カーネル モードのクライアントをサポートするドライバーに役立つ 2 つのメソッドを提供します。 ドライバーを呼び出すことができます、 [ **WdfRequestGetRequestorMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetrequestormode) I/O 要求がカーネル モードまたはユーザー モードからのものかどうかを判断するメソッド。 ドライバーを呼び出すことができる場合、I/O 要求は、ユーザー モードから付属していた、 [ **WdfRequestIsFromUserModeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisfromusermodedriver)を要求がアプリケーションまたは別のユーザー モード ドライバーからのものかどうかを判断します。
+このフレームワークには、カーネルモードクライアントをサポートするドライバーに役立つ2つのメソッドが用意されています。 ドライバーは、 [**WdfRequestGetRequestorMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetrequestormode)メソッドを呼び出して、i/o 要求がカーネルモードとユーザーモードのどちらであるかを判断できます。 I/o 要求がユーザーモードから送信された場合、ドライバーは[**WdfRequestIsFromUserModeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisfromusermodedriver)を呼び出して、要求がアプリケーションまたは別のユーザーモードドライバーから送信されたかどうかを判断できます。
 
-### <a name="restrictions-on-kernel-mode-drivers"></a>カーネル モード ドライバーに関する制限事項
+### <a name="restrictions-on-kernel-mode-drivers"></a>カーネルモードドライバーに関する制限事項
 
-カーネル モード ドライバーは、次の要件を満たす場合にのみ、UMDF ドライバーでは、カーネル モード ドライバーからの I/O 要求を処理できます。
+UMDF ドライバーは、カーネルモードドライバーが次の要件を満たしている場合にのみ、カーネルモードドライバーからの i/o 要求を処理できます。
 
--   IRQL では、カーネル モード ドライバーを実行する必要があります = パッシブ\_レベルの I/O 要求を送信するとき。
+-   カーネルモードドライバーは、i/o 要求を送信するときに、IRQL = パッシブ\_レベルで実行されている必要があります。
 
--   ドライバーが設定されていない限り、 **UmdfFileObjectPolicy** INF ディレクティブを**AllowNullAndUnknownFileObjects**、カーネル モード ドライバーがユーザー モード ドライバーに送信する I/O 要求ごとに、関連付けられている必要がありますファイル オブジェクト。 フレームワークする必要があります前に通知されました I/O マネージャーが、ファイル オブジェクトを作成します。 (このような通知が配信を呼び出して、ユーザー モード ドライバーのフレームワークが[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数がコールバック関数はオプションです)。
+-   ドライバーによって**Umdffileobjectpolicy** INF ディレクティブが**AllowNullAndUnknownFileObjects**に設定されていない限り、カーネルモードドライバーに送信される各 i/o 要求には、関連付けられたファイルオブジェクトが必要です。 このフレームワークには、i/o マネージャーによってファイルオブジェクトが作成されたことがあらかじめ通知されている必要があります。 (この通知により、フレームワークはユーザーモードドライバーの[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数を呼び出しますが、そのコールバック関数は省略可能です)。
 
--   I/O 要求を含めることはできません、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)関数コード。
+-   I/o 要求には、 [**IRP\_MJ\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)関数コードを含めることはできません。
 
--   ユーザー モード ドライバーには、ポインターが逆参照できませんので、I/O 要求のバッファーは追加の情報へのポインターを含めないでください。
+-   ユーザーモードドライバーはポインターを逆参照できないため、i/o 要求のバッファーに追加情報へのポインターを含めることはできません。
 
--   I/O 要求が含まれている場合、 [I/O 制御コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)「も」バッファーへのアクセス方法を指定する、カーネル モード ドライバーは、I/O 要求を作成したアプリケーションのプロセスのコンテキストで I/O 要求を送信する必要があります。 UMDF ドライバーで「も」メソッドをサポートする方法の詳細については、次を参照してください。 [UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)します。
+-   I/o 要求に "両方" のバッファーアクセス方法を指定する[i/o 制御コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)が含まれている場合、カーネルモードドライバーは、i/o 要求を作成したアプリケーションのプロセスコンテキストで i/o 要求を送信する必要があります。 UMDF ドライバーで "どちらの" メソッドをサポートする方法の詳細については、「 [Umdf ドライバーでのバッファーアクセスメソッドの管理](managing-buffer-access-methods-in-umdf-drivers.md)」を参照してください。
 
--   UMDF ドライバーでは、ユーザー モードでの I/O 要求の出力データを変更可能性があります。 そのため、カーネル モード ドライバーでは、ユーザー モード ドライバーから受信したすべての出力データを検証する必要があります。
+-   UMDF ドライバーによって、i/o 要求の出力データがユーザーモードで変更される場合があります。 そのため、カーネルモードドライバーは、ユーザーモードドライバーから受け取った出力データを検証する必要があります。
 
--   カーネル モード クライアントは通常を検証する必要があります、*情報*UMDF ドライバーに渡す値[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)します。 呼び出すことができます、クライアントが KMDF ドライバーの場合は、 [ **WdfRequestGetCompletionParams** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) IO では、この情報を取得する\_状態\_ブロック構造体。
+-   通常、カーネルモードクライアントは、UMDF ドライバーが[**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)に渡す*情報*の値を検証する必要があります。 クライアントが KMDF ドライバーの場合、 [**Wdfrequestgetreference params**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams)を呼び出して、この情報を IO\_状態\_ブロック構造で取得できます。
 
-    通常、フレームワークが UMDF ドライバーからに渡される情報の値を検証しません[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)します。 (このパラメーターは、通常の数を指定転送されたバイト。)フレームワークは、出力バッファーとのみの情報値を検証、 [I/O バッファーに格納](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers#direct)メソッドがデータにアクセスします。 (たとえば、フレームワークを確認転送されたバイト数が、読み取り操作の出力バッファーのサイズを超えていないこと、アクセスする方法がバッファリングされる場合 I/O)。
+    通常、フレームワークでは、UMDF ドライバーが[**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)に渡す情報値は検証されません。 (このパラメーターは、通常、転送されるバイト数を指定します。)フレームワークは、バッファー内の[i/o](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers#direct)データアクセスメソッドに対してのみ、出力バッファーの情報値を検証します。 (たとえば、アクセスメソッドがバッファリングされている場合、フレームワークは、転送されたバイト数が読み取り操作の出力バッファーサイズを超えていないことを確認します)。
 
  
 

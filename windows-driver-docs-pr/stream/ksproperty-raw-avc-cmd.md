@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_RAW\_AVC\_CMD
-description: KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行します。 生の AV/C コマンドは、IEEE 1394 bus デバイスのみサポートされます。
+title: KSK プロパティ\_未加工\_AVC\_CMD
+description: '\_未加工\_AVC\_CMD プロパティによって、未加工の AV/C コマンドが発行されます。 未加工の AV/C コマンドは、IEEE 1394 バスデバイスでのみサポートされています。'
 ms.assetid: f3ff3815-0f4f-4fcb-89bd-e77d8002813c
 keywords:
-- KSPROPERTY_RAW_AVC_CMD ストリーミング メディア デバイス
+- KSPROPERTY_RAW_AVC_CMD ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf6af0a1b089a5c0432fd1c096fbb320980beb1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7beb93bdf99679821789a3502571a6c5b789ef7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382440"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838835"
 ---
-# <a name="kspropertyrawavccmd"></a>KSPROPERTY\_RAW\_AVC\_CMD
+# <a name="ksproperty_raw_avc_cmd"></a>KSK プロパティ\_未加工\_AVC\_CMD
 
-KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行します。 生の AV/C コマンドは、IEEE 1394 bus デバイスのみサポートされます。
+\_未加工\_AVC\_CMD プロパティによって、未加工の AV/C コマンドが発行されます。 未加工の AV/C コマンドは、IEEE 1394 バスデバイスでのみサポートされています。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,7 +37,7 @@ KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -46,28 +46,28 @@ KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>埋め込み<strong>RawAVC</strong>構造体</p></td>
 </tr>
 </tbody>
 </table>
 
-プロパティの値 (データの操作) は、埋め込まれた**RawAVC** 、KSPROPERTY のメンバー\_EXTXPORT\_を実行する生の AV/C コマンドを記述する S 構造体。
+プロパティ値 (操作データ) は、実行する未加工の AV/C コマンドを記述する KSK プロパティ\_EXTXPORT\_S 構造体の埋め込み**RawAVC**メンバーです。
 
 ## <a name="remarks"></a>注釈
 
-このプロパティは、AV/C コマンドをサポートできるデバイスでのみ使用できます、 [ **KSPROPERTY\_EXTDEVICE\_ポート**](ksproperty-extdevice-port.md)偏差を返します\_ポート\_で 1394、 **DevPort**のメンバー、 [ **KSPROPERTY\_EXTDEVICE\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)構造体。
+このプロパティは、AV/C コマンドをサポートできるデバイスでのみ使用できます。また、 [**Ksk プロパティ\_extdevice\_port**](ksproperty-extdevice-port.md)は、ksk プロパティ\_Extdevice の**DEVPORT**メンバーで DEV\_PORT\_1394 を返し[ **\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)構造体。
 
-IEEE 1394 デバイス ドライバーの開発者は、デバイスの標準のインターフェイスでサポートされていないトランスポート コントロールを拡張するにはドライバーにこのプロパティを必要に応じてサポート可能性が (ユーザー モードなど**IAMExtTransport** COMインターフェイス メソッド**配置\_モード**と**取得\_モード**)。
+IEEE 1394 デバイスのドライバー開発者は、標準インターフェイス (ユーザーモードの**Iamexttransport** COM インターフェイスメソッドなど) でサポートされていないデバイストランスポートコントロールを拡張するために、必要に応じてドライバーでこのプロパティをサポートできます。 **\_モード**を設定し、 **\_モードを取得**します)。
 
-に、USB デバイスでこのプロパティのサポートを実装する必要はありません、 [USB ビデオ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)この機能を提供します。 通常のアプリケーションを使用できる、 **IKsControl** IEEE 1394 デバイスを制御する COM インターフェイスです。 ただし、 **IKsControl** COM インターフェイスは、標準を提供していない USB および IEEE 1394 のバスの間で移植性がテープをサポートするメソッドがシークします。 そのため、実行するテープ シーク、呼び出し元を使用する必要があります、 **DeviceIoControl**関数の代わりに、 **IKsControl** COM インターフェイスです。 呼び出し元のテープを実行するシーク 1394 の絶対パスを生の AV/C コマンドを使用してデバイスを AV/C (ATN) の数を追跡または時刻をシークするコードです。 これは、USB デバイスにこのプロパティを適用しない原因の主な理由です。
+Usb[ビデオクラスドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)ではこの機能が提供されるため、usb デバイスでこのプロパティのサポートを実装する必要はありません。 通常、アプリケーションでは、 **Iksk コントロール**COM インターフェイスを使用して、IEEE 1394 デバイスを制御できます。 ただし、 **Iksk コントロール**COM インターフェイスには、USB および IEEE 1394 バス間で移植可能なテープシークをサポートするための標準的な方法が用意されていません。 したがって、テープシークを実行するには、呼び出し元は**Ikscontrol** COM インターフェイスの代わりに**DeviceIoControl**関数を使用する必要があります。 呼び出し元は、生の AV/C コマンドと、シークする絶対トラック番号 (ATN) または時間コードを使用して、1394 AV/C デバイスでテープシークを実行します。 これは、このプロパティが USB デバイスに適用されない主な理由です。
 
-参照してください、[デジタル ビデオ アプリケーションの互換性](https://go.microsoft.com/fwlink/?linkid=2085071)USB 上のテープの場所の検索と 1394 デバイス間の違いの詳細については、ホワイト ペーパー。
+USB デバイスと1394デバイスでのテープの場所の検索の違いの詳細については、「[デジタルビデオアプリケーションの互換性](https://go.microsoft.com/fwlink/?linkid=2085071)」ホワイトペーパーを参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>
@@ -77,13 +77,13 @@ IEEE 1394 デバイス ドライバーの開発者は、デバイスの標準の
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>関連項目
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)
+[**KSK プロパティ\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)

@@ -3,28 +3,28 @@ title: 同期ドライバー通知の処理
 description: 同期ドライバー通知の処理
 ms.assetid: 84e4e05f-1383-4f5f-8fc0-20cd508afa3c
 keywords:
-- ドライバーの通知の WDK が動的なハードウェア パーティション分割、処理
-- ドライバーの同期の通知の WDK が動的なハードウェア パーティション分割、処理
-- ドライバー WDK の動的なハードウェア パーティション分割、同期の通知に登録します。
+- ドライバー通知 WDK 動的ハードウェアのパーティション分割, 処理
+- 同期ドライバー通知 WDK 動的ハードウェアのパーティション分割、処理
+- ドライバー通知に登録する WDK 動的ハードウェアパーティション分割、同期
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a13feba21fab6aad5900398cf47a7bf376b664
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df7358ac0a555f22d87c67e2db8baad27a66e088
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378814"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838489"
 ---
 # <a name="processing-a-synchronous-driver-notification"></a>同期ドライバー通知の処理
 
 
-ポインターを渡す、オペレーティング システムに登録されたコールバック関数を呼び出すと、 [ **KE\_プロセッサ\_変更\_通知\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_ke_processor_change_notify_context)構造体、 *ChangeContext*でコードをパラメーターと、NTSTATUS を格納する変数へのポインター、 *OperationStatus*パラメーター。 **KE\_プロセッサ\_変更\_通知\_コンテキスト**構造体には、プロセッサの状態が含まれています追加操作は、追加される新しいプロセッサのプロセッサ数。指定された状態に関連付けられている NTSTATUS コード。
+オペレーティングシステムは、登録されているコールバック関数を呼び出すと、 [**KE\_\_プロセッサ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_ke_processor_change_notify_context)へのポインターを渡します。これにより、 *changecontext*パラメーターで\_コンテキスト構造を通知\_、変数へのポインターが*Operationstatus*パラメーターに NTSTATUS コードが含まれています。 **KE\_プロセッサ\_変更\_通知\_コンテキスト**構造には、プロセッサの追加操作の状態、追加される新しいプロセッサのプロセッサ番号、およびに関連付けられている NTSTATUS コードが含まれています。指定された状態。
 
-新しいプロセッサがハードウェアのパーティションに追加されると、オペレーティング システムは 2 回に登録されたコールバック関数を呼び出します。 オペレーティング システムが最初使用して、コールバック関数を呼び出す、 **KeProcessorAddStartNotify**状態の新しいプロセッサを開始する前にします。 2 回目にコールバック関数を呼び出してオペレーティング システムは、新しいプロセッサを正常に追加する場合、 **KeProcessorAddCompleteNotify**状態。 コールバック関数を呼び出し、それ以外の場合、2 回目に、 **KeProcessorAddFailureNotify**状態。
+新しいプロセッサがハードウェアパーティションに追加されると、オペレーティングシステムは、登録されているコールバック関数を2回呼び出します。 オペレーティングシステムは、新しいプロセッサを開始する前に、まず**Keprocessoraddstartnotify**状態でコールバック関数を呼び出します。 オペレーティングシステムが新しいプロセッサを正常に追加すると、 **KeProcessorAddCompleteNotify**状態でコールバック関数が2回呼び出されます。 それ以外の場合は、 **KeProcessorAddFailureNotify**状態でコールバック関数をもう一度呼び出します。
 
-場合、KE\_プロセッサ\_変更\_追加\_デバイス ドライバーには、コールバック関数が登録されているときに、既存のフラグが指定された、アクティブな各プロセッサのコールバック関数が直ちに呼び出さもを現在、ハードウェアのパーティションに存在します。 通常、コールバック関数は、既存のプロセッサと、新しいプロセッサで呼び出されたときに呼び出された場合に区別するためにはありません。 詳細については、オペレーティング システムが登録されたコールバック関数を呼び出すの説明を参照して、 [ **KeRegisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterprocessorchangecallback)関数。
+デバイスドライバーによってコールバック関数が登録されたときに、KE\_プロセッサ\_CHANGE\_\_既存のフラグが指定されていた場合、コールバック関数は、現在に存在するアクティブな各プロセッサについても、ハードウェアパーティション。 通常、コールバック関数は、既存のプロセッサに対して呼び出される場合と、新しいプロセッサに対して呼び出される場合を区別する必要がありません。 オペレーティングシステムが登録されているコールバック関数を呼び出す場合の詳細については、 [**KeRegisterProcessorChangeCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterprocessorchangecallback)関数の説明を参照してください。
 
-次のコード例では、ドライバーの同期の通知を処理するコールバック関数の実装を示しています。
+次のコード例は、同期ドライバー通知を処理するコールバック関数の実装を示しています。
 
 ```cpp
 // Synchronous notification callback function

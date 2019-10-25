@@ -1,79 +1,79 @@
 ---
 title: 64 KB ページのサポート
-description: 64 KB のページの Windows Display Driver Model (WDDM) v2 をサポートするために、2 種類のリーフ ページのテーブル、64 KB のエントリをサポートする 1 つおよび 4 KB のページ テーブル エントリをサポートしているを提供します。
+description: 64 KB のページをサポートするために、Windows Display Driver Model (WDDM) v2 は2種類のリーフページテーブルを提供しています。1つは 4 KB のページテーブルエントリをサポートし、もう1つは 64 KB エントリをサポートします。
 ms.assetid: 24D4854E-BBD7-46A9-8FEF-EF13D2968E6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5984d481dbf71dcd5879f884b291d793be4323b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe3a4e9c2406b3e7cd722bb22cf4ebbb2f973172
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353841"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829396"
 ---
 # <a name="support-for-64kb-pages"></a>64 KB ページのサポート
 
 
-64 KB のページの Windows Display Driver Model (WDDM) v2 をサポートするために、2 種類のリーフ ページのテーブル、64 KB のエントリをサポートする 1 つおよび 4 KB のページ テーブル エントリをサポートしているを提供します。 両方のページ テーブル エントリのサイズは 4 KB のページのページ テーブルは 64 KB のページ テーブル エントリの数の 16 回、同じ仮想アドレス範囲について説明します。
+64 KB のページをサポートするために、Windows Display Driver Model (WDDM) v2 は2種類のリーフページテーブルを提供しています。1つは 4 KB のページテーブルエントリをサポートし、もう1つは 64 KB エントリをサポートします。 どちらのページテーブルエントリのサイズも同じ仮想アドレス範囲をカバーするため、4 kb のページのページテーブルには、64 KB ページテーブルとしてエントリの数が16倍になります。
 
-64 KB のページ テーブルのサイズが定義[ **DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**LeafPageTableSizeFor64KPagesInBytes**します。
+64 KB ページテーブルのサイズは、 [**DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**LeafPageTableSizeFor64KPagesInBytes**によって定義されます。
 
-[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作がページ テーブルの種類が更新されるかを示すフラグ[ **DXGK\_UPDATEPAGETABLEFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_updatepagetableflags)::**Use64KBPages**します。
+[*Updatepagetable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作には、ページテーブルが更新されたことを示すフラグ ( [**DXGK\_UPDATEPAGETABLEFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_updatepagetableflags)::**Use64KBPages**) があります。
 
-これには、WDDM v2 でサポートされている操作の 2 つのモードがあります。
+WDDM v2 でサポートされている操作には、次の2つのモードがあります。
 
-1.  レベル 1 のページ テーブルのページ テーブル エントリは、4 KB のページのテーブルまたは 64 KB のページ テーブルのいずれかをポイントします。
-2.  レベル 1 のページ テーブルのページ テーブル エントリは、同時に 4 KB のページ テーブルと、64 KB のページ テーブルをポイントします。 これは、"デュアル PTE"モードと呼ばれます。
+1.  レベル1のページテーブルのページテーブルエントリは、4 KB ページテーブルまたは 64 KB ページテーブルのいずれかになります。
+2.  レベル1のページテーブルのページテーブルエントリは、4 KB のページテーブルと 64 KB のページテーブルを指します。 これは、"デュアル PTE" モードと呼ばれます。
 
-*デュアル PTE*サポートがによって表される、 [ **DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**DualPteSupported**キャップ。
-ビデオ メモリ マネージャーは、割り当ての配置、グラフィックス処理ユニット (GPU) のメモリのセグメント プロパティ、および GPU のメモリ セグメントの種類に基づいて、ページ サイズを選択します。 割り当ては、アラインメントとサイズが複数ある場合は、64 KB のページを使用してマップする 64 KB が 64 KB のページをサポートするメモリ セグメントに常駐します。
+*2 つの PTE*のサポートは、 [**DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**DualPteSupported** cap によって表されます。
+ビデオメモリマネージャーは、割り当ての配置、グラフィックス処理ユニット (GPU) のメモリセグメントのプロパティ、および GPU のメモリセグメントの種類に基づいてページサイズを選択します。 アロケーションは 64 KB のページを使用してマップされ、サイズは 64 KB の倍数で、64 KB ページをサポートするメモリセグメントに常駐します。
 
-## <a name="span-idsingleptemodespanspan-idsingleptemodespanspan-idsingleptemodespansingle-pte-mode"></a><span id="Single_PTE_mode"></span><span id="single_pte_mode"></span><span id="SINGLE_PTE_MODE"></span>1 つの PTE モード
+## <a name="span-idsingle_pte_modespanspan-idsingle_pte_modespanspan-idsingle_pte_modespansingle-pte-mode"></a><span id="Single_PTE_mode"></span><span id="single_pte_mode"></span><span id="SINGLE_PTE_MODE"></span>単一の PTE モード
 
 
-このモードでは、レベル 1 のページ テーブルのページ テーブル エントリは、4 KB のページ テーブルまたは 64 KB のページ テーブルのいずれかをポイントします。
+このモードでは、レベル1のページテーブルのページテーブルエントリは、4 KB のページテーブルまたは 64 KB のページテーブルのいずれかになります。
 
-[**DXGK\_PTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_dxgk_pte)::**PageTablePageSize**フィールドに追加されます**DXGK\_PTE**します。 レベル 1 のページ テーブル (古い用語では、ページ ディレクトリ) のページ テーブル エントリに対してのみ使用してください。 このフィールドは、カーネル モード ドライバー (64 KB、または 4 KB のページを使用して)、対応するページ テーブルの種類を示します。
+[**DXGK\_pte**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_dxgk_pte)::**pagetablepagesize**フィールドが**DXGK\_pte**に追加されます。 これは、レベル1のページテーブル (古い用語のページディレクトリ) のページテーブルエントリに対してのみ使用してください。 このフィールドは、対応するページテーブルの種類をカーネルモードドライバーに指示します (64 KB または 4 KB のページを使用します)。
 
-ビデオ メモリ マネージャーが仮想アドレスの 64 KB のページ テーブルを使用した場合の範囲します。
+ビデオメモリマネージャーは、次の場合に、仮想アドレスの範囲に 64 KB のページテーブルを使用することを選択します。
 
--   64 KB に配置割り当てのみが、範囲にマップされます。
--   範囲にマップされているすべての割り当てのメモリのセグメントは、64 KB のページをサポートします。
+-   64 KB のアラインされた割り当てのみが範囲にマップされます。
+-   範囲にマップされているすべての割り当てのメモリセグメントは、64 KB のページをサポートします。
 
-仮想アドレスの範囲が 64 KB のページによってマップされているし、上記の条件は無効になります (たとえば、割り当てがコミットされるシステム メモリのセグメントに) と、ビデオ メモリ マネージャーが、64 KB のページ テーブルから、4 KB のページ テーブルに切り替わります。
+仮想アドレス範囲が 64 KB ページによってマップされていて、上記の条件が有効ではない場合 (たとえば、割り当てがシステムメモリセグメントにコミットされた場合)、ビデオメモリマネージャーは 64 KB ページテーブルから 4 KB ページテーブルに切り替えます。
 
-ページのテーブルが 64 KB のページ テーブル エントリのみとページ テーブル エントリの場合、4 KB のページを指す必要があります (たとえば、割り当ては、配置しているシステム メモリに) ページのテーブルは 4 KB のページ テーブル エントリを使用してに変換されます。
+ページテーブルに 64 KB のページテーブルエントリが1つだけあり、ページテーブルエントリが 4 kb のページをポイントする必要がある場合 (たとえば、割り当てがシステムメモリに配置されている場合)、ページテーブルは 4 KB のページテーブルエントリを使用するように変換されます。
 
-変換は、次のように行われます。
+変換は次のように行われます。
 
-1.  プロセスのすべてのコンテキストが中断されます。
-2.  4 KB のページをポイントする既存のページ テーブル エントリが更新されます。 ドライバー、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作をページングします。
-3.  ページ テーブルをポイントするレベル 1 のページ テーブル エントリが新しいページ サイズを反映するように更新されます (**PageTablePageSize** = **DXGK\_PTE\_ページ\_テーブル\_ページ\_4 KB**)。 ドライバー、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作をページングします。
+1.  プロセスのすべてのコンテキストが中断されています。
+2.  既存のページテーブルエントリは、4 KB のページを指すように更新されます。 ドライバーは、 [*Updatepagetable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)ページング操作を取得します。
+3.  ページテーブルを指すレベル1のページテーブルエントリが更新され、新しいページサイズ (**Pagetablepagesize** = **DXGK\_PTE\_ページ\_テーブル\_ページ\_4 kb**) が反映されます。 ドライバーは、 [*Updatepagetable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)ページング操作を取得します。
 4.  プロセスのすべてのコンテキストが再開されます。
 
-ページのテーブルが唯一の 4 KB ページ テーブル エントリと、4 KB のページをポイントする必要がありますのページ テーブル エントリの数が 0、ページの表は 64 KB のページ テーブル エントリを使用する変換されます。
+ページテーブルに 4 kb のページテーブルエントリしかなく、4 kb のページを指す必要があるページテーブルエントリの数が0の場合、ページテーブルは 64 KB のページテーブルエントリを使用するように変換されます。
 
-変換は、次のように行われます。
+変換は次のように行われます。
 
-1.  プロセスのすべてのコンテキストが中断されます。
-2.  64 KB のページをポイントする既存のページ テーブル エントリが更新されます。 ドライバー、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作をページングします。
-3.  ページ テーブルをポイントするレベル 1 のページ テーブル エントリが新しいページ サイズを反映するように更新されます (**PageTablePageSize** = **DXGK\_PTE\_ページ\_テーブル\_ページ\_64 KB**)。 ドライバー、 [ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作をページングします。
+1.  プロセスのすべてのコンテキストが中断されています。
+2.  既存のページテーブルエントリは、64 KB のページを指すように更新されます。 ドライバーは、 [*Updatepagetable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)ページング操作を取得します。
+3.  ページテーブルをポイントするレベル1のページテーブルエントリが更新され、新しいページサイズ (**Pagetablepagesize** = **DXGK\_PTE\_ページ\_テーブル\_ページ\_64 kb**) が反映されます。 ドライバーは、 [*Updatepagetable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)ページング操作を取得します。
 4.  プロセスのすべてのコンテキストが再開されます。
 
-別のページ テーブルのサイズを頻繁に切り替えますを防ぐためには、ドライバーはまとめて小さな割り当てをパックする必要があります。
+異なるページテーブルサイズが頻繁に切り替わるのを防ぐために、ドライバーは小さい割り当てをまとめてパックする必要があります。
 
-## <a name="span-iddualptemodespanspan-iddualptemodespanspan-iddualptemodespandual-pte-mode"></a><span id="Dual_PTE_mode"></span><span id="dual_pte_mode"></span><span id="DUAL_PTE_MODE"></span>デュアル モードの PTE
+## <a name="span-iddual_pte_modespanspan-iddual_pte_modespanspan-iddual_pte_modespandual-pte-mode"></a><span id="Dual_PTE_mode"></span><span id="dual_pte_mode"></span><span id="DUAL_PTE_MODE"></span>デュアル PTE モード
 
 
-このモードでは、レベル 1 のページ テーブルのページ テーブル エントリは同時に 4 KB のページ テーブルを 64 KB のページ テーブルにポイント可能性があります。
+このモードでは、レベル1のページテーブルのページテーブルエントリは、4 KB のページテーブルと 64 KB のページテーブルを指している場合があります。
 
-レベル 1 のページ テーブルのエントリで両方のポインターがあります、**有効**フラグが設定が同じ 64 KB 仮想アドレスの範囲をカバーする、レベル 0 のページ テーブル エントリが同時に有効することはできません。
+レベル1のページテーブルのエントリ内の両方のポインターに**有効な**フラグが設定されている可能性がありますが、同じ 64 KB の仮想アドレス範囲をカバーするレベル0のページテーブルのエントリは、同時に有効にすることができません。
 
-64 KB のページ テーブル エントリを対象となる割り当てがページ サイズが 64 KB のメモリ セグメントに配置されると、64 KB のページ テーブル エントリが無効になり、対応する 4 KB のページ テーブル エントリが有効になります。
+64 KB のページテーブルエントリによってカバーされる割り当てが、64 KB ページサイズのメモリセグメントに配置されると、64 KB ページテーブルエントリが無効になり、対応する 4 KB のページテーブルエントリが有効になります。
 
-次の図に 4 KB の割り当ておよび割り当てが 64 KB に配置 level0 のページ テーブルの同じ仮想アドレス範囲および 64 KB のページをサポートするセグメントをれています。
+次の図では、4 KB の割り当てと 64 KB でアラインされた割り当てが、level0 page テーブルと 64 KB ページをサポートするセグメントでカバーされる同じ仮想アドレス範囲内にあります。
 
-![pte デュアル モードのページ テーブル](images/support-for-64kb-pages.1.png)
+![デュアル pte モードのページテーブル](images/support-for-64kb-pages.1.png)
 
  
 

@@ -3,16 +3,16 @@ title: モジュール
 description: モジュール
 ms.assetid: 0cd99869-4014-4f9f-b5f1-d06c69fd134e
 keywords:
-- モジュールのシンボル
+- シンボル、モジュール
 - モジュール
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c602a64f1c1c5434a47def32efddebc6f5a7b87f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e1f8e0597ddfe35caccfcc41f569c17c05ce899
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366467"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834335"
 ---
 # <a name="modules"></a>モジュール
 
@@ -20,55 +20,55 @@ ms.locfileid: "67366467"
 ## <span id="modules"></span><span id="MODULES"></span>
 
 
-*イメージ*実行可能ファイル、DLL、またはユーザー モード プロセスまたはカーネルの一部として Windows が読み込まれているドライバーです。 イメージの読み込み元のファイルと呼びますその*イメージ ファイル*します。
+*イメージ*は、Windows によってユーザーモードプロセスまたはカーネルの一部として読み込まれた実行可能ファイル、DLL、またはドライバーです。 イメージの読み込み元のファイルは、*イメージファイル*と呼ばれます。
 
-[デバッガー エンジン](introduction.md#debugger-engine)の一覧をキャッシュ*モジュール*プロセスごとに (または、カーネル モードの仮想プロセスで)。 通常このリスト内の各モジュールは、プロセスの画像を表します。 使用して、ターゲットとエンジンのモジュールの一覧を同期できます**再読み込み**します。
+[デバッガーエンジン](introduction.md#debugger-engine)は、各プロセス (または、カーネルモードでは仮想プロセス) の*モジュール*の一覧をキャッシュします。 通常、この一覧の各モジュールは、プロセス内のイメージを表します。 エンジンのモジュールリストは、 **Reload**を使用してターゲットと同期できます。
 
-**注**  カーネル モードのデバッグで、仮想プロセス エンジンのモジュールの一覧には、システム全体のカーネル モードのモジュールと現在のプロセスのユーザー モードのモジュールの両方が含まれています。
+**注**   カーネルモードのデバッグでは、仮想プロセスのエンジンのモジュール一覧に、システム全体のカーネルモードモジュールと現在のプロセスのユーザーモードモジュールの両方が含まれています。
 
  
 
-モジュールの一覧で、インデックスを使用して、エンジンは、ターゲットの保持またはのターゲットの仮想アドレス空間では、そのベース アドレスでモジュールを指定できます。 モジュールのインデックスには、モジュールの一覧内の位置と等しいし、下限のインデックスを持つモジュールが読み込まれた場合にこのインデックスがそのため変更します。 すべての読み込まれたモジュールがあるインデックス。これらは、読み込まれたモジュールのインデックスよりも高いは常にです。 モジュールのベース アドレスは、それが読み込まれた; 限り変更されません。場合によっては、モジュールがアンロードおよび再読み込みし、時に変更可能性があります。
+モジュールは、ターゲットの仮想アドレス空間内のベースアドレス、またはエンジンがターゲット用に保持しているモジュールの一覧のインデックスによって指定できます。 モジュールのインデックスは、モジュールのリスト内の位置と同じであるため、インデックス番号が小さいモジュールがアンロードされると、このインデックスが変更されます。 アンロードされたすべてのモジュールにインデックスがあります。これらは、読み込まれたモジュールのインデックスよりも常に高くなります。 モジュールのベースアドレスは、読み込まれている間は変更されません。場合によっては、モジュールがアンロードされた後に再読み込みされると変更されることがあります。
 
-インデックスが 0 から 1 を引いたターゲット内のモジュールの数までの数です。 現在のプロセスでモジュールの数を呼び出すことによって見つかります[ **GetNumberModules**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getnumbermodules)します。
+インデックスは、0からターゲットのモジュール数から1を引いた数までの数値です。 現在のプロセス内のモジュールの数は、 [**Getnumber モジュール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getnumbermodules)を呼び出すことによって確認できます。
 
-呼び出すことによって、ベース アドレスを検索するインデックスを使用できる[ **GetModuleByIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebyindex)します。 使用して指定された名前のシンボルを所有しているモジュールのベース アドレスを検出できる[ **GetSymbolModule**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolmodule)します。
+[**GetModuleByIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebyindex)を呼び出すことにより、インデックスを使用してベースアドレスを検索できます。 指定された名前を持つシンボルを所有するモジュールのベースアドレスは、 [**Getsymbol モジュール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolmodule)を使用して見つけることができます。
 
-次のメソッドには、インデックスと、指定したモジュールのベース アドレスの両方が返されます。
+次のメソッドは、指定されたモジュールのインデックスとベースアドレスの両方を返します。
 
--   指定したモジュールの名前のモジュールを検索する使用[ **GetModuleByModuleName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebymodulename)します。
+-   モジュール名を指定してモジュールを検索するには、 [**GetModuleByModuleName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebymodulename)を使用します。
 
--   仮想アドレスの範囲内には、指定されたアドレスが含まれています。 モジュールは、によって返される[ **GetModuleByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebyoffset)します。 このメソッドは、モジュールのベース アドレスを指定されたモジュールのインデックスの検索に使用できます。
+-   指定されたアドレスを含む仮想アドレス範囲を持つモジュールは、 [**GetModuleByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmodulebyoffset)によって返されます。 このメソッドを使用すると、モジュールのベースアドレスが指定されているモジュールインデックスを見つけることができます。
 
-次のメソッドには、インデックスまたはベース アドレスのいずれかを指定されたモジュールに関する情報が返されます。
+次のメソッドは、ベースアドレスまたはインデックスによって指定されたモジュールに関する情報を返します。
 
--   モジュールの名前がによって返される[ **GetModuleNames** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmodulenames)と[ **GetModuleNameString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmodulenamestring)します。
+-   モジュールの名前は、 [**Getmodulenames**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmodulenames)および[**GetModuleNameString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmodulenamestring)によって返されます。
 
--   モジュールのバージョン情報がによって返される[ **GetModuleVersionInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmoduleversioninformation)します。
+-   モジュールのバージョン情報は、 [**GetModuleVersionInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmoduleversioninformation)によって返されます。
 
--   によって返されるモジュールの記述に使用されるパラメーターの一部[ **GetModuleParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getmoduleparameters)します。 このメソッドによって返されるパラメーターの詳細については、「 [**デバッグ\_モジュール\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_module_parameters)します。
+-   モジュールを記述するために使用されるパラメーターの一部は、 [**GetModuleParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getmoduleparameters)によって返されます。 このメソッドによって返されるパラメーターの詳細については、「 [**DEBUG\_MODULE\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_module_parameters)」を参照してください。
 
-### <a name="span-idunloadedmodulesspanspan-idunloadedmodulesspanunloaded-modules"></a><span id="unloaded_modules"></span><span id="UNLOADED_MODULES"></span>モジュールのアンロード
+### <a name="span-idunloaded_modulesspanspan-idunloaded_modulesspanunloaded-modules"></a><span id="unloaded_modules"></span><span id="UNLOADED_MODULES"></span>アンロードされたモジュール
 
-ユーザー モードのデバッグは、中にアンロードされたモジュールは、Windows Server 2003 と Windows の以降のバージョンでのみ追跡されます。 Windows の以前のバージョンは、カーネル モードで読み込まれたモジュールのみを追跡します。 追跡時に読み込まれたモジュールの後にインデックスします。 そのため、読み込まれたすべてのモジュールとし、アンロードされたモジュールのターゲットのモジュールを検索するメソッドが検索されます。 によってアンロードされたコードを呼び出そうとすると発生したエラーを分析する読み込まれたモジュールを使用できます。
+ユーザーモードのデバッグ中、アンロードしたモジュールは Windows Server 2003 以降のバージョンの Windows でのみ追跡されます。 以前のバージョンの Windows では、カーネルモードでアンロードされたモジュールのみを追跡していました。 追跡されると、読み込まれたモジュールの後にインデックスが作成されます。 したがって、ターゲットのモジュールを検索するすべてのメソッドは、読み込まれたすべてのモジュールを検索し、アンロードされたモジュールを検索します。 アンロードされたモジュールを使用して、アンロードされたコードを呼び出そうとしたことによって発生したエラーを分析できます。
 
-### <a name="span-idsyntheticmodulesspanspan-idsyntheticmodulesspan-synthetic-modules"></a><span id="synthetic_modules"></span><span id="SYNTHETIC_MODULES"></span> 統合モジュール
+### <a name="span-idsynthetic_modulesspanspan-idsynthetic_modulesspan-synthetic-modules"></a><span id="synthetic_modules"></span><span id="SYNTHETIC_MODULES"></span>合成モジュール
 
-*合成モジュール*メモリの領域にラベルを付ける方法として作成できます。 これらのモジュールは、実際の記号を含めることはできませんが、合成のシンボルを含めることができます。 メソッド[ **AddSyntheticModule** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticmodule)新しい統合モジュールを作成します。 統合モジュールを使用して削除できる[ **RemoveSyntheticModule**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticmodule)します。 ターゲット内のすべてのモジュールを再読み込みには、すべての合成モジュールが削除されます。
+*合成モジュール*は、メモリ領域にラベルを付ける方法として作成できます。 これらのモジュールに実際のシンボルを含めることはできませんが、合成シンボルを含めることができます。 メソッド[**Addsyntheのモジュール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticmodule)は、新しい合成モジュールを作成します。 合成モジュールは、 [**RemoveSyntheticModule**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticmodule)を使用して削除できます。 ターゲット内のすべてのモジュールを再読み込みすると、すべての統合モジュールが削除されます。
 
-### <a name="span-idimagepathspanspan-idimagepathspanimage-path"></a><span id="image_path"></span><span id="IMAGE_PATH"></span>イメージのパス
+### <a name="span-idimage_pathspanspan-idimage_pathspanimage-path"></a><span id="image_path"></span><span id="IMAGE_PATH"></span>イメージパス
 
-*実行可能イメージ パス*実行可能イメージを検索するときに、エンジンによって使用されます。
+実行可能*イメージのパス*は、実行可能イメージの検索時にエンジンによって使用されます。
 
-実行可能イメージのパスは、セミコロンで区切られた複数のディレクトリで構成できます ( **;** )。 順序でこれらのディレクトリが検索されます。
+実行可能イメージのパスは、セミコロン ( **;** ) で区切られた複数のディレクトリで構成されます。 これらのディレクトリは順番に検索されます。
 
-実行可能イメージ パスの概要については、実行可能イメージのパスを参照してください。
+実行可能イメージパスの概要については、「実行可能イメージのパス」を参照してください。
 
-実行可能イメージのパスにディレクトリを追加するには、メソッドを使用して[ **AppendImagePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-appendimagepath)します。 によって、まったく実行可能イメージのパスが返される[ **GetImagePath** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getimagepath)を使用して変更できる[ **SetImagePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-setimagepath)します。
+実行可能イメージパスにディレクトリを追加するには、 [**AppendImagePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-appendimagepath)メソッドを使用します。 実行可能なイメージのパス全体は[**GetImagePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getimagepath)によって返され、 [**SetImagePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setimagepath)を使用して変更できます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセスと仮想プロセスの詳細については、次を参照してください。[スレッドとプロセス](controlling-threads-and-processes.md)します。
+プロセスと仮想プロセスの詳細については、「[スレッドとプロセス](controlling-threads-and-processes.md)」を参照してください。
 
  
 

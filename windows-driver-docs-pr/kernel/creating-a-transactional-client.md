@@ -3,67 +3,67 @@ title: トランザクション クライアントの作成
 description: トランザクション クライアントの作成
 ms.assetid: 75d4758b-dfba-431b-9bfa-9dcb98c2a7cc
 keywords:
-- WDK KTM トランザクションのクライアント
-- トランザクション クライアント WDK KTM をトランザクションのクライアントを作成します。
+- トランザクションクライアント WDK KTM
+- トランザクションクライアント WDK KTM、トランザクションクライアントの作成
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b36e896890e0dfa4158a5bcbe5444fe977f418a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b282e284ea68e6ea4667fc4e4b4939cf34178e27
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377174"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828466"
 ---
 # <a name="creating-a-transactional-client"></a>トランザクション クライアントの作成
 
 
-A [*トランザクション クライアント*](transaction-processing-terms.md#ktm-term-transactional-client)はトランザクション データベースなどのリソースにアクセスするリソース マネージャーのエクスポートされたインターフェイスを使用するシステム (TP) コンポーネントを処理するリソース マネージャーサポートされています。
+トランザクション[*クライアント*](transaction-processing-terms.md#ktm-term-transactional-client)は、リソースマネージャーのエクスポートされたインターフェイスを使用して、リソースマネージャーがサポートするリソース (データベースなど) にアクセスするトランザクション処理システム (TPS) コンポーネントです。
 
-通常、クライアント トランザクションを作成します一連のデータベースの操作を実行します。 とし、操作する永続的なトランザクションをコミットします。 クライアントには、エラーが発生すると、そのことができますトランザクションをロールバック、トランザクションのコミットではなく、トランザクションの操作を削除します。
+通常、クライアントはトランザクションを作成し、一連のデータベース操作を実行した後、トランザクションをコミットして操作を永続的にします。 クライアントでエラーが発生した場合は、トランザクションをロールバックして、トランザクションをコミットする代わりにトランザクションの操作を削除できます。
 
-通常、カーネル モードの KTM を使用するトランザクションのクライアントでは、トランザクションごとに次のタスクを実行する必要があります。
+通常、カーネルモードの KTM を使用するトランザクションクライアントは、トランザクションごとに次のタスクを実行する必要があります。
 
-1.  トランザクション オブジェクトを作成します。
+1.  トランザクションオブジェクトを作成します。
 
-    呼び出し[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)トランザクション オブジェクトを作成、オブジェクトのハンドルを提供し、クライアントを識別するためにリソース マネージャーに渡すことができるオブジェクト識別子 (GUID) を割り当てます、トランザクションです。
+    [**Zwcreatetransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)を呼び出すと、トランザクションオブジェクトが作成され、オブジェクトハンドルが提供され、クライアントがリソースマネージャーに渡してトランザクションを識別できるオブジェクト識別子 (GUID) が割り当てられます。
 
-2.  トランザクション オブジェクトの識別子を取得します。
+2.  トランザクションオブジェクトの識別子を取得します。
 
-    クライアントが呼び出すことができます[ **ZwQueryInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)オブジェクト識別子を取得します。
+    クライアントは、 [**Zwqueryinformationtransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)を呼び出して、オブジェクト識別子を取得できます。
 
-3.  リソース マネージャーには、トランザクション オブジェクトの識別子を渡します。
+3.  トランザクションオブジェクトの識別子をリソースマネージャーに渡します。
 
-    通常、クライアントは、リソース マネージャーのエクスポートされたインターフェイスを resource manager への通信パスを開くし、パスをトランザクションに関連付けるを呼び出します。 たとえば、リソース マネージャーを取得、 *CreateDataObject*はのようなルーチンを[TP コンポーネントについて](understanding-tps-components.md)トピックについて説明します。
+    クライアントは、通常、リソースマネージャーのエクスポートされたインターフェイスを呼び出して、リソースマネージャーへの通信パスを開き、パスをトランザクションに関連付けます。 たとえば、リソースマネージャーは、「 [TPS コンポーネント](understanding-tps-components.md)について」トピックで説明されているような*createdataobject*ルーチンを提供する場合があります。
 
 4.  トランザクションに含まれる操作を実行します。
 
-    通常、クライアントは、リソース マネージャーのリソースにアクセスするリソース マネージャーのインターフェイスを呼び出します。 たとえば、データベース マネージャーのクライアントはから読み取られ、データベースに書き込む可能性があります。
+    通常、クライアントはリソースマネージャーのインターフェイスを呼び出して、リソースマネージャーのリソースにアクセスします。 たとえば、データベースマネージャーのクライアントは、データベースの読み取りと書き込みを行うことができます。
 
-5.  コミットまたはトランザクションをロールバックします。
+5.  トランザクションをコミットまたはロールバックします。
 
-    すべてのリソースの操作が成功した場合、クライアントが呼び出す必要があります[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)永続的な操作を作成します。 操作に失敗した場合、クライアントが呼び出す必要があります[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)の代わりに**ZwCommitTransaction**します。 たとえば、書き込み操作が失敗しましたが、一連の 1 つは、認識された、クライアント データベース マネージャーの場合、クライアント呼び出す必要があります**ZwRollbackTransaction**永続的な書き込み操作のいずれになるようにします。
+    すべてのリソース操作が成功した場合、クライアントは[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出して操作を永続的にする必要があります。 操作が失敗した場合、クライアントは**Zwcommittransaction**ではなく[**ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)を呼び出す必要があります。 たとえば、データベースマネージャーのクライアントが、一連の書き込み操作のいずれかが失敗したと判断した場合、クライアントは**ZwRollbackTransaction**を呼び出す必要があります。これにより、書き込み操作がすべて永続的になることはありません。
 
-    クライアントが呼び出すことができます**ZwCommitTransaction**と**ZwRollbackTransaction**同期または非同期にします。 クライアントは、これらのルーチンを同期的に呼び出す、コミットまたはロールバック操作が完了するまで、ルーチンは返されません。
+    クライアントは、 **Zwcommittransaction**と**ZwRollbackTransaction**を同期的または非同期的に呼び出すことができます。 クライアントがこれらのルーチンを同期的に呼び出す場合は、コミットまたはロールバックの操作が完了するまで、ルーチンは戻りません。
 
-    コミットし、トランザクションをロールバックする方法の詳細については、次を参照してください。[トランザクション操作の処理](handling-transaction-operations.md)します。
+    トランザクションをコミットおよびロールバックする方法の詳細については、「[トランザクション操作の処理](handling-transaction-operations.md)」を参照してください。
 
-6.  トランザクション オブジェクトのハンドルを閉じます。
+6.  トランザクションオブジェクトハンドルを閉じます。
 
-    呼び出す必要がありますが、クライアントは、トランザクションの処理が終了したら、 [ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)トランザクション オブジェクトのハンドルを終了するには
+    クライアントがトランザクションの処理を完了したら、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してトランザクションオブジェクトのハンドルを閉じる必要があります。
 
-TP では、1 つ以上のリソース マネージャーを含めることができます。 クライアントのトランザクションには、2 つのリソース マネージャーをサポートする 2 つのデータベースなど、複数のリソースに対する操作が含まれている場合、クライアントが通常は、次に。
+TP には、複数のリソースマネージャーを含めることができます。 2つのリソースマネージャーがサポートする2つのデータベースなど、クライアントのトランザクションに複数のリソースに対する操作が含まれている場合、クライアントは通常、次の処理を実行します。
 
-1.  トランザクションごとに 1 つのトランザクション オブジェクトを作成します。
+1.  トランザクションごとに1つのトランザクションオブジェクトを作成します。
 
-2.  各リソース マネージャーには、トランザクション オブジェクトの id を渡します。
+2.  各リソースマネージャーにトランザクションオブジェクトの識別子を渡します。
 
-3.  各リソース マネージャーのインターフェイスを呼び出すことによって、各データベースでの操作を実行します。
+3.  各リソースマネージャーのインターフェイスを呼び出すことにより、各データベースに対して操作を実行します。
 
-4.  すべての操作が完了したこと、またはエラーが検出された場合は、トランザクションをロールバックする場合は、トランザクションをコミットします。
+4.  すべての操作がエラーなしで完了した場合はトランザクションをコミットし、エラーが検出された場合はトランザクションをロールバックします。
 
-TP が含まれている場合、*優先的なトランザクション マネージャー*、トランザクションのクライアントが通常 KTM では呼び出しません。 優先的なトランザクション マネージャーとそのクライアントの詳細については、次を参照してください。[上位のトランザクション マネージャーを作成する](creating-a-superior-transaction-manager.md)します。
+TP に*上位のトランザクションマネージャー*が含まれている場合、トランザクションクライアントは通常、KTM を呼び出しません。 上位トランザクションマネージャーとそのクライアントの詳細については、「[上位トランザクションマネージャーの作成](creating-a-superior-transaction-manager.md)」を参照してください。
 
-トランザクションのクライアントが呼び出すことができます[ **ZwSetInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationtransaction)トランザクション固有の情報を設定します。 たとえば、クライアントは、トランザクションのタイムアウト値を設定またはわかりやすい文字列を指定します。 クライアントが呼び出すことができます[ **ZwQueryInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)トランザクションに関する情報を取得します。 たとえば、クライアントは、トランザクションがコミットまたはロールバックするかどうかを判断するには、このルーチンを呼び出すことができます。
+トランザクションクライアントは、 [**Zwsetinformationtransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationtransaction)を呼び出して、トランザクション固有の情報を設定できます。 たとえば、クライアントは、トランザクションのタイムアウト値を設定したり、わかりやすい文字列を指定したりすることができます。 クライアントは、 [**Zwqueryinformationtransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)を呼び出して、トランザクションに関する情報を取得できます。 たとえば、クライアントはこのルーチンを呼び出して、トランザクションがコミットまたはロールバックされたかどうかを判断できます。
 
  
 

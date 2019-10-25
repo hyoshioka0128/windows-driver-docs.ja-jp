@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル
-description: KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティを supermixer ノードのミックス レベルを指定します (KSNODETYPE\_SUPERMIX)。 すべての入力と出力チャネルの情報を提供します。
+title: KSK プロパティ\_オーディオ\_混合\_レベル\_テーブル
+description: KSK プロパティ\_AUDIO\_ミックス\_レベル\_テーブルプロパティは、supermixer ノード (KSNODETYPE\_SUPERMIXER) のミックスレベルを指定します。 すべての入力チャネルと出力チャネルに関する情報を提供します。
 ms.assetid: 1a1b486b-06e4-462b-8fe9-9d3581c82d06
 keywords:
-- KSPROPERTY_AUDIO_MIX_LEVEL_TABLE オーディオ デバイス
+- KSPROPERTY_AUDIO_MIX_LEVEL_TABLE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e05e4e922e08ee31a90b535a7f80923a7b18459
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f932fd125f2d99e8daf5686224957a72f9e38444
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358912"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832978"
 ---
-# <a name="kspropertyaudiomixleveltable"></a>KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル
+# <a name="ksproperty_audio_mix_level_table"></a>KSK プロパティ\_オーディオ\_混合\_レベル\_テーブル
 
 
-KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティを supermixer ノードのミックス レベルを指定します ([**KSNODETYPE\_SUPERMIX** ](ksnodetype-supermix.md)). すべての入力と出力チャネルの情報を提供します。
+KSK プロパティ\_AUDIO\_ミックス\_レベル\_テーブルプロパティは、supermixer ノード ([**KSNODETYPE\_supermixer**](ksnodetype-supermix.md)) のミックスレベルを指定します。 すべての入力チャネルと出力チャネルに関する情報を提供します。
 
 ## <span id="ddk_ksproperty_audio_mix_level_table_ks"></span><span id="DDK_KSPROPERTY_AUDIO_MIX_LEVEL_TABLE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティを 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,24 +50,24 @@ KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティを 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>配列<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel)"> <strong>KSAUDIO_MIXLEVEL</strong> </a>構造体</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)"><strong>KSAUDIO_MIXLEVEL</strong></a>構造体の配列</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) が KSAUDIO の配列\_ミキシング レベル構造体のすべての M ミックス レベルを指定する\*m supermixer ノード内の N 入力出力パスが出力チャネルのチャネルと N を入力します。 配列には、M が含まれています。\*n 個の要素。
+プロパティ値 (operation data) は、KSK オーディオ\_MIXLEVEL 構造体の配列であり、M 入力チャネルと N 出力チャネルを持つ supermixer ノードのすべての M\*N 入力出力パスのミックスレベルを指定します。 この配列には、M\*N 個の要素が含まれています。
 
 ```cpp
   KSAUDIO_MIXLEVEL  MixLevel[M*N];
 ```
 
-次の表では、配列要素のマッピングを示します supermixer ノードの m\*N 入力出力パス。
+次の表は、配列要素とスーパーミキサーノード M\*N の入力出力パスとのマッピングを示しています。
 
 <table>
 <colgroup>
@@ -76,64 +76,64 @@ KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティを 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">配列要素</th>
+<th align="left">Array 要素</th>
 <th align="left">入力-出力パス</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ミキシング レベル [0]</p></td>
-<td align="left"><p>0 の出力チャネルにチャネル 0 を入力します。</p></td>
+<td align="left"><p>MixLevel [0]</p></td>
+<td align="left"><p>チャネル0を出力するための入力チャネル0</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ミキシング レベル [1]</p></td>
-<td align="left"><p>1 の出力チャネルにチャネル 0 を入力します。</p></td>
+<td align="left"><p>MixLevel [1]</p></td>
+<td align="left"><p>チャネル1を出力するための入力チャネル0</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ミキシング レベル [N-1]</p></td>
-<td align="left"><p>N-1 の出力チャネルにチャネル 0 を入力します。</p></td>
+<td align="left"><p>MixLevel [N-1]</p></td>
+<td align="left"><p>チャネルを出力するための入力チャネル 0-1</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ミキシング レベル [N]</p></td>
-<td align="left"><p>0 の出力チャネルにチャネル 1 を入力します。</p></td>
+<td align="left"><p>MixLevel [N]</p></td>
+<td align="left"><p>入力チャネル1から出力チャネル0</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ミキシング レベル [n+1]</p></td>
-<td align="left"><p>1 の出力チャネルにチャネル 1 を入力します。</p></td>
+<td align="left"><p>MixLevel [N + 1]</p></td>
+<td align="left"><p>入力チャネル1から出力チャネル1</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ミキシング レベル 2 n-1</p></td>
-<td align="left"><p>N-1 の出力チャネルにチャネル 1 の入力します。</p></td>
+<td align="left"><p>MixLevel [2N-1]</p></td>
+<td align="left"><p>チャネルを出力するための入力チャネル 1 N-1</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[1 M N *] ミキシング レベル</p></td>
-<td align="left"><p>N-1 の出力チャネルにチャネル M-1 の入力します。</p></td>
+<td align="left"><p>MixLevel [M * N-1]</p></td>
+<td align="left"><p>チャネルを出力するための入力チャネル (M-1) N-1</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の図は、入力、出力パスの配列要素のミキシング レベルのマッピングを示します。 各入力出力パスを制御するミキシング レベルの配列要素のインデックスは、角かっこで表示されます。
+次の図は、MixLevel 配列要素を入力出力パスにマッピングする方法を示しています。 各入力出力パスを制御する MixLevel array 要素のインデックスは、角かっこで示されています。
 
-![supermixer ノードのミキシング レベルの配列要素のマッピングを示す図](images/supermix.png)
+![スーパーミキサーノードの mixlevel array 要素のマッピングを示す図](images/supermix.png)
 
-入力チャネルに接続するパスがない場合*は*出力チャネルに*j*、フィルターを設定する必要があります、**ミュート**ミキシング レベルの配列要素のメンバー\[*しました* \*N +*j* \]に**TRUE**します。
+入力チャネル*i*を出力チャネル*j*に接続するパスがない場合、フィルターでは、配列要素 MixLevel の**ミュート**メンバー\[*i*\*N +*j*\] を**TRUE**に設定する必要があります。
 
-KSAUDIO サイズ\_ミキシング レベルの配列はから計算されます、 [ **KSAUDIO\_MIXCAP\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixcap_table)構造体から取得した[ **KSPROPERTY\_オーディオ\_混在\_レベル\_CAP**](ksproperty-audio-mix-level-caps.md)します。 場合、構造体の**InputChannels**と**OutputChannels**メンバーが値を含む*m*と*n*配列のサイズが
+Ksaudio\_MIXLEVEL 配列のサイズは、 [**ksaudio\_MIXCAP\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixcap_table)構造から計算されます。この構造体は、 [**KSK プロパティ\_オーディオ\_混合\_レベル\_キャップ**](ksproperty-audio-mix-level-caps.md)から取得されます。 構造体の**Inputchannels**と**outputchannels**のメンバーに*m*と*n*の値が含まれている場合、配列のサイズはです。
 
-*m* \* *n* \* **sizeof**(KSAUDIO\_ミキシング レベル)
+*m* \* *n* \* **SIZEOF**(ksaudio\_MIXLEVEL)
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティの要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+\_レベル\_テーブルのプロパティを\_\_KSK プロパティは、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-フィルターは、KSPROPERTY を成功\_オーディオ\_混在\_レベル\_ミックス レベル値を指定するテーブルのプロパティの設定要求 (**レベル**KSAUDIO のメンバー\_ミキシング レベル) では取り上げませんが、フィルターの範囲 (サイレント) 値をサポートされている範囲にクランプします。 このプロパティを取得する後続の要求でただし、フィルターの出力は、実際の値を使用します。
+フィルターは KSK プロパティ\_AUDIO\_ミックス\_レベル\_テーブルセットプロパティの要求に成功します。これは、フィルターの範囲を超える混合レベルの値 (KSK AUDIO\_MIXLEVEL の**レベル**メンバー) を指定しますが (警告なし) は、サポートされている範囲に値をクランプします。 ただし、このプロパティを取得するための後続の要求では、フィルターは実際に使用された値を出力します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -144,23 +144,23 @@ KSPROPERTY\_オーディオ\_混在\_レベル\_テーブル プロパティの�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSAUDIO\_MIXCAP\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixcap_table)
+[**KSAUDIO\_MIXCAP\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixcap_table)
 
-[**KSPROPERTY\_オーディオ\_混在\_レベル\_キャップ**](ksproperty-audio-mix-level-caps.md)
+[**KSK プロパティ\_オーディオ\_混合\_レベル\_キャップ**](ksproperty-audio-mix-level-caps.md)
 
-[**KSAUDIO\_ミキシング レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel)
+[**KSAUDIO\_MIXLEVEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)
 
-[**KSNODETYPE\_SUPERMIX**](ksnodetype-supermix.md)
+[**KSNODETYPE\_スーパーミックス**](ksnodetype-supermix.md)
 
  
 

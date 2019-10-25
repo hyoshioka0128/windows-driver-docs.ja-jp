@@ -3,21 +3,21 @@ title: 送信操作のキャンセル
 description: 送信操作のキャンセル
 ms.assetid: 5bd7a815-4e4d-4259-b322-f4f8d07f2e1a
 keywords:
-- ネットワーク、WDK のデータを送信します。
-- WDK のデータ ネットワーク、送信します。
-- WDK のパケットを送信するネットワークを
-- WDK ネットワークのデータを送信します。
+- ネットワークデータ WDK、送信
+- データ WDK ネットワーク, 送信
+- パケット WDK ネットワーク、送信
+- データの送信 (WDK ネットワーク)
 - NDIS_SET_NET_BUFFER_LIST_CANCEL_ID
-- 送信操作の WDK ネットワー キングのキャンセル
-- キャンセル Id WDK ネットワーク
+- 送信操作の取り消し (WDK ネットワーク)
+- キャンセル Id の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296150091801eae0b99bee5448427550018c33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a90fbd3b032a8372f1ec8a8e285fc971f45d3ed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382801"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838211"
 ---
 # <a name="canceling-a-send-operation"></a>送信操作のキャンセル
 
@@ -25,21 +25,21 @@ ms.locfileid: "67382801"
 
 
 
-次の図は、送信操作の取り消しを示します。
+次の図は、送信操作の取り消しを示しています。
 
-![送信操作のキャンセルを示す図](images/netbuffercancelsend.png)
+![送信操作の取り消しを示す図](images/netbuffercancelsend.png)
 
-ドライバーを呼び出し、 [ **NDIS\_設定\_NET\_バッファー\_一覧\_キャンセル\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-set-net-buffer-list-cancel-id)各用のマクロ[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)伝送の下位レベルのドライバーに渡される構造体。 NDIS\_設定\_NET\_バッファー\_一覧\_キャンセル\_ID 関数は、キャンセルの識別子を持つ指定されたパケットをマークします。
+ドライバーは、送信用に下位レベルのドライバーに渡す各[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体に対して、 [**net\_buffer\_list\_CANCEL\_ID マクロ\_設定**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-set-net-buffer-list-cancel-id)されている NDIS\_を呼び出します。 NDIS\_SET\_NET\_BUFFER\_LIST\_CANCEL\_ID 関数は、指定されたパケットにキャンセル識別子をマークします。
 
-パケットにキャンセル Id を割り当てる前に、ドライバーを呼び出す必要があります[ **NdisGeneratePartialCancelId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgeneratepartialcancelid)各キャンセル ID を割り当てることの高位のバイトを取得します。 これにより、ドライバーに取り消しシステム内の他のドライバーによって割り当てられた Id が重複していないこと。 ドライバーを呼び出す通常**NdisGeneratePartialCancelId**から 1 回、 **DriverEntry**ルーチンは呼び出すことで、ドライバーが 1 つ以上の部分取り消し識別子を取得するただし、 **NdisGeneratePartialCancelId** 2 回以上。
+パケットにキャンセル Id を割り当てる前に、ドライバーは[**NdisGeneratePartialCancelId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgeneratepartialcancelid)を呼び出して、割り当てられた各キャンセル id の上位バイトを取得する必要があります。 これにより、ドライバーがシステム内の他のドライバーによって割り当てられたキャンセル Id と重複しないようにすることができます。 ドライバーは通常、 **Driverentry**ルーチンから**NdisGeneratePartialCancelId**を1回呼び出します。ただし、ドライバーは**NdisGeneratePartialCancelId**を複数回呼び出すことによって、複数の部分取り消し識別子を取得できます。
 
-マークされたネットワーク内のデータの保留中の転送をキャンセルする\_バッファー\_リスト構造では、ドライバーにキャンセル ID に渡す、 [ **NdisCancelSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscancelsendnetbufferlists)関数。 ドライバーとして使用できるは、NET\_バッファー\_リスト構造体のキャンセルの ID を呼び出して、 [ **NDIS\_取得\_NET\_バッファー\_一覧\_キャンセル\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-get-net-buffer-list-cancel-id)マクロ。
+マークされた NET\_BUFFER\_LIST 構造体に含まれるデータの保留中の転送を取り消すには、ドライバーは[**NdisCancelSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscancelsendnetbufferlists)関数にキャンセル ID を渡します。 ドライバーは、 [**NDIS\_GET\_net\_BUFFER\_LIST\_CANCEL\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-get-net-buffer-list-cancel-id)マクロを呼び出すことによって、NET\_バッファー\_リスト構造のキャンセル ID を取得できます。
 
-場合、ドライバーはすべて[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)同じキャンセル識別子を持つ構造体、を単一の呼び出しで伝送保留中のすべてキャンセルことできます**NdisCancelSendNetBufferLists**します。 場合、ドライバーはすべて NET\_バッファー\_NET のサブグループ リスト構造\_バッファー\_リストの一意の識別子を持つ構造体、保留中のすべての単一の呼び出しでは、そのサブグループ内で伝送キャンセルができます**NdisCancelSendNetBufferLists**します。
+ドライバーがすべての[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造を同じキャンセル識別子でマークした場合、 **NdisCancelSendNetBufferLists**を1回呼び出すだけで保留中のすべての送信を取り消すことができます。 ドライバーが、一意の識別子を使用して、NET\_\_BUFFER のサブグループ内のすべての\_バッファー\_リスト構造をマークすると、そのサブグループ**内のすべての保留中の送信を取り消すことができます。NdisCancelSendNetBufferLists**。
 
-NDIS 呼び出し、 [ *MiniportCancelSend* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_send)バインドで適切な下位レベルのドライバーの機能です。 保留中の転送を中止後、基になるミニポート ドライバーを呼び出して、 [ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)を NET を返す関数\_バッファー\_一覧構造体と NDIS の完了ステータス\_状態\_送信\_中止されました。 NDIS、さらに、適切なドライバーの[ **ProtocolSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)関数。
+NDIS は、適切な下位レベルのドライバーの[*Miniportcancelsend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_send)関数をバインドで呼び出します。 保留中の転送を中止すると、基になるミニポートドライバーは[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数を呼び出して、NET\_バッファー\_リスト構造と、NDIS\_状態の完了ステータスを返し\_送信\_中止されました。 さらに、NDIS は適切なドライバーの[**ProtocolSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)関数を呼び出します。
 
-その*ProtocolSendNetBufferListsComplete*関数の場合、プロトコル ドライバーには、NDIS が呼び出すことができます\_設定\_NET\_バッファー\_一覧\_キャンセル\_ID*CancelId*設定**NULL**します。 これにより、NET\_バッファー\_から古いキャンセル ID に置き換えますもう一度使用されている誤って一覧。
+*ProtocolSendNetBufferListsComplete*関数では、プロトコルドライバーは、\_NET\_BUFFER\_リストに設定された NDIS\_を呼び出し、 *Cancelid*を**NULL**に設定して\_ID を取り消すことができます。 これにより、古いキャンセル ID を使用して、NET\_BUFFER\_リストが誤って再使用されるのを防ぐことができます。
 
  
 

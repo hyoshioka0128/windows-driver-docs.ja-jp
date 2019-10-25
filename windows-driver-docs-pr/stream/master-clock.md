@@ -3,21 +3,21 @@ title: マスター クロック
 description: マスター クロック
 ms.assetid: 87a99371-9c72-4310-bcc7-02af19207b3e
 keywords:
-- DVD デコーダー ミニドライバー WDK、マスターのクロック
-- デコーダー ミニドライバー WDK DVD、マスターのクロック
-- マスターのクロックの WDK DVD デコーダー
-- WDK DVD デコーダーをクロックします。
-- オンボードのクロックの WDK DVD デコーダー
-- 現在のストリームに WDK DVD デコーダー
-- 時間の WDK DVD デコーダー
+- DVD デコーダーミニドライバー WDK、マスタークロック
+- デコーダーミニドライバー WDK DVD、マスタークロック
+- マスタークロック WDK DVD デコーダー
+- 時計 WDK DVD デコーダー
+- オンボードクロック WDK DVD デコーダー
+- 現在のストリーム時間 WDK DVD デコーダー
+- time WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d46beaa0a86bab16a8cce854408dc1ea6af18fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60f8408021acc3b5b76d6da1230ebdce60fe0607
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386638"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838041"
 ---
 # <a name="master-clock"></a>マスター クロック
 
@@ -25,22 +25,22 @@ ms.locfileid: "67386638"
 
 
 
-DVD デコーダーのミニドライバーは、指定したストリームがマスターの時計の情報を提供することのできる可能性があります。 これは、ストリームは、1 つの他のすべてのユーザーが同期化する必要がありますを示します。 SRB 構造体のメンバーを 2 つだけが必要です。
+DVD デコーダーミニドライバーは、特定のストリームがマスタークロック情報を提供できることを示している場合があります。 これは、他のすべてのが同期する必要があるストリームであることを示しています。 SRB 構造体のメンバーは2つだけ必要です。
 
-*HwClockFunction*メンバー時計の情報への呼び出しを処理する DVD デコーダー ミニドライバー ルーチンへのポインターに設定されます。 ときに、ルーチンが設定、SRB\_オープン\_マスター クロック ストリームのストリームの呼び出しを受信します。 これは、ストリームがシステムのマスター クロックをすることのできることを示します。
+*HwClockFunction*メンバーは、クロック情報の呼び出しを処理する DVD デコーダーミニドライバールーチンへのポインターに設定されます。 ルーチンが設定されるのは、マスタークロックストリームに対して、SRB\_OPEN\_ストリーム呼び出しを受信したときです。 これは、ストリームがシステムのマスタークロックになることができることを示します。
 
-*ClockSupportFlags*のメンバー、 [ **HW\_クロック\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_clock_object)構造体は、次の値のいずれかに設定します。
+[**HW\_CLOCK\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_clock_object)構造の*clocksupportflags*メンバーは、次のいずれかの値に設定されます。
 
-<a href="" id="clock-support-can-set-onboard-clock"></a>クロック\_サポート\_できます\_設定\_オペレーション インサイト理解\_クロック  
-デバイスは任意の値をオンボードのクロック時間を変更することができますを示します。
+<a href="" id="clock-support-can-set-onboard-clock"></a>クロック\_サポート\_\_オンボード\_時計に\_設定できます  
+デバイスが、オンボードのクロック時間を任意の値に変更できることを示します。
 
-<a href="" id="clock-support-can-read-onboard-clock"></a>クロック\_サポート\_できます\_読み取り\_オペレーション インサイト理解\_クロック  
-ハードウェアからこのストリームの現在の時刻を読み取ることができることを示します。 このクロックがストリームの現在の時刻に関連付けるために、オンボードのクロックの 100 ナノ秒単位で値を返すには、ドライバーの機能だけを示します。
+<a href="" id="clock-support-can-read-onboard-clock"></a>クロック\_サポート\_\_\_オンボード\_時計  
+このストリームの現在のクロック時間をハードウェアから読み取ることができることを示します。 このクロックは、現在のストリーム時間に関連付けられている必要はありません。これは、ドライバーが、オンボードクロックの100ナノ秒単位の値を返す機能を示しているだけです。
 
-<a href="" id="clock-support-can-return-stream-time"></a>クロック\_サポート\_できます\_返す\_ストリーム\_時間  
-このストリームは、ハードウェアで処理されている現在のストリームの時刻を返すことができますを示します。
+<a href="" id="clock-support-can-return-stream-time"></a>クロック\_サポート\_は\_ストリーム\_時間を返す\_  
+このストリームが、ハードウェアで処理されている現在のストリームの時間を返すことができることを示します。
 
-詳細については、次を参照してください。[マスター クロック](master-clocks.md)します。
+詳細については、「[マスタークロック](master-clocks.md)」を参照してください。
 
  
 

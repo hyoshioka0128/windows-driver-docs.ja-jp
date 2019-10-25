@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_サンプリング\_率
-description: KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティは、位置のノードは、出力ストリームを生成するために、入力ストリームをサンプル レートを指定します。
+title: KSK プロパティ\_AUDIO\_サンプリング\_率
+description: KSK プロパティ\_AUDIO\_サンプリング\_RATE プロパティは、出力ストリームを生成するために、ノードが入力ストリームをサンプリングする速度を指定します。
 ms.assetid: c5e48678-3b9a-4e5b-ae7b-16f9dcae7492
 keywords:
-- KSPROPERTY_AUDIO_SAMPLING_RATE オーディオ デバイス
+- KSPROPERTY_AUDIO_SAMPLING_RATE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f70c3396b626079b0feeb52cef570f68afa16004
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22524173db6de9e944a8e44239920b74ef3182ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361038"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830939"
 ---
-# <a name="kspropertyaudiosamplingrate"></a>KSPROPERTY\_オーディオ\_サンプリング\_率
+# <a name="ksproperty_audio_sampling_rate"></a>KSK プロパティ\_AUDIO\_サンプリング\_率
 
 
-KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティは、位置のノードは、出力ストリームを生成するために、入力ストリームをサンプル レートを指定します。
+KSK プロパティ\_AUDIO\_サンプリング\_RATE プロパティは、出力ストリームを生成するために、ノードが入力ストリームをサンプリングする速度を指定します。
 
 ## <span id="ddk_ksproperty_audio_sampling_rate_ks"></span><span id="DDK_KSPROPERTY_AUDIO_SAMPLING_RATE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティは、
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティは、
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,24 +61,24 @@ KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティは、
 
  
 
-プロパティの値 (データの操作) は ULONG 型で、サンプリング レートを指定します。 このレートは 1 秒あたりのサンプルの数として表されます (Hz のサンプリング頻度)。
+プロパティ値 (操作データ) は ULONG 型で、サンプリングレートを指定します。 このレートは、1秒あたりのサンプル数 (Hz でサンプリング周波数) として表されます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AUDIO\_サンプリング\_RATE プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは、ノードが指定したサンプリング レートをサポートしていない場合、プロパティの設定要求のエラーを返す必要があります。
+指定されたサンプリングレートがノードでサポートされていない場合、ミニポートドライバーは、set プロパティ要求でエラーを返します。
 
-このプロパティは、次のノード タイプのサンプリング レートを制御するために使用されます。
+このプロパティは、次のノードの種類のサンプリングレートを制御するために使用されます。
 
--   ADC ノード ([**KSNODETYPE\_ADC**](ksnodetype-adc.md))
+-   ADC ノード ([**KSNODETYPE\_adc**](ksnodetype-adc.md))
 
--   DAC のノード ([**KSNODETYPE\_DAC**](ksnodetype-dac.md))
+-   DAC ノード ([**KSNODETYPE\_dac**](ksnodetype-dac.md))
 
--   SRC ノード ([**KSNODETYPE\_SRC**](ksnodetype-src.md))
+-   SRC ノード ([**KSNODETYPE\_src**](ksnodetype-src.md))
 
 <a name="requirements"></a>要件
 ------------
@@ -91,15 +91,15 @@ KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティ要求
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_ADC**](ksnodetype-adc.md)
 

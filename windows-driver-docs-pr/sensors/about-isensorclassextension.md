@@ -4,33 +4,33 @@ description: ISensorClassExtension について
 ms.assetid: 1f55f28a-796a-40e5-9995-e6a28761b9a4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af3c76e885cb050b4751f598fbe02ed7673105b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49ac14606ed8161e19ad23d7e87b4b6adae8a2c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325954"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824301"
 ---
 # <a name="about-isensorclassextension"></a>ISensorClassExtension について
 
 
-センサー ドライバーでは、ISensorClassExtension を使用して、初期化、センサー クラスの拡張機能の初期化を解除し、イベントを発生させる、プロセス WPD 入力/出力の制御 (Ioctl) コードと正しく UMDF ファイル ハンドルを閉じます。
+センサードライバーは、ISensorClassExtension を使用して、センサークラス拡張の初期化と unitialize、イベントの発生、WPD 入力/出力制御コード (Ioctl) の処理、および UMDF ファイルハンドルの正常な終了を行います。
 
-## <a name="methods-to-manage-object-lifetime"></a>オブジェクトの有効期間を管理する方法
+## <a name="methods-to-manage-object-lifetime"></a>オブジェクトの有効期間を管理するメソッド
 
-PnP ベースのハードウェア センサー ドライバーを呼び出し、クラス拡張を初期化する[ **ISensorClassExtension::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-initialize)で UMDF によって呼び出されたとき[ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)します。 この手順では、ドライバーの主なクラスとクラスの拡張機能オブジェクトによって発生するイベントを処理するコールバック インターフェイスを実装するクラスにポインターをクラスの拡張機能オブジェクトを提供します。 UMDF によってドライバーが呼び出されたとき[ **IPnpCallbackHardware::OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)を呼び出す必要が[ **ISensorClassExtension::Uninitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-uninitialize)クラスの拡張機能オブジェクトを離します。 一部の種類のセンサーをさまざまなタイミングで、クラス拡張を初期化してに必要があることに注意してください。
+クラス拡張を初期化するために、PnP ベースのハードウェアセンサードライバーは、 [**IPnpCallbackHardware:: OnISensorClassExtension hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)の UMDF によって呼び出されたときに、 [ **:: initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-initialize)を呼び出します。 この手順では、ドライバーの main クラスへのポインターと、クラス拡張オブジェクトによって発生するイベントを処理するコールバックインターフェイスを実装するクラスに、クラス拡張オブジェクトを提供します。 [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)の UMDF によってドライバーが呼び出された場合、 [**ISensorClassExtension::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-uninitialize)を呼び出し、クラス拡張オブジェクトを解放する必要があります。 センサーの種類によっては、クラス拡張の初期化と初期化解除が異なるタイミングで必要になる場合があることに注意してください。
 
 ## <a name="methods-to-raise-events"></a>イベントを発生させるメソッド
 
-ドライバーはさまざまな種類のセンサー イベントを発生させることができます (センサー データを含んでいる通常) を呼び出して[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)と呼び出すことによって状態情報イベント[ **ISensorClassExtension::PostStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)します。 センサー ドライバーでイベントを使用する方法についての詳細については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
+ドライバーは、 [**ISensorClassExtension::P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)を呼び出して[**ISensorClassExtension::P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)と状態情報のイベントを呼び出すことによって、さまざまな種類のセンサーイベント (通常はセンサーデータを含む) を発生させることができます。 センサードライバーでのイベントの動作の詳細については、「[センサードライバーのイベントについ](about-sensor-driver-events.md)て」を参照してください。
 
-## <a name="methods-to-manage-ioctls-and-handles"></a>Ioctl とハンドルを管理する方法
+## <a name="methods-to-manage-ioctls-and-handles"></a>Ioctl とハンドルを管理するメソッド
 
-センサー ドライバーには、クラス拡張の UMDF 呼び出しの 2 種類が転送先します。
+センサードライバーは、次の2種類の UMDF 呼び出しをクラス拡張に転送します。
 
--   I/O を処理する要求で受信したコードを制御する[ **IQueueCallbackDeviceIoControl::OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)します。 クラスの拡張を処理するために、I/O 要求を転送するように、ドライバーを呼び出す必要があります[ **ISensorClassExtension::ProcessIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-processiocontrol)します。
+-   [**IQueueCallbackDeviceIoControl:: OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)を通じて受信される i/o 制御コードの処理を要求します。 I/o 要求をクラス拡張に転送して処理するには、ドライバーは[**ISensorClassExtension::P rocessiocontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-processiocontrol)を呼び出す必要があります。
 
--   クライアントの終了に関する通知ファイルで受信したハンドル[ **IFileCallbackCleanup::OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)します。 I/O 要求のキャンセルを転送するように、ドライバーを呼び出す必要があります[ **ISensorClassExtension::CleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-cleanupfile)します。
+-   [**IFileCallbackCleanup:: OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)を通じて受信されたファイルハンドルを閉じるクライアントに関する通知。 I/o 要求のキャンセルを転送するには、ドライバーは[**ISensorClassExtension:: CleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-cleanupfile)を呼び出す必要があります。
 
  
 

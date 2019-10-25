@@ -3,16 +3,16 @@ title: デバイス電源ポリシー オーナーでのシステム電源クエ
 description: デバイス電源ポリシー オーナーでのシステム電源クエリ IRP の処理
 ms.assetid: 680e3be2-63d9-4d79-a7c0-422e852e9347
 keywords:
-- クエリ power Irp WDK の電源管理
+- クエリ-電源 Irp の WDK 電源管理
 - デバイスの電源ポリシー所有者 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b93e98942f12f3669e69945c9a19d55c24063b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64773b960d56742137fa923da852d4ebce48355d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387011"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838679"
 ---
 # <a name="handling-a-system-query-power-irp-in-a-device-power-policy-owner"></a>デバイス電源ポリシー オーナーでのシステム電源クエリ IRP の処理
 
@@ -20,47 +20,47 @@ ms.locfileid: "67387011"
 
 
 
-デバイスの電源ポリシー所有者が受信すると、 [ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)のシステム電源の状態をクエリの速度と、を渡すことによって応答[*IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)日常的な送信、 **IRP\_MN\_クエリ\_POWER**デバイスの電源状態にします。 スタック内のすべてのドライバーには、デバイス クエリが完了したら、デバイスの電源ポリシー所有者は、システムのクエリを完了します。
+デバイスの電源ポリシー所有者がシステム電源状態の[**irp\_\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)を受信すると、クエリを渡し、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンで irp\_完了した\_クエリを送信することによって応答し **@no__t_** デバイスの電源状態の場合は10_ パワー。 スタック内のすべてのドライバーがデバイスクエリを完了すると、デバイスの電源ポリシー所有者はシステムクエリを完了します。
 
-デバイスの電源ポリシー所有者、次の手順を実行する必要があります、 [DispatchPower ルーチン](dispatchpower-routines.md)システム クエリに応答します。
+デバイスの電源ポリシー所有者は、 [DispatchPower ルーチン](dispatchpower-routines.md)で次の手順を実行して、システムクエリに応答する必要があります。
 
-1.  呼び出す[ **IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)、ドライバーが、PnP されませんが受け取るようにする、現在の IRP を渡して[ **IRP\_MN\_の削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) power IRP の処理中に要求します。
+1.  現在の IRP を渡して[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)を呼び出し、ドライバーが PnP\_irp を受信していないことを確認します。これにより、電源 irp の処理中に[ **\_デバイスの要求\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)されます。
 
-    場合**IoAcquireRemoveLock** 、エラー状態が返されるドライバーは IRP の処理を続行しないでください。 代わりに、Windows Vista 以降、ドライバー、呼び出す必要があります[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP を完了して、エラー状態を返すにします。 ドライバーが呼び出すサーバーの Windows Server 2003、Windows XP、および Windows 2000、 [ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)、呼び出す**IoCompleteRequest** IRP の完了を返す、エラー状態です。
+    **IoAcquireRemoveLock**がエラー状態を返した場合、ドライバーは IRP の処理を続行しません。 代わりに、Windows Vista 以降では、ドライバーは[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して IRP を完了し、エラー状態を返す必要があります。 Windows Server 2003、Windows XP、および Windows 2000 では、ドライバーは[**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出し、 **IoCompleteRequest**を呼び出して IRP を完了し、エラーの状態を返す必要があります。
 
-2.  ドライバーが、クエリ対象のシステム電源の状態をサポートできることを確認する」の説明に従って[フィルターまたは関数のドライバーで、システム クエリ性能の IRP を失敗](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)します。 ない場合は、そのセクションで説明した IRP がエラー状態を完了します。
+2.  「[フィルターまたは関数ドライバーでのシステムクエリ-電源 IRP の失敗](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)」で説明されているように、ドライバーが照会されたシステムの電源状態をサポートできることを確認します。 それ以外の場合は、このセクションで説明されているように、エラー状態で IRP を完了します。
 
-    ただし、ドライバーをする必要があります失敗しないクエリ s4 (**PowerSystemHibernate**) 場合はウェイク アップのデバイスが有効になっているが、システムを休止状態からのスリープを解除できません。 この場合は、ドライバーの電源ポリシー所有者 (送信先となる、 [ **IRP\_MN\_待機\_WAKE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) 待機/ウェイク IRP をキャンセルし、システムのクエリが成功する必要があります。 詳細については、次を参照してください。[待機/ウェイク IRP のキャンセル](canceling-a-wait-wake-irp.md)します。
+    ただし、デバイスのウェイクアップが有効になっていても、システムを休止状態から復帰させることができない場合は、S4 (**Powersystemhibernate**) に対するクエリがドライバーで失敗しないようにする必要があります。 この場合、ドライバーの電源ポリシー所有者 ( [**IRP\_\_wait\_WAKE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) に送信して、待機/ウェイク IRP をキャンセルし、システムクエリを成功させる必要があります。 詳細については、「 [Wait/WAKE IRP のキャンセル](canceling-a-wait-wake-irp.md)」を参照してください。
 
-3.  場合は、ドライバーは、クエリ対象のシステム電源の状態をサポートできますが、呼び出す[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)します。
+3.  ドライバーがクエリされたシステムの電源状態をサポートできる場合は、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出します。
 
-4.  呼び出すことによって、次の下位のドライバーの IRP スタックの場所を設定[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)します。
+4.  [**Iocopy"enti"** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)を呼び出して、次に低いドライバーの IRP スタックの場所を設定します。
 
-5.  設定、 *IoCompletion*システム クエリ power IRP のルーチンです。
+5.  システムクエリの電源 IRP に*Iocompletion*ルーチンを設定します。
 
-6.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (で Windows 7 および Windows Vista の場合) または[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (で Windows Server 2003、Windows XP、および Windows 2000)次の下位ドライバーには、IRP を渡す。
+6.  [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) (windows 7 および windows Vista の場合) または[**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (Windows SERVER 2003、Windows XP、および windows 2000) を呼び出して、IRP を次の下位のドライバーに渡します。
 
-7.  状態を返す\_保留します。
+7.  ステータスを返す\_保留中です。
 
-[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンは、次を行う必要があります。
+[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンは、次の操作を行う必要があります。
 
-1.  確認**Irp -&gt;IoStatus.Status**に下位のドライバーが IRP を正常に完了したことを確認します。 下位のドライバーには、非成功 NTSTATUS 値が指定した場合、 *IoCompletion*ルーチンが NTSTATUS 値を返す必要があります。
+1.  **Irp&gt;iostatus. status**を調べて、低いドライバーが irp を正常に完了したことを確認します。 下位のドライバーで、成功しない NTSTATUS 値が指定されている場合、 *Iocompletion*ルーチンは ntstatus 値を返す必要があります。
 
-2.  呼び出す場合、下位のドライバーは IRP を正常に完了しました、 [ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)クエリ power IRP のクエリ対象のシステムに対して有効であるデバイスの電源状態の電源の状態、デバイスを送信します。 必要に応じて、デバイスを参照してください\_状態配列で、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)クエリ対象のシステム電源の有効などのデバイスの電源状態を確認する構造体。状態。
+2.  低いドライバーが IRP を正常に完了した場合は、 [**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出して、照会されたシステムの電源状態に対して有効なデバイスの電源状態のデバイスクエリを送信します。 必要に応じて、デバイスの[ **\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造でデバイス\_状態の配列を参照して、照会されたシステムの電源状態に対して有効なデバイスの電源状態を判断します。
 
-3.  コールバック ルーチンを指定 (*CompletionFunction*パラメーター) への呼び出しで**PoRequestPowerIrp**システム IRP を渡すとで、*コンテキスト*領域。
+3.  **PoRequestPowerIrp**の呼び出しでコールバックルーチン (*補完関数*パラメーター) を指定し、*コンテキスト*領域にシステム IRP を渡します。
 
-4.  状態を返す\_詳細\_処理\_のために必要なドライバーは、コールバック ルーチンで、システム クエリ IRP の処理を終了できるようにします。
+4.  ドライバーがコールバックルーチンでシステムクエリの IRP の処理を完了できるようにするために必要な\_処理\_の状態\_返します。
 
-IRP が完了した後、すべて*IoCompletion* IRP の処理中に設定するルーチンを実行した電源マネージャー、I/O マネージャーを通じて、電源ポリシー マネージャーのコールバック ルーチンを呼び出す (、 *CompletionFunction*パラメーターを**PoRequestPowerIrp**)。 コールバック ルーチンでは、さらに、必要があります以下に示します。
+IRP が完了し、IRP 処理中に設定されたすべての*Iocompletion*ルーチンが実行されると、電源マネージャーは、i/o マネージャーを介して、電源ポリシーマネージャーのコールバックルーチン ( **PoRequestPowerIrp**)。 さらに、コールバックルーチンは、次の操作を行う必要があります。
 
-1.  呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) IRP の [次へ] のパワーを開始します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ。)
+1.  [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出して、次の電源 IRP を開始します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ)。
 
-2.  完了、システム クエリ power IRP (呼び出し[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) デバイスに対して返される状態クエリ power IRP。
+2.  システムクエリ-power IRP (call [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了して、デバイスのクエリ-電源 irp の状態を返します。
 
-3.  呼び出す[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)を以前に取得したロックを解放します。
+3.  [**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)を呼び出して、以前に取得したロックを解放します。
 
-デバイスの電源ポリシーの所有者だけでなく、デバイスのクエリを送信しますがもデバイス スタックには、その方法で処理する必要がありますに注意してください。 詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_デバイスの電源状態のための電力](handling-irp-mn-query-power-for-device-power-states.md)します。
+デバイスの電源ポリシーの所有者は、デバイスのクエリを送信するだけでなく、デバイスのスタック内でも処理する必要があることに注意してください。 詳細については、「[デバイスの電源状態の\_クエリ\_電力の IRP\_処理](handling-irp-mn-query-power-for-device-power-states.md)」を参照してください。
 
  
 

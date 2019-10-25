@@ -1,110 +1,110 @@
 ---
 title: バージョン 3 の DMA ルーチンの基本的な呼び出しパターン
-description: DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。
+description: DMA 操作インターフェイスのバージョン3でルーチンを使用する DMA 転送を実行するには、ドライバーが次の一覧に記載されている手順に従う必要があります。
 ms.assetid: 5D73120F-79F5-4C9A-8AE5-25D5CF9B06F5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e4832b8f9b089a836e573cce373198e7ccd4538
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 42c17f53e7bea4d3d7db1df4f483ec7d0f7f010f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369936"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828627"
 ---
 # <a name="basic-calling-pattern-for-version-3-dma-routines"></a>バージョン 3 の DMA ルーチンの基本的な呼び出しパターン
 
 
-DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。 次の手順では、下位のデバイスとバス マスターのデバイスの両方に共通です。 このインターフェイスのバージョン 3 では、Windows 8 以降で使用できます。 このインターフェイスでルーチンの詳細については、次を参照してください。 [ **DMA\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)します。
+DMA 操作インターフェイスのバージョン3でルーチンを使用する DMA 転送を実行するには、ドライバーが次の一覧に記載されている手順に従う必要があります。 これらの手順は、下位デバイスとバスマスタデバイスの両方に共通です。 このインターフェイスのバージョン3は、Windows 8 以降で使用できます。 このインターフェイスのルーチンの詳細については、「 [**DMA\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_operations)」を参照してください。
 
-## <a name="step-1-obtain-a-dma-adapter-object"></a>手順 1:DMA アダプター オブジェクトを取得します。
-
-
-DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)ルーチン DMA アダプター オブジェクトを取得します。 DMA のアダプター オブジェクトは、バス マスター デバイス、またはシステム DMA コント ローラーの要求行のいずれかを表すソフトウェア オブジェクトです。 このオブジェクトには、デバイス間でデータを転送するために使用するバスの DMA 操作のインターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、次を参照してください。[アダプター オブジェクトの概要](introduction-to-adapter-objects.md)します。
-
-## <a name="step-2-obtain-a-description-of-the-required-dma-resources"></a>手順 2:DMA の必要なリソースの説明を取得します。
+## <a name="step-1-obtain-a-dma-adapter-object"></a>手順 1: DMA アダプターオブジェクトを取得する
 
 
-ドライバーの呼び出し、 [ **GetDmaTransferInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_dma_transfer_info)ルーチンを転送を実行する必要がある DMA リソースの説明を取得します。
+DMA 転送の準備として、ドライバーは[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)ルーチンを呼び出して、dma アダプターオブジェクトを取得します。 DMA アダプターオブジェクトは、システムの DMA コントローラーのバスマスタデバイスまたは要求行を表すソフトウェアオブジェクトです。 このオブジェクトには、デバイスとの間でデータを転送するために使用されるバスの DMA 操作インターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、「[アダプターオブジェクトの概要](introduction-to-adapter-objects.md)」を参照してください。
 
-この呼び出しの入力パラメーターには、転送、および転送の方向 (読み取りまたは書き込み) を使用するメモリ バッファーについて説明します。
-
-この呼び出しから取得したリソースの要件には、マップのレジスタの数と、転送データのバッファーを記述するために必要なスキャッター/ギャザー リストのサイズが含まれます。 以降の呼び出しで、 [ **AllocateAdapterChannelEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel_ex)ルーチン (を参照してください[3.](#step-3-request-the-required-dma-resources))、ドライバーは、入力パラメーターとしてマップ登録数を提供します。
-
-## <a name="step-3-request-the-required-dma-resources"></a>手順 3:DMA の必要なリソースを要求します。
+## <a name="step-2-obtain-a-description-of-the-required-dma-resources"></a>手順 2: 必要な DMA リソースの説明を取得する
 
 
-ドライバーの呼び出し、 [ **AllocateAdapterChannelEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel_ex)ルーチン DMA のアダプター オブジェクトに割り当てるリソースを割り当てます。 これらのリソースは、DMA チャネルを含めるし、レジスタにマップします。
+ドライバーは、 [**Getdmatransferinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pget_dma_transfer_info)ルーチンを呼び出して、転送を実行するために必要な DMA リソースの説明を取得します。
 
-**AllocateAdapterChannelEx**呼び出しは非同期または同期することができます。
+この呼び出しの入力パラメーターは、転送に使用するメモリバッファーと転送の方向 (読み取りまたは書き込み) を示します。
 
-場合、DMA\_同期\_コールバック フラグが設定されていない、呼び出しは非同期です。 ここで、 *ExecutionRoutine*パラメーターは、要求されたリソースが使用可能なときに呼び出される呼び出し元が指定した実行ルーチンを指します。 成功した場合、非同期**AllocateAdapterChannelEx**呼び出しのステータスを返します\_実行ルーチンに実行を待機することがなく成功します。
+この呼び出しから取得されるリソース要件には、マップレジスタの数と、転送のデータバッファーを記述するために必要なスキャッター/ギャザーリストのサイズが含まれます。 後続の[**Allocateadapterchannelex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel_ex)ルーチンの呼び出し ([手順 3](#step-3-request-the-required-dma-resources)を参照) では、ドライバーは map レジスタ count を入力パラメーターとして提供します。
 
-場合、DMA\_同期\_コールバック フラグが設定されて、 **AllocateAdapterChannelEx**呼び出しは同期的です。 ここで、 *ExecutionRoutine*呼び出しのパラメーターは省略可能でと**AllocateAdapterChannelEx**ように動作します。
-
--   場合*ExecutionRoutine* NULL 以外の場合は、DMA リソースは、すぐに割り当てることができると**AllocateAdapterChannelEx**呼び出し元のスレッドのコンテキストで実行ルーチンを呼び出します。 実行のルーチンの実行が完了したら**AllocateAdapterChannelEx**ステータスを返します\_成功します。 リソースをすぐに利用しない場合は**AllocateAdapterChannelEx**が失敗し、エラー ステータス コードの状態を返します\_不十分\_リソース。
-
--   場合*ExecutionRoutine*が null の場合、および**AllocateAdapterChannelEx** DMA のリソースを割り当てることがすぐに**AllocateAdapterChannelEx** のステータスを返します\_成功します。 呼び出しがエラー状態コードの状態が失敗したすべてのリソースがすぐに利用できない場合は、\_不十分\_リソース。
-
-状態を返す同期呼び出し\_成功すると場合、 *MapRegisterBase*パラメーターを**AllocateAdapterChannelEx** NULL 以外の場合は、 **AllocateAdapterChannelEx**によって示されるアドレスに割り当てられたマップのベース アドレスを登録の書き込み、 *MapRegisterBase*パラメーター。 場合*ExecutionRoutine*が null の場合、 *MapRegisterBase* NULL 以外である必要があります。 場合*ExecutionRoutine* NULL 以外の場合は、 *MapRegisterBase*パラメーターを**AllocateAdapterChannelEx**オプションですが、実行ルーチンが、マップのレジスタを送受信入力パラメーターとしてベース アドレス。
-
-非同期**AllocateAdapterChannelEx**呼び出し、 *ExecutionRoutine* NULL 以外の場合があります。 実行ルーチンが、入力パラメーターとしてマップ レジスタのベース アドレスを受け取るとします。
-
-後続の呼び出しで、 [ **MapTransferEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer_ex)ルーチン (を参照してください[手順 5](#step-5-initialize-the-dma-resources-and-start-the-dma-transfer))、ドライバーは、入力パラメーターとしてマップ レジスタのベース アドレスを指定します。
-
-場合*ExecutionRoutine*が NULL 以外の場合、実行ルーチンが割り当てられているリソースのディス ポジションを示すステータス値を返します。 システム DMA 転送では、この戻り値がある必要があります**KeepObject**します。 この値は、オペレーティング システムは使用して、解放しないでアダプター オブジェクト (およびその割り当てられたリソースのすべて) を通知します。 ドライバーが代わりに呼び出す必要があります実行ルーチンが指定されていない場合、 [ **FreeAdapterObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_object)ルーチンと供給**KeepObject**として、 *AllocationOption*パラメーター。
-
-## <a name="step-4-if-necessary-cancel-the-pending-resource-request"></a>手順 4:必要に応じて、保留中のリソースの要求を取り消し
+## <a name="step-3-request-the-required-dma-resources"></a>手順 3: 必要な DMA リソースを要求する
 
 
-後に、 **AllocateAdapterChannelEx** 、DMA アダプター ドライバー、DMA のリソースを待機することができます、キューを呼び出すために必要な場合、呼び出し、 [ **CancelAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pcancel_adapter_channel)ルーチンを保留中のリソース要求を取り消します。
+ドライバーは、割り当てられたリソースを割り当てて DMA アダプターオブジェクトに割り当てるために、 [**Allocateadapterchannelex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel_ex)ルーチンを呼び出します。 これらのリソースには、DMA チャネルとマップレジスタが含まれます。
 
-場合**CancelAdapterChannel**リソース要求が正常に取り消された TRUE が返されます。 実行ルーチンが指定された場合、 **AllocateAdapterChannelEx**呼び出し、このルーチンは実行されません。
+**Allocateadapterchannelex**の呼び出しは、非同期または同期にすることができます。
 
-場合**CancelAdapterChannel**既に付与されているために、リソース要求をキャンセルできません FALSE が返されます。 実行ルーチンが指定された場合、 **AllocateAdapterChannelEx**呼び出し、このルーチンが呼び出されます。
+DMA\_同期\_コールバックフラグが設定されていない場合、呼び出しは非同期です。 この場合、 *Executionroutine*パラメーターは、要求されたリソースが使用可能になったときに呼び出される呼び出し元によって提供される実行ルーチンを指します。 成功した場合、非同期**Allocateadapterchannelex**呼び出しによって、実行ルーチンが実行されるのを待たずに STATUS\_SUCCESS が返されます。
 
-## <a name="step-5-initialize-the-dma-resources-and-start-the-dma-transfer"></a>手順 5:DMA リソースの初期化し、DMA の転送を開始
+DMA\_同期\_コールバックフラグが設定されている場合、 **Allocateadapterchannelex**の呼び出しは同期です。 この場合、呼び出しの*Executionroutine*パラメーターは省略可能であり、 **Allocateadapterchannelex**は次のように動作します。
 
+-   *Executionroutine*が NULL 以外で、DMA リソースをすぐに割り当てることができる場合、 **Allocateadapterchannelex**は呼び出し元スレッドのコンテキストで実行ルーチンを呼び出します。 実行ルーチンの実行が完了すると、 **Allocateadapterchannelex**から STATUS\_SUCCESS が返されます。 リソースがすぐに利用できない場合、 **Allocateadapterchannelex**は失敗し、エラー状態コードの状態を返します。リソース\_不足して\_ます。
 
-ドライバー呼び出し[ **MapTransferEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer_ex) DMA 転送を開始して DMA のリソースを初期化します。 この呼び出しを呼び出すのと同じドライバー スレッドで発生した**AllocateAdapterChannelEx**に、ドライバーが提供する実行ルーチンで発生した、または**AllocateAdapterChannelEx**します。 1 つ以上の場合**MapTransferEx** DMA データ バッファー全体を転送する呼び出しが必要です、後で**MapTransferEx**以前完了ルーチンで発生した呼び出し**MapTransferEx**呼び出します。
+-   *Executionroutine*が NULL で、 **ALLOCATEADAPTERCHANNELEX**が DMA リソースをすぐに割り当てることができる場合、 **ALLOCATEADAPTERCHANNELEX**はステータス\_SUCCESS を返します。 すべてのリソースがすぐに利用できない場合、呼び出しは失敗し、エラー状態コードの状態\_\_リソースが不足します。
 
-**MapTransferEx**サポートには、入力パラメーターとして MDLs がチェーンされています。 各 MDL では、仮想メモリ内で連続している DMA バッファーの領域について説明します。 ときに**MapTransferEx**スキャッター/ギャザー リストで、ドライバーの介入なしに仮想的に連続するバッファーの 1 つのリージョンからの移行を自動的に処理します。 詳細については、次を参照してください。 [MapTransferEx ルーチンを使用して](using-the-maptransferex-routine.md)します。
+STATUS\_SUCCESS を返す同期呼び出しの場合、 **allocateadapterchannelex**への*mapregisterbase*パラメーターが NULL 以外の場合、 **allocateadapterchannelex**は、割り当てられたマップのベースアドレスをに書き込みます。*Mapregisterbase*パラメーターが指すアドレス。 *Executionroutine*が null の場合、 *mapregisterbase*は null 以外である必要があります。 *Executionroutine*が NULL 以外の場合、 **Allocateadapterchannelex**への*mapregisterbase*パラメーターは省略可能であり、実行ルーチンはマップレジスタのベースアドレスを入力パラメーターとして受け取ります。
 
-DMA 転送システムの場合に、DMA 完了ルーチンへのポインターを渡すことが**MapTransferEx** 、省略可能な*DmaCompletionRoutine*パラメーター。 このルーチンは、DMA 転送が完了したことを示すシステム DMA コント ローラーから、割り込みに応答でディスパッチで実行する予定です。
+非同期**Allocateadapterchannelex**呼び出しの場合、 *EXECUTIONROUTINE*は NULL 以外にする必要があり、実行ルーチンはマップレジスタのベースアドレスを入力パラメーターとして受け取ります。
 
-場合**MapTransferEx**が要求された転送の全体サイズをマップすることができません、設定されます、 \**長さ*出力マップされた長さのパラメーターとリターン状態\_成功しました。
+後続の[**Maptransferex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer_ex)ルーチンの呼び出し ([手順 5](#step-5-initialize-the-dma-resources-and-start-the-dma-transfer)を参照) では、ドライバーはマップレジスタのベースアドレスを入力パラメーターとして提供します。
 
-## <a name="step-6-if-necessary-perform-hardware-specific-operations"></a>手順 6:必要に応じて、ハードウェア固有の操作を実行します。
+*Executionroutine*が NULL 以外の場合、実行ルーチンは、割り当てられたリソースのディスポジションを示す状態値を返します。 システム DMA 転送の場合、この戻り値は**KeepObject**である必要があります。 この値は、アダプターオブジェクト (および割り当てられているすべてのリソース) が使用中であり、解放されてはならないことをオペレーティングシステムに通知します。 実行ルーチンが指定されていない場合、ドライバーは代わりに[**Freeadapterobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_object)ルーチンを呼び出し、 **KeepObject**を割り当て*オプション*パラメーターとして指定する必要があります。
 
-
-**MapTransferEx**ステータスを返します\_DMA 転送が正常に開始されたことを示す成功します。 一部のプラットフォームで、ドライバーは、外側のいくつかの追加アクションを実行する必要があります、 **MapTransferEx**転送を開始する、呼び出しが遅延起動のこの型はすべてのプラットフォームで必要ありません。 ドライバーは、このような遅延を使用して、割り当てられたリソースを解放することについての決定のために依存する必要があります。
-
-DMA 操作のインターフェイスのルーチンでは、これらのルーチンを使用するドライバーに対して透過的な方法では、DMA 転送のキャッシュの一貫性を維持します。 ハードウェア、キャッシュの一貫性を強制しないプラットフォームで**MapTransferEx**により、プロセッサのデータ キャッシュは、書き込み (メモリ デバイス) を転送する前にフラッシュされます。 呼び出し中に、読み取り (デバイスのメモリ) の転送に、キャッシュが無効になる、 [ **FlushAdapterBuffersEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers_ex)ルーチン (を参照してください[手順 8](#step-8-flush-any-data-that-remains-in-the-cache)) すべて続く**MapTransferEx**呼び出します。
-
-## <a name="step-7-receive-notification-when-the-dma-transfer-finishes"></a>手順 7:DMA 転送が完了すると、通知を受け取る
+## <a name="step-4-if-necessary-cancel-the-pending-resource-request"></a>手順 4: 必要に応じて、保留中のリソース要求をキャンセルする
 
 
-DMA 転送が完了したら、これら 2 つの方法のいずれかでドライバーが通知されます。
+**Allocateadapterchannelex**呼び出しによって dma リソースを待機する dma アダプターがキューにある場合、ドライバーは必要に応じて[**canceladapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pcancel_adapter_channel)ルーチンを呼び出して、保留中のリソース要求をキャンセルできます。
 
--   デバイス ドライバー、バス マスターのデバイスに、割り込み
--   システムの DMA コント ローラーを使用する下位のデバイスのドライバーによって提供される完了ルーチンの実行
+**Canceladapterchannel**が TRUE を返した場合、リソース要求は正常にキャンセルされます。 実行ルーチンが**Allocateadapterchannelex**呼び出しで指定されている場合、このルーチンは実行されません。
 
-DMA 転送システムは、ドライバーは完了ルーチンを指定できます**MapTransferEx**入力パラメーターとして。
-## <a name="step-8-flush-any-data-that-remains-in-the-cache"></a>手順 8:キャッシュに残っているすべてのデータをフラッシュします。
+**Canceladapterchannel**が FALSE を返す場合、リソース要求は既に許可されているため、取り消すことはできません。 実行ルーチンが**Allocateadapterchannelex**呼び出しで指定されている場合、このルーチンが呼び出されます。
 
-
-DMA 転送が完了すると、ドライバーを呼び出す必要があります、 [ **FlushAdapterBuffersEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers_ex)ルーチンをキャッシュに残っているすべてのデータをフラッシュします。 ドライバーを呼び出す必要があります**FlushAdapterBuffersEx**後すべて**MapTransferEx**呼び出します。
-
-場合、 **MapTransferEx**呼び出し DMA データ バッファーの一部のみをマップすると、ドライバーを呼び出す必要があります**MapTransferEx**残りのデータをマップするには、もう一度です。 複雑な転送には、いくつか必要があります**MapTransferEx**呼び出し。 各追加**MapTransferEx**呼び出し、手順 5 ~ 8 を繰り返します。
-
-## <a name="step-9-free-the-dma-channel-and-map-registers"></a>手順 9:DMA チャネルを解放し、マップを登録します
+## <a name="step-5-initialize-the-dma-resources-and-start-the-dma-transfer"></a>手順 5: DMA リソースを初期化し、DMA 転送を開始する
 
 
-DMA データ バッファー全体が正常にマップすると、最終的な転送が完了すると、ドライバーを呼び出す必要があります、 [ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl) DMA チャネルとそのすべてを解放するルーチンに割り当てたマップ登録します。
+このドライバーは、DMA リソースを初期化し、DMA 転送を開始するために、 [**Maptransferex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer_ex)を呼び出します。 この呼び出しは、 **Allocateadapterchannelex**を呼び出す同じドライバースレッドで発生する場合があります。または、ドライバーが**allocateadapterchannelex**に提供する実行ルーチンで発生する可能性があります。 DMA データバッファー全体を転送するために複数の**Maptransferex**呼び出しが必要な場合、前の**maptransferex**呼び出しの完了ルーチンで、後の**maptransferex**呼び出しが発生する可能性があります。
 
-## <a name="step-10-release-the-dma-adapter-object"></a>手順 10:DMA アダプター オブジェクトを解放します。
+**Maptransferex**では、入力パラメーターとしてチェーン mdls がサポートされています。 各 MDL は、仮想メモリ内で連続している DMA バッファーの領域を記述します。 **Maptransferex**によってスキャッター/ギャザーリストが構築されると、事実上連続するバッファー領域から次のように、ドライバーの介入なしに自動的に遷移が処理されます。 詳細については、「 [MapTransferEx ルーチンの使用](using-the-maptransferex-routine.md)」を参照してください。
+
+システム DMA 転送の場合、オプションの*Dmacompletionroutine*パラメーターで、dma 完了ルーチンへのポインターを**maptransferex**に渡すことができます。 このルーチンは、DMA 転送が完了したことを示すシステム DMA コントローラーからの割り込みに応答して、ディスパッチレベルで実行するようにスケジュールされています。
+
+**Maptransferex**が要求された転送サイズ全体をマップできない場合は、\**長さ*の出力パラメーターをマップされた長さに設定し、STATUS\_SUCCESS を返します。
+
+## <a name="step-6-if-necessary-perform-hardware-specific-operations"></a>手順 6: 必要に応じて、ハードウェア固有の操作を実行する
 
 
-DMA のすべての転送が完了し、以前に割り当てられたマップ レジスタが解放される、ドライバーを呼び出す、 [ **PutDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_dma_adapter)ルーチン アダプター オブジェクトを解放します。
+**Maptransferex**は、DMA 転送が正常に開始されたことを示す状態\_SUCCESS を返します。 プラットフォームによっては、転送を開始するために、 **Maptransferex**の呼び出し以外に、追加のアクションを実行することが必要になる場合がありますが、この種の遅延開始はすべてのプラットフォームで必要になるわけではありません。 ドライバーは、割り当てられたリソースの使用および解放に関する決定の遅延に依存しないようにする必要があります。
+
+DMA 操作インターフェイスのルーチンは、これらのルーチンを使用するドライバーに対して透過的な方法で、DMA 転送のキャッシュの一貫性を維持します。 ハードウェアにキャッシュの一貫性を適用しないプラットフォームでは、 **Maptransferex**によって、書き込み (メモリからデバイス) 転送の前にプロセッサデータキャッシュがフラッシュされるようになります。 読み取り (デバイスからメモリ) への転送では、すべての**Maptransferex**呼び出しの後にある[**Flushadapterbuffersex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers_ex)ルーチン ([手順 8](#step-8-flush-any-data-that-remains-in-the-cache)を参照) の呼び出し中にキャッシュが無効になります。
+
+## <a name="step-7-receive-notification-when-the-dma-transfer-finishes"></a>手順 7: DMA 転送が終了したときに通知を受け取る
+
+
+DMA 転送が完了すると、次の2つの方法のいずれかでドライバーに通知されます。
+
+-   バスマスタデバイスのデバイスドライバーへの割り込み
+-   システム DMA コントローラーを使用する下位デバイスのドライバー指定の完了ルーチンの実行
+
+システム DMA 転送の場合、ドライバーは入力パラメーターとして**Maptransferex**に完了ルーチンを渡すことができます。
+## <a name="step-8-flush-any-data-that-remains-in-the-cache"></a>手順 8: キャッシュに残っているデータをフラッシュする
+
+
+DMA 転送が完了した後、ドライバーは[**Flushadapterbuffersex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers_ex)ルーチンを呼び出して、キャッシュに残っているすべてのデータをフラッシュする必要があります。 ドライバーは、すべての**Maptransferex**呼び出しの後に、 **Flushadapterbuffersex**を呼び出す必要があります。
+
+**Maptransferex**呼び出しが DMA データバッファーの一部のみをマップする場合、ドライバーは、残りのデータをマップするために**maptransferex**を再度呼び出す必要があります。 複雑な転送では、複数の**Maptransferex**呼び出しが必要になる場合があります。 追加の**Maptransferex**呼び出しごとに、手順 5. ~ 8. を繰り返します。
+
+## <a name="step-9-free-the-dma-channel-and-map-registers"></a>手順 9: DMA チャネルを解放し、レジスタをマップする
+
+
+DMA データバッファー全体が正常にマップされ、最後の転送が完了すると、ドライバーは[**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)ルーチンを呼び出して、dma チャネルと以前に割り当てられたすべてのマップレジスタを解放する必要があります。
+
+## <a name="step-10-release-the-dma-adapter-object"></a>手順 10: DMA アダプターオブジェクトを解放する
+
+
+すべての DMA 転送が完了し、以前に割り当てられたすべてのマップレジスタが解放されると、ドライバーは[**PutDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pput_dma_adapter)ルーチンを呼び出してアダプターオブジェクトを解放します。
 
  
 

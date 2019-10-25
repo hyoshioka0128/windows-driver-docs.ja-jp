@@ -3,15 +3,15 @@ title: カーネル モード コマンド バッファーのサポート
 description: カーネル モード コマンド バッファーのサポート
 ms.assetid: c61a39b3-6fd6-461f-a68f-450ccd705f6f
 keywords:
-- コマンド バッファー WDK の表示
+- コマンドバッファーの WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f37252c5cfc51bd6d728f1858bc6f2a988f1a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb0bfd9ac620280c54475d1f0f4091996f3b8d78
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375786"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825611"
 ---
 # <a name="supporting-kernel-mode-command-buffers"></a>カーネル モード コマンド バッファーのサポート
 
@@ -19,9 +19,9 @@ ms.locfileid: "67375786"
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>
 
 
-ディスプレイのミニポート ドライバーをコマンド バッファーへの呼び出しに応答を送信する必要があります、 [ **DxgkDdiRenderKm** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)で説明されているとおりに機能[コマンド バッファーを送信する](submitting-a-command-buffer.md)します。
+表示ミニポートドライバーは、「[コマンドバッファーを送信](submitting-a-command-buffer.md)する」で説明されているように、 [**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)関数の呼び出しに応答してコマンドバッファーを送信する必要があります。
 
-ドライバーを使用して、 **MultipassOffset**のメンバー、 [ **DXGKARG\_レンダリング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_render)コマンドを入力バッファーの処理の進行状況を追跡するために構造体。 たとえば、ディスプレイのミニポート ドライバーは、コマンドの処理を追跡するために、最後の処理コマンドと下位 16 ビットのオフセットとして上位 16 ビットを使用できます。
+ドライバーは、 [**Dxgkarg\_RENDER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_render)構造体の**multiパスワード**メンバーを使用して、入力コマンドバッファー処理の進行状況を追跡できます。 たとえば、表示ミニポートドライバーは、最後に処理されたコマンドへのオフセットとして上位16ビットを使用し、コマンドの処理を追跡するために下位16ビットを使用できます。
 
  
 

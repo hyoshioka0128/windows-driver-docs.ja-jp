@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_EXTDEVICE\_POWER\_状態
-description: KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部のデバイスの電源状態を取得します。
+title: KSK プロパティ\_EXTDEVICE\_電源\_の状態
+description: KSK プロパティ\_EXTDEVICE\_POWER\_STATE プロパティは、外部デバイスの電源状態を設定または取得します。
 ms.assetid: bfca1f3d-b563-4ddd-b823-85487b4a4093
 keywords:
-- KSPROPERTY_EXTDEVICE_POWER_STATE ストリーミング メディア デバイス
+- KSPROPERTY_EXTDEVICE_POWER_STATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c838efefeef435bdf931785c2e26394684577
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2bd21baad57539b4bcebb260c8bd44018d7c321c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354861"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827017"
 ---
-# <a name="kspropertyextdevicepowerstate"></a>KSPROPERTY\_EXTDEVICE\_POWER\_状態
+# <a name="ksproperty_extdevice_power_state"></a>KSK プロパティ\_EXTDEVICE\_電源\_の状態
 
 
-KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部のデバイスの電源状態を取得します。
+KSK プロパティ\_EXTDEVICE\_POWER\_STATE プロパティは、外部デバイスの電源状態を設定または取得します。
 
 ## <span id="ddk_ksproperty_extdevice_power_state_ks"></span><span id="DDK_KSPROPERTY_EXTDEVICE_POWER_STATE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,14 +61,14 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 
  
 
-プロパティの値 (データの操作) は、外部のデバイスの電源の状態を指定する ULONG です。
+プロパティ値 (操作データ) は、外部デバイスの電源状態を指定する ULONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**PowerState** 、KSPROPERTY のメンバー\_EXTDEVICE\_構造が外部のデバイスの電源設定を指定します。 **PowerState**に等しいまたはスタンバイにメンバーを設定することがあります。 たとえば、バッテリ駆動外部などのデバイス、DV カメラを電源オフ可能性があります。 AC 電源 DVHS デバイスは、スタンバイに配置することがあります。 デバイスがスタンバイ状態にある場合、電源をオンに後でする可能性があります。
+KSK プロパティの**PowerState**メンバー\_extdevice\_S 構造体は、外部デバイスの電源設定を指定します。 **PowerState**メンバーを equal on または standby に設定できます。 たとえば、DV カムコーダーなどのバッテリ駆動の外部デバイスは電源がオフになっている場合があります。 AC 電源を使用した DVHS デバイスは、スタンバイに配置できます。 デバイスがスタンバイ状態の場合、後で電源がオンになっている可能性があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTDEVICE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
+[**KSK プロパティ\_EXTDEVICE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
 
  
 

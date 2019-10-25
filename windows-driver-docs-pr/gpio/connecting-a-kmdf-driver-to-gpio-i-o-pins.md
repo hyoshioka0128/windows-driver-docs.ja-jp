@@ -1,22 +1,22 @@
 ---
 title: KMDF ドライバーの GPIO I/O ピンへの接続
-description: どの周辺機器のカーネル モード ドライバー フレームワーク (KMDF) ドライバーでは、GPIO I/O リソースの説明を取得できます。
+description: 周辺機器用のカーネルモードドライバーフレームワーク (KMDF) ドライバーが、GPIO i/o リソースの説明を取得する方法。
 ms.assetid: 02F6431C-7B55-4DFB-9792-4A72F0268C76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1de6afc19a91573ccd8c651d999d8aed6b13f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 076ada4fa04dde1ef95ad0ac85880b21e97ddbcb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363631"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825053"
 ---
 # <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>KMDF ドライバーの GPIO I/O ピンへの接続
 
 
-GPIO I/O リソース、一連の 1 つまたは複数の GPIO ピンを入力またはデータのデータの出力として構成されます。 これらのピンに物理的に接続するための周辺機器のドライバーでは、オペレーティング システムから対応する GPIO I/O リソースを取得します。 周辺機器のデバイス ドライバーは、このリソースの GPIO ピンへの接続を開きし、この接続を表すハンドルを I/O 要求を送信します。
+GPIO i/o リソースは、データ入力またはデータ出力として構成される1つ以上の GPIO ピンのセットです。 これらのピンに物理的に接続する周辺機器のドライバーは、対応する GPIO i/o リソースをオペレーティングシステムから取得します。 周辺機器ドライバーは、このリソースの GPIO ピンへの接続を開き、この接続を表すハンドルに i/o 要求を送信します。
 
-次のコード例では、周辺機器のカーネル モード ドライバー フレームワーク (KMDF) ドライバーがドライバーに、プラグ アンド プレイ (PnP) マネージャーが割り当てられている GPIO I/O リソースの説明を取得する方法を示します。
+次のコード例は、周辺機器のカーネルモードドライバーフレームワーク (KMDF) ドライバーが、プラグアンドプレイ (PnP) マネージャーがドライバーに割り当てた GPIO i/o リソースの説明を取得する方法を示しています。
 
 ```cpp
 NTSTATUS
@@ -59,9 +59,9 @@ NTSTATUS
 }
 ```
 
-上記のコード例で、`DeviceExtension`変数は周辺機器のデバイスのデバイス コンテキストへのポインター。 `XyzDrvGetDeviceExtension`周辺機器のデバイス ドライバーによって、このデバイス コンテキストを取得する関数が実装されます。 このドライバーが以前に登録されてその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数を呼び出して、 [ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)メソッド。
+前のコード例では、`DeviceExtension` 変数は、周辺機器のデバイスコンテキストへのポインターです。 このデバイスコンテキストを取得する `XyzDrvGetDeviceExtension` 関数は、周辺機器ドライバーによって実装されます。 このドライバーは、 [**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)メソッドを呼び出して、以前に[*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数を登録しました。
 
-次のコード例は、周辺機器のデバイス ドライバーが、以前に取得した GPIO リソースの説明を使用する方法を示しています。 ドライバーの GPIO I/O リソースを WDFIOTARGET ハンドルを開くためのコード例です。
+次のコード例では、周辺機器ドライバーが、前のコード例で取得した GPIO リソースの説明を使用して、ドライバーの GPIO i/o リソースへの WDFIOTARGET ハンドルを開く方法を示します。
 
 ```cpp
 NTSTATUS IoRoutine(WDFDEVICE Device, BOOLEAN ReadOperation) 
@@ -109,9 +109,9 @@ NTSTATUS IoRoutine(WDFDEVICE Device, BOOLEAN ReadOperation)
     ...
 ```
 
-上記のコード例で、`Device`変数は周辺機器の framework デバイス オブジェクトの WDFDEVICE ハンドルです。 **リソース\_ハブ\_作成\_パス\_FROM\_ID**関数は、GPIO I/O リソースの名前を含む文字列を作成します。 コード例では、この文字列を使用して、GPIO I/O リソースの名前を開きます。
+前のコード例では、`Device` 変数は、周辺機器のフレームワークデバイスオブジェクトを表す WDFDEVICE ハンドルです。 **リソース\_ハブ\_\_ID 関数から\_パス\_を作成**し、GPIO i/o リソースの名前を含む文字列を作成します。 このコード例では、この文字列を使用して、名前で GPIO i/o リソースを開きます。
 
-周辺機器のデバイス ドライバーが GPIO I/O リソースを識別するハンドルを取得後、このドライバーは、GPIO ピンからデータを読み書き I/O 制御要求を送信できます。 ドライバーの GPIO I/O リソースを開くの読み取りは[ **IOCTL\_GPIO\_読み取り\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_read_pins)リソース内のピンからデータを読み取る I/O 制御要求。 ドライバーの GPIO I/O リソースを開くの書き込みは[ **IOCTL\_GPIO\_書き込み\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_write_pins)リソース内のピンにデータの書き込み I/O コントロール要求。 次のコード例では、GPIO 読み取りを実行または操作を記述する方法を示します。
+周辺機器ドライバーが GPIO i/o リソースへのハンドルを取得した後、このドライバーは、GPIO ピンに対してデータの読み取りまたは書き込みを行う i/o 制御要求を送信できます。 読み取り用の GPIO i/o リソースを開くドライバーは、 [**IOCTL\_gpio\_読み取り\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_read_pins)の i/o 制御要求を使用して、リソース内のピンからデータを読み取ります。 書き込み用の GPIO i/o リソースを開くドライバーは、 [**IOCTL\_gpio\_書き込み\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_write_pins)の i/o 制御要求を使用して、リソース内のピンにデータを書き込みます。 次のコード例は、GPIO の読み取りまたは書き込み操作を実行する方法を示しています。
 
 ```cpp
     WDF_OBJECT_ATTRIBUTES RequestAttributes;
@@ -187,14 +187,14 @@ NTSTATUS IoRoutine(WDFDEVICE Device, BOOLEAN ReadOperation)
     ...
 ```
 
-上記のコード例で`Data`データ バッファーへのポインターは、`Size`このデータ バッファーのバイト単位のサイズと`ReadOperation`、要求された操作は、読み取り、かどうかを示します (**TRUE**) または書き込み (**FALSE**)。
+上のコード例では、`Data` はデータバッファーへのポインターであり、`Size` はこのデータバッファーのサイズ (バイト単位) で、要求された操作が読み取り (**TRUE**) または書き込み (**FALSE**) であるかどうかを `ReadOperation` 示します。
 
 ## <a name="for-more-information"></a>詳細情報
 
 
-詳細については**IOCTL\_GPIO\_読み取り\_ピン**、要求の出力バッファーにデータ入力ピンが、bits のマッピングを含む要求を参照してください[ **IOCTL\_GPIO\_読み取り\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_read_pins)します。 詳細については**IOCTL\_GPIO\_書き込み\_ピン**データの出力ピンに要求の入力バッファー内のビットのマッピングを含む要求を参照してください[ **IOCTL\_GPIO\_書き込み\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_write_pins)します。
+要求出力バッファーのビットへのデータ入力ピンのマッピングなど、 **ioctl\_GPIO\_読み取り\_** の要求の詳細については、「 [**ioctl\_GPIO\_read\_pin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_read_pins)」を参照してください。 **Ioctl\_\_gpio**の詳細については、要求入力バッファー内のビットとデータ出力ピンのマッピングなど、\_の要求を書き込みます。また、「 [**ioctl\_GPIO\_書き込み\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_write_pins)」を参照してください。
 
-カーネル モードで実行されている GPIO 周辺ドライバーを作成する方法を示すサンプル ドライバー、SimDevice サンプル ドライバーを参照してください、 [GPIO サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=616032) GitHub 上のコレクション。
+カーネルモードで実行される GPIO 周辺ドライバーの作成方法を示すサンプルドライバーについては、GitHub の「 [gpio sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=616032)コレクション」の「デバイスサンプルドライバーの簡略化」を参照してください。
 
  
 

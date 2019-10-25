@@ -1,9 +1,9 @@
 ---
-title: usb3kd.ucx_device
-description: Usb3kd.ucx_device 拡張機能では、USB 3.0 ツリーの中に USB デバイスに関する情報が表示されます。 表示は、UcxVersion.sys によって管理されるデータ構造に基づいています。
+title: usb3kd デバイス (_c)
+description: Usb3kd 拡張機能は、usb デバイスに関する情報を USB 3.0 ツリーに表示します。 表示は、UcxVersion. sys によって管理されるデータ構造に基づいています。
 ms.assetid: 7AC3DBBF-1D62-492E-B46E-C193579DE1E3
 keywords:
-- デバッグ usb3kd.ucx_device Windows
+- usb3kd Windows のデバッグ (_c)
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bd84e17256b7242ddf247ddb0580419672e3cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a672b6b6f460367dc2922653a5dcc0aeb1f42fab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368005"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837645"
 ---
-# <a name="usb3kducxdevice"></a>!usb3kd.ucx\_device
+# <a name="usb3kducx_device"></a>! usb3kd\_デバイス
 
 
-[ **! Usb3kd.ucx\_デバイス**](-usb3kd-device-info.md)拡張機能での USB デバイスに関する情報を表示する、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)します。 USB ホスト コント ローラーの拡張機能ドライバーによって管理されるデータ構造に基づいて表示 (Ucx*バージョン*.sys)。
+[ **! Usb3kd\_デバイス**](-usb3kd-device-info.md)拡張機能では、usb デバイスに関する情報が[usb 3.0 ツリー](usb-3-extensions.md#usb-3-tree)に表示されます。 この表示は、USB ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) によって管理されるデータ構造に基づいています。
 
 ```dbgcmd
 !usb3kd.ucx_device UcxUsbDevicePrivContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______UcxUsbDevicePrivContext______"></span><span id="_______ucxusbdeviceprivcontext______"></span><span id="_______UCXUSBDEVICEPRIVCONTEXT______"></span> *UcxUsbDevicePrivContext*   
-アドレス、 \_UCXUSBDEVICE\_デバイスを表す PRIVCONTEXT 構造体。
+<span id="_______UcxUsbDevicePrivContext______"></span><span id="_______ucxusbdeviceprivcontext______"></span><span id="_______UCXUSBDEVICEPRIVCONTEXT______"></span>*Ucxusbdeviceprivcontext*   
+デバイスを表す \_UCXUSBDEVICE\_PRIVCONTEXT 構造体のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-USB ホスト コント ローラーの拡張機能ドライバー (Ucx*バージョン*.sys) コント ローラーのドライバーの USB 3.0 ハブのドライバーと USB 3.0 ホスト間の抽象化レイヤーを提供します。 拡張機能ドライバーが、ホスト コント ローラー、デバイス、およびエンドポイントの独自の表現。 出力、 [ **! ucx\_デバイス**](-usb3kd-device-info.md)コマンドは、拡張機能ドライバーによって管理されるデータ構造に基づきます。 USB ホスト コント ローラーの拡張機能ドライバーと USB 3.0 ホスト コント ローラーのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+Usb ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) は、usb 3.0 ハブドライバーと usb 3.0 ホストコントローラードライバーの間に抽象層を提供します。 拡張機能ドライバーは、ホストコントローラー、デバイス、およびエンドポイントを独自に表現したものです。 [ **! Ucx\_デバイス**](-usb3kd-device-info.md)コマンドの出力は、拡張機能ドライバーによって管理されているデータ構造に基づいています。 Usb ホストコントローラー拡張機能ドライバーおよび USB 3.0 ホストコントローラードライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-**! ucx\_デバイス**と[ **! デバイス\_情報**](-usb3kd-device-info.md)デバイスに関する情報の両方が表示が表示される情報は異なります。 出力 **! ucx\_デバイス**は USB ホスト コント ローラーの拡張機能ドライバーの point of view およびの出力から **! デバイス\_情報**USB 3.0 ハブの観点からは、ドライバー。 たとえば、 **! ucx\_デバイス**出力には、エンドポイントに関する情報が含まれています、 **! デバイス\_情報**出力には、構成、およびインターフェイスに関する情報が含まれています。記述子。
+**! ucx\_デバイス**と[ **! デバイス\_情報**](-usb3kd-device-info.md)はどちらもデバイスに関する情報を表示しますが、表示される情報は異なります。 **! Ucx\_デバイス**の出力は、usb ホストコントローラー拡張機能ドライバーの観点から見ると、**デバイス\_情報**の出力は、usb 3.0 ハブドライバーの観点からのものです。 たとえば、 **! ucx\_デバイス**の出力には、エンドポイントに関する情報が含まれています。また、 **! デバイス\_情報**の出力には、構成およびインターフェイス記述子に関する情報が含まれています。
 
 <a name="examples"></a>例
 --------
 
-デバイスのプライベート コンテキスト UCX USB のアドレスを取得する出力の確認、 [ **! ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)コマンド。 次の例では、2 つ目のデバイスのプライベートのコンテキストのアドレスは、0xfffffa8005bd9680 です。
+UCX USB デバイスのプライベートコンテキストのアドレスを取得するには、 [ **! ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)コマンドの出力を確認します。 次の例では、2番目のデバイスのプライベートコンテキストのアドレスは0xfffffa8005bd9680 です。
 
 ```dbgcmd
 3: 3: kd> !ucx_controller_list
@@ -65,7 +65,7 @@ USB ホスト コント ローラーの拡張機能ドライバー (Ucx*バー�
         ...
 ```
 
-UCX USB プライベート コンテキストのアドレスを渡すことができますので、 **! ucx\_デバイス**コマンド。
+これで、UCX USB プライベートコンテキストのアドレスを **! ucx\_デバイス**コマンドに渡すことができるようになりました。
 
 ```dbgcmd
 3: kd> !ucx_device 0xfffffa8005bd9680
@@ -94,14 +94,14 @@ EventCallbacks:
     EvtUsbDeviceEndpointAdd: (0xfffff880044edfc8) USBXHCI!Endpoint_UcxEvtUsbDeviceEndpointAdd
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ **! usb3kd.ucx\_コント ローラー\_一覧**](-usb3kd-ucx-controller-list.md)
+[ **! usb3kd\_controller\_list**](-usb3kd-ucx-controller-list.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
 
  
 

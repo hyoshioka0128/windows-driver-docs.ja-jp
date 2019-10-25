@@ -7,12 +7,12 @@ keywords:
 - IoInitializeTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 295097a5b7e5d8af76591b0497be86b558a0c535
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b52cdcd597811f2eb099992df30a41611396b9a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378792"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838483"
 ---
 # <a name="providing-iotimer-context-information"></a>IoTimer コンテキスト情報の提供
 
@@ -20,15 +20,15 @@ ms.locfileid: "67378792"
 
 
 
-*コンテキスト*にポインターが渡される[ **IoInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializetimer)コンテキスト領域を識別する、他のドライバー ルーチンと[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)自体、ルーチンが時刻指定の操作に関する状態を保持できます。 I/O マネージャー パス、*コンテキスト*ポインターが呼び出されるたびに、 *IoTimer*ルーチン。
+[**Ioinitializetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializetimer)に渡される*コンテキスト*ポインターによって、他のドライバールーチンや[*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチン自体が、時間のかかる操作に関する状態を維持できるコンテキスト領域が識別されます。 I/o マネージャーは、 *Iotimer*ルーチンを呼び出すたびに*コンテキスト*ポインターを渡します。
 
-*IoTimer* IRQL でルーチンを実行 = ディスパッチ\_レベル、そのコンテキストの領域は、常駐システム容量のメモリ内にある必要があります。 持つほとんどのドライバー *IoTimer*ルーチンを使用して、[デバイス拡張機能](device-extensions.md)として関連付けられているデバイス オブジェクトの*コンテキスト*-アクセス可能な領域が、コンテキストはことの代わりになり、コント ローラーの拡張機能ドライバーを使用している場合、[コント ローラー オブジェクト](using-controller-objects.md)またはドライバーによって割り当てられた非ページ プール。
+*Iotimer*ルーチンは IRQL = ディスパッチ\_レベルで実行されるため、そのコンテキスト領域は常駐システム領域のメモリ内に存在する必要があります。 *Iotimer*ルーチンを含むほとんどのドライバーは、関連付けられているデバイスオブジェクトの[デバイス拡張機能](device-extensions.md)を*コンテキスト*アクセス可能な領域として使用しますが、ドライバーが[コントローラーオブジェクト](using-controller-objects.md)を使用する場合は、代わりにコンテキストをコントローラー拡張機能に含めることができます。ドライバーによって割り当てられた非ページプール。
 
-**これらのガイドラインに従う、** *IoTimer * * * ルーチンのコンテキストの領域。* *
+*Iotimer * * * ルーチンのコンテキスト領域***については、次のガイドラインに従って**ください:*
 
--   場合、 *IoTimer*ルーチンでは、ドライバーの ISR とそのコンテキストの領域を共有、使用する必要がある必要があります[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出す、 [ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンをマルチプロセッサ セーフ方式でコンテキストの領域にアクセスします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+-   *Iotimer*ルーチンが、そのコンテキスト領域をドライバーの ISR と共有する場合、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を使用して、マルチプロセッサセーフな方法でコンテキスト領域にアクセスする[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンを呼び出す必要があります。 詳細については、「[クリティカルセクションの使用](using-critical-sections.md)」を参照してください。
 
--   場合、 *IoTimer*ルーチンは ISR とそのコンテキストの領域を共有していないが、別のドライバーのルーチンで共有は、ドライバーがコンテキストにアクセスするために初期化された executive スピン ロックを共有コンテキストの領域を保護する必要がありますマルチプロセッサの安全な方法で情報。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+-   *Iotimer*ルーチンがコンテキスト領域を ISR と共有せず、別のドライバールーチンと共有する場合、ドライバーは、のコンテキスト情報にアクセスするために、初期化された executive スピンロックを使用して共有コンテキスト領域を保護する必要があります。マルチプロセッサ-セーフな方法。 詳細については、「[スピンロック](spin-locks.md)」を参照してください。
 
  
 

@@ -3,17 +3,17 @@ title: デバイス オブジェクトへの排他アクセスの指定
 description: デバイス オブジェクトへの排他アクセスの指定
 ms.assetid: b492251b-55b0-4323-a508-b395bb3da0ef
 keywords:
-- WDK デバイス オブジェクトの排他アクセス
-- デバイス オブジェクトの WDK カーネル、排他アクセス
-- WDK デバイス オブジェクトの 1 つのアクセス
+- 排他的アクセス WDK デバイスオブジェクト
+- デバイスオブジェクト WDK カーネル、排他アクセス
+- 単一アクセス WDK デバイスオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38073af8b8b1a76febd38a073ba5daa770e58d5a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa00699bf03fcc685374d1fe771b4522e042db3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383015"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836267"
 ---
 # <a name="specifying-exclusive-access-to-device-objects"></a>デバイス オブジェクトへの排他アクセスの指定
 
@@ -21,13 +21,13 @@ ms.locfileid: "67383015"
 
 
 
-デバイスへの排他アクセスが有効になっている場合は、デバイスへのハンドルの 1 つだけ開くことができる、時にします。 デバイスへの排他アクセスを強制する I/O マネージャーには、デバイス スタック内の名前付きのデバイス オブジェクトの排他のプロパティを設定する必要があります。
+デバイスへの排他アクセスが有効になっている場合、デバイスへのハンドルは一度に1つしか開くことができません。 I/o マネージャーがデバイスへの排他アクセスを適用するには、デバイススタック内の名前付きデバイスオブジェクトに対して排他的なプロパティを設定する必要があります。
 
-WDM デバイス スタックを両方 PDO を持つ、FDO 排他プロパティ設定できます、INF ファイルでのみを使用して、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。 PDO はスタックでは、名前付きオブジェクトですが、バス ドライバー (関数ドライバーではなく自体) が関数ドライバーに代わって、PDO を作成します。 クラスまたはデバイスの INF ファイルでは、PDO の排他フラグを設定するバス ドライバーに指示するしかありません。 (への呼び出し、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)ルーチン、FDO を作成しますは、FDO を排他フラグを設定しても効果はありません。)。
+PDO と FDO の両方がある WDM デバイススタックの場合、inf [**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を使用して、その排他プロパティを inf ファイルによってのみ設定できます。 PDO はスタック内の名前付きオブジェクトですが、関数ドライバーに代わって (関数ドライバー自体ではなく) バスドライバーが PDO を作成します。 バスドライバーが PDO の排他フラグを設定するように指示する唯一の方法は、クラスまたはデバイスの INF ファイルです。 ( [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)ルーチンを呼び出すと、FDO が作成されます。 FDO に対して排他フラグを設定しても効果はありません)。
 
-ドライバーを持つデバイス オブジェクトが積み上げ縦棒グラフで、非 WDM ドライバーと raw モードで動作するデバイスなどを使用して、 [ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)ルーチンの名前付きの排他的なプロパティを設定するにはデバイス オブジェクト。
+非 WDM ドライバーや raw モードで動作するデバイスなど、デバイスオブジェクトがスタックされていないドライバーは、 [**Iocreatedevices ec生物**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)ルーチンを使用して、名前付きデバイスオブジェクトの排他プロパティを設定できます。
 
-I/O マネージャーは、排他的に末尾の名前に関係なく、名前付きのデバイス オブジェクトを名前ごとに実行を強制します。 たとえば、デバイス オブジェクトが名前"\\デバイス\\DeviceName"。 I/O マネージャーの排他性を開く要求を適用し、"\\デバイス\\DeviceName\\*Filename1*「の後に」\\デバイス\\DeviceName\\ *Filename2*"。 デバイス スタックの 2 つのオブジェクトは、(これは推奨されません) という名前は、I/O マネージャーが各オブジェクト用に開かれる単一のハンドル。 このような場合は、ドライバー適用する必要がある排他的自体内でその[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)コールバック関数。 また、I/O マネージャーでは、排他性を開くもう 1 つのファイル ハンドルを基準は適用されません。 デバイスの名前空間内のファイル オープン要求の詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)します。
+I/o マネージャーは、名前付きデバイスオブジェクトに対して、名前の後ろに排他性を適用します。 たとえば、デバイスオブジェクトの名前が "\\Device\\DeviceName" であるとします。 次に、i/o マネージャーは、"\\Device\\DeviceName\\*Filename1*" の後に "\\デバイス\\Devicename\\*Filename2*" を開くように要求するために排他性を適用します。 デバイススタック内の2つのオブジェクトに名前が付けられている場合 (推奨されません)、i/o マネージャーでは、オブジェクトごとに1つのハンドルを開くことができます。 このような状況では、ドライバーは[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)コールバック関数内で排他性自体を強制する必要があります。 また、i/o マネージャーでは、別のファイルハンドルに対して排他性のオープンが強制されることもありません。 デバイスの名前空間でのファイルオープン要求の詳細については、「[デバイスの名前空間へのアクセスの制御](controlling-device-namespace-access.md)」を参照してください。
 
  
 

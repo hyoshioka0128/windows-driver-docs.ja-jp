@@ -3,29 +3,29 @@ title: WBDI ドライバー用のデバイス インターフェイスの作成
 description: WBDI ドライバー用のデバイス インターフェイスの作成
 ms.assetid: 8595092c-9105-4638-814a-74cdfa372638
 keywords:
-- 生体認証ドライバー WDK、デバイス インターフェイス
-- WDK の生体認証デバイスのインターフェイス
+- 生体認証ドライバー WDK、デバイスインターフェイス
+- デバイスインターフェイス WDK 生体認証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f97f28706dcf44367d4679ee9c80b033c9dcd008
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 02981a59046637324eb6e9b7823d6031ce759305
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355235"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833949"
 ---
 # <a name="creating-a-device-interface-for-a-wbdi-driver"></a>WBDI ドライバー用のデバイス インターフェイスの作成
 
 
-デバイス コールバック オブジェクトを初期化し、キューのセットアップ時に、ドライバーに返されるドライバーは、生体認証デバイスのデバイス インターフェイスのインスタンスを作成する必要があります。
+デバイスコールバックオブジェクトが初期化され、ドライバーに返されると、キューのセットアップ時に、ドライバーは生体認証デバイス用のデバイスインターフェイスインスタンスを作成する必要があります。
 
-具体的には、WBDI ドライバーは、GUID を公開する必要があります\_DEVINTERFACE\_生体認証の\_リーダー デバイスのインターフェイスを呼び出して[ **IWDFDevice::CreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface):
+具体的には、WBDI ドライバーは、 [**Iwdfdevice:: CreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface)を呼び出すことによって、GUID\_devinterface\_生体認証\_リーダーデバイスインターフェイスを公開する必要があります。
 
 ```cpp
 hr = m_FxDevice->CreateDeviceInterface(&GUID_DEVINTERFACE_BIOMETRIC_READER, NULL);
 ```
 
-この呼び出しがへの呼び出しに続く[ **IWDFDevice::AssignDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-assigndeviceinterfacestate):
+この呼び出しの後に、 [**Iwdfdevice:: 割り当て Deviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-assigndeviceinterfacestate)が呼び出されます。
 
 ```cpp
 hr = m_FxDevice->AssignDeviceInterfaceState(&GUID_DEVINTERFACE_BIOMETRIC_READER,
@@ -33,11 +33,11 @@ hr = m_FxDevice->AssignDeviceInterfaceState(&GUID_DEVINTERFACE_BIOMETRIC_READER,
  TRUE);
 ```
 
-レガシ (WBDI 以外) の生体認証スタックへの機能を公開する必要がある WBDI ドライバーは、レガシ アプリケーションの別のデバイスのインターフェイスを公開して、排他値は、従来のスタックをインストールする INX ファイルでは 0 に設定されていることを確認する必要があります。
+レガシ (WBDI) 生体認証スタックに機能を公開する WBDI ドライバーでは、レガシアプリケーション用に別のデバイスインターフェイスを公開し、レガシスタックをインストールする INX ファイルで排他値がゼロに設定されていることを確認する必要があります。
 
-GUID を公開する\_DEVINTERFACE\_生体認証の\_リーダー デバイスのインターフェイスが原因で、ドライバーのみを列挙する WBF サービス。 排他モードが設定されていない場合 WBF を開き、デバイスを制御しません。
+GUID\_DEVINTERFACE\_生体認証\_リーダーデバイスインターフェイスを公開すると、WBF サービスによってドライバーのみが列挙されます。 排他モードが設定されていない場合、WBF はデバイスを開いて制御しようとしません。
 
-または、ドライバーを検出でした内部的にレガシ モードとし、GUID を公開していません内にある\_DEVINTERFACE\_生体認証の\_リーダー デバイスのインターフェイス。
+または、ドライバーがレガシモードであることを内部で検出した後、GUID\_DEVINTERFACE\_生体認証\_リーダーデバイスインターフェイスに公開しないようにすることもできます。
 
  
 

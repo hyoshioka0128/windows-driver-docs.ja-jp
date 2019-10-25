@@ -3,16 +3,16 @@ title: 削除ロックの使用
 description: 削除ロックの使用
 ms.assetid: 78ca7fe5-ceed-4752-bf1b-d13309097cd8
 keywords:
-- PnP WDK のロックを解除します。
-- ロック ルーチン PnP WDK
+- ロックの削除 WDK PnP
+- ロックルーチン WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3fdd7f7345cf9128e4c7b47037e3ba5c705621
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6376afa82412fb953b7cccfa71dafcb4280006a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381534"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835863"
 ---
 # <a name="using-remove-locks"></a>削除ロックの使用
 
@@ -20,25 +20,25 @@ ms.locfileid: "67381534"
 
 
 
-[削除ロック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)デバイス、未処理の I/O 操作の数を追跡し、デタッチ、ドライバーのデバイス オブジェクトを削除しても安全な場合を決定する方法を提供します。 システムは、独自の追跡メカニズムを実装する代わりに、ドライバー作成者にこれらのルーチンを提供します。
+[Remove lock ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)は、デバイス上の未処理の i/o 操作の数を追跡し、ドライバーのデバイスオブジェクトをいつデタッチおよび削除できるかを判断するための手段を提供します。 システムは、独自の追跡機構を実装する代わりに、これらのルーチンをドライバーライターに提供します。
 
-ドライバーは、2 つの目的はこのメカニズムを使用できます。
+ドライバーは、次の2つの目的でこのメカニズムを使用できます。
 
-1.  ドライバーのことを確認する[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは完了しません、 [ **IRP\_MN\_削除\_デバイス** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) (たとえば、別のドライバーのルーチンは、デバイスにアクセスする) 中に、ロックが保持されているときに要求します。
+1.  ドライバーの[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが IRP\_を完了しないようにするには、ロックが保持されている間 (別のドライバールーチンがデバイスにアクセスしているときなど) に\_デバイスの要求を[**削除\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)ます。
 
-2.  なぜ、ドライバーがそのデバイス オブジェクトを削除しないでください理由の数をカウントし、そのカウントがゼロになったときにイベントを設定するには。
+2.  ドライバーがデバイスオブジェクトを削除しない理由の数をカウントし、そのカウントがゼロになる場合にイベントを設定します。
 
-削除ロックを初期化するために、ドライバーを割り当てる必要があります、 **IO\_削除\_ロック**構造体の[デバイス拡張機能](device-extensions.md)を呼び出して[ **IoInitializeRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock)します。 通常、ドライバーを呼び出します**IoInitializeRemoveLock**でその[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device) 、日常的な場合、ドライバーを初期化しますデバイス オブジェクトのデバイスの拡張機能の残りの部分。
+削除ロックを初期化するには、ドライバーは、[デバイス拡張機能](device-extensions.md)で **\_ロック構造を削除\_IO**を割り当てる必要があります。その後、 [**Ioinitializer eremovelock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeremovelock)を呼び出します。 ドライバーは通常、デバイスオブジェクトの残りのデバイス拡張機能を初期化するときに、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンで**Ioinitializer Eremovelock**を呼び出します。
 
-ドライバーを呼び出す必要があります[ **IoAcquireRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)たびに、I/O 操作を開始します。 ドライバーを呼び出す必要があります[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock) I/O 操作を終了するたびにします。 ドライバーは、2 回以上、ロックを取得できます。 削除ロックのルーチンでは、ロックの未処理の買収のカウントを保持します。 呼び出しごとに**IoAcquireRemoveLock** 、カウントをインクリメントし、 **IoReleaseRemoveLock**デクリメント カウントします。
+ドライバーは、i/o 操作を開始するたびに[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)を呼び出す必要があります。 ドライバーは、i/o 操作が完了するたびに[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)を呼び出す必要があります。 ドライバーは、ロックを複数回取得できます。 Remove ロックルーチンは、ロックの未処理の取得の数を保持します。 **IoAcquireRemoveLock**を呼び出すたびにカウントが増加し、 **IoReleaseRemoveLock**はカウントをデクリメントします。
 
-ドライバーは呼び出す必要がありますも**IoAcquireRemoveLock**にパスとそのコードへの参照を (タイマー、Dpc、コールバック、およびなど) 用です。 ドライバーから呼び出す必要があります**IoReleaseRemoveLock**イベントが返される場合。
+また、ドライバーのコード (タイマー、Dpc、コールバックなど) への参照を渡すときにも、 **IoAcquireRemoveLock**を呼び出す必要があります。 次に、ドライバーは、イベントが返されたときに**IoReleaseRemoveLock**を呼び出す必要があります。
 
-場合は、そのディスパッチ コードで[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)、ドライバーがもう一度ロックする必要がありますを呼び出して[ **IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait)します。 このルーチンでは、ロックのすべての未処理買収がリリースされるまでは返されません。 キューに置かれた I/O 操作が完了するには、各ドライバーを呼び出す必要があります**IoReleaseRemoveLockAndWait** *後*を渡す、 **IRP\_MN\_削除\_デバイス**、次の下位ドライバーへの要求と*する前に*呼び出し、メモリを解放[ **IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodetachdevice)、または呼び出し[ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)します。 後**IoReleaseRemoveLockAndWait**のすべての呼び出しに、特定の削除ロックが呼び出された**IoAcquireRemoveLock**同じ削除ロックは失敗します。
+IRP\_のディスパッチコードで[ **\_デバイス\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)する場合は、ドライバーがロックをもう一度取得してから、 [**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)を呼び出す必要があります。 このルーチンは、ロックの未処理のすべての取得が解放されるまでは戻りません。 キューに入っている i/o 操作が完了するのを許可するには、各ドライバーが IRP\_渡し*た後*、次のドライバーに\_デバイスの要求を**削除\_** 、その前に、その*前*に**IoReleaseRemoveLockAndWait**を呼び出す必要があります。メモリを解放するか、 [**IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)を呼び出すか、 [**iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)を呼び出します。 特定の remove ロックに対して**IoReleaseRemoveLockAndWait**が呼び出された後、同じ remove ロックに対する**IoAcquireRemoveLock**の後続の呼び出しはすべて失敗します。
 
-後**IoReleaseRemoveLockAndWait**返します、ドライバーは、デバイスでは、削除する準備ができて、状態であることを検討する必要があり、I/O 操作を実行することはできません。 したがって、ドライバーを呼び出す必要がありますいない**IoInitializeRemoveLock**削除ロックの再初期化をします。 ドライバーはによって検証されているときに、この規則違反[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)バグ チェックが発生します。
+**IoReleaseRemoveLockAndWait**が返された後、ドライバーはデバイスが削除可能な状態であると判断し、i/o 操作を実行できません。 そのため、ドライバーは、 **Ioinitializer Eremovelock**を呼び出して削除ロックを再初期化することはできません。 ドライバーが[ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)によって検証されている間、この規則に違反すると、バグチェックが発生します。
 
-ドライバーが格納されるため、 **IO\_削除\_ロック**の処理中にドライバーがデバイスの拡張機能を削除するときに削除ロックが削除されたデバイスのデバイスの拡張機能の構造がオブジェクト**IRP\_MN\_削除\_デバイス**要求。
+ドライバーは、デバイスオブジェクトのデバイス拡張機能で **\_ロック構造を削除\_IO**を格納するため、\_\_IRP の処理中にドライバーがデバイス拡張機能を削除すると削除ロックが削除され **\_デバイス**の要求。
 
  
 

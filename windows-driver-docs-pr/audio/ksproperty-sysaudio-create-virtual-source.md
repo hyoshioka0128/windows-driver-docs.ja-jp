@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース
-description: KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい仮想ソースを作成します。
+title: KSK プロパティ\_SYSAUDIO\_作成\_仮想\_ソース
+description: KSK プロパティ\_SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE プロパティは、新しい仮想ソースを作成します。
 ms.assetid: 771c4084-8007-4280-8451-946a26182740
 keywords:
-- KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE オーディオ デバイス
+- KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a311819918c751758b70694759d140e3ea2e98b
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 272c9f1d3ca5f97e090a7576f44b71b90539c2cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832730"
 ---
-# <a name="kspropertysysaudiocreatevirtualsource"></a>KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース
+# <a name="ksproperty_sysaudio_create_virtual_source"></a>KSK プロパティ\_SYSAUDIO\_作成\_仮想\_ソース
 
 
-KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい仮想ソースを作成します。
+KSK プロパティ\_SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE プロパティは、新しい仮想ソースを作成します。
 
 ## <span id="ddk_ksproperty_sysaudio_create_virtual_source_ks"></span><span id="DDK_KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,26 +61,26 @@ KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい�
 
  
 
-プロパティ記述子 (インスタンス データ) は、型 SYSAUDIO の構造\_作成\_仮想\_仮想のソースのピン留めするカテゴリと暗証番号 (pin) 名の Guid を指定するソース。
+プロパティ記述子 (インスタンスデータ) は SYSAUDIO 型の構造であり、仮想ソースのピンカテゴリと pin 名の Guid を指定する\_仮想\_ソースを作成\_ます。
 
-プロパティの値 (データの操作) は、仮想のソースのインデックスを含む ULONG 変数です。 SysAudio では、新しい仮想ソースを識別するには、このインデックスを生成します。
+プロパティ値 (操作データ) は、仮想ソースインデックスを含む ULONG 変数です。 SysAudio は、このインデックスを生成して新しい仮想ソースを識別します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティの要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_SYSAUDIO\_作成\_仮想\_ソースプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、ボリュームなど仮想ミキサー行ソースを作成またはコントロールをミュートに使用されます。
+このプロパティは、ボリュームやミュートのコントロールなど、ミキサーラインの仮想ソースを作成するために使用されます。
 
-SysAudio が同じ pin カテゴリおよび pin 名前 Guid と、KSPROPERTY 仮想ソースを作成して既に場合\_SYSAUDIO\_作成\_仮想\_ソース プロパティの get 要求は、既存のインデックスを取得します。仮想のソース。 それ以外の場合、要求は、新しい仮想ソース インデックスを生成し、その値を出力します。
+SysAudio によって既に同じピンカテゴリと pin 名の Guid を持つ仮想ソースが作成されている場合は、KSK プロパティ\_SYSAUDIO\_作成\_仮想\_ソースのプロパティの要求では、既存の仮想ソースのインデックスを取得します。 それ以外の場合は、要求によって新しい仮想ソースインデックスが生成され、その値が出力されます。
 
-SysAudio が仮想のソースにインデックスを割り当てられた後、 [ **KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース**](ksproperty-sysaudio-attach-virtual-source.md)プロパティの設定その仮想のソースを仮想のオーディオ デバイスの暗証番号 (pin) のインスタンスにアタッチする要求を使用できます。
+SysAudio によって仮想ソースにインデックスが割り当てられた後は、 [**Ksk プロパティ\_sysaudio\_アタッチ\_仮想\_ソース**](ksproperty-sysaudio-attach-virtual-source.md)セットのプロパティの要求を使用して、仮想オーディオデバイス上のピンインスタンスに仮想ソースをアタッチできます。
 
-ユーザーは、SndVol32 アプリケーションを通じてさまざまなオーディオ ソースのボリューム レベルを制御します。 これらのソースには、wave 出力デバイス、MIDI シンセサイザー、CD プレーヤー、およびライン入力ジャックが含まれます。 SndVol32 Windows マルチ メディアを使用して**waveOut**_Xxx_、 **midiOut**_Xxx_、および**aux** _Xxx_これらのソース ボリューム レベルを制御する関数。 Windows のマルチ メディア機能の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+ユーザーは、SndVol32 アプリケーションを使用して、さまざまなオーディオソースのボリュームレベルを制御します。 これらのソースには、wave 出力デバイス、MIDI シンセサイザー、CD プレーヤー、およびライン入力ジャックが含まれます。 SndVol32 は、Windows マルチメディア**waveOut**_xxx_、 **midiout**_xxx_、および**aux**_xxx_の各関数を使用して、これらのソースのボリュームレベルを制御します。 Windows マルチメディア機能の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-SysAudio では、これらのデバイスにボリュームの変更をインターセプトし、その仮想ソースに適用します。 たとえば、MIDI ファイルを wave データに変換するソフトウェア MIDI シンセサイザーが仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている場合、SysAudio は適用 midiOut*Xxx*ボリュームは、pin を変更 (ではなく**waveOut**_Xxx_ボリュームの変更)。 同様に場合、 [Redbook システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)、CD プレーヤーからデジタル音楽、波形データを変換が仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている、SysAudio 適用 AUXCAPS\_オーディオのボリュームpin を変更します。 詳細については、AUXCAPS\_オーディオ構造体を Windows SDK のマニュアルを参照してください。
+SysAudio は、これらのデバイスに対して行われたボリュームの変更をインターセプトし、仮想ソースに適用します。 たとえば、MIDI ファイルを wave データに変換するソフトウェア MIDI シンセサイザーが、仮想オーディオデバイスの wave レンダリングピンのいずれかに接続されている場合、SysAudio は**waveOut**_xxx_の代わりに、midiout*Xxx*ボリュームの変更をピンに適用します。ボリュームの変更)。 同様に、デジタルオーディオを CD プレーヤーから wave データに変換する[Redbook システムドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)が仮想オーディオデバイスの wave レンダリングピンのいずれかに接続されている場合、SYSAUDIO は AUXCAPS\_cdaudio ボリュームの変更を pin に適用します。 AUXCAPS\_CDAUDIO 構造体の詳細については、Windows SDK のドキュメントを参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -93,17 +93,17 @@ SysAudio では、これらのデバイスにボリュームの変更をイン�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**SYSAUDIO\_作成\_仮想\_ソース**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)
+[**SYSAUDIO\_\_仮想\_ソースの作成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)
 
-[**KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース**](ksproperty-sysaudio-attach-virtual-source.md)
+[**KSK プロパティ\_SYSAUDIO\_接続\_仮想\_ソース**](ksproperty-sysaudio-attach-virtual-source.md)
 
  
 

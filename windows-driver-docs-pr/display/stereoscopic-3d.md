@@ -1,20 +1,20 @@
 ---
 title: ステレオスコピック 3D
-description: Windows 8 では、ゲームやビデオの再生などのステレオスコ ピック 3-D シナリオの一貫性のある API とデバイスのドライバー インターフェイス (DDI) プラットフォームを提供します。
+description: Windows 8 は、ゲームやビデオの再生などのステレオスコピック3-d シナリオ用の一貫した API およびデバイスドライバーインターフェイス (DDI) プラットフォームを提供します。
 ms.assetid: 2F83E5C6-E333-4BF6-A133-C65A23DAEF62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 715a46065d20246bcd534749e35d04f881f8fa05
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b95d9d73c92ba16b4b90245beba517a21851b4cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363690"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825716"
 ---
 # <a name="stereoscopic-3d"></a>ステレオスコピック 3D
 
 
-Windows 8 では、ゲームやビデオの再生などのステレオスコ ピック 3-D シナリオの一貫性のある API とデバイスのドライバー インターフェイス (DDI) プラットフォームを提供します。
+Windows 8 は、ゲームやビデオの再生などのステレオスコピック3-d シナリオ用の一貫した API およびデバイスドライバーインターフェイス (DDI) プラットフォームを提供します。
 
 <table>
 <colgroup>
@@ -31,76 +31,76 @@ Windows 8 では、ゲームやビデオの再生などのステレオスコ ピ
 <td align="left">8</td>
 </tr>
 <tr class="odd">
-<td align="left">ドライバーの実装: 完全なグラフィック</td>
-<td align="left">省略可能</td>
+<td align="left">ドライバーの実装—完全なグラフィックス</td>
+<td align="left">オプション</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a>要件とテスト</td>
-<td align="left"><p><strong>Device.Graphics... ProcessingStereoscopicVideoContent</strong></p>
-<p><strong>Device.Display.Monitor.Stereoscopic3DModes</strong></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">必要条件</a>とテスト</td>
+<td align="left"><p><strong>ProcessingStereoscopicVideoContent のヲ</strong></p>
+<p><strong>デバイス. Stereoscopic3DModes</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ステレオスコ ピック 3-D レンダリングがステレオスコ ピックがすべてのコンポーネントを持つシステムでのみ有効に 3 D 対応します。 これらのコンポーネントには、3 D 対応ディスプレイ ハードウェア、ハードウェアのグラフィックス、周辺機器、およびソフトウェア アプリケーションが含まれます。 グラフィックス スタックのステレオの設計では、特定の視覚エフェクトまたは使用される表示テクノロジは、オペレーティング システムに依存しません。 ディスプレイ ドライバーは、グラフィック表示に直接通信し、拡張表示 Identification Data (EDID) 構造を標準化されたディスプレイの機能に関する知識を備えています。 ドライバーは、このような画面がシステムに接続されていることを認識している場合にのみ、ステレオの機能を列挙します。
+ステレオスコピック3-d レンダリングは、ステレオスコピックに対応しているすべてのコンポーネントが含まれるシステムでのみ有効です。 これらのコンポーネントには、3-d 対応ディスプレイハードウェア、グラフィックスハードウェア、周辺機器、およびソフトウェアアプリケーションが含まれます。 グラフィックススタックのステレオデザインは、使用されている特定の視覚エフェクトまたは表示テクノロジがオペレーティングシステムに依存しないようにするためのものです。 ディスプレイドライバーは、グラフィックスディスプレイと直接通信し、標準化された拡張表示識別データ (EDID) 構造によって表示機能に関する知識を持ちます。 ドライバーは、そのようなディスプレイがシステムに接続されていることを認識している場合にのみ、ステレオ機能を列挙します。
 
-ディスプレイとユーザー モードのミニポート ドライバーでは、ステレオの機能を実装するには、新しいまたは更新された Ddi 以下の一覧を参照してください。
+ディスプレイのミニポートとユーザーモードドライバーにステレオ機能を実装するには、以下の新しい DDIs または更新されたの一覧を参照してください。
 
-ステレオスコ ピック ディスプレイの設定の一部である、**画面の解像度**コントロール パネル で、次のようにします。
+ステレオスコピックの表示設定は、次に示すように、コントロールパネルの **[画面解像度]** に含まれています。
 
-![ステレオスコ ピック ディスプレイの設定](images/stereo3ddisplaysetting.jpg)
+![ステレオスコピックの表示設定](images/stereo3ddisplaysetting.jpg)
 
-**ステレオを有効にする**設定は、次の状態のチェック ボックス。
+[**ステレオを有効に**する] 設定は、次の状態のチェックボックスです。
 
--   **使用できない**(淡色表示または非表示)。非対応のステレオでのレンダリング システムが表示されます。
--   設定**有効**(オン)。ステレオ ディスプレイでレンダリングできるシステムの既定の設定は、このステレオ オンデマンドのことを意味します。 既定では、デスクトップ ウィンドウ マネージャー (DWM) は、mono のモードです。 ステレオ アプリ場合にのみ、ステレオのモードに切り替えます。 DWM は、ユーザー (オンデマンド) によって起動されます。 DWM は、このチェック ボックスをオンにすると mono またはステレオのいずれかのモードであることができますに注意してください。
--   設定**無効**(オフ)。DWM は、ある場合、ユーザーは mono モードではオフこの設定します。 ステレオ アプリケーションは、ここで mono のモードに存在します。
+-   **使用**不可 (グレー表示または非表示): ステレオでレンダリングできないシステムの場合。
+-   **[有効]** (オン) に設定します。これは、ステレオで表示できるシステムの既定の設定であり、ステレオオンデマンドを意味します。 既定では、デスクトップウィンドウマネージャー (DWM) は mono モードです。 DWM は、ユーザーが (オンデマンドで) ステレオアプリを起動した場合にのみ、ステレオモードに切り替わります。 このチェックボックスがオンになっている場合は、DWM が mono モードまたはステレオモードであることに注意してください。
+-   **[無効]** (オフ) に設定します。ユーザーがこの設定をオフにした場合、DWM は mono モードになります。 ステレオアプリケーションは、この場合に mono モードで表示されます。
 
-## <a name="span-idstereoscopic3-dkernel-modesupportspanspan-idstereoscopic3-dkernel-modesupportspanspan-idstereoscopic3-dkernel-modesupportspanstereoscopic-3-d-kernel-mode-support"></a><span id="Stereoscopic_3-D_kernel-mode_support"></span><span id="stereoscopic_3-d_kernel-mode_support"></span><span id="STEREOSCOPIC_3-D_KERNEL-MODE_SUPPORT"></span>ステレオスコ ピック 3d のカーネル モードのサポート
-
-
-VidPN ステレオスコ ピック 3-D レンダリングをサポートするために Windows 8 のこれら Ddi が更新されます。
-
--   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
--   [**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
--   [**D3DKMDT\_VIDPN\_SOURCE\_MODE\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_vidpn_source_mode_type)
--   [**D3DKMT\_PRESENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_presentflags)
--   [**DXGI\_DDI\_ARG\_ROTATE\_RESOURCE\_IDENTITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
--   [**DXGK\_PRESENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_presentflags)
--   [**DXGK\_SETVIDPNSOURCEADDRESS\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_setvidpnsourceaddress_flags)
--   [**DXGKARG\_OPENALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_openallocation)
-
-## <a name="span-idstereoscopic3-dswapchainddisspanspan-idstereoscopic3-dswapchainddisspanspan-idstereoscopic3-dswapchainddisspanstereoscopic-3-d-swapchain-ddis"></a><span id="Stereoscopic_3-D_swapchain_DDIs"></span><span id="stereoscopic_3-d_swapchain_ddis"></span><span id="STEREOSCOPIC_3-D_SWAPCHAIN_DDIS"></span>ステレオスコ ピック 3-D スワップ Ddi
+## <a name="span-idstereoscopic_3-d_kernel-mode_supportspanspan-idstereoscopic_3-d_kernel-mode_supportspanspan-idstereoscopic_3-d_kernel-mode_supportspanstereoscopic-3-d-kernel-mode-support"></a><span id="Stereoscopic_3-D_kernel-mode_support"></span><span id="stereoscopic_3-d_kernel-mode_support"></span><span id="STEREOSCOPIC_3-D_KERNEL-MODE_SUPPORT"></span>ステレオスコピック3-d カーネルモードのサポート
 
 
-これらの Ddi は、新しいステレオスコ ピック 3-D スワップをサポートするために Windows 8 向けに更新されました。
+これらの DDIs は、Windows 8 向けに更新され、VidPN でのステレオスコピックのレンダリングをサポートします。
 
--   [*BltDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
--   [*Blt1DXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
--   [*CreateResource(D3D10)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)
--   [*CreateResource(D3D11)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)
--   [*RotateResourceIdentitiesDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
--   [**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
--   [**D3D10DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)
--   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
--   [**DXGI\_DDI\_ARG\_ROTATE\_RESOURCE\_IDENTITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
--   [**DXGI\_DDI\_存在\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_present_flags)
--   [**DXGI\_DDI\_プライマリ\_DESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_primary_desc)
+-   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
+-   [**D3DDDI\_の割り当て情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
+-   [**D3DKMDT\_VIDPN\_ソース\_モード\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_vidpn_source_mode_type)
+-   [**D3DKMT\_のフラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_presentflags)
+-   [**DXGI\_DDI\_ARG\_\_リソース\_ID のローテーション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
+-   [**DXGK\_のフラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_presentflags)
+-   [**DXGK\_SETVIDPNSOURCEADDRESS\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_setvidpnsourceaddress_flags)
+-   [**DXGKARG\_OPENALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_openallocation)
 
-## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
+## <a name="span-idstereoscopic_3-d_swapchain_ddisspanspan-idstereoscopic_3-d_swapchain_ddisspanspan-idstereoscopic_3-d_swapchain_ddisspanstereoscopic-3-d-swapchain-ddis"></a><span id="Stereoscopic_3-D_swapchain_DDIs"></span><span id="stereoscopic_3-d_swapchain_ddis"></span><span id="STEREOSCOPIC_3-D_SWAPCHAIN_DDIS"></span>ステレオスコピック3-d スワップチェーン DDIs
 
 
-システム ビルダーは、正しく機能するために、上記の設定を使用して、ステレオのドライバー パッケージをテストすることが推奨されます。
+これらの DDIs は、Windows 8 でステレオスコピック swapswapチェーンをサポートするために新しく追加または更新されました。
 
-Microsoft DirectX 10 対応するハードウェアでのみ以降、ステレオの 3-D 機能を有効にできます。 ただし、Microsoft direct3d11 の Api は、DirectX 9.x と 10.x ハードウェアで動作、および WDDM 1.2 ドライバーをすべて direct3d11 をサポートする必要があります、Direct3D 11APIs がすべての Windows 8 ハードウェアで動作できるようにする完全にテストします。
+-   [*BltDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
+-   [*Blt1DXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
+-   [*CreateResource (D3D10)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)
+-   [*CreateResource (D3D11)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)
+-   [*RotateResourceIdentitiesDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
+-   [**D3DDDI\_の割り当て情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
+-   [**D3D10DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)
+-   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
+-   [**DXGI\_DDI\_ARG\_\_リソース\_ID のローテーション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
+-   [**DXGI\_DDI\_\_フラグを表示します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_present_flags)
+-   [**DXGI\_DDI\_プライマリ\_DESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_primary_desc)
 
-ステレオスコ ピック 3-D オプションおよび WDDM 1.2 機能は、すべての Windows 8 ハードウェアで direct3d11 API のサポートが必要です。 したがって、WDDM 1.2 ドライバー (完全なグラフィックスとレンダリング デバイス) では、テクスチャ配列のプロセス間を共有するためのサポートを追加して direct3d11 の Api をサポートする必要があります。 この要件は、ステレオのアプリが mono のモードでの障害を持っていないことを確認します。
+## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定の要件
 
-この機能を実装するときにハードウェア デバイスが満たす必要のある要件の詳細については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で**Device.Graphics... 処理ステレオスコ ピック ビデオ コンテンツ** **Device.Display.Monitor.Stereoscopic 3D モード**します。
 
-参照してください[WDDM 1.2 機能](wddm-v1-2-features.md)に Windows 8 で追加された機能の説明。
+システムビルダーでは、適切な機能を確保するために、上記の設定を使用して、ステレオドライバーパッケージをテストすることをお勧めします。
+
+ステレオ3-d 機能は、Microsoft DirectX 10 対応ハードウェア以上でのみ有効にすることができます。 ただし、Microsoft Direct3D 11 Api は DirectX 1.x および 10 .x ハードウェアで動作するため、すべての WDDM 1.2 ドライバーは Direct3D 11 をサポートし、完全にテストして、Direct3D 11APIs がすべての Windows 8 ハードウェアで動作するようにする必要があります。
+
+ステレオスコピック3-d はオプションの WDDM 1.2 機能ですが、すべての Windows 8 ハードウェアで Direct3D 11 API をサポートする必要があります。 そのため、WDDM 1.2 ドライバー (完全なグラフィックスおよびレンダーデバイス) は、テクスチャ配列のプロセス間共有のサポートを追加することによって、Direct3D 11 Api をサポートする必要があります。 この要件は、ステレオアプリに mono モードでエラーが発生しないようにするためです。
+
+ハードウェアデバイスがこの機能を実装するときに満たす必要がある要件の詳細については、デバイスに関連する[Whck のドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)を参照してください **。グラフィックの参照処理のビデオコンテンツ**と**ステレオスコピック3D モードを表示**します。
+
+Windows 8 で追加された機能の確認については、「 [WDDM 1.2 の機能](wddm-v1-2-features.md)」を参照してください。
 
  
 

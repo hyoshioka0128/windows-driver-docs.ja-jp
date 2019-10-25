@@ -3,16 +3,16 @@ title: CoNDIS 登録
 description: CoNDIS 登録
 ms.assetid: 6db5a4a2-f090-4688-99fa-9d22ca7077ed
 keywords:
-- ネットワーク、いる CoNDIS WDK 登録
-- 登録している CoNDIS ドライバー
+- CoNDIS WDK ネットワーク、登録
+- CoNDIS ドライバーの登録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c02d91031d87c33fe723027f893af0cd745cfc54
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7d9d118f8e499ac1dd66b8b669f91bbb905e681
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385099"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838187"
 ---
 # <a name="condis-registration"></a>CoNDIS 登録
 
@@ -20,17 +20,17 @@ ms.locfileid: "67385099"
 
 
 
-いる CoNDIS をサポートするには、NDIS ドライバーは、省略可能ないる CoNDIS 関数のエントリ ポイントを登録する必要があります。 NDIS ドライバー呼び出し、 [ **NdisSetOptionalHandlers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)省略可能なサービスを登録する関数。
+Condis をサポートするには、NDIS ドライバーでオプションの CoNDIS 関数のエントリポイントを登録する必要があります。 NDIS ドライバーは、 [**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)関数を呼び出して、オプションのサービスを登録します。
 
 ここでは、次のトピックについて説明します。
 
-[いる CoNDIS ミニポート ドライバーの登録](condis-miniport-driver-registration.md)
+[ポートのドライバー登録を切断する](condis-miniport-driver-registration.md)
 
-[いる CoNDIS クライアントの登録](condis-client-registration.md)
+[クライアント登録の解除](condis-client-registration.md)
 
-[いる CoNDIS 呼び出すマネージャーの登録](condis-call-manager-registration.md)
+[CoNDIS Manager の登録](condis-call-manager-registration.md)
 
-[いる CoNDIS MCM の登録](condis-mcm-registration.md)
+[Conmcm の登録](condis-mcm-registration.md)
 
  
 

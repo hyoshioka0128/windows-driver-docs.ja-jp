@@ -3,17 +3,17 @@ title: デバイスの親の判断
 description: デバイスの親の判断
 ms.assetid: 61458911-222f-46aa-bc0e-a61ee25337bb
 keywords:
-- SetupAPI 関数 WDK、保護者の方を決定します。
-- WDK SetupAPI を決定する親デバイス
+- Setupapi.log 関数 WDK、親の決定
+- WDK Setupapi.log を決定する親デバイス
 - デバイスの親 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c255879083ca9d700c37a58da149646799823ff5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69bdf7b4b2decb29f9ca439ea86e701f8be2ea68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837525"
 ---
 # <a name="determining-the-parent-of-a-device"></a>デバイスの親の判断
 
@@ -21,13 +21,13 @@ ms.locfileid: "67374244"
 
 
 
-デバイスの親にアクセスするために必要な場合があります。 たとえば、一部の種類のハードウェア デバイスの操作は、特定の親と子デバイスのセットの間で固定的な関係に依存します。 このようなハードウェア デバイスをアンインストールするには、すべての子デバイスだけでなく、親をアンインストールしてください。 取得する必要があります、親をアンインストールする、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)親構造体。 ユニバーサル シリアル バス (USB) 複合デバイスでは、多機能プリンターでは、このようなデバイスは、次のようにします。 親複合デバイスと 1 つまたは複数の子インターフェイス デバイスによって、システムで表されます (を参照してください[USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index))。 多機能プリンターをアンインストールするには、すべての子インターフェイス デバイスだけでなく、親複合デバイスをアンインストールする必要があります。
+デバイスの親にアクセスすることが必要になる場合があります。 たとえば、一部の種類のハードウェアデバイスの操作は、特定の親デバイスと子デバイスのセットの間の固定関係に依存します。 このようなハードウェアデバイスをアンインストールするには、すべての子デバイスに加えて、親をアンインストールする必要があります。 親をアンインストールするには、親の[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体を取得する必要があります。 多機能プリンターなどのユニバーサルシリアルバス (USB) 複合デバイスは、このようなデバイスです。 システムでは、親複合デバイスと1つ以上の子インターフェイスデバイス (「 [USB ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照) によって表されます。 多機能プリンターをアンインストールするには、すべての子インターフェイスデバイスに加えて、その親複合デバイスもアンインストールする必要があります。
 
-ときに、プラグ アンド プレイ)、デバイス、デバイス ツリーにします。 使用するデバイスの親を確認する方法は、方法、デバイスは現在構成されているシステムでは、次のように依存します。
+デバイスをデバイスツリーにプラグアンドプレイする場合)。 デバイスの親を決定するために使用する方法は、次のように、デバイスがシステムでどのように構成されているかによって異なります。
 
--   デバイスでは、デバイス ツリーに devnode が含まれる場合は、使用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)親のデバイスのインスタンス ハンドルを取得します。 取得できますのデバイスのインスタンス ハンドルを指定する、[デバイス インスタンス ID](device-instance-ids.md)と[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイスの構造体。 詳細については、次を参照してください。[デバイス ツリー内のデバイスの親を取得する](obtaining-the-parent-of-a-device-in-the-device-tree.md)します。
+-   デバイスのデバイスツリーに devnode がある場合は、 [**CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)を使用して、その親のデバイスインスタンスハンドルを取得します。 デバイスインスタンスハンドルを指定すると、デバイスのデバイス[インスタンス ID](device-instance-ids.md)と[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体を取得できます。 詳細については、「[デバイスツリーでデバイスの親を取得する](obtaining-the-parent-of-a-device-in-the-device-tree.md)」を参照してください。
 
--   デバイスに、親の固定的な関係がある場合は、保存し、親のデバイス インスタンス ID を取得できます。 デバイスの存在になると、デバイスの SP_DEVINFO_DATA 構造体を取得するのにデバイスのインスタンス ハンドルを使用できます。 詳細については、次を参照してください。 [Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)します。
+-   デバイスに親との固定関係がある場合は、その親のデバイスインスタンス ID を保存および取得できます。 デバイスが存在しない状態になった場合は、そのデバイスのインスタンスハンドルを使用して、デバイスの SP_DEVINFO_DATA 構造体を取得できます。 詳細については、「存在しない[デバイスの親の特定](determining-the-parent-of-a-nonpresent-device.md)」を参照してください。
 
  
 

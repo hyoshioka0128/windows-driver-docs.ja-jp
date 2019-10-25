@@ -1,6 +1,6 @@
 ---
-title: Bluetooth のプロトコルのペアリング
-description: Bluetooth のプロトコルのペアリング
+title: Bluetooth プロトコルのペアリング
+description: Bluetooth プロトコルのペアリング
 ms.assetid: 6C95CA57-A226-4252-91E2-FAD8F1A0432B
 keywords:
 - NFC
@@ -10,43 +10,43 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f425cb34cbc772773a5be093380087242f1f89ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf19644005a2699408397661795cfe86debca3a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384195"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831551"
 ---
 # <a name="pairingbluetooth-protocol"></a>Pairing:Bluetooth プロトコル
 
 
-ペアリング: Bluetooth"プロトコルは、Bluetooth OOB ペアリング構造体のサブスクリプションを抽象化の手段です。 Windows は、Windows が近接によってトリガーされる Bluetooth 単純な OOB のペアリングが完了するには構造体をペアリング Bluetooth OOB を受信することに興味を示しているプロバイダーに登録するには、この型にサブスクライブします。
+"ペアリング: Bluetooth" プロトコルは、Bluetooth OOB ペアリング構造のサブスクリプションを抽象化する手段です。 Windows は、近接してトリガーされた Bluetooth simple OOB ペアリングを完了するために、Windows が Bluetooth OOB ペアリング構造を受け取ることに関心があるプロバイダーに登録するために、この型をサブスクライブします。
 
-**注**  ペアリング: Bluetooth のパブリケーションの動作は未定義
-
- 
-
-**注**  の NFC 対応 NFP プロバイダーでは、両方の定義の形式 (静的接続引き渡し単一 Bluetooth キャリアとタグの形式の簡略化) をサポートする必要があります。 ネゴシエートされた接続の引き渡しはサポートされていない必要があります。
+ペアリングのパブリケーションの動作  Bluetooth が定義されていない**ことに注意**してください。
 
  
 
-### <a name="required-actions"></a>必要な操作
+**  NFC**対応の NFP プロバイダーの場合、定義された両方の形式 (静的な接続での単一の Bluetooth 通信事業者と簡略化されたタグ形式) がサポートされている必要があります。 ネゴシエートされた接続の引き渡しはサポートされていません。
 
--   近接テクノロジが NFC としてアドバタイズされる場合、ドライバーは 0x02 TNF フィールド値を持つ NDEF メッセージと"application/vnd.bluetooth.ep.oob"に相当する型のフィールドが"ペアリング: Bluetooth"プロトコルのサブスクリプションと一致する必要があります。
+ 
 
-    ドライバーは、この種類のサブスクライバーに NDEF レコードのペイロードのみを返す必要があります。
+### <a name="required-actions"></a>必要なアクション
 
--   NFC、し、ドライバーする必要があります"ペアリング: Bluetooth"プロトコルの最初のレコードが 0x01 の TNF フィールドの値を持つ NDEF メッセージのサブスクリプションと一致も近接テクノロジが提供されると場合、型フィールドと等しい"h"、および 1 つの代替手段Bluetooth 通信事業者の構成レコード (mime タイプ"application/vnd.bluetooth.ep.oob") を参照する運送業者のレコードです。
-    -   ドライバーは、この種類のサブスクライバーに"application/vnd.bluetooth.ep.oob"NDEF レコードのペイロードのみを返す必要があります。
-    -   ドライバーは、静的な接続の引き渡しのみをサポートする必要があります。 MUST NOT ドライバーでは、接続のネゴシエート引き渡しなどの接続の引き渡し内の他のメカニズムをサポートします。
-    -   参照してください\[NFC BTSSP\]詳細についてはします。
--   ドライバーは、"ペアリング: Bluetooth"の種類のパブリケーションをサポート可能性があります。 このパブリケーションの形式は、NFC の定義されていません。
--   ドライバーは、その他の互換性のあるスキームもをサポート可能性があります。
+-   近接通信テクノロジが NFC として提供されている場合、ドライバーは "ペアリング: Bluetooth" プロトコルのサブスクリプションと、TNF field 値が0x02 で、TYPE フィールドが "application/NDEF" であることを照合する必要があります。
+
+    ドライバーは、NDEF レコードのペイロードのみをこの型のサブスクライバーに返す必要があります。
+
+-   近接通信テクノロジが NFC として提供されている場合、ドライバーは "ペアリング: Bluetooth" プロトコルのサブスクリプションと NDEF メッセージを照合する必要があります。この場合、最初のレコードの TNF フィールドの値が0x01、"Hs" に等しい型フィールド、および単一の代替となります。Bluetooth 通信事業者の構成レコード (mime の種類 "application/vnd") を指す通信会社のレコード。
+    -   ドライバーは、この種類のサブスクライバーに "application/vnd. NDEF" レコードのペイロードのみを返す必要があります。
+    -   ドライバーは、静的な接続の引き渡しだけをサポートする必要があります。 このドライバーは、ネゴシエートされた接続の引き渡しなど、接続の引き渡し内の他のメカニズムをサポートしていない必要があります。
+    -   詳細については、「\[NFC BTSSP\]」を参照してください。
+-   ドライバーは、"ペアリング: Bluetooth" の種類の公開をサポートしている場合があります。 このパブリケーション形式は、NFC では定義されていません。
+-   ドライバーは、他の互換性のあるスキームもサポートしている可能性があります。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

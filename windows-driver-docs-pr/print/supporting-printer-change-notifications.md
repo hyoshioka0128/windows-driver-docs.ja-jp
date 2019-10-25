@@ -3,20 +3,20 @@ title: プリンター変更通知のサポート
 description: プリンター変更通知のサポート
 ms.assetid: e75c6f89-9cef-4900-af89-edf1f7f786c7
 keywords:
-- プロバイダー WDK、変更通知のプリンターを印刷します。
+- 印刷プロバイダー WDK、プリンター変更通知
 - ネットワーク印刷プロバイダー WDK、プリンターの変更通知
-- 通知の WDK プリンター
-- プリンターの変更通知 WDK
-- イベントの WDK プリンター
-- 印刷キュー WDK、プリンターの変更通知
+- 通知 WDK プリンター
+- プリンター変更通知 WDK
+- イベント WDK プリンター
+- 印刷キュー WDK、プリンター変更通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd7bb7e3ba58996516ed5a2bbef5874a8dbe386
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0fffb3726a62b847da4320b06416715eb3065fcb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377519"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838787"
 ---
 # <a name="supporting-printer-change-notifications"></a>プリンター変更通知のサポート
 
@@ -24,33 +24,33 @@ ms.locfileid: "67377519"
 
 
 
-アプリケーションが、スプーラーを呼び出すことによって印刷キューのイベントの発生の通知を要求できる**FindFirstPrinterChangeNotification**、 **FindNextPrinterChangeNotification**、および**FindClosePrinterChangeNotification** Microsoft Windows SDK ドキュメントに記載されているすべての関数。 アプリケーションの作成者は、部分的な印刷プロバイダーでサポートされている印刷キューのイベント通知を要求する場合は、次のように、プロバイダーでイベント通知をサポートする必要があります。
+アプリケーションは、スプーラの**FindFirstPrinterChangeNotification**、 **FindNextPrinterChangeNotification**、および**FindClosePrinterChangeNotification**を呼び出すことによって、印刷キューイベントの発生の通知を要求できます。関数。これらの機能については、Microsoft Windows SDK のドキュメントを参照してください。 部分的な印刷プロバイダーでサポートされている印刷キューのイベント通知をアプリケーションの作成者が要求する場合は、次のようにプロバイダーのイベント通知をサポートする必要があります。
 
--   提供、 [ **FindFirstPrinterChangeNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/nf-winspool-findfirstprinterchangenotification)関数。
+-   [**FindFirstPrinterChangeNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/nf-winspool-findfirstprinterchangenotification)関数を指定します。
 
-    スプーラは、次の情報を使用して印刷プロバイダーを指定するには、この関数を呼び出します。
+    スプーラはこの関数を呼び出して、印刷プロバイダーに次の情報を提供します。
 
-    -   アプリケーションが通知を要求がプリンター イベントの種類を示すフラグのセット。
-    -   通知が要求されている印刷キューへのハンドル。
-    -   情報の種類の一覧、アプリケーションが要求したは、イベントが発生したときに指定します。
+    -   アプリケーションが通知を要求したプリンターイベントの種類を示すフラグのセット。
+    -   通知が要求されている印刷キューを示すハンドル。
+    -   イベントの発生時にアプリケーションから提供されるように要求された情報の種類の一覧。
 
-    関数は、変更が発生したかどうかに、プロバイダーをポーリングするかどうかを示すフラグの値を返す必要があります。 (Nonpolled プロバイダーにシグナルを送る、クライアントが変更されたとき。 ポーリングする必要があります、プロバイダーの変更が発生した場合、信号をクライアントに送信しません。 スプーラが一定の間隔でクライアントを通知する代わりに、かどうかの変更があるかどうかが発生しました)。
+    関数は、変更が発生したかどうかを判断するためにプロバイダーをポーリングする必要があるかどうかを示すフラグ値を返す必要があります。 (非ポーリングプロバイダーは、変更が発生するたびにクライアントにシグナルを送信します。 ポーリングが必要なプロバイダーは、変更が発生したときにクライアントにシグナルを送信しません。 代わりに、スプーラーは、変更が発生したかどうかにかかわらず、クライアントに一定の間隔で通知します。
 
-    (プロバイダー レベルでは、この機能が付いている別の引数よりも Win32 レベルに注意してください)。
+    (プロバイダーレベルでは、この関数の引数は Win32 レベルとは異なることに注意してください)。
 
--   呼び出されたときに、アプリケーションが指定されているすべての印刷キュー イベントの追跡**FindFirstPrinterChangeNotification**します。
+-   **FindFirstPrinterChangeNotification**を呼び出したときにアプリケーションが指定したすべての印刷キューイベントを追跡します。
 
-    (アプリケーションが要求、およびイベントを表すために使用できる情報の種類の一覧は、win32、Windows SDK ドキュメントの説明を参照してください通知の種類の一覧については**FindFirstPrinterChangeNotification。** 関数。 アプリケーションが通知を要求がイベントの種類には、印刷ジョブやフォーム追加または削除が含まれます。 アプリケーション要求情報の種類は、ジョブまたはフォーム パラメーターです)
+    (アプリケーションが要求できる通知の種類の一覧、およびイベントの説明に使用できる情報の種類の一覧については、Windows SDK のドキュメントの Win32 **FindFirstPrinterChangeNotification**の説明を参照してください。プロシージャ. アプリケーションが通知を要求する可能性のあるイベントの種類には、印刷ジョブやフォームの追加や削除があります。 アプリケーションが要求する情報の種類には、ジョブまたはフォームパラメーターがあります。
 
-    ポーリングされません印刷のプロバイダーを呼び出す必要があります[ **PartialReplyPrinterChangeNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-partialreplyprinterchangenotification)または[ **ReplyPrinterChangeNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-replyprinterchangenotification)変更が発生する場合、変更を説明する情報を含む、スプーラーを指定します。 **ReplyPrinterChangeNotification**関数である必要があります、スプーラーをアプリケーションに通知するので、ある時点で呼び出されると、while、 **PartialReplyPrinterChangeNotification**関数じゃない。 アプリケーションがからの信号を受信すると**ReplyPrinterChangeNotification**、呼び出しが届いていない**FindNextPrinterChangeNotification**します。 この後者の関数は、スプーラーは印刷プロバイダーからまだ受信イベント情報を使用してアプリケーションを提供します。
+    ポーリングされていない印刷プロバイダーは、変更が発生したときに[**PartialReplyPrinterChangeNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-partialreplyprinterchangenotification)または[**ReplyPrinterChangeNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-replyprinterchangenotification)を呼び出して、変更を説明する情報をスプーラに提供する必要があります。 **ReplyPrinterChangeNotification**関数は、スプーラによってアプリケーションが通知されるため、ある時点で呼び出す必要がありますが、 **PartialReplyPrinterChangeNotification**関数では呼び出されません。 アプリケーションが**ReplyPrinterChangeNotification**からシグナルを受信すると、 **FindNextPrinterChangeNotification**を呼び出すことになります。 後者の関数は、スプーラーが以前に印刷プロバイダーから受け取ったイベント情報をアプリケーションに提供します。
 
-    ポーリングされるプロバイダーが印刷する必要がありますだけの変更を追跡します。 スプーラは、一定の間隔でアプリケーションを通知します。 スプーラの呼び出しが届いていないアプリケーションは、信号を受信するときに**FindNextPrinterChangeNotification**関数。 ポーリングされたプロバイダーは、この関数の呼び出し、プロバイダーの**RefreshPrinterChangeNotification**関数。
+    ポーリングされた印刷プロバイダーは、単に変更を追跡する必要があります。 スプーラは、アプリケーションに一定の間隔で通知します。 アプリケーションは、シグナルを受信すると、スプーラの**FindNextPrinterChangeNotification**関数を呼び出すことが想定されます。 ポーリングプロバイダーの場合、この関数はプロバイダーの**RefreshPrinterChangeNotification**関数を呼び出します。
 
--   提供、 [ **RefreshPrinterChangeNotification** ](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))関数。
+-   [**RefreshPrinterChangeNotification**](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))関数を指定します。
 
-    この関数は、指定した印刷キューのすべての監視対象の印刷キュー オプションの現在の状態を返す必要があります。 スプーラがアプリケーションを呼び出すときに、この関数を呼び出す**FindNextPrinterChangeNotification** 、プリンターに\_通知\_オプション\_Windows SDK で説明されているため、更新フラグを設定ドキュメントです。 (以前の呼び出しの場合は、このフラグを設定することになっているアプリケーション**FindNextPrinterChangeNotification**プリンターを返します\_通知\_、プリンターに情報の構造体\_通知\_情報\_破棄済みフラグを設定します)。ポーリングと nonpolled の両方のプロバイダーをサポートする必要があります**RefreshPrinterChangeNotification**します。
+    この関数は、指定された印刷キューのすべての監視対象の印刷キューオプションの現在の状態を返す必要があります。 この機能は、Windows SDK のドキュメントで説明されているように、アプリケーションがプリンターを使用して**FindNextPrinterChangeNotification**を呼び出し、\_オプション\_更新フラグが設定されている場合に、この関数を呼び出し\_ます。 (アプリケーションは、以前に**FindNextPrinterChangeNotification**を呼び出したときにプリンター\_\_情報の構造を返し、\_情報を通知\_破棄フラグが設定されていることを知らせる\_、このフラグを設定することが想定されています)。ポーリングと非ポーリングの両方のプロバイダーが**RefreshPrinterChangeNotification**をサポートしている必要があります。
 
--   提供、 **FindClosePrinterChangeNotification**関数 (Windows SDK のドキュメントで説明)。
+-   (Windows SDK のドキュメントで説明されている) **FindClosePrinterChangeNotification**関数を指定します。
 
  
 

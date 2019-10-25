@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ID
-description: KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ID オーディオ モジュールの通知のデバイス id の GUID を取得します。
+title: KSK プロパティ\_AUDIOMODULE\_NOTIFICATION\_デバイス\_ID
+description: KSK プロパティ\_AUDIOMODULE\_NOTIFICATION\_デバイス\_ID は、オーディオモジュール通知デバイス識別子の GUID を取得します。
 ms.assetid: CD9C5FCD-FB2A-4B21-A15E-BA520C3311A7
 keywords:
-- KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID オーディオ デバイス
+- KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e73e5d6fc275536e674a51013582ccdf1f6e0e82
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 445d17f5adbce2bd0da77d4b398a0b7b57497678
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358824"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832843"
 ---
-# <a name="kspropertyaudiomodulenotificationdeviceid"></a>KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ID
+# <a name="ksproperty_audiomodule_notification_device_id"></a>KSK プロパティ\_AUDIOMODULE\_NOTIFICATION\_デバイス\_ID
 
 
-**KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ID**オーディオ モジュールの通知のデバイス id の GUID を取得します。
+**Ksk プロパティ\_audiomodule\_notification\_デバイス\_ID**は、オーディオモジュール通知デバイス識別子の GUID を取得します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -36,7 +36,7 @@ ms.locfileid: "67358824"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -45,9 +45,9 @@ ms.locfileid: "67358824"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>フィルターのハンドルまたは暗証番号 (pin) のハンドル</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>フィルターハンドルまたはピンハンドル</p></td>
 <td align="left"><p>KSPROPERTY</p></td>
 <td align="left"><p>GUID</p></td>
 </tr>
@@ -56,22 +56,22 @@ ms.locfileid: "67358824"
 
  
 
-返されたプロパティの値は、1 つの GUID です。
+返されるプロパティ値は単一の GUID です。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-**KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ID**オーディオ モジュール通知デバイスの id に関連付けられた GUID を返します。
+**Ksk プロパティ\_audiomodule\_notification\_デバイス\_ID**は、オーディオモジュール通知デバイス識別子に関連付けられた GUID を返します。
 
-フィルターのハンドルまたは暗証番号 (pin) のハンドルが、ターゲットとして指定されている場合は、同じデバイス GUID 値が返されます。
+フィルターハンドルまたはピンハンドルがターゲットとして指定されている場合、同じデバイス GUID 値が返されます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-サポート、KSPROPERTY\_AUDIOMODULE\_通知\_デバイス\_ミニポート シグナル通知を有効にして、オーディオのモジュールのクライアントに情報を渡すに ID が必要です。 この ID の有効期間が公開されていると、Windows オーディオ スタックをアクティブにされているオーディオ デバイスの有効期間に関連付けられています。 フィルターまたは暗証番号 (pin) のハンドルを使用して、プロパティを送信することができます、KSPROPERTY が DeviceIoControl の呼び出しの入力バッファーとして渡されます。
+ミニポートが通知を通知し、オーディオモジュールクライアントに情報を渡すことができるようにするには、KSK プロパティ\_AUDIOMODULE\_NOTIFICATION\_デバイス\_ID が必要です。 この ID の有効期間は、オーディオデバイスが公開され、Windows オーディオスタックに対してアクティブになっている有効期間に関連付けられています。 プロパティは、フィルターまたはピンハンドルを介して送信できます。また、DeviceIoControl 呼び出しの入力バッファーとして KSK プロパティが渡されます。
 
-この KSPROPERTY を使用する例は、SYSVAD オーディオ ドライバーのサンプルを参照してください。
+この KSK プロパティの使用例については、SYSVAD audio driver サンプルを参照してください。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオモジュールの詳細については、「[オーディオモジュール検出の実装](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -92,17 +92,17 @@ ms.locfileid: "67358824"
 </tr>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10 バージョン 1703</p></td>
+<td align="left"><p>Windows 10 バージョン1703</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [KSPROPSETID\_AudioModule](kspropsetid-audiomodule.md)
 
-[**KSAUDIOMODULE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_notification)
+[**KSAUDIOMODULE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_notification)
 
  
 

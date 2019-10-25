@@ -3,18 +3,18 @@ title: 最下位レベル ドライバーの DispatchDeviceControl
 description: 最下位レベル ドライバーの DispatchDeviceControl
 ms.assetid: 51caacd3-c9e0-450e-9060-f308ab46b5a0
 keywords:
-- ディスパッチ ルーチンの WDK カーネル、DispatchDeviceControl ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchDeviceControl ルーチン
 - ディスパッチ DispatchDeviceControl ルーチン
-- IRP_MJ_DEVICE_CONTROL I/O 関数のコード
-- デバイス制御ディスパッチ ルーチン WDK カーネル
+- IRP_MJ_DEVICE_CONTROL i/o 関数のコード
+- デバイス制御ディスパッチルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad687bc8357e6f66806fe260bcd9225cc2eacef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d6a872bc8549c12482f4089dd09855ad609b8c42
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382819"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836865"
 ---
 # <a name="dispatchdevicecontrol-in-lowest-level-drivers"></a>最下位レベル ドライバーの DispatchDeviceControl
 
@@ -22,7 +22,7 @@ ms.locfileid: "67382819"
 
 
 
-[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求すること、ドライバーがそのデバイスの状態を変更または情報を提供する最下位レベルのドライバーが必要ですについては、そのデバイスの状態。 ほとんどの種類のドライバーがさまざまな I/O 制御コードを処理するために必要なため、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが通常含まれて、**切り替える**ステートメント次のようなやや:
+最小レベルのドライバーに対する制御要求である[**IRP\_MJ\_デバイス\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)は、ドライバーがデバイスの状態を変更するか、デバイスの状態に関する情報を提供する必要があります。 多くの種類のドライバーは多数の i/o 制御コードを処理する必要があるため、 [*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンには通常、次のような**switch**ステートメントが含まれています。
 
 ```cpp
     :    : 
@@ -42,21 +42,21 @@ switch (irpSp->Parameters.DeviceIoControl.IoControlCode)
      :    :
 ```
 
-このコード フラグメントに示すよう、 *DispatchDeviceControl*ルーチンでは、パラメーターは、各 I/O コントロール サポート コードをドライバーする必要があります、場合によってこれらの I/O 制御コードのグループにでも確認します。
+このコードフラグメントに示すように、 *DispatchDeviceControl*ルーチンは、ドライバーがサポートする必要がある i/o 制御コード (場合によっては、これらの i/o 制御コードのグループ) でもパラメーターをチェックします。
 
-デバイス ドライバーの次の実装のガイドラインを考慮して*DispatchDeviceControl*ルーチン。
+デバイスドライバーの*DispatchDeviceControl*ルーチンには、次の実装ガイドラインを考慮してください。
 
--   *DispatchDeviceControl* 」の説明に従って、有効期間、およびパラメーター エラーをすぐに完全な Irp のパラメーターを確認する必要があります[Irp の完了](completing-irps.md)します。
+-   *DispatchDeviceControl*は、「 [irp の完了](completing-irps.md)」で説明されているように、パラメーターの有効性を確認し、パラメーターエラーを含む irp をすぐに完了する必要があります。
 
--   I/O 制御コードをグループ化、**ケース**ステートメント (実際) ときに有効なパラメーターのためのテストは経済性に優れたコードの保守とドライバーのパフォーマンスとサイズの面でします。 上記のコード フラグメントの内容を一般的な構造を使用する I/O 制御コードはこのような自然な候補を**ケース**グループ。
+-   有効なパラメーターをテストするときに、 **case**ステートメントの i/o 制御コードをグループ化することは、ドライバーのパフォーマンス、サイズ、コードのメンテナンスにおいて経済的です。 前のコードフラグメントに示すように、一般的な構造を使用する i/o 制御コードは、このような**ケース**グループの自然候補です。
 
--   切り替え最初の i/o 制御コードを*DispatchDeviceControl*ルーチンが満たすことができる、完全な IRP パフォーマンスが向上、ドライバーが高速化の制御を返すためです。
+-   *DispatchDeviceControl*ルーチンが満たす i/o 制御コードを最初に切り替えて IRP を完了すると、ドライバーは制御を速く返すことができるため、パフォーマンスが向上します。
 
--   操作も処理でドライバーのパフォーマンスを向上できる頻度を指定する I/O 制御コードの切り替え後で要求された**IRP\_MJ\_デバイス\_コントロール**要求。
+-   要求の頻度が低い操作を指定する i/o 制御コードで後から切り替えると、 **IRP\_MJ\_デバイス\_制御**要求を処理するときのドライバーのパフォーマンスが向上します。
 
--   パフォーマンス向上のため、すべての最下位レベルのデバイス ドライバーの*DispatchDeviceControl*ルーチンは IRP がドライバーの他のルーチンをキューに登録せず、可能なすべてのデバイス制御要求を満たす必要があります。
+-   パフォーマンスを向上させるために、すべての最下位レベルのデバイスドライバーの*DispatchDeviceControl*ルーチンは、IRP を他のドライバールーチンにキューすることなく、可能なすべてのデバイス制御要求を満たしている必要があります。
 
-場合、 *DispatchDeviceControl*ルーチンは IRP を完了することができますを呼び出す必要が[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)で、 *PriorityBoost* IO の\_いいえ\_インクリメントします。 場合、 *DispatchDeviceControl*ルーチンがキューに IRP がさらに処理するため、呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)状態を返すと\_保留します。
+DispatchDeviceControl ルーチンが IRP を完了できる場合は、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して、\_\_IO の優先*順位*をにする必要があります。 後続の処理のために*DispatchDeviceControl*ルーチンが IRP をキューに追加する必要がある場合は、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)と戻りステータス\_PENDING を呼び出す必要があります。
 
  
 

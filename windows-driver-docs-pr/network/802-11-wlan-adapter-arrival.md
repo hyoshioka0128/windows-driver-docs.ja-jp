@@ -3,16 +3,16 @@ title: 802.11 WLAN アダプターの接続
 description: 802.11 WLAN アダプターの接続
 ms.assetid: 4d533f32-0f98-4a65-ac1b-7a470e54ad29
 keywords:
-- WDK 802.11 WLAN、到着のアダプター
+- アダプター WDK 802.11 WLAN、到着
 - WLAN アダプター WDK、到着
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7bb676d2760550647c7d3e966cc851ba0c00ef8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8afa6fa1aed3e0e56b53aa6962ee516bb1a171e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838264"
 ---
 # <a name="80211-wlan-adapter-arrival"></a>802.11 WLAN アダプターの接続
 
@@ -21,35 +21,35 @@ ms.locfileid: "67379313"
 
  
 
-オペレーティング システムでは、IHV の拡張 DLL がインストールされているワイヤレス LAN (WLAN) アダプターを検出すると、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter) IHV ハンドラー関数。 オペレーティング システム関数を呼び出しますこの WLAN アダプターになるたびに有効になっていますなど PCMCIA アダプターが挿入されると、使用するためです。
+IHV 拡張 DLL がインストールされているワイヤレス LAN (WLAN) アダプターがオペレーティングシステムによって検出されると、オペレーティングシステムは[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter) IHV ハンドラー関数を呼び出します。 オペレーティングシステムは、ワイヤレスアダプターが挿入されたときなど、WLAN アダプターが使用可能になり、使用できるようになるたびに、この機能を呼び出します。
 
-ときに、 [ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)関数が呼び出されると、IHV 拡張機能の DLL は、次を実行します。
+[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)関数が呼び出されると、IHV 拡張 DLL は次のことを実行します。
 
--   WLAN アダプターの DLL が必要なすべてのリソースと同様に、WLAN アダプター コンテキスト データの配列を割り当てます。
+-   WLAN アダプターのコンテキストデータの配列、およびその DLL が WLAN アダプターに必要とするすべてのリソースを割り当てます。
 
--   受信され、IHV 拡張機能の DLL によって使用されるセキュリティ パケットに IEEE EtherTypes の一覧を登録します。
+-   IHV 拡張 DLL によって受信および使用されるセキュリティパケットの IEEE EtherTypes の一覧を登録します。
 
--   独自の設定を IHV で定義されているとアダプターを構成します。
+-   IHV によって定義された独自の設定を使用してアダプタを構成します。
 
-IHV 拡張機能の DLL が次のガイドラインに従う必要がありますと[ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)が呼び出されます。
+[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)が呼び出された場合、IHV 拡張 DLL は次のガイドラインに従う必要があります。
 
--   *HDot11SvcHandle*パラメーターには、WLAN アダプター用のオペレーティング システムによって割り当てられる一意のハンドル値が含まれています。 IHV 拡張機能の DLL は、このハンドルの値を保存する必要がありますに渡すと、 *hDot11SvcHandle* IHV 拡張関数のパラメーターなどのアダプター固有の処理に関連[ **Dot11ExtSetKeyMappingKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)します。
+-   *HDot11SvcHandle*パラメーターには、WLAN アダプターのオペレーティングシステムによって割り当てられた一意のハンドル値が含まれています。 IHV 拡張 DLL は、このハンドル値を保存し、 [**Dot11ExtSetKeyMappingKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)などのアダプター固有の処理に関連する IHV 拡張関数の*hDot11SvcHandle*パラメーターに渡す必要があります。
 
-    通常、DLL は、その WLAN アダプター コンテキスト配列のメンバー内には、このハンドル値を保存します。
+    通常、DLL は、このハンドル値を WLAN アダプターコンテキスト配列のメンバー内に保存します。
 
--   IHV 拡張機能の DLL を使って WLAN アダプターに固有のハンドル値を返す必要があります、 *phIhvExtAdapter*パラメーター。 オペレーティング システムへのハンドル値を渡します、 *hIhvExtAdapter* IHV ハンドラー関数のパラメーターなどのアダプター固有の処理に関連[ *Dot11ExtIhvReceiveIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_indication).
+-   IHV 拡張 DLL は、 *phIhvExtAdapter*パラメーターを使用して、WLAN アダプターの一意のハンドル値を返す必要があります。 オペレーティングシステムは、 [*Dot11ExtIhvReceiveIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_indication)などのアダプター固有の処理に関連する IHV ハンドラー関数の*Hihvextadapter*パラメーターにハンドル値を渡します。
 
-    通常、DLL は、ハンドル値として WLAN アダプター コンテキストの配列のアドレスを返します。
+    通常、DLL は、WLAN アダプターのコンテキスト配列のアドレスをハンドル値として返します。
 
--   拡張 DLL の IHV 呼び出し[ **Dot11ExtSetEtherTypeHandling** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling) DLL を受信するセキュリティ パケットに IEEE EtherTypes の一覧を登録します。 IHV 拡張機能の DLL には、一連のペイロードの暗号化解除を除外 EtherTypes も指定できます。 EtherTypes の登録の詳細については、次を参照してください。 [IEEE EtherType 処理](ieee-ethertype-handling.md)します。
+-   IHV Extensions DLL は、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)を呼び出して、DLL が受信するセキュリティパケットの IEEE EtherTypes の一覧を登録します。 また、IHV Extensions DLL は、ペイロードの暗号化解除から除外される EtherTypes の一覧を指定することもできます。 EtherTypes の登録の詳細については、「 [IEEE EtherType の処理](ieee-ethertype-handling.md)」を参照してください。
 
-    EtherTypes が登録されると、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_packet)が EtherType には、リスト内のエントリが一致するすべてのパケットの IHV ハンドラー関数。
+    EtherTypes が登録されると、オペレーティングシステムは、EtherType がリスト内のエントリと一致するすべてのパケットに対して[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet) IHV ハンドラー関数を呼び出します。
 
--   オペレーティング システムでは、ネイティブ 802.11 オブジェクト識別子 (Oid) のセット要求を通じた 802.11 標準のパラメーターに、アダプターを構成します。 これらの Oid の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN の Oid](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-oids)します。
+-   オペレーティングシステムは、ネイティブ802.11 オブジェクト識別子 (Oid) の set 要求を通じて、標準の802.11 パラメーターを使用してアダプターを構成します。 これらの Oid の詳細については、「[ネイティブ802.11 ワイヤレス LAN oid](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-oids)」を参照してください。
 
-    ただし、DLL は、呼び出しを通じて独自のパラメーターを持つのアダプターを構成できます、 [ **Dot11ExtNicSpecificExtension** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension)関数。 この関数の呼び出しを通じて DLL は、WLAN アダプターとクエリの問題を管理するネイティブの 802.11 ミニポート ドライバーと直接通信または要求を IHV によって定義された独自の形式に基づくドライバーに設定します。
+    ただし、DLL では、 [**Dot11ExtNicSpecificExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension)関数を呼び出すことによって、独自のパラメーターを使用してアダプターを構成できます。 この関数呼び出しを使用すると、DLL は、WLAN アダプターを管理してクエリを発行したり、IHV によって定義された専用形式に基づいてドライバーに要求を設定したりするネイティブ802.11 ミニポートドライバーと直接通信できます。
 
-    DLL および WLAN のアダプターの通信インターフェイスの詳細については、次を参照してください。 [802.11 WLAN アダプターの通信チャネル](802-11-wlan-adapter-communication-channel.md)します。
+    DLL および WLAN アダプターが通信するインターフェイスの詳細については、「 [802.11 WLAN アダプター通信チャネル](802-11-wlan-adapter-communication-channel.md)」を参照してください。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67cad985aaefdcd113809dec7952a9426d60da9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f3f98e195d2b4ea21004b013a28df8d64f88003c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837856"
 ---
 # <a name="iprintoemui2-com-interface"></a>IPrintOemUI2 COM インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "67371762"
 
 
 
-`IPrintOemUI2` COM インターフェイスは、拡張、 [IPrintOemUI COM インターフェイス](iprintoemui-com-interface.md)します。 すべてのメソッドだけでなく、 **IPrintOemUI**インターフェイス、`IPrintOemUI2`インターフェイスは、次のメソッドを提供します。
+`IPrintOemUI2` COM インターフェイスは、 [Iprintoemui com インターフェイス](iprintoemui-com-interface.md)を拡張します。 **Iprintoemui**インターフェイスのすべてのメソッドに加えて、`IPrintOemUI2` インターフェイスには次のメソッドが用意されています。
 
-**注**  Unidrv と Pscript Dll の Windows Vista のバージョンを使用している場合は、Unidrv または Pscript5 プラグインで Windows XP およびそれ以降のバージョンの Windows オペレーティング システムで実行される、次のメソッドを実装できます。 以前のバージョンの Dll のサポート、 **IPrintOEM2::HideStandardUI** Pscript5 プラグインのみでのメソッド。
+**注**  windows Vista バージョンの Unidrv および Pscript dll を使用している場合は、windows XP 以降のバージョンの windows オペレーティングシステムで実行される unidrv または Pscript5 プラグインで、次のメソッドを実装できます。 以前のバージョンの Dll では、Pscript5 プラグインでのみ**IPrintOEM2:: HideStandardUI**メソッドがサポートされています。
 
  
 
@@ -38,23 +38,23 @@ ms.locfileid: "67371762"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-documentevent" data-raw-source="[&lt;strong&gt;IPrintOemUI2::DocumentEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-documentevent)"><strong>IPrintOemUI2::DocumentEvent</strong></a></p></td>
-<td><p>により、UI プラグインのコア ドライバー UI モジュールの既定の実装を置き換える、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)"> <strong>DrvDocumentEvent</strong> </a> DDI します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-documentevent" data-raw-source="[&lt;strong&gt;IPrintOemUI2::DocumentEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-documentevent)"><strong>IPrintOemUI2::D ocumentEvent</strong></a></p></td>
+<td><p>UI プラグインを使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent)"><strong>DrvDocumentEvent</strong></a> DDI のコアドライバー ui モジュールの既定の実装を置き換えることができます。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui" data-raw-source="[&lt;strong&gt;IPrintOemUI2::HideStandardUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui)"><strong>IPrintOemUI2::HideStandardUI</strong></a></p></td>
-<td><p>標準のプロパティ シートを表示または非表示かどうかを指定する UI プラグインを有効にします。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui" data-raw-source="[&lt;strong&gt;IPrintOemUI2::HideStandardUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui)"><strong>IPrintOemUI2::HideStandardUI</strong></a></p></td>
+<td><p>標準プロパティシートを表示するか非表示にするかを UI プラグインで指定できるようにします。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-queryjobattributes" data-raw-source="[&lt;strong&gt;IPrintOemUI2::QueryJobAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-queryjobattributes)"><strong>IPrintOemUI2::QueryJobAttributes</strong></a></p></td>
-<td><p>により、処理後の呼び出しの後に、中核となるドライバーの結果を UI プラグイン、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvqueryjobattributes" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvqueryjobattributes)"> <strong>DrvQueryJobAttributes</strong> </a> DDI します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-queryjobattributes" data-raw-source="[&lt;strong&gt;IPrintOemUI2::QueryJobAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-queryjobattributes)"><strong>IPrintOemUI2:: QueryJobAttributes</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes)"><strong>DrvQueryJobAttributes</strong></a> DDI の呼び出し後に、UI プラグインがコアドライバーの結果を後処理できるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

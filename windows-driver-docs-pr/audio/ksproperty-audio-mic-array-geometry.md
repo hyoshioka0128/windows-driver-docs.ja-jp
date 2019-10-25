@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY
-description: KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティがマイク配列のジオメトリを指定します。
+title: KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY
+description: KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY プロパティは、マイク配列のジオメトリを指定します。
 ms.assetid: c9153c65-06d1-4968-8d70-64aafc760a8c
 keywords:
-- KSPROPERTY_AUDIO_MIC_ARRAY_GEOMETRY オーディオ デバイス
+- KSPROPERTY_AUDIO_MIC_ARRAY_GEOMETRY オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 174336a880c86fe87585ed525ad1e0d071b011dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1f1e1db82cdbe18ab0f0bb101b86bb209aeafbde
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358919"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832996"
 ---
-# <a name="kspropertyaudiomicarraygeometry"></a>KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY
+# <a name="ksproperty_audio_mic_array_geometry"></a>KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY
 
 
-KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティがマイク配列のジオメトリを指定します。
+KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY プロパティは、マイク配列のジオメトリを指定します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 使用状況の概要テーブル
 
@@ -40,46 +40,46 @@ KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティがマイク�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>取得</p></td>
+<td align="left"><p>[購入]</p></td>
 <td align="left"><p>設定</p></td>
 <td align="left"><p>対象</p></td>
 <td align="left"><p>プロパティ記述子の型</p></td>
 <td align="left"><p>プロパティ値の型</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry" data-raw-source="[&lt;strong&gt;KSAUDIO_MIC_ARRAY_GEOMETRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)"><strong>KSAUDIO_MIC_ARRAY_GEOMETRY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry" data-raw-source="[&lt;strong&gt;KSAUDIO_MIC_ARRAY_GEOMETRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)"><strong>KSAUDIO_MIC_ARRAY_GEOMETRY</strong></a></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) が型 KSAUDIO\_MIC\_配列\_ジオメトリ。 定義を参照してください、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)詳細については、構造体。
+プロパティ値 (操作データ) の型は KSK AUDIO\_MIC\_配列\_GEOMETRY です。 詳細については、 [**Ksk audio\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)構造体の定義を参照してください。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティ要求がステータスを返す\_要求が正常に完了すると成功します。
+KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY プロパティ要求は、要求が正常に完了した時点で成功\_状態を返します。
 
-PinId メンバーによって、暗証番号 (pin) が示される場合、 [ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)構造体は、mic の配列の要求をサポートしていません、プロパティの要求が状態を返す\_いない\_サポートされています。
+[**KSP\_pin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)構造体の pinid メンバーによって示された pin が mic 配列要求をサポートしていない場合、プロパティ要求はステータス\_返され\_サポートされません。
 
-プロパティ要求が状態を返す要求のバッファー サイズがゼロに設定されている場合\_バッファー\_オーバーフロー状態。 さらに、要求がブロックを使用して、状態の戻り値、KSAUDIO のサイズを示す\_MIC\_配列\_暗証番号 (pin) でサポートされている GEOMETRY 構造体。
+要求のバッファーサイズが0に設定されている場合、プロパティ要求は、状態\_バッファー\_オーバーフロー状態を返します。 さらに、この要求では、リターンステータスブロックを使用して、pin によってサポートされている KSK オーディオ\_MIC\_配列\_のサイズを示します。
 
-要求のバッファー サイズが小さすぎて返された構造体に対応するバッファーのサイズに設定されている場合、要求がのステータスを返します\_バッファー\_すぎます\_小さい。 要求のサイズを示すために状態の戻り値のブロックを使用して、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)暗証番号 (pin) でサポートされている構造体。
+要求のバッファーサイズが、返された構造に合わせて小さすぎるバッファーサイズに設定されている場合、要求は状態\_バッファーの状態を返し\_\_小さすぎます。 次に、この要求では、リターンステータスブロックを使用して、pin によってサポートされている[**Ksk オーディオ\_MIC\_配列\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)のサイズを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティは、KSPROPERTY のみがサポートされます。\_型\_GET 要求。 クライアントは、ジオメトリ全体の構造を対応するために必要なバッファーの適切なサイズを調べるためには、最初に、バッファー サイズが 0 の要求を作成する必要があります。 クライアントは、バッファー サイズを正しく設定する状態のブロックで返される値を使用し、正しいサイズのバッファーで別のプロパティの要求を加えます。
+KSK プロパティ\_AUDIO\_MIC\_配列\_GEOMETRY プロパティでサポートされるのは、KSK プロパティ\_GET 要求だけです。 クライアントが geometry 構造全体を格納するために必要なバッファーの正しいサイズを判断するためには、最初に要求のバッファーサイズをゼロに設定する必要があります。 クライアントは、status ブロックで返された値を使用してバッファーサイズを正しく設定した後、適切なサイズのバッファーで別のプロパティ要求を行うことができます。
 
-Windows でのマイク配列を処理する方法の詳細については、次の情報を参照してください。
+Windows でマイクアレイを処理する方法の詳細については、次のリソースを参照してください。
 
-[Windows (ホワイト ペーパー) でのマイク配列のサポート](https://go.microsoft.com/fwlink/p/?linkid=120592)
+[Windows でのマイク配列のサポート (ホワイトペーパー)](https://go.microsoft.com/fwlink/p/?linkid=120592)
 
-[マイク配列 Geometry プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/microphone-array-geometry-property)
+[マイク配列の Geometry プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/microphone-array-geometry-property)
 
 <a name="requirements"></a>要件
 ------------
@@ -92,17 +92,17 @@ Windows でのマイク配列を処理する方法の詳細については、次
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSAUDIO\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)
+[**KSAUDIO\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)
 
-[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
+[**KSP\_ピン留め**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
  
 

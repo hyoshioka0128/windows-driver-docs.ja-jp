@@ -3,18 +3,18 @@ title: 子デバイスのドライバーとの通信
 description: 子デバイスのドライバーとの通信
 ms.assetid: f1311941-bfba-44a4-867c-95fcbef19510
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、子デバイス
-- 子デバイス WDK ビデオ ミニポート ドライバーとの通信
+- ビデオミニポートドライバー WDK Windows 2000、子デバイス
+- 子デバイス WDK ビデオミニポート、ドライバーとの通信
 - HwVidQueryInterface
 - IRP_MN_QUERY_INTERFACE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc1d01f6495a3b87998805b3dacac26354c290c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54e988f64a4f6f23eecbef1a67c4420c5a3968c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370656"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839050"
 ---
 # <a name="communicating-with-the-driver-of-a-child-device"></a>子デバイスのドライバーとの通信
 
@@ -22,13 +22,13 @@ ms.locfileid: "67370656"
 ## <span id="ddk_communicating_with_the_driver_of_a_child_device_gg"></span><span id="DDK_COMMUNICATING_WITH_THE_DRIVER_OF_A_CHILD_DEVICE_GG"></span>
 
 
-ビデオのミニポート ドライバーと子デバイスのドライバーでは、インターフェイスを介して親ミニポート ドライバー、ハードウェアと通信するために、子ドライバーを相互に定義できます。 子のドライバーは、送信することによってこのインターフェイスを取得、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)親ミニポート ドライバーのビデオ ポート ドライバーに要求します。 このような要求を受信するには、ビデオ ポート ドライバーに呼び出し、ミニポート ドライバーの[ *HwVidQueryInterface* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_query_interface)関数は、定義されていて、ミニポート ドライバー インターフェイスへのポインターを返します。 によって公開される関数を使用して、ミニポート ドライバーに子デバイスのドライバーを呼び出して*HwVidQueryInterface*いつでもできます。
+ビデオミニポートドライバーと子デバイスのドライバーは、子ドライバーが親ミニポートドライバーを通じてハードウェアと通信できるようにするインターフェイスを相互に定義できます。 子ドライバーは、親ミニポートドライバーのビデオポートドライバーに、 [**IRP\_\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求を送信することによって、このインターフェイスを取得します。 このような要求を受信すると、ビデオポートドライバーはミニポートドライバーの[*HwVidQueryInterface*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_query_interface)関数を呼び出します。この関数が定義されている場合は、ミニポートドライバーがインターフェイスへのポインターを返します。 子デバイスのドライバーは、 *HwVidQueryInterface*によって公開されている関数を介して、いつでもミニポートドライバーを呼び出すことができます。
 
-ミニポート ドライバーが実装していない場合[ *HwVidQueryInterface* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_query_interface)かに、ミニポート ドライバーのデバイスの親が失敗した呼び出し、ビデオ ポート ドライバーを渡す要求。 子ドライバーは IRP を送信する場合\_MN\_クエリ\_を別のインターフェイス、ミニポート ドライバーおよびその他のドライバーの子の子が実装していない*HwVidQueryInterface*ビデオ、呼び出しが失敗またはポートのドライバーでは、エラーを返します。
+ミニポートドライバーで[*HwVidQueryInterface*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_query_interface)が実装されていない場合、または呼び出しに失敗した場合は、ビデオポートドライバーがミニポートドライバーのデバイスの親に要求を渡します。 子ドライバーが\_クエリ\_インターフェイスをポートの別の子に\_送信し、他の子ドライバーが*HwVidQueryInterface*を実装していないか、または呼び出しに失敗した場合、ビデオポートドライバーはエラーを返します。
 
-ミニポート ドライバーですべての関数によって公開される自身へのアクセスを同期する必要がある子ドライバー、ビデオ ポート ドライバーの知識がなくても、ミニポート ドライバーに呼び出すには、ため[ *HwVidQueryInterface* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_query_interface). これは呼び出すことによって、 [ **VideoPortAcquireDeviceLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportacquiredevicelock)と[ **VideoPortReleaseDeviceLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportreleasedevicelock)を取得し、ビデオ ポートを解放するにはドライバーで維持されるデバイスをロック、それぞれします。
+子ドライバーはビデオポートドライバーの知識がなくてもミニポートドライバーを呼び出すことができるため、ミニポートドライバーは、 [*HwVidQueryInterface*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_query_interface)によって公開されているすべての関数で自身へのアクセスを同期する必要があります。 これを行うには、 [**VideoPortAcquireDeviceLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportacquiredevicelock)と[**Videoportreleasedevicelock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportreleasedevicelock)を呼び出して、それぞれビデオポートドライバーで保持されているデバイスロックを取得し、解放します。
 
-によって列挙子デバイス[ *HwVidGetVideoChildDescriptor*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)します。
+子デバイスは、 [*HwVidGetVideoChildDescriptor*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_get_child_descriptor)によって列挙されます。
 
  
 

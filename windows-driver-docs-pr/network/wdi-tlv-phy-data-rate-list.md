@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_PHY_DATA_RATE_LIST
-description: WDI_TLV_PHY_DATA_RATE_LIST では、データ転送速度のリストを含む TLV です。
+description: WDI_TLV_PHY_DATA_RATE_LIST は、データレートの一覧を含む TLV です。
 ms.assetid: FFD28866-4983-4C0B-A74D-4EF9A819571E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PHY_DATA_RATE_LIST ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_PHY_DATA_RATE_LIST ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: ffb7fda3a5251da4926cbfad72a6c26a186fab39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b91d79caa6614493e4a67f2f6b530a6e6bdcd60
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373855"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838016"
 ---
-# <a name="wditlvphydataratelist"></a>WDI\_TLV\_PHY\_データ\_レート\_一覧
+# <a name="wdi_tlv_phy_data_rate_list"></a>WDI\_TLV\_PHY\_データ\_レート\_一覧
 
 
-WDI\_TLV\_PHY\_データ\_レート\_リストは、データ転送速度のリストを含む TLV します。
+WDI\_TLV\_PHY\_データ\_レート\_一覧は、データレートの一覧を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,31 +26,31 @@ WDI\_TLV\_PHY\_データ\_レート\_リストは、データ転送速度のリ�
 ## <a name="length"></a>長さ
 
 
-WDI の配列のサイズをバイト単位で\_データ\_レート\_リストの要素。 配列には、1 つ以上の要素を含める必要があります。
+WDI の配列のサイズ (バイト単位)\_リストの要素の\_データ\_レート。 配列には1つ以上の要素が含まれている必要があります。
 
-**注**  WDI\_データ\_レート\_一覧が WDI 構造ではありません。 WDI TLV パーサー ジェネレーターで定義されているし、ドキュメントの目的でのみ使用されます。
+**注**  WDI\_データ\_率\_リストは、WDI 構造体ではありません。 これは、WDI TLV parser ジェネレーターで定義されており、ドキュメントの目的でのみ使用されます。
 
  
 
 ## <a name="values"></a>値
 
 
-| 型                      | 説明                                                                                             |
+| タスクバーの検索ボックスに                      | 説明                                                                                             |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
-| WDI\_データ\_レート\_一覧\[\] | データ転送速度の配列。 配列内の各データ速度は、データ レート フラグとデータ レートの値を含める必要があります。 |
+| WDI\_DATA\_RATE\_LIST\[\] | データ速度の配列。 配列内の各データレートには、データレートフラグとデータレート値が含まれている必要があります。 |
 
  
 
-WDI\_データ\_レート\_リストは、次の要素で構成されます。
+WDI\_DATA\_RATE\_リストは、次の要素で構成されています。
 
-| 種類   | 説明                                                                                   |
+| タスクバーの検索ボックスに   | 説明                                                                                   |
 |--------|-----------------------------------------------------------------------------------------------|
-| UINT8  | データで定義されているフラグを評価する[ **WDI\_データ\_レート\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_data_rate_flags)します。 |
-| UINT16 | データ レートの値。                                                                          |
+| UINT8  | [**WDI\_data\_rate\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_data_rate_flags)に定義されているデータレートフラグ。 |
+| UINT16 | データ速度の値。                                                                          |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -69,7 +69,7 @@ WDI\_データ\_レート\_リストは、次の要素で構成されます。
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,9 @@
 ---
-title: ndiskd.netreport
-description: Ndiskd.netreport 拡張機能は、ネットワーク スタック全体のビジュアルのレポートを生成します。
+title: ndiskd netreport
+description: Ndiskd netreport 拡張機能によって、ネットワークスタック全体のビジュアルレポートが生成されます。
 ms.assetid: 0FC134A8-8D91-4299-8D15-4E8EDD9ED855
 keywords:
-- デバッグ ndiskd.netreport Windows
+- ndiskd netreport Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a072fcae39045e5183a096630b23185db5bed7b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 11498301e69860be71183593494b7eba4c0b52e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363137"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826561"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
 
-**! Ndiskd.netreport**拡張機能には、ネットワーク スタック全体のビジュアルのレポートが生成されます。 レポート **! ndiskd.netreport**生成された HTML ファイルは、その場所にリンクが提供されます。 HTML ファイルには、分析のため、これを共有する必要がある場合は、大規模なクラッシュ ダンプ ファイルを送信する代わりに電子メールできますので、ネットワーク スタックに関する詳細情報が含まれています。
+**! Ndiskd netreport**拡張機能によって、ネットワークスタック全体のビジュアルレポートが生成されます。 レポート **! ndiskd netreport**は HTML ファイルを生成し、その場所へのリンクを提供します。 HTML ファイルにはネットワークスタックに関する詳細情報が含まれているため、分析のために共有する必要がある場合は、大きなクラッシュダンプファイルを送信するのではなく、電子メールで送信することができます。
 
 ```console
 !ndiskd.netreport [-outputpath <str>] [-jsononly] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
 <span id="_______-outputpath______"></span><span id="_______-OUTPUTPATH______"></span> *-outputpath*   
-レポート ファイルを記述する場所を指定します。
+レポートファイルの書き込み先を指定します。
 
 <span id="_______-jsononly______"></span><span id="_______-JSONONLY______"></span> *-jsononly*   
-生データで HTML のみを書き込みません。
+では、HTML ではなく生データのみが書き込まれます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-実行、 **! ndiskd.netreport**ネットワーク スタックのボックスの図を描画する拡張機能。
+**! Ndiskd netreport**拡張機能を実行して、ネットワークスタックのボックス図を描画します。
 
 ```console
 1: kd> !ndiskd.netreport
@@ -60,44 +60,44 @@ NETWORK STACK REPORT
     View the report                        Send in email
 ```
 
-下部に、生成されたレポートを参照してください「レポートの表示」リンクをクリックします。 次の図は、クラッシュ ダンプ ファイルから生成された差分レポートを示します。 各垂直スタックは、ネットワーク アダプター、スタックのコンポーネントを示すレイヤーに分割されます。 レポートを実行するたびに、同じコンポーネントが同じ色でレンダリングされますを意味する、コンポーネントの名前をハッシュすることで、各ボックスの色が生成されます。 これは、ために問題をデバッグしている場合に簡単に特定のドライバーまたはアダプターを選択することができます。
+下部にある [レポートの表示] リンクをクリックして、レポートが生成されたことを確認します。 次の図は、クラッシュダンプファイルから生成された net レポートを示しています。 各垂直スタックはネットワークアダプターであり、スタックのコンポーネントを示す層に分割されます。 各ボックスの色は、コンポーネントの名前をハッシュすることによって生成されます。これは、レポートを実行するたびに同じ色で同じコンポーネントがレンダリングされることを意味します。 これは、問題をデバッグしている場合に、特定のドライバーまたはアダプターを簡単に選択できることを意味します。
 
-![クラッシュ ダンプからネットワーク デバッグ レポート](images/!ndiskd-netreport-crashdump.png)
+![クラッシュダンプからのネットワークデバッグレポート](images/!ndiskd-netreport-crashdump.png)
 
-比較としては、次の図は、クラッシュ ダンプ ファイルの代わりに、アクティブなシステムから生成された差分レポートを示します。 「表示データのフロー」と「シミュレート パケット」する HTML ページの下部に、他のオプションの 2 つがあり、4 つ目は、「データ フローです」レポートの上部にあるタブがあることに注意してください。 これらのオプションが表示されていた、デバッグ対象のマシン NBL のあったため、追跡が有効になって、できる **! ndiskd.netreport**視覚的に情報を表示する NBL 追跡ログを解析します。 NBL の追跡が有効でない場合、これらのオプションは表示されません。 NBL の追跡と NBL ログの詳細については、次を参照してください。 [ **! ndiskd.nbllog**](-ndiskd-nbllog.md)します。
+次の図は、クラッシュダンプファイルではなくアクティブシステムから生成された net レポートを示しています。 HTML ページの下部に [データフローの表示] と [パケットのシミュレート] の2つのオプションがあります。レポートの上部には、"データフロー" の4番目のタブがあります。 デバッグ対象マシンで NBL tracking が有効になっているため、これらのオプションが表示されました。これにより、 **! ndiskd netreport**で NBL 追跡ログを解析し、情報を視覚的に表示できます。 NBL tracking が有効になっていない場合、これらのオプションは表示されません。 NBL tracking と NBL ログの詳細については、「 [ **! ndiskd ndiskd**](-ndiskd-nbllog.md)」を参照してください。
 
-「データ フローの表示」ボックスをチェックして、データが送信場所のパスを確認できます。 「シミュレート パケット」ボックスをチェックするには、アニメーション化された円の上下のデータ フロー パスの移動を確認できます。 各円は、ネットワーク パケットを表します。
+[データフローの表示] ボックスをオンにすると、データが流れるパスを確認できます。 [パケットをシミュレートする] ボックスをオンにすると、アニメーション化された円がデータフローパスを上下に移動します。 各円はネットワークパケットを表します。
 
-![アクティブなシステムからネットワーク デバッグ レポート](images/!ndiskd-netreport-activesystem.png)
+![アクティブシステムからのネットワークデバッグレポート](images/!ndiskd-netreport-activesystem.png)
 
-作業中のシステムから 2 番目の例では、最初の例は、クラッシュ ダンプ ファイルの使用から別の相違点も表示されます。 デバッグ対象の対象コンピューターで 2 番目の例にはプロビジョニングされたカーネルは、データ フローで、スタック上のネットワーク アダプターは、Microsoft カーネル デバッグ ネットワーク アダプターを確認できるように、ネットワーク経由でデバッグします。 このアダプターは通常、カーネルのデバッグが有効になっていない、デバッグ対象のマシン上に表示します。 実際には、トラフィックがイーサネットを介して送信されるため、カーネル デバッグ ネットワーク アダプターが、デバッグ セッションのコンピューターのイーサネット アダプターを予約します。
+アクティブシステムからのこの2番目の例では、クラッシュダンプファイルを使用した最初の例とは別の違いも示しています。 2番目の例のターゲットデバッグ対象マシンは、ネットワーク上でのカーネルデバッグ用にプロビジョニングされています。そのため、データフローが Microsoft カーネルデバッグネットワークアダプターのスタック上のネットワークアダプターを確認できます。 このアダプターは、デバッグ対象マシンでカーネルデバッグが有効になっていない限り、通常は非表示になります。 実際には、カーネルデバッグネットワークアダプターはデバッグセッション用にコンピューターのイーサネットアダプターを予約しているため、トラフィックはイーサネット経由で送信されます。
 
-ネットワーク スタックを視覚化し、トラフィックが流れているを参照してください。 機能を使用して、問題がありますをすばやく特定することができます。 これは、仮想スイッチまたはサーバーで、前の例よりもネットワーク図が複雑に特に役立つことができます。 たとえば、NIC チーミングを使用する Windows サーバーで複数のネットワーク スタックは、トラフィックの負荷を分散し、別のスタックに影響する 1 つのスタックの一番下にある問題がある場合に互いに交差してかどうかを確認できます。 これを示すレポートをデバッグ、ネットワークの例を表示するには、次を参照してください。[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。 NIC チーミングの詳細については、次を参照してください。[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用して](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))します。
+ネットワークスタックを視覚化し、トラフィックが流れている場所を確認することで、問題が発生している場所をすばやく特定できます。 これは、前の例よりも複雑なネットワーク図を持つ仮想スイッチまたはサーバーに特に便利です。 たとえば、NIC チーミングを使用する Windows Server では、複数のネットワークスタックが相互に分散してトラフィックの負荷を分散し、1つのスタックの一番下に別のスタックに影響を与える問題があるかどうかを確認できます。 これを示すネットワークデバッグレポートの例については、「[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)」を参照してください。 NIC チーミングの詳細については、「 [Nic チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))」を参照してください。
 
-**! ndiskd.netreport**システム、概要、およびデータ フロー (該当する) 場合、ページの上部にあるその他のタブもあります。 これらのタブがさらにネットワーク スタックの状態に関する有用な情報に含まれています。 次の図は、ネットワーク インターフェイス タブの 概要 タブを示します。このタブで、テーブルでは、システムの名前と識別子のネットワーク インターフェイスの詳細についてを参照できます。
+**! ndiskd netreport**には、システム、集計、およびデータフローのページの上部にある他のタブもあります (該当する場合)。 これらのタブには、ネットワークスタックの状態に関する有用な情報が含まれています。 次の図は、[概要] タブの下にある [ネットワークインターフェイス] タブを示しています。このタブの表では、システム内のネットワークインターフェイスの名前と識別子に関する詳細情報を確認できます。
 
-![デバッグ レポートのネットワークのネットワーク インターフェイス](images/!ndiskd-netreport-activesystem-networkinterfaces.png)
+![ネットワークデバッグレポートのネットワークインターフェイス](images/!ndiskd-netreport-activesystem-networkinterfaces.png)
 
-NBL の追跡は、ターゲット システムで有効にした場合に表示され、データ フロー タブは、トラフィック イベントとの詳細については、それぞれのテーブルを示しています。 次の図は、前に説明した 2 つ目の例のデバッグ レポートでのアクティブなシステムからのデータ フロー タブを示します。
+ターゲットシステムで NBL tracking が有効になっている場合に表示される [データフロー] タブには、トラフィックイベントのテーブルと各イベントの詳細が表示されます。 次の図は、前に説明した2番目のサンプルデバッグレポートのアクティブシステムの [データフロー] タブを示しています。
 
-![ネットワーク デバッグ レポートのデータ フロー](images/!ndiskd-netreport-activesystem-dataflows.png)
+![ネットワークデバッグレポートのデータフロー](images/!ndiskd-netreport-activesystem-dataflows.png)
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
+[ **! ndiskd ndiskd**](-ndiskd-nbllog.md)
 
-[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用してください。](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
+[NIC チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
 
  
 

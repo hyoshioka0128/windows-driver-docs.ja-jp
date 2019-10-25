@@ -3,22 +3,22 @@ title: IoWMIWriteEvent イベントでのイベントの送信
 description: IoWMIWriteEvent イベントでのイベントの送信
 ms.assetid: 77c1041a-340c-4c59-a30a-e946adf60a95
 keywords:
-- WMI の WDK カーネルでは、イベントの追跡
-- WDK の WMI イベント
-- WDK の WMI のトレース
+- WMI WDK カーネル、イベント追跡
+- イベント WDK WMI
+- WDK WMI のトレース
 - WMI イベントの送信
-- イベントは、WDK の WMI をブロックします。
-- WDK の WMI の通知
+- イベントブロック WDK WMI
+- 通知 WDK WMI
 - IoWMIWriteEvent
-- WDK の WMI の名前の動的インスタンス
+- 動的インスタンス名 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e92bf58dcfefcebfaeb3b863bb2a09354fddaf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91a3be7e12a573646a8e038f57cc02fd1b1bf8c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364084"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836363"
 ---
 # <a name="sending-an-event-with-iowmiwriteevent"></a>IoWMIWriteEvent イベントでのイベントの送信
 
@@ -26,47 +26,47 @@ ms.locfileid: "67364084"
 
 
 
-ドライバーが呼び出せる[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)任意のイベントを送信します。 1 つの項目、1 つのインスタンス、または、データ ブロックのすべてのインスタンス イベントできますから構成され、動的なインスタンス名を使用できます。
+ドライバーは、 [**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)を呼び出して任意のイベントを送信できます。 イベントは、単一の項目、単一のインスタンス、またはデータブロックのすべてのインスタンスで構成され、動的なインスタンス名を使用できます。
 
-異なり**れた WNODE\_* XXX*** WMI によって部分的に初期化し、割り当てられ、このクエリまたは変更要求で渡された構造体、ドライバーする必要がありますを割り当てるし、のすべてのメンバーの初期化、**れた WNODE\_* XXX*** イベントを含む構造体。
+WMI によって割り当てられ、部分的に初期化されるクエリまたは変更要求で渡される**wnode\_* xxx*** 構造とは異なり、ドライバーは、 **wnode\_* xxx*** 構造体のすべてのメンバーを割り当て、初期化する必要があります。場合.
 
-ドライバーは、WMI が送信後にのみイベントを送信する必要があります、 [ **IRP\_MN\_を有効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)イベントを有効にする要求。 次に、ときに、イベントのトリガー条件が発生したドライバー。
+ドライバーは、WMI によって IRP\_送信された後にのみイベントを送信する必要があります。この場合、イベントを有効にするための[ **\_イベント要求\_有効**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)にします。 次に、イベントのトリガー条件が発生すると、ドライバーは次のようになります。
 
-1. 格納する非ページ プールからバッファーを割り当てます、**れた WNODE\_* XXX*** 存在する場合は、変数のデータの空白を含む、イベントのために必要な構造体。
+1. 非ページプールからバッファーを割り当てて、イベントに必要な**Wnode\_* XXX*** 構造を格納します。これには、変数データの領域 (存在する場合) が含まれます。
 
-   イベントに応じて、ドライバーを割り当てることがあります、 [**れた WNODE\_単一\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_item)、 [**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)、または[**れた WNODE\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_all_data)イベント。 サイズ、**れた WNODE\_* XXX*** と変数のデータは、レジストリで定義された制限の 1 K を超えることはできません。
+   イベントによっては、ドライバーは[**wnode\_単一の\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_item)、 [**wnode\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)、またはイベントの[**すべての\_データ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_all_data)の wnode を割り当てます。 **Wnode\_* XXX*** と変数データのサイズは、レジストリ定義の制限である1k を超えることはできません。
 
-2. すべてのメンバーを初期化します、**れた WNODE\_* XXX*** 構造体を含む**WnodeHeader.Flags**:
+2. Wnodeheader を含む**Wnode\_* XXX*** 構造体のすべてのメンバーを初期化**します。 Flags**:
 
-   - ドライバーのセット、**れた WNODE\_フラグ\_イベント\_項目**構造がイベントであることを示すフラグ。
+   - このドライバーは、構造体がイベントであることを示すために、 **Wnode\_フラグ\_イベント\_項目**フラグを設定します。
 
-   - ドライバーの設定の種類を示す次のフラグのいずれかの**れた WNODE\_* XXX*** 構造体。
+   - ドライバーは、 **Wnode\_* XXX*** 構造体の種類を示すために、次のいずれかのフラグを設定します。
 
-     **WNODE\_FLAG\_ALL\_DATA**
+     **WNODE\_フラグ\_すべての\_データ**
 
-     **れた WNODE\_フラグ\_単一\_インスタンス**
+     **WNODE\_フラグ\_単一\_インスタンス**
 
-     **れた WNODE\_フラグ\_単一\_項目**
+     **WNODE\_フラグ\_単一の\_項目**
 
-   - ドライバーを設定またはブロックが静的または動的なインスタンス名を使用するかどうかを示す次のフラグをクリアします。
+   - ドライバーは、ブロックで静的または動的なインスタンス名が使用されているかどうかを示すために、次のフラグを設定またはクリアします。
 
-     **WNODE\_FLAG\_STATIC\_INSTANCE\_NAMES**
+     **WNODE\_フラグ\_静的\_インスタンス\_名**
 
-     **れた WNODE\_フラグ\_PDO\_インスタンス\_名**
+     **WNODE\_フラグ\_PDO\_インスタンス\_名**
 
-   - ドライバーは、イベントに応じて追加のフラグを設定します。
+   - ドライバーは、イベントに応じて追加のフラグを設定することがあります。
 
-3. ポインターをキャスト、**れた WNODE\_* XXX***、PWNODE に\_イベント\_項目。
+3. **Wnode\_* XXX*** へのポインターを、PWNODE\_イベント\_項目にキャストします。
 
-4. 呼び出し**IoWMIWriteEvent**ポインター。
+4. ポインターを使用して**IoWMIWriteEvent**を呼び出します。
 
-   場合**IoWMIWriteEvent**イベントの WMI リリース ドライバーに割り当てられたメモリが正常に完了します。
+   **IoWMIWriteEvent**が正常に完了した場合、WMI はイベントに対してドライバーで割り当てられたメモリを解放します。
 
-後[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent) 、ドライバーは、イベントのトリガーの条件を監視して、WMI を送信するまで、そのトリガーの条件が発生するたびに、イベントの送信が再開されますを返します、 [ 。**IRP\_MN\_を無効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)そのイベントを無効にする要求。
+[**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)が返された後、ドライバーは、イベントのトリガー条件の監視を再開し、トリガーの条件が発生するたびにイベントを送信します。これにより、\_WMI は、\_のイベント要求を[ **\_無効**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)にします。そのイベントを無効にします。
 
-イベントのサイズがレジストリ定義の最大数を超えた場合、ドライバーを呼び出す必要があります (非推奨) 1 K の**IoWmiWriteEvent**初期化された[**れた WNODE\_イベント\_参照**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_reference)イベントの GUID、サイズ、およびその (静的なインスタンス名) のインスタンスのインデックスまたは (動的なインスタンス名) の名前を指定します。 WMI が内の情報を使用して、**れた WNODE\_イベント\_参照**イベントを照会します。
+イベントのサイズがレジストリで定義されている最大値 1K (推奨されません) を超える場合、ドライバーは[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_reference) **IoWmiWriteEvent**を呼び出す必要があります。これは、イベントの GUID、サイズ、およびインスタンスインデックス (静的インスタンス名の場合) または名前 (動的インスタンス名の場合)。 WMI は、 **Wnode\_イベント\_リファレンス**の情報を使用して、イベントのクエリを実行します。
 
-ドライバーは、動的なインスタンス名を使用しないイベントを送信して、1 つのインスタンスの WMI のライブラリ ルーチンを呼び出すことによって構成される[ **WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)します。 ドライバーは、割り当て、初期化する必要はありません、**れた WNODE\_* XXX*** 用の構造を**WmiFireEvent**呼び出します。 WMI でドライバーのイベント データをパッケージ化、 [**れた WNODE\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)データ コンシューマーに配信します。 イベントを送信の詳細については**WmiFireEvent**を参照してください[WmiFireEvent でイベントを送信する](sending-an-event-with-wmifireevent.md)します。
+ドライバーは、動的なインスタンス名を使用せず、WMI ライブラリルーチン[**WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)を呼び出すことによって1つのインスタンスで構成されるイベントを送信できます。 **WmiFireEvent**呼び出しに対して、 **wnode\_* XXX*** 構造体を割り当てて初期化する必要はありません。 WMI は、 [**Wnode\_1 つの\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)にドライバーのイベントデータをパッケージ化し、データコンシューマーに配信します。 **WmiFireEvent**を使用してイベントを送信する方法の詳細については、「 [WmiFireEvent を使用](sending-an-event-with-wmifireevent.md)したイベントの送信」を参照してください。
 
  
 

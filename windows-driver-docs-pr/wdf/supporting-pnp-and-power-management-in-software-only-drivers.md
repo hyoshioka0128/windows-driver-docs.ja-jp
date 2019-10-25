@@ -4,29 +4,29 @@ description: ソフトウェア専用ドライバーでの PnP と電源管理�
 ms.assetid: bcfca8b2-68d6-4875-8687-27351becd6f4
 keywords:
 - PnP WDK KMDF、ソフトウェアのみのドライバー
-- プラグ アンド プレイ WDK KMDF、ソフトウェアのみのドライバー
+- WDK KMDF、ソフトウェアのみのドライバープラグアンドプレイ
 - 電源管理 WDK KMDF、ソフトウェアのみのドライバー
-- ソフトウェア専用のドライバー WDK KMDF
-- フィルター ドライバー WDK KMDF
+- ソフトウェア専用ドライバー WDK KMDF
+- ドライバーのフィルター WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c5c3ab8e70a07edb3b1e15ced92067f6851cd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 699ae5c70a48db5a94fb8017501a050a88d045c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831717"
 ---
 # <a name="supporting-pnp-and-power-management-in-software-only-drivers"></a>ソフトウェア専用ドライバーでの PnP と電源管理のサポート
 
 
-*ソフトウェア専用のドライバー*ドライバーは、ハードウェアにアクセスしません。 一部のソフトウェア専用のドライバーは、ハードウェアにアクセスしないドライバー スタック内に存在します。 これらのドライバーはハードウェアにアクセスしないため、通常がない PnP または電源管理操作を実行します。
+*ソフトウェアのみのドライバー*は、どのハードウェアにもアクセスしないドライバーです。 一部のソフトウェアのみのドライバーは、ハードウェアにアクセスしないドライバースタックに存在します。 これらのドライバーはハードウェアにアクセスしないため、通常、PnP や電源管理操作を実行する必要はありません。
 
-その他のソフトウェア専用のドライバーは、フィルター: ハードウェアへのアクセスはドライバーのスタック内に存在するが、フィルター ドライバーはハードウェアにアクセスできません。 フィルター ドライバー、PnP を指定する I/O 要求を受信した場合、または電源管理操作、ドライバー通常だけに要求を渡します次のドライバーです。 フレームワークは、これらの要求のインターセプトを framework ベースのドライバーが要求を確認しないように、渡します。
+その他のソフトウェア専用ドライバーはフィルタードライバーであり、ハードウェアにアクセスするドライバーのスタックに存在しますが、フィルタードライバーはハードウェアにアクセスしません。 PnP または電源管理操作を指定する i/o 要求をフィルタードライバーが受け取った場合、ドライバーは通常、要求を次のドライバーに渡すだけです。 フレームワークは、これらの要求をインターセプトして渡します。そのため、フレームワークベースのドライバーは要求を認識しません。
 
-ソフトウェア専用ドライバーでは、ドライバーを記述するかどうかは[デバイス オブジェクトを作成します。](creating-a-framework-device-object.md)が通常は必要ありません PnP または電源管理イベントを処理するコールバック関数のすべてのイベントを提供します。 ドライバーで使用する場合[framework キュー オブジェクト](framework-queue-objects.md)、設定する必要があります、 **PowerManaged**のキューのメンバー [ **WDF\_IO\_キュー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)構造体を**WdfFalse**または**WdfUseDefault**します。
+ソフトウェアのみのドライバーを作成する場合、ドライバーは[デバイスオブジェクトを作成し](creating-a-framework-device-object.md)ますが、通常は、PnP または電源管理イベントを処理するためのイベントコールバック関数を提供する必要はありません。 ドライバーが[フレームワークキューオブジェクト](framework-queue-objects.md)を使用する場合は、キューの[**WDF\_IO\_queue\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)構造体の**powermanaged**メンバーを**WdfFalse**または**wdfusedefault**に設定する必要があります。
 
-いくつかのソフトウェア専用のドライバーを[関数ドライバー](supporting-pnp-and-power-management-in-function-drivers.md)します。 つまり、1 つのドライバーは可能性があります、ハードウェアにアクセスしない仮想デバイスをサポートするソフトウェア専用のドライバーとハードウェア デバイスをサポートする機能のドライバーとして機能します。
+一部のソフトウェアのみのドライバーは、[関数ドライバー](supporting-pnp-and-power-management-in-function-drivers.md)でもあります。 つまり、ハードウェアにアクセスしない仮想デバイスと、ハードウェアデバイスをサポートする関数ドライバーとして、単一のドライバーがソフトウェア専用のドライバーとして機能する場合があります。
 
  
 

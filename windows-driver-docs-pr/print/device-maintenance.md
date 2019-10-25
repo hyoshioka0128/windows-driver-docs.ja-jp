@@ -1,48 +1,48 @@
 ---
 title: デバイス保守管理
-description: デバイスのメンテナンス機能が Windows 8.1 と Windows の以降のバージョンで導入されました。
+description: デバイスメンテナンス機能は、Windows 8.1 以降のバージョンの Windows で導入されました。
 ms.assetid: 310E92A9-F751-4346-9B2D-0578A136AD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 160b9546c117f84d1a4726f8546c89617e426d6e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 855404911961582b36e8dc8b47897917dccfea7b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354925"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828946"
 ---
 # <a name="device-maintenance"></a>デバイス保守管理
 
 
-デバイスのメンテナンス機能が Windows 8.1 と Windows の以降のバージョンで導入されました。
+デバイスメンテナンス機能は、Windows 8.1 以降のバージョンの Windows で導入されました。
 
-この機能は、UWP デバイスのアプリまたは印刷サブシステムにプリンターの拡張機能内からデバイスのメンテナンス コマンドを送信できるように双方向通信 (Bidi) を使用します。 たとえば、インク ノズルをクリーニングする印刷デバイスにコマンドを送信する可能性があります。
+この機能では双方向通信 (Bidi) を使用して、UWP デバイスアプリまたはプリンターの拡張機能から印刷サブシステムにデバイスのメンテナンスコマンドを送信できるようにします。 たとえば、印刷デバイスにコマンドを送信して、インクノズルをクリーニングすることができます。
 
-これらの双方向の要求をデバイスとプロトコルに固有のコマンドに変換し、印刷デバイスに送信するベンダーが提供 Bidi 拡張ファイルと連携しますポート モニター。 デバイスのメンテナンス タスクは、印刷デバイスに Bidi"Set"クエリを送信することによって実行され、デバイスからの応答を双方向は、操作が成功したか、失敗したかどうかを示します。
+ポートモニターは、ベンダーが提供する Bidi 拡張ファイルと連携して、これらの Bidi 要求をデバイスおよびプロトコル固有のコマンドに変換し、それを印刷デバイスに送信します。 デバイスメンテナンスタスクは、Bidi "Set" クエリを印刷デバイスに送信することによって実行され、デバイスからの Bidi 応答は、操作が成功したか失敗したかを示します。
 
-この機能を実装するために役立つ新しい非同期インターフェイスは、文字列パラメーターと、コールバック オブジェクトの形式で XML データを取得します。
+この機能を実装するために役立つ新しい非同期インターフェイスは、文字列パラメーターとコールバックオブジェクトの形式で XML データを受け取ります。
 
-インターフェイスは非同期であるため、呼び出し元が応答を待機する必要はありません。 双方向の操作が完了したら、コールバック オブジェクトが呼び出されます。
+インターフェイスは非同期であるため、呼び出し元は応答を待つ必要はありません。 Bidi 操作が完了すると、コールバックオブジェクトが呼び出されます。
 
 ## <a name="the-new-interfaces"></a>新しいインターフェイス
 
 
-デバイスのメンテナンス機能を実装するために Windows (コード ネームは"Blue") で、次のインターフェイスが導入されました。
+デバイスメンテナンス機能を実装するために、Windows では次のインターフェイスが導入されています (コードネーム "Blue")。
 
-[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)
+[**Iプリンター Bidisetrequestcallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)
 
-[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation)
+[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation)
 
-[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)
 
-## <a name="initiating-a-device-maintenance-session"></a>デバイスのメンテナンス セッションを開始します。
+## <a name="initiating-a-device-maintenance-session"></a>デバイスメンテナンスセッションを開始しています
 
 
-デバイスのメンテナンス セッションを開始するには、まず XML データとして、コマンド文字列を作成する必要があります。 非同期の双方向の操作が完了した後に呼び出されるコールバック オブジェクトのインスタンスを作成する必要があります。
+デバイスメンテナンスセッションを開始するには、最初にコマンド文字列を XML データとして作成する必要があります。 次に、非同期 Bidi 操作の完了後に呼び出されるコールバックオブジェクトのインスタンスを作成する必要があります。
 
-操作が完了した後は、コールバック オブジェクトが IPrinterBidiSetRequestCallback::Completed メソッドで呼び出され、操作の HRESULT 値を提供します。 この HRESULT 値を解析し、その他の必要なタスクを実行します。
+操作が完了すると、コールバックオブジェクトは Iプリンター Bidisetrequestcallback:: Completed メソッドで呼び出され、操作の HRESULT 値を提供します。 その後、この HRESULT 値を解析して、その他の必要なタスクを実行できます。
 
-次C#スニペットが UWP デバイス アプリからデバイスのメンテナンス タスクを発行する方法について説明します。
+次のC#スニペットは、UWP デバイスアプリからデバイスメンテナンスタスクを発行する方法を示しています。
 
 ```csharp
 //
@@ -88,12 +88,12 @@ public class BidiSetResultCallback :
 } 
 ```
 
-デバイスのメンテナンスは、次の 3 つのエントリ ポイントのいずれかを使用して、アプリが呼び出された後に、UWP デバイス アプリでサポートされます。
+デバイスのメンテナンスは、3つのエントリポイントのいずれかを使用してアプリが呼び出された後に UWP デバイスアプリでサポートされます。
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)  
-[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation)  
-[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)  
+[**Iプリンター Bidisetrequestcallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)  
+[**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation)  
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)  
 
 
 

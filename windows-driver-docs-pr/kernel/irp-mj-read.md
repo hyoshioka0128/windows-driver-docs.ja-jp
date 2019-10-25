@@ -1,56 +1,56 @@
 ---
 title: IRP_MJ_READ
-description: システムにそのデバイスからデータを転送するすべてのデバイス ドライバーには、このようなデバイス ドライバーの上層により高度なドライバーをする必要があります、DispatchRead または DispatchReadWrite ルーチン内の読み取り要求を処理する必要があります。
+description: デバイスからシステムにデータを転送するすべてのデバイスドライバーは、DispatchRead または DispatchReadWrite のルーチンで読み取り要求を処理する必要があります。これは、そのようなデバイスドライバーの上層にある上位レベルのドライバーである必要があるためです。
 ms.date: 08/12/2017
 ms.assetid: 5ae4c6c5-d8f2-4dc5-8cfd-ecb751fc88be
 keywords:
-- IRP_MJ_READ カーネル モード ドライバーのアーキテクチャ
+- IRP_MJ_READ カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be7c5512778f006f6399b747b14558095a66cfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d001bb0c37ece3a55b09ccda0e283db670e3060
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370898"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838600"
 ---
-# <a name="irpmjread"></a>IRP\_MJ\_READ
+# <a name="irp_mj_read"></a>IRP\_MJ\_READ
 
 
-システムにそのデバイスからデータを転送するすべてのデバイス ドライバーでの読み取り要求を処理する必要があります、 [ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)としてする必要があります、日常的な高度なドライバーの上層にこのようなデバイス ドライバー。
+デバイスからシステムにデータを転送するすべてのデバイスドライバーは、 [*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)または[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)のルーチンで読み取り要求を処理する必要があります。これは、そのようなデバイスドライバーの上層にある上位レベルのドライバーである必要があるためです。
 
 <a name="when-sent"></a>送信時
 ---------
 
-いつの作成要求が正常に完了します。
+作成要求が正常に完了した後、いつでも実行できます。
 
-場合によっては、ユーザー モード アプリケーションまたはターゲット デバイス オブジェクトを表すファイル オブジェクトのハンドルを持つ Win32 コンポーネントは、デバイスからのデータ転送を要求が。 場合によってより高度なドライバーが作成され、読み取り IRP を設定します。
+場合によっては、ターゲットデバイスオブジェクトを表すファイルオブジェクトのハンドルを持つユーザーモードアプリケーションまたは Win32 コンポーネントが、デバイスからのデータ転送を要求している可能性があります。 場合によっては、上位レベルのドライバーで読み取り IRP が作成され、設定されている可能性があります。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-IRP のドライバーの I/O スタックの場所に転送するバイト数を示す**Parameters.Read.Length**します。
+IRP 内のドライバーの i/o スタックの場所は、パラメーターで転送するバイト数を示します。 **Length**.
 
-一部のドライバーにある値を使用して、 **Parameters.Read.Key**デバイスのキューまたは Irp のドライバー管理の内部キューでは、ドライバーにより決定された順序に受信した読み取り要求を分類します。
+一部のドライバーでは、**パラメーター**に値を使用しています。キーは、デバイスキューまたはドライバーによって管理される irp の内部キューで、受信した読み取り要求をドライバーによって決まる順序に並べ替えるために使用します。
 
-ドライバーの特定の種類がある値を使用しても**Parameters.Read.ByteOffset**、転送操作の開始オフセットを示します。 たとえばを参照してください、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)インストール可能なファイル システム (IFS) ドキュメントのトピックです。
+特定の種類のドライバーでは、パラメーターにも値が使用さ**れます。 Read. ByteOffset**は、転送操作の開始オフセットを示します。 例については、「インストール可能ファイルシステム (IFS)」ドキュメントの「 [**IRP\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read) 」を参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-ターゲット デバイス オブジェクトの基になるデバイス ドライバーを設定するかどうかに応じて**フラグ**か\_バッファーに格納された\_IO またはで\_直接\_のいずれかに IO、データが転送されます。次:
+基になるデバイスドライバによってターゲットデバイスオブジェクトの**フラグ**が設定されているかどうかによって\_IO\_io または\_DIRECT\_io によって、次のいずれかにデータが転送されます。
 
--   バッファー **Irp -&gt;AssociatedIrp.SystemBuffer**ドライバーがバッファー内の I/O を使用している場合。
+-   ドライバーがバッファーされた i/o を使用する場合は、 **Irp-&gt;AssociatedIrp**のバッファー。
 
--   MDL で説明されているバッファー **Irp -&gt;MdlAddress**基になるデバイス ドライバーがダイレクト I/O (DMA または PIO) を使用している場合。
+-   基になるデバイスドライバーが直接 i/o (DMA または PIO) を使用している場合は、MDL によって記述された、Irp で記述されたバッファー **&gt;MdlAddress** 。
 
 <a name="operation"></a>操作
 ---------
 
-読み取り要求の受信後より高度なドライバーは、次の下位ドライバー用の IRP で I/O スタックの場所を設定または作成し、1 つまたは複数の下位のドライバーの追加の Irp を設定します。 これを設定することができます、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なは入力 IRP の省略可能ですが Irp のドライバーが作成に必要な呼び出して[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine). 次に、ドライバーが要求を使用してドライバーを次の下位を渡します[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+上位レベルのドライバーは、読み取り要求の受信時に、次に低いドライバーの IRP 内の i/o スタックの場所を設定します。または、1つまたは複数の下位のドライバーに対して追加の Irp を作成および設定します。 [**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出すことによって、入力 irp に対しては省略可能で、ドライバーで作成された irp に必要な[*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定できます。 次に、ドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して、要求を次の下位のドライバーに渡します。
 
-読み取り要求の受信後は、デバイス ドライバーは、システム メモリをそのデバイスからデータを転送します。 デバイス ドライバーのセット、**情報**IRP の完了時に I/O 状態ブロックのバイト数のフィールドが転送されます。
+デバイスドライバーは、読み取り要求の受信時に、デバイスからシステムメモリにデータを転送します。 デバイスドライバーは、i/o 状態ブロックの**情報**フィールドを、IRP の完了時に転送されたバイト数に設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -61,7 +61,7 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -69,13 +69,13 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
 
-[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)
+[**Ioset補完ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)
 
  
 

@@ -3,16 +3,16 @@ title: バグ チェック コールバックのビデオ ポート ドライバ
 description: バグ チェック コールバックのビデオ ポート ドライバー サポート
 ms.assetid: 181fd4f2-feed-4759-80a7-aec97b9094b3
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、バグ チェック コールバック
-- バグ チェック コールバック WDK ビデオのミニポート
+- ビデオミニポートドライバー WDK Windows 2000、バグチェックコールバック
+- バグチェックコールバックの WDK ビデオミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e3e90d207eb07c221161ee17a8ba4555e453c9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51a7080ea6c95b11ad1480197b6c0eba677f2522
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372626"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829186"
 ---
 # <a name="video-port-driver-support-for-bug-check-callbacks"></a>バグ チェック コールバックのビデオ ポート ドライバー サポート
 
@@ -20,13 +20,13 @@ ms.locfileid: "67372626"
 ## <span id="ddk_video_port_driver_support_for_bug_check_callbacks_gg"></span><span id="DDK_VIDEO_PORT_DRIVER_SUPPORT_FOR_BUG_CHECK_CALLBACKS_GG"></span>
 
 
-Windows XP SP1 以降では、ビデオのミニポート ドライバーを実装および登録できる[ **HwVidBugcheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_bugcheck_callback)、システムを呼び出すときに関数[ **0 xea (スレッドのバグ チェック\_STUCK\_IN\_デバイス\_ドライバー)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xea--thread-stuck-in-device-driver)に発生します。 *HwVidBugcheckCallback*ドライバー開発者は、ドライバーの問題の診断に使用できるダンプ ファイルに独自のデータを追加することができます。
+Windows XP SP1 以降では、ビデオミニポートドライバーは[**HwVidBugcheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_bugcheck_callback)を実装し、登録することができます。これは、[**バグチェック 0xea (\_デバイス\_ドライバーのスレッド\_スタック\_)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xea--thread-stuck-in-device-driver)が発生したときにシステムが呼び出す関数です。 *HwVidBugcheckCallback*は、ドライバーの開発者がドライバーの問題を診断するために使用できる、独自のデータをダンプファイルに追加できます。
 
-登録について*HwVidBugcheckCallback*、次のトピックを参照してください。
+*HwVidBugcheckCallback*の登録の詳細については、次のトピックを参照してください。
 
-[ビデオのミニポート ドライバー関数を個別に登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[個別に登録されたビデオミニポートドライバーの機能](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**VideoPortRegisterBugcheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportregisterbugcheckcallback)
+[**Videoportregisterバグチェックコールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportregisterbugcheckcallback)
 
  
 

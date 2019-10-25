@@ -3,24 +3,24 @@ title: 待機と APC
 description: 待機と APC
 ms.assetid: b967beec-922c-4acf-a578-c476ce024fdb
 keywords:
-- カーネルのディスパッチャー オブジェクト WDK、アラート
-- アラートのディスパッチャー オブジェクト WDK カーネル
+- カーネルディスパッチャーオブジェクト WDK、アラート
+- ディスパッチャーオブジェクト WDK カーネル、アラート
 - Apc WDK カーネル
-- アラートの WDK カーネル
-- カーネル ディスパッチャー オブジェクト WDK、Apc
-- Apc のディスパッチャー オブジェクト WDK カーネル
-- アラートのパラメーター
+- WDK カーネルにアラートを生成します。
+- カーネルディスパッチャーオブジェクト WDK、Apc
+- ディスパッチャーオブジェクト WDK カーネル、Apc
+- 警告可能パラメーター
 - WaitMode パラメーター
-- カーネルのディスパッチャー オブジェクトを待機している WDK
-- ディスパッチャー オブジェクト WDK カーネルは、を待つ
+- カーネルディスパッチャーオブジェクト WDK、待機中
+- ディスパッチャーオブジェクト WDK カーネル、待機中
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dba997a7aee7f059cee4922dde94a5a5830635e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a6103b4f319cee1d3d16d60832cb57fffd910a2b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358122"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838321"
 ---
 # <a name="waits-and-apcs"></a>待機と APC
 
@@ -28,13 +28,13 @@ ms.locfileid: "67358122"
 
 
 
-その待機を中断させるユーザー APC またはスレッドの終了のいずれかのユーザー モードの呼び出し元に代わってディスパッチャー オブジェクトを待っているスレッドを準備する必要があります。 スレッドを呼び出すと[ **kewaitforsingleobject の 1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)、 [ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)、 [ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[ **KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)、オペレーティング システムが待機状態でスレッドを配置できます。 通常、オペレーティング システムには、呼び出し元を要求する操作が完了するまで、スレッドは待機状態に残ります。 ただし、呼び出し元が指定されている場合*WaitMode* = ユーザー モードでは、オペレーティング システムは、待機を中断可能性があります。 状態の NTSTATUS 値を持つルーチンが終了する場合、\_ユーザー\_APC します。
+ユーザーが呼び出しを中断するには、ユーザーの APC またはスレッドの終了によって、ユーザーモード呼び出し元に代わってディスパッチャーオブジェクトを待機するスレッドを準備する必要があります。 スレッドが[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)、 [**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)、 [**kewaitformutexobject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[**kedelayexecutionthread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kedelayexecutionthread)を呼び出すと、オペレーティングシステムはスレッドを待機状態にすることができます。 通常、スレッドは、呼び出し元が要求する操作をオペレーティングシステムが完了できるまで、待機状態のままにします。 ただし、呼び出し元で*Waitmode* = モードが指定されている場合、オペレーティングシステムは待機を中断する可能性があります。 この場合、ルーチンは、ユーザー\_APC の状態\_ユーザーの NTSTATUS 値で終了します。
 
-ドライバーで上記の 4 つのルーチンの 1 つを呼び出す*WaitMode* = UserMode 状態の戻り値を受け取る準備をする必要があります\_ユーザー\_APC します。 ドライバーは、状態とその現在の操作を完了する必要があります\_ユーザー\_APC をユーザー モードに制御を戻します。
+*Waitmode* = ユーザー設定を使用して上記の4つのルーチンのいずれかを呼び出すドライバーは、\_ユーザー\_APC の戻り値を受け取るように準備する必要があります。 ドライバーは、現在の操作を\_ユーザー\_APC の状態で完了し、ユーザーモードに制御を返す必要があります。
 
-オペレーティング システムが待機を中断する正確な状況は、の値によって異なります、 *Alertable*ルーチンのパラメーター。 場合*Alertable* = **TRUE**、待機が待機警告。 それ以外の場合、待機、警告不可能待機しています。 オペレーティング システムでは、ユーザーの APC を提供する場合のみアラート可能な待機を中断します。 オペレーティング システムでは、両方の種類のスレッドを終了するまで待機を中断します。
+オペレーティングシステムが待機を中断する正確な状況は、ルーチンの*警告*可能なパラメーターの値によって異なります。 *警告*可能 = **TRUE**の場合、待機は警告可能な待機です。 それ以外の場合、待機は、警告不可能な待機です。 オペレーティングシステムは、ユーザー APC を配信するためだけに、警告可能な待機を中断します。 オペレーティングシステムは、スレッドを終了するために、両方の種類の待機を中断します。
 
-次の表では、さまざまなパラメーターの設定、待機、およびユーザー APC 配信間の関係について説明します。
+次の表では、さまざまなパラメーター設定、待機、およびユーザー APC 配信の関係について説明します。
 
 <table>
 <colgroup>
@@ -45,45 +45,45 @@ ms.locfileid: "67358122"
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>中断された待機しますか。</th>
-<th>ユーザー APC が提供されるでしょうか。</th>
+<th>中断しますか?</th>
+<th>ユーザー APC が配信されたか?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><em>警告</em> = <strong>TRUE</strong>
-<em>WaitMode</em> = <strong>UserMode</strong></td>
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><em>警告</em>可能 = <strong>TRUE</strong>
+<em>waitmode</em> <strong> = のモード</strong></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 </tr>
 <tr class="even">
-<td><em>Alertable</em> = <strong>TRUE</strong>
-<em>WaitMode</em> = <strong>KernelMode</strong></td>
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td> = <strong>TRUE</strong>
+<em>Waitmode</em> = <strong>kernelmode で</strong>を<em>警告</em>する</td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 </tr>
 <tr class="odd">
-<td><em>警告</em> = <strong>FALSE</strong>
-<em>WaitMode</em> = <strong>UserMode</strong></td>
-<td><p>はい、スレッドの終了。 ユーザー テスト アプリケーションのいいえ</p></td>
-<td><p>X</p></td>
+<td><em>警告</em>可能 = <strong>偽</strong>
+<em>waitmode</em> <strong> = のモード</strong></td>
+<td><p>はい (スレッドを終了する場合)。 いいえ (ユーザー Apc の場合)。</p></td>
+<td><p>必須ではない</p></td>
 </tr>
 <tr class="even">
-<td><em>Alertable</em> = <strong>FALSE</strong>
-<em>WaitMode</em> = <strong>KernelMode</strong></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
+<td><em> = </em> <strong>偽</strong>
+<em>waitmode</em> = <strong>kernelmode で</strong></td>
+<td><p>必須ではない</p></td>
+<td><p>必須ではない</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-スレッドのカーネルの Apc を無効にすることができます。 スレッド カーネル Apc を無効にするには、ユーザー APC 配信とそのスレッドのスレッドの終了の両方も無効となります。 Apc を無効にする方法の詳細については、次を参照してください。 [Apc を無効にすると](disabling-apcs.md)します。
+スレッドに対してカーネル Apc を無効にすることができます。 スレッドに対してカーネル Apc を無効にすると、そのスレッドのユーザー APC 配信とスレッド終了の両方も無効になります。 Apc を無効にする方法の詳細については、「 [apc の無効化](disabling-apcs.md)」を参照してください。
 
-アラート、使用頻度の低いのメカニズムは、オペレーティング システムの内部では、アラートの待機状態は中断もできます。 アラートは、待機を中断できる場合に*Alertable* = **TRUE**の値に関係なく、 *WaitMode*パラメーター。 待機中のルーチンは、状態の値を返します\_ALERTED します。
+アラートは、オペレーティングシステム内部のまれなメカニズムであり、警告可能な待機状態を中断することもできます。 アラートは、 *Waitmode*パラメーターの値に関係なく、警告 = **TRUE**の場合は*待機に割り込む*ことができます。 待機中のルーチンは、警告\_状態の値を返します。
 
-カーネル Apc が事前に、実行し、発生しないことを確認**KeWaitFor * Xxx*** または**KeDelayExecutionThread**を返します。 システムが中断し、内部的には、待機を再開します。 ドライバーは通常、このプロセスによって影響を受けませんが、ドライバーへの呼び出しなどの一時的な状態のディスパッチャー オブジェクト信号を見逃す可能性があります[ **KePulseEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kepulseevent)します。
+カーネル Apc は事前にを実行しますが、 **Kewaitfor * Xxx*** または**Kedelayexecutionthread**はを返しません。 システムは割り込みを中断し、内部で待機を再開します。 通常、ドライバーはこのプロセスの影響を受けませんが、 [**KePulseEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kepulseevent)の呼び出しなど、一時的な状態に対して、ドライバーがディスパッチャーオブジェクトのシグナルを見逃してしまう可能性があります。
 
  
 

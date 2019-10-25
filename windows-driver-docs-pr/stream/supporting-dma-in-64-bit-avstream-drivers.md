@@ -5,18 +5,18 @@ ms.assetid: 1173a83f-8d9e-4678-bfb5-f2fb91e827be
 keywords:
 - AVStream WDK、ハードウェア
 - ハードウェア WDK AVStream
-- DMA は、WDK AVStream をサービスします。
-- ダイレクト メモリ アクセスの WDK AVStream
-- 64 ビットの WDK AVStream
-- 32 ビットのアドレス指定可能なデバイス WDK AVStream
+- DMA サービス WDK AVStream
+- ダイレクトメモリアクセス WDK AVStream
+- 64-bit WDK AVStream
+- 32ビットアドレス可能なデバイス WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2279137fe23ca5aff81367ddfb71041d68b264d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 27f3064a9d8cce9a3df542acfb3e97a686f669b5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377774"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837670"
 ---
 # <a name="supporting-dma-in-64-bit-avstream-drivers"></a>64 ビット AVStream ドライバーの DMA のサポート
 
@@ -24,13 +24,13 @@ ms.locfileid: "67377774"
 
 
 
-AVStream では、32 ビットおよび 64 ビットのアドレス指定可能なデバイスで DMA をサポートしています。
+AVStream では、32ビットおよび64ビットのアドレス指定可能なデバイスで DMA がサポートされています。
 
-Win64 プラットフォームを使用する必要があります用にコンパイルされたすべてのドライバー [ **IKsDeviceFunctions::RegisterAdapterObjectEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-iksdevicefunctions-registeradapterobjectex)の代わりに[ **KsDeviceRegisterAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdeviceregisteradapterobject).
+Win64 プラットフォーム用にコンパイルされたすべてのドライバーは、 [**KsDeviceRegisterAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)ではなく[**Iksdevicefunctions:: RegisterAdapterObjectEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-iksdevicefunctions-registeradapterobjectex)を使用する必要があります。
 
-**IKsDeviceFunctions::RegisterAdapterObjectEx**は Microsoft Windows Server 2003 SP1 で使用可能な以降のみです。
+**Iksdevicefunctions:: RegisterAdapterObjectEx**は、Microsoft Windows SERVER 2003 SP1 以降でのみ使用できます。
 
-次のコード例では、x64 ベースのクライアントのリリースと 32 ビット プラットフォームの両方で DMA をサポートする方法を示します。
+次のコード例は、x64 ベースのクライアントリリースと32ビットの両方のプラットフォームで DMA をサポートする方法を示しています。
 
 ```cpp
 NTSTATUS MyDeviceStart (...) {
@@ -80,9 +80,9 @@ sizeof (KSMAPPING)
 ...
 ```
 
-このコード例は、32 ビットと 64 ビット プラットフォームで動作します。 ドライバーが見つからない場合**IKsDeviceFunctions::RegisterAdapterObjectEx**、呼び出しがまだ**KsDeviceRegisterAdapter**します。
+このコード例は、64ビットと32ビットのプラットフォームで動作します。 ドライバーが**Iksdevicefunctions:: RegisterAdapterObjectEx**を見つけられない場合でも、 **KsDeviceRegisterAdapter**を呼び出します。
 
-さらに、64 ビットの AVStream ドライバーを作成するときは、保持されているロックを同時実行のフレームの数を最小限に抑えます。 ミニドライバーは最初のフレームをロックしたときに、AVStream はスキャッター/ギャザーのマッピングを生成するため、ドライバーは、このガイドラインに従わない場合リソースが不足実行可能性があります。 具体的には、低いメモリ バッファーは限られたリソースであるために、ロックが失敗することは、32 ビットのカードで Win64 プラットフォーム上で実行するためのドライバーを作成する場合に同時ロックの数を増やして増加します。
+さらに、64ビット AVStream ドライバーを作成する場合は、保持されている同時実行フレームロックの数を最小限に抑えます。 ミニドライバーが最初にフレームをロックしたときに AVStream によってスキャッター/ギャザーマッピングが生成されるため、このガイドラインに従っていない場合は、ドライバーでリソースが不足する可能性があります。 特に、32ビットカードを使用する Win64 プラットフォームで実行するドライバーを作成する場合は、同時ロックの数を増やすと、メモリが不足しているためにロックが失敗する可能性が高くなります。
 
  
 

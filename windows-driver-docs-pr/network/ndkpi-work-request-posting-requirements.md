@@ -1,51 +1,51 @@
 ---
 title: NDKPI 作業要求投稿要件
-description: このセクションは、NDKPI 作業要求投稿するための要件を説明します
+description: このセクションでは、NDKPI work 要求の投稿の要件について説明します。
 ms.assetid: 2BF6F253-FCB4-4A61-9A67-81092F3C44E4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4182ffa518121beab9ac7ac71d12629f29731654
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7df322909559045a3412a3b471558c0e5cf80ead
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364022"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829108"
 ---
 # <a name="ndkpi-work-request-posting-requirements"></a>NDKPI 作業要求投稿要件
 
 
-## <a name="work-request-posting-rules-for-the-consumer"></a>作業要求が、コンシューマーの転記ルール
+## <a name="work-request-posting-rules-for-the-consumer"></a>コンシューマーの勤務先要求の投稿ルール
 
 
-NDK コンシューマーは、次の種類の作業要求を発信側キューに投稿されます。
+NDK コンシューマーは、次の種類の作業要求を発信側キューに送信します。
 
--   *NdkBind* ([*NDK\_FN\_BIND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_bind))
--   *NdkFastRegister* ([*NDK\_FN\_FAST\_REGISTER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_fast_register))
--   *NdkInvalidate* ([*NDK\_FN\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_invalidate))
--   *NdkRead* ([*NDK\_FN\_READ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_read))
--   *NdkSend* ([*NDK\_FN\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_send))
--   *NdkSendAndInvalidate* ([*NDK\_FN\_SEND\_AND\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_send_and_invalidate))
--   *NdkWrite* ([*NDK\_FN\_WRITE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_write))
+-   *Ndkbind* ([*NDK\_FN\_BIND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_bind))
+-   *Ndkfastregister* ([*NDK\_FN\_FAST\_REGISTER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_fast_register))
+-   *NdkInvalidate* ([*NDK\_FN\_無効化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_invalidate))
+-   *Ndkread* ([*NDK\_FN\_読み取り*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_read))
+-   *Ndksend* ([*NDK\_FN\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_send))
+-   *Ndksendandinvalidate* ([*NDK\_FN\_SEND\_および\_無効化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_send_and_invalidate))
+-   *Ndkwrite* ([*NDK\_FN\_書き込み*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_write))
 
-コンシューマーでは、投稿*NdkReceive* ([*NDK\_FN\_受信*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_receive)) 受信キューに要求します。
+コンシューマーは、受信キューに*Ndkreceive* ([*NDK\_FN\_receive*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_receive)) 要求を送信します。
 
-コンシューマーはのすべてが同じ個別のキューにこれらの要求を投稿、 [ **NDK\_QP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_qp)または[ **NDK\_の**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_srq)シリアル化された形式でします。 つまり、コンシューマーがない任意の作業要求関数への 2 つの同時呼び出しに属する個々 のキューで同じで、 **NDK\_QP**または**NDK\_の**します。
+コンシューマーは、すべての要求を[**NDK\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_qp)または ndk の同じ個別のキューに送信し、シリアル化された形式で[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_srq)します。 つまり、1つの**ndk\_QP**または**ndk\_** に属する同一のキューにあるすべての作業要求関数に対して、コンシューマーが同時に2回呼び出しを行うことはありません。
 
-つまり、たとえば、その同時*NdkReceive*発行された、同時呼び出しはできません*NdkSend*と*NdkWrite*呼び出しを発行しませんが、同時*NdkReceive*と*NdkWrite* 、同じ呼び出しを発行できる[ **NDK\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_qp)します。
+つまり、たとえば、同時*Ndkreceive*呼び出しは発行されず、同時*Ndkreceive*呼び出しと*ndkreceive*呼び出しは発行されませんが、同時*ndkreceive*および*ndkreceive*呼び出しは同じ NDK で発行される可能性があり[ **@no__ QP (_s)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_qp)。
 
-## <a name="work-request-posting-rules-for-the-provider"></a>作業の要求プロバイダーの規則を投稿します。
+## <a name="work-request-posting-rules-for-the-provider"></a>プロバイダーの作業要求の投稿ルール
 
 
-プロバイダーでは、コンシューマーによってシリアル化することが保証されますので、上記の作業要求関数内で冗長なロックは必要ありません。
+プロバイダーは、コンシューマーによってシリアル化されることが保証されるため、上記の作業要求関数内に冗長なロックを設定することはできません。
 
-プロバイダーは、処理できる必要があります*NdkFlush* ([*NDK\_FN\_フラッシュ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_flush))、作業と同時に呼び出すことが呼び出しの呼び出しを要求します。同じ[ **NDK\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_qp)します。
+プロバイダーは、同じ[**ndk\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_qp)で作業要求呼び出しと同時に呼び出すことができる*ndkflush* ([*ndk\_FN\_FLUSH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_flush)) 呼び出しを処理できる必要があります。
 
-プロバイダーは、処理できる必要があります、 **NdkCloseConnector**呼び出し (後継の[ **NDK\_コネクタ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_connector)オブジェクト、 [ **NDK\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_qp)) を呼び出すことができます、作業要求の呼び出しと同時に同じ**NDK\_QP**します。
+プロバイダーは、同じ**ndk\_qp**で作業要求呼び出しと同時に呼び出される可能性がある、( [**ndk\_QP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_qp)の後継[ **\_コネクタ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_connector)オブジェクトの **) 呼び出しを**処理できる必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

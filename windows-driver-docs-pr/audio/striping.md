@@ -3,31 +3,31 @@ title: ストライピング
 description: ストライピング
 ms.assetid: 29ab650c-0c3b-4693-a277-4d9ba63b7b66
 keywords:
-- ストライピング WDK オーディオ
+- WDK オーディオのストライピング
 - HD オーディオ、ストライピング
-- 高解像度オーディオ (HD オーディオ)、ストライピング
+- High Definition Audio (HD audio)、ストライピング
 - HD オーディオ、帯域幅
-- 高解像度オーディオ (HD オーディオ)、帯域幅
-- バスの帯域幅の WDK オーディオ
-- 帯域幅の WDK オーディオ
-- 帯域幅の割り当てください。
+- High Definition Audio (HD audio)、帯域幅
+- バス帯域幅 WDK オーディオ
+- 帯域幅 WDK オーディオ
+- 帯域幅の割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaa50f62832134b566fccdbb521fe5ae20d0d6f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a002afac326d572af80849061048870fa59a651
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354251"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830105"
 ---
 # <a name="striping"></a>ストライピング
 
 
-HD オーディオ アーキテクチャと呼ばれる手法をサポートしている*ストライピング*ストリームを表示するバスの帯域幅の量を削減することができますを使用します。 HD オーディオ ハードウェアのインターフェイスは、1 つ以上の SDO 行を提供する場合、ストライピングは、位置レンダリングの DMA エンジンは、または SDO 行の間でデータ ストリーム内のビットを分散することによってデータを転送できる速度を向上できます。 SDO0 経由 (最上位ビット) の最初のビット、2 番目のビットが SDO1、具合を介して送信されます。 たとえば、SDO の 2 行効果的にストライピングを 2 倍に転送速度 SDO の 2 行の間のストリームを分割することで。 ストライピングを使用して、レンダリングの転送が SDO の 2 つの行をストリームの DMA エンジンは、ストライピングを使用していない場合は消費するだけの半分のバス帯域幅を消費します。
+HD オーディオアーキテクチャは*ストライピング*と呼ばれる手法をサポートしています。これにより、レンダーストリームで消費されるバス帯域幅の量を減らすことができます。 HD オーディオハードウェアインターフェイスに複数の SDO 線がある場合、ストライピングによって、データストリーム内のビットを SDO 行に分散させることで、レンダー DMA エンジンがデータを転送できる速度を上げることができます。 最初のビット (最上位ビット) は SDO0 を経由し、2番目のビットは SDO1 に移動します。 たとえば、2つの SDO 線を使用すると、ストライピングでは、2つの SDO 行の間にストリームを分割することで、転送速度を効率的に倍増させることができます。 ストライピングを使用して2つの SDO 行にレンダーストリームを転送する DMA エンジンでは、ストライピングを使用しなかった場合に消費されるバス帯域幅の半分しか消費されません。
 
-関数のドライバーにより、を通じてストライピング、 [ **AllocateRenderDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_render_dma_engine)ルーチンの*ストライプ*パラメーターを呼び出します。
+関数ドライバーは、 [**AllocateRenderDmaEngine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine)ルーチンの*ストライプ*呼び出しパラメーターを使用してストライピングを有効にします。
 
-ストライピングの詳細については、次を参照してください。、 *Intel 高度な定義オーディオ仕様*で、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。
+ストライピングの詳細については、intel [HD audio](https://go.microsoft.com/fwlink/p/?linkid=42508) web サイトの「 *Intel High Definition audio Specification* 」を参照してください。
 
  
 

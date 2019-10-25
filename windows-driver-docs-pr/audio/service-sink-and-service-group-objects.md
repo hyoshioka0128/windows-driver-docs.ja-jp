@@ -3,25 +3,25 @@ title: サービス シンクとサービスのグループのオブジェクト
 description: サービス シンクとサービスのグループのオブジェクト
 ms.assetid: 00e17e01-8889-4fae-a0ff-e110d7a9b21e
 keywords:
-- ヘルパー オブジェクト WDK オーディオ、サービス シンク オブジェクト
-- ヘルパー オブジェクト WDK オーディオ、サービス グループ オブジェクト
-- サービス シンク オブジェクトの WDK オーディオ
-- サービス グループ オブジェクトの WDK オーディオ
-- IServiceSink インターフェイス
+- ヘルパーオブジェクト WDK オーディオ、サービスシンクオブジェクト
+- ヘルパーオブジェクト WDK オーディオ、サービスグループオブジェクト
+- サービスシンクオブジェクト WDK オーディオ
+- サービスグループオブジェクト WDK オーディオ
+- Iサービスインクインターフェイス
 - IServiceGroup インターフェイス
-- 割り込み通知 WDK オーディオを配布します。
-- 通知の WDK オーディオ
-- 割り込み通知 WDK オーディオ
-- 割り込みサービス ルーチン WDK オーディオ
+- 割り込み通知の配布 (WDK audio)
+- 通知 WDK オーディオ
+- 割り込み通知の WDK オーディオ
+- 割り込みサービスルーチン WDK オーディオ
 - Isr WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc28d79bf70282e6598f5fe502a786c4a35c9d0e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c8308f461877f386518c3c042c07eaef5cf4ec4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355264"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830175"
 ---
 # <a name="service-sink-and-service-group-objects"></a>サービス シンクとサービスのグループのオブジェクト
 
@@ -29,85 +29,85 @@ ms.locfileid: "67355264"
 ## <span id="service_sink_and_service_group_objects"></span><span id="SERVICE_SINK_AND_SERVICE_GROUP_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)と[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)ポートおよびミニポート ドライバーのためのインターフェイス。 ポート ドライバーでは、これらのインターフェイスを使用する独自のサービス ルーチンでは、割り込み通知を配布して、ミニポート ドライバーのような目的でこれらのインターフェイスを使用するオプションがあります。 IServiceSink オブジェクトが、サービス ルーチンをカプセル化し、IServiceGroup オブジェクトが IServiceSink オブジェクトのグループを表します。 サービス グループは、サービス要求を受信したときにそのサービスのシンクのそれぞれに要求を配信します。
+PortCls システムドライバーは、ポートおよびミニポートドライバーの利点を得るために、 [iサービス](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)インターフェイスと[iservicesink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)インターフェイスを実装しています。 ポートドライバーは、これらのインターフェイスを使用して割り込み通知を独自のサービスルーチンに配布します。また、ミニポートドライバーは、これらのインターフェイスを同様の目的で使用するオプションを備えています。 Iservices Ink オブジェクトはサービスルーチンをカプセル化し、Iservicesink オブジェクトは iservices Ink オブジェクトのグループを表します。 サービスグループはサービス要求を受け取ると、その要求を各サービスシンクに配布します。
 
-[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)継承[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)します。 サービス グループは、サービス シンクではまた、オーディオ ドライバーがないこの機能の使用を行う通常サービス グループは他のサービス グループを含むことができます。 ポート ドライバーは、サービス グループの機能が他の目的に役立つ可能性のあるさせるほどの汎用現在サービス グループとの割り込みのサービス要求を多重に使用します。
+[Iservicegroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)は[Iサービスのインク](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)から継承します。 サービスグループはサービスシンクでもあるため、サービスグループは他のサービスグループを含むことができますが、通常、オーディオドライバーはこの機能を使用しません。 現在、ポートドライバーは、割り込みサービスの要求を多重化するためにサービスグループを使用しています。ただし、サービスグループの機能は、他の目的にも役立つ可能性があります。
 
-ミニポート ドライバーの割り込みサービス ルーチン (ISR) は、ポート ドライバーで、次の通知方法のいずれかを呼び出します。
+ミニポートドライバーの割り込みサービスルーチン (ISR) は、ポートドライバーで次のいずれかの通知方法を呼び出します。
 
-[**IPortDMus::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iportdmus-notify)
+[**IPortDMus:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-notify)
 
-[**IPortMidi::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportmidi-notify)
+[**IPortMidi:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportmidi-notify)
 
-[**IPortWaveCyclic::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavecyclic-notify)
+[**IPortWaveCyclic:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavecyclic-notify)
 
-[**IPortWavePci::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)
+[**IPortWavePci:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)
 
-通知方法は、呼び出しのパラメーターとしてサービス グループにポインターを受け取ります。 ポートのドライバーがサービス グループを呼び出し、この呼び出し中に[ **IServiceSink::RequestService** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)メソッドで、遅延プロシージャ呼び出し (DPC) のキューします。 DPC が実行されると、サービス グループ内のすべてのメンバー オブジェクトにサービス要求を転送します。
+通知メソッドは、サービスグループへのポインターを呼び出しパラメーターとして受け取ります。 この呼び出しの間、ポートドライバーは、遅延プロシージャ呼び出し (DPC) をキューに置いたサービスグループの[**iservices ink:: requestservice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)メソッドを呼び出します。 DPC が実行されると、サービスグループ内のすべてのメンバーオブジェクトにサービス要求が転送されます。
 
-ミニポート ドライバー コード通常しなくてもいずれかを呼び出す[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)インターフェイスのメソッド。 ただし、ポート ドライバー メソッドが呼び出される追加する独自[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)ミニポート ドライバーから取得するサービス グループにオブジェクト。 ミニポート ドライバーでは、必要に応じてサービス グループ オブジェクトを作成し、それらのサービス グループを定期的な処理を必要とするミニポートおよびストリームのオブジェクトに関連付けます。 たとえば、WaveCyclic ミニポート ドライバー グループに関連付けますストリーム オブジェクト、サービスへの出力パラメーターとして指定された、 [ **IMiniportWaveCyclic::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)メソッド。
+通常、ミニポートドライバーコードでは、 [Iservicegroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)インターフェイスメソッドを呼び出す必要はありません。 ただし、ポートドライバーは、これらのメソッドを呼び出して、ミニポートドライバーから取得したサービスグループに独自の[iservices ink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)オブジェクトを追加します。 ミニポートドライバーは、必要に応じてサービスグループオブジェクトを作成し、それらのサービスグループを、定期的なサービスを必要とするミニポートおよびストリームオブジェクトに関連付けます。 たとえば、WaveCyclic ミニポートドライバーは、 [**IMiniportWaveCyclic:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream)メソッドに出力パラメーターとして指定されているサービスグループにストリームオブジェクトを関連付けます。
 
-WaveCyclic ミニポート ドライバーのコンテキストでの原因のすべてのストリームを 1 つのサービス グループに関連付ける 1 つの通知に基づくすべてのストリームを処理するポート ドライバー。 各ストリームを独自のサービス グループに関連付けるには、DPC の実行中に、ポート ドライバーによって処理されるストリームを選択する割り込みサービス ルーチンが使用できます。
+WaveCyclic ミニポートドライバーのコンテキストでは、すべてのストリームを1つのサービスグループに関連付けることにより、ポートドライバーは1つの通知に基づいてすべてのストリームを処理します。 各ストリームをそれぞれのサービスグループに関連付けることにより、割り込みサービスルーチンは、DPC の実行中にポートドライバーによって処理されるストリームを選択できます。
 
-ミニポート ドライバーは、ポート ドライバーでは、次の初期化方法のいずれかを呼び出すと、そのサービスのグループへの参照を出力します。
+ポートドライバーが次のいずれかの初期化メソッドを呼び出すと、ミニポートドライバーはそのサービスグループへの参照を出力します。
 
-[**IMiniportDMus::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-init)
+[**IMiniportDMus:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-init)
 
-[**IMiniportMidi::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-init)
+[**IMiniportMidi:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-init)
 
-[**IMiniportWavePci::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)
+[**IMiniportWavePci:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init)
 
-ポートのドライバーを追加、独自[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)オブジェクトから取得するサービスのグループに、 **Init**呼び出します。 ミニポート ドライバーの ISR が後で呼び出すときに**通知**サービス グループが順番に通知を転送する、ポート ドライバーの IServiceSink オブジェクトへの通知を転送する DPC をキュー サービス グループに通知を送信するには次のサービス メソッドのいずれかを呼び出してミニポート ドライバー:
+ポートドライバーは、 **Init**呼び出しから取得したサービスグループに、独自の[iservices ink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)オブジェクトを追加します。 その後、ミニポートドライバーの ISR が通知を呼び出して、そのサービスグループに通知を**送信すると**、サービスグループは、ポートドライバーの Iservices ink オブジェクトに通知を転送する DPC をキューに入れます。次のいずれかのサービスメソッドを呼び出します。
 
-[**IMiniportDMus::Service** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-service) (未使用)
+[**IMiniportDMus:: Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-service) (使用されていません)
 
-[**IMiniportMidi::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-service)
+[**IMiniportMidi:: Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-service)
 
-[**IMiniportWavePci::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-service)
+[**IMiniportWavePci:: Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-service)
 
-ミニポート ドライバーでは、ポート ドライバーは、次のストリームの作成方法のいずれかを呼び出すときにそのサービスのグループへの参照も出力されます。
+また、ポートドライバーが次のストリーム作成メソッドのいずれかを呼び出すと、そのサービスグループへの参照も出力されます。
 
-[**IMiniportDMus::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)
+[**IMiniportDMus:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)
 
-[**IMiniportMidi::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-newstream)
+[**IMiniportMidi:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-newstream)
 
-[**IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)
+[**IMiniportWaveCyclic:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream)
 
-[**IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)
+[**IMiniportWavePci:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)
 
-前述のように、ミニポート ドライバーによって各ストリームの別のサービス グループを作成するか、1 つのサービス グループのすべてのストリーム間で共有のオプションがあります。
+前に説明したように、ミニポートドライバーには、ストリームごとに異なるサービスグループを作成するか、すべてのストリームで1つのサービスグループを共有するオプションがあります。
 
-次のメソッドのヘルプ MIDI と Dmu ポート ドライバーがハードウェア割り込みの削除を回避します。
+次のメソッドを使用すると、MIDI および DMus ポートドライバーがハードウェア割り込みを削除するのを防ぐことができます。
 
-[**IPortMidi::RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportmidi-registerservicegroup)
+[**IPortMidi:: RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportmidi-registerservicegroup)
 
-[**IPortDMus::RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
+[**IPortDMus:: RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
 
-実行中にその**Init**メソッド、MIDI または Dmu のミニポート ドライバーは通常、ポート ドライバーの呼び出す**RegisterServiceGroup**シンセサイザーを開始する前にメソッド。 この呼び出しの目的では、サービスのグループにポート ドライバーは、(その割り込みハンドラーを含む)、そのサービス シンク オブジェクトの挿入を許可するのにはハードウェアは、割り込みの生成を開始する前にです。 ただし、 **Init**メソッドの出力ポート ドライバーへのサービス グループ ポインター、ポート ドライバーからの戻り値の後にのみ、このポインターを使用する**Init**。
+**Init**メソッドの実行中、通常、MIDI または dmus ミニポートドライバーは、シンセサイザーを起動する前に、ポートドライバーの**registerservicegroup**メソッドを呼び出します。 この呼び出しの目的は、ハードウェアが割り込みの生成を開始する前に、ポートドライバーがその割り込みハンドラーを含むサービスシンクオブジェクトをサービスグループに挿入できるようにすることです。 **Init**メソッドはポートドライバーへのサービスグループポインターを出力しますが、ポートドライバーは、 **init**からの戻り値の後にのみこのポインターを利用できます。
 
-WavePci ポート ドライバーでは、場合、ポート オブジェクトを追加独自[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)オブジェクトから取得するサービスのグループに、 [ **IMiniportWavePci::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)呼び出します。 ミニポート ドライバーの ISR が後で呼び出すときに**通知**サービス グループが、ポート ドライバーの IServiceSink オブジェクトは、さらに実行すると、次に、通知を転送する DPC をキュー サービス グループに通知を送信します。
+WavePci port ドライバーの場合、ポートオブジェクトは、 [**IMiniportWavePci:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)呼び出しから取得したサービスグループに独自の[iservices ink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)オブジェクトを追加します。 その後、ミニポートドライバーの ISR が通知を呼び出して、そのサービスグループに通知を**送信すると**、サービスグループは、ポートドライバーの Iサービスインクオブジェクトに通知を転送する DPC をキューに入れます。このオブジェクトは、次の処理を行います。
 
--   サービス メソッドを呼び出すことによって、ミニポート ストリームへの通知を転送[ **IMiniportWavePciStream::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)します。
+-   サービスメソッド[**IMiniportWavePciStream:: service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-service)を呼び出して、通知をミニポートストリームに転送します。
 
--   位置やクロックのイベントを暗証番号 (pin) を起動することができるをトリガーします。
+-   起動準備ができているピン上の任意の位置またはクロックイベントをトリガーします。
 
-[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)インターフェイスは、1 つのメソッドをサポートしています。
+[Iサービスインク](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)インターフェイスは、次の1つのメソッドをサポートしています。
 
-[**IServiceSink::RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)
+[**Iservices Ink:: RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)
 
-[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)インターフェイスは、次のメソッドをサポートしています。
+[Iservicegroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)インターフェイスは、次のメソッドをサポートしています。
 
-[**IServiceGroup::AddMember**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-addmember)
+[**IServiceGroup:: AddMember**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-addmember)
 
-[**IServiceGroup::CancelDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-canceldelayedservice)
+[**IServiceGroup:: CancelDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-canceldelayedservice)
 
-[**IServiceGroup::RequestDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-requestdelayedservice)
+[**IServiceGroup:: RequestDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-requestdelayedservice)
 
-[**IServiceGroup::RemoveMember**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-removemember)
+[**IServiceGroup:: RemoveMember**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-removemember)
 
-[**IServiceGroup::SupportDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-supportdelayedservice)
+[**IServiceGroup:: SupportDelayedService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-supportdelayedservice)
 
-さらに、PortCls システム ドライバーが提供、 [ **PcNewServiceGroup** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewservicegroup)新しいサービス グループ オブジェクトを作成するための関数。 ただし、サービス シンク オブジェクトを作成するのと同様の関数は存在しません。 単純にポート ドライバーを追加、 [IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)インターフェイス - メイン ポート オブジェクトの実装にオブジェクトが作成されると、これはサービス シンク。 ポート ドライバーは、ミニポート ドライバーから受信するサービスのグループに、ポート オブジェクトの IServiceSink インターフェイスを追加することができます**Init**または**NewStream**メソッド。 便宜上、ヘッダー ファイル Portcls.h を定義します**IMP\_IServiceSink**と**IMP\_IServiceGroup** IServiceSink を追加するための定数と[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)ドライバー オブジェクトへのインターフェイス。
+また、PortCls システムドライバーには、新しいサービスグループオブジェクトを作成するための[**Pcnewservicegroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewservicegroup)関数が用意されています。 ただし、サービスシンクオブジェクトを作成するための類似した関数は存在しません。 ポートドライバーは、主なポートオブジェクトの実装に[iservices ink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)インターフェイスを追加するだけです。オブジェクトが作成されると、サービスシンクになります。 ポートドライバーは、ポートオブジェクトの Iサービスインクインターフェイスを、ミニポートドライバーの**Init**または**newstream**メソッドから受信したサービスグループに追加できます。 便宜上、ヘッダーファイル Portcls では、iservicesink インターフェイスと[iservicesink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)インターフェイスをドライバーオブジェクトに追加するための **\_iservicesink**定数としてを **\_** 定義しています。
 
  
 

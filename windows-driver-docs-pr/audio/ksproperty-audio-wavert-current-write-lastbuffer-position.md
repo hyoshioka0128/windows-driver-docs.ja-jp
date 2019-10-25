@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置
-description: KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プロパティは、オーディオのバッファー内の最後の有効なバイトを示すために使用します。
+title: KSK プロパティ\_AUDIO\_WALAST\_現在の\_\_LASTBUFFER\_POSITION の書き込み
+description: KSK プロパティ\_AUDIO\_WALAST\_現在の\_書き込み\_LASTBUFFER\_POSITION プロパティは、オーディオバッファー内の最後の有効なバイトを示すために使用されます。
 ms.assetid: 01EC2F29-D30A-4017-841F-8443D7C4BCF6
 keywords:
-- KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_LASTBUFFER_POSITION オーディオ デバイス
+- KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_LASTBUFFER_POSITION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2dcd5e64408dc015b12e7d5f7f4076689b0757f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 078f02f46d898dcfc12d3a1a9a1742d3a2de27e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358876"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830927"
 ---
-# <a name="kspropertyaudiowavertcurrentwritelastbufferposition"></a>KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置
+# <a name="ksproperty_audio_wavert_current_write_lastbuffer_position"></a>KSK プロパティ\_AUDIO\_WALAST\_現在の\_\_LASTBUFFER\_POSITION の書き込み
 
 
-KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プロパティは、オーディオのバッファー内の最後の有効なバイトを示すために使用します。
+KSK プロパティ\_AUDIO\_WALAST\_現在の\_書き込み\_LASTBUFFER\_POSITION プロパティは、オーディオバッファー内の最後の有効なバイトを示すために使用されます。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -47,9 +47,9 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>暗証番号 (pin) のインスタンスを使用してノード</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>ピンのインスタンスによるノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
@@ -58,20 +58,20 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 
  
 
-プロパティの値は ULONG 型であり、WaveRT の音声バッファー内の最後の有効なバイトを表します。
+プロパティ値の型は ULONG で、WaveRT オーディオバッファー内の最後の有効なバイトを表します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プロパティ要求がステータスを返します\_が完了したことを示す成功正常にします。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AUDIO\_WALAST\_現在の\_書き込み\_LASTBUFFER\_POSITION プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-クライアント アプリが、KSPROPERTY を使用している場合\_型\_、KSPROPERTY を送信するときに、BASICSUPPORT フラグ\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_オーディオ ドライバーとステータスに位置プロパティ要求\_成功が返され、ドライバーが新しく追加された KSPROPERTY をサポートすることが確認されます\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_POSITION プロパティ。
+クライアントアプリで KSK プロパティを使用している場合\_\_\_KSK プロパティを送信するときに\_BASICSUPPORT フラグを入力します。これにより、現在\_\_LASTBUFFER\_POSITION プロパティ要求をオーディオドライバーとステータスに書き込みます。\_成功が返された場合は、ドライバーが新しく追加された KSK プロパティ\_オーディオ\_WALAST\_現在\_LASTBUFFER\_POSITION プロパティを書き込むことができることを確認します。
 
-オーディオ ドライバーを呼び出すクライアント アプリでは、オフロードされたストリームのオーディオ ドライバーによって処理されるオーディオのバッファーに非常に最後の書き込み操作を実行するときに、 [ **SetStreamCurrentWritePositionForLastBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)メソッド。 **SetStreamCurrentWritePositionForLastBuffer**メソッドは、"書き込み"の最後のバッファー ストリーム内の位置を示します。 この最後のバッファーを部分的にのみ満たさことに注意してください。
+クライアントアプリが、オフロードストリームのオーディオドライバーによってオーディオバッファーに対して最後に実行された書き込み操作を実行すると、オーディオドライバーは[**Setstreamcurrentwritepositionforlastbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)メソッドを呼び出します。 **Setstreamcurrentwritepositionforlastbuffer**メソッドは、ストリーム内の最後のバッファーの "書き込み位置" を示します。 この最後のバッファーは部分的にしか入力できない可能性があることに注意してください。
 
-オーディオ ポート クラス ドライバー (Portcls) で動作するようになっていないオーディオ ドライバーを開発するかどうかは、このプロパティのハンドラーを実装する必要がある新しい KS プロパティ。
+オーディオポートクラスドライバー (Portcls) で動作するように設計されていないオーディオドライバーを開発する場合は、この新しい KS プロパティ用に独自のプロパティハンドラーを実装する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -97,10 +97,10 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**SetStreamCurrentWritePositionForLastBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)
+[**SetStreamCurrentWritePositionForLastBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)
 
  
 

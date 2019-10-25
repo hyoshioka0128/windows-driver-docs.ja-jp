@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_TOPOLOGYNODE\_リセット
-description: KSPROPERTY\_TOPOLOGYNODE\_リセット プロパティをリセット、ノード、完全に初期状態に復元することです。
+title: KSK プロパティ\_TOPOLOGYNODE\_リセット
+description: KSK プロパティ\_TOPOLOGYNODE\_RESET プロパティは、ノードを完全にリセットし、初期状態に復元します。
 ms.assetid: c7558518-53c5-43c6-94ac-107823e2a0ab
 keywords:
-- KSPROPERTY_TOPOLOGYNODE_RESET オーディオ デバイス
+- KSPROPERTY_TOPOLOGYNODE_RESET オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1650c275189586182497ddee7831de5d9999bc33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24185f1be1f84a274ec132630049b0398f7e88ad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354322"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832677"
 ---
-# <a name="kspropertytopologynodereset"></a>KSPROPERTY\_TOPOLOGYNODE\_リセット
+# <a name="ksproperty_topologynode_reset"></a>KSK プロパティ\_TOPOLOGYNODE\_リセット
 
 
-KSPROPERTY\_TOPOLOGYNODE\_リセット プロパティをリセット、ノード、完全に初期状態に復元することです。
+KSK プロパティ\_TOPOLOGYNODE\_RESET プロパティは、ノードを完全にリセットし、初期状態に復元します。
 
 ## <span id="ddk_ksproperty_topologynode_reset_ks"></span><span id="DDK_KSPROPERTY_TOPOLOGYNODE_RESET_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_TOPOLOGYNODE\_リセット プロパティをリセット、ノー�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,24 +50,24 @@ KSPROPERTY\_TOPOLOGYNODE\_リセット プロパティをリセット、ノー�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>BOOL</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>型</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) は BOOL 型のノードをリセットするかどうかを示します。 値**TRUE**の作成時の既定の初期状態に、ノードをリセットします。 値**FALSE**影響を与えませんが、エラーとして扱うことはできません。
+プロパティ値 (操作データ) はブール型で、ノードをリセットする必要があるかどうかを示します。 値を**TRUE**に設定すると、ノードは作成時に既定の初期状態にリセットされます。 値を**FALSE**に設定しても効果はありませんが、エラーとして扱うことはできません。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_TOPOLOGYNODE\_プロパティのリセット要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_TOPOLOGYNODE\_RESET property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -78,19 +78,19 @@ KSPROPERTY\_TOPOLOGYNODE\_プロパティのリセット要求がステータス
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Microsoft Windows XP 以降のオペレーティング システムでサポートされています。</p></td>
+<td align="left"><p>Microsoft Windows XP 以降のオペレーティングシステムでサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

@@ -3,54 +3,46 @@ title: VidPN ハードウェア機能のクエリ
 description: VidPN ハードウェア機能のクエリ
 ms.assetid: fb7939bb-ff7e-4ba8-b801-ac10010c44b7
 keywords:
-- VidPN WDK の表示、ハードウェアの機能
+- VidPN WDK ディスプレイ、ハードウェア機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bb6f4c110daa46412ae973c8ca82ebdae27849
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8c9aafe2bb105868b05234a0491697907348aa2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385043"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825958"
 ---
 # <a name="querying-vidpn-hardware-capabilities"></a>VidPN ハードウェア機能のクエリ
 
 
-Windows 7 以降、ミニポート ドライバーが指定した機能 VidPN のすべてのハードウェア機能を報告する必要があるされます。 ドライバーには、次のコールバック関数とその関連付けられている構造体をサポートする必要があります。
+Windows 7 以降では、指定された機能的な VidPN のすべてのハードウェア機能をレポートするために、表示ミニポートドライバーが必要です。 ドライバーは、次のコールバック関数とそれに関連付けられている構造体をサポートする必要があります。
 
--   [**DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)関数
+-   [**DxgkDdiQueryVidPnHWCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)関数
 
--   [**DXGKARG\_QUERYVIDPNHWCAPABILITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryvidpnhwcapability)構造体
+-   [**Dxgkarg\_QUERYVIDPNHWCAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryvidpnhwcapability)構造体
 
--   [**D3DKMDT\_VIDPN\_HW\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)構造体
+-   [**D3DKMDT\_VIDPN\_HW\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)の構造
 
-ドライバーでは、ハードウェアの機能をレポート、するときに考慮する回転の一部として行われる暗黙的なプロシージャを複製または拡大縮小の変換: 回転またはスケーリングするには、その前に、ソースを複製する必要がまずします。
+ドライバーがハードウェアの機能を報告する場合、複製は、回転やスケーリングの変換の一部として実行される暗黙の手順として使用することを検討する必要があります。最初にソースを複製してから、回転または拡大縮小する必要があります。
 
-D3DKMDT のメンバーのいずれか\_VIDPN\_HW\_機能 VidPN の指定されたパスに意味がない、メンバーが 0 以外の値に設定されている場合、表示モードのマネージャー (DMM) はエラーを報告されませんが。 DMM、ユーザー モードのクライアントに報告する前にこのようなすべての値がクリアされます。 ただし、ドライバーがの値を設定する必要、**占有**D3DKMDT のメンバー\_VIDPN\_HW\_を 0 に機能します。
+D3DKMDT\_VIDPN\_HW\_機能のいずれかのメンバーが、指定された VidPN パスで意味を持たない場合、メンバーが0以外の値に設定されていると、表示モードマネージャー (DMM) はエラーを報告しません。 DMM は、ユーザーモードクライアントに報告する前に、このようなすべての値をクリアします。 ただし、ドライバーでは、D3DKMDT\_VIDPN\_HW\_機能の**予約**メンバーの値を0に設定する必要があります。
 
-### <a name="span-idexamplescenariospanspan-idexamplescenariospanexample-scenario"></a><span id="example_scenario"></span><span id="EXAMPLE_SCENARIO"></span>**シナリオ例**
+### <a name="span-idexample_scenariospanspan-idexample_scenariospanexample-scenario"></a><span id="example_scenario"></span><span id="EXAMPLE_SCENARIO"></span>**シナリオ例**
 
-ディスプレイのミニポート ドライバーがハードウェアの機能を報告する方法を表示するには、P1、P2、P3 のハードウェア構成の次の例のセットを検討してください。
+ディスプレイミニポートドライバーがハードウェアの機能を報告する方法を示すために、次のようなハードウェア構成の P1、P2、P3 のセットの例を考えてみましょう。
 
--   **P1:** 画面はソース S1 から複製された、90 度回転し、ターゲットに合わせて拡大縮小します。
+-   **P1:** Surface はソース S1 から複製された後、90°回転し、ターゲットに合わせて拡大縮小されます。
 
--   **P2:** 画面は、適用される変換なしでソースの S1 から複製されました。
+-   **P2:** Surface は、変換が適用されていないソース S1 から複製されます。
 
--   **P3:** S2 のソースに適用される変換はありません。
+-   **P3:** ソース S2 には適用された変換がありません。
 
-ときに[ **DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)が呼び出されると、ドライバーは回転、拡大縮小、複製のメンバーの値を返す必要があります[ **D3DKMDT\_VIDPN\_HW\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)次の表に従って。
+[**DxgkDdiQueryVidPnHWCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)が呼び出されると、ドライバーは、次の表に従って、 [**D3DKMDT\_VIDPN\_HW\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)のメンバーのローテーション、拡大縮小、および複製のための値を返します。
 
-返される値のメンバーの D3DKMDT\_VIDPN\_HW\_スケーリング、および変換を複製機能のハードウェア機能 VidPN パス DriverRotation DriverScaling DriverCloning のハードウェアはすべての回転を実行します。
+D3DKMDT のメンバーの戻り値\_VIDPN\_HW\_機能のハードウェア機能については、「VidPN パス DriverRotation Driverrotation Driverrotation」ハードウェアでは、すべてのローテーション、スケーリング、複製変換を実行できます。
 
-P₁
-
-0
-
-0
-
-0
-
-P₂
+P ₁
 
 0
 
@@ -58,7 +50,7 @@ P₂
 
 0
 
-P₃
+P ₂
 
 0
 
@@ -66,9 +58,7 @@ P₃
 
 0
 
-ハードウェアが複製を除くすべての変換を実行できます。
-
-P₁
+P ₃
 
 0
 
@@ -76,15 +66,9 @@ P₁
 
 0
 
-P₂
+複製を除くすべての変換を実行できるハードウェア
 
-0
-
-0
-
-1
-
-P₃
+P ₁
 
 0
 
@@ -92,43 +76,7 @@ P₃
 
 0
 
-ハードウェアには、クローン作成とスケーリングの変換がない回転を実行できます。 ドライバーは、中間の回転 blit を使用して回転を実行します。
-
-P₁
-
-1
-
-0
-
-0
-
-P₂
-
-0
-
-0
-
-0
-
-P₃
-
-0
-
-0
-
-0
-
-ハードウェアは、複製、スケーリング、または回転の変換を実行できません。 これらの操作は、ドライバーによって実行されます。
-
-P₁
-
-1
-
-1
-
-0
-
-P₂
+P ₂
 
 0
 
@@ -136,7 +84,59 @@ P₂
 
 1
 
-P₃
+P ₃
+
+0
+
+0
+
+0
+
+ハードウェアは複製とスケーリングの変換を実行できますが、ローテーションは実行できません。 ドライバーは、中間ローテーション array.blit を使用して回転を実行します。
+
+P ₁
+
+1
+
+0
+
+0
+
+P ₂
+
+0
+
+0
+
+0
+
+P ₃
+
+0
+
+0
+
+0
+
+ハードウェアは、複製、拡大縮小、または回転変換を実行できません。 これらの操作はドライバーによって実行されます。
+
+P ₁
+
+1
+
+1
+
+0
+
+P ₂
+
+0
+
+0
+
+1
+
+P ₃
 
 0
 

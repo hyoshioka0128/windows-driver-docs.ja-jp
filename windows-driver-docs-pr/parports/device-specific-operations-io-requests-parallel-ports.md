@@ -7,12 +7,12 @@ keywords:
 - パラレル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 264cfa42fde5d52792c331af296a5b94e816c663
-ms.sourcegitcommit: 1d3c82d2e549827fd9f3b8ddb91ea92147e37170
+ms.openlocfilehash: f3653b4c4081ffbc8e0d415cd2df3dd3acdef7f5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349227"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831483"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>パラレル ポートの I/O 要求に対するデバイス固有の操作
 このトピックでは、パラレルポートの i/o 要求に対する次のデバイス固有の操作について説明します。
@@ -61,7 +61,7 @@ STATUS_DELETE_PENDING
 * ポートを割り当てるか、ポートでデバイスを選択します。
 * 通信モードの設定
 
-「[パラレルポートに対する内部デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)参照してください。
+「[パラレルポートに対する内部デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)参照してください。
 
 ### <a name="input-parameters"></a>入力パラメーター
 入力は要求に固有です。
@@ -100,7 +100,7 @@ STATUS_INVALID_PARAMETER
 
 ## <a name="related-topics"></a>関連トピック
 
-[パラレルポートに対する内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[パラレルポートに対する内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [パラレルポートに接続されているパラレルデバイスの操作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 

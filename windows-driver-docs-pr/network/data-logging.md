@@ -3,23 +3,23 @@ title: データのログ
 description: データのログ
 ms.assetid: 1e4f00e0-0fc6-459d-bbdd-02fbca5b9945
 keywords:
-- コールアウト WDK Windows フィルタ リング プラットフォーム、ログ データの分類します。
-- WDK Windows フィルタ リング プラットフォームのログ記録
+- 吹き出しを分類する WDK Windows フィルタリングプラットフォーム、データログ
+- WDK Windows フィルタリングプラットフォームのログ記録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 075f872abbb618643976eaa3cc5977098a6568a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e812754f21123d251e60ac382185399bc27a8ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834978"
 ---
 # <a name="data-logging"></a>データのログ
 
 
-データを決定するログに記録、吹き出しの[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は、データ フィールド、メタデータ フィールド、およびそれに渡される任意の生データの任意の組み合わせと格納されている関連するデータを検査できますフィルターまたはデータに関連付けられたコンテキストのフロー。
+どのデータをログに記録するかを決定するために、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、データフィールド、メタデータフィールド、および渡されたすべての生データの任意の組み合わせ、およびコンテキストに格納されている関連データを検査できます。フィルターまたはデータフローに関連付けられています。
 
-たとえば、コールアウトは、受信 (受信) IPv4 パケットの数は、ネットワーク層でのフィルターによって破棄の追跡場合、コールアウトが、FWPM でフィルター エンジンに追加されます\_レイヤー\_受信\_IPPACKET\_V4\_破棄レイヤー。 この場合、引き出し線の[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数次の例のようになります。
+たとえば、コールアウトがネットワーク層のフィルターによって破棄される受信 (受信) IPv4 パケットの数を追跡している場合、コールアウトは FWPM\_レイヤーのフィルターエンジンに追加され\_受信\_IPPACKET\_V4\_破棄されます。レイヤー. このような場合、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、次の例のようになります。
 
 ```C++
 ULONG TotalDiscardCount = 0;
@@ -67,7 +67,7 @@ VOID NTAPI
 ## <a name="related-topics"></a>関連トピック
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Classid (場合)](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

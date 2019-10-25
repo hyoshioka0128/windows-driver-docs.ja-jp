@@ -10,24 +10,24 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f86f1908453b4019c46ec0716aa950afb03693b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d0b7cd6349b78c244156c4851e9d741712854b67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386516"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834535"
 ---
 # <a name="proximity-device-presence-events"></a>近接通信デバイスのプレゼンス イベント
 
 
-NFP プロバイダーは、到達または近接デバイス (トリガーの動作のウィンドウ) の出発地、NFP プロバイダーが検出されたときに、イベントを受信するクライアントを有効にします。 NFP プロバイダーは、近接性を検出するたびに、プロバイダーが 1 つまたは複数の近接デバイスと現在通信できることを意味するプロバイダー発行する必要を*DeviceArrived*イベント。 NFP プロバイダーは、近接デバイスと通信できません、発行が必要な*DeviceDeparted*イベント。
+NFP プロバイダーは、NFP プロバイダーが近接デバイスの到着または出発点 (トリガーを起動するアクションのウィンドウ) を検出するたびにイベントを受信できるようにします。 NFP プロバイダーが近接を検出するたびに、プロバイダーが現在1つ以上の近接デバイスと通信できることを意味します。プロバイダーは*DeviceArrived*イベントを発行する必要があります。 NFP プロバイダーが近接デバイスと通信できなくなった場合は、 *devicedeparted*イベントを発行する必要があります。
 
-NFP プロバイダーも、公開されたメッセージはだけを転送した 1 回、デバイスが近接内では正しく確保するために、近接デバイスの存在を追跡する必要があります。 これらのイベントは、同じメトリックに基づく必要があります。 同時に複数の近接デバイスと通信できるように、NFP プロバイダー、プレゼンスのイベントはすべてプレゼンスの集計を設定してください。 プロバイダーは、0 ~ N 同時に近接デバイスをサポートする場合、イベントは 0-1 と 1 対 0 現在近接デバイスからの移行にのみ配信されます。 NFC はサポートされていないことこれに注意してください。
+また、送信されたメッセージが近接している間に1回だけ転送されるようにするために、近接デバイスの存在を追跡する必要もあります。 これらのイベントは、同じメトリックに基づいている必要があります。 複数の近接デバイスと同時に通信できるようになった NFP プロバイダーの場合、プレゼンスイベントはすべての存在の集約である必要があります。 プロバイダーが同時にデバイスの近接を0から N までサポートしている場合、イベントは、現在近接されているデバイスが 0 ~ 1 で、1 ~ 0 の場合にのみ配信されます。 NFC はこれをサポートしていないことに注意してください。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 
