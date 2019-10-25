@@ -1,54 +1,54 @@
 ---
-title: エッジ フィルター処理コマンドのバイト
-description: エッジ フィルター処理コマンドのバイト
+title: エッジフィルター処理コマンドバイト数
+description: エッジフィルター処理コマンドバイト数
 ms.assetid: eefb580a-133d-4c9e-a8d2-2d114107e2ea
 keywords:
-- マクロ ブロック WDK DirectX va なので、フィルター コントロールを非ブロック化
-- フィルター コントロール WDK DirectX VA 非ブロック化
-- フィルター処理の WDK DirectX VA をエッジします。
-- 読み取りバック バッファー WDK DirectX VA
+- マクロによる WDK DirectX VA のブロック、deblocking フィルターコントロール
+- deblocking filter control WDK DirectX VA
+- エッジフィルター WDK DirectX VA
+- 読み取りバックバッファー WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e2007613e1d453389e17791e0e32a7c5d7c2aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: baa4fd3b1339be795952b4392ca6fa659742dee1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364380"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838960"
 ---
-# <a name="edge-filtering-command-bytes"></a>エッジ フィルター処理コマンドのバイト
+# <a name="edge-filtering-command-bytes"></a>エッジフィルター処理コマンドバイト数
 
 
 ## <span id="ddk_edge_filtering_command_bytes_gg"></span><span id="DDK_EDGE_FILTERING_COMMAND_BYTES_GG"></span>
 
 
-コントロールのコマンドをフィルター処理する各エッジは、1 バイトで構成されます。 *DXVA\_DeblockingEdgeControl*で定義された定数*dxva.h*エッジの非ブロック化する方法を定義します。 処理されます。 バイトの 7 の最上位ビットを含む、 *EdgeFilterStrength*変数、および最下位ビットは、 *EdgeFilterOn*フラグ。
+各エッジフィルター制御コマンドは、1バイトで構成されます。 DXVA で定義されている*DXVA\_DeblockingEdgeControl*定数では、ブロックの端をどのように処理するかを定義し*ます*。 バイトの最上位7ビットには*EdgeFilterStrength*変数が含まれ、最下位ビットは*EdgeFilterOn*フラグです。
 
-指定されている H.263 Annex J. として実行エッジ フィルタ リング*EdgeFilterStrength*変数を実行する、フィルター選択の強度を指定します。 *EdgeFilterOn*フラグは、実行するかどうかは、フィルター処理を指定します。 *EdgeFilterOn*エッジでは、フィルター処理される場合は 0 を場合は 1 です。
+エッジフィルター処理は、「263付属 J」で指定されているとおりに実行されます。*EdgeFilterStrength*変数は、実行するフィルター処理の強度を指定します。 *EdgeFilterOn*フラグは、フィルター処理を実行するかどうかを指定します。 *EdgeFilterOn*は、エッジをフィルター処理する場合は1、それ以外の場合は0になります。
 
-エッジ フィルタ リング (のエッジの*EdgeFilterOn* 1) は強度値で指定された実行と等しく*EdgeFilterStrength*と 0 ~ 2 の範囲に出力をクリッピング<sup>(BPP)</sup> - 1。 上端までのすべてのブロックのフィルター処理は、上部エッジ フィルタ リングを使用するサンプルの値は左端のフィルター処理するため、deblocking フィルター処理する前にそれらの再構築された値でなければならないために、すべてのブロックの左端をフィルター処理する前に実行されます。
+エッジフィルター ( *EdgeFilterOn*が1に等しいエッジ) は、 *EdgeFilterStrength*で指定された強さの値で実行され、出力は 0 ~ 2<sup>(BPP)</sup> -1 の範囲にクリッピングされます。 すべてのブロックに対するトップエッジフィルター処理は、すべてのブロックの左端のフィルター処理の前に実行されます。これは、トップエッジフィルターに使用されるサンプルの値が、左エッジフィルター処理のフィルター解除の前に再構築された値である必要があるためです。
 
-場合、 **bPicDeblockConfined**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造がそのサンプルを示しますマクロ ブロックの外側の値、現在の非ブロック化フィルター コマンド バッファーは影響しません、 *EdgeFilterOn*フラグは、左、バッファー内のフィルターのコマンドを非ブロック化をマクロ ブロック対象領域の上部にあるすべての端に 0 です。
+[**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**b deblock限定**メンバーが、現在の deblock フィルターコマンドバッファーの外部にあるマクロブロックのサンプル値が影響を受けないことを示している場合、 *EdgeFilterOn*フラグはバッファー内の deblocking フィルターコマンドを使用して、マクロブロックによってカバーされる領域の左端と最上位のすべての端に対してゼロ。
 
-### <a name="span-idread-backbuffersspanspan-idread-backbuffersspanspan-idread-backbuffersspanread-back-buffers"></a><span id="Read-Back_Buffers"></span><span id="read-back_buffers"></span><span id="READ-BACK_BUFFERS"></span>読み取りバック バッファー
+### <a name="span-idread-back_buffersspanspan-idread-back_buffersspanspan-idread-back_buffersspanread-back-buffers"></a><span id="Read-Back_Buffers"></span><span id="read-back_buffers"></span><span id="READ-BACK_BUFFERS"></span>読み取り/バックバッファー
 
-1 つの読み戻しコマンド バッファーがアクセラレータに渡されるときに、 **bPicReadbackRequests**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体は 1 です。 このバッファー内のデータをホストに (非ブロック化、該当する場合) の後、結果として得られる最終的な画像マクロ ブロック データを返す、アクセラレータのコマンドです。 暗号化プロトコルを使用している場合、アクセラレータがバックアップ - 読み取り要求 (暗号化プロトコルによって指定できます) と、エラーを示す値、エラーのあるデータ、または暗号化されたデータを返すことによって応答があります。
+[**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**b readbackrequests**メンバーが1の場合、1つの読み取り/バックコマンドバッファーがアクセラレータに渡されます。 このバッファー内のデータは、結果として得られる最終的な画像マクロブロックデータ (該当する場合) をホストに返すためにアクセラレータによってコマンドを実行します。 暗号化プロトコルが使用されている場合、アクセラレータは、エラーを示すメッセージ、エラーのあるデータ、または暗号化されたデータ (暗号化プロトコルによって指定されている可能性があります) を返すことによって、読み取り要求に応答する場合があります。
 
-アクセラレータに渡された読み戻しコマンド バッファーは、1 つから成る読み戻しコマンドを含める必要があります**wMBaddress**読み取られる、マクロ ブロックのマクロ ブロック コントロール コマンドのメンバー。 **WMBaddress**メンバーがラスター スキャンの順序で現在のマクロ ブロックのマクロ ブロックのアドレスを指定する 16 ビット値。 ラスター スキャン order (に基づいて、 **wPicWidthInMBminus1**と**wPicHeightInMBminus1**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造) が次のように定義されています。
+アクセラレータに渡される読み取り/バックコマンドバッファーには、読み取るマクロブロックのマクロブロックコントロールコマンドの1つの**Wmbaddress**メンバーで構成される、読み取り戻るコマンドが含まれている必要があります。 **Wmbaddress**メンバーは、ラスタースキャンの順序で現在のマクロブロックのマクロブロックアドレスを指定する16ビット値です。 ラスタースキャンの順序 ( [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**wPicWidthInMBminus1**と**wPicHeightInMBminus1**のメンバーに基づく) は、次のように定義されています。
 
--   0 は、左のマクロ ブロックのアドレスです。
+-   0は、左上のマクロブロックのアドレスです。
 
--   **wPicWidthInMBminus1**右マクロ ブロックのアドレスです。
+-   **wPicWidthInMBminus1**は、右上にあるマクロブロックのアドレスです。
 
--   **wPicHeightInMBminus1** x (**wPicWidthInMBminus1**+1)、左下のマクロ ブロックのアドレスです。
+-   **wPicHeightInMBminus1** x (**wPicWidthInMBminus1**+ 1) は、左下のマクロブロックのアドレスです。
 
--   (**wPicHeightInMBminus1**+1) x (**wPicWidthInMBminus1**+1)-1、右下のマクロ ブロックのアドレスになります。
+-   (**wPicHeightInMBminus1**+ 1) x (**wPicWidthInMBminus1**+ 1)-1 は、右下のマクロブロックのアドレスです。
 
-場合*BPP*で指定されている、 **bBPPminus1**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体は、8、8 ビット符号なしの値の形式でマクロ ブロックのデータが返されます (したがって、黒、名目上 Y = 16, Cb Cr を = = 128 であり、白い名目上 Y = 235、Cb Cr を = = 128)。 場合*BPP*が 8 よりも大きい 16 ビット符号なしの値の形式でデータが返されます。
+[**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**bBPPminus1**メンバーに指定されている*BPP*が8の場合、マクロブロックデータは8ビットの符号なし値の形式で返されます (したがって、black はと Y = 16、Cb = Cr = 128、白はとです。Y = 235、Cb = Cr = 128)。 *BPP*が8より大きい場合、データは16ビットの符号なしの値の形式で返されます。
 
-マクロ ブロックのデータは、埋め込み、続けて [次へ] の 32 バイト アラインメントの境界を読み戻しコマンド バッファー自体のコピーの形式でホストするアクセラレータから返されます。 次に、輝度とクロミナンスのデータのマクロ ブロックのデータ値は、各マクロ ブロック内の各ブロックのブロックあたり 64 のサンプルのフォームでの読み戻しコマンド バッファーに送信された順序で返されます。
+マクロブロックデータは、読み取り戻るコマンドバッファー自体のコピーの形式で、アクセラレータからホストに返されます。その後、次の32バイトのアラインメント境界への埋め込みが行われます。 次に、輝度およびクロミナンスデータのマクロブロックデータ値が、各マクロブロックの各ブロックのブロックごとに64サンプルという形式で、読み取り戻るコマンドバッファーに送信された順に返されます。
 
-マクロ ブロック内の残存違いブロックが指定の mpeg-2 図 6 ~ 10、11、6 と 6 ~ 12 の順序で返されます (ラスター スキャン順序 Y マクロ ブロック、ブロックの後に、4:2:0 ブロックの後に、4、Cb: Cr のブロックを 2:0。場合は、4:2:2 または 4: 4、4:4 サンプリング操作: 2:0 ブロックの後、4 では: Cb、後に、4 のブロックを 2:2: Cr の 2:2 ブロックします。4 の場合: 4、4:4 サンプリング操作: 2:2 ブロックの後、4 では: Cb、後に、4 のブロックを 4:4: Cr のブロックを 4:4)。
+マクロブロック内の残存差ブロックは、MPEG 2 の図6-10、6-11、および 6-12 (マクロブロックの Y ブロックの場合はラスタースキャンの順序、その後に Cb の4:2:0 ブロック、その後に Cr の4:2:0 ブロックが続きます) で指定された順序で返されます。4:2:2 または4:4:4 のサンプリング操作の場合、4:2:0 ブロックの後には Cb の4:2:2 ブロックが続き、その後に Cr の4:2:2 ブロックが続きます。4:4:4 サンプリング操作の場合、4:2:2 ブロックの後に Cb の4:4:4 ブロックが続き、その後に Cr の4:4:4 ブロックが続きます。
 
  
 

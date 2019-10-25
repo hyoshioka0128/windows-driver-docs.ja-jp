@@ -4,19 +4,19 @@ description: MSFC\_VirtualFibrePortAttributes WMI クラス
 ms.assetid: D605D63F-0EBF-44C0-8ADE-729F2DE48487
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fea9070d809025aa05047279a2f42e82253e820f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34206f03a4fed727db95338b47d577eed4385164
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376705"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845598"
 ---
-# <a name="msfcvirtualfibreportattributes-wmi-class"></a>MSFC\_VirtualFibrePortAttributes WMI クラス
+# <a name="msfc_virtualfibreportattributes-wmi-class"></a>MSFC\_VirtualFibrePortAttributes WMI クラス
 
 
-WMI クライアントが使用、MSFC\_VirtualFibrePortAttributes クラスの仮想ポートのプロパティを取得します。
+WMI クライアントは、MSFC\_VirtualFibrePortAttributes クラスを使用して、仮想ポートのプロパティを取得します。
 
-MSFC\_VirtualFibrePortAttributes クラスが次のように定義されている*Npivwmi.mof*:
+MSFC\_VirtualFibrePortAttributes クラスは、 *Npivwmi*で次のように定義されています。
 
 ```mof
 class MSFC_VirtualFibrePortAttributes  
@@ -44,9 +44,9 @@ class MSFC_VirtualFibrePortAttributes
 };  
 ```
 
-WMI ツール スイートによってコンパイルされると、このクラスの定義には、次のデータ構造が生成されます。
+このクラス定義は、WMI ツールスイートによってコンパイルされると、次のデータ構造を生成します。
 
-[**MSFC\_VirtualFibrePortAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/npivwmi/ns-npivwmi-_msfc_virtualfibreportattributes)
+[**MSFC\_VirtualFibrePortAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/npivwmi/ns-npivwmi-_msfc_virtualfibreportattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

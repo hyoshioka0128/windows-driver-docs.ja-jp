@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネント
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネントのプロパティは、ホワイト バランス設定をビデオ形式の青と赤の値を指定します。
+title: KSPROPERTY\_VIDEOPROCAMP\_ホワイトバランス\_コンポーネント
+description: VIDEOPROCAMP\_ホワイトバランス\_コンポーネントのプロパティ\_は、ホワイトバランスの設定を青と赤の値で指定します。
 ms.assetid: ed5faffa-7e31-47ac-bf11-2201d616c6aa
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9f49b85d314e5cd1886cb100f0d56aeea8882f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c8d911dfa6aca6b42c1163bb65f0eba3cbcf94b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381907"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842820"
 ---
-# <a name="kspropertyvideoprocampwhitebalancecomponent"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネント
+# <a name="ksproperty_videoprocamp_whitebalance_component"></a>KSPROPERTY\_VIDEOPROCAMP\_ホワイトバランス\_コンポーネント
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネントのプロパティは、ホワイト バランス設定をビデオ形式の青と赤の値を指定します。
+VIDEOPROCAMP\_ホワイトバランス\_コンポーネントのプロパティ\_は、ホワイトバランスの設定を青と赤の値で指定します。
 
 ## <span id="ddk_ksproperty_videoprocamp_whitebalance_component_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-<td><p>node</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
+<td><p>ノード</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
 <td><p>長整数のペア</p></td>
 </tr>
 </tbody>
@@ -61,20 +61,20 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 
  
 
-プロパティの値 (データの操作) は、カメラのホワイト バランス設定の赤、青のコンポーネントを指定する LONG 整数のペアです。 値は、カメラの現在の赤、青のコンポーネントの値を示します。
+プロパティ値 (操作データ) は、カメラの白いバランス設定の赤と青のコンポーネントを指定する長整数のペアです。 値は、カメラの現在の赤と青のコンポーネントの値を示します。
 
 <a name="remarks"></a>注釈
 -------
 
-サポートされている範囲とホワイト バランス コンポーネントの既定値は、実装に依存が。
+ホワイトバランスコンポーネントでサポートされる範囲と既定値は、実装に依存します。
 
-クライアントの赤要素値を指定する必要がありますセット要求を行うときに、 **Value1**メンバーと青要素値、 **Value2** 、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_ノード\_S2 構造体。
+クライアントは、set 要求を行うときに、 **VALUE1**プロパティ\_VIDEOPROCAMP\_NODE\_S2 構造体の**Value2**メンバーの中で、赤色のコンポーネント値を指定する必要があります。
 
-デバイスでサポートされているホワイト バランス値の範囲を確認するのには、アプリケーションが、KSPROPERTY を発行できます\_型\_BASICSUPPORT 要求。 KSPROPERTY を指定する\_型\_で BASICSUPPORT、**フラグ**のメンバー、 [ **KSPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)構造体。
+デバイスでサポートされている白のバランス値の範囲を決定するために、アプリケーションは\_BASICSUPPORT 要求\_種類の KSK プロパティを発行できます。 Ksk プロパティ[ **\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)構造体の**Flags**メンバーで、\_BASICSUPPORT という種類の\_を指定できます。
 
-クライアントで赤の値を受け取る get 要求を行うときに、 **Value1**メンバーと青要素値、 **Value2** 、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_ノード\_S2 構造体。
+Get 要求を行うと、クライアントは**Value1**メンバーの赤の値を受け取り、ksproperty\_VIDEOPROCAMP\_NODE\_S2 構造体の**Value2**メンバーの青のコンポーネントの値を受け取ります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,9 +93,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_ノード\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)
+[**KSPROPERTY\_VIDEOPROCAMP\_NODE\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)
 
  
 

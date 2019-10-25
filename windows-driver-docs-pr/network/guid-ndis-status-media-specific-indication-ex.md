@@ -1,25 +1,25 @@
 ---
 title: GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX
-description: このトピックでは、NDIS WMI インターフェイスの GUID を GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX について説明します。
+description: このトピックでは、NDIS WMI インターフェイスの GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX GUID について説明します。
 ms.assetid: 34839471-5b3b-4a95-a610-bc35e7774c14
 keywords:
-- GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX、WDK GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX ネットワーク ドライバー
+- GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX、WDK GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX ネットワークドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc108e8d1d2b64e00215c15b7d3edc3152b6b2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9deabb69beaeb5691c628e9f48a48dfffc6c4323
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382683"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842279"
 ---
-# <a name="guidndisstatusmediaspecificindicationex"></a>GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX
+# <a name="guid_ndis_status_media_specific_indication_ex"></a>GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX
 
-GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX イベント GUID では、メディア固有の状態を示します。 この WMI GUID は、NDIS 6.0 および以降のバージョンでサポートされます。
+GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX イベント GUID は、メディア固有の状態を示します。 この WMI GUID は、NDIS 6.0 以降のバージョンでサポートされています。
 
-ミニポート ドライバーでは、メディア固有の状態を示します、NDIS は、WMI GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX を示す値を WMI クライアントの状態表示を変換します。
+ミニポートドライバーによってメディア固有の状態が示された場合、NDIS は、WMI クライアントの WMI GUID_NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX を示す状態を示します。
 
-ミニポート ドライバーでは、メディア固有の状態インジケーターを行う呼び出すことによって、 [NdisMIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数と、 **StatusCode**のメンバー、 [NDIS_STATUS_INDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体、 *StatusIndication*パラメーターが指す NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX に設定します。 **StatusBuffer**この構造体のメンバーがで指定されている状態の表示に固有の形式でデータが含まれるドライバーに割り当てられたバッファーを指す**StatusCode**します。
+ミニポートドライバーは、 [Statusindication](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)パラメーターが指す[NDIS_STATUS_INDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体の**StatusCode**メンバーで、関数を呼び出して、メディア固有の状態を*示し*ます。を NDIS_STATUS_MEDIA_SPECIFIC_INDICATION_EX に設定する場合は。 この構造体の**Statusbuffer**メンバーは、ドライバーによって割り当てられたバッファーを指します。このバッファーには、 **StatusCode**で識別される状態の表示に固有の形式のデータが含まれています。
 
-、特定のメディアを示す値の種類に応じて GUID ヘッダーをメディアに固有の表示に固有のデータを後に可能性があります。 この GUID を持つ NDIS を提供するデータ バッファーが含まれています、 [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)存在する場合、メディア固有のデータは後に構造体。
+メディア固有の指示の種類によっては、GUID ヘッダーの後に、メディア固有の表示に固有のデータが続きます。 この GUID で NDIS に用意されているデータバッファーには、メディア固有のデータがある場合は、その後に続く[NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_event_header)構造体が含まれます。
 

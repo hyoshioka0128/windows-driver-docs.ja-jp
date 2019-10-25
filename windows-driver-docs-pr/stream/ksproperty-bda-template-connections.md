@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_テンプレート\_接続
-description: クライアントを使用して、KSPROPERTY\_BDA\_テンプレート\_ピンとテンプレートのトポロジのノード間の接続の一覧を取得する接続。
+title: KSK プロパティ\_BDA\_テンプレート\_接続
+description: クライアントは、KSK プロパティ\_BDA\_テンプレート\_接続を使用して、テンプレートトポロジ内のピンとノード間の接続の一覧を取得します。
 ms.assetid: 59268751-34fd-4291-bf36-45a435a4ccf2
 keywords:
-- KSPROPERTY_BDA_TEMPLATE_CONNECTIONS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_TEMPLATE_CONNECTIONS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e6f0d2a57868707467aa795ddb6395622c7e59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9c24cf3beba8583d376cd187b8840f2263202e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843595"
 ---
-# <a name="kspropertybdatemplateconnections"></a>KSPROPERTY\_BDA\_テンプレート\_接続
+# <a name="ksproperty_bda_template_connections"></a>KSK プロパティ\_BDA\_テンプレート\_接続
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_テンプレート\_ピンとテンプレートのトポロジのノード間の接続の一覧を取得する接続。
+クライアントは、KSK プロパティ\_BDA\_テンプレート\_接続を使用して、テンプレートトポロジ内のピンとノード間の接続の一覧を取得します。
 
 ## <span id="ddk_ksproperty_bda_template_connections_ks"></span><span id="DDK_KSPROPERTY_BDA_TEMPLATE_CONNECTIONS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67384279"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67384279"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>BDA_TEMPLATE_CONNECTION</p></td>
@@ -64,11 +64,11 @@ ms.locfileid: "67384279"
 <a name="remarks"></a>注釈
 -------
 
-返された BDA\_テンプレート\_接続構造には、テンプレートのトポロジ内の接続がについて説明します。
+返された BDA\_テンプレート\_接続構造は、テンプレートトポロジ内の接続を表します。
 
-Pin とテンプレートのトポロジのノード間の接続の一覧は、配列 bda\_テンプレート\_接続構造体。
+テンプレートトポロジ内のピンとノード間の接続の一覧は、BDA\_テンプレート\_の接続構造の配列です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ Pin とテンプレートのトポロジのノード間の接続の一覧は、�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,13 +87,13 @@ Pin とテンプレートのトポロジのノード間の接続の一覧は、�
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyTemplateConnections**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertytemplateconnections)
+[**BdaPropertyTemplateConnections**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertytemplateconnections)
 
-[**BDA\_テンプレート\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)
+[**BDA\_テンプレート\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_template_connection)
 
-[**KSPIN\_記述子\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
+[**KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

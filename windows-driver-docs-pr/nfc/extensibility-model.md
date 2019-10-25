@@ -1,6 +1,6 @@
 ---
-title: NFC クラスの拡張機能の拡張モデル
-description: NFC クラスの拡張機能ドライバーでは、NCI 仕様が対応していないチップセット固有 NCI の専用拡張を追加することができます。
+title: NFC クラス拡張機能の拡張モデル
+description: NFC クラス拡張ドライバーを使用すると、開発者は、NCI 仕様に含まれていないチップセット固有の NCI 専用拡張機能を追加できます。
 ms.assetid: 8CCCE7BF-595A-4F30-9924-B5BD45D6137F
 keywords:
 - NFC
@@ -10,29 +10,29 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3b2a5c47ed8be8f9066446ec7ff5acf231bbf2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c406505aa705ac342e59dafea05acfa5b27442c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370513"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843417"
 ---
-# <a name="nfc-class-extension-extensibility-model"></a>NFC クラスの拡張機能の拡張モデル
+# <a name="nfc-class-extension-extensibility-model"></a>NFC クラス拡張機能の拡張モデル
 
 
-NFC クラスの拡張機能ドライバーの主な目的は、NCI 仕様が対応していないチップセット固有 NCI の専用拡張を追加する柔軟性を備えたクライアント ドライバーを提供します。
+NFC クラス拡張ドライバーの主な目的は、NCI 仕様でカバーされていないチップセット固有の NCI 専用拡張機能を追加できる柔軟性をクライアントドライバーに提供することです。
 
-これに合わせて、NFC クラスの拡張機能ドライバーがこれら NCI のベンダー拡張機能のサポートを提供するクライアント ドライバーを含む、NCI で定義されている RF プロトコルの独自の実装に限らずの複数の機能拡張ポイントを提供します省電力モードおよびファームウェアのパラメーターの他のチップセット固有の構成の NFC コント ローラーを構成するチップセット固有 NCI コマンド。
+これに対応するために、NFC クラス拡張ドライバーは、クライアントドライバーがサポートする複数の拡張ポイントを提供します。これらの NCI ベンダ拡張機能は、NCI で定義された RF プロトコル以外の実装に限定されませんが、チップセット固有の NCI コマンド。低電力モードおよびその他のチップセット固有のファームウェアパラメーターの構成用に NFC コントローラーを構成します。
 
-NFC クラスの拡張機能ドライバーでは、NFC のクライアント ドライバーの 3 つの機能拡張ポイントを提供します。
+NFC クラス拡張ドライバーは、NFC クライアントドライバー用に3つの拡張ポイントを提供します。
 
 -   [シーケンス処理](sequence-handling.md)
--   RF プロトコルとインターフェイスの機能拡張
+-   RF プロトコルとインターフェイスの拡張
 -   NCI のパケットの処理
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

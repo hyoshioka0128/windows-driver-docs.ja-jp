@@ -1,33 +1,33 @@
 ---
-title: 中間ドライバーのプロトコルとしての登録
-description: 中間ドライバーのプロトコルとしての登録
+title: 中間ドライバーをプロトコルとして登録する
+description: 中間ドライバーをプロトコルとして登録する
 ms.assetid: 79707f6b-0e31-46a8-a763-fa2669ce9635
 keywords:
 - 中間ドライバーの登録
-- ドライバー WDK 中級レベルのネットワーク、登録します。
-- NDIS 中間ドライバ、WDK を登録します。
+- 中間ドライバー WDK ネットワーク、登録
+- NDIS 中間ドライバー WDK、登録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc62c5a54a00b0f7642379bbc502776b05dd5b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 991abf74ad9edc31d0e8c04317ba4a7066fbd0de
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842092"
 ---
-# <a name="registering-an-intermediate-driver-as-a-protocol"></a>中間ドライバーのプロトコルとしての登録
+# <a name="registering-an-intermediate-driver-as-a-protocol"></a>中間ドライバーをプロトコルとして登録する
 
 
 
 
 
-中間のドライバーは、登録、 *ProtocolXxx* NDIS との関数のコンテキストでその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数を呼び出すことによって[ **NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)します。
+中間ドライバーは、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)を呼び出すことによって、 [**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数のコンテキストで*protocolxxx*関数を NDIS に登録します。
 
-プロトコルとして中間のドライバーの登録は、プロトコル ドライバーとして登録することとほぼ同じです。 詳細については、次を参照してください。[プロトコル ドライバーの初期化](initializing-a-protocol-driver.md)します。
+中間ドライバーをプロトコルとして登録することは、プロトコルドライバーとして登録することとほぼ同じです。 詳細については、「[プロトコルドライバーの初期化](initializing-a-protocol-driver.md)」を参照してください。
 
-接続指向の下端と中間のドライバーは、接続指向のクライアントとして登録する必要があります。 接続指向のクライアントでは、コール マネージャーまたは統合ミニポート コール マネージャー (MCM) の呼び出しセットアップと破棄のサービスを使用します。 接続指向のクライアントは、送信を使用してもと接続指向のミニポート ドライバーやデータを送受信する、MCM の機能を利用します。 詳細については、次を参照してください。 [Connection-Oriented 操作は、クライアントによって実行される](connection-oriented-operations-performed-by-clients.md)します。
+接続指向のエッジを持つ中間ドライバーは、接続指向のクライアントとして登録する必要があります。 接続指向クライアントは、コールマネージャーまたは統合されたミニポート呼び出しマネージャー (MCM) の呼び出しセットアップおよび破棄サービスを使用します。 また、接続指向クライアントは、接続指向ミニポートドライバーまたは MCM の送受信機能を使用してデータを送受信します。 詳細については、「[クライアントによって実行される接続指向の操作](connection-oriented-operations-performed-by-clients.md)」を参照してください。
 
-中間のドライバーには、その他の必要があります*ProtocolXxx*実装に固有である関数。 省略可能な登録について*ProtocolXxx*関数を参照してください[省略可能なプロトコル ドライバー サービスを構成する](configuring-optional-protocol-driver-services.md)します。
+中間ドライバーでは、実装固有の他の*Protocolxxx*関数が必要になる場合があります。 オプションの*Protocolxxx*関数の登録の詳細については、「[オプションのプロトコルドライバーサービスの構成](configuring-optional-protocol-driver-services.md)」を参照してください。
 
  
 

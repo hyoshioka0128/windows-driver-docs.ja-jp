@@ -1,40 +1,40 @@
 ---
-title: 休止状態からのウェイクと高速スタートアップの区別
-description: Windows 8 以降、高速スタートアップ モードは、従来のコールド起動時が通常よりも短時間でコンピューターを起動します。
+title: 休止状態からの高速スタートアップを区別する
+description: Windows 8 以降では、高速スタートアップモードを使用して、従来のコールドスタートで通常必要とされるよりも短時間でコンピューターを起動することができます。
 ms.assetid: 1768F739-619A-441F-B270-029DD1F72953
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6e336c2915898fc5d72abfffd9a8a515273a8674
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab936b9cfd29c65af0a645b82a09fd6b31fcb226
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838721"
 ---
-# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>休止状態からのウェイクと高速スタートアップの区別
+# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>休止状態からの高速スタートアップを区別する
 
 
-Windows 8 以降、高速スタートアップ モードは、従来のコールド起動時が通常よりも短時間でコンピューターを起動します。 高速スタートアップは、コールド起動と休止状態-のウェイク アップのスタートアップのハイブリッド組み合わせです。 多くの場合、カーネル モード デバイス ドライバーは、自分のデバイスがユーザーの期待どおりに動作できるように、休止状態-のスリープ解除からから高速スタートアップを区別するために必要があります。 ドライバーがで提供される情報の使用時に区別する、[システム電源 Irp](power-irps-for-the-system.md)します。
+Windows 8 以降では、高速スタートアップモードを使用して、従来のコールドスタートで通常必要とされるよりも短時間でコンピューターを起動することができます。 高速スタートアップとは、コールド起動と休止状態からの復帰を組み合わせたものです。 多くの場合、カーネルモードのデバイスドライバーは、デバイスがユーザーの期待どおりに動作するように、高速スタートアップと休止状態からの復帰を区別する必要があります。 この区別を行うために、ドライバーは[システムの電源 irp](power-irps-for-the-system.md)で使用できる情報を使用できます。
 
-、コールド起動中には、ブート ローダーは、Windows カーネルのファイルのセクションでは、をメモリに読み込むと、リンクすることによってカーネル メモリのイメージを構築します。 次に、カーネルはコアのシステム関数を構成します、コンピューターに接続されているデバイスを列挙し、それらのドライバーを読み込みます。
+コールド起動中、ブートローダーは、Windows カーネルファイルのセクションをメモリに読み込み、それらをリンクすることで、カーネルメモリイメージを構築します。 次に、カーネルはコアシステム関数を構成し、コンピューターに接続されているデバイスを列挙し、ドライバーを読み込みます。
 
-これに対し、この高速スタートアップは単に、休止状態ファイル (Hiberfil.sys) を Windows カーネルと読み込まれているドライバーの以前に保存したイメージを復元するメモリに読み込みます。 高速スタートアップをコールド起動に比べて大幅に少ない時間がかかる傾向があります。
+これに対して、高速スタートアップは、休止状態ファイル (Hiberfil.sys) をメモリに読み込み、以前に保存された Windows カーネルおよび読み込まれたドライバーのイメージを復元します。 高速スタートアップは、コールドスタートよりも大幅に時間がかかる傾向があります。
 
-を高速スタートアップを準備するには、Windows は、ハイブリッドのシャット ダウン シーケンスは完全にシャット ダウン シーケンスの要素を結合して、休止状態-の準備のシーケンスを実行します。 最初に、完全にシャット ダウンのように、Windows はすべてのアプリケーションを終了し、すべてのユーザー セッションをログオフします。 この段階で、システムの状態がだけが開始されるコンピューターに似ていますが、アプリケーションが実行されていないが、Windows カーネルが読み込まれ、システムのセッションが実行されています。 次に、電源マネージャはシステムを休止状態にするようにデバイスを準備することを通知するデバイス ドライバーをで電源の Irp に送信します。 最後に、Windows は Hiberfil.sys に (読み込まれたカーネル モード ドライバーを含む)、カーネル メモリのイメージを保存し、コンピューターをシャット ダウンします。
+高速スタートアップの準備として、Windows は、完全シャットダウンシーケンスと休止状態の準備の要素を組み合わせたハイブリッドシャットダウンシーケンスを実行します。 まず、完全なシャットダウンと同様に、Windows はすべてのアプリケーションを閉じ、すべてのユーザーセッションからログオフします。 この段階では、システム状態は、起動したばかりのコンピューターと似ていますが、アプリケーションは実行されていませんが、Windows カーネルが読み込まれ、システムセッションが実行されています。 次に、電源マネージャーは、デバイスドライバーにシステム電源 Irp を送信し、デバイスが休止状態に入る準備をするように指示します。 最後に、Windows はカーネルメモリイメージ (読み込まれたカーネルモードドライバーを含む) を Hiberfil.sys に保存し、コンピューターをシャットダウンします。
 
-既定では、Windows 8 は、コールド起動の代わりに高速スタートアップを使用します。 ユーザーは通常、高速とコールドの新興企業間の違いを無視が、ユーザーの期待を満たすためには、高速スタートアップする必要があります動作コールド起動の場合と同じです。 具体的には、コンピューターに接続されているデバイスには、コールド起動の場合と同じ高速スタートアップを同じように構成します。
+既定では、Windows 8 はコールドスタートの代わりに高速スタートアップを使用します。 通常、高速スタートアップとコールドスタートの違いはユーザーが無視できますが、ユーザーの期待に応えるために、高速スタートアップはコールドスタートと同じように動作します。 特に、コールド起動の場合と同じように、コンピューターに接続されているデバイスを高速スタートアップ用に同じように構成する必要があります。
 
-デバイスのドライバーがコールド起動時または休止からのスリープ解除が発生したかどうかに応じて異なる方法でデバイスを構成した場合このドライバーは、高速の起動後にデバイスを構成いなくても (ウェイク-から-休止状態) ではなく、コールド起動発生しました。 たとえば、システム提供の NDIS ドライバーには、ミニポート ウェイク アップ機能休止からのスリープ解除ではなく高速スタートアップが無効にします。
+コールドスタートアップまたは休止状態からの復帰が発生したかどうかによってデバイスのドライバーがデバイスを異なる方法で構成する場合、このドライバーは、高速スタートアップの後に (休止状態からではなく) コールド起動としてデバイスを構成する必要があります。まし. たとえば、システムによって提供される NDIS ドライバーは、高速起動時にミニポートウェイクアップ機能を無効にしますが、休止状態からは無効にします。
 
-休止からのスリープ解除から高速スタートアップを区別するために、ドライバーがシステム セット電源の情報を確認できます ([**IRP\_MN\_設定\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) IRPコンピューターが、S0 を入力したこと、ドライバーに通知する (操作) の状態。 ドライバーの[I/O スタックの場所](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)この IRP が含まれています、 **Power**は電源関連の情報を格納する構造体のメンバー。 以降、Windows Vista では、 **Power**メンバー構造に含まれる、 **SystemPowerStateContext**は、メンバー、 [**システム\_POWER\_状態\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)前のシステム電源の状態に関する情報を含む構造体。 この情報は、ビット フィールドでエンコード、**システム\_POWER\_状態\_コンテキスト**構造体。
+復帰と休止状態からの高速スタートアップを区別するために、ドライバーは、コンピューターが S0 (動作) 状態になったことをドライバーに通知するシステムセット-電源 ([**irp\_\_set\_power**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) IRP 内の情報を検査できます。 この IRP 内のドライバーの[i/o スタックの場所](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)には、電源に関連する情報を含む構造体である**電源**メンバーが含まれています。 Windows Vista 以降では、 **power** member 構造体に**Systempowerstatecontext**メンバーが含まれています。このメンバー [ **\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_system_power_state_context)は、前のシステム電源の状態。 この情報は、**システム\_POWER\_状態\_コンテキスト**構造のビットフィールドでエンコードされます。
 
-ほとんどのビット フィールドの**システム\_POWER\_状態\_コンテキスト**構造がシステム用に予約されているし、ドライバーには見えません。 ただし、この構造体には、2 つのビット フィールドが含まれる**TargetSystemState**と**EffectiveSystemState**、高速スタートアップかどうかを判断するドライバーによって読み取ることができる、または休止からのスリープ解除が発生しました。
+**システム\_電力\_状態\_コンテキスト**構造のビットフィールドの大部分は、システムで使用するために予約されており、ドライバーに対しては非透過的です。 ただし、この構造体には、 **Targetsystemstate**と**EffectiveSystemState**という2つのビットフィールドが含まれており、これをドライバーで読み取って、高速スタートアップまたは休止状態からの復帰が発生したかどうかを判断できます。
 
-**TargetSystemState**と**EffectiveSystemState**ビット フィールドに設定されます[**システム\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)列挙値。 場合**TargetSystemState** = **PowerSystemHibernate**と**EffectiveSystemState** = **PowerSystemHibernate**、休止からのスリープ解除が発生しました。 ただし場合、 **TargetSystemState** = **PowerSystemHibernate**と**EffectiveSystemState**  =  **PowerSystemShutdown**、高速スタートアップが発生しました。
+**Targetsystemstate**および**EffectiveSystemState**ビットフィールドは、 [**SYSTEM\_POWER\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_system_power_state)列挙値に設定されます。 **Targetsystemstate** = **Powersystemhibernate**と**EffectiveSystemState** = **powersystemhibernate**の場合、休止状態から復帰します。 ただし、 **Targetsystemstate** = **powersystemhibernate**と**EffectiveSystemState** = **powersystemhibernate**の場合、高速スタートアップが発生しました。
 
-**TargetSystemState**ビット フィールドは、ドライバーがコンピューターをシャット ダウンまたは休止状態を入力する前にシステムの電源 IRP を受け取ったの最後のシステム電源状態遷移を指定します。 **EffectiveSystemState**ユーザーによって認識されたビット フィールドをデバイスの以前システム電源の有効な状態を示します。 **TargetSystemState**と**EffectiveSystemState**場合、ドライバーが休止状態が、ハイブリッドへの切り替えを保留中のシステムの通知を受信するなど、値が一致しないがありますその後、シャット ダウンが発生しました。
+**Targetsystemstate**ビットフィールドは、コンピューターがシャットダウンまたは休止状態になる前に、ドライバーがシステム電源 IRP を受信した最後のシステム電源状態の移行を指定します。 **EffectiveSystemState**ビットフィールドは、ユーザーが認識している、デバイスの以前のシステム電源の有効な状態を示します。 たとえば、ドライバーが保留中のシステム遷移の通知を休止状態にしたが、その後にハイブリッドシャットダウンが発生した場合、 **Targetsystemstate**と**EffectiveSystemState**の値が一致しない可能性があります。
 
-詳細については、次を参照してください。 [**システム\_POWER\_状態\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)します。
+詳細については、「 [**SYSTEM\_POWER\_STATE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_system_power_state_context)」を参照してください。
 
  
 

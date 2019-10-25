@@ -1,9 +1,9 @@
 ---
 title: MRxSetFileInfoAtCleanup ルーチン
-description: MRxSetFileInfoAtCleanup ルーチンは、ネットワークのミニ リダイレクターがクリーンアップでファイル システム オブジェクトでファイルの情報を設定することを要求する RDBSS によって呼び出されます。
+description: MRxSetFileInfoAtCleanup ルーチンは、クリーンアップ時にネットワークミニリダイレクターがファイルシステムオブジェクトにファイル情報を設定するよう要求するために、RDBSS によって呼び出されます。
 ms.assetid: 099244ee-cc66-4500-9fee-a10238aaa66c
 keywords:
-- MRxSetFileInfoAtCleanup ルーチン インストール可能なファイル システム ドライバー
+- MRxSetFileInfoAtCleanup ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 812fb9b8a5d074a15aea1052aa19b0c15295934a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13c2fe54d41d7e46d010c3f3ef6be336284f39ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841076"
 ---
 # <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup ルーチン
 
 
-*MRxSetFileInfoAtCleanup*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがクリーンアップでファイル システム オブジェクトでファイルの情報を設定することを要求します。
+*MRxSetFileInfoAtCleanup*ルーチンは、クリーンアップ時にネットワークミニリダイレクターがファイルシステムオブジェクトにファイル情報を設定するよう要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -39,45 +39,45 @@ NTSTATUS MRxSetFileInfoAtCleanup(
 { ... }
 ```
 
-<a name="parameters"></a>パラメーター
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxSetFileInfoAtCleanup*ステータスを返します\_成功または適切な NTSTATUS 値に成功しました。
+*MRxSetFileInfoAtCleanup*は正常に完了した場合、または適切な NTSTATUS 値を\_状態を返します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オブジェクトへの最後のハンドルが閉じられたときのクリーンアップ中にします。 これは、ファイル オブジェクトへの最後の参照が削除されたときに呼び出される、閉じる操作よりも異なります。
+RDBSS は、ファイルオブジェクトへの最後のハンドルが閉じられたときに、クリーンアップ中に*MRxSetFileInfoAtCleanup*への呼び出しを発行します。 これは、ファイルオブジェクトへの最後の参照が削除されたときに呼び出される close 操作とは異なります。
 
-*MRxSetFileInfoAtCleanup*ファイルまたはファイルのサイズのタイムスタンプが変更された場合、RDBSS によって呼び出されます。 呼び出し*MRxSetFileInfoAtCleanup* RDBSS でが行われるとは別にこれらの変更の各します。 ファイルのサイズと、タイムスタンプの両方が変更されているかどうかは、により、2 つの呼び出しを RDBSS *MRxSetFileInfoAtCleanup*します。
+*MRxSetFileInfoAtCleanup*は、ファイルのタイムスタンプまたはファイルのサイズが変更された場合に、RDBSS によって呼び出されます。 *MRxSetFileInfoAtCleanup* by RDBSS の呼び出しは、これらの変更ごとに個別に行われます。 ファイルサイズとタイムスタンプの両方が変更された場合、RDBSS は*MRxSetFileInfoAtCleanup*を2回呼び出します。
 
-呼び出しの前に*MRxSetFileInfoAtCleanup*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*ファイルのタイムスタンプがある場合は、パラメーター変更されました。
+*MRxSetFileInfoAtCleanup*を呼び出す前に、RDBSS は、ファイルのタイムスタンプが変更された場合に*RxContext*パラメーターが指す RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**Info.FileInformationClass**メンバーのセットをファイルに\_情報\_FileBasicInformation のクラスの値。
+**Info. FileInformationClass**メンバーは、FILEINFORMATIONCLASS のファイル\_情報\_クラス値に設定されます。
 
-**Info.Buffer**メンバーのセットをファイルに\_BASIC\_スタックに割り当てられている情報の構造体。
+**情報バッファー**のメンバーは、スタックに割り当てられた基本\_情報構造\_ファイルに設定されます。
 
-**Info.Length**メンバーは、ファイル、sizeof に設定\_BASIC\_情報構造体。
+**情報の長さ**のメンバーは、基本\_情報の構造\_、ファイルの sizeof に設定されます。
 
-呼び出しの前に*MRxSetFileInfoAtCleanup*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター ファイルのサイズが変更された場合。
+*MRxSetFileInfoAtCleanup*を呼び出す前に、RDBSS は、ファイルのサイズが変更された場合に*RxContext*パラメーターが指す RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**Info.FileInformationClass**メンバーのセットをファイルに\_情報\_FileEndOfFileInformation のクラスの値。
+FileEndOfFileInformation の\_クラス値のファイル\_情報に設定され**ます。**
 
-**Info.Buffer**メンバーのセットをファイルに\_エンド\_の\_ファイル\_スタックに割り当てられている情報の構造体。
+情報**バッファー**のメンバーは、スタックに割り当てられている\_ファイル\_情報構造の末尾\_\_ファイルに設定されます。
 
-**Info.Length**に設定されているメンバー <strong>sizeof (</strong>ファイル\_エンド\_の\_ファイル\_情報<strong>)</strong>します。
+**Info**メンバーは<strong>sizeof (</strong>file\_END\_\_ファイル\_情報<strong>)</strong>に設定されます。
 
-戻り値を無視する RDBSS *MRxSetFileInfoAtCleanup*します。
+RDBSS は、 *MRxSetFileInfoAtCleanup*からの戻り値を無視します。
 
-このルーチンで何もしないリターン状態を選択できますネットワーク ミニリダイレクター\_成功します。 ファイルのサイズやタイムスタンプを変更するは、クリーンアップ操作中に処理されます。
+ネットワークミニリダイレクターは、このルーチンで何も実行しないことを選択し、状態\_SUCCESS を返します。 ファイルサイズまたはタイムスタンプに対する変更は、クリーンアップ操作中に処理されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -87,12 +87,12 @@ RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オ
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>対象プラットフォーム</p></td>
-<td align="left">Desktop</td>
+<td align="left"><p>ターゲットプラットフォーム</p></td>
+<td align="left">デスクトップ</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オ
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

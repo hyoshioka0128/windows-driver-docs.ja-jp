@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_ノード\_イベント
-description: クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードでサポートされているイベントの一覧を取得するイベントです。
+title: KSK プロパティ\_BDA\_ノード\_イベント
+description: クライアントは、KSK プロパティ\_BDA\_NODE\_イベントを使用して、ノードでサポートされているイベントの一覧を取得します。
 ms.assetid: 4923a88b-abb3-4608-95b3-b0e74eeadaa8
 keywords:
-- KSPROPERTY_BDA_NODE_EVENTS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_NODE_EVENTS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12624c84d7755ea80cdbebc9bbf1d58402511b18
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c704c4253ef1b5f979a418548dabbfa936b1639c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386918"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833687"
 ---
-# <a name="kspropertybdanodeevents"></a>KSPROPERTY\_BDA\_ノード\_イベント
+# <a name="ksproperty_bda_node_events"></a>KSK プロパティ\_BDA\_ノード\_イベント
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードでサポートされているイベントの一覧を取得するイベントです。
+クライアントは、KSK プロパティ\_BDA\_NODE\_イベントを使用して、ノードでサポートされているイベントの一覧を取得します。
 
 ## <span id="ddk_ksproperty_bda_node_events_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_EVENTS_KS"></span>
 
@@ -42,33 +42,33 @@ ms.locfileid: "67386918"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>設定</th>
-<th>対象</th>
+<th>セット</th>
+<th>的を絞る</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
-<td><p>フィルター</p></td>
+<td><p>はい</p></td>
+<td><p>いいえ</p></td>
+<td><p>filter</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>Guid のリスト</p></td>
+<td><p>Guid の一覧</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-ノードによってサポートされているイベントの一覧は、Guid の一覧を示します。
+ノードでサポートされるイベントの一覧は、Guid の一覧です。
 
-ネットワーク プロバイダーでは、このプロパティを使用して、BDA テンプレートの接続リスト内の各ノードの機能のクエリを実行します。
+ネットワークプロバイダーは、このプロパティを使用して、BDA テンプレート接続リスト内の各ノードの機能を照会します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -78,8 +78,8 @@ ms.locfileid: "67386918"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ ms.locfileid: "67386918"
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyNodeEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodeevents)
+[**BdaPropertyNodeEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeevents)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

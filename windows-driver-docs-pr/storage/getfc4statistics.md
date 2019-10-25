@@ -1,9 +1,9 @@
 ---
 title: GetFC4Statistics 関数
-description: Nx の種類のポートでトラフィックの統計情報を報告 GetFC4Statistics WMI\_示された FC 4 プロトコルのポート。
+description: GetFC4Statistics WMI メソッドは、指定された FC-4 プロトコルについて、種類が Nx\_ポートのトラフィック統計を報告します。
 ms.assetid: f57f11bf-57b8-4ae9-96b3-4191f412c80c
 keywords:
-- 記憶装置の GetFC4Statistics 関数
+- GetFC4Statistics function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b98234d86b502aeda0f5958c623a7f6aaf61e0c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18f8af9884f1d3735d3638647d69da594220105e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378546"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837965"
 ---
 # <a name="getfc4statistics-function"></a>GetFC4Statistics 関数
 
 
-**GetFC4Statistics** WMI メソッドは、Nx の種類のポートでトラフィックの統計情報を報告\_示された FC 4 プロトコルのポート。
+**GetFC4Statistics** WMI メソッドは、指定された FC-4 プロトコルについて、種類が Nx\_ポートのトラフィック統計を報告します。
 
 <a name="syntax"></a>構文
 ------
@@ -39,32 +39,32 @@ void GetFC4Statistics(
 );
 ```
 
-<a name="parameters"></a>パラメーター
+<a name="parameters"></a>parameters
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体。
+*Hbastatus*   
+返されるときに、操作の状態を示す WMI 修飾子値を格納します。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 *PortWWN*   
-Nx 型のローカル ポートの世界中の名前\_がトラフィックの統計情報が報告されることをポート。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)構造体。
+トラフィックの統計情報が報告されるローカルポートの種類 Nx\_ポートの世界規模の名前。 この情報は、構造体の[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)の**PortWWN**メンバーのミニポートドライバーに配信されます。
 
 *FC4Type*   
-FC 4 プロトコルの種類を示す値。 FC4 型の詳細については、T11 委員会を参照してください。*ファイバー チャネル汎用サービス - 4*仕様。 この情報は、ミニポート ドライバーに配信される、 **FC4Type**のメンバー、 [ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)構造体。
+FC-4 プロトコルの種類を示す値。 FC4 の種類の詳細については、「T11 委員会の*ファイバーチャネル汎用サービス-4*の仕様」を参照してください。 この情報は、構造体の[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)の**FC4Type**メンバーのミニポートドライバーに配信されます。
 
 *FC4Statistics*   
-返された場合は、型の構造体が含まれています。 [ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)指定 FC 4 プロトコルの統計情報を保持しています。 ミニポート ドライバーには、この情報が返されます、 **FC4Statistics**のメンバー、 [ **GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体。
+返されると、指定した FC-4 プロトコルの統計を保持する[**Msfc\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)型の構造体が含まれます。 ミニポートドライバーは、 [**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)構造体の**FC4Statistics**メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -74,30 +74,30 @@ WMI メソッドには適用されません。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>対象プラットフォーム</p></td>
-<td align="left">Desktop</td>
+<td align="left"><p>ターゲットプラットフォーム</p></td>
+<td align="left">デスクトップ</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>ライブラリ</p></td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**GetFC4Statistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
+[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
 
-[**GetFC4Statistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
+[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

@@ -1,53 +1,53 @@
 ---
-title: タスク オフロード機能の判断
-description: タスク オフロード機能の判断
+title: タスクオフロード機能の決定
+description: タスクオフロード機能の決定
 ms.assetid: 9348a595-7bc0-467e-aeaf-e23100c99524
 keywords:
-- タスクのオフロード WDK TCP/IP トランスポート、機能
+- タスクオフロード WDK TCP/IP トランスポート、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edad6c3a8cdf34009d5e353534e6488506c40b2c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3f30d33bb144f1790cc656f9fb0193ffea8a076
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381412"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838147"
 ---
-# <a name="determining-task-offload-capabilities"></a>タスク オフロード機能の判断
+# <a name="determining-task-offload-capabilities"></a>タスクオフロード機能の決定
 
 
 
 
 
-NDIS 5.1 と前のタスクの強化されたフォームである NDIS サポート タスク オフロード サービスは、サービスをオフロードします。 オフロード機能の接続を確認する方法の詳細については、「[接続オフロード機能を決定する](determining-connection-offload-capabilities.md)します。
+NDIS は、NDIS 5.1 以前のタスクオフロードサービスの拡張形式であるタスクオフロードサービスをサポートしています。 接続のオフロード機能を確認する方法の詳細については、「[接続のオフロード機能の決定](determining-connection-offload-capabilities.md)」を参照してください。
 
-NDIS オフロードのハードウェア機能とプロトコル ドライバーで基になるミニポート アダプターの現在の構成を提供する、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。 NDIS フィルター ドライバーで基になるミニポート アダプターの現在の構成とタスク オフロードのハードウェア機能を提供します、 [ **NDIS\_フィルター\_アタッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)構造体。
+NDIS は、負荷の軽減ハードウェア機能と、基になるミニポートアダプターの現在の構成を[**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体のプロトコルドライバーに提供します。 NDIS には、タスクのオフロードハードウェア機能と、基になるミニポートアダプターの現在の構成が用意されています。これにより、 [**ndis\_フィルター\_\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)構造体にフィルターを適用できます。
 
-管理アプリケーションでは、オブジェクト識別子 (OID) のクエリを使用して、ミニポート アダプターのタスクのオフロード機能を取得します。 ただし、後続のドライバーには、OID のクエリを使用しないでください。 プロトコル ドライバーでは、その基になるドライバー レポート タスクのオフロード機能に変更を処理する必要があります。 ミニポート ドライバーでは、タスクの変更のオフロードで状態インジケーターの機能をレポートできます。 状態インジケーターの一覧は、次を参照してください。 [NDIS 6.0 TCP/IP Offload 状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-tcp-ip-offload-status-indications)します。
+管理アプリケーションは、オブジェクト識別子 (OID) クエリを使用して、ミニポートアダプターのタスクオフロード機能を取得します。 ただし、それ以上のドライバーは OID クエリを使用しないようにする必要があります。 プロトコルドライバーは、基になるドライバーが報告するタスクオフロード機能の変更を処理する必要があります。 ミニポートドライバーは、ステータスを示す状態のタスクオフロード機能の変更を報告できます。 ステータスの表示の一覧については、「 [NDIS 6.0 Tcp/ip オフロードの状態](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-tcp-ip-offload-status-indications)の表示」を参照してください。
 
-管理アプリケーション (または上にあるドライバー) は、クエリを実行してネットワーク インターフェイス カード (NIC) の現在のタスク オフロードの構成を決定できます、 [OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID。
+管理アプリケーション (またはそれ以降のドライバー) は、[現在の\_CONFIG oid\_の oid\_TCP\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)を照会することによって、ネットワークインターフェイスカード (NIC) の現在のタスクオフロード構成を特定できます。
 
-[ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造に関連付けられている[OID\_TCP\_オフロード\_現在\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)次を指定します。
+[\_\_現在の\_CONFIG\_、OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)に関連付けられている[**NDIS\_offload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体は、次のように指定します。
 
--   ヘッダーは、TCP/IP トランスポートをサポートするタスクのオフロード バージョンが含まれています。
+-   TCP/IP トランスポートがサポートするタスクオフロードバージョンを含むヘッダー情報。
 
--   チェックサムでは、負荷を軽減する[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体。
+-   [**NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体のチェックサムオフロード情報。
 
--   大規模なオフロード バージョン 1 (LSOV1) を送信する情報で、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)構造体。
+-   [**NDIS\_TCP\_\_大**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v1)規模な送信オフロードバージョン 1 (LSOV1) の情報は、\_オフロード\_V1 構造を送信ます。
 
--   インターネット プロトコル セキュリティ (IPsec) については、ので、 [ **NDIS\_IPSEC\_オフロード\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)構造体。
+-   [**NDIS\_ipsec\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)のインターネットプロトコルセキュリティ (ipsec) の情報は、V1 の\_V1 構造体をオフロードします。
 
--   大規模なオフロード バージョン 2 (LSOV2) を送信する情報で、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)構造体。
+-   NDIS\_TCP\_大規模な送信オフロードバージョン 2 (LSOV2) の情報は、 [ **\_オフロード\_V2 構造\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)します。
 
--   インターネット プロトコル セキュリティ (IPsecvOV) 情報、 [ **NDIS\_IPSEC\_オフロード\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)構造体。
+-   [**NDIS\_IPSEC\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)のインターネットプロトコルセキュリティ (IPsecvOV) の情報は\_V2 構造体をオフロードします。
 
-次のトピックでは、オフロード サービスの種類ごとに固有の情報を紹介します。
+次のトピックには、オフロードサービスの種類ごとに固有の情報が含まれています。
 
 -   [NIC のチェックサム機能の報告](reporting-a-nic-s-checksum-capabilities.md)
--   [レポートの NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)
--   [レポートの NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)
--   [NIC の IPsec の機能の報告](reporting-a-nic-s-ipsec-capabilities.md)
-    - \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+-   [NIC の LSOV1 の TCP パケットセグメント化機能の報告](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)
+-   [NIC の LSOV2 の TCP パケットセグメント化機能の報告](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)
+-   [NIC の IPsec 機能を報告する](reporting-a-nic-s-ipsec-capabilities.md)
+    - \[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
  
 

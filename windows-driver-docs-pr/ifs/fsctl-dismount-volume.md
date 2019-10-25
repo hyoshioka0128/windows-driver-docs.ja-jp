@@ -1,9 +1,9 @@
 ---
 title: FSCTL_DISMOUNT_VOLUME 制御コード
-description: FSCTL\_マウント解除\_ボリューム コントロールのコードはボリュームが使用されているかどうかに関係なく、ボリュームのマウントを解除しようとしています。
+description: ボリュームが使用されているかどうかに関係なくボリュームのマウントを解除しようとすると、FSCTL\_\_ボリューム制御コードがマウント解除されます。
 ms.assetid: edfff768-3bb3-4b8a-b982-80797ac116fd
 keywords:
-- FSCTL_DISMOUNT_VOLUME 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_DISMOUNT_VOLUME 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,65 +14,65 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6112d6332da7043822789316854779b26a20bfb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7592bdc7d22a93abfb630d2ed6b2360399914c09
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365068"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841321"
 ---
-# <a name="fsctldismountvolume-control-code"></a>FSCTL\_マウント解除\_ボリューム コントロール コード
+# <a name="fsctl_dismount_volume-control-code"></a>FSCTL\_マウント解除\_ボリューム制御コード
 
 
-**FSCTL\_マウント解除\_ボリューム**ボリュームが使用されているかどうかに関係なく、ボリュームのマウントを解除しようとコードを制御します。
+ボリュームが使用されているかどうかに関係なくボリュームのマウントを解除しようとすると、 **FSCTL\_\_ボリューム**制御コードがマウント解除されます。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、次のパラメーターを使用して[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
-**Parameters**
+**パラメーター**
 
-<a href="" id="instance"></a>*インスタンス*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元のポインターを不透明なインスタンス。 このパラメーターが必要とすることはできません**NULL**します。
+<a href="" id="instance"></a>*Instance*  
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 呼び出し元の非透過インスタンスポインター。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
-<a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 マウントを解除するボリュームを指定する、ファイル ポインター オブジェクト。 このパラメーターが必要とすることはできません**NULL**します。
+<a href="" id="fileobject"></a>*ファ*  
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 マウントを解除するボリュームを指定するファイルポインターオブジェクト。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
-<a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 マウントを解除するボリュームのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
+<a href="" id="filehandle--in-"></a> *\]の FileHandle \[*  
+[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみ。 マウントを解除するボリュームのファイルハンドル。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
-<a href="" id="fscontrolcode--in-"></a>*FsControlCode\[で\]*  
-操作のコードを制御します。 使用**FSCTL\_マウント解除\_ボリューム**この操作にします。
+<a href="" id="fscontrolcode--in-"></a> *\]の FsControlCode \[*  
+操作の制御コード。 この操作には、FSCTL\_使用して **\_ボリュームのマウントを解除**してください。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-この操作で使用できません。 設定**NULL**します。
+この操作では使用されません。 を**NULL**に設定します。
 
-<a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
-この操作で使用できません。 0 に設定します。
+<a href="" id="inputbufferlength--in-"></a> *\]内の InputBufferLength \[*  
+この操作では使用されません。 を0に設定します。
 
-<a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-この操作で使用できません。 設定**NULL**します。
+<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[out\]*  
+この操作では使用されません。 を**NULL**に設定します。
 
-<a href="" id="outputbufferlength--in-"></a>*OutputBufferLength\[で\]*  
-この操作で使用できません。 0 に設定します。
+<a href="" id="outputbufferlength--in-"></a> *\]の OutputBufferLength \[*  
+この操作では使用されません。 を0に設定します。
 
-<a name="status-block"></a>ステータス ブロック
+<a name="status-block"></a>状態ブロック
 ------------
 
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功または適切な NTSTATUS 値。
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**ZWFSCONTROLFILE**](https://msdn.microsoft.com/library/windows/hardware/ff566462)は、STATUS\_SUCCESS または適切な NTSTATUS 値を返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-**FSCTL\_マウント解除\_ボリューム**制御コードは、他のプロセスに場合、それらのプロセスの予期しない結果を持つことができると、ボリュームを使用しているかどうかに関係なく、ボリュームのマウントを解除しようとします。ボリュームのロックを保持、操作を行います。 ボリュームのロックについては、次を参照してください。 [ **FSCTL\_ロック\_ボリューム**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_lock_volume)します。
+ボリューム制御コード **\_\_マウント解除**すると、他のプロセスがボリュームを使用しているかどうかに関係なく、ボリュームのマウントを解除しようとします。ボリュームのロックを保持していない場合、これらのプロセスに対して予期しない結果が生じる可能性があります。 ボリュームのロックの詳細については、「 [**FSCTL\_LOCK\_volume**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_lock_volume)」を参照してください。
 
-オペレーティング システムでは、マウント ボリュームを検出しません。 マウントのボリュームにアクセスしようとすると、オペレーティング システムは、ボリュームのマウントを試みます。 呼び出しなど[ **GetLogicalDrives** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-getlogicaldrives)マウント ボリュームをマウントするオペレーティング システムをトリガーします。
+オペレーティングシステムは、マウント解除されたボリュームを検出しません。 マウント解除されたボリュームにアクセスしようとすると、オペレーティングシステムはボリュームのマウントを試みます。 たとえば、 [**Getlogicaldrives**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-getlogicaldrives)を呼び出すと、マウント解除されたボリュームをマウントするオペレーティングシステムがトリガーされます。
 
-*FileHandle*にハンドルが渡される[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)への直接アクセス用に開く、ボリュームを識別するハンドルである必要があります。 ボリュームのハンドルを取得する[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)で、 *ObjectAttributes*パラメーターに設定する*ObjectName*次のフォーム:  *\\ \\.\\X:* 場所*X*はボリューム、フロッピー ディスク ドライブ、または CD-ROM ドライブのドライブ文字です。 アプリケーションでは、ファイルを指定する必要がありますも\_共有\_読み取りとファイル\_共有\_でフラグを書き込み、 *ShareAccess*パラメーターの**ZwCreateFile**.
+[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)に渡される*FileHandle*ハンドルは、直接アクセスするために開かれたボリュームへのハンドルである必要があります。 ボリュームハンドルを取得するには、 *Objectattributes*パラメーターを\\\\の形式の*ObjectName*に設定して[**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)を呼び出します *。\\x:* ここで、 *x*はボリュームのドライブ文字、フロッピーディスクです。ドライブ、または CD-ROM ドライブ。 また、アプリケーションでは、 **Zwcreatefile**の共有*アクセス*パラメーターで書き込みフラグ\_\_共有\_ファイルを共有\_指定する必要があります。
 
-指定されたボリュームでは、システム ボリュームまたはページのファイルが含まれています、操作が失敗します。
+指定されたボリュームがシステムボリュームであるか、またはページファイルを含んでいる場合、操作は失敗します。
 
 指定されたボリュームが別のプロセスによってロックされている場合、操作は失敗します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -82,8 +82,8 @@ ms.locfileid: "67365068"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Ntifs</td>
 </tr>
 </tbody>
 </table>
@@ -91,11 +91,11 @@ ms.locfileid: "67365068"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

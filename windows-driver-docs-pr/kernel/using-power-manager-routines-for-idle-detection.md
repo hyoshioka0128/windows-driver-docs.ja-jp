@@ -1,52 +1,52 @@
 ---
-title: アイドル状態検出のための電源マネージャー ルーチンの使用
-description: アイドル状態検出のための電源マネージャー ルーチンの使用
+title: アイドル検出に電源マネージャールーチンを使用する
+description: アイドル検出に電源マネージャールーチンを使用する
 ms.assetid: 6a89b2eb-d987-4722-b521-9df93153d957
 keywords:
-- アイドル状態検出 WDK 電源管理
+- アイドル検出 WDK 電源管理
 - PoRegisterDeviceForIdleDetection
 - PoSetDeviceBusy
-- 電源マネージャー WDK カーネル
-- アイドル タイムアウト WDK の電源管理
-- タイムアウト WDK の電源管理
+- power manager WDK カーネル
+- アイドルタイムアウトの WDK 電源管理
+- タイムアウトの WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac3295d9386489986d1b28e473797b755323aef2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d11adcb9a98ff1850e07c6ccb407d9f69b93532c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381570"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838339"
 ---
-# <a name="using-power-manager-routines-for-idle-detection"></a>アイドル状態検出のための電源マネージャー ルーチンの使用
+# <a name="using-power-manager-routines-for-idle-detection"></a>アイドル検出に電源マネージャールーチンを使用する
 
 
 
 
 
-電源マネージャーからのアイドル状態の検出のサポートを提供する、 [ **PoRegisterDeviceForIdleDetection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)と[ **PoSetDeviceBusy** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチン。
+電源マネージャーでは、 [**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)および[**Posetdevicebusy**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)ルーチンによるアイドル検出がサポートされています。
 
-デバイスの電源ポリシー所有者の呼び出しをそのデバイスのアイドル状態の検出を有効にする**PoRegisterDeviceForIdleDetection**を指定します。
+デバイスのアイドル状態の検出を有効にするために、デバイスの電源ポリシー所有者は**PoRegisterDeviceForIdleDetection**を呼び出し、以下を指定します。
 
--   システムのパフォーマンスの最適化時に適用するアイドル状態のタイムアウト値。
+-   システムのパフォーマンスを最適化するときに適用するアイドルタイムアウト値。
 
--   この活動のシステムを最適化するときに適用するアイドル状態のタイムアウト値。
+-   システムを節約するために最適化するときに適用するアイドルタイムアウト値。
 
--   デバイスの電源状態は、デバイスにするアイドル状態のときに移行する必要があります。
+-   アイドル時にデバイスが遷移するデバイスの電源状態。
 
-**PoRegisterDeviceForIdleDetection**アイドル状態の検出を無効にする新しいドライバー バージョンで使用されるアイドル カウンターへのポインターを返します。 呼び出し元**PoRegisterDeviceForIdleDetection** IRQL で実行する必要があります&lt;ディスパッチ\_レベル。
+**PoRegisterDeviceForIdleDetection**は、アイドル状態のカウンターへのポインターを返します。このカウンターは、ドライバーがアイドル状態の検出を無効にするために後で使用します。 **PoRegisterDeviceForIdleDetection**の呼び出し元は、IRQL &lt; ディスパッチ\_レベルで実行されている必要があります。
 
-ドライバーは、アイドル状態、デバイスが起動し、デバイスの電源 Irp を処理する準備ができて、後任意の時点を検出するためには、そのデバイスを登録できます。 たとえば、ドライバーは可能性がありますの一部としてアイドル状態の検出を有効にその*IoCompletion*開始-デバイスの PnP IRP のルーチンです。
+ドライバーは、デバイスが起動し、デバイスの電源 Irp を処理する準備が整うと、いつでもデバイスをアイドル状態の検出に登録できます。 たとえば、PnP 開始デバイスの IRP の*Iocompletion*ルーチンの一部として、ドライバーによってアイドル検出が有効になる場合があります。
 
-どのデバイスに対してタイムアウト値は、デバイスの電源投入待機時間に比例する必要がありますや、監視対象デバイスの動作に基づいています。 特定の種類のデバイスの場合、ドライバーは、デバイス クラスに対する標準的な電源ポリシーのタイムアウトを使用する場合は-1 の節約とパフォーマンスのタイムアウト値を指定できます。 詳細については、デバイスに固有のドキュメントを参照してください。
+特定のデバイスのタイムアウト値は、デバイスの電力の待機時間に比例し、デバイスの動作の観察に基づいている必要があります。 特定の種類のデバイスの場合、ドライバーは、デバイスクラスの標準の電源ポリシータイムアウトを使用するために、-1 の節約とパフォーマンスのタイムアウト値を指定できます。 詳細については、デバイス固有のドキュメントを参照してください。
 
-デバイスが使用して、ドライバーで呼び出す必要があります[ **PoSetDeviceBusy**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、によって返されたポインターを渡す**PoRegisterDeviceForIdleDetection**します。 **PoSetDeviceBusy**デバイスのアイドル状態のカウント ダウンを再起動するため、アイドル状態のカウンターをリセットします。 ドライバーを呼び出す必要があります**PoSetDeviceBusy** I/O 操作のたびにします。
+デバイスが使用されている場合、ドライバーは[**Posetdevicebusy**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出して、 **PoRegisterDeviceForIdleDetection**から返されたポインターを渡す必要があります。 **Posetdevicebusy**は、アイドル状態のカウンターをリセットし、デバイスのアイドル状態のカウントダウンを再開します。 ドライバーは、すべての i/o 操作で**Posetdevicebusy**を呼び出す必要があります。
 
-デバイスがアイドル状態かどうかを確認するのには、電源マネージャーは、現在のシステム電源ポリシー (保護またはパフォーマンスのいずれか) のアイドル タイムアウトのドライバーが指定した値でアイドル状態のカウンターの値を比較します。 システム電源ポリシーに関連する関数の Microsoft Windows SDK を参照してください。
+デバイスがアイドル状態であるかどうかを判断するために、電源マネージャーは、現在のシステム電源ポリシー (保護またはパフォーマンス) のために、アイドル状態のカウンターの値とドライバーによって指定されたアイドル状態のタイムアウト値を比較します。 システム電源ポリシーに関連する関数については、Microsoft Windows SDK を参照してください。
 
-デバイスがタイムアウト値を満たすデバイスを電源マネージャー送信しますセット power IRP、デバイスを指定する電源の状態、ドライバーは、呼び出しで渡される**PoRegisterDeviceForIdleDetection**します。 電源マネージャーは、セット power IRP を送信する前に IRP のクエリを送信しません。 他; 処理する際は、スタックのドライバーがセット power IRP を処理します。適切なタイミングで実行する必要あるし、失敗することはできません。 (を参照してください[デバイス電源 Irp の処理](handling-device-power-down-irps.md))。
+デバイスがタイムアウト値を満たすと、電源マネージャーはデバイスセット-電源 IRP を送信します。これは、ドライバーが**PoRegisterDeviceForIdleDetection**への呼び出しで渡したデバイスの電源状態を指定します。 パワーマネージャーは、set-power IRP を送信する前に、クエリの IRP を送信しません。 スタック内のドライバーは、他のものを処理するように、set-power IRP を処理します。これらは、適切なタイミングで完了する必要があり、失敗することはできません。 (「[デバイスの電源を切る irp の処理](handling-device-power-down-irps.md)」を参照してください)。
 
-ときに、ドライバー アイドル状態の検出が必要なくなったデバイスの電源を処理する準備ができていません呼び出す必要がありますの Irp で**PoRegisterDeviceForIdleDetection**ここでも、両方のタイムアウト値に 0 を渡します。 タイムアウトの設定値を 0 に設定すると、(バッテリ使用時) の節約とパフォーマンス (AC) 電源ポリシーの両方のアイドル状態の検出が無効にします。 ドライバーがすばやく; アイドル状態の検出を再度有効にできます。呼び出すだけ**PoRegisterDeviceForIdleDetection** 0 以外のタイムアウト値を使用します。 ドライバーがデバイスを登録すると、有効にし、デバイスが電源を切ると再起動された場合でも、タイムアウトの値を変更することでアイドル状態の検出を無効にできます。
+ドライバーがアイドル状態の検出を必要としなくなった場合、またはデバイスの電源ダウン Irp を処理する準備ができていない場合は、 **PoRegisterDeviceForIdleDetection**を再度呼び出し、両方のタイムアウト値に0を渡す必要があります。 タイムアウトをゼロに設定すると、節約 (バッテリ) とパフォーマンス (AC) の両方の電源ポリシーのアイドル検出が無効になります。 ドライバーは、アイドル状態の検出をすぐに再び有効にすることができます。これは、ゼロ以外のタイムアウト値を使用して**PoRegisterDeviceForIdleDetection**を呼び出すだけです。 デバイスが登録されると、デバイスの電源がオフになっている場合でも、タイムアウト値を変更することでアイドル検出を有効または無効にすることができます。
 
  
 

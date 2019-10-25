@@ -3,35 +3,35 @@ title: Direct3D バージョン 11 DDI との通信の初期化
 description: Direct3D バージョン 11 DDI との通信の初期化
 ms.assetid: 3b383f78-da88-4979-b55f-8e234f230df7
 keywords:
-- DDI 通信を初期化して、Direct3D バージョン 11 WDK Windows 7 表示
-- DDI 通信を初期化して、Direct3D バージョン 11 WDK Windows Server 2008 R2 表示
+- Direct3D バージョン 11 WDK Windows 7 display、DDI 通信の初期化
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 の表示、DDI 通信の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 515203b4bed47cff8a1a1e823405555a859f1c9c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a08d666739d8daee6028b5055d1f21edda80c10
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385182"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840372"
 ---
 # <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>Direct3D バージョン 11 DDI との通信の初期化
 
 
-このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
+このセクションは、windows 7 以降、および windows Server 2008 R2 以降のバージョンの Windows オペレーティングシステムにのみ適用されます。
 
-ユーザー モードのディスプレイ ドライバー DLL のバージョン 11 との通信を初期化するために DDI、Direct3D のバージョン 11 ランタイムでは、DLL がまだ読み込まれていない場合、DLL が最初に読み込みます。 Direct3D ランタイムが次に、ユーザー モードのディスプレイ ドライバーを呼び出す[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)グラフィックス アダプターのインスタンスを開く、DLL のエクスポート テーブルを使用して関数。 **OpenAdapter10\_2**関数は DLL の関数をエクスポートします。
+ユーザーモードの display driver DLL のバージョン 11 DDI との通信を初期化するために、DLL がまだ読み込まれていない場合は、Direct3D version 11 runtime によって最初に DLL が読み込まれます。 次に、Direct3D ランタイムは、DLL の export テーブルを介してユーザーモード表示ドライバーの[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数を呼び出し、グラフィックスアダプターのインスタンスを開きます。 **OpenAdapter10\_2**関数は、DLL の唯一のエクスポート関数です。
 
-**注**   、 [ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数のと同じですが、 [ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数点を除いて**OpenAdapter10\_2**でドライバーのアダプター固有の関数のテーブルを返します、 **pAdapterFuncs\_2**のメンバー、[ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造、および**OpenAdapter10**でドライバーのアダプター固有の関数のテーブルを返します、D3D10DDIARG の pAdapterFuncs メンバー\_OPENADAPTER します。 **pAdapterFuncs\_2**を指す、 [ **D3D10\_2DDI\_ADAPTERFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体。**pAdapterFuncs**を指す、 [ **D3D10DDI\_ADAPTERFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体。
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数は、 [**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数と同じです **。ただし、** **OpenAdapter10\_2**では、**ドライバーのアダプター固有の関数のテーブルを  ** [**D3D10DDIARG\_openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造体の padapterfuncs\_2 のメンバー。 D3D10DDIARG の padapterfuncs メンバーにあるドライバーのアダプター固有の関数のテーブル**を返し\_** OPENADAPTER。 **Padapterfuncs 2**は、 [**D3D10\_2DDI\_adapterの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体を指します。**Padapterfuncs 関数**は、 [**D3D10DDI\_adapterの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体を指します。\_
 
  
 
-[**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)ドライバーの初期化をより効率的に設計されました。 実装する必要があります**OpenAdapter10\_2** Direct3D のバージョン 11 ドライバー。 実装することも**OpenAdapter10\_2** (なくまたはに加えて[ **OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)) を増やす、Direct3D のバージョン 10.1 ドライバーで、これらのドライバーの効率を初期化します。 実装の詳細については**OpenAdapter10\_2** 、Direct3D バージョン 10.1 ドライバーには、次を参照してください。[バージョンの検出サポート](version-discovery-support.md)します。 **OpenAdapter10\_2**バージョン管理と、ランタイムとドライバーの間には、その他の情報の交換を処理します。
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)は、初期化ドライバーをより効率的にするように設計されています。 Direct3D バージョン11のドライバーには、 **OpenAdapter10\_2**を実装する必要があります。 また、これらのドライバーの初期化効率を向上させるために、Direct3D バージョン10.1 ドライバーで**OpenAdapter10\_2** ( [**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)に加えて、またはその両方) を実装することもできます。 Direct3D バージョン10.1 ドライバーでの**OpenAdapter10\_2**の実装の詳細については、「[バージョン探索のサポート](version-discovery-support.md)」を参照してください。 **OpenAdapter10\_2**は、ランタイムとドライバー間のバージョン管理とその他の情報の交換を処理します。
 
-### <a name="span-idversioningspanspan-idversioningspanversioning"></a><span id="versioning"></span><span id="VERSIONING"></span>バージョン管理
+### <a name="span-idversioningspanspan-idversioningspanversioning"></a><span id="versioning"></span><span id="VERSIONING"></span>版
 
-[**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)ドライバーのアダプター固有の関数、Direct3D API と Direct3D DDI のバージョンがその direct3d10 方法から処理される方法を変更する処理の詳細については、バージョン管理direct3d10 がバージョン管理が処理する方法の詳細についてを参照してください。 [Direct3D のバージョン 10 DDI との通信を初期化して](initializing-communication-with-the-direct3d-version-10-ddi.md))。 ドライバーの障害発生時に証明書利用者の Direct3D API ではなく**OpenAdapter10\_2**特定バージョンのサポートなしを指定する関数 (と同様**OpenAdapter10\_2**)、ドライバーがサポートしています DDI バージョンを一覧表示は明示的にする必要があります。 Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)関数 (ドライバーのアダプター固有の関数のいずれか)、ドライバーがサポートする DDI バージョンを照会します。
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)とドライバーのアダプター固有の関数によって、direct3d API と direct3d DDI 間のバージョン管理が direct3d 10 のバージョン管理の方法で処理されるようになります (direct3d 10 の処理方法の詳細については、「」を参照してください)。バージョン管理、「 [Direct3D バージョン 10 DDI との通信の初期化](initializing-communication-with-the-direct3d-version-10-ddi.md)」を参照してください。 特定のバージョンがサポートされていないことを示すために ( **OpenAdapter10\_2**と同様に)、ドライバーの**OpenAdapter10\_2**関数の失敗に依存している Direct3D API の代わりに、ドライバーでは、DDI のバージョンを明示的に一覧表示する必要があります。対応. Direct3D ランタイムは、ユーザーモードのディスプレイドライバーの[**Getsupportedversions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)関数 (ドライバーのアダプター固有の関数の1つ) を呼び出して、ドライバーがサポートする DDI のバージョンを照会します。
 
-少なくとも 2 つの新しい DDI バージョンの Direct3D 11 DDI 関数があります。 各 DDI バージョンでは、DDI が Windows Vista または Windows 7 上で実行するかどうかを区別します。 ただし、Direct3D 11 DDI のサポートは必ずしも D3D に関連付けられているハードウェア機能の完全なサポート\_機能\_レベル\_11。 ドライバーは、Direct3D 11 DDI Direct3D 11 DDI のテセレーションをなどによって公開されているその他の機能をサポートしていないハードウェアでのスレッドの新機能をサポートできます。 次のコードは、各 DDI バージョンを識別する方法を示しています。
+Direct3D 11 DDI functions には、少なくとも2つの新しい DDI バージョンがあります。 各 DDI バージョンは、DDI が Windows Vista または Windows 7 で実行されているかどうかを識別します。 ただし、Direct3D 11 DDI のサポートは、必ずしも D3D\_機能\_レベル\_11 に関連付けられているハードウェア機能の完全なサポートを示しているわけではありません。 ドライバーは、(テセレーションなどの) Direct3D 11 DDI によって公開されている他の機能をサポートしていない、Direct3D 11 DDI の新しいスレッド機能をサポートできます。 次のコードは、各 DDI バージョンがどのように区別されるかを示しています。
 
 ```cpp
 // D3D11.0 on Vista
@@ -58,33 +58,33 @@ ms.locfileid: "67385182"
 #endif 
 ```
 
-### <a name="span-idinformationexchangespanspan-idinformationexchangespaninformation-exchange"></a><span id="information_exchange"></span><span id="INFORMATION_EXCHANGE"></span>情報交換
+### <a name="span-idinformation_exchangespanspan-idinformation_exchangespaninformation-exchange"></a><span id="information_exchange"></span><span id="INFORMATION_EXCHANGE"></span>情報交換
 
-バージョンについては、ドライバーを指定するだけでなく[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数も、ランタイムとドライバーの間には、その他の情報を交換します。
+ドライバーの[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数は、バージョン情報を指定するだけでなく、ランタイムとドライバー間のその他の情報も交換します。
 
-ドライバーの呼び出しで[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数の場合、ランタイムは、提供、 [ **pfnQueryAdapterInfoCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)アダプターのコールバック関数で、 **pAdapterCallbacks**のメンバー、 [ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造体。 ユーザー モードのディスプレイ ドライバーを呼び出す必要があります、 **pfnQueryAdapterInfoCb**ディスプレイのミニポート ドライバーからのグラフィックス ハードウェア機能のクエリをアダプター コールバック関数。
+ドライバーの[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数の呼び出しでは、ランタイムが[**D3D10DDIARG\_Openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)の**Padaptercallbacks**メンバーに[**pfnQueryAdapterInfoCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb) adapter コールバック関数を渡します。データ. ユーザーモードのディスプレイドライバーは、 **pfnQueryAdapterInfoCb** adapter コールバック関数を呼び出して、ディスプレイミニポートドライバーからグラフィックスハードウェア機能を照会する必要があります。
 
-共通言語ランタイムは、ユーザー モードのディスプレイ ドライバーの[ **CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)レンダリング状態のコレクションを処理するためのディスプレイ デバイスを作成する機能 (ドライバーのアダプター固有の関数の 1 つ)初期化を完了して。 初期化が完了したら、Direct3D のバージョン 11 ランタイムが呼び出すことができます、[表示 Direct3D バージョン 11 の機能のドライバーによって提供される](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、ユーザー モードのディスプレイ ドライバーが呼び出すことができます、[ランタイムが指定した関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index).
+ランタイムは、(ドライバーのアダプター固有の関数の1つである) ユーザーモードの表示ドライバーの[**CreateDevice (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数を呼び出して、レンダリング状態のコレクションを処理し、初期化を完了するためのディスプレイデバイスを作成します。 初期化が完了すると、Direct3D バージョン11ランタイムは、ディスプレイドライバーによって提供される[direct3d バージョン11の関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を呼び出すことができます。また、ユーザーモードの表示ドライバーは、[ランタイムが提供する関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を呼び出すことができます。
 
-ユーザー モードのディスプレイ ドライバーの CreateDevice(D3D10) 関数を呼び出すと、 [ **D3D10DDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)構造体のメンバーが設定されて次のように初期化するために、ユーザー モードのディスプレイ ドライバーのバージョン 11 DDI:
+ユーザーモードの表示ドライバーの CreateDevice (D3D10) 関数は、ユーザーモードの表示ドライバーのバージョン 11 DDI を初期化するために、次のようにメンバーが設定されている[**D3D10DDIARG\_CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)構造体を使用して呼び出されます。
 
--   ランタイム セット**インターフェイス**ユーザー モードのディスプレイ ドライバーからランタイムを必要とするインターフェイスのバージョンにします。
+-   ランタイムは、ユーザーモードの表示ドライバーからランタイムが必要とするインターフェイスのバージョンに**インターフェイス**を設定します。
 
--   ランタイム セット**バージョン**ドライバーは、ランタイムのビルド時に識別するために使用できる数にします。 たとえば、ドライバーは、Windows Vista でリリースされたランタイムと、ランタイムが後続のサービス パック、ドライバーが必要な修正プログラムが含まれているリリースを区別するために、バージョン番号を使用できます。
+-   ランタイムは、ランタイムがいつビルドされるかを識別するためにドライバーが使用できる数値に**バージョン**を設定します。 たとえば、ドライバーはバージョン番号を使用して、Windows Vista と共にリリースされたランタイムと、後続の Service Pack と共にリリースされたランタイムを区別できます。この場合、ドライバーに必要な修正が含まれている可能性があります。
 
--   ランタイム セット**hRTDevice**ランタイムを呼び出し、ドライバーとドライバーが使用するハンドルを指定します。
+-   ランタイムは、ドライバーがランタイムにコールバックするときにドライバーが使用するハンドルを指定するために、 **Hrtdevice**を設定します。
 
--   ランタイム セット**hDrvDevice**ドライバーの後続の呼び出しで、ランタイムを使用するハンドルを指定します。
+-   ランタイムは、 **hDrvDevice**を設定して、後続のドライバー呼び出しでランタイムが使用するハンドルを指定します。
 
--   ランタイムでは、そのデバイスに固有のコールバック関数のテーブルを提供する、 [ **D3DDDI\_DEVICECALLBACKS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体**pKTCallbacks**ポイント. ユーザー モードのディスプレイ ドライバーは、ディスプレイのミニポート ドライバーでのカーネル モードのサービスへのアクセスにランタイムが提供するコールバック関数を呼び出します。
+-   ランタイムは、 **pKTCallbacks**が指す[**D3DDDI\_DEVICECALLBACKS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体に、デバイス固有のコールバック関数のテーブルを提供します。 ユーザーモード表示ドライバーは、ランタイム提供のコールバック関数を呼び出して、ディスプレイミニポートドライバーのカーネルモードサービスにアクセスします。
 
--   ユーザー モードのディスプレイ ドライバーがそのデバイスに固有の関数でのテーブルを返します、 [ **D3D11DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)構造体**p11DeviceFuncs**ポイント。
+-   ユーザーモード表示ドライバーは、 **p11DeviceFuncs**が指す[**D3D11DDI\_devicefuncs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)構造体に、デバイス固有の関数のテーブルを返します。
 
--   ランタイムを提供、 [ **DXGI\_DDI\_ベース\_ARGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_args)構造体**DXGIBaseDDI**ポイント。 ランタイムとユーザー モード ドライバーの供給を表示、 [DirectX グラフィックス インフラストラクチャ DDI](directx-graphics-infrastructure-ddi.md)この構造にします。
+-   ランタイムは、 **Dxgibaseddi**がポイントする[**DXGI\_DDI\_BASE\_ARGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_args)構造体を提供します。 ランタイムとユーザーモードの表示ドライバーは、この構造に対する[DirectX グラフィックスインフラストラクチャ DDI](directx-graphics-infrastructure-ddi.md)を提供します。
 
--   ランタイム セット**hRTCoreLayer** direct3d10 のコア機能にアクセスするランタイムを呼び出し、ドライバーとドライバーが使用するハンドルを指定する (関数の呼び出しを**p11UMCallbacks**メンバーを指定します)。
+-   ランタイムは、ドライバーがランタイムにコールバックしてコア Direct3D 10 機能 (つまり、 **p11UMCallbacks**メンバーが指定する関数の呼び出し) にアクセスするときに、ドライバーが使用するハンドルを指定するように**hRTCoreLayer**を設定します。
 
--   ランタイムでその中核となるコールバック関数のテーブルを提供する、 [ **D3D11DDI\_CORELAYER\_DEVICECALLBACKS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)構造体**p11UMCallbacks**ポイント。 ユーザー モードのディスプレイ ドライバーは、ランタイムが指定した主要な状態を更新するコールバック関数を呼び出します。
+-   ランタイムは、 [**D3D11DDI\_CORELAYER\_DEVICECALLBACKS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)構造体に、 **p11UMCallbacks**がポイントするコアコールバック関数のテーブルを提供します。 ユーザーモード表示ドライバーは、ランタイムによって提供されるコアコールバック関数を呼び出して、状態を更新します。
 
  
 

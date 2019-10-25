@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_ノード\_記述子
-description: クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードの一覧を取得する記述子。
+title: KSK プロパティ\_BDA\_ノード\_記述子
+description: クライアントは、ノードの一覧を取得するために、KSK プロパティ\_BDA\_ノード\_記述子を使用します。
 ms.assetid: 53b297e6-7e31-4231-80ad-b114cf9343b4
 keywords:
-- KSPROPERTY_BDA_NODE_DESCRIPTORS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_NODE_DESCRIPTORS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40233969906bea261bb1e6229398b21687a2e4fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e2c3aca680b9ddae510640f5754366c2f815eba4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373735"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845551"
 ---
-# <a name="kspropertybdanodedescriptors"></a>KSPROPERTY\_BDA\_ノード\_記述子
+# <a name="ksproperty_bda_node_descriptors"></a>KSK プロパティ\_BDA\_ノード\_記述子
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_ノード\_ノードの一覧を取得する記述子。
+クライアントは、ノードの一覧を取得するために、KSK プロパティ\_BDA\_ノード\_記述子を使用します。
 
 ## <span id="ddk_ksproperty_bda_node_descriptors_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_DESCRIPTORS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373735"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373735"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>Guid のリスト</p></td>
+<td><p>Guid の一覧</p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ ms.locfileid: "67373735"
 
 ノードの一覧は、使用可能なノードの Guid の配列です。
 
-テンプレートのトポロジでの作成に使用できる BDA ノードの一覧は、次を参照してください。 [BDA ノード カテゴリ Guid](bda-node-category-guids.md)します。
+テンプレートトポロジで作成できる BDA ノードの一覧については、「 [Bda ノードカテゴリ guid](bda-node-category-guids.md)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ ms.locfileid: "67373735"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ ms.locfileid: "67373735"
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyNodeDescriptors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodedescriptors)
+[**BdaPropertyNodeDescriptors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodedescriptors)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

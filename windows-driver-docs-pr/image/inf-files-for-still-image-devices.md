@@ -1,52 +1,52 @@
 ---
-title: 静止画像デバイスの INF ファイル
-description: 静止画像デバイスの INF ファイル
+title: 静止イメージデバイス用の INF ファイル
+description: 静止イメージデバイス用の INF ファイル
 ms.assetid: f68ba904-9049-4f7e-9903-fdf6f413a1a5
 ms.date: 03/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ac8f45042c698e9e05852cee8a91146135c890
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 770b88bcce17e4f8003bf512e4dc19707f1126bb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378969"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840824"
 ---
-# <a name="inf-files-for-still-image-devices"></a>静止画像デバイスの INF ファイル
+# <a name="inf-files-for-still-image-devices"></a>静止イメージデバイス用の INF ファイル
 
-既定クラスのインストーラーを静止画像デバイス、 *sti\_ci.dll*、INF ファイルのエントリの特殊なセットを認識します。 内でのデバイスの INF ファイル内でこれらのエントリを配置する必要があります[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。 エントリは、次の表で説明します。
+静止イメージデバイスの既定のクラスインストーラーである*sti\_、ci .dll*は、特殊な一連の INF ファイルエントリを認識します。 INF ファイル内では、これらのエントリはデバイスの[**Inf DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)内に配置する必要があります。 次の表で、エントリについて説明します。
 
-| INF ファイルのエントリ | [値] | コメント |
+| INF ファイルのエントリ | 値 | 説明 |
 | --- | --- | --- |
 | サブクラス | StillImage | 必須 |
-| DeviceType | スキャナー、カメラ、ビデオ デバイスの 3 2 の場合は 1 | 必須 |
+| DeviceType | スキャナーの場合は1、カメラの場合は2、ビデオデバイスの場合は3 | 必須 |
 | DeviceSubType | ベンダー定義の値 | 省略可能 |
-| 接続 | 非 PnP デバイスのシリアル ポートまたはパラレル ポートに接続されている場合は、インストール時にポートのユーザーの選択を制限するには、シリアルまたは並列このできます。 | (省略可能)。<br>指定しない場合、ユーザーは、任意のシリアル ポートまたはパラレル ポートを選択できます。 |
-| 機能 | デバイスの機能を示すフラグをビットに変換される数を指定します。 これらのフラグは、レジストリに格納し、して Microsoft STI コンポーネントで使用できますが、 [STI_DEV_CAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_dev_caps)構造体。<br><br>0 − セット/クリア STI_GENCAP_NOTIFICATIONS STI_DEV_CAPS ビットします。<br>1 − セット/クリア STI_GENCAP_POLLING_NEEDED STI_DEV_CAPS ビットします。<br>2 − セット/クリア STI_GENCAP_GENERATE_ARRIVALEVENT STI_DEV_CAPS ビットします。<br>3 − セット/クリア STI_GENCAP_AUTO_PORTSELECT STI_DEV_CAPS ビットします。 | 省略可能 |
-| プロパティ ページ | カスタマイズを作成する DLL の名前とエントリ ポイントを識別する[静止画像デバイスのプロパティ シート ページ](property-sheet-pages-for-still-image-devices.md)します。<br>次の例は、DLL を識別*estp2cpl.dll*、だけでなく**EnumStiPropPages**この DLL 内のエントリ ポイント。 エントリ ポイント名は省略可能です。エントリ ポイントの既定値を省略した場合、 **EnumStiPropPages**します。<br><br>`PropertyPages = estp2cpl.dll, EnumStiPropPages`<br><br> | 省略可能 |
-| DeviceData | 下のレジストリに格納される情報を格納しているベンダーから提供されたデータのセクションを識別、 **DeviceData**キー。 TWAIN でサポートされているデバイスでは、[データ] セクションを含める必要があります、 **TwainDS**エントリ。 詳細については、次を参照してください[仕入先が変更可能なレジストリ値。](registry-entries-for-still-image-devices.md#ddk-vendor-modifiable-registry-values-si) | (省略可能)。<br>ただし、このエントリに必要な[プッシュ モデルの対応アプリケーションを作成する](creating-push-model-aware-applications.md)します。 |
-| イベント | 静止画像デバイス イベントの一覧を表示するベンダーから提供されたデータのセクションを識別します。 このセクションでは、各エントリには、次の形式が必要です。<br><br>`EventName="String",{GUID},App`<br><br>*EventName*イベントの内部名は、*文字列*は、イベントの表示文字列、 *GUID*イベントの guid を参照してください[イメージ デバイス イベントではまだ](still-image-device-events.md)、および*アプリ*イベントの発生時に起動されるようにイメージング アプリケーションを指定します。 現在登録されているアプリケーションを起動するのにアスタリスク (*) を使用して、*アプリ*します。 | (省略可能)。<br>ただし、このエントリに必要な[プッシュ モデルの対応アプリケーションを作成する](creating-push-model-aware-applications.md)します。 |
-| UninstallSection | 通常を格納している INF セクションを指す[INF DelFiles ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)と[INF してディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)します。 このセクション内のエントリでは、次の形式があります。<br><br>`UninstallSection=UninstallSectionName`<br><br>*UninstallSectionName*含んでいるセクションの名前を指定します**Delfiles**または**して**ディレクティブ。 なお**Windows ファイル保護**可能性がありますを使用して指定されている場合でも、いくつかのファイルを削除してからユーザーを禁止**DelFiles**ディレクティブ。 | (省略可能)。<br>このエントリは、Windows 2000 でのみ有効です。 |
+| 接続 | シリアルポートまたはパラレルポートに接続されている非 PnP デバイスの場合、これは、インストール時にユーザーが選択するポートを制限するために、シリアルまたは並列にすることができます。 | 省略可能。<br>指定しない場合、ユーザーは任意のシリアルポートまたはパラレルポートを選択できます。 |
+| 機能 | デバイスの機能を識別するビットフラグに変換される数値を指定します。 これらのフラグはレジストリに格納され、 [STI_DEV_CAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_sti_dev_caps)構造体を使用して Microsoft STI コンポーネントで使用できます。<br><br>ビット 0: STI_DEV_CAPS の STI_GENCAP_NOTIFICATIONS を設定/クリアします。<br>ビット 1: STI_DEV_CAPS で STI_GENCAP_POLLING_NEEDED を設定/クリアします。<br>ビット2− STI_DEV_CAPS で STI_GENCAP_GENERATE_ARRIVALEVENT を設定/クリアする<br>ビット 3: STI_DEV_CAPS で STI_GENCAP_AUTO_PORTSELECT を設定/クリアする | 省略可能 |
+| PropertyPages | [静止画像デバイス用に](property-sheet-pages-for-still-image-devices.md)カスタマイズされたプロパティシートページを作成する DLL の名前とエントリポイントを識別します。<br>次の例では、dll、 *estp2cpl*、およびこの Dll の**enum**エントリポイントを識別します。 エントリポイント名は省略可能です。省略した場合、エントリポイントは既定で**enum/Proppages**に設定されます。<br><br>`PropertyPages = estp2cpl.dll, EnumStiPropPages`<br><br> | 省略可能 |
+| DeviceData | **Devicedata**キーの下にある、レジストリに格納される情報を含む、ベンダーが提供するデータセクションを識別します。 TWAIN でサポートされているデバイスの場合、data セクションには**twの**エントリが含まれている必要があります。 詳細については、「[ベンダーが変更可能なレジストリ値](registry-entries-for-still-image-devices.md#ddk-vendor-modifiable-registry-values-si)」を参照してください。 | 省略可能。<br>ただし、[プッシュモデルに対応](creating-push-model-aware-applications.md)したアプリケーションを作成するには、このエントリが必要です。 |
+| イベント | まだイメージデバイスイベントの一覧を示す、ベンダーから提供されたデータセクションを識別します。 このセクションの各エントリは、次の形式である必要があります。<br><br>`EventName="String",{GUID},App`<br><br>*EventName*はイベントの内部名、*文字列*はイベントの表示文字列、 *guid*はイベントの Guid、「[イメージデバイスのイベント](still-image-device-events.md)」を参照してください。さらに、*アプリ*は、イベントが発生したときに起動するイメージングアプリケーションを指定します。 現在登録されているアプリケーションを起動するには、*アプリ*にアスタリスク (*) を使用します。 | 省略可能。<br>ただし、[プッシュモデルに対応](creating-push-model-aware-applications.md)したアプリケーションを作成するには、このエントリが必要です。 |
+| UninstallSection | 通常は inf [DelFiles ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)と[inf delfiles ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)を含む inf セクションを指します。 このセクションのエントリの形式は次のとおりです。<br><br>`UninstallSection=UninstallSectionName`<br><br>*Uninstallsectionname*は、 **delfiles**または**delfiles**ディレクティブを含むセクションの名前です。 **Windows ファイル保護**では、 **delfiles**ディレクティブを使用して指定されている場合でも、ユーザーが一部のファイルを削除できない可能性があることに注意してください。 | 省略可能。<br>このエントリは、Windows 2000 でのみ有効です。 |
 
-既定クラスのインストーラーを静止画像デバイス標準をサポートする[INF CopyFiles ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)します。 インストーラーは、アンインストール操作中にいくつかのデバイスで共有されるファイルが途中で削除されないようにコンポーネントのファイルの内部参照カウンターを使用します。
+静止イメージデバイスの既定のクラスインストーラーでは、標準の[INF CopyFiles ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)がサポートされています。 インストーラーはコンポーネントファイルに対して内部参照カウンターを使用するので、複数のデバイスで共有されているファイルは、アンインストール操作の途中で削除されません。
 
-まだのイメージのデバイスの既定の INF ファイル*sti.inf*デバイスの種類ごとに 2 つのインストール セクションを次のように定義します。
+引き続きイメージデバイス (sti) の既定の INF ファイルでは、デバイスの種類ごとに次の2つのインストールセクションが定義されて*います*。
 
-- [INF DDInstall セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)、内で参照されている必要があります、 *DDInstall*のベンダーから提供された INF ファイルの次の表に示すようにします。
+- 次の表に示すように、ベンダが提供する INF ファイルの*Ddinstall*セクション内で参照する必要がある[Inf ddinstall セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。
 
-| USB デバイス | SCSI デバイス | シリアル デバイス |
+| USB デバイス | SCSI デバイス | シリアルデバイス |
 | --- | --- | --- |
 | `Include=sti.inf`<br><br>`Needs=STI.USBSection` | `Include=sti.inf`<br><br>`Needs=STI.SCSISection`  | `Include=sti.inf`<br><br>`Needs=STI.SerialSection` |
 
-- [INF DDInstall.Services セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)、内で参照されている必要があります、 *DDInstall*.**サービス**のベンダーから提供された INF ファイルの次の表に示すようにします。
+- [INF ddinstall. Services セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)。 *ddinstall*内で参照する必要があります。次の表に示すように、ベンダーが提供する INF ファイルの**Services**セクション。
 
-| USB デバイス | SCSI デバイス | シリアル デバイス |
+| USB デバイス | SCSI デバイス | シリアルデバイス |
 | --- | --- | --- |
 | `Include=sti.inf`<br><br>`Needs=STI.USBSection.Services` | `Include=sti.inf`<br><br>`Needs=STI.SCSISection.Services`  | `Include=sti.inf`<br><br>`Needs=STI.SerialSection.Services` |
 
-また場合[イメージの取得 Api のデバイスに固有のコンポーネントを作成する](creating-device-specific-components-for-image-acquisition-apis.md)、INF ファイルでこれらのコンポーネントのファイル名を含めるは通常。
+[イメージ取得 api 用のデバイス固有のコンポーネントも作成](creating-device-specific-components-for-image-acquisition-apis.md)する場合は、通常、これらのコンポーネントのファイル名を INF ファイルに含めます。
 
-静止画像デバイスの INF ファイルを作成する追加のガイダンスについては、エントリが含まれている Windows で提供される任意の INF ファイルを表示できる"サブクラス StillImage ="。
+静止イメージデバイス用の INF ファイルの作成に関するその他のガイダンスについては、Windows で提供されている、"サブクラス = StillImage" というエントリを含む任意の INF ファイルを参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-スキャナー、INF ファイルを開発するときに使用できます[Microsoft OS ディスクリプター](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))互換性 ID 機能を有効にします。 これを行う場合は、複数のスキャナー モデルと互換性がある 1 つのスキャナー ドライバーを許可します。
+スキャナー用の INF ファイルを開発している場合は、 [MICROSOFT OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))を使用して互換性 ID 機能を有効にすることができます。 これを行うと、1つのスキャナードライバーに複数のスキャナーモデルとの互換性を持たせることができます。

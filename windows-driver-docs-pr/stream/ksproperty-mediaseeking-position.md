@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_MEDIASEEKING\_位置
-description: KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取得します。
+title: KSK プロパティ\_MEDIASEEKING\_位置
+description: KSK プロパティ\_MEDIASEEKING\_POSITION は、フィルターのメディア時刻を取得します。
 ms.assetid: 46b246c6-63e9-4f38-91cc-eed762126097
 keywords:
-- KSPROPERTY_MEDIASEEKING_POSITION ストリーミング メディア デバイス
+- KSPROPERTY_MEDIASEEKING_POSITION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a36b1ad7f722c2aee8359d584401d67158ef654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f24f2c77ec9d184882631c92bb29d6774b135a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346519"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845518"
 ---
-# <a name="kspropertymediaseekingposition"></a>KSPROPERTY\_MEDIASEEKING\_位置
+# <a name="ksproperty_mediaseeking_position"></a>KSK プロパティ\_MEDIASEEKING\_位置
 
 
-KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取得します。
+KSK プロパティ\_MEDIASEEKING\_POSITION は、フィルターのメディア時刻を取得します。
 
 ## <span id="ddk_ksproperty_mediaseeking_position_ks"></span><span id="DDK_KSPROPERTY_MEDIASEEKING_POSITION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取
 <a name="remarks"></a>注釈
 -------
 
-メディア時間が LONGLONG 型の値として返されます。
+メディア時刻は、LONGLONG 型の値として返されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSPROPERTY\_MEDIASEEKING\_位置が、フィルターのメディア時間を取
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>

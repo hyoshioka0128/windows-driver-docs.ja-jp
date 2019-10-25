@@ -3,25 +3,25 @@ title: 印刷ジョブの処理
 description: 印刷ジョブの処理
 ms.assetid: c5e291d9-069c-4877-a167-862ba5794368
 keywords:
-- WDK のプロセッサの印刷、印刷ジョブの処理
-- WDK の印刷ジョブ、処理
-- 印刷ジョブを送信します。
-- WDK 印刷、処理のジョブ
-- EMF レコード再生 WDK プリント プロセッサ
-- N アップ印刷 WDK
+- プリントプロセッサ WDK、印刷ジョブ処理
+- 印刷ジョブ WDK, 処理
+- 印刷ジョブの送信
+- ジョブ WDK 印刷、処理
+- EMF レコード再生の WDK プリントプロセッサ
+- N-up 印刷 WDK
 - PrintDocumentOnPrintProcessor
-- WDK の出力形式のプリント プロセッサ
-- 入力形式 WDK のプリント プロセッサ
-- WDK のジョブを印刷します。
-- WDK の印刷ジョブ
+- 出力形式 WDK プリントプロセッサ
+- 入力形式 WDK プリントプロセッサ
+- ジョブ WDK 印刷
+- 印刷ジョブ WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ffaf327ea69f80653b85e6d088114a0d333ea1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a8719ecb7612c9a684456ef58fb9e1b8647407b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356029"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840427"
 ---
 # <a name="processing-a-print-job"></a>印刷ジョブの処理
 
@@ -29,17 +29,17 @@ ms.locfileid: "67356029"
 
 
 
-プリント プロセッサの呼び出し、スプーラーのプリント プロセッサに印刷ジョブを送信する準備ができたら[ **OpenPrintProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-openprintprocessor)関数。 この関数は、初期化する操作を実行し、ハンドルを返します。
+スプーラーが印刷プロセッサに印刷ジョブを送信する準備ができたら、印刷プロセッサの[**Openprintprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-openprintprocessor)関数を呼び出します。 この関数は、初期化アクティビティを実行し、ハンドルを返します。
 
-スプーラーを呼び出して[ **PrintDocumentOnPrintProcessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-printdocumentonprintprocessor)、プリント プロセッサ関数入力形式からのデータ ストリームを出力形式に変換し、変換されたを返しますスプーラーにストリームします。
+スプーラは[**Printdocumentonprintprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-printdocumentonprintprocessor)を呼び出すことができます。これは、データストリームを入力形式から出力形式に変換し、変換されたストリームをスプーラに返す print processor 関数です。
 
-入力の形式は、EMF、NT-ベースのオペレーティング システムの場合、 **PrintDocumentOnPrintProcessor**関数は、記載関数を使用して EMF レコードの再生を制御できます[のプリント プロセッサで GDI 関数の使用](using-gdi-functions-in-print-processors.md). これらの関数は、プリント プロセッサと、プリンター ドライバー間のインターフェイスを提供します。 このインターフェイスは、印刷ページの物理的なレイアウトを制御するプリント プロセッサを使用し、したがって物理ページ ("n-up"印刷) ごとに複数のドキュメント ページの印刷などの機能の実装を容易に、逆の順序でページを印刷および印刷各ページの複数のコピー。
+入力形式が NT ベースのオペレーティングシステム EMF の場合、 **Printdocumentonprintprocessor**関数は、 [「印刷プロセッサの GDI 関数の使用](using-gdi-functions-in-print-processors.md)」に示されている関数を使用して、emf レコードの再生を制御できます。 これらの関数は、プリントプロセッサとプリンタードライバーの間のインターフェイスを提供します。 このインターフェイスを使用すると、印刷プロセッサはプリンターページの物理的なレイアウトを制御できるため、物理ページごとに複数のドキュメントページを印刷 ("N-up" 印刷) したり、ページを逆順に印刷したり、印刷したりするなどの機能の実装が容易になります。各ページの複数のコピー。
 
-プリント プロセッサの出力データ ストリームは、スプーラーに返される必要があります。 通常、データ変換をかどうかは、プリンター ドライバーの対話が必要です[プリンター グラフィックス DLL](printer-graphics-dll.md) (EMF 入力データの場合は、として、) 呼び出すことによってグラフィックスの DLL がスプーラーにストリームを返します[ **EngWritePrinter**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engwriteprinter)します。 その一方で (生の入力データの場合と同様)、変換でプリンター グラフィックス DLL が要求されていない場合に、プリント プロセッサ呼び出します**WritePrinter** (Microsoft Windows SDK のドキュメントで説明)。
+印刷プロセッサの出力データストリームがスプーラに返される必要があります。 通常、データ変換でプリンタードライバーの[プリンターグラフィックス DLL](printer-graphics-dll.md)を操作する必要がある場合 (EMF 入力データの場合と同様)、グラフィックス DLL は[**EngWritePrinter**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engwriteprinter)を呼び出すことでスプーラにストリームを返します。 一方、変換でプリンタグラフィックス DLL が呼び出されない場合 (生の入力データの場合と同様)、プリントプロセッサは**Writeprinter** (Microsoft Windows SDK のドキュメントで説明) を呼び出します。
 
-**PrintDocumentOnPrintProcessor**関数は、スプーラーからプリント プロセッサへの非同期の呼び出しによって中断されることができます[ **ControlPrintProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-controlprintprocessor)関数。 この関数は、一時停止、再開、または印刷ジョブをキャンセルするアプリケーションの機能を実装します。
+**Printdocumentonprintprocessor**関数は、スプーラからプリントプロセッサの[**controlprintprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-controlprintprocessor)関数への非同期呼び出しによって中断される場合があります。 この関数は、印刷ジョブを一時停止、再開、またはキャンセルするためのアプリケーションの機能を実装します。
 
-後**PrintDocumentOnPrintProcessor**データ ストリームとを返します。 変換が完了すると、スプーラーを呼び出す、のプリント プロセッサ[ **ClosePrintProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-closeprintprocessor)関数。
+**Printdocumentonprintprocessor**は、データストリームの変換を完了してを返した後、印刷プロセッサの[**closeprintprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-closeprintprocessor)関数を呼び出します。
 
  
 

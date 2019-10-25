@@ -1,52 +1,52 @@
 ---
-title: NetAdapterCx ハードウェア オフロード
-description: NetAdapterCx オフロード
+title: NetAdapterCx ハードウェアのオフロード
+description: NetAdapterCx のオフロード
 ms.assetid: 85A819E2-6352-4DE9-9689-3DCEB9B0AAD8
 keywords:
-- WDF ネットワーク アダプター クラスの拡張機能は、オフロード、NetAdapterCx ハードウェア オフロード、NetAdapterCx オフロード、NetAdapter の負荷を軽減
+- WDF ネットワークアダプタークラス拡張のオフロード、NetAdapterCx ハードウェアのオフロード、NetAdapterCx のオフロード、NetAdapter のオフロード
 ms.date: 01/18/2019
 ms.custom: 19H1
-ms.openlocfilehash: ea184c78e2baba23be7dd780446edd535adbdc83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c84c858e33a3b7affaa5ce416b19688ddfc603aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375352"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838277"
 ---
-# <a name="netadaptercx-hardware-offloads"></a>NetAdapterCx ハードウェア オフロード
+# <a name="netadaptercx-hardware-offloads"></a>NetAdapterCx ハードウェアのオフロード
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-そのパフォーマンスを向上させる Windows TCP/IP スタックは適切なタスク オフロード機能を含むネットワーク インターフェイス カード (NIC) にいくつかのタスクをオフロードできます。
+Windows TCP/IP スタックでは、パフォーマンスを向上させるために、適切なタスクオフロード機能を備えたネットワークインターフェイスカード (NIC) にタスクをオフロードすることができます。
 
-## <a name="overview-of-offloads-in-netadaptercx"></a>NetAdapterCx でオフロードの概要
+## <a name="overview-of-offloads-in-netadaptercx"></a>NetAdapterCx のオフロードの概要
 
-NetAdapterCx は、簡単なオフロードの構成と管理のオフロード機能について説明します。 のみ、クライアント ドライバーは、ハードウェアのオフロード機能の簡単な構成を指定し、機能の変更の通知コールバックを登録する必要があります。 
+NetAdapterCx は、オフロードの構成とオフロード機能の管理に重点を置いています。 クライアントドライバーは、ハードウェアオフロード機能の単純な構成を指定するだけで、機能の変更を通知するためのコールバックを登録する必要があります。 
 
-このガイドでは、負荷を軽減 NetAdapterCx でハードウェアの主要な概念の概要を提供します。
+このガイドでは、NetAdapterCx でのハードウェアオフロードの主要概念の概要について説明します。
 
-- ハードウェア オフロード機能の初期化中にネットワーク アダプターのハードウェアによって提供および呼び出す前に提供する必要があります[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)します。
-- ドライバー確認標準レジストリ キーワードについて心配する必要はありません。 NetAdapterCx はレジストリ キーワードをチェックし、オフロード機能をアクティブなを有効にするには、します。
-- *Active*ネットワーク アダプターは、現在のネットワーク アダプターのオフロード機能を実行するようにプログラミングできます。 これらは、以前のクライアント ドライバーによってアドバタイズされたハードウェア機能のサブセットです。
-- TCP/IP スタックまたは上位のプロトコル ドライバーには、ネットワーク アダプターのアクティブな機能の変更を要求できます。 クライアント ドライバーでは、アクティブなオフロード機能の変更の通知を受ける NetAdapterCx コールバックを登録します。
-- パケットの拡張機能は、オフロードの必要がある場合、ネットワーク アダプター ハードウェア オフロード用のサポートをアドバタイズするときに自動的に登録されます。
+- ハードウェアオフロード機能は、初期化時にネットワークアダプターのハードウェアによって提供され、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前にアドバタイズする必要があります。
+- ドライバーは、標準のレジストリキーワードのチェックを気にする必要はありません。 NetAdapterCx は、アクティブなオフロード機能を有効にするときに、レジストリキーワードを確認し、それらを優先します。
+- ネットワークアダプターの*アクティブな*オフロード機能は、ネットワークアダプターが現在実行するようにプログラミングされている機能です。 これらは、以前にクライアントドライバーによってアドバタイズされたハードウェア機能のサブセットです。
+- TCP/IP スタックまたはそれ以降のプロトコルドライバーは、ネットワークアダプターのアクティブな機能の変更を要求できます。 クライアントドライバーは、アクティブなオフロード機能の変更を通知するために、コールバックを NetAdapterCx に登録します。
+- オフロードにパケット拡張が必要な場合は、ネットワークアダプターがハードウェアオフロードのサポートをアドバタイズするときに自動的に登録されます。
 
-クライアント ドライバーでは、NetAdapterCx 機能の最小セットを提供します。 これらのクライアント ドライバーでサポートされているすべてのオフロードの組み合わせの詳細な機能の詳細は含まれません。 たとえば、これは、IPOptions、IPExtensions または tcpoptions ですがサポートされているかどうかなど。つまり、クライアント ドライバーは、提供された機能のすべての組み合わせで、オフロードを実行する責任を負います。 IPv4 意味 IPOptions のサポートのサポートなど IPExtensions のサポートを意味する IPv6 のサポート、および TCP tcpoptions ですのサポートを意味するをサポートします。 
+クライアントドライバーは、最小限の機能セットを NetAdapterCx にアドバタイズします。 これらには、クライアントドライバーでサポートされているすべてのオフロードの組み合わせに関する詳細な機能の詳細は含まれません。 たとえば、IPOptions、IPExtensions、TCPOptions のいずれがサポートされているかなどです。つまり、クライアントドライバーは、提供された機能のすべての組み合わせに対してオフロードを実行します。 たとえば、IPv4 のサポートは IPOptions のサポートを意味し、IPv6 のサポートは IPExtensions のサポートを意味し、TCP のサポートは TCPOptions のサポートを意味します。 
 
-ハードウェアが特定の組み合わせを処理できない場合にする必要があります機能のサポートを宣言かこのようなパケットを見つけたときに、ソフトウェア フォールバックを実行します。
+ハードウェアが特定の組み合わせを処理できない場合は、その機能のサポートを宣言しないか、このようなパケットが発生したときにソフトウェアフォールバックを実行する必要があります。
 
-NetAdapterCx して、Windows TCP/IP スタックは、次のオフロードがサポートされています。
+次のオフロードは、NetAdapterCx と Windows TCP/IP スタックでサポートされています。
 
-| 名前をオフロードします。 | 説明 |
+| オフロード名 | 説明 |
 | --- | --- |
-| チェックサム | 計算と NIC に ip アドレスと TCP チェックサムの検証をオフロードします。 |
-| 大量送信オフロード (LSO) | IPv4 と IPv6 の大きな TCP パケットのセグメント化をオフロードします。 |
+| Checksum | IP および TCP チェックサムの計算と検証を、NIC にオフロードします。 |
+| Large send offload (LSO) | IPv4 および IPv6 用の大きな TCP パケットのセグメント化をオフロードする。 |
 
-## <a name="configuring-hardware-offloads"></a>ハードウェアの構成の負荷を軽減します。
+## <a name="configuring-hardware-offloads"></a>ハードウェアのオフロードの構成
 
-まず、クライアント ドライバーは、ネット アダプターの初期化中に、ハードウェアのチェックサム オフロード機能を提供します。 コンテキスト内で発生する可能性がありますこれ[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)ネット アダプターを起動する場合。 最初に、クライアント ドライバー サポートされている各オフロード用の機能の構造を割り当てに、変数を初期化し、適切な**NetAdapterOffloadSetXxxCapabilities** NetAdapterCx に登録するメソッド。 呼び出し中に**NET_ADAPTER_OFFLOAD_XxX_CAPABILITIES_INIT**ドライバーがアクティブなハードウェア オフロード機能変更する場合に、システムが後で呼び出されるコールバック関数へのポインターを提供します。
+クライアントドライバーは、最初に、ネットアダプターの初期化中にハードウェアのチェックサムオフロード機能を提供します。 これは、ネットワークアダプターを起動するときに、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)のコンテキスト内で発生する可能性があります。 開始するために、クライアントドライバーはサポートされているオフロードごとに機能構造を割り当て、それらを初期化して、適切な**NetAdapterOffloadSetXxxCapabilities**メソッドを呼び出してそれらを NetAdapterCx に登録します。 **NET_ADAPTER_OFFLOAD_XxX_CAPABILITIES_INIT**の呼び出し中に、ドライバーはコールバック関数へのポインターを提供します。これは、アクティブなハードウェアオフロード機能が変更された場合に、システムによって後で呼び出されます。
 
-この例では、クライアント ドライバーがそのハードウェア オフロード機能を設定する方法を示します。
+この例は、クライアントドライバーがハードウェアオフロード機能を設定する方法を示しています。
 
 ```C++
 VOID
@@ -81,11 +81,11 @@ MyAdapterSetOffloadCapabilities(
 }
 ```
 
-## <a name="updating-hardware-offloads"></a>ハードウェアの更新の負荷を軽減します。
+## <a name="updating-hardware-offloads"></a>ハードウェアのオフロードを更新しています
 
-NetAdapterCx が、クライアント ドライバーを呼び出す場合は、TCP/IP スタックまたは上位のプロトコル ドライバーは、ネットワーク アダプターのアクティブな機能の変更を要求、 *EVT_NET_ADAPTER_OFFLOAD_SET_XxX*がコールバック関数アダプターの初期化中に以前に登録します。 この関数では、システムは、クライアント ドライバーはクエリを実行し、そのオフロード機能の更新を使用して NETOFFLOAD obbject、更新された機能を提供します。
+TCP/IP スタックまたはそれ以降のプロトコルドライバーがネットワークアダプターのアクティブな機能の変更を要求した場合、NetAdapterCx は、以前に登録されたクライアントドライバーの*EVT_NET_ADAPTER_OFFLOAD_SET_XxX*コールバック関数を呼び出します。アダプターの初期化。 この関数では、システムは NETOFFLOAD obbject で更新された機能を提供します。この機能は、クライアントドライバーがクエリを実行してオフロード機能を更新するために使用できます。
 
-次の例では、クライアント ドライバーがそのチェックサム オフロード機能を更新する方法を示しています。
+次の例は、クライアントドライバーがチェックサムオフロード機能を更新する方法を示しています。
 
 ```C++
 VOID
@@ -106,7 +106,7 @@ MyEvtAdapterOffloadSetChecksum(
 }
 ```
 
-次のような例では、クライアント ドライバーがその LSO オフロード機能を更新する方法を示します。
+次の類似の例では、クライアントドライバーが LSO のオフロード機能を更新する方法を示しています。
 
 ```C++
 VOID
@@ -130,20 +130,20 @@ MyEvtAdapterOffloadSetLso(
 
 ## <a name="related-links"></a>関連リンク
 
-[Packet descriptors and extensions (パケットの記述子と拡張機能)](packet-descriptors-and-extensions.md)
+[パケット記述子と拡張機能](packet-descriptors-and-extensions.md)
 
-[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_offload_checksum_capabilities)
+[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_offload_checksum_capabilities)
 
-[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_offload_checksum_capabilities_init)
+[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_offload_checksum_capabilities_init)
 
-[**NetAdapterOffloadSetChecksumCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapteroffloadsetchecksumcapabilities)
+[**NetAdapterOffloadSetChecksumCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapteroffloadsetchecksumcapabilities)
 
-[*EvtNetAdapterOffloadSetChecksum*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_offload_set_checksum)
+[*EvtNetAdapterOffloadSetChecksum*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_offload_set_checksum)
 
-[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_lso_capabilities)
+[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_lso_capabilities)
 
-[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nf-netadapteroffload-net_adapter_offload_lso_capabilities_init)
+[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-net_adapter_offload_lso_capabilities_init)
 
-[**NetAdapterOffloadSetLsoCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nf-netadapteroffload-netadapteroffloadsetlsocapabilities)
+[**NetAdapterOffloadSetLsoCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-netadapteroffloadsetlsocapabilities)
 
-[*EvtNetAdapterOffloadSetLso*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_lso)
+[*EvtNetAdapterOffloadSetLso*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_lso)

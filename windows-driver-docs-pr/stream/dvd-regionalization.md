@@ -3,16 +3,16 @@ title: DVD のリージョン処理
 description: DVD のリージョン処理
 ms.assetid: 931441c8-9521-43c9-86f1-dbf75d36e190
 keywords:
-- DVD デコーダー ミニドライバー WDK
-- 加入 WDK DVD デコーダー
+- DVD デコーダーミニドライバー WDK
+- regionalization WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf9536cf9620b571f18683090d6c3f48d70fe5a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f6b456e2f27c01ef9a62bf9b6c93a712106104a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384148"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843213"
 ---
 # <a name="dvd-regionalization"></a>DVD のリージョン処理
 
@@ -20,11 +20,11 @@ ms.locfileid: "67384148"
 
 
 
-DVD デコーダーのミニドライバーを加入プロセスの一部にすることはできません。 ストリーミング アーキテクチャの他の部分では、加入を適用します。 ほとんどの状況では、デコーダー ミニドライバーは実装していません、 [ **KS\_DVDCOPY\_リージョン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)プロパティ。
+DVD デコーダーミニドライバーは、regionalization プロセスのどの部分にも参加しないようにしてください。 ストリーミングアーキテクチャのその他の部分では、regionalization が適用されます。 ほとんどの状況で、デコーダーミニドライバーは[**KS\_DVDCOPY\_REGION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_region)プロパティを実装していません。
 
-デコーダーが (ハードウェアまたは他の考慮事項) では、特定の地域に制限のかどうかに応答する必要があります、 **KS\_DVDCOPY\_リージョン**に他のすべてのシステム領域をオーバーライドするプロパティ。 DVD デコーダーのミニドライバーは、正確に、デコーダーがで指定されたリージョンに対応する 1 つのビットを設定する必要があります。 ロジックは*反転*メディアには、リージョンのコーディングから。 たとえば、デコーダーでリージョン 1 (米国のみ) を使用するように設計に 0x01 を返します、 **KS\_DVDCOPY\_リージョン**プロパティ。
+デコーダーが特定の地域に限定されている場合 (ハードウェアやその他の考慮事項によって)、 **KS\_DVDCOPY\_region**プロパティに応答して、他のすべてのシステム領域を上書きすることがあります。 DVD デコーダーミニドライバーは、デコーダーが指定されているリージョンに対応する1ビットだけを設定する必要があります。 ロジックは、メディア上の領域のコーディングから*逆*になっていることに注意してください。 たとえば、地域 1 (USA) でのみ機能するように設計されたデコーダーは、 **KS\_DVDCOPY\_Region**プロパティに0x01 を返します。
 
-デコーダーは、領域を提供する場合、システムの地域は、アプリケーションは機能を変更します。 システムの他のデコーダーがある場合は、システムの地域を変更します。 Windows DVD の再生がシステムの地域とデコーダーのリージョンが一致している場合に関数のみことに注意してください。
+デコーダーがリージョンを提供する場合、システム領域の変更アプリケーションは引き続き機能します。 システム内に他のデコーダーがある場合に備えて、システム領域を変更します。 Windows DVD 再生は、システム領域とデコーダー領域が一致する場合にのみ機能することに注意してください。
 
  
 

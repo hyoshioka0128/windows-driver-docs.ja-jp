@@ -1,49 +1,49 @@
 ---
-title: DMA でのダイレクト I/O の使用
-description: DMA でのダイレクト I/O の使用
+title: DMA での直接 i/o の使用
+description: DMA での直接 i/o の使用
 ms.assetid: 0e609613-9023-4f35-a9c5-d68c8b676cfe
 keywords:
-- ダイレクト I/O WDK カーネル
-- WDK の I/O バッファーのダイレクト I/O
-- データ バッファーの WDK I/O、ダイレクト I/O
-- I/O WDK カーネルでは、ダイレクト I/O
-- DMA 転送 WDK カーネル、ダイレクト I/O
+- ダイレクト i/o WDK カーネル
+- WDK i/o のバッファー、ダイレクト i/o
+- データバッファー WDK i/o、ダイレクト i/o
+- I/o WDK カーネル、ダイレクト i/o
+- DMA 転送 WDK カーネル、ダイレクト i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c73882f5ff90bb8f3586040e8017a238b07e94e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b22391e5274569c37adf7be88bb64696b638e50a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381686"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838361"
 ---
-# <a name="using-direct-io-with-dma"></a>DMA でのダイレクト I/O の使用
+# <a name="using-direct-io-with-dma"></a>DMA での直接 i/o の使用
 
 
 
 
 
-次の図は、I/O マネージャーの設定方法を示しています、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) DMA の転送操作の要求がダイレクト I/O を使用しています。
+次の図は、i/o マネージャーが、ダイレクト i/o を使用する DMA 転送操作の[**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)要求を設定する方法を示しています。
 
-![ユーザー バッファー dma を使用するデバイスでダイレクト i/o を示す図](images/3mdldrct.png)
+![dma を使用するデバイスのユーザーバッファーの直接 i/o を示す図](images/3mdldrct.png)
 
-前の図は、ドライバーが IRP を使用する方法を示します**MdlAddress**読み取り要求のデータを転送します。 図にドライバーがパケットに基づくシステムまたはバス マスターの DMA を使用し、デバイス オブジェクトの論理和が**フラグ**か\_直接\_IO。
+前の図は、ドライバーが IRP の**Mdladdress**を使用して読み取り要求のデータを転送する方法を示しています。 この図のドライバーでは、パケットベースのシステムまたはバスマスタ DMA を使用し、デバイスオブジェクトの**フラグ**を\_DIRECT\_IO によって処理します。
 
-1.  ユーザー スペースの仮想アドレスのいくつかの範囲は、現在のスレッドのバッファーを表し、そのバッファーの内容は、いくつかの物理的に隣接していないページ (前の図では濃い網掛け) を実際に格納される可能性が。 I/O マネージャーは、このバッファーを記述する MDL を作成します。 MDL は、特定の仮想アドレスの範囲を 1 つまたは複数のページ ベースの物理アドレスの範囲にマップされる、メモリ マネージャーによって定義されている、非透過データ構造です。 詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
+1.  一部のユーザー領域の仮想アドレスは、現在のスレッドのバッファーを表します。また、実際には、バッファーの内容が物理的に連続していない複数のページに格納されている可能性があります (前の図では濃い網掛け)。 I/o マネージャーによって、このバッファーを記述する MDL が作成されます。 MDL は、メモリマネージャーによって定義される不透明なデータ構造で、特定の仮想アドレス範囲を1つ以上のページベースの物理アドレス範囲にマップします。 詳細については、「 [MDLs の使用](using-mdls.md)」を参照してください。
 
-2.  I/O マネージャー サービスの現在のスレッドの読み取り要求、対象のスレッドに渡しますユーザー領域の範囲のバッファーを表す仮想アドレス。
+2.  I/o マネージャーは、現在のスレッドの読み取り要求をサービスします。この要求は、バッファーを表すユーザー領域の仮想アドレスの範囲を渡します。
 
-3.  I/O マネージャーまたはファイル システム ドライバー (FSD) は、ユーザーが指定したバッファーのアクセシビリティと呼び出しを確認します。 [ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages) MDL を以前に作成したとします。 **MmProbeAndLockPages** MDL で対応する物理アドレスの範囲を入力します。
+3.  I/o マネージャーまたはファイルシステムドライバー (FSD) は、ユーザーが指定したバッファーにアクセシビリティがあるかどうかを確認し、以前に作成した MDL で[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)を呼び出します。 また、 **MmProbeAndLockPages**は、MDL 内の対応する物理アドレス範囲も入力します。
 
-    前の図に示すよう仮想アドレスの範囲の MDL がいくつかの対応するページ ベースの物理アドレス エントリがあることができ、バッファーの仮想アドレスの範囲が開始して、終了、MDL で説明されている最初と最後のページの先頭からのオフセットのバイト可能性があります。
+    前の図に示すように、仮想範囲の MDL は、対応する複数のページベースの物理アドレスエントリを持つことができ、バッファーの仮想範囲は、MDL によって記述された最初と最後のページの先頭からのバイトオフセットで開始および終了する場合があります。
 
-4.  I/O マネージャー MDL へのポインターを提供します (**MdlAddress**) 転送操作を要求する IRP の。 I/O マネージャーまたはファイル システムの呼び出しまで[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages) MDL で説明されている物理ページ ドライバーには、IRP が完了すると、ロックダウンされ、バッファーに割り当てられたままにします。 ただし、このような MDL の仮想アドレスになり、非表示 (無効) も IRP の前に、デバイス ドライバーまたは送信するデバイス ドライバーの上に配置が任意の中間ドライバー。
+4.  I/o マネージャーは、転送操作を要求する IRP 内の MDL (**Mdladdress**) へのポインターを提供します。 ドライバーが IRP を完了した後、i/o マネージャーまたはファイルシステムによって[**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)が呼び出されるまで、MDL に記述されている物理ページはロックダウンされ、バッファーに割り当てられたままになります。 ただし、このような MDL の仮想アドレスは、IRP がデバイスドライバーに送信される前や、デバイスドライバーの上位にある中間ドライバーに送信される前でも、非表示 (および無効) になることがあります。
 
-5.  ドライバーは、パケットに基づくシステムまたはバス マスターの DMA を使用する場合、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチンの呼び出し[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)でIRP の**MdlAddress** MDL のページ ベースのエントリの基本の仮想アドレスを取得へのポインター。
+5.  ドライバーがパケットベースのシステムまたはバスマスタ DMA を使用する場合、その[*Adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンは、IRP の**mdladdress**ポインターを使用して[**mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出し、MDL のページベースのエントリのベース仮想アドレスを取得します。
 
-6.  *AdapterControl*ルーチンを呼び出して[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)によって返されるベース アドレスで**MmGetMdlVirtualAddress**」を読んで、物理メモリに直接デバイスからのデータ。 (詳細については、次を参照してください[アダプター オブジェクトと DMA](adapter-objects-and-dma.md)。)。
+6.  次に、 *Adaptercontrol*ルーチンは、 **Mmgetmdlvirtualaddress**から返されたベースアドレスを使用して[**maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)を呼び出し、デバイスから直接物理メモリにデータを読み取ります。 (詳細については、「[アダプタオブジェクトと DMA](adapter-objects-and-dma.md)」を参照してください)。
 
-ドライバーでは、バッファー長を常に確認する必要があります。 I/O マネージャーに長さ 0 のバッファーの MDL 作成されないことに注意してください。
+ドライバーは、常にバッファーの長さを確認する必要があります。 I/o マネージャーでは、長さ0のバッファー用に MDL が作成されないことに注意してください。
 
  
 

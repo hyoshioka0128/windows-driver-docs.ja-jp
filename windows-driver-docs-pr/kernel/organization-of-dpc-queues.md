@@ -1,35 +1,35 @@
 ---
-title: DPC キューの構造
-description: DPC キューの構造
+title: DPC キューの編成
+description: DPC キューの編成
 ms.assetid: df176a6d-d7a7-4d8b-ab1b-fd7f5b89fcbe
 keywords:
 - DPC キュー WDK カーネル
-- WDK の DPC キュー
+- WDK DPC をキューに置いて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a029b2f141c35f69949dd833b326ae57d626c751
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3ba36b279b3d7b794991a6e9a3b5634dc83cf3b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384919"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838523"
 ---
-# <a name="organization-of-dpc-queues"></a>DPC キューの構造
+# <a name="organization-of-dpc-queues"></a>DPC キューの編成
 
 
-システムでは、プロセッサごとに 1 つの DPC キューを提供します。 ドライバーは、DPC、DPC、キュー内の場所をシステムが割り当てられますがキューに登録し、キューを処理するときのコントロール。
+システムは、プロセッサごとに1つの DPC キューを提供します。 ドライバーは、システムが DPC を割り当てるキュー、キュー内の DPC の場所、およびキューが処理されるタイミングを制御できます。
 
-特定のプロセッサのキューに割り当てられている Dpc は、そのプロセッサで実行されます。 ドライバーを呼び出すと、既定で[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)または[ **IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)DPC は現在アクティブなプロセッサのキューに配置します。 ドライバーは、呼び出すことによって、プロセッサのキューを指定できます[ **KeSetTargetProcessorDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesettargetprocessordpc)呼び出す前に**KeInsertQueueDpc**または**IoRequestDpc**.
+特定のプロセッサのキューに割り当てられている Dpc は、そのプロセッサ上で実行されます。 既定では、ドライバーが[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)または[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)を呼び出すと、現在アクティブなプロセッサで DPC がキューに置かれます。 ドライバーは、 **KeInsertQueueDpc**または**IoRequestDpc**を呼び出す前に[**Kesettargetprocessordpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kesettargetprocessordpc)を呼び出すことで、プロセッサキューを指定できます。
 
-Windows Vista および Windows の以降のバージョンでは、システムはプロセッサごとに 1 つのスレッド DPC キューもあります。 ドライバーを使用できる**KeSetTargetProcessorDpc**スレッド Dpc のプロセッサのキューを指定します。
+Windows Vista 以降のバージョンの Windows では、システムにはプロセッサごとに1つのスレッド DPC キューもあります。 ドライバーは**Kesettargetprocessordpc**を使用して、スレッド化された dpc のプロセッサキューを指定できます。
 
-[ **KeSetImportanceDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesetimportancedpc) DPC がキュー内に配置されているルーチン コントロール。 通常、DPC は; キューの末尾に配置されます。ドライバーを最初に呼び出す場合、 **KeSetImportanceDpc**で、*重要度*パラメーターと等しい**HighImportance**DPC はキューの先頭に置かれます。
+[**Kesetimportの dpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kesetimportancedpc)ルーチンは、キュー内の dpc が配置される場所を制御します。 通常、DPC はキューの最後に配置されます。ただし、優先*順位*パラメーターが**highimportance**と等しい場合、ドライバーは最初に**kesetimportの dpc**を呼び出しますが、DPC はキューの先頭に配置されます。
 
-通常の (非スレッドの) Dpc の**KeSetImportanceDpc**も決定するかどうか**KeInsertQueueDpc**または**IoRequestDpc** DPC の処理をすぐに開始されますキューです。 次の一覧には、キューを処理するための規則について説明します。
+通常の (非スレッド) Dpc の場合、 **KesetimportKeInsertQueueDpc dpc**は、 dpc キューの処理を直ちに開始するかどうかも決定します。 キューを処理するための規則を次に示します。
 
--   DPC の処理キューが直ちに開始すると、現在のプロセッサ、DPC が割り当てられている場合と*重要度*が等しくない**LowImportance**、または*重要度*は等しい**LowImportance** DPC 要求レートがシステム定義の最小値以下に低下や、現在のプロセッサの DPC キューの深さがシステム定義の制限を超えています。 それ以外の場合、DPC の処理は、適切なキューの深さとレートの要件が満たされるまで遅延されます。
+-   Dpc キューの処理は、DPC が現在のプロセッサに割り当てられていて、*重要度*が**LowImportance**と等しくない場合、または*重要度*が**LowImportance**で、現在の dpc キューの深さに等しい場合に、すぐに開始されます。プロセッサがシステムで定義された制限を超えているか、DPC 要求率がシステムで定義されている最小値を下回っています。 そうしないと、適切なキューの深さとレートの要件が満たされるまで DPC の処理が遅延されます。
 
--   DPC の処理キューが直ちに開始ターゲット プロセッサでは、現在のプロセッサを異なるプロセッサを DPC が割り当てられている場合と*重要度*equals **MediumHighImportance**または**HighImportance**ターゲットのプロセッサの DPC キューの深さがシステム定義の制限を超えた場合またはします。 それ以外の場合、DPC の処理は、適切なキューの深さとレートの要件が満たされるまで遅延されます。
+-   Dpc が現在のプロセッサに割り当てられている場合、dpc キューの処理はターゲットプロセッサですぐに開始されます。 DPC が現在のプロセッサとは異なるプロセッサに割り当てられ、*重要度*が**MediumHighImportance**または**highimportance**である場合、または dpcターゲットプロセッサのキューの深さが、システムで定義されている制限を超えています。 そうしないと、適切なキューの深さとレートの要件が満たされるまで DPC の処理が遅延されます。
 
  
 

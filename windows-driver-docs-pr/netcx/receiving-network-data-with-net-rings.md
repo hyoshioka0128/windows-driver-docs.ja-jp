@@ -1,60 +1,60 @@
 ---
-title: Net リングを使用したネットワーク データの受信
-description: このトピックでは、ネットワーク データを受信する、NetAdapterCx クライアント ドライバーが純リングと net リングを行う反復子を使用する方法について説明します。
+title: ネットリングを使用したネットワークデータの受信
+description: このトピックでは、NetAdapterCx クライアントドライバーがネットワークデータを受信するために、ネットリングと net リング反復子を使用する方法について説明します。
 ms.assetid: 78D202E2-4123-4F63-9B86-48400C2CCC38
 keywords:
-- NetAdapterCx Net リングと net リングを行う反復子、NetCx Net リング、net のリングの反復子 NetAdapterCx PCI デバイス net リング、NetAdapterCx 非同期 I/O
+- NetAdapterCx Net リングと net ring 反復子、NetCx Net リングと net ring 反復子、NetAdapterCx PCI devices net ring、NetAdapterCx 非同期 i/o
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4d01bdddbbf40a4ad1e7d1f687160f762a42b10c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c25e65e5f8db55661071a07eec3de9e54c2b87a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838276"
 ---
-# <a name="receiving-network-data-with-net-rings"></a>ネット リングを使用したネットワーク データの受信
+# <a name="receiving-network-data-with-net-rings"></a>ネットワークリングを使用したネットワークデータの受信
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-NetAdapterCx クライアント ドライバーは、フレームワークを呼び出すときにネットワーク データを受信、 [ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)受信キュー用コールバック関数。 受信をドレインして、このコールバック中にドライバーを示すクライアントを受け取ると、OS へのパケットのフラグメントのハードウェアに新しいバッファーを投稿します。
+NetAdapterCx クライアントドライバーは、フレームワークが受信キューの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック関数を呼び出すと、ネットワークデータを受信します。 このコールバック中に、クライアントドライバーは受信したフラグメントとパケットを OS にドレインし、新しいバッファーをハードウェアにポストすることによって受信を示します。
 
-## <a name="receive-rx-post-and-drain-operation-overview"></a>(Rx) の投稿を受信し、操作の概要のドレイン
+## <a name="receive-rx-post-and-drain-operation-overview"></a>受信 (Rx) の post とドレイン操作の概要
 
-次のアニメーションは、単純な PCI ネットワーク インターフェイス カード (NIC) のクライアント ドライバーが post して実行する方法と、受信 (Rx) キューのドレイン操作を示しています。 この例のシナリオでフラグメント バッファーの割り当てや、OS によってフラグメント リングにアタッチします。 この例では、ハードウェアとの間の一対一のリレーションシップの受信キューと OS の受信キュー。
+次のアニメーションは、単純な PCI ネットワークインターフェイスカード (NIC) のクライアントドライバーが受信 (Rx) キューの post 操作とドレイン操作を実行する方法を示しています。 この例のシナリオでは、フラグメントバッファーが割り当てられ、OS によってフラグメントリングにアタッチされます。 この例では、ハードウェア受信キューと OS 受信キューの間に一対一の関係があることを前提としています。
 
-![Net リング post と (Rx) を受信するための操作をドレイン](images/net_ring_post_and_drain_operations_rx.gif "Net リング post と (Rx) を受信するための操作のドレイン")
+![受信用の Net ring の post およびドレイン操作 (Rx)](images/net_ring_post_and_drain_operations_rx.gif "受信用の Net ring の post およびドレイン操作 (Rx)")
 
-このアニメーションでは、クライアント ドライバーによって所有されているパケットが薄い青とダークで強調表示青、およびクライアント ドライバーによって所有されているフラグメントは、黄、オレンジ色で強調表示されます。 薄い色の表現、*ドレイン*暗い色を表すときに、ドライバーを所有する要素のサブセクション、*投稿*ドライバーを所有する要素のサブセクションです。
+このアニメーションでは、クライアントドライバーが所有するパケットが薄い青と濃い青で強調表示され、クライアントドライバーによって所有されているフラグメントが黄色とオレンジで強調表示されます。 薄い色は、ドライバーが所有する要素の*ドレイン*サブセクションを表します。濃い色は、ドライバーが所有する要素の*post*サブセクションを表します。
 
-## <a name="receiving-data-in-order"></a>順序でデータの受信
+## <a name="receiving-data-in-order"></a>受信 (データを順に)
 
-1 パケットあたり 1 つのフラグメントでの順序でデータを受信するドライバーの一般的な流れを次に示します。
+次に示すのは、パケットごとに1つのフラグメントを使用して、データを順番に受信するドライバーの典型的なシーケンスです。
 
-1. 呼び出す**NetRxQueueGetRingCollection**受信キューのリングのコレクション構造体を取得します。 これは、ドライバーからの呼び出しを減らすことに、キューのコンテキストの領域に格納できます。 
-2. Net のリングをドレインして、OS に受信したデータを指定します。
-    1. リングのコレクションを使用して呼び出すことによって、受信キューのフラグメントのリングのドレイン反復子を取得する[ **NetRingGetDrainFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetdrainfragments)します。
-    2. 呼び出すことで、パケットのリングで使用可能なすべてのパケットのパケットの反復子を取得[ **NetRingGetAllPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetallpackets)します。
-    3. ループでは、次の操作を行います。
-        1. フラグメントが、ハードウェアによって受信されたかどうかを確認します。 それ以外の場合は、ループから抜け出します。
-        2. フラグメントの反復子の現在のフラグメントを呼び出して取得[ **NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)します。
-        3. フラグメントの情報などを入力、 **ValidLength**を基に、一致するハードウェア記述子。
-        4. このコード例のパケットを呼び出して取得[ **NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)します。
-        5. パケットにするには、パケットのフラグメントをバインド**FragmentIndex**フラグメントの現在のインデックス フラグメント リングし、フラグメントの数を適切に設定する (この例に設定されて**1**). 
-        6. 必要に応じて、チェックサム情報など、他のパケット情報を入力します。
-        7. 呼び出す[ **NetFragmentIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を次のフラグメントに移動します。
-        7. 呼び出す[ **NetPacketIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratoradvance)次のパケットに移動します。
-    4. 呼び出す[ **NetFragmentIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorset)と[ **NetPacketIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorset)を示す受信パケットのフラグメントを最終処理OS。
-3. 次のハードウェアに post フラグメントのバッファーを受け取ります。    
-    1. リングのコレクションを使用して、呼び出すことによって、受信キューのフラグメントのリングの投稿の反復子を取得する[ **NetRingGetPostFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetpostfragments)します。
-    2. ループでは、次の操作を行います。
-        1. フラグメントの反復子の現在のインデックスを呼び出して取得[ **NetFragmentIteratorGetIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorgetindex)します。
-        2. フラグメントの一致するハードウェア記述子情報を投稿します。
-        3. 呼び出す[ **NetFragmentIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を次のフラグメントに移動します。
-    3. 呼び出す[ **NetFragmentIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorset)ハードウェアに転記フラグメントを最終処理します。
+1. **NetRxQueueGetRingCollection**を呼び出して、受信キューのリングコレクション構造を取得します。 これをキューのコンテキスト空間に格納して、ドライバーからの呼び出しを減らすことができます。 
+2. ネットワークリングをドレインして OS に受信したデータを示します。
+    1. 呼び出しを介して、受信キューのフラグメントリングのドレイン反復子を取得するには、ring[**コレクションを使用します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetdrainfragments)
+    2. [**NetRingGetAllPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetallpackets)を呼び出して、パケットリング内の使用可能なすべてのパケットのパケット反復子を取得します。
+    3. ループで次の操作を実行します。
+        1. フラグメントがハードウェアによって受信されたかどうかを確認します。 それ以外の場合は、ループを中断します。
+        2. [**NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)を呼び出して、フラグメント反復子の現在のフラグメントを取得します。
+        3. 一致するハードウェア記述子に基づいて、そのフラグメントの情報 ( **Validlength**など) を入力します。
+        4. [**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)を呼び出して、このフラグメントのパケットを取得します。
+        5. フラグメントをパケットにバインドするには、フラグメントリング内のフラグメントの現在のインデックスにパケットの**Fragmentindex**を設定し、フラグメントの数を適切に設定します (この例では、 **1**に設定します)。 
+        6. 必要に応じて、チェックサム情報などの他のパケット情報を入力します。
+        7. [**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を呼び出して次のフラグメントに移動します。
+        7. [**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)を呼び出して、次のパケットに移動します。
+    4. [**NetFragmentIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorset)と[**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset)を呼び出して、受信したパケットとそのフラグメントを OS に対して確定します。
+3. 次に受信するために、ハードウェアにフラグメントバッファーを送信します。    
+    1. [**Netringgetpostfragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetpostfragments)を呼び出して、受信キューのフラグメントリングのポスト反復子を取得するには、ring コレクションを使用します。
+    2. ループで次の操作を実行します。
+        1. [**NetFragmentIteratorGetIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetindex)を呼び出して、フラグメント反復子の現在のインデックスを取得します。
+        2. フラグメントの情報を一致するハードウェア記述子にポストします。
+        3. [**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を呼び出して次のフラグメントに移動します。
+    3. [**NetFragmentIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorset)を呼び出して、ハードウェアへのフラグメントのポストを最終処理します。
 
-次の手順をコードで次のようになります。
+これらの手順は、コードで次のようになります。
 
 ```cpp
 void
@@ -116,8 +116,8 @@ MyEvtRxQueueAdvance(
 }
 ```
 
-## <a name="receiving-data-out-of-order"></a>誤順序のデータの受信
+## <a name="receiving-data-out-of-order"></a>データを順番に受信する
 
-異なり、 [Tx](sending-network-data-with-net-rings.md)キュー、クライアント ドライバーは誤順序の OS の受信所有しているハードウェアごとのキューの受信キュー データを受信していない通常します。 これは、クライアント ドライバーの NIC の種類に関係なく、します。 またはかどうか、デバイスは、PCI ベースおよび OS を割り当てるし、受信バッファーを所有しているかどうか、デバイスが USB ベース USB スタックは、受信バッファーを所有している、クライアント ドライバーがパケットを受信した各フラグメントを初期化し、OS にことを示します。 順序はここで重要ではありません。
+[Tx](sending-network-data-with-net-rings.md)キューとは異なり、クライアントドライバーは、ハードウェア受信キューごとに1つの OS 受信キューがある場合、通常は順序どおりにデータを受信しません。 これは、クライアントドライバーの NIC の種類に関係ありません。 デバイスが PCI ベースであり、OS が受信バッファーを割り当てて所有しているかどうか、またはデバイスが USB ベースであり、USB スタックが受信バッファーを所有しているかどうかは、クライアントドライバーは受信したフラグメントごとにパケットを初期化し、それを OS に示します。 この場合、順序は重要ではありません。
 
-ハードウェアは、ハードウェアの受信キューごとに 1 つ以上の OS 受信キューをサポートする場合は、受信バッファーへのアクセスを同期する必要があります。 実行のスコープはのでこのトピックの外部し、は、ハードウェアの設計に依存します。
+ハードウェアがハードウェア受信キューごとに複数の OS 受信キューをサポートしている場合は、受信バッファーへのアクセスを同期する必要があります。 この作業の範囲は、このトピックの外部にあり、ハードウェアの設計に依存しています。

@@ -1,54 +1,54 @@
 ---
-title: USBPRINT のプログラミング考慮事項
-description: USBPRINT のプログラミング考慮事項
+title: USBPRINT のプログラミングに関する考慮事項
+description: USBPRINT のプログラミングに関する考慮事項
 ms.assetid: 351b3124-d584-4817-a5ce-09e16b54d41b
 keywords:
-- プリンター ドライバー WDK、USB
+- プリンタードライバー WDK、USB
 - USBPRINT
 - USBMON
-- WDK の USB プリンター
+- USB プリンター WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53b4b909a861d9b57a95ead21fce0d001ebb3d39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a38d7f14d1f0a350809a98fb3d374e5242630b65
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356023"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840426"
 ---
-# <a name="programming-considerations-for-usbprint"></a>USBPRINT のプログラミング考慮事項
+# <a name="programming-considerations-for-usbprint"></a>USBPRINT のプログラミングに関する考慮事項
 
 
 
 
 
-USBMON、と共に、Usbprint.sys では、並列のプリンターで使用するには非常に似たインターフェイスを提供します。 多くの場合は、並列と変更を加えなければ USB プリンターの両方で正常に動作する 1 つのプリンター ドライバーや言語モニター可能性があります。 言語モニターがのみで使用する場合、 [ **WritePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-writeport)と[**して**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-readport)関数と[ **IOCTL\_PAR\_クエリ\_デバイス\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_par_query_device_id)要求、USB およびパラレル プリンターの間で移植可能になります。
+Usbprint は、USBPRINT と共に、並列プリンターで使用されるインターフェイスと非常によく似ています。 多くの場合、1つのプリンタードライバーまたは言語モニターが、変更なしで並列プリンターと USB プリンターの両方で正しく動作する可能性があります。 言語モニターが[**Writeport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-writeport)および[**readport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-readport)関数だけを使用し、 [**IOCTL\_PAR\_クエリ\_デバイス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_par_query_device_id)要求を使用している場合、USB とパラレルプリンターの間で移植性があります。
 
-場合によっては、言語モニターをプリンター特別なプリンターの機能を活用するためにベンダー固有の要求を行うために必要な場合があります。 これを行うには、次のように使用します[ **IOCTL\_USBPRINT\_ベンダー\_設定\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_vendor_set_command)と[ **IOCTL\_ 。USBPRINT\_ベンダー\_取得\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_vendor_get_command)します。 ただし、これらの Ioctl を使用することを言語モニター レンダリング パラレル ポート モニターと互換性がありません。
+場合によっては、特殊なプリンター機能を利用するために、言語モニターがプリンターに対してベンダー固有の要求を行う必要があります。 これを行うには、 [**ioctl\_usbprint\_ベンダを使用し\_\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_vendor_set_command)と[**IOCTL\_USBPRINT\_ベンダ\_GET\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_vendor_get_command)を設定します。 ただし、これらの Ioctl を使用すると、パラレルポートモニターと互換性のない言語モニターがレンダリングされます。
 
-通常、言語モニターには、プリンターを管理しているデバイス ハンドルへのアクセスはありません。 代わりに、言語モニターと、バス ドライバー (このケースで Usbprint.sys) の間でポート モニターによって提供されるポート名があります。 参照してください[言語およびポート モニターの相互作用](language-and-port-monitor-interaction.md)詳細についてはします。 デバイス ハンドルの不足は、言語モニターがデバイス バス ドライバーの Ioctl を直接呼び出すことを防ぎます。 USBMON を実装してこの制限を克服するために、 [ **GetPrinterDataFromPort** ](https://docs.microsoft.com/previous-versions/ff550506(v=vs.85)) API により、言語モニターを USBPRINT USBMON を通じて Ioctl を発行します。
+通常、言語モニターは、管理しているプリンターのデバイスハンドルにアクセスできません。 代わりに、言語モニターとバスドライバー (この場合は Usbprint. sys) の間にあるポートモニターによって提供されるポート名を持ちます。 詳細については[、「言語およびポートモニターの相互作用](language-and-port-monitor-interaction.md)」を参照してください。 デバイスハンドルがないため、言語モニターはデバイスバスドライバーの Ioctl を直接呼び出すことができません。 この制限を克服するために、USBMON は[**GetPrinterDataFromPort**](https://docs.microsoft.com/previous-versions/ff550506(v=vs.85)) API を実装しています。これにより、言語モニターは USBMON から usbmon によって ioctl を発行できます。
 
-USB の印刷スタックは、並列の印刷スタックで、次の Api と IOCTL を共有します。
+USB 印刷スタックは、次の Api と IOCTL を並列印刷スタックと共有します。
 
-[**WritePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-writeport)
+[**WritePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-writeport)
 
-[**ReadPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-readport)
+[**ReadPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-readport)
 
-[**IOCTL\_PAR\_クエリ\_デバイス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_par_query_device_id)
+[**IOCTL\_PAR\_クエリ\_デバイス\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_par_query_device_id)
 
-次の Ioctl には、USB の印刷スタックに固有です。
+次の Ioctl は、USB 印刷スタックに固有です。
 
-[**IOCTL\_USBPRINT\_GET\_1284\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_1284_id)
+[**IOCTL\_USBPRINT\_GET\_1284\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_get_1284_id)
 
-[**IOCTL\_USBPRINT\_GET\_LPT\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_lpt_status)
+[**IOCTL\_USBPRINT\_\_LPT\_の状態を取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_get_lpt_status)
 
-[**IOCTL\_USBPRINT\_ソフト\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_soft_reset)
+[**IOCTL\_USBPRINT\_ソフト\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_soft_reset)
 
-[**IOCTL\_USBPRINT\_ベンダー\_取得\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_vendor_get_command)
+[**IOCTL\_USBPRINT\_ベンダ\_\_コマンドを取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_vendor_get_command)
 
-[**IOCTL\_USBPRINT\_ベンダー\_設定\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_vendor_set_command)
+[**IOCTL\_USBPRINT\_ベンダ\_SET\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_vendor_set_command)
 
-**注**   Usbprint.sys はも USB パイプを直接操作するため、デバイスからの記述子を取得するためのメカニズムを提供していません。
+**  ** usbprint は、デバイスから記述子を取得するためのメカニズムや、直接 USB パイプを操作する機構を提供しません。
 
  
 

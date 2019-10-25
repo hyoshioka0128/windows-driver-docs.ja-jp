@@ -1,46 +1,46 @@
 ---
-title: 高速化状態管理
-description: 高速化状態管理
+title: 状態管理の高速化
+description: 状態管理の高速化
 ms.assetid: 276d3cdb-34bf-49e8-aae5-94315746c5ff
 keywords:
-- WDK Direct3D の高速化された状態管理
-- WDK Direct3D を状態します。
+- 高速状態管理 WDK Direct3D
+- WDK Direct3D の状態
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e30ac6546432d91c9327442b468bcedea0ec161
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c2107b9227b56fe29389241990e5ea69991b6c34
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384433"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839835"
 ---
-# <a name="accelerated-state-management"></a>高速化状態管理
+# <a name="accelerated-state-management"></a>状態管理の高速化
 
 
 ## <span id="ddk_accelerated_state_management_gg"></span><span id="DDK_ACCELERATED_STATE_MANAGEMENT_GG"></span>
 
 
-高速化された状態の管理は、API および DDI 間で大規模な状態の変更を 1 回の呼び出しで通信するためのメカニズムです。 このスキームにより、1 つの整数によって定義された状態のブロックとして状態設定呼び出しのコレクションを定義するアプリケーションです。 レンダリング状態としてこの整数値を送信することは、1 回の呼び出しですべての状態変更を実行します。
+加速化された状態管理は、1回の呼び出しで API と DDI の間で大きな状態の変化を通知するためのメカニズムです。 このスキームを使用すると、アプリケーションは、1つの整数で定義された状態ブロックとして、状態セット呼び出しのコレクションを定義できます。 この整数をレンダー状態として送信すると、1回の呼び出しですべての状態の変更が実行されます。
 
-数を減らすことで、API がオーバーヘッド削減**IDirect3DDevice7::SetRenderState**メソッドの呼び出しは必要に応じて、および「プリコンパイル」段階の変更、独自にすることにより、ドライバーの効率を向上できます状態ブロック時にハードウェアに固有の書式を定義するのではなく各状態の変化の実行で。 **IDirect3DDevice7::SetRenderState** Direct3D SDK ドキュメントの説明は、
+これにより、必要な**IDirect3DDevice7:: SetRenderState**メソッド呼び出しの数が減り、API のオーバーヘッドが軽減されます。また、状態に応じて、独自のハードウェア固有の形式に変更を "プリコンパイル" できるようにすることで、ドライバーの効率を向上させることができます。各状態変更を実行するのではなく、定義をブロックします。 **IDirect3DDevice7:: SetRenderState**の詳細については、Direct3D SDK のドキュメントを参照してください。
 
-ほとんどのアプリケーションは、詳細な状態遷移のことが重要めったにありませんごく少数の状態で表示します。 さらに重要な新機能は、レンダリングの一般的なシナリオ間 driver スイッチと入れ替えることが状態のブロックを定義できることです。 これは、全体の高速化された状態の管理ポイントです。
+ほとんどのアプリケーションは、いくつかの状態でのみ表示されるため、きめ細かな状態遷移が非常に重要になることはほとんどありません。 より重要なのは、ドライバーが一般的なレンダリングシナリオを切り替えるときに交換できる状態のブロックを定義できることです。 これは、全体的な状態管理の中心となるポイントです。
 
-状態セット トークンを使用して、ドライバーの状態を記録します。 ハンドルは、状態のコレクションを表します。 [ **D3DHAL\_DP2STATESET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)構造体を実行するには、どのような状態セット操作に関するドライバーに通知します。
+状態セットトークンは、ドライバーの状態を記録するために使用されます。 ハンドルは、状態のコレクションを参照します。 [**D3DHAL\_DP2STATESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)構造体は、実行する状態セット操作をドライバーに通知します。
 
-場合、 **dwOperation** 、D3DHAL のメンバー\_DP2STATESET 構造が D3DHAL に設定されている\_に含まれているハンドルの状態の記録が開始 STATESETBEGIN、ドライバー、**について**メンバー。 ドライバーが受信すると、 **dwOperation** D3DHAL の\_STATESETEND、状態の記録を停止します。
+D3DHAL\_DP2STATESET 構造体の**Dwoperation**メンバーが D3DHAL\_STATESETBEGIN に設定されている場合、ドライバーは**dwoperation**メンバーに含まれているハンドルの状態の記録を開始します。 ドライバーは、D3DHAL\_STATESETEND の**Dwoperation**を受け取ると、状態の記録を停止します。
 
-場合、 **dwOperation**メンバーが D3DHAL\_STATESETDELETE、状態のセットで参照される、**について**ハンドルを削除する必要があります。
+**Dwoperation**メンバーが D3DHAL\_STATESETDELETE の場合は、 **dwoperation**ハンドルによって参照される状態セットを削除する必要があります。
 
-場合、 **dwOperation**メンバーが D3DHAL\_STATESETEXECUTE、によって参照される状態のブロック、**について**ハンドルはデバイスに適用する必要があります。
+**Dwoperation**メンバーが D3DHAL\_STATESETEXECUTE の場合、 **dwoperation**ハンドルによって参照される状態ブロックをデバイスに適用する必要があります。
 
-場合、 **dwOperation**メンバーが D3DHAL\_STATESETCAPTURE、ドライバーでは、現在の状態をキャプチャするか、特定の方法で状態ブロックで定義されている現在の状態のスナップショットを提供します。 つまり、既に状態ブロックされている状態のみがキャプチャされます。 したがって、状態のブロックは、マスク、のみが定義されている状態の記録の一種として機能します。 例では、D3DRENDERSTATE がある場合、\_ZENABLE D3DRENDERSTATE の状態のブロックでの状態、現在の状態を表示\_ZENABLE がキャプチャされ、状態のブロックを入力します。 D3DRENDERSTATE がない場合は\_ZENABLE の状態をブロックし、その状態はキャプチャされません。
+**Dwoperation**メンバーが D3DHAL\_STATESETCAPTURE の場合、ドライバーの現在の状態を特定の方法でキャプチャし、状態ブロックで定義されている現在の状態のスナップショットを提供する必要があります。 つまり、状態ブロックに既に存在する状態のみがキャプチャされます。 したがって、ステートブロックはマスクの一種として機能し、定義されている状態のみを記録します。 たとえば、状態ブロックに D3DRENDERSTATE\_ZENABLE レンダリング状態がある場合、D3DRENDERSTATE\_ZENABLE の現在の状態がキャプチャされ、状態ブロックに格納されます。 状態ブロックに D3DRENDERSTATE\_ZENABLE がない場合、その状態はキャプチャされません。
 
-状態のグループは、さまざまなレンダリングのシナリオを若干変更可能な汎用状態ブロックの作成に使用されます。 (D3DSTATEBLOCKTYPE で列挙、DirectX SDK のドキュメントで) これらの定義済みグループでは、予想される定期的なレンダリングのシナリオに対応する状態の変更を後で変更可能な汎用的な状態のブロックを定義します。 など、ドライバーは、100 のジェネリックの定義済みの状態のブロックを作成し、それぞれ別のレンダリング シナリオに対応するために少しを変更する可能性があります。 状態ブロックの型が渡された、 **sbType** 、D3DHAL のメンバー\_DP2STATESET 構造体。
+状態のグループ化を使用して、さまざまなレンダリングシナリオで若干変更できる汎用状態ブロックを作成します。 これらの定義済みのグループ (DirectX SDK ドキュメントの D3DSTATEBLOCKTYPE に列挙されています) では、定期的なレンダリングのシナリオに合わせて、後で状態の変更によって変更できるジェネリック状態ブロックを定義します。 たとえば、ドライバーは、100の汎用の定義済み状態ブロックを作成し、それぞれを少し変更して、異なるレンダリングシナリオに対応する場合があります。 状態ブロックの型は、D3DHAL\_DP2STATESET 構造体の**sbType**メンバーに渡されます。
 
-**SbType**メンバーに対してのみ有効です D3DHAL\_STATESETBEGIN と D3DHAL\_STATESETEND し次 D3DSTATEBLOCKTYPE 列挙型のいずれかの定義済みの状態のブロックの型を指定します。**NULL**のない状態では、D3DSBT\_D3DSBT、すべての状態のすべて\_、ピクセルの状態や D3DSBT PIXELSTATE\_VERTEXSTATE の頂点の状態。
+**SbType**メンバーは、D3DHAL\_STATESETBEGIN および D3DHAL\_statesetbegin に対してのみ有効で、次のいずれかの D3DSTATEBLOCKTYPE 列挙型で定義済みの状態ブロック型を指定します。 NULL の場合は**NULL** 、D3DSBT @no__t_すべての状態の場合は 4_ ALL、ピクセル状態の場合は D3DSBT\_ピクセル、頂点状態の場合は D3DSBT\_VERTEXSTATE。\_
 
-ドライバーを無視する必要があります、**sbType**メンバーを実装しない限り、表示拡張機能の状態。 Direct3D のランタイムを提供するもの以外の状態をレンダリングは、拡張ドライバーの実装では、状態をレンダリングする場合は、使用できる**sbType**の種類を決定する定義済みの描画状態が使用されています。 この情報から、その拡張機能をサポートするために、状態のブロックを適切に追加する方法を判断ができます。
+ドライバーは、レンダー状態拡張機能を実装していない限り、**sbType**メンバーを無視する必要があります。 ドライバーが拡張レンダリング状態を実装している場合 (つまり、Direct3D ランタイムが提供するもの以外の状態をレンダリングする場合) は、 **sbType**を使用して、使用されている定義済みのレンダー状態の種類を判断できます。 この情報から、状態ブロックを適切に追加して、拡張機能をサポートする方法を決定できます。
 
  
 

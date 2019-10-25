@@ -1,33 +1,33 @@
 ---
 title: EnumSchema 要求と応答のスキーマ
-description: EnumSchema 要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+description: EnumSchema 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 ms.assetid: 031FA2EA-A33B-409C-82FD-B4FE9D0A2E93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c4ea5d217578e313ff39a8b68cebe85be49169
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c34eb163316f3b614d3a43500538e507cb64c4aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843125"
 ---
 # <a name="enumschema-request-and-response-schemas"></a>EnumSchema 要求と応答のスキーマ
 
 
-EnumSchema 要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
+EnumSchema 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 
 ## <a name="the-enumschema-request-schema"></a>EnumSchema 要求スキーマ
 
 
-EnumSchema 要求を使用して、プリンターのプロパティの一覧を取得できます。
+EnumSchema 要求は、プリンターのプロパティの一覧を取得するために使用されます。
 
-EnumSchema のすべての要求はまったく同じと、ルート要素のみで構成されます。
+すべての EnumSchema 要求はまったく同じであり、ルート要素のみで構成されています。
 
 ```xml
 <bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi"/>
 ```
 
-EnumSchema Request スキーマの正式な定義
+EnumSchema 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
@@ -45,9 +45,9 @@ EnumSchema Request スキーマの正式な定義
 ## <a name="the-enumschema-response-schema"></a>EnumSchema 応答スキーマ
 
 
-EnumSchema 応答に、&lt;スキーマ&gt;の各プロパティの要素。
+EnumSchema 応答には、各プロパティの &lt;Schema&gt; 要素があります。
 
-この例では、プリンターは、いくつかアクセス可能なプロパティのみを持ちます。
+この例では、プリンターにはいくつかのアクセス可能なプロパティしかありません。
 
 ```xml
 <bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -58,7 +58,7 @@ EnumSchema 応答に、&lt;スキーマ&gt;の各プロパティの要素。
 </bidi:EnumSchema>
 ```
 
-EnumSchema 応答スキーマの正式な定義
+EnumSchema Response スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
@@ -86,11 +86,11 @@ EnumSchema 応答スキーマの正式な定義
 
 ## <a name="related-topics"></a>関連トピック
 
-[双方向通信のスキーマ](bidirectional-communication-schema.md)  
+[双方向通信スキーマ](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
 
 
 

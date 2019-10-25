@@ -4,27 +4,27 @@ description: エラーの処理
 ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7486da413eac637f7f54e03a79a435dd04255dab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e813dad58955ae171befc7b3714e783cbf8d649d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382309"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839663"
 ---
 # <a name="handling-errors"></a>エラーの処理
 
 
-[Direct3D のバージョン 10 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)の戻り値パラメーターの型 VOID があるユーザー モード ドライバーの実装を通常表示することです。 このルールの主な例外は、 *CalcPrivate***ObjType***サイズ*-関数の入力 (たとえば、 [ **CalcPrivateResourceSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize)関数)。 この種類の関数は、サイズを返します\_T パラメーターの型を使用して特定のオブジェクト型を作成するため、ドライバーが必要とするメモリ領域のサイズを示す、* 作成 ***ObjType**-type (関数例では、 [ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource))。
+ユーザーモードディスプレイドライバーによって実装される[Direct3D version 10 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)は、通常、戻りパラメーターの型に対して VOID を持ちます。 このルールの主な例外は、 *CalcPrivate***ObjType***Size*型の関数 (たとえば、 [**CalcPrivateResourceSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize)関数) です。 この型の関数は、* Create ***ObjType**関数 (たとえば、 [**createresource () を使用して、ドライバーが特定のオブジェクトの種類を作成するために必要なメモリ領域のサイズを示すサイズ\_t パラメーター型を返します。D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource))。
 
-ユーザー モードのディスプレイ ドライバーが従来の方法でエラーの Direct3D ランタイムに通知するを防ぎます VOID を返すこと (つまり、ユーザー モードのディスプレイ ドライバーの関数を返すパラメーター)。 代わりに、ユーザー モードのディスプレイ ドライバーは、Direct3D ランタイムを使用する必要があります[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)にこのような情報をランタイムに渡すコールバック関数。 ランタイムへのポインターを提供するその**pfnSetErrorCb**で、 [ **D3D10DDI\_CORELAYER\_DEVICECALLBACKS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)構造体、 **pUMCallbacks**のメンバー、 [ **D3D10DDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)への呼び出しで指す構造体、 [ **CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。
+VOID を返すことにより、ユーザーモードの表示ドライバーは、通常の方法 (つまり、ユーザーモードの表示ドライバーの関数の戻りパラメーターを通じて) の Direct3D ランタイムにエラーを通知しません。 代わりに、ユーザーモードの表示ドライバーは、このような情報をランタイムに渡すために、Direct3D ランタイムの[**pfnSetErrorCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) callback 関数を使用する必要があります。 ランタイムは、 [**D3D10DDI\_CORELAYER\_DEVICECALLBACKS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)構造体内の**pfnSetErrorCb**へのポインターを提供します。この構造体は、 [**D3D10DDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)構造体の**pUMCallbacks**メンバーが指すようにします。[**CreateDevice (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しです。
 
-各ユーザー モードのディスプレイ ドライバーの関数のリファレンス ページを呼び出すことによって渡すことができる関数は、エラーを指定する**pfnSetErrorCb**します。 つまり、ユーザー モード ドライバーの呼び出しを表示する場合**pfnSetErrorCb**エラー条件が重要なし、機能は、現在のユーザー モードのディスプレイ ドライバー関数は許可されていません、エラー コード、ランタイムを決定します適当に。 中に、ランタイムが適切に機能するため、 **pfnSetErrorCb**、呼び出し元の効果を反転することは期待できません**pfnSetErrorCb**(E\_失敗) を呼び出してよう**pfnSetErrorCb**(S\_OK)。 実際には、ランタイムが決定される S\_[ok] は単に無効か、重要な電子メールとして\_失敗します。 S の概念\_[ok] を返すコードは呼び出さないユーザー モードのディスプレイ ドライバー関数に相当**pfnSetErrorCb**まったくです。
+各ユーザーモードの display driver 関数のリファレンスページでは、関数が**pfnSetErrorCb**の呼び出しを通じて渡すことができるエラーを指定します。 つまり、ユーザーモード表示ドライバーが、現在のユーザーモードの表示ドライバー関数で許可されていないエラーコードを使用して**pfnSetErrorCb**を呼び出すと、エラー状態が重大であり、適切に動作することがランタイムによって判断されます。 ランタイムは**pfnSetErrorCb**中に適切に動作するため、 **pfnSetErrorCb**(S\_OK) などを呼び出すことによって、 **pfnSetErrorCb**(E\_FAIL) の呼び出しによる影響を元に戻すことはできません。 実際、ランタイムは、S\_OK が "無効" または "重大" であると判断し、E\_失敗します。 S\_OK リターンコードの概念は、 **pfnSetErrorCb**を呼び出さないユーザーモードの表示ドライバー関数と同じです。
 
-Direct3D ランタイム、認識された場合、エラー状態が重要なことはまずかかりますアクション dr 実施時のエラーをログに記録します。ワトソン--事後 (だけの時間) の既定のデバッガーです。 ランタイムは、デバイスをエミュレートする、D3DDDIERR の受信のシナリオのため、意図的に失われます\_DEVICEREMOVED エラー コード。 呼び出すドライバーを要求することによって、 [ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)コールバック関数では、可能性は非常に大きいので、ドライバーから送信されたすべてのエラーが関連付けられている便利なコール スタックにあります。 簡易診断を行うと Dr の正確なエラーに関連付けられている呼び出し履歴が有効にします。ワトソン博士を記録します。
+Direct3D ランタイムによって、エラー状態が重大であると判断された場合、まず、ワトソン博士でエラーをログに記録することによってアクションが実行されます。これは、既定の事後事後 (just-in-time) デバッガーです。 その後、ランタイムはデバイスを破棄して、D3DDDIERR\_DEVICEREMOVED エラーコードを受け取るシナリオをエミュレートします。 ドライバーが[**pfnSetErrorCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)コールバック関数を呼び出すように要求することで、ドライバーから送信されるすべてのエラーに、役に立つコールスタックが関連付けられるようになります。 エラーに関連付けられたコールスタックを使用すると、迅速な診断と正確なワトソン博士ログが有効になります。
 
-使用する必要があります[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)返すエラー コード、ランタイムは関数の特定のドライバーが許可されない場合でも、ドライバーで問題が発生する場合、ドライバーのコードでドライバーのバグまたは問題として、ランタイムによって決定されます。 重大なエラーを吸収してで続行ユーザー モードのディスプレイ ドライバーにも悪いでしょう。 ユーザー モードのディスプレイ ドライバーを呼び出す必要があります**pfnSetErrorCb**近く事後のデバッグに便利なコール スタックを提供する限り、エラー検出のポイント。
+特定のドライバー関数に対してランタイムが許可しないエラーコードを返した場合でも、ドライバーのバグまたは問題としてランタイムによって決定されるため、ドライバーコードで[**pfnSetErrorCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)を使用する必要があります。 ユーザーモードの表示ドライバーで重大なエラーを吸収して続行することは、さらに悪化します。 ユーザーモードの表示ドライバーでは、エラー検出のポイントの近くに**pfnSetErrorCb**を呼び出して、事後分析用に便利な呼び出し履歴を提供する必要があります。
 
-次の表は、Direct3D ランタイムにより、特定のドライバーの関数からエラーのカテゴリを一覧表示します。
+次の表は、Direct3D ランタイムが特定のドライバー関数から許可するエラーのカテゴリを示しています。
 
 <table>
 <colgroup>
@@ -33,44 +33,44 @@ Direct3D ランタイム、認識された場合、エラー状態が重要な�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">エラー カテゴリ</th>
-<th align="left">説明</th>
+<th align="left">エラーカテゴリ</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>NoErrors</p></td>
-<td align="left"><p>ドライバーでは、D3DDDIERR_DEVICEREMOVED などのエラーが発生しない必要があります。 すべての呼び出しに、ランタイムが決定されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb" data-raw-source="[&lt;strong&gt;pfnSetErrorCb&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)"> <strong>pfnSetErrorCb</strong> </a>が重要です。</p></td>
+<td align="left"><p>ドライバーでは、D3DDDIERR_DEVICEREMOVED を含むエラーは発生しません。 ランタイムは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb" data-raw-source="[&lt;strong&gt;pfnSetErrorCb&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)"><strong>pfnSetErrorCb</strong></a>へのすべての呼び出しが重要であると判断します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowDeviceRemoved</p></td>
-<td align="left"><p>ドライバーでは、D3DDDIERR_DEVICEREMOVED を除く、すべてのエラーが発生しない必要があります。 すべての呼び出しに、ランタイムが決定されます<strong>pfnSetErrorCb</strong> D3DDDIERR_DEVICEREMOVED に合格しないが重要です。 ドライバーは、デバイスが削除されている場合は、DEVICEREMOVED を返す必要はありません。 ただし、ランタイムでは、ドライバー関数は、通常は発生しません干渉 DEVICEREMOVED 場合に返す DEVICEREMOVED、ドライバーができます。</p></td>
+<td align="left"><p>D3DDDIERR_DEVICEREMOVED を除き、ドライバーでエラーが発生することはありません。 ランタイムは、D3DDDIERR_DEVICEREMOVED を渡さない<strong>pfnSetErrorCb</strong>の呼び出しが重要であると判断します。 デバイスが削除されている場合、ドライバーは DEVICEREMOVED を返す必要はありません。 ただし、ランタイムでは、ドライバーが DEVICEREMOVED 盗み見るを使用して DEVICEREMOVED を返すことができます。この場合、通常は発生しません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowOutOfMemory</p></td>
-<td align="left"><p>ドライバーは、メモリ不足実行できます可能性があります。 ドライバー E_OUTOFMEMORY とを通じて D3DDDIERR_DEVICEREMOVED に渡すことができますので、 <strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
+<td align="left"><p>ドライバーのメモリが不足している可能性があります。 このため、ドライバーは<strong>pfnSetErrorCb</strong>経由で E_OUTOFMEMORY と D3DDDIERR_DEVICEREMOVED を渡すことができます。 ランタイムは、他のすべてのエラーコードが重要であると判断します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>AllowCounterCreationErrors</p></td>
-<td align="left"><p>ドライバーは、メモリ不足実行できます可能性があります。 ドライバーもできない可能性がありますカウンターの排他的な性質のためのカウンターを作成できません。 ドライバー E_OUTOFMEMORY、DXGI_DDI_ERR_NONEXCLUSIVE、およびを通じて D3DDDIERR_DEVICEREMOVED に渡すことができますので、 <strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
+<td align="left"><p>Allowcounterのエラー</p></td>
+<td align="left"><p>ドライバーのメモリが不足している可能性があります。 また、ドライバーは、カウンターが排他的な性質を持つためにカウンターを作成できない場合もあります。 このため、ドライバーは E_OUTOFMEMORY、DXGI_DDI_ERR_NONEXCLUSIVE、および D3DDDIERR_DEVICEREMOVED を<strong>pfnSetErrorCb</strong>経由で渡すことができます。 ランタイムは、他のすべてのエラーコードが重要であると判断します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowMapErrors</p></td>
-<td align="left"><p>ドライバーは、リソースの競合を確認する必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます<strong>pfnSetErrorCb</strong> D3D10_DDI_MAP_FLAG_DONOTWAIT フラグが、ドライバーに渡されたかどうか<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)"> <strong>ResourceMap</strong> </a>関数。 ドライバーはを通じて D3DDDIERR_DEVICEREMOVED を渡すことができますも<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
+<td align="left"><p>ドライバーはリソースの競合を確認する必要があります。 このため、ドライバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)"><strong>Resourcemap</strong></a>関数に D3D10_DDI_MAP_FLAG_DONOTWAIT フラグが渡された場合、ドライバーは<strong>pfnSetErrorCb</strong>を介して DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます。 ドライバーは、 <strong>pfnSetErrorCb</strong>を介して D3DDDIERR_DEVICEREMOVED を渡すこともできます。 ランタイムは、他のすべてのエラーコードが重要であると判断します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowGetDataErrors</p></td>
-<td align="left"><p>ドライバーは、クエリの完了を確認する必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます<strong>pfnSetErrorCb</strong>クエリがまだ完了しない場合。 ドライバーはを通じて D3DDDIERR_DEVICEREMOVED を渡すことができますも<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
+<td align="left"><p>ドライバーは、クエリの完了を確認する必要があります。 そのため、クエリがまだ完了していない場合、ドライバーは<strong>pfnSetErrorCb</strong>を介して DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます。 ドライバーは、 <strong>pfnSetErrorCb</strong>を介して D3DDDIERR_DEVICEREMOVED を渡すこともできます。 ランタイムは、他のすべてのエラーコードが重要であると判断します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowWKCheckCounterErrors</p></td>
-<td align="left"><p>ドライバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter)"> <strong>CheckCounter</strong> </a>関数は、実行時に定義されているカウンターがサポートしているかどうかを示す必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_UNSUPPORTED を渡すことができます<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p>
-<p>ドライバーは、任意の型チェック関数の D3DDDIERR_DEVICEREMOVED を返すことはできません。</p></td>
+<td align="left"><p>ドライバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter)"><strong>Checkcounter</strong></a>関数は、ランタイム定義のカウンターをサポートしているかどうかを示します。 このため、ドライバーは<strong>pfnSetErrorCb</strong>を介して DXGI_DDI_ERR_UNSUPPORTED を渡すことができます。 ランタイムは、他のすべてのエラーコードが重要であると判断します。</p>
+<p>ドライバーは、どのチェック型関数に対しても D3DDDIERR_DEVICEREMOVED を返すことはできません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowDDCheckCounterErrors</p></td>
-<td align="left"><p>ドライバーは、カウンター ID が範囲内と、各カウンターの文字列を指定されたバッファーにコピーする十分な空き領域があることを確認するには、デバイスに依存するカウンター id (カウンター ID) を検証する必要があります。 ドライバーである E_INVALIDARG を渡すことができます<strong>pfnSetErrorCb</strong>パラメーターがこの方法で正しくない場合、します。</p>
-<p>ドライバーは、任意の型チェック関数の D3DDDIERR_DEVICEREMOVED を返すことはできません。</p></td>
+<td align="left"><p>ドライバーは、デバイス依存カウンター識別子 (カウンター ID) を検証して、カウンター ID が範囲内にあり、各カウンター文字列を指定されたバッファーにコピーするのに十分な空き領域があることを確認する必要があります。 この方法では、パラメーターが正しくない場合、ドライバーは<strong>pfnSetErrorCb</strong>を介して E_INVALIDARG を渡すことができます。</p>
+<p>ドライバーは、どのチェック型関数に対しても D3DDDIERR_DEVICEREMOVED を返すことはできません。</p></td>
 </tr>
 </tbody>
 </table>

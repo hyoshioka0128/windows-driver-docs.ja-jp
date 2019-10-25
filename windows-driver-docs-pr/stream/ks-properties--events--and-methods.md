@@ -1,58 +1,58 @@
 ---
-title: KS のプロパティ、イベント、メソッド
-description: KS のプロパティ、イベント、メソッド
+title: KS プロパティ、イベント、およびメソッド
+description: KS プロパティ、イベント、およびメソッド
 ms.assetid: 933bbe81-92d8-4bcc-b935-9ae929464ca1
 keywords:
-- カーネルの WDK、プロパティをストリーミングします。
-- ストリーミング KS プロパティ WDK カーネル
-- カーネルの WDK、イベントのストリーミング
+- カーネルストリーミング WDK、プロパティ
+- KS プロパティ WDK カーネルストリーミング
+- カーネルストリーミング WDK、イベント
 - KS WDK、イベント
-- カーネルの WDK、メソッドのストリーミング
+- カーネルストリーミング WDK、メソッド
 - KS WDK、メソッド
-- ストリーミング プロパティ WDK カーネル
-- ストリーミング イベント WDK カーネル
-- ストリーミング メソッド WDK カーネル
-- エイリアスの構造体の WDK カーネルがストリーミング
-- WDK のカーネル ストリーミングの操作を設定します。
-- WDK のカーネル ストリーミングの操作を取得します。
+- プロパティ WDK カーネルストリーミング
+- イベント WDK カーネルストリーミング
+- 方法 WDK カーネルストリーミング
+- エイリアス構造 WDK カーネルストリーミング
+- set 操作 WDK カーネルストリーミング
+- get 操作 WDK カーネル streaming
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eb64892140522d443fa4d845c63ddaffbc21187
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3ca8c41beb16133204e70251b1fe0d46479736f5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382491"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842508"
 ---
-# <a name="ks-properties-events-and-methods"></a>KS のプロパティ、イベント、メソッド
+# <a name="ks-properties-events-and-methods"></a>KS プロパティ、イベント、およびメソッド
 
 
 
 
 
-ストリーミング アーキテクチャ カーネルを通じてミニドライバーとユーザー モードのクライアント間の相互作用をサポートしている[プロパティ](ks-properties.md)、[イベント](ks-events.md)、および[メソッド](ks-methods.md)します。 これらのコンストラクトを使用して、クライアント KS オブジェクトのことができます取得しオブジェクトの状態を設定、イベントの通知コールバックを登録およびオブジェクトのメソッドを実行します。
+カーネルストリーミングアーキテクチャは、[プロパティ](ks-properties.md)、[イベント](ks-events.md)、および[メソッド](ks-methods.md)を使用して、ミニドライバークライアントとユーザーモードクライアントの間の対話をサポートします。 これらの構成体を使用して、KS オブジェクトのクライアントは、オブジェクトの状態の取得と設定、イベントの通知コールバックの登録、およびオブジェクトメソッドの実行を行うことができます。
 
-クライアントは、標準化された方法で 3 つの操作のすべてのクラスを要求します。 クライアントのエイリアス構造体を提供する[ **KSIDENTIFIER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)への呼び出しで**DeviceIoControl** (Microsoft Windows SDK のドキュメントで説明) または[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)します。
+クライアントは、3つのすべての操作クラスを標準化された方法で要求します。 クライアントは、 **DeviceIoControl** (Microsoft Windows SDK のドキュメントで説明されています) または[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)の呼び出しで、 [**KSIDENTIFIER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)の別名構造を提供します。
 
-エイリアスの構造体が[ **KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))、および[ **KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85)). 3 つすべては、次のパラメーターです。
+エイリアス構造は、 [**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)、 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))、および[**ksproperty**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))です。 3つすべてに次のパラメーターが含まれます。
 
--   **設定**
+-   **一連**
 
-    機能的によく似た操作は、一連のグループ化されます。 各プロパティ、イベント、またはメソッドのセットは、GUID によって識別されます。 Microsoft では、標準的なテクノロジに特化した操作の Guid を定義します。 ミニドライバーは、カスタム操作の独自の Guid を定義できます。
+    機能的に類似した操作は、セットにまとめてグループ化されます。 各プロパティ、イベント、またはメソッドセットは、GUID によって識別されます。 Microsoft では、標準的なテクノロジ固有の操作の Guid を定義しています。 ミニドライバーでは、独自の Guid を定義してカスタム操作を行うことができます。
 
--   **[Identifier]**
+-   **識別子**
 
-    各操作は、セット内の ID 番号を指定します。
+    各操作は、セット内の ID 番号によって指定されます。
 
--   **操作に固有の id データ**
+-   **操作固有の識別データ**
 
-    特定のプロパティの要求では、追加のデータが必要です。 など、オーディオ デバイス サポートのピン留め、 [KSPROPSETID\_オーディオ](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)プロパティ セット。 オーディオの pin には、いくつかの異なるオーディオ チャンネルをサポートできます。 クライアントを取得または設定の特定 KSPROPSETID\_オーディオのプロパティは、要求を適用するオーディオ チャネルを指定する必要があります。 イベントとメソッドの要求では、追加のデータは必要ありません。
+    特定のプロパティ要求には追加データが必要です。 たとえば、オーディオデバイスのピンは、 [Kspropsetid\_audio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)プロパティセットをサポートしています。 オーディオ pin では、複数の異なるオーディオチャンネルがサポートされる場合があります。 特定の KSPROPSETID\_を取得または設定するクライアントは、要求が適用されるオーディオチャネルを指定する必要があります。 イベント要求とメソッド要求では、追加のデータは必要ありません。
 
-Microsoft 定義セット Guid および汎用的な操作の識別子がヘッダーにある*ks.h*します。 標準の Guid とマルチ メディア テクノロジの特定のクラスの識別子は、「 *ksmedia.h*します。
+汎用操作の Microsoft 定義セット Guid および識別子は、ヘッダー *ks*にあります。 マルチメディアテクノロジの特定のクラスの標準 Guid と識別子は、 *ksmedia. h*にあります。
 
-AVStream ミニドライバーへのポインターを提供することで、プロパティ、イベント、およびメソッドをサポートする、 [ **KSAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksautomation_table_)構造、関連する[ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)または[ **KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)します。 KSAUTOMATION\_テーブルの配列へのポインターを格納する[ **KSPROPERTY\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)オブジェクト。 詳細についてを参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
+AVStream ミニドライバーサポートのプロパティ、イベント、およびメソッド。関連する[**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)または[**KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の[**ksautomation\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksautomation_table_)構造へのポインターを提供します。 KSAUTOMATION\_テーブルには、オブジェクト\_設定された[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)の配列へのポインターが含まれています。 詳細については、「[オートメーションテーブルの定義](defining-automation-tables.md)」を参照してください。
 
-これらのセクションには、ミニドライバーが 3 つの操作のクラスをサポートする方法に関する情報が含まれます。
+これらのセクションには、ミニドライバーが3つの操作クラスをサポートする方法に関する情報が含まれています。
 
 [KS プロパティ](ks-properties.md)
 

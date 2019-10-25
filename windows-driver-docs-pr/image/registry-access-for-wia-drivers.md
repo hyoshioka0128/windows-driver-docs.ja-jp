@@ -1,29 +1,29 @@
 ---
-title: WIA ドライバーのレジストリ アクセス
-description: WIA ドライバーのレジストリ アクセス
+title: WIA ドライバーのレジストリアクセス
+description: WIA ドライバーのレジストリアクセス
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2d916e2ce22f233f616c0fb503bbf8331b6262
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8fb15acd8b99e02b2c3ee3c3fe7efb9f9bdc7cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376492"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840758"
 ---
-# <a name="registry-access-for-wia-drivers"></a>WIA ドライバーのレジストリ アクセス
+# <a name="registry-access-for-wia-drivers"></a>WIA ドライバーのレジストリアクセス
 
 
 
 
 
-ドライバー開発者向けには、アクセスに必要なレジストリ キーのアクセス許可が知っておく必要があります。 レジストリの多くは、ドライバーの読み取りに使用できます。 ただし、WIA ドライバーがそれらに渡されるレジストリ キーにのみ書き込む必要があります、 [ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)メソッド。
+ドライバー開発者は、アクセスする必要があるレジストリキーのアクセス許可を把握している必要があります。 レジストリの多くは、ドライバーが読み取るために使用できます。 ただし、WIA ドライバーは、 [**Ib usd:: Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)メソッドで渡されたレジストリキーにのみ書き込む必要があります。
 
-WIA サービスは、高い特権で実行されるので、他のレジストリ キーへの書き込みが Windows XP で可能ですが**LocalSystem**アカウントでは、このことはできません、低い特権の下で**LocalService** Microsoft Windows Server 2003 以降のアカウント。
+Windows XP では他のレジストリキーへの書き込みが可能ですが、WIA サービスは高い特権を持つ**LocalSystem**アカウントで実行されるため、Microsoft windows Server の低い特権の**LocalService**アカウントでは使用できなくなります。2003以降。
 
-ドライバーは、多くの場合の外部のレジストリ キーへの書き込みアクセスを必要**IStiUSD::Initialize**します。 ほとんどのドライバーでデータを格納するため、 **DeviceData**サブキー、簡単に開くが、 **DeviceData**サブキーし、後で使用するキーを開いているハンドルを格納します。 キーが必要がなくなった場合にのみ、ドライバーは、レジストリ キーを閉じる必要があります。
+多くの場合、ドライバーは、 **Iと usd:: Initialize**以外のレジストリキーへの書き込みアクセスを必要とします。 ほとんどのドライバーは**devicedata**サブキーにデータを格納するため、 **devicedata**サブキーを開いて、開いているキーへのハンドルを格納し、後で使用することが簡単です。 ドライバーは、キーが不要になったときにのみ、レジストリキーを閉じる必要があります。
 
-次のコード例に示しますを使用して、 **DeviceData**レジストリ サブキー。
+次のコード例は、 **Devicedata**レジストリサブキーの使用方法を示しています。
 
 ```cpp
 STDMETHODIMP CWIADevice::Initialize(
@@ -130,9 +130,9 @@ CWIADevice::~CWIADevice(void)
 }
 ```
 
-**DeviceData**レジストリ サブキーには、Windows Me では、および Windows XP 上のドライバーへの読み取り/書き込みアクセス用に開かれて以降。 デバイス キー自体 (に親レジストリ キーなど、 **DeviceData**) は、オペレーティング システムのバージョンに応じて、ドライバーによって書き込みアクセス用に開くことができない可能性があります。
+**Devicedata**レジストリサブキーは、windows Me および windows XP 以降のドライバーへの読み取り/書き込みアクセスのために開かれています。 デバイスキー自体 (たとえば、 **Devicedata**の親レジストリキー) は、オペレーティングシステムのバージョンに応じて、ドライバーによる書き込みアクセス用に開かれている場合もあれば、開いていない場合もあります。
 
-**注**  ドライバー*する必要があります*で開く必要がなくなったらとアンロードする前にすべてのレジストリ キーを閉じる必要がありますが、レジストリ キーを閉じます。
+ドライバーは、不要になったときに開かれたすべてのレジストリキーを閉じる*必要がある*  、アンロードする前にすべてのレジストリキーを閉じる必要がある**ことに注意**してください。
 
  
 

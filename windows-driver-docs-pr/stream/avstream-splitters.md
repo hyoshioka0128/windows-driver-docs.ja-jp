@@ -1,76 +1,76 @@
 ---
-title: AVStream のスプリッター
-description: AVStream のスプリッター
+title: AVStream スプリッター
+description: AVStream スプリッター
 ms.assetid: c2cfc183-0f4c-4104-a580-234e0483eee4
 keywords:
-- WDK AVStream のスプリッター
-- AVStream スプリッター WDK
-- WDK AVStream のストリーム データの分割
+- スプリッターの WDK AVStream
+- AVStream スプリッター (WDK)
+- データストリームの分割 WDK AVStream
 - KSPIN_FLAG_SPLITTER
-- 自動 WDK AVStream の分割
-- 入力ピンの WDK AVStream の分割
-- 出力ピン スプリッターの WDK AVStream の処理
-- WDK AVStream の分割をピン留め
-- プロセスが WDK AVStream をピン留め
-- WDK AVStream フレーム
+- WDK AVStream の自動分割
+- 入力ピン分割 WDK AVStream
+- 出力ピンスプリッター処理 WDK AVStream
+- 固定の WDK AVStream の分割
+- プロセス pin WDK AVStream
+- WDK AVStream のフレーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2354cda1b30f70a4b52803a515e927d99597e2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4bab8ff64453ff32a6b72abb075496008264889
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386699"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840623"
 ---
-# <a name="avstream-splitters"></a>AVStream のスプリッター
+# <a name="avstream-splitters"></a>AVStream スプリッター
 
 
 
 
 
-AVStream、ミニドライバーは、ストリームが与えられた暗証番号 (pin) を通過すると、複数のコピーにデータ ストリームを分割するのに AVStream クラス ドライバーの機能を使用できます。 この分割プロセスは、2 つの同一の出力ストリームを生成するために、入力ストリームをコピーするには、ドライバーが必要な場合に役立ちます。
+AVStream ミニドライバーは、AVStream クラスドライバー機能を使用して、ストリームが特定の pin を通過するときにデータストリームを複数のコピーに分割することができます。 この分割プロセスは、ドライバーが2つの同じ出力ストリームを生成するために入力ストリームをコピーする必要がある場合に便利です。
 
-これを行うには、設定 KSPIN\_フラグ\_スプリッター、**フラグ**の暗証番号 (pin) のメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 このフラグがピンに設定されている場合、暗証番号 (pin) は、自動分割として機能します。 AVStream は自動的にストリームを分割するために必要なすべてのデータをコピーします。
+これを行うには、ピンの[**kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**FLAGS**メンバーに kspin\_フラグ\_スプリッターを設定します。 Pin にこのフラグが設定されている場合、pin は自動スプリッターとして機能します。 AVStream は、ストリームを分割するために必要なすべてのデータを自動的にコピーします。
 
-DirectX8.0、KSPIN より後のリリースで\_フラグ\_スプリッター フラグがピンの両方で動作[フィルターを中心とした](filter-centric-processing.md)と[暗証番号 (pin) を中心とした](pin-centric-processing.md)フィルター。 以前のリリースでは、フィルターを中心としたフィルターにピンに対してのみ、このフラグをサポートします。
+DirectX 8.0 より後のリリースでは、[フィルター中心](filter-centric-processing.md)のフィルターと[ピン中心](pin-centric-processing.md)のフィルターの両方で、kspin\_フラグ\_スプリッターフラグがピンに対して機能します。 以前のリリースでは、フィルター中心のフィルターのピンに対してのみこのフラグがサポートされています。
 
-次の図は、入力ピンが 2 つの出力ピンにストリームを分割するフィルターの構成を示します。 この出力ピンのダウン ストリームのフィルター データを変更する*インプレース*します。
+次の図は、入力ピンによってストリームが2つの出力ピンに分割されるフィルターの構成を示しています。 この出力ピンの下流フィルターは、データの*インプレース*を変更します。
 
-![分割の出力ピンを avstream フィルターを示す図 ](images/split1.png)
+![スプリッター出力ピンを持つ avstream フィルターを示す図 ](images/split1.png)
 
-フレームは、入力ピンに到着し、入力キューに配置されます。 ミニドライバーは、入力キューと元の暗証番号 (pin) の出力キューとのみ対話します。 AVStream は自動的に、2 番目のピンのキューに、最初の pin のキューからデータをコピーします。
+フレームは入力ピンに到達し、入力キューに格納されます。 ミニドライバーは、元の pin の入力キューと出力キューのみと対話します。 AVStream は、最初のピンのキューから2番目のピンのキューにデータを自動的にコピーします。
 
-わかりやすくするため、この図は表示されません、出力ピンにフレームを指定する方法。 出力ピンにフレームを指定するなどがあります、リクエスターと各キューに関連付けられたアロケーター パイプここに属しているとします。 または、フレームは、ダウン ストリームのフィルターからものがあります。
+わかりやすくするために、この図は、出力ピンにフレームがどのように提供されるかを示していません。 たとえば、出力ピンにフレームを提供するには、要求元と、各キューに関連付けられ、このパイプセクションに属するアロケーターが必要になることがあります。 また、フレームを下流フィルターから取得することもできます。
 
-[ **KSFILTER\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_dispatch)ベンダーから提供されたへのポインターを指定する構造体をミニドライバー [ *AVStrMiniFilterProcess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksfilterprocess)コールバック ルーチン。 このコールバック ルーチンは、ミニドライバーがへのポインターを受け取る、 [ **KSPROCESSPIN\_索引**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin_indexentry)構造体の配列を含む[ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)構造体以下のとおりです。
+ミニドライバーは、 [ **\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_dispatch)構造体で、ベンダが提供した[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンへのポインターを指定します。 このコールバックルーチンは、次に示す[**Ksk Processpin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin)構造体の配列を含む[**ksk PROCESSPIN\_indexentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin_indexentry)構造体へのポインターを受け取る場所です。
 
-この図では、プロセスのピンの一覧の 2 つの出力ピンの間、ミニドライバーの区別を示します。
+この図は、ミニドライバーが、プロセスピンリスト内の2つの出力ピンを区別する方法を示しています。
 
-![プロセスの図は分割ピンが 2 つのテーブルをピン留め](images/splitppin1.png)
+![2つの分割ピンのプロセスピンテーブルの図](images/splitppin1.png)
 
-DB を指す、この図では、 **DelegateBranch**のメンバー、 [ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)構造と CS を指す、 **CopySource**メンバー。 両方の**DelegateBranch**と**CopySource**入力ピンと出力ピンを最初のメンバーは**NULL**します。 これは、ミニドライバーは、このピンのフレームを処理することを示します。
+この図では、DB が[**Ksk Processpin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin)構造体の**DelegateBranch**メンバーを参照し、CS は**copysource**メンバーを参照しています。 入力ピンの**DelegateBranch**および**copysource**メンバーと最初の出力ピンの両方が**NULL**です。 これは、ミニドライバーがこれらのピンのフレームを処理することを示します。
 
-ただし、2 番目の出力ピンには、 **CopySource**ポイントが最初の出力ピンにバックアップを作成します。 これは、2 番目の出力ピンが最初の出力ピンから別のパイプであると AVStream は、2 番目の出力ピンのキューに最初の出力ピンのキューに配置されている任意のデータをコピー自動的にことを示します。
+ただし、2番目の出力ピンには、最初の出力ピンを指す**Copysource**があります。 これは、2番目の出力ピンが最初の出力ピンとは別のパイプにあることを示し、AVStream は、最初の出力ピンのキューに格納されているすべてのデータを2番目の出力ピンのキューに自動的にコピーします。
 
-複雑な分割線の場合は、2 つの出力ピンが同一のパイプに組み込まれているときに発生します。 ミニドライバー含めることができます 2 つのスプリッター ベースの出力ピン同一のパイプなどのダウン ストリームのフィルターではこれらのピンから送信されたデータが変更されない限り、します。 出力ピンは読み取り専用と見なされますので、データは変更されません。両方のダウン ストリームのフィルターは、同じバッファーを受信します。
+2つの出力ピンが同じパイプに組み込まれていると、より複雑なスプリッターケースが発生する可能性があります。 ミニドライバーには、同じパイプに2つのスプリッターベースの出力ピンを含めることができます。たとえば、ダウンストリームフィルターによって、これらのピンから送信されるデータが変更されない限りです。 データは変更されないため、出力ピンは読み取り専用と見なされます。どちらのダウンストリームフィルターも、同じバッファーを受け取ります。
 
-そうでないときに、データを変更スプリッターの暗証番号 (pin) に自動的にアタッチするダウン ストリームのフィルターのこともできます。
+スプリッターピンに自動的にアタッチされるダウンストリームフィルターの中には、データが変更されないものもあります。
 
-ここでは、フィルターのレイアウトは、分割の出力ピンの 3 つのインスタンスを含むフィルターを示しています。 次の図のような可能性があります。
+この場合、フィルターレイアウトは次の図のようになります。これは、分割出力ピンの3つのインスタンスを含むフィルターを示しています。
 
-![次の 3 つの分割の出力ピン、avstream フィルターを示す図 ](images/split2.png)
+![3つの分割された出力ピンを持つ avstream フィルターを示す図 ](images/split2.png)
 
-ダウン ストリームのフィルターでは、データが変更されないために、A と B のピンが同一のパイプに割り当てられています。ダウン ストリームのフィルター A と B が同じバッファー ポインターを受信します。
+ダウンストリームフィルターによってデータが変更されないため、ピン A と B は同じパイプに割り当てられます。A および B の下流のフィルターは、同じバッファーポインターを受け取ります。
 
-*ミニドライバーは、入力キューと 1 つの出力キューとのみ対話します。* AVStream は A から自動的にコピー/キューの B と C キュー。 また、同じデータ フレームからピン A と B のピン (ストリーム ヘッダーが異なることに注意してください) を送信するスプリッター オブジェクトも作成します。
+*ミニドライバーは、入力キューと1つの出力キューだけを操作します。* AVStream は A/B キューと C キューから自動的にコピーします。 また、ピン A とピン B を使用して同じデータフレームを送信する splitter オブジェクトも作成します (ストリームヘッダーが異なることに注意してください)。
 
-配列[ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)構造を次に示します。
+[**Ksprocesspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin)構造体の配列は次のとおりです。
 
-![プロセスの図は次の 3 つの分割の出力ピンのテーブルをピン留め](images/splitppin2.png)
+![3つの分割出力ピンのプロセスピンテーブルの図](images/splitppin2.png)
 
-通常の状況で、ミニドライバーと対話する必要がありますのみの pin は暗証番号 (pin) A です。
+通常の状況下でミニドライバーが操作する必要があるピンは、ピン A だけです。
 
-上記の図を簡素化するには、要求者とアロケーターは、図から省略されました。 図は、プロセスの分割のフレームのみを示します。
+上の図を簡略化するために、要求者とアロケーターは図から除外されました。 図は、フレーム分割プロセスのみを示すことを目的としています。
 
  
 

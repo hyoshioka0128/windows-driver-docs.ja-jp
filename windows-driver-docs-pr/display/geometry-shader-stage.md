@@ -1,68 +1,68 @@
 ---
-title: ジオメトリ シェーダー ステージ
-description: ジオメトリ シェーダー ステージ
+title: ジオメトリシェーダーステージ
+description: ジオメトリシェーダーステージ
 ms.assetid: 390eb917-3289-4b6e-be23-8db24cdd2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 066a47fbea947df7700cbd1990f714f30d032d7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b1336682c1644ed9d5e7760c0bc8ade4970aa2e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379982"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839682"
 ---
-# <a name="geometry-shader-stage"></a>ジオメトリ シェーダー ステージ
+# <a name="geometry-shader-stage"></a>ジオメトリシェーダーステージ
 
 
-ジオメトリ シェーダー (GS) のステージでは、入力と出力の頂点を生成することができますの頂点を持つアプリケーションで指定されたシェーダー コードを実行します。 頂点シェーダーは、1 つの頂点を操作とは異なり、ジオメトリ シェーダーの入力がさらに、端が隣接する頂点データ (つまり、線、三角形の 3 つの頂点またはポイントの 1 つの頂点の 2 つ頂点) の完全なプリミティブの頂点はプリミティブ (つまり、その他 2 つの頂点行) または三角形に 3 つの頂点。 次の図は、ジオメトリ シェーダーに渡される入力プリミティブの例を示します。
+ジオメトリシェーダー (GS) ステージは、アプリケーションで指定されたシェーダーコードを、頂点を入力として実行し、出力時に頂点を生成することができます。 1つの頂点で動作する頂点シェーダーとは異なり、ジオメトリシェーダーの入力は、完全なプリミティブの頂点 (つまり、直線の場合は2つの頂点、三角形の場合は3頂点、ポイントの場合は1頂点) とエッジ隣接の頂点データを持ちます。プリミティブ (直線の場合は2つの頂点、三角形の場合は追加の3つの頂点)。 次の図は、ジオメトリシェーダーへの入力であるプリミティブの例を示しています。
 
-![ジオメトリ シェーダー プリミティブを示す図します。](images/geoshade.png)
+![ジオメトリシェーダープリミティブを示す図](images/geoshade.png)
 
-ジオメトリ シェーダーへの別の入力は、入力アセンブラー (IA) によって自動生成されるプリミティブの ID です。 プリミティブの ID は、顔ごとのデータを必要な場合にフェッチまたはコンピューティング、ジオメトリ シェーダーを使用できます。
+ジオメトリシェーダーへのもう1つの入力は、入力アセンブラ (IA) によって自動生成されるプリミティブ ID です。 プリミティブ ID を使用すると、必要に応じて表面データをフェッチまたは計算できます。
 
-ジオメトリ シェーダーのステージでは、1 つ選択したトポロジを形成する複数の頂点を出力できます。 有効な GS 出力トポロジは*tristrip*、 *linestrip*、および*pointlist*します。 ジオメトリ シェーダーを作成できれば頂点の最大数を静的に宣言する必要がありますが、ジオメトリ シェーダーの出力のプリミティブの数、によって異なります。 ジオメトリ シェーダーを出力するストリップの長さは任意 (がある、**切り取り**コマンド)。
+ジオメトリシェーダーステージは、1つの選択されたトポロジを形成するために複数の頂点を出力できます。 使用可能な GS 出力トポロジは、 *tristrip*、 *linestrip*、および*pointlist*です。 ジオメトリシェーダーによって出力されるプリミティブの数は変化しますが、ジオメトリシェーダーが生成できる頂点の最大数は静的に宣言する必要があります。 ジオメトリシェーダーが出力するストリップの長さは任意です ( **cut**コマンドがあります)。
 
-ラスタライザーをメモリ内の頂点バッファー、ジオメトリ シェーダーの出力を送信できます。 個々 のポイントの行にメモリに送信される出力が展開され、三角形は、(同様に出力がラスタライザーに渡される方法) を一覧表示されます。
+ジオメトリシェーダーの出力は、ラスタライザーおよびメモリ内の頂点バッファーに送信できます。 メモリに送信される出力は、個々のポイント、線、および三角形のリストに展開されます (出力がラスタライザーに渡される方法と同様です)。
 
-ジオメトリ シェーダーのステージでは、次のアルゴリズムを実装できます。
+ジオメトリシェーダーステージは、次のアルゴリズムを実装できます。
 
--   ポイントのスプライト テセレーション:シェーダーは、1 つの頂点にし、任意のテクスチャ、normals、およびその他の属性を含んだ四角形の 4 つの角を表す 4 つの頂点 (2 つの出力の三角形) を生成します。
+-   ポイントスプライトテセレーション: シェーダーは、1つの頂点を受け取り、任意の texcoords、法線、およびその他の属性を持つ4つの頂点 (2 つの出力三角形) を生成します。
 
--   太線テセレーション:シェーダーは、2 つの行の頂点 (LV0 および LV1) を受信し、拡張の線を表す四角形の 4 つの頂点を生成します。 さらに、ジオメトリ シェーダーは、線の端点で mitering を実行するのに隣接する行の頂点 (AV0 および AV1) を使用できます。
+-   ワイドラインテセレーション: シェーダーは2つの直線頂点 (LV0 と LV1) を受け取り、拡大された直線を表す4つの頂点を4つ生成します。 さらに、ジオメトリシェーダーでは、隣接する行頂点 (AV0 および AV1) を使用して、mitering 上の行エンドポイントを実行できます。
 
--   ファー/Fin 生成。後ろの parallactic 効果をシミュレートするために異なるテクスチャ (押し出された面) で可能性のある複数のオフセットを表示します。 フィンは、角度の傾斜がない場合は多くの場合をフェードアウトするエッジが押し出されたです。 フィンは、斜体の角度に良く見えるオブジェクトの作成に使用されます。
+-   一番/Fin 生成: 異なるテクスチャ (押し出し faces) で複数のオフセットをレンダリングして、一番の parallactic 効果をシミュレートします。 フィンは、角度が斜投影されていない場合にフェードアウトすることが多い、押し出しのエッジです。 フィンは、オブジェクトが斜めに見えるようにするために使用されます。
 
--   ボリューム シャドウの生成:面を浮き出し表示するかどうかを判断するために使用する隣接情報です。
+-   シャドウボリュームの生成: 押し出しを行うかどうかを決定するために使用される隣接情報。
 
--   複数のテクスチャ キューブ面に単一パスの表示:プリミティブが射影され、ピクセル シェーダーの 6 回生成されます。 キューブの面を選択します。 レンダー ターゲット配列のインデックスでは、各プリミティブを伴います。
+-   複数のテクスチャキューブの面へのシングルパスレンダリング: プリミティブが射影され、ピクセルシェーダーに6回出力されます。 各プリミティブには、キューブ面を選択するレンダーターゲットの配列インデックスが付属しています。
 
--   ピクセル シェーダーは、カスタム属性の補間を実行できるようにプリミティブ データとして重心座標を設定します。
+-   ピクセルシェーダーがカスタム属性補間を実行できるように、重心座標をプリミティブデータとして設定します。
 
--   異常のケース:アプリケーションでは、そのジオメトリ、n 更新プログラムでは、いくつかのジオメトリを生成し、し、そのジオメトリからシャドウ ボリュームを押し出しします。 このような場合は、マルチパスは頂点とプリミティブ データをストリーム出力し、データをバックアップする機能をソリューションです。
+-   Pathological の場合: アプリケーションによっていくつかのジオメトリが生成され、その後、ジオメトリを持つ n パッチが生成され、そのジオメトリからシャドウボリュームが押し出しされます。 このような場合、マルチパスは、頂点とプリミティブデータをストリームに出力して、データを元に戻す機能を備えたソリューションです。
 
-**注**  ジオメトリ シェーダーの各呼び出しが、さまざまな数の出力を生成するためのハードウェアに並列呼び出しはより難しくなりますこの段階で (頂点またはピクセル シェーダーのステージ) などでとステージの他のパイプラインの実行よりも並列です。 ジオメトリ シェーダーが呼び出しをアプリケーションでは、ジオメトリ シェーダーに達成可能な並列処理のレベルは必要ありません並列ジオメトリ シェーダーの呼び出し方法を実現するために必要な複雑なバッファリング、並列ハードウェアの実装が動作しています。ステージをするその他のパイプラインのステージと同様です。 つまり、ジオメトリ シェーダー、ジオメトリ シェーダーのあるプログラム負荷に応じてパイプラインでボトルネックになる可能性があります。 ただし、目的は、ジオメトリ シェーダーの機能を使用するアルゴリズムが、アプリケーションがプログラムでジオメトリを生成できないハードウェアで動作をエミュレートするよりも効率的に実行がまだです。
+**注**   ジオメトリシェーダーへの呼び出しごとに異なる数の出力が生成される可能性があるため、この段階では、他のパイプラインステージ (頂点シェーダーまたはピクセルシェーダーステージなど) を並列で実行する場合よりも、ハードウェアへの並列呼び出しの方が困難です。 ハードウェアの実装では、ジオメトリシェーダー呼び出しを並列で実行しますが、並列ジオメトリシェーダー呼び出しを実行するために必要な複雑なバッファリングは、アプリケーションで、ジオメトリシェーダーで実現可能な並列処理のレベルを必要としないことを意味します。ステージは、他のパイプラインステージと同じくらいになります。 つまり、ジオメトリシェーダーに含まれるプログラムの負荷に応じて、パイプラインのボトルネックになることがあります。 ただし、目標は、ジオメトリシェーダーの機能を使用するアルゴリズムは、プログラムによって geometry を生成できないハードウェアの動作をエミュレートする必要があるアプリケーションよりも効率的に実行されることです。
 
  
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ジオメトリ シェーダーを破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、ジオメトリシェーダーを作成、設定、および破棄します。
 
-[**CalcPrivateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivategeometryshaderwithstreamoutput)
+[**CalcPrivateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivategeometryshaderwithstreamoutput)
 
-[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CreateGeometryShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshader)
+[**CreateGeometryShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshader)
 
-[**CreateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshaderwithstreamoutput)
+[**CreateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshaderwithstreamoutput)
 
-[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**GsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
+[**GsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**GsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
+[**GsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**GsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
+[**GsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**GsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
+[**GsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
  
 

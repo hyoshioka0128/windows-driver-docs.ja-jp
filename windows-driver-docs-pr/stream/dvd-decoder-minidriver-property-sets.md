@@ -4,12 +4,12 @@ description: DVD デコーダー ミニドライバーのプロパティ セッ�
 ms.assetid: c24685bd-ea20-4cc2-b419-feb1fa2ea03e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0296cc1724e547ef9039ae925860a7663ae159c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 882c4fd988344d669d82f3338a19f81c10a801a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358428"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843219"
 ---
 # <a name="dvd-decoder-minidriver-property-sets"></a>DVD デコーダー ミニドライバーのプロパティ セット
 
@@ -17,54 +17,54 @@ ms.locfileid: "67358428"
 ## <span id="ddk_dvd_decoder_minidriver_property_sets_ks"></span><span id="DDK_DVD_DECODER_MINIDRIVER_PROPERTY_SETS_KS"></span>
 
 
-このセクションには、Microsoft Windows 98 で WDM カーネル ストリーミング サービスを使用する DVD デコーダー ミニドライバーで利用可能な DVD デコーダーに固有のプロパティ セットがについて説明します/Me、Windows 2000 および Windows XP 以降。
+このセクションでは、Microsoft Windows 98/Me、Windows 2000、および Windows XP 以降で WDM カーネルストリーミングサービスを使用する DVD デコーダーミニドライバーで使用できる DVD デコーダー固有のプロパティセットについて説明します。
 
-各プロパティのリファレンス ページには、次のような列見出しのテーブルが含まれています。
+各プロパティの参照ページには、次に示す列見出しを持つテーブルが含まれています。
 
 
-| 取得 | 設定 | 対象 | プロパティ記述子の型 | プロパティ値の型 |
+| [購入] | 設定 | 対象 | プロパティ記述子の型 | プロパティ値の型 |
 |-----|-----|--------|--------------------------|---------------------|
 |     |     |        |                          |                     |
 
-これらの見出しには、次の意味があります。
+これらの見出しの意味は次のとおりです。
 
 -   **取得**
 
-    KS ターゲット オブジェクトのサポート、KSPROPERTY\_型\_プロパティの GET 要求ですか?
+    ターゲットの KS オブジェクトは、プロパティの取得\_\_型の KSK プロパティをサポートしていますか?
 
--   **設定**
+-   **一連**
 
-    KS ターゲット オブジェクトのサポート、KSPROPERTY\_型\_セット プロパティ要求でしょうか。
+    ターゲットの KS オブジェクトでは、プロパティ\_型\_SET プロパティがサポートされているかどうかを確認できます。
 
--   **移行先**
+-   **接続**
 
-    これは、どのプロパティに要求が送信された KS オブジェクトです。 DVD デコーダー プロパティの対象は、フィルターまたは pin のいずれかです。 (プロパティ要求を指定します、ターゲット オブジェクトがカーネル ハンドルによって。)
+    これは、プロパティ要求が送信される KS オブジェクトです。 DVD デコーダープロパティのターゲットは、フィルターまたは pin です。 (プロパティ要求では、カーネルハンドルによってターゲットオブジェクトが指定されます)。
 
 -   **プロパティ記述子の型**
 
-    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子は常に始まり、 [ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)構造体。
+    プロパティ記述子は、プロパティと、そのプロパティに対して実行する操作を指定します。 記述子は常に[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)構造で始まります。
 
 -   **プロパティ値の型**
 
-    プロパティの値を持つし、この値の型は、プロパティによって異なります。 たとえば、オンまたはオフ----だけ 2 つの状態のいずれかの可能性のあるプロパティには、ブール値を通常があります。 ULONG 値 0 の整数値を 0 xffffffff にことが前提としているプロパティがあります。 複雑なプロパティは、配列や構造体の値があります。
+    プロパティには値があり、この値の型はプロパティによって異なります。 たとえば、の2つの状態 (オンまたはオフ) のいずれかであるプロパティは、通常、ブール値を持ちます。 0から0xFFFFFFFF の整数値を想定できるプロパティは、ULONG 値を持つ場合があります。 より複雑なプロパティには、配列または構造体の値が含まれる場合があります。
 
-プロパティ記述子と上記のプロパティ値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)します。
+上記のプロパティ記述子とプロパティ値は、 [「KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)」で説明されている、インスタンス仕様および操作データバッファーのプロパティ固有バージョンです。
 
-プロパティ要求は、次のフラグのいずれかの関数を使用して、プロパティに対して実行される操作を指定します。
+プロパティ要求では、次のいずれかのフラグを使用して、プロパティに対して実行する操作を指定します。
 
--   KSPROPERTY\_型\_BASICSUPPORT
+-   KSPROPERTY\_TYPE\_BASICSUPPORT
 
--   KSPROPERTY\_型\_取得
+-   KSK プロパティ\_TYPE\_GET
 
--   KSPROPERTY\_型\_設定
+-   KSK プロパティ\_TYPE\_SET
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 DVD デコーダーのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
+すべてのフィルターオブジェクトとピンオブジェクトは、そのプロパティに対する基本サポート操作をサポートしています。 *Get*操作と*Set*操作をサポートするかどうかは、プロパティによって異なります。 Filter オブジェクトまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、設定操作のみを必要とする場合がありますが、get 操作は現在の設定の読み取りにも便利な場合があります。 DVD デコーダーのプロパティで get、set、および basic サポート操作を使用する方法の詳細については、「 [KS のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)」を参照してください。
 
-プロパティは、クエリまたはストリームの側面を変更します。 DVD デコーダーでは、いくつかのプロパティ セットが使用されます。 このトピックで説明したプロパティ セットにさらに設定 DVD 著作権保護プロパティをサポートしてすべての DVD デコーダーの入力ストリーム
+プロパティは、ストリームの側面を照会または変更します。 いくつかのプロパティセットが DVD デコーダーに使用されます。 すべての DVD デコーダー入力ストリームは、このトピックで説明するプロパティセットに加えて、DVD の著作権保護のプロパティセットをサポートします。
 
-すべてのプロパティの説明には、DVD デコーダー ミニドライバーが読み取りまたは書き込みのプロパティをサポートするために必要かどうかを示すテーブルが含まれています。 DVD デコーダー ミニドライバーは、状態を返す必要があります\_いない\_を取得または設定、ミニドライバーでサポートされていないプロパティに対する要求の応答ではサポートされています。
+すべてのプロパティの説明には、プロパティの読み取りまたは書き込みをサポートするために DVD デコーダーミニドライバーが必要かどうかを示す表が含まれています。 DVD デコーダーミニドライバーは、ミニドライバーでサポートされていないプロパティの取得または設定要求に対して\_サポートされていない状態\_返す必要があります。
 
-DVD デコーダー ミニドライバーは、次のプロパティのセットが定義されています。
+次のプロパティセットは、DVD デコーダーミニドライバーに対して定義されています。
 
 [KSPROPSETID\_AudioDecoderOut](kspropsetid-audiodecoderout.md)
 
@@ -74,7 +74,7 @@ DVD デコーダー ミニドライバーは、次のプロパティのセット
 
 [KSPROPSETID\_TSRateChange](kspropsetid-tsratechange.md)
 
-[KSPROPSETID\_VPConfig と KSPROPSETID\_VPVBIConfig](kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig.md)
+[KSPROPSETID\_VPConfig および KSPROPSETID\_VPVBIConfig](kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig.md)
 
 [KSPROPSETID\_Wave](kspropsetid-wave.md)
 

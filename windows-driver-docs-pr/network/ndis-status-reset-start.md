@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_RESET_START
-description: NDIS_STATUS_RESET_START 状態では、ミニポート アダプターがリセットされていることを示します。
+description: NDIS_STATUS_RESET_START の状態は、ミニポートアダプターがリセットされていることを示します。
 ms.assetid: 8758652b-137b-43e3-a896-8360f2b5051c
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_RESET_START ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_RESET_START ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: d258406610c2e42053e05099736a4661b73c6fa3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c0a22f0fec7b6921edbd79195d271d28b59baa9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843515"
 ---
-# <a name="ndisstatusresetstart"></a>NDIS\_状態\_リセット\_開始
+# <a name="ndis_status_reset_start"></a>NDIS\_状態\_リセット\_開始
 
 
-NDIS\_状態\_リセット\_開始状態では、ミニポート アダプターがリセットされていることを示します。
+NDIS\_STATUS\_RESET\_START status は、ミニポートアダプターがリセットされていることを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは呼び出さないでください、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数開始を通知し、リセット操作の開始時に、NDIS が上にあるドライバーを通知するために各リセット操作の完了と終了します。
+ミニポートドライバーは、リセット操作の開始時と終了時に NDIS からドライバーに通知されるため、各リセット操作の開始と終了を通知するために[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)関数を呼び出すことはできません。
 
-NDIS ミニポート ドライバーを呼び出すときに、ミニポート ドライバーがミニポート アダプターをリセット[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数。 NDIS 呼び出し、 [ *ProtocolStatusEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_status_ex)の各関数には、プロトコルと中間ドライバーがバインドされていると、 [ *FilterStatus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)の関数NDIS の状態の上にあるフィルター モジュールが、\_状態\_リセット\_を開始します。 NDIS ミニポート ドライバーには、リセットが完了すると、通知状態の上にあるドライバー [ **NDIS\_状態\_リセット\_エンド**](ndis-status-reset-end.md)します。
+ミニポートドライバーは、NDIS がミニポートドライバーの[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)関数を呼び出すと、ミニポートアダプターをリセットします。 NDIS は、バインドされている各プロトコルと中間ドライバーの[*Protocolstatusex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_status_ex)関数、およびその後のフィルターモジュールの[*filterstatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)関数を呼び出します。状態は NDIS\_STATUS\_リセット\_開始されます。 ミニポートドライバーによってリセットが完了すると、NDIS は、前のドライバーに対して、 [**ndis\_status の状態\_リセット\_終了**](ndis-status-reset-end.md)を通知します。
 
-プロトコル ドライバーが、NDIS を受信すると\_状態\_リセット\_は開始状態の表示。
+プロトコルドライバーが NDIS\_の状態を受信し\_開始状態の通知\_リセットした場合、次のことを行う必要があります。
 
--   まで送信可能な状態である、データを保持、 *ProtocolStatusEx*関数が受け取った、NDIS\_状態\_リセット\_終了ステータスを示す値。
+-   *Protocolstatusex*関数が NDIS\_status を受け取るまで、送信する準備ができているすべてのデータを保持し\_終了状態の通知\_リセットします。
 
--   などのリソースを返すへの呼び出しでのデータ バッファーを受信した点を除いては、基になるミニポート ドライバーが送信されるすべての NDIS 呼び出しをしないように、 [ **NdisReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreturnnetbufferlists)関数。
+-   基になるミニポートドライバーに送信される NDIS 呼び出しを行わないでください。ただし、 [**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)関数を使用して受信したデータバッファーなどのリソースを返す呼び出しは除きます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -42,11 +42,11 @@ NDIS ミニポート ドライバーを呼び出すときに、ミニポート �
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 および NDIS 5.1 のドライバーを Windows Vista でサポートされています。 Windows XP で 5.1 の NDIS ドライバーのサポートされています。</p></td>
+<td><p>Windows Vista では、NDIS 6.0 および NDIS 5.1 ドライバーでサポートされています。 Windows XP の NDIS 5.1 ドライバーでサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -54,17 +54,17 @@ NDIS ミニポート ドライバーを呼び出すときに、ミニポート �
 ## <a name="see-also"></a>関連項目
 
 
-[*FilterStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)
+[*FilterStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)
 
-[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)
+[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)
 
 [**NDIS\_状態\_リセット\_終了**](ndis-status-reset-end.md)
 
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
-[**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreturnnetbufferlists)
+[**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)
 
-[*ProtocolStatusEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_status_ex)
+[*ProtocolStatusEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_status_ex)
 
  
 

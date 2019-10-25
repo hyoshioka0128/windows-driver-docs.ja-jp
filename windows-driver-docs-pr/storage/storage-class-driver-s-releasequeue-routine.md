@@ -4,17 +4,17 @@ description: 記憶域クラス ドライバーの ReleaseQueue ルーチン
 ms.assetid: 4d0f74f2-6c98-4de1-bc28-dfff3c01e319
 keywords:
 - ReleaseQueue
-- キューの WDK ストレージ
-- キューの WDK 記憶域を固定します。
-- 固定されたキュー WDK ストレージ
+- WDK ストレージをキューに格納する
+- キューの固定 WDK ストレージ
+- 固定キューの WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc978b236bd1c3afc8ffb7fdc17540d7216d293
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78ecd9c93fef7e85afb649fa6f1c346e0ed4bd79
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845629"
 ---
 # <a name="storage-class-drivers-releasequeue-routine"></a>記憶域クラス ドライバーの ReleaseQueue ルーチン
 
@@ -22,25 +22,25 @@ ms.locfileid: "67368888"
 ## <span id="ddk_storage_class_drivers_releasequeue_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_RELEASEQUEUE_ROUTINE_KG"></span>
 
 
-ストレージ クラス ドライバー Or しない限り、 **SrbFlags** SRB の特定の要求に対して\_フラグ\_いいえ\_キュー\_凍結し、システム ポートのドライバーで、後に指定された論理ユニットのキューがフリーズします。次のいずれか:
+ストレージクラスドライバーが、指定された要求に対して SRB\_**フラグを使用**しない場合\_\_キュー\_フリーズしていない場合は、次のいずれかの後に、システムポートドライバーによって特定の論理ユニットのキューが凍結されます。:
 
--   論理ユニットは、要求を実行していたバスのリセットが発生しました。
+-   論理ユニットが要求を実行中にバスのリセットが発生しました。
 
--   論理ユニットに返される SCSISTAT\_確認\_条件または SCSISTAT\_コマンド\_で SRB のクラス ドライバーを見つけることができる終了**ScsiStatus**メンバー。
+-   論理ユニットは、SCSISTAT\_CHECK\_CONDITION または SCSISTAT\_コマンドを返しました\_終了しました。これは、クラスドライバーが SRB の**ScsiStatus**メンバーで見つけることができます。
 
 -   要求がタイムアウトしました。
 
--   SCSIMESS などのバス メッセージ コマンドによって要求が終了した\_を中止します。
+-   SCシム ESS\_ABORT などのバスメッセージコマンドによって、要求が終了されました。
 
-ポートのドライバーでは、SRB の要求を返すことによって、LU 固有のキューを凍結されていることを示します\_状態\_キュー\_固定されている、 **SrbStatus**メンバー。 クラス ドライバーからの新しい要求は、キューに挿入できますが、そのキューが固定されている限り、論理ユニットに autosense 要求のみが送信されます。
+ポートドライバーは、SRB\_STATUS\_QUEUE\_の要求を**Srbstatus**メンバーに保持して、LU 固有のキューが固定されていることを示します。 クラスドライバーからの新しい要求はキューに挿入できますが、キューが固定されている間は、自動検出要求だけが論理ユニットに送信されます。
 
-各記憶域クラス ドライバーを他のキューに入れられたジョブが実行される前に、エラーを分析する機会が与えられますこれらの条件下でキューを保持します。 たとえば、キューに置かれたジョブは、メディアが変更された場合にキャンセルする必要があります。 キューをフラッシュするドライバーが要求を送信できます、 **SrbFlags** SRB に\_フラグ\_バイパス\_FROZEN\_キュー。
+これらの条件下でキューを固定すると、各ストレージクラスドライバーは、他のキューに置かれたジョブが実行される前にエラーを分析する機会を与えます。 たとえば、メディアが変更された場合、キューに登録されたジョブをキャンセルする必要がある場合があります。 キューをフラッシュするには、ドライバーは、固定された\_キュー\_バイパス\_、SRB\_フラグと共に**Srbflags**を使用して要求を送信できます。
 
-A *ReleaseQueue*日常的な割り当てや IRP と、SRB リリースまたは保持されているキューをフラッシュのいずれかに設定します。 **関数**SRB に、SRB のメンバーを設定する必要があります\_関数\_リリース\_キューまたは SRB\_関数\_フラッシュ\_キュー両方を解放します。保持されているキューとキャンセル中のすべてのキューに要求ターゲット論理ユニットです。 ポートのドライバーをフラッシュ キュー内のすべての要求が完了すると、 **SrbStatus** SRB にメンバーが設定\_状態\_要求\_フラッシュされました。
+*Releasequeue*ルーチンは、凍結されたキューを解放またはフラッシュするために、IRP と SRB を割り当てて設定します。 SRB の**関数**メンバーを SRB\_関数\_RELEASE\_queue または SRB\_\_function に設定する必要があります。これにより、キューに固定されたキューが解放され、ターゲットに対する現在キューに置かれているすべての要求が取り消されます。論理ユニット。 ポートドライバーは、 **Srbstatus**メンバーが SRB に設定されている、フラッシュされたキュー内のすべての要求を完了\_状態\_要求\_フラッシュします。
 
-保持されているキューの解放に失敗により、デバイスは、アクセスできないため、ドライバーの*ReleaseQueue*がメモリ不足の状態であっても成功するルーチンを設計する必要があります。 A *ReleaseQueue*ルーチンを呼び出すことによって、SRB のメモリの割り当てに試みる必要がある最初[ **ExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)で、 **NonPagedPool**メモリを入力し、その割り当てに失敗した場合をドライバーの初期化中に事前に割り当てられますが、SRB を使用します。 場合は、ドライバーの割り当て」の説明に従って、デバイスの拡張機能の初期化時に予約で保持するために、SRB[デバイス拡張機能の設定を記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)その*ReleaseQueue*場合、その SRB を使用できます、同時リリースの複数の操作に必要な場合は、メモリ プールが低く、適切な同期メカニズムです。
+凍結されたキューを解放できないと、デバイスにアクセスできなくなります。そのため、ドライバーの*releasequeue*ルーチンは、メモリ不足の状態でも成功するように設計する必要があります。 *Releasequeue*ルーチンは、まず**NonPagedPool**メモリ型で[**exallocatepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)を呼び出して SRB にメモリを割り当てようとします。割り当てが失敗した場合は、ドライバーの初期化中に事前に割り当てられた SRB を使用します。 「[ストレージクラスドライバーのデバイス拡張機能の設定](setting-up-a-storage-class-driver-s-device-extension.md)」で説明されているように、ドライバーがデバイス拡張機能を初期化するときに予約に保持する SRB を割り当てる場合、その*releasequeue*は、メモリプールが少ない場合にその SRB を使用できます。複数の同時リリース操作が必要な場合の同期メカニズム。
 
-なおクラス ドライバーの*ReleaseQueue*ルーチンは、非同期的に呼び出されますから通常その*IoCompletion*ルーチン。 クラス ドライバーの*IoCompletion*ルーチンを呼び出すことはできません*ReleaseQueue*が固定されているキューをフラッシュします。 ただし、呼び出すことができます*ReleaseQueue*単に、固定されていないキュー、およびポートのドライバーをリリースするこのような要求は無視されます。
+クラスドライバーの*Releasequeue*ルーチンは、通常、 *iocompletion*ルーチンから非同期的に呼び出されることに注意してください。 クラスドライバーの*Iocompletion*ルーチンは、固定されていないキューをフラッシュするために*releasequeue*を呼び出すことはできません。 ただし、 *Releasequeue*を呼び出して、凍結されていないキューを解放することができ、ポートドライバーは単純にこのような要求を無視します。
 
  
 

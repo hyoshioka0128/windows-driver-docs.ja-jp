@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 202a3cf25f39e6a3cd15059f212c1e7e9d3c674d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f3389aab004b28e499febf2114ad65942ead5b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370543"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843427"
 ---
 # <a name="smart-card-design-guide"></a>スマート カード設計ガイド
 
 
-DDI スマート カードには、NFC コンタクトレス スマート カード上での低レベルのスマート カードの操作を実行するデバイス ドライバーの NFC 呼び出し元ができるようにします。 これは、カード到着/出発通知、スマート カード ATR、UID および履歴のバイトの情報などのメタデータを読み取るだけでなく Apdu を使用して特定の NFC カードに対する読み取り/書き込み操作の実行でリッスンしているが含まれます。 ISO14443 4 では非準拠のカード (ストレージ カードと呼ばれます) の Apdu のメモリ カードでサポートされる低レベルのプリミティブ コマンドへの変換は 4.3.7 セクションに記載されています。 Ioctl がスマート カード デバイスのドライバー インターフェイスを構成して、ファイルを使用して、それらのすべて\_ANY\_アクセスとメソッド\_バッファーに格納されました。 スマート カード DDI 以下は、スマート カード ドライバーを Windows で指定された Ioctl の最小サブセット\[1\]へのアクセスの NFC コンタクトレス スマート カードをサポートするためにします。
+スマートカード DDI を使用すると、NFC デバイスドライバーへの呼び出し元が、NFC contactless スマートカードで低レベルのスマートカード操作を実行できます。 これには、カードの到着/出発通知をリッスンしたり、ATR、UID、履歴バイト情報などのスマートカードのメタデータを読み取ったり、APDUs を使用して特定の NFC カードで読み取り/書き込み操作を実行したりすることが含まれます。 ISO14443 に準拠していないカード (ストレージカードとも呼ばれます) については、「4.3.7」セクションで、ストレージカードでサポートされる低レベルのプリミティブコマンドへの APDUs の変換について説明しています。 Ioctl はスマートカードデバイスドライバーインターフェイスを構成し、すべての\_アクセスとメソッド\_バッファリングされた\_ファイルを使用します。 次のスマートカード DDI は、Windows \[1\] によって指定されたスマートカードドライバーの Ioctl の最小サブセットであり、NFC contactless スマートカードへのアクセスをサポートしています。
 
 ``` syntax
 GUID_DEVINTERFACE_SMARTCARD_READER
@@ -30,27 +30,27 @@ GUID_DEVINTERFACE_SMARTCARD_READER
 ## <a name="unsupported-ioctls"></a>サポートされていない Ioctl
 
 
-ドライバーがサポートされていないエラー コードを返す可能性がありますようになっているコンタクトレス スマート カードの操作で適用できないために、NFC のスマート カードの操作を次の Ioctl はサポートされていません。
+次の Ioctl は、contactless スマートカード操作には適用されないため、NFC スマートカード操作ではサポートされません。そのため、ドライバーはサポートされていないエラーコードを返す可能性があります。
 
--   IOCTL\_スマート カード\_取り出し
--   IOCTL\_スマート カード\_取得\_最後\_エラー
--   IOCTL\_スマート カード\_飲み込む
+-   スマートカード\_の IOCTL\_取り出し
+-   \_最後の\_エラーを取得するための IOCTL\_スマートカード\_
+-   スマートカード\_の IOCTL\_飲み込む
 
-## <a name="smart-card-attributes"></a>スマート カードの属性
-Windows スマート カード DDI には、Get と Set の属性の IOCTL 要求が含まれています。 NFC コンタクトレス リーダーをサポートする最小要件を満たすためにのみサポートされています、GET_ATTRIBUTE リーダーと ICC の状態の最小セット。 詳細については、次を参照してください。[でサポートされるスマート カード属性](smart-card-attributes.md)します。
+## <a name="smart-card-attributes"></a>スマートカードの属性
+Windows スマートカード DDI には、Get 属性と Set 属性に対する IOCTL 要求が含まれています。 NFC contactless reader をサポートするための最小要件を満たすために、最小限のリーダーと ICC 状態の GET_ATTRIBUTE のみをサポートしています。 詳細については、「[サポートされているスマートカードの属性](smart-card-attributes.md)」を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [機能のフロー](functional-flow.md)
+-   [機能フロー](functional-flow.md)
 -   [シーケンスの例](example-sequence.md)
--   [ストレージ カードの要件](storage-card-requirements.md)
--   [スマート カードのサポートされている属性](smart-card-attributes.md)
+-   [メモリカードの要件](storage-card-requirements.md)
+-   [サポートされるスマートカードの属性](smart-card-attributes.md)
 -   [PC/SC インターフェイス](pc-sc-interface.md)
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[スマートカード DDI とコマンドリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
 

@@ -1,32 +1,32 @@
 ---
-title: ハードウェアの変換とライティング
-description: ハードウェアの変換とライティング
+title: ハードウェアの変革と照明
+description: ハードウェアの変革と照明
 ms.assetid: b45aa56e-2d8c-412a-b581-a1e2002d4fac
 keywords:
-- ハードウェア tansform および照明は、Direct3D WDK Windows 2000 の表示
-- WDK Direct3D テクスチャの変換
+- Direct3D WDK Windows 2000 display、hardware tansform、および照明
+- テクスチャ変換 WDK Direct3D
 - WDK Direct3D を変換します。
 - 照明 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9441150ffd74a8889dd9df5070dbd0f1a18df710
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f34351f12fc6e90c5fbbcc26b362777e5bacd118
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380230"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838899"
 ---
-# <a name="hardware-transform-and-lighting"></a>ハードウェアの変換とライティング
+# <a name="hardware-transform-and-lighting"></a>ハードウェアの変革と照明
 
 
 ## <span id="ddk_hardware_transform_and_lighting_gg"></span><span id="DDK_HARDWARE_TRANSFORM_AND_LIGHTING_GG"></span>
 
 
-変更せずに照明や変換など、geometry 操作のハードウェア アクセラレータが有効になって、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI 直接 X の最新のリリース。 API レベルでは、ハードウェアで頂点の操作をサポートするデバイスがからラスタライズのみを個別に列挙されます。
+照明や変換などのジオメトリ操作のハードウェアの高速化が有効になり、最新の Direct X リリースの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI に変更が加えられました。 API レベルでは、ハードウェアでの頂点操作をサポートするデバイスは、ラスタライズのみを行うデバイスとは別に列挙されます。
 
-既存の caps 構造体は、ハードウェア アクセラレータを使用した変換のデバイス上に存在する可能性のある機能を示すために拡張されています。 サポートされている光源の数を設定するなど、 **dwNumLights**のメンバー、 [ **D3DLIGHTINGCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dlightingcaps) と共に報告されます構造[ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)構造体。
+既存の caps 構造は、ハードウェアアクセラレーションデバイス上に存在する可能性がある機能を示すように拡張されています。 たとえば、サポートされている光源の数は、 [**D3DDEVICEDESC\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)構造で報告される[**D3DLIGHTINGCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dlightingcaps)構造体の**dwnumlights**メンバーで設定されます。
 
-その他のフラグは、次の表のとおりです。
+次の表に、その他のフラグを示します。
 
 <table>
 <colgroup>
@@ -35,47 +35,47 @@ ms.locfileid: "67380230"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
-<th align="left">説明</th>
+<th align="left">フラグ</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>D3DDEVCAPS_CANBLTSYSTONONLOCAL</p></td>
-<td align="left"><p>デバイスでテクスチャをサポートする非ローカルのビデオ メモリをシステム メモリから blt します。</p></td>
+<td align="left"><p>デバイスは、システムメモリから非ローカルビデオメモリへのテクスチャ blt をサポートしています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDEVCAPS_DRAWPRIMITIVES2EX</p></td>
-<td align="left"><p>ドライバーは、拡張をサポートすることによって 7.0 互換の DirectX が<em>D3dDrawPrimitives2</em>機能します。</p></td>
+<td align="left"><p>このドライバーは、拡張<em>D3dDrawPrimitives2</em>機能をサポートすることによって、DirectX 7.0 に準拠しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDEVCAPS_HWRASTERIZATION</p></td>
-<td align="left"><p>デバイスでは、ラスタライズのハードウェア アクセラレータがあります。</p></td>
+<td align="left"><p>デバイスは、ラスター化にハードウェアアクセラレータを使用します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDEVCAPS_HWTRANSFORMANDLIGHT</p></td>
-<td align="left"><p>デバイスがハードウェアでは、ハードウェア変換および照明は、両方をサポートできます。</p></td>
+<td align="left"><p>デバイスは、ハードウェアの変換と照明の両方をサポートできます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDEVCAPS_SEPARATETEXTUREMEMORIES</p></td>
-<td align="left"><p>デバイスが別のメモリ プールからテクスチャ リングします。</p></td>
+<td align="left"><p>デバイスは、個別のメモリプールからのテクスチャを行います。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DTRANSFORMCAPS_CLIP</p></td>
-<td align="left"><p>変換中には、ハードウェアがクリップことができます。</p></td>
+<td align="left"><p>変換中にハードウェアをクリップできます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-機能が設定されるため (光源がサポートされている数) などのハードウェアのジオメトリのアクセラレータが異なる場合があります、caps 構造体を示すジオメトリ操作のうち、どのサブセットこのデバイスを実行します。 0 は、光源、サポートされている、ハードウェアでは変換のみを示す数の有効な値です。
+ハードウェアジオメトリアクセラレータの機能セットは異なる場合があるため (サポートされている光源の数など)、キャップ構造体は、このデバイスが実行するジオメトリ操作のサブセットを示します。 ゼロはサポートされている光源の数の有効な値であり、ハードウェアが変換のみを行うことを示します。
 
-頂点の法線が含まれる頂点のみは正しく点灯しています。法線が含まれていない頂点、0 のドット積はすべての照明計算に使用します。
+頂点法線を含む頂点のみが適切に点灯します。法線を含まない頂点の場合は、すべての光源の計算に0のドット積が使用されます。
 
-すべてのキーの状態とデータ構造体ジオメトリのパイプラインのソフトウェアの実装で使用される DDI レベルでは利用できます。 のみ、いくつか表示カードは、ハードウェアの照明を実装して、変形とクリッピング ホスト プロセッサ上の操作を行います。
+ジオメトリパイプラインのソフトウェア実装で使用されるすべてのキー状態とデータ構造は、DDI レベルで利用可能になります。 一部のディスプレイカードでは、ハードウェアに光を実装するだけで、ホストプロセッサ上での変換とクリッピングが行われます。
 
-次に、型に変換および照明は、高速化するデバイスのみに関連する状態を表示します。
+次のレンダリング状態の種類は、変換と照明を高速化するデバイスにのみ適用されます。
 
 ```cpp
 D3DRENDERSTATE_AMBIENT

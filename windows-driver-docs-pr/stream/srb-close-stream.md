@@ -1,9 +1,9 @@
 ---
-title: SRB\_閉じる\_ストリーム
-description: SRB\_閉じる\_ストリーム
+title: SRB\_CLOSE\_ストリーム
+description: SRB\_CLOSE\_ストリーム
 ms.assetid: e118ddd7-fe0e-4834-9ae6-19eef0348b2c
 keywords:
-- SRB_CLOSE_STREAM ストリーミング メディア デバイス
+- SRB_CLOSE_STREAM ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,49 +12,49 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 993d6d26d733b49dc31e116d0653232b25d069fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 697cab677d0554c5730047e8b165f3d7cc904643
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358381"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843306"
 ---
-# <a name="srbclosestream"></a>SRB\_閉じる\_ストリーム
+# <a name="srb_close_stream"></a>SRB\_CLOSE\_ストリーム
 
 
 ## <span id="ddk_srb_close_stream_ks"></span><span id="DDK_SRB_CLOSE_STREAM_KS"></span>
 
 
-クラスのドライバーでは、ストリームを閉じるには、この要求を送信します。
+クラスドライバーは、この要求を送信してストリームを閉じます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-ミニドライバーは、SRB の状態として、次のいずれかを設定する必要があります。
+ミニドライバーは、SRB の状態として次のいずれかを設定する必要があります。
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>ステータス\_成功  
-コマンドが正常に完了を示します。
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状態\_成功  
+コマンドが正常に完了したことを示します。
 
-<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>ステータス\_いない\_実装されていません  
-関数が、ミニドライバーでサポートされていないことを示します。
+<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>状態\_\_実装されていません  
+関数がミニドライバーによってサポートされていないことを示します。
 
-<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>ステータス\_IO\_デバイス\_エラー  
+<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状態\_IO\_デバイス\_エラー  
 ハードウェア障害が発生したことを示します。
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**閉じるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)構造体への応答で、ミニドライバーを提供する、[ **SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。
+クラスドライバーは、 *pSrb*-&gt;**Streamobject**-&gt;streamobject を使用して、 *pSrb*-&gt;**streamobject** [ **\_オブジェクトバッファーに HW\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)を提供します。は、閉じられるストリームの番号に設定されます。 *PSrb*ポインターは、 [ **\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造体を指す HW\_ストリームを指します。 **Streamnumber**は、 [**SRB\_GET\_stream\_INFO**](srb-get-stream-info.md)要求に応答してミニドライバーが提供する、 [**HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)構造内のストリームのオフセットに対応します。
 
-ミニドライバーに状態が返されます場合、ミニドライバーは、正常にストリームを閉じ、\_成功します。 それ以外の場合、適切なエラー状態を返します。
+ミニドライバーがストリームを正常に閉じた場合、ミニドライバーは STATUS\_SUCCESS を返します。 それ以外の場合は、適切なエラー状態を返します。
 
-**ときに、SRB\_閉じる\_ストリーム コマンドが、ミニドライバーによって受信されると、応答のミニドライバー ルーチンにする必要があります。**
+**SRB\_CLOSE\_STREAM コマンドがミニドライバーによって受信されると、応答するミニドライバールーチンは次のようになります。**
 
-1.  ストリームを開いたときに、ミニドライバーによって割り当てられているリソースを解放します。
+1.  ストリームを開いたときにミニドライバーによって割り当てられたすべてのリソースを解放します。
 
-2.  ストリームのクロックを使用した場合、クロックの参照を停止します。
+2.  クロックがストリームに使用された場合は、クロックの参照を停止します。
 
-3.  停止する、ストリームの状態をリセットします。
+3.  ストリームの状態をリセットして停止します。
 
-関連付けられているユーザー モード アプリケーションがクラッシュした場合のストリーミング中にストリームを任意に閉じだったことに注意してください。 そのため、ストリームのすべての優れたリソースを解放、ストリームのすべての保留される Srb の完了、およびストリームを休止状態に戻す必要があります。
+ストリームは、関連付けられたユーザーモードアプリケーションがクラッシュした場合に、ストリーミング中に任意で閉じられる可能性があることに注意してください。 そのため、ストリームのすべての未処理リソースを解放し、ストリームの保留中のすべての SRBs を完了して、ストリームを休止状態に戻す必要があります。
 
  
 

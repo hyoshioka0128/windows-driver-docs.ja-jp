@@ -3,19 +3,19 @@ title: CPSUI 指定のウィンドウ コントロールをカスタマイズす
 description: CPSUI 指定のウィンドウ コントロールをカスタマイズする
 ms.assetid: b9ced902-6368-4b3b-a974-81e7d38c0ced
 keywords:
-- 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、ウィンドウ コントロール
-- ウィンドウ コントロールの印刷、CPSUI WDK
-- WDK プロパティ シートのページを印刷するウィンドウのコントロール
-- WDK CPSUI を制御するウィンドウ
-- カスタマイズ ウィンドウの CPSUI でサポートされているコントロール WDK を印刷します。
+- 共通プロパティシートのユーザーインターフェイス WDK 印刷、ウィンドウコントロール
+- CPSUI WDK 印刷、ウィンドウコントロール
+- プロパティシートページ WDK 印刷、ウィンドウコントロール
+- ウィンドウコントロールの WDK CPSUI
+- CPSUI でサポートされているウィンドウコントロールのカスタマイズの WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 564ddc41782ac66f34385ddc54e7efdae262852a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2bd0882cb9238b664f30cca1b457c6ac2d16e0b4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372390"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843377"
 ---
 # <a name="customizing-cpsui-supported-window-controls"></a>CPSUI 指定のウィンドウ コントロールをカスタマイズする
 
@@ -23,21 +23,21 @@ ms.locfileid: "67372390"
 
 
 
-使用する場合[CPSUI でサポートされているウィンドウ コントロール](cpsui-supported-window-controls.md)と共に[CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)、CPSUI できる方法でコントロールを説明するウィンドウ コントロールのリソースを提供します。連携すること。 そのため、リソース コントロールを提供する必要はありません。
+CPSUI でサポートさ[れているウィンドウコントロール](cpsui-supported-window-controls.md)を CPSUI が[提供するページとテンプレート](cpsui-supplied-pages-and-templates.md)と組み合わせて使用している場合、CPSUI には、コントロールをまとめて表示するための方法を説明するウィンドウコントロールリソースが用意されています。 そのため、コントロールにリソースを提供する必要はありません。
 
-その一方で、CPSUI が指定したページまたはテンプレートを使用しないプロパティ シート ページを作成する場合は、CPSUI でサポートされているウィンドウのコントロールを使用をカスタマイズする必要があります。 これを行うには、ウィンドウ コントロールのリソースを提供する必要があります、 [CPSUI オプションの種類](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)します。 使用してこれらのリソースの識別子を指定する必要があります、 **BegCtrlID**の各オプションのメンバー [ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体。
+一方、CPSUI が提供するページやテンプレートを使用しないプロパティシートページを作成する場合は、使用する CPSUI でサポートされているウィンドウコントロールをカスタマイズする必要があります。 これを行うには、 [CPSUI オプションの種類](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)のウィンドウコントロールリソースを用意する必要があります。 各オプションの[**Opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)構造体の**begctrlid**メンバーを使用して、これらのリソースの識別子を指定する必要があります。
 
-ウィンドウの CPSUI でサポートされているコントロールをカスタマイズする場合は、エントリの場合、CPSUI はオプションが表示されませんを注意してください、OPTIF\_で非表示にするフラグを設定、 [ **OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体。 CPSUI では、非表示のオプションが通常占有する領域を埋める、残りのコントロールを移動します。 そのため、同時に表示されているいくつかのオプションを含むページを作成する場合、次の規則は obeyed する必要があります。
+CPSUI でサポートされているウィンドウコントロールをカスタマイズしている場合は、OPTIF\_[**Optif**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)構造体で設定されているフラグが非表示になっている場合、CPSUI にはオプションが表示されないことに注意してください。 CPSUI は、残りのコントロールを、hidden オプションによって通常使用される領域を埋めるように移動します。 このため、複数の同時に表示されるオプションを含むページを作成する場合は、次のルールを cache-control する必要があります。
 
--   各オプションは、プロパティ シートのページの全体の水平方向の領域を占有する必要があります。
+-   各オプションは、プロパティシートページの水平方向の領域全体を占めている必要があります。
 
--   オプションのダイアログ ボックスでは、他のオーバーレイする必要がありますいないします。
+-   オプションダイアログは、互いにオーバーレイしてはなりません。
 
--   オプションは、左から右に配置するラジオ ボタンで表される、ボタンとアイコンを x 軸にアラインする必要があります。 場合は、ボタンは、上から下に配置は、ボタンとアイコンは、y 軸の配置する必要があります。
+-   左から右に配置されているラジオボタンによって表されるオプションについては、ボタンとアイコンが x 軸に配置されている必要があります。 ボタンが上から下に配置されている場合は、ボタンとアイコンが y 軸に配置されます。
 
--   グループ ボックスが属する必要がありますをいくつかの項目が 1 つのグループ ボックスを共有する場合、最初に[ **OPTITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)、グループ ボックスの最上位の項目であります。 グループ ボックスは、関連付けられているすべての項目を格納するのに十分な大きさである必要があります。
+-   複数の項目が1つのグループボックスを共有している場合、グループボックスは、グループボックス内の最上位の項目である最初の[**Optitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)に属している必要があります。 グループボックスは、関連付けられているすべての項目を格納するのに十分な大きさである必要があります。
 
-また、オプション ボタンとアイコンは、上から下へとこれらのコントロールの一部が非表示に配置されているが場合、CPSUI は y 方向の結果として得られる空白をしないに削除するは注意してください。
+また、オプションボタンとアイコンが上下に並べて表示されていて、これらのコントロールの一部が非表示になっている場合、CPSUI では、y 方向に結果の空白が削除されないことに注意してください。
 
  
 

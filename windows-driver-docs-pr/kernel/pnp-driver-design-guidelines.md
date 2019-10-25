@@ -3,16 +3,16 @@ title: PnP ドライバーの設計ガイドライン
 description: PnP ドライバーの設計ガイドライン
 ms.assetid: 4e4a6a8e-3c7f-4561-bbe1-a8c06fe22d0a
 keywords:
-- PnP WDK カーネルでは、デザインのガイドライン
-- プラグ アンド プレイ WDK カーネルでは、デザインのガイドライン
+- PnP WDK カーネル、設計ガイドライン
+- WDK カーネルのプラグアンドプレイ設計ガイドライン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd66ec8c5055c10df64245ef73315e0d7deb7ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29ab13bb1d2e1802fcaab057b8c20f04c6f3b200
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838507"
 ---
 # <a name="pnp-driver-design-guidelines"></a>PnP ドライバーの設計ガイドライン
 
@@ -20,33 +20,33 @@ ms.locfileid: "67383279"
 
 
 
-プラグ アンド プレイを提供します。
+プラグアンドプレイは次のとおりです。
 
--   インストールされているハードウェアの動的自動検出
+-   インストールされているハードウェアの自動および動的な認識
 
--   ハードウェア リソースの割り当て (および再割り当て)
+-   ハードウェアリソースの割り当て (および再割り当て)
 
 -   適切なドライバーの読み込み
 
--   ドライバー、PnP システムと対話するためのインターフェイス
+-   PnP システムと対話するドライバーのインターフェイス
 
--   ドライバーとアプリケーションについては、ハードウェア環境での変更のためのメカニズム
+-   ハードウェア環境の変更について学習するためのドライバーとアプリケーションのメカニズム
 
 PnP をサポートするには、ドライバーは次のガイドラインに従う必要があります。
 
--   含める必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)ルーチン。
+-   [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)ルーチンが含まれている必要があります。
 
-    このディスパッチ ルーチンを処理する必要があります[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)要求と関連付けられているマイナー機能コード。 詳細については、次を参照してください。 [DispatchPnP ルーチン](dispatchpnp-routines.md)します。
+    このディスパッチルーチンでは、 [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)要求と関連するマイナー関数コードを処理する必要があります。 詳細については、「 [DispatchPnP ルーチン](dispatchpnp-routines.md)」を参照してください。
 
--   ハードウェアは、検索する必要があります。
+-   ハードウェアを検索することはできません。
 
-    PnP マネージャーが、ハードウェア デバイスの存在を判断します。 呼び出すことによって、ドライバーに通知 PnP マネージャーでは、デバイスを検出すると、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 システムを起動すると、またはいつでも、ユーザーは、デバイスを追加するか、実行中のシステムから削除しますと、ハードウェアを検出できます。
+    PnP マネージャーは、ハードウェアデバイスの有無を判断する役割を担います。 PnP マネージャーは、デバイスを検出すると、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンを呼び出してドライバーに通知します。 システムが起動したとき、またはユーザーが実行中のシステムからデバイスを追加または削除したときに、ハードウェアを検出できます。
 
--   ハードウェア リソースいない割り当てる必要があります。
+-   ハードウェアリソースを割り当てることはできません。
 
-    PnP ドライバーでは、デバイスで使用する可能性のあるリソースの一覧で、PnP マネージャーを提供する必要があります。 PnP マネージャーは、デバイスごとにリソースを割り当てると、各デバイスの割り当てのドライバーへの通知を送信するとき、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 ドライバーは、したがってハードウェア リソースのさまざまな構成の操作の対応である必要があります。
+    PnP ドライバーは、デバイスが使用する可能性のあるリソースのリストを PnP マネージャーに提供する必要があります。 PnP マネージャーは、各デバイスにリソースを割り当て、 [ **\_デバイス要求の開始\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)が送信されたときに、各デバイスの割り当てをドライバーに通知します。 そのため、ドライバーは、ハードウェアリソースのさまざまな構成を使用できる必要があります。
 
-一部のドライバーは、PnP の詳細とシステム提供ポートまたはクラス ドライバーによる電源管理から分離します。 たとえば、SCSI ポート ドライバー影響を受けないように SCSI ミニポート ドライバー、PnP システム、電源の詳細の多くのので SCSI ミニポート ドライバーは電源と PnP Irp を直接処理する必要はありません。 このようなドライバー、PnP 必要なサポートの詳細については、ドライバー固有のドキュメントを参照してください。
+一部のドライバーは、システムによって提供されるポートまたはクラスドライバーによって、PnP および電源管理の詳細から分離されています。 たとえば、scsi ポートドライバーは SCSI ミニポートドライバーを電源および PnP システムの多くの詳細から分離するので、SCSI ミニポートドライバーは、電源と PnP の Irp を直接処理する必要がありません。 このようなドライバーについては、ドライバー固有のドキュメントを参照して、必要な PnP サポートの詳細を確認してください。
 
  
 

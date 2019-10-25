@@ -1,33 +1,33 @@
 ---
-title: AVStream コーデックのストリームの終了処理
-description: AVStream コーデックのストリームの終了処理
+title: AVStream コーデックでのストリームの終わりの処理
+description: AVStream コーデックでのストリームの終わりの処理
 ms.assetid: ee57137b-999a-449f-9f9d-50bc19e07ba8
 keywords:
-- WDK AVStream のストリームの末尾の処理
-- WDK AVStream のストリームの末尾
-- ハードウェアのコーデック サポート WDK AVStream、ストリームの末尾
-- AVStream ハードウェア コーデックは、WDK、ストリームの末尾の処理をサポートします。
+- ストリームの最後の WDK AVStream の処理
+- ストリームの終わり WDK AVStream
+- ハードウェアコーデックサポート WDK AVStream、ストリームの終了
+- AVStream ハードウェアコーデックサポート WDK、ストリームの終端の処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f071e544d1e623798d63402a4e6395b0b048e7bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c98259e9d7399fe611cca46ffb59bfc800bb814
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384037"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838087"
 ---
-# <a name="handling-end-of-stream-in-avstream-codecs"></a>AVStream コーデックのストリームの終了処理
+# <a name="handling-end-of-stream-in-avstream-codecs"></a>AVStream コーデックでのストリームの終わりの処理
 
 
-KSSTREAM HW MFT は、ストリーム (EOS) フラグのセットの末尾を使用するサンプルを受信すると、設定\_ヘッダー\_OPTIONSF\_で ENDOFSTREAM、 **OptionsFlag**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)サンプルに対応する構造体。
+HW MFT が、ストリームの終わり (EOS) フラグが設定されたサンプルを受け取ると、そのサンプルに対応する[**Ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)構造の**optionsflag**メンバーで、ksstream\_header\_オプション sf\_endofstream に設定されます.
 
-ミニドライバーを受信した後、 [ **KSSTREAM\_ポインター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer) 、KSSTREAM で\_ヘッダー\_OPTIONSF\_に設定されるENDOFSTREAMフラグ**StreamHeader.OptionsFlag**、ミニドライバー KSSTREAM に設定されるまでは、入力ピンは、新しい入力ストリーム ポインターを受け取りません\_ヘッダー\_OPTIONSF\_出力ストリームに ENDOFSTREAM。ポインター。
+ミニドライバーは、KSK ストリームを使用して[**ksk\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksstream_pointer)を受信した後、\_ヘッダー\_optionsf\_endofstream フラグを**streamheader. フラグ**で設定した後、入力ピンは新しい入力ストリームポインターを受信しなくなります。ミニドライバーは、出力ストリームポインターに対して KSK ストリーム\_ヘッダー\_オプション SF\_ENDOFSTREAM を設定します。
 
-ミニドライバー KSSTREAM を設定する前に\_ヘッダー\_OPTIONSF\_現在使用できる入力で実現可能な数の出力のフレームが生成する出力ストリーム ポインターを ENDOFSTREAM、します。
+ミニドライバーが KSK ストリーム\_ヘッダー\_\_オプションを設定する前に、出力ストリームポインターで ENDOFSTREAM を指定すると、現在使用可能な入力値でできるだけ多くの出力フレームが生成されます。
 
-ミニドライバーは、これらのストリーム ポインターに関連付けられているデータだけでなく、以前に処理されたストリーム ポインターに関連する情報をキャッシュいずれかのチェック ボックスをオフにし、必要があります。 ミニドライバーは KSSTREAM を設定する必要があります\_ヘッダー\_OPTIONSF\_出力ピン ENDOFSTREAM します。
+ミニドライバーは、これらのストリームポインターに関連付けられているデータに加えて、以前に処理されたストリームポインターに関連するキャッシュされた情報をクリアする必要があります。 次に、ミニドライバーは、出力ピンに KSK ストリーム\_ヘッダー\_オプション SF\_ENDOFSTREAM を設定する必要があります。
 
-ミニドライバーは、新しいストリームの一部として、その後に到着した新しい入力ストリーム ポインターを扱う必要があります。 メディア ストリームを連続していない結果として、EOS が発生したかどうかは例外です。 大文字と小文字の場合は、新しく到着するストリーム ポインターが、KSSTREAM\_ヘッダー\_OPTIONSF\_DATADISCONTINUITY または KSSTREAM\_ヘッダー\_OPTIONSF\_TIMEDISCONTINUITY、またはKSSTREAM で設定されているフラグの両方、\_ヘッダー **。OptionsFlags**します。 これらのフラグを設定のいずれかを含むストリーム ポインターは、入力ピンに到着、ミニドライバーは、対応する出力ピンのストリーム ポインターを同じフラグを設定する必要があります。
+ミニドライバーは、後で新しいストリームの一部として到着する新しい入力ストリームポインターを処理する必要があります。 例外は、メディアストリームの不連続性の結果として EOS が発生した場合です。 この場合、新しく到着したストリームポインターには、KSK ストリーム\_ヘッダー\_オプション SF\_DATADISCONTINUITY または KSSTREAM\_ヘッダー\_オプション SF\_TIMEDISCONTINUITY 性、またはその両方が KSK ストリームに設定されています\_項目.**オプションフラグ**。 これらのフラグが設定されているストリームポインターが入力ピンに到達した場合、ミニドライバーは、対応する出力ピンのストリームポインターに同じフラグを設定する必要があります。
 
  
 

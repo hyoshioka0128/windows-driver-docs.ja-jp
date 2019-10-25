@@ -3,16 +3,16 @@ title: ユーザー操作の要求
 description: ユーザー操作の要求
 ms.assetid: 888faeb0-1984-4b0f-b955-2772a6bd86f7
 keywords:
-- ユーザーの介入 WDK ネイティブ 802.11 IHV 拡張 DLL
-- 要求元ユーザーの介入 WDK ネイティブ 802.11 IHV 拡張 DLL
+- ユーザー操作 WDK ネイティブ 802.11 IHV 拡張 DLL
+- ユーザーとの対話を要求する WDK ネイティブ 802.11 IHV 拡張 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c3682854fed19e5cbf3ff3e1e37930acf2c5a9d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 44727dd666614d411c3274b8effa3eee127bf2ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842035"
 ---
 # <a name="requesting-user-interaction"></a>ユーザー操作の要求
 
@@ -21,35 +21,35 @@ ms.locfileid: "67373243"
 
  
 
-呼び出した後、いつでも[ *Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)、IHV 拡張機能の DLL は呼び出すことによって、ユーザーとの対話を要求することができます、 [ **Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)関数。 オペレーティング システムでは、IHV UI 拡張 DLL は、要求を処理し、ユーザーに適切なユーザー インターフェイス (UI) のページを表示するにすべてのユーザーの操作要求を転送します。
+[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)を呼び出すと、いつでも、IHV 拡張 DLL は、 [**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)関数を呼び出すことによってユーザーとの対話を要求できます。 オペレーティングシステムは、すべてのユーザー操作要求を IHV UI 拡張 DLL に転送します。これにより、要求が処理され、ユーザーに適切なユーザーインターフェイス (UI) ページが表示されます。
 
-要求が完了したとき、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)ユーザーとの対話の IHV UI 拡張機能の DLL からの結果を転送する関数。 IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
+要求が完了すると、オペレーティングシステムは[*Dot11ExtIhvProcessUIResponse*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)関数を呼び出して、ユーザーの操作のために IHV UI 拡張 DLL から結果を転送します。 IHV UI 拡張 DLL の詳細については、「[ネイティブ 802.11 IHV Ui EXTENSIONS dll](native-802-11-ihv-ui-extensions-dll2.md)」を参照してください。
 
-たとえば、IHV 拡張機能の DLL は、次のいずれかのユーザーの操作を要求できます。
+たとえば、IHV 拡張 DLL は、次のいずれかの操作をユーザーに要求できます。
 
--   前または後のアソシエーションの操作の段階についてユーザーに通知します。
+-   前または後の関連付け操作の段階についてユーザーに通知します。
 
--   認証後の関連付け操作中に自分の資格情報の入力を求めます。
+-   関連付け後の操作中に認証用の資格情報を入力するようにユーザーに要求します。
 
-呼び出し時に、 [ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)関数へのポインターを渡します IHV 拡張機能の DLL を[ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造体を*pIhvUIRequest*パラメーター。 DOT11EXT\_IHV\_UI\_構造など、グローバルに一意な ID (GUID)、COM と同様に、UI 要求を識別する要求を指定する要求クラスのこの要求を処理する対象の UI ページの ID (CLSID)。
+[**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)関数を呼び出すと、IHV 拡張 DLL は[**DOT11EXT\_ihv\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造へのポインターを*pihvuirequest*パラメーターに渡します。 DOT11EXT\_IHV\_UI\_要求構造では、グローバル一意識別子 (GUID) などの要求を指定します。これにより、UI 要求と、この要求を処理するターゲット UI ページの COM クラス ID (CLSID) が識別されます。
 
-IHV UI 拡張機能の DLL には、ユーザー通知が完了したら、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)関数。 オペレーティング システムには、データを格納するバッファーへのポインターを渡します通知を通じて任意のデータを入力した場合、 *pvResponseBuffer*パラメーター。
+IHV UI 拡張 DLL がユーザー通知を完了すると、オペレーティングシステムは[*Dot11ExtIhvProcessUIResponse*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)関数を呼び出します。 ユーザーが通知を使用してデータを入力した場合、オペレーティングシステムは、データを含むバッファーへのポインターを*Pvresponsebuffer*パラメーターに渡します。
 
-オペレーティング システムでは、保留中の通知要求の状態を定期的にクエリがあります。 このような状況でオペレーティング システムの呼び出し、 [ *Dot11ExtIhvIsUIRequestPending* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending) UI 要求の GUID を渡すと、 *guidUIRequest*パラメーター。
+オペレーティングシステムは、保留中の通知要求の状態を定期的に照会する場合があります。 この場合、オペレーティングシステムは[*Dot11ExtIhvIsUIRequestPending*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending)を呼び出し、UI 要求の GUID を*guidUIRequest*パラメーターに渡します。
 
-呼び出すときに[ **Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)、IHV 拡張機能の DLL が次のガイドラインに従う必要があります。
+[**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)を呼び出す場合、IHV 拡張 DLL は次のガイドラインに従う必要があります。
 
--   IHV 拡張機能の DLL がへの呼び出しをシリアル化する必要はありません[ **Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)します。 DLL は、いつでも 1 つ以上の保留中の UI の要求でことができます。
+-   IHV 拡張 DLL では、 [**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)への呼び出しをシリアル化する必要はありません。 DLL には、一度に複数の保留中の UI 要求を含めることができます。
 
--   特定の GUID の UI の要求が完了した場合にのみ[ *Dot11ExtIhvProcessUIResponse* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) GUID が呼び出されます。 このような状況で IHV 拡張機能の DLL を解放しないようにまで UI 要求に割り当てられたリソース*Dot11ExtIhvProcessUIResponse*が呼び出されます。
+-   特定の GUID の UI 要求は、その GUID に対して[*Dot11ExtIhvProcessUIResponse*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)が呼び出された場合にのみ完了します。 この場合、 *Dot11ExtIhvProcessUIResponse*が呼び出されるまで、IHV 拡張 DLL は、UI 要求に割り当てられたリソースを解放することはできません。
 
--   UI 保留中のすべての要求が取り消されたときに[ *Dot11ExtIhvAdapterReset* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)または[ *Dot11ExtIhvDeinitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)が呼び出されます。 要求は取り消されますも保留中のすべての UI たびに[ *Dot11ExtIhvProcessSessionChange* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_session_change)を呼び出すと、 *uEventType*パラメーター WTS に設定\_セッション\_ログオフします。
+-   保留中のすべての UI 要求は、 [*Dot11ExtIhvAdapterReset*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)または[*Dot11ExtIhvDeinitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)が呼び出されるたびに取り消されます。 *Ueventtype*パラメーターを WTS\_SESSION\_LOGOFF に設定して[*Dot11ExtIhvProcessSessionChange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_session_change)を呼び出すと、保留中のすべての UI 要求も取り消されます。
 
-    このような場合は、IHV 拡張機能の DLL は、保留中の UI 要求ごとに割り当てられているすべてのリソースを解放する必要があります。
+    このような状況では、IHV 拡張 DLL は、保留中の UI 要求ごとに割り当てられたすべてのリソースを解放する必要があります。
 
-オペレーティング システムは、基本的なサービスに接続状態の変更が (BSS) ネットワークを設定するたびに、ユーザーの相互作用自体を開始できます。 このような状況でオペレーティング システムの呼び出し、 [ *Dot11ExtIhvQueryUIRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)関数。 IHV 拡張機能の DLL を選択し、バッファーを割り当てますとして書式設定、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造体。 DLL、DOT11EXT のメンバーを設定する\_IHV\_UI\_ページの UI を参照する構造体の要求が接続状態の変更に適してします。 オペレーティング システムは、UI のページを表示します。
+基本サービスセット (BSS) ネットワークの接続状態が変化するたびに、オペレーティングシステムはユーザーとの対話を開始できます。 この場合、オペレーティングシステムは[*Dot11ExtIhvQueryUIRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)関数を呼び出します。 IHV Extensions DLL は、バッファーを割り当て、 [**DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造体としてフォーマットします。 DLL は、接続状態の変更に適した UI ページを参照するように、DOT11EXT\_IHV\_UI\_要求構造体のメンバーを設定します。 オペレーティングシステムは、UI ページを表示する役割を担います。
 
-**注**  IHV 拡張機能を含むバッファーを割り当てる必要があります、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造体を通じて[ **Dot11ExtAllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_allocate_buffer)します。 DLL から返された後、バッファーを解放する必要がありますいない[ *Dot11ExtIhvQueryUIRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)します。
+IHV 拡張  は、 [**Dot11ExtAllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_allocate_buffer)を介して、 [**DOT11EXT\_ihv\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造を含むバッファーを割り当てる必要がある**ことに注意**してください。 DLL は、 [*Dot11ExtIhvQueryUIRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)から復帰した後にバッファーを解放しないようにする必要があります。
 
  
 

@@ -1,10 +1,10 @@
 ---
-title: NdisOidDoubleRequest ルール (ndis)
-description: この NdisOidDoubleRequest ルールでは、ミニポート ドライバーが、NDIS を完了する必要がありますを検証\_OID\_は現在保留中要求。
+title: NdisOidDoubleRequest rule (ndis)
+description: この NdisOidDoubleRequest ルールは、現在保留中の要求\_、Minport driver が NDIS\_OID を完了する必要があることを確認します。
 ms.assetid: 67B179ED-EEAF-4717-B714-9601BE806269
 ms.date: 05/21/2018
 keywords:
-- NdisOidDoubleRequest ルール (ndis)
+- NdisOidDoubleRequest rule (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4902adfdda68837d071fd5d2a4cfdee210cdd7
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 67aff8c898d1401565e9b5c7dbf31ef6d8ba6b35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392218"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840085"
 ---
-# <a name="ndisoiddoublerequest-rule-ndis"></a>NdisOidDoubleRequest ルール (ndis)
+# <a name="ndisoiddoublerequest-rule-ndis"></a>NdisOidDoubleRequest rule (ndis)
 
 
-これは、 **NdisOidDoubleRequest**ルールことを確認します。
+この**NdisOidDoubleRequest**ルールでは、次のことを確認します。
 
--   ミニポート ドライバーが完了する必要があります、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)現在保留中です。
+-   Minport ドライバーは、現在保留中の[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)を完了する必要があります。
 
 |              |      |
 |--------------|------|
-| ドライバー モデル | NDIS |
+| ドライバーモデル | NDIS |
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x0009100E) |
+| このルールでバグチェックが見つかりました | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0009100e) |
 
-<a name="how-to-test"></a>テスト方法
+<a name="how-to-test"></a>テストする方法
 -----------
 
 <table>
@@ -43,23 +43,23 @@ ms.locfileid: "67392218"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>を選択し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification" data-raw-source="[NDIS/WIFI verification](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification)">NDIS/WIFI 検証</a>オプション。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>を実行し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification" data-raw-source="[NDIS/WIFI verification](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification)">NDIS/WIFI 検証</a>オプションを選択します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="applies-to"></a>対象
+<a name="applies-to"></a>適用対象
 ----------
 
-[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
-[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)
+[**Miniportoidrequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
+[ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
  
 
  

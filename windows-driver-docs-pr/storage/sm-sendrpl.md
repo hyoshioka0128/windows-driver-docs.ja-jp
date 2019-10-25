@@ -1,9 +1,9 @@
 ---
 title: SM\_SendRPL 関数
-description: SM\_SendRPL WMI メソッドは、指定された宛先ポートに指定されたポートを通じて読み取りポート一覧 (RPL) コマンドを送信します。
+description: SM\_SendRPL WMI メソッドは、指定されたポートを介して、指定された宛先ポートに読み取りポートリスト (RPL) コマンドを送信します。
 ms.assetid: 9297d5eb-f8c4-48f3-8536-a94c66917e66
 keywords:
-- 記憶装置の SM_SendRPL 関数
+- SM_SendRPL function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1404c97b77ca73edfef9e9303c646ad7eae8bfd1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7d6e399de3f03604080108621875c00a73ad541
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384281"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845455"
 ---
-# <a name="smsendrpl-function"></a>SM\_SendRPL 関数
+# <a name="sm_sendrpl-function"></a>SM\_SendRPL 関数
 
 
-SM\_SendRPL WMI メソッドは、指定された宛先ポートに指定されたポートを通じて読み取りポート一覧 (RPL) コマンドを送信します。
+SM\_SendRPL WMI メソッドは、指定されたポートを介して、指定された宛先ポートに読み取りポートリスト (RPL) コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -47,31 +47,31 @@ void SM_SendRPL(
 ----------
 
 *PortWWN*   
-読み取りのポートを使用するには、(RPL) コマンドを一覧表示するローカル ポートのワールドワイド名 (WWN) が送信されます。 この情報は、SM の PortWWN メンバーのミニポート ドライバーに配信\_SendRPL\_構造体。
+読み取りポート一覧 (RPL) コマンドの送信に使用されるローカルポートのワールド名 (WWN)。 この情報は、構造内の SM\_SendRPL\_の PortWWN メンバーのミニポートドライバーに配信されます。
 
-*AgentWWN*   
-ポート種類 FC のポートの一覧を照会するのには、世界中の名 (WWN)\_ポート。 FC の定義については\_ポートを参照してください、T11 委員会の*ファイバー チャネル HBA API*仕様。 この情報は、SM の AgentWWN メンバーのミニポート ドライバーに配信\_SendRPL\_構造体。
+*Agentwwn*   
+FC\_ポートの種類のポートの一覧を照会するポートのワールドワイド名 (WWN)。 FC\_ポートの定義については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、構造内の SM\_SendRPL\_の AgentWWN メンバーのミニポートドライバーに配信されます。
 
-*AgentDomain*   
-FC の種類のポートの一覧を照会するのには、ドメイン コント ローラーのドメイン数\_ポート。 FC の定義については\_ポートを参照してください、T11 委員会の*ファイバー チャネル HBA API*仕様。 この情報は、エージェントで、ミニポート ドライバーに配信\_SM のドメイン メンバー\_SendRPL\_構造体。
+*Agentdomain*   
+FC\_ポートの種類のポートの一覧を照会するドメインコントローラーのドメイン番号。 FC\_ポートの定義については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、\_構造内の SM\_SendRPL のエージェント\_ドメインメンバーのミニポートドライバーに配信されます。
 
-*PortIndex*   
-FC の種類のポートの一覧で最初のポートのポート インデックス\_返されるポート。 この情報は、SM の portIndex メンバーのミニポート ドライバーに配信\_SendRPL\_構造体。
+*Portindex*   
+返される FC\_ポートの種類のポートの一覧にある、最初のポートのポートインデックス。 この情報は、構造内の SM\_SendRPL\_の portIndex メンバーのミニポートドライバーに配信されます。
 
-*InRespBufferMaxSize*   
+*In火炎 Buffermaxsize*   
 応答バッファーの最大サイズ。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SendRPL の HBAStatus メンバー\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SendRPL\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
-*TotalRespBufferSize*   
-読み取りのポートの一覧 (RPL) コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalRespBufferSize メンバー\_SendRPL\_構造体。
+*Total火炎 buffersize*   
+読み取りポート一覧 (RPL) コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendRPL\_OUT 構造体の Total火炎 Buffersize メンバーにこの情報を返します。
 
-*OutRespBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の OutRespBufferSize メンバー\_SendRPL\_構造体。
+* *  
+実際に取得されたデータのサイズ (バイト単位)。 この情報は、ミニポートドライバーによって、SM\_SendRPL\_OUT 構造の外部のメンバーに返されます。
 
-*RespBuffer*   
-読み取りの結果は、list (RPL) コマンドを移植します。 ミニポート ドライバーでは、この情報を返します、SendRPL の RespBuffer メンバー\_構造体。
+* *  
+読み取りポートリスト (RPL) コマンドの結果。 ミニポートドライバーは、SendRPL\_OUT 構造体の値を取得します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -81,7 +81,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -98,19 +98,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SendRPL\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_in)
+[**SM\_SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_in)
 
-[**SM\_SendRPL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_out)
+[**SM\_SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_out)
 
  
 

@@ -1,79 +1,79 @@
 ---
-title: 着信呼び出しの受け入れ
-description: 着信呼び出しの受け入れ
+title: 受信呼び出しの受け入れ
+description: 受信呼び出しの受け入れ
 ms.assetid: bca837dc-b3de-4aca-9fc2-aed2faab1377
 keywords:
-- いる CoNDIS WAN ドライバー WDK、ネットワークの着信呼び出し
-- WDK WAN、着信電話サービス
-- いる CoNDIS TAPI WDK、ネットワークの着信呼び出し
-- NDPROXY WDK、ネットワークの着信呼び出し
-- 着信呼び出しの WDK いる CoNDIS WAN
-- WDK いる CoNDIS WAN の呼び出し
+- CoNDIS WAN ドライバー WDK ネットワーク、着信呼び出し
+- 電話 services WDK WAN、着信呼び出し
+- CoNDIS TAPI WDK ネットワーク、着信呼び出し
+- NDPROXY WDK ネットワーク、着信呼び出し
+- 着信呼び出しの WDK CoNDIS WAN
+- WDK を呼び出す WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a90c92c71a2b362cec0f11be80b0c46889c4dbb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d8b041ce1495648f6a2512acc9c456c2e9759e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378698"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838255"
 ---
-# <a name="accepting-incoming-calls"></a>着信呼び出しの受け入れ
+# <a name="accepting-incoming-calls"></a>受信呼び出しの受け入れ
 
 
 
 
 
-アプリケーションでは、着信呼び出しを使用できますが、前にまずが必要開く行です。 TAPI を呼び出すアプリケーションの結果として、行が開かれる**lineOpen**関数。 この TAPI 関数呼び出しには、着信呼び出しを受信するための準備をするために TAPI NDIS 構造体のパラメーターをカプセル化する基になるドライバーが原因です。 いる CoNDIS WAN ミニポート ドライバーが着信呼び出しを受信した後、ミニポート ドライバーは NDPROXY ドライバーを使用した仮想接続 (VC) をまず作成し、着信通話の NDPROXY に通知します。 NDPROXY は、TAPI 経由でアプリケーションをさらに通知します。 次の一覧は、接続、および作成に、着信呼び出しを設定する方法について説明します。
+アプリケーションは、受信呼び出しを受け入れる前に、最初に行を開いておく必要があります。 アプリケーションが TAPI **Lineopen**関数を呼び出した結果として、行が開かれます。 この TAPI 関数呼び出しにより、基になるドライバーは、受信呼び出しの受信を準備するために、NDIS 構造体に TAPI パラメーターをカプセル化します。 CoNDIS WAN ミニポートドライバーが着信呼び出しを受信した後、ミニポートドライバーは、まず NDPROXY ドライバーを使用して仮想接続 (VC) を作成し、次に着信呼び出しの NDPROXY に通知する必要があります。 NDPROXY は、TAPI によってアプリケーションに通知します。 次の一覧は、着信呼び出しの設定、接続、および作成方法を示しています。
 
--   NDPROXY で着信接続の TAPI パラメーターを指定する、 [ **CO\_AF\_TAPI\_SAP** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545376(v=vs.85))構造体。 NDPROXY、TAPI で渡された次の情報でこの構造体のメンバーを格納する**lineOpen**関数。
-    -   開く行識別子、 **ulLineID**メンバー
-    -   着信接続のアドレス、 **ulAddressID**メンバー
-    -   着信接続の情報ストリームのメディア モード、 **ulMediaModes**メンバー
--   NDPROXY オーバーレイ CO\_AF\_TAPI\_上の SAP 構造、 **Sap**のメンバー、 [ **CO\_SAP** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))構造体設定と、 **SapLength** CO のメンバー\_CO のサイズに SAP\_AF\_TAPI\_SAP します。 NDPROXY を設定する必要がありますも、 **SapType** CO のメンバー\_AF に SAP\_TAPI\_SAP\_型。
+-   NDPROXY は、受信接続の TAPI パラメーターを[**CO\_AF\_tapi\_SAP**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545376(v=vs.85))構造体で指定します。 NDPROXY は、この構造体のメンバーに、TAPI **Lineopen**関数で渡された次の情報を入力します。
+    -   **UlLineID**メンバー内のオープンライン識別子
+    -   **Uladdressid**メンバー内の受信接続のアドレス
+    -   **UlMediaModes**メンバー内の受信接続の情報ストリームのメディアモード
+-   NDPROXY は co\_AF\_TAPI\_SAP 構造体を[**co\_sap**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))構造の**sap メンバーに**オーバーレイし、Co\_sap の**SAPLENGTH**メンバーを co\_AF\_TAPI のサイズに設定し\_SAP。 NDPROXY では、CO\_SAP の sap**型**メンバーを AF\_TAPI\_SAP\_型に設定する必要もあります。
 
--   NDPROXY を呼び出す NDPROXY は、TAPI パラメーターをカプセル化すると、 [ **NdisClRegisterSap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)自体を着信呼び出しを受信できる状態にします。 この関数の呼び出しで NDPROXY は塗りつぶされた CO にポインターを渡します\_NDPROXY が着信呼び出しを受信できるサービス アクセス ポイント (SAP) を指定する SAP 構造体。 NDIS 転送 CO\_SAP 構造体を*ProtocolCmRegisterSap*いる CoNDIS WAN ミニポート コール マネージャー (MCM) ドライバーの機能です。 *ProtocolCmRegisterSap* NDPROXY のネットワーク上の SAP の登録に、必要に応じてネットワーク デバイスの制御やその他のメディア固有エージェントと通信します。 ミニポート ドライバーが登録されると、SAP、その SAP に送信、受信呼び出しプランを受け入れることができます。
+-   NDPROXY が TAPI パラメーターをカプセル化すると、NDPROXY は[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)関数を呼び出して、受信呼び出しを受信できるようにします。 この関数呼び出しでは、ndproxy は、NDPROXY が着信呼び出しを受信できるサービスアクセスポイント (SAP) を指定する、入力された CO\_SAP 構造体へのポインターを渡します。 NDIS は、CO\_SAP 構造体を CoNDIS WAN ミニポート呼び出しマネージャー (MCM) ドライバーの*Protocolcmregistersap*関数に転送します。 *Protocolcmregistersap*は、必要に応じてネットワークコントロールデバイスやその他のメディア固有のエージェントと通信し、ndproxy のネットワーク上に SAP を登録します。 ミニポートドライバーによって SAP が登録されると、その SAP に送られる着信呼び出しプランを受け入れることができます。
 
--   ネットワークからの着信通話をするシグナリング メッセージによっている CoNDIS WAN ミニポート ドライバーで発生します。 シグナリング メッセージから、ミニポート ドライバーは、着信呼び出しが対応する SAP を含む、呼び出しの呼び出しのパラメーターを抽出します。
+-   ネットワークからのメッセージをシグナリングすることで、着信呼び出しに対して CoNDIS WAN ミニポートドライバーが通知されます。 これらのシグナルメッセージから、コールミニドライバーは、呼び出しの呼び出しパラメーターを抽出します。これには、着信呼び出しの宛先となる SAP も含まれます。
 
--   ミニポート ドライバーを呼び出す NDPROXY に着信呼び出しを示す、前に、 [ **NdisMCmCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmcreatevc) NDPROXY と VC の作成を開始する関数。 NDPROXY では、割り当て、VC に必要なリソースを初期化しますと VC を識別するハンドルを格納します。
+-   NDPROXY への着信呼び出しを示す前に、ミニポートドライバーは[**NdisMCmCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc)関数を呼び出して、ndproxy を使用した VC の作成を開始します。 NDPROXY は、VC に必要なリソースを割り当てて初期化し、そのハンドルを VC に格納します。
 
--   いる CoNDIS WAN ミニポート ドライバーでの着信呼び出しの TAPI パラメーターの設定、 [ **CO\_AF\_TAPI\_受信\_呼び出す\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545372(v=vs.85))構造体。 ミニポート ドライバーでは、シグナリング メッセージから抽出した次の情報でこの構造体のメンバーを塗りつぶします。
-    -   行の識別子、 **ulLineID**メンバー
-    -   着信呼び出しのアドレス、 **ulAddressID**メンバー
-    -   CO\_TAPI\_フラグ\_受信\_でビットを呼び出す、 **ulFlags**メンバー。 その他のすべてのビット**ulFlags**は予約されており、0 に設定する必要があります。
-    -   構造体 LINECALLPARAMS、 **LineCallInfo**メンバー。 LINECALLPARAMS のメンバーでは、着信呼び出しの TAPI 呼び出しのパラメーターを指定します。
--   ミニポート ドライバー オーバーレイ CO\_AF\_TAPI\_受信\_呼び出す\_パラメーターを**パラメーター**のメンバー、 [ **CO\_特定\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))構造と設定、**長さ**CO のメンバー\_特定\_CO のサイズ パラメーター\_AF\_TAPI\_受信\_呼び出す\_パラメーター。
+-   CoNDIS WAN ミニポートドライバーは、入力された通話の TAPI パラメーターを、 [**CO\_AF\_tapi\_着信\_\_parameters**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545372(v=vs.85))構造体に設定します。 ミニポートドライバーは、この構造体のメンバーに、シグナリングメッセージから抽出された次の情報を入力します。
+    -   **UlLineID**メンバーの行識別子
+    -   **Uladdressid**メンバー内の着信呼び出しのアドレス
+    -   CO\_TAPI\_フラグ\_、 **Ulflags**メンバーの着信\_呼び出しビットです。 **Ulflags**のその他すべてのビットは予約されており、0に設定する必要があります。
+    -   **LineCallInfo**メンバーの LINECALLPARAMS 構造体。 LINECALLPARAMS のメンバーは、着信呼び出しの TAPI 呼び出しパラメーターを指定します。
+-   ミニポートドライバーは、co\_AF\_TAPI\_着信\_、 [**co\_特定の\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))構造の**パラメーター**メンバーに\_パラメーターを呼び出して、の**長さ**のメンバーを設定します。特定の\_パラメーターを co\_AF\_TAPI のサイズに\_し、\_パラメーターを呼び出します。\_\_
 
--   ミニポート ドライバーの設定、CO\_特定\_パラメーター構造体を**MediaSpecific**のメンバー、 [ **CO\_メディア\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))構造体。
+-   ミニポートドライバーは、co\_固有の\_パラメーター構造を[**co\_MEDIA\_PARAMETERS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))構造体の**MediaSpecific**メンバーに設定します。
 
--   ミニポート ドライバーの CO にポインターを設定\_メディア\_パラメーター構造体を**MediaParameters**のメンバー、 [ **CO\_呼び出す\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体。
+-   ミニポートドライバーは、CO\_MEDIA\_PARAMETERS 構造体へのポインターを、 [**co\_呼び出し\_parameters**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体の**MediaParameters**メンバーに設定します。
 
--   ミニポート ドライバーを設定する必要がありますも、 **CallMgrParameters** CO のメンバー\_呼び出す\_帯域幅などのパケットを転送するサービス (QoS) の品質を指定するパラメーターの構造体。 これを設定する**CallMgrParameters**メンバー、ミニポート ドライバーがのメンバー、 [ **CO\_呼び出す\_MANAGER\_パラメーター** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))構造体し、この構造体を指す**CallMgrParameters**します。 たとえば、送信し、(VC の 1 秒あたりのバイト単位) の速度が表示される、ミニポート ドライバー設定する必要があります、**数字再生 PeakBandwidth**のメンバー、**送信**と**受信**CO のメンバー\_呼び出す\_MANAGER\_パラメーター。 **送信**と**受信**メンバーは FLOWSPEC 構造体。 FLOWSPEC 構造の詳細については、Microsoft Windows SDK を参照してください。
+-   また、ミニポートドライバーは、CO\_CALL\_PARAMETERS 構造体の**CallMgrParameters**メンバーを設定して、帯域幅などのパケット転送のサービス品質 (QoS) を指定する必要があります。 この**CallMgrParameters**メンバーを設定するために、ミニポートドライバーは、 [**CO\_呼び出し\_MANAGER\_PARAMETERS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))構造体のメンバーを読み込み、この構造体を**CallMgrParameters**に指定します。 たとえば、VC の1秒あたりの送信速度と受信速度を示すために、ミニポートドライバーは、CO\_CALL\_MANAGER の**送信**メンバーと**受信**メンバーの**peakbandwidth 幅**メンバーを設定する必要があり\_パラメータ. **送信**メンバーと**受信**メンバーは FLOWSPEC 構造体です。 FLOWSPEC 構造体の詳細については、Microsoft Windows SDK を参照してください。
 
--   TAPI パラメーターと塗りつぶし後、ミニポート ドライバーをカプセル化、 **CallMgrParameters** CO のメンバー\_呼び出し\_マネージャー\_呼び出し、パラメーター、 [ **NdisMCmDispatchIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall) NDPROXY への着信通話を示す関数。 この呼び出しで、ミニポート ドライバーは、次に渡します。
-    -   着信呼び出しが対応する SAP を識別するハンドル
-    -   着信通話の VC を識別するハンドル
-    -   塗りつぶされた CO へのポインター\_呼び出す\_パラメーター構造体
--   NDPROXY 返します NDIS\_状態\_NDPROXY を完了できるように、ミニポート ドライバーを PENDING **NdisMCmDispatchIncomingCall**非同期的にします。
+-   ミニポートドライバーによって TAPI パラメーターがカプセル化され、 **CallMgrParameters**メンバーが CO\_呼び出し\_MANAGER\_パラメーターに入力された後、 [**NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)関数を呼び出して、への着信呼び出しを示します。NDPROXY。 この呼び出しでは、ミニポートドライバーは次のものを渡します。
+    -   着信呼び出しの宛先となる SAP を識別するハンドル
+    -   着信呼び出しの VC を識別するハンドル
+    -   入力された CO\_呼び出し\_PARAMETERS 構造体へのポインター
+-   NDPROXY は、NDIS\_STATUS\_をミニポートドライバーに返します。これにより、NDPROXY は**NdisMCmDispatchIncomingCall**を非同期に完了できます。
 
--   アプリケーションの着信呼び出しの回答、TAPI の後、 **lineAnswer**関数、NDPROXY 呼び出し、 [ **NdisClIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclincomingcallcomplete)関数。 NDIS ミニポート ドライバーに呼び出されます*ProtocolCmIncomingCallComplete*関数。 NDPROXY、NDIS を返す場合\_状態\_成功コード、呼び出しパラメーターへの同意を示します。 設定して関数のパラメーターに変更を要求できる NDPROXY 検出と呼び出しのパラメーターが許容できない、**フラグ**CO でメンバー\_呼び出す\_パラメーター構造体の呼び出しを\_パラメーター\_CHANGED と変更後の呼び出しのパラメーターを指定しています。 ミニポート ドライバーに送信する必要があります NDPROXY が着信呼び出しを受け入れる場合の呼び出しが受け入れられたことを呼び出し元のエンティティに示すためにメッセージを通知します。 ミニポート ドライバーに送信する必要がありますそれ以外の場合、呼び出しが拒否されたことを示すメッセージを通知します。 場合 NDPROXY は、関数のパラメーター、シグナリング メッセージ呼び出しのパラメーターの変更を要求するミニポート ドライバーの送信に変更を要求しています。
+-   TAPI アプリケーションが**Lineanswer**関数を使用して着信呼び出しに応答すると、Ndproxy は[**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)関数を呼び出します。 さらに、NDIS はミニポートドライバーの*Protocolcmincomingcallcomplete*関数を呼び出します。 NDPROXY が NDIS\_STATUS\_SUCCESS コードを返す場合は、呼び出しパラメーターの受け入れを示します。 NDPROXY が呼び出しパラメーターを受け入れないことを検出した場合、呼び出しパラメーターの変更を要求できます。そのためには、CO\_呼び出し\_PARAMETERS 構造体に**Flags**メンバーを設定して、変更された\_パラメーターを呼び出し、変更した\_パラメーターを指定して変更します。パラメーターを呼び出します。 NDPROXY が着信呼び出しを受け入れる場合、ミニポートドライバーは、呼び出しが受け入れられたことを呼び出し元のエンティティに示すために、シグナリングメッセージを送信する必要があります。 それ以外の場合、ミニポートドライバーは、呼び出しが拒否されたことを示すシグナルメッセージを送信する必要があります。 NDPROXY が呼び出しパラメーターの変更を要求している場合、ミニポートドライバーは、シグナルメッセージを送信して、呼び出しパラメーターの変更を要求します。
 
--   ミニポート ドライバーに VC ミニポート ドライバーが NDPROXY を作成しても呼び出す必要がありますがアクティブ化、 [ **NdisMCmActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)ミニポート ドライバーが転送する準備が整っている NDPROXY に通知する関数VC 上のパケットです。
+-   ミニポートドライバーは、NDPROXY で作成されたミニポートドライバーで VC をアクティブにします。また、 [**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)関数を呼び出して、ミニポートドライバーが vc でパケットを転送する準備ができていることを ndproxy に通知する必要もあります。
 
--   ミニポート ドライバーが呼び出す NDPROXY 呼び出しを拒否する場合、 [ **NdisMCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeactivatevc) VC ミニポート ドライバーが着信呼び出し用に作成を非アクティブ化する関数。 ミニポート ドライバーが呼び出す、VC が非アクティブ化した後、 [ **NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc) VC を削除する関数。
+-   NDPROXY が呼び出しを拒否した場合、ミニポートドライバーは[**NdisMCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeactivatevc)関数を呼び出して、ミニポートドライバーが受信呼び出し用に作成した VC を非アクティブにします。 VC が非アクティブになると、ミニポートドライバーは[**NdisMCmDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc)関数を呼び出して vc を削除します。
 
--   NDPROXY が着信通話を承諾したかどうかと、エンド ツー エンド接続が正常に確立されたかどうか、によって、ミニポート ドライバーを呼び出すか[ **NdisMCmDispatchCallConnected** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchcallconnected)または[ **NdisMCmDispatchIncomingCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingclosecall)関数。 注リモートの呼び出し元のエンティティは、呼び出しダウンされ、これから送信することシグナル通知は、エンド ツー エンド接続を正常に確立していないことを示すメッセージです。 **NdisMCmDispatchCallConnected** NDPROXY VC ミニポート ドライバーが作成され、着信通話のアクティブ化のデータ転送を開始できることを通知します。 **NdisMCmDispatchIncomingCloseCall** NDPROXY 着信通話を壊さずに通知します。
+-   NDPROXY が着信呼び出しを受け入れたかどうか、およびエンドツーエンド接続が正常に確立されたかどうかに応じて、ミニポートドライバーは[**NdisMCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchcallconnected)関数または[**NdisMCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingclosecall)関数のいずれかを呼び出します. リモート呼び出しエンティティが呼び出しを t とすると、エンドツーエンドの接続が正常に確立されなかったことを示すシグナリングメッセージが送信されることに注意してください。 **NdisMCmDispatchCallConnected**は、ミニポートドライバーが受信呼び出し用に作成およびアクティブ化した VC でデータ転送を開始できることを ndproxy に通知します。 **NdisMCmDispatchIncomingCloseCall**は、入力された呼び出しを破棄するように ndproxy に通知します。
 
--   呼び出す NDPROXY が着信呼び出しを破棄する指示を受けた場合、 [ **NdisClCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)も送信も VC 上のデータを受信することを試みることが確認する関数。 NDIS ミニポート ドライバーに呼び出されます*ProtocolCmCloseCall*関数。 ミニポート ドライバーを呼び出して、 **NdisMCmDeactivateVc** VC を非アクティブ化する関数。 ミニポート ドライバーが呼び出す、VC が非アクティブ化した後、 **NdisMCmDeleteVc** VC を削除する関数。
+-   NDPROXY が着信呼び出しを破棄するように指定されている場合は、 [**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)関数を呼び出して、VC でのデータの受信を試行しないことを確認します。 さらに、NDIS はミニポートドライバーの*ProtocolCmCloseCall*関数を呼び出します。 次に、ミニポートドライバーは、 **NdisMCmDeactivateVc**関数を呼び出して VC を非アクティブ化します。 VC が非アクティブになると、ミニポートドライバーは**NdisMCmDeleteVc**関数を呼び出して vc を削除します。
 
--   TAPI を呼び出して、TAPI アプリケーションは、着信の呼び出しを受け付けるし、NDPROXY をアプリケーションに通知の呼び出しが接続されていること、 **lineGetID** NDPROXY 適切ないる CoNDIS クライアントに通知する関数。 この**lineGetID**呼び出し、TAPI アプリケーションにはこれをアプリケーションにハンドルが必要です。 特定の TAPI デバイス クラスの文字列が指定されています。 NDPROXY では、この文字列を使用して、特定の TAPI デバイス クラスに対する SAP に登録されている CoNDIS クライアントを見つけます。 いる CoNDIS クライアントが NDISWAN の場合は、文字列は、NDIS です。 かどうか、NDPROXY を見つけて、TAPI アプリケーション NDPROXY 呼び出しで渡される文字列に一致する文字列での SAP **NdisMCmCreateVc**着信通話の通知、送出できる NDISWAN と接続エンドポイントを設定します。 NDIS 呼び出します NDISWAN の*ProtocolCoCreateVc*関数し、VC を表すハンドルを渡します。
+-   TAPI アプリケーションが着信呼び出しを受け入れ、NDPROXY が呼び出しが接続されていることをアプリケーションに通知した後、アプリケーションは TAPI **lineGetID**関数を呼び出して、ndproxy に対して適切な condis 検索するように通知します。 この**lineGetID**の呼び出しでは、tapi アプリケーションは、アプリケーションがハンドルを必要とする特定の tapi デバイスクラスに文字列を提供します。 NDPROXY は、この文字列を使用して、以前に特定の TAPI デバイスクラスに対して SAP を登録した CoNDIS クライアントを検索します。 CoNDIS クライアントが指定されている場合、文字列は NDIS です。 NDPROXY が、TAPI アプリケーションによって渡された文字列と一致する文字列を含む SAP を検索する場合、NDPROXY は**NdisMCmCreateVc**を呼び出して、着信呼び出しの通知をディスパッチできる NDISWAN を持つ接続エンドポイントを設定します。 さらに、NDIS は NDISWAN の*ProtocolCoCreateVc*関数を呼び出し、VC を表すハンドルを渡します。
 
--   呼び出す NDPROXY が NDISWAN と接続エンドポイントを設定した後、 [ **NdisCmDispatchIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall) NDISWAN に着信通話を通知する関数。 この呼び出しで NDPROXY 渡しますカプセル化された CO\_AF\_TAPI\_受信\_呼び出す\_着信呼び出しのパラメーターを含むパラメーター構造体。 NDIS 呼び出します NDISWAN の*ProtocolClIncomingCall*関数を NDISWAN を受け入れるか、要求された接続を拒否します。
+-   NDPROXY は、NDISWAN を使用して接続エンドポイントを設定した後、 [**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)関数を呼び出して、着信呼び出しについて NDISWAN に通知します。 この呼び出しでは、NDPROXY は、カプセル化された CO\_AF\_TAPI\_着信\_、着信呼び出しパラメーターを含む\_PARAMETERS 構造体を渡します。 さらに、NDIS は NDISWAN の*ProtocolClIncomingCall*関数を呼び出します。この関数では、要求された接続を受け入れるか拒否します。
 
--   接続を許可するかどうかを決定した後と、場合によって、呼び出しのパラメーターを変更した後に、NDISWAN の呼び出し、 **NdisClIncomingCallComplete**関数。 NDIS ミニポート ドライバーに呼び出されます*ProtocolCmIncomingCallComplete*関数。 NDISWAN が着信通話を承諾したかどうかや、ミニポート ドライバーを受け入れるか NDISWAN の呼び出しのパラメーターに変更の提案を拒否するかどうか、によって、ミニポート ドライバーを呼び出すか**NdisCmDispatchCallConnected**または**NdisCmDispatchIncomingCloseCall**関数。 **NdisCmDispatchCallConnected** NDISWAN vc ミニポート ドライバーが着信呼び出し用に作成、データ転送が開始できることを通知します。 **NdisCmDispatchIncomingCloseCall** NDISWAN と NDPROXY 着信通話を壊さずに通知します。
+-   接続を受け入れるかどうかを決定し、場合によっては呼び出しパラメーターを変更した後に、NDISWAN は**NdisClIncomingCallComplete**関数を呼び出します。 さらに、NDIS はミニポートドライバーの*Protocolcmincomingcallcomplete*関数を呼び出します。 NDISWAN が着信呼び出しを受け入れたかどうか、およびミニポートドライバーが呼び出しパラメーターに対する NDISWAN の提案された変更を受け入れるか拒否するかによって、ミニポートドライバーは**NdisCmDispatchCallConnected**または**を呼び出します。NdisCmDispatchIncomingCloseCall**関数。 **NdisCmDispatchCallConnected**は、ミニポートドライバーが受信呼び出し用に作成した VC でデータ転送を開始できることを NDISWAN に通知します。 **NdisCmDispatchIncomingCloseCall**は、着信呼び出しを破棄するように NDISWAN と ndproxy に通知します。
 
--   着信通話を承諾した後 NDISWAN、NDPROXY を呼び出す、 [ **NdisCoGetTapiCallId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscogettapicallid) VC の NDISWAN のコンテキストを識別する文字列を取得する関数。 NDPROXY は、TAPI アプリケーションにこの文字列を渡します。 TAPI アプリケーションでは、この VC コンテキストの文字列を使用して、呼び出しを完了する**lineGetID**します。
+-   NDISWAN が着信呼び出しを受け入れると、NDPROXY は[**NdisCoGetTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid)関数を呼び出して、VC の NDISWAN のコンテキストを識別する文字列を取得します。 NDPROXY は、この文字列を TAPI アプリケーションに渡します。 TAPI アプリケーションは、この VC コンテキスト文字列を使用して**lineGetID**の呼び出しを完了します。
 
  
 

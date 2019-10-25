@@ -1,43 +1,43 @@
 ---
 title: WDI_TLV_ROAMING_NEEDED_PARAMETERS
-description: WDI_TLV_ROAMING_NEEDED_PARAMETERS では、ローミングのトリガーの理由を含む TLV です。 これは、NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED ペイロードで使用されます。
+description: WDI_TLV_ROAMING_NEEDED_PARAMETERS は、ローミングトリガーの理由を含む TLV です。 これは、NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED ペイロードで使用されます。
 ms.assetid: 152F923C-ECAE-4D50-A7B4-4B2309D5A3B5
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_ROAMING_NEEDED_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_ROAMING_NEEDED_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9a7d94d8a37fc0d208c104400e197fd2b7300a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a982c9b75a30ca8dfd5da73845f90f506ebc480
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376983"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842271"
 ---
-# <a name="wditlvroamingneededparameters"></a>WDI\_TLV\_ローミング\_必要\_パラメーター
+# <a name="wdi_tlv_roaming_needed_parameters"></a>WDI\_TLV\_ローミング\_必要な\_パラメーター
 
 
-WDI\_TLV\_ローミング\_必要\_パラメーターは、ローミングのトリガーの理由を含む TLV します。 使用されます、 [NDIS\_状態\_WDI\_INDICATION\_ローミング\_必要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)ペイロード。
+WDI\_TLV\_ローミング\_必要\_パラメーターは、ローミングトリガーの理由を含む TLV です。 これは、 [NDIS\_STATUS\_WDI\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)によって使用され、ローミング\_必要なペイロードが\_示されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
 
 0x55
 
-## <a name="length"></a>長さ
+## <a name="length"></a>Length
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                | 説明                                                                                                                                      |
+| 種類                                                | 説明                                                                                                                                      |
 |-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_ASSOC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) | ローミングのトリガーの理由を指定します。 ときに、 [OID\_WDI\_タスク\_ローミング](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-roam)がトリガーされると、この理由はそれに転送されます。 |
+| [**WDI\_ASSOC\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status) | ローミングトリガーの理由を指定します。 [OID\_WDI\_タスク\_ローミング](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-roam)がトリガーされると、この理由が転送されます。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -47,16 +47,16 @@ WDI\_TLV\_ローミング\_必要\_パラメーターは、ローミングのト
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>サポートされている最小のクライアント</p></td>
+<td><p>サポートされている最低限のクライアント</p></td>
 <td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
-<td><p>サポートされている最小のサーバー</p></td>
+<td><p>サポートされている最小サーバー</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td><p>ヘッダー</p></td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

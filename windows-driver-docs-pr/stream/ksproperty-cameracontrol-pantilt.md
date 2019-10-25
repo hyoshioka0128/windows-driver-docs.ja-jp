@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_PANTILT
-description: KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパンして、傾きの設定。
+title: KSK プロパティ\_CAMERACONTROL\_PANTILT
+description: KSK プロパティ\_CAMERACONTROL\_PANTILT プロパティは、絶対パンと傾きの設定を指定します。
 ms.assetid: d6f151c9-a428-4d76-9854-5064d901643e
 keywords:
-- KSPROPERTY_CAMERACONTROL_PANTILT ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_PANTILT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62c66f988dec9659352d6affe07a96450a5d476
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 807c81955d5c52d724a9d7d6e855b63f04c2ce87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353229"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843342"
 ---
-# <a name="kspropertycameracontrolpantilt"></a>KSPROPERTY\_CAMERACONTROL\_PANTILT
+# <a name="ksproperty_cameracontrol_pantilt"></a>KSK プロパティ\_CAMERACONTROL\_PANTILT
 
 
-KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパンして、傾きの設定。
+KSK プロパティ\_CAMERACONTROL\_PANTILT プロパティは、絶対パンと傾きの設定を指定します。
 
 ## <span id="ddk_ksproperty_cameracontrol_pantilt_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_PANTILT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)"><strong>KSPROPERTY_CAMERACONTROL_S2</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong> </a>要求をフィルターまたはノードがあるかによって</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)"><strong>KSPROPERTY_CAMERACONTROL_S2</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong></a>は、要求がフィルターとノードのどちらであるかによって異なります。</p></td>
 <td><p>長整数のペア</p></td>
 </tr>
 </tbody>
@@ -61,20 +61,20 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 
  
 
-プロパティの値 (データの操作) は、カメラの絶対パンを指定する設定を傾ける長整数のペアです。 これらの値は、円弧を秒単位で表現されます。
+プロパティ値 (操作データ) は、カメラの絶対パンと傾きの設定を指定する長整数のペアです。 これらの値は、アーク秒単位で表現されます。
 
-1 つの円弧は、2 つ目はある程度には、1/3600 です。 許容値の範囲 −180 から\*+180 に 3600\*円弧の 3600 秒です。 パンまたは傾きの値が指定されていない場合、既定値は 0 です。
+1つ目の弧は、1度の1/3600 です。 使用可能な値の範囲は、− 180\*3600 ~ + 180\*3600 arc 秒です。 パンまたは傾きの値が指定されていない場合、既定値は0です。
 
-パンの要求を行うときに、右にカメラの回転し、負の値を左にカメラの回転を指定する正の値を指定します。
+パン要求を行うときは、正の値を指定してカメラを右に回転させ、負の値を指定してカメラを左に回転させます。
 
-正の値が、カメラを傾けます傾き要求を行うときに、負の値をカメラを傾けます。
+チルト要求を行うとき、正の値はカメラを上に傾斜させ、負の値を指定するとカメラが下がります。
 
 <a name="remarks"></a>注釈
 -------
 
-**Value1**のメンバー、 [ **KSPROPERTY\_CAMERACONTROL\_S2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)または[ **KSPROPERTY\_CAMERACONTROL\_ノード\_S2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)構造体をパン設定を指定します。 **Value2**メンバー傾きの設定を指定します。
+[**Ksk プロパティ\_CAMERACONTROL\_s2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)または[**KSK プロパティ\_CAMERACONTROL\_ノード\_s2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)構造体の**Value1**メンバーは、pan 設定を指定します。 **Value2**メンバーは、傾きの設定を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,11 +85,11 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -97,9 +97,9 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)
+[**KSK プロパティ\_CAMERACONTROL\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)
+[**KSPROPERTY\_CAMERACONTROL\_NODE\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)
 
  
 

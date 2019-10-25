@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_スキャン\_状態
-description: KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャン操作の状態をについて説明します。 このプロパティは、必要に応じて実装できます。
+title: KSK プロパティ\_チューナー\_スキャン\_状態
+description: KSK プロパティ\_チューナー\_SCAN\_STATUS プロパティは、スキャン操作の状態を示します。 このプロパティは、必要に応じて実装できます。
 ms.assetid: ce7dd30b-84fc-46e2-847c-33c07e60e0f7
 keywords:
-- KSPROPERTY_TUNER_SCAN_STATUS ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_SCAN_STATUS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eefa78f154e9782c32179320f2c92eda302baf48
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c06b6766e4ea3833714e08661a4ab19e67c74e1f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355969"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837903"
 ---
-# <a name="kspropertytunerscanstatus"></a>KSPROPERTY\_チューナー\_スキャン\_状態
+# <a name="ksproperty_tuner_scan_status"></a>KSK プロパティ\_チューナー\_スキャン\_状態
 
 
-KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャン操作の状態をについて説明します。 このプロパティは、必要に応じて実装できます。
+KSK プロパティ\_チューナー\_SCAN\_STATUS プロパティは、スキャン操作の状態を示します。 このプロパティは、必要に応じて実装できます。
 
 ### <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -39,18 +39,18 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>設定</th>
-<th>対象</th>
+<th>セット</th>
+<th>的を絞る</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>いいえ</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)"><strong>KSPROPERTY_TUNER_SCAN_STATUS_S</strong></a></p></td>
+<td><p>ピン</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_STATUS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)"><strong>KSPROPERTY_TUNER_SCAN_STATUS_S</strong></a></p></td>
 <td><p>KSPROPERTY_TUNER_SCAN_STATUS_S</p></td>
 </tr>
 </tbody>
@@ -58,20 +58,20 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 
  
 
-プロパティの値 (データの操作) は、KSPROPERTY\_チューナー\_スキャン\_状態\_構造をスキャン操作の状態を指定します。
+プロパティ値 (操作データ) は、\_チューナー\_スキャン\_状態\_S のスキャン操作の状態を指定する、KSK プロパティです。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-*KsTvTune.ax*モジュールは、ドライバーの KSPROPERTY を呼び出すことができます\_チューナー\_スキャン\_いつでも STATUS プロパティ。 ただし、 *KsTvTune.ax*は KSPROPERTY\_チューナー\_スキャン\_ステータスを呼び出した後、 [ **KSEVENT\_チューナー\_開始\_スキャン**](ksevent-tuner-initiate-scan.md)イベント スキャン操作を設定して、スキャンが完了したときの通知を設定します。 *KsTvTune.ax*スキャン完了通知を発生を待ちます。 最悪のシナリオとして*KsTvTune.ax*で指定されている時間にわたって待機、 **SettlingTime**のメンバー、 [**チューナー\_アナログ\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tuner_analog_caps_s)構造体。 データが設定されたチューナーのドライバーが返されますが\_アナログ\_CAP\_への呼び出しからその[ **KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAP** ](ksproperty-tuner-networktype-scan-caps.md)アナログ プロパティ\_テレビ\_ネットワーク\_型の値の設定、 **NetworkType**のメンバー、 [ **KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)構造体。 ただし、チューナーでする必要がありますで指定されている時間よりも高速のシグナルの状態を確認通常**SettlingTime**し、その後に通知する必要があります*KsTvTune.ax*でスキャンが完了します。イベントを通知します。
+*KsTvTune.ax*モジュールは、ドライバーの ksk プロパティ\_チューナー\_SCAN\_STATUS プロパティをいつでも呼び出すことができます。 ただし、 *KsTvTune.ax*は、通常、 [**KSEVENT\_\_チューナー**](ksevent-tuner-initiate-scan.md)を呼び出した後に\_の状態を\_スキャンし、スキャン操作を設定して、いつでも通知を設定するために、ksk プロパティ\_チューナーを呼び出します。スキャンが完了します。\_ *KsTvTune.ax*は、スキャン完了通知が発生するまで待機します。 最悪のシナリオとして、 *KsTvTune.ax*は、チューナーの**sett time**メンバーに指定されている時間が経過すると、[**アナログ\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tuner_analog_caps_s)構造体\_待機します。 このドライバーは、アナログ\_TV\_ネットワークを使用して、 [ **\_の Ksk プロパティチューナー\_NETWORKTYPE\_SCAN\_caps**](ksproperty-tuner-networktype-scan-caps.md)プロパティへの呼び出しから、入力されたチューナー\_アナログ\_Cap\_S を返しました @no[**Ksk プロパティ\_チューナー\_NetworkType\_SCAN\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)構造体の**NetworkType**メンバーで設定されている、__ 型の値を設定します。\_ ただし、一般に、チューナーは、通常の**時間に指定**された時間よりも速く信号の状態を判断する必要があります。その後、イベントを通知して、スキャンが完了したことを*KsTvTune.ax*に通知する必要があります。
 
-ドライバーは、チューニングのデバイスがハードウェア依存のスキャンをサポートしている場合にのみのスキャン状態を返します。 ドライバーを設定してこのようなサポートを示します、 **fSupportsHardwareAssistedScanning**のメンバー、 [ **KSPROPERTY\_チューナー\_スキャン\_CAP\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)構造体を**TRUE**への呼び出しでその[ **KSPROPERTY\_チューナー\_スキャン\_CAP**](ksproperty-tuner-scan-caps.md)プロパティ。 ドライバーは、イベントを通知しで次のロックの種類のいずれかを返す必要があります、 **LockStatus**のメンバー、 [ **KSPROPERTY\_チューナー\_スキャン\_の状態\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)構造体。
+ドライバーは、チューニングデバイスでハードウェア支援型のスキャンがサポートされている場合にのみスキャン状態を返します。 このドライバーは、ksk プロパティの**fSupportsHardwareAssistedScanning**メンバー [ **\_チューナー\_スキャン\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)構造体を**TRUE**に設定することによって、このようなサポートを示してい[ **\_チューナー\_スキャン\_CAPS**](ksproperty-tuner-scan-caps.md)プロパティ。 ドライバーは、イベントを通知し、次のロックの種類のいずれかを返す必要があります\_チューナーは、Ksk プロパティの**Lockstatus**メンバー [ **\_スキャン\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)構造です。
 
--   **チューナー\_LockType\_None**チューニング デバイスでした、信号をまったく見つけられない場合。
+-   **[チューナー\_LockType]\_** 、チューニングデバイスが信号をまったく検出できなかった場合には None です。
 
--   **チューナー\_LockType\_ロック**正確な頻度にチューニングのデバイスがロックされている場合。
+-   チューニングデバイスが正確な頻度にロックされている場合、**チューナー\_LockType\_ロック**されています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -82,11 +82,11 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista およびそれ以降のバージョンのオペレーティング システムで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンのオペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -94,19 +94,19 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSEVENT\_チューナー\_開始\_スキャン**](ksevent-tuner-initiate-scan.md)
+[**KSEVENT\_チューナー\_\_スキャンを開始します**](ksevent-tuner-initiate-scan.md)
 
-[**KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_キャップ**](ksproperty-tuner-networktype-scan-caps.md)
+[**KSK プロパティ\_チューナー\_NETWORKTYPE\_SCAN\_CAPS**](ksproperty-tuner-networktype-scan-caps.md)
 
-[**KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)
+[**KSK プロパティ\_チューナー\_NETWORKTYPE\_スキャン\_キャップ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)
 
-[**KSPROPERTY\_チューナー\_スキャン\_キャップ**](ksproperty-tuner-scan-caps.md)
+[**KSK プロパティ\_チューナー\_スキャン\_CAPS**](ksproperty-tuner-scan-caps.md)
 
-[**KSPROPERTY\_チューナー\_スキャン\_CAP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)
+[**KSK プロパティ\_チューナー\_スキャン\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)
 
-[**KSPROPERTY\_チューナー\_スキャン\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)
+[**KSK プロパティ\_チューナー\_スキャン\_状態\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_status_s)
 
-[**チューナー\_アナログ\_CAP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tuner_analog_caps_s)
+[**チューナー\_アナログ\_キャップ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tuner_analog_caps_s)
 
  
 

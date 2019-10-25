@@ -3,21 +3,21 @@ title: リトリート操作
 description: リトリート操作
 ms.assetid: fdf1228b-ccae-4079-b968-b4dbb5665555
 keywords:
-- ネットワーク データ WDK、撤退操作
-- データの WDK ネットワー キング、撤退操作
-- パケット WDK ネットワー キング、撤退操作
-- 撤退操作 WDK ネットワーク
-- WDK ネットワークのデータを送信します。
-- 受信側のデータの WDK ネットワーク
-- MDLs の割り当てください。
+- ネットワークデータ WDK、retreat 操作
+- データ WDK ネットワーク、retreat 操作
+- パケット WDK ネットワーク、retreat 操作
+- retreat 操作 (WDK ネットワーク)
+- データの送信 (WDK ネットワーク)
+- データを受信する WDK ネットワーク
+- MDLs の割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8be5bf2c224601be17a0bb330f2189dfc1b2f887
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5036adad93426679002c27cc76509181828580bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373873"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842015"
 ---
 # <a name="retreat-operations"></a>リトリート操作
 
@@ -25,23 +25,23 @@ ms.locfileid: "67373873"
 
 
 
-撤退操作で使用されるデータ領域のサイズを増やすことができます、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体またはすべての NET\_内バッファーの構造体、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
+Retreat 操作は、net [ **\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造、または[**net\_buffer\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造内のすべての net\_バッファー構造で使用されているデータ領域のサイズを増やすことができます。
 
-NDIS には、次の撤退関数が用意されています。
+NDIS には、次のような retreat 関数が用意されています。
 
-[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisretreatnetbufferdatastart)
+[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferdatastart)
 
-[**NdisRetreatNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisretreatnetbufferlistdatastart)
+[**NdisRetreatNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferlistdatastart)
 
-撤退操作では、NET に関連付けられている MDLs を割り当てることができる場合があります\_バッファーの構造体。 ドライバー MDLs を割り当てるための機能を提供するための省略可能なエントリ ポイントを提供できます、 [ **NetAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_allocate_mdl_handler)関数。 エントリ ポイントがある場合**NULL**NDIS では、既定のメソッドを使用して、MDLs を割り当てます。 内で MDLs を解放する必要があります、 [ **NetFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_free_mdl_handler) MDL の割り当てに使用されたメカニズムの逆数を提供する関数。
+Retreat 操作は、NET\_のバッファー構造に関連付けられている MDLs を割り当てることがあります。 MDLs を割り当てるメカニズムを提供するために、ドライバーは[**NetAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_allocate_mdl_handler)関数の省略可能なエントリポイントを提供できます。 エントリポイントが**NULL**の場合、NDIS は既定のメソッドを使用して mdls を割り当てます。 MDLs は、MDL を割り当てるために使用されたメカニズムの逆数を提供する[**Netfreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_free_mdl_handler)関数内で解放する必要があります。
 
-新しいを取得する**DataLength**、NDIS ドライバー指定を追加します*DataOffsetDelta*現在**DataLength**します。 場合のサイズ、*未使用データ領域*がより大きい、 *DataOffsetDelta*、撤退操作の軽減、 **DataOffset**します。 この場合、新しい**DataOffset**は現在**DataOffset**マイナス、 *DataOffsetDelta*します。
+新しい**datalength**を取得するために、NDIS はドライバーによって指定された*DataOffsetDelta*を現在の**datalength**に追加します。 使用されていない*データ領域*のサイズが*DataOffsetDelta*より大きい場合は、retreat 操作によって**DataOffset**が減少します。 この場合、新しい**DataOffset**は、現在の**DataOffset**から*DataOffsetDelta*を引いたものになります。
 
-場合、 *DataOffsetDelta*がより大きい**DataOffset**、撤退操作は、新しいデータ領域を割り当てます。 この場合は、NDIS の調整、 **DataOffset**それに応じて。
+*DataOffsetDelta*が**DataOffset**より大きい場合は、retreat 操作によって新しいデータ領域が割り当てられます。 この場合、NDIS はそれに応じて**DataOffset**を調整します。
 
-NDIS がない場合に十分なメモリを割り当てます、送信操作の*未使用データ領域*撤退要求を満たすため。 NDIS を単純に調整メモリの割り当てが必要ない場合、 **DataOffset**と**DataLength**します。 パフォーマンスの向上のため、ドライバーは、すべての基になるドライバーの撤退操作に対応するために送信する前に十分なデータの合計サイズを割り当てる必要があります。
+送信操作の場合、解放要求を満たすのに十分な*未使用データ領域*がない場合、NDIS はメモリを割り当てます。 メモリ割り当てが不要な場合、NDIS は単に**DataOffset**と**DataLength**を調整します。 パフォーマンスを向上させるために、ドライバーは、すべての基になるドライバーの retreat 操作に対応するために、送信前に十分なデータサイズを割り当てておく必要があります。
 
-NDIS 受信戻り値の場合、調整だけ、 **DataOffset**と**DataLength**それに応じて。 した高度な操作が配置中に撤退操作の逆の処理が表示されます。 撤退操作後に、*使用データ領域*中に使用される基になるドライバーが処理を受信するヘッダー データが含まれています。
+Receive return の場合、NDIS はそれに応じて**DataOffset**と**DataLength**を調整します。 Retreat 操作は、受信処理中に発生した詳細な操作を元に戻します。 Retreat 操作の後、*使用されたデータ領域*には、受信処理中に使用された、基になるドライバーのヘッダーデータが格納されます。
 
  
 

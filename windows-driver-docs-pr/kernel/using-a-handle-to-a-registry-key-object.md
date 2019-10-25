@@ -1,29 +1,29 @@
 ---
-title: レジストリ キー オブジェクトのハンドルの使用
-description: レジストリ キー オブジェクトのハンドルの使用
+title: レジストリキーオブジェクトへのハンドルの使用
+description: レジストリキーオブジェクトへのハンドルの使用
 ms.assetid: 25982249-31dc-4542-9ebb-139991619b40
 keywords:
-- WDK カーネルのレジストリ キー オブジェクトへのハンドルします。
-- レジストリ WDK カーネルでは、オブジェクトのルーチン
-- ドライバーのレジストリ情報 WDK カーネル、オブジェクトのルーチン
-- オブジェクトのルーチンの WDK カーネル
-- レジストリ キー オブジェクトの WDK カーネル
+- レジストリキーオブジェクト WDK カーネルに対するハンドル
+- レジストリ WDK カーネル、オブジェクトルーチン
+- ドライバーレジストリ情報 WDK カーネル、オブジェクトルーチン
+- オブジェクトルーチン WDK カーネル
+- レジストリキーオブジェクト WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0717113840885c806d02ea43993857ff668584ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b61185a0f3fedc83065b10f0e47823cee4a48c01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376792"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838370"
 ---
-# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルの使用
+# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリキーオブジェクトへのハンドルの使用
 
 
 
 
 
-次の表は、ドライバーは、適切なルーチンを呼び出すと、開いているキーで実行できる操作を一覧表示します。
+次の表は、ドライバーが開いているキーに対して実行できる操作と、適切な呼び出し先のルーチンを示しています。
 
 <table>
 <colgroup>
@@ -38,41 +38,41 @@ ms.locfileid: "67376792"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>その名前またはそのサブキーの数などのキーのプロパティを調べます。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
+<td><p>キーのプロパティ (名前やサブキーの数など) を確認します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>それぞれのプロパティを調べて、キーのサブキーを反復処理します。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
+<td><p>キーのサブキーを反復処理し、それぞれのプロパティを調べます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>値のデータを含む、キー値のプロパティを調べます。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
+<td><p>値のデータを含むキー値のプロパティを確認します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>それぞれのプロパティを調べて、キーの値を反復処理します。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
+<td><p>キーの値を反復処理し、それぞれのプロパティを調べます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>キーに関連付けられている値のデータを設定します。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>キーを削除します。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>キーの値を削除します。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
+<td><p>キー値を削除します。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-呼び出す必要がありますが、ドライバーがその操作を完了すると[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)ハンドルを終了する — が既に呼び出されていない限り**ZwDeleteKey**キーを削除します。 (キーが削除されると、すべての開いているハンドルを無効になる、ので、ドライバーがここで、ハンドルを終了しないで必要があります。)
+ドライバーが操作を完了したら、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してハンドルを閉じる必要があります (キーを削除するために**zwdeletekey**が既に呼び出されている場合を除く)。 (キーが削除されると、それに対する開いているハンドルはすべて無効になります。この場合、ドライバーはハンドルを閉じないようにする必要があります)。
 
-次のコード例は、という名前のキー ハンドルを開く方法を示しています **\\レジストリ\\マシン\\ソフトウェア\\** <em>MyCompany</em> 。\\*MyApp*、キーのデータを取得およびハンドルを終了します。
+次のコード例では、 **\\Registry\\コンピューター\\ソフトウェア\\** <em>MyCompany</em>\\*MyApp*に指定されたキーのハンドルを開き、キーデータを取得してハンドルを閉じる方法を示します。
 
 ```cpp
 //
@@ -174,9 +174,9 @@ if (NULL != handleRegKey)
 }
 ```
 
-システムでは、メモリ内のキーの変更をキャッシュし、数秒ごとのディスクに書き込みます。 ディスクに、キーの変更を強制的に[ **ZwFlushKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwflushkey)します。
+システムは、キーの変更をメモリにキャッシュし、数秒ごとにディスクに書き込みます。 ディスクにキーの変更を強制するには、 [**Zwflushkey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey)を呼び出します。
 
-シンプルなインターフェイス経由でのレジストリを操作するドライバーを呼び出すことも、 **Rtl*Xxx*レジストリ * Xxx*** ルーチン。 詳細については、次を参照してください。[レジストリ ランタイム ライブラリ ルーチン](registry-run-time-library-routines.md)します。
+単純なインターフェイスを使用してレジストリを操作するために、ドライバーは**Rtl*xxx*レジストリ * Xxx*** ルーチンを呼び出すこともできます。 詳細については、「[レジストリランタイムライブラリルーチン](registry-run-time-library-routines.md)」を参照してください。
 
  
 

@@ -3,21 +3,21 @@ title: DXT 形式の列挙
 description: DXT 形式の列挙
 ms.assetid: 77fc961f-1b94-43c1-b238-86f7d8e96835
 keywords:
-- 圧縮されたテクスチャ WDK DirectDraw を描画するには、フォーマット DXT を列挙します。
-- DirectDraw は、DXT を列挙する、Windows 2000 の WDK の表示形式のテクスチャを圧縮します。
-- 圧縮されたテクスチャ サーフェス WDK DirectDraw、DXT 形式を列挙します。
-- WDK DirectDraw、圧縮されたテクスチャを表示します。
-- 圧縮テクスチャ WDK DirectDraw、
-- WDK DirectDraw DXT を列挙する書式設定します。
-- DXT は、WDK DirectDraw を書式設定します。
+- 圧縮されたテクスチャの描画 WDK DirectDraw、DXT 形式の列挙
+- DirectDraw 圧縮テクスチャ WDK Windows 2000 display、DXT 形式の列挙
+- 圧縮されたテクスチャサーフェス WDK DirectDraw、DXT 形式の列挙
+- WDK DirectDraw、圧縮されたテクスチャを表面にします
+- テクスチャ WDK DirectDraw、圧縮
+- DXT 形式の列挙 WDK DirectDraw
+- DXT 形式 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83468541367396667d95762aeed2e791beb30c60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a791e32ca3954acee0b1e49f52f56d76959968fd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355549"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838949"
 ---
 # <a name="enumerating-dxt-formats"></a>DXT 形式の列挙
 
@@ -25,9 +25,9 @@ ms.locfileid: "67355549"
 ## <span id="ddk_enumerating_dxt_formats_gg"></span><span id="DDK_ENUMERATING_DXT_FORMATS_GG"></span>
 
 
-Microsoft directx では、ピクセル形式を列挙するために、ドライバーの 2 つの方法があります。 最初のメソッドは、テクスチャのために使用する形式を列挙します。 このメソッドは実装を使用して、 **lpTextureFormats**のメンバー、 [ **D3DHAL\_GLOBALDRIVERDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)構造体。 2 番目のメソッドのいずれかの DDSCAPS 使用できる形式を列挙します\_オーバーレイ サーフェスまたは DDSCAPS\_OFFSCREENPLAIN サーフェス。 2 番目のメソッドを使用して、 **dwNumFourCCCodes**のメンバー、 [ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)構造に含まれる、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造と**lpdwFourCC** 、DD にも含まれている配列\_HALINFO 構造体。
+Microsoft DirectX には、ドライバーがピクセル形式を列挙するための2つの方法があります。 最初のメソッドは、テクスチャに使用できる形式を列挙します。 このメソッドは、 [**D3DHAL\_GLOBALDRIVERDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)構造体の**lpTextureFormats**メンバーを使用して実装されます。 2番目のメソッドは、DDSCAPS\_オーバーレイサーフェスまたは DDSCAPS\_OFFSCREENPLAIN に使用できる形式を列挙します。 2番目のメソッドでは、 [**dd\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体に含まれる[**DDCORECAPS**](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)構造体の**dwnum4 ccコード**メンバーと、dd\_HALINFO 構造体にも含まれる**lpdwFourCC**配列を使用します。
 
-DXT 形式は、主にテクスチャとして使用するとしているため、ドライバーは、最初のメソッドをのみ DXT 形式を列挙します。 DXT 形式を追加する必要はありません、 **lpdwFourCC**配列。
+DXT 形式は主にテクスチャとして使用することを目的としているため、ドライバーは、最初のメソッドを使用して DXT 形式のみを列挙します。 DXT 形式を**lpdwFourCC**配列に追加する必要はありません。
 
  
 

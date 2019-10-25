@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_CONNECT_BSS_ENTRY
-description: WDI_TLV_CONNECT_BSS_ENTRY が、候補の一覧を含む TLV BSS エントリに接続します。
+description: WDI_TLV_CONNECT_BSS_ENTRY は、候補の接続 BSS エントリの一覧を含む TLV です。
 ms.assetid: 0D74B2DE-9224-4FDF-8EA8-B22CEC0B5F26
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CONNECT_BSS_ENTRY ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_CONNECT_BSS_ENTRY ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 21859042b922facaebc55c88ba017b3a1099c11b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7ea2332b18377c8f467096d56ca28d98e32c93d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360229"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843389"
 ---
-# <a name="wditlvconnectbssentry"></a>WDI\_TLV\_CONNECT\_BSS\_エントリ
+# <a name="wdi_tlv_connect_bss_entry"></a>WDI\_TLV\_接続\_BSS\_エントリ
 
 
-WDI\_TLV\_CONNECT\_BSS\_エントリが候補の一覧を含む TLV BSS エントリに接続します。
+WDI\_TLV\_CONNECT\_BSS\_ENTRY は、候補となる接続 BSS エントリの一覧を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,28 +26,28 @@ WDI\_TLV\_CONNECT\_BSS\_エントリが候補の一覧を含む TLV BSS エン�
 ## <a name="length"></a>長さ
 
 
-すべてのサイズ (バイト) を合計には、TLVs が含まれています。
+含まれているすべての TLVs のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 種類                                                                                        | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                   |
+| タスクバーの検索ボックスに                                                                                        | 複数の TLV インスタンスを使用できます | オプション | 説明                                                                                                                                                   |
 |---------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                                                    |                                |          | BSS の BSSID します。                                                                                                                                         |
-| [**WDI\_TLV\_プローブ\_応答\_フレーム**](wdi-tlv-probe-response-frame.md)                    |                                | x        | プローブ応答フレーム。 プローブの応答を受信しなかった場合は、空がなります。                                                                        |
-| [**WDI\_TLV\_ビーコン\_フレーム**](wdi-tlv-beacon-frame.md)                                     |                                | x        | ビーコン フレーム。 ビーコンを受信しなかった場合は、空がなります。                                                                                        |
-| [**WDI\_TLV\_BSS\_エントリ\_信号\_情報**](wdi-tlv-bss-entry-signal-info.md)                 |                                |          | この BSS エントリのシグナルの情報。                                                                                                                    |
+| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                                                    |                                |          | BSS の BSSID。                                                                                                                                         |
+| [**WDI\_TLV\_プローブ\_応答\_フレーム**](wdi-tlv-probe-response-frame.md)                    |                                | X        | プローブ応答フレーム。 プローブ応答を受信していない場合、これは空になります。                                                                        |
+| [**WDI\_TLV\_ビーコン\_フレーム**](wdi-tlv-beacon-frame.md)                                     |                                | X        | ビーコンフレーム。 ビーコンが受信されていない場合、これは空になります。                                                                                        |
+| [**WDI\_TLV\_BSS\_ENTRY\_SIGNAL\_INFO**](wdi-tlv-bss-entry-signal-info.md)                 |                                |          | この BSS エントリのシグナル情報。                                                                                                                    |
 | [**WDI\_TLV\_BSS\_エントリ\_チャネル\_情報**](wdi-tlv-bss-entry-channel-info.md)               |                                |          | この BSS エントリのチャネル情報。                                                                                                                   |
-| [**WDI\_TLV\_BSS\_エントリ\_デバイス\_コンテキスト**](wdi-tlv-bss-entry-device-context.md)           |                                | x        | IHV は、このピアに関するコンテキスト データを提供します。                                                                                                                |
-| [**WDI\_TLV\_PMKID**](wdi-tlv-pmkid.md)                                                    |                                | x        | この BSS エントリの 16 バイト PMKID 値。                                                                                                                   |
-| [**WDI\_TLV\_余分な\_アソシエーション\_要求\_IES**](wdi-tlv-extra-association-request-ies.md) |                                | x        | (再) に含まれる IE この BSSID の関連付け要求フレーム。 存在する場合、共通の IE に加えて含まれていますがあります。                  |
-| [**WDI\_TLV\_FT\_初期\_ASSOC\_パラメーター**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | x        | 初期のモビリティ ドメイン関連パラメーター。                                                                                                           |
-| [**WDI\_TLV\_FT\_REASSOC\_パラメーター**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | x        | 迅速な移行のパラメーター (MDIE、R0KH ID、PMKR0Name、SNonce)。 これは、(初期モビリティ ドメインの関連付け) 中ではなくのみ高速切り替え存在します。 |
-| [**WDI\_TLV\_BSS\_選択\_パラメーター**](wdi-tlv-bss-selection-parameters.md)            |                                | x        | [**WDI\_BSS\_選択\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) BSS 選択範囲のホストによって使用される情報を提供します。                               |
+| [**WDI\_TLV\_BSS\_ENTRY\_デバイス\_コンテキスト**](wdi-tlv-bss-entry-device-context.md)           |                                | X        | IHV がこのピアに関するコンテキストデータを提供しました。                                                                                                                |
+| [**WDI\_TLV\_PMKID**](wdi-tlv-pmkid.md)                                                    |                                | X        | この BSS エントリの16バイト PMKID 値。                                                                                                                   |
+| [**WDI\_TLV\_追加\_アソシエーション\_要求\_** ](wdi-tlv-extra-association-request-ies.md) |                                | X        | この BSSID の (re) アソシエーション要求フレームに含まれる IE。 存在する場合は、共通の IE に加えて追加する必要があります。                  |
+| [**WDI\_TLV\_FT\_INITIAL\_ASSOC\_PARAMETERS**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | X        | 最初のモビリティドメインの関連付けパラメーター。                                                                                                           |
+| [**WDI\_TLV\_FT\_REASSOC\_パラメーター**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | X        | 高速移行パラメーター (MDIE、R0KH、PMKR0Name、SNonce)。 これは、(最初のモビリティドメインの関連付けではなく) 高速の移行の場合にのみ存在します。 |
+| [**WDI\_TLV\_BSS\_SELECTION\_PARAMETERS**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI\_bss**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_bss_selection_flags)は、ホストが bss 選択に使用する情報を提供する\_フラグを\_選択します。                               |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -66,7 +66,7 @@ WDI\_TLV\_CONNECT\_BSS\_エントリが候補の一覧を含む TLV BSS エン�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

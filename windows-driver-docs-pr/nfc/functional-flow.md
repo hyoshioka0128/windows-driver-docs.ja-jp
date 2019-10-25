@@ -1,6 +1,6 @@
 ---
 title: 機能のフロー
-description: フローチャートおよび階層の読み取りと書き込みのスマート カードの検出時にメッセージを NDEF の簡単な説明。
+description: スマートカード検出時の NDEF メッセージの階層的な読み取りと書き込みに関するフローチャートと短い説明。
 ms.assetid: 7B4B4902-FD16-4C9B-BB54-A1D6EFCAE9DB
 keywords:
 - NFC
@@ -10,23 +10,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e962f5ff35a21a56e3980140093059d4eb79e4ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c13f44d4a66554810cb41f275f51a9fa75cf502
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370507"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843412"
 ---
 # <a name="functional-flow"></a>機能のフロー
 
 
-スマート カードに近づく、NDEF の上位レベルのサービス アプリケーションは、カードと通信できるまでは NDEF メッセージ型の機能を紹介しましたのでが優先の処理とスマート カード NFP とドライバーの共有です。
+スマートカードは、NFP とドライバーを共有しているので、スマートカードを使用すると、NDEF の処理が優先されます。これにより、アプリケーションがカードと通信する前に、上位レベルのサービスが NDEF メッセージの種類で動作する機会が与えられます。
 
-![階層の読み取りを記述して、スマート カードの検出時は NDEF メッセージの書き込みのフローチャート。](images/smartcardfunctionalflow.png)
+![スマートカード検出時の NDEF メッセージの階層的な読み取りと書き込みを記述するフローチャート。](images/smartcardfunctionalflow.png)
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[スマートカード DDI とコマンドリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

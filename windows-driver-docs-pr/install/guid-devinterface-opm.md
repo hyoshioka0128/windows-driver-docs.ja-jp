@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 29f8088e3aca5a3129395af8dfe523f3f342b289
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e8374b9a01e61e13da9b06482156b710f7cadf42
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375254"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840634"
 ---
-# <a name="guiddevinterfaceopm"></a>GUID_DEVINTERFACE_OPM
+# <a name="guid_devinterface_opm"></a>GUID_DEVINTERFACE_OPM
 
 
-GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)出力の保護をサポート管理 (OPM) 子デバイスを監視します。
+GUID_DEVINTERFACE_OPM [device インターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)は、 [Windows Vista ディスプレイドライバモデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)のコンテキストで動作し、子デバイスを監視するための出力保護管理 (OPM) をサポートするディスプレイアダプタドライバに対して定義されています。
 
 <table>
 <colgroup>
@@ -33,13 +33,13 @@ GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">設定</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>識別子</p></td>
+<td align="left"><p>ID</p></td>
 <td align="left"><p>GUID_DEVINTERFACE_OPM</p></td>
 </tr>
 <tr class="even">
@@ -51,16 +51,16 @@ GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://d
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-ドライバーは、オペレーティング システムと OPM デバイス インターフェイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
+ドライバーは、このデバイスインターフェイスクラスのインスタンスを登録して、オペレーティングシステムと、OPM デバイスインターフェイスの存在をアプリケーションに通知します。
 
-ディスプレイのミニポート ドライバーがこの直接呼出し OPM インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_OPM を指定します。
+ディスプレイミニポートドライバーがこの[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)の DIRECT call OPM インターフェイスをサポートしている場合、カーネルモードコンポーネントは、ミニポートドライバーの[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数を呼び出し、GUID_DEVINTERFACE_OPM インターフェイスの種類を指定します。
 
-OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)します。
+OPM の詳細については、「 [Output Protection Manager のサポート](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -71,11 +71,11 @@ OPM については、次を参照してください。[出力 Protection Manage
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Dispmprt.h (Dispmprt.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Dispmprt (Dispmprt. h を含む)</td>
 </tr>
 </tbody>
 </table>

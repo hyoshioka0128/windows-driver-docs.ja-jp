@@ -1,44 +1,44 @@
 ---
-title: OPM での保護レベルの処理
-description: OPM での保護レベルの処理
+title: OPM を使用した保護レベルの処理
+description: OPM を使用した保護レベルの処理
 ms.assetid: 2d3e5d07-8d6f-44fb-985a-96990538ed29
 keywords:
-- WDK の保護レベルの種類を表示します。
-- 保護レベルの WDK 表示、ACP
-- 保護レベルを WDK の表示、コピー防止のアナログ
-- 保護レベル、WDK 表示 CGMS A
-- 保護レベルのコンテンツ生成管理システムのアナログ、WDK の表示
-- 保護レベルの WDK ディスプレイ、高帯域幅デジタル コンテンツ保護
-- 保護レベルの WDK 表示、HDCP
-- 保護レベルの WDK 表示、ディスプレイ ポート等コンテンツ保護
-- 保護レベルの WDK 表示、DPCP
+- 保護レベル WDK 表示、種類
+- 保護レベル WDK 表示、ACP
+- 保護レベル WDK 表示、アナログコピー保護
+- 保護レベル WDK display、CGMS
+- 保護レベル WDK 表示、コンテンツ生成管理システムのアナログ
+- 保護レベル WDK 表示、高帯域幅デジタル Content Protection
+- 保護レベル WDK ディスプレイ、HDCP
+- 保護レベル WDK display、DisplayPort Content Protection
+- 保護レベル WDK ディスプレイ、モニター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 999116f3b7bf50d79b122a7bab294f309ae2e00d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 888c408ce51ded2a2d88ffe6018f63e34661e793
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359327"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838908"
 ---
-# <a name="handling-protection-levels-with-opm"></a>OPM での保護レベルの処理
+# <a name="handling-protection-levels-with-opm"></a>OPM を使用した保護レベルの処理
 
 
-各出力保護の種類 (たとえば、アナログ コピー防止 (ACP)、[コンテンツ生成管理システム アナログ (CGMS A)](cgms-a-standards.md)、高帯域幅デジタル コンテンツの保護 (HDCP)、およびディスプレイ ポート等コンテンツ保護 (DPCP)) が保護レベルが関連付けられています。 ACP の詳細については、次を参照してください。、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273) web サイト。 HDCP の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。 ディスプレイ ポート等の詳細については、次を参照してください。、[ディスプレイ ポート等](https://go.microsoft.com/fwlink/p/?linkid=71382)Web 記事。
+各出力保護タイプ (たとえば、アナログコピー保護 (ACP)、[コンテンツ生成管理システムアナログ (CGMS)](cgms-a-standards.md)、広帯域デジタル CONTENT PROTECTION (HDCP)、DisplayPort Content Protection ()) には保護レベルがあります。関連付けられています。 ACP の詳細については、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273)の web サイトを参照してください。 HDCP の詳細については、「 [Hdcp 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)」を参照してください。 DisplayPort の詳細については、 [DisplayPort](https://go.microsoft.com/fwlink/p/?linkid=71382)の Web 記事を参照してください。
 
-グラフィックス アダプターは、任意の出力保護の種類をサポートする必要はありません。 ただし、グラフィックス アダプターをする必要があります、グラフィックス アダプターの出力は、現在設定されている各のサポートされる保護の種類正確にレポートの各出力の保護レベル。
+グラフィックスアダプターは、出力保護の種類をサポートするためには必要ありません。 ただし、グラフィックスアダプターは、各グラフィックスアダプターの出力に対してサポートされている保護の種類と、各出力に対して現在設定されている保護レベルを正確に報告する必要があります。
 
-ACP および CGMS A 保護アナログ テレビ信号。 OPM が ACP を使用して現在のところ、および CGMS-A 複合出力、s-ビデオ出力、またはコンポーネントの出力からの信号を保護します。 さまざまな ACP および CGMS A 保護については、レベルを参照してください、 [ **DXGKMDT\_OPM\_ACP\_保護\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_acp_protection_level)と[**DXGKMDT\_OPM\_CGMSA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)列挙体。
+ACP と CGMS-A アナログテレビ信号を保護します。 現時点では、OPM は、複合出力、S ビデオ出力、またはコンポーネント出力からの信号を保護するために、ACP と CGMS を使用できます。 さまざまな ACP および CGMS 保護レベルの詳細については、「 [**dxgkmdt\_OPM\_acp\_protection\_LEVEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_acp_protection_level) 」および「 [**DXGKMDT\_OPM\_CGMSA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)列挙型」を参照してください。
 
-HDCP がデジタル ビデオ信号を保護します。 現時点では、OPM で HDCP を使用して、デジタル ビデオ インターフェイス (DVI) および高品位のマルチ メディア インターフェイス (HDMI) コネクタの出力からデータを保護することができます。 HDCP 保護のレベルについては、次を参照してください。、 [ **DXGKMDT\_OPM\_HDCP\_保護\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_hdcp_protection_level)列挙体。
+HDCP は、デジタルビデオ信号を保護します。 現時点では、OPM は HDCP を使用して、デジタルビデオインターフェイス (DVI) と高精細マルチメディアインターフェイス (HDMI) コネクタの出力からデータを保護できます。 HDCP 保護レベルの詳細については、「 [**Dxgkmdt\_OPM\_hdcp\_protection\_LEVEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_hdcp_protection_level)列挙型」を参照してください。
 
-DPCP は、ディスプレイ ポート等出力コネクタからデジタル ビデオ信号を保護します。
+DisplayPort 出力コネクタからのデジタルビデオ信号を保護します。
 
-次のセクションでは、特定の物理出力コネクタと物理出力コネクタの保護レベルを決定するためのアルゴリズムの 1 つ以上の保護されている出力が作成された場合、保護レベルに配置されている優先順位について説明します。
+以下のセクションでは、特定の物理出力コネクタに対して複数の保護された出力が作成された場合の保護レベルの優先順位と、物理出力コネクタの保護レベルを決定するためのアルゴリズムについて説明します。
 
 [保護レベルに優先順位を割り当てる](assigning-precedence-to-protection-levels.md)
 
-[物理的な出力の保護レベルを決定します。](determining-the-protection-level-for-a-physical-output.md)
+[物理出力の保護レベルの決定](determining-the-protection-level-for-a-physical-output.md)
 
  
 

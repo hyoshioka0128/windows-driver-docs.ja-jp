@@ -1,58 +1,58 @@
 ---
-title: 下のデバイス スタックへの PnP IRP の受け渡し
-description: 下のデバイス スタックへの PnP IRP の受け渡し
+title: PnP Irp をデバイススタックに渡す
+description: PnP Irp をデバイススタックに渡す
 ms.assetid: 339ef4b4-1b4f-42ac-ab57-c53b83120f0d
 keywords:
-- WDK カーネルの PnP デバイス スタックを Irp を渡して、
-- デバイス スタックを Irp を渡して、プラグ アンド プレイの WDK のカーネル
-- WDK PnP Irp
-- I/O 要求パケット PnP WDK
-- デバイス スタック WDK ダウン Irp を渡す
+- PnP WDK カーネル、Irp をデバイススタック下に渡す
+- WDK カーネルをプラグアンドプレイし、Irp をデバイススタックに渡す
+- Irp WDK PnP
+- I/o 要求パケットの WDK PnP
+- Irp をデバイススタック WDK に渡す
 - IoCompletion ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 758c438b51ed24e8875a6222135d800cf9096bb4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d76dd93e9d875c315ec4649e2238b8b414b298d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384747"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838518"
 ---
-# <a name="passing-pnp-irps-down-the-device-stack"></a>下のデバイス スタックへの PnP IRP の受け渡し
+# <a name="passing-pnp-irps-down-the-device-stack"></a>PnP Irp をデバイススタックに渡す
 
 
 
 
 
-PnP マネージャーは、開始、停止、およびデバイスを削除するドライバーを直接を自分のデバイスのドライバーをクエリする Irp を使用します。 コードが主な機能であるすべての PnP Irp [ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)、およびすべての PnP ドライバーが提供する必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンをこの関数のコードにサービスを提供します。 PnP マネージャーを初期化します**Irp の&gt;IoStatus.Status**ステータス\_されません\_IRP を送信するときにサポートされています。 詳細については、次を参照してください。 [DispatchPnP ルーチン](dispatchpnp-routines.md)します。
+PnP マネージャーは、Irp を使用して、デバイスを開始、停止、および削除し、デバイスに関するドライバーを照会するようにドライバーに指示します。 すべての PnP Irp には、主要な関数コード[**IRP\_MJ\_pnp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)があり、すべての pnp ドライバーは、この関数コードを処理するために[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを提供する必要があります。 PnP マネージャーは、irp **&gt;iostatus を初期化します。状態**は、irp を送信したときにサポート\_されない状態\_に初期化されます。 詳細については、「 [DispatchPnP ルーチン](dispatchpnp-routines.md)」を参照してください。
 
-PnP マイナー Irp の一覧は、次を参照してください。[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+PnP のマイナー Irp の一覧については、「[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)」を参照してください。
 
-デバイスのすべてのドライバーには、スタック内のドライバーが IRP が失敗した場合を除き、PnP IRP に応答する機会が必要です。 (詳しくは、次の図を参照してください)。
+スタック内のドライバーが IRP に障害を発生させる場合を除き、デバイスのすべてのドライバーが PnP IRP に応答する機会を持つ必要があります。 (次の図を参照してください)。
 
-![デバイス スタックのプラグ アンド プレイ irp を渡すことを示す図](images/passpnp.png)
+![プラグアンドプレイ irp をデバイススタックに渡す方法を示す図](images/passpnp.png)
 
-PnP IRP が応答する唯一のドライバーであるデバイスの 1 つのドライバーは一切ことができます。 、たとえば、応答する関数のドライバーを検討してください、 [ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求し、に渡すことがなく、IRP が完了すると、次の下位のドライバーです。 None、下位のドライバーでサポートされている機能の一意のインスタンス ID や power など、親のバス ドライバーによってサポートされる管理機能が報告されます。
+1つのデバイスに対して、PnP IRP に応答する唯一のドライバーであるとは限りません。 たとえば、Irp\_に応答する関数ドライバーが[ **\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)を要求し、それを次の下位のドライバーに渡さずに irp を完了するとします。 下位のドライバーでサポートされている機能 (一意のインスタンス ID や、親バスドライバーでサポートされている電源管理機能など) は報告されません。
 
-親のバス ドライバーを呼び出すと、バックアップ デバイス スタックを PnP IRP が送信されます[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) I/O マネージャーは、いずれかと[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンが、関数のドライバーまたはフィルター ドライバーで登録します。
+親バスドライバーが[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出し、i/o マネージャーが関数ドライバーまたはフィルタードライバーによって登録された[*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを呼び出すと、PnP IRP はデバイススタックをバックアップします。
 
-PnP IRP を受信すると、関数またはフィルター ドライバーは、次を実行する必要があります。
+関数またはフィルタードライバーは、PnP IRP を受信するときに次の操作を行う必要があります。
 
--   場合は、ドライバーは IRP への応答アクションを実行します。
-    1.  適切なアクションを実行します。
-    2.  設定**Irp -&gt;IoStatus.Status**状態など、適切な状態に\_成功します。 設定**Irp -&gt;IoStatus.Information**IRP の該当する場合、します。
-    3.  [次へ] スタックの場所を設定[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)または[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)します。 設定した場合は、後者のルーチンを呼び出し、 *IoCompletion*ルーチン。
-    4.  設定、 *IoCompletion*ルーチンで必要な場合。
-    5.  IRP を実行しないでください。 (呼び出さない**IoCompleteRequest**)。親のバス ドライバーは IRP を完了します。
--   ドライバーでは、この IRP のアクションを実行していない場合、[次へ] のドライバーに IRP を渡す単純に準備します。
-    1.  呼び出す**IoSkipCurrentIrpStackLocation** IRP からそのスタックの場所を削除します。
-    2.  任意のフィールドを設定しないでください**Irp -&gt;IoStatus**します。
-    3.  設定しないでください、 *IoCompletion*ルーチン。
-    4.  IRP を実行しないでください。 (呼び出さない**IoCompleteRequest**)。親のバス ドライバーは IRP を完了します。
+-   ドライバーが IRP に応答してアクションを実行する場合は、次のようになります。
+    1.  適切な操作を実行します。
+    2.  [ **Irp-&gt;iostatus** ] を適切な状態 (STATUS\_SUCCESS など) に設定します。 Irp に該当する場合は、 **irp&gt;IoStatus. 情報を設定します。**
+    3.  [**Ioskipで**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)次のスタックの場所を設定します。この場所または[**Iocopy"enti"** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)を設定します。 *Iocompletion*ルーチンを設定する場合は、後者のルーチンを呼び出します。
+    4.  必要に応じて、 *Iocompletion*ルーチンを設定します。
+    5.  IRP を完了しないでください。 ( **IoCompleteRequest**を呼び出さないでください)。親バスドライバーが IRP を完了します。
+-   ドライバーがこの IRP に対するアクションを実行しない場合は、IRP を次のドライバーに渡すように準備するだけです。
+    1.  **Ioskipの場所**を呼び出して、IRP からスタック位置を削除します。
+    2.  **Irp&gt;IoStatus**のフィールドは設定しないでください。
+    3.  *Iocompletion*ルーチンを設定しないでください。
+    4.  IRP を完了しないでください。 ( **IoCompleteRequest**を呼び出さないでください)。親バスドライバーが IRP を完了します。
 
-使用してドライバーを次の下位に IRP を渡す関数またはフィルター ドライバーは IRP を失敗しなかった場合[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 ドライバーは、次の下位ドライバーへのポインター返されたポインター、 [ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)以上のドライバーで呼び出す[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。
+関数またはフィルタードライバーが IRP に失敗しなかった場合、IRP は[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して次の下位のドライバーに渡されます。 ドライバーには、次に低いドライバーへのポインターがあります。このポインターは、より上位のドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンで[**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)呼び出しから返されました。
 
-親のバス ドライバーは IRP に応答するすべてのタスクを実行した後、IRP を完了します。 バス ドライバーの呼び出し後**IoCompleteRequest**、I/O マネージャーを呼び出し、 *IoCompletion*ルーチンは、デバイスの関数またはフィルター ドライバーによって登録します。
+親バスドライバーは、IRP に応答するタスクを実行した後に、IRP を完了します。 バスドライバーが**IoCompleteRequest**を呼び出した後、i/o マネージャーは、そのデバイスの関数またはフィルタードライバーによって登録された*iocompletion*ルーチンを呼び出します。
 
  
 

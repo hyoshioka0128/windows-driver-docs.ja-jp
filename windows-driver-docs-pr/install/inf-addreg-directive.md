@@ -1,9 +1,9 @@
 ---
 title: INF AddReg ディレクティブ
-description: AddReg ディレクティブを 1 つまたは複数 INF ライター定義を追加-レジストリのセクションでは変更またはレジストリ情報の作成に使用されるを参照します。
+description: AddReg ディレクティブは、レジストリ情報を変更または作成するために使用される、1つまたは複数の INF ライターで定義されたレジストリセクションを参照します。
 ms.assetid: e8162e20-0d8c-4400-9f4d-5f4abe81305b
 keywords:
-- INF AddReg ディレクティブ デバイスとドライバーのインストール
+- INF AddReg ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c7e40ac8401e490da57a30dee3f526c1ea938a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eb1d4a1c5c69358427001ea822bcafa7616bcee3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385927"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837479"
 ---
 # <a name="inf-addreg-directive"></a>INF AddReg ディレクティブ
 
 
-**AddReg**ディレクティブでは、1 つを参照またはより INF ライター-定義*追加レジストリ セクション*変更やレジストリ情報の作成に使用します。
+**AddReg**ディレクティブは、レジストリ情報を変更または作成するために使用される、1つまたは複数の INF ライターで定義された*レジストリセクション*を参照します。
 
 ```ini
 [DDInstall] | 
@@ -43,13 +43,13 @@ ms.locfileid: "67385927"
 AddReg=add-registry-section[,add-registry-section] ...
 ```
 
-各*追加レジストリ セクション*以下を実行するエントリがあることができます。
+各 [*レジストリの追加] セクション*には、次の操作を実行するためのエントリがあります。
 
--   場合によっては、初期値エントリで、新しいキーをレジストリに追加します。
--   既存のレジストリ キーに新しい値のエントリを追加します。
--   レジストリ内の特定のキーの値の既存のエントリを変更します。
+-   新しいキー (場合によっては、初期値のエントリを含む) をレジストリに追加します。
+-   既存のレジストリキーに新しい値のエントリを追加します。
+-   レジストリ内の特定のキーの既存の値エントリを変更します。
 
-という名前の各*追加レジストリ セクション*によって参照される、 **AddReg**ディレクティブは、次の形式。
+**AddReg**ディレクティブによって参照される各名前付き*追加レジストリセクション*の形式は次のとおりです。
 
 ```ini
 [add-registry-section]
@@ -60,157 +60,157 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 "security-descriptor-string"]
 ```
 
-*追加レジストリ セクション*それぞれ別々 の行に任意の数のエントリを持つことができます。 INF を含めることも 1 つまたは複数のオプション<em>追加レジストリ セクション</em> **.security**セクションで、名前付き内で説明されているすべてのレジストリ値に適用されるセキュリティ記述子を指定する各*追加レジストリ セクション*します。
+*レジストリセクション*には、任意の数のエントリを含めることができます。各エントリは個別の行にあります。 INF には、1つまたは複数のオプションの<em>add レジストリセクション</em>を含めることもでき**ます。セキュリティ**セクションでは、それぞれのセキュリティ記述子を指定します。これらのセクションには、指定した*レジストリ*値で記述されているすべてのレジストリ値に適用されます。
 
-## <a name="entries"></a>エントリ
+## <a name="entries"></a>Entries
 
 
-<a href="" id="reg-root"></a>*レジストリ ルート*  
-このエントリで指定されたその他の値のレジストリ ツリーのルートを識別します。 値は次のいずれかになります。
+<a href="" id="reg-root"></a>*reg-ルート*  
+このエントリに指定されている他の値のレジストリツリーのルートを識別します。 値は次のいずれかになります。
 
 <a href="" id="hkcr"></a>**HKCR**  
-省略形**HKEY_CLASSES_ROOT**
+**HKEY_CLASSES_ROOT**の略称
 
 <a href="" id="hkcu"></a>**HKCU**  
-省略形**HKEY_CURRENT_USER**
+**HKEY_CURRENT_USER**の省略形
 
 <a href="" id="hklm"></a>**HKLM**  
-省略形**HKEY_LOCAL_MACHINE**
+**HKEY_LOCAL_MACHINE**の省略形
 
 <a href="" id="hku"></a>**HKU**  
-省略形**HKEY_USERS**
+**HKEY_USERS**の省略形
 
 <a href="" id="hkr"></a>**HKR**  
-この省略形を使用して指定されているキーがこの INF セクションに関連付けられたレジストリ キーを基準との相対のルート**AddReg**ディレクティブが表示されたら、次の表に記載されています。
+相対ルート。この省略形を使用して指定されたキーは、次の表に示すように、この**AddReg**ディレクティブが表示される INF セクションに関連付けられているレジストリキーを基準としています。
 
-| INF セクションを含む AddReg ディレクティブ                        | HKR によって参照されるレジストリ キー                                                        |
+| AddReg ディレクティブを含む INF セクション                        | HKR によって参照されるレジストリキー                                                        |
 |----------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| INF ***DDInstall*** |
-| INF ***DDInstall *。ハードウェア** |
-| INF *\[サービス-インストール セクション\]* セクション                      | **サービス**キー                                                                  |
-| INF *\[インストール ログ イベントが\]* セクション                            | **EventLog**キー                                                                  |
-| INF *\[追加インターフェイス セクション\]* セクション                        | デバイス インターフェイスのレジストリ キー                                                    |
+| INF ***Ddinstall*** |
+| INF ***Ddinstall *。HW** |
+| INF *\[サービス-インストールセクション\]* セクション                      | **サービス**キー                                                                  |
+| INF *\[イベントログ-インストール\]* セクション                            | **EventLog**キー                                                                  |
+| INF *\[\]セクションの追加*                        | デバイスインターフェイスのレジストリキー                                                    |
 
 
-**注**  **HKR**では使用できません、*追加レジストリ セクション*から参照されている、 [ **INF DefaultInstall セクション**](inf-defaultinstall-section.md)します。
+**注**  **Hkr**は、 [**INF DefaultInstall セクション**](inf-defaultinstall-section.md)から参照される*レジストリの追加セクション*では使用できません。
 
  
 
-下に格納されているドライバー情報の詳細については、 **HKEY_LOCAL_MACHINE**ルートは、「[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)します。
+**HKEY_LOCAL_MACHINE**ルートの下に格納されているドライバー情報の詳細については、「[デバイスとドライバーのレジストリツリーとキー](registry-trees-and-keys.md)」を参照してください。
 
 <a href="" id="subkey"></a>*サブキー*  
-このオプションの値の形式を % として*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF または下のレジストリ パスとして、指定された*reg ルート*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...)、次のいずれかを指定します。
+この省略可能な値。 INF の[**Strings**](inf-strings-section.md)セクションで定義された%*strkey*% token として、または指定された*reg ルート*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) の下のレジストリパスとして形成されます。では、次のいずれかを指定します。
 
--   指定されたレジストリ パスの最後に、レジストリに追加する新しいサブキー。
--   既存のサブキーを (指定したサブキーの既存の名前付きの値のエントリの値を置き換える可能性があります)、このエントリで指定された追加の値を記述します。
--   両方の新しいサブキーの初期値エントリと共にレジストリに追加します。
+-   指定されたレジストリパスの最後にレジストリに追加される新しいサブキー。
+-   このエントリに指定されている追加の値が書き込まれる既存のサブキー (場合によっては、指定されたサブキーの既存の名前付きの値エントリの値を置き換えることがあります)。
+-   レジストリに新しいサブキーを追加し、その初期値のエントリと共に追加します。
 
-<a href="" id="value-entry-name"></a>*value-entry-name*  
-この省略可能な値か、指定された (既存) で既存の値のエントリの名前*サブキー*を追加する新しい値のエントリの名前を作成しますまたは、指定した*サブキー*それが既に存在するか、新しいキーがあるかどうか、。レジストリに追加します。 この値を表現できるとして **"** <em>文字列を引用符で囲まれた</em> **"** または % として*strkey*INF ので定義されている % トークン[**文字列**](inf-strings-section.md)セクション。 (これを文字列型の値を省略した場合、*値のエントリ名*このキーの値のエントリを「名前」既定値です)。
+<a href="" id="value-entry-name"></a>*値-エントリ名*  
+この省略可能な値は、指定された (既存の)*サブキー*の既存の値エントリに名前を付けるか、または指定した*サブキー*に追加される新しい値エントリの名前を作成します (既に存在しているか、レジストリに追加する新しいキーであるかを示します)。 この値は、 **"** <em>引用符で囲ま</em>れた文字列 **"** として、または INF の [[**文字列**](inf-strings-section.md)] セクションで定義されている%*strkey*% token として表すことができます。 (文字列型の値に対してこれが省略されている場合、このキーの既定の "名前のない" 値エントリが*エントリ名*として指定されます)。
 
-オペレーティング システム サポートの一部のシステム定義された特別な*値のエントリ名*キーワード。 末尾を参照してください。**解説**詳細についてはします。
+オペレーティングシステムでは、システム定義の特別な*値のエントリ名*のキーワードがサポートされています。 詳細については、この**解説**の末尾を参照してください。
 
-<a href="" id="flags"></a>*フラグ*  
-この省略可能な 16 進値、下位ワードのシステム定義の上位ワード フラグの論理和のビットマスク値、値のエントリのデータ型を定義および追加レジストリ操作を制御として表されます。
+<a href="" id="flags"></a>*示す*  
+この省略可能な16進値は、システム定義の小さい単語と上位のフラグ値のビットマスクとして表現され、値エントリのデータ型を定義したり、レジストリの追加操作を制御したりします。
 
-これらのフラグのビットマスク値は次のとおりです。
+これらの各フラグのビットマスク値は次のとおりです。
 
 <a href="" id="0x00000001--flg-addreg-binvaluetype---"></a>**0x00000001** (FLG_ADDREG_BINVALUETYPE)   
-指定された値は、「生」データです。 (この値は、FLG_ADDREG_TYPE_BINARY と同じです)。
+指定された値は "raw" データです。 (この値は FLG_ADDREG_TYPE_BINARY と同じです)。
 
 <a href="" id="0x00000002--flg-addreg-noclobber---"></a>**0x00000002** (FLG_ADDREG_NOCLOBBER)   
-指定した値が既存の値のエントリの値を置換するを防ぐ。
+指定された値によって既存の値エントリの値が置換されないようにします。
 
 <a href="" id="0x00000004--flg-addreg-delval-"></a>**0x00000004** (FLG_ADDREG_DELVAL)  
-削除、指定された*サブキー*レジストリ、または指定された削除から*値のエントリ名*指定されたレジストリから*サブキー*します。
+指定された*サブキー*をレジストリから削除するか、指定された*エントリ名*を指定したレジストリ*サブキー*から削除します。
 
 <a href="" id="0x00000008--flg-addreg-append--"></a>**0x00000008** (FLG_ADDREG_APPEND)   
-追加を指定した*値*の既存のエントリは名前付きの値。 このフラグは FLG_ADDREG_TYPE_MULTI_SZ も設定されている場合にのみ有効です。 指定した文字列値は既に存在する場合は追加されません。
+指定された値を既存の名前付きの値エントリの*値*に追加します。 このフラグは、FLG_ADDREG_TYPE_MULTI_SZ も設定されている場合にのみ有効です。 指定された文字列値は、既に存在する場合は追加されません。
 
 <a href="" id="0x00000010--flg-addreg-keyonly-"></a>**0x00000010** (FLG_ADDREG_KEYONLY)  
-作成、特定*サブキー*、れた指定された値、エントリの名前と値は無視されます。
+指定された*サブキー*を作成しますが、指定された値のエントリ名や値を無視します。
 
 <a href="" id="0x00000020--flg-addreg-overwriteonly--"></a>**0x00000020** (FLG_ADDREG_OVERWRITEONLY)   
-指定されたにリセット*値*場合にのみ、指定した*値、エントリの名前*に既に存在する、特定*サブキー*。
+指定された*値-エントリ名*が指定した*サブキー*に既に存在する場合にのみ、指定された*値*にリセットします。
 
 <a href="" id="0x00001000--flg-addreg-64bitkey--"></a>**0x00001000** (FLG_ADDREG_64BITKEY)   
-(Windows XP および Windows の以降のバージョン。)64 ビットのレジストリで指定された変更を加えます。 指定しない場合は、ネイティブのレジストリに変更が行わします。
+(Windows XP 以降のバージョンの Windows)。64ビットレジストリで、指定された変更を行います。 指定しない場合、ネイティブレジストリに変更が加えられます。
 
 <a href="" id="0x00002000--flg-addreg-keyonly-common-"></a>**0x00002000** (FLG_ADDREG_KEYONLY_COMMON)  
-(Windows XP および Windows の以降のバージョン。)これは、FLG_ADDREG_KEYONLY と同じですが、内でも、 *del-section レジストリ*の[ **INF してディレクティブ**](inf-delreg-directive.md)します。
+(Windows XP 以降のバージョンの Windows)。これは FLG_ADDREG_KEYONLY と同じですが、 [**INF DelReg ディレクティブ**](inf-delreg-directive.md)の*del-registry セクション*でも機能します。
 
 <a href="" id="0x00004000--flg-addreg-32bitkey-"></a>**0x00004000** (FLG_ADDREG_32BITKEY)  
-(Windows XP および Windows の以降のバージョン。)32 ビットのレジストリで指定された変更を加えます。 指定しない場合は、ネイティブのレジストリに変更が行わします。
+(Windows XP 以降のバージョンの Windows)。32ビットレジストリで、指定された変更を行います。 指定しない場合、ネイティブレジストリに変更が加えられます。
 
 <a href="" id="0x00000000--flg-addreg-type-sz-"></a>**0x00000000** (FLG_ADDREG_TYPE_SZ)  
-指定された値または値が型の[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。
+指定された値のエントリまたは値は、 [REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型になります。
 
-**注**  フラグの値は、任意の r から省略できますので、この値は、指定した値エントリの既定の型*例: ルート =* 行、*追加レジストリ セクション*で動作します。この型の値のエントリ。
+この値は、指定された値エントリの既定の型である  **ことに注意**してください。したがって、この型の値のエントリに対して動作する、 *add registry-section*では、flags 値を任意の r (*ルート = 行)* から省略できます。
 
  
 
 <a href="" id="0x00010000--flg-addreg-type-multi-sz-"></a>**0x00010000** (FLG_ADDREG_TYPE_MULTI_SZ)  
-レジストリの種類が、指定された値のエントリや値[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。 次の値フィールドには、コンマで区切られた文字列のリストを指定できます。 この仕様では、指定された文字列値の任意の NULL 終端記号は必要ありません。
+指定された値のエントリまたは値は、レジストリの種類が[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。 次の値フィールドは、コンマで区切られた文字列のリストにすることができます。 この仕様では、特定の文字列値に対して NULL 終端文字は必要ありません。
 
 <a href="" id="0x00020000--flg-addreg-type-expand-sz--"></a>**0x00020000** (FLG_ADDREG_TYPE_EXPAND_SZ)   
-特定*値のエントリ名*や*値*のレジストリの種類は[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。
+指定された*値-エントリ名*または*値*は、レジストリの種類[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
 
 <a href="" id="0x00010001--flg-addreg-type-dword---flg-addreg-type-dword-"></a>**0x00010001** (FLG_ADDREG_TYPE_DWORD) (FLG_ADDREG_TYPE_DWORD)  
-特定*値のエントリ名*や*値*のレジストリの種類は[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。
+指定された*値-エントリ名*または*値*は、レジストリの種類[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
 
 <a href="" id="0x00020001--flg-addreg-type-none-"></a>**0x00020001** (FLG_ADDREG_TYPE_NONE)  
-特定*値のエントリ名*や*値*のレジストリの種類は[REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。
+指定された*値-エントリ名*または*値*は、レジストリの種類[REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
 
-<a href="" id="value"></a>*値*  
-指定した新しい値を必要に応じて指定*値のエントリ名*特定のレジストリ キーに追加します。 このような*値*という名前で追加する値、既存のキー値のエントリを既存の「置換」値を指定できます (*フラグ*値**0x00010008**) を既存の名前[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-新しいの既存のキーを既存のキーに書き込まれる新しい値のエントリまたは初期値のエントリの値のエントリを入力*サブキー*レジストリに追加します。
+<a href="" id="value"></a>*数値*  
+必要に応じて、指定されたレジストリキーに追加する、指定された*値-エントリ名*の新しい値を指定します。 このよう*な値*には、既存のキーに含まれる既存の名前付きの値のエントリの "置換" 値、既存のキーの既存の名前付きの[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値のエントリに追加する値 (*フラグ*値**0x00010008**)、新しい値を指定できます。既存のキーに書き込むエントリ、またはレジストリに追加する新しい*サブキー*の初期値のエントリ。
 
-このような式を*値*に指定されたレジストリの種類によって異なります、*フラグ*、次のようにします。
+このような*値*の式は、次のように、*フラグ*に指定されたレジストリの種類によって異なります。
 
--   レジストリの文字列型の値を表すことがいずれかを"*文字列を引用符で囲まれた*"または % として*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクションINF ファイルです。 このような INF 指定の値を各文字列の最後に終端の NULL を含める必要はありません。
--   数値型のレジストリ値は、(0 x 表記を使用して) によって 16 進数または 10 進数として表現できます。
+-   レジストリ文字列型の値は、"引用符で囲まれた*文字列*" として、または INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義されている%*strkey*% token として表すことができます。 このような INF 指定値では、各文字列の末尾に NULL 終端記号を含める必要はありません。
+-   レジストリの数値型の値は、16進数 (0x 表記を使用) または10進数として表すことができます。
 
-<a href="" id="security-descriptor-string"></a>*セキュリティ記述子の文字列*  
-名前付きによって作成されたすべてのレジストリ エントリに適用する、セキュリティ記述子を指定*追加レジストリ セクション*します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:** ) セキュリティ コンポーネント。
+<a href="" id="security-descriptor-string"></a>*セキュリティ記述子-文字列*  
+指定された*レジストリセクション*によって作成されるすべてのレジストリエントリに適用されるセキュリティ記述子を指定します。 *セキュリティ記述子文字列*は、DACL (**D:** ) セキュリティコンポーネントを示すトークンを含む文字列です。
 
-場合、<em>追加レジストリ セクション</em> **.security**セクションが指定されていない、レジストリ エントリが親のキーのセキュリティ設定を継承します。
+<em>Add registry-section</em> **. security**セクションが指定されていない場合、レジストリエントリは親キーのセキュリティ設定を継承します。
 
-場合、<em>追加レジストリ セクション</em> **.security**セクションを指定すると、デバイスおよびシステム サービス パックのインストールとアップグレードが発生することができるように、次の ACE を含める必要があります。
+<em>Add registry-section</em> **. security**セクションが指定されている場合、デバイスとシステムサービスパックのインストールとアップグレードが発生するように、次の ACE が含まれている必要があります。
 
--   (A;GA;;この SY) は、ローカル システムにすべてのアクセスを付与します。
--   (A;GA;;この BA) は、組み込みの管理者のすべてのアクセスを付与します。
+-   (A;;GA、;、SY) −ローカルシステムへのすべてのアクセスを許可します。
+-   (A;;GA、;、BA: 組み込みの管理者へのすべてのアクセスを許可します。
 
-*いない*特権を持たないユーザーに書き込みアクセスを許可する ACE 文字列を指定します。
+権限*のないユーザー*に書き込みアクセス権を付与する ACE 文字列を指定しないでください。
 
-セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
+セキュリティ記述子の文字列の詳細については、「[セキュリティ記述子定義言語 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)」を参照してください。 セキュリティ記述子文字列の形式の詳細については、「セキュリティ記述子定義言語 (Windows)」を参照してください。
 
-セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
+セキュリティ記述子を指定する方法の詳細については、「セキュリティ[で保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**AddReg**上記の正式な構文のステートメントで次のセクションのいずれかのディレクティブを指定できます。 このディレクティブは、INF ライター定義の次のセクションのいずれかも指定できます。
+**AddReg**ディレクティブは、上記の仮構文ステートメントに示されているいずれかのセクションの下で指定できます。 このディレクティブは、次の INF ライターで定義されたセクションのいずれかで指定することもできます。
 
--   A*サービス-インストール セクション*または*インストール ログ イベントが*セクションによって参照される、 [ **AddService** ](inf-addservice-directive.md)ディレクティブで、 [ **INF *DDInstall*します。サービス セクション**](inf-ddinstall-services-section.md)します。
--   *追加インターフェイス セクション*によって参照される、 [ **AddInterface** ](inf-addinterface-directive.md)ディレクティブで、 [ **INF *DDInstall*.インターフェイス セクション**](inf-ddinstall-interfaces-section.md)します。
--   *インストール-section インターフェイス*で参照されている、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。
+-   INF Ddinstall で[**addservice**](inf-addservice-directive.md)ディレクティブによって参照される、*サービスのインストール*セクションまたは*イベントログのインストール*セクション[ **。サービスセクション**](inf-ddinstall-services-section.md)。
+-   INF Ddinstall で[**addinterface**](inf-addinterface-directive.md)ディレクティブによって参照される、*インターフェイスの追加セクション* [ **。インターフェイスセクション**](inf-ddinstall-interfaces-section.md)。
+-   [**INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)で参照される*インストールインターフェイスセクション*。
 
-各*追加レジストリ セクション*名は、INF ファイルに固有である必要がありますが、それを参照できます**AddReg**同じ INF の他のセクション ディレクティブ。 各セクション名に記載されているセクションの名前の定義の一般的な規則に従う必要があります[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*add registry セクション*名は inf ファイルに対して一意である必要がありますが、同じ inf の他のセクションの**AddReg**ディレクティブで参照できます。 各セクション名は、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」で説明されているセクション名を定義するための一般的な規則に従う必要があります。
 
-**注**  下位のビット フラグの値の下位ワードの文字データやバイナリ データを区別します。
+フラグ値の下位ワードの下位ビットによって、文字データとバイナリデータが区別さ  **ことに注意**してください。
 
  
 
-レジストリの種類の定義済みの reg _ 1 つ以外の数を表す*XXX*の上位ワードで新しい種類の番号を指定する種類を*フラグ*FLG_ADDREG_BINVALUETYPE その下位のワードでの論理和。 このようなデータを*値*コンマで区切られたバイトのシーケンスとしてバイナリ形式で指定する必要があります。 たとえば、値のエントリとして 0x38 などの新しいレジストリ データ型のデータの 16 バイトを格納するセクション エントリの追加レジストリは次のような。
+定義済みの REG_*XXX*型以外の種類のレジストリを表すには、小さい単語の FLG_ADDREG_BINVALUETYPE と共に、*フラグ*の上位ワードに新しい型番号を指定します。 このような*値*のデータは、コンマで区切られたバイトのシーケンスとしてバイナリ形式で指定する必要があります。 たとえば、新しいレジストリデータ型の16バイトのデータ (0x38 など) を値エントリとして格納する場合、[レジストリの追加] セクションのエントリは次のようになります。
 
 ```ini
 HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 ```
 
-この方法は、数値型の値ではなく新しいレジストリの種類の定義に使用できます[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、または[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。 これらの種類の詳細については、次を参照してください。[レジストリ値の型](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。
+この手法は、値に対して新しいレジストリの種類を定義するために使用できますが、 [REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、または[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値には使用できません。 これらの型の詳細については、「[レジストリ値の型](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)」を参照してください。
 
-### <a name="special-value-entry-name-keywords"></a>特別な*値のエントリ名*キーワード
+### <a name="special-value-entry-name-keywords"></a>特別な*値-エントリ名*のキーワード
 
-HKR で使用するための特別なキーワードが定義されている**AddReg**エントリ。 これらのキーワードを使用するエントリの形式は次のとおりです。
+特別なキーワードは、HKR **AddReg**エントリで使用するために定義されています。 これらのキーワードを使用するエントリの形式は次のとおりです。
 
 ```ini
 [HKR,,DeviceCharacteristics,0x10001,characteristics] 
@@ -225,12 +225,12 @@ HKR で使用するための特別なキーワードが定義されている**Ad
 [HKR,,ResourcePickerExceptions,,"text-string"] ,
 ```
 
-以下に示します、HKR **AddReg**これらの特別なキーワードを使用して、エントリ。
+次に、これらの特殊なキーワードを使用する HKR **AddReg**のエントリについて説明します。
 
 <a href="" id="devicecharacteristics"></a>**DeviceCharacteristics**  
-A **DeviceCharacteristics** HKR **AddReg**エントリは、デバイスの特性を指定します。 *特性*値は 1 つまたは複数のこれはまたはを使用しての結果である数値\*ファイルで定義されている特徴値*Wdm.h*と*Ntddk.h*.
+**DeviceCharacteristics** Hkr **AddReg**エントリは、デバイスの特性を指定します。 *特性*値は、FILE_ および*Ntddk*で定義されている1つ*以上の*\* ファイル特性値に対して or を使用した結果の数値です。
 
-INF では、次の値のみを指定できます。
+INF で指定できる値は次のとおりです。
 
 ```ini
 #define FILE_REMOVABLE_MEDIA            0x00000001
@@ -240,57 +240,57 @@ INF では、次の値のみを指定できます。
 #define FILE_DEVICE_SECURE_OPEN         0x00000100
 ```
 
-これらの値については、次を参照してください。 [ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)します。
+これらの値の詳細については、「 [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)」を参照してください。
 
-使用して指定されている特徴値を**DeviceCharacteristics**エントリへの各呼び出しで指定されているものは論理和**IoCreateDevice**デバイス スタックでデバイス オブジェクトを作成します。 OR 演算は、すべてのデバイス オブジェクトが追加された後、デバイスを開始する前に発生します。
+**DeviceCharacteristics**エントリを使用して指定される特性値は、デバイススタックにデバイスオブジェクトを作成する**IoCreateDevice**の各呼び出しで指定された値との間にあります。 または操作は、すべてのデバイスオブジェクトが追加された後、デバイスが起動される前に発生します。
 
-*特性*値 (ゼロの値を含む) には、クラスが関連付けられているインストーラー INF で指定された任意のクラス全体のデバイスの特性がよりも優先されます。
+*特性*値 (ゼロの値を含む) は、関連付けられているクラスインストーラーの INF に指定されたクラス全体のデバイスの特性をオーバーライドします。
 
-デバイスの特性の詳細については、次を参照してください。[デバイスの特性を指定する](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)します。
+デバイスの特性の詳細については、「[デバイスの特性の指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)」を参照してください。
 
-<a href="" id="devicetype"></a>**DeviceType**  
-A **DeviceType** HKR **AddReg**エントリは、デバイスのデバイスの種類を指定します。 デバイスの種類には、FILE_DEVICE_ の数値*XXX*で定義された定数*Wdm.h*または*Ntddk.h*します。 0x10001 のフラグの値は、デバイスの種類の値があるを指定します、 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。 詳細については、次を参照してください。[デバイスの種類の指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)します。
+<a href="" id="devicetype"></a> **(Devicetype**  
+**(Devicetype** Hkr **AddReg**エントリは、デバイスのデバイスの種類を指定します。 デバイスの種類は、 *Wdm*または*Ntddk*で定義されている FILE_DEVICE_*XXX*定数の数値です。 フラグ値0x10001 は、デバイスの種類の値が[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)であることを指定します。 詳細については、「[デバイスの種類の指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)」を参照してください。
 
-クラス インストーラー INF はすべて、またはすべてのデバイス クラスのほとんどに適用されるデバイスの種類を指定する必要があります。 たとえば、FILE_DEVICE_CD_ROM 型の場合、クラス内のデバイスは、指定、*デバイスの種類*0x02 になります。 デバイスの INF の値を指定する場合**DeviceType**、存在する場合は、クラスのインストーラーによって設定された値をオーバーライドします。 クラスまたはデバイスの INF が指定されている場合、 **DeviceType**値、PnP マネージャーを適用するには、その型、*物理デバイス オブジェクト (PDO)* バス ドライバーによって作成します。
+クラスインストーラーの INF では、クラス内のデバイスのすべて、またはほぼすべてに適用されるデバイスの種類を指定する必要があります。 たとえば、クラス内のデバイスの種類が FILE_DEVICE_CD_ROM である場合は、*デバイスの種類*として0x02 を指定します。 デバイス INF で **(devicetype**の値が指定されている場合は、クラスインストーラーによって設定された値がオーバーライドされます (存在する場合)。 クラスまたはデバイスの INF で **(devicetype**値が指定されている場合、PnP マネージャーは、デバイスのバスドライバーによって作成された*物理デバイスオブジェクト (PDO)* にその種類を適用します。
 
-<a href="" id="security"></a>**セキュリティ**  
-A**セキュリティ**HKR **AddReg**エントリは、デバイスのセキュリティ記述子を指定します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:** ) セキュリティ コンポーネント。
+<a href="" id="security"></a>**保護**  
+**Security** Hkr **AddReg**エントリは、デバイスのセキュリティ記述子を指定します。 *セキュリティ記述子文字列*は、DACL (**D:** ) セキュリティコンポーネントを示すトークンを含む文字列です。
 
-クラス インストーラー INF では、デバイス クラスのセキュリティ記述子を指定できます。 デバイスの INF には、クラスのセキュリティをオーバーライドする個々 のデバイスのセキュリティ記述子を指定できます。 クラスまたはデバイスの INF が指定されている場合、*セキュリティ記述子の文字列*、PnP マネージャー デバイスのすべてのオブジェクトに、記述子の伝達 ( *DOs*) デバイス。 関数のデバイス オブジェクトが含まれます (*FDO*) 省略可能な*DOs をフィルター処理*、および PDO します。
+クラスインストーラー INF は、デバイスクラスのセキュリティ記述子を指定できます。 デバイスの INF では、個々のデバイスのセキュリティ記述子を指定して、クラスのセキュリティをオーバーライドできます。 クラスまたはデバイス INF で*セキュリティ記述子文字列*が指定されている場合、PnP マネージャーはデバイスのすべてのデバイスオブジェクト ( *DOs*) に記述子を伝達します。 これには、関数デバイスオブジェクト (*FDO*)、オプションの*フィルター DOS*、および PDO が含まれます。
 
 セキュリティ記述子文字列の形式の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
+セキュリティ記述子を指定する方法の詳細については、「セキュリティ[で保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
-<a href="" id="upperfilters"></a>**再**  
-**再**HKR **AddReg** PnP 上フィルター ドライバーを指定します。 このエントリで、 [ * **DDInstall *。HW** ](inf-ddinstall-hw-section.md)セクションが 1 つまたは複数のデバイス固有の上位フィルター ドライバーを定義します。 [ **ClassInstall32** ](inf-classinstall32-section.md) セクションで、このエントリが 1 つまたは複数のクラス全体にわたる上フィルター ドライバーを定義します。
+<a href="" id="upperfilters"></a>**UpperFilters**  
+**UpperFilters** Hkr **AddReg**エントリは、PnP 上位フィルタードライバーを指定します。 このエントリは[***ddinstall * にあります。HW** ](inf-ddinstall-hw-section.md)セクションでは、デバイス固有の上位フィルタードライバーを1つ以上定義します。 [**ClassInstall32**](inf-classinstall32-section.md)セクションでは、このエントリはクラス全体の上位フィルタードライバーを1つ以上定義します。
 
 <a href="" id="lowerfilters"></a>**LowerFilters**  
-A **LowerFilters** HKR **AddReg** PnP 低いフィルター ドライバーを指定します。 このエントリで、 <em>DDInstall</em>**します。ハードウェア セクション**1 つまたは複数のデバイスに固有の低いフィルター ドライバーを定義します。 **ClassInstall32**  セクションで、このエントリが 1 つまたは複数のクラス全体にわたる低いフィルター ドライバーを定義します。
+**LowerFilters** Hkr **AddReg**エントリは、PnP 下位フィルタードライバーを指定します。 このエントリは、 <em>Ddinstall</em>に含ま**れています。HW セクションで**は、デバイス固有の下位フィルタードライバーを1つ以上定義します。 **ClassInstall32**セクションでは、このエントリは1つ以上のクラス全体の下位フィルタードライバーを定義します。
 
-<a href="" id="exclusive"></a>**排他的**  
-**排他**HKR **AddReg**エントリが存在し、「1」に設定されている場合を指定します、デバイスがある、*排他デバイス*します。 それ以外の場合、デバイスは扱われませんに排他的です。 詳細については、次を参照してください。[デバイス オブジェクトに排他アクセスを指定する](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-exclusive-access-to-device-objects)します。
+<a href="" id="exclusive"></a>**外税**  
+**排他**Hkr **AddReg**エントリが存在し、"1" に設定されている場合は、デバイスが*排他デバイス*であることを指定します。 それ以外の場合、デバイスは排他として扱われません。 詳細については、「[デバイスオブジェクトへの排他アクセスの指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-exclusive-access-to-device-objects)」を参照してください。
 
 <a href="" id="enumproppages32"></a>**EnumPropPages32**  
-**EnumPropPages32** HKR **AddReg**エントリは、ダイナミック リンク ライブラリの名前を指定します (*DLL*) ファイルをデバイス固有のプロパティ ページのプロバイダー。 名前も指定します、 **ExtensionPropSheetPageProc** DLL によって実装されるコールバック関数。 プロパティ ページと機能の詳細については、Windows 7 および .NET Framework 4.0 用 Microsoft Windows ソフトウェア開発キット (SDK) を参照してください。
+**EnumPropPages32** Hkr **AddReg**エントリは、デバイス固有のプロパティページプロバイダーであるダイナミックリンクライブラリ (*DLL*) ファイルの名前を指定します。 また、DLL によって実装される**Extensionpropsheet Pageproc** callback 関数の名前も指定します。 プロパティページおよび関数の詳細については、Microsoft Windows Software Development Kit (SDK) for Windows 7 および .NET Framework 4.0 を参照してください。
 
-**重要な**  両方の DLL の名前と**ExtensionPropSheetPageProc**コールバック関数をまとめて引用符で囲む必要があります ("")。
+**重要**  DLL と**Extensionpropsheet pageproc** callback 関数の名前は、両方とも引用符 ("") で囲む必要があります。
 
  
 
 <a href="" id="locationinformationoverride"></a>**LocationInformationOverride**  
-(Windows XP および Windows の以降のバージョン)A **LocationInformationOverride** HKR **AddReg**エントリは、デバイスの物理的な場所を説明するテキスト文字列を指定するために使用できます。 これは、上書き、 **LocationInformation**への応答で、デバイスのバス ドライバーを提供する文字列、 [ **IRP_MN_QUERY_DEVICE_TEXT** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)要求。
+(Windows XP 以降のバージョンの Windows)**Locationinformationoverride** Hkr **AddReg** entry を使用すると、デバイスの物理的な場所を記述するテキスト文字列を指定できます。 これは、デバイスのバスドライバーが[**IRP_MN_QUERY_DEVICE_TEXT**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)要求に応答して提供する**locationinformation**文字列をオーバーライドします。
 
 <a href="" id="resourcepickertags"></a>**ResourcePickerTags**  
-A **ResourcePickerTags** HKR **AddReg**エントリは、デバイスのリソース ピッカーのタグを指定します。
+**ResourcePickerTags** Hkr **AddReg**エントリは、デバイスのリソースピッカータグを指定します。
 
 <a href="" id="resourcepickerexceptions"></a>**ResourcePickerExceptions**  
-A **ResourcePickerExceptions** HKR **AddReg**エントリをデバイスに許可されるリソースの競合を指定します。
+**ResourcePickerExceptions** Hkr **AddReg**エントリは、デバイスで許可されるリソースの競合を指定します。
 
 <a name="examples"></a>例
 --------
 
-**AddReg**ディレクティブによって参照される INF ライター定義のセクションで、この例では、(SCSI) Miniport_EventLog_AddReg セクションを参照する、 **AddService**ディレクティブで、 <em>DDInstall</em>**します。サービス**のこの INF セクション。
+**AddReg**ディレクティブは、この例の (SCSI) Miniport_EventLog_AddReg セクションを参照しています。この例では、 <em>Ddinstall</em>で**addservice**ディレクティブによって参照されている INF ライター定義セクションの下に**あります。** この INF のサービスセクション。
 
 ```ini
 [Miniport_EventLog_AddReg]
@@ -314,19 +314,19 @@ HKR,,TypesSupported,0x00010001,7
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[***Ddinstall *.CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[***DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
+[***Ddinstall *.HW**](inf-ddinstall-hw-section.md)
 
-[***DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)
+[***Ddinstall *.インターフェイス**](inf-ddinstall-interfaces-section.md)
 
-[***DDInstall *。サービス**](inf-ddinstall-services-section.md)
+[***Ddinstall *.サービス**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
-[**文字列**](inf-strings-section.md)
+[**Strings**](inf-strings-section.md)
 
  
 

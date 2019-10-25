@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE プロパティがアシスタント flash をサポートするために拡張します。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FLASHMODE
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FLASHMODE プロパティは、assistant flash をサポートするように拡張されています。
 ms.assetid: 413B3A02-498A-4C5A-8940-9A0D10D6CE81
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_FLASHMODE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_FLASHMODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f8806bf3588b8564c604d97cd6ad22c4d9832c51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb87cdccb34b4ea3267c154993754f82a6a1fd1f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347958"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843230"
 ---
-# <a name="kspropertycameracontrolextendedflashmode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE
+# <a name="ksproperty_cameracontrol_extended_flashmode"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FLASHMODE
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE**アシスタント flash をサポートするためにプロパティが拡張されます。
+**Ksk プロパティ\_CAMERACONTROL\_extended\_FLASHMODE**プロパティは、assistant flash をサポートするように拡張されています。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -36,9 +36,9 @@ ms.locfileid: "63347958"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +50,7 @@ ms.locfileid: "63347958"
 </tbody>
 </table>
 
-機能フラグの定義は次のとおりです。
+機能フラグは、次のように定義されています。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_FLASH_ASSISTANT_ON               0x0000000000000080
@@ -58,19 +58,19 @@ ms.locfileid: "63347958"
 #define KSCAMERA_EXTENDEDPROP_FLASH_ASSISTANT_OFF              0x0000000000000000
 ```
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_アシスタント\_ON**
+**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_ON**
 
-このフラグは、AF アシスタントの光が有効であることを示します。
+このフラグは、AF アシスタントライトがオンになっていることを示します。
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_アシスタント\_自動**
+**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_AUTO**
 
-このフラグと似ています、**アシスタント\_ON**フラグ。 常に、AF アシスタントのライトの有効化ではなくかどうか AF アシスタントのライトをオンに現在の照明条件に基づいて、カメラのドライバーを決定します。
+このフラグは、 **ASSISTANT\_ON**フラグに似ています。 常に AF アシスタントライトをオンにするのではなく、カメラドライバーは、現在の照明条件に基づいて AF アシスタントのライトをオンにするかどうかを決定します。
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_アシスタント\_OFF**
+**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_オフ**
 
-このフラグは、AF アシスタントのライトがオフであることを示します。
+このフラグは、AF アシスタントライトがオフであることを示します。
 
-説明、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE**プロパティは、Windows 8.1 DDI と同じです。
+**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FLASHMODE**プロパティを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造フィールドの説明は、Windows 8.1 DDI と同じです。
 
 ## <a name="requirements"></a>要件
 

@@ -4,19 +4,19 @@ description: WDI_TLV_CIPHER_KEY_TYPE_INFO は、OID_WDI_SET_ADD_CIPHER_KEYS と 
 ms.assetid: 1168D53D-A837-4E3F-8E31-FB86CF866BA3
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CIPHER_KEY_TYPE_INFO ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_CIPHER_KEY_TYPE_INFO ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ed5ff3d67c4be4acd74f4acc830e6b21d110f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6fe3691a85a81ad8eaca6f111973f9aa20b0f5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362822"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843393"
 ---
-# <a name="wditlvcipherkeytypeinfo"></a>WDI\_TLV\_暗号\_キー\_型\_情報
+# <a name="wdi_tlv_cipher_key_type_info"></a>WDI\_TLV\_暗号\_キー\_種類\_情報
 
 
-WDI\_TLV\_暗号\_キー\_型\_情報は、暗号キーの種類の情報を含む TLV [OID\_WDI\_設定\_の追加\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)と[OID\_WDI\_設定\_削除\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)します。
+WDI\_TLV\_暗号\_キー\_型\_情報は、 [oid\_WDI\_SET\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)暗号キーの種類の情報を含む TLV であり\_暗号\_キーおよび OID を追加 @no__ [t_12_ WDI\_\_暗号\_キーを削除\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,21 +26,21 @@ WDI\_TLV\_暗号\_キー\_型\_情報は、暗号キーの種類の情報を含�
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                                 | 説明                                                                                                                                                                                                                                                                                     |
+| タスクバーの検索ボックスに                                                                 | 説明                                                                                                                                                                                                                                                                                     |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)          | キーを使用する暗号アルゴリズムを指定します。                                                                                                                                                                                                                                               |
-| [**WDI\_暗号\_キー\_方向**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_key_direction) | キーを使用するかどうかを指定のみを送信、受信のみ、またはその両方です。                                                                                                                                                                                                              |
-| UINT8                                                                | ポートが、ローミングのキーを削除するかどうかを指定します。 この値が 0 に設定されている場合は、ポート、BSS ネットワークから切断または BSS ネットワークに接続するときに、キーを削除する必要があります。 この値が 1 に設定されている場合、明示的な削除またはリセット要求にキーを削除する必要があります。 |
-| [**WDI\_暗号\_キー\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_key_type)           | パブリッシュされているキーの種類を指定します。                                                                                                                                                                                                                                                      |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)          | キーを使用する暗号アルゴリズムを指定します。                                                                                                                                                                                                                                               |
+| [**WDI\_暗号\_キー\_方向**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_direction) | キーを送信専用、受信のみ、またはその両方に使用するかどうかを指定します。                                                                                                                                                                                                              |
+| UINT8                                                                | ポートでローミング時にキーを削除するかどうかを指定します。 この値が0に設定されている場合、ポートが BSS ネットワークから切断されたとき、または BSS ネットワークに接続するときに、キーを削除する必要があります。 この値が1に設定されている場合は、明示的な削除またはリセット要求でキーを削除する必要があります。 |
+| [**WDI\_暗号\_キー\_の種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_type)           | 発行されるキーの種類を指定します。                                                                                                                                                                                                                                                      |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -59,7 +59,7 @@ WDI\_TLV\_暗号\_キー\_型\_情報は、暗号キーの種類の情報を含�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

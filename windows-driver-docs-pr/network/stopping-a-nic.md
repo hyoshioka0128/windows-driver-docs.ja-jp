@@ -3,18 +3,18 @@ title: NIC の停止
 description: NIC の停止
 ms.assetid: 033b45bd-fbe9-4a40-84e6-b9447370b17f
 keywords:
-- Nic WDK ネットワー キング、停止しています
-- 停止、ネットワーク インターフェイス カード WDK ネットワーク
-- プラグ アンド プレイ WDK NDIS ミニポート、NIC を停止しています
-- stopping NICs WDK networking
+- Nic WDK ネットワーク、停止
+- ネットワークインターフェイスカード WDK ネットワーク、停止
+- WDK NDIS ミニポートのプラグアンドプレイ、NIC の停止
+- Nic の停止 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eec84918a712f7fec38aee14d2af9723f282dc7b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4639540bad0cb7ed91b4e564983839f3c60ca13
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383594"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841820"
 ---
 # <a name="stopping-a-nic"></a>NIC の停止
 
@@ -22,63 +22,63 @@ ms.locfileid: "67383594"
 
 
 
-再構成または NIC に割り当てることがハードウェア リソースを再調整できるように、PnP マネージャーは、NIC を停止します。 次の手順では、NDIS が NIC の停止に参加する方法について説明します。
+PnP マネージャーは、nic に割り当てられているハードウェアリソースを再構成または再調整できるように、NIC を停止します。 次の手順では、NDIS が NIC の停止に参加するしくみについて説明します。
 
-1.  PnP マネージャーの問題、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求。
+1.  PnP マネージャーは、\_デバイスの要求を[**停止\_、IRP\_の\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)を発行します。
 
-2.  NDIS は、この IRP を受信、呼び出し、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)ドライバー スタック内の NIC に関連付けられている最も低いフィルター ドライバーの機能です。 この呼び出しで NDIS 指定のイベント コード**NetEventQueryRemoveDevice**します。
+2.  NDIS がこの IRP を受け取ると、ドライバースタック内の NIC に接続されている最も低いフィルタードライバーの[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventQueryRemoveDevice**のイベントコードを指定します。
 
-    **注**  NDIS は、エントリをアドバタイズするフィルター ドライバーのためだけにこの手順を実行、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数。 呼び出すときに、フィルター ドライバーはこのエントリ ポイントをアドバタイズし、 [ **NdisFRegisterFilterDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfregisterfilterdriver)関数。
-
-     
-
-3.  呼び出しのコンテキスト内でその[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数、フィルター ドライバーを呼び出す必要があります[ **NdisFNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfnetpnpevent)を転送するには**NetEventQueryRemoveDevice**ドライバー スタックでは、次のフィルター ドライバーまでイベント。 これにより、NDIS フィルター ドライバーの呼び出しに*FilterNetPnPEvent*のイベント コードを使用して関数**NetEventQueryRemoveDevice**します。
-
-    **注**  NDIS ドライバー スタックのエントリ ポイントを通知するには、次のフィルター ドライバーに対してのみこの手順を実行する、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数。
+    **注**  NDIS は、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数のエントリポイントを提供するフィルタードライバーに対してのみこの手順を実行します。 フィルタードライバーは、 [**NdisFRegisterFilterDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver)関数を呼び出すときにこのエントリポイントをアドバタイズします。
 
      
 
-4.  スタックの最上位フィルター ドライバーが転送されるまでドライバー スタック内の各フィルター ドライバーが、前の手順を繰り返し、 **NetEventQueryRemoveDevice**イベント。
+3.  フィルタードライバーは、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数の呼び出しのコンテキスト内で、 [**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent)を呼び出して、ドライバースタック内の次のフィルタードライバーに**NetEventQueryRemoveDevice**イベントを転送する必要があります。 これにより、NDIS は、イベントコード**NetEventQueryRemoveDevice**を使用して、そのフィルタードライバーの*FilterNetPnPEvent*関数を呼び出します。
 
-    この場合、NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event) NIC にバインドされているすべてのプロトコル ドライバーの機能 この呼び出しで NDIS 指定のイベント コード**NetEventQueryRemoveDevice**します。
-
-5.  プロトコル ドライバーに失敗した場合、 **NetEventQueryRemoveDevice**イベントからのエラー コードを返すことによって*ProtocolNetPnPEvent*、NDIS または PnP マネージャーがエラーを無視し、後から成功、IRP\_MN\_クエリ\_停止\_デバイス要求。 プロトコル ドライバーが失敗した場合でも、NIC の削除を処理するためにプロトコル ドライバーを準備する必要があります、そのため、 **NetEventQueryRemoveDevice**イベント。
-
-6.  PnP マネージャーの問題、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)デバイスの停止を要求または[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)保留中の停止のキャンセルを要求します。
-
-7.  PnP マネージャー IRP が発行された場合\_MN\_キャンセル\_停止\_デバイス要求、NDIS 呼び出し、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)最下位の関数ドライバー スタック内の NIC に関連付けられているフィルター ドライバー。 この呼び出しで NDIS 指定のイベント コード**NetEventCancelRemoveDevice**します。
-
-    **注**  NDIS は、エントリをアドバタイズするフィルター ドライバーのためだけにこの手順を実行、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数。
+    **注**  NDIS は、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数のエントリポイントをアドバタイズする、ドライバースタック内の次のフィルタードライバーに対してのみこの手順を実行します。
 
      
 
-8.  呼び出しのコンテキスト内でその[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数、フィルター ドライバーを呼び出す必要があります[ **NdisFNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfnetpnpevent)を転送するには**NetEventCancelRemoveDevice**ドライバー スタックでは、次のフィルター ドライバーまでイベント。 これにより、NDIS フィルター ドライバーの呼び出しに*FilterNetPnPEvent*のイベント コードを使用して関数**NetEventCancelRemoveDevice**します。
+4.  ドライバースタック内の各フィルタードライバーは、スタック内の最上位のフィルタードライバーが**NetEventQueryRemoveDevice**イベントを転送するまで、前の手順を繰り返します。
 
-    **注**  NDIS ドライバー スタックのエントリ ポイントを通知するには、次のフィルター ドライバーに対してのみこの手順を実行する、 [ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)関数。
+    この場合、NDIS は NIC にバインドされているすべてのプロトコルドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventQueryRemoveDevice**のイベントコードを指定します。
+
+5.  プロトコルドライバーが*ProtocolNetPnPEvent*からエラーコードを返すことによって**NetEventQueryRemoveDevice**イベントに失敗した場合、NDIS または PnP マネージャーはエラーを無視し、その後 IRP\_\_完了したクエリを成功させる可能性があり\_デバイス要求の\_を停止します。 したがって、プロトコルドライバーは**NetEventQueryRemoveDevice**イベントに失敗した場合でも、NIC の削除を処理できるように準備する必要があります。
+
+6.  PnP マネージャーは、 [**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)を完了\_、デバイスを停止する\_デバイスの要求を停止するか、または[**irp\_完了\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)の要求を中止して、保留中の停止をキャンセル\_ます。\_
+
+7.  PnP マネージャーが IRP\_を発行し、\_デバイスの要求を停止\_\_キャンセルすると、NDIS はドライバースタック内の NIC に接続されている最も低いフィルタードライバーの[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventCancelRemoveDevice**のイベントコードを指定します。
+
+    **注**  NDIS は、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数のエントリポイントを提供するフィルタードライバーに対してのみこの手順を実行します。
 
      
 
-9.  スタックの最上位フィルター ドライバーが転送されるまでドライバー スタック内の各フィルター ドライバーが、前の手順を繰り返し、 **NetEventCancelRemoveDevice**イベント。
+8.  フィルタードライバーは、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数の呼び出しのコンテキスト内で、 [**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent)を呼び出して、ドライバースタック内の次のフィルタードライバーに**NetEventCancelRemoveDevice**イベントを転送する必要があります。 これにより、NDIS は、イベントコード**NetEventCancelRemoveDevice**を使用して、そのフィルタードライバーの*FilterNetPnPEvent*関数を呼び出します。
 
-    この場合、NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event) NIC にバインドされているすべてのプロトコル ドライバーの機能 この呼び出しで NDIS 指定のイベント コード**NetEventCancelRemoveDevice**します。
+    **注**  NDIS は、 [*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数のエントリポイントをアドバタイズする、ドライバースタック内の次のフィルタードライバーに対してのみこの手順を実行します。
 
-10. PnP マネージャーが IRP を発行する場合\_MN\_停止\_デバイス要求と、NDIS は、次の手順を実行します。
+     
 
-    1.  NIC にバインドされているすべてのプロトコル ドライバーが一時停止します
+9.  ドライバースタック内の各フィルタードライバーは、スタック内の最上位のフィルタードライバーが**NetEventCancelRemoveDevice**イベントを転送するまで、前の手順を繰り返します。
 
-    2.  NIC に関連付けられているすべてのフィルター ドライバーが一時停止します
+    この場合、NDIS は NIC にバインドされているすべてのプロトコルドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventCancelRemoveDevice**のイベントコードを指定します。
 
-    3.  NIC のミニポート ドライバーが一時停止します
+10. PnP マネージャーが、\_デバイスの要求を停止\_て IRP\_を発行すると、NDIS は次の手順を実行します。
 
-    4.  呼び出す、 [ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex) NIC にバインドされているすべてのプロトコル ドライバーの機能
+    1.  NIC にバインドされているすべてのプロトコルドライバーを一時停止します。
 
-    5.  呼び出す、 [ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach) NIC に関連付けられているすべてのフィルター モジュールの関数
+    2.  NIC に接続されているすべてのフィルタードライバーを一時停止します。
 
-11. NDIS ミニポート ドライバーを呼び出すすべてのプロトコルとフィルター ドライバーはバインドされていないし、NIC からデタッチ、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。 NDIS セット、 *HaltAction*パラメーターの*MiniportHaltEx*に**NdisHaltDeviceStopped**します。
+    3.  NIC のミニポートドライバーを一時停止します。
 
-12. IRP の処理時に\_MN\_停止\_NDIS は NIC 用に作成する機能のデバイス オブジェクト (FDO) を破棄していないデバイスで要求時に、 *AddDevice*ルーチンが呼び出されました。 NDIS は、受信した後にのみデバイス オブジェクトを破棄する[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) nic 要求
+    4.  NIC にバインドされているすべてのプロトコルドライバーの[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)関数を呼び出します。
 
-    PnP マネージャー IRP が発行された場合\_MN\_開始\_NDIS、NIC を再起動するデバイスが NIC に既に作成されている FDO を再利用 NDIS は NIC を再起動し、 この手順の詳細については、次を参照してください。[開始 NIC](starting-a-nic.md)します。
+    5.  NIC に接続されているすべてのフィルターモジュールの[*Filterdetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)関数を呼び出します。
+
+11. すべてのプロトコルドライバーとフィルタードライバーがバインド解除され、NIC から切断されると、NDIS はミニポートドライバーのミニ[*Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数を呼び出します。 NDIS は、 *Miniporthaltex*の*HaltAction*パラメーターを**NdisHaltDeviceStopped**に設定します。
+
+12. \_デバイスの要求を停止\_\_IRP を処理する場合、NDIS は、 *AddDevice*ルーチンが呼び出されたときに NIC 用に作成された機能デバイスオブジェクト (FDO) を破棄しません。 NDIS は、IRP\_を受け取った後にのみデバイスオブジェクトを破棄し、NIC に対する[ **\_デバイスの要求\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)します。
+
+    PnP マネージャーが IRP\_を実行し、NIC を再起動する\_デバイスを起動\_場合、NDIS は以前に NIC 用に作成された FDO を再利用します。 その後、NDIS によって NIC が再起動されます。 この手順の詳細については、「 [NIC を開始する](starting-a-nic.md)」を参照してください。
 
  
 

@@ -1,10 +1,10 @@
 ---
-title: WmiForward ルール (wdm)
-description: WmiForward ルールでは、転送が必要な場合に、ドライバーが WMI のマイナー Irp を転送する必要がありますを指定します。
+title: Wmi 転送ルール (wdm)
+description: "\"WMI 転送\" 規則は、転送が必要な場合に、ドライバーが WMI のマイナー Irp を転送する必要があることを指定します。"
 ms.assetid: c62f37d2-ebd5-4705-9590-d1bf17137802
 ms.date: 05/21/2018
 keywords:
-- WmiForward ルール (wdm)
+- Wmi 転送ルール (wdm)
 topic_type:
 - apiref
 api_name:
@@ -12,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c1caaa93bfe843fa83df0d0f10a896201e58c149
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: a2e3fe033d7b49b9e92fe9c2314a4675aa21f80e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393100"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839093"
 ---
-# <a name="wmiforward-rule-wdm"></a>WmiForward ルール (wdm)
+# <a name="wmiforward-rule-wdm"></a>Wmi 転送ルール (wdm)
 
 
-**WmiForward**ルールでは、ドライバーを転送する必要がありますを指定します[ **WMI マイナー Irp** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-minor-irps)転送が必要な場合。
+"Wmi**転送**" 規則は、転送が必要な場合に、ドライバーが[**WMI のマイナー irp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-minor-irps)を転送する必要があることを指定します。
 
-具体的には、ドライバーを呼び出すと[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)の値、 *IrpDisposition*パラメーターが**IrpForward**、ドライバーを呼び出す必要があります[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)または[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)ディスパッチから戻る前に、IRP を転送するにはルーチンです。
+具体的には、ドライバーが呼び出し元*のパラメーターの*値が**irpdisposition**である場合、ドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)または[**POCALLDRIVER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)を[**呼び出して、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) IRP を転送した後、ディスパッチルーチン。
 
-このルールは、バス ドライバーには適用されません。
+このルールは、バスドライバには適用されません。
 
-A *WMI マイナー IRP*は、 [ **IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control) WMI マイナー関数コードで要求します。
+*Wmi MINOR irp*は、wmi マイナー関数コードを使用した[ **\_システム\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)要求である、irp\_MJ です。
 
-WMI のマイナー Irp の処理に関する詳細については、次を参照してください[ **WDM ドライバーの要件を WMI**](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-requirements-for-wdm-drivers)、 [ **WMI 要求の処理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)、 。[**Windows Management Instrumentation ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、および[ **WMI ライブラリ サポート ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+WMI のマイナー Irp の処理の詳細については、「 [**WDM ドライバーの Wmi 要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-requirements-for-wdm-drivers)」、「 [**wmi 要求の処理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)」、「 [**Windows Management Instrumentation ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」、および「 [**wmi ライブラリサポートルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
 |              |     |
 |--------------|-----|
-| ドライバー モデル | WDM |
+| ドライバーモデル | WDM |
 
-<a name="how-to-test"></a>テスト方法
+<a name="how-to-test"></a>テストする方法
 -----------
 
 <table>
@@ -50,29 +50,29 @@ WMI のマイナー Irp の処理に関する詳細については、次を参�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>WmiForward</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的なドライバーの検証ツール</a>を実行<strong>し、[設定] 規則を</strong>指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="applies-to"></a>対象
+<a name="applies-to"></a>適用対象
 ----------
 
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
-[**PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)参照してください。
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
+[**pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)関連項目
 --------
 
-[**WDM ドライバーの要件を WMI**](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-requirements-for-wdm-drivers)
-[**WMI 要求を処理して**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)
-[**WMI ライブラリのサポートルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+Wmi[**要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)
+wmi[**ライブラリのサポートルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)[**に
+WDM ドライバーの wmi 要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-requirements-for-wdm-drivers)
  
 
  

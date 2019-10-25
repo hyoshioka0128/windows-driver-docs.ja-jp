@@ -3,17 +3,17 @@ title: 先頭と末尾のエッジ ストリーム ポインター
 description: 先頭と末尾のエッジ ストリーム ポインター
 ms.assetid: 73ab974f-8034-421f-980a-2393d84ec54c
 keywords:
-- WDK AVStream、リードとトレーリング エッジのポインターをストリーム配信します。
-- リーディング エッジ ストリーム ポインター WDK AVStream
-- トレーリング エッジ ストリーム ポインター WDK AVStream
+- ストリームポインター WDK AVStream、先頭および末尾のエッジ
+- リーディングエッジストリームポインター WDK AVStream
+- 末尾のエッジストリームポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 370ef4395a69c56b0a7738648122dcd9a7342671
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aebd11c4c4f3c7a3fda4a03b3075c237b98166d3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386648"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843044"
 ---
 # <a name="leading-and-trailing-edge-stream-pointers"></a>先頭と末尾のエッジ ストリーム ポインター
 
@@ -21,13 +21,13 @@ ms.locfileid: "67386648"
 
 
 
-既定では、各 AVStream キューを含む、*リーディング エッジ*ストリーム ポインター。 リーディング エッジは、キューに到着すると、新しいフレームを指します。 具体的には、リーディング エッジは最初に、キューに到着する最初のフレームをポイントし、ミニドライバーは、それを移動するまでは移動しません。 AVStream は、キューの有効期間が存在し、最先端を作成します。 ミニドライバーは、Microsoft によって提供される関数を使用してのリーディング エッジを操作できます。
+既定では、各 AVStream キューには、*先頭のエッジ*ストリームポインターが含まれています。 先頭のエッジは、キューに到着した新しいフレームを指します。 具体的には、先頭のエッジは最初にキューに到達する最初のフレームを指し、ミニドライバーが移動するまでは移動しません。 AVStream は、キューの有効期間中に存在する先頭エッジを作成します。 ミニドライバーは、Microsoft が提供する関数を使用して最先端のエッジを操作できます。
 
-キューに到着すると、新しいフレーム、AVStream は、フレームを既に指してされていないのリーディング エッジをこのフレームをポイントするリーディング エッジを設定します。
+新しいフレームがキューに到着すると、AVStream はこのフレームを指すように先頭のエッジを設定します。これは、先頭のエッジがまだフレームを指していないことが原因です。
 
-リーディング エッジ ストリーム ポインターへのポインターを取得するようにミニドライバーを呼び出す[ **KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)します。
+ミニドライバーは、先頭のエッジストリームポインターへのポインターを取得するために[**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出します。
 
-すべてのリーディング エッジが次の表に示す 2 つの状況を進めるため、ミニドライバーが担当します。
+ミニドライバーは、次の表に要約されている2つの状況のすべてで、最先端のエッジを進める役割を担います。
 
 <table>
 <colgroup>
@@ -42,39 +42,39 @@ ms.locfileid: "67386648"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>フレームは、空のキューに到着します。</p></td>
-<td><p>AVStream では、このフレームをポイントするリーディング エッジを設定します。</p></td>
+<td><p>前の空のキューにフレームが到着します。</p></td>
+<td><p>AVStream は、このフレームを指すように先頭のエッジを設定します。</p></td>
 </tr>
 <tr class="even">
-<td><p>リーディング エッジは、フレームを指します。 このフレームに対応する IRP が取り消されました。</p></td>
-<td><p>AVStream のリーディング エッジを進めます。 リーディング エッジは、新しいフレームを指すようになりました。</p></td>
+<td><p>先頭のエッジがフレームを指しています。 このフレームに対応する IRP は取り消されます。</p></td>
+<td><p>AVStream は、最先端を進めます。 新しいフレームを指すようになりました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-参照してください[Stream ポインターの概要](introduction-to-stream-pointers.md)ストリーム ポインターを進めるの詳細についてはします。
+ストリームポインターの進め方の詳細については、「[ストリームポインターの概要」を](introduction-to-stream-pointers.md)参照してください。
 
-### <a name="specifying-a-trailing-edge-stream-pointer"></a>トレーリング エッジの Stream ポインターを指定します。
+### <a name="specifying-a-trailing-edge-stream-pointer"></a>末尾のエッジストリームポインターの指定
 
-ミニドライバーは、キューがトレーリング エッジ ストリーム ポインターがあることを指定できます。 トレーリング エッジは、通常、ミニドライバーに関心のある最も古いフレームを示します。 トレーリング エッジを指定する設定、KSPIN\_フラグ\_DISTINCT\_トレーリング\_EDGE フラグ、**フラグ**の関連メンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 呼び出して[ **KsPinGetTrailingEdgeStreamPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingettrailingedgestreampointer)トレーリング エッジ ストリーム ポインターへのポインターを取得します。
+ミニドライバーは、キューに末尾のエッジストリームポインターがあることを指定できます。 末尾のエッジは通常、ミニドライバーにとって最も古いフレームを示します。 末尾のエッジを指定するには、関連する[**kspin\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**Flags**メンバーで、kspin\_フラグ\_DISTINCT\_末尾の\_エッジフラグを設定します。 次に、 [**KsPinGetTrailingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingettrailingedgestreampointer)を呼び出して、末尾のエッジストリームポインターへのポインターを取得します。
 
-トレーリング エッジが進めますが既に 0 にドロップを指しているフレームとフレームの参照カウントが完了します。 シンク pin IRP を呼び出し元が完了すると、フレームが IRP を内に含まれる最後の場合は、ソース暗証番号 (pin) は、接続されている pin に IRP を送信します。
+末尾のエッジが進むと、前にポイントしたフレームの参照カウントが0になり、フレームが完了します。 フレームが IRP 内に最後に含まれている場合、シンクピンは IRP を呼び出し元に対して完了します。ソースピンは、IRP を接続先の pin に送信します。
 
-### <a name="maintaining-a-frame-window"></a>フレーム ウィンドウの管理
+### <a name="maintaining-a-frame-window"></a>フレームウィンドウの保守
 
-規則」で説明するフレームの参照カウントの結果として[Stream ポインターの概要](introduction-to-stream-pointers.md)、リードとトレーリング エッジの間のフレームが取り消されるまでキューに残ります<em>フレームがによって参照されていない場合でも、ストリーム ポインター</em>します。 そのため、ミニドライバーは複数の連続するフレームの作業ウィンドウを維持するためにリードとトレーリング エッジのポインターを使用できます。 フレーム ウィンドウには、処理するか、入力待ち状態可能性があります。
+「ストリームポインターの[概要](introduction-to-stream-pointers.md)」で説明されているフレーム参照カウントルールの結果、<em>フレームがストリームポインターによって参照されていない場合でも</em>、先頭と末尾の境界の間のフレームはキャンセルされるまでキューに残ります。 そのため、ミニドライバーは、エッジの先頭と末尾のポインターを使用して、複数の連続したフレームの作業ウィンドウを維持することができます。 ウィンドウ内のフレームは、たとえば、処理または入力を待機している可能性があります。
 
-次の図では、最も古いフレームは、下部にあります。 新しいフレームは、上部に到達します。 各フレームの数は、そのフレームの参照カウントです。 ストリーム ポインターを進めるときにこのダイアグラム内移動します。
+次の図では、最も古いフレームが一番下にあります。 新しいフレームが上部に到達します。 各フレームの数値は、そのフレームの参照カウントです。 ストリームポインターが進むと、この図の上に移動します。
 
-![avstream ストリーム ポインターをピン留めするキューの参照を示す図](images/cnstream4.png)
+![ピンキューを参照する avstream ストリームポインターを示す図](images/cnstream4.png)
 
-左端のキューでは、ミニドライバーがトレーリング エッジを使用して、フレームのワーキング セットを作成する方法を示します。 リードとトレーリング エッジの間には、各フレームでは、ストリーム ポインターにはこれらのフレームが参照されていないという事実に関係なく 1 つの参照カウントには。
+左端のキューは、ミニドライバーが最後のエッジを使用してフレームのワーキングセットを作成する方法を示しています。 これらのフレームを参照するストリームポインターがないという事実にかかわらず、先頭と末尾のエッジ間の各フレームの参照カウントは1になります。
 
-中央のキューの例に示します[Stream ポインターの複製](cloning-stream-pointers.md)します。 ドライバーが繰り返しを複製し、暗証番号 (pin) プロセスの手順」の説明に従って、最先端を advanced [AVStream DMA サービス](avstream-dma-services.md)します。
+中間キューは、[ストリームポインターを複製](cloning-stream-pointers.md)する例です。 [Avstream DMA サービス](avstream-dma-services.md)の [プロセスのピン留め] ステップで説明されているように、ドライバーは繰り返し複製されてから、最先端のエッジを高度に拡張しています。
 
-最も右にあるキューでは、複製のストリーム ポインターを使用して、ミニドライバーがトレーリング エッジの背後にあるフレームの参照カウントを維持する方法を示します。
+右端のキューは、ストリームポインターの複製を使用して、ミニドライバーが末尾のエッジの背後にあるフレームの参照カウントを維持する方法を示しています。
 
  
 

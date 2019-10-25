@@ -1,70 +1,70 @@
 ---
 title: 割り当ての使用状況の追跡
-description: 消滅の割り当てリスト、ビデオ メモリ マネージャーはなくなりました可視性を特定のコマンド バッファーで参照されている割り当て。
+description: 割り当て一覧が表示されなくなると、ビデオメモリマネージャーは特定のコマンドバッファーで参照されている割り当てを認識できなくなります。
 ms.assetid: F913C9A3-535F-4DA0-8895-7A05CBF4D4AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f708880fb88a16065872dd82f38a55f48bbab34
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eab671084e032857dd80be464bd31ea5b361d251
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384643"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839076"
 ---
 # <a name="allocation-usage-tracking"></a>割り当ての使用状況の追跡
 
 
-消滅の割り当てリスト、ビデオ メモリ マネージャーはなくなりました可視性を特定のコマンド バッファーで参照されている割り当て。 このため、ビデオ メモリ マネージャーが割り当ての使用状況を追跡し、関連の同期を処理するために、位置。 この責任はユーザー モード ドライバーに今すぐ分類されます。 具体的には、ユーザー モード ドライバーは、割り当てと名前の変更に直接アクセスする CPU に対して同期を処理する必要があります。
+割り当て一覧が表示されなくなると、ビデオメモリマネージャーは特定のコマンドバッファーで参照されている割り当てを認識できなくなります。 このため、ビデオメモリマネージャーは、割り当ての使用状況を追跡し、関連する同期を処理するための位置ではなくなりました。 この責任は、ユーザーモードドライバーに分類されるようになります。 特に、ユーザーモードドライバーは、割り当てへの直接の CPU アクセスと名前の変更に関して、同期を処理する必要があります。
 
-割り当ての破棄のビデオ メモリ マネージャーは非同期的に延期がどちらも非ブロッキング呼び出し元のスレッドと非常に高いパフォーマンスの安全な方法でこれらします。 そのため、ユーザー モード ドライバーは、割り当ての破棄を延期することを気にするがありません。 ビデオ メモリ マネージャーが前提としています、既定で破棄要求する前にキューに置かれた可能性があります破棄されている割り当てのアクセス可能性のあるコマンドと、キューに置かれたまで、破棄操作を延期割り当て破棄要求を受信すると、コマンドが完了します。 ユーザー モード ドライバーを知っている保留中のコマンドを設定して、ビデオ メモリ マネージャー プロセスを待たず、要求するよう指示できますが、破棄されている割り当てにアクセスしない場合、 **AssumeNotInUse**フラグを呼び出すときに[ *Deallocate2* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocate2cb)または[ **DestroyAllocation2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtdestroyallocation2)します。
+割り当ての破棄では、ビデオメモリマネージャーは、呼び出し元のスレッドの非ブロッキングと非常に高いパフォーマンスの両方になる安全な方法で、これらを非同期的に遅延させます。 このようなユーザーモードドライバーでは、割り当ての破棄を延期する必要がありません。 割り当て破棄要求を受信すると、ビデオメモリマネージャーは既定で、破棄要求の前にキューに置かれたコマンドが破棄される割り当てにアクセスし、キューに置かれるまで破棄操作を遅延させる可能性があることを前提としています。コマンドが完了します。 保留中のコマンドが破棄されている割り当てにアクセスしないことをユーザーモードドライバーが認識している場合、 [*Deallocate2*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocate2cb) [**を呼び出すときに AssumeNotInUse フラグを設定することによって、待機せずにビデオメモリマネージャーが要求を処理するように指示することができます。DestroyAllocation2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtdestroyallocation2)。
 
 ## <a name="span-idlock2spanspan-idlock2spanspan-idlock2spanlock2"></a><span id="Lock2"></span><span id="lock2"></span><span id="LOCK2"></span>Lock2
 
 
-ユーザー モード ドライバーは、CPU への直接アクセスに関して適切な同期の処理になります。 具体的には、ユーザー モード ドライバーは、以下をサポートする必要があります。
+ユーザーモードドライバーは、直接の CPU アクセスに対する適切な同期を処理する役割を担います。 特に、次の機能をサポートするには、ユーザーモードドライバーが必要です。
 
-1.  サポートは、no 上書きし、ロック セマンティクスを破棄します。 つまり、ユーザー モード ドライバーが、独自の名前の変更のスキームを実装する必要があるということです。
-2.  マップ操作が同期されていない、上記 no-overwrite (破棄) することで、ユーザー モード ドライバーをする必要があります。
+1.  No-overwrite および破棄ロックセマンティクスをサポートします。 これは、ユーザーモードドライバーが独自の名前変更スキームを実装する必要があることを意味します。
+2.  同期を必要とするマップ操作 (つまり、上記の上書きなしまたは破棄) の場合、ユーザーモードドライバーは次の操作を行う必要があります。
 
-    -   返す**WasStillDrawing**割り当ては現在ビジー状態にアクセスしようし、する、呼び出し元が要求した場合、**ロック**操作呼び出し元のスレッドをブロック (**D3D11\_マップ\_フラグ\_は\_いない\_待機**)。
-    -   または、 **D3D11\_マップ\_フラグ\_は\_いない\_待機**フラグが設定されていない、割り当てが CPU アクセス可能になるまで待機します。 ユーザー モード ドライバーは、非ポーリング待機を実装する必要があります。 ユーザー モードのドライバーのメカニズムを監視する新しいコンテキストを使用します。
+    -   現在ビジー状態の割り当てにアクセスしようとしたときに、呼び出し元が、呼び出し元のスレッドを**ブロックしない**ことを要求した場合は、 **WasStillDrawing**を返します (**D3D11\_MAP\_フラグ\_\_実行されません @no__ 待機**)。\_
+    -   または、 **D3D11\_MAP\_\_フラグ**が設定されていない場合は\_\_待機フラグが設定されていない場合は、割り当てが CPU アクセスに使用できるようになるまで待機します。 ユーザーモードドライバーは、ポーリング以外の待機を実装する必要があります。 ユーザーモードドライバーは、新しいコンテキスト監視メカニズムを使用します。
 
-ここでは、ユーザー モード ドライバーは引き続き呼び出す必要があります[ *LockCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)/[*UnlockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockcb)ビデオ メモリを要求するにはCPU へのアクセスの割り当てを設定するマネージャー。 ほとんどの場合、ユーザー モード ドライバーは存続期間全体にマップされている割り当てを保持することになります。 ただし、今後で*LockCb*と*UnlockCb*新しい優先の廃止される予定[ *Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)と[ *Unlock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock2cb)呼び出し。 これらの新しいコールバックの目的は、引数とフラグの新しいセットを新しいクリーンな実装を提供することです。
+現時点では、ユーザーモードドライバーは引き続き[*Lockcb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)/[*UnlockCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockcb)を呼び出して、ビデオメモリマネージャーに CPU アクセスの割り当てを設定するように求める必要があります。 ほとんどの場合、ユーザーモードドライバーは、割り当てを有効期間全体にわたってマップしたままにすることができます。 ただし、今後、 *Lockcb*と*UnlockCb*は、新しい[*Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)と[*Unlock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock2cb)の呼び出しを優先して非推奨となる予定です。 これらの新しいコールバックの目的は、新しい完全な実装を提供し、新しい一連の引数とフラグを使用することです。
 
-スウィズ リング範囲は、Windows Display Driver Model (WDDM) v2 から削除されへの呼び出しからスウィズ リング範囲への依存関係を削除するドライバー開発者の責任は[ *LockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)として実装に基づいているに向かって移動[ *Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)します。
+スウィズリングの範囲は Windows Display Driver Model (WDDM) v2 から削除されており、ドライバー開発者は、スウィズリング範囲の依存関係を[*Lockcb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)の呼び出しから削除し[*ます。Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)。
 
-[*Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)仮想アドレス割り当てを取得するための単純なメソッドとして公開されます。 割り当てと同様に現在常駐している現在のセグメントの種類に基づいて、いくつかの制限があります。
+[*Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)は、割り当てに仮想アドレスを取得するための簡単な方法として公開されています。 割り当ての種類と、現在現在存在している現在のセグメントに基づいて、いくつかの制限があります。
 
-次の適用の*CPUVisible*割り当て。
+*Cpu を参照できる*割り当てには、次のものが適用されます。
 
--   キャッシュ*CPUVisible*割り当てする必要があります、aperture セグメント内に存在またはロックするには存在できません。 CPU と、グラフィックス プロセッシング ユニット (GPU) 上のメモリ セグメントの間のキャッシュの一貫性は保証できません。
--   *CPUVisible*内にある割り当てを完全に*CPUVisible* lockable と仮想のアドレスを返すことができません (サイズ変更可能なバーを使用してサイズ変更) メモリ セグメントが保証されます。 このシナリオでは、特殊な制約は必要ありません。
--   *CPUVisible*内に配置された割り当て、!*CPUVisible*メモリ セグメント (へのアクセスの有無、 *CPUHostAperture*) をさまざまな理由から、CPU の仮想アドレスにマップされることはできません。 場合、 *CPUHostAperture*領域または割り当てが aperture セグメントを指定していない、仮想のアドレスは、取得することはできませんが使用可能な外です。 このためする必要がありますすべて*CPUVisible*内の割り当て!*CPUVisible*メモリ セグメントは、私たちはシステム メモリ内で割り当てを配置し、仮想のアドレスを提供できることを保証する設定がサポートされているセグメントの絞りセグメントを含める必要があります。
--   *CPUVisible*割り当て既にシステム メモリ内にある (または aperture セグメントにマップされている) 動作することが保証されます。
+-   キャッシュされた*cpu で表示*される割り当ては、アパーチャセグメント内に存在するか、またはロックするために常駐していない必要があります。 CPU とグラフィックス処理装置 (GPU) のメモリセグメントの間のキャッシュの整合性を保証することはできません。
+-   (サイズ変更可能なバーを使用してサイズを変更して) 完全に*cpu*に表示されるメモリセグメントにある、 *cpu で参照*可能な割り当ては、ロック可能であり、仮想アドレスを返すことができることが保証されます。 このシナリオでは、特別な制約は必要ありません。
+-   内に検出された、 *cpu を参照できる*割り当てCPU が*可視*であるメモリセグメント (Cpu*ホストアパーチャ*にアクセスしているか、使用されていないか) は、さまざまな理由で CPU 仮想アドレスにマップできません。 *Cpu ホスト*数が使用可能な領域を超えているか、割り当てによって絞りセグメントが指定されていない場合、仮想アドレスを取得することはできません。 このため、すべての Cpu が*可視*であることが必要です。*Cpu が参照*可能なメモリセグメントには、サポートされているセグメントセット内のアパーチャセグメントが含まれている必要があります。これにより、割り当てをシステムメモリ内に配置して仮想アドレスを指定できるようになります。
+-   既にシステムメモリ内に存在する (または、アパーチャセグメントにマップされている) *cpu で参照可能*な割り当ては確実に動作します。
 
-次に適用されます。*CPUVisible*割り当て。
+には、次のものが適用されます。*Cpu が参照可能*な割り当て:
 
--   *CPUVisible* Gpu フレーム バッファーを直接指し示すことはできませんが、セクション オブジェクトによって割り当てがサポートされます。 ロックするために、!*CPUVisible*割り当てまたはいる必要が割り当てのサポートでサポートされているセグメントの開口部セグメント設定すると、(する必要がありますはないデバイスに存在)、システム メモリにあること。
+-   *Cpu が参照できる*割り当ては、gpu フレームバッファーを直接指すことができないセクションオブジェクトによってバックアップされます。 をロックするには、*Cpu が参照可能*な割り当てでは、割り当てがサポートされているセグメントセット内のアパーチャセグメントをサポートしているか、既にシステムメモリに存在している必要があります (デバイスに常駐させることはできません)。
 
-割り当てが正常にロックされていると、割り当てが、デバイスに存在することはありませんが、絞りセグメントをサポートしていません、いないコミット メモリ セグメントにロックの期間中に、割り当てを保証する必要があります。
+割り当てがデバイスに常駐しておらず、アパーチャセグメントをサポートしていないときに割り当てが正常にロックされている場合、ロックの期間中は、割り当てがメモリセグメントにコミットされないことが保証される必要があります。
 
-**Lock2**現在フラグがないと**占有**すべてのフラグのビットが 0 をする必要があります。
+現在、 **Lock2**にはフラグが含まれておらず、**予約済み**フラグのビットはすべて0である必要があります。
 
-## <a name="span-idcpuhostaperturespanspan-idcpuhostaperturespanspan-idcpuhostaperturespancpuhostaperture"></a><span id="CPUHostAperture"></span><span id="cpuhostaperture"></span><span id="CPUHOSTAPERTURE"></span>CPUHostAperture
-
-
-ロックに対する優れたサポート。*CPUVisible*バーのサイズ変更に失敗した場合は、メモリのセグメントを*CPUHostAperture* PCI aperture で提供されます。 *CPUHostAperture*経由でのビデオ メモリの領域に直接マップできるページ ベースのマネージャーとして動作、 [ *DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)デバイス ドライバーインターフェイス (DDI) 関数。 不連続な範囲に直接仮想アドレス空間の範囲をマップできる、 *CPUHostAperture*、いて、 *CPUHostAperture*ビデオ メモリを必要としないにマップし、スウィズ リングの範囲です。
-
-内に CPU によって参照可能なロック可能なメモリ量の最大!*CPUVisible*メモリ セグメントがのサイズに制限されていますが、 *CPUHostAperture*します。 公開するための詳細、 *CPUHostAperture* Microsoft DirectX のグラフィックスにカーネルで見つかる、 [CPU ホスト aperture](cpu-host-aperature.md)トピック。
-
-## <a name="span-idiocoherencyspanspan-idiocoherencyspanspan-idiocoherencyspanio-coherency"></a><span id="I_O_coherency"></span><span id="i_o_coherency"></span><span id="I_O_COHERENCY"></span>I/O の一貫性
+## <a name="span-idcpuhostaperturespanspan-idcpuhostaperturespanspan-idcpuhostaperturespancpuhostaperture"></a><span id="CPUHostAperture"></span><span id="cpuhostaperture"></span><span id="CPUHOSTAPERTURE"></span>Cpu ホストアパーチャ
 
 
-X86 または x64 で今日では、要求の読み取りまたは書き込みをキャッシュ可能なシステム メモリの画面におよび CPU との一貫性を維持するための GPU を許可するために、すべての Gpu が PCIe 経由で I/O の一貫性をサポートするします。 GPU の観点から一貫したキャッシュとしてサーフェスがマッピングされると、GPU は、画面にアクセスするとき、CPU キャッシュの内容を確認する必要があります。 このフォームの一貫性は、通常、CPU ステージング サーフェスの一部など、読み取ったりする必要のあるリソースの使用します。
+を使用したロックのサポートを強化するには*Cpu が表示*されているメモリセグメントバーのサイズを変更できない場合は、PCI アパーチャで*cpu ホストアパーチャ*が提供されます。 *Cpu ホストアパーチャ*はページベースのマネージャーとして動作し、 [*DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)DEVICE driver interface (DDI) 機能を使用してビデオメモリの領域に直接マップできます。 これにより、仮想アドレス空間の範囲を*連続して*いない値の範囲に直接マップできるようになります。また、スウィズリングの範囲を必要とせずに、 *Cpu ホストのアパーチャ*をビデオメモリにマップすることができます。
 
-一部の ARM プラットフォームで I/O の一貫性はハードウェアで直接サポートされていません。 これらのプラットフォームでは、I/O の一貫性が CPU のキャッシュ階層を手動で無効にすることをエミュレートする必要があります。 ビデオ メモリ マネージャーでは、今すぐこれを実現 (マップの操作、読み取り/書き込み) の CPU と GPU (一覧の読み取り/書き込み操作の割り当て) から割り当てに操作を追跡して、キャッシュがいずれかを決定したら、キャッシュの無効化の出力書き戻す必要があるデータを含む (書き込みの CPU、GPU の読み取り) または無効にする必要がある古いデータを含む (GPU 書き込み、CPU の読み取り)。
+内の CPU が参照できる、ロック可能なメモリの最大量。*Cpu が参照可能*なメモリセグメントは、 *cpu ホストアパーチャ*のサイズに制限されます。 Cpu ホストアパーチャを Microsoft DirectX グラフィックスカーネルに公開する方法の詳細については、「 [CPU ホストの絞り](cpu-host-aperature.md)」を参照してください。
 
-ありません I/O 一貫性でのプラットフォームでは、割り当てに CPU と GPU アクセスを追跡する必要がありますが、ユーザー モード ドライバーになります。 グラフィックスのカーネルが新しい公開*が無効になるキャッシュ*DDI ライトバック キャッシュ可能な割り当てに関連付けられている仮想アドレスの範囲が無効にして、ユーザー モード ドライバーを使用します。 I/O の一貫性のサポートがないプラットフォームでは、ユーザー モード ドライバーが CPU の書き込み後に GPU 読み取り前にだけでなく書き込み後と CPU を読み取る前に、この関数を呼び出す必要があります。 後者かもしれませんはわかりにくい最初は、CPU をメモリに GPU 前のデータの書き込み投機的読み可能性があります、ため、CPU が RAM からのデータを再読み込みを確実にすべての CPU キャッシュを無効にする必要しますですが、。
+## <a name="span-idi_o_coherencyspanspan-idi_o_coherencyspanspan-idi_o_coherencyspanio-coherency"></a><span id="I_O_coherency"></span><span id="i_o_coherency"></span><span id="I_O_COHERENCY"></span>I/o の一貫性
+
+
+現在、x86/x64 では、すべての Gpu で、キャッシュ可能なシステムメモリサーフェイスに対して読み取りまたは書き込みを行い、CPU との一貫性を維持するために、PCIe に対する i/o の一貫性をサポートする必要があります。 サーフェイスが GPU の観点からキャッシュ整合性としてマップされている場合、GPU はサーフェイスにアクセスするときに CPU キャッシュを snoop する必要があります。 この形式の一貫性は通常、CPU が読み取りを想定しているリソース (ステージングサーフェスなど) に使用されます。
+
+一部の ARM プラットフォームでは、i/o の一貫性はハードウェアで直接サポートされていません。 これらのプラットフォームでは、CPU キャッシュ階層を手動で無効にすることで、i/o の一貫性をエミュレートする必要があります。 ビデオメモリマネージャーは、GPU (割り当てリストの読み取り/書き込み操作) と CPU (マップ操作、読み取り/書き込み操作) の割り当てに対する操作を追跡し、キャッシュを決定するときにキャッシュの無効化を生成することによって、これを実現します。書き戻し (CPU 書き込み、GPU 読み取り)、または無効にする必要がある古いデータ (GPU 書き込み、CPU 読み取り) を含むデータを格納します。
+
+I/o の一貫性がないプラットフォームでは、割り当てに対する CPU および GPU のアクセスを追跡する責任は、ユーザーモードドライバーによって異なります。 グラフィックスカーネルは、ユーザーモードドライバーがキャッシュ可能な割り当てに関連付けられた仮想アドレス範囲を書き戻して無効にするために使用できる、新しい*無効キャッシュ*DDI を公開します。 I/o の一貫性をサポートしていないプラットフォームでは、ユーザーモードドライバーは、CPU 書き込みの後、GPU が読み込まれる前、および CPU が読み込まれる前に、この関数を呼び出す必要があります。 後者は最初はにくいと思われるかもしれませんが、CPU はメモリに書き込むために GPU 書き込みの前にデータを投機的読み取る可能性があるため、すべての CPU キャッシュを無効にして、CPU が RAM からデータを再読み込みする必要があります。
 
  
 

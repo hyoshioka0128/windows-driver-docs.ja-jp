@@ -1,43 +1,43 @@
 ---
-title: ビデオ ミニポート ドライバーでの割り込み
-description: ビデオ ミニポート ドライバーでの割り込み
+title: ビデオミニポートドライバーの割り込み
+description: ビデオミニポートドライバーの割り込み
 ms.assetid: bf84a3fb-860a-4647-ac34-93f3a22b166b
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、割り込み
-- WDK のビデオのミニポートを中断します。
+- ビデオミニポートドライバー WDK Windows 2000、割り込み
+- WDK の割り込みビデオミニポート
 - HwVidInterrupt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb0d6c8b56c7a984c76541c2b006ebd3527f142
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc50c73094b3c9ee6daa6cb0166bcdd996617792
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379899"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840354"
 ---
-# <a name="interrupts-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーでの割り込み
+# <a name="interrupts-in-video-miniport-drivers"></a>ビデオミニポートドライバーの割り込み
 
 
 ## <span id="ddk_interrupts_in_video_miniport_drivers_gg"></span><span id="DDK_INTERRUPTS_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>
 
 
-割り込みを生成するアダプターのビデオのミニポート ドライバーを実装する必要があります、 [ *HwVidInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)ルーチン。 ミニポート ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)ルーチンを初期化する必要があります、 **HwInterrupt**のメンバー、 [**ビデオ\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)割り込みハンドラーを指す構造体。
+割り込みを生成するアダプターのビデオミニポートドライバーは、 [*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)ルーチンを実装する必要があります。 ミニポートドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)ルーチンは、割り込みハンドラーを指すように、 [**VIDEO\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)構造の**HwInterrupt**メンバーを初期化する必要があります。
 
-ビデオ ポート ドライバーは、アダプターが割り込みを生成する場合、ビデオのミニポート ドライバーの割り込みオブジェクトを設定します。 割り込みオブジェクトが作成され、ビデオ ポート ドライバーによって管理されるためは、ビデオのミニポート ドライバー ライター必要割り込みオブジェクトに関する詳細情報はありません。
+ビデオポートドライバーは、アダプターが割り込みを生成した場合にビデオミニポートドライバーの割り込みオブジェクトを設定します。 割り込みオブジェクトはビデオポートドライバーによって作成および管理されるため、ビデオミニポートドライバーライターは、割り込みオブジェクトについての詳細情報を必要としません。
 
-場合、ミニポート ドライバーの[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)関数は、ビデオ アダプターが割り込みを実際に発生していないこと、またはベクター/レベルのアダプターは、有効な割り込みを特定できないことを検索します。*HwVidFindAdapter*両方を設定する必要があります**InterruptLevel**と**InterruptVector**で、 [**ビデオ\_ポート\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_port_config_info)構造体をゼロにします。
+ミニポートドライバーの[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)関数が、ビデオアダプターが実際に割り込みを生成しないこと、またはアダプターの有効な割り込みベクター/レベルを判別できないことを検出した場合、 *HwVidFindAdapter*は両方**を設定する必要があります。InterruptLevel**および**InterruptVector** in THE [**VIDEO\_PORT\_CONFIG\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)構造体を0に設定します。
 
-ときに*HwVidFindAdapter*コントロールを返しますビデオ ポート ドライバーは、ビデオではメンバーの割り込みの構成を確認します\_ポート\_CONFIG\_情報と、どちらもゼロの場合に、割り込みが接続できません。ミニポート ドライバー。 割り込みで 0 にメンバーの構成の両方を明示的に設定*HwVidFindAdapter*を無効にします、 [ *HwVidInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)エントリ ポイントであるによって設定されている場合、ミニポート ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)関数。
+*HwVidFindAdapter*が制御を返すと、ビデオポートドライバーは、VIDEO\_PORT\_CONFIG\_INFO の割り込み構成メンバーを確認し、両方とも0の場合はミニポートドライバーの割り込みを接続しません。 *HwVidFindAdapter*で両方の割り込み構成メンバーを0に明示的に設定すると、ミニポートドライバーの[**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)関数によって設定された[*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)エントリポイントがある場合は無効になります。
 
-なお*HwVidInterrupt* nonpaged であるため、ミニポート ドライバーのデバイスの拡張機能にアクセスできます。 ミニポート ドライバーの設計によってない可能性があるデバイスの拡張機能またはデバイスの拡張機能の特定の領域を共有するには、他のドライバー関数の考えられる*HwVidInterrupt*安全にします。
+*HwVidInterrupt*は、非ページ化されているため、ミニポートドライバーのデバイス拡張機能にアクセスできることに注意してください。 ミニポートドライバーの設計によっては、他のドライバー機能が*HwVidInterrupt*を使用してデバイス拡張機能またはデバイス拡張機能の特定の領域を安全に共有することが不可能な場合があります。
 
-たとえば、ミニポート ドライバーの[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io) 、アダプターの割り込みは、ときに、関数は、デバイスの拡張機能にアクセスする*HwVidInterrupt*上で実行別のプロセッサと*HwVidInterrupt*デバイス拡張機能にもアクセスできます。 このような状況が発生する場合*HwVidStartIO*呼び出す必要があります[ **VideoPortSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsynchronizeexecution)ドライバーによって提供されると[ *HwVidSynchronizeExecutionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_synchronize_routine)関数。
+たとえば、ミニポートドライバーの[*HwVidStartIO*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io)関数が、アダプターの割り込み時にデバイス拡張機能にアクセスしているとします。 *HwVidInterrupt*は別のプロセッサで実行され、 *HwVidInterrupt*はデバイス拡張機能にもアクセスします。 このような状況が発生する可能性がある場合、 *HwVidStartIO*は、ドライバーによって提供される[*HwVidSynchronizeExecutionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pminiport_synchronize_routine)関数を使用して[**VideoPortSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsynchronizeexecution)を呼び出す必要があります。
 
-ビデオのミニポート ドライバーは、次の 2 つの規則に従う必要があります。
+ビデオミニポートドライバーは、次の2つの規則に従う必要があります。
 
-1.  たびに、ハードウェア、D0 以外の任意の状態で、ミニポート ドライバーとハードウェアが*決して*割り込みを生成します。
+1.  ミニポートドライバーとハードウェアが D0 以外の状態になっている場合は、ハードウェアによって割り込みが生成される*ことはありません*。
 
-2.  ルール 1 のためデバイス ドライバー ISR 必要があります*決して*電源の状態が D3 の場合、割り込みの動作 (が返されます**FALSE**)。
+2.  ルール1では、電源状態が D3 の場合、デバイスドライバ ISR は割り込みを処理し*ない*ようにする必要があります ( **FALSE**が返されます)。
 
  
 

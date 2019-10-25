@@ -1,40 +1,40 @@
 ---
 title: NDIS_STATUS_WWAN_HOME_PROVIDER
-description: ミニポート ドライバーでは、NDIS_STATUS_WWAN_HOME_PROVIDER 通知を使用して、OID_WWAN_HOME_PROVIDER の完了に関する MB サービスに通知する \ 160;クエリ要求。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_HOME_PROVIDER 通知を使用して、MB サービスに OID_WWAN_HOME_PROVIDER \ 160 の完了を通知します。クエリ要求。
 ms.assetid: a5733c62-be4e-4f86-9639-6addd31baf0c
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_HOME_PROVIDER ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_HOME_PROVIDER ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: ae316d1b56ed440ea1aa02b9eff2db71680c5574
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67cbe24dbbefe26027dfdca97cc178f8275a22dc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385067"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843027"
 ---
-# <a name="ndisstatuswwanhomeprovider"></a>NDIS\_状態\_WWAN\_ホーム\_プロバイダー
+# <a name="ndis_status_wwan_home_provider"></a>NDIS\_ステータス\_WWAN\_ホーム\_プロバイダー
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_ホーム\_MB サービスに通知の完了に関する通知をプロバイダー [OID\_WWAN\_ホーム\_プロバイダー](oid-wwan-home-provider.md)  要求のクエリを実行します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_ホーム\_プロバイダー通知を使用して、 [OID\_wwan\_ホーム\_プロバイダー](oid-wwan-home-provider.md)  クエリ要求の完了を MB サービスに通知します。
 
-ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
+ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_ホーム\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)構造体。
+この通知では、 [**NDIS\_WWAN\_HOME\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーは、OID に応答する場合、次の規則に準拠する必要があります\_WWAN\_ホーム\_プロバイダー クエリ要求。
+ミニポートドライバーは、OID\_WWAN\_ホーム\_プロバイダーのクエリ要求に応答するときに、次の規則に準拠する必要があります。
 
--   GSM ベースのデバイス:ホーム プロバイダー名は、SIM で EFSPN 基本ファイルからのようにいくつかのメソッドを使用してサブスクライバー Identity モジュール (SIM) から取得できます (EFSPN の [サービスのプロバイダー名] セクション 3 gpp TS 31.102 で定義) またはオペレーターの特定拡張機能、EFSPN がプロビジョニングされていない場合は。 ホーム プロバイダー名を取得し、IMSI から MCC mnc もを抽出しを参照してくださいを GSMA SE.13 データベースでを実行する演算子に固有の要件の仕様を参照してください。 演算子に固有のホーム プロバイダー名を取得するとき、EFSPN がプロビジョニングされていない場合は、オペレーターに問い合わせてください。 ミニポート ドライバーにプロバイダー名を設定する必要があります、SIM が EFSPN またはその他のメカニズムを通じてホーム プロバイダーの名前を持つ準備されていない場合**NULL**します。
+-   GSM ベースのデバイス: ホームプロバイダー名は、SIM の EFSPN 基本ファイルからのようないくつかの方法を使用してサブスクライバー Id モジュール (SIM) から取得できます (EFSPN は、セクションサービスプロバイダー名の下の 3GPP TS 31.102 で定義されています)。または、EFSPN がプロビジョニングされていない場合のオペレーター固有の拡張機能。 ホームプロバイダー名を取得し、IMSI から MCC を抽出し、GSMA SE. 13 データベースで検索を実行するために、オペレーター固有の要件の仕様を参照する必要があります。 EFSPN がプロビジョニングされていない場合、オペレーター固有のホームプロバイダー名を取得するには、オペレーターに問い合わせてください。 EFSPN またはその他のメカニズムを使用して、ホームプロバイダー名を使用して SIM がプロビジョニングされていない場合、ミニポートドライバーではプロバイダー名を**NULL**に設定する必要があります。
 
-    詳細については、SIM カードのファイル システムは、3 gpp TS 11.11 の仕様を参照してください。 ミニポート ドライバーが WWAN を返す場合 Subscriber Identity Module (SIM カード) では、プロバイダー id は準備されていない、\_状態\_読み取り\_エラー。
+    SIM カードのファイルシステムの詳細については、3GPP TS 11.11 の仕様を参照してください。 プロバイダー id がサブスクライバー Id モジュール (SIM カード) でプロビジョニングされていない場合、ミニポートドライバーは、\_の失敗\_、WWAN\_ステータスを返す必要があります。
 
--   CDMA ベースのデバイス:ホーム プロバイダー名を返すことは必須です。 Ihv がネットワークの個人用設定の一部として、デバイスでは、この情報を提供することをお勧めします。 CDMA ベースのプロバイダーのミニポート ドライバーを設定する必要があります、プロバイダー id が使用できない場合、 **Provider.ProviderId**の NDIS メンバー\_WWAN\_ホーム\_WWANプロバイダー構造体\_CDMA\_既定\_プロバイダー\_id。
+-   CDMA ベースのデバイス: ホームプロバイダー名を返すことは必須です。 ネットワークのパーソナル化の一環として、この情報をデバイスに提供することをお勧めします。 プロバイダー id が使用できない場合、CDMA ベースのプロバイダーのミニポートドライバーは、NDIS\_WWAN\_HOME\_プロバイダー構造の**プロバイダーの ProviderId**メンバーを、既定の\_cdma\_に設定する必要があり\_プロバイダー\_ID。
 
-デバイスの準備完了状態を変更するときに、ミニポート ドライバーはこの情報を返す必要があります**WwanReadyStateInitialized** 、WWAN のすべてのメンバーの書式を設定して\_に応じて、プロバイダーの構造体。
+ミニポートドライバーは、デバイスの準備完了状態が**WwanReadyStateInitialized**に変更されたときにこの情報を返す必要があります。また、必要に応じて、WWAN\_プロバイダー構造のすべてのメンバーをフォーマットします。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,11 +45,11 @@ ms.locfileid: "67385067"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ ms.locfileid: "67385067"
 
 [OID\_WWAN\_ホーム\_プロバイダー](oid-wwan-home-provider.md)
 
-[**NDIS\_WWAN\_ホーム\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)
+[**NDIS\_WWAN\_ホーム\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)
 
  
 

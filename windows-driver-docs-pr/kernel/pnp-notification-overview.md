@@ -3,21 +3,21 @@ title: PnP 通知の概要
 description: PnP 通知の概要
 ms.assetid: 134a1ea1-78c2-4bab-b5e9-ae21901772ea
 keywords:
-- カーネル WDK PnP 通知
-- プラグ アンド プレイの WDK カーネル、通知
-- WDK の通知については、PnP 通知
-- イベント通知 PnP WDK
+- PnP WDK カーネル、通知
+- WDK カーネル、通知のプラグアンドプレイ
+- 通知 WDK PnP、通知について
+- イベント通知の WDK PnP
 - EventCategoryDeviceInterfaceChange 通知
-- EventCategoryTargetDeviceChange 通知
-- EventCategoryHardwareProfileChange 通知
+- Eventカテゴリ Targetdevicechange notification
+- Eventカテゴリのハードウェアプロファイルの通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a30ae03c7bc62f3f6b1334fb247de09f6e443fef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8bdb8546b87ccc71e4bf5cca3a655dd900ba0d05
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362932"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838506"
 ---
 # <a name="pnp-notification-overview"></a>PnP 通知の概要
 
@@ -25,76 +25,76 @@ ms.locfileid: "67362932"
 
 
 
-PnP マネージャーでは、ドライバーとアプリケーションを特定のイベントには、一般にする、特定のデバイスまたはシステムが発生したときに通知するためのメカニズムを提供します。 ドライバーは、次のカテゴリのイベントの通知を登録できます。
+PnP マネージャーには、特定のデバイスまたはシステム上で特定のイベントが発生したときに、ドライバーおよびアプリケーションが通知を受けるためのメカニズムが用意されています。 ドライバーは、次のカテゴリのイベントの通知を登録できます。
 
 -   **EventCategoryDeviceInterfaceChange**
 
-    このカテゴリのデバイスのインターフェイスでイベントの登録は、ドライバー、PnP マネージャーに、次のイベントのドライバーにより通知されます。
+    ドライバーがデバイスインターフェイスでこのカテゴリのイベントを登録すると、PnP マネージャーは次のイベントをドライバーに通知します。
 
     <a href="" id="guid-device-interface-arrival"></a>GUID\_デバイス\_インターフェイス\_到着  
-    指定したクラスのデバイスのインターフェイスが有効になっていることを示します。 たとえば、ユーザーがコンピューターに新しいディスクを追加し、ボリューム マネージャーには、新しいボリューム (「ボリューム」クラスのデバイス インターフェイス) が有効になっています。
+    指定したクラスのデバイスインターフェイスが有効になっていることを示します。 たとえば、ユーザーが新しいディスクをマシンに追加し、ボリュームマネージャーが新しいボリューム (クラス "volume" のデバイスインターフェイス) を有効にしたとします。
 
     <a href="" id="guid-device-interface-removal"></a>GUID\_デバイス\_インターフェイス\_削除  
-    指定したクラスのデバイスのインターフェイスが無効になっていることを示します。
+    指定したクラスのデバイスインターフェイスが無効になっていることを示します。
 
-    参照してください[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)および関連するデバイスのインターフェイスの詳細については、ルーチン。
+    デバイスインターフェイスの詳細については、「 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface) and related ルーチン」を参照してください。
 
--   **EventCategoryTargetDeviceChange**
+-   **Eventカテゴリ Targetdevicechange**
 
-    ドライバーは、このカテゴリのデバイス上のイベントの登録、デバイスで、次のイベントが発生した場合、ドライバーにより PnP マネージャーに通知されます。
+    ドライバーがデバイスでこのカテゴリのイベントを登録すると、デバイスで次のイベントが発生したときに、PnP マネージャーからドライバーに通知されます。
 
     <a href="" id="guid-target-device-query-remove"></a>GUID\_ターゲット\_デバイス\_クエリ\_削除  
-    デバイスのドライバーを削除するには、約 PnP マネージャーであることを示します。 いくつかの操作が、このイベントを発生など: ユーザーが、マシンから、指定されたデバイスを削除する要求またはユーザーがデバイス用のドライバーの更新要求を発行します。 この通知は、承認または間もなく削除操作を拒否するデバイスのドライバーを要求します。
+    PnP マネージャーがデバイスのドライバーを削除しようとしていることを示します。 このイベントの原因として、ユーザーがコンピューターから特定のデバイスを削除するように要求した場合、またはユーザーがデバイスの更新プログラムドライバーの要求を発行した場合などがあります。 この通知により、デバイスのドライバーが、間もなく削除される操作を承認するか拒否するかを要求します。
 
-    <a href="" id="guid-target-device-remove-complete"></a>GUID\_ターゲット\_デバイス\_削除\_完了  
-    指定したデバイスがコンピューターから削除されたこと、またはユーザーがデバイスのドライバーを変更することを示します。
+    <a href="" id="guid-target-device-remove-complete"></a>\_ターゲット\_デバイス\_削除\_完了した GUID  
+    指定したデバイスがコンピューターから削除されているか、デバイスのドライバーをユーザーが変更していることを示します。
 
-    <a href="" id="guid-target-device-remove-cancelled"></a>GUID\_ターゲット\_デバイス\_削除\_キャンセル  
-    指定されたデバイス上の兆候の削除操作が取り消されたことを示します。
+    <a href="" id="guid-target-device-remove-cancelled"></a>\_削除\_削除される\_デバイスの GUID\_ターゲット  
+    指定されたデバイスでの削除操作が取り消されたことを示します。
 
-    <a href="" id="guid-xxx---custom-events-"></a>GUID\_*XXX* (カスタム イベント)  
-    指定したデバイスのカスタム イベントが発生したことを示します。
+    <a href="" id="guid-xxx---custom-events-"></a>GUID\_*XXX* (カスタムイベント)  
+    指定されたデバイスでカスタムイベントが発生したことを示します。
 
-    ドライバーのライターでは、デバイスのカスタム イベントを定義できます。 ドライバー (または別の関連するコンポーネント) カスタム イベントが発生した PnP マネージャーに通知、PnP マネージャーでは、ターゲット デバイスの登録されているすべてのコンポーネントの変更通知デバイスに通知します。
+    ドライバーライターは、デバイスのカスタムイベントを定義できます。 ドライバー (または他の関連コンポーネント) が、カスタムイベントが発生したことを PnP マネージャーに通知すると、PnP マネージャーは、デバイス上のターゲットデバイス変更通知に登録されているすべてのコンポーネントに通知します。
 
-    見なすことができるインターフェイスの「パッシブ」関心、デバイス インターフェイスの変更の登録とは異なりのターゲット デバイスの変更を登録するデバイスに「アクティブ」の関心を示します。
+    デバイスインターフェイスの変更を登録すると、インターフェイスに "パッシブな" ことを考えることができますが、ターゲットデバイスの変更を登録すると、デバイスに "アクティブ" が示されます。
 
--   **EventCategoryHardwareProfileChange**
+-   **Eventカテゴリのハードウェアプロファイリング**
 
-    このカテゴリには、次のイベントが含まれています。
+    このカテゴリには、次のイベントが含まれます。
 
     <a href="" id="guid-hwprofile-query-change"></a>GUID\_HWPROFILE\_クエリ\_変更  
-    ユーザーがコンピューターのハードウェア プロファイルを変更する要求されていることを示します。 PnP マネージャーでは、この通知を使用して、システムの操作を中断せず、ハードウェア プロファイルを変更ことかどうかを登録済みのコンポーネントに問い合わせてください。 通常、登録済みのコンポーネントには、これらのクエリ要求が成功します。
+    ユーザーがマシンのハードウェアプロファイルを変更するように要求したことを示します。 PnP マネージャーは、この通知を使用して、システム操作を中断せずにハードウェアプロファイルを変更できるかどうかを登録済みのコンポーネントに要求します。 通常、登録されたコンポーネントは、これらのクエリ要求に成功します。
 
-    <a href="" id="guid-hwprofile-change-complete"></a>GUID\_HWPROFILE\_変更\_完了  
-    マシンのハードウェア プロファイルが変更されたことを示します。 プロファイルに固有の設定は、ドライバーは、ハードウェア プロファイルを変更した後、このようなドライバーはこれらの設定を更新する必要があります。
+    <a href="" id="guid-hwprofile-change-complete"></a>GUID\_HWPROFILE\_変更\_完了しました  
+    コンピューターのハードウェアプロファイルが変更されたことを示します。 ドライバーがプロファイル固有の設定を保持している場合、ドライバーは、ハードウェアプロファイルの変更後に、これらの設定を更新する必要があります。
 
-    <a href="" id="guid-hwprofile-change-cancelled"></a>GUID\_HWPROFILE\_変更\_キャンセル  
-    間もなく、ハードウェア プロファイルの変更が取り消されたことを示します。
+    <a href="" id="guid-hwprofile-change-cancelled"></a>GUID\_HWPROFILE\_変更\_取り消されました  
+    ハードウェアプロファイルの変更が中止されたことを示します。
 
-PnP 通知は、カーネル モードのコンポーネントのように動作します。
+PnP 通知は、次のようなカーネルモードのコンポーネントで使用できます。
 
-1.  ドライバーを呼び出すことによってイベントのカテゴリに関する通知の登録[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。
+1.  ドライバーは、 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出すことによって、イベントのカテゴリに対する通知を登録します。
 
-    PnP 通知コールバック ルーチンは、ドライバーが明示的に登録を削除するまで、登録されているままになります。
+    PnP 通知コールバックルーチンは、ドライバーが明示的に登録を削除するまで登録されたままです。
 
-2.  PnP マネージャーは、登録済みのカテゴリのイベントが発生したときに、ドライバーのコールバック ルーチンを呼び出します。
+2.  PnP マネージャーは、登録されたカテゴリのイベントが発生したときに、ドライバーのコールバックルーチンを呼び出します。
 
-3.  ドライバーは、呼び出すことによって、コールバックの登録を削除します[ **IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)します。
+3.  ドライバーは、 [**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)を呼び出すことによって、コールバックの登録を削除します。
 
-ドライバーの同期イベントを生成または終了の処理中に発生するイベントを非同期に待機する必要がありますされません。
+ドライバーは、同期イベントを生成したり、終了処理中に非同期イベントが発生するのを待機したりすることはできません。
 
-PnP 通知については、次のセクションを参照してください。
+PnP 通知の詳細については、次のセクションを参照してください。
 
-[PnP 通知コールバック ルーチンを記述するためのガイドライン](guidelines-for-writing-pnp-notification-callback-routines.md)
+[PnP 通知コールバックルーチンの記述に関するガイドライン](guidelines-for-writing-pnp-notification-callback-routines.md)
 
-[PnP デバイス インターフェイスの変更通知を使用してください。](using-pnp-device-interface-change-notification.md)
+[PnP デバイスインターフェイスの変更通知の使用](using-pnp-device-interface-change-notification.md)
 
-[ターゲットの PnP デバイスの変更通知を使用してください。](using-pnp-target-device-change-notification.md)
+[PnP ターゲットデバイスの変更通知の使用](using-pnp-target-device-change-notification.md)
 
-[プラグ アンド プレイ ハードウェア プロファイルの変更通知を使用してください。](using-pnp-hardware-profile-change-notification.md)
+[PnP ハードウェアプロファイルの変更通知の使用](using-pnp-hardware-profile-change-notification.md)
 
-[PnP カスタム通知を使用してください。](using-pnp-custom-notification.md)
+[PnP カスタム通知の使用](using-pnp-custom-notification.md)
 
  
 

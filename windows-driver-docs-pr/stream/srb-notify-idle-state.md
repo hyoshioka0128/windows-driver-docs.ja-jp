@@ -1,9 +1,9 @@
 ---
-title: SRB\_通知\_IDLE\_状態
-description: クラス ドライバーは、最初のオープン要求または閉じる最後の要求を送信する前に、すぐに、ミニドライバーにこの要求を送信します。 SRB を使用できるようにミニドライバー\_通知\_IDLE\_USB セレクティブ サスペンドからの復帰への通知と状態。
+title: SRB\_\_アイドル状態の\_状態に通知
+description: クラスドライバーは、最初の open 要求または最後の close 要求を送信する直前に、この要求をミニドライバーに送信します。 ミニドライバーは、SRB を使用して、USB セレクティブサスペンドからの復帰を通知として\_アイドル状態の\_を通知\_ことができます。
 ms.assetid: 7a2950a4-bd9f-4765-bb60-9e3aeeff49fb
 keywords:
-- SRB_NOTIFY_IDLE_STATE ストリーミング メディア デバイス
+- SRB_NOTIFY_IDLE_STATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,47 +12,47 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38cdeac2dc57d690a369c2135d2e6911cd0197cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c9b85da8423269f8761a00e8ed2402cf7d41815
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377902"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843293"
 ---
-# <a name="srbnotifyidlestate"></a>SRB\_通知\_IDLE\_状態
+# <a name="srb_notify_idle_state"></a>SRB\_\_アイドル状態の\_状態に通知
 
 
-クラス ドライバーは、最初のオープン要求または閉じる最後の要求を送信する前に、すぐに、ミニドライバーにこの要求を送信します。 SRB を使用できるようにミニドライバー\_通知\_IDLE\_状態から復帰への通知として[USB のセレクティブ サスペンド](../usbcon/usb-selective-suspend.md)します。
+クラスドライバーは、最初の open 要求または最後の close 要求を送信する直前に、この要求をミニドライバーに送信します。 ミニドライバーは、SRB を使用して、 [USB セレクティブサスペンド](../usbcon/usb-selective-suspend.md)からの復帰を通知として\_アイドル状態の\_を通知\_ことができます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-この要求が通知パケットだけです。ミニドライバーが指定した戻り値は無視されます。
+この要求は、通知パケットのみです。ミニドライバーが指定した戻り値は無視されます。
 
 <a name="remarks"></a>注釈
 -------
 
-SRB\_通知\_IDLE\_Microsoft Windows Server 2003 ではなく Microsoft Windows XP Service Pack 2 (SP2) 以降に状態が送信されます。
+SRB\_NOTIFY\_IDLE\_状態は、microsoft Windows XP Service Pack 2 (SP2) 以降で送信されますが、Microsoft Windows Server 2003 では送信されません。
 
-SRB\_通知\_IDLE\_状態の修正、USB のセレクティブ サスペンド ストリーム クラス ドライバー内に存在する問題 (*Stream.sys*) で説明されている Windows XP SP1 で[ナレッジ記事 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)します。 SRB を使用する\_通知\_IDLE\_に基づいて 1 つのインスタンスのミニドライバー内で選択的にサポートするために状態が一時中断[クラスのストリーム](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)と[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)します。
+SRB\_通知\_アイドル\_状態は、[サポート技術情報の記事 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)に記載されている WINDOWS XP SP1*のストリームクラスドライバー (* ) に存在する、USB のセレクティブサスペンドの問題を修正します。 \_SRB を使用して\_アイドル状態の\_状態を通知し、[ストリームクラス](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)と[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)に基づいて単一インスタンスのミニドライバー内でセレクティブサスペンドをサポートすることができます。
 
-Windows XP 以降では、SRB\_通知\_IDLE\_状態は存在しません。 Windows xp 以降、ミニドライバーを受け取る[ **SRB\_取得\_デバイス\_プロパティ**](srb-get-device-property.md)がアイドル状態からスリープ解除します。 ミニドライバーを呼び出して[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp) D0 にデバイスの状態を変更します。
+Windows XP およびそれ以前のバージョンでは、SRB\_NOTIFY\_IDLE\_状態は存在しません。 Windows XP およびそれ以前のバージョンでは、ミニドライバーは[**SRB\_GET\_DEVICE\_プロパティ**](srb-get-device-property.md)を受け取り、アイドル状態から復帰します。 次に、ミニドライバーは[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出して、デバイスの状態を D0 に変更します。
 
-Windows XP SP1、および Windows Server 2003、SRB で\_取得\_デバイス\_プロパティは、このような状況では送信されません。 使用する場合*Stream.sys*これらのオペレーティング システムでは、前述のサポート技術情報記事の手順に従います。
+Windows XP SP1 および Windows Server 2003 では、このような状況では、SRB\_GET\_DEVICE\_プロパティは送信されません。 これらのオペレーティングシステムで *.sys*を使用する場合は、前述のサポート技術情報の記事に記載されている手順に従ってください。
 
-クラスのドライバーが SRB を送信して、デバイスの最初のインスタンスを開くときに\_通知\_IDLE\_状態を送信する前に、すぐに[ **SRB\_オープン\_デバイス\_インスタンス**](srb-open-device-instance.md)します。
+デバイスの最初のインスタンスを開くときに、クラスドライバーは\_SRB を送信し、 [**SRB\_OPEN\_device\_インスタンス**](srb-open-device-instance.md)を送信する直前に\_アイドル状態の\_状態を通知します。
 
-クラスのドライバーが SRB を送信して、デバイスの最後のインスタンスを閉じるときに\_通知\_IDLE\_D3 の状態に遷移するデバイスの要求を送信する前に、すぐに状態。
+デバイスの最後のインスタンスを閉じると、クラスドライバーは、デバイスから状態 D3 に移行するように要求を送信する直前に、SRB\_通知\_アイドル状態の\_状態に送信します。
 
-ストリーム クラスのドライバーが、SRB を送信すると\_通知\_IDLE\_状態が要求への呼び出しを受け取るようにミニドライバー [ *StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)します。
+ストリームクラスドライバーが\_\_アイドル状態の\_状態要求を送信すると、ミニドライバーは[*Strminireceivedevicepacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)の呼び出しを受信します。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**SRB\_取得\_デバイス\_プロパティ**](srb-get-device-property.md)
+[**SRB\_GET\_DEVICE\_プロパティ**](srb-get-device-property.md)
 
-[**SRB\_オープン\_デバイス\_インスタンス**](srb-open-device-instance.md)
+[**SRB\_開いているデバイス\_インスタンス\_** ](srb-open-device-instance.md)
 
-[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)
 
  
 

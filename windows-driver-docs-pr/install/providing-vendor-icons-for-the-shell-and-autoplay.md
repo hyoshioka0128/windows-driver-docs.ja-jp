@@ -1,59 +1,59 @@
 ---
-title: シェルと自動再生用のベンダー アイコンの提供
-description: シェルと自動再生用のベンダー アイコンの提供
+title: シェルと自動再生のベンダアイコンの提供
+description: シェルと自動再生のベンダアイコンの提供
 ms.assetid: 2e3afbf6-57f6-4b83-b10a-c33d9b1c1731
 keywords:
 - 自動再生アイコン WDK
-- カスタム アイコン WDK デバイスのインストール
-- WDK の仕入先アイコン
-- WDK のシェルのアイコン
-- Shell アイコン WDK
-- WDK メディアに挿入されたアイコン
-- WDK なしにメディアで挿入されたアイコン
-- WDK の自動再生のアイコン
-- アイコン ファイルのコピー
+- カスタムアイコン WDK デバイスのインストール
+- ベンダアイコン WDK
+- アイコン WDK シェル
+- シェルアイコン WDK
+- メディアに挿入されたアイコン WDK
+- メディアが挿入されていないアイコン WDK
+- アイコン WDK 自動再生
+- アイコンファイルをコピーする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 495919e0be8910d3d6aedcddfd28abc65c29e002
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d7fd17e7b5b1d062c68ce3e1a1c1be433ba77376
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386397"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837377"
 ---
-# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生用のベンダー アイコンの提供
+# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生のベンダアイコンの提供
 
 
 
 
 
-[自動再生](https://go.microsoft.com/fwlink/p/?linkid=12031)シェルの拡張機能は、Microsoft Windows XP と Windows の以降のバージョンでサポートされます。 自動再生では、さまざまな種類のリムーバブル メディアまたはリムーバブル デバイスのオーディオまたはビデオ ファイルなどのコンテンツを検出します。 自動再生がコンテンツと、デバイス用のカスタム アイコンを表示し、再生またはメディアまたはデバイスが検出されときにコンテンツを表示するアプリケーションを自動的に開始することができます。
+[自動再生](https://go.microsoft.com/fwlink/p/?linkid=12031)は、シェルの拡張機能であり、MICROSOFT windows XP 以降のバージョンの windows でサポートされています。 自動再生では、リムーバブルメディアまたはリムーバブルデバイスで、オーディオファイルやビデオファイルなどのさまざまな種類のコンテンツが検出されます。 自動再生では、コンテンツとデバイスのカスタムアイコンを表示できます。また、システムが中またはデバイスを検出したときに、アプリケーションを自動的に起動してコンテンツを再生または表示することができます。
 
-このトピックでは、デバイスのカスタム アイコンを提供する方法について説明します。 シェルと自動再生は、これらのアイコンを使用して、自動再生、マイ コンピューター、およびファイルの [開く] ダイアログ ボックスでデバイスを表します。 アイコンは、デバイスが存在するかどうかと、メディアが挿入されるかどうかを示します。 次のアイコンを行うことができます。
+このトピックでは、デバイスのカスタムアイコンを提供する方法について説明します。 シェルと自動再生では、これらのアイコンを使用して、[自動再生]、[マイコンピューター]、[ファイルを開く] の各ダイアログボックスでデバイスを表します。 アイコンは、デバイスが存在するかどうか、およびメディアが挿入されているかどうかを示します。 次のアイコンを指定できます。
 
--   *アイコンのメディアに挿入された*デバイスが存在して、メディアが挿入されることを示します。
+-   *メディアに挿入*されたアイコンは、デバイスが存在し、メディアが挿入されていることを示します。
 
--   *アイコンのないメディア挿入*デバイスが存在するが、メディアが挿入されていないことを示します。
+-   *メディアが挿入*されていないアイコンは、デバイスが存在するがメディアが挿入されていないことを示します。
 
-個々 のデバイスのアイコンを指定するだけでなく指定することもすべてのデバイスのアイコンをユーザー定義のデバイス グループまたは[デバイス セットアップ クラス](device-setup-classes.md)します。 詳細については、次を参照してください。、[ハードウェアの準備と自動再生で使用するためのソフトウェア](https://go.microsoft.com/fwlink/p/?linkid=12032)web サイト。
+個々のデバイスのアイコンを指定するだけでなく、ユーザー定義デバイスグループまたは[デバイスセットアップクラス](device-setup-classes.md)のすべてのデバイスのアイコンを指定することもできます。 詳細については、「[自動再生 web サイトで使用するハードウェアとソフトウェアの準備](https://go.microsoft.com/fwlink/p/?linkid=12032)」を参照してください。
 
-場合、更新された[ドライバー パッケージ](driver-packages.md)カスタムを格納しているにアイコンが投稿された[Windows Update](https://docs.microsoft.com/windows-hardware/drivers)ユーザーは新しいダウンロードが利用できるように求められます。
+カスタムアイコンが含まれている更新された[ドライバーパッケージ](driver-packages.md)が[Windows Update](https://docs.microsoft.com/windows-hardware/drivers)に投稿されている場合は、新しいダウンロードを利用できることをユーザーに確認するメッセージが表示されます。
 
-アイコン ファイルを含むドライバー パッケージ内に 2 つの手順があります。
+ドライバーパッケージにアイコンファイルを含めるには、次の2つの手順を実行します。
 
-1.  ドライバー パッケージには、アイコン ファイルを追加します。
+1.  アイコンファイルをドライバーパッケージに追加します。
 
-2.  パッケージの INF ファイルでは、アイコン ファイルを指定し、システムにコピーされるエントリを追加します。
+2.  パッケージの INF ファイルで、アイコンファイルを指定するエントリを追加し、システムにコピーします。
 
-システム指定のドライバーでは、デバイスを処理する場合は完全なを指定する必要はありません[ドライバー パッケージ](driver-packages.md)します。 INF ファイルとアイコン ファイルを提供するだけ済みます。 この INF ファイルは、必要なアイコンに固有のエントリを含める必要があります plus **Include**と**必要がある**エントリをシステム提供のドライバーの INF ファイルで、デバイスのインストールの説明を参照してください。
+システム提供のドライバーがデバイスを処理する場合は、完全な[ドライバーパッケージ](driver-packages.md)を提供する必要はありません。 INF ファイルとアイコンファイルを指定するだけで済みます。 この INF ファイルには、必要なアイコン固有のエントリに加えて **、システム**が提供するドライバーの INF ファイルにあるデバイスのインストールセクションを参照するエントリが**含ま**れている必要があります。
 
 ### <a name="to-create-icons"></a>アイコンを作成するには
 
--   作成に用意されているガイドラインに従う[Windows XP のアイコン](https://go.microsoft.com/fwlink/p/?linkid=6938)web サイト。 次のガイドラインでは、Windows XP のグラフィカル要素の動作と外観を持つアイコンを作成する方法について説明します。
+-   「 [WINDOWS XP アイコン](https://go.microsoft.com/fwlink/p/?linkid=6938)の作成」 web サイトに記載されているガイドラインに従ってください。 これらのガイドラインでは、Windows XP のグラフィカル要素の外観と動作を持つアイコンを作成する方法について説明します。
 
 ### <a name="to-specify-the-icons-in-an-inf-file"></a>INF ファイルのアイコンを指定するには
 
--   含まれて、 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)下、 [ **INF DDInstall.HW セクション**](inf-ddinstall-hw-section.md)デバイス。 **AddReg**セクションで、指定**アイコン**と**NoMediaIcons**の次の例に示すように、エントリの値します。
+-   Inf [**AddReg ディレクティブ**](inf-addreg-directive.md)をデバイスの[**inf DDINSTALL. HW セクション**](inf-ddinstall-hw-section.md)に含めます。 **[AddReg]** セクションで、次の例に示すように、**アイコン**と**nomediaicons**の値のエントリを指定します。
 
     ```cpp
     [DDInstall.NT.HW]
@@ -65,28 +65,28 @@ ms.locfileid: "67386397"
     ```
 
     <a href="" id="icons"></a>**アイコン**  
-    メディアに挿入されたアイコンを含むファイルの名前を指定します。 *メディアの挿入-アイコン-ファイル*値は実際のファイル名のプレース ホルダーです。
+    メディアに挿入されたアイコンを含むファイルの名前を指定します。 *メディアに挿入*されたアイコンファイルの値は、実際のファイル名のプレースホルダーです。
 
     <a href="" id="nomediaicons"></a>**NoMediaIcons**  
-    いいえ-メディアの挿入 アイコンを含むファイルの名前を指定します。 *いいえ-メディアの挿入-アイコン-ファイル*値は実際のファイル名のプレース ホルダーです。
+    メディアに挿入されていないアイコンを含むファイルの名前を指定します。 *メディアに挿入*されていないファイルの値は、実際のファイル名のプレースホルダーです。
 
-### <a href="" id="to-direct-setup-to-copy-the-icon-files-to-the-system"></a>直接の Windows システムにアイコン ファイルをコピーするには
+### <a href="" id="to-direct-setup-to-copy-the-icon-files-to-the-system"></a>アイコンファイルをシステムにコピーするように Windows に指示するには
 
--   含める、 [ **INF SourceDisksFiles セクション**](inf-sourcedisksfiles-section.md)アイコン ファイルと対応する一覧を示す[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)をコピーします。システムにします。
+-   アイコンファイルと、それらをシステムにコピーする対応する[**Inf CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を一覧表示する[**Inf SourceDisksFiles セクション**](inf-sourcedisksfiles-section.md)をインクルードします。
 
-Windows の保存、**アイコン**と**NoMediaIcons**の下のエントリの値、**デバイス パラメーター** デバイスのキー*ハードウェア キー*。 次の例は、レジストリの場所、値、エントリの種類の値を指定します、**アイコン**と**NoMediaIcons**デバイス インスタンス ID は USB デバイスのエントリの値\\Vid_0000 & Pid_0000\\059B003112010E93 します。
+Windows では、デバイスの*ハードウェアキー*の下に、**デバイスパラメーター**キーの下に**アイコン**および**nomediaicons**の値のエントリが保存されます。 次の例では、デバイスインスタンス ID が USB\\Vid_0000 & Pid_0000\\059B003112010E93 であるデバイスについて、レジストリの場所、値のエントリの種類、および**アイコン**と**nomediaicons**の値のエントリを指定します。
 
-**HKEY_LOCAL_MACHINE\\システム\\CurrentControlSet\\Enum\\** <em>USB\\Vid_0000 & Pid_0000\\059B003112010E93</em>\\**デバイス パラメーター**
+**HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\** <em>USB\\Vid_0000 & Pid_0000\\059B003112010E93</em>\\**デバイスパラメーター**
 
-**Icons** \[REG_MULTI_SZ\] = %*SystemRoo*t% *\\system32\\icon.ico*
+**アイコン**\[REG_MULTI_SZ\] =%*systemroo*t% *\\system32\\アイコン .ico*
 
-**NoMediaIcons** \[REG_MULTI_SZ\] % =*SystemRoot*% *\\system32\\noicon.ico*
+**Nomediaicons** \[REG_MULTI_SZ\] =%*SystemRoot*% *\\system32\\noicon. .ico*
 
-ドライバーやその他のコードは決してアクセスまたは変更、**デバイス パラメーター**直接キーします。 代わりに、次のシステム関数を使用する必要があります。
+ドライバーまたはその他のコードは、**デバイスパラメーター**キーに直接アクセスしたり変更したりしないでください。 代わりに、次のシステム関数を使用する必要があります。
 
--   ユーザーのモードから[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)と[ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)します。
+-   ユーザーモードでは、 [**Setupdicreatedevregkey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)と[**Setupdiopendevregkey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)を使用します。
 
--   カーネル モードから使用して[ **IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)します。
+-   カーネルモードの場合は、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)を使用します。
 
  
 

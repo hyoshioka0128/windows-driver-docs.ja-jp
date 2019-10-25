@@ -1,68 +1,68 @@
 ---
-title: GDI サポート サービス
-description: GDI サポート サービス
+title: GDI サポートサービス
+description: GDI サポートサービス
 ms.assetid: a5521f9f-ddf6-4892-bf6d-aebb7936df11
 keywords:
-- GDI WDK Windows 2000 の表示、サービス ルーチン
-- グラフィックス ドライバー WDK Windows 2000 の表示、サービス ルーチン
-- 描画 WDK GDI やサービス ルーチン
-- サービス ルーチン WDK GDI
+- GDI WDK Windows 2000 display、service ルーチン
+- グラフィックスドライバー WDK Windows 2000 display、service ルーチン
+- WDK GDI、サービスルーチンの描画
+- サービスルーチン WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77a994d17ad2e2e0a7276dbe9cbd4861c5366e3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1a78c6bccb13496fde5af186a9772d977246ff90
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839678"
 ---
-# <a name="gdi-support-services"></a>GDI サポート サービス
+# <a name="gdi-support-services"></a>GDI サポートサービス
 
 
 ## <span id="ddk_gdi_support_services_gg"></span><span id="DDK_GDI_SUPPORT_SERVICES_GG"></span>
 
 
-*GDI*ドライバーの設計を簡略化できる多くのサービス ルーチンをエクスポートします。 ドライバーは、これらのルーチンを直接呼び出すことができます。 一般的なグラフィックスのルーチンの名前エンジン サービスの名前が始まる**への Eng**します。 オブジェクトの名前を持つ常に、特定のオブジェクトに関連するサービス ルーチンを開始します。たとえば、 [ **CLIPOBJ\_cEnumStart** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_cenumstart)は、 [ **CLIPOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)サービス。
+*GDI*は、ドライバーの設計を簡素化する多くのサービスルーチンをエクスポートします。 ドライバーは、これらのルーチンを直接呼び出すことができます。 名前が**Eng**で始まる一般的なグラフィックスエンジンサービスであるルーチンの名前。 特定のオブジェクトに関連するサービスルーチンは、常にオブジェクトの名前で始まります。たとえば、 [**CLIPOBJ\_cEnumStart**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_cenumstart)は[**CLIPOBJ**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)サービスです。
 
-**注**  を最初の引数は、ユーザー オブジェクトへのポインター サービス ルーチンは、そのユーザー オブジェクトのメソッドし、通常の C++ 規則を使用すると呼ばれます。 そのため、C++ で記述されたドライバーの方法としてサービス ルーチンにアクセスできます。
+1番目の引数がユーザーオブジェクトへのポインターであるサービスルーチンは、そのユーザーオブジェクトのメソッドであり、通常C++の規則を使用して呼び出される   ます。 そのため、でC++記述されたドライバーは、メソッドとしてサービスルーチンにアクセスできます。
 
  
 
-これらのサービス ルーチンは、次のカテゴリに分類されます。
+これらのサービスルーチンは、次のカテゴリに分類されます。
 
-[サーフェスの管理](gdi-support-for-surfaces.md)
+[Surface management](gdi-support-for-surfaces.md)
 
-[パレット サービス](gdi-support-for-palettes.md)
+[パレットサービス](gdi-support-for-palettes.md)
 
-[パス サービス](gdi-services-for-paths.md)
+[パスサービス](gdi-services-for-paths.md)
 
-[ウィンドウ サービス](gdi-support-for-window-objects.md)
+[ウィンドウサービス](gdi-support-for-window-objects.md)
 
-[サービスの表示](gdi-drawing-and-related-services.md)
+[レンダリングサービス](gdi-drawing-and-related-services.md)
 
-[フォントとテキスト サービス](gdi-font-and-text-services.md)
+[フォントとテキストサービス](gdi-font-and-text-services.md)
 
-[メモリのサービス](gdi-memory-services.md)
+[メモリサービス](gdi-memory-services.md)
 
-[イベント サービス](gdi-event-services.md)
+[イベントサービス](gdi-event-services.md)
 
-[ファイル、モジュール、および処理サービス](gdi-file--module--and-process-services.md)
+[ファイル、モジュール、およびプロセスサービス](gdi-file--module--and-process-services.md)
 
-[セマフォのサービス](gdi-semaphore-services.md)
+[セマフォサービス](gdi-semaphore-services.md)
 
-[プリンターのサービス](gdi-printer-services.md)
+[プリンターサービス](gdi-printer-services.md)
 
 [ドライバー関連のサービス](gdi-driver-related-services.md)
 
-[インフォメーション サービス](gdi-information-services.md)
+[インフォメーションサービス](gdi-information-services.md)
 
-[ユーティリティ サービス](gdi-utility-services.md)
+[ユーティリティサービス](gdi-utility-services.md)
 
-[浮動小数点のサービス](gdi-floating-point-services.md)
+[浮動小数点サービス](gdi-floating-point-services.md)
 
-[ハーフトーン サービス](gdi-halftone-services.md)
+[ハーフトーンサービス](gdi-halftone-services.md)
 
-[グラフィックス DDI を使用して](using-the-graphics-ddi.md)グラフィックス DDI のエントリ ポイントを説明し、これらのサービス ルーチンの多くを使用して、ドライバーのエントリ ポイントを実装する場所についても説明します。 各サービスの機能の詳細な説明については、次を参照してください。 [GDI 関数は、プリンターおよびディスプレイ ドライバーによって呼び出されます](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+グラフィックス[Ddi を使用](using-the-graphics-ddi.md)すると、グラフィックス ddi のエントリポイントについて説明します。また、これらのサービスルーチンの多くを使用して、ドライバーがエントリポイントを実装できるようにする方法についても説明します。 各サービス関数の詳細な説明については、「[プリンターとディスプレイドライバーによって呼び出される GDI 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
  
 

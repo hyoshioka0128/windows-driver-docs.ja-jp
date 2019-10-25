@@ -1,6 +1,6 @@
 ---
 title: TargetRelationNeedsRef ルール (wdm)
-description: TargetRelationNeedsRef ルールは、TargetDeviceRelation クエリを処理するときに、ドライバーの DispatchPnP ルーチンを呼び出す子デバイスの PDO を参照するには、次の関数のいずれかを指定しますObReferenceObjectObReferenceObjectByHandleObReferenceObjectByPointer します。
+description: TargetRelationNeedsRef ルールは、TargetDeviceRelation クエリを処理するときに、ドライバーの DispatchPnP ルーチンが、次の関数のいずれかを呼び出して子デバイスの PDO を参照することを指定します。ObReferenceObjectObReferenceObjectByHandleObReferenceObjectByPointer.
 ms.assetid: a341ff7a-1b36-4dfc-9e73-8268ed5b9a78
 ms.date: 05/21/2018
 keywords:
@@ -12,35 +12,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4937fd1d1f55ad8d264812b736396f92cabee47
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 63e3a4a6e4356c6e7db954c6f560dda09b013b56
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393490"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839098"
 ---
 # <a name="targetrelationneedsref-rule-wdm"></a>TargetRelationNeedsRef ルール (wdm)
 
 
-**TargetRelationNeedsRef**ルール指定を処理するときに、 *TargetDeviceRelation*クエリ、ドライバーの[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、子デバイスの PDO を参照するには、次の関数のいずれかを呼び出します。
+**TargetRelationNeedsRef**ルールは、 *TargetDeviceRelation*クエリを処理するときに、ドライバーの[**DispatchPnP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが、次のいずれかの関数を呼び出して子デバイスの PDO を参照することを指定します。
 
--   [**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)
+-   [**Obreferenceobject へ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)
 
--   [**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
+-   [**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)
 
--   [**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)
+-   [**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)
 
-このルールは、設定に、ドライバーが IRP を完了時にのみ適用されます、 `Irp->IoStatus.Information` 、新しいへのポインター以外**NULL**値。 下位のドライバーをドライバーが IRP を通過するときは適用されません。
+このルールは、`Irp->IoStatus.Information` ポインターを**NULL**以外の新しい値に設定することによって、ドライバーが IRP を完了した場合にのみ適用されます。 ドライバーが IRP を下位のドライバーに渡すときには適用されません。
 
-この規則は有効な値である条件を指定しない`Irp->IoStatus.Information`します。 この規則を適用のみ、ドライバーの値を変更して、新しい値がない**NULL**します。 有効な値は、デバイスへのポインター\_リレーションシップの要求された情報を含む関係の構造体。
+このルールでは、`Irp->IoStatus.Information`に有効な値として修飾されるものが指定されていません。 この規則は、ドライバーが値を変更し、新しい値が**NULL**でない場合にのみ適用されます。 有効な値は、要求された関係情報を含むデバイス\_の関係構造体へのポインターです。
 
-このルールは、バス ドライバーのみに適用されます。
+このルールは、バスドライバーにのみ適用されます。
 
 |              |     |
 |--------------|-----|
-| ドライバー モデル | WDM |
+| ドライバーモデル | WDM |
 
-<a name="how-to-test"></a>テスト方法
+<a name="how-to-test"></a>テストする方法
 -----------
 
 <table>
@@ -54,14 +54,14 @@ ms.locfileid: "67393490"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>TargetRelationNeedsRef</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>TargetRelationNeedsRef</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,10 +69,10 @@ ms.locfileid: "67393490"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
-[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
-[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer) 
- [ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)も参照してください
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
+[**Obreferenceobjectbyhandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)
+[**obreferenceobjectbyhandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)
+[**pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)も参照
 --------
 
 [**DanglingDeviceObjectReference**](wdm-danglingdeviceobjectreference.md)

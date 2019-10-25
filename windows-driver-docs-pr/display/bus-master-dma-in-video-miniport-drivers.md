@@ -1,53 +1,53 @@
 ---
-title: ビデオ ミニポート ドライバーのバス マスター DMA
-description: ビデオ ミニポート ドライバーのバス マスター DMA
+title: ビデオミニポートドライバーのバスマスタ DMA
+description: ビデオミニポートドライバーのバスマスタ DMA
 ms.assetid: fe6c2e16-d222-4948-b1df-34ed8d57d9d8
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、バス マスター DMA
-- バス マスター DMA WDK ビデオのミニポート
-- DMA バス マスター WDK のビデオのミニポート
-- 一般的なバッファー DMA WDK ビデオのミニポート
-- 一般的なバッファー DMA WDK ビデオのミニポート, 概要
-- パケットに基づく DMA WDK ビデオのミニポート
-- パケットに基づく DMA WDK ビデオのミニポート, 概要
+- ビデオミニポートドライバー WDK Windows 2000、バスマスタ DMA
+- バスマスタ DMA WDK ビデオミニポート
+- DMA バス-マスタ WDK ビデオミニポート
+- 共通バッファー DMA WDK ビデオミニポート
+- 共通バッファー DMA WDK ビデオミニポート、概要
+- パケットベースの DMA WDK ビデオミニポート
+- パケットベースの DMA WDK ビデオミニポート、概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 949e75163c24cab7cc5147499bb018f82c85f34b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6992915d543f886e4ba23d7a2355078a6262d7a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384613"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839821"
 ---
-# <a name="bus-master-dma-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーのバス マスター DMA
+# <a name="bus-master-dma-in-video-miniport-drivers"></a>ビデオミニポートドライバーのバスマスタ DMA
 
 
 ## <span id="ddk_bus_master_dma_in_video_miniport_drivers_gg"></span><span id="DDK_BUS_MASTER_DMA_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>
 
 
-Windows XP 以降では、オペレーティング システムのグラフィックス インターフェイスは、PCI バス マスターのデバイス上の DMA をサポートします。 PCI バス マスターのデバイスのビデオのミニポート ドライバーでは、次の種類のビデオ ポート ドライバーによって提供されるヘルパー関数を使用して DMA サポートを実装できます。
+Windows XP 以降では、オペレーティングシステムグラフィックスインターフェイスは PCI バスマスタデバイスで DMA をサポートしています。 PCI バスマスタデバイスのビデオミニポートドライバーは、ビデオポートドライバーによって提供されるヘルパー関数を使用して、次の種類の DMA サポートを実装できます。
 
--   **DMA のパケットに基づく**
+-   **パケットベースの DMA**
 
-    DMA のパケットに基づくデータが、要求元の場所とデバイス間で直接転送されます。 要求者の領域を連続することができない可能性があります、ために、パケットに基づく DMA は、スキャッター/ギャザーのハードウェア サポートとそれらのデバイスでより効率的です。 パケットに基づく DMA は、ユーザー空間と、デバイス間で大量の任意のデータを移動するための最適な選択肢です。
+    パケットベースの DMA では、データは、要求元のスペースとデバイスの間で直接転送されます。 要求元の領域が連続していない可能性があるため、ハードウェアのスキャッター/ギャザーがサポートされているデバイスでは、パケットベースの DMA の方が効率的です。 パケットベースの DMA は、ユーザー領域とデバイス間で大量の任意のデータを移動する場合に最適な選択肢です。
 
--   **一般的なバッファーの DMA**
+-   **共通バッファー DMA**
 
-    一般的なバッファーの DMA 間でバッファーを共有 (そのために共通する)、およびホストと DMA 操作を繰り返しについては、デバイスの両方で使用します。 一部のドライバーでは、グラフィックス エンジンに一連のコマンドなどのドライバー操作のデータをアップロードするのに一般的なバッファー DMA を使用します。 一般的なバッファーでは、連続しているし、ホストの CPU と、デバイスの両方にアクセス可能では常にします。
+    共通バッファー DMA では、バッファーは (したがって共通の) 間で共有され、DMA 操作を繰り返すためにホストとデバイスの両方で使用されます。 一部のドライバーでは、共通バッファー DMA を使用して、一連のコマンドなどのドライバーで操作されたデータをグラフィックスエンジンにアップロードします。 共通バッファーは連続しており、デバイスとホストの両方の CPU に常にアクセスできます。
 
-    共通のバッファーは、貴重なシステム リソースです。 適切な全体的なドライバーとシステムのパフォーマンスは、ドライバーはできるだけ経済的な共通バッファー DMA を使用する必要があります。
+    一般的なバッファーは貴重なシステムリソースです。 ドライバーとシステムの全体的なパフォーマンスを向上させるために、ドライバーはできるだけ経済的に共通バッファー DMA を使用する必要があります。
 
-、バス マスター アダプターの性質に応じてミニポート ドライバーによってパケットに基づく DMA を排他的に使用して、排他的に一般的なバッファー DMA を使用して他のユーザー両方を使用していくつか。
+バスマスタアダプターの性質によっては、一部のミニポートドライバーがパケットベースの DMA を排他的に使用し、他のデバイスが共通バッファー DMA だけを使用し、その両方を使用します。
 
-DMA の種類を使用するに関係なく、ミニポート ドライバーを呼び出す必要があります[ **VideoPortGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdmaadapter)へのポインターを取得する、 [**担当副社長\_DMA\_アダプター** ](https://docs.microsoft.com/previous-versions/ff570570(v=vs.85))構造体し、後続の DMA 関数の呼び出しに対して使用します。 ミニポート ドライバーを呼び出す必要がありますの DMA 操作を継続的な必要がなくなったとき[ **VideoPortPutDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportputdmaadapter)をそのアダプタ オブジェクトを破棄します。
+使用する DMA の種類にかかわらず、ミニポートドライバーは[**VideoPortGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetdmaadapter)を呼び出して、 [**VP\_dma\_アダプター**](https://docs.microsoft.com/previous-versions/ff570570(v=vs.85))構造へのポインターを取得し、それを後続の DMA 関数呼び出しに使用します。 継続的な DMA 操作が不要になった場合、ミニポートドライバーは[**VideoPortPutDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportputdmaadapter)を呼び出して、アダプターオブジェクトを破棄する必要があります。
 
-次のサブセクションでは、ビデオ ポート ドライバーによって提供されるパケットに基づくと、一般的なバッファーの DMA サポートを使用する方法について説明します。
+次のサブセクションでは、ビデオポートドライバーによって提供されるパケットベースおよび共通バッファー DMA のサポートを使用する方法について説明します。
 
-[バス マスター DMA のパケットに基づく](packet-based-bus-master-dma.md)
+[パケットベースのバスマスタ DMA](packet-based-bus-master-dma.md)
 
-[一般的なバッファーのバス マスター DMA](common-buffer-bus-master-dma.md)
+[共通バッファーバスマスタ DMA](common-buffer-bus-master-dma.md)
 
-[DMA を使用する場合に考慮すべき点](points-to-consider-when-using-dma.md)
+[DMA を使用する場合の考慮事項](points-to-consider-when-using-dma.md)
 
  
 

@@ -1,149 +1,149 @@
 ---
-title: I/O の検証
-description: I/O の検証
+title: I/o の検証
+description: I/o の検証
 ms.assetid: 41b77bba-fae8-453b-9872-911f5d5be3e6
 keywords:
-- I/O の検証機能 WDK Driver Verifier
-- レベル 1 I/O 検証 WDK Driver Verifier
-- レベル 2 I/O 検証 WDK Driver Verifier
+- I/o 検証機能 (WDK ドライバー検証ツール)
+- レベル 1 i/o 検証 (WDK ドライバー検証ツール)
+- レベル2の i/o 検証 WDK ドライバーの検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4235a98c84aade321da760c374e6d1985e5ba49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90c2be91a6bf7197dd306a3c729efe359744463f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358265"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840264"
 ---
-# <a name="io-verification"></a>I/O の検証
+# <a name="io-verification"></a>I/o の検証
 
 
 ## <span id="ddk_i_o_verification_tools"></span><span id="DDK_I_O_VERIFICATION_TOOLS"></span>
 
 
-Driver Verifier では、I/O の検証の 2 つのレベルがあります。
+Driver Verifier には、次の2つのレベルの i/o 検証があります。
 
--   *レベル 1 の I/O の検証*I/O の検証が選択されるたびにアクティブでは常にします。
+-   I/o 検証が選択されている場合は常に、*レベル1の I/o 検証*が常にアクティブになります。
 
--   *第 2 レベルの I/O の検証*は I/O の検証には、Windows XP 以降が選択されているときに常にアクティブです。 Windows 2000 では、I/O の検証は、両方のレベルを含めるように構成できますか、レベル 1 だけをテストします。
+-   Windows XP 以降で i/o 検証が選択されている場合は常に、*レベル2の I/o 検証*が常にアクティブになります。 Windows 2000 では、両方のレベルを含めるように i/o の検証を構成することも、レベル1のテストだけを構成することもできます。
 
-**参照してください。** [I/O の検証の強化](enhanced-i-o-verification.md)Windows 7 および Windows オペレーティング システムの以降のバージョンでは、強化された I/O の検証は自動的にアクティブ化 I/O の検証を選択するとします。 それが利用できないか個別のオプションとして選択するために必要です。
+**関連項目:** windows 7 以降のバージョンの windows オペレーティングシステムでの強化された i/o[検証](enhanced-i-o-verification.md)、i/o 検証を選択した場合は、拡張 i/o 検証が自動的にアクティブ化されます。 別のオプションとして選択することはできません。
 
-### <a name="span-idlevel_1_i_o_verificationspanspan-idlevel_1_i_o_verificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>第 1 レベルの I/O の検証
+### <a name="span-idlevel_1_i_o_verificationspanspan-idlevel_1_i_o_verificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>レベル1の i/o 検証
 
-レベル 1 の I/O の検証を有効にすると、すべての Irp 経由で取得した**IoAllocateIrp**は特別なプールから割り当てられ、その使用を追跡します。
+レベル1の i/o 検証が有効になっている場合、 **Ioallocateirp**で取得したすべての irp が特別なプールから割り当てられ、その使用が追跡されます。
 
-さらに、Driver Verifier を I/O 呼び出しの無効な (など) を確認します。
+また、ドライバーの検証ツールは、次のような無効な i/o 呼び出しを確認します。
 
--   型でない IO IRP の解放を試みます\_型\_IRP
+-   型が IO でない IRP の解放を試みます\_型\_IRP
 
--   パスに無効なデバイス オブジェクトの**保留**
+-   無効なデバイスオブジェクトを**IoCallDriver**に渡します。
 
--   パスに IRP の**IoCompleteRequest**無効な状態を格納しているか、キャンセルの日常的なセットをまだ
+-   無効な状態を含んでいるか、まだキャンセルルーチンが設定されている**IoCompleteRequest**への IRP の引き渡し
 
--   ドライバーのディスパッチ ルーチンへの呼び出しの間での IRQL への変更
+-   ドライバーディスパッチルーチンの呼び出しにおける IRQL の変更
 
--   関連付けられたスレッドは IRP を解放しようとしています。
+-   スレッドに関連付けられたままになっている IRP の解放を試みます。
 
--   デバイス オブジェクトのパスを**IoInitializeTimer**を既に初期化済みのタイマーが含まれています
+-   初期化されたタイマーが既に含まれている**Ioinitializetimer**にデバイスオブジェクトを渡します。
 
--   パスに無効なバッファーの**IoBuildAsynchronousFsdRequest**または**IoBuildDeviceIoControlRequest**
+-   無効なバッファーを**IoBuildAsynchronousFsdRequest**または**IoBuildDeviceIoControlRequest**に渡します。
 
--   この状態の I/O ブロックが離れすぎてアンワインドがスタックに割り当てられるときに、IRP を I/O 状態ブロックのパス
+-   I/o 状態ブロックを IRP に渡すと、この i/o ステータスブロックが、過剰にアンワインドしているスタックに割り当てられます。
 
--   このイベント オブジェクトが離れすぎてアンワインドがスタックに割り当てられるときに、IRP にイベント オブジェクトのパス
+-   イベントオブジェクトを IRP に渡します。このイベントオブジェクトは、アンワインドが大きすぎるスタックに割り当てられます。
 
-特別なプールの IRP では、サイズの制限であるため、一度に 1 つのドライバーの使用のみ I/O の検証は最も効果的なです。
+特殊な IRP プールのサイズは限られているため、i/o の検証は、一度に1つのドライバーでのみ使用される場合に最も効果的です。
 
-検証レベル 1 の I/O エラーが発生するバグ チェック 0xC9 が発行されます。 このバグ チェックの最初のパラメーターでは、どのような違反が発生したことを示します。 参照してください[**バグ チェック 0xC9** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (ドライバー\_VERIFIER\_IOMANAGER\_違反) 完全なパラメーターの一覧についてはします。
+I/o 検証レベル1のエラーにより、バグチェック0xC9 が発行されます。 このバグチェックの最初のパラメーターは、どのような違反が発生したかを示します。 完全なパラメーターの一覧については、「[**バグチェック 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (DRIVER\_VERIFIER\_iomanager\_違反)」を参照してください。
 
-### <a name="span-idlevel_2_i_o_verificationspanspan-idlevel_2_i_o_verificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>第 2 レベルの I/O の検証
+### <a name="span-idlevel_2_i_o_verificationspanspan-idlevel_2_i_o_verificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>レベル2の i/o 検証
 
-さまざまな方法で検証レベル 2 の I/O エラーが表示されます。 カーネル デバッガーにし、クラッシュ ダンプ ファイルには、ブルー スクリーンにします。
+I/o 検証レベル2のエラーは、ブルースクリーン、クラッシュダンプファイル、およびカーネルデバッガーで、さまざまな方法で表示されます。
 
-青の画面では、これらのエラーは、メッセージによって記録されます**IO システム検証エラー**と文字列 **WDM ドライバー エラー * * * XXX*ここで、 *XXX* I/O エラー コードします。
+ブルースクリーンでは、これらのエラーはメッセージ**IO システムの検証エラー**と文字列 **WDM ドライバーエラー * * * XXX*で示されます。 *xxx*は i/o エラーコードです。
 
-メッセージによってクラッシュ ダンプ ファイルでは、ほとんどのエラーが示されて**バグチェック 0xC9 (ドライバー\_VERIFIER\_IOMANAGER\_違反)** 、I/O エラー コードと共にします。 この場合、I/O エラー コードは、0xC9 のバグ チェックの最初のパラメーターとして表示されます。 残りの部分は、メッセージによって記録されます**0xC4 のバグ チェック (ドライバー\_VERIFIER\_検出\_違反)** 、Driver Verifier のエラー コードと共にします。 この場合は、Driver Verifier のエラー コードは、バグ チェック 0xC4 の最初のパラメーターとして表示されます。
+クラッシュダンプファイルでは、これらのエラーのほとんどは、i/o エラーコードと共に、メッセージの**バグチェック 0xC9 (DRIVER\_VERIFIER\_IOMANAGER\_違反)** によって示されます。 この場合、i/o エラーコードはバグチェック0xC9 の最初のパラメーターとして表示されます。 残りの部分は、ドライバーの検証ツールのエラーコードと共に、**バグチェック 0xC4 (driver\_VERIFIER\_検出された\_違反)** によって示されます。 この場合、ドライバーの検証ツールのエラーコードは、バグチェック0xC4 の最初のパラメーターとして表示されます。
 
-カーネル デバッガー (KD または WinDbg) でこれらのエラーは、メッセージによって記録されます**WDM ドライバー エラー**と説明のテキスト文字列。 カーネル デバッガーがアクティブな場合は、レベル 2 のエラーを無視し、システムの操作を再開することです。 (これが、その他のバグ チェックで可能です)
+カーネルデバッガー (KD または WinDbg) では、これらのエラーは、メッセージ「 **WDM ドライバーエラー** 」と説明のテキスト文字列によって示されます。 カーネルデバッガーがアクティブになっている場合、レベル2のエラーを無視し、システムの操作を再開することができます。 (これは他のバグチェックではできません)。
 
-ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 ほとんどの I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)します。 残りの部分は、次を参照してください。 [**バグ チェック 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)します。
+青色の画面、クラッシュダンプファイル、およびカーネルデバッガーは、それぞれ追加情報も表示します。 ほとんどの i/o 検証レベル2のエラーメッセージの詳細については、「[**バグチェック 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)」を参照してください。 その他の詳細については、「[**バグチェック 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)」を参照してください。
 
-次のドライバー エラー以降 Window Vista では、I/O の検証オプションを確認します。
+Windows Vista 以降では、i/o 検証オプションによって次のドライバーエラーがチェックされます。
 
--   完了し、ユーザー モード アプリケーションから発信された Irp のキャンセルに長時間かかっています。
+-   ユーザーモードのアプリケーションで発生した Irp の完了と取り消しに時間がかかりすぎています。
 
--   まだ取得されていないを削除ロックを解除します。
+-   まだ取得されていない削除ロックを解放しています。
 
--   呼び出す[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)または[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait)タグ パラメーターとは異なるタグ パラメーター対応するために使用[ **IoAcquireRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)呼び出します。
+-   対応する[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)呼び出しで使用されるタグパラメーターとは異なるタグパラメーターを指定して、 [**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)または[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)を呼び出しています。
 
--   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)に割り込みを無効になっています。
+-   割り込みが無効になっている[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出しています。
 
--   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ディスパッチより大きい IRQL で\_レベル。
+-   ディスパッチ\_レベルより大きい IRQL で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出しています。
 
--   割り込みを無効になっているドライバーのディスパッチ ルーチンから返します。
+-   割り込みが無効になっているドライバーディスパッチルーチンからを返します。
 
--   変更された IRQL とドライバーのディスパッチ ルーチンから返すことです。
+-   ドライバーディスパッチルーチンから、変更された IRQL を返します。
 
--   Apc を無効になっているのでドライバーのディスパッチ ルーチンから返します。 この場合、ドライバーを呼び出したことがある[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)回よりも[ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)、これは、主な原因[**バグ チェック 0x20** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x20--kernel-apc-pending-during-exit) (カーネル\_APC\_PENDING\_に\_終了) と[ **バグ チェック 0x1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1--apc-index-mismatch) (APC\_インデックス\_が一致しません)。
+-   Apc が無効になっているドライバーディスパッチルーチンからを返します。 この場合、ドライバーは[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)よりも多くの[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)を呼び出している可能性があります。これは、[**バグチェック 0x20**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x20--kernel-apc-pending-during-exit) (カーネル\_APC\_保留中の\_\_終了中) の主な原因です。[**バグチェック 0x1**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1--apc-index-mismatch) (APC\_インデックス\_不一致)。
 
-次のドライバー エラーの Windows 7 以降、I/O の検証オプションを確認します。
+Windows 7 以降では、i/o 検証オプションによって次のドライバーエラーがチェックされます。
 
--   Irp を呼び出すことによって解放しようとしています。 [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)します。 Irp を使用して解放する必要があります[ **IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)します。
+-   [**Exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)を呼び出して、irp の解放を試みます。 Irp は、 [**Iofreeirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)を使用して解放する必要があります。
 
-さらに、もう 1 つの一般的なドライバーのバグを検出するためにこのオプションを使用できます: ロックを削除して再初期化します。 デバイスの拡張機能の内部データ構造を割り当てる必要があるロックを削除します。 これにより、I/O マネージャーが、IO を保持するメモリを解放する\_削除\_デバイス オブジェクトが削除された場合にのみ、ロック構造体。 ドライバーは、次の 3 つの手順を実行する場合、手順 2 の後にアプリケーションやドライバーも保持している Device1 への参照をことができます。
+さらに、このオプションを使用して、別の一般的なドライバーバグを検出し、削除ロックを再初期化することもできます。 削除ロックデータ構造は、デバイス拡張機能内に割り当てる必要があります。 これにより、i/o マネージャーは、デバイスオブジェクトが削除された場合にのみ\_ロック構造を削除\_、IO を保持するメモリを解放します。 ドライバーが次の3つの手順を実行する場合は、手順 2. の後に、アプリケーションまたはドライバーが Device1 への参照を保持している可能性があります。
 
--   IO を割り当てます\_削除\_Device1 に対応していますが、Device1 の拡張機能の外部で割り当てのロック構造体。
--   呼び出し[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait) Device1 が削除されるときにします。
--   呼び出し[ **IoInitializeRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock) Device2 の削除ロックとして再利用する同じロックします。
+-   Device1 に対応する\_ロック構造を削除\_IO を割り当てますが、Device1's extension の外に割り当てを行います。
+-   Device1 が削除されるときに[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)を呼び出します。
+-   同じロックに対して[**Ioデバイス 2 Eremovelock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeremovelock)を呼び出して、これをの削除ロックとして再利用します。
 
-後に手順 2. アプリケーションがいる可能性があります。 またはドライバーが引き続き Device1 への参照を保持します。 アプリケーションまたはドライバーが要求を送信できます Device1、場合でも、このデバイスが削除されました。 そのため、I/O マネージャー Device1 の削除されるまで、新しい削除ロックと同じメモリを再利用する安全ではありません。 別のスレッドがそれを取得しようとしたときに、同じロックを再初期化すると、ドライバーとシステム全体の予期しない結果に、ロックの破損可能性があります。
+手順2の後に、アプリケーションまたはドライバーが Device1 への参照を保持している可能性があります。 このデバイスが削除された場合でも、アプリケーションまたはドライバーは引き続き Device1 に要求を送信できます。 そのため、i/o マネージャーによって Device1 が削除されるまで、新しい削除ロックと同じメモリを再利用するのは安全ではありません。 別のスレッドが取得しようとしているときに同じロックを再初期化すると、ロックが破損し、ドライバーとシステム全体に対して予期しない結果が発生する可能性があります。
 
-Windows 7、Windows オペレーティング システムの以降のバージョンで[I/O の検証の強化された](enhanced-i-o-verification.md)I/O の検証を選択すると、自動的にアクティブ化します。
+Windows 7 以降のバージョンの Windows オペレーティングシステムでは、i/o 検証を選択すると、[拡張 I/o 検証](enhanced-i-o-verification.md)が自動的にアクティブ化されます。
 
-### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーの i/o 検証機能をアクティブ化できます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
--   **コマンドライン。**
+-   **コマンドラインを実行します。**
 
-    、コマンドラインでは、I/O の検証オプションで表される**ビット 4 (0x10)** します。 I/O の検証を有効にするには、0x10 のフラグの値を使用して、または 0x10 をフラグ値に追加します。 次に、例を示します。
+    コマンドラインでは、i/o 検証オプションは**ビット 4 (0x10)** で表されます。 I/o の検証をアクティブにするには、フラグ値に0x10 を使用するか、フラグ値に0x10 を追加します。 例:
 
     ```
     verifier /flags 0x10 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
-    Windows 2000 で使用することができます、 **/iolevel**のみレベル 1 (既定値) または両方のレベル 1 および Level 2 をアクティブ化のパラメーター。 以降のバージョンの Windows では、レベル 1 および Level 2 の両方が常にアクティブ化される I/O の検証を有効にするとします。
+    Windows 2000 では、 **/iolevel**パラメーターを使用して、レベル 1 (既定値) またはレベル1とレベル2の両方をアクティブにすることができます。 Windows の新しいバージョンでは、i/o 検証をアクティブ化すると、レベル1とレベル2の両方が常にアクティブ化されます。
 
-    たとえば、次のコマンドでは、Windows 2000 を実行するコンピューター上のレベル 1 およびレベル 2 の I/O の検証がアクティブにします。
+    たとえば、次のコマンドは、Windows 2000 を実行しているコンピューターでレベル1とレベル2の i/o 検証をアクティブにします。
 
     ```
     verifier /flags 0x10 /iolevel 2 /driver MyDriver.sys
     ```
 
-    Windows Vista と Windows の以降のバージョンもアクティブ化し、I/O の検証を追加することで、コンピューターを再起動しなくても非アクティブ化することができます、 **/volatile**パラメーターをコマンド。 次に、例を示します。
+    Windows Vista 以降のバージョンの Windows では、コマンドに **/volatile**パラメーターを追加することで、コンピューターを再起動せずに I/o の検証をアクティブ化および非アクティブ化することもできます。 例:
 
     ```
     verifier /volatile /flags 0x10 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
-    I/O の検証機能は、標準の設定にも含まれます。 次に、例を示します。
+    I/o 検証機能は、標準設定にも含まれています。 例:
 
     ```
     verifier /standard /driver MyDriver.sys
     ```
 
--   **ドライバー検証マネージャーを使用します。**
+-   **ドライバー検証マネージャーの使用**
 
-    1.  選択 **(コード開発者) 用のカスタム設定を作成する**順にクリックします**次**します。
-    2.  選択**完全な一覧から個々 の設定を選択します。** します。
-    3.  選択 (チェック) **I/O の検証**です。
+    1.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    2.  [**完全な一覧から個々の設定を選択]** を選択します。
+    3.  **[I/o の確認]** を選択します。
 
-    I/O の検証機能は、標準の設定にも含まれます。 この機能では、ドライバー検証マネージャーでを使用する をクリックして**標準設定の作成**です。
+    I/o 検証機能は、標準設定にも含まれています。 この機能を使用するには、ドライバー検証マネージャーで **[標準設定の作成]** をクリックします。
 
  
 

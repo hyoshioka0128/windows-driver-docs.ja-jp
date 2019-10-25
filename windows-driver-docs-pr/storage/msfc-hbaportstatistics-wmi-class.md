@@ -4,22 +4,22 @@ description: MSFC\_HBAPortStatistics WMI クラス
 ms.assetid: 275e4a50-6500-4a23-a0ae-ddd232da42f0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 798a658f62d50eb35316095ab86f527752adbfb0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 830684bd5adb8d77f3fd4bfd760454477f3b1414
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376729"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845536"
 ---
-# <a name="msfchbaportstatistics-wmi-class"></a>MSFC\_HBAPortStatistics WMI クラス
+# <a name="msfc_hbaportstatistics-wmi-class"></a>MSFC\_HBAPortStatistics WMI クラス
 
 
 ## <span id="ddk_msfc_hbaportstatistics_wmi_class_kr"></span><span id="DDK_MSFC_HBAPORTSTATISTICS_WMI_CLASS_KR"></span>
 
 
-WMI クライアントが使用、MSFC\_クエリ統計の HBA ミニポート ドライバーに HBAPortStatistics クラスの HBA ポートに関連します。
+WMI クライアントは、MSFC\_HBAPortStatistics クラスを使用して、hba のポートに関連する統計を HBA ミニポートドライバーに照会します。
 
-MSFC\_HBAPPortStatistics クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_HBAPPortStatistics クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MSFC_HBAPortStatistics
@@ -57,9 +57,9 @@ class MSFC_HBAPortStatistics
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_HBAPortStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportstatistics)
+[**MSFC\_HBAPortStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportstatistics)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

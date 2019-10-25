@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_信号\_存在
-description: クライアントを使用して、KSPROPERTY\_BDA\_信号\_信号通信事業者が存在するかどうかを判断するためです。
+title: KSK プロパティ\_BDA\_シグナル\_存在する
+description: クライアントは、\_BDA プロパティを使用して、シグナル通信事業者が存在するかどうかを判断するために、\_シグナル\_存在します。
 ms.assetid: d3dbe0f7-a308-48e2-9751-0131fa2b512d
 keywords:
-- KSPROPERTY_BDA_SIGNAL_PRESENT ストリーミング メディア デバイス
+- KSPROPERTY_BDA_SIGNAL_PRESENT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 296cbbd19fa091938bacaac8be5b267e15bd9fac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be57094a5444494f78cb00978974f648924441d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361120"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842798"
 ---
-# <a name="kspropertybdasignalpresent"></a>KSPROPERTY\_BDA\_信号\_存在
+# <a name="ksproperty_bda_signal_present"></a>KSK プロパティ\_BDA\_シグナル\_存在する
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_信号\_信号通信事業者が存在するかどうかを判断するためです。
+クライアントは、\_BDA プロパティを使用して、シグナル通信事業者が存在するかどうかを判断するために、\_シグナル\_存在します。
 
 ## <span id="ddk_ksproperty_bda_signal_present_ks"></span><span id="DDK_KSPROPERTY_BDA_SIGNAL_PRESENT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361120"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67361120"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-<td><p>Pin またはフィルター</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
+<td><p>ピン留めまたはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>BOOL</p></td>
+<td><p>型</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "67361120"
 <a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードの管理ノードの識別子を指定しますまたは、暗証番号 (pin) を指定する − 1 に設定されています。
+KSP の**NodeId**メンバー\_node は、コントロールノードの識別子を指定します。または、pin を指定するために−1に設定されています。
 
-返される値は、信号の通信事業者が存在するかどうかを示します。 返します**TRUE**シグナル通信事業者が存在する場合と**FALSE**それ以外の場合。 RF チューナーのノードには、このを示す値を提供する必要があります。
+戻り値は、シグナル通信事業者が存在するかどうかを示します。 シグナルキャリアが存在する場合は**TRUE** 、それ以外の場合は**FALSE**を返します。 RF チューナーノードは、この表示を提供する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ ms.locfileid: "67361120"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ms.locfileid: "67361120"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

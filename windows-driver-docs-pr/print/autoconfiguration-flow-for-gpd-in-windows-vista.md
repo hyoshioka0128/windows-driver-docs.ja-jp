@@ -3,35 +3,35 @@ title: Windows Vista の GPD の自動構成フロー
 description: Windows Vista の GPD の自動構成フロー
 ms.assetid: 41468218-fa05-4431-a57d-3056449f2e2e
 keywords:
-- GPD ファイル WDK GDL 拡張機能、自動構成のフロー
-- ボックスの自動構成サポートの WDK プリンター、一連の手順
+- GPD ファイル WDK GDL 拡張機能、自動構成フロー
+- 組み込みの自動構成サポート WDK プリンター、一連の手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc54fd9a9b856405abd1775f54c50f00f8aa355e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a8a92eff84165592aa9541c0374830a3f00c52b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842838"
 ---
 # <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista の GPD の自動構成フロー
 
 
-自動構成は、次のシーケンスを次に示します。
+自動構成は次の順序に従います。
 
-1.  ポート モニターは、スプーラーに以前ではなく、キャッシュまたは変更されたすべての値を含む通知を送信します。
+1.  ポートモニターは、以前にキャッシュに存在しなかった値または変更された値を含む通知をスプーラに送信します。
 
-2.  スプーラーは通知に応答のポート モニターから呼び出すことによって[ **DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)します。
+2.  スプーラは、 [**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)を呼び出すことによって、ポートモニターからの通知に応答します。
 
-3.  プリンター\_イベント\_構成がすべての新しい値を含むドライバーに渡されます。 属性の値が変更されたことと、レジストリを更新しても、ドライバーに通知されます。
+3.  プリンタ\_イベント\_構成は、すべての新しい値を含むドライバに渡されます。 ドライバーには、属性の値が変更されたことが通知され、レジストリも更新されます。
 
-4.  通知メッセージが大きすぎる場合は、スキーマ イベントの制限が呼び出されます。
+4.  通知が大きすぎる場合は、スキーマイベントの削減が呼び出されます。
 
-5.  PPD ファイルを解析すると、すべての GDL ファイルの拡張機能と、PPD. 内 GDL コンテンツを含む いずれかの GDL ファイル拡張機能または PPD ファイル全体ですべての GDL コンテンツで囲む必要があります **\*Ifdef**:GDL\_有効になっていると **\*Endif**:GDL\_を有効にします。
+5.  Ppd 内のすべての GDL ファイル拡張子と GDL コンテンツを含む、PPD ファイルが解析されます。 GDL ファイルの拡張子または PPD ファイル全体のすべての GDL コンテンツは、 **\*Ifdef**: gdl\_有効で、 **\*Endif**: gdl\_有効になっている必要があります。
 
-6.  プラグインはの値を取得 **\*MSBidiValue**の現在の文字列値に基づいてこのは **\*QueryString**します。 たとえば、  **\*QueryString**の値"\\Printer.Configuration.DuplexUnit:Installed"を表す、  **\*BidiValue** BOOL(TRUE) の値。
+6.  プラグインによって **\*MSBidiValue**の値が取得されます。この値は **\*QueryString**の現在の文字列値に基づいています。 たとえば、"\\DuplexUnit: Installed" という **\*QueryString**値は、ブール値 (TRUE) の **\*bidivalue**値を表します。
 
-7.  プラグインは最新の構成に従って更新のドライバーの UI。
+7.  プラグインによって、最新の構成に従ってドライバーの UI が更新されます。
 
  
 

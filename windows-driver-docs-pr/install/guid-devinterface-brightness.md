@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce9834404bbcd1972f92c1d0bfdfa365c229aa8a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2601f7bc73d3693205dd7b7ff82df411903f8798
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370956"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840632"
 ---
-# <a name="guiddevinterfacebrightness"></a>GUID_DEVINTERFACE_BRIGHTNESS
+# <a name="guid_devinterface_brightness"></a>GUID_DEVINTERFACE_BRIGHTNESS
 
 
-GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)と輝度のサポート子デバイスを監視します。
+GUID_DEVINTERFACE_BRIGHTNESS [device インターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)は、 [Windows Vista ディスプレイドライバモデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)のコンテキストで動作し、子デバイスを監視するための明るさ制御をサポートするディスプレイアダプタドライバに対して定義されています。
 
 <table>
 <colgroup>
@@ -33,13 +33,13 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">設定</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>識別子</p></td>
+<td align="left"><p>ID</p></td>
 <td align="left"><p>GUID_DEVINTERFACE_BRIGHTNESS</p></td>
 </tr>
 <tr class="even">
@@ -51,16 +51,16 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-ドライバーは、オペレーティング システムや子デバイスを監視の明るさコントロール インターフェイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
+ドライバーは、このデバイスインターフェイスクラスのインスタンスを登録して、子デバイスを監視するための輝度制御インターフェイスがあることをオペレーティングシステムとアプリケーションに通知します。
 
-ディスプレイのミニポート ドライバーは、この直接呼出しの明るさコントロールのインターフェイスをサポートしている場合[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_BRIGHTNESS を指定します。
+ディスプレイミニポートドライバーがこの[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)の直接呼び出し輝度制御インターフェイスをサポートしている場合、カーネルモードコンポーネントはミニポートドライバーの[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)を呼び出すことによって、直接呼び出しインターフェイスを取得できます。インターフェイス型を指定するために GUID_DEVINTERFACE_BRIGHTNESS を提供します。
 
-明るさのデバイスについては、次を参照してください。[統合表示パネルの明るさコントロールをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-brightness-controls-on-integrated-display-panels)と[明るさコントロール インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+輝度デバイスの詳細については、「統合されたディスプレイパネルと[輝度コントロールインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)[での明るさの制御のサポート](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-brightness-controls-on-integrated-display-panels)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -71,11 +71,11 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Dispmprt.h (Dispmprt.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Dispmprt (Dispmprt. h を含む)</td>
 </tr>
 </tbody>
 </table>

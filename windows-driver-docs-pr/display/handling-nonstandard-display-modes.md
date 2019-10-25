@@ -3,15 +3,15 @@ title: 非標準の表示モードの処理
 description: 非標準の表示モードの処理
 ms.assetid: 4a3b0064-46d4-40bb-b49b-ac172012a7b7
 keywords:
-- WDK DirectX 9.0、処理の非表示モード
+- 非標準の表示モード WDK DirectX 9.0、処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a3234460c124cabf0e47ef7d440cb8f39e56411
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 07f25cfe1934bc763b498c9f4b5d06c8e8adef8c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359329"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838909"
 ---
 # <a name="handling-nonstandard-display-modes"></a>非標準の表示モードの処理
 
@@ -19,25 +19,25 @@ ms.locfileid: "67359329"
 ## <span id="ddk_handling_nonstandard_display_modes_gg"></span><span id="DDK_HANDLING_NONSTANDARD_DISPLAY_MODES_GG"></span>
 
 
-非標準の表示モードをサポートするデバイス用の DirectX 9.0 ドライバーでは、その非標準モードを使用して、次の操作を処理する必要がありますも。
+非標準の表示モードをサポートするデバイスの DirectX 9.0 ドライバーでは、非標準モードを使用して次の操作も処理する必要があります。
 
--   反転、ブリット、ロック、および標準的な表示モードと同様に動作する操作のロックを解除します。
+-   標準表示モードと同じように動作するフリップ、array.blit、lock、および unlock 操作。
 
--   DirectX プライマリ画面がアクティブな間に、ドライバーのグラフィックス デバイス インターフェイス (GDI) 関数の呼び出し。
+-   DirectX プライマリサーフェイスがアクティブなときに、ドライバーのグラフィックスデバイスインターフェイス (GDI) 関数を呼び出します。
 
-    ドライバーは、描画呼び出しの DirectX のプライマリがアクティブな間、GDI DDI を受信しませんする必要があります。 ただし、ドライバーは、オペレーティング システムがクラッシュを発生させることがなくこのような描画を処理する必要があります。 ドライバーでは、このような状況の実装を提供、すぐに成功すると、返すことによって無視、または失敗することができます。 GDI からデータを GDI のプライマリ画面形式に基づくことに注意してください。 そのため、ドライバーでは、このような状況の実装を提供する場合する必要があります形式から変換、GDI 描画前に、DirectX プライマリ画面を。
+    DirectX プライマリがアクティブになっている間、ドライバーは GDI DDI 描画呼び出しを受け取ることはできません。 ただし、ドライバーは、オペレーティングシステムがクラッシュすることなく、このような描画を処理する必要があります。 ドライバーは、このような状況の実装を提供したり、成功を直ちに返すことによって無視したり、失敗したりすることができます。 GDI のデータは、GDI のプライマリサーフェイス形式に基づいていることに注意してください。 このため、ドライバーがこのような状況の実装を提供する場合は、DirectX プライマリサーフェイスに描画する前に GDI 形式から変換する必要があります。
 
--   GDI DDI への呼び出し*DrvDeriveSurface* DirectX プライマリ画面に対して関数は、GDI が非標準の表示形式にアクセスできないために発生することはできません。
+-   GDI が非標準の表示形式にアクセスできないため、DirectX プライマリサーフェイスに対する GDI DDI *DrvDeriveSurface*関数の呼び出しは発生しません。
 
--   DirectX プライマリ画面がアクティブな間は、"Ctl + Alt + Del"を入力します。
+-   DirectX プライマリサーフェイスがアクティブなときに「Ctl + Alt + Del」と入力します。
 
-    カーネル ドライバーの呼び出しでターゲットとして、標準のプライマリを指定する[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) GDI 描画が行われる前に機能します。 そのため、ドライバーは、GDI 描画前に、標準の表示モードをディスプレイ デバイスをプログラミングする必要があります。 ドライバーの[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)関数のプライマリ画面と呼ばれます。 ドライバーが、DirectX プライマリ画面の内容を破棄できますに注意してください。
+    カーネルでは、GDI の描画が行われる前に、ドライバーの[*Ddflip*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)関数の呼び出しでターゲットとして標準プライマリが指定されています。 そのため、ドライバーは、GDI 描画の前にディスプレイデバイスを標準表示モードにプログラミングする必要があります。 プライマリサーフェイスのドライバーの[*DdDestroySurface*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)関数も呼び出されます。 ドライバーは DirectX プライマリサーフェイスの内容を破棄できることに注意してください。
 
--   ウィンドウ表示モードと非標準の形式
+-   ウィンドウモードと非標準の形式
 
-    [2D 操作を使用して画面の形式のレポート作成のサポート](reporting-support-for-2d-operations-using-surface-formats.md)トピックでは、ドライバーが、現在のデスクトップとは異なる形式にレンダリングおよび存在するイメージを実行できることを指定する方法について説明します。 このスキームは非標準形式をサポートするために自然な拡張します。ドライバーがで有効にするフラグを追加する必要がありますだけで、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)形式の構造体。
+    「 [Surface 形式を使用した2D 操作のレポートのサポート](reporting-support-for-2d-operations-using-surface-formats.md)」トピックでは、ドライバーが、現在のデスクトップとは異なる形式のイメージのレンダリングを実行できることを指定する方法について説明します。 このスキームは、非標準の形式をサポートするために自然に拡張されるものです。ドライバーは、形式に対して、 [**Ddピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)構造体の**dwoperations**メンバーに有効化フラグを追加するだけである必要があります。
 
-非標準のデスクトップの形式を公開する、プライベートな形式と古いコードを使用できません。
+プライベート形式とレガシコードは、非標準のデスクトップ形式を公開するためには使用できません。
 
  
 

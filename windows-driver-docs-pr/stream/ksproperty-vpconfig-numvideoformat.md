@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT
-description: KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされているピクセル形式の最大数を取得します。
+title: KSK プロパティの\_VPCONFIG\_NUMVIDEOFORMAT
+description: KSK プロパティの\_VPCONFIG\_NUMVIDEOFORMAT プロパティは、サポートされているピクセル形式の最大数を取得します。
 ms.assetid: aa081e46-1992-43db-b287-220e3869902a
 keywords:
-- KSPROPERTY_VPCONFIG_NUMVIDEOFORMAT ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_NUMVIDEOFORMAT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7591d19e357ea063e5bf5588c94b31b6c9e1101
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c5a689d64d9f39b84d731e678d078ea6d9a985f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386494"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842804"
 ---
-# <a name="kspropertyvpconfignumvideoformat"></a>KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT
+# <a name="ksproperty_vpconfig_numvideoformat"></a>KSK プロパティの\_VPCONFIG\_NUMVIDEOFORMAT
 
 
-KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされているピクセル形式の最大数を取得します。
+KSK プロパティの\_VPCONFIG\_NUMVIDEOFORMAT プロパティは、サポートされているピクセル形式の最大数を取得します。
 
 ## <span id="ddk_ksproperty_vpconfig_numvideoformat_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_NUMVIDEOFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされてい�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされてい�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされてい�
 
  
 
-プロパティの値 (データの操作) は、ピクセル形式の最大数を指定する DWORD です。
+プロパティ値 (操作データ) は、ピクセル形式の最大数を指定する DWORD です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされてい�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT プロパティはサポートされてい�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

@@ -1,10 +1,10 @@
 ---
-title: NdisAllocateMemoryWithTagPriority ルール (ndis)
-description: NdisAllocateMemoryWithTagPriority ルール エントリの識別できます Tag.Every メモリの割り当てでプールの一意のタグを使用してそのカーネル デバッガーことを確認する必要があり、ドライバーの検証ツールを提供することがなく、ドライバーをする必要があります NdisAllocateMemoryWithTagPriority が呼び出すされませんを指定する、個別の割り当てられたメモリ ブロックです。
+title: NdisAllocateMemoryWithTagPriority rule (ndis)
+description: NdisAllocateMemoryWithTagPriority ルールは、ドライバーがタグを指定せずに NdisAllocateMemoryWithTagPriority を呼び出すことができないことを指定します。すべてのメモリ割り当てで、一意のプールタグを使用して、カーネルデバッガーとドライバーの検証ツールがを識別できることを確認する必要があります。個別に割り当てられたメモリブロック。
 ms.assetid: e27fe997-366d-4fe1-ad1e-3f145dc55f30
 ms.date: 05/21/2018
 keywords:
-- NdisAllocateMemoryWithTagPriority ルール (ndis)
+- NdisAllocateMemoryWithTagPriority rule (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,25 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 487cab2e5d37dc7f22604749261659b9f0f95292
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: a003815b183356cc23f7c73484e883377e6e0618
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392258"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839375"
 ---
-# <a name="ndisallocatememorywithtagpriority-rule-ndis"></a>NdisAllocateMemoryWithTagPriority ルール (ndis)
+# <a name="ndisallocatememorywithtagpriority-rule-ndis"></a>NdisAllocateMemoryWithTagPriority rule (ndis)
 
 
-**NdisAllocateMemoryWithTagPriority**ルールでは、ドライバーを呼び出してはならないことを指定します**NdisAllocateMemoryWithTagPriority**提供せず、*タグ*します。
+**NdisAllocateMemoryWithTagPriority**規則は、ドライバーが*タグ*を指定せずに**NdisAllocateMemoryWithTagPriority**を呼び出すことができないことを指定します。
 
-すべてのメモリ割り当ては、カーネル デバッガーやドライバーの検証ツールが、個別に割り当てられたメモリ ブロックを識別することができますを確実に一意のプール タグを使用してください。
+すべてのメモリ割り当てで一意のプールタグを使用して、カーネルデバッガーとドライバーの検証ツールが個別に割り当てられたメモリブロックを識別できるようにする必要があります。
 
 |              |      |
 |--------------|------|
-| ドライバー モデル | NDIS |
+| ドライバーモデル | NDIS |
 
-<a name="how-to-test"></a>テスト方法
+<a name="how-to-test"></a>テストする方法
 -----------
 
 <table>
@@ -44,14 +44,14 @@ ms.locfileid: "67392258"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>NdisAllocateMemoryWithTagPriority</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>NdisAllocateMemoryWithTagPriority</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ ms.locfileid: "67392258"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatememorywithtagpriority)
+[**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatememorywithtagpriority)
  
 
  

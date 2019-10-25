@@ -3,16 +3,16 @@ title: ポイント アンド プリント DLL
 description: ポイント アンド プリント DLL
 ms.assetid: 7ead940e-8426-4756-890f-f3607dc1f9ca
 keywords:
-- ポイント アンド プリントの WDK、Dll
-- Dll の WDK ポイントと印刷
+- ポイントアンドプリント WDK、Dll
+- Dll WDK ポイントアンドプリント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5e9da73dc21c9620b37b4247a38821d4b2879c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f90fa9f1653422bd0f445a13f5af6222402148a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383536"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842354"
 ---
 # <a name="point-and-print-dlls"></a>ポイント アンド プリント DLL
 
@@ -20,23 +20,23 @@ ms.locfileid: "67383536"
 
 
 
-必要に応じて、その名前を関連付けることによって、特殊なポイントと印刷の DLL を指定、**モジュール**レジストリ値。 この DLL は、次の 2 つの関数をエクスポートする必要があります。
+必要に応じて、その名前を**モジュール**レジストリ値に関連付けることによって、特別なポイントアンドプリント DLL を指定できます。 この DLL は、次の2つの関数をエクスポートする必要があります。
 
-<a href="" id="generatecopyfilepaths"></a>[**GenerateCopyFilePaths**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths)  
-指定されたディレクトリ パスを変更するのには、サーバーのスプーラとクライアントのスプーラーの両方で呼び出されると、この関数を使用できます、**ディレクトリ**レジストリ値。 (サーバー) 上のソース パスまたは (クライアント) で移行先パスの両方またはいずれかを変更できます。
+<a href="" id="generatecopyfilepaths"></a>[**GenerateCopyFilePaths**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-generatecopyfilepaths)  
+この関数は、サーバーのスプーラとクライアントのスプーラの両方によって呼び出され、**ディレクトリ**レジストリ値によって指定されたディレクトリパスを変更するために使用できます。 ソースパス (サーバー上) または移行先パス (クライアント上)、またはその両方のいずれかを変更できます。
 
-<a href="" id="spoolercopyfileevent"></a>[**SpoolerCopyFileEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)  
-サーバーのスプーラとクライアントのスプーラーの両方でとも呼ばれます、この関数は、特定のプリンターの接続に関連するイベントの発生を示すイベント コードを受け取ります。
+<a href="" id="spoolercopyfileevent"></a>[**SpoolerCopyFileEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)  
+この関数は、サーバーのスプーラとクライアントのスプーラの両方によって呼び出され、特定の接続に関連するプリンタイベントの発生を示すイベントコードを受け取ります。
 
-ポイントと印刷の DLL は、これらの関数のみをエクスポートする必要がありますされません。 たとえば Mscms.dll、Microsoft の ICM コンポーネントで使用される、ICM API 関数のセットをエクスポートします。
+ポイントアンドプリント DLL では、これらの関数のみをエクスポートする必要はありません。 たとえば、Microsoft の ICM コンポーネントによって使用される Mscms は、一連の ICM API 関数もエクスポートします。
 
-指定することは他の Dll さらに、またはの代わりに、ポイントと印刷の DLL をエクスポートする**GenerateCopyFilePaths**と**SpoolerCopyFileEvent**します。 これを行うには、DLL のファイル名を割り当てる、**ファイル**レジストリ キーの代わりに、**モジュール**レジストリ キー。 (を参照してください[キューに固有のファイルをインストールする](installing-queue-specific-files.md))。
+**GenerateCopyFilePaths**と**SpoolerCopyFileEvent**をエクスポートするポイントアンドプリント DLL に加えて、他の dll を指定することもできます。 これを行うには、**モジュール**のレジストリキーではなく、**ファイル**のレジストリキーに DLL ファイル名を割り当てます。 (「[キュー固有のファイルのインストール](installing-queue-specific-files.md)」を参照してください)。
 
-インストール後にアプリケーションが DLL の名前に配置サーバーのレジストリを呼び出して**SetPrinterDataEx**、後続のすべての呼び出しを**SetPrinterDataEx** DLL のへの呼び出しで発生する[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent) COPYFILE の指定されたイベントのコードで関数を\_イベント\_設定\_プリンター\_DATAEX します。
+インストールアプリケーションが**Setプリンター Dataex**を呼び出すことによってサーバーのレジストリに dll の名前を設定した後、 **Setプリンター dataex**の後続のすべての呼び出しで、dll の[**SpoolerCopyFileEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)関数を呼び出します。COPYFILE\_イベントの指定されたイベントコード\_\_プリンター\_DATAEX に設定されています。
 
-下に表示するファイルとは異なり、**ファイル**レジストリ キー (を参照してください[キューに固有のファイルをインストールする](installing-queue-specific-files.md))、ポイントと印刷の DLL はコピーされません、プリント サーバーからクライアントにクライアントがプリンターに接続するとき. 代わりに、DLL は、クライアントに常駐プリント サーバーへの接続を既に行われたと見なされます。 その結果、DLL は、ポイント アンド プリントの機能に関連しない他の目的で使用できます。
+**Files**レジストリキーの下に一覧表示されるファイルとは異なり ([キュー固有のファイルのインストールに関する](installing-queue-specific-files.md)ページを参照)、クライアントがプリンターに接続するときに、ポイントアンドプリント DLL がプリントサーバーからクライアントにコピーされることはありません。 代わりに、プリントサーバーへの接続が確立されると、DLL は既にクライアントに常駐していると見なされます。 その結果、ポイントアンドプリント機能に関連しない追加の目的で DLL を使用できるようになります。
 
-クライアントで、ポイントと印刷の DLL をインストールするための 1 つのメソッドがでその名前を指定するには、[プリンター INF ファイル](printer-inf-files.md)依存ファイルとしてそのため、ファイルをコピーできます中に、クライアントのドライバーのディレクトリに[のダウンロードドライバー固有のファイル](downloading-driver-specific-files.md)します。
+クライアントにポイントアンドプリント DLL をインストールする方法の1つは、[プリンターの INF ファイル](printer-inf-files.md)でその名前を依存ファイルとして指定することです。そのため、[ドライバー固有のファイルのダウンロード](downloading-driver-specific-files.md)中に、ファイルをクライアントのドライバーディレクトリにコピーできます。
 
  
 

@@ -1,29 +1,29 @@
 ---
-title: 項目ツリーの変更をアプリケーションに通知
-description: 項目ツリーの変更をアプリケーションに通知
+title: 項目ツリーの変更をアプリケーションに通知する
+description: 項目ツリーの変更をアプリケーションに通知する
 ms.assetid: 6b3cb1d0-ab9f-4895-8c3f-f66c398960bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaa1c9568a9154975c92ae5db53a098b3367e55f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 964b8ad174393388f110839fda42c9078e578e38
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378947"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840820"
 ---
-# <a name="informing-an-application-of-item-tree-changes"></a>項目ツリーの変更をアプリケーションに通知
+# <a name="informing-an-application-of-item-tree-changes"></a>項目ツリーの変更をアプリケーションに通知する
 
 
 
 
 
-WIA デバイス用のミニドライバーは、デバイスの項目のツリーへの変更の WIA デバイスに関連付けられているアプリケーションに通知できる必要があります。 たとえば、アプリケーションでは、カメラで画像のサムネイルを示すユーザー インターフェイスが表示されている場合、WIA ミニドライバーは、ユーザーが既に削除されている画像のサムネイルを表示しないアプリケーションのユーザー インターフェイスを通知することのようになります。
+WIA デバイスのミニドライバーは、デバイスの項目ツリーに変更があった場合に、WIA デバイスに関連付けられているアプリケーションに通知できる必要があります。 たとえば、カメラ上の画像のサムネイルを示すユーザーインターフェイスをアプリケーションが表示した場合、WIA ミニドライバーは、ユーザーが既に削除した画像のサムネイルを表示しないように、アプリケーションのユーザーインターフェイスに通知する必要があります。
 
-次のサンプル実装、 [ **IWiaMiniDrv::drvDeviceCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)メソッド WIA ミニドライバーが、WIA サービスによって送信されたコマンドに応答し、デバイスにコマンドを渡す方法を示しています。 WIA ミニドライバーは、デバイスにコマンドを発行、ミニドライバーは、アプリケーション、デバイスの項目のツリーが変更されたことを通知します。 この実装で、メソッドを判断、WIA サービスが「画像の撮影」コマンドを発行する (WIA\_CMD\_かかる\_画像)。 メソッドの呼び出し、 **TakePicture**ルート上のメソッドは、項目 (デバイスの項目) と、項目のツリーが新しい画像には今すぐが含まれているすべての接続されているアプリケーションに通知します。 (両方 WIA\_CMD\_かかる\_画像と**TakePicture** Microsoft Windows SDK ドキュメントに記載されています)。ミニドライバーは呼び出すことによって、 [ **wiasQueueEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasqueueevent)関数。
+[**IWiaMiniDrv::D rvdevicecommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)メソッドの次の実装例では、wia サービスによって送信されたコマンドに wia ミニドライバーが応答する方法を示し、コマンドをデバイスに渡します。 WIA ミニドライバーがデバイスにコマンドを発行した後、ミニドライバーは、デバイス項目ツリーが変更されたことをアプリケーションに通知します。 この実装では、メソッドは、WIA サービスが "Take Picture" コマンドを発行したことを確認します (WIA\_CMD\_\_の画像を取得します)。 メソッドは、ルート項目 (デバイスの項目) に対して "表示される**画像**" メソッドを呼び出し、すべての接続されたアプリケーションに、項目ツリーに新しい画像が含まれていることを通知します。 (Microsoft Windows SDK のドキュメントでは、WIA\_CMD\_撮影\_画像を取得し、**画像**を撮ることができます)。ミニドライバーは、 [**Wiasqueueevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasqueueevent)関数を呼び出すことによってこれを行います。
 
-ミニドライバーは、ツリーが更新されたことを示すイベントを送信する場合は注意*すべて*呼び出し元だけでなく、変更のリッスンしているアプリケーションが通知されます。 たとえば、ユーザーが開いている場合は、カメラのエクスプ ローラーのビューがあります、Microsoft ペイントを使用して、新しい画像を取得する場合は、エクスプ ローラー ウィンドウも画像が表示新しい到着した時点でこのようなイベントをリッスンするため。
+ミニドライバーは、ツリーが更新されたことを示すイベントを送信するときに、呼び出し元だけでなく、*すべて*のリッスン中のアプリケーションに変更が通知されることに注意してください。 たとえば、ユーザーがカメラの [エクスプローラー] ビューを開いていて、Microsoft Paint を使用して新しい画像を取得した場合、[エクスプローラー] ウィンドウには、そのようなイベントをリッスンするため、新しい画像が届いたときにも表示されます。
 
-次の例の実装を示しています、 **IWiaMiniDrv::drvDeviceCommand**メソッド。
+**IWiaMiniDrv::D rvdevicecommand**メソッドの実装例を次に示します。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvDeviceCommand(

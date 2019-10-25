@@ -1,9 +1,9 @@
 ---
 title: FSCTL_GET_WOF_VERSION 制御コード
-description: FSCTL\_取得\_WOF\_バージョン I/O 制御コード (IOCTL) は、特定のプロバイダーをサポートするために使用されているドライバーのバージョンをクエリに使用されます。
+description: FSCTL\_GET\_WOF\_バージョンの i/o 制御コード (IOCTL) を使用して、特定のプロバイダーをサポートするために使用されるドライバーのバージョンを照会します。
 ms.assetid: 0E3C3C7E-2A89-4CA8-8741-7C057E063155
 keywords:
-- FSCTL_GET_WOF_VERSION 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_GET_WOF_VERSION 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0c075b4e2a290f1c04341e4100fee50cb9759fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a479f3a6bd0d0283e82847725b77d9fc7a1f31cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369831"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841300"
 ---
-# <a name="fsctlgetwofversion-control-code"></a>FSCTL\_取得\_WOF\_バージョン制御コード
+# <a name="fsctl_get_wof_version-control-code"></a>FSCTL\_\_WOF\_バージョン管理コードを取得する
 
 
-**FSCTL\_取得\_WOF\_バージョン**I/O 制御コード (IOCTL) は、特定のプロバイダーをサポートするために使用されているドライバーのバージョンをクエリに使用されます。
+**FSCTL\_GET\_WOF\_バージョン**の i/o 制御コード (IOCTL) を使用して、特定のプロバイダーをサポートするために使用されるドライバーのバージョンを照会します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、次のパラメーターを使用して[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
 ``` syntax
 BOOL 
@@ -41,56 +41,56 @@ BOOL
                     (LPOVERLAPPED) lpOverlapped );  // OVERLAPPED structure
 ```
 
-**Parameters**
+**パラメーター**
 
-<a href="" id="hdevice--in-"></a>*hDevice\[で\]*  
-デバイスへのハンドル。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数または同様の API。
+<a href="" id="hdevice--in-"></a>*hDevice \[\]*  
+デバイスへのハンドル。 デバイスハンドルを取得するには、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数または同様の API を呼び出します。
 
-<a href="" id="dwiocontrolcode--in-"></a>*dwIoControlCode\[で\]*  
-操作の制御コード。 使用**FSCTL\_取得\_WOF\_バージョン**この操作にします。
+<a href="" id="dwiocontrolcode--in-"></a> *\]の dwIoControlCode \[*  
+操作の制御コード。 この操作には、FSCTL\_使用して **\_WOF\_バージョンを取得**してください。
 
 <a href="" id="lpinbuffer"></a>*lpInBuffer*  
-操作の入力バッファー。 これへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体。
+操作の入力バッファー。 これは、 [**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)構造体へのポインターです。
 
-<a href="" id="ninbuffersize--in-"></a>*nInBufferSize\[で\]*  
-入力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info))。
+<a href="" id="ninbuffersize--in-"></a> *\]の nInBufferSize \[*  
+入力バッファーのサイズ (バイト単位)。 これは**sizeof**([**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)) にする必要があります。
 
-<a href="" id="lpoutbuffer--out-"></a>*lpOutBuffer\[アウト\]*  
-操作の出力バッファー。 これへのポインターを[ **WOF\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_version_info)構造体。
+<a href="" id="lpoutbuffer--out-"></a>*lpOutBuffer \[out\]*  
+操作の出力バッファー。 これは、 [**WOF\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_version_info)構造体へのポインターです。
 
-<a href="" id="noutbuffersize--in-"></a>*nOutBufferSize\[で\]*  
-出力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_version_info))。
+<a href="" id="noutbuffersize--in-"></a> *\]の nOutBufferSize \[*  
+出力バッファーのサイズ (バイト単位)。 これは**sizeof**([**WOF\_VERSION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_version_info)) である必要があります。
 
-<a href="" id="lpbytesreturned--out-"></a>*lpBytesReturned\[アウト\]*  
+<a href="" id="lpbytesreturned--out-"></a>*lpBytesReturned \[out\]を返しました*  
 **LPDWORD**
 
-(バイト単位)、出力バッファーに格納されているデータのサイズを受け取る変数へのポインター。
+出力バッファーに格納されているデータのサイズ (バイト単位) を受け取る変数へのポインター。
 
-出力バッファーが小さすぎる場合は、呼び出しが失敗した、 [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)返します**エラー\_不十分\_バッファー**、および*lpBytesReturned*は 0 です。
+出力バッファーが小さすぎると、呼び出しが失敗し、 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)が**エラー\_\_バッファーが不足**し、 *lpbytesreturned* 0 を返します。
 
-場合*lpOverlapped*は**NULL**、 *lpBytesReturned*することはできません**NULL**します。 でもときに操作を返しません出力データと*lpOutBuffer*は**NULL**、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)活用*lpBytesReturned*します。 このような操作の値の後に*lpBytesReturned*は意味がありません。
+*LpOverlapped*が**null**の場合、 *lpbytesreturned* **null**にすることはできません。 操作によって出力データが返されず、 *Lpoutbuffer*が**NULL**の場合でも、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は*lpoutbuffer*使用して返されます。 このような操作を行った後、*返された Lpbytesreturned*値は無意味になります。
 
-場合*lpOverlapped*ない**NULL**、 *lpBytesReturned*できる**NULL**します。 このパラメーターがない場合**NULL**操作は、そのデータを返します*lpBytesReturned*オーバー ラップ処理が完了するまでは無意味です。 返されるバイト数を取得する[ **GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)します。 場合、 *hDevice*パラメーターは、I/O 完了ポートに関連付け、呼び出すことによって返されるバイト数を取得する[ **GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)します。
+*LpOverlapped*が**null**でない場合は、 *lpbytesreturned* **null**になることがあります。 このパラメーターが**NULL**でなく、操作がデータを返す場合は、重複操作が完了するまで、 *lpbytesreturned 返さ*れることは意味がありません。 返されるバイト数を取得するには、 [**GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)を呼び出します。 *Hdevice*パラメーターが i/o 完了ポートに関連付けられている場合は、 [**GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)を呼び出すことによって返されるバイト数を取得できます。
 
-<a href="" id="lpoverlapped--in-"></a>*lpOverlapped\[で\]*  
+<a href="" id="lpoverlapped--in-"></a> *\]の lpOverlapped \[*  
 **LPOVERLAPPED**
 
-ポインター、 [ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)構造体。
+[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)された構造体へのポインター。
 
-場合*hDevice*を指定せずに開かれた**ファイル\_フラグ\_OVERLAPPED**、 *lpOverlapped*は無視されます。
+**ファイル\_\_フラグ**を指定せずに*hdevice*を開いた場合、 *lpOverlapped*は無視されます。
 
-場合*hDevice*で開かれた、**ファイル\_フラグ\_OVERLAPPED**フラグは、操作がオーバー ラップ (非同期) 操作として実行します。 この場合、 *lpOverlapped*有効 をポイントする必要があります[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)イベント オブジェクトへのハンドルを含む構造体。 それ以外の場合、関数は、予測できない方法で失敗します。
+*Hdevice*が**ファイル\_フラグ**を使用して開かれている場合は、重複フラグ\_、この操作は、オーバーラップ (非同期) 操作として実行されます。 この場合、 *lpOverlapped*は、イベントオブジェクトへのハンドルを含む有効な[**オーバーラップ**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)構造体を指す必要があります。 それ以外の場合、関数は予期しない方法で失敗します。
 
-重複した操作は、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を即座に返します、操作が完了したときに、イベント オブジェクトがシグナル状態とします。 それ以外の場合、操作が完了したか、エラーが発生するまでには、この関数は返されません。
+オーバーラップ操作の場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)はすぐに制御を返し、操作が完了するとイベントオブジェクトを通知します。 それ以外の場合、この関数は、操作が完了するかエラーが発生するまで、を返しません。
 
-<a name="status-block"></a>ステータス ブロック
+<a name="status-block"></a>状態ブロック
 ------------
 
-操作が正常に完了した場合[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 0 以外の値を返します。
+操作が正常に完了した場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は0以外の値を返します。
 
-操作は、障害が発生したり、保留中で[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は 0 を返します。 拡張エラー情報を取得するには呼び出します[ **GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)します。
+操作が失敗した場合、または保留中の場合、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は0を返します。 エラーの詳細情報を取得するには、 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)を呼び出します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -101,11 +101,11 @@ BOOL
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10 以降で利用できます。</p></td>
+<td align="left"><p>Windows 10 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h または Fltkernel.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Ntifs (Ntifs または Fltkernel .h を含む)</td>
 </tr>
 </tbody>
 </table>

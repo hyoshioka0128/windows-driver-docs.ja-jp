@@ -1,9 +1,9 @@
 ---
 title: FSCTL_INVALIDATE_VOLUMES 制御コード
-description: FSCTL\_INVALIDATE\_ボリューム コントロールのコードは、検索して、指定されたファイル オブジェクトまたはハンドルによって表されるデバイスでマウントされているすべてのボリュームを削除します。
+description: FSCTL\_は、指定されたファイルオブジェクトまたはハンドルによって表されるデバイス上にマウントされているすべてのボリュームを検出して削除\_ボリューム制御コードが検出し、削除します。
 ms.assetid: 26B7EBA2-F3A9-4E5A-961C-C1857AA4FF33
 keywords:
-- FSCTL_INVALIDATE_VOLUMES は、ファイル システム ドライバーがインストール可能なコードを制御します。
+- FSCTL_INVALIDATE_VOLUMES 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,56 +14,56 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bad6205380978f6d3bf32769deb5d4e907209a8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df174ddb9ebd9b9e81f0be46285b10d4aab1c0ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380146"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841299"
 ---
-# <a name="fsctlinvalidatevolumes-control-code"></a>FSCTL\_INVALIDATE\_ボリューム制御コード
+# <a name="fsctl_invalidate_volumes-control-code"></a>FSCTL\_\_ボリューム制御コードの無効化
 
 
-**FSCTL\_INVALIDATE\_ボリューム**制御コードは、検索して、指定されたファイル オブジェクトまたはハンドルによって表されるデバイスでマウントされているすべてのボリュームを削除します。
+FSCTL\_は、指定されたファイルオブジェクトまたはハンドルによって表されるデバイス上にマウントされているすべてのボリュームを検出して削除 **\_ボリューム**制御コードが検出し、削除します。
 
-ミニフィルター ドライバーの呼び出しは、この操作を実行する[ **FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)、およびファイル システム リダイレクターを従来のファイル システム フィルター ドライバー呼び出し[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)、次のパラメーターを使用します。
+この操作を実行するには、ミニフィルタードライバーが[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)を呼び出します。また、ファイルシステム、リダイレクター、およびレガシファイルシステムフィルタードライバーは、次のパラメーターを使用して[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
-**Parameters**
+**パラメーター**
 
-<a href="" id="fileobject"></a>*FileObject*  
-デバイスへのハンドルします。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。
+<a href="" id="fileobject"></a>*ファ*  
+デバイスへのハンドル。 デバイスハンドルを取得するには、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数を呼び出します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-デバイスへのハンドルします。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。
+デバイスへのハンドル。 デバイスハンドルを取得するには、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数を呼び出します。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作のコードを制御します。 使用**FSCTL\_INVALIDATE\_ボリューム**この操作にします。
+操作の制御コード。 この操作では、FSCTL\_使用して **\_ボリュームを無効**にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-この操作では使用されません。設定**NULL**します。
+この操作では使用されません。を**NULL**に設定します。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-この操作では使用されません。0 に設定します。
+この操作では使用されません。を0に設定します。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-この操作では使用されません。設定**NULL**します。
+この操作では使用されません。を**NULL**に設定します。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-この操作では使用されません。0 に設定します。
+この操作では使用されません。を0に設定します。
 
-<a name="status-block"></a>ステータス ブロック
+<a name="status-block"></a>状態ブロック
 ------------
 
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)状態を返す\_操作が成功した場合の成功または適切な NTSTATUS 値。
+操作が成功した場合、または適切な NTSTATUS 値が返された場合、 [**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)と[**ZWFSCONTROLFILE**](https://msdn.microsoft.com/library/windows/hardware/ff566462) STATUS\_SUCCESS を返します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-FSCTL\_INVALIDATE\_ボリュームが (という名前)、ファイル システムのコントロールに送信されたデバイス オブジェクトは、ボリューム デバイス オブジェクトにありません。 コントロールのデバイス オブジェクトの詳細については、次を参照してください。[制御デバイス オブジェクトを作成する](https://docs.microsoft.com/windows-hardware/drivers/ifs/creating-the-control-device-object)します。
+FSCTL\_は、ボリュームデバイスオブジェクトではなく、ファイルシステムのコントロール (名前付き) デバイスオブジェクトに\_ボリュームが送信されます。 コントロールデバイスオブジェクトの詳細については、「[コントロールデバイスオブジェクトの作成](https://docs.microsoft.com/windows-hardware/drivers/ifs/creating-the-control-device-object)」を参照してください。
 
-FAT と NTFS ファイル システムが突然削除を処理 IRP に応答して\_MJ\_PNP IRP/\_MN\_突然\_削除します。
+FAT および NTFS ファイルシステムは、IRP\_MJ\_PNP/\_IRP に応答することによって、突然の削除を処理します。これにより、突然\_削除が\_されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -73,8 +73,8 @@ FAT と NTFS ファイル システムが突然削除を処理 IRP に応答し�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Ntifs (Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ FAT と NTFS ファイル システムが突然削除を処理 IRP に応答し�
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

@@ -3,17 +3,17 @@ title: アダプターからのバインド解除
 description: アダプターからのバインド解除
 ms.assetid: cea2ce45-df0c-4c75-a780-5810ea01b987
 keywords:
-- プロトコルのドライバー WDK ネットワーク、バインド解除
-- NDIS ドライバー WDK のプロトコル バインドを解除
-- アダプターの WDK ネットワークからバインド解除
+- プロトコルドライバー WDK ネットワーク、バインド解除
+- NDIS プロトコルドライバー WDK、バインド解除
+- アダプター WDK ネットワークからのバインド解除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b38447857a314dacbcb010d5e8d24873a615507
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fad4143ef0f7d18657ae4e94b03687738b01da3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843017"
 ---
 # <a name="unbinding-from-an-adapter"></a>アダプターからのバインド解除
 
@@ -21,21 +21,21 @@ ms.locfileid: "67355451"
 
 
 
-NDIS 呼び出しプロトコル ドライバーの[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)ドライバーが、基になるアダプターからバインド解除を要求する関数。 逆数として[ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)、NDIS 呼び出し*ProtocolUnbindAdapterEx*をアダプターにバインドを閉じると、リソースを解放するドライバーバインディングに割り当てられます。
+NDIS は、プロトコルドライバーの[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)関数を呼び出して、基になるアダプターからドライバーのバインドを解除するように要求します。 [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)の逆数として、NDIS は*protocolunbindadapterex*を呼び出して、アダプターへのバインドを閉じ、ドライバーによってバインドに割り当てられたリソースを解放します。
 
-*ProtocolUnbindAdapterEx*、プロトコル ドライバーは呼び出し[ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)を基になるアダプターへのバインドを閉じます。 プロトコル ドライバー パス**NdisCloseAdapterEx**ハンドルを[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)で指定されているその*NdisBindingHandle*パラメーター。 このハンドルは、NDIS を閉じる必要があるバインディングを識別します。
+*Protocolunbindadapterex*では、プロトコルドライバーは[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)を呼び出して、基になるアダプターへのバインドを閉じます。 プロトコルドライバーは、 *NdisBindingHandle*パラメーターで指定された[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)のハンドルを**NdisCloseAdapterEx**渡します。 このハンドルは、NDIS が閉じる必要のあるバインディングを識別します。
 
-プロトコル ドライバーからアダプターを閉じる必要があります、 *ProtocolBindAdapterEx*関数または*ProtocolUnbindAdapterEx*関数。
+プロトコルドライバーは、 *Protocolbindadapterex*関数または*protocolunbindadapterex*関数からアダプターを閉じる必要があります。
 
-ドライバーを呼び出すことができる場合、プロトコル ドライバーには、バインディングを閉じる操作を開始する必要があります、 [ **NdisUnbindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisunbindadapter)します。 **NdisUnbindAdapter** NDIS 呼び出しで生成される作業項目をスケジュール*ProtocolUnbindAdapterEx*します。 この作業項目は、呼び出しの前に実行できる**NdisUnbindAdapter**を返します。 そのため、ドライバー作成者がバインド ハンドルが後に有効なことを想定する必要があります**NdisUnbindAdapter**を返します。
+プロトコルドライバーがバインディングを閉じる操作を開始する必要がある場合、ドライバーは[**NdisUnbindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisunbindadapter)を呼び出すことができます。 **NdisUnbindAdapter**は、 *Protocolunbindadapterex*への NDIS 呼び出しを実行する作業項目をスケジュールします。 この作業項目は、 **NdisUnbindAdapter**の呼び出しが返される前に実行できます。 したがって、ドライバーの作成者は、 **NdisUnbindAdapter**がを返すと、バインドハンドルが無効であると想定する必要があります。
 
-プロトコル ドライバーに返された NDIS 場合\_状態\_から PENDING *ProtocolUnbindAdapterEx*、呼び出す必要があります[ **NdisCompleteUnbindAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompleteunbindadapterex)バインド要求を完了する最終的な状態にします。
+プロトコルドライバーが*Protocolunbindadapterex*から保留中の NDIS\_STATUS\_を返した場合、バインド要求を完了するには、最終的な状態で[**NdisCompleteUnbindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompleteunbindadapterex)を呼び出す必要があります。
 
-NDIS NDIS を返す場合\_状態\_から PENDING **NdisCloseAdapterEx**、NDIS 呼び出しプロトコル ドライバーの[ *ProtocolCloseAdapterCompleteEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_close_adapter_complete_ex)関数。
+Ndis が NDIS\_STATUS\_**NdisCloseAdapterEx**から PENDING を返した場合、ndis は後でプロトコルドライバーの[*Protocolcloseadaptercompleteex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_close_adapter_complete_ex)関数を呼び出します。
 
-NDIS を呼び出すことができます*ProtocolUnbindAdapterEx*バインディングが一時停止状態にある場合。
+バインドが一時停止状態の場合、NDIS は*Protocolunbindadapterex*を呼び出すことができます。
 
-すべてのバインドの解除操作が完了した後、バインドは、非連結状態です。
+すべてのバインド解除操作が完了すると、バインドはバインドされていない状態になります。
 
  
 

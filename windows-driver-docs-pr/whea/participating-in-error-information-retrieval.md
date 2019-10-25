@@ -1,36 +1,36 @@
 ---
-title: エラー情報の取得への参加
-description: エラー情報の取得への参加
+title: エラー情報の取得に参加しています
+description: エラー情報の取得に参加しています
 ms.assetid: ed0ad20b-d978-4650-b3a0-6b0795323c77
 keywords:
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラー情報の取得
+- Windows ハードウェアエラーアーキテクチャ WDK、エラー情報の取得
 - WHEA WDK、エラー情報の取得
-- ハードウェア エラー WDK WHEA、エラー情報の取得
-- WDK WHEA、エラー情報の取得エラー
-- プラットフォーム固有のハードウェア エラー ドライバー プラグインを WDK WHEA、エラー情報の取得
+- ハードウェアエラー WDK WHEA、エラー情報の取得
+- エラー WDK WHEA、エラー情報の取得
+- プラットフォーム固有のハードウェアエラードライバープラグイン WDK WHEA、エラー情報の取得
 - PSHED プラグイン WDK WHEA、エラー情報の取得
-- WDK WHEA エラー情報の取得
+- エラー情報の取得 (WDK WHEA)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e57aef09a86ebcb0d20c934c99bcd066f7f49f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4d22ee312cd26b21b0dc3527eeafdc184f5150c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838823"
 ---
-# <a name="participating-in-error-information-retrieval"></a>エラー情報の取得への参加
+# <a name="participating-in-error-information-retrieval"></a>エラー情報の取得に参加しています
 
 
-エラー情報の取得に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
+エラー情報の取得に参加するには、次のコールバック関数を実装する必要があります。
 
-[*RetrieveErrorInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
+[*RetrieveErrorInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
 
-[*FinalizeErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
+[*FinalizeErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
 
-[*ClearErrorStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_status)
+[*ClearErrorStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_status)
 
-次のコード例では、これらのコールバック関数を実装する方法を示します。
+これらのコールバック関数を実装する方法を次のコード例に示します。
 
 ```cpp
 //
@@ -174,7 +174,7 @@ NTSTATUS
 }
 ```
 
-エラー情報の取得に参加している PSHED プラグインを指定する必要があります、 **PshedFAErrorInfoRetrieval**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)自体と、オペレーティング システムを使用します。
+エラー情報の取得に参加するプラグインでは、オペレーティングシステムに[登録](registering-a-pshed-plug-in.md)するときに**PshedFAErrorInfoRetrieval**フラグを指定する必要があります。
 
  
 

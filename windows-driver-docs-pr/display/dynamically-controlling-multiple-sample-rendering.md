@@ -1,30 +1,30 @@
 ---
-title: 複数サンプル レンダリングの動的制御
-description: 複数サンプル レンダリングの動的制御
+title: 複数のサンプルレンダリングを動的に制御する
+description: 複数のサンプルレンダリングを動的に制御する
 ms.assetid: cd0bea22-29e8-40f7-987b-5c36765e5677
 keywords:
-- 複数の標本レンダリング WDK DirectX 9.0、ダイナミック コントロール
-- multisamples WDK DirectX 9.0、ダイナミック コントロールのレンダリング
+- 複数サンプル表示 WDK DirectX 9.0、ダイナミックコントロール
+- multisamples のレンダリング WDK DirectX 9.0、ダイナミックコントロール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 913def1d2ce1981a8d695e7e9d508d199a9c83da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7513bd1e01dc6f5599a13319264550f65ca430d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383103"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839709"
 ---
-# <a name="dynamically-controlling-multiple-sample-rendering"></a>複数サンプル レンダリングの動的制御
+# <a name="dynamically-controlling-multiple-sample-rendering"></a>複数のサンプルレンダリングを動的に制御する
 
 
 ## <span id="ddk_dynamically_controlling_multiple_sample_rendering_gg"></span><span id="DDK_DYNAMICALLY_CONTROLLING_MULTIPLE_SAMPLE_RENDERING_GG"></span>
 
 
-DirectX 9.0 バージョンのドライバーでは、または有効にして、プリミティブのレンダリングの間でのマルチ サンプル表示を無効にするの機能をサポートできます。 ドライバーのデバイスは、この機能をサポートしています、ドライバー、D3DPRASTERCAPS を設定することを報告する\_マルチ サンプリング\_内のビットを切り替え機能、 **RasterCaps** D3DCAPS9 構造体のメンバー。 ドライバーへの応答で D3DCAPS9 構造体を返す、 **GetDriverInfo2** 」の説明に従って D3DCAPS8 構造体を返すにする方法と同様にクエリ[DirectX 8.0 スタイル Direct3D の機能を Reporting](reporting-directx-8-0-style-direct3d-capabilities.md)します。 このクエリのサポートについては、「[サポート GetDriverInfo2](supporting-getdriverinfo2.md)します。
+DirectX 9.0 バージョンドライバーでは、プリミティブのレンダリング間で複数のサンプルレンダリングをさらに有効または無効にする機能をサポートできます。 ドライバーのデバイスがこの機能をサポートしていることを報告するために、ドライバーは、D3DCAPS9 構造体の**RasterCaps**メンバーの D3DPRASTERCAPS\_マルチサンプリング\_トグル機能ビットを設定します。 このドライバーは、 **GetDriverInfo2**クエリに対する応答として、D3DCAPS9 構造体を返します。「 [DirectX 8.0 スタイルの Direct3D 機能の報告](reporting-directx-8-0-style-direct3d-capabilities.md)」で説明されているように、D3DCAPS8 構造体を返す方法と似ています。 このクエリのサポートについては、「 [GetDriverInfo2](supporting-getdriverinfo2.md)のサポート」を参照してください。
 
-切り替える複数サンプル レンダリング オンとオフを複数のシーンが開始および終了シーンの状態の間、ドライバーの受信、D3DDP2OP\_RENDERSTATE 操作のコードで、[コマンド ストリーム](command-stream.md)の[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数。 ドライバーの処理、D3DRS\_MULTISAMPLEANTIALIAS から状態を表示する、 **RenderState**のメンバー、 [ **D3DHAL\_DP2RENDERSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)このオペレーション コードに関連付けられている構造体。 ドライバーを決定するブール値から複数サンプル レンダリングを有効にするかどうか、 **dwState** D3DHAL のメンバー\_DP2RENDERSTATE します。 値**TRUE**を有効にすることを意味し、 **FALSE**を無効にすることを意味します。
+開始シーンと終了シーンの状態の間で複数のサンプルレンダリングをオンまたはオフに切り替えるには、ドライバーは[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数の[コマンドストリーム](command-stream.md)で D3DDP2OP\_renderstate 操作コードを受け取ります。 ドライバーは、この操作コードに関連付けられている[**D3DHAL\_DP2RENDERSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)構造体の**renderstate**メンバーから D3DRS\_multisampleantialias エイリアシングレンダー状態を処理します。 ドライバーは、D3DHAL\_DP2RENDERSTATE の**Dwstate**メンバーのブール値から複数サンプルの表示を有効または無効にするかどうかを決定します。 値**TRUE**は、を有効にし、 **FALSE**を無効にすることを意味します。
 
-場合、D3DPRASTERCAPS\_マルチ サンプリング\_切り替え機能のビットが設定されて、ドライバーは、D3DRS を受信できる\_MULTISAMPLEANTIALIAS D3DRENDERSTATE 間の状態を表示する\_SCENECAPTURE 指定状態を表示します。**TRUE**開始シーンについてと**FALSE**エンド シーンについて。
+D3DPRASTERCAPS\_マルチサンプリング\_トグル機能ビットが設定されている場合、ドライバーは、 **TRUE**を指定した D3DRENDERSTATE\_SCENECAPTURE render 状態間で、D3DRS\_MULTISAMPLEANTIALIAS エイリアシングレンダリング状態を受け取ることができます。開始-シーン情報。エンドシーン情報の場合は**FALSE** 。
 
  
 

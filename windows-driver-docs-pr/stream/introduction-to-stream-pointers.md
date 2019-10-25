@@ -3,20 +3,20 @@ title: ストリーム ポインターの紹介
 description: ストリーム ポインターの紹介
 ms.assetid: 2682b145-5148-4301-b382-9811bb5e8fa6
 keywords:
-- ストリーム ポインター WDK AVStream、ストリーム ポインターの概要
-- WDK AVStream のストリーム ポインターを進める
-- ストリーム ポインターを進める WDK AVStream
-- フレームの参照は、WDK AVStream をカウントします。
-- 参照カウント ストリーム ポインターを WDK
-- WDK ストリーム ポインターの参照をカウント
+- ストリームポインター WDK AVStream、ストリームポインターについて
+- ストリームポインターの進め WDK AVStream
+- ストリームポインター WDK AVStream、前進
+- フレーム参照カウント WDK AVStream
+- 参照カウント WDK ストリームポインター
+- カウント参照の WDK ストリームポインター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 952a4a12d6a33f7790d16d52760338f6ca280801
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c1c1b155756088fab574819eaf30dba79da2d9b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360663"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845563"
 ---
 # <a name="introduction-to-stream-pointers"></a>ストリーム ポインターの紹介
 
@@ -24,27 +24,27 @@ ms.locfileid: "67360663"
 
 
 
-以前のストリーム クラス モデルで、ミニドライバーは、独自のデータ ストリーム要求のブロック (SRB) キューの保守を担当します。 AVStream はストリーム ポインターの抽象化を通じてこの機能を提供します。 ストリーム ポインターは、特定の AVStream データ フレームに参照です。
+以前のストリームクラスモデルでは、ミニドライバーは独自のデータストリーム要求ブロック (SRB) キューを維持します。 AVStream は、ストリームポインターの抽象化によってこの機能を提供します。 ストリームポインターは、特定の AVStream データフレームへの参照です。
 
-使用して、ミニドライバー[暗証番号 (pin) を中心とした処理](pin-centric-processing.md)(ほとんどのハードウェア ドライバー) は、暗証番号 (pin) のキューを管理するストリーム ポインターを使用します。 各ピンには、データ バッファーの独立した、キューがあります。 ピン (いずれかに対して読み取りまたは書き込み要求) のデータ パケットが到着すると、AVStream パケットをキューに追加し、ピン留めのプロセスのディスパッチを呼び出すことができます。
+[Pin 中心の処理](pin-centric-processing.md)(ほとんどのハードウェアドライバー) を使用するミニドライバーは、ストリームポインターを使用して、pin キューを管理します。 各ピンには、データバッファーの独立したキューがあります。 データパケットが pin (読み取り要求または書き込み要求) に到達すると、AVStream はパケットをキューに追加し、pin のプロセスディスパッチを呼び出す可能性があります。
 
-フィルターを中心とした処理を使用するミニドライバーはストリーム ポインターを直接使用しないでください。 参照してください[フィルターを中心とした処理](filter-centric-processing.md)詳細についてはします。
+フィルター中心の処理を使用するミニドライバーでは、ストリームポインターを直接使用しないでください。 詳細については[、「フィルター中心の処理](filter-centric-processing.md)」を参照してください。
 
-既定では、各キューは、最先端のストリーム ポインターを持っています。 必要に応じて、トレーリング エッジのフラグが指定されている場合のトレーリング エッジ ストリーム ポインターができます。 呼び出して新しいストリーム ポインターを作成できます、ミニドライバー [ **KsStreamPointerClone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)します。
+既定では、各キューには最先端のストリームポインターがあります。 必要に応じて、末尾のエッジフラグが指定されている場合は、末尾のエッジストリームポインターを持つことができます。 ミニドライバーは、 [**Ksk Streamポインタ clone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)を呼び出すことで、新しいストリームポインターを作成できます。
 
-ストリーム ポインターを移動するには一方向のみ: 新しいフレームにします。 これには、先行するストリーム ポインターが呼び出されます。
+ストリームポインターは、1つの方向にのみ移動できます。 これを、ストリームポインターの進め方と呼びます。
 
-### <a name="advancing-a-stream-pointer"></a>Stream のポインターを進める
+### <a name="advancing-a-stream-pointer"></a>ストリームポインターを進める
 
-ストリーム ポインターが進むと、新しいフレームに移動または、昇格するいくつかの現在のフレーム内のバイト数。 たとえば、ミニドライバーは、2 つ目のフレームの到着、最初のフレームの到着からストリーム ポインターを進めることができます。
+ストリームポインターを進める場合は、新しいフレームに移動するか、現在のフレーム内にいくつかのバイトを進めます。 たとえば、ミニドライバーは、最初のフレーム到着から2番目のフレーム到着までのストリームポインターを進めることができます。
 
-ストリーム ポインターを進めるには、いずれかの呼び出し、暗証番号 (pin) を中心としたフィルターすることができます[ **KsStreamPointerAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvance)または[ **KsStreamPointerUnlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)で。*取り出し*パラメーターに設定**TRUE**します。
+ストリームポインターを進めるために、ピン中心のフィルターは、 *Eject*パラメーターを**TRUE**に設定して、 [**Ksstreampointer advance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvance)または[**ksstreampointer unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)を呼び出すことができます。
 
-### <a name="frame-reference-counts"></a>フレームの参照カウント
+### <a name="frame-reference-counts"></a>フレーム参照カウント
 
-リードとトレーリング エッジの間のウィンドウでは、フレームにはこれらを指すストリーム ポインターを持つフレームは、カウントされた参照。
+ストリームポインターをポイントしているフレームは参照カウントされます。これは、先頭と末尾のエッジの間のウィンドウ内のフレームです。
 
-呼び出すことができます必要に応じて、ミニドライバーのストリーム ポインターを使用して完了時に、 [ **KsStreamPointerSetStatusCode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointersetstatuscode)を特定の I/O 要求パケット (IRP) を完了させるエラー コードを指定します。 ミニドライバーは呼び出す必要がありますし、 [ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)します。 AVStream し、以前に削除されたストリーム ポインターが参照されているフレームの参照カウントをデクリメントします。 リーディング エッジと末尾のエッジ ストリーム ポインターを削除できません。
+ストリームポインターでミニドライバーが終了したときに、必要に応じて[**Ksk streampointer Setstatuscode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointersetstatuscode)を呼び出して、指定された i/o 要求パケット (IRP) を完了するためのエラーコードを指定できます。 次に、ミニドライバーは、 [**Ksstreamポインター delete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)を呼び出す必要があります。 AVStream は、削除されたストリームポインターが以前に参照したフレームの参照カウントをデクリメントします。 先頭と末尾のストリームポインターを削除することはできません。
 
  
 

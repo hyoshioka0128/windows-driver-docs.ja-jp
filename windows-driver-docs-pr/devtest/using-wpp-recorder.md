@@ -1,96 +1,96 @@
 ---
-title: ログ トレースのように、転送トレース レコーダー (IFR)
-description: 転送トレース レコーダー (IFR) は、トレースなど、プロバイダーをカーネル モード ドライバーでは、最小限の設定でトレース ログを取得し、一連の最新の WPP ログ メッセージが保持されます、インメモリ バッファーを作成することができる新しいトレース機能です。
+title: トレースログ用の inflight トレースレコーダー (IFR)
+description: Inflight トレースレコーダー (IFR) は、カーネルモードドライバーなどのトレースプロバイダーが最小限のセットアップでトレースログを取得し、最新の WPP ログメッセージが保存されるメモリ内バッファーのセットを作成するための新しいトレース機能です。
 ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3dafaf8fdff305a2feb503336051775f8fac53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3399d177ef7a801f9f81da3849a8d87193a16172
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363777"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839261"
 ---
-# <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>ログ トレースのように、転送トレース レコーダー (IFR)
+# <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>トレースログ用の inflight トレースレコーダー (IFR)
 
 
-**概要**
+**まとめ**
 
--   Visual Studio での転送トレース レコーダーを有効にする方法
--   WPP 既定のログまたはカスタムのログにトレース メッセージを送信する方法
--   デバッガーでのトレース メッセージを表示する方法
+-   Visual Studio で Inflight トレースレコーダーを有効にする方法
+-   WPP の既定のログまたはカスタムログにトレースメッセージを送信する方法
+-   デバッガーでトレースメッセージを表示する方法
 
 **適用対象:**
 
--   最小 OS:WDM、KMDF ドライバー開発者向け Windows 8
--   最小 OS:(2.15) UMDF ドライバー開発者向け Windows 10
+-   最小 OS: KMDF および WDM ドライバー開発者向けの Windows 8
+-   最小 OS: Windows 10 for UMDF (2.15) ドライバー開発者
 
-**重要な API**
+**重要な Api**
 
 -   [**WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))
--   [**WppRecorderLogCreate (カーネル モード ドライバーのみ)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)
--   [**WppRecorderDumpLiveDriverData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
+-   [**WppRecorderLogCreate (カーネルモードドライバーのみ)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)
+-   [**WppRecorderDumpLiveDriverData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
 
-*転送トレース レコーダー (IFR)* はトレースなど、プロバイダーをカーネル モード ドライバーでは、最小限の設定でトレース ログを取得し、一連の最新の WPP ログ メッセージが保持されます、インメモリ バッファーを作成することができる、新しいトレース機能です。
+*Inflight トレースレコーダー (IFR)* は、カーネルモードドライバーなどのトレースプロバイダーが最小限のセットアップでトレースログを取得し、最新の WPP ログメッセージが保存されるメモリ内バッファーのセットを作成するための新しいトレース機能です。
 
-Windows では、トレース メッセージを診断し、開発中には、ドライバーの問題をデバッグすることができるドライバーを追加するためのいくつかのメカニズムを提供します。 このような 1 つのメカニズムは[WPP ソフトウェア トレース](wpp-software-tracing.md)します。 含まれています、 [WPP プリプロセッサ](wpp-preprocessor.md)printf スタイルのトレース メッセージを小さいメモリ フット プリントを持つトレース プロバイダーをできるようにします。 ただし、トレース メッセージのログを表示するには、プロバイダーがありますなどを有効に、トレース コントローラ[traceview で](traceview.md)または[Tracelog](tracelog.md)停止し、ログ、および次に、コンシューマーを作成するには、トレース セッションを開始する必要がありますなど、traceview では、書式設定し、ログを表示する必要があります。
+Windows には、ドライバーにトレースメッセージを追加するためのいくつかのメカニズムが用意されており、開発時にドライバーの問題を診断してデバッグするのに役立ちます。 このようなメカニズムの1つは、 [WPP ソフトウェアのトレース](wpp-software-tracing.md)です。 これには、メモリフットプリントが小さい printf 形式のトレースメッセージをトレースプロバイダーに許可するための、 [WPP プリプロセッサ](wpp-preprocessor.md)が含まれています。 ただし、トレースメッセージのログを表示するには、プロバイダーが有効になっている必要があります。トレース[ビュー](traceview.md)やトレース[ログ](tracelog.md)などのトレースコントローラーは、ログを作成するためにトレースセッションを停止して起動する必要があります。その後、traceview などのコンシューマーが書式設定して表示する必要があります。ログ。
 
-Windows 10 には、新しい機能が導入されています。WPP インフラストラクチャを活用して IFR します。 ドライバーは、WPP トレースと IFR により、トレース ログを自動的に有効にし、起動またはトレース セッションを停止せずに簡単にメッセージを表示できます。
+Windows 10 では、WPP インフラストラクチャを活用する新しい機能である IFR が導入されています。 ドライバーで WPP トレースと IFR が有効になっている場合は、トレースログが自動的に有効になり、トレースセッションを開始または停止しなくてもメッセージを簡単に表示できます。
 
-IFR ドライバーの場合と呼ばれる非ページ プールからメモリの 1 つのページを割り当て、*既定のログ*します。 ログは、ドライバーによって送信されるトレース メッセージを収集し、ドライバーを実行すると、カーネル デバッガーで、バッファーの出力を表示できます。 クラッシュが発生した場合は、ダンプに最新のトレース メッセージを取得できます。 トレース データを収集するクラッシュを再構築する必要はありません。
+IFR は、*既定のログ*と呼ばれる、ドライバーの非ページプールからメモリの1ページを割り当てます。 このログは、ドライバーによって送信されたトレースメッセージを収集し、ドライバーの実行時にカーネルデバッガーでバッファーの出力を表示できます。 クラッシュが発生した場合は、最新のトレースメッセージをダンプで取得できます。 トレースデータを収集するためだけにクラッシュを再構築する必要はありません。
 
-ドライバーが最小構成でトレース ログを取得するために主に、既定のログの使用をお勧めします。 ドライバーに既定のログのサイズを制御がないことに注意してください。 すべてのトレース メッセージは、1 つの循環バッファが送信されるため、最新のメッセージは情報のレベルに関係なく、以前のメッセージを上書きします。 場合によっては、エラー メッセージがないし、情報メッセージだけを確認できます。
+既定のログは主に、ドライバーが最小構成でトレースログを取得できることが原因です。 ドライバーは、既定のログのサイズを制御できないことに注意してください。 すべてのトレースメッセージは1つの循環バッファーに送信されるため、最新のメッセージは、情報のレベルに関係なく、以前のメッセージを上書きします。 場合によっては、エラーメッセージを見逃すことがあり、情報メッセージのみが表示されます。
 
-ログはより詳細にコントロールを取得するには、IFR はカスタム バッファー作成および管理するためのドライバーを許可します。
+ログの制御を強化するために、IFR ではドライバーがカスタムバッファーを作成および管理することができます。
 
-**注**のみのカーネル モード ドライバー (KMDF および WDM)、Windows のこのリリースでカスタムのバッファーを作成できます。 UMDF ドライバーでは、カスタムのバッファーを作成できません。
+**メモ** このリリースの Windows では、カーネルモードドライバー (KMDF と WDM) のみがカスタムバッファーを作成できます。 UMDF ドライバーはカスタムバッファーを作成できません。
 
 
 
--   ドライバーは、verbose ロガーは、バッファーをあふれしないように、さまざまな目的は、複数のバッファーを作成できます。
--   ドライバーは、カスタムのバッファーとカスタムのバッファーのエラー パーティション (後述) のサイズを制御できます。
--   ドライバーは、カスタム ログの文字列識別子を指定できます。 トレース メッセージを表示するには、中に別のバッファーからメッセージを区別することができます。
--   WPP のメッセージを表示するには IFR がドライバーを有効になっている IFR を使用しても、WPP 上に構築されたため、 [traceview で](traceview.md)します。 ただし、それらのメッセージを表示するには、トレース プロバイダーを有効にしてセッションを開始する必要があります。
+-   ドライバーは、さまざまな目的で複数のバッファーを作成できます。そのため、詳細ロガーはバッファーをオーバーフローしません。
+-   ドライバーはカスタムバッファーのサイズとエラーパーティション (後で説明します) を制御できます。
+-   ドライバーは、カスタムログの文字列識別子を指定できます。 トレースメッセージを表示している間に、異なるバッファーのメッセージを区別できます。
+-   IFR は、ドライバーに対して IFR が有効になっている場合でも、WPP を基に構築されているため、 [traceview](traceview.md)で WPP メッセージを表示できます。 ただし、これらのメッセージを表示するには、トレースプロバイダーを有効にし、セッションを開始する必要があります。
 
 **重要**  
-IFR 内のメッセージには、それらに関連付けられているタイムスタンプはありません。
+IFR のメッセージにはタイムスタンプが関連付けられていません。
 
-トレース メッセージは、Windows デバッガーでのみ表示できます。
-
-
-
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin..."></span><span id="before_you_begin..."></span><span id="BEFORE_YOU_BEGIN..."></span>開始する前にしています.
+トレースメッセージは、Windows デバッガーでのみ表示できます。
 
 
--   理解して[WPP ソフトウェア トレース](wpp-software-tracing.md)など[WPP ソフトウェア トレースを追加するには、ドライバーを](adding-wpp-software-tracing-to-a-windows-driver.md)と[WPP マクロを呼び出すことの宣言と](adding-wpp-macros-to-a-trace-provider.md)します。
--   このブログ記事については、[を含めるし、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)します。
--   トースター サンプルを検討します。 IFR を有効にして、それを使用する方法を示すために変更されました。 詳細については、次を参照してください。[トースター サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=617723)します。
 
-## <a name="span-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanenable-wpp-software-tracing"></a><span id="Enable_WPP_software_tracing"></span><span id="enable_wpp_software_tracing"></span><span id="ENABLE_WPP_SOFTWARE_TRACING"></span>WPP ソフトウェア トレースを有効にします。
+## <a name="span-idbefore_you_beginspanspan-idbefore_you_beginspanspan-idbefore_you_beginspanbefore-you-begin"></a><span id="Before_you_begin..."></span><span id="before_you_begin..."></span><span id="BEFORE_YOU_BEGIN..."></span>開始する前に...
 
 
-IFR を使用するには、ドライバーを構成する前に、WPP としてドライバーを設定する必要があります最初する[トレース プロバイダー](trace-provider.md)します。
+-   Wpp ソフトウェアトレースの[ドライバーへの追加](adding-wpp-software-tracing-to-a-windows-driver.md)や、 [wpp マクロの宣言と呼び出し](adding-wpp-macros-to-a-trace-provider.md)など、 [wpp ソフトウェアトレース](wpp-software-tracing.md)について理解を深めます。
+-   このブログ記事では、[ドライバーのパブリック PDB ファイルに WPP トレースメッセージを含める方法と表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)について説明します。
+-   トースターサンプルを調べます。 これは、IFR を有効にして使用する方法を示すために変更されています。 詳細については、「[トースター Sample Driver](https://go.microsoft.com/fwlink/p/?LinkId=617723)」を参照してください。
 
--   Visual Studio で提供される WDF ドライバー テンプレートを使用して、ドライバーを作成する場合は、WPP トレースが有効にします。 プロジェクトのプロパティで、トレース関連の設定を表示します。
+## <a name="span-idenable_wpp_software_tracingspanspan-idenable_wpp_software_tracingspanspan-idenable_wpp_software_tracingspanenable-wpp-software-tracing"></a><span id="Enable_WPP_software_tracing"></span><span id="enable_wpp_software_tracing"></span><span id="ENABLE_WPP_SOFTWARE_TRACING"></span>WPP ソフトウェアのトレースを有効にする
 
-    1.  Visual Studio では、ソリューション エクスプ ローラーで有効にし、をクリックするプロジェクトを右クリックして**プロパティ。**
-    2.  (たとえば、すべての構成とすべてのプラットフォーム) をサポートするビルド ターゲットを構成およびプラットフォームを設定します。
-    3.  プロジェクト プロパティ ページで、選択**構成プロパティ**クリック**WPP トレース**します。
-    4.  **全般**、 をクリックして**Wpp トレースの実行**を選択します**はい** をクリックし、ドロップダウン メニューから**ok**します。
 
-        ![visual studio で、wpp ソフトウェア トレースを有効にします。](images/wpp-enable.png)
+IFR を使用するようにドライバーを構成する前に、まず、ドライバーを WPP[トレースプロバイダー](trace-provider.md)として設定する必要があります。
 
-    5.  **ファイル オプション**の値を設定**構成データのスキャン**を含むトレース情報ファイルの名前に、デバッグ関連の関数定義とマクロをトレースします。 この例で、定義は Trace.h です。
+-   Visual Studio に用意されている WDF ドライバーテンプレートを使用してドライバーを作成した場合、WPP トレースが有効になります。 トレース関連の設定は、プロジェクトのプロパティで確認できます。
 
-        ![visual studio で、wpp ソフトウェア トレースを有効にします。](images/wpp-enable2.png)
+    1.  Visual Studio で、ソリューションエクスプローラーで有効にするプロジェクトを右クリックし、[プロパティ] をクリックし**ます。**
+    2.  構成とプラットフォームを、サポートするビルドターゲット ([すべての構成] や [すべてのプラットフォーム] など) に設定します。
+    3.  プロジェクトのプロパティページで、 **[構成プロパティ]** を選択し、 **[WPP トレース]** をクリックします。
+    4.  **[全般]** で、 **[Wpp トレースの実行]** をクリックし、ドロップダウンメニューの **[はい]** をクリックして、[ **OK]** をクリックします。
 
--   WDF のドライバー テンプレートのいずれかを使用されていない場合、は、WPP ソフトウェア トレースを設定します。 ヘッダー ファイル (WDF テンプレートで提供される trace.h に類似) を作成します。 ヘッダー ファイルには、WPP マクロが含まれています ([WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))、 [WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))) と WPP 制御フラグとトレース メッセージのステートメント。 手順については、次を参照してください。 [Windows ドライバーに WPP ソフトウェア トレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)します。
+        ![visual studio での wpp ソフトウェアトレースの有効化](images/wpp-enable.png)
 
-    これらのタスクを実行することを確認します。
+    5.  **[ファイルオプション]** で、 **[スキャン構成データ]** の値を、デバッグトレースに関連する関数の定義とマクロを含むトレース情報ファイルの名前に設定します。 この例では、定義は Trace. h にあります。
 
-    -   トレース プロバイダーとして、ドライバーの GUID を定義します。
+        ![visual studio での wpp ソフトウェアトレースの有効化](images/wpp-enable2.png)
 
-        **WPP 構文\_コントロール\_GUID**
+-   WDF driver テンプレートのいずれかを使用していない場合は、WPP ソフトウェアのトレースを設定します。 ヘッダーファイルを作成します (WDF テンプレートで提供されているトレースに似ています)。 このヘッダーファイルには、WPP マクロ ([wpp\_INIT\_TRACING](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))、 [wpp\_CLEANUP](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85)))、および wpp 制御フラグとトレースメッセージステートメントが含まれています。 手順については、「 [Windows ドライバーへの WPP ソフトウェアトレースの追加](adding-wpp-software-tracing-to-a-windows-driver.md)」を参照してください。
+
+    次のタスクを実行していることを確認します。
+
+    -   ドライバーの GUID をトレースプロバイダーとして定義します。
+
+        **WPP\_制御\_GUID の構文**
 
         ```ManagedCPlusPlus
         #define WPP_CONTROL_GUIDS \
@@ -102,8 +102,8 @@ IFR を使用するには、ドライバーを構成する前に、WPP として
                 WPP_DEFINE_BIT(NameOfTraceFlag31) 
         ```
 
-    -   トレース ステートメントを印刷するソース ファイルには、(この例では、Trace.h) では、トレースのヘッダー ファイルを含めます。
-    -   含める[トレース メッセージの形式](trace-message-format-file.md)、ソース ファイルに関連付けられているファイル ( *&lt;ソース ファイル&gt;* .tmh) を出力するトレース メッセージを含むソース ファイル。
+    -   トレースステートメントを出力するソースファイルにトレースヘッダーファイル (この例では、Trace .h) を含めます。
+    -   出力するトレースメッセージが格納されているソースファイルに、ソースファイルに関連付けられている[トレースメッセージフォーマット](trace-message-format-file.md)ファイル ( *&lt;ソースファイル&gt;* tmh) を含めます。
         ```ManagedCPlusPlus
         #include "trace.h"
         //
@@ -112,7 +112,7 @@ IFR を使用するには、ドライバーを構成する前に、WPP として
         #include "MyDriver.tmh"
         ```
 
-    -   初期化の WPP [DriverEntry](28131-driverentry-saving-pointer-to-buffer.md)ドライバーの。
+    -   ドライバーの[Driverentry](28131-driverentry-saving-pointer-to-buffer.md)で、WPP を初期化します。
         ```ManagedCPlusPlus
         //
         // WPP Initialization
@@ -121,7 +121,7 @@ IFR を使用するには、ドライバーを構成する前に、WPP として
 
         ```
 
-    -   ドライバー、unload メソッドでの WPP リソースを解放します。
+    -   ドライバーのアンロード方法で、WPP リソースを解放します。
         ```ManagedCPlusPlus
         //
         // WPP release resources
@@ -130,49 +130,49 @@ IFR を使用するには、ドライバーを構成する前に、WPP として
         WPP_CLEANUP( DriverObject) );
         ```
 
-## <a name="span-idstep2spanspan-idstep2spanenable-ifr"></a><span id="step_2"></span><span id="STEP_2"></span>IFR を有効にします。
+## <a name="span-idstep_2spanspan-idstep_2spanenable-ifr"></a><span id="step_2"></span><span id="STEP_2"></span>IFR を有効にする
 
 
-WPP ソフトウェア トレースをドライバーを追加した後、IFR インフラストラクチャが既に配置します。 プロジェクトのプロパティの機能を有効にする必要があるだけです。
+ドライバーに WPP ソフトウェアトレースを追加した後、IFR インフラストラクチャは既に配置されています。 プロジェクトのプロパティでのみ機能を有効にする必要があります。
 
-1.  Visual Studio では、ソリューション エクスプ ローラーで有効にし、をクリックするプロジェクトを右クリックして**プロパティ。**
-2.  (たとえば、すべての構成とすべてのプラットフォーム) をサポートするビルド ターゲットを構成およびプラットフォームを設定します。
-3.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
-4.  **関数とマクロ オプション**、 をクリックして**WPP レコーダーを有効にする**を選択します**はい** をクリックし、ドロップダウン メニューから**ok**します。
+1.  Visual Studio で、ソリューションエクスプローラーで有効にするプロジェクトを右クリックし、[プロパティ] をクリックし**ます。**
+2.  構成とプラットフォームを、サポートするビルドターゲット ([すべての構成] や [すべてのプラットフォーム] など) に設定します。
+3.  プロジェクトのプロパティページで、 **[構成プロパティ]** をクリックし、 **[WPP トレース]** をクリックします。
+4.  **[関数とマクロのオプション]** で、 **[WPP レコーダーを有効にする]** をクリックし、ドロップダウンメニューの **[はい]** をクリックして、[ **OK]** をクリックします。
 
-    これを定義、**を有効にする\_WPP\_レコーダー**コンパイラ フラグも有効にする DLL のマクロを設定し、( **-dll** UMDF ドライバーと**km** kmdfドライバーの場合)。
+    これ**により、enable\_WPP\_レコーダー**コンパイラフラグが定義されます。また、enable dll マクロ (UMDF ドライバーの場合は **-DLL** 、kmdf ドライバーの場合は **-km** ) も設定されます。
 
-    有効になっている, 違いますを使用しても WPP メッセージは引き続き、Windows Driver Kit (WDK) で含まれている traceview でなどのツールを使用して、IFR を使用せず記録されます。
+    IFR が有効になっている場合でも、Windows Driver Kit (WDK) に含まれる Traceview などのツールを使用して、IFR を使用しなくても、WPP メッセージを記録できます。
 
-    ![visual studio で wpp レコーダーを有効にします。](images/wpp-enable3.png)
+    ![visual studio での wpp レコーダーの有効化](images/wpp-enable3.png)
 
-5.  WppRecorder.lib とドライバーのプロジェクトをリンクします。
+5.  ドライバープロジェクトを WppRecorder にリンクします。
 
-    1.  プロジェクトのプロパティ をクリックして**構成プロパティ**クリック**リンカー**します。
-    2.  **入力**、追加 **$(DDK\_LIB\_パス)\\wpprecorder.lib**を**追加の依存関係**フィールド。
+    1.  プロジェクトのプロパティ で、**構成プロパティ** をクリックし、**リンカー** をクリックします。
+    2.  **[入力]** で、 **[追加の依存関係]** フィールドに **$ (DDK\_lib\_PATH)\\** 追加します。
 
-    ![visual studio で wpp レコーダーを有効にします。](images/wpp-enable4.png)
+    ![visual studio での wpp レコーダーの有効化](images/wpp-enable4.png)
 
-6.  追加**Wpprecorder.h**を各ソース ファイルなど、IFR Api の呼び出しに[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate) IFR ログを設定します。 後の Api を呼び出す、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))呼び出し、 *DriverEntry* KMDF ドライバーまたは UMDF 2.15 ドライバーの日常的な。
+6.  独自の IFR ログを設定する[**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)など、ifr api を呼び出す各ソースファイルに**wpprecorder**を追加します。 KMDF または UMDF 2.15 ドライバーの*Driverentry*ルーチンで、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))呼び出しの後に api を呼び出します。
 
-## <a name="span-idusethedefaultlogspanspan-idusethedefaultlogspanspan-idusethedefaultlogspanuse-the-default-log"></a><span id="Use__the_default_log"></span><span id="use__the_default_log"></span><span id="USE__THE_DEFAULT_LOG"></span>既定のログを使用して、
-
-
-ドライバーのプロジェクトで WPP を有効にした後、WPP は既定のログを作成します。 WPP を出力する既定のログのバッファー サイズは、4096 バイトです。 デバッグ ビルドでは、バッファーは、24576 バイトです。
-
-既定のログ バッファーを割り当てることが失敗すると、トレース メッセージは、WPP に送信されます。 つまり、, 違いますでは、トレース メッセージは記録されませんが、トレースは、ライブ WPP トレースとしてまだ認識できます。 既定のログが作成されたかどうかを判断するドライバーを呼び出す必要があります[ **WppRecorderIsDefaultLogAvailable**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn914614(v=vs.85))します。 既定のログが存在しないドライバーが IFR を使用したい場合は、ドライバーは、ログを作成する必要があります。 詳細については、次を参照してください。[カスタム ログ作成](#create)です。
-
-1.  初期化を[**レコーダー\_構成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)呼び出して構造[**レコーダー\_構成\_PARAMS\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-recorder_configure_params_init)します。 マクロのセット、 **CreateDefaultLog** true の場合、メンバー、ドライバーが既定のログを使用することを示します。
-2.  呼び出す[ **WppRecorderConfigure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure) 、初期化済みのアドレスを指定して[**レコーダー\_構成\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)構造体。
-3.  レコーダーを取得する\_呼び出すことによって既定のログにログの非透過ハンドル[ **WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))します。
-4.  Trace.h で宣言されているトレース マクロを呼び出すことによって、既定のログにトレース メッセージを印刷します。 詳細については、次を参照してください。[トレース関数を定義](#define)します。
-5.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、次を参照してください。[トレース メッセージを表示](#view)します。
-
-**注**既定のログを無効にする設定、 **CreateDefaultLog**のメンバー、 [**レコーダー\_構成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)にFalse の場合、まず[ **WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure)します。
+## <a name="span-iduse__the_default_logspanspan-iduse__the_default_logspanspan-iduse__the_default_logspanuse-the-default-log"></a><span id="Use__the_default_log"></span><span id="use__the_default_log"></span><span id="USE__THE_DEFAULT_LOG"></span>既定のログを使用する
 
 
+WPP がドライバープロジェクトに対して有効になると、WPP によって既定のログが作成されます。 WPP が出力する既定のログのバッファーサイズは4096バイトです。 デバッグビルドの場合、バッファーは24576バイトです。
 
-この例では、ドライバーは、既定のログを識別するハンドルを取得します。
+既定のログバッファーの割り当てに失敗すると、トレースメッセージが WPP に送信されます。 つまり、トレースメッセージは IFR では記録されませんが、トレースはライブ WPP トレースとして表示される可能性があります。 既定のログが作成されたかどうかを確認するには、ドライバーは[**WppRecorderIsDefaultLogAvailable**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn914614(v=vs.85))を呼び出す必要があります。 既定のログが存在せず、ドライバーが IFR を使用する必要がある場合、ドライバーはログを作成する必要があります。 詳細については、「[カスタムログを作成する](#create)」を参照してください。
+
+1.  レコーダーを呼び出すことによって[ **\_params 構造を構成\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_configure_params)には、レコーダーを初期化し[ **\_\_params\_INIT を構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-recorder_configure_params_init)します。 マクロは**Createdefaultlog**メンバーを TRUE に設定します。これは、ドライバーが既定のログを使用することを示します。
+2.  初期化されたレコーダーのアドレスを指定して[**WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderconfigure)を呼び出し、\_PARAMS 構造体を[**構成\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_configure_params)ます。
+3.  [**WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))を呼び出すことにより、既定のログへの非透過的ハンドルをログに記録\_レコーダーを取得できます。
+4.  トレースメッセージを既定のログに出力するには、trace で宣言されたトレースマクロを呼び出します。 詳細については、「 [Define trace functions](#define)」を参照してください。
+5.  デバッガーでトレースメッセージを表示します。 詳細については、「[トレースメッセージの表示](#view)」を参照してください。
+
+**メモ** 既定のログを無効にするには、レコーダーの**Createdefaultlog**メンバー [ **\_\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_configure_params)を FALSE に設定してから、 [**WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderconfigure)を呼び出します。
+
+
+
+この例では、ドライバーは既定のログへのハンドルを取得します。
 
 ```ManagedCPlusPlus
 
@@ -238,27 +238,27 @@ _In_ PUNICODE_STRING RegistryPath
 }
 ```
 
-## <a name="span-idcreatespanspan-idcreatespancreate-a-custom-log-kernel-mode-drivers-only"></a><span id="create"></span><span id="CREATE"></span>カスタム ログ (カーネル モード ドライバーのみ) を作成します。
+## <a name="span-idcreatespanspan-idcreatespancreate-a-custom-log-kernel-mode-drivers-only"></a><span id="create"></span><span id="CREATE"></span>カスタムログを作成する (カーネルモードドライバーのみ)
 
 
-IFR に対する既定のログでは、非ページ プール メモリの 4096 ブロックを使用します。 すべてのトレース メッセージは、循環バッファーに書き込まれます。 最新のメッセージは、以前のメッセージを上書きできます。
+IFR の既定のログでは、非ページプールメモリの4096ブロックが使用されます。 すべてのトレースメッセージは、循環バッファーに書き込まれます。 場合によっては、最新のメッセージによって前のメッセージが上書きされることがあります。
 
-たとえばには、ドライバーでは、コントロールとデータの転送要求の個別のフロー パスがあります。 両方からのアクティビティは、最も可能性の高い、同じバッファーにログインしている場合、コントロールにメッセージをトレースはデータの転送メッセージによって上書きされます。 この場合、それらの要求を別のバッファーを構成できます。
+たとえば、ドライバーには、制御およびデータ転送要求用の個別のフローパスがあります。 両方のアクティビティが同じバッファーに記録された場合、ほとんどの場合、コントロールトレースメッセージはデータ転送メッセージによって上書きされます。 この場合は、これらの要求に対して個別のバッファーを構成できます。
 
-別の例である 2 つのデバイス、および 1 つのデバイスの送信よりも、その他の複数のトレース メッセージ。 ドライバーは、既定のログを使用している場合、バッファーがいっぱいになるデバイスなり、他のデバイスからのメッセージに削除できます。 代わりに、ドライバーは、各デバイスは、そのバッファーにメッセージを送信でき、各デバイスからのメッセージを個別に表示できるように、2 つのカスタム ログを作成できます。
+別の例では、2つのデバイスがあり、1つのデバイスが他より多くのトレースメッセージを送信します。 ドライバーが既定のログを使用する場合、そのデバイスはバッファーをあふれさせることができ、他のデバイスからのメッセージは破棄される可能性があります。 代わりに、ドライバーは、各デバイスがバッファーにメッセージを送信できるように、2つのカスタムログを作成できます。また、各デバイスからのメッセージを個別に表示することもできます。
 
-1.  初期化を[**レコーダー\_ログ\_作成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params)呼び出して構造[**レコーダー\_ログ\_作成\_PARAMS\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-recorder_log_create_params_init)します。 構造体のメンバーが変更されていない限り、WPP は既定のログ パラメーターを使用します。
-2.  任意。 設定、 **TotalBufferSize**目的のサイズにメンバー。 既定では、サイズが 1024 バイトに設定されます (レコーダーを参照してください。\_ログ\_既定\_バッファー\_Wpprecorder.h サイズ)。
-    **注**WPP は、非ページ プールから、ログのバッファーを割り当てます。 ログはパーティションと呼ばれる 2 つの循環バッファに分かれています。 [全般]、エラー。 エラー パーティションのみのトレース メッセージが表示されます\_レベル\_エラー。 その他のすべてのレベルに関連するメッセージは、一般的なパーティションに送信されます。 パーティションは、詳細トレース プロバイダーが独自のエラー メッセージを低優先度のメッセージを上書きするを防ぐために設計されています。 呼び出し元のバッファー サイズを指定する**TotalBufferSize**、それらのパーティションの合計サイズを示します。 エラーのパーティションには、合計バッファー サイズの半分を超えることはできません。 初期化後に、バッファー サイズを変更できます。
+1.  レコーダー\_LOG を呼び出して[ **\_params 構造を作成\_\_ログ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_log_create_params)を初期化し\_[**params\_INIT を作成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-recorder_log_create_params_init)します。\_ WPP は、構造体のメンバーが変更されない限り、既定のログパラメーターを使用します。
+2.  省略可能。 **Totalbuffersize**メンバーを目的のサイズに設定します。 既定では、サイズは1024バイトに設定されています (「レコーダー\_LOG\_既定の\_バッファー\_サイズ」を参照してください)。
+    **メモ** WPP は、非ページプールからログのバッファーを割り当てます。 ログは、パーティション (general と error) と呼ばれる2つの循環バッファーに分割されます。 エラーパーティションには、トレース\_レベル\_エラーのメッセージのみが表示されます。 他のすべてのレベルに関連するメッセージは、一般パーティションに送信されます。 パーティションは、詳細トレースプロバイダーが、優先度の低いメッセージで独自のエラーメッセージを上書きしないように設計されています。 呼び出し元は、これらのパーティションの合計サイズを示す**Totalbuffersize**のバッファーサイズを指定します。 エラーパーティションは、合計バッファーサイズの半分を超えることはできません。 バッファーサイズは、初期化後に変更できます。
 
 
 
-3.  任意。 設定、 **LogIdentifier**をこのバッファーからのトレース メッセージを識別するのに役立つ文字列です。 文字列は、16 文字でを超えない必要があります。
-4.  呼び出す[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)の設定されたアドレスを指定して[**レコーダー\_ログ\_作成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params)構造体。
-5.  この新しいバッファーへのトレース メッセージを印刷するには、トレース マクロを呼び出すと、レコーダーを渡す\_で受信したログのハンドル、 [ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)を呼び出します。
-6.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、次を参照してください。[トレース メッセージを表示](#view)します。
+3.  省略可能。 **Logidentifier**には、このバッファーからのトレースメッセージを識別するのに役立つ文字列を設定します。 文字列の長さは16文字以下でなければなりません。
+4.  入力した[**レコーダー\_ログ\_作成\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_log_create_params)構造体のアドレスを指定して、 [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)を呼び出します。
+5.  トレースマクロを呼び出し、 [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)呼び出しによって受信されたレコーダー\_ログハンドルを渡すことによって、この新しいバッファーにトレースメッセージを出力します。
+6.  デバッガーでトレースメッセージを表示します。 詳細については、「[トレースメッセージの表示](#view)」を参照してください。
 
-システムでは、レジストリに最大と最小バッファー サイズを定義します。 メモリを節約し、ログ機能を構成するのには、これらの値を適切に設定できます。
+システムは、レジストリの最大バッファーサイズと最小バッファーサイズを定義します。 これらの値は、メモリを節約し、ログ記録機能を構成するために適切に設定できます。
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<serviceName>\Parameters
@@ -287,11 +287,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<serviceName>\Parameters
    By default (0), IFR only logs errors, warnings, and informational events. Setting this value to 1 adds the verbose output to get logged. 
 ```
 
-サイズが指定されている場合[**レコーダー\_ログ\_作成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params) (バイト単位) の最小数未満[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)割り当てます**WppRecorder\_PerBufferMinBytes**バイト。 同様に、サイズが最大の値を超えた場合、 **WppRecorderLogCreate**割り当てます**WppRecorder\_PerBufferMaxBytes**バイト。
+[**レコーダー\_LOG\_CREATE\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_log_create_params)が最小バイト数未満の場合は、 [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)によって**Wpprecorder\_perbufferminbytes**バイトが割り当てられます。 同様に、サイズが最大値を超えた場合、 **WppRecorderLogCreate**は**wpprecorder\_perbuffermaxbytes**バイトに割り当てます。
 
-カスタム ログを削除する[ **WppRecorderLogDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogdelete)呼び出す前に[WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))します。 この関数を入力すると、スレッド、すべてのスレッドする必要がありますにログインしないこのバッファーできなくなります。 この関数を呼び出すことができます、 [ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)ドライバーの実装。
+カスタムログを削除するには、 [**WppRecorderLogDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogdelete)を呼び出してから、 [WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))を呼び出します。 スレッドがこの関数に入ると、すべてのスレッドがこのバッファーにログインできなくなります。 この関数は、ドライバーの[*Evtdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)実装で呼び出すことができます。
 
-このコード例では、ドライバーの DriverEntry 関数からスニペットを示します。 この例で、ドライバーは既定のログを無効にします、カスタム ログを作成して、バッファー サイズ、および識別子を設定します。
+このコード例は、ドライバーの DriverEntry 関数のスニペットです。 この例では、ドライバーは既定のログを無効にし、カスタムログを作成して、そのバッファーサイズと識別子を設定します。
 
 ```ManagedCPlusPlus
 ULONG MyDriverLogSize = 8 * 1024;
@@ -366,10 +366,10 @@ _In_ PUNICODE_STRING RegistryPath
 }
 ```
 
-## <a name="span-iddefinespanspan-iddefinespandefine-trace-functions"></a><span id="define"></span><span id="DEFINE"></span>トレース関数を定義します。
+## <a name="span-iddefinespanspan-iddefinespandefine-trace-functions"></a><span id="define"></span><span id="DEFINE"></span>トレース関数を定義する
 
 
-入力パラメーターとして"IFRLOG"がある、Trace.h) の「トレース関数を追加します。 トレース マクロについては、次を参照してください。 [Windows ドライバーに追加の WPP ソフトウェア トレース](adding-wpp-software-tracing-to-a-windows-driver.md)します。
+"IFRLOG" を入力パラメーターとして持つトレース関数 (トレース .h 内) を追加します。 マクロのトレースの詳細については、「 [Windows ドライバーへの WPP ソフトウェアトレースの追加](adding-wpp-software-tracing-to-a-windows-driver.md)」を参照してください。
 
 ```ManagedCPlusPlus
 //
@@ -383,18 +383,18 @@ _In_ PUNICODE_STRING RegistryPath
 //
 ```
 
-前の例では、TraceEvents と PrintEvents の 2 つのトレース機能があります。 WPP は、FUNC 宣言で指定されたパラメーターと共にこれらの関数のマクロを生成します。 このトピックの「使用例ドライバーは、TraceEvents と PrintEvents の両方を使用します。 PrintEvents では、パラメーターとして"IFRLOG"が必要です。 この関数を呼び出すときに、ドライバーがレコーダーを指定する必要があります\_"IFRLOG"のパラメーター値としてログ ハンドル。 カスタムのバッファーを作成する場合にのみ、IFRLOG が追加されます。 TraceEvents は、既定のログを出力します。 これは、機能の変更を加えずに既存のトレース ステートメントとの下位互換性を提供します。
+前の例では、TraceEvents と PrintEvents という2つのトレース関数があります。 WPP は、FUNC 宣言で指定されたパラメーターを使用して、これらの関数のマクロを生成します。 このトピックで使用する例では、ドライバーは TraceEvents と PrintEvents の両方を使用します。 PrintEvents には、パラメーターとして "IFRLOG" が必要です。 この関数を呼び出す場合、ドライバーは、"IFRLOG" のパラメーター値としてレコーダー\_ログハンドルを指定する必要があります。 IFRLOG は、カスタムバッファーを作成した場合にのみ追加されます。 TraceEvents は既定のログに出力します。 これにより、機能を変更することなく、既存のトレースステートメントとの下位互換性が提供されます。
 
-既定のログにトレース メッセージを印刷するには、ドライバーか呼び出し PrintEvents で受信したハンドルを持つ、 [ **WppRecorderLogGetDefault** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))を呼び出すと、またはハンドルせず、TraceEvents に呼び出します。
+トレースメッセージを既定のログに出力するには、ドライバーは、 [**WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))呼び出しで受信したハンドルを使用して printevents を呼び出すか、ハンドルなしで traceevents を呼び出します。
 
-カスタム ログに印刷するには、ドライバーはへの呼び出しで受け取ったハンドルを渡します。 [ **WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)します。
+カスタムログに出力するために、ドライバーは、 [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)への呼び出しで受信したハンドルを渡します。
 
-## <a name="span-idmaketracemessagesavailableinpublicsymbolsspanspan-idmaketracemessagesavailableinpublicsymbolsspanspan-idmaketracemessagesavailableinpublicsymbolsspanmake-trace-messages-available-in-public-symbols"></a><span id="Make__trace_messages_available_in_public_symbols"></span><span id="make__trace_messages_available_in_public_symbols"></span><span id="MAKE__TRACE_MESSAGES_AVAILABLE_IN_PUBLIC_SYMBOLS"></span>トレース メッセージをパブリック シンボルで使用できるように
+## <a name="span-idmake__trace_messages_available_in_public_symbolsspanspan-idmake__trace_messages_available_in_public_symbolsspanspan-idmake__trace_messages_available_in_public_symbolsspanmake-trace-messages-available-in-public-symbols"></a><span id="Make__trace_messages_available_in_public_symbols"></span><span id="make__trace_messages_available_in_public_symbols"></span><span id="MAKE__TRACE_MESSAGES_AVAILABLE_IN_PUBLIC_SYMBOLS"></span>トレースメッセージをパブリックシンボルで使用できるようにする
 
 
-WPP[トレース メッセージの形式](trace-message-format-file.md)WPP の実際のメッセージを表示する情報が必要です。 その情報は、プライベート シンボル ファイル (Pdb) に格納されます。 TMF 情報は、プライベート PDB がパブリックの PDB されませんで自動的に含まれます。 そのため、プライベート PDB なし、メッセージを表示することはできません。 トレース メッセージをパブリックの pdb ファイルに追加するには
+WPP では、実際の WPP メッセージを表示するために[トレースメッセージの形式](trace-message-format-file.md)情報が必要です。 この情報は、プライベートシンボルファイル (Pdb) に格納されます。 TMF 情報は、プライベート PDB に自動的に含まれますが、パブリック PDB には含まれません。 そのため、プライベート PDB を使用しないでメッセージを表示することはできません。 パブリック PDB にトレースメッセージを追加するには、
 
-WPP トレース メッセージの一部をパブリックにするには、各メッセージに特別なマーカーを追加する必要があります。 追加`// WPP_FLAGS(-public:<trace function name>)`Trace.h ファイル定義の後にします。 マーカーが表示されます、 **– パブリック**WPP コマンドラインに切り替えます。 スイッチが WPP プリプロセッサに追加されるため、保持できる&lt;funcName&gt;パブリック PDB ファイルに注釈をトレースします。
+これらの WPP トレースメッセージの一部を公開するには、各メッセージに特別なマーカーを追加する必要があります。 トレース .h ファイルの定義の後に `// WPP_FLAGS(-public:<trace function name>)` を追加します。 マーカーは、WPP コマンドラインで **– public**スイッチによって示されます。 このスイッチを WPP プリプロセッサに追加して、&lt;funcName&gt; のトレース注釈をパブリック PDB ファイルに保持できるようにします。
 
 ```ManagedCPlusPlus
 //
@@ -410,40 +410,40 @@ WPP トレース メッセージの一部をパブリックにするには、各
 //
 ```
 
-## <a name="span-idviewspanspan-idviewspanview-the-trace-messages"></a><span id="view"></span><span id="VIEW"></span>トレース メッセージを表示します。
+## <a name="span-idviewspanspan-idviewspanview-the-trace-messages"></a><span id="view"></span><span id="VIEW"></span>トレースメッセージを表示する
 
 
-トレース メッセージを表示する使用[Wdfkd 拡張](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)Windows デバッガーでします。 拡張機能コマンドは、Wdfkd.dll です。
+トレースメッセージを表示するには、Windows デバッガーで[Wdfkd 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)を使用します。 拡張コマンドは、Wdfkd .dll です。
 
-1.  Wdfkd コマンドを読み込む、入力`.load Wdfkd.dll`デバッガーでします。
-2.  これらのコマンドを使用すると、トレース メッセージを表示できます。
+1.  Wdfkd コマンドを読み込み、デバッガーに `.load Wdfkd.dll` を入力します。
+2.  これらのコマンドを使用して、トレースメッセージを表示します。
 
-    [ **!wdfkd.wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)
+    [ **! wdfkd. wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)
 
-    [ **!wdfkd.wdfcrashdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)
+    [ **! wdfkd。 wdfkd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)
 
-カーネル モード ドライバーを使用してトレース ログを表示できます[RCDRKD 拡張](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)します。 これらのコマンドでは、ユーザー モード ドライバーを使用できません。
+カーネルモードドライバーは、 [Rcdrkd 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)を使用してトレースログを表示できます。 これらのコマンドは、ユーザーモードドライバーでは使用できません。
 
-## <a name="span-idbestpracticesspanspan-idbestpracticesspanspan-idbestpracticesspanbest-practices"></a><span id="Best_practices"></span><span id="best_practices"></span><span id="BEST_PRACTICES"></span>ベスト プラクティス
-
-
--   後 IFR Api を呼び出す、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))呼び出し、 *DriverEntry*またはカーネル モード ドライバーの日常的な*DLLMain*ルーチンUMDF 2.15 ドライバー。 グローバル ポリシーによってログ記録が無効の場合は、WPP を呼び出す\_INIT\_トレースはログ記録を有効にします。
-
--   場合[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)が失敗した呼び出しの NULL ハンドルを返します。 戻り値を無視する場合、選択できます**WppRecorderLogCreate** 、RECODER を使用して\_ログ ハンドル、WPP メッセージを出力します。
-
--   によって返されたハンドルは削除しないでください[ **WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))します。 既定のログを無効にする設定、 **CreateDefaultLog**のメンバー [**レコーダー\_構成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)を FALSE を呼び出して[**WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure)します。
-
--   呼び出さない[ **WppRecorderLogSetIdentifier** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogsetidentifier)既定のログのハンドルを渡すことによって。 その操作は許可されません。
-
--   IFR バッファーは、非ページ プールから割り当てられます。 それらの割り当ての累積的効果は、特にフット プリントの小さいデバイスでの大幅なパフォーマンスの問題につながります。 要求のバッファー サイズが小さく、 [ **WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)します。 また、ログ記録機能が不要である場合、既定のログを無効にします。
-
--   ログ バッファーのサイズを表示する、 [ **! wdfkd.wdflogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)コマンド。 使用する場合[RCDRKD 拡張](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)、サイズを表示するを使用し、 [ **! rcdrkd.rcdrloglist**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-rcdrkd-rcdrloglist)
-
-## <a name="span-idumdfandkmdfdifferencesspanspan-idumdfandkmdfdifferencesspanspan-idumdfandkmdfdifferencesspanumdf-and-kmdf-differences"></a><span id="UMDF_and_KMDF_differences"></span><span id="umdf_and_kmdf_differences"></span><span id="UMDF_AND_KMDF_DIFFERENCES"></span>UMDF および KMDF の違い
+## <a name="span-idbest_practicesspanspan-idbest_practicesspanspan-idbest_practicesspanbest-practices"></a><span id="Best_practices"></span><span id="best_practices"></span><span id="BEST_PRACTICES"></span>ベストプラクティス
 
 
--   カーネル モード ドライバーだけでは、カスタムのバッファーを作成できます。 この機能は、ユーザー モード ドライバーには適用されません。
--   使用して、ユーザー モード ドライバーからのトレース ログを表示することはできません[RCDRKD 拡張](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)します。 使用する必要があります[Wdfkd 拡張](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)します。
+-   カーネルモードドライバーの*Driverentry*ルーチン、または UMDF 2.15 ドライバーの*DLLMain*ルーチンで、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))呼び出しの開始後に、IFR api を呼び出します。 グローバルポリシーによってログ記録が無効になっている場合、WPP\_INIT\_TRACING を呼び出すと、ログ記録が有効になりません。
+
+-   [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)が失敗した場合、呼び出しは NULL ハンドルを返します。 その場合は、 **WppRecorderLogCreate**の戻り値を無視し、RECODER\_ログハンドルを使用して、WPP メッセージを出力することができます。
+
+-   [**WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))によって返されたハンドルは削除しないでください。 既定のログを無効にするには、レコーダーの**Createdefaultlog**メンバー [ **\_CONFIGURE\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/ns-wpprecorder-_recorder_configure_params)を FALSE に設定してから、 [**WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderconfigure)を呼び出します。
+
+-   既定のログハンドルを渡すことで[**WppRecorderLogSetIdentifier**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogsetidentifier)を呼び出さないでください。 この操作は許可されていません。
+
+-   IFR バッファーは、非ページプールから割り当てられます。 これらの割り当ての累積効果は、特に小さいフットプリントデバイスでは、パフォーマンスに大きな問題が生じる可能性があります。 [**WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)のバッファーサイズを小さくするように要求します。 また、ログ記録機能が不要な場合は、既定のログを無効にしてください。
+
+-   ログバッファーのサイズを表示するには、 [ **! wdfkd. wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)コマンドを使用します。 [Rcdrkd 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)を使用している場合は、 [ **! rcdrkd. rcdrloglist**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-rcdrkd-rcdrloglist)を使用してサイズを表示できます。
+
+## <a name="span-idumdf_and_kmdf_differencesspanspan-idumdf_and_kmdf_differencesspanspan-idumdf_and_kmdf_differencesspanumdf-and-kmdf-differences"></a><span id="UMDF_and_KMDF_differences"></span><span id="umdf_and_kmdf_differences"></span><span id="UMDF_AND_KMDF_DIFFERENCES"></span>UMDF と KMDF の相違点
+
+
+-   カスタムバッファーを作成できるのは、カーネルモードのドライバーだけです。 この機能は、ユーザーモードドライバーには適用されません。
+-   [Rcdrkd 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)を使用して、ユーザーモードドライバーからトレースログを表示することはできません。 [Wdfkd 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)を使用する必要があります。
 
 
 

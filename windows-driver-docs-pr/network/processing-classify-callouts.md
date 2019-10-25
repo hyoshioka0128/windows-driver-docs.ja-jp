@@ -3,54 +3,54 @@ title: 分類コールアウトの処理
 description: 分類コールアウトの処理
 ms.assetid: 284aeda0-8275-440f-abf4-84a0c61cc4f4
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK、コールアウトを分類します。
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームのコールアウトを分類します。
-- classifyFn
-- WDK Windows フィルタ リング プラットフォームのコールアウトを分類します。
-- WDK Windows フィルタ リング プラットフォームのコールアウトの分類、コールアウトを約分類する.
+- Windows フィルタリングプラットフォームコールアウトドライバー WDK、分類コールアウト
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、コールアウトの分類
+- Classid (場合)
+- コールアウトの分類 WDK Windows フィルタリングプラットフォーム
+- コールアウトの分類 WDK Windows フィルタリングプラットフォーム、コールアウトの分類について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dda31876f745df486aee716a996b5ecf2c4b46d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb25beb1535a6b25b51f9c84fe3e5de6041a49dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385482"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843489"
 ---
 # <a name="processing-classify-callouts"></a>分類コールアウトの処理
 
 
-フィルター エンジン呼び出し吹き出しの[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)引き出し線によって処理されるネットワーク データがある場合は吹き出し関数。 これは、フィルターのアクションの引き出し線を指定するフィルターのフィルター処理のすべての条件が当てはまる場合に発生します。 このようなフィルターがフィルター条件を持たない場合、フィルター エンジンを常に呼び出します吹き出しの*classifyFn*コールアウト関数。
+フィルターエンジンは、コールアウトによって処理されるネットワークデータがある場合に、コールアウトの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数を呼び出します。 これは、フィルターのアクションのコールアウトを指定するフィルターに対して、すべてのフィルター条件が true である場合に発生します。 このようなフィルターにフィルター条件が含まれていない場合、フィルターエンジンは常にコールアウトの*classid*関数を呼び出します。
 
-フィルター エンジンでは、いくつかの異なるデータ アイテムを渡すには、吹き出しの*classifyFn*コールアウト関数。 これらのデータ項目には、固定のデータ値、メタデータの値、未加工のネットワーク データ、フィルターについては、および任意のコンテキストのフローが含まれます。 フィルター エンジンは吹き出しに渡される特定のデータ項目は、特定のフィルタ リング層とする条件によって異なります。 *classifyFn*が呼び出されます。 A *classifyFn*関数は、これらのデータ項目の任意の組み合わせを使用して、そのフィルターの決定を行います。
+フィルターエンジンは、複数の異なるデータ項目をコールアウトの*classid*関数に渡します。 これらのデータ項目には、固定データ値、メタデータ値、生のネットワークデータ、フィルター情報、およびすべてのフローコンテキストが含まれます。 フィルターエンジンがコールアウトに渡す特定のデータ項目は、特定のフィルター処理レイヤーと、 *classid*が呼び出される条件によって異なります。 分類*関数は*、これらのデータ項目の任意の組み合わせを使用して、フィルターの決定を行うことができます。
 
-吹き出しの実装*classifyFn*コールアウト関数は吹き出しが実行するように設計に依存します。 次のセクションでは、コールアウトのより一般的な機能のいくつかの例を示します。
+コールアウトの*classid*関数の実装は、コールアウトがどのように設計されているかによって異なります。 次のセクションでは、コールアウトの一般的な関数の例を紹介します。
 
-[詳細な検査のコールアウトを使用してください。](using-a-callout-for-deep-inspection.md)
+[詳細な検査にコールアウトを使用する](using-a-callout-for-deep-inspection.md)
 
-[Stream のデータの詳細な検査のコールアウトを使用してください。](using-a-callout-for-deep-inspection-of-stream-data.md)
+[コールアウトを使用したストリームデータの詳細な検査](using-a-callout-for-deep-inspection-of-stream-data.md)
 
-[パケットと Stream のデータを調べる](inspecting-packet-and-stream-data.md)
+[パケットおよびストリームデータの検査](inspecting-packet-and-stream-data.md)
 
-[Stream のデータの変更](modifying-stream-data.md)
+[ストリームデータの変更](modifying-stream-data.md)
 
 [データのログ記録](data-logging.md)
 
-[データ フローとコンテキストの関連付け](associating-context-with-a-data-flow.md)
+[コンテキストとデータフローの関連付け](associating-context-with-a-data-flow.md)
 
-[処理がコールアウトを非同期的に分類します。](processing-classify-callouts-asynchronously.md)
+[コールアウトを非同期に分類する処理](processing-classify-callouts-asynchronously.md)
 
-[Bind を使用して、またはリダイレクトの接続](using-bind-or-connect-redirection.md)
+[バインドまたは接続リダイレクトの使用](using-bind-or-connect-redirection.md)
 
-[ALE エンドポイントの有効期間管理](ale-endpoint-lifetime-management.md)
+[ALE エンドポイントの有効期間の管理](ale-endpoint-lifetime-management.md)
 
-[パケットがタグ付けを使用してください。](using-packet-tagging.md)
+[パケットタグ付けの使用](using-packet-tagging.md)
 
-特定のコールアウトの実際の実装*classifyFn*コールアウト関数は、これらの例の組み合わせに基づくことができます。
+特定のコールアウトの*classid*関数の実際の実装は、これらの例の組み合わせに基づいて作成できます。
 
-コールアウトのプロセスのデータをフィルター処理には層をサポートでデータ フローまで、引き出し線の*classifyFn*コールアウト関数は、各データ フローでコンテキストを関連付けることができます。 *ClassifyFn*関数は、このコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に状態情報を保存します。 吹き出し関数がデータ フローでコンテキストを関連付けることができる方法の詳細については、次を参照してください。[データ フローに関連付けるコンテキスト](associating-context-with-a-data-flow.md)します。
+データフローをサポートするフィルター処理レイヤーでデータを処理するコールアウトの場合、コールアウトの*classid*関数は、コンテキストを各データフローに関連付けることができます。 *Classid*は、このコンテキストを使用して、そのデータフローのフィルターエンジンによって次回呼び出されたときの状態情報を保存できます。 コールアウト関数がコンテキストをデータフローに関連付ける方法の詳細については、「[コンテキストとデータフローの関連付け](associating-context-with-a-data-flow.md)」を参照してください。
 
-WFP の非同期処理をサポートしている、 *classifyFn*コールアウト関数。 非同期処理の詳細については、次を参照してください。[分類コールアウト非同期を処理](processing-classify-callouts-asynchronously.md)します。
+WFP は、 *classid*関数の非同期処理をサポートしています。 非同期処理の詳細については、「[プロセス分類のコールアウトを非同期に処理](processing-classify-callouts-asynchronously.md)する」を参照してください。
 
  
 

@@ -3,17 +3,17 @@ title: ミニポート ドライバーのアンロード
 description: ミニポート ドライバーのアンロード
 ms.assetid: c5199a0f-31c3-42e4-8758-cbe480dff682
 keywords:
-- ミニポート ドライバー WDK ネットワーク、アンロード
-- NDIS ミニポート ドライバー WDK、アンロード
-- アンロードのミニポート ドライバー
+- ミニポートドライバー WDK ネットワーク、アンロード
+- NDIS ミニポートドライバー WDK、アンロード
+- ミニポートドライバーのアンロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cf5d0bccf3bc2a06c749da8fd66852dddbc3841
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b29a9e392c9f0bff50b6a88b2e7d376b1a6847e1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382093"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843009"
 ---
 # <a name="unloading-a-miniport-driver"></a>ミニポート ドライバーのアンロード
 
@@ -21,13 +21,13 @@ ms.locfileid: "67382093"
 
 
 
-NDIS ミニポート ドライバーに関連付けられているドライバー オブジェクトを指定します、 [**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。 システム コール、*アンロード*ルーチンときに、すべてのデバイス ドライバー サービスが削除されていること。 NDIS の提供、*アンロード*ミニポート ドライバーの日常的な。 NDIS ミニポート ドライバーを呼び出す[ *MiniportDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_unload)関数を*アンロード*ルーチン。
+NDIS ミニポートドライバーに関連付けられているドライバーオブジェクトは、[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンを指定します。 ドライバーサービスが削除されたすべてのデバイスの*アンロード*ルーチンがシステムによって呼び出されます。 NDIS には、ミニポートドライバーの*アンロード*ルーチンが用意されています。 NDIS は、 *unload*ルーチンからミニポートドライバーの[*miniportdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_unload)関数を呼び出します。
 
-ミニポート ドライバーを呼び出す必要があります[ **NdisMDeregisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver)から*MiniportDriverUnload*します。
+ミニポートドライバーは、 *Miniportdriverunload*から[**NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver)を呼び出す必要があります。
 
-ミニポート ドライバーの*MiniportDriverUnload*関数は、個々 のドライバーのリソースを解放もする必要があります。 システムの後にドライバー アンロード操作が完了*MiniportDriverUnload*を返します。
+ミニポートドライバーの*Miniportdriverunload*関数も、ドライバー固有のリソースを解放する必要があります。 *Miniportdriverunload*が返された後、システムはドライバーのアンロード操作を完了します。
 
-機能、 *MiniportDriverUnload*関数は、ドライバー固有です。 一般的な規則として*MiniportDriverUnload*ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
+*Miniportdriverunload*関数の機能はドライバーに固有です。 一般的な規則として、 *Miniportdriverunload*は、ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、「[ミニポートドライバーの初期化](initializing-a-miniport-driver.md)」を参照してください。
 
  
 

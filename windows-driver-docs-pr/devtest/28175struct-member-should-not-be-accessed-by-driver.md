@@ -1,31 +1,31 @@
 ---
 title: C28175
-description: 警告 C28175 が構造体のメンバーをドライバーによってアクセスはできません。
+description: 警告 C28175 構造体のメンバーにドライバーからアクセスすることはできません。
 ms.assetid: 259a90d7-29ef-4a27-a921-8fff93b325bd
 keywords:
-- '警告は、WDK: PREfast for Drivers を一覧表示'
-- 'エラーは、WDK: PREfast for Drivers を一覧表示'
+- ドライバーの WDK PREfast の一覧に警告が表示される
+- ドライバーの WDK PREfast の一覧にエラーが表示される
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28175
-ms.openlocfilehash: 43377d72e9ead2717eaab983993ddfe8ecc2df58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad7e951940569535e83044217f9968385f12868a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371480"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840311"
 ---
 # <a name="c28175"></a>C28175
 
 
-C28175 を警告します。構造体のメンバーをドライバーによってアクセスはできません。
+警告 C28175: 構造体のメンバーにドライバーからアクセスすることはできません
 
-この警告は、ドライバーがドライバーにアクセスする必要がありますしないを文書化されていない構造体メンバーをアクセスすることを示します。
+この警告は、ドライバーがアクセスすることができない、ドキュメント化されていない構造体のメンバーにドライバーがアクセスしたことを示します。
 
-ドライバーでは、指定されたドキュメントに未記載の構造体のメンバーはアクセスしないでください。 非透過または部分的に非透過構造体のメンバーの最も文書化されていない場合は、この禁止は絶対です。 ただし、ドライバーは、特定するルーチン内から特定のドキュメントに未記載の構造体メンバーをアクセスすることがあります。 ドライバーが部分的に非透過のドキュメントに未記載のメンバーにアクセスなど、 [**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)ドライバー内でのみ構造\_の初期化またはドライバー\_アンロード ルーチン。
+ドライバーは、指定された非公開の構造体のメンバーにアクセスすることはできません。 不透明な、または部分的に不透明な構造体のほとんどのドキュメントに記載されていないメンバーの場合、この禁止は absolute です。 ただし、ドライバーは、特定のルーチン内から、非公開の構造体のメンバーにアクセスする場合があります。 たとえば、ドライバーは、部分的に不透明になっているドライバー [ **\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)構造の一部が非透過的なメンバーにアクセスすることがあります\_INITIALIZE またはドライバー\_のアンロードルーチン。
 
-このルールは、特定のメンバーに適用される理由はすぐに明らかではありません。 たとえば、これが 1 つのインスタンスはでは、 **NextDevice**のメンバー **\_デバイス\_オブジェクト**します。 このインスタンスではロックは、ドライバーを使用できませんにロックにこのリンクのリストを安全にアクセスする使用する必要があります。 この場合、この規則に違反する頻度の低いが、診断が難しいとエラーが発生します。 関連するデバイスにアクセスする適切な方法は使用する、 [ **IoEnumerateDeviceObjectList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioenumeratedeviceobjectlist)関数。
+この規則が特定のメンバーに適用される理由がすぐに明確ではない場合があります。 たとえば、このような状況が発生する1つのインスタンスは、 **\_デバイス\_オブジェクト**の**nextdevice**メンバーです。 この場合、このリンクリストに安全にアクセスするためにロックを使用する必要がありますが、そのロックをドライバーで使用することはできません。 この場合、この規則に違反すると、発生頻度が低いが、診断が困難になります。 関連するデバイスにアクセスする適切な方法は、 [**IoEnumerateDeviceObjectList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioenumeratedeviceobjectlist)関数を使用することです。
 
  
 

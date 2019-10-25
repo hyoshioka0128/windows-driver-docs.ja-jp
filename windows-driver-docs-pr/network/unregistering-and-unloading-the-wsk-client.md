@@ -3,33 +3,33 @@ title: WSK クライアントの登録解除とアンロード
 description: WSK クライアントの登録解除とアンロード
 ms.assetid: dd9030b1-271f-46e4-9139-b49903ca8313
 keywords:
-- ネットワーク モジュール レジストラー WDK Winsock カーネル
+- ネットワークモジュールレジストラー WDK Winsock カーネル
 - NMR WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6800f8db8b2e5f05e01837e7675f8a065709cf7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5723f955787a0e2e73ddb701ee0c3a559aad12e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380800"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843001"
 ---
 # <a name="unregistering-and-unloading-the-wsk-client"></a>WSK クライアントの登録解除とアンロード
 
 
-使用するアプリケーションは、Winsock カーネル (WSK)、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md) WSK へのアタッチのサブシステムはアンロードの前に解除 NMR にする必要があります。 ときに WSK アプリケーションの登録を解除、NMR で呼び出すことによって、 [ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)関数の場合、NMR を呼び出すアプリケーションの[ *ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)コールバック関数、アプリケーションがそれ自体を WSK アプリケーションの登録解除プロセスの一環として、WSK サブシステムからデタッチされるようにします。
+WSK サブシステムへのアタッチに[ネットワークモジュールレジストラー (NMR)](network-module-registrar2.md)を使用するすべての Winsock カーネル (wsk) アプリケーションは、アンロードの前に NMR で登録を解除する必要があります。 WSK アプリケーションが[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)関数を呼び出すことによって NMR で登録を解除すると、NMR はアプリケーションの[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn) callback 関数を呼び出します。これにより、アプリケーションは、アプリケーションが wsk サブシステムから、WSK アプリケーションの登録解除プロセス。
 
-さらに、登録を解除すると、NMR WSK サブシステムの可能性は低いが、可能な場合は、NMR も呼び出して、WSK アプリケーションの*ClientDetachProvider*コールバック関数自体から、アプリケーションをデタッチするため、WSK サブシステムの登録解除プロセスの一環として WSK サブシステムです。
+さらに、可能性はほとんどありませんが、WSK サブシステムが NMR に登録を解除した場合、NMR は WSK アプリケーションの*ClientDetachProvider*コールバック関数も呼び出します。これにより、アプリケーションは wsk サブシステムからアプリケーションをデタッチできます。WSK サブシステムの登録解除プロセス。
 
-NMR 呼び出し WSK アプリケーションの*ClientDetachProvider*コールバック関数を 1 回だけです。 WSK アプリケーションと WSK サブシステムの両方が、NMR で登録解除、NMR 呼び出します WSK アプリケーションの*ClientDetachProvider*コールバック関数の最初の登録解除が開始された後のみです。
+NMR は WSK アプリケーションの*ClientDetachProvider* callback 関数を1回だけ呼び出します。 WSK アプリケーションと WSK サブシステムの両方が NMR の登録を解除した場合、NMR は最初の登録解除が開始された後に WSK アプリケーションの*ClientDetachProvider* callback 関数を呼び出します。
 
-WSK WSK 関数のいずれかに進行中の呼び出しがない場合\_プロバイダー\_、NMR WSK アプリケーションの呼び出し時にディスパッチ*ClientDetachProvider*コールバック関数、WSK アプリケーション状態を返す必要があります\_成功からその*ClientDetachProvider*コールバック関数。 それ以外の場合、WSK アプリケーションは状態を返す必要があります\_PENDING からその*ClientDetachProvider*コールバック関数、およびそれを呼び出す必要があります、 [ **NmrClientDetachProviderComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)関数結局、WSK を実行中の呼び出しの関数の WSK\_プロバイダー\_ディスパッチが返されます。 WSK アプリケーションが呼び出す、 **NmrClientDetachProviderComplete** WSK サブシステムから、アプリケーションがデタッチされている NMR に通知します。 ただし、WSK サブシステムでは、すべての開いているソケットが WSK アプリケーションによって閉じられるまで完全に完了するデタッチ プロシージャは許可されません。 詳細については、次を参照してください。[ソケットを閉じて](closing-a-socket.md)します。
+Wsk\_\_PROVIDER の WSK 関数のいずれかに対して実行中の呼び出しがない場合は、NMR が WSK アプリケーションの*ClientDetachProvider*コールバック関数を呼び出したときに、wsk アプリケーションがステータスを返す必要があり\_*ClientDetachProvider* callback 関数による成功。 それ以外の場合、WSK アプリケーションは*ClientDetachProvider* callback 関数から STATUS\_PENDING を返す必要があります。また、 [**NmrClientDetachProviderComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)関数は、実行中のすべての呼び出しをの wsk 関数に呼び出した後に呼び出す必要があります。WSK\_プロバイダー\_ディスパッチが返されました。 WSK アプリケーションは、 **NmrClientDetachProviderComplete**関数を呼び出して、アプリケーションが wsk サブシステムからデタッチされたことを NMR に通知します。 ただし、WSK サブシステムでは、すべての開いているソケットが WSK アプリケーションによって閉じられるまで、デタッチプロシージャを完全に完了することはできません。 詳細については、「[ソケットを閉じる](closing-a-socket.md)」を参照してください。
 
-WSK アプリケーションは、NMR を通知がデタッチが完了すると後の状態を返すことによって、\_から成功の*ClientDetachProvider*コールバック関数または呼び出すことによって、 **NmrClientDetachProviderComplete**関数、WSK で、アプリケーションは WSK 関数のいずれかにさらに任意呼び出しを行う必要がない\_プロバイダー\_ディスパッチします。
+WSK アプリケーションがデタッチが完了したことを NMR に通知した後、 *ClientDetachProvider*コールバック関数から STATUS\_SUCCESS を返すか、 **NmrClientDetachProviderComplete**関数を呼び出します。アプリケーションでは、WSK\_プロバイダー\_ディスパッチの WSK 関数のいずれかに対してそれ以上の呼び出しを行うことはできません。
 
-WSK アプリケーションを実装している場合、 [ *ClientCleanupBindingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn)コールバック関数、NMR を呼び出すアプリケーションの*ClientCleanupBindingContext*コールバックWSK アプリケーションおよび WSK サブシステムの両方がお互いからのデタッチを完了してからの関数。 WSK アプリケーションの*ClientCleanupBindingContext*コールバック関数は、アプリケーションのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、アプリケーションは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
+WSK アプリケーションで[*ClientCleanupBindingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn) callback 関数が実装されている場合、wsk アプリケーションと wsk サブシステムの両方が完了した後、NMR はアプリケーションの*ClientCleanupBindingContext*コールバック関数を呼び出します。相互にデタッチ。 WSK アプリケーションの*ClientCleanupBindingContext*コールバック関数は、アプリケーションのバインディングコンテキスト構造内に含まれるデータの必要なクリーンアップを実行する必要があります。 その後、アプリケーションが構造体に対して動的に割り当てられたメモリを使用している場合は、バインディングコンテキストの構造に対してメモリを解放する必要があります。
 
-例:
+次に、例を示します。
 
 ```C++
 // ClientDetachProvider callback function
@@ -94,9 +94,9 @@ VOID
 }
 ```
 
-WSK アプリケーションの[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数では、アプリケーションがから登録解除されますを確認する必要があります、 [NMR](network-module-registrar2.md)アプリケーションは、システム メモリからアンロードする前にします。 WSK アプリケーションから返す必要がありますいないその*アンロード*まで、NMR から完全に登録解除がされた後に機能します。 場合に呼び出し**NmrDeregisterClient**ステータスを返します\_保留中、WSK アプリケーションを呼び出す必要があります、 **NmrWaitForClientDeregisterComplete**関数を登録解除のために待機するには返す前に完了、*アンロード*関数。
+WSK アプリケーションの[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)関数は、アプリケーションがシステムメモリからアンロードされる前に、アプリケーションが[NMR](network-module-registrar2.md)から登録解除されていることを確認する必要があります。 WSK アプリケーションは、NMR から完全に登録解除されるまで、 *Unload*関数から戻ることはできません。 **NmrDeregisterClient**の呼び出しで STATUS\_PENDING が返された場合、wsk アプリケーションは、*アンロード*から戻る前に登録解除が完了するまで待機するために、 **NmrWaitForClientDeregisterComplete**関数を呼び出す必要があります。プロシージャ.
 
-例:
+次に、例を示します。
 
 ```C++
 // Variable containing the handle for registration with the NMR
@@ -127,7 +127,7 @@ VOID
 }
 ```
 
-WSK アプリケーションを呼び出す必要はありません**NmrDeregisterClient**内からその*アンロード*関数。 たとえば、WSK アプリケーションが複雑なドライバーのサブコンポーネントの場合は、WSK アプリケーションのサブコンポーネントが非アクティブ化が WSK アプリケーションの登録を解除することがあります。 ただし、このような状況では、ドライバーする必要がありますもことを確認、WSK アプリケーションが完全にから登録解除された、NMR から戻る前にその*アンロード*関数。
+WSK アプリケーションは、 *Unload*関数内から**NmrDeregisterClient**を呼び出す必要はありません。 たとえば、WSK アプリケーションが複雑なドライバーのサブコンポーネントである場合、wsk アプリケーションのサブコンポーネントが非アクティブになると WSK アプリケーションの登録が解除されることがあります。 ただし、このような状況でも、ドライバーは、*アンロード*関数から戻る前に、wsk アプリケーションが NMR から完全に登録解除されていることを確認する必要があります。
 
  
 

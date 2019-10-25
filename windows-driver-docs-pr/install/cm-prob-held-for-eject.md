@@ -6,31 +6,31 @@ keywords:
 - CM_PROB_HELD_FOR_EJECT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2b0c9d11d69a885f4ca447ee78f4235702461a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf4f48bc871f2dbabba36932a4b30f7d8af90ef0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360316"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840652"
 ---
-# <a name="cmprobheldforeject"></a>CM_PROB_HELD_FOR_EJECT
+# <a name="cm_prob_held_for_eject"></a>CM_PROB_HELD_FOR_EJECT
 
-この関数は、システムの使用に予約されています。
+この関数は、システムで使用するために予約されています。
 
-取り出し、デバイスが用意されています。
+デバイスは、取り出し用に準備されています。
 
 ## <a name="error-code"></a>エラー コード
 
 47
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows デバイスを使用できませんこのハードウェア '安全な取り外し' が用意されていますが、コンピューターから削除されていないためです。 (コード 47)"
+"安全な削除の準備ができていますが、コンピューターから削除されていないため、Windows はこのハードウェアデバイスを使用できません。 (コード 47) "
 
-「この問題を解決するには、お使いのコンピューターから取り外すし、再度接続のみです。」
+"この問題を解決するには、このデバイスをコンピューターから取り外してから、もう一度接続してください。"
 
 ### <a name="recommended-resolution"></a>推奨される解決方法
 
-デバイスを取り外し、再び接続します。 または、選択**コンピューターの再起動**がコンピューターを再起動し、デバイスを使用できるようにします。
+デバイスを取り外してから、もう一度接続してください。 または、 **[コンピューターの再起動]** を選択すると、コンピューターが再起動され、デバイスが使用できるようになります。
 
-ユーザーを削除するデバイスを準備するホット プラグ プログラムを起動している場合にのみ、このエラーが発生する必要があります (呼び出す[ **CM_Request_Device_Eject**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw))、ユーザーが物理の取り出しを押したかどうかまたは (ボタン呼び出し[ **IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject))。 ユーザーでは、現在、ラップトップとドッキング ステーション トレイ間でトラップ CD-ROM などのリムーバブル デバイスを準備できます。
+このエラーが発生するのは、ユーザーがホットプラグプログラムを呼び出して、デバイスを削除用に準備する場合 ( [**CM_Request_Device_Eject**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw)を呼び出す場合)、またはユーザーが物理取り出しボタン ( [**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)を呼び出す) を押した場合のみです。 ユーザーは、ラップトップとドッキングステーショントレイとの間でトラップされた CD-ROM など、現在リムーバブルではないデバイスを準備できます。

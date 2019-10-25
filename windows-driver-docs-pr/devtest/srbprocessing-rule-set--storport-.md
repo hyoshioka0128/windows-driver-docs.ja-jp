@@ -1,20 +1,20 @@
 ---
-title: SrbProcessing の規則セット (Storport)
-description: ドライバーが正しく SRB の要求を処理することを確認するのにには、これらの規則を使用します。
+title: SrbProcessing ルールセット (Storport)
+description: これらのルールを使用して、ドライバーが SRB 要求を正しく処理していることを確認します。
 ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8ae8f3f29eaa38b3cfdf817a31a214dc51496d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f82071e196be56f3230c551042c4966b31de6597
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374402"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839321"
 ---
-# <a name="srbprocessing-rule-set-storport"></a>SrbProcessing の規則セット (Storport)
+# <a name="srbprocessing-rule-set-storport"></a>SrbProcessing ルールセット (Storport)
 
 
-ドライバーが正しく SRB の要求を処理することを確認するのにには、これらの規則を使用します。
+これらのルールを使用して、ドライバーが SRB 要求を正しく処理していることを確認します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -33,78 +33,78 @@ ms.locfileid: "67374402"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="storport-spduplex.md" data-raw-source="[&lt;strong&gt;SpDuplex&lt;/strong&gt;](storport-spduplex.md)"><strong>SpDuplex</strong></a></p></td>
-<td align="left"><p>このルールは、このミニポートことを確認します。<strong>全二重</strong>モード。 すべてのドライバー、StorPort ミニポート モデルに基づいて構築されていますがである必要があります<strong>全二重</strong>モード。 <strong>半二重</strong>StorPort を既存の SCSI ドライバーを移植するときにのみ使用する必要があります。</p></td>
+<td align="left"><p>このルールは、このミニポートが<strong>全二重</strong>モードであることを確認します。 StorPort ミニポートモデルに従って構築されたドライバーは、<strong>全二重</strong>モードである必要があります。 既存の SCSI ドライバーを StorPort に移植する場合にのみ、<strong>半二重</strong>を使用する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-spnowait.md" data-raw-source="[&lt;strong&gt;SpNoWait&lt;/strong&gt;](storport-spnowait.md)"><strong>SpNoWait</strong></a></p></td>
-<td align="left"><p>このルールは、待機、またはデータの割り当ては内で実行していないことを検証<strong>StartIo</strong>します。</p></td>
+<td align="left"><p>このルールは、待機またはデータ割り当てが<strong>StartIo</strong>内で実行されないことを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-spreturnvalue.md" data-raw-source="[&lt;strong&gt;SpReturnValue&lt;/strong&gt;](storport-spreturnvalue.md)"><strong>SpReturnValue</strong></a></p></td>
-<td align="left"><p>このルールを検証するドライバーの実装の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)"> <strong>HwStorFindAdapter</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-virtual_hw_find_adapter" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-virtual_hw_find_adapter)"> <strong>VirtualHwStorFindAdapter</strong> </a>返す有効な状態です。 有効な状態は、次のいずれか。<strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>、または<strong>SP_RETURN_NOT_FOUND</strong>します。</p></td>
+<td align="left"><p>このルールは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter)"><strong>VirtualHwStorFindAdapter</strong></a>のドライバーの実装が有効な状態を返すことを確認します。 有効な状態は次のいずれかです: <strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>、または<strong>SP_RETURN_NOT_FOUND</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storportallocatepool.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](storportallocatepool.md)"><strong>StorPortAllocatePool</strong></a></p></td>
-<td align="left"><p>このルールは、ミニポートが呼び出しを試みる必要がありますいないを確認します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportfreepool" data-raw-source="[&lt;strong&gt;StorPortFreePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportfreepool)"> <strong>StorPortFreePool</strong> </a> 、割り当てが解除されたバッファーにします。</p></td>
+<td align="left"><p>このルールは、割り当て解除されたバッファーで、ミニポートが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool" data-raw-source="[&lt;strong&gt;StorPortFreePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool)"><strong>Storportfreepool</strong></a>を呼び出すことができないことを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportallocatepool2.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool2&lt;/strong&gt;](storport-storportallocatepool2.md)"><strong>StorPortAllocatePool2</strong></a></p></td>
-<td align="left"><p>このルールは、ミニポートが呼び出しを試みる必要がありますいないを確認します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportallocatepool" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportallocatepool)"> <strong>StorPortAllocatePool</strong> </a>で最初に割り当てを解除せず、割り当てられたバッファー。</p></td>
+<td align="left"><p>このルールは、割り当てられたバッファーに対して、最初に割り当て解除せずに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool)"><strong>StorPortAllocatePool</strong></a>を呼び出すことができないことを確認します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a></p></td>
-<td align="left"><p>このルールを検証する場合、StorPort ミニポートの<a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"> <strong>StorPortBuildIo</strong> </a>ルーチンを返します<strong>FALSE</strong>、問題の SRB はに渡されません<strong>StartIo</strong>。 (このような場合は、ミニポート ドライバーは、呼び出すことによって、SRB を完了する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification)"> <strong>StorPortNotification</strong> </a>の通知の種類と<strong>RequestComplete</strong>から<strong>StorPortBuildIo</strong>またはその他の場所)。</p></td>
+<td align="left"><p>このルールは、StorPort ミニポートの<a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a>ルーチンから<strong>FALSE</strong>が返された場合に、該当する SRB が<strong>StartIo</strong>に渡されないことを確認します。 (このような場合、ミニポートドライバーは、 <strong>StorPortBuildIo</strong>または他の場所からの<strong>requestcomplete</strong>の通知の種類で<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)"><strong>storportnotification</strong></a>を呼び出すことによって、SRB を完了する必要があります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportcompleterequest.md" data-raw-source="[&lt;strong&gt;StorPortCompleteRequest&lt;/strong&gt;](storport-storportcompleterequest.md)"><strong>StorPortCompleteRequest</strong></a></p></td>
-<td align="left"><p>このルールを確認するを呼び出せなく<strong>StorPortCompleteRequest</strong>ミニポートによって行われます。 使用状況、 <strong>StorPortCompleteRequest</strong>は推奨されません。 ミニポートが代わりに呼び出す必要があります<strong>StorPortNotification</strong>で<strong>notificationType = RequestComplete</strong>します。</p></td>
+<td align="left"><p>このルールは、 <strong>StorPortCompleteRequest</strong>への呼び出しがミニポートによって行われていないことを確認します。 <strong>StorPortCompleteRequest</strong>の使用は推奨されません。ミニポートは、代わりに<strong>notificationType = RequestComplete</strong>で<strong>storportnotification</strong>を呼び出す必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportenablepassive.md" data-raw-source="[&lt;strong&gt;StorPortEnablePassive&lt;/strong&gt;](storport-storportenablepassive.md)"><strong>StorPortEnablePassive</strong></a></p></td>
-<td align="left"><p>このルールはことを確認します<strong>StorPortEnablePassiveInitialization</strong>からは呼び出されません、StorPort ミニポート ドライバー ルーチン以外<strong>HwInitialize</strong>します。</p></td>
+<td align="left"><p>このルールは、 <strong>HwInitialize</strong>以外の StorPort ミニポートドライバールーチンから<strong>Storportenable veinitialization</strong>が呼び出されないことを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportfindadapter.md" data-raw-source="[&lt;strong&gt;StorPortFindAdapter&lt;/strong&gt;](storport-storportfindadapter.md)"><strong>StorPortFindAdapter</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)"> <strong>HwStorFindAdapter</strong> </a>ルーチンを設定する必要があります、 <strong>MaximumTransferLength</strong>と<strong>NumberOfPhysicalBreaks</strong> 内のフィールド<strong>PORT_CONFIGURATION_INFORMATION</strong>構造体。 これら両方のフィールドの値は、既定では、 <strong>SP_UNINITIALIZED_VALUE</strong>します。 これらのフィールドのいずれかに設定されたままの場合<strong>SP_UNINITIALIZED_VALUE</strong>から終了時に<strong>FindAdapter</strong>ドライバーが、規則に失敗します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a>ルーチンでは、 <strong>PORT_CONFIGURATION_INFORMATION</strong>構造体の<strong>Maximumtransferlength</strong>フィールドと<strong>numberofphysicalbreaks</strong>フィールドを設定する必要があります。 既定では、両方のフィールドの値は<strong>SP_UNINITIALIZED_VALUE</strong>です。 これらのフィールドのいずれかが、 <strong>Findadapter</strong>からの終了時に<strong>SP_UNINITIALIZED_VALUE</strong>に設定されている場合、ドライバーはルールに失敗します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportnotification2.md" data-raw-source="[&lt;strong&gt;StorPortNotification2&lt;/strong&gt;](storport-storportnotification2.md)"><strong>StorPortNotification2</strong></a></p></td>
-<td align="left"><p>このルールへの呼び出しを検証<strong>StorPortNotification</strong>のみ使用できます (つまり文書化された) 通知の種類を使用します。</p></td>
+<td align="left"><p>このルールは、 <strong>Storportnotification</strong>への呼び出しで許可されている (つまり、ドキュメント化された) 通知の種類のみを使用することを確認します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="storport-storportpassivefromhwinit.md" data-raw-source="[&lt;strong&gt;StorPortPassiveFromHwInit&lt;/strong&gt;](storport-storportpassivefromhwinit.md)"><strong>StorPortPassiveFromHwInit</strong></a></p></td>
-<td align="left"><p><strong>StorPortEnablePassiveInitialization</strong>呼び出すことはできません HW 初期化のエントリ ポイント内で Storport ドライバーの場合は、ハードウェアの初期化のエントリ ポイントをハードウェア アダプターのコントロールのエントリ ポイントから直接呼び出すことができます。</p></td>
+<td align="left"><p><a href="storport-storportpassivefromhwinit.md" data-raw-source="[&lt;strong&gt;StorPortPassiveFromHwInit&lt;/strong&gt;](storport-storportpassivefromhwinit.md)"><strong>Storport"Vefromhwinit"</strong></a></p></td>
+<td align="left"><p>Hw 初期化エントリポイントを HW アダプターコントロールのエントリポイントから直接呼び出すことができる場合、Storport ドライバーの HW 初期化エントリポイント内で<strong>Storportenableの Veinitialization</strong>を呼び出すことはできません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportperfopts.md" data-raw-source="[&lt;strong&gt;StorPortPerfOpts&lt;/strong&gt;](storport-storportperfopts.md)"><strong>StorPortPerfOpts</strong></a></p></td>
-<td align="left"><p>このルールは、ことを確認、 <strong>PerfConfigData</strong>パラメーターに渡される<strong>StorPortInitializePerfOpts</strong>が NULL でないです。</p></td>
+<td align="left"><p>このルールは、 <strong>Storportinitializeperfopts</strong>渡される<strong>perfconfigdata</strong>パラメーターが NULL でないことを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportstartio.md" data-raw-source="[&lt;strong&gt;StorPortStartIo&lt;/strong&gt;](storport-storportstartio.md)"><strong>StorPortStartIo</strong></a></p></td>
-<td align="left"><p>待機またはデータ割り当てする必要があります、ミニポートのでは実行しないで<strong>StartIo</strong>ルーチン。 呼び出す場合、ドライバーは、ルールが失敗した<strong>StorPortStallExecution</strong>または時間のかかる操作を含む別の関数。 <strong>StartIo</strong>が同期されると、これらの呼び出しはほとんどの場合で行う<strong>BuildIo</strong>します。</p></td>
+<td align="left"><p>待機またはデータ割り当てをミニポートの<strong>StartIo</strong>ルーチンで実行することはできません。 ドライブが<strong>Storportstallexecution</strong>を呼び出した場合、または時間のかかる操作を伴う別の関数を呼び出した場合、このルールは失敗します。 <strong>StartIo</strong>は同期されるため、これらの呼び出しは、ほとんどの場合、 <strong>BuildIo</strong>で実行する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storporttimer.md" data-raw-source="[&lt;strong&gt;StorPortTimer&lt;/strong&gt;](storport-storporttimer.md)"><strong>StorPortTimer</strong></a></p></td>
-<td align="left"><p><strong>HW_TIMER</strong>への呼び出し、ルーチンを定義する必要があります<strong>StorPortNotification(RequestTimerCall)</strong>されます。</p></td>
+<td align="left"><p><strong>Storportnotification (RequestTimerCall)</strong>の呼び出しが行われた場合は、 <strong>HW_TIMER</strong>ルーチンを定義する必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**SrbProcessing ルールを選択するには、次のように設定します。**
+**SrbProcessing ルールセットを選択するには**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
+1.  Microsoft Visual Studio でドライバープロジェクト (.Vcxproj) を選択します。 **[ドライバー]** メニューの **[静的ドライバー検証ツールの起動]** をクリックします。
 
-2.  をクリックして、**ルール**タブ。**規則セット**、 **SrbProcessing**します。
+2.  **[ルール]** タブをクリックします。 **[ルールセット]** で、 **[srbprocessing]** を選択します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **SrbProcessing.sdv**で、 **/check**オプション。 例:
+    Visual Studio 開発者コマンドプロンプトウィンドウから既定の規則セットを選択するには、 **/チェック**オプションを指定して**srbprocessing. sdv**を指定します。 例:
 
     ```
     msbuild /t:sdv /p:Inputs="/check:SrbProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
+    詳細については、「 [Using Static Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers) 」を参照して、ドライバーと[静的ドライバー検証コマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)で欠陥を検出してください。
 
  
 

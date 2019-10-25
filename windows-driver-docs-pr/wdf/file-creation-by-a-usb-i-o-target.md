@@ -3,33 +3,33 @@ title: USB I/O ターゲットによるファイルの作成
 description: USB I/O ターゲットによるファイルの作成
 ms.assetid: 44bbc4c7-632d-4d75-94b9-f65e4d480e90
 keywords:
-- ユーザー モード ドライバー WDK UMDF、USB I/O ターゲットでは、ファイルの作成
-- UMDF WDK、USB I/O ターゲット、ファイルの作成
-- ユーザー モード ドライバー フレームワーク WDK、USB I/O ターゲット
-- フレームワーク ベースのドライバー WDK UMDF、USB I/O ターゲット
-- USB I/O ターゲット WDK UMDF、ファイルの作成
-- I/O ターゲット WDK UMDF、USB、ファイルの作成
+- ユーザーモードドライバー WDK UMDF、USB i/o ターゲット、ファイル作成
+- UMDF WDK、USB i/o ターゲット、ファイル作成
+- ユーザーモードドライバーフレームワーク WDK、USB i/o ターゲット
+- フレームワークベースのドライバー WDK UMDF、USB i/o ターゲット
+- USB i/o ターゲット WDK UMDF、ファイル作成
+- I/o ターゲット WDK UMDF、USB、ファイル作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f982520d6b4e655a597731f94d66746f313c2a14
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3b35160aaba1c34d7fcfa9c70c3849247bb78fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368707"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843189"
 ---
 # <a name="file-creation-by-a-usb-io-target"></a>USB I/O ターゲットによるファイルの作成
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-初期化中には、USB I/O ターゲットは、USB I/O ターゲットを開いたまま既定のセッションを表す、スタック内のファイル オブジェクトを作成します。 スタック内のファイル オブジェクトの詳細については、次を参照してください。[ファイル I/O を処理するオブジェクトを作成する](creating-a-file-object-to-handle-i-o.md)します。 USB I/O ターゲットまたはその USB パイプ ターゲットの子は、このファイル オブジェクトを使用して、(たとえば、USB 構成記述子を取得する I/O など) が発生したすべての I/O を送信します。
+USB i/o ターゲットは、初期化中に、スタック内のファイルオブジェクトを作成します。このオブジェクトは、USB i/o ターゲットが開いたままにする既定のセッションを表します。 スタック内のファイルオブジェクトの詳細については、「 [i/o を処理するためのファイルオブジェクトの作成](creating-a-file-object-to-handle-i-o.md)」を参照してください。 USB i/o ターゲットまたはその USB パイプターゲットの子は、このファイルオブジェクトを使用して、発生した i/o (たとえば、USB 構成記述子を取得するための i/o) を送信します。
 
-ドライバーは、このスタック内のファイル オブジェクトを使用して、関数の形式 (などドライバーは、このファイル オブジェクトへのポインターを渡すことができます、 *pFile*への呼び出しでパラメーター、 [ **IWDFIoTarget:。FormatRequestForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)メソッド) 場合は、ドライバーは、このファイル オブジェクトの既定のセッションで I/O を送信する必要があります。 スタック内のファイル オブジェクトを取得するには、ドライバーを呼び出すことができます、 [ **IWDFIoTarget::GetTargetFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-gettargetfile)メソッド。
+ドライバーは、このスタック内のファイルオブジェクトをフォーマット関数で使用できます (たとえば、ドライバーがに i/o を送信する必要がある場合、このファイルオブジェクトへのポインターを[**Iwdfiotarget:: FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)メソッドの呼び出しで*pFile*パラメーターに渡すことができます)。このファイルオブジェクトの既定のセッション。 スタック内のファイルオブジェクトを取得するために、ドライバーは[**Iwdfiotarget:: GetTargetFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-gettargetfile)メソッドを呼び出すことができます。
 
-I/O ターゲットが破棄されるときのいずれか、明示的にドライバーを呼び出すときにスタック内のファイル オブジェクトが閉じて、 [ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッド I/O ターゲット、または暗黙的に、ときに、/O ターゲットの親は破棄されます。
+このスタック内のファイルオブジェクトは、ドライバーが i/o ターゲットで[**Iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッドを呼び出したとき、または i/o ターゲットの親が破棄されたときに暗黙的に呼び出されたときに、i/o ターゲットが明示的に破棄されると閉じられます。
 
-すべての I/O は、デバイスの削除時にこのスタック内のファイル オブジェクトの未処理残っている場合は、このファイル オブジェクトを閉じるには、失敗および UMDF ドライバーの停止が生成されます。 詳細については、次を参照してください。 [Using Driver-Created ファイル オブジェクトの作成と](creating-and-using-driver-created-file-objects.md)します。
+デバイスの削除時に、このスタック内のファイルオブジェクトの i/o が未処理のままである場合、このファイルオブジェクトは閉じることができず、UMDF はドライバーの停止を生成します。 詳細については、「[ドライバーによって作成されたファイルオブジェクトの作成と使用](creating-and-using-driver-created-file-objects.md)」を参照してください。
 
  
 

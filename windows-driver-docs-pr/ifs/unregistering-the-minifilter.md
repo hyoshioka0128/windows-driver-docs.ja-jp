@@ -3,15 +3,15 @@ title: ミニフィルターの登録解除
 description: ミニフィルターの登録解除
 ms.assetid: 4af2d4fd-bfbe-4a75-bbfb-2a1c4b5c2032
 keywords:
-- ミニフィルターの登録を解除
+- ミニフィルターの登録解除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdd8c739aa48c0e7b62d85ac54e4d7c71b4dc0f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a1dd0527c5a5589660371e7c9991bee62548922
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380315"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840945"
 ---
 # <a name="unregistering-the-minifilter"></a>ミニフィルターの登録解除
 
@@ -19,17 +19,17 @@ ms.locfileid: "67380315"
 ## <span id="ddk_unregistering_the_minifilter_if"></span><span id="DDK_UNREGISTERING_THE_MINIFILTER_IF"></span>
 
 
-ミニフィルター ドライバーの[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンを呼び出す必要があります[ **FltUnregisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunregisterfilter)ミニフィルター ドライバーの登録を解除するには. 呼び出す**FltUnregisterFilter**により、次の処理を実行します。
+ミニフィルタードライバーの[**FilterUnloadCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンは、ミニフィルタードライバーの登録を解除するために[**Fltunregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunregisterfilter)を呼び出す必要があります。 **Fltunregisterfilter**を呼び出すと、次の処理が行われます。
 
--   ミニフィルター ドライバーのコールバック ルーチンは、登録済みでがありません。
+-   ミニフィルタードライバーのコールバックルーチンが登録解除されます。
 
--   ミニフィルター ドライバーのインスタンスが破損し、ミニフィルター ドライバーの[ **InstanceTeardownStartCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_instance_teardown_callback)と**InstanceTeardownCompleteCallback**ルーチンミニフィルター ドライバーのインスタンスごとと呼ばれます。
+-   ミニフィルタードライバーのインスタンスが破棄され、ミニフィルタードライバーの[**InstanceTeardownStartCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_teardown_callback)ルーチンと**InstanceTeardownCompleteCallback**ルーチンが各ミニフィルタードライバーインスタンスに対して呼び出されます。
 
--   ミニフィルター ドライバーでは、ボリューム、インスタンス、ストリーム、またはストリームのハンドルは、コンテキストを設定、これらのコンテキストは削除されます。 ミニフィルター ドライバーに登録されている場合、 [**ある CleanupContext は**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)フィルター マネージャーは、指定したコンテキスト タイプのコールバック ルーチン、*ある CleanupContext は*する前に日常的なコンテキストを削除しています。
+-   ミニフィルタードライバーによって、ボリューム、インスタンス、ストリーム、またはストリームハンドルにコンテキストが設定されている場合、これらのコンテキストは削除されます。 ミニフィルタードライバーによって特定のコンテキスト型に対して[**cleanupcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)コールバックルーチンが登録されている場合、フィルターマネージャーはコンテキストを削除する前に*cleanupcontext*ルーチンを呼び出します。
 
-ミニフィルター ドライバーのフィルターの非透過のポインターでランダウンの未解決の参照がある場合**FltUnregisterFilter**削除されるまで待機状態になります。 ランダウンの未解決の参照が発生するは、通常はミニフィルター ドライバーが呼び出されるため[ **FltQueueGenericWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuegenericworkitem)をシステムの作業キューに作業項目と作業項目を挿入するされていません。キューから削除され、処理します。 (フィルター マネージャー ミニフィルター ドライバーを呼び出すとランダウンの参照を追加します**FltQueueGenericWorkItem**されミニフィルター ドライバーの日常的な取得を操作するときに削除されます)。
+ミニフィルタドライバーの不透明なフィルターポインターに未処理のランダウン参照がある場合、 **Fltunregisterfilter**は削除されるまで待機状態になります。 未処理ランダウン参照は、通常、ミニフィルタードライバーが[**Fltqueuegenericworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuegenericworkitem)を呼び出して、作業項目をシステム作業キューに挿入し、作業項目がまだデキューされて処理されていないことが原因で発生します。 (フィルターマネージャーは、ミニフィルタードライバーが**Fltqueuegenericworkitem**を呼び出したときにランダウン参照を追加し、ミニフィルタードライバーの作業ルーチンから制御が戻ったときに、この参照を削除します)。
 
-ミニフィルター ドライバーはミニフィルター ドライバーのフィルターの非透過のポインターへの参照をランダウンなどの追加する任意のルーチンを呼び出すとランダウンの未解決の参照にも発生[ **FltObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltobjectreference)または[ **FltGetFilterFromInstance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetfilterfrominstance)、した後の呼び出しが[ **FltObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltobjectdereference)します。
+また、 [**Fltobjectreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltobjectreference)や[**FltGetFilterFromInstance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetfilterfrominstance)などの、ミニフィルタードライバーの非透過フィルターポインターにランダウン参照を追加するルーチンをミニフィルタードライバーが呼び出した場合にも、未処理のランダウン参照が発生する可能性があります。後で[**Fltobjectdereference 参照**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltobjectdereference)を呼び出すことはありません。
 
  
 

@@ -3,19 +3,19 @@ title: リセット
 description: リセット
 ms.assetid: 5f37eca3-08b6-4bac-9d02-8a8ebd8c1904
 keywords:
-- 接続指向の NDIS WDK で、Nic をリセットします。
-- いる CoNDIS WDK ネットワーク、Nic をリセットします。
-- ネットワークの NIC の WDK をリセットします。
-- WDK の Nic をリセットするネットワークを
-- ネットワーク インターフェイス カードの WDK ネットワー キング、リセット
+- 接続指向の NDIS WDK、Nic のリセット
+- ネットワーク、Nic のリセット
+- NIC WDK ネットワークをリセットしています
+- Nic WDK ネットワーク、リセット
+- ネットワークインターフェイスカード WDK ネットワーク、リセット
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eae45af00de256eda41a1984cf195b0bee2cb0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b764236031721dcbbff8d3e9be5d621b96bd44d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379200"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842029"
 ---
 # <a name="reset"></a>リセット
 
@@ -23,29 +23,29 @@ ms.locfileid: "67379200"
 
 
 
-ミニポート ドライバーのまたは MCM ドライバーの NDIS を呼び出すことができます[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset) NIC をリセットする機能
+NDIS は、ミニポートドライバーまたは MCM ドライバーの[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)関数を呼び出して NIC をリセットする場合があります。
 
-**注**  active であり、リセットする前に有効である AF、SAP、および VC のハンドルは、リセット後にアクティブで有効です。
+リセットがアクティブになり、リセット後に有効になる前に、有効で有効な AF、SAP、および VC ハンドル  に**注意**してください。
 
  
 
-次の図は、ミニポート ドライバーにリセット要求を発行したクライアントを示します。
+次の図は、ミニポートドライバーにリセット要求を発行するクライアントを示しています。
 
-![ミニポート ドライバーにリセット要求を発行したクライアントを示す図](images/cm-27.png)
+![ミニポートドライバーにリセット要求を発行しているクライアントを示す図](images/cm-27.png)
 
-次の図は、MCM のドライバーへのリセット要求を発行したクライアントを示します。
+次の図は、MCM ドライバーにリセット要求を発行するクライアントを示しています。
 
-![mcm ドライバーへのリセット要求を発行したクライアントを示す図](images/fig1-26.png)
+![mcm ドライバーにリセット要求を発行しているクライアントを示す図](images/fig1-26.png)
 
-NDIS がプロトコルを呼び出すことによってバインドされている各プロトコルを通知する、基になる接続指向のドライバーでは、NIC をリセットは、するときに[ **ProtocolCoStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_status_ex) NDIS で関数を\_の状態\_リセット\_を開始します。
+基になる接続指向ドライバーによって NIC がリセットされると、ndis は、プロトコルの[**Protocolcostatusex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_status_ex)関数を NDIS\_STATUS を使用して呼び出し、\_リセット\_開始することで、各プロトコルに通知します。
 
-NDIS は受け入れませんプロトコルによる送信し、ミニポート ドライバーまたは MCM ドライバーへの要求中、ミニポート ドライバーのまたは MCM ドライバーの NIC をリセットしています。 リセットは、進行中は、プロトコルのドライバーをミニポート ドライバーにパケットを送信する必要がありますしない[ **NdisCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists) ミニポートドライバーの情報を要求または[ **NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)します。
+ミニポートドライバーまたは MCM ドライバーの NIC がリセットされている間、NDIS は、ミニポートドライバーまたは MCM ドライバーへのプロトコルで開始された送信と要求を受け入れません。 リセットの実行中は、プロトコルドライバーが[**NdisCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)を使用してミニポートドライバーにパケットを送信したり、 [**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)を使用してミニポートドライバーから情報を要求したりすることはできません。
 
-*MiniportResetEx* NIC をリセットするために必要なすべてのデバイスに依存するアクションを実行します。 *MiniportResetEx*同期的に完了できるかを呼び出して非同期的に実行できます[ **NdisMResetComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete):
+*Miniportresetex*は、NIC をリセットするために必要なデバイスに依存するアクションを実行します。 *Miniportresetex*は同期的に完了できます。または、 [**NdisMResetComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismresetcomplete)の呼び出しで非同期に完了できます。
 
--   NDIS が各バインドのプロトコルを呼び出し、リセットが同期的に完了すると、 *ProtocolCoStatusEx* NDIS で関数を\_状態\_リセット\_終了します。
+-   リセットが同期的に完了した場合、NDIS は、バインドされたプロトコルの*Protocolcostatusex*関数を NDIS\_STATUS で呼び出し、\_の終了\_リセットします。
 
--   NDIS が各バインドのプロトコルを呼び出し、リセットが非同期的に完了すると、 *ProtocolCoStatusEx* NDIS で関数を\_状態\_リセット\_終了します。
+-   リセットが非同期に完了した場合、NDIS は、バインドされたプロトコルの*Protocolcostatusex*関数を NDIS\_STATUS を使用して呼び出し、\_の終了\_リセットします。
 
  
 

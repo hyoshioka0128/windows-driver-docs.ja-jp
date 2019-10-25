@@ -3,16 +3,16 @@ title: NDIS 6.1 データ構造の使用
 description: NDIS 6.1 データ構造の使用
 ms.assetid: 425cd2dc-99b0-4bed-8f7b-c291769c420a
 keywords:
-- データ構造体の WDK ネットワーク
+- データ構造の WDK ネットワーク
 - NDIS WDK、構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81058681da218df199f292adad775bf25d6e7dc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2392aee51206faf58a5bec34dc9173a7e56563b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842987"
 ---
 # <a name="using-ndis-61-data-structures"></a>NDIS 6.1 データ構造の使用
 
@@ -20,9 +20,9 @@ ms.locfileid: "67360727"
 
 
 
-NDIS は、同じデータ構造体の複数のバージョンをサポートできます。 使用する NDIS 6.1 ドライバーが Windows Server 2008、Windows Vista Service Pack 1 (SP1) で構造を更新または両方のオペレーティング システムは、適切な報告する必要があります**リビジョン**メンバーと**サイズ**でメンバー値[ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造内にある、**ヘッダー**存在する場合の構造体のメンバーとドライバーNDIS 6.1 データ構造を初期化します。
+NDIS では、同じデータ構造の複数のバージョンをサポートできます。 Windows Server 2008、Windows Vista Service Pack 1 (SP1)、または両方のオペレーティングシステムで更新された構造を使用する NDIS 6.1 ドライバーは、Ndis\_オブジェクトの正しい**リビジョン**メンバーと**サイズ**のメンバー値を報告する必要があり[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造体の**ヘッダー**メンバー (存在する場合) のヘッダー構造。ドライバーが NDIS 6.1 データ構造体を初期化する場合。
 
-**注**  適切なバージョンおよびサイズの情報を確認するのを含む各構造のリファレンス ページを参照してください、**ヘッダー**メンバー。 含む構造体のリファレンス ページを**ヘッダー**メンバーとするが更新された NDIS 6.1 に NDIS 6.1 ドライバーの新しい情報が含まれます。 NDIS 6.1 の構造体への更新プログラムがない場合は、NDIS 6.0 のドライバーに対して提供される情報は、NDIS 6.1 ドライバーにも当てはまります。
+**注**  正しいバージョンとサイズの情報を確認するには、**ヘッダー**メンバーを含む各構造の参照ページを参照してください。 **ヘッダー**メンバーを含み、ndis 6.1 用に更新された構造体の参照ページには、ndis 6.1 ドライバーの新しい情報が含まれています。 Ndis 6.1 の構造が更新されていない場合は、ndis 6.0 ドライバー用に提供されている情報が NDIS 6.1 ドライバーにも適用されます。
 
  
 

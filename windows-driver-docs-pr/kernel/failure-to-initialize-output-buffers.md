@@ -1,28 +1,28 @@
 ---
-title: 出力バッファーの初期化失敗
-description: 出力バッファーの初期化失敗
+title: 出力バッファーを初期化できませんでした
+description: 出力バッファーを初期化できませんでした
 ms.assetid: 8c038a94-8506-44e3-ac7f-82b58d791124
 keywords:
-- 出力バッファーの WDK カーネル
-- 出力バッファーを初期化しています
+- 出力バッファー WDK カーネル
+- 初期化 (出力バッファーを)
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8318cdbdfc0966089378709503ba7d40bd344288
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 43127eba479bb89f2ad4855694f0bde38e4dab70
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386612"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838699"
 ---
-# <a name="failure-to-initialize-output-buffers"></a>出力バッファーの初期化失敗
+# <a name="failure-to-initialize-output-buffers"></a>出力バッファーを初期化できませんでした
 
 
 
 
 
-ドライバーは、呼び出し元に返す前に 0 で、すべての出力バッファーを初期化する必要があります。 バッファーの初期化に失敗すると、初期化されていないバイトにガベージ データがあります。
+ドライバーは、呼び出し元に返す前に、すべての出力バッファーをゼロで初期化する必要があります。 バッファーの初期化に失敗すると、初期化されていないバイトでガベージデータが発生する可能性があります。
 
-次の例では、ドライバーは、ガベージ (未使用のバイト単位) を返します。
+次の例では、ドライバーが使用されていないバイトでガベージを返します。
 
 ```cpp
    case IOCTL_GET_NAME: {
@@ -52,9 +52,9 @@ ms.locfileid: "67386612"
       }
 ```
 
-設定**IoStatus.Information**出力バッファー サイズによって、出力、呼び出し元に返されるバッファーは全体にします。 I/O マネージャーが入力バッファーのサイズを超えたデータを初期化できません: バッファー内の要求の入力と出力バッファーが重複します。 システム ルーチンをサポートするため、 [ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)書き込みませんバッファー全体については、この IOCTL では、初期化されていないデータを呼び出し元に返します。
+**Iostatus. 情報**を出力バッファーサイズに設定すると、出力バッファー全体が呼び出し元に返されます。 I/o マネージャーは、入力バッファーのサイズを超えてデータを初期化するのではなく、バッファー内の要求に対して入力バッファーと出力バッファーが重複します。 システムサポートルーチン[**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)はバッファー全体を書き込まないため、この IOCTL は初期化されていないデータを呼び出し元に返します。
 
-一部のドライバーを使用して、**情報**I/O 要求についての詳細情報を提供するコードを返すフィールド。 これを行うには、前にこのようなドライバーが確実に IRP フラグを確認します。 その IRP\_入力\_操作が設定されていません。 このフラグが設定されていない場合、IOCTL または FSCTL が出力バッファーでは、そのため、**情報**フィールドは、バッファー サイズを指定しない必要があります。 この場合です。 ドライバーは安全に使用できます、**情報**フィールドを独自のコードを返します。
+一部のドライバーでは、**情報**フィールドを使用して、i/o 要求に関する追加情報を提供するコードを返します。 その前に、このようなドライバーでは、irp フラグをチェックして、IRP\_入力\_操作が設定されていないことを確認する必要があります。 このフラグが設定されていない場合、IOCTL または FSCTL には出力バッファーがないため、**情報**フィールドにバッファーサイズを指定する必要はありません。 この場合はです。 ドライバーは、**情報**フィールドを安全に使用して、独自のコードを返すことができます。
 
  
 

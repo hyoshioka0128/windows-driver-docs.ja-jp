@@ -1,40 +1,40 @@
 ---
-title: MIP マップ テクスチャのサブレベルの生成
-description: MIP マップ テクスチャのサブレベルの生成
+title: MIP マップテクスチャのサブレベルの生成
+description: MIP マップテクスチャのサブレベルの生成
 ms.assetid: fbfb0d1b-468d-4e7f-865e-bdc7d19f5516
 keywords:
-- MIP マップ テクスチャ WDK DirectX 9.0、サブレベルの生成
-- MIP マップ テクスチャ WDK DirectX 9.0 のサブレベル
+- MIP マップテクスチャ WDK DirectX 9.0、サブレベルの生成
+- 'MIP マップテクスチャのサブレベル: WDK DirectX 9.0'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59fa22163ddb91df8859fd251b7b729e37e84dea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a55a6966a81061e7d3fa9448f160571ff4a7238
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380001"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838933"
 ---
-# <a name="generating-sublevels-of-mip-map-textures"></a>MIP マップ テクスチャのサブレベルの生成
+# <a name="generating-sublevels-of-mip-map-textures"></a>MIP マップテクスチャのサブレベルの生成
 
 
 ## <span id="ddk_generating_sublevels_of_mip_map_textures_gg"></span><span id="DDK_GENERATING_SUBLEVELS_OF_MIP_MAP_TEXTURES_GG"></span>
 
 
-ディスプレイ ドライバーがサポートするには、DDCAPS2 MIP マップ テクスチャのサブレベルを自動的に生成するを示します\_CANAUTOGENMIPMAP ビット、 **dwCaps2**のメンバー、 [ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)構造体。 ドライバーでは、この DDCORECAPS 構造を指定します、 **ddCaps**のメンバー、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体。 DD\_HALINFO がドライバーのによって返される[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)関数。 ディスプレイ ドライバーが、D3DFORMAT を設定して、特定の形式を画面が自動的に生成する下位レベルをサポートして かどうかを示すも\_OP\_AUTOGENMIPMAP フラグ、 **dwOperations**のメンバー、[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)形式については、構造体。
+ディスプレイドライバーは、 [**DDCORECAPS**](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)構造体の**DWCAPS2**メンバーの DDCAPS2\_canautogenmipmap ビットを設定することによって、MIP マップテクスチャのサブレベルの自動生成をサポートしていることを示します。 このドライバーは、 [**DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体の**ddcaps**メンバーでこの DDCORECAPS 構造体を指定します。 DD\_HALINFO は、ドライバーの[**DrvGetDirectDrawInfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)関数によって返されます。 また、表示ドライバーは、特定のサーフェイス形式が、 [**Ddのピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)の**dwoperations**メンバーで D3DFORMAT\_OP\_autogenmipmap フラグを設定して、サブレベルの自動生成をサポートしているかどうかも示します。形式の構造体。
 
-テクスチャ サーフェスを作成すると、Direct3D のランタイム設定、DDSCAPS3\_AUTOGENMIPMAP ビット、 **dwCaps3** 、DDSCAPSEX のメンバー ([**DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85)))構造体のこのテクスチャの MIP マップ サブレベルが自動的に生成されることを示します。 Direct3D では、一部のテクスチャの MIP マップ サブレベルを自動的に生成して自動的に生成するいくつかのテクスチャを指示する場合、ドライバー blit 操作にのみ実行できます (D3DDP2OP\_TEXBLT) で、次の説明に従って、これらのテクスチャでシナリオ:
+テクスチャサーフェイスが作成されると、Direct3D ランタイムは、このテクスチャの MIP マップのサブレベルが自動的に使用されることを示すために、DDSCAPSEX ([**DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 構造体の**DWCAPS3**メンバーの DDSCAPS3\_autogenmipmap ビットを設定します。れる. Direct3D が mipmap マップのサブレベルを自動的に生成するようにテクスチャを設定し、一部のテクスチャが自動的に生成されないようにする場合、ドライバーは次に示すように、これらのテクスチャに対して array.blit 操作 (D3DDP2OP\_TEXBLT) のみを実行できます。モデル
 
--   ドライバーでは、自動的に生成するにはない変換先のテクスチャの MIP マップをソース テクスチャからブリットことはできません。
+-   ドライバーは、MIP マップを自動的に生成するソーステクスチャからは array.blit ません。
 
--   場合は自動的に生成しない MIP ソース テクスチャからドライバー ブリットでは、一致する最上位のレベルがドライバーのみブリットは、移行先テクスチャにマップされます。 ソース テクスチャからサブレベルは無視されます。 下位レベルの変換先を生成できます。
+-   Mipmap が自動生成されないソーステクスチャから blits ドライバーが、そのテクスチャに対して自動的に生成しない場合、ドライバーは最上位の一致レベルのみを blits します。 ソーステクスチャからのサブレベルは無視されます。 ターゲットのサブレベルを生成できます。
 
--   同様に、変換先のテクスチャを両方の自動生成 MIP をソースからドライバー ブリットがマップされている場合、最上位のドライバーのみブリットはレベルを照合します。 ソース テクスチャからサブレベルは無視されます。 下位レベルの変換先を生成できます。
+-   同様に、ドライバーが、MIP マップを自動生成するためにソースと宛先のテクスチャから blits した場合、ドライバーは最上位の一致レベルのみを blits します。 ソーステクスチャからのサブレベルは無視されます。 ターゲットのサブレベルを生成できます。
 
-ドライバーが、D3DDP2OP を受信する下位レベルの MIP マップ テクスチャを生成する\_GENERATEMIPSUBLEVELS がコマンドと共に、 [ **D3DHAL\_DP2GENERATEMIPSUBLEVELS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2generatemipsublevels)構造体。 このコマンドを受信するために、テクスチャのサーフェイスの形式が、D3DFORMAT を公開する必要があります\_OP\_AUTOGENMIPMAP フラグ。
+MIP マップテクスチャのサブレベルを生成するために、ドライバーは[**D3DHAL\_DP2GENERATEMIPSUBLEVELS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2generatemipsublevels)構造と共に D3DDP2OP\_GENERATEMIPSUBLEVELS コマンドを受け取ります。 このコマンドを受け取るには、テクスチャのサーフェイス形式で、D3DFORMAT\_OP\_AUTOGENMIPMAP フラグを公開する必要があります。
 
-[ドライバー-マネージ リソース](driver-managed-resources.md)ドライバーの削除や、ビデオ メモリ内のリソースを置換ドライバーする必要がありますを使用して、最後のセットのフィルターの種類をサブレベルを自動的に生成する場合。 Direct3D が、D3DDP2OP を送信しないため、Direct3D には、削除と、リソースの交換は制御しません、\_ドライバーに GENERATEMIPSUBLEVELS コマンド。
+ドライバーで管理された[リソース](driver-managed-resources.md)の場合、ドライバーがビデオメモリ内のリソースを見つけして置き換えるときに、ドライバーは最後に設定されたフィルターの種類を使用して、サブレベルを自動的に生成する必要があります。 Direct3D はリソースの削除と交換を制御しないため、Direct3D は D3DDP2OP\_GENERATEMIPSUBLEVELS コマンドをドライバーに送信しません。
 
-Direct3D のランタイムは、ドライバーを呼び出すことはできません[ *DdLock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)関数またはその他を使用して、 [DDI](direct3d-driver-ddi.md)自動生成された MIP マップ テクスチャの下位レベルにアクセスします。 これは、ことを示しますなど、軽量の MIP マップ テクスチャの MIP マップ自動生成されたテクスチャの下位レベルは「暗黙」として適切なドライバーによって指定できます。 ドライバーは、「完了」surface データ構造を指定する必要はありません。 ただし、Direct3D は、ドライバーの呼び出すできる必要があります、 *DdLock*または[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)関数では、送信、D3DDP2OP\_BLT コマンド、または (他の任意の DDI の使用[ドライバー管理のテクスチャ](driver-managed-textures.md)、動的テクスチャまたはベンダー固有の形式のみ)、自動生成された MIP マップ テクスチャの最上位レベルにアクセスします。
+Direct3D ランタイムは、ドライバーの[*Ddlock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)関数を呼び出すことができません。また、他の[DDI](direct3d-driver-ddi.md)を使用して、自動生成された mipmap マップテクスチャのサブレベルにアクセスすることもできません。 これは、軽量の MIP マップテクスチャのように自動生成された mipmap マップテクスチャのサブレベルが "暗黙的" であり、ドライバーで必要に応じて指定できることを意味します。 このドライバーでは、"complete" surface データ構造を指定する必要はありません。 ただし、Direct3D は、ドライバーの*Ddlock*または[*ddlock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)関数を呼び出したり、D3DDP2OP\_BLT コマンドを送信したり、他の DDI を使用したりできる必要があることに注意してください ([ドライバーで管理](driver-managed-textures.md)されているテクスチャ、動的テクスチャ、またはベンダー固有の形式の場合のみ)。自動生成された mipmap マップテクスチャの最上位レベルにアクセスする場合は。
 
  
 

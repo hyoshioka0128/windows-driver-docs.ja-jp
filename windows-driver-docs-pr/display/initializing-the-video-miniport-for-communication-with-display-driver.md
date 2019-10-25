@@ -1,33 +1,33 @@
 ---
-title: /表示のビデオのミニポート ドライバーの通信を初期化しています
-description: ディスプレイ ドライバーとの通信用にビデオ ミニポートを初期化する
+title: ビデオミニポート/ディスプレイドライバーの通信を初期化しています
+description: ディスプレイドライバーとの通信用にビデオミニポートを初期化しています
 ms.assetid: 73ba423c-7ebc-4a07-aed0-d2e33f11b878
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、初期化しています
-- ビデオのミニポート ドライバーの初期化
+- ビデオミニポートドライバー WDK Windows 2000、初期化
+- ビデオミニポートドライバーの初期化
 - HwVidInitialize
-- one-time initialization WDK ビデオのミニポート
+- ワンタイム初期化 WDK ビデオミニポート
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: ef05480a3d432bc9f1e3eb664f7d51e7897fecb3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90e4cd58ebd5016b17b406b70f1a52b7438cd316
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385185"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840369"
 ---
-# <a name="initializing-the-video-miniport-for-communication-with-display-driver"></a>ディスプレイ ドライバーとの通信用にビデオ ミニポートを初期化する
+# <a name="initializing-the-video-miniport-for-communication-with-display-driver"></a>ディスプレイドライバーとの通信用にビデオミニポートを初期化しています
 
-各アダプターの PnP マネージャーによって検出され、正常に構成されているミニポート ドライバーで、ミニポート ドライバーの[ *HwVidInitialize* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_initialize)関数は、対応する、ディスプレイ ドライバーが呼び出されます読み込まれます。 *HwVidInitialize*ソフトウェアの状態情報を初期化することができますが、アダプターの表示状態を設定しないでください。 戻り時にから*HwVidInitialize*、アダプターは、ミニポート ドライバーからの戻り値のと同じ状態に設定する必要があります[ *HwVidResetHw* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_reset_hw)ルーチン。 詳細については*HwVidResetHw*を参照してください[ビデオのミニポート ドライバーのアダプターをリセットする](resetting-the-adapter-in-video-miniport-drivers.md)します。
+PnP マネージャーによって検出され、ミニポートドライバーによって正常に構成されたアダプターごとに、対応するディスプレイドライバーが読み込まれると、ミニポートドライバーの[*HwVidInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_initialize)関数が呼び出されます。 *HwVidInitialize*は、ソフトウェアの状態情報を初期化できますが、アダプターに表示される状態を設定することはできません。 *HwVidInitialize*から戻る場合、アダプターはミニポートドライバーの[*HwVidResetHw*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_reset_hw)ルーチンから返されたときと同じ状態に設定する必要があります。 *HwVidResetHw*の詳細については、「[ビデオミニポートドライバーでアダプターをリセットする](resetting-the-adapter-in-video-miniport-drivers.md)」を参照してください。
 
-必要に応じて、ミニポート ドライバーの*HwVidInitialize*関数は、アダプターによって延期されましたの one-time initialization 操作を実行できるその*HwVidFindAdapter*関数。 たとえば、ミニポート ドライバーがアダプター上のマイクロ コードの読み込みを延期しが可能性があります、 *HwVidInitialize*関数呼び出し[ **VideoPortGetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)します。
+必要に応じて、ミニポートドライバーの*HwVidInitialize*関数は、 *HwVidFindAdapter*関数によって延期されたアダプターに対して1回限りの初期化操作を実行できます。 たとえば、ミニポートドライバーは、アダプターへのマイクロコードの読み込みを延期し、 *HwVidInitialize*関数が[**VideoPortGetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetregistryparameters)を呼び出すことがあります。
 
-ときに、 *HwVidInitialize*します。 参照してください[ビデオの要求を処理する (Windows 2000 モデル)](processing-video-requests--windows-2000-model-.md)詳細についてはします。
+*HwVidInitialize*の場合。 詳細については、「[ビデオ要求の処理 (Windows 2000 モデル)](processing-video-requests--windows-2000-model-.md) 」を参照してください。
 
-通常、ディスプレイ ドライバーは、NT ベースのオペレーティング システムを実行している x86 ベースのマシンに全画面表示の MS-DOS アプリケーションの実行時にときどきを除く、エンド ユーザーが表示される表示を制御します。 VGA と互換性のあるミニポート ドライバーでこの機能のサポートに関する詳細については、次を参照してください。 [VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)します。
+通常、ディスプレイドライバーは、エンドユーザーに表示されるディスプレイを制御します。ただし、NT ベースのオペレーティングシステムを実行している x86 ベースのコンピューターで全画面表示の MS-DOS アプリケーションを実行する場合はまれです。 この機能を VGA 互換のミニポートドライバーでサポートする方法の詳細については、「 [Vga 互換ビデオミニポートドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)」を参照してください。
 
-[ *HwVidInitialize* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_initialize)関数を呼び出すことができます[ **VideoPortGetRegistryParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)または[ **VideoPortSetRegistryParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetregistryparameters)を取得および構成情報をレジストリに設定します。 たとえば、 *HwVidInitialize*呼び出すことができます**VideoPortSetRegistryParameters**次回のブート レジストリの不揮発性の構成情報を設定します。 呼び出すことがあります**VideoPortGetRegistryParameters**インストール プログラムによってレジストリに書き込む、バス相対、アダプターに固有の構成パラメーターを取得します。
+[*HwVidInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_initialize)関数は、 [**VideoPortGetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetregistryparameters)または[**VideoPortSetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsetregistryparameters)を呼び出して、レジストリ内の構成情報を取得および設定できます。 たとえば、 *HwVidInitialize*は**VideoPortSetRegistryParameters**を呼び出して、次回の起動時にレジストリに不揮発性構成情報を設定する場合があります。 インストールプログラムによってレジストリに書き込まれる、アダプター固有のバス相対構成パラメーターを取得するために、 **VideoPortGetRegistryParameters**を呼び出す場合があります。
 
  
 

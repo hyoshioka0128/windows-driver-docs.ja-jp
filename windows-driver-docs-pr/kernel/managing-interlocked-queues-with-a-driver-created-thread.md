@@ -1,60 +1,60 @@
 ---
-title: ドライバーによって作成されたスレッドを使用したインタロック キューの管理
-description: ドライバーによって作成されたスレッドを使用したインタロック キューの管理
+title: ドライバーで作成されたスレッドを使用したインタロックされたキューの管理
+description: ドライバーで作成されたスレッドを使用したインタロックされたキューの管理
 ms.assetid: e2712d52-e98a-4450-b010-9278db3a7a1e
 keywords:
-- インタロックされた IRP キュー WDK カーネル
+- インタロック IRP キュー WDK カーネル
 - ドライバーで作成されたスレッド WDK Irp
-- ダブルリンク Irp WDK カーネル
-- WDK Irp ドライバー専用のスレッド
+- 二重リンクされた Irp WDK カーネル
+- ドライバー専用スレッドの WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b9f3bdcbcb9ce3964fa5df67f4661ee146a89a3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6741447d1b52b83b6267d580064c89d3cd61921c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386016"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838547"
 ---
-# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>ドライバーによって作成されたスレッドを使用したインタロック キューの管理
+# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>ドライバーで作成されたスレッドを使用したインタロックされたキューの管理
 
 
 
 
 
-新しいドライバーを使用する必要があります、[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)メソッドのこのセクションで概説した方が優先的フレームワーク。
+新しいドライバーでは、このセクションで説明する方法を優先して、[キャンセルセーフの IRP キュー](cancel-safe-irp-queues.md)フレームワークを使用する必要があります。
 
-などのシステムのフロッピー コント ローラー ドライバー デバイス専用のスレッドでは、ドライバーではなく[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンが通常の Irp の独自キューでダブルリンク インタロックされたキューを管理します。 ドライバーのスレッドでは、デバイスで実行する作業がある場合に Irp のインタロックされたキューから取り出します。
+システムフロッピーコントローラードライバーと同様に、 [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンではなく、デバイス専用のスレッドを使用するドライバーは、通常、二重にリンクされたインタロックされたキューにある irp の独自のキューを管理します。 デバイスで実行する作業がある場合、ドライバーのスレッドは、そのインタロックされたキューから Irp をプルします。
 
-一般に、ドライバーは、スレッドとその他のドライバーのルーチンの間で共有リソースには、そのスレッドとの同期を管理する必要があります。 ドライバーもそのドライバーが作成したスレッド Irp がキューに置かれたことを通知する手段が必要です。 通常、スレッドは、ドライバーのディスパッチ ルーチン IRP インタロックされたキューに挿入した後にディスパッチャー オブジェクトをシグナルされた状態に設定するまで、デバイスの拡張機能に格納する dispatcher オブジェクトで待機します。
+一般に、スレッドとスレッドの同期は、スレッドとその他のドライバールーチン間で共有されているリソースとの間で管理する必要があります。 また、ドライバーによって作成されたスレッドに対して、Irp がキューに登録されていることを通知する方法も必要です。 通常、スレッドは、デバイス拡張機能に格納されているディスパッチャーオブジェクトを待機します。これにより、IRP がインタロックされたキューに挿入された後に、ドライバーのディスパッチルーチンによってディスパッチャーオブジェクトがシグナル状態に設定されます。
 
-ドライバーのディスパッチ ルーチンが呼び出されると、各入力 IRP の I/O スタックの場所では、パラメーターを調べが、有効である場合は、さらに処理要求をキューします。 ディスパッチ ルーチンは、どのようなコンテキストを処理する必要があるそのスレッド前に IRP の呼び出しを設定する必要があります各 IRP がドライバー専用のスレッドにキューに入れ、 **ExInterlockedInsert*Xxx*一覧**します。 各 IRP のドライバーの I/O スタックの場所、ドライバーのスレッドにアクセス対象のデバイス オブジェクトのデバイスの拡張機能場所ドライバー情報を共有できますコンテキスト、そのスレッドでスレッドがキューから各 IRP を削除します。
+ドライバーのディスパッチルーチンが呼び出されると、は、入力 IRP の i/o スタックの場所にあるパラメーターをチェックし、有効である場合は、後続の処理のために要求をキューに配置します。 ドライバー専用スレッドにキューに置かれている各 IRP について、ディスパッチルーチンは、 **ExInterlockedInsert*Xxx*リスト**を呼び出す前に、その irp を処理する必要がある任意のコンテキストを設定する必要があります。 各 IRP 内のドライバーの i/o スタックの場所によって、ドライバーのスレッドがターゲットデバイスオブジェクトのデバイス拡張機能にアクセスできるようになります。この場合、スレッドはキューから各 IRP を削除するため、ドライバーはコンテキスト情報をスレッドと共有できます。
 
-キャンセル可能な irp がドライバーを実装する必要があります、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチン。 Irp が非同期に取り消されたため、ドライバーがつながる可能性がある競合状態を回避ことを確認する必要があります。 参照してください[同期 IRP キャンセル](synchronizing-irp-cancellation.md)Irp とその回避手法のキャンセルに関連付けられている競合状態の詳細についてはします。
+取り消し可能な Irp をキューに置いているドライバーは、[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンを実装する必要があります。 Irp は非同期にキャンセルされるため、ドライバーが結果として発生する可能性のある競合状態を回避する必要があります。 Irp のキャンセルに関連する競合状態とその回避方法の詳細については、「 [irp のキャンセルの同期](synchronizing-irp-cancellation.md)」を参照してください。
 
-IRQL でいずれかのドライバーが作成したスレッドが実行される = パッシブ\_レベルと、ドライバーが呼び出されたときに以前に設定された基本ランタイムの優先順位[ **PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)します。 スレッドの呼び出しを[ **ExInterlockedRemoveHeadList** ](https://msdn.microsoft.com/library/windows/hardware/ff545427)ディスパッチに IRQL を一時的に上げる\_IRP がドライバーから削除されるときに、現在のプロセッサ上のレベルの内部キューです。 元の IRQL がパッシブに復元される\_レベルであるこの呼び出しからの戻り値。
+ドライバーによって作成されたスレッドは、ドライバーが[**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)を呼び出したときにあらかじめ設定された、IRQL = パッシブ\_レベルおよび基本ランタイムの優先順位で実行されます。 IRP がドライバーの内部キューから削除されている間に、 [**ExInterlockedRemoveHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545427)へのスレッドの呼び出しにより、現在のプロセッサ上で\_レベルをディスパッチする IRQL が一時的に発生します。 元の IRQL は、この呼び出しから戻ったときにパッシブ\_レベルに復元されます。
 
-**ドライバー スレッド (やワーカー スレッドをドライバーが指定したコールバック) では、実行する時刻 Irql 慎重に管理する必要があります。たとえば、次の点を考慮してください。**
+**ドライバースレッド (またはドライバーによって提供されるワーカースレッドコールバック) は、実行される IRQLs を慎重に管理する必要があります。たとえば、次の点を考慮してください。**
 
--   システムのスレッドは、IRQL で通常実行されるため = パッシブ\_レベル、ドライバー スレッド カーネル定義のディスパッチャー オブジェクトがシグナル状態に設定を待機することができます。
+-   システムスレッドは一般に IRQL = パッシブ\_レベルで実行されるため、カーネル定義のディスパッチャーオブジェクトがシグナル状態に設定されるのをドライバースレッドが待機する可能性があります。
 
-    たとえば、デバイス専用のスレッドは、イベントを満たすし、いくつかの部分でスレッドを設定する Irp を転送を完了するには、その他のドライバーの待機可能性があります[ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)します。
+    たとえば、デバイス専用のスレッドは、他のドライバーがイベントを満たし、スレッドが[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)で設定した一部の部分転送 irp を完了するまで待機する場合があります。
 
--   ただし、デバイス専用スレッド上げる必要があります IRQL、現在のプロセッサの特定のサポート ルーチンを呼び出す前にします。
+-   ただし、このようなデバイス専用スレッドは、特定のサポートルーチンを呼び出す前に、現在のプロセッサ上で IRQL を発生させる必要があります。
 
-    たとえば、ドライバーは、DMA を使用している場合、デバイス専用のスレッド入れ子にしなければなりませんへの呼び出し[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)と[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)呼び出しの間で[ **KeRaiseIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql)と[ **KeLowerIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)のため、これらのルーチンとその他の特定IRQL で DMA 操作を呼び出す必要があるルーチンのサポートのディスパッチを =\_レベル。
+    たとえば、ドライバーが DMA を使用する場合、デバイス専用のスレッドは、これらのルーチンや特定のルーチンなどの理由で、 [**Keraiseirql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)と[**ke低 irql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)の呼び出しの間に、 [**Allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)と[**freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)への呼び出しを入れ子にする必要があります。DMA 操作のサポートルーチンは、IRQL = ディスパッチ\_レベルで呼び出す必要があります。
 
-    注意して[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンは、ディスパッチに実行\_レベル、DMA を使用するドライバーが呼び出しを行うことが必要であるため、 **Ke*Xxx*Irql**ルーチンからその*StartIo*ルーチン。
+    [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンはディスパッチ\_レベルで実行されるので、DMA を使用するドライバーは*StartIo*ルーチンから**Ke*Xxx*Irql**ルーチンを呼び出す必要がないことに注意してください。
 
--   ドライバーが作成したスレッドは、実行されるため、nonarbitrary スレッド コンテキストに (独自) ページング可能なメモリにアクセスできる IRQL = パッシブ\_IRQL でレベルが他の多くの標準のドライバー ルーチンの実行&gt;= ディスパッチ\_レベル。 ドライバーが作成したスレッドは、このようなルーチンによってアクセスできるメモリを割り当て場合、は、非ページ プールからメモリを割り当てする必要があります。 たとえば、デバイス専用のスレッドが、ドライバーの ISR によって後でアクセスされるすべてのバッファーを割り当てまたは[ *SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)、 [ *AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)、 [ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [ *DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)、 [ *CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)、 [ *IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)、 [*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、またはより高度なドライバー、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なスレッドに割り当てられたメモリすることはできませんページング可能な。
+-   ドライバーで作成されたスレッドは、IRQL = パッシブ\_レベルでは任意のスレッドコンテキストで実行されるため、ページング可能なメモリにアクセスできますが、他の多くの標準ドライバールーチンは IRQL &gt;= ディスパッチ\_レベルで実行されます。 ドライバーによって作成されたスレッドが、このようなルーチンからアクセスできるメモリを割り当てる場合は、非ページプールからメモリを割り当てる必要があります。 たとえば、デバイス専用のスレッドが、後でドライバーの ISR または[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)、 [*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)、 [*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)、[*コントローラー*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、および[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)[*によってアクセスされるバッファーを割り当てる場合、CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)、 [*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)、 [*customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、または上位レベルのドライバーの[*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンでは、スレッドに割り当てられたメモリをページングすることはできません。
 
--   ドライバーは、共有状態の情報やデバイスの拡張機能、ドライバーのスレッド内のリソースを保持する場合 (など、 *StartIo*ルーチン) 物理デバイスと、共有のアクセスを同期する必要があります、ドライバーを使用したデータの他のルーチンを同じデバイス、メモリ位置、またはリソースにアクセスします。
+-   ドライバーが共有状態情報またはリソースをデバイス拡張機能に保持している場合、ドライバースレッド ( *StartIo*ルーチンなど) は、同じデバイスにアクセスする他のルーチンと共に、物理デバイスと共有データへのアクセスを同期する必要があります。、メモリ位置、またはリソース。
 
-    これを使用する必要があります、スレッドは、ISR でデバイスまたは状態を共有する場合[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 参照してください[クリティカル セクションを使用して](using-critical-sections.md)します。
+    スレッドがデバイスまたは状態を ISR と共有している場合は、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を使用して、デバイスをプログラムしたり、共有状態にアクセスしたりするために、ドライバーによって提供される[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンを呼び出す必要があります。 「[クリティカルセクションの使用」を](using-critical-sections.md)参照してください。
 
-    スレッドは、ISR 以外のルーチンに状態またはリソースを共有する場合、ドライバーの共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでリソースを保護する必要があります。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+    スレッドが、ISR 以外のルーチンで状態またはリソースを共有する場合、ドライバーは、ドライバーによって提供される、ドライバーで初期化された executive スピンロックを使用して、共有状態またはリソースを保護する必要があります。 詳細については、「[スピンロック](spin-locks.md)」を参照してください。
 
-低速のデバイスのドライバーのスレッドを使用して、設計上のトレードオフの詳細については、次を参照してください。[デバイスのポーリング](avoid-polling-devices.md)します。 参照してください[ハードウェアの優先度を管理する](managing-hardware-priorities.md)します。 特定のサポート ルーチンの Irql の特定については、ルーチンのリファレンス ページを参照してください。
+低速デバイスのドライバースレッドを使用したの設計上のトレードオフの詳細については、「[デバイスのポーリング](avoid-polling-devices.md)」を参照してください。 「[ハードウェアの優先順位の管理](managing-hardware-priorities.md)」も参照してください。 特定のサポートルーチンの IRQLs に関する具体的な情報については、ルーチンのリファレンスページを参照してください。
 
  
 

@@ -1,30 +1,30 @@
 ---
 title: OID_GEN_HD_SPLIT_CURRENT_CONFIG
-description: クエリとして重なってドライバーまたは管理ユーティリティを使用できます OID_GEN_HD_SPLIT_CURRENT_CONFIG OID ミニポート アダプターの現在のヘッダー データ分割構成を確認します。
+description: クエリとして、それ以降のドライバーや管理ユーティリティでは、OID_GEN_HD_SPLIT_CURRENT_CONFIG OID を使用して、ミニポートアダプターの現在のヘッダーデータ分割構成を確認できます。
 ms.assetid: fc363227-1040-45bc-8c76-2ac61606d777
 ms.date: 08/08/2017
-keywords: -OID_GEN_HD_SPLIT_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_HD_SPLIT_CURRENT_CONFIG ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: bffe555573f5809d975e41816bef8e0828d7a3ee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9b0fac8398f0f6d05023b94b97e4c0cd0a88384
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369124"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843022"
 ---
-# <a name="oidgenhdsplitcurrentconfig"></a>OID\_GEN\_HD\_分割\_現在\_構成
+# <a name="oid_gen_hd_split_current_config"></a>OID\_GEN\_HD\_分割\_現在の\_構成
 
 
-クエリとしてドライバーまたは管理ユーティリティを重なってできます OID を使用\_GEN\_HD\_分割\_現在\_して現在のヘッダー データを特定の構成の OID 分割ミニポートの構成アダプター。 システム管理者は、WMI インターフェイスを通じてこの OID に関連付けられている GUID を使用できます。
+クエリとして、それ以降のドライバーや管理ユーティリティでは、OID\_GEN\_HD\_分割\_現在の\_CONFIG OID を使用して、ミニポートアダプターの現在のヘッダーデータの分割構成を確認できます。 システム管理者は、WMI インターフェイスを使用して、この OID に関連付けられている GUID を使用できます。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、ミニポート ドライバーに代わってこの OID を処理します。 NDIS に現在のヘッダー データの分割、ミニポート ドライバーと初期化の属性に基づく構成情報は、および[ **NDIS\_状態\_HD\_分割\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)状態を示す値。
+NDIS は、ミニポートドライバーに代わってこの OID を処理します。 現在のヘッダーデータの分割構成情報は、ミニポートドライバーの初期化属性と[**ndis\_ステータス\_HD\_分割\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)の状態の表示に基づいて、ndis によって保持されます。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [ **NDIS\_HD\_分割\_現在\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、[**現在の\_構成構造\_分割される ndis\_HD\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)が含まれています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -35,11 +35,11 @@ NDIS は、ミニポート ドライバーに代わってこの OID を処理し
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.1 以降をサポートします。</p></td>
+<td><p>NDIS 6.1 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -47,11 +47,11 @@ NDIS は、ミニポート ドライバーに代わってこの OID を処理し
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_HD\_分割\_現在\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)
+[**NDIS\_HD\_分割\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_状態\_HD\_分割\_現在\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)
+[**NDIS\_状態\_HD\_分割\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)
 
  
 

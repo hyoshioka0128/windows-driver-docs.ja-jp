@@ -3,19 +3,19 @@ title: DispatchPower ルーチン
 description: DispatchPower ルーチン
 ms.assetid: e385064f-cbdb-432f-951a-743217891333
 keywords:
-- ディスパッチ ルーチンの WDK カーネル、DispatchPower ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchPower ルーチン
 - DispatchPower ルーチン
-- 電源管理の WDK カーネル、ディスパッチ ルーチン
-- 対し、IRP_MJ_POWER I/O 関数のコード
-- リムーバブル デバイスの電源ディスパッチ ルーチン WDK カーネル
+- 電源管理 WDK カーネル、ディスパッチルーチン
+- IRP_MJ_POWER i/o 関数のコード
+- リムーバブルデバイスの電源ディスパッチルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9567c377cfcbec6ea17da0eeccf80f3dbd594513
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f74cc9d6ce51e119b8ca8e5a07b028212a2c5fd6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384981"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838728"
 ---
 # <a name="dispatchpower-routines"></a>DispatchPower ルーチン
 
@@ -23,33 +23,33 @@ ms.locfileid: "67384981"
 
 
 
-ドライバーの[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)日常的なサポート[電源管理](implementing-power-management.md)の Irp を処理することによって、 [ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) I/O 関数のコード。 関連付けられている、 **IRP\_MJ\_POWER**関数コードが電源管理の小さな I/O 関数コードをいくつか。 電源マネージャーを待機し、ウェイク アップのシステム イベントを自分のデバイスのドライバーをクエリするのに応答の電源状態を変更するのにドライバーに出力するため、これらのマイナー関数コードを使用します。
+ドライバーの[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、 [**irp\_MJ\_の電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)I/o 関数コードの irp を処理することによって、[電源管理](implementing-power-management.md)をサポートします。 **IRP\_MJ\_power** functions コードに関連付けられているのは、電源管理用のいくつかのマイナー i/o 関数コードです。 電源マネージャーは、これらのマイナー関数コードを使用して、電源状態の変更、システムウェイクアップイベントの待機と応答、およびデバイスに関するドライバーの照会を行います。
 
 各ドライバーの*DispatchPower*ルーチンは、次のタスクを実行します。
 
 -   可能であれば、IRP を処理します。
 
--   デバイスで [次へ] の下位のドライバーに IRP を渡すを使用して、スタック[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)します。
+-   [**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)を使用して、IRP をデバイススタック内の次に小さいドライバーに渡します。
 
--   場合は、バス ドライバーをデバイスで要求された電源操作を実行し、IRP の完了します。
+-   バスドライバーの場合は、要求された電源操作をデバイスで実行し、IRP を完了します。
 
-デバイスのすべてのドライバーには、いくつかの場合、関数またはフィルター ドライバーの IRP の失敗が許可される場所を除く、デバイスの電源 Irp を処理する必要があります。 ほとんどの関数とフィルター ドライバーがいくつかの処理を実行したり設定や、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)の IRP では、各電源ルーチンが完了する前に、[次へ] の下位のドライバーに IRP を渡します。 最終的に IRP では、バス ドライバーは、物理的に必要な場合は、デバイスの電源状態を変更し、IRP の完了に到達します。
+デバイスのすべてのドライバーには、デバイスの電源 Irp を処理する機会が必要です。ただし、関数またはフィルタードライバーが IRP を失敗させることが許可されている場合は例外です。 ほとんどの関数およびフィルタードライバーは、何らかの処理を実行するか、各電源 IRP の[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定してから、irp を完了せずに次の下位のドライバーに渡します。 IRP は、必要に応じて物理的にデバイスの電源状態を変更し、IRP を完了するバスドライバーに到達します。
 
-I/O マネージャーが、いずれかで呼び出す IRP が完了したら、 *IoCompletion*ルーチン IRP を結ぶデバイス スタックと、ドライバーによって設定します。 ドライバーは、完了ルーチンを設定する必要があるかどうかは IRP とドライバーの個別の要件の種類によって異なります。
+IRP が完了すると、i/o マネージャーは、IRP がデバイススタックを移動したときにドライバーによって設定された*Iocompletion*ルーチンを呼び出します。 ドライバーが完了ルーチンを設定する必要があるかどうかは、IRP の種類とドライバーの個々の要件によって異なります。
 
-電源の Irp こと、デバイスの電源を入れます処理する必要が最初にデバイス スタック (基になるバス ドライバー) の最下位のドライバーをし、スタックに連続する各ドライバーでします。 電源 Irp が、デバイスの電源を処理する必要が最初にデバイス スタックの上部にあるドライバーをし、スタックを下方向に連続する各ドライバーでします。
+デバイスの電源をオンにする電源の Irp は、デバイススタックの最低ドライバー (基になるバスドライバー) によって最初に処理され、その後、各ドライバーがスタックを起動します。 デバイスの電源を切断する電源 Irp は、デバイススタックの一番上にあるドライバーによって最初に処理される必要があります。その後、後続の各ドライバーがスタックを停止します。
 
-### <a name="special-handling-for-removable-devices"></a>リムーバブル デバイス用の特別な処理
+### <a name="special-handling-for-removable-devices"></a>リムーバブルデバイスの特別な処理
 
-*DispatchPower*ルーチン、リムーバブル デバイスのドライバーは、デバイスがまだ存在するかどうかを確認する必要があります。 デバイスが削除された場合、ドライバーが IRP が [次へ] の下のドライバーを渡さないでください。 代わりに、ドライバーは、次の操作にする必要があります。
+*DispatchPower*ルーチンでは、リムーバブルデバイスのドライバーは、デバイスがまだ存在しているかどうかを確認する必要があります。 デバイスが削除されている場合、ドライバーは IRP を次の下位のドライバーに渡すことはできません。 代わりに、ドライバーは次の操作を行う必要があります。
 
--   呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)のべ IRP の処理を開始します。
+-   [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出して、次の電源 IRP の処理を開始します。
 
--   設定**Irp -&gt;IoStatus.Status**ステータス\_削除\_保留します。
+-   **Irp-&gt;iostatus. status**を status に設定し\_削除\_保留中です。
 
--   呼び出す[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)、IO を指定する\_いいえ\_IRP の完了をインクリメントします。
+-   [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出し、IRP を完了するための IO\_\_の増分値を指定します。
 
--   状態を返す\_削除\_保留します。
+-   状態を返す\_削除\_保留中です。
 
  
 

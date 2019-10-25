@@ -4,17 +4,17 @@ description: カスタマイズされた色フォーマット
 ms.assetid: 309d33e8-6338-4c32-8e03-d6cbf3371e16
 keywords:
 - Unidrv、色の形式
-- 色は WDK Unidrv を書式設定します。
-- カスタマイズした色が WDK Unidrv を書式設定します。
-- Unidrv WDK の印刷
+- WDK Unidrv の色形式
+- カスタマイズされた色の形式 WDK Unidrv
+- Unidrv WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f735c106c89c4f02920f9be64fd2dbf79ae6b13a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f2125aa3e39e8a9382d8b01b65e378f08d1c5bb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372418"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842846"
 ---
 # <a name="customized-color-formats"></a>カスタマイズされた色フォーマット
 
@@ -22,11 +22,11 @@ ms.locfileid: "67372418"
 
 
 
-Unidrv 内に示されているいくつかの色形式をサポートしている[色形式の処理](handling-color-formats.md)します。 これらの形式は、Unidrv は、GDI ビットマップをプリンターに送信する前に、正しい形式に変換します。 実装するプラグインのレンダリングを提供する必要があります、プリンターが Unidrv でサポートされていない形式を受け入れる場合、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッド。
+Unidrv は、[色の書式を処理](handling-color-formats.md)する際に一覧表示されるいくつかの色形式をサポートしています。 これらの形式では、Unidrv は GDI ビットマップをプリンターに送信する前に正しい形式に変換します。 プリンターが Unidrv でサポートされていない形式を受け入れる場合は、 [**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドを実装するレンダリングプラグインを指定する必要があります。
 
-実装する場合[ **IPrintOemUni::ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)かどうかには、ユーザーが処理できない Unidrv 色形式 (返さオプション) を選択し、GDI ビットマップ データのバッファーを毎回とは、印刷の準備Unidrv は、メソッドを呼び出すし、ビットマップのアドレスを入力引数として渡します。 メソッドがビットマップを指定した形式に変換する必要がありますで実行[カスタマイズ ハーフトーン](customized-halftoning.md)操作に応じて、および呼び出し、 [ **IPrintOemDriverUni::DrvWriteSpoolBuf** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvwritespoolbuf)印刷スプーラーに変更されたビットマップを送信する方法。 呼び出す必要があります、 [ **IPrintOemDriverUni::DrvXMoveTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvxmoveto)と[ **IPrintOemDriverUni::DrvYMoveTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvymoveto)カーソルを更新する方法位置。 これらの操作の詳細については、の説明を参照してください。 **IPrintOemUni::ImageProcessing**します。
+[**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)を実装し、ユーザーが Unidrv で処理できないカラーフォーマット (ColorMode オプション) を選択した場合、次に、GDI ビットマップデータのバッファーが印刷できる状態になるたびに、unidrv はメソッドを呼び出し、ビットマップのアドレスを渡します。入力引数として指定します。 メソッドはビットマップを指定された形式に変換し、必要に応じて[カスタムのハーフトーン](customized-halftoning.md)演算を実行し、 [**Iprintoemdriveruni::D rvwritespoolbuf**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvwritespoolbuf)メソッドを呼び出して、変更したビットマップを印刷スプーラに送信する必要があります。 また、 [**Iprintoemdriveruni::D rvXMoveTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvxmoveto)および[**iprintoemdriveruni::D rvymoveto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvymoveto)メソッドを呼び出して、カーソル位置を更新する必要があります。 これらの操作の詳細については、 **Iprintoemuni:: ImageProcessing**の説明を参照してください。
 
-レンダリングのプラグインを実装する場合[ **IPrintOemUni::ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)も実装できます[ **IPrintOemUni::MemoryUsage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)します。
+レンダリングプラグインが[**iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)を実装している場合は、 [**Iprintoemuni:: memoryusage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)を実装することもできます。
 
  
 

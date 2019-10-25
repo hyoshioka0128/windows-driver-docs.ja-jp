@@ -3,77 +3,77 @@ title: UMDF ドライバーでのデバイス インターフェイスの使用
 description: UMDF ドライバーでのデバイス インターフェイスの使用
 ms.assetid: acb6da80-bd04-48f0-b42a-96463f091b0a
 keywords:
-- ユーザー モード ドライバー WDK UMDF、デバイス インターフェイス
-- UMDF WDK、デバイス インターフェイス
-- ユーザー モード ドライバー フレームワーク WDK、デバイス インターフェイス
-- デバイスは、WDK UMDF をインターフェイスします。
+- ユーザーモードドライバー WDK UMDF、デバイスインターフェイス
+- UMDF WDK、デバイスインターフェイス
+- ユーザーモードドライバーフレームワーク WDK、デバイスインターフェイス
+- デバイスインターフェイス WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c8695e09c548b168af7bb8b2d084f5c6eb4995
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1a49e61f629efd5ab961c12eeada26e476f8327c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843097"
 ---
 # <a name="using-device-interfaces-in-umdf-drivers"></a>UMDF ドライバーでのデバイス インターフェイスの使用
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へのシンボリック リンクは、デバイス、デバイスにアクセスするアプリケーションで使用できます。 ユーザー モード アプリケーションは、Microsoft Win32 などの API 要素に、インターフェイスのシンボリック リンクの名前を渡すことができます[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。 ユーザー モード アプリケーションを呼び出して、デバイス インターフェイスのシンボリック リンクの名前を取得する**SetupDi**関数。 SetupDi 関数の詳細については、SetupDi デバイス インターフェイスの関数を参照してください。
+*デバイスインターフェイス*は、アプリケーションがデバイスにアクセスするために使用できるプラグアンドプレイ (PnP) デバイスへのシンボリックリンクです。 ユーザーモードアプリケーションは、インターフェイスのシンボリックリンク名を API 要素 (Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数など) に渡すことができます。 デバイスインターフェイスのシンボリックリンク名を取得するために、ユーザーモードアプリケーションは**Setupdi**関数を呼び出すことができます。 SetupDi 関数の詳細については、「SetupDi デバイスインターフェイス関数」を参照してください。
 
-各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)します。
+各デバイスインターフェイスは、*デバイスインターフェイスクラス*に属しています。 たとえば、CD-ROM デバイスのドライバースタックは、GUID\_DEVINTERFACE\_CDROM クラスに属するインターフェイスを提供する場合があります。 CD-ROM デバイスのドライバーの1つで、GUID のインスタンス\_DEVINTERFACE\_CDROM クラスが登録され、CD-ROM デバイスが使用可能であることをシステムとアプリケーションに通知します。 デバイスインターフェイスクラスの詳細については、「[デバイスインターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)」を参照してください。
 
-### <a name="registering-a-device-interface"></a>デバイスのインターフェイスを登録します。
+### <a name="registering-a-device-interface"></a>デバイスインターフェイスの登録
 
-デバイスのインターフェイス クラスのインスタンスを登録するには、UMDF ドライバーを呼び出すことができます[ **IWDFDevice::CreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface)内からその[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数。 ドライバーでは、インターフェイスの複数のインスタンスをサポートする場合は、各インスタンスに一意の参照文字列を割り当てることができます。
+デバイスインターフェイスクラスのインスタンスを登録するために、UMDF ベースのドライバーは[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数内から[**Iwdfdevice:: createdeviceinterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface)を呼び出すことができます。 ドライバーがインターフェイスの複数のインスタンスをサポートしている場合は、一意の参照文字列を各インスタンスに割り当てることができます。
 
-### <a name="enabling-and-disabling-a-device-interface"></a>有効にして、デバイスのインターフェイスを無効化
+### <a name="enabling-and-disabling-a-device-interface"></a>デバイスインターフェイスを有効または無効にする
 
-作成が成功すると、フレームワークによって自動的に有効にし、デバイスの PnP 状態に基づくインターフェイスを無効にします。
+作成に成功すると、フレームワークはデバイスの PnP 状態に基づいて自動的にインターフェイスを有効または無効にします。
 
-さらに、ドライバーは無効にし、必要に応じて、デバイス インターフェイスを再度有効にすることができます。 たとえば、ドライバーは、そのデバイスが応答を停止したことを判断した場合、ドライバー呼び出すことができます[ **IWDFDevice::AssignDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-assigndeviceinterfacestate)デバイスのインターフェイスを無効にして、禁止するにはアプリケーション インターフェイスに新しいハンドルを取得します。 (既存のハンドルをインターフェイスには影響はありません)。ドライバーを呼び出すことができます、デバイスが後で使用可能なになると、 **IWDFDevice::AssignDeviceInterfaceState**インターフェイスを再度有効にするには、もう一度です。
+さらに、ドライバーは、必要に応じて、デバイスインターフェイスを無効にしてから再度有効にすることができます。 たとえば、ドライバーがデバイスの応答を停止したと判断した場合、ドライバーは[**Iwdfdevice:: 割り当て Deviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-assigndeviceinterfacestate)を呼び出してデバイスのインターフェイスを無効にし、アプリケーションがインターフェイスに新しいハンドルを取得できないようにします。 (インターフェイスに対する既存のハンドルは影響を受けません)。後でデバイスが使用可能になった場合、ドライバーは**Iwdfdevice:: 割り当て Deviceinterfacestate**を再度呼び出して、インターフェイスを再び有効にすることができます。
 
-### <a name="receiving-requests-to-access-a-device-interface"></a>デバイス インターフェイスへのアクセス要求の受信
+### <a name="receiving-requests-to-access-a-device-interface"></a>デバイスインターフェイスへのアクセス要求を受信する
 
-アプリケーションでは、ドライバーのデバイス インターフェイスへのアクセスを要求、フレームワークのドライバーの[ **IQueueCallbackCreate::OnCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)コールバック関数。 ドライバーを呼び出すことができます[ **IWDFFile::RetrieveFileName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdffile-retrievefilename)デバイスやアプリケーションにアクセスしているファイルの名前を取得します。 オペレーティング システムにはファイルに参照文字列が含まれています、ドライバーで、デバイス インターフェイスが登録されているときに参照文字列を指定する場合、またはデバイス名を**IWDFFile::RetrieveFileName**を返します。
+アプリケーションがドライバーのデバイスインターフェイスへのアクセスを要求すると、フレームワークはドライバーの[**Iqueuecallbackcreate:: OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)コールバック関数を呼び出します。 ドライバーは[**Iwdffile:: RetrieveFileName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffile-retrievefilename)を呼び出して、アプリケーションがアクセスしているデバイスまたはファイルの名前を取得できます。 ドライバーがデバイスインターフェイスを登録するときに参照文字列を指定した場合、オペレーティングシステムは、 **Iwdffile:: RetrieveFileName**が返すファイル名またはデバイス名に参照文字列を含めます。
 
-### <a name="creating-device-events"></a>デバイス イベントの作成
+### <a name="creating-device-events"></a>デバイスイベントの作成
 
-UMDF ドライバーは、デバイスに固有のカスタム イベントを作成できます (と呼ばれる*デバイス イベント*) を呼び出して[ **IWDFDevice::PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-postevent)します。 デバイスのインターフェイスのいずれかを使用する登録されているドライバーでは、デバイスのカスタム イベントの通知を受信できます。 UMDF ベースのドライバーが提供することでこのような通知を受信する[ **IRemoteInterfaceCallbackEvent::OnRemoteInterfaceEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)コールバック関数。
+UMDF ベースのドライバーは、 [**Iwdfdevice::P ostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)を呼び出すことによって、デバイス固有のカスタムイベント (*デバイスイベント*と呼ばれる) を作成できます。 デバイスのインターフェイスのいずれかを使用するように登録されているドライバーは、デバイスのカスタムイベントの通知を受け取ることができます。 UMDF ベースのドライバーは、 [**IRemoteInterfaceCallbackEvent:: OnRemoteInterfaceEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)コールバック関数を提供することによって、このような通知を受け取ります。
 
-カスタム イベントは、デバイスに固有です。 イベントを作成するドライバーの開発者と、イベントを受信するドライバーの開発者の両方では、イベントの意味を理解する必要があります。
+カスタムイベントは、デバイスに固有です。 イベントを作成するドライバーの開発者と、イベントを受信するドライバーの開発者は、イベントの意味を理解している必要があります。
 
-### <a name="accessing-another-drivers-device-interface"></a>別のドライバーのデバイス インターフェイスへのアクセス
+### <a name="accessing-another-drivers-device-interface"></a>別のドライバーのデバイスインターフェイスへのアクセス
 
-UMDF ベースのドライバーをデバイス インターフェイスへの I/O 要求を送信する場合は、その他のドライバーを提供、作成することができます、[リモートの I/O ターゲット](general-i-o-targets-in-umdf.md)デバイス インターフェイスを表します。
+他のドライバーが提供するデバイスインターフェイスに対して、UMDF ベースのドライバーから i/o 要求を送信する場合は、デバイスインターフェイスを表す[リモート i/o ターゲット](general-i-o-targets-in-umdf.md)を作成できます。
 
-最初に、ドライバーは、デバイス インターフェイスが使用可能な場合に通知を受信登録する必要があります。 次の手順を使用します。
+まず、デバイスインターフェイスが使用可能になったときに、ドライバーが通知を受け取るように登録する必要があります。 次の手順を使用します。
 
-1.  ドライバーを呼び出すと[ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)、ドライバーが提供できる、 [IPnpCallbackRemoteInterfaceNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackremoteinterfacenotification)インターフェイス。 [ **IPnpCallbackRemoteInterfaceNotification::OnRemoteInterfaceArrival** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival)デバイス インターフェイスが使用可能な場合にこのインターフェイスのコールバック関数が、ドライバーに通知します。
+1.  ドライバーが[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出すと、ドライバーは[IPnpCallbackRemoteInterfaceNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackremoteinterfacenotification)インターフェイスを提供できます。 このインターフェイスの[**IPnpCallbackRemoteInterfaceNotification:: OnRemoteInterfaceArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival) callback 関数は、デバイスインターフェイスが使用可能であることをドライバーに通知します。
 
-2.  ドライバーの呼び出し後[ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)、呼び出すことができます[ **IWDFDevice2::RegisterRemoteInterfaceNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-registerremoteinterfacenotification)インターフェイスの各デバイス ドライバーは使用してください。
+2.  ドライバーは[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出した後、ドライバーが使用する各デバイスインターフェイスに対して[**IWDFDevice2:: RegisterRemoteInterfaceNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-registerremoteinterfacenotification)を呼び出すことができます。
 
-その後、フレームワークが、ドライバーの[ **IPnpCallbackRemoteInterfaceNotification::OnRemoteInterfaceArrival** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival)コールバック関数を指定したデバイスのインターフェイスになるたびにご利用いただけます。 コールバック関数を呼び出すことができます[ **IWDFRemoteInterfaceInitialize::GetInterfaceGuid** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremoteinterfaceinitialize-getinterfaceguid)と[ **IWDFRemoteInterfaceInitialize::RetrieveSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremoteinterfaceinitialize-retrievesymboliclink)インターフェイスが到着するデバイスを決定します。
+その後、指定されたデバイスインターフェイスが使用可能になるたびに、フレームワークはドライバーの[**IPnpCallbackRemoteInterfaceNotification:: OnRemoteInterfaceArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival) callback 関数を呼び出します。 コールバック関数は、 [**Iwdfremoteinterfaceinitialize:: GetInterfaceGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremoteinterfaceinitialize-getinterfaceguid)と[**Iwdfremoteinterfaceinitialize:: RetrieveSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremoteinterfaceinitialize-retrievesymboliclink)を呼び出して、どのデバイスインターフェイスに到達したかを判断できます。
 
-ドライバーの[ **IPnpCallbackRemoteInterfaceNotification::OnRemoteInterfaceArrival** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival)コールバック関数は、次を行う通常必要があります。
+ドライバーの[**IPnpCallbackRemoteInterfaceNotification:: OnRemoteInterfaceArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival) callback 関数は、通常、次の操作を実行します。
 
-1.  呼び出す[ **IWDFDevice2::CreateRemoteInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-createremoteinterface)必要に応じて提供するリモート インターフェイス オブジェクトを作成する[IRemoteInterfaceCallbackEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackevent)と[IRemoteInterfaceCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackremoval)インターフェイス。
+1.  [**IWDFDevice2:: CreateRemoteInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-createremoteinterface)を呼び出してリモートインターフェイスオブジェクトを作成します。オプションで[IRemoteInterfaceCallbackEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iremoteinterfacecallbackevent)および[IRemoteInterfaceCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iremoteinterfacecallbackremoval)インターフェイスを指定できます。
 
-2.  呼び出す[ **IWDFDevice2::CreateRemoteTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-createremotetarget)オプションを提供する、リモート ターゲット オブジェクトを作成する、 [IRemoteTargetCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremotetargetcallbackremoval)インターフェイス。
+2.  [**IWDFDevice2:: CreateRemoteTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-createremotetarget)を呼び出してリモートターゲットオブジェクトを作成し、必要に応じて[Iremotetarget の削除](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iremotetargetcallbackremoval)インターフェイスを指定します。
 
-3.  呼び出す[ **IWDFRemoteTarget::OpenRemoteInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface)デバイス インターフェイスをリモート ターゲットに接続します。
+3.  [**Iwdfremotetarget:: OpenRemoteInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface)を呼び出して、デバイスインターフェイスをリモートターゲットに接続します。
 
-    デバイスのインターフェイスが SWENUM ソフトウェア デバイスの列挙子を作成する 1 つの場合、ドライバーを呼び出す必要があります**OpenRemoteInterface**作業項目から。 (たとえばを参照してください、 **QueueUserWorkItem** Windows SDK 内の関数です)。
+    SWENUM ソフトウェアデバイス列挙子によって作成されるデバイスインターフェイスである場合、ドライバーは作業項目から**Openremoteinterface**を呼び出す必要があります。 (例については、Windows SDK の「 **QueueUserWorkItem**関数」を参照してください)。
 
-今すぐドライバーは、書式を設定し、リモートの I/O ターゲットに I/O 要求を送信します。
+これで、ドライバーは、i/o 要求をフォーマットし、リモート i/o ターゲットに送信できます。
 
-加え、 [ **IPnpCallbackRemoteInterfaceNotification::OnRemoteInterfaceArrival** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival)コールバック関数では、UMDF ドライバーは、受信する 2 つの追加のコールバック関数を提供できますデバイス インターフェイスのイベントの通知:
+[**IPnpCallbackRemoteInterfaceNotification:: OnRemoteInterfaceArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival) callback 関数に加えて、UMDF ベースのドライバーは、デバイスインターフェイスイベントの通知を受信するために、2つの追加のコールバック関数を提供できます。
 
--   [ **IRemoteInterfaceCallbackRemoval::OnRemoteInterfaceRemoval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremoteinterfacecallbackremoval-onremoteinterfaceremoval)デバイス インターフェイスが削除されたときにコールバック関数は、ドライバーに通知します。
+-   [**IRemoteInterfaceCallbackRemoval:: OnRemoteInterfaceRemoval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackremoval-onremoteinterfaceremoval) callback 関数は、デバイスインターフェイスが削除されたことをドライバーに通知します。
 
--   [ **IRemoteInterfaceCallbackEvent::OnRemoteInterfaceEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)コールバック関数は、デバイスのカスタム イベントが到着したときに、ドライバーを通知します。
+-   [**IRemoteInterfaceCallbackEvent:: OnRemoteInterfaceEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)コールバック関数は、デバイスのカスタムイベントが到着したときにドライバーに通知します。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_DROPPEDFRAMES\_現在
-description: KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプチャしたフレームの数、平均フレームのサイズと削除すると、フレームの数を動的にビデオ キャプチャ ミニドライバーを取得します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_DROPPEDFRAMES\_CURRENT
+description: KSK プロパティ\_ドロップされました\_フレーム\_現在のプロパティは、キャプチャされたフレームの数、削除されたフレームの数、および平均フレームサイズのビデオキャプチャミニドライバーを動的に取得します。 このプロパティを実装する必要があります。
 ms.assetid: 43367858-4e3b-476e-aaa5-c9e665df8dc6
 keywords:
-- KSPROPERTY_DROPPEDFRAMES_CURRENT ストリーミング メディア デバイス
+- KSPROPERTY_DROPPEDFRAMES_CURRENT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6300f087655c89f6b184173fa0db4f319d1a83b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 61484c44b498cd4d27ab62269e54610cdd78d8a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373068"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843332"
 ---
-# <a name="kspropertydroppedframescurrent"></a>KSPROPERTY\_DROPPEDFRAMES\_現在
+# <a name="ksproperty_droppedframes_current"></a>KSK プロパティ\_DROPPEDFRAMES\_CURRENT
 
 
-KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプチャしたフレームの数、平均フレームのサイズと削除すると、フレームの数を動的にビデオ キャプチャ ミニドライバーを取得します。 このプロパティを実装する必要があります。
+KSK プロパティ\_ドロップされました\_フレーム\_現在のプロパティは、キャプチャされたフレームの数、削除されたフレームの数、および平均フレームサイズのビデオキャプチャミニドライバーを動的に取得します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_droppedframes_current_ks"></span><span id="DDK_KSPROPERTY_DROPPEDFRAMES_CURRENT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSPROPERTY\_DROPPEDFRAMES\_現在\_構造を現在の画像の数、フレームのドロップの数とキャプチャされたフレームの平均サイズを指定します。
+プロパティ値 (操作データ) は、現在の画像番号、ドロップされたフレームの数、キャプチャされたフレームの平均サイズを指定する DROPPEDFRAMES\_現在の\_S 構造体\_、KSK プロパティです。
 
 <a name="remarks"></a>注釈
 -------
 
-キャプチャされたフレームの欠落したフレームの数には、ストリームの状態が遷移停止を一時停止するときをリセットする必要があります。
+キャプチャされたフレームと破棄されたフレームの数は、ストリームの状態が停止から一時停止に遷移するときにリセットされます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_ドロップ\_フレーム\_CURRENT プロパティは、キャプ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_DROPPEDFRAMES\_現在\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)
+[**KSK プロパティ\_DROPPEDFRAMES\_現在の\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)
 
  
 

@@ -1,60 +1,60 @@
 ---
-title: Serenum とシリアルの操作
-description: Serenum とシリアルの操作
+title: Serenum.sys とシリアルの操作
+description: Serenum.sys とシリアルの操作
 ms.assetid: d14b6655-c031-42dd-921e-b6a09afde86d
 keywords:
-- シリアル ドライバー WDK、動作
-- Serenum ドライバー WDK、動作
-- シリアル ドライバー WDK
-- Serenum ドライバー WDK
-- シリアル ドライバー WDK
-- シリアル デバイス シリアル ドライバー WDK
-- シリアル デバイス WDK、Serenum ドライバー
+- Serial driver WDK、運用
+- Serenum.sys ドライバー WDK、運用
+- Serial driver WDK
+- Serenum.sys ドライバー WDK
+- シリアルドライバー WDK
+- シリアルデバイス WDK、シリアルドライバー
+- シリアルデバイス WDK、Serenum.sys ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64ddc6f95f6950807b5d18eb0b05d07814da8adf
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 58cb5c8b89eae23ddfb3742f7a6b20222bed9403
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836345"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837972"
 ---
-# <a name="operation-of-serenum-and-serial"></a>Serenum とシリアルの操作
+# <a name="operation-of-serenum-and-serial"></a>Serenum.sys とシリアルの操作
 
-このセクションには、オペレーティング Serenum およびシリアルに関する以下のトピックが含まれています。
+ここでは、の操作に関する次のトピックについて説明します。
 
-[I/O 要求のフィルタ リング Serenum](serenum-filtering-of-i-o-requests.md)
+[I/o 要求の serenum.sys フィルター処理](serenum-filtering-of-i-o-requests.md)
 
-[Serenum デバイスの列挙](enumerating-serenum-devices.md)
+[Serenum.sys デバイスの列挙](enumerating-serenum-devices.md)
 
-[従来の COM ポートを列挙します。](enumerating-legacy-com-ports.md)
+[レガシ COM ポートの列挙](enumerating-legacy-com-ports.md)
 
-[COM ポートの外部の名前を付ける](external-naming-of-com-ports.md)
+[COM ポートの外部名前付け](external-naming-of-com-ports.md)
 
-[開くと、シリアル デバイスの初期化](opening-and-initializing-a-serial-device.md)
+[シリアルデバイスを開いて初期化する](opening-and-initializing-a-serial-device.md)
 
-[開くと、16550 UART と互換性のあるインターフェイスの初期化](opening-and-initializing-a-16550-uart-compatible-interface.md)
+[16550 UART 互換インターフェイスを開いて初期化する](opening-and-initializing-a-16550-uart-compatible-interface.md)
 
-[シリアル デバイスの割り込みを共有](sharing-a-serial-device-interrupt.md)
+[シリアルデバイス割り込みの共有](sharing-a-serial-device-interrupt.md)
 
-[シリアル デバイスの電源を入れる](powering-up-a-serial-device.md)
+[シリアルデバイスの電源投入](powering-up-a-serial-device.md)
 
-[設定を読み取ってシリアル デバイス用のタイムアウトの作成](setting-read-and-write-timeouts-for-a-serial-device.md)
+[シリアルデバイスの読み取りと書き込みのタイムアウトの設定](setting-read-and-write-timeouts-for-a-serial-device.md)
 
-[Rs-232 ポートでプラグ アンド プレイ シリアル デバイスを削除します。](removing-a-plug-and-play-serial-device-on-an-rs-232-port.md)
+[RS-232 ポートのプラグアンドプレイシリアルデバイスの取り外し](removing-a-plug-and-play-serial-device-on-an-rs-232-port.md)
 
-[プラグ アンド プレイ rs-232 のポートを削除します。](removing-a-plug-and-play-rs-232-port.md)
+[プラグアンドプレイ RS-232 ポートの取り外し](removing-a-plug-and-play-rs-232-port.md)
 
-[シリアル デバイス制御の要求](serial-device-control-requests2.md)
+[シリアルデバイス制御要求](serial-device-control-requests2.md)
 
-[デバッガーを使用している COM ポートを決定します。](determining-which-com-port-a-debugger-uses.md)
+[デバッガーが使用する COM ポートの特定](determining-which-com-port-a-debugger-uses.md)
 
-Serenum およびシリアルの動作の詳細については、次のリソースを参照してください。
+の動作の詳細については、次のリソースを参照してください。
 
-- [ntddser header](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/0)
+- [ntddser ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/0)
 
-- [シリアル ポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_serports/)
+- [シリアルポートドライバーのリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_serports/)
 
-- サンプル コード、 \\src\\カーネル\\シリアルと\\src\\カーネル\\serenum ディレクトリ Windows Driver Kit (WDK) で https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum
+- \\src\\カーネル\\シリアルおよび \\src\\カーネル\\の Windows Driver Kit (WDK) の serenum.sys ディレクトリのサンプルコード https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum
 
-- Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソース
+- Microsoft Windows SDK の Windows ベースサービスによってサポートされる通信リソース

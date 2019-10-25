@@ -3,55 +3,55 @@ title: TmXxx ルーチンの使用
 description: TmXxx ルーチンの使用
 ms.assetid: 8bc763e9-e67c-4810-9901-e5dc1a1cfd0c
 keywords:
-- カーネル トランザクション マネージャ WDK、TmXxx ルーチン
+- カーネルトランザクションマネージャー WDK、TmXxx ルーチン
 - KTM WDK、TmXxx ルーチン
 - TmXxx ルーチン WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 081b22b2d05539b084c6bdce69632947c7e0645d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbac18629f721e7121cbc4231df8199eeb34f37c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358167"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838325"
 ---
 # <a name="using-tmxxx-routines"></a>TmXxx ルーチンの使用
 
 
-ほとんど[KTM ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)の名前付け形式を使用して **Zw*Xxx * * *。 これらのルーチンでは、ハンドル ベースです。 これは、入力または出力パラメーターの少なくとも 1 つは KTM オブジェクトへのハンドルがあります。
+ほとんどの[KTM ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)では、**Zw*Xxx * * * という名前付け形式を使用します。 これらのルーチンはハンドルベースです。 つまり、少なくとも1つの入力パラメーターまたは出力パラメーターが、KTM オブジェクトへのハンドルです。
 
-KTM は、少数の名前付け形式を使用するルーチンのも用意されています。 **Tm*Xxx * * *。 これらのルーチンでは、ポインター ベースです。 入力または出力パラメーターの少なくとも 1 つは、KTM オブジェクトへのポインターです。
+また、KTM は、**Tm*Xxx * * * という名前付け形式を使用する、より少ない数のルーチンも提供します。 これらのルーチンは、ポインターに基づいています。 少なくとも1つの入力パラメーターまたは出力パラメーターが、KTM オブジェクトへのポインターです。
 
-いくつか**Tm * Xxx*** ルーチン重複**Zw * Xxx*** ルーチン。 その他の**Tm * Xxx*** ルーチンがない**Zw * Xxx*** 対応します。
+一部の**Tm * xxx*** ルーチンで**Zw * xxx*** ルーチンが重複しています。 その他の**Tm * xxx*** ルーチンには、同等の**Zw * xxx*** がありません。
 
-ほとんどの場合、使用する必要があります、 **Zw * Xxx*** ルーチン。 使用する必要がありますが、 **Tm * Xxx*** 次の状況でルーチン。
+ほとんどの場合、 **Zw * Xxx*** ルーチンを使用する必要があります。 ただし、次のような状況では、 **Tm * Xxx*** ルーチンを使用する必要があります。
 
-- Resource manager を使用して、 [ **ResourceManagerNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ptm_rm_notification)コールバック ルーチンは、ハンドルではなく参加オブジェクトへのポインターを提供します。
+- リソースマネージャーは[**ResourceManagerNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ptm_rm_notification)コールバックルーチンを使用します。これにより、ハンドルではなく、参加リストオブジェクトへのポインターが提供されます。
 
-  参加リストのオブジェクトの登録オブジェクトへのポインターを渡すことができます**Tm * Xxx*** ルーチン。
+  参加リストオブジェクトのポインターを、登録オブジェクトの**Tm * Xxx*** ルーチンに渡すことができます。
 
-- (TP) のシステム コンポーネントの処理、トランザクションは、システムのパフォーマンスが非常に長くなる可能性があります KTM に多くの高速呼び出しを実行します。
+- トランザクション処理システム (TPS) コンポーネントは、KTM に対して多くの高速呼び出しを実行するため、システムのパフォーマンスが低下する可能性があります。
 
-  この場合、コンポーネントを呼び出すことができます[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)各 KTM オブジェクト ハンドルをポインターに変換する、ポインターを保存しへのポインターを渡す**Tm * Xxx*** ルーチン。 この変換に変換する各ハンドルのポインターに内部的に毎回 KTM 必要があるが、 **Zw * Xxx*** ルーチンが呼び出されます。
+  この場合、コンポーネントは、 [**Obreferenceobjectbyhandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)を呼び出して各 KTM オブジェクトハンドルをポインターに変換し、ポインターを保存してから、そのポインターを**Tm * Xxx*** ルーチンに渡すことができます。 この変換により、 **Zw * Xxx*** ルーチンが呼び出されるたびに、KTM によって各ハンドルが内部的にポインターに変換される必要がなくなります。
 
-  呼び出しごとに**ObReferenceObectByHandle** KTM 定義の適切なフラグを含むアクセス マスクを含める必要があります。 KTM の作成し、ルーチンを開くには、これらのフラグをリファレンス ページに説明します。
+  **Obreferenceobて Byhandle**を呼び出すたびに、適切な KTM 定義フラグを含むアクセスマスクを含める必要があります。 これらのフラグは、KTM の作成ルーチンとオープンルーチンのリファレンスページで説明されています。
 
-  いずれかを呼び出すことによって、オブジェクトする必要があります逆参照、コンポーネントの KTM オブジェクトの使用が完了したら、 [ **ObDereferenceObjectDeferDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobjectdeferdelete)または[ **ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject).
+  コンポーネントで KTM オブジェクトの使用が完了したら、 [**ObDereferenceObjectDeferDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobjectdeferdelete)または[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出してオブジェクトを逆参照する必要があります。
 
-  -   使用する必要があります**ObDereferenceObjectDeferDelete**コンポーネント、または他のコンポーネント、ドライバー スタックがスピン ロック、ミュー テックス オブジェクト、または高速なミュー テックスなど、システム指定のロックを保持する場合。
+  -   コンポーネントまたはドライバースタック内の他のコンポーネントが、スピンロック、ミューテックスオブジェクト、高速ミューテックスなどのシステム指定のロックを保持している場合は、 **ObDereferenceObjectDeferDelete**を使用する必要があります。
 
-  -   使用することができます**ObDereferenceObject**コンポーネント、ドライバー スタック上にシステム指定のロックが保持していないことを確認します。
+  -   ドライバースタック上のコンポーネントがシステム指定のロックを保持していないことが確実な場合は、 **ObDereferenceObject**を使用できます。
 
-  コンポーネントを呼び出す場合、デッドロックが発生する可能性が**ObDereferenceObject** KTM がオブジェクトの名前空間のロックを保持しても可能性がありますので、ロックを保持しているときにします。 また、コンポーネントを呼び出すことができます[ **TmGetTransactionId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmgettransactionid)すばやく呼び出すよりも効率的にトランザクションの識別子を取得する[ **ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction).
+  コンポーネントがロックを保持しながら**ObDereferenceObject**を呼び出した場合にデッドロックが発生する可能性があります。これは、KTM がオブジェクトの名前空間のロックを保持している場合もあるためです。 また、コンポーネントは、 [**Tmgettransactionid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmgettransactionid)を呼び出して、 [**Zwqueryinformationtransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)を呼び出すよりも効率的にトランザクションの識別子を取得することができます。
 
-- 機能の 1 つがありますが、 **Zw * Xxx*** ルーチンが提供されません。
+- **Zw * Xxx*** ルーチンによって提供されない機能が必要です。
 
-  具体的には、リソース マネージャーは、次のルーチンを呼び出すことができます。
+  具体的には、リソースマネージャーは次のルーチンを呼び出すことができます。
 
-  -   [**TmEnableCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmenablecallbacks)コールバック ルーチンによって通知の非同期の配信を有効にします。
-  -   [**TmReferenceEnlistmentKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmreferenceenlistmentkey)と[ **TmDereferenceEnlistmentKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmdereferenceenlistmentkey)インクリメントまたは参加リスト オブジェクトのキーの参照カウントをデクリメントします。
-  -   [**TmRequestOutcomeEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmrequestoutcomeenlistment)参加リストの即時コミットまたはロールバック通知を要求します。
-  -   [**TmIsTransactionActive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmistransactionactive)をトランザクションがアクティブな状態かどうかを判断します。
+  -   [**Tmenablecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)は、コールバックルーチンによる通知の非同期配信を可能にします。
+  -   [**TmReferenceEnlistmentKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmreferenceenlistmentkey)と[**TmDereferenceEnlistmentKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmdereferenceenlistmentkey)は、参加オブジェクトのキー参照カウントをインクリメントまたはデクリメントします。
+  -   [**TmRequestOutcomeEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmrequestoutcomeenlistment)は、参加リストの即時コミットまたはロールバック通知を要求します。
+  -   [**TmIsTransactionActive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmistransactionactive)は、トランザクションがアクティブな状態であるかどうかを判断します。
 
  
 

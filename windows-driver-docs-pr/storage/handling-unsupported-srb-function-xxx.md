@@ -3,34 +3,34 @@ title: サポートされていない SRB_FUNCTION_XXX の処理
 description: サポートされていない SRB_FUNCTION_XXX の処理
 ms.assetid: 95b9288c-290f-4908-9de3-11d68ed624e2
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiStartIo
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiStartIo
 - HwScsiStartIo
 - サポートされていない SRB_FUNCTION_XXX
 - サポートされていない SRB_FUNCTION_XXX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53764b5a0dea1f3800db006f6a58d29dbbe44dfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0cae8f7c6c8ebf5f7aec914f0c6d3561c6a46eec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371156"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833713"
 ---
-# <a name="handling-unsupported-srb_function_xxx"></a>処理のサポートされていない SRB\_関数\_XXX
+# <a name="handling-unsupported-srb_function_xxx"></a>サポートされていない SRB\_関数の処理\_XXX
 
 
 ## <span id="ddk_handling_unsupported_srb_function_xxx_kg"></span><span id="DDK_HANDLING_UNSUPPORTED_SRB_FUNCTION_XXX_KG"></span>
 
 
-すべて*HwScsiStartIo*ルーチンは、サポートされていない SRB の確認メッセージを処理する必要があります\_関数\_*XXX*次のようにします。
+各*HwScsiStartIo*ルーチンは、次のように、サポートされていない SRB\_関数\_*XXX*の受信を処理する必要があります。
 
-1.  セットの入力 SRB の**SrbStatus** SRB に\_状態\_無効な\_を要求します。
+1.  入力 SRB の**Srbstatus**を SRB\_STATUS\_無効な\_要求に設定します。
 
-2.  呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 *NotificationType * * * RequestComplete** SRB の入力を使用しています。
+2.  *NotificationType * * * RequestComplete** と入力 SRB を使用して[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)を呼び出します。
 
-3.  呼び出す**ScsiPortNotification**を使用して、* NotificationType ***NextRequest**、または**NextLuRequest** HBA は、タグが付けられたキューをサポートしているかあたり複数の要求論理ユニット。
+3.  **ScsiPortNotification**をもう一度呼び出すには、* NotificationType ***nextrequest**を使用するか、HBA がタグ付きキューをサポートしている場合は**nextlurequest**を、論理ユニットあたりは複数の要求をサポートします。
 
-4.  コントロールを返します。
+4.  制御を返します。
 
  
 

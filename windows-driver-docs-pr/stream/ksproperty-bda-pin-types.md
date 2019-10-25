@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_PIN\_型
-description: クライアントを使用して、KSPROPERTY\_BDA\_PIN\_暗証番号 (pin) の種類の一覧を取得する型。
+title: KSK プロパティ\_BDA\_PIN\_型
+description: クライアントは、KSK プロパティ\_BDA\_ピン留め\_の種類を使用して、pin の種類の一覧を取得します。
 ms.assetid: de11ab3c-a787-4831-aad4-e97f46432032
 keywords:
-- KSPROPERTY_BDA_PIN_TYPES ストリーミング メディア デバイス
+- KSPROPERTY_BDA_PIN_TYPES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bad1b911e3a2210cf964163b307fb766e94382a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2aee4de6cb7295202abc5b08ba34c0450a3b72e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368122"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838084"
 ---
-# <a name="kspropertybdapintypes"></a>KSPROPERTY\_BDA\_PIN\_型
+# <a name="ksproperty_bda_pin_types"></a>KSK プロパティ\_BDA\_PIN\_型
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_PIN\_暗証番号 (pin) の種類の一覧を取得する型。
+クライアントは、KSK プロパティ\_BDA\_ピン留め\_の種類を使用して、pin の種類の一覧を取得します。
 
 ## <span id="ddk_ksproperty_bda_pin_types_ks"></span><span id="DDK_KSPROPERTY_BDA_PIN_TYPES_KS"></span>
 
@@ -42,17 +42,17 @@ ms.locfileid: "67368122"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>設定</th>
-<th>対象</th>
+<th>セット</th>
+<th>的を絞る</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
-<td><p>フィルター</p></td>
+<td><p>はい</p></td>
+<td><p>いいえ</p></td>
+<td><p>filter</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>KSPIN_DESCRIPTOR_EXs の一覧</p></td>
 </tr>
@@ -61,12 +61,12 @@ ms.locfileid: "67368122"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-テンプレートのトポロジで各種のピン留めすることができます 1 回だけが、実際のトポロジで複数回が発生する可能性が。 このピンの種類の一覧が KSPIN の配列\_記述子\_EX 構造体。
+テンプレートトポロジでは、各ピンの種類は1回しか実行できませんが、実際のトポロジでは複数回発生する可能性があります。 このピンの種類の一覧は、KSPIN\_記述子\_EX 構造体の配列です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -76,8 +76,8 @@ ms.locfileid: "67368122"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,11 +85,11 @@ ms.locfileid: "67368122"
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyPinTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertypintypes)
+[**BdaPropertyPinTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertypintypes)
 
-[**KSPIN\_記述子\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
+[**KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

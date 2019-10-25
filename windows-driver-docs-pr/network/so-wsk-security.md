@@ -4,25 +4,25 @@ description: SO_WSK_SECURITY
 ms.assetid: 169680ba-6486-48fe-89d7-dcd4e5930605
 ms.date: 07/18/2017
 keywords:
-- SO_WSK_SECURITY ネットワーク ドライバーが Windows Vista 以降
+- SO_WSK_SECURITY ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d10265293dfc70fd021bed14305d854119af17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff1f423294f6c296c6b984b203640c860fdcb889
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374732"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841876"
 ---
-# <a name="sowsksecurity"></a>したがって\_WSK\_セキュリティ
+# <a name="so_wsk_security"></a>\_WSK\_セキュリティ
 
 
-SO\_WSK\_セキュリティ ソケット オプションにより、WSK アプリケーションをソケットにセキュリティ記述子を適用またはソケットからソケットのセキュリティ記述子のキャッシュされたコピーを取得します。 セキュリティ記述子は、ソケットがバインドされているローカル トランスポート アドレスの共有を制御します。
+\_WSK\_セキュリティソケットオプションを使用すると、WSK アプリケーションでソケットにセキュリティ記述子を適用したり、ソケットからソケットのセキュリティ記述子のキャッシュされたコピーを取得したりできます。 セキュリティ記述子は、ソケットがバインドされるローカルトランスポートアドレスの共有を制御します。
 
-このソケット オプションは、リッスンしているソケット、データグラム ソケットでは、接続指向のソケットにのみ適用されます。
+このソケットオプションは、リッスンしているソケット、データグラムソケット、および接続指向のソケットにのみ適用されます。
 
-WSK アプリケーションでは、ソケットにセキュリティ記述子を適用するこのソケット オプションを使用している場合、ソケットがローカル トランスポート アドレスにバインドする前にする必要があります。
+WSK アプリケーションがこのソケットオプションを使用してソケットにセキュリティ記述子を適用する場合は、ソケットがローカルトランスポートアドレスにバインドされる前に、この操作を行う必要があります。
 
-WSK アプリケーションの呼び出しにソケットをセキュリティ記述子を適用する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+セキュリティ記述子をソケットに適用するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -46,15 +46,15 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 </tr>
 <tr class="odd">
 <td><p><em>Level</em></p></td>
-<td><p>取得</p></td>
+<td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>sizeof(PSECURITY_DESCRIPTOR)</p></td>
+<td><p>sizeof (PSECURITY_DESCRIPTOR)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数は、呼び出すことによって取得されたセキュリティ記述子のキャッシュされたコピーへのポインターを含める必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client" data-raw-source="[&lt;strong&gt;WskControlClient&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)"> <strong>WskControlClient</strong> </a>関数と、 <a href="wsk-cache-sd.md" data-raw-source="[&lt;strong&gt;WSK_CACHE_SD&lt;/strong&gt;](wsk-cache-sd.md)"> <strong>WSK_CACHE_SD</strong> </a>コードを制御します。</p></td>
+<td><p>PSECURITY_DESCRIPTOR で型指定された変数へのポインター。 この変数には、 <a href="wsk-cache-sd.md" data-raw-source="[&lt;strong&gt;WSK_CACHE_SD&lt;/strong&gt;](wsk-cache-sd.md)"><strong>WSK_CACHE_SD</strong></a>制御コードで<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client" data-raw-source="[&lt;strong&gt;WskControlClient&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)"><strong>Wskcontrolclient</strong></a>関数を呼び出すことによって取得されたセキュリティ記述子のキャッシュされたコピーへのポインターが含まれている必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -71,17 +71,17 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 </tbody>
 </table>
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**ソケットにセキュリティ記述子を適用する関数。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出してソケットにセキュリティ記述子を適用するときに、IRP へのポインターを指定する必要があります。
 
-WSK アプリケーションでは、ソケットにセキュリティ記述子を適用するこのソケット オプションを使用している場合、新しいセキュリティ記述子には、ソケットに適用していた任意のセキュリティ記述子が置き換えられます。
+WSK アプリケーションがこのソケットオプションを使用してセキュリティ記述子をソケットに適用する場合、新しいセキュリティ記述子は、以前にソケットに適用されていたセキュリティ記述子を置き換えます。
 
-IRP が完了した後、WSK アプリケーションはまでセキュリティ記述子のキャッシュされたコピーを解放できませんする必要があります。
+WSK アプリケーションは、IRP が完了するまで、セキュリティ記述子のキャッシュされたコピーを解放しないでください。
 
-WSK アプリケーションは、また、ソケットがセキュリティ記述子のキャッシュされたコピーへのポインターを指定することによって最初に作成されたときにソケットにセキュリティ記述子を適用できます、 *SecurityDescriptor*パラメーター、を呼び出すときに[ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)または[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数。
+WSK アプリケーションは、最初に作成されたときに、セキュリティ記述子をソケットに適用することもできます。これを行うには、セキュリティ記述子が[**wsksocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) [**を呼び出すときに、SecurityDescriptor パラメーターにキャッシュされたコピーへのポインターを指定します。WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)関数。
 
-WSK アプリケーションでソケットにセキュリティ記述子が適用されない場合、WSK サブシステムは、ローカル トランスポート アドレスの共有を許可しない既定のセキュリティ記述子を使用します。
+WSK アプリケーションがセキュリティ記述子をソケットに適用しない場合、WSK サブシステムでは、ローカルトランスポートアドレスの共有を許可しない既定のセキュリティ記述子が使用されます。
 
-ソケットのセキュリティ記述子のキャッシュされたコピー ソケットからを取得する WSK アプリケーションが呼び出す、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+ソケットからソケットのセキュリティ記述子のキャッシュされたコピーを取得するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -91,7 +91,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -105,7 +105,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 </tr>
 <tr class="odd">
 <td><p><em>Level</em></p></td>
-<td><p>取得</p></td>
+<td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
@@ -117,11 +117,11 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
-<td><p>sizeof(PSECURITY_DESCRIPTOR)</p></td>
+<td><p>sizeof (PSECURITY_DESCRIPTOR)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数は、ソケットのセキュリティ記述子のキャッシュされたコピーへのポインターを受け取ります。</p></td>
+<td><p>PSECURITY_DESCRIPTOR で型指定された変数へのポインター。 この変数は、ソケットのセキュリティ記述子のキャッシュされたコピーへのポインターを受け取ります。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -130,13 +130,13 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 </tbody>
 </table>
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**ソケットからソケットのセキュリティ記述子のキャッシュされたコピーを取得します。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出してソケットからソケットのセキュリティ記述子のキャッシュされたコピーを取得するときに、IRP へのポインターを指定する必要があります。
 
-WSK アプリケーションを呼び出す必要があります、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数と、 [ **WSK\_リリース\_SD** ](wsk-release-sd.md)不要になったときに、セキュリティ記述子のキャッシュされたコピーを解放するコードを制御します。
+WSK アプリケーションは、 [**wsk\_RELEASE\_SD**](wsk-release-sd.md)制御コードを使用して[**Wskcontrolclient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)関数を呼び出して、不要になったセキュリティ記述子のキャッシュされたコピーを解放する必要があります。
 
-セキュリティの詳細については\_記述子構造体をセキュリティのリファレンス ページを参照してください\_Microsoft Windows SDK ドキュメントの記述子。
+セキュリティ\_記述子の構造の詳細については、Microsoft Windows SDK のドキュメントのセキュリティ\_記述子のリファレンスページを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -147,11 +147,11 @@ WSK アプリケーションを呼び出す必要があります、 [ **WskContr
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wsk.h (Wsk.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

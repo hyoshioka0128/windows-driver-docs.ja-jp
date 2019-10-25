@@ -1,22 +1,22 @@
 ---
-title: スリープ テスト (Device Fundamental)
-description: デバイス基礎スリープ テスト実行 I/O と、指定したデバイス、PnP 操作前に、と後に、またはシステムのスリープ中に状態遷移します。
+title: スリープテスト (デバイスの基本)
+description: デバイスの基本スリープテストでは、指定されたデバイス、前後、またはシステムスリープ状態遷移中に、i/o と PnP 操作を実行します。
 ms.assetid: 38B65078-B436-4C24-B973-032702DB9CBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c65c9e5df138877d264758003fc0adf2312744
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d7c25bfc511844ddc0837d3870a2356396241d2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374410"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839326"
 ---
-# <a name="sleep-tests-device-fundamentals"></a>スリープ テスト (Device Fundamental)
+# <a name="sleep-tests-device-fundamentals"></a>スリープテスト (デバイスの基本)
 
 
-デバイス基礎スリープ テスト実行 I/O と、指定したデバイス、PnP 操作前に、と後に、またはシステムのスリープ中に状態遷移します。 スリープのテストでは、テスト対象のデバイスがすべてのサポートされるスリープ状態を循環できるシステムにできることを確認します。 さらに、単純な I/O ストレス テストを使用してこれらの状態変更した後、デバイスがまだ機能があるようになります。
+デバイスの基本スリープテストでは、指定されたデバイス、前後、またはシステムスリープ状態遷移中に、i/o と PnP 操作を実行します。 スリープテストでは、テスト対象のデバイスが、サポートされているすべてのスリープ状態を使用してシステムを循環することを許可します。 また、単純な i/o ストレステストによってこれらの状態が変更された後も、デバイスが引き続き機能することを保証します。
 
-## <a name="sleep-tests"></a>スリープのテスト
+## <a name="sleep-tests"></a>スリープテスト
 
 
 <table>
@@ -32,57 +32,57 @@ ms.locfileid: "67374410"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Critical_Sleep_with_I_O_before_and_after"></span><span id="critical_sleep_with_i_o_before_and_after"></span><span id="CRITICAL_SLEEP_WITH_I_O_BEFORE_AND_AFTER"></span>前に、と後の I/O でクリティカルなスリープ</p></td>
-<td align="left"><p>このテストでは、システムにクリティカルなスリープ状態の遷移を実行し、各スリープ状態のサイクルの前後の前にデバイスでは、I/O を実行します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Critical_Sleep_With_IO_BeforeAndAfter.wsc</p>
-<p><strong>メソッドをテストします。</strong>Critical_Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Critical_Sleep_with_I_O_before_and_after"></span><span id="critical_sleep_with_i_o_before_and_after"></span><span id="CRITICAL_SLEEP_WITH_I_O_BEFORE_AND_AFTER"></span>I/o の前後の重大なスリープ</p></td>
+<td align="left"><p>このテストは、システムに対して重大なスリープ状態遷移を実行し、各スリープ状態サイクルの前後にデバイスで i/o を実行します。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Critical_Sleep_With_IO_BeforeAndAfter</p>
+<p><strong>テストメソッド:</strong>Critical_Reboot_Restart_With_IO_Before_And_After</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Critical_Sleep_with_I_O_during"></span><span id="critical_sleep_with_i_o_during"></span><span id="CRITICAL_SLEEP_WITH_I_O_DURING"></span>クリティカル スリープ中に i/o</p></td>
-<td align="left"><p>このテストでは、システムにクリティカルなスリープ状態の遷移を実行し、デバイスで I/O を実行します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Critical_Sleep_With_IO_During.wsc</p>
-<p><strong>メソッドをテストします。</strong>Critical_Sleep_With_IO_During</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Critical_Sleep_with_I_O_during"></span><span id="critical_sleep_with_i_o_during"></span><span id="CRITICAL_SLEEP_WITH_I_O_DURING"></span>重大なスリープ状態</p></td>
+<td align="left"><p>このテストは、システムでの重大なスリープ状態遷移を実行し、デバイスで i/o を実行します。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Critical_Sleep_With_IO_During</p>
+<p><strong>テストメソッド:</strong>Critical_Sleep_With_IO_During</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Sleep_and_PNP__disable_and_enable__with_I_O_Before_and_After"></span><span id="sleep_and_pnp__disable_and_enable__with_i_o_before_and_after"></span><span id="SLEEP_AND_PNP__DISABLE_AND_ENABLE__WITH_I_O_BEFORE_AND_AFTER"></span>スリープと PNP (無効および有効にする) と後の I/O の前に</p></td>
-<td align="left"><p>このテストでは、さまざまなスリープ状態を使用してシステムをサイクルし、スリープ状態、各サイクルの前後に I/O と基本的な PnP (無効/有効にする) デバイスでを実行します。</p>
-<p>詳細については、次を参照してください。<a href="#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test" data-raw-source="[About the Sleep and PNP disable and enable with IO Before and After test](#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test)">について Sleep and PNP と無効にし、テストの前後に IO の前に有効にする</a>します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Sleep_PNP_DisableEnable_With_IO_BeforeAndAfter.wsc</p>
-<p><strong>メソッドをテストします。</strong>Sleep_PNP_DisableEnable_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Sleep_and_PNP__disable_and_enable__with_I_O_Before_and_After"></span><span id="sleep_and_pnp__disable_and_enable__with_i_o_before_and_after"></span><span id="SLEEP_AND_PNP__DISABLE_AND_ENABLE__WITH_I_O_BEFORE_AND_AFTER"></span>スリープと PNP (無効化および有効化) と i/o の前後</p></td>
+<td align="left"><p>このテストでは、さまざまなスリープ状態を通じてシステムをサイクル化し、各スリープ状態サイクルの前後にデバイスで i/o と基本的な PnP (無効化/有効化) を実行します。</p>
+<p>詳細については、「<a href="#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test" data-raw-source="[About the Sleep and PNP disable and enable with IO Before and After test](#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test)">テストの前後のスリープと PNP の無効化と有効化</a>」を参照してください。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Sleep_PNP_DisableEnable_With_IO_BeforeAndAfter</p>
+<p><strong>テストメソッド:</strong>Sleep_PNP_DisableEnable_With_IO_Before_And_After</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Sleep_with_I_O_Before_and_After"></span><span id="sleep_with_i_o_before_and_after"></span><span id="SLEEP_WITH_I_O_BEFORE_AND_AFTER"></span>前に、と後の I/O でスリープします。</p></td>
-<td align="left"><p>このテストでは、サイクルのさまざまなスリープ状態により、システム、スリープ状態、各サイクルの前後には、デバイスの I/O を実行します。</p>
-<p>詳細については、次を参照してください。<a href="#about-the-sleep-with-io-before-and-after-test" data-raw-source="[About the Sleep with IO Before And After test](#about-the-sleep-with-io-before-and-after-test)">について、スリープ状態で IO の前と後にテスト</a>します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Sleep_With_IO_BeforeAndAfter.wsc</p>
-<p><strong>メソッドをテストします。</strong>Sleep_With_Io_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Sleep_with_I_O_Before_and_After"></span><span id="sleep_with_i_o_before_and_after"></span><span id="SLEEP_WITH_I_O_BEFORE_AND_AFTER"></span>前後の i/o でスリープする</p></td>
+<td align="left"><p>このテストでは、さまざまなスリープ状態を通じてシステムをサイクルし、各スリープ状態サイクルの前後にデバイスで i/o を実行します。</p>
+<p>詳細については、「<a href="#about-the-sleep-with-io-before-and-after-test" data-raw-source="[About the Sleep with IO Before And After test](#about-the-sleep-with-io-before-and-after-test)">テストの前後に IO を使用する</a>」を参照してください。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Sleep_With_IO_BeforeAndAfter</p>
+<p><strong>テストメソッド:</strong>Sleep_With_Io_Before_And_After</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Sleep_with_I_O_during"></span><span id="sleep_with_i_o_during"></span><span id="SLEEP_WITH_I_O_DURING"></span>スリープ中に i/o</p></td>
-<td align="left"><p>このテストでは、サイクルのさまざまなスリープ状態により、システム、デバイスの I/O を実行します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Sleep_With_IO_During.wsc</p>
-<p><strong>メソッドをテストします。</strong>Sleep_With_IO_During</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Sleep_with_I_O_during"></span><span id="sleep_with_i_o_during"></span><span id="SLEEP_WITH_I_O_DURING"></span>I/o を使用したスリープ状態</p></td>
+<td align="left"><p>このテストでは、さまざまなスリープ状態を使用してシステムをサイクルし、デバイスで i/o を実行します。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Sleep_With_IO_During</p>
+<p><strong>テストメソッド:</strong>Sleep_With_IO_During</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -93,49 +93,49 @@ ms.locfileid: "67374410"
 
  
 
-## <a name="about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test"></a>スリープと PNP について無効にし、テストの前後に IO の前に有効にします。
+## <a name="about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test"></a>スリープと PNP についてテストの前後に IO を無効化および有効化する
 
 
-このテストは、次を行います。
+このテストは次のことを行います。
 
-1.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-2.  テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-3.  最初のサポートされるスリープ状態にテスト システムを送信し、しばらくスリープ状態からシステムを再開します。
-4.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-5.  テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-6.  テスト デバイスの場合は、無効になっていますテストは無効にし、WDTF PnP アクション インターフェイスを使用して、テスト デバイスを参照してください[ **IWDTFPNPAction2::DisableDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice)と[  **。IWDTFPNPAction2::EnableDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)方法の詳細について。
-7.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-8.  テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-9.  各繰り返し手順 3 ~ 8 には、テスト システムのスリープ状態がサポートされています。
-10. 繰り返し何度も 1 ~ 9 をステップします。
+1.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+2.  WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+3.  テストシステムを最初にサポートされているスリープ状態に送信し、しばらくしてからシステムをスリープ状態から再開します。
+4.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+5.  WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+6.  テストデバイスが無効になっている場合、テストでは WDTF PnP action インターフェイスを使用してテストデバイスを無効にし、有効にします。詳細については、「 [**IWDTFPNPAction2::D isableDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice) 」と「 [**IWDTFPNPAction2:: enabledevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)メソッド」を参照してください。
+7.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+8.  WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+9.  テストシステムのサポートされている各スリープ状態について、手順3-8 を繰り返します。
+10. 手順1-9 を何度か繰り返します。
 
-## <a name="about-the-sleep-with-io-before-and-after-test"></a>IO の前に、と後にテストをスリープ状態について
+## <a name="about-the-sleep-with-io-before-and-after-test"></a>テストの前後の IO に関するスリープについて
 
 
-このテストは、次を行います。
+このテストは次のことを行います。
 
-1.  デバイスの問題のコードをレポート作成システム上のデバイスがないことを確認します。
-2.  WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-3.  最初のサポートされるスリープ状態にテスト システムを送信し、しばらくスリープ状態からシステムを再開します。
-4.  デバイスの問題のコードをレポート作成システム上のデバイスがないことを確認します。
-5.  WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-6.  テスト システムの場合は、各サポートされるスリープ状態には、手順 3. ~ 5. を繰り返します。
-7.  数回の手順 1. ~ 6. を繰り返します。
+1.  システムレポートデバイスの問題コードにデバイスがないことを確認します。
+2.  WDTF Simple i/o プラグインを使用して、システム上のすべてのデバイスで i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+3.  テストシステムを最初にサポートされているスリープ状態に送信し、しばらくしてからシステムをスリープ状態から再開します。
+4.  システムレポートデバイスの問題コードにデバイスがないことを確認します。
+5.  WDTF Simple i/o プラグインを使用して、システム上のすべてのデバイスで i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+6.  テストシステムのサポートされている各スリープ状態について、手順 3-5 を繰り返します。
+7.  手順 1-6 を何度か繰り返します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
+[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
+[デバイスの基本テストを選択して構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[Device Fundamental のテスト](device-fundamentals-tests.md)
+[デバイスの基本テスト](device-fundamentals-tests.md)
 
-[Device Fundamental テストのパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
+[デバイスの基本テストパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
 
-[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
+[指定された WDTF 単純な i/o プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
 
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
+[コマンドプロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

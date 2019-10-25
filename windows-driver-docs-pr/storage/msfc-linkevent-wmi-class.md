@@ -4,22 +4,22 @@ description: MSFC\_LinkEvent WMI クラス
 ms.assetid: 9507fb1a-ce2a-4ce9-8272-77c8c9d0a92c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1fd1c75481be7d8426d832d62ca1cd830dd5f19f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15e9ed5bc6539c3d98f17908007def2690e90a5f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845533"
 ---
-# <a name="msfclinkevent-wmi-class"></a>MSFC\_LinkEvent WMI クラス
+# <a name="msfc_linkevent-wmi-class"></a>MSFC\_LinkEvent WMI クラス
 
 
 ## <span id="ddk_msfc_linkevent_wmi_class_kr"></span><span id="DDK_MSFC_LINKEVENT_WMI_CLASS_KR"></span>
 
 
-WMI プロバイダーでは、MSFC\_LinkEvent WMI クラスは、リンクのイベントを報告します。
+WMI プロバイダーは、MSFC\_LinkEvent WMI クラスを使用してリンクイベントを報告します。
 
-MSFC\_LinkEvent クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_LinkEvent クラスは、次のように*Hbaapi .mof*で定義されます。
 
 ```cpp
 class MSFC_LinkEvent : WMIEvent {
@@ -36,9 +36,9 @@ class MSFC_LinkEvent : WMIEvent {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_LinkEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_linkevent)
+[**MSFC\_LinkEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_linkevent)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

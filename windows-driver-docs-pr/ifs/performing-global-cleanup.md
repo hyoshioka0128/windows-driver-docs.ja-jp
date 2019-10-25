@@ -1,34 +1,34 @@
 ---
-title: グローバル クリーンアップの実行
-description: グローバル クリーンアップの実行
+title: グローバルクリーンアップを実行しています
+description: グローバルクリーンアップを実行しています
 ms.assetid: 18e0fca0-16ec-4ca9-8b71-47f58f41c46d
 keywords:
-- グローバル クリーンアップ WDK ファイル システム ミニフィルター
-- クリーンアップ WDK ファイル システム ミニフィルター グローバル
+- グローバルクリーンアップ WDK ファイルシステムミニフィルター
+- グローバル WDK ファイルシステムミニフィルターのクリーンアップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a45d0ddf5b51cf153ca8706d7fd02c2887f1c2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 018a6c77b544c540b5dda7ee437dc9d503164ef2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385159"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841033"
 ---
-# <a name="performing-global-cleanup"></a>グローバル クリーンアップの実行
+# <a name="performing-global-cleanup"></a>グローバルクリーンアップを実行しています
 
 
 ## <span id="ddk_performing_global_cleanup_if"></span><span id="DDK_PERFORMING_GLOBAL_CLEANUP_IF"></span>
 
 
-ミニフィルター ドライバーの[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンが必要なグローバル クリーンアップを実行する必要があります。 ミニフィルター ドライバーが実行する可能性がグローバルのクリーンアップ タスクの例を以下に示します。
+ミニフィルタードライバーの[**FilterUnloadCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンでは、必要なグローバルクリーンアップを実行する必要があります。 次の一覧に、ミニフィルタードライバーによって実行される可能性のあるグローバルクリーンアップタスクの例を示します。
 
--   呼び出す[ **ExDeleteResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)以前の呼び出しによって初期化されたグローバル リソース変数を削除する[ **ExInitializeResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite).
+-   [**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)を呼び出して、以前の[**Ex Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)の呼び出しで初期化されたグローバルリソース変数を削除します。
 
--   呼び出す[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)または[ **ExFreePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreepoolwithtag) などのルーチンへの前回の呼び出しで割り当てられたグローバルメモリを解放するには[**Exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。
+-   [**Exfreeatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)などのルーチンの前の呼び出しで割り当てられたグローバルメモリを解放するには、 [**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)または[**exfreepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreepoolwithtag)を呼び出します。
 
--   呼び出す[ **ExDeleteNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)または[ **ExDeletePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)で割り当てられたルック アサイド リストを削除する、以前の呼び出し[ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)または[ **ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)、それぞれします。
+-   [**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist)または[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist)を呼び出して、 [**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)または[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist)の前回の呼び出しで割り当てられたルックアサイドリストを削除します。4.3.
 
--   呼び出す[ **PsRemoveCreateThreadNotifyRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psremovecreatethreadnotifyroutine)または[ **PsRemoveLoadImageNotifyRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psremoveloadimagenotifyroutine)グローバル コールバック ルーチンの登録を解除するには以前の呼び出しによって登録されたを[ **PsSetCreateThreadNotifyRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreatethreadnotifyroutine)または[ **PsSetLoadImageNotifyRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetloadimagenotifyroutine)、それぞれします。
+-   [**PsRemoveCreateThreadNotifyRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psremovecreatethreadnotifyroutine)または[**PsRemoveLoadImageNotifyRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psremoveloadimagenotifyroutine)を呼び出して、 [**Pssetcreatethreadnotifyroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreatethreadnotifyroutine)への以前の呼び出しで登録されたグローバルコールバックルーチンの登録を解除します。または[ **、PsSetLoadImageNotifyRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetloadimagenotifyroutine)。
 
  
 

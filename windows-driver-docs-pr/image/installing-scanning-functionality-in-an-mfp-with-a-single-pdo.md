@@ -1,41 +1,41 @@
 ---
-title: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
-description: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
+title: 1つの PDO を使用して、MFP にスキャン機能をインストールする
+description: 1つの PDO を使用して、MFP にスキャン機能をインストールする
 ms.assetid: 002ff319-42f9-4034-9bdd-c1e771ed2ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e67482d63294d2822d114e011d70b343b2c33678
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a359e0cdb4beb68519268eca1b17f7074af475eb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378920"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840814"
 ---
-# <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
+# <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>1つの PDO を使用して、MFP にスキャン機能をインストールする
 
 
 
 
 
-単一の物理デバイス オブジェクト (PDO) のみを持つ多機能プリンターでスキャン機能をインストールするには、特別な手順が必要です。 デバイスは、プリンター自体を識別する場合、プリンターの INF ファイルはスキャン機能をインストールするには、WIA 共同インストーラーを呼び出すことができます。
+1つの物理デバイスオブジェクト (PDO) のみを備えた多機能プリンターにスキャン機能をインストールするには、特別な手順が必要です。 デバイスがプリンターとして識別する場合、プリンターの INF ファイルは、スキャン機能をインストールするために、WIA 共同インストーラーを呼び出すことができます。
 
-マイクロソフトでは、多機能プリンターの各論理関数を可能であれば、独自の PDO 設定ならないことをお勧めします。 デバイスの複数の関数に関連付ける 1 つの PDO は避ける必要があります。
+Microsoft では、可能な限り、多機能プリンターの各論理機能に独自の PDO を用意することをお勧めします。 1つの PDO にデバイスの複数の機能を関連付けることは避けてください。
 
-デバイスの共同インストーラーとして WIA 共同インストーラーを登録すると、セットアップは常にプリンター クラスのインストーラーの前後に、インストールを処理する WIA 共同インストーラーを呼び出します。 WIA 共同インストーラーは、プリンターの PDO をイメージ クラス デバイス インターフェイスを作成し、デバイス インターフェイスのレジストリ キーに必要なすべての情報を格納します。 このキーの現在の場所をレジストリには。
+WIA 共同インストーラーをデバイスの共同インストーラーとして登録すると、セットアップでは常に、プリンタークラスのインストーラーの前後のインストールを処理するために、WIA 共同インストーラーが呼び出されます。 WIA 共同インストーラーは、プリンターの PDO にイメージクラスのデバイスインターフェイスを作成し、必要なすべての情報をデバイスインターフェイスのレジストリキーに格納します。 このキーのレジストリ内の現在の場所は次のとおりです。
 
-**HKLM\\システム\\CurrentControlSet\\コントロール\\DeviceClasses\\{6bdd1fc6-810f-11d0-bec7-08002be2092f}\\&lt;*デバイス シンボリック リンク*&gt;**
+**HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceClasses\\{}\\&lt;*デバイスのシンボリックリンク*&gt;**
 
-このキーは、この場所の将来のオペレーティング システムのバージョンのままには保証されません。 このキーを開くには、呼び出す[ **SetupDiOpenDeviceInterfaceRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)します。
+このキーは、今後のオペレーティングシステムのバージョンでは、この場所に保持されることは保証されていません。 このキーを開くには、 [**SetupDiOpenDeviceInterfaceRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)を呼び出します。
 
-WIA サービスでは、すべてのイメージ クラス Pdo とデバイスのインターフェイスを列挙します。 そのため、WIA デバイスとして新しく作成したデバイスのインターフェイスが列挙されます。
+WIA サービスは、すべてのイメージクラスの PDOs およびデバイスインターフェイスを列挙します。 そのため、新しく作成されたデバイスインターフェイスは、WIA デバイスとして列挙されます。
 
-INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能をインストールする例を使用して Windows DDK が同梱されています。 このファイルの名前は*mfpoemprn.inf*にある、  *\\src\\印刷\\inf*ディレクトリ。
+Windows DDK には、1つの PDO のみを備えた多機能プリンターにスキャン機能をインストールするサンプル INF が付属しています。 このファイルの名前は、 *\\src\\print\\inf*ディレクトリに*配置され*ており、このファイルの名前はです。
 
-**MFP スキャン機能をインストールするには**
+**MFP にスキャン機能をインストールするには**
 
-1.  1. 指定*sti\_ci.dll*のエントリの値として、 **CoInstallerEntry**エントリ。
+1.  1. **Coインストーラエントリ**エントリのエントリ値として、構成*項目の\_* を指定します。
 
-    デバイスの INF 必要があります、 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)デバイスのインストールの共同インストーラーを登録できるようにします。 このセクションは次のようになります。
+    デバイスのインストールのために共同インストーラーを登録するには、デバイスの INF に[**Inf Ddinstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)が必要です。 このセクションは、次のようになります。
 
     ```INF
     [OEMMFP.GPD.CoInstallers]
@@ -45,7 +45,7 @@ INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能を
     HKR,,CoInstallers32,0x00010000,"sti_ci.dll, CoInstallerEntry"
     ```
 
-2.  2.、 **WIASection**内のエントリ、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section) WIA 関連の設定すべてを含むセクションを参照します。 WIA 関連の設定を格納しているセクションは、同じ INF ファイルに表示する必要があります。
+2.  2. [ [**INF DDInstall] セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)に、WIA 関連のすべての設定を含むセクションを参照する**WIASection**エントリを含めます。 WIA 関連の設定を含むセクションは、同じ INF ファイルに記述する必要があります。
 
     ```INF
     [OEMMFP.GPD]
@@ -63,16 +63,16 @@ INF PDO は 1 つだけ備えた多機能プリンターでスキャン機能を
     USDClass="{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}"
     ```
 
-    含めることによって、 **WIASection**エントリ、イメージ クラスのインストーラーは、デバイスの devnode は作成されませんが、代わりに、追加のデバイスのインターフェイスを作成します。 したがって、STI-を格納する前に説明したデバイス インターフェイスのレジストリ キーを使用/WIA に関連する情報。
+    イメージクラスインストーラーでは、 **WIASection**エントリをインクルードすることによって、デバイスの devnode は作成されません。代わりに、追加のデバイスインターフェイスが作成されます。 それに伴い、前述のデバイスインターフェイスレジストリキーを使用して、関連情報を格納します。
 
-3.  3. ことを確認して、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)必要なすべてのファイルをコピーします。
+3.  3. [ [**INF DDInstall] セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)に必要なすべてのファイルがコピーされていることを確認します。
 
-    コピーするファイルの一覧を表示する代わりに、 **WIASection**、それらは表示されませんデバイス マネージャーが、します。
+    または、 **WIASection**にコピーするファイルを一覧表示することもできますが、デバイスマネージャーには表示されません。
 
-**注**   、 **Include**と**必要がある**エントリでは使用できません、 **WIASection**セクション。
-カーネル モードのすべての部分は、元によるインストールが[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。
+**WIASection**セクションでは、 **Include**および**必要**なエントリを使用できませ**ん  。**
+すべてのカーネルモード部分は、元の[**INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)によってインストールされている必要があります。
 
-デバイスは、ホット-プラグ可能な独自のカーネル モード コンポーネントが必要な場合、は、作成して、イメージ クラスのデバイス インターフェイス (その他のクラス デバイス インターフェイスに加えて、印刷クラスのデバイスのインターフェイスなど) を有効にするにする必要があります。 カーネル モード コンポーネントへの呼び出しを使用して、デバイスの devnode では、イメージ クラス デバイス インターフェイスを有効に、 [ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)関数。 イメージ クラスのデバイスのインターフェイスが有効にすると、デバイスが接続されていることを WIA サービスに通知するプラグ アンド プレイ イベントが発生します。
+デバイスがホットプラグ可能で、独自のカーネルモードコンポーネントが必要な場合は、イメージクラスのデバイスインターフェイスを作成して有効にする必要があります (出力クラスのデバイスインターフェイスなど、他のクラスのデバイスインターフェイスに加えて)。 カーネルモードコンポーネントを使用すると、 [**Iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)関数を呼び出すことによって、デバイスの devnode 上でイメージクラスのデバイスインターフェイスを有効にすることができます。 イメージクラスのデバイスインターフェイスを有効にすると、プラグアンドプレイイベントが発生し、デバイスが接続されていることを WIA サービスに通知します。
 
  
 

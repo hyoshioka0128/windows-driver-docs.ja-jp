@@ -1,31 +1,31 @@
 ---
 title: OID_GEN_MEDIA_SUPPORTED
-description: クエリとしては、OID_GEN_MEDIA_SUPPORTED OID は、NIC をサポートするメディアの種類が、必ずしも、NIC が現在使用しているメディアの種類を指定します。
+description: クエリとして、OID_GEN_MEDIA_SUPPORTED OID は、nic がサポートできるメディアの種類を指定しますが、NIC が現在使用しているメディアの種類は必ずしも使用しません。
 ms.assetid: e7b8d2b1-4e84-416f-aeb3-75591ed44b22
 ms.date: 08/08/2017
-keywords: -OID_GEN_MEDIA_SUPPORTED ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_MEDIA_SUPPORTED ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: bd8fed2a238ed0ab0dea1e545f50df1283801656
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a5f3f54eed66f8762b8e051a5d558f6486e2092
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369026"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843132"
 ---
-# <a name="oid_gen_media_supported"></a>OID\_GEN\_メディア\_サポートされています。
+# <a name="oid_gen_media_supported"></a>OID\_GEN\_メディア\_サポートされています
 
 
-クエリ、OID として\_GEN\_メディア\_OID のサポートは、NIC をサポートするメディアの種類が、必ずしも、NIC が現在使用しているメディアの種類を指定します。
+クエリとして、OID\_GEN\_メディア\_サポートされている OID は、NIC がサポートできるメディアの種類を指定しますが、NIC が現在使用しているメディアの種類は必ずしも使用できません。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
 使われていません。
 
-NDIS 6.0 とそれ以降のドライバーのメディアの種類が追加されました。
+次のメディアの種類が NDIS 6.0 以降のドライバー用に追加されました。
 
 -   **NdisMediumTunnel**
 
@@ -33,42 +33,42 @@ NDIS 6.0 とそれ以降のドライバーのメディアの種類が追加さ�
 
 -   **NdisMediumNative802\_11**
 
-NDIS 6.20 が動作し、以降のドライバーのメディアの種類が追加されました。
+次のメディアの種類が NDIS 6.20 以降のドライバー用に追加されました。
 
 -   **NdisMediumIP**
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。 参照してください[OID\_GEN\_メディア\_(NDIS 5.1) サポートされている](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))します。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず. [サポートされている OID\_GEN\_メディア\_サポート (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))を参照してください。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。 参照してください[OID\_GEN\_メディア\_(NDIS 5.1) サポートされている](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))します。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず. [サポートされている OID\_GEN\_メディア\_サポート (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-NDIS 6.0 とそれ以降のミニポート ドライバーでは、この OID 要求は表示されません。 NDIS は、ミニポート ドライバーが初期化中に指定するキャッシュされた値を持つこの OID を処理します。
+NDIS 6.0 以降のミニポートドライバーは、この OID 要求を受信しません。 NDIS は、この OID を、ミニポートドライバーが初期化時に提供するキャッシュされた値で処理します。
 
-これらのメディア タイプは、次のシステム定義の値の適切なサブセットとして表示されます。
+これらのメディアの種類は、システム定義の次の値の適切なサブセットとして一覧表示されます。
 
 <a href="" id="ndismedium802-3"></a>**NdisMedium802\_3**  
 イーサネット (802.3)。
 
-**注**  NDIS 5 *。x* 802.11 インターフェイスに準拠しているミニポート ドライバーは、このメディアの種類を使用する必要があります。 802.11 インターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))します。
+  NDIS 5 に**注意**してください。802.11 インターフェイスに準拠している*x*ミニポートドライバーは、このメディアの種類を使用する必要があります。 802.11 インターフェイスの詳細については、「 [802.11 ワイヤレス LAN ミニポートドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))」を参照してください。
 
  
 
 <a href="" id="ndismedium802-5"></a>**NdisMedium802\_5**  
-トークン リング (802.5)。 NDIS 6.0 およびそれ以降のドライバーは、このメディアの種類はサポートされていません。
+トークンリング (802.5)。 このメディアの種類は、NDIS 6.0 以降のドライバーではサポートされていません。
 
-**注**  以降 Windows 8 では、オペレーティング システムがサポートしていませんこのメディアの種類すべてのミニポート ドライバー。
+**注**  Windows 8 以降では、オペレーティングシステムはミニポートドライバーにこのメディアの種類をサポートしていません。
 
  
 
 <a href="" id="ndismediumfddi"></a>**NdisMediumFddi**  
-FDDI します。 Windows Vista および Windows の以降のバージョンでは、このメディアの種類はサポートされていません。
+FDDI. このメディアの種類は、Windows Vista 以降のバージョンの Windows ではサポートされていません。
 
 <a href="" id="ndismediumwan"></a>**NdisMediumWan**  
 WAN
@@ -80,55 +80,55 @@ LocalTalk
 DEC/Intel/Xerox (DIX) イーサネット
 
 <a href="" id="ndismediumarcnetraw"></a>**NdisMediumArcnetRaw**  
-ARCNET (raw)。 Windows Vista および Windows の以降のバージョンでは、このメディアの種類はサポートされていません。
+ARCNET (raw)。 このメディアの種類は、Windows Vista 以降のバージョンの Windows ではサポートされていません。
 
 <a href="" id="ndismediumarcnet878-2"></a>**NdisMediumArcnet878\_2**  
-ARCNET (878.2)。 Windows Vista および Windows の以降のバージョンでは、このメディアの種類はサポートされていません。
+ARCNET (878.2)。 このメディアの種類は、Windows Vista 以降のバージョンの Windows ではサポートされていません。
 
 <a href="" id="ndismediumatm"></a>**NdisMediumAtm**  
-ATM します。 NDIS 6.0 およびそれ以降のドライバーは、このメディアの種類はサポートされていません。
+ATM. このメディアの種類は、NDIS 6.0 以降のドライバーではサポートされていません。
 
 <a href="" id="ndismediumnative802-11"></a>**NdisMediumNative802\_11**  
-ネイティブの 802.11 します。 このメディアの種類は、ネイティブの 802.11 インターフェイスに準拠しているミニポート ドライバーによって使用されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))します。
+ネイティブ802.11。 このメディアの種類は、ネイティブ802.11 インターフェイスに準拠するミニポートドライバーによって使用されます。 このインターフェイスの詳細については、「[ネイティブ802.11 ワイヤレス LAN ミニポートドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))」を参照してください。
 
 <a href="" id="ndismediumwirelesswan"></a>**NdisMediumWirelessWan**  
-さまざまな種類の **NdisWireless * * * Xxx*メディア。 このメディアの種類は、Windows Vista および Windows の以降のバージョン以降の使用をご利用いただけません。
+さまざまな種類の **NdisWireless * * * Xxx*メディア。 このメディアの種類は、Windows Vista 以降のバージョンの Windows 以降では使用できません。
 
 <a href="" id="ndismediumirda"></a>**NdisMediumIrda**  
 赤外線 (IrDA)。
 
 <a href="" id="ndismediumcowan"></a>**NdisMediumCoWan**  
-WAN の接続指向です。
+接続指向 WAN。
 
 <a href="" id="ndismedium1394"></a>**NdisMedium1394**  
-IEEE 1394 (firewire) バスです。 Windows Vista および Windows の以降のバージョンでは、このメディアの種類はサポートされていません。
+IEEE 1394 (firewire) バス。 このメディアの種類は、Windows Vista 以降のバージョンの Windows ではサポートされていません。
 
 <a href="" id="ndismediumbpc"></a>**NdisMediumBpc**  
-PC の network をブロードキャストします。
+PC ネットワークをブロードキャストします。
 
 <a href="" id="ndismediuminfiniband"></a>**NdisMediumInfiniBand**  
 InfiniBand ネットワーク。
 
 <a href="" id="ndismediumtunnel"></a>**NdisMediumTunnel**  
-トンネル ネットワーク。
+トンネルネットワーク。
 
 <a href="" id="ndismediumloopback"></a>**NdisMediumLoopback**  
-NDIS ループバック ネットワーク。
+NDIS ループバックネットワーク。
 
 <a href="" id="ndismediumip"></a>**NdisMediumIP**  
-Raw IP パケットを送受信することのできるジェネリック中です。
+未加工の IP パケットを送受信できる汎用メディア。
 
-NDIS 5. *x*オペレーティング システムおよびイーサネットのパケットとして NDIS ワイヤレス LAN (WLAN) またはワイヤレスの WAN (WWAN) パケットをサポートするミニポート ドライバーが表示されます。 これらの NDIS ドライバーは、イーサネット ネットワークとして、WWAN または WLAN のネットワークのサポートを提供する必要があります。 このようなドライバーとその中の宣言**NdisMedium802\_3**およびイーサネットを上位レベルの NDIS ドライバーをエミュレートします。 このようなドライバーを宣言する必要がありますも[OID\_GEN\_物理\_MEDIUM](oid-gen-physical-medium.md)適切な物理メディアをサポートする.
+NDIS 5。 ワイヤレス LAN (WLAN) またはワイヤレス WAN (WWAN) パケットをサポートする*x*ミニポートドライバーは、オペレーティングシステムと NDIS にイーサネットパケットとして表示されます。 これらの NDIS ドライバーは、イーサネットネットワークとしての WWAN または WLAN ネットワークのサポートを提供する必要があります。 このようなドライバーは、メディアを**NdisMedium802\_3**として宣言し、イーサネットを上位レベルの NDIS ドライバーにエミュレートします。 また、このようなドライバーでは、必要な物理メディアとして、[物理\_メディアを OID\_GEN\_](oid-gen-physical-medium.md)宣言する必要があります。「」をご利用ください。
 
-詳細については、NDIS 5.X WLAN ミニポート ドライバーを参照してください[802.11 ワイヤレス LAN のミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))します。
+NDIS 5. X WLAN ミニポートドライバーの詳細については、「 [802.11 ワイヤレス LAN ミニポートドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))」を参照してください。
 
-NDIS 6.0 とそれ以降のミニポート ドライバー WLAN メディアをサポートするオペレーティング システムおよび NDIS IEEE 802.11 パケットとして表示されるパケットを転送します。 これらの NDIS ドライバーは、ネイティブの 802.11 ミニポート ドライバーとして WLAN のネットワークのサポートを提供する必要があります。 このようなドライバーとその中の宣言**NdisMediumNative802\_11**します。
+NDIS 6.0 以降のミニポートドライバー。これは、オペレーティングシステムに表示され、NDIS に IEEE 802.11 パケットとして表示される WLAN メディア転送パケットをサポートします。 これらの NDIS ドライバーは、ネイティブ802.11 ミニポートドライバーとしての WLAN ネットワークのサポートを提供する必要があります。 このようなドライバーは、メディアを**NdisMediumNative802\_11**として宣言します。
 
-ネイティブの 802.11 ミニポート ドライバーの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))します。
+ネイティブ802.11 ミニポートドライバーの詳細については、「[ネイティブ802.11 ワイヤレス LAN ミニポートドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))」を参照してください。
 
-基になるミニポート ドライバーに返された場合**NULL**このクエリで、実験用のメディアの種類を使用されるかどうか、ドライバーを示す必要がありますまたは受信操作を使用して、 [ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数。 このような基になるミニポート ドライバーにバインドされている任意のプロトコルは、このようなすべての問題を受け取り、プロトコル ドライバーのフィルターを適用できませんは、受信操作で[OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)します。
+基になるミニポートドライバーがこのクエリに対して**NULL**を返した場合、または実験的なメディアの種類が使用されている場合、ドライバーは[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数を使用して受信操作を示す必要があります。 このような基になるミニポートドライバーにバインドされているすべてのプロトコルは、このようなすべての兆候を受け取ります。つまり、プロトコルドライバーでは、 [OID\_GEN\_現在の\_パケット\_フィルター](oid-gen-current-packet-filter.md)を使用して受信操作をフィルター処理することはできません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -139,7 +139,7 @@ NDIS 6.0 とそれ以降のミニポート ドライバー WLAN メディアを�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -147,11 +147,11 @@ NDIS 6.0 とそれ以降のミニポート ドライバー WLAN メディアを�
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)
+[OID\_GEN\_現在の\_パケット\_フィルター](oid-gen-current-packet-filter.md)
 
-[OID\_GEN\_物理\_中](oid-gen-physical-medium.md)
+[OID\_GEN\_物理\_メディア](oid-gen-physical-medium.md)
 
  
 

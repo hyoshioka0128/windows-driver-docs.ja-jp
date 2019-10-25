@@ -1,6 +1,6 @@
 ---
 title: NFC ドライバーの読み込み順序
-description: ACPI を表す NFCC、PnP デバイス ノードを作成する場合、に対して NFC クライアント ドライバーの .inf と一致して、そのデバイス ノードのインストールされます。
+description: ACPI が NFCC を表すデバイスノードを作成すると、PnP は NFC クライアントドライバーで指定された .inf と照合され、そのデバイスノード用にインストールされます。
 ms.assetid: 8094B525-A4A1-42D2-8D1F-4B32D77418E3
 keywords:
 - NFC
@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0f1963fd4e4c58906bbdccd6fa2fa10b898c4df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6912d3f22c9a2fb30913f681d318b7b68655ef34
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370542"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843421"
 ---
 # <a name="nfc-driver-load-order"></a>NFC ドライバーの読み込み順序
 
 
-ACPI を表す NFCC、PnP デバイス ノードを作成する場合、に対して NFC クライアント ドライバーの .inf と一致して、そのデバイス ノードのインストールされます。 NFC のクライアント ドライバーは、その AddDevice ルーチンの中に初期化クラスの拡張により、Microsoft 提供の NFC クラス拡張 (NfcCx.dll) を読み込み、それ自体をできるようにセットアップ NFC クラスの最上部の開梱を任意の I/O キューを実装する必要があります。拡張機能ドライバー。 次の図は、ドライバーの読み込みメカニズムを示します。
+ACPI が NFCC を表すデバイスノードを作成すると、PnP は NFC クライアントドライバーで指定された .inf と照合され、そのデバイスノード用にインストールされます。 NFC クライアントドライバーは、AddDevice ルーチンの実行中に、クラス拡張を初期化します。これにより、Microsoft が提供する NFC クラス拡張 (NfcCx .dll) を読み込み、それ自体が NFC クラスの最上位部分に実装する必要がある i/o キューの処理をセットアップすることができます。拡張機能ドライバー。 次の図は、ドライバーの読み込みメカニズムを示しています。
 
 ![ドライバーの読み込み順序](images/driverloadsequence1.png)
 
@@ -28,6 +28,6 @@ ACPI を表す NFCC、PnP デバイス ノードを作成する場合、に対�
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

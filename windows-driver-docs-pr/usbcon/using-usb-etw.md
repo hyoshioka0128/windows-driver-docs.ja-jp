@@ -1,40 +1,40 @@
 ---
-Description: このトピックでは、情報を提供します。 イベントのこれらの Guid を追加する方法については、アクティビティ ID の Guid トレース プロバイダー、と Netmon で表示します。
-title: USB ETW トレースでのアクティビティ ID GUID の使用
+Description: このトピックでは、アクティビティ ID Guid に関する情報を提供し、これらの Guid をイベントトレースプロバイダーに追加する方法、およびそれらを Netmon で表示する方法について説明します。
+title: USB ETW トレースでのアクティビティ ID Guid の使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d784286dc1c314af739b7c7faefb535c87d8a0e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a2ea499f338b893c1ccb8ca2057663dd874c8ade
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356557"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838776"
 ---
-# <a name="using-activity-id-guids-in-usb-etw-traces"></a>USB ETW トレースでのアクティビティ ID GUID の使用
+# <a name="using-activity-id-guids-in-usb-etw-traces"></a>USB ETW トレースでのアクティビティ ID Guid の使用
 
 
-このトピックでは、情報を提供します。 イベントのこれらの Guid を追加する方法については、アクティビティ ID の Guid トレース プロバイダー、と Netmon で表示します。
+このトピックでは、アクティビティ ID Guid に関する情報を提供し、これらの Guid をイベントトレースプロバイダーに追加する方法、およびそれらを Netmon で表示する方法について説明します。
 
-内のドライバー、 [USB ドライバー スタック](usb-3-0-driver-stack-architecture.md)(2.0 と 3.0 の両方) は ETW イベント トレース プロバイダー。 USB ドライバー スタックからのイベント トレースをキャプチャ中に Windows 7 では、他のドライバーやアプリケーションなどの他のプロバイダーからのトレースをキャプチャできます。 (プロバイダーのイベント トレース Netmon パーサーを作成したと仮定)、結合されたログを確認できます。
+[USB ドライバースタック](usb-3-0-driver-stack-architecture.md)内のドライバー (2.0 と3.0 の両方) は、ETW イベントトレースプロバイダーです。 Windows 7 では、USB ドライバースタックからイベントトレースをキャプチャするときに、他のドライバーやアプリケーションなどの他のプロバイダーからトレースをキャプチャできます。 その後、結合されたログを読み取ることができます (プロバイダーのイベントトレース用の Netmon パーサーを作成済みであることを前提としています)。
 
-Windows 8 以降、関連付けることができますイベント プロバイダー (アプリケーション、クライアント ドライバー、および USB ドライバー スタック) から全体を使用して*アクティビティ ID Guid*します。 イベントが同じアクティビティ ID の GUID がある場合、Netmon で複数のプロバイダーからのイベントを関連付けできます。 これらの Guid に基づき、ネットワーク モニターに表示できます上位のレイヤーでインストルメント化されたアクティビティの結果として生じた USB イベントのセット。
+Windows 8 以降では、*アクティビティ ID guid*を使用して、プロバイダー間で (アプリケーション、クライアントドライバー、および USB ドライバースタックから) イベントを関連付けることができます。 複数のプロバイダーからのイベントは、イベントが同じアクティビティ ID GUID を持つ場合に、Netmon に関連付けることができます。 これらの Guid に基づいて、Netmon は、上位層でインストルメント化されたアクティビティによって発生した一連の USB イベントを表示できます。
 
-Netmon で他のプロバイダーから結合されたイベントのトレースを表示中に、アプリケーションからのイベントを右クリックし、**メッセージ交換の検索 -&gt; NetEvent**関連するドライバーのイベントを表示します。
+Netmon の他のプロバイダーからのイベントトレースを結合して表示しながら、アプリケーションからイベントを右クリックし、[メッセージ**交換の検索-&gt; NetEvent** ] を選択して、関連付けられているドライバーイベントを確認します。
 
-このイメージは、アプリケーション、UMDF ドライバー、および Ucx01000.sys (USB ドライバー スタック内のドライバーのいずれか) から関連するイベントを示します。これらのイベントでは、同じアクティビティ ID の GUID があります。
+このイメージは、アプリケーション、UMDF ドライバー、および Ucx01000 (USB ドライバースタック内のドライバーの1つ) からの関連イベントを示しています。これらのイベントのアクティビティ ID GUID は同じです。
 
-![microsoft ネットワーク モニター](images/netmon-activity.png)
+![microsoft ネットワークモニター](images/netmon-activity.png)
 
--   [アプリケーションでアクティビティ ID の GUID を追加する方法](#how-to-add-an-activity-id-guid-in-an-application)
--   [UMDF ドライバーでアクティビティ ID の GUID を設定する方法](#how-to-set-the-activity-id-guid-in-a-umdf-driver)
--   [カーネル モード ドライバーでアクティビティ ID の GUID を追加する方法](#how-to-add-activity-id-guid-in-a-kernel-mode-driver)
+-   [アプリケーションにアクティビティ ID GUID を追加する方法](#how-to-add-an-activity-id-guid-in-an-application)
+-   [UMDF ドライバーでアクティビティ ID GUID を設定する方法](#how-to-set-the-activity-id-guid-in-a-umdf-driver)
+-   [カーネルモードドライバーにアクティビティ ID GUID を追加する方法](#how-to-add-activity-id-guid-in-a-kernel-mode-driver)
 
-## <a name="how-to-add-an-activity-id-guid-in-an-application"></a>アプリケーションでアクティビティ ID の GUID を追加する方法
+## <a name="how-to-add-an-activity-id-guid-in-an-application"></a>アプリケーションにアクティビティ ID GUID を追加する方法
 
 
-アプリケーションが呼び出すことによってアクティビティ ID の Guid を含めることができます[ **EventActivityIdControl**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)します。 詳細については、次を参照してください。[イベント トレース関数](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-functions)します。
+アプリケーションでは、 [**Eventactivityidcontrol**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)を呼び出すことによってアクティビティ ID guid を含めることができます。 詳細については、「[イベントトレース関数](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-functions)」を参照してください。
 
-このコード例は、アプリケーションでアクティビティ ID の GUID を設定し、ETW プロバイダー UMDF ドライバーに送信方法を示します。
+このコード例は、アプリケーションでアクティビティ ID GUID を設定し、ETW プロバイダー (UMDF ドライバー) に送信する方法を示しています。
 
 ```cpp
 EventActivityIdControl(EVENT_ACTIVITY_CTRL_CREATE_ID, &activityIdStruct.ActivityId); 
@@ -69,16 +69,16 @@ if(success == 0)
 }
 ```
 
-アプリケーションを呼び出す前の例では、 [ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)アクティビティ ID を作成する (イベント\_アクティビティ\_CTRL\_作成\_ID) に設定し、(イベント\_アクティビティ\_CTRL\_設定\_ID)、現在のスレッド。 アプリケーションでは、(次のセクションで説明) ドライバーの定義済みの IOCTL を送信することによって、ユーザー モード ドライバーなど、ETW イベント プロバイダーにそのアクティビティ GUID を指定します。
+前の例では、アプリケーションは[**Eventactivityidcontrol**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)を呼び出して、アクティビティ ID (イベント\_アクティビティ\_CTRL\_作成\_ID) を作成し、設定します (イベント\_アクティビティ\_CTRL\_set\_現在のスレッドの ID)。 アプリケーションでは、ドライバーによって定義された IOCTL (次のセクションで説明します) を送信することによって、ユーザーモードドライバーなどの ETW イベントプロバイダーにアクティビティ GUID を指定します。
 
-イベント プロバイダーは、インストルメンテーション マニフェスト ファイルを発行する必要があります (します。マニュアル ファイルの場合)。 実行して、 [**メッセージ コンパイラ (Mc.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)、イベント プロバイダー、イベント属性、チャネル、およびイベントの定義を含むヘッダー ファイルが生成されます。 この例では、アプリケーションは、メッセージを書き込むトレース イベント、エラーが発生した場合、生成されるヘッダー ファイルで定義されている EventWriteReadFail で呼び出します。
+イベントプロバイダーは、インストルメンテーションマニフェストファイル () を発行する必要があります。MAN ファイル)。 [**メッセージコンパイラ (Mc)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)を実行すると、イベントプロバイダー、イベント属性、チャネル、およびイベントの定義を含むヘッダーファイルが生成されます。 この例では、アプリケーションは、生成されたヘッダーファイルで定義されている EventWriteReadFail を呼び出して、エラーが発生した場合にトレースイベントメッセージを書き込みます。
 
-## <a name="how-to-set-the-activity-id-guid-in-a-umdf-driver"></a>UMDF ドライバーでアクティビティ ID の GUID を設定する方法
+## <a name="how-to-set-the-activity-id-guid-in-a-umdf-driver"></a>UMDF ドライバーでアクティビティ ID GUID を設定する方法
 
 
-ユーザー モード ドライバーを作成し、呼び出すことによってアクティビティ ID の Guid を設定[ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)呼び出しに似ていますが、アプリケーションを呼び出す方法は、前のセクションで説明されているとします。 これらの呼び出しでは、スレッド、イベント ログに記録されるたびに、現在のスレッドをそのアクティビティ ID の GUID ID の GUID が使用されるアクティビティを追加します。 詳細については、次を参照してください。[アクティビティ識別子を使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-activity-identifiers)します。
+ユーザーモードドライバーは、 [**Eventactivityidcontrol**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)を呼び出すことによってアクティビティ ID guid を作成および設定します。呼び出しは、前のセクションで説明したように、アプリケーションが呼び出す方法に似ています。 これらの呼び出しは、アクティビティ ID GUID を現在のスレッドに追加します。このアクティビティ ID GUID は、スレッドがイベントをログに記録するたびに使用されます。 詳細については、「[アクティビティ識別子の使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-activity-identifiers)」を参照してください。
 
-このコード例では、UMDF ドライバーが、アクティビティが作成され、IOCTL 経由でアプリケーションによって指定された ID の GUID を設定する方法を示します。
+このコード例は、アプリケーションによって作成され、IOCTL によって指定されたアクティビティ ID GUID を、UMDF ドライバーがどのように設定するかを示しています。
 
 ```cpp
 VOID
@@ -195,27 +195,27 @@ CMyReadWriteQueue::ForwardFormattedRequest(
 }
 ```
 
-アクティビティが、アプリケーションによって作成された ID の GUID を取得する方法に関連付けられたを見て、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)(UMDF) クライアント ドライバー。 ドライバーでは、IOCTL 要求を受け取るアプリケーションから、プライベート メンバーの GUID をコピーします。 ある時点で、アプリケーションを呼び出す[ **ReadFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)読み取り操作を実行します。 フレームワークは、要求を作成し、ForwardFormattedRequest、ドライバーのハンドラーを呼び出します。 ハンドラーで、ドライバー設定、以前に保存されたアクティビティ ID の GUID、スレッドで呼び出すことによって[ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)と EventWriteReadFail トレース イベント メッセージにします。
+アプリケーションによって作成されたアクティビティ ID GUID が[ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)(UMDF) クライアントドライバーに関連付けられていることを確認してみましょう。 ドライバーは、アプリケーションから IOCTL 要求を受信すると、プライベートメンバーに GUID をコピーします。 ある時点で、アプリケーションは、 [**ReadFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)を呼び出して読み取り操作を実行します。 フレームワークは、要求を作成し、ドライバーのハンドラー ForwardFormattedRequest を呼び出します。 ハンドラーでは、イベントメッセージをトレースするために[**Eventactivityidcontrol**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)と EventWriteReadFail を呼び出して、以前に格納されていたアクティビティ ID GUID をスレッドに設定します。
 
-**注**The UMDF ドライバーがインストルメンテーション マニフェスト ファイルによって生成されるヘッダー ファイルを含める必要がありますもします。 ヘッダー ファイルでは、トレース メッセージを書き込む EventWriteReadFail などのマクロを定義します。
-
-
-
-## <a name="how-to-add-activity-id-guid-in-a-kernel-mode-driver"></a>カーネル モード ドライバーでアクティビティ ID の GUID を追加する方法
+**メモ** また、UMDF ドライバーには、インストルメンテーションマニフェストファイルによって生成されるヘッダーファイルも含まれている必要があります。 ヘッダーファイルは、トレースメッセージを書き込む EventWriteReadFail などのマクロを定義します。
 
 
-カーネル モード ドライバーはユーザー モードで生成されたスレッドまたはドライバーを作成したスレッドでメッセージをトレースできます。 これら両方の場合は、ドライバーには、アクティビティのスレッドの ID の GUID が必要です。
 
-トレースのメッセージに、ドライバーは、イベント プロバイダーとして登録ハンドルを取得する必要があります (を参照してください[ **EtwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwregister)) を呼び出して[ **EtwWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite)GUID と、イベント メッセージを指定しています。 詳細については、次を参照してください。[カーネル モード ドライバーへのイベント トレースの追加](https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-event-tracing-to-kernel-mode-drivers)します。
+## <a name="how-to-add-activity-id-guid-in-a-kernel-mode-driver"></a>カーネルモードドライバーにアクティビティ ID GUID を追加する方法
 
-カーネル モード ドライバーでは、アプリケーションまたはユーザー モード ドライバーによって作成された要求を処理する場合、カーネル モード ドライバーはいないを作成し、アクティビティ ID の GUID を設定します。 代わりに、I/O マネージャーは、アクティビティ ID の伝達のほとんどを処理します。 ユーザー モード スレッドを開始すると、要求を I/O マネージャーは要求の IRP を作成し、自動的に新しい IRP に現在のスレッドのアクティビティ ID の GUID をコピーします。 呼び出すことで、GUID を取得する必要があります、カーネル モード ドライバーは、そのスレッドでイベントをトレースする場合、 [ **IoGetActivityIdIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iogetactivityidirp)を呼び出して[ **EtwWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite).
 
-アクティビティ ID の GUID を使用して、カーネル モード ドライバーが IRP を作成する場合、ドライバーを呼び出すことができます[ **EtwActivityIdControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwactivityidcontrol)イベント\_アクティビティ\_CTRL\_を作成します。\_設定\_新しい GUID を生成する ID。 呼び出して IRP に新しい GUID がけたできます[ **IoSetActivityIdIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetactivityidirp)を呼び出して[ **EtwWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite)します。
+カーネルモードでは、ドライバーは、ユーザーモードまたはドライバーによって作成されたスレッドで発生したスレッドのメッセージをトレースできます。 どちらの場合も、ドライバーはスレッドのアクティビティ ID GUID を必要とします。
 
-アクティビティ ID の GUID が、IRP と共に [次へ] の下のドライバーに渡されます。 下位のドライバーでは、スレッド、トレース メッセージを追加できます。
+メッセージをトレースするには、ドライバーが登録ハンドルをイベントプロバイダーとして取得する必要があります (「 [**Etwregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-etwregister)」を参照)。次に、GUID とイベントメッセージを指定して[**etwregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-etwwrite)を呼び出します。 詳細については、「[カーネルモードドライバーへのイベントトレースの追加](https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-event-tracing-to-kernel-mode-drivers)」を参照してください。
+
+カーネルモードドライバーが、アプリケーションまたはユーザーモードドライバーによって作成された要求を処理する場合、カーネルモードドライバーはアクティビティ ID GUID を作成して設定しません。 代わりに、i/o マネージャーがアクティビティ ID の伝達のほとんどを処理します。 ユーザーモードスレッドによって要求が開始されると、i/o マネージャーは要求に対して IRP を作成し、現在のスレッドのアクティビティ ID GUID を新しい IRP に自動的にコピーします。 カーネルモードドライバーがそのスレッドでイベントをトレースする場合は、 [**IoGetActivityIdIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iogetactivityidirp)を呼び出して GUID を取得し、 [**etwwrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-etwwrite)を呼び出す必要があります。
+
+カーネルモードドライバーがアクティビティ ID GUID を持つ IRP を作成した場合、ドライバーは EVENT\_アクティビティを使用して[**Etwactivityidcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-etwactivityidcontrol)を呼び出し、CTRL\_\_を作成し、新しい GUID を生成するために\_ID を設定\_ます。 ドライバーは、 [**Iosetactivityidirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iosetactivityidirp)を呼び出して新しい GUID を IRP に関連付けてから、 [**etwwrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-etwwrite)を呼び出すことができます。
+
+アクティビティ ID GUID は、IRP と共に次の下位のドライバーに渡されます。 下位のドライバーは、トレースメッセージをスレッドに追加できます。
 
 ## <a name="related-topics"></a>関連トピック
-[Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
+[USB Windows イベントトレーシング](usb-event-tracing-for-windows.md)  
 
 
 

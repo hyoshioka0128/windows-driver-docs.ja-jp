@@ -1,32 +1,32 @@
 ---
-title: プールの種類 (NX と Execute)
-description: 示すかどうか非ページ プールから割り当てられたメモリはいいえ-実行される (NX) には、するには、Windows 8 以降では、2 つの新しいプール型を使用できます。
+title: NX と実行プールの種類
+description: 非ページプールから割り当てられたメモリを実行不可 (NX) にする必要があるかどうかを示すには、Windows 8 以降の2つの新しいプールの種類を使用できます。
 ms.assetid: 954AC53F-270D-4149-AE5D-6BEA7EFAA761
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a0841f6e3bf648b81ce27e24dd953830badeb1c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d79d7e676f2c595d34a11a004091f181a7d9f7c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365422"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838535"
 ---
-# <a name="nx-and-execute-pool-types"></a>プールの種類 (NX と Execute)
+# <a name="nx-and-execute-pool-types"></a>NX と実行プールの種類
 
 
-示すかどうか非ページ プールから割り当てられたメモリはいいえ-実行される (NX) には、するには、Windows 8 以降では、2 つの新しいプール型を使用できます。 これらのプールの種類は、次によって指定された[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)列挙値。
+非ページプールから割り当てられたメモリを実行不可 (NX) にする必要があるかどうかを示すには、Windows 8 以降の2つの新しいプールの種類を使用できます。 これらのプールの種類は、次のプールの種類によって[ **\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)列挙値として指定されます。
 
 <a href="" id="nonpagedpoolnx"></a>**NonPagedPoolNx**  
-NX 非ページ プール。 手順については、このプールから割り当てられたメモリで実行できません。
+NX 非ページプール。 命令は、このプールから割り当てられたメモリ内では実行できません。
 
 <a href="" id="nonpagedpoolexecute"></a>**NonPagedPoolExecute**  
-実行可能ファイルの非ページ プール。 命令の実行は、このプールから割り当てられたメモリで有効です。
+実行可能な非ページプールです。 命令の実行は、このプールから割り当てられたメモリで有効になっています。
 
-ほとんどのドライバーでは、割り当てられたメモリを使用して、データの保存にしか、このメモリ内の手順を実行しないでください。 Windows 8 および Windows の以降のバージョンで実行するには、ドライバーをビルドする場合は、割り当てる**NonPagedPoolNx**メモリ、NX から可能な限り、非ページ プール。 非ページ メモリから命令を実行する必要があるドライバーのみを割り当てる必要があります**NonPagedPoolExecute**実行可能ファイルの非ページ プールからメモリ。
+ほとんどのドライバーは、割り当てられたメモリのみを使用してデータを格納し、このメモリ内の命令を実行しません。 Windows 8 以降のバージョンの Windows で動作するようにドライバーをビルドする場合は、可能な限り、NX の非ページプールから**NonPagedPoolNx**のメモリを割り当てます。 非ページメモリから命令を実行する必要があるドライバーだけが、実行可能な非ページプールから**NonPagedPoolExecute**メモリを割り当てる必要があります。
 
-既存のドライバーを使用する場合は、Windows 7 と以前のバージョンの Windows では、組み込まれているため、 **NonPagedPool**プールの種類には、ドライバーは、実行可能なプールからメモリを割り当てます。 **NonPagedPool**定数名と同じ値を持つ、 **NonPagedPoolExecute** Windows 8 以降では定義されている定数の名前。 そのため、これらの定数は、同じプールの種類を参照してください。
+Windows 7 以前のバージョンの Windows 用に構築された既存のドライバーについては、 **NonPagedPool**プールの種類を使用すると、ドライバーによって実行可能ファイルプールからメモリが割り当てられます。 **NonPagedPool**定数名には、Windows 8 以降で定義されている**NonPagedPoolExecute**定数名と同じ値が設定されています。 そのため、これらの定数は同じプールの種類を参照します。
 
-Windows 8 または Windows でのインスタンスの以降のバージョンの Windows 7 または Windows の以前のバージョン用に記述されたドライバーが構築されたかどうか、 **NonPagedPool**プールの種類は、いずれかで置き換える必要があります**NonPagedPoolNx**または**NonPagedPoolExecute**します。 ドライバーの開発者は、この交換を明示的に実行することができますか、またはそのドライバーを Windows 8 に移植することに開発者を支援するために提供されるオプトイン メカニズムのいずれかを使用して、置換を暗黙的に実行できます。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
+Windows 7 またはそれより前のバージョンの windows 用に作成されたドライバーを windows 8 以降のバージョンの windows 用にビルドする場合は、 **NonPagedPool**プールの種類のインスタンスを**NonPagedPoolNx**または**NonPagedPoolExecute**のいずれかで置き換える必要があります。 ドライバー開発者は、この置換を明示的に実行することも、Windows 8 へのドライバーの移植を支援するために用意されているいずれかのオプトイン機構を使用して暗黙的に置き換えることもできます。 詳細については、「 [NX プールのオプトインメカニズム](nx-pool-opt-in-mechanisms.md)」を参照してください。
 
  
 

@@ -1,59 +1,59 @@
 ---
-title: Windows Display Driver Model (WDDM) のメリット
-description: Windows Display Driver Model (WDDM) のメリット
+title: Windows Display Driver Model (WDDM) の利点
+description: Windows Display Driver Model (WDDM) の利点
 ms.assetid: 0e8cd1a9-7137-4fd2-91ab-56768713c9f1
 keywords:
-- ドライバー モデル WDK Windows Vista では、特典を表示します。
-- Windows Vista のディスプレイ ドライバー モデル WDK、利点があります。
+- ドライバーモデルの表示 WDK Windows Vista、特典
+- Windows Vista display driver model WDK、特典
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e132ab651e064aed65ebee1083e669086177ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 557d4318eb56beb033dbe380334c0b44abc06dc8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384629"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839825"
 ---
-# <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のメリット
+# <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) の利点
 
 
 ## <span id="ddk_benefits_of_the_longhorn_display_driver_model_gg"></span><span id="DDK_BENEFITS_OF_THE_LONGHORN_DISPLAY_DRIVER_MODEL_GG"></span>
 
 
-ディスプレイ ドライバーを作成することは、Windows 表示 Driver Model (WDDM) を使用するのではなく、Windows Vista 以降より使用可能を使用して簡単に、 [Windows 2000 Display Driver Model (XDDM)](windows-2000-display-driver-model-design-guide.md)、次の機能強化のためです。 さらに、少ないドライバー コードは、システム アドレス空間にアクセスし、クラッシュが発生する可能性があるカーネル モードで実行されるため、WDDM ドライバーはオペレーティング システムの安定性とセキュリティに寄与します。
+Windows [2000 Display Driver model (XDDM)](windows-2000-display-driver-model-design-guide.md)を使用するのではなく、windows Vista 以降で使用できる Windows Display driver MODEL (WDDM) を使用すると、表示ドライバーを簡単に作成できます。これは、次の点が強化されているためです。 さらに、WDDM ドライバーは、システムアドレス空間にアクセスでき、場合によってはクラッシュが発生する可能性があるカーネルモードで実行されるドライバーコードが少ないため、オペレーティングシステムの安定性とセキュリティが向上します。
 
-**注**  XDDM と VGA ドライバーは、Windows 8 およびそれ以降のバージョンではコンパイルされません。 ディスプレイ ハードウェアが認定 WDDM 1.2 をサポートする、またはそれ以降であるドライバーがない Windows 8 コンピューターに接続されている場合は、Microsoft Basic 表示ドライバーを実行しているシステムが既定値です。
+**注**  XDDM および VGA ドライバーは、Windows 8 以降のバージョンではコンパイルされません。 WDDM 1.2 以降をサポートするように認定されたドライバーを使用せずに、ディスプレイハードウェアが Windows 8 コンピューターに接続されている場合、システムは既定で Microsoft Basic Display Driver を実行します。
 
  
 
--   マイクロソフトの Direct3D ランタイムおよび Microsoft DirectX グラフィックスのカーネル サブシステム詳細の表示処理を実行 (つまりより多くのコードがランタイムと、ドライバーではなくサブシステムで)。 ビデオ メモリを管理するコードが含まれ、スケジュールは、GPU のメモリ アクセス (DMA) バッファーを送信します。 詳細については、次を参照してください。[ビデオ メモリ管理と GPU がスケジュール](video-memory-management-and-gpu-scheduling.md)します。
+-   Microsoft Direct3D runtime と Microsoft DirectX graphics のカーネルサブシステムでは、より多くの表示処理が実行されます (つまり、ドライバーではなく、ランタイムおよびサブシステムにより多くのコードがあります)。 これには、ビデオメモリを管理し、GPU のダイレクトメモリアクセス (DMA) バッファーをスケジュールするコードが含まれます。 詳細については、「[ビデオメモリ管理と GPU スケジューリング](video-memory-management-and-gpu-scheduling.md)」を参照してください。
 
--   画面の作成より少ないカーネル モードのステージが必要です。
+-   Surface の作成に必要なカーネルモードのステージが少なくなります。
 
-    サーフェスの作成のオペレーティング システムで以前 Windows Vista よりも次のカーネル モードの連続する呼び出しが必要です。
+    Windows Vista より前のオペレーティングシステムでサーフェイスを作成するには、次のカーネルモード呼び出しが必要です。
 
-    1.  [*DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))
-    2.  [*DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))
+    1.  [*Ddcanの場合*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))
+    2.  [*Ddの/フェイス*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))
     3.  [**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
-    WDDM のサーフェスの作成にのみが必要です、 [ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)を呼び出してユーザー モード ディスプレイ ドライバー呼び出し、 [ **pfnAllocateCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)関数。 カーネル モードへの呼び出し[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数が実行されます。
+    WDDM でのサーフェイスの作成には、 [**Createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)ユーザーモード display driver 呼び出しのみが必要です。この呼び出しは、 [**Pfnallocatecb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)関数を呼び出します。 その後、カーネルモードの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数の呼び出しが発生します。
 
--   呼び出しを作成し、サーフェスを破棄して、ロックおよびリソースをロック解除をより均等にペアになっています。
+-   サーフェイスを作成または破棄し、リソースをロックおよびロック解除する呼び出しが均等になります。
 
--   ビデオ メモリ、システム メモリ、およびマネージ サーフェスは、WDDM で同じ処理されます。 Windows Vista より前のオペレーティング システムでは、微妙に異なる方法でこれらのコンポーネントを処理します。
+-   ビデオメモリ、システムメモリ、および管理対象のサーフェイスは、WDDM でも同じように処理されます。 Windows Vista より前のオペレーティングシステムでは、これらのコンポーネントをわずかに異なる方法で処理していました。
 
--   シェーダーの翻訳は、ディスプレイ ドライバーのユーザー モードの部分で実行されます。
+-   シェーダー変換は、ディスプレイドライバーのユーザーモード部分で実行されます。
 
-    このアプローチは、シェーダー翻訳がカーネル モードで実行されるときに発生する次の複雑さを排除できます。
+    この方法では、シェーダー変換がカーネルモードで実行されるときに発生する次のような複雑さがなくなります。
 
-    -   デバイス ドライバー インターフェイス (DDI) の抽象化と一致しないハードウェアのモデル
-    -   変換で使用される複雑なコンパイラ テクノロジ
+    -   デバイスドライバーインターフェイス (DDI) の抽象化と一致しないハードウェアモデル
+    -   翻訳で使用される複雑なコンパイラテクノロジ
 
-    シェーダーの処理は完全にプロセスごとに発生しますハードウェア アクセスが必要ないため、カーネル モードのシェーダーの処理は必要ありません。 そのため、シェーダーの翻訳のコードは、ユーザー モードで処理できます。
+    シェーダー処理はプロセスごとに完全に発生し、ハードウェアアクセスは必要ないため、カーネルモードシェーダー処理は必要ありません。 したがって、シェーダー変換コードはユーザーモードで処理できます。
 
-    Try の書き込み/、変換コードのユーザー モードの前後のコードを除く必要があります。 変換エラーが発生するアプリケーションの処理に戻す必要があります。
+    ユーザーモード翻訳コードに try/except コードを記述する必要があります。 変換エラーが発生すると、アプリケーションの処理に戻ります。
 
-    バック グラウンド変換 (その他の表示を処理するスレッドから別のスレッドで実行されている変換コードは、) は、ユーザー モードの作成の簡素化します。
+    バックグラウンド翻訳 (つまり、他の表示処理スレッドとは別のスレッドで実行される翻訳コード) は、ユーザーモード用に簡単に記述できます。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - IoTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e74de4699e99eba3fabaa91d3f2c4ca11fc32b49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e1d778be762313022af54994da9b24df5d5fef8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355225"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838363"
 ---
 # <a name="using-an-iotimer-routine"></a>IoTimer ルーチンの使用
 
@@ -19,37 +19,37 @@ ms.locfileid: "67355225"
 
 
 
-タイマーを関連するデバイス オブジェクトが有効になっているときに、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンに約 1 秒あたり 1 回呼び出されます。 ただし、ため、各間隔*IoTimer*ルーチンが呼び出される、システム時計の解像度に依存して、あるありません、 *IoTimer*ルーチンは 1 秒で正確に呼び出されます境界。
+関連付けられているデバイスオブジェクトのタイマーが有効になっている間、 [*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンは1秒間に約1回呼び出されます。 ただし、各*iotimer*ルーチンが呼び出される間隔はシステムクロックの解像度によって異なるため、 *iotimer*ルーチンが1秒の境界で正確に呼び出されると想定しないでください。
 
-**注**  、 *IoTimer* IRQL ですべての DPC ルーチンなどのルーチンと呼ばれる = ディスパッチ\_レベル。 DPC ルーチンの実行中のすべてのスレッドは、同じプロセッサで実行できなくなります。 ドライバー開発者は注意深く設計する必要があります、 *IoTimer*できるだけの時間の簡単なため、実行するルーチン。
+すべての DPC ルーチンなどの*Iotimer*ルーチンは、IRQL = DISPATCH\_レベルで呼び出される  に**注意**してください。 DPC ルーチンが実行されている間、すべてのスレッドが同じプロセッサで実行されることはありません。 ドライバー開発者は、できるだけ短い時間で実行するように*Iotimer*ルーチンを慎重に設計する必要があります。
 
  
 
-おそらく、最も一般的なを使用する*IoTimer*ルーチンが IRP のタイムアウトになるデバイスの I/O 操作には。 使用して、次のシナリオを検討してください、 *IoTimer*デバイス ドライバー内で実行中のタイマーとしてルーチン。
+*Iotimer*ルーチンで最も一般的に使用されるのは、IRP に対するデバイス i/o 操作のタイムアウトです。 デバイスドライバー内で実行中のタイマーとして*iotimer*ルーチンを使用する場合は、次のシナリオを考慮してください。
 
-1.  ドライバーがないことを示す現在のデバイスの I/O 操作、および呼び出し、-1 をデバイスの拡張機能のタイマー カウンターを初期化します、デバイス、開始時に[ **IoStartTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostarttimer)直前の状態を返します\_成功しました。
+1.  デバイスを起動すると、ドライバーはデバイス拡張機能のタイマーカウンターを-1 に初期化します。これは、現在のデバイス i/o 操作がないことを示します。さらに、 [**Iostarttimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostarttimer)を呼び出して、ステータス\_成功を返します。
 
-    毎回、 *IoTimer*ルーチンを呼び出すと、かどうか、タイマー カウンターが-1 の場合、そうである場合は、コントロールを返しますを確認します。
+    *Iotimer*ルーチンが呼び出されるたびに、タイマーカウンターが-1 であるかどうかがチェックされ、存在する場合はコントロールを返します。
 
-2.  ドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンで、上限にデバイスの拡張機能タイマー カウンターと場合、追加の 2 番目の初期化、 *IoTimer*だけルーチンには実行されています。 使用して、 [ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出す、 *SynchCritSection\_1*ルーチンで、プログラムによって要求された操作の物理デバイス現在の IRP では。
+2.  ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンは、デバイス拡張機能のタイマーカウンターを上限に初期化します。さらに、 *iotimer*ルーチンが実行されたばかりの場合は、追加の秒数を初期化します。 次に、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を使用して、現在の IRP によって要求された操作の物理デバイスをプログラムする*SynchCritSection\_1*ルーチンを呼び出します。
 
-3.  ドライバーの ISR キュー、ドライバーの前に、タイマーを-1 にカウンターをリセットする[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチンまたは[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
+3.  ドライバーの ISR は、ドライバーの[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンまたは[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンをキューに再設定する前に、タイマーカウンターを-1 にリセットします。
 
-4.  毎回、 *IoTimer*ルーチンを呼び出すと、-1 の ISR によってタイマー カウンターがリセットされ、コントロールがあればを返すかどうかを確認します。 ない場合、 *IoTimer*ルーチン**KeSynchronizeExecution**を呼び出す、 *SynchCritSection\_2*ルーチンで、いくつかで、タイマー カウンターを調整します。ドライバーにより決定された秒数です。
+4.  *Iotimer*ルーチンが呼び出されるたびに、timer カウンターが ISR によってリセットされたかどうかが-1 に設定されているかどうかがチェックされ、存在する場合は制御が返されます。 それ以外の場合、 *Iotimer*ルーチンは**KeSynchronizeExecution**を使用して*SynchCritSection\_2*ルーチンを呼び出します。これにより、ドライバーによって決められた秒数だけタイマーカウンターが調整されます。
 
-5.  *SynchCritSection\_2*ルーチンを返します。 **TRUE**を、 *IoTimer*ルーチンの現在の要求がまだタイムアウトしていない限り、します。タイマー カウンターがゼロにする場合、 *SynchCritSection\_2*ルーチンのカウンターをリセット-タイムアウトのドライバーにより決定された値のタイマーをリセット、自身のリセットが予想フラグを設定 (および、 *DpcForIsr*) のコンテキスト 領域で、デバイスをリセットする試みを返します**TRUE**します。
+5.  *SynchCritSection\_2*ルーチンは、現在の要求がまだタイムアウトしていない限り、 *Iotimer*ルーチンに**TRUE**を返します。タイマーカウンターが0に設定されている場合、 *SynchCritSection\_2*ルーチンは、タイマーカウンターをドライバーによって決定されたリセットタイムアウト値にリセットし、そのコンテキスト領域の*DpcForIsr*に対して予期されるリセットフラグを設定します。デバイスをリセットし、 **TRUE**を返します。
 
-    *SynchCritSection\_2*ルーチンが再度呼び出されます、リセット操作もがタイムアウトした場合、デバイスに戻ったときに**FALSE**します。 そのリセットに成功した場合、 *DpcForIsr*ルーチンと判断したデバイス リセット予想フラグからがリセットされたのアクションを繰り返し、要求の再試行、 *StartIo*ルーチンの説明に従って手順 2。
+    *SynchCritSection\_2*ルーチンは、リセット操作がデバイスでもタイムアウトした場合に、 **FALSE**を返すと再度呼び出されます。 リセットが成功した場合、 *DpcForIsr*ルーチンは、デバイスがリセットが必要なフラグからリセットされたことを確認し、要求を再試行して、手順 2. の説明に従って*StartIo*ルーチンのアクションを繰り返します。
 
-6.  場合、 *SynchCritSection\_2*ルーチンを返します**FALSE**、 *IoTimer*ルーチンは、ために、物理デバイスが不明な状態が前提としています。 しようとしました。リセットが既にに失敗しました。 このような場合、 *IoTimer*日常的なキュー、 *CustomDpc*ルーチンを返します。 これは、 *CustomDpc*ルーチンは、デバイスの I/O エラー、呼び出しをログ[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)、現在の IRP が失敗し、返します。
+6.  *SynchCritSection\_2*ルーチンが**FALSE**を返す場合、 *iotimer*ルーチンは、物理デバイスをリセットしようとすると、既に失敗しているため、物理デバイスが不明な状態であると想定します。 このような状況では、 *Iotimer*ルーチンは*customdpc*ルーチンをキューに置いてを返します。 この*Customdpc*ルーチンは、デバイスの i/o エラーをログに記録し、 [**Iostartnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)を呼び出して、現在の IRP に失敗して、を返します。
 
-ドライバーの手順 3. で説明されているように、このデバイス ドライバの ISR が共有のタイマーを-1 にカウンターをリセットした場合*DpcForIsr*ルーチンが現在の IRP の I/O の割り込み駆動処理を完了します。 タイマー カウンターのリセットでは、このデバイスの I/O 操作が、タイムアウトしていないことを示しますが、そのため*IoTimer*ルーチンは、タイマー カウンターを変更する必要はありません。
+このデバイスドライバーの ISR によって共有タイマーカウンターが-1 にリセットされた場合、手順 3. で説明したように、ドライバーの*DpcForIsr*ルーチンは、現在の IRP の割り込みドリブン i/o 処理を完了します。 Reset timer カウンターは、このデバイス i/o 操作がタイムアウトしていないことを示しているため、 *iotimer*ルーチンはタイマーカウンターを変更する必要がありません。
 
-上記のほとんどの状況で*SynchCritSection\_2*ルーチン単純にタイマー カウンター。 *SynchCritSection\_2*ルーチンのみであるには、タイマー カウンターがゼロになる場合が示される場合は、現在の I/O 操作がタイムアウトになっている場合、デバイスをリセットしようとしました。 デバイスをリセットしようとすると、既に失敗した場合にのみ、 *SynchCritSection\_2*ルーチンの戻り値**FALSE**を*IoTimer*ルーチン。
+ほとんどの状況では、上記の*SynchCritSection\_2*ルーチンは timer カウンターをデクリメントするだけです。 *SynchCritSection\_2*ルーチンは、現在の i/o 操作がタイムアウトした場合にのみデバイスをリセットしようとします。これは、タイマーカウンターがゼロになったときに示されます。 また、デバイスをリセットしようとして失敗した場合にのみ、 *SynchCritSection\_2*ルーチンが*Iotimer*ルーチンに**FALSE**を返します。
 
-その結果、両方の前に*IoTimer*ルーチンとそのヘルパー *SynchCritSection\_2*ルーチンが通常の状況で実行するには、ほとんどの時間を取得します。 使用して、 *IoTimer*この方法で日常的なデバイス ドライバーにより、各デバイス I/O が有効な要求を再試行できます必要に応じて、および、 *CustomDpc*修正不可能な場合にのみ、ルーチンの IRP が失敗します。ハードウェアの障害には、満たされているから IRP ができないようにします。 さらに、ドライバーは、実行時間のごくわずかなコストでこの機能を提供します。
+その結果、上記の*Iotimer*ルーチンとそのヘルパー *SynchCritSection\_2*ルーチンは、通常の状況での実行に非常に短い時間を要することになります。 この方法で*Iotimer*ルーチンを使用することにより、デバイスドライバーは、有効なデバイス i/o 要求が、必要に応じて再試行できることを保証します。また、修正不可能なハードウェア障害によって irp が動作しなくなる場合にのみ、*カスタム DPC*ルーチンが irp を失敗させることを保証します。満たさ. さらに、ドライバーは、この機能を実行時間のごくわずかなコストで提供します。
 
-上記のシナリオの簡潔さは、デバイスには、一度に 1 つだけの操作および I/O 操作を通常重複しないドライバーによって異なります。 デバイス I/O がオーバー ラップの操作を実行するドライバーまたはを使用するより高度なドライバー、 *IoTimer*がタイムアウトする日常的な一連のドライバーに割り当てられた Irp が下位のドライバーの 1 つ以上のチェーンに送信される必要がありますより複雑なタイムアウト管理するシナリオ。
+上記のシナリオの単純さは、一度に1つの操作のみを実行するデバイスと、通常は i/o 操作が重複しないドライバーに依存しています。 重複するデバイス i/o 操作を実行するドライバー、または*Iotimer*ルーチンを使用してドライバーによって割り当てられた一連の irp を、下位のドライバーの複数のチェーンに送信するドライバーで割り当てられた irp のセットをタイムアウトさせるドライバーは、より複雑なタイムアウトシナリオを管理します。
 
  
 

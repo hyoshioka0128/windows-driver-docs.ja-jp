@@ -1,17 +1,17 @@
 ---
 Description: "\"UcmTcpciCx\" と呼ばれる USB タイプ C ポートコントローラーインターフェイスクラス拡張の動作と、クライアントドライバーが USB タイプ C ポートコントローラーに対して実行する必要があるタスクについて説明します。"
-title: USB Type-C ポート コントローラー ドライバーを記述する
+title: USB タイプの C ポートコントローラードライバーを作成する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 54cb8e485e762f8a2d81e4cec5f43de800d64ba9
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 32138f6b0e03a22eed8817642d0df313dc840b5f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164792"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841690"
 ---
-# <a name="write-a-usb-type-c-port-controller-driver"></a>USB Type-C ポート コントローラー ドライバーを記述する
+# <a name="write-a-usb-type-c-port-controller-driver"></a>USB タイプの C ポートコントローラードライバーを作成する
 
 Usb タイプ c ハードウェアが usb タイプ c または電力配信 (PD) 物理レイヤーを実装していても、電力配信に必要なステートマシンが実装されていない場合は、USB タイプ c ポートコントローラードライバーを作成する必要があります。 
 
@@ -22,7 +22,7 @@ Windows 10 バージョン1703では、usb タイプ c または電力配信 (PD
 UcmTcpciCx クラス拡張は、それ自体が UcmCx のクライアントドライバーです。 Power contracts、データロールに関するポリシーの決定は UcmCx で行われ、UcmTcpciCx に転送されます。 UcmTcpciCx は、これらのポリシーを実装し、UcmTcpciCx クライアントドライバーによって提供されるポートコントローラーインターフェイスを使用して、タイプ C と PD のステートマシンを管理します。 
 
 
-**概要**
+**まとめ**
 - UcmTcpci クラス拡張機能によって提供されるサービス
 - クライアントドライバーの予期される動作
 
@@ -43,9 +43,9 @@ UcmTcpciCx クラス拡張は、それ自体が UcmCx のクライアントド�
 
 -   2017 年 5 月
 
-**重要な API**
+**重要な Api**
 
-[USB タイプ-C ポートコントローラーインターフェイスドライバークラス拡張のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[USB タイプ-C ポートコントローラーインターフェイスドライバークラス拡張のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 **UcmTcpciCx クライアントドライバーテンプレート**
 
@@ -73,7 +73,7 @@ UcmTcpciCx クラス拡張は、それ自体が UcmCx のクライアントド�
     - [シンプルな周辺機器バス (SPB) ドライバー設計ガイド]
     - [SPB ドライバープログラミングリファレンス] 
 
--   Windows Driver Foundation (WDF) について理解を深めます。 推奨される読み取り:[Windows Driver Foundation でのドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)。これは、少額 Orwick と Guy Smith によって記述されています。
+-   Windows Driver Foundation (WDF) について理解を深めます。 推奨される読み取り: 小額 Orwick および Guy Smith によって作成され[た Windows Driver Foundation を使用したドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)。
 
 ## <a name="behavior-of-the-ucmtcpci-class-extension"></a>UcmTcpci クラス拡張の動作
 
@@ -104,12 +104,12 @@ UcmTcpciCx へのクライアントドライバーは、次のことを想定し
 
 -   アラートに関連するすべての関連データを使用して、UcmTcpciCx に通知します。 
  
--   任意。 別のモードを入力または終了した後で、追加の処理を実行します。 ドライバーは、IOCTL 要求によって、クラス拡張によってこれらの状態について通知されます。 
+-   省略可能。 別のモードを入力または終了した後で、追加の処理を実行します。 ドライバーは、IOCTL 要求によって、クラス拡張によってこれらの状態について通知されます。 
 
 
 ## <a name="1-register-the-client-driver-with-ucmtcpcicx"></a>1. クライアントドライバーを UcmTcpciCx に登録する
 
-サンプルリファレンス:「 `EvtPrepareHardware` 」 `Device.cpp`の「」を参照してください。
+サンプルリファレンス: `Device.cpp`の「`EvtPrepareHardware`」を参照してください。
 
 1.  EVT_WDF_DRIVER_DEVICE_ADD 実装で、UcmTcpciDeviceInitInitialize を呼び出して、WDFDEVICE_INIT 不透明構造体を初期化します。 この呼び出しにより、クライアントドライバーがフレームワークに関連付けられます。
 
@@ -117,7 +117,7 @@ UcmTcpciCx へのクライアントドライバーは、次のことを想定し
 
 ## <a name="2-initialize-the-i2c-communications-channel-to-the-port-controller-hardware"></a>2. I2C 通信チャネルをポートコントローラーハードウェアに初期化します。
 
-サンプルリファレンス:「 `EvtCreateDevice` 」 `Device.cpp`の「」を参照してください。
+サンプルリファレンス: `Device.cpp`の「`EvtCreateDevice`」を参照してください。
 
 EVT_WDF_DEVICE_PREPARE_HARDWARE 実装では、ハードウェアリソースを読み、通信チャネルを開きます。 これは、PD 機能を取得し、アラートに関する通知を受け取るために必要です。 
 
@@ -128,9 +128,9 @@ EVT_WDF_DEVICE_PREPARE_HARDWARE 実装では、ハードウェアリソースを
 アラートは割り込みとして受信されます。 このため、ドライバーはフレームワークの interrupt オブジェクトを作成し、アラートを処理する ISR を登録します。  ISR は、ハードウェアへのアクセスが完了するまでブロックするハードウェアの読み取りおよび書き込み操作を実行します。 待機は DIRQL では許容されないため、ドライバーは PASSIVE_LEVEL で ISR を実行します。 
 
 
-## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3.ポートコントローラーのタイプ C と PD の機能を初期化します。
+## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3. ポートコントローラーのタイプ C と PD の機能を初期化します。
     
-サンプルリファレンス:「 `EvtDeviceD0Entry` 」 `Device.cpp`の「」を参照してください。
+サンプルリファレンス: `Device.cpp`の「`EvtDeviceD0Entry`」を参照してください。
 
 
  EVT_WDF_DEVICE_D0_EXIT 実装では、 
@@ -143,9 +143,9 @@ EVT_WDF_DEVICE_PREPARE_HARDWARE 実装では、ハードウェアリソースを
 
  4. Ucmtcpciportcontroller Create を呼び出して、ポートコントローラーオブジェクトを作成し、UCMTCPCIPORTCONTROLLER ハンドルを取得します。
 
-## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4。UcmTcpciCx からの要求を受信するためのフレームワークキューオブジェクトを設定する
+## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4. UcmTcpciCx から要求を受信するためのフレームワークキューオブジェクトを設定する
 
-サンプルリファレンス:「」 `EvtDeviceD0Entry` および`HardwareRequestQueueInitialize`「 」の`Queue.cpp`「」を参照してください。 `Device.cpp`
+サンプルリファレンス: `Device.cpp` の `EvtDeviceD0Entry` と `Queue.cpp`での `HardwareRequestQueueInitialize` を参照してください。
 
  1. EVT_WDF_DEVICE_D0_EXIT 実装で、WdfIoQueueCreate を呼び出してフレームワークキューオブジェクトを作成します。 この呼び出しでは、UcmTpciCx によって送信された IOCTL 要求を処理するために、コールバックの実装を登録する必要があります。 クライアントドライバーは、電源管理キューを使用する場合があります。 
 
@@ -174,9 +174,9 @@ EVT_WDF_DEVICE_PREPARE_HARDWARE 実装では、ハードウェアリソースを
 4. Ucmtcpciportcontroller Start を呼び出して、UcmTcpciCx にポートコントローラーを開始するように指示します。 UcmTcpciCx は、USB タイプ C と電力配信の制御を想定しています。 ポートコントローラーが開始されると、UcmTcpciCx が要求をハードウェア要求キューに挿入し始めます。 
 
  
-## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5。ポートコントローラーのハードウェアによるアラートのアラート
+## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5. ポートコントローラーからのアラートアラート
 
-サンプルリファレンス:「 `ProcessAndSendAlerts` 」 `Alert.cpp`の「」を参照してください。
+サンプルリファレンス: `Alert.cpp`の「`ProcessAndSendAlerts`」を参照してください。
 
 クライアントドライバーは、ポートコントローラーハードウェアから受信したアラート (またはイベント) を処理し、イベントに関連するデータを UcmTcpciCx に送信する必要があります。 
 
@@ -196,9 +196,9 @@ CC ステータスの変更を報告するタスクのフローの例を次に�
 
 5. クライアントはアラートをクリアします (これは、クライアントがアラート情報を取得した後、いつでも発生する可能性があります)。 
 
-## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6。UcmTcpciCx から受信したプロセス要求
+## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6. UcmTcpciCx から受信したプロセス要求
 
-サンプルリファレンス:「`PortControllerInterface.cpp`」を参照してください。
+サンプルリファレンス: 「`PortControllerInterface.cpp`」を参照してください。
 
 状態マシンの実行の一環として、UcmTcpciCx はポートコントローラーに要求を送信する必要があります。 たとえば、TRANSMIT_BUFFER を設定する必要があります。 この要求は、クライアントドライバーに渡されます。 このドライバーは、UcmTcpciCx によって提供される詳細を使用して、送信バッファーを設定します。 ほとんどの要求は、クライアントドライバーによって読み取りまたは書き込みがハードウェアに変換されます。 DPM はハードウェア転送の完了の待機をブロックできないため、コマンドは非同期である必要があります。
 

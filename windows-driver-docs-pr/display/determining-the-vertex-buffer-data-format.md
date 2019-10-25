@@ -7,15 +7,15 @@ keywords:
 - 柔軟な頂点形式 WDK Direct3D
 - FVF WDK Direct3D
 - 頂点バッファー WDK Direct3D
-- Direct3D WDK Windows 2000 の表示、柔軟な頂点の書式設定
+- Direct3D WDK Windows 2000 display、フレキシブル頂点形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1613ecce384e1385f43906d5363fdcf9a7c870a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6887eb9a6165eca11d3596f3eaa253271a437223
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384883"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839752"
 ---
 # <a name="determining-the-vertex-buffer-data-format"></a>頂点バッファーのデータ形式の決定
 
@@ -23,37 +23,37 @@ ms.locfileid: "67384883"
 ## <span id="ddk_determining_the_vertex_buffer_data_format_gg"></span><span id="DDK_DETERMINING_THE_VERTEX_BUFFER_DATA_FORMAT_GG"></span>
 
 
-頂点バッファー内のデータの形式を識別するために、ドライバーは、次の情報を確認する必要があります。
+頂点バッファー内のデータの形式を識別するには、ドライバーが次の情報を確認する必要があります。
 
--   テクスチャのディメンション (1 次元、2 D、3 D、または 4 D)
+-   テクスチャの次元 (1D、2D、3D、または 4D)
 
 -   FVF データに存在するコンポーネント
 
--   コンポーネントの順序があります。
+-   存在するコンポーネントの順序
 
-### <a name="span-idfvftexturedimensionspanspan-idfvftexturedimensionspanfvf-texture-dimension"></a><span id="fvf_texture_dimension"></span><span id="FVF_TEXTURE_DIMENSION"></span>FVF テクスチャのディメンション
+### <a name="span-idfvf_texture_dimensionspanspan-idfvf_texture_dimensionspanfvf-texture-dimension"></a><span id="fvf_texture_dimension"></span><span id="FVF_TEXTURE_DIMENSION"></span>FVF テクスチャディメンション
 
-ドライバーは D3DTEXTURETRANSFORMFLAGS テクスチャ座標の数のフラグからのテクスチャのディメンションを決定する必要があります (D3DTTFF\_カウント*n*DirectX SDK のドキュメントで説明)。 カウント フラグの番号は、テクスチャ座標の数が存在するを通知します。 次のセクションで説明したようするこの必ずしも自体、テクスチャのディメンションに注意してください。
+ドライバーは、DirectX SDK ドキュメントに記載されている D3DTEXTURETRANSFORMFLAGS テクスチャ座標カウントフラグ (D3DTTFF\_COUNT *n*) からテクスチャの次元を決定する必要があります。 カウントフラグの番号は、存在するテクスチャ座標の数を示します。 次のセクションで説明するように、これは必ずしもテクスチャ自体のディメンションと同じではないことに注意してください。
 
-### <a name="span-idnonprojectedtexturesspanspan-idnonprojectedtexturesspannonprojected-textures"></a><span id="nonprojected_textures"></span><span id="NONPROJECTED_TEXTURES"></span>Nonprojected テクスチャ
+### <a name="span-idnonprojected_texturesspanspan-idnonprojected_texturesspannonprojected-textures"></a><span id="nonprojected_textures"></span><span id="NONPROJECTED_TEXTURES"></span>投影なしのテクスチャ
 
-次の一覧の nonprojected テクスチャ:
+投影されていないテクスチャの一覧を次に示します。
 
--   D3DTTFF\_COUNT1 はラスタライザーはテクスチャ座標を 1d を想定することを示します。
+-   D3DTTFF\_COUNT1 は、ラスタライザーが1D のテクスチャ座標を期待する必要があることを示します。
 
--   D3DTTFF\_COUNT2 はラスタライザーは 2D テクスチャ座標を想定することを示します。
+-   D3DTTFF\_COUNT2 は、ラスタライザーが2D テクスチャ座標を想定している必要があることを示します。
 
--   D3DTTFF\_COUNT3 はラスタライザーは 3D テクスチャ座標を想定することを示します。
+-   D3DTTFF\_COUNT3 は、ラスタライザーが3D テクスチャ座標を期待する必要があることを示します。
 
--   D3DTTFF\_COUNT4 はラスタライザーは 4 D のテクスチャ座標を想定することを示します。
+-   D3DTTFF\_COUNT4 は、ラスタライザーが4D テクスチャ座標を期待する必要があることを示します。
 
-### <a name="span-idprojectedtexturesspanspan-idprojectedtexturesspanprojected-textures"></a><span id="projected_textures"></span><span id="PROJECTED_TEXTURES"></span>投影されたテクスチャ
+### <a name="span-idprojected_texturesspanspan-idprojected_texturesspanprojected-textures"></a><span id="projected_textures"></span><span id="PROJECTED_TEXTURES"></span>投影テクスチャ
 
-投影されたテクスチャを使用している場合、D3DTTFF\_テクスチャ座標を最後に分割することを示す予測フラグが設定されて (カウント<sup>th</sup>) テクスチャ座標のセットの要素。 したがって、2 D の射影されたテクスチャの数は 3 に、最初の 2 つの要素が 2 つの浮動小数点値を 2 D テクスチャの検索結果として、3 番目で除算するため。 つまり、両方の D3DTTFF\_COUNT2 と D3DTTFF\_COUNT3 |D3DTTFF\_予測は、2 D テクスチャを参照します。
+予想されるテクスチャが使用されている場合、テクスチャ座標をテクスチャ座標セットの最後の (COUNT<sup>番目</sup>の) 要素で割ることを示すために、D3DTTFF\_の射影フラグが設定されます。 したがって、2D の射影テクスチャでは、最初の2つの要素が3番目の要素に分割されるため、カウントは3になります。その結果、2つの浮動小数点が参照されます。 つまり、D3DTTFF\_COUNT2 と D3DTTFF\_COUNT3 | の両方があります。D3DTTFF\_は、2D テクスチャを参照しています。
 
-### <a name="span-idddkfvfvertexdatacomponentsggspanspan-idddkfvfvertexdatacomponentsggspanfvf-vertex-data-components"></a><span id="ddk_fvf_vertex_data_components_gg"></span><span id="DDK_FVF_VERTEX_DATA_COMPONENTS_GG"></span>FVF 頂点データ コンポーネント
+### <a name="span-idddk_fvf_vertex_data_components_ggspanspan-idddk_fvf_vertex_data_components_ggspanfvf-vertex-data-components"></a><span id="ddk_fvf_vertex_data_components_gg"></span><span id="DDK_FVF_VERTEX_DATA_COMPONENTS_GG"></span>FVF 頂点データコンポーネント
 
-ドライバーで指定されたフラグを分析することで、コンポーネントが存在するかを決定します、 **dwVertexType**のメンバー、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)。構造体。 次の表で設定できるビット フィールドを示します**dwVertexType**と、そのユーザーを識別するコンポーネント。
+ドライバーは、 [**D3DHAL\_DRAWPRIMITIVES2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体の**Dwvertextype**メンバーに指定されているフラグを分析することによって、どのコンポーネントが存在するかを判断します。 次の表は、 **Dwvertextype**で設定できるビットフィールドと、それらが識別するコンポーネントを示しています。
 
 <table>
 <colgroup>
@@ -62,97 +62,97 @@ ms.locfileid: "67384883"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">説明</th>
+<th align="left">値</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>D3DFVF_DIFFUSE</p></td>
-<td align="left"><p>各頂点は、拡散色です。</p></td>
+<td align="left"><p>各頂点には拡散色があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_SPECULAR</p></td>
-<td align="left"><p>各頂点には、反射色があります。</p></td>
+<td align="left"><p>各頂点には反射色があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFVF_TEX0</p></td>
-<td align="left"><p>頂点データは、テクスチャ座標は提供されません。</p></td>
+<td align="left"><p>頂点データにはテクスチャ座標が指定されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_TEX1</p></td>
-<td align="left"><p>各頂点には、テクスチャ座標の 1 つのセットがあります。</p></td>
+<td align="left"><p>各頂点には、テクスチャ座標のセットが1つあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFVF_TEX2</p></td>
-<td align="left"><p>各頂点は、2 つのテクスチャ座標のセット。</p></td>
+<td align="left"><p>各頂点には、2つのテクスチャ座標のセットがあります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_TEX3</p></td>
-<td align="left"><p>各頂点には、3 つのテクスチャ座標があります。</p></td>
+<td align="left"><p>各頂点には、3つのテクスチャ座標のセットがあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFVF_TEX4</p></td>
-<td align="left"><p>各頂点は、4 つのテクスチャ座標のセットです。</p></td>
+<td align="left"><p>各頂点には、4つのテクスチャ座標のセットがあります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_TEX5</p></td>
-<td align="left"><p>各頂点は、テクスチャ座標の 5 つのセットです。</p></td>
+<td align="left"><p>各頂点には、5つのテクスチャ座標のセットがあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFVF_TEX6</p></td>
-<td align="left"><p>各頂点は、テクスチャ座標の 6 つのセットです。</p></td>
+<td align="left"><p>各頂点には、6組のテクスチャ座標があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_TEX7</p></td>
-<td align="left"><p>各頂点は、テクスチャ座標の 7 つのセットです。</p></td>
+<td align="left"><p>各頂点には、7つのテクスチャ座標のセットがあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFVF_TEX8</p></td>
-<td align="left"><p>各頂点は、8 つのテクスチャ座標です。</p></td>
+<td align="left"><p>各頂点には、8セットのテクスチャ座標があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFVF_XYZRHW</p></td>
-<td align="left"><p>各頂点<em>x、y、z</em>、および<em>w</em>座標。</p></td>
+<td align="left"><p>各頂点には、 <em>x、y、z</em>、および<em>w</em>の各座標があります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-1 つだけ、D3DFVF の\_TEX *n*フラグが設定されています。
+D3DFVF\_TEX *n*フラグのいずれか1つだけが設定されています。
 
-### <a name="span-idddkfvfvertexcomponentorderingggspanspan-idddkfvfvertexcomponentorderingggspanfvf-vertex-component-ordering"></a><span id="ddk_fvf_vertex_component_ordering_gg"></span><span id="DDK_FVF_VERTEX_COMPONENT_ORDERING_GG"></span>FVF 頂点コンポーネントの順序付け
+### <a name="span-idddk_fvf_vertex_component_ordering_ggspanspan-idddk_fvf_vertex_component_ordering_ggspanfvf-vertex-component-ordering"></a><span id="ddk_fvf_vertex_component_ordering_gg"></span><span id="DDK_FVF_VERTEX_COMPONENT_ORDERING_GG"></span>FVF 頂点コンポーネントの順序付け
 
-マイクロソフトの Direct3D には、頂点データの構成要素を持つは、次の図に示すように順序付けのドライバーが用意されています。
+Microsoft Direct3D は、次の図に示すように、コンポーネントが順序付けされた頂点データをドライバーに提供します。
 
-![頂点の柔軟な形式 (fvf) 頂点コンポーネントの順序を示す図](images/fvf.png)
+![フレキシブル頂点形式 (fvf) の頂点コンポーネントの順序付けを示す図](images/fvf.png)
 
-Direct3D は常に送信します*x、y、z、* と*w* ; の値のみ、残りのデータが送信されるアプリケーションで必要とします。 この図で、2 D テクスチャ座標を前提とされるに注意してください 1 D、3 D、および 4 D テクスチャも DirectX の最新のリリースで有効です。
+Direct3D は常に*x、y、z、* および*w*の値を送信します。残りのデータは、アプリケーションによって要求された場合にのみ送信されます。 この図は、2D テクスチャ座標を前提としていますが、最新の DirectX リリースでも、1D テクスチャと4D テクスチャが有効であることに注意してください。
 
-上記の図に示すように、頂点データは、次のコンポーネントで構成されます。
+上の図に示すように、頂点データは次のコンポーネントで構成されています。
 
 1.  場所 (*x、y、z、w*) (必須)
 
-    最初の頂点のコンポーネントは、頂点の位置を識別する 4 つの D3DVALUEs です。 Direct3D、常に設定、D3DFVF\_XYZRHW ビット**dwVertexType**します。
+    最初の頂点コンポーネントは、頂点の位置を識別する4つの D3DVALUEs です。 Direct3D は、常に**Dwvertextype**の D3DFVF\_XYZRHW ビットを設定します。
 
-2.  (省略可能) の色を拡散します。
+2.  拡散色 (オプション)。
 
-    存在する場合、このコンポーネントは、この頂点の拡散色を指定する D3DCOLOR 値です。 Direct3D の設定、D3DFVF\_ビット拡散**dwVertexType**このコンポーネントが存在する場合。
+    存在する場合、このコンポーネントは、この頂点の拡散色を指定する D3DCOLOR 値です。 このコンポーネントが存在する場合、Direct3D は**Dwvertextype**の D3DFVF\_拡散ビットを設定します。
 
-3.  反射色は (省略可能)。
+3.  反射色 (省略可能)。
 
-    存在する場合、このコンポーネントは、この頂点の反射色を指定する D3DCOLOR 値です。 Direct3D の設定、D3DFVF\_ビット反射**dwVertexType**このコンポーネントが存在する場合。
+    存在する場合、このコンポーネントは、この頂点の反射色を指定する D3DCOLOR 値です。 このコンポーネントが存在する場合、Direct3D は、 **Dwvertextype**の D3DFVF\_スペキュラビットを設定します。
 
-4.  テクスチャ データ (省略可能)。
+4.  テクスチャデータ (省略可能)。
 
-    この部分は、テクスチャのディメンションによって異なります。 テクスチャの各ディメンションに対して、D3DVALUE を指定の各、 *u*、 *v*、 *w*、または*q*コンポーネント (FVF テクスチャの説明を参照してください。ディメンションの場合)。 たとえば、nonprojected 2 D のテクスチャを使用している場合テクスチャあたり 2 つの D3DVALUEs が頂点を指定する必要は*u, v*テクスチャ合計最大 8 つのテクスチャの各値。 数*u, v*ペアの存在が*n*ここで、 *n* 、D3DFVF に対応する\_TEX*n*フラグで設定**dwVertexType**します。 たとえば場合、D3DFVF\_TEX3 設定されている**dwVertexType**し、次の 3 つ、 *u, v*ペアは、各頂点で提供されています。
+    この部分は、テクスチャの次元によって異なります。 テクスチャの各次元について、D3DVALUE は、 *u*、 *v*、 *w*、または*q*の各コンポーネントを指定します (「FVF テクスチャディメンションの説明」を参照してください)。 たとえば、2D のプロジェクションされていないテクスチャが使用されている場合、テクスチャごとに2つの D3DVALUEs が必要になります。これにより、各テクスチャの最大8個のテクスチャに対して、頂点の*u、v*の値が指定されます。 *U、v*のペアの数は*n*です。ここで、 *n*は**DWVERTEXTYPE**で設定された D3DFVF\_TEX*n*フラグに相当します。 たとえば、D3DFVF\_TEX3 が**Dwvertextype**で設定されている場合、各頂点には3つの*u、v*のペアが指定されます。
 
-FVF データは常に緊密にパックされた;つまり、頂点バッファーに明示的に指定されていないコンポーネントのメモリは消費しません。 たとえば、 **dwVertexType**は (D3DFVF\_XYZRHW |D3DFVF\_TEX2)、およびテクスチャのディメンションは、2 D、緊密にパックされた D3DVALUEs の 8 つのバッファー内の各頂点で構成されます。 これらの場所を指定 (*x、y、z、w*) および次の図に示すように、(tu₀、tv₀、tu₁、tv₁) の 2 つのテクスチャの座標をテクスチャします。
+FVF データは常に厳密にパックされます。つまり、頂点バッファーに明示的に指定されていないコンポーネントでは、メモリは無駄になりません。 たとえば、 **Dwvertextype**が (D3DFVF\_XYZRHW | の場合、D3DFVF\_TEX2)、テクスチャディメンションは2D、バッファー内の各頂点は、厳密にパックされた8つの D3DVALUEs で構成されます。 次の図に示すように、2つのテクスチャ (tu ₀、tv ₀、tu ₁、tv ₁) の場所 (*x、y、z、w*) とテクスチャ座標を指定します。
 
-![2 つのテクスチャの場所およびテクスチャの座標を示す図](images/vbuf.png)
+![2つのテクスチャの位置とテクスチャ座標を示す図](images/vbuf.png)
 
-上記の図でテクスチャ座標の 2 つだけあると見なされます。 ドライバーに渡される頂点データは常に変換し、点灯します。 ドライバーは、法線を受信しません。 FVF テクスチャの座標セットのすべてのデータは、IEEE 単精度浮動小数点数です。 実装の詳細については、次を参照してください。、 *Perm3*サンプル ドライバー。 FVF の詳細については、DirectX SDK のドキュメントを参照してください。
+上の図では、テクスチャ座標が2つだけであると想定しています。 ドライバーに渡される頂点データは、常に変換され、点灯します。 ドライバーは、法線を受信しません。 FVF テクスチャの座標セット内のすべてのデータは、単精度 IEEE 浮動小数点数です。 実装の詳細については、 *Perm3*サンプルドライバーを参照してください。 FVF の詳細については、DirectX SDK のドキュメントを参照してください。
 
 > [!NOTE] 
-> Microsoft Windows Driver Kit (WDK) に 3 dlabs Permedia3 サンプルのディスプレイ ドライバーが含まれていません (*Perm3.h*)。 Windows Server 2003 SP1 ドライバー開発キット (DDK)、DDK - WDHC web サイトの Windows ドライバー開発キットのページからダウンロードできるこのサンプル ドライバーを取得できます。
+> Microsoft Windows Driver Kit (WDK) には、3Dlabs Permedia3 sample display Driver (*Perm3*) が含まれていません。 このサンプルドライバーは、Windows Server 2003 SP1 Driver Development Kit (DDK) から入手できます。このドライバーは、WDHC web サイトの DDK-Windows Driver Development Kit ページからダウンロードできます。

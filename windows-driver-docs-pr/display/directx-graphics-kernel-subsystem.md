@@ -1,39 +1,39 @@
 ---
-title: DirectX グラフィックス カーネル サブシステム
-description: Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) は、ディスプレイのミニポート ドライバーによって呼び出される関数を実装します。
+title: DirectX グラフィックスカーネルサブシステム
+description: Microsoft DirectX グラフィックスカーネルサブシステム (Dxgkrnl) は、ディスプレイミニポートドライバーによって呼び出される関数を実装します。
 ms.assetid: 7601c761-bdab-4d18-8a84-7d69a71ec41c
 ms.date: 10/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bca6196b5e14d5138e4bbb81e2a55a8756c49075
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d051988e63a6528322358d4616f46b8ab91d1654
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327942"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838995"
 ---
-# <a name="directx-graphics-kernel-subsystem-dxgkrnlsys"></a>DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys)
+# <a name="directx-graphics-kernel-subsystem-dxgkrnlsys"></a>DirectX グラフィックスカーネルサブシステム (Dxgkrnl)
 
-このトピックでは、Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) を通じて、Windows オペレーティング システムを実装するカーネル モード インターフェイスについて説明します。
+このトピックでは、Windows オペレーティングシステムが Microsoft DirectX graphics カーネルサブシステム (Dxgkrnl) を介して実装するカーネルモードインターフェイスについて説明します。
 
-ポートのディスプレイ ドライバーは、DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) の 1 つの部分です。 ディスプレイのミニポート ドライバーは、ディスプレイ アダプターの製造元によって実装されます。 DirectX グラフィックスのカーネル サブシステムによって実装されるその他の関数の説明については、次のトピックを参照してください。
+ディスプレイポートドライバーは、DirectX グラフィックスカーネルサブシステム (Dxgkrnl) の1つの部分です。 ディスプレイミニポートドライバーは、ディスプレイアダプターのベンダによって実装されます。 DirectX グラフィックスカーネルサブシステムによって実装される他の関数の説明については、次のトピックを参照してください。
 
 [VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)
 
-[パスに依存しない回転をサポートしています。](supporting-path-independent-rotation.md)
+[パスに依存しないローテーションのサポート](supporting-path-independent-rotation.md)
 
-[追加のモニター ターゲット モードを取得します。](obtaining-additional-monitor-target-modes.md)
+[追加のモニターターゲットモードの取得](obtaining-additional-monitor-target-modes.md)
 
-ディスプレイのミニポート ドライバーによって実装される関数の説明については、カーネル モード インターフェイスを実装して、表示ミニポート ドライバーを参照してください。
+ディスプレイミニポートドライバーによって実装される関数の説明については、「ディスプレイミニポートドライバーによって実装されるカーネルモードインターフェイス」を参照してください。
 
 ## <a name="dxgkrnl-interface"></a>Dxgkrnl インターフェイス
 
-DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) で、次の表の関数へのポインターを渡すことによって、ディスプレイのミニポート ドライバーを提供します、 [DXGKRNL_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgkrnl_interface)構造体をディスプレイ ミニポート ドライバーの[DxgkDdiStartDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)関数。 DXGKRNL_INTERFACE 構造体には、特定のディスプレイ アダプター (ポートのディスプレイ ドライバーによって生成された) ハンドルも含まれます。 ディスプレイのミニポート ドライバーは、DXGKRNL_INTERFACE で任意の関数を呼び出すたびに、引数としてそのハンドルを渡します。
+DirectX グラフィックスカーネルサブシステム (Dxgkrnl) は、 [DXGKRNL_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgkrnl_interface)構造体をディスプレイミニポートドライバー[に渡すことによって、次の表の関数へのポインターを表示するミニポートドライバーを提供します。DxgkDdiStartDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)関数。 DXGKRNL_INTERFACE 構造体には、特定のディスプレイアダプターに対して (ディスプレイポートドライバーによって生成される) ハンドルも含まれています。 表示ミニポートドライバーは、DXGKRNL_INTERFACE 内の関数のいずれかを呼び出すたびに、そのハンドルを引数として渡します。
 
 
 
-|Dxgkrnl.sys||
+|Dxgkrnl||
 |:---|:---|
-|DxgkInitialize|(カーネル モードの表示専用ドライバーによってのみ呼び出されます) DxgkInitializeDisplayOnlyDriver (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
+|DxgkInitialize|DxgkInitializeDisplayOnlyDriver (カーネルモードの表示専用ドライバーによってのみ呼び出されます) (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
 |DxgkCbAcquirePostDisplayOwnership (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|DxgkCbCompleteFStateTransition (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
 |DxgkCbCreateContextAllocation (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|DxgkCbDestroyContextAllocation (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
 |DxgkCbEnumHandleChildren|DxgkCbEvalAcpiMethod|
@@ -43,7 +43,7 @@ DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) 
 |DxgkCbIsDevicePresent|DxgkCbLogEtwEvent|
 |DxgkCbMapMemory|DxgkCbNotifyDpc|
 |DxgkCbNotifyInterrupt|DxgkCbPowerRuntimeControlRequest (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
-|(カーネル モードの表示専用ドライバーによってのみ呼び出されます) DxgkCbPresentDisplayOnlyProgress (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|DxgkCbQueryMonitorInterface|
+|Dxgkcbdisplayonlyprogress (カーネルモードの表示専用ドライバーによってのみ呼び出されます) (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|DxgkCbQueryMonitorInterface|
 |DxgkCbQueryServices|DxgkCbQueryVidPnInterface|
 |DxgkCbQueueDpc|DxgkCbReadDeviceSpace|
 |DxgkCbSetPowerComponentActive (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|DxgkCbSetPowerComponentIdle (DXGKDDI_INTERFACE_VERSION > = DXGKDDI_INTERFACE_VERSION_WIN8)|
@@ -61,31 +61,31 @@ DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) 
 
 ## <a name="agp-interface"></a>AGP インターフェイス
 
-次の関数は、オペレーティング システムによって実装され、AGP (高速のグラフィックス ポート) をサポートするためにディスプレイのミニポート ドライバーによって呼び出されます。 ディスプレイのミニポート ドライバーでは、これらの関数へのポインターを取得 DXGK_SERVICES 列挙型から DxgkServicesAgp 値を渡すことで、 *ServicesType*のパラメーター、 [DxgkCbQueryServices](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_query_services)関数。
+次の関数はオペレーティングシステムによって実装され、AGP (Accelerated Graphics Port) をサポートするためにディスプレイミニポートドライバーによって呼び出されます。 表示ミニポートドライバーは、DXGKDXGK_SERVICES の列挙型から[Dxgkcbqueryservices](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)関数の*servicestype*パラメーターに Dxgkサービスの agp 値を渡すことによって、これらの関数へのポインターを取得します。
 
 |AGP 関数|
 |:---|
-|[AgpAllocatePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_agp_allocate_pool)|
-|[AgpFreePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_agp_free_pool)|
-|[AgpSetCommand](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_agp_set_command)|
+|[AgpAllocatePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_agp_allocate_pool)|
+|[AgpFreePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_agp_free_pool)|
+|[AgpSetCommand](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_agp_set_command)|
 
 
-## <a name="debug-report-interface"></a>レポート インターフェイスをデバッグします。
+## <a name="debug-report-interface"></a>デバッグレポートインターフェイス
 
 
-ディスプレイのミニポート ドライバーを渡すことによって、次の関数へのポインターを取得する、 *DxgkServicesDebugReport* 、DXGK_SERVICES 列挙型の値、 *ServicesType*のパラメーター、[DxgkCbQueryServices](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_query_services)関数。 これらの関数を使用してアクセスされる、 [_DXGK_DEBUG_REPORT_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_debug_report_interface)構造体。
+表示ミニポートドライバーは、 *DXGKDXGK_SERVICES*の列挙型の値を[Dxgkservicesdebugreport](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)関数の*servicestype*パラメーターに渡すことによって、次の関数へのポインターを取得します。 これらの関数には、 [_DXGK_DEBUG_REPORT_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_debug_report_interface)構造体を使用してアクセスします。
 
-|デバッグ レポート関数|
+|レポート関数のデバッグ|
 |:---|
 |DbgReportComplete|
 |DbgReportCreate|
 |DbgReportSecondaryData|
 
-## <a name="timed-operation-interface"></a>インターフェイスの操作がタイムアウトしました
+## <a name="timed-operation-interface"></a>時間指定操作インターフェイス
 
-ディスプレイのミニポート ドライバーを渡すことによって、次の関数へのポインターを取得する、 *DxgkServicesTimedOperation* 、DXGK_SERVICES 列挙型の値、 *ServicesType*のパラメーター[DxgkCbQueryServices](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_query_services)関数。 DxgkCbQueryServices のメンバーでは、上記の関数へのポインターを返します、 [DXGK_TIMED_OPERATION_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_timed_operation_interface)構造;、display ミニポート ドライバーに DXGK_TIMED_OPERATION_INTERFACE へのポインターを提供する、*インターフェイス*DxgkCbQueryServices のパラメーター。
+表示ミニポートドライバーは、DXGK_SERVICES 列挙型の*DxgkServicesTimedOperation*値を[Dxgkcbqueryservices](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)関数の*servicestype*パラメーターに渡すことによって、次の関数へのポインターを取得します. DxgkCbQueryServices は、 [DXGK_TIMED_OPERATION_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_timed_operation_interface)構造体のメンバーの前のリストに含まれている関数へのポインターを返します。表示ミニポートドライバーは、DxgkCbQueryServices の*INTERFACE*パラメーターに DXGK_TIMED_OPERATION_INTERFACE へのポインターを提供します。
 
-|時間操作関数|
+|時間指定操作関数|
 |:---|
 |TimedOperationStart|
 |TimedOperationDelay|
@@ -95,5 +95,5 @@ DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) 
 
 [Windows Display Driver Model (WDDM) アーキテクチャ](windows-vista-and-later-display-driver-model-architecture.md)
 
-[表示のミニポート ドライバーの初期化](initializing-the-display-miniport-driver.md)
+[ミニポートドライバーの表示を初期化しています](initializing-the-display-miniport-driver.md)
 

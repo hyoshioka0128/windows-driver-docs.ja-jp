@@ -4,20 +4,20 @@ description: ENCAPIPARAM\_ピーク\_ビットレート
 ms.assetid: 444a20e0-f3af-4dbc-9272-44e992e059e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d9cc133b18d3ea490580d6a6bed85bc334ec76
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc0698c00fddfcbffa8c83ac153cd952640384a6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384140"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843208"
 ---
-# <a name="encapiparampeakbitrate"></a>ENCAPIPARAM\_ピーク\_ビットレート
+# <a name="encapiparam_peak_bitrate"></a>ENCAPIPARAM\_ピーク\_ビットレート
 
 
 ## <span id="ddk_encapiparam_peak_bitrate_ks"></span><span id="DDK_ENCAPIPARAM_PEAK_BITRATE_KS"></span>
 
 
-ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスのサポートされている最大ビット レート (ビット/秒) の範囲について説明します。
+ENCAPIPARAM\_ビットレートプロパティは、デバイスのサポートされているピークビットレート (ビット/秒) の範囲を示すために使用されます。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -38,8 +38,8 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>ULONG</p></td>
@@ -49,19 +49,19 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 
  
 
-プロパティの値 (データの操作) は、VT\_で指定された、デバイスのビットレートのピーク時の UI4 階段状の範囲、 **PropertyItem.Values**のメンバー [ **KSPROPERTY\_セット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)構造体。
+プロパティ値 (操作データ) は、VT\_UI4 がステップ実行された、デバイスのピークビットレートです **。値**は、 [**KSK プロパティ\_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)構造体です。
 
 ### <a name="comments"></a>コメント
 
-ミニドライバーは、静的なを指定するかに必要な**PropertyItem.Values**プロパティ項目またはハンドルの基本的な説明がクエリをサポートし、値を入力します。 ミニドライバーは、このプロパティの既定値も指定する必要があります。
+ミニドライバーは、静的な Propertyitem を提供する必要が**あります。** プロパティ項目の説明を指定するか、基本サポートクエリを処理しての値を入力します。 ミニドライバーでは、このプロパティの既定値も指定する必要があります。
 
 ### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
+**ヘッダー:** *Ksmedia. h*で宣言されています。 *Ksmedia. h*をインクルードします。
 
 ### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **VIDEOENCODER\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)
+[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)、 [ **videoencoder\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)
 
  
 

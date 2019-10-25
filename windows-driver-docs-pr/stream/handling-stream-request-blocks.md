@@ -3,19 +3,19 @@ title: ストリーム要求ブロックの処理
 description: ストリーム要求ブロックの処理
 ms.assetid: fb4fda0d-54e9-4f1b-a78c-276e770189d5
 keywords:
-- Stream.sys クラス ドライバー WDK Windows 2000 のカーネルされる Srb
-- ミニドライバー WDK Windows 2000 のカーネルされる Srb のストリーミング
-- WDK Windows 2000 カーネル ストリーミング、ミニドライバーされる Srb
-- される Srb WDK ストリーミング ミニドライバー
-- ストリーム要求のブロックを参照してください SRB またはされる Srb
+- .Sys クラスドライバー WDK Windows 2000 カーネル、SRBs
+- streaming ミニドライバー WDK Windows 2000 カーネル、SRBs
+- ミニドライバー WDK Windows 2000 カーネルストリーミング、SRBs
+- SRBs WDK streaming ミニドライバー
+- ストリーム要求ブロック SRB または SRBs を参照してください。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f6e05efd619c3e10cdd1145d3456b5d5fb6e48
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e8c9124139fc78e12a312221c99148b4fdf0c23a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384035"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837958"
 ---
 # <a name="handling-stream-request-blocks"></a>ストリーム要求ブロックの処理
 
@@ -23,11 +23,11 @@ ms.locfileid: "67384035"
 
 
 
-オペレーティング システムでは、クラス ドライバーのデバイス上のすべての I/O 要求をディスパッチします。 クラス ドライバーは、ハードウェアに固有の情報をミニドライバーから、ミニドライバーにされる Srb を渡すことによってさらに要求します。 クラスのドライバーが要求の操作を指定します、**コマンド**ストリーム要求のブロックのメンバー。
+オペレーティングシステムは、デバイス上のすべての i/o 要求をクラスドライバーにディスパッチします。 クラスドライバーは、SRBs をミニドライバーに渡すことによって、ミニドライバーからハードウェア固有の情報を要求します。 クラスドライバーは、ストリーム要求ブロックの**コマンド**メンバーで要求する操作を指定します。
 
-全体としてミニドライバーと、ミニドライバー内の各ストリームの両方には、I/O 要求がある場合があります。 ようにミニドライバーに提供する必要があります、 [ *StrMiniReceiveDevicePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)デバイス全体にわたる要求を処理するルーチン。 各ストリームは、I/O 要求を処理するために 2 つのルーチンをサポートする必要があります。 1 つのデータ要求、およびに対する制御要求の 1 つ。 クラス ドライバーはデータ要求のコールバックを呼び出す[ *StrMiniReceiveStreamDataPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)を処理するには、すべて読み取りし、書き込みストリームを要求します。 ストリームの他のすべての要求に渡される[ **StrMiniReceiveStreamControlPacket**](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85))します。
+ミニドライバーの全体と、ミニドライバー内の各ストリームは、i/o 要求を受け取ることができます。 ミニドライバーは、デバイス全体の要求を処理するために、 [*Strminireceivedevicepacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)ルーチンを提供する必要があります。 各ストリームは、i/o 要求を処理する2つのルーチンをサポートする必要があります。1つはデータ要求用で、もう1つは制御要求用です。 クラスドライバーは、データ要求のコールバック[*StrMiniReceiveStreamDataPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)を呼び出して、ストリームのすべての読み取り要求と書き込み要求を処理します。 ストリームに対する他のすべての要求は、 [**StrMiniReceiveStreamControlPacket**](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85))に渡されます。
 
-クラス ドライバーは、ミニドライバーの同期を処理する場合、ストリームの要求をキューし、一度に 1 つミニドライバーにディスパッチします。 クラス ドライバーが 3 つの独立したキュー - デバイスの要求の 1 つを保持し、ストリーム データとコントロールの 1 つずつを要求します。 ミニドライバーは、準備ができているからこれらのキューの 1 つの新しい要求を次のように信号可能性があります。
+クラスドライバーがミニドライバーの同期を処理している場合は、ストリーム要求をキューに置いて、一度に1つずつミニドライバーにディスパッチします。 クラスドライバーは、デバイス要求用に1つ、ストリームデータと制御要求用にそれぞれ1つずつ、3つの個別のキューを保持します。 ミニドライバーは、次のように、キューのいずれかからの新しい要求の準備ができたことを通知する場合があります。
 
 <table>
 <colgroup>
@@ -45,17 +45,17 @@ ms.locfileid: "67384035"
 <tbody>
 <tr class="odd">
 <td><p>デバイスの要求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassdevicenotification" data-raw-source="[&lt;strong&gt;StreamClassDeviceNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassdevicenotification)"><strong>StreamClassDeviceNotification</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification" data-raw-source="[&lt;strong&gt;StreamClassDeviceNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification)"><strong>StreamClassDeviceNotification</strong></a></p></td>
 <td><p>ReadyForNextDeviceRequest</p></td>
 </tr>
 <tr class="even">
-<td><p>ストリームの制御の要求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
+<td><p>ストリームコントロール要求</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
 <td><p>ReadyForNextStreamControlRequest</p></td>
 </tr>
 <tr class="odd">
-<td><p>ストリームのデータ要求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
+<td><p>ストリームデータ要求</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
 <td><p>ReadyForNextStreamDataRequest</p></td>
 </tr>
 </tbody>
@@ -63,21 +63,21 @@ ms.locfileid: "67384035"
 
  
 
-クラスのドライバーを呼び出すと**StrMiniReceive*XXX*パケット**ミニドライバーにストリーム要求のブロックを渡します。 ミニドライバーのルーチンは、要求が完了しなかったクラス ドライバーに通知するまでに、ストリーム要求のブロックを唯一のアクセス権を持ちます。
+クラスドライバーは、 **Strminireceive*XXX*パケット**を呼び出すと、ストリーム要求ブロックをミニドライバーに渡します。 ミニドライバーのルーチンは、要求を完了したことをクラスドライバーに通知するまで、ストリーム要求ブロックにのみアクセスできます。
 
-ミニドライバーは、要求の処理が完了したら、必要がありますシグナル クラス ドライバー次のように、要求が完了します。
+ミニドライバーが要求の処理を完了すると、次のように要求を完了したことをクラスドライバーに通知する必要があります。
 
-1.  ミニドライバーは、要求の状態を設定する必要があります、**状態**ストリーム要求のブロックのフィールド。
+1.  ミニドライバーは、要求の状態をストリーム要求ブロックの**status**フィールドに設定する必要があります。
 
-2.  ミニドライバーは呼び出すことによって、要求が完了したことを通知する必要があります[ **StreamClassDeviceNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassdevicenotification)または[ **StreamClassStreamNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification). デバイスの要求をミニドライバーの呼び出しを完了する**StreamClassDeviceNotification**で、 *NotificationType* DeviceRequestComplete のパラメーター。 ストリーム要求をミニドライバーの呼び出しを完了する**StreamClassStreamNotification**で、 *NotificationType* StreamRequestComplete のパラメーター。
+2.  ミニドライバーは、 [**StreamClassDeviceNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification)または[**Streamclassstreamnotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)を呼び出して、要求を完了したことを通知する必要があります。 デバイス要求を完了するために、ミニドライバーは DeviceRequestComplete の*NotificationType*パラメーターを使用して**StreamClassDeviceNotification**を呼び出します。 ストリーム要求を完了するために、ミニドライバーは**Streamclassstreamnotification**を呼び出します。 StreamRequestComplete の*NotificationType*パラメーターを指定します。
 
-3.  クラスのドライバーが、同期を処理し、ミニドライバーがまだシグナル状態にならないクラス ドライバーがこのキューで別の要求を可能である場合は、その必要がありますようになりました。
+3.  クラスドライバーが同期を処理していて、ミニドライバーが、このキューで別の要求の準備ができていることをクラスドライバーに通知していない場合は、ここで実行する必要があります。
 
-ミニドライバーは呼び出すことによって 2 および 3 を組み合わせることができます[ **StreamClassCompleteRequestAndMarkQueueReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscompleterequestandmarkqueueready)します。
+ミニドライバーでは、 [**StreamClassCompleteRequestAndMarkQueueReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclasscompleterequestandmarkqueueready)を呼び出すことによって2と3を組み合わせることができます。
 
-ミニドライバーは、クラス ドライバーは、タイムアウト要求をキャンセルする必要がありますので、非同期的に要求を処理します。 これらの目的で、ミニドライバーを提供する必要があります、 [ *StrMiniCancelPacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_cancel_srb)と[ *StrMiniRequestTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_request_timeout_handler)ルーチン。 クラス ドライバーは、キャンセルまたは要求がタイムアウトするときにそれぞれミニドライバー ルーチンを呼び出します。
+ミニドライバーは要求を非同期的に処理するため、クラスドライバーは要求をキャンセルまたはタイムアウトする必要がある場合があります。 このため、ミニドライバーは[*StrMiniCancelPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_cancel_srb)および[*Strminirequesttimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_request_timeout_handler)ルーチンを提供する必要があります。 クラスドライバーは、要求をキャンセルまたはタイムアウトしたときに、それぞれのミニドライバールーチンを呼び出します。
 
-オペレーティング システムによって基になる I/O 要求が取り消されたときに、クラス ドライバーは、要求をキャンセルします。 クラスのドライバーがタイムアウトになる時間がかかりすぎる--を処理する要求がで要求をタイムアウトするまでの秒数のカウンターをデクリメント、 **TimeoutCounter**ストリーム要求のブロックのメンバー。 設定する必要がありますが、ミニドライバーは、長期間の要求の処理を延期する必要がある場合、 **TimeoutCounter** 0--メンバー クラス ドライバーしはタイムアウトしません要求。 それをリセットする必要があります、ミニドライバーに要求の処理が再開される**TimeoutCounter**に等しい、 **TimeoutOriginal**ストリーム要求のブロックのメンバー。 ミニドライバーをリセットできます**TimeoutOriginal**要求がタイムアウトするまでの時間の長さを変更します。参照してください[ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)詳細についてはします。
+クラスドライバーは、基になる i/o 要求がオペレーティングシステムによって取り消された場合に、要求をキャンセルします。 クラスドライバーは、処理に時間がかかりすぎる要求をタイムアウトさせます。これにより、ストリーム要求ブロックの**Timeoutcounter**メンバー内の要求がタイムアウトするまでの秒数のカウンターが減少します。 ミニドライバーが長時間にわたって要求の処理を遅延させる必要がある場合、 **Timeoutcounter**メンバーを0に設定する必要があります。これにより、クラスドライバーは要求をタイムアウトにしません。 ミニドライバーが要求の処理を再開したら、 **Timeoutcounter**をリセットして、ストリーム要求ブロックの**timeoutcounter**メンバーと同じにする必要があります。 ミニドライバーは、 **Timeoutoriginal**をリセットして、要求がタイムアウトするまでの時間を変更できます。詳細については、「 [**HW\_STREAM\_REQUEST\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block) 」を参照してください。
 
  
 

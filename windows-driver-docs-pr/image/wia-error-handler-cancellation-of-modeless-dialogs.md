@@ -1,36 +1,36 @@
 ---
-title: モードレス ダイアログの WIA エラー ハンドラーのキャンセル
-description: モードレス ダイアログの WIA エラー ハンドラーのキャンセル
+title: モードレスダイアログの WIA エラーハンドラーのキャンセル
+description: モードレスダイアログの WIA エラーハンドラーのキャンセル
 ms.assetid: eca6c3a3-c196-4d28-925a-c8f5d5d8601b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b8e285cb1003ab04e0c50e040b8bd1dc34dbe5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a4f71fd5122fbd8f36f4c182b3cf6b2f9869271
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383757"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840698"
 ---
-# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>モードレス ダイアログの WIA エラー ハンドラーのキャンセル
+# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>モードレスダイアログの WIA エラーハンドラーのキャンセル
 
 
-キャンセルとモードレス ダイアログ ボックスのジョンソンの処理方法中心とエラー ハンドラーの複雑さの多くとします。
+エラーハンドラーの複雑さの多くは、モードレスダイアログボックスのキャンセルと無視がどのように処理されるかを中心にしています。
 
-具体的には、WIA プロキシ コードにより、下位レベルのエラー ハンドラー (つまりは、そのアプリケーションのエラー ハンドラー以外ハンドラー) が、ドライバーにモードレス ダイアログ ボックスからキャンセル要求をやり取りすることを取得します。これにより、下位レベルのハンドラーがそのモードレス ダイアログ ボックスを破棄する機会を取得します。
+特に、WIA プロキシコードは、低レベルのエラーハンドラー (つまり、そのアプリケーションのエラーハンドラー以外のハンドラー) が、モードレスダイアログからドライバーに取り消し要求を返信する機会を持つことを保証します。これにより、下位レベルのハンドラーが、モードレスダイアログボックスを閉じる機会を得ることができます。
 
-モードレス ダイアログからのデータ転送操作をキャンセルするエラー ハンドラーを許可するには、ドライバーが送信を続けます WIA\_転送\_MSG\_デバイス\_のステータス メッセージを同じ *。hrErrorStatus*コード、更新、 *lPercentComplete*パラメーター エラー ハンドラーに進行状況を表示する UI を許可します。 例: ドライバーが時間の長い方法の推定値を与えることができる場合「ウォーミング アップ」は本当に、、さまざまなデバイス メッセージを送信できる*hrErrorStatus* WIA に設定\_状態\_WARMING\_をします。 これにより、このダイアログ ボックスからの転送をキャンセルする機会をユーザーに提供に加えて、進行状況ダイアログを表示するエラー ハンドラーが許可されます。 *LPercentComplete*パラメーターに渡す[ **IWiaErrorHandler::ReportStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiaerrorhandler-reportstatus)は同じ正確な*lPercentComplete*ドライバーに設定するパラメーター、 **IWiaTransferCallback::WiaTransferParams**メソッド。 これの例は、WDK の CD に収録 WIA モンスターの拡張ドライバーを参照してください。
+エラーハンドラーがモードレスダイアログからデータ転送操作をキャンセルできるようにするには、ドライバーは、同じ*hrErrorStatus*コードを使用して、\_MSG\_デバイス\_ステータスメッセージを\_送信します。*Lpercentcomplete*率パラメーターを更新して、エラーハンドラー UI で進行状況を表示できるようにします。 たとえば、ドライバーが "ウォームアップ" にかかる時間を見積もることができる場合、 *hrErrorStatus*が WIA に設定されている複数のデバイスメッセージを送信して、\_状態\_ウォームアップ\_を行うことができます。 これにより、エラーハンドラーは進行状況ダイアログを表示できるだけでなく、ユーザーがこのダイアログボックスから転送を取り消す機会を与えることができます。 [**IWiaErrorHandler:: ReportStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiaerrorhandler-reportstatus)に渡される*lpercentcomplete*パラメーターは、ドライバーが**Iwiatransfercallback:: Wiatranstarparams**メソッドで設定するのとまったく同じ*lranパラメーター*です。 この例については、WDK CD の Extended WIA モンスタードライバーを参照してください。
 
-モードレス ダイアログ ボックスを消去するエラー ハンドラーを許可するのには、Microsoft はデバイスの状態コード WIA を導入しました。\_状態\_クリアします。 このメッセージは、WIA プロキシは、現在表示されている 1 つから別のデバイス メッセージを受信するときに、モードレスの UI を現在表示されているエラー ハンドラーに WIA プロキシによって送信されます。 また、WIA が送信され、プロキシ\_状態\_オフ メッセージします。
+エラーハンドラーがモードレスダイアログを閉じることを許可するために、Microsoft はデバイスの状態コード WIA\_状態\_クリアを導入しました。 このメッセージは、現在表示されているものとは別のデバイスメッセージを WIA プロキシが受信したときに、現在モードレス UI を表示しているエラーハンドラーに、WIA プロキシによって送信されます。 また、次の場合に、プロキシは WIA\_状態\_クリアメッセージを送信します。
 
-ドライバーを送信する、WIA\_転送\_メッセージ\_、ステータス メッセージ
+ドライバーは、WIA\_TRANSFER\_メッセージ\_ステータスメッセージを送信します。
 
-呼び出し中に、 **IWiaTransferCallback::GetNextStream**メソッド
+**Iwiatransfercallback:: GetNextStream**メソッドの呼び出し中
 
-ストリーム転送 (モードレスの UI を表示するエラー ハンドラーが現在) 場合の最後にします。
+ストリーム/転送の最後 (モードレス UI を表示しているエラーハンドラーがある場合)。
 
-ドライバーは、WIA を送信しないでください\_状態\_オフ メッセージの送受信自体。
+ドライバーは、WIA\_状態\_クリアメッセージを送信しないようにする必要があります。
 
-**IWiaTransferCallback**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
+**Iwiatransのコールバック**インターフェイスについては、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

@@ -1,80 +1,80 @@
 ---
-title: オブジェクトのライフ サイクル
-description: オブジェクトのライフ サイクル
+title: オブジェクトのライフサイクル
+description: オブジェクトのライフサイクル
 ms.assetid: e81bfce6-27c4-4916-adc8-9c014d02bee7
 keywords:
-- オブジェクトのライフ サイクルの WDK カーネル
-- WDK オブジェクトのライフ サイクル
-- オブジェクトを参照します。
-- オブジェクト参照は、WDK のカーネルをカウントします。
-- 一時オブジェクトの WDK カーネル
-- 永続的なオブジェクトの WDK カーネル
-- 参照カウントの WDK オブジェクト
-- 解放されたオブジェクトの WDK カーネル
-- オブジェクトの一時的な状態の WDK カーネル
-- オブジェクトの永続的な状態の WDK カーネル
-- 自動オブジェクトの削除の WDK カーネル
-- WDK のカーネルを追跡するオブジェクト
-- オブジェクト ハンドル WDK カーネルを開く
-- WDK のオブジェクトの参照をカウント
+- オブジェクトのライフサイクル WDK カーネル
+- ライフサイクル WDK オブジェクト
+- オブジェクトの参照
+- オブジェクト参照カウント WDK カーネル
+- 一時オブジェクト WDK カーネル
+- パーマネントオブジェクト WDK カーネル
+- 参照カウント WDK オブジェクト
+- 解放されたオブジェクト WDK カーネル
+- オブジェクトの一時的な状態 WDK カーネル
+- オブジェクト永続的ステータス WDK カーネル
+- 自動オブジェクト削除の WDK カーネル
+- オブジェクト追跡 WDK カーネル
+- open オブジェクトは WDK カーネルを処理します
+- カウント参照 WDK オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08df0df5dd7ce393442a4bc1af60648c605b0fec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18bfcd5585e2046f31db3b741014704093be1220
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384225"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838559"
 ---
-# <a name="life-cycle-of-an-object"></a>オブジェクトのライフ サイクル
+# <a name="life-cycle-of-an-object"></a>オブジェクトのライフサイクル
 
 
 
 
 
-このトピックで説明されるオブジェクトの「ライフ サイクル」、オブジェクトの参照しオブジェクト マネージャーによって追跡する方法。 このトピックでは、一時的または永続的なオブジェクトを作成する方法も説明します。
+このトピックでは、オブジェクトの "ライフサイクル" について説明します。つまり、オブジェクトマネージャーによってオブジェクトが参照および追跡される方法について説明します。 このトピックでは、オブジェクトを一時的または永続的にする方法についても説明します。
 
-### <a name="object-reference-count"></a>オブジェクトの参照カウント
+### <a name="object-reference-count"></a>オブジェクト参照カウント
 
-オブジェクト マネージャーは、オブジェクトへの参照の数のカウントを保持します。 オブジェクトが作成されると、オブジェクト マネージャーは、1 つに、オブジェクトの参照カウントを設定します。 そのカウンターがゼロになる、オブジェクトが解放されます。
+オブジェクトマネージャーは、オブジェクトへの参照の数を保持します。 オブジェクトが作成されると、オブジェクトマネージャーによってオブジェクトの参照カウントが1に設定されます。 このカウンターがゼロになると、オブジェクトが解放されます。
 
-ドライバーは、オブジェクト マネージャーが、正確な参照カウントのすべてのオブジェクトを操作することを確認する必要があります。 途中でリリースされているオブジェクトには、システムがクラッシュする可能性があります。 参照カウントが誤って高オブジェクトは解放されません。
+ドライバーは、オブジェクトマネージャーが操作するオブジェクトに対して正確な参照カウントを持っていることを確認する必要があります。 オブジェクトが途中で解放されると、システムがクラッシュする可能性があります。 参照カウントが誤って高いオブジェクトは解放されません。
 
-ハンドルまたはポインターのいずれかのオブジェクトを参照できます。 だけでなく、参照カウントは、オブジェクト マネージャーは、オブジェクトを開いているハンドルの数を保持します。 ルーチンはハンドルを開いて、それぞれは、オブジェクトの参照カウントとオブジェクトのハンドル数の両方を 1 つずつ増加します。 このようなルーチンを呼び出すたびに対応する呼び出しと照合する必要があります[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 詳細については、次を参照してください。[オブジェクトは処理](object-handles.md)します。
+オブジェクトは、ハンドルまたはポインターによって参照できます。 オブジェクトマネージャーは、参照カウントに加えて、オブジェクトに対して開いているハンドルの数を保持します。 ハンドルを開く各ルーチンは、オブジェクト参照カウントとオブジェクトハンドル数の両方を1つ増やします。 このようなルーチンを呼び出すたびに、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)への対応する呼び出しが一致している必要があります。 詳細については、「[オブジェクトハンドル](object-handles.md)」を参照してください。
 
-カーネル モードでは、オブジェクトへのポインターでオブジェクトを参照できます。 など、オブジェクトにポインターを返すルーチン[ **IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)、参照カウントを 1 ずつ増加します。 ドライバーが完了すると、ポインターを使用して呼び出す必要があります[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)をいずれかによって、参照カウントを減らします。
+カーネルモードでは、オブジェクトへのポインターによってオブジェクトを参照できます。 [**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)などのオブジェクトへのポインターを返すルーチンは、参照カウントを1つ増やします。 ポインターを使用してドライバーが終了したら、 [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出して参照カウントを1つ減らす必要があります。
 
-次のすべてのルーチンは、オブジェクトの参照カウントを 1 ずつ増加します。
+次のルーチンはすべて、オブジェクトの参照カウントを1つ増やします。
 
-[**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)
+[**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)
 
-[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)
+[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)
 
-[**IoGetDeviceObjectPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)
+[**Plxntb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)
 
-[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)
+[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiopenblock)
 
-[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)
+[**Obreferenceobject へ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)
 
-[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
+[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)
 
-[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)
+[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)
 
-前のルーチンのいずれかに実行される各呼び出しに対応する呼び出しと一致する必要があります**ObDereferenceObject**します。
+上記のいずれかのルーチンに対して行われる各呼び出しは、対応する**ObDereferenceObject**への呼び出しと一致している必要があります。
 
-**ObReferenceObject**と**ObReferenceObjectByPointer**ルーチンが提供されるためのドライバーは、既知のオブジェクト ポインターの参照カウントを増やすことができますを 1 つ。 **ObReferenceObject**単に参照カウントが増加します。 **ObReferenceObjectByPointer**は参照カウントを増やす前に、アクセス チェックします。
+ドライバーが既知のオブジェクトポインターの参照カウントを1つ増やすことができるように、 **Obreferenceobject**と**Obreferenceobjectbypointer**ルーチンが用意されています。 **Obreferenceobject**は単に参照カウントを増やします。 **Obreferenceobjectbypointer**は、参照カウントを増やす前にアクセスチェックを行います。
 
-**ObReferenceObjectByHandle**ルーチンは、オブジェクト ハンドルを受信し、基になるオブジェクトへのポインターを提供します。 1 つの参照カウントが増加します。
+**Obreferenceobjectbyhandle**ルーチンは、オブジェクトハンドルを受け取り、基になるオブジェクトへのポインターを提供します。 参照カウントが1つ増えすぎます。
 
-### <a name="temporary-and-permanent-objects"></a>一時的および永続的なオブジェクト
+### <a name="temporary-and-permanent-objects"></a>一時オブジェクトとパーマネントオブジェクト
 
-ほとんどのオブジェクトは*一時*;、使用されていると、オブジェクト マネージャーによって解放される限り存在します。 あるオブジェクトを作成できます*永続的な*します。 オブジェクトは、永続的に、オブジェクト マネージャー自体は、オブジェクトへの参照を保持します。 したがって、参照カウントが 0 より大きい間、使用中になったときに、オブジェクトが解放されません。
+ほとんどのオブジェクトは*一時的*です。これらは、使用されている限り存在するので、オブジェクトマネージャーによって解放されます。 *永続的*なオブジェクトを作成できます。 オブジェクトが永続的な場合、オブジェクトマネージャー自体はオブジェクトへの参照を保持します。 そのため、参照カウントは0よりも大きくなり、オブジェクトは使用されなくなったときに解放されません。
 
-限りそのハンドルの数が 0 以外の場合、一時オブジェクトを名前でアクセスできます。 ハンドルの数をデクリメント 0、オブジェクトの名前には、オブジェクト マネージャーの名前空間から削除されるとします。 参照カウントが 0 より大きい限り、このようなオブジェクトはまだポインターによってアクセスできます。 存在する限り、永続的なオブジェクトを名前でアクセスできます。
+一時オブジェクトには、そのハンドルカウントが0以外の場合にのみ、名前を使用してアクセスできます。 ハンドル数が0に減少すると、オブジェクトの名前がオブジェクトマネージャーの名前空間から削除されます。 そのようなオブジェクトは、参照カウントが0よりも大きい限り、ポインターによって引き続きアクセスできます。 パーマネントオブジェクトには、存在する限り名前でアクセスできます。
 
-オブジェクトにできる永続的な作成時に、OBJ を指定することによって\_で永続的な属性、 [**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)オブジェクトの構造体。 詳細については、次を参照してください。 [ **InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)します。
+オブジェクトのオブジェクト[ **\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes)構造に OBJ\_パーマネント属性を指定することにより、オブジェクトを作成時に永続的にすることができます。 詳細については、「 [**Initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)」を参照してください。
 
-永続的なオブジェクトを一時的にするために、使用、 [ **ZwMakeTemporaryObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmaketemporaryobject)ルーチン。 このルーチンは、オブジェクトを使用してが自動的に削除します。 (開いているハンドル オブジェクトがない場合は、オブジェクトの名前は直ちに削除オブジェクト マネージャーの名前空間。 オブジェクト自体は、参照カウントがゼロになるまでです。)
+永続的なオブジェクトを一時的に作成するには、 [**Zwmake一時オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmaketemporaryobject)ルーチンを使用します。 このルーチンは、使用されなくなったオブジェクトを自動的に削除します。 (オブジェクトに開いているハンドルがない場合、オブジェクトの名前は、オブジェクトマネージャーの名前空間から直ちに削除されます。 オブジェクト自体は、参照カウントがゼロになるまで残ります)。
 
  
 

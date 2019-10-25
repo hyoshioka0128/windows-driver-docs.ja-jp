@@ -1,35 +1,35 @@
 ---
-title: WPP ソフトウェア トレース
-description: このセクションでは、Windows ソフトウェア トレース プリプロセッサ (WPP) を使用して、ソフトウェア コンポーネントのトレース プロバイダーの操作を追跡する方法について説明します。
+title: WPP ソフトウェアのトレース
+description: このセクションでは、Windows software trace プリプロセッサ (WPP) を使用して、ソフトウェアコンポーネントトレースプロバイダーの操作をトレースする方法について説明します。
 ms.assetid: dab776b3-bac9-4157-a530-6e48868ba900
 keywords:
-- Windows ソフトウェア トレース プリプロセッサ WDK
-- WDK のトレース WPP ソフトウェア
-- WDK、WPP トレース ソフトウェア
-- カーネル モードの WDK の WPP ソフトウェア トレース
-- Windows ソフトウェア トレース プリプロセッサ WDK、WPP について
-- WDK、WPP に関するトレース WPP ソフトウェア
-- 既定 WPP ソフトウェア トレース
-- トレース WDK、WPP
+- Windows ソフトウェアトレースプリプロセッサ WDK
+- WPP ソフトウェアトレース WDK
+- ソフトウェアトレース WDK、WPP
+- カーネルモードの WPP WDK ソフトウェアのトレース
+- Windows ソフトウェアトレースプリプロセッサ WDK、WPP について
+- WPP ソフトウェアトレース WDK、WPP について
+- 既定の WPP ソフトウェアのトレース
+- WDK のトレース、WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a8fcb35711278d582f3e917fa3c870904bcb7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c484639102f09bad1aae022f2a1dc801911fac5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377704"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839083"
 ---
-# <a name="wpp-software-tracing"></a>WPP ソフトウェア トレース
+# <a name="wpp-software-tracing"></a>WPP ソフトウェアのトレース
 
 
-このセクションを使用する方法を説明します、 *Windows ソフトウェア トレース プリプロセッサ*(WPP) ソフトウェア コンポーネントの操作を追跡する ([トレース プロバイダー](trace-provider.md))。 トレース プロバイダーは、次のいずれかを指定できます。
+このセクションでは、 *Windows software trace プリプロセッサ*(WPP) を使用して、ソフトウェアコンポーネント ([トレースプロバイダー](trace-provider.md)) の操作をトレースする方法について説明します。 トレースプロバイダーは、次のいずれかになります。
 
--   カーネル モード ドライバーです。
+-   カーネルモードドライバー。
 
--   ユーザー モード ドライバー、アプリケーション、またはダイナミック リンク ライブラリ (DLL) です。
+-   ユーザーモードドライバー、アプリケーション、またはダイナミックリンクライブラリ (DLL)。
 
-WPP ソフトウェア トレースを補完および強化[WMI イベントのトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)トレース プロバイダーの操作のトレースを簡略化する方法を追加します。 これは、リアルタイムのバイナリ メッセージを記録するトレース プロバイダーの効率的なメカニズムです。 ログに記録されたメッセージは、人間が判読できるトレースのトレース プロバイダーの操作を後で変換できます。
+WPP ソフトウェアトレースは、トレースプロバイダーの操作のトレースを簡略化する方法を追加することによって、 [WMI イベントのトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)を補足し、拡張します。 これは、トレースプロバイダーがリアルタイムのバイナリメッセージをログに記録するための効率的なメカニズムです。 その後、ログに記録されたメッセージを、ユーザーが判読できるトレースプロバイダーの操作のトレースに変換できます。
 
 <table>
 <colgroup>
@@ -37,61 +37,61 @@ WPP ソフトウェア トレースを補完および強化[WMI イベントの�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">WPP ソフトウェア トレースを使用する場合</th>
+<th align="left">WPP ソフトウェアトレースを使用するタイミング</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WPP ソフトウェア トレースは、主に開発中にコードのデバッグです。 アプリケーションの開発中は、トレースに加え、構造化された ETW イベントの目的で使用できるイベントを発行する場合、次の手順に従います。</p>
+<td align="left"><p>WPP ソフトウェアトレースは、主に開発時のコードのデバッグを目的としています。 構造化された ETW イベントに関心のあるアプリケーションで使用できるイベントを発行する場合は、開発中のトレースに加えて、次のようにします。</p>
 <ul>
-<li>カーネル モード ドライバーでは、使用、 <a href="event-tracing-for-windows--etw-.md" data-raw-source="[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)">Event Tracing for Windows (ETW)</a> API。</li>
-<li>ユーザー モード ドライバーやアプリケーションでは、使用して、<a href="https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal" data-raw-source="[Event Tracing](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal)">イベント トレーシング</a>(Windows デスクトップ) API です。</li>
+<li>カーネルモードドライバーの場合は、 <a href="event-tracing-for-windows--etw-.md" data-raw-source="[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)">Windows イベントトレーシング (ETW)</a> API を使用します。</li>
+<li>ユーザーモードのドライバーまたはアプリケーションの場合は、<a href="https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal" data-raw-source="[Event Tracing](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal)">イベントトレース</a>(Windows デスクトップ) API を使用します。</li>
 </ul>
-詳細については、次を参照してください。 <a href="tools-for-software-tracing.md" data-raw-source="[When should I use WPP Software Tracing or the Event Tracing for Windows (ETW) API?](tools-for-software-tracing.md)">WPP ソフトウェア トレース出力または、Event Tracing for Windows (ETW) API を使用する必要があります場合でしょうか。</a></td>
+詳細については、「<a href="tools-for-software-tracing.md" data-raw-source="[When should I use WPP Software Tracing or the Event Tracing for Windows (ETW) API?](tools-for-software-tracing.md)">どのような場合に WPP ソフトウェアのトレースまたは Windows イベントトレーシング (ETW) API を使用するか</a>」を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-WPP ソフトウェア トレースとメッセージのログ記録は、Windows イベント ログ サービスを使用すると似ています。 ドライバーでは、メッセージ ID と書式設定されていないバイナリ データをログ ファイルに記録します。 その後、ポスト プロセッサは、人間が判読できる形式にログ ファイルの情報を変換します。 ただし、WPP ソフトウェア トレースは、可能で、イベント ログ サービスでサポートされているよりも柔軟なメッセージ形式をサポートします。 たとえば、WPP ソフトウェア トレースでは、IP アドレス、Guid、システム Id、タイムスタンプ、およびその他の有用なデータ型の組み込みサポートがあります。 さらに、ユーザーは、そのアプリケーションに関連するカスタム データ型を追加できます。
+WPP ソフトウェアトレースを使用したメッセージのログ記録は、Windows イベントログサービスの使用に似ています。 ドライバーは、メッセージ ID と書式設定されていないバイナリデータをログファイルに記録します。 その後、ポストプロセッサは、ログファイル内の情報を人間が判読できる形式に変換します。 ただし、WPP ソフトウェアのトレースでは、イベントログサービスでサポートされているものよりも高い柔軟性と柔軟性を備えたメッセージ形式がサポートされています。 たとえば、WPP ソフトウェアトレースには、IP アドレス、Guid、システム Id、タイムスタンプ、およびその他の便利なデータ型のサポートが組み込まれています。 さらに、ユーザーは、アプリケーションに関連するカスタムデータ型を追加できます。
 
-WPP ソフトウェア トレースは、Microsoft Windows 2000 および Windows の以降のバージョンでサポートされます。
+WPP ソフトウェアトレースは、Microsoft Windows 2000 以降のバージョンの Windows でサポートされています。
 
-### <a name="an-overview-of-the-wpp-software-tracing-process"></a>WPP ソフトウェア トレース プロセスの概要
+### <a name="an-overview-of-the-wpp-software-tracing-process"></a>WPP ソフトウェアのトレースプロセスの概要
 
-WPP ソフトウェア トレースをドライバーまたはアプリケーションに追加するための基本的なプロセスには、次の手順が含まれています。 WDF のドライバーを作成するために、WDK で提供される Visual Studio テンプレートのいずれかを使用する場合、作業の多くが行われます。
+WPP ソフトウェアトレースをドライバーまたはアプリケーションに追加するための基本的なプロセスには、次の手順が含まれます。 WDF ドライバーを作成するために WDK に用意されているいずれかの Visual Studio テンプレートを使用すると、多くの作業が行われます。
 
--   コントロール、ドライバーまたはとしてアプリケーションを一意に識別する GUID を定義、[トレース プロバイダー](trace-provider.md)します。 プロバイダーの定義にこの GUID を指定する、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロや関連するコントロール ファイルで使用される[Tracelog](tracelog.md)別または[トレースコント ローラー](trace-controller.md)します。
+-   [トレースプロバイダー](trace-provider.md)としてドライバーまたはアプリケーションを一意に識別するコントロールの GUID を定義します。 プロバイダーは、 [WPP\_制御\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロの定義、および[tracelog](tracelog.md)や別の[トレースコントローラー](trace-controller.md)によって使用される関連するコントロールファイルにこの GUID を指定します。
 
--   必要な追加 WPP に関連する C プリプロセッサ ディレクティブと WPP マクロの呼び出しをプロバイダーのソース、ファイル、」の説明に従って[Windows ドライバーに WPP ソフトウェア トレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)し[WPPソフトウェアトレースリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85)).
+-   「Windows ドライバーおよび[Wpp ソフトウェアトレースリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85))[への wpp ソフトウェアトレースの追加](adding-wpp-software-tracing-to-a-windows-driver.md)」の説明に従って、必要な wpp 関連の C プリプロセッサディレクティブおよび wpp マクロ呼び出しをプロバイダーのソースファイルに追加します。
 
--   説明に従って、WPP プリプロセッサを実行し、ドライバーをビルドする Visual Studio プロジェクトを変更[手順 6](adding-wpp-software-tracing-to-a-windows-driver.md#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)の Windows ドライバーに WPP ソフトウェア トレースを追加します。 参照することができます、 [WPP プリプロセッサ](wpp-preprocessor.md)のビルド時のオプションの詳細。
+-   「Windows ドライバーへの WPP ソフトウェアトレースの追加」の[手順 6](adding-wpp-software-tracing-to-a-windows-driver.md#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution) . で説明されているように、Visual Studio プロジェクトを変更して、wpp プリプロセッサを実行し、ドライバーをビルドします。 より多くのビルド時間オプションについては、 [WPP プリプロセッサ](wpp-preprocessor.md)を参照できます。
 
--   ドライバーまたはコンポーネントをインストールします。 トレース セッションを開始し、トレース メッセージを記録します。 などのソフトウェアのトレース ツールを使用して[traceview で](traceview.md)、 [Tracelog](tracelog.md)、 [Tracefmt](tracefmt.md)、および[Tracepdb](tracepdb.md)構成、起動、および停止するにはセッションのトレースを表示し、トレース メッセージをフィルター処理するとします。 これらのツールは、Windows Driver Kit (WDK) で含まれています。
+-   ドライバーまたはコンポーネントをインストールします。 トレースセッションを開始し、トレースメッセージを記録します。 [Traceview](traceview.md)、 [traceview](tracelog.md)、 [Tracefmt](tracefmt.md)、 [traceview](tracepdb.md)などのソフトウェアトレース用のツールを使用して、トレースセッションの構成、開始、停止、トレースメッセージの表示とフィルター処理を行います。 これらのツールは、Windows Driver Kit (WDK) に含まれています。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [Windows Driver のトレース WPP ソフトウェアを追加します。](adding-wpp-software-tracing-to-a-windows-driver.md)
--   [ログ トレースの実行中のトレース レコーダー](using-wpp-recorder.md)
--   [トレース プロバイダーのトレース WPP ソフトウェアを使用します。](using-wpp-software-tracing-in-a-trace-provider.md)
--   [トレース プロバイダーへの WPP マクロの追加](adding-wpp-macros-to-a-trace-provider.md)
+-   [Windows ドライバーに WPP ソフトウェアトレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)
+-   [トレースログのトレースレコーダー](using-wpp-recorder.md)
+-   [トレースプロバイダーでの WPP ソフトウェアトレースの使用](using-wpp-software-tracing-in-a-trace-provider.md)
+-   [トレースプロバイダーへの WPP マクロの追加](adding-wpp-macros-to-a-trace-provider.md)
 -   [WPP プリプロセッサ](wpp-preprocessor.md)
--   [トレースと診断の WDF ドライバー](tracing-and-diagnosability-for-wdf-drivers.md)
+-   [WDF ドライバーのトレースと Diagnosability](tracing-and-diagnosability-for-wdf-drivers.md)
 
-**注**   Event Tracing for Windows (ETW) と WPP カーネル モードとユーザー モード ドライバーのほとんどの種類をサポートします。 ただし、ETW と WPP は、ドライバー、ミニポート ドライバーなどの特定の種類では使用する型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断する基本的な WPP にマクロを追加、ドライバーなど[WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))と[WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))します。 使用される型が定義されていないために、コードはコンパイルされません、ETW、WPP はドライバーの種類をサポートできません。
-ETW の詳細については、次を参照してください。[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=179202)Windows SDK のドキュメント。
+**注**   WINDOWS イベントトレーシング (ETW) と WPP では、ほとんどの種類のカーネルモードドライバーとユーザーモードドライバーがサポートされています。 ただし、ETW および WPP は、ミニポートドライバーなど、特定の種類のドライバーで使用できない型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断するには、ドライバーに基本的な WPP マクロを追加します。たとえば、 [wpp\_INIT\_TRACING](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))や[wpp\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))などです。 使用されている型が定義されていないためにコードがコンパイルされない場合、ETW および WPP はドライバーの種類をサポートできません。
+ETW の詳細については、Windows SDK のドキュメントの「[イベントトレース](https://go.microsoft.com/fwlink/p/?linkid=179202)」を参照してください。
 
-**注**WPP トレース プロバイダーは、一度に 1 つのトレース セッションでのみ有効にできます。 参照してください[WPP プロバイダー](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing#providers)詳細についてはします。
+**メモ**WPP トレースプロバイダーは、一度に1つのトレースセッションでのみ有効にすることができます。 詳細については、「 [WPP プロバイダー](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing#providers) 」を参照してください。
 
-については、 [WMI ライブラリ サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)WPP ソフトウェア トレースをサポートするを参照してください。
+WPP ソフトウェアトレースをサポートする[WMI ライブラリサポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)の詳細については、以下を参照してください。
 
-[**WmiQueryTraceInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmiquerytraceinformation)
+[**参照 Querytraceinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-wmiquerytraceinformation)
 
-[**WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)
+[**WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessage)
 
-[**WmiTraceMessageVa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessageva)
+[**WmiTraceMessageVa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessageva)
 
  
 

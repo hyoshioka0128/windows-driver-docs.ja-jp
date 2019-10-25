@@ -3,18 +3,18 @@ title: 子デバイスの検出
 description: 子デバイスの検出
 ms.assetid: 36c0c4ef-7810-4e8a-b349-0b7c1f8c2f0c
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、子デバイス
-- 子デバイス WDK ビデオ ミニポート、検出します。
-- 子デバイス WDK のビデオのミニポートの検出
+- ビデオミニポートドライバー WDK Windows 2000、子デバイス
+- 子デバイス WDK ビデオミニポート、検出
+- 子デバイスの検出 WDK ビデオミニポート
 - HwVidGetVideoChildDescriptor
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2ea7678a3883d317618a2ee416da83f6a93f0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 259ac6757cd990a8bbb9233a63908db74ed6ecf3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384879"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839753"
 ---
 # <a name="detecting-child-devices"></a>子デバイスの検出
 
@@ -22,17 +22,17 @@ ms.locfileid: "67384879"
 ## <span id="ddk_detecting_child_devices_gg"></span><span id="DDK_DETECTING_CHILD_DEVICES_GG"></span>
 
 
-実装する必要があります[ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)グラフィックス アダプターの子デバイスを検出することができる、プラグ アンド プレイ マネージャーは、ミニポート ドライバー。
+プラグアンドプレイ manager がグラフィックスアダプターの子デバイスを検出できるようにするには、ミニポートドライバーで[*HwVidGetVideoChildDescriptor*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_get_child_descriptor)を実装する必要があります。
 
-既定では、 [ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)まで、親デバイスが開始されている後に呼び出すことができません、 *HwVidGetVideoChildDescriptor*呼び出すことができませんまで後[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)が完了します。 設定することができます、いつでも発生する子列挙できますつまり、この既定をオーバーライドする、 **AllowEarlyEnumeration**のメンバー [**ビデオ\_HW\_の初期化。\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)に**TRUE**します。
+既定では、親デバイスが起動するまで[*HwVidGetVideoChildDescriptor*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_get_child_descriptor)を呼び出すことはできません。つまり、 [*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)が完了するまで*HwVidGetVideoChildDescriptor*を呼び出すことはできません。 この既定値をオーバーライドして、子列挙をいつでも実行できるようにするには、 [**VIDEO\_HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)の**Allowの列挙型**のメンバーを**TRUE**に設定します。
 
-一部のデバイスは、システムまたは既存のハードウェアが、システムから切断されている場合、新しいハードウェアが接続されているときに、割り込みを生成します。 このような割り込みを処理するために、ミニポート ドライバーは、次の操作を行う必要があります。
+一部のデバイスでは、新しいハードウェアがシステムに接続されたとき、または既存のハードウェアがシステムから切断されたときに、割り込みが発生します。 このような割り込みを処理するには、ミニポートドライバーで次の操作を行う必要があります。
 
--   DPC の実装 ([**HwVidDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_dpc_routine)) を呼び出す[ **VideoPortEnumerateChildren**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportenumeratechildren)します。
+-   [**VideoPortEnumerateChildren**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportenumeratechildren)を呼び出す DPC ([**HwVidDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pminiport_dpc_routine)) を実装します。
 
--   割り込みハンドラーの実装 ([*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)) を呼び出す[ **VideoPortQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueuedpc)ときに、割り込み、DPC キューに入れ、デバイスに発生します。
+-   デバイスの割り込みが発生したときに DPC をキューに入れ、 [**VideoPortQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportqueuedpc)を呼び出す割り込みハンドラー ([*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)) を実装します。
 
-[**VideoPortEnumerateChildren** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportenumeratechildren)強制的によって、ミニポート ドライバーのアダプターの子のデバイスの再列挙[ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)関数親デバイスの子のそれぞれに対して呼び出されます。 プラグ アンド プレイ マネージャーは、親デバイスとその子間のリレーションシップを適宜更新されます。
+[**VideoPortEnumerateChildren**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportenumeratechildren)は、各親デバイスの子に対してミニポートドライバーの[*HwVidGetVideoChildDescriptor*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_get_child_descriptor)関数が呼び出されるようにすることで、アダプターの子デバイスの reenumeration を強制的に実行します。 プラグアンドプレイマネージャーは、それに応じて親デバイスとその子との間のリレーションシップを更新します。
 
  
 

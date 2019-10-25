@@ -4,22 +4,22 @@ description: MSFC\_TargetEvent WMI クラス
 ms.assetid: 251f7526-98e6-495d-a987-83257e968bb8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c2a9352ac2e59ae65a7d5cd60b1a4b9fb839b0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a18e0c5cc644fa2088c998159268ba4e974cf03e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845601"
 ---
-# <a name="msfctargetevent-wmi-class"></a>MSFC\_TargetEvent WMI クラス
+# <a name="msfc_targetevent-wmi-class"></a>MSFC\_TargetEvent WMI クラス
 
 
 ## <span id="ddk_msfc_targetevent_wmi_class_kr"></span><span id="DDK_MSFC_TARGETEVENT_WMI_CLASS_KR"></span>
 
 
-WMI プロバイダーでは、MSFC\_TargetEvent WMI クラス ターゲット イベントを報告します。
+WMI プロバイダーは、MSFC\_TargetEvent WMI クラスを使用して、対象のイベントを報告します。
 
-MSFC\_TargetEvent クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_TargetEvent クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class MSFC_TargetEvent : WmiEvent {
@@ -35,9 +35,9 @@ class MSFC_TargetEvent : WmiEvent {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_TargetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_targetevent)
+[**MSFC\_TargetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_targetevent)
 
  
 

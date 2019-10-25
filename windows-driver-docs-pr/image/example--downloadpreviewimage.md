@@ -1,25 +1,25 @@
 ---
-title: 例 DownloadPreviewImage
-description: 例 DownloadPreviewImage
+title: DownloadPreviewImage の例
+description: DownloadPreviewImage の例
 ms.assetid: 9b27492e-0725-4c8b-9101-3aaf5c9291d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84238d4f1e3f5527f9fb9d45ab4ed18b7a7d3794
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8664b629ab0925aa12bc612f423c077d9187b66
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372590"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840840"
 ---
-# <a name="example-downloadpreviewimage"></a>以下に例を示します。DownloadPreviewImage
+# <a name="example-downloadpreviewimage"></a>例: DownloadPreviewImage
 
 
 
 
 
-**DownloadPreviewImage**関数は、プレビューのコンポーネントを呼び出すことによって、スキャナーからイメージ データをダウンロード**IWiaPreview::GetNewPreview**メソッド。 呼び出して、 **DetectSubregions**アプリケーションのユーザーは、下の子項目を作成する、セグメント化フィルターを呼び出す必要がある場合に機能*pWiaItem2*が検出した地域ごとにします。 について**DetectSubregions**、この例で使用されるを参照してください、 [ **IWiaSegmentationFilter::DetectRegions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)メソッド。
+**DownloadPreviewImage**関数は、プレビューコンポーネントの**Iwiapreview:: getnewpreview**メソッドを呼び出すことによって、スキャナーからイメージデータをダウンロードします。 次に、アプリケーションユーザーがセグメンテーションフィルターを呼び出す必要がある場合に、 **DetectSubregions**関数を呼び出します。これにより、検出された各リージョンの*pWiaItem2*に子項目が作成されます。 この例で使用されている**DetectSubregions**の詳細については、 [**IWiaSegmentationFilter::D etて region**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)メソッドを参照してください。
 
-この例では、アプリケーションのユーザーの設定、 *m\_bUseSegmentationFilter*パラメーター チェック ボックスをオンします。 ドライバーが呼び出すことによってセグメント化フィルターを持っていることを確認、アプリケーションでは、これをサポートする場合最初必要があります**IWiaItem2::CheckExtension**します。 について**CheckImgFilter**、この例で使用されるを参照してください、 **IWiaPreview::GetNewPreview** Microsoft Windows SDK のドキュメント内のメソッド。
+この例では、アプリケーションユーザーは、チェックボックスをオンにして、 *m\_bUseSegmentationFilter*パラメーターを設定します。 アプリケーションがこれをサポートしている場合は、まず、 **IWiaItem2:: CheckExtension**を呼び出して、ドライバーがセグメンテーションフィルターを持っていることを確認する必要があります。 この例で使用されている**CheckImgFilter**の詳細については、Microsoft Windows SDK ドキュメントの**Iwiapreview:: getnewpreview**メソッドを参照してください。
 
 ```cpp
 HRESULT

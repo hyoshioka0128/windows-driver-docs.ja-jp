@@ -1,37 +1,37 @@
 ---
-title: デバイス専用スレッド
-description: デバイス専用スレッド
+title: デバイス-専用スレッド
+description: デバイス-専用スレッド
 ms.assetid: 2e11e2c9-aefd-4b7b-8d80-7eb1da9f7cce
 keywords:
-- スレッド オブジェクトの WDK カーネル
-- デバイス専用のスレッドの WDK カーネル
-- 実行時の優先順位の逆転 WDK カーネル
+- スレッドオブジェクト WDK カーネル
+- デバイス専用スレッド WDK カーネル
+- 実行時の優先度逆転 WDK カーネル
 - PsCreateSystemThread
-- KeSetBasePriorityThread
+- Kesetbase優先順位スレッド
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97475d631dbb907376886052fa8ea1fb564717f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8fa5737f018e7e4970597fb9671d88f0d9fe844
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385010"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838750"
 ---
-# <a name="device-dedicated-threads"></a>デバイス専用スレッド
+# <a name="device-dedicated-threads"></a>デバイス-専用スレッド
 
 
 
 
 
-低速のデバイスまたは (フロッピー コント ローラー) などはめったに使用するデバイスのドライバーは、デバイス専用のシステム スレッドを作成する多くの「待機中」の問題を解決できます。 さらに、ほとんどのファイル システム ドライバーはシステム ワーカー スレッドを使用して、ワーカー スレッド コールバック ルーチンを指定します。
+低速のデバイスまたは使用されていないデバイス (フロッピーコントローラーなど) のドライバーは、デバイス専用システムスレッドを作成することによって、多くの "待機中" の問題を解決することができます。 また、ほとんどのファイルシステムドライバーは、システムワーカースレッドを使用し、ワーカースレッドのコールバックルーチンを提供します。
 
-デバイス ドライバーは、独自のスレッド コンテキストまたはシステム スレッド コンテキストで実行されて、デバイス専用のスレッドまたはワーカー スレッド コールバック ルーチンの最上位レベルのドライバーの同期できるは、ディスパッチャー オブジェクトでの操作など、[イベント オブジェクト](event-objects.md)または[セマフォ オブジェクト](semaphore-objects.md)ドライバーのデバイスの拡張機能の共有の通信のリージョンにします。 たとえば、デバイス専用のスレッドできますお待ち、共有のディスパッチャー オブジェクトで、スレッドのデバイスが使用されていない、呼び出すことによって[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)セマフォの。 (この時点で、セマフォに設定シグナルされた状態)、I/O 操作を実行するデバイス ドライバーが呼び出されるまでの待機中のスレッドを CPU 時間使用しません。
+デバイスドライバーが独自のスレッドコンテキストを持っている場合、またはシステムスレッドコンテキストで実行されている場合、デバイス専用スレッドまたは最上位レベルのドライバーのワーカースレッドコールバックルーチンは、[イベントオブジェクト](event-objects.md)などのディスパッチャーオブジェクトの操作を同期できます。[セマフォオブジェクト](semaphore-objects.md)。ドライバーのデバイス拡張機能の共有通信領域にあります。 たとえば、デバイス専用スレッドは、スレッドのデバイスが使用されていない状態で、セマフォの[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)を呼び出すことによって、共有ディスパッチャーオブジェクトを待機できます。 I/o 操作を実行するためにデバイスドライバーが呼び出されるまで (その時点で、セマフォはシグナル状態に設定されます)、待機中のスレッドは CPU 時間を使用しません。
 
-ドライバーが呼び出せる[ **PsCreateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)ドライバーまたはデバイス専用のスレッドを作成し、呼び出す[ **KeSetBasePriorityThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesetbaseprioritythread)スレッドの基本優先順位を設定します。 ドライバーを回避する優先度の値を指定する必要があります*実行時の優先順位の逆転*SMP マシンでします。 高すぎるドライバーが作成したスレッドの基本優先順位の設定は、ドライバーの I/O 要求を送信する優先順位の低いスレッドの実行に遅延に作成します。
+ドライバーは、 [**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)を呼び出してドライバーまたはデバイス専用のスレッドを作成し、 [**Kesetbase thread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kesetbaseprioritythread)を呼び出してスレッドの基本優先順位を設定できます。 ドライバーでは、SMP コンピューターでの*実行時優先順位の逆転*を回避する優先順位値を指定する必要があります。 つまり、ドライバーによって作成されたスレッドの基本優先順位を設定しすぎると、そのドライバーに i/o 要求を送信する優先順位の低いスレッドの実行に遅延が生じる可能性があります。
 
-スレッド オブジェクトは、dispatcher オブジェクトの型自体であるため、スレッドが完了する別のスレッドの待機できます。 スレッドに関連付けられているスレッド オブジェクト ポインターを取得するには、ドライバーを呼び出すことができます[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)から受信したスレッド ハンドルを渡して、 **PsCreateSystemThread**.
+スレッドオブジェクト自体はディスパッチャーオブジェクトの一種であるため、スレッドは別のスレッドが完了するまで待機できます。 スレッドに関連付けられているスレッドオブジェクトポインターを取得するために、ドライバーは、 **PsCreateSystemThread**から受信したスレッドハンドルを渡して、 [**Obreferenceobjectbyhandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)を呼び出すことができます。
 
-スレッドを呼び出すことができます[ **KeDelayExecutionThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)完全なタイム スライスの可能性がある、一定期間待機する以上。 粒度、 **KeDelayExecutionThread**間隔は約 10 ミリ秒です。 **KeDelayExecutionThread**タイマー駆動日常的なその間隔の粒度が若干高速またはプラットフォームによって、10 ミリ秒より遅くなります。
+スレッドは[**Kedelayexecutionthread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kedelayexecutionthread)を呼び出して、完全なタイムスライスである可能性がある間隔を待機できます。 **Kedelayexecutionthread** interval の粒度は約10ミリ秒です。 **Kedelayexecutionthread**はタイマー駆動型のルーチンであるため、プラットフォームによっては、その間隔の粒度は10ミリ秒よりもわずかに高速または低速になります。
 
  
 

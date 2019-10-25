@@ -1,29 +1,29 @@
 ---
-title: __Sdv_save_request と __sdv_retrieve_request 遅延プロシージャ呼び出しを使用します。
-description: 遅延プロシージャ呼び出しのための __sdv_save_request と __sdv_retrieve_request の使用
+title: 遅延プロシージャ呼び出しには __sdv_save_request と __sdv_retrieve_request を使用する
+description: 遅延プロシージャ呼び出しに __sdv_save_request と __sdv_retrieve_request を使用する
 ms.assetid: 14d3a022-3e74-4526-9bf5-fee1ce36ac9e
 keywords:
 - __sdv_save_request
 - __sdv_retrieve_request
 - DeferredRequestCompleted
 - AliasWithinTimerDpc
-- AliasWithinDispatch
+- エイリアスのディスパッチ
 - Dpc の分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2f13e5ab001712cf45dd8cee14d4181b923691
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a1d99c50749bacc4cdc4f311a34469bbd7db7ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363786"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839257"
 ---
-# <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用して\_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_遅延プロシージャ呼び出しの要求
+# <a name="using-__sdv_save_request-and-__sdv_retrieve_request-for-deferred-procedure-calls"></a>\_\_sdv\_使用して\_要求を保存し \_sdv\_遅延プロシージャ呼び出しの\_要求を取得する\_
 
 
-フレームワークの要求オブジェクトを追跡することは困難であるために、プロシージャ呼び出し (Dpc) の存在する課題 Static Driver Verifier (SDV) を延期できます。 1 つの難易度は、要求は、グローバルのポインターから、通常、キューのコンテキストまたはから作業項目を取得する必要があります。 この問題を克服するために、Static Driver Verifier が 2 つの関数を提供します **\_ \_sdv\_保存\_要求**、および **\_ \_sdv。\_取得\_要求**します。 これらの関数は、SDV を追跡する要求に遅延の要求をマップします。
+遅延プロシージャ呼び出し (Dpc) では、フレームワークの要求オブジェクトを追跡するのが困難なため、静的ドライバー検証ツール (SDV) に問題があります。 1つの問題は、グローバルポインターから要求を取得する必要があることです。通常はキューコンテキストから、または作業項目から要求を取得する必要があります。 この問題を回避するために、静的なドライバーの検証ツールでは、 **\_\_sdv\_の\_要求の保存**と\_\_**sdv\_\_要求の取得**という2つの機能が提供されています。 これらの関数は、遅延要求を SDV が追跡できる要求にマップします。
 
-**\_\_Sdv\_保存\_要求**、および **\_\_sdv\_取得\_要求**関数がある、次の構文。
+**\_\_sdv\_に\_要求を保存**し、\_**sdv\_取得\_要求**関数には次の構文があります。\_
 
 ```
 __sdv_save_request( request ) 
@@ -33,13 +33,13 @@ __sdv_save_request( request )
 __sdv_retrieve_request( request ) 
 ```
 
-場所*要求*framework 要求オブジェクトを識別するハンドルを指定できます。
+ここで、 *request*は任意のフレームワーク要求オブジェクトへのハンドルです。
 
-これらの関数は、静的分析ツールでのみ使用されます。 関数は、コンパイラによって無視されます。
+これらの関数は、スタティック分析ツールでのみ使用されます。 関数は、コンパイラによって無視されます。
 
-次のコード例に示す方法、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_の取得\_要求**SDV は、遅延の要求をマップできるように関数を使用して、SDV をガイドします。 SDV は、このマッピングを使用して確認する、 [DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)ルール。 DeferredRequestCompleted ルールである必要があります **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**コードに表示されます。 2 つのドライバーのプロパティ規則がある (**AliasWithinDispatch**、 **AliasWithinTimerDpc**) の存在を検索するように、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**関数。
+次のコード例では、sdv\_\_sdv を使用して **\_要求を保存**し、\_\_**sdv\_取得\_要求**関数を使用して sdv を\_する方法を示します。これにより、sdv が遅延要求をマップできるようになります。 SDV は、このマッピングを使用して[DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)規則を確認できます。 DeferredRequestCompleted ルールでは、 **\_\_sdv\_\_要求を保存**し、\_**sdv\_取得\_要求**をコードに表示する必要があります。\_ **\_sdv\_\_** の存在を確認し、\_要求を保存して \_sdv\_取得\_する、2つのドライバープロパティ規則 (エイリアスによる**ディスパッチ**、AliasWithinTimerDpc) があり **@no要求関数 (_s)** 。\_
 
-次のコード例は、関数で*EchoEvtIoRead*は、 [ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)で framework 要求オブジェクトへのハンドルを保存するイベントのコールバック関数、キューのコンテキストの領域。 関数は、 *EchoEvtTimerFunc*は、 [ *EvtTimerFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nc-wdftimer-evt_wdf_timer)イベント コールバック関数を取得します。
+次のコード例では、関数*EchoEvtIoRead*は、フレームワークの要求オブジェクトへのハンドルをキューのコンテキスト領域に保存する[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)イベントコールバック関数です。 関数*EchoEvtTimerFunc*は、それを取得する[*Evttimerfunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer)イベントコールバック関数です。
 
 ```
 VOID
@@ -64,7 +64,7 @@ EchoEvtIoRead(
 }
 ```
 
-コード例を次に示します、  **\_ \_sdv\_取得\_要求**SDV の完了を追跡できるように、関数は、既存の要求をマップします。
+次のコード例では、 **\_\_sdv\_取得\_要求**関数が既存の要求をマップして、sdv が完了を追跡できるようにする方法を示します。
 
 ```
 VOID

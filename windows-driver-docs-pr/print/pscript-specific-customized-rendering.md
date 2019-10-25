@@ -1,28 +1,28 @@
 ---
-title: Pscript 固有のカスタマイズされたレンダリング
-description: Pscript 固有のカスタマイズされたレンダリング
+title: Pscript 固有のカスタマイズされた表示
+description: Pscript 固有のカスタマイズされた表示
 ms.assetid: e984f0f0-1435-4cfd-9a99-297f6a9521f5
 keywords:
-- プラグインの WDK の印刷、Pscript5 のレンダリング
-- 印刷、Pscript WDK レンダリングをカスタマイズします。
+- レンダリングプラグイン WDK print、Pscript5
+- Pscript WDK print、カスタマイズされたレンダリング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebca7cc64b90826bf20a286b4f188a2b4e12a8a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a34c1c60cae673ac499c8d7b228cc740559bf733
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356001"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840418"
 ---
-# <a name="pscript-specific-customized-rendering"></a>Pscript 固有のカスタマイズされたレンダリング
+# <a name="pscript-specific-customized-rendering"></a>Pscript 固有のカスタマイズされた表示
 
 
 
 
 
-Pscript5 はにより Pscript5 ドライバーはプリンター デバイスに送信するデータ ストリームに Postscript コマンドを挿入するカスタマイズされたコードをデバイスに固有です。 実装するプラグインのレンダリングを指定する必要がありますこの種類のカスタマイズ コードを提供する場合、 [ **IPrintOemPS::Command** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-command)メソッド。
+Pscript5 を使用すると、デバイス固有のカスタマイズされたコードで、Pscript5 ドライバーがプリンターデバイスに送信するデータストリームに Postscript コマンドを挿入できます。 この種のカスタマイズされたコードを提供する場合は、 [**IPrintOemPS:: Command**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps-command)メソッドを実装するレンダリングプラグインを指定する必要があります。
 
-Pscript5 呼び出し、 **IPrintOemPS::Command**で印刷ジョブのデータ ストリーム内のポイントのさまざまな方法です。 関数の引数の 1 つには、データ ストリームの現在のポイントを表すインデックス値を指定します。 関数が呼び出されるたびには、インデックス値を確認でき、かどうか追加ストリームにデータを提供するか。
+Pscript5 は、印刷ジョブのデータストリーム内のさまざまなポイントで**IPrintOemPS:: Command**メソッドを呼び出します。 関数の引数の1つに、データストリーム内の現在のポイントを表すインデックス値を指定します。 関数が呼び出されるたびに、インデックス値を確認し、追加のストリームデータを提供するかどうかを指定できます。
 
  
 

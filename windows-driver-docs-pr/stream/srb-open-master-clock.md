@@ -3,7 +3,7 @@ title: SRB\_オープン\_マスター\_クロック
 description: SRB\_オープン\_マスター\_クロック
 ms.assetid: 1ccad1bc-27e7-4038-b341-389240051fb8
 keywords:
-- SRB_OPEN_MASTER_CLOCK ストリーミング メディア デバイス
+- SRB_OPEN_MASTER_CLOCK ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,39 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b30d765138e8c2cfd56236f84e34492a1b1d2c6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dbc9301aa626f81007b21ecf68064e5661d34ba9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377895"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843292"
 ---
-# <a name="srbopenmasterclock"></a>SRB\_オープン\_マスター\_クロック
+# <a name="srb_open_master_clock"></a>SRB\_オープン\_マスター\_クロック
 
 
 ## <span id="ddk_srb_open_master_clock_ks"></span><span id="DDK_SRB_OPEN_MASTER_CLOCK_KS"></span>
 
 
-クラス ドライバーは、ストリームを示す、ミニドライバーには、今すぐマスター クロックとして機能するには、この要求を発行します。
+クラスドライバーは、ミニドライバーのマスタークロックとして機能していることをストリームに示すために、この要求を発行します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-ミニドライバーは、SRB の状態として、次のいずれかを設定する必要があります。
+ミニドライバーは、SRB の状態として次のいずれかを設定する必要があります。
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>ステータス\_成功  
-コマンドが正常に完了を示します。
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状態\_成功  
+コマンドが正常に完了したことを示します。
 
-<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>ステータス\_いない\_実装されていません  
-関数が、ミニドライバーでサポートされていないことを示します。
+<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>状態\_\_実装されていません  
+関数がミニドライバーによってサポートされていないことを示します。
 
-<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>ステータス\_IO\_デバイス\_エラー  
+<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状態\_IO\_デバイス\_エラー  
 ハードウェア障害が発生したことを示します。
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*クロック オブジェクトのハンドルには、マスターのクロックを表すが作成されます。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
+クラスドライバーは**Commanddata**を設定します。マスタークロックを表すために作成されるクロックオブジェクトのハンドルに*pSrb*によって指された**masterclockhandle**メンバー。 *PSrb*ポインターは、 [ **\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造体を指す HW\_ストリームを指します。
 
-ミニドライバーを保持する必要があります、 **CommandData.MasterClockHandle**フィールドのマスターのクロックのハンドルを指す SRB の値。
+ミニドライバーは**Commanddata. MasterClockHandle**フィールド値を保持する必要があります。これは、マスタークロックのハンドルを指す SRB にあります。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_MAXPIXELRATE
-description: KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づいた最大ピクセルの割合を指定し、接続のディメンション (幅 × 高さ) を指定します。
+title: KSK プロパティ\_VPCONFIG\_MAXピクセルレート
+description: KSK プロパティ\_VPCONFIG\_MAXPIXEL RATE プロパティは、ピクセル形式に基づいて最大ピクセルレートを指定し、接続のディメンション (高さによる幅) を指定します。
 ms.assetid: 5a1e70b6-32ab-4a6c-82f7-3e6e828262a4
 keywords:
-- KSPROPERTY_VPCONFIG_MAXPIXELRATE ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_MAXPIXELRATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3711df6a20a0e794d0f83eadb86f1837c3cd3c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 473e02fcca6c70732b5751603ba0dcad68efba8b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384286"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842808"
 ---
-# <a name="kspropertyvpconfigmaxpixelrate"></a>KSPROPERTY\_VPCONFIG\_MAXPIXELRATE
+# <a name="ksproperty_vpconfig_maxpixelrate"></a>KSK プロパティ\_VPCONFIG\_MAXピクセルレート
 
 
-KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づいた最大ピクセルの割合を指定し、接続のディメンション (幅 × 高さ) を指定します。
+KSK プロパティ\_VPCONFIG\_MAXPIXEL RATE プロパティは、ピクセル形式に基づいて最大ピクセルレートを指定し、接続のディメンション (高さによる幅) を指定します。
 
 ## <span id="ddk_ksproperty_vpconfig_maxpixelrate_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_MAXPIXELRATE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate" data-raw-source="[&lt;strong&gt;KSVPMAXPIXELRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate)"><strong>KSVPMAXPIXELRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpmaxpixelrate" data-raw-source="[&lt;strong&gt;KSVPMAXPIXELRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpmaxpixelrate)"><strong>KSK VPMAXピクセルレート</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、幅、高さ、および最大値を表す KSVPMAXPIXELRATE 構造体のビデオ ポートをサポートする 1 秒あたりのピクセルの数。
+プロパティ値 (操作データ) は、サイズ、高さ、およびビデオポートがサポートする1秒あたりの最大ピクセル数を表す、KSVPMAXPIXELS の割合の構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSVPMAXPIXELRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate)
+[**KSK VPMAXピクセルレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpmaxpixelrate)
 
  
 

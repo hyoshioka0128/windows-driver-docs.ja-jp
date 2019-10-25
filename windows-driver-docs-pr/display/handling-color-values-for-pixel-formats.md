@@ -3,16 +3,16 @@ title: ピクセル形式の色の値の処理
 description: ピクセル形式の色の値の処理
 ms.assetid: 53ce6be1-14e1-4ee8-ba29-f198dcdacdaa
 keywords:
-- WDK DirectX 9.0 のピクセル形式の色の値
-- WDK DirectX 9.0 のピクセル形式のカラー値します。
+- ピクセル形式の色の値 WDK DirectX 9.0
+- ピクセル形式カラー値 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eeefd9fa06fa493ec6c431619f3f1aaa0c30ce4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 95e0e7be16adcb2d0181f9ad6e90ef7a9b345b76
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372940"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839666"
 ---
 # <a name="handling-color-values-for-pixel-formats"></a>ピクセル形式の色の値の処理
 
@@ -20,13 +20,13 @@ ms.locfileid: "67372940"
 ## <span id="ddk_handling_color_values_for_pixel_formats_gg"></span><span id="DDK_HANDLING_COLOR_VALUES_FOR_PIXEL_FORMATS_GG"></span>
 
 
-**このトピックには、DirectX 7.0 以降が適用されます。**
+**このトピックは、DirectX 7.0 以降に適用されます。**
 
-アプリケーションが一貫した方法で塗りつぶしの色とこれらの形式とサーフェスでクリア操作を要求できるため、ディスプレイ ドライバーは色形式の ARGB と YUV クラスの入力色の値を変換する必要があります。 ただし、ドライバーは、他のクラスの形式の色の値を直接使用する必要があります。 たとえば、アプリケーション A8R8G8B8、均一な色の値として使用を最大で 8 ビットのアルファ (A)、赤 (R)、緑 (G)、および青 (B) コンポーネントを持つすべての画面ドライバーは、最高の有意性をビットをコピーすることで、実際の ARGB 形式に固有の色の値に A8R8G8B8 色を変換する必要があります。
+アプリケーションでは、カラーフォーマットの ARGB クラスと YUV クラスの入力色の値を変換する必要があります。これは、これらの形式のサーフェイスでカラー塗りつぶしとクリア操作を一様に行う必要があるためです。 ただし、ドライバーは、他のクラス形式の色の値を直接使用する必要があります。 たとえば、アプリケーションは、アルファ (A)、赤 (R)、緑 (G)、および青 (B) の各コンポーネントに対して最大8ビットを持つすべてのサーフェイスの均一色の値として A8R8G8B8 を使用します。ドライバーは、最も重要度の高いビットをコピーすることによって、A8R8G8B8 の色を実際の ARGB 形式に固有の色の値に変換する必要があります。
 
-ディスプレイ ドライバーが、D3DDP2OP を処理するときに、色の値を受け取る\_CLEAR および D3DDP2OP\_COLORFILL 操作のコードでその[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数。
+ディスプレイドライバーは、 [**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数で D3DDP2OP\_CLEAR および D3DDP2OP\_colorfill 操作コードを処理するときに、色の値を受け取ります。
 
-ディスプレイ ドライバーは、ARGB と YUV クラス形式の色の値に変換するのに次のコードを使用できます。
+ディスプレイドライバーは、次のコードを使用して、ARGB クラス形式と YUV クラス形式の色の値を変換できます。
 
 ```cpp
 DWORD Convert2N(DWORD Color, DWORD n)

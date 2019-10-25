@@ -3,19 +3,19 @@ title: ハードウェアの状態のレポート
 description: ハードウェアの状態のレポート
 ms.assetid: d4572c6f-dc09-41c4-af5b-69482b458bef
 keywords:
-- WMI の WDK ネットワーク、ハードウェアの状態をレポート作成
-- ミニポート ドライバー WDK ネットワーク、ハードウェアの状態
-- NDIS ミニポート ドライバー WDK、ハードウェアの状態
-- ハードウェアの状態の WDK ネットワーク
-- WDK の NDIS ミニポートのステータス情報
+- WMI WDK ネットワーク, レポートハードウェアの状態
+- ミニポートドライバー WDK ネットワーク、ハードウェアの状態
+- NDIS ミニポートドライバー WDK、ハードウェアの状態
+- ハードウェアの状態 WDK ネットワーク
+- ステータス情報 WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe22361ebf237630f7f4388471a4798fbb24607
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9de7c0b72555158244fda52ff4ee0d6c47a5fdd1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373262"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842045"
 ---
 # <a name="reporting-hardware-status"></a>ハードウェアの状態のレポート
 
@@ -23,19 +23,19 @@ ms.locfileid: "67373262"
 
 
 
-コネクションレスのミニポート ドライバーを呼び出すことによって上位層にハードウェアの状態の変更を示します[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)します。 接続指向のミニポート ドライバーを呼び出して変更を示し、 [ **NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)します。
+コネクションレスのミニポートドライバーは、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)を呼び出すことによって、ハードウェアの状態が上位層に変更されたことを示します。 接続指向のミニポートドライバーは、 [**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)を呼び出して変更を示します。
 
-**NdisM (Co) IndicateStatusEx**は全般的なステータス コードおよび状態変更の理由をさらに定義するメディアに固有の情報を格納しているバッファーの両方を受け取ります。 NDIS は、プロトコルのドライバーをバインドするには、この状態変更を報告します。 NDIS の解釈またはそれ以外の場合、状態コードをインターセプトはありません。
+**Ndism (Co) IndicateStatusEx**は、一般的な状態コードと、状態の変更の理由をさらに定義するメディア固有の情報を含むバッファーの両方を受け取ります。 NDIS は、この状態の変更をバインドされたプロトコルドライバーに報告します。 NDIS は、状態コードを解釈したり、それ以外の方法でインターセプトしたりすることはありません。
 
-ミニポート ドライバーでは、このような呼び出しを 1 つまたは複数を行うことができます。 ただし、NDIS の以前のバージョンとは異なり、ミニポート ドライバーは示しませんステータスの送信が完了したこと。 プロトコル ドライバーまたは configuration manager は、状態をログ記録したり、適切な措置を実行します。
+ミニポートドライバーは、1つまたは複数の呼び出しを行うことができます。 ただし、以前のバージョンの NDIS とは異なり、ミニポートドライバーはステータスの送信を完了したことを示していません。 プロトコルドライバーまたは configuration manager では、必要に応じて状態をログに記録するか、修正措置を講じることができます。
 
-[**NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)は任意の有効な NDIS\_状態\_*Xxx*値。
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)は、有効な NDIS\_状態\_*Xxx*値を受け取ります。
 
-ミニポート ドライバーでは、プロトコルまたはより高いレベルのドライバーに意味のある状態コードを示す担当します。 プロトコル ドライバーには、状態値は必要ないか、その操作のコンテキストで意味を加えないが無視されます。
+ミニポートドライバーは、プロトコルまたは上位レベルのドライバーに対して意味のあるステータスコードを示す役割を担います。 プロトコルドライバーは、関心のない状態値や、操作のコンテキストで意味を持たない状態値を無視します。
 
-ミニポート ドライバーでのコンテキストでの状態を示すことはできません、 [ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)、 [ *MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)、 [ *MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)、または[ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)関数。
+ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)、 [*miniportinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)、 [*miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)、または[*miniportshutdownex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)関数のコンテキストで状態を示すことはできません。
 
-ミニポート ドライバーのハードウェアの状態について、上位レイヤー ドライバーまたは NDIS ミニポート ドライバーを問い合わせもできます。 ときに、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)コネクションレス ミニポート ドライバーの機能または[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)の関数を接続指向のミニポート ドライバー受信 OID\_GEN\_ハードウェア\_NDIS で定義されている適用可能な状態の値のいずれかで応答の状態、\_ハードウェア\_状態. これらの状態値は次のとおりです。
+また、ミニポートドライバーは、上位層ドライバーまたはミニポートドライバーのハードウェア状態に関する NDIS によって問い合わせるすることもできます。 コネクションレスミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数または接続指向ミニポートドライバーの[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数が、OID\_GEN\_ハードウェアの\_の状態を受け取ると、NDIS\_HARDWARE\_STATUS に定義されている該当するステータス値の。 これらの状態の値は次のとおりです。
 
 -   **NdisHardwareStatusReady**
 
@@ -47,7 +47,7 @@ ms.locfileid: "67373262"
 
 -   **NdisHardwareStatusNotReady**
 
-NDIS は NIC がパケットを受け入れる準備ができているかどうかを決定することで NDIS ドライバー--などのレイヤー間での操作を同期できるように、ミニポート ドライバーのクエリを実行できます。
+ミニポートドライバーを照会して、NDIS が NDIS ドライバーのレイヤー間で操作を同期できるようにすることができます。たとえば、NIC がパケットを受け入れる準備ができているかどうかを判断します。
 
  
 

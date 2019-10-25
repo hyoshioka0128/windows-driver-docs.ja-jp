@@ -1,42 +1,42 @@
 ---
-title: ダイレクト I/O のエラー
-description: ダイレクト I/O のエラー
+title: ダイレクト i/o のエラー
+description: ダイレクト i/o のエラー
 ms.assetid: 9efc2875-3402-4e2e-871b-3cc1d8f45360
 keywords:
-- 信頼性 WDK カーネルでは、ダイレクト I/O
-- ダイレクト I/O WDK カーネル
-- I/O WDK カーネルでは、ダイレクト I/O
-- バッファーの長さ 0 の WDK カーネル
+- 信頼性 WDK カーネル、ダイレクト i/o
+- ダイレクト i/o WDK カーネル
+- I/o WDK カーネル、ダイレクト i/o
+- 長さ0のバッファー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ed8c1e26df36f609ddabb8d1b2e94853ba31ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 038f851bec4bebd301cda6aee62b93ce61749679
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385125"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838708"
 ---
-# <a name="errors-in-direct-io"></a>ダイレクト I/O のエラー
+# <a name="errors-in-direct-io"></a>ダイレクト i/o のエラー
 
 
 
 
 
-ダイレクト I/O の最も一般的な問題は、長さ 0 のバッファーを正しく処理するために失敗しています。 長さ 0 のバッファーの結果が I/O マネージャーが長さ 0 の転送 MDLs を作成しないためです、 **NULL**値**Irp -&gt;MdlAddress**。
+最も一般的なダイレクト i/o の問題は、長さ0のバッファーを正しく処理できないことを示しています。 I/o マネージャーは長さ0の転送に MDLs を作成しないため、長さ0のバッファーでは、 **Irp-&gt;MdlAddress**に**NULL**値が返されます。
 
-アドレス空間をマップするドライバーを使用する必要があります[ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、返された**NULL**をドライバーに渡すかどうか、失敗した場合をマッピングする場合は、 **NULL** **MdlAddress**します。 ドライバーを常に確認する必要があります、 **NULL**返されたアドレスを使用する前に戻り値。
+アドレス空間をマップするには、ドライバーで[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用する必要があります。これは、ドライバーが null の **mdladdress**を渡す場合と同様に、マッピングが失敗した場合に**null**を返します。 ドライバーは、返されたアドレスを使用しようとする前に、必ず**NULL**の戻り値を確認する必要があります。
 
-Double 型のマッピングは、システム アドレス バッファーに、ユーザーのアドレス空間をダイレクト I/O、2 つの異なる仮想アドレスが同じ物理アドレスを持つようにします。 Double 型のマッピングには、次の結果は、ドライバーの問題が生じる場合がありますがあります。
+ダイレクト i/o では、2つの異なる仮想アドレスの物理アドレスが同じになるように、ユーザーのアドレス空間をシステムアドレスバッファーに二重にマップします。 ダブルマッピングには次のような影響があります。これにより、ドライバーで問題が発生する可能性があります。
 
--   仮想ユーザーのアドレスのページへのオフセットでは、システムのページに、オフセットになります。
+-   ユーザーのアドレスの仮想ページへのオフセットは、システムページへのオフセットになります。
 
-    これらのシステムのバッファーの末尾の次のアクセスをマッピングのページの粒度によっては時間が長い可能性があります気付かれない。 ページの末尾付近の呼び出し元のバッファーが割り当てられると、しない限り、バッファー、バッファーの末尾を越える書き込まれたデータが表示されますそれでもと、呼び出し元は、エラーが発生したことが認識されません。 ページの末尾と一致するバッファーの末尾、末尾の次のシステムの仮想アドレスはものを指すことができますか、有効でない可能性があります。 このような問題を検索する非常に困難になります。
+    これらのシステムバッファーの末尾を越えたアクセスは、マッピングのページ粒度によっては、長期間にわたって気付かれない場合があります。 呼び出し元のバッファーがページの末尾付近に割り当てられていない限り、バッファーの末尾を越えて書き込まれたデータはバッファーに表示されますが、呼び出し元はエラーが発生したことを認識しません。 バッファーの末尾がページの末尾と一致する場合、末尾を越えるシステム仮想アドレスは、何かを指しているか、無効である可能性があります。 このような問題は、検索が非常に困難な場合があります。
 
--   呼び出し元のプロセスにメモリのユーザーのマッピングを変更する別のスレッドがある場合は、システムのバッファーの内容は、ユーザーのメモリ マッピングが変更されたときに変更されます。
+-   呼び出しプロセスに、ユーザーのメモリマッピングを変更する別のスレッドがある場合、ユーザーのメモリマッピングが変更されると、システムバッファーの内容が変更されます。
 
-    このような状況では、スクラッチ データを格納するシステムのバッファーを使用すると、問題が発生することができます。 同じメモリ位置からの 2 つのフェッチでは、別の値を生成可能性があります。
+    このような状況では、システムバッファーを使用してスクラッチデータを格納すると、問題が発生する可能性があります。 同じメモリ位置から2つのフェッチを行うと、異なる値が生成される可能性があります。
 
-    次のコード スニペットでは、ダイレクト I/O 要求では文字列を受信し、その文字列を大文字に変換しようとしています。
+    次のコードスニペットは、ダイレクト i/o 要求で文字列を受け取り、その文字列を大文字に変換しようとします。
 
     ```cpp
     PWCHAR  PortName = NULL;
@@ -52,11 +52,11 @@ Double 型のマッピングは、システム アドレス バッファーに�
     RtlInitUnicodeString(&AdapterName, PortName);
     ```
 
-    コードが、Unicode を強制しようとしたバッファーが正しい形式でない可能性があります、ため**NULL**バッファーの最後の文字として。 ただし、基になる物理メモリがユーザーとカーネル モード アドレスの両方にマップされている二重場合、この書き込み操作が完了するとすぐに、別のスレッド、プロセスでは、バッファー上書きできます。
+    バッファーが正しく書式設定されていない可能性があるため、コードは、最後のバッファー文字として Unicode **NULL**を強制的に適用しようとします。 ただし、基になる物理メモリがユーザーとカーネルモードの両方のアドレスに二重にマップされている場合、この書き込み操作が完了するとすぐに、プロセス内の別のスレッドがバッファーを上書きできます。
 
-    逆に場合、 **NULL**が現在のところ、その呼び出し**RtlInitUnicodeString**バッファーの範囲を超えるし、システムのマッピングの外になる場合は、バグ チェックが原因として考えられることができます。
+    逆に、 **NULL**が存在しない場合、 **RtlInitUnicodeString**の呼び出しはバッファーの範囲を超える可能性があり、システムマッピングの外部にある場合はバグチェックが発生する可能性があります。
 
-ドライバーは、作成し、独自の MDL のマップする場合、プローブされますが、メソッドでのみ、MDL にアクセスすることを確認する必要があります。 つまり、ドライバーを呼び出すと[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、アクセス方法を指定します (**IoReadAccess**、 **IoWriteAccess**、または**IoModifyAccess**)。 ドライバーが指定されている場合**IoReadAccess**、によって提供されるシステムのバッファーに書き込む後で試行する必要がありますいない[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)または[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)します。
+ドライバーが独自の MDL を作成してマップする場合は、プローブされたメソッドを使用してのみ、MDL にアクセスできるようにする必要があります。 つまり、ドライバーが[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)を呼び出すと、アクセスメソッド (**IoReadAccess**、 **iowriteaccess**、または**iowriteaccess**) が指定されます。 ドライバーで**IoReadAccess**が指定されている場合、後で[**MmGetSystemAddressForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemaddressformdl)または[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で使用可能なシステムバッファーへの書き込みを試みることはできません。
 
  
 

@@ -1,34 +1,34 @@
 ---
-title: オブジェクト ハンドル
-description: オブジェクト ハンドル
+title: オブジェクトハンドル
+description: オブジェクトハンドル
 ms.assetid: deeeb3c0-54e4-4727-ac43-6da79be515d7
 keywords:
-- オブジェクトは、WDK のユーザー モードを処理します。
-- オブジェクト ハンドル WDK カーネル
-- WDK のユーザー モードを処理します。
-- ハンドルの WDK カーネル
-- プライベート オブジェクト ハンドル WDK
-- 共有オブジェクト ハンドル WDK
+- オブジェクトが WDK ユーザーモードを処理する
+- オブジェクトは WDK カーネルを処理します
+- WDK ユーザーモードを処理する
+- WDK カーネルを処理します
+- プライベートオブジェクトが WDK を処理する
+- WDK を処理する共有オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0efc0ac43ed1430734c2f5d1a1f6f69ba6a9efa4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 500ff5f6c66aa2bac7a3dced8f3eabbd0b3387d0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385998"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838529"
 ---
-# <a name="object-handles"></a>オブジェクト ハンドル
+# <a name="object-handles"></a>オブジェクトハンドル
 
 
 
 
 
-ドライバーとユーザー モード コンポーネントを通じてほとんどのシステム定義オブジェクトへのアクセス*ハンドル*します。 ハンドルは、ハンドルの非透過データ型で表されます。 (ハンドルがデバイス オブジェクト、またはドライバーのオブジェクトへのアクセスに使用されないことに注意してください)。
+ドライバーとユーザーモードコンポーネントは、*ハンドル*を通じて、システム定義のほとんどのオブジェクトにアクセスします。 ハンドルは、HANDLE 不透明データ型によって表されます。 (ハンドルは、デバイスオブジェクトやドライバーオブジェクトへのアクセスには使用されないことに注意してください)。
 
-ほとんどのオブジェクトの種類のカーネル モード ルーチンを作成するか、オブジェクトを開きますは呼び出し元にハンドルを提供します。 次に、呼び出し元は、オブジェクトに対する以降の操作でそのハンドルを使用してください。
+ほとんどのオブジェクトの種類では、オブジェクトを作成または開くカーネルモードルーチンによって、呼び出し元へのハンドルが提供されます。 その後、呼び出し元は、オブジェクトに対する後続の操作で、そのハンドルを使用します。
 
-ドライバーを使用して、通常、オブジェクトの種類とその型のオブジェクトへのハンドルを提供するルーチンの一覧を次に示します。
+ドライバーが通常使用するオブジェクトの種類と、その型のオブジェクトにハンドルを提供するルーチンの一覧を次に示します。
 
 <table>
 <colgroup>
@@ -38,80 +38,80 @@ ms.locfileid: "67385998"
 <thead>
 <tr class="header">
 <th>オブジェクトの種類</th>
-<th>対応する作成/オープン ルーチン</th>
+<th>対応する作成/オープンルーチン</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ファイル</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile" data-raw-source="[&lt;strong&gt;IoCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)"><strong>IoCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)"> <strong>ZwCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)"> <strong>ZwOpenFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile" data-raw-source="[&lt;strong&gt;IoCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)"><strong>Iocreatefile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"><strong>zwcreatefile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)"><strong>zwcreatefile</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>レジストリ キー</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceInterfaceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)"><strong>IoOpenDeviceInterfaceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)"> <strong>IoOpenDeviceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)"> <strong>ZwCreateKey</strong></a>、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey)"> <strong>ZwOpenKey</strong></a></p></td>
+<td><p>レジストリキー</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceInterfaceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)"><strong>IoOpenDeviceInterfaceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)"><strong>IoOpenDeviceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>zwopenkey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>スレッド数</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread" data-raw-source="[&lt;strong&gt;PsCreateSystemThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)"><strong>PsCreateSystemThread</strong></a></p></td>
+<td><p>Threads</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread" data-raw-source="[&lt;strong&gt;PsCreateSystemThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)"><strong>PsCreateSystemThread</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>イベント</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesynchronizationevent" data-raw-source="[&lt;strong&gt;IoCreateSynchronizationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesynchronizationevent)"><strong>IoCreateSynchronizationEvent</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatenotificationevent" data-raw-source="[&lt;strong&gt;IoCreateNotificationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatenotificationevent)"> <strong>IoCreateNotificationEvent</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent" data-raw-source="[&lt;strong&gt;IoCreateSynchronizationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent)"><strong>IoCreateSynchronizationEvent</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent" data-raw-source="[&lt;strong&gt;IoCreateNotificationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent)"> <strong>IoCreateNotificationEvent</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>シンボリック リンク</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>ディレクトリ オブジェクト</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>セクション オブジェクト</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
+<td><p>Section オブジェクト</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-呼び出して不要になった、ドライバーには、オブジェクトへのアクセスが必要とする場合、 [ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)ルーチンをハンドルを終了します。 これは、上記の表に示すオブジェクトの種類のすべてに対して機能します。
+ドライバーがオブジェクトへのアクセスを必要としなくなった場合は、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)ルーチンを呼び出してハンドルを閉じます。 これは、上の表に一覧表示されているすべてのオブジェクトの種類に対して機能します。
 
-ハンドルを提供するルーチンのほとんどを[**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)をパラメーターとして構造体。 ハンドルの属性を指定するのには、この構造体を使用できます。
+ハンドルを提供するルーチンのほとんどは、[**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes)構造をパラメーターとして受け取ります。 この構造体を使用して、ハンドルの属性を指定できます。
 
-ドライバーは、次のハンドルの属性を指定できます。
+ドライバーでは、次のハンドル属性を指定できます。
 
--   OBJ\_カーネル\_処理
+-   OBJ\_カーネル\_ハンドル
 
-    ハンドルは、カーネル モードからのみアクセスできます。
+    ハンドルには、カーネルモードからのみアクセスできます。
 
 -   OBJ\_継承
 
-    現在のプロセスのすべての子では、作成されるときに、ハンドルのコピーが表示されます。
+    現在のプロセスのすべての子は、ハンドルのコピーを作成時に受け取ります。
 
--   OBJ\_FORCE\_アクセス\_チェック
+-   OBJ\_強制的に\_アクセス\_チェック
 
-    この属性は、システムがハンドルのすべてのアクセス チェックを実行することを指定します。 既定では、システムは、カーネル モードで作成されたハンドルに対するすべてのアクセス チェックをバイパスします。
+    この属性は、システムがハンドルに対するすべてのアクセスチェックを実行することを指定します。 既定では、カーネルモードで作成されたハンドルのすべてのアクセスチェックをバイパスします。
 
-使用して、 [ **InitializeObjectAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)これらの属性を設定するルーチンを**オブジェクト\_属性**構造体。
+[**Initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)ルーチンを使用して、**オブジェクト\_属性**構造でこれらの属性を設定します。
 
-オブジェクト ハンドルを検証する方法の詳細については、次を参照してください。[オブジェクト ハンドルの検証に失敗した](failure-to-validate-object-handles.md)します。
+オブジェクトハンドルの検証の詳細については、「[オブジェクトハンドルの検証エラー](failure-to-validate-object-handles.md)」を参照してください。
 
-### <a name="private-object-handles"></a>プライベート オブジェクト ハンドル
+### <a name="private-object-handles"></a>プライベートオブジェクトハンドル
 
-ドライバーは、プライベート用オブジェクト ハンドルを作成、たびに、ドライバーが、OBJ を指定する必要があります\_カーネル\_ハンドルの属性。 これにより、ハンドルがユーザー モード アプリケーションにアクセスできること。
+ドライバーがプライベートに使用するオブジェクトハンドルを作成するたびに、ドライバーは、OBJ\_KERNEL\_HANDLE 属性を指定する必要があります。 これにより、ユーザーモードアプリケーションがハンドルにアクセスできなくなります。
 
-### <a name="shared-object-handles"></a>オブジェクト ハンドルを共有
+### <a name="shared-object-handles"></a>共有オブジェクトハンドル
 
-カーネル モードとユーザー モードのオブジェクトのハンドルを共有するドライバーは、セキュリティ ホールを誤って作成しないようにする慎重に記述する必要があります。 いくつかのガイドラインを次に示します。
+カーネルモードとユーザーモードの間でオブジェクトハンドルを共有するドライバーは、誤ってセキュリティホールを作成しないように注意して記述する必要があります。 いくつかのガイドラインを次に示します。
 
-1.  カーネル モードでのハンドルを作成し、別の方法ではなく、ユーザー モードに渡したりします。 ユーザー モード コンポーネントによって作成され、ドライバーに渡されるハンドルを信頼することはできません。
+1.  カーネルモードでハンドルを作成し、他の方法ではなくユーザーモードに渡します。 ユーザーモードコンポーネントによって作成され、ドライバーに渡されるハンドルは信頼できません。
 
-2.  場合は、ドライバーは、ユーザー モード アプリケーションのためのハンドルを操作する必要があります、使用、OBJ\_FORCE\_アクセス\_アプリケーションに必要なアクセス権があることを確認する属性をチェックします。
+2.  ドライバーがユーザーモードアプリケーションの代わりにハンドルを操作する必要がある場合は、OBJ\_FORCE\_ACCESS\_CHECK 属性を使用して、アプリケーションに必要なアクセス権があることを確認します。
 
-3.  使用[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)共有ハンドルでカーネル モードの参照を保持します。 それ以外の場合、参照カウントが 0 に、ユーザー モード コンポーネントは、ハンドルを閉じ場合と、システムがクラッシュし、ドライバーを使用して、またはハンドルを終了しようとするとします。
+3.  共有ハンドルにカーネルモードの参照を保持するには、 [**Obreferenceobjectbypointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)を使用します。 それ以外の場合、ユーザーモードコンポーネントがハンドルを閉じると、参照カウントはゼロになり、ドライバーがハンドルを使用または終了しようとすると、システムがクラッシュします。
 
-ユーザー モード アプリケーションでは、イベント オブジェクトを作成する場合、ドライバーがのみ場合、アプリケーションのハンドルをオブジェクトに渡すと、イベント IOCTL を使用してドライバーが、シグナルの状態にそのイベントの待機に安全にできます。 ドライバーは、イベントを作成したイベント ハンドルのハンドルは呼び出すことによって、検証する必要がありますプロセスのコンテキストでは、IOCTL を処理する必要があります[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)します。
+ユーザーモードアプリケーションでイベントオブジェクトを作成した場合、ドライバーはそのイベントがシグナル状態になるまで安全に待機できますが、アプリケーションが IOCTL 経由でイベントオブジェクトへのハンドルをドライバーに渡す場合に限られます。 ドライバーは、イベントを作成したプロセスのコンテキストで IOCTL を処理する必要があり、 [**Obreferenceobjectbyhandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)を呼び出すことによってハンドルがイベントハンドルであることを検証する必要があります。
 
  
 

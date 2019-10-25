@@ -3,19 +3,19 @@ title: PnP カスタム通知の使用
 description: PnP カスタム通知の使用
 ms.assetid: de5562f8-07a8-4f4e-ac49-58c789bd9fde
 keywords:
-- WDK PnP、カスタムの通知
-- カスタム通知 PnP WDK
-- 通知 WDK PnP、ターゲット デバイスの変更
-- ターゲット デバイスの変更通知 PnP WDK
-- EventCategoryTargetDeviceChange 通知
+- 通知 WDK PnP、カスタム
+- カスタム通知 WDK PnP
+- 通知 WDK PnP、ターゲットデバイスの変更
+- ターゲットデバイスの変更通知の WDK PnP
+- Eventカテゴリ Targetdevicechange notification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c722fe62b59f43854896e453d86c66c0990e10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 282612bb0b101b50e8ecb4a85f773d6be65a7880
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381586"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838341"
 ---
 # <a name="using-pnp-custom-notification"></a>PnP カスタム通知の使用
 
@@ -23,35 +23,35 @@ ms.locfileid: "67381586"
 
 
 
-ドライバーは、デバイスでのカスタム イベントの通知をターゲット デバイスの変更通知のメカニズムを使用できます。
+ドライバーは、ターゲットデバイス変更通知メカニズムを使用して、デバイス上のカスタムイベントを通知することができます。
 
-カスタム イベントを定義するプログラマは、次の操作を行う必要があります。
+カスタムイベントを定義するプログラマは、次の操作を行う必要があります。
 
-1.  カスタム イベントの新しい GUID を定義します。
+1.  カスタムイベントの新しい GUID を定義します。
 
-    GUID を生成**Uuidgen**または**Guidgen** (Microsoft Windows SDK に含まれている)。 適切なヘッダー ファイルとドキュメントには、GUID を発行します。
+    **Uuidgen.exe**または**guidgen.exe** (Microsoft Windows SDK に含まれています) を使用して GUID を生成します。 適切なヘッダーファイルとドキュメントで GUID を発行します。
 
-2.  カスタム イベントをトリガーするコードを記述します。
+2.  カスタムイベントをトリガーするコードを記述します。
 
-    カーネル モード ドライバー呼び出し[ **IoReportTargetDeviceChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreporttargetdevicechange)カスタム GUID と、デバイスの PDO へのポインター。 カスタム イベントは、カーネル モードからのみトリガーできます。
+    カーネルモードでは、ドライバーはカスタム GUID と、デバイスの PDO へのポインターを使用して[**IoReportTargetDeviceChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreporttargetdevicechange)を呼び出します。 カスタムイベントは、カーネルモードからのみトリガーできます。
 
-ドライバーのライターでは、次のようにプロシージャを使用したカスタム通知を使用します。
+ドライバーライターは、次のような手順でカスタム通知を使用します。
 
-1.  ドライバー (またはアプリケーション) は、カスタム イベントの通知を登録します。
+1.  ドライバー (またはアプリケーション) は、カスタムイベントの通知を登録します。
 
-    カーネル モード ドライバー呼び出し[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)とレジスタの**EventCategoryTargetDeviceChange**デバイスにします。
+    カーネルモードでは、ドライバーは[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出し、デバイス上の**Eventカテゴリ targetdevicechange**に登録します。
 
-    ユーザー モードでは、アプリケーションは、登録を使用して**RegisterDeviceNotification**します。 詳細については、Windows SDK を参照してください。
+    ユーザーモードでは、アプリケーションは**RegisterDeviceNotification**を使用して登録します。 詳細については、Windows SDK を参照してください。
 
-2.  カーネル モード コンポーネントは、カスタム イベントをトリガーします。
+2.  カーネルモードコンポーネントによって、カスタムイベントがトリガーされます。
 
-3.  PnP マネージャーでは、デバイスに登録されている通知ルーチンを呼び出します。
+3.  PnP マネージャーは、デバイスに登録されている通知ルーチンを呼び出します。
 
-    PnP マネージャーでは、登録済みのユーザー モードにコールバック ルーチンを呼び出して、カーネル モードにコールバック ルーチンを呼び出します。
+    PnP マネージャーは、登録されているユーザーモードコールバックルーチンを呼び出し、カーネルモードのコールバックルーチンを呼び出します。
 
-4.  ユーザー モードの通知が完了したら、カーネル モード ドライバーの通知コールバック routine(s) はカスタム イベントに応答します。
+4.  ユーザーモードの通知が完了すると、カーネルモードのドライバー通知コールバックルーチンはカスタムイベントに応答します。
 
-    参照してください[PnP 通知コールバック ルーチンを記述するためのガイドライン](guidelines-for-writing-pnp-notification-callback-routines.md)通知コールバック ルーチンの一般的なガイドラインです。 これらのガイドラインに加えカスタム通知のコールバック ルーチンをする必要がありますからコールバック ルーチン スレッド内のデバイスを識別するハンドルを開けません。
+    通知コールバックルーチンの一般的なガイドラインについては、「 [PnP 通知コールバックルーチンの記述に関するガイドライン](guidelines-for-writing-pnp-notification-callback-routines.md)」を参照してください。 これらのガイドラインに加えて、カスタム通知コールバックルーチンは、コールバックルーチンスレッド内からデバイスへのハンドルを開くことはできません。
 
  
 

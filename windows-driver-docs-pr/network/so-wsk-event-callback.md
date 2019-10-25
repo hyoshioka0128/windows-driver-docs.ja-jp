@@ -4,25 +4,25 @@ description: SO_WSK_EVENT_CALLBACK
 ms.assetid: cb697103-20ef-4667-8823-060a68d904c8
 ms.date: 07/18/2017
 keywords:
-- SO_WSK_EVENT_CALLBACK ネットワーク ドライバーが Windows Vista 以降
+- SO_WSK_EVENT_CALLBACK ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 882d48d604b111fd3dd8daf1db76d9dba17267b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8630f6f4c041dadae0874f22a2f81f54246bc2b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374748"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841878"
 ---
-# <a name="sowskeventcallback"></a>したがって\_WSK\_イベント\_コールバック
+# <a name="so_wsk_event_callback"></a>\_WSK\_イベント\_コールバック
 
 
-SO\_WSK\_イベント\_コールバック ソケット オプションにより、WSK アプリケーションを有効にし、ソケットのイベントのコールバック関数を無効にします。 このソケット オプションは、リッスン ソケット、データグラム ソケット、接続指向のソケット、および少なくとも 1 つのイベントのコールバック関数が定義されている拡張機能インターフェイスに登録されている基本的なソケットにのみ適用されます。
+\_WSK\_EVENT\_CALLBACK socket オプションを使用すると、WSK アプリケーションでソケットのイベントコールバック関数を有効または無効にすることができます。 このソケットオプションは、少なくとも1つのイベントコールバック関数が定義されている拡張インターフェイスを登録した、リッスンしているソケット、データグラムソケット、接続指向ソケット、および基本ソケットにのみ適用されます。
 
-WSK アプリケーションでは、待機中のソケットまたはデータグラム ソケットでのイベントのコールバック関数を有効またはこのソケット オプションを使用している場合、ソケットがローカル トランスポート アドレスにバインドされた後は、する必要があります。
+WSK アプリケーションがこのソケットオプションを使用して、リッスンしているソケットまたはデータグラムソケットのイベントコールバック関数を有効または無効にする場合は、ソケットがローカルトランスポートアドレスにバインドされた後で、その処理を行う必要があります。
 
-WSK アプリケーションでは、接続指向のソケットでのイベントのコールバック関数を有効またはこのソケット オプションを使用している場合、ソケットがリモートのトランスポート アドレスに接続された後は、する必要があります。
+WSK アプリケーションがこのソケットオプションを使用して、接続指向のソケットでイベントコールバック関数を有効または無効にする場合は、ソケットがリモートトランスポートアドレスに接続された後で、その処理を行う必要があります。
 
-WSK アプリケーションの呼び出しを有効にまたはソケットでのイベントのコールバック関数を無効にする、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+ソケットでイベントコールバック関数を有効または無効にするには、WSK アプリケーションが次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ WSK アプリケーションの呼び出しを有効にまたはソケットで�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -46,15 +46,15 @@ WSK アプリケーションの呼び出しを有効にまたはソケットで�
 </tr>
 <tr class="odd">
 <td><p><em>Level</em></p></td>
-<td><p>取得</p></td>
+<td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>sizeof(WSK_EVENT_CALLBACK_CONTROL)</p></td>
+<td><p>sizeof (WSK_EVENT_CALLBACK_CONTROL)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)"> <strong>WSK_EVENT_CALLBACK_CONTROL</strong> </a>構造体</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)"><strong>WSK_EVENT_CALLBACK_CONTROL</strong></a>構造体へのポインター</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -72,27 +72,27 @@ WSK アプリケーションの呼び出しを有効にまたはソケットで�
 </table>
 
 
-呼び出すときに、WSK アプリケーションが IRP へのポインターを指定しない、 **WskControlSocket**ソケットでのイベントのコールバック関数を有効にする関数。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出して、ソケットでイベントコールバック関数を有効にするときに、IRP へのポインターを指定しません。
 
-WSK アプリケーションを必要に応じて指定できます IRP へのポインターを呼び出すときに、 **WskControlSocket**ソケットでのイベントのコールバック関数を無効にする関数。
+WSK アプリケーションでは、必要に応じて、 **Wskcontrolsocket**関数を呼び出して、ソケットでイベントのコールバック関数を無効にするときに、IRP へのポインターを指定できます。
 
-WSK アプリケーションを呼び出すと**WskControlSocket** WSK サブシステムを次のように動作をコールバック関数がイベントを無効にします。
+WSK アプリケーションが**Wskcontrolsocket**を呼び出してイベントコールバック関数を無効にすると、wsk サブシステムは次のように動作します。
 
--   WSK アプリケーション呼び出すときに無効化されるイベントのコールバック関数の実行中の呼び出しがないかどうか、 **WskControlSocket**関数、イベントのコールバック関数が無効になっていると、 **WskControlSocket**ステータスを返します\_成功します。 WSK アプリケーションでは、IRP を指定する場合は、成功の状態で IRP が完了しました。
+-   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出したときに無効になっているイベントコールバック関数への呼び出しが実行されていない場合、イベントコールバック関数は無効になり、 **WSKCONTROLSOCKET**関数は状態を返し @no成功します。\_ WSK アプリケーションで IRP が指定されている場合、IRP は成功の状態で完了します。
 
--   進行中、WSK アプリケーションが無効化されるイベントのコールバック関数への呼び出しがあるかどうか、 **WskControlSocket**関数と WSK アプリケーションは、IRP を指定、 **WskControlSocket**ステータスを返します\_保留します。 WSK サブシステムは、イベントのコールバック関数を無効にし、イベントのコールバック関数へのすべての実行中の呼び出しが返された後、IRP を完了します。
+-   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出し、wsk アプリケーションで IRP が指定されているときに、無効になっているイベントコールバック関数への呼び出しが進行中の場合、 **WSKCONTROLSOCKET**関数は状態を返し @no__t_2行わ.\_ WSK サブシステムは、イベントコールバック関数を無効にし、イベントコールバック関数に対するすべての実行中の呼び出しが返された後に、IRP を完了します。
 
--   進行中、WSK アプリケーションが無効化されるイベントのコールバック関数への呼び出しがあるかどうか、 **WskControlSocket**関数と WSK アプリケーション、IRP を指定しなかった、 **WskControlSocket**ステータスを返します\_イベント\_保留します。 WSK サブシステムには、イベントのコールバック関数へのすべての実行中の呼び出しが返された後のイベントのコールバック関数が無効にします。
+-   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出し、wsk アプリケーションで IRP が指定されていない場合に、無効になっているイベントコールバック関数への呼び出しが進行中の場合、 **WSKCONTROLSOCKET**関数は状態を返し\_イベント\_保留中です。 WSK サブシステムは、イベントコールバック関数に対するすべての実行中の呼び出しが返された後に、イベントコールバック関数を無効にします。
 
-WSK アプリケーションの設定を有効にするか、標準 WSK イベントのコールバック関数のいずれかを無効にすると、ときに、 **NpiId**のメンバー、 [ **WSK\_イベント\_コールバック\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)構造体、WSK へのポインターを[ネットワーク プログラミング インターフェイス (NPI)](https://docs.microsoft.com/windows-hardware/drivers/network/network-programming-interface)識別子、NPI\_WSK\_インターフェイス\_id。
+任意の標準 WSK イベントコールバック関数を有効または無効にすると、wsk アプリケーションは wsk [ **\_イベント\_コール\_バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)の**NpiId**メンバーを wsk ネットワークプログラミングへのポインターに設定します。 [Interface (NPI)](https://docs.microsoft.com/windows-hardware/drivers/network/network-programming-interface) identifier、NPI\_WSK\_インターフェイス\_ID。
 
-WSK アプリケーションの設定を有効にするか、拡張機能インターフェイスの任意のコールバック関数を無効にすると、ときに、 **NpiId** 、WSK のメンバー\_イベント\_コールバック\_NPI へのポインターへの制御構造その拡張機能インターフェイスの識別子。
+拡張インターフェイスのコールバック関数を有効または無効にすると、WSK アプリケーションは WSK\_イベント\_コール\_バックの**NpiId**メンバーを、その拡張機能の NPI 識別子へのポインターに設定します。efi.
 
-WSK アプリケーションことができます、特定の有効なイベントのコールバック関数の任意の組み合わせを有効に同時にイベントのコールバック関数を有効にすると、[カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)WSK ソケットの。 WSK アプリケーションは同時に設定してこれらの組み合わせを有効、**使う**、WSK のメンバー\_イベント\_コールバック\_制御構造のすべてのイベント フラグのビットごとの OR を有効になっているされているイベントのコールバック関数。
+イベントコールバック関数を有効にすると、wsk アプリケーションは、WSK ソケットの特定の[カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)に対して有効なイベントコールバック関数の任意の組み合わせを同時に有効にすることができます。 WSK アプリケーションでは、WSK\_イベント\_コールバック\_制御構造の**Eventmask**メンバーを、次に示すすべてのイベントコールバック関数のイベントフラグのビットごとの or に設定することによって、これらの組み合わせを同時に有効にすることができます。有効になっています。
 
-イベントのコールバック関数を無効にすると、WSK アプリケーションする必要がありますを無効にしない各イベントのコールバック関数個別にします。 WSK アプリケーションを個別に無効にしますしないイベントのコールバック関数を設定して、**使う**、WSK のメンバー\_イベント\_コールバック\_制御構造のイベント フラグのビットごとの OR をイベントのコールバック関数は無効にされていると、WSK\_イベント\_無効にするフラグ。
+イベントコールバック関数を無効にする場合、WSK アプリケーションは各イベントコールバック関数を個別に無効にする必要があります。 WSK アプリケーションは、WSK\_イベント\_コールバック\_コントロール構造体の**Eventmask**メンバーを、イベントコールバック関数のイベントフラグのビットごとの or に設定することによって、イベントコールバック関数を無効にします。disabled と WSK\_イベント\_無効にするフラグ。
 
-次の表では、リッスン ソケットの有効なイベント フラグを示します。
+次の表は、リッスンしているソケットの有効なイベントフラグを示しています。
 
 <table>
 <colgroup>
@@ -101,20 +101,20 @@ WSK アプリケーションことができます、特定の有効なイベン�
 </colgroup>
 <thead>
 <tr class="header">
-<th>イベント フラグ</th>
-<th>イベントのコールバック関数</th>
+<th>イベントフラグ</th>
+<th>イベントコールバック関数</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WSK_EVENT_ACCEPT</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)"><em>WskAcceptEvent</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)"><em>WskAcceptEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
 
 
-次の表では、データグラム ソケットの有効なイベント フラグを示します。
+次の表は、データグラムソケットの有効なイベントフラグを示しています。
 
 <table>
 <colgroup>
@@ -123,21 +123,21 @@ WSK アプリケーションことができます、特定の有効なイベン�
 </colgroup>
 <thead>
 <tr class="header">
-<th>イベント フラグ</th>
-<th>イベントのコールバック関数</th>
+<th>イベントフラグ</th>
+<th>イベントコールバック関数</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WSK_EVENT_RECEIVE_FROM</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)"><em>WskReceiveFromEvent</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)"><em>WskReceiveFromEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-次の表では、接続指向のソケットの有効なイベント フラグを示します。
+次の表は、接続指向のソケットの有効なイベントフラグを示しています。
 
 <table>
 <colgroup>
@@ -146,34 +146,34 @@ WSK アプリケーションことができます、特定の有効なイベン�
 </colgroup>
 <thead>
 <tr class="header">
-<th>イベント フラグ</th>
-<th>イベントのコールバック関数</th>
+<th>イベントフラグ</th>
+<th>イベントコールバック関数</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WSK_EVENT_DISCONNECT</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect_event" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect_event)"><em>WskDisconnectEvent</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)"><em>Wsk切断イベント</em></a></p></td>
 </tr>
 <tr class="even">
 <td><p>WSK_EVENT_RECEIVE</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)"><em>WskReceiveEvent</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)"><em>WskReceiveEvent</em></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>WSK_EVENT_SEND_BACKLOG</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event)"><em>WskSendBacklogEvent</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event)"><em>WskSendBacklogEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
 
 
-リッスン ソケットはリッスン ソケットによって受け入れられる接続指向のソケットでのイベントのコールバック関数を自動的に有効にできます。 WSK アプリケーションは、リッスン ソケットの接続指向のソケット イベント コールバック関数を有効にすると、これらのコールバック関数を自動的に有効です。 イベントのコールバック関数が自動的に有効に承認済みの接続指向のソケットでリッスン ソケットのによって、ソケットが受け入れられた場合にのみ[ *WskAcceptEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)イベント コールバック関数。 接続志向ソケットはリッスン ソケットのによって受け入れられます[ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)関数では、受け入れられたソケットのイベントのコールバック関数が自動的に有効でないです。
+リッスンソケットは、リッスンしているソケットによって受け入れられる接続指向のソケットに対して、イベントコールバック関数を自動的に有効にすることができます。 WSK アプリケーションは、リッスンしているソケットで接続指向のソケットイベントコールバック関数を有効にすることで、これらのコールバック関数を自動的に有効にします。 イベントコールバック関数は、ソケットがリッスンソケットの[*Wskacceptevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)イベントコールバック関数によって受け入れられる場合にのみ、受け入れられた接続指向ソケットで自動的に有効になります。 接続指向ソケットがリッスンソケットの[**Wskaccept**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept)関数によって受け入れられる場合、受け入れられるソケットのイベントコールバック関数は自動的に有効になりません。
 
-接続指向のイベントのコールバック関数をリッスン ソケットで有効にした後は、リッスン ソケットで無効にできません。 場合、 *WskAcceptEvent*そのリッスン ソケットで有効にしていた最初の接続指向のイベントのコールバック関数は引き続き、イベントのコールバック関数が無効になり、リッスン ソケットの再有効化によって受け入れられるすべての接続指向のソケットに適用される、 *WskAcceptEvent*イベント コールバック関数。
+接続指向のイベントコールバック関数がリッスンソケットで有効になった後は、リッスンしているソケットで無効にすることはできません。 *Wskacceptevent*イベントのコールバック関数が無効になっていて、リッスンしているソケットで再度有効になった場合、そのリスニングソケットで最初に有効にされた接続指向のイベントコールバック関数はすべて、引き続き適用されます。*Wskacceptevent*イベントコールバック関数によって受け入れられる接続指向ソケット。
 
-有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)します。
+ソケットのイベントコールバック関数の有効化と無効化の詳細については、「[イベントコールバック関数の有効化と無効化](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -184,11 +184,11 @@ WSK アプリケーションことができます、特定の有効なイベン�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wsk.h (Wsk.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

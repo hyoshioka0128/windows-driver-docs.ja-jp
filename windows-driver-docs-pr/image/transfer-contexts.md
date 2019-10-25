@@ -1,29 +1,29 @@
 ---
-title: 転送のコンテキスト
-description: 転送のコンテキスト
+title: コンテキストの転送
+description: コンテキストの転送
 ms.assetid: b4eadccd-afb6-4cb5-bf52-704f64d45e40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c039a325437cb72fc794bb39a3bf7738b9f9d9ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adc47c980071a2a5c909e5b75cda87e82d731f9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358227"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840736"
 ---
-# <a name="transfer-contexts"></a>転送のコンテキスト
+# <a name="transfer-contexts"></a>コンテキストの転送
 
 
 
 
 
-転送コンテキストとは、ミニドライバーからアプリケーションへのデータ転送について説明する情報のコレクションです。 転送に関する情報が格納されている、 [ **MINIDRV\_転送\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)構造体。 転送のコンテキストには転送するイメージに関する情報が含まれているメンバーが含まれています。 そのサイズ、解像度、色深度 (ピクセルあたりのバイト数)、圧縮、およびイメージ形式の種類。 呼び出す前に、WIA サービスが WIA アイテムの関連するプロパティからこれらの値を取得、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッド。 値が、MINIDRV で格納し、\_転送\_CONTEXT 構造体、使いやすいアクセス用のドライバーに渡されるとします。 このプロセスでは、アプリケーションのアイテムのコンテキスト (つまり、WIA サービス コンテキスト) からこれらの値を読み取る、WIA サービス ライブラリのルーチンを使用するドライバーの必要があります。
+転送コンテキストは、ミニドライバーからアプリケーションへのデータ転送を記述する情報のコレクションです。 転送に関する情報は、 [**MINIDRV\_transfer\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)構造体に格納されます。 転送コンテキストには、転送されるイメージに関する情報 (サイズ、解像度、色深度 (ピクセルあたりのバイト数)、圧縮の種類、およびイメージ形式) を含むメンバーが含まれます。 WIA サービスは、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッドを呼び出す前に、関連する wia 項目のプロパティからこれらの値を取得します。 次に、値が MINIDRV に格納され、\_コンテキスト構造\_転送され、簡単にアクセスできるようにドライバーに渡されます。 このプロセスにより、ドライバーが WIA サービスライブラリルーチンを使用して、アプリケーション項目コンテキスト (つまり、WIA サービスコンテキスト) からこれらの値を読み取る必要がなくなります。
 
-転送のコンテキストには、転送の種類に関する情報も含まれています: ファイルのデータ転送とメモリ コールバック転送であるか。 ファイル データの転送が書き込まれるファイルへのハンドルには 1 つのメンバーが含まれます。 ミニドライバーが、このハンドルのタッチをいないことをお勧めします。 WIA サービスでは、転送が発生し、転送の完了時に終了する前に、ハンドルが表示されます。 メモリ コールバックのデータ転送 (および場合、アプリケーションは、ミニドライバーから更新プログラムを受信するには、ファイルのデータ転送)、メンバーには、ミニドライバーのコールバック ルーチンのアドレスが含まれています。
+転送コンテキストには、転送の種類に関する情報 (ファイルデータ転送であるか、メモリコールバック転送であるかなど) も含まれます。 ファイルデータ転送の場合、1つのメンバーには、書き込まれるファイルへのハンドルが格納されます。 ミニドライバーはこのハンドルに触れないことをお勧めします。 WIA サービスは、転送が行われる前にハンドルを開き、転送が完了すると閉じます。 メモリコールバックデータ転送 (およびアプリケーションがミニドライバーから更新を受け取るファイルデータ転送の場合) では、メンバーにはミニドライバーのコールバックルーチンのアドレスが含まれます。
 
-他のメンバーはすべて、転送に使用されるバッファーの合計サイズなどの情報を含めることが、ミニドライバーまたは WIA サービス割り当てにかどうかとします。 参照してください[ **MINIDRV\_転送\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)この構造体のメンバーの完全な一覧についてはします。
+その他のメンバーには、転送で使用されるすべてのバッファーの合計サイズ、ミニドライバーまたは WIA サービスによって割り当てられたかどうかなどの情報が含まれます。 この構造体のメンバーの完全な一覧については、「 [**MINIDRV\_TRANSFER\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context) 」を参照してください。
 
-ミニドライバー、と共に、 [ **wiasGetImageInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetimageinformation)関数を転送の多く (ピクセル単位) と、行の数で幅など、イメージを説明するコンテキスト項目を設定します。 WIA サービスのセットが (必要な場合) 多くのファイルなどのデータ転送を懸念する転送コンテキスト項目の処理、転送の種類。
+ミニドライバーは、 [**wiasGetImageInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetimageinformation)関数と共に、イメージ自体を記述する転送コンテキスト項目の多く (ピクセル単位の幅や行数など) を設定します。 WIA サービスでは、データ転送に関する多くの転送コンテキスト項目が設定されます。たとえば、ファイルハンドル (該当する場合) は転送の種類です。
 
  
 

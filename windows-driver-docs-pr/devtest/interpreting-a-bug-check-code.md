@@ -1,34 +1,34 @@
 ---
-title: バグ チェック コードの解釈
-description: Microsoft Windows には、その妥協安全なシステム操作の条件が検出されると、システムを停止します。
+title: バグチェックコードの解釈
+description: Microsoft Windows が安全なシステム操作を侵害する状態を検出すると、システムは停止します。
 ms.assetid: b5c8e18e-c2d3-47d9-b2bd-38aaaedcfde9
 keywords:
-- ツールを WDK バグ チェック コード
-- ドライバーの開発ツールを WDK、バグの確認コード
+- ツール WDK、バグチェックコード
+- ドライバー開発ツール WDK、バグチェックコード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5c88c6d6373ac6084e88d05012a1cdaee596c9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab2b9e76d74cefd3761461a8627077ee004c7524
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373716"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840259"
 ---
-# <a name="interpreting-a-bug-check-code"></a>バグ チェック コードの解釈
+# <a name="interpreting-a-bug-check-code"></a>バグチェックコードの解釈
 
 
-Microsoft Windows には、その妥協安全なシステム操作の条件が検出されると、システムを停止します。 この条件と呼ばれる、*バグ チェック*します。 としても一般的に指す、*システム クラッシュ*、*カーネル エラー*、*停止エラー*、または*BSOD*します。 ハードウェア デバイス、そのドライバー、または関連するソフトウェアが、このエラーを引き起こしたがある可能性があります。
+Microsoft Windows が安全なシステム操作を侵害する状態を検出すると、システムは停止します。 この状態は*バグチェック*と呼ばれます。 また、一般に、*システムクラッシュ*、*カーネルエラー*、 *Stop エラー*、または*BSOD*と呼ばれます。 ハードウェアデバイス、そのドライバー、または関連するソフトウェアが原因でこのエラーが発生した可能性があります。
 
-システムのクラッシュ ダンプが有効な場合は、クラッシュ ダンプ ファイルが作成されます。
+クラッシュダンプがシステムで有効になっている場合は、クラッシュダンプファイルが作成されます。
 
-カーネル デバッガーがアタッチされ、アクティブなシステム ブレークを発生させるため、クラッシュを調査するデバッガーを使用できます。
+カーネルデバッガーがアタッチされ、アクティブになっている場合は、デバッガーを使用してクラッシュを調査できるように、システムによって中断が発生します。
 
-デバッガーがアタッチされていない場合、エラーに関する情報を青色のテキスト画面が表示されます。 この画面と呼ばれる、*ブルー スクリーン*、*バグ チェック画面*、*停止画面*、または*BSOD*します。
+デバッガーがアタッチされていない場合は、エラーに関する情報を含む青いテキスト画面が表示されます。 この画面は、*青い画面*、*バグチェック画面*、*ストップスクリーン*、または*BSOD*と呼ばれます。
 
 ## <span id="ddk_interpreting_bug_check_codes_tools"></span><span id="DDK_INTERPRETING_BUG_CHECK_CODES_TOOLS"></span>
 
 
-正確なバグの確認画面の外観は、エラーの原因によって異なります。 考えられるバグ チェックの 1 つの画面の例を次に示します。
+バグチェック画面の正確な外観は、エラーの原因によって異なります。 次に、考えられる1つのバグチェック画面の例を示します。
 
 ```
 STOP: 0x00000079 (0x00000002, 0x00000001, 0x00000002, 0x00000000)
@@ -40,7 +40,7 @@ Physical memory dump complete. Contact your system administrator or
 technical support group.
 ```
 
-その一方で、このようないくつかのブルー スクリーンになります。
+一方、ブルースクリーンは次のようになります。
 
 ```
 STOP: c000021a {Fatal System Error}
@@ -52,34 +52,34 @@ The system has been shut down.
 
 ### <span id="ddk_blue_screen_data_tools"></span><span id="DDK_BLUE_SCREEN_DATA_TOOLS"></span>
 
-16 進数の次の単語"STOP"と呼びます、*チェックのコードをバグ*または*停止コード*します。 これは、画面上の最も重要な項目です。
+"STOP" という単語の後に続く16進数は、*バグチェックコード*または*停止コード*と呼ばれます。 これは、画面上で最も重要な項目です。
 
-各バグ チェックのコードでは、次の 4 つの関連するパラメーターを持っています。 ここで示すように青の最初の画面でのバグがコードを確認後、4 つすべてのパラメーターが表示されます。 ただし、2 つ目の種類のブルー スクリーンでは、これらのパラメーターは、説明のテキスト内で再配置されたが。 再配置の量に関係なく常に表示されます順番にします。 4 つより少ないパラメーターが表示されない場合は、残りのパラメーターはことができますを 0 にすると見なされます。
+各バグチェックコードには、4つのパラメーターが関連付けられています。 ここに表示されている最初の青い画面では、バグチェックコードの後に4つのパラメーターがすべて表示されます。 ただし、2番目の種類のブルースクリーンでは、これらのパラメーターは説明テキスト内で再配置されています。 再配置の量に関係なく、常に順番に表示されます。 4つ未満のパラメーターが指定されている場合、残りのパラメーターは0であると見なすことができます。
 
-ブルー スクリーン上のテキストの残りの部分では、追加の情報を提供します。 いくつかのバグ チェック用の変更点や問題に対処する方法の提案の説明があります。 カーネル モードのダンプ ファイルが書き込まれた場合、通常、示されるもします。
+青い画面の残りのテキストは、追加情報を提供します。 いくつかのバグチェックでは、この問題を解決する方法について説明します。 カーネルモードのダンプファイルが作成されている場合は、通常、これも示されます。
 
-Windows では、いくつかの条件下でブルー スクリーンの最初の行のみが表示されます。 これは、表示のために必要な重要なサービスは、エラーによって影響を受けている場合に発生することができます。
+条件によっては、ブルースクリーンの最初の行のみが表示されます。 これは、表示に必要な重要なサービスがエラーの影響を受けた場合に発生する可能性があります。
 
-### <a name="span-idbugchecksymbolicnamesspanspan-idbugchecksymbolicnamesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>バグ チェックのシンボル名
+### <a name="span-idbug_check_symbolic_namesspanspan-idbug_check_symbolic_namesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>バグチェックのシンボル名
 
-各バグ チェックのコードでは、関連付けられているシンボリック名もあります。 これらの名前は、通常、ブルー スクリーンには表示されません。 これらの例では、最初の画面が表示されます[**バグ チェック 0x79** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x79--mismatched-hal) (不一致\_HAL)、2 つ目が表示されますが、 [**バグ チェック 0xC000021A**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc000021a--status-system-process-terminated) (ステータス\_システム\_プロセス\_終了)。
+各バグチェックコードには、関連付けられたシンボル名もあります。 これらの名前は、通常、青い画面には表示されません。 これらの例では、最初の画面に[**バグチェック 0x79**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x79--mismatched-hal) (一致しない\_HAL) が表示され、2番目の画面には[**バグチェック 0xc000021a**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc000021a--status-system-process-terminated) (ステータス\_システム\_プロセス\_終了) が表示されます。
 
-バグ チェックのシンボリック名を渡すことによってカーネル モード ドライバーからのバグ チェックが発生することが意図的に[ **KeBugCheck** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kebugcheck)または[ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex). これは、その他のオプションが使用可能な状況でのみ実行する必要があります。
+バグチェックのシンボリック名を[**Kebugcheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kebugcheck)チェックまたは[**Kebugcheck checkex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex)に渡すことによって、カーネルモードドライバーから意図的にバグチェックを行うことができます。 これは、他のオプションが使用できない場合にのみ実行してください。
 
-### <a name="span-idreadingbugcheckinformationfromthedebuggerspanspan-idreadingbugcheckinformationfromthedebuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>デバッガーからのバグ チェック情報の読み取り
+### <a name="span-idreading_bug_check_information_from_the_debuggerspanspan-idreading_bug_check_information_from_the_debuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>デバッガーからバグチェック情報を読み取っています
 
-デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、次を参照してください。[デバッガーを使用して](using-a-debugger.md)します。
+デバッガーがアタッチされている場合は、バグチェックによって対象のコンピューターがデバッガーによって中断されます。 この場合、青い画面が表示されないか、または表示されるテキストが少なくなることがあります。このクラッシュの詳細はデバッガーに送信され、デバッガーウィンドウに表示されます。 詳細については、「[デバッガーの使用](using-a-debugger.md)」を参照してください。
 
-バグ チェックのコードの場合は、このリファレンス セクションの一部として存在[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。 参照してください[バグ チェック コード参照](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)のバグ チェックおよびパラメーターの説明。 各リファレンス ページには、バグ チェックのコード、文字列、および 4 つの追加のパラメーターに表示される各バグ チェックが一覧表示します。 バグ チェック、およびエラーを処理する方法を引き起こしたエラーを診断する方法も説明します。
+バグチェックコードのこのリファレンスセクションは、 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)の一部として見つかります。 バグチェックとパラメーターの説明については、「[バグチェックコードリファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)」を参照してください。 各参照ページには、バグチェックコード、テキスト文字列、および各バグチェックと共に表示される4つの追加パラメーターが一覧表示されます。 また、バグチェックにつながるエラーを診断する方法、およびエラーに対処するための方法についても説明します。
 
-バグの完全な一覧については、コードを確認、Bugcodes.h ファイルを参照してください。 このファイルは、Microsoft Windows Driver Kit (WDK) の inc ディレクトリで確認できます。
+バグチェックコードの完全な一覧については、「バグコード .h ファイル」を参照してください。 このファイルは、Microsoft Windows Driver Kit (WDK) の inc. のディレクトリにあります。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連項目
 
 
 [バグチェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)
 
-[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
+[Windows のデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

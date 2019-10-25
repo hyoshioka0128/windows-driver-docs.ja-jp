@@ -1,63 +1,63 @@
 ---
 title: NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES
-description: 現在、有効なフィルタ リング機能の変更を受信するときに、ミニポート ドライバーは NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES 状態を示す値を発行します。
+description: ミニポートドライバーは、現在有効になっている受信フィルター機能が変更されたときに、NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES 状態を示します。
 ms.assetid: 6A1141A3-6E46-4A97-B482-CBE69E3D5075
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a5672ed3167b921de6e371fb101723b59b9773
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65e1d64d579f497fbdd6cbcf3af8508d775246a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385250"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843526"
 ---
-# <a name="ndisstatusreceivefiltercurrentcapabilities"></a>NDIS\_状態\_受信\_フィルター\_現在\_機能
+# <a name="ndis_status_receive_filter_current_capabilities"></a>NDIS\_STATUS\_現在の\_の機能\_フィルターを受け取る\_
 
 
-ミニポート ドライバーの問題、 **NDIS\_状態\_受信\_フィルター\_現在\_機能**現在有効な受信状態の表示フィルター処理機能を変更します。
+ミニポートドライバーは、現在有効になっている受信フィルター機能が変更されたときに **\_現在\_機能の状態を示す\_フィルターを受信\_NDIS\_の状態**を発行します。
 
-**注**  この状態の表示は、ミニポート ドライバーのサポート NDIS フィルターが表示されることによってのみ実行する必要があります。
+この状態の表示は、NDIS 受信フィルターをサポートするミニポートドライバーによってのみ行う必要**が  ます**。
 
  
 
-ミニポート ドライバーはこの状態表示を行うときに、設定、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターを[ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 フィルター処理機能を現在有効では、この構造が表示されるドライバーを初期化します。
+ミニポートドライバーによってこの状態が表示されると、 [**ndis\_ステータス\_示さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)れる構造体の**statusbuffer**メンバーが\_ndis へのポインターに設定[**され\_フィルター\_機能を受け取る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)ようになります。データ. ドライバーは、現在有効になっている受信フィルター機能を使用して、この構造体を初期化します。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
+NDIS 受信フィルターは、次の NDIS インターフェイスで使用されます。
 
--   [NDIS パケット結合](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[管理パケット結合受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)します。
+-   [NDIS パケット合体](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[パケット合体受信フィルターの管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)」を参照してください。
 
--   [シングル ルート I/O 仮想化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)します。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[仮想ポートで受信フィルターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)します。
+-   [シングルルート I/o 仮想化 (sr-iov)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[仮想ポートでの受信フィルターの設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)」を参照してください。
 
--   [バーチャル マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 使用する方法の詳細についてはこのインターフェイスでフィルターが表示されるを参照してください[設定および VMQ のフィルターをクリアする](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)します。
+-   [仮想マシン キュー (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「 [VMQ フィルターの設定とクリア](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)」を参照してください。
 
-ミニポート ドライバーの問題、 **NDIS\_状態\_受信\_フィルター\_現在\_機能**次の条件のいずれかが true の場合、状態の表示:
+ミニポートドライバーは、次のいずれかの条件に該当する場合に **\_現在\_機能の状態を示す\_フィルターを受信\_NDIS\_の状態**を発行します。
 
--   現在有効になっている 1 つのネットワーク アダプターのフィルター機能の変更が表示されます。 たとえば、受信フィルターを有効になっているまたは独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションで無効になっていることができます。
+-   現在有効になっている受信フィルター機能は、1つのネットワークアダプターで変更されます。 たとえば、受信フィルターは、独立系ハードウェアベンダー (IHV) によって開発された管理アプリケーションを使用して有効または無効にすることができます。
 
--   現在有効になっている負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属しているネットワーク アダプターを 1 つまたは複数のフィルター機能の変更が表示されます。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)します。
+-   現在有効になっている受信フィルター機能は、MUX 中間ドライバーによって管理される負荷分散フェールオーバー (LBFO) チームに属する1つ以上のネットワークアダプターに対して変更されます。 詳細については、「 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)」を参照してください。
 
-ミニポート ドライバーが発行するとき、次の手順を次の**NDIS\_状態\_受信\_フィルター\_現在\_機能**状態を示す値。
+ミニポートドライバーは、次の手順に従って、 **NDIS\_ステータス\_受信\_フィルター\_現在の\_機能**の状態を示します。
 
-1.  ミニポートを初期化します、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)で現在有効になっている受信フィルター機能を持つ構造体ネットワーク アダプター。
+1.  ミニポートは、ネットワークアダプターで現在有効になっている受信フィルター機能を使用して、 [ **\_フィルター\_機能の構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)を初期化します。
 
-    ミニポート ドライバーを初期化します、**ヘッダー**メンバー、設定、**型**のメンバー**ヘッダー** NDIS に\_オブジェクト\_型\_既定します。 ミニポート ドライバーのセット、**リビジョン**のメンバー**ヘッダー** NDIS に\_受信\_フィルター\_機能\_リビジョン\_2および**サイズ**NDIS メンバー\_SIZEOF\_受信\_フィルター\_機能\_リビジョン\_2。
+    ミニポートドライバーは、**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_DEFAULT に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_受信\_フィルター\_機能\_リビジョン\_2 および**SIZE**メンバーを ndis\_SIZEOF\_receive に設定\_リビジョン\_2\_\_機能をフィルター処理します。
 
-2.  ミニポート ドライバーを初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体の次のように状態の表示。
+2.  ミニポートドライバーは、次の方法で状態を示すように、 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体を初期化します。
 
-    -   **StatusCode**にメンバーを設定する必要があります**NDIS\_状態\_受信\_フィルター\_現在\_機能**します。
+    -   **StatusCode**メンバーを NDIS\_STATUS に設定し、 **\_フィルター\_現在の\_機能を受信\_** する必要があります。
 
-    -   **StatusBuffer**メンバーのアドレスに設定する必要があります、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
+    -   **Statusbuffer**メンバーは、 [**NDIS\_RECEIVE\_FILTER\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体のアドレスに設定する必要があります。
 
-    -   **StatusBufferSize**にメンバーを設定する必要があります`sizeof(NDIS_RECEIVE_FILTER_CAPABILITIES)`します。
+    -   **Statusbuffersize**メンバーを `sizeof(NDIS_RECEIVE_FILTER_CAPABILITIES)`に設定する必要があります。
 
-3.  ミニポート ドライバーが呼び出すことによって、状態を示す値を発行[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)します。 ドライバーへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体を*StatusIndication*パラメーター。
+3.  ミニポートドライバーは、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)を呼び出すことによって状態を示します。 ドライバーは、 [**NDIS\_STATUS\_を示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)ポインターを*statusindication*パラメーターに渡す必要があります。
 
-**注**  重なってドライバーを使用できます、 **NDIS\_状態\_受信\_フィルター\_現在\_機能**状態表示現在有効な受信ネットワーク アダプターのフィルター機能を確認します。 または、これらのドライバーにはの OID クエリ要求が発行できますも[OID\_受信\_フィルター\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)を取得する現在有効な受信フィルターいつでも機能します。
+**注**  は、NDIS\_ステータスを使用して **\_フィルターを受信\_\_現在の\_機能**の状態を示し、現在有効になっている受信フィルター機能を特定します。ネットワークアダプター。 また、これらのドライバーでは、現在有効になっている受信フィルター機能をいつでも取得できるように、Oid の OID クエリ要求を、[現在の\_機能\_受信\_フィルター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)発行することもできます。
 
  
 
@@ -72,11 +72,11 @@ NDIS フィルターが表示される次の NDIS インターフェイスで使
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,13 +85,13 @@ NDIS フィルターが表示される次の NDIS インターフェイスで使
 
 
 ****
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)
+[**NDIS\_受信\_フィルター\_の機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)
 
-[OID\_受信\_フィルター\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)
+[OID\_現在の\_機能\_受信\_フィルター処理](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)
 
  
 

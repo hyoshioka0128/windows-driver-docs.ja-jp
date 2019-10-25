@@ -1,23 +1,23 @@
 ---
-title: WIA ミニドライバーを受け取る方法は、WIA から切断します。
-description: WIA ミニドライバーが WIA サービスから接続解除イベントを受信する方法
+title: Wia ミニドライバーが WIA から切断を受け取る方法
+description: Wia ミニドライバーが WIA サービスから切断イベントを受信する方法
 ms.assetid: 6ae3c230-d026-469e-a699-860a295fba85
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 417cf2089c4e0adf9edfd92162d10fd3ea1273d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 056c06ffdf18b9387d9f2b33de239b1df3b8a1f4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363055"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840830"
 ---
-# <a name="how-the-wia-minidriver-receives-a-disconnect-event-from-the-wia-service"></a>WIA ミニドライバーが WIA サービスから接続解除イベントを受信する方法
+# <a name="how-the-wia-minidriver-receives-a-disconnect-event-from-the-wia-service"></a>Wia ミニドライバーが WIA サービスから切断イベントを受信する方法
 
-デバイスが、コンピューターから、ユーザーが USB ケーブルを切断するときなど、コンピューターから突然切断されたときに、WIA サービスが呼び出す、 [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)メソッドをWIA\_イベント\_デバイス\_DISCONNECTED イベント。 参照してください[中断イベントのサポートを追加する](adding-interrupt-event-support.md)の実装例については、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド。
+ユーザーがコンピューターから USB ケーブルを切断したときなど、デバイスがコンピューターから突然切断された場合、WIA サービスは、WIA\_イベント\_デバイスを使用して[**IWiaMiniDrv::D rvnotifypnpevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)メソッドを呼び出し\_切断されたイベント。 **IWiaMiniDrv::D rvnotifypnpevent**メソッドの実装例については、「[割り込みイベントのサポートの追加](adding-interrupt-event-support.md)」を参照してください。
 
-WIA ミニドライバーは、中、またはこのイベントの後に、ハードウェアと通信するためにしないようにします。 このイベントでは、WIA サービスが、ミニドライバーをアンロードすることを示します。 次のデバイス アクセスが許可されているとは、WIA サービス、ミニドライバーを再読み込みする場合です。 ミニドライバーが、すべてのフラグを設定することをお勧め[IWiaMiniDrv](iwiaminidrv-com-interface.md)再接続されるまで、ハードウェアへのアクセスからの呼び出しのインターフェイスします。
+このイベントの発生中または後に、WIA ミニドライバーはハードウェアとの通信を試行しないでください。 このイベントは、WIA サービスによってミニドライバーがアンロードされることを示します。 次に許可されるデバイスアクセスは、WIA サービスがミニドライバーを再読み込みするときです。 ミニドライバーは、再接続されるまで、すべての[IWiaMiniDrv](iwiaminidrv-com-interface.md)インターフェイス呼び出しがハードウェアにアクセスするのを防ぐフラグを設定することをお勧めします。
 
-WIA\_イベント\_デバイス\_WIA ミニドライバーに DISCONNECTED イベントが常に送信されません。 コンピューターをシャット ダウンすると、WIA サービス WIA ドライバーをアンロードしています、このイベントは送信しません。 このイベントは、アクションを無効にすると、デバイスのハードウェアとして扱う必要があります。
+WIA\_イベント\_デバイス\_切断イベントは、常に WIA ミニドライバーに送信されるとは限りません。 コンピューターがシャットダウンしているときに、WIA サービスが WIA ドライバーをアンロードしている場合、このイベントは送信されません。 このイベントは、デバイスのハードウェアを無効にするアクションとして扱う必要があります。
 
  
 

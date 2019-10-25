@@ -3,27 +3,27 @@ title: WDF のアーキテクチャ
 description: WDF のアーキテクチャ
 ms.assetid: e5e2ed4a-5faf-4879-965f-7316fe64edf9
 keywords:
-- カーネル モード ドライバー WDK KMDF、アーキテクチャ
+- カーネルモードドライバー WDK KMDF、アーキテクチャ
 - KMDF WDK、アーキテクチャ
-- カーネル モード ドライバー フレームワーク WDK のアーキテクチャ
-- WDK KMDF オブジェクトのメソッド
-- WDK KMDF のアーキテクチャ
-- オブジェクトの WDK KMDF イベント コールバック関数
-- WDK KMDF のイベントのコールバック関数
-- WDK KMDF オブジェクトのプロパティ
-- オブジェクトは WDK KMDF を処理します。
-- WDK KMDF インターフェイス
+- カーネルモードドライバーフレームワーク WDK、アーキテクチャ
+- オブジェクトメソッド WDK KMDF
+- アーキテクチャ WDK KMDF
+- オブジェクトイベントコールバック関数 WDK KMDF
+- イベントコールバック関数 WDK KMDF
+- オブジェクトのプロパティ WDK KMDF
+- オブジェクトが WDK KMDF を処理する
+- インターフェイス WDK KMDF
 - オブジェクト WDK KMDF
-- framework オブジェクト WDK KMDF、アーキテクチャ
-- フレームワーク ベースのドライバー WDK KMDF、アーキテクチャ
+- フレームワークオブジェクト WDK KMDF、アーキテクチャ
+- フレームワークベースのドライバー WDK KMDF, アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b907b9d17f971b79800f33cda68c4706c69748d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 254208903863cf29473dd72f118e06ba28bdf041
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371103"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843157"
 ---
 # <a name="wdf-architecture"></a>WDF のアーキテクチャ
 
@@ -31,31 +31,31 @@ ms.locfileid: "67371103"
 
 
 
-WDF は、ドライバーのオブジェクト ベースのインターフェイスを提供します。 オブジェクトのフレームワークで定義されたインターフェイスが構成されます。
+WDF には、ドライバー用のオブジェクトベースのインターフェイスが用意されています。 フレームワーク定義のオブジェクトインターフェイスは、次の要素で構成されます。
 
-<a href="" id="object-methods"></a>*オブジェクトのメソッド*  
-メソッドは、オブジェクトの操作を実行するか、取得またはオブジェクトのプロパティを設定するドライバーを呼び出すことができる関数です。 メソッドの名前は **Wdf * * * ObjectAction*ここで、*オブジェクト*オブジェクトの説明と*アクション*関数の動作を示します。 たとえば、 [ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)デバイス オブジェクトを作成します。
+<a href="" id="object-methods"></a>*オブジェクトメソッド*  
+メソッドは、ドライバーがオブジェクトに対して操作を実行したり、オブジェクトプロパティを取得または設定したりするために呼び出すことができる関数です。 メソッドには、**Wdf * * * ObjectAction*という名前が付けられます。ここで、 *object*はオブジェクトを表し、*アクション*は関数の動作を示します。 たとえば、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)はデバイスオブジェクトを作成します。
 
-<a href="" id="object-event-callback-functions"></a>*オブジェクト イベントのコールバック関数*  
-イベントのコールバック関数は、ドライバーを提供する関数です。 各イベントのコールバック関数は、オブジェクトで発生する特定のイベントに関連付けられます。 フレームワークは、関連付けられているイベントの発生時に、イベントのコールバック関数を呼び出します。 規則により、イベントのコールバック関数のプレース ホルダーと呼ばれます Evt*ObjectEvent*、できる任意の名前をこれらのコールバックは、ドライバーを選択します。 たとえば、ドライバーの登録、 [ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)そのデバイスが稼働状態になるときに通知するイベントのコールバック。
+<a href="" id="object-event-callback-functions"></a>*オブジェクトイベントのコールバック関数*  
+イベントコールバック関数は、ドライバーが提供する関数です。 各イベントコールバック関数は、オブジェクトで発生する可能性のある特定のイベントに関連付けられています。 フレームワークは、関連付けられたイベントが発生したときに、イベントコールバック関数を呼び出します。 規則により、イベントコールバック関数のプレースホルダーは、".Evt*Objectevent*" と呼ばれますが、これらのコールバックにはドライバーで任意の名前を指定できます。 たとえば、ドライバーは、デバイスが動作状態になったときに通知されるように、 [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)イベントコールバックを登録します。
 
 <a href="" id="object-properties"></a>*オブジェクトのプロパティ*  
-プロパティは、値オブジェクト内に格納されていること、およびドライバー*取得*(つまり、取得) と*設定*(つまり、変更)。 多くの場合、プロパティは、対応する WDM オブジェクト内のフィールドに直接マップされます。 という名前のプロパティが失敗することはできません **Wdf***オブジェクト***取得 * * * 値*と **Wdf***オブジェクト***設定 * * * 値*、および失敗が許容されるプロパティ名前は **Wdf***オブジェクト***取得 * * * 値*と **Wdf***オブジェクト***割り当てる * * * 値*します。 *オブジェクト*、オブジェクトの説明と*値*関数を設定または取得するデータを識別します。 たとえば、 [ **WdfDeviceGetDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdriver)デバイス オブジェクトに関連付けられているドライバー オブジェクトへのハンドルを返します。
+プロパティは、オブジェクト内に格納される値であり、ドライバーが*取得*(つまり、取得) して*設定*(つまり、変更) することができます。 多くの場合、プロパティは、対応する WDM オブジェクトのフィールドに直接マップされます。 失敗しないプロパティには、**Wdf***object***Get ** * * 値および **Wdf***オブジェクト***セット * ** * 値が指定され、失敗する可能性のあるプロパティには、**Wdf***オブジェクト***の取得 * ** * 値と **Wdf***オブジェクト***の割り当て * * * という名前が付けられます。値*。 *オブジェクトはオブジェクトについて*説明し、 *Value*は関数が設定または返すデータを識別します。 たとえば、 [**Wdfdevicegetdriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdriver)は、デバイスオブジェクトに関連付けられている driver オブジェクトへのハンドルを返します。
 
-<a href="" id="object-handles"></a>*オブジェクト ハンドル*  
-フレームワーク ベースのドライバーしない直接オブジェクトにアクセスするフレームワークです。 代わりに、ドライバーは、オブジェクトのメソッドに渡すことができるは、オブジェクト ハンドルを受け取ります。
+<a href="" id="object-handles"></a>*オブジェクトハンドル*  
+フレームワークベースのドライバーは、フレームワークオブジェクトに直接アクセスすることはありません。 代わりに、ドライバーはオブジェクトハンドルを受け取ります。このハンドルはオブジェクトのメソッドに渡すことができます。
 
-フレームワークには、framework ベースのドライバーを使用するいくつかのオブジェクトの種類を定義します。
+フレームワークは、フレームワークベースのドライバーが使用するオブジェクトの種類をいくつか定義します。
 
--   A *framework ドライバー オブジェクト*各ドライバーを表します。
+-   *フレームワークドライバーオブジェクト*は、各ドライバーを表します。
 
--   A *framework デバイス オブジェクト*ドライバーがサポートする各デバイスを表します。
+-   *フレームワークデバイスオブジェクト*は、ドライバーがサポートする各デバイスを表します。
 
--   *フレームワークのキュー オブジェクト*デバイスの I/O 要求を受信するための I/O キューを表します。
+-   *フレームワークキューオブジェクト*は、デバイスの i/o 要求を受信する i/o キューを表します。
 
--   *フレームワークの要求オブジェクト*I/O キューごとに受け取る I/O 要求を表します。
+-   *フレームワーク要求オブジェクト*は、各 i/o キューによって受信される i/o 要求を表します。
 
-すべてのフレームワークを定義するオブジェクトの一覧は、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
+フレームワークによって定義されるすべてのオブジェクトの一覧については、「[フレームワークオブジェクトの概要](summary-of-framework-objects.md)」を参照してください。
 
  
 

@@ -4,45 +4,45 @@ description: メモリ バッファーのライフ サイクル
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8716361e6b1de4c5896941b876dcc1d01cca63f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 748483de4fddb8bb703571b62c7bdbd86b75b7eb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843147"
 ---
 # <a name="memory-buffer-life-cycle"></a>メモリ バッファーのライフ サイクル
 
 
-メモリ バッファーのライフ サイクルでは、バッファーの作成時に、削除からの時間にまたがります。 このトピックでは、バッファーの使用シナリオと、バッファーが削除された場合の影響について説明します。
+メモリバッファーのライフサイクルは、バッファーが作成されてから削除されるまでの時間を範囲とします。 このトピックでは、バッファーの使用シナリオと、バッファーが削除されたときの影響について説明します。
 
-カーネル モード ドライバー フレームワーク (KMDF) では、要求オブジェクトは、I/O 要求を表します。 すべての要求オブジェクトに関連付けられている 1 つ以上のメモリ オブジェクトと、各メモリ オブジェクトが入力に使用されるか、要求の出力をバッファーを表します。
+カーネルモードドライバーフレームワーク (KMDF) では、要求オブジェクトは i/o 要求を表します。 すべての要求オブジェクトは1つ以上のメモリオブジェクトに関連付けられており、各メモリオブジェクトは、要求内の入力または出力に使用されるバッファーを表します。
 
-フレームワークでは、受信の I/O 要求を表すオブジェクトを要求し、メモリを作成するときに要求オブジェクトが関連付けられているメモリ オブジェクトの親として設定します。 そのため、メモリ オブジェクトは、要求オブジェクトの有効期間を超えて保持できます。 フレームワーク ベースのドライバーには、I/O 要求が完了すると、フレームワークはこれら 2 つのオブジェクトへのハンドルが無効になるように、要求オブジェクトと、メモリ オブジェクトを削除します。
+フレームワークは、入力 i/o 要求を表す要求オブジェクトとメモリオブジェクトを作成するときに、関連付けられているメモリオブジェクトの親として要求オブジェクトを設定します。 そのため、メモリオブジェクトは、要求オブジェクトの有効期間よりも長く保持される可能性があります。 フレームワークベースのドライバーが i/o 要求を完了すると、フレームワークは要求オブジェクトとメモリオブジェクトを削除するので、これらの2つのオブジェクトのハンドルは無効になります。
 
-ただし、基になるバッファーでは異なります。 バッファー、バッファーとバッファーを作成する方法を作成するコンポーネントによって参照カウントがあり、メモリ オブジェクトによって所有される可能性があります-これがない場合もあります。 メモリ オブジェクトに、バッファーが所有している場合は、バッファーの参照カウントがし、その有効期間のメモリ オブジェクトの限定されます。 その他のいくつかのコンポーネントがバッファーを作成する場合、バッファーとメモリ オブジェクトの有効期間は関連しません。
+ただし、基になるバッファーは異なります。 バッファーを作成したコンポーネントとバッファーの作成方法に応じて、バッファーには参照カウントがあり、メモリオブジェクトによって所有されている可能性があります。そうでない場合もあります。 メモリオブジェクトがバッファーを所有している場合、バッファーは参照カウントを持ち、その有効期間はメモリオブジェクトの有効期間に制限されます。 他のコンポーネントがバッファーを作成した場合は、バッファーの有効期間とメモリオブジェクトが関連付けられていません。
 
-フレームワーク ベースのドライバーは、I/O ターゲットに送信するための独自の要求オブジェクトを作成することもできます。 ドライバーが作成した要求は、ドライバーは、I/O 要求で受信した既存のメモリ オブジェクトを再利用できます。 ドライバーは、頻繁に I/O ターゲットに要求を送信できます[要求オブジェクトを再利用](reusing-framework-request-objects.md)を作成します。
+フレームワークベースのドライバーは、i/o ターゲットに送信する独自の要求オブジェクトを作成することもできます。 ドライバーによって作成された要求では、ドライバーが i/o 要求で受信した既存のメモリオブジェクトを再利用できます。 I/o ターゲットに頻繁に要求を送信するドライバーは、作成した[要求オブジェクトを再利用](reusing-framework-request-objects.md)できます。
 
-要求オブジェクト、メモリ オブジェクト、および基になるバッファーの有効期間を理解することは、ドライバーはしないように、無効なハンドルまたはバッファー ポインターを参照する必要があります。
+ドライバーが無効なハンドルまたはバッファーポインターを参照しないようにするには、要求オブジェクト、メモリオブジェクト、および基になるバッファーの有効期間を理解することが重要です。
 
-次の使用シナリオを検討してください。
+次の使用シナリオについて考えてみましょう。
 
--   シナリオ 1:[ドライバーは、KMDF から I/O 要求を受け取るし、処理するには、完了したら、その](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)します。
--   例 2:[ドライバーは、KMDF から I/O 要求を受け取るし、I/O をターゲットに転送](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)します。
--   例 3:[ドライバーは、既存のメモリ オブジェクトを使用する I/O 要求を発行](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)します。
--   シナリオ 4:[ドライバーは、新しいメモリ オブジェクトを使用する I/O 要求を発行します。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
+-   シナリオ 1:[ドライバーは KMDF から i/o 要求を受け取り、それを処理し](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)て、完了します。
+-   シナリオ 2:[ドライバーは KMDF から i/o 要求を受信し、i/o ターゲットに転送](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)します。
+-   シナリオ 3:[ドライバーは、既存のメモリオブジェクトを使用する i/o 要求を発行](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)します。
+-   シナリオ 4:[ドライバーは、新しいメモリオブジェクトを使用する i/o 要求を発行します。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
 -   シナリオ 5:[ドライバーは、作成した要求オブジェクトを再利用します。](#scenario-5-driver-reuses-a-request-object-that-it-created)
 
-## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>シナリオ 1:ドライバーは、KMDF から I/O 要求を受け取るを処理し、それを完了します。
+## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>シナリオ 1: ドライバーは KMDF から i/o 要求を受け取り、それを処理して、完了します。
 
-最も単純なシナリオでは、KMDF は I/O を実行し、要求を完了すると、ドライバーへの要求をディスパッチします。 この場合は、基になるバッファーが作成された可能性がユーザー モード アプリケーションを別のドライバーまたはオペレーティング システム自体。 バッファーをアクセスする方法については、次を参照してください。 [Framework ベースのドライバーでのデータ バッファーへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)します。
+最も単純なシナリオでは、KMDF はドライバーに要求をディスパッチします。これにより i/o が実行され、要求が完了します。 この場合、基になるバッファーは、ユーザーモードアプリケーション、別のドライバー、またはオペレーティングシステム自体によって作成されている可能性があります。 バッファーにアクセスする方法の詳細については、「[フレームワークベースのドライバーでのデータバッファー](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)へのアクセス」を参照してください。
 
-ときに、ドライバー[要求を完了](completing-i-o-requests.md)フレームワークは、メモリ オブジェクトを削除します。 バッファー ポインターは、し、無効です。
+ドライバーが[要求を完了](completing-i-o-requests.md)すると、フレームワークはメモリオブジェクトを削除します。 バッファーポインターは無効になります。
 
-## <a name="scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target"></a>例 2:ドライバーは、KMDF から I/O 要求を受信し、I/O をターゲットに転送します。
+## <a name="scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target"></a>シナリオ 2: ドライバーは KMDF から i/o 要求を受信し、i/o ターゲットに転送します。
 
-このシナリオでは、ドライバーで[要求を転送します](forwarding-i-o-requests.md)I/O のターゲットにします。 次のサンプル コードでは、どのドライバー入力方向の要求オブジェクトからメモリ オブジェクトへのハンドルを取得、I/O ターゲットに送信する要求を書式設定し、要求を送信を示します。
+このシナリオでは、ドライバーは i/o ターゲットに[要求を転送](forwarding-i-o-requests.md)します。 次のサンプルコードは、ドライバーが受信要求オブジェクトからメモリオブジェクトへのハンドルを取得し、i/o ターゲットに送信するように要求を書式設定して、要求を送信する方法を示しています。
 
 ```cpp
 VOID
@@ -91,7 +91,7 @@ End:
 }
 ```
 
-I/O のターゲットには、要求が完了したら、フレームワークは、ドライバーの設定要求の完了時のコールバックを呼び出します。 次のコードは、単純な完了コールバックを示しています。
+I/o ターゲットが要求を完了すると、フレームワークは、ドライバーが要求に対して設定した完了コールバックを呼び出します。 次のコードは、単純な完了コールバックを示しています。
 
 ```cpp
 VOID
@@ -112,38 +112,38 @@ RequestCompletionRoutine(
 }
 ```
 
-ドライバーを呼び出すと[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)フレームワークを完了コールバックからには、メモリ オブジェクトを削除します。 ドライバーが取得されるメモリ オブジェクト ハンドルは、今すぐ無効です。
+ドライバーが完了コールバックから[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出すと、フレームワークはメモリオブジェクトを削除します。 取得したドライバーが無効になっているメモリオブジェクトハンドル。
 
-## <a name="scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object"></a>例 3:ドライバーは、既存のメモリ オブジェクトを使用する I/O 要求を発行します。
+## <a name="scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object"></a>シナリオ 3: ドライバーは、既存のメモリオブジェクトを使用する i/o 要求を発行します。
 
 
-一部のドライバーでは、独自の I/O 要求を発行し、I/O のターゲット オブジェクトで表される、I/O のターゲットに送ります。 ドライバーは、独自の要求オブジェクトを作成できますか、または[フレームワークが作成した要求オブジェクトを再利用](reusing-framework-request-objects.md)します。 ドライバーのいずれかの技法を使用して、前の要求からのメモリ オブジェクトが再利用できます。 ドライバーは、基になるバッファーを変更する必要がありますが、バッファーの新しい I/O 要求をフォーマットするときのオフセットを渡すことができます。
+一部のドライバーは、独自の i/o 要求を発行し、i/o ターゲットオブジェクトによって表される i/o ターゲットに送信します。 ドライバーは、独自の要求オブジェクトを作成するか、[フレームワークによって作成された要求オブジェクトを再利用](reusing-framework-request-objects.md)することができます。 どちらの方法を使用しても、ドライバーは前の要求からメモリオブジェクトを再利用できます。 ドライバーは、基になるバッファーを変更する必要はありませんが、新しい i/o 要求をフォーマットするときにバッファーオフセットを渡すことができます。
 
-既存のメモリ オブジェクトを使用する新しい I/O 要求を書式設定する方法については、次を参照してください。[一般的な I/O ターゲットへの I/O 要求の送信](sending-i-o-requests-to-general-i-o-targets.md)します。
+既存のメモリオブジェクトを使用する新しい i/o 要求をフォーマットする方法の詳細については、「[一般的な I/o ターゲットへ](sending-i-o-requests-to-general-i-o-targets.md)の i/o 要求の送信」を参照してください。
 
-フレームワークは、I/O のターゲットに送信する要求を書式設定、ときに、I/O のターゲット オブジェクトの代わりにリサイクルされるメモリ オブジェクトの参照をかかります。 I/O のターゲット オブジェクトでは、次の操作のいずれかが発生するまで、この参照が保持されます。
+I/o ターゲットに送信するように要求の形式を設定すると、i/o ターゲットオブジェクトに代わって、再利用されるメモリオブジェクトの参照を取得します。 I/o ターゲットオブジェクトは、次のいずれかのアクションが発生するまで、この参照を保持します。
 
 -   要求が完了しました。
--   ドライバーを再フォーマット、要求オブジェクトもう一度の 1 つを呼び出すことによって、 *WdfIoTargetFormatRequestXxx*または*WdfIoTargetSendXxxSynchronously*メソッド。 これらのメソッドの詳細については、次を参照してください。 [Framework I/O ターゲット オブジェクトのメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/)します。
--   ドライバー呼び出し[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)します。
+-   このドライバーは、 *Wdfiotargetformatrequestxxx*または*Wdfiotargetsendxxx*のいずれかの同期メソッドを呼び出すことによって、要求オブジェクトを再フォーマットします。 これらのメソッドの詳細については、「 [Framework I/o Target オブジェクトメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/)」を参照してください。
+-   ドライバーは[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出します。
 
-新しい I/O 要求が完了したら、フレームワークは、ドライバーは、この要求に設定する I/O 完了コールバックを呼び出します。 この時点では、I/O ターゲット オブジェクトは、メモリ オブジェクトの参照を保持するままにします。 そのため、I/O の完了時のコールバックで、ドライバー呼び出す必要があります[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)の要求のドライバーが作成したオブジェクトのメモリを取得する元となる、元の要求を完了する前にオブジェクト。 ドライバーが要求されていない場合**WdfRequestReuse**、余分な参照が原因のバグ チェックが行われます。
+新しい i/o 要求が完了すると、フレームワークは、この要求に対してドライバーが設定した i/o 完了コールバックを呼び出します。 この時点で、i/o ターゲットオブジェクトはメモリオブジェクトへの参照を保持しています。 そのため、i/o 完了コールバックでは、ドライバーが作成した要求オブジェクトで[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出してから、メモリオブジェクトを取得した元の要求を完了する必要があります。 ドライバーが**WdfRequestReuse**を呼び出さない場合は、追加の参照が原因でバグチェックが行われます。
 
-## <a name="scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object"></a>シナリオ 4:ドライバーは、新しいメモリ オブジェクトを使用する I/O 要求を発行します。
-
-
-フレームワークは、基になるバッファーのソースに応じて、新しいメモリ オブジェクトを作成するドライバーの 3 つの方法を提供します。 詳細については、次を参照してください。[メモリ バッファーを使用して](using-memory-buffers.md)します。
-
-バッファーが割り当てられている、フレームワークによって、またはドライバー作成から[ルック アサイド リスト](using-memory-buffers.md#using-lookaside-lists)、メモリ オブジェクトが所有しているバッファー、バッファー ポインターは、メモリ オブジェクトが存在する限り有効です。 非同期 I/O 要求を発行するドライバーは、フレームワークは発行元のドライバーに、I/O 要求が完了するまで、バッファーを保持することを確認するためにメモリ オブジェクトによって所有されているバッファーを常に使用する必要があります。
-
-場合は、ドライバーによって新しいメモリ オブジェクトを呼び出すことによって以前に割り当てられたバッファーが割り当てられます。 [ **WdfMemoryCreatePreallocated**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreatepreallocated)、メモリ オブジェクトは、バッファーを所有していません。 この場合、メモリ オブジェクトの有効期間と基になるバッファーの有効期間は関連しません。 無効なバッファー ポインターを使用しよう必要があり、ドライバーは、バッファーの有効期間を管理する必要があります。
-
-## <a name="scenario-5-driver-reuses-a-request-object-that-it-created"></a>シナリオ 5:ドライバーは、作成した要求オブジェクトを再利用します。
+## <a name="scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object"></a>シナリオ 4: ドライバーは、新しいメモリオブジェクトを使用する i/o 要求を発行します。
 
 
-ドライバーは、作成する要求オブジェクトを再利用できますが、呼び出すことによってこのような各オブジェクトを再初期化する必要がありますが、 [ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)ごとの再利用する前にします。 詳細については、次を参照してください。 [Framework 要求オブジェクトを再利用](reusing-framework-request-objects.md)します。
+フレームワークには、基になるバッファーのソースに応じて、ドライバーが新しいメモリオブジェクトを作成するための3つの方法が用意されています。 詳細については、「[メモリバッファーの使用](using-memory-buffers.md)」を参照してください。
 
-要求オブジェクトを再初期化するサンプル コードについては、[トースター](https://go.microsoft.com/fwlink/p/?linkid=256195)と[NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154) KMDF で提供されるサンプルのリリースします。
+バッファーがフレームワークまたはドライバーによって作成された[ルックアサイドリスト](using-memory-buffers.md#using-lookaside-lists)から割り当てられている場合、メモリオブジェクトはバッファーを所有しているため、メモリオブジェクトが存在する限り、バッファーポインターは有効なままです。 非同期 i/o 要求を発行するドライバーでは、メモリオブジェクトによって所有されているバッファーを常に使用する必要があります。これにより、i/o 要求が発行元ドライバーに戻されるまでバッファーが保持されるようにすることができます。
+
+以前に割り当てられたバッファーを、ドライバーが[**Wdfmemorycreatepreallocated**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatepreallocated)割り当てを呼び出すことによって新しいメモリオブジェクトに割り当てた場合、メモリオブジェクトはバッファーを所有しません。 この場合、メモリオブジェクトの有効期間と基になるバッファーの有効期間は関連していません。 ドライバーは、バッファーの有効期間を管理する必要があり、無効なバッファーポインターを使用しないようにする必要があります。
+
+## <a name="scenario-5-driver-reuses-a-request-object-that-it-created"></a>シナリオ 5: ドライバーは、作成した要求オブジェクトを再利用します。
+
+
+ドライバーは、作成した要求オブジェクトを再利用できますが、再利用する前に[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)を呼び出すことによって、このようなオブジェクトを再初期化する必要があります。 詳細については、「[フレームワークの要求オブジェクト](reusing-framework-request-objects.md)の再利用」を参照してください。
+
+要求オブジェクトを再初期化するサンプルコードについては、KMDF リリースで提供されている[トースター](https://go.microsoft.com/fwlink/p/?linkid=256195)と[NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154)のサンプルを参照してください。
 
 
 

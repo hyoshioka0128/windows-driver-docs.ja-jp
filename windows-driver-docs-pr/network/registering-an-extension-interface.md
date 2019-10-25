@@ -3,32 +3,32 @@ title: 拡張インターフェイスの登録
 description: 拡張インターフェイスの登録
 ms.assetid: 33dc32da-9bc1-40b4-8737-ec132ec36708
 keywords:
-- Winsock カーネル WDK がネットワーク接続、拡張機能インターフェイス
-- WSK WDK のネットワーク接続、拡張機能インターフェイス
+- Winsock カーネル WDK ネットワーク、拡張インターフェイス
+- WSK WDK ネットワーク、拡張インターフェイス
 - 拡張機能インターフェイス WDK Winsock カーネル
-- Winsock Kernel 拡張機能インターフェイスを登録します。
+- Winsock カーネル拡張インターフェイスを登録しています
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1adad4b82d8a0525014309b2db135c07856d005
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 239551ec06e469d25ae0d3dcea43f1931ea35159
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374798"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842094"
 ---
 # <a name="registering-an-extension-interface"></a>拡張インターフェイスの登録
 
 
-1 つ以上のソケットを登録するは、Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、[拡張機能インターフェイス](winsock-kernel-extension-interfaces.md)WSK サブシステムでサポートされています。 WSK アプリケーションの決定を調べることで、WSK サブシステムによって拡張機能インターフェイスのセットがサポートされている、**バージョン**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) WSK サブシステムは、添付ファイルの中に、アプリケーションに返される構造体。
+Winsock カーネル (WSK) アプリケーションでソケットが正常に作成されると、WSK サブシステムでサポートされている1つ以上の[拡張インターフェイス](winsock-kernel-extension-interfaces.md)にそのソケットを登録できます。 Wsk サブシステムによってサポートされる拡張インターフェイスのセットは、wsk サブシステムによってアプリケーションに返される wsk [ **\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)構造体の**バージョン**メンバーを調べることによって、wsk アプリケーションによって決定されます。添付中。
 
-各拡張機能インターフェイスは、WSK NPI から独立している、NPI によって定義されます。 ただし、拡張機能インターフェイスの NPIs が NPI 固有の特性をサポートしていないことに注意してください。
+各拡張インターフェイスは、WSK NPI に依存しない NPI によって定義されます。 ただし、拡張インターフェイスの NPIs では、NPI 固有の特性がサポートされていないことに注意してください。
 
-WSK アプリケーションを実行することによって拡張機能インターフェイスの登録、 [ **SIO\_WSK\_登録\_拡張子**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension)ソケット、ソケットの IOCTL 操作。 ソケットの IOCTL 操作を実行する方法の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
+WSK アプリケーションは、 [**SIO\_WSK\_REGISTER\_extension**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension) socket IOCTL 操作をソケットに登録して、拡張インターフェイスを登録します。 ソケットの IOCTL 操作の実行の詳細については、「[ソケットでの制御操作の実行](performing-control-operations-on-a-socket.md)」を参照してください。
 
-WSK アプリケーションが、SIO WSK サブシステムでサポートされていない拡張機能インターフェイスのソケットを登録しようとしたかどうかは\_WSK\_登録\_拡張子ソケットの IOCTL 操作の状態が返されます\_されません\_サポートされています。
+Wsk アプリケーションが WSK サブシステムでサポートされていない拡張インターフェイスのソケットを登録しようとした場合、SIO\_WSK\_レジスタ\_拡張ソケットの IOCTL 操作は、サポートされて\_いない状態\_ステータスを返します。
 
-たとえば、次のコード例のように、拡張機能インターフェイスが定義されているとします。
+たとえば、次のコード例では、拡張インターフェイスがとして定義されているとします。
 
 ```C++
 const NPIID EXAMPLE_EXTIF_NPIID = {...};
@@ -48,7 +48,7 @@ typedef struct _EXAMPLE_EXTIF_CLIENT_DISPATCH {
 } EXAMPLE_EXTIF_CLIENT_DISPATCH, *PEXAMPLE_EXTIF_CLIENT_DISPATCH;
 ```
 
-接続指向のソケットの場合は、この拡張機能インターフェイス WSK アプリケーションを登録する方法を次に示します。
+次に示すのは、WSK アプリケーションが接続指向ソケットのこの拡張インターフェイスに登録する方法を示しています。
 
 ```C++
 // Client dispatch structure for the extension interface
@@ -121,7 +121,7 @@ NTSTATUS
 }
 ```
 
-ソケットのソケットによってごとに拡張機能インターフェイス WSK アプリケーションを登録します。
+WSK アプリケーションは、ソケットごとに拡張インターフェイスを登録します。
 
  
 

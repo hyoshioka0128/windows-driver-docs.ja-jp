@@ -3,15 +3,15 @@ title: 既定のクロック
 description: 既定のクロック
 ms.assetid: 8c1a51e5-238b-446a-8f20-3fe1b82020b5
 keywords:
-- 既定のクロックの WDK カーネルがストリーミング
+- 既定のクロック WDK カーネルストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87c17ac3da20cde10ba78d63ec48670800d4ce7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 224e4847d0ed7f9026589df970e1bd91a5577e7e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376378"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837718"
 ---
 # <a name="default-clocks"></a>既定のクロック
 
@@ -19,19 +19,19 @@ ms.locfileid: "67376378"
 
 
 
-カーネルのミニドライバーのストリーミングを呼び出すことができます[ **KsAllocateDefaultClockEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksallocatedefaultclockex)を割り当てたり、既定のクロックの構造体を初期化します。 代わりに、呼び出すことができます[ **KsAllocateDefaultClock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksallocatedefaultclock)、用のラッパーである**KsAllocateDefaultClockEx** nonclock メンバーの既定のパラメーターを使用します。 呼び出す[ **KsCreateDefaultClock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatedefaultclock)を使用した後**KsAllocateDefaultClockEx**を既定の時刻を初期化します。
+カーネルストリーミングミニドライバーは、 [**KsAllocateDefaultClockEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclockex)を呼び出して、既定のクロック構造の割り当てと初期化を行うことができます。 または、 [**KsAllocateDefaultClock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclock)を呼び出すこともできます。これは、非クロックメンバーの既定のパラメーターを持つ**KsAllocateDefaultClockEx**のラッパーです。 **KsAllocateDefaultClockEx**を使用して既定のクロックを初期化した後、 [**KsCreateDefaultClock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatedefaultclock)を呼び出します。
 
-既定の時刻をサポートしています[KSPROPSETID\_クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-clock)フィルターの暗証番号 (pin) によって提示されるその他の任意のクロックと同様にアクセスできますが。 基になるデータ構造、ただし、して、フィルターは、暗証番号 (pin)、によって作成されたがその pin と作成される、時計のインスタンスで共有される クロックは、現在の状態と共有の構造体の他の要素を更新するピンに依存します。 通知要求を処理する既定の時計と時計のクエリ。
+既定のクロックでは、 [Ksk Propsetid\_clock](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-clock)がサポートされており、フィルターの pin によって示される他の時計と同様にアクセスできます。 ただし、基になるデータ構造は、フィルターのピンによって作成され、そのピンと作成されたクロックのインスタンスによって共有されます。 クロックは、pin に依存して、共有構造内の現在の状態およびその他の要素を更新します。 既定のクロックは、通知要求とクロッククエリを処理します。
 
-このクロックを提供するフィルターで pin には、マスターのクロックが割り当てられている、ときに、暗証番号 (pin) には、このクロックが所有しています。 Pin は、その他のクロックの実装が割り当てられている場合と同様、クロック ファイル オブジェクトを参照する必要があります。 既定の時刻では、インスタンスが作成されたときに暗証番号 (pin) のファイル オブジェクトを参照していません。 代わりに、共通のクロックの構造の初期の割り当てと、クロックに開かれた各ファイル オブジェクトに基づいて、内部参照カウントを保持します。 クロックの所有者は、クロックの構造体を解放、場合でもすべてのファイル オブジェクトが閉じられるまでインプレースは残ります。 Pin できます直接、既定のクロック オブジェクトにアクセスではなくクロックの標準的なインターフェイスを経由します。
+このクロックを提供するフィルターのピンにマスタークロックが割り当てられている場合、pin はこのクロックを所有します。 Pin は、他のクロック実装が割り当てられている場合と同様に、クロックファイルオブジェクトを参照する必要があります。 インスタンスの作成時に、既定のクロックでは pin のファイルオブジェクトが参照されません。 代わりに、共通クロック構造の初期割り当てと、クロックで開かれた各ファイルオブジェクトに基づいて、内部参照カウントを保持します。 クロックの所有者がクロック構造体を解放した場合でも、すべてのファイルオブジェクトが閉じられるまで、その状態は維持されます。 Pin は、標準クロックインターフェイスを経由するのではなく、既定のクロックオブジェクトに直接アクセスできます。
 
-ミニドライバーがサポートできる、 [ **KSPROPERTY\_クロック\_FUNCTIONTABLE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-clock-functiontable)参照クロックの時刻を確認するためのメカニズムをユーザー モードのクライアントに提供するプロパティ。 このプロパティは、正確な速度の一致をサポートしているため、これを有効にする関数のポインターを持つ構造体に格納します。
+ミニドライバーでは、 [**Ksk プロパティ\_CLOCK\_FUNCTIONTABLE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-clock-functiontable)プロパティをサポートしているため、ユーザーモードクライアントに参照クロック時間をチェックするメカニズムを提供できます。 このプロパティは、これを有効にする関数ポインターを構造体に格納します。これにより、正確なレート一致がサポートされます。
 
-さらに、ミニドライバーのサポート、 [ **KSPROPERTY\_ストリーム\_レート**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-rate)プロパティの指定した pin がレートの変化を許可する場合。
+また、ミニドライバーでは、指定された pin で速度の変更が許可される場合に、 [**Ksk プロパティ\_STREAM\_rate**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-rate)プロパティをサポートしています。
 
-メソッドの呼び出しは、カーネルがストリーミング プロキシ インターフェイスを使用するアプリケーション、 [IKsClockPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-iksclockpropertyset)インターフェイスを取得し、レートが一致する他の場所で使用できる物理クロックの時刻を設定します。
+カーネルストリーミングプロキシインターフェイスを使用するアプリケーションは、 [IKsClockPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-iksclockpropertyset)インターフェイスのメソッドを呼び出して、別の場所で使用される可能性のある物理クロックの時間を取得して設定します。
 
-参照してください[品質管理](quality-management.md)関連情報についてはします。
+関連情報については、「[品質管理](quality-management.md)」を参照してください。
 
  
 

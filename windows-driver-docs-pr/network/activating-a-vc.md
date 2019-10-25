@@ -3,16 +3,16 @@ title: VC のアクティブ化
 description: VC のアクティブ化
 ms.assetid: 93bac975-3c9c-424b-a815-b1589b703fb5
 keywords:
-- 仮想接続 WDK いる CoNDIS、アクティブ化します。
-- 仮想接続をアクティブ化します。
+- 仮想接続 WDK、アクティブ化
+- 仮想接続のアクティブ化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 890667ca1a9631c5f31966fb4b34d1cf8b5c6577
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a5b77ca8cf0aaedb3edea176733cec882defff7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384429"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838257"
 ---
 # <a name="activating-a-vc"></a>VC のアクティブ化
 
@@ -20,25 +20,25 @@ ms.locfileid: "67384429"
 
 
 
-仮想接続 (VC) が作成された後 (を参照してください[作成 VC](creating-a-vc.md))、データを送信または受信を前に、アクティブにする必要があります。 コール マネージャーは、呼び出すことによって、VC のアクティブ化を開始[ **NdisCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmactivatevc)(次の図を参照してください)。
+仮想接続 (VC) が作成された後 ( [vc の作成](creating-a-vc.md)に関するを参照)、データを送受信する前にアクティブ化する必要があります。 呼び出しマネージャーは、 [**NdisCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmactivatevc)を呼び出すことによって VC のアクティブ化を開始します (次の図を参照してください)。
 
-![vc のアクティブ化を開始するコール マネージャーを示す図](images/cm-07.png)
+![vc アクティベーションを開始する呼び出しマネージャーを示す図](images/cm-07.png)
 
-MCM ドライバーは、呼び出すことによって、VC のアクティブ化を開始します[ **NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)(次の図を参照してください)。
+MCM ドライバーは、 [**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)を呼び出すことによって VC のアクティベーションを開始します (次の図を参照してください)。
 
-![vc のアクティブ化を開始する、mcm ドライバーを示す図](images/fig1-07.png)
+![vc アクティベーションを開始する mcm ドライバーを示す図](images/fig1-07.png)
 
-その VC の呼び出しのパラメーターの変更が正常にネゴシエート ローカル クライアントまたはリモート パーティの場合、コール マネージャーまたは MCM ドライバーすると、active の VC の再アクティブ化が開始する可能性があります (を参照してください[Client-Initiated の要求の呼び出しを閉じます](client-initiated-request-to-close-a-call.md)と[呼び出しのパラメーターを変更する着信要求](incoming-request-to-change-call-parameters.md))。 コール マネージャーまたは MCM のドライバーを呼び出すことができます**Ndis (M) CmActivateVc**を既にアクティブな呼び出しの呼び出しのパラメーターを変更する 1 つの VC の回数。
+ローカルクライアントまたはリモートパーティがその VC の呼び出しパラメーターの変更を正常にネゴシエートした場合、呼び出しマネージャーまたは MCM ドライバーがアクティブ VC の再アクティブ化を開始することができます (「[クライアントが開始した要求を閉じるための呼び出し](client-initiated-request-to-close-a-call.md)と[受信要求を変更する」を参照してください)。パラメーター](incoming-request-to-change-call-parameters.md))。 呼び出しマネージャーまたは MCM ドライバーは、1つの VC が既にアクティブな呼び出しの呼び出しパラメーターを変更するために、 **Ndis (M) CmActivateVc**を何度も呼び出すことができます。
 
-クライアント主導の発信呼び出しでは、コール マネージャーまたは MCM ドライバーは、通常の呼び出し**Ndis (M) CmActivateVc**リモート ターゲットでネゴシエートされたアグリーメントを呼び出し、または成功したことを確認のパケット交換直後スイッチでは、呼び出しセットアップします。 コール マネージャーまたは MCM ドライバー呼び出し**Ndis (M) CmActivateVc**で NDIS (とクライアント) の送信呼び出しの完了を通知する前に**Ndis (M) CmMakeCallComplete**(を参照してください[呼び出しを行う](making-a-call.md)). ドライバーの通常の呼び出しの着信呼び出し、コール マネージャーまたは MCM **Ndis (M) CmActivateVc**呼び出し後に**NdisCo (MCm) CreateVc**正常にし、その前に呼び出す**Ndis(M)CmDispatchIncomingCall**(を参照してください[着信呼び出しを示す](indicating-an-incoming-call.md))。
+クライアントによって開始された発信呼び出しの場合、コールマネージャーまたは MCM ドライバーは、通常、呼び出しのリモートターゲットとネゴシエートされたアグリーメントを確認するか、または成功した呼び出しの設定を使用して、パケット交換の直後に**Ndis (M) CmActivateVc**を呼び出します。切り替わり. 呼び出しマネージャーまたは MCM ドライバーは、ndis ( **m) CmMakeCallComplete**の発信呼び出し完了を ndis (およびクライアント) に通知する前に、 **ndis (m) CmActivateVc**を呼び出します (「[呼び出しを行う](making-a-call.md)」を参照してください)。 着信呼び出しの場合、通常、コールマネージャーまたは MCM ドライバーは、 **Ndisco (mcm) CreateVc**を正常に呼び出し、 **ndis (m) CmDispatchIncomingCall**を呼び出す前に、 **ndis (m) CmActivateVc**を呼び出します (「[着信呼び出しを示す」を参照してください)。](indicating-an-incoming-call.md)).
 
-呼び出しをコール マネージャーの**NdisCmActivateVc** NDIS を呼び出すと、 [ **MiniportCoActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_activate_vc)基になるミニポート ドライバーの機能。 *MiniportCoActivateVc*アダプターが、要求された呼び出しをサポートできることを確認するには、この VC の呼び出しのパラメーターを検証する必要があります。 呼び出しのパラメーターが、許容される場合は*MiniportCoActivateVc*仮想接続経由でデータを送信または受信するアダプターを準備する必要に応じて、アダプターと通信 (たとえば、プログラミングがバッファーを受信する)。 要求された呼び出しのパラメーターをサポートできない場合、ミニポート ドライバー、要求は失敗します。
+**NdisCmActivateVc**への呼び出しマネージャーの呼び出しにより、NDIS は、基になるミニポートドライバーの[**MiniportCoActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_activate_vc)関数を呼び出します。 *MiniportCoActivateVc*は、要求された呼び出しをアダプターがサポートしていることを確認するために、この VC の呼び出しパラメーターを検証する必要があります。 呼び出しパラメーターが許容される場合、 *MiniportCoActivateVc*は必要に応じてアダプターと通信し、仮想接続を介してデータを受信または送信するようにアダプターを準備します (たとえば、受信バッファーをプログラミングします)。 要求された呼び出しパラメーターがサポートされていない場合、ミニポートドライバーは要求に失敗します。
 
-*MiniportCoActivateVc*同期または非同期で完了できます。 呼び出し[ **NdisMCoActivateVcComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoactivatevccomplete)と呼び出しを上司に NDIS [ **ProtocolCmActivateVcComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_activate_vc_complete)関数。 *ProtocolCmActivateVcComplete*によって返される状態を確認する必要があります**NdisMCoActivateVcComplete**仮想接続が正常にアクティブになったことを確認します。 ミニポート ドライバーが正常にアクティブ化していない、VC 場合、コール マネージャーは、VC 経由での通信を試行する必要があります。 *ProtocolCmActivateVcComplete*もネットワーク メディアが仮想の接続が NDIS に制御を返すまでにデータ転送の準備完了であることを確認するために必要な処理を完了する必要があります。
+*MiniportCoActivateVc*は同期的または非同期的に完了できます。 [**NdisMCoActivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoactivatevccomplete)を呼び出すと、NDIS が呼び出しマネージャーの[**ProtocolCmActivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_activate_vc_complete)関数を呼び出します。 *ProtocolCmActivateVcComplete*は、仮想接続が正常にアクティブ化されたことを確認するために、 **NdisMCoActivateVcComplete**によって返される状態を確認する必要があります。 ミニポートドライバーが VC を正常にアクティブ化できなかった場合、呼び出しマネージャーは VC 経由での通信を試行することはできません。 また、 *ProtocolCmActivateVcComplete*は、ネットワークメディアによって要求された処理を完了してから、NDIS に制御を返す前に、仮想接続がデータ転送の準備ができていることを確認する必要があります。
 
-MCM ドライバーの呼び出しを**NdisMCmActivateVc** vc を新しく作成されたメディアと呼び出しのパラメーターを設定または確立の VC の呼び出しのパラメーターを変更したことは、NDIS を通知します。 このアクションでは、MCM ドライバーが行ったこと、NIC、VC 上の転送の準備ができて、NDIS に通知します。 NDIS は、MCM ドライバーを呼び出すことでアクティブ化のシーケンスを完了*ProtocolCmActivateVcComplete*関数。
+MCM ドライバーの**NdisMCmActivateVc**への呼び出しは、新しく作成された vc で call パラメーターと media パラメーターを設定したこと、または確立された vc で呼び出しパラメーターを変更したことを NDIS に通知します。 この操作は、MCM ドライバーが VC での転送の準備ができている NIC を NDIS に通知します。 NDIS は、MCM ドライバーの*ProtocolCmActivateVcComplete*関数を呼び出すことによって、アクティベーションシーケンスを完了します。
 
-MCM にドライバーを呼び出す**NdisMCmActivateVc** VCs など、MCM ドライバーとネットワーク コンポーネント間のシグナリング メッセージを交換するためのライセンス認証が、転送やクライアントのデータを受信するための VCs のみをアクティブ化する、スイッチです。 MCM にドライバーをアクティブにシグナリング VC 内部的にいずれを呼び出さずに**Ndis * Xxx*** 関数。 独自の目的でシグナル通知の MCM にドライバーを設定する任意の VC を NDIS に対して非透過的したがってです。
+MCM ドライバーは**NdisMCmActivateVc**を呼び出して、クライアントデータの送受信に使用される vcs のみをアクティブにします。ただし、mcm ドライバーとネットワークコンポーネント (スイッチなど) の間での通信に使用される vcs をアクティブにすることはできません。 MCM ドライバーは、 **Ndis * Xxx*** 関数を呼び出さずに、シグナリング VC を内部でアクティブにします。 そのため、MCM ドライバーが独自のシグナリング用に設定した VC は、NDIS に対して不透明になります。
 
  
 

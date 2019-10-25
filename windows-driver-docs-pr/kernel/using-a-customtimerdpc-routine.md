@@ -3,23 +3,23 @@ title: CustomTimerDpc ルーチンの使用
 description: CustomTimerDpc ルーチンの使用
 ms.assetid: e95d01a2-4d13-40d2-aeb0-44c45e4a49f5
 keywords:
-- タイマー オブジェクトの WDK カーネル、CustomTimerDpc ルーチン
+- タイマーオブジェクト WDK カーネル、CustomTimerDpc ルーチン
 - CustomTimerDpc
-- タイマー オブジェクトを無効にします。
-- タイマー オブジェクトの WDK カーネルを無効にします。
+- タイマーオブジェクトの無効化
+- タイマーオブジェクト WDK カーネル、無効化
 - 定期的なタイマー WDK カーネル
-- キューのタイマー オブジェクト
-- タイマー オブジェクトの WDK カーネル、有効期限の設定
-- タイマーの有効期限の WDK カーネル
-- 有効期限が切れたタイマー WDK カーネル
+- タイマーオブジェクトのキュー
+- タイマーオブジェクト WDK カーネル、有効期限
+- タイマーの有効期限 WDK カーネル
+- 期限切れのタイマー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81dde0f2ffee24e2e0e0bef4cbed206bd3fe2df8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfaafb79eb94c50c34c2984847e0bad2855e7247
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382933"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838373"
 ---
 # <a name="using-a-customtimerdpc-routine"></a>CustomTimerDpc ルーチンの使用
 
@@ -27,41 +27,41 @@ ms.locfileid: "67382933"
 
 
 
-以前に設定を無効にするタイマー オブジェクトをドライバーは呼び出し[ **KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kecanceltimer)します。 このルーチンは、システムのタイマー キューからタイマー オブジェクトを削除します。 一般に、タイマー オブジェクトは、シグナル状態に設定されていないと、 *CustomTimerDpc*ルーチンが実行をキューに登録されません。 ただし、タイマーの期限切れが近い場合と**KeCancelTimer**が呼び出されると、有効期限が発生する可能性が前に**KeCancelTimer**後者シグナルと DPC キューは、キューの時間にアクセスする機会を持つ発生します。
+以前に設定したタイマーオブジェクトを無効にするために、ドライバーは[**KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kecanceltimer)を呼び出します。 このルーチンは、システムのタイマーキューからタイマーオブジェクトを削除します。 一般に、タイマーオブジェクトはシグナル状態に設定されておらず、 *Customtimerdpc*ルーチンは実行のためにキューに登録されていません。 ただし、 **KeCancelTimer**が呼び出されたときにタイマーの有効期限が切れそうになると、 **KeCancelTimer**が時間キューにアクセスする前に有効期限が切れる可能性があります。この場合、シグナル通知および DPC キューが発生します。
 
-リコール[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)または[ **KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)、以前指定*タイマー*と*Dpc*ポインター、以前に指定した期間が経過する前に次のような影響があります。
+以前に指定した*タイマー*と*Dpc*ポインターを使用した[**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)または[**kesettimerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)の呼び出しは、前に指定した期間の有効期限が切れる前に、次のような影響を与えます。
 
--   カーネル オブジェクトをシグナル状態に設定するか、またはキューなし、タイマー キューからタイマー オブジェクトを削除します、 *CustomTimerDpc*ルーチン。
+-   カーネルは、オブジェクトをシグナル状態に設定したり、 *Customtimerdpc*ルーチンをキューに置いたりせずに、タイマーキューからタイマーオブジェクトを削除します。
 
--   カーネルが新しいを使用して、タイマー キュー内のタイマー オブジェクトを reinserts *DueTime*値。
+-   新しい*DueTime*値を使用して、タイマーオブジェクトがタイマーキューに再挿入されます。
 
-さまざまな目的で同じタイマー オブジェクトを使用すると、競合状態または重大なドライバー エラーが発生できます。 たとえば、ドライバーは、オブジェクトの両方への呼び出しを設定する 1 つのタイマーを指定します、 *CustomTimerDpc*ルーチンとドライバー専用のスレッド内の待機時間を設定します。 ドライバー専用のスレッドを呼び出すたびに**KeSetTimer**、 **KeSetTimerEx**、または**KeCancelTimer**共通のタイマー オブジェクトのスレッドが、への呼び出しをキャンセルは*CustomTimerDpc*のタイマー オブジェクトが既にキューに登録する場合は、ルーチン、 *CustomTimerDpc*呼び出します。
+異なる目的で同じタイマーオブジェクトを使用すると、競合状態や重大なドライバーエラーが発生する可能性があります。 たとえば、 *Customtimerdpc*ルーチンの呼び出しを設定し、ドライバー専用のスレッドで待機を設定するために、1つのタイマーオブジェクトをドライバーが指定しているとします。 ドライバー専用のスレッドが、共通タイマーオブジェクトの**KeSetTimer**、 **kesettimerex**、または**KeCancelTimer**を呼び出すたびに、タイマーオブジェクトが既にキューに格納されていた場合、そのスレッドは*customtimerdpc*ルーチンへの呼び出しをキャンセルします。*Customtimerdpc*呼び出し。
 
-ドライバーがある場合*CustomTimerDpc*ルーチンもタイマーで発生する待機オブジェクトおよび nonarbitrary スレッドのコンテキストでその必要があります。
+ドライバーが*Customtimerdpc*ルーチンを持っていて、また、任意のスレッドコンテキストでタイマーオブジェクトを待機している場合は、次のことを行う必要があります。
 
--   決して nonarbitrary スレッド コンテキスト、またはその逆に、状況依存のスレッド タイマーがオブジェクトを使用します。
+-   スレッドコンテキストに依存しないタイマーオブジェクトは、任意のスレッドコンテキストでは使用しないでください。または、その逆も使用しないでください。
 
--   ごとに別々 のタイマー オブジェクトを割り当てる*CustomTimerDpc*ルーチン。 ドライバーのスレッドまたは nonarbitrary スレッド コンテキストで呼び出されるドライバー ルーチンの各セットは、独自のタイマーを「待機可能な」オブジェクトのセットが必要です。
+-   *Customtimerdpc*ルーチンごとに個別のタイマーオブジェクトを割り当てます。 任意のスレッドコンテキストで呼び出されるドライバースレッドまたはドライバールーチンの各セットには、独自の "待機可能な" タイマーオブジェクトのセットが含まれている必要があります。
 
-使用する場合、 *CustomTimerDpc*ルーチン、ドライバーの間隔が経過する呼び出しでは慎重に選択**KeSetTimer**または**KeSetTimerEx**します。 さらに、すべての呼び出しの影響を考慮**KeCancelTimer** SMP プラットフォームでは特に、この呼び出しは、任意のドライバー ルーチンから同じタイマー オブジェクトを使用します。
+*Customtimerdpc*ルーチンを使用する場合は、ドライバーが**KeSetTimer**または**kesettimerex**への呼び出しで渡す間隔を慎重に選択してください。 また、特に SMP プラットフォームでは、この呼び出しを行う任意のドライバールーチンと同じタイマーオブジェクトを使用して**KeCancelTimer**を呼び出すことによって発生する可能性のあるすべての影響を考慮してください。
 
-に関する次の点に注意してください保持*CustomTimerDpc*ルーチン。
+*Customtimerdpc*ルーチンに関しては、次の点に注意してください。
 
-DPC を特定の DPC ルーチンを表すオブジェクトの 1 つだけインスタンス化は、特定の時点での実行のキューに登録できます。
+特定の時点で実行するためにキューに入れることができるのは、特定の DPC ルーチンを表す DPC オブジェクトの1つだけです。
 
-2 番目のドライバーのルーチンを呼び出す場合**KeSetTimer**または**KeSetTimerEx**を実行する同じ*CustomTimerDpc*ルーチンの最初の呼び出し元によって指定された期間が経過する前に、*CustomTimerDpc*ルーチンは、2 つ目の呼び出し元によって指定された期間の期限が切れた後にのみを実行します。 このような場合、 *CustomTimerDpc*は最初のルーチンを呼び出す対象の作業は不要**KeSetTimer**または**KeSetTimerEx**します。
+2番目のドライバールーチンが**KeSetTimer**または**Kesettimerex**を呼び出して、最初の呼び出し元によって指定された間隔の有効期限が切れる前に同じ*customtimerdpc*ルーチンを実行すると、 *customtimerdpc*ルーチンは間隔の後にのみ実行されます。2番目の呼び出し元で指定された有効期限が切れます。 このような状況では、 *Customtimerdpc*は、最初のルーチンが**KeSetTimer**または**kesettimerex**を呼び出した処理を実行しません。
 
-ドライバーを持つ*CustomTimerDpc*ルーチンと定期的なタイマーを使用します。
+*Customtimerdpc*ルーチンがあり、定期的なタイマーを使用するドライバーの場合:
 
-ドライバーは、DPC ルーチンからの定期的なタイマーを解放できません。 ドライバーのみ非連続タイマー DPC ルーチンから割り当てを解除できます。
+ドライバーは、DPC ルーチンから定期的なタイマーの割り当てを解除することはできません。 ドライバーでは、DPC ルーチンからの非周期タイマーのみの割り当てを解除できます。
 
-次を検討してください。 両方があるドライバーのデザイン ガイドライン*CustomDpc*と*CustomTimerDpc*ルーチン。
+*Customdpc*と*customtimerdpc*ルーチンの両方を持つドライバーには、次の設計ガイドラインを考慮してください。
 
-競合状態を防ぐためには、渡すことはありません、同じ*Dpc*へのポインター **KeSetTimer**または**KeSetTimerEx**と[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc).
+競合状態を防ぐため、 **KeSetTimer**または**Kesettimerex**と[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)に同じ*Dpc*ポインターを渡さないでください。
 
-つまり、たとえば、ドライバーの*StartIo*ルーチンの呼び出し**KeSetTimer**または**KeSetTimerEx**キューに、 *CustomTimerDpc*ルーチンドライバーの ISR 呼び出して**KeInsertQueueDpc**同時に同じで別のプロセッサから*Dpc*ポインター。 プロセッサの IRQL を下回るディスパッチと DPC ルーチンが実行されること\_レベルまたはタイマー間隔経過すると、先に達した。 どちらがものでは最初に、いくつかの重要な作業を*StartIo*または ISR が DPC ルーチンによって削除されます。 だけです。
+つまり、ドライバーの*StartIo*ルーチンが**KeSetTimer**または**Kesettimerex**を呼び出して*customtimerdpc*ルーチンをキューに登録し、ドライバーの ISR が別のプロセッサから同時に**KeInsertQueueDpc**を呼び出しているとします。同じ*Dpc*ポインター。 プロセッサ上の IRQL がディスパッチ\_レベルを下回るか、タイマー間隔が経過すると、その DPC ルーチンが実行されます。 どちらの方法を使用しても、 *StartIo*または ISR の重要な作業の一部が DPC ルーチンによって削除されるだけです。
 
-独立したよりもパフォーマンス特性が低下する非常にさまざまな機能を備えた 2 つの標準のドライバーのルーチンで使用される DPC がさらに、しなければ*CustomTimerDpc*と*CustomDpc*ルーチン。 DPC が原因となった条件に応じて、実行するために、どの操作を決定する必要があります、 *StartIo*ルーチンまたは ISR、キューに登録します。 DPC でこれらの条件のテストの追加 CPU サイクルを使用します。
+さらに、機能が非常に異なる2つの標準ドライバールーチンで使用される DPC は、個別の*Customtimerdpc*と*customdpc*ルーチンよりもパフォーマンス特性が低下する可能性があります。 DPC は、 *StartIo*ルーチンまたは ISR によってキューに格納される原因に応じて、実行する操作を決定する必要があります。 DPC でこれらの条件をテストすると、追加の CPU サイクルが使用されます。
 
  
 

@@ -4,12 +4,12 @@ description: Storport I/O モデルでのスキャッター/ギャザー リス�
 ms.assetid: db05ac58-3317-44b2-9550-e4520537955f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cfcad79729c6b80383fd70c8983e496e3781c8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bfb2869588ac800e24bf7262c194d6169dc6f2e8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386299"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845539"
 ---
 # <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>Storport I/O モデルでのスキャッター/ギャザー リストへのアクセス
 
@@ -17,15 +17,15 @@ ms.locfileid: "67386299"
 ## <span id="ddk_access_to_scatter_gather_lists_in_the_storport_i_o_model_kg"></span><span id="DDK_ACCESS_TO_SCATTER_GATHER_LISTS_IN_THE_STORPORT_I_O_MODEL_KG"></span>
 
 
-SCSI ポート ドライバーが、メモリ範囲を定義するスキャッター/ギャザー リスト構造体のセットと、SRB の物理アドレスに完全にアクセスします。 ただし、SCSI ポート ドライバーと連動するミニポート ドライバーは必要ありません。 SCSI ポート I/O モデルで、強制的に、ミニポート ドライバーを手動で検出し、繰り返しの呼び出しを通じて、独自のスキャッター/ギャザー リストを構築、 [ **ScsiPortGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetphysicaladdress)ルーチン。
+SCSI ポートドライバーは、SRB のメモリ範囲と物理アドレスを定義する一連のスキャッター/ギャザーリスト構造に完全にアクセスできます。 ただし、SCSI ポートドライバーで動作するミニポートドライバーは使用できません。 SCSI ポート i/o モデルでは、 [**ScsiPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportgetphysicaladdress)ルーチンを繰り返し呼び出すことによって、ミニポートドライバーが手動で検出し、独自のスキャッター/ギャザーリストを構築するように強制します。
 
-Storport の I/O モデルでは、ミニポート ドライバーがドライバー サポート ルーチンのポートをそのプライベート スキャッター/ギャザーの一覧を作成するが呼び出しの数を減らすと、システムのスキャッター/ギャザー リスト構造に直接アクセスできる、ミニポート ドライバーを提供します。
+Storport i/o モデルは、システムのスキャッター/ギャザーリスト構造に直接アクセスできるようにミニポートドライバーを提供します。これにより、ミニポートドライバーは、プライベートなスキャッター/ギャザーリストを構築するために、ポートドライバーサポートルーチンに対して必要な呼び出しの回数を減らすことができます。
 
-スキャッター/ギャザーを一覧表示する[ **StorPortGetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetscattergatherlist) SRB が完了するまでのみが有効な値を取得します。
+[**StorPortGetScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetscattergatherlist)が返すスキャッター/ギャザーリストは、SRB が完了するまで有効です。
 
-ミニポート ドライバーがスキャッター/ギャザーを一覧表示するには、メモリを解放する必要はありません**StorPortGetScatterGatherList**を返します。
+ミニポートドライバーは、 **StorPortGetScatterGatherList**から返されるスキャッター/ギャザーリストのメモリを解放する必要はありません。
 
-ミニポート ドライバーが Storport ミニポート ドライバーのミニポート ドライバー固有の書式をからに提供スキャッター/ギャザー リストの必要な変換を実行する必要があります[ **HwStorBuildIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)ルーチン。
+ミニポートドライバーは、Storport によって提供されるスキャッター/ギャザーリストをミニポートドライバーの[**HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio)ルーチンでミニポートドライバー固有の形式に変換する必要があります。
 
  
 

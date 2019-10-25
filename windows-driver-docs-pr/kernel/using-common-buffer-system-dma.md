@@ -1,68 +1,68 @@
 ---
-title: 共通バッファー システム DMA の使用
-description: 共通バッファー システム DMA の使用
+title: 共通バッファーシステム DMA の使用
+description: 共通バッファーシステム DMA の使用
 ms.assetid: ee060aa4-2db4-4bd2-b107-b71acced97fd
 keywords:
-- システム DMA WDK カーネルでは、一般的なバッファー
-- 一般的なバッファー DMA WDK カーネル
-- DMA は、WDK カーネルでは、一般的なバッファーを転送します。
+- システム DMA WDK カーネル、共通バッファー
+- 共通バッファー DMA WDK カーネル
+- DMA 転送 WDK カーネル、共通バッファー
 - AllocateCommonBuffer
 - 自動初期化モード WDK DMA
-- 継続的な DMA WDK カーネル
+- 連続 DMA WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 085c98ffbb27598f356429cb252016fe3d09e53e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 936cd28acd52d74121b4afcaacaf8b00afb9e951
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380397"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838371"
 ---
-# <a name="using-common-buffer-system-dma"></a>共通バッファー システム DMA の使用
+# <a name="using-common-buffer-system-dma"></a>共通バッファーシステム DMA の使用
 
 
 
 
 
-システム DMA コント ローラーの自動初期化モードを使用するドライバーは、転送先またはどの DMA を実行するバッファーのメモリを割り当てる必要があります。ドライバー呼び出し[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)から、通常、このバッファーを取得する、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) 処理ルーチン[**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 次の図は、ドライバーのバッファーを割り当て、システムの物理メモリにその仮想アドレスの範囲をマップします。
+システム DMA コントローラーの自動初期化モードを使用するドライバーは、DMA 転送を実行できるバッファーにメモリを割り当てる必要があります。このバッファーを取得するために、ドライバーは[**Allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer)を呼び出します。通常は、IRP\_を処理し、 [ **\_デバイス要求を開始\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を処理する[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンからです。 次の図は、ドライバーがバッファーを割り当て、その仮想アドレス範囲をシステムの物理メモリにマップする方法を示しています。
 
-![ドライバーはシステム dma の一般的なバッファーを割り当て方法を示す図](images/3hlsysbf.png)
+![ドライバーがシステム dma に共通のバッファーを割り当てる方法を示す図](images/3hlsysbf.png)
 
-前の図に示すように、ドライバーはシステム DMA バッファーを割り当てるには、次の手順を受け取ります。
+前の図に示すように、ドライバーは次の手順を実行してシステム DMA 用のバッファーを割り当てます。
 
-1.  ドライバー呼び出し[ **AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)、アダプター オブジェクトへのポインターを渡すことによって返された[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)、そのバッファーに対して要求されたバイトの長さ。 経済的なメモリを使用する入力*長さ*値が小さくページをバッファーには、いずれかが必要がありますのする\_サイズ ページの整数倍である必要がありますまたは\_サイズ。
+1.  ドライバーは[**Allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer)を呼び出し、 [**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)によって返されたアダプターオブジェクトへのポインターと、バッファーに要求されたバイト単位の長さを渡します。 メモリを経済的に使用するには、バッファーの入力*長*値がページ\_サイズ以下であるか、またはページ\_サイズの整数倍数である必要があります。
 
-2.  場合**AllocateCommonBuffer**を返します、 **NULL**ポインター、ドライバーする必要がありますは既に要求されている任意のシステム リソースを解放し、状態を返す\_不十分\_内のリソース応答、 **IRP\_MN\_開始\_デバイス**要求。
+2.  **Allocatecommonbuffer**が**NULL**ポインターを返す場合、ドライバーは、既に要求されているシステムリソースを解放し、状態を返します。 IRP\_の\_の開始に応じて、リソース\_不足し\_リソースが不足し **\_デバイス**要求。
 
-    それ以外の場合、 **AllocateCommonBuffer**要求されたシステムの仮想アドレス空間内のメモリを割り当てて、そのバッファーへのポインターの 2 つの異なる型を返します。
+    それ以外の場合、 **Allocatecommonbuffer**は、システム仮想アドレス空間に要求された量のメモリを割り当て、そのバッファーへの2つの異なる種類のポインターを返します。
 
-    -   *LogicalAddress*ドライバーは、記憶域を提供する必要がありますが、その後が無視する必要がありますのバッファー (前の図の BufferLogicalAddress) の
+    -   ドライバーがストレージを提供する必要がありますが、それ以降は無視する必要があるバッファーの*logicaladdress* (前の図の bufferlogicaladdress)
 
-    -   バッファー (前の図の BufferVirtualAddress)、そのバッファーの DMA 操作を記述する、MDL を作成できるようにに、ドライバーも格納する必要がありますの仮想アドレス
+    -   バッファーの仮想アドレス (前の図では BufferVirtualAddress)。ドライバーも格納する必要があります。これにより、DMA 操作用のバッファーを記述する MDL を作成できるようになります。
 
-    ドライバーでは、デバイスの拡張機能またはその他のドライバーに割り当てられたメモリでこれらのポインターを格納する必要があります。
+    ドライバーは、これらのポインターをデバイス拡張機能またはその他のドライバーによって割り当てられた常駐メモリに格納する必要があります。
 
-3.  ドライバー呼び出し[ **IoAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl) MDL をバッファーを割り当てられません。 ドライバー パス、 *VirtualAddress*によって返されたバッファーの**AllocateCommonBuffer**と*長さ*MDL を割り当てるには、そのバッファーの。
+3.  ドライバーは[**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)を呼び出して、バッファーに MDL を割り当てます。 ドライバーは、 **Allocatecommonbuffer**によって返されたバッファーの*virtualaddress*とそのバッファーの*長さ*を渡して、MDL を割り当てます。
 
-4.  ドライバー呼び出し[ **MmBuildMdlForNonPagedPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)によって返されたポインターと**IoAllocateMdl**システムに常駐しているバッファーの仮想アドレスの範囲をマップするには物理メモリです。
+4.  ドライバーは、 **IoAllocateMdl**によって返されたポインターを使用して[**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)を呼び出し、常駐バッファーの仮想アドレス範囲をシステムの物理メモリにマップします。
 
-一般的なバッファーを割り当てると、その仮想アドレスの範囲のマッピング後、は、下位のデバイスのドライバーは、DMA 転送を要求する IRP の処理を開始できます。 これを行うには、ドライバーは、サポート ルーチンの次の一般的なシーケンスを呼び出します。
+共通バッファーを割り当て、その仮想アドレス範囲をマップした後、下位デバイスのドライバーは、DMA 転送を要求する IRP の処理を開始できます。 これを行うために、ドライバーは次の一般的な一連のサポートルーチンを呼び出します。
 
-1.  ドライバー開発者の裁量により、 [ **RtlMoveMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlmovememory)データをコピーするロックダウン ユーザー バッファーからドライバーに割り当てられた一般的なバッファーの転送をデバイスに
+1.  ドライバーの作成者の裁量で、 [**RtlMoveMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlmovememory)は、ロックダウンされたユーザーバッファーから、デバイスへの転送用にドライバーで割り当てられた共通バッファーにデータをコピーします。
 
-2.  **AllocateAdapterChannel**ドライバーが DMA のデバイスをプログラミングする準備が整うし、システム DMA コント ローラーが必要
+2.  ドライバーが DMA 用にデバイスをプログラミングする準備ができていて、システム DMA コントローラーが必要な場合の**Allocateadapterchannel**
 
-3.  [**MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)、MDL バッファーを記述、ドライバーによって割り当てられた共通、転送操作のシステムの DMA コント ローラーを設定するを使用
+3.  転送操作用にシステム DMA コントローラーを設定するために、ドライバーによって割り当てられた共通バッファーを記述する MDL を使用した[**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)
 
-    ドライバーが呼び出す**MapTransfer**その一般的なバッファーを使用するシステムの DMA コント ローラーを設定する 1 回だけです。 ドライバーを呼び出すことができます、転送中に[ **ReadDmaCounter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pread_dma_counter)バイト数がまま転送して、必要に応じて、呼び出しを確認する**RtlMoveMemory**より多くのデータをコピーするにはユーザー バッファーとの間。
+    ドライバーが**Maptransfer**を1回呼び出すだけで、その共通のバッファーを使用するようにシステム DMA コントローラーが設定されることに注意してください。 転送中、ドライバーは[**ReadDmaCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pread_dma_counter)を呼び出して、転送されるバイト数を確認できます。また、必要に応じて、 **RtlMoveMemory**を呼び出して、ユーザーバッファーとの間でデータをコピーします。
 
-4.  [**FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)ドライバーとの下位のデバイスからその DMA 転送が完了すると
+4.  ドライバーが下位デバイスとの間で DMA 転送を完了したときの[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)
 
-5.  [**FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)ドライバーは IRP をデバイス I/O エラーにより失敗する必要がありますか、要求されたすべてのデータが転送されているようになります
+5.  要求されたすべてのデータが転送されるか、またはデバイス i/o エラーが原因でドライバーが IRP を失敗させる必要がある場合、すぐに[**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel) 。
 
-によって返されるアダプター オブジェクト ポインター **IoGetDmaAdapter**にそれぞれの必須のパラメーター以外ルーチンをサポートして**RtlMoveMemory**します。
+**IoGetDmaAdapter**によって返されるアダプターオブジェクトのポインターは、 **RtlMoveMemory**以外の各サポートルーチンに必須のパラメーターです。
 
-個々 のドライバーでは、そのデバイスのサービスを提供する各ドライバーの実装方法に応じて、さまざまな時点でこのサポート ルーチンのシーケンスを呼び出します。 たとえば、1 つのドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンへの呼び出しを行うことがあります**AllocateAdapterChannel**、別のドライバーは Irp からを削除するルーチンから呼び出しを行うことがありますキュー、ドライバーが作成したインター ロックし、その下位の DMA デバイスでは、データを転送する準備が示されている場合、さらに別のドライバーはこの呼び出しを行うことがあります。
+個々のドライバーは、各ドライバーがどのように実装されているかに応じて、さまざまな時点でこの一連のサポートルーチンを呼び出します。 たとえば、1つのドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンが**Allocateadapterchannel**を呼び出す可能性があります。別のドライバーは、ドライバーによって作成されたインタロックされたキューから irp を削除するルーチンからこの呼び出しを行う可能性がありますが、別のドライバーがこれを行う可能性があります。データ転送の準備ができていることを下位 DMA デバイスが示している場合は、を呼び出します。
 
  
 

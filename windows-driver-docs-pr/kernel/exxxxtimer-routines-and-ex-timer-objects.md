@@ -1,17 +1,17 @@
 ---
-title: ExXxxTimer ルーチンと EX_TIMER オブジェクト
-description: Windows 8.1 以降、ExXxxTimer ルーチンの包括的なセットはタイマーの管理に使用できます。
+title: Exxxx TIMER ルーチンと EX_TIMER オブジェクト
+description: Windows 8.1 以降では、一連の Exxxx タイマールーチンを使用して、タイマーを管理できます。
 ms.assetid: 5F2622F5-4D1A-48F4-9FF5-27DEC6109266
 keywords:
-- タイマーの WDK カーネル
-- タイマー オブジェクトの WDK カーネル
-- タイマー オブジェクトについて、タイマー オブジェクトの WDK カーネル
-- カーネルのディスパッチャー オブジェクト WDK、タイマー オブジェクト
-- ディスパッチャー オブジェクト WDK カーネル、タイマー オブジェクト
-- 高分解能タイマー WDK カーネル
-- no ウェイク アップ タイマー WDK カーネル
+- タイマー WDK カーネル
+- タイマーオブジェクト WDK カーネル
+- タイマーオブジェクト WDK カーネル、タイマーオブジェクトについて
+- カーネルディスパッチャーオブジェクト WDK、タイマーオブジェクト
+- ディスパッチャーオブジェクト WDK カーネル、タイマーオブジェクト
+- 高解像度タイマー WDK カーネル
+- 非ウェイクアップタイマー WDK カーネル
 - EX_TIMER
-- ExXxxTimer ルーチン
+- Exxxx タイマールーチン
 - ExAllocateTimer
 - ExDeleteTimer
 - ExSetTimer
@@ -19,37 +19,37 @@ keywords:
 - ExTimerCallback
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2d669547bb7559dad9d1cf69c5c8ecfcc63b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 040ead56fe15c34137ca19cefb627f94d1cf5b97
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386617"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838701"
 ---
-# <a name="exxxxtimer-routines-and-extimer-objects"></a>ExXxxTimer ルーチンと EX\_タイマー オブジェクト
+# <a name="exxxxtimer-routines-and-ex_timer-objects"></a>Exxxx Timer ルーチンおよび EX\_TIMER オブジェクト
 
 
-包括的な設定を Windows 8.1 以降、 **Ex*Xxx*タイマー**ルーチンがタイマーの管理に使用します。 これらのルーチンを使用して、タイマー オブジェクトに基づく、 [ **EX\_タイマー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 **Ex*Xxx*タイマー**ルーチンは、置換、 **Ke*Xxx*タイマー**ルーチンで、Windows 2000 以降を利用します。 ドライバーは Windows 8.1 でのみ実行するものし、以降のバージョンの Windows を使用できます、 **Ex*Xxx*タイマー**ルーチンの代わりに、 **Ke*Xxx*タイマー**ルーチン。 Windows 8.1 と Windows の以降のバージョンがサポートするために引き続き、 **Ke*Xxx*タイマー**ルーチン。
+Windows 8.1 以降では、一連の**Ex*Xxx*Timer**ルーチンを使用して、タイマーを管理できます。 これらのルーチンは、 [**EX\_timer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造に基づくタイマーオブジェクトを使用します。 **Ex*xxx*タイマー**ルーチンは、Windows 2000 以降で使用できる**Ke*xxx*タイマー**ルーチンの代替です。 Windows 8.1 以降のバージョンの Windows でのみ実行するように意図されたドライバーは、 **Ke*xxx*タイマー**ルーチンの代わりに、 **Ex*xxx*タイマー**ルーチンを使用できます。 Windows の Windows 8.1 以降のバージョンでは、 **Ke*Xxx*タイマー**ルーチンが引き続きサポートされます。
 
-**Ex*Xxx*タイマー**ルーチンによって提供されるすべての重要な機能がある、 **Ke*Xxx*タイマー**ルーチン。 さらに、 **Ex*Xxx*タイマー**ルーチン タイマーの 2 つの型をサポートする*高分解能タイマー*と*いいえウェイク タイマー*ではないです。サポートされている、 **Ke*Xxx*タイマー**ルーチン。 高解像度のタイマーは、タイマーのタイマーの精度は、システム クロックの既定の解像度によって制限されます。 より高い精度での有効期限を指定できます。 No ウェイク アップ タイマーは、低電力状態からのプロセッサを不必要にウェイク アップを回避するタイマーです。 詳しくは、次のトピックをご覧ください。
+**Ex*xxx*タイマー**ルーチンには、 **Ke*xxx*タイマー**ルーチンによって提供されるすべての重要な機能があります。 さらに、 **Ex*xxx*タイマー**ルーチンでは、Ke タイマーの*種類として、2*種類のタイマーを*サポートして*います。これは、 **Ke*xxx*タイマー**ルーチンではサポートされていません。 高解像度のタイマーは、システムクロックの既定の解決によって精度が制限されているタイマーよりも高い精度で、有効期限を指定できるタイマーです。 No wake タイマーは、低電力状態からの不要なウェイクアッププロセッサを回避するタイマーです。 詳細については、次のトピックを参照してください。
 
-[高分解能タイマー](high-resolution-timers.md)
-[いいえウェイク アップ タイマー](no-wake-timers.md) Windows 8.1、次で始まる**Ex*Xxx*タイマー**使用できるルーチンは。
+[高解像度タイマー](high-resolution-timers.md)
+Windows 8.1 以降で[は、次](no-wake-timers.md)の例のような ***Xxx*タイマー**ルーチンを使用できます。
 
-[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)
-[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)
-[**ExCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer) 
- [ **ExDeleteTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer) 、 **ExSetTimer**ルーチンは、の代わりに使用できる、 [ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)または[ **KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)ルーチン。 **ExCancelTimer**ルーチンは、の代わりに使用できる、 [ **KeCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kecanceltimer)ルーチン。
+[**Exallocatetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer)
+[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer)
+[**Excanceltimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer)
+[**Exdeletetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer) 。 [**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)または[**kesettimerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)ルーチンの代わりに**ExSetTimer**ルーチンを使用できます。 [**KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kecanceltimer)ルーチンの代わりに、 **excanceltimer**ルーチンを使用できます。
 
-**ExAllocateTimer**と**ExDeleteTimer**ルーチンに直接あるありません**Ke*Xxx*タイマー**の対応します。 これら 2 つのルーチンを割り当て、タイマー オブジェクトを解放します。 このタイマー オブジェクトは、システムによって割り当てられた[ **EX\_タイマー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)のメンバーは、ドライバーを非透過構造体。 タイマー オブジェクトを使用する一方、 **Ke*Xxx*タイマー**ルーチンは、ドライバーによって割り当てられた[ **KTIMER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 ドライバーの呼び出し、 [ **KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)または[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)ルーチンをこのオブジェクトを初期化します。 **ExAllocateTimer**を割り当てたタイマー オブジェクトを初期化します。 詳細については**ExDeleteTimer**を参照してください[System-Allocated タイマー オブジェクトを削除する](deleting-a-system-allocated-timer-object.md)します。
+**Exallocatetimer**ルーチンと**exdeletetimer**ルーチンには、対応する direct **Ke*Xxx*タイマー**がありません。 これらの2つのルーチンは、タイマーオブジェクトを割り当て、解放します。 このタイマーオブジェクトは、システムによって割り当てられる[**EX\_timer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体で、メンバーがドライバーに対して非透過的であることを示します。 これに対して、 **Ke*Xxx*タイマー**ルーチンによって使用されるタイマーオブジェクトは、ドライバーによって割り当てられる[**ktimer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体です。 ドライバーは、 [**Keinitializetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer)または[**Keinitializetimerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex)ルーチンを呼び出して、このオブジェクトを初期化します。 **Exallocatetimer**は、割り当てるタイマーオブジェクトを初期化します。 **Exdeletetimer**の詳細については、「[システム割り当てタイマーオブジェクトの削除](deleting-a-system-allocated-timer-object.md)」を参照してください。
 
-**EX\_タイマー**と**KTIMER**の構造は待機可能オブジェクト。 ドライバーを呼び出してから**ExSetTimer**、 **KeSetTimer**、または**KeSetTimerEx**タイマーを設定するドライバーを呼び出せるルーチンなど[ **Kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)または[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)タイマーが切れるを待機します。 タイマー オブジェクトは、タイマーの期限が切れたときに通知されます。 オプションとして、ドライバーがドライバー実装へのポインターを提供できる[ *ExTimerCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_callback)または[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)コールバック ルーチンオペレーティング システムが、タイマーの期限が切れた後を呼び出します。
+**例\_タイマー**と**ktimer**構造体は、待機可能なオブジェクトです。 ドライバーは、 **ExSetTimer**、 **KeSetTimer**、または**kesettimerex**を呼び出してタイマーを設定した後、 [**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)や[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)などのルーチンを呼び出して、タイマーの有効期限が切れるのを待ちます。 タイマーオブジェクトは、タイマーの有効期限が切れたときに通知されます。 オプションとして、ドライバーによって実装される[*extimercallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ext_callback)または[*customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)コールバックルーチンへのポインターを指定できます。このルーチンは、タイマーの有効期限が切れた後にオペレーティングシステムが呼び出します。
 
-**Ke*Xxx*タイマー**ルーチンで提供されていない 2 つの機能がある、 **Ex*Xxx*タイマー**ルーチンが、これらの機能ほとんどのドライバーでは必要ありません。
+**Ke*xxx*タイマー**ルーチンには、 **Ex*xxx*タイマー**ルーチンでは提供されない2つの機能がありますが、ほとんどのドライバーではこれらの機能は必要ありません。
 
-まず、 **KTIMER**によってタイマー オブジェクトとして使用される構造体、 **Ke*Xxx*タイマー**ルーチンは、ドライバーによって割り当てられました。 ドライバーは、オブジェクトがリソースを制限し、メモリ割り当てが失敗する状況であっても使用できることを確認するには、このオブジェクトを事前に割り当てることができます。 呼び出しとは異なり、 **ExAllocateTimer**タイマーを割り当てるリソースが限られた環境でオブジェクトが失敗します。 ただし、いくつかのドライバーは、どのメモリ割り当ての失敗での環境で動作するように設計する必要があります、ほとんどのドライバーの利便性のメリット、 **ExAllocateTimer**ルーチンを割り当てるし、タイマー オブジェクトを初期化します。
+まず、 **Ke*Xxx*タイマー**ルーチンによってタイマーオブジェクトとして使用される**ktimer**構造体は、ドライバーによって割り当てられます。 ドライバーは、リソースが制限され、メモリ割り当てが失敗する状況でも、オブジェクトを確実に使用できるように、このオブジェクトを事前に割り当てることができます。 これに対して、タイマーオブジェクトを割り当てるために**Exallocatetimer**を呼び出すと、リソースの制約付き環境でエラーが発生する可能性があります。 ただし、ほとんどのドライバーは、メモリ割り当てが失敗する環境で動作するように設計する必要があります。ほとんどのドライバーは、タイマーオブジェクトを割り当てて初期化する**Exallocatetimer**ルーチンを使用すると便利です。
 
-第二に、ありません**Ex*Xxx*タイマー**と同等の[ **KeReadStateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereadstatetimer)ルーチンで、タイマー オブジェクトがであるかどうかを示しますシグナルの状態。 ただし、このルーチンはほとんど使用されません。 必要に応じて、ドライバーを使用する場合は、 **Ex*Xxx*タイマー**ルーチンがによって設定されるブール値を読み取ることで、タイマー オブジェクトがシグナル状態でがかどうかを確認することができます、 *ExTimerCallback*にドライバーを提供するコールバック ルーチン、 **ExAllocateTimer**ルーチン。
+2つ目は、タイマーオブジェクトがシグナル状態であるかどうかを示す、 [**KeReadStateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereadstatetimer)ルーチンに相当する**例*Xxx*タイマー**がないことです。 ただし、このルーチンはほとんど使用されません。 必要に応じて、 **Ex*Xxx*タイマー**ルーチンを使用するドライバーは、ドライバーによって提供される*extimercallback*コールバックルーチンによって設定されたブール値を読み取って、**タイマーオブジェクトがシグナル状態であるかどうかを確認できます。ExAllocateTimer**ルーチン。
 
  
 

@@ -1,34 +1,34 @@
 ---
-title: ネットワーク インターフェイスの登録解除
-description: ネットワーク インターフェイスの登録解除
+title: ネットワークインターフェイスの登録解除
+description: ネットワークインターフェイスの登録解除
 ms.assetid: 8d290a6a-008d-434b-bcbf-c4efade3d017
 keywords:
-- NDIS ネットワーク インターフェイス、WDK の登録を解除
-- ネットワーク インターフェイス、WDK の登録を解除
-- ネットワーク インターフェイスを登録解除
-- ネットワーク インターフェイスを削除します。
-- ネットワーク インターフェイスを登録解除
+- NDIS ネットワークインターフェイス WDK、登録解除
+- ネットワークインターフェイス WDK、登録解除
+- ネットワークインターフェイスの登録解除
+- ネットワークインターフェイスの削除
+- ネットワークインターフェイスの登録解除
 - NdisIfDeregisterInterface
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 653df842e6971229e6bda3964af3d8efe09d24cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed4aad5b2de4aea32d523984a4f592f1e4466bcc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838160"
 ---
-# <a name="deregistering-a-network-interface"></a>ネットワーク インターフェイスの登録解除
+# <a name="deregistering-a-network-interface"></a>ネットワークインターフェイスの登録解除
 
 
 
 
 
-NDIS インターフェイスのプロバイダーを呼び出し、 [ **NdisIfDeregisterInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifderegisterinterface)をコンピューターの既知のインターフェイスの一覧から指定されたインターフェイスをたとえば、削除する必要があるかを示す関数インターフェイスがアンインストールされました。 インターフェイスを登録解除の他の理由は、アプリケーション固有です。 適切なリソースの管理を昇格するには、プロバイダーのインターフェイスはもはやインターフェイスを登録解除は常にします。
+NDIS インターフェイスプロバイダーは、 [**NdisIfDeregisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifderegisterinterface)関数を呼び出して、指定されたインターフェイスをコンピューター上の既知のインターフェイスの一覧から削除する必要があることを示します。たとえば、インターフェイスがアンインストールされているためです。 インターフェイスの登録を解除するその他の理由は、アプリケーションによって異なります。 適切なリソース管理を促進するために、インターフェイスプロバイダーは、不要になったインターフェイスを常に登録解除する必要があります。
 
-**NdisIfDeregisterInterface**指定されたインターフェイスに関連付けられているインターフェイス インデックスを解放します。 NDIS は、将来的に登録されているインターフェイスのインデックスを再割り当てできます。 ただし、 [ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)インデックスに関連付けられた対応する NET\_LUID 値は再利用できません--必要に応じて、インターフェイスのプロバイダーは、NET をリリースできます\_LUID のインデックスを呼び出して、 [ **NdisIfFreeNetLuidIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiffreenetluidindex)関数。
+**NdisIfDeregisterInterface**は、指定されたインターフェイスに関連付けられているインターフェイスインデックスを解放します。 NDIS は、後で登録されているインターフェイスにインデックスを再割り当てできます。 ただし、対応する NET\_LUID 値に関連付けられている[**net\_luid**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)インデックスは解放されません。必要に応じて、インターフェイスプロバイダーは[**NdisIfFreeNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiffreenetluidindex)を呼び出して、net\_LUID インデックスを解放できます。プロシージャ.
 
-**注**  がアンインストールされ、デタッチされたときに、モジュールをフィルター処理するときに、NDIS プロキシ プロバイダー登録ミニポート アダプター用のインターフェイスを解除します。
+解除インターフェイスがアンインストールされ、モジュールがデタッチされたときにフィルターを適用する場合は、NDIS プロキシプロバイダーのインターフェイスを使用します **。  **
 
  
 

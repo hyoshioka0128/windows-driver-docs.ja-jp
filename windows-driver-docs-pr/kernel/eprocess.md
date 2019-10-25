@@ -1,20 +1,20 @@
 ---
-title: Windows カーネルの不透明な構造体
-description: Windows カーネルの不透明な構造体
+title: Windows カーネル不透明構造体
+description: Windows カーネル不透明構造体
 ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0babcca7994c19d37d40e0e30a06dd3bf6bb92c2
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: ba5d30b1a937505bd2d8dc8e27e15c56690e3c9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393777"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838709"
 ---
-# <a name="windows-kernel-opaque-structures"></a>Windows カーネルの不透明な構造体
+# <a name="windows-kernel-opaque-structures"></a>Windows カーネル不透明構造体
 
 
-次の表には、Windows カーネルの非透過構造体が含まれています。
+次の表に、Windows カーネル不透明な構造を示します。
 
 <table>
 <colgroup>
@@ -29,207 +29,207 @@ ms.locfileid: "67393777"
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>」プロセス</strong></td>
-<td><p><strong>」プロセス</strong>構造体は、プロセスのプロセス オブジェクトとして機能するための非透過構造体。</p>
-<p>一部のルーチンなど<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetprocesscreatetimequadpart" data-raw-source="[&lt;strong&gt;PsGetProcessCreateTimeQuadPart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetprocesscreatetimequadpart)"> <strong>PsGetProcessCreateTimeQuadPart</strong></a>を使用して、 <strong>」プロセス</strong>で動作するプロセスを特定します。 ドライバーを使用できる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess" data-raw-source="[&lt;strong&gt;PsGetCurrentProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess)"> <strong>PsGetCurrentProcess</strong> </a>プロセスへのポインターを取得するルーチンが、現在のプロセス オブジェクトし、を使用できます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)"> <strong>ObReferenceObjectByHandle</strong></a>ルーチンを指定したハンドルに関連付けられているプロセス オブジェクトへのポインターを取得します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress" data-raw-source="[&lt;strong&gt;PsInitialSystemProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)"> <strong>PsInitialSystemProcess</strong> </a>グローバル変数は、システム プロセスのプロセス オブジェクトを指します。</p>
-<p>プロセス オブジェクトはオブジェクトの Manager オブジェクトであることに注意してください。 ドライバーはなどオブジェクト マネージャー ルーチンを使用する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject" data-raw-source="[&lt;strong&gt;ObReferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)"> <strong>ObReferenceObject</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject" data-raw-source="[&lt;strong&gt;ObDereferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)"> <strong>ObDereferenceObject</strong> </a>オブジェクトを維持するには参照カウントします。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><strong>EPROCESS</strong></td>
+<td><p><strong>Eprocess</strong>構造体は、プロセスのプロセスオブジェクトとして機能する不透明な構造体です。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetprocesscreatetimequadpart" data-raw-source="[&lt;strong&gt;PsGetProcessCreateTimeQuadPart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetprocesscreatetimequadpart)"><strong>PsGetProcessCreateTimeQuadPart</strong></a>などの一部のルーチンでは、 <strong>eprocess</strong>を使用して操作対象のプロセスを識別します。 ドライバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess" data-raw-source="[&lt;strong&gt;PsGetCurrentProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess)"><strong>Psgetcurrentprocess</strong></a>ルーチンを使用して、現在のプロセスのプロセスオブジェクトへのポインターを取得し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)"><strong>Obreferenceobjectbyhandle</strong></a>ルーチンを使用して、指定されたに関連付けられているプロセスオブジェクトへのポインターを取得できます。扱え. <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress" data-raw-source="[&lt;strong&gt;PsInitialSystemProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)"><strong>Psinitialsystemprocess</strong></a>グローバル変数は、システムプロセスのプロセスオブジェクトを指します。</p>
+<p>Process オブジェクトはオブジェクトマネージャーオブジェクトであることに注意してください。 ドライバーは、オブジェクトの参照カウントを維持するために、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject" data-raw-source="[&lt;strong&gt;ObReferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)"><strong>Obreferenceobject</strong></a>や<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject" data-raw-source="[&lt;strong&gt;ObDereferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)"><strong>ObDereferenceObject</strong></a>などのオブジェクトマネージャールーチンを使用する必要があります。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ETHREAD</strong></td>
-<td><p><strong>ETHREAD</strong>構造体は、スレッドのスレッド オブジェクトとして機能するための非透過構造体。</p>
-<p>一部のルーチンなど<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psissystemthread" data-raw-source="[&lt;strong&gt;PsIsSystemThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psissystemthread)"> <strong>PsIsSystemThread</strong></a>を使用して、 <strong>ETHREAD</strong>を操作するスレッドを識別するためにします。 ドライバーを使用できる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetcurrentthread" data-raw-source="[&lt;strong&gt;PsGetCurrentThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetcurrentthread)"> <strong>PsGetCurrentThread</strong> </a>スレッドへのポインターを取得するルーチンが、現在のスレッド オブジェクトし、を使用できます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)"> <strong>ObReferenceObjectByHandle</strong></a>ルーチンを指定したハンドルに関連付けられているスレッド オブジェクトへのポインターを取得します。</p>
-<p>スレッド オブジェクトはオブジェクトの Manager オブジェクトであることに注意してください。 ドライバーはなどオブジェクト マネージャー ルーチンを使用する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject" data-raw-source="[&lt;strong&gt;ObReferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)"> <strong>ObReferenceObject</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject" data-raw-source="[&lt;strong&gt;ObDereferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)"> <strong>ObDereferenceObject</strong> </a>オブジェクトを維持するには参照カウントします。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>Ethread</strong>構造体は、スレッドのスレッドオブジェクトとして機能する不透明な構造体です。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psissystemthread" data-raw-source="[&lt;strong&gt;PsIsSystemThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psissystemthread)"><strong>PsIsSystemThread</strong></a>などの一部のルーチンでは、 <strong>ethread</strong>を使用して操作対象のスレッドを識別します。 ドライバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetcurrentthread" data-raw-source="[&lt;strong&gt;PsGetCurrentThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetcurrentthread)"><strong>Psgetcurrentthread</strong></a>ルーチンを使用して、現在のスレッドのスレッドオブジェクトへのポインターを取得します。また、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)"><strong>Obreferenceobjectbyhandle</strong></a>ルーチンを使用して、指定したに関連付けられているスレッドオブジェクトへのポインターを取得できます。扱え.</p>
+<p>スレッドオブジェクトはオブジェクトマネージャーオブジェクトであることに注意してください。 ドライバーは、オブジェクトの参照カウントを維持するために、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject" data-raw-source="[&lt;strong&gt;ObReferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)"><strong>Obreferenceobject</strong></a>や<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject" data-raw-source="[&lt;strong&gt;ObDereferenceObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)"><strong>ObDereferenceObject</strong></a>などのオブジェクトマネージャールーチンを使用する必要があります。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>EX_RUNDOWN_REF</strong></td>
-<td><p><strong>EX_RUNDOWN_REF</strong>構造体が関連付けられている共有オブジェクトの run-down 保護の状態に関する情報が含まれる非透過システム構造体。</p>
+<td><p><strong>EX_RUNDOWN_REF</strong>構造体は、関連付けられた共有オブジェクトの実行時の保護の状態に関する情報を含む、不透明なシステム構造です。</p>
 <pre class="syntax"><code>typedef struct _EX_RUNDOWN_REF {
   
   ...  // opaque
   
 } EX_RUNDOWN_REF, *PEX_RUNDOWN_REF;</code></pre>
-<p>すべて run-down 保護ルーチンへのポインターの取得、 <strong>EX_RUNDOWN_REF</strong>最初のパラメーターとして構造体。 これらのルーチンは、このページの下部に一覧表示されます。</p>
-<p>詳細については、次を参照してください。<a href="run-down-protection.md" data-raw-source="[Run-Down Protection](run-down-protection.md)">紹介保護</a>します。</p>
-<p>ヘッダー:Wdm.h します。 Wdm.h が含まれます。</p></td>
+<p>実行時の保護ルーチンはすべて、最初のパラメーターとして<strong>EX_RUNDOWN_REF</strong>構造体へのポインターを取得します。 これらのルーチンは、このページの下部に表示されています。</p>
+<p>詳細については、「実行時の<a href="run-down-protection.md" data-raw-source="[Run-Down Protection](run-down-protection.md)">保護</a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. 「Wdm」を含めます。</p></td>
 </tr>
 <tr class="even">
 <td><strong>EX_TIMER</strong></td>
-<td><p><strong>EX_TIMER</strong>構造体が表すオペレーティング システムで使用される非透過構造、 <strong>EX_TIMER</strong>タイマー オブジェクト。</p>
+<td><p><strong>EX_TIMER</strong>構造体は、 <strong>EX_TIMER</strong> TIMER オブジェクトを表すためにオペレーティングシステムによって使用される非透過構造体です。</p>
 <pre class="syntax"><code>typedef struct _EX_TIMER *PEX_TIMER;</code></pre>
 <p>この構造体のすべてのメンバーは、ドライバーに対して非透過的です。</p>
-<p>次<strong>Ex<em>Xxx</em>タイマー</strong>ルーチンがシステムによって割り当てられたへのポインターを必要と<strong>EX_TIMER</strong>入力パラメーターとして構造体。</p>
+<p>次の<strong>例の<em>Xxx</em>タイマー</strong>ルーチンでは、入力パラメーターとしてシステムによって割り当てられた<strong>EX_TIMER</strong>構造体へのポインターが必要です。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer" data-raw-source="[&lt;strong&gt;ExSetTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)"><strong>ExSetTimer</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer" data-raw-source="[&lt;strong&gt;ExCancelTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer)"><strong>ExCancelTimer</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer" data-raw-source="[&lt;strong&gt;ExDeleteTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer)"><strong>ExDeleteTimer</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer" data-raw-source="[&lt;strong&gt;ExSetTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer)"><strong>ExSetTimer</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer" data-raw-source="[&lt;strong&gt;ExCancelTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer)"><strong>ExCancelTimer</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer" data-raw-source="[&lt;strong&gt;ExDeleteTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer)"><strong>ExDeleteTimer</strong></a></li>
 </ul>
-<p><strong>EX_TIMER</strong>-ベースのタイマー オブジェクトは、オペレーティング システムによって作成されます。 タイマー オブジェクトをドライバーの呼び出しのようなを取得する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer" data-raw-source="[&lt;strong&gt;ExAllocateTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)"> <strong>ExAllocateTimer</strong> </a>ルーチン。 呼び出すことによって、オブジェクトを削除するため、ドライバーはこのオブジェクトが不要<strong>ExDeleteTimer</strong>します。</p>
-<p>詳細については、次を参照してください。 <a href="exxxxtimer-routines-and-ex-timer-objects.md" data-raw-source="[Ex&lt;em&gt;Xxx&lt;/em&gt;Timer Routines and EX_TIMER Objects](exxxxtimer-routines-and-ex-timer-objects.md)">Ex<em>Xxx</em>タイマー ルーチンと EX_TIMER オブジェクト</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<p><strong>EX_TIMER</strong>ベースのタイマーオブジェクトは、オペレーティングシステムによって作成されます。 このようなタイマーオブジェクトを取得するために、ドライバーは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer" data-raw-source="[&lt;strong&gt;ExAllocateTimer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer)"><strong>Exallocatetimer</strong></a>ルーチンを呼び出します。 このオブジェクトが不要になった場合、ドライバーは<strong>Exdeletetimer</strong>を呼び出してオブジェクトを削除します。</p>
+<p>詳細については、「 <a href="exxxxtimer-routines-and-ex-timer-objects.md" data-raw-source="[Ex&lt;em&gt;Xxx&lt;/em&gt;Timer Routines and EX_TIMER Objects](exxxxtimer-routines-and-ex-timer-objects.md)">Ex<em>Xxx</em>Timer ルーチン」および「EX_TIMER Objects</a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>FAST_MUTEX</strong></td>
-<td><p>A <strong>FAST_MUTEX</strong>構造が高速なミュー テックスを表す非透過データ構造体。</p>
-<p>A <strong>FAST_MUTEX</strong>で構造体が初期化される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializefastmutex" data-raw-source="[&lt;strong&gt;ExInitializeFastMutex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializefastmutex)"> <strong>ExInitializeFastMutex</strong> </a>ルーチン。</p>
-<p>高速なミュー テックスの詳細については、次を参照してください。<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">高速なミュー テックスと保護されたミュー テックス</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>FAST_MUTEX</strong>構造体は、高速ミューテックスを表す不透明なデータ構造体です。</p>
+<p><strong>FAST_MUTEX</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializefastmutex" data-raw-source="[&lt;strong&gt;ExInitializeFastMutex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializefastmutex)"><strong>Exinitializefastmutex</strong></a>ルーチンによって初期化されます。</p>
+<p>高速ミューテックスの詳細については、「<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">高速ミューテックスと保護</a>されたミューテックス」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>IO_CSQ</strong></td>
-<td><p><strong>IO_CSQ</strong>構造体は、非透過構造体がドライバーのキャンセルの安全な IRP キュー ルーチンを指定するために使用します。 この構造体のメンバーを直接設定しないでください。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitialize" data-raw-source="[&lt;strong&gt;IoCsqInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitialize)"> <strong>IoCsqInitialize</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitializeex" data-raw-source="[&lt;strong&gt;IoCsqInitializeEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitializeex)"> <strong>IoCsqInitializeEx</strong> </a>この構造体を初期化します。</p>
-<p>キャンセルの安全な IRP のキューを使用する方法の概要については、次を参照してください。<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>します。</p>
-<p>Microsoft Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>IO_CSQ</strong>構造体は、ドライバーのキャンセルセーフな IRP キュールーチンを指定するために使用される非透過構造体です。 この構造体のメンバーを直接設定しないでください。 この構造体を初期化するには、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitialize" data-raw-source="[&lt;strong&gt;IoCsqInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitialize)"><strong>IoCsqInitialize</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitializeex" data-raw-source="[&lt;strong&gt;IoCsqInitializeEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitializeex)"><strong>IoCsqInitializeEx</strong></a>を使用します。</p>
+<p>キャンセルセーフな IRP キューの使用方法の概要については、「<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセルセーフな Irp キュー</a>」を参照してください。</p>
+<p>Microsoft Windows XP 以降のバージョンの Windows オペレーティングシステムで使用できます。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>IO_CSQ_IRP_CONTEXT</strong></td>
-<td><p><strong>IO_CSQ_IRP_CONTEXT</strong>構造体は、非透過的なデータ構造をドライバーのキャンセルの安全な IRP のキューに IRP の IRP コンテキストを指定するために使用します。 キーとして使用されて、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirp" data-raw-source="[&lt;strong&gt;IoCsqInsertIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirp)"> <strong>IoCsqInsertIrp</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex" data-raw-source="[&lt;strong&gt;IoCsqInsertIrpEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex)"> <strong>IoCsqInsertIrpEx</strong></a>、および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremoveirp" data-raw-source="[&lt;strong&gt;IoCsqRemoveIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremoveirp)"> <strong>IoCsqRemoveIrp</strong> </a>ルーチンは、キュー内の特定の Irp を識別するためにします。</p>
-<p>キャンセルの安全な IRP のキューを使用する方法の概要については、次を参照してください。<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>します。</p>
-<p>Microsoft Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>IO_CSQ_IRP_CONTEXT</strong>構造体は、ドライバーのキャンセルセーフな irp キュー内の IRP の irp コンテキストを指定するために使用される非透過データ構造体です。 これは、キュー内の特定の Irp を識別するために、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirp" data-raw-source="[&lt;strong&gt;IoCsqInsertIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirp)"><strong>IoCsqInsertIrp</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirpex" data-raw-source="[&lt;strong&gt;IoCsqInsertIrpEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirpex)"><strong>IoCsqInsertIrpEx</strong></a>、および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqremoveirp" data-raw-source="[&lt;strong&gt;IoCsqRemoveIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqremoveirp)"><strong>IoCsqRemoveIrp</strong></a>ルーチンによってキーとして使用されます。</p>
+<p>キャンセルセーフな IRP キューの使用方法の概要については、「<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセルセーフな Irp キュー</a>」を参照してください。</p>
+<p>Microsoft Windows XP 以降のバージョンの Windows オペレーティングシステムで使用できます。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>IO_WORKITEM</strong></td>
-<td><p><strong>IO_WORKITEM</strong>構造は、システムのワーカー スレッドの作業項目を記述するための非透過構造体。</p>
-<p>ドライバーは、呼び出すことによって、作業項目を割り当てることができます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem" data-raw-source="[&lt;strong&gt;IoAllocateWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)"> <strong>IoAllocateWorkItem</strong></a>します。 または、ドライバーが、独自のバッファーを割り当てることができますを呼び出して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeworkitem" data-raw-source="[&lt;strong&gt;IoInitializeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeworkitem)"> <strong>IoInitializeWorkItem</strong> </a>を作業項目としては、そのバッファーを初期化します。</p>
-<p>任意の作業項目が割り当てられる<strong>IoAllocateWorkItem</strong>によって解放する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeworkitem" data-raw-source="[&lt;strong&gt;IoFreeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeworkitem)"> <strong>IoFreeWorkItem</strong></a>します。 初期化されているメモリ<strong>IoInitializeWorkItem</strong>で初期化する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iouninitializeworkitem" data-raw-source="[&lt;strong&gt;IoUninitializeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iouninitializeworkitem)"> <strong>IoUninitializeWorkItem</strong> </a>解放できる前にします。</p>
-<p>作業項目の詳細については、次を参照してください。<a href="system-worker-threads.md" data-raw-source="[System Worker Threads](system-worker-threads.md)">システム ワーカー スレッド</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>IO_WORKITEM</strong>構造体は、システムワーカースレッドの作業項目を記述する不透明な構造体です。</p>
+<p>ドライバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem" data-raw-source="[&lt;strong&gt;IoAllocateWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)"><strong>Ioallocateworkitem</strong></a>を呼び出すことによって、作業項目を割り当てることができます。 または、ドライバーが独自のバッファーを割り当て、そのバッファーを作業項目として初期化する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeworkitem" data-raw-source="[&lt;strong&gt;IoInitializeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeworkitem)"><strong>Ioinitializeworkitem</strong></a>を呼び出すこともできます。</p>
+<p><strong>Ioallocateworkitem</strong>によって割り当てられた作業項目は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem" data-raw-source="[&lt;strong&gt;IoFreeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem)"><strong>IoFreeWorkItem</strong></a>によって解放される必要があります。 <strong>Ioinitializeworkitem</strong>によって初期化されるメモリは、解放する前に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem" data-raw-source="[&lt;strong&gt;IoUninitializeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem)"><strong>iouninitializeworkitem</strong></a>で初期化されていない必要があります。</p>
+<p>作業項目の詳細については、「<a href="system-worker-threads.md" data-raw-source="[System Worker Threads](system-worker-threads.md)">システムワーカースレッド</a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>KBUGCHECK_CALLBACK_RECORD</strong></td>
-<td><p><strong>KBUGCHECK_CALLBACK_RECORD</strong>構造体は、非透過構造体で使用される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)"> <strong>KeRegisterBugCheckCallback</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)"> <strong>KeDeregisterBugCheckCallback</strong> </a>ルーチン。</p>
-<p><strong>KBUGCHECK_CALLBACK_RECORD</strong> 、ブックキーピングの構造が使用される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)"> <strong>KeRegisterBugCheckReasonCallback</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"> <strong>KeDeregisterBugCheckReasonCallback</strong> </a>ルーチン。</p>
-<p>構造は、非ページ プールなど、メモリに割り当てる必要があります。 使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;KeInitializeCallbackRecord&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>KeInitializeCallbackRecord</strong> </a>ルーチンを使用する前に、構造体を初期化します。</p>
-<p>ヘッダー:Ntddk.h します。 次のとおりNtddk.h します。</p></td>
+<td><p><strong>KBUGCHECK_CALLBACK_RECORD</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback)"><strong>KeRegisterBugCheckCallback</strong></a>ルーチンと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckcallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckcallback)"><strong>KeDeregisterBugCheckCallback</strong></a>ルーチンによって使用される非透過構造体です。</p>
+<p><strong>KBUGCHECK_CALLBACK_RECORD</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback)"><strong>KeRegisterBugCheckReasonCallback</strong></a>ルーチンと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"><strong>KeDeregisterBugCheckReasonCallback</strong></a>ルーチンによるブックキーピングに使用されます。</p>
+<p>構造体は、非ページプールなどの常駐メモリに割り当てる必要があります。 使用する前に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;KeInitializeCallbackRecord&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"><strong>Keinitializer Ecallbackrecord</strong></a>ルーチンを使用して構造体を初期化します。</p>
+<p>ヘッダー: Ntddk。 インクルード: Ntddk。</p></td>
 </tr>
 <tr class="even">
 <td><strong>KBUGCHECK_REASON_CALLBACK_RECORD</strong></td>
-<td><p><strong>KBUGCHECK_REASON_CALLBACK_RECORD</strong>構造体は、非透過構造体で使用される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)"> <strong>KeRegisterBugCheckReasonCallback</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"> <strong>KeDeregisterBugCheckReasonCallback</strong> </a>ルーチン。</p>
-<p><strong>KBUGCHECK_REASON_CALLBACK_RECORD</strong> 、ブックキーピングの構造が使用される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)"> <strong>KeRegisterBugCheckReasonCallback</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"> <strong>KeDeregisterBugCheckReasonCallback</strong> </a>ルーチン。</p>
-<p>構造は、非ページ プールなど、メモリに割り当てる必要があります。 使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;KeInitializeCallbackRecord&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>KeInitializeCallbackRecord</strong> </a>ルーチンを使用する前に、構造体を初期化します。</p>
-<p>Microsoft Windows XP Service Pack 1 (SP1)、Windows Server 2003、および以降のバージョンの Windows オペレーティング システムで使用できます。</p>
-<p>ヘッダー:Ntddk.h します。 次のとおりNtddk.h します。</p></td>
+<td><p><strong>KBUGCHECK_REASON_CALLBACK_RECORD</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback)"><strong>KeRegisterBugCheckReasonCallback</strong></a>ルーチンと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"><strong>KeDeregisterBugCheckReasonCallback</strong></a>ルーチンによって使用される非透過構造体です。</p>
+<p><strong>KBUGCHECK_REASON_CALLBACK_RECORD</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeRegisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback)"><strong>KeRegisterBugCheckReasonCallback</strong></a>ルーチンと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback" data-raw-source="[&lt;strong&gt;KeDeregisterBugCheckReasonCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback)"><strong>KeDeregisterBugCheckReasonCallback</strong></a>ルーチンによるブックキーピングに使用されます。</p>
+<p>構造体は、非ページプールなどの常駐メモリに割り当てる必要があります。 使用する前に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;KeInitializeCallbackRecord&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"><strong>Keinitializer Ecallbackrecord</strong></a>ルーチンを使用して構造体を初期化します。</p>
+<p>Microsoft Windows XP Service Pack 1 (SP1)、Windows Server 2003、およびそれ以降のバージョンの Windows オペレーティングシステムで使用できます。</p>
+<p>ヘッダー: Ntddk。 インクルード: Ntddk。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>KDPC</strong></td>
-<td><p><strong>KDPC</strong>構造体は、DPC オブジェクトを表す非透過構造体。 この構造体のメンバーを直接設定しないでください。 参照してください<a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](dpc-objects-and-dpcs.md)">DPC オブジェクトと Dpc</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>Kdpc</strong>構造体は、DPC オブジェクトを表す不透明な構造体です。 この構造体のメンバーを直接設定しないでください。 「 <a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](dpc-objects-and-dpcs.md)">Dpc オブジェクトと dpc」を</a>参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>KFLOATING_SAVE</strong></td>
-<td><p><strong>KFLOATING_SAVE</strong>構造体は、不透明な浮動小数点を表す構造体の状態を<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate" data-raw-source="[&lt;strong&gt;KeSaveFloatingPointState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)"> <strong>KeSaveFloatingPointState</strong> </a>ルーチンを保存します。</p>
-<p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate" data-raw-source="[&lt;strong&gt;KeRestoreFloatingPointState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)"> <strong>KeRestoreFloatingPointState</strong> </a>浮動小数点状態を復元します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>KFLOATING_SAVE</strong>構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate" data-raw-source="[&lt;strong&gt;KeSaveFloatingPointState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate)"><strong>Kesaveflo pointstate</strong></a>ルーチンによって保存された浮動小数点の状態を記述する不透明な構造体です。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate" data-raw-source="[&lt;strong&gt;KeRestoreFloatingPointState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)"><strong>Kerestoreflo/Pointstate</strong></a>を使用して、浮動小数点の状態を復元します。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>KGUARDED_MUTEX</strong></td>
-<td><p><strong>KGUARDED_MUTEX</strong>構造体は、保護されたミュー テックスを表す非透過構造体。</p>
-<p>使用<strong>KeInitializeGuardedMutex</strong>初期化するために、 <strong>KGUARDED_MUTEX</strong>として保護されたミュー テックス構造体。</p>
-<p>保護されたミュー テックスは、非ページ プールから割り当てる必要があります。</p>
-<p>保護されたミュー テックスの詳細については、次を参照してください。<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">ミュー テックスを高速と保護されたミュー テックス</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>KGUARDED_MUTEX</strong>構造体は、保護されたミューテックスを表す不透明な構造体です。</p>
+<p><strong>KeInitializeGuardedMutex</strong>を使用して、 <strong>KGUARDED_MUTEX</strong>構造体を保護されたミューテックスとして初期化します。</p>
+<p>保護されたミューテックスは、非ページプールから割り当てる必要があります。</p>
+<p>保護されたミューテックスの詳細については、「<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">高速ミューテックスと保護</a>されたミューテックス」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>KINTERRUPT</strong></td>
-<td><p>A <strong>KINTERRUPT</strong>構造体は、システムの割り込みを表す非透過構造。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex" data-raw-source="[&lt;strong&gt;IoConnectInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)"><strong>IoConnectInterruptEx</strong> </a>へのポインター、 <strong>KINTERRUPT</strong>ドライバーの登録時に、割り込みの構造、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine" data-raw-source="[&lt;em&gt;InterruptService&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)"> <em>InterruptService</em> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine" data-raw-source="[&lt;em&gt;InterruptMessageService&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)"> <em>InterruptMessageService</em> </a>ルーチン。 ドライバーでは、このポインターを取得または割り込みの割り込みスピン ロックを解放するときに使用します。 ドライバーは、登録を解除するときにもこのポインターを使用する<em>InterruptService</em>ルーチン。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>Kinterrupt</strong>構造体は、システムへの割り込みを表す不透明な構造体です。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex" data-raw-source="[&lt;strong&gt;IoConnectInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)"><strong>IoConnectInterruptEx</strong></a>は、ドライバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine" data-raw-source="[&lt;em&gt;InterruptService&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)"><em>InterruptService</em></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kmessage_service_routine" data-raw-source="[&lt;em&gt;InterruptMessageService&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kmessage_service_routine)"><em>InterruptMessageService</em></a>ルーチンを登録するときに、割り込みの<strong>kinterrupt</strong>構造体へのポインターを提供します。 ドライバーは、割り込みの割り込みスピンロックを取得または解放するときに、このポインターを使用します。 ドライバーは、 <em>InterruptService</em>ルーチンの登録を解除するときにもこのポインターを使用します。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>KLOCK_QUEUE_HANDLE</strong></td>
-<td><p><strong>KLOCK_QUEUE_HANDLE</strong>構造体は、非透過構造体をキューに置かれたスピン ロックについて説明します。 ドライバーを割り当てます、 <strong>KLOCK_QUEUE_HANDLE</strong>構造体、およびそれを<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLock&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))"> <strong>KeAcquireInStackQueuedSpinLock</strong> </a>と<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLockAtDpcLevel&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))"> <strong>KeAcquireInStackQueuedSpinLockAtDpcLevel</strong> </a>キューに置かれたスピン ロックを取得します。 これらのルーチンでは、キューに置かれたスピン ロックを表す構造体を初期化します。 ドライバーは、構造体を渡します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)"> <strong>KeReleaseInStackQueuedSpinLock</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLockFromDpcLevel&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)"> <strong>KeReleaseInStackQueuedSpinLockFromDpcLevel</strong> </a>ときに、スピン ロックを解放します。</p>
-<p>詳細については、次を参照してください。<a href="queued-spin-locks.md" data-raw-source="[Queued Spin Locks](queued-spin-locks.md)">スピン ロックをキューに置かれた</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>KLOCK_QUEUE_HANDLE</strong>構造体は、キューに置かれたスピンロックを記述する不透明な構造体です。 ドライバーは<strong>KLOCK_QUEUE_HANDLE</strong>構造体を割り当て、それを<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLock&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))"><strong>KeAcquireInStackQueuedSpinLock</strong></a>と<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLockAtDpcLevel&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))"><strong>KeAcquireInStackQueuedSpinLockAtDpcLevel</strong></a>に渡して、キューに置かれたスピンロックを取得します。 これらのルーチンは、キューに置かれたスピンロックを表す構造体を初期化します。 スピンロックを解除すると、ドライバーは構造体を<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)"><strong>KeReleaseInStackQueuedSpinLock</strong></a>および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLockFromDpcLevel&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)"><strong>KeReleaseInStackQueuedSpinLockFromDpcLevel</strong></a>に渡します。</p>
+<p>詳細については、「キューに置かれた<a href="queued-spin-locks.md" data-raw-source="[Queued Spin Locks](queued-spin-locks.md)">スピンロック</a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>KTIMER</strong></td>
-<td><p><strong>KTIMER</strong>構造体は、タイマー オブジェクトを表す非透過構造体。 この構造体のメンバーを直接設定しないでください。 詳細については、次を参照してください。<a href="timer-objects-and-dpcs.md" data-raw-source="[Timer Objects and DPCs](timer-objects-and-dpcs.md)">タイマー オブジェクトと Dpc</a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>Ktimer</strong>構造体は、タイマーオブジェクトを表す不透明な構造体です。 この構造体のメンバーを直接設定しないでください。 詳細については、「 <a href="timer-objects-and-dpcs.md" data-raw-source="[Timer Objects and DPCs](timer-objects-and-dpcs.md)">Timer オブジェクトと dpc</a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>LOOKASIDE_LIST_EX</strong></td>
-<td><p><strong>LOOKASIDE_LIST_EX</strong>構造体にルック アサイド リストがについて説明します。</p>
+<td><p><strong>LOOKASIDE_LIST_EX</strong>構造体は、ルックアサイドリストを記述します。</p>
 <pre class="syntax"><code>typedef struct _LOOKASIDE_LIST_EX {
   ...  // opaque
 } LOOKASIDE_LIST_EX, *PLOOKASIDE_LIST_EX;</code></pre>
-<p>ルック アサイド リストのシステム割り当てルーチンと、これによって、呼び出しの数を減らす、ドライバーがローカルで管理できる固定サイズ バッファー プールは、パフォーマンスが向上します。 バッファーが均一のサイズ、ルック アサイド リストのエントリとして格納されます。</p>
-<p>ドライバーを扱う必要があります、 <strong>LOOKASIDE_LIST_EX</strong>不透明として構造体します。 ドライバーまたは構造体のメンバーへのアクセスに、これらのメンバーの場所にある依存関係があることには、移植性とその他のドライバーと相互運用されない可能性があります。</p>
-<p>次の「参照」セクションにには、この構造を使用するルーチン一覧が含まれていますいます。</p>
-<p>ルック アサイド リストの詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
-<p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
+<p>ルックアサイドリストは、ドライバーがローカルで管理できる固定サイズバッファーのプールで、システム割り当てルーチンへの呼び出しの回数を減らし、パフォーマンスを向上させるために使用します。 バッファーは一様なサイズで、ルックアサイドリストにエントリとして格納されます。</p>
+<p>ドライバーは、 <strong>LOOKASIDE_LIST_EX</strong>構造体を不透明として処理する必要があります。 構造体のメンバーにアクセスするか、これらのメンバーの場所に依存するドライバーは、移植性が維持され、他のドライバーと相互運用可能であるとは限りません。</p>
+<p>次の「関連項目」セクションには、この構造を使用するルーチンの一覧が含まれています。</p>
+<p>ルックアサイドリストの詳細については、「<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルックアサイドリストの使用</a>」を参照してください。</p>
+<p>64ビットプラットフォームでは、この構造体は16バイトでアラインされている必要があります。</p>
 <p>Windows Vista 以降でサポートされています。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>NPAGED_LOOKASIDE_LIST</strong></td>
-<td><p><strong>NPAGED_LOOKASIDE_LIST</strong>構造は、非ページ プールから割り当てられる固定サイズ バッファーのルック アサイド リストを記述するための非透過構造体。 システムでは、新しいエントリを作成し、必要に応じて、一覧に含まれる未使用エントリを破棄します。 固定サイズ バッファー、ルック アサイド リストを使用しては直接メモリの割り当てよりも高速です。</p>
-<p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExInitializeNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)"> <strong>ExInitializeNPagedLookasideList</strong> </a>ルック アサイド リストを初期化します。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromnpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExAllocateFromNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromnpagedlookasidelist)"> <strong>ExAllocateFromNPagedLookasideList</strong> </a>リストから、バッファーを割り当て、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetonpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExFreeToNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetonpagedlookasidelist)"> <strong>ExFreeToNPagedLookasideList</strong> </a>を返す、一覧にバッファー。</p>
-<p>ドライバーでは、アンロードの前に作成する任意のルック アサイド リストを常に明示的に解放する必要があります。 それ以外の場合に実行する場合は、重大なプログラミング エラーになります。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExDeleteNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)"> <strong>ExDeleteNPagedLookasideList</strong> </a>リストを解放します。</p>
-<p>ドライバーのページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>PAGED_LOOKASIDE_LIST</strong>構造体には、ページ バッファを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
-<p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
-<p>Windows 2000 以降をサポートします。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>NPAGED_LOOKASIDE_LIST</strong>構造体は、非ページプールから割り当てられた固定サイズバッファーのルックアサイドリストを記述する不透明な構造体です。 システムによって新しいエントリが作成され、必要に応じてリスト上の未使用のエントリが破棄されます。 固定サイズのバッファーでは、ルックアサイドリストを使用する方がメモリを直接割り当てるよりも短時間で済みます。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExInitializeNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)"><strong>ExInitializeNPagedLookasideList</strong></a>を使用して、ルックアサイドリストを初期化します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefromnpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExAllocateFromNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefromnpagedlookasidelist)"><strong>ExAllocateFromNPagedLookasideList</strong></a>を使用してリストからバッファーを割り当て、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetonpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExFreeToNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetonpagedlookasidelist)"><strong>ExFreeToNPagedLookasideList</strong></a>を使用してリストにバッファーを返します。</p>
+<p>ドライバーは、アンロードする前に作成したすべてのルックアサイドリストを明示的に解放する必要があります。 それ以外の場合は、プログラミング上の重大なエラーになります。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist" data-raw-source="[&lt;strong&gt;ExDeleteNPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist)"><strong>ExDeleteNPagedLookasideList</strong></a>を使用して、一覧を解放します。</p>
+<p>ドライバーは、ページプールのルックアサイドリストを使用することもできます。 Windows 2000 以降では、 <strong>PAGED_LOOKASIDE_LIST</strong>構造体は、ページングされたバッファーを含むルックアサイドリストを記述します。 Windows Vista 以降では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、ページングされていないバッファーまたは非ページバッファーを含むルックアサイドリストを記述できます。 詳細については、「<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルックアサイドリストの使用</a>」を参照してください。</p>
+<p>64ビットプラットフォームでは、この構造体は16バイトでアラインされている必要があります。</p>
+<p>Windows 2000 以降でサポートされています。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>OBJECT_TYPE</strong></td>
-<td><p><strong>OBJECT_TYPE</strong>はハンドルのオブジェクトの種類を指定するための非透過構造体。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)"> <strong>ObReferenceObjectByHandle</strong></a>します。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>OBJECT_TYPE</strong>は、ハンドルのオブジェクトの種類を指定する不透明な構造体です。 詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)"><strong>Obreferenceobjectbyhandle</strong></a>」を参照してください。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>PAGED_LOOKASIDE_LIST</strong></td>
-<td><p><strong>PAGED_LOOKASIDE_LIST</strong>構造は、ページ プールから割り当てられる固定サイズ バッファーのルック アサイド リストを記述するための非透過構造体。 システムでは、新しいエントリを作成し、必要に応じて、一覧に含まれる未使用エントリを破棄します。 固定サイズ バッファー、ルック アサイド リストを使用しては直接メモリの割り当てよりも高速です。</p>
-<p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist" data-raw-source="[&lt;strong&gt;ExInitializePagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)"> <strong>ExInitializePagedLookasideList</strong> </a>ルック アサイド リストを初期化します。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefrompagedlookasidelist" data-raw-source="[&lt;strong&gt;ExAllocateFromPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefrompagedlookasidelist)"> <strong>ExAllocateFromPagedLookasideList</strong> </a>リストから、バッファーを割り当て、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetopagedlookasidelist" data-raw-source="[&lt;strong&gt;ExFreeToPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetopagedlookasidelist)"> <strong>ExFreeToPagedLookasideList</strong> </a>を返す、一覧にバッファー。</p>
-<p>ドライバーでは、アンロードの前に作成する任意のルック アサイド リストを常に明示的に解放する必要があります。 それ以外の場合に実行する場合は、重大なプログラミング エラーになります。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist" data-raw-source="[&lt;strong&gt;ExDeletePagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)"> <strong>ExDeletePagedLookasideList</strong> </a>リストを解放します。</p>
-<p>ドライバーの非ページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>NPAGED_LOOKASIDE_LIST</strong>構造体には、非ページのバッファーを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
-<p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
-<p>Windows 2000 以降をサポートします。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>PAGED_LOOKASIDE_LIST</strong>構造体は、ページプールから割り当てられた固定サイズバッファーのルックアサイドリストを記述する不透明な構造体です。 システムによって新しいエントリが作成され、必要に応じてリスト上の未使用のエントリが破棄されます。 固定サイズのバッファーでは、ルックアサイドリストを使用する方がメモリを直接割り当てるよりも短時間で済みます。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist" data-raw-source="[&lt;strong&gt;ExInitializePagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist)"><strong>ExInitializePagedLookasideList</strong></a>を使用して、ルックアサイドリストを初期化します。 リストにバッファーを返すには、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefrompagedlookasidelist" data-raw-source="[&lt;strong&gt;ExAllocateFromPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefrompagedlookasidelist)"><strong>Exallocatefrompagedlook</strong></a> the list を使用します。また、リストにバッファーを返すには、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetopagedlookasidelist" data-raw-source="[&lt;strong&gt;ExFreeToPagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetopagedlookasidelist)"><strong>exfreetopagedlook のリスト</strong></a>からバッファーを割り当てます。</p>
+<p>ドライバーは、アンロードする前に作成したすべてのルックアサイドリストを明示的に解放する必要があります。 それ以外の場合は、プログラミング上の重大なエラーになります。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist" data-raw-source="[&lt;strong&gt;ExDeletePagedLookasideList&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist)"><strong>ExDeletePagedLookasideList</strong></a>を使用して、一覧を解放します。</p>
+<p>ドライバーは、非ページプールのルックアサイドリストを使用することもできます。 Windows 2000 以降では、 <strong>NPAGED_LOOKASIDE_LIST</strong>構造体は、非ページバッファーを含むルックアサイドリストを記述します。 Windows Vista 以降では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、ページングされていないバッファーまたは非ページバッファーを含むルックアサイドリストを記述できます。 詳細については、「<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルックアサイドリストの使用</a>」を参照してください。</p>
+<p>64ビットプラットフォームでは、この構造体は16バイトでアラインされている必要があります。</p>
+<p>Windows 2000 以降でサポートされています。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>RTL_BITMAP</strong></td>
-<td><p><strong>RTL_BITMAP</strong>構造はビットマップを記述するための非透過構造体。</p>
+<td><p><strong>RTL_BITMAP</strong>構造体は、ビットマップを記述する不透明な構造体です。</p>
 <pre class="syntax"><code>typedef struct _RTL_BITMAP {
   // opaque
 } RTL_BITMAP, *PRTL_BITMAP;</code></pre>
-<p>この構造体のメンバーに直接アクセスしない操作を行います。 メンバーの場所への依存関係や、メンバーの値にアクセス直接残る可能性がありますいない Windows オペレーティング システムの将来のバージョンと互換性があるドライバー。</p>
-<p><strong>RTL_BITMAP</strong>構造体は、任意の長さの汎用的な 1 次元のビットマップのヘッダーとして機能します。 ドライバーは、一連の再利用可能な項目を追跡する経済的な方法として、このようなビットマップを使用できます。 たとえば、ファイル システムは、ビットマップを使用して、どのクラスターを追跡するためとハード ディスク上のセクターがファイル データを保持するために既に割り当てられています。</p>
-<p>一覧については、 <strong>Rtl<em>Xxx</em></strong> ルーチンを使用する<strong>RTL_BITMAP</strong>構造体は、次の「参照」セクションを参照してください。 これらの呼び出し元<strong>Rtl<em>Xxx</em></strong> ルーチンのストレージを割り当て、 <strong>RTL_BITMAP</strong>構造体であり、ビットマップを含んでいるバッファー。 このバッファーはメモリ内の 4 バイト境界で開始する必要があり、長さは 4 バイトの倍数である必要があります。 ビットマップは、バッファーの先頭から始まりますが、割り当てられたバッファーに収まるビットの任意の数を含めることができます。</p>
-<p>指定する前に、 <strong>RTL_BITMAP</strong>へのパラメーターとして構造体、 <strong>Rtl<em>Xxx</em></strong> ルーチンを呼び出し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitializebitmap" data-raw-source="[&lt;strong&gt;RtlInitializeBitMap&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitializebitmap)"> <strong>RtlInitializeBitMap</strong></a>ルーチンを構造体を初期化します。 このルーチンへの入力パラメーターは、ビットマップとビットマップのビット単位のサイズを格納しているバッファーへのポインターです。 <strong>RtlInitializeBitMap</strong>このバッファーの内容は変更されません。</p>
-<p>呼び出し元のストレージを割り当てる場合、 <strong>RTL_BITMAP</strong> IRQL で呼び出し元を実行する必要があります構造とページングされたメモリにビットマップの場合は、 &lt;のいずれかのパラメーターとしてこの構造体へのポインターを渡すときに、APC_LEVELを=<strong>Rtl<em>Xxx</em></strong>  「参照」セクションに記載されているルーチン。 呼び出すときに、呼び出し元を任意の IRQL で実行できる場合は、呼び出し元は、非ページ メモリから (または同等に、ロックされているページ メモリから)、記憶域を割り当て、 <strong>Rtl<em>Xxx</em></strong> ルーチン。</p>
+<p>この構造体のメンバーに直接アクセスしないでください。 メンバーの場所に依存しているか、メンバーの値に直接アクセスするドライバーは、将来のバージョンの Windows オペレーティングシステムとの互換性が維持されていない可能性があります。</p>
+<p><strong>RTL_BITMAP</strong>構造体は、任意の長さの汎用的な1次元ビットマップのヘッダーとして機能します。 ドライバーは、このようなビットマップを経済的な方法で使用して、一連の再利用可能な項目を追跡できます。 たとえば、ファイルシステムでは、ビットマップを使用して、ハードディスク上のファイルデータを保持するために既に割り当てられているクラスターやセクターを追跡できます。</p>
+<p><strong>RTL_BITMAP</strong>構造体を使用する<strong>Rtl<em>Xxx</em></strong> ルーチンの一覧については、次の「関連項目」も参照してください。 これらの<strong>Rtl<em>Xxx</em></strong> ルーチンの呼び出し元は、 <strong>RTL_BITMAP</strong>構造体と、ビットマップを含むバッファーのストレージを割り当てる必要があります。 このバッファーは、メモリ内の4バイトの境界で開始する必要があり、長さが4バイトの倍数である必要があります。 ビットマップは、バッファーの先頭から開始しますが、割り当てられたバッファーに格納される任意の数のビットを含めることができます。</p>
+<p><strong>RTL_BITMAP</strong>構造体を<strong>RTL<em>Xxx</em></strong> ルーチンのパラメーターとして指定する前に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlinitializebitmap" data-raw-source="[&lt;strong&gt;RtlInitializeBitMap&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlinitializebitmap)"><strong>RtlInitializeBitMap</strong></a>ルーチンを呼び出して構造体を初期化します。 このルーチンへの入力パラメーターは、ビットマップを格納しているバッファーへのポインターと、ビットマップのサイズ (ビット単位) です。 <strong>RtlInitializeBitMap</strong>は、このバッファーの内容を変更しません。</p>
+<p>呼び出し元がページングされたメモリ内の<strong>RTL_BITMAP</strong>構造体とビットマップのストレージを割り当てる場合、この構造体へのポインターを<strong>RTL<em>Xxx</em></strong> ルーチンへのパラメーターとして渡すと、呼び出し元は IRQL &lt;= APC_LEVEL で実行されている必要があります。詳細については、「関連項目」を参照してください。 呼び出し元が、非ページ化されたメモリから (または、ロックされているページメモリから) ストレージを割り当てる場合、 <strong>Rtl<em>Xxx</em></strong> ルーチンを呼び出すと、呼び出し元は任意の IRQL で実行できます。</p>
 <p>Windows 2000 以降のバージョンの Windows でサポートされています。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>RTL_RUN_ONCE</strong></td>
-<td><p><strong>RTL_RUN_ONCE</strong>構造は、one-time initialization の情報を格納するための非透過構造体。</p>
-<p>ドライバーは、呼び出すことによってこの構造体を初期化する必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunonceinitialize" data-raw-source="[&lt;strong&gt;RtlRunOnceInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunonceinitialize)"> <strong>RtlRunOnceInitialize</strong> </a>他に渡す前に日常的な<strong>RtlRunOnce<em>Xxx</em></strong> ルーチン。</p>
-<p>Windows Vista および Windows オペレーティング システムの以降のバージョンでのみ使用できます。</p>
-<p>ヘッダー:Ntddk.h します。 次のとおりNtddk.h します。</p></td>
+<td><p><strong>RTL_RUN_ONCE</strong>構造体は、ワンタイム初期化の情報を格納する不透明な構造体です。</p>
+<p>ドライバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunonceinitialize" data-raw-source="[&lt;strong&gt;RtlRunOnceInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunonceinitialize)"><strong>RtlRunOnceInitialize</strong></a>ルーチンを呼び出して、他の<strong>Rtlrunonce<em>Xxx</em></strong> ルーチンに渡す前に、この構造体を初期化する必要があります。</p>
+<p>Windows Vista 以降のバージョンの Windows オペレーティングシステムでのみ使用できます。</p>
+<p>ヘッダー: Ntddk。 インクルード: Ntddk。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>SECURITY_SUBJECT_CONTEXT</strong></td>
-<td><p><strong>SECURITY_SUBJECT_CONTEXT</strong>構造体は、特定の操作が行われるセキュリティ コンテキストを表す非透過構造体。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>SECURITY_SUBJECT_CONTEXT</strong>構造体は、特定の操作が行われているセキュリティコンテキストを表す不透明な構造体です。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="even">
 <td><strong>SLIST_HEADER</strong></td>
-<td><p><strong>SLIST_HEADER</strong>構造は、シーケンス処理されたシングル リンク リストのヘッダーとして機能するための非透過構造体。 詳細については、次を参照してください。<a href="singly-and-doubly-linked-lists.md" data-raw-source="[Singly and Doubly Linked Lists](singly-and-doubly-linked-lists.md)">リンクされたリストの片方向と双方向</a>します。</p>
-<p>64 ビットのプラットフォームで<strong>SLIST_HEADER</strong>構造体は 16 バイトでアラインである必要があります。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<td><p><strong>SLIST_HEADER</strong>構造体は、シーケンスされた単一のシングルリンクリストのヘッダーとして機能する不透明な構造体です。 詳細については、「<a href="singly-and-doubly-linked-lists.md" data-raw-source="[Singly and Doubly Linked Lists](singly-and-doubly-linked-lists.md)">単一およびダブルリンクリスト</a>」を参照してください。</p>
+<p>64ビットプラットフォームでは、 <strong>SLIST_HEADER</strong>構造体が16バイトでアラインされている必要があります。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>XSTATE_SAVE</strong></td>
-<td><p><strong>XSTATE_SAVE</strong>構造体は、カーネル モード ドライバーの保存および復元する拡張プロセッサの状態情報を記述するための非透過構造体。</p>
+<td><p><strong>XSTATE_SAVE</strong>構造体は、カーネルモードドライバーによって保存および復元される拡張プロセッサの状態情報を記述する不透明な構造体です。</p>
 <pre class="syntax"><code>typedef struct _XSTATE_SAVE {
   ...  // opaque
 } XSTATE_SAVE, *PXSTATE_SAVE;</code></pre>
-<p>すべてのメンバーは、不透明です。</p>
-<p>この構造が使用者、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate" data-raw-source="[&lt;strong&gt;KeSaveExtendedProcessorState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)"> <strong>KeSaveExtendedProcessorState</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate" data-raw-source="[&lt;strong&gt;KeRestoreExtendedProcessorState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)"> <strong>KeRestoreExtendedProcessorState</strong> </a>ルーチン。</p>
-<p>Windows 7 および Windows オペレーティング システムの以降のバージョンでサポートされています。</p>
-<p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
+<p>すべてのメンバーは不透明です。</p>
+<p>この構造体は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate" data-raw-source="[&lt;strong&gt;KeSaveExtendedProcessorState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)"><strong>KeSaveExtendedProcessorState</strong></a>および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate" data-raw-source="[&lt;strong&gt;KeRestoreExtendedProcessorState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)"><strong>Kerestoreextendedprocessorstate</strong></a>ルーチンによって使用されます。</p>
+<p>Windows 7 以降のバージョンの Windows オペレーティングシステムでサポートされています。</p>
+<p>ヘッダー: Wdm. h. インクルード: Ntifs、Ntddk、および。</p></td>
 </tr>
 </tbody>
 </table>
@@ -241,87 +241,87 @@ ms.locfileid: "67393777"
 [**BugCheckSecondaryDumpDataCallback**](https://msdn.microsoft.com/library/windows/hardware/ff540679)  
 [**ExAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))  
 [**ExAcquireFastMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544340(v=vs.85))  
-[**ExAllocateFromLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromlookasidelistex)  
-[**ExAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromnpagedlookasidelist)  
-[**ExAllocateFromPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefrompagedlookasidelist)  
-[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)  
-[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)  
-[**ExFreeToPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetopagedlookasidelist)  
-[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)  
-[**ExCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer)  
-[**ExDeleteLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletelookasidelistex)  
-[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)  
-[**ExDeleteTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer)  
-[**ExFlushLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exflushlookasidelistex)  
-[**ExFreeToLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetolookasidelistex)  
-[**ExFreeToNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetonpagedlookasidelist)  
-[**ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)  
-[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)  
-[**ExInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializeslisthead)  
-[**ExInterlockedFlushSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedflushslist)  
-[**ExInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpopentryslist)  
-[**ExInterlockedPushEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpushentryslist)  
-[**ExQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exquerydepthslist)  
+[**Exallocatefromlook Stex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefromlookasidelistex)  
+[**ExAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefromnpagedlookasidelist)  
+[**Exallocatefrompagedlook のリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatefrompagedlookasidelist)  
+[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer)  
+[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist)  
+[**Exfreetopagedlook のリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetopagedlookasidelist)  
+[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist)  
+[**ExCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer)  
+[**Exdeletelook Asiststex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletelookasidelistex)  
+[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist)  
+[**ExDeleteTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer)  
+[**Exflushstasiアス Stex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exflushlookasidelistex)  
+[**Exfreetolook Asifrostex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetolookasidelistex)  
+[**ExFreeToNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreetonpagedlookasidelist)  
+[**Exststokasiアス Stex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializelookasidelistex)  
+[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)  
+[**ExInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializeslisthead)  
+[**ExInterlockedFlushSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedflushslist)  
+[**ExInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpopentryslist)  
+[**ExInterlockedPushEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpushentryslist)  
+[**ExQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exquerydepthslist)  
 [**ExReleaseFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545549(v=vs.85))  
 [**ExReleaseFastMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545567(v=vs.85))  
-[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)  
+[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer)  
 [**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))  
-[*ExTimerCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_callback)  
-[**IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)  
-[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)  
-[**IoCsqInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitialize)  
-[**IoCsqInitializeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitializeex)  
-[**IoCsqInsertIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirp)  
-[**IoCsqInsertIrpEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex)  
-[**IoCsqRemoveIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremoveirp)  
-[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex)  
-[**IoFreeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeworkitem)  
-[**IoInitializeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeworkitem)  
-[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)  
-[**IoUninitializeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iouninitializeworkitem)  
+[*ExTimerCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ext_callback)  
+[**IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)  
+[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)  
+[**IoCsqInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitialize)  
+[**IoCsqInitializeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinitializeex)  
+[**IoCsqInsertIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirp)  
+[**IoCsqInsertIrpEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqinsertirpex)  
+[**IoCsqRemoveIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocsqremoveirp)  
+[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)  
+[**IoFreeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem)  
+[**IoInitializeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeworkitem)  
+[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)  
+[**IoUninitializeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem)  
 [**KeAcquireGuardedMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551892(v=vs.85))  
 [**KeAcquireGuardedMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551894(v=vs.85))  
 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))  
 [**KeAcquireInStackQueuedSpinLockAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))  
 [**KeAcquireInterruptSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551914(v=vs.85))  
-[**KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kecanceltimer)  
-[**KeInitializeCallbackRecord**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)  
-[**KeInitializeGuardedMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeguardedmutex)  
-[**KeInitializeTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)  
-[**KeInitializeTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)  
-[**KeReadStateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereadstatetimer)  
-[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)  
-[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)  
-[**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)  
-[**KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)  
-[**KeDeregisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)  
-[**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)  
-[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)  
-[**KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)  
-[**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)  
-[**KeReleaseGuardedMutexUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseguardedmutexunsafe)  
-[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)  
-[**KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)  
-[**KeReleaseInterruptSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinterruptspinlock)  
-[**KeRestoreFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)  
-[**KeSaveFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)  
-[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)  
-[*LookasideListAllocateEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-allocate_function_ex)  
-[*LookasideListFreeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-free_function_ex)  
-[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)  
+[**KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kecanceltimer)  
+[**Ke初期化 Ecallbackrecord**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)  
+[**KeInitializeGuardedMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeguardedmutex)  
+[**KeInitializeTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer)  
+[**KeInitializeTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex)  
+[**KeReadStateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereadstatetimer)  
+[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)  
+[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)  
+[**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)  
+[**KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)  
+[**KeDeregisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckcallback)  
+[**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback)  
+[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)  
+[**KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback)  
+[**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback)  
+[**KeReleaseGuardedMutexUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseguardedmutexunsafe)  
+[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)  
+[**KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)  
+[**KeReleaseInterruptSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinterruptspinlock)  
+[**Kerestoreflo/Pointstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)  
+[**Kesaveflo/Pointstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate)  
+[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)  
+[*ルック Asiアス Stallocateex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-allocate_function_ex)  
+[*ルック Asiフリー Ex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-free_function_ex)  
+[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)  
 [**PsGetCurrentProcess**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess)  
-[**PsGetProcessCreateTimeQuadPart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetprocesscreatetimequadpart)  
+[**PsGetProcessCreateTimeQuadPart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetprocesscreatetimequadpart)  
 [**PsInitialSystemProcess**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)  
-[**PsIsSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psissystemthread)  
-[**RtlRunOnceBeginInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunoncebegininitialize)  
-[**RtlRunOnceComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunoncecomplete)  
-[**RtlRunOnceExecuteOnce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunonceexecuteonce)  
-[**RtlRunOnceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlrunonceinitialize)  
-[*RunOnceInitialization*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-rtl_run_once_init_fn)  
-[Run-Down 保護](run-down-protection.md)  
-[**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)  
-[**SeAssignSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seassignsecurity)  
-[**SeAssignSecurityEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seassignsecurityex)  
+[**PsIsSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psissystemthread)  
+[**RtlRunOnceBeginInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunoncebegininitialize)  
+[**RtlRunOnceComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunoncecomplete)  
+[**RtlRunOnceExecuteOnce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunonceexecuteonce)  
+[**RtlRunOnceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlrunonceinitialize)  
+[*RunOnceInitialization*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-rtl_run_once_init_fn)  
+[実行時の保護](run-down-protection.md)  
+[**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-seaccesscheck)  
+[**Se割り当てのセキュリティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-seassignsecurity)  
+[**Se割り当て Securityex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-seassignsecurityex)  
 
 
 

@@ -1,31 +1,31 @@
 ---
-title: 接続オフロード機能の判断
-description: 接続オフロード機能の判断
+title: 接続のオフロード機能の決定
+description: 接続のオフロード機能の決定
 ms.assetid: 9a7c40dd-7151-462f-b30b-0444a4177ff9
 keywords:
-- 接続は、WDK TCP/IP トランスポート、機能をオフロードします。
+- 接続オフロード WDK TCP/IP トランスポート、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1764ed2d0d8453aaa602055e6158ad786b24bf4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05c2dec3eb0bf58f82a85be6bc0c24f430850f61
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381432"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838149"
 ---
-# <a name="determining-connection-offload-capabilities"></a>接続オフロード機能の判断
+# <a name="determining-connection-offload-capabilities"></a>接続のオフロード機能の決定
 
 
 
 
 
-NDIS は、オフロード サービスの 2 つのカテゴリをサポートしています。TCP/IP は、NDIS 5.1 と以前のタスクのオフロード サービスの強化されたフォームであるサービスと接続のオフロード サービスをオフロードします。
+NDIS では、2つのカテゴリのオフロードサービスがサポートされています。 TCP/IP オフロードサービスは、NDIS 5.1 以前のタスクオフロードサービスと接続オフロードサービスの拡張形式です。
 
-NDIS オフロードのハードウェア機能とプロトコル ドライバーで基になるミニポート アダプターの現在の構成を提供する、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。 NDIS フィルター ドライバーで基になるミニポート アダプターの現在の構成とタスク オフロードのハードウェア機能を提供します、 [ **NDIS\_フィルター\_アタッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)構造体。
+NDIS は、負荷の軽減ハードウェア機能と、基になるミニポートアダプターの現在の構成を[**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体のプロトコルドライバーに提供します。 NDIS には、タスクのオフロードハードウェア機能と、基になるミニポートアダプターの現在の構成が用意されています。これにより、 [**ndis\_フィルター\_\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)構造体にフィルターを適用できます。
 
-管理アプリケーションでは、オブジェクト識別子 (OID) のクエリを使用して、ミニポート アダプターの TCP/IP のオフロード機能を取得します。 ただし、後続のドライバーには、OID のクエリを使用しないでください。 プロトコル ドライバーでは、その基になるドライバー レポート TCP/IP のオフロード機能に変更を処理する必要があります。 ミニポート ドライバーでは、タスクの変更のオフロードで状態インジケーターの機能をレポートできます。 状態インジケーターの一覧は、次を参照してください。 [NDIS TCP/IP Offload 状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-tcp-ip-offload-status-indications)します。
+管理アプリケーションは、オブジェクト識別子 (OID) クエリを使用して、ミニポートアダプターの TCP/IP オフロード機能を取得します。 ただし、それ以上のドライバーは OID クエリを使用しないようにする必要があります。 プロトコルドライバーは、基になるドライバーによって報告される TCP/IP オフロード機能の変更を処理する必要があります。 ミニポートドライバーは、ステータスを示す状態のタスクオフロード機能の変更を報告できます。 ステータスの表示の一覧については、「 [NDIS Tcp/ip オフロードの状態](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-tcp-ip-offload-status-indications)の表示」を参照してください。
 
-管理アプリケーション (または上にあるドライバー) は、クエリを実行して、NIC の現在の接続オフロードの構成を確認できます、 [OID\_TCP\_接続\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-current-config) OID。 [ **NDIS\_TCP\_接続\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload) OID に関連付けられている構造\_TCP\_接続\_オフロード\_現在\_CONFIG ミニポート アダプターの現在の接続オフロードの構成を指定します。
+管理アプリケーション (またはそれ以降のドライバー) では、 [OID\_TCP\_接続\_オフロード\_現在の\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-current-config)OID に対してクエリを実行することで、NIC の現在の接続のオフロード構成を特定できます。 [**NDIS\_tcp\_接続\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload) 、OID に関連付けられているオフロード構造の\_TCP\_接続\_オフロード\_現在の\_CONFIG は、ミニポートアダプターの現在の構成を指定します。接続オフロードの構成。
 
  
 

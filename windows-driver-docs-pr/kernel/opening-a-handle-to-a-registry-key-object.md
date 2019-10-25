@@ -1,38 +1,38 @@
 ---
-title: レジストリ キー オブジェクトのハンドルを開く
-description: レジストリ キー オブジェクトのハンドルを開く
+title: レジストリキーオブジェクトへのハンドルを開く
+description: レジストリキーオブジェクトへのハンドルを開く
 ms.assetid: 451e36a1-1cc2-469e-9f54-c02fef7b1666
 keywords:
-- レジストリ WDK カーネルでは、オブジェクトのルーチン
-- ドライバーのレジストリ情報 WDK カーネル、オブジェクトのルーチン
-- オブジェクトのルーチンの WDK カーネル
-- レジストリ キー オブジェクトの WDK カーネル
-- レジストリ キー オブジェクトへのハンドルを開く
-- WDK カーネルのレジストリ キー オブジェクトへのハンドルします。
+- レジストリ WDK カーネル、オブジェクトルーチン
+- ドライバーレジストリ情報 WDK カーネル、オブジェクトルーチン
+- オブジェクトルーチン WDK カーネル
+- レジストリキーオブジェクト WDK カーネル
+- レジストリキーオブジェクトへのハンドルを開いています
+- レジストリキーオブジェクト WDK カーネルに対するハンドル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54583b2ddeaf0dc5df681322853dc86f441e0ea1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a33e5440c2a723eef1f600e21958587fdf09a1b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384925"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838526"
 ---
-# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルを開く
+# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリキーオブジェクトへのハンドルを開く
 
 
 
 
 
-レジストリ キー オブジェクトを識別するハンドルを開くには、次の 2 段階のプロセスを実行します。
+レジストリキーオブジェクトへのハンドルを開くには、次の2段階のプロセスを実行します。
 
-1.  作成、 [**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)構造体、およびそれを呼び出すことによって初期化[ **InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)します。 として操作するキーの名前を指定する、 *ObjectName*パラメーターを**InitializeObjectAttributes**します。
+1.  [**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes)構造体を作成し、 [**initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)を呼び出して初期化します。 を操作するキーの名前を、 **Initializeobjectattributes**に対する*ObjectName*パラメーターとして指定します。
 
-    渡した場合**NULL**として、 *RootDirectory*パラメーターを**InitializeObjectAttributes**、 *ObjectName*の完全なパスを指定する必要があります、以降では、レジストリ キー **\\レジストリ**します。 それ以外の場合、 *RootDirectory*キーへのオープン ハンドルである必要がありますと*ObjectName*はそのキーに対して相対的なパスです。
+    *Rootdirectory*パラメーターとして**Initializeobjectattributes**に**NULL**を渡す場合、 *ObjectName*には **\\registry**で始まるレジストリキーの完全なパスを指定する必要があります。 それ以外の場合、 *Rootdirectory*はキーを開くハンドルである必要があります。 *ObjectName*は、そのキーに対する相対パスです。
 
-2.  呼び出すことによって、キー オブジェクトへのハンドルを開く[ **ZwCreateKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)または[ **ZwOpenKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey)を渡すと、**オブジェクト\_属性**を構造体。 キーが存在しない場合**ZwCreateKey** 、キーが作成されますが、 **ZwOpenKey**ステータスを返します\_オブジェクト\_名前\_いない\_見つかりました。
+2.  [**ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)または[**zwopenkey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)を呼び出してキーオブジェクトへのハンドルを開き、**オブジェクト\_属性**構造体に渡します。 キーがまだ存在しない場合は、 **ZwCreateKey**によってキーが作成されますが、 **Zwopenkey**は\_オブジェクト\_名\_返され\_見つかりませんでした。
 
-渡す、 *DesiredAccess*パラメーターを**ZwCreateKey**または**ZwOpenKey**を要求するアクセス権を格納しています。 ドライバー、操作を許可するアクセス権が実行を指定する必要があります。 次の表は、実行できる操作と要求に対応するアクセス権を示します。
+要求するアクセス権を含む**ZwCreateKey**または**Zwopenkey**に*DesiredAccess*パラメーターを渡します。 ドライバーが実行する操作を許可するアクセス権を指定する必要があります。 次の表に、実行できる操作と、要求するためのアクセス権を示します。
 
 <table>
 <colgroup>
@@ -47,15 +47,15 @@ ms.locfileid: "67384925"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>レジストリ キー値を取得します。</p></td>
+<td><p>レジストリキー値を取得します。</p></td>
 <td><p>KEY_QUERY_VALUE または KEY_READ</p></td>
 </tr>
 <tr class="even">
-<td><p>レジストリ キー値を設定します。</p></td>
+<td><p>レジストリキーの値を設定します。</p></td>
 <td><p>KEY_SET_VALUE または KEY_WRITE</p></td>
 </tr>
 <tr class="odd">
-<td><p>すべてのキーのサブキーをループします。</p></td>
+<td><p>キーのすべてのサブキーをループします。</p></td>
 <td><p>KEY_ENUMERATE_SUB_KEYS または KEY_READ</p></td>
 </tr>
 <tr class="even">
@@ -71,11 +71,11 @@ ms.locfileid: "67384925"
 
  
 
-使用できる値の詳細については、 *DesiredAccess*パラメーターを参照してください[ **ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)します。
+*DesiredAccess*パラメーターで使用できる値の詳細については、「 [**ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)」を参照してください。
 
-呼び出すこともできます[ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)をこれらのレジストリ キーへのハンドルを開く特定のデバイスと、特定のデバイス インターフェイスをそれぞれです。 詳細については、次を参照してください。[プラグ アンド プレイ レジストリ ルーチン](plug-and-play-registry-routines.md)します。
+また、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)と[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)を呼び出して、それぞれがデバイス固有のレジストリキーおよびデバイスインターフェイスに固有のハンドルを開くこともできます。 詳細については、「[プラグアンドプレイ Registry ルーチン](plug-and-play-registry-routines.md)」を参照してください。
 
-**注**  への呼び出しに**ZwCreateKey**、 **ZwOpenKey**、 **IoOpenDeviceRegistryKey**、および**IoOpenDeviceInterfaceRegistryKey**、汎用的なアクセス権、ジェネリック\_読み取りとジェネリック\_記述では、キーのキーに固有のアクセス権を意味的に同等です\_読み取りとキー\_書き込み、それぞれ、および、これらのキーに固有のアクセス権の代替として使用できます。
+**ZwCreateKey**、 **zwopenkey**、 **IoOpenDeviceRegistryKey**、および**IoOpenDeviceInterfaceRegistryKey**の呼び出しでは、汎用アクセス権、一般\_読み取りと汎用\_書き込みは **、  ** キー固有のアクセス権、キー\_読み取りとキー\_書き込みの意味では、これらのキー固有のアクセス権の代替として使用できます。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: SRB\_を示す\_マスター\_クロック
-description: SRB\_を示す\_マスター\_クロック
+title: SRB\_\_マスター\_クロックを示す
+description: SRB\_\_マスター\_クロックを示す
 ms.assetid: 76ce59d2-d33c-4cec-a90e-563a16dc476b
 keywords:
-- SRB_INDICATE_MASTER_CLOCK ストリーミング メディア デバイス
+- SRB_INDICATE_MASTER_CLOCK ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,43 +12,43 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65db7727a7a4ae1b2be815e15c5f7f47e2afb310
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e377c1e965b353e492539dea5add295351f38715
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377908"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843299"
 ---
-# <a name="srbindicatemasterclock"></a>SRB\_を示す\_マスター\_クロック
+# <a name="srb_indicate_master_clock"></a>SRB\_\_マスター\_クロックを示す
 
 
 ## <span id="ddk_srb_indicate_master_clock_ks"></span><span id="DDK_SRB_INDICATE_MASTER_CLOCK_KS"></span>
 
 
-クラス ドライバーがストリームに、そのマスターのクロックとなるようになりましたクロック オブジェクト ハンドルを示すためには、この要求を発行するか、0 個のハンドルをストリームを示すためには実行されている無料。
+クラスドライバーは、この要求を発行して、現在マスタークロックとして機能するクロックオブジェクトのハンドル、またはストリームが無料で実行されていることを示すゼロハンドルを指定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-ミニドライバーは、SRB の状態として、次のいずれかを設定する必要があります。
+ミニドライバーは、SRB の状態として次のいずれかを設定する必要があります。
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>ステータス\_成功  
-コマンドが正常に完了を示します。
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状態\_成功  
+コマンドが正常に完了したことを示します。
 
-<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>ステータス\_いない\_実装されていません  
-関数が、ミニドライバーでサポートされていないことを示します。
+<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>状態\_\_実装されていません  
+関数がミニドライバーによってサポートされていないことを示します。
 
-<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>ステータス\_IO\_デバイス\_エラー  
+<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状態\_IO\_デバイス\_エラー  
 ハードウェア障害が発生したことを示します。
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*マスターのクロックを表すクロック オブジェクトのハンドルにします。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
+クラスドライバーは**Commanddata**を設定します。マスタークロックを表す clock オブジェクトのハンドルに*pSrb*によって指された**masterclockhandle**メンバー。 *PSrb*ポインターは、 [ **\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造体を指す HW\_ストリームを指します。
 
-ストリームはマスターのクロックを識別するハンドルを渡すことによって、マスターのクロックの時刻の値を照会することが[ **StreamClassQueryMasterClock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclock)または[ **StreamClassQueryMasterClockSync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclocksync).
+ストリームは、マスタークロックハンドルを[**Streamclassquerymasterclock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassquerymasterclock)または[**Streamclassquerymasterclocksync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassquerymasterclocksync)に渡すことによって、マスタークロックの時刻値を照会することができます。
 
-ミニドライバーは、SRB を受け取るまで\_を示す\_マスター\_クロックの特定のストリームをそのことができますがあると想定ストリームを実行している無料。 この SRB 下位暗証番号 (pin) は、ハンドルと同じです渡されたハンドルのミニドライバーに渡す場合[ **SRB\_オープン\_マスター\_クロック**](srb-open-master-clock.md)、、ミニドライバー。マスターとは従属要素を制御しているために、マスター クロックから直接時間を読み取ることができます。
+特定のストリームの\_マスター\_クロックを示すために、ミニドライバーが\_受信するまでは、ストリームが無料で実行されていると想定できます。 下位のピンに対してこの SRB に渡されたハンドルが\_SRB のミニドライバーに渡されたハンドルと同じである場合、 [ **\_マスター\_クロックを開い**](srb-open-master-clock.md)ているとき、ミニドライバーはマスタークロックから時刻を直接読み取ることができます。これは、マスタークロックがマスターを制御し、下位。
 
-ミニドライバーを保持する必要があります、 **CommandData.MasterClockHandle**マスターのクロックのハンドルを指す SRB フィールド。 このハンドルが 0 の場合は、あることを示しますミニドライバーにこのストリーム無料実行し、マスターのクロックに従属することはできません。
+ミニドライバーは、マスタークロックのハンドルを指す SRB 内の**Commanddata. MasterClockHandle**フィールドを保持する必要があります。 このハンドルが0の場合は、ミニドライバーに対して、このストリームが解放され、マスタークロックの下位になることができないことを示します。
 
  
 

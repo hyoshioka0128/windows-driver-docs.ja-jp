@@ -3,44 +3,44 @@ title: デバイスのアイドル動作とウェイク動作のユーザーに�
 description: デバイスのアイドル動作とウェイク動作のユーザーによる制御
 ms.assetid: 776fcf82-2235-489a-8d46-3ad230da3402
 keywords:
-- システム ウェイク アップ WDK KMDF
-- 電源管理 WDK KMDF、ウェイク アップ機能
-- ウェイク アップ機能 WDK KMDF
-- 電源管理 WDK KMDF をスリープ状態します。
+- システムウェイクアップ WDK KMDF
+- 電源管理 WDK KMDF、ウェイクアップ機能
+- ウェイクアップ機能 WDK KMDF
+- スリープ電源管理 WDK KMDF
 - 低電力状態 WDK KMDF
-- 電源管理 WDK KMDF、アイドル状態の電源切断
-- アイドル状態の電源切断 WDK KMDF
+- 電源管理 WDK KMDF、アイドル電力ダウン
+- アイドル状態の電源ダウン WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4476176720a36c6567b219c61312fa3b80f1fa62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e1d3ab76ce09e6c92c211a00a1355af6dec2f06
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372294"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843105"
 ---
 # <a name="user-control-of-device-idle-and-wake-behavior"></a>デバイスのアイドル動作とウェイク動作のユーザーによる制御
 
 
-デバイスを電源オフまたはウェイク アップ機能のアイドル状態にある場合を有効にするか、これらの機能を無効にするユーザーを許可するかどうかを決定できます。
+デバイスにアイドル状態の電源またはウェイクアップ機能がある場合は、ユーザーがこれらの機能を有効または無効にできるようにするかどうかを決定できます。
 
-ドライバーがのメンバーを使用できる、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体を指定するかどうかレジストリのアクセス権を持つユーザーでは、有効にしたり、デバイスのアイドル状態の電源機能を無効にすることができます。
+ドライバーは、 [**WDF\_デバイス\_電源\_ポリシー\_アイドル\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造のメンバーを使用して、レジストリアクセス権を持つユーザーがデバイスのアイドル状態の電源をオンまたはオフにできるかどうかを指定できます。
 
-ドライバーがのメンバーを使用できる、 [ **WDF\_デバイス\_POWER\_ポリシー\_WAKE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)構造体を指定するかどうかレジストリのアクセス権を持つユーザーでは、有効にしたり、デバイスのウェイク アップ機能を無効にすることができます。
+ドライバーは、 [**WDF\_デバイス\_電源\_ポリシー\_wake\_SETTINGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)構造体のメンバーを使用して、レジストリアクセス権を持つユーザーがデバイスのウェイクアップ機能を有効または無効にできるかどうかを指定できます。
 
-両方これらの構造体のドライバー、機能を有効にできるように、機能を無効にするまたはユーザー機能を制御できるようにします。 ユーザーが制御できる、適切な設定で、ドライバー構造体を設定、 **UserControlOfIdleSettings**または**UserControlOfWakeSettings**メンバー **IdleAllowUserControl**または**WakeAllowUserControl**をそれぞれ、**有効**メンバー **WdfTrue**または**WdfUseDefault**,.
+これらの構造体の両方で、ドライバーが機能を有効にしたり、機能を無効にしたり、ユーザーが機能を制御したりできるようにします。 ユーザーが制御できるようにするには、適切な設定の構造で、 **UserControlOfIdleSettings**または**UserControlOfWakeSettings**メンバーをそれぞれ**IdleAllowUserControl**または**WakeAllowUserControl**に設定します。**有効な**メンバーを**wdftrue**または**wdfusedefault に設定**します。
 
-ドライバーは、ユーザーがアイドル状態の変更し、復帰の設定を許可している場合、フレームワークは、デバイス マネージャーの表示を有効にするか、アイドル状態を無効にして機能を wake ユーザーようにするプロパティ シート ページの形式でのユーザー インターフェイスを提供します。 (フレームワークを変更します**IdleInWorkingState**と**WakeFromSleepState**レジストリの値。 ドライバーとそのインストール ファイルにする必要があります*いない*読み取り、またはこれらの値を変更します)。
+ユーザーがドライバーでアイドル状態とウェイク設定を変更できるようになった場合、フレームワークには、ユーザーがアイドルおよびウェイク機能を有効または無効にできるようにデバイスマネージャー表示されるプロパティシートページの形式でユーザーインターフェイスが用意されています。 (フレームワークによって、レジストリ値**IdleInWorkingState**と**WakeFromSleepState**が変更されます。 ドライバーとそのインストールファイルは、これらの値の読み取りや変更を行う*ことはできません*)。
 
-デバイスの設定を変更した場合、フレームワークは必要に応じて、新しい設定を一致するように、デバイスの電源の状態を更新します。 たとえば場合は、ユーザーは、デバイスは低電力状態で既にはアイドル状態だったために、デバイスのアイドル状態の電源機能を無効に、フレームワークは稼働状態にデバイスを返します。
+ユーザーがデバイスの設定を変更すると、必要に応じて、フレームワークによって、新しい設定と一致するようにデバイスの電源状態が更新されます。 たとえば、ユーザーがデバイスのアイドル状態になっているときに、デバイスがアイドル状態になっているときに、デバイスのアイドル状態になっている機能を無効にすると、フレームワークはそのデバイスを動作状態に戻します。
 
-ドライバーは、ユーザーがアイドル状態の変更し、復帰の設定を許可している場合、フレームワークは、既定でこれらの設定を有効。 にします。 いくつかのドライバー開発者は、最初にそれらを変更するユーザーを許可する前に、設定を無効にする可能性があります。
+ユーザーがドライバーでアイドル設定とウェイク設定を変更できるようにすると、フレームワークは既定でこれらの設定を有効にします。 一部のドライバーの作成者は、設定を変更できるようにする前に、最初に設定を無効にすることができます。
 
-そのため、バージョン 1.9 および KMDF の以降のバージョンでは、フレームワークは、という名前の 2 つのドライバー定義可能なレジストリ値**WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**、デバイスの保存されている**デバイス パラメーター\\WDF**デバイスのハードウェア キーの下のサブキー。 値は、REG\_「0」、DWORD に型指定された機能を示すは無効になり、機能を示す「1」を有効にします。
+したがって、バージョン1.9 以降の KMDF の場合、フレームワークには、デバイスのデバイスに格納されている**WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**という2つのドライバー定義可能なレジストリ値が用意されています。 **パラメーター\\WDF**サブキーは、デバイスのハードウェアキーの下にあります。 値は、"0" を使用して、機能が無効になっていることを示す "0" と、機能が有効になっていることを示す "1" が指定されている場合\_は、"0"
 
-ドライバーの INF ファイルが使用できる、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を作成し、設定、 **WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**レジストリの値。 たとえば、により、デバイスのアイドル状態の電源機能、ドライバーがドライバーの INF ファイルを設定できる場合は、デバイスがインストールされている場合は、機能を無効にする必要があります、 **WdfDefaultIdleInWorkingState** 「0」にします。
+ドライバーの INF ファイルでは、 [**Inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を使用して、 **WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**のレジストリ値を作成および設定できます。 たとえば、ドライバーによってデバイスのアイドル電力が有効になっているが、デバイスのインストール時に機能を無効にする必要がある場合、ドライバーの INF ファイルは**WdfDefaultIdleInWorkingState**を "0" に設定できます。
 
-フレームワークを調べ、 **WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**レジストリ値は、ドライバーが設定されている場合にのみ、 **UserControlOfIdleSettings**または**UserControlOfWakeSettings**メンバー **IdleAllowUserControl**または**WakeAllowUserControl**、それぞれ、および、 **有効**メンバー **WdfTrue**または**WdfUseDefault**、適切な設定の構造体。
+このフレームワークは、ドライバーが**UserControlOfIdleSettings**または**UserControlOfWakeSettings**メンバーをに設定している場合にのみ、 **WdfDefaultIdleInWorkingState**と**WdfDefaultWakeFromSleepState**のレジストリ値を**調べます。** 適切な設定構造で、IdleAllowUserControl または**WakeAllowUserControl**、それぞれ、**有効な**メンバーを**Wdftrue**または**wdfusedefault**に設定します。
 
  
 

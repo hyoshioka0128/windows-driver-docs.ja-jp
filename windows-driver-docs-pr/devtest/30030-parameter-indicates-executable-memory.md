@@ -1,76 +1,76 @@
 ---
 title: C30030
-description: C30030 メモリ割り当て関数を呼び出すことを警告し、実行可能なメモリを示すパラメーターを渡します。
+description: 警告 C30030 は、メモリの割り当て関数を呼び出し、実行可能メモリを示すパラメーターを渡しています。
 ms.assetid: D1C8B316-DC04-4B18-A0EB-40833D50B843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: 3014a05934855aaae1795c5cb67803747fee3979
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f5128021f75e46114b6209b81e1b80486e7b1a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371693"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840308"
 ---
 # <a name="c30030"></a>C30030
 
 
-C30030 を警告します。メモリ割り当て関数を呼び出すと、実行可能なメモリを示すパラメーターを渡す
+警告 C30030: メモリの割り当て関数を呼び出し、実行可能メモリを示すパラメーターを渡す
 
-禁止\_MEM\_割り当て\_UNSAFE
+禁止\_メモリ\_割り当て\_安全ではありません
 
-一部の Api では、メモリが実行可能かどうかを構成するパラメーターがあります。 このエラーは、パラメーターを使用する実行可能 NonPagedPool で結果が割り当てられていることを示します。 使用可能なオプションのいずれかを使用して、非実行可能ファイルのメモリを要求する必要があります。
+一部の Api には、メモリを実行可能にするかどうかを構成するパラメーターがあります。 このエラーは、実行可能ファイル NonPagedPool が割り当てられたパラメーターが使用されていることを示します。 実行可能でないメモリを要求するには、使用可能なオプションのいずれかを使用する必要があります。
 
-## <a name="span-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanspan-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanspan-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanfor-defects-involving-the-parameter-types-mmpagepriority-and-pooltype"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>パラメーターの型に関連する障害の検出**MM\_ページ\_優先度**と**プール\_型**
+## <a name="span-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanfor-defects-involving-the-parameter-types-mm_page_priority-and-pool_type"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>パラメーターの種類が**MM\_ページ**に関係する問題については\_優先順位と**プール\_の種類**
 
 
 次のいずれかのオプションを使用します。
 
--   プリプロセッサの定義を指定[プール\_NX\_OPTIN\_自動](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)ソース/プロジェクトの設定にします。
--   プリプロセッサの定義を指定[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)ソース/プロジェクトの設定と呼び出しで**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** ドライバーの初期化関数から (**DriverEntry**または**DllInitialize**)。
+-   ソース/プロジェクトの設定で、[[自動\_]\_OPTIN\_](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)プリプロセッサ定義プールを指定します。
+-   ソース/プロジェクトの設定で[\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)のプリプロセッサ定義プールを指定し、ドライバー初期化関数 (**driverentry**またはからの**Exinitializedriverruntime (*DrvRtPoolNxOptIn*)** を呼び出します。**DllInitialize**)。
 
-**注**を使用するかどうかを選択した[プール\_NX\_OPTIN\_自動](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)または[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)大きく左右作成する方法の多くのバイナリを対象とするプラットフォームで。 両方のオプションと、これらの 2 種類に変更されますが (コンパイラ、または実行時に)、NX 対応します。 詳細についてはトピックのリンクを参照してください。
-
-
-
-**注**次の条件のいずれかが true の場合は、false 正警告を表示可能性があります。
--   ドライバーの初期化関数を呼び出す別の関数を呼び出す**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)**
--   作成して、**ドライバー\_ライブラリ**し、指定した[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)初期化関数はありません。
+**メモ** [プール\_nx\_optin\_自動](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)または\_プールのどちらを使用するかを選択すると、 [nx\_optin](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)は、対象とするプラットフォームと作成するバイナリの数に大きく依存します。 どちらのオプションでも、これらの2つの型は (コンパイラまたは実行時に) それぞれの NX に対応するように変更されます。 詳細については、トピックのリンクを参照してください。
 
 
 
--   非実行可能ファイルの種類に割り当ての種類を変更します。
+**メモ** 次のいずれかの条件に該当する場合は、偽陽性の警告が表示されることがあります。
+-   ドライバー初期化関数は、 **Exinitializedriverruntime (*DrvRtPoolNxOptIn*)** を呼び出す別の関数を呼び出します。
+-   **ドライバー\_ライブラリ**を作成していて、指定された[プールに NX\_OPTIN\_](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)指定されていますが、初期化関数がありません。
 
-**例 (プール\_NX\_OPTIN\_自動)。**
 
-ソース ファイルで次の設定は警告を許可する、実行可能ファイルのパラメーターを指定する必要があります、API 呼び出しで。
+
+-   割り当ての種類を実行可能ではない型に変更します。
+
+**例 (プール\_NX\_OPTIN\_AUTO):**
+
+ソースファイルの次の設定では、API 呼び出しで実行可能なパラメーターを指定する必要があることを警告します。
 
 ```
 C_DEFINES=$(C_DEFINES)
 ```
 
-ソース ファイルで次の設定は、警告を回避できます。
+ソースファイルの次の設定は、警告を回避します。
 
 ```
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN_AUTO=1
 ```
 
-**例 (プール\_NX\_OPTIN)。**
+**例 (プール\_NX\_OPTIN):**
 
-ソース ファイルで次のコードでは、警告が生成されます。
+ソースファイル内の次のコードでは、警告が生成されます。
 
 ```
 C_DEFINES=$(C_DEFINES)
 ```
 
-ソース ファイルで次のコードは、警告を回避できます。
+ソースファイル内の次のコードは、警告を回避します。
 
 ```
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-**DriverEntry()** 、すべてのメモリ割り当てが行われる前に。
+**Driverentry ()** で、メモリの割り当てが行われる前に、次のようにします。
 
 ```
 NTSTATUS
@@ -85,9 +85,9 @@ DriverEntry (
 …
 ```
 
-**例 (割り当ての種類の変更):**
+**例 (割り当ての種類を変更する):**
 
-**MM\_ページ\_優先度**型を追加することでこれを修正することができます、 **MdlMappingNoExecute**フラグを優先順位の種類。 これは、Windows 8 以降でのみサポートします。
+[ **MM\_] ページ\_priority**の種類では、 **Mdlmappingnoexecute**フラグを優先度の種類に追加することで、この問題を解決できます。 これは、Windows 8 以降でのみサポートされています。
 
 次のコードでは、警告が生成されます。
 
@@ -95,15 +95,15 @@ DriverEntry (
 pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority);
 ```
 
-次のコードは、警告を回避できます。
+次のコードでは、警告が回避されます。
 
 ```
 pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExecute);
 ```
 
-**例 (プール\_型)**
+**例 (プール\_の種類)**
 
-**プール\_型**型の型の非実行可能ファイルのバージョンを要求の種類を変更することでこれを修正できます。 これは、Windows 8 以降でのみサポートします。
+[**プール\_種類**の種類] では、要求の種類を実行可能でないバージョンの型に変更することで、この問題を解決できます。 これは、Windows 8 以降でのみサポートされています。
 
 次のコードでは、警告が生成されます。
 
@@ -111,7 +111,7 @@ pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExec
 ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, 'xppn');
 ```
 
-次のコードは、警告を回避できます。
+次のコードでは、警告が回避されます。
 
 ```
 ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
@@ -119,7 +119,7 @@ ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 
 **その他の特殊なケース:**
 
-変更があった、 [ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)日常的なことになったを使用する非実行可能ファイルの非ページ プール メモリを指定します。 たとえば、次のコードでは、この警告が生成されます。
+[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)ルーチンが変更され、非実行可能な非ページプールメモリを指定できるようになりました。 たとえば、次のコードでは、この警告が生成されます。
 
 ```
 ExInitializeNPagedLookasideList(pLookaside,
@@ -131,7 +131,7 @@ ExInitializeNPagedLookasideList(pLookaside,
                 depth);
 ```
 
-次のコードは、この警告を回避できます。
+次のコードは、この警告を回避します。
 
 ```
 ExInitializeNPagedLookasideList(pLookaside,
@@ -143,17 +143,17 @@ ExInitializeNPagedLookasideList(pLookaside,
                 depth);
 ```
 
-## <a name="span-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>ページの保護に関連する障害を検出します。
+## <a name="span-idfor_defects_involving_page_protections_spanspan-idfor_defects_involving_page_protections_spanspan-idfor_defects_involving_page_protections_spanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>ページ保護に関する不具合がある場合:
 
 
-一部の Api では、ページの保護を指定できます。 [ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)はこれらの 1 つです。 このような場合は、保護の種類の非実行可能ファイルのバージョンを使用します。
+一部の Api では、ページ保護を指定できます。 [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)はこれらのうちの1つです。 このような場合は、保護の種類の実行可能ではないバージョンを使用します。
 
-［変更］:
+変更
 
--   ページ\_以下の手段、またはページのいずれかに EXECUTE\_NOACCESS
--   ページ\_EXECUTE\_ページへの読み取り\_読み取り専用
--   ページ\_EXECUTE\_ページへの READWRITE\_READWRITE
--   ページ\_EXECUTE\_ページに WRITECOPY\_WRITECOPY
+-   ページ\_、次のいずれかの代替手段またはページ\_NOACCESS に実行されます。
+-   ページ\_実行\_読み取り専用\_ページ
+-   ページ\_\_readwrite\_の READWRITE に実行
+-   ページ\_\_WRITECOPY を実行\_WRITECOPY
 
 次のコードでは、警告が生成されます。
 
@@ -171,7 +171,7 @@ Status = ZwMapViewOfSection(   handle,
                 ); 
 ```
 
-次のコードは、この警告を回避できます。
+次のコードは、この警告を回避します。
 
 ```
 Status = ZwMapViewOfSection(   handle,
@@ -187,15 +187,15 @@ Status = ZwMapViewOfSection(   handle,
                 ); 
 ```
 
-## <a name="span-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>キャッシュの種類に関連する障害を検出します。
+## <a name="span-idfor_defects_involving_cache_types_spanspan-idfor_defects_involving_cache_types_spanspan-idfor_defects_involving_cache_types_spanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>キャッシュの種類に関連する問題の場合:
 
 
-一部の Api は、キャッシュの種類に依存する実行可能ファイルのアクセス許可を持つメモリを割り当てます。 このような 2 つの Api は[ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)と[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)します。 キャッシュの種類をする必要があります**MmCached**使用 (を参照してください[**メモリ\_CACHING\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_memory_caching_type))、実行可能なメモリが割り当てられます。 これを解決する別のキャッシュの種類を選択またはキャッシュされたメモリが必要な場合は、API を使用して[ **MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)します。
+一部の Api は、キャッシュの種類に依存する実行可能なアクセス許可を使用してメモリを割り当てます。 このような Api には、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)と[**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)の2つがあります。 **Mmcached**のキャッシュの種類を使用する必要があります (「[**メモリ\_キャッシュ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_memory_caching_type)」を参照)。次に、実行可能メモリが割り当てられます。 これを修正するには、別のキャッシュの種類を選択するか、キャッシュされたメモリが必要な場合は API [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)を使用します。
 
-［変更］:
+変更
 
--   **MmCached**に**MmNonCached**または**MmWriteCombined**キャッシュ メモリが必要ない場合
--   API を[ **MmAllocateContiguousNodeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)キャッシュ メモリが必要な場合
+-   キャッシュされたメモリが不要な場合、 **Mmcached**または**Mmwritecombined**にキャッシュされた**mmcached**
+-   キャッシュされたメモリが必要な場合に[**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)する API
 
 次のコードでは、警告が生成されます。
 
@@ -208,7 +208,7 @@ MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
                                               ); 
 ```
 
-次のコードは、キャッシュされたメモリが必要ない場合、この警告を回避できます。
+次のコードは、キャッシュされたメモリが不要な場合にこの警告を回避します。
 
 ```
 MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
@@ -231,7 +231,7 @@ MmAllocateContiguousMemorySpecifyCacheNode(   numberOfBytes,
                                               ); 
 ```
 
-次のコードは、キャッシュされたメモリが必要な場合、この警告を回避できます。
+次のコードは、キャッシュされたメモリが必要な場合にこの警告を回避します。
 
 ```
 MmAllocateContiguousNodeMemory(       numberOfBytes,
@@ -243,7 +243,7 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
                                       ); 
 ```
 
-次のコードは、キャッシュされたメモリが必要でない場合、代替 API を使用します。
+キャッシュされたメモリが不要な場合、次のコードでは代替 API を使用します。
 
 ```
 MmAllocateContiguousNodeMemory(       numberOfBytes,
@@ -255,10 +255,10 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
                                       ); 
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連項目
 
 
-[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)
+[**プール\_の種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)
 
 
 

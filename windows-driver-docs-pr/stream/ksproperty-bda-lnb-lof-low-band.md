@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド
-description: クライアントを使用して、KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド RF チューナーのノードを移行する低ノイズ ブロック (LNB) デバイスで使用されるローカル オシレーター頻度 (LOF) に通知するために、低帯域 RF 信号の受信の頻度です。
+title: KSK プロパティ\_BDA\_LNB\_LOF\_低\_帯域
+description: クライアントは、KSK プロパティ\_BDA\_LNB\_\_\_を使用します。これにより、低ノイズブロック (LNB) デバイスが受信した低帯域 RF の周波数をシフトするために使用するローカルオシレーター周波数 (LOF) について、RF チューナーノードに通知します。シグナル.
 ms.assetid: 96880a70-5c3f-4391-a613-a6a90d1605b4
 keywords:
-- KSPROPERTY_BDA_LNB_LOF_LOW_BAND ストリーミング メディア デバイス
+- KSPROPERTY_BDA_LNB_LOF_LOW_BAND ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 239f5a6fb425162270d2903455e594afff466d72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1bbebd07458e954a8fdcb1ccc491cd5e35095a6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364852"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845553"
 ---
-# <a name="kspropertybdalnbloflowband"></a>KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド
+# <a name="ksproperty_bda_lnb_lof_low_band"></a>KSK プロパティ\_BDA\_LNB\_LOF\_低\_帯域
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド RF チューナーのノードを移行する低ノイズ ブロック (LNB) デバイスで使用されるローカル オシレーター頻度 (LOF) に通知するために、低帯域 RF 信号の受信の頻度です。
+クライアントは、KSK プロパティ\_BDA\_LNB\_\_\_を使用します。これにより、低ノイズブロック (LNB) デバイスが受信した低帯域 RF の周波数をシフトするために使用するローカルオシレーター周波数 (LOF) について、RF チューナーノードに通知します。シグナル.
 
 ## <span id="ddk_ksproperty_bda_lnb_lof_low_band_ks"></span><span id="DDK_KSPROPERTY_BDA_LNB_LOF_LOW_BAND_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364852"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364852"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -64,13 +64,13 @@ ms.locfileid: "67364852"
 <a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、RF チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、RF チューナーノードの識別子を指定します。
 
-プロパティの値には、低帯域信号、LNB によって使用される LOF を指定します。
+プロパティ値は、ローバンド信号用に LNB によって使用される LOF を指定します。
 
-LNB RF 信号を衛星アンテナがリフレクションを収集するには、RF 信号の頻度を低帯域 LOF amount では、下にシフトおよび RF チューナーを結果として得られる信号を送信します。
+LNB は、衛星アンテナによって反射される RF 信号を収集し、低帯域の LOF 量によって RF シグナルの周波数をシフトし、結果の信号を RF チューナーに送信します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ LNB RF 信号を衛星アンテナがリフレクションを収集するには�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ LNB RF 信号を衛星アンテナがリフレクションを収集するには�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

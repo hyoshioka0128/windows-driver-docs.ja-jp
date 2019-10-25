@@ -4,113 +4,113 @@ description: 仮想ポートの作成
 ms.assetid: 6102576D-3236-4FDD-8963-83A9E90FF7F0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90938f7d969ce2fc46d56bff16c9542597c2a5fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e1ff8fedc40772c12b391c94137644874c7131b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374916"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838163"
 ---
 # <a name="creating-a-virtual-port"></a>仮想ポートの作成
 
 
-仮想ポート (VPort) は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC のスイッチを内部ポートを表すデータ オブジェクトです。 各 NIC スイッチでは、ネットワーク接続のため、次のポートがあります。
+仮想ポート (VPort) は、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの NIC スイッチの内部ポートを表すデータオブジェクトです。 各 NIC スイッチには、ネットワーク接続用に次のポートがあります。
 
--   1 つ外部の物理ポートの外部の物理ネットワークに接続します。
+-   外部物理ネットワークに接続するための1つの外部物理ポート。
 
--   1 つまたは複数の内部拡張 PCI Express (PCIe) 物理機能 (PF) または仮想機能 (Vf) に接続しています。
+-   PCI Express (PCIe) 物理機能 (PF) または仮想関数 (VFs) に接続されている1つ以上の内部 VPorts。
 
-    PF は、HYPER-V 親パーティションに接続され、そのパーティションで実行されている管理オペレーティング システム内の仮想ネットワーク アダプターとして公開されます。
+    PF は、Hyper-v の親パーティションにアタッチされ、そのパーティションで実行されている管理オペレーティングシステムの仮想ネットワークアダプターとして公開されます。
 
-    VF は、HYPER-V 子パーティションに接続され、そのパーティションで実行されるゲスト オペレーティング システム内の仮想ネットワーク アダプターとして公開されます。
+    VF は、Hyper-v 子パーティションにアタッチされ、そのパーティションで実行されるゲストオペレーティングシステムの仮想ネットワークアダプターとして公開されます。
 
-拡張の 2 種類あります。
+VPorts には、次の2種類があります。
 
 <a href="" id="default-vport"></a>既定の VPort  
-既定の VPort は、管理オペレーティング システムで実行されているネットワーク コンポーネントへのネットワーク接続を提供します。 既定 VPort NDIS の識別子を持つ\_既定\_VPORT\_id。
+既定の VPort は、管理オペレーティングシステムで実行されるネットワークコンポーネントへのネットワーク接続を提供します。 既定の VPort には、NDIS\_既定\_VPORT\_ID の識別子が設定されています。
 
-ドライバーは、PF ミニポート ドライバーでは、作成し、既定の NIC スイッチを構成します、ときに、暗黙的に VPort の既定を作成し、PF. にアタッチします。 既定の VPort、VF にアタッチできません。
+PF ミニポートドライバーが既定の NIC スイッチを作成して構成すると、ドライバーは既定の VPort を暗黙的に作成し、それを PF に接続します。 既定の VPort を VF に接続することはできません。
 
-既定の VPort は常にアクティブ化の状態と、明示的に削除することはできません。 PF ミニポート ドライバーでは、既定の NIC のスイッチを削除するときにのみ既定 VPort 暗黙的に削除します。
+既定の VPort は常にアクティブ化された状態であり、明示的に削除することはできません。 PF ミニポートドライバーは、既定の NIC スイッチを削除するときにのみ、既定の VPort を暗黙的に削除します。
 
-NIC のスイッチと既定 VPort スイッチを作成する方法の詳細については、次を参照してください。 [NIC スイッチの作成](creating-a-nic-switch.md)です。
+スイッチに NIC スイッチおよび既定の VPort を作成する方法の詳細については、「 [Nic スイッチの作成](creating-a-nic-switch.md)」を参照してください。
 
 <a href="" id="nondefault-vport"></a>既定以外の VPort  
-NIC のスイッチの作成時に既定以外の拡張は暗黙的に作成されません。 OID メソッド要求を発行して、これらのポートを明示的に作成しますなど、仮想化スタックの上にあるドライバー [OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 既定以外の拡張は、PF または、VF、接続されている可能性があり、NIC のスイッチが作成された後にのみ作成できます。
+既定以外の VPorts は、NIC スイッチの作成時には暗黙的に作成されません。 仮想化スタックなどの前のドライバーは、Oid\_NIC\_スイッチの OID メソッド要求を発行することによって、これらのポートを明示的に作成[\_VPORT\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 既定以外の VPorts は、PF または VF に接続することができ、NIC スイッチが作成された後でのみ作成できます。
 
-既定以外の VF に関連付けられている VPort は、ゲスト オペレーティング システムで実行されているネットワーク コンポーネントへのネットワーク接続を提供します。 作成して、VF にアタッチされている、したら、既定以外 VPort は、アクティブ化された状態です。
+VF に接続されている既定以外の VPort は、ゲストオペレーティングシステムで実行されるネットワークコンポーネントへのネットワーク接続を提供します。 作成され、VF にアタッチされると、既定以外の VPort はアクティブ化された状態になります。
 
-既定以外の PF に関連付けられている VPort では、管理オペレーティング システムで実行されているネットワーク コンポーネントに追加のネットワーク オフロード機能を提供します。 たとえば、既定以外の PF を拡張が提供される可能性がありますが、仮想マシン キュー (VMQ) インターフェイスに似た機能をオフロードします。
+PF に接続されている既定以外の VPort を使用すると、管理オペレーティングシステムで実行されるネットワークコンポーネントにネットワークオフロード機能を追加できます。 たとえば、PF の既定以外の VPorts を使用して、バーチャルマシンキュー (VMQ) インターフェイスと同様のオフロード機能を提供できます。
 
-**注**既定以外の拡張は、NIC のスイッチが作成された後にのみ作成できます。
-
-
-
-上位のドライバーの問題のオブジェクト識別子 (OID) メソッド要求[OID\_NIC\_切り替える\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport) NIC スイッチを指定した既定以外の VPort を作成します。 この OID 要求には、ネットワーク アダプターの PF または以前に割り当てられた VF に作成された VPort もアタッチします。
-
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、[ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体。 正常に戻った後、 [OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)要求、 **VPortId**のメンバー、 **NDIS\_NIC\_切り替える\_VPORT\_パラメーター**構造体が NIC スイッチの拡張の間で一意である VPort 識別子。
-
-上にあるドライバーを初期化します、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構成情報を含む構造体既定を作成する VPort 以外。 構成情報には、先 VPort がアタッチされている既定以外と数、キュー ペア VPort 既定以外の PCIe 関数が含まれています。
-
-初期化時、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造上にあるドライバーは、次を実行する必要があります。
-
--   **SwitchId**メンバーは、ネットワーク アダプターの OID メソッド要求を既に作成されている NIC スイッチの識別子を設定する必要があります[OID\_NIC\_切り替える\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)します。
-
-    **注**以降 Windows Server 2012 では、SR-IOV インターフェイスをサポートしています NIC スイッチが 1 つだけ、ネットワーク アダプター。 このスイッチと呼ばれる、*既定 NIC スイッチ*します。 上にあるドライバーが VPort の既定以外の作成時に設定する必要があります、 **SwitchId** NDIS メンバー\_既定\_スイッチ\_ID です。
+**メモ** 既定以外の VPorts は、NIC スイッチが作成された後でのみ作成できます。
 
 
 
--   **VPortId** NDIS にメンバーを設定する必要があります\_既定\_VPORT\_id。
+その後のドライバーは、Oid\_\_のオブジェクト識別子 (OID) メソッド要求を発行します。 [\_VPORT を作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)し、指定した nic スイッチに既定以外の vport を作成\_ます。 この OID 要求では、作成された VPort がネットワークアダプターの PF または以前に割り当てられた VF にもアタッチされます。
 
--   **AttachedFunctionId** VF またはアタッチする VPort 既定以外になっている PF の識別子にメンバーを設定する必要があります。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、[**ndis\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)へのポインターが含まれています。 vport\_PARAMETERS 構造体\_ます。 [OID\_\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)から正常に返された後\_vport 要求を作成\_、 **NDIS\_nic\_スイッチ**の**VPortId**メンバーは、vport\_パラメーター構造にNIC スイッチの Vport で一意な VPort 識別子。\_
 
-    NDIS @property\_PF\_関数\_ID が、PF. を指定します 以前の OID メソッド要求を通じて割り当てられたリソースを含む VF の識別子に値を設定する必要がありますそれ以外の場合、 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)します。
+このドライバーは、 [**NDIS\_NIC\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体を初期化して、作成する既定以外の vport に関する構成情報を指定します。 構成情報には、既定以外の VPort が接続されている PCIe 関数と、既定以外の VPort のキューペアの数が含まれます。
 
-    **注**VF または PF に既定以外の VPort の添付ファイルは既定以外の VPort が作成された後は変更できません。
+[**NDIS\_NIC\_スイッチ\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体を初期化すると、それ以降のドライバーは次の操作を行う必要があります。
 
+-   **Switchid**メンバーは、以前にネットワークアダプターで作成された nic スイッチの識別子に設定する必要があります。これには、OID [\_nic\_スイッチ\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)の oid メソッド要求を使用します。
 
-
-上にあるドライバーは、VPort に割り当てられているキュー ペアの数を指定もできます。 キュー ペアは、送信は、送受信、VPort に割り当てられているネットワーク アダプターのキューです。 ネットワーク アダプターでは、既定以外の拡張の非対称キュー ペアをサポートする場合、上にあるドライバーはドライバーを作成する各 VPort のキュー ペアの数が異なるを指定できます。 詳細については、次を参照してください。[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)します。
-
-上にあるドライバー呼び出し[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)問題を[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)基になる PF ミニポート ドライバーに要求します。 NDIS ミニポート ドライバーに OID メソッド要求を転送する前に、次は。
-
-1.  NDIS 内のパラメーターの検証、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体。 パラメーターがエラーである場合は、NDIS OID メソッド要求は失敗し、要求は、PF ミニポート ドライバーに渡されません。
-
-2.  NDIS に割り当てる 1 つの範囲内で VPort 既定以外の識別子を (**NumVPorts**– 1) ここで、 **NumVPorts**ミニポート ドライバーが、ネットワーク アダプターで構成されている拡張の数です。 ドライバーでは、この数を指定します、 **NumVPorts**のメンバー、 [ **NDIS\_NIC\_スイッチ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_info)構造体。 ドライバーの OID クエリ要求をこの構造体を返します[OID\_NIC\_スイッチ\_ENUM\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-switches)します。
-
-    **注**NDIS の A VPort 識別子\_既定\_VPORT\_VPort 既定 NIC スイッチの PF に関連付けられている既定の ID は予約されています。
+    **メモ** Windows Server 2012 以降では、SR-IOV インターフェイスはネットワークアダプター上で1つの NIC スイッチのみをサポートしています。 このスイッチは、既定の*NIC スイッチ*と呼ばれます。 既定以外の VPort を作成する場合は、前のドライバーで**Switchid**メンバーを NDIS\_の既定の\_スイッチ\_id 識別子に設定する必要があります。
 
 
 
+-   **VPortId**メンバーを NDIS\_既定\_vport\_ID に設定する必要があります。
 
-割り当てられた VPort 識別子には、既定以外の VPort ネットワーク アダプターの NIC のスイッチを一意に識別します。
+-   **AttachedFunctionId**メンバーは、既定以外の vport が接続される VF または PF の識別子に設定されている必要があります。
+
+    NDIS\_PF\_関数\_ID の値によって、PF が指定されます。 それ以外の場合は、値を設定する必要があります VF の識別子にリソースが以前に割り当てられている、Oid\_の oid の\_スイッチによって[\_vf\_割り当て](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)ます。
+
+    **メモ** 既定以外の vport から VF または PF への接続は、既定以外の VPort が作成された後には変更できません。
 
 
-3.  NDIS セット、 **VPortId**の NDIS メンバー\_NIC\_スイッチ\_VPORT\_割り当てられた VPort 識別子を持つパラメーター構造体。
 
-PF のミニポート ドライバーには、OID 要求が発行される、ドライバーは指定した既定以外の VPort に関連付けられているハードウェアおよびソフトウェア リソースを割り当てます。 すべてのリソースが正常に割り当てられた後、PF ミニポート ドライバー、OID が正常に完了 NDIS を返すことによって\_状態\_から成功[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request).
+また、このドライバーは、VPort に割り当てられたキューペアの数も指定できます。 キューペアは、VPort に割り当てられているネットワークアダプターの送信キューと受信キューです。 ネットワークアダプターが既定以外の VPorts に対して非対称キューペアをサポートしている場合、そのドライバーは、ドライバーが作成する各 Vports に対して異なる数のキューペアを指定することがあります。 詳細については、「[キューペアの対称および非対称割り当て](symmetric-and-asymmetric-assignment-of-queue-pairs.md)」を参照してください。
 
-場合、 [OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)要求が正常に完了、PF ミニポート ドライバーおよび上位のドライバーを保持する必要があります、 **VPortId** VPort 一連の操作の既定値以外の値。 **VPortId**値は、これらの操作中に使用されます。
+この後のドライバーは、 [**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)を呼び出して、基になる PF ミニポートドライバーに[\_VPORT 要求を作成\_ために、OID\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)を発行します。 NDIS が OID メソッド要求をミニポートドライバーに転送する前に、次のことを行います。
 
--   NDIS および上にあるドライバーを使用して、 **VPortId**を既定以外の連続する OID で VPort を識別する値を要求などに関連するこの VPort、 [OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)と[OID\_NIC\_スイッチ\_削除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)します。
+1.  NDIS は、 [**ndis\_NIC\_スイッチ\_VPORT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体内のパラメーターを検証します。 パラメーターがエラーの場合、NDIS は OID メソッド要求を失敗とし、PF ミニポートドライバーに要求を渡しません。
 
--   送信操作では中、NDIS を指定します、 **VPortId** VPort のパケットの送信元を識別する値。 バンドの外 (OOB) 内でこの値が指定されて[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)のデータ、[NET\_バッファー\_一覧](net-buffer-list-structure.md)構造体。
+2.  NDIS は、1から (**numvports**– 1) までの既定以外の vport の識別子を割り当てます。ここで、 **numvports**は、ミニポートドライバーがネットワークアダプター上で構成した vport の数です。 この番号は、 [**NDIS\_NIC\_スイッチ\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)構造体の**numvports**メンバーに指定されています。 このドライバーは、oid [\_NIC\_スイッチ\_列挙型\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-switches)の oid クエリ要求によって、この構造体を返します。
 
--   中に受信操作、PF ミニポート ドライバーを指定します、 **VPortId**パケットが転送される値。 この値は、OOB 内も指定[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)データ、の[NET\_バッファー\_一覧](net-buffer-list-structure.md)構造体。
+    **メモ** NDIS\_既定の VPort 識別子\_VPORT\_ID は、既定の NIC スイッチの PF に接続されている既定の VPort 用に予約されています。
 
-次の点は、既定以外の拡張の作成に適用されます。
 
--   メディア アクセス制御 (MAC) が作成された後は、仮想 LAN (VLAN) の識別子を VPort で構成のフィルターが表示されます。 これらのドライバーを動的に関連する設定の OID メソッド要求を発行してフィルターが表示される[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 受信フィルターは、1 つ VPort OID を別の要求の設定から移動することも[OID\_受信\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)します。
 
--   作成時にその VPort は VF にアタッチされている既定以外はアクティブ化された状態です。 VF にアタッチされている場合、VPort を非アクティブ化できません。
 
-    作成時にその VPort が PF にアタッチされている既定以外は、非アクティブ化の状態です。 HYPER-V 拡張可能スイッチ モジュールなどの上にあるドライバーには、VPort が正常に作成された後、PF に VPort 接続されている既定以外に明示的にアクティブにします。 これには、OID メソッド要求の発行を[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters) PF ミニポート ドライバーにします。
+割り当てられた VPort 識別子は、ネットワークアダプターの NIC スイッチの既定以外の VPort を一意に識別します。
 
-    上にあるドライバーは、この OID 要求を発行の際に渡して、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) を含む構造体**VPortState**メンバーに設定**NdisNicSwitchVPortStateActivated**します。
 
-    既定以外の VPort がアクティブ化された状態を後、PF ミニポート ドライバーに割り当てることが共有メモリ、VPort 呼び出して[ **NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatesharedmemory)します。 ドライバーを設定する必要があります、 **VPortId**内のメンバー、 [ **NDIS\_SHARED\_メモリ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_shared_memory_parameters) VPort の構造体識別子の値。
+3.  NDIS は、割り当てられた VPort 識別子を使用して、NDIS\_NIC\_スイッチ\_VPORT\_PARAMETERS 構造体の**VPortId**メンバーを設定します。
 
-**注**既定以外の VPort がアクティブ化された状態をときにのみ設定されますを非アクティブ化された状態には、削除の OID セット要求を[OID\_NIC\_スイッチ\_削除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport).
+PF ミニポートドライバーが OID 要求を発行すると、ドライバーは、指定された既定以外の VPort に関連付けられているハードウェアとソフトウェアのリソースを割り当てます。 すべてのリソースが正常に割り当てられると、PF ミニポートドライバーは、 [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)から NDIS\_STATUS\_SUCCESS を返すことによって OID を正常に完了します。
+
+[OID\_NIC\_スイッチ\_作成\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)要求が正常に完了した場合、PF ミニポートドライバーとそれ以降のドライバーは、後続の操作のために既定以外の Vport の**VPortId**値を保持する必要があります。 **VPortId**の値は、次の操作中に使用されます。
+
+-   NDIS およびそれ以降のドライバーでは、 **VPortId**値を使用して、この vport に関連する oid 要求 ( [oid\_nic\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)および[oid\_NIC など) で、既定以外の vport を識別します。\_スイッチ\_\_VPORT を削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)します。
+
+-   送信操作中、NDIS は、パケットの送信元の VPort を識別する**VPortId**値を指定します。 この値は、帯域外 (OOB) [**NDIS\_net\_buffer\_\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)に指定されており、 [net\_buffer\_list](net-buffer-list-structure.md)構造体の\_情報データをフィルター処理しています。
+
+-   受信操作中、PF ミニポートドライバーは、パケットを転送する**VPortId**値を指定します。 この値は、OOB [**NDIS\_net\_buffer\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)でも指定されており、 [net\_buffer\_list](net-buffer-list-structure.md)構造体の\_情報データをフィルター処理\_ます。
+
+既定以外の VPorts の作成には、次の点が適用されます。
+
+-   メディアアクセス制御 (MAC) 識別子および仮想 LAN (VLAN) id の受信フィルターは、作成後に VPort で構成されます。 このようなドライバーは、Oid の OID メソッド要求を発行することによって、これらの受信フィルターを動的に設定[\_フィルター\_設定された\_フィルターを\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 また、受信フィルターは、oid の OID セット要求を使用して、1つの VPort から別の VPort に移動することもできます。この場合、フィルター [\_フィルター\_移動する\_フィルターを\_受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)します
+
+-   VF に接続されている既定以外の VPort は、作成時にアクティブ化された状態になります。 VPort が VF にアタッチされている場合、この VPort を非アクティブ化することはできません。
+
+    PF に接続されている既定以外の VPort は、作成時に非アクティブ状態になります。 Hyper-v 拡張可能スイッチモジュールなどの前のドライバーは、VPort が正常に作成された後に、PF に接続されている既定以外の VPort を明示的にアクティブ化します。 これを行うには、oid\_NIC の OID メソッド要求を発行して、 [VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を PF ミニポートドライバーに\_\_します。
+
+    この OID 要求が発行されると、そのドライバーは、 **Vportstate**メンバーを**NdisNicSwitchVPortStateActivated**に設定して、 [**NDIS\_NIC\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造に渡します。
+
+    既定以外の VPort がアクティブ化された状態になると、PF ミニポートドライバーは[**NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)を呼び出すことによって、vport の共有メモリを割り当てることができます。 ドライバーは、 [**NDIS\_SHARED\_MEMORY\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)構造体の**VPortId**メンバーを、vport の識別子の値に設定する必要があります。
+
+**メモ** 既定以外の VPort がアクティブ化された状態になっている場合、oid [\_NIC\_\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)によって削除されると、非アクティブ状態に設定されます。
 
 
 

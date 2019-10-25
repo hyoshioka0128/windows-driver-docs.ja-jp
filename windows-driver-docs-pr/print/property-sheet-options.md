@@ -1,39 +1,39 @@
 ---
-title: プロパティ シート オプション
-description: プロパティ シート オプション
+title: プロパティシートのオプション
+description: プロパティシートのオプション
 ms.assetid: 572330d6-1a1b-46fd-bfb4-be2b0990bca4
 keywords:
-- 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、プロパティ シートのオプション
-- CPSUI WDK 印刷、プロパティ シートのオプション
-- WDK プロパティ シートのページの印刷、プロパティ シートのオプション
-- WDK のプロパティ シートを印刷します。
-- 選択可能なプロパティ シート ページ項目 WDK を印刷します。
+- 共通プロパティシートのユーザーインターフェイス WDK print、プロパティシートオプション
+- CPSUI WDK print、プロパティシートオプション
+- プロパティシートページの WDK 印刷、プロパティシートのオプション
+- プロパティシートの WDK 印刷
+- 選択可能なプロパティシートページ項目の WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3daf9f4a1554970fcaa231028ebdd9f6a06af9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d897f746ce3950d0d506e1cf7e013f79e227b09
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356021"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840423"
 ---
-# <a name="property-sheet-options"></a>プロパティ シート オプション
+# <a name="property-sheet-options"></a>プロパティシートのオプション
 
 
 
 
 
-プロパティ シートのオプションは、プロパティ シートのページで選択可能な表示可能な項目です。 通常、ユーザーは、オプションの値を変更できます。 CPSUI により、標準の形式での作成オプションのアプリケーションの定義済みセットを使用して[CPSUI でサポートされているウィンドウ コントロール](cpsui-supported-window-controls.md)します。 アプリケーションをこれらのコントロールのリソースを提供する必要はありません。
+プロパティシートオプションは、プロパティシートページ上にある、オプションの選択可能な項目です。 通常、ユーザーはオプションの値を変更できます。 CPSUI は、 [CPSUI がサポート](cpsui-supported-window-controls.md)する一連のウィンドウコントロールを使用して、アプリケーションが標準形式でオプションを作成するのに役立ちます。 アプリケーションでは、これらのコントロールにリソースを提供する必要はありません。
 
-通常、各プロパティ ページには、いくつかのオプションが含まれています。 プロパティ シートのオプションごとに CPSUI アプリケーションは、次の CPSUI 構造を使用する必要があります。
+各プロパティシートページには、通常、いくつかのオプションが含まれています。 各プロパティシートオプションでは、CPSUI アプリケーションで次の CPSUI 構造体を使用する必要があります。
 
--   1 つ[ **OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体は、オプションの表示名とその他の特性を識別します。
+-   1つの[**Optitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)構造体。オプションの表示名とその他の特性を識別します。
 
--   1 つ[ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)オプションの表示 ダイアログの種類を識別する構造体 ([CPSUI オプションの種類](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types))。
+-   オプションの display dialog type ([CPSUI option type](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)) を識別する1つの[**opttype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)構造体。
 
--   1 つまたは複数[ **OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体は、オプションのユーザーが選択可能なパラメーターの値を識別します。
+-   オプションのユーザーが選択できるパラメーター値を識別する1つ以上の[**Optparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)構造体。
 
-これらの CPSUI 構造体を使用して、プロパティ シートのオプションについて説明する、オプションが含まれるページを使用して、 [ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)構造体。
+これらの CPSUI 構造体を使用してプロパティシートオプションを記述するには、オプションを含むページを[**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)構造体を使用して定義する必要があります。
 
  
 

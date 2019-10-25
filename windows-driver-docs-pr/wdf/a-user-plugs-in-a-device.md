@@ -1,54 +1,54 @@
 ---
-title: ユーザーがデバイスを接続する
-description: ユーザーがデバイスを接続する
+title: ユーザーがデバイスに接続する
+description: ユーザーがデバイスに接続する
 ms.assetid: cc047c05-f3aa-4423-98fc-cafd7777e104
 keywords:
-- WDK の PnP KMDF、装置を接続します。
-- プラグ アンド プレイ WDK KMDF、装置を接続します。
-- WDK KMDF の装置を接続します。
-- WDK KMDF のデバイスを追加します。
+- PnP WDK KMDF、デバイスの接続
+- WDK KMDF のプラグアンドプレイ、デバイスの接続
+- デバイスへの接続 (WDK KMDF)
+- WDK KMDF デバイスの追加
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db4fb925401ceb5f776ea37d5da2b8d749b7ac0d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f3c006e5a8699a8573ca468b9d98d7457a69bd78
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385327"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841674"
 ---
-# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
+# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスに接続する
 
 
-次のシナリオでは、[デバイス] ノードには、KMDF バス ドライバーと 1 つまたは複数 KMDF 関数またはフィルターをサポートするドライバー、PnP デバイスが含まれます。
+次のシナリオでは、デバイスノードに KMDF バスドライバーと、PnP デバイスをサポートする1つ以上の KMDF 関数またはフィルタードライバーが含まれています。
 
-ユーザーは、システムの実行中に、バスにデバイスを接続、ときに、デバイスのバス ドライバー、フレームワークは、次のタスクを実行します。
+システムの実行中にユーザーがデバイスをバスに接続すると、デバイスのバスドライバーとフレームワークは次のタスクを実行します。
 
--   デバイスのバス ドライバーを検出し、デバイス呼び出し[ **WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)します。 (このプロセスは「動的な列挙です」と呼ばれます)
+-   デバイスのバスドライバーによってデバイスが検出され、 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)が呼び出されます。 (このプロセスは "動的列挙" と呼ばれます)。
 
--   フレームワークは、バス ドライバーの[ *EvtChildListCreateDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)コールバック関数、バス ドライバーを呼び出せるように[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)物理デバイス (PDO) framework デバイス オブジェクトを作成します。
+-   フレームワークはバスドライバーの[*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)コールバック関数を呼び出します。そのため、バスドライバーは[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、物理デバイス (PDO) のフレームワークデバイスオブジェクトを作成できます。
 
--   フレームワークは、バス ドライバーの[ *EvtDeviceResourcesQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_resources_query)と[ *EvtDeviceResourceRequirementsQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_resource_requirements_query)コールバックデバイスを必要とするシステムのハードウェア リソースを特定する関数。
+-   このフレームワークは、バスドライバーの[*EvtDeviceResourcesQuery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_resources_query)および[*EvtDeviceResourceRequirementsQuery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_resource_requirements_query)コールバック関数を呼び出して、デバイスに必要なシステムハードウェアリソースを決定します。
 
-KMDF バス ドライバーの電源投入シーケンスの詳細については、次を参照してください。[バス ドライバーの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)します。
+KMDF バスドライバーの電源投入シーケンスの詳細については、「[バスドライバーの電源をオン](power-up-sequence-for-a-bus-driver.md)にする」を参照してください。
 
-次に、PnP マネージャーでは、デバイスが必要とする追加のドライバー (関数ドライバーおよびフィルター ドライバー) を決定します。 PnP マネージャーがそれらを読み込み、呼び出しをこれらのドライバーが既に読み込まれていない場合、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。 各関数またはフィルター ドライバーは、次の操作が行われます。
+次に、PnP マネージャーによって、デバイスに必要な追加のドライバー (関数ドライバーとフィルタードライバー) が決定されます。 これらのドライバーがまだ読み込まれていない場合は、PnP マネージャーによってそれらが読み込まれ、 [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンが呼び出されます。 関数またはフィルタードライバーごとに、次のアクションが実行されます。
 
--   フレームワークは、追加のドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数のドライバーを呼び出すことができるように[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)ドライバーのデバイスを表す framework デバイス オブジェクトを作成します。 関数のドライバーが機能するデバイス オブジェクト (FDO) を作成し、フィルター ドライバーが (フィルターの操作) フィルター デバイス オブジェクトを作成します。
+-   このフレームワークは、追加のドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出します。これにより、ドライバーが[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、ドライバーのデバイスを表すフレームワークデバイスオブジェクトを作成できるようになります。 関数ドライバーは、機能しているデバイスオブジェクト (FDO) を作成し、フィルタードライバーはフィルターデバイスオブジェクト (フィルター処理) を作成します。
 
--   フレームワークは各関数とフィルター ドライバーの[ *EvtDeviceFilterRemoveResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)コールバック関数と、各ドライバーの[ *EvtDeviceFilterAddResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)コールバック関数。 デバイスが起動して、前に、フレームワークの直前に、 [ *EvtDeviceRemoveAddedResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)コールバック関数。 これら 3 つのコールバック関数では、PnP マネージャーがデバイスにリソースを割り当てる前に、デバイスに必要なハードウェア リソースの一覧を変更するフィルターと関数のドライバーを許可します。 詳細については、次を参照してください[Framework ベースのドライバーのハードウェア リソース。](hardware-resources-for-kmdf-drivers.md)
+-   フレームワークは、各関数とフィルタードライバーの[*EvtDeviceFilterRemoveResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) callback 関数を呼び出し、その後、各ドライバーの[*EvtDeviceFilterAddResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)コールバック関数を呼び出します。 デバイスが起動する直前に、フレームワークは[*Evtdeviceremoveaddedresources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)コールバック関数を呼び出します。 これら3つのコールバック関数を使用すると、PnP マネージャーがデバイスにリソースを割り当てる前に、フィルターおよび関数ドライバーで、デバイスに必要なハードウェアリソースの一覧を変更できます。 詳細については、「[フレームワークベースのドライバーのハードウェアリソース](hardware-resources-for-kmdf-drivers.md)」を参照してください。
 
--   フレームワークにより、デバイスの作業 (D0) の電源状態に達したこと。
+-   このフレームワークにより、デバイスが動作 (D0) の電源状態に達したことが確認されます。
 
--   各関数とフィルター ドライバーのデバイスをサポートする、フレームワークは、一度に 1 つのドライバーをドライバー スタックの最下位レベルである driver 以降では、シーケンスで、次を行います。
-    1.  フレームワークは、ドライバーの[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) (存在する) 場合、コールバック関数を PnP マネージャーがデバイスに割り当てられているハードウェア リソースの一覧を渡します。
-    2.  フレームワークは、ドライバーの[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) (存在する) 場合、コールバック関数。
-    3.  フレームワークは、ドライバーの[ *EvtInterruptEnable* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)コールバック関数 (存在する) 場合の各中断し、呼び出し、ドライバーの[ *EvtDeviceD0EntryPostInterruptsEnabled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry_post_interrupts_enabled)コールバック関数 (存在する) 場合、ドライバーには、デバイスの割り込みが有効にすることができます。
-    4.  場合は、ハードウェアとドライバーは、DMA をサポート、フレームワークのドライバーの[ *EvtDmaEnablerFill*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_fill)、 [ *EvtDmaEnablerEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_enable)と[ *EvtDmaEnablerSelfManagedIoStart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_start)コールバックが作成された DMA チャネルごと (存在する) 場合に機能します。
-    5.  フレームワークは、ドライバーの[ *EvtChildListScanForChildren* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children) (存在する) 場合、コールバック関数。
-    6.  フレームワークでは、すべてのデバイスの電源管理対象の I/O キューが開始されます。
-    7.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ *EvtDeviceSelfManagedIoInit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)コールバック関数。
+-   デバイスをサポートする関数とフィルタードライバーごとに、次の処理が実行されます。これは、ドライバースタックの一番下にあるドライバーから、一度に1つずつ実行されます。
+    1.  フレームワークは、ドライバーの[*Evtdeviceの*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数 (存在する場合) を呼び出し、PnP マネージャーによってデバイスに割り当てられたハードウェアリソースのリストを渡します。
+    2.  フレームワークは、ドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)コールバック関数 (存在する場合) を呼び出します。
+    3.  フレームワークは、各割り込みのドライバーの[*EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable) callback 関数 (存在する場合) を呼び出し、ドライバーの[*EvtDeviceD0EntryPostInterruptsEnabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry_post_interrupts_enabled) callback 関数 (存在する場合) を呼び出して、ドライバーが有効にできるようにします。デバイスの割り込み。
+    4.  ハードウェアとドライバーが DMA をサポートしている場合、フレームワークは、作成された各 DMA チャネルに対して、ドライバーの[*EvtDmaEnablerFill*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_fill)、 [*EvtDmaEnablerEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_enable)、および[*EvtDmaEnablerSelfManagedIoStart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_start)のコールバック関数 (存在する場合) を呼び出します。
+    5.  フレームワークは、ドライバーの[*Evtchildlistscanforchildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)コールバック関数 (存在する場合) を呼び出します。
+    6.  フレームワークは、デバイスのすべての電源管理 i/o キューを開始します。
+    7.  ドライバーが自己管理型 i/o を使用している場合、フレームワークは、ドライバーの[*Evtdeviceselfmanagedioinit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)コールバック関数を呼び出します。
 
-KMDF 関数またはフィルター ドライバーは、電源投入シーケンスの詳細については[関数またはフィルター ドライバーの電源投入シーケンス](power-up-sequence-for-a-function-or-filter-driver.md)します。
+KMDF 関数またはフィルタードライバーの電源投入シーケンスの詳細については、[関数またはフィルタードライバーの電源を](power-up-sequence-for-a-function-or-filter-driver.md)入れてください。
 
  
 

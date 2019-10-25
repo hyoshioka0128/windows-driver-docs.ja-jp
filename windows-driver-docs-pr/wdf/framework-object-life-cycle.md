@@ -3,19 +3,19 @@ title: フレームワーク オブジェクトのライフ サイクル
 description: フレームワーク オブジェクトのライフ サイクル
 ms.assetid: 33efc3a8-ac46-4626-ba0f-beb1eaa9ee47
 keywords:
-- framework オブジェクト WDK KMDF、ライフ サイクル
-- WDK KMDF のライフ サイクル
-- framework のオブジェクトを作成する、WDK KMDF
-- 参照カウントの WDK KMDF
-- framework のオブジェクトを削除する、WDK KMDF
+- フレームワークオブジェクト WDK KMDF、ライフサイクル
+- ライフサイクル WDK KMDF
+- フレームワークオブジェクト WDK KMDF, 作成
+- 参照カウント WDK KMDF
+- フレームワークオブジェクト WDK KMDF、削除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 358095c96a619fcdabd591024615a321b0086b40
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 63cd01ac5cba944730bb484e2f08e44ace760c6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384456"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843115"
 ---
 # <a name="framework-object-life-cycle"></a>フレームワーク オブジェクトのライフ サイクル
 
@@ -23,41 +23,41 @@ ms.locfileid: "67384456"
 
 
 
-Framework オブジェクトの「ライフ サイクル」は、削除されるときに、オブジェクトの作成時から時間をまたがっています。 オブジェクトの参照カウント コントロールが削除されるときにします。
+フレームワークオブジェクトの "ライフサイクル" は、オブジェクトが削除されたときからに対して作成されるまでの時間を範囲としています。 オブジェクトの参照カウントは、削除されるタイミングを制御します。
 
-### <a name="creating-a-framework-object"></a>Framework オブジェクトを作成します。
+### <a name="creating-a-framework-object"></a>フレームワークオブジェクトの作成
 
-ほとんどのフレームワーク オブジェクトは、オブジェクトの作成方法のドライバーの呼び出しによって作成されます。 たとえば、各フレームワーク ドライバーを呼び出す必要があります[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)フレームワーク ドライバー オブジェクトを作成します。
+ほとんどのフレームワークオブジェクトは、オブジェクトの作成メソッドへのドライバーの呼び出しによって作成されます。 たとえば、各フレームワークドライバーは、 [**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出して、フレームワークドライバーオブジェクトを作成する必要があります。
 
-その他のフレームワーク オブジェクトは、フレームワークによって作成されます。 たとえば、ユーザーのアプリケーションでのデバイスを開くと読み取りまたは書き込み操作、フレームワークが framework ファイル オブジェクトを作成し、ドライバーに渡します[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数。
+その他のフレームワークオブジェクトは、フレームワークによって作成されます。 たとえば、ユーザーアプリケーションが読み取り操作または書き込み操作のためにデバイスを開くと、フレームワークによってフレームワークファイルオブジェクトが作成され、ドライバーの[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create) callback 関数に渡されます。
 
-いずれか、フレームワークによって、またはドライバーによって、いくつかのフレームワーク オブジェクトを作成できます。 たとえば、I/O マネージャーは、ドライバー、I/O 要求を配信するときにフレームワークはフレームワーク要求オブジェクトを作成しに配信、ドライバーでは、通常、ドライバーの要求ハンドラーの 1 つを呼び出すことによって。 ドライバーは framework 要求オブジェクトを作成し、その他のドライバーに配信できます。
+フレームワークまたはドライバーによって、いくつかのフレームワークオブジェクトを作成できます。 たとえば、i/o マネージャーがドライバーに i/o 要求を送信すると、フレームワークはフレームワーク要求オブジェクトを作成し、ドライバーに配信します。通常は、ドライバーの要求ハンドラーのいずれかを呼び出します。 また、ドライバーはフレームワークの要求オブジェクトを作成し、他のドライバーに配信することもできます。
 
-### <a name="using-reference-counts"></a>参照を使用してカウントします。
+### <a name="using-reference-counts"></a>参照カウントの使用
 
-フレームワークは、各オブジェクトの参照カウントを保持します。 オブジェクトが作成されたときに、フレームワークは、1 つに、参照カウントを設定します。 参照カウントには、0 になると、フレームワークは、オブジェクトを削除します。
+フレームワークは、各オブジェクトの参照カウントを保持します。 オブジェクトが作成されると、フレームワークはその参照カウントを1に設定します。 参照カウントがゼロになると、フレームワークによってオブジェクトが削除されます。
 
-ドライバーは、呼び出すことによって、オブジェクトの参照カウントを変更できます[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)参照カウントをインクリメントするまたは[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)参照カウントをデクリメントします。 (ドライバーが呼び出せる**WdfObjectDereference**が以前に呼び出された場合にのみ**WdfObjectReference**)。
+ドライバーでは、 [**Wdfobjectreference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)を呼び出して参照カウントまたは[**Wdfobjectreference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)参照をインクリメントし、参照カウントをデクリメントすることで、オブジェクトの参照カウントを変更できます。 (ドライバーは、以前に**Wdfobjectdereference**を呼び出した場合にのみ、 **Wdfobjectdereference**参照を呼び出すことができます)。
 
-ほとんどの場合、ドライバーはインクリメントまたはオブジェクトの参照カウントをデクリメントする必要はありません。 フレームワーク カウントをインクリメント数を渡す前に、オブジェクトのハンドルと、ドライバーでは、デクリメント、ドライバーが不要になったオブジェクトを必要がある場合。
+ほとんどの場合、ドライバーはオブジェクトの参照カウントをインクリメントまたはデクリメントする必要がありません。 フレームワークは、オブジェクトのハンドルをドライバーに渡す前にカウントをインクリメントし、ドライバーがオブジェクトを必要としなくなったときにカウントをデクリメントします。
 
-ドライバー呼び出し[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)オブジェクトは削除しないようにする (フレームワークまたはドライバーのスレッドによって) を使用して、ドライバーを完了する前にします。 ドライバーが呼び出す必要があります例ような状況の**WdfObjectReference**と[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)を参照してください[送信の取り消しを同期します。要求](synchronizing-cancellation-of-sent-requests.md)します。
+ドライバーが使用を終了する前に、(フレームワークまたはドライバースレッドによって) オブジェクトが削除されないようにするために、ドライバーは[**Wdfobjectreference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)を呼び出します。 ドライバーが**Wdfobjectreference**と[**Wdfobjectreference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)参照を呼び出す必要がある状況の例については、「[送信された要求の取り消しの同期](synchronizing-cancellation-of-sent-requests.md)」を参照してください。
 
-### <a name="deleting-a-framework-object"></a>Framework のオブジェクトを削除します。
+### <a name="deleting-a-framework-object"></a>フレームワークオブジェクトの削除
 
-オブジェクトは、ドライバーを呼び出すため、削除された[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)またはフレームワークは、内部削除ルーチンを呼び出しますが、参照カウントが 0 の場合にのみ、オブジェクトが削除されたためです。 ドライバーやフレームワークは、オブジェクトを削除しようとしましたが、後に、オブジェクトのハンドルの値は、参照カウントがゼロになった後まで有効です。 ドライバー*できません*オブジェクトを呼び出すだけで削除[ **WdfObjectDereference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference) 0 - オブジェクトの参照カウントをデクリメントするドライバー呼び出す必要がありますも**WdfObjectDelete**します。
+オブジェクトは削除されます。これは、ドライバーが[**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出すか、フレームワークが内部削除ルーチンを呼び出しますが、オブジェクトは参照カウントが0の場合にのみ削除されるためです。 ドライバーまたはフレームワークがオブジェクトを削除しようとすると、オブジェクトのハンドルは、参照カウントが0になるまで有効なままになります。 ドライバーは、 [**Wdfobjectdereference 参照**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)を呼び出してオブジェクトの参照カウントをゼロにデクリメントするだけでオブジェクトを削除する*ことはできません*。ドライバーは、 **wdfobjectdereference**も呼び出す必要があります。
 
-Framework オブジェクトの親の子オブジェクトである親が削除されている場合は、フレームワークは、親を削除する前に、子オブジェクトを削除しようとします。 オブジェクトの削除は、惑星の親オブジェクトから開始し、オブジェクト階層のルートに向かってを動作します。
+フレームワークオブジェクトが親の子オブジェクトで、親が削除されている場合、フレームワークは親を削除する前に子オブジェクトを削除しようとします。 オブジェクトの削除は、親から最も遠いオブジェクトから開始され、オブジェクトの階層がルートに向かって機能します。
 
-ドライバーは、ドライバーやフレームワークがオブジェクトを削除するときにフレームワークから呼び出される次の 2 つのコールバック関数を登録できます。
+ドライバーは、次の2つのコールバック関数を登録できます。これらの関数は、ドライバーまたはフレームワークがオブジェクトを削除するときに、フレームワークが呼び出します。
 
--   [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバック関数は、フレームワーク、ドライバーを呼び出せるように[ **WdfObjectDereference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)場合以前と呼ばれていた[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)オブジェクトの削除中です。
+-   [*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバック関数。この関数は、以前に削除されるオブジェクトに対して[**Wdfobjectdereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)を呼び出した場合に、ドライバーが[**wdfobjectdereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)参照を呼び出すことができるように、フレームワークによって呼び出されます。
 
--   [ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数では、フレームワークを呼び出した後、オブジェクトの参照カウントがゼロにデクリメントされています。
+-   フレームワークがオブジェクトの参照カウントを0にデクリメントした後に呼び出す[*Evtdestroycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数。
 
-これらのコールバック関数のいずれかのオブジェクトが作成されたときに、ドライバーが割り当てられているオブジェクトに固有のリソースの割り当てを解除する必要があります。
+これらのコールバック関数の1つは、オブジェクトの作成時にドライバーによって割り当てられたオブジェクト固有のリソースの割り当てを解除する必要があります。
 
-フレームワークは、常に、フレームワークの一部のオブジェクトの削除を処理して、ドライバーがこれらのオブジェクトを削除しないでください。 ドライバーを削除できません framework オブジェクトの一覧は、次を参照してください。 [ **WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)します。
+フレームワークは、フレームワークオブジェクトの削除を常に処理し、ドライバーはこれらのオブジェクトを削除しないようにする必要があります。 ドライバーが削除できないフレームワークオブジェクトの一覧については、「 [**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)」を参照してください。
 
  
 

@@ -3,20 +3,20 @@ title: プロトコル バインドの状態と操作
 description: プロトコル バインドの状態と操作
 ms.assetid: 669b3de1-7f6b-4e63-8943-c8eaadfa80fc
 keywords:
-- プロトコル ドライバー WDK ネットワークは、バインドの操作状態
-- NDIS プロトコル ドライバー WDK には、バインディング操作を状態します。
-- バインドは、WDK ネットワークを状態します。
-- プロトコル ドライバー WDK ネットワー キング、イベント
-- NDIS プロトコル ドライバー WDK、イベント
-- イベントの WDK ネットワーク
+- プロトコルドライバー WDK ネットワーク、バインド動作状態
+- NDIS プロトコルドライバー WDK、バインド操作の状態
+- バインドの状態 WDK ネットワーク
+- プロトコルドライバー WDK ネットワーク、イベント
+- NDIS プロトコルドライバー WDK、イベント
+- イベント WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a446101908e233f67e336d0ad4b235ff53791557
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b74e4e019b2aec5f2ae196e2d2b5c76b56b71cfd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385463"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843476"
 ---
 # <a name="protocol-binding-states-and-operations"></a>プロトコル バインドの状態と操作
 
@@ -24,30 +24,30 @@ ms.locfileid: "67385463"
 
 
 
-NDIS プロトコル ドライバーはドライバーを管理する各バインドに次の操作の状態をサポートする必要があります。
+NDIS プロトコルドライバーでは、ドライバーが管理する各バインドについて、次の動作状態がサポートされている必要があります。
 
-<a href="" id="unbound"></a>バインドされていません。  
-連結なしの状態は、バインディングの初期状態です。 この状態は、NDIS を呼び出すが待機プロトコル ドライバー、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。
+<a href="" id="unbound"></a>非バインド  
+バインド解除された状態は、バインディングの初期状態です。 この状態では、プロトコルドライバーは NDIS が[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出すまで待機します。
 
-<a href="" id="opening"></a>開始  
-Opening 状態では、プロトコル ドライバーは、バインディングにリソースを割り当て、アダプターを開こうとするとします。
+<a href="" id="opening"></a>左中  
+オープン状態では、プロトコルドライバーはバインドのリソースを割り当て、アダプターを開こうとします。
 
-<a href="" id="running"></a>実行しています。  
-実行中の状態では、プロトコル ドライバーは、送信を実行し、バインドの処理を受信します。
+<a href="" id="running"></a>起動  
+実行中の状態では、プロトコルドライバーはバインドの送信および受信処理を実行します。
 
-<a href="" id="closing"></a>閉じる  
-Closing 状態にプロトコル ドライバー アダプターへのバインドを閉じて、バインディングのリソースを解放します。
+<a href="" id="closing"></a>右山  
+終了状態では、プロトコルドライバーはアダプターへのバインディングを閉じ、バインディングのリソースを解放します。
 
 <a href="" id="pausing"></a>一時停止  
-一時停止中の状態では、プロトコル ドライバーは、送信を停止し、受信バインドの操作に必要なすべての操作を完了します。
+一時停止中の状態では、バインドの送信および受信操作を停止するために必要なすべての操作が、プロトコルドライバーによって完了されます。
 
-<a href="" id="paused"></a>一時停止  
-一時停止状態でプロトコル ドライバーにすれば、送信を実行または受信バインディングの操作はできません。
+<a href="" id="paused"></a>中  
+一時停止状態では、プロトコルドライバーはバインドに対して送信操作または受信操作を実行しません。
 
-<a href="" id="restarting"></a>再起動します。  
-再起動の状態では、プロトコル ドライバーは、送信を再起動し、受信バインドの操作に必要なすべての操作を完了します。
+<a href="" id="restarting"></a>再起動  
+再起動状態では、プロトコルドライバーは、バインディングの送信および受信操作を再開するために必要なすべての操作を完了します。
 
-次の表に、見出しがバインドの状態を表すし、イベントは、最初の列に表示されます。 テーブル内のエントリの残りの部分は、[次へ] を指定のバインドは特定の状態でイベントが発生した後の入力を状態します。 空のエントリは、無効なイベントの状態の組み合わせを表します。
+次の表では、ヘッダーはバインド状態を表し、イベントは最初の列に一覧表示されています。 テーブル内の残りのエントリは、状態内でイベントが発生した後にバインドが入力する次の状態を指定します。 空のエントリは、無効なイベントと状態の組み合わせを表します。
 
 <table>
 <colgroup>
@@ -63,19 +63,19 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <thead>
 <tr class="header">
 <th align="left">イベント \ 状態</th>
-<th align="left">バインドされていません。</th>
-<th align="left">開始</th>
-<th align="left">閉じる</th>
+<th align="left">非バインド</th>
+<th align="left">左中</th>
+<th align="left">右山</th>
 <th align="left">一時停止</th>
-<th align="left">再起動します。</th>
-<th align="left">実行中</th>
+<th align="left">再起動</th>
+<th align="left">Running</th>
 <th align="left">一時停止</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>ProtocolBindAdapterEx</em></p></td>
-<td align="left"><p>開始</p></td>
+<td align="left"><p>左中</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -86,7 +86,7 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <tr class="even">
 <td align="left"><p>バインドに失敗しました</p></td>
 <td align="left"></td>
-<td align="left"><p>バインドされていません。</p></td>
+<td align="left"><p>非バインド</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -108,7 +108,7 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>閉じる</p></td>
+<td align="left"><p>右山</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -117,14 +117,14 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <td align="left"><p>バインド解除が完了しました</p></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>バインドされていません。</p></td>
+<td align="left"><p>非バインド</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>PnP の一時停止</p></td>
+<td align="left"><p>PnP 一時停止</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -134,7 +134,7 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>一時停止が完了</p></td>
+<td align="left"><p>一時停止が完了しました</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -148,18 +148,18 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>再起動します。</p></td>
+<td align="left"><p>再起動</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>再起動が完了</p></td>
+<td align="left"><p>再起動が完了しました</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>実行中</p></td>
+<td align="left"><p>Running</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -174,23 +174,23 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>送信し、受信操作</p></td>
+<td align="left"><p>送信および受信操作</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>実行中</p></td>
+<td align="left"><p>Running</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>OID 要求</p></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>閉じる</p></td>
+<td align="left"><p>右山</p></td>
 <td align="left"><p>一時停止</p></td>
-<td align="left"><p>再起動します。</p></td>
-<td align="left"><p>実行中</p></td>
+<td align="left"><p>再起動</p></td>
+<td align="left"><p>Running</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 </tbody>
@@ -198,56 +198,56 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 
  
 
-**注**  上記の表に示したイベントは、NDIS プロトコル バインドのプライマリのイベント。 追加のイベントは、情報が利用可能になった、このテーブルに追加されます。
+前の表に記載されているイベントは、NDIS プロトコルバインドの主要なイベントで  **ことに注意**してください。 情報が使用可能になると、このテーブルに追加のイベントが追加されます。
 
  
 
-プライマリ バインド イベントの定義は次のとおりです。
+プライマリバインディングイベントは、次のように定義されます。
 
 <a href="" id="protocolbindadapterex"></a>*ProtocolBindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数の場合、バインディングが Opening 状態に遷移します。 詳細については、次を参照してください。[をアダプターにバインド](binding-to-an-adapter.md)します。
+NDIS がドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出した後、バインディングは開始状態になります。 詳細については、「[アダプターへのバインド](binding-to-an-adapter.md)」を参照してください。
 
 <a href="" id="bind-failed"></a>バインドに失敗しました  
-プロトコル ドライバーはアダプターにバインドできない場合、バインディングは連結なし状態に戻ります。
+プロトコルドライバーがアダプターへのバインドに失敗した場合、バインドはバインドされていない状態に戻ります。
 
 <a href="" id="bind-is-complete"></a>バインドが完了しました  
-ドライバーでは、アダプターが正常に開き、バインドは一時停止状態になります。 ドライバーは、バインド操作を完了します。
+ドライバーがアダプターを正常に開くと、バインドは一時停止状態になります。 ドライバーはバインド操作を完了します。
 
 <a href="" id="protocolunbindadapterex"></a>*ProtocolUnbindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)ハンドラー、バインドの入力、*閉じる*状態。 詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
+NDIS がドライバーの[*Protocolunbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)ハンドラーを呼び出した後、バインディングは*終了*状態になります。 詳細については、「[アダプターからのバインド](unbinding-from-an-adapter.md)解除」を参照してください。
 
 <a href="" id="unbind-is-complete"></a>バインド解除が完了しました  
-ドライバーには、バインドの解除操作が完了すると、バインディングは連結なし状態になります。
+ドライバーがバインド解除操作を完了すると、バインドはバインドされていない状態になります。
 
-<a href="" id="pnp-pause"></a>PnP の一時停止  
-NDIS プロトコル ドライバーに送信した後、ネットワーク プラグ アンド プレイ (PnP) イベント通知を一時停止、バインドは一時停止状態になります。 詳細については、次を参照してください。[バインディングを一時停止](pausing-a-binding.md)します。
+<a href="" id="pnp-pause"></a>PnP 一時停止  
+NDIS がプロトコルドライバーを送信した後、ネットワークプラグアンドプレイ (PnP) 一時停止イベント通知を送信すると、バインドは一時停止中の状態になります。 詳細について[は、「バインディングの一時停止](pausing-a-binding.md)」を参照してください。
 
-<a href="" id="pause-is-complete"></a>一時停止が完了  
-ドライバーのために必要なすべての操作が完了した後操作の送受信を停止、一時停止操作が完了およびバインドが一時停止状態。
+<a href="" id="pause-is-complete"></a>一時停止が完了しました  
+送信と受信の操作を停止するために必要なすべての操作がドライバーによって完了すると、一時停止操作が完了し、バインドが一時停止状態になります。
 
-**注**  未処理の一時停止操作が完了する前に完了する要求を送信するすべてのドライバーが待つ必要があります。
+一時停止操作が完了する前に、すべての未処理の送信要求が完了するまでドライバーが待機する必要がある  に**注意**してください。
 
  
 
 <a href="" id="pnp-restart"></a>PnP の再起動  
-NDIS は、プロトコル ドライバーにネットワーク PnP 再起動イベント通知を送信する後、バインドは再開中状態になります。 詳細については、次を参照してください。[バインディングを再起動する](restarting-a-binding.md)します。
+NDIS によって、ネットワークの PnP 再起動イベント通知がプロトコルドライバーに送信された後、バインドは再起動状態になります。 詳細については、「[バインディングの再起動](restarting-a-binding.md)」を参照してください。
 
-<a href="" id="restart-is-complete"></a>再起動が完了  
-準備ができたら、ドライバーを送信を処理し、受信操作では、再起動操作が完了と、バインディングが実行中の状態。
+<a href="" id="restart-is-complete"></a>再起動が完了しました  
+ドライバーが送受信操作を処理できるようになると、再起動操作が完了し、バインドが実行中の状態になります。
 
 <a href="" id="restart-failed"></a>再起動に失敗しました  
-NDIS ネットワーク PnP 再起動イベント通知が送信プロトコル ドライバー、再起動の試行が失敗して、バインドは一時停止状態に戻ります。
+NDIS がプロトコルドライバーを送信してネットワークの PnP 再起動イベント通知を送信し、再起動の試行が失敗した場合、バインドは一時停止状態に戻ります。
 
-<a href="" id="send-and-receive-operations"></a>送信し、受信操作  
-プロトコル ドライバーが送信を処理する必要があり、受信操作の実行では、および、一時停止中の状態します。 送信し、受信操作についての詳細についてを参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
+<a href="" id="send-and-receive-operations"></a>送信および受信操作  
+プロトコルドライバーは、実行中および一時停止中の状態の送信および受信操作を処理する必要があります。 送信操作と受信操作の詳細については、「[プロトコルドライバーの送信および受信操作](protocol-driver-send-and-receive-operations.md)」を参照してください。
 
 <a href="" id="oid-requests"></a>OID 要求  
-プロトコル ドライバーには、設定または基になるドライバーの情報をクエリする OID 要求を開始できます。 プロトコル ドライバーには、非連結と開始を除く、すべての状態から OID 要求を開始できます。
+プロトコルドライバーは、基になるドライバーの情報を設定または照会するための OID 要求を開始できます。 プロトコルドライバーは、バインドされていない状態を除き、すべての状態から OID 要求を開始できます。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[書き込み NDIS プロトコル ドライバー](writing-ndis-protocol-drivers.md)
+[NDIS プロトコルドライバーの記述](writing-ndis-protocol-drivers.md)
 
  
 

@@ -1,36 +1,36 @@
 ---
-title: メモリ セクションの管理
-description: メモリ セクションの管理
+title: メモリセクションの管理
+description: メモリセクションの管理
 ms.assetid: 620ba31d-596f-493a-b97f-65a27d50cc9a
 keywords:
-- メモリのセクションでは WDK カーネル
-- セクション オブジェクト WDK カーネル
-- ビューの WDK メモリ セクション
-- マッピングのセクションのビュー
+- メモリセクション WDK カーネル
+- セクションオブジェクト WDK カーネル
+- ビュー WDK メモリセクション
+- セクションビューのマッピング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66078fa565a02b943ff4214cc356fef276504288
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d17c553028b85c5845dfa4e028a1203b991ba77b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386011"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838545"
 ---
-# <a name="managing-memory-sections"></a>メモリ セクションの管理
+# <a name="managing-memory-sections"></a>メモリセクションの管理
 
 
 
 
 
-ドライバーは、呼び出すことによってセクション オブジェクトを作成できます[ **ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)、セクション オブジェクトへのハンドルを返します。 使用して、 *FileHandle*バッキング ファイルを指定するパラメーターまたは**NULL**セクションがファイル バックアップがない場合。 使用して、セクション オブジェクトに追加のハンドルを開くことが[ **ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)します。
+ドライバーは、セクションオブジェクトへのハンドルを返す[**Zw/** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)を呼び出すことによって、セクションオブジェクトを作成できます。 *FileHandle*パラメーターを使用してバッキングファイルを指定します。または、セクションがファイルによってサポートされていない場合は**NULL**を使用します。 セクションオブジェクトへの追加ハンドルは、 [**Zwopensection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)を使用して開くことができます。
 
-現在のプロセスのアドレス空間内でアクセス可能セクション オブジェクトに属するデータをするためには、セクションのビューを割り当てる必要があります。 ドライバーを使用して現在のプロセスのアドレス空間セクションのビューをマップすることができます、 [ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)ルーチン。 *SectionOffset*パラメーターのセクション内のビューの開始位置のバイト オフセットを指定して、 *ViewSize*マップするバイト数を指定します。
+セクションオブジェクトに属するデータを現在のプロセスのアドレス空間内でアクセスできるようにするには、セクションのビューをマップする必要があります。 ドライバーは、 [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)ルーチンを使用して、セクションのビューを現在のプロセスのアドレス空間にマップできます。 *Sectionoffset*パラメーターは、ビューがセクション内で開始する位置のバイトオフセットを指定し、 *viewsize*はマップするバイト数を指定します。
 
-*保護*パラメーターが、ビューに対して許可された操作を指定します。 指定 ページ\_読み取り専用ビューで、ページの読み取り専用\_読み取り/書き込みのビューでは、およびページの READWRITE\_WRITECOPY するコピー オン ライト表示されます。
+*Protect*パラメーターは、ビューで許可される操作を指定します。 読み取り専用ビューの場合は読み取り専用のページ\_を指定し、読み取り/書き込みビューの場合はページ\_読み取り/書き込みビューの場合はページ\_WRITECOPY を指定します。
 
-コンソール アプリケーションは、仮想メモリの範囲がアクセスされるまでビューの 物理メモリは割り当てられません。 メモリの範囲の最初のアクセスとページ フォールトが発生します。システムは、そのメモリ位置を保持するためにページを割り当てます。 ファイル バックアップをセクションには、システムはそのページに対応し、メモリにコピーするファイルの内容を読み取ります。 (未使用のセクション オブジェクトとビューを使用するいくつかのページおよび非ページ プールのブックキーピングのために注意してください)。
+仮想メモリの範囲にアクセスするまで、ビューには物理メモリが割り当てられません。 メモリ範囲の最初のアクセスでページフォールトが発生します。その後、システムはそのメモリ位置を保持するページを割り当てます。 セクションがファイルベースの場合、システムはそのページに対応するファイルの内容を読み取り、メモリにコピーします。 (未使用のセクションオブジェクトおよびビューでは、ブックキーピングのために一部のページプールと非ページプールが使用されていることに注意してください)。
 
-ドライバーは、ビューを使用して不要になった後、割り当てを解除を呼び出すことによって[ **ZwUnmapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunmapviewofsection)します。 ドライバーがセクション オブジェクトを使用して不要になった後でセクション ハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 ビューがマップされている他のビューがないマップすることをした後、すぐに呼び出しても安全だことに注意してください。 **ZwClose**ハンドル; 表示 (およびセクション オブジェクト) で、ビューのマップが解除されるまでに存在する続行 セクションでします。 これは、ハンドルが閉じられていないドライバーのリスクを軽減ためにの推奨される方法です。
+ドライバーは、ビューを使用しなくなった後、 [**ZwUnmapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunmapviewofsection)を呼び出すことによって解除します。 ドライバーは、セクションオブジェクトを使用しなくなった後、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を使用してセクションハンドルを閉じます。 ビューがマップされ、他のビューがマップされない場合は、セクションハンドルで**Zwclose**をすぐに呼び出すことができます。ビューがマップ解除されるまで、ビュー (およびセクションオブジェクト) は引き続き存在します。 これは、ドライバーがハンドルを閉じる際のリスクを軽減するため、推奨される方法です。
 
  
 

@@ -1,46 +1,46 @@
 ---
 title: OID_802_3_ADD_MULTICAST_ADDRESS
-description: セットの要求として NDIS と上位のプロトコル ドライバーはミニポート アダプタのマルチキャスト アドレスの一覧に 802.3 のマルチキャスト アドレスを追加するのに OID_802_3_ADD_MULTICAST_ADDRESS OID 要求を使用します。
+description: 設定要求として、NDIS およびそれ以降のプロトコルドライバーは、OID_802_3_ADD_MULTICAST_ADDRESS OID 要求を使用して、802.3 マルチキャストアドレスをミニポートアダプターのマルチキャストアドレス一覧に追加します。
 ms.assetid: e3e6defe-e65f-46bb-9cd6-cb65ffa7d7f0
 ms.date: 08/08/2017
-keywords: -OID_802_3_ADD_MULTICAST_ADDRESS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_802_3_ADD_MULTICAST_ADDRESS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: cca837a116b11ee334cfa515dbfec0d5d25b376f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00843282c99f4673ff3426a42adf6fab2d00afd4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362912"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834567"
 ---
-# <a name="oid8023addmulticastaddress"></a>OID\_802\_3\_追加\_マルチキャスト\_アドレス
+# <a name="oid_802_3_add_multicast_address"></a>OID\_802\_3\_\_マルチキャスト\_アドレスの追加
 
 
-セットの要求では、NDIS と上位のプロトコルのドライバーを使用、OID\_802\_3\_追加\_マルチキャスト\_ミニポートのマルチキャスト アドレスの一覧を 802.3 のマルチキャスト アドレスを追加するアドレス OID 要求アダプター。 マルチキャスト アドレスは、6 バイトの配列です。 アドレスを追加すると、そのアドレスをマルチキャスト パケットの受信ができます。
+セット要求として、NDIS およびそれ以降のプロトコルドライバーは、OID\_802\_3\_\_マルチキャスト\_アドレス OID 要求を追加して、ミニポートアダプターのマルチキャストアドレスリストに802.3 マルチキャストアドレスを追加します。 マルチキャストアドレスは6バイトの配列です。 アドレスを追加すると、そのアドレスがマルチキャストパケットを受信できるようになります。
 
 **バージョン情報**
 
 <a href="" id="windows-vista"></a>Windows Vista  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、マルチキャストに追加する 6 バイトのアドレスが含まれています。アドレスの一覧です。
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、マルチキャストアドレス一覧に追加する6バイトのアドレスが含まれています。
 
-OID\_802\_3\_追加\_マルチキャスト\_アドレス OID 要求は、1 つのアドレスを追加できます。 1 つ以上のアドレスを追加するには、上にあるドライバーが複数の OID を発行する必要があります\_802\_3\_追加\_マルチキャスト\_アドレス OID を要求します。
+OID\_802\_3\_\_マルチキャスト\_アドレス OID 要求で追加できるアドレスは1つだけです。 複数のアドレスを追加するには、複数の OID\_802\_3\_\_マルチキャスト\_アドレス OID 要求を追加する必要があります。
 
-NDIS ミニポート ドライバーでは、この OID 要求を直接受け取りません。 代わりに、各シーケンスの OID の統合 NDIS\_802\_3\_追加\_マルチキャスト\_アドレスと[OID\_802\_3\_DELETE\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)OID 要求 1 つに[OID\_802\_3\_マルチキャスト\_一覧](oid-802-3-multicast-list.md)OID 要求を送信すること、ミニポート ドライバー。
+NDIS ミニポートドライバーは、この OID 要求を直接受信しません。 代わりに、NDIS は、OID の各シーケンス\_802\_3\_\_マルチキャスト\_アドレスおよび[oid\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)oid 要求を1つ[にまとめます。OID\_802\_3\_マルチキャスト\_リスト](oid-802-3-multicast-list.md)oid 要求をミニポートドライバーに送信します。
 
-マルチキャスト パケットを受信するには、上にあるドライバーを使用する必要があります、 [OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)パケット フィルターを設定する OID **NDIS\_パケット\_型\_マルチキャスト**フラグ。
+マルチキャストパケットを受信するには、その後のドライバーが[oid\_GEN\_現在の\_パケット\_フィルター](oid-gen-current-packet-filter.md) oid を使用して、パケットフィルター **NDIS\_パケット\_種類\_マルチキャスト**フラグを設定する必要があります。
 
-ミニポート ドライバーは、マルチキャスト アドレスの一覧に含めることができるマルチキャスト アドレスの数に上限を設定することができます。 マルチキャストの最大数を指定するアドレス、ミニポート ドライバーのセット、 **MaxMulticastListSize**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_一般的な\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)に渡される構造体、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。 NDIS 6.0 より前に、の NDIS バージョンに基づくミニポート ドライバーでは、NDIS が送信することによってマルチキャスト アドレスの最大数を照会、 [OID\_802\_3\_最大\_一覧\_サイズ](oid-802-3-maximum-list-size.md) OID 要求。 NDIS 返します**NDIS\_状態\_マルチキャスト\_完全**場合 OID\_802\_3\_追加\_マルチキャスト\_アドレス要求は、この制限を超えています。
+ミニポートドライバーでは、マルチキャストアドレス一覧に含めることができるマルチキャストアドレスの数に制限を設定できます。 マルチキャストアドレスの最大数を指定するために、ミニポートドライバーは、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造**のメンバーを設定し**[**ます。NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数。 Ndis 6.0 より前の NDIS バージョンに基づくミニポートドライバーの場合、NDIS は[oid\_802\_3\_最大\_LIST\_SIZE](oid-802-3-maximum-list-size.md) oid 要求を送信することにより、マルチキャストアドレスの最大数を照会します。 OID\_802\_3\_追加\_のマルチキャスト\_アドレス要求がこの制限を超えた場合、ndis は**ndis\_STATUS\_マルチキャスト\_完全**を返します。
 
-以前に追加されたマルチキャスト アドレスを削除するには、セット要求を行う、 [OID\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)OID。 上にあるドライバーは、複数回指定したマルチキャスト アドレスを追加できます。 NDIS は後続のすべての成功 NDIS には、指定されたマルチキャスト アドレスの最初の追加要求が成功すると、そのアドレスの要求を追加します。 上にあるドライバーは複数回追加されたマルチキャスト アドレスを削除するには、アドレスをアドレスが追加されたことと同じ回数を削除する必要があります。
+以前に追加したマルチキャストアドレスを削除するには、 [oid\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)oid を持つ set 要求を作成します。 このドライバーは、指定されたマルチキャストアドレスを複数回追加できます。 指定されたマルチキャストアドレスの最初の add 要求が NDIS によって成功した場合、NDIS はそのアドレスに対する後続の追加要求すべてを成功させます。 複数回追加されたマルチキャストアドレスを削除するには、そのアドレスを追加したときと同じ回数だけアドレスを削除する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -50,8 +50,8 @@ NDIS ミニポート ドライバーでは、この OID 要求を直接受け取
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td><p>ヘッダー</p></td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -59,19 +59,19 @@ NDIS ミニポート ドライバーでは、この OID 要求を直接受け取
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[OID\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)
+[OID\_802\_3\_\_のマルチキャスト\_アドレスの削除](oid-802-3-delete-multicast-address.md)
 
-[OID\_802\_3\_最大\_一覧\_サイズ](oid-802-3-maximum-list-size.md)
+[OID\_802\_3\_最大\_リスト\_サイズ](oid-802-3-maximum-list-size.md)
 
-[OID\_802\_3\_マルチキャスト\_一覧](oid-802-3-multicast-list.md)
+[OID\_802\_3\_マルチキャスト\_リスト](oid-802-3-multicast-list.md)
 
-[OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)
+[OID\_GEN\_現在の\_パケット\_フィルター](oid-gen-current-packet-filter.md)
 
  
 

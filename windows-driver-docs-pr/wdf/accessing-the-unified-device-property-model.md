@@ -1,50 +1,50 @@
 ---
 title: 統合デバイス プロパティ モデルへのアクセス
-description: このトピックでは、Windows Driver Frameworks (WDF) ドライバーを取得する方法について説明します。 または、統一されたデバイス プロパティのモデルで公開されているプロパティを変更します。
+description: このトピックでは、Windows ドライバーフレームワーク (WDF) ドライバーが、統合されたデバイスプロパティモデルを通じて公開されるプロパティを取得または変更する方法について説明します。
 ms.assetid: C81988F9-E0DA-439F-B770-DAD86E33D5F3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ae5f6d8211f5dc16867b75e9b29fe45043b3a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 041a1aeb18f417948d6ce3a611802e9217b83aa0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845513"
 ---
 # <a name="accessing-the-unified-device-property-model"></a>統合デバイス プロパティ モデルへのアクセス
 
 
-このトピックでは、Windows Driver Frameworks (WDF) ドライバーを取得する方法について説明します。 または、統一されたデバイス プロパティのモデルで公開されているプロパティを変更します。 メソッドの一覧は、ユーザー モード ドライバー フレームワーク (UMDF) version 2.0 とカーネル モード ドライバー フレームワーク (KMDF) バージョン 1.13 から利用可能です。
+このトピックでは、Windows ドライバーフレームワーク (WDF) ドライバーが、統合されたデバイスプロパティモデルを通じて公開されるプロパティを取得または変更する方法について説明します。 一覧表示されているメソッドは、ユーザーモードドライバーフレームワーク (UMDF) バージョン2.0 およびカーネルモードドライバーフレームワーク (KMDF) バージョン1.13 から使用できます。
 
-KMDF と UMDF ドライバーでは、次のメソッドを呼び出すことができます。
+KMDF と UMDF の両方のドライバーで、次のメソッドを呼び出すことができます。
 
--   [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)
--   [**WdfDeviceAssignProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignproperty)
--   [**WdfDeviceQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequerypropertyex)
+-   [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)
+-   [**Wdfdevice割り当てプロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignproperty)
+-   [**WdfDeviceQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicequerypropertyex)
 
-KMDF と UMDF ドライバーは、次のメソッドを呼び出す前にのみ呼び出すことができます[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。 呼び出し元の詳細については**WdfDeviceCreate**を参照してください[Framework デバイス オブジェクトを作成する](creating-a-framework-device-object.md)します。
+KMDF と UMDF ドライバーはどちらも、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す前に、次のメソッドを呼び出すことができます。 **WdfDeviceCreate**の呼び出しの詳細については、「[フレームワークデバイスオブジェクトの作成](creating-a-framework-device-object.md)」を参照してください。
 
-呼び出した後[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)、ドライバーは、デバイス プロパティ情報を入手して、対応する**WdfDevice*Xxx*プロパティ**メソッド。
+[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出した後、ドライバーは対応する**Wdfdevice*Xxx*プロパティ**メソッドを呼び出すことによって、デバイスのプロパティ情報を取得できます。
 
--   [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)
--   [**WdfFdoInitQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)
+-   [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)
+-   [**WdfFdoInitQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)
 
-*、Ex*上記のメソッドは、自分以外のとは異なる *、Ex*に対応することができるを使用してプロパティを指定、 [ **WDF\_デバイス\_プロパティ\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_property_data)構造体のサブセットを使用して指定できるのではなく、 [**デバイス\_レジストリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ne-wudfwdm-device_registry_property).
+上記の *-ex*メソッドは、 [**WDF\_デバイス\_プロパティ\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_property_data)構造体を使用してプロパティを指定できるという*点で、非対応の*メソッドとは異なります。これは、を使用して[**指定できるサブセットではありません。DEVICE\_REGISTRY\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ne-wudfwdm-device_registry_property)。
 
-ドライバー デバイス プロパティのデータを受信する前に呼び出す通常**Wdf*Xxx*QueryProperty**必要なバッファー サイズを取得するだけです。 必要なサイズが返され、ドライバーを呼び出すとの間、一部のプロパティのデータのサイズを変更できます**Wdf*Xxx*QueryProperty**もう一度です。 そのため、ドライバーを呼び出す必要があります**Wdf*Xxx*QueryProperty**戻り値の状態が解除されるまでに実行されるループ内で**状態\_バッファー\_すぎます\_小さな**します。
+デバイスプロパティデータを受け取る前に、ドライバーは通常、必要なバッファーサイズを取得するためだけに**Wdf*Xxx*queryproperty**を呼び出します。 プロパティによっては、必要なサイズが返されたときと、ドライバーが**Wdf*Xxx*queryproperty**を再度呼び出すときのデータサイズが変わることがあります。 したがって、ドライバーは、戻り値の状態が [\_状態] ではない場合に実行されるループ内で**Wdf*Xxx*queryproperty**を呼び出す必要があります。 **\_は\_小さすぎ**ます。
 
-使用することをお勧め**Wdf*Xxx*QueryProperty**を呼び出す、ドライバーがそうであるため、必要なバッファー サイズが、明白場合にのみ**Wdf*Xxx*QueryProperty** 1 回だけです。 必要なバッファー サイズが不明かによって異なります場合、ドライバーを呼び出す必要があります**Wdf*Xxx*AllocAndQueryProperty**します。
+必要なバッファーサイズが既知で不変である場合にのみ、 **Wdf*xxx*queryproperty**を使用することをお勧めします。この場合、ドライバーは**Wdf*Xxx*queryproperty**を1回だけ呼び出す必要があるからです。 必要なバッファーサイズが不明または異なる場合、ドライバーは**Wdf*Xxx*allocandqueryproperty**を呼び出す必要があります。
 
 ## <a name="accessing-device-interface-properties"></a>デバイス インターフェイス プロパティへのアクセス
 
 
-UMDF ドライバーは、次のメソッドを使用して、取得したり変更したり[デバイス インターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))統一されたプロパティのモデルで公開されます。
+UMDF ドライバーでは、次のメソッドを使用して、統合プロパティモデルを通じて公開されている[デバイスインターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))を取得または変更できます。
 
--   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
--   [**WdfDeviceAssignInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
--   [**WdfDeviceQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequeryinterfaceproperty)
+-   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
+-   [**Wdfdevice割り当て Interfaceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
+-   [**WdfDeviceQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicequeryinterfaceproperty)
 
-取得したり、デバイス インターフェイスのプロパティを変更したりするには、KMDF ドライバーを呼び出す必要があります[ **IoGetDeviceInterfacePropertyData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfacepropertydata)または[ **IoSetDeviceInterfacePropertyData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacepropertydata)直接します。
+デバイスインターフェイスプロパティを取得または変更するには、KMDF ドライバーが[**Iogetdeviceinterfacepropertydata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacepropertydata)または[**iogetdeviceinterfacepropertydata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacepropertydata)を直接呼び出す必要があります。
 
  
 

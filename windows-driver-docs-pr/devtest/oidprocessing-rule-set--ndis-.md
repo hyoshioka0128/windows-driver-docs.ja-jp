@@ -1,20 +1,20 @@
 ---
-title: OidProcessing の規則セット (NDIS)
-description: ドライバーが正しく OID 要求を処理することを確認するのにには、これらの規則を使用します。
+title: OidProcessing 規則セット (NDIS)
+description: これらのルールを使用して、ドライバーが OID 要求を正しく処理していることを確認します。
 ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fcd5e7bbd91c556ab21312ec9661f9ac227e2d7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 203fc1a6ae9e25ce0c585ef57173052a8b70105a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361271"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840057"
 ---
-# <a name="oidprocessing-rule-set-ndis"></a>OidProcessing の規則セット (NDIS)
+# <a name="oidprocessing-rule-set-ndis"></a>OidProcessing 規則セット (NDIS)
 
 
-ドライバーが正しく OID 要求を処理することを確認するのにには、これらの規則を使用します。
+これらのルールを使用して、ドライバーが OID 要求を正しく処理していることを確認します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -33,34 +33,34 @@ ms.locfileid: "67361271"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[&lt;strong&gt;DoubleComplete&lt;/strong&gt;](ndis-doublecomplete.md)"><strong>DoubleComplete</strong></a></p></td>
-<td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[DoubleComplete](ndis-doublecomplete.md)">DoubleComplete</a>ルールでは、NDIS ドライバーする必要があります完了しないこと、オブジェクト識別子 (OID) 要求を複数回を指定します。</p></td>
+<td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[DoubleComplete](ndis-doublecomplete.md)">DoubleComplete</a>規則は、NDIS ドライバーがオブジェクト識別子 (OID) 要求を複数回完了できないことを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-doublecompleteworkitem.md" data-raw-source="[&lt;strong&gt;DoubleCompleteWorkItem&lt;/strong&gt;](ndis-doublecompleteworkitem.md)"><strong>DoubleCompleteWorkItem</strong></a></p></td>
-<td align="left"><p>DoubleCompleteWorkItem ルールでは、NDIS ドライバーする必要がありますいない OID 要求を複数回ときに完了する作業項目の完了が遅延を指定します。</p></td>
+<td align="left"><p>DoubleCompleteWorkItem 規則は、作業項目で完了が延期された場合に、NDIS ドライバーが OID 要求を複数回完了しないように指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndismnetpnpeventinoidrequest.md" data-raw-source="[&lt;strong&gt;NdisMNetPnPEventInOIDRequest&lt;/strong&gt;](ndis-ndismnetpnpeventinoidrequest.md)"><strong>NdisMNetPnPEventInOIDRequest</strong></a></p></td>
-<td align="left"><p>このルールは、ことを確認<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)"> <strong>NdisMNetPnPEvent</strong> </a> OID 要求のコンテキストでは呼び出されません。</p></td>
+<td align="left"><p>このルールでは、OID 要求のコンテキストで<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)"><strong>NdisMNetPnPEvent</strong></a>が呼び出されていないことを確認します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**OidProcessing ルールを選択するには、次のように設定します。**
+**OidProcessing 規則セットを選択するには**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
+1.  Microsoft Visual Studio でドライバープロジェクト (.Vcxproj) を選択します。 **[ドライバー]** メニューの **[静的ドライバー検証ツールの起動]** をクリックします。
 
-2.  をクリックして、**ルール**タブ。**規則セット**、 **OidProcessing**します。
+2.  **[ルール]** タブをクリックします。 **[ルールセット]** で **[OidProcessing]** を選択します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **OidProcessing.sdv**で、 **/check**オプション。 次に、例を示します。
+    Visual Studio 開発者コマンドプロンプトウィンドウから既定の規則セットを選択するには、 **/チェック**オプションを指定して**OidProcessing**を指定します。 例:
 
     ```
     msbuild /t:sdv /p:Inputs="/check:OidProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
+    詳細については、「 [Using Static Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers) 」を参照して、ドライバーと[静的ドライバー検証コマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)で欠陥を検出してください。
 
  
 

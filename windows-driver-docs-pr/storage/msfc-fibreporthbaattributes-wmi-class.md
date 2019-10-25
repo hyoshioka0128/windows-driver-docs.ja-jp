@@ -4,22 +4,22 @@ description: MSFC\_FibrePortHBAAttributes WMI クラス
 ms.assetid: 028afadf-1a2d-4792-8b6c-d53359af64c1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e809515b3af709268ddb805bb089e50c62768298
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 218502ab9dc518f9c817ed75240c7f9bded2c0d0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382553"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842860"
 ---
-# <a name="msfcfibreporthbaattributes-wmi-class"></a>MSFC\_FibrePortHBAAttributes WMI クラス
+# <a name="msfc_fibreporthbaattributes-wmi-class"></a>MSFC\_FibrePortHBAAttributes WMI クラス
 
 
 ## <span id="ddk_msfc_fibreporthbaattributes_wmi_class_kr"></span><span id="DDK_MSFC_FIBREPORTHBAATTRIBUTES_WMI_CLASS_KR"></span>
 
 
-FCbre チャネル HBA の API をサポートする HBA ミニポート ドライバーの使用、MSFC\_FibrePortHBAAttributes WMI クラスは、ファイバー チャネル ポートに関連付けられた属性の情報を公開します。 このクラスの各ポートの 1 つのインスタンスが必要です。
+FCbre チャネル HBA API をサポートする HBA ミニポートドライバーは、MSFC\_FibrePortHBAAttributes WMI クラスを使用して、ファイバーチャネルポートに関連付けられている属性情報を公開します。 各ポートには、このクラスのインスタンスが1つ存在する必要があります。
 
-MSFC\_FibrePortHBAAttributes クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_FibrePortHBAAttributes クラスは、次のように*Hbaapi .mof*で定義されます。
 
 ```cpp
 class MSFC_FibrePortHBAAttributes {
@@ -41,9 +41,9 @@ class MSFC_FibrePortHBAAttributes {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_FibrePortHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbaattributes)
+[**MSFC\_FibrePortHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbaattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

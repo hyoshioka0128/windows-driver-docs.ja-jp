@@ -1,74 +1,74 @@
 ---
-title: CD-ROM 排他アクセス モード
-description: CD-ROM 排他アクセス モード
+title: CD-ROM 専用アクセスモード
+description: CD-ROM 専用アクセスモード
 ms.assetid: 4432f6d6-e98c-4354-a7ba-b043a624f064
 keywords:
 - CD-ROM ドライバー WDK ストレージ
-- CD-ROM のストレージ ドライバー WDK
-- WDK の CD-ROM の排他アクセス モード
+- 記憶域 CD-ROM ドライバー WDK
+- 排他アクセスモード WDK CD-ROM
 - IOCTL_CDROM_EXCLUSIVE_ACCESS
 - CDROM_EXCLUSIVE_LOCK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f20c34d951b64b28b29aa7f8ede5f3f9bbbbf1b
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 481511f34a27c5fd4e72bd5b7c65aea4b2ea453b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717009"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841634"
 ---
-# <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 排他アクセス モード
+# <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 専用アクセスモード
 
 
-CD-ROM*排他アクセス*メカニズム (とも呼ばれます*排他アクセス モード*) CD-ROM デバイスへの排他アクセスを取得するには、アプリケーションおよびシステム コンポーネントを使用します。 CD-ROM デバイスへの排他アクセスを必要とするアプリケーションには、次の例が含まれます。
+CD-ROM*専用アクセス*メカニズム (*排他アクセスモード*とも呼ばれます) を使用すると、アプリケーションおよびシステムコンポーネントは cd-rom デバイスへの排他アクセスを取得できます。 CD-ROM デバイスへの排他的アクセスを必要とするアプリケーションには、次の例が含まれます。
 
-<span id="Optical_media-authoring_applications"></span><span id="optical_media-authoring_applications"></span><span id="OPTICAL_MEDIA-AUTHORING_APPLICATIONS"></span>光学式メディア作成アプリケーション  
-いくつかの光学式作成ソフトウェアには、他のアプリケーションから中断なくデータを書き込む CD-ROM デバイスへの排他アクセスが必要です。 それ以外の場合、データが書き込まれます正しく、データ破損の原因します。
+<span id="Optical_media-authoring_applications"></span><span id="optical_media-authoring_applications"></span><span id="OPTICAL_MEDIA-AUTHORING_APPLICATIONS"></span>光学式メディア-アプリケーションの作成  
+一部の光学作成ソフトウェアでは、他のアプリケーションを中断することなく、データを書き込むために CD-ROM デバイスに排他的にアクセスする必要があります。 そうしないと、データが誤って書き込まれ、データが破損する可能性があります。
 
 <span id="Firmware_update_utilities"></span><span id="firmware_update_utilities"></span><span id="FIRMWARE_UPDATE_UTILITIES"></span>ファームウェア更新ユーティリティ  
-多くの製造元の CD-ROM デバイスのファームウェア更新プログラムのユーティリティを提供します。 アプリケーションでは、ファームウェアの更新中に、デバイスにコマンドを送信する場合ことは、デバイス使用できなくなります。
+多くの CD-ROM デバイスの製造元は、ファームウェア更新ユーティリティを提供しています。 ファームウェアの更新中にアプリケーションがデバイスにコマンドを送信すると、デバイスが使用できなくなる可能性があります。
 
-排他アクセス メカニズムがなければこれら 2 種類のアプリケーション排他アクセスを提供するベンダーの唯一の方法は、その他のアプリケーションやコンポーネントからの I/O 要求が失敗したカスタム フィルター ドライバーをインストールすることは、この方法によりシステム不安定になります。 CD-ROM デバイスへの排他アクセスを取得するのには、フィルター ドライバーを使用する必要があります。
+排他的アクセスメカニズムを使用しない場合、この2種類のアプリケーションに排他アクセス権を付与する唯一の方法は、他のアプリケーションやコンポーネントからの i/o 要求を失敗させるカスタムフィルタードライバーをインストールすることです。この方法ではシステムがたり. フィルタードライバーを使用して、CD-ROM デバイスへの排他アクセスを取得しないでください。
 
-排他アクセス メカニズムを使用するアプリケーションを送信する必要があります、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)パッシブに CD-ROM クラス ドライバーへの要求\_IRQL レベル。 呼び出し元がこの要求を行うと、呼び出し元がで識別文字列を提供する必要があります、 **CallerName**のメンバー [ **CDROM\_排他\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock). クラス ドライバーは、排他アクセス権を持つアプリケーションを識別するためにこの文字列を使用します。
+排他的アクセスメカニズムを使用するには、アプリケーションは、ROM [ **\_cd-rom\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)要求を、パッシブ\_レベルの IRQL で cd-rom クラスドライバーに送信する必要があります。 呼び出し元がこの要求を行うときに、呼び出し元は、CDROM の**Callername**メンバー [ **\_排他\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock)に識別文字列を提供する必要があります。 クラスドライバーは、この文字列を使用して、排他アクセスを持つアプリケーションを識別します。
 
-アプリケーションは、ロックを試行する前に、デバイスの現在の状態を照会する必要があります。 デバイスが既にロックされている場合、クラス ドライバーは、デバイスの現在の所有者の識別文字列を返します。 デバイスをロックする前に、呼び出し元開く必要があります、読み取り/書き込みアクセス モード。 そのため、呼び出し元は、管理者特権または書き込みのアクセス モードで CD-ROM デバイスを開くアクセス許可が必要です。
+アプリケーションは、デバイスのロックを試行する前に、デバイスの現在の状態を照会する必要があります。 デバイスが既にロックされている場合、クラスドライバーはデバイスの現在の所有者の識別文字列を返します。 デバイスをロックする前に、呼び出し元は、デバイスを読み取り/書き込みアクセスモードで開く必要があります。 そのため、呼び出し元には、書き込みアクセスモードで CD-ROM デバイスを開くための管理者特権またはアクセス許可が必要です。
 
-CD-ROM クラス ドライバーが、要求を受信することの保証がないために、排他アクセスを要求する呼び出し元が、作成要求をファイル システム ドライバーに送信するだけで CD-ROM デバイスを開きますされません。 代わりに、アプリケーションが使用する必要があります、 **SetupDi**_Xxx_ルーチンをシステム内のすべての CD-ROM デバイス用のインターフェイスを列挙し、適切なデバイスのインターフェイスを開きます。
+排他アクセスを要求する呼び出し元は、ファイルシステムドライバーに作成要求を送信するだけで CD-ROM デバイスを開けないようにする必要があります。これは、CD-ROM クラスドライバーが要求を受信する保証がないためです。 代わりに、アプリケーションは**Setupdi**_Xxx_ルーチンを使用して、システム内のすべての cd-rom デバイスのインターフェイスを列挙し、適切なデバイスインターフェイスを開く必要があります。
 
-呼び出し元がドライブ文字を使用してデバイスを表示またはなどのツール名*CdRom0* CD-ROM クラス ドライバーを作成する要求を渡すを 0 に設定されるアクセス モード、ファイル システム ドライバーが保証されます。 この手順によって、アプリケーションを取得するハンドルを与えない、呼び出し元の読み取り/書き込みアクセスをデバイスにあるために、この保証が不十分です。
+呼び出し元が、アクセスモードが0に設定されたドライブ文字または*CdRom0*のような名前を使用してデバイスを開くと、ファイルシステムドライバーは、cd-rom クラスドライバーに作成要求を渡すことが保証されます。 ただし、このような保証は依然として十分ではありません。これは、アプリケーションがこのプロシージャによって取得するハンドルによって、デバイスへの読み取り/書き込みアクセスが呼び出し元に付与されないためです。
 
-排他アクセス モードでは、次の特徴があります。
+排他アクセスモードには、次の特性があります。
 
--   排他ロックの所有者のみがデバイスにアクセスできます。
+-   排他アクセスロックの所有者だけがデバイスにアクセスできます。
 
--   システムでは、他のアプリケーションからのアクセスの要求が失敗します。
+-   システムは、他のアプリケーションからのアクセスの要求に失敗します。
 
--   システム プロセス プラグ アンド プレイ (PnP) と power I/O は、通常の方法でパケット (Irp) を要求します。
+-   システムは、通常の方法でプラグアンドプレイ (PnP) と電源 i/o 要求パケット (Irp) を処理します。
 
--   デバイスのメディアの変更通知は無効です。
+-   デバイスのメディア変更通知が無効になっています。
 
--   システムでは、ロックされているデバイスのオープン要求が失敗します。
+-   システムは、ロックされている間にデバイスを開く要求を失敗させます。
 
--   送信する他のアプリケーション、 [ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) CD-ROM クラス ドライバーへの要求からキャッシュされた情報が表示されます、デバイスがロックされています。 具体的には場合、 [**ストレージ\_クエリ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-_storage_query_type)は**PropertyExistsQuery**IOCTL、デバイスの場合は動作は同じになりますロックされていません。 また場合、**ストレージ\_クエリ\_型**は**PropertyStandardQuery**と[**ストレージ\_プロパティ\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-storage_property_id)は**StorageDeviceProperty**または**StorageAdapterProperty**IOCTL が CD-ROM クラス ドライバーにキャッシュされている情報を返します。 他の組み合わせの**ストレージ\_クエリ\_型**と**ストレージ\_プロパティ\_ID**、ステータスステータス値を持つ、IOCTLが失敗しました。\_アクセス\_が拒否されました。
+-   [**IOCTL\_STORAGE\_QUERY\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)要求を送信するその他のアプリケーションは、ロックされている間、デバイスからキャッシュされた情報を受け取ります。 具体的には、 [**STORAGE\_QUERY\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-_storage_query_type)が**PropertyExistsQuery**の場合、IOCTL は、デバイスがロックされていない場合と同様に動作します。 また、 **storage\_QUERY\_TYPE**が**Propertystandardquery**で、 [**storage\_プロパティ\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-storage_property_id)が**storagedeviceproperty**または**storagedeviceproperty**の場合、IOCTL はを返します。CD-ROM クラスドライバーにキャッシュされている情報。 **ストレージ\_クエリ\_種類**および**ストレージ\_プロパティ\_ID**の他の組み合わせでは、IOCTL が失敗し、状態値の状態が "\_アクセス\_拒否" になります。
 
--   送信する他のアプリケーション、 [ **IOCTL\_CDROM\_取得\_照会\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data) CD-ROM クラス ドライバーへの要求には、キャッシュされた情報が表示されます。中にデバイスがロックされているし、もできないことがロックされています。
+-   \_IOCTL\_CDROM に送信するその他のアプリケーションは、CD-ROM クラスドライバーに[ **\_照会\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data)要求を取得し、ロックされている間、およびロックが解除されたときに、デバイスからキャッシュされた情報を受け取ります。
 
-システムでは、次のいずれかが発生した場合、CD-ROM デバイスへの排他アクセスが削除されます。
+次のいずれかが発生すると、システムによって CD-ROM デバイスへの排他アクセスが削除されます。
 
--   排他ロックの所有者に送信、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)と CD-ROM クラス ドライバーへの要求、 **RequestType**のメンバー [ **CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)設定**ExclusiveAccessUnlockDevice**します。
+-   排他アクセスロックの所有者は、cd-rom に排他的な[ **\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)要求を送信します。これは、Cd-rom の**RequestType**メンバーを使用して、 [ **\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)をに**設定して、\_\_ExclusiveAccessUnlockDevice**。
 
--   排他ロックの所有者では、デバイス ハンドルを閉じます。
+-   排他アクセスロックの所有者は、デバイスハンドルを閉じます。
 
--   排他アクセスのロックを所有するアプリケーションを終了します。
+-   排他アクセスロックを所有するアプリケーションは終了します。
 
-デバイスに対する排他アクセスのロックを削除した後には、CD-ROM クラス ドライバーは次の操作を行います。
+デバイスで排他アクセスロックを削除した後、CD-ROM クラスドライバーは次の操作を実行します。
 
--   デバイスのメディアの変更通知を有効にします。
+-   デバイスでメディア変更通知を有効にします。
 
--   設定は\_を確認してください\_ボリュームは、システムが、デバイスのファイル システムを再マウントするため、デバイスの拡張機能のフラグします。
+-   デバイスの拡張子に DO\_VERIFY\_ボリュームフラグを設定し、システムによってデバイスのファイルシステムが再マウントされるようにします。
 
--   デバイスのマルチ メディア機能の更新を強制します。
+-   デバイスのマルチメディア機能を強制的に更新します。
 
  
 

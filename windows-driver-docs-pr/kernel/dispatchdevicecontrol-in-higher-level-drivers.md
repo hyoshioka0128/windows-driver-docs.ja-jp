@@ -1,47 +1,47 @@
 ---
-title: 上位レベル ドライバーの DispatchDeviceControl
-description: 上位レベル ドライバーの DispatchDeviceControl
+title: 上位レベルのドライバーでの DispatchDeviceControl
+description: 上位レベルのドライバーでの DispatchDeviceControl
 ms.assetid: baff49c4-8764-4b65-84f4-ce5e10d51ed2
 keywords:
-- ディスパッチ ルーチンの WDK カーネル、DispatchDeviceControl ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchDeviceControl ルーチン
 - ディスパッチ DispatchDeviceControl ルーチン
-- IRP_MJ_DEVICE_CONTROL I/O 関数のコード
-- デバイス制御ディスパッチ ルーチン WDK カーネル
+- IRP_MJ_DEVICE_CONTROL i/o 関数のコード
+- デバイス制御ディスパッチルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09dba5e0df1b6fe6906cd9aee278edea2234cd96
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af07f82fd6aed65b7797824ffff006f4de07af3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385257"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838731"
 ---
-# <a name="dispatchdevicecontrol-in-higher-level-drivers"></a>上位レベル ドライバーの DispatchDeviceControl
+# <a name="dispatchdevicecontrol-in-higher-level-drivers"></a>上位レベルのドライバーでの DispatchDeviceControl
 
 
 
 
 
-通常、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)より高度なドライバーのルーチンは、単に下位レベルの次のドライバーの I/O スタックの場所を設定し、上で、IRP を渡します[ **保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 *DispatchDeviceControl*ルーチンは、基になるデバイス ドライバーは各デバイスの種類に固有の I/O 制御を処理する方法についてより詳細な情報があると見なされますので、ほとんど IRP の入力パラメーターの有効性をチェック要求。
+通常、上位レベルのドライバーの[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、次の下位レベルのドライバーの i/o スタックの場所を設定し、IRP を[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)に渡します。 *DispatchDeviceControl*ルーチンは、ほとんどの場合、入力 IRP のパラメーターの有効性をチェックします。これは、基になるデバイスドライバーに、各デバイスタイプ固有 i/o 制御要求の処理方法についてのより適切な情報があると見なされるためです。
 
-この一般的な規則をする可能性のある例外は、 *DispatchDeviceControl*クラス/ポート ドライバー 1 組のクラス ドライバーで日常的な。 クラス/ポートのペアになっているドライバーでのデバイス制御要求の処理の詳細については、次を参照してください。[クラス/ポート ドライバーにディスパッチ (内部) デバイス](dispatch-internal-devicecontrol-in-class-port-drivers.md)します。
+この一般的な規則の例外として、クラス/ポートドライバーペアのクラスドライバーの*DispatchDeviceControl*ルーチンが考えられます。 ペアリングされたクラス/ポートドライバーでのデバイス制御要求の処理の詳細については、[クラス/ポートドライバーでのディスパッチ (内部) DeviceControl](dispatch-internal-devicecontrol-in-class-port-drivers.md)に関する説明を参照してください。
 
-特定のデバイス ドライバーに密接に関連付けられていない任意の新しい高度なドライバーを設定する必要があります、 [I/O スタックの場所](i-o-stack-locations.md)、下位レベルの次のドライバーとパス、 [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)さらに処理するために要求します。
+特定のデバイスドライバーに密接に関連付けられていない新しい上位レベルのドライバーは、単に次の下位レベルのドライバーの[i/o スタックの場所](i-o-stack-locations.md)を設定し、 [**IRP\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求に渡す必要があります。処理を続行します。
 
-デバイスの管理要求が同期処理される通常します。 つまりより高度なドライバーの*DispatchDeviceControl*ルーチン頻繁に返せる制御システムに次のようにします。
+通常、デバイス制御要求は同期的に処理されます。 つまり、上位レベルのドライバーの*DispatchDeviceControl*ルーチンは、次のようにシステムに制御を返すことがよくあります。
 
 ```cpp
         :    : 
     return IoCallDriver(DeviceObject->NextDeviceObject, Irp);
 ```
 
-ただしより高度なドライバー場合は使用できません前述のテクニックを下位のドライバーは、状態を返す可能性があります\_このような要求を保留します。 その場合より高度なドライバーを呼び出す必要があります[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を登録する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。 ときに、 *IoCompletion*ルーチンを呼び出すと、IRP がまだがかどうかを判断する I/O のステータスのブロックを確認できる保留中です。 その場合、 *IoCompletion*ルーチンが要求を再試行しますか、または、場合によっては、 [ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)を呼び出す前に[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)ステータスを返す\_保留します。 高度なドライバーは IRP の状態を完了できません必要があります\_PENDING と呼ばれることがない限り**IoMarkIrpPending**その IRP の最初。
+ただし、下位のドライバーがそのような要求について\_保留状態を返す可能性がある場合、上位レベルのドライバーでは上記の手法を使用できません。 その場合、高レベルのドライバーは[**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出して[*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを登録する必要があります。 *Iocompletion*ルーチンが呼び出されると、i/o 状態ブロックを確認して、IRP がまだ保留中かどうかを確認できます。 そうである場合、 *Iocompletion*ルーチンは、要求を再試行するか、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出す前に[**IOMARKIRPP終了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出して、状態\_PENDING を返します。 上位レベルのドライバーは、最初にその IRP に対して**Iomarkirppending**を呼び出していない限り、状態\_保留中の irp を完了することはできません。
 
-場合は、基になるデバイス ドライバーが要求を完了する前に、デバイスから転送されるデータ量を処理する必要がありますしより高度なドライバー可能性がありますこのようなデバイス制御要求は非同期で処理します。 つまりより高度なドライバーが呼び出す可能性があります[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を登録する、 *IoCompletion*ルーチンは、下位のドライバーに IRP を渡すしから制御を返す独自*DispatchDeviceControl*ルーチン。
+基になるデバイスドライバーが、要求を完了する前にデバイスから転送されるデータを大量に処理する必要がある場合、上位レベルのドライバーがこのようなデバイス制御要求を非同期に処理する可能性があります。 つまり、高いレベルのドライバーが[**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出して*iocompletion*ルーチンを登録し、その IRP を下位のドライバーに渡して、独自の*DispatchDeviceControl*ルーチンから制御を返す場合があります。
 
-ほぼすべてのシステム定義されている I/O 制御コードは、少量のデータ、通常は大幅に下回るページのみを転送する基になるデバイス ドライバーを必要と\_量。 一般的な規則としてより高度なドライバーが要求を処理これら同期的に、上記のコード フラグメントで示すように下位のドライバー制御を返すようにすばやくためです。 高度なドライバーの呼び出しのオーバーヘッドは、 *IoCompletion*ルーチンがすべて追加 IRP がドライバーの処理が完了できる、このような短い間隔での補償されません。
+システムで定義されているほとんどすべての i/o 制御コードでは、基になるデバイスドライバーで転送できるデータの量は限られています。通常、ページ\_サイズよりもはるかに小さくなります。 一般的なルールとして、上位レベルのドライバーでは、これらの要求を同期的に処理する必要があります。これは、下位のドライバーが制御を迅速に返すためです。 つまり、上位レベルのドライバーの*Iocompletion*ルーチンを呼び出すことによるオーバーヘッドによって、この短い間隔でドライバーが実行できるその他の IRP 処理については補正されません。
 
-高度なドライバーの Irp によって割り当てられる[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)基になるデバイスのドライバー要求を処理できるこれらデバイス制御に同期的にします。 渡される省略可能なイベント オブジェクトの上位レベルのドライバーが待機できる**IoBuildDeviceIoControlRequest** IRP がドライバーに割り当てられたに関連付けられているとします。
+基になるデバイスドライバーの[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)で irp を割り当てる上位レベルのドライバーは、これらのデバイス制御要求を同期的に処理できます。 上位レベルのドライバーは、オプションのイベントオブジェクトが**IoBuildDeviceIoControlRequest**に渡され、ドライバーによって割り当てられる IRP に関連付けられるのを待機できます。
 
  
 

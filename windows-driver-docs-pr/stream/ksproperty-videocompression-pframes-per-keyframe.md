@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレーム
-description: KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプロパティは、予測フレーム (P フレーム) の間隔を制御します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_VIDEOCOMPRESSION\_PFRAMES\_\_キーフレームごとに
+description: KSK プロパティ\_VIDEOCOMPRESSION\_PFRAMES\_\_のキーフレームプロパティによって、予測フレーム (P フレーム) の間隔が制御されます。 このプロパティを実装する必要があります。
 ms.assetid: feb839b4-32fc-4fe9-b015-019d9d683c66
 keywords:
-- KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b5fe3265cb7a2369b6568a8b0de106e3ca1e49e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f527ea071c16b7763e966b6a6292a54bb7fac9d0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382023"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837881"
 ---
-# <a name="kspropertyvideocompressionpframesperkeyframe"></a>KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレーム
+# <a name="ksproperty_videocompression_pframes_per_keyframe"></a>KSK プロパティ\_VIDEOCOMPRESSION\_PFRAMES\_\_キーフレームごとに
 
 
-KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプロパティは、予測フレーム (P フレーム) の間隔を制御します。 このプロパティを実装する必要があります。
+KSK プロパティ\_VIDEOCOMPRESSION\_PFRAMES\_\_のキーフレームプロパティによって、予測フレーム (P フレーム) の間隔が制御されます。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_videocompression_pframes_per_keyframe_ks"></span><span id="DDK_KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME_KS"></span>
 
@@ -42,18 +42,18 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプ�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>設定</th>
-<th>対象</th>
+<th>セット</th>
+<th>的を絞る</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-<td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p>はい</p></td>
+<td><p>はい</p></td>
+<td><p>filter</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -61,16 +61,16 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプ�
 
  
 
-プロパティ値 (データの操作) がキー フレームごとの予測のフレームの数を指定します。
+プロパティ値 (操作データ) は、キーフレームごとに予測されるフレームの数を指定する LONG です。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_構造のキー フレームごとの P フレームの数を指定します。 セットの要求は、負の値を提供する場合**値**、ミニドライバーは、既定値に、P フレーム レートを設定する必要があります。
+KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、キーフレームごとの P フレームの数を指定します。 設定要求で負の値が**指定**されている場合、ミニドライバーは P フレームレートを既定値に設定する必要があります。
 
-このプロパティをサポートするミニドライバーは、KS を設定する必要があります\_VideoCompressionCaps\_CanBFrame フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)ミニドライバーのビデオの圧縮機能を取得する構造体。
+このプロパティをサポートするミニドライバーは、 [**ksproperty\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)構造体の VideoCompressionCaps プロパティの**Capabilities**メンバーで、KS\_\_を設定する必要があります。ミニドライバーのビデオ圧縮機能を取得します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -80,8 +80,8 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,11 +89,11 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

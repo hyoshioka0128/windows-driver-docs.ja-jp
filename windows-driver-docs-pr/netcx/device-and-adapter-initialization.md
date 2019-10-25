@@ -3,30 +3,30 @@ title: デバイスとアダプターの初期化
 description: デバイスとアダプターの初期化
 ms.assetid: EBBEF0FB-6CDB-4899-AAE9-71812EE20AFB
 keywords:
-- NetAdapterCx デバイスの初期化、NetCx デバイスの初期化、NetAdapterCx アダプターの初期化、NetCx アダプターの初期化
+- NetAdapterCx デバイスの初期化, NetCx デバイスの初期化, NetAdapterCx アダプターの初期化, NetCx アダプターの初期化
 ms.date: 01/18/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 34986af9bf87c1d25c012ac00da75b446f2c537d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e10b5f8f2f23a5bd2555fb57c8a63d64146e7f8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386365"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835533"
 ---
 # <a name="device-and-adapter-initialization"></a>デバイスとアダプターの初期化
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-このトピックでは、NetAdapterCx クライアント ドライバーを初期化して WDFDEVICE および NETADAPTER オブジェクトを開始する手順について説明します。 これらのオブジェクトとの関係に関する詳細については、次を参照してください。[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)します。
+このトピックでは、NetAdapterCx クライアントドライバーが WDFDEVICE オブジェクトと NETADAPTER オブジェクトを初期化して起動する手順について説明します。 これらのオブジェクトとそれらの関係の詳細については、「 [NetAdapterCx オブジェクトの概要](summary-of-netadaptercx-objects.md)」を参照してください。
 
-## <a name="evtwdfdriverdeviceadd"></a>EVT_WDF_DRIVER_DEVICE_ADD
+## <a name="evt_wdf_driver_device_add"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
-NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出すときに[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)その[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。
+NetAdapterCx client ドライバーは、その[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンから[**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)を呼び出すときに、 [*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) callback 関数を登録します。
 
-[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)、NetAdapterCx クライアント ドライバーは、次の順序で行う必要があります。
+[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)では、NetAdapterCx クライアントドライバーは次の処理を順番に実行する必要があります。
 
-1. 呼び出す[ **NetAdapterDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)します。
+1. [**NetAdapterDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterdeviceinitconfig)を呼び出します。
 
     ```C++
     status = NetAdapterDeviceInitConfig(DeviceInit);
@@ -36,14 +36,14 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     }
     ```
 
-2. 呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。 
+2. [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出します。 
 
     > [!TIP]
-    > デバイスは、1 つ以上の NETADAPTER をサポートする、デバイス コンテキストで各アダプターへのポインターを格納することをお勧めします。
+    > デバイスで複数の NETADAPTER がサポートされている場合は、各アダプターへのポインターをデバイスコンテキストに保存することをお勧めします。
 
-3. NETADAPTER オブジェクトを作成します。 そのため、クライアントを呼び出すに[ **NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)オプションと、その後**NetAdapterInitSetXxx**を初期化するメソッド、アダプターの属性。 最後に、クライアントが呼び出す[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)します。 
+3. NETADAPTER オブジェクトを作成します。 これを行うために、クライアントは[**NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterinitallocate)を呼び出した後、オプションの**NetAdapterInitSetXxx**メソッドを呼び出して、アダプターの属性を初期にします。 最後に、クライアントは[**NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)を呼び出します。 
 
-    次の例では、クライアント ドライバーが NETADAPTER オブジェクトを初期化する方法を示します。 この例では、エラー処理が簡略化されたことに注意してください。
+    次の例は、クライアントドライバーが NETADAPTER オブジェクトを初期化する方法を示しています。 この例では、エラー処理が簡略化されていることに注意してください。
 
     ```C++
     WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(&attribs, MY_ADAPTER_CONTEXT);
@@ -103,24 +103,24 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     ...
     ```
 
-必要に応じて、NETADAPTER オブジェクトにコンテキストの領域を追加できます。 WDF のオブジェクトに対するコンテキストを設定することができますので、WDFDEVICE と NETADAPTER オブジェクトに対して別のコンテキストの領域を追加できます。 手順 3 での例で、クライアントの追加`MY_ADAPTER_CONTEXT`NETADAPTER オブジェクトにします。 詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](../wdf/framework-object-context-space.md)します。
+必要に応じて、NETADAPTER オブジェクトにコンテキスト空間を追加できます。 任意の WDF オブジェクトにコンテキストを設定できるため、WDFDEVICE オブジェクトと NETADAPTER オブジェクト用に個別のコンテキスト領域を追加することができます。 手順3の例では、クライアントが NETADAPTER オブジェクトに `MY_ADAPTER_CONTEXT` を追加します。 詳細については、「[フレームワークオブジェクトコンテキスト空間](../wdf/framework-object-context-space.md)」を参照してください。
 
-WDFDEVICE のコンテキストでのデバイス関連データを配置し、リンク層などのネットワーク関連のデータは、NETADAPTER コンテキストに対処することをお勧めします。 既存の NDIS 6.x ドライバーを移植する場合はネットワーク関連およびデバイス関連データを 1 つのデータ構造に結合する 1 つ MiniportAdapterContext 可能性があります。 移植プロセスを簡素化するには、WDFDEVICE コンテキストにその全体の構造を変換し、NETADAPTER のコンテキストに WDFDEVICE のコンテキストを指している小規模な構造を作成します。
+WDFDEVICE のコンテキストにデバイス関連のデータを配置し、ネットワーク関連のデータ (リンク層のアドレスなど) を NETADAPTER コンテキストに格納することをお勧めします。 既存の NDIS 6.x ドライバーを移植する場合は、ネットワーク関連のデータとデバイス関連のデータを1つのデータ構造に結合する MiniportAdapterContext が1つ存在する可能性があります。 移植プロセスを単純化するには、その構造全体を WDFDEVICE コンテキストに変換し、NETADAPTER のコンテキストを WDFDEVICE のコンテキストを指す小さな構造体にします。
 
-2 つのコールバックを行うことができます必要に応じて、 [ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)メソッド。
+必要に応じて、 [**NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)メソッドに2つのコールバックを提供できます。
 
-* [*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)
-* [*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)
+* [*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)
+* [*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)
 
-詳細については、これらのコールバックの実装に提供するものは、個々 のリファレンス ページを参照してください。
+これらのコールバックの実装で提供する内容の詳細については、個々のリファレンスページを参照してください。
 
-## <a name="evtwdfdevicepreparehardware"></a>EVT_WDF_DEVICE_PREPARE_HARDWARE
+## <a name="evt_wdf_device_prepare_hardware"></a>EVT_WDF_DEVICE_PREPARE_HARDWARE
 
-多くの NetAdapterCx クライアント ドライバー内から、アダプターを開始する、 [ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)の注目すべき例外でのコールバック関数[モバイル ブロード バンド クラス拡張機能のクライアント ドライバー](mobile-broadband-mbb-wdf-class-extension-mbbcx.md)します。 登録する、 *EVT_WDF_DEVICE_PREPARE_HARDWARE* NetAdapterCx クライアント ドライバーで呼び出す必要がありますコールバック関数、 [ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)します。 
+多くの NetAdapterCx クライアントドライバーは、 [*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数内からアダプターを起動しますが、[モバイルブロードバンドクラス拡張クライアントドライバー](mobile-broadband-mbb-wdf-class-extension-mbbcx.md)の重要な例外があります。 *EVT_WDF_DEVICE_PREPARE_HARDWARE* callback 関数を登録するには、NetAdapterCx client ドライバーが[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)を呼び出す必要があります。 
 
-[ *EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)、他のハードウェアの準備タスクに加えて、クライアント ドライバーを呼び出す必要があります[ **NetAdapterStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart). これを行うには、前に、ドライバーはアダプターの機能を必要に応じて設定できます。
+[*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)では、クライアントドライバーが[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す必要がある他のハードウェア準備タスクに加えて、 これを行う前に、ドライバーは必要に応じてアダプターの機能を設定できます。
 
-次の例では、クライアント ドライバーが NETADAPTER オブジェクトを開始する方法を示します。 各アダプターの機能のメソッドを設定するために必要なコードを省略して簡潔さとわかりやすくするために、エラー処理が簡略化されたことに注意してください。
+次の例は、クライアントドライバーが NETADAPTER オブジェクトを開始する方法を示しています。 各アダプターの機能を設定するために必要なコードは、簡潔でわかりやすくするために残されており、エラー処理が簡略化されています。
 
 ```C++
 PMY_DEVICE_CONTEXT deviceContext = GetMyDeviceContext(device);

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_VOID\_変換\_開始
-description: クライアントを使用して、KSPROPERTY\_BDA\_VOID\_変換\_ノードの操作を開始する開始します。
+title: KSK プロパティ\_BDA\_VOID\_変換\_開始
+description: クライアントは、KSK プロパティ\_BDA\_VOID\_変換を使用して、ノードの開始操作を開始\_開始します。
 ms.assetid: f9116fc6-1c53-470f-abf9-69d047dca44b
 keywords:
-- KSPROPERTY_BDA_VOID_TRANSFORM_START ストリーミング メディア デバイス
+- KSPROPERTY_BDA_VOID_TRANSFORM_START ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9696a9b7b609067d489428814d4e237629a808cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1f89af01cd119797d2f3a5a8c8b760004082ce9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383550"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843591"
 ---
-# <a name="kspropertybdavoidtransformstart"></a>KSPROPERTY\_BDA\_VOID\_変換\_開始
+# <a name="ksproperty_bda_void_transform_start"></a>KSK プロパティ\_BDA\_VOID\_変換\_開始
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_VOID\_変換\_ノードの操作を開始する開始します。
+クライアントは、KSK プロパティ\_BDA\_VOID\_変換を使用して、ノードの開始操作を開始\_開始します。
 
 ## <span id="ddk_ksproperty_bda_void_transform_start_ks"></span><span id="DDK_KSPROPERTY_BDA_VOID_TRANSFORM_START_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "63383550"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "63383550"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>なし</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "63383550"
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -72,7 +72,7 @@ ms.locfileid: "63383550"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -80,7 +80,7 @@ ms.locfileid: "63383550"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

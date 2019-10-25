@@ -1,48 +1,48 @@
 ---
-title: デバイスの電源機能のレポート
-description: デバイスの電源機能のレポート
+title: レポートデバイスの電源機能
+description: レポートデバイスの電源機能
 ms.assetid: 67a504d0-2c41-4c74-a912-4f0771885f7d
 keywords:
-- デバイスの電源機能をレポート
+- レポートデバイスの電源機能
 - デバイスの電源機能 WDK カーネル
 - DEVICE_CAPABILITIES 構造体
-- クエリ機能 Irp WDK の電源管理
-- Irp WDK の電源管理
-- I/O 要求パケット WDK 電源管理
+- クエリ機能の Irp WDK 電源管理
+- Irp WDK 電源管理
+- I/o 要求パケットの WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca69ef60db256d4e4fc479b81d842a685057106
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a17e9f0d089d6c7c87e9b76cfc39a2164686c885
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373407"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838452"
 ---
-# <a name="reporting-device-power-capabilities"></a>デバイスの電源機能のレポート
+# <a name="reporting-device-power-capabilities"></a>レポートデバイスの電源機能
 
 
 
 
 
-ドライバーは、列挙中に、PnP への応答でデバイスに固有の情報を報告[ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。 ドライバーがデバイスの電源管理機能を報告するこのような他の情報と共に、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 通常、バス ドライバーは、この構造体に格納します。
+列挙中に、ドライバーは PnP IRP\_に応答してデバイス固有の情報を報告し、 [ **\_機能要求\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)を実行します。 その他の情報と共に、ドライバーはデバイス[ **\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造にデバイスの電源管理機能を報告します。 通常、バスドライバーはこの構造体にデータを格納します。
 
-高度なドライバーを設定する必要があります、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)クエリ機能の日常的な IRP のため、構造体のローカル コピーを作成していることを確認できますが含まれている適切な値には。 一般的な規則としてより高度なドライバーはこれらの値を変更しないでください。 ただし、変更が必要な場合は、ドライバーがデバイスの機能をさらに制限できますに追加することはできません。 つまり、ドライバーより制限の厳しいルールを作成できますが、それらを緩めることはできません。
+上位レベルのドライバーでは、構造のローカルコピーを作成し、適切な値が含まれていることを確認できるように、クエリ機能の IRP の[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定する必要があります。 一般的な規則として、上位レベルのドライバーでは、これらの値を変更しないでください。 ただし、変更が必要な場合、ドライバーはデバイスの機能をさらに制限することができますが、追加することはできません。 つまり、ドライバーは、規則の制限を厳しくすることができますが、それらを緩めることはできません。
 
-IRP が完了し、すべてのドライバーの完了のルーチンが実行されている後、は、構造体がキャッシュされ、ドライバーは、その内容を変更できません。
+IRP が完了し、すべてのドライバーの完了ルーチンが実行されると、構造はキャッシュされ、ドライバーはその内容を変更できません。
 
-次のメンバー、**デバイス\_機能**構造体は、電源管理に関連します。
+**デバイス\_機能**の構造体の次のメンバーは、電源管理に関連しています。
 
 [DeviceD1 と DeviceD2](deviced1-and-deviced2.md)
 
 [WakeFromD0、WakeFromD1、WakeFromD2、および WakeFromD3](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)
 
-[deviceState](devicestate.md)
+[DeviceState](devicestate.md)
 
 [SystemWake](systemwake.md)
 
 [DeviceWake](devicewake.md)
 
-[D1Latency、D2Latency、および D3Latency](d1latency--d2latency--and-d3latency.md)
+[D1Latency、D2Latency、D3Latency](d1latency--d2latency--and-d3latency.md)
 
  
 

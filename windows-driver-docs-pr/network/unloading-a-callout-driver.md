@@ -3,28 +3,28 @@ title: コールアウト ドライバーのアンロード
 description: コールアウト ドライバーのアンロード
 ms.assetid: a8c1bb33-41f8-420c-a761-669864eb9444
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK、アンロード
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム、アンロード
-- アンロード ドライバー WDK Windows フィルタ リング プラットフォーム
+- Windows フィルタリングプラットフォームのコールアウトドライバーの WDK、アンロード
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、アンロード
+- ドライバーのアンロード (WDK Windows フィルタリングプラットフォーム)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 419babaf2c99b35bfb2f645317818cd4ef5fb618
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4ed875a75a53a0c4767258212f3e966ffdcdbcb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386001"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843015"
 ---
 # <a name="unloading-a-callout-driver"></a>コールアウト ドライバーのアンロード
 
 
-コールアウト ドライバーをアンロードするには、は、オペレーティング システムは、コールアウト ドライバーのアンロード関数を呼び出します。 コールアウト ドライバーのアンロード関数を指定する方法の詳細については、次を参照してください。 [、アンロード関数を指定する](specifying-an-unload-function.md)します。
+コールアウトドライバーをアンロードするために、オペレーティングシステムはコールアウトドライバーの unload 関数を呼び出します。 コールアウトドライバーの unload 関数を指定する方法の詳細については、「 [Unload 関数の指定](specifying-an-unload-function.md)」を参照してください。
 
-コールアウト ドライバーのアンロード関数では、コールアウト ドライバーがシステム メモリからアンロードの直前には、コールアウト ドライバーのコールアウトはフィルター エンジンから登録しないことを保証します。 コールアウト ドライバーを呼び出すか、 [ **FwpsCalloutUnregisterById0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0)関数または[ **FwpsCalloutUnregisterByKey0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0)関数フィルター エンジンからの引き出し線の登録を解除します。 コールアウト ドライバーはする必要があります、フィルター エンジンからそのすべての吹き出しを登録解除が正常にした後、まで、アンロード関数から返されません。
+コールアウトドライバーの unload 関数は、コールアウトドライバーがシステムメモリからアンロードされる前に、コールアウトドライバーのコールアウトがフィルターエンジンから登録解除されることを保証します。 コールアウトドライバーは、 [**FwpsCalloutUnregisterById0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0)関数または[**FwpsCalloutUnregisterByKey0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0)関数のいずれかを呼び出して、フィルターエンジンからのコールアウトを登録解除します。 コールアウトドライバーは、フィルターエンジンからのすべてのコールアウトが正常に登録解除されるまで、unload 関数から戻ることはできません。
 
-コールアウト ドライバーは、フィルター エンジンからそのすべてのコールアウトの登録を解除、デバイスを削除する必要がありますが、最初の吹き出しを登録する前に、作成されたオブジェクトします。 Windows Driver Model (WDM) の呼び出しに基づいているコールアウト ドライバー、 [ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)デバイス オブジェクトを削除する関数。 Windows Driver Frameworks (WDF) の呼び出しに基づいているコールアウト ドライバー、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) framework デバイス オブジェクトを削除する関数。
+コールアウトドライバーは、フィルターエンジンからのすべてのコールアウトを登録解除した後、そのコールアウトを最初に登録する前に、作成したデバイスオブジェクトを削除する必要があります。 Windows Driver Model (WDM) に基づくコールアウトドライバーは、 [**Iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)関数を呼び出してデバイスオブジェクトを削除します。 Windows ドライバーフレームワーク (WDF) に基づくコールアウトドライバーは、 [**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)関数を呼び出して、フレームワークデバイスオブジェクトを削除します。
 
-コールアウト ドライバーをする必要がありますを呼び出して以前に作成したいずれかのパケット インジェクション ハンドルを破棄しても、 [ **FwpsInjectionHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0)アンロード、関数から返す前に機能します。
+また、コールアウトドライバーは、アンロード関数から制御が戻る前に、 [**FwpsInjectionHandleDestroy0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0)関数を呼び出して以前に作成したすべてのパケット挿入ハンドルを破棄する必要があります。
 
 次に、例を示します。
 
@@ -95,7 +95,7 @@ VOID
 }
 ```
 
-前の例は、WDM ベースのコールアウト ドライバーを想定しています。 WDF ベースのコールアウト ドライバーの場合は、唯一の違いは、コールアウト ドライバーのアンロード関数とコールアウト ドライバーが framework デバイス オブジェクトを削除する方法に渡されるパラメーターです。
+前の例では、WDM ベースのコールアウトドライバーが想定されています。 WDF ベースのコールアウトドライバーの場合、唯一の違いは、コールアウトドライバーの unload 関数に渡されるパラメーターと、コールアウトドライバーがフレームワークデバイスオブジェクトを削除する方法です。
 
 ```C++
 WDFDEVICE wdfDevice;

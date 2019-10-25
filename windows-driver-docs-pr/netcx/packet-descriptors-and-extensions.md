@@ -1,102 +1,102 @@
 ---
-title: パケットの記述子と拡張機能
-description: パケットの記述子と拡張機能
+title: パケット記述子と拡張機能
+description: パケット記述子と拡張機能
 ms.assetid: 7B2357AE-F446-4AE8-A873-E13DF04D8D71
 keywords:
-- WDF ネットワーク アダプター クラスの拡張機能のパケットの記述子と拡張機能、NetAdapterCx データパス記述子では、複数のリング バッファー、NetAdapterCx パケット記述子、NetAdapterCx パケットの拡張機能
+- WDF ネットワークアダプタークラス拡張パケット記述子と拡張機能、NetAdapterCx データパス記述子、マルチリングバッファー、NetAdapterCx パケット記述子、NetAdapterCx パケット拡張機能
 ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 250eaa4e0c5e6657a04d61f57b59f0c739d7429d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: caaf4961c269527a667cbdc55e0f7816b8ac77f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375425"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838279"
 ---
-# <a name="packet-descriptors-and-extensions"></a>パケットの記述子と拡張機能
+# <a name="packet-descriptors-and-extensions"></a>パケット記述子と拡張機能
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-NetAdapterCx で*パケット記述子*は構造体に小さな、compact、ランタイム拡張可能なネットワーク パケットをについて説明します。 各パケットでは、次の項目が必要です。
+NetAdapterCx では、*パケット記述子*は、ネットワークパケットを記述する、小さい、コンパクト、ランタイム拡張可能な構造です。 各パケットには次のものが必要です。
 
-- 1 つのコア記述子 
-- 1 つまたは複数のフラグメント記述子
-- 0 個以上のパケットの拡張機能 
+- 1つのコア記述子 
+- 1つまたは複数のフラグメント記述子
+- 0個以上のパケット拡張 
 
-*記述子をコア*のパケットは、 [ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet)構造体。 特定のパケットとパケットの最初のフラグメント記述子のインデックスのフレームのレイアウトなど、すべてのパケットに適用できる最も基本的なメタデータのみが含まれています。   
+パケットの*コア記述子*は、 [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)構造体です。 これには、特定のパケットのフレーミングレイアウトや、パケットの最初のフラグメント記述子へのインデックスなど、すべてのパケットに適用される最も基本的なメタデータのみが含まれます。   
 
-各パケットが、1 つまたは複数必要も*記述子をフラグメント*、または[ **NET_PACKET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_fragment)システム メモリ内の場所を記述する構造体で、パケットデータが存在します。
+各パケットには、パケットデータが置かれているシステムメモリ内の場所を記述する1つまたは複数の*フラグメント記述子*( [**NET_PACKET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)構造体) も必要です。
 
-*パケットの拡張機能*オプションで、シナリオに固有の機能をパケット単位でメタデータを保持します。 たとえば、拡張機能が大量送信オフロード (LSO) チェックサム オフロード情報の保持し、セグメントの要素 (RSC) が表示されるか、アプリケーション固有の詳細を保持できます。
+*パケット拡張*はオプションであり、シナリオ固有の機能に対してパケットごとのメタデータを保持します。 たとえば、拡張機能は、checksum、large send offload (LSO)、および receive segment 要素 (RSC) のオフロード情報を保持できます。また、アプリケーション固有の詳細を保持することもできます。
 
-同時に、これらの記述子と拡張機能は、ネットワーク パケットに関するすべてのメタデータを保持します。 ここでは、2 つの例のパケットについて説明します。 最初の図は、パケット全体は 1 つのメモリ フラグメント内に格納し、チェックサム オフロード シナリオがオンにされましたを示しています。
+これらの記述子と拡張機能は、ネットワークパケットに関するすべてのメタデータを保持します。 ここでは、パケットを記述する方法の2つの例を示します。 最初の図は、パケット全体が単一のメモリフラグメント内に格納され、チェックサムオフロードが有効になっているシナリオを示しています。
 
-![1 つのフラグメントのパケットのレイアウト](images/packet_layout_1_extension_1_fragment.png)
+![1フラグメントのパケットレイアウト](images/packet_layout_1_extension_1_fragment.png)
 
-2 番目の図は、両方の RSC のメモリの 2 つのフラグメントに格納されているパケットと、チェックサム オフロードを有効になっています。
+2番目の図は、RSC とチェックサムオフロードの両方が有効になっている2つのメモリフラグメントに格納されているパケットを示しています。
 
-![2 つのフラグメントのパケットのレイアウト](images/packet_layout_2_extensions_2_fragments.png)
+![2フラグメントのパケットレイアウト](images/packet_layout_2_extensions_2_fragments.png)
 
 
-## <a name="packet-descriptor-storage-and-access"></a>パケット記述子の格納とアクセス
+## <a name="packet-descriptor-storage-and-access"></a>パケット記述子のストレージとアクセス
 
-パケット記述子とフラグメントの記述子が両方に格納されている**NET_RING**構造体。 NIC のクライアント ドライバーでは、net のリングにアクセスし、により、ハードウェアへのネットワーク データを投稿し、完成したデータは、OS をドレインする NetAdapterCx を使用する Net リング反復子インターフェイスを呼び出すことによってそれらの操作を実行します。 
+パケット記述子とフラグメント記述子は両方とも**NET_RING**構造体に格納されます。 NIC クライアントドライバーは、net リング反復子インターフェイスを呼び出すことによって、ネットリングにアクセスし、それらに対して操作を実行します。これにより、ドライバーは NetAdapterCx を使用してネットワークデータをハードウェアにポストし、完了したデータを OS にドレインできます。 
 
-Net のリングとネットの反復子インターフェイスのリングの詳細については、次を参照してください。[リングと net リングを行う反復子を Net](net-rings-and-net-ring-iterators.md)します。
+ネットリングと Net Ring 反復子インターフェイスの詳細については、「 [net リングと net ring 反復子](net-rings-and-net-ring-iterators.md)」を参照してください。
 
-## <a name="packet-descriptor-extensibility"></a>パケットの記述子の機能拡張
+## <a name="packet-descriptor-extensibility"></a>パケット記述子の拡張性
 
-機能拡張は、記述子の versionability とパフォーマンスの基盤を形成 NetAdapterCx パケット記述子のコア機能です。 、実行時に、オペレーティング システムは、利用拡張機能と共に、連続したブロックでは、各パケット キューのすべてのパケットの記述子を割り当てます。 拡張機能の各ブロックは、次の図に示すように、core 記述子の背後にすぐには。
+拡張性は、NetAdapterCx パケット記述子の中核となる機能であり、記述子の versionability 機能とパフォーマンスの基礎を形成します。 実行時には、オペレーティングシステムによって、各パケットキューのすべてのパケット記述子が、使用でき拡張機能と共に、連続するブロックに割り当てられます。 各拡張機能ブロックは、次の図に示すように、コア記述子のすぐ後ろに配置されます。
 
 ![NetAdapterCx パケット記述子のレイアウト](images/packet-descriptors-1-layout.png)
 
-NIC のクライアント ドライバーは使用できませんハードコーディングする任意の拡張機能のブロックのオフセット。 代わりに、オフセットを特定の拡張機能の実行時にクエリを実行する必要があります。 たとえば、ドライバーは、拡張 B へのオフセットをクエリし、70 のバイトのように、次の図に戻る。
+NIC クライアントドライバーは、任意の拡張ブロックへのオフセットをハードコーディングすることは許可されていません。 代わりに、特定の拡張機能へのオフセットに対して、実行時にクエリを実行する必要があります。 たとえば、ドライバーは、次の図に示すように、拡張 B へのオフセットをクエリし、70バイトを取得することがあります。
 
-![Core パケットの記述子の拡張機能へのオフセットのクエリを実行します。](images/packet-descriptors-2-offset-query.png)
+![コアパケット記述子の拡張機能へのオフセットのクエリ](images/packet-descriptors-2-offset-query.png)
 
-パケット キューとその記述子が作成されると、そのすべての拡張機能のオフセットは、システムの定数、ドライバーは、多くの場合、オフセットを再クエリする必要はありませんのでが保証されます。 さらに、すべての拡張機能は、パケットのキューの初期化時にブロックでシステムによってあらかじめ割り当てられ、ため必要はありませんの具体的な記述子のリストの検索またはすべてのパケットへのポインターを格納することは、ブロックの実行時の割り当て拡張機能。
+パケットキューとその記述子が作成されると、すべての拡張オフセットがシステムによって一定であることが保証されるので、ドライバーはオフセットを頻繁に再クエリする必要がありません。 さらに、すべての拡張機能は、パケットキューの初期化時にシステムによって事前に割り当てられているため、ブロックの実行時割り当て、特定の記述子のリストの検索、またはすべてのパケットへのポインターの格納を必要としません。番号.
 
-## <a name="packet-descriptor-versionability"></a>パケット記述子 versionability
+## <a name="packet-descriptor-versionability"></a>パケット記述子の versionability
 
-NetAdapterCx の core パケット記述子簡単に拡張できます将来のリリースによって次の図のように、末尾に新しいフィールドの追加。
+NetAdapterCx のコアパケット記述子は、次の図に示すように、新しいフィールドを末尾に追加することで、将来のリリースで簡単に拡張できます。
 
-![NetAdapterCx core パケットの記述子のバージョン管理](images/packet-descriptors-3-core-descriptor-versioning.png)
+![NetAdapterCx コアパケット記述子のバージョン管理](images/packet-descriptors-3-core-descriptor-versioning.png)
 
-古い V1 専用ドライバーはかを理解しているフィールドにアクセスできるように、V2 のフィールドをスキップする拡張機能のオフセットを使用して、V2 フィールドに新しいクライアント ドライバーにアクセスできます。 さらに、次の図に示すよう、各拡張機能は、同じ方法でバージョン管理できます。
+V2 フィールドを認識している新しいクライアントドライバーは、これらのフィールドにアクセスできますが、古い V1 専用ドライバーは拡張オフセットを使用して V2 フィールドをスキップします。これにより、認識しているフィールドにアクセスできるようになります。 また、次の図に示すように、各拡張機能は同じ方法でバージョン管理できます。
 
-![NetAdapterCx パケットの拡張機能のバージョン管理](images/packet-descriptors-4-extension-versioning.png)
+![NetAdapterCx パケット拡張のバージョン管理](images/packet-descriptors-4-extension-versioning.png)
 
-新しい拡張機能を理解しているクライアント ドライバーを使用できます。 その他のクライアント ドライバーは、新しいフィールドをスキップできます。 これにより、個別にバージョンを更新するのには、パケット記述子のさまざまな部分です。
+新しい拡張機能を認識するクライアントドライバーで使用できます。 その他のクライアントドライバーは、新しいフィールドをスキップできます。 これにより、パケット記述子のさまざまな部分を個別にバージョン管理できます。
 
-## <a name="packet-descriptors-and-datapath-performance"></a>パケット記述子とデータパス パフォーマンス
+## <a name="packet-descriptors-and-datapath-performance"></a>パケット記述子とデータパスのパフォーマンス
 
-記載されている拡張機能は以前は capabable Nic のパフォーマンス要件を満たしているクライアント ドライバーのために、特典を提供しますギガビット/秒、何千ものキューの数百の。
+前に説明した機能拡張機能は、クライアントドライバーが、1秒あたり数百ギガビット、数千のキューを持つ Nic のパフォーマンス要件を満たすのに役立つ利点を提供します。
 
-1. パケットの記述子が保持されるコンパクト機能と使用されていない拡張機能は、0 バイトの記述子の領域を占めるように、CPU キャッシュ ヒット数を改善することになっています。 
-2. ポインターの逆参照、オフセット演算のみ拡張機能は、インラインだけでなく領域を節約しますが、CPU キャッシュ ヒット数のことができますのではありません。 
-3. 拡張機能は、ドライバーは、割り当てとアクティブなデータ パス内のメモリの割り当てを解除またはルック アサイド リストのコンテキストのブロックを処理する必要はありませんので、キューの作成時に割り当てられます。
+1. 使用されていない機能と拡張機能では、記述子に0バイトの領域が占有されるため、パケット記述子はできるだけコンパクトに保持されます。 
+2. ポインターの逆参照はありません。拡張がインラインであるため、オフセット算術演算のみが行われます。これにより、領域を節約できるだけでなく、CPU キャッシュヒットにも役立ちます。 
+3. 拡張機能はキューの作成時に割り当てられるので、ドライバーは、アクティブなデータパスにメモリを割り当てたり割り当てを解除したり、コンテキストブロックのルックアサイドリストを処理したりする必要がありません。
 
-## <a name="using-packet-extensions"></a>パケットの拡張機能の使用 
+## <a name="using-packet-extensions"></a>パケット拡張の使用 
 
 > [!IMPORTANT]
-> 現時点では、クライアント ドライバーに限定[オペレーティング システムで定義された既存のパケットの拡張機能](#predefined-packet-extension-constants-and-helper-methods)します。
+> 現在、クライアントドライバーは、[オペレーティングシステムで定義されている既存のパケット拡張](#predefined-packet-extension-constants-and-helper-methods)に限定されています。
 
-### <a name="registering-packet-extensions"></a>パケットの拡張機能を登録します。
+### <a name="registering-packet-extensions"></a>パケット拡張の登録
 
-NIC は、クライアント ドライバーのパケットの拡張機能を使用する最初の手順、サポートされているハードウェア オフロードを宣言することです。 チェックサムおよび LSO などのオフロードのサポートを提供する場合 NetAdapterCx は自動的に関連付けられているパケットの拡張機能を自動的に登録します。
+NIC クライアントドライバーでパケット拡張機能を使用するための最初の手順は、サポートされているハードウェアオフロードを宣言することです。 Checksum や LSO などのオフロードのサポートを提供する場合、NetAdapterCx は関連付けられているパケット拡張を自動的に登録します。
 
-広告のハードウェアのコード例は、のチェックサムおよび LSO オフロードを参照してください[NetAdapterCx ハードウェア オフロード](netadaptercx-hardware-offloads.md)します。
+チェックサムと LSO のハードウェアオフロードのコード例については、「 [NetAdapterCx hardware オフロード](netadaptercx-hardware-offloads.md)」を参照してください。
 
-### <a name="querying-packet-extension-offsets-for-datapath-queues"></a>データパス キューのオフセットをパケットの拡張機能のクエリを実行します。
+### <a name="querying-packet-extension-offsets-for-datapath-queues"></a>データパスキューのパケット拡張のオフセットを照会しています
 
-ご使用のハードウェアを宣言することで登録のパケットの拡張機能は、サポートをオフロード、拡張機能のオフセットが、パケットを処理するときにそれぞれアクセスする必要があります。 中に、拡張機能のオフセットを照会するには、ドライバーからの呼び出しを減らすことし、パフォーマンスの向上を*EvtNetAdapterCreateTx (Rx) キュー*コールバック関数とストアのキューのコンテキストでのオフセットの情報。 
+ハードウェアオフロードサポートを宣言してパケット拡張を登録した後は、パケットを処理する際にそれぞれにアクセスするための拡張オフセットが必要になります。 ドライバーからの呼び出しを減らしてパフォーマンスを向上させるには、 *EvtNetAdapterCreateTx (Rx) キュー*コールバック関数の間に拡張機能のオフセットを照会し、キューコンテキストにオフセット情報を格納します。 
 
-拡張機能のオフセットのクエリを実行して、キューのコンテキストに格納することの例は、次を参照してください。[送信および受信キュー](transmit-and-receive-queues.md)します。
+拡張機能のオフセットに対してクエリを実行し、それをキューのコンテキストに格納する例については、「[キューの転送と受信](transmit-and-receive-queues.md)」を参照してください。
 
-### <a name="getting-packet-extensions-at-runtime"></a>実行時にパケットの拡張機能を取得します。
+### <a name="getting-packet-extensions-at-runtime"></a>実行時のパケット拡張機能の取得
 
-キューのコンテキストで、拡張機能のオフセットを保存した後はいつでも拡張機能の情報が必要なを使用してできます。 たとえば、呼び出すことができます、 [ **NetExtensionGetPacketChecksum** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/nf-checksum-netextensiongetpacketchecksum)メソッド記述子が送信キューのハードウェアをプログラムします。
+キューコンテキストに拡張オフセットを格納したら、拡張機能の情報が必要なときはいつでも使用できます。 たとえば、 [**Netextensiongetpacketchecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum)メソッドを呼び出して、送信キュー用にハードウェアの記述子をプログラミングすることができます。
 
 ```C++
     // Get the extension offset from the device context
@@ -119,21 +119,21 @@ NIC は、クライアント ドライバーのパケットの拡張機能を使
     ...
 ```
 
-## <a name="predefined-packet-extension-constants-and-helper-methods"></a>定義済みのパケットの拡張機能の定数とヘルパー メソッド
+## <a name="predefined-packet-extension-constants-and-helper-methods"></a>定義済みのパケット拡張定数とヘルパーメソッド
 
-NetAdapterCx では、既知のパケットの拡張機能の定数の定義を提供します。
+NetAdapterCx は、既知のパケット拡張定数の定義を提供します。
 
-| 定数 | 定義 |
+| 常時 | 定義 |
 | --- | --- |
-| NET_PACKET_EXTENSION_INVALID_OFFSET | 無効なオフセット サイズから保護します。 |
-| <ul><li>NET_PACKET_EXTENSION_CHECKSUM_NAME</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1_SIZE</li></ul> | 名前、バージョン、および checksum のパケットの拡張機能のサイズ。 |
-| <ul><li>NET_PACKET_EXTENSION_LSO_NAME</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1_SIZE</li></ul> | 名前、バージョン、およびサイズの大きいオフロード (LSO) パケットの拡張機能を送信します。 |
-| <ul><li>NET_PACKET_EXTENSION_RSC_NAME</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1_SIZE</li></ul> | 名前、バージョン、およびセグメントの要素 (RSC) パケットを受信する拡張機能のサイズ。 |
+| NET_PACKET_EXTENSION_INVALID_OFFSET | 無効なオフセットサイズに対してガードを行います。 |
+| <ul><li>NET_PACKET_EXTENSION_CHECKSUM_NAME</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1_SIZE</li></ul> | チェックサムパケット拡張の名前、バージョン、およびサイズ。 |
+| <ul><li>NET_PACKET_EXTENSION_LSO_NAME</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1_SIZE</li></ul> | Large send offload (LSO) パケット拡張の名前、バージョン、およびサイズ。 |
+| <ul><li>NET_PACKET_EXTENSION_RSC_NAME</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1_SIZE</li></ul> | 受信セグメントの要素 (RSC) パケット拡張の名前、バージョン、およびサイズ。 |
 
-さらに、NetAdapterCx はラッパーとして機能する 3 つのヘルパー メソッドを提供します。、 [ **NetExtensionGetData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extension/nf-extension-netextensiongetdata)メソッド。 これらの各メソッドは、構造体の適切な型にポインターを返します。
+さらに、NetAdapterCx には、 [**Netextensiongetdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata)メソッドのラッパーとして機能する3つのヘルパーメソッドが用意されています。 これらの各メソッドは、適切な構造体の型へのポインターを返します。
 
-| メソッド | 構造体 |
+| メソッド | Structure |
 | --- | --- |
-| [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
-| [**NetExtensionGetLargeSendSegmentation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lso/nf-lso-netextensiongetpacketlargesendsegmentation) | [**NET_PACKET_LARGE_SEND_SEGMENTATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lsotypes/ns-lsotypes-_net_packet_large_send_segmentation)
-| [**NetExtensionGetPacketReceiveSegmentCoalescence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsc/nf-rsc-netextensiongetpacketreceivesegmentcoalescence) | [**NET_PACKET_RECEIVE_SEGMENT_COALESCENCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsctypes/ns-rsctypes-_net_packet_receive_segment_coalescence) |
+| [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
+| [**NetExtensionGetLargeSendSegmentation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlargesendsegmentation) | [**NET_PACKET_LARGE_SEND_SEGMENTATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_large_send_segmentation)
+| [**NetExtensionGetPacketReceiveSegmentCoalescence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketreceivesegmentcoalescence) | [**NET_PACKET_RECEIVE_SEGMENT_COALESCENCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_receive_segment_coalescence) |

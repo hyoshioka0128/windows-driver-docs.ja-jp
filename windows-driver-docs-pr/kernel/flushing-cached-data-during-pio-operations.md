@@ -1,35 +1,35 @@
 ---
-title: PIO 操作中のキャッシュ データのフラッシュ
-description: PIO 操作中のキャッシュ データのフラッシュ
+title: PIO 操作中のキャッシュされたデータのフラッシュ
+description: PIO 操作中のキャッシュされたデータのフラッシュ
 ms.assetid: 8b15f1c4-d3c9-4d61-be37-ee1593f9d5e5
 keywords:
 - キャッシュされたデータのフラッシュ
 - KeFlushIoBuffers
-- PIO 転送操作の WDK カーネル
+- PIO 転送操作 (WDK カーネル)
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72d98502c42266a36ca4d90242b265b35af7f666
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0114b99c7a4d67c243b57c196d9117b253eaae01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386595"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838687"
 ---
-# <a name="flushing-cached-data-during-pio-operations"></a>PIO 操作中のキャッシュ データのフラッシュ
+# <a name="flushing-cached-data-during-pio-operations"></a>PIO 操作中のキャッシュされたデータのフラッシュ
 
 
 
 
 
-一部のプラットフォームでは、プロセッサの命令およびデータのキャッシュは、キャッシュ コヒレンシーの異常を PIO 読み取り操作中に発生します。
+一部のプラットフォームでは、プロセッサの命令およびデータキャッシュが PIO 読み取り操作中にキャッシュの一貫性の異常を示しています。
 
-**注**   PIO を使用するドライバー、読み取り操作中にデータの整合性を維持するためにこのガイドラインに従う必要があります。呼び出す[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)ごとの最後の読み取り操作。
+**注**   読み取り操作中にデータの整合性を維持するには、PIO を使用するドライバーが、各読み取り操作の最後に[**Keflushiobuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers)を呼び出す必要があります。
 
-たとえば、システム メモリへのデバイスから PIO 転送を行うドライバーを呼び出す必要があります**KeFlushIoBuffers**各デバイスの転送操作の最後にします。 別の例として、シーケンスを読み取り、デバイス登録のシステム メモリにドライバーを呼び出す必要があります**KeFlushIoBuffers**シーケンスの最後にします。 それ以外の場合、このようなドライバーは一部のプラットフォームでのシステム メモリ内ではなく、プロセッサのデータ キャッシュにまだがデータにアクセスしよう可能性があります。
+たとえば、デバイスからシステムメモリへの PIO 転送を行うドライバーは、各デバイス転送操作の終了時に**Keflushiobuffers**を呼び出す必要があります。 別の例として、一連のデバイスレジスタをシステムメモリに読み込むドライバーは、シーケンスの最後に**Keflushiobuffers**を呼び出す必要があります。 それ以外の場合、このようなドライバーは、一部のプラットフォームでは、システムメモリではなく、プロセッサのデータキャッシュに残っているデータにアクセスしようとする可能性があります。
 
  
 
-**KeFlushIoBuffers**は何もに、プロセッサを使用する場合は、キャッシュの一貫性を維持、ためこのサポート ルーチンを呼び出し、このようなプラットフォームでオーバーヘッドはほとんどありません。
+**Keflushiobuffers**は、プロセッサがキャッシュの一貫性を維持するために依存している場合は何も行いません。そのため、このサポートルーチンを呼び出すと、このようなプラットフォームではほとんどオーバーヘッドが発生しません。
 
  
 

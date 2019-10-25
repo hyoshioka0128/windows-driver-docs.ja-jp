@@ -3,49 +3,49 @@ title: 仮想サブユニット ドライバーに関する注意事項
 description: 仮想サブユニット ドライバーに関する注意事項
 ms.assetid: e484f815-73a8-46f1-956e-ee16b1856bd0
 keywords:
-- Avc.sys 関数ドライバー WDK、仮想のサブユニット ドライバー
-- 仮想のサブユニット ドライバー WDK AV/C
+- Avc 関数ドライバー WDK、仮想サブユニットドライバー
+- 仮想サブユニットドライバー WDK AV/C
 - 外部デバイス WDK AV/C
 - IOCTL_AVC_CLASS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 513d35a946b564ed616b822b69850e7333981d80
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca049d36082fae78fa7ef090595053b578446caf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385363"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845279"
 ---
 # <a name="virtual-subunit-driver-notes"></a>仮想サブユニット ドライバーに関する注意事項
 
 
-仮想のサブユニット ドライバー要求に応答コントロール、状態、および通知 AV/C コマンド外部の AV/C デバイスからを使用して、 [ **IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)インターフェイスを*Avc.sys*します。
+仮想サブシステムドライバーは、外部の AV/c デバイスからの制御、状態、および通知の AV/C 要求とコマンドに応答します。これには、 *avc* [ **\_avc\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)インターフェイスを使用します。
 
-IOCTL\_AVC\_クラスのサブ機能はコード[ **AVC\_関数\_取得\_要求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)と[ **AVC\_関数\_送信\_応答**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-send-response)は仮想サブユニット ドライバーが仮想ドライバー スタックの残りの部分と対話する主要機構です。 仮想のサブユニット ドライバーの送信、 **AVC\_関数\_取得\_要求**IRP を*Avc.sys*でその[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)ルーチン (IRP 後\_MN\_開始\_デバイスが、基になるドライバー スタック内で完了)。 I/O 完了ルーチン、 **AVC\_関数\_取得\_要求**IRP が呼び出される仮想サブユニットの要求を受信します。 I/O 完了ルーチンは、応答を送信する必要があります (によって**AVC\_関数\_送信\_応答**非同期の IRP で)、を使用(AV/Cプロトコル規則に従って);100ミリ秒以内で[ **AVC\_コマンド\_IRB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)応答を送信する要求に含まれている構造体。 それを再送信する必要があり、 **AVC\_関数\_取得\_要求**IRP が最後に、応答の I/O 完了ルーチンから戻る前に。
+IOCTL\_AVC\_クラス subfunction コード[**avc\_関数\_取得\_要求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)と[**avc\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-send-response)、仮想サブクラスドライバーの主なメカニズムです。仮想ドライバースタックの残りの部分と対話します。 仮想サブシステムドライバーは、 **avc\_関数**を送信し\_[ **\_irp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)内の\_要求 irp を\_開始\_デバイスルーチン (irp\_完了した後\_デバイスを起動し*ます。* は、スタック内の基になるドライバーによって完了されています)。 AVC\_関数の i/o 完了ルーチン **\_GET\_request** IRP は、仮想サブユニットの要求が受信されるたびに呼び出されます。 I/o 完了ルーチンは、(AV/C プロトコル規則に従って) 100 ミリ秒以内に、( **AVC\_関数\_** 非同期 IRP で\_応答を送信する) 応答を送信する必要があります。要求に含まれている[**AVC\_コマンド\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)構造体を使用して、応答を送信できます。 その後、応答の i/o 完了ルーチンから最終的に戻る前に、\_REQUEST IRP を取得\_ために、 **AVC\_関数**を再送信する必要があります。
 
-仮想ドライバー スタックのサブユニット ドライバーは、外部のデバイスに直接コマンドを送信することはできません。 ピアのドライバー スタックは、この機能を提供します。 ただし、仮想のサブユニット ドライバーを使用できる、 [ **AVC\_関数\_検索\_ピア\_は**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-find-peer-do)と[ **AVC\_関数\_ピア\_は\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-peer-do-list)の subfunctions [ **IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)を検出し、参照のインスタンスをピア*Avc.sys*し、外部の AV/C サブユニットと対話します。
+仮想ドライバスタック内のサブユニットドライバが、外部デバイスにコマンドを直接送信することはできません。 ピアドライバースタックは、この機能を提供します。 ただし、仮想サブユニットドライバーでは、 [**avc\_関数を使用して\_ピア\_do**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-find-peer-do)および AVC\_関数を検索\_ことができます。これは、IOCTL\_avc のサブ機能を[**一覧表示**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-peer-do-list)する\_です\_[**このクラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)を使用して、 *Avc*のピアインスタンスを検出して参照し、外部の AV/C サブユニットと対話します。
 
-列挙するには、各仮想サブユニットの*Avc.sys*対応するデバイス オブジェクトを作成します。 そのため、仮想のサブユニットが追加され、削除、 *Avc.sys*バスのリセットの IEEE 1394 をトリガーします。 このリセットは、コンピューターに公開される新しい機能を検出するために IEEE 1394 バス上の他のデバイスを許可します。 仮想のサブユニット ドライバーをロードしてに基づいて、 *Avc.sys*インスタンスのレジストリ設定と追加および IOCTL コード要求によって実行時に削除できます。 なお*Avc.sys*ロードを追加して、これらのサブユニットを削除、および最高のサブユニット識別子を持つ対応する仮想サブユニット ドライバーをアンロードするように、同じ種類の複数の仮想サブユニット区別できません。
+列挙された各仮想サブユニットについて、 *Avc*は対応するデバイスオブジェクトを作成します。 その結果、仮想サブユニットが追加および削除されると、 *Avc*は IEEE 1394 バスリセットをトリガーします。 このリセットにより、IEEE 1394 バス上の他のデバイスが、コンピューターで公開されている新しい機能を検出できるようになります。 仮想サブユニットドライバーは、 *Avc*インスタンスのレジストリ設定に基づいて読み込まれます。これは、実行時に IOCTL コード要求によって追加および削除できます。 *Avc*では、同じ種類の複数の仮想サブユニットを区別できないため、これらのサブユニットを追加または削除すると、対応する仮想サブシステムドライバーが最も大きいサブレベル識別子で読み込まれ、アンロードされます。
 
-仮想のサブユニット ドライバーは、シックかシンかにできます。 唯一の要件は、WDM ドライバーとして記述することができます。 シック ドライバーは、最も、すべてではないにも、仮想デバイスの機能を実装します。 シン ドライバーでは、別のドライバーまたはユーザー モード コンポーネント、仮想デバイスの機能に、プロキシ インターフェイスを提供します。 ユーザー モードと仮想のサブユニット ドライバー間のインターフェイスは実装固有であり、デバイスのプライベート インターフェイスの IOCTL コードから実行できます (を参照してください[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface))、または[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
+仮想サブユニットドライバーは、太いまたは細にすることができます。 唯一の要件は、WDM ドライバーとして記述されていることです。 シックドライバーは、仮想デバイスのほとんどの機能を実装します。 シンドライバは、仮想デバイスの機能へのプロキシインターフェイスを提供します。これは、別のドライバまたはユーザーモードコンポーネントにすることができます。 ユーザーモードと仮想サブユニットドライバー間のインターフェイスは実装固有であり、IOCTL コード、プライベートデバイスインターフェイス ( [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を参照)、また [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI) はを使用して実現できます。
 
-VEN\_と MOD\_の仮想インスタンスを原因となった INF ファイルで指定したのと同じ値では*61883.sys*を読み込めません。 TYP\_と ID\_ときに指定された値は*Avc.sys*仮想のサブユニットを列挙します。
+VEN\_ と MOD\_ の値は、*の仮想*インスタンスが読み込まれる原因となった INF ファイルで指定されているものと同じです。 TYP\_ と ID\_ の値は、 *Avc*によって仮想サブユニットが列挙されるときに指定されます。
 
-仮想のサブユニットの列挙体を使用して行われます、 [ **IOCTL\_AVC\_UPDATE\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)、 [ **IOCTL\_AVC\_削除\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)、および[ **IOCTL\_AVC\_BUS\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset) IOCTL コード。
+仮想サブユニットの列挙は、 [**IOCTL\_AVC\_UPDATE\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)、 [**ioctl\_AVC\_\_仮想\_サブユニットを削除\_を使用して実現され情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)および[**IOCTL\_AVC\_BUS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset) IOCTL コードをリセットします。
 
-適切なの IEEE 1394 Ioctl を送信する必要がある**IEEE1394\_API\_追加\_仮想\_デバイス**と**IEEE1394\_API\_削除\_仮想\_デバイス**列挙プロセスを開始します。 詳細については (IOCTL のサブコマンド\_IEEE1394\_API\_要求)。 *61883.inf*ファイルには、この目的のデバイス識別子 (ID) 既にが含まれています。V1394\\A02D & 10001 が、カスタムの INF ファイルを別の識別子を指定する場合があります。
+適切な IEEE 1394 Ioctl、 **IEEE1394\_api\_追加して\_仮想\_デバイス**と IEEE1394\_api を追加し\_**仮想\_デバイスを削除**して列挙プロセスを開始する必要があります。 詳細については (IOCTL のサブコマンド\_IEEE1394\_API\_要求)」を参照してください。 V1394*ファイルには、この*目的のデバイス識別子 (ID) が既に含まれています。これは、カスタム inf ファイルで別の識別子が指定されている可能性がありますが、\\A02D & 10001 です。
 
-静的に仮想のサブユニットを列挙する別の方法は、INF ファイルを使用して実現できます。
+仮想サブユニットを静的に列挙する別の方法として、INF ファイルを使用できます。
 
-仮想デバイスの一覧キー下の各値は、パックされたサブユニット アドレス (サブユニット型と最大識別子組み合わせると、AV/C 全般の仕様」の説明に従って) です。 サブユニット アドレスに関連付けられている名前が関係ありませんが、そのインスタンスの一意である必要があります。 プログラムで作成されると、値の名前には、競合を回避するために連続する番号が与えられます。
+仮想デバイスの一覧のキーの下にある各値は、パックされたサブユニットアドレス (AV/C 一般仕様で説明されているように、サブユニットの種類と最大識別子の組み合わせ) です。 サブユニットアドレスに関連付けられている名前は問題ではありませんが、そのインスタンスで一意である必要があります。 プログラムによって作成された場合は、競合を避けるために、値の名前に連続した番号が付けられます。
 
-たとえば、INF ファイルで 1 つの仮想チューナーのサブユニットを作成するには次を使用して**AddReg**ディレクティブ。
+たとえば、1つの仮想チューナーサブユニットを INF ファイルから作成するには、次の**AddReg**ディレクティブを使用します。
 
 ```INF
 [Subunit_Device.NT.HW.AddReg]
 HKR,%VirtualAvc.DeviceList%,Tuner,0x00000001,0x28 ;0x00000001 = Binary value, 0x28 = Registry key value
 ```
 
-このディレクティブが追加、REG\_0x28 のバイナリ値 (最下位の 3 つのビットにまとめられて、最上位 5 つのビットと 0x0 の識別子の最大のサブユニット型 0x5 がまとめられます)。 ここで「0x0」最大の識別子では、その型の 1 つサブユニットあるを意味します。
+このディレクティブによって、0x28 の REG\_BINARY 値が追加されます (サブタイプの型0x5 が最上位5ビットにパックされ、最大識別子が0x0 で、最小の3ビットになります)。 ここでは最大で0x0 の識別子は、その種類のサブユニットが1つあることを意味します。
 
-**注**  :定義する必要も、`%VirtualAvc.DeviceList%`トークンで、`[Strings]`サブユニットの INF ファイルのセクション。
+**注**  : サブユニットの INF ファイルの `[Strings]` セクションで `%VirtualAvc.DeviceList%` トークンを定義する必要もあります。

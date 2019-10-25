@@ -4,19 +4,19 @@ description: MS\_SM\_AdapterInformationQuery WMI クラス
 ms.assetid: 3a396a73-6ade-455a-ac3f-fd0175cc704e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c8b53293aeb4921431e742a25e4752efe00eafb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03a952a8fab4add0c89e50c40becc8531deade6a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386144"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843563"
 ---
-# <a name="mssmadapterinformationquery-wmi-class"></a>MS\_SM\_AdapterInformationQuery WMI クラス
+# <a name="ms_sm_adapterinformationquery-wmi-class"></a>MS\_SM\_AdapterInformationQuery WMI クラス
 
 
-記憶域管理 API をサポートする HBA ミニポート ドライバーは、MS を使用して\_SM\_AdapterInformationQuery クラスは、SAS アダプターに関連付けられている属性の情報を公開します。
+Storage Management API をサポートする HBA ミニポートドライバーは、MS\_SM\_AdapterInformationQuery クラスを使用して、SAS アダプターに関連付けられている属性情報を公開します。
 
-MS\_SM\_AdapterInformationQuery クラスが次のように定義されている*Hbaapi.mof*:
+MS\_SM\_AdapterInformationQuery クラスは、 *Hbaapi*で次のように定義されています。
 
 ```cpp
 class MS_SM_AdapterInformationQuery
@@ -102,9 +102,9 @@ class MS_SM_AdapterInformationQuery
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
+このクラス定義が WMI ツールスイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SM\_AdapterInformationQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_sm_adapterinformationquery)
+[**MS\_SM\_AdapterInformationQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_sm_adapterinformationquery)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

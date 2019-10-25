@@ -1,43 +1,43 @@
 ---
 title: WDI_TLV_P2P_CONFIG_METHODS
-description: WDI_TLV_P2P_CONFIG_METHODS では、Wi-Fi Direct 構成メソッドを含む TLV です。
+description: WDI_TLV_P2P_CONFIG_METHODS は、Wi-fi ダイレクトの構成方法を含む TLV です。
 ms.assetid: 95F81FBB-CF78-47EC-8DB3-90F639C30865
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_CONFIG_METHODS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_P2P_CONFIG_METHODS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b5e1d4c3807bc0cdf4f3303839bf9053b15790f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a970603ab40ea577bbcf14afc5935d0c69a7df17
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355103"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840456"
 ---
-# <a name="wditlvp2pconfigmethods"></a>WDI\_TLV\_P2P\_CONFIG\_メソッド
+# <a name="wdi_tlv_p2p_config_methods"></a>WDI\_TLV\_P2P\_CONFIG\_メソッド
 
 
-WDI\_TLV\_P2P\_CONFIG\_メソッドは、Wi-Fi Direct 構成メソッドを含む TLV します。
+WDI\_TLV\_P2P\_CONFIG\_メソッドは、Wi-fi ダイレクトの構成方法を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
 
 0xEB
 
-## <a name="length"></a>長さ
+## <a name="length"></a>Length
 
 
-Uint16 型のサイズをバイト単位で。
+UINT16 のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型   | 説明                                                                                                                                                              |
+| 種類   | 説明                                                                                                                                                              |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT16 | 構成の方法で定義されている[ **WDI\_WPS\_構成\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_wps_configuration_method)します。 暗証番号 (pin) の表示、暗証番号 (pin) のキーパッドおよび WFDS は適用できます。 |
+| UINT16 | [**WDI\_WPS\_構成\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)で定義されている構成方法。 ピンの表示、ピンパッド、およびその他の場合にのみ適用できます。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -47,16 +47,16 @@ Uint16 型のサイズをバイト単位で。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>サポートされている最小のクライアント</p></td>
+<td><p>サポートされている最低限のクライアント</p></td>
 <td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
-<td><p>サポートされている最小のサーバー</p></td>
+<td><p>サポートされている最小サーバー</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td><p>ヘッダー</p></td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

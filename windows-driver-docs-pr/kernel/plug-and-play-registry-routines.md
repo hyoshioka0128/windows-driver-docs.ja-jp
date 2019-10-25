@@ -1,51 +1,51 @@
 ---
-title: プラグ アンド プレイ レジストリ ルーチン
-description: プラグ アンド プレイ レジストリ ルーチン
+title: プラグアンドプレイレジストリルーチン
+description: プラグアンドプレイレジストリルーチン
 ms.assetid: d526af4e-8b33-46fb-9af9-b0d9b9f1913a
 keywords:
-- レジストリの WDK カーネル、プラグ アンド プレイ
-- ドライバーのレジストリ情報 WDK カーネル、プラグ アンド プレイ
-- プラグ アンド プレイ WDK カーネルでは、レジストリのルーチン
-- ハードウェア キー WDK カーネル
-- ソフトウェア キー WDK カーネル
+- レジストリ WDK カーネル、プラグアンドプレイ
+- ドライバーレジストリ情報 WDK カーネル、プラグアンドプレイ
+- プラグアンドプレイ WDK カーネル、レジストリルーチン
+- ハードウェアキー WDK カーネル
+- ソフトウェアキー WDK カーネル
 - IoOpenDeviceRegistryKey
 - IoOpenDeviceInterfaceRegistryKey
-- PnP WDK カーネルでは、レジストリのルーチン
+- PnP WDK カーネル、レジストリルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48f6398915c4afd1becf4ec4871614fc8d09fc30
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 09dc6832584e456d6516a7dd3d884f410fc1ae60
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380938"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838511"
 ---
-# <a name="plug-and-play-registry-routines"></a>プラグ アンド プレイ レジストリ ルーチン
+# <a name="plug-and-play-registry-routines"></a>プラグアンドプレイレジストリルーチン
 
 
-プラグ アンド プレイ マネージャーは、ドライバー、そのデバイス、およびそのデバイス インターフェイスのインスタンスを特定のレジストリ キーを関連付けます。 ドライバーは、これらのキーを使用して、ドライバー、または特定のデバイスまたはデバイス インターフェイスのインスタンスに関連付けられた永続的なプロパティを格納できます。
+プラグアンドプレイ manager は、特定のレジストリキーをドライバー、そのデバイス、およびデバイスインターフェイスインスタンスに関連付けます。 ドライバーは、これらのキーを使用して、ドライバーに関連付けられている永続的なプロパティや、特定のデバイスまたはデバイスインターフェイスインスタンスを格納できます。
 
-ドライバーは、これらのキーを直接アクセスする必要があることはありません。 Windows の将来のバージョン可能性があります、または情報を格納別の場所にレジストリで、レジストリ外全体。 ドライバーは、次のツリー内のすべてのキーを直接アクセスできないする必要があります。
+ドライバーは、これらのキーに直接アクセスすることはできません。 将来のバージョンの Windows では、レジストリの別の場所、またはレジストリの外部に情報が保存される場合があります。 ドライバーは、次のツリー内のどのキーにも直接アクセスできないようにする必要があります。
 
--   HKLM\\システム\\CurrentControlSet\\コントロール\\クラス
+-   HKLM\\SYSTEM\\CurrentControlSet\\Control\\クラス
 
--   HKLM\\システム\\CurrentControlSet\\コントロール\\DeviceClasses
+-   HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceClasses 制御
 
 -   HKLM\\システム\\CurrentControlSet\\列挙型
 
--   HKLM\\システム\\CurrentControlSet\\ハードウェア プロファイル
+-   HKLM\\SYSTEM\\CurrentControlSet\\ハードウェアプロファイル
 
-代わりに、ドライバーを使用して、 [ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)ルーチンの PnP にアクセスするにはキー。
+代わりに、ドライバーは[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)ルーチンと[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)ルーチンを使用して、PnP キーにアクセスします。
 
-PnP マネージャーでは、ドライバーの場合、ドライバーのソフトウェアのキー、および各デバイスの場合、デバイスのハードウェア キーと呼ばれるキーと呼ばれる 1 つのキーを割り当てます。 **IoOpenDeviceRegistryKey**ルーチンがいずれかのキーを開くことができます。 値、 *DevInstKeyType*を開くには、どのキーを指定します。 PLUGPLAY を指定\_REGKEY\_ドライバー、ソフトウェア キーまたは PLUGPLAY を開く\_REGKEY\_ハードウェア キーへのデバイス。 *デバイス オブジェクト*パラメーターは、デバイスまたはドライバーを指定します。 (ドライバーは、and 演算 PLUGPLAY によって、現在のハードウェア プロファイルを基準とそのハードウェアとソフトウェア キーにもアクセスできます\_REGKEY\_現在\_に HWPROFILE *DevInstKeyType*)。
+PnP マネージャーは、ドライバーの1つのキー (ドライバーのソフトウェアキー) と、各デバイスのキー (デバイスのハードウェアキーと呼ばれます) を割り当てます。 **IoOpenDeviceRegistryKey**ルーチンを使用して、いずれかのキーを開くことができます。 *Devinstkeytype*パラメーターの値によって、どのキーを開くかが決定されます。 ソフトウェアキーを開くには、PLUGPLAY\_REGKEY\_ドライバーを指定します。または、レジストリ\_デバイスをハードウェアキーに\_します。 *DeviceObject*パラメーターは、デバイスまたはドライバーを指定します。 (また、ドライバーは、現在のハードウェアプロファイルを基準として、現在のハードウェアプロファイルに対して、そのハードウェアとソフトウェアのキーにアクセスすることもできます。これは、PLUGPLAY\_REGKEY\_現在の\_HWPROFILE を*Devinstkeytype*に対して実行すること
 
-**IoOpenDeviceInterfaceRegistryKey**特定のデバイス インターフェイスのインスタンスに関連付けられたキーを開きます。 これは、その名前で、インスタンスが識別される、 [ **UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)によって返される[ **IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)、[ **IoGetDeviceInterfaceAlias**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfacealias)、または[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)します。 として文字列が渡される、 *SymbolicLinkValue*パラメーターを**IoOpenDeviceInterfaceRegistryKey**します。
+**IoOpenDeviceInterfaceRegistryKey**は、特定のデバイスインターフェイスインスタンスに関連付けられているキーを開きます。 インスタンスは、 [**iogetdeviceinterface、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) [**iogetdeviceinterfacealias**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacealias)、または[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)によって返される[**UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)である名前で識別されます。 文字列は、 *SymbolicLinkValue*パラメーターとして**IoOpenDeviceInterfaceRegistryKey**に渡されます。
 
-INF ファイル、またはを使用して、これらのキーを設定することも、 **SetupDi * Xxx*** ルーチン。 詳細については、次を参照してください。[ドライバーのレジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)します。
+これらのキーは、INF ファイルで設定することも、 **Setupdi * Xxx*** ルーチンを使用して設定することもできます。 詳細については、「[ドライバーのレジストリキー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)」を参照してください。
 
-両方[ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)としてアクセス権を持つ、開いているキー ハンドルを提供指定された、 *DesiredAccess*パラメーター。 ドライバーを使用して、その後、 **Zw * Xxx*** レジストリのルーチンなど[ **ZwQueryValueKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryvaluekey)と[ **ZwSetValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey)にアクセスして、キーを操作します。 ドライバーが呼び出すことによって、ハンドルを閉じ、ドライバーは不要になったハンドルを使用して後、 [ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 詳細については、次を参照してください。[レジストリ キー オブジェクトを識別するハンドルを使用して](using-a-handle-to-a-registry-key-object.md)します。
+[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)と[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)はどちらも、 *DesiredAccess*パラメーターで指定されているアクセス権を持つオープンキーハンドルを提供します。 その後、ドライバーは、 [**Zwqueryvaluekey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey)や[**Zwqueryvaluekey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)などの**Zw * Xxx*** レジストリルーチンを使用して、キーにアクセスして操作します。 ドライバーがハンドルを使用しなくなった後、ドライバーは[**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してハンドルを閉じます。 詳細については、「[レジストリキーオブジェクトへのハンドルの使用](using-a-handle-to-a-registry-key-object.md)」を参照してください。
 
-次のコード サンプルでは、使用方法を示します**IoOpenDeviceRegistryKey**と**ZwSetValueKey**デバイスのハードウェア キーの下に"Value"をという名前の値に関連付けられているデータを設定します。
+次のコードサンプルでは、 **IoOpenDeviceRegistryKey**と**Zwsetvaluekey**を使用して、デバイスのハードウェアキーの下の "value" という名前の値に関連付けられているデータを設定します。
 
 ```cpp
 PDEVICE_OBJECT pDeviceObject; // A pointer to the PDO for the device.
@@ -69,7 +69,7 @@ if (NTSUCCESS(status)) {
 }
 ```
 
-レジストリ キーへのアクセスを制限できることに注意してくださいそのため、への呼び出し[ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)と[ **IoOpenDeviceInterfaceRegistryKey** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)ために必要な最低限の権限を指定する必要があります*DesiredAccess*します。 要求した場合、ドライバーへのアクセス権限が許可されていません、いずれかのルーチンがステータスを返します\_アクセス\_が拒否されました。 具体的には、ドライバーがキーを指定する必要があります\_すべて\_アクセスします。
+レジストリキーへのアクセスは制限される可能性があるため、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)と[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)を呼び出す場合は、 *DesiredAccess*に必要な最小限の権限を指定する必要があります。 許可されていないアクセス権をドライバーが要求した場合、どちらのルーチンも、ステータス\_アクセス\_拒否された状態を返します。 特に、ドライバーでは、すべての\_アクセス\_キーを指定しないでください。
 
  
 

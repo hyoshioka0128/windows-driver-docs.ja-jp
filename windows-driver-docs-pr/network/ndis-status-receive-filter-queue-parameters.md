@@ -1,54 +1,54 @@
 ---
 title: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
-description: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS 状態は、NDIS と仮想マシン (VM) キューの現在のパラメーターは、ネットワーク アダプター上で変更されたドライバーの上にあることを示します。
+description: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS の状態は、ネットワークアダプターで現在の仮想マシン (VM) キューのパラメーターが変更されたことを、NDIS およびそれ以降のドライバーに示します。
 ms.assetid: 30782C77-578F-4533-8B6B-9D2F64EE6189
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3422c806c07e27ad07a9ea58951abfb0c81749
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8fda407edcca4ff5814de5cabc0891694784505
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385241"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843522"
 ---
-# <a name="ndisstatusreceivefilterqueueparameters"></a>NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター
+# <a name="ndis_status_receive_filter_queue_parameters"></a>NDIS\_ステータス\_受信\_フィルター\_キューの\_パラメーター
 
 
-**NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター** NDIS と関連付けたドライバーに状態を示しますが、現在の仮想マシン (VM) のキューネットワーク アダプターのパラメーターが変更されました。
+**Ndis\_ステータス\_受信\_フィルター\_キュー\_パラメーター**の状態は、ネットワークアダプターで現在の仮想マシン (VM) キューのパラメーターが変更されたことを ndis およびそれ以降のドライバーに示します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーを発行する必要があります、 **NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター** VM キューの現在のパラメーターがある場合、状態の表示ネットワーク アダプターに変更します。 次の条件のいずれかが true の場合、VM のキューのパラメーターを変更できます。
+ミニポートドライバーは、ネットワークアダプターで現在の VM キューパラメーターが変更されている場合に **\_フィルター\_キュー\_パラメーターを受信\_\_、NDIS の状態**を発行する必要があります。 VM キューのパラメーターは、次のいずれかの条件に該当する場合に変更される可能性があります。
 
--   VM のキューのパラメーターは、独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションで変更されます。
+-   VM キューのパラメーターは、独立系ハードウェアベンダー (IHV) によって開発された管理アプリケーションを使用して変更されます。
 
--   負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属している 1 つまたは複数のネットワーク アダプターの VM キューのパラメーターを変更します。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)します。
+-   VM キューパラメーターは、MUX 中間ドライバーによって管理される負荷分散フェールオーバー (LBFO) チームに属する1つまたは複数のネットワークアダプターに対して変更されます。 詳細については、「 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)」を参照してください。
 
-ミニポート ドライバーを発行したとき、 **NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター**状態を示す値、次の手順に従う必要があります。
+ミニポートドライバーが NDIS\_の状態を発行し **\_\_フィルター\_キューの\_パラメーター**の状態が表示されたら、次の手順に従う必要があります。
 
-1.  ミニポート ドライバーを初期化します、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)ネットワーク アダプターでは、現在の VM キュー パラメーターを含む構造体。 ドライバーを設定する必要がありますも、**フラグ**適切な NDIS を使用して、この構造体のメンバー\_受信\_キュー\_パラメーター\_*Xxx* \_変更されたフラグをレポートする**NDIS\_受信\_キュー\_パラメーター**が変更されたメンバーの値。
+1.  ミニポートドライバーは、ネットワークアダプターの現在の VM キューパラメーターを使用して、 [ **\_キュー\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)初期化します。 また、ドライバーは、この構造体の**フラグ**メンバーを適切な NDIS\_RECEIVE\_queue に設定する必要があります。\_*Xxx*\_変更されたフラグを、 **ndis\_receive\_queue のレポートに\_し @no__t**変更されたパラメーターのメンバー値 (_s)。
 
-    **注**NDIS 6.30 以降、ミニポート ドライバーのみを発行でき、 **NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター**状態レポートを示す値を変更する、 **InterruptCoalescingDomainId**メンバー。
-
-
+    **メモ** NDIS 6.30 以降では、ミニポートドライバーは、 **InterruptCoalescingDomainId**メンバーへの変更についてレポートするための **\_キュー\_パラメーターの状態を受信\_\_、NDIS\_の状態**のみを発行できます。
 
 
-ミニポート ドライバーを初期化すると、**ヘッダー**この構造体のメンバーは、設定、**型**のメンバー**ヘッダー** NDIS に\_オブジェクト\_型\_既定します。 ミニポート ドライバーのセット、**リビジョン**のメンバー**ヘッダー** NDIS に\_受信\_キュー\_パラメーター\_リビジョン\_2 と**サイズ**NDIS メンバー\_SIZEOF\_受信\_キュー\_パラメーター\_リビジョン\_2。
 
 
-2.  ミニポート ドライバーを初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)次のように構造体。
+ミニポートドライバーは、この構造体の**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_DEFAULT に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_RECEIVE\_QUEUE\_パラメーター\_リビジョン\_2 および**SIZE**メンバーを NDIS\_SIZEOF\_receive\_queue に設定します。\_パラメーター\_REVISION\_2 です。
 
-    -   **StatusCode**にメンバーを設定する必要があります**NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター**します。
 
-    -   **StatusBuffer**へのポインターにメンバーを設定する必要があります、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体。 この構造体には、NIC のスイッチの現在有効になっているハードウェア機能が含まれています。
+2.  ミニポートドライバーは、次の方法で[**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体を初期化します。
 
-    -   **StatusBufferSize** sizeof にメンバーを設定する必要があります ([**NDIS\_受信\_キュー\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters))。
+    -   **StatusCode**メンバーを**NDIS\_STATUS に設定し\_受信\_フィルター\_キュー\_パラメーター**に設定する必要があります。
 
-3.  ミニポート ドライバーが呼び出すことによって、状態の通知を発行[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)します。 ドライバーへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体を*StatusIndication*パラメーター。
+    -   **Statusbuffer**メンバーは、 [**NDIS\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体へのポインターに設定する必要があります。 この構造体には、NIC スイッチの現在有効なハードウェア機能が含まれています。
 
-使用できるドライバーが重なって、 **NDIS\_状態\_受信\_フィルター\_キュー\_パラメーター**でキュー パラメーターの状態を示す値を現在の VM を確認ネットワーク アダプター。 また、これらのドライバーも発行できますオブジェクト識別子 (OID) のクエリ要求の[OID\_受信\_フィルター\_キュー\_パラメーター](oid-receive-filter-queue-parameters.md)をいつでもこれらのパラメーターを取得します。
+    -   **Statusbuffersize**メンバーを Sizeof ([**NDIS\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)) に設定する必要があります。
+
+3.  ミニポートドライバーは、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)を呼び出すことによって状態通知を発行します。 ドライバーは、 [**NDIS\_STATUS\_を示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)ポインターを*statusindication*パラメーターに渡す必要があります。
+
+これまでのドライバーでは、 **NDIS の\_ステータス\_受信\_フィルター\_キュー\_パラメーター**の状態の表示を使用して、ネットワークアダプターの現在の VM キューパラメーターを確認できます。 また、これらのドライバーは Oid のオブジェクト識別子 (OID) クエリ要求を発行して、これらのパラメーターをいつでも取得[\_フィルター\_キュー\_パラメーター\_受け取る](oid-receive-filter-queue-parameters.md)こともできます。
 
 <a name="requirements"></a>要件
 ------------
@@ -61,11 +61,11 @@ ms.locfileid: "67385241"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -74,11 +74,11 @@ ms.locfileid: "67385241"
 
 
 ****
-[**NDIS\_受信\_キュー\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)
+[**NDIS\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_受信\_フィルター\_キュー\_パラメーター](oid-receive-filter-queue-parameters.md)
+[OID\_\_フィルター\_\_キューのパラメーターを受け取る](oid-receive-filter-queue-parameters.md)
 
 
 

@@ -1,77 +1,77 @@
 ---
-title: デバイスの電源切断 IRP の処理
-description: デバイスの電源切断 IRP の処理
+title: デバイスの電源ダウン Irp の処理
+description: デバイスの電源ダウン Irp の処理
 ms.assetid: 2f4591d6-5bd0-45db-b02d-cf9dd59c3888
 keywords:
-- セット power Irp WDK カーネル
-- デバイスが電源 Irp WDK カーネルを設定
+- パワー Irp WDK カーネル
+- デバイスセットの電源 Irp WDK カーネル
 - 電源 Irp WDK カーネル、デバイスの変更
-- Irp WDK カーネルの電源切断
-- WDK の電源管理のコンテキスト情報
-- シャット ダウンの電源管理の WDK カーネル
-- WDK のカーネルを電源オフ
+- 電源ダウン Irp WDK カーネル
+- コンテキスト情報 WDK の電源管理
+- 電源管理のシャットダウン WDK カーネル
+- オフパワー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd5d33ad3429aa21260f2c3bfad0e06f63bafcb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad22502b48cb6b1f509cee8b32008794f9c60c1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386887"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836588"
 ---
-# <a name="handling-device-power-down-irps"></a>デバイスの電源切断 IRP の処理
+# <a name="handling-device-power-down-irps"></a>デバイスの電源ダウン Irp の処理
 
 
 
 
 
-デバイスを電源オフ IRP がマイナー関数のコードを指定します[ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)とデバイスの電源の状態 (**PowerDeviceD0**、 **PowerDeviceD1**、 **PowerDeviceD2**、または**PowerDeviceD3**) 以下を利用したまたは現在のデバイスの電源の状態と同じであります。 ドライバーは、デバイス スタックを通って IRP 電源 IRP を処理する必要があります。 高度なドライバーは IRP がドライバーの下位レベルの前に処理する必要があります。 実行するデバイスに固有のタスクを持たないドライバーでは、次の下位のドライバーに IRP を渡す必要があります速やかにします。
+デバイスの電源を切る IRP は、 [ **\_\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)とデバイスの電源状態 (**PowerDeviceD0**、 **PowerDeviceD1**、 **POWERDEVICED2**、または**PowerDeviceD3**) に設定されたマイナー関数コードの irp\_を指定します。電力が低いか、現在のデバイスの電源状態に等しい。 IRP がデバイススタックを移動するときに、ドライバーは電源を入れて IRP を処理する必要があります。 上位レベルのドライバーは、下位レベルのドライバーの前に、IRP を処理する必要があります。 デバイス固有のタスクを実行しないドライバーは、IRP を次の下位のドライバーに直ちに渡す必要があります。
 
-次の図では、このような IRP の処理に関連する手順を示します。
+次の図は、このような IRP の処理に関連する手順を示しています。
 
-![デバイスの電源切断要求を処理するかを示す図](images/devd3.png)
+![デバイスの電源を切る要求の処理を示す図](images/devd3.png)
 
-IRP が指定されている場合**PowerDeviceD3**、関数ドライバーでは、次のタスクを実行する必要があります通常。
+IRP で**PowerDeviceD3**が指定されている場合、関数ドライバーは通常、次のタスクを実行する必要があります。
 
--   呼び出す[ **IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)、ドライバーが、PnP されませんが受け取るようにする、現在の IRP を渡して[ **IRP\_MN\_の削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) power IRP の処理中に要求します。
+-   現在の IRP を渡して[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)を呼び出し、ドライバーが PnP\_irp を受信していないことを確認します。これにより、電源 irp の処理中に[ **\_デバイスの要求\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)されます。
 
-    場合**IoAcquireRemoveLock** 、エラー状態が返されるドライバーは IRP の処理を続行しないでください。 代わりに、Windows Vista 以降、ドライバー、呼び出す必要があります[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP を完了し、エラー状態を返します。 ドライバーが呼び出すサーバーの Windows Server 2003、Windows XP、および Windows 2000、 **IoCompleteRequest** IRP を完了するを呼び出すし[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)を開始する、IRP の電源を次に行い、エラー状態を返します。
+    **IoAcquireRemoveLock**がエラー状態を返した場合、ドライバーは IRP の処理を続行しません。 代わりに、Windows Vista 以降では、ドライバーは[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して IRP を完了してから、エラー状態を返す必要があります。 Windows Server 2003、Windows XP、および Windows 2000 では、ドライバーは**IoCompleteRequest**を呼び出して IRP を完了し、 [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出して次の電源 irp を開始してから、エラーの状態を返します。
 
--   行う必要がある、デバイスを閉じる、完了または保留中の I/O、いずれかのフラッシュなど、デバイスの電源が削除される前に、割り込みを無効にすると、デバイスに固有のタスクを実行[後続の受信 Irp のキュー](queuing-i-o-requests-while-a-device-is-sleeping.md)、およびデバイスの保存復元またはデバイスを再初期化するコンテキスト。
+-   デバイスの電源を切断する前に実行する必要があるデバイス固有のタスクを実行します。たとえば、デバイスを閉じる、保留中の i/o を完了またはフラッシュする、割り込みを無効にする、[後続の受信 irp をキュー](queuing-i-o-requests-while-a-device-is-sleeping.md)に保存する、デバイスコンテキストを保存するなどの操作を行います。デバイスを復元または再初期化します。
 
-    ドライバーが長時間の遅延 (ユーザーがこの種類のデバイスの不合理あります遅延など) に発生することはできません、IRP の処理中にします。
+    IRP を処理するときに、ドライバーで長い遅延が発生しないようにする必要があります (たとえば、ユーザーがこの種のデバイスに対して不適切である可能性がある遅延)。
 
-    デバイスが稼働状態に戻ったまで、ドライバーはすべての I/O 要求をキューする必要があります。
+    ドライバーは、デバイスが動作状態に戻るまで、着信 i/o 要求をキューに挿入する必要があります。
 
--   場合によっての値を確認**Parameters.Power.ShutdownType**します。 システム設定 power IRP はアクティブである場合、 **ShutdownType** IRP システムに関する情報を提供します。 この値の詳細については、次を参照してください。[システム電源操作](system-power-actions.md)します。
+-   場合によっては、パラメーターの値を確認します。 **ShutdownType**. システムの set-power IRP がアクティブである場合、 **Shutdowntype**はシステムの irp に関する情報を提供します。 この値の詳細については、「[システム電源動作](system-power-actions.md)」を参照してください。
 
-    休止パス上のデバイスのドライバーでは、この値を検査する必要があります。 場合、 **ShutdownType**は**PowerActionHibernate**ドライバーは、デバイスを復元するために必要な任意のコンテキストを保存する必要がありますが、デバイスの電源する必要があります。
+    休止状態のデバイスのドライバーは、この値を検査する必要があります。 **Shutdowntype**が**poweractionhibernate**の場合、ドライバーは、デバイスを復元するために必要なすべてのコンテキストを保存する必要がありますが、デバイスの電源を切ることはできません。
 
--   変更が適切な場合は、ドライバーではこれを行う場合とは、デバイスの物理的な電源状態を変更します。
+-   デバイスの物理電源の状態を変更することができる場合は、その変更が適切であるかどうかを変更します。
 
--   呼び出す[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)新しいデバイスの電源状態の電源マネージャーに通知します。
+-   [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を呼び出して、新しいデバイスの電源状態を電源マネージャーに通知します。
 
--   呼び出す[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)の次の下位ドライバー スタックの場所を設定します。
+-   [**Iocopy"enti"** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)を呼び出して、次に小さいドライバーのスタック位置を設定します。
 
--   設定、 *IoCompletion*ルーチンを呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)ドライバーが IRP の [次へ] のパワーを処理する準備ができてことを示します。 Windows 7 および Windows Vista では、この手順は必要はありません。
+-   ドライバーが次の電源 IRP を処理する準備ができていることを示す[**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出す*iocompletion*ルーチンを設定します。 Windows 7 と Windows Vista では、この手順は必要ありません。
 
--   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (Windows 7 および Windows Vista) の呼び出しまたは[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (Windows Server 2003、Windows XP、および Windows で2000) をクリックし、次の下位ドライバーに IRP を渡す。 IRP が完了すると、バス ドライバーまで IRP を渡す必要があります。
+-   Windows 7 と windows Vista で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出します。または、 [**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (Windows SERVER 2003、Windows XP、および windows 2000) を呼び出して、IRP を次の下位のドライバーに渡します。 Irp は、IRP を完了するバスドライバーに渡す必要があります。
 
--   呼び出す[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)以前に取得したロックを解除します。
+-   [**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)を呼び出して、以前に取得したロックを解放します。
 
--   状態を返す\_保留します。
+-   ステータスを返す\_保留中です。
 
-ドライバーは、任意のデバイス コンテキスト情報を保存および IRP を転送する前に新しい電源の状態を設定する必要があります。 コンテキストについては、含めることは、少なくとも、要求された新しい電源の状態。 その他の情報の電源投入時に、ドライバーが必要がある必要があります。 IRP が完了すると、デバイスの電源が入っていない、ドライバーでは、デバイスがアクセスできなくでき、デバイス コンテキストは使用できません。
+ドライバーは、すべてのデバイスコンテキスト情報を保存し、IRP を転送する前に新しい電源状態を設定する必要があります。 コンテキスト情報には、少なくとも要求された新しい電源状態が含まれている必要があります。 また、電源投入時にドライバーが必要とする追加情報も含まれている必要があります。 IRP が完了し、デバイスの電源がオフになると、ドライバーはデバイスにアクセスできなくなり、デバイスコンテキストを使用できなくなります。
 
-各ドライバーでは、次の下位のドライバーに IRP を渡す必要があります。 IRP では、バス ドライバーに達すると、バス ドライバーの電源オフ (この機能である) 場合、デバイスが呼び出し[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)電源マネージャーに通知する IRP が完了するとします。
+各ドライバーは、IRP を次の下位のドライバーに渡す必要があります。 IRP がバスドライバーに到達すると、バスドライバーはデバイスを電源オフにし (この機能が可能な場合)、 [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を呼び出して電源マネージャーに通知し、irp を完了します。
 
-ただし、チェックイン、休止状態のデバイスをサービス バス ドライバー場合かどうかの値**ShutdownType** IRP が PowerSystemHibernate します。 場合は、バス ドライバーを呼び出す必要がありますので、 **PoSetPowerState** PowerDeviceD3 がありませんが、レポートにデバイスを電源。 システムの残りの部分と共に、休止状態ファイルを保存した後、デバイスが電源します。
+ただし、バスドライバーが休止状態のデバイスをサービスしている場合は、IRP の**Shutdowntype**の値が PowerSystemHibernate であるかどうかを確認する必要があります。 その場合、バスドライバーは**PoSetPowerState**を呼び出して PowerDeviceD3 を報告する必要がありますが、デバイスの電源を切ることはできません。 休止状態ファイルが保存された後、システムの残りの部分と共に、デバイスの電源が切断されます。
 
-結局のところその子デバイスの電源ダウンには、バス ドライバーが、バスの電源をもことができます。 このような動作は、デバイスによって異なります。
+すべての子デバイスの電源を切った後、バスドライバーでもバスの電源を切ることができます。 このような動作は、デバイスに依存します。
 
-IRP では、他の状態 (D0、D1 または D2) を指定する場合の必要なドライバー操作はデバイスに依存します。 通常、これらの状態をサポートするデバイスにすぐに戻し作業状態、I/O 要求が到着するとします。 このようなデバイス用のドライバーでは、保留中の I/O 要求を完了、新しい要求をキュー、および次の下位のドライバーに IRP を転送する前に必要なすべてのコンテキストを保存する必要があります。 IRP では、バス ドライバーに達すると、要求された状態で、ハードウェアを設定します。 スリープ中に、ドライバーは、デバイスにアクセスできません。
+IRP で他の状態 (D0、D1、または D2) が指定されている場合、必要なドライバーアクションはデバイスに依存します。 通常、これらの状態をサポートするデバイスは、i/o 要求が到着するとすぐに動作状態に戻ることができます。 このようなデバイスのドライバーは、保留中の i/o 要求を完了し、新しい要求をキューに格納して、必要なすべてのコンテキストを保存してから、IRP を次の下位のドライバーに転送する必要があります。 IRP がバスドライバーに到達すると、要求された状態のハードウェアが設定されます。 ドライバーは、スリープ状態のときにデバイスにアクセスできません。
 
-状況によっては、関数またはフィルター ドライバーがデバイスを受け取ることがあります、デバイスが既に D0 状態のときに、PowerDeviceD0 を指定する IRP の電源をします。 他の任意のセット power IRP のように、ドライバーがこの IRP を処理する必要があります保留中の I/O 要求を完了し、受信の I/O 要求をキュー、、の設定、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンと次の下位に IRP のパス。ドライバー。 ただし、ドライバーでは、デバイスのハードウェア設定を変更する必要があります、します。 バス ドライバーは IRP を受信すると、単に IRP を完了する必要があります。 IRP が完了したら、関数とフィルター ドライバーは、キューに置かれた要求を処理できます。 IRP が完了するまでキューの I/O は、以上のドライバーが I/O を試行中に、デバイスの登録を変更しようとしています。 下のドライバーの可能性を排除します。
+場合によっては、関数またはフィルタードライバーが、デバイスが既に D0 状態にあるときに PowerDeviceD0 を指定するデバイスの電源 IRP を受け取ることがあります。 この IRP は、他の set-power IRP と同様に処理する必要があります。保留中の i/o 要求を完了し、受信 i/o 要求をキューに入れ、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定して、irp を次の下位のドライバーに渡します。 ただし、ドライバーでは、デバイスのハードウェア設定を変更することはできません。 バスドライバーが IRP を受け取ると、IRP を完了するだけです。 IRP が完了すると、関数ドライバーとフィルタードライバーは、キューに置かれた要求を処理できます。 IRP が完了するまで i/o をキューに登録すると、より高いドライバーで i/o を試行している間に、ドライバーがデバイスレジスタを変更しようとする可能性がなくなります。
 
  
 

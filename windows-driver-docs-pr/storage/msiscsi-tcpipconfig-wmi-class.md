@@ -4,26 +4,26 @@ description: MSiSCSI\_TCPIPConfig WMI クラス
 ms.assetid: 57451576-a900-4eaa-b229-bda79a81d014
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49bed145c38b6cb358ee1427183883adcf499e3d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b3015ced1d92ab7ea3094412965b62c17260093
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384663"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840628"
 ---
-# <a name="msiscsitcpipconfig-wmi-class"></a>MSiSCSI\_TCPIPConfig WMI クラス
+# <a name="msiscsi_tcpipconfig-wmi-class"></a>MSiSCSI\_TCPIPConfig WMI クラス
 
 
 ## <span id="ddk_msiscsi_tcpipconfig_wmi_class_kr"></span><span id="DDK_MSISCSI_TCPIPCONFIG_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_TCPIPConfig WMI クラスは、HBA の IP アドレスのいずれかの TCP/IP 構成情報を報告します。
+MSiSCSI\_TCPIPConfig WMI クラスは、HBA の IP アドレスの1つに関する TCP/IP 構成情報を報告します。
 
-アダプターのミニポート ドライバーでは、アダプターがサポートされる各 IP アドレスに対して、このクラスの 1 つのインスタンスを作成する必要があります。
+アダプターのミニポートドライバーは、アダプターがサポートする各 IP アドレスに対して、このクラスのインスタンスを1つ作成する必要があります。
 
-MSiSCSI\_TCPIPConfig クラスは、記憶域ミニポート ドライバーの特定のインスタンスに関連付け、ミニポート ドライバーは、ミニポート ドライバーを管理する特定の物理デバイス オブジェクト (PDO) の名前を使用して、クラスを登録する必要があります。
+MSiSCSI\_TCPIPConfig クラスは、記憶域ミニポートドライバーの特定のインスタンスに関連付けられているため、ミニポートドライバーは、ミニポートドライバーが管理する特定の物理デバイスオブジェクト (PDO) の名前を使用してクラスを登録する必要があります。
 
-MSiSCSI\_TCPIPConfig クラスで定義されます*Config.mof*します。
+MSiSCSI\_TCPIPConfig クラスは、*構成 .mof*で定義されています。
 
 ```cpp
 class MSiSCSI_TCPIPConfig {
@@ -64,7 +64,7 @@ class MSiSCSI_TCPIPConfig {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_TCPIPConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_tcpipconfig)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**msiscsi TCPIPConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_tcpipconfig)データ構造を生成します。\_
 
  
 

@@ -1,55 +1,55 @@
 ---
 title: NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
-description: NDIS サービスの品質 (QoS) をサポートしているミニポート ドライバーは、その運用上の NDIS QoS パラメーターは、最初に解決または後で変更されたときに、NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 状態を示す値を発行します。
+description: NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、運用 NDIS QoS パラメーターが最初に解決されるか、後で変更されるときに、NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 状態を示します。
 ms.assetid: 15D2B139-1AEA-4252-8599-0EA4ED2E3733
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 1258a6f692f5d4052d69fa615d1230c83dcb0761
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e537e9f05b1705aa252503b880e5ec670e1a7e1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368511"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843529"
 ---
-# <a name="ndisstatusqosoperationalparameterschange"></a>NDIS\_状態\_QOS\_運用\_パラメーター\_変更
+# <a name="ndis_status_qos_operational_parameters_change"></a>NDIS\_ステータス\_QOS\_操作\_パラメーター\_変更
 
 
-NDIS サービスの品質 (QoS) の問題をサポートしているミニポート ドライバー、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**状態表示ときに、運用上の NDIS QoS パラメーターは、最初に解決または後で変更します。 ミニポート ドライバーでは、QoS パケットの転送を実行するこれらのオペレーションのパラメーターをネットワーク アダプターを構成します。
+NDIS Quality of Service (QoS) をサポートするミニポートドライバーでは、 **ndis\_の状態\_qos\_操作\_\_パラメーター**に関する問題が発生しています。また、動作している ndis QoS パラメーターが解決されると、状態が変化します初めての場合、または後で変更した場合。 ミニポートドライバーは、これらの操作パラメーターを使用してネットワークアダプターを構成し、QoS パケット転送を実行します。
 
-ミニポート ドライバーはこの状態表示を行うときに、設定、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターを[ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。 ドライバーでは、その運用上の NDIS QoS パラメーターを持つこの構造体を初期化します。
+ミニポートドライバーによってこの状態が示されると、 [**ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーが、 [**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体へのポインターに設定されます。 この構造体は、動作する NDIS QoS パラメーターを使用して初期化されます。
 
-**注**  この NDIS 状態の表示は、IEEE 802.1 データ センター ブリッジング (DCB) インターフェイスをサポートするミニポート ドライバーでのみ有効です。
+この NDIS 状態の表示は、IEEE 802.1 データセンターブリッジング (DCB) インターフェイスをサポートするミニポートドライバーに対してのみ有効である  に**注意**してください。
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーの問題、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**次の条件の状態を示す値。
+ミニポートドライバーは、次の条件に従って、 **QOS\_操作\_\_パラメーター\_、NDIS\_の状態**を発行して、変更の状態を示します。
 
--   ミニポート ドライバーを発行する必要があります、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**状態を示す値が最初に解決された後、運用上の NDIS QoS パラメーターとそれらにネットワーク アダプターを構成します。
+-   ミニポートドライバーは、 **ndis\_の状態\_QOS\_操作\_パラメーター**を発行する必要があります。また、動作している ndis qos パラメーターを最初に解決してネットワークを構成した後に、状態の表示を変更\_ます。アダプターを使用します。
 
--   この最初の状態を示す値後、ミニポート ドライバーを発行する必要があります、 **NDIS\_状態\_QOS\_OPERATIONAL\_パラメーター\_変更**状態を示す値とその運用上の NDIS QoS パラメーターが変更されます。 これは、ローカルまたはリモートの NDIS QoS パラメーターのいずれかが変更されたときに発生します。
+-   この初期状態を示すと、ミニポートドライバーは、 **ndis\_ステータス\_QOS\_操作\_\_パラメーター**を発行する必要があります。また、動作している ndis QOS パラメーターが変更された場合は、状態が変化します。 これは、ローカルまたはリモートの NDIS QoS パラメーターが変更された場合に発生する可能性があります。
 
--   ミニポート ドライバーでは、データ センター ブリッジング (DCB) コンポーネント (Msdcb.sys) のオブジェクト識別子 (OID) メソッド要求を発行するときに、Windows オペレーティング システムからローカルの NDIS QoS パラメーターを取得[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)します。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)をローカルの NDIS QoS パラメーターを指定します。
+-   ミニポートドライバーは、データセンターブリッジング (DCB) コンポーネント (Msdcb) が Oid のオブジェクト識別子 (OID) メソッド要求を発行するときに、Windows オペレーティングシステムからローカル NDIS QoS パラメーターを取得します。これは、 [QoS\_パラメーター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)です。 この OID 要求には、ローカル NDIS QoS パラメーターを指定する[**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体が含まれています。
 
-    ミニポート ドライバーがあるその運用上の NDIS QoS パラメーターを解決するときに、ローカルの NDIS QoS パラメーターを上書きする場合があります。 これは、ローカルの QoS パラメーターの基になるプロトコルまたはネットワーク アダプターで現在有効になっているテクノロジで使用されている運用面の QoS パラメーターを危険にさらす場合に特に当てはまります。 たとえば、ドライバーは、Ethernet (FCoE) プロトコル経由でファイバー チャネル経由のリモート ブート用にネットワーク アダプターが有効になっている場合、ローカル QoS パラメーターをオーバーライドできます。
+    場合によっては、動作している NDIS QoS パラメーターを解決するときに、ミニポートドライバーがローカル NDIS QoS パラメーターを上書きする必要があります。 これは、ネットワークアダプターで現在有効になっている、基になるプロトコルまたはテクノロジによって使用されている操作の QoS パラメーターをローカル QoS パラメーターが損なう場合に特に当てはまります。 たとえば、ネットワークアダプターでファイバーチャネル over Ethernet (FCoE) プロトコルによるリモートブートが有効になっている場合、ドライバーはローカルの QoS パラメーターを上書きできます。
 
-    ミニポート ドライバーに通知を発行して、ローカルの NDIS QoS パラメーターをオーバーライドする意向上にあるドライバーの NDIS および、 **NDIS\_状態\_QOS\_OPERATIONAL\_パラメーター\_変更**状態を示す値。
+    ミニポートドライバーは、ndis およびそれ以降のドライバーに対して、ndis **\_の状態\_qos\_操作\_\_パラメーター**を発行して、ローカル ndis QoS パラメーターを上書きすることを意図しています。
 
-    詳細については、次を参照してください。 [NDIS QoS パラメーターを管理する](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)します。
+    詳細については、「 [NDIS QoS パラメーターの管理](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)」を参照してください。
 
-**注**  重なってドライバーを使用できます、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**に状態を示す値運用上の NDIS QoS パラメーターを決定します。 または、これらのドライバーにはの OID クエリ要求が発行できますも[OID\_QOS\_運用\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)をいつでも運用の NDIS QoS パラメーターを取得します。
+**注**  は、 **NDIS\_の状態\_QOS\_操作\_パラメーター**を使用して、動作している ndis qos パラメーターを決定するように状態を変更\_ます。 また、これらのドライバーは[oid\_QOS\_操作\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)の oid クエリ要求を発行して、いつでも運用 NDIS QOS パラメーターを取得することもできます。
 
  
 
-ミニポート ドライバーの問題については、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**状態を示す値を参照してください[運用上の NDIS QoS パラメーターへの変更を示す](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-changes-to-the-operational-ndis-qos-parameters)します。
+ミニポートドライバーが NDIS\_の状態\_どのように発行するかについては、 **qos\_操作\_パラメーター\_変更**の状態の表示については、「 [Operational NDIS QOS パラメーターの変更を示す](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-changes-to-the-operational-ndis-qos-parameters)」を参照してください。
 
-NDIS QoS パラメーターのさまざまな種類の詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)します。
+さまざまな種類の NDIS QoS パラメーターの詳細については、「 [Ndis Qos パラメーターの概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -60,11 +60,11 @@ NDIS QoS パラメーターのさまざまな種類の詳細については、�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -73,11 +73,11 @@ NDIS QoS パラメーターのさまざまな種類の詳細については、�
 
 
 ****
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_QOS\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)
+[**NDIS\_QOS\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)
 
-[OID\_QOS\_OPERATIONAL\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)
+[OID\_QOS\_操作\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)
 
  
 

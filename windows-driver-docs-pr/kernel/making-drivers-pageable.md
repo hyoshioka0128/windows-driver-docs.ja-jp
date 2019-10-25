@@ -1,42 +1,42 @@
 ---
-title: ドライバーをページング可能にする
-description: ドライバーをページング可能にする
+title: ドライバーのページングの作成
+description: ドライバーのページングの作成
 ms.assetid: 0b3c1e00-2416-4534-9934-bb05f91c7482
 keywords:
-- メモリ管理の WDK カーネル、ページング可能なドライバー
-- ページング可能なドライバー WDK カーネル
-- ページング可能なドライバー WDK カーネルでは、ページング可能なドライバーについて
-- ページ アウト ドライバー WDK カーネル
+- メモリ管理 WDK カーネル、ページング可能ドライバー
+- ページング可能ドライバー WDK カーネル
+- ページング可能ドライバー WDK カーネル、ページング可能ドライバーの概要
+- ページアウトドライバーの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f09c46356267826a27971a1912ec48697110ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13765ab89b7dc329431d73643c271825a781218f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365806"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838554"
 ---
-# <a name="making-drivers-pageable"></a>ドライバーをページング可能にする
+# <a name="making-drivers-pageable"></a>ドライバーのページングの作成
 
 
 
 
 
-既定では、リンカーは、ドライバーのイメージ ファイルのコードとデータのセクションに".text"と".data"などの名前を割り当てます。 ドライバーが読み込まれるときに I/O マネージャーにより、これらのセクションでは非ページ。 非ページ セクションは、メモリ常駐型では常にします。
+既定では、リンカーは、ドライバーイメージファイルのコードおよびデータセクションに ". text" や ". data" などの名前を割り当てます。 ドライバーが読み込まれると、i/o マネージャーによってこれらのセクションが非ページ化されます。 非ページのセクションは常にメモリに常駐します。
 
-ドライバーの開発者には、Windows は、使用されていないときに、ページング ファイルへのこれらのパーツを移動できるように、ドライバーの指定されたパーツをページングするオプションがあります。 コードまたはデータ セクションにページングするに、ドライバー開発者がセクションに「ページ」で始まる名前を割り当てます。 ドライバーの読み込み時に、I/O マネージャーは、セクションの名前を確認します。 セクション名は、「ページ」で始まっている場合、I/O マネージャーによるセクション ページング可能です。
+ドライバー開発者は、使用されていないときに Windows がページングファイルにこれらの部分を移動できるように、ドライバーの特定の部分をページング可能にすることができます。 コードまたはデータセクションをページング可能にするために、ドライバー開発者はセクションに "PAGE" で始まる名前を割り当てます。 I/o マネージャーは、ドライバーを読み込むときに、セクションの名前をチェックします。 セクション名が "PAGE" で始まる場合、i/o マネージャーによってセクションがページング可能になります。
 
-IRQL で実行されるコード&gt;= ディスパッチ\_レベルはメモリ常駐型である必要があります。 つまり、このコードには、非ページング セグメント、またはメモリにロックされているページング可能なセグメントがあります。 場合 IRQL で実行されているコード&gt;= ディスパッチ\_レベルでは、ページ フォールト、バグ チェックが行われます。 ドライバーを使用できる、 [**ページ\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロをページング可能な関数が適切な Irql でのみ呼び出されることを確認します。
+IRQL &gt;= ディスパッチ\_レベルで実行されるコードは、メモリ常駐型である必要があります。 つまり、このコードは非ページングセグメント、またはメモリ内でロックされているページング可能なセグメントのいずれかである必要があります。 IRQL &gt;= ディスパッチ\_レベルで実行されているコードでページフォールトが発生すると、バグチェックが行われます。 ドライバーは、ページングされた[ **\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロを使用して、ページング可能な関数が適切な IRQLs でのみ呼び出されることを確認できます。
 
-コードまたはデータ セクションがページング可能な場合は、ドライバーが呼び出すことによってメモリ内のセクションをロックできます、 [ **MmLockPagableCodeSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)または[ **MmLockPagableDataSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)ルーチン。 セクションがロックされたままドライバー呼び出されるまで、 [ **MmUnlockPagableImageSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpagableimagesection)ロックを解除するルーチン。 ページング可能なセクションがロックされている間は、非ページ セクションと同じ動作します。
+コードまたはデータセクションがページング可能な場合、ドライバーは[**MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection)または[**Mmlockpagabledatasection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagabledatasection)を呼び出すことによって、メモリ内のセクションをロックできます。 このセクションは、ドライバーが[**MmUnlockPagableImageSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpagableimagesection)ルーチンを呼び出してロックを解除するまで、ロックされたままになります。 ページング可能なセクションはロックされていますが、非ページのセクションと同じように動作します。
 
-コードとデータ セクションに名前を割り当てる方法については、次を参照してください[ **MmLockPagableCodeSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)と[ **MmLockPagableDataSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)。
+コードおよびデータセクションに名前を割り当てる方法については、「 [**MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection) And [**Mmlockpagabledatasection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagabledatasection)を参照してください。
 
 ここでは、次のトピックについて説明します。
 
-[ときにコードとデータべきページング可能でしょうか。](when-should-code-and-data-be-pageable-.md)
+[コードとデータをページング可能にする必要があるのはどのような場合ですか。](when-should-code-and-data-be-pageable-.md)
 
-[ドライバー コードまたはデータをページング可能にします。](making-driver-code-or-data-pageable.md)
+[ドライバーコードまたはデータをページング可能にする](making-driver-code-or-data-pageable.md)
 
  
 

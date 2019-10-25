@@ -3,18 +3,18 @@ title: COPP の概要
 description: COPP の概要
 ms.assetid: a5f77c60-418d-4931-8922-ca2ae080da2e
 keywords:
-- コピー防止 COPP についての WDK COPP
-- ビデオのコピー防止 COPP についての WDK COPP
+- コピー防止 WDK COPP、バージョン情報
+- ビデオコピー防止 WDK COPP, COPP について
 - COPP WDK DirectX VA、COPP について
-- COPP についてのビデオの WDK COPP の保護
+- 保護されたビデオ WDK COPP、バージョン情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc211133b3b750103df74f29b38fdb3565f4b7d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78a33f7472170631f34a1011ab0dd8fff636bde0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379883"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840351"
 ---
 # <a name="introduction-to-copp"></a>COPP の概要
 
@@ -22,17 +22,17 @@ ms.locfileid: "67379883"
 ## <span id="ddk_introduction_to_the_certified_output_protection_protocol_gg"></span><span id="DDK_INTRODUCTION_TO_THE_CERTIFIED_OUTPUT_PROTECTION_PROTOCOL_GG"></span>
 
 
-**このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
+**このセクションは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-COPP は、コピー防止をグラフィックス アダプターによって出力されるビデオに適用するメカニズムを提供します。 COPP を使用してさまざまなリンク保護要件をよりもより確実に保護の方法でグラフィックス アダプターに送信するための一般的なプロトコルを提供する、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 制御 (IOCTL) コード。
+COPP は、グラフィックスアダプターによって出力されるビデオにコピー防止を適用するメカニズムを提供します。 COPP は、 [**ioctl\_VIDEO\_HANDLE\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) i/o CONTROL (ioctl) コードを使用するよりも、さまざまなリンク保護要件を、より保護された方法でグラフィックスアダプターに送信するための共通のプロトコルを提供します。
 
 次のトピックでは、COPP について説明します。
 
 [COPP で使用される暗号プリミティブ](cryptographic-primitives-used-by-copp.md)
 
-[セキュリティで保護されたチャネル経由の通信](communicating-through-a-secure-channel.md)
+[セキュリティで保護されたチャネルを介した通信](communicating-through-a-secure-channel.md)
 
-[COPP をサポートするグラフィックス アダプターの出力の要件](graphics-adapter-output-requirements-to-support-copp.md)
+[COPP をサポートするためのグラフィックスアダプターの出力要件](graphics-adapter-output-requirements-to-support-copp.md)
 
  
 

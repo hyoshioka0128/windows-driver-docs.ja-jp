@@ -3,24 +3,24 @@ title: ストリーム データの詳細検査へのコールアウトの使用
 description: ストリーム データの詳細検査へのコールアウトの使用
 ms.assetid: 433d2d9a-c95e-4315-8678-8614791cd529
 keywords:
-- WDK Windows フィルタ リング プラットフォーム、詳細な検査のコールアウトを分類します。
-- 詳細な検査 WDK Windows フィルタ リング プラットフォーム
-- ストリーム データの詳細な検査 WDK Windows フィルタ リング プラットフォーム
+- コールアウトの分類 WDK Windows フィルタリングプラットフォーム、詳細な検査
+- 詳細検査 WDK Windows フィルタリングプラットフォーム
+- ストリームデータの詳細検査 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d3391fd639d2b63c62d455ff755ec23ccd4776
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f3ab0281ebb3fe236196ce8947a0d422db860bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386826"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842998"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>ストリーム データの詳細検査へのコールアウトの使用
 
 
-コールアウトは、データをストリームを検査時にその[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は、固定のデータ フィールド、メタデータ フィールド、およびそれに渡される生のストリーム データの任意の組み合わせと、関連するデータの格納されているを確認できます、フィルターまたはデータに関連付けられたコンテキスト フロー。
+コールアウトがストリームデータを検査すると[、その分類](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、固定データフィールド、メタデータフィールド、および渡された生のストリームデータの任意の組み合わせと、関連付けられたコンテキストに格納されている関連データを調べることができます。フィルターまたはデータフローを使用します。
 
-以下に例を示します。
+次に、例を示します。
 
 ```C++
 // classifyFn callout function
@@ -134,9 +134,9 @@ VOID NTAPI
 }
 ```
 
-値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造体。
+*ClassifyOut*パラメーターによって示される構造体の**actionType**メンバーで、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)によってどのようなアクションが返されるかは、*フィルター処理&gt;アクション*の値によって決まります。 これらのアクションの詳細については、「 [**Fwps\_ACTION0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造体」を参照してください。
 
-パケットとストリームのデータ検査の詳細については、次を参照してください。[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)します。
+パケットおよびストリームデータ検査の詳細については、「[パケットおよびストリームデータの検査](inspecting-packet-and-stream-data.md)」を参照してください。
 
  
 

@@ -1,39 +1,39 @@
 ---
-title: SPB 接続周辺機器からの割り込み
-description: PCI などのバスとは異なり、I²C など SPI、シンプルな周辺機器バス (SPB) には周辺機器からすると、プロセッサの割り込み要求を伝達する標準化された、バスに固有の方法はありません。
+title: SPB に接続されている周辺機器からの割り込み
+description: PCI などのバスとは異なり、I ² C や SPI などの単純な周辺機器バス (SPB) は、周辺機器からプロセッサに割り込み要求を伝達するための標準のバス固有の手段を提供しません。
 ms.assetid: E302BB21-582E-494E-9ADD-72703EF32446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3166cc05a2950197a9375ba54f046562165294a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2944a62136b187f84aa0e3f916c6de3297d2e601
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386298"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839636"
 ---
-# <a name="interrupts-from-spb-connected-peripheral-devices"></a>SPB 接続周辺機器からの割り込み
+# <a name="interrupts-from-spb-connected-peripheral-devices"></a>SPB に接続されている周辺機器からの割り込み
 
 
-など、PCI バスとは異なり、[シンプルな周辺機器のバス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPB) など、I²C または SPI、標準化、no を提供します。 バス固有意味周辺機器からすると、プロセッサの割り込み要求を伝達するためにします。 代わりに、SPB に接続された周辺機器は、SPB と SPB コントローラー両方の外側にある別のハードウェア パスを介して割り込みを通知します。 この割り込みパスの詳細は、次に 1 つのハードウェア プラットフォームによって異なる傾向がありますが、Windows は、さまざまなハードウェア プラットフォームで動作するドライバーを有効にする SPB に接続されている周辺機器デバイスのドライバーからこれらの詳細を非表示にします。
+PCI などのバスとは異なり、I ² C や SPI などの[単純な周辺機器バス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPB) は、周辺機器からプロセッサに割り込み要求を伝達するための標準のバス固有の手段を提供しません。 代わりに、SPB に接続されている周辺機器は、SPB と SPB の両方のコントローラーの外部にある別のハードウェアパスを使用して割り込みを通知します。 この割り込みパスの詳細は、ハードウェアプラットフォームによって異なりますが、Windows では、SPB に接続されている周辺機器のドライバーからこれらの詳細を非表示にして、ドライバーがさまざまなハードウェアプラットフォームで動作できるようにします。
 
 
 
 
-通常、SPB に接続されている周辺機器からの割り込み要求行が汎用入出力 (GPIO) コント ローラーで、暗証番号 (pin) に接続されているし、GPIO コント ローラーは、デバイスからすると、プロセッサの割り込みを中継します。 詳細については、次を参照してください。 [GPIO 割り込み](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)します。
+通常、SPB に接続されている周辺機器の割り込み要求ラインは、汎用 i/o (GPIO) コントローラーのピンに接続され、GPIO コントローラーはデバイスからプロセッサに割り込みをリレーします。 詳細については、「 [GPIO 割り込み](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)」を参照してください。
 
-周辺機器のデバイス ドライバーは、抽象 Windows 割り込みリソースとしてこの GPIO 割り込みを取得 (**CmResourceTypeInterrupt**) し、ドライバーの割り込みサービス ルーチン (ISR) に割り込みを接続します。 割り込みリソースの抽象化では、ドライバーからの割り込みのプラットフォーム固有の詳細を非表示にします。 たとえば、ドライバーは、GPIO ピンから、または他のソースからの割り込みの受信かどうかなどの詳細情報を無視できます。 この抽象化を維持するために、DIRQL で実行され、カーネルの割り込みトラップ ハンドラーは、無音にアクティブな割り込み要求をクリアするか、一時的に GPIO ピンの割り込みをマスクする必要があります。 GPIO コント ローラーのハードウェア レジスタは、通常はメモリ マップし、DIRQL サービスにアクセスできます。
+周辺機器ドライバーは、この GPIO 割り込みを抽象 Windows interrupt リソース (**Cmresourcetypeinterrupt**) として取得し、割り込みをドライバーの interrupt service ルーチン (ISR) に接続します。 割り込みリソースの抽象化は、ドライバーからの割り込みのプラットフォーム固有の詳細を非表示にします。 たとえば、ドライバーは、割り込みを GPIO ピンから受け取るか、他のソースから受信するかなどの詳細を無視できます。 この抽象化を維持するために、DIRQL で実行されるカーネルの割り込みトラップハンドラーは、GPIO pin で割り込みをクリアするか一時的にマスクすることによって、アクティブな割り込み要求をサイレント状態にする必要がある場合があります。 通常、GPIO コントローラーのハードウェアレジスタはメモリにマップされ、DIRQL でアクセスできます。
 
-これに対し、SPB に接続されている周辺機器はメモリ マップしないと、このデバイスの ISR は IRQL で通常実行する必要があります = パッシブ\_レベル。 デバイスのハードウェア レジスタにアクセスするには、ISR は SPB 経由でシリアルの転送を実行する I/O 要求を送信します。 このような転送は、比較的低速 DIRQL で実行されている ISR では実行できません。 ただし、パッシブ レベル ISR は同期的に、I/O 要求を送信し、要求が完了するまでブロックします。
+これに対して、SPB に接続されている周辺機器はメモリにマップされていないため、このデバイスの ISR は通常、IRQL = パッシブ\_レベルで実行する必要があります。 デバイス内のハードウェアレジスタにアクセスするために、ISR は i/o 要求を送信して SPB での直列転送を実行します。 このような転送は比較的低速で、DIRQL で実行される ISR では実行できません。 ただし、パッシブレベルの ISR は、i/o 要求を同期的に送信し、要求が完了するまでブロックすることができます。
 
-Edge によってトリガーされる、割り込みは、カーネルのトラップ ハンドラーは自動的に GPIO ピン、割り込み要求をクリアし、パッシブ レベルで実行するデバイスの ISR にスケジュールします。 トラップ ハンドラーを同じ割り込みがトラップ ハンドラーが戻った後でもう一度発生していることを防ぐために割り込みをオフにする必要があります。
+エッジによってトリガーされる割り込みの場合、カーネルのトラップハンドラーによって、GPIO ピンで割り込み要求が自動的にクリアされ、デバイスの ISR がパッシブレベルで実行されるようにスケジュールされます。 トラップハンドラーは、トラップハンドラーが返された後に、同じ割り込みが再度発生しないように、割り込みをクリアする必要があります。
 
-レベル トリガーの割り込みのカーネルの割り込みのトラップ ハンドラーを自動的に GPIO ピン、割り込み要求を使用してパッシブ レベルで実行するデバイスの ISR にスケジュールします。 ISR は、デバイスからの割り込み要求をオフにする必要があります。 ISR を返した後、カーネルに GPIO ピンの割り込み要求に対してマスク解除します。
+レベルでトリガーされる割り込みでは、カーネルの割り込みトラップハンドラーによって、GPIO ピンで割り込み要求が自動的にマスクされ、デバイスの ISR がパッシブレベルで実行されるようにスケジュールされます。 ISR は、デバイスからの割り込み要求をクリアする必要があります。 ISR から制御が戻った後、カーネルは、GPIO ピンで割り込み要求をマスク解除します。
 
-デバイスのパッシブ レベル ISR は、のみ、最初のサービス提供、割り込みを実行して、その他のデバイスのパッシブ レベル isr を特定の遅延を避けるを返す必要があります。 通常、ドライバーが ISR よりも低い優先順位で実行、割り込みワーカー スレッドに割り込みに関連する追加の処理を延期する必要があります。
+デバイスのパッシブレベルの ISR は、割り込みの初期サービスのみを実行してから、他のデバイスのパッシブレベルの Isr の遅延を避けるためにを返します。 通常、ドライバーは、ISR よりも低い優先順位で実行される割り込みワーカースレッドに対して、割り込みに関連する追加の処理を遅らせる必要があります。
 
-Windows 8 では、以降では、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)(UMDF) は、UMDF ドライバーの Isr をサポートしています。 SPB 周辺機器のデバイスの UMDF ドライバーは呼び出し、 [ **IWDFDevice3::CreateInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt) ISR をデバイスからの割り込みに接続するメソッド。 デバイス信号を割り込み要求、カーネルのトラップ ハンドラーはパッシブ レベルで実行する ISR をスケジュールします。 詳細については、次を参照してください。[へのアクセスのハードウェアと割り込み処理](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-hardware-and-handling-interrupts)します。
+Windows 8 以降では、[ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)(umdf) は、umdf ドライバーの isr をサポートしています。 SPB 周辺機器の UMDF ドライバーは、 [**IWDFDevice3:: createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)メソッドを呼び出して、デバイスからの割り込みに ISR を接続します。 デバイスが割り込み要求を通知すると、カーネルのトラップハンドラーによって、ISR がパッシブレベルで実行されるようにスケジュールされます。 詳細については、「[ハードウェアへのアクセスと割り込みの処理](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-hardware-and-handling-interrupts)」を参照してください。
 
-Windows 8 では、以降では、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)(KMDF) は、パッシブ レベル Isr をサポートしています。 KMDF ドライバー SPB の周辺機器を呼び出し、 [ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)割り込みにパッシブ レベル ISR をデバイスから接続するメソッド。 ポインターは、このメソッドへの入力パラメーターのいずれかを[ **WDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)割り込みの構成情報を含む構造体。 パッシブのレベルで実行する ISR を構成する設定、 **PassiveHandling**をこの構造体のメンバー **TRUE**します。 詳細については、次を参照してください。[パッシブ レベルの中断をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-passive-level-interrupts)します。
+Windows 8 以降では、[カーネルモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)(kmdf) はパッシブレベルの isr をサポートしています。 SPB 周辺機器の KMDF ドライバーは、 [**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)メソッドを呼び出して、パッシブレベルの ISR をデバイスからの割り込みに接続します。 このメソッドの入力パラメーターの1つは、割り込みの構成情報を格納する[**WDF\_interrupt\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体へのポインターです。 ISR がパッシブレベルで実行されるように構成するには、この構造体の "" の "設定のない**Veハンドリング**メンバーを**TRUE**に設定します。 詳細については、「[パッシブレベルの割り込みのサポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-passive-level-interrupts)」を参照してください。
 
  
 

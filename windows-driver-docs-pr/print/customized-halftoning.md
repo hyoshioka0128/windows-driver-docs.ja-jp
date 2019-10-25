@@ -6,15 +6,15 @@ keywords:
 - Unidrv、ハーフトーン
 - ハーフトーン WDK Unidrv
 - カスタマイズされたハーフトーン WDK Unidrv
-- Unidrv WDK の印刷
+- Unidrv WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7d62bd8542cf4caea7570e5d643d40ef294a06
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4555984f5d15bebd98353c4f3c944785aa57974c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372398"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837976"
 ---
 # <a name="customized-halftoning"></a>カスタマイズされたハーフトーン
 
@@ -22,43 +22,43 @@ ms.locfileid: "67372398"
 
 
 
-Unidrv は GDI や、プリンター デバイスを使ってハーフトーン処理を実行することができます。 またはでドライバーのコードをカスタマイズします。 このセクションでは、カスタマイズされたドライバーのコードでハーフトーン処理を実行する方法について説明します。
+Unidrv では、GDI、プリンターデバイス、またはカスタマイズされたドライバーコードを使用して、ハーフトーン操作を実行できます。 このセクションでは、カスタマイズされたドライバーコードでハーフトーン操作を実行する方法について説明します。
 
-カスタマイズの 2 つの種類があります。
+2種類のカスタマイズが用意されています。
 
--   カスタマイズされたハーフトーン パターン
+-   カスタマイズされたハーフトーンパターン
 
--   カスタマイズされたハーフトーン メソッド
+-   カスタマイズされたハーフトーンメソッド
 
-### <a href="" id="ddk-customized-halftone-patterns-gg"></a>カスタマイズされたハーフトーン パターン
+### <a href="" id="ddk-customized-halftone-patterns-gg"></a>カスタマイズされたハーフトーンパターン
 
-ハーフトーン パターンを指定するにはリソース DLL を生成したりできますにプラグインを表示して実装する、 [ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッド。 このメソッドのリファレンス ページは、ハーフトーン パターンを生成する方法の例を示します。
+リソース DLL でハーフトーンパターンを指定することも、 [**Iprintoemuni:: HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッドを実装するレンダリングプラグインでそれらを生成することもできます。 このメソッドのリファレンスページでは、ハーフトーンパターンを生成する方法の例を示します。
 
-[**IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)次のいずれかが true の場合に実装する必要があります。
+次のいずれかに該当する場合は、 [**Iprintoemuni:: HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)を実装する必要があります。
 
--   カスタマイズされたパターンがリソース DLL で提供されており、パターンが暗号化されます。
+-   カスタマイズしたパターンはリソース DLL で提供され、パターンは暗号化されます。
 
--   カスタマイズしたパターンは、リソース DLL では提供されません。 によって生成される代わりに、 [ **IPrintOemUni::HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)します。
+-   リソース DLL では、カスタマイズされたパターンは提供されません。 代わりに、 [**Iprintoemuni:: HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)によって生成されます。
 
-[ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッドの目的を GDI に渡されます Unidrv に使用可能なハーフトーン パターンを返します。 メソッドは、暗号化された形式でのリソース DLL に格納されているパターンをデコードできるか、または実行中に、パターンを生成できます。
+[**Iprintoemuni:: HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッドの目的は、使用可能なハーフトーンパターンを Unidrv に戻し、さらにそれを GDI に渡すことです。 メソッドは、リソース DLL に格納されているパターンを暗号化された形式でデコードするか、実行中にパターンを生成することができます。
 
-実装する場合、 **IPrintOemUni::HalftonePattern**ファイルを含める必要があります、\*各ハーフトーン HTCallbackID 属性\*なカスタマイズされたパターンのハーフトーン メソッドを指定したエントリのオプションこのオプションを使用するとします。
+**Iprintoemuni:: HalftonePattern**ファイルを実装する場合は、カスタマイズされたパターンを使用するハーフトーン方式を指定する \*オプションのエントリを各ハーフトーンに \*HTCallbackID 属性を含める必要があります。
 
-この属性の詳細については、次を参照してください。[ハーフトーン機能のオプション属性](option-attributes-for-the-halftone-feature.md)します。
+この属性の詳細については、「[ハーフトーン機能のオプション属性](option-attributes-for-the-halftone-feature.md)」を参照してください。
 
-### <a href="" id="ddk-customized-halftoning-methods-gg"></a>カスタマイズされたハーフトーン メソッド
+### <a href="" id="ddk-customized-halftoning-methods-gg"></a>カスタマイズされたハーフトーンメソッド
 
-Unidrv を使用するプリンター、カスタマイズしたハーフトーン メソッドを実装するコードを提供する手順は次のとおりです。
+Unidrv を使用するプリンターでは、カスタマイズされたハーフトーンメソッドを実装するコードを提供する手順は次のとおりです。
 
-1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッド。
+1.  [**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドを実装するレンダリングプラグインを提供します。
 
-2.  含めるハーフトーン\*に含まれている各プリンターの GPD ファイル内のエントリを機能\*ハーフトーン メソッドを表すエントリのオプションします。 (Standard、およびカスタマイズされたハーフトーン メソッド両方に指定できます。)
+2.  プリンターの GPD ファイルにハーフトーン \*機能のエントリを含めます。それぞれに、ハーフトーン方式を表す \*オプションのエントリが含まれています。 (標準およびカスタマイズされたハーフトーン方式の両方を含めることができます)。
 
-[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドは入力として GDI ビットマップを受け取ります。 メソッドは、現在選択されているハーフトーン メソッドに基づいて、ハーフトーン操作を実行し、Unidrv に、結果のビットマップを返す必要があります。
+[**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドは、GDI ビットマップを入力として受け取ります。 メソッドは、現在選択されているハーフトーンメソッドに基づいてハーフトーン操作を実行し、結果のビットマップを Unidrv に返す必要があります。
 
-レンダリングのプラグインを実装する場合[ **IPrintOemUni::ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)も実装できます、 [ **IPrintOemUni::MemoryUsage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-memoryusage).
+レンダリングプラグインが[**iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)を実装している場合は、 [**Iprintoemuni:: memoryusage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)を実装することもできます。
 
-ハーフトーンの詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。
+ハーフトーンの詳細については、「 [Unidrv によるハーフトーン](halftoning-with-unidrv.md)」を参照してください。
 
  
 

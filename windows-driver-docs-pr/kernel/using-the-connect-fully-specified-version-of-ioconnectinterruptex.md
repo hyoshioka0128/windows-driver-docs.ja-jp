@@ -5,39 +5,39 @@ ms.assetid: 5b75c32e-77e5-4761-b709-fedb8e33b57a
 keywords:
 - IoConnectInterruptEx
 - CONNECT_FULLY_SPECIFIED
-- 手動の割り込み検出 WDK カーネル
-- 行ベースの割り込み WDK カーネル
-- メッセージ シグナル割り込み WDK カーネル
+- 手動割り込み検出 WDK カーネル
+- 行ベースの割り込み (WDK カーネル)
+- メッセージシグナル割り込み (WDK カーネル)
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa30ba45729a83ae9006a0ff569eae891295ce59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 770cd0c0c71ffc247c6c0fd06afffec49c8da7d8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355453"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838334"
 ---
-# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>接続を使用して\_完全\_IoConnectInterruptEx の指定されたバージョン
+# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>CONNECT\_を使用して、指定したバージョンの IoConnectInterruptEx を完全に\_する
 
 
-ドライバーの接続を使用できる\_完全\_の指定されたバージョン[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 [ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンの割り込みを特定します。 ドライバーの接続を使用できる\_完全\_指定されたバージョンの Windows Vista 以降します。 Iointex.lib ライブラリにリンクすると、ドライバーが接続を使用できます\_完全\_Windows 2000、Windows XP、および Windows Server 2003 で指定されたバージョン。 詳細については、次を参照してください。[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)します。
+ドライバーは、接続\_\_指定されたバージョンの[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を使用して、特定の割り込みの[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)ルーチンを登録できます。 ドライバーは、Windows Vista 以降で\_指定されたバージョンを完全に\_接続を使用できます。 ドライバーは、Iointex ライブラリにリンクすることにより、Windows 2000、Windows XP、および Windows Server 2003 で\_指定されたバージョンを完全に接続\_を使用できます。 詳細については、「 [Windows Vista より前の IoConnectInterruptEx の使用](using-ioconnectinterruptex-prior-to-windows-vista.md)」を参照してください。
 
-ドライバーの接続の値を指定する\_完全\_に指定された*パラメーター * * *-&gt;バージョン** のメンバーを使用して*パラメーター * * *-&gt;FullySpecified** 操作の他のパラメーターを指定します。
+ドライバーは、*パラメーター * * *-&gt;バージョン** に対して\_完全に指定された接続\_の値を指定し、*パラメーター * * *-&gt;FullySpecified** のメンバーを使用して操作の他のパラメーターを指定します。
 
--   *パラメーター * * *-&gt;FullySpecified.PhysicalDeviceObject** デバイスの PDO を指定する ISR サービス。
+-   *パラメーター * * *-&gt;FullySpecified PhysicalDeviceObject**、ISR がサービスを使用するデバイスの PDO を指定します。
 
--   *パラメーター*-&gt;**FullySpecified.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター* - &gt; **FullySpecified**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター-* &gt;**FullySpecified**は*InterruptService*ルーチンをポイントし、*パラメーター*は**FullySpecified**&gt;-ます。**ServiceContext**は、システムが*ServiceContext*パラメーターとして*InterruptService*に渡す値を指定します。 ドライバーはこれを使用してコンテキスト情報を渡すことができます。 コンテキスト情報を渡す方法の詳細については、「 [ISR コンテキスト情報の提供](providing-isr-context-information.md)」を参照してください。
 
--   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター * **-&gt;FullySpecified.InterruptObject**します。 **IoConnectInterruptEx**ルーチンはできる割り込みの割り込みのオブジェクトをポイントするには、この変数を設定する際に使う[ISR を削除する](removing-an-isr.md)します。
+-   ドライバーは、* Parameters * **-&gt;FullySpecified InterruptObject**の pkinterrupt 変数へのポインターを提供します。 **IoConnectInterruptEx**ルーチンは、この変数が、 [ISR を削除](removing-an-isr.md)するときに使用できる割り込みの interrupt オブジェクトを指すように設定します。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;FullySpecified.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーでは、必要に応じて、*パラメーター * * *-&gt;FullySpecified** でスピンロックを指定できます。この場合、システムは ISR と同期するときに使用します。 ほとんどのドライバーでは、 **NULL**を指定するだけで、ドライバーの代わりにスピンロックを割り当てることができます。 ISR との同期の詳細については、「[デバイスデータへのアクセスの同期](synchronizing-access-to-device-data.md)」を参照してください。
 
-ドライバーは、他のメンバーで、割り込みのキー プロパティを指定する必要があります * パラメーター * **-&gt;FullySpecified**します。 システムの配列に必要な情報を提供する[ **CM\_部分\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)構造体に送信するとき、 [**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) IRP がドライバーにします。
+ドライバーは、* Parameters * **-&gt;FullySpecified**の他のメンバーに割り込みのキープロパティを指定する必要があります。 システムは、 [ **\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)irp をドライバーに\_送信するときに、 [**CM\_PARTIAL\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)構造体の配列に必要な情報を提供します。
 
-システムでは、各割り込みを**CM\_部分\_リソース\_記述子**構造体**型**メンバーに等しい**CmResourceTypeInterrupt**します。 メッセージ シグナル割り込みなど、CM の\_リソース\_割り込み\_のビットのメッセージ、**フラグ**メンバーのセットは、オフ、それ以外の場合。
+システムは、 **CM\_部分\_リソース\_記述子**の構造体を、**型**のメンバーが**cmresourcetypeinterrupt**と等しくなるように提供します。 メッセージシグナル割り込みの場合は、CM\_リソース\_INTERRUPT\_メッセージビットの**Flags**メンバーが設定されます。それ以外の場合はクリアされます。
 
-**U.Interrupt**のメンバー **CM\_部分\_リソース\_記述子**行ベースの割り込みの説明を表すときに、 **u です。MessageInterrupt.Translated**メンバーには、メッセージ シグナル割り込みの説明が含まれています。 次の表で、場所を示します、 **CM\_部分\_リソース\_記述子**構造体のメンバーを設定するために必要な情報を検索する、 *パラメーター*- &gt; **FullySpecified**割り込みのどちらの種類。 詳細については、テーブルを次のコード例を参照してください。
+**CM\_部分\_リソース\_記述子**の**u. interrupt**メンバーには、行ベースの割り込みの説明が含まれてい**ます。** また、変換されたメンバーには、の説明が含まれています。メッセージシグナル割り込み。 次の表は、 **CM\_部分\_リソース\_記述子**構造体で **、&gt;-** *パラメーター*のメンバーを設定するために必要な情報を検索する場所を示しています。割り込みの種類。 詳細については、表の後に示すコード例を参照してください。
 
 <table>
 <colgroup>
@@ -47,26 +47,26 @@ ms.locfileid: "67355453"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>行ベースの割り込み</th>
-<th>メッセージ シグナル割り込み</th>
+<th>メッセージシグナル割り込み</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>ShareVector</strong></p></td>
-<td><p><strong>ShareDisposition</strong></p></td>
-<td><p><strong>ShareDisposition</strong></p></td>
+<td><p><strong>//ベクター</strong></p></td>
+<td><p><strong>配置の破棄</strong></p></td>
+<td><p><strong>配置の破棄</strong></p></td>
 </tr>
 <tr class="even">
-<td><p><strong>ベクター</strong></p></td>
-<td><p><strong>u.Interrupt.Vector</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Vector</strong></p></td>
+<td><p><strong>ベクトル</strong></p></td>
+<td><p><strong>u. Interrupt. Vector</strong></p></td>
+<td><p><strong>u. MessageInterrupt. Vector</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Irql</strong></p></td>
-<td><p><strong>u.Interrupt.Level</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Level</strong></p></td>
+<td><p><strong>u. Interrupt. Level</strong></p></td>
+<td><p><strong>u..... レベル</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>InterruptMode</strong></p></td>
@@ -75,17 +75,17 @@ ms.locfileid: "67355453"
 </tr>
 <tr class="odd">
 <td><p><strong>ProcessorEnableMask</strong></p></td>
-<td><p><strong>u.Interrupt.Affinity</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Affinity</strong></p></td>
+<td><p><strong>u. Interrupt. Affinity</strong></p></td>
+<td><p><strong>u.。変換された. Affinity</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ドライバーは受信のみ**CM\_部分\_リソース\_記述子**メッセージ シグナル割り込み Windows Vista 以降のバージョンの Windows での構造体。
+ドライバーは、Windows Vista 以降のバージョンの Windows でメッセージシグナルが発生した割り込みに対して、 **CM\_部分的な\_リソース\_記述子**構造のみを受信します。
 
-次のコード例は、登録する方法を示します、 *InterruptService*ルーチン CONNECT を使用して\_完全\_に指定します。
+次のコード例は、CONNECT\_使用して、完全に\_指定された*InterruptService*ルーチンを登録する方法を示しています。
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

@@ -1,90 +1,90 @@
 ---
 title: コレクション リスト レガシ ヘルパー
-description: コレクションの一覧の従来のヘルパー関数は、センサーを操作する v2 センサー ドライバーによって使用されて\_コレクション\_リストの構造体。
+description: コレクションリストのレガシヘルパー関数は、センサー\_コレクション\_リスト構造体と対話するために v2 センサードライバーによって使用されます。
 ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 600977b9c952d06d3590e253f1388903a1a0d712
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60a02bdabb936e888a00a62258823913f18deebc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354905"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842532"
 ---
 # <a name="collection-list-legacy-helpers"></a>コレクション リスト レガシ ヘルパー
 
 
-コレクションの一覧の従来のヘルパー関数は、のやり取りの v2 センサー ドライバーによって使用されて[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)構造体。
+コレクションリストのレガシヘルパー関数は、[**センサー\_コレクション\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)構造体と対話するために v2 センサードライバーによって使用されます。
 
-ヘルパー関数は、センサー デバイス ドライバー ソフトウェア インターフェイス (DDSI) と共に使用されます。
+ヘルパー関数は、センサーデバイスドライバーソフトウェアインターフェイス (DDSI) と共に使用されます。
 
-**注:** これらのレガシ コレクション リスト ヘルパー関数は、アーキテクチャ固有です。 したがって、独自のコレクション一覧ヘルパー関数を実装する場合センサー ドライバーする必要があるために使用しないプロセスの境界を越えてデータを転送します。
+**注:** これらの従来のコレクションリストヘルパー関数は、アーキテクチャに固有のものです。 したがって、独自のコレクションリストヘルパー関数を実装する場合、センサードライバーは、プロセスの境界を越えてデータを転送するためにそれらを使用することはできません。
 
 **CollectionsListGetMarshalledSize**
 
 センサー DDSI による使用量
 
--   鍵の値を設定\_センサー\_MaximumDataFieldSize\_バイト プロパティ。
+-   PKEY\_センサー\_MaximumDataFieldSize\_Bytes プロパティの値を設定します。
 
--   返します、 *pSize*値から[EvtSensorGetProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)します。
+-   [EvtSensorGetProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)から*pSize*値を返します。
 
--   返します、 *pSize*値から[ *EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)します。
+-   [*EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)から*pSize*値を返します。
 
--   返します、 *pSize*値から[ *EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)します。
+-   [*Evtsensorgetdatathresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)値から*pSize*値を返します。
 
 コメント
 
--   参照してください[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)の詳細については、 *pSize*メンバー。
+-   *PSize*メンバーの詳細については、「[**センサー\_COLLECTION\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 」を参照してください。
 
--   またを参照してください[センサーの共通プロパティ](common-sensor-properties.md)詳細についてはします。
+-   詳細については、「[一般的なセンサーのプロパティ](common-sensor-properties.md)」も参照してください。
 
 **CollectionsListCopyAndMarshall**
 
 センサー DDSI による使用量
 
--   コレクションの一覧を設定します[ *EvtSensorGetProperties。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   [*EvtSensorGetProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) のコレクションリストを設定します。
 
--   コレクションの一覧を設定します[ *EvtSensorGetDataFieldProperties。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   [*EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) のコレクションリストを設定します。
 
--   コレクションの一覧を設定します[ *EvtSensorGetDataThresholds。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   [ *Evtsensorgetdatathresholds 値*のコレクションリストを設定します](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 コメント
 
--   参照してください[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)詳細についてはします。
+-   詳細については、「[**センサー\_コレクション」\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)を参照してください。
 
 **CollectionsListMarshall**
 
 センサー DDSI による使用量
 
--   コレクションの一覧へのポインターを返します。
+-   コレクションリストへのポインターを返します。
 
 コメント
 
--   参照してください[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)詳細についてはします。
+-   詳細については、「[**センサー\_コレクション」\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)を参照してください。
 
 **CollectionsListGetMarshalledSizeWithoutSerialization**
 
 センサー DDSI による使用量
 
--   レポート、**鍵\_SensorHistory\_MaxSize\_バイト**プロパティ。
+-   **PKEY\_SensorHistory\_MaxSize\_Bytes**プロパティを報告します。
 
--   レポート、**鍵\_SensorHistory\_MaximumRecordSize\_バイト**プロパティ。
+-   **PKEY\_SensorHistory\_MaximumRecordSize\_Bytes**プロパティを報告します。
 
 コメント
 
--   参照してください[センサーの共通プロパティ](common-sensor-properties.md)詳細についてはします。
+-   詳細については、「[センサーの共通プロパティ](common-sensor-properties.md)」を参照してください。
 
 **CollectionsListUpdateMarshalledPointer**
 
 センサー DDSI による使用量
 
--   センサーのドライバーを使用するバッファーを渡します[ *EvtSensorSetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)します。
+-   [*Evtsensorsetdatathresholds 値*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)を使用して、センサードライバーにバッファーを渡します。
 
--   使用して、ドライバーにバッファーを渡す[ *EvtSensorDeviceIoControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)します。
+-   [*EvtSensorDeviceIoControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)を使用して、ドライバーにバッファーを渡します。
 
 コメント
 
--   参照してください[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)詳細についてはします。
+-   詳細については、「[**センサー\_コレクション」\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)を参照してください。
 
 ## <a name="requirements"></a>要件
 
@@ -92,14 +92,14 @@ ms.locfileid: "67354905"
 |--------------------------|------------------------|
 | サポートされている最小のクライアント | Windows 8.1            |
 | サポートされている最小のサーバー | Windows Server 2012 R2 |
-| Header                   | Sensorsutils.h         |
+| Header                   | Sensorsutils         |
 
  
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ヘルパー関数をマーシャ リング](marshalling-helper-functions.md)
+[マーシャリングヘルパー関数](marshalling-helper-functions.md)
 
  
 

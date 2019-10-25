@@ -9,16 +9,16 @@ keywords:
 - WMI WDK SCSI
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d490a71d205ef19bb0f89a73c777228cd082aa
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 41f5644448af9db84248e72ff03f4619d15f2307
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252405"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833720"
 ---
 # <a name="handling-srb_function_wmi"></a>SRB_FUNCTION_WMI の処理
 
-ホストバスアダプター (HBA) で[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (wmi) がサポートされている場合、ポートドライバーはミニポートドライバーに wmi 要求を送信します。 HBA は、 [**Driverentry**](driverentry-of-scsi-miniport-driver.md)ルーチンで[*PORT_CONFIGURATION_INFORMATION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)構造体の [の設定] を**TRUE**に設定することによって、WMI をサポートしていることを示しています。
+ホストバスアダプター (HBA) で[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (wmi) がサポートされている場合、ポートドライバーはミニポートドライバーに wmi 要求を送信します。 HBA は、 [**Driverentry**](driverentry-of-scsi-miniport-driver.md)ルーチンで[*PORT_CONFIGURATION_INFORMATION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)構造体の [の設定] を**TRUE**に設定することによって、WMI をサポートしていることを示しています。
 
 ミニポートドライバーのライターは、次のように、WMI 要求を処理するようにミニポートを準備します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "72252405"
 
 - サポートされているブロックごとに1つずつ、SCSIWMIGUIDREGINFO 構造体の配列へのポインター。
 
-- エントリポイントは、ミニポートドライバーの*HwScsiWmiXxx*コールバックルーチンを指します。 少なくとも、ミニポートドライバーは、 [*HwScsiWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)ルーチンと[*HwScsiWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock)ルーチンへのエントリポイントを提供する必要があります。
+- エントリポイントは、ミニポートドライバーの*HwScsiWmiXxx*コールバックルーチンを指します。 少なくとも、ミニポートドライバーは、 [*HwScsiWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)ルーチンと[*HwScsiWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock)ルーチンへのエントリポイントを提供する必要があります。
 
 ミニポートドライバーでは、PORT_CONFIGURATION_INFO 構造体の設定を**TRUE**に設定し、必要な*HwScsiWmiQueryReginfo*ルーチンを実装する以外に、データおよびイベントブロックを登録するために何らかのアクションを実行する必要はありません. ポートドライバーは、ミニポートドライバーのブロックを WMI カーネルコンポーネントに登録します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72252405"
 
 - **> Srb の Wmi フラグ**をチェックして、要求がアダプターまたは論理ユニットのどちらに対するものかを判断します。
 
-- ミニポートドライバーの SCSI_WMILIB_CONTEXT、そのデバイス拡張機能、および要求コンテキストへのポインターと、SRB からの次のパラメーターを使用して、 [**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)を呼び出します。
+- ミニポートドライバーの SCSI_WMILIB_CONTEXT、そのデバイス拡張機能、および要求コンテキストへのポインターと、SRB からの次のパラメーターを使用して、 [**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)を呼び出します。
 
     **Srb-> WMISubFunction**
 
@@ -56,10 +56,10 @@ ms.locfileid: "72252405"
 
     **Srb-> DataBuffer**
 
-- ドライバーが要求の処理を終了したときに[**ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)を呼び出します。 ドライバーが要求を保留していない場合、コールバックで**ScsiPortWmiPostProcess**が呼び出される可能性が最も高くなります。 ドライバーが要求を pends した場合は、要求が完了したときに**ScsiPortWmiPostProcess**を呼び出す必要があります。
+- ドライバーが要求の処理を終了したときに[**ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)を呼び出します。 ドライバーが要求を保留していない場合、コールバックで**ScsiPortWmiPostProcess**が呼び出される可能性が最も高くなります。 ドライバーが要求を pends した場合は、要求が完了したときに**ScsiPortWmiPostProcess**を呼び出す必要があります。
 
-- **> Srb Datatrans length**と**Srb > srbstatus**をそれぞれ[**ScsiPortWmiGetReturnSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)と[**ScsiPortWmiGetReturnStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)によって返される値にそれぞれ設定します。
+- **> Srb Datatrans length**と**Srb > srbstatus**をそれぞれ[**ScsiPortWmiGetReturnSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)と[**ScsiPortWmiGetReturnStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)によって返される値にそれぞれ設定します。
 
-- **Requestcomplete**と**nextrequest**または (**nextlurequest**) を使用して[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)を呼び出します。
+- **Requestcomplete**と**nextrequest**または (**nextlurequest**) を使用して[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)を呼び出します。
 
 WMI の詳細については、「 [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)」を参照してください。

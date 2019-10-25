@@ -1,27 +1,27 @@
 ---
-title: 初期化の違い
-description: 初期化の違い
+title: 初期化の相違点
+description: 初期化の相違点
 ms.assetid: 1b19e30d-3c10-4b97-9bb4-3233f7f2a195
 keywords:
 - 接続指向プロトコルの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae23a663156a747a6878d1c80568f9afcbf6d9af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc4aa36a3bd1eedafa415fee6b20b27a47395b60
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381372"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838139"
 ---
-# <a name="differences-in-initialization"></a>初期化の違い
+# <a name="differences-in-initialization"></a>初期化の相違点
 
 
 
 
 
-コール マネージャーは、NDIS プロトコルです。そのため、初期化シーケンス接続指向プロトコルしますが、1 つ追加の手順に従います。 その[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)ハンドラー、接続指向プロトコルでは、初期化の手順を完了した直後にコール マネージャー登録する必要があります、アドレス ファミリを呼び出すことによって[**NdisCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmregisteraddressfamilyex)します。 呼び出し**NdisCmRegisterAddressFamilyEx**、コール マネージャーが登録マネージャーの関数を呼び出し、コール マネージャーとして、プロトコルを識別します。 コール マネージャーは、バインド自体に各 NIC のアドレス ファミリを登録する必要があります。
+呼び出しマネージャーは、NDIS プロトコルです。そのため、接続指向プロトコルの初期化シーケンスに従いますが、1つ追加の手順があります。 [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)ハンドラーでは、接続指向プロトコルの初期化手順を完了した直後に、呼び出しマネージャーが[**NdisCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregisteraddressfamilyex)を呼び出してアドレスファミリを登録する必要があります。 呼び出しマネージャーが呼び出しマネージャーの関数を登録する**NdisCmRegisterAddressFamilyEx**を呼び出すと、プロトコルが呼び出しマネージャーとして識別されます。 呼び出しマネージャーは、それ自体をバインドする各 NIC のアドレスファミリを登録する必要があります。
 
-MCM ドライバーは、ミニポート ドライバー。次の手順を追加すると接続指向のミニポート ドライバーの初期化シーケンスを次にそのため、: MCM ドライバーが呼び出すことによって、アドレス ファミリを登録する必要があります[ **NdisMCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmregisteraddressfamilyex)でその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)ミニポート ドライバーの初期化シーケンスを完了した直後に、関数。 呼び出し**NdisMCmRegisterAddressFamilyEx**MCM にドライバーが登録マネージャーの関数を呼び出し、通常の接続指向のミニポート ドライバーと MCM のドライバーを区別します。 ただし、MCM ドライバーの初期化中に呼び出すことによって、ミニポート ドライバー ハンドラーを 1 回だけを登録する[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)、呼び出す必要があります**NdisMCmRegisterAddressFamilyEx**それによって制御される各 NIC に 1 回です。
+MCM ドライバーはミニポートドライバーです。したがって、次の手順を追加することで、接続指向ミニポートドライバーの初期化シーケンスに従います。 MCM ドライバーは、 [**NdisMCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex)を[*呼び出して、アドレスファミリを登録する必要があります。MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数。ミニポートドライバーの初期化シーケンスの完了直後です。 MCM ドライバーが呼び出しマネージャー関数を登録する**NdisMCmRegisterAddressFamilyEx**を呼び出すと、mcm ドライバーが通常の接続指向のミニポートドライバーと区別されます。 MCM ドライバーは、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)を呼び出して初期化中にミニポートドライバーハンドラーを1回だけ登録しますが、制御する NIC ごとに**NdisMCmRegisterAddressFamilyEx**を1回呼び出す必要があります。
 
  
 

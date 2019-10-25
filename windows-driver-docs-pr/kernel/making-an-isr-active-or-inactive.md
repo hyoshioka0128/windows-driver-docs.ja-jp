@@ -1,34 +1,34 @@
 ---
 title: ISR をアクティブまたは非アクティブにする
-description: Windows 8 以降、ドライバーは、アクティブまたは非アクティブに登録されている割り込みサービス ルーチン (ISR) IoReportInterruptActive または IoReportInterruptInactive ルーチンを呼び出すことができます。
+description: Windows 8 以降では、ドライバーは IoReportInterruptActive または IoReportInterruptInactive ルーチンを呼び出して、登録されている割り込みサービスルーチン (ISR) をアクティブまたは非アクティブにすることができます。
 ms.assetid: 788D9341-D1F8-4126-8C30-AA49DE27F4BB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c0f2100404f6c847d0b08be404550855546bafef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98df2d6f2396a33cb175eb0d5b2ec89ecfc6ef33
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365794"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838551"
 ---
 # <a name="making-an-isr-active-or-inactive"></a>ISR をアクティブまたは非アクティブにする
 
 
-Windows 8 以降、ドライバーが呼び出すことができます、 [ **IoReportInterruptActive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreportinterruptactive)または[ **IoReportInterruptInactive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreportinterruptinactive)ルーチンを作成します。登録済みの割り込みサービス ルーチン (ISR) アクティブまたは非アクティブです。
+Windows 8 以降では、ドライバーは[**IoReportInterruptActive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreportinterruptactive)または[**IoReportInterruptInactive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreportinterruptinactive)ルーチンを呼び出して、登録されている割り込みサービスルーチン (ISR) をアクティブまたは非アクティブにすることができます。
 
-ISR、登録と、割り込みまたは割り込みのセットに ISR を接続するには、ドライバーの呼び出し、 [ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)ルーチン。 ドライバーを使用できる ISR が登録されると、 **IoReportInterruptActive**と**IoReportInterruptInactive**を実行する軽量の (または「ソフト」) 接続および切断の ISR のままにする操作登録が変更されていません。 **IoReportInterruptInactive**関連の中断や割り込みの論理的な切断することで、ISR への呼び出しを無効にします。 **IoReportInterruptActive** ISR への呼び出しを有効にするには、これら割り込みの論理的な接続
+ISR を登録し、ISR を割り込みまたは割り込みのセットに接続するために、ドライバーは[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)ルーチンを呼び出します。 ISR が登録されると、ドライバーは**IoReportInterruptActive**と**IoReportInterruptInactive**を使用して、isr の登録を変更せずに、軽量 (または "ソフト") の接続および切断操作を実行できます。 **IoReportInterruptInactive**は、関連付けられている割り込みまたは割り込みをソフト切断することによって、ISR への呼び出しを無効にします。 **IoReportInterruptActive** soft-これらの割り込みを接続して、ISR の呼び出しを有効にします。
 
-たとえば、ドライバーを呼び出す**IoReportInterruptInactive**ソフト-切断する一連の割り込みのデバイスが、D0 電源の状態と呼び出しを終了する前に**IoReportInterruptActive**これらソフト-接続するにはデバイスが D0 を再入力した後に中断します。 原則として、ドライバーを呼び出すことが代わりに[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex) D0、および呼び出し、デバイスが終了する前に**IoConnectInterruptEx**デバイス入ります D0 後。 ただし、 **IoReportInterrupt * Xxx*** 呼び出しより高速**IoConnectInterruptEx**と**IoDisconnectInterruptEx**呼び出し。 対照的に**IoConnectInterruptEx**と**IoDisconnectInterruptEx**呼び出しで、さまざまな理由 (たとえば、十分なシステム リソース) が失敗する可能性があります、 **IoReportInterrupt * Xxx*** 呼び出し失敗する場合、これまでは、ほとんどありません。 さらに、 **IoReportInterrupt * Xxx*** IRQL でルーチンを呼び出すことができます&lt;= ディスパッチ\_レベルに対し、 **IoConnectInterruptEx**と**IoDisconnectInterruptEx**パッシブでのみ呼び出すことができます\_レベル。
+たとえば、ドライバーが**IoReportInterruptInactive**を呼び出して、デバイスが d0 の電源状態を終了する前に割り込みのセットを論理的に切断し、 **IoReportInterruptActive**を呼び出して、デバイスが d0 に入った後にこれらの割り込みをソフト接続する場合があります。 原則として、ドライバーは、デバイスが D0 を終了する前に[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)を呼び出し、デバイスが d0 に入った後に**IoConnectInterruptEx**を呼び出すことができます。 ただし、 **IoReportInterrupt * Xxx*** の呼び出しは、 **IoConnectInterruptEx**と**IoDisconnectInterruptEx**の呼び出しよりも高速です。 **IoConnectInterruptEx**と**IoDisconnectInterruptEx**の呼び出しは、さまざまな理由で失敗する可能性があります (たとえば、システムリソースが不足している場合)、 **IoReportInterrupt * Xxx*** 呼び出しはめったに発生しません。 また、 **IoReportInterrupt * Xxx*** ルーチンは、IRQL &lt;= ディスパッチ\_レベルで呼び出すことができます。一方、 **IoConnectInterruptEx**と**IODISCONNECTINTERRUPTEX**はパッシブな\_レベルでのみ呼び出すことができます。
 
-既定では、ISR はアクティブな (および ISR への呼び出しが有効になっている) の後**IoConnectInterruptEx** ISR を正常に登録します。
+既定では、 **IoConnectInterruptEx**が isr を正常に登録した後、isr がアクティブ (および isr の呼び出しが有効) になります。
 
-呼び出す**IoReportInterruptInactive**と**IoReportInterruptActive**は省略可能です。 ドライバー呼び出されるまで、登録されている ISR をアクティブに保つ場合は、ドライバーは、これらのルーチンを呼び出すことはありません、 [ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex) ISR の登録を解除するルーチン
+**IoReportInterruptInactive**と**IoReportInterruptActive**の呼び出しは省略可能です。 ドライバーがこれらのルーチンを呼び出すことがない場合、登録された ISR は、ドライバーが[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)ルーチンを呼び出して ISR の登録を解除するまでアクティブのままになります。
 
-ドライバーは、これらの割り込みの ISR がアクティブな場合にのみ、割り込みを発行するデバイスを構成する必要があります。 デバイスが ISR がアクティブでない場合は、割り込みを発行するを防ぐために失敗は、システムが不安定になる可能性があります。 たとえば、デバイスは、その他のデバイスと割り込みのレベルによってトリガーされる行を共有すると、デバイスの問題は、ISR がアクティブでないときに要求を中断、行の他のデバイスの isr を特定は認識しません割り込みと割り込みを発生させるのには引き続き. 呼び出しの前に**IoReportInterruptInactive**ドライバーは、割り込みの発行を停止するデバイスを構成する必要があります。 呼び出した後**IoReportInterruptActive**ドライバーは、割り込みの発行を実行するデバイスを構成する必要があります。
+ドライバーは、これらの割り込みの ISR がアクティブになっている場合にのみ、割り込みを発行するようにデバイスを構成する必要があります。 ISR が非アクティブのときにデバイスが割り込みを発行しないようにすると、システムが不安定になる可能性があります。 たとえば、デバイスがレベルでトリガーされた割り込み回線を他のデバイスと共有していて、ISR が非アクティブなときにデバイスが割り込み要求を発行した場合、回線上の他のデバイスの Isr は割り込みを認識できず、割り込みは続行されます. **IoReportInterruptInactive**を呼び出す前に、ドライバーは、割り込みの発行を停止するようにデバイスを構成する必要があります。 **IoReportInterruptActive**を呼び出した後、ドライバーは、割り込みの発行を開始するようにデバイスを構成する必要があります。
 
-登録を解除するには、ISR するドライバーを呼び出すことができます**IoDisconnectInterruptEx** ISR が現在アクティブまたは非アクティブかどうかに関係します。
+ISR の登録を解除すると、現在、ISR がアクティブか非アクティブかに関係なく、ドライバーは**IoDisconnectInterruptEx**を呼び出すことができます。
 
-**IoReportInterruptActive** ISR が既にアクティブなときに発生する呼び出しは、影響を与えませんが、エラーとしては扱われません。 同様に、 **IoReportInterruptInactive** ISR が既にアクティブでない場合に発生する呼び出しは、影響を与えませんが、エラーとしては扱われません。
+ISR が既にアクティブになっている場合に発生する**IoReportInterruptActive**呼び出しは無効ですが、エラーとして扱われません。 同様に、ISR が既に非アクティブになっている場合に発生する**IoReportInterruptInactive**呼び出しは無効ですが、エラーとして扱われません。
 
  
 

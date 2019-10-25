@@ -6,12 +6,12 @@ keywords:
 - GetOptionAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4040f5ec83409a89825450c8f21a43cd5546262
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1db41a468e2ba0a3aa2dc972ace848c4e1e304cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362728"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843613"
 ---
 # <a name="using-getoptionattribute"></a>GetOptionAttribute の使用
 
@@ -19,11 +19,11 @@ ms.locfileid: "67362728"
 
 
 
-この関数は、PPD 機能のみサポートされます。 特定の属性が使用できない場合**GetOptionAttribute**返します E\_INVALIDARG します。
+この関数は、PPD 機能に対してのみサポートされています。 特定の属性が使用できない場合、 **GetOptionAttribute**は、E\_invalidarg を返します。
 
-次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)列挙型。
+次の表では、 *pdwDataType*パラメーターは、 [**EATTRIBUTE\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ne-printoem-_eattribute_datatype)列挙型の値を受け取ります。
 
-### <a name="output-parameters-for-general-option-attributes"></a>[全般] オプションの属性の出力パラメーター
+### <a name="output-parameters-for-general-option-attributes"></a>全般オプション属性の出力パラメーター
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ ms.locfileid: "67362728"
 </colgroup>
 <thead>
 <tr class="header">
-<th>[全般] オプションの属性</th>
+<th>General オプション属性</th>
 <th>出力パラメーター</th>
 </tr>
 </thead>
@@ -40,51 +40,51 @@ ms.locfileid: "67362728"
 <tr class="odd">
 <td><p><strong>DisplayName</strong></p></td>
 <td><p><em><em>pdwDataType</em>: kADT_UNICODE</p>
-<p><em>pbData</em>: オプションのキーワード名の翻訳文字列の null で終わる Unicode 文字列</p>
-<p><em></em>pcbNeeded</em>: Unicode 文字列のバイト数が指す<em>pbData</em> (null 終端文字を含む)</p>
-<p>このオプションの属性が使用できるいずれかのオプションを<strong>EnumOptions</strong> PPD 機能を返すことができます。</p></td>
+<p><em>Pbdata</em>: オプションキーワード名の翻訳文字列の null で終わる Unicode 文字列</p>
+<p>pcbNeeded な</em>: <em>Pbdata</em>が指す Unicode 文字列のバイト数 (null 終端文字を含む)</p>
+<p>このオプション属性は、 <strong>EnumOptions</strong>が PPD 機能で返すことができる任意のオプションで使用できます。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>呼び出し</strong></p></td>
+<td><p><strong>出せる</strong></p></td>
 <td><p><em><em>pdwDataType</em>: kADT_BINARY</p>
-<p><em>pbData</em>: オプションの InvocationValue のバイト配列。</p>
-<p><em></em>pcbNeeded</em>: によって示されるバイナリ データのバイト数<em>pbData</em></p>
-<p>このオプションの属性が使用できるいずれかのオプションを<strong>EnumOptions</strong> PPD 機能を返すことができます。 オプションの InvocationValue が空の場合、関数は設定<em>pdwDataType</em>上記と同じ設定<em> <em>pcbNeeded</em> = 0、および、S_OK を返します。</p></td>
+<p><em>Pbdata</em>: オプションの InvocationValue のバイト配列。</p>
+<p>pcbNeeded な</em>: <em>Pbdata</em>が指すバイナリデータのバイト数</p>
+<p>このオプション属性は、 <strong>EnumOptions</strong>が PPD 機能で返すことができる任意のオプションで使用できます。 オプションの InvocationValue が空の場合、関数は<em>pdwDataType</em>を上記のように設定し、<em><em>pcbneeded</em> = 0 を設定してから S_OK を返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OrderDependencyValue</strong></p></td>
 <td><p></em>pdwDataType: kADT_LONG</p>
-<p><em><em>pbData</em>: PPD のによって指定された相対順序<em>OrderDependency または * このオプションの NonUIOrderDependency キーワード。 これらのキーワードの最初のパラメーターは、長整数型に変換され、返される実数であることを確認します。</p>
-<p><em></em>pcbNeeded</em>: <strong>sizeof</strong>(LONG)</p>
-<p>このオプションの属性を持つオプションでのみ使用できますが、 <em>OrderDependency または *、PPD で NonUIOrderDependency エントリと、エントリが optionKeyword を省略できません。</p></td>
+<p><em>の<em>Pdata</em>: このオプションに対して、PPD の <em>orderdependency または * NonUIOrderDependency キーワードによって指定された相対順序。 これらのキーワードの最初のパラメーターは、LONG に変換されて返される実数であることに注意してください。</p>
+<p>pcbNeeded な</em>: <strong>sizeof</strong>(LONG)</p>
+<p>このオプション属性は、PPD に <em>OrderDependency または * NonUIOrderDependency エントリを持つオプションに対してのみ使用できます。エントリは optionKeyword を省略しません。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>OrderDependencySection</strong></p></td>
-<td><p><em></em>pdwDataType</em>: kADT_ASCII</p>
-<p><em>pbData</em>: セクション名を次のいずれかを含む null で終わる ASCII 文字列。"ExitServer"「プロローグ」"DocumentSetup""PageSetup""JCLSetup""AnySetup"。</p>
-<p><em></em>pcbNeeded</em>: によって示される、ASCII 文字列のバイト数<em>pbData</em> (null 終端文字を含む)</p>
-<p>このオプションの属性を持つオプションでのみ使用できますが、* OrderDependency または *、PPD で NonUIOrderDependency エントリと、エントリが optionKeyword を省略できません。</p></td>
+<td><p>pdwDataType</em>: kADT_ASCII</p>
+<p><em>Pbdata</em>: "exitserver" "プロローグ" "documentsetup" "PageSetup" "jclsetup" "anysetup" というセクション名のいずれかを含む null で終わる ASCII 文字列。</p>
+<p>pcbNeeded な</em>: <em>Pdata</em>が指す ASCII 文字列のバイト数 (null 終端文字を含む)</p>
+<p>このオプション属性は、PPD に * OrderDependency または * NonUIOrderDependency エントリを持つオプションに対してのみ使用できます。また、このエントリは optionKeyword を省略しません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="output-parameters-for-specific-option-attributes"></a>特定のオプションの属性の出力パラメーター
+### <a name="output-parameters-for-specific-option-attributes"></a>特定のオプション属性の出力パラメーター
 
-前に説明した一般的なオプションの属性の他の次の表に示すオプションの属性は使用できる場合での制限事項をもできます。 いくつかの属性は他のユーザーがその PPD 機能の特定のオプションでのみ使用できる特定の PPD 機能のすべてのオプションを使用できます。 このような制限事項は、各オプションの属性の一覧表示されます。
+前に説明した一般的なオプション属性に加えて、次の表に示すオプション属性には、使用可能な場合に制限があります。 一部の属性は特定の PPD 機能のすべてのオプションで使用できますが、その他の属性は、その PPD 機能の特定のオプションでのみ使用できます。 このような制限事項については、各オプション属性に記載されています。
 
-機能のオプションの属性は出力パラメーターのキーワード\*InputSlot
+機能オプション属性の出力パラメーターキーワード \*InputSlot
 
 **RequiresPageRegion**
 
 \*pdwDataType: kADT\_BOOL
 
-*\*pbData*:**TRUE**場合\*と共に PageRegion 呼び出しコードを送信する必要があります、 \*InputSlot 呼び出しのコードと**FALSE**それ以外の場合。 これは PPD に基づいて\*RequiresPageRegion キーワード。 この入力のスロットのオプションのキーワードを省略した場合**TRUE**のこの属性が返されます。
+*\*pbData*: \*inputslot 呼び出しコードと共に PageRegion の呼び出しコードを送信する必要がある場合 \*は**TRUE** 、それ以外の場合は**FALSE** 。 これは、PPD の \*RequiresPageRegion キーワードに基づいています。 この入力スロットオプションでキーワードが省略されている場合は、この属性に対して**TRUE**が返されます。
 
-*\*pcbNeeded*: **sizeof**(BOOL)
+*\*pcbNeeded 必要*: **sizeof**(BOOL)
 
-このオプションの属性が"InputSlot"PPD の任意のオプションを使用できる機能、ドライバーが生成したオプションを除く"\*UseFormTrayTable"。
+このオプション属性は、ドライバーによって生成されるオプション "\*UseFormTrayTable" を除き、"InputSlot" の PPD 機能の任意のオプションで使用できます。
 
 \*OutputBin
 
@@ -92,11 +92,11 @@ ms.locfileid: "67362728"
 
 \*pdwDataType: kADT\_BOOL
 
-*\*pbData*:**TRUE** 、binOption の順序は「リバース」を出力する場合と**FALSE**出力順序が"Normal"の場合。 これは PPD に基づいて\*DefaultOutputOrder と\*PageStackOrder キーワード。
+*\*pbData*: binoption の出力順序が "Reverse" の場合は**TRUE** 、出力順序が "Normal" の場合は**FALSE** 。 これは、PPD の \*DefaultOutputOrder および \*PageStackOrder キーワードに基づいています。
 
-*\*pcbNeeded*: **sizeof**(BOOL)
+*\*pcbNeeded 必要*: **sizeof**(BOOL)
 
-このオプションの属性が"OutputBin"PPD の任意のオプションを使用できる機能。
+このオプション属性は、"OutputBin" の PPD 機能の任意のオプションで使用できます。
 
 \*PageSize
 
@@ -104,93 +104,93 @@ ms.locfileid: "67362728"
 
 \*pdwDataType: kADT\_RECT
 
-*\*pbData*: PPD の規定に従い、PageSize オプションのイメージ可能領域の境界ボックス\*ImageableArea のキーワードが返されます (Microsoft Windows SDK のドキュメントで定義されている) RECT 構造体である**左**と**下部**、llx と機械的の値を持つメンバーが含まれて**右**と**上部**urx と ury 値がメンバーに含めることが。 すべての値では、ミクロンです。 PPD の llx、され機械的値が切り上げを最も近い整数ミクロン内に変換する前にします。 PPD の urx と ury 値に切り上げられます、最も近い整数ミクロン内に変換する前にします。
+*pbData の\** : PageSize オプションのイメージ可能領域の境界ボックスは、PPD の \*ImageableArea キーワードによって指定されていますが、(Microsoft Windows SDK のドキュメントで定義されて**いる)** **RECT 構造体で返されます。下**のメンバーには llx と l の値が含まれ、 **right**メンバーと**top**メンバーには urx 値と ury 値が含まれています。 すべての値はミクロンにあります。 PPD の llx と l の値は、1ミクロンに変換される前に、最も近い整数に切り上げられます。 PPD の urx と ury の値は、1ミクロンに変換される前に、最も近い整数に丸められます。
 
-*\*pcbNeeded*: **sizeof**(RECT)
+*\*pcbNeeded 必要*: **sizeof**(RECT)
 
-このオプションの属性が"PageSize"PPD の任意のオプションを使用可能な"CustomPageSize"オプションを除く、機能します。
+このオプション属性は、"PageSize" PPD 機能のオプション ("CustomPageSize" オプションを除く) で使用できます。
 
-**PaperDimension**
+**用紙ディメンション**
 
-\*pdwDataType: kADT\_サイズ
+\*pdwDataType: kADT\_SIZE
 
-*\*pbData*: PPD の規定に従い、PageSize オプションの物理的なディメンション\*PaperDimension のキーワードが返されます (Windows SDK のドキュメントで定義されている) SIZE 構造体である**cx**メンバー幅の値と持つ**cy**メンバーには高さの値が含まれています。 すべての値では、ミクロンです。
+*\*の Pdata*: PPD の \*pagedimension キーワードで指定されている PageSize オプションの物理次元は、サイズ構造 (Windows SDK ドキュメントで定義されています) ( **cx**メンバーに幅の値が含まれている) で返されます。および**cy**メンバーに高さの値が含まれている。 すべての値はミクロンにあります。
 
-*\*pcbNeeded*: **sizeof**(サイズ)
+*\*pcbNeeded 必要*: **sizeof**(サイズ)
 
-このオプションの属性が"PageSize"PPD の任意のオプションを使用可能な"CustomPageSize"オプションを除く、機能します。
+このオプション属性は、"PageSize" PPD 機能の任意のオプションで使用できます。ただし、"CustomPageSize" オプションは除きます。
 
-\*PageSize:CustomPageSize
+\*PageSize: CustomPageSize
 
 **HWMargins**
 
 \*pdwDataType: kADT\_RECT
 
-*\*pbData*: PPD のによって指定された 4 つの値\*HWMargins キーワードは (Windows SDK のドキュメントで定義されている) RECT 構造体で返されます。 すべての値では、ミクロンです。
+*\*pbData*: PPD の \*HWMargins キーワードによって指定された4つの値が、(Windows SDK のドキュメントで定義されている) RECT 構造体で返されます。 すべての値はミクロンにあります。
 
-*\*pcbNeeded*: **sizeof**(RECT)
+*\*pcbNeeded 必要*: **sizeof**(RECT)
 
-このオプションの属性が"PageSize"PPD の"CustomPageSize"オプションにのみ使用可能な機能です。
+このオプション属性は、"PageSize" PPD 機能の "CustomPageSize" オプションでのみ使用できます。
 
 **MaxMediaHeight**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*: KADT\_DWORD
 
-*\*pbData*: PPD のによって指定された値\*ミクロン、MaxMediaHeight キーワード。
+*\*pbData*: PPD の \*MaxMediaHeight キーワードによって指定された値 (ミクロン単位)。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded 必要*: **sizeof**(DWORD)
 
-このオプションの属性が"PageSize"PPD の"CustomPageSize"オプションにのみ使用可能な機能です。
+このオプション属性は、"PageSize" PPD 機能の "CustomPageSize" オプションでのみ使用できます。
 
 **MaxMediaWidth**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*: KADT\_DWORD
 
-*\*pbData*: PPD のによって指定された値\*ミクロン、MaxMediaWidth キーワード。
+*\*pbData*: PPD の \*MaxMediaWidth キーワードによって指定された値 (ミクロン単位)。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded 必要*: **sizeof**(DWORD)
 
-このオプションの属性が"PageSize"PPD の"CustomPageSize"オプションにのみ使用可能な機能です。
+このオプション属性は、"PageSize" PPD 機能の "CustomPageSize" オプションでのみ使用できます。
 
 **ParamCustomPageSize**
 
-*\*pdwDataType*: kADT\_CUSTOMSIZEPARAMS
+*\*pdwDataType*: KADT\_CUSTOMSIZEPARAMS
 
-*pbData*: CUSTOMPARAM の配列\_最大の要素、各要素が、 [ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)構造体。 この配列の各要素で PPD の指定された値を格納する\*ParamCustomPageSize キーワードの paramOption エントリ。 「方向」以外 paramOption、ミクロン lMinVal と lMaxVal 値です。 LMinVal と lMaxVal 値は「方向」の範囲で\[0、3\]します。
+*Pbdata*: customparam\_MAX 要素の配列。各要素は[**customsizeparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_customsizeparam)構造体です。 この配列の各要素は、PPD の \*ParamCustomPageSize キーワードの paramOption エントリに指定された値を格納します。 ParamOption が "Orientation" 以外の場合、lMinVal と Lminval の値はミクロンにあります。 "Orientation" の場合、lMinVal と Lminval の値は \[0, 3\]の範囲内です。
 
-*\*pcbNeeded*: **sizeof**(CUSTOMSIZEPARAM) \* CUSTOMPARAM\_MAX
+*\*pcbNeeded*: **sizeof**(customsizeparam) \* customparam\_MAX
 
-このオプションの属性が"PageSize"PPD の"CustomPageSize"オプションにのみ使用可能な機能です。
+このオプション属性は、"PageSize" PPD 機能の "CustomPageSize" オプションでのみ使用できます。
 
-次の注を参照してください。
+次の注意事項を参照してください。
 
-\*InstalledMemory
+\*のメモリ不足
 
-**VMOption**
+**VMOption 場合**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*: KADT\_DWORD
 
-*\*pbData*: PPD のによって指定された値\*VMOption キーワード、または PPD で指定されていない場合は 0、 \*VMOption キーワードは、このオプションをします。
+*\*pbData*: ppd の \*vmoption キーワードによって指定された値。または、ppd でこのオプションに対して \*vmoption キーワードが指定されていない場合は0です。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded 必要*: **sizeof**(DWORD)
 
-このオプションの属性が"InstalledMemory"PPD の任意のオプションを使用できる機能。
+このオプション属性は、"使用可能なメモリ" の PPD 機能の任意のオプションで使用できます。
 
 **FCacheSize**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*: KADT\_DWORD
 
-*\*pbData*: PPD のによって指定された値\*FCacheSize キーワード、または PPD で指定されていない場合は 0、 \*FCacheSize キーワードは、このオプションをします。
+*\*pbData*: ppd の \*fcachesize キーワードによって指定された値。または、ppd でこのオプションに \*fcachesize キーワードが指定されていない場合は0です。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded 必要*: **sizeof**(DWORD)
 
-このオプションの属性が"InstalledMemory"PPD の任意のオプションを使用できる機能。
+このオプション属性は、"使用可能なメモリ" の PPD 機能の任意のオプションで使用できます。
 
  
 
 ### <a name="note-on-paramcustompagesize"></a>ParamCustomPageSize に関する注意事項
 
-PPD ファイルの元の順序、min、および最大値を取得する方法を示すいくつかのサンプル コードをここでは、"\*ParamCustomPageSize 幅"エントリ。 CUSTOMPARAM\_printoem.h で定義されている幅定数のオフセットを示す、 [ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)幅エントリに関連する情報を格納する構造体。 この構造体は CUSTOMPARAM のいずれかの\_このような構造体の配列を形成する最大 CUSTOMSIZEPARAM 構造体。 Printoem.h ヘッダー CUSTOMPARAM という名前の定数のセットを定義する\_XXX (幅、高さ、WidthOffset、HeightOffset、および印刷の向き) は、この配列内の構造体のオフセットを一覧表示します。
+ここでは、"\*ParamCustomPageSize Width" エントリの PPD ファイルの元の順序、最小値、および最大値を取得する方法を示すサンプルコードを示します。 CUSTOMPARAM\_WIDTH 定数は、printoem .h に定義されており、Width エントリに関連する情報を含む[**Customsizeparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_customsizeparam)構造体のオフセットを示します。 この構造体は、このような構造体の配列を形成する CUSTOMPARAM\_MAX CUSTOMSIZEPARAM 構造体の1つです。 Printoem .h ヘッダーは、この配列内の構造体のオフセット (Width、Height、WidthOffset、HeightOffset、Orientation) を一覧表示する CUSTOMPARAM\_XXX という名前の一連の定数を定義します。
 
 ```cpp
 PCUSTOMSIZEPARAM  pCSParam;

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY
-description: KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY プロパティは、ハードウェアでのビデオ画像のサイズを削減できるかどうかを示します。
+title: KSPROPERTY\_VPCONFIG\_の構成
+description: KSK プロパティ\_VPCONFIG\_"" は、ハードウェアによってビデオイメージのサイズを縮小できるかどうかを示します。
 ms.assetid: a929b154-165e-4075-9295-d34fecc8e18d
 keywords:
-- KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5844e0d8918bc423fdad8fc248759d76fecc86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae25af8099b552ceb95f7aa614b05b2da07af537
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327315"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842814"
 ---
-# <a name="kspropertyvpconfigdecimationcapability"></a>KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY
+# <a name="ksproperty_vpconfig_decimationcapability"></a>KSPROPERTY\_VPCONFIG\_の構成
 
 
-KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY プロパティは、ハードウェアでのビデオ画像のサイズを削減できるかどうかを示します。
+KSK プロパティ\_VPCONFIG\_"" は、ハードウェアによってビデオイメージのサイズを縮小できるかどうかを示します。
 
 ## <span id="ddk_ksproperty_vpconfig_decimationcapability_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY プロパティは、ハードウェ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY プロパティは、ハードウェ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>ブール値</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>Boolean</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、ブール値です。 指定**TRUE**かどうかハードウェアはビデオ画像のサイズを減らすか、指定**FALSE**ハードウェアは、ディメンションを減らすことができない場合。
+プロパティ値 (操作データ) はブール値です。 ハードウェアがビデオイメージのサイズを縮小できる場合は**TRUE**を指定し、ハードウェアがサイズを縮小できない場合は **[FALSE]** を指定します。
 
 <a name="remarks"></a>注釈
 -------
 
-プロパティの値の**TRUE**サイズの画像を小さくできることを指定します。 **FALSE**クリッピング四角形にも、イメージ サイズ変更ができる、ことを指定しますの代わりにスケールします。
+プロパティ値が**TRUE の場合**、ビデオイメージのサイズを縮小できることを示します。 **FALSE**を指定すると、イメージのサイズを変更することはできますが、拡大縮小ではなく四角形にもクリップされます。
 
-KSPROPERTY\_VPCONFIG\_デシメーション\_機能プロパティの要求が状態を返す\_を正常に完了を示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_VPCONFIG\_\_、正常に完了したことを示す\_状態を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-KSPROPSETID でこのプロパティを使用するときに\_VPVBIConfig、プロパティのすべての要求は状態を返す必要があります\_いない\_実装されていません。
+このプロパティが KSPROPSETID\_VPVBIConfig によって使用されている場合、すべてのプロパティ要求は\_実装されていない状態\_返される必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -83,7 +83,7 @@ KSPROPSETID でこのプロパティを使用するときに\_VPVBIConfig、プ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,7 +91,7 @@ KSPROPSETID でこのプロパティを使用するときに\_VPVBIConfig、プ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

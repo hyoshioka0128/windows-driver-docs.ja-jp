@@ -3,15 +3,15 @@ title: カスタム UI の表示の要求
 description: カスタム UI の表示の要求
 ms.assetid: 4b7366d9-e55a-4b24-b75f-a5f133b80ca7
 keywords:
-- カスタム UI WDK ネイティブ 802.11 IHV UI 拡張機能の DLL、表示を要求します。
+- カスタム UI WDK ネイティブ 802.11 IHV UI 拡張 DLL、要求 (表示を)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e33af721872cd1e56c3a53a57808ee3bff5895b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a114e9b14d67c642506b1b9270da34e1039db49d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373229"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842032"
 ---
 # <a name="requesting-the-display-of-a-custom-ui"></a>カスタム UI の表示の要求
 
@@ -20,33 +20,33 @@ ms.locfileid: "67373229"
 
  
 
-ネイティブの 802.11 IHV 拡張 DLL は、802.11 IHV UI 拡張機能のネイティブ DLL でのカスタム ユーザー インターフェイス (UI) の表示を要求できます。 たとえば、IHV 拡張機能の DLL にカスタム UI が表示されることを要求する可能性があります。
+ネイティブ 802.11 IHV 拡張 DLL では、ネイティブ 802.11 IHV UI 拡張 DLL を使用してカスタムユーザーインターフェイス (UI) の表示を要求できます。 たとえば、IHV 拡張 DLL は、次のようにカスタム UI を表示するように要求できます。
 
--   ワイヤレス LAN (WLAN) の関連付け操作中にさまざまな段階で、エンドユーザーに通知します。
+-   ワイヤレス LAN (WLAN) の関連付け操作中にさまざまな段階でエンドユーザーに通知します。
 
--   エンドユーザーは、WLAN アダプターが WLAN のネットワークの関連付けを解除するときに通知します。
+-   Wlan アダプターが WLAN ネットワークとの関連付けが解除されたときに、エンドユーザーに通知します。
 
--   WLAN ネットワークへの認証の結果をエンドユーザーに通知します。
+-   エンドユーザーに、認証の結果を WLAN ネットワークに通知します。
 
-カスタム UI を起動またはネイティブの 802.11 IHV 拡張 DLL の呼び出し、通知を表示する[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request)へのポインターを渡すと、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)を通じて構造体、 *pIhvUIRequest*この関数のパラメーター。
+カスタム UI を起動するか、通知を表示するには、ネイティブ 802.11 IHV 拡張 DLL が[**Dot11ExtSendUIRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request)を呼び出し、 [**DOT11EXT\_ihv\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造へのポインターを*pihvuirequest*を介して渡します。この関数のパラメーター。
 
-を通じて、 [ **DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造、802.11 IHV 拡張機能のネイティブ DLL を次のデータをカスタム UI を指定します。
+ネイティブ 802.11 IHV 拡張 DLL では、 [**DOT11EXT\_IHV\_UI\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)構造を使用して、次のデータを使用してカスタム UI を指定します。
 
--   ユーザー セッション識別子 (ID)、特定のユーザー コンテキストを識別するために使用されます。
+-   ユーザーセッション識別子 (ID)。特定のユーザーコンテキストを識別するために使用されます。
 
--   グローバル一意識別 ID (GUID)、UI の特定の要求を識別します。
+-   特定の UI 要求を識別するグローバル一意識別子 (GUID)。
 
--   クラス ID (CLSID) **IWizardExtension** 802.11 IHV UI 拡張機能のネイティブ DLL に実装されている COM インターフェイスです。 CLSID は、DLL でサポートされている特定のカスタム UI を要求に使用されます。
+-   ネイティブ 802.11 IHV UI 拡張 DLL 内に実装されている**IWizardExtension** COM インターフェイスのクラス ID (CLSID)。 CLSID は、DLL によってサポートされる特定のカスタム UI を要求するために使用されます。
 
-    詳細については、 **IWizardExtension** COM インターフェイスを参照してください[IWizardExtension COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)します。
+    **IWizardExtension** com インターフェイスの詳細については、「 [IWizardExtension com インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)」を参照してください。
 
--   独立系ハードウェア ベンダー (IHV) によって定義され、指定した処理されている独自の形式でデータを格納するバッファー **IWizardExtension** COM インターフェイスです。 たとえば、バッファーには、カスタム UI 内で表示される既定値が含まれます。
+-   独立系ハードウェアベンダー (IHV) によって定義され、指定された**IWizardExtension** COM インターフェイスによって処理される専用の形式のデータを格納するバッファー。 たとえば、バッファーには、カスタム UI 内に表示される既定値を含めることができます。
 
-ユーザーのセッション ID の WLAN 接続状態に応じて、カスタム UI 要求が、次のいずれかとして表示されます。
+ユーザーセッション ID の WLAN 接続状態に応じて、カスタム UI 要求は次のいずれかとして表示されます。
 
--   場合は、アダプターは、WLAN のネットワークに接続されているが、要求がクリック可能なバルーン通知を通じて UI が起動されるスタンドアロンとして表示されます。 このプロセスの詳細については、次を参照してください。[バルーン通知を表示する](displaying-custom-ui-pages-within-a-balloon-notification.md)します。
+-   アダプターが WLAN ネットワークに接続されている場合は、クリック可能なバルーン通知によって起動されるスタンドアロン UI として要求が表示されます。 このプロセスの詳細については、「[バルーン通知の表示](displaying-custom-ui-pages-within-a-balloon-notification.md)」を参照してください。
 
--   アダプターが WLAN ネットワークへの接続中にある場合は、要求が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、次を参照してください。[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)します。
+-   アダプターが WLAN ネットワークに接続している場合、要求は標準のネットワーク接続 UI 内の一連のウィザードページとして表示されます。 このプロセスの詳細については、「[ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)」を参照してください。
 
  
 

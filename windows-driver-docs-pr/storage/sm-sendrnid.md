@@ -1,9 +1,9 @@
 ---
 title: SM\_SendRNID 関数
-description: SM\_SendRNID WMI メソッドは、指定されたポートに要求ノードの id データ (RNID) コマンドを送信します。
+description: SM\_SendRNID WMI メソッドは、要求ノード識別データ (RNID) コマンドを指定されたポートに送信します。
 ms.assetid: 160e2dc7-8195-4f8a-bc59-854e5283cf6f
 keywords:
-- 記憶装置の SM_SendRNID 関数
+- SM_SendRNID function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82914753dfbcaee06b7ba11414e6252af0af9083
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e29155b70dce368e9306dc33cf8c69773d1723d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384283"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845458"
 ---
-# <a name="smsendrnid-function"></a>SM\_SendRNID 関数
+# <a name="sm_sendrnid-function"></a>SM\_SendRNID 関数
 
 
-SM\_SendRNID WMI メソッドは、指定されたポートに要求ノードの id データ (RNID) コマンドを送信します。
+SM\_SendRNID WMI メソッドは、要求ノード識別データ (RNID) コマンドを指定されたポートに送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -47,31 +47,31 @@ void SM_SendRNID(
 ----------
 
 *PortWWN*   
-RNID コマンドを送信するローカル ポートの世界中の名 (WWN)。 この情報は、SM の PortWWN メンバーのミニポート ドライバーに配信\_SendRNID\_構造体。
+RNID コマンドの送信に使用されるローカルポートのワールド名 (WWN)。 この情報は、構造内の SM\_SendRNID\_の PortWWN メンバーのミニポートドライバーに配信されます。
 
-*DestWWN*   
-接続先ポートの世界中の名 (WWN)。 この情報は、SM の DestWWN メンバーのミニポート ドライバーに配信\_SendRNID\_構造体。
+*Destwwn*   
+宛先ポートのワールド名 (WWN)。 この情報は、構造内の SM\_SendRNID\_の DestWWN メンバーのミニポートドライバーに配信されます。
 
 *DestFCID*   
-接続先ポートのアドレス識別子。 この情報は、SM の DestFCID メンバーのミニポート ドライバーに配信\_SendRNID\_構造体。
+宛先ポートのアドレス識別子。 この情報は、構造内の SM\_SendRNID\_の DestFCID メンバーのミニポートドライバーに配信されます。
 
 *NodeIdDataFormat*   
-ノードの id データの形式。 このメンバーの値については、T11 委員会を参照してください。*ファイバー チャネル HBA API*仕様。 この情報は、SM の NodeIdDataFormat メンバーのミニポート ドライバーに配信\_SendRNID\_構造体。
+ノード識別データ形式。 このメンバーが持つことができる値の詳細については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、構造内の SM\_SendRNID\_の NodeIdDataFormat メンバーのミニポートドライバーに配信されます。
 
-*InRespBufferMaxSize*   
+*In火炎 Buffermaxsize*   
 応答バッファーの最大サイズ。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendRNID\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_SendRNID\_OUT 構造体の HBAStatus メンバーにこの情報を返します。
 
-*TotalRespBufferSize*   
-RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalRspBufferSize メンバー\_SendRNID\_構造体。
+*Total火炎 buffersize*   
+RNID コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendRNID\_OUT 構造体の TotalRspBufferSize メンバーにこの情報を返します。
 
-*ResponseBufferSize*   
-RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の ResponseBufferSize メンバー\_SendRNID\_構造体。
+*Responsebuffersize*   
+RNID コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendRNID\_OUT 構造体の ResponseBufferSize メンバーにこの情報を返します。
 
-*ResponseBuffer*   
-RNID コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の ResponseBuffer メンバー\_SendRNID\_構造体。
+*Responsebuffer*   
+RNID コマンドの結果。 ミニポートドライバーは、SM\_SendRNID\_OUT 構造体の ResponseBuffer メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -81,7 +81,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -98,19 +98,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SendRNID\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_in)
+[**SM\_SendRNID\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_in)
 
-[**SM\_SendRNID\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_out)
+[**SM\_SendRNID\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_out)
 
  
 

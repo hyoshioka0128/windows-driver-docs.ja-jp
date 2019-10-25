@@ -1,38 +1,38 @@
 ---
-title: I/O ステータス ブロック
-description: I/O ステータス ブロック
+title: I/o 状態ブロック
+description: I/o 状態ブロック
 ms.assetid: 59147bd1-6cd7-4fbe-b7bc-52e09ab88576
 keywords:
-- Irp WDK カーネルでは、I/O の状態のブロック
-- I/O 状態ブロック WDK カーネル
-- 状態ブロックの WDK カーネル
+- Irp WDK カーネル、i/o 状態ブロック
+- I/o ステータスが WDK カーネルをブロックする
+- 状態は WDK カーネルをブロックします
 - IO_STATUS_BLOCK 構造体
-- WDK Irp のステータス情報
-- Irp WDK カーネルでは、状態情報
+- ステータス情報 WDK Irp
+- Irp WDK カーネル、状態情報
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d64f0b90d6105b0d8f8c6645d7e84492d2599e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab5d8c8a203a88db2f63a8c64cd1ee9b0002f032
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371858"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838641"
 ---
-# <a name="io-status-blocks"></a>I/O ステータス ブロック
+# <a name="io-status-blocks"></a>I/o 状態ブロック
 
 
 
 
 
-構成される、I/O 状態ブロック、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)構造体をそれぞれの一部である[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp). 状態の I/O のブロックには、2 つの目的があります。
+I/o 状態ブロックは、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造で構成され、各[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)の一部です。 I/o 状態ブロックは、次の2つの目的で機能します。
 
--   高度なドライバーの提供[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP が完了したときに、サービスが動作するかどうかを判断する方法、ルーチン。
+-   これにより、IRP の完了時にサービスが動作しているかどうかを判断するための、より高度なドライバーの[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが提供されます。
 
--   これは、理由、サービス動作または動作しなかった詳細情報を提供します。
+-   これにより、サービスが動作しているのか、機能しなかったのかについての詳細情報が提供されます。
 
-、、の IRP の完了時に、**状態**フィールドは、ドライバーが IRP の処理が実際には、要求を満たすか、IRP がエラー状態が失敗したかを示します。 **情報**フィールドは、呼び出し元に実際に発生した内容についての詳細情報を提供します。 たとえば、読み取りまたは書き込み操作の後に実際に転送されたバイト数が含まれています。
+IRP が完了すると、**状態**フィールドは、irp を処理したドライバーが実際に要求を満たしているかどうか、またはエラー状態の irp に失敗したかどうかを示します。 **情報**フィールドは、実際に発生した内容に関する詳細情報を呼び出し元に提供します。 たとえば、読み取り操作または書き込み操作の後に実際に転送されたバイト数が含まれます。
 
-詳細については、次を参照してください。 [IRP の状態の I/O ブロックを設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)します。
+詳細については、「 [IRP での I/o ステータスブロックの設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)」を参照してください。
 
  
 

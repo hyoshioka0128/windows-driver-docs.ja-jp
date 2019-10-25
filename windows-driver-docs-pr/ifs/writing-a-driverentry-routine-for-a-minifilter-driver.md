@@ -1,32 +1,32 @@
 ---
-title: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
-description: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
+title: ミニフィルタードライバーの DriverEntry ルーチンを記述する
+description: ミニフィルタードライバーの DriverEntry ルーチンを記述する
 ms.assetid: 949b4087-47de-4145-87dd-d618db44a15b
 keywords:
-- ファイル システム ミニフィルター ドライバー WDK、DriverEntry ルーチン
-- ミニフィルター ドライバー WDK、DriverEntry ルーチン
-- DriverEntry WDK ファイル システム
-- グローバル初期化 WDK ファイル システム ミニフィルター
+- ファイルシステムミニフィルタードライバー WDK、DriverEntry ルーチン
+- ミニフィルタードライバー WDK、DriverEntry ルーチン
+- DriverEntry WDK ファイルシステム
+- グローバル初期化 WDK ファイルシステムミニフィルター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4730883cc7668e781af09d90a675e62d6c37744e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c385a408093829dcb97fae20da5deb6e81605596
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371286"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840928"
 ---
-# <a name="writing-a-driverentry-routine-for-a-minifilter-driver"></a>ミニフィルター ドライバー用の DriverEntry ルーチンの記述
+# <a name="writing-a-driverentry-routine-for-a-minifilter-driver"></a>ミニフィルタードライバーの DriverEntry ルーチンを記述する
 
 
 ## <span id="ddk_writing_a_driverentry_routine_for_a_minifilter_driver_if"></span><span id="DDK_WRITING_A_DRIVERENTRY_ROUTINE_FOR_A_MINIFILTER_DRIVER_IF"></span>
 
 
-ファイル システム ミニフィルター ドライバーが必要、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。 **DriverEntry**ミニフィルター ドライバーが読み込まれるときに、ルーチンが呼び出されます。
+すべてのファイルシステムミニフィルタードライバーに[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンが必要です。 **Driverentry**ルーチンは、ミニフィルタードライバーが読み込まれるときに呼び出されます。
 
-**DriverEntry**ルーチンは、グローバル初期化を実行します、ミニフィルター ドライバーを登録し、フィルター処理を開始します。 このルーチンは IRQL パッシブにシステム スレッド コンテキストで実行される\_レベル。
+**Driverentry**ルーチンは、グローバルな初期化を実行し、ミニフィルタードライバーを登録し、フィルター処理を開始します。 このルーチンは、IRQL 受動\_レベルでシステムスレッドコンテキストで実行されます。
 
-**DriverEntry**ルーチンは次のように定義されます。
+**Driverentry**ルーチンは次のように定義されています。
 
 ```cpp
 NTSTATUS 
@@ -36,23 +36,23 @@ NTSTATUS
     ); 
 ```
 
-**DriverEntry**が 2 つの入力パラメーター。 まず、 *DriverObject*、ミニフィルター ドライバーが読み込まれたときに作成されたドライバー オブジェクトです。 次に、 *RegistryPath*、ミニフィルター ドライバーのレジストリ キーへのパスを含むカウント対象の Unicode 文字列へのポインターです。
+**Driverentry**に2つの入力パラメーターがあります。 最初の*Driverobject*は、ミニフィルタードライバーが読み込まれたときに作成されたドライバーオブジェクトです。 2番目の*RegistryPath*は、ミニフィルタードライバーのレジストリキーへのパスを含む、カウントされた Unicode 文字列へのポインターです。
 
-ミニフィルター ドライバーの**DriverEntry**ルーチンの順序で、次の手順を実行する必要があります。
+ミニフィルタードライバーの**Driverentry**ルーチンでは、次の手順を順番に実行する必要があります。
 
-1.  ミニフィルター ドライバー、必要なグローバル初期化を実行します。
+1.  ミニフィルタードライバーに必要なグローバル初期化を実行します。
 
-2.  ミニフィルター ドライバーを呼び出すことによって登録[ **FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)します。
+2.  [**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)を呼び出してミニフィルタードライバーを登録します。
 
-3.  呼び出すことによってフィルター処理を開始[ **FltStartFiltering**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltstartfiltering)します。
+3.  [**Fltstartfiltering**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltstartfiltering)を呼び出してフィルター処理を開始します。
 
 4.  適切な NTSTATUS 値を返します。
 
-このセクションの内容:
+このセクションの内容は次のとおりです。
 
-[ミニフィルター ドライバーの登録](registering-the-minifilter-driver.md)
+[ミニフィルタードライバーを登録しています](registering-the-minifilter-driver.md)
 
-[フィルター処理を開始します。](initiating-filtering.md)
+[フィルター処理の開始](initiating-filtering.md)
 
 [ミニフィルター DriverEntry ルーチンから状態を返す](returning-status.md)
 

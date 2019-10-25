@@ -1,57 +1,57 @@
 ---
-title: 2 つのモニター構成の処理
-description: 2 つのモニター構成の処理
+title: 2つのモニター構成の処理
+description: 2つのモニター構成の処理
 ms.assetid: 224ebc3f-dace-4b41-bfc8-6fd81c8b309d
 keywords:
-- TMM WDK の表示、2 つのモニターの構成
-- モニターの構成の WDK 表示、2 つのモニター
+- TMM WDK display、2つのモニター構成
+- 監視構成 WDK ディスプレイ、2台のモニター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29ba394219fb4d84e48c514b0e9450ad9fee2674
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c07b20dc1161c65ed1962a9b7db7406f4baac23
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369845"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838903"
 ---
-# <a name="handling-two-monitor-configurations"></a>2 つのモニター構成の処理
+# <a name="handling-two-monitor-configurations"></a>2つのモニター構成の処理
 
 
-2 つのモニターの構成には、TMM ダイアログが生成されます。 2 つのターゲットが同じグラフィックス アダプターの一部である場合は、TMM は両方のターゲットにターゲットのいずれかに現在割り当てられている 1 つのソースにマップします。 TMM がマッピングを実行した後、TMM ダイアログ ボックスがポップアップ表示します。 ターゲットがさまざまなグラフィックス アダプターである場合は、TMM ダイアログが 2 つ目のモニターをアクティブ化しないまま表示されます。 このような状況では、TMM ダイアログは複製のオプションはありませんまたは拡張できます。
+2つのモニターの構成によって、TMM ダイアログが生成されます。 2つのターゲットが同じグラフィックスアダプターの一部である場合、TMM はターゲットのいずれかに現在マップされている1つのソースを両方のターゲットにマップします。 TMM がマッピングを実行すると、TMM ダイアログがポップアップ表示されます。 ターゲットが異なるグラフィックスアダプターにある場合は、2番目のモニターをアクティブにしなくても TMM ダイアログがポップアップ表示されます。 このような状況では、[TMM] ダイアログは [複製] または [拡張] のオプションを備えていません。
 
-次の順序は、TMM がのメソッドを呼び出す順序を示しています。 [IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)このような状況で他の操作を実行します。
+次のシーケンスは、TMM が[IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)のメソッドを呼び出し、この状況で他の操作を実行する順序を示しています。
 
-1.  TMM 呼び出し、 **EnumDisplayDevices**アダプター、表示、およびモニターが含まれています、現在の表示構成を取得します。 詳細については**EnumDisplayDevices**、Microsoft Windows SDK のドキュメントを参照してください。
+1.  TMM は、アダプター、ディスプレイ、モニターなど、現在のディスプレイ構成を取得するために、 **Enumdisplaydevices**関数を呼び出します。 **Enumdisplaydevices**の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-2.  TMM は、以前に記録された表示の構成に対して表示の構成を比較します。
+2.  TMM は、以前に記録された表示構成と表示構成を比較します。
 
-3.  表示構成に拡張表示情報のデータを 1 つまたは 2 つのモニターがある場合 (*EDID*) TMM が実行する前に、TMM TMM ダイアログ ボックスを表示に発生していないこと。
+3.  ディスプレイの構成に、拡張された表示情報データ (*EDID*) を持つモニターが1つまたは2つあり、tmm がそれ以前に検出されていない場合、TMM は tmm ダイアログを表示します。
 
-4.  表示構成の各アダプタ TMM への呼び出しは、 [ **IViewHelper::GetConnectedIDs** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568171(v=vs.85))ソースがマップされるかどうかは、すべてのアダプターのソースを取得します。
+4.  ディスプレイ構成内のアダプターごとに、TMM は[**IViewHelper:: GetConnectedIDs**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568171(v=vs.85))メソッドを呼び出して、ソースがマップされているかどうかにかかわらず、アダプター上のすべてのソースを取得します。
 
-5.  TMM に対して呼び出しを行う、 [ **IViewHelper::GetConnectedIDs** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568171(v=vs.85))ターゲットがマップされるかどうかは、すべてのアダプターのターゲットを取得するメソッド。 各ターゲットは、接続する必要がありますが、アクティブにする必要はありません。
+5.  TMM は[**IViewHelper:: GetConnectedIDs**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568171(v=vs.85))メソッドへの呼び出しを行い、ターゲットがマップされているかどうかにかかわらず、アダプター上のすべてのターゲットを取得します。 各ターゲットは接続されている必要がありますが、アクティブである必要はありません。
 
-6.  TMM グラフィックス アダプターの各ソースへの呼び出しは、 [ **IViewHelper::GetActiveTopology** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568169(v=vs.85))ソースのアクティブなターゲットを取得します。
+6.  TMM は、グラフィックスアダプター内の各ソースに対して[**IViewHelper:: GetActiveTopology**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568169(v=vs.85))メソッドを呼び出して、ソースのアクティブなターゲットを取得します。
 
-7.  TMM をターゲットにマップされているソースを持つグラフィックス アダプターを検索します。 このソース識別子は"CloneSource"と呼ばれる TMM が 2 つのエントリの配列を作成する場合は、アダプターは、2 つのターゲットには、(ULONG targetArray\[2\])。 TMM では、最初の要素として既存のターゲットの識別子と 2 番目の要素として 2 つ目のターゲットの識別子を配置します。
+7.  TMM は、ターゲットにマップされているソースを持つグラフィックスアダプターを検索します。 このソース識別子は "CloneSource" と呼ばれます。 アダプターに2つのターゲットがある場合、TMM は2つのエントリの配列を作成します (ULONG targetArray\[2\])。 TMM によって、既存のターゲット識別子が最初の要素として、2番目のターゲット識別子が2番目の要素として配置されます。
 
-8.  TMM 呼び出し、 [ **IViewHelper::SetActiveTopology**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568174(v=vs.85))(adapterName、CloneSource、2、targetArray) 指定されたパラメーターを持つメソッド。
+8.  TMM は、指定されたパラメーターを使用して、 [**IViewHelper:: SetActiveTopology**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568174(v=vs.85))(Adaptername, CloneSource, 2, targetarray) メソッドを呼び出します。
 
-9.  TMM 呼び出し、 [ **IViewHelper::Commit** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568167(v=vs.85))メソッド。
+9.  TMM は[**IViewHelper:: Commit**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568167(v=vs.85))メソッドを呼び出します。
 
-いずれかから、エラーの結果が返された場合、 [IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)メソッドでは、コンピューターが複製のビューを入力しないと、複製ビューおよび外部専用のオプションを無効になっている TMM ダイアログがポップアップします。
+[IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)のいずれかの方法でエラー結果が返された場合、コンピューターは複製ビューには入りません。また、[tmm] ダイアログは、複製ビューと外部専用オプションが無効になっています。
 
-場合は、コンピューターが複製のビューに入るし、TMM ダイアログから拡張表示を選択 (クリックして**OK**または**適用**)、TMM が次のようの複製の表示をオフにする必要があります。
+コンピューターが複製ビューに入り、ユーザーが TMM ダイアログから拡張ビューを選択し ([ **OK]** または **[適用]** をクリックした場合)、tmm は次のように複製ビューを無効にする必要があります。
 
-1.  TMM 呼び出し、 [ **IViewHelper::SetActiveTopology**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568174(v=vs.85))(adapterName、CloneSource、1、targetArray) 指定されたパラメーターを持つメソッド。
+1.  TMM は、指定されたパラメーターを使用して、 [**IViewHelper:: SetActiveTopology**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568174(v=vs.85))(Adaptername, CloneSource, 1, targetarray) メソッドを呼び出します。
 
-2.  TMM 呼び出し、 [ **IViewHelper::Commit** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568167(v=vs.85))メソッド。
+2.  TMM は[**IViewHelper:: Commit**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568167(v=vs.85))メソッドを呼び出します。
 
-上記の「 **SetActiveTopology**呼び出し、パラメーター 3 に設定されている 1 と 2 ではありません。 このような状況で**SetActiveTopology**解釈*targetArray*として 1 つの要素の配列。 **SetActiveTopology** 2 つ目のターゲットをオフにし、1 つのビューを入力します。 次に、TMM を使用して、 **ChangeDisplaySettingsEx**表示を拡張する関数。 詳細については**ChangeDisplaySettingsEx**、Microsoft Windows SDK のドキュメントを参照してください。
+上記の**Setactivetopology**呼び出しでは、パラメーター3が2ではなく1に設定されています。 この場合、 **Setactivetopology**は*targetarray*を1つの要素を含む配列として解釈します。 **Setactivetopology**は2番目のターゲットをオフにし、単一ビューに入ります。 次に、TMM は**Changedisplaysettingsex**関数を使用して、表示を拡張します。 **Changedisplaysettingsex**の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-次の図は、TMM モニターが構成の 2 つのモニターに追加されると、状況を処理するときに発生する操作の流れを示しています。
+次の図は、2つのモニター構成を行うためにモニターを追加したときに TMM が処理を行う場合に発生する操作の流れを示しています。
 
-![構成の 2 つのモニターのモニターを追加することを示す図](images/tmm-newconfig.png)
+![2台のモニター構成を行うためのモニターの追加を示す図](images/tmm-newconfig.png)
 
  
 

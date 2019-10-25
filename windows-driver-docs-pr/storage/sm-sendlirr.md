@@ -1,9 +1,9 @@
 ---
 title: SM\_SendLIRR 関数
-description: SM\_SendLIRR WMI メソッドは、指定したリモート ポートに示されたローカル ポートを通じてリンク インシデント レコードの登録 (LIRR) コマンドを送信します。
+description: SM\_SendLIRR WMI メソッドは、指定されたローカルポートを介して、指定されたリモートポートにリンクインシデントレコード登録 (LIRR) コマンドを送信します。
 ms.assetid: 52564ec3-4a42-4df0-b89f-2a8415404172
 keywords:
-- 記憶装置の SM_SendLIRR 関数
+- SM_SendLIRR function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 05c6a4fcfb6c3da06e2c136e4e63c470ae96ebf3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0231e283b74e88a692be2d2194bb4def07f77322
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384287"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845462"
 ---
-# <a name="smsendlirr-function"></a>SM\_SendLIRR 関数
+# <a name="sm_sendlirr-function"></a>SM\_SendLIRR 関数
 
 
-SM\_SendLIRR WMI メソッドは、指定したリモート ポートに示されたローカル ポートを通じてリンク インシデント レコードの登録 (LIRR) コマンドを送信します。
+SM\_SendLIRR WMI メソッドは、指定されたローカルポートを介して、指定されたリモートポートにリンクインシデントレコード登録 (LIRR) コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,32 +46,32 @@ void SM_SendLIRR(
 <a name="parameters"></a>パラメーター
 ----------
 
-*SourceWWN*   
-LIRR コマンドを送信するローカル ポートの世界中の名 (WWN)。 この情報は、SM の SourceWWN メンバーのミニポート ドライバーに配信\_SendLIRR\_構造体。
+*Sourcewwn*   
+LIRR コマンドの送信に使用されるローカルポートのワールド名 (WWN)。 この情報は、構造内の SM\_SendLIRR\_の SourceWWN メンバーのミニポートドライバーに配信されます。
 
-*DestWWN*   
-接続先ポートの世界中の名 (WWN)。 この情報は、SM の DestWWN メンバーのミニポート ドライバーに配信\_SendLIRR\_構造体。
+*Destwwn*   
+宛先ポートのワールド名 (WWN)。 この情報は、構造内の SM\_SendLIRR\_の DestWWN メンバーのミニポートドライバーに配信されます。
 
 *関数*   
-登録関数を識別するコードの実行します。 詳細についてはこのメンバーにする値を割り当てることができます、T11 委員会のファイバー チャネルのフレームとシグナリングの仕様を参照してください。 この情報は、SM の関数メンバーのミニポート ドライバーに配信\_SendLIRR\_構造体。
+実行する登録関数を識別するコード。 このメンバーに割り当てることができる値の説明については、T11 委員会のファイバーチャネルフレーミングとシグナリングの仕様を参照してください。 この情報は、構造内の SM\_SendLIRR\_の関数メンバーのミニポートドライバーに配信されます。
 
 *型*   
-リンクの情報が要求されたデバイスの種類。 詳細についてはこのメンバーにする値を割り当てることができます、T11 委員会を参照してください。*ファイバー チャネルのフレームとシグナリング*仕様。 この情報は、SM の関数メンバーのミニポート ドライバーに配信\_SendLIRR\_構造体。
+リンク情報が要求されるデバイスの種類。 このメンバーに割り当てることができる値の説明については、T11 委員会の*ファイバーチャネルフレーミングとシグナリング*の仕様を参照してください。 この情報は、構造内の SM\_SendLIRR\_の関数メンバーのミニポートドライバーに配信されます。
 
-*InRespBufferMaxSize*   
-応答バッファーのバイト単位で最大サイズ。
+*In火炎 Buffermaxsize*   
+応答バッファーの最大サイズ (バイト単位)。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendLIRR\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_SendLIRR\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
-*TotalRespBufferSize*   
-LIRR コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalRespBufferSize メンバー\_SendLIRR\_構造体。
+*Total火炎 buffersize*   
+LIRR コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendLIRR\_OUT 構造体の Totalの値のメンバーにこの情報を返します。
 
-*OutRespBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の OutRespBufferSize メンバー\_SendLIRR\_構造体。
+* *  
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendLIRR\_OUT 構造体の外部のメンバーにこの情報を返します。
 
-*RespBuffer*   
-LIRR コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の RespBuffer メンバー\_SendLIRR\_構造体。
+* *  
+LIRR コマンドの結果。 ミニポートドライバーは、SM\_SendLIRR\_OUT 構造体の、この情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -81,7 +81,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -98,17 +98,17 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendlirr_out)
+[**SM\_SendLIRR\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendlirr_out)
 
  
 

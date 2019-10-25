@@ -3,41 +3,41 @@ title: PoolMon の表示
 description: PoolMon の表示
 ms.assetid: 1dee4331-a508-4e7f-b621-4d22f6572aec
 keywords:
-- PoolMon の WDK を表示します
-- メモリ プール モニタの WDK を表示します
+- PoolMon WDK、表示
+- メモリプールモニタ WDK、表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea1ee90c780bf56cb1e202b3f4b749c233157e63
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a1b60378d1da67dad206c0cf7196d89fdcc0a083
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358272"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840052"
 ---
 # <a name="poolmon-display"></a>PoolMon の表示
 
-PoolMon は、コマンド ウィンドウで、プールのメモリ割り当てに関するデータの列を表示します。 方向キー、PAGEUP、PAGEDOWN キーを使用して、データをスクロールします。
+[PoolMon] コマンドウィンドウでのプールメモリの割り当てに関するデータの列が表示されます。 方向キー、pageup キー、および PAGEDOWN キーを使用して、データをスクロールします。
 
 >[!NOTE]
->PoolMon 表示全体を表示するには、コマンド プロンプト ウィンドウのサイズが 80 以上の文字幅をある必要があります (幅 = 80)、少なくとも 53 行の高さ (高さ = 53)。コマンド プロンプト ウィンドウのバッファーが 500 以上の文字幅をする必要があります (幅 = 500)、少なくとも 2000 行の高さ (高さ = 2000)。 それ以外の場合、表示は切り捨てられます。
+>PoolMon の表示全体を表示するには、コマンドプロンプトウィンドウのサイズが80文字以上で、少なくとも53行以上 (高さ = 53) である必要があります。また、コマンドプロンプトウィンドウバッファーは、500文字以上で、少なくとも2000行 (高さ = 2000) 以上である必要があります。 それ以外の場合は、表示が切り捨てられる可能性があります。
 
-次の表では、PoolMon 表示内の列について説明します。
+次の表では、PoolMon 表示の列について説明します。
 
 |列名|説明|
 |----|----|
-|**タグ**|プールの割り当てに割り当てられた 4 バイトのタグ。|
-|**型**|かどうか、メモリの割り当ては、ページまたは非ページ バイトには。|
-|**回数**|割り当ての数。|
-|**( )**|前回の更新以降の割り当ての数に変更します。|
-|**解放**|無料の操作の数。|
-|**( )**|前回の更新以降の割り当ての数に変更します。|
-|**相違点**|無料の操作の数-割り当ての数。|
-|**バイト数**|使用されるバイトの割り当てのサイズ。|
+|**Tag**|プール割り当てに割り当てられた4バイトのタグ。|
+|**型**|メモリ割り当てがページングされているかどうか、またはページングされていないバイトかどうか。|
+|**Allocs**|割り当ての数。|
+|**( )**|前回の更新以降に行われた割り当ての数の変更。|
+|**費やす**|無料操作の数。|
+|**( )**|前回の更新以降に行われた割り当ての数の変更。|
+|**差異**|割り当ての数から、無料操作の数を差し引いた値。|
+|**メモリ**|割り当てのサイズ (バイト単位)。|
 |**( )**|前回の更新以降の割り当てサイズの変更。|
-|**Alloc ごと**|相違の値を除算してバイト単位の値|
-|**Mapped_Driver**|ローカルのドライバー ( **/c**) ドライバーとシステム コンポーネント頻繁に使用し、( **/g**) プール タグの値を割り当てることです。 この列は、使用する場合のみ表示されます、 **/c**または **/g**パラメーター。|
+|**割り当てごと**|Diff の値で除算されたバイトの値。|
+|**Mapped_Driver**|ローカルドライバー ( **/c**) およびその他の一般的に使用されるドライバーとシステムコンポーネント ( **/g**) で、プールタグの値を割り当てます。 この列は、 **/c**または **/g**パラメーターを使用した場合にのみ表示されます。|
 
-次のサンプル PoolMon 出力は、割り当ての数によって並べ替えられます。 (このように、ディスプレイを並べ替え、開始と PoolMon、 **/a**パラメーターです)。
+次の例の PoolMon 出力は、割り当ての数によって並べ替えられています。 (この方法で表示を並べ替えるには、 **/a**パラメーターを使用して PoolMon を開始します。)
 
 ```command
  Memory:  260620K Avail:   96364K  PageFlts:     0   InRam Krnl: 1916K P:17856K
@@ -55,14 +55,14 @@ PoolMon は、コマンド ウィンドウで、プールのメモリ割り当�
  SePa Nonp     680348 (   0)    680321 (   0)       27    3656 (     0)    135
 ```
 
-## <a name="update-rate"></a>更新間隔
+## <a name="update-rate"></a>更新率
 
-PoolMon では、5 秒ごとの表示を更新します。 更新間隔をプログラムで変更することはできません。 ただし、強制的に更新する PoolMon 結果の一部のキーをクリックして PoolMon がで実行されているウィンドウにフォーカスがある場合。 **Ctrl キーを押し**と**ALT**、たとえば、強制的に更新。 ただし、 **Print screen**はありません。
+PoolMon は、5秒ごとにディスプレイを更新します。 更新頻度をプログラムで変更することはできません。 ただし、ウィンドウ PoolMon がフォーカスされている場合は、一部のキーをクリックして、PoolMon の結果を強制的に更新できます。 たとえば、 **CTRL キー**と ALT キーを**押す**と、更新が強制されます。ただし、**印刷画面は表示**されません。
 
 ## <a name="accumulated-values"></a>累積値
 
-PoolMon を表示するデータが収集され、プールのタグ付けを有効にするたびに、Windows によって計算されます。 割り当て、解放操作は、使用されているバイトの値は、Windows が起動された時間から蓄積し、Windows が再起動されるまで 1 ずつ増加します。 Windows が既に開始後に、ドライバーまたはコンポーネントが開始されると場合、は、値が前回開始し、リセット、ドライバーまたはシステムを再起動したときにのみ、ドライバーまたはコンポーネントの蓄積されます。
+PoolMon によって表示されるデータは、プールのタグ付けが有効になっているたびに Windows によって収集され、計算されます。 割り当て、解放操作、および使用されたバイトの値は、Windows が起動した時点から累積し、Windows が再起動されるまで単調に増加します。 Windows が既に起動した後にドライバーまたはコンポーネントを起動した場合、値はドライバーまたはコンポーネントが最後に起動したときから累積され、ドライバーまたはシステムが再起動されたときにのみリセットされます。
 
-## <a name="interpreting-tag-values"></a>タグの値を解釈します。
+## <a name="interpreting-tag-values"></a>タグ値の解釈
 
-プールのすべてのメモリ割り当ては、タグがすべてが特徴的なタグの値。 プールのメモリ割り当てが、メモリの割り当て、ドライバーを使用して、タグの値を設定するときに、特性のタグの値を持つ[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)または[ **ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)します。 ドライバーをタグの値を割り当てない場合 ([**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)、 [ **ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquota))、Windows がまだですが、タグを作成します[なし] の既定のタグ値を割り当てます。 その結果、他のプール割り当てのドライバーの割り当ての統計情報を区別できません。
+すべてのプールメモリ割り当てにはタグがありますが、すべての特性タグ値を持つわけではありません。 プールメモリ割り当ては、メモリを割り当てるドライバーが[**exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)または[**Exallocatepoolwithquotatag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)を使用してタグ値を設定するときに、特性タグ値を持ちます。 ドライバーがタグ値 ([**exallocatepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)、 [**exallocatepoolwithquota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)) を割り当てない場合でも、Windows は引き続きタグを作成しますが、既定のタグ値は None に割り当てられます。 そのため、そのドライバーの割り当ての統計情報を、他のプール割り当ての統計と区別することはできません。

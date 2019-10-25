@@ -1,41 +1,41 @@
 ---
 title: Windows ドライバーでの拡張プロセッサ機能の使用
-description: X86 および x64 のシステム プロセッサの拡張機能を使用する Windows ドライバーは、同時実行アプリケーションのエラーを回避するために、KeSaveExtendedProcessorState への呼び出しと KeRestoreExtendedProcessorState 間の浮動小数点演算をラップする必要がありますが使用して、レジスタ。
+description: 拡張プロセッサ機能を使用する x86 および x64 システム用の Windows ドライバーでは、同時実行アプリケーションのエラーを回避するために、KeSaveExtendedProcessorState と KeRestoreExtendedProcessorState の呼び出しの間で浮動小数点の計算をラップする必要があります。レジスタを使用している可能性があります。
 ms.assetid: a42e86cf-47a2-44ed-8bf1-7407633af8b7
 keywords:
-- 浮動小数点のポイントの WDK カーネル
+- 浮動小数点 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d05c6e9771fec01515870cc78c711c21a81582
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 49b735b9eb8b578b0554a77e241b0b246945e1dc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386597"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838690"
 ---
 # <a name="using-extended-processor-features-in-windows-drivers"></a>Windows ドライバーでの拡張プロセッサ機能の使用
 
 
-**最終更新日**
+**最終更新日時**
 
 -   2016 年 7 月
 
-X86 および x64 のシステム プロセッサの拡張機能を使用する Windows ドライバーは、呼び出しの間で浮動小数点演算をラップする必要があります[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)と[ **KeRestoreExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)レジスタを使用して同時実行アプリケーションでエラーを回避するためにします。
+拡張プロセッサ機能を使用する x86 および x64 システム用の Windows ドライバーは、同時に発生するエラーを回避するために、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)と[**Kerestoreextendedprocessorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)の呼び出しの間で浮動小数点の計算をラップする必要があります。レジスタを使用している可能性のあるアプリケーション。
 
 ## <a name="legacy-mmxx87-registers"></a>レガシ MMX/x87 レジスタ
 
 
-これらのレジスタは、XSTATE に対応して\_マスク\_レガシ\_浮動\_ポイント マスクと x64 用のドライバーが利用できないシステム。 これらの詳細についてを参照してくださいを登録の[WDM ドライバーで使用する浮動小数点](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
+これらのレジスタは、XSTATE\_MASK\_レガシ\_浮動\_ポイントマスクに対応しており、x64 システムのドライバーでは使用できません。 これらのレジスタの詳細については[、「WDM ドライバーでの浮動小数点の使用](using-floating-point-or-mmx-in-a-wdm-driver.md)」を参照してください。
 
 ## <a name="sse-registers"></a>SSE レジスタ
 
 
-これらのレジスタは、XSTATE に対応\_マスク\_レガシ\_SSE フラグとは、x64 で使用される浮動小数点演算のコンパイラ。 これらのレジスタを使用するシステムする必要があります保存に使用する前に、XSTATE を渡すことで x86 用のドライバー\_マスク\_レガシまたは XSTATE\_マスク\_レガシ\_SSE フラグ、 [ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)呼び出しを完了したら、それらを復元[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)します。 X64 では必要でないシステムでは、有害なされませんが。 これらの詳細についてを参照してくださいを登録の[WDM ドライバーで使用する浮動小数点](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
+これらのレジスタは、XSTATE\_MASK\_レガシ\_SSE フラグに対応し、浮動小数点演算のために x64 コンパイラによって使用されます。 これらのレジスタを使用する x86 システムのドライバーは、XSTATE\_マスク\_レガシまたは XSTATE\_マスクを渡すことによって、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)呼び出しのレガシ\_SSE フラグ\_、完了したときに、それらを保存する必要があります。[**Kerestoreextendedprocessorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)を使用して復元します。 これは x64 システムでは不要ですが、害はありません。 これらのレジスタの詳細については[、「WDM ドライバーでの浮動小数点の使用](using-floating-point-or-mmx-in-a-wdm-driver.md)」を参照してください。
 
 ## <a name="avx-registers"></a>AVX レジスタ
 
 
-これらのレジスタは、XSTATE に対応して\_マスク\_GSSE または XSTATE\_マスク\_AVX マスク。 新しい x86 など、Intel Sandy Bridge (旧称 Gesher) プロセッサのプロセッサが AVX 命令をサポートし、セット (YMM0 YMM15) を登録します。 Service Pack 1 (SP1)、Windows Server 2008 R2 では、新しいバージョンの Windows と Windows 7 では、x86 と x64 の両方のバージョンのオペレーティング システムは、AVX スレッド (とプロセス) の間でのレジスタのスイッチを保持します。 AVX レジスタをカーネル モードで使用するには、ドライバー (x86 および x64) が明示的に保存して AVX レジスタを復元する必要があります。 AVX レジスタは、割り込みサービス ルーチンでは使用できませんし、算術例外は既定でオフにします。
+これらのレジスタは、XSTATE\_MASK\_GSSE または XSTATE\_MASK\_AVX マスクに対応します。 Intel Sandy Bridge (旧称 Gesher) プロセッサなどの新しい x86 プロセッサは、AVX 命令と register set (YMM0 ~ YMM5-YMM15) をサポートしています。 Windows 7 Service Pack 1 (SP1)、Windows Server 2008 R2、およびそれ以降のバージョンの Windows では、x86 と x64 の両方のバージョンのオペレーティングシステムで、スレッド (およびプロセス) のスイッチ間で AVX レジスタが保持されます。 カーネルモードで AVX レジスタを使用するには、ドライバー (x86 および x64) が AVX レジスタを明示的に保存および復元する必要があります。 AVX レジスタは、割り込みサービスルーチンでは使用できません。また、算術例外は既定で無効になっています。
 
 ```cpp
 include ksamd64.inc
@@ -131,9 +131,9 @@ exit:
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)  
-[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)  
-[WDM ドライバーでの浮動小数点を使用してください。](using-floating-point-or-mmx-in-a-wdm-driver.md)  
+[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)  
+[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)  
+[WDM ドライバーでの浮動小数点の使用](using-floating-point-or-mmx-in-a-wdm-driver.md)  
 
 
 

@@ -4,12 +4,12 @@ description: 電源管理機能のレポート
 ms.assetid: cfacd885-e18a-44a5-939d-88e62b573ace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a8f681cb84843ca7343fb637ab8f1f1c65a521
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6ec12acb865f4933bcac3dca00039301b56c651
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373247"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842040"
 ---
 # <a name="reporting-power-management-capabilities"></a>電源管理機能のレポート
 
@@ -17,91 +17,91 @@ ms.locfileid: "67373247"
 
 
 
-サポート NDIS 6.20 が動作し、以降のバージョンの NDIS ミニポート ドライバーでは、初期化中に、ハードウェアの電源管理機能を報告します。 NDIS は、NDIS プロトコル ドライバーをバインド操作中に関連する現在の機能を報告します。 ただし、NDIS は、プロトコル ドライバーからいくつかの機能を非表示にすることができます。 たとえば、NDIS は、ユーザーは、電源管理機能の一部またはすべて無効にします。 ときに、さまざまな機能を報告する可能性があります。
+Ndis 6.20 以降のバージョンの NDIS をサポートするミニポートドライバーは、初期化中にハードウェアの電源管理機能を報告します。 NDIS は、バインド操作中に、現在の機能を他の NDIS プロトコルドライバーに報告します。 ただし、NDIS では、一部の機能をプロトコルドライバーから非表示にすることができます。 たとえば、ユーザーが電源管理機能の一部またはすべてを無効にした場合、NDIS は異なる機能を報告する場合があります。
 
-プロトコル ドライバーに NDIS を報告する現在の電源管理機能できないが必ずしもに NDIS ミニポート ドライバーが報告されたハードウェアの機能と同じに注意してください。
+NDIS がプロトコルドライバーに報告する現在の電源管理機能は、ミニポートドライバーが NDIS に報告したハードウェア機能と必ずしも同じではないことに注意してください。
 
-NDIS 6.1 または以前のミニポート ドライバーは、NDIS 6.20 プロトコル ドライバーにバインドする場合、NDIS は、NDIS 6.20 プロトコル ドライバーでサポートされている形式に電源管理機能を変換します。 NDIS は、NDIS 6.20 が動作のミニポート ドライバーは、NDIS 6.1 と前の上位のドライバーでサポートされている形式にレポートを電源管理機能にも変換します。
+Ndis 6.1 以前のミニポートドライバーが NDIS 6.20 プロトコルドライバーにバインドされている場合、NDIS は、電源管理機能を NDIS 6.20 プロトコルドライバーでサポートされている形式に変換します。 また、ndis は、ndis 6.20 ミニポートドライバーによって報告される電源管理機能を、NDIS 6.1 以前のドライバーでサポートされている形式に変換します。
 
-ミニポート ドライバーを報告するハードウェアの機能を有効になっているまたは INF ファイルの設定で無効になっていることができます。 電源管理 INF ファイルの設定の詳細については、次を参照してください。[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)します。
+ミニポートドライバーによって報告されるハードウェア機能は、INF ファイル設定で有効または無効にすることができます。 電源管理の INF ファイル設定の詳細については、「 [Power management の標準化](standardized-inf-keywords-for-power-management.md)された inf キーワード」を参照してください。
 
-ミニポートの初期化中に、ミニポート ドライバーを初期化します、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)基になるの電源管理機能を含む構造体ハードウェア。 ミニポート ドライバーのセット、 **PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体を指す、 **NDIS\_PM\_機能**構造体。
+ミニポートの初期化中に、ミニポートドライバーは、基盤となるハードウェアの電源管理機能を使用して、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造を初期化します。 ミニポートドライバーは、ndis **\_PM\_機能**を指すように、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体の**PowerManagementCapabilitiesEx**メンバーを設定します。データ.
 
-[ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体には、次の情報が含まれています。
+[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造には、次の情報が含まれています。
 
-**フラグ**  
-NDIS 6.20 が動作のこのメンバーは、NDIS の予約されています。
+**示す**  
+NDIS 6.20 では、このメンバーは NDIS 用に予約されています。
 
-NDIS 6.30 以降では、次のフラグが定義されます。
+NDIS 6.30 以降では、次のフラグが定義されています。
 
-<a href="" id="ndis-pm-wake-packet-indication-supported"></a>NDIS\_PM\_WAKE\_パケット\_INDICATION\_サポートされています。  
-このフラグが設定されている場合、ネットワーク アダプターは、アダプターが、ウェイク アップのイベントを生成する原因となった受信パケットを保存できます。
+<a href="" id="ndis-pm-wake-packet-indication-supported"></a>NDIS\_PM\_WAKE\_パケット\_通知\_サポートされています  
+このフラグが設定されている場合、ネットワークアダプターは、アダプターがウェイクアップイベントを生成する原因となった受信パケットを保存できます。
 
-この電源管理機能の詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+この電源管理機能の詳細については、「 [NDIS Wake Reason Status 兆候](ndis-wake-reason-status-indications.md)」を参照してください。
 
-<a href="" id="ndis-pm-selective-suspend-supported"></a>NDIS\_PM\_セレクティブ\_SUSPEND\_サポートされています。  
-このフラグが設定されている場合、選択的 NDIS の中断のミニポート ドライバーではネットワーク アダプターを使用します。
+<a href="" id="ndis-pm-selective-suspend-supported"></a>NDIS\_PM\_選択\_中断\_サポートされています  
+このフラグが設定されている場合、ミニポートドライバーは、ネットワークアダプターに対する NDIS のセレクティブサスペンドをサポートします。
 
-この電源管理機能の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド](ndis-selective-suspend.md)します。
+この電源管理機能の詳細については、「 [NDIS の選択的中断](ndis-selective-suspend.md)」を参照してください。
 
 <a href="" id="supportedwolpacketpatterns"></a>**SupportedWoLPacketPatterns**  
-ネットワーク アダプターをサポートする wake on LAN (WOL) パケットのパターンを指定するフラグが含まれています。 たとえば、ネットワーク アダプターでは、ビットマップ、WOL マジック パケットの場合、または EAP over LAN (EAPOL) 要求の識別子のメッセージを受信すると、ウェイク アップ イベントを生成できます。 現在のオペレーティング システムでサポートされているパターンの完全な一覧を参照してください、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)リファレンス ページです。
+ネットワークアダプターがサポートする wake on LAN (WOL) パケットパターンを指定するフラグが含まれています。 たとえば、ネットワークアダプターは、ビットマップ、WOL マジックパケット、または EAP over LAN (EAPOL) 要求識別子メッセージを受信したときにウェイクアップイベントを生成できます。 現在のオペレーティングシステムでサポートされているパターンの完全な一覧については、「 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)リファレンス」ページを参照してください。
 
 <a href="" id="numtotalwolpatterns"></a>**NumTotalWoLPatterns**  
-A **ULONG**ネットワーク アダプターをサポートする WOL パターンの合計数を表す値です。 これは、「サポートされている WOL ビットマップ パターンの数」と「サポートされている、WOL プロトコル パターンの数」の合計
+ネットワークアダプターがサポートする WOL パターンの合計数を含む**ULONG**値。 これは、「サポートされている WOL プロトコルパターンの数」と「サポートされている WOL ビットマップパターンの数」の合計です。
 
-たとえばには、ドライバーは、8 の柔軟なビットマップ パターン、(事前設定されたフィルターの場合) を使用して IPv4 TCP SYN およびマジック パケットをサポートする場合は、NumTotalWoLPatterns で 9 を報告するは。 (8 ビットマップ + 1 の IPv4 TCP SYN = 9)
+たとえば、ドライバーが8つの柔軟なビットマップパターン、IPv4 TCP SYN (プリセットフィルター経由)、およびマジックパケットをサポートしている場合は、NumTotalWoLPatterns で9を報告します。 (8 ビットマップ + 1 IPv4 TCP SYN = 9)
 
-**注**  WOL パターンの合計数は、マジック パケットとウェイク アップのパターンが含まれません。
+WOL パターンの合計数にマジックパケットウェイクアップパターンが含まれていない  に**注意**してください。
 
  
 
-WOL プロトコル パターンの詳細については、次を参照してください。 [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)します。
+WOL プロトコルパターンの詳細については、「 [**NDIS\_PM\_wol\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)」を参照してください。
 
 <a href="" id="maxwolpatternsize"></a>**MaxWoLPatternSize**  
-パターンと比較できるバイトの最大数が含まれています。
+パターンと比較できる最大バイト数を格納します。
 
 <a href="" id="maxwolpatternoffset"></a>**MaxWoLPatternOffset**  
-MAC ヘッダーの先頭から開始されるパケット検査できるバイト数が含まれています。
+MAC ヘッダーの先頭から開始する、検査可能なパケット内のバイト数を格納します。
 
 <a href="" id="maxwolpacketsavebuffer"></a>**MaxWoLPacketSaveBuffer**  
-ミニポート ドライバーは、バッファーに保存でき、ドライバー スタックを示す WOL プロトコル パターンのバイト数が含まれています。
+ミニポートドライバーがバッファーに保存できる WOL プロトコルパターンのバイト数を格納し、ドライバースタックを示します。
 
 <a href="" id="supportedprotocoloffloads"></a>**SupportedProtocolOffloads**  
-ネットワーク アダプターでサポートされる機能、電源管理プロトコルの負荷を軽減するかを指定するフラグが含まれています。 ミニポート ドライバーでは、低電力プロトコルのネットワーク アダプターの機能をオフロードするレポートにこれらのフラグを使用します。 たとえば、ネットワーク アダプターでは、IPv4 ARP オフロード、IPv6 近隣要請 (NS) または IEEE 802.11 堅牢なセキュリティで保護されたネットワーク (RSN) 4 ウェイと 2 ウェイ ハンドシェイクをサポートできます。 現在のオペレーティング システムでサポートされているプロトコルのオフロードの完全な一覧を参照してください、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)リファレンス ページです。
+ネットワークアダプターがサポートする電源管理プロトコルのオフロード機能を指定するフラグが含まれています。 ミニポートドライバーは、これらのフラグを使用して、ネットワークアダプターの低電力プロトコルオフロード機能を報告します。 たとえば、ネットワークアダプターは、IPv4 ARP オフロード、IPv6 近隣要請 (NS)、または IEEE 802.11 の堅牢なセキュリティで保護されたネットワーク (RSN) の4方向および双方向のハンドシェイクをサポートできます。 現在のオペレーティングシステムでサポートされているプロトコルオフロードの完全な一覧については、「 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)のリファレンス」ページを参照してください。
 
 <a href="" id="numarpoffloadipv4addresses"></a>**NumArpOffloadIPv4Addresses**  
-ARP オフロードの IPv4 アドレスの数が含まれています。
+ARP オフロード IPv4 アドレスの数が含まれます。
 
 <a href="" id="numnsoffloadipv6addresses"></a>**NumNSOffloadIPv6Addresses**  
-ネットワークの要請 (NS) オフロード、ネットワーク アダプターをサポートする IPv6 要求の数が含まれています。
+ネットワークアダプターがサポートするネットワーク要請 (NS) オフロード IPv6 要求の数を含みます。
 
 <a href="" id="minmagicpacketwakeup"></a>**MinMagicPacketWakeUp**  
-ネットワーク アダプターがの受信時にウェイク アップのイベントを信号最低のデバイスの電源状態を指定します、*マジック パケット*します。 (A*マジック パケット*は受信側のネットワーク アダプターのイーサネット アドレスの 16 個の連続したコピーを含むパケットです)。
+ネットワークアダプターが*マジックパケット*の受信時にウェイクアップイベントを通知できる最も低いデバイス電源状態を指定します。 (*マジックパケット*は、受信側のネットワークアダプターのイーサネットアドレスの連続した16個のコピーを含むパケットです)。
 
-<a href="" id="minpatternwakeup"></a>**MinPatternWakeUp**  
-ネットワーク アダプターがプロトコル ドライバーで指定されたパターンを含むネットワーク フレームの受信時にウェイク アップのイベントを信号最低のデバイスの電源状態を指定します。
+<a href="" id="minpatternwakeup"></a>**Minpattern ウェイクアップ**  
+プロトコルドライバーによって指定されたパターンを含むネットワークフレームを受信したときに、ネットワークアダプターがウェイクアップイベントを通知できる最も小さいデバイスの電源状態を指定します。
 
 <a href="" id="minlinkchangewakeup"></a>**MinLinkChangeWakeUp**  
-ネットワーク アダプターが、リンクの変更 (メディアを接続または切断) がある場合は、ウェイク アップのイベントを信号最低のデバイスの電源状態を指定します。
+リンクの変更 (メディアの接続または切断) が発生したときに、ネットワークアダプターがウェイクアップイベントを通知できる最も低いデバイスの電源状態を指定します。
 
 <a href="" id="supportedwakeupevents"></a>**SupportedWakeUpEvents**  
-ネットワーク アダプターをサポートするメディアに依存しないウェイク アップのイベントを指定します。 これらのイベントは、メディアの種類に固有ではありません。 たとえば、これらのウェイク アップ イベントには、リンクの変更イベントが含まれます。
+ネットワークアダプターがサポートする、メディアに依存しないウェイクアップイベントを指定します。 これらのイベントは、メディアの種類に固有のものではありません。 たとえば、これらのウェイクアップイベントには、リンク変更イベントが含まれます。
 
 <a href="" id="mediaspecificwakeupevents"></a>**MediaSpecificWakeUpEvents**  
-ネットワーク アダプターをサポートするメディア固有のウェイク アップのイベントを指定します。 たとえば、これらのイベントが含まれる次。
+ネットワークアダプターがサポートするメディア固有のウェイクアップイベントを指定します。 たとえば、次のようなイベントがあります。
 
--   アクセス ポイント (AP) と 802.11 ネットワーク アダプターの関連付けを解除します。
+-   802.11 ネットワークアダプターがアクセスポイント (AP) との関連付けを解除します。
 
--   モバイル ブロード バンド (MB) のネットワーク アダプターでは、MB サービスへの登録状態の変更を検出します。
+-   モバイルブロードバンド (MB) ネットワークアダプターは、その登録状態の変更を MB サービスに対して検出します。
 
-プロトコルを低電力状態のネットワーク アダプターのオフロードをサポートするには、プロトコルの同じ低電力状態をサポートする必要があります、ミニポート ドライバーの負荷を軽減するパターン一致 WOL イベント; のサポートします。つまり、値で指定されている、 **MinPatternWakeUp**または**MinMagicPacketWakeUp**メンバー。
+ミニポートドライバーが低電力状態のネットワークアダプターへのオフロードプロトコルをサポートしている場合は、パターンマッチ WOL イベントに対してサポートされているプロトコルオフロードに対して、同じ低電力状態をサポートする必要があります。つまり、 **Minpattern ウェイクアップ**または**MinMagicPacketWakeUp**メンバーに指定された値です。
 
-NDIS を初期化します、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)基になるネットワーク アダプターの現在使用できる電源管理機能を含む構造体を渡しますバインド操作中にプロトコル ドライバーを後続のプロトコルです。 NDIS セット、 **PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters) NDISを指す構造体\_PM\_機能の構造体。
+NDIS は、基盤となるネットワークアダプターの現在使用可能な電源管理機能を使用して、 [**ndis\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造を初期化し、バインド操作中にプロトコルにプロトコルを渡します。 Ndis は、ndis\_PM\_CAPABILITIES 構造体を指すように、 [**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体**のメンバーを**設定します。
 
-使用できるドライバーが重なって、 [OID\_PM\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-hardware-capabilities)をネットワーク アダプターのハードウェアの電源管理機能を取得する OID クエリ。 NDIS は、ミニポート ドライバーに代わってこの OID 要求を処理します。 NDIS ミニポート ドライバーが、OID をサポートする必要はありません\_PM\_ハードウェア\_機能 OID 要求。
+これまでのドライバーでは、 [oid\_PM\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-hardware-capabilities)の oid クエリを使用して、ネットワークアダプターのハードウェア電源管理機能を取得できます。 NDIS は、ミニポートドライバーに代わってこの OID 要求を処理します。 NDIS ミニポートドライバーは、OID\_PM\_ハードウェア\_機能の OID 要求をサポートするために必要ありません。
 
-使用できるドライバーが重なって、 [OID\_PM\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-current-capabilities)ネットワーク アダプターの現在使用できる電源管理機能を照会する OID。 NDIS は、ミニポート ドライバーに代わってこの OID 要求を処理します。 NDIS ミニポート ドライバーが、OID をサポートする必要はありません\_PM\_現在\_機能 OID 要求。
+それまでのドライバーでは、 [oid\_PM\_現在の\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-current-capabilities)oid を使用して、ネットワークアダプターの現在使用可能な電源管理機能を照会できます。 NDIS は、ミニポートドライバーに代わってこの OID 要求を処理します。 NDIS ミニポートドライバーは、OID\_PM\_現在の\_機能 OID 要求をサポートするためには必要ありません。
 
  
 

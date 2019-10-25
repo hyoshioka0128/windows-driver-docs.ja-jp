@@ -1,40 +1,40 @@
 ---
-title: ユーザー インターフェイス プラグインの概要
-description: ユーザー インターフェイス プラグインの概要
+title: ユーザーインターフェイスプラグインの概要
+description: ユーザーインターフェイスプラグインの概要
 ms.assetid: 7f01bd14-bcc5-4c26-a9b8-a12aa1ffe242
 keywords:
-- ユーザー インターフェイスにプラグイン WDK 印刷、ユーザー インターフェイスのプラグインについて
-- ユーザー インターフェイスのプラグインの詳細については、印刷 UI プラグインの WDK
+- ユーザーインターフェイスプラグイン WDK print、ユーザーインターフェイスプラグインについて
+- UI プラグイン WDK print、ユーザーインターフェイスプラグインについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c15f0e42ee57d5af6e3d5a66750f8a20822b87dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ccdbe4dec1ba1e8c1ac7fc390fa92e3c6af8769c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385391"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839637"
 ---
-# <a name="introduction-to-user-interface-plug-ins"></a>ユーザー インターフェイス プラグインの概要
+# <a name="introduction-to-user-interface-plug-ins"></a>ユーザーインターフェイスプラグインの概要
 
 
 
 
 
-いずれかに新しいプリンター デバイスのサポートを追加すると、 [Microsoft ユニバーサル プリンター ドライバー](microsoft-universal-printer-driver.md) (Unidrv) または[Microsoft PostScript プリンター ドライバー](microsoft-postscript-printer-driver.md) (Pscript) ドライバーのユーザーをカスタマイズすることができますプリンターのプロパティ シートまたはプリンターのドキュメントのプロパティ シートを変更することでインターフェイスです。
+新しいプリンターデバイスのサポートを[Microsoft Universal printer driver](microsoft-universal-printer-driver.md) (Unidrv) または[microsoft PostScript プリンタードライバー](microsoft-postscript-printer-driver.md) (pscript) のいずれかに追加すると、プリンターのプロパティシートを変更することによって、ドライバーのユーザーインターフェイスをカスタマイズできます。または、プリンターのドキュメントプロパティシート。
 
-ユーザー モード DLL を提供することで、このカスタマイズを実現します。 この DLL と呼ばれます、*プラグインのユーザー インターフェイス*、または単*UI プラグイン*します。
+このカスタマイズは、ユーザーモードの DLL を提供することによって行います。 この DLL は、*ユーザーインターフェイスプラグイン*または*UI プラグイン*と呼ばれます。
 
-プラグイン UI は、追加、削除、またはプロパティ シートの内のオプションを置換してプリンターのプロパティ シートを変更できます**デバイス設定**ページ。 新しいページを追加することもできます。 同様に、プラグインを変更できますドキュメントのプロパティ シートの追加、削除、またはプロパティ シートの内のオプションを置換して**レイアウト**、**用紙/品質**、および**詳細**ページ、またはそれには、新しいページを追加できます。
+UI プラグインは、プロパティシートの **[デバイス設定]** ページ内のオプションを追加、削除、または置換することで、プリンターのプロパティシートを変更できます。 新しいページを追加することもできます。 同様に、プラグインでは、プロパティシートの**レイアウト**、**用紙/品質**、および**詳細設定**ページ内のオプションを追加、削除、または置換することで、ドキュメントのプロパティシートを変更できます。また、新しいページを追加することもできます。
 
-Windows Vista から Unidrv を使用している場合を実装できます、 [ **IPrintOemUI2::HideStandardUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui)メソッドですべてのプリンターの構成プロパティを非表示にするには、プラグインをページには、標準のドライバー提供します。 プリンターの完全なカスタムのプリンター構成ユーザー インターフェイスを提供する場合、このメソッドを使用することができます。
+Windows Vista の Unidrv を使用している場合は、プラグインで[**IPrintOemUI2:: HideStandardUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui)メソッドを実装して、標準ドライバーが提供するすべてのプリンター構成プロパティページを非表示にすることができます。 プリンターに完全にカスタムのプリンター構成ユーザーインターフェイスを提供する場合は、この方法を使用できます。
 
-**重要な**  ユーザー .hlp ファイルを表示できるアプリケーションは、Windows ヘルプ (WinHlp32.exe)。 Windows Vista 以降、Windows ヘルプ アプリケーションが Windows オペレーティング システムの一部として含まれています。 、.Hlp ファイルに依存するアプリケーションを開発するソフトウェア開発者は、.chm、.hxs、.html、.xml ファイルなどの別のヘルプ形式のファイルを移行する必要があります。 詳細については、次を参照してください。、 [Windows ヘルプ プログラム (WinHlp32.exe) は Windows に付属しなく](https://go.microsoft.com/fwlink/p/?linkid=80917)サポート技術情報記事。
+**重要**   Windows ヘルプ (winhlp32.exe) は、ユーザーが .hlp ファイルを表示できるようにするアプリケーションです。 Windows Vista 以降では、windows ヘルプアプリケーションは Windows オペレーティングシステムの一部として含まれていません。 .Hlp ファイルに依存するアプリケーションを開発するソフトウェア開発者は、ファイルを .chm、hxs、.html、.xml ファイルなどの代替のヘルプ形式に移行する必要があります。 詳細については、windows サポート技術情報の記事「 [Windows ヘルププログラム (winhlp32.exe)](https://go.microsoft.com/fwlink/p/?linkid=80917) 」を参照してください。
 
  
 
-[プリンター インターフェイス DLL](printer-interface-dll.md)呼び出し UI プラグイン Unidrv または Pscript、COM インターフェイスのセットを使用します。 Dll が CPSUI、およびプラグインの UI を使用して実装されているプリンター インターフェイスと対話しない直接 CPSUI ドライバーのプリンター インターフェイス DLL を使用します。 そのため、必ず、 [CPSUI](common-property-sheet-user-interface.md)プラグイン UI を開発する前にセクションします。
+[プリンターインターフェイス DLL](printer-interface-dll.md)は、一連の COM インターフェイスを使用して、Unidrv または PSCRIPT の UI プラグインを呼び出します。 プリンターインターフェイス Dll は CPSUI を使用して実装され、UI プラグインは、ドライバーのプリンターインターフェイス DLL を介して間接的に CPSUI とやり取りします。 そのため、UI プラグインを開発する前に、 [CPSUI](common-property-sheet-user-interface.md)セクションを読む必要があります。
 
-だけでなく、プリンター ドライバーのユーザー インターフェイスを変更するには、プラグイン UI はサポートされている機能の特定のプリンター イベントを処理およびレポートなど、他の操作を実行できます。 詳細については、次を参照してください。[プリンター インターフェイスのその他の操作のカスタマイズ](customizing-other-printer-interface-operations.md)します。
+UI プラグインは、プリンタードライバーのユーザーインターフェイスを変更するだけでなく、特定のプリンターイベントの処理やサポートされている機能のレポートなど、その他の操作を実行できます。 詳細については、「[その他のプリンターインターフェイス操作のカスタマイズ](customizing-other-printer-interface-operations.md)」を参照してください。
 
  
 

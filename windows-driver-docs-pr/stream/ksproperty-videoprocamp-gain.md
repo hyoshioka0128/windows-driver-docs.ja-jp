@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_を得る
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを設定またはカメラ ゲインを取得します。 このプロパティは省略可能です。
+title: KSPROPERTY\_VIDEOPROCAMP\_利得
+description: KSK プロパティ\_VIDEOPROCAMP\_プロパティセットを取得するか、カメラのゲインを取得します。 このプロパティは省略可能です。
 ms.assetid: 46ed6ba1-1413-4466-9125-2d0a3fd51def
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_GAIN ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_GAIN ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 844b96091245bb6bba0577b13c222d1d1447731c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38fd486d836ba49067637760c1239e90ba97fcb8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381951"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842828"
 ---
-# <a name="kspropertyvideoprocampgain"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_を得る
+# <a name="ksproperty_videoprocamp_gain"></a>KSPROPERTY\_VIDEOPROCAMP\_利得
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを設定またはカメラ ゲインを取得します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_プロパティセットを取得するか、カメラのゲインを取得します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_gain_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_GAIN_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの向上の設定を指定する LONG が。
+プロパティ値 (操作データ) は、カメラのゲイン設定を指定する LONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_S 構造体かどうかに応じて、要求されたか、現在の向上を指定します、*取得*または*設定*要求。
+VIDEOPROCAMP\_S 構造体\_の**値**メンバーは、要求されたまたは現在のゲインを指定します。これは*Get*または*Set*のいずれの要求かによって異なります。
 
-ゲインの範囲は、ベンダー定義既定の解決には 1 です。
+ゲインの範囲はベンダーによって定義されます。既定の解決策は1です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,11 +89,11 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ゲイン プロパティを
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)
+[**KSPROPERTY\_VIDEOPROCAMP\_NODE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)
 
  
 

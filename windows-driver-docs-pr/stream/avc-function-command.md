@@ -3,7 +3,7 @@ title: AVC\_関数\_コマンド
 description: AVC\_関数\_コマンド
 ms.assetid: 5e1f7f93-83ef-4015-a952-f7efd93ccee5
 keywords:
-- AVC_FUNCTION_COMMAND ストリーミング メディア デバイス
+- AVC_FUNCTION_COMMAND ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b897d5afd7ef8d6c3de5b660e85aa5079e00c452
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ef1a5ed6a0d62bafbbadc55fd94ad76f0d245ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386757"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843557"
 ---
 # <a name="avc_function_command"></a>AVC\_関数\_コマンド
 
@@ -25,13 +25,13 @@ ms.locfileid: "67386757"
 ## <span id="ddk_avc_function_command_ks"></span><span id="DDK_AVC_FUNCTION_COMMAND_KS"></span>
 
 
-**AVC\_関数\_コマンド**AV/C 要求を送信し、1 つの操作として応答を受信する関数のコードを使用します。
+**AVC\_関数\_コマンド**関数コードを使用して、AV/C 要求を送信し、1つの操作として応答を受信します。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 
-成功すると、AV/C をプロトコル ドライバーに設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+成功した場合、AV/C プロトコルドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-その他の戻り値には、考えられる。
+その他の戻り値には次のようなものがあります。
 
 <table>
 <colgroup>
@@ -47,19 +47,19 @@ ms.locfileid: "67386757"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>要求が行われたが、すべてタイムアウトするまでの応答が受信されず、再試行の処理が完了します。 ターゲット デバイスは、前の要求が処理中の場合、要求を無視します。 いくつか AV/C デバイスを準拠していない、およびいくつかの連続する試行した後でも 100 ミリ秒のタイムアウト以内に応答を拒否します。 AVC_COMMAND_IRB 構造により、既定値の調整<strong>タイムアウト</strong>と<strong>再試行</strong>メンバー (100 ミリ秒、9、それぞれ)、既定の設定は、すべてのための十分なされているが、既知の実装。</p></td>
+<td><p>要求が行われましたが、すべてのタイムアウトと再試行処理が完了する前に応答が受信されませんでした。 前の要求がまだ処理されている場合、ターゲットデバイスは要求を無視します。 一部の AV/C デバイスは準拠していません。また、連続して複数回試行された後でも、100-ms のタイムアウト時間内に応答を拒否します。 AVC_COMMAND_IRB 構造体では、既定の<strong>タイムアウト</strong>メンバーと<strong>再試行</strong>メンバー (それぞれ100ミリ秒と 9) の調整が許可されますが、これらの既定の設定はすべての既知の実装に対して十分です。</p></td>
 </tr>
 <tr class="even">
-<td><p>STATUS_PENDING</p></td>
-<td><p>要求が行われ、暫定的な応答を受け取りました。 最後の応答を処理し、IRP と IRB リソースを解放するには、完了ルーチンの役目です。</p></td>
+<td><p>あります</p></td>
+<td><p>要求が行われ、中間応答が受信されました。 最終的な応答を処理し、IRP と IRB のリソースを解放するのは、完了ルーチンの役割です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>AV/C 要求を送信して、すぐに中止時に、IRP の完了ステータスが STATUS_REQUEST_ABORTED します。</p></td>
+<td><p>AV/C 要求を送信すると、IRP の完了状態が STATUS_REQUEST_ABORTED になるとすぐに中止されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_*</p></td>
-<td><p>他のリターン コードでは、エラーまたは警告が発生したこと、AV/C プロトコルの範囲を超えていたことを示します。</p></td>
+<td><p>その他のリターンコードは、AV/C プロトコルの範囲を超えてエラーまたは警告が発生したことを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ ms.locfileid: "67386757"
 
 ### <a name="comments"></a>コメント
 
-この関数は、AVC\_コマンド\_IRB 構造の下に示すようにします。
+この関数では、次に示すように、AVC\_コマンド\_IRB 構造体を使用します。
 
 ```cpp
 typedef struct _AVC_COMMAND_IRB {
@@ -95,77 +95,77 @@ typedef struct _AVC_COMMAND_IRB {
 
 ### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
+**ヘッダー:** *Avc*で宣言されています。 *Avc. h*を含めます。
 
 ### <a name="span-idavc_command_irb_inputspanspan-idavc_command_irb_inputspanavc_command_irb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_コマンド\_IRB 入力
 
-**一般的です**  
-**関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_コマンド**、AVC から\_関数の列挙体。
+**的**  
+このメンバーの**関数**サブメンバーは、AVC\_関数の列挙から、 **avc\_function\_コマンド**に設定する必要があります。
 
 <span id="SubunitAddrFlag"></span><span id="subunitaddrflag"></span><span id="SUBUNITADDRFLAG"></span>**SubunitAddrFlag**  
-設定されるアドレスをいずれかのサブユニットをオーバーライドするには、この*avc.sys*サブユニット ドライバーに関連付けます。 オーバーライドする原因が考えられます: サブユニット ドライバーが 1 つのインスタンスで複数のサブユニットを表します単位コマンドを送信する必要があります。に、ドライバーが読み込まれたまたは*avc.sys*サブユニットを特定できませんでしたを入力または id。 設定されている場合、 **SubunitAddr**メンバーは、目的のサブユニット アドレスを含む非ページ メモリを指す必要があります。
+これを1に設定すると、 *avc*がサブユニットドライバーに関連付けているサブシステムアドレスが上書きされます。 オーバーライドする理由: サブユニットドライバーは、1つのインスタンス内の複数のサブユニットを表します。unit コマンドを送信する必要があります。または、 *avc*がサブユニットの種類または ID を特定できなかったため、ドライバーが読み込まれました。 これが設定されている場合、 **Subunitaddr**メンバーは、必要なサブユニットアドレスを含む非ページメモリを指している必要があります。
 
-これは、いずれかに設定する必要があります (、適切な**SubunitAddr**提供)、呼び出し元に直接要求を送信する場合、 *avc.sys* FDO します。
+呼び出し元が*avc* FDO に直接要求を送信している場合は、これを 1 (および適切な**subunitaddr**を指定) に設定する必要があります。
 
-注:要求が成功した場合からの応答に、要求では、このフラグは設定されていない場合は、このフラグが設定、および**SubunitAddr**サブユニットの実際のアドレスへのポインターします。 内容を変更またはメモリを解放しないでください。 親ドライバーのデバイスの拡張機能の一部になります。 これは、もちろん、戻る 0 に設定されます、および**SubunitAddr**ポインターが別のサブユニットの構造を再利用をクリアします。
+注: このフラグが要求に対して設定されていない場合、要求が成功したときにこのフラグが設定され、 **Subunitaddr**メンバーがサブユニットの実際のアドレスをポイントします。 コンテンツを変更したり、メモリを解放したりしないでください。親ドライバーのデバイス拡張機能の一部です。 もちろん、これはゼロに戻すことができ、サブサブユニットの構造を再利用するために**Subunitaddr**ポインターがクリアされます。
 
-<span id="AlternateOpcodesFlag"></span><span id="alternateopcodesflag"></span><span id="ALTERNATEOPCODESFLAG"></span>**AlternateOpcodesFlag**  
-この場合は、1 つに、コマンドの種類と、この要求の結果のオペコードで設定異なるオペコードを含む応答。 これを行わないオペコードが一致する応答のみが受け入れられます。 設定されている場合、 **AlternateOpcodes**メンバーには、代替のオペコードの一覧を含んでいる非ページ メモリへのポインターがある必要があります。
+<span id="AlternateOpcodesFlag"></span><span id="alternateopcodesflag"></span><span id="ALTERNATEOPCODESFLAG"></span>**Alternateopのフラグ**  
+この要求のコマンドの種類とオペコードによって異なるオペコードの応答が返される場合は、これを1に設定します。 これを使用しない場合は、対応するオペコードのある応答だけが受け入れられます。 これが設定されている場合、 **alternateopcodes**メンバーは、代替オペコードのリストを含む非ページメモリへのポインターである必要があります。
 
 <span id="TimeoutFlag"></span><span id="timeoutflag"></span><span id="TIMEOUTFLAG"></span>**TimeoutFlag**  
-1 つの場合に既定値を設定このタイムアウトは、サブユニットは適していません。 設定されている場合、**タイムアウト**メンバーは、目的のタイムアウト (100 ナノ秒単位) を設定する必要があります。
+既定のタイムアウトがサブユニットに適していない場合は、これを1に設定します。 これが設定されている場合は、**タイムアウト**メンバーを目的のタイムアウト (100-ns 単位) に設定する必要があります。
 
 <span id="RetryFlag"></span><span id="retryflag"></span><span id="RETRYFLAG"></span>**RetryFlag**  
-設定の 1 の場合は、既定の再試行回数には、サブユニットは適していません。 設定されている場合、**再試行**メンバーは、必要な再試行回数を設定する必要があります。
+既定の再試行回数がサブユニットに適していない場合は、これを1に設定します。 これが設定されている場合は、**再試行**メンバーを目的の再試行回数に設定する必要があります。
 
 <span id="CommandType"></span><span id="commandtype"></span><span id="COMMANDTYPE"></span>**CommandType**  
-要求では、このメンバーをから列挙子のいずれかに設定する必要があります、 **AvcCommandType**列挙体。 これは、必須パラメーターです。
+要求時には、このメンバーを**Avccommandtype**列挙子の列挙子の1つに設定する必要があります。 これは必須パラメーターです。
 
 <span id="ResponseCode"></span><span id="responsecode"></span><span id="RESPONSECODE"></span>**ResponseCode**  
-応答でこのメンバーがからの値に設定、 **AvcResponseCode**列挙体。
+応答では、このメンバーは**AvcResponseCode**列挙体の値に設定されます。
 
 <span id="SubunitAddr"></span><span id="subunitaddr"></span><span id="SUBUNITADDR"></span>**SubunitAddr**  
-これは、仕様」のセクション 5.3.3、AV/C デジタル インターフェイス コマンド設定全般、Rev 3.0 に従ってエンコードされた目的のサブユニット アドレスを含む非ページ メモリのアドレスに設定します。 この仕様をご覧、 [1394 貿易](https://go.microsoft.com/fwlink/p/?linkid=8728)web サイト。 長さは必要ありませんので、このことを意味のサブユニット アドレス エンコーディングです。 場合、このパラメーターは無視されます**SubunitAddrFlag**は 0 です。
+これを、AV/C デジタルインターフェイスのコマンドセット全般仕様の5.3.3 のセクションに従ってエンコードされた、必要なサブユニットアドレスを含む非ページメモリのアドレスに設定します。リビジョン3.0。 この仕様は、 [1394 貿易 Association](https://go.microsoft.com/fwlink/p/?linkid=8728) web サイトにあります。 サブユニットアドレスエンコーディングはこれを意味するため、長さは必要ありません。 **Subunitaddrflag**が0の場合、このパラメーターは無視されます。
 
 <span id="AlternateOpcodes"></span><span id="alternateopcodes"></span><span id="ALTERNATEOPCODES"></span>**AlternateOpcodes**  
-これは、必要な代替オペコードの一覧を含んでいる非ページ メモリのアドレスに設定します。 オペコードの一覧の最初のバイトは、(バイト数に相当) を実行するオペコードの数です。 代替のオペコードの一覧を含んでいるメモリの合計文字数は AlternateOpcodes\[0\]+1。 場合、このパラメーターは無視されます**AlternateOpcodesFlag**は 0 です。
+これを、目的の代替オペコードリストを含む非ページメモリのアドレスに設定します。 オペコードリストの最初のバイトは、後に続くオペコードの数です (バイト数と同じです)。 代替オペコードリストを含むメモリの合計の長さは、AlternateOpcodes\[0\]+ 1 です。 **Alternateopのフラグ**が0の場合、このパラメーターは無視されます。
 
 <span id="Timeout"></span><span id="timeout"></span><span id="TIMEOUT"></span>**タイムアウト**  
-これは、100 ナノ秒単位で目的のタイムアウトを設定します。 たとえば、既定のタイムアウト値には。**Timeout.QuadPart** = 1000000 (100 ナノ秒単位で 100 ミリ秒)。 場合、このパラメーターは無視されます**TimeoutFlag**は 0 です。
+これを 100-ns ユニットの目的のタイムアウトに設定します。 たとえば、既定のタイムアウト値は、 **QuadPart** = 100万 (100 ナノ秒単位の100ミリ秒) です。 **Timeoutflag**が0の場合、このパラメーターは無視されます。
 
-<span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**再試行**  
-必要な回数を設定*avc.sys*応答なしには、各タイムアウト後に要求を再試行しようとする必要があります。 再試行回数が 0 では、要求が 1 回試行ということに注意してください。 応答を取得することがなく、コマンドを処理するのにかかる時間の合計量は、次の数式で計算されます。
+<span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**試行**  
+これを必要な回数に設定し*ます。* この回数を過ぎると、各タイムアウトの後に、応答なしで要求を再試行します。 再試行回数が0の場合は、要求が1回試行されることを意味します。 応答を取得せずにコマンドを処理するために費やされた合計時間は、次の式によって計算されます。
 
-***タイムアウト***  *\* (* * *<em>再試行</em>* *  *+ 1)*
+***タイムアウト*** *\* (* * *<em>再試行</em>* *  *+ 1)*
 
-場合、このパラメーターは無視されます**RetryFlag**は 0 です。
+**Retryflag**が0の場合、このパラメーターは無視されます。
 
 <span id="Opcode"></span><span id="opcode"></span><span id="OPCODE"></span>**オペコード**  
-これを設定、目的の AV/C オペコード (サブユニット種類に適した)。 これは、必須パラメーターです。 応答の場合は**AlternateOpcodesFlag**が設定された場合、および応答の一致に使用された代替オペコードのいずれか、これはその代替オペコードに設定します。
+これを目的の AV/C オペコード (サブユニットの種類に適したもの) に設定します。 これは必須パラメーターです。 応答時に、 **Alternateopのフラグ**が設定されていて、代替オペコードの1つが応答に一致するために使用された場合、これは代替オペコードに設定されます。
 
-<span id="OperandLength"></span><span id="operandlength"></span><span id="OPERANDLENGTH"></span>**OperandLength**  
-これでオペランドの格納に使用されるバイト数を設定、**オペランド**メンバー。 これは、必須パラメーターです。 応答では、このパラメーターは、応答で使用されるオペランド リスト内のバイト数に設定されます。
+<span id="OperandLength"></span><span id="operandlength"></span><span id="OPERANDLENGTH"></span>**オペレーティング Andlength**  
+**オペランドメンバーに**オペランドを格納するために使用するバイト数を設定します。 これは必須パラメーターです。 応答では、このパラメーターは、応答によって使用されるオペランドリストのバイト数に設定されます。
 
 <span id="Operands"></span><span id="operands"></span><span id="OPERANDS"></span>**オペランド**  
-このリスト に設定、オペランドのサブユニット型とオペレーション コードに適した。 これは、必須パラメーターです。 応答には、このパラメーターには、応答のオペランドの一覧が含まれています。
+これを、サブユニットの種類とオペコードに適したオペランドリストに設定します。 これは必須パラメーターです。 応答時に、このパラメーターには応答のオペランドリストが含まれます。
 
 <span id="NodeAddress"></span><span id="nodeaddress"></span><span id="NODEADDRESS"></span>**NodeAddress**  
-予約済み。 これは、0 でなければなりません。
+予約済み。 0にする必要があります。
 
-<span id="Generation"></span><span id="generation"></span><span id="GENERATION"></span>**生成**  
-予約済み。 これは、0 でなければなりません。
+<span id="Generation"></span><span id="generation"></span><span id="GENERATION"></span>**Generation**  
+予約済み。 0にする必要があります。
 
-**AVC\_関数\_コマンド**の仮想インスタンスでは、関数のコードはサポートされていない*avc.sys*します。 呼び出し元の外部のデバイスを制御する場合、そのデバイスの非仮想インスタンスがある、プライベート メカニズムを介して、または、AVC の組み合わせを通じて\_関数\_検索\_ピア\_には、**AVC\_関数\_ピア\_は\_一覧**と**AVC\_関数\_取得\_サブユニット\_情報** IOCTL のコードを関数\_AVC\_クラス I/O 制御コード。
+Avc **\_関数\_コマンド**関数のコードは、 *avc*の仮想インスタンスではサポートされていません。 呼び出し元が外部デバイスを制御する必要がある場合、そのデバイスの非仮想インスタンスは、プライベートメカニズムを使用して、または AVC\_関数の組み合わせによって、\_ピア\_DO、Avc\_関数を検索\_ことによって見つけることができ **\_ピア\_DO\_LIST**および**avc\_\_関数**は、IOCTL\_avc\_クラス i/o 制御コードの\_サブユニット\_情報関数コードを取得します。
 
-この構造体は、AV/C コマンドの要求の一般的なコンポーネントを定義します。 オペコードと要求、およびオペコードのオペランドと応答 (完了) のオペランドを保持します。 オペランド リストのサイズは、オペランドの 1 バイトのサブユニット アドレスが指定の最大許容数に固定されています。 サブユニット アドレスは、任意の方法で拡張は、オペランドのバイトの最大許容数が適宜減少されます。
+この構造体は、AV/C コマンド要求の共通コンポーネントを定義します。 これには、要求のオペコードとオペランド、および応答のオペコードとオペランド (完了時) が格納されます。 オペランドリストのサイズは、1バイトサブレベルアドレスを指定した場合に許容される最大オペランド数で固定されます。 サブユニットアドレスが何らかの方法で拡張されている場合、オペランドバイトの最大許容数はそれに応じて小さくなります。
 
-この構造体の推奨される使用は、まず、構造体をゼロに (を使用して、 **RtlZeroMemory**) パラメーターを入力する前にします。
+この構造体の使用を推奨するには、最初に構造体をゼロにしてから ( **Rtlzero memory**を使用して)、パラメーターを入力します。
 
-これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
+これは、IRQL = パッシブ\_レベルで呼び出す必要があります。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)、 [ **AvcCommandType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavccommandtype)、 [ **AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcresponsecode)、 [**AVC\_関数\_検索\_ピア\_は**](avc-function-find-peer-do.md)、 [ **AVC\_関数\_ピア\_は\_一覧**](avc-function-peer-do-list.md)、 [ **AVC\_関数\_取得\_サブユニット\_情報**](avc-function-get-subunit-info.md)
+[**Avc\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)、 [**avccommandtype**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavccommandtype)、 [**AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavcresponsecode)、 [**AVC\_関数\_\_ピア\_do**](avc-function-find-peer-do.md)、 [**avc\_関数\_ピア\_do\_LIST**](avc-function-peer-do-list.md)、[**AVC\_関数\_\_サブユニット\_情報を取得**](avc-function-get-subunit-info.md)します
 
  
 

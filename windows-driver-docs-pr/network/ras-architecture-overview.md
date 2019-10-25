@@ -3,17 +3,17 @@ title: RAS アーキテクチャの概要
 description: RAS アーキテクチャの概要
 ms.assetid: 1ff285d7-2aed-46e1-979e-3b77614dcbf5
 keywords:
-- リモート アクセス サービスの WDK ネットワーク
-- ネットワーク RAS WDK
-- アーキテクチャの WDK WAN RAS
+- リモートアクセスサービスの WDK ネットワーク
+- RAS WDK ネットワーク
+- アーキテクチャ WDK WAN、RAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bac8fbb5a5b5347790d7900003ed7e37a6c5c8d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 81cf2de93954b2bdd7d730f2a80bb30d2cc45099
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377035"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843473"
 ---
 # <a name="ras-architecture-overview"></a>RAS アーキテクチャの概要
 
@@ -21,9 +21,9 @@ ms.locfileid: "67377035"
 
 
 
-リモート アクセス サービス (RAS) は、リモートのワークステーションの場合、リモートのワークステーションが、LAN 上同じように、LAN 上の LAN とアクセスのリソースへのダイヤルアップ接続を確立するために使用できます。 WAN ミニポート ドライバーでは、RAS および ISDN、X.25、および交換 56 アダプターなどのワイド エリア ネットワーク (WAN) カードの間のインターフェイスを提供します。
+リモートアクセスサービス (RAS) を使用すると、リモートワークステーションが lan へのダイヤルアップ接続を確立し、リモートワークステーションが LAN 上にあるかのように LAN 上のリソースにアクセスできます。 WAN ミニポートドライバーは、RAS とワイドエリアネットワーク (WAN) カード (ISDN、x.25、切り替え56アダプターなど) との間のインターフェイスを提供します。
 
-RAS アーキテクチャの主要システム提供のコンポーネントを以下に示します。
+システムで提供される主要なコンポーネントには、次のようなものがあります。
 
 -   [NDISWAN](#ddk-ndiswan-ng)
 
@@ -33,82 +33,82 @@ RAS アーキテクチャの主要システム提供のコンポーネントを�
 
 -   [NDISTAPI](#ddk-ndistapi-ng)
 
-開発者提供 TAPI 対応アプリケーションと WAN ミニポート ドライバー。 いる CoNDIS WAN の開発者は、WAN クライアント プロトコルのドライバー、ミニポート コール マネージャー (MCM)、または別のコール マネージャーも提供できます。
+開発者は、TAPI 対応アプリケーションと WAN ミニポートドライバーを提供します。 Conmwan 開発者は、WAN クライアントプロトコルドライバー、ミニポートコールマネージャー (MCM)、または別の呼び出しマネージャーを提供することもできます。
 
-次の図は、RAS アーキテクチャを示します。
+次の図は、RAS アーキテクチャを示しています。
 
 ![ras アーキテクチャを示す図](images/condsras.png)
 
-次のセクションには、RAS アーキテクチャのコンポーネントについて簡単に説明します。
+以下のセクションでは、RAS アーキテクチャのコンポーネントについて簡単に説明します。
 
-### <a name="ras-and-tapi-components"></a>RAS and TAPI コンポーネント
+### <a name="ras-and-tapi-components"></a>RAS および TAPI コンポーネント
 
-前述の右側にあるコンポーネントは、TAPI に関連する呼び出しの実装を設定して、呼び出しと接続の破棄など、管理操作を図します。 これらの操作の詳細については、WAN のモデル (NDIS WAN またはいる CoNDIS WAN) によって異なります。
+前の図の右側にあるコンポーネントは、TAPI 関連の呼び出し管理操作を実装します。たとえば、呼び出しと接続の設定や解除などです。 これらの操作の詳細は、WAN モデル (NDIS WAN または CoNDIS WAN) によって異なります。
 
-### <a href="" id="ddk-ras-functions-ng"></a>RAS 関数
+### <a href="" id="ddk-ras-functions-ng"></a>RAS 機能
 
-ユーザー モード アプリケーションでは、リモート コンピューターと RAS 接続するために RAS 関数を呼び出します。 RAS 接続が確立されると、このようなアプリケーションは、Microsoft Windows Sockets、NetBIOS、名前付きパイプ、RPC などの標準のネットワーク インターフェイスを使用してネットワーク サービスに接続できます。
+ユーザーモードのアプリケーションは、RAS 機能を呼び出して、リモートコンピューターとの RAS 接続を確立します。 RAS 接続が確立されると、このようなアプリケーションは、Microsoft Windows Sockets、NetBIOS、名前付きパイプ、RPC などの標準的なネットワークインターフェイスを使用してネットワークサービスに接続できます。
 
 ### <a href="" id="ddk-tapi-aware-applications-ng"></a>TAPI 対応アプリケーション
 
-テレフォニーの通信が可能には、TAPI 対応のアプリケーションは、アプリケーションとサービスのプロセスの両方で実行します。 サービス プロバイダーは、特定のデバイスと通信します。 TAPI 対応のアプリケーションは、そのサービス プロバイダーと TAPI インターフェイス (Tapi32.dll) を介して通信します。 これらのサービス プロバイダーで実行、 [TAPI サービス](#ddk-tapi-service-ng)プロセス。
+テレフォニー通信に対応している TAPI 対応アプリケーションは、アプリケーションとサービスの両方のプロセスで実行されます。 サービスプロバイダーは、特定のデバイスと通信します。 TAPI 対応アプリケーションは、TAPI インターフェイス (Tapi32) を介してサービスプロバイダーと通信します。 これらのサービスプロバイダーは、 [TAPI サービス](#ddk-tapi-service-ng)プロセスで実行されます。
 
 ### <a href="" id="ddk-tapi-service-ng"></a>TAPI サービス
 
-TAPI サービス (Tapisrv.exe) のプロセスはテレフォニー サービス プロバイダー インターフェイス (TSPI) をサービス プロバイダーの[TAPI 対応アプリケーション](#ddk-tapi-aware-applications-ng)します。 これらのサービス プロバイダーは、TAPI サービス プロセスのコンテキストで実行される Dll です。
+TAPI サービス (Tapisrv) プロセスでは、サービスプロバイダーのテレフォニーサービスプロバイダーインターフェイス (TSPI) が[tapi 対応アプリケーション](#ddk-tapi-aware-applications-ng)に提示されます。 これらのサービスプロバイダーは、TAPI サービスプロセスのコンテキストで実行される Dll です。
 
-オペレーティング システムでは、NDIS WAN またはいる CoNDIS WAN ミニポート ドライバーがユーザー モード アプリケーションとの通信に使用するサービス プロバイダーが用意されています。 NDIS WAN ミニポート ドライバーのサービス プロバイダーが[KMDDSP](#ddk-kmddsp-ng)します。 いる CoNDIS WAN ミニポート ドライバー (および MCMs) サービス プロバイダーが[NDPTSP](#ddk-ndptsp-ng)します。
+オペレーティングシステムは、ユーザーモードアプリケーションとの通信に NDIS WAN または CoNDIS WAN ミニポートドライバーが使用するサービスプロバイダーを提供します。 NDIS WAN ミニポートドライバー用のサービスプロバイダーは[Kmddsp](#ddk-kmddsp-ng)です。 CoNDIS WAN ミニポートドライバー (および MCMs) のサービスプロバイダーは、 [Ndptsp](#ddk-ndptsp-ng)です。
 
 ### <a href="" id="ddk-kmddsp-ng"></a>KMDDSP
 
-KMDDSP (Kmddsp.tsp) は、サービス プロバイダー、TAPI サービス プロセスのコンテキストで実行されている DLL です。 KMDDSP TAPI サービスに提示する TSPI インターフェイスを提供する[TAPI 対応アプリケーション](#ddk-tapi-aware-applications-ng)ように[NDISTAPI](#ddk-ndistapi-ng)ユーザー モード アプリケーションと通信できます。
+KMDDSP (Kmddsp. tsp) は、TAPI サービスプロセスのコンテキストで実行されるサービスプロバイダーの DLL です。 KMDDSP は、tapi サービスが[tapi 対応アプリケーション](#ddk-tapi-aware-applications-ng)に提示する tspi インターフェイスを提供します。これにより、 [ndistapi](#ddk-ndistapi-ng)はユーザーモードアプリケーションと通信できるようになります。
 
-ユーザー モードの要求を対応する TAPI Oid に変換する NDISTAPI 連携 KMDDSP (OID\_TAPI\_*Xxx*)。 TAPI Oid の詳細については、次を参照してください。 [TAPI オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564235(v=vs.85))します。
+KMDDSP は NDISTAPI と連携して、ユーザーモード要求を対応する TAPI Oid (OID\_TAPI\_*Xxx*) に変換します。 TAPI Oid の詳細については、「 [Tapi オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564235(v=vs.85))」を参照してください。
 
 ### <a href="" id="ddk-ndptsp-ng"></a>NDPTSP
 
-NDPTSP (Ndptsp.tsp) は、サービス プロバイダー、TAPI サービス プロセスのコンテキストで実行されている DLL です。 NDPTSP TAPI サービスは、TAPI 対応のアプリケーションに提示する TSPI インターフェイスを提供するように[NDPROXY](#ddk-ndproxy-ng)ユーザー モード アプリケーションと通信できます。
+NDPTSP (Ndptsp. tsp) は、TAPI サービスプロセスのコンテキストで実行されるサービスプロバイダーの DLL です。 NDPTSP は、tapi サービスが TAPI 対応アプリケーションに提示する TSPI インターフェイスを提供します。これにより、 [Ndproxy](#ddk-ndproxy-ng)はユーザーモードアプリケーションと通信できるようになります。
 
-TAPI 接続指向の Oid をユーザー モードの要求を変換する NDPROXY 連携 NDPTSP (OID\_CO\_TAPI\_*Xxx*)。 TAPI の詳細については、Oid を接続指向に、参照してください[Connection-Oriented NDIS の TAPI 拡張](https://docs.microsoft.com/windows-hardware/drivers/network/tapi-extension-oids-for-connection-oriented-ndis)します。
+NDPTSP は NDPROXY と連携して、ユーザーモード要求を TAPI 接続指向 Oid (OID\_CO\_TAPI\_*Xxx*) に変換します。 TAPI 接続指向の Oid の詳細については、「 [Tapi Extensions For Connection 志向 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/tapi-extension-oids-for-connection-oriented-ndis)」を参照してください。
 
 ### <a href="" id="ddk-ndistapi-ng"></a>NDISTAPI
 
-NDISTAPI (Ndistapi.sys) から発行される TAPI 要求を受信する[KMDDSP](#ddk-kmddsp-ng)号餧ェヒェマル[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest) NDIS WAN ミニポート ドライバーに対応する TAPI Oid をルーティングします。 NDISTAPI の詳細については、次を参照してください。 [NDISTAPI 概要](ndistapi-overview.md)します。
+NDISTAPI (Ndistapi) は、 [Kmddsp](#ddk-kmddsp-ng)からの tapi 要求を受信し、 [**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)を呼び出して、対応する TAPI oid を NDIS WAN ミニポートドライバーにルーティングします。 NDISTAPI の詳細については、「 [Ndistapi の概要](ndistapi-overview.md)」を参照してください。
 
 ### <a href="" id="ddk-ndproxy-ng"></a>NDPROXY
 
-NDPROXY (Ndproxy.sys) と通信、TSPI を通じて TAPI インターフェイス[NDPTSP](#ddk-ndptsp-ng)を提供します。 NDPROXY は、NDIS を通じて NDISWAN いる CoNDIS WAN ミニポート ドライバー、MCMs、コール マネージャーと通信します。
+NDPROXY (Ndproxy .sys) は、 [Ndptsp](#ddk-ndptsp-ng)が提供する tspi インターフェイスを介して TAPI と通信します。 NDPROXY は、NDIS と NDISWAN を介して通信し、WAN ミニポートドライバー、MCMs、および call manager を使用します。
 
-NDPROXY の詳細については、次を参照してください。 [NDPROXY 概要](ndproxy-overview.md)します。
+NDPROXY の詳細については、「 [Ndproxy の概要](ndproxy-overview.md)」を参照してください。
 
-### <a name="driver-stack"></a>ドライバー スタック
+### <a name="driver-stack"></a>ドライバースタック
 
-### <a href="" id="ddk-wan-transports-ng"></a>WAN のトランスポート
+### <a href="" id="ddk-wan-transports-ng"></a>WAN トランスポート
 
-RAS システム コンポーネントは、PPP 認証 (PAP、CHAP)、およびネットワークなどのトランスポート構成プロトコル ドライバー (IPCP、IPXCP、NBFCP、LCP、およびなど) を提供します。 WAN ミニポート ドライバー (または MCM) は、PPP メディア固有のフレームのみを実装します。
+RAS システムコンポーネントは、PPP 認証 (PAP、CHAP) やネットワーク構成プロトコルドライバー (IPCP、IPXCP、NBFCP、LCP など) などのトランスポートを提供します。 WAN ミニポートドライバー (または MCM) は、PPP メディア固有のフレームのみを実装します。
 
 ### <a href="" id="ddk-ndiswan-ng"></a>NDISWAN
 
-NDISWAN (Ndiswan.sys) は、NDIS intermediate ドライバーです。 上端で NDIS プロトコル ドライバーにバインドする NDISWAN と[WAN ミニポート ドライバー](wan-miniport-drivers.md)下端にあります。
+NDISWAN (Ndiswan) は、NDIS 中間ドライバーです。 NDISWAN は、上部のエッジにある NDIS プロトコルドライバーと、低速の[WAN ミニポートドライバー](wan-miniport-drivers.md)にバインドします。
 
-NDISWAN は、PPP フレームのプロトコル/リンク、圧縮/圧縮解除、および暗号化/暗号化解除を提供します。 NDISWAN は、NDIS WAN といる CoNDIS WAN ミニポート ドライバーと連動します。
+NDISWAN は、PPP プロトコル/リンクフレーミング、圧縮/圧縮解除、暗号化/復号化を提供します。 NDISWAN インターフェイスは、NDIS WAN と CoNDIS WAN ミニポートドライバーの両方を備えています。
 
-NDISWAN の詳細については、次を参照してください。 [NDISWAN 概要](ndiswan-overview.md)します。
+NDISWAN の詳細については、「 [NDISWAN の概要](ndiswan-overview.md)」を参照してください。
 
-### <a href="" id="ddk-serial-driver-ng"></a>シリアル ドライバー
+### <a href="" id="ddk-serial-driver-ng"></a>シリアルドライバー
 
-シリアル ドライバー コンポーネントは、内部のシリアル ポートまたはマルチポート シリアル カード用の標準的なデバイス ドライバーです。 Microsoft Windows 2000 以降に含まれる非同期の WAN ミニポート ドライバーでは、モデム間の通信の内部シリアル ドライバーを使用します。 シリアル ドライバーとして同じ関数をエクスポートするすべてのドライバーは、組み込みの非同期 WAN ミニポート ドライバーと対話できます。
+Serial driver コンポーネントは、内部シリアルポートまたはマルチポートシリアルカード用の標準デバイスドライバーです。 Microsoft Windows 2000 以降に含まれる非同期 WAN ミニポートドライバーは、モデム通信用の内部シリアルドライバーを使用します。 シリアルドライバーと同じ機能をエクスポートするドライバーは、組み込みの非同期 WAN ミニポートドライバーとやり取りできます。
 
-**注**  X.25 ベンダーは、X.25 インターフェイス カードのシリアル ドライバーのエミュレーターを実装できます。 この場合、X.25 カードの各仮想回線は、シリアル ポート、X.25 パケット アセンブラー/逆アセンブラー (パッド) に接続されているとして表示されます。 接続インターフェイスは、シリアル信号 DTR、DCD、CTS、RTS、DSR などをエミュレート正しくする必要があります。
-X.25 カードのシリアル ドライバーのエミュレーターを実装する X.25 ベンダーでは、そのパッド Pad.inf ファイル内のエントリを加える必要があります。 このファイルには、X.25 パッド経由の接続に必要なコマンド/応答スクリプトが含まれています。 Pad.inf ファイルに関する詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+**注**x.25 ベンダー  、x.25 インターフェイスカード用のシリアルドライバーエミュレーターを実装できます。 この場合、x.25 カード上の各仮想回線は、x.25 パケットアセンブラ/逆アセンブラー (埋め込み) がアタッチされたシリアルポートとして表示されます。 接続インターフェイスは、DTR、DCD、CTS、RTS、DSR などのシリアル信号を正しくエミュレートする必要があります。
+また、x.25 カード用のシリアルドライバーエミュレーターを実装する x.25 ベンダーは、Pad の .inf ファイルでパッドのエントリを作成する必要があります。 このファイルには、x.25 パッドを介して接続するために必要なコマンド/応答スクリプトが含まれています。 Pad の .inf ファイルの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 
-### <a name="wan-miniport-driver"></a>WAN ミニポート ドライバー
+### <a name="wan-miniport-driver"></a>WAN ミニポートドライバー
 
-WAN ミニポート ドライバーの間のインターフェイスを提供する[NDISWAN](#ddk-ndiswan-ng)と WAN Nic です。
+WAN ミニポートドライバーは、 [NDISWAN](#ddk-ndiswan-ng)と wan nic 間のインターフェイスを提供します。
 
-WAN ミニポート ドライバーは、NDIS WAN ミニポート ドライバーまたはいる CoNDIS WAN ミニポート ドライバーとして実装できます。 詳細については、アプリケーションに最も適したミニポート ドライバー モデルの選択は、次を参照してください。 [WAN ドライバー モデルを選択する](choosing-a-wan-driver-model.md)します。
+WAN ミニポートドライバーは、NDIS WAN ミニポートドライバーまたは CoNDIS WAN ミニポートドライバーとして実装できます。 アプリケーションに最も適したミニポートドライバーモデルを選択する方法の詳細については、「 [WAN ドライバーモデルの選択](choosing-a-wan-driver-model.md)」を参照してください。
 
  
 

@@ -1,68 +1,68 @@
 ---
-title: フィルム スキャナー用基本スキャン
-description: フィルム スキャナー用基本スキャン
+title: フィルムスキャナーの基本的なスキャン
+description: フィルムスキャナーの基本的なスキャン
 ms.assetid: ca25c14d-120e-4e53-9d57-ba5663536bae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60c71af312ea80d0246615d8bb5ca948f798819
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: beaf60e61309798c8810a1e0afd07aea39578d75
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366748"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840890"
 ---
-# <a name="basic-scanning-for-film-scanners"></a>フィルム スキャナー用基本スキャン
+# <a name="basic-scanning-for-film-scanners"></a>フィルムスキャナーの基本的なスキャン
 
 
 
 
 
-WIA アプリケーションでは、スキャナーのサポートされる機能を判断するためのスキャナー項目ツリーの最上位のアイテムを列挙します。 次に、アプリケーションは、スキャンのソースとして、最上位の項目を使用します。 たとえば、フラット ベッド スキャナーの項目は、ベッドからスキャン使用され、フィーダーのアイテムがドキュメント フィーダーからスキャンするために使用されます。
+WIA アプリケーションは、スキャナーの項目ツリーの最上位項目を列挙して、スキャナーのサポートされている機能を判別します。 その後、アプリケーションは最上位レベルの項目をスキャンソースとして使用します。 たとえば、フラットベッドスキャナーの項目は、フラットベッドからのスキャンに使用され、フィーダー項目はドキュメントフィーダーからのスキャンに使用されます。
 
-プログラミングとフィルムの項目の動作のスキャンは、フラット ベッド項目のほとんどと同じです。
+フィルム項目のプログラミング動作とスキャン動作は、フラットな項目の動作とほぼ同じです。
 
-スキャナーのフィルムの項目をプログラムとは必ずしもこの順序で、アプリケーションは通常、次の操作に従います。
+通常、アプリケーションは、スキャナーのフィルム項目をプログラムするときに次の操作を実行しますが、必ずしもこの順序ではありません。
 
--   マークされている WIA 項目を検索、WIA の最上位項目を列挙、 **WiaItemTypeProgrammableDataSource**項目のフラグと[ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category) WIA の設定\_カテゴリ\_フィルム。
+-   最上位レベルの WIA 項目を列挙し、 **WiaItemTypeProgrammableDataSource** item フラグでマークされている wia 項目を検索します。また、WIA\_カテゴリ\_フィルムの\_カテゴリ設定を使用して、WIA [ **\_IPA\_項目**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)を検索します。
 
--   有効な値を読み取る[ **WIA\_IP\_フィルム\_スキャン\_モード**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-film-scan-mode)フィルムのスキャン設定を確認します。 この設定は正のイメージまたは負のイメージ (つまり、写真のネガ) のサポートのスキャンを示します。
+-   フィルムスキャンの設定を確認するには、 [**WIA\_ip\_フィルム\_スキャン\_モード**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-film-scan-mode)の有効な値を確認します。 この設定は、ポジ画像またはネガ画像 (つまり、写真ネガ) のスキャンサポートを示します。
 
--   正または負の光源を選択して、WIA を設定して\_IP\_フィルム\_スキャン\_モード プロパティです。
+-   [WIA\_IP\_フィルム\_スキャン\_モード] プロパティを設定して、正または負の光源を選択します。
 
--   スキャナーの lamp の現在の設定を読み取るしを使用して必要な場合は、ランプを有効にする、 [ **WIA\_IP\_LAMP** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-lamp)プロパティ (サポートされている) 場合。
+-   スキャナーランプの現在の設定を読み取り、必要に応じて、WIA の [ [ **\_ip\_ランプ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-lamp)] プロパティ (サポートされている場合) を使用して、ランプをオンにします。
 
--   有効な値を読み取る[ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)と[ **WIA\_IPA\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format).
+-   [**Wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)および[**wia\_IPA\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)の有効な値を確認します。
 
--   データの最終的な形式を選択して、WIA を設定して\_IPA\_FORMAT プロパティ。
+-   [WIA\_IPA\_形式] プロパティを設定して、データの最終的な形式を選択します。
 
--   イメージの設定を選択します[ **WIA\_IPA\_深さ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)、 [ **WIA\_IPA\_DATATYPE**。 ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)、および[ **WIA\_IPA\_ビット\_1 秒あたり\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-bits-per-channel)します。
+-   画像の設定を選択します。たとえば、 [**wia\_IPA\_DEPTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)、 [**wia\_IPA\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)、 [**WIA\_IPA\_\_チャネルあたりのビット数**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-bits-per-channel)\_です。
 
--   (サポートされている) 場合は、1 つまたは複数ページを選択するには、WIA ファイル転送\_IPA\_TYMED プロパティ。
+-   WIA\_IPA\_TYMED プロパティを設定して、1つまたは複数ページ (サポートされている場合) のファイル転送を選択します。
 
--   既存のフレームを検索する子アイテムを列挙します。
+-   子項目を列挙して既存のフレームを検索します。
 
--   読み取り、 [ **WIA\_IP\_サポート\_子\_項目\_作成**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-supports-child-item-creation)スキャナーが作成をサポートするかどうかを判断する項目新しいフレーム。
+-   新しいフレームの作成がスキャナーでサポートされているかどうかを判断するには[ **\_子\_項目\_作成項目をサポートする WIA\_ip\_** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-supports-child-item-creation)を読み取ります。
 
--   (フレームの作成のサポート) に応じて、新しいフレームを作成または既存のフィルム項目フレームを調整します。
+-   既存のフィルム項目のフレームを調整するか、新しいフレームを作成します (フレーム作成のサポートによって異なります)。
 
--   読み取り、WIA\_IP\_をサポートしています\_子\_項目\_フィルム スキャナーの項目が、特別なフォルダーの取得機能をサポートしているかどうかを決定するプロパティを作成します。
+-   \_子\_項目\_作成プロパティをサポートしている WIA\_IP\_を読み取り、フィルムスキャナー項目が特別なフォルダー取得機能をサポートしているかどうかを確認します。
 
--   次の操作のいずれかを実行します。
-    -   WIA フィルム スキャナーの項目を (ではなく、フォルダーの取得機能を使用して) を使用してデータを転送します。 領域をスキャンする完全なフィルムが 1 つのイメージとして返されます。
-    -   WIA フィルム スキャナーの項目を (機能を使用して、フォルダーの取得) を使用してデータを転送します。 WIA フィルム スキャナー子アイテムのみ (つまり、フレーム) は、アプリケーションに転送されます。
-    -   フレームの各項目に移動し、その WIA 項目を転送します。
+-   次のいずれかの操作を実行します。
+    -   (フォルダー取得機能を使用せずに) WIA フィルムスキャナー項目を使用してデータを転送します。 フルフィルムスキャン領域は、1つのイメージとして返されます。
+    -   (フォルダー取得機能を使用して) [WIA フィルムスキャナー] 項目を使用してデータを転送します。 アプリケーションに転送されるのは、WIA フィルムスキャナーの子項目 (フレーム) だけです。
+    -   各フレーム項目に移動し、その WIA 項目を転送します。
 
-スキャンする単位をスキャンするスキャナーのフィルムを使用する場合、ドライバーは通常、次の操作を実行します。
+ドライバーは通常、スキャナーのフィルムスキャンユニットを使用してスキャンするときに、次の操作を実行します。
 
-1.  呼び出す[ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)と[ **IWiaMiniDrv::drvReadItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)します。 WIA ドライバーでは、アプリケーションのプロパティの設定フェーズ中にプロパティの設定を検証する必要があります。
+1.  [**IWiaMiniDrv::D rvvalidateitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)と[**IWiaMiniDrv::d rvreaditemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)を呼び出します。 WIA ドライバーは、アプリケーションのプロパティ設定フェーズ中にプロパティ設定を検証する必要があります。
 
-2.  呼び出す[ **IWiaMiniDrv::drvWriteItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)します。 渡される WIA コンテキスト アイテムは、フィルム スキャナーの項目または、ドライバーは、アプリケーションがスキャナーのフィルムの単位のスキャンを使用してスキャンすることを認識できるように、項目のフレームをスキャン フィルムに属しています。 スキャナーの機種によっては、フィルムをスキャンするため、flatbeds を使用します。 適切な照明のスキャナーを構成する必要があります (、WIA に基づいて\_IP\_フィルム\_スキャン\_モード プロパティ) とフィルムをスキャンするためのエクステント変更します。
+2.  [**IWiaMiniDrv::D rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)を呼び出します。 渡された WIA 項目コンテキストは、フィルムスキャナー項目またはフィルムスキャン項目フレームに属しているため、アプリケーションがスキャンするためにスキャナーのフィルムスキャンユニットを使用することが認識されます。 一部のスキャナーでは、フィルムスキャンに flatbeds を使用しています。 スキャナーは、(WIA\_IP\_フィルム\_スキャン\_モード プロパティに基づいて) 適切な照明を構成し、フィルムスキャンのために変更を行う必要があります。
 
-3.  呼び出す[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)します。 渡される WIA コンテキスト アイテムは、フィルム スキャナーの項目または項目のフレームをスキャンするフィルムに属しています。 ドライバーは、アプリケーションが単体のスキャン フィルムを使用してスキャンすることを簡単に判断できます。
+3.  [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)を呼び出します。 渡された WIA 項目コンテキストは、フィルムスキャナー項目またはフィルムスキャン項目フレームに属します。 このドライバーは、アプリケーションがフィルムスキャンユニットを使用してスキャンすることを簡単に判断できます。
 
-4.  デバイスをプログラミングし、フィルムの単位を現在のフィルム項目プロパティ (子フレームのすべてのプロパティを含む) を使用してスキャンからスキャンします。 スキャン モード フィルムに WIA ドライバーがない場合は、スキャンは、このモードに切り替えるしようとします。 負と正のライトの間でのみ、アプリケーションを切り替えることができます。 アプリケーションとドライバーの間のコントラクトは、フィルム スキャナーの項目を使用してスキャンするにはデータ転送のフィルム スキャナーの機能のスキャンを使用することが一致します。
+4.  現在のフィルム項目のプロパティ (子フレームのプロパティも含む) を使用して、デバイスをプログラムし、フィルムスキャンユニットからスキャンします。 WIA ドライバーがフィルムスキャンモードでない場合は、スキャン用にこのモードに切り替えようとします。 アプリケーションを切り替えることができるのは、負と正の両方の光だけです。 フィルムスキャナー項目を使用したスキャンは、アプリケーションとドライバーの間のコントラクトです。データ転送には、スキャナーのフィルムスキャン機能が使用されるということに同意します。
 
-フィルム スキャナーの項目に配置されている WIA プロパティは、その設定として、スキャンの前に、スキャナーの一部をスキャンするフィルムに適用されるドライバーで使用する必要があります。 WIA ドライバーによって返されるデータのヘッダーを常に信頼するには、WIA アプリケーションが必要です。 たとえば、スキャナーは、指定したイメージの幅とニーズの値を丸めるでスキャンできませんを判断しました。 ドライバーは、アプリケーションが適切なデータがあるできるように更新された幅情報を使用してイメージのヘッダーを更新する必要があります。 WIA ドライバーでは、WIA プロパティのセットは、デバイスから返される実際のデータ情報を常に更新する必要があります。
+フィルムスキャナー項目にある WIA プロパティは、スキャンの前にスキャナーのフィルムスキャン部分に適用される設定として、ドライバーによって使用されます。 Wia アプリケーションは、WIA ドライバーによって返されるデータのヘッダーを常に信頼する必要があります。 たとえば、スキャナーは、指定されたイメージの幅をスキャンできず、値を丸める必要があると判断しました。 ドライバーは、アプリケーションに適切なデータが含まれるように、更新された幅情報でイメージヘッダーを更新する必要があります。 WIA ドライバーは、常に、デバイスから返される実際のデータ情報を使用して、WIA プロパティセットを更新する必要があります。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME
-description: KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティが 3D サウンド バッファーの円錐外部サウンドのボリュームを指定します。
+description: KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティは、3D サウンドバッファーのコーン外部サウンドボリュームを指定します。
 ms.assetid: faaa4419-6de4-4417-a9a6-922e60130946
 keywords:
-- KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME オーディオ デバイス
+- KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf9adacb0c75dab554e3643efed9bad66a3bb35a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34b2445f54a84395557757579387d2cead6fd06a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358797"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832830"
 ---
-# <a name="kspropertydirectsound3dbufferconeoutsidevolume"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME
+# <a name="ksproperty_directsound3dbuffer_coneoutsidevolume"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME
 
 
-KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティが 3D サウンド バッファーの円錐外部サウンドのボリュームを指定します。
+KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティは、3D サウンドバッファーのコーン外部サウンドボリュームを指定します。
 
 ## <span id="ddk_ksproperty_directsound3dbuffer_coneoutsidevolume_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -42,18 +42,18 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティが 3D サウ�
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">設定</th>
-<th align="left">対象</th>
+<th align="left">セット</th>
+<th align="left">的を絞る</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>ピン</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -61,22 +61,22 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティが 3D サウ�
 
  
 
-プロパティ値 (データの操作) は LONG 型の円錐外部ボリューム レベルを指定します。 ボリューム レベルは、1/100ths デシベル単位で表されます。
+プロパティ値 (操作データ) は LONG 型で、コーン外部ボリュームレベルを指定します。 ボリュームレベルは、1/100 単位で表されます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-DirectSound 3D バッファーの円錐外部サウンドのボリュームの詳細については、Microsoft Windows SDK のドキュメントでは、次を参照してください。
+DirectSound 3D バッファーのコーン外部サウンドボリュームの詳細については、Microsoft Windows SDK のドキュメントで次を参照してください。
 
--   **LConeOutsideVolume** DS3DBUFFER 構造体のメンバー。
+-   DS3DBUFFER 構造体の**lConeOutsideVolume**メンバー。
 
--   **IDirectSound3DBuffer::GetOutsideVolume**と**IDirectSound3DBuffer::SetOutsideVolume**メソッド。
+-   **IDirectSound3DBuffer:: GetOutsideVolume**メソッドと**IDirectSound3DBuffer:: SetOutsideVolume**メソッド。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -86,16 +86,16 @@ DirectSound 3D バッファーの円錐外部サウンドのボリュームの�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

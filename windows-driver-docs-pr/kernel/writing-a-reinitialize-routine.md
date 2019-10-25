@@ -1,44 +1,44 @@
 ---
-title: 再初期化ルーチンの記述
-description: 再初期化ルーチンの記述
+title: 再初期化ルーチンを記述する
+description: 再初期化ルーチンを記述する
 ms.assetid: 47a7dd3f-e474-49c7-adf2-11f6e788c261
 keywords:
-- 標準のドライバー ルーチン WDK カーネルの再初期化ルーチン
-- ドライバーのルーチンの WDK カーネル、再初期化ルーチン
-- ルーチンの WDK カーネル、再初期化ルーチン
-- 再初期化します。
-- ドライバー WDK 再初期化します。
-- ドライバーの再初期化の WDK カーネル
-- ドライバーの初期化の WDK カーネル
-- ドライバー WDK カーネルの初期化
+- 標準ドライバールーチン WDK カーネル、再初期化ルーチン
+- ドライバールーチン WDK カーネル、再初期化ルーチン
+- ルーチン WDK カーネル、再初期化ルーチン
+- 初期化
+- ドライバーの再初期化 (WDK)
+- ドライバーの再初期化 WDK カーネル
+- ドライバーの初期化 WDK カーネル
+- ドライバーの初期化 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 915014aa9747ae48ab802650b7764a1dafd07daf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d038c38963eba02e6d78412bf928b182a3ad19d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374158"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835606"
 ---
-# <a name="writing-a-reinitialize-routine"></a>再初期化ルーチンの記述
+# <a name="writing-a-reinitialize-routine"></a>再初期化ルーチンを記述する
 
 
 
 
 
-段階的に初期化する必要がある任意のドライバーを含めることができます、 [*を再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)ルーチン。 A*を再初期化*ルーチンが呼び出された後、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンにコントロールとその他のドライバーが初期化自体が返されます。 通常、*を再初期化*ルーチンが別のドライバーが開始した後に行う必要があるタスクを実行します。
+ステージで自身を初期化する必要があるドライバーには、[*再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)ルーチンを含めることができます。 *再初期化*ルーチンは、 [**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンが制御を返し、他のドライバーがそれ自体を初期化した後に呼び出されます。 通常、*再初期化*ルーチンは、別のドライバーの開始後に実行する必要があるタスクを実行します。
 
-たとえば、システムのキーボード クラス ドライバー、 **kbdclass**、PnP と従来のキーボードの両方のポートをサポートしています。 システムには、検出できない、PnP マネージャー 1 つまたは複数のレガシ ポートが含まれている場合キーボード クラス ドライバーが各ポートおよびポートの下位レベルのドライバーよりも層自体のデバイス オブジェクトを作成それでもする必要があります。 そのため、クラス ドライバーは、*を再初期化*後に呼び出されるルーチンをその**DriverEntry**と[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンがあります。されて呼び出されるとその他のドライバーが読み込まれていません。 *を再初期化*ルーチンがポートを検出、デバイス オブジェクトを作成し、デバイスの他の下位レベルのドライバーをドライバーをレイヤーします。
+たとえば、システムのキーボードクラスドライバー **kbdclass**は、PnP と従来のキーボードポートの両方をサポートしています。 PnP マネージャーが検出できない従来のポートがシステムに1つ以上含まれている場合、キーボードクラスドライバーはポートごとにデバイスオブジェクトを作成する必要があり、ポートの下位レベルのドライバーに対してはレイヤー自体を作成する必要があります。 その結果、クラスドライバーには、 **Driverentry**ルーチンと[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンが呼び出され、他のドライバーが読み込まれた後に呼び出される*再初期化*ルーチンがあります。 *再初期化*ルーチンは、ポートを検出し、そのデバイスオブジェクトを作成し、デバイスの他の下位レベルのドライバーを介してドライバーをレイヤー化します。
 
-ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンの呼び出し[ **IoRegisterDriverReinitialization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterdriverreinitialization)キューに、*を再初期化*ルーチンを実行します。 *を再初期化*ルーチンを呼び出すことも**IoRegisterDriverReinitialization**自体がキューに再登録するルーチンを発生します。 1 つのパラメーターの*を再初期化*が呼び出された回数を示します。
+ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンは、 [**IoRegisterDriverReinitialization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)を呼び出して、実行の*再初期化*ルーチンをキューに登録します。 *再初期化*ルーチンは、 **IoRegisterDriverReinitialization**自体を呼び出すこともできます。これにより、ルーチンが再度キューに登録されます。 *再初期化*するパラメーターの1つは、呼び出された回数を示します。
 
-呼び出し**IoRegisterDriverReinitialization**への入力として、システムが提供するコンテキストのドライバーによるデータへのポインターを含めることができます*を再初期化*します。 場合、*を再初期化*ルーチンは、レジストリを使用して、コンテキスト データを含める必要があります、 *RegistryPath*に渡されたポインター、 **DriverEntry**ルーチンのためこれポインターへの入力パラメーターでない、*を再初期化*ルーチン。
+**IoRegisterDriverReinitialization**の呼び出しには、ドライバー定義のコンテキストデータへのポインターを含めることができます。このデータは、システムによって*再初期化*の入力として提供されます。 *再初期化*ルーチンがレジストリを使用する場合、このポインターは*再初期化*ルーチンの入力パラメーターではないため、 **driverentry**ルーチンに渡された*RegistryPath*ポインターがコンテキストデータに含まれている必要があります。
 
-*を再初期化*場合、ルーチンは呼び出されません**DriverEntry**状態を返さない\_成功します。
+**Driverentry**が正常\_状態を返さない場合、*再初期化*ルーチンは呼び出されません。
 
-ドライバー、通常、*を再初期化*ルーチンは PnP と従来の両方のデバイスを制御する高度なドライバーです。 PnP マネージャーを検出するデバイスのデバイス オブジェクトを作成するだけでなく (、PnP マネージャーを呼び出し、ドライバーの*AddDevice*ルーチン)、ドライバー作成する必要がありますもレガシ デバイスのデバイス オブジェクトを PnPマネージャーは列挙されません。 *を再初期化*ルーチンを作成しますデバイス オブジェクトとレイヤー ドライバーを基になるデバイスの次の下位ドライバー。
+通常、*再初期化*ルーチンを使用するドライバーは、PnP デバイスとレガシデバイスの両方を制御する上位レベルのドライバーです。 Pnp マネージャーが検出したデバイス (および PnP マネージャーがドライバーの*AddDevice*ルーチンを呼び出すデバイス) のデバイスオブジェクトを作成するだけでなく、ドライバーは、pnp マネージャーが列挙しないレガシデバイス用のデバイスオブジェクトも作成する必要があります。 *再初期化*ルーチンは、基になるデバイスの次の下位のドライバーを使用して、これらのデバイスオブジェクトとレイヤーを作成します。
 
-ドライバーがある場合、*を再初期化*で説明されている同じ基本的な手順で初期化ルーチンを[DriverEntry ルーチンを記述](writing-a-driverentry-routine.md)と同じ基本的な要件があるその**DriverEntry**ルーチン。
+ドライバーに*再初期化*ルーチンがある場合は、「 [Driverentry ルーチンの記述](writing-a-driverentry-routine.md)」で説明されているのと同じ基本的な手順で初期化されます。また、 **driverentry**ルーチンと同じ基本要件もあります。
 
  
 

@@ -1,53 +1,53 @@
 ---
-title: ディスパッチ ルーチン内で IRP を完了する方法
-description: ディスパッチ ルーチン内で IRP を完了する方法
+title: ディスパッチルーチンで IRP を完了する方法
+description: ディスパッチルーチンで IRP を完了する方法
 ms.assetid: b29da791-e768-4f67-8e85-6cfbeca97220
 keywords:
-- ルーチンをディスパッチ Irp WDK カーネルを完了すると、
-- ディスパッチ ルーチンの WDK カーネル、Irp の完了
-- WDK Irp のステータス情報
-- I/O 状態ブロック WDK カーネル
-- 状態ブロックの WDK カーネル
+- Irp WDK カーネル、ディスパッチルーチンを完了する
+- ディスパッチルーチン WDK カーネル、Irp の完了
+- ステータス情報 WDK Irp
+- I/o ステータスが WDK カーネルをブロックする
+- 状態は WDK カーネルをブロックします
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e53261d4a715fe94d2a63a0964ed84aaee30125
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1176863800cb93ab75e1634d2052fb6ca46cd592
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838643"
 ---
-# <a name="how-to-complete-an-irp-in-a-dispatch-routine"></a>ディスパッチ ルーチン内で IRP を完了する方法
+# <a name="how-to-complete-an-irp-in-a-dispatch-routine"></a>ディスパッチルーチンで IRP を完了する方法
 
 
 
 
 
-入力の IRP を直ちに完了する場合ディスパッチ ルーチンは、次を行います。
+入力 IRP をすぐに完了できる場合、ディスパッチルーチンは次の処理を実行します。
 
-1.  セット、**状態**と**情報**IRP の I/O の状態のメンバーのブロックを適切な値は、一般に。
+1.  IRP の i/o 状態ブロックの**状態**と**情報**メンバーを適切な値に設定します。通常は次のとおりです。
 
-    -   ディスパッチの日常的なセット**状態**状態のいずれか\_成功または適切なエラーが発生する (ステータス\_*XXX*)、サポート ルーチンへの呼び出しによって返される値をとりますまたは、下位のドライバーによりの特定同期要求。
+    -   ディスパッチルーチンは、**状態\_** を [成功] または適切なエラー (ステータス\_*XXX*) に設定します。これは、サポートルーチンへの呼び出しによって返される値、または特定の同期要求に対して下位のドライバーによって返される値になります。
 
-        下位レベルのドライバーが状態を返す場合\_保留中、高度なドライバーは呼び出す必要がありますいない[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP が、例外が 1 つの。高度なドライバーを同期させるイベントを使用してその[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンと場合、ディスパッチ ルーチン、 *IoCompletion*日常的な信号イベントと状態を返します。\_詳細\_処理\_必要な作業です。 ディスパッチ ルーチンは、イベントを待機しを呼び出して**IoCompleteRequest** IRP を完了します。
+        下位レベルのドライバーから状態\_が返された場合、上位レベルのドライバーは、IRP の[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出すことはできません。ただし、上位レベルのドライバーは、イベントを使用して、 [*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンとの間で同期を行うことができます。ディスパッチルーチン。この場合、 *Iocompletion*ルーチンはイベントを通知し、必要な\_処理\_より多くのステータス\_を返します。 ディスパッチルーチンは、イベントを待機してから、 **IoCompleteRequest**を呼び出して IRP を完了します。
 
-    -   設定**情報**バイト数を正常に転送された読み取りなどのデータを転送または書き込み要求、要求が満たされた場合。
+    -   読み取りまたは書き込み要求などのデータ転送要求が満たされた場合に、正常に転送されたバイト数に**情報**を設定します。
 
-    -   設定**情報**状態で完了するその他の Irp の特定の要求に従って変化する値に\_成功します。
+    -   この例では、状態\_SUCCESS で完了した他の Irp の特定の要求に応じて変化する値に**情報**を設定します。
 
-    -   設定**情報**によって異なりますが、警告状態が完了すると Irp の特定の要求の値に\_*XXX*します。 たとえば、設定は**情報**状態として、このような警告の転送されたバイト数に\_バッファー\_オーバーフローします。
+    -   **情報**は、警告ステータス\_*XXX*で完了した irp の特定の要求に応じて変化する値に設定されます。 たとえば、状態\_バッファー\_オーバーフローなどの警告に対して転送されたバイト数**を設定し**ます。
 
-    -   通常、その設定**情報**エラー状態で完了する要求をゼロに\_*XXX*します。
+    -   通常は、エラー状態\_*XXX*で、完了した要求に対して**情報**を0に設定します。
 
-2.  呼び出し**IoCompleteRequest** IRP と*PriorityBoost* = IO\_いいえ\_インクリメントします。
+2.  は、IoCompleteRequest を使用して、IRP を使用してを呼び出します。優先度*ブースト*= IO\_\_インクリメントはありません。
 
-3.  適切な状態を返します\_*XXX*状態の I/O ブロックで既に設定されています。 なおへの呼び出し**IoCompleteRequest**のため、既に完了した IRP の I/O 状態ブロックからディスパッチ ルーチンからの戻り値を設定することはできません、特定の IRP を呼び出し元がアクセスできなくなります。
+3.  は、i/o 状態ブロックに既に設定されている適切な状態\_*XXX*を返します。 **IoCompleteRequest**を呼び出すと、指定された irp が呼び出し元によってアクセス不可能になるため、ディスパッチルーチンからの戻り値を、既に完了した irp の i/o 状態ブロックから設定することはできません。
 
-**IRP を IoCompleteRequest を呼び出すためには、この実装ガイドラインに従います。**
+**IRP で IoCompleteRequest を呼び出すには、次の実装ガイドラインに従います。**
 
-常に呼び出す前に、ドライバーが保持している任意のスピン ロックを解放**IoCompleteRequest**します。
+**IoCompleteRequest**を呼び出す前に、ドライバーが保持しているスピンロックを常に解放します。
 
-不確定な階層型ドライバーのチェーンでは特に、IRP の完了に時間がかかります。 高度なドライバーの場合、デッドロックが発生することがさらに、 *IoCompletion*ルーチンにスピン ロックが保持している下位のドライバーは IRP を送信します。
+特に、階層化されたドライバーのチェーンでは、IRP の完了には不確定の時間がかかります。 さらに、上位レベルのドライバーの*Iocompletion*ルーチンが、スピンロックを保持している下位のドライバーに IRP を戻すと、デッドロックが発生する可能性があります。
 
  
 

@@ -3,37 +3,37 @@ title: KMDF ドライバーからのデバッガーへの割り込み
 description: KMDF ドライバーからのデバッガーへの割り込み
 ms.assetid: b18e210c-cc9b-436c-b762-6346b946357c
 keywords:
-- ドライバー WDK KMDF、デバッガーの中断のデバッグ
-- WDK KMDF のデバッガーの中断
+- ドライバーのデバッグ WDK KMDF、デバッガーの中断
+- デバッガーの中断 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a156777b1754864705662fbc6bf3c4307edeed7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3dfcd119c25ef6dd25ff6fb94e62cc9159beeea0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353219"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845510"
 ---
 # <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>KMDF ドライバーからのデバッガーへの割り込み
 
 
-カーネル モードのデバッガーを中断する、framework ベースのドライバーを実行する場合に、次を使用できます。
+フレームワークベースのドライバーがカーネルモードのデバッガーに割り込むようにするには、次のようにします。
 
--   [ **WdfVerifierDbgBreakPoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)場合に、関数がデバッガーを中断、 [DbgBreakOnError](registry-values-for-debugging-kmdf-drivers.md)レジストリの値を設定します。
+-   [**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)関数は、 [dbgbreakonerror](registry-values-for-debugging-kmdf-drivers.md)値がレジストリで設定されている場合、デバッガーにブレークします。
 
--   [ **WDFVERIFY** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)マクロは、論理式をテストし、式の評価する場合、カーネル デバッガーを中断**FALSE**場合に、 [VerifyOn](registry-values-for-debugging-kmdf-drivers.md)レジストリの値を設定します。
+-   [**Wdfverify**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)マクロは論理式をテストし、式が**FALSE**と評価された場合、および[verifyon](registry-values-for-debugging-kmdf-drivers.md)値がレジストリに設定されている場合、カーネルデバッガーに中断します。
 
--   [**確認\_IS\_IRQL\_パッシブ\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/wdf/verify-is-irql-passive-level) IRQL では、ドライバーが実行されていない場合に、マクロがカーネル デバッガーを中断パッシブを=\_レベルと場合、 **VerifyOn**レジストリの値を設定します。
+-   VERIFY\_は、ドライバーが IRQL = パッシブ\_レベルで実行されていない場合、および**Verifyon**値がレジストリに設定されている場合に、カーネルデバッガーに[ **\_パッシブ\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/wdf/verify-is-irql-passive-level)のマクロが中断する\_irql です。
 
--   [ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))マクロは、論理式をテストし、式の評価する場合、カーネル デバッガーを中断**FALSE**します。
+-   [**ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))マクロは、式が**FALSE**に評価された場合に論理式をテストし、カーネルデバッガーに中断します。
 
--   [ **ASSERTMSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-assertmsg)マクロによって式をテストして、式の評価が**FALSE**、カーネル デバッガーを中断および表示可能なテキスト メッセージを表示する、デバッガー。
+-   [**ASSERTMSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-assertmsg)マクロは式をテストし、式が**FALSE**と評価された場合、はカーネルデバッガーを中断し、表示可能なテキストメッセージをデバッガーに提供します。
 
--   [ **DbgPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)と[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)関数がデバッガーに表示可能なテキスト メッセージを指定します。
+-   [**Dbgprintex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)関数と[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)関数は、表示可能なテキストメッセージをデバッガーに提供します。
 
-WDFVERIFY と検証用コード\_IS\_IRQL\_パッシブ\_リリースまたはデバッグ構成では、ドライバーをビルドするときに、ドライバー レベルのマクロが含まれている (無料のビルド環境と呼ばれる、またはチェック ビルド環境で Windows 7 以降)。 アサートと ASSERTMSG マクロのコードは、デバッグ構成で、ドライバーをビルドする場合にのみ、ドライバーに含まれます。
+WDFVERIFY と VERIFY\_のコードは、ドライバーをリリースまたはデバッグ構成 (無料のビルド環境またはチェックされたビルド環境と呼びます) でビルドするときにドライバーに含まれる\_IRQL\_パッシブ\_レベルのマクロです。Windows 7 以前)。 ASSERT マクロと ASSERTMSG マクロのコードは、デバッグ構成でドライバーをビルドする場合にのみ、ドライバーに含まれます。
 
-プロジェクト構成の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
+プロジェクト構成の詳細については、「[ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)」を参照してください。
 
  
 

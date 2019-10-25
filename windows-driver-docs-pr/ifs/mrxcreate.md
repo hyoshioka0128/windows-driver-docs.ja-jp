@@ -1,9 +1,9 @@
 ---
 title: MRxCreate ルーチン
-description: TheMRxCreate ルーチンは、ネットワークのミニ リダイレクターがファイル システム オブジェクトを作成することを要求する RDBSS によって呼び出されます。
+description: TheMRxCreate ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトを作成するように要求するために、RDBSS によって呼び出されます。
 ms.assetid: d1b664cf-37b6-4c65-8634-21695af2db21
 keywords:
-- MRxCreate ルーチン インストール可能なファイル システム ドライバー
+- MRxCreate ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c254f033131a0df03fcae80d2b694342c9b745
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 388b2c2517d02e8906549e7469268a2f79e54984
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383869"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841115"
 ---
 # <a name="mrxcreate-routine"></a>MRxCreate ルーチン
 
 
-*MRxCreate*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトを作成することを要求します。
+*MRxCreate*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトを作成するように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxCreate(
 { ... }
 ```
 
-<a name="parameters"></a>パラメーター
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxCreate*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxCreate*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -57,72 +57,72 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">リターン コード</th>
+<th align="left">リターンコード</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>操作を完了するリソースの不足が発生しました。</p></td>
+<td align="left"><p>操作を完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NETWORK_ACCESS_DENIED</strong></td>
-<td align="left"><p>ネットワーク アクセスが拒否されました。 このエラーは、ネットワーク ミニ リダイレクターが読み取り専用共有で新しいファイルを開くよう依頼された場合に返されることができます。</p></td>
+<td align="left"><p>ネットワークアクセスが拒否されました。 このエラーは、ネットワークミニリダイレクターが読み取り専用の共有で新しいファイルを開くように要求された場合に返されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>リモート ブートまたはリモートのページファイルなど、要求された機能が実装されていません。</p></td>
+<td align="left"><p>リモートブートやリモートページファイルなど、要求された機能は実装されていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>拡張属性など、要求された機能がサポートされていません。</p></td>
+<td align="left"><p>拡張属性など、要求された機能はサポートされていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_COLLISION</strong></td>
-<td align="left"><p>ネットワークのミニ リダイレクターは、既に存在するファイルを作成するように要求されました。</p></td>
+<td align="left"><p>ネットワークミニリダイレクターは、既に存在するファイルを作成するように求められました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクト名が見つかりませんでした。 このエラーは、ネットワーク ミニリダイレクターが存在しないファイルを開くよう依頼された場合に返されることができます。</p></td>
+<td align="left"><p>オブジェクト名が見つかりませんでした。 このエラーは、ネットワークミニリダイレクターが、存在しないファイルを開くように要求された場合に返されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクトのパスが見つかりませんでした。 このエラーは、NTFS ストリーム オブジェクトを要求し、リモート ファイル システムがストリームをサポートしていない場合に返されることができます。</p></td>
+<td align="left"><p>オブジェクトのパスが見つかりませんでした。 このエラーは、NTFS ストリームオブジェクトが要求され、リモートファイルシステムでストリームがサポートされていない場合に返されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_REPARSE</strong></td>
-<td align="left"><p>シンボリック リンクを処理するために、再解析が必要です。</p></td>
+<td align="left"><p>シンボリックリンクを処理するには、再解析が必要です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_RETRY</strong></td>
-<td align="left"><p>操作を再試行する必要があります。 このエラーは、ネットワークのミニ リダイレクターは、共有違反や、アクセス拒否エラーが発生しました。 場合に返されることができます。</p></td>
+<td align="left"><p>操作を再試行する必要があります。 ネットワークミニリダイレクターで共有違反またはアクセス拒否エラーが発生した場合、このエラーが返されることがあります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-*MRxCreate*はネットワークのミニ リダイレクターがネットワーク経由でファイル システム オブジェクトを開くことを要求する RDBSS によって呼び出されます。 この呼び出しが受信する応答 RDBSS によって発行された、 [ **IRP\_MJ\_作成**](irp-mj-create.md)要求。
+*MRxCreate*は、ネットワーク上でファイルシステムオブジェクトを開くようにネットワークミニリダイレクターに要求するために、RDBSS によって呼び出されます。 この呼び出しは、 [**IRP\_MJ\_CREATE**](irp-mj-create.md)要求の受信に応答して、RDBSS によって発行されます。
 
-呼び出しの前に*MRxCreate*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxCreate*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**pRelevantSrvOpen** 、SRV に設定されている\_オープン構造体。
+**pRelevantSrvOpen**は、オープン構造の SRV\_に設定されます。
 
-**Create.pSrvCall** 、SRV に設定されている\_呼び出し構造体。
+**Create. pSrvCall**は SRV\_呼び出し構造に設定されます。
 
-**Create.NtCreateParameters**要求 NT に設定されている\_作成\_パラメーター。
+**作成します。 NtCreateParameters**は、要求された NT\_作成\_パラメーターに設定されます。
 
-ネットワークのミニ リダイレクターのコンテキストでは、ファイル オブジェクトは、ファイル オブジェクトの拡張機能 (FOBX) 構造体と関連付けられているファイル制御ブロック (FCB) を参照します。 ファイル オブジェクトと FOBXs、一対一で対応があります。 多くのファイル オブジェクトは、リモート サーバー上の 1 つのファイルを表す同じの FCB を参照してください。 クライアントが同じ FCB のいくつかの異なるオープン要求 (NtCreateFile 要求) を持つことができ、これらの新しいファイル オブジェクトが作成されます。 少ない送信 RDBSS とネットワークのミニ リダイレクターできます*MRxCreate* 、SRV の有効な共有 NtCreateFile 要求受信されるよりも要求\_オープン構造体をいくつか FOBXs。
+ネットワークミニリダイレクターのコンテキストでは、ファイルオブジェクトは、関連付けられたファイルコントロールブロック (FCB) とファイルオブジェクト拡張 (FOBX) 構造体を参照します。 ファイルオブジェクトと FOBXs の間には1対1の対応があります。 多くのファイルオブジェクトは、リモートサーバー上の1つのファイルを表す同じ FCB を参照します。 クライアントは、同じ FCB で複数の異なる open requests (NtCreateFile requests) を持つことができ、これらはそれぞれ新しいファイルオブジェクトを作成します。 RDBSS とネットワークミニリダイレクターは、受信した NtCreateFile 要求よりも*MRxCreate*要求を送信することを選択できます。これは、SRV\_オープン構造体を複数の FOBXs 間で共有する場合に有効です。
 
-場合、 *MRxCreate*ファイルの上書きの要求でしたと*MRxCreate*状態が返されました\_成功すると、し RDBSS はページング I/O リソースが取得されて、ファイルを切り捨てます。 ファイルは、キャッシュ マネージャーによってキャッシュされているが、RDBSS により、キャッシュ マネージャーがだけのものでのサーバーから受信した、サイズが更新されます。
+*MRxCreate*要求がファイルの上書き用であり、 *MRxCreate*が状態\_SUCCESS を返した場合、RDBSS はページング i/o リソースを取得し、ファイルを切り詰めます。 ファイルがキャッシュマネージャーによってキャッシュされている場合、RDBSS は、サーバーから受け取ったものと共に、キャッシュマネージャーが持つサイズを更新します。
 
-、戻る前に*MRxCreate*設定する必要があります、 **CurrentIrp -&gt;IoStatus.Information** 、RX のメンバー\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+MRxCreate を返す前に、 *RxContext*パラメーターによって示される RX\_コンテキスト構造のメンバーを **&gt;** 設定する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -132,12 +132,12 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>対象プラットフォーム</p></td>
-<td align="left">Desktop</td>
+<td align="left"><p>ターゲットプラットフォーム</p></td>
+<td align="left">デスクトップ</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -145,29 +145,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

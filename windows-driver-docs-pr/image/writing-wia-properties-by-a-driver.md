@@ -4,12 +4,12 @@ description: ドライバーによる WIA プロパティの書き込み
 ms.assetid: 6d2164ac-0fbc-4ecb-b3bf-a46efbe07f51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85cb0be22dd422d0ec30df533208b6dde7179579
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c2bbaf4b6b389134499cf2cbf12772b1ad1e56e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373514"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840659"
 ---
 # <a name="writing-wia-properties-by-a-driver"></a>ドライバーによる WIA プロパティの書き込み
 
@@ -17,51 +17,51 @@ ms.locfileid: "67373514"
 
 
 
-WIA ミニドライバーは、次の WIA サービス機能を使用して、WIA プロパティの現在の値と有効な値のいずれかを更新できます。
+Wia ミニドライバーは、次の WIA サービス関数を使用して、WIA プロパティと有効値の現在の値を更新できます。
 
-<a href="" id="wiaswritemultiple"></a>[**wiasWriteMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)  
-WIA プロパティのすべての型を記述します。 これは、カスタム プロパティを含む、WIA 項目を既存の任意のプロパティを書き込む WIA ドライバーをできるようにする一般的な関数です。 呼び出しごとの複数のプロパティに書き込むために使用します。
+<a href="" id="wiaswritemultiple"></a>[**wiasWriteMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritemultiple)  
+すべての WIA プロパティの型を書き込みます。 これは、wia ドライバーがカスタムプロパティを含む、WIA 項目に存在する任意のプロパティを書き込むことができるようにする一般的な関数です。 これを使用して、呼び出しごとに複数のプロパティに書き込むことができます。
 
-<a href="" id="wiaswritepropstr"></a>[**wiasWritePropStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritepropstr)  
-文字列である WIA プロパティの書き込み (VT 入力\_BSTR)。
+<a href="" id="wiaswritepropstr"></a>[**wiasWritePropStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritepropstr)  
+文字列である WIA プロパティを作成します (「VT\_BSTR」と入力します)。
 
-<a href="" id="wiaswriteproplong"></a>[**wiasWritePropLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswriteproplong)  
-4 バイト整数 WIA プロパティの書き込み (VT 入力\_I4)。
+<a href="" id="wiaswriteproplong"></a>[**wiasWritePropLong p)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswriteproplong)  
+4バイトの整数である WIA プロパティを作成します (「VT\_I4)」と入力します。
 
-<a href="" id="wiaswritepropfloat"></a>[**wiasWritePropFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritepropfloat)  
-4 バイトの実数である WIA プロパティの書き込み (VT 入力\_R4)。
+<a href="" id="wiaswritepropfloat"></a>[**wiasWritePropFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritepropfloat)  
+4バイトの実数 (型 VT\_R4) である WIA プロパティを作成します。
 
-<a href="" id="wiaswritepropguid"></a>[**wiasWritePropGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritepropguid)  
-Guid である WIA プロパティの書き込み (VT 入力\_CLSID)。
+<a href="" id="wiaswritepropguid"></a>[**wiasWritePropGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritepropguid)  
+Guid である WIA プロパティを作成します (「VT\_CLSID」と入力します)。
 
-<a href="" id="wiaswritepropbin"></a>[**wiasWritePropBin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritepropbin)  
-符号なしバイトの文字列である WIA プロパティの書き込み (VT 入力\_ベクター |VT\_UI1)。
+<a href="" id="wiaswritepropbin"></a>[**wiasWritePropBin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritepropbin)  
+符号なしバイトの文字列である WIA プロパティを作成します (型 VT\_VECTOR |VT\_UI1)。
 
-<a href="" id="wiasgetchangedvaluelong"></a>[**wiasGetChangedValueLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluelong)  
-WIA プロパティは、4 バイト整数の現在の変更された情報を取得 (VT 入力\_I4)。
+<a href="" id="wiasgetchangedvaluelong"></a>[**wiasGetChangedValueLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluelong)  
+4バイトの整数 (型 VT\_I4) である WIA プロパティについて、現在変更されている情報を取得します。
 
-<a href="" id="wiasgetchangedvaluefloat"></a>[**wiasGetChangedValueFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluefloat)  
-4 バイトの実数である WIA プロパティの現在の変更された情報を取得 (VT 入力\_R4)。
+<a href="" id="wiasgetchangedvaluefloat"></a>[**wiasGetChangedValueFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluefloat)  
+4バイトの実数 (型 VT\_R4) である WIA プロパティについて、現在変更されている情報を取得します。
 
-<a href="" id="wiasgetchangedvalueguid"></a>[**wiasGetChangedValueGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvalueguid)  
-Guid である WIA プロパティの現在の変更された情報を取得 (VT 入力\_CLSID)。
+<a href="" id="wiasgetchangedvalueguid"></a>[**Wiasgetのすべての属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvalueguid)  
+Guid である WIA プロパティについて、現在変更されている情報を取得します (「VT\_CLSID」と入力します)。
 
-<a href="" id="wiasgetchangedvaluestr"></a>[**wiasGetChangedValueStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluestr)  
-文字列である WIA プロパティの現在の変更された情報を取得 (VT 入力\_BSTR)。
+<a href="" id="wiasgetchangedvaluestr"></a>[**wiasGetChangedValueStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluestr)  
+文字列である WIA プロパティについて、現在変更されている情報を取得します (「VT\_BSTR)」と入力します。
 
-<a href="" id="wiascreatepropcontext"></a>[**wiasCreatePropContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatepropcontext)  
-使用されている WIA プロパティのコンテキストを作成、 [ **wiasGetChangedValueLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluelong)、 [ **wiasGetChangedValueFloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluefloat)、 [ **wiasGetChangedValueGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvalueguid)、および[ **wiasGetChangedValueStr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetchangedvaluestr)サービスの機能です。
+<a href="" id="wiascreatepropcontext"></a>[**wiasCreatePropContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatepropcontext)  
+[**WiasGetChangedValueLong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluelong)、 [**wiasgetchangedvaluefloat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluefloat)、 [**wiasget valueguid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvalueguid)、および[**wiasGetChangedValueStr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetchangedvaluestr) service 関数で使用される、WIA プロパティコンテキストを作成します。
 
-<a href="" id="wiasfreepropcontext"></a>[**wiasFreePropContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasfreepropcontext)  
-によって作成されたコンテキストが割り当てられたメモリを解放[ **wiasCreatePropContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatepropcontext)します。
+<a href="" id="wiasfreepropcontext"></a>[**wiasFreePropContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasfreepropcontext)  
+[**Wiascreatepropcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatepropcontext)によって作成された割り当て済みコンテキストメモリを解放します。
 
-### <a href="" id="implementing-iwiaminidrv-drvvalidateitemproperties"></a>IWiaMiniDrv::drvValidateItemProperties を実装します。
+### <a href="" id="implementing-iwiaminidrv-drvvalidateitemproperties"></a>IWiaMiniDrv の実装::d rvValidateItemProperties
 
-[ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)アイテムの WIA プロパティに変更されたときに、メソッドが呼び出されます。 WIA ミニドライバーでは、更新プログラムの任意の有効な値その変更をする必要がありますが、値が有効では現在チェックだけする必要があります。
+[**IWiaMiniDrv::D rvvalidateitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)メソッドは、項目の WIA プロパティに変更が加えられたときに呼び出されます。 WIA ミニドライバーは、値が有効であることを確認するだけでなく、変更される有効な値を更新する必要があります。
 
-WIA プロパティが有効で、アプリケーションがそれを記述しない場合は、無効な値との依存の値、有効な値に変更する必要がありますまたはそれ以外の場合 (アプリケーションでは、無効な値にプロパティを設定です) ため、検証に失敗します。
+WIA プロパティが無効で、アプリケーションがそれに書き込めない場合は、無効な値と依存する値を有効な値に変更するか、検証に失敗する必要があります (アプリケーションではプロパティが無効な値に設定されているため)。
 
-次の例の実装を示しています、 **IWiaMiniDrv::drvValidateItemProperties**メソッド。
+次の例は、 **IWiaMiniDrv::D rvvalidateitemproperties**メソッドの実装を示しています。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvValidateItemProperties(

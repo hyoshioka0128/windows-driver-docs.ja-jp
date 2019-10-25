@@ -1,30 +1,30 @@
 ---
-title: プラグ アンド プレイ マネージャー
-description: プラグ アンド プレイ マネージャー
+title: プラグアンドプレイマネージャー
+description: プラグアンドプレイマネージャー
 ms.assetid: b1890b3c-fc7b-4a2e-b48a-8266f237c9b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c08fb3952610b2363e22f4c5ef65497339fd90
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3fdd2151ae2d6027730d3546aff06a8b714df118
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360834"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837381"
 ---
-# <a name="plug-and-play-manager"></a>プラグ アンド プレイ マネージャー
+# <a name="plug-and-play-manager"></a>プラグアンドプレイマネージャー
 
 
-プラグ アンド プレイ (PnP) マネージャーでは、Windows での PnP の機能をサポートし、PnP に関連する次のタスクを担当します。
+プラグアンドプレイ (PnP) マネージャーは、Windows の PnP 機能のサポートを提供し、次の PnP 関連のタスクを担当します。
 
--   デバイスの検出と、システムの起動中に列挙型
+-   システムの起動中のデバイスの検出と列挙
 
--   追加またはシステムの実行中にデバイスを削除します。
+-   システムの実行中にデバイスを追加または削除する
 
-カーネル モードの PnP マネージャーでは、新しいデバイスは、システムに存在し、インストールする必要があります、ユーザー モードの PnP マネージャーに通知します。
+カーネルモードの PnP マネージャーは、新しいデバイスがシステムに存在すること、およびインストールされている必要があることをユーザーモードの PnP マネージャーに通知します。
 
-カーネル モードの PnP マネージャーも呼び出して、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)と[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバイスのルーチンのドライバーと、を送信します。[**IRP_MN_START_DEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)デバイスを開始する要求。
+また、カーネルモードの PnP マネージャーは、デバイスのドライバーの[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンと[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンを呼び出し、デバイスを起動する[**IRP_MN_START_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求を送信します。
 
-PnP マネージャーの維持、[デバイス ツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)は、デバイスをシステム内の追跡。 デバイスのツリーには、システム上に存在するデバイスに関する情報が含まれています。 コンピューターの起動時、PnP マネージャーはドライバーやその他のコンポーネントからの情報を使用して、このツリーを構築し、デバイスの追加または削除は、ツリーを更新します。
+PnP マネージャーは、システム内のデバイスを追跡する[デバイスツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)を保持します。 デバイスツリーには、システム上に存在するデバイスに関する情報が含まれています。 コンピューターの起動時に、PnP マネージャーはドライバーやその他のコンポーネントからの情報を使用してこのツリーを構築し、デバイスの追加または削除に応じてツリーを更新します。
 
  
 

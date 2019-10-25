@@ -3,26 +3,26 @@ title: エラー ソース情報の設定
 description: エラー ソース情報の設定
 ms.assetid: 87c61c3e-768a-4784-b9ec-1ec85d65ea81
 keywords:
-- エラー ソース WDK WHEA、情報を設定します。
-- WDK WHEA、エラーのソースのエラー
-- WHEA WDK、エラーのソース情報を設定します。
-- エラー ソースの情報を設定する、Windows ハードウェア エラー アーキテクチャ WDK
-- ハードウェア エラー ソース WDK WHEA、情報を設定します。
+- WDK WHEA のエラーソース、設定情報
+- エラー WDK WHEA、エラーソース
+- WHEA WDK、エラーソース情報の設定
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーソース情報の設定
+- ハードウェアエラーソース WDK WHEA、設定情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8415bb2d2e67b3c46230cb1721b5495227ba9d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 490cd16d833ae8520ca45abc7865f0461096ad61
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387151"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843284"
 ---
 # <a name="setting-error-source-information"></a>エラー ソース情報の設定
 
 
-ユーザー モード アプリケーションが特定の情報を設定できます[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームによって呼び出すことによってサポートされている、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 このような状況では、アプリケーションを提供する[ **WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)用に設定する情報を記述する構造体、指定したエラーのソース。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods:: SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、ハードウェアプラットフォームでサポートされている特定の[エラーソース](hardware-errors-and-error-sources.md)の情報を設定できます。 この場合、アプリケーションは、指定されたエラーソースに対して設定される情報を記述する[**WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)の構造体を提供します。
 
-次のコード例では、特定のエラーのソースのエラーのソース情報を設定する方法を示します。
+次のコード例は、特定のエラーソースのエラーソース情報を設定する方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;
@@ -163,19 +163,19 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-エラー ソースの構成を変更すると、アプリケーションは通常、エラーの発生元の情報を設定します。 アプリケーションでは、次の手順を実行することによって、エラーの発生元の構成を変更できます。
+通常、アプリケーションは、エラーソースの構成を変更するときに、エラーソースの情報を設定します。 アプリケーションでは、次の手順を実行して、エラーソースの構成を変更できます。
 
-1.  取得、WHEA\_エラー\_ソース\_特定のエラーのソースを記述する記述子構造体。
+1.  特定のエラーソースを記述する\_ソース\_記述子構造体の WHEA\_エラーを取得します。
 
-    すべてに関する情報の取得の詳細については、[エラー ソース](hardware-errors-and-error-sources.md)システムでは、次を参照してください。[エラー ソースのすべてのエラー ソース情報を取得する](getting-error-source-information-for-all-error-sources.md)します。
+    システム内のすべての[エラーソース](hardware-errors-and-error-sources.md)に関する情報を取得する方法の詳細については、「[すべてのエラーソースのエラーソース情報の取得](getting-error-source-information-for-all-error-sources.md)」を参照してください。
 
-    システムで特定のエラーのソースに関する情報の取得の詳細については、次を参照してください。[特定のエラーの発生元のエラー ソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)します。
+    システム内の特定のエラーソースに関する情報を取得する方法の詳細については、「[特定のエラーソースのエラーソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)」を参照してください。
 
-2.  WHEA の内容を変更\_エラー\_ソース\_エラー ソースの構成を変更する記述子構造体。
+2.  WHEA\_エラー\_ソース\_記述子構造体の内容を変更して、エラーソースの構成を変更します。
 
-3.  呼び出すことによって、エラーの発生元のエラーのソース情報を設定、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド
+3.  [**WHEAErrorSourceMethods:: SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出して、エラーソースのエラーソース情報を設定します。
 
-エラー ソースの構成に加えた変更は反映されませんまで、システムの再起動後です。
+エラーソースの構成に加えられた変更は、システムが再起動されるまで有効になりません。
 
  
 

@@ -4,58 +4,58 @@ description: オブジェクトの有効期間の管理
 ms.assetid: 55ad8133-a70a-462f-87cd-6aeaffb0aec8
 keywords:
 - UMDF オブジェクト WDK、有効期間
-- framework オブジェクト WDK UMDF、有効期間
-- WDK UMDF の有効期間
-- コールバック オブジェクト WDK UMDF
+- フレームワークオブジェクト WDK UMDF、有効期間
+- 有効期間 WDK UMDF
+- コールバックオブジェクト WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93901287175746f3104d6cc1b57beccc62fd7400
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 30404ae8f5753755131690d4a58e179066febaf9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371728"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843149"
 ---
 # <a name="managing-the-lifetime-of-objects"></a>オブジェクトの有効期間の管理
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-UMDF では、参照カウント スキームを使用して、有効期間を管理する[コールバック オブジェクト](creating-callback-objects.md)と[framework オブジェクト](framework-objects.md)します。
+UMDF は、参照カウントスキームを使用して、[コールバックオブジェクト](creating-callback-objects.md)と[フレームワークオブジェクト](framework-objects.md)の有効期間を管理します。
 
-## <a name="managing-references-to-driver-supplied-callback-objects"></a>ドライバーが提供するコールバック オブジェクトへの参照を管理します。
-
-
-ほとんどの場合、ドライバーとは、コールバック オブジェクトへの参照を保持するために必要ありません。 コールバック オブジェクトのインターフェイスのメソッドはオブジェクトの有効期間は、コールバック オブジェクトとコールバック オブジェクトのペアになっている framework オブジェクトによって異なります。 および、framework によってのみ呼び出されると、ドライバーがの参照を保持する必要はありません。 つまり、ドライバーやフレームワークを安全に呼び出す、オブジェクト階層の上位にあるオブジェクトのインターフェイスのメソッド。
-
-## <a name="managing-references-to-framework-objects"></a>Framework のオブジェクトへの参照を管理します。
+## <a name="managing-references-to-driver-supplied-callback-objects"></a>ドライバーによって提供されるコールバックオブジェクトへの参照の管理
 
 
-UMDF、一般的な COM 有効期間の原則および WDF 固有の有効期間のモデルでは、framework のオブジェクトの有効期間を決定します。 ドライバーは、framework のオブジェクトがメモリから適切なタイミングで解放されるように、両方のモデルの条件を満たす必要があります。
+ほとんどの場合、コールバックオブジェクトへの参照を保持するためにドライバーは必要ありません。 コールバックオブジェクトインターフェイスのメソッドが、フレームワークおよびその有効期間がコールバックオブジェクトと対になるフレームワークオブジェクトに依存するオブジェクトによってのみ呼び出される場合、ドライバーは参照を保持する必要はありません。 つまり、ドライバーまたはフレームワークは、オブジェクト階層の上位にあるオブジェクトインターフェイスのメソッドを安全に呼び出すことができます。
 
-### <a name="com-lifetime-management"></a>COM 有効期間管理
+## <a name="managing-references-to-framework-objects"></a>フレームワークオブジェクトへの参照の管理
 
-COM では、呼び出し元では、オブジェクトが使用し、呼び出し元が不要になったオブジェクトが必要な参照を解放し、オブジェクトへの参照が通常保持します。 ただし、UMDF ドライバーは、framework オブジェクトへの参照を保持する必要はありません。 実際には、ドライバーは、ドライバーは、framework のオブジェクトを作成した直後に、framework のオブジェクト参照を解放できます。
 
-呼び出すことが後に、UMDF サンプルが、デバイス オブジェクトを解放するなど、 [ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)します。 参照が早期にリリースされるが、デバイス オブジェクトは、WDF オブジェクトのツリーへの参照を保持しているために、デバイスが削除されるまでに存在し続けます。
+UMDF では、一般的な COM 有効期間の原則と WDF 固有の有効期間モデルによって、フレームワークオブジェクトの有効期間が決まります。 適切なタイミングでフレームワークオブジェクトがメモリから解放されるように、ドライバーは両方のモデルの条件を満たす必要があります。
 
-UMDF には、オブジェクト ツリー内のすべてのフレームワーク オブジェクトが追跡しているため、ドライバーが framework のオブジェクトへの参照を保持する必要はありません。
+### <a name="com-lifetime-management"></a>COM の有効期間の管理
 
-ただしには、ドライバーは、framework オブジェクトへの参照を保持している場合、オブジェクトが必要がなくなったときに、ドライバーは、参照リリースする必要があります。 循環参照は、ドライバーの参照を解放するまでの場所に残ります。 循環参照を避けるためには、ドライバー通常いないにならないように framework オブジェクトを明示的に参照します。
+COM では、通常、オブジェクトが使用されている間は呼び出し元がオブジェクトへの参照を保持し、次にオブジェクトが不要になったときに呼び出し元が参照を解放します。 ただし、UMDF ドライバーは、フレームワークオブジェクトへの参照を保持する必要はありません。 実際、ドライバーは、フレームワークオブジェクトを作成した直後にフレームワークオブジェクト参照を解放できます。
 
-ドライバーのコールバック オブジェクトを実装する必要がありますもドライバーは、framework のオブジェクトへの参照を保持する必要がある場合、 [IObjectCleanup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iobjectcleanup)インターフェイス。 ドライバーを呼び出すと[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)フレームワーク オブジェクト、framework のオブジェクトを呼び出すその対応するコールバック オブジェクトの[ **IObjectCleanup::OnCleanup** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iobjectcleanup-oncleanup)メソッド。 実装**IObjectCleanup::OnCleanup**ダウン framework オブジェクトの終了処理が完了するためにフレームワークを有効にするフレームワーク オブジェクトへの参照を解放する必要があります。
+たとえば、UMDF samples は[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出した後にデバイスオブジェクトを解放します。 参照は早期にリリースされますが、WDF オブジェクトツリーが参照を保持しているため、デバイスが削除されるまで、デバイスオブジェクトは引き続き存在します。
+
+UMDF はオブジェクトツリー内のすべてのフレームワークオブジェクトを追跡するので、ドライバーはフレームワークオブジェクトへの参照を保持する必要はありません。
+
+ただし、ドライバーがフレームワークオブジェクトへの参照を保持している場合、ドライバーは、オブジェクトが不要になったときに参照を解放する必要があります。 循環参照は、ドライバーがその参照を解放するまで保持されます。 循環参照を回避するには、通常、ドライバーはフレームワークオブジェクトへの明示的な参照を保持しないようにする必要があります。
+
+ドライバーがフレームワークオブジェクトへの参照を保持する必要がある場合、ドライバーのコールバックオブジェクトも[IObjectCleanup](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iobjectcleanup)インターフェイスを実装する必要があります。 ドライバーが[**Iwdfobject:** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) framework オブジェクトの:D eletewdfobject を呼び出すと、フレームワークオブジェクトは対応するコールバックオブジェクトの[**IObjectCleanup:: oncleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iobjectcleanup-oncleanup)メソッドを呼び出します。 フレームワークオブジェクトの破棄を完了するには、 **IObjectCleanup:: OnCleanup**の実装でフレームワークオブジェクトへの参照を解放する必要があります。
 
 ### <a name="wdf-lifetime-management"></a>WDF の有効期間管理
 
-既定の親をオーバーライドできるようにする型のオブジェクトを作成する場合、オブジェクトの有効期間と一致する有効期間を持つ親を選択する必要があります。 既定の親オブジェクトと、ドライバーが既定の親をオーバーライドできるかどうかの詳細については、内のテーブルを参照してください。 [Framework オブジェクト](framework-objects.md)します。
+既定の親をオーバーライドできる型のオブジェクトを作成する場合は、有効期間がオブジェクトの有効期間に一致する親を選択する必要があります。 既定の親オブジェクトと、ドライバーが既定の親をオーバーライドできる場合の詳細については、「[フレームワークオブジェクト](framework-objects.md)」の表を参照してください。
 
-オブジェクトの有効期間を照合する場合、フレームワークは、親オブジェクトが削除されたときに、オブジェクトを削除します。 明示的に呼び出すことによってオブジェクトを削除することができる場合、オブジェクトの有効期間と一致し、既定の親が削除される前に削除するオブジェクト、 [ **DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)オブジェクトがありません不要にします。
+オブジェクトの有効期間を一致させると、親オブジェクトが削除されたときに、フレームワークによってオブジェクトが削除されます。 オブジェクトの有効期間を一致させず、既定の親を削除する前にオブジェクトを削除する場合は、オブジェクトが不要になったときに[**Deletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出すことによって、オブジェクトを明示的に削除できます。
 
-たとえば、新しい要求オブジェクトを作成し、呼び出すと[ **IWDFDriver::CreateWdfMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createwdfmemory)この要求のメモリ オブジェクトを作成するには、新しいメモリの親として要求オブジェクトを指定できますオブジェクト。 ドライバーを呼び出す必要はありませんので、WDF は、親オブジェクトが削除されたときに、子オブジェクトを削除、 [ **DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メモリ オブジェクトを削除します。
+たとえば、新しい要求オブジェクトを作成し、 [**Iwdfdriver:: CreateWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createwdfmemory)を呼び出してこの要求のメモリオブジェクトを作成する場合、要求オブジェクトを新しいメモリオブジェクトの親として指定できます。 WDF は親オブジェクトが削除されたときに子オブジェクトを削除するため、ドライバーは、メモリオブジェクトを削除するために[**Deletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出す必要はありません。
 
-ただし、その有効期間に近いオブジェクトの有効期間は、親が存在しない場合、既定の親が削除される前に削除するオブジェクトを設定する場合は、明示的な削除を使用する必要があります。 たとえば、ドライバーは、短い期間に使用されるいくつかの要求オブジェクトを作成できます。 ここでは、ドライバーでは、不要になったときに、要求を明示的に削除することによってメモリを節約することができます。
+ただし、有効期間がオブジェクトの有効期間と密接に一致する親がなく、既定の親を削除する前にオブジェクトを削除する場合は、明示的な削除を使用する必要があります。 たとえば、ドライバーは、短時間に使用されるいくつかの要求オブジェクトを作成できます。 この場合、ドライバーは不要になった要求を明示的に削除することで、メモリを節約できます。
 
-同様に、既定の親をオーバーライドできないオブジェクトを作成して、既定の親が削除される前に削除するオブジェクトの場合、ドライバーする必要があります、オブジェクトを削除に明示的にします。
+同様に、既定の親をオーバーライドすることを許可しないオブジェクトを作成し、既定の親を削除する前にオブジェクトを削除する場合、ドライバーはオブジェクトを明示的に削除する必要があります。
 
  
 

@@ -3,15 +3,15 @@ title: コンテキストの作成
 description: コンテキストの作成
 ms.assetid: da62d79d-064b-4ea4-abed-ffb13a9cc13d
 keywords:
-- WDK のコンテキストのファイル システム ミニフィルターを作成します。
+- コンテキスト WDK ファイルシステムミニフィルター、作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9955d279efa35c80d9f8c72d9ffd912ddb5c3970
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 041b4c827da92c5d3673b88ef0ff10917cb1d16d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366802"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841448"
 ---
 # <a name="creating-contexts"></a>コンテキストの作成
 
@@ -19,9 +19,9 @@ ms.locfileid: "67366802"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-呼び出してコンテキストを作成できるミニフィルター ドライバーが使用されるコンテキストの種類を登録すると、 [ **FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)します。 このルーチンで説明されている条件に従って使用する適切なコンテキストの定義を選択します。[コンテキスト型を登録する](registering-context-types.md)します。
+ミニフィルタードライバーが使用するコンテキストの種類を登録すると、 [**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)を呼び出すことによってコンテキストを作成できます。 このルーチンは、「[コンテキスト型の登録](registering-context-types.md)」で説明されている条件に従って、使用する適切なコンテキスト定義を選択します。
 
-次のコード例で、CTX サンプル ミニフィルター ドライバーから取得した、 **CtxInstanceSetup**ルーチンの呼び出し[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)インスタンス コンテキストを作成するには:
+次のコード例では、CTX サンプルミニフィルタードライバーから取得した、 **Ctxinstancesetup**ルーチンは[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)を呼び出してインスタンスコンテキストを作成します。
 
 ```cpp
 status = FltAllocateContext(
@@ -32,7 +32,7 @@ status = FltAllocateContext(
            &instanceContext);            //ReturnedContext
 ```
 
-CTX サンプルでは、インスタンス コンテキストのコンテキストの定義を次に登録されます。
+CTX サンプルでは、インスタンスコンテキストに対して次のコンテキスト定義が登録されています。
 
 ```cpp
 { FLT_INSTANCE_CONTEXT,              //ContextType
@@ -42,9 +42,9 @@ CTX サンプルでは、インスタンス コンテキストのコンテキス
   CTX_INSTANCE_CONTEXT_TAG },        //PoolTag
 ```
 
-これは、ためにの固定サイズのコンテキストの定義を**サイズ**メンバーは定数です。 (場合、**サイズ**メンバーが FLT\_変数\_サイズ\_コンテキスト、可変サイズのコンテキストの定義をなります)。なお、FLTFL\_コンテキスト\_登録\_いいえ\_EXACT\_サイズ\_一致フラグが設定されていない、**フラグ**メンバー。 この場合は場合の値、*サイズ*パラメーターの[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)のものと一致する、**サイズ**コンテキストのメンバー定義上、 **FltAllocateContext**適切な非ページのルック アサイド リストから、インスタンス コンテキストを割り当てます。 値が一致しない場合**FltAllocateContext**失敗の状態の戻り値を持つ\_FLT\_コンテキスト\_割り当て\_いない\_が見つかりました。
+**サイズ**メンバーが定数であるため、これは固定サイズのコンテキスト定義です。 (**サイズ**のメンバーが\_変数\_サイズ\_コンテキストの場合は、変数サイズのコンテキスト定義になります)。FLTFL\_コンテキスト\_登録\_\_正確な\_サイズ\_一致フラグが**フラグ**メンバーで設定されていないことに注意してください。 この場合、 [**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)の*size*パラメーターの値がコンテキスト定義の**size**メンバーの値と一致すると、 **FltAllocateContext**は適切な非ページルックからインスタンスコンテキストを割り当てます。表. 値が一致しない場合、 **FltAllocateContext**は STATUS\_FLT\_コンテキスト\_割り当て\_見つかりませ\_んでした。
 
-[**FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)いずれかに新しいコンテキストの参照カウントを初期化します。 コンテキストが不要になったとき、ミニフィルター ドライバーは、この参照を解放する必要があります。 したがって、すべての呼び出しに**FltAllocateContext**後続の呼び出しによって照合される必要があります[ **FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)します。
+[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)は、新しいコンテキストの参照カウントを1に初期化します。 コンテキストが不要になった場合は、ミニフィルタードライバーがこの参照を解放する必要があります。 そのため、 **FltAllocateContext**のすべての呼び出しは、 [**FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)の後続の呼び出しで一致する必要があります。
 
  
 

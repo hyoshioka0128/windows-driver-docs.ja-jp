@@ -3,16 +3,16 @@ title: NIC のチェックサム機能のレポート
 description: NIC のチェックサム機能のレポート
 ms.assetid: a90f8d01-8318-44de-acf0-7903ef7e85e0
 keywords:
-- タスクのオフロード WDK TCP/IP トランスポート、チェックサム タスク
-- チェックサム タスク WDK ネットワーク
+- タスクオフロード WDK TCP/IP トランスポート、チェックサムタスク
+- チェックサムタスク (WDK ネットワーク)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e18d68432d9cc7f60d967c49318c0a808b5aed9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f714960cf14af55d3848ade613fa69290bc4fae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373295"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842056"
 ---
 # <a name="reporting-a-nics-checksum-capabilities"></a>NIC のチェックサム機能のレポート
 
@@ -20,28 +20,28 @@ ms.locfileid: "67373295"
 
 
 
-NDIS ミニポート ドライバーは、NIC が計算しでの IP、TCP、および UDP チェックサムの検証に現在構成されているかどうかを報告する[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体。 ミニポート ドライバーで現在のチェックサム オフロードの構成を含める必要があります、 [ **NDIS\_ミニポート\_アダプター\_オフロード\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes)構造体。 ミニポート ドライバーの呼び出し、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数を[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数を渡す、NDIS 情報\_ミニポート\_アダプター\_オフロード\_属性。
+NDIS ミニポートドライバーは、NIC が現在構成されているかどうかを報告するために、 [**ndis\_tcp\_ip\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)構造体の IP、tcp、および UDP チェックサムを計算して検証します。 ミニポートドライバーには、 [**NDIS\_ミニポート\_アダプター\_オフロード\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes)構造の現在のチェックサムオフロード構成が含まれている必要があります。 ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数から[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、NDIS\_ミニポート\_アダプター\_オフロード\_属性の情報を渡します。
 
-存在する場合、ミニポート ドライバーは現在のチェックサム オフロードの構成の変更を報告する必要がありますで、 [ **NDIS\_状態\_タスク\_オフロード\_現在\_構成** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態を示す値。
+ミニポートドライバーでは、現在のチェックサムオフロード構成 (存在する場合) の変更を、 [**NDIS\_ステータス\_タスク\_オフロード\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態表示に報告する必要があります。
 
-クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)、NDIS には、NDIS が含まれています\_TCP\_IP\_チェックサム\_オフロード構造、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload) NDIS を表す構造体、 **InformationBuffer**のメンバー、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
+[現在の\_CONFIG\_の OID\_tcp\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)のクエリに応答して、ndis には、NDIS\_[**オフ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)ロード構造にある NDIS\_TCP\_IP\_CHECKSUM\_オフロード構造が含まれています。Ndis は、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーでを返します。 NDIS は、ミニポートドライバーによって提供された情報を使用します。
 
-ミニポート ドライバーは、IPv4 と IPv6 の送信および受信パケット、次のチェックサム情報を示します。
+ミニポートドライバーは、IPv4 および IPv6 の送受信パケットに関する次のチェックサム情報を示します。
 
--   NIC を選択し、送信パケットを計算できますを検証できるチェックサム (IP、TCP または UDP) の型は、パケットを受信します。
+-   NIC が送信パケットに対して計算できるチェックサム (IP、TCP、または UDP) の種類。受信パケットに対して検証できます。
 
--   カプセル化の設定で、**カプセル化**メンバー。 このメンバーの詳細については、「解説」セクションを参照してください。 [ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。
+-   カプセル化の設定 (**カプセル化**メンバー内)。 このメンバーの詳細については、「 [**NDIS\_TCP\_IP\_CHECKSUM\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)」の「解説」セクションを参照してください。
 
--   できるかどうか、NIC を計算または検証 (または計算検証) パケットのチェックサムが IP ヘッダーは、IPv4 のオプションを含めます。
+-   IP ヘッダーに IPv4 オプションが含まれているパケットのチェックサムを、NIC が計算または検証 (または計算および検証) できるかどうかを指定します。
 
--   できるかどうか、NIC を計算または検証 (または計算検証)、IPv6 パケットのチェックサムが IP ヘッダーは、IPv6 拡張ヘッダーを含めます。
+-   IP ヘッダーに IPv6 拡張ヘッダーが含まれている IPv6 パケットのチェックサムを、NIC が計算または検証 (または計算および検証) できるかどうか。
 
--   NIC できますを計算または検証 (または計算し、検証) パケットのチェックサムかどうかを TCP ヘッダーには TCP オプションが含まれます。
+-   Tcp ヘッダーに TCP オプションが含まれているパケットのチェックサムを、NIC が計算または検証 (または計算および検証) できるかどうかを指定します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[タスクのオフロード機能を判断します。](determining-task-offload-capabilities.md)
+[タスクオフロード機能の決定](determining-task-offload-capabilities.md)
 
  
 

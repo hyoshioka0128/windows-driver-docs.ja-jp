@@ -1,39 +1,39 @@
 ---
-title: '[Trace Tree] (トレース ツリー) ウィンドウの概要'
-description: '[Trace Tree] (トレース ツリー) ウィンドウの概要'
+title: トレースツリーウィンドウについて
+description: トレースツリーウィンドウについて
 ms.assetid: 98640d7e-29fc-4397-ac6b-47f4e17f88a1
 keywords:
-- 静的ドライバー検証レポートの WDK、トレースのツリー ウィンドウ
-- トレースのツリー ペイン WDK Static Driver Verifier
+- 静的ドライバー検証ツールレポート WDK、トレースツリーウィンドウ
+- トレースツリーペイン WDK 静的ドライバー検証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c98788e5e772bfc8aa32038a80f832cf77cd3cf9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e81e348b7e05e2f7e77b3cfc71682282fd2f444b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363798"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839269"
 ---
-# <a name="understanding-the-trace-tree-pane"></a>[Trace Tree] (トレース ツリー) ウィンドウの概要
+# <a name="understanding-the-trace-tree-pane"></a>トレースツリーウィンドウについて
 
 
-**トレース ツリー**ウィンドウ欠陥ビューアーの焦点であります。 コードでは、順を追って通常、**トレース ツリー**内のコードでは、その効果を見ているときに、ウィンドウ、**ソース コード**ウィンドウ内の値で、**状態**ウィンドウ。
+**[トレースツリー]** ウィンドウは、問題のビューアーにフォーカスがあることを示します。 通常は、 **[トレースツリー]** ウィンドウのコードをステップ実行し、 **[ソースコード]** ペインのコードおよび **[状態]** ペインの値に対する影響を監視します。
 
-**トレース ツリー**ウィンドウは一連の展開と折りたたみ可能なノードを持つ階層構造に編成されます。 階層では、実行するには、その他の要素の原因となったコード要素を示します。 この形式では各コード分岐を解釈および表示し、トレースをステップ実行すると、簡単にコードのセクションでは非表示にすることができます。
+**トレースツリー**ペインは、一連の展開可能なノードと折りたたみ可能なノードを含む階層構造に編成されています。 階層は、他の要素が実行される原因となったコード要素を示します。 この形式は、各コード分岐を解釈し、トレースをステップ実行するときにコードセクションを簡単に表示したり非表示にしたりするのに役立ちます。
 
-次のスクリーン ショットは例を示しています。**トレース ツリー**ウィンドウ。
+次のスクリーンショットは、**トレースツリー**ペインの例を示しています。
 
-![欠陥のビューアーにトレースのツリー ウィンドウのスクリーン ショット](images/sdv-tracetree.png)
+![欠陥ビューアーの [トレースツリー] ウィンドウのスクリーンショット](images/sdv-tracetree.png)
 
-内の各コード要素、**トレース ツリー**ウィンドウには、ソース ファイルでの行番号が付きます。 この番号では、ソース ツリー ウィンドウとソース ファイルにコード要素を検索できます。
+**トレースツリー**ペインの各コード要素の前に、ソースファイル内の行番号が表示されます。 この番号付けを使用すると、ソースツリーウィンドウとソースファイル内のコード要素を見つけることができます。
 
-いくつかの行のコード、**ソース コード**ウィンドウ内の 1 つ以上の要素に対応して、**トレース ツリー**ウィンドウ。 このような状況では、コードの行では、複数のアクションは、するときに発生します。 たとえば、関数呼び出しのパラメーターが、IRQL の場合は、関数呼び出しを含むコード行場合もあります呼び出しなど、現在の IRQL を検索します。
+**ソースコード**ペインの一部のコード行は、**トレースツリー**ペイン内の複数の要素に対応しています。 この状況は、コード行によって複数のアクションが発生した場合に発生します。 たとえば、関数呼び出しパラメーターが IRQL の場合、関数呼び出しを含むコード行には、現在の IRQL を検索するための呼び出しも含まれる場合があります。次に例を示します。
 
 ```
 IoReleaseCancelSpinLock(KeGetCurrentIrql());
 ```
 
-このような状況で、**トレース ツリー**ウィンドウには重要な要素が含まれます、 [ **KeGetCurrentIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kegetcurrentirql)関数呼び出し、SDV オペレーティング システムのモデルにいくつかの呼び出しランダムに生成、IRQL とし、呼び出しを[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))返された IRQL とします。
+この場合、**トレースツリー**ウィンドウには[**KegetIoReleaseCancelSpinLock entirql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kegetcurrentirql)関数呼び出しの重要な要素が含まれ、sdv オペレーティングシステムモデルを呼び出して、ランダムに IRQL を生成[**した後**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))、返された IRQL。
 
  
 

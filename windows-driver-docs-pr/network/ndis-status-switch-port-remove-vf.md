@@ -1,105 +1,105 @@
 ---
 title: NDIS_STATUS_SWITCH_PORT_REMOVE_VF
-description: NDIS_STATUS_SWITCH_PORT_REMOVE_VF 状態の表示は、転送拡張機能を仮想マシン (VM) ネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除する HYPER-V 拡張可能スイッチによって発行されます。
+description: NDIS_STATUS_SWITCH_PORT_REMOVE_VF 状態の表示は、Hyper-v 拡張可能スイッチ転送拡張機能によって発行され、仮想マシン (VM) ネットワークアダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除します。
 ms.assetid: D6A52183-C9C6-4F0B-9E25-6C5C16CBEFFE
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_SWITCH_PORT_REMOVE_VF ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_SWITCH_PORT_REMOVE_VF ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: d8e25b138206972889adcad286537bbd3028e9d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 548e390ce33177a7cf21484c973bf1d24be194a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843512"
 ---
-# <a name="ndisstatusswitchportremovevf"></a>NDIS\_状態\_スイッチ\_ポート\_削除\_VF
+# <a name="ndis_status_switch_port_remove_vf"></a>NDIS\_ステータス\_スイッチ\_ポート\_削除\_VF
 
 
-**NDIS\_状態\_切り替える\_ポート\_削除\_VF**状態を示す値が転送のバインドを削除する拡張機能、HYPER-V 拡張可能スイッチによって発行されました。仮想マシン (VM) ネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) の間 VF が公開され、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワーク アダプターによってサポートされています。
+**NDIS の\_ステータス\_スイッチ\_ポートを\_削除\_** hyper-v 拡張可能スイッチの転送拡張機能によって発行され、仮想マシン (VM) ネットワークアダプターと PCI の間のバインドを削除します。Express (PCIe) 仮想関数 (VF)。 VF は、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワークアダプターによって公開およびサポートされます。
 
-発行するには、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態を示す値、転送拡張機能は、で示す値をカプセル化する必要があります[**NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造と問題を[ **NDIS\_ステータス\_スイッチ\_NIC\_状態**](ndis-status-switch-nic-status.md)状態を示す値。
+Ndis\_の状態を発行するには **\_\_\_ポートを変更し\_VF**の状態の表示を削除します。そのため、転送拡張機能は、NDIS\_スイッチに示されている[ **\_NIC\_の状態をカプセル化する必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造を示し、 [**NDIS\_の状態\_切り替え\_NIC\_状態**](ndis-status-switch-nic-status.md)の状態を示します。
 
-このプロセスの詳細については、次を参照してください[発行するためのガイドライン、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態表示](#issuing)。
+このプロセスの詳細については、「 [NDIS\_の状態を発行するためのガイドライン」を参照してください。 **\_\_ポート\_切り替え**て、VF の状態を示す\_を削除](#issuing)します。
 
 <a name="remarks"></a>注釈
 -------
 
-PCIe VF が作成され、SR-IOV 対応インターフェイスをサポートする、基になる物理アダプターが割り当てられます。 作成されると、仮想化スタックがアタッチ、または*割り当てます*、VF HYPER-V 子パーティションにします。 このパーティションで実行されているゲスト オペレーティング システムでは、基になる、SR-IOV 対応の物理アダプターの VF にバインドされている仮想マシン (VM) ネットワーク アダプターを公開します。
+PCIe VF は、sr-iov インターフェイスをサポートする基になる物理アダプターによって作成され、割り当てられます。 作成された仮想化スタックは、Hyper-v 子パーティションに VF をアタッチするか、または*割り当て*ます。 このパーティションで実行されるゲストオペレーティングシステムは、基盤となる SR-IOV 物理アダプターの VF にバインドされている仮想マシン (VM) ネットワークアダプターを公開します。
 
-アダプターが割り当てられている仮想および物理ネットワーク後、は、パケットは VF と VM ネットワーク アダプター間で直接ルーティングされます。 ただし、拡張可能スイッチ パケット配信に関係のない、ために、これらのパケットには拡張可能スイッチ ポートのポリシーは適用されません。 これにより、ポートへのアクセス ポリシーが含まれます。 リスト (Acl) とサービスの品質 (QoS) を制御します。
+仮想ネットワークアダプターと物理ネットワークアダプターが割り当てられると、VF と VM ネットワークアダプターの間でパケットが直接ルーティングされます。 ただし、拡張可能なスイッチはパケット配信には関係しないため、拡張可能なスイッチポートポリシーはこれらのパケットには適用されません。 これには、アクセス制御リスト (Acl) およびサービスの品質 (QoS) のポートポリシーが含まれます。
 
-転送拡張機能を拡張可能スイッチは、子パーティションに VF の割り当てを削除するを発行して、 **NDIS\_状態\_切り替える\_ポート\_削除\_VF**状態を示す値。 この通知は、パケットの VM ネットワーク アダプターと基になる、SR-IOV 対応の物理アダプターの VF 間で直接の代わりに、拡張可能スイッチ ポート経由で配信されるとします。 これにより、拡張可能スイッチ ポートの受信または拡張可能スイッチ ポート経由で送信されるパケットに適用するポリシー。
+拡張可能なスイッチ転送拡張機能では、 **NDIS\_の状態\_スイッチ\_\_ポート**を発行することによって、子パーティションへの vf の割り当てを解除し\_vf 状態の表示を削除することができます。 このように指定すると、VM ネットワークアダプターと、基になる SR-IOV 物理アダプターの VF の間ではなく、拡張可能なスイッチポートを介してパケットが配信されます。 これにより、拡張可能なスイッチポートで受信または送信されたパケットに、拡張可能なスイッチポートポリシーを適用できます。
 
-転送拡張機能は、ときに、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態の表示を拡張可能スイッチのポートを指定しますVM のネットワーク アダプターが接続されています。
+転送拡張機能によって NDIS の\_状態が\_された場合は、 **\_ポート\_削除\_VF**の状態の表示を削除すると、VM ネットワークアダプターが接続されている拡張可能なスイッチポートが指定されます。
 
-拡張可能スイッチの転送拡張機能の詳細については、次を参照してください。[転送拡張機能](https://docs.microsoft.com/windows-hardware/drivers/network/forwarding-extensions)します。
+拡張可能なスイッチ転送拡張機能の詳細については、「[拡張機能の転送](https://docs.microsoft.com/windows-hardware/drivers/network/forwarding-extensions)」を参照してください。
 
-### <a href="" id="issuing"></a>NDIS を発行するためのガイドライン\_状態\_スイッチ\_ポート\_削除\_VF 状態表示
+### <a href="" id="issuing"></a>NDIS\_状態を発行するためのガイドライン\_スイッチ\_ポート\_削除\_VF ステータス表示
 
-発行するには、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態を示す値、転送拡張機能が次の手順に従う必要があります。
+NDIS\_の状態を発行するには **\_\_ポートを切り替え\_、VF**の状態を示す\_を削除します。転送拡張機能は次の手順に従う必要があります。
 
-1.  転送拡張機能を初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)用の構造、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**を示す値。 この表示では、転送拡張機能設定の次のメンバー、 **NDIS\_状態\_INDICATION**構造。
+1.  転送拡張機能は、ndis の **\_ステータス\_スイッチ\_ポート**の NDIS [ **\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造を初期化し、\_VF の表示を削除します。 このことを示すために、転送拡張機能は、 **NDIS\_状態\_** 表示構造体の次のメンバーを設定します。
 
-    -   **StatusCode**にメンバーを設定する必要があります**NDIS\_状態\_スイッチ\_ポート\_削除\_VF**します。
+    -   **StatusCode**メンバーを NDIS\_STATUS に設定し、 **\_\_ポート\_切り替えて\_VF を削除**する必要があります。
 
-    -   **StatusBuffer**にメンバーを設定する必要があります**NULL**します。
+    -   **Statusbuffer**メンバーは**NULL**に設定する必要があります。
 
-    -   **StatusBufferSize**を 0 に設定する必要があります。
+    -   **Statusbuffersize**は0に設定する必要があります。
 
-2.  転送拡張機能を初期化します、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体。 VF の割り当てを削除するには転送拡張機能は、次のように、メンバーを設定する必要があります。
+2.  転送拡張機能は、 [**NDIS\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造を初期化します。 VF 割り当てを削除するには、転送拡張機能で次のようにメンバーを設定する必要があります。
 
-    -   **DestinationPortId**メンバーは、VM のネットワーク アダプターが接続されている拡張可能スイッチ ポートの識別子を設定する必要があります。
+    -   **DestinationPortId**メンバーは、VM ネットワークアダプターが接続される拡張可能なスイッチポートの識別子に設定する必要があります。
 
-    -   **DestinationNicIndex**メンバーは、指定したポートに接続されている VM ネットワーク アダプターのインデックス値に設定する必要があります。
+    -   **DestinationNicIndex**メンバーは、指定されたポートに接続されている VM ネットワークアダプターのインデックス値に設定する必要があります。
 
-    -   **SourcePortId**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_ポート\_ID**します。
+    -   **SourcePortId**メンバーは、**既定\_ポート\_ID に\_スイッチ\_、NDIS**に設定する必要があります。
 
-    -   **SourceNicIndex**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_NIC\_インデックス**します。
+    -   **Sourcenicindex**メンバーは、**既定\_\_NIC\_インデックス**に設定する必要があります\_に設定する必要があります。
 
-    -   **StatusIndication**メンバーのアドレスに設定する必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)用の構造、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**を示す値。
+    -   **Statusindication**メンバーは、NDIS\_ステータスの\_表示構造のアドレスに設定されている必要があります。 [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 、\_の **\_スイッチ\_ポート\_、VF**を示すを削除します。
 
-3.  転送拡張機能を初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)用の構造、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)を示す値。 この表示では、転送拡張機能設定の次のメンバー、 **NDIS\_状態\_INDICATION**構造。
+3.  転送拡張機能によって、ndis [ **\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示されます。 [**ndis\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示されます。 このことを示すために、転送拡張機能は、 **NDIS\_状態\_** 表示構造体の次のメンバーを設定します。
 
-    -   **StatusCode**にメンバーを設定する必要があります[ **NDIS\_状態\_スイッチ\_NIC\_状態**](ndis-status-switch-nic-status.md)します。
+    -   **StatusCode**メンバーを[**NDIS\_status\_SWITCH\_NIC\_status**](ndis-status-switch-nic-status.md)に設定する必要があります。
 
-    -   **StatusBuffer**メンバーのアドレスに設定する必要があります、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体。
+    -   **Statusbuffer**メンバーは、 [**NDIS\_スイッチ\_NIC\_状態\_示さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)れる構造体のアドレスに設定する必要があります。
 
-    -   **StatusBufferSize**の長さ (バイト単位) を設定する必要があります、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造と[ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)用の構造、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**を示す値。
+    -   **Statusbuffersize**は、NDIS [ **\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体の長さ (バイト単位) に設定されている必要があります。 **\_の状態\_\_ポートを切り替え\_、VF**を示す\_を削除します。
 
-4.  転送拡張機能を呼び出す必要があります[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)を VM のネットワーク アダプターの参照カウンターをインクリメントします。 場合*ReferenceSwitchNic* NDIS が完了しなかった\_状態\_成功すると、転送拡張機能は、状態を示す値を転送する必要があります。
+4.  転送拡張機能は、参照用のモジュールを呼び出して、VM ネットワークアダプターの参照[*カウンターをインクリメント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)する必要があります。 参照/非表示が NDIS\_STATUS\_SUCCESS で完了しない場合、転送拡張*機能は状態*の表示を転送できません。
 
-    **注**  転送拡張機能が受信した場合、 [OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)設定呼び出さないでください VM アダプターの要求[。*ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)も、状態を示す値を転送します。
+    **注**  転送拡張機能が OID を受信した場合は、VM アダプターに対して[\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)セット要求[*を呼び出す*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)ことはできません。また、参照ファイルを呼び出して、ステータス表示を転送しないでください。
 
      
 
-5.  転送拡張機能を呼び出す[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)転送するように、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)拡張可能スイッチのドライバー スタックの拡張機能に関連します。 転送拡張機能は、この関数を呼び出しとき、に、設定、 *StatusIndication*パラメーターへのポインターを**NDIS\_状態\_INDICATION** の構造[**NDIS\_状態\_スイッチ\_NIC\_状態**](ndis-status-switch-nic-status.md)を示す値。
+5.  転送拡張機能は、 [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)を呼び出して、拡張可能なスイッチドライバースタック内の拡張機能に[**NDIS\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)を転送します。 転送拡張機能がこの関数を呼び出すと、 *statusindication*パラメーターが、NDIS\_STATUS\_スイッチ\_NIC の **\_ステータス\_** 表示構造へのポインターに設定され[ **\_状態**](ndis-status-switch-nic-status.md)を示します。
 
-6.  後[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)返します、転送拡張機能を呼び出す必要があります[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)を下げるには、VM のネットワーク アダプターの参照カウンターです。
+6.  [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)が返された後、転送拡張機能は、VM ネットワークアダプターの参照カウンターを減らすために[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)を呼び出す必要があります。
 
-**注**  転送拡張機能が、転送拡張機能を削除する VF 割り当てごとに、前の手順に従う必要があります。
+転送拡張機能は、転送拡張機能によって削除される各 VF 割り当てについて、前の手順に従う必要がある  に**注意**してください。
 
  
 
-転送拡張機能で状態インジケーターを転送する方法の詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](https://docs.microsoft.com/windows-hardware/drivers/network/filter-module-status-indications)します。
+転送拡張機能がステータス表示を転送する方法の詳細については、「[フィルターモジュールの状態](https://docs.microsoft.com/windows-hardware/drivers/network/filter-module-status-indications)の表示」を参照してください。
 
 ### <a name="guidelines-for-determining-vf-assignments"></a>VF の割り当てを決定するためのガイドライン
 
-転送拡張機能の OID クエリ要求を発行して仮想ネットワーク アダプターの現在の VF 割り当てを列挙できる[OID\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)します。 この要求を返します、 [ **NDIS\_スイッチ\_NIC\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_array)構造体の配列を含む[ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体。 各**NDIS\_スイッチ\_NIC\_パラメーター**構造体は、次の環境のいずれかで公開されているネットワーク アダプターのパラメーターを指定します。
+転送拡張機能は、 [oid\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)の oid クエリ要求を発行することによって、仮想ネットワークアダプターの現在の VF 割り当てを列挙できます。 この要求は、ndis [ **\_スイッチ\_nic\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array)構造体を返します。これには、 [**ndis\_スイッチ\_nic\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体の配列が含まれています。 各**NDIS\_スイッチ\_NIC\_parameters**構造体は、次のいずれかの環境で公開されているネットワークアダプターのパラメーターを指定します。
 
--   HYPER-V 親パーティションで実行されている管理オペレーティング システム。
+-   Hyper-v の親パーティションで実行されている管理オペレーティングシステム。
 
-    このオペレーティング システムで公開されているネットワーク アダプターがで指定された、 [ **NDIS\_スイッチ\_NIC\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_nic_type)列挙値の**NdisSwitchNicTypeExternal**または**NdisSwitchNicTypeInternal**します。
+    このオペレーティングシステムで公開されているネットワークアダプターは、 [**NDIS\_スイッチ\_NIC\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)列挙値**NdisSwitchNicTypeExternal**または**NdisSwitchNicTypeInternal**で指定されます。
 
--   HYPER-V 子パーティションで実行されているゲスト オペレーティング システム。
+-   Hyper-v 子パーティションで実行されるゲストオペレーティングシステム。
 
-    このオペレーティング システムで公開されているネットワーク アダプターがで指定された、 [ **NDIS\_スイッチ\_NIC\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_nic_type)列挙値の**NdisSwitchNicTypeSynthetic**または**NdisSwitchNicTypeEmulated**します。
+    このオペレーティングシステムで公開されているネットワークアダプターは、 [**NDIS\_スイッチ\_NIC\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)列挙値**NdisSwitchNicTypeSynthetic**または**NdisSwitchNicTypeEmulated**で指定されます。
 
-OID のクエリの要求の場合は[OID\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)NDIS の状態になって完了\_状態\_成功すると、転送拡張機能は VF を判断できます各を調べることによって割り当て[ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)返された配列の構造体。 場合、 **VFAssigned**のメンバー、 **NDIS\_スイッチ\_NIC\_パラメーター**構造に設定されている**TRUE**、ネットワーク アダプター対応する、 **NDIS\_スイッチ\_NIC\_パラメーター**構造体は、VF に割り当てられます。
+[Oid\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)の oid クエリ要求が、NDIS\_STATUS\_SUCCESS の状態で完了した場合、転送拡張機能は各[**ndis\_スイッチを検査することで VF の割り当てを確認でき @no__t**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)返された配列内の\_パラメーター構造体 (_s)。 **Ndis\_スイッチ\_nic\_parameters**構造体の**vfassigned**メンバーが**TRUE**に設定されている場合、ndis\_スイッチに対応するネットワークアダプター **\_nic\_パラメーター**構造体は VF に割り当てられます。
 
-転送拡張機能は発行することによって、割り当てを削除することができます、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態を示す値。 この場合、転送拡張機能を設定する必要があります、 **DestinationPortId**のメンバー、 [ **NDIS\_スイッチ\_NIC\_状態\_を示す値** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)の値に、 **PortId**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体。
+転送拡張機能は、NDIS\_の状態を発行することによって割り当てを削除できます。 **\_スイッチ\_ポート\_削除\_VF**の状態を示します。 この場合、転送拡張機能は、ndis [ **\_スイッチ\_NIC\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)の**DestinationPortId**メンバーを、Ndis\_スイッチの**ポート ID**メンバーの値に示すように設定する必要があり[ **@no__t11_ NIC\_パラメーター構造体 (_m)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 
-発行する方法について、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態を示す値を参照してください[発行するためのガイドライン、**NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態表示](#issuing)します。
+Ndis\_の状態を発行する方法の詳細については **\_\_\_ポートを切り替える\_VF**の状態の表示を削除する」を参照してください。 [NDIS\_の状態を発行するためのガイドラインについては\_\_スイッチ\_ポートを参照してください **\_VF**の状態](#issuing)の表示を削除します。
 
 <a name="requirements"></a>要件
 ------------
@@ -112,11 +112,11 @@ OID のクエリの要求の場合は[OID\_スイッチ\_NIC\_配列](https://do
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -125,17 +125,17 @@ OID のクエリの要求の場合は[OID\_スイッチ\_NIC\_配列](https://do
 
 
 ****
-[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)
+[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_状態\_スイッチ\_NIC\_状態**](ndis-status-switch-nic-status.md)
+[**NDIS\_状態\_スイッチ\_NIC\_の状態**](ndis-status-switch-nic-status.md)
 
-[**NDIS\_スイッチ\_NIC\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_array)
+[**NDIS\_スイッチ\_NIC\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array)
 
-[**NDIS\_SWITCH\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
+[**NDIS\_スイッチ\_NIC\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 
-[**NDIS\_スイッチ\_NIC\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_nic_type)
+[**NDIS\_スイッチ\_NIC\_の種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)
 
 [OID\_スイッチ\_NIC\_配列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)
 

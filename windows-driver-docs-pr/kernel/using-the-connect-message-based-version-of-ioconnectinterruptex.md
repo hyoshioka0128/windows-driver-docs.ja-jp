@@ -5,33 +5,33 @@ ms.assetid: 8e06c6aa-85de-4ed2-ac0d-0179201d1272
 keywords:
 - IoConnectInterruptEx
 - CONNECT_MESSAGE_BASED
-- メッセージ シグナル割り込み WDK カーネル
-- 割り込みを自動検出の WDK カーネル
+- メッセージシグナル割り込み (WDK カーネル)
+- 自動割り込み検出 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5db43ff53c25aa74441935a850a48247b6c2b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2b243220efad966ef8d1964fe5d727d3c13c5ffb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365783"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838331"
 ---
-# <a name="using-the-connect_message_based-version-of-ioconnectinterruptex"></a>接続を使用して\_メッセージ\_IoConnectInterruptEx のベース バージョン
+# <a name="using-the-connect_message_based-version-of-ioconnectinterruptex"></a>CONNECT\_MESSAGE\_BASED バージョンの IoConnectInterruptEx を使用する
 
 
-Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_メッセージ\_ベース バージョンの[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)のドライバーの ISR を登録するにはメッセージ シグナル割り込みです。 ドライバーの接続の値を指定する\_メッセージ\_に基づくの*パラメーター*-&gt;**バージョン**のメンバーを使用して*パラメーター*-&gt;**MessageBased**操作の他のパラメーターを指定します。
+Windows Vista 以降のオペレーティングシステムでは、ドライバーは、接続\_メッセージ\_ベースバージョンの[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を使用して、ドライバーのメッセージシグナル割り込みに ISR を登録できます。 ドライバーは&gt;**バージョン**-*パラメーター*に基づいて CONNECT\_MESSAGE\_の値を指定し、*パラメーター*のメンバー-**messagebased**を使用して他のパラメーターを指定します。操作の。&gt;
 
--   *パラメーター * * *-&gt;MessageBased.PhysicalDeviceObject** デバイスの PDO を指定する ISR サービス。 デバイス オブジェクトは、デバイスのメッセージ シグナル割り込みを自動的に識別するために使用されます。
+-   *パラメーター * * *-&gt;MessageBased. PhysicalDeviceObject**、ISR がサービスを使用するデバイスの PDO を指定します。 システムは、デバイスオブジェクトを使用して、デバイスのメッセージシグナル割り込みを自動的に識別します。
 
--   *パラメーター * * *-&gt;MessageBased.MessageServiceRoutine** を指す、 [ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)中に、日常的な*パラメーター * * *-&gt;MessageBased.ServiceContext** として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptMessageService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター * * *-&gt;MessageBased. MessageServiceRoutine** は[*InterruptMessageService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kmessage_service_routine)ルーチンをポイントしますが、*パラメーター * * *-&gt;messagebased. ServiceContext** は、システムによって渡される値を*ServiceContext*パラメーターを*InterruptMessageService*に指定します。 ドライバーはこれを使用してコンテキスト情報を渡すことができます。 コンテキスト情報を渡す方法の詳細については、「 [ISR コンテキスト情報の提供](providing-isr-context-information.md)」を参照してください。
 
--   ドライバーでは、フォールバックを指定できますも*InterruptMessageService*で日常的な*パラメーター * **-&gt;MessageBased.FallBackServiceRoutine**します。デバイスは、行ベースの割り込みがないメッセージ シグナル割り込みは、システムは登録代わりに、 *InterruptMessageService*行ベースの割り込みサービス ルーチン。この場合、システムに渡します*パラメーター * * *-&gt;MessageBased.ServiceContext** として、 *ServiceContext*パラメーターを[ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)します。 **IoConnectInterruptEx**更新*パラメーター * * *-&gt;バージョン** connect\_行\_ベースのフォールバックのルーチンが登録されている場合。
+-   ドライバーでは、 *パラメーター * **-&gt;Messagebased. FallBackServiceRoutine**でフォールバック InterruptMessageService ルーチンを指定することもできます。デバイスに行ベースの割り込みがあるにもかかわらず、メッセージシグナルの割り込みがない場合は、行ベースの割り込みを処理するために*InterruptMessageService*ルーチンが登録されます。この場合、システムは*パラメーター * * *-&gt;**  *ServiceContext*パラメーターとして[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)に渡します。 **IoConnectInterruptEx**は、*パラメーター * * *-&gt;Version** を更新して、フォールバックルーチンが登録されているかどうかに基づいて\_行\_を接続します。
 
--   *パラメーター * * *-&gt;MessageBased.ConnectionContext** をいずれかへのポインターを受け取る変数を指す、 [ **IO\_INTERRUPT\_メッセージ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_interrupt_message_info) (の*InterruptMessageService*) 構造体または[ **KINTERRUPT** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造 (の*InterruptService*). ドライバーは、受信したポインターを使用して ISR を削除することができます。 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
+-   *Parameters * * *-&gt;MessageBased. ConnectionContext** は、 [**IO\_割り込み\_MESSAGE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_interrupt_message_info) ( *InterruptMessageService*) 構造体また[**はのいずれかへのポインターを受け取る変数を指します。KINTERRUPT**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体 ( *InterruptService*の場合)。 ドライバーは、受信したポインターを使用して ISR を削除できます。 詳細については、「 [ISR の削除](removing-an-isr.md)」を参照してください。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;MessageBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーでは、必要に応じて、*パラメーター * * *-&gt;MessageBased. スピン*ロックを指定できます。これは、システムが ISR と同期するときに使用します。 ほとんどのドライバーでは、 **NULL**を指定するだけで、ドライバーの代わりにスピンロックを割り当てることができます。 ISR との同期の詳細については、「[デバイスデータへのアクセスの同期](synchronizing-access-to-device-data.md)」を参照してください。
 
-次のコード例は、登録する方法を示します、 *InterruptMessageService* CONNECT を使用して日常的な\_メッセージ\_ベース。
+次のコード例は、CONNECT\_MESSAGE\_BASED を使用して、 *InterruptMessageService*ルーチンを登録する方法を示しています。
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_クロック\_位置\_マーク
-description: KSEVENT\_クロック\_位置\_マークのイベント、時計の特定の日時に達したときに発生します。
+title: KSEVENT\_CLOCK\_POSITION\_マーク
+description: 時計の特定の時刻に達したときに、KSEVENT\_CLOCK\_POSITION\_MARK イベントが発生します。
 ms.assetid: 489e7441-41e9-40e5-8bf5-0bff2fda9f27
 keywords:
-- KSEVENT_CLOCK_POSITION_MARK ストリーミング メディア デバイス
+- KSEVENT_CLOCK_POSITION_MARK ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1faf2e794817333cb415bce67cf4c83dacc954d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7b231c62b0acfd1bdf3ed4119ca085739a39406
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382435"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845521"
 ---
-# <a name="kseventclockpositionmark"></a>KSEVENT\_クロック\_位置\_マーク
+# <a name="ksevent_clock_position_mark"></a>KSEVENT\_CLOCK\_POSITION\_マーク
 
 
-KSEVENT\_クロック\_位置\_マークのイベント、時計の特定の日時に達したときに発生します。
+時計の特定の時刻に達したときに、KSEVENT\_CLOCK\_POSITION\_MARK イベントが発生します。
 
-### <a name="span-ideventdataspanspan-ideventdataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベント データ
+### <a name="span-idevent_dataspanspan-idevent_dataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベントデータ
 
-型の構造体を使用して、 [ **KSEVENT\_時間\_マーク**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_time_mark)として、 *OutBuffer*パラメーターを呼び出すときに[ **KsSynchronousDeviceControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)このイベントに登録します。
+[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)を呼び出してこのイベントに登録するときに、 [**KSEVENT\_\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_time_mark)型の構造体を*OUTBUFFER*パラメーターとしてマークします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-イベントを登録する方法については、次を参照してください。 [KS イベント](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)します。
+イベントに登録する方法の詳細については、「 [KS イベント](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)」を参照してください。
 
  
 

@@ -1,38 +1,38 @@
 ---
-title: IPsec オフロード バージョン 2 で NET_BUFFER_LIST 情報にアクセスします。
-description: IPsec Offload Version 2 での NET_BUFFER_LIST 情報へのアクセス
+title: IPsec オフロードバージョン2での NET_BUFFER_LIST 情報へのアクセス
+description: IPsec オフロードバージョン2での NET_BUFFER_LIST 情報へのアクセス
 ms.assetid: 0c27b594-2c61-4459-96df-1d7445100bc5
 keywords:
-- IPsecOV2 WDK TCP/IP トランスポート、NET_BUFFER_LIST 情報
+- IPsecOV2 WDK TCP/IP transport, NET_BUFFER_LIST 情報
 - NET_BUFFER_LIST
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f826f7ae3c64f2f951b49b98c95f5aa8f60c32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ff7547cbb48d2c0a72c74bd8d730032f9b95e83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384427"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838253"
 ---
-# <a name="accessing-netbufferlist-information-in-ipsec-offload-version-2"></a>NET にアクセスする\_バッファー\_IPsec オフロード バージョン 2 でリストの情報
+# <a name="accessing-net_buffer_list-information-in-ipsec-offload-version-2"></a>IPsec オフロードバージョン2での NET\_BUFFER\_LIST 情報へのアクセス
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
-
-
+\[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
 
-NDIS でアウト オブ バンド (OOB) データを提供する、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体を指定します、リンク リスト[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 **NetBufferListInfo**メンバーは、NET のすべてに共通する情報が含まれている値の配列\_リスト内のバッファーの構造体。
 
-次の識別子を使用して、 [ **NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)設定および IPsec オフロード バージョン 2 (IPsecOV2) を取得するマクロ、でOOBデータ**NetBufferListInfo**配列。
+
+NDIS では、net [ **\_buffer\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NetBufferListInfo**メンバーに帯域外 (OOB) データが提供されます。このデータは、 [**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造のリンクリストを指定します。 **NetBufferListInfo**メンバーは、リスト内のすべての NET\_バッファー構造に共通する情報を含む値の配列です。
+
+次の識別子を[**NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロと共に使用して、IPsec オフロードバージョン 2 (IPsecOV2) の OOB データを**NetBufferListInfo**配列に設定して取得します。
 
 <a href="" id="ipsecoffloadv2netbufferlistinfo"></a>**IPsecOffloadV2NetBufferListInfo**  
-NIC に TCP/IP プロトコルからの IPsec タスク オフロードで使用される IPsecOV2 情報を指定します 指定すると**IPsecOffloadV2NetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)構造体。
+TCP/IP プロトコルから NIC への IPsec タスクのオフロードに使用される IPsecOV2 情報を指定します。 **IPsecOffloadV2NetBufferListInfo**、NET\_BUFFER\_list を指定すると\_情報は[**NDIS\_IPSEC\_オフロード\_V2\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)を返します。データ.
 
 <a href="" id="ipsecoffloadv2tunnelnetbufferlistinfo"></a>**IPsecOffloadV2TunnelNetBufferListInfo**  
-NIC に TCP/IP プロトコルからの IPsec タスク オフロードで使用される IPsecOV2 トンネル情報を指定します 指定すると**IPsecOffloadV2TunnelNetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_IPSEC\_オフロード\_V2\_トンネル\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info)構造体。
+TCP/IP プロトコルから NIC への IPsec タスクのオフロードに使用される IPsecOV2 トンネル情報を指定します。 **IPsecOffloadV2TunnelNetBufferListInfo**、NET\_BUFFER\_list を指定すると\_情報は、 [**NDIS\_IPSEC\_オフロード\_V2\_トンネル\_NET\_BUFFER\_list @no_ を返し_t_13_ INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info)構造体。\_
 
 <a href="" id="ipsecoffloadv2headernetbufferlistinfo"></a>**IPsecOffloadV2HeaderNetBufferListInfo**  
-IPsec ヘッダーでのヘッダー オフセットを指定します、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)と、次のヘッダーとパッドの長さの値。 指定すると**IPsecOffloadV2HeaderNetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_IPSEC\_オフロード\_V2\_ヘッダー\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)構造体。
+[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)の IPsec ヘッダーのヘッダーオフセットと、次のヘッダーと埋め込み長の値を指定します。 **IPsecOffloadV2HeaderNetBufferListInfo**、NET\_BUFFER\_list を指定した場合\_情報は、 [**NDIS\_IPSEC\_オフロード\_V2\_ヘッダー\_NET\_BUFFER\_list を返し\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)構造体。
 
  
 

@@ -3,30 +3,30 @@ title: ストリーム形式の選択
 description: ストリーム形式の選択
 ms.assetid: 876eca52-4d5e-45bd-90df-ff4b6405078d
 keywords:
-- ビデオ キャプチャ WDK AVStream、stream の形式
-- ビデオの WDK AVStream をキャプチャするには、ストリームを形式します。
-- ストリーム形式 WDK のビデオのキャプチャ
-- WDK のビデオ キャプチャを書式設定します。
-- パフォーマンス データの交差部分 WDK ビデオのキャプチャします。
-- データの交差部分を WDK のビデオのキャプチャします。
-- 交差部分を WDK のビデオのキャプチャ
+- ビデオキャプチャ WDK AVStream、ストリーム形式
+- ビデオのキャプチャ WDK AVStream、ストリーム形式
+- ストリーミング形式 WDK ビデオキャプチャ
+- WDK ビデオキャプチャのフォーマット
+- データの共通部分の実行 WDK ビデオキャプチャ
+- データの共通部分 (WDK ビデオキャプチャ)
+- WDK ビデオキャプチャの共通部分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d791905e9957cf986915ba8933bd4d4f155398f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d464f3604888513a92bbc3d45c865cd74475f36c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358411"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843322"
 ---
 # <a name="selecting-a-stream-format"></a>ストリーム形式の選択
 
 
-ビデオ キャプチャ デバイスには、さまざまな異なる形式でビデオをキャプチャできます。 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造を使用して、幅、高さ、粒度、トリミング、に関する情報を伝達し、フレーム レート、特定のカラー スペースをします。 構造体[ **KS\_DATARANGE\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)と[ **KS\_DATARANGE\_VIDEO2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2) KSDATARANGE 構造の拡張機能は、ビデオのキャプチャの形式を記述するために使用する必要があります。 使用 KS\_DATARANGE\_ビデオ フレームのみを説明するビデオです。 使用 KS\_DATARANGE\_VIDEO2 ビデオ フィールドとビデオのフレーム、bob の有無について説明します、設定を一元管理したりします。
+ビデオキャプチャデバイスは、さまざまな形式でビデオをキャプチャできます。 [**Ksk datarの**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造は、特定の色空間の幅、高さ、粒度、トリミング、およびフレームレートに関する情報を伝えるために使用されます。 [ **\_video**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)および[**KS\_DATARANGE\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video2)の構造\_体は、ksdatarange 構造体の拡張機能であり、ビデオキャプチャ形式を記述するために使用する必要があります。 ビデオフレームのみを記述するには、KS\_DATARANGE\_ビデオを使用します。 VIDEO2 を\_\_使用して、ビデオフィールドとビデオフレームを記述します。これには、bob またはの設定の有無は関係ありません。
 
-ストリームの形式を選択するプロセスが呼び出されます*データの交差部分を実行する*します。 Stream クラス インターフェイスの送信、 [ **SRB\_取得\_データ\_交差**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection) Stream クラスのミニドライバーに要求データの積集合を実行します。 ミニドライバーは、通常を使用して要求されたデータ範囲の有効性を判断して、提供されたデータ範囲からの特定のストリームの形式を選択を担当[ **KS\_DATAFORMAT\_VIDEOINFOHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader)または[ **KS\_DATAFORMAT\_VIDEOINFOHEADER2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader2)構造体。
+ストリーム形式を選択するプロセスは、*データ積集合の実行*と呼ばれます。 ストリームクラスインターフェイスは、データの積集合を実行するために、ストリームクラスミニドライバーに[ **\_データ\_共通部分要求\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection)を送信します。 ミニドライバーは、要求されたデータ範囲の有効性を判断し、指定されたデータ範囲から特定のストリーム形式を選択します。通常は、 [**ks\_DATAFORMAT\_VIDEOINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader)または ks を使用し[ **\_DATAFORMAT\_VIDEOINFOHEADER2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader2)構造体。
 
-最後に、次に示すよう、ミニドライバーは結果の形式の特定のメンバーを設定する必要があります。
+最後に、ミニドライバーは、次に示すように、結果の形式の特定のメンバーを設定する必要があります。
 
 ```cpp
 .

@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_CONNECTION_QUALITY_PARAMETERS
-description: WDI_TLV_CONNECTION_QUALITY_PARAMETERS では、目的の Wi-fi 接続品質のヒントを含む TLV です。
+description: WDI_TLV_CONNECTION_QUALITY_PARAMETERS は、必要な Wi-fi 接続品質ヒントを含む TLV です。
 ms.assetid: A371FD3A-5BF9-4921-AB8E-1651789FA9A1
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CONNECTION_QUALITY_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_CONNECTION_QUALITY_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e519a5a255d37f3cb4f72ea0f8ef82523b404b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 323d5633202b7394c9150c71c43c9c736a4617c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358577"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843387"
 ---
-# <a name="wditlvconnectionqualityparameters"></a>WDI\_TLV\_接続\_品質\_パラメーター
+# <a name="wdi_tlv_connection_quality_parameters"></a>WDI\_TLV\_接続\_品質\_パラメーター
 
 
-WDI\_TLV\_接続\_品質\_パラメーターが必要な Wi-fi 接続品質のヒントを含む TLV します。
+WDI\_TLV\_接続\_品質\_パラメーターは、必要な Wi-fi 接続品質ヒントを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,18 @@ WDI\_TLV\_接続\_品質\_パラメーターが必要な Wi-fi 接続品質の�
 ## <a name="length"></a>長さ
 
 
-Uint32 型のサイズをバイト単位で。
+UINT32 のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型   | 説明                                                                                                                          |
+| タスクバーの検索ボックスに   | 説明                                                                                                                          |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 必要な Wi-fi 接続品質ヒントで定義された[ **WDI\_接続\_品質\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint)します。 |
+| UINT32 | [**WDI\_Connection\_quality\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint)で定義されている、必要な Wi-fi 接続品質ヒント。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,7 +56,7 @@ Uint32 型のサイズをバイト単位で。
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

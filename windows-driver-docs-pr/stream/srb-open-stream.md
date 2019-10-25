@@ -1,9 +1,9 @@
 ---
-title: SRB\_オープン\_ストリーム
-description: SRB\_オープン\_ストリーム
+title: SRB\_開いている\_ストリーム
+description: SRB\_開いている\_ストリーム
 ms.assetid: 53732add-e304-4128-9235-525ff073d777
 keywords:
-- SRB_OPEN_STREAM ストリーミング メディア デバイス
+- SRB_OPEN_STREAM ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,58 +12,58 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a80cf5bab4605cb63573fba8c1b8efab22dc3462
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c5731cd17a738868667a0bd25e9c2906eda6556
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377886"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843289"
 ---
-# <a name="srbopenstream"></a>SRB\_オープン\_ストリーム
+# <a name="srb_open_stream"></a>SRB\_開いている\_ストリーム
 
 
 ## <span id="ddk_srb_open_stream_ks"></span><span id="DDK_SRB_OPEN_STREAM_KS"></span>
 
 
-クラス ドライバーは、ストリームを開くには、この要求を送信します。
+クラスドライバーは、この要求を送信してストリームを開きます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-ミニドライバーは、SRB の状態として、次のいずれかを設定する必要があります。
+ミニドライバーは、SRB の状態として次のいずれかを設定する必要があります。
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>ステータス\_成功  
-コマンドが正常に完了を示します。
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状態\_成功  
+コマンドが正常に完了したことを示します。
 
-<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>ステータス\_いない\_実装されていません  
-関数が、ミニドライバーでサポートされていないことを示します。
+<span id="STATUS_NOT_IMPLEMENTED"></span><span id="status_not_implemented"></span>状態\_\_実装されていません  
+関数がミニドライバーによってサポートされていないことを示します。
 
-<span id="STATUS_TOO_MANY_NODES"></span><span id="status_too_many_nodes"></span>ステータス\_すぎます\_多く\_ノード  
-このストリームを開くには、十分なリソースがないことを示します。
+<span id="STATUS_TOO_MANY_NODES"></span><span id="status_too_many_nodes"></span>ステータス\_多くの\_ノード\_すぎます  
+このストリームを開くためのリソースが不足していることを示します。
 
-<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>ステータス\_IO\_デバイス\_エラー  
+<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状態\_IO\_デバイス\_エラー  
 ハードウェア障害が発生したことを示します。
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**に開かれるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor) への応答で、ミニドライバーは、構造体[**SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。 クラスのドライバーで開いているストリームを提供するデータ形式を指定する*pSrb*-&gt;**CommandData** - &gt; **OpenFormat**します。
+クラスドライバーは、 *pSrb*-&gt;**Streamobject**-&gt;streamobject を使用して、 *pSrb*-&gt;**streamobject** [ **\_オブジェクトバッファーに HW\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)を提供します。を開くストリームの番号をに設定します。 *PSrb*ポインターは、 [ **\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造体を指す HW\_ストリームを指します。 **Streamnumber**は、 [**SRB\_GET\_stream\_INFO**](srb-get-stream-info.md)要求に応答してミニドライバーが提供する、 [**HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)構造内のストリームのオフセットに対応します。 クラスドライバーは、開いているストリームが*pSrb*-&gt;**commanddata**-&gt;**openformat**で提供する必要があるデータ形式を指定します。
 
-ミニドライバーは、この要求を受信したときに、この時点で、指定したストリームを開くことができるかどうかそれを判断する必要があります。 ミニドライバーを確認することも、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)で形式が渡されます。 SRB の OpenFormat フィールドです。 ストリームを開くには場合、ミニドライバーは、ハードウェアを更新\_ストリーム\_オブジェクトの構造、および状態を返します。\_成功します。 開いているストリーム インスタンスの最大数、またはこのストリームを開くために必要なハードウェア リソースが使用可能な、ミニドライバーは、該当するエラー状態を返します。
+ミニドライバーは、この要求を受信すると、指定されたストリームをこの時点で開くことができるかどうかを判断する必要があります。 また、ミニドライバーは、渡された[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)形式も検証する必要があります。 SRB の OpenFormat フィールド。 ストリームを開くことができる場合、ミニドライバーは、HW\_ストリーム\_オブジェクト構造を更新し、STATUS\_SUCCESS を返します。 ストリームインスタンスの最大数が既に開いている場合、またはこのストリームを開くために必要なハードウェアリソースが使用できない場合、ミニドライバーは適切なエラー状態を返します。
 
-**ときに、SRB\_オープン\_ミニドライバーがストリームのコマンドを受信した、ようにミニドライバーにする必要があります。**
+**SRB\_OPEN\_STREAM コマンドがミニドライバーによって受信されると、ミニドライバーは次のことを行う必要があります。**
 
-1.  ストリームのインスタンスの最大数が超過したいないことと、ストリームのインデックス値が有効であるを確認します。
+1.  ストリームインスタンスの最大数が超過していないこと、およびストリームインデックスの値が有効であることを確認してください。
 
-2.  要求されたデータの形式がこのストリームの有効なことを確認します。
+2.  要求されたデータ形式がこのストリームに対して有効であることを確認してください。
 
 3.  ストリームの形式を設定します。
 
-4.  任意のストリームから Irp をキャンセルできるように、デバイスの拡張機能ですべてのストリーム拡張機能の構造の配列を維持します。
+4.  任意のストリームから Irp を取り消すことができるように、デバイス拡張機能のすべてのストリーム拡張構造の配列を保持します。
 
-5.  ストリームのデータ ハンドラーとコントロール ハンドラーに、ストリーム オブジェクトにポインターを指定します。
+5.  ストリームオブジェクトのポインターをストリームデータハンドラーとコントロールハンドラーに指定します。
 
-6.  渡されたデータ バッファーのアドレスの場合は、デバイスでは、DMA に直接実行はストリームの DMA フラグのオブジェクト セット、 **ReceiveDataPacket**ルーチン。 ドライバーが論理アドレスを使用して渡されたデータ バッファーにアクセスする場合は、ストリーム オブジェクトで PIO フラグを設定もします。
+6.  **ReceiveDataPacket**ルーチンに渡されたデータバッファーアドレスに対してデバイスが dma を直接実行する場合は、ストリームオブジェクトの dma フラグを設定します。 論理アドレス指定を使用して渡されたデータバッファーにドライバーがアクセスする場合は、ストリームオブジェクトで PIO フラグも設定します。
 
-7.  ストリームでクロックのサポートが利用可能な場合でこれを示す、 **HwClockObject**ストリーム オブジェクト内のメンバー。
+7.  ストリームでクロックサポートを利用できる場合は、ストリームオブジェクトの**HwClockObject**メンバーを通じてこれを示します。
 
  
 

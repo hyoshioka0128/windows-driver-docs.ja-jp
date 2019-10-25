@@ -3,40 +3,40 @@ title: エンコーダーのコード例
 description: エンコーダーのコード例
 ms.assetid: cbe773ad-2222-4d62-8e1e-6d47418a3e7c
 keywords:
-- 可変ビット レートの WDK エンコーダー
-- エンコーダー デバイス WDK AVStream
-- AVStream WDK、エンコーダーのデバイス
-- 非圧縮データ ストリームの WDK AVStream
+- 可変ビットレート WDK エンコーダー
+- エンコーダーデバイス WDK AVStream
+- AVStream WDK、エンコーダーデバイス
+- 非圧縮データストリーム WDK AVStream
 - エンコードされたストリーム WDK AVStream
-- オーディオ エンコーダー デバイス WDK AVStream
-- ビデオ エンコーダー デバイス WDK AVStream
+- オーディオエンコーダーデバイス WDK AVStream
+- ビデオエンコーダーデバイス WDK AVStream
 - ENCAPIPARAM_BITRATE_MODE
 - ENCAPIPARAM_BITRATE
-- ビット レートの WDK エンコーダー
-- レジストリの WDK エンコーダー
+- ビットレート WDK エンコーダー
+- レジストリ WDK エンコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9702527288d70bf306dca1418df99fe79b4c7b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29f6b83cee8a47538019fbefe3cb244aab5a0e5c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384125"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843205"
 ---
 # <a name="encoder-code-examples"></a>エンコーダーのコード例
 
 
-次のコード例がに基づいて、 [AVStream シミュレートされたハードウェア ドライバーのサンプル (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)します。 次を説明します。
+次のコード例は、Avstream のシミュレートされた[ハードウェアサンプルドライバー (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)に基づいています。 次のことを示します。
 
--   ビット レートでサポートされているエンコーダーを指定する方法
+-   エンコーダーでサポートされるビットレートを指定する方法
 
--   エンコーダーでサポートされるモードのエンコード ビット レートを指定する方法
+-   エンコーダーでサポートされるビットレートエンコードモードを指定する方法
 
--   Encoder デバイスの実行時にメタデータ値を指定する方法*デバイス パラメーター\\機能*レジストリ キー
+-   エンコーダーデバイスの*デバイスパラメーター\\機能*のレジストリキーで実行時にメタデータ値を指定する方法
 
-### <a name="implementing-supported-bit-rates"></a>**サポートされているビット レートを実装します。**
+### <a name="implementing-supported-bit-rates"></a>**サポートされるビットレートの実装**
 
-次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)プロパティ。 使用して、 [ **KSPROPERTY\_ステッピング\_長い**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long) 400 bps 下限の境界と大きく 4,000,000 bps 上限を 400 ビット/秒 (bps) のステップ実行の粒度を指定する構造体。
+次のコードスニペットは、 [Encapiparam\_ビットレート](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)プロパティのサポートを実装する方法を示しています。 Ksk プロパティを使用して、 [ **\_LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)構造体をステップ実行\_、400 bps の下限と 400万 bps の上限を指定して、400ビット/秒 (bps) のステッピング粒度を指定します。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -49,9 +49,9 @@ const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
 };
 ```
 
-GraphEdit などのツールでのフィルターを右クリックして、エンコーダーのフィルターのプロパティ ページにアクセスする場合が表示されます、**ビット レート**スライダー バーをこれらの値が使用されます。
+GraphEdit などのツールでフィルターを右クリックしてエンコーダーフィルターのプロパティページにアクセスすると、これらの値が使用されている **ビットレート** スライダーバーが表示されます。
 
-次に、既定のインスタンスの作成時にエンコーダーのフィルターのビット レートをエンコードを指定します。 使用するデータ型は、ENCAPIPARAM で必要なプロパティ値の型に対応する ULONG\_ビットレート プロパティ。 この値は、既定のエンコード「ビット レート」、エンコーダーのプロパティ ページに表示されます。
+次に、エンコーダーフィルターのインスタンスが作成されたときの既定のエンコードビットレートを指定します。 使用されるデータ型は、ENCAPIPARAM\_ビットレートプロパティに必要なプロパティ値の型に対応する ULONG です。 この値は、エンコーダーのプロパティページに表示される既定のエンコード "Bit Rate" です。
 
 ```cpp
 const ULONG BitRateValues [] = {
@@ -59,7 +59,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-法律の範囲と既定値のリストを指定して、ENCAPIPARAM の\_ビットレート プロパティ。
+有効な範囲の一覧と、ENCAPIPARAM\_ビットレートプロパティの既定値を指定します。
 
 ```cpp
  const KSPROPERTY_MEMBERSLIST BitRateMembersList [] = {
@@ -96,7 +96,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-ENCAPIPARAM に対して定義されている 1 つのプロパティを指定\_ビットレート プロパティのセット。
+ENCAPIPARAM\_ビットレートプロパティセットに定義されている1つのプロパティを指定します。
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
@@ -115,15 +115,15 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 };
 ```
 
-**注**   、*取得*-プロパティ ハンドラーがエンコード ビット レートを返します、*設定*-プロパティ ハンドラーが受信渡された値が使用する前に有効であるをテストする必要があります。
+*Get*プロパティハンドラーがエンコーディングビットレートを返し  、 *Set*プロパティハンドラーは、渡された入力値が有効であることをテストしてから使用する必要があることに**注意**してください。
 
  
 
-### <a name="implementing-supported-encoding-bit-rate-modes"></a>**エンコード ビット レートのモードをサポートを実装します。**
+### <a name="implementing-supported-encoding-bit-rate-modes"></a>**サポートされているエンコードビットレートモードの実装**
 
-次のコード スニペットは、サポートを実装する方法を示します、 [ENCAPIPARAM\_ビットレート\_モード](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)プロパティ。
+次のコードスニペットは、 [Encapiparam\_ビットレート\_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)プロパティのサポートを実装する方法を示しています。
 
-エンコーダーでサポートされているエンコード モードを定義します。
+エンコーダーでサポートされているエンコードモードを定義します。
 
 ```cpp
  const VIDEOENCODER_BITRATE_MODE BitRateModeValues [] = {
@@ -132,7 +132,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 };
 ```
 
-既定のエンコード ビット レート モードを平均可変ビット レートを指定します。
+既定のエンコードビットレートモードを平均可変ビットレートとして指定します。
 
 ```cpp
 const VIDEOENCODER_BITRATE_MODE BitRateModeDefaultValues [] = {
@@ -140,7 +140,7 @@ const VIDEOENCODER_BITRATE_MODE BitRateModeDefaultValues [] = {
 };
 ```
 
-法律の範囲の一覧を指定し、既定値を ENCAPIPARAM の\_ビットレート\_モード プロパティ。
+ENCAPIPARAM\_ビットレート\_MODE プロパティの有効範囲と既定値の一覧を指定します。
 
 ```cpp
 const KSPROPERTY_MEMBERSLIST BitRateModeMembersList [] = {
@@ -175,7 +175,7 @@ const KSPROPERTY_VALUES BitRateModeValuesSet = {
 };
 ```
 
-ENCAPIPARAM に対して定義されている 1 つのプロパティを指定\_ビットレート\_モード プロパティのセット。
+ENCAPIPARAM\_ビットレート\_MODE プロパティセットに対して定義されている単一のプロパティを指定します。
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
@@ -194,11 +194,11 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 };
 ```
 
-**注**   、*取得*-プロパティ ハンドラーは、エンコード ビット レートのモードを返す必要があります、*設定*-プロパティ ハンドラーが受信渡された値が前に有効であるをテストする必要がありますこれを使用します。
+*Get*プロパティハンドラーがエンコーディングビットレートモードを返す必要がある  **ことに注意**してください。また、 *Set*プロパティハンドラーは、使用前に渡された入力値が有効であることをテストする必要があります。
 
  
 
-プロパティ セットは、として指定し、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)構造体のオートメーション テーブル。
+次に、プロパティセットを[**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造体のオートメーションテーブルとして指定します。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {
@@ -234,11 +234,11 @@ FilterDescriptor = {
 };
 ```
 
-### <a href="" id="specifying-the-encoder-s-capabilities-in-the-registry"></a>**レジストリで、エンコーダーの機能を指定します。**
+### <a href="" id="specifying-the-encoder-s-capabilities-in-the-registry"></a>**レジストリでのエンコーダーの機能の指定**
 
-次のコード サンプルを作成する方法を示します、*機能*下のレジストリ キー、*デバイス パラメーター*レジストリ キー、および作成し、サブ キーと下の値を指定する方法、 *機能*キー。 ドライバーの初期化時に、このコードを実行します。
+次のコードサンプルでは、*デバイスパラメーター*レジストリキーの下に*機能*のレジストリキーを作成する方法、および*機能*キーの下にサブキーと値を作成して指定する方法を示します。 ドライバーの初期化時に、このコードを実行します。
 
-**注:** 次のコードは、物理デバイスごとの 1 つのハードウェアのエンコーダーの存在を想定しています。 かどうかは、ハードウェアには、複数のエンコーダーが含まれていますへの呼び出しで返されるリストを反復処理する必要があります、 **IoGetDeviceInterfaces**関数を各エンコーダーの機能を登録します。
+**注:** 次のコードは、物理デバイスごとに1つのハードウェアエンコーダーが存在することを前提としています。 ハードウェアに複数のエンコーダーが含まれている場合は、 **Iogetdeviceinterfaces**関数の呼び出しで返されたリストを反復処理し、各エンコーダーの機能を登録する必要があります。
 
 ```cpp
 /**************************************************************************

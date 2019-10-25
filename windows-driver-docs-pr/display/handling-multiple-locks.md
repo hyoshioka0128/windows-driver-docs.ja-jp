@@ -1,24 +1,24 @@
 ---
-title: 複数ロックの処理
-description: 複数ロックの処理
+title: 複数のロックの処理
+description: 複数のロックの処理
 ms.assetid: d62b9577-d78f-431d-a5bf-c06c9be345c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a497b7b1047d99ed757a8cee62b43d852563be02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d9a3c2be3abe614cb8b6f8187646bdc84157181
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359338"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839660"
 ---
-# <a name="handling-multiple-locks"></a>複数ロックの処理
+# <a name="handling-multiple-locks"></a>複数のロックの処理
 
 
-Direct3D、ランタイムでは、頂点バッファーとインデックス バッファーが未処理の 1 つ以上のロックを許可できます。 ユーザー モードのディスプレイ ドライバーがでランタイムと同じ方法には複数のロックの処理する必要があります、 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)します。
+Direct3D ランタイムを使用すると、頂点バッファーとインデックスバッファーに複数のロックが保留されることを許可できます。 ユーザーモードの表示ドライバーは、 [Windows 2000 Display Driver モデル](windows-2000-display-driver-model-design-guide.md)のランタイムと同じ方法で、複数のロックを処理する必要があります。
 
-ユーザー モードのディスプレイ ドライバーはへの呼び出しに失敗することはできません、 [ **LockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)既にロックされているリソース用の関数。 ドライバーでへの呼び出しが失敗することはできません、その*LockAsync*関数の最初の呼び出し後に、特定のリソースの*LockAsync*関数は、そのリソースのロックが成功しました。 ドライバーでの呼び出しが失敗することはできません同様に、その[**ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)関数の最初の呼び出し後に、特定のリソースの*ロック*関数が正常にロックします。リソースです。 ランタイムが各呼び出しは、ドライバーを送信すると一致する*LockAsync*ドライバーへの呼び出しで関数を[ **UnlockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)関数。 ランタイムでは、アプリケーションは、ドライバーを各の呼び出しとも一致*ロック*ドライバーへの呼び出しで関数を[ **Unlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)関数。
+ユーザーモードの表示ドライバーは、既にロックされているリソースに対する[**Lockasync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)関数の呼び出しに失敗することはできません。 つまり、 *lockasync*関数の最初の呼び出しでそのリソースのロックが成功した後、特定のリソースに対する*lockasync*関数の呼び出しをドライバーが失敗させることはできません。 同様に、ドライバーは、*ロック*関数の最初の呼び出しでそのリソースのロックが成功した後に、特定のリソースに対する[**ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)関数の呼び出しを失敗させることはできません。 ランタイムは、ドライバーの[**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)関数を呼び出すことによって、ドライバーの*lockasync*関数に対して行われる各呼び出しに一致します。 また、ランタイムは、ドライバーの[**Unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)関数を呼び出すことによって、ドライバーの*ロック*関数に対して行われる各呼び出しに一致します。
 
-ユーザー モードのディスプレイ ドライバーにへの呼び出しが失敗することはできません、 [ **UnlockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)しない限り、機能、リソースを[ **D3DDDIARG\_UNLOCKASYNC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_unlockasync)構造について説明します、ドライバーの以前の呼び出しによって実際にはロックされていない*LockAsync*関数。 ドライバーでの呼び出しが失敗することはできません同様に、その[**ロックの解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)しない限り、機能、リソースを[ **D3DDDIARG\_ロックの解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_unlock)構造について説明します、ドライバーの以前の呼び出しによって実際にはロックされていない*ロック*関数。 リソースが以前ロックされていない状況で*UnlockAsync*と*ロックの解除*戻り\_INVALIDARG します。
+[**D3DDDIARG\_UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_unlockasync)構造体に記述されているリソースが、ドライバーの*lockasync*への前回の呼び出しによって実際にロックされていない場合を除き、ユーザーモードの表示ドライバーは、 [**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)関数への呼び出しに失敗することはできません。プロシージャ. 同様に、ドライバーは、 [**D3DDDIARG\_unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_unlock)構造体に記述されているリソースが、ドライバーの*ロック*関数の前回の呼び出しによって実際にロックされていない限り、 [**unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)関数の呼び出しに失敗することはありません。 リソースが以前にロックされていない状況では、 *UnlockAsync*と*Unlock*は E\_invalidarg を返します。
 
  
 

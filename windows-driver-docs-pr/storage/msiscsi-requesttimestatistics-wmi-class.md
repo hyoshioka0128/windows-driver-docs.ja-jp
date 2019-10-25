@@ -4,17 +4,17 @@ description: MSiSCSI\_RequestTimeStatistics WMI クラス
 ms.assetid: 3e9f3214-3120-41f6-bb06-7ace4f243c5f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 22262d757e3d5a0f2d447ed11a75e1fd56849cd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e38a81799f0ada4c7478ff4cc96522b3714178c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384672"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838873"
 ---
-# <a name="msiscsirequesttimestatistics-wmi-class"></a>MSiSCSI\_RequestTimeStatistics WMI クラス
+# <a name="msiscsi_requesttimestatistics-wmi-class"></a>MSiSCSI\_RequestTimeStatistics WMI クラス
 
 
-MSiSCSI\_RequestTimeStatistics WMI クラスは、iSCSI の要求に関する統計情報を提供します。 このクラスが次のように定義されている*Mgmt.mof します。*
+MSiSCSI\_RequestTimeStatistics WMI クラスは、iSCSI 要求に関する統計情報を提供します。 このクラスは、管理 .mof で次のように定義されてい*ます。*
 
 ```cpp
 class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData
@@ -69,7 +69,7 @@ class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_RequestTimeStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_requesttimestatistics)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_RequestTimeStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_requesttimestatistics)データ構造を生成します。
 
  
 

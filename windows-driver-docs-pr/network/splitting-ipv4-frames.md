@@ -3,16 +3,16 @@ title: IPv4 フレームの分割
 description: IPv4 フレームの分割
 ms.assetid: 1906dc31-7969-49da-adc4-8a174923d9d5
 keywords:
-- WDK のネットワー キング、IPv4 のフレームを分割するイーサネット フレーム
-- IPv4 フレーム WDK ヘッダー以外のデータの分割
+- イーサネットフレーム分割 WDK ネットワーク、IPv4 フレーム
+- IPv4 フレームの WDK ヘッダー-データの分割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b59aa08c01876ea02b8559ccc0670fe2805e6232
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 02b49ef42c36bdf0d010679d7ca349b496c4de4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383612"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841859"
 ---
 # <a name="splitting-ipv4-frames"></a>IPv4 フレームの分割
 
@@ -20,19 +20,19 @@ ms.locfileid: "67383612"
 
 
 
-ヘッダー データをサポートするには、分割、NIC は、IPv4 のオプションがない分割の IPv4 イーサネット フレームをサポートする必要があります。 NIC では、このようなフレームを分割できる必要があります、[レイヤー プロトコルの上限ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。
+ヘッダーデータの分割をサポートするために、NIC は IPv4 オプションを持たない IPv4 イーサネットフレームの分割をサポートする必要があります。 NIC は、[上位層のプロトコルヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)にこのようなフレームを分割できる必要があります。
 
-IPv4 のオプションを使用して IPv4 イーサネット フレームのサポートは、省略可能です。 IPv4 のいくつかのオプションとは、NIC をサポートできます。 NIC が不明 IPv4 オプションを含む IPv4 フレームを分割する必要があります。 フレームの分割のヘッダー部分は、全体の IPv4 ヘッダーとそのすべての IPv4 オプションが存在するを含める必要があります。
+IPv4 オプションを使用した IPv4 イーサネットフレームのサポートはオプションです。 NIC は、IPv4 オプションの一部をサポートすることはできません。 NIC は、認識されない IPv4 オプションを含む IPv4 フレームを分割することはできません。 分割フレームのヘッダー部分には、IPv4 ヘッダー全体と、存在するすべての IPv4 オプションが含まれている必要があります。
 
-NIC には、ヘッダー データの断片化された IPv4 フレームの分割もサポートできます。 断片化された IPv4 フレームの詳細については、次を参照してください。[断片化された IP パケットの分割](splitting-fragmented-ip-frames.md)します。
+NIC は、フラグメント化された IPv4 フレーム用にヘッダーデータを分割することもできます。 断片化された IPv4 フレームの詳細については、「断片化した[IP フレームの分割](splitting-fragmented-ip-frames.md)」を参照してください。
 
-**注**  ヘッダー データの要件のため、IPv4 オプション、IPv6 拡張ヘッダーまたは TCP オプションをサポートしている要素を認識、その長さを決定、MDL ヘッダーに含めるのための NIC の能力を意味し、フレームの末尾と次の要素の先頭を探します。
+ヘッダーデータ要件のために IPv4 オプション、IPv6 拡張ヘッダー、または TCP オプションをサポートする  は、NIC が要素を認識し、その長さを決定して、ヘッダー MDL に含め、その末尾を特定できるように**することを**意味します。フレーム内の次の要素の先頭。
 
  
 
-ヘッダー データ プロバイダーの分割、IPv4 を分割する場合はフレームを指定された[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体の有効期限があります、NDIS\_NBL\_フラグ\_IS\_IPV4 フラグの値設定、 **NblFlags**メンバー。 ネット ヘッダー データ分割フラグを設定する方法については完全な\_バッファー\_構造の一覧を参照してください[設定 NET\_バッファー\_情報を一覧表示](setting-net-buffer-list-information.md)します。
+ヘッダーデータの分割プロバイダーが IPv4 フレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、 **nblflags**メンバーで\_IPv4 フラグが設定されている\_の NDIS\_NBL\_フラグが必要です。 NET\_BUFFER\_LIST 構造体でのヘッダーデータの分割フラグの設定の詳細については、「[ネットワーク\_バッファー\_リスト情報の設定](setting-net-buffer-list-information.md)」を参照してください。
 
-追加のイーサネット フレームの特徴は、IPv4 のフレームに分割する方法を決定します。 IP のフレームが断片化されている場合は、次を参照してください。[断片化された IP パケットの分割](splitting-fragmented-ip-frames.md)します。 フレームに TCP 情報が含まれている場合は、次を参照してください。 [TCP ペイロードで分割フレーム](splitting-frames-at-the-tcp-payload.md)します。 フレームに UDP 情報が含まれている場合は、次を参照してください。 [UDP ペイロードにフレームを分割](splitting-frames-at-the-udp-payload.md)します。 その他のすべてのケースでは、次を参照してください。 [TCP 以外のフレームを分割および UDP](splitting-frames-other-than-tcp-and-udp.md)します。
+追加のイーサネットフレームの特性によって、IPv4 フレームを分割する方法が決まります。 IP フレームが断片化されている場合は、「断片化した[Ip フレームの分割](splitting-fragmented-ip-frames.md)」を参照してください。 フレームに TCP 情報が含まれている場合は、「 [Tcp ペイロードでのフレームの分割](splitting-frames-at-the-tcp-payload.md)」を参照してください。 フレームに UDP 情報が含まれている場合は、「 [Udp ペイロードでのフレームの分割](splitting-frames-at-the-udp-payload.md)」を参照してください。 それ以外の場合は、「 [TCP と UDP 以外のフレームの分割](splitting-frames-other-than-tcp-and-udp.md)」を参照してください。
 
  
 

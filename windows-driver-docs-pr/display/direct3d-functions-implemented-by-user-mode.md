@@ -1,31 +1,31 @@
 ---
-title: ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
-description: このトピックでは、ユーザー モードは、マイクロソフトの Direct3D 実行時にドライバーの実装と提供を表示し、オペレーティング システムによって呼び出すことができます関数について説明します。
+title: ユーザーモード表示ドライバーによって実装される Direct3D 関数
+description: このトピックでは、ユーザーモード表示ドライバーによって実装され、Microsoft Direct3D ランタイムに提供され、オペレーティングシステムから呼び出すことができる関数について説明します。
 ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d1ad657fbf8c4b16f2a05bfd38b70ec1fb4675cc
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 16e99eae4a809ebd2598ea7ec086e8d340b42e14
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405106"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839009"
 ---
-# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
+# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザーモード表示ドライバーによって実装される Direct3D 関数
 
-このトピックでは、ユーザー モードは、マイクロソフトの Direct3D 実行時にドライバーの実装と提供を表示し、オペレーティング システムによって呼び出すことができます関数について説明します。
+このトピックでは、ユーザーモード表示ドライバーによって実装され、Microsoft Direct3D ランタイムに提供され、オペレーティングシステムから呼び出すことができる関数について説明します。
 
-## <a name="direct3d-version-9-functions"></a>Direct3D のバージョン 9 関数
+## <a name="direct3d-version-9-functions"></a>Direct3D Version 9 の関数
 
-このセクションでは、ユーザー モードは、Microsoft Direct3D のバージョン 9 ランタイムに DLL を提供するドライバーを表示する関数について説明します。 
+このセクションでは、ユーザーモード display driver DLL が Microsoft Direct3D version 9 runtime に提供する関数について説明します。 
 
-ユーザー モードのディスプレイ ドライバー DLL のエクスポート、 [OpenAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数し、アダプター固有の関数のメンバーへのポインターを提供、 [D3DDDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_adapterfuncs)ランタイムが呼び出すと構造体OpenAdapter します。 
+ユーザーモード表示ドライバー DLL は、 [openadapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数をエクスポートし、ランタイムが openadapter を呼び出すときに、 [D3DDDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adapterfuncs)構造体のメンバーを介してアダプター固有の関数へのポインターを提供します。 
 
-Direct3D のランタイム呼び出し、 [CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数を*pfnCreateDevice*のメンバー **D3DDDI_ADAPTERFUNCS**を処理するために使用されるディスプレイ デバイスを作成します。表示状態のコレクションです。 ユーザー モードのディスプレイ ドライバー DLL へのメンバーをその表示デバイス固有の関数のすべてのポインターを提供する、 [D3DDDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)ランタイムが呼び出す CreateDevice と構造体します。
+Direct3D ランタイムは、 **D3DDDI_ADAPTERFUNCS**の*PfnCreateDevice*メンバーから[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数を呼び出して、レンダリング状態のコレクションの処理に使用される表示デバイスを作成します。 ユーザーモードの display driver DLL は、ランタイムが CreateDevice を呼び出したときに、 [D3DDDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)構造体のメンバーを通じて、そのすべてのディスプレイデバイス固有の機能へのポインターを提供します。
 
-次の関数に含まれる[d3dumddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/)します。
+次の関数は、 [d3dumddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/)に含まれています。
 
-|Direct3D のバージョン 9 関数||
+|Direct3D Version 9 の関数||
 |:---|:---|
 |PFND3DDDI_AUTHENTICATEDCHANNELKEYEXCHANGE|PFND3DDDI_BLT|
 |PFND3DDDI_BUFBLT|PFND3DDDI_BUFBLT1|
@@ -97,11 +97,11 @@ Direct3D のランタイム呼び出し、 [CreateDevice](https://docs.microsoft
 |PFND3DDDI_DXVAHD_VIDEOPROCESSBLTHD |PFND3DDDI_VIDEOPROCESSENDFRAME |
 |PFND3DDDI_VOLBLT |PFND3DDDI_VOLBLT1 |
 
-### <a name="user-mode-display-driver-parameter-structures"></a>ユーザー モードのディスプレイ ドライバー パラメーター構造体
+### <a name="user-mode-display-driver-parameter-structures"></a>ユーザーモードでのドライバーパラメーター構造の表示
 
-このセクションでは、ユーザー モードのディスプレイ ドライバー関数によって使用される構造について説明します。 マイクロソフトの Direct3D ランタイムは、ディスプレイ ドライバー関数、ユーザー モードのパラメーターにこれらの構造体にポインターを渡します。
+このセクションでは、ユーザーモードの表示ドライバー関数によって使用される構造について説明します。 Microsoft Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターでこれらの構造体へのポインターを渡します。
 
-| 構造体 ||
+| 構成 ||
 |:---|:---|
 |D3DDDIARG_AUTHENTICATEDCHANNELKEYEXCHANGE|D3DDDIARG_BLT|
 |D3DDDIARG_BUFFERBLT|D3DDDIARG_BUFFERBLT1|
@@ -159,17 +159,17 @@ Direct3D のランタイム呼び出し、 [CreateDevice](https://docs.microsoft
 |D3DDDIARG_VOLUMEBLT |D3DDDIARG_VOLUMEBLT1 |
 |D3DDDIARG_WINFO |D3DDDIARG_ZRANGE |
 
-## <a name="direct3d-version-10-state-functions"></a>Direct3D のバージョン 10 状態関数
+## <a name="direct3d-version-10-state-functions"></a>Direct3D Version 10 の状態関数
 
-このセクションでは、ユーザー モードは、direct3d10 Microsoft バージョンのランタイムに DLL を提供するドライバーを表示する状態関数について説明します。 
+このセクションでは、ユーザーモードで表示されるドライバー DLL が Microsoft Direct3D バージョン10ランタイムに提供する状態関数について説明します。 
 
-ユーザー モードのディスプレイ ドライバー DLL のエクスポート、 [OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数し、アダプター固有の関数のメンバーへのポインターを提供、 [D3D10DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体ときに、ランタイムOpenAdapter10 を呼び出します。
+ユーザーモードの display driver DLL は、 [OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数をエクスポートし、ランタイムが OpenAdapter10 を呼び出すときに、 [D3D10DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体のメンバーを介してアダプター固有の関数へのポインターを提供します。
 
-ドライバーのメンバーの状態の関数へのポインターを提供する、 [D3D10DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddi_devicefuncs)ユーザー モードのディスプレイ ドライバーの呼び出しで構造[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。
+ドライバーは、ユーザーモードの display driver の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D10DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_devicefuncs)構造体のメンバーを介して、状態関数へのポインターを提供します。
 
-次の関数に含まれる[d3d10umddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/)します。
+次の関数は、 [d3d10umddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/)に含まれています。
 
-|Direct3D のバージョン 10 状態関数||
+|Direct3D Version 10 の状態関数||
 |:---|:---|
 |PFND3D10DDI_CALCPRIVATEBLENDSTATESIZE |PFND3D10DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE |
 |PFND3D10DDI_CALCPRIVATEDEPTHSTENCILVIEWSIZE |PFND3D10DDI_CALCPRIVATEDEVICESIZE |
@@ -220,11 +220,11 @@ Direct3D のランタイム呼び出し、 [CreateDevice](https://docs.microsoft
 |PFND3D10DDI_SETSAMPLERS |PFND3D10DDI_SETSHADER |
 |PFND3D10DDI_SETSHADERRESOURCES ||
 
-### <a name="direct3d-10-structures-and-enumerations"></a>Direct3D 10 構造および列挙体
+### <a name="direct3d-10-structures-and-enumerations"></a>Direct3D 10 の構造体と列挙型
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D のバージョン 10 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+ここでは、ユーザーモードで表示される Microsoft Direct3D バージョン10関数で使用される構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
-|Direct3D のバージョン 10 構造および列挙体||
+|Direct3D Version 10 の構造体と列挙型||
 |:---|:---|
 | D3D10_DDI_BLEND | D3D10_DDI_BLEND_DESC |
 |D3D10_DDI_BLEND_OP |D3D10_DDI_BOX |
@@ -257,43 +257,43 @@ Direct3D のランタイム呼び出し、 [CreateDevice](https://docs.microsoft
 |D3D10DDIARG_TEXCUBE_DEPTHSTENCILVIEW |D3D10DDIARG_TEXCUBE_RENDERTARGETVIEW |
 |D3D10DDIARG_TEXCUBE_SHADER|D3D10DDIRESOURCE_TYPE |
 
-## <a name="direct3d-version-101-state-functions"></a>Direct3D のバージョン 10.1 状態関数
+## <a name="direct3d-version-101-state-functions"></a>Direct3D バージョン10.1 の状態関数
 
-このセクションでは、マイクロソフトの Direct3D ランタイムのバージョン 10.1 の新しいユーザー モード ディスプレイ ドライバー状態関数について説明します。 それ以外の場合、ユーザー モードの残りの部分では、ドライバーの状態の関数を表示を参照してください[Direct3D のバージョン 10 状態関数](#direct3d-version-10-state-functions)します。
+このセクションでは、Microsoft Direct3D runtime のバージョン10.1 で新しく追加されたユーザーモードディスプレイドライバーの状態関数について説明します。 それ以外の場合、ユーザーモードディスプレイドライバーの状態関数の残りの部分については、「 [Direct3D バージョン10の状態関数](#direct3d-version-10-state-functions)」を参照してください。
 
-ユーザー モードのディスプレイ ドライバー DLL のエクスポート、 [OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数し、アダプター固有の関数のメンバーへのポインターを提供、 [D3D10DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体ときに、ランタイムOpenAdapter10 を呼び出します。
+ユーザーモードの display driver DLL は、 [OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数をエクスポートし、ランタイムが OpenAdapter10 を呼び出すときに、 [D3D10DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs)構造体のメンバーを介してアダプター固有の関数へのポインターを提供します。
 
-Direct3D のバージョン 10.1 状態関数のメンバーへのポインターを提供するドライバー、 [D3D10_1DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_1ddi_devicefuncs)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。
+このドライバーは、ユーザーモードの表示ドライバーのアダプター固有の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D10_1DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_1ddi_devicefuncs)構造体のメンバーを介して、Direct3D バージョン10.1 の状態関数へのポインターを提供します。
 
-次の関数に含まれる[d3d10umddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/)します。
+次の関数は、 [d3d10umddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/)に含まれています。
 
-|Direct3D のバージョン 10.1 状態関数||
+|Direct3D バージョン10.1 の状態関数||
 |:---|:---|
 |PFND3D10_1DDI_CALCPRIVATEBLENDSTATESIZE |PFND3D10_1DDI_CALCPRIVATESHADERRESOURCEVIEWSIZE |
 |PFND3D10_1DDI_CREATEBLENDSTATE |PFND3D10_1DDI_CREATESHADERRESOURCEVIEW |
 |PFND3D10_1DDI_RELOCATEDEVICEFUNCS ||
 
-### <a name="direct3d-101-structures-and-enumerations"></a>Direct3D 10.1 構造および列挙体
+### <a name="direct3d-101-structures-and-enumerations"></a>Direct3D 10.1 構造体と列挙型
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D バージョン 10.1 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+ここでは、ユーザーモードで表示される Microsoft Direct3D バージョン10.1 関数で使用される構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
-|Direct3D のバージョン 10.1 構造および列挙体||
+|Direct3D バージョン10.1 の構造体と列挙型||
 |:---|:---|
 |D3D10_1DDIARG_CREATESHADERRESOURCEVIEW |D3D10_1_DDIARG_STANDARD_MULTISAMPLE_QUALITY_LEVELS  |
 |D3D10_1DDIARG_TEXCUBE_SHADERRESOURCEVIEW |D3D10_1_DDI_BLEND_DESC |
 |D3D10_1DDI_DEVICEFUNCS |D3D10_DDI_RENDER_TARGET_BLEND_DESC1 |
 
-## <a name="direct3d-version-11-state-functions"></a>Direct3D のバージョン 11 状態関数
+## <a name="direct3d-version-11-state-functions"></a>Direct3D バージョン11の状態関数
 
-このセクションでは、マイクロソフトの Direct3D バージョン 11.0 のランタイムに追加されるユーザー モード ディスプレイ ドライバー状態関数について説明します。 それ以外の場合、ユーザー モードの残りの部分では、ドライバーの状態の関数を表示を参照してください[Direct3D のバージョン 10 状態関数](#direct3d-version-10-state-functions)と[Direct3D バージョン 10.1 状態関数](#direct3d-version-101-state-functions)します。
+このセクションでは、Microsoft Direct3D バージョン11.0 ランタイムに追加されるユーザーモード表示ドライバーの状態関数について説明します。 それ以外の場合、ユーザーモードディスプレイドライバーの状態関数の残りの部分については、「 [Direct3d バージョン10の状態関数](#direct3d-version-10-state-functions)」および「 [direct3d バージョン10.1 の状態関数](#direct3d-version-101-state-functions)」を参照してください。
 
-ユーザー モードのディスプレイ ドライバー DLL のエクスポート、 [OpenAdapter10_2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数し、アダプター固有の関数のメンバーへのポインターを提供、 [D3D10_2DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体ときに、ランタイムは OpenAdapter10_2 を呼び出します。
+ユーザーモードの display driver DLL は、 [OpenAdapter10_2](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数をエクスポートし、ランタイムが OpenAdapter10_2 を呼び出すときに、 [D3D10_2DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体のメンバーを介してアダプター固有の関数へのポインターを提供します。
 
-Direct3D のバージョン 11.0 状態関数のメンバーへのポインターを提供するドライバー、 [D3D11DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。
+このドライバーは、ユーザーモードの表示ドライバーのアダプター固有の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D11DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)構造体のメンバーを介して、Direct3D バージョン11.0 の状態関数へのポインターを提供します。
 
-次の関数に含まれる[d3d10umddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/)します。
+次の関数は、 [d3d10umddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/)に含まれています。
 
-|Direct3D のバージョン 11 状態関数||
+|Direct3D バージョン11の状態関数||
 |:---|:---|
 |PFND3D11DDI_ABANDONCOMMANDLIST |PFND3D11DDI_CALCDEFERREDCONTEXTHANDLESIZE |
 |PFND3D11DDI_CALCPRIVATECOMMANDLISTSIZE |PFND3D11DDI_CALCPRIVATEDEFERREDCONTEXTSIZE |
@@ -326,11 +326,11 @@ Direct3D のバージョン 11.0 状態関数のメンバーへのポインタ�
 |PFND3D11DDI_SETRENDERTARGETS |PFND3D11DDI_SETRESOURCEMINLOD |
 |PFND3D11DDI_SETSHADER_WITH_IFACES ||
 
-### <a name="direct3d-11-structures-and-enumerations"></a>Direct3D 11 構造および列挙体
+### <a name="direct3d-11-structures-and-enumerations"></a>Direct3D 11 の構造体と列挙体
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D バージョン 11.0 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+このセクションでは、ユーザーモードで表示される Microsoft Direct3D バージョン11.0 関数で使用される構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
-|Direct3D のバージョン 11 構造および列挙体||
+|Direct3D Version 11 の構造体と列挙型||
 |:---|:---|
 |D3D10_2DDI_ADAPTERFUNCS |D3D10_2DDIARG_GETCAPS |
 |D3D10_2DDICAPS_TYPE |D3D11_DDI_CREATEDEPTHSTENCILVIEW_FLAG |
@@ -348,78 +348,78 @@ Direct3D のバージョン 11.0 状態関数のメンバーへのポインタ�
 |D3D11DDIARG_TESSELLATION_IO_SIGNATURES |D3D11DDIARG_TEX1D_UNORDEREDACCESSVIEW |
 |D3D11DDIARG_TEX2D_UNORDEREDACCESSVIEW |D3D11DDIARG_TEX3D_UNORDEREDACCESSVIEW |
 
-## <a name="direct3d-version-111-state-functions"></a>Direct3D のバージョン 11.1 状態関数
+## <a name="direct3d-version-111-state-functions"></a>Direct3D バージョン11.1 の状態関数
 
-このセクションでは、リファレンスのページには、マイクロソフトの Direct3D バージョン 11.1 ランタイムに追加されるユーザー モード ディスプレイ ドライバー状態関数について説明します。 Direct3D 11.1 は、Windows 8 で導入されました。 それ以外の場合、ユーザー モードによって実装される使用可能な関数の残りの部分では、ドライバーを表示を参照してください[Direct3D のバージョン 10 状態関数](#direct3d-version-10-state-functions)と[Direct3D のバージョン 11 状態関数](#direct3d-version-11-state-functions)します。
+このセクションの参照ページでは、Microsoft Direct3D バージョン11.1 ランタイムに追加されるユーザーモードの表示ドライバーの状態関数について説明します。 Direct3D 11.1 は Windows 8 で導入されました。 それ以外の場合、ユーザーモードディスプレイドライバーによって実装される使用可能な関数の残りの部分については、「 [Direct3d バージョン10の状態関数](#direct3d-version-10-state-functions)」および「 [direct3d バージョン11の状態関数](#direct3d-version-11-state-functions)」を参照してください。
 
-ユーザー モードのディスプレイ ドライバー DLL のエクスポート、 [OpenAdapter10_2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数し、アダプター固有の関数のメンバーへのポインターを提供、 [D3D10_2DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体ときに、ランタイムは OpenAdapter10_2 を呼び出します。
+ユーザーモードの display driver DLL は、 [OpenAdapter10_2](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数をエクスポートし、ランタイムが OpenAdapter10_2 を呼び出すときに、 [D3D10_2DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体のメンバーを介してアダプター固有の関数へのポインターを提供します。
 
-Direct3D のバージョン 11.1 状態関数のメンバーへのポインターを提供するドライバー、 [D3D11_1DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。
+このドライバーは、ユーザーモードの表示ドライバーのアダプター固有の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D11_1DDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)構造体のメンバーを介して、Direct3D バージョン11.1 の状態関数へのポインターを提供します。
 
-次の関数に含まれる[d3d10umddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/)または[d3dumddi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)します。
+次の関数は、 [d3d10umddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/)または[d3dumddi](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/index)に含まれています。
 
-|Direct3D のバージョン 11.1 状態関数||
+|Direct3D バージョン11.1 の状態関数||
 |:---|:---|
-|PFND3D11_1DDI_ASSIGNDEBUGBINARY|[PFND3D11_1DDI_CALCPRIVATEAUTHENTICATEDCHANNELSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateauthenticatedchannelsize)|
+|PFND3D11_1DDI_ASSIGNDEBUGBINARY|[PFND3D11_1DDI_CALCPRIVATEAUTHENTICATEDCHANNELSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateauthenticatedchannelsize)|
 |PFND3D11_1DDI_CALCPRIVATEBLENDSTATESIZE |PFND3D11_1DDI_CALCPRIVATECRYPTOSESSIONSIZE |
 |PFND3D11_1DDI_CALCPRIVATEGEOMETRYSHADERWITHSTREAMOUTPUT |PFND3D11_1DDI_CALCPRIVATERASTERIZERSTATESIZE |
 |PFND3D11_1DDI_CALCPRIVATESHADERSIZE |PFND3D11DDI_CALCPRIVATETESSELLATIONSHADERSIZE |
-|[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessoroutputviewsize)|[PFND3D11_1DDI_CALCPRIVATEVIDEODECODERSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideodecodersize)|
-|[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORENUMSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessorenumsize)|PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORINPUTVIEWSIZE |
-|PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE |[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessorsize)|
-|PFND3D11_1DDI_CHECKDIRECTFLIPSUPPORT |[PFND3D11_1DDI_CHECKVIDEODECODERFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideodecoderformat)|
-|[PFND3D11_1DDI_CHECKVIDEOPROCESSORFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideoprocessorformat)|PFND3D11_1DDI_CLEARVIEW |
+|[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessoroutputviewsize)|[PFND3D11_1DDI_CALCPRIVATEVIDEODECODERSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideodecodersize)|
+|[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORENUMSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessorenumsize)|PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORINPUTVIEWSIZE |
+|PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE |[PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORSIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivatevideoprocessorsize)|
+|PFND3D11_1DDI_CHECKDIRECTFLIPSUPPORT |[PFND3D11_1DDI_CHECKVIDEODECODERFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideodecoderformat)|
+|[PFND3D11_1DDI_CHECKVIDEOPROCESSORFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideoprocessorformat)|PFND3D11_1DDI_CLEARVIEW |
 |PFND3D11_1DDI_CONFIGUREAUTHENTICATEDCHANNEL |PFND3D11_1DDI_CREATEAUTHENTICATEDCHANNEL |
-|PFND3D11_1DDI_CREATEBLENDSTATE |[PFND3D11_1DDI_CREATECRYPTOSESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createcryptosession)|
+|PFND3D11_1DDI_CREATEBLENDSTATE |[PFND3D11_1DDI_CREATECRYPTOSESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createcryptosession)|
 |PFND3D11_1DDI_CREATEDOMAINSHADER |PFND3D11_1DDI_CREATEGEOMETRYSHADER |
 |PFND3D11_1DDI_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT |PFND3D11_1DDI_CREATEHULLSHADER |
 |PFND3D11_1DDI_CREATEPIXELSHADER |PFND3D11_1DDI_CREATERASTERIZERSTATE |
 |PFND3D11_1DDI_CREATEVERTEXSHADER |PFND3D11_1DDI_CREATEVIDEODECODER |
 |PFND3D11_1DDI_CREATEVIDEODECODEROUTPUTVIEW |PFND3D11_1DDI_CREATEVIDEOPROCESSOR |
 |PFND3D11_1DDI_CREAT|PFND3D11_1DDI_CREATEVIDEOPROCESSORINPUTVIEW |
-|PFND3D11_1DDI_CREATEVIDEOPROCESSOROUTPUTVIEW |[PFND3D11_1DDI_CRYPTOSESSIONGETHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_cryptosessiongethandle)|
+|PFND3D11_1DDI_CREATEVIDEOPROCESSOROUTPUTVIEW |[PFND3D11_1DDI_CRYPTOSESSIONGETHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_cryptosessiongethandle)|
 |PFND3D11_1DDI_SETCONSTANTBUFFERS |PFND3D11_1DDI_DECRYPTIONBLT |
-|PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP |[PFND3D11_1DDI_DESTROYAUTHENTICATEDCHANNEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyauthenticatedchannel)|
-|[PFND3D11_1DDI_DESTROYCRYPTOSESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroycryptosession)|[PFND3D11_1DDI_DESTROYVIDEODECODER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideodecoder)|
-|[PFND3D11_1DDI_DESTROYVIDEODECODEROUTPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideodecoderoutputview)|[PFND3D11_1DDI_DESTROYVIDEOPROCESSOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessor)|
-|[PFND3D11_1DDI_DESTROYVIDEOPROCESSORENUM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorenum)|[PFND3D11_1DDI_DESTROYVIDEOPROCESSORINPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorinputview)|
-|[PFND3D11_1DDI_DESTROYVIDEOPROCESSOROUTPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessoroutputview)|[PFND3D11_1DDI_DISCARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_discard)|
-|[PFND3D11_1DDI_SETCONSTANTBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)|[PFND3D11_1DDI_ENCRYPTIONBLT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_encryptionblt)|
-|[PFND3D11_1DDI_FINISHSESSIONKEYREFRESH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_finishsessionkeyrefresh)|[PFND3D11_1DDI_FLUSH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_flush)|
-|[PFND3D11_1DDI_GETCAPTUREHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcapturehandle)|[PFND3D11_1DDI_GETCERTIFICATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcertificate)|
-|[PFND3D11_1DDI_GETCERTIFICATESIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcertificatesize)|[PFND3D11_1DDI_GETCONTENTPROTECTIONCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcontentprotectioncaps)|
-|[PFND3D11_1DDI_GETCRYPTOKEYEXCHANGETYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcryptokeyexchangetype)|[PFND3D11_1DDI_GETENCRYPTIONBLTKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getencryptionbltkey)|
-|[PFND3D11_1DDI_GETVIDEODECODERBUFFERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderbufferinfo)|[PFND3D11_1DDI_GETVIDEODECODERBUFFERTYPECOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderbuffertypecount)|
-|[PFND3D11_1DDI_GETVIDEODECODERCONFIG](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderconfig)|[PFND3D11_1DDI_GETVIDEODECODERCONFIGCOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderconfigcount)|
-|[PFND3D11_1DDI_GETVIDEODECODERPROFILE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderprofile)|[PFND3D11_1DDI_GETVIDEODECODERPROFILECOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderprofilecount)|
-|[PFND3D11_1DDI_GETVIDEOPROCESSORCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorcaps)|[PFND3D11_1DDI_GETVIDEOPROCESSORCUSTOMRATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorcustomrate)|
-|[PFND3D11_1DDI_GETVIDEOPROCESSORFILTERRANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorfilterrange)|[PFND3D11_1DDI_GETVIDEOPROCESSORRATECONVERSIONCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorrateconversioncaps)|
-|[PFND3D11_1DDI_SETCONSTANTBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)|[PFND3D11_1DDI_NEGOTIATEAUTHENTICATEDCHANNELKEYEXCHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiateauthenticatedchannelkeyexchange)|
-|[PFND3D11_1DDI_NEGOTIATECRYPTOSESSIONKEYESCHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiatecryptosessionkeyeschange)|[PFND3D11_1DDI_QUERYAUTHENTICATEDCHANNEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_queryauthenticatedchannel)|
-|[PFND3DDDI_QUERYDLISTFORAPPLICATION1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)|[PFND3D11_1DDI_RELOCATEDEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_relocatedevicefuncs)|
-|[PFND3D11_1DDI_RESOURCECOPYREGION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourcecopyregion)|[PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)|
-|[PFND3D10DDI_RETRIEVESUBOBJECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_retrievesubobject)|[PFND3D11_1DDI_STARTSESSIONKEYREFRESH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_startsessionkeyrefresh)|
-|[PFND3D11_1DDI_VIDEODECODERBEGINFRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderbeginframe)|[PFND3D11_1DDI_VIDEODECODERENDFRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderendframe)|
-|[PFND3D11_1DDI_VIDEODECODEREXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderextension)|[PFND3D11_1DDI_VIDEODECODERGETHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecodergethandle)|
-|[PFND3D11_1DDI_VIDEODECODERSUBMITBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecodersubmitbuffers)|[PFND3D11_1DDI_VIDEOPROCESSORBLT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorblt)|
-|[PFND3D11_1DDI_VIDEOPROCESSORGETOUTPUTEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorgetoutputextension)|[PFND3D11_1DDI_VIDEOPROCESSORGETSTREAMEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorgetstreamextension)|
-|[PFND3D11_1DDI_VIDEOPROCESSORINPUTVIEWREADAFTERWRITEHAZARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorinputviewreadafterwritehazard)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTALPHAFILLMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputalphafillmode)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTBACKGROUNDCOLOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputbackgroundcolor)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputcolorspace)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCONSTRICTION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputconstriction)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputextension)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTSTEREOMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputstereomode)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTTARGETRECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputtargetrect)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMALPHA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamalpha)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMAUTOPROCESSINGMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamautoprocessingmode)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamcolorspace)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMDESTRECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamdestrect)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamextension)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFILTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamfilter)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFRAMEFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamframeformat)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMLUMAKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamlumakey)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMOUTPUTRATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamoutputrate)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPALETTE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreampalette)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPIXELASPECTRATIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreampixelaspectratio)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMROTATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamrotation)|
-|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSOURCERECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamsourcerect)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSTEREOFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamstereoformat)|
+|PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP |[PFND3D11_1DDI_DESTROYAUTHENTICATEDCHANNEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyauthenticatedchannel)|
+|[PFND3D11_1DDI_DESTROYCRYPTOSESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroycryptosession)|[PFND3D11_1DDI_DESTROYVIDEODECODER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideodecoder)|
+|[PFND3D11_1DDI_DESTROYVIDEODECODEROUTPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideodecoderoutputview)|[PFND3D11_1DDI_DESTROYVIDEOPROCESSOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessor)|
+|[PFND3D11_1DDI_DESTROYVIDEOPROCESSORENUM](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorenum)|[PFND3D11_1DDI_DESTROYVIDEOPROCESSORINPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorinputview)|
+|[PFND3D11_1DDI_DESTROYVIDEOPROCESSOROUTPUTVIEW](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessoroutputview)|[PFND3D11_1DDI_DISCARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_discard)|
+|[PFND3D11_1DDI_SETCONSTANTBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)|[PFND3D11_1DDI_ENCRYPTIONBLT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_encryptionblt)|
+|[PFND3D11_1DDI_FINISHSESSIONKEYREFRESH](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_finishsessionkeyrefresh)|[PFND3D11_1DDI_FLUSH](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_flush)|
+|[PFND3D11_1DDI_GETCAPTUREHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcapturehandle)|[PFND3D11_1DDI_GETCERTIFICATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcertificate)|
+|[PFND3D11_1DDI_GETCERTIFICATESIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcertificatesize)|[PFND3D11_1DDI_GETCONTENTPROTECTIONCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcontentprotectioncaps)|
+|[PFND3D11_1DDI_GETCRYPTOKEYEXCHANGETYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcryptokeyexchangetype)|[PFND3D11_1DDI_GETENCRYPTIONBLTKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getencryptionbltkey)|
+|[PFND3D11_1DDI_GETVIDEODECODERBUFFERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderbufferinfo)|[PFND3D11_1DDI_GETVIDEODECODERBUFFERTYPECOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderbuffertypecount)|
+|[PFND3D11_1DDI_GETVIDEODECODERCONFIG](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderconfig)|[PFND3D11_1DDI_GETVIDEODECODERCONFIGCOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderconfigcount)|
+|[PFND3D11_1DDI_GETVIDEODECODERPROFILE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderprofile)|[PFND3D11_1DDI_GETVIDEODECODERPROFILECOUNT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideodecoderprofilecount)|
+|[PFND3D11_1DDI_GETVIDEOPROCESSORCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorcaps)|[PFND3D11_1DDI_GETVIDEOPROCESSORCUSTOMRATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorcustomrate)|
+|[PFND3D11_1DDI_GETVIDEOPROCESSORFILTERRANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorfilterrange)|[PFND3D11_1DDI_GETVIDEOPROCESSORRATECONVERSIONCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorrateconversioncaps)|
+|[PFND3D11_1DDI_SETCONSTANTBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)|[PFND3D11_1DDI_NEGOTIATEAUTHENTICATEDCHANNELKEYEXCHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiateauthenticatedchannelkeyexchange)|
+|[PFND3D11_1DDI_NEGOTIATECRYPTOSESSIONKEYESCHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiatecryptosessionkeyeschange)|[PFND3D11_1DDI_QUERYAUTHENTICATEDCHANNEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_queryauthenticatedchannel)|
+|[PFND3DDDI_QUERYDLISTFORAPPLICATION1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)|[PFND3D11_1DDI_RELOCATEDEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_relocatedevicefuncs)|
+|[PFND3D11_1DDI_RESOURCECOPYREGION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourcecopyregion)|[PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)|
+|[PFND3D10DDI_RETRIEVESUBOBJECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_retrievesubobject)|[PFND3D11_1DDI_STARTSESSIONKEYREFRESH](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_startsessionkeyrefresh)|
+|[PFND3D11_1DDI_VIDEODECODERBEGINFRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderbeginframe)|[PFND3D11_1DDI_VIDEODECODERENDFRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderendframe)|
+|[PFND3D11_1DDI_VIDEODECODEREXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderextension)|[PFND3D11_1DDI_VIDEODECODERGETHANDLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecodergethandle)|
+|[PFND3D11_1DDI_VIDEODECODERSUBMITBUFFERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecodersubmitbuffers)|[PFND3D11_1DDI_VIDEOPROCESSORBLT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorblt)|
+|[PFND3D11_1DDI_VIDEOPROCESSORGETOUTPUTEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorgetoutputextension)|[PFND3D11_1DDI_VIDEOPROCESSORGETSTREAMEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorgetstreamextension)|
+|[PFND3D11_1DDI_VIDEOPROCESSORINPUTVIEWREADAFTERWRITEHAZARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorinputviewreadafterwritehazard)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTALPHAFILLMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputalphafillmode)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTBACKGROUNDCOLOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputbackgroundcolor)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputcolorspace)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCONSTRICTION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputconstriction)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputextension)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTSTEREOMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputstereomode)|[PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTTARGETRECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetoutputtargetrect)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMALPHA](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamalpha)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMAUTOPROCESSINGMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamautoprocessingmode)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamcolorspace)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMDESTRECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamdestrect)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMEXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamextension)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFILTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamfilter)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFRAMEFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamframeformat)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMLUMAKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamlumakey)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMOUTPUTRATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamoutputrate)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPALETTE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreampalette)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPIXELASPECTRATIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreampixelaspectratio)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMROTATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamrotation)|
+|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSOURCERECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamsourcerect)|[PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSTEREOFORMAT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videoprocessorsetstreamstereoformat)|
 
-### <a name="direct3d-111-structures-and-enumerations"></a>Direct3D 11.1 構造および列挙体
+### <a name="direct3d-111-structures-and-enumerations"></a>Direct3D 11.1 構造体と列挙型
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D バージョン 11.1 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+このセクションでは、ユーザーモードで表示される Microsoft Direct3D バージョン11.1 関数で使用される構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
-|Direct3D のバージョン 11.1 構造および列挙体||
+|Direct3D バージョン11.1 の構造体と列挙型||
 |:---|:---|
 |D3D11_1_DDI_BLEND_DESC |D3D11_1_DDI_CHECK_DIRECT_FLIP_FLAGS |
 |D3D11_1_DDI_COPY_FLAGS |D3D11_1_DDI_FLUSH_FLAGS |
@@ -473,21 +473,21 @@ Direct3D のバージョン 11.1 状態関数のメンバーへのポインタ�
 |D3D11_DDI_SHADER_MIN_PRECISION |D3D11_DDI_SHADER_MIN_PRECISION_SUPPORT_DATA |
 |D3D11_DDI_VIDEO_DECODER_BUFFER_TYPE ||
 
-## <a name="direct3d-version-112-state-functions"></a>Direct3D のバージョン 11.2 状態関数
+## <a name="direct3d-version-112-state-functions"></a>Direct3D バージョン11.2 の状態関数
 
-このセクションでは、マイクロソフトの Direct3D バージョン 11.2 のランタイムに追加されるユーザー モード ディスプレイ ドライバー状態関数について説明します。 Direct3D 11.2 は、Windows 8.1 で導入されました。 
+このセクションでは、Microsoft Direct3D バージョン11.2 ランタイムに追加されるユーザーモード表示ドライバーの状態関数について説明します。 Direct3D 11.2 は Windows 8.1 で導入されました。 
 
-ドライバーのメンバーを Direct3D のバージョン 11.2 状態関数へのポインターを提供する、 [D3DDDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数。
+このドライバーは、ユーザーモードのディスプレイドライバーのアダプター固有の[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数の呼び出しで、 [D3DDDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)構造体のメンバーを介して、Direct3D バージョン11.2 の状態関数へのポインターを提供します。
 
-|Direct3D のバージョン 11.2 状態関数||
+|Direct3D バージョン11.2 の状態関数||
 |:---|:---|
-|[PFND3DWDDM1_3DDI_SETMARKER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm1_3ddi_setmarker)|[PFND3DWDDM1_3DDI_SETMARKERMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm1_3ddi_setmarkermode)|
+|[PFND3DWDDM1_3DDI_SETMARKER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm1_3ddi_setmarker)|[PFND3DWDDM1_3DDI_SETMARKERMODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm1_3ddi_setmarkermode)|
 
-### <a name="direct3d-112-structures-and-enumerations"></a>Direct3D 11.2 構造および列挙体
+### <a name="direct3d-112-structures-and-enumerations"></a>Direct3D 11.2 構造体と列挙型
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D バージョン 11.2 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+ここでは、ユーザーモードで表示される Microsoft Direct3D バージョン11.2 関数で使用される構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
-|Direct3D のバージョン 11.2 構造および列挙体||
+|Direct3D バージョン11.2 の構造体と列挙型||
 |:---|:---|
 |D3DWDDM1_3DDI_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG |D3DWDDM1_3DDI_DEVICEFUNCS |
 |D3DWDDM1_3DDI_D3D11_OPTIONS_DATA1 |D3DWDDM1_3DDI_MARKER_TYPE |
@@ -496,30 +496,30 @@ Direct3D のバージョン 11.1 状態関数のメンバーへのポインタ�
 |D3DWDDM1_3DDI_TILED_RESOURCE_COORDINATE |D3DWDDM1_3DDI_TILED_RESOURCES_SUPPORT_FLAG |
 
 
-## <a name="direct3d-version-120-state-functions"></a>Direct3D のバージョン 12.0 状態関数
+## <a name="direct3d-version-120-state-functions"></a>Direct3D バージョン12.0 の状態関数
 
-このセクションでは、リファレンスのページには、マイクロソフトの Direct3D バージョン 12.0 ランタイムに追加されるユーザー モード ディスプレイ ドライバー状態関数について説明します。 Direct3D 12.0 は、Windows 10 で導入されました。 
+このセクションの参照ページでは、Microsoft Direct3D バージョン12.0 ランタイムに追加されるユーザーモードの表示ドライバーの状態関数について説明します。 Direct3D 12.0 は Windows 10 で導入されました。 
 
-Direct3D のバージョン 12.0 状態関数のメンバーへのポインターを提供するドライバー、 [D3DWDDM2_0DDI_VIDEODEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3dwddm2_0ddi_videodevicefuncs)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数。
+このドライバーは、ユーザーモードのディスプレイドライバーのアダプター固有の[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数の呼び出しで、 [D3DWDDM2_0DDI_VIDEODEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3dwddm2_0ddi_videodevicefuncs)構造体のメンバーを介して、Direct3D バージョン12.0 の状態関数へのポインターを提供します。
 
-|Direct3D のバージョン 12.0 状態関数||
+|Direct3D バージョン12.0 の状態関数||
 |:---|:---|
-|[PFND3DWDDM2_0DDI_CHECKCRYPTOSESSIONSTATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_checkcryptosessionstatus)|[PFND3D12DDI_OPENADAPTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_openadapter)|
-|[PFND3D12DDI_CREATEDEVICE_0003](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createdevice_0003)|[PFND3DWDDM2_0DDI_CHECKVIDEOPROCESSORFORMATCONVERSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_checkvideoprocessorformatconversion)|
-|[PFND3DWDDM2_0DDI_GETCRYPTOSESSIONPRIVATEDATASIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getcryptosessionprivatedatasize)|[PFND3DWDDM2_0DDI_GETDATAFORNEWHARDWAREKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getdatafornewhardwarekey)|
-|[PFND3DWDDM2_0DDI_GETRESOURCELAYOUT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getresourcelayout)|[PFND3DWDDM2_0DDI_QUERYVIDEOCAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_queryvideocapabilities)|
-|[PFND3DWDDM2_0DDI_SETHARDWAREPROTECTION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_sethardwareprotection)|[PFND3DWDDM2_0DDI_VIDEODECODERENABLEDOWNSAMPLING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecoderenabledownsampling)|
-|[PFND3DWDDM2_0DDI_VIDEODECODERSUBMITBUFFERS1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecodersubmitbuffers1)|[PFND3DWDDM2_0DDI_VIDEODECODERUPDATEDOWNSAMPLING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecoderupdatedownsampling)|
-|[PFND3DWDDM2_0DDI_VIDEOPROCESSORGETBEHAVIORHINTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorgetbehaviorhints)|[]()|
-|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetoutputcolorspace1)|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTSHADERUSAGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetoutputshaderusage)|
-|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetstreamcolorspace1)|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMMIRROR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetstreammirror)|
+|[PFND3DWDDM2_0DDI_CHECKCRYPTOSESSIONSTATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_checkcryptosessionstatus)|[PFND3D12DDI_OPENADAPTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_openadapter)|
+|[PFND3D12DDI_CREATEDEVICE_0003](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createdevice_0003)|[PFND3DWDDM2_0DDI_CHECKVIDEOPROCESSORFORMATCONVERSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_checkvideoprocessorformatconversion)|
+|[PFND3DWDDM2_0DDI_GETCRYPTOSESSIONPRIVATEDATASIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getcryptosessionprivatedatasize)|[PFND3DWDDM2_0DDI_GETDATAFORNEWHARDWAREKEY](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getdatafornewhardwarekey)|
+|[PFND3DWDDM2_0DDI_GETRESOURCELAYOUT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getresourcelayout)|[PFND3DWDDM2_0DDI_QUERYVIDEOCAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_queryvideocapabilities)|
+|[PFND3DWDDM2_0DDI_SETHARDWAREPROTECTION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_sethardwareprotection)|[PFND3DWDDM2_0DDI_VIDEODECODERENABLEDOWNSAMPLING](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecoderenabledownsampling)|
+|[PFND3DWDDM2_0DDI_VIDEODECODERSUBMITBUFFERS1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecodersubmitbuffers1)|[PFND3DWDDM2_0DDI_VIDEODECODERUPDATEDOWNSAMPLING](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videodecoderupdatedownsampling)|
+|[PFND3DWDDM2_0DDI_VIDEOPROCESSORGETBEHAVIORHINTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorgetbehaviorhints)|[]()|
+|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetoutputcolorspace1)|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTSHADERUSAGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetoutputshaderusage)|
+|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetstreamcolorspace1)|[PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMMIRROR](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_videoprocessorsetstreammirror)|
 
-### <a name="direct3d-120-structures-and-enumerations"></a>Direct3D 12.0 構造および列挙体
+### <a name="direct3d-120-structures-and-enumerations"></a>Direct3D 12.0 構造体と列挙型
 
-このセクションでは、構造体とユーザー モード ドライバー Microsoft Direct3D バージョン 12 関数を使用してが表示される列挙体について説明します。 Direct3D のランタイムがこれらの構造体を渡し、ユーザー モードのパラメーターに列挙値はドライバー関数を表示します。
+このセクションでは、Microsoft Direct3D バージョン12の関数で使用されるユーザーモードディスプレイドライバーの構造と列挙について説明します。 Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターにこれらの構造体と列挙値を渡します。
 
 
-| Direct3D のバージョン 12.0 の構造および列挙体                     |                                                                        |
+| Direct3D バージョン12.0 の構造体と列挙型                     |                                                                        |
 |:----------------------------------------------------------------------|:-----------------------------------------------------------------------|
 | D3D12DDI_VIDEO_PROCESSOR_INPUT_STREAM_DESC_0032                       | D3D12DDI_VIDEO_PROCESS_OUTPUT_STREAM_DESC_0032                         |
 | D3D12DDIARG_CREATE_VIDEO_DECODER_HEAP                                 | D3D12DDI_VIDEO_DECODE_CONFIGURATION                                    |
@@ -623,10 +623,10 @@ Direct3D のバージョン 12.0 状態関数のメンバーへのポインタ�
 
 ## <a name="see-also"></a>関連項目
 
-[DXGI DDI をサポートしています。](supporting-the-dxgi-ddi.md)
+[DXGI DDI のサポート](supporting-the-dxgi-ddi.md)
 
-[Multiplane オーバーレイのサポート](multiplane-overlay-support.md)
+[マルチプレーンオーバーレイのサポート](multiplane-overlay-support.md)
 
-[ユーザー モードのディスプレイ ドライバーによって呼び出された Direct3D ランタイム関数](direct3d-runtime-functions-called-by-user-mode.md)
+[ユーザーモードで呼び出される Direct3D ランタイム関数の表示ドライバー](direct3d-runtime-functions-called-by-user-mode.md)
 
 [Direct3D レンダリングのパフォーマンスの向上](direct3d-rendering-performance-improvements.md)

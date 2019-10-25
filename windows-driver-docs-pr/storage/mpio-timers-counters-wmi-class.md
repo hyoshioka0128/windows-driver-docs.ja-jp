@@ -4,17 +4,17 @@ description: MPIO\_タイマー\_カウンター WMI クラス
 ms.assetid: 386110f8-504c-4617-b8ae-557ea504d41d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4590a37632bed94ce62f1ad86c3d8bd5822118d2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eb8e798fe5a56e1d1e13ea0c4e2890bb1d211239
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386150"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843565"
 ---
-# <a name="mpiotimerscounters-wmi-class"></a>MPIO\_タイマー\_カウンター WMI クラス
+# <a name="mpio_timers_counters-wmi-class"></a>MPIO\_タイマー\_カウンター WMI クラス
 
 
-WMI クライアントが、MPIO を使用して\_タイマー\_カウンター WMI クラスのすべてのグローバルなタイマー値 MPIO をクエリします。
+WMI クライアントは、MPIO\_タイマー\_カウンター WMI クラスを使用して、すべてのグローバルタイマー値の MPIO を照会します。
 
 ```cpp
 class MPIO_TIMERS_COUNTERS
@@ -77,7 +77,7 @@ class MPIO_TIMERS_COUNTERS
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_タイマー\_カウンター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_timers_counters)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_タイマー\_カウンター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_timers_counters)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

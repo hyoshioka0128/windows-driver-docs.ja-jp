@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT
-description: KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされているピクセル形式の配列を取得します。
+title: KSK プロパティの\_VPCONFIG\_GETVIDEOFORMAT
+description: KSK プロパティ\_VPCONFIG\_GETVIDEOFORMAT プロパティは、サポートされているピクセル形式の配列を取得します。
 ms.assetid: 74cc8cbc-cd81-43e1-ba15-3105a4c70808
 keywords:
-- KSPROPERTY_VPCONFIG_GETVIDEOFORMAT ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_GETVIDEOFORMAT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f17bd90babf6c2949672411bdc7ca7190906cf78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e09eb1a2ddf132a3d4b9efb6a4156bf007e74c66
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381911"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842813"
 ---
-# <a name="kspropertyvpconfiggetvideoformat"></a>KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT
+# <a name="ksproperty_vpconfig_getvideoformat"></a>KSK プロパティの\_VPCONFIG\_GETVIDEOFORMAT
 
 
-KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされているピクセル形式の配列を取得します。
+KSK プロパティ\_VPCONFIG\_GETVIDEOFORMAT プロパティは、サポートされているピクセル形式の配列を取得します。
 
 ## <span id="ddk_ksproperty_vpconfig_getvideoformat_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_GETVIDEOFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされてい�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされてい�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)"><strong>DDPIXELFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat" data-raw-source="[&lt;strong&gt;DDPIXELFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)"><strong>DDピクセル形式</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、ビデオのポートのピクセル形式を説明する DDPIXELFORMAT 構造です。
+プロパティ値 (操作データ) は、ビデオポートのピクセル形式を記述する DD画素形式の構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされてい�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT プロパティがサポートされてい�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)
+[**DDピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)
 
  
 

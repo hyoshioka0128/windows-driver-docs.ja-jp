@@ -6,12 +6,12 @@ keywords:
 - ハーフトーン機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79dc34cc07fc6010ee40067f72d4f0359b841d2c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d6a6f3813cfa045061ac9be072fd9a25ad6210c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363376"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843053"
 ---
 # <a name="option-attributes-for-the-halftone-feature"></a>Halftone 機能のオプション属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "67363376"
 
 
 
-次の表は、ハーフトーン機能に関連付けられている属性を一覧表示します。 ハーフトーン機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+次の表に、ハーフトーン機能に関連付けられている属性を示します。 ハーフトーン機能の詳細については、「[標準機能](standard-features.md)」を参照してください。
 
 <table>
 <colgroup>
@@ -36,34 +36,34 @@ ms.locfileid: "67363376"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><em><strong>HTCallbackID</strong></p></td>
-<td><p>レンダリング プラグインの正の数値が渡される<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)"> <strong>IPrintOemUni::HalftonePattern</strong> </a>メソッドとしてその<em>dwCallbackID</em>パラメーター。</p></td>
-<td><p>必要な場合、 <strong>IPrintOemUni::HalftonePattern</strong>メソッドが提供されます。 参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
+<td><p><em><strong>Htの id</strong></p></td>
+<td><p>表示プラグインの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)"><strong>Iprintoemuni:: HalftonePattern</strong></a>メソッドに<em>dwcallbackid</em>パラメーターとして渡される正の数値。</p></td>
+<td><p><strong>Iprintoemuni:: HalftonePattern</strong>メソッドが指定されている場合は必須です。 「 <a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv によるハーフトーン」を</a>参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>HTNumPatterns</strong></p></td>
-<td><p>ハーフトーン パターンの数を表す数値。</p>
-<p>参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
-<td><p>任意。 1 またはできます 3、3 は赤、緑、およびその順序で、青の個別のパターンを意味します。 指定しない場合、既定値は 1 です。 いずれかで使用できる<em> <strong>rcHTPatternID</strong>または *<strong>HTCallbackID</strong>します。</p></td>
+<td><p>指定されたハーフトーンパターンの数を表す数値。</p>
+<p>「 <a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv によるハーフトーン」を</a>参照してください。</p></td>
+<td><p>(省略可能)。 1または3にすることができます。ここで、3は、赤、緑、および青の個別のパターンを示しています。 指定しない場合、既定値は1です。 は、<em><strong>rcHTPatternID</strong>または *<strong>ht id</strong>と共に使用できます。</p></td>
 </tr>
 <tr class="odd">
-<td><p></em><strong>HTPatternSize</strong></p></td>
-<td><p><a href="pairs.md" data-raw-source="[Pair](pairs.md)">ペア</a>幅と高さ (ピクセル単位) で指定されたパターンを表す数値の<em> <strong>rcHTPatternID</strong>します。</p></td>
-<td><p>必要な場合 *<strong>rcHTPatternID</strong>を指定します。 パターンの最大サイズは、(256、256) のペアです。 幅と高さ、乗算を Dword 記憶域の 4 で割り切れる必要があります指定します。</p></td>
+<td><p></em><strong>Htpattern サイズ</strong></p></td>
+<td><p><em><strong>rcHTPatternID</strong>で指定されたパターンの幅と高さをピクセル単位で表す数値の<a href="pairs.md" data-raw-source="[Pair](pairs.md)">ペア</a>。</p></td>
+<td><p>*<strong>RcHTPatternID</strong>が指定されている場合は必須です。 最大パターンサイズはペア (256, 256) です。 Dword としてストレージを使用するには、幅と高さを乗算して4で割り切れる必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>rcHTPatternID</strong></p></td>
-<td><p>ハーフトーン パターンのデータを表す RC_HTPATTERN リソースのリソース識別子です。</p></td>
-<td><p>ハーフトーン パターンがリソース DLL で提供されているかどうかに必要です。 参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
+<td><p>ハーフトーンパターンデータを表す RC_HTPATTERN リソースのリソース識別子。</p></td>
+<td><p>ハーフトーンパターンがリソース DLL に指定されている場合は必須です。 「 <a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv によるハーフトーン」を</a>参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、[サンプルの GPD ファイル](sample-gpd-files.md)を参照してください。
 
-これらの属性の使用に関する詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。 これらの属性を使用しない[ミニドライバーが指定したハーフトーン](minidriver-supplied-halftoning.md)します。
+これらの属性の使用方法の詳細については、「 [Unidrv によるハーフトーン](halftoning-with-unidrv.md)」を参照してください。 これらの属性は[、ミニドライバーが提供するハーフトーン](minidriver-supplied-halftoning.md)では使用されません。
 
  
 

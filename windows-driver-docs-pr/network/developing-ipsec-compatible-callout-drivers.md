@@ -1,35 +1,35 @@
 ---
-title: IPsec 互換コールアウト ドライバーの開発
-description: IPsec 互換コールアウト ドライバーの開発
+title: IPsec と互換性のあるコールアウトドライバーの開発
+description: IPsec と互換性のあるコールアウトドライバーの開発
 ms.assetid: 5e4fad4e-a790-4294-b3ac-a796f76265ad
 keywords:
-- IPsec WDK Windows フィルタ リング プラットフォーム、WFP コールアウト ドライバーとの互換性
-- Windows Filtering Platform コールアウト ドライバー WDK、IPsec との互換性
+- IPsec WDK Windows フィルタリングプラットフォーム、WFP コールアウトドライバーとの互換性
+- Windows フィルタリングプラットフォームコールアウトドライバー WDK、IPsec 互換性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 059c6fa975f7776fc61cced49462a50ab8cce8a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aac7cf2c0144199f14a56afb37e55eb602ad3dec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381381"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838142"
 ---
-# <a name="developing-ipsec-compatible-callout-drivers"></a>IPsec 互換コールアウト ドライバーの開発
+# <a name="developing-ipsec-compatible-callout-drivers"></a>IPsec と互換性のあるコールアウトドライバーの開発
 
 
-### <a name="layers-that-are-compatible-with-ipsec"></a>IPsec と互換性があるレイヤー
+### <a name="layers-that-are-compatible-with-ipsec"></a>IPsec と互換性のあるレイヤー
 
-Windows Vista および Windows Server 2008 で始まる IPsec の Windows 実装と完全に互換性がある、次の実行時のフィルタ リング層のいずれかのコールアウト ドライバーを登録する必要があります。
+Windows Vista および Windows Server 2008 で開始される IPsec の Windows 実装と完全に互換性を持たせるには、次のいずれかの実行時フィルターレイヤーでコールアウトドライバーを登録する必要があります。
 
-<a href="" id="tcp-packet-filtering"></a>TCP パケットのフィルター処理  
-Stream レイヤー:
+<a href="" id="tcp-packet-filtering"></a>TCP パケットフィルター処理  
+ストリームレイヤー:
 
 -   FWPS\_レイヤー\_ストリーム\_V4
 
 -   FWPS\_レイヤー\_ストリーム\_V6
 
-<a href="" id="non-tcp-and-non-error-icmp-packet-filtering"></a>TCP 以外とエラー以外の ICMP パケットがフィルター処理  
-データグラム データ層:
+<a href="" id="non-tcp-and-non-error-icmp-packet-filtering"></a>非 TCP および非エラーの ICMP パケットフィルター処理  
+データグラムデータレイヤー:
 
 -   FWPS\_レイヤー\_データグラム\_データ\_V4
 
@@ -39,13 +39,13 @@ Stream レイヤー:
 
 -   FWPS\_レイヤー\_データグラム\_データ\_V6\_破棄
 
-場合を除き、データグラム データ層から受け取る挿入される前に、受信パケットを再構築しなければならないときに、これらのデータ層に登録されているコールアウト ドライバーは IPsec との互換性には。
+受信パケットがデータグラムデータレイヤーから挿入される前に再構築する必要がある場合を除き、これらのデータ層に登録されているコールアウトドライバーは IPsec と互換性があります。
 
-### <a name="layers-that-are-incompatible-with-ipsec"></a>IPsec と互換性があるレイヤー
+### <a name="layers-that-are-incompatible-with-ipsec"></a>IPsec と互換性のないレイヤー
 
-ネットワークと転送のレイヤーは、IPsec は、これらの層でトラフィックがまだ暗号化を解除または検証のため、IPsec と互換性がないです。 IPsec ポリシーは、ネットワーク層の分類操作後に発生するトランスポート層で適用されます。
+これらのレイヤーは IPsec トラフィックがまだ暗号化解除または検証されていないため、ネットワーク層と転送層は IPsec と互換性がありません。 IPsec ポリシーは、ネットワーク層の分類操作の後に発生するトランスポート層で適用されます。
 
-次の実行時のフィルター処理レイヤーは、次のレイヤーの下に IPsec の Windows での処理が発生したため、IPsec と互換性がありません。
+次の実行時フィルターレイヤーは IPsec と互換性がありません。これは、Windows での IPsec の処理が次の層の下に発生するためです。
 
 FWPS\_レイヤー\_受信\_IPPACKET\_V4
 
@@ -63,17 +63,17 @@ FWPS\_レイヤー\_送信\_IPPACKET\_V4\_破棄
 
 FWPS\_レイヤー\_送信\_IPPACKET\_V6\_破棄
 
-### <a name="special-considerations-for-transport-layers"></a>トランスポート層に関する注意事項
+### <a name="special-considerations-for-transport-layers"></a>トランスポート層に関する特別な考慮事項
 
-トランスポート層に登録されているコールアウト ドライバーを作成する (FWPS\_レイヤー\_*XXX*\_トランスポート\_V4 または\_V6)、IPsec と互換性がある手順に従います。ガイドライン:
+トランスポート層 (FWPS\_レイヤー\_*XXX*\_Transport\_V4 または \_V6) に登録されているコールアウトドライバーを IPsec と互換性のあるものにするには、次のガイドラインに従ってください。
 
-1.  登録のコールアウトの ALE で承認レイヤーの表示と同意 (**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V4**または**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**) トランスポート レイヤーだけでなく (FWPS\_レイヤー\_ *XXX*\_トランスポート\_V4 または\_V6)。
+1.  [ALE で受信/受け入れレイヤーを承認する] (**Fwps\_レイヤー\_ale\_認証\_受信\_V4**または**FWPS\_レイヤー\_ale\_AUTH\_RECV\_を承認します。** トランスポート層 (FWPS\_レイヤー\_*XXX*\_transport\_V4 または \_V6) に加えて\_V6 も受け入れます。\_
 
-2.  内部 Windows IPsec 処理への干渉を防ぐためには、登録よりも低い、重みが副層に吹き出し**FWPM\_副層\_ユニバーサル**します。 使用して、 [ **FwpmSubLayerEnum0** ](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0)副層の重量を検索します。 この関数については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
+2.  Windows IPsec の内部処理による干渉を防ぐために、 **FWPM\_サブレイヤー\_UNIVERSAL**と比べて重みが低いサブレイヤーにコールアウトを登録します。 [**FwpmSubLayerEnum0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0)関数を使用して、サブレイヤーの重みを検索します。 この関数の詳細については、Microsoft Windows SDK の[Windows フィルタリングプラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)のドキュメントを参照してください。
 
-3.  ALE で ALE 分類を検査する必要がある必要がありますトランスポート パケットを受信承認レイヤーの表示と同意 (**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT。\_V4**または**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**)。 このようなパケットは、受信トランスポート レイヤーから許可する必要があります。 Windows Vista Service Pack 1 (SP1)、Windows Server 2008 以降、使用して、 **FWPS\_メタデータ\_フィールド\_ALE\_分類\_REQUIRED**メタデータ フラグ着信パケットに指定されるかどうかを判断する、 **FWPM\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V4**と**FWPM\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**レイヤーをフィルター処理します。 このメタデータ フラグが置き換えられます、 **FWP\_条件\_フラグ\_REQUIRES\_ALE\_分類**Windows Vista で使用されているフラグの条件します。
+3.  Ale 分類を必要とする着信トランスポートパケットは、ALE 承認受信/受け入れレイヤー (**Fwps\_レイヤー\_ale\_AUTH\_receive\_accept\_V4**または FWPS\_レイヤーで検査する必要があり **@no__ t9_ ALE\_AUTH\_RECV\_\_V6 に受け入れ**ます)。\_ このようなパケットは、受信トランスポート層から許可されている必要があります。 Windows Vista Service Pack 1 (SP1) および Windows Server 2008 以降では、 **Fwps の\_メタデータ\_フィールド\_ALE\_分類\_必要な**メタデータフラグを使用して、着信パケットを示すかどうかを判断します。**FWPM\_レイヤー\_ale\_AUTH\_RECV\_accept\_V4**および**FWPM\_LAYER\_ale\_AUTH\_RECV\_V6**フィルターレイヤーを受け入れます。\_ このメタデータフラグは、Windows Vista で使用されていた **\_ALE\_分類条件フラグを必要と\_\_フラグの\_条件**を置き換えます。
 
-4.  Windows IPsec の内部処理への干渉を防ぐためは IPsec トラフィックの detunneled がまだない場合にいないトランスポート層での IPsec トンネル モードのトラフィックをインターセプトします。 次のコード例では、このようなパケットをバイパスする方法を示します。
+4.  Windows IPsec の内部処理による干渉を防ぐため、IPsec トラフィックがまだ detunneled されていない場合は、トランスポート層で IPsec トンネルモードトラフィックをインターセプトしないでください。 次のコード例は、このようなパケットをバイパスする方法を示しています。
     ```C++
     FWPS_PACKET_LIST_INFORMATION0 packetInfo = {0};
     FwpsGetPacketListSecurityInformation0(
@@ -91,13 +91,13 @@ FWPS\_レイヤー\_送信\_IPPACKET\_V6\_破棄
     }
     ```
 
-5.  IPsec で保護されたパケットが暗号化を解除し、トランスポート層で確認した後、AH または ESP ヘッダーは、IP ヘッダーに残ります。 このようなパケットが TCP/IP スタックに返される場合、AH または ESP ヘッダーを削除する IP ヘッダーをリビルドしてください。 Windows Vista SP1 および Windows Server 2008 以降、これを行う、パケットを複製し、呼び出すことによって、 [ **FwpsConstructIpHeaderForTransportPacket0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0)関数を持つ、 *headerIncludeHeaderSize*パラメーターは、複製されたパケットの IP ヘッダーのサイズに設定します。
+5.  IPsec で保護されたパケットの暗号化が解除され、トランスポート層で検証されると、AH/ESP ヘッダーは IP ヘッダーに残ります。 このようなパケットを TCP/IP スタックに再挿入に戻す必要がある場合は、IP ヘッダーを再構築して AH/ESP ヘッダーを削除する必要があります。 Windows Vista SP1 および Windows Server 2008 以降では、パケットを複製し、 *Headerincludeheadersize*パラメーターが IP ヘッダーサイズに設定されている[**FwpsConstructIpHeaderForTransportPacket0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0)関数を呼び出すことで、これを行うことができます。複製されたパケットの。
 
-6.  ALE 受信受け入れる層でコールアウトをチェックして IPsec で保護されたトラフィックを検出できるかどうか、 **FWP\_条件\_フラグ\_IS\_IPSEC\_セキュリティで保護された**フラグ設定されています。 トランスポート層では、コールアウトは、呼び出すことで IPsec で保護されたトラフィックを検出できる、 [ **FwpsGetPacketListSecurityInformation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)関数とチェックするかどうか、 **FWPS\_パケット\_一覧\_INFORMATION0**フラグに設定されて、 *queryFlags*パラメーター。
+6.  ALE 受信/受け入れレイヤーでは、コールアウトは IPsec で保護されたトラフィックを検出できます。これを行うには、ipsec で保護されている **\_条件\_フラグ\_\_ipsec\_セキュリティで保護**されたフラグが設定されていることを確認します トランスポート層では、コールアウトは[**FwpsGetPacketListSecurityInformation0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)関数を呼び出して、 **FWPS\_PACKET\_LIST\_INFORMATION0**フラグがに設定されているかどうかを確認することにより、 *IPsec で保護されたトラフィックを検出できます。queryFlags*パラメーター。
 
 ### <a name="working-with-ipsec-esp-packets"></a>IPsec ESP パケットの使用
 
-エンジンに復号化セキュリティ ペイロード (ESP) パケットのカプセル化することが示されている場合は、ESP の末尾のデータを除外するに切り捨てます。 エンジンが MDL のデータは、このようなパケットを処理する方法により、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体に適切なパケット長は反映されません。 使用して、正しい長さを取得できます、 [ **NET\_バッファー\_データ\_長さ**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)のデータ長を取得するマクロ、 **NET\_バッファー**構造体。
+エンジンは、復号化されたカプセル化セキュリティペイロード (ESP) パケットを示すときに、それを切り捨てて、末尾の ESP データを除外します。 エンジンがこのようなパケットを処理する方法により、 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造内の MDL データに正しいパケット長が反映されません。 [**Net\_buffer\_data\_length**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)マクロを使用して、 **net\_バッファー**構造のデータ長を取得することで、正しい長さを取得できます。
 
  
 

@@ -4,12 +4,12 @@ description: 全二重モード
 ms.assetid: 01e3388d-d568-4476-9ff0-2125acafb841
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1532059d7feb3a1f412c8f4893aa83e8497aef60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a2edef06203a4e9efec7f06244867ebd83186c36
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378560"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843405"
 ---
 # <a name="full-duplex-mode"></a>全二重モード
 
@@ -17,9 +17,9 @@ ms.locfileid: "67378560"
 ## <span id="ddk_full_duplex_mode_kg"></span><span id="DDK_FULL_DUPLEX_MODE_KG"></span>
 
 
-Storport ドライバーには、高パフォーマンスのバスに特化した I/O モデルをサポートしています。 この I/O モデルでは、ミニポート ドライバーに追加、新しい要求がキュー場合でも、他のユーザーの完了の場合は、つまり、全二重モードで動作するミニポート ドライバーを許可します。 さらに、全二重モード、ミニポート ドライバーがの実行を同期するその[ **StartIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)割り込みサービス ルーチンとします。 これは、大幅なパフォーマンスの向上につながります。 ただし、Storport は、既定では、半二重モードで動作するためのミニポート ドライバーを全二重モードで活用するために設計する必要があります。
+Storport ドライバーでは、高パフォーマンスのバス専用に調整された i/o モデルがサポートされています。 この i/o モデルを使用すると、ミニポートドライバーを全二重モードで動作させることができます。つまり、ミニポートドライバーは、他のユーザーの完了処理中でも、新しい要求をキューに追加できます。 さらに、全二重モードでは、ミニポートドライバーは、 [**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)および interrupt サービスルーチンの実行を同期する必要はありません。 これにより、パフォーマンスが大幅に向上する可能性があります。 ただし、Storport は、既定ではハーフデュプレックスモードで動作するため、全二重モードを利用するようにミニポートドライバーを設計する必要があります。
 
-ミニポート ドライバーが Storport の実行中に、全二重モードで動作するを構成する必要があります、 [ **HwStorFindAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)ルーチン。 これは、初期化して、 **SynchronizationModel**のミニポート ドライバーのメンバー [**ポート\_構成\_情報 (STORPORT)** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))構造体を**StorSynchronizeFullDuplex**します。
+ミニポートドライバーは、 [**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)ルーチンの実行中に全二重モードで動作するように Storport を構成する必要があります。 これを行うには、ミニポートドライバーの[**ポート\_CONFIGURATION\_INFORMATION (STORPORT)** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))構造体の**同期モデル**メンバーを**StorSynchronizeFullDuplex**に初期化します。
 
  
 

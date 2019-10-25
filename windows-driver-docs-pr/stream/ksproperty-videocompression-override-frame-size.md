@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ
-description: KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プロパティは、フレーム サイズ (バイト数) を一時的に上書きします。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOCOMPRESSION\_\_フレーム\_のサイズを上書きします
+description: KSK プロパティ\_VIDEOCOMPRESSION\_オーバーライド\_フレームの\_サイズプロパティは、フレームサイズ (バイト数) を一時的にオーバーライドします。 このプロパティは省略可能です。
 ms.assetid: 626b0dcf-3087-407b-8e7f-00314de7d2f2
 keywords:
-- KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14d084503742671b06aa54aee6723dba7472c74f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3f99b3c60addd91d742a04f1c635392592b9e07e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355925"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837885"
 ---
-# <a name="kspropertyvideocompressionoverrideframesize"></a>KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ
+# <a name="ksproperty_videocompression_override_frame_size"></a>KSK プロパティ\_VIDEOCOMPRESSION\_\_フレーム\_のサイズを上書きします
 
 
-KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プロパティは、フレーム サイズ (バイト数) を一時的に上書きします。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOCOMPRESSION\_オーバーライド\_フレームの\_サイズプロパティは、フレームサイズ (バイト数) を一時的にオーバーライドします。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videocompression_override_frame_size_ks"></span><span id="DDK_KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE_KS"></span>
 
@@ -42,18 +42,18 @@ KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プ
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>設定</th>
-<th>対象</th>
+<th>セット</th>
+<th>的を絞る</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
-<td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p>いいえ</p></td>
+<td><p>はい</p></td>
+<td><p>filter</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -61,18 +61,18 @@ KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プ
 
  
 
-プロパティ値 (データの操作) が値をオーバーライドする一時的なフレーム サイズを指定します。
+プロパティ値 (操作データ) は、一時的なフレームサイズのオーバーライド値を指定する LONG です。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_の構造は、フレームのオーバーライドするデータ レートを指定します。
+KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、フレームのオーバーライドするデータ速度を指定します。
 
-このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanCrunch**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)デバイスのビデオの圧縮機能を取得する構造体。
+このプロパティをサポートするミニドライバーでは、 **\_CompressionCaps**プロパティの CanCrunch フラグを\_設定する必要があります。これは、 [**KSK プロパティ\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)構造体の**機能**メンバーデバイスのビデオ圧縮機能を取得します。
 
-ビデオ キャプチャ ミニドライバーでは、このプロパティがサポートされていません。
+このプロパティは、video capture ミニドライバーではサポートされていません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -82,8 +82,8 @@ KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プ
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,11 +91,11 @@ KSPROPERTY\_VIDEOCOMPRESSION\_オーバーライド\_フレーム\_サイズ プ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

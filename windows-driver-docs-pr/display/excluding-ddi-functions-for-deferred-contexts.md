@@ -1,29 +1,29 @@
 ---
-title: 遅延コンテキストに対する DDI 関数の除外
-description: 遅延コンテキストに対する DDI 関数の除外
+title: 遅延コンテキストの DDI 関数の除外
+description: 遅延コンテキストの DDI 関数の除外
 ms.assetid: f6e7898a-7fb8-4a70-ab2e-3372a28db6f4
 keywords:
-- Direct3D のバージョン 11 WDK Windows 7 を表示する DDI 関数を除く、コンテキストの遅延
-- Direct3D のバージョン 11 WDK Windows Server 2008 R2 表示、DDI 関数を除く、遅延のコンテキスト
-- 遅延コンテキスト WDK Windows 7 の表示、DDI 関数を除く
-- 遅延コンテキスト WDK Windows Server 2008 R2 の表示、DDI 関数を除く
+- Direct3D バージョン 11 WDK Windows 7 の表示、遅延コンテキスト、DDI 関数を除く
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 の表示、遅延コンテキスト、DDI 関数の除外
+- 遅延コンテキスト WDK Windows 7 ディスプレイ (DDI 関数を除く)
+- 遅延コンテキスト WDK Windows Server 2008 R2 表示 (DDI 関数を除く)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fee0417d08b59cca12f90d766d993ad0e949c000
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3f572f85efdad974bbb20415498a31c688d59ad5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370992"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839701"
 ---
-# <a name="excluding-ddi-functions-for-deferred-contexts"></a>遅延コンテキストに対する DDI 関数の除外
+# <a name="excluding-ddi-functions-for-deferred-contexts"></a>遅延コンテキストの DDI 関数の除外
 
 
-このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
+このセクションは、windows 7 以降、および windows Server 2008 R2 以降のバージョンの Windows オペレーティングシステムにのみ適用されます。
 
-マイクロソフトの Direct3D ランタイムがユーザー モードのディスプレイ ドライバーを呼び出すときに[ **CreateDeferredContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)ドライバー遅延コンテキストを作成する関数は、ランタイムが呼び出すことができる関数を提供します。そのため、コンテキストを遅延しました。 ドライバーがのメンバー、 [ **D3D11DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)構造体、 **p11ContextFuncs**のメンバー、 [ **D3D11DDIARG\_CREATEDEFERREDCONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext)へのポインターを構造体します。 ドライバーは、ドライバーと遅延のコンテキストの機能のサブセットのみが、イミディ エイト コンテキストを提供します。
+Microsoft Direct3D ランタイムが、遅延コンテキストを作成するためにユーザーモードの表示ドライバーの[**CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)関数を呼び出すと、その遅延コンテキストに対してランタイムが呼び出すことができる関数がドライバーによって提供されます。 このドライバーは、 [**D3D11DDIARG\_CREATEDEFERREDCONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext)構造体の**p11ContextFuncs**メンバーが指す[**D3D11DDI\_devicefuncs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)構造体のメンバーになります。 ドライバーは、ドライバーが直接コンテキストを処理するので、遅延コンテキストに対して関数のサブセットのみを提供します。
 
-ドライバーの次のメンバーを設定して遅延コンテキストの多くの関数を除外する[ **D3D11DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)または[ **D3D11\_1DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)に**NULL**:
+ドライバーは、 [**D3D11DDI\_devicefuncs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)または[**D3D11\_1ddi\_devicefuncs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)の次のメンバーを**NULL**に設定することによって、遅延コンテキスト用の多くの関数を除外します。
 
 ```cpp
 typedef struct D3D11DDI_DEVICEFUNCS {

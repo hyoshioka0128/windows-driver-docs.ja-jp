@@ -1,44 +1,44 @@
 ---
-title: WDM デバイス オブジェクトの例
-description: WDM デバイス オブジェクトの例
+title: WDM デバイスオブジェクトの例
+description: WDM デバイスオブジェクトの例
 ms.assetid: 8da56415-5018-468c-99c7-3969e5c00285
 keywords:
-- デバイス オブジェクトの WDK カーネル、例
+- デバイスオブジェクト WDK カーネル、例
 - マウスの WDK カーネル
-- キーボードの WDK カーネル
-- 機能のデバイス オブジェクトの WDK カーネル
+- キーボード WDK カーネル
+- 機能デバイスオブジェクト WDK カーネル
 - FDO WDK カーネル
-- 物理デバイス オブジェクトの WDK カーネル
-- Pdo WDK カーネル
-- フィルター DOs WDK カーネル
+- 物理デバイスオブジェクト WDK カーネル
+- PDOs WDK カーネル
+- DOs WDK カーネルをフィルター処理する
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afcde6eb20b0a96af34c848fbd8566ae9db7ec3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fb50153d4b9d9d1ccf335d49639cad07b28290f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386624"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838704"
 ---
-# <a name="example-wdm-device-objects"></a>WDM デバイス オブジェクトの例
+# <a name="example-wdm-device-objects"></a>WDM デバイスオブジェクトの例
 
 
 
 
 
-次の図は、前に示した図の説明でキーボードとマウス デバイスを表すデバイス オブジェクトを示しています。[キーボードとマウスのハードウェア構成](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)します。 図の説明に示すようにキーボードとマウスのドライバー[キーボードとマウス ドライバー レイヤー](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) I/O サポート ルーチンを呼び出すことによってこれらのデバイス オブジェクトを作成 ([**IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)).
+次の図は、[キーボードとマウスのハードウェア構成](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)を示す、前に示したキーボードとマウスのデバイスを表すデバイスオブジェクトを示しています。 次の図に示すように、キーボードとマウスのドライバーは、i/o サポートルーチン ([**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) を呼び出すことによって、これらのデバイスオブジェクト[を作成し](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)ます。
 
-![キーボードとマウス デバイス オブジェクト](images/2sampdos.png)
+![キーボードおよびマウスデバイスオブジェクト](images/2sampdos.png)
 
-キーボードとマウス デバイスの場合、対応するポートとクラス ドライバーは、デバイス オブジェクトを作成します。 ポート ドライバーでは、物理ポートを表すための物理デバイス オブジェクト (PDO) を作成します。 各クラス ドライバーでは、I/O 要求のターゲットとしてキーボードまたはマウス デバイスを表す (FDO) 独自の機能のデバイス オブジェクトを作成します。
+キーボードとマウスデバイスの場合、それぞれのポートとクラスのドライバーがデバイスオブジェクトを作成します。 ポートドライバーは、物理ポートを表す物理デバイスオブジェクト (PDO) を作成します。 各クラスドライバーは、i/o 要求のターゲットとしてキーボードまたはマウスデバイスを表す独自の機能デバイスオブジェクト (FDO) を作成します。
 
-各クラス ドライバーは、クラス ドライバーはそのドライバーは、ポート、ドライバーは、上記自体を連結できますので、次の下位レベルのドライバーのデバイス オブジェクト、ポインターを取得する I/O サポート ルーチンを呼び出します。 クラス ドライバーは、ターゲットの物理デバイスを表す PDO ポート ドライバーまでの I/O 要求を送信できます。
+各クラスドライバーは、次の下位レベルのドライバーのデバイスオブジェクトへのポインターを取得するために i/o サポートルーチンを呼び出します。そのため、クラスドライバーは、そのドライバー (ポートドライバー) を上にチェーンすることができます。 次に、クラスドライバーは、物理デバイスを表すターゲット PDO のポートドライバーに i/o 要求を送信できます。
 
-構成に追加オプションのフィルター ドライバーは、フィルター デバイス オブジェクトを作成 (フィルター操作を行います)。 クラス ドライバーは、オプションのフィルター ドライバーは自体がデバイス スタックの次の下位ドライバーにチェーンし、次の下位ドライバー ターゲット PDO の I/O 要求を送信します。
+構成に追加されるオプションのフィルタードライバーによって、フィルターデバイスオブジェクト (フィルター処理) が作成されます。 クラスドライバーと同様に、オプションのフィルタードライバーは、デバイススタック内の次の下位のドライバーにそれ自体をチェーンし、ターゲット PDO の i/o 要求を次の下位のドライバーに送信します。
 
-以前に示すように、[キーボードとマウス ドライバー レイヤー](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)図、割り込みを生成するデバイスのすべてのポート ドライバーが割り込みオブジェクトを設定し、ISR. を登録する必要がありますので、各ポート ドライバーはバス (最下位レベル) ドライバーでは、
+前に[キーボードおよびマウスドライバーレイヤー](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)の図に示したように、各ポートドライバーはバス (最低レベル) のドライバーであるため、割り込みを生成するデバイスのすべてのポートドライバーは、割り込みオブジェクトを設定し、ISR を登録する必要があります。
 
-キーボードおよびキーボードとマウスのハードウェア構成で各デバイスが複数の割り込みのベクターを使用している場合に表示される補助デバイス コント ローラーの i8042 ドライバーなどのデバイスのデュアル ポート ドライバー。 このようなドライバーを記述するときにデバイスごとに個別の isr を特定の実装か、両方のデバイスの 1 つの ISR を実装します。
+デュアルデバイスポートドライバー。各デバイスが別の割り込みベクターを使用している場合、キーボードおよびマウスのハードウェア構成に表示される、キーボードおよび補助デバイスコントローラー用の i8042 ドライバーなどです。 このようなドライバーを作成する場合は、デバイスごとに個別の Isr を実装するか、両方のデバイスに対して単一の ISR を実装することができます。
 
  
 

@@ -1,44 +1,44 @@
 ---
-title: ストリーム クラスとミニドライバーのインターフェイス
-description: ストリーム クラスとミニドライバーのインターフェイス
+title: Stream クラスとミニドライバーインターフェイス
+description: Stream クラスとミニドライバーインターフェイス
 ms.assetid: d85510e6-1fd7-442a-bd88-f32b6c13ff75
 keywords:
-- Stream.sys クラス ドライバー WDK Windows 2000 のカーネル、ストリーム クラスのインターフェイス
-- ミニドライバー WDK Windows 2000 のカーネル、ストリーム クラスのインターフェイスのストリーミング
-- ミニドライバー WDK Windows 2000 のストリーム、ストリーム クラスのインターフェイス
-- stream クラス インターフェイスの WDK ストリーミング ミニドライバー
-- される Srb WDK ストリーミング ミニドライバー
-- Isr WDK ストリーミング ミニドライバー
+- .Sys クラスドライバー WDK Windows 2000 カーネル、ストリームクラスインターフェイス
+- streaming ミニドライバー WDK Windows 2000 カーネル、stream クラスインターフェイス
+- ミニドライバー WDK Windows 2000 カーネルストリーミング、stream クラスインターフェイス
+- stream クラスインターフェイス WDK streaming ミニドライバー
+- SRBs WDK streaming ミニドライバー
+- Isr WDK streaming ミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa43a1ac64b22cbe5270fba512aef7b4f7bdd5c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 44aaf8add9a36e99462f792ca90312425a439447
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377822"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837691"
 ---
-# <a name="stream-class-and-minidriver-interface"></a>ストリーム クラスとミニドライバーのインターフェイス
+# <a name="stream-class-and-minidriver-interface"></a>Stream クラスとミニドライバーインターフェイス
 
 
 
 
 
-ストリーム クラスのインターフェイスは、クラス ドライバーと、ミニドライバーの関数呼び出しのセットでは主にします。 クラス ドライバーは、アダプターのハードウェアへのアクセスが必要なアダプター ミニドライバーを呼び出すことの要求フローを制御します。 クラス ドライバーは、マルチプロセッサおよび割り込みの同期を担当します。 クラスのドライバーと、ミニドライバーの両方を初期化すると後、ミニドライバーはパッシブであり、クラス ドライバーによってのみ呼び出されます。 クラスのドライバーに、ミニドライバーから関数呼び出しのほとんどは、低レベルのサービス要求です。
+Stream クラスインターフェイスは、主にクラスドライバーとミニドライバー間の関数呼び出しのセットです。 クラスドライバーは、アダプターのハードウェアへのアクセスが必要な場合にアダプターミニドライバーを呼び出すことで、要求フローを制御します。 クラスドライバーは、マルチプロセッサと割り込み同期を担当します。 クラスドライバーとミニドライバーの両方が初期化されると、ミニドライバーはパッシブになり、クラスドライバーによってのみ呼び出されます。 ミニドライバーからクラスドライバーへの関数呼び出しのほとんどは、低レベルのサービス要求です。
 
-コマンドとミニドライバーに情報を制御する基本的なメカニズムは、*ストリーム要求のブロック*(SRB)。 される Srb のセットは、ドライバーの特定の機能にアクセスするには、各ミニドライバーは提供されており、デバイスでサポートされている各データ ストリームは、通常固有します。 この情報は、大規模な循環バッファー内のオペレーティング システム管理の DMA 経由のデバイスに渡されます。
+コマンドと情報をミニドライバーに制御する基本的なメカニズムは、*ストリーム要求ブロック*(SRB) です。 SRBs のセットは、各ミニドライバーがドライバーの特定の機能にアクセスするために用意されており、通常はデバイスでサポートされている各データストリームに固有です。 この情報は、オペレーティングシステムによって制御される DMA を介して、大きな循環バッファーでデバイスに渡されます。
 
-コマンドとそのコマンドに関連付けられているデータを SRB で構成されます。 A [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体には、特定の SRB に関連するすべての情報が含まれています。 単に、SRB とも呼ばこの構造体には、コマンドを補足する追加のパラメーターが含まれています。
+SRB は、コマンドと、そのコマンドに関連付けられたデータで構成されます。 [**ハードウェア\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造には、特定の SRB に関連するすべての情報が含まれます。 この構造体 (多くの場合、単に単に SRB と呼ばれます) には、コマンドを補完するための追加のパラメーターが含まれています。
 
-次の図は、初期化中に、ストリーム クラスと、ミニドライバー間のやり取りを示します。
+次の図は、初期化時のストリームクラスとミニドライバーの相互作用を示しています。
 
-![初期化中に、ストリーム クラスと、ミニドライバーの間の相互作用を示す図](images/stclassi.png)
+![初期化中にストリームクラスとミニドライバーの間の相互作用を示す図](images/stclassi.png)
 
-ストリーミング ミニドライバー関数をすべて必要に応じて、ミニドライバーを nonreentrant ようにミニドライバーの割り込みサービス ルーチン (ISR) と同期されます。 つまり、ミニドライバーでスレッドを実行しているときに呼び出しになりますありません ISR を含む、ミニドライバー内の他のすべての関数 この nonreentrant 条件は、ミニドライバーを記述しやすく、Windows NT または Windows 2000 のマルチプロセッサ システムであっても、true を保持します。 ストリーム クラス ドライバーを使用して、ストリーミングのミニドライバー (とすべて優先度の低い Irq) の IRQ オフ マスクにより、この nonreentrant 条件を実現**KeSynchronizeExecution**ミニドライバーのルーチンのいずれかでコードを実行するとします。 同期の詳細については、次を参照してください。[ミニドライバー同期](minidriver-synchronization.md)します。
+必要に応じて、すべての streaming ミニドライバー関数をミニドライバーの interrupt service ルーチン (ISR) と同期して、ミニドライバー nonreentrant にします。 つまり、ミニドライバーでスレッドが実行されている場合、ミニドライバー内の他の関数 (ISR を含む) に対する呼び出しは行われません。 この非再入可能な条件は、マルチプロセッサの Windows NT/Windows 2000 システムであっても、ミニドライバーを簡単に記述できるようにするためのものです。 Stream クラスドライバーは、ミニドライバーのルーチンでコードを実行するときに、 **KeSynchronizeExecution**を使用してストリーミングミニドライバー (およびすべての優先度の低い irq) の IRQ をマスクすることによって、この非再入条件を実現します。 同期の詳細については、「[ミニドライバー synchronization](minidriver-synchronization.md)」を参照してください。
 
-ストリーミングのミニドライバーは、必要に応じて WDM システム サービスを呼び出すことができます。 ただし、ミニドライバーは、デバイス オブジェクトを割り当てられませんが、システムの呼び出しを行うクラス ドライバーのデバイス オブジェクトを使用します。 ほとんどのミニドライバーは、クラス ドライバーから使用可能なすべての必要な機能 WDM システムの呼び出しを実行する必要はありません。
+Streaming ミニドライバーは、必要に応じて WDM システムサービスを呼び出すことができます。 ただし、ミニドライバーはデバイスオブジェクトを割り当てませんが、クラスドライバーの device オブジェクトを使用してシステム呼び出しを行います。 すべての必要な機能はクラスドライバーから使用できるため、ほとんどのミニドライバーでは、WDM システム呼び出しを行う必要はありません。
 
-ミニドライバーは、すべてのミニドライバーのエントリ ポイントが IRQL でと呼ばれることに注意してくださいである必要があります&gt;ディスパッチ\_レベル以外の WDM システム サービスの呼び出しを行うときに、 [ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)ルーチン。 この関数は IRQL でサービスの呼び出しを許可 = ディスパッチ\_レベルまたはパッシブ\_によって指定された優先度のレベル。 IRQL でこの制限を設定して上書きできます、 **TurnOffSynchronization**でブール値、 [ **HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)構造体を**TRUE**します。
+ミニドライバーは、WDM システムサービスの呼び出しを行うときに、 [**Streamclasscallatnewpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclasscallatnewpriority)ルーチンを除き、すべてのミニドライバーエントリポイントが IRQL &gt; ディスパッチ\_レベルを呼び出すことに注意する必要があります。 この関数は、指定された優先度に応じて、IRQL = ディスパッチ\_レベルまたはパッシブ\_レベルでのサービス呼び出しを許可します。 この IRQL に対する制限は、 [**HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)構造体の**TurnOffSynchronization**ブール値を**TRUE**に設定することによってオーバーライドできます。
 
  
 

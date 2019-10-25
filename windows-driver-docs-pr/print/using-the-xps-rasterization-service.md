@@ -4,41 +4,41 @@ description: XPS ラスタライズ サービスの使用
 ms.assetid: a6a3746a-3638-464b-bca0-60003f37af76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da7407f12498ea2e84f31d1c28538eb7f2cdb4d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9cf595ac0c27b5a3dcffb8670b124a65d326210b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362725"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843609"
 ---
 # <a name="using-the-xps-rasterization-service"></a>XPS ラスタライズ サービスの使用
 
 
-XPS ラスタライズ サービスは、ビットマップを XPS ドキュメントのページを固定に変換する XPS ラスタライザー オブジェクトを実装します。 このサービスは、一連のビットマップ イメージとして XPS ドキュメントをレンダリングする XPSDrv フィルターの設計を簡略化します。 フィルターは、固定ページで、軸に沿った、四角形領域のビットマップ イメージを作成する XPS ラスタライザー オブジェクトに指示できます。
+Xps ラスタライズサービスは、xps ドキュメント内の固定ページをビットマップに変換する XPS ラスタライザーオブジェクトを実装します。 このサービスは、XPS ドキュメントを一連のビットマップイメージとしてレンダリングする XPSDrv フィルターの設計を簡略化します。 フィルターでは、XPS ラスタライザーオブジェクトに対して、固定ページ内の軸に沿った四角形の領域のビットマップイメージを作成するように指示できます。
 
-たとえば、プリンターを XPSDrv フィルターは、一連の水平または垂直のバンドとしてプリンターに送信する固定ページを必要があります。 この場合、フィルターはラスタライズする XPS ラスタライザー オブジェクトを別のビットマップとしてで各バンドに通知します。 また、プリンターに十分なメモリがある場合は、フィルターはページ全体のビットマップ イメージを作成するラスタライザーを調べることができます。
+たとえば、プリンターの XPSDrv フィルターでは、水平方向または垂直方向の一連のバンドとして、固定ページをプリンターに送信することが必要になる場合があります。 この場合、フィルターは XPS ラスタライザーオブジェクトに対して、各バンドを個別のビットマップとしてラスタライズするように指示します。 または、プリンターに十分なメモリがある場合は、ページ全体のビットマップイメージを作成するようにラスタライザーに指示することもできます。
 
-XPS ラスタライズ サービスは、システム ファイル Xpsrasterservice.dll に実装されます。 ただし、XPSDrv フィルターは直接アクセスしませんこの DLL 内のエントリ ポイント。 フィルターによって XPS ラスタライズ サービスのインターフェイスにアクセスする代わりに、 [**印刷パイプラインのプロパティ バッグ**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)印刷フィルター パイプライン マネージャーから、フィルターを受信します。
+XPS ラスタライズサービスは、システムファイル Xpsrasterservice.dll に実装されています。 ただし、XPSDrv フィルターはこの DLL 内のエントリポイントに直接アクセスしません。 フィルターは、フィルターが印刷フィルターパイプラインマネージャーから受信した[**印刷パイプラインプロパティバッグ**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)を介して XPS ラスタライズサービスのインターフェイスにアクセスします。
 
-XPSDrv フィルターによって使用できるように、XPS ラスタライズ サービスで指定する必要があります、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)印刷フィルター パイプライン内のフィルターをについて説明します。 具体的には、構成ファイルを含める必要があります、 **FilterServiceProvider**を持つ要素を**dll**属性は、次の XML の例で示すように、サービスの DLL 名に設定します。
+XPSDrv フィルターで使用できるようにするには、XPS ラスタライズサービスを[フィルターパイプライン構成ファイル](filter-pipeline-configuration-file.md)で指定する必要があります。このファイルは、印刷フィルターパイプラインのフィルターについて説明しています。 具体的には、次の XML の例に示すように、構成ファイルには、 **dll**属性がサービス dll 名に設定された**filterserviceprovider**要素が含まれている必要があります。
 
 ```xml
   <FilterServiceProvider dll = "XpsRasterService.dll" />
 ```
 
-**FilterServiceProvider**要素の子である、**フィルター**パイプライン内のフィルターを一覧表示する要素。 パイプラインの初期化中に印刷フィルター パイプライン マネージャーは XPS ラスタライズ サービスを読み込むし、プロパティ バッグからサービスをフィルターにアクセスできるようにします。 XPS ラスタライズ サービスを読み込むフィルター パイプライン構成ファイルの例は、WDK の XpsRasFilter サンプルを参照してください。 このサンプルは、Src にある\\印刷\\の WDK インストール Xpsrasfilter フォルダー。
+**Filterserviceprovider**要素は、パイプライン内のフィルターを一覧表示する**filters**要素の子です。 パイプラインの初期化中に、印刷フィルターパイプラインマネージャーは XPS ラスタライズサービスを読み込み、プロパティバッグを使用してサービスにフィルターからアクセスできるようにします。 XPS ラスタライズサービスを読み込むフィルターパイプライン構成ファイルの例については、WDK の Xp のサンプルを参照してください。 このサンプルは、WDK インストールの Src\\Print\\Xp フォルダーにあります。
 
-### <a name="obtaining-an-xps-rasterization-factory"></a>XPS ラスタライズのファクトリを取得します。
+### <a name="obtaining-an-xps-rasterization-factory"></a>XPS ラスタライズファクトリを取得する
 
-XPS ドキュメント、ラスタライズする前に XPSDrv フィルターは、印刷のパイプラインのプロパティ バッグからラスタライズのファクトリ オブジェクトへの参照を取得する必要があります。 その後、フィルターは、表示するために必要な各固定ページのファクトリから新しい XPS ラスタライザー オブジェクトを取得します。
+XPS ドキュメントをラスタライズする前に、XPSDrv フィルターは、印刷パイプラインプロパティバッグからラスタライズファクトリオブジェクトへの参照を取得する必要があります。 その後、フィルターは、レンダリングする必要がある固定ページごとに、ファクトリから新しい XPS ラスタライザーオブジェクトを取得します。
 
-印刷フィルター パイプライン マネージャーがフィルターを呼び出し、XPSDrv フィルターを初期化する[ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)メソッドをプロパティ バッグの渡します[IPrintPipelinePropertyBag](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag)インターフェイスは、入力パラメーターとしてメソッドにします。
+XPSDrv フィルターを初期化するには、印刷フィルターパイプラインマネージャーがフィルターの[**iprintpipelinefilter:: initializefilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)メソッドを呼び出し、プロパティバッグの[Iprintpipelinefilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag)インターフェイスを入力パラメーターとしてメソッドに渡します。
 
-XPSDrv を XPS ラスタライズ ファクトリ オブジェクトへのポインターを取得するには、呼び出しをフィルター処理、 [ **IPrintPipelinePropertyBag::GetProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinepropertybag-getproperty)メソッド。 プロパティ名"MS\_IXpsRasterizationFactory"ラスタライズのファクトリ オブジェクトを識別します。 このプロパティの値が取得した**GetProperty**ラスタライズ ファクトリ オブジェクトへの参照は、 **IUnknown**インターフェイス。 このインターフェイスを取得した後、フィルターを呼び出す必要があります、 [iunknown::queryinterface](https://go.microsoft.com/fwlink/p/?linkid=119700)メソッドは、オブジェクトへの参照を取得する[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)インターフェイス。 その後、フィルターを呼び出すことができます、 [ **IXpsRasterizationFactory::CreateRasterizer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer) XPS ラスタライザー オブジェクトを作成するメソッド。
+XPS ラスタライズファクトリオブジェクトへのポインターを取得するために、XPSDrv フィルターは[**Iprintpipelinepropertybag:: GetProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinepropertybag-getproperty)メソッドを呼び出します。 プロパティ名 "MS\_IXpsRasterizationFactory" は、ラスタライズファクトリオブジェクトを識別します。 このプロパティの場合、 **GetProperty**から取得された値は、ラスタライズファクトリオブジェクトの**IUnknown**インターフェイスへの参照です。 このインターフェイスを取得した後、フィルターは、オブジェクトの[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)インターフェイスへの参照を取得するために、 [IUnknown:: QueryInterface](https://go.microsoft.com/fwlink/p/?linkid=119700)メソッドを呼び出す必要があります。 その後、フィルターは[**IXpsRasterizationFactory:: CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)メソッドを呼び出して XPS ラスタライザーオブジェクトを作成できます。
 
-フィルターが呼び出すことによってオブジェクトを解放する必要があります、ファクトリ オブジェクトを不要になったとき、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)オブジェクトのメソッド**IXpsRasterizationFactory**インターフェイス。
+ファクトリオブジェクトが不要になった場合は、オブジェクトの**IXpsRasterizationFactory**インターフェイスで[release](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッドを呼び出すことによって、オブジェクトを解放する必要があります。
 
-次のコード例は、取得する方法を示します、 **IXpsRasterizationFactory**インターフェイスのインスタンスから、 **IPrintPipelinePropertyBag**インターフェイス インスタンス。
+次のコード例は、 **Iprintpipelinepropertybag**インターフェイスインスタンスから**IXpsRasterizationFactory**インターフェイスインスタンスを取得する方法を示しています。
 
 ```cpp
 //
@@ -95,45 +95,45 @@ HRESULT CreateRasterizationFactory(
 }
 ```
 
-### <a name="creating-an-xps-object-model-of-a-fixed-page"></a>固定ページの XPS オブジェクト モデルの作成
+### <a name="creating-an-xps-object-model-of-a-fixed-page"></a>固定ページの XPS オブジェクトモデルの作成
 
-XPS ラスタライズ ファクトリを作成した後、XPSDrv フィルターは XPS ラスタライザー オブジェクトを作成するのにファクトリを使用できます。 XPS ラスタライザー オブジェクトが、 [IXpsRasterizer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nn-xpsrassvc-ixpsrasterizer)インターフェイス。 XPS ドキュメントの特定の固定ページ XPS ラスタライザーの各オブジェクトは専用です。 XPS ラスタライザー オブジェクトを作成するには、ファクトリには、固定ページの XPS オブジェクト モデル (OM) が必要です。 (固定ページ) の XPS OM を持つオブジェクトに含まれている、 **IXpsOMPage**インターフェイス。 XPS ラスタライザー オブジェクトは、固定ページのコンテンツにアクセスするのにこのインターフェイスを使用します。 詳細については、 **IXpsOMPage**インターフェイス、Windows SDK のドキュメントを参照してください。
+XPS ラスタライズファクトリを作成した後、XPSDrv フィルターはファクトリを使用して XPS ラスタライザーオブジェクトを作成できます。 XPS ラスタライザーオブジェクトには、 [Ixpsrasterizer](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizer)インターフェイスがあります。 各 XPS ラスタライザーオブジェクトは、XPS ドキュメントの特定の固定ページ専用です。 XPS ラスタライザーオブジェクトを作成するには、ファクトリに固定ページの XPS オブジェクトモデル (OM) が必要です。 XPS OM (固定ページ) は、 **IXpsOMPage**インターフェイスを持つオブジェクトに含まれています。 XPS ラスタライザーオブジェクトは、このインターフェイスを使用して、固定ページのコンテンツにアクセスします。 **IXpsOMPage**インターフェイスの詳細については、Windows SDK のドキュメントを参照してください。
 
-XPSDrv フィルターでは、XPS ラスタライザー オブジェクトを作成する次の手順に従います。
+XPSDrv フィルターは、次の手順に従って XPS ラスタライザーオブジェクトを作成します。
 
--   フィルターが使用して、固定ページ オブジェクトを読み取り、 [IFixedPage](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-ifixedpage)入力ストリームからのインターフェイス。
+-   フィルターは、入力ストリームから[Ifixedpage](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-ifixedpage)インターフェイスを持つ固定ページオブジェクトを読み取ります。
 
--   フィルターで XPS OM オブジェクトを作成する、 **IXpsOMPage**固定ページの内容を保持するインターフェイス。 XPS ラスタライザーは、固定ページのコンテンツにアクセスするのにこのインターフェイスを使用して後でします。
+-   フィルターは、固定ページの内容を保持するために、 **IXpsOMPage**インターフェイスを持つ XPS OM オブジェクトを作成します。 XPS ラスタライザーは、後でこのインターフェイスを使用して、固定ページのコンテンツにアクセスします。
 
--   XPS ラスタライザーのオブジェクトを作成するには、フィルターは XPS OM オブジェクトを渡します。 **IXpsOMPage** XPS ラスタライズ ファクトリのインターフェイス**IXpsRasterizationFactory::CreateRasterizer**メソッド。
+-   Xps ラスタライザーオブジェクトを作成するために、フィルターは xps OM オブジェクトの**IXpsOMPage**インターフェイスを xps ラスタライズファクトリの**IXpsRasterizationFactory:: CreateRasterizer**メソッドに渡します。
 
-フィルターが呼び出すことによって、オブジェクトを解放する必要があります XPS ラスタライザーのオブジェクトを不要になったとき、**リリース**オブジェクトのメソッド**IXpsRasterizer**インターフェイス。 XPS ラスタライズ サービスを使用した XPSDrv フィルターの実装例については、WDK の XpsRasFilter ドライバーのサンプルを参照してください。
+XPS ラスタライザーオブジェクトが不要になった場合は、オブジェクトの**Ixpsrasterizer**インターフェイスで**release**メソッドを呼び出して、オブジェクトを解放する必要があります。 XPS ラスタライズサービスを使用する XPSDrv filter の実装例については、WDK の xps Srasfilter サンプルドライバーを参照してください。
 
-XPS ラスタライズ サービスを使用するには、キャンバスと固定ページ内でビジュアル ブラシは 64 レベルの上限がネストできます。 キャンバスとビジュアル ブラシの詳細については、ダウンロード、 [XML Paper Specification](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)します。
+XPS ラスタライズサービスで使用する場合、固定ページ内のキャンバスとビジュアルブラシは、最大64レベルまで入れ子にすることができます。 キャンバスとビジュアルブラシの詳細については、「 [XML Paper Specification](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)」をダウンロードしてください。
 
-### <a name="bitmap-resolution-and-pixel-format"></a>解像度とピクセル形式をビットマップします。
+### <a name="bitmap-resolution-and-pixel-format"></a>ビットマップ解像度とピクセル形式
 
-固定ページの XPS ラスタライザー オブジェクトには、ページのレンダリング位置解像度を知る必要があります。 XPSDrv フィルターへの呼び出しで入力パラメーターとしてドット/インチ (DPI) で、この解像度を指定する**IXpsRasterizationFactory::CreateRasterizer** XPS ラスタライザー オブジェクトを作成します。 たとえば、ディスプレイ デバイスは、600 DPI の解像度を備え、固定ページには、標準のレター サイズのページがについて説明する場合、は、ページ全体のビットマップ イメージは、次のディメンションには。
+固定ページの XPS ラスタライザーオブジェクトは、ページが表示される解像度を認識している必要があります。 XPSDrv フィルターは、XPS ラスタライザーオブジェクトを作成する**IXpsRasterizationFactory:: CreateRasterizer**の呼び出しで、この解像度をドット/インチ (dpi) で入力パラメーターとして指定します。 たとえば、ディスプレイデバイスの解像度が 600 DPI で、固定ページに標準の文字サイズページが記述されている場合、ページ全体のビットマップイメージの大きさは次のようになります。
 
-幅 = (8.5 インチ) x(600 DPI) 5100 ドットを =
+width = (8.5 インチ) x (600 DPI) = 5100 ドット
 
-高さ = (11 インチ) x(600 DPI) 6600 ドットを =
+高さ = (11 インチ) x (600 DPI) = 6600 ドット
 
-固定ページの四角形領域のビットマップ イメージを作成するには XPSDrv フィルターを呼び出し XPS ラスタライザー オブジェクトの呼び出し[ **IXpsRasterizer::RasterizeRect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)メソッド。 このメソッドは、常に 32 ビットのピクセル サイズのビットマップを生成します。 ピクセル形式が GUID 値で指定された**GUID\_WICPixelFormat32bppPBGRA**、ヘッダー ファイル Wincodec.h で定義されています。 形式には、8 ビットの赤、緑、および青のコンポーネントが含まれています。 とは、標準 (sRGB) の色領域。 さらに、形式には、8 ビットのアルファ コンポーネントが含まれています。 アルファ コンポーネントによってピクセルの各値の色要素が事前乗算されます。 この形式の詳細については、次を参照してください。[ピクセルのネイティブ形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)します。
+固定ページの四角形領域のビットマップイメージを作成するために、XPSDrv フィルターは XPS ラスタライザーオブジェクトの[**Ixpsrasterizer:: RasterizeRect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)メソッドを呼び出します。 このメソッドは、常に32ビットのピクセルサイズのビットマップを生成します。 ピクセル形式は、GUID 値**guid\_WICPixelFormat32bppPBGRA**によって指定されます。この guid は、ヘッダーファイル wincodec .h に定義されています。 この形式には、8ビットの赤、緑、および青のコンポーネントが含まれており、標準の (sRGB) 色空間を使用します。 また、この形式には8ビットのアルファコンポーネントが含まれています。 各ピクセル値のカラーコンポーネントは、アルファコンポーネントによって乗算されます。 この形式の詳細については、「[ネイティブピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)」を参照してください。
 
-XPSDrv フィルターによっては、XPS ラスタライザー オブジェクトによって生成されるビットマップの追加の処理を実行します。 たとえば、カラー プリンター用のフィルターは、ビットマップをプリンターのページ記述言語で、ビットマップをラップし、プリンターに送信する前に CMYK ピクセル形式に変換可能性があります。
+一部の XPSDrv フィルターでは、XPS ラスタライザーオブジェクトによって生成されるビットマップの追加処理が実行される場合があります。 たとえば、カラープリンターのフィルターでは、ビットマップをプリンターのページ記述言語にラップしてプリンターに送信する前に、ビットマップを CMYK ピクセル形式に変換することができます。
 
-XPS ラスタライズ サービスを XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、次を参照してください。 [XPS ラスタライズ サービス参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。
+XPS ラスタライズサービスが XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、「 [Xps ラスタライズサービスリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)」を参照してください。
 
-### <a name="xpsras-and-high-precision-pixel-formats"></a>XPSRas と高精度のピクセル形式
+### <a name="xpsras-and-high-precision-pixel-formats"></a>X 形式と高精度のピクセル形式
 
--   Windows 8、XPS ラスタライズ サービスが、新しいインターフェイスを公開します。 [IXpsRasterizationFactory1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory1)、の新しいバージョンである[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)します。 **IXpsRasterizationFactory1** 、新しいメソッドを公開する[ **IXpsRasterizationFactory1::CreateRasterizer1**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))、つまり、Windows 7 バージョンと同じです ([ **IXpsRasterizationFactory::CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)) 出力ピクセル形式の 1 つの新しいパラメーターを受け取る点を除いて、します。
--   この機能を新しい列挙型を公開する[ **XPSRAS\_ピクセル\_形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/ne-xpsrassvc-__midl___midl_itf_xpsrassvc_0000_0003_0001)、呼び出し元を使用するピクセル形式を選択できるようにする、 [IWICBitmap](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)IXpsRasterizer::RasterizeRect メソッドによって返されるインターフェイス。
+-   Windows 8 では、XPS ラスタライズサービスは新しいインターフェイス[IXpsRasterizationFactory1](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory1)を公開しています。これは、新しいバージョンの[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)です。 **IXpsRasterizationFactory1**は、Windows 7 バージョン ([**IXpsRasterizationFactory:: CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)) と同一の新しいメソッド[**IXpsRasterizationFactory1:: CreateRasterizer1**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))を公開しますが、これは1つの新しいメソッドを受け取る点が異なります。出力ピクセル形式のパラメーター。
+-   この機能は、 [ **\_ピクセル\_形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/ne-xpsrassvc-__midl___midl_itf_xpsrassvc_0000_0003_0001)である新しい列挙体を公開します。これにより、呼び出し元は、IXpsRasterizer:: RasterizeRect メソッドによって返される[IWICBitmap](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)インターフェイスによって使用されるピクセル形式を選択できます。
 
-### <a name="xpsras-and-the-gpu"></a>XPSRas と GPU
+### <a name="xpsras-and-the-gpu"></a>と GPU を
 
-WDDM 1.2 ディスプレイ ドライバーでは、Windows 8 を実行するコンピューターがある場合とで示すように、すべての条件、 [XPSRas GPU 利用デシジョン ツリー](xpsras-usage-decision-tree.md)が満たされると、GPU ハードウェア アクセラレーションが常に使用します。 これは、開発者は、されませんが、GPU のパフォーマンスの向上を享受するための手順を実行することを意味します。 ただし、さらに、システムのグラフィックス パフォーマンスを最適化する、次の手順を考慮する必要があります。
+Windows 8 を実行しているコンピューターで WDDM 1.2 ディスプレイドライバーを使用していて、[ [Gpu 使用率] デシジョンツリー](xpsras-usage-decision-tree.md)に表示されているすべての条件が満たされている場合は、常に gpu ハードウェアアクセラレータが使用されます。 つまり、開発者は、GPU によって提供されるパフォーマンスの強化を活用するための手順を実行する必要はありません。 ただし、システムのグラフィックスパフォーマンスをさらに最適化するには、次のことを検討する必要があります。
 
--   呼び出す、 [ **RasterizeRect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)一貫性のある四角形の大きさを持つメソッド。 それができない場合は、提供する最適な**RasterizeRect**のために必要な最初の呼び出し時に四角形のサイズが大きいものと、後続の呼び出しでより小さな四角形のサイズを求めます。
--   絶対に必要な場合にのみ、アンチ エイリアスを使用します。 エイリアス化テキストとベクトルように見えますが、アンチ エイリアスの対応するを DPI 値を指定した場合、 [ **IXpsRasterizationFactory::CreateRasterizer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)メソッドがかなり高いです。 たとえば、200 DPI 以上の DPI 値が高いと見なされます。 エイリアス化テキストと高 DPI とベクトルを使用する場合、指定されたデバイスの出力の品質が十分であることを確認するテストを行う必要があります。
--   ラスタライズする前に、ドキュメントを操作することができますし、フォントのサブセットおよびいくつかのページで繰り返される要素のリソース ディクショナリを使用して、IXpsOMPage が XPSRas パフォーマンスを向上します。
+-   四角形の寸法が一貫して[**RasterizeRect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)メソッドを呼び出します。 これが不可能な場合は、最初の呼び出しで必要とされる最大の四角形のサイズを使用して**RasterizeRect**を提供し、後続の呼び出しで小さな四角形のサイズを指定することをお勧めします。
+-   必要な場合にのみアンチエイリアシングを使用します。 [**IXpsRasterizationFactory:: CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)メソッドに指定された DPI 値が非常に高い場合、エイリアスが付けられたテキストとベクターは、対応するアンチエイリアスと同じように見えます。 たとえば、200 DPI を超える DPI 値は高いと見なされます。 テストは、エイリアス化されたテキストとベクトルを高 DPI で使用する場合に、特定のデバイスの出力品質が十分であることを保証するために行う必要があります。
+-   IXpsOMPage をラスタライズする前にドキュメントを操作できる場合、複数のページで繰り返される要素に対してフォントのサブセットとリソースディクショナリを使用すると、パフォーマンスが向上します。

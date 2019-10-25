@@ -1,57 +1,57 @@
 ---
-title: プレフィックス テーブル管理
-description: プレフィックス テーブル管理
+title: プレフィックステーブル管理
+description: プレフィックステーブル管理
 ms.assetid: a48ed460-fab9-4a6d-bd2f-454b4932ea61
 keywords:
-- RDBSS WDK ファイル システム、テーブルのプレフィックス
-- リダイレクトされたバッファリング サブシステム WDK のドライブのファイル システム、テーブルのプレフィックス
-- プレフィックス テーブル WDK ネットワーク リダイレクター
-- WDK RDBSS 名
-- バージョン スタンプ WDK RDBSS
+- RDBSS WDK ファイルシステム, プレフィックステーブル
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、プレフィックステーブル
+- プレフィックステーブル WDK ネットワークリダイレクター
+- WDK RDBSS の名前
+- バージョンスタンプ WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ed821f8a96c0d0f1c674f6990d722084fd6d76
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 42d6a1ea66d365dc6c0d2062cf324125a8b4fbd4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385164"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841027"
 ---
-# <a name="prefix-table-management"></a>プレフィックス テーブル管理
+# <a name="prefix-table-management"></a>プレフィックステーブル管理
 
 
 ## <span id="ddk_prefix_table_management_if"></span><span id="DDK_PREFIX_TABLE_MANAGEMENT_IF"></span>
 
 
-RDBSS SRV カタログにテーブルをプレフィックスの使用を有効にするデータ構造を定義する\_呼び出し、NET\_ルート、および V\_NET\_ルート名。
+RDBSS では、プレフィックステーブルの使用を有効にするデータ構造を定義しています。これは、SRV\_呼び出し、NET\_ROOT、および V\_NET\_のルート名に使用できるようにします。
 
-RDBSS で名前の管理の現在の実装では、次のコンポーネントを持つテーブルを使用します。
+RDBSS での name management の現在の実装では、次のコンポーネントを含むテーブルが使用されます。
 
 -   挿入された名前のキュー
 
--   バージョン スタンプ
+-   バージョンスタンプ
 
--   テーブルへのアクセスを制御するテーブルのロック リソース
+-   テーブルへのアクセスを制御するテーブルロックリソース
 
--   名前の一致が大文字と小文字を区別しないかどうかを示す値
+-   名前の一致で大文字と小文字を区別するかどうかを示す値
 
--   このプレフィックスのテーブルのハッシュ値のエントリのバケット
+-   このプレフィックステーブルのハッシュ値エントリのバケット
 
-テーブルのロック リソースは、通常の方法で使用されます。 変更操作の排他的参照操作用に共有。
+テーブルロックリソースは通常の方法で使用されます。これは、参照操作のための共有で、変更操作専用です。
 
-各変更でバージョン スタンプの変更。 キューの理由では、プレフィックスのテーブル パッケージで複数の呼び出し元はで列挙するのには、ことです。 挿入された名前とバージョン スタンプのキューでは、同時に列挙する複数の呼び出し元を許可します。 ファイル名に高速参照として、キューを使用できますが、プレフィックスのテーブルは、NET の適切なアプローチでは間違いなく\_ルート構造体。
+各変更に合わせてバージョンスタンプが変更されます。 キューの理由は、プレフィックステーブルパッケージによって、複数の呼び出し元が一度に列挙できることです。 挿入された名前とバージョンスタンプのキューを使用すると、複数の呼び出し元を同時に列挙できます。 キューはファイル名の高速な参照として使用できますが、プレフィックステーブルは、NET\_のルート構造の正しいアプローチであることが確実です。
 
-これらのプレフィックス テーブル管理ルーチンはによって内部的に使用 RDBSS MUP からの呼び出しに応答で名前を要求するか、NET の作成のパスを形成する\_ルート構造体。 これら RDBSS プレフィックスにテーブルの管理テーブルにアクセスする前に適切なロックを獲得し、作業が完了したときに、ロックが解放限りも、ルーチンを使用してネットワークのミニ リダイレクターことができます。 ドライバーによっては、通常の使用であるようします。
+これらのプレフィックステーブル管理ルーチンは、MUP からの呼び出しに応答して RDBSS によって内部的に使用され、名前を要求したり、NET\_のルート構造の作成パスを形成したりします。 これらの RDBSS プレフィックステーブル管理ルーチンは、テーブルにアクセスする前に適切なロックが取得され、作業が完了したときにロックが解放される限り、ネットワークミニリダイレクターでも使用できます。 ドライバーによって通常使用されるのは、次のようになります。
 
--   共有ロックの取得を呼び出すことによって**RxAcquirePrefixTableLockShared**します。
+-   **RxAcquirePrefixTableLockShared**を呼び出して、共有ロックを取得します。
 
--   呼び出すことによって、名前を調べる[ **RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)します。
+-   [**RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname)を呼び出して名前を検索します。
 
--   呼び出すことによって、共有ロックを解放**RxReleasePrefixTableLock**します。
+-   **RxReleasePrefixTableLock**を呼び出して、共有ロックを解除します。
 
-特定のルーチンが Windows XP と Windows の以前のバージョンでのみ実装されていることに注意してください。 [**RxPrefixTableLookupName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)は Windows のすべてのバージョンに実装されているプレフィックス テーブル管理ルーチンのみです
+一部のルーチンは、Windows XP およびそれ以前のバージョンの Windows でのみ実装されていることに注意してください。 [**RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname)は、すべてのバージョンの Windows に実装されている唯一のプレフィックステーブル管理ルーチンです。
 
-RDBSS プレフィックス テーブル管理ルーチンを以下に示します。
+RDBSS prefix テーブル管理ルーチンには、次のものが含まれます。
 
 <table>
 <colgroup>
@@ -66,30 +66,30 @@ RDBSS プレフィックス テーブル管理ルーチンを以下に示しま�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockexclusive" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockExclusive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockexclusive)"><strong>RxpAcquirePrefixTableLockExclusive</strong></a></p></td>
-<td align="left"><p>このルーチンは、カタログ SRV_CALL と NET_ROOT 名に使用されるプレフィックス テーブルに対する排他ロックを取得します。</p>
-<p>このルーチンは、Windows XP および Windows 2000 にできるだけです。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpacquireprefixtablelockexclusive" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockExclusive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpacquireprefixtablelockexclusive)"><strong>RxpAcquirePrefixTableLockExclusive</strong></a></p></td>
+<td align="left"><p>このルーチンは、SRV_CALL と NET_ROOT の名前をカタログ化するために使用されるプレフィックステーブルに対して排他ロックを取得します。</p>
+<p>このルーチンは、Windows XP および Windows 2000 でのみ使用できます。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockshared" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockShared&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockshared)"><strong>RxpAcquirePrefixTableLockShared</strong></a></p></td>
-<td align="left"><p>このルーチンは、カタログ SRV_CALL と NET_ROOT 名に使用されるプレフィックス テーブルに対する共有ロックを取得します。</p>
-<p>このルーチンは、Windows XP および Windows 2000 にできるだけです。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpacquireprefixtablelockshared" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockShared&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpacquireprefixtablelockshared)"><strong>RxpAcquirePrefixTableLockShared</strong></a></p></td>
+<td align="left"><p>このルーチンは、SRV_CALL と NET_ROOT の名前のカタログ化に使用されるプレフィックステーブルに対して共有ロックを取得します。</p>
+<p>このルーチンは、Windows XP および Windows 2000 でのみ使用できます。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname" data-raw-source="[&lt;strong&gt;RxPrefixTableLookupName&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)"><strong>RxPrefixTableLookupName</strong></a></p></td>
-<td align="left"><p>ルーチンは、カタログ SRV_CALL に使用されるプレフィックスのテーブルの名前と NET_ROOT 名を検索し、基になるポインターから、包含構造体に変換します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname" data-raw-source="[&lt;strong&gt;RxPrefixTableLookupName&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname)"><strong>RxPrefixTableLookupName</strong></a></p></td>
+<td align="left"><p>このルーチンは、SRV_CALL と NET_ROOT の名前をカタログ化するために使用されるプレフィックステーブル内の名前を検索し、基になるポインターから含んでいる構造体に変換します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpreleaseprefixtablelock" data-raw-source="[&lt;strong&gt;RxpReleasePrefixTableLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpreleaseprefixtablelock)"><strong>RxpReleasePrefixTableLock</strong></a></p></td>
-<td align="left"><p>このルーチンは、カタログ SRV_CALL と NET_ROOT 名に使用されるプレフィックス テーブルのロックを解放します。</p>
-<p>このルーチンは、Windows XP および Windows 2000 にできるだけです。 このルーチンは RDBSS によって内部的に使用され、ネットワークのミニ リダイレクターは使用できません。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpreleaseprefixtablelock" data-raw-source="[&lt;strong&gt;RxpReleasePrefixTableLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxpreleaseprefixtablelock)"><strong>RxpReleasePrefixTableLock</strong></a></p></td>
+<td align="left"><p>このルーチンは、SRV_CALL と NET_ROOT の名前をカタログ化するために使用されるプレフィックステーブルのロックを解放します。</p>
+<p>このルーチンは、Windows XP および Windows 2000 でのみ使用できます。 このルーチンは、RDBSS によって内部的に使用されるため、ネットワークミニリダイレクターでは使用できません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Windows Server 2003 以降を除く、ルーチンは、前の表で説明されている[ **RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)マクロは置き換えられます。次のマクロは、プレフィックスが少ないパラメーターを持つテーブル ルーチンを呼び出すことで定義されます。
+Windows Server 2003 以降では、前の表に示されているルーチン ( [**RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname)を除く) がマクロに置き換えられています。次のマクロは、より少数のパラメーターでプレフィックステーブルルーチンを呼び出すように定義されています。
 
 <table>
 <colgroup>
@@ -104,24 +104,24 @@ Windows Server 2003 以降を除く、ルーチンは、前の表で説明され
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxAcquirePrefixTableLockExclusive</strong> (<em>TABLE</em>, <em>WAIT</em>)</p></td>
-<td align="left"><p>このマクロでは、変更操作の排他モードでプレフィックス テーブル ロックを取得します。</p></td>
+<td align="left"><p><strong>RxAcquirePrefixTableLockExclusive</strong> (<em>テーブル</em>、<em>待機</em>)</p></td>
+<td align="left"><p>このマクロは、変更操作のために、排他モードでプレフィックステーブルロックを取得します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxAcquirePrefixTableLockShared</strong> (<em>TABLE</em>, <em>WAIT</em>)</p></td>
-<td align="left"><p>このマクロでは、共有モードの検索操作でプレフィックス テーブル ロックを取得します。</p></td>
+<td align="left"><p><strong>RxAcquirePrefixTableLockShared</strong> (<em>テーブル</em>、<em>待機</em>)</p></td>
+<td align="left"><p>このマクロは、参照操作のために、共有モードでプレフィックステーブルロックを取得します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>RxIsPrefixTableLockAcquired</strong> (<em>TABLE</em>)</p></td>
-<td align="left"><p>このマクロは、プレフィックス テーブル ロックが排他的であるか、または共有モードで取得されたかどうかを示します。</p></td>
+<td align="left"><p><strong>RxIsPrefixTableLockAcquired</strong> (<em>テーブル</em>)</p></td>
+<td align="left"><p>このマクロは、プレフィックステーブルロックが排他的モードまたは共有モードのいずれかで取得されたかどうかを示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxIsPrefixTableLockExclusive</strong> (<em>TABLE</em>)</p></td>
-<td align="left"><p>このマクロは、プレフィックスのテーブル ロックを排他モードで取得されたかどうかを示します。</p></td>
+<td align="left"><p><strong>RxIsPrefixTableLockExclusive</strong> (<em>テーブル</em>)</p></td>
+<td align="left"><p>このマクロは、プレフィックステーブルロックが排他モードで取得されたかどうかを示します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>RxReleasePrefixTableLock</strong> (<em>TABLE</em>)</p></td>
-<td align="left"><p>このマクロは、プレフィックスのテーブル ロックを解放します。</p></td>
+<td align="left"><p><strong>RxReleasePrefixTableLock</strong> (<em>テーブル</em>)</p></td>
+<td align="left"><p>このマクロは、プレフィックステーブルロックを解放します。</p></td>
 </tr>
 </tbody>
 </table>

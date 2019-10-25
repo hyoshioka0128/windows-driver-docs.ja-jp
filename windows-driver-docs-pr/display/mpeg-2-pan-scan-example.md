@@ -1,48 +1,48 @@
 ---
-title: MPEG-2 パン スキャンの例
-description: MPEG-2 パン スキャンの例
+title: MPEG-2 パンスキャンの例
+description: MPEG-2 パンスキャンの例
 ms.assetid: 6ce4722c-5406-4b29-9171-ecab049320e7
 keywords:
-- アルファ ブレンドの組み合わせ WDK DirectX va なので、mpeg-2 パン スキャンの使用例
-- ブレンド mpeg-2 画像 WDK DirectX va なので、パン スキャンの使用例
+- アルファブレンドの組み合わせ WDK DirectX VA、MPEG 2 パンスキャンの例
+- 画像のブレンド WDK DirectX VA、MPEG 2 パンスキャンの例
 - PictureSourceRect16thPel
-- Mpeg-2 パン スキャン WDK DirectX VA の使用例
+- MPEG-2 パンスキャンの例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15630f30744c7bb551484d072b7dcb18849fe015
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d91ffd7b8f5257b26163b50036a7bdcc1a276db7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372862"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840551"
 ---
-# <a name="mpeg-2-pan-scan-example"></a>MPEG-2 パン スキャンの例
+# <a name="mpeg-2-pan-scan-example"></a>MPEG-2 パンスキャンの例
 
 
 ## <span id="ddk_mpeg_2_pan_scan_example_gg"></span><span id="DDK_MPEG_2_PAN_SCAN_EXAMPLE_GG"></span>
 
 
-ときに、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)構造を使用して、mpeg-2 ビデオのパン スキャンで指定された領域を選択しますパラメーターの値は、 **PictureSourceRect16thPel**メンバーは、次の式を使用して計算することができます。 これらの値にする必要がありますを使用する場合は、アルファ ブレンドの組み合わせのバッファーの記載された制限に違反していない**PictureSourceRect16thPel**します。 詳細については、次を参照してください。、**解説**は、DXVA セクション\_BlendCombination 構造体。
+[**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体の**PictureSourceRect16thPel**メンバーを使用して、mpeg-2 ビデオパンスキャンパラメーターによって指定された領域を選択すると、 **PictureSourceRect16thPel**メンバーの値を計算できます。次の式を使用します。 **PictureSourceRect16thPel**を使用する場合、これらの値は、アルファブレンドの組み合わせバッファーに記述されている制限に違反しないようにしてください。 詳細については、DXVA\_BlendCombination 構造体の「**解説**」を参照してください。
 
-Mpeg-2 パン スキャン パラメーターとパラメーターを具体的には、いくつかの調整を必要とする、いくつかの mpeg-2 dvd の収録内容でこれらの制約に違反する可能性があります、 **PictureSourceRect16thPel**します。
+これらの制約は、いくつかの MPEG **PictureSourceRect16thPel**のパンスキャンパラメーターで違反する可能性があります。特に、MPEG 2 DVD コンテンツによっては、一部の調整が必要になる場合があります。
 
--   **左**= 8 x (*水平\_サイズ* - *表示\_水平\_サイズ*)-*フレーム\_centre\_水平\_オフセット*
+-   **左**= 8 x (*横\_サイズ* - *水平方向\_サイズ\_表示*)-*フレーム\_中央\_横\_オフセット*
 
--   **上部**= 8 x (*垂直\_サイズ - 表示\_垂直\_サイズ*)-*フレーム\_centre\_垂直\_オフセット*
+-   **上位**= 8 x (*縦\_サイズ-表示\_垂直\_サイズ*)-*フレーム\_中央\_垂直\_オフセット*
 
--   **適切な** = **左**+ (16 x*表示\_水平\_サイズ*)
+-   **右** = **左**+ (16 x*ディスプレイ\_横\_サイズ*)
 
--   **下部にある** = **上部**+ (16 x*表示\_垂直\_サイズ*)
+-   **下** = **上**+ (16 x*ディスプレイ\_垂直\_サイズ*)
 
-**PictureDestinationRect**メンバーは、DXVA の\_BlendCombination 構造は通常は、次の値を使用し。
+DXVA\_BlendCombination 構造体の**画像 Destinationrect**メンバーは、通常、次の値を使用します。
 
--   **左**= 0 または 8 (うに[DVD 704 全体の非-パンの例の画像をスキャン](dvd-704-wide-non-pan-scan-example.md))
+-   **左**= 0 または 8 (DVD 704 に含まれる、[非パンスキャンの画像の例](dvd-704-wide-non-pan-scan-example.md))
 
--   **上部**= 0
+-   **top** = 0
 
--   **適切な** = **左** + *表示\_水平\_サイズ*
+-   **右** = **左** + *表示\_水平\_サイズ*
 
--   **下部にある** = **上部** + *表示\_垂直\_サイズ*
+-   **下** = **上部** +  *\_垂直方向の\_のサイズを表示*します
 
  
 

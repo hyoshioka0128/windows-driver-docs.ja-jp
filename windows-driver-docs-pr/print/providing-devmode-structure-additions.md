@@ -1,37 +1,37 @@
 ---
-title: DEVMODE 構造の追加機能を提供する
-description: DEVMODE 構造の追加機能を提供する
+title: DEVMODE 構造体の追加の提供
+description: DEVMODE 構造体の追加の提供
 ms.assetid: 7ce698f5-14c7-484d-be3d-b41c690b9576
 keywords:
-- ユーザー インターフェイスにプラグイン WDK 印刷、DEVMODEW 構造の追加
-- UI プラグインを WDK の印刷、DEVMODEW 構造の追加
+- ユーザーインターフェイスプラグイン WDK print、DEVMODEW 構造体の追加
+- UI プラグイン WDK print、DEVMODEW 構造体の追加
 - DEVMODEW
-- プライベート DEVMODE WDK の印刷
-- パブリックの DEVMODE WDK 印刷
+- プライベート DEVMODE WDK 印刷
+- パブリック DEVMODE の WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bbfa90e8e025ca21e39312eb87bf07a3217cc00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c672b63dc5a671c32724b2abd4b269389addca2e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356026"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840422"
 ---
-# <a name="providing-devmode-structure-additions"></a>DEVMODE 構造の追加機能を提供する
+# <a name="providing-devmode-structure-additions"></a>DEVMODE 構造体の追加の提供
 
 
 
 
 
-UI プラグインに独自のプライベート メンバーを追加、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)次の図に示すように、構造体します。
+UI プラグインは、次の図に示すように、独自のプライベートメンバーを[**Devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体に追加できます。
 
-![パブリックおよびプライベートの devmode のセクションを示す図](images/dvmdstru.png)
+![パブリックとプライベートの devmode セクションを示す図](images/dvmdstru.png)
 
-UI のプラグインでは、カスタマイズされたプリンター オプションに関連付けられている値を格納するのにプライベートこれら DEVMODE のメンバーを使用できます。 プラグインこれらのオプションを使用できるように、ユーザーによって[ドライバーによって提供されるプロパティ シート ページを変更する](modifying-a-driver-supplied-property-sheet-page.md)または[新しいプロパティ シートのページを追加する](adding-new-property-sheet-pages.md)します。
+UI プラグインは、これらのプライベート DEVMODE メンバーを使用して、カスタマイズされたプリンターオプションに関連付けられている値を格納できます。 このプラグインを使用すると、ドライバーによって提供される[プロパティシートページを変更](modifying-a-driver-supplied-property-sheet-page.md)したり、[新しいプロパティシートページを追加](adding-new-property-sheet-pages.md)したりすることによって、ユーザーがこれらのオプションを使用できるようになります。
 
-UI プラグインは、プライベートの DEVMODE のメンバーを追加する場合、 [ **OEM\_DMEXTRAHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_oem_dmextraheader)構造に追加されたメンバーを付ける必要があります。
+UI プラグインがプライベート DEVMODE メンバーを追加する場合、 [**OEM\_DMEXTRAHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_oem_dmextraheader)構造体は、追加されたメンバーの前にプレフィックスを付ける必要があります。
 
-DEVMODE 構造体にメンバーを追加する必要はありませんが、UI のプラグインを実装する必要がありますを行った場合、 [ **IPrintOemUI::DevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devmode)メソッド。 入力引数は、によって、このメソッドの目的は、サイズを返します、初期化、変換、またはその他の DEVMODE のメンバーを検証するのには。
+DEVMODE 構造体にメンバーを追加する必要はありませんが、その場合、UI プラグインは[**Iprintoemui::D evMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-devmode)メソッドを実装する必要があります。 このメソッドの目的は、入力引数に応じて、追加の DEVMODE メンバーのサイズを返す、初期化、変換、または検証します。
 
  
 

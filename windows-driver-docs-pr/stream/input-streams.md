@@ -3,22 +3,22 @@ title: 入力ストリーム
 description: 入力ストリーム
 ms.assetid: 0aa378d8-e7e2-4555-b541-dd1ed77b4a12
 keywords:
-- 入力ストリームの WDK DVD デコーダー
-- パック WDK DVD の DVD デコーダー
-- サブピクチャ ストリーム WDK DVD デコーダー
-- SDD オーディオ入力ストリームの WDK DVD デコーダー
-- DTS のオーディオ入力ストリームの WDK DVD デコーダー
-- LPCM オーディオ入力ストリームの WDK DVD デコーダー
-- Ac-3 WDK DVD デコーダー
-- MPEG2 ビデオ入力ストリーミング WDK DVD デコーダー
+- 入力ストリーム WDK DVD デコーダー
+- DVD パック WDK DVD デコーダー
+- サブピクチャストリーム WDK DVD デコーダー
+- SDDS オーディオ入力ストリーム WDK DVD デコーダー
+- DTS オーディオ入力ストリーム WDK DVD デコーダー
+- LPCM オーディオ入力ストリーム WDK DVD デコーダー
+- AC 3 WDK DVD デコーダー
+- MPEG2 ビデオ入力ストリーム WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56b90a5e86c945b5fc9f907fbd1baa3b24c5044e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 427db085c4e0884aca43c14def259b757ad07e94
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360676"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845567"
 ---
 # <a name="input-streams"></a>入力ストリーム
 
@@ -26,11 +26,11 @@ ms.locfileid: "67360676"
 
 
 
-DVD の入力ストリームは、暗号化された DVD パックの配列として、ミニドライバーに提供されます。 パックは、DVD 仕様で定義されています。 Microsoft の DVD のアーキテクチャでは、「マスター クロック」パラダイムを使用して、オーディオとビデオの同期するために、パックのシステム クロックの参照 (SCR) フィールドが 0 に設定されているに注意してください。 通常、DVD デコーダーのミニドライバーのオーディオ ストリームは、マスターのクロックを提供します。 詳細については、次を参照してください。[マスター クロック](master-clock.md)します。
+DVD 入力ストリームは、暗号化された DVD パックの配列としてミニドライバーに提供されます。 パックは、DVD 仕様で定義されています。 Microsoft の DVD アーキテクチャではオーディオとビデオの同期に "マスタークロック" パラダイムが使用されるため、パックのシステムクロックリファレンス (SCR) フィールドは0に設定されていることに注意してください。 通常、DVD デコーダーミニドライバーのオーディオストリームでは、マスタークロックが提供されます。 詳細については、「[マスタークロック](master-clock.md)」を参照してください。
 
-DVD のデータ ストリームがを通じてミニドライバーに送信される、 [ **SRB\_書き込み\_データ**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)要求。 SRB の要求の詳細については、次を参照してください。 [Stream 要求のブロックの処理](handling-stream-request-blocks.md)と[Stream クラス SRB 参照](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)します。 ハードウェアがサポートするいくつかの DVD パックは、1 つの要求パケットに存在する可能性があるために、DMA をスキャッター/ギャザーします。
+DVD データストリームは、 [**SRB\_WRITE\_data**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)要求を介してミニドライバーに送信されます。 SRB 要求の詳細については、「[ストリーム要求ブロック](handling-stream-request-blocks.md)と[ストリームクラス SRB 参照](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)の処理」を参照してください。 1つの要求パケットにいくつかの DVD パックが存在する可能性があるため、ハードウェアはスキャッター/ギャザー DMA をサポートする必要があります。
 
-次の表では、DVD ムービーで使用される MPEG2 ビデオ入力ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用される MPEG2 ビデオ入力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -39,13 +39,13 @@ DVD のデータ ストリームがを通じてミニドライバーに送信さ
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -53,23 +53,23 @@ DVD のデータ ストリームがを通じてミニドライバーに送信さ
 <td><p>KSDATAFORMAT_SUBTYPE_MPEG2_VIDEO</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_MPEG2_VIDEO</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>MPEG2VIDEOINFO</p>
 <div>
  
 </div>
-(VIDEOINFO2 構造体のスーパー セットです。 示す MPEG プロファイルとレベル)</td>
+(VIDEOINFO2 構造体のスーパーセット。 MPEG プロファイルとレベルも示します。)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表では、DVD ムービーで使用される ac-3 オーディオ入力ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用される AC 3 オーディオ入力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -78,13 +78,13 @@ DVD のデータ ストリームがを通じてミニドライバーに送信さ
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -92,25 +92,25 @@ DVD のデータ ストリームがを通じてミニドライバーに送信さ
 <td><p>KSDATAFORMAT_SUBTYPE_AC3_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>(変更が求められますことに注意してください)。</p></td>
+<p>(これは変更される可能性があることに注意してください)。</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>KSDATAFORMAT_WAVEFORMATEX</p>
 <div>
  
 </div>
-WaveFormatEx のスーパー セット
-<p>(複数の 2 つのチャネル。 記述子の Down-mix)。</p></td>
+WaveFormatEx のスーパーセット
+<p>(2 つ以上のチャネル。 ダウンミックス記述子。)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表では、DVD ムービーで使用される LPCM オーディオ入力ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用される LPCM オーディオ入力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -119,13 +119,13 @@ WaveFormatEx のスーパー セット
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -133,11 +133,11 @@ WaveFormatEx のスーパー セット
 <td><p>KSDATAFORMAT_SUBTYPE_LPCM_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>KSDATAFORMAT_WAVEFORMATEX</p></td>
 </tr>
 </tbody>
@@ -145,7 +145,7 @@ WaveFormatEx のスーパー セット
 
  
 
-次の表では、DVD ムービーで使用される DTS オーディオ入力ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用される DTS オーディオ入力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -154,13 +154,13 @@ WaveFormatEx のスーパー セット
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -168,25 +168,25 @@ WaveFormatEx のスーパー セット
 <td><p>KSDATAFORMAT_SUBTYPE_DTS_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>(変更が求められますことに注意してください)。</p></td>
+<p>(これは変更される可能性があることに注意してください)。</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>KSDATAFORMAT_WAVEFORMATEX</p>
 <div>
  
 </div>
-WaveFormatEx のスーパー セット
-<p>(複数の 2 つのチャネル。 記述子の Down-mix)。</p></td>
+WaveFormatEx のスーパーセット
+<p>(2 つ以上のチャネル。 ダウンミックス記述子。)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表では、DVD ムービーで使用される SDD オーディオ入力ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用される SDDS オーディオ入力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -195,13 +195,13 @@ WaveFormatEx のスーパー セット
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -209,25 +209,25 @@ WaveFormatEx のスーパー セット
 <td><p>KSDATAFORMAT_SUBTYPE_SDDS_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>(変更が求められますことに注意してください)。</p></td>
+<p>(これは変更される可能性があることに注意してください)。</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>KSDATAFORMAT_WAVEFORMATEX</p>
 <div>
  
 </div>
-WaveFormatEx のスーパー セット
-<p>(複数の 2 つのチャネル。 記述子の Down-mix)。</p></td>
+WaveFormatEx のスーパーセット
+<p>(2 つ以上のチャネル。 ダウンミックス記述子。)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表では、DVD ムービーで使用されるサブピクチャ ストリーム メディアの種類について説明します。
+次の表では、DVD ムービーで使用されるサブピクチャストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -236,13 +236,13 @@ WaveFormatEx のスーパー セット
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK</p></td>
 </tr>
 <tr class="even">
@@ -250,11 +250,11 @@ WaveFormatEx のスーパー セット
 <td><p>KSDATAFORMAT_SUBTYPE_SUBPICTURE</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_NONE</p></td>
 </tr>
 <tr class="even">
-<td><p>ブロック構造の形式</p></td>
+<td><p>ブロック構造の書式設定</p></td>
 <td><p>なし</p></td>
 </tr>
 </tbody>
@@ -262,15 +262,15 @@ WaveFormatEx のスーパー セット
 
  
 
-サブピクチャが強調表示、強調表示情報とパレット情報は、プロパティとして渡されます。 サブピクチャ データ ストリームは、DVD 仕様によって提供されるデータのパケットで構成されます。 パックのヘッダーが取り除かですが、引き続き提供されます。
+サブピクチャの強調表示では、パレット情報と強調表示の情報がプロパティとして渡されます。 サブピクチャデータストリームは、DVD 仕様によって提供されるデータのパケットで構成されます。 パックヘッダーは削除されますが、まだ提供されています。
 
-Microsoft DVD ナビゲーター フィルター解析すべてボタンとキーボードの情報と指定のみパス 1 つの強調表示の四角形、サブピクチャ デコーダーまで特定の時点します。 その結果、強調表示情報に送信されますデコーダーが DVD のストリームに存在よりも頻繁です。 これは、DVD 仕様によって異なります。
+Microsoft が提供する DVD ナビゲーターフィルターでは、すべてのボタンとキーボード情報が解析され、任意の時点でサブピクチャデコーダーに1つのハイライト四角形のみが渡されます。 その結果、強調表示情報は、DVD ストリームに存在するよりも頻繁にデコーダーに送信されます。 これは DVD 仕様とは異なります。
 
-DVD/スプリッター ナビゲーター フィルターは、キーストロークのすべての情報を処理し、新しい送信ボタンの状態変更されるたびに情報を強調表示します。 情報は、一度に 1 つのボタンの 1 つのみのモードをについて説明します。 存在する場合にその画面のピクセル座標または、サブピクチャが、表示、表示する四角形を掲載しています。 [ **KSPROPERTY\_SPHLI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)構造体には、現在選択されているボタンの現在の状態については、色およびコントラストの情報も含まれています。 形式は、DVD 仕様で定義されます。
+DVD ナビゲーター/スプリッターフィルターでは、すべてのキーストローク情報が処理され、ボタンの状態が変化するたびに新しい強調表示情報が送信されます。 この情報には、一度に1つのボタンの1つのモードのみが記述されています。 画面のピクセル座標で表示される四角形、またはサブピクチャの表示 (存在する場合) が含まれます。 [**Ksk プロパティ\_SPHLI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sphli)構造体には、現在選択されているボタンの現在の状態に対してのみ、色とコントラストの情報が含まれています。 形式は DVD 仕様で定義されています。
 
-強調表示については、データ ストリームに非同期的に到着します。 DVD デコーダーのミニドライバーが強調表示を使用する必要があります起動し、存在する場合は、サブピクチャが関連する情報を強調表示情報を関連付けるためにタイムスタンプを終了します。 DVD デコーダーのミニドライバーが要求されたタイムスタンプのサブピクチャ ストリーム情報を受信しない場合、デコーダーでは、強調表示については、スタンドアロンと、サブピクチャには適用されません前提としています。 この場合、色およびコントラストの情報に色がすべて同じと見なされますことができます。
+強調表示情報は、データストリームに非同期に到着します。 DVD デコーダーミニドライバーは、強調表示の開始時刻と終了時刻のタイムスタンプを使用して、強調表示情報を関連するサブピクチャ情報 (存在する場合) に関連付ける必要があります。 DVD デコーダーミニドライバーが要求されたタイムスタンプのサブピクチャストリーム情報を受信していない場合、デコーダーは、強調表示情報がスタンドアロンであり、サブピクチャには適用されないと見なします。 この場合、色とコントラストの情報はすべて同じ色であると見なすことができます。
 
-強調表示の情報には、開始および終了タイムスタンプが含まれています。 次に 2 つの例外、その他のタイムスタンプと同じ単位で示します。0 xffffffff の開始時刻スタンプは、強調表示のプロパティは、受信時に有効と 0 xffffffff の終了時刻のスタンプは、強調表示プロパティが有効では、次の強調表示が受信されるまでは意味を意味します。
+強調表示の情報には、開始時刻と終了タイムスタンプが含まれます。 これらは、他のタイムスタンプと同じ単位になります。ただし、2つの例外があります。 "0xFFFFFFFF の開始タイムスタンプ" は、強調表示時に [強調表示] プロパティが有効であることを意味します。また、0xFFFFFFFF の終了タイムスタンプは、強調表示のプロパティが次の強調表示になるまで有効です。受け取ら.
 
  
 

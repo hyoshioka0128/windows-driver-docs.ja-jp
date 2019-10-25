@@ -1,9 +1,9 @@
 ---
-title: MRxQueryVolumeInfo routine
-description: MRxQueryVolumeInfo ルーチンは、ネットワーク ミニリダイレクター クエリのボリューム情報を要求できる RDBSS によって呼び出されます。
+title: MRxQueryVolumeInfo ルーチン
+description: MRxQueryVolumeInfo ルーチンは、ネットワークミニリダイレクターのクエリボリューム情報を要求するために RDBSS によって呼び出されます。
 ms.assetid: 28e36992-2b6b-4484-9e7e-2cea7a2953e9
 keywords:
-- MRxQueryVolumeInfo ルーチン インストール可能なファイル システム ドライバー
+- MRxQueryVolumeInfo ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21987a9a1ff4cd7c6d3191c7ff9073df4b878ae6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 21480769e65f93c1e433ee74dfd1c3a1513c1be8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375661"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841083"
 ---
-# <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo routine
+# <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo ルーチン
 
 
-*MRxQueryVolumeInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがボリューム情報を照会することを要求します。
+*MRxQueryVolumeInfo*ルーチンは、ネットワークミニリダイレクターのクエリボリューム情報を要求するために[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryVolumeInfo(
 { ... }
 ```
 
-<a name="parameters"></a>パラメーター
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxQueryVolumeInfo*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxQueryVolumeInfo*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -57,24 +57,24 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">リターン コード</th>
+<th align="left">リターンコード</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>ボリューム情報を受け取るバッファーが小さすぎます。</p>
-<p>これは戻り値は、成功を考慮してでできるだけの非常に有効なデータとして返す必要がある、 <strong>Info.Buffer</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーター。</p></td>
+<td align="left"><p>ボリューム情報を受信するバッファーが小さすぎます。</p>
+<p>この戻り値は成功と見なす必要があり、可能な限り多くの有効なデータが、 <em>RxContext</em>パラメーターによって示される RX_CONTEXT 構造体の<strong>情報バッファー</strong>のメンバーに返される必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>要求されたデータを受信するには、バッファーが小さすぎます。</p>
-<p>この値が返された場合、 <strong>InformationToReturn</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーターは、呼び出しに必要なバッファーの最小サイズを設定する必要があります成功します。</p></td>
+<td align="left"><p>バッファーが小さすぎて要求されたデータを受け取ることができません。</p>
+<p>この値が返される場合、 <em>RxContext</em>パラメーターが指す RX_CONTEXT 構造体の<strong>InformationToReturn</strong>メンバーは、呼び出しが成功するために必要なバッファーの最小サイズに設定されている必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -82,7 +82,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -94,65 +94,65 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>要求された機能が実装されていません。</p></td>
+<td align="left"><p>要求された機能は実装されていません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-RDBSS への呼び出しを発行する*MRxQueryVolumeInfo*場合は、次のいずれかで。
+RDBSS は、次のいずれかの場合に*MRxQueryVolumeInfo*の呼び出しを発行します。
 
--   RDBSS を受け取る、 [ **IRP\_MJ\_クエリ\_ボリューム\_情報**](irp-mj-query-volume-information.md)要求。
+-   RDBSS は、 [**IRP\_MJ\_クエリ\_ボリューム\_情報**](irp-mj-query-volume-information.md)要求を受信します。
 
--   RDBSS を受け取る、 [ **IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)要求、FSCTL を\_LMR\_GET\_リンク\_追跡\_情報コントロール コード。
+-   RDBSS は、 [**IRP\_MJ\_ファイル\_システム\_制御**](irp-mj-file-system-control.md)要求の FSCTL\_LMR\_GET\_LINK\_情報制御コードの追跡\_を受信します。
 
-呼び出しの前に*MRxQueryVolumeInfo* IRP 場合\_MJ\_クエリ\_ボリューム\_RDBSS、RX では、次のメンバーを変更します情報が要求\_。によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+IRP\_MJ\_クエリ\_ボリューム\_情報要求の場合に*MRxQueryVolumeInfo*を呼び出す前に、RDBSS は、 *RXCONTEXT*が指す RX\_コンテキスト構造内の次のメンバーを変更します。引き
 
-**Info.FsInformationClass**に設定されているメンバー **IrpSp -&gt;Parameters.QueryVolume.FsInformationClass**します。
+**Info. fsinformationclass**メンバーは**irpsp-&gt;Parameters. Queryvolume. fsinformationclass**に設定されています。
 
-**Info.Buffer**に設定されているメンバー **Irp -&gt;AssociatedIrp.SystemBuffer**します。
+**情報バッファー**のメンバーは、 **Irp-&gt;AssociatedIrp**に設定されます。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryVolume.Length**します。
+**LengthRemaining**メンバーは**irpsp-&gt;Parameters. Queryvolume. Length**に設定されています。
 
-IRP の\_MJ\_クエリ\_ボリューム\_場合、情報を要求、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryVolumeInfo*、RDBSS が呼び出す[ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)要求を投稿します。 この場合、IRP\_MJ\_クエリ\_ボリューム\_情報の要求は、RX を渡す\_キュー RX に CONTEXT 構造\_ワーカー キュー、ファイル システムで処理するためにコンテキストプロセス (FSP)。
+IRP\_MJ\_クエリ\_ボリューム\_情報要求では、RX\_コンテキスト構造の**postrequest**メンバーが*MRxQueryVolumeInfo*から返されたときに**TRUE**である場合、RDBSS はを呼び出し[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)要求をポストする RxFsdPostRequest。 この場合、IRP\_MJ\_QUERY\_VOLUME\_INFORMATION 要求は、RX\_コンテキスト構造を、ファイルシステムプロセス (FSP) による処理のためにワーカーキューに渡します。\_
 
-場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**FALSE**戻り時にから*MRxQueryVolumeInfo*ネットワークのミニ リダイレクターを設定する必要があります、**Info.LengthRemaining** 、RX のメンバー\_ボリューム情報の長さの CONTEXT 構造体が返されます。 RDBSS セット、 **IoStatus.Information**に IRP のメンバー **IrpSp -&gt;Parameters.QueryVolume.Length**マイナス、 **Info.LengthRemaining**のメンバーRX\_CONTEXT 構造体。
+*MRxQueryVolumeInfo*から返されたときに RX\_コンテキスト構造の**Postrequest**メンバーが**FALSE**の場合、ネットワークミニリダイレクターは rx\_コンテキスト構造の LengthRemaining メンバーをに設定する必要があり**ます。** 返されるボリューム情報の長さ。 RDBSS は、IRP の**Iostatus. 情報**メンバーを**irpsp-&gt;パラメーター**に設定します。 QUERYVOLUME LENGTH は RX\_CONTEXT 構造体の**LengthRemaining**メンバーを差し引いたものです。
 
-場合に呼び出し*MRxQueryVolumeInfo*が成功すると、ネットワークのミニ リダイレクター設定する必要があります、 **Info.LengthRemaining** 、RX のメンバー\_ための構造体、 **Info.Length**ボリューム情報の長さマイナスのメンバーが返されます。 場合に呼び出し*MRxQueryVolumeInfo*が成功した場合は、RDBSS セット、 **IoStatus.Information**に IRP のメンバー **IrpSp-&gt;Parameters.QueryVolume.Length**マイナス、 **Info.LengthRemaining** 、RX のメンバー\_CONTEXT 構造体。
+*MRxQueryVolumeInfo*への呼び出しが成功した場合、ネットワークミニリダイレクターは、RX\_コンテキスト構造の LengthRemaining メンバーを、ボリューム情報の長さを差し引い**た値に**設定する必要があり**ます。** 結果. *MRxQueryVolumeInfo*への呼び出しが成功した場合、RDBSS は IRP の**Iostatus. 情報**メンバーを**irpsp-&gt;パラメーター**に設定します。 Queryvolume Length は\_RX の**LengthRemaining**メンバーを差し引いたものです。コンテキスト構造。
 
-IRP の\_MJ\_クエリ\_ボリューム\_情報要求、 **Info.FsInformationClass**メンバーに設定**FileFsDeviceInformation**、ネットワークのミニ リダイレクターが、RX では、次の情報を返します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+IRP\_MJ\_QUERY\_VOLUME\_INFORMATION 要求の場合、 **Info. FsInformationClass**メンバーが**FileFsDeviceInformation**に設定されていると、ネットワークミニリダイレクターは次の情報を RX に返し @no__*RxContext*パラメーターによってポイントされる t_6_ CONTEXT 構造体。\_
 
-**Info.Buffer**メンバーには、ファイルが含まれる\_FS\_デバイス\_情報構造体
+情報**バッファー**のメンバーには、ファイル\_FS\_デバイス\_情報構造体が含まれています
 
-**Info.Buffer.Characteristics**メンバーが、ファイルを含める必要があります、ボリュームの特性に設定されている\_リモート\_オプションのいずれかとしてデバイス。
+情報の. **Buffer. 特性**メンバーは、ボリュームの特性に設定されます。これには、オプションの1つとして、ファイル\_リモート\_デバイスが含まれている必要があります。
 
-**Info.Buffer.DeviceType**にメンバーが設定されている、 **DeviceType**メンバーが関連付けられている net\_ルート構造体。 場合、**型**メンバーが関連付けられている net\_ルートは、NET\_ルート\_パイプ、 **Info.Buffer.DeviceType**メンバーがファイルに設定されている\_デバイス\_名前付き\_パイプします。
+**(Devicetype**メンバーは、関連付けられている NET\_のルート構造の **(devicetype**メンバーに設定されます。 関連付けられている NET\_ルートの**Type**メンバーが NET\_ROOT\_PIPE の場合、 **(devicetype**メンバーは\_パイプという名前のファイル\_デバイス\_に設定されます。
 
-IRP の\_MJ\_クエリ\_ボリューム\_情報要求、 **Info.FsInformationClass**メンバーに設定**FileFsVolumeInformation**、ネットワークのミニ リダイレクターが、RX では、次の情報を返します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+IRP\_MJ\_QUERY\_VOLUME\_INFORMATION 要求の場合、 **Info. FsInformationClass**メンバーが**FileFsVolumeInformation**に設定されていると、ネットワークミニリダイレクターは次の情報を RX に返し @no__*RxContext*パラメーターによってポイントされる t_6_ CONTEXT 構造体。\_
 
-**Info.Buffer**メンバーには、ファイルが含まれています。\_FS\_ボリューム\_情報構造体。
+情報**バッファー**のメンバーには、ファイル\_FS\_ボリューム\_情報構造体が含まれています。
 
-**Info.Buffer**にメンバーが設定されている、 **VolumeInfo**メンバーが関連付けられている net\_ルート構造体。
+**情報バッファー**のメンバーは、関連付けられている NET\_のルート構造の**volumeinfo**メンバーに設定されます。
 
-**Info.LengthRemaining**にメンバーが設定されている、 **VolumeInfoLength**メンバーが関連付けられている net\_ルート構造体。
+**LengthRemaining**メンバーは、関連付けられている NET\_のルート構造の**VolumeInfoLength**メンバーに設定されます。
 
-*MRxQueryVolumeInfo*の RDBSS から呼び出す[ **IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)要求追跡情報のリンク。 呼び出しの前に*MRxQueryVolumeInfo* IRP の\_MJ\_ファイル\_システム\_コントロール、RX では、次のメンバーを変更する RDBSS\_CONTEXT 構造体を指すによって、 *RxContext*パラメーター。
+[**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)からの*MRxQueryVolumeInfo*呼び出しは、リンク追跡情報の要求です。 IRP\_MJ\_ファイル\_システム\_コントロールに対して*MRxQueryVolumeInfo*を呼び出す前に、RDBSS は、 *RxContext*パラメーターが指す RX\_CONTEXT 構造体の次のメンバーを変更します。
 
-**Info.FsInformationClass**に設定されているメンバー **FileFsObjectIdInformation**します。
+**FileFsObjectIdInformation**に設定された**Info. FsInformationClass**メンバー。
 
-**Info.Buffer**メンバーのセットをファイルに\_FS\_OBJECTID\_情報構造体。
+**情報バッファー**のメンバーは、ファイル\_FS\_OBJECTID\_情報構造体に設定されます。
 
-**Info.LengthRemaining**に設定されているメンバー **sizeof**(ファイル\_FS\_OBJECTID\_情報)。
+**LengthRemaining**メンバーは**sizeof**(FILE\_FS\_OBJECTID\_INFORMATION) に設定されています。
 
-この場合、IRP の\_MJ\_ファイル\_システム\_コントロール要求、 **AssociatedIrp.SystemBuffer** IRP のメンバーがリンクを指す\_追跡\_情報構造体。
+この場合、IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求では、IRP の**AssociatedIrp**メンバーがリンクをポイントして\_情報構造を追跡します。\_
 
-IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に制御を*MRxQueryVolumeInfo*状態の戻り値を持つ\_成功または状態\_バッファー\_オーバーフロー、RDBSS コピー、 **ObjectId**ファイルのメンバー\_FS\_OBJECTID\_情報構造体が渡された、 **Info.Buffer** RX のメンバー\_ための構造体、 **NetRoot -&gt;DiskParameters.VolumeId** FCB 構造とメンバー、 **AssociatedIrp.SystemBuffer.VolumeId** IRP のメンバー。 場合に呼び出し*MRxQueryVolumeInfo*が成功した場合は、RDBSS セット、**型**リンクのメンバー\_追跡\_情報構造体。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーが、NETROOT\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、**型**RDBSS によってメンバーが設定される**DfsLinkTrackingInformation**します。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーには、NETROOT はありません\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、 **の種類。** に RDBSS によってメンバーが設定される**NtfsLinkTrackingInformation**します。 成功した場合、RDBSS の設定、 **IoStatus.Information**リンクのサイズに IRP のメンバー\_追跡\_情報構造体。
+要求が IRP\_MJ\_ファイルとして開始された場合\_システム\_コントロールに対して、戻り値が STATUS\_SUCCESS または STATUS\_BUFFER\_OVERFLOW である*ことを示し*ます。RDBSS は、ファイルの**objectid**メンバー\_FS\_OBJECTID\_情報構造体にコピーします。これは、RX\_コンテキスト&gt;構造の情報バッファーのメンバーに渡され**ます。** **DiskParameters。** FCB 構造体のメンバーであり、IRP の**AssociatedIrp**メンバーになります。 *MRxQueryVolumeInfo*への呼び出しが成功した場合、RDBSS はリンクの**型**メンバーを\_追跡\_情報構造体に設定します。 FCB 構造体の**netroot&gt;フラグ**のメンバーが netroot\_フラグ\_DFS\_認識\_netroot ビットセットを持つ場合、**型**のメンバーは RDBSS によって**dfslinktrackinginformation**に設定されます。 FCB 構造体の**netroot&gt;フラグ**のメンバーに netroot\_フラグが設定されていない場合\_DFS\_認識\_netroot ビットセットの場合、**型**のメンバーは RDBSS によって**NtfsLinkTrackingInformation**に設定されます。 成功した場合、RDBSS は、IRP の**Iostatus. 情報**メンバーを、追跡\_情報構造\_リンクのサイズに設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>前提条件
 ------------
 
 <table>
@@ -162,12 +162,12 @@ IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>対象プラットフォーム</p></td>
-<td align="left">Desktop</td>
+<td align="left"><p>ターゲットプラットフォーム</p></td>
+<td align="left">デスクトップ</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -175,7 +175,7 @@ IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -199,7 +199,7 @@ IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

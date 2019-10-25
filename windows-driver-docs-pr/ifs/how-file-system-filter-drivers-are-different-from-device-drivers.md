@@ -1,53 +1,53 @@
 ---
-title: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
-description: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
+title: ファイルシステムフィルタードライバーとデバイスドライバーの違い
+description: ファイルシステムフィルタードライバーとデバイスドライバーの違い
 ms.assetid: 64a59564-a4d7-4174-82d3-60bd1a30b2d8
 keywords:
-- フィルター ドライバー WDK ファイル システム、デバイス ドライバーとの比較
-- ファイル システム フィルター ドライバー WDK、デバイス ドライバーとの比較
-- デバイス ドライバー WDK ファイル システム
+- フィルタードライバー WDK ファイルシステム、およびデバイスドライバー
+- ファイルシステムフィルタードライバー WDK、およびデバイスドライバー
+- デバイスドライバー WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4d832187a729ed2710771e1f2c31a62989521e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be82c51832c5ff1a7eef2a0f00378030d560c608
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365857"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841219"
 ---
-# <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
+# <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>ファイルシステムフィルタードライバーとデバイスドライバーの違い
 
 
 ## <span id="ddk_how_file_system_filter_drivers_are_different_from_device_drivers_i"></span><span id="DDK_HOW_FILE_SYSTEM_FILTER_DRIVERS_ARE_DIFFERENT_FROM_DEVICE_DRIVERS_I"></span>
 
 
-次のサブセクションでは、ファイル システム フィルター ドライバーとデバイス ドライバーの間の違いの一部について説明します。
+次のサブセクションでは、ファイルシステムフィルタードライバーとデバイスドライバーの違いについて説明します。
 
-### <a name="span-idnopowermanagementspanspan-idnopowermanagementspanspan-idnopowermanagementspanno-power-management"></a><span id="No_Power_Management"></span><span id="no_power_management"></span><span id="NO_POWER_MANAGEMENT"></span>電源管理
+### <a name="span-idno_power_managementspanspan-idno_power_managementspanspan-idno_power_managementspanno-power-management"></a><span id="No_Power_Management"></span><span id="no_power_management"></span><span id="NO_POWER_MANAGEMENT"></span>電源管理なし
 
-受信はないため、ファイル システム フィルター ドライバーは、デバイス ドライバーがないし、したがって制御しないデバイスのハードウェア直接、 [ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求。 代わりに、電源の Irp では、記憶域デバイス スタックに直接送信されます。 まれに、ただし、ファイル システム フィルター ドライバー干渉する可能性が電源管理を使用します。 このため、ファイル システム フィルター ドライバーは登録ディスパッチ ルーチン IRP の\_MJ\_で電源、 **DriverEntry**ルーチンを呼び出す必要はありません[PoXxx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチン。
+ファイルシステムフィルタードライバーはデバイスドライバーではないため、ハードウェアデバイスを直接制御しないため、 [**IRP\_MJ\_の電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求を受信しません。 代わりに、電力 Irp はストレージデバイススタックに直接送信されます。 ただし、まれに、ファイルシステムフィルタードライバーによって電源管理が妨げられることがあります。 このため、ファイルシステムフィルタードライバーは、 **Driverentry**ルーチンで IRP\_MJ\_電源のディスパッチルーチンを登録する必要がありません。また、 [poxxx](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)ルーチンを呼び出すことはできません。
 
-### <a name="span-idnowdmspanspan-idnowdmspanspan-idnowdmspanno-wdm"></a><span id="No_WDM"></span><span id="no_wdm"></span><span id="NO_WDM"></span>WDM なし
+### <a name="span-idno_wdmspanspan-idno_wdmspanspan-idno_wdmspanno-wdm"></a><span id="No_WDM"></span><span id="no_wdm"></span><span id="NO_WDM"></span>WDM なし
 
-ファイル システム フィルター ドライバーは、Windows Driver Model (WDM) ドライバーをすることはできません。 Microsoft [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)デバイス ドライバーに対してだけです。 Windows Me、Windows 98、および Windows 95 でファイル システム ドライバーの開発の詳細については、Windows Me ドライバー開発キット (DDK) を参照してください。
+ファイルシステムフィルタードライバーを Windows Driver Model (WDM) ドライバーにすることはできません。 Microsoft [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)は、デバイスドライバーのみを対象としています。 Windows Me、Windows 98、および Windows 95 でのファイルシステムドライバーの開発の詳細については、「Windows Me Driver Development Kit (DDK)」を参照してください。
 
-### <a name="span-idnoadddeviceorstartiospanspan-idnoadddeviceorstartiospanspan-idnoadddeviceorstartiospanno-adddevice-or-startio"></a><span id="No_AddDevice_or_StartIo"></span><span id="no_adddevice_or_startio"></span><span id="NO_ADDDEVICE_OR_STARTIO"></span>AddDevice または StartIo なし
+### <a name="span-idno_adddevice_or_startiospanspan-idno_adddevice_or_startiospanspan-idno_adddevice_or_startiospanno-adddevice-or-startio"></a><span id="No_AddDevice_or_StartIo"></span><span id="no_adddevice_or_startio"></span><span id="NO_ADDDEVICE_OR_STARTIO"></span>AddDevice または StartIo はありません
 
-したがって制御しないデバイスのハードウェア直接ファイル システム フィルター ドライバーがデバイス ドライバーがないためは必要ありません[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)または[ **StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン。
+ファイルシステムフィルタードライバーはデバイスドライバーではないため、ハードウェアデバイスを直接制御しないので、 [**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)または[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンを指定しないでください。
 
-### <a name="span-iddifferentdeviceobjectscreatedspanspan-iddifferentdeviceobjectscreatedspanspan-iddifferentdeviceobjectscreatedspandifferent-device-objects-created"></a><span id="Different_Device_Objects_Created"></span><span id="different_device_objects_created"></span><span id="DIFFERENT_DEVICE_OBJECTS_CREATED"></span>別のデバイス オブジェクトの作成
+### <a name="span-iddifferent_device_objects_createdspanspan-iddifferent_device_objects_createdspanspan-iddifferent_device_objects_createdspandifferent-device-objects-created"></a><span id="Different_Device_Objects_Created"></span><span id="different_device_objects_created"></span><span id="DIFFERENT_DEVICE_OBJECTS_CREATED"></span>作成されたさまざまなデバイスオブジェクト
 
-ファイル システム フィルター ドライバーとデバイス ドライバーは、デバイス オブジェクトを作成して、自分で作成したデバイス オブジェクトの種類と数が異なります。
+ファイルシステムフィルタードライバーとデバイスドライバーは両方ともデバイスオブジェクトを作成しますが、作成するデバイスオブジェクトの数と種類は異なります。
 
-デバイス ドライバーは、物理および機能のデバイスのデバイスを表すオブジェクトを作成します。 プラグ アンド プレイ (PnP) マネージャーでは、ビルドし、デバイス ドライバーによって作成されたすべてのデバイスを含むグローバル デバイス ツリーのオブジェクトを保持します。 ファイル システム フィルター ドライバーを作成するデバイス オブジェクトは、このデバイス ツリーに含まれていません。
+デバイスドライバーは、デバイスを表す物理デバイスオブジェクトと機能デバイスオブジェクトを作成します。 プラグアンドプレイ (PnP) マネージャーは、デバイスドライバーによって作成されたすべてのデバイスオブジェクトを含むグローバルデバイスツリーを構築し、管理します。 ファイルシステムフィルタードライバーによって作成されたデバイスオブジェクトは、このデバイスツリーに含まれていません。
 
-ファイル システム フィルター ドライバーは、物理または機能のデバイス オブジェクトを作成できません。 代わりに、デバイス オブジェクトにコントロールを作成し、デバイス オブジェクトをフィルター処理します。 *制御デバイス オブジェクト*システムおよびユーザー モード アプリケーションには、フィルター ドライバーを表します。 *フィルター デバイス オブジェクト*特定のファイル システム ボリュームまたはボリュームをフィルター処理の実際の作業を実行します。 1 つは、ファイル システム フィルター ドライバーが通常作成制御デバイス オブジェクトと 1 つ以上のデバイス オブジェクトをフィルター処理します。
+ファイルシステムフィルタードライバーは、物理的または機能しているデバイスオブジェクトを作成しません。 代わりに、コントロールデバイスオブジェクトを作成し、デバイスオブジェクトをフィルター処理します。 *コントロールデバイスオブジェクト*は、システムおよびユーザーモードアプリケーションに対するフィルタードライバーを表します。 *フィルターデバイスオブジェクト*は、特定のファイルシステムまたはボリュームをフィルター処理する実際の作業を実行します。 通常、ファイルシステムフィルタードライバーは、1つのコントロールデバイスオブジェクトと1つまたは複数のフィルターデバイスオブジェクトを作成します。
 
-### <a name="span-idotherdifferencesspanspan-idotherdifferencesspanspan-idotherdifferencesspanother-differences"></a><span id="Other_Differences"></span><span id="other_differences"></span><span id="OTHER_DIFFERENCES"></span>その他の違い
+### <a name="span-idother_differencesspanspan-idother_differencesspanspan-idother_differencesspanother-differences"></a><span id="Other_Differences"></span><span id="other_differences"></span><span id="OTHER_DIFFERENCES"></span>その他の相違点
 
-実行しないファイル システム フィルター ドライバーはデバイス ドライバーではないため、[ダイレクト メモリ アクセス (DMA)](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o-with-dma)します。
+ファイルシステムフィルタードライバーはデバイスドライバーではないため、[ダイレクトメモリアクセス (DMA)](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o-with-dma)は実行されません。
 
-デバイス フィルター ドライバーは、ターゲット デバイスの機能のドライバーより上または下をアタッチすることができますとは異なり、ファイル システム フィルター ドライバーは、対象のファイル システム ドライバーの上にのみアタッチできます。 したがって、デバイス ドライバーには、ファイル システム フィルター ドライバーは、上部のフィルターのみ、フィルターが低いことはありませんをすることができます。
+デバイスフィルタードライバーは、ターゲットデバイスの関数ドライバーの上または下にアタッチできますが、ファイルシステムフィルタードライバーは、ターゲットファイルシステムドライバーの上にしかアタッチできません。 したがって、デバイスドライバーの用語では、ファイルシステムフィルタードライバーは上位フィルターに限らず、フィルターを下げることはできません。
 
  
 

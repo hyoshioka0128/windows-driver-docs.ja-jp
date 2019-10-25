@@ -3,22 +3,22 @@ title: I/O 要求のディスパッチ方法
 description: I/O 要求のディスパッチ方法
 ms.assetid: 3e91aa7c-bccf-4eeb-8b68-b1277a690f8c
 keywords:
-- I/O キューの作成の WDK KMDF
-- I/O キュー WDK KMDF、メソッドのディスパッチ
-- WDK KMDF メソッドのディスパッチ
-- シーケンシャルなディスパッチ WDK KMDF
-- 同期のディスパッチ WDK KMDF
-- 並列のディスパッチ WDK KMDF
-- 非同期ディスパッチ WDK KMDF
-- 手動のディスパッチ WDK KMDF
+- I/o キュー WDK KMDF、作成
+- I/o キュー WDK KMDF、ディスパッチメソッド
+- メソッドのディスパッチ (WDK KMDF)
+- シーケンシャルディスパッチ WDK KMDF
+- WDK KMDF の同期ディスパッチ
+- WDK KMDF の並列ディスパッチ
+- WDK KMDF の非同期ディスパッチ
+- WDK KMDF の手動によるディスパッチ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba5b3170e86ad0fb136ad51e8f1f0f701ff8331
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be88ba6724347b49864bdc67c0b2f7bc4e30b80c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377408"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843196"
 ---
 # <a name="dispatching-methods-for-io-requests"></a>I/O 要求のディスパッチ方法
 
@@ -26,39 +26,39 @@ ms.locfileid: "67377408"
 
 
 
-ドライバーを呼び出すと[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate) I/O キューを作成するキューのディスパッチ メソッドを指定します。 フレームワークは、次の 3 つのディスパッチ メソッドを提供します:[シーケンシャル](#sequential-dispatching)、[並列](#parallel-dispatching)、および[手動](#manual-dispatching)します。 ドライバーを指定できますいずれデバイスを含む、すべての I/O キューのメソッドのディスパッチ[既定の I/O キュー](creating-i-o-queues.md)します。
+ドライバーが[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)を呼び出して i/o キューを作成するときに、キューのディスパッチ方法を指定します。 このフレームワークには、[シーケンシャル](#sequential-dispatching)、[並列](#parallel-dispatching)、[手動](#manual-dispatching)の3つのディスパッチメソッドが用意されています。 ドライバーは、デバイスの[既定の i/o キュー](creating-i-o-queues.md)など、任意の i/o キューに対してこれらのディスパッチ方法を指定できます。
 
-ドライバーでは、キューのディスパッチ メソッドを設定を指定して、 [ **WDF\_IO\_キュー\_ディスパッチ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)-キューのに型指定された値[**WDF\_IO\_キュー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)構造体。
+ドライバーは、キューの[**WDF\_io\_queue\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)構造体\_型指定された値を[**ディスパッチ\_、WDF\_io\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)を指定することによって、キューのディスパッチ方法を設定します。
 
-たとえば、各ディスパッチ メソッドの使用方法を参照してください[I/O キューの使用例を使用して](example-uses-of-i-o-queues.md)します。
+各ディスパッチ方法の使用例については、「 [I/o キューの使用例](example-uses-of-i-o-queues.md)」を参照してください。
 
-### <a href="" id="sequential-dispatching"></a> シーケンシャルなディスパッチ
+### <a href="" id="sequential-dispatching"></a>順次ディスパッチ
 
-使用するデバイスの I/O キューを設定する必要がある場合は、ドライバーまたはデバイスでは、キューから 1 つだけの I/O 要求を一度に処理できる、*シーケンシャル ディスパッチ*と呼ばれるも*同期ディスパッチ*します。 フレームワークは、この種類のディスパッチのでは、要求を一度に 1 つ、ドライバーに配信します。 フレームワークでは、ドライバーまで、次の要求を配信しません[完了](completing-i-o-requests.md)、[キャンセル](canceling-i-o-requests.md)、または[requeues](requeuing-i-o-requests.md)前回の要求。
+ドライバーまたはデバイスで一度にキューからの i/o 要求を1つしか処理できない場合は、*順次ディスパッチ*を使用するようにデバイスの i/o キューを設定する必要があります。これは、*同期ディスパッチ*とも呼ばれます。 この種のディスパッチでは、フレームワークは一度に1つずつドライバーに要求を配信します。 フレームワークは、ドライバーが前回の要求を[完了](completing-i-o-requests.md)、[取り消し](canceling-i-o-requests.md)、または[キュー](requeuing-i-o-requests.md)するまで、次の要求を配信しません。
 
-フレームワークのドライバーのいずれかに要求の配信後[要求ハンドラー](request-handlers.md)、ドライバー[要求を処理します](processing-i-o-requests.md)します。 ドライバーが要求を転送する場合、[一般的な I/O ターゲット](general-i-o-targets.md)、I/O ターゲット オブジェクトの同期メソッドのいずれかを通常に呼び出します。 これらのメソッドの詳細については、次を参照してください。[同期に I/O 要求を送信する](sending-i-o-requests-synchronously.md)します。 ドライバーに最終的にする必要があります[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)I/O キューから受信したすべての要求。
+フレームワークは、ドライバーの[要求ハンドラー](request-handlers.md)のいずれかに要求を配信した後、[要求を処理](processing-i-o-requests.md)します。 ドライバーが要求を[一般的な i/o ターゲット](general-i-o-targets.md)に転送する場合、通常は、i/o ターゲットオブジェクトの同期メソッドの1つを呼び出します。 これらの方法の詳細については、「[同期的に I/o 要求を送信](sending-i-o-requests-synchronously.md)する」を参照してください。 ドライバーは、i/o キューから受信したすべての要求を最終的に[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)する必要があります。
 
-シーケンシャルなディスパッチを呼び出すことができますが、I/O キューがセットアップされているドライバー [ **WdfIoQueueRetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[ **WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)最後の前に、キューから別の要求を取得する受信した要求が完了またはキャンセルされました。 ドライバーがドライバーの中に次のハードウェアの操作を開始できるように関数ドライバーでこれを行う場合[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数には、前のデータがまだ処理ハードウェアの操作です。
+順次ディスパッチ用の i/o キューを設定したドライバーは、 [**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)を呼び出して、最後に受信した要求が完了する前に別の要求をキューから取得することができます。または取り消されました。 これを関数ドライバーで実行すると、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数が以前のハードウェア操作のデータを処理している間に、ドライバーが次のハードウェア操作を開始できるようになります。
 
-いくつかの I/O キューを作成し、シーケンシャル ディスパッチすべてでは設定すると、フレームワークが順番に各キューからの要求をディスパッチがキューを並列で実行します。 ドライバーまたはデバイスは、任意の型は、一度に 1 つの要求を処理できる場合に、1 つの I/O キューを使用する必要があります、 [ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)コールバック関数。
+複数の i/o キューを作成し、それらを順次ディスパッチ用に設定した場合、フレームワークは各キューから順番に要求をディスパッチしますが、キューは並列で実行されます。 ドライバーまたはデバイスが、任意の種類の一度に1つの要求のみを処理できる場合は、1つの i/o キューで[*Evtiodefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)コールバック関数を使用する必要があります。
 
-### <a href="" id="parallel-dispatching"></a> 並列のディスパッチ
+### <a href="" id="parallel-dispatching"></a>並列ディスパッチ
 
-使用するデバイスの I/O キューを設定することができる場合、ドライバーとデバイス I/O 要求を複数同時に処理できる、*並列ディスパッチ*ドライバーでは、要求を非同期的に処理できるようにします。 このディスパッチのメソッドが呼び出されますも*非同期ディスパッチ*します。
+ドライバーとデバイスが複数の i/o 要求を同時に処理できる場合は、ドライバーが非同期的に要求を処理できるように、*並列ディスパッチ*を使用するようにデバイスの i/o キューを設定できます。 このディスパッチメソッドは、*非同期ディスパッチ*とも呼ばれます。
 
-ドライバーで、I/O キューを設定すると、並列のディスパッチを使用して場合、フレームワークは、キューでは使用するとすぐに、ドライバーを I/O 要求を配信します。 結果は、ドライバーは、一度に複数の要求を処理する必要があります。
+ドライバーが並列ディスパッチを使用するように i/o キューを設定した場合、フレームワークは、キューで使用できるようになるとすぐに i/o 要求をドライバーに配信します。 その結果、ドライバーは一度に複数の要求を処理しなければならなくなる可能性があります。
 
-たびに、ドライバーのいずれかの[要求ハンドラー](request-handlers.md)要求を受信、ドライバーである必要があります[要求を処理](processing-i-o-requests.md)し[完了](completing-i-o-requests.md)要求。 ドライバーが要求を転送する場合、[一般的な I/O ターゲット](general-i-o-targets.md)、I/O ターゲット オブジェクトの非同期メソッドのいずれかを通常に呼び出します。 これらのメソッドの詳細については、次を参照してください。 [I/O の要求を非同期に送信する](sending-i-o-requests-asynchronously.md)します。 ドライバーに最終的にする必要があります[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)I/O キューから受信したすべての要求。
+ドライバーの[要求ハンドラー](request-handlers.md)の1つが要求を受け取るたびに、ドライバーは[要求を処理](processing-i-o-requests.md)し、要求を[完了](completing-i-o-requests.md)する必要があります。 ドライバーが要求を[一般的な i/o ターゲット](general-i-o-targets.md)に転送する場合は、通常、i/o ターゲットオブジェクトの非同期メソッドを呼び出します。 これらのメソッドの詳細については、「 [I/o 要求を非同期に送信](sending-i-o-requests-asynchronously.md)する」を参照してください。 ドライバーは、i/o キューから受信したすべての要求を最終的に[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)する必要があります。
 
-並列のディスパッチを使用するドライバーを呼び出すことができます[ **WdfIoQueueStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestop)または[ **WdfIoQueueStopSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestopsynchronously)を一時的に停止します。キュー、および呼び出して[ **WdfIoQueueStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestart)キューを再起動します。
+パラレルディスパッチを使用するドライバーは、 [**Wdfioqueuestop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)または[**Wdfioqueuestopを同期的**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)に呼び出してキューを一時的に停止した後、 [**wdfioqueuestart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart)を呼び出してキューを再起動することができます。
 
-### <a href="" id="manual-dispatching"></a> 手動のディスパッチ
+### <a href="" id="manual-dispatching"></a>手動によるディスパッチ
 
-使用するデバイスの I/O キューを設定することができます、ドライバーが I/O 要求の配信を完全に制御する場合は、*手動ディスパッチ*、つまり、あるフレームワークが含まれていません要求ドライバーにしない限り、ドライバーいずれかが明示的に要求します。
+ドライバーで i/o 要求の配信を完全に制御できるようにするには、*手動ディスパッチ*を使用するようにデバイスの i/o キューを設定します。これは、ドライバーが明示的に要求しない限り、フレームワークがドライバーに要求を送信しないことを意味します。
 
-手動のキューからの要求を取得するドライバーを呼び出すことができます[ **WdfIoQueueRetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[ **WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)キューをポーリングするループ内で。 ドライバーを呼び出すことができますも[ **WdfIoQueueReadyNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuereadynotify)を 1 つまたは複数の要求が、キューで利用できるときにフレームワークが呼び出すコールバック関数を登録します。 フレームワークは、コールバック関数を呼び出し、ドライバーを呼び出すことが**WdfIoQueueRetrieveNextRequest**または**WdfIoQueueRetrieveRequestByFileObject**ループ、要求を取得します。
+手動キューから要求を取得するために、ドライバーは、キューをポーリングするループ内で[**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)を呼び出すことができます。 または、ドライバーが[**Wdfioqueuereadynotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuereadynotify)を呼び出して、キューで1つ以上の要求が使用可能になったときにフレームワークが呼び出すコールバック関数を登録できます。 フレームワークがコールバック関数を呼び出すと、ドライバーはループ内で**WdfIoQueueRetrieveNextRequest**または**WdfIoQueueRetrieveRequestByFileObject**を呼び出して要求を取得できます。
 
-ドライバーは、キューから要求を取得した後にする必要があります[要求を処理](processing-i-o-requests.md)します。 ドライバーに最終的にする必要があります[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)各要求。
+ドライバーは、キューから要求を取得した後、[要求を処理](processing-i-o-requests.md)する必要があります。 ドライバーは、最終的に各要求を[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)する必要があります。
 
  
 

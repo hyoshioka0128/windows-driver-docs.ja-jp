@@ -3,45 +3,45 @@ title: 通知コールアウトの処理
 description: 通知コールアウトの処理
 ms.assetid: d686989e-97f0-4095-b172-1c2ccf7a26e6
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK、コールアウトを通知します。
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームのコールアウトを通知します。
+- Windows フィルタリングプラットフォームコールアウトドライバー WDK、通知吹き出し
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、コールアウト通知
 - notifyFn
-- コールアウト WDK Windows フィルタ リング プラットフォームを通知します。
-- Windows Filtering Platform コールアウト ドライバー WDK、フィルターの追加と削除
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの追加と削除をフィルター処理します。
+- 吹き出しを通知する WDK Windows フィルタリングプラットフォーム
+- Windows フィルタリングプラットフォームのコールアウトドライバーの WDK、フィルターの追加と削除
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、フィルターの追加と削除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa5853a9154521c9ea95af15f3968fb9de4b5140
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47dc589056f07b755dd456c25560799919786aab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385475"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843485"
 ---
 # <a name="processing-notify-callouts"></a>通知コールアウトの処理
 
 
-フィルター エンジン呼び出し吹き出しの[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数引き出し線に関連付けられているイベントに関するコールアウト ドライバーに通知します。
+フィルターエンジンは、コールアウトの[*Notifyfn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を呼び出して、コールアウトに関連付けられているイベントについてコールアウトドライバーに通知します。
 
-### <a href="" id="filter-addition"></a> フィルターの追加
+### <a href="" id="filter-addition"></a>フィルターの追加
 
-呼び出すときに、フィルターのアクションが、フィルター エンジンに追加された場合、引き出し線を指定するフィルター、フィルター エンジン吹き出しの[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を FWPS\_コールアウト\_通知\_追加\_でフィルター処理、 *notifyType*パラメーター。
+フィルターのアクションのコールアウトを指定するフィルターがフィルターエンジンに追加されると、フィルターエンジンはコールアウトの[*Notifyfn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を呼び出し、fwps\_コールアウト\_通知し、\_\_フィルターを追加します *。notifyType*パラメーター。
 
-コールアウト ドライバーは、フィルターのアクションの引き出し線を指定するフィルターをフィルター エンジンに既に追加した後、フィルター エンジンを吹き出しを登録できます。 このような状況で、フィルター エンジンは呼び出しません吹き出しの[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数について、既存のフィルターのいずれかの吹き出しに通知します。
+フィルターのアクションのコールアウトを指定するフィルターが既にフィルターエンジンに追加されている場合、コールアウトドライバーはフィルターエンジンにコールアウトを登録できます。 このような状況では、フィルターエンジンは、既存のフィルターについてコールアウトに通知するために、コールアウトの[*Notifyfn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を呼び出しません。
 
-フィルター エンジンは吹き出しののみを呼び出して*notifyFn*コールアウト関数に、フィルターのアクションの引き出し線を指定する新しいフィルターがフィルター エンジンに追加されたときに、引き出し線を通知します。 このような状況で、吹き出しの*notifyFn*フィルターのアクションの引き出し線を指定するフィルター エンジンですべてのフィルターのコールアウト関数を呼び出さない可能性があります。
+フィルターエンジンは、コールアウトの*Notifyfn*コールアウト関数だけを呼び出して、フィルターのアクションのコールアウトを指定する新しいフィルターがフィルターエンジンに追加されたときに、コールアウトを通知します。 このような状況では、フィルターのアクションのコールアウトを指定するフィルターエンジン内のすべてのフィルターに対して、コールアウトの*Notifyfn*コールアウト関数が呼び出されないことがあります。
 
-コールアウト ドライバーは、フィルター エンジンが起動し、引き出し線は、フィルターのアクションの引き出し線を指定するフィルター エンジンですべてのフィルターに関する情報を受け取る必要があります。、吹き出しを登録、コールアウト ドライバーは適切な管理を呼び出す必要があります。フィルター エンジンのすべてのフィルターを列挙する機能です。 コールアウト ドライバーは、これらのフィルターのアクションの引き出し線を指定するフィルターを検索するすべてのフィルターの結果の一覧を並べ替える必要があります。 参照してください[その他の Windows フィルタ リング プラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)詳細については、これらの関数を呼び出すことです。
+フィルターエンジンの起動後にコールアウトドライバーがコールアウトを登録し、フィルターのアクションのコールアウトを指定するフィルターエンジンのすべてのフィルターに関する情報をコールアウトが受信する必要がある場合は、コールアウトドライバーが適切な管理を呼び出す必要があります。フィルターエンジン内のすべてのフィルターを列挙する関数。 コールアウトドライバーは、フィルターのアクションのコールアウトを指定するフィルターを見つけるために、結果として得られるすべてのフィルターの一覧を並べ替える必要があります。 これらの関数の呼び出しの詳細については、「[その他の Windows フィルタリングプラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)」を参照してください。
 
-### <a href="" id="filter-deletion"></a> フィルターの削除
+### <a href="" id="filter-deletion"></a>フィルターの削除
 
-呼び出すときに、フィルターのアクションは、フィルター エンジンから削除された吹き出しを指定するフィルター、フィルター エンジン吹き出しの[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を渡します FWPS\_吹き出し\_通知\_削除\_でフィルター処理、 *notifyType*パラメーターと**NULL**で、 *filterKey*パラメーター。 フィルター エンジンの呼び出しのコールアウトの*notifyFn*フィルターのアクションの引き出し線を指定するフィルター エンジンですべて削除されたフィルターの吹き出し関数。 これには、コールアウト ドライバーは、フィルター エンジンの引き出し線を登録する前に、フィルター エンジンに追加されたすべてのフィルターが含まれます。 そのため、コールアウトは、通知を追加するフィルターのフィルターの受け取らなかったために、フィルター削除通知を受け取る可能性があります。
+フィルターのアクションのコールアウトを指定するフィルターがフィルターエンジンから削除されると、フィルターエンジンは、コールアウトの[*Notifyfn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数を呼び出して、fwps\_コールアウト\_通知\_削除\_フィルターを*filterKey*パラメーターで*notifytype*パラメーターと**NULL**を指定します。 フィルターエンジンは、フィルターエンジン内の削除されたすべてのフィルターに対して*コールアウト関数*を呼び出し、フィルターのアクションのコールアウトを指定します。 これには、コールアウトドライバーがコールアウトをフィルターエンジンに登録する前にフィルターエンジンに追加されたフィルターが含まれます。 そのため、コールアウトはフィルターの削除通知を受け取ることがあります。フィルターは、フィルターの追加通知を受信しませんでした。
 
-場合吹き出しの[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数に渡される通知の種類を認識しません、 *notifyType*パラメーターを無視すること、通知と状態の戻り値\_成功します。
+*Notifyfn*パラメーターで渡される通知の種類がコールアウトの[*notifyfn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)コールアウト関数によって認識されない場合は、通知を無視し、状態\_SUCCESS に戻す必要があります。
 
-コールアウト ドライバーでは、フィルター エンジンに追加されると、フィルター、フィルターに関連するコンテキストを指定できます。 このようなコンテキストでは、フィルター エンジンに対して非透過的です。 吹き出しの[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数は、このコンテキストを使用して、フィルター エンジンによって呼び出されたときに [次へ] に状態情報を保存します。 フィルター エンジンからフィルターを削除すると、コールアウト ドライバーは、コンテキストのために必要なクリーンアップを実行します。
+フィルターがフィルターエンジンに追加されると、コールアウトドライバーはフィルターに関連付けられるコンテキストを指定できます。 このようなコンテキストは、フィルターエンジンに対して非透過的です。 コールアウトの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数は、このコンテキストを使用して、フィルターエンジンによって次回呼び出されたときの状態情報を保存できます。 フィルターがフィルターエンジンから削除されると、コールアウトドライバーはコンテキストの必要なクリーンアップを実行します。
 
-例:
+次に、例を示します。
 
 ```C++
 // Context structure to be associated with the filters

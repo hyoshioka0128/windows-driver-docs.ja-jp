@@ -1,39 +1,39 @@
 ---
-title: アジア向けレイアウトのサポートを提供する
-description: アジア向けレイアウトのサポートを提供する
+title: アジアのレイアウトのサポートを提供する
+description: アジアのレイアウトのサポートを提供する
 ms.assetid: 38c7dfca-ce30-4967-84a4-e2f40bba8c57
 keywords:
-- プリント プロセッサ WDK、アジアの言語
-- WDK のアジア言語を印刷します。
-- WDK の小冊子を印刷します。
-- N アップ印刷 WDK
-- WDK の印刷の向きを反転します。
-- WDK にアラビア語の印刷のサポート
-- WDK に日本語の印刷のサポート
-- WDK にウルドゥ語の印刷のサポート
-- WDK 考慮事項
-- WDK のアジア言語の印刷
-- WDK の言語を印刷します。
-- 右から左に読む言語 WDk を印刷します。
+- プリントプロセッサ WDK、アジア言語
+- アジア言語の WDK 印刷
+- 小冊子 WDK 印刷
+- N-up 印刷 WDK
+- 逆方向の WDK 印刷
+- アラビア語の印刷サポート WDK
+- 日本の印刷サポート WDK
+- ウルドゥ語印刷サポート WDK
+- 国際化に関する考慮事項 WDK
+- アジア言語の印刷 (WDK)
+- 言語 WDK 印刷
+- 右から左への読み取り言語の WDk 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8aa3bddaa2035af7e152e6269fd8e9e687d95c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 50cb696a1b75f781835f95419b9e7d34374e7819
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356007"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840419"
 ---
-# <a name="providing-support-for-asian-layout"></a>アジア向けレイアウトのサポートを提供する
+# <a name="providing-support-for-asian-layout"></a>アジアのレイアウトのサポートを提供する
 
 
-Microsoft Windows では、右から次の機能がアラビア語、日本語、およびウルドゥ語などの左に読むプロセッサ サポートのアジア言語を印刷します。
+Microsoft Windows プリントプロセッサでは、アラビア語、日本語、ウルドゥ語など、右から左に読むアジア言語がサポートされています。次の機能があります。
 
--   **N-up 方向**:1 枚に複数のページを印刷する場合、ユーザーは、シート上、右から左の順序でページを印刷できます。
+-   **N アップ方向**: 1 枚のシートに複数のページを印刷する場合、ユーザーはシート上で右から左への順序でページを印刷できます。
 
--   **小冊子 Edge**:シートを折りたたむし、並列でページのレイアウトが、小冊子を印刷する場合、ユーザーは、右から左に小冊子のページを注文できます。 次の図は、小冊子を使用して、小冊子のページ レイアウトは\_EDGE\_適切なフラグ![。小冊子を使用して、小冊子のページ レイアウトを示す図\-edge\-右フラグ](images/asian-booklet.png)
+-   **小冊子のエッジ**: 小冊子を印刷するときに、シートが折りたたまれ、ページが横に並べて配置されている場合、ユーザーは小冊子ページを右から左に並べて配置できます。 次の図は、小冊子の\_エッジ\_右フラグを使用した、小冊子のページレイアウトを示しています。ブックレット\-edge\-右の](images/asian-booklet.png) フラグを使用して、小冊子のページレイアウトを示す![図
 
-アジア言語のレイアウトをサポートするために、ドライバーの n-up 方向および小冊子のエッジを変更するためのフラグは、Windows Vista で利用できます。 これらの値を設定する方法の詳細については、次を参照してください[ **DrvQueryJobAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvqueryjobattributes)と[**属性\_情報\_4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_4).
+Windows Vista では、アジアのレイアウトをサポートするために、ドライバーの N アップ方向と小冊子端を変更できるフラグが用意されています。 これらの値を設定する方法の詳細については、「 [**DrvQueryJobAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes) and [**ATTRIBUTE\_INFO\_4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_4)」を参照してください。
 
  
 

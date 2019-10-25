@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_EVCOMPENSATION
-description: EV 補正プロパティは、露出ユニット単位、またはゾーン システムに、コントロールの露出の調整を使用できます。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_EVCOMPENSATION
+description: EV 補正プロパティを使用すると、露出単位またはゾーンシステムごとに露出制御を調整できます。
 ms.assetid: 1109C533-89CA-4A23-BCF9-D44C28C0C6BF
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_EVCOMPENSATION ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_EVCOMPENSATION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d1da7cad30dbc37d527957b6893a81a70897002c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad2804df6d3e76383fa8a05428dab718f6ac631b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355399"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843241"
 ---
-# <a name="kspropertycameracontrolextendedevcompensation"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_EVCOMPENSATION
+# <a name="ksproperty_cameracontrol_extended_evcompensation"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_EVCOMPENSATION
 
 
-EV 補正プロパティは、露出ユニット単位、またはゾーン システムに、コントロールの露出の調整を使用できます。
+EV 補正プロパティを使用すると、露出単位またはゾーンシステムごとに露出制御を調整できます。
 
 ### <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -38,7 +38,7 @@ EV 補正プロパティは、露出ユニット単位、またはゾーン シ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -47,43 +47,43 @@ EV 補正プロパティは、露出ユニット単位、またはゾーン シ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)構造体。
+プロパティ値 (操作データ) には、 [**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造、および[**KSCAMERA\_EXTENDEDPROP\_evcompensation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)構造体が含まれています。
 
-プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION)。 **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
+プロパティデータの合計サイズは**sizeof**(KSCAMERA\_extendedprop\_HEADER) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_evcompensation) です。 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**size**メンバーは、この total property データサイズに設定されます。
 
-**機能**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)次の 1 つ以上のビット演算 OR の組み合わせが含まれています補正の設定です。
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**機能**メンバーには、次の補正設定の1つ以上のビットごとの or の組み合わせが含まれています。
 
-| EV 補正ステップ実行                    | 説明                                                             |
+| EV 補正のステップ実行                    | 説明                                                             |
 |---------------------------------------------|-------------------------------------------------------------------------|
-| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_進み   | EV 危険度の値の 1 つの 6 番目 (1/6) の手順で変更を補正します。  |
-| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_QUARTERSTEP | EV 危険度の値の 4 分の 1 (1/4) の手順で変更を補正します。 |
-| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_THIRDSTEP   | EV 危険度の値の 3 分の 1 (1/3) の手順で変更を補正します。  |
-| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_HALFSTEP    | EV 補正の変更の半分の危険度の値 (1/2) の手順。   |
-| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_FULLSTEP    | EV 補正は、いずれかで変更の危険度の値 (1/1) の手順。        |
+| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_SIXTHSTEP   | エクスポージャーの補正は、露出値の6番目の (1/6) ステップで変更されます。  |
+| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_QUARTERSTEP | EV の補正は、露出値の1番目の4つのステップ (1/4) で変更されます。 |
+| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_THIRDSTEP   | EV の補正は、露出値の3番目の (1/3) ステップで変更されます。  |
+| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_ハーフステップ    | EV 値の1半 (1/2) ステップで EV 補正が変更されます。   |
+| KSCAMERA\_EXTENDEDPROP\_EVCOMP\_FULLSTEP    | EV の補正は、露出値の1つの (1/1) ステップで変更されます。        |
 
  
 
-**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)カメラ (1 つの値) のステップ実行の現在の EV 報酬が含まれています.最も低い EV 補正ステップ サイズに対してのみのサポートを提供するは、ドライバーがお勧めします。
+[**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**Flags**メンバーには、カメラの現在の EV 補正ステップ (1 つの値) が含まれています。最小 EV 補正ステップサイズに対してのみ、のサポートを提供するために、ドライバーを使用することをお勧めします。
 
-このプロパティのコントロールは、非同期およびないキャンセル可能なは。
+このプロパティコントロールは非同期であり、キャンセルできません。
 
 <a name="remarks"></a>注釈
 -------
 
-### <a name="getting-the-property"></a>プロパティを取得
+### <a name="getting-the-property"></a>プロパティを取得する
 
-KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバーの設定、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)に、次の場合。
+\_GET 要求の種類\_KSK プロパティに応答すると、ドライバーは、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)のメンバーを次のように設定します。
 
 <table>
 <colgroup>
@@ -92,7 +92,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>Value</th>
 </tr>
 </thead>
@@ -103,11 +103,11 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="even">
 <td>PinId</td>
-<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0 XFFFFFFFF) です。</td>
+<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF)。</td>
 </tr>
 <tr class="odd">
-<td>サイズ</td>
-<td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_EVCOMPENSATION)</p></td>
+<td>Size</td>
+<td><p>sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_EVCOMPENSATION)</p></td>
 </tr>
 <tr class="even">
 <td>結果</td>
@@ -115,22 +115,22 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="odd">
 <td>機能</td>
-<td>ドライバーによってサポートされているフラグをステップ実行します。</td>
+<td>ドライバーでサポートされているステップ実行フラグ。</td>
 </tr>
 <tr class="even">
 <td>フラグ</td>
-<td>現在のステップ実行の値を設定します。</td>
+<td>現在のステッピング値のセット。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-ドライバーの設定でのステップ実行現在 EV 補正**フラグ**します。 メンバー [ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)ステップ単位の現在の範囲と補正するための手順の数を示します。
+ドライバーは、現在の EV 補正ステップイン**フラグ**を設定します。 [**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)のメンバーは、現在のステップ単位の範囲と、での補正のために使用されているステップの数を示します。
 
 ### <a name="setting-the-property"></a>プロパティの設定
 
-設定すると、プロパティを KSPROPERTY\_型\_セットの要求、**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) EV 補正を使用するステップが含まれます。 新しい補正するためのステップ単位数設定**値**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)します。
+プロパティが設定されている場合、KSK プロパティ\_TYPE\_SET 要求では、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**Flags**メンバーには、使用する EV 補正ステップが含まれます。 補正に使用される新しいステップ単位の数は、 [**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)の**値**メンバーで設定されます。
 
 <a name="requirements"></a>要件
 ------------
@@ -143,11 +143,11 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 以降を利用できます。</p></td>
+<td><p>Windows 8.1 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -155,6 +155,6 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)
+[**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)

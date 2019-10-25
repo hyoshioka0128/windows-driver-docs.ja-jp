@@ -4,17 +4,17 @@ description: DSM\_QuerySupportedLBPolicies\_V2 WMI クラス
 ms.assetid: d60cf06d-595b-425d-bf22-f0986267ba09
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d05015071060fd7dc3c872c44c723c0600504531
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7cb3467ecc565e42f1bb1d9703d88ffdb799e0fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368223"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843221"
 ---
-# <a name="dsmquerysupportedlbpoliciesv2-wmi-class"></a>DSM\_QuerySupportedLBPolicies\_V2 WMI クラス
+# <a name="dsm_querysupportedlbpolicies_v2-wmi-class"></a>DSM\_QuerySupportedLBPolicies\_V2 WMI クラス
 
 
-MPIO DSM の発行\_QuerySupportedLBPolicies\_V2 WMI クラスには、GUID を登録して、その実装を処理する DSM が必要です。 DSM を使用する WMI クライアント\_QuerySupportedLBPolicies\_DSM をサポートするすべての負荷分散ポリシーを照会する V2 WMI クラスです。
+MPIO は DSM\_QuerySupportedLBPolicies\_V2 WMI クラスを発行しますが、DSM が GUID を登録し、その実装を処理することを想定しています。 WMI クライアントは DSM\_QuerySupportedLBPolicies\_V2 WMI クラスを使用して、DSM がサポートする負荷分散ポリシーをすべて照会します。
 
 ```cpp
 class DSM_QuerySupportedLBPolicies_V2
@@ -44,7 +44,7 @@ class DSM_QuerySupportedLBPolicies_V2
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_QuerySupportedLBPolicies\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_querysupportedlbpolicies_v2)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**DSM\_QuerySupportedLBPolicies\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_querysupportedlbpolicies_v2)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 
