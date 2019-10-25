@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 981885720f0fece50163158d6b94fbf6f431f293
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 313f848dbf429e0c3b117eedf9340436700fc555
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473470"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824942"
 ---
 # <a name="general-purpose-io-gpio-driver-design-guide"></a>汎用 I/O (GPIO) ドライバーの設計ガイド
 
@@ -52,7 +52,7 @@ ms.locfileid: "68473470"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi" data-raw-source="[GpioClx DDI](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi)">GpioClx DDI</a></p></td>
-<td><p>汎用 I/O (GPIO) コントローラーのドライバーは、GpioClx デバイス ドライバー インターフェイス (DDI) を介して GPIO フレームワーク拡張機能 (GpioClx) と通信します。 この DDI は Gpioclx.h ヘッダー ファイルで定義され、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[General-Purpose I/O (GPIO) Driver Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">汎用 I/O (GPIO) ドライバー リファレンス</a>に記載されています。 この DDI の一部として、GpioClx により、GPIO コントローラーのドライバーによって呼び出されるいくつかの<a href="https://docs.microsoft.com/previous-versions/hh439460(v=vs.85)" data-raw-source="[driver support methods](https://docs.microsoft.com/previous-versions/hh439460(v=vs.85))">ドライバー サポート メソッド</a>が実装されます。 このドライバーにより、GpioClx によって呼び出される一連の<a href="https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)" data-raw-source="[event callback functions](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))">イベント コールバック関数</a>が実装されます。 GpioClx では、これらのコールバックを使用して、割り込みの入力として構成されている GPIO ピンからの割り込み要求が管理され、データ入力およびデータ出力として構成されている GPIO ピンとの間でデータ転送が行われます。</p></td>
+<td><p>汎用 I/O (GPIO) コントローラーのドライバーは、GpioClx デバイス ドライバー インターフェイス (DDI) を介して GPIO フレームワーク拡張機能 (GpioClx) と通信します。 この DDI は Gpioclx.h ヘッダー ファイルで定義され、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[General-Purpose I/O (GPIO) Driver Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)">汎用 I/O (GPIO) ドライバー リファレンス</a>に記載されています。 この DDI の一部として、GpioClx により、GPIO コントローラーのドライバーによって呼び出されるいくつかの<a href="https://docs.microsoft.com/previous-versions/hh439460(v=vs.85)" data-raw-source="[driver support methods](https://docs.microsoft.com/previous-versions/hh439460(v=vs.85))">ドライバー サポート メソッド</a>が実装されます。 このドライバーにより、GpioClx によって呼び出される一連の<a href="https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)" data-raw-source="[event callback functions](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))">イベント コールバック関数</a>が実装されます。 GpioClx では、これらのコールバックを使用して、割り込みの入力として構成されている GPIO ピンからの割り込み要求が管理され、データ入力およびデータ出力として構成されている GPIO ピンとの間でデータ転送が行われます。</p></td>
 </tr>
 </tbody>
 </table>

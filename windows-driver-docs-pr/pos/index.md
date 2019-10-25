@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 10201f72f1a3da6b415b79da6b020584e3a3558a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68a0208f6b1ffec3db71e05bb2221b806c6a43b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392881"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843576"
 ---
 # <a name="pos-device-driver-design-guide"></a>POS デバイス ドライバー設計ガイド
 
@@ -30,4 +30,4 @@ ms.locfileid: "63392881"
 
 ## <a name="related-sections"></a>関連セクション
 
-[POS DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_pos)
+[POS DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos)

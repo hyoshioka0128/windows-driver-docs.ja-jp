@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: e503f31742649a01fdabaa8c7908f1054e80a270
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: edfec13594a86f482f22c0f61bb519ed21fc5153
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473530"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842844"
 ---
 # <a name="near-field-communications-nfc-design-guide"></a>近距離無線通信 (NFC) 設計ガイド
 
@@ -36,4 +36,4 @@ User-Mode Driver Framework (UMDF) 2.0 を使用して、デスクトップ エ�
 
 [UMDF の概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)  
 
-[NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)    
+[NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)    

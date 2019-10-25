@@ -9,12 +9,12 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: b8964add8d2685ba516590f1a87e84b3d10457a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80a66ebfca264ac525b5c986917e7e85ce409972
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369804"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828306"
 ---
 # <a name="kernel-mode-driver-architecture-design-guide"></a>カーネルモード ドライバー アーキテクチャ設計ガイド
 
@@ -32,7 +32,7 @@ ms.locfileid: "67369804"
 
 -   「[Driver Programming Techniques (ドライバーのプログラミング手法)](driver-programming-techniques.md)」では、Windows カーネルモード デバイス ドライバーのプログラミングに使用できる手法について説明します。
 
-    **注**  ドライバーで実装または呼び出すことのできるプログラミング インターフェイスについては、[カーネルモード ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)をご覧ください。
+    **注**  ドライバーで実装または呼び出すことのできるプログラミング インターフェイスについては、[カーネルモード ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)をご覧ください。
 
      
 

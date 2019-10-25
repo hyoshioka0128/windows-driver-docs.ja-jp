@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 31fef22eec9de042d353910d4250deef892f58fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cb46404fc7381d07ebc02943e0f453ffe2b1c1b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380568"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842801"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
 
@@ -41,12 +41,12 @@ Windows 10、バージョン 1903 (2019 年 3 月更新、19H1) には、カー�
 
 ## <a name="new-in-wdf-for-windows-10-version-1809"></a>Windows 10、バージョン 1809 の WDF の新機能
 
-* 新しい API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) が追加されました
+* 新しい API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) が追加されました
 
 ## <a name="new-in-wdf-for-windows-10-version-1803"></a>Windows 10、バージョン 1803 の WDF の新機能
 
 * [複数のバージョンの Windows の WDF ドライバーをビルドする](building-a-wdf-driver-for-multiple-versions-of-windows.md)。
-* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
+* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
 
 ## <a name="new-in-wdf-for-windows-10-version-1709"></a>Windows 10、バージョン 1709 の WDF の新機能
 

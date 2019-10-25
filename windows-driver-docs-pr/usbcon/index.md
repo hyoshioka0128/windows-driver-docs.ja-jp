@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 91f347830cc454fb5849a15893136f796d6f7091
-ms.sourcegitcommit: a289bc7df691d7f870fa894e7c42b2f7299c8559
+ms.openlocfilehash: 86c6e1328778f5e0c190e6bce5f999544541382f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787226"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843562"
 ---
 # <a name="universal-serial-bus-usb"></a>ユニバーサル シリアル バス (USB)
 
@@ -53,40 +53,40 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <strong>USB ドライバーを開発するための WDF 拡張</strong>
 <ul>
 <li>USB コネクタ マネージャー クラス拡張 (UcmCx) 参照 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/)">Ucmmanager.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/)">Ucmmanager.h</a>
     </li>
     </ul>
 </li>
 <li>USB ホスト コントローラー (UCX) 参照 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/)">Ucxclass.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/)">Ucxclass.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/)">Ucxcontroller.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/)">Ucxcontroller.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/Ucxroothub/)">Ucxroothub.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/Ucxroothub/)">Ucxroothub.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/)">Ucxusbdevice.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/)">Ucxusbdevice.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/)">Ucxendpoint.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/)">Ucxendpoint.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/)">Ucxsstreams.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/)">Ucxsstreams.h</a>
     </li>
     </ul>
 </li>
 <li>USB 関数クラス拡張 (UFX) 参照 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/)">Ufxbase.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/)">Ufxbase.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/)">Ufxclient.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/)">Ufxclient.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
     </li>
     </ul>
 </li>
@@ -119,7 +119,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <td><strong>USB クライアント ドライバーを記述する (KMDF、UMDF)</strong>
 <p>USB ドライバー開発の概要を紹介します。 デバイスに USB ドライバーを提供するために最も適したモデルを選択するための情報を提供します。 このセクションには、Microsoft Visual Studio に付属する USB テンプレートを使用し、初めてのユーザーモードおよびカーネルモード USB ドライバーを記述する方法をついてのチュートリアルも含まれています。</p>
 <p><a href="getting-started-with-usb-client-driver-development.md" data-raw-source="[Getting started with USB client driver development](getting-started-with-usb-client-driver-development.md)">USB クライアント ドライバー開発の概要</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/" data-raw-source="[USB device driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/)">USB デバイス ドライバーのプログラミング参照</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/" data-raw-source="[USB device driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)">USB デバイス ドライバーのプログラミング参照</a></p>
 <strong>USB ホスト コントローラー ドライバーを記述する</strong>
 <p>仕様に準拠しない xHCI ホスト コントローラーを開発している場合、またはカスタムの非 xHCI ハードウェア (仮想ホスト コントローラーなど) を開発している場合、UCX と通信するホスト コントローラー ドライバーを記述できます。 たとえば、USB デバイスをサポートする無線ドックを検討してください。 PC は、トランスポートとして TCP 経由の USB を使用することで、無線ドック経由で USB デバイスと通信します。</p>
 <p><a href="developing-windows-drivers-for-usb-host-controllers.md" data-raw-source="[Developing Windows drivers for USB host controllers](developing-windows-drivers-for-usb-host-controllers.md)">USB ホスト コントローラー用 Windows ドライバーの開発</a></p>
@@ -127,22 +127,22 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <ul>
 <li>USB ホスト コントローラー (UCX) 参照 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/)">Ucxclass.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/)">Ucxclass.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/)">Ucxcontroller.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/)">Ucxcontroller.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/Ucxroothub/)">Ucxroothub.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/Ucxroothub/)">Ucxroothub.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/)">Ucxusbdevice.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/)">Ucxusbdevice.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/)">Ucxendpoint.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/)">Ucxendpoint.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/)">Ucxsstreams.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/)">Ucxsstreams.h</a>
     </li>
     </ul>
 </li>
@@ -153,13 +153,13 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p><a href="developing-windows-drivers-for-usb-function-controllers.md" data-raw-source="[Developing Windows drivers for USB function controllers](developing-windows-drivers-for-usb-function-controllers.md)">USB ファンクション コントローラー用 Windows ドライバーの開発</a></p>
 <p>USB 関数クラス拡張 (UFX) 参照 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/)">Ufxbase.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/)">Ufxbase.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/)">Ufxclient.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/)">Ufxclient.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
     </li>
     </ul>
 </p>
@@ -167,7 +167,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>Windows 10 には、新しい USB コネクタのサポートが導入されています。USB Type-C。 Microsoft 提供のクラス拡張モジュールと通信するコネクタのドライバーを記述できます。UcmCx は、どのポートで Type-C をサポートするか、どのポートで補助電源を与えるかなど、Type-C コネクタに関連するシナリオに対応します。</p>
 <p><a href="developing-windows-drivers-for-usb-type-c-connectors.md" data-raw-source="[Developing Windows drivers for USB Type-C connectors](developing-windows-drivers-for-usb-type-c-connectors.md)">USB Type-C コネクタ用 Windows ドライバーの開発</a></p>
 <p>USB コネクタ マネージャー クラス拡張 (UcmCx) 参照 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/)">Ucmmanager.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/)">Ucmmanager.h</a>
     </li>
     </ul>
 </p>
@@ -176,7 +176,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>この機能の詳細については、以下を参照してください。</p>
 <p><a href="usb-dual-role-driver-stack-architecture.md" data-raw-source="[USB Dual Role Driver Stack Architecture](usb-dual-role-driver-stack-architecture.md)">USB デュアル ロール ドライバー スタック アーキテクチャ</a></p>
 <p>USB デュアルロール コントローラー ドライバーのプログラミング参照 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ursdevice/" data-raw-source="[Ursdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ursdevice/)">Ursdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ursdevice/" data-raw-source="[Ursdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ursdevice/)">Ursdevice.h</a>
     </li>
     </ul>
 </p>
@@ -184,13 +184,13 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>Windows 10 では、エミュレートされたデバイスのサポートが導入されました。 エミュレートされた Universal Serial Bus (USB) ホスト コントローラー ドライバーと接続された仮想 USB デバイスを開発できるようになりました。 いずれのコンポーネントも、Microsoft 提供の USB デバイス エミュレーション クラス拡張 (UdeCx) と通信する 1 つの KMDF ドライバーに統合されます。</p>
 <p><a href="developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md" data-raw-source="[Developing Windows drivers for emulated USB devices (UDE)](developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md)">列挙された USB デバイス (UDE) 用 Windows ドライバーの開発</a></p>
 <p>エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/" data-raw-source="[Udecxusbdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/)">Udecxusbdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/" data-raw-source="[Udecxusbdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/)">Udecxusbdevice.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/" data-raw-source="[Udecxusbendpoint.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/)">Udecxusbendpoint.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/" data-raw-source="[Udecxusbendpoint.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/)">Udecxusbendpoint.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/" data-raw-source="[Udecxwdfdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/)">Udecxusbdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/" data-raw-source="[Udecxwdfdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/)">Udecxusbdevice.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/" data-raw-source="[Udecxurb.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/)">Udecxurb.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/" data-raw-source="[Udecxurb.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/)">Udecxurb.h</a>
     </li>
     </ul>
 </p>
@@ -204,7 +204,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>WinUSB 関数 <ul>
     <li><a href="https://docs.microsoft.com/windows/desktop/api/winusb/" data-raw-source="[Winusb.h](https://docs.microsoft.com/windows/desktop/api/winusb/)">Winusb.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/" data-raw-source="[Usbioctl.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/)">Usbioctl.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/" data-raw-source="[Usbioctl.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/)">Usbioctl.h</a>
     </li>
     </ul>
 </p>

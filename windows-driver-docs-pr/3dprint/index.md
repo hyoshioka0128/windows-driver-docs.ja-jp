@@ -6,12 +6,12 @@ ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0a22e90a6a9131a637d03354f5825443c02de466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8d8b56e46e62b2da4a1b30643aed5afe8948fa8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325945"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824144"
 ---
 # <a name="3d-printer-driver-design-guide"></a>3D プリンター ドライバー設計ガイド
 
@@ -52,4 +52,4 @@ Windows 10 での 3D 印刷の最新情報については、以下のリソー�
 
 ## <a name="related-sections"></a>関連セクション
 
--   [印刷 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print)
+-   [印刷 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print)

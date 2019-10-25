@@ -10,12 +10,12 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 92dca283e818d323511c8c71a6465f8443ace60a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6004d4eacf32f40d790ffde4202eb93af6c972be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465717"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842307"
 ---
 # <a name="printer-driver-design-guide"></a>プリンター ドライバー設計ガイド
 
@@ -59,7 +59,7 @@ ms.locfileid: "56465717"
 ## <a name="related-sections"></a>関連セクション
 
 
--   [印刷 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print)
+-   [印刷 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print)
  
 
 

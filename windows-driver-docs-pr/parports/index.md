@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 69620230e6bfb7d94aa1abe4197cf7d4c1969410
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 1017e93d5eb8008894eece9cf5b4729da88efc05
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473515"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845324"
 ---
 # <a name="parallel-device-driver-design-guide"></a>パラレル デバイス ドライバー設計ガイド
 
@@ -26,4 +26,4 @@ ms.locfileid: "68473515"
 
 [ベンダー提供のパラレル ドライバー](vendor-supplied-parallel-drivers.md)
 
-[パラレル デバイス リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[パラレル デバイス リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)

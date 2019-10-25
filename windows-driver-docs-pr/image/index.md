@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c2d80e65b5ec396ef1da7de6313d37dd949848c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f60a8e207440114d31d75262c0f1168345ecea4c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378399"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840826"
 ---
 # <a name="imaging-device-driver-design-guide"></a>イメージング デバイス ドライバー設計ガイド
 
@@ -44,5 +44,5 @@ ms.locfileid: "63378399"
 ## <a name="related-sections"></a>関連セクション
 
  
--   [イメージング DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image)
+-   [イメージング DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_image)
 
