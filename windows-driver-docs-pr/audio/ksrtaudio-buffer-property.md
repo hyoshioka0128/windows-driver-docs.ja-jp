@@ -1,10 +1,10 @@
 ---
-title: KSRTAUDIO\_バッファー\_プロパティ構造体
-description: KSRTAUDIO\_バッファー\_プロパティ構造 KSPROPERTY 構造体をバッファーのベース アドレスと要求されたバッファー サイズを追加します。 この構造は KSPROPERTY 経由でオーディオのバッファーの割り当てを要求するクライアントによって使用される\_RTAUDIO\_バッファー。
+title: KSRTAUDIO\_バッファー\_プロパティ構造
+description: KSRTAUDIO\_BUFFER\_プロパティ構造体は、バッファーのベースアドレスと要求されたバッファーサイズを KSK プロパティ構造に追加します。 この構造体は、KSK プロパティ\_RTAUDIO\_BUFFER を介してオーディオバッファーの割り当てを要求するために、クライアントによって使用されます。
 ms.assetid: 6fc33d5d-5d7e-4d04-a9b0-864cba961077
 keywords:
-- KSRTAUDIO_BUFFER_PROPERTY 構造オーディオ デバイス
-- PKSRTAUDIO_BUFFER_PROPERTY 構造体ポインター オーディオ デバイス
+- KSRTAUDIO_BUFFER_PROPERTY structure のオーディオデバイス
+- PKSRTAUDIO_BUFFER_PROPERTY 構造体ポインターオーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b26129dcbbdafe2b09690ae682e42975c3954d2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bcb79849c699e0f29b3f4a3eedede5b1312982f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832665"
 ---
-# <a name="ksrtaudiobufferproperty-structure"></a>KSRTAUDIO\_バッファー\_プロパティ構造体
+# <a name="ksrtaudio_buffer_property-structure"></a>KSRTAUDIO\_バッファー\_プロパティ構造
 
 
-KSRTAUDIO\_バッファー\_プロパティ構造は、バッファーの基本アドレスを要求したバッファーのサイズを追加します、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 この構造を使用してオーディオ バッファーの割り当てを要求するクライアントによって使用される[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md)します。
+KSRTAUDIO\_BUFFER\_プロパティ構造体は、バッファーのベースアドレスと要求されたバッファーサイズを[**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造に追加します。 この構造体は、 [**Ksk プロパティ\_rtaudio\_buffer**](ksproperty-rtaudio-buffer.md)を介してオーディオバッファーの割り当てを要求するために、クライアントによって使用されます。
 
 <a name="syntax"></a>構文
 ------
@@ -41,21 +41,21 @@ typedef struct {
 <a name="members"></a>Members
 -------
 
-**プロパティ**  
-呼び出し元 KSPROPERTY する前に、クライアントが適切を初期化する KSPROPERTY 構造\_RTAUDIO\_バッファー。
+**"**  
+RTAUDIO\_BUFFER\_、KSK プロパティを呼び出す前に、クライアントが適切に初期化する KSK プロパティ構造体。
 
 **BaseAddress**  
-必要なバッファーのベース アドレスを指定します。 このパラメーターに設定されているクライアントは、ベース アドレスを指定しない限り、 **NULL**します。
+目的のバッファーのベースアドレスを指定します。 クライアントがベースアドレスを指定していない限り、このパラメーターは**NULL**に設定されます。
 
 **RequestedBufferSize**  
-(バイト単位) には、必要なバッファー サイズを指定します。 ドライバーが割り当てられるバッファーの実際のサイズを返します、 [ **KSRTAUDIO\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)から返される構造体。
+必要なバッファーサイズをバイト単位で指定します。 ドライバーは、返される[**Ksrtaudio\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer)構造に割り当てられたバッファーの実際のサイズを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_RTAUDIO\_バッファー要求は、KSRTAUDIO\_バッファー\_クライアントが要求する循環バッファーを記述するプロパティ構造体。 ドライバーは、KSRTAUDIO を返します\_バッファーの構造体は、実際に割り当てられたバッファーについて説明します。
+RTAUDIO\_バッファー要求\_は、KSRTAUDIO\_BUFFER\_プロパティ構造を使用して、クライアントが要求する循環バッファーを記述します。 ドライバーは KSRTAUDIO\_バッファー構造を返し、実際に割り当てられたバッファーを記述します。
 
-値はクライアントに書き込む、 **RequestedBufferSize**メンバーは、ドライバーではバインドされません。 ただし、ドライバーは、ドライバー自体にバッファー サイズの制約を考慮して、要求されたサイズにできるだけ近いバッファー サイズを指定する必要があります。 ドライバーは、ハードウェアが、要求されたサイズを処理できないか、システムがメモリ不足を異なるサイズのバッファーを割り当てます。 たとえば、ドライバーでは、メモリ ページよりも小さくバッファーを割り当てます。 または全体のサンプルの次のブロックまでバッファー サイズを丸めます。 また、システムがメモリ不足している場合、ドライバーは、要求されたサイズより小さいバッファーを割り当てます。
+クライアントが**Requestedbuffersize**メンバーに書き込む値は、ドライバーでバインドされていません。 ただし、ドライバーでは、ドライバー自体のバッファーサイズの制約を考慮して、要求されたサイズにできるだけ近いバッファーサイズを指定する必要があります。 ハードウェアが要求されたサイズを処理できない場合や、システムのメモリが不足している場合、ドライバーは異なるサイズのバッファーを割り当てます。 たとえば、ドライバーは、メモリページよりも小さいバッファーを割り当てます。または、バッファーサイズを次のサンプルブロック全体に丸めます。 また、システムでメモリが不足している場合、ドライバーは要求されたサイズより小さいバッファーを割り当てます。
 
 <a name="requirements"></a>要件
 ------------
@@ -68,7 +68,7 @@ KSPROPERTY\_RTAUDIO\_バッファー要求は、KSRTAUDIO\_バッファー\_ク�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista 以降の Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降の Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>

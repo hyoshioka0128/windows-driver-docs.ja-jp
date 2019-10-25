@@ -4,22 +4,22 @@ description: MSFC\_HBAPortAttributesResults WMI クラス
 ms.assetid: f268a653-e3ee-47d0-9af8-925dc0545a2b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b8bbffa9a20953faec31d77bed0cef2f25bf2cb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 621ec235f8368acd6d9dc5d7bbebbdbd66a36041
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376752"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826128"
 ---
-# <a name="msfchbaportattributesresults-wmi-class"></a>MSFC\_HBAPortAttributesResults WMI クラス
+# <a name="msfc_hbaportattributesresults-wmi-class"></a>MSFC\_HBAPortAttributesResults WMI クラス
 
 
 ## <span id="ddk_msfc_hbaportattributesresults_wmi_class_kr"></span><span id="DDK_MSFC_HBAPORTATTRIBUTESRESULTS_WMI_CLASS_KR"></span>
 
 
-WMI クライアントが使用、MSFC\_HBAPortAttributesResults WMI クラスの hba ポートの属性の HBA ミニポート ドライバーを照会します。
+WMI クライアントは、MSFC\_HBAPortAttributesResults WMI クラスを使用して hba ミニポートドライバーに対して、HBA のポートの属性を照会します。
 
-MSFC\_HBAPortAttributesResults クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_HBAPortAttributesResults クラスは、次のように*Hbaapi .mof*で定義されます。
 
 ```cpp
 class MSFC_HBAPortAttributesResults {
@@ -62,9 +62,9 @@ class MSFC_HBAPortAttributesResults {
 };
 ```
 
-このクラスをコンパイル時に定義には、次のデータ構造が生成されます。
+このクラス定義をコンパイルすると、次のデータ構造が生成されます。
 
-[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

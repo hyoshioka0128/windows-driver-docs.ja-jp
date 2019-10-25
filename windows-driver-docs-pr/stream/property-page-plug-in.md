@@ -3,29 +3,29 @@ title: プロパティ ページ プラグイン
 description: プロパティ ページ プラグイン
 ms.assetid: cf5f5861-1670-413c-9c42-c1b6eb6d719a
 keywords:
-- カーネル ストリーミング プロキシ WDK AVStream、プロパティ ページ
-- WDK AVStream プロパティ ページ
+- カーネルストリーミングプロキシ WDK AVStream、プロパティページ
+- プロパティページ WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c375960aaf37350680d99e7a3e9ec1b43fab9247
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6c536c42576e6ae25a6c6b8d7ebf9506bd61f0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363273"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823730"
 ---
 # <a name="property-page-plug-in"></a>プロパティ ページ プラグイン
 
 
-KS プロキシ用のプラグインとしてのプロパティ ページを記述することで、デバイスのプロパティへのユーザー インターフェイスを行うことができます。 このトピックでは、このようなプラグインを作成する方法について説明します。 」の説明に従って、オブジェクトを最初に、登録[KS プロキシの登録にプラグイン](registering-ks-proxy-plug-ins.md)します。
+KS プロキシのプラグインとしてプロパティページを記述することにより、デバイスプロパティにユーザーインターフェイスを提供できます。 このトピックでは、このようなプラグインを作成する方法について説明します。 まず、「 [KS プロキシプラグインの登録](registering-ks-proxy-plug-ins.md)」の説明に従ってオブジェクトを登録します。
 
-次に、フィルターの工場出荷時のテンプレートを宣言します。 工場出荷時のテンプレートは、クラス ファクトリに関する情報を含む C++ クラスです。
+次に、フィルターのファクトリテンプレートを宣言します。 ファクトリテンプレートは、クラスC++ファクトリの情報を格納するクラスです。
 
-DLL の宣言のグローバル配列[CFactoryTemplate](https://go.microsoft.com/fwlink/p/?linkid=106450)オブジェクト、フィルターまたは DLL で COM コンポーネントごとに 1 つ。 1 つのプロパティ ページのみの場合は、配列の 1 つのオブジェクトを作成します。
+DLL 内で、DLL 内のフィルターまたは COM コンポーネントごとに1つずつ、 [CFactoryTemplate](https://go.microsoft.com/fwlink/p/?linkid=106450)オブジェクトのグローバル配列を宣言します。 プロパティページが1つしかない場合は、配列内にオブジェクトを1つだけ作成します。
 
-オブジェクトごとに、クラス id (CLSID) の GUID を生成し、宣言内のエントリを提供します。
+各オブジェクトについて、クラス識別子 (CLSID) の GUID を生成し、宣言にエントリを指定します。
 
-配列は、g 名前必要があります\_テンプレート。
+配列は、g\_Templates という名前にする必要があります。
 
 ```cpp
 CFactoryTemplate g_Templates[] =
@@ -40,7 +40,7 @@ CFactoryTemplate g_Templates[] =
 };
 ```
 
-プロパティ ページがクラスから派生する必要があります[CBasePropertyPage](https://go.microsoft.com/fwlink/p/?linkid=106449)いくつかのメソッドのオーバーライドと**CBasePropertyPage**:
+プロパティページは[cbasepropertypage](https://go.microsoft.com/fwlink/p/?linkid=106449)クラスから派生する必要があり、 **cbasepropertypage**のいくつかのメソッドをオーバーライドする必要があります。
 
 ```cpp
 class CMyPropPage: public CBasePropertyPage
@@ -61,15 +61,15 @@ private:
 };
 ```
 
-ホストのプロパティ シートの呼び出し、プロパティ ページを初期化する[IPropertyPage::SetPageSite](https://go.microsoft.com/fwlink/p/?linkid=106442)します。 この呼び出しの結果、プラグインの呼び出しで**OnConnect**メソッド。 この呼び出しの時に、プロパティ ページが、フィルターに接続されたが、プロパティ ページが表示されていません。
+プロパティページを初期化するために、ホスティングプロパティシートは[IPropertyPage:: Set ite](https://go.microsoft.com/fwlink/p/?linkid=106442)を呼び出します。 この呼び出しは、プラグインの**OnConnect**メソッドの呼び出しになります。 この呼び出しの時点では、プロパティページはフィルターに接続されていますが、プロパティページはまだ表示されていません。
 
-呼び出しで指定されたパラメーター **OnConnect**インターフェイスへのポインターを照会することができますし、KS プロキシは、 **IKsPropertySet**します。 呼び出して[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)と[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)ドライバーの公開されているプロパティを操作します。
+**OnConnect**への呼び出しで指定されるパラメーターは KS プロキシへのインターフェイスであり、 **IKsPropertySet**へのポインターに対してクエリを実行できます。 その後、 [**IKsPropertySet:: Get**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikspropertyset-get)と[**IKsPropertySet:: Set**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dsound/nf-dsound-ikspropertyset-set)を呼び出して、ドライバーの公開されたプロパティを操作できます。
 
-指定することも必要があります、 **CreateInstance**メソッド。 システムでは、プロパティ ページのインスタンスを作成するプロパティ ページのメソッドを呼び出します。 このメソッドは、インスタンス化するクラスのコンス トラクターを呼び出す必要があります。
+また、 **CreateInstance**メソッドも指定する必要があります。 システムは、プロパティページのメソッドを呼び出して、プロパティページのインスタンスを作成します。 このメソッドは、クラスのコンストラクターを呼び出してインスタンス化する必要があります。
 
-コンス トラクターは、KS プロキシをここでは外部の不明なインターフェイスへのポインターを受け取ります。
+コンストラクターは、外側の不明なインターフェイス (この場合は KS プロキシ) へのポインターを受け取ります。
 
-プロパティ ページの**OnDisconnect**メソッドが呼び出されますプロパティ ページが関連付けられているオブジェクトを解放する必要があります。 このコールバックは、呼び出すことによって KS プロキシへのインターフェイスへのポインターの参照カウントをデクリメントする必要があります、**リリース**メソッド。
+プロパティページの**OnDisconnect**メソッドは、プロパティページが関連オブジェクトを解放する必要があるときに呼び出されます。 このコールバックでは、 **Release**メソッドを呼び出すことによって、インターフェイスへのポインターの参照カウントを KS プロキシにデクリメントする必要があります。
 
  
 

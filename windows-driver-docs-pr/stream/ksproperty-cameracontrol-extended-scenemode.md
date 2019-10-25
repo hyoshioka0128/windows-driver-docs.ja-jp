@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE
-description: シーンの mode プロパティは、事前設定されたコントロールのコレクションを表すドライバーが定義されているモードを選択します。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE
+description: シーンモードプロパティは、事前設定されたコントロールのコレクションを表すドライバー定義モードを選択します。
 ms.assetid: 32C350FF-AA54-4F28-8AD2-341A31648B60
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_SCENEMODE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_SCENEMODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5af16830e4ebdf1c98da667000d2dffc70c98675
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ff76b779c92e09f8e28b7c1e695d49981a8f8fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351810"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823958"
 ---
-# <a name="kspropertycameracontrolextendedscenemode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE
+# <a name="ksproperty_cameracontrol_extended_scenemode"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE
 
-シーンの mode プロパティは、事前設定されたコントロールのコレクションを表すドライバーが定義されているモードを選択します。 ドライバーは、シーンのモードに割り当てられているプリセットを決定し、シーンが選択されているときにこれらのコントロールの設定を有効にします。
+シーンモードプロパティは、事前設定されたコントロールのコレクションを表すドライバー定義モードを選択します。 ドライバーは、シーンモードに割り当てられているプリセットを特定し、シーンを選択したときにコントロールの設定を有効にします。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,7 +37,7 @@ ms.locfileid: "63351810"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -46,46 +46,46 @@ ms.locfileid: "63351810"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)構造体。 **KSCAMERA\_EXTENDEDPROP\_値**が必要ですが、**値**メンバーは無視されます。
+プロパティ値 (操作データ) には、 [**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と、 [**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)の構造体が含まれています。 **KSCAMERA\_EXTENDEDPROP\_値**が必要ですが、**値**メンバーは無視されます。
 
-プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_値)。 **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
+プロパティデータの合計サイズは**sizeof**(KSCAMERA\_extendedprop\_HEADER) + **sizeof**(KSCAMERA\_extendedprop\_値) です。 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**size**メンバーは、この total property データサイズに設定されます。
 
-**機能**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)次の 1 つ以上のビット演算 OR の組み合わせが含まれていますドライバーでサポートされているシーン モード。
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**機能**メンバーには、ドライバーでサポートされている次のシーンモードの1つ以上のビットごとの or の組み合わせが含まれています。
 
-| シーンのモード                                       | 説明                                                           |
+| シーンモード                                       | 説明                                                           |
 |--------------------------------------------------|-----------------------------------------------------------------------|
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_自動          | 自動の匂いモード。 コントロールでは、自動設定です。            |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_マクロ         | マクロのシーン モード (ドライバーが定義されている)。                                    |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_縦向き      | 縦シーン モード (ドライバーが定義されている)。                                 |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_スポーツ         | スポーツ シーン モード (ドライバーが定義されている)。                                    |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_雪          | 雪シーン モード (ドライバーが定義されている)。                                     |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_夜間         | 夜間シーン モード (ドライバーが定義されている)。                                    |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_ビーチ         | ビーチ シーン モード (ドライバーが定義されている)。                                    |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_日没        | サンセット モード (ドライバーが定義されている)。                                   |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_CANDLELIGHT   | Candlelight シーン モード (ドライバーが定義されている)。                              |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_ランドス ケープ     | 横シーン モード (ドライバーが定義されている)。                                |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_NIGHTPORTRAIT | 夜間縦シーン モード (ドライバーが定義されている)。                           |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_バックライト       | バックライト シーン モード (ドライバーが定義されている)。                                  |
-| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_手動        | コントロールが手動で変更され、事前に定義されたシーン モードが設定されていません。 |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_AUTO          | 自動匂いモード。 コントロールは、自動的に設定されます。            |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_マクロ         | マクロシーンモード (定義されているドライバー)。                                    |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_縦長      | 縦長シーンモード (定義済みドライバー)。                                 |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_スポーツ         | スポーツシーンモード (定義されているドライバー)。                                    |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_雪          | 雪シーンモード (定義されているドライバー)。                                     |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_夜         | 夜間シーンモード (定義されているドライバー)。                                    |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_ビーチ         | ビーチシーンモード (定義されているドライバー)。                                    |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_日没        | 日没シーンモード (定義されているドライバー)。                                   |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_CANDLELIGHT   | Candlelight シーンモード (定義されているドライバー)。                              |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_ランドスケープ     | 横長シーンモード (定義されているドライバー)。                                |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_NIGHTPORTRAIT | 夜間のシーンモード (定義されているドライバー)。                           |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_バックライト       | バックライトシーンモード (定義されているドライバー)。                                  |
+| KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_MANUAL        | コントロールが手動で変更され、定義済みのシーンモードは設定されていません。 |
 
-**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)シーン モードが現在のカメラの設定が含まれています。 カメラの既定のシーンのモードは、常に KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_自動。
+[**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**Flags**メンバーには、カメラに現在設定されているシーンモードが含まれています。 カメラの既定のシーンモードは、常に KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_AUTO に設定されています。
 
-このプロパティのコントロールは、非同期およびないキャンセル可能なは。
+このプロパティコントロールは非同期であり、キャンセルできません。
 
 ## <a name="remarks"></a>注釈
 
-### <a name="getting-the-property"></a>プロパティを取得
+### <a name="getting-the-property"></a>プロパティを取得する
 
-KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバーの設定、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)に、次の場合。
+\_GET 要求の種類\_KSK プロパティに応答すると、ドライバーは、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)のメンバーを次のように設定します。
 
 <table>
 <colgroup>
@@ -94,8 +94,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
-<th>値</th>
+<th>メンバー</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -105,11 +105,11 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="even">
 <td>PinId</td>
-<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0 XFFFFFFFF) です。</td>
+<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF)。</td>
 </tr>
 <tr class="odd">
-<td>サイズ</td>
-<td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE)</p></td>
+<td>Size</td>
+<td><p>sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE)</p></td>
 </tr>
 <tr class="even">
 <td>結果</td>
@@ -117,20 +117,20 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="odd">
 <td>機能</td>
-<td>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL |(シーン モード サポートされている値)。</td>
+<td>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL |(シーンモードの値がサポートされています)。</td>
 </tr>
 <tr class="even">
 <td>フラグ</td>
-<td>現在のシーン モード値の設定 (1 つの値)。</td>
+<td>現在のシーンモード値の設定 (1 つの値のみ)。</td>
 </tr>
 </tbody>
 </table>
 
-シーンのモードが以前設定されていない場合、**フラグ**KSCAMERA に設定されている\_EXTENDEDPROP\_SCENEMODE\_自動 (既定値)。
+シーンモードが以前に設定されていない場合、 **Flags**は KSCAMERA\_extendedprop\_SCENEMODE\_AUTO (既定) に設定されます。
 
 ### <a name="setting-the-property"></a>プロパティの設定
 
-設定すると、プロパティを KSPROPERTY\_型\_セットの要求、**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)シーンのモード有効にするのににはが含まれます。
+プロパティが設定されている場合、KSK プロパティ\_TYPE\_SET 要求では、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**Flags**メンバーには、有効にするシーンモードが含まれます。
 
 ## <a name="requirements"></a>要件
 
@@ -142,17 +142,17 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 以降を利用できます。</p></td>
+<td><p>Windows 8.1 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>関連項目
 
-[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)
+[**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_標準
-description: KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ ビデオ標準を取得します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_チューナー\_STANDARD
+description: KSK プロパティ\_チューナー\_標準プロパティは、現在のアナログビデオ標準を取得します。 このプロパティを実装する必要があります。
 ms.assetid: b20dd01c-bd6b-4908-a3c4-eb2914eb54d0
 keywords:
-- KSPROPERTY_TUNER_STANDARD ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_STANDARD ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71909d5b4bc7cb98543adc53329e145539bbc174
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78f1b26e286856f17d68145e0920b2eb371b8d86
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355963"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837899"
 ---
-# <a name="kspropertytunerstandard"></a>KSPROPERTY\_チューナー\_標準
+# <a name="ksproperty_tuner_standard"></a>KSK プロパティ\_チューナー\_STANDARD
 
 
-KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ ビデオ標準を取得します。 このプロパティを実装する必要があります。
+KSK プロパティ\_チューナー\_標準プロパティは、現在のアナログビデオ標準を取得します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_tuner_standard_ks"></span><span id="DDK_KSPROPERTY_TUNER_STANDARD_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ �
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ �
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,18 +61,18 @@ KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ �
 
  
 
-プロパティの値 (データの操作) は、チューナーのチューニングの標準を指定する ULONG です。
+プロパティ値 (操作データ) は、チューナーのチューニング標準を指定する ULONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**標準**、KSPROPERTY のメンバー\_チューナー\_標準\_S 構造体が現在のアナログ ビデオ標準を指定します。
+KSK プロパティ\_チューナー\_標準\_S 構造体の**標準**メンバーは、現在のアナログビデオ標準を指定します。
 
-このプロパティは、現在のモードが KSPROPERTY 場合にのみ使用\_チューナー\_モード\_テレビです。
+このプロパティは、現在のモードが KSK プロパティ\_チューナー\_モード\_TV になっている場合にのみ使用されます。
 
-いくつか異なるアナログ テレビ標準に従って NTSC、PAL、SECAM などは、アナログ テレビ信号をブロードキャストすることができます。 クライアントの使用、KSPROPERTY\_チューナー\_モード\_CAPS プロパティに、サポートされている、標準のクエリを実行して、KSPROPERTY\_チューナー\_標準テレビ チューナー デバイスの現在の標準の設定を取得または。
+アナログテレビ信号は、NTSC、PAL、SECAM など、さまざまなアナログテレビ標準に従って放送できます。 クライアントは、KSK プロパティ\_チューナー\_MODE\_CAPS プロパティを使用して、サポートされている標準を照会します。また、KSK プロパティ\_チューナー\_STANDARD を使用して、TV チューナーデバイスの現在の標準を取得または設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,7 +83,7 @@ KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ �
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,11 +91,11 @@ KSPROPERTY\_チューナー\_標準プロパティは、現在のアナログ �
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_標準\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)
+[**KSK プロパティ\_チューナー\_STANDARD\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)
 
-[**KSPROPERTY\_チューナー\_モード**](ksproperty-tuner-mode.md)
+[**KSK プロパティ\_チューナー\_モード**](ksproperty-tuner-mode.md)
 
  
 

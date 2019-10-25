@@ -3,18 +3,18 @@ title: 電源管理でのドライバーの役割
 description: 電源管理でのドライバーの役割
 ms.assetid: 24b55880-e767-4f18-977e-c4a93332b909
 keywords:
-- 電源管理の WDK カーネル、ドライバーのロール
-- システム電源の状態 WDK カーネル、ドライバーの役割
-- デバイスの電源状態の WDK カーネル
-- ドライバーの電源のサポートの役割 WDk カーネル
+- 電源管理 WDK カーネル、のドライバーロール
+- システム電源の状態 WDK カーネル、ドライバーロール
+- デバイスの電源状態 WDK カーネル
+- ドライバーの電源サポートロールの WDk カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4447df7ce450839d98289ca064bbc539e56a4212
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e565ef066cbb0476133bd1429aaaf3587a9be92
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836791"
 ---
 # <a name="driver-role-in-power-management"></a>電源管理でのドライバーの役割
 
@@ -22,21 +22,21 @@ ms.locfileid: "67384957"
 
 
 
-ドライバーは、2 つの方法で電源管理をサポートします。
+ドライバーは、次の2つの方法で電源管理をサポートします。
 
-1.  ドライバーは、電源マネージャーから発行されたシステムの電源の要求に応答します。
+1.  ドライバーは、電源マネージャーによって発行されたシステム全体の電源要求に応答します。
 
-2.  ドライバーの管理能力とパフォーマンスの個々 のデバイスの状態。
+2.  ドライバーは、個々のデバイスの電源とパフォーマンスの状態を管理します。
 
-すべてのドライバーが必要、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)を処理するルーチン[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求。 *DispatchPower*ルーチンは、各 power IRP を調べる必要があるし、それを処理するかまたは次の下位ドライバーに渡します。
+すべてのドライバーには、 [**IRP\_MJ\_の電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求を処理するための[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが必要です。 *DispatchPower*ルーチンは、各電源 IRP を検査し、それを処理するか、次の下位のドライバーに渡す必要があります。
 
-電源管理に参加するデバイスの場合、デバイスのデバイス スタックのすべてのドライバーに応答したり、power Irp を適切に渡す必要があります。 1 つのドライバーの障害を正しく動作するには、電源管理をシステム全体で無効にすることがあります。
+デバイスを電源管理に参加させるには、デバイスのデバイススタック内のすべてのドライバーが応答するか、電源 Irp を適切に渡す必要があります。 1つのドライバーを正しく動作させることができないと、システム全体で電源管理が無効になる可能性があります。
 
-デバイスごとに 1 つのドライバー[電源ポリシーの管理](managing-device-power-policy.md)そのデバイス用です。 そのドライバーは、そのデバイスの電源操作を実行するには、独自デバイス スタックを power Irp を送信できます。 電源ポリシー マネージャーは、システム電源の Irp にデバイスの電源を対応する Irp を発行します。
+デバイスごとに1つのドライバーによって、デバイスの[電源ポリシーが管理](managing-device-power-policy.md)します。 そのドライバーは、独自のデバイススタックに電源 Irp を送信して、デバイス上での電源操作を実行できます。 電源ポリシーマネージャーは、システムの電源 Irp に対応するデバイスの電源 Irp を発行する役割を担います。
 
-さらに、ドライバーが起動時にデバイスの電源を入れてまたは電源 IRP を受信せずに削除すると、デバイスを切るなど、特定の電源のタスクを実行する可能性があります。 これらは、暗黙的な電源要求と見なされます。
+さらに、ドライバーは、電源 IRP を受信せずに、デバイスの起動時または電源切断など、特定の電源タスクを実行する場合があります。 これらは暗黙的な電源要求と見なされます。
 
-詳細については、次を参照してください。[ドライバーの電源管理の責任](power-management-responsibilities-for-drivers.md)します。
+詳細については、「[ドライバーの電源管理の役割](power-management-responsibilities-for-drivers.md)」を参照してください。
 
  
 

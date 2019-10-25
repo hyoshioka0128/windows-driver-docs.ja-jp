@@ -3,17 +3,17 @@ title: NDIS ポートの NDIS インターフェイスの作成
 description: NDIS ポートの NDIS インターフェイスの作成
 ms.assetid: 3a856e4d-e32a-4c8a-8fa0-9976966bdf87
 keywords:
-- ポートの WDK NDIS、NDIS インターフェイスを作成します。
-- NDIS ポート WDK、NDIS を作成するインターフェイスします。
-- NDIS インターフェイス プロバイダーを登録します。
+- ポート WDK NDIS、NDIS インターフェイスの作成
+- NDIS ポート WDK、NDIS インターフェイスの作成
+- NDIS インターフェイスプロバイダーを登録しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8086afd731fe3c07aae924c0040f90e610a12d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be7d5fb1b2228a7f29dd3c36e7af931451943745
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374895"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835022"
 ---
 # <a name="creating-ndis-interfaces-for-ndis-ports"></a>NDIS ポートの NDIS インターフェイスの作成
 
@@ -21,9 +21,9 @@ ms.locfileid: "67374895"
 
 
 
-既定では、NDIS で NDIS ポートの NDIS ネットワーク インターフェイスが作成されることはできません。 かどうか必要に応じて、NDIS ドライバーを呼び出して、 [ **NdisIfRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider) NDIS インターフェイス プロバイダーの呼び出しとして登録する関数、 [ **NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)ポートのインターフェイスを登録する関数。
+既定では、ndis は ndis ポートの NDIS ネットワークインターフェイスを作成しません。 必要に応じて、NDIS ドライバーは[**NdisIfRegisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)関数を呼び出して、ndis インターフェイスプロバイダーとして登録し、 [**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)関数を呼び出してポートのインターフェイスを登録できます。
 
-NDIS ネットワーク インターフェイスの詳細については、次を参照してください。 [NDIS 6.0 のネットワーク インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+NDIS ネットワークインターフェイスの詳細については、「 [ndis 6.0 ネットワークインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
  
 

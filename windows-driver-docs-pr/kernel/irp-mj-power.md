@@ -1,46 +1,46 @@
 ---
 title: IRP_MJ_POWER
-description: DispatchPower ルーチンに対し、IRP_MJ_POWER 要求をサービスには、すべてのドライバーを準備する必要があります。
+description: すべてのドライバーは、DispatchPower ルーチンで IRP_MJ_POWER 要求を処理するために準備する必要があります。
 ms.date: 08/12/2017
 ms.assetid: ca53ceef-2755-49d3-aab9-0d12a0e51e75
 keywords:
-- IRP_MJ_POWER Kernel-Mode Driver Architecture
+- IRP_MJ_POWER カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0355a600ffe5ebd9e27358c95106966727382f5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ebe72a1d26fdd9196f9f0cc6eac3b3784d2829b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368470"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828104"
 ---
-# <a name="irpmjpower"></a>IRP\_MJ\_POWER
+# <a name="irp_mj_power"></a>IRP\_MJ\_POWER
 
 
-すべてのドライバーは、サービスを準備する必要があります**IRP\_MJ\_POWER**で要求を[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンでは、すべてのドライバーが**IRP\_MJ\_の電源**要求を処理できるように準備する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-電源マネージャーまたはドライバーに送信できる**IRP\_MJ\_POWER**オペレーティング システムが実行されている、いつでも要求。
+電源マネージャーまたはドライバーは、オペレーティングシステムが実行されているときに、いつでも**IRP\_MJ\_の電源**要求を送信できます。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-値に依存**MinorFunction**現在 I/O スタック IRP の場所。 すべて**IRP\_MJ\_POWER**要求が要求された電源操作を識別するマイナー関数コードを指定します。
+は、IRP の現在の i/o スタック位置にある**Minorfunction**の値に依存します。 すべての**IRP\_MJ\_の電源**要求は、要求された電源操作を識別するマイナー関数コードを指定します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-値に依存**MinorFunction**現在 I/O スタック IRP の場所。
+は、IRP の現在の i/o スタック位置にある**Minorfunction**の値に依存します。
 
 <a name="operation"></a>操作
 ---------
 
-Irp の処理を制御する通常の規則だけでなく**IRP\_MJ\_POWER** Irp に次の特別な要件があります。累乗を受け取るドライバー IRP では、I/O スタック内の場所に IRP 電源マネージャーによって、またはより高度なドライバーに設定されているメジャーおよびマイナーの関数コードを変更しないでください。 電源マネージャーは IRP が完了するまでそのまま残り、これらの関数コードに依存します。 この規則の違反をデバッグするが困難な問題が発生することができます。 たとえば、オペレーティング システムを応答を停止または「ハング」可能性があります。
+Irp の処理を制御する通常のルールに加えて、 **irp\_MJ\_電源**irp には次の特別な要件があります。電源 irp を受信するドライバーは、の i/o スタックの場所にあるメジャーおよびマイナー関数のコードを変更することはできません。電源マネージャーまたは上位レベルのドライバーによって設定された IRP。 これらの関数コードは、IRP が完了するまで変更されません。 この規則に違反すると、デバッグが困難な問題が発生する可能性があります。 たとえば、オペレーティングシステムが応答を停止したり、"ハング" したりする可能性があります。
 
-参照してください[電源管理のマイナー Irp](power-management-minor-irps.md)の詳細については**IRP\_MJ\_POWER**要求。
+**IRP\_MJ\_の電源**要求の詳細については、「[電源管理の小さな irp](power-management-minor-irps.md) 」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -51,7 +51,7 @@ Irp の処理を制御する通常の規則だけでなく**IRP\_MJ\_POWER** Irp
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ Irp の処理を制御する通常の規則だけでなく**IRP\_MJ\_POWER** Irp
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
  
 

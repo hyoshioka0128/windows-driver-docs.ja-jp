@@ -1,62 +1,62 @@
 ---
-title: HYPER-V 拡張可能スイッチ コントロールのパスの NDIS 状態の表示
+title: NDIS ステータス表示用の hyper-v 拡張可能スイッチ制御パス
 description: NDIS 状態表示用の Hyper-V 拡張可能スイッチ制御パス
 ms.assetid: D52FAC95-64EC-4A99-807A-B39DB136D8F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae452a4338684975a2d4487066292c158f45e02d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 49cc4854af6c6748337c137093fc02a654176037
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383701"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823927"
 ---
 # <a name="hyper-v-extensible-switch-control-path-for-ndis-status-indications"></a>NDIS 状態表示用の Hyper-V 拡張可能スイッチ制御パス
 
 
-このトピックでは、コントロールのパスを基になる物理アダプターから NDIS 状態インジケーターを移動させるについて説明します。 HYPER-V 拡張可能スイッチの外部ネットワーク アダプターを使用した 1 つまたは複数の基になる物理アダプターのチームを構成することができます。
+このトピックでは、基盤となる物理アダプターからの NDIS ステータスを示すコントロールパスについて説明します。 1つまたは複数の基になる物理アダプターを、Hyper-v 拡張可能スイッチの外部ネットワークアダプターとチーミングすることができます。
 
-たとえば、拡張可能スイッチの外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX 中間ドライバー自体は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドできます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。 拡張可能スイッチ チームの詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
+たとえば、拡張可能スイッチの外部ネットワークアダプターは、NDIS マルチプレクサー (MUX) 中間ドライバーの仮想ミニポートエッジにバインドできます。 MUX 中間ドライバー自体は、ホスト上の1つまたは複数の物理ネットワークのチームにバインドできます。 この構成は、*拡張可能なスイッチチーム*と呼ばれています。 拡張可能なスイッチチームの詳細については、「[物理ネットワークアダプターの構成の種類](types-of-physical-network-adapter-configurations.md)」を参照してください。
 
-この構成では、拡張可能スイッチ拡張機能は拡張可能スイッチ チームのすべてのネットワーク アダプターに公開されます。 これにより、転送拡張機能が拡張可能スイッチのドライバー スタックを構成し、チーム内の個々 のネットワーク アダプターの使用を管理するの。 たとえば、拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 このような拡張機能と呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
+この構成では、拡張可能なスイッチ拡張機能は、拡張可能なスイッチチームのすべてのネットワークアダプターに公開されます。 これにより、拡張可能なスイッチドライバースタックの転送拡張機能が、チーム内の個々のネットワークアダプターの構成と使用を管理できるようになります。 たとえば、拡張機能は、送信パケットを個々のアダプターに転送することによって、チームで負荷分散フェールオーバー (LBFO) ソリューションのサポートを提供できます。 このような拡張機能は、*チーミングプロバイダー*と呼ばれます。 チーミングプロバイダーの詳細については、「[チーミングプロバイダーの拡張機能](teaming-provider-extensions.md)」を参照してください。
 
-**注**  このような操作は、転送拡張機能でのみ実行できます。 この種類のドライバーの詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
-
- 
-
-次の図には、NDIS 6.40 (Windows Server 2012 R2) 以降は、基になる拡張可能スイッチ チームによって発行された NDIS 状態インジケーターの拡張可能スイッチ コントロール パスが表示されます。
-
-![ndis 6.40 の vswitch チームからの ndis 状態インジケーターの vswitch コントロール パス](images/vswitch-status-controlpath2-ndis640.png)
-
-次の図には、NDIS 6.30 (Windows Server 2012) の基になるの拡張可能スイッチ チームによって発行された NDIS 状態インジケーターの拡張可能スイッチ コントロール パスが表示されます。
-
-![ndis 6.30 の vswitch チームからの ndis 状態インジケーターの vswitch コントロール パス](images/vswitch-status-controlpath2.png)
-
-**注**  、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*拡張可能スイッチ ドライバー スタック*.
+**注**  この並べ替えの操作は、転送拡張機能によってのみ実行できます。 この種類のドライバーの詳細については、「[拡張機能の転送](forwarding-extensions.md)」を参照してください。
 
  
 
-拡張可能スイッチは、次の方法で基になる物理アダプターまたは拡張可能スイッチ チームからの NDIS 状態インジケーターをサポートします。
+次の図は、NDIS 6.40 (Windows Server 2012 R2) 以降の基盤となる拡張可能なスイッチチームによって発行された NDIS ステータス表示の拡張可能なスイッチ制御パスを示しています。
 
--   拡張可能スイッチのインターフェイスで NDIS 状態を示す値が到着すると、内で示す値をカプセル化、 [ **NDIS\_切り替える\_NIC\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体。 拡張可能スイッチに関する問題のミニポート edge し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)これを含むことを示しています構造体。
+![ndis 6.40 の vswitch チームからの ndis ステータスを示す vswitch 制御パス](images/vswitch-status-controlpath2-ndis640.png)
 
-    転送拡張機能は、この通知を受信すると、カプセル化されたデータ変更を示す値を複製できます。 これにより、指定されたステータスまたは基になる拡張可能スイッチ チームの能力を変更する転送拡張機能です。
+次の図は、NDIS 6.30 (Windows Server 2012) の基盤となる拡張可能なスイッチチームによって発行された NDIS ステータス表示の拡張可能なスイッチ制御パスを示しています。
 
--   チーミング プロバイダーは、ハードウェアのアダプターのチームの構成に参加できるように動作する転送拡張機能を開始することでオフロード[ **NDIS\_状態\_スイッチ\_NIC\_ステータス**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)オフロード テクノロジに関連することを示すものです。
+![ndis 6.30 の vswitch チームからの ndis ステータスを示す vswitch 制御パス](images/vswitch-status-controlpath2.png)
 
-    たとえば、プロバイダーが開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)をカプセル化されたを示す値[ **NDIS\_状態\_受信\_フィルター\_現在\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)オフロード機能を変更することを示す値アダプターのチームでの仮想マシン キュー (VMQ)。
-
--   プロバイダーのチーム化を開始できますも、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)を示す値を他のネットワーク アダプターを変更するには拡張可能スイッチ チーム以外の構成。
-
-    たとえば、拡張機能を開始できる、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)でカプセル化された[ **NDIS\_状態\_スイッチ\_ポート\_削除\_VF** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)を示す値。 この通知は、仮想マシン (VM) ネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除します。 VF は、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワーク アダプターによって公開されます。
-
-    このバインドが削除された後、パケットは VM のネットワーク アダプターと基になる、SR-IOV 対応の物理アダプターの VF 間で直接の代わりに拡張可能スイッチ ポートを介して配信されます。 これにより、拡張可能スイッチ ポートの受信または拡張可能スイッチ ポート経由で送信されるパケットに適用するポリシー。
-
-**注**  拡張可能スイッチ拡張機能が NDIS フィルター ドライバーをすべてに適用される NDIS 状態インジケーターをフィルター処理と同じガイドラインに従う必要があります。 詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)します。
+**注**  拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは拡張*可能なスイッチ拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。
 
  
 
-方法を開始できる転送拡張機能の詳細については[ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status) 、指示を参照してください[NDIS 状態インジケーターを管理する物理ネットワーク アダプターから](managing-ndis-status-indications-from-physical-network-adapters.md)します。
+拡張可能なスイッチは、次の方法で、基盤となる物理アダプターまたは拡張可能なスイッチチームからの NDIS ステータスをサポートします。
+
+-   NDIS ステータスの表示が拡張可能スイッチインターフェイスに到着すると、 [**ndis\_スイッチ\_NIC\_状態\_示さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)れる構造体の内部に示された情報がカプセル化されます。 次に、拡張可能スイッチのミニポートエッジは、この構造を含む[ **\_NIC\_状態を示す\_スイッチの\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)を示します。
+
+    転送拡張機能は、この表示を受け取ると、カプセル化されたデータを変更するように指示を複製できます。 これにより、転送拡張機能は、基になる拡張可能なスイッチチームの指定された状態または機能を変更できます。
+
+-   チーミングプロバイダーとして動作する転送拡張機能は、 [**NDIS\_の状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)の情報が関連付けられています。オフロードテクノロジ。
+
+    たとえば、プロバイダーは Ndis\_の状態を開始できます[ **\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)をカプセル化された NDIS\_状態で\_\_を[**受信\_フィルター\_現在**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)アダプターチームの仮想マシンキュー (VMQ) のオフロード機能を変更する機能を示します。
+
+-   また、チーミングプロバイダーは、 [**NDIS\_の状態\_切り替え\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)の表示を開始して、拡張可能なスイッチチーム以外のネットワークアダプター構成を変更することもできます。
+
+    たとえば、拡張機能は、Ndis\_の状態を開始し[ **\_スイッチに\_NIC\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)の状態をカプセル化された[**ndis\_状態\_スイッチ\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)\_\_の VF を削除します。 この表示では、仮想マシン (VM) ネットワークアダプターと PCI Express (PCIe) 仮想関数 (VF) の間のバインドが削除されます。 VF は、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートする、基になる物理ネットワークアダプターによって公開されます。
+
+    このバインドが削除された後、パケットは、VM ネットワークアダプターと、基になる SR-IOV 物理アダプターの VF の間ではなく、拡張可能なスイッチポートを介して配信されます。 これにより、拡張可能なスイッチポートで受信または送信されたパケットに、拡張可能なスイッチポートポリシーを適用できます。
+
+**注**  拡張可能なスイッチ拡張機能は、すべての ndis フィルタードライバーに適用される ndis ステータスをフィルター処理する場合と同じガイドラインに従う必要があります。 詳細については、「[フィルターモジュールの状態](filter-module-status-indications.md)の表示」を参照してください。
+
+ 
+
+転送拡張機能が Ndis\_の状態を開始する方法の詳細については[ **\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status) 「[物理ネットワークアダプターからの ndis ステータス](managing-ndis-status-indications-from-physical-network-adapters.md)の表示の管理」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: ndiskd.ndisref
-description: Ndiskd.ndisref 拡張機能は、追跡対象の参照カウントのデバッグ ログを表示します。
+title: ndiskd ndisref
+description: Ndisref 拡張機能は、追跡された参照カウントのデバッグログを表示します。
 ms.assetid: 6860A567-1017-4184-B8DF-157467360FB9
 keywords:
-- デバッグ ndiskd.ndisref Windows
+- ndisref Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,48 +12,48 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f762f41ff0989fe552413e563222c43b4216168
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbf2e1d8b275949a4b7e5d675077c42a1ddc7caa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363128"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826564"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
 
-**! Ndiskd.ndisref**拡張機能は、追跡対象の参照カウントのデバッグ ログを表示します。
+**! Ndiskd**拡張機能は、追跡された参照カウントのデバッグログを表示します。
 
 ```console
 !ndiskd.ndisref [-handle <x>] [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 必須。 Refcount ブロックのハンドル。
 
 <span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span> *-tagtype*   
 タグの列挙型。
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-履歴*   
-(該当する場合) は、スタック トレースに含まれています。
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-スタック*   
+スタックトレースが含まれます (使用可能な場合)。
 
-<span id="_______-tag______"></span><span id="_______-TAG______"></span> *-tag*   
-制限は、1 つのタグを表示します。
+<span id="_______-tag______"></span><span id="_______-TAG______"></span> *-タグ*   
+制限は1つのタグに表示されます。
 
 <span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span> *-refdebug*   
-使用可能な場合、詳細なデバッグ ログを示します。
+使用可能な場合は詳細なデバッグログを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-次の例では、通過する NDIS ミニポート ドライバーのハンドル、 **! ndiskd.ndisref**拡張機能のドライバーの参照カウントのブロックを表示します。 最初に、実行[ **! ndiskd.minidriver** ](-ndiskd-minidriver.md)でパラメーターのないシステム上のすべてのミニポート ドライバーの一覧を参照してください。 次の例の出力で ffffdf801418d650 kdnic ドライバーのハンドルを探します。
+次の例では、NDIS ミニポートドライバーのハンドルを **! ndiskd ndisref**拡張機能に渡して、そのドライバーの refcount ブロックを表示します。 まず、システム上のすべてのミニポートドライバーの一覧を表示するには、パラメーターを付けずに[**ミニドライバー**](-ndiskd-minidriver.md)を実行します。 次の出力例では、kdnic ドライバーのハンドルである ffffdf801418d650 を探します。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -61,7 +61,7 @@ Ndiskd.dll
     ffffdf801418d650 - kdnic
 ```
 
-ミニポート ドライバーのハンドルを使用して入力し、 **! ndiskd.ndisref-処理**ミニポート ドライバーの参照カウントのブロックを表示するコマンド。 次の例では、簡潔にするための excised refcount ブロックの中央が。
+ミニポートドライバーのハンドルを使用して、 **! ndiskd ndisref**コマンドを入力して、このミニポートドライバーの refcount ブロックを確認します。 次の例では、簡潔にするために refcount ブロックの excised を使用しています。
 
 ```console
 3: kd> !ndiskd.ndisref ffffdf801418d650
@@ -97,20 +97,20 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
+[ **! ndiskd ミニドライバー**](-ndiskd-minidriver.md)
 
  
 

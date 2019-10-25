@@ -10,24 +10,24 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8446945e110e8093bd3e790f2278049237f44979
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f420cb0b1d259a46e4181b0c853caad1170dd5ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386523"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834041"
 ---
 # <a name="nfp-power-management"></a>NFP 電源管理
 
 
-NFP デバイスは、次の 3 つの電源モードのいずれかで動作します。 これらのモードは*active*、*アイドル*、*スタンバイ*、および*power 削除*します。 NFP デバイスは、パブリケーション、またはデバイスへのサブスクリプションが無効になっている低電力モードを入力できます。 NFP ドライバーを応答を有効にする電源モードのいずれかにデバイスを移行または Windows からの通知を無効にします。
+NFP デバイスは、3つの電源モードのいずれかで動作します。 これらのモードは、*アクティブ*、*アイドル*、*スタンバイ*、および*電源が削除*されています。 デバイスに対するパブリケーションまたはサブスクリプションが無効になっている場合は、NFP デバイスを低電力モードにすることができます。 NFP ドライバーは、Windows からの通知の有効化または無効化に応じて、デバイスをいずれかの電源モードに切り替えます。
 
-NFP ドライバーが表示されます、 [ **IOCTL\_NFP\_を有効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)または[ **IOCTL\_NFP\_無効**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)有効またはサブスクリプション、パブリケーション、およびプレゼンスのイベントを無効にするコードを制御します。 これらの制御コードは、デバイスの電源モードの変更にもトリガーします。 [近距離近接 (NFP) の電源管理のコネクテッド スタンバイ プラットフォーム](https://docs.microsoft.com/windows-hardware/design/device-experiences/near-field-promiximity--nfp--power-management-for-modern-standby-platforms)トピック NFP デバイスの電源モードの変更の詳細な説明を提供します。
+NFP ドライバーは、 [ **\_nfp\_enable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_enable)または[**IOCTL\_\_nfp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_disable)を受信して、サブスクリプション、パブリケーション、およびプレゼンスイベントを有効または無効にする制御コードを無効にします。 これらの制御コードは、デバイスの電源モードの変更もトリガーします。 [接続されているスタンバイプラットフォームの近距離通信 (NFP) 電源管理](https://docs.microsoft.com/windows-hardware/design/device-experiences/near-field-promiximity--nfp--power-management-for-modern-standby-platforms)に関するトピックでは、NFP デバイスの電源モードの変更について詳しく説明しています。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

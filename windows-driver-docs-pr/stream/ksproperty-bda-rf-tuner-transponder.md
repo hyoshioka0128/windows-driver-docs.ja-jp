@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_RF\_チューナー\_トランスポンダー
-description: クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_トランスポンダー トランスポンダーの適切な数のチューナーのノードに通知します。
+title: KSK プロパティ\_BDA\_RF\_チューナー\_トランスポンダー
+description: クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_トランスポンダーを使用して、適切なトランスポンダー番号のチューナーノードに通知します。
 ms.assetid: 00445260-a317-4341-baab-d1391f6748e4
 keywords:
-- KSPROPERTY_BDA_RF_TUNER_TRANSPONDER ストリーミング メディア デバイス
+- KSPROPERTY_BDA_RF_TUNER_TRANSPONDER ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b2e3c5f9cb763b0c4110f7e962ead0c328b9bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01e97e0544dfd6907e929b3dafbdc97dfe2a3e89
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361142"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838080"
 ---
-# <a name="kspropertybdarftunertransponder"></a>KSPROPERTY\_BDA\_RF\_チューナー\_トランスポンダー
+# <a name="ksproperty_bda_rf_tuner_transponder"></a>KSK プロパティ\_BDA\_RF\_チューナー\_トランスポンダー
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_トランスポンダー トランスポンダーの適切な数のチューナーのノードに通知します。
+クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_トランスポンダーを使用して、適切なトランスポンダー番号のチューナーノードに通知します。
 
 ## <span id="ddk_ksproperty_bda_rf_tuner_transponder_ks"></span><span id="DDK_KSPROPERTY_BDA_RF_TUNER_TRANSPONDER_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361142"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67361142"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -61,16 +61,16 @@ ms.locfileid: "67361142"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、チューナーノードの識別子を指定します。
 
-プロパティの値は、トランスポンダー番号の設定を指定します。
+プロパティ値は、設定するトランスポンダー番号を指定します。
 
-一部のチューニングのスペースがあるすべてのハードウェアに組み込む頻度を取得する方法に関する情報。 これらのスペースのチューニングは、トランスポンダー数を指定します。 このプロパティは、このトランスポンダー数値のチューナーのノードを通知します。 チューナー ハードウェアは、中間の頻度を取得するために必要なチューニングの特性を自動的に判断し、ことができます。 この場合、その他のプロパティで、KSPROPSETID\_BdaFrequencyFilter プロパティ セットが − 1 に設定されます。
+一部のチューニングスペースには、ハードウェアに埋め込まれた頻度を取得する方法に関するすべての情報が含まれています。 これらのチューニングスペースは、トランスポンダー番号を指定します。 このプロパティは、このトランスポンダー番号のチューナーノードに通知します。 その後、チューナーハードウェアによって、中間周波数を取得するために必要なチューニング特性が自動的に決定されます。 この場合、KSPROPSETID\_BdaFrequencyFilter プロパティセットの他のプロパティは、−1に設定されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ ms.locfileid: "67361142"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ ms.locfileid: "67361142"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

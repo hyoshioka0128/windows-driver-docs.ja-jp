@@ -3,20 +3,20 @@ title: WavePci ミニポート ドライバーにおける信頼性の問題
 description: WavePci ミニポート ドライバーにおける信頼性の問題
 ms.assetid: 329f28a8-5e99-4c25-8a88-1e634f7eeec8
 keywords:
-- WavePci 信頼性の問題の WDK オーディオ
-- スピン ロック WDK オーディオ
-- Irp のキャンセル
+- WavePci の信頼性に関する問題 (WDK オーディオ)
+- スピンロック WDK オーディオ
+- Irp の取り消し
 - デッドロック WDK オーディオ
-- 割り込みサービス ルーチン WDK オーディオ
+- 割り込みサービスルーチン WDK オーディオ
 - Isr WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de6e1891de1f7443b1e1a0566904c975a61617cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd2b0f8b12ddc4a70b1cedc789155920ad0ff55c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362505"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832435"
 ---
 # <a name="reliability-issues-for-a-wavepci-miniport-driver"></a>WavePci ミニポート ドライバーにおける信頼性の問題
 
@@ -24,21 +24,21 @@ ms.locfileid: "67362505"
 ## <span id="reliability_issues_for_a_wavepci_miniport_driver"></span><span id="RELIABILITY_ISSUES_FOR_A_WAVEPCI_MINIPORT_DRIVER"></span>
 
 
-WavePci ミニポート ドライバーする必要がありますの追跡、ポート ドライバーから受信したマッピング。 WavePci ミニポート ドライバーは、ドライバーのスレッド間で共有されるデータ構造内のマッピングのリストを保持しています。 ドライバーのスレッドでは、ハードウェア キューに新しいマッピングを追加して、キューから完成したマッピングを削除するには、DMA チャネルへのアクセスは共有もする必要があります。 ミニポート ドライバーはデータの破損を防ぐためには、スピン ロックを使用して、共有データ構造と周辺機器へのアクセスをシリアル化します。 スピン ロックは共有データおよびハードウェア キューを 2 つ以上のドライバーのスレッドによって同時アクセスから保護します。
+WavePci ミニポートドライバーは、ポートドライバーから受信したマッピングを追跡する必要があります。 WavePci ミニポートドライバーは、ドライバースレッド間で共有されるデータ構造内のマッピングの一覧を保持します。 また、ドライバースレッドは、新しいマッピングをハードウェアキューに追加し、完了したマッピングをキューから削除するために、DMA チャネルへのアクセスも共有する必要があります。 データの破損を防ぐために、ミニポートドライバーは、スピンロックを使用して、共有データ構造および周辺機器へのアクセスをシリアル化します。 スピンロックは、共有データとハードウェアキューが2つ以上のドライバースレッドによる同時アクセスから保護されます。
 
-マッピングを管理するドライバーの部分を開発するときに、ベンダーは特に、次の点に注意を払う必要があります。
+マッピングを管理するドライバーの部分を開発する場合、ベンダーは次の点に特に注意を払う必要があります。
 
-### <a name="span-idspinlocksspanspan-idspinlocksspanspan-idspinlocksspanspin-locks"></a><span id="Spin_Locks"></span><span id="spin_locks"></span><span id="SPIN_LOCKS"></span>スピン ロック
+### <a name="span-idspin_locksspanspan-idspin_locksspanspan-idspin_locksspanspin-locks"></a><span id="Spin_Locks"></span><span id="spin_locks"></span><span id="SPIN_LOCKS"></span>スピンロック
 
-取得するか、マッピングをリリースする Portcls.sys を呼び出すときに、ミニポート ドライバー潜在的なデッドロックを回避するには、スピン ロックは保持でする必要がありますしません。 Microsoft Windows Driver Kit (WDK) でのドライバーの Ac97 サンプルは、この原則を示しています。 いずれかを呼び出す前に[ **IPortWavePciStream::GetMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)または[ **IPortWavePciStream::ReleaseMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-releasemapping)ドライバーのサンプル呼び出し[ **KeReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)スピン ロックを解除します。 後に、 **GetMapping**または**ReleaseMapping**戻り値は、ドライバーの呼び出しを呼び出す[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)をもう一度、スピン ロックを取得します。 リリースし、スピン ロックの取得の呼び出しを間 driver スレッドする必要がありますわけではマッピングの一覧への排他アクセスがあります。 この保護されていない間隔中に共有データにアクセスするは危険です。 解放、スピン ロックを取得するまでの間隔が小さい場合、ドライバーの 2 つのスレッド間の競合状態が破損しているデータの可能性が小さい。 これは、ため、結果として得られるエラーは断続的にトレースするために困難です。 解放、スピン ロックを取得すると、適切に記述されたドライバーは、一時的なポインターや共有データ構造体の内容にアクセスを使用していたインデックスが不要になった有効であると想定されます。
+デッドロックの可能性を回避するには、Portcls を呼び出してマッピングを取得または解放するときに、ミニポートドライバーが独自のスピンロックを保持しないようにする必要があります。 Microsoft Windows Driver Kit (WDK) の Ac97 サンプルドライバーは、この原則を示しています。 [**Iportwavepcistream:: GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)または[**Iportwavepcistream:: ReleaseMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-releasemapping)を呼び出す前に、サンプルドライバーは[**KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)を呼び出して、スピンロックを解放します。 **Getmapping**または**ReleaseMapping**呼び出しが返された後、ドライバーは[**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)を呼び出して、スピンロックを再度取得します。 リリースへの呼び出しとスピンロックの取得の間で、ドライバースレッドは、マッピングの一覧に排他的にアクセスできることを前提としてはなりません。 この保護されていない間隔中に共有データにアクセスすることは危険です。 スピンロックの解放と取得の間隔が小さい場合、2つのドライバースレッド間の競合状態によってデータが破損する可能性も小さくなります。 これは、結果として発生するエラーが断続的で、トレースが困難であることを意味します。 スピンロックを解放して取得した後、適切に記述されたドライバーでは、共有データ構造のコンテンツにアクセスするために以前使用した一時ポインターまたはインデックスが無効になっていることを前提としています。
 
-### <a name="span-idirpcancellationspanspan-idirpcancellationspanspan-idirpcancellationspanirp-cancellation"></a><span id="IRP_Cancellation"></span><span id="irp_cancellation"></span><span id="IRP_CANCELLATION"></span>IRP のキャンセル
+### <a name="span-idirp_cancellationspanspan-idirp_cancellationspanspan-idirp_cancellationspanirp-cancellation"></a><span id="IRP_Cancellation"></span><span id="irp_cancellation"></span><span id="IRP_CANCELLATION"></span>IRP のキャンセル
 
-再生またはキャプチャ ストリームの処理中にいつでも IRP のキャンセルにオペレーティング システムをミニポート ドライバーで取得した 1 つまたは複数のマッピングを取り消すことがあります。 この場合、ポートのドライバーを呼び出す、 [ **IMiniportWavePciStream::RevokeMappings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-revokemappings)ミニポート ドライバーに通知するメソッド。 失効したマッピングからデータを再生中またはデータのキャプチャのいずれかを回避するために、ミニポート ドライバーをそのソフトウェアの一覧および DMA コント ローラーのハードウェア キューの両方からのマッピングを削除する必要があります。 ソフトウェアの一覧とハードウェアのキューは、ドライバーのスレッド間で共有される、ために、これらの操作を確実に実行するいくつか注意が必要です。
+再生ストリームまたはキャプチャストリームの処理中にいつでも、IRP をキャンセルすると、オペレーティングシステムによって、ミニポートドライバーによって取得された1つ以上のマッピングが失効する可能性があります。 このエラーが発生すると、ポートドライバーは[**IMiniportWavePciStream:: RevokeMappings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-revokemappings)メソッドを呼び出してミニポートドライバーに通知します。 失効したマッピングへのデータの再生またはデータのキャプチャを避けるために、ミニポートドライバーは、そのソフトウェアの一覧と DMA コントローラーのハードウェアキューの両方からマッピングを削除する必要があります。 ソフトウェアの一覧とハードウェアキューはドライバーのスレッド間で共有されるため、これらの操作を確実に実行するには注意が必要です。
 
-たとえば、一連マッピングを無効にするにはには、マッピングされただけかを解放するが含まれます。 この場合、ドライバーの 2 つのスレッドは可能性があります、DMA キューから同じマッピングを削除する同時に試行しました。 ドライバーは、同時アクセスを防ぐために失敗した場合、結果のレジスタまたはキューを管理するメモリ構造内のデータの破損を使用できます。
+たとえば、取り消し対象の一連のマッピングには、直前にリリースされたか、直前にリリースされたマッピングが含まれている場合があります。 この場合、2つのドライバースレッドが DMA キューから同じマッピングを同時に削除しようとすることがあります。 ドライバーが同時アクセスを防止できない場合は、キューを管理するレジスタまたはメモリ構造のデータが破損している可能性があります。
 
-実際のコード例は、Windows Driver Kit (WDK) でのドライバーの Ac97 サンプルを参照してください。
+実際のコード例については、Windows Driver Kit (WDK) の Ac97 サンプルドライバーを参照してください。
 
  
 

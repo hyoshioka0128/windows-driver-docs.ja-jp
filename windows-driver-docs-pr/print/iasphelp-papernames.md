@@ -1,6 +1,6 @@
 ---
-title: Iasphelp get\_PaperNames メソッド
-description: PaperNames プロパティは、プリンターの用紙のすべてのフォームの名前を示す文字列のセットを取得する ASP Web ページを使用できます。
+title: Iasphelp\_の Pagenames メソッドの取得
+description: "\"Paper Names\" プロパティを使用すると、ASP Web ページは、プリンターのすべての用紙形式に名前を指定した文字列のセットを取得できます。"
 MS-HAID:
 - webfnc\_be2b332f-6300-4b3e-9fa7-fd2fd0bdffe5.xml
 - print.iasphelp\_papernames
@@ -9,9 +9,9 @@ MSHAttr:
 - PreferredLib:/library/windows/hardware
 ms.assetid: 558cf0a6-d98b-4d59-ae37-d19ced289bf0
 keywords:
-- 印刷デバイスの get_PaperNames メソッド
-- get_PaperNames メソッド、印刷デバイス Iasphelp インターフェイス
-- Iasphelp インターフェイス、印刷デバイス get_PaperNames メソッド
+- get_PaperNames メソッドの印刷デバイス
+- get_PaperNames メソッドの印刷デバイス、Iasphelp インターフェイス
+- Iasphelp インターフェイスの印刷デバイス、get_PaperNames メソッド
 topic_type:
 - apiref
 api_name:
@@ -20,16 +20,16 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3efc5f51ea2aad42977eb26e6da0354232e7225e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2188eadfb899378be54de358a2cee5dee388f1f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357234"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838093"
 ---
-# <a name="iasphelpgetpapernames-method"></a>Iasphelp::get\_PaperNames メソッド
+# <a name="iasphelpget_papernames-method"></a>Iasphelp:: get\_Pagenames メソッド
 
-**PaperNames**プロパティは、プリンターの用紙のすべてのフォームの名前を示す文字列のセットを取得する ASP Web ページを使用できます。
+"Paper **names** " プロパティを使用すると、ASP Web ページは、プリンターのすべての用紙形式に名前を指定した文字列のセットを取得できます。
 
 <a name="syntax"></a>構文
 ------
@@ -43,13 +43,13 @@ HRESULT get_PaperNames(
 <a name="parameters"></a>パラメーター
 ----------
 
-*pVal* \[out\]  
-プリンターのすべての紙のフォームを表す文字列のセットを指すポインターを受け取る呼び出し元が指定の場所。
+*pVal* \[\]  
+プリンターのすべての用紙形式を表す文字列のセットへのポインターを受け取る、呼び出し元が指定した場所。
 
 <a name="return-value"></a>戻り値
 ------------
 
-このプロパティは、次の表に、値のいずれかを返します。
+このプロパティは、次の表に示すいずれかの値を返します。
 
 <table>
 <colgroup>
@@ -65,24 +65,24 @@ HRESULT get_PaperNames(
 <tbody>
 <tr class="odd">
 <td><strong>S_OK</strong></td>
-<td><p>操作に成功しました。</p></td>
+<td><p>操作は成功しました。</p></td>
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>メソッドが呼び出されていません。</p></td>
+<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp:: Open</strong></a>メソッドが呼び出されていません。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足。</p></td>
+<td><p>メモリ不足です。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="vbscript-example"></a>VBScript の例
 
-このプロパティのハンドラーを呼び出して、プリンター ドライバーの紙のフォームの一覧を取得する[ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities) DC で関数を\_PAPERNAMES フラグを設定します。
+このプロパティのハンドラーは、DC\_paper NAMES フラグが設定されたプリンタードライバーの[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)関数を呼び出すことによって、用紙の種類の一覧を取得します。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)メソッドは、前に呼び出す必要があります、 **Iasphelp::PaperNames**プロパティのクエリを実行できます。
+Iasphelp: [ **: Open**](iasphelp-open.md)メソッドは、 **iasphelp::P apernames**プロパティを照会する前に呼び出す必要があります。
 
 ```vb
 Dim objPrinter, PaperNameArray
@@ -110,6 +110,6 @@ PaperNameArray = objPrinter.PaperNames
 
 ## <a name="see-also"></a>関連項目
 
-[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)
+[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp:: Open**](iasphelp-open.md)

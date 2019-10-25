@@ -3,19 +3,19 @@ title: カーネル モード ビデオ トランスポートの使用
 description: カーネル モード ビデオ トランスポートの使用
 ms.assetid: 0be84371-f7d5-42bb-b164-80fcf1b58d95
 keywords:
-- 描画カーネル モードのビデオ トランスポート WDK DirectDraw、カーネル モードのビデオ トランスポートについて
-- カーネル モードのビデオ トランスポートに関する、DirectDraw カーネル モードのビデオ トランスポート WDK Windows 2000 の表示します。
-- カーネル モードのビデオ トランスポートに関するビデオ トランスポート WDK DirectDraw、カーネル モード
-- ビデオ トランスポートのカーネル モードの WDK DirectDraw、カーネル モードのビデオ トランスポートについて
-- ビデオ キャプチャ WDK ビデオ トランスポート カーネル モード
+- カーネルモードのビデオトランスポート WDK DirectDraw、カーネルモードのビデオトランスポートについて
+- DirectDraw カーネルモード video transport WDK Windows 2000 display、カーネルモードビデオトランスポートについて
+- カーネルモードビデオトランスポート WDK DirectDraw、カーネルモードビデオトランスポートについて
+- ビデオトランスポートカーネルモード WDK DirectDraw、カーネルモードビデオトランスポートについて
+- ビデオキャプチャ WDK ビデオトランスポートのカーネルモード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 098a93d572c31fd2de16be8e3a31d6c815a1a985
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d0ea774ffb91d4b021fc112c2cfa46a265a527fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372019"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825396"
 ---
 # <a name="using-kernel-mode-video-transport"></a>カーネル モード ビデオ トランスポートの使用
 
@@ -23,13 +23,13 @@ ms.locfileid: "67372019"
 ## <span id="ddk_using_kernel_mode_video_transport_gg"></span><span id="DDK_USING_KERNEL_MODE_VIDEO_TRANSPORT_GG"></span>
 
 
-カーネル モードのビデオ トランスポート機能にアクセスを[ビデオ キャプチャ ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)とのリンクを*dxapi.lib*に後で呼び出しを許可する*dxapi.sys*します。 この機能は、DirectDraw が読み込まれるときにのみ使用できます。
+カーネルモードのビデオトランスポート機能は、 *dxapi .lib*とリンクする[ビデオキャプチャドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)によってアクセスされます。これにより、後で*dxapi .sys*を呼び出すことができます。 この機能は、DirectDraw が読み込まれている場合にのみ使用できます。
 
-ビデオ キャプチャ ドライバー (ハードウェア デコーダー) を使用して、 [ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi) DxApi インターフェイスのコールバック関数にアクセスするカーネル モード DirectDraw で提供される関数。 **DxApi**関数は、関数の識別子、入力バッファーとサイズ、および、出力バッファーとサイズを受け入れる 1 つのエントリ ポイント。 この関数の入力と出力バッファーの形式とサイズの動作は、指定された関数の識別子に依存します。 **DxApi**関数とその関数の識別子で定義されます*ddkmapi.h*します。
+ビデオキャプチャドライバー (ハードウェアデコーダー用) は、カーネルモード DirectDraw に付属している[**dxapi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi)関数を使用して、dxapi インターフェイスのコールバック関数にアクセスします。 **Dxapi**関数は、関数識別子、入力バッファーとサイズ、および出力バッファーとサイズを受け取る1つのエントリポイントです。 この関数の動作と、入力バッファーと出力バッファーのサイズと形式は、指定された関数識別子によって異なります。 **Dxapi**関数とその関数識別子は、 *ddkmapi. h*で定義されています。
 
-DirectShow または別のクライアントは、DirectDraw、ビデオのミニポート ドライバーによって提供される DxApi インターフェイスのコールバック関数にアクセスします。 DxApi インターフェイスのコールバック関数が定義されている*dxmini.h*します。
+DirectShow または別のクライアントは、DirectDraw 経由でビデオミニポートドライバーによって提供される DxApi インターフェイスコールバック関数にアクセスします。 DxApi インターフェイスのコールバック関数は、 *dxapi .h*で定義されています。
 
-カーネル モードのビデオ トランスポート インターフェイスを使用するには、場合は、ビデオ キャプチャ ドライバーに DirectDraw オブジェクト、画面、および使用する必要がある VPE オブジェクトのユーザー モードのハンドルを受信してする必要があります。 キャプチャと MPEG モデルでは、これらのハンドル、既存の Api を使用して渡されます。 ユーザー モード コンポーネントを使用してハンドルを取得できる場合は、ドライバーは、この機能が必要ですが、ストリーム クラス ドライバーではない、 [IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)と[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) COM インターフェイスドライバーに渡します。 COM インターフェイスとそのメソッドがで識別される*ddkernel.h*します。
+カーネルモードのビデオトランスポートインターフェイスを使用するには、ビデオキャプチャドライバーが、使用する必要がある各 DirectDraw オブジェクト、surface、および VPE オブジェクトのユーザーモードハンドルを受け取る必要があります。 キャプチャモデルと MPEG モデルでは、これらのハンドルは既存の Api を使用して渡されます。 ドライバーがストリームクラスドライバーではなく、この機能を必要とする場合、ユーザーモードコンポーネントは[Idirectdrawkernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)インターフェイスと[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) COM インターフェイスを使用してハンドルを取得し、ドライバーに渡すことができます。 COM インターフェイスとそのメソッドは、 *ddkernel .h*で識別されます。
 
  
 

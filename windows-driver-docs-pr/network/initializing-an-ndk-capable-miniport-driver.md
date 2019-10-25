@@ -1,20 +1,20 @@
 ---
 title: NDK 対応ミニポート ドライバーの初期化
-description: Network Direct カーネル (NDK) をサポートしているミニポート ドライバーは、その他のミニポート ドライバーと同じ方法で初期化されます。 ただし、追加の NDKPI エントリ ポイントまた登録する必要があります。
+description: ネットワークダイレクトカーネル (NDK) をサポートするミニポートドライバーは、他のミニポートドライバーと同じ方法で初期化されます。 ただし、追加の NDKPI エントリポイントも登録する必要があります。
 ms.assetid: 9C9799AB-75A8-4E9A-8702-D389B73522DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a28600f6afabb6831224844423262b71baa6c098
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6c2d265e369276bf66a50d560e08ab028f5b9627
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381292"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824486"
 ---
 # <a name="initializing-an-ndk-capable-miniport-driver"></a>NDK 対応ミニポート ドライバーの初期化
 
 
-Network Direct カーネル (NDK) をサポートしているミニポート ドライバーは、その他のミニポート ドライバーと同じ方法で初期化されます。 ただし、追加の NDKPI エントリ ポイントまた登録する必要があります。
+ネットワークダイレクトカーネル (NDK) をサポートするミニポートドライバーは、他のミニポートドライバーと同じ方法で初期化されます。 ただし、追加の NDKPI エントリポイントも登録する必要があります。
 
 -   [DriverEntry 関数](#driverentry-function)
 -   [MiniportSetOptions 関数](#miniportsetoptions-function)
@@ -23,52 +23,52 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
 ## <a name="driverentry-function"></a>DriverEntry 関数
 
 
-すべてのミニポート ドライバーの[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数を初期化します、 [ **NDIS\_ミニポート\_ドライバー\_特性** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)構造体し、それを[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)ように、次のページで説明されています。
+すべてのミニポートドライバーの[*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数は、次のページで説明されているように、 [**NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の構造を初期化し、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)に渡します。
 
--   [ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)
--   [**NDIS ミニポート ドライバーの DriverEntry 関数**](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)
+-   [ミニポートドライバーの初期化](initializing-a-miniport-driver.md)
+-   [**NDIS ミニポートドライバー関数の DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)
 
-初期化するときに、NDK 対応のミニポート ドライバーは、次を実行する必要があります、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)構造体。
+NDK 対応ミニポートドライバーは、 [**NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の構造を初期化するときに、次の操作を行う必要があります。
 
--   **OidRequestHandler**メンバー、ミニポート ドライバーを登録する必要があります、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)をサポートする関数。
+-   **OidRequestHandler**メンバーでは、ミニポートドライバーは次の機能をサポートする[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数を登録する必要があります。
 
-    -   すべて[NDKPI Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)します。
+    -   すべての[Ndkpi oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)。
 
-    -   必須の NDIS ミニポート ドライバーは、一般の Oid。
+    -   一般に NDIS ミニポートドライバーに必須の Oid。
 
-        **注**  これらの必須の Oid の一覧は、次を参照してください。[ミニポート ドライバーに必須の Oid](https://docs.microsoft.com/windows-hardware/drivers/network/mandatory-oids-for-miniport-drivers)します。
+        **注**  必須の oid の一覧については、「[ミニポートドライバーの必須の oid](https://docs.microsoft.com/windows-hardware/drivers/network/mandatory-oids-for-miniport-drivers)」を参照してください。
 
          
 
--   **SetOptionsHandler**メンバー、ミニポート ドライバーを登録する必要があります、 [ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)で説明されているとおりに機能[オプションを構成します。ミニポート ドライバー サービス](configuring-optional-miniport-driver-services.md)と次の MiniportSetOptions 関数セクション。
+-   **SetOptionsHandler**メンバーでは、「[オプションのミニポートドライバーサービスの構成](configuring-optional-miniport-driver-services.md)」と「次の MiniportSetOptions 関数」の説明に従って、ミニポートドライバーが[*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)関数を登録する必要があります。
 
 ## <a name="miniportsetoptions-function"></a>MiniportSetOptions 関数
 
 
-NDIS 呼び出し、 [ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)関数、ミニポート ドライバーの後すぐに[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)関数が返される。 *MiniportSetOptions*ミニポート ドライバーの呼び出しのコンテキストで関数を呼び出す[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。
+NDIS は、ミニポートドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)関数から制御が戻った直後に、 [*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)関数を呼び出します。 *MiniportSetOptions*関数は、ミニポートドライバーの[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)呼び出しのコンテキストで呼び出されます。
 
-その[ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)関数、NDK 対応のミニポート ドライバーは、次の必要な NDKPI 関数のエントリ ポイント」の説明に従って、NDK 機能とレジスタを登録[省略可能なミニポート ドライバー サービスを構成する](configuring-optional-miniport-driver-services.md):
+この[*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)関数では、ndk 対応のミニポートドライバーにより、ndk 機能が登録され、次の必要な ndkpi 関数のエントリポイントが登録されます[(オプションのミニポートドライバーサービスの構成](configuring-optional-miniport-driver-services.md)に関するページを参照してください)。
 
--   *OpenNDKAdapterHandler* ([*オープン\_NDK\_アダプター\_ハンドラー*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndisndk/nc-ndisndk-open_ndk_adapter_handler))
+-   *Openndkadapterhandler* ([*OPEN\_NDK\_ADAPTER\_HANDLER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler))
 
--   *CloseNDKAdapterHandler* ([*CLOSE\_NDK\_ADAPTER\_HANDLER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndisndk/nc-ndisndk-close_ndk_adapter_handler))
+-   *Closendkadapterhandler* ([ *\_NDK\_アダプター\_ハンドラー*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-close_ndk_adapter_handler))
 
-NDKPI エントリを登録するポイント、これらの関数、ミニポート ドライバーの[ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)関数は、次を実行する必要があります。
+これらの関数の NDKPI エントリポイントを登録するには、ミニポートドライバーの[*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)関数で次の操作を行う必要があります。
 
-1.  初期化を[ **NDIS\_NDK\_プロバイダー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndisndk/ns-ndisndk-_ndis_ndk_provider_characteristics)構造体。
+1.  [**NDIS\_NDK\_プロバイダー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/ns-ndisndk-_ndis_ndk_provider_characteristics)の構造体を初期化します。
 
-    **注**  に特に注意してください、**ヘッダー**メンバーの説明。 ミニポート ドライバーでは、NDK 対応のミニポート ドライバーとして自身を識別するために、このメンバーを正しく設定する必要があります。
+    **注**  は、**ヘッダー**メンバーの説明に特に注意を払ってください。 ミニポートドライバーは、それ自体を NDK 対応ミニポートドライバーとして識別するように、このメンバーを正しく設定する必要があります。
 
      
 
-2.  関数のエントリ ポイントを格納、 **OpenNDKAdapterHandler**と**CloseNDKAdapterHandler**構造体のメンバー。
+2.  関数のエントリポイントを、構造体の**Openndkadapterhandler**および**closendkadapterhandler**メンバーに格納します。
 
-3.  呼び出す、 [ **NdisSetOptionalHandlers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)で構造体を引数として関数を*OptionalHandlers*パラメーター。
+3.  [**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)関数を呼び出して、パラメーターを指定した*ハンドラー*パラメーターで構造体を渡します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

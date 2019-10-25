@@ -3,26 +3,26 @@ title: トポロジのピン
 description: トポロジのピン
 ms.assetid: b434e2a7-4acc-4ef1-9db9-8f1b82f68de3
 keywords:
-- トポロジのピンの WDK オーディオ
-- ピン WDK のオーディオ、トポロジ
-- S/PDIF pin 翻訳 WDK オーディオ
-- WDK のオーディオのピンの変換
-- KS WDK のピンのオーディオ、翻訳します。
-- ピン WDK のオーディオ、記述子
-- ミキサー行記述子 WDK オーディオ
-- ソース ミキサー行 WDK オーディオ
-- 移行先ミキサー行 WDK オーディオ
-- ピンの WDK オーディオを翻訳します。
-- 暗証番号 (pin) ファクトリ WDK オーディオ
+- トポロジ pin WDK オーディオ
+- WDK オーディオ、トポロジをピン留めする
+- S/PDIF ピン翻訳 WDK オーディオ
+- WDK オーディオをピン留めし、翻訳する
+- KS WDK audio をピン留めし、翻訳する
+- WDK オーディオ、記述子をピン留めする
+- ミキサー-ライン記述子 WDK オーディオ
+- ソースミキサーライン WDK オーディオ
+- 宛先ミキサーの線 WDK オーディオ
+- pin の変換 WDK オーディオ
+- ファクトリ WDK オーディオをピン留めする
 - PCPIN_DESCRIPTOR 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dddb482ca90baf7e00a998679f60141d8441542
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf5f99615cc377bfae1528448af03d16617681e0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354177"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832333"
 ---
 # <a name="topology-pins"></a>トポロジのピン
 
@@ -30,48 +30,48 @@ ms.locfileid: "67354177"
 ## <span id="topology_pins"></span><span id="TOPOLOGY_PINS"></span>
 
 
-[WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver) KS フィルターのトポロジのピンをミキサー API がアプリケーションに公開する元とコピー先ミキサーの行に変換します。 (シンク) の入力ピンがミキサーのソース行となり (ソース) の出力ピンが宛先ミキサーの線になります。
+[WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)は、ミキサフィルターのトポロジピンを、ミキサー API がアプリケーションに公開するソースとターゲットのミキサ線に変換します。 入力 (シンク) ピンがソースミキサーの線になり、出力 (ソース) ピンがターゲットミキサーの線になります。
 
-」の説明に従って[Pin ファクトリ](pin-factories.md)、ミニポート ドライバーは、暗証番号 (pin) の記述子の型の構造体は、それぞれの配列を提供します[ **PCPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor)です。フィルターに属する pin ファクトリをについて説明します。 各ピン留めする記述子には、次の情報が含まれています。
+「 [Pin ファクトリ](pin-factories.md)」で説明されているように、ミニポートドライバーは、ピン記述子の配列を提供します。各記述子は、フィルターに属するピンファクトリを記述する[**PCPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcpin_descriptor)の構造体です。 各 pin 記述子には、次の情報が含まれています。
 
--   **データ フローの方向の指定子**
+-   **データフロー方向指定子**
 
-    データ ストリームを入力するかどうかを示します (KSPIN\_データフロー\_IN) か、終了 (KSPIN\_データフロー\_を)、暗証番号 (pin) を使用して、フィルター。
+    データストリームを入力するか (KSPIN\_データフロー\_)、ピンを使用してフィルターを終了するか (KSPIN\_データフローを\_) を終了するかを示します。
 
 -   **KS pin カテゴリ GUID**
 
-    Pin が所属するピン留めするカテゴリを示します。 たとえば、オーディオの再生デバイスで、ピン留めする 1 つは wave 形式デジタル オーディオ ストリームを受け付ける場合があり、スピーカーをドライブにアナログ オーディオ信号が生成するもう 1 つの pin。 ミニポート ドライバーでは、これら 2 種類のピンがピン留めする個別のカテゴリに属するものとして識別します。
+    Pin が属しているピンカテゴリを示します。 たとえば、オーディオ再生デバイスでは、1つのピンが wave 形式のデジタルオーディオストリームを受け取ることがあり、別の pin がスピーカーを駆動するアナログオーディオ信号を生成する場合があります。 ミニポートドライバーでは、これらの2種類の pin が個別の pin カテゴリに属しているものとして識別されます。
 
--   **通信の型指定子**
+-   **通信の種類指定子**
 
-    Pin をサポートする IRP の通信の種類を示します。 IRP の通信をサポートする、暗証番号 (pin) は、IRP シンクを指定できます (KSPIN\_通信\_シンク)、IRP のソース (KSPIN\_通信\_ソース)、またはその両方 (KSPIN\_通信\_両方). IRP の通信をサポートしていないピン留めできます KS フィルター グラフ内のいずれかの円周 (KSPIN\_通信\_NONE) でも、*ブリッジ pin*グラフのエンドポイントで (KSPIN\_の通信\_ブリッジ)。
+    Pin がサポートする IRP 通信の種類を示します。 Irp 通信をサポートする pin は、IRP シンク (KSPIN\_通信\_シンク)、IRP ソース (KSPIN\_通信\_ソース)、またはその両方 (KSPIN\_通信\_両方) にすることができます。 IRP 通信をサポートしていない pin は、KS フィルターグラフ (KSPIN\_通信\_なし) の内側に配置することも、グラフのエンドポイント (KSPIN\_通信\_ブリッジ) の*ブリッジ pin*にすることもできます。
 
-ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
+ブリッジピンの詳細については、「[オーディオフィルターグラフ](audio-filter-graphs.md)」を参照してください。
 
-WDMAud は、ミニポート ドライバーの暗証番号 (pin) の記述子から情報を次の情報を含む MIXERLINE 型の構造体である、ミキサー行記述子に変換します。
+WDMAud は、ミニポートドライバーの pin 記述子の情報を、次の情報を含む MIXERLINE 型の構造であるミキサーライン記述子に変換します。
 
--   **Mixer 行コンポーネントの種類**
+-   **ミキサー-線コンポーネントの種類**
 
-    ミキサー行が変換元または変換先の行では、およびもミキサーの行の一般的な関数を示すかどうかを示します。 たとえば、コンポーネントの型を wave から生成されるアナログ信号の転送をミキサー行は出力ヘッドフォンをドライブに (表示) のストリームが MIXERLINE\_COMPONENTTYPE\_DST\_ヘッドホンします。
+    ミキサーの線が変換元または変換先の行であるかどうかを示します。また、ミキサーの線の一般的な機能も示します。 たとえば、wave 出力 (レンダリング) ストリームから生成されたアナログ信号を輸送するミキサーラインのコンポーネントの種類は、MIXERLINE\_COMPONENTTYPE\_DST\_ヘッドホンです。
 
--   **Mixer 行対象の型**
+-   **ミキサー-線のターゲットの種類**
 
-    ミキサーの行を転送するデータ ストリームの種類を示します。 たとえば、波の対象の型は出力 (表示) ストリームは MIXERLINE\_TARGETTYPE\_WAVEOUT、およびターゲットの型を wave (キャプチャ) の入力ストリームが MIXERLINE\_TARGETTYPE\_WAVEIN します。
+    ミキサーの線が転送するデータストリームの種類を示します。 たとえば、wave 出力 (レンダリング) ストリームのターゲット型は MIXERLINE\_TARGETTYPE\_WAVEOUT であり、wave 入力 (capture) ストリームのターゲット型は MIXERLINE\_TARGETTYPE\_WAVEIN です。
 
-MIXERLINE 構造の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+MIXERLINE 構造体の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-WDMAud が入力を変換する方法を次の 2 つのテーブルが表示 (KSPIN\_データフロー\_IN) ピン ミキサーのソース行にします。 最初の表は、入力がピン留めする方法を示しています。 **KS pin カテゴリ GUID**s マップに関連付けられている MIXERLINE 対象の種類。
+次の2つの表は、WDMAud が入力 (KSPIN\_データフロー\_) ピンをソースミキサーラインに変換する方法を示しています。 最初の表は、入力ピン**KS の pin カテゴリ GUID**が、関連付けられている MIXERLINE ターゲット型にどのようにマップされるかを示しています。
 
-PCPIN\_記述子値 MIXERLINE 値 KS pin カテゴリ GUID ブリッジ ピン留めしますか?
-対象になる種類 KSNODETYPE\_マイク
+PCPIN\_記述子値 MIXERLINE 値 KS pin カテゴリ GUID ブリッジ pin?
+ターゲットタイプ KSNODETYPE\_マイク
 
-KSNODETYPE\_デスクトップ\_マイク
+KSNODETYPE\_DESKTOP\_マイク
 
 --
 
 MIXERLINE\_TARGETTYPE\_WAVEIN
 
-KSNODETYPE\_レガシ\_オーディオ\_コネクタ
+KSNODETYPE\_従来の\_オーディオ\_コネクタ
 
 KSCATEGORY\_オーディオ
 
@@ -81,11 +81,11 @@ KSNODETYPE\_スピーカー
 
 MIXERLINE\_TARGETTYPE\_WAVEOUT
 
-KSNODETYPE\_CD\_プレーヤー
+KSNODETYPE\_CD\_PLAYER
 
 --
 
-MIXERLINE\_TARGETTYPE\_UNDEFINED
+MIXERLINE\_TARGETTYPE\_未定義
 
 KSNODETYPE\_シンセサイザー
 
@@ -93,49 +93,49 @@ KSNODETYPE\_シンセサイザー
 
 MIXERLINE\_TARGETTYPE\_MIDIOUT
 
-KSNODETYPE\_行\_コネクタ
+KSNODETYPE\_LINE\_コネクタ
 
 --
 
-MIXERLINE\_TARGETTYPE\_UNDEFINED
+MIXERLINE\_TARGETTYPE\_未定義
 
 KSNODETYPE\_電話
 
-KSNODETYPE\_PHONE\_行
+KSNODETYPE\_電話\_ライン
 
-KSNODETYPE\_ダウン\_行\_電話
+KSNODETYPE\_ダウン\_回線\_電話
 
 --
 
-MIXERLINE\_TARGETTYPE\_UNDEFINED
+MIXERLINE\_TARGETTYPE\_未定義
 
 KSNODETYPE\_アナログ\_コネクタ
 
-〇
+[はい]
 
 MIXERLINE\_TARGETTYPE\_WAVEIN
 
 KSNODETYPE\_アナログ\_コネクタ
 
-X
+必須ではない
 
 MIXERLINE\_TARGETTYPE\_WAVEOUT
 
 KSNODETYPE\_SPDIF\_インターフェイス
 
-〇
+[はい]
 
 MIXERLINE\_TARGETTYPE\_WAVEIN
 
 KSNODETYPE\_SPDIF\_インターフェイス
 
-X
+必須ではない
 
 MIXERLINE\_TARGETTYPE\_WAVEOUT
 
  
 
-次の表は、入力のピン**KS pin カテゴリ GUID**のマップに関連付けられている MIXERLINE コンポーネントの型。
+次の表は、入力ピン**KS のカテゴリ GUID**s が、関連付けられている MIXERLINE コンポーネントの種類にどのようにマップされるかを示しています。
 
 <table>
 <colgroup>
@@ -144,8 +144,8 @@ MIXERLINE\_TARGETTYPE\_WAVEOUT
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">PCPIN_DESCRIPTOR 値</th>
-<th align="left">MIXERLINE 値</th>
+<th align="left">PCPIN_DESCRIPTOR の値</th>
+<th align="left">MIXERLINE の値</th>
 </tr>
 </thead>
 <tbody>
@@ -203,18 +203,18 @@ MIXERLINE\_TARGETTYPE\_WAVEOUT
 
  
 
-前の表では、左の列は、暗証番号 (pin) カテゴリ ピンの PCPIN から GUID を指定します。\_記述子構造、および右の列型および MIXERLINE 構造体のコンポーネントの種類、対応するターゲットを指定します。
+上の表では、左側の列にピンの PCPIN\_記述子の構造からピンカテゴリ GUID が指定されており、右側の列で MIXERLINE 構造体に対応する対象の型とコンポーネントの種類が指定されています。
 
-ブリッジのピン留めしますか?"というラベルの付いた列のエントリ pin がブリッジ暗証番号 (pin) であるかどうかを示します。 "Yes"の場合、暗証番号 (pin) の通信の種類が KSPIN であることを意味\_通信\_ブリッジです。 暗証番号 (pin) の通信の入力を"No"手段は、KSPIN\_通信\_*Xxx* KSPIN 以外の値\_通信\_ブリッジです。 WDMAud がミキサーのコマンド ライン パラメーターをブリッジ ピン留めしますか?"にピン留めするパラメーターを変換するときに、暗証番号 (pin) の通信の種類を無視する場合 エントリは、ダッシュ (-) です。
+"Bridge Pin?" というラベルが付いた列のエントリ pin がブリッジ pin であるかどうかを示します。 "Yes" は、ピン通信の種類が KSPIN\_通信\_ブリッジであることを意味します。 "No" は、ピン通信の種類が kspin\_通信\_ブリッジ以外の*Xxx*値\_\_通信であることを意味します。 Pin パラメーターをミキサーラインパラメーターに変換するときに WDMAud がピン通信の種類を無視する場合、"ブリッジピン?" エントリはダッシュ (-) です。
 
-上記のテーブルに表示されないすべてのピン留めするカテゴリ WDMAud 変換 MIXERLINE のターゲット型を持つソース ミキサー行への入力ピン\_TARGETTYPE\_MIXERLINE の未定義とコンポーネントの種類\_COMPONENTTYPE\_SRC\_UNDEFINED。
+前の表に表示されていないすべてのピンカテゴリに対して、WDMAud は入力ピンを MIXERLINE\_\_TARGETTYPE のターゲット型を持つソースミキサー行に変換します。 MIXERLINE\_COMPONENTTYPE\_SRC\_未定義です。
 
-次の表は、WDMAud が出力を変換する方法を示します (KSPIN\_データフロー\_アウト) 先ミキサーの行に pin。 列見出しは、上記の表のように同じ意味を持ちます。 最初の表は、出力がピン留めする方法を示しています。 **KS pin カテゴリ GUID**s マップに関連付けられている MIXERLINE 対象の種類。
+次の表は、WDMAud が出力 (KSPIN\_データフロー\_出力) ピンを変換先のミキサ線に変換する方法を示しています。 列見出しは、前の表と同じ意味を持ちます。 最初の表は、出力ピン**KS のピン留めカテゴリの GUID**が、関連付けられている MIXERLINE のターゲットの種類にどのようにマップされるかを示しています。
 
-PCPIN\_記述子値 MIXERLINE 値 KS pin カテゴリ GUID ブリッジ ピン留めしますか?
-対象になる種類 KSNODETYPE\_スピーカー
+PCPIN\_記述子値 MIXERLINE 値 KS pin カテゴリ GUID ブリッジ pin?
+ターゲットタイプ KSNODETYPE\_スピーカー
 
-KSNODETYPE\_デスクトップ\_スピーカー
+KSNODETYPE\_DESKTOP\_スピーカー
 
 KSNODETYPE\_ルーム\_スピーカー
 
@@ -226,7 +226,7 @@ MIXERLINE\_TARGETTYPE\_WAVEOUT
 
 KSCATEGORY\_オーディオ
 
-PINNAME\_キャプチャ
+PINNAME\_CAPTURE
 
 --
 
@@ -234,7 +234,7 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 
 KSNODETYPE\_ヘッドホン
 
-KSNODETYPE\_ヘッド\_マウント済み\_表示\_オーディオ
+KSNODETYPE\_ヘッド\_マウント\_\_オーディオを表示する
 
 --
 
@@ -242,41 +242,41 @@ MIXERLINE\_TARGETTYPE\_WAVEOUT
 
 KSNODETYPE\_電話
 
-KSNODETYPE\_PHONE\_行
+KSNODETYPE\_電話\_ライン
 
-KSNODETYPE\_ダウン\_行\_電話
+KSNODETYPE\_ダウン\_回線\_電話
 
 --
 
-MIXERLINE\_TARGETTYPE\_UNDEFINED
+MIXERLINE\_TARGETTYPE\_未定義
 
 KSNODETYPE\_アナログ\_コネクタ
 
-〇
+[はい]
 
 MIXERLINE\_TARGETTYPE\_WAVEOUT
 
 KSNODETYPE\_アナログ\_コネクタ
 
-X
+必須ではない
 
 MIXERLINE\_TARGETTYPE\_WAVEIN
 
 KSNODETYPE\_SPDIF\_インターフェイス
 
-〇
+[はい]
 
 MIXERLINE\_TARGETTYPE\_WAVEOUT
 
 KSNODETYPE\_SPDIF\_インターフェイス
 
-X
+必須ではない
 
 MIXERLINE\_TARGETTYPE\_WAVEIN
 
  
 
-次の表は、出力がピン留めする方法を示しています。 **KS pin カテゴリ GUID**s マップに関連付けられている MIXERLINE コンポーネントの型。
+次の表は、出力ピン**KS のピン留めカテゴリ GUID**s が、関連付けられている MIXERLINE コンポーネントの種類にどのようにマップされるかを示しています。
 
 <table>
 <colgroup>
@@ -285,8 +285,8 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">PCPIN_DESCRIPTOR 値</th>
-<th align="left">MIXERLINE 値</th>
+<th align="left">PCPIN_DESCRIPTOR の値</th>
+<th align="left">MIXERLINE の値</th>
 </tr>
 </thead>
 <tbody>
@@ -338,19 +338,19 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 
  
 
-上記のテーブルに表示されないすべてのピン留めするカテゴリ WDMAud 変換 MIXERLINE のターゲット型を持つ移行先ミキサーの行を出力ピン\_TARGETTYPE\_MIXERLINE の未定義とコンポーネントの種類\_COMPONENTTYPE\_DST\_UNDEFINED。
+前の表に表示されていないすべてのピンカテゴリについて、WDMAud は出力ピンを MIXERLINE\_\_TARGETTYPE のターゲットの種類と MIXERLINE\_COMPONENTTYPE のコンポーネントの種類を使用して変換先のミキサ線に変換し\_DST\_未定義です。
 
-前述の表に、KS のほとんどはカテゴリの Guid をピン留め KSNODETYPE がある\_*Xxx*名。 これらの名前は、Ksmedia.h と Dmusprop.h ヘッダー ファイルで定義されます。 (この名前付け規則からの 2 つの別れは Guid KSCATEGORY\_オーディオおよび PINNAME\_Ksmedia.h でも定義されているをキャプチャします)。」の説明に従って[トポロジ ノード](topology-nodes.md)、KSNODETYPE\_*Xxx* Guid を使用して KS ノードの種類を指定することもできます。 ほとんどの KSNODETYPE\_*Xxx* Guid 暗証番号 (pin) のカテゴリまたはノードの種類の両方ではなくいずれかを指定します。 例外は[ **KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)を使用する pin カテゴリまたはされるコンテキストに応じて、ノードの種類のいずれかを指定することができます。 KSNODETYPE の一覧については\_*Xxx*暗証番号 (pin) のカテゴリを表す Guid を参照してください[Pin Category プロパティ](pin-category-property.md)します。 KSNODETYPE の一覧については\_*Xxx*ノードの型を表す Guid を参照してください[オーディオ トポロジ ノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)します。
+上の表では、ほとんどの KS ピンカテゴリ Guid に KSNODETYPE\_*Xxx*の名前が付いています。 これらの名前は、ヘッダーファイルである Ksmedia. h と Dマス Prop. h で定義されています。 (この名前付け規則の2つの出発として、\_AUDIO と PINNAME\_CAPTURE という Guid があります。これは、Ksmedia. h でも定義されています)。「[トポロジノード](topology-nodes.md)」で説明されているように、KSNODETYPE\_*Xxx* guid を使用して、KS ノードの種類を指定することもできます。 ほとんどの KSNODETYPE\_*Xxx* guid は、ピンのカテゴリまたはノードの種類のいずれかを指定しますが、両方は指定しません。 この例外は、が使用されているコンテキストに応じて、ピンカテゴリまたはノードの種類のいずれかを指定できる[**KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)です。 ピンカテゴリを表す KSNODETYPE\_*Xxx* guid の一覧については、「[ピンカテゴリのプロパティ](pin-category-property.md)」を参照してください。 ノードの種類を表す KSNODETYPE\_*Xxx* guid の一覧については、「[オーディオトポロジノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)」を参照してください。
 
-KSCATEGORY\_オーディオが別の使用状況のデュアル GUID。 いずれかとして使用できます、 **KS pin カテゴリ GUID**または**KS フィルター カテゴリ GUID**コンテキストに応じて、します。 デバイスのインストール中に、オーディオ ドライバーに登録 KSCATEGORY フィルター カテゴリで、デバイス インターフェイス\_オーディオです。 詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](installing-device-interfaces-for-an-audio-adapter.md)します。
+KSCATEGORY\_AUDIO は、別のデュアル使用率の GUID です。 コンテキストに応じて、 **ks ピンカテゴリ guid**または**KS フィルターカテゴリ guid**として使用できます。 デバイスのインストール中、オーディオドライバーは、デバイスインターフェイスをフィルターカテゴリ KSCATEGORY\_AUDIO に登録します。 詳細については、「[オーディオアダプターのデバイスインターフェイスのインストール](installing-device-interfaces-for-an-audio-adapter.md)」を参照してください。
 
-KSNODETYPE の暗証番号 (pin) カテゴリの\_アナログ\_コネクタまたは KSNODETYPE\_SPDIF\_インターフェイス、WDMAud を pin ではブリッジ pin ミキサー行と同等にピン留めを正しく変換するかどうかを知る必要があります。 S/PDIF pin ではたとえば、(pin カテゴリ KSNODETYPE\_SPDIF\_インターフェイス)、次の図に示す 4 つミキサー線の種類のいずれかに変換します。 ミキサーの行のどのまとめて yield 4 種類依存 (インまたはアウト) の暗証番号 (pin) のデータの方向とかどうか (はいまたは no) ブリッジ pin では、翻訳 (yes +、+ no、out + [はい]、および out + なし)。 4 つのミキサー線の種類では、上記のテーブルからエントリの下部にあるペアの図に表示されます。
+KSNODETYPE\_アナログ\_コネクタまたは KSNODETYPE\_SPDIF\_インターフェイスのピンカテゴリの場合、WDMAud は pin がブリッジピンであるかどうかを認識し、それに相当するミキサーラインにピンが正しく変換されるようにする必要があります。 たとえば、S/PDIF ピン (pin カテゴリ KSNODETYPE\_SPDIF\_INTERFACE) は、次の図に示す4つのミキサー線の種類のいずれかに変換されます。 この平行移動は、ピンのデータ方向 (入力または出力) とブリッジピン (yes または no) の両方に依存します。これにより、4種類のミキサー線が生成されます (in + yes、in + no、out + yes、out + no)。 図に示されている4つのミキサー線の種類は、前の表のエントリの下位ペアを表しています。
 
-![ミキサー行へのコネクター ピンの翻訳を示す図](images/spdifpin.png)
+![s/pdif ピンとミキサーの線の平行移動を示す図](images/spdifpin.png)
 
-オーディオ デバイスの図の右側にある 2 つのストリームが S/PDIF 形式で、左側の 2 つのストリームが、wave 形式のことに注意してください。 オーディオ デバイスは、2 つのデジタル形式の間の変換を実行します。
+図のオーディオデバイスの右側にある2つのストリームが S/PDIF 形式であり、左側の2つのストリームが波形式であることに注意してください。 オーディオデバイスは、2つのデジタル形式の間の変換を実行します。
 
-SndVol32 アプリケーションは、ミキサー API のクライアントです。 API の変換、トポロジでは、ソースまたは宛先ミキサーの行が行のいずれか見つかった各ピン ミキサーは可能性があります SndVol32、ミキサー API の Mmsystem.h を定義するヘッダー ファイル ミキサー行コンポーネントの型のサブセットのみを認識するには表示されません。 SndVol32 の詳細については、次を参照してください。[システム トレイと SndVol32](systray-and-sndvol32.md)します。
+SndVol32 アプリケーションは、ミキサー API のクライアントです。 ミキサ API は、トポロジ内の各ピンを変換元または変換先のミキサーラインに変換しますが、SndVol32 には表示されないことがあります。これは、ヘッダーファイル Mmsystem がミキサー API に対して定義するミキサーラインコンポーネント型のサブセットのみを認識します。 SndVol32 の詳細については、「 [SysTray と SndVol32](systray-and-sndvol32.md)」を参照してください。
 
  
 

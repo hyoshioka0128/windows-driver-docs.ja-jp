@@ -1,42 +1,42 @@
 ---
 title: IRP_MJ_PNP
-description: DispatchPnP ルーチンで IRP_MJ_PNP 要求をサービスには、すべてのドライバーを準備する必要があります。
+description: すべてのドライバーは、DispatchPnP ルーチンで IRP_MJ_PNP 要求を処理するために準備する必要があります。
 ms.date: 08/12/2017
 ms.assetid: db838761-b838-44fd-bc77-c9d55d2c4a41
 keywords:
-- IRP_MJ_PNP Kernel-Mode Driver Architecture
+- IRP_MJ_PNP カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: eeaf4ba1c289f3fa4aaa84bc14f9f0f758a7c6b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50bb59535a4cd7726b8e490b910e22d621f4d47f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368482"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838601"
 ---
-# <a name="irpmjpnp"></a>IRP\_MJ\_PNP
+# <a name="irp_mj_pnp"></a>IRP\_MJ\_PNP
 
 
-すべてのドライバーは、サービスを準備する必要があります**IRP\_MJ\_PNP**で要求を[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンでは、すべてのドライバーが**IRP\_MJ\_PNP**要求を処理できるように準備する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-PnP マネージャー送信**IRP\_MJ\_PNP**列挙型、リソースが再分配、およびその他の時刻のプラグ アンド プレイ活動中に要求が、システムで発生します。 ドライバーも送信できる特定**IRP\_MJ\_PNP**マイナー関数コードによって、要求。
+PnP マネージャーは、列挙、リソースの再調整、およびシステムでプラグアンドプレイアクティビティが発生するその他のすべての時間に、 **IRP\_MJ\_pnp**要求を送信します。 ドライバーは、マイナー関数コードに応じて、特定の**IRP\_MJ\_PNP**要求を送信することもできます。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-値に依存**MinorFunction**現在 I/O スタック IRP の場所。 すべて**IRP\_MJ\_PNP**要求が要求された PnP アクションを識別するマイナー関数コードを指定します。
+は、IRP の現在の i/o スタック位置にある**Minorfunction**の値に依存します。 すべての**IRP\_MJ\_PNP**要求は、要求された PNP アクションを識別するマイナー関数コードを指定します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-値に依存**MinorFunction**現在 I/O スタック IRP の場所。
+は、IRP の現在の i/o スタック位置にある**Minorfunction**の値に依存します。
 
 <a name="operation"></a>操作
 ---------
 
-参照してください[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)の詳細については**IRP\_MJ\_PNP**要求。
+**Irp\_MJ\_PNP**要求の詳細については、「[プラグアンドプレイ Minor irp](plug-and-play-minor-irps.md) 」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -49,7 +49,7 @@ PnP マネージャー送信**IRP\_MJ\_PNP**列挙型、リソースが再分配
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +57,7 @@ PnP マネージャー送信**IRP\_MJ\_PNP**列挙型、リソースが再分配
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
  
 

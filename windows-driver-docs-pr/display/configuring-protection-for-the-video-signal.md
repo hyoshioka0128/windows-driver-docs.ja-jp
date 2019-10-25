@@ -4,17 +4,17 @@ description: ビデオ信号の保護の構成
 ms.assetid: 557fc95b-1cf5-4b6d-b256-fe2db29ec0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c86c7f7eee0adbd833fa30384e7e01516b723ecc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2775ba5c7876497edb6c5859c2b456b0ba63da2a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839793"
 ---
 # <a name="configuring-protection-for-the-video-signal"></a>ビデオ信号の保護の構成
 
 
-OPM 構成では、保護された出力に関連付けられている物理コネクタを経由するビデオ信号の保護を構成できます。 シグナル保護まで、ディスプレイのミニポート ドライバーの設定に[ **DxgkDdiOPMConfigureProtectedOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output)関数へのポインターを受け取る、 [ **DXGKMDT\_OPM\_構成\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_configure_parameters)構造体、 **guidSetting**メンバー設定、DXGKMDT\_OPM\_セット\_ACP\_AND\_CGMSA\_シグナリングの GUID と**abParameters**メンバーへのポインターに設定、 [ **DXGKMDT\_OPM\_設定\_ACP\_AND\_CGMSA\_シグナリング\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_set_acp_and_cgmsa_signaling_parameters)信号を保護する方法を指定する構造体。
+OPM 構成では、保護された出力に関連付けられている物理コネクタを通過するビデオ信号の保護を構成できます。 シグナル保護を設定するために、ディスプレイミニポートドライバーの[**DxgkDdiOPMConfigureProtectedOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output)関数は、 [**Dxgkmdt\_OPM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_configure_parameters)へのポインターを受信し\_**guidsetting**メンバーを使用して\_PARAMETERS 構造を構成します。DXGKMDT\_OPM\_SET\_ACP\_を設定し、\_CGMSA\_シグナリング GUID と**Abparameters**メンバーを[**DXGKMDT\_OPM\_set\_のポインターに設定します。および\_CGMSA\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_set_acp_and_cgmsa_signaling_parameters)シグナルを保護する方法を指定するシグナル\_パラメーター構造を示します。
 
  
 

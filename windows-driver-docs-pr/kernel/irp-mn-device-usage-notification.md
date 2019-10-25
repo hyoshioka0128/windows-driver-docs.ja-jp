@@ -1,41 +1,41 @@
 ---
 title: IRP_MN_DEVICE_USAGE_NOTIFICATION
-description: システムのコンポーネントは、デバイスが特別なファイルをサポートできるかどうかのデバイス ドライバーを確認するには、この IRP を送信します。
+description: システムコンポーネントは、この IRP を送信して、デバイスが特別なファイルをサポートできるかどうかをデバイスのドライバーに要求します。
 ms.date: 08/12/2017
 ms.assetid: d8287ba2-ac0a-4407-b587-a5aa5b3617a2
 keywords:
-- IRP_MN_DEVICE_USAGE_NOTIFICATION Kernel-Mode Driver Architecture
+- IRP_MN_DEVICE_USAGE_NOTIFICATION カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbcb83125b357cbce42742aeb78d66343d1f0df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0d0622b992e69fcf7fb5e112e49ed1e666125c82
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369909"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838590"
 ---
-# <a name="irpmndeviceusagenotification"></a>IRP\_MN\_デバイス\_使用状況\_通知
+# <a name="irp_mn_device_usage_notification"></a>IRP\_\_デバイス\_使用状況\_通知
 
 
-システム コンポーネント、デバイスがサポートできるかどうかのデバイス ドライバーを確認するには、この IRP の送信、*特殊なファイル*します。 特殊なファイルには、ページング ファイルには、ダンプ ファイル、休止状態ファイルが含まれます。 デバイスのすべてのドライバーが IRP を成功した場合は、特殊なファイルが作成されます。 システムには、この IRP が特別なファイルをデバイスから削除されたことをドライバーに通知するためにも送信します。
+システムコンポーネントは、この IRP を送信して、デバイスが*特別なファイル*をサポートできるかどうかをデバイスのドライバーに要求します。 特別なファイルとしては、ページングファイル、ダンプファイル、休止状態ファイルなどがあります。 デバイスのすべてのドライバーが IRP に成功した場合、システムは特殊なファイルを作成します。 また、この IRP は、デバイスから特別なファイルが削除されたことをドライバーに通知するためにも送信します。
 
-関数のドライバーは、自分のデバイスは、ページング ファイル、ダンプ ファイル、または休止状態ファイルに含めることができる場合、この IRP を処理する必要があります。 フィルター ドライバーは、フィルタ リングされている関数のドライバーが IRP を処理する場合、この IRP を処理する必要があります。 バス ドライバーには、この IRP のアダプターまたはコント ローラー (バス FDO) と、その子デバイス (子 Pdo) を処理する必要があります。
+関数ドライバーは、デバイスにページングファイル、ダンプファイル、または休止状態ファイルを含めることができる場合に、この IRP を処理する必要があります。 フィルタードライバーがフィルター処理を行う関数ドライバーが IRP を処理する場合、フィルタードライバーはこの IRP を処理する必要があります。 バスドライバーは、アダプターまたはコントローラー (bus FDO) とその子デバイス (子 PDOs) に対して、この IRP を処理する必要があります。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-システムは、作成またはページング ファイル、ダンプ ファイル、または休止状態ファイルを削除すると、この IRP を送信します。 デバイスが従来の親子リレーションシップの外側まで広がる電源管理の関係にある場合、ドライバーは別のデバイス スタックにデバイスの使用状況情報を伝達するには、この IRP を送信できます。 詳細については、の説明を参照して、 **PowerRelations**で要求[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](irp-mn-query-device-relations.md).
+システムは、ページングファイル、ダンプファイル、または休止状態ファイルを作成または削除するときに、この IRP を送信します。 デバイスの電源管理の関係が従来の親子関係の外部にある場合、ドライバーはこの IRP を送信して、デバイスの使用状況情報を別のデバイススタックに伝達することができます。 詳細については、IRP\_の**Powerrelations**要求の説明を参照してください[ **\_クエリ\_デバイス\_関係**](irp-mn-query-device-relations.md)です。
 
-システムのコンポーネントとドライバーは、この IRP を送信 IRQL パッシブで\_任意のスレッド コンテキストでします。
+システムコンポーネントとドライバーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.UsageNotification.InPath**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造は、ブール値。 このパラメーターが場合**TRUE**ページング、クラッシュ ダンプ、システムを作成または休止状態が、デバイスのファイルします。 ときに**InPath**は**FALSE**、このようなファイルがデバイスから削除されました。
+[**IO\_STACK\_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)構造体の**UsageNotification**メンバーはブール値です。 このパラメーターが**TRUE**の場合、システムはデバイス上にページング、クラッシュダンプ、または休止状態ファイルを作成します。 **Inpath**が**FALSE**の場合、このようなファイルはデバイスから削除されています。
 
-**Parameters.UsageNotification.Type**はファイルの種類を示す列挙型。 このパラメーターは、次の値のいずれか。**DeviceUsageTypePaging**、 **DeviceUsageTypeDumpFile**、または**DeviceUsageTypeHibernation**します。
+**UsageNotification**は、ファイルの種類を示す列挙型です。 このパラメーターには、 **DeviceDeviceUsageTypeDumpFile Typepaging**、、または**device typeハイバネーション**のいずれかの値が含まれます。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -45,102 +45,102 @@ ms.locfileid: "67369909"
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバー セット**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態にします。
+ドライバーは **、Irp&gt;iostatus. status**を STATUS\_SUCCESS または適切なエラー状態に設定します。
 
-ドライバーは変更しないでください、 **Irp -&gt;IoStatus.Information**フィールド; IRP を送信するコンポーネントによって設定された、0 のままです。
+ドライバーは、 **Irp&gt;IoStatus. 情報**フィールドを変更しません。IRP を送信するコンポーネントによって設定された0のままです。
 
 <a name="operation"></a>操作
 ---------
 
-ドライバーは、デバイス スタック IRP の方法では、stack のバックアップの IRP の方法では、この IRP を処理します。
+ドライバーは、IRP がデバイススタックをダウンする前にこの IRP を処理し、IRP の方法でスタックをバックアップします。
 
-ドライバーは、次のようにプロシージャを使用したこの IRP に応答します。
+ドライバーは、次のようなプロシージャを使用して、この IRP に応答します。
 
--   場合**Parameters.UsageNotification.InPath**は**TRUE**デバイスが、特別なファイルをサポートするかどうかを確認します。
+-   **UsageNotification**が**TRUE**の場合は、デバイスが特別なファイルをサポートしているかどうかを確認します。
 
-    特定のドライバーをテストする必要があります**Parameters.UsageNotification.Type**(s) ドライバーをサポートできます。 追加の通知の種類は、今後追加される可能性があります。
+    ドライバーは、ドライバーがサポートできる特定の**UsageNotification**(s) をテストする必要があります。 その他の通知の種類は、今後追加される可能性があります。
 
-    各通知の種類をサポートするために必要なアクションについて説明した次の詳細を参照してください。
+    各通知の種類をサポートするために必要なアクションについては、以下の詳細情報を参照してください。
 
-    場合**Parameters.UsageNotification.InPath**は**TRUE**と、ドライバーは、デバイス上の特別なファイルをサポートできない、ドライバーは IRP がエラー状態を完了する必要があります。
+    **UsageNotification**が**TRUE**で、ドライバーがデバイス上の特殊ファイルをサポートできない場合、ドライバーはエラー状態の IRP を完了する必要があります。
 
--   場合は、デバイスには、特殊なファイルがサポートされています。
+-   デバイスが特別なファイルをサポートしている場合は、次のようになります。
 
-    1.  デバイスが含まれているようになりましたか、特殊なファイルに含まれないことを反映するように適切なアクションを実行します。
+    1.  適切な操作を行って、デバイスに特別なファイルが含まれているか、それが含まれていないことを反映します。
 
-        通常、ドライバーをインクリメントまたはカウンターをデクリメントします。 たとえば場合、 **Parameters.UsageNotification.Type**は**DeviceUsageTypePaging**と**Parameters.UsageNotification.InPath**は**TRUE**、デバイス上のページング ファイルの数のカウントをインクリメントします。 特定ドライバーのディスパッチ ルーチンは、カウンターを確認する必要があります。
+        ドライバーは、通常、カウンターを増減します。 たとえば、 **UsageNotification**が**Device Typepaging**および**UsageNotification**である場合は、デバイス上のページングファイルの数をインクリメントしています。この値は**TRUE**です。 特定のドライバーディスパッチルーチンでは、カウンターを確認する必要があります。
 
-        特殊なファイルを保持するデバイスを無効にしない必要があります。 ドライバーを呼び出すことができます[ **IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)、PnP マネージャーに再びクエリをデバイスの PnP デバイスの状態情報を要求します。 結果の応答で[ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md) IRP、ドライバーは PNPを設定する必要があります\_デバイス\_いない\_DISABLEABLE フラグ。
+        特別なファイルを含むデバイスは無効にしないでください。 ドライバーは[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)を呼び出すことができ、pnp マネージャーはデバイスの pnp デバイスの状態情報を再照会するように要求します。 生成された[**IRP\_\_クエリ\_pnp\_デバイス\_状態**](irp-mn-query-pnp-device-state.md)IRP に応答して、ドライバーは PNP\_デバイス\_\_disableable フラグを設定する必要があります。
 
-        場合**InPath**は**FALSE**、ドライバーの設定、DO\_POWER\_PAGABLE デバイスの場合は、そのデバイス オブジェクトのビットします。
+        **Inpath**が**FALSE**の場合、ドライバーはデバイスのデバイスオブジェクトに [DO\_POWER\_pagable] ビットを設定します。
 
-    2.  関連するデバイス情報を必要とするデバイスの使用状況情報を伝達します。
+    2.  デバイスの使用状況情報を、情報を必要とする関連デバイスに伝達します。
 
-        その処理の一環として、 **IRP\_MN\_デバイス\_使用状況\_通知**IRP、ドライバーが 1 つまたは複数の他のデバイス スタックに、情報を渡す必要あります。 このようなドライバーが新たに作成**IRP\_MN\_デバイス\_使用状況\_通知**IRP (または Irp) スタックの適切なデバイス (またはスタック) に送信します。 ドライバーは、ドライバーが受け取ったデバイス使用状況の IRP の処理を完了する前に送信する任意のデバイスの使用状況の通知 IRP(s) の完了を待つ必要があります。
+        **Irp\_\_デバイス\_使用状況\_通知**irp の処理の一環として、1つまたは複数の他のデバイススタックに情報を渡すためにドライバーが必要になる場合があります。 このようなドライバーは、NOTIFICATION irp (または Irp)\_通知 irp (または Irp) の\_使用して、新しい**IRP\_\_** 作成し、適切なデバイススタック (またはスタック) に送信します。 ドライバーは、受信したデバイス使用状況の IRP の処理がドライバーによって完了される前に、送信されたデバイス使用状況通知 IRP の完了を待機する必要があります。
 
-        関連するデバイスを識別する方法は、デバイスとドライバーに固有です。 通常、ドライバーは IRP をファイルの I/O 要求を送信するには、他のドライバーに送信します。 バス ドライバーでは、子デバイスは、この要求を処理する場合は、デバイスの親のデバイス スタックを IRP の使用状況の通知を送信する必要があります。
+        関連するデバイスを識別する方法は、デバイスとドライバーによって異なります。 通常、ドライバーは、そのファイルに対して i/o 要求を送信する他のドライバーに IRP を送信します。 バスドライバーが子デバイスに対してこの要求を処理するときは、デバイスの親のデバイススタックに使用状況通知 IRP を送信する必要があります。
 
-        たとえば、ftdisk 5 のディスクのストライプ セットの実行中は、伝達各これら 5 つのディスクにページング通知ページング ファイルの操作を処理するために必要なこれらのデバイスの各できるためします。
+        たとえば、ftdisk で5台のディスクストライプセットが実行されている場合、ページング通知はこれらの5つの各ディスクに反映されます。これは、これらの各デバイスがページングファイル操作を処理する必要があるためです。
 
-    3.  関数またはフィルター ドライバー、設定、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
+    3.  関数またはフィルタードライバーで、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定します。
 
-    4.  関数またはフィルター ドライバーでは、次のように設定します**Irp -&gt;IoStatus.Status**ステータス\_成功すると、次の設定の場所スタックが作成され、で [次へ] の下位のドライバーに IRP を渡す[  **。保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 IRP を実行しないでください。
+    4.  関数またはフィルタードライバーで、 **irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定し、次のスタックの場所を設定して、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して irp を次の下位のドライバーに渡します。 IRP を完了しないでください。
 
-        子 PDO の IRP を処理している、バス ドライバー: 設定**Irp -&gt;IoStatus.Status** IRP を完了して ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))。
+        子 PDO の IRP を処理しているバスドライバーでは、 **irp-&gt;iostatus. Status**を設定して、Irp ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-    5.  IRP の完了処理。
+    5.  IRP 完了処理中:
 
-        場合、 *IoCompletion*ルーチンが検出されると、下位のドライバーが IRP を失敗した関数またはフィルター ドライバーが IRP への応答で、実行されたすべての操作を元に戻すし、エラーを伝達する必要があります。 関数またはフィルター ドライバーには、その他の任意のデバイス スタックを使用状況情報が反映される、ドライバーはエラーを通知するためにこれらのスタックに別使用率の IRP を送信する必要があります。
+        *Iocompletion*ルーチンが、下位のドライバーが irp に障害を検出したことを検出した場合、関数またはフィルタードライバーは、irp に応答して実行されたすべての操作を元に戻し、エラーを伝達する必要があります。 関数またはフィルタードライバーが使用状況の情報を他のデバイススタックに伝達した場合、ドライバーは、そのスタックに別の使用状況の IRP を送信して、エラーが発生したことを通知する必要があります。
 
-        状態が状態の場合\_成功と**InPath**は**TRUE**、オフにします\_POWER\_ページング可能なビット。
+        Status が STATUS\_SUCCESS および**Inpath**が**TRUE**の場合は、[DO\_パワー\_pagable] ビットをオフにします。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**ページング、クラッシュ ダンプ、およびデバイス上に休止状態ファイルをサポートしています。**
+**デバイスでのページング、クラッシュダンプ、および休止状態ファイルのサポート**
 
-ドライバーの特殊なファイルの数が 0 以外の場合、ドライバーは、そのデバイス (または子孫のデバイス) 上の特別なファイルの存在をサポートする必要があります。
+ドライバーの特別なファイルカウントが0以外の場合、ドライバーはデバイス (または派生デバイス) に特殊なファイルが存在することをサポートする必要があります。
 
-**DeviceUsageTypePaging**ドライバー、デバイス上で作成されたファイルは、次を実行する必要があります。
+デバイス上に作成された**device使用 Typepaging**ファイルの場合、ドライバーは次の操作を行う必要があります。
 
--   用のメモリ内のコードのロックの[ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 [ *DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、および[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+-   [*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)の各ルーチンのメモリ内のコードをロックします。
 
--   オフにします\_POWER\_PAGABLE (デバイス スタックを IRP の方向) にデバイスの場合は、そのデバイス オブジェクトのビットします。
+-   デバイスのデバイスオブジェクト (IRP がデバイススタックの上にある状態) で、[DO\_POWER\_PAGABLE] ビットをオフにします。
 
--   失敗**IRP\_MN\_クエリ\_停止\_デバイス**と**IRP\_MN\_クエリ\_削除\_デバイス**デバイスの要求。
+-   **\_クエリ\_** 失敗した場合は、デバイスと**IRP\_** \_停止し、デバイスに対する\_デバイス要求を削除\_クエリを実行\_ます。
 
-**DeviceUsageTypeDumpFile**ドライバー、そのデバイス上のファイルは、次を実行する必要があります。
+デバイス上の**DeviceUsageTypeDumpFile**ファイルの場合、ドライバーは次の操作を行う必要があります。
 
--   用のメモリ内のコードのロックの*DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*、および*DispatchPower*ルーチン。
+-   *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*、 *DispatchPower*の各ルーチンのメモリ内のコードをロックします。
 
--   D0 状態から、デバイスはなりません。
+-   デバイスを D0 状態から除外しないでください。
 
-    アイドル状態の検出については、デバイスを登録しないでください ([**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection))。 デバイスが既に登録されている場合、登録をキャンセルします。 ドライバーは、デバイスのアイドル状態の検出を実行する場合は、このような検出を中断します。
+    アイドル状態の検出用にデバイスを登録しないでください ([**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection))。 デバイスが既に登録されている場合は、登録を取り消します。 ドライバーがデバイスに対して独自のアイドル検出を実行する場合は、そのような検出を中断します。
 
--   オフにします\_POWER\_PAGABLE (デバイス スタックを IRP の方向) にデバイスの場合は、そのデバイス オブジェクトのビットします。
+-   デバイスのデバイスオブジェクト (IRP がデバイススタックの上にある状態) で、[DO\_POWER\_PAGABLE] ビットをオフにします。
 
--   失敗[ **IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)と[ **IRP\_MN\_クエリ\_削除\_デバイス**](irp-mn-query-remove-device.md)デバイスの要求。
+-   [ **\_クエリ\_** ](irp-mn-query-stop-device.md)失敗した場合は、デバイスと[**IRP\_** ](irp-mn-query-remove-device.md)\_停止し、デバイスに対する\_デバイス要求を削除\_クエリを実行\_ます。
 
-**DeviceUsageTypeHibernation**ドライバー、そのデバイス上のファイルは、次を実行する必要があります。
+デバイス上の**device使用 Typeハイバネーション**ファイルの場合、ドライバーは次の操作を行う必要があります。
 
--   用のメモリ内のコードのロックの*DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*、および*DispatchPower*ルーチン。
+-   *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*、 *DispatchPower*の各ルーチンのメモリ内のコードをロックします。
 
--   ドライバーの受信、S4 システム電源 IRP を示すシステムが休止状態にしようとしているときに、デバイスが D0 の状態が確認します。
+-   システムが休止状態になることを示す S4 システム電源 IRP をドライバーが受信したときに、デバイスが D0 状態になっていることを確認します。
 
--   休止状態 D3 セット電力への応答でデバイスを電源 IRP S4 の一部であるアクション。 参照してください[システム電源操作](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-actions)詳細についてはします。
+-   S4 の休止状態アクションの一部である D3 set-電源 IRP に応答して、デバイスの電源を切ることは避けてください。 詳細については、「[システム電源アクション](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-actions)」を参照してください。
 
-    D3 セット power IRP を受信すると、デバイスの電源を切ると電源マネージャーに通知を除く D3 状態で、デバイスを配置するために必要なすべてのタスクを実行します ([**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate))。 デバイスは、休止状態ファイルが書き込まれるまでに電源を保持する必要があります。
+    このような D3 パワー IRP の受信時に、デバイスの電源をオフにして、電源マネージャーに通知する ([**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)) ことを除いて、デバイスを D3 状態にするために必要なすべてのタスクを実行します。 デバイスは、休止状態ファイルが書き込まれるまで電源を保持する必要があります。
 
--   オフにします\_POWER\_PAGABLE (デバイス スタックを IRP の方向) にデバイスの場合は、そのデバイス オブジェクトのビットします。
+-   デバイスのデバイスオブジェクト (IRP がデバイススタックの上にある状態) で、[DO\_POWER\_PAGABLE] ビットをオフにします。
 
--   失敗[ **IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)と[ **IRP\_MN\_クエリ\_削除\_デバイス**](irp-mn-query-remove-device.md)デバイスの要求。
+-   [ **\_クエリ\_** ](irp-mn-query-stop-device.md)失敗した場合は、デバイスと[**IRP\_** ](irp-mn-query-remove-device.md)\_停止し、デバイスに対する\_デバイス要求を削除\_クエリを実行\_ます。
 
-参照してください[電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)デバイスの電源状態の詳細については、Irp の電源をドライバーで電源管理をサポートします。
+デバイスの電源状態、電源 Irp、およびドライバーでの電源管理のサポートの詳細については、「[電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-ドライバーを送信する、 **IRP\_MN\_デバイス\_使用状況\_情報**IRP、のみを別のデバイス スタックにデバイスの使用状況情報を伝達することができます。 ドライバーは、デバイスの使用状況情報の最初のソースではありません。
+ドライバーは、 **irp\_\_デバイス\_使用状況\_情報**irp に送信できますが、デバイス使用状況情報を別のデバイススタックに伝達するだけです。 ドライバーは、デバイスの使用状況情報の最初のソースではありません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -151,7 +151,7 @@ ms.locfileid: "67369909"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -159,35 +159,35 @@ ms.locfileid: "67369909"
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IoAdjustPagingPathCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioadjustpagingpathcount)
+[**IoAdjustPagingPathCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioadjustpagingpathcount)
 
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
 
-[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)
+[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)
 
-[**IRP\_MN\_クエリ\_デバイス\_リレーション**](irp-mn-query-device-relations.md)
+[**IRP\_\_クエリ\_デバイス\_関係**](irp-mn-query-device-relations.md)
 
-[**IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md)
+[**IRP\_\_クエリ\_PNP\_デバイス\_状態**](irp-mn-query-pnp-device-state.md)
 
-[**IRP\_MN\_クエリ\_削除\_デバイス**](irp-mn-query-remove-device.md)
+[**IRP\_\_クエリ\_\_デバイスの削除**](irp-mn-query-remove-device.md)
 
-[**IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)
+[**IRP\_\_クエリ\_\_デバイスの停止**](irp-mn-query-stop-device.md)
 
-[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)
+[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)
 
-[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)
+[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)
 
  
 

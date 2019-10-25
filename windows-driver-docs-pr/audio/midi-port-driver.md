@@ -3,18 +3,18 @@ title: MIDI ポート ドライバー
 description: MIDI ポート ドライバー
 ms.assetid: 4b403569-75c8-4cf4-bda1-efa9e004b529
 keywords:
-- MIDI ポート ドライバー WDK オーディオ
-- PortCls WDK のオーディオ、ポートのドライバー
-- オーディオのミニポート ドライバー WDK、ポート ドライバー
-- ミニポート ドライバー WDK のオーディオ、ポートのドライバー
+- MIDI ポートドライバー WDK オーディオ
+- PortCls WDK オーディオ、ポートドライバー
+- オーディオミニポートドライバー WDK、ポートドライバー
+- ミニポートドライバー WDK オーディオ、ポートドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0ffa0ef538ca8e018427cfc2dd9125dc934cb6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b804b06ef394e2d78bcb28c80b633c2fb78dbde
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830363"
 ---
 # <a name="midi-port-driver"></a>MIDI ポート ドライバー
 
@@ -22,21 +22,21 @@ ms.locfileid: "67363244"
 ## <span id="midi_port_driver"></span><span id="MIDI_PORT_DRIVER"></span>
 
 
-MIDI ポート ドライバーでは、MIDI シンセサイザーまたはキャプチャ デバイスを管理します。 アダプターのドライバーは、対応する[MIDI ミニポート ドライバー](midi-miniport-driver.md) MIDI フィルターを形成する、MIDI ポート ドライバー オブジェクトをバインドする (を参照してください[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)) キャプチャまたは MIDI をレンダリングすることができますストリーム。
+Midi ポートドライバーは、MIDI シンセサイザーまたはキャプチャデバイスを管理します。 アダプタードライバーは、midi ポートドライバーオブジェクトにバインドして midi フィルター (midi フィルター[と DirectMusic フィルター](midi-and-directmusic-filters.md)を参照) を形成し、midi ストリームをキャプチャまたはレンダリングできる、対応する[midi ミニポートドライバー](midi-miniport-driver.md)を提供します。
 
-MIDI ポート ドライバーを公開、 [IPortMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportmidi)ミニポート ドライバーへのインターフェイス。 **IPortMidi**基底インターフェイスでメソッドを継承[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)します。 **IPortMidi**次の追加のメソッドを提供します。
+MIDI ポートドライバーは、ミニポートドライバーに[Iportmidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi)インターフェイスを公開します。 **Iportmidi**は、基本インターフェイス[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)のメソッドを継承します。 **Iportmidi**には、次の追加のメソッドが用意されています。
 
-[**IPortMidi::Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportmidi-notify)
+[**IPortMidi:: Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportmidi-notify)
 
-MIDI ストリーム内の新しい位置に、MIDI シンセサイザーまたはキャプチャ デバイスに高度なポート ドライバーに通知します。
-[**IPortMidi::RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportmidi-registerservicegroup)
+MIDI シンセサイザーまたはキャプチャデバイスが MIDI ストリーム内の新しい位置に進んでいることをポートドライバーに通知します。
+[**IPortMidi:: RegisterServiceGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportmidi-registerservicegroup)
 
-ポート ドライバーとサービスのグループ オブジェクトを登録します。
-サービス グループは、ミニポート ドライバーを呼び出すときに呼び出されるは 1 つまたは複数のサービスのルーチンの一覧を含む**通知**; 詳細についてを参照してください[サービスがシンク オブジェクトとサービスのグループ オブジェクト](service-sink-and-service-group-objects.md)します。
+サービスグループオブジェクトをポートドライバーに登録します。
+サービスグループには、ミニポートドライバーが**通知**を呼び出すときに呼び出される1つ以上のサービスルーチンの一覧が含まれています。詳細については、「[サービスシンクおよびサービスグループオブジェクト](service-sink-and-service-group-objects.md)」を参照してください。
 
-MIDI ポートおよびミニポート ドライバー オブジェクトが、それぞれを互い通信**IPortMidi**と[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)インターフェイス。 ミニポート ドライバーは、ポート ドライバーの**IPortMidi**インターフェイスのハードウェアの割り込みポート ドライバーに通知します。 さらに、ポート ドライバーと通信を介して、ミニポート ドライバーのストリーム オブジェクト、 [IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)インターフェイス。
+MIDI ポートとミニポートドライバーオブジェクトは、それぞれの**Iportmidi**および[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)インターフェイスを介して相互に通信します。 ミニポートドライバーは、ポートドライバーの**Iportmidi**インターフェイスを使用して、ハードウェア割り込みのポートドライバーに通知します。 さらに、ポートドライバーは、 [IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidistream)インターフェイスを介してミニポートドライバーのストリームオブジェクトと通信します。
 
-Windows XP 以降では、 **IPortMidi**と[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)インターフェイスはいずれも 1 つの内部ドライバー モジュールに実装します。 この統合は、これら 2 つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドは、両方のインターフェイスに対して定義されます。 Windows の以前のバージョンが表示されないの動作の変更用に記述されたアプリケーション、 **IPortMidi**と**IPortDMus**インターフェイス MIDI と Dmu ポート ドライバーの統合に起因します。
+Windows XP 以降では、 **Iportmidi**インターフェイスと[Iportdmus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)インターフェイスの両方が1つの内部ドライバーモジュールに実装されています。 この統合は、この2つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドが両方のインターフェイスに対して定義されているとします。 以前のバージョンの Windows 用に作成されたアプリケーションでは、MIDI および DMus ポートドライバーを統合した結果として得られる**Iportmidi**および**Iportdmus**インターフェイスの動作が変更されていないことを確認できます。
 
  
 

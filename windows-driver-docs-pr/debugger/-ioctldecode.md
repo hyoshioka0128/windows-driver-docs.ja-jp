@@ -1,9 +1,9 @@
 ---
 title: ioctldecode
-description: Ioctldecode 拡張機能には、特定の IOCTL コードで指定されたデバイスの種類、アクセスのために必要な関数コードおよび転送の種類が表示されます。
+description: Ioctldecode 拡張機能は、指定された IOCTL コードによって指定されたデバイスの種類、必要なアクセス、関数コード、および転送の種類を表示します。
 ms.assetid: 50B12034-E5C7-43F2-A31E-AAC824A05D46
 keywords:
-- Windows デバッグ ioctldecode
+- ioctldecode Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a26bead65df45b350293a05273b3fbb4e33b28
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e065c3f4576fe301895a1a950c601c9219db904
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363166"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826724"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)します。
+**! Ioctldecode**拡張機能では、指定された IOCTL コードによって指定された*デバイスの種類*、*必要なアクセス*、*関数コード*、および*転送の種類*が表示されます。 IOCTL 制御コードの詳細については、「 [I/o 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)」を参照してください。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
 ```
 
-## <a name="span-idddkioresdesdbgspanspan-idddkioresdesdbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>パラメーター
+## <a name="span-idddk__ioresdes_dbgspanspan-idddk__ioresdes_dbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>パラメータ
 
 
-<span id="_______IoctlCode______"></span><span id="_______ioctlcode______"></span><span id="_______IOCTLCODE______"></span> *IoctlCode*   
-16 進数の IOCTL コードを指定します。 [ **! Irp** ](-irp.md)コマンドの出力で IOCTL コードを表示します。
+<span id="_______IoctlCode______"></span><span id="_______ioctlcode______"></span><span id="_______IOCTLCODE______"></span>*IoctlCode*   
+16進の IOCTL コードを指定します。 [ **! Irp**](-irp.md)コマンドは、出力に IOCTL コードを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -42,18 +42,18 @@ ms.locfileid: "67363166"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-IOCTL で情報を表示するには、目的の IRP 最初見つけます。 使用することができます、 [ **! irpfind** ](-irpfind.md)関心のある irp を検索するコマンド。
+IOCTL に関する情報を確認するには、まず、目的の IRP を見つけます。 [ **! Irpfind**](-irpfind.md)コマンドを使用して、目的の irp を見つけることができます。
 
-使用して、 [ **! irp** ](-irp.md) irp に関する情報を表示するコマンド。
+Irp に関する情報を表示するには、 [ **! irp**](-irp.md)コマンドを使用します。
 
 ```dbgcmd
 0: kd> !irp ffffd581a6c6cd30
@@ -86,7 +86,7 @@ No Mdl: No System Buffer: Thread 00000000:  Irp stack trace.
                                                 Args: ffffd581a6c61a50 00000000 0x220003 00000000
 ```
 
-ここで表示されます。 3 番目の引数*0x220003*、IOCTL コードに示します。 ここでは、IOCTL に関する情報を表示する IOCTL コードを使用して[ **IOCTL\_内部\_USB\_送信\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)します。
+3番目の引数 (この場合は*0x220003*) が IOCTL コードです。 Ioctl コードを使用して、IOCTL に関する情報を表示します。この例では、ioctl [ **\_内部\_USB\_\_URB を送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)します。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x220003
@@ -99,7 +99,7 @@ Access         : FILE_ANY_ACCESS
 Function       : 0x0
 ```
 
-つまり使用できない IOCTL コードを指定する場合は、このタイプの出力が表示されます。
+使用できない IOCTL コードを指定すると、この種類の出力が表示されます。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x1280ce
@@ -112,13 +112,13 @@ Access         : FILE_WRITE_ACCESS
 Function       : 0x33
 ```
 
-IOCTL が識別されないが、IOCTL フィールドに関する情報が表示されます。
+IOCTL は識別されませんが、IOCTL フィールドに関する情報が表示されます。
 
-パブリックに定義された Ioctl のサブセットのみがで識別できることに注意してください、 **! ioctldecode**コマンド。
+**! Ioctldecode**コマンドで指定できるのは、パブリックに定義された ioctl のサブセットのみであることに注意してください。
 
-Ioctl の詳細については、次を参照してください。 [I/O 制御コードの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)します。
+Ioctl の詳細については、「 [I/o 制御コードの概要」を](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)参照してください。
 
-Irp と Ioctl の概要についてを参照してください*Windows Internals* E. のある Mark Russinovich、David A. Solomon Alex Ionescu しています。
+Irp と Ioctl に関する一般的な情報については、「Russinovich、David A ソロモン、および Alex Ionescu」を参照*してください*。
 
  
 

@@ -3,33 +3,33 @@ title: シェーダー コードの処理
 description: シェーダー コードの処理
 ms.assetid: c858766c-b414-4971-b4d9-23ec94aca8ea
 keywords:
-- ユーザー モード ドライバー WDK Windows Vista では、シェーダー コードの表示します。
-- シェーダー コードの WDK の表示
-- ピクセル シェーダー コードの WDK の表示
-- 頂点シェーダー コードの WDK の表示
-- 頂点宣言 WDK を表示します。
-- トークンの WDK の表示
-- 最後のトークンの WDK の表示
-- WDK の宣言を表示します。
+- ユーザーモード表示ドライバー WDK Windows Vista、シェーダーコード
+- シェーダーコード WDK ディスプレイ
+- ピクセルシェーダーコードの WDK ディスプレイ
+- 頂点シェーダーコードの WDK ディスプレイ
+- 頂点宣言の WDK ディスプレイ
+- トークンの WDK 表示
+- トークンの終了 WDK 表示
+- WDK 表示の宣言
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a80ce97f20035781860b4b62d82958a672a0a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3b18df81c9763f1a3ec21a78f4d03cea60276435
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363713"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829685"
 ---
 # <a name="processing-shader-codes"></a>シェーダー コードの処理
 
 
-ユーザー モードでは、プログラムのシェーダー アセンブラーにドライバーは頂点の宣言、および各個々 のピクセルと頂点シェーダーのコード内でトークンを表示します。
+ユーザーモードの表示ドライバーは、頂点宣言と、各ピクセルと頂点シェーダーコード内のトークンを使用して、シェーダーアセンブラーをプログラミングします。
 
-マイクロソフトの Direct3D ランタイムが呼び出す、ドライバーのときに、ユーザー モードのディスプレイ ドライバーは頂点とピクセル シェーダーのコードを受信[ **CreateVertexShaderFunc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createvertexshaderfunc)と[ **CreatePixelShader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createpixelshader)関数、それぞれします。 ランタイムが呼び出す、ドライバーの場合、ユーザー モードのディスプレイ ドライバーが頂点宣言を受け取る[ **CreateVertexShaderDecl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createvertexshaderdecl)関数。 頂点宣言の配列から成る[ **D3DDDIVERTEXELEMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddivertexelement)構造体。 ユーザー モードのディスプレイ ドライバーは、シェーダー コードと頂点シェーダーの宣言をハードウェアに固有の書式に変換し、シェーダー コードおよび宣言シェーダーと宣言のハンドルに関連付けます。 ランタイムの呼び出しで作成されたハンドルを使用して、 [ **SetVertexShaderDecl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setvertexshaderdecl)、 [ **SetVertexShaderFunc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setvertexshaderfunc)、および[**SetPixelShader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setpixelshader)後続のすべての描画操作で使用できるように、宣言と頂点とピクセル シェーダー頂点シェーダーを設定する関数。
+Microsoft Direct3D ランタイムがドライバーの[**CreateVertexShaderFunc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createvertexshaderfunc)関数と[**CreatePixelShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createpixelshader)関数を呼び出すと、ユーザーモードの表示ドライバーは、頂点とピクセルシェーダーコードを受け取ります。 ユーザーモードの表示ドライバーは、ランタイムがドライバーの[**CreateVertexShaderDecl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createvertexshaderdecl)関数を呼び出すと、頂点宣言を受け取ります。 頂点宣言は、 [**D3DDDIVERTEXELEMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddivertexelement)構造体の配列で構成されます。 ユーザーモードの表示ドライバーは、シェーダーコードと頂点シェーダーの宣言をハードウェア固有の形式に変換し、シェーダーのコードと宣言をシェーダーハンドルおよび宣言ハンドルに関連付けます。 ランタイムは、 [**SetVertexShaderDecl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setvertexshaderdecl)、 [**SetVertexShaderFunc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setvertexshaderfunc)、 [**SetPixelShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setpixelshader)の各関数の呼び出しで作成されたハンドルを使用して、後続のすべての描画を行うために頂点シェーダーの宣言と頂点とピクセルシェーダーを設定します。操作はこれらを使用します。
 
-個々 のシェーダー コードと各シェーダー コードを構成するトークン形式の詳細については、次を参照してください。 [Direct3D のシェーダー コード](https://docs.microsoft.com/windows-hardware/drivers/display/direct3d-shader-codes)します。
+個々のシェーダーコードの形式と各シェーダーコードを構成するトークンの詳細については、「 [Direct3D シェーダー](https://docs.microsoft.com/windows-hardware/drivers/display/direct3d-shader-codes)コード」を参照してください。
 
-**注**  でシェーダー コードとそれぞれの宣言が終了アプリケーションでは、頂点シェーダー、ピクセル シェーダーおよび頂点宣言を作成するとき、[トークンの終了](https://docs.microsoft.com/windows-hardware/drivers/display/end-token)します。 終了トークンを使用したときに、Direct3D ランタイムがさらに、頂点を渡すし、ピクセル シェーダーの作成要求をユーザー モードには、要求に付属しているドライバー、頂点とピクセル シェーダーのコードを表示を終了します。 ただし、ランタイムは、作成要求を頂点宣言に渡す、ときに、要求に付随する頂点宣言で終わらない終了トークンです。
+アプリケーションで頂点シェーダー、ピクセルシェーダー、および頂点宣言を作成するときに、各のシェーダーコードと宣言が[終了トークン](https://docs.microsoft.com/windows-hardware/drivers/display/end-token)で終了する   に**注意**してください。 さらに、Direct3D ランタイムが頂点シェーダー作成要求をユーザーモードのディスプレイドライバーに渡し、要求に付随する頂点シェーダーとピクセルシェーダーのコードは終了トークンで終了します。 ただし、ランタイムが頂点宣言の作成要求を渡すとき、要求に付随する頂点宣言は終了トークンで終了しません。
 
  
 

@@ -3,18 +3,18 @@ title: DPC ルーチンの記述
 description: DPC ルーチンの記述
 ms.assetid: a0b93b71-7ee3-4626-b0b8-5dd6e19fba0d
 keywords:
-- 遅延プロシージャ呼び出しの WDK カーネル
+- 遅延プロシージャ呼び出し WDK カーネル
 - Dpc WDK カーネル
 - DpcForIsr
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6608a865f911452a7ae83301a2f10cdb4eba97
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cef336b8f7c71520e31ed801186dca6bd5df5515
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374109"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835566"
 ---
 # <a name="writing-dpc-routines"></a>DPC ルーチンの記述
 
@@ -22,45 +22,45 @@ ms.locfileid: "67374109"
 
 
 
-主な責務[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)と[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンは次のデバイスの I/O 操作があることが確認されますすぐに開始され、現在の IRP の完了します。
+[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)と[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンの主な役割は、次のデバイス i/o 操作がすぐに開始され、現在の IRP を完了することを保証することです。
 
-いずれかによって実行される追加の作業*DpcForIsr*または*CustomDpc*ルーチンは、ドライバーの設計と、デバイスの性質によって異なります。 たとえば、 *DpcForIsr*または*CustomDpc*ルーチンは行うことも、次のいずれか。
+*DpcForIsr*または*customdpc*ルーチンによって実行されるその他の作業は、ドライバーの設計とデバイスの性質によって異なります。 たとえば、 *DpcForIsr*または*customdpc*ルーチンは、次のいずれかを実行することもできます。
 
 -   タイムアウトまたは失敗した操作を再試行してください。
 
--   呼び出す[ **IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)を設定するレポート デバイス I/O エラー、および呼び出しのエラー ログ パケット[ **IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)します。
+-   [**Ioallocateerrorlogentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateerrorlogentry)を呼び出し、デバイス i/o エラーを報告するエラーログパケットを設定して、 [**iowriteerrorlogentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry)を呼び出します。
 
-    I/O エラーの処理の詳細については、次を参照してください。[ログ エラー](logging-errors.md)します。
+    I/o エラーの処理の詳細については、「[エラーのログ記録](logging-errors.md)」を参照してください。
 
--   ドライバーで使用する場合[I/O バッファー](methods-for-accessing-data-buffers.md)、IRP では、デバイスの管理操作を指定する場合にシステムのバッファーに、デバイスから読み取ったデータの転送または**Irp -&gt;AssociatedIrp.SystemBuffer**IRP の完了前に
+-   ドライバーで[バッファー i/o](methods-for-accessing-data-buffers.md)が使用されている場合、または irp がデバイス制御操作を指定している場合は、irp を完了する前に、デバイスから irp **-&gt;AssociatedIrp**のシステムバッファーに読み込まれたデータを転送します。
 
--   ドライバーで使用する場合[ダイレクト I/O](methods-for-accessing-data-buffers.md)とする必要がありますそれぞれ完了したばかりの部分的な転送操作の状態の保存の小さな部分に大規模な転送を中断は、次の部分的な転送範囲を計算し、ドライバーによって提供されるを使用して[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)次の部分的な転送操作のデバイスのプログラミング ルーチンです。
+-   ドライバーが[直接 i/o](methods-for-accessing-data-buffers.md)を使用し、大規模な転送を小さい断片に分割する必要がある場合は、完了した部分転送操作ごとに状態を保存し、次の部分転送の範囲を計算して、ドライバーによって提供される[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)を使用します。次の部分転送操作のためにデバイスをプログラミングするルーチン。
 
-    バッファー内の I/O を使用しても、ドライバーは、そのデバイスには、転送機能が制限されている場合、転送要求を分割する必要があります。
+    バッファーされた i/o を使用するドライバーでも、デバイスの転送機能が制限されている場合は、転送要求を分割する必要があります。
 
--   ドライバーは、パケットに基づく DMA を使用している場合は、呼び出す[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)各転送操作のデバイス、および呼び出しの後に[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)または[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)と一連の部分的な転送が行われ、完全転送要求が満たされています。
+-   ドライバーでパケットベースの DMA が使用されている場合は、各デバイスの転送操作の後に[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)を呼び出し、部分的な転送のシーケンスが完了し、完全転送要求が実行されたときに[**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)または[**FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers)を呼び出します。満たさ.
 
-    要求された転送が 1 つの DMA 操作によって部分的にのみ満たされている場合、 *DpcForIsr*または*CustomDpc*ルーチンは、通常は IRP の指定したまでを設定する 1 つ以上の DMA 操作バイト数は、完全に転送されました。
+    要求された転送が、1つの DMA 操作で一部しか満たされない場合、通常、 *DpcForIsr*または*customdpc*ルーチンは、IRP の指定したバイト数が完全に転送されるまで、1つ以上の dma 操作を設定します。
 
-    詳細については、DMA を使用して、次を参照してください。[アダプター オブジェクトと DMA](adapter-objects-and-dma.md)します。
+    DMA の使用方法の詳細については、「[アダプターオブジェクトと dma](adapter-objects-and-dma.md)」を参照してください。
 
--   ドライバー下手順 I/O (PIO) を使用する場合は、呼び出す[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers) IRP が現在読み取りを要求する場合は、各転送操作の最後にします。
+-   ドライバーがプログラミング i/o (PIO) を使用している場合は、現在の IRP が読み取りを要求した場合、各転送操作の最後に[**Keflushiobuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers)を呼び出します。
 
-    要求された転送が、1 つの PIO 操作によって部分的にのみ満たされている場合、 *DpcForIsr*または*CustomDpc*ルーチンは、通常の IRP まで 1 つまたは複数の転送操作の設定指定したバイト数は、完全に転送されました。
+    要求された転送が、1つの PIO 操作で一部しか満たされない場合、通常、 *DpcForIsr*または*customdpc*ルーチンは、IRP の指定されたバイト数が完全になるまで、1つ以上の転送操作を設定します。支払.
 
-    PIO の使用に関する詳細については、次を参照してください。[を使用して直接 I/O](using-direct-i-o.md)します。
+    PIO の使用方法の詳細については、「 [Direct i/o の使用](using-direct-i-o.md)」を参照してください。
 
--   非 WDM ドライバーがある場合、 [ *ControllerControl* ](https://msdn.microsoft.com/library/windows/hardware/ff542049) 、ルーチンの呼び出し[ **IoFreeController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iofreecontroller)要求された操作が完了するとします。
+-   WDM 以外のドライバーに[*コントローラー制御*](https://msdn.microsoft.com/library/windows/hardware/ff542049)ルーチンがある場合は、要求された操作が完了したら[**IoFreeController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iofreecontroller)を呼び出します。
 
-なお、 *DpcForIsr*または*CustomDpc*ルーチンは、通常は、ドライバーのデバイスの I/O のほとんどを Irp を満たすために処理します。 これらのルーチンでは、ドライバーのディスパッチ ルーチンとデバイスにキューの Irp の責任の一部も共有します。
+通常、 *DpcForIsr*または*customdpc*ルーチンでは、ほとんどのドライバーのデバイス i/o 処理が irp を満たしていることに注意してください。 また、これらのルーチンは、ドライバーのディスパッチルーチンを使用して、Irp をデバイスにキューに置いている役割を担います。
 
-次を検討してください。 一般的な設計ガイドラインです。
+一般的な設計ガイドラインを次に示します。
 
--   任意*DpcForIsr*または*CustomDpc*ルーチンを呼び出す必要があります[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)この呼び出しに安全に行えるとすぐにつまり、なし。リソースの競合や競合状態をドライバーの使用可能性[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンまたはその他のルーチン、 *StartIo*ルーチンが原因で実行します。
+-   *DpcForIsr*または*customdpc*ルーチンは、この呼び出しを安全に行うことができるようになるとすぐに[**iostartnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)を呼び出す必要があります。これは、ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンまたはを使用してリソースの競合や競合状態が発生する可能性はありません。*StartIo*ルーチンによって実行されるその他のルーチン。
 
--   ドライバーが、独自の Irp でキューを管理する場合、 *DpcForIsr*または*CustomDpc*は安全なは、[次へ] の IRP をキューから削除して、次の要求にデバイスを設定するとすぐに、ルーチンは、ドライバーを通知する必要があります。
+-   ドライバーが Irp のキューを独自に管理している場合、その*DpcForIsr*または*customdpc*ルーチンは、次の irp をデキューし、次の要求のためにデバイスを設定するのが安全であるとすぐに、ドライバーに通知する必要があります。
 
-A *DpcForIsr*または*CustomDpc*ルーチンを呼び出す必要があります**います**、それ以外の場合、適切なドライバー ルーチンを通知したりするときにデバイス I/O が、次の要求の処理起動できます。 によって、ドライバーとそのデバイスでは、これは、発生前にも、 *DpcForIsr*または*CustomDpc*ルーチンと現在の IRP の完了[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)、またはこのルーチンは、現在の IRP を完了し、コントロールを返します直前に発生することができます。
+*DpcForIsr*または*Customdpc*ルーチンは**iostartnextpacket**を呼び出す必要があります。それ以外の場合は、次の要求のデバイス i/o 処理を開始できるときに適切なドライバールーチンに通知します。 ドライバーとそのデバイスによっては、 *DpcForIsr*または*Customdpc*ルーチンが[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)で現在の irp を完了する前に問題が発生したり、このルーチンが現在の irp を完了する直前に発生したりすることがあります。コントロールを返します。
 
  
 

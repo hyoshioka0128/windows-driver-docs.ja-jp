@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ズームは、デジタルのズームの制御に使用されます。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM は、デジタルズームの制御に使用されます。
 ms.assetid: 93CFCBFC-69B3-4241-913F-94615599BE8E
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a7542eea0b46d974f6d7afe89ebb3fba9c44a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 195a54a2e13b5757479d3b3de034642fc7fc8540
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356649"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827432"
 ---
-# <a name="kspropertycameracontrolextendedzoom"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム
+# <a name="ksproperty_cameracontrol_extended_zoom"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム**デジタル ズームを制御するために使用します。 定義されている、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型を取得およびズームの比率を設定からズーム範囲を取得するために使用し、ドライバー。 Windows 10 で、このコントロールは、サポート、滑らかに拡大もに拡張されます。
+**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM**は、デジタルズームの制御に使用されます。 このプロパティは、 [**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型に定義されており、ズーム比率を取得および設定し、ドライバーからズーム範囲を取得するために使用されます。 Windows 10 では、このコントロールはスムーズズームもサポートするように拡張されています。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "67356649"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ ms.locfileid: "67356649"
 </tbody>
 </table>
 
-次のフラグを配置することができます、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー。フラグ**フィールドを直接ズームとコントロール、滑らかに拡大します。 既定値は、ドライバーによって定義されます。
+次のフラグは、 **KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。** スムーズズームと直接ズームを制御するフラグフィールド。 既定値はドライバーによって定義されます。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ZOOM_DEFAULT  0x0000000000000000
@@ -57,11 +57,11 @@ ms.locfileid: "67356649"
 #define KSCAMERA_EXTENDEDPROP_ZOOM_SMOOTH   0x0000000000000002
 ```
 
-ドライバーは、このコントロールをサポートする場合、サポートする必要があります**KSCAMERA\_EXTENDEDPROP\_ズーム\_既定**します。
+ドライバーがこのコントロールをサポートしている場合は、 **KSCAMERA\_EXTENDEDPROP\_ZOOM\_既定値**をサポートする必要があります。
 
-ドライバーがデジタル ズームをサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
+ドライバーでデジタルズームがサポートされていない場合、ドライバーはこのコントロールを実装しないでください。
 
-次の表では、フラグの機能について説明します。
+次の表では、フラグ機能について説明します。
 
 <table>
 <colgroup>
@@ -77,22 +77,22 @@ ms.locfileid: "67356649"
 <tbody>
 <tr class="odd">
 <td><p><strong>KSCAMERA_EXTENDEDPROP_ZOOM_DEFAULT</strong></p></td>
-<td><p>これは、必須の機能です。 ドライバーが、直接のズーム設定または滑らかに拡大を適用するかどうかを決定指定した場合、し、それに応じて VideoProc.Value.ul で指定されたターゲットの倍率をズームします。 このフラグは、ダイレクトと SMOOTH フラグで相互に排他的です。</p></td>
+<td><p>これは必須の機能です。 指定すると、ドライバーは、直接ズームまたはスムーズズームを適用する必要があるかどうかを決定し、それに応じて、VideoProc. Value. ul に指定されたターゲットのズームファクターにズームします。 このフラグは、直接および SMOOTH フラグと同時に指定することはできません。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>KSCAMERA_EXTENDEDPROP_ZOOM_DIRECT</strong></p></td>
-<td><p>これは、必須の機能です。 指定した場合、ドライバーは、可能な限り早く VideoProc.Value.ul で指定されたターゲットの倍率をズームします。 このフラグは、自動と滑らかなフラグで相互に排他的です。</p></td>
+<td><p>これは必須の機能です。 指定した場合、ドライバーは、可能な限り迅速に VideoProc. Value. ul に指定された目標のズーム率にズームします。 このフラグは、AUTO および SMOOTH フラグと同時に指定することはできません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>KSCAMERA_EXTENDEDPROP_ZOOM_SMOOTH</strong></p></td>
-<td><p>この機能は省略可能です。 指定した場合、ドライバーは段階的には、滑らかな方法で、VideoProc.Value.ul で指定されたターゲットの倍率をズームします。 ドライバーはフレームが指定したズームの倍率に到達する数です。 このフラグは、自動と直接フラグで相互に排他的です。</p></td>
+<td><p>この機能は省略可能です。 この値を指定すると、ドライバーは、VideoProc で指定された目標のズーム率にズームします。 フレームの数は、指定したズーム率になるまで、ドライバーによって決まります。 このフラグは、AUTO および DIRECT フラグと同時に指定することはできません。</p></td>
 </tr>
 </tbody>
 </table>
 
-各**取得**呼び出し、ドライバーの必要がありますレポートに現在のズームの範囲は許可されているに基づいて現在の構成またはセットアップします。
+**GET**呼び出しごとに、ドライバーは現在の構成またはセットアップに基づいて許可されている現在のズーム範囲を報告する必要があります。
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム**プロパティ。
+次の表は、 **Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM**プロパティを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件を示しています。
 
 <table>
 <colgroup>
@@ -101,39 +101,39 @@ ms.locfileid: "67356649"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1、</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これでなければなりません<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0 xffffffff)</p></td>
+<td><p>これは<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>)、</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>これは、最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>上記で定義されたサポートされているフラグのビットごとの OR をする必要があります。</p></td>
+<td><p>は、前に定義したサポートされているフラグのビットごとの OR である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された、サポートされているフラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上で定義したサポートされているフラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>
 
-次の表には、説明と要件が含まれています、 **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**のフィールドを構造体、 **KSPROPERTY\_CAMERACONTROL\_拡張\_ズーム**プロパティ。
+次の表には、 **Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_ZOOM**プロパティの**KSCAMERA\_EXTENDEDPROP\_videoの設定**構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -142,33 +142,33 @@ ms.locfileid: "67356649"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Mode</p></td>
-<td><p>これにより、使用されておらず、0 にする必要があります。</p></td>
+<td><p>[モード]</p></td>
+<td><p>これは使用されておらず、0である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>最小/最大/ステップ</p></td>
-<td><p>最小/最大/ステップには、最小/最大/の増分 Q16 形式でカメラのドライバーでサポートされるズームの比率が含まれています。 ドライバーは、これらの値を返す必要があります<strong>取得</strong>操作。</p></td>
+<td><p>Min/Max/Step には、Q16 形式でカメラドライバーでサポートされているズーム比率の最小/最大/増分が含まれます。 ドライバーは、 <strong>GET</strong>操作のためにこれらの値を返す必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>VideoProc</p></td>
-<td><p><strong>設定</strong>操作、VideoProc.Value.ul は最小/最大/ステップ パラメーターによって示された範囲内でズーム比率を指定する必要があります。 <strong>取得</strong>操作、ドライバーは現在のズーム比を返す必要があります。</p></td>
+<td><p><strong>設定</strong>操作の場合、videoproc は、Min/Max/Step パラメーターで表される範囲内のズーム比を指定する必要があります。 <strong>GET</strong>操作の場合、ドライバーは現在のズーム比率を返す必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>予約済み</p></td>
-<td><p>これは使用されません。 これは、ドライバーによって無視する必要があります。</p></td>
+<td><p>これは使用されません。 これは、ドライバーによって無視される必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
-このプロパティのコントロールは、同期およびないキャンセル可能なは。
+このプロパティコントロールは同期であり、キャンセルできません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

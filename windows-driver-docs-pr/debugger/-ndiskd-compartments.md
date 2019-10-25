@@ -1,9 +1,9 @@
 ---
-title: ndiskd.compartments
-description: Ndiskd.compartments 拡張機能では、すべてのネットワーク コンパートメントが表示されます。
+title: ndiskd コンパートメント
+description: Ndiskd コンパートメント拡張子は、すべてのネットワークコンパートメントを表示します。
 ms.assetid: F9BF319D-77E9-4D12-84E9-655058F57AC4
 keywords:
-- デバッグ ndiskd.compartments Windows
+- ndiskd コンパートメント Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06b9930beb61d63a5c000f72c0ef1fd68266b7dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b13462322d9c3e505d49dfee52f7ddc3baad8bea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364296"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837600"
 ---
 # <a name="ndiskdcompartments"></a>!ndiskd.compartments
 
 
-**! Ndiskd.compartments**拡張機能には、すべてのネットワーク コンパートメントが表示されます。
+**! Ndiskd コンパートメント**拡張子は、すべてのネットワークコンパートメントを表示します。
 
 ```console
 !ndiskd.compartments 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-この拡張機能には、パラメーターがありません。
+この拡張機能にはパラメーターがありません。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-コンパートメントは、NDIS がインターフェイスを管理する方法です。 」の説明に従ってにサード パーティ製インターフェイス プロバイダーがプライマリのコンパートメントにのみ使用して、 **CompartmentId**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。
+コンパートメントは、NDIS がインターフェイスを管理する方法です。 サードパーティのインターフェイスプロバイダーは、 [**NDIS\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体に関するページで説明**されて**いるように、プライマリコンパートメントのみを使用します。
 
 <a name="examples"></a>例
 --------
 
-実行、 **! ndiskd.compartments**拡張機能をすべてのネットワーク コンパートメントの一覧を参照してください。 この例では、1 つだけのコンパートメント (プライマリ 1 つです)。
+**! Ndiskd コンパートメント**拡張機能を実行して、すべてのネットワークコンパートメントの一覧を表示します。 この例では、コンパートメントが1つ (プライマリプライマリ) だけです。
 
 ```console
 3: kd> !ndiskd.compartments
@@ -57,20 +57,20 @@ Ndiskd.dll
                        ffffdf80139b8900    [Unnamed network]
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
+[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
 
  
 

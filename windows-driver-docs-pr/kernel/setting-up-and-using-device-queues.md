@@ -3,19 +3,19 @@ title: デバイス キューのセットアップと使用
 description: デバイス キューのセットアップと使用
 ms.assetid: 5221ffc0-0cb4-498b-9be2-4d240b5f2744
 keywords:
-- デバイスのキュー WDK Irp を設定します。
-- デバイスは、WDK の Irp でオブジェクトをキューします。
-- Irp をキューに挿入します。
-- デバイスのキュー オブジェクトを保存します。
+- デバイスが WDK Irp をキューに入れ、セットアップ
+- デバイスキュー WDK Irp、オブジェクト
+- キューへの Irp の挿入
+- デバイスキューオブジェクトの格納
 - 補足の IRP キュー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e89d4f0a6127251690953f5a78dd8e655a37972
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b8aa7149e95107ad6308c3ee434774580416540
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383723"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838428"
 ---
 # <a name="setting-up-and-using-device-queues"></a>デバイス キューのセットアップと使用
 
@@ -23,38 +23,38 @@ ms.locfileid: "67383723"
 
 
 
-ドライバーがデバイスのキュー オブジェクトを呼び出すことによって設定[ **KeInitializeDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedevicequeue)ドライバーまたはデバイスの初期化時。 そのデバイスを起動した後、ドライバー Irp キューに挿入この呼び出して[ **KeInsertDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertdevicequeue)または[ **KeInsertByKeyDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertbykeydevicequeue). 次の図は、これらの呼び出しを示しています。
+ドライバーは、ドライバーまたはデバイスの初期化で[**Keinitializedevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedevicequeue)を呼び出すことによって、デバイスキューオブジェクトを設定します。 デバイスを起動した後、ドライバーは[**Keinsertdevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertdevicequeue)または[**Keinsertbykeydevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertbykeydevicequeue)を呼び出して、irp をこのキューに挿入します。 次の図は、これらの呼び出しを示しています。
 
-![セットアップとデバイスのキューの使用](images/3devqobj.png)
+![デバイスキューの設定と使用](images/3devqobj.png)
 
-この図に示すように、ドライバーは、常駐である必要がありますデバイスのキュー オブジェクトの記憶域を提供する必要があります。 通常はデバイスのキュー オブジェクトを設定するドライバーに必要な記憶域の提供、[デバイス拡張機能](device-extensions.md)ドライバーが作成したデバイスのオブジェクトが、記憶域にできるコント ローラーの拡張機能ドライバーを使用している場合、[コント ローラーオブジェクト](using-controller-objects.md)またはドライバーによって割り当てられた非ページ プール。
+この図に示すように、ドライバーはデバイスキューオブジェクトの記憶域を提供する必要があります。このオブジェクトは常駐している必要があります。 通常、デバイスキューオブジェクトを設定するドライバーは、ドライバーによって作成されたデバイスオブジェクトの[デバイス拡張機能](device-extensions.md)に必要な記憶域を提供しますが、ドライバーが[コントローラーオブジェクト](using-controller-objects.md)または非ページプールで使用する場合は、記憶域をコントローラー拡張機能に含めることができます。ドライバーによって割り当てられます。
 
-場合、ドライバーがデバイスの拡張機能でデバイスのキュー オブジェクトのストレージと、呼び出し**KeInitializeDeviceQueue**デバイス オブジェクトを作成したら、デバイスを開始する前にします。 つまり、ドライバーがからキューを初期化できますその[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンまたは PnP、処理[ **IRP\_MN\_の開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 呼び出しで**KeInitializeDeviceQueue**ドライバーがデバイスのキュー オブジェクトは、その記憶域へのポインターを渡します。
+ドライバーがデバイス拡張機能のデバイスキューオブジェクトの記憶域を提供する場合、デバイスオブジェクトを作成した後、デバイスを起動する前に**Keinitializedevicequeue**を呼び出します。 つまり、ドライバーは、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンからキューを初期化するか、PnP IRP\_処理するときに、 [ **\_デバイス要求を開始\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)ことができます。 **Keinitializedevicequeue**への呼び出しでは、ドライバーはデバイスキューオブジェクト用に提供するストレージへのポインターを渡します。
 
-そのデバイスを起動した後、ドライバーに挿入できます IRP のデバイスのキューを呼び出して**KeInsertDeviceQueue**、キューの末尾に IRP を配置するか、 **KeInsertByKeyDeviceQueue**をIRP がドライバー決定に従って、キューに配置*SortKey*値、前の図に示すようにします。
+デバイスを起動した後、ドライバーは**Keinsertdevicequeue**を呼び出して irp をデバイスキューに挿入できます。これにより、irp がキューの末尾に配置されるか、 **Keinsertbykeydevicequeue**によって irp がキューに格納されます。前の図に示すように、ドライバーによって決定された*SortKey*の値。
 
-これらの各サポート、ルーチンを返します。 は IRP がキューに挿入されたかどうかを示すブール値。 これらの各呼び出しもセット busy デバイスのキュー オブジェクトの状態キューが現在の場合 (Not ビジー) を空にします。 ただし場合は、キューが空の (Not ビジー状態)、どちらも**KeInsert*Xxx*DeviceQueue**ルーチンが IRP をキューに挿入します。 代わりに、デバイスのキュー オブジェクトの状態を Busy に設定し、返します**FALSE**します。 IRP がキュー登録されたされませんので、ドライバーする必要がありますに渡す他のドライバー ルーチンをさらに処理します。
+これらの各サポートルーチンは、IRP がキューに挿入されたかどうかを示すブール値を返します。 また、キューが現在空 (ビジー状態ではない) の場合は、これらの呼び出しによってデバイスキューオブジェクトの状態が Busy に設定されます。 ただし、キューが空 (ビジー状態ではない) の場合、 **Keinsert*Xxx*devicequeue**ルーチンでは、IRP がキューに挿入されません。 代わりに、デバイスキューオブジェクトの状態を Busy に設定し、 **FALSE**を返します。 IRP がキューに登録されていないため、ドライバーは、後続の処理のために別のドライバールーチンに渡す必要があります。
 
-**補足的なデバイスのキューを設定する場合は、この実装のガイドラインに従います。**
+**補足デバイスキューを設定するときは、次の実装ガイドラインに従ってください。**
 
-呼び出し時に**KeInsert*Xxx*DeviceQueue**返します**FALSE**、呼び出し元が別のドライバー ルーチンにさらに処理するためにキューに登録しようとした IRP を渡す必要があります。
-ただし、呼び出し**KeInsert*Xxx*DeviceQueue**ドライバー呼び出さない限り、キューにするには [次へ] の IRP が挿入されるため、取り込み中、デバイスのキュー オブジェクトの状態を変更**KeRemove*Xxx*DeviceQueue**最初。
+**Keinsert*Xxx*devicequeue**への呼び出しで**FALSE**が返された場合、呼び出し元は、キューに入れようとした IRP を別のドライバールーチンに渡す必要があります。
+ただし、 **Keinsert*Xxx*devicequeue**を呼び出すと、デバイスキューオブジェクトの状態が "ビジー" に変更されます。そのため、ドライバーが最初に**keremove*xxx*devicequeue**を呼び出さない限り、次の IRP がキューに挿入されます。
 
-デバイスのキュー オブジェクトの状態が Busy に設定されている場合、ドライバーが IRP をさらに処理デキューまたは Not busy 次サポート ルーチンのいずれかを呼び出すことによって、状態をリセットできます。
+デバイスキューオブジェクトの状態が "ビジー" に設定されている場合、ドライバーは、次のいずれかのサポートルーチンを呼び出すことによって、後続の処理のために IRP をデキューしたり、状態を "非ビジー" にリセットしたりすることができます。
 
--   [**KeRemoveDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovedevicequeue)キューの先頭の IRP を削除するには
+-   キューの先頭にある IRP を削除するための[**Keremovedevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovedevicequeue)
 
--   [**KeRemoveByKeyDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovebykeydevicequeue)ドライバー決定に従って選択 IRP を削除する*SortKey*値
+-   ドライバーによって決定された*SortKey*値に従って選択された IRP を削除するための[**Keremovebykeydevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovebykeydevicequeue)
 
--   [**KeRemoveEntryDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremoveentrydevicequeue)キュー内の特定の IRP を削除するか、特定の IRP がキューにあるかどうかを判断するには
+-   キュー内の特定の IRP を削除したり、特定の IRP がキューにあるかどうかを判断したりするための[**Keremoveentrydevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremoveentrydevicequeue)
 
-    **KeRemoveEntryDeviceQueue** IRP デバイスのキューであるかどうかを示すブール値を返します。
+    **Keremoveentrydevicequeue**は、IRP がデバイスキューにあったかどうかを示すブール値を返します。
 
-空がビジー状態であるデバイスのキューからのエントリを削除するこれらのルーチンのいずれかを呼び出すと、キューの状態が Not ビジーに変わります。
+これらのルーチンのいずれかを呼び出して、空であるがビジーなデバイスキューからエントリを削除すると、キューの状態が "ビジー" に変更されます。
 
-各デバイスのキュー オブジェクトが組み込み executive スピン ロックで保護されている (に表示されていない、[デバイスのキュー オブジェクトを使用して](#setting-up-and-using-device-queues)図)。 ドライバーが Irp をキューに挿入し、ドライバーのルーチンで実行されている以下よりまたは IRQL と等しくからマルチプロセッサ セーフ方式で削除結果として、ディスパッチ =\_レベル。 この IRQL 制限のためドライバーを呼び出すことはできません、 **Ke*Xxx*DeviceQueue**その ISR からルーチンまたは[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンは、DIRQL でを実行します。
+各デバイスキューオブジェクトは、組み込みの executive スピンロックによって保護されています ([デバイスキューオブジェクトを使用し](#setting-up-and-using-device-queues)た図には示されていません)。 その結果、ドライバーは Irp をキューに挿入し、IRQL = ディスパッチ\_レベル以下で実行されている任意のドライバールーチンから、マルチプロセッサセーフな方法で Irp を削除できます。 この IRQL の制限により、ドライバーは、DIRQL で実行される ISR または[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンから**Ke*Xxx*devicequeue**ルーチンを呼び出すことができません。
 
-参照してください[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)詳細についてはします。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
+詳細については、「[ハードウェアの優先順位の管理](managing-hardware-priorities.md)」および「[スピンロック](spin-locks.md)」を参照してください。 特定のサポートルーチンの IRQL 要件については、ルーチンのリファレンスページを参照してください。
 
  
 

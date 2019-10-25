@@ -3,16 +3,16 @@ title: ControllerControl ルーチンの記述
 description: ControllerControl ルーチンの記述
 ms.assetid: 9330e0ff-c4bb-4aa6-985e-ef89791f74df
 keywords:
-- コント ローラー オブジェクトの WDK カーネル、ControllerControl ルーチンを記述
-- 書き込みの ControllerControl ルーチン
+- コントローラーオブジェクト WDK カーネル、コントローラー制御ルーチンの記述
+- コントローラー制御ルーチン、書き込み
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4835a144472bc9f80019630ff64fd76a8996e51c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 987eb4b8f3150ce4435a003aa7250c668f2c824e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374117"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835591"
 ---
 # <a name="writing-controllercontrol-routines"></a>ControllerControl ルーチンの記述
 
@@ -20,13 +20,13 @@ ms.locfileid: "67374117"
 
 
 
-コント ローラー オブジェクトを使用するドライバーを指定する必要があります、 [ *ControllerControl* ](https://msdn.microsoft.com/library/windows/hardware/ff542049) I/O 操作を開始するルーチン。
+コントローラーオブジェクトを使用するドライバーは、i/o 操作を開始するためのコントローラー[*制御*](https://msdn.microsoft.com/library/windows/hardware/ff542049)ルーチンを提供する必要があります。
 
-最下位レベルのデバイス ドライバに類似するデバイスに"AT"ディスク コント ローラーなどの物理的なコント ローラーでの操作を同期する必要がありますを持つことができます、 *ControllerControl*ルーチン。
+"AT" ディスクコントローラーなどの物理コントローラーを介して操作を同一のデバイスに同期する必要がある、最低レベルのデバイスドライバーは、コントローラー*制御*ルーチンを持つことができます。
 
-ドライバーを呼び出すと[ **IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioallocatecontroller)その*ControllerControl*ルーチンがコント ローラー オブジェクトが使用可能な場合は、ハードウェアがによって表される直前に実行I/O 操作。 それ以外の場合、 *ControllerControl*ルーチンは、コント ローラーが無料になるまでキューに配置します。
+ドライバーが[**IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioallocatecontroller)を呼び出すと、コントローラーオブジェクトによって表されるハードウェアを i/o 操作に使用できる場合は *、そのコントローラーのコントローラー*のコントローラーが直ちに実行されます。 それ以外の場合、コントローラーが解放されるまでコントローラーの*制御*ルーチンがキューに入れられます。
 
-**注**  WDM ドライバーは、コント ローラー オブジェクトを使用できないと*ControllerControl*ルーチン。
+**  WDM**ドライバーでは、コントローラーオブジェクトとコントローラー*制御*ルーチンを使用できません。
 
  
 

@@ -1,89 +1,89 @@
 ---
 title: HFP デバイスの起動
-description: HFP デバイスの起動トピックでは、Bluetooth ハンズフリー プロファイル (HFP) デバイスは、オーディオ システムに到着したときの動作について説明します。
+description: HFP デバイスのスタートアップに関するトピックでは、Bluetooth ハンズフリープロファイル (HFP) デバイスがオーディオシステムに到着した場合の動作について説明します。
 ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fc4269e30aba98c77ff9acb6b04a6263b23d2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d322f9a5164e5003f59f090ec98f3c4af7446ad9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354276"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832356"
 ---
 # <a name="hfp-device-startup"></a>HFP デバイスの起動
 
 
-HFP デバイスの起動トピックでは、Bluetooth ハンズフリー プロファイル (HFP) デバイスは、オーディオ システムに到着したときの動作について説明します。
+HFP デバイスのスタートアップに関するトピックでは、Bluetooth ハンズフリープロファイル (HFP) デバイスがオーディオシステムに到着した場合の動作について説明します。
 
-Windows HFP ドライバー、オーディオ システムに到着する各ペアになっている HFP デバイス、GUID でデバイスのインターフェイスを登録します\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS クラス。 オーディオ ドライバーでは、デバイス インターフェイスの通知を使用して、すべてのインスタンスの GUID を把握\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インターフェイス。 その AVStrMiniDevicePostStart ドライバー ルーチン内 (または同等の Portcls ルーチンから)、オーディオ ドライバーがから IoRegisterPlugPlayNotification を呼び出し、現在インストールされている HFP デバイスの検出と、新しい HFP デバイスの通知コールバックを登録します。
+Windows HFP ドライバーは、オーディオシステムに到着したペアの HFP デバイスごとに、デバイスインターフェイスを GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスクラスに登録します。 オーディオドライバーは、デバイスインターフェイスの通知を使用して、GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスのすべてのインスタンスを常に把握します。 オーディオドライバーは、AVStrMiniDevicePostStart ドライバールーチン (または同等の Portcls ルーチンから) から IoRegisterPlugPlayNotification を呼び出して、現在インストールされている HFP デバイスを検出し、新しい HFP デバイスの通知を受けるコールバックを登録します。
 
-オーディオ ドライバー IoRegisterPlugPlayNotification を呼び出すと、呼び出しが、次のパラメーターを使用して行われます。
+オーディオドライバーが IoRegisterPlugPlayNotification を呼び出すと、次のパラメーターを使用して呼び出しが行われます。
 
--   によっては、EventCategoryDeviceInterfaceChange に設定されます。
+-   EventCategory は EventCategoryDeviceInterfaceChange に設定されています。
 
--   EventCategoryFlags が通常 PNPNOTIFY に設定されている\_デバイス\_インターフェイス\_INCLUDE\_既存\_既存のインターフェイスの即時の通知を受信するにはインターフェイスです。 ただし、代替オーディオ ドライバーを設計他の手段で既存のインターフェイスがあります。
+-   Eventカテゴリフラグは、通常、既存のインターフェイスの通知を即時に受信するために既存の\_インターフェイス\_含める\_に、PNPNOTIFY\_DEVICE\_INTERFACE に設定されます。 ただし、代替のオーディオドライバーの設計によっては、既存のインターフェイスが他の方法で見つかる場合があります。
 
--   GUID に設定されている EventCategoryData\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS します。
+-   Eventカテゴリデータは、GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスに設定されます。
 
--   DriverObject は、オーディオ ドライバーの DriverObject に設定されます。
+-   DriverObject は、オーディオドライバーの DriverObject に設定されます。
 
--   CallbackRoutine は、通知を受信するオーディオ ドライバー内のルーチンに設定されます。
+-   送信ルーチンは、通知を受信するオーディオドライバーのルーチンに設定されます。
 
-次のセクションではアウトライン ペアになる HFP デバイスの登録済みのインスタンスごとのオーディオ ドライバーの可能なタスクを実行します。
+次のセクションでは、ペアリングされた HFP デバイスの登録済みインスタンスごとにオーディオドライバーが実行できるタスクの概要を示します。
 
-## <a name="span-idhandlinginterfaceinstancesspanspan-idhandlinginterfaceinstancesspanspan-idhandlinginterfaceinstancesspanhandling-interface-instances"></a><span id="Handling_interface_instances"></span><span id="handling_interface_instances"></span><span id="HANDLING_INTERFACE_INSTANCES"></span>インターフェイスのインスタンスの処理
-
-
-GUID に登録されているインターフェイスのインスタンスごとに\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS クラス、オーディオ ドライバーは、次のプロトコルを通信に使用する必要があります。
-
-Windows オーディオ ドライバーに IoRegisterPlugPlayNotification が呼び出されたときに登録された、オーディオ ドライバーのコールバック ルーチンを呼び出すと Windows 渡します HFP インターフェイスのシンボリック リンクをデバイスを使用して\_インターフェイス\_の変更\_通知します。*SymbolicLinkName*します。
-
-オーディオ ドライバー IoGetDeviceObjectPointer を呼び出すと、ドライバーは HFP FileObject と HFP デバイスのデバイス オブジェクトを取得するのにシンボリック リンクを使用します。
-
-オーディオ ドライバーでは、Ioctl を HFP ドライバーに送信するときに、ドライバーは HFP デバイス HFP FileObject と、デバイス オブジェクトを使用します。
-
-## <a name="span-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>静的な情報を取得します。
+## <a name="span-idhandling_interface_instancesspanspan-idhandling_interface_instancesspanspan-idhandling_interface_instancesspanhandling-interface-instances"></a><span id="Handling_interface_instances"></span><span id="handling_interface_instances"></span><span id="HANDLING_INTERFACE_INSTANCES"></span>インターフェイスインスタンスの処理
 
 
-オーディオ ドライバーでは、HFP ドライバーからの静的な情報を取得できます。 たとえば、HFP ドライバーでは、ksnodetype、コンテナー id とペアになる HFP デバイスのフレンドリ名を提供できます。 オーディオ ドライバーでは、作成し、初期化 KS フィルターまたはフィルターを表すペアになる HFP デバイスをこの情報を使用できます。 オーディオ ドライバーを使用して[ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)この情報を取得します。
+GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスクラスに登録されているインターフェイスインスタンスごとに、通信に次のプロトコルを使用する必要があります。
 
-オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、次を参照してください。 [HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)します。
+オーディオドライバーが IoRegisterPlugPlayNotification という名前で登録されたときに登録されたオーディオドライバーのコールバックルーチンが Windows によって呼び出されると、Windows はデバイス\_インターフェイス\_変更を使用して HFP インターフェイスのシンボリックリンクを渡し\_警告.*SymbolicLinkName*。
 
-## <a name="span-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>作成すると、オーディオ固有のフィルターの工場出荷時のコンテキストを初期化しています
+オーディオドライバーが IoGetDeviceObjectPointer を呼び出すと、ドライバーはシンボリックリンクを使用して HFP FileObject と HFP デバイスの DeviceObject を取得します。
 
+オーディオドライバーが HFP ドライバーに Ioctl を送信するとき、ドライバーは hfp FileObject と HFP デバイスの DeviceObject を使用します。
 
-作成し、オーディオ固有のフィルターの工場出荷時のコンテキストを初期化、オーディオ ドライバーはフィルターの工場出荷時のコンテキストで HFP デバイス オブジェクトと HFP FileObject を格納する必要があり、IsConnected フィールドを false に初期化します。
-
-## <a name="span-idcreatingtheksfilterfactoryspanspan-idcreatingtheksfilterfactoryspanspan-idcreatingtheksfilterfactoryspancreating-the-ks-filter-factory"></a><span id="Creating_the_KS_filter_factory"></span><span id="creating_the_ks_filter_factory"></span><span id="CREATING_THE_KS_FILTER_FACTORY"></span>KS フィルター ファクトリの作成
-
-
-各デバイス インスタンス GUID で\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インターフェイス クラス、オーディオ ドライバーは、作成し、1 つまたは複数のフィルター ファクトリを有効にします。
-
-オーディオ ドライバーが、AVStream ドライバーの場合は、オーディオ ドライバーは、KsCreateFilterFactory 新しいフィルター ファクトリを追加して、ファクトリを有効にする KsFilterFactorySetDeviceClassesState を呼び出します。 場合 PortCls オーディオ ドライバーには、間接的に作成し、PcRegisterSubdevice を呼び出すことにより、KS フィルター ファクトリ。 多くの PortCls オーディオ ドライバー設計の特定のペアになっている HFP デバイスの登録されている 2 つのサブ デバイスがあります。
-
-各フィルター ファクトリ (または PortCls オーディオ ドライバー、フィルター ファクトリの各ペアを) 1 つのペアになっている HFP デバイスのオーディオ機能を表します。 オーディオ ドライバーは、GUID の一意のインスタンスによって表されるペアになっている HFP デバイスごとに別個のフィルター ファクトリを作成します。\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インターフェイス。 オーディオ ドライバー ペアになっている HFP デバイスごとの一意の文字列を使用する必要があります、 *RefString* KsCreateFilterFactory のパラメーターまたは*名前*PcRegisterSubdevice のパラメーター。 ドライバー開発者は、それに役に立つ一意の文字列として、ペアになっている HFP デバイスの Bluetooth アドレス文字列を使用します。 参照してください[HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)一意の文字列を取得する方法についてはします。
-
-オーディオ ドライバーでは、特定の制限をハード コーディングしないようにする必要がありますので、可能なペアになっている HFP デバイスの最大数を特定しないことに注意してください。 代わりに、オーディオ ドライバーする必要がありますを正しく処理 GUID の複数の削除と動的な到着\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インターフェイス。
-
-実際には、ただし、PortCls ドライバーする必要があります指定サブのデバイスの最大数 PcAddAdapterDevice を呼び出すときにします。 PcAddAdapterDevice 潜在的なサブ デバイスごとに余分なメモリを事前に割り当てます。 オーディオ ドライバー開発者は、高、対になった多数のデバイスに対応が同時に、リソースが無駄にすることはない数値を選択します。 数値を選択する必要があります。 たとえば、HFP デバイスで 2 つだけサポートできない可能性があります、適切なと過多のリソースに確実に結果は 2000 をサポートしています。 ただし、16 のサポートは、妥当である可能性があります。
-
-別の GUID の実行時に、オーディオ ドライバーが通知された場合\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIBYPASS インターフェイスしますが、サブのデバイスの最大数が既に登録されている、オーディオ ドライバーには、ペアになっている HFP デバイス新しい HFP デバイス確保するために、登録を解除できますサブ デバイスを選択するいくつかのアルゴリズムを呼び出すことができます。 たとえば、オーディオ ドライバーでしたの追跡、最も古い接続 HFP デバイス。 一方、オーディオ ドライバーのわかりやすいことはおそらくあまり簡単でした追加の GUID を単純に無視\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_の上限に達した後 HCIBYPASS インターフェイス。
-
-## <a name="span-idsendingthegetconnectionstatusioctlspanspan-idsendingthegetconnectionstatusioctlspanspan-idsendingthegetconnectionstatusioctlspansending-the-get-connection-status-ioctl"></a><span id="Sending_the_get_connection_status_IOCTL"></span><span id="sending_the_get_connection_status_ioctl"></span><span id="SENDING_THE_GET_CONNECTION_STATUS_IOCTL"></span>IOCTL get 接続の状態を送信します。
+## <a name="span-idretrieving_static_informationspanspan-idretrieving_static_informationspanspan-idretrieving_static_informationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>静的な情報の取得
 
 
-オーディオ ドライバーでは、IOCTL、接続で発生したすべての変更に関する情報を取得する get 接続の状態を送信します。
+オーディオドライバーは、HFP ドライバーから静的情報を取得できます。 たとえば、HFP ドライバーは、ksnodetype、コンテナー id、およびペアになっている HFP デバイスのフレンドリ名を提供できます。 オーディオドライバーは、この情報を使用して、ペアになっている HFP デバイスを表す KS フィルターまたはフィルターを作成し、初期化することができます。 オーディオドライバーは、この情報を取得するために[ **\_記述子を取得\_ために、IOCTL\_BTHHFP\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)で使用します。
 
-## <a name="span-idsendingthegetvolumestatusioctlspanspan-idsendingthegetvolumestatusioctlspanspan-idsendingthegetvolumestatusioctlspansending-the-get-volume-status-ioctl"></a><span id="Sending_the_get_volume_status_IOCTL"></span><span id="sending_the_get_volume_status_ioctl"></span><span id="SENDING_THE_GET_VOLUME_STATUS_IOCTL"></span>IOCTL get ボリュームの状態を送信します。
+また、オーディオドライバーは、ペアリングされた HFP デバイスの Bluetooth アドレスを取得することもできます。 各 HFP デバイスには一意の Bluetooth アドレスがあり、これは一意の識別子文字列として便利です。 詳細については、「 [HF デバイスの Bluetooth アドレスの取得](obtaining-bluetooth-address-of-hf-device.md)」を参照してください。
+
+## <a name="span-idcreating__initializing_audio-specific_filter_factory_contextspanspan-idcreating__initializing_audio-specific_filter_factory_contextspanspan-idcreating__initializing_audio-specific_filter_factory_contextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>作成、オーディオ固有のフィルターファクトリコンテキストの初期化
 
 
-オーディオ ドライバーでは、IOCTL、ヘッドセットのボリュームの状態で発生したボリューム レベルでの変更に関する情報を取得する get ボリュームの状態を送信します。
+オーディオ固有のフィルターファクトリコンテキストを作成および初期化するには、オーディオドライバーで HFP DeviceObject と HFP FileObject をフィルターファクトリコンテキストに格納し、IsConnected フィールドを false に初期化します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
-[操作の理論を概説します。](theory-of-operation.md)  
-[HF デバイスの Bluetooth のアドレスを取得します。](obtaining-bluetooth-address-of-hf-device.md)  
+## <a name="span-idcreating_the_ks_filter_factoryspanspan-idcreating_the_ks_filter_factoryspanspan-idcreating_the_ks_filter_factoryspancreating-the-ks-filter-factory"></a><span id="Creating_the_KS_filter_factory"></span><span id="creating_the_ks_filter_factory"></span><span id="CREATING_THE_KS_FILTER_FACTORY"></span>KS フィルターファクトリの作成
+
+
+GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスクラスの各デバイスインスタンスに対して、オーディオドライバーによって1つ以上のフィルターファクトリが作成され、有効になります。
+
+オーディオドライバーが AVStream ドライバーの場合、オーディオドライバーは KsCreateFilterFactory を呼び出して新しいフィルターファクトリと KsFilterFactorySetDeviceClassesState を追加し、ファクトリを有効にします。 オーディオドライバーが PortCls ドライバーである場合は、Pcregi サブデバイスを呼び出すことによって、KS フィルターファクトリを間接的に作成し、有効にします。 多くの PortCls オーディオドライバーの設計では、特定のペアの HFP デバイスに2つのサブデバイスが登録されています。
+
+各フィルターファクトリ (または、PortCls オーディオドライバーの場合は、フィルターファクトリの各ペア) は、1つのペアの HFP デバイスのオーディオ機能を表します。 オーディオドライバーは、GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスの一意のインスタンスによって表される、ペアになっている HFP デバイスごとに個別のフィルターファクトリを作成します。 ペアになっている HFP デバイスごとに、オーディオドライバーは KsCreateFilterFactory の*Refstring*パラメーター、または Pcregi サブデバイスの*Name*パラメーターに一意の文字列を使用する必要があります。 ドライバー開発者は、ペアになった HFP デバイスの Bluetooth アドレス文字列を一意の文字列として使用すると便利な場合があります。 一意の文字列を取得する方法については、「 [HF デバイスの Bluetooth アドレスの取得](obtaining-bluetooth-address-of-hf-device.md)」を参照してください。
+
+ペアになっている HFP デバイスの最大数は指定されていないことに注意してください。そのため、オーディオドライバーでは、特定の制限をハードコーディングしないようにする必要があります。 代わりに、オーディオドライバーは、複数の GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスの動的な到着と削除を正しく処理する必要があります。
+
+ただし、実際には、PortCls ドライバーは PcAddAdapterDevice を呼び出すときにサブデバイスの最大数を指定する必要があります。 PcAddAdapterDevice は、潜在的なサブデバイスごとに追加のメモリを事前に割り当てます。 オーディオドライバーの開発者は、ペアになっている多くのデバイスに対応するのに十分な数を選択する必要がありますが、同時に、リソースの無駄にならない数値を選択します。 たとえば、2つの HFP デバイスのみのサポートは不十分であり、2000をサポートすると、リソースが過剰に拡張される可能性があります。 ただし、16をサポートすることは妥当な場合があります。
+
+実行時に、オーディオドライバーに別の GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスが登録されていても、サブデバイスの最大数が既に登録されている場合、オーディオドライバーはいくつかのを呼び出すことができます。新しい HFP デバイス用の領域を確保するために登録を解除できるサブデバイスを含む、ペアリングされた HFP デバイスを選択するアルゴリズム。 たとえば、オーディオドライバーでは、最も古い接続の HFP デバイスを追跡することができます。 それに対して、ユーザーフレンドリなオーディオドライバーは、その最大値に到達した後、より単純ではあるが、\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスを使用して、追加の GUID\_単純に無視することもできます。
+
+## <a name="span-idsending_the_get_connection_status_ioctlspanspan-idsending_the_get_connection_status_ioctlspanspan-idsending_the_get_connection_status_ioctlspansending-the-get-connection-status-ioctl"></a><span id="Sending_the_get_connection_status_IOCTL"></span><span id="sending_the_get_connection_status_ioctl"></span><span id="SENDING_THE_GET_CONNECTION_STATUS_IOCTL"></span>Get 接続状態 IOCTL の送信
+
+
+オーディオドライバーは、get 接続状態 IOCTL を送信して、接続で発生した変更に関する情報を取得します。
+
+## <a name="span-idsending_the_get_volume_status_ioctlspanspan-idsending_the_get_volume_status_ioctlspanspan-idsending_the_get_volume_status_ioctlspansending-the-get-volume-status-ioctl"></a><span id="Sending_the_get_volume_status_IOCTL"></span><span id="sending_the_get_volume_status_ioctl"></span><span id="SENDING_THE_GET_VOLUME_STATUS_IOCTL"></span>Get volume status IOCTL の送信
+
+
+オーディオドライバーは、get volume status IOCTL を送信して、ヘッドセットのボリュームの状態で発生したボリュームレベルの変更に関する情報を取得します。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[**IOCTL\_BTHHFP\_デバイス\_\_記述子を取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
+[操作の理論](theory-of-operation.md)  
+[HF デバイスの Bluetooth アドレスを取得しています](obtaining-bluetooth-address-of-hf-device.md)  
 
 
 

@@ -3,17 +3,17 @@ title: バッテリ ミニクラス ドライバーの FDO の作成
 description: バッテリ ミニクラス ドライバーの FDO の作成
 ms.assetid: 3178710b-8e4a-4f9c-893b-1d06c4a3f7ff
 keywords:
-- バッテリ miniclass ドライバー WDK、Fdo
-- Fdo WDK バッテリ
-- 機能のデバイス オブジェクトの WDK バッテリ
+- バッテリ miniclass ドライバー WDK、FDOs
+- FDOs WDK バッテリ
+- 機能デバイスオブジェクト WDK バッテリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a77a79e746d437e1731c4114e0c61fa50c65582
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 331d8b1f5735611f2c6d0663d260a14e2d8f116d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364758"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829913"
 ---
 # <a name="creating-an-fdo-in-the-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの FDO の作成
 
@@ -21,9 +21,9 @@ ms.locfileid: "67364758"
 ## <span id="ddk_creating_an_fdo_in_the_battery_miniclass_driver_dg"></span><span id="DDK_CREATING_AN_FDO_IN_THE_BATTERY_MINICLASS_DRIVER_DG"></span>
 
 
-Miniclass ドライバーは、FDO を作成し、次のように、デバイスのデバイス スタックにアタッチする必要があります。
+Miniclass ドライバーは、次のように FDO を作成し、デバイスのデバイススタックにアタッチする必要があります。
 
-1.  呼び出す[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)次のように、現在のデバイス用に FDO を作成します。
+1.  [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)を呼び出して、現在のデバイスの FDO を次のように作成します。
 
     ```cpp
     Status = IoCreateDevice(
@@ -37,9 +37,9 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
              );
     ```
 
-    入力パラメーターを[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)に渡されたドライバー オブジェクトへのポインターは、 *AddDevice*ルーチン、NULL の代わりにデバイスの拡張機能のサイズデバイス名、およびデバイスのシステム定義の種類 (ファイル\_デバイス\_バッテリ)。 バッテリ miniclass ドライバーに 0 を指定できます、 *DeviceCharacteristics*パラメーターで、これらのドライバーには使用されません。 複数のスレッドは、miniclass ドライバーが FALSE に渡すために、バッテリの I/O 要求を送信できるとして、*排他*パラメーター。 **IoCreateDevice**作成 FDO へのポインターを返します。
+    [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)への入力パラメーターは、 *AddDevice*ルーチンに渡されたドライバーオブジェクトへのポインター、デバイス拡張機能のサイズ、デバイス名の代わりの NULL、およびシステム定義デバイスの種類 (ファイル\_デバイス\_バッテリ)。 バッテリ miniclass ドライバーでは、 *DeviceCharacteristics*パラメーターに0を指定できます。このパラメーターは、これらのドライバーには関係ありません。 複数のスレッドがバッテリに i/o 要求を送信できるため、miniclass ドライバーは、*排他*パラメーターとして FALSE を渡します。 **IoCreateDevice**は、作成された FDO へのポインターを返します。
 
-2.  返される FDO では、フラグとスタックのサイズを設定します。 次に、例を示します。
+2.  返された FDO で、フラグとスタックサイズを設定します。 次に、例を示します。
 
     ```cpp
     Fdo->Flags |= DO_BUFFERED_IO;
@@ -47,9 +47,9 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
     Fdo->StackSize = Pdo->StackSize + 2;
     ```
 
-    設定は\_バッファーに格納された\_IO フラグは、バッファー内の I/O Irp を使用する miniclass ドライバーを使用します。 設定は\_POWER\_ページング可能なフラグは、ドライバーがページング可能な IRQL で電源 Irp を取得できないことを示します。 &gt;= ディスパッチ\_レベル。 最後に、バッテリの Irp では、追加のスタックの場所が必要とするため miniclass ドライバー設定する必要があります**StackSize** pdo スタック サイズの合計の 2 つのドライバーが IRP PDO までを渡せるようにします。
+    DO\_バッファリング\_IO フラグを設定すると、miniclass ドライバーは Irp にバッファー i/o を使用できます。 DO\_POWER\_PAGABLE フラグを設定すると、ドライバーがページング可能であり、IRQL &gt;= ディスパッチ\_レベルで電源 Irp を取得できなくなります。 最後に、バッテリの Irp には追加のスタック位置が必要であるため、ドライバーが IRP を PDO に渡すことができるように、miniclass ドライバーは**StackSize**を pdo スタックサイズに加えて2に設定する必要があります。
 
-3.  デバイスの拡張機能には、デバイスの PDO を FDO、デバイスの種類、デバイス名、およびその他の必要な状態へのポインターへのポインターを格納します。 例:
+3.  デバイスの PDO へのポインター、FDO へのポインター、デバイスの種類、デバイスの名前、デバイスの拡張機能に必要なその他の状態を格納します。 次に、例を示します。
 
     ```cpp
     NewBatt = (PNEW_BATT) Fdo->DeviceExtension;
@@ -59,25 +59,25 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
     NewBatt->IsCacheValid = FALSE;
     ```
 
-    例では、デバイスの拡張機能で FDO と PDO へのポインターを格納します。 (PnP マネージャーとして PDO へのポインターを提供する、 *PhysicalDeviceObject*へのポインター入力*AddDevice*)。さらに、上記の例の追跡、独自のバッテリのタイプ (新規\_バッテリ\_この仮定 miniclass ドライバーで定義されている型) およびキャッシュされた情報が有効かどうか。
+    この例では、デバイス拡張機能に FDO と PDO へのポインターを格納します。 (PnP マネージャーは、 *AddDevice*への*PhysicalDeviceObject*ポインター入力として PDO へのポインターを提供しました)。さらに、上記の例では、独自のバッテリの種類 (新しい\_バッテリ\_の種類、この架空の miniclass ドライバーの他の場所で定義されています)、およびキャッシュされた情報が有効かどうかを追跡します。
 
-    デバイスの拡張機能に格納された情報を指定します。 たとえば、スマート バッテリ ドライバー可能性があります、数を保持、バッテリのバッテリ セレクターが存在するかどうかと、必要に応じて、そのバッテリ セレクターに関する情報を示すブール値。
+    デバイス拡張機能に格納されている情報を確認します。 たとえば、スマートバッテリドライバーでは、バッテリの数、バッテリセレクターが存在するかどうかを示すブール値、および必要に応じてそのバッテリセレクターに関する情報を保持することができます。
 
-4.  呼び出す[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)デバイス スタックを FDO をアタッチし、ポインターを格納返された、次のようにします。
+4.  [**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)を呼び出して、FDO をデバイススタックにアタッチし、返されたポインターを次のように格納します。
 
     ```cpp
     NewBatt->LowerDO = IoAttachDeviceToDeviceStack(Fdo,Pdo);
     ```
 
-    呼び出しでは、この例で、デバイスの拡張機能に格納する次の下位のデバイス オブジェクトにポインターを返します。
+    この呼び出しは、デバイス拡張機能に格納されている次の下位デバイスオブジェクトへのポインターを返します。
 
-5.  オフにします\_デバイス\_FDO でフラグを次のように初期化します。
+5.  次の手順に従って、FDO の [\_デバイス\_初期化] フラグをオフにします。
 
     ```cpp
     Fdo->Flags &= ~DO_DEVICE_INITIALIZING;
     ```
 
-    オフ\_デバイス\_初期化フラグは、デバイス履歴の上位にコンポーネントによって後で開かれるデバイス オブジェクトを使用します。
+    DO\_DEVICE\_初期化フラグをオフにすると、デバイスオブジェクトをデバイススタックの上位のコンポーネントから開くことができます。
 
  
 

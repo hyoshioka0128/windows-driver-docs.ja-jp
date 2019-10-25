@@ -3,17 +3,17 @@ title: パラレル ポートとデバイスのデバイス スタック
 description: パラレル ポートとデバイスのデバイス スタック
 ms.assetid: 80222ed9-f900-4d97-b459-2d8ca780e1d1
 keywords:
-- システム提供平行ドライバー WDK、デバイス スタック
-- デバイス履歴の WDK 並列ドライバー
-- デバイス WDK、デバイス スタックを並列します。
+- システム提供のパラレルドライバー WDK、デバイススタック
+- デバイススタック WDK パラレルドライバー
+- パラレルデバイス WDK、デバイススタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec93a7c51fef316270e256b381e2ec20916ee4a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c07e3f97d17a71bce511c9fbcc2fb890d7deef4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831485"
 ---
 # <a name="device-stacks-for-parallel-ports-and-devices"></a>パラレル ポートとデバイスのデバイス スタック
 
@@ -21,25 +21,25 @@ ms.locfileid: "67376966"
 
 
 
-このセクションでは、パラレル ポートおよびパラレル ポートに接続されているデバイスのシステム提供平行ドライバーによって作成されたデバイス スタックについて説明します。
+このセクションでは、並列ポートとパラレルポートに接続されているデバイスに対して、システムによって提供されるパラレルドライバーによって作成されるデバイススタックについて説明します。
 
-次の図は、パラレル ポートおよびパラレル ポートに接続されたデバイスのシステム提供平行ドライバーを作成するデバイス スタックの種類を示します。
+次の図は、並列ポートとパラレルポートに接続されているデバイスに対して、システム提供のパラレルドライバーによって作成されるデバイススタックの種類を示しています。
 
-![パラレル ポートやデバイスの windows デバイスとドライバー スタックを示す図](images/parport4.png)
+![パラレルポートとデバイスの windows デバイスとドライバースタックを示す図](images/parport4.png)
 
-パラレル ポートに接続されている並列のデバイス用のドライバーのベンダーによって提供される関数は省略可能です。 システム提供平行ドライバー提供広範なサポート、ロウ デバイスとしての並列のデバイスを直接制御するため、デバイスの親を制御するためパラレル ポート。
+パラレルポートに接続されている並列デバイス用のベンダー提供の関数ドライバーはオプションです。 システムによって提供されるパラレルドライバーは、並列デバイスを生のデバイスとして直接制御し、デバイスの親パラレルポートを制御するための広範なサポートを提供します。
 
-パラレル ポートおよびパラレル ポートに接続されているデバイスが動作する方法の詳細についてを参照してください。
+パラレルポートおよびパラレルポートに接続されているデバイスを操作する方法の詳細については、以下を参照してください。
 
-[並列デバイス インターフェイス、内部名は、シンボリック リンク](parallel-device-interfaces--internal-names--and-symbolic-links.md)
+[パラレルデバイスインターフェイス、内部名、およびシンボリックリンク](parallel-device-interfaces--internal-names--and-symbolic-links.md)
 
-[IOCTL およびパラレル ポートとデバイスのコールバック サポート](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
+[パラレルポートとデバイスの IOCTL およびコールバックのサポート](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
 
-[パラレル ポートの動作](operating-a-parallel-port.md)
+[パラレルポートの操作](operating-a-parallel-port.md)
 
-[パラレル ポートに接続されている並列のデバイスの動作](operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレルポートに接続されているパラレルデバイスの操作](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[システム提供のパラレルドライバーへのクライアントインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

@@ -4,73 +4,73 @@ description: 拡張可能スイッチ宛先ポートへのパケット配信の�
 ms.assetid: 04BF02A6-360F-482E-A86B-31232AFCB778
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ceec5f4fd29ef389d3abbdde5cd832c207d835b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5094495651665b2d78bab0a63c39d6092a0ffb89
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353757"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834743"
 ---
 # <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>拡張可能スイッチ宛先ポートへのパケット配信の除外
 
 
-このトピックでは、HYPER-V 拡張可能スイッチの拡張機能が拡張可能スイッチのポートへのパケットの配信を除外する方法について説明します。 パケットの宛先ポートの帯域外 (OOB) 転送パケットの内のコンテキスト内で指定された[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 このコンテキストの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+このトピックでは、Hyper-v 拡張可能スイッチ拡張機能を使用して、拡張可能なスイッチポートへのパケットの配信を除外する方法について説明します。 パケットの宛先ポートは、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造内の帯域外 (OOB) 転送コンテキスト内で指定されます。 このコンテキストの詳細については、「 [Hyper-v 拡張可能スイッチ転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)」を参照してください。
 
-**注**このページは、情報とでのダイアグラムに精通していることを前提としています。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)します。
+**メモ** このページでは、 [hyper-v の拡張可能スイッチ](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)の概要に関する情報と図について理解していることを前提としています。
 
 
-**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 拡張機能に関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)します。
+**メモ** 拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは*拡張可能なスイッチ拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。 拡張機能の詳細については、「 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)」を参照してください。
 
-フィルター処理および転送拡張機能は、拡張可能スイッチのイングレスまたはエグレス データ パスで取得したパケットの配信を除外できます。 パケット配信の除外は、次の方法で実行できます。
+拡張機能のフィルター処理と転送では、拡張可能なスイッチの受信または送信データパスで取得したパケットの配信を除外できます。 パケット配信の除外は、次の方法で行うことができます。
 
--   拡張機能は、要求パケットかを示す値を実行して、パケットを削除できます。 これには、任意の拡張可能スイッチ ポートのパケットの配信が含まれません。 このメソッドは、1 つまたは複数の宛先ポートのパケットで使用できます。
+-   この拡張機能は、パケットの要求または指示を完了することによってパケットを削除できます。 これにより、拡張可能なスイッチポートへのパケットの配信が除外されます。 このメソッドは、1つまたは複数の宛先ポートを持つパケットで使用できます。
 
-    拡張可能スイッチのイングレス データ パス取得したパケットの場合、拡張機能は呼び出すことにより、パケットの送信要求を完了[ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)します。
+    拡張可能スイッチの受信データパスで取得されたパケットの場合、拡張機能は[**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)を呼び出してパケット送信要求を完了します。
 
-    拡張機能を拡張可能スイッチのエグレス データ パス取得したパケットの場合は、パケットが完了すると通知を呼び出すことによって[ **NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)します。
+    拡張可能なスイッチの送信データパスで取得されたパケットの場合、拡張機能は[**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)を呼び出すことによってパケット受信の表示を完了します。
 
--   複数の宛先ポートを持つエグレス データ パス取得したパケットの場合、拡張機能は、宛先ポートを 1 つまたは複数のデータを変更することでパケット配信を除外できます。 拡張機能は設定によって、 **IsExcluded**の宛先ポートのメンバー [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)いずれかの値構造体。 この方法により、これらのポートに配信元へのパケット**IsExcluded**値が 0 に設定されます。
+-   複数の宛先ポートを持つ送信データパスで取得されたパケットの場合、拡張機能は1つまたは複数の宛先ポートのデータを変更することによって、パケット配信を除外できます。 この拡張機能では、宛先ポートの[**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造体の**IsExcluded**メンバーを1の値に設定することによってこれを行います。 このメソッドは、 **IsExcluded**値がゼロに設定されているポートにパケットを配信できるようにします。
 
-    **注**イングレス データ パス取得したパケットには宛先ポートが含まれていません。 このデータは拡張可能スイッチが出口のデータ パスのパケットを転送した後にのみ使用できます。
+    **メモ** 受信データパスで取得したパケットに宛先ポートが含まれていません。 このデータは、拡張可能なスイッチによって送信データパスにパケットが転送された後にのみ使用できます。
 
-拡張機能は、宛先ポートの変更後**IsExcluded**値、拡張機能に関連するエグレス データ パスにパケットを転送にする必要があります。 ただし場合、 **IsExcluded**パケットの宛先ポートのデータがドロップ パケットを実行して、パケットを転送するのではなくを示す値を受け取る 1、拡張機能に設定します。
+拡張機能によって宛先ポートの**IsExcluded**値が変更された後、送信データパスのパケットを後続の拡張機能に転送する必要があります。 ただし、すべてのパケットの宛先ポートの**IsExcluded**データが1に設定されている場合、拡張機能はパケットを転送するのではなく、パケットの受信通知を完了してパケットを破棄する必要があります。
 
-**注**拡張機能は、宛先ポートの設定が後**IsExcluded**エグレス データ パス上の拡張機能に関連する 1 つは、値は 0 にこの値を変更することはできません。
+**メモ** 拡張機能によって宛先ポートの**IsExcluded**値が1に設定された後、送信データパスの追加の拡張でこの値を0に変更することはできません。
 
-**注**取得拡張機能で拡張可能スイッチ ポートにパケットを配信を除外できません。
+**メモ** 拡張機能のキャプチャでは、拡張可能なスイッチポートへのパケットの配信を除外することはできません。
 
-フィルター処理および転送拡張機能は、拡張可能スイッチ ポートにパケット配信を除外するための次のガイドラインに従う必要があります。
+拡張可能なスイッチポートへのパケット配信を除外するには、次のガイドラインに従う必要があります。
 
--   拡張可能スイッチのイングレス データ パス フィルター処理および転送拡張機能は、パケットの発信元ポート、またはデータのポリシーの条件に基づいてパケット配信を除外できます。
+-   拡張可能スイッチの受信データパスでは、フィルターおよび転送拡張機能は、パケットの送信元ポートまたはデータのポリシー条件に基づいてパケット配信を除外できます。
 
-    ソース ポートの情報が格納されている、 [ **NDIS\_スイッチ\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)共用体のパケットの OOB データの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 拡張機能を使用してデータを取得する、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロ。
+    送信元ポートの情報は、パケットの Net\_buffer\_[**list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)の OOB データ内の[ **\_詳細\_net\_buffer\_list\_INFO\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)されるように、NDIS\_スイッチに格納されます。データ. 拡張機能は、NET\_BUFFER\_LIST を使用してデータを取得し[ **\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロを使用します。
 
-    場合は、拡張機能は、イングレス データのパスから取得したパケットの配信を除く、パケットの送信要求を完了してパケットを削除にする必要があります。
+    受信データパスから取得したパケットの配信が拡張機能によって除外される場合、パケット送信要求を完了することによってパケットを削除する必要があります。
 
--   拡張可能スイッチのイングレス データ パスは、転送拡張機能は、パケットの宛先ポートを特定し、パケットの OOB データにこの情報を追加します。 拡張機能によって適用されるポリシーの条件に基づき、OOB データにその先のポート情報を追加しないポートへのパケット配信を除外できます。
+-   拡張可能スイッチの受信データパスでは、転送拡張機能によってパケットの宛先ポートが決定され、この情報がパケットの OOB データに追加されます。 拡張機能によって適用されるポリシー条件に基づいて、宛先ポート情報を OOB データに追加しないことで、ポートへのパケット配信を除外できます。
 
-    この手順の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
+    この手順の詳細については、「[拡張可能スイッチの宛先ポートデータをパケットに追加](adding-extensible-switch-destination-port-data-to-a-packet.md)する」を参照してください。
 
--   拡張可能スイッチのエグレス データ パス フィルター処理および転送拡張機能は、ポリシーの条件に基づいて、パケットの配信を除外できます。 たとえば、フィルター拡張機能は、パケットの発信元ポートまたは変換先のポートのポリシーの条件に基づいてパケット配信を除外できます。
+-   拡張可能なスイッチの送信データパスでは、フィルターおよび転送拡張機能によって、ポリシーの条件に基づいてパケットの配信が除外される場合があります。 たとえば、フィルター拡張機能は、パケットの発信元ポートまたは宛先ポートのポリシー条件に基づいて、パケット配信を除外できます。
 
     拡張機能は、次の手順に従って、パケットの宛先ポートへの配信を除外します。
 
-    1.  拡張機能は呼び出すことによって、パケットの宛先ポートを取得[ *GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)します。 呼び出し、返される NDIS 場合\_状態\_成功した場合、*変換先*パラメーターにはへのポインターが含まれています、 [ **NDIS\_スイッチ\_転送\_移行先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 この構造体には、パケットの拡張可能スイッチの宛先ポートを指定します。 各接続先ポートとして書式設定、 [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体。
+    1.  拡張機能は、 [*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)を呼び出してパケットの宛先ポートを取得します。 呼び出しによって、NDIS\_STATUS\_SUCCESS が返された場合、DESTINATION*パラメーターには、* [**送信先\_配列構造\_転送\_、ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)へのポインターが含まれます。 この構造体は、パケットの拡張可能なスイッチの宛先ポートを指定します。 各宛先ポートは、 [**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造としてフォーマットされます。
 
-        **注**場合、 **NumDestinations**のメンバー、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造には、ゼロの値が含まれる、パケットには、宛先ポートのデータがありません。
+        **メモ** [**NDIS\_スイッチの NUMDESTINATIONS メンバー\_転送\_転送先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造に0の値が含まれている場合、パケットには宛先ポートのデータがありません。
 
-2.  拡張機能を設定して、拡張可能スイッチ ポートにパケット配信の除外、 **IsExcluded**の宛先ポートのメンバー [ **NDIS\_切り替える\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)いずれかの値構造体。
+2.  この拡張機能では、宛先ポートの**IsExcluded**メンバーに[**ポート\_の NDIS\_スイッチ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)を設定することにより、拡張可能なスイッチポートへのパケット配信が除外されます。
 
-    **注**場合は、拡張機能を除外するすべての宛先ポートのパケットの配信、拡張機能によってパケットが破棄する必要があります、パケットの受信を示す値を完了しています。
+    **メモ** 拡張機能がすべての宛先ポートへのパケットの配信を除外する場合、拡張機能はパケットの受信通知を完了してパケットを削除する必要があります。
 
-3.  拡張機能には、パケットの 1 つまたはすべての宛先ポートへの配信が除外されて、いる場合は、以下を行うこと必要があります。
+3.  拡張機能がパケット内の1つまたはすべての宛先ポートへの配信を除外する場合は、次の操作を行う必要があります。
 
-    -   拡張機能を呼び出す必要があります[ *UpdateNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)パケットの OOB データにこれらの変更をコミットします。
+    -   拡張機能は[*Updatenetbufferlistdestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)にこれらの変更をコミットする必要があります。
 
-    -   拡張機能を呼び出す必要があります[ *ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)します。 この関数が呼び出されると、拡張可能スイッチのインターフェイスはカウンターをインクリメントし、パケットの除外されたイベント ログに記録します。 拡張機能は、パケットを取得して、拡張可能スイッチのデータ パスでパケットを転送する前に、この呼び出しを行う必要があります。
+    -   拡張機能は[*ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)を呼び出す必要があります。 この関数が呼び出されると、拡張可能なスイッチインターフェイスによってカウンターが増加し、除外されるパケットのイベントがログに記録されます。 拡張機能は、パケットを取得した拡張可能なスイッチデータパス内のパケットを転送する前に、この呼び出しを行う必要があります。
 
-    同様に、拡張機能では、パケットのすべてのポートへの配信を除外するパケットの送信要求かを示す値が完了するも呼び出す必要があります[ *ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)します。
+    同様に、拡張機能がパケット送信要求を完了した場合、またはパケットのすべてのポートへの配信を除外するように指示した場合は、 [*ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)も呼び出す必要があります。
 
-    **注**、拡張機能のリンク リストを作成できます[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)拡張機能を除外するパケットの構造体。 拡張機能を呼び出すと[ *ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)、設定、 *NetBufferLists*リンク リストへのポインターへのパラメーター。
+    **メモ** 拡張機能では、拡張機能によって除外されているパケットの[**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のリンクリストを作成できます。 拡張機能が[*ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)を呼び出すと、そのリンクリストへのポインターには、 *NetBufferLists*パラメーターが設定されます。
 
-拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
+拡張可能なスイッチの受信と送信のデータパスの詳細については、「 [Hyper-v 拡張可能スイッチのデータパス](hyper-v-extensible-switch-data-path.md)」を参照してください。

@@ -3,18 +3,18 @@ title: レジストリ キー オブジェクトのルーチン
 description: レジストリ キー オブジェクトのルーチン
 ms.assetid: 9db6ff0d-8371-41bc-82c4-1bb56f5430f2
 keywords:
-- レジストリ WDK カーネルでは、オブジェクトのルーチン
-- ドライバーのレジストリ情報 WDK カーネル、オブジェクトのルーチン
-- オブジェクトのルーチンの WDK カーネル
-- レジストリ キー オブジェクトの WDK カーネル
+- レジストリ WDK カーネル、オブジェクトルーチン
+- ドライバーレジストリ情報 WDK カーネル、オブジェクトルーチン
+- オブジェクトルーチン WDK カーネル
+- レジストリキーオブジェクト WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ac1c97d3a207f1d8e5247a3ca2e60ce1d40264
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 08d6d29525a9d7a4ccaf3dd34d41cca9592aa5ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373438"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838459"
 ---
 # <a name="registry-key-object-routines"></a>レジストリ キー オブジェクトのルーチン
 
@@ -22,9 +22,9 @@ ms.locfileid: "67373438"
 
 
 
-Windows の役員は、オブジェクト マネージャーで管理されている executive オブジェクトとしてレジストリ キーを表します。 (オブジェクト マネージャーの詳細については、次を参照してください[オブジェクト管理](managing-kernel-objects.md)。)。具体的には、すべてのキーが、オブジェクト名とキーを識別するハンドルを開くことができます。
+Windows executive は、オブジェクトマネージャーによって管理される executive オブジェクトとしてレジストリキーを表します。 (オブジェクトマネージャーの詳細については、「[オブジェクトの管理](managing-kernel-objects.md)」を参照してください)。特に、すべてのキーにはオブジェクト名があり、キーへのハンドルを開くことができます。
 
-ユーザー モード アプリケーションがグローバルのハンドル、HKEY などの基準としたキーにアクセス\_ローカル\_マシンまたは HKEY\_現在\_ユーザー。 ただし、これらのハンドルでは、カーネル モード コードを使用できません。 そのオブジェクト名でキーを参照する代わりに、 すべてのレジストリ キーのルートは、 **\\レジストリ**オブジェクト。 子孫に対応して、グローバルのハンドル、 **\\レジストリ**オブジェクト、次の表に示すようにします。
+ユーザーモードのアプリケーションは、HKEY\_LOCAL\_MACHINE や HKEY\_CURRENT\_USER など、グローバルハンドルに関連するキーにアクセスします。 ただし、これらのハンドルはカーネルモードコードでは使用できません。 代わりに、オブジェクト名でキーを参照します。 すべてのレジストリキーのルートは、 **\\レジストリ**オブジェクトです。 グローバルハンドルは、次の表に示すように、 **\\Registry**オブジェクトの子孫に対応します。
 
 <table>
 <colgroup>
@@ -33,14 +33,14 @@ Windows の役員は、オブジェクト マネージャーで管理されて�
 </colgroup>
 <thead>
 <tr class="header">
-<th>ユーザー モードのハンドル</th>
+<th>ユーザーモードハンドル</th>
 <th>対応するオブジェクト名</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>HKEY_LOCAL_MACHINE</p></td>
-<td><p><strong>\Registry\Machine</strong></p></td>
+<td><p><strong>\ レジストリ \ コンピューター</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>HKEY_USERS</p></td>
@@ -48,24 +48,24 @@ Windows の役員は、オブジェクト マネージャーで管理されて�
 </tr>
 <tr class="odd">
 <td><p>HKEY_CLASSES_ROOT</p></td>
-<td><p>カーネル モード同等はありません。</p></td>
+<td><p>カーネルモードに対応していません</p></td>
 </tr>
 <tr class="even">
 <td><p>HKEY_CURRENT_USER</p></td>
-<td><p>単純なカーネル モードと同等の参照がない<a href="registry-run-time-library-routines.md" data-raw-source="[Registry Run-Time Library Routines](registry-run-time-library-routines.md)">レジストリ ランタイム ライブラリ ルーチン</a></p></td>
+<td><p>同等の単純なカーネルモードはありませんが、「<a href="registry-run-time-library-routines.md" data-raw-source="[Registry Run-Time Library Routines](registry-run-time-library-routines.md)">レジストリランタイムライブラリルーチン</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ドライバーは、次の手順を実行することによって、レジストリ キー オブジェクトを操作できます。
+ドライバーは、次の手順を実行して、レジストリキーオブジェクトを操作できます。
 
-1.  レジストリ キー オブジェクトを識別するハンドルを開きます。 詳細については、次を参照してください。[レジストリ キー オブジェクトを識別するハンドルを開く](opening-a-handle-to-a-registry-key-object.md)します。
+1.  レジストリキーオブジェクトへのハンドルを開きます。 詳細については、「[レジストリキーオブジェクトへのハンドルを開く](opening-a-handle-to-a-registry-key-object.md)」を参照してください。
 
-2.  適切な呼び出し、目的の操作を実行**Zw*Xxx*キー**ルーチン。 これを行う方法については、次を参照してください。[レジストリ キー オブジェクトを識別するハンドルを使用して](using-a-handle-to-a-registry-key-object.md)します。
+2.  適切な**Zw*Xxx*キー**ルーチンを呼び出して、目的の操作を実行します。 その方法については、「[レジストリキーオブジェクトへのハンドルの使用](using-a-handle-to-a-registry-key-object.md)」を参照してください。
 
-3.  呼び出すことで、ハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。
+3.  [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してハンドルを閉じます。
 
  
 

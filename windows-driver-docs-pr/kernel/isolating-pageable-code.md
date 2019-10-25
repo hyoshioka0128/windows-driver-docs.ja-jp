@@ -3,17 +3,17 @@ title: ページング可能なコードの分離
 description: ページング可能なコードの分離
 ms.assetid: 86189154-606a-4df8-b3a9-040bbaffaa2f
 keywords:
-- ページング可能なドライバー WDK カーネル、コードの分離
-- ページング可能なコードの分離
-- スピン ロック WDK メモリ
+- ページング可能ドライバー WDK カーネル、コードの分離
+- 分離 (ページング可能コードを)
+- スピンロック WDK メモリ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 056257ab3c5f732f5703d2acab3800ed4cada192
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 406319d3b82b11288d89c10ccf7a070090d3769d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376438"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827924"
 ---
 # <a name="isolating-pageable-code"></a>ページング可能なコードの分離
 
@@ -21,9 +21,9 @@ ms.locfileid: "67376438"
 
 
 
-スピン ロックを使用するルーチンがページングされることはできません。 ただし、場合によっては、ページング可能なセクションに含まれていないのは別のルーチンでスピン ロックを必要とする操作を分離できます。
+スピンロックを使用するルーチンにページングを行うことはできません。 ただし、場合によっては、スピンロックを必要とする操作を、ページング可能なセクションに含まれない別のルーチンで分離することができます。
 
-たとえば、次のフラグメントを考えてみます。
+たとえば、次のようなフラグメントを考えてみます。
 
 ```cpp
 //  PAGED_CODE(); 
@@ -68,9 +68,9 @@ if (!DeviceObject->ReferenceCount && !DeviceObject->AttachedDevice) {
 } 
 ```
 
-上記のルーチンを持たせてページング可能な (約 160 バイトの保存)、スピン ロックを別のルーチンに参照するわずか数行のコードを移動することによって。
+前のルーチンは、スピンロックを参照する数行のコードを別のルーチンに移動することによって、ページング可能にする (約160バイトを節約する) ことができます。
 
-さらに、覚えてドライバー コードする必要がありますいないマークすることと、いずれかを呼び出す場合ページング可能な**Ke * Xxx*** などのルーチンのサポート[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)または[ **KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)、これで、*待機*パラメーターを設定する**TRUE**。 このような呼び出しがディスパッチで IRQL を返します\_レベル。
+さらに、 *Wait*パラメーターが**TRUE**に設定されている[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex)や[**KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)などの**Ke * Xxx*** サポートルーチンを呼び出す場合は、ドライバーコードがページング可能としてマークされていないことに注意してください。 このような呼び出しでは、ディスパッチ\_レベルで IRQL が返されます。
 
  
 

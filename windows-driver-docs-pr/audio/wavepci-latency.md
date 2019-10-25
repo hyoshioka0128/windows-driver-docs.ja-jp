@@ -3,15 +3,15 @@ title: WavePci 遅延
 description: WavePci 遅延
 ms.assetid: 6d83c015-cf8f-40b4-bf28-de865a5bfe2d
 keywords:
-- WavePci 待機時間の WDK オーディオ
+- WavePci 待機時間 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4124c40c4374711872759edc36aee92d31662679
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a72f3044ee389f55b43d1734a6e5786c28fa97d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354129"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829992"
 ---
 # <a name="wavepci-latency"></a>WavePci 遅延
 
@@ -19,21 +19,21 @@ ms.locfileid: "67354129"
 ## <span id="wavepci_latency"></span><span id="WAVEPCI_LATENCY"></span>
 
 
-WavePci ポート ドライバーでは、異なる WaveCyclic ドライバーからオーディオ ストリームのバッファリングを処理します。
+WavePci port ドライバーは、WaveCyclic ドライバーとは異なる方法で、オーディオストリームのバッファー処理を行います。
 
-WavePci ミニポート ドライバーでは、ハードウェアの混在を提供する場合、DirectSound は、1 つの循環バッファー DirectSound wave ストリーム全体を含む WavePci ポート ドライバーは IRP を送信します。 DirectSound は、仮想メモリの連続するブロックとバッファーを割り当てます。 DirectSound バッファーのコピーを回避するには、は、カーネル ストリーミング レイヤーは、カーネル モードの仮想メモリにバッファーをマップし、循環バッファーのメモリ ページの仮想および物理アドレスの両方を指定する MDL (メモリ記述子のリスト) を生成します。 WavePci ポート ドライバーは、アロケーターのフレームのシーケンスに循環バッファーをパーティション分割 (を参照してください[KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators))。 ミニポート ドライバーがその優先アロケーター フレームを指定する場合のサイズ、 [ **IMiniportWavePciStream::GetAllocatorFraming** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)メソッドは、ストリームの初期化中に、ポート ドライバーによって呼び出されます。 ただし、SysAudio、システムのグラフ ビルダーには、オーディオ フィルター グラフ内の他のコンポーネントの要件に対応するために、ミニポート ドライバーの設定をオーバーライドできます。
+WavePci ミニポートドライバーでハードウェアミックスが提供されている場合、DirectSound は、単一の循環バッファー内の DirectSound wave ストリーム全体を含む WavePci port ドライバーに IRP を送信します。 DirectSound は、仮想メモリの連続するブロックとしてバッファーを割り当てます。 DirectSound バッファーをコピーしないようにするために、カーネルストリーミングレイヤーはバッファーをカーネルモードの仮想メモリにマップし、循環バッファー内のメモリページの仮想アドレスと物理アドレスの両方を指定する MDL (メモリ記述子リスト) を生成します。 WavePci port ドライバーは、循環バッファーをアロケーターフレームのシーケンスに分割します (「 [KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)」を参照してください)。 ミニポートドライバーは、ストリームの初期化中にポートドライバーによって[**IMiniportWavePciStream:: GetAllocatorFraming**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)メソッドが呼び出されたときに、推奨されるアロケーターフレームサイズを指定します。 ただし、システムグラフビルダーの SysAudio は、オーディオフィルターグラフ内の他のコンポーネントの要件を満たすために、ミニポートドライバーの設定を上書きできます。
 
-WavePci ポート ドライバーでは、マッピングのシーケンスとしてミニポート ドライバーに循環バッファーを公開します。 マッピングは、全体の割り当てフレームまたはフレームの一部です。 特定の割り当てのフレームがページ内に完全に、ポート ドライバー マッピングは 1 つとして、ミニポート ドライバーには、そのフレームに表示されます。 場合は、割り当てフレームは、1 つまたは複数のページ境界をまたぐ、ポート ドライバーは各ページの境界にフレームを分割し、2 つ以上のマッピングとして提示します。 呼び出しごとに[ **IPortWavePciStream::GetMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)シーケンス内の次の連続するマッピングを生成します。
+WavePci port ドライバーは、循環バッファーを一連のマッピングとしてミニポートドライバーに公開します。 マッピングは、割り当てフレーム全体またはフレームの一部です。 特定の割り当てフレームがページ内に完全に存在する場合、ポートドライバーはそのフレームをミニポートドライバーに1つのマッピングとして提示します。 アロケーションフレームが1つまたは複数のページ境界をまたがっしている場合は、ポートドライバーによって各ページの境界にフレームが分割され、2つ以上のマッピングとして示されます。 [**Iportwavepcistream:: getmapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)を呼び出すたびに、シーケンス内で次の連続するマッピングが生成されます。
 
-WaveCyclic 場合、場所、ミニポート ドライバーでは、データの時間をミリ秒単位では、ハードウェアでバッファーを制御するほとんどとは対照的 WavePci ミニポート ドライバーは、いつでも開くことがマッピングの数を細かく制御ができます。 開いているマッピングの数が呼び出しごとに 1 つずつ増加[ **GetMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)し呼び出しごとに 1 つ減少[ **ReleaseMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-releasemapping). (A **GetMapping**呼び出しが失敗する、もちろん、ドライバーがある完全に制御のマッピングの数より小さいためです)。オープン マッピングの数の制御と、累積的なを追跡することによって、マッピングのサイズ ミニポート ドライバーが判断できます (マップのサイズに依存する許容範囲) 内のバッファリングのミリ秒数、ハードウェアを使用できます。 WavePci ミニポート ドライバーでは、許容できるレベルに枯渇の可能性を低減するための十分なページ マッピングを要求する必要があります。
+WaveCyclic の場合とは異なり、ミニポートドライバーは、ハードウェアでバッファーされるデータのミリ秒数をほとんど制御できません。 WavePci ミニポートドライバーは、いつでも開いているマッピングの数をかなり制御します。 オープンマッピングの数は、 [**Getmapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)を呼び出すたびに1ずつ増加し、 [**ReleaseMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-releasemapping)を呼び出すたびに1つずつ減少します。 (これにより、 **Getmapping**呼び出しは失敗する可能性があります。そのため、ドライバーはマッピングの数を全体的に制御するよりも少なくなります)。オープンマッピングの数を制御し、マッピングの累積サイズを追跡することによって、ミニポートドライバーは、ハードウェアが使用できるバッファーのミリ秒数を判断します (マッピングサイズに依存する許容範囲内)。 WavePci ミニポートドライバーは、許容されるレベルの枯渇を減らすために十分なページマッピングを要求する必要があります。
 
-場合ミニポート ドライバーのポリシーは、データの最大 50 ミリ秒をバッファーには、たとえば、読み取りと書き込みのポインター間に注意してこの制限が、ドライバーが累積されますが、しませんし、表す必要がありますいないデータの上限を表すこと、ストリームの待機時間にドライバーのコントリビューション。 その待機時間をできるだけ小さく維持するには、ドライバーを設計する必要があります。 ミニポート ドライバーでは、新しいストリームの再生を開始する前に、初期のマッピングのセットを取得するミニポート ドライバーは、そのバッファーの制限 (この例では 50 ミリ秒単位) に達するかまたは複数のマッピングがありませんがすぐになるまでのマッピングを要求を続行できます。ご利用いただけます。 後者の場合、ただし、ミニポート ドライバー待つ必要がありますいないストリームの再生を開始する前に、複数のマッピングが使用可能になります。 代わりに、ドライバーすぐに再生を開始するマッピングが既に取得しています。 後で、複数のマッピングが使用可能になると、ドライバーは、バッファー サイズの制限に達するか、または複数のマッピングがありませんがすぐに利用できるまで、その他のマッピングを取得を続行できます。
+ミニポートドライバーが、読み取りポインターと書き込みポインターの間など、最大50ミリ秒のデータをバッファーに格納する場合、この制限はドライバーが累積するデータの最大量を表すことに注意してください。ただし、ストリームの待機時間に対するドライバーの影響。 ドライバーは、待機時間をできるだけ短く保つように設計する必要があります。 新しいストリームの再生を開始する前に、ミニポートドライバーが最初のマッピングセットを取得すると、ミニポートドライバーは、バッファー制限 (この例では50ミリ秒) に達するか、すぐにマッピングがなくなるまで、マッピングを要求し続けることができます。ご. ただし、後者の場合、ミニポートドライバーは、ストリームの再生を開始する前に、より多くのマッピングが使用可能になるまで待機することはできません。 代わりに、ドライバーは、既に取得したマッピングの再生をすぐに開始する必要があります。 後で、より多くのマッピングが使用可能になると、ドライバーは、バッファーサイズの制限に達するか、すぐに使用できるマッピングがなくなるまで、追加のマッピングを引き続き取得できます。
 
-一般に、WavePci デバイスの DMA のハードウェアの場合は、任意のバイト アラインメントに格納されていると、物理メモリの非連続のページ間の境界をまたがるをオーディオ フレームに直接アクセスするように設計する必要があります。 マッピングは、オーディオ フレーム数が整数である必要がありますデバイスがあれば、そのデバイスでサポートされるオーディオ形式の種類に制限されます。 もちろん、この制限を使用したデバイスは、2 の累乗であるオーディオ フレーム サイズを処理できる必要があります。
+一般に、WavePci デバイスの DMA ハードウェアは、任意のバイトの配置で格納されているオーディオフレームに直接アクセスするように設計する必要があります。また、物理メモリの連続していないページ間で境界をまたがるします。 マッピングが整数のオーディオフレームであることを要求するデバイスがある場合、そのデバイスは、サポートされるオーディオ形式の種類に制限されます。 もちろん、この制限があるデバイスでは、2の累乗であるオーディオフレームサイズを引き続き処理できなければなりません。
 
-たとえば、4 つのチャネルと、16 ビットのサンプル サイズを使用したデバイスには、8 バイトのオーディオ フレーム サイズを取得が必要です。 オーディオ フレーム数が整数にページ (または 8 バイトの倍数であるその他の割り当てフレーム サイズ) きちんと収まります。 ただし、16 ビットのサンプルを使って、5.1 チャネル ストリームの場合に、オーディオ フレーム サイズは 12 バイト、ストリーム必ずしも 1 つのページのサイズを超えるにはページ境界をまたがるオーディオ フレームが含まれています。 (図では、 [Wave フィルター](wave-filters.md)この問題を示しています)。任意のバイト アラインメントと任意のバイト長のマッピングを処理できないハードウェアは必要があります、パフォーマンスが低下する中間コピーを実行するドライバーに依存します。
+たとえば、4つのチャネルと16ビットのサンプルサイズを持つデバイスには、8バイトのオーディオフレームサイズが必要です。 1つのページ (または8バイトの倍数であるその他の割り当てフレームのサイズ) 内では、非常に多くのオーディオフレームが適しています。 ただし、16ビットのサンプルを含む5.1 チャネルストリームの場合、オーディオフレームサイズは12バイトであり、1ページのサイズを超えるストリームには、ページ境界をまたがるするオーディオフレームが必ず含まれている必要があります。 ( [Wave フィルター](wave-filters.md)の図形はこの問題を示しています)。任意のバイトの配置と任意のバイト長のマッピングを処理できないハードウェアは、中間コピーを実行するためにドライバーに依存する必要があります。これにより、パフォーマンスが低下します。
 
-Ac97 サンプル アダプタのドライバで、Microsoft Windows Driver Kit (WDK) の実装を[ **GetAllocatorFraming** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)メソッド。 ミニポート ドライバーでは、このメソッドを使用して、その最適なフレーム割り当てサイズを通信します。 Windows 2000 と Windows Me、ポート、ドライバーはこのメソッドを呼び出して場合にのみ、[スプリッター システム ドライバー](kernel-mode-wdm-audio-components.md#splitter_system_driver) (Splitter.sys) が、出力ピンの上にインスタンス化します。 Windows XP 以降では、ポート、ドライバーは、入力ストリームものこのメソッドを呼び出します。 SysAudio フレーム割り当てサイズを決定するときに、ミニポート ドライバーの設定を無視する選択することに注意してください。
+Microsoft Windows Driver Kit (WDK) の Ac97 サンプルアダプタードライバーは、 [**Getallocatorframing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)メソッドを実装しています。 ミニポートドライバーは、このメソッドを使用して、優先されるフレーム割り当てサイズを通知します。 Windows 2000 および Windows Me では、出力ピンの上に[スプリッターシステムドライバー](kernel-mode-wdm-audio-components.md#splitter_system_driver) (スプリッター) がインスタンス化されている場合にのみ、ポートドライバーがこのメソッドを呼び出します。 Windows XP 以降では、ポートドライバーは入力ストリームに対してもこのメソッドを呼び出します。 SysAudio は、フレーム割り当てサイズを決定するときに、ミニポートドライバーの設定を無視することがあることに注意してください。
 
  
 

@@ -1,57 +1,57 @@
 ---
-title: UWP アプリのデバイスのプリンターのメンテナンスを実行する方法
-description: Windows 8.1 では、UWP デバイス アプリは印刷ヘッドのアラインメントとノズルをクリーニングなどのプリンターのメンテナンスを実行できます。
+title: UWP デバイスアプリでプリンターのメンテナンスを行う方法
+description: Windows 8.1 では、UWP デバイスアプリは、印刷ヘッドの調整やノズルのクリーニングなど、プリンターのメンテナンスを実行できます。
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1288d4566c91c52f74a8e31cab779be386144df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a79ebb2a368cdefde97493870bd8e8ed6328aa96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369355"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829906"
 ---
-# <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>UWP アプリのデバイスのプリンターのメンテナンスを実行する方法
+# <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>UWP デバイスアプリでプリンターのメンテナンスを行う方法
 
 
-Windows 8.1 では、UWP デバイス アプリは印刷ヘッドのアラインメントとノズルをクリーニングなどのプリンターのメンテナンスを実行できます。 このトピックでは、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)双方向通信 (Bidi) を使用して、このようなデバイスのメンテナンスを実行する方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+Windows 8.1 では、UWP デバイスアプリは、印刷ヘッドの調整やノズルのクリーニングなど、プリンターのメンテナンスを実行できます。 このトピックではC# 、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのバージョンを使用して、双方向通信 (Bidi) を使用してこのようなデバイスのメンテナンスを実行する方法を示します。 UWP デバイスアプリ全般の詳細については、 [uwp デバイスアプリの準拠](meet-uwp-device-apps.md)に関するページを参照してください。
 
-C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルではプリンターでのメンテナンス、 **DeviceMaintenance.xaml.cs**ファイル、 **DeviceAppForPrinters2**プロジェクト。 サンプルを Bidi を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
+C# [印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのバージョンは、 **DeviceAppForPrinters2**プロジェクトの**DeviceMaintenance.xaml.cs**ファイルを使用したプリンターのメンテナンスを示しています。 このサンプルでは、Bidi を操作するために、**プリンターの拡張**機能ライブラリを使用します。 プリンター拡張ライブラリは、v4 印刷ドライバーのプリンター拡張機能インターフェイスにアクセスするための便利な方法を提供します。 詳細については、「[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)」を参照してください。
 
-**注**  このトピックで示すコード例に基づいています、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
+このトピックに示されているコード例は、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのC#バージョンに基づい**て  ます**。 このサンプルは、JavaScript およびC++でも使用できます。 は COM にC++直接アクセスできるため、サンプルC++のバージョンにはコードライブラリプロジェクトが含まれていないことに注意してください。 サンプルをダウンロードして、最新バージョンのコードを確認してください。
 
  
 
-## <a name="span-idprintermaintenancespanspan-idprintermaintenancespanspan-idprintermaintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>プリンターのメンテナンス
+## <a name="span-idprinter_maintenancespanspan-idprinter_maintenancespanspan-idprinter_maintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>プリンターのメンテナンス
 
 
-Windows 8.1 には、新しいデバイスのメンテナンスを実装するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [ **IPrinterExtensionAsyncOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation) 、および[ **IPrinterQueue2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2). これらのインターフェイスを使用すれば、デバイスとプロトコルに固有のコマンドに変換してから、プリンターに送信できるように、ポート モニターを双方向の要求を非同期的に送信できます。 詳細については、次を参照してください。[デバイスのメンテナンス (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)します。
+Windows 8.1 では、デバイスのメンテナンスを実装するために使用できる、v4 プリンタードライバーに新しいプリンター拡張インターフェイスが導入されています。 [**Iprinter Bidisetrequestcallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation) 、および[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)。 これらのインターフェイスを使用すると、ポートモニターに対して非同期的に Bidi 要求を送信して、デバイスやプロトコルに固有のコマンドに変換してから、プリンターに送信することができます。 詳細については、「[デバイスのメンテナンス (V4 プリンタードライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)」を参照してください。
 
-**ヒント:**    C# JavaScript アプリは COM Api と直接動作できません。 作成する場合、C#または JavaScript UWP デバイス アプリ、プリンターの拡張機能ライブラリを使用して、これらのインターフェイス (このトピックで示す) にアクセスします。
+**ヒント**  C#と JavaScript アプリが COM api を直接操作することはできません。 C#または JAVASCRIPT の UWP デバイスアプリを作成する場合は、このトピックに示すように、プリンター拡張ライブラリを使用してこれらのインターフェイスにアクセスします。
 
  
 
 ## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>前提条件
 
 
-開始する前に。
+作業を開始する前に:
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
-2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
-3.  アプリをストアに関連付けます。 参照してください[UWP デバイスのアプリを作成](step-1--create-a-uwp-device-app.md)についてです。
-4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。
-5.  アプリのメイン ページの UI をビルドします。 表示されている全画面表示になりますが、最初からすべての UWP デバイス アプリを起動できます。 スタート エクスペリエンスを使用して、製品またはサービスに固有のブランドと一致する方法と、デバイスの機能を強調表示します。 使用できる UI コントロールの種類の特別な制限はありません。 全画面表示エクスペリエンスのデザインを開始するを参照してください。、 [Microsoft Store の設計原則](https://go.microsoft.com/fwlink/p/?LinkID=299845)します。
-6.  使用してアプリを作成している記述しているかどうかはC#または JavaScript を追加、 **PrinterExtensionLibrary** UWP デバイスのアプリ ソリューションにプロジェクト。 このプロジェクトを見つけることができます、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプル。
-    **注**  のための C++ COM に直接アクセスできる、C アプリの場合は、COM ベースのプリンター デバイス コンテキストを使用する別のライブラリを必要としません。
+1.  プリンターが v4 印刷ドライバーを使用してインストールされていることを確認します。 詳細については、「 [v4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)」を参照してください。
+2.  開発用 PC のセットアップを開始します。 ツールのダウンロードと開発者アカウントの作成に関する情報については、「[作業の開始](getting-started.md)」を参照してください。
+3.  アプリをストアに関連付けます。 詳細については[、「UWP デバイスアプリの作成](step-1--create-a-uwp-device-app.md)」を参照してください。
+4.  アプリに関連付けられているプリンターのデバイスメタデータを作成します。 詳細については、「[デバイスメタデータの作成](step-2--create-device-metadata.md)」を参照してください。
+5.  アプリのメインページの UI を作成します。 すべての UWP デバイスアプリはスタート画面から起動でき、全画面表示されます。 スタート画面を使用して、お使いのデバイスのブランドと機能に合わせて製品やサービスを強調表示します。 使用できる UI コントロールの種類に特別な制限はありません。 全画面表示のエクスペリエンスのデザインを開始するには、 [Microsoft Store 設計の原則](https://go.microsoft.com/fwlink/p/?LinkID=299845)に関するページを参照してください。
+6.  または JavaScript を使用C#してアプリを作成する場合は、UWP デバイスアプリソリューションに**プリンター extensionlibrary**プロジェクトを追加します。 このプロジェクトは、[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルで見つけることができます。
+    は、がC++ com に直接アクセスできるC++ため、アプリケーションは com ベースのプリンターデバイスコンテキストを操作するために個別のライブラリを必要としないため、  に**注意**してください。
 
      
 
-## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>手順 1: 双方向の要求を準備します。
+## <a name="span-idstep_1__prepare_bidi_requestspanspan-idstep_1__prepare_bidi_requestspanspan-idstep_1__prepare_bidi_requestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>手順 1: Bidi 要求を準備する
 
 
-デバイスのメンテナンス インターフェイスは、双方向の要求は、文字列の形式で XML データである必要があります。 アプリで意味がある場所では、双方向の要求を構築できます。 たとえば、文字列定数として、双方向の要求を保存したり、ユーザー入力に基づいて動的に作成します。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルの動作の既定の要求を構築する`OnNavigatedTo`メソッド。 双方向に関する詳細については、次を参照してください。[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)します。
+デバイスメンテナンスインターフェイスでは、Bidi 要求が文字列形式の XML データである必要があります。 アプリケーションでは、任意の場所で Bidi 要求を構築できます。 たとえば、Bidi 要求を文字列定数として保存したり、ユーザー入力に基づいて動的に作成したりすることができます。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルは、`OnNavigatedTo` メソッドで既定の要求を構築するために発生します。 Bidi の詳細については、「[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)」を参照してください。
 
-この例は、`OnNavigatedTo`のメソッド、 **DeviceMaintenance.xaml.cs**ファイル。
+この例は、 **DeviceMaintenance.xaml.cs**ファイルの `OnNavigatedTo` メソッドからのものです。
 
 ```CSharp
 string defaultBidiQuery =
@@ -62,12 +62,12 @@ string defaultBidiQuery =
     "</bidi:Set>";
 ```
 
-## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>手順 2: プリンターを検索します。
+## <a name="span-idstep_2__find_printerspanspan-idstep_2__find_printerspanspan-idstep_2__find_printerspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>手順 2: プリンターを検索する
 
 
-アプリは、プリンターにコマンドを送信できる、これには、まず、プリンターを探します。 これを行う、[印刷ジョブの管理やプリンターの管理](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルには、という名前の便利なクラスが含まれています。 `PrinterEnumeration` (で、 **PrinterEnumeration.cs**ファイル)。 このクラスは、デバイスのメタデータを使用して、アプリに関連付けられているすべてのプリンターを検索しの一覧を返します`PrinterInfo`オブジェクトで、名前と各プリンターについては、デバイス Id が含まれています。
+アプリがプリンターにコマンドを送信する前に、まずプリンターを検索する必要があります。 これを行うために、[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルには、( **PrinterEnumeration.cs**ファイルに) `PrinterEnumeration` という便利なクラスが含まれています。 このクラスは、デバイスメタデータを使用してアプリに関連付けられているすべてのプリンターを検索し、各プリンターの名前とデバイス Id を含む `PrinterInfo` オブジェクトの一覧を返します。
 
-この例は、`EnumeratePrinters_Click`のメソッド、 **DeviceMaintenance.xaml.cs**ファイル。 サンプルを使用する方法を示しています、`PrinterEnumeration`クラスの一覧を取得するには、プリンターが関連付けられています。
+この例は、 **DeviceMaintenance.xaml.cs**ファイルの `EnumeratePrinters_Click` メソッドからのものです。 このサンプルでは、`PrinterEnumeration` クラスを使用して、関連付けられているプリンターの一覧を取得する方法を示します。
 
 ```CSharp
 private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
@@ -102,16 +102,16 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**ヒント:**   の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
+**ヒント**  `PrinterEnumeration` と `PrinterInfo` クラスの詳細については、 **PrinterEnumeration.cs**ファイルを参照してください。
 
  
 
-## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>手順 3: 双方向の要求を送信します。
+## <a name="span-idstep_3__send_bidi_requestspanspan-idstep_3__send_bidi_requestspanspan-idstep_3__send_bidi_requestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>手順 3: Bidi 要求を送信する
 
 
-Bidi 文字列およびコールバックを双方向の要求を送信するには、デバイスのメンテナンス インターフェイスが必要です。 `SendBidiRequest_Click`メソッド、サンプルの最初では、`PrinterInfo`という名前のプリンター拡張コンテキスト オブジェクトを作成するオブジェクト`context`します。 `PrinterBidiSetRequestCallback`オブジェクトが作成され、コールバックを処理するイベント ハンドラーを追加`OnBidiResponseReceived`イベント。 最後に、プリンター拡張コンテキストの`SendBidiSetRequestAsync`双方向の文字列とコールバックを送信するメソッドを使用します。
+Bidi 要求を送信するには、デバイスメンテナンスインターフェイスに、Bidi 文字列とコールバックが必要です。 `SendBidiRequest_Click` メソッドでは、サンプルはまず `PrinterInfo` オブジェクトを使用して、`context`という名前のプリンター拡張コンテキストオブジェクトを作成します。 次に、`PrinterBidiSetRequestCallback` オブジェクトが作成され、コールバックの `OnBidiResponseReceived` イベントを処理するためのイベントハンドラーが追加されます。 最後に、プリンター拡張コンテキストの `SendBidiSetRequestAsync` メソッドを使用して、Bidi 文字列とコールバックを送信します。
 
-この例は、`SendBidiRequest_Click`のメソッド、 **DeviceMaintenance.xaml.cs**ファイル。
+この例は、 **DeviceMaintenance.xaml.cs**ファイルの `SendBidiRequest_Click` メソッドからのものです。
 
 ```CSharp
 private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
@@ -145,12 +145,12 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>手順 4: 双方向の応答を受信します。
+## <a name="span-idstep_4__receive_bidi_responsespanspan-idstep_4__receive_bidi_responsespanspan-idstep_4__receive_bidi_responsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>手順 4: Bidi 応答を受信する
 
 
-双方向「設定」操作が完了すると、コールバック オブジェクトの型の`PrinterBidiSetRequestCallback`が呼び出されます。 このコールバック エラー HRESULT 応答から処理を行います、し、トリガー、`OnBidiResponseReceived`イベント、イベント パラメーターを介して Bidi 応答を送信します。
+Bidi の "set" 操作が完了すると、`PrinterBidiSetRequestCallback`型のコールバックオブジェクトが呼び出されます。 このコールバックは、HRESULT 応答からのエラー処理を処理し、イベントパラメーターを使用して Bidi 応答を送信して、`OnBidiResponseReceived` イベントをトリガーします。
 
-この例では、`PrinterBidiSetRequestCallback`クラスの定義、 **DeviceMaintenance.xaml.cs**ファイル。
+この例は、 **DeviceMaintenance.xaml.cs**ファイル内の `PrinterBidiSetRequestCallback` クラス定義を示しています。
 
 ```CSharp
 internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
@@ -183,9 +183,9 @@ internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
 }
 ```
 
-Bidi 応答に送信し、`OnBidiResponseReceived`メソッド、場所、 `Dispatcher` UI スレッドに結果を表示するために使用します。
+次に、Bidi 応答を `OnBidiResponseReceived` メソッドに送信します。このメソッドは、`Dispatcher` を使用して UI スレッドの結果を表示します。
 
-この例は、`OnBidiResponseReceived`のメソッド、 **DeviceMaintenance.xaml.cs**ファイル。
+この例は、 **DeviceMaintenance.xaml.cs**ファイルの `OnBidiResponseReceived` メソッドからのものです。
 
 ```CSharp
 internal async void OnBidiResponseReceived(object sender, string bidiResponse)
@@ -197,47 +197,47 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 }
 ```
 
-## <a name="span-idtestingspanspan-idtestingspantesting"></a><span id="testing"></span><span id="TESTING"></span>テスト
+## <a name="span-idtestingspanspan-idtestingspantesting"></a><span id="testing"></span><span id="TESTING"></span>調べる
 
 
-UWP デバイス アプリをテストする前に、デバイス メタデータを使用して、プリンターにリンクする必要があります。
+UWP デバイスアプリをテストするには、デバイスメタデータを使用してプリンターにリンクされている必要があります。
 
--   デバイスのアプリ情報を追加するプリンターのデバイス メタデータ パッケージのコピーする必要があります。 使用してビルドできるデバイス メタデータを持っていない場合、**デバイス メタデータの作成ウィザード**、トピックの説明に従って[UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+-   デバイスアプリ情報を追加するには、プリンターのデバイスメタデータパッケージのコピーが必要です。 デバイスメタデータを持っていない場合は、「 [UWP デバイスアプリのデバイスメタデータの作成](https://go.microsoft.com/fwlink/p/?LinkId=313644)」の説明に従って、**デバイスメタデータ作成ウィザード**を使用して作成できます。
 
-    **注**  を使用する、**デバイス メタデータの作成ウィザード**、Microsoft Visual Studio Professional、Microsoft、Visual Studio Ultimate をインストールする必要がありますまたは[スタンドアロン Windows 8.1 の SDK](https://go.microsoft.com/fwlink/p/?linkid=309209)、このトピックの手順を完了する前にします。 Microsoft Visual Studio Express for Windows をインストールすると、ウィザードが含まれていない SDK のバージョンがインストールされます。
+    **注**  **デバイスメタデータ作成ウィザード**を使用するには、このトピックの手順を実行する前に、Windows 8.1 用の Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate、または[スタンドアロン SDK](https://go.microsoft.com/fwlink/p/?linkid=309209)をインストールする必要があります。 Windows 用の Microsoft Visual Studio Express をインストールすると、ウィザードを含まないバージョンの SDK がインストールされます。
 
      
 
 次の手順では、アプリをビルドし、デバイスのメタデータをインストールします。
 
 1.  テスト署名を有効にします。
-    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
-    2.  **ツール**メニューの **テスト署名を有効にする**します。
+    1.  DeviceMetadataWizard をダブルクリックして、 *% ProgramFiles (x86)%* \\Windows kit\\8.1\\bin\\x86 から、**デバイスメタデータ作成ウィザード**を開始し**ます。**
+    2.  **[ツール]** メニューの **[テスト署名を有効にする]** を選択します。
 
-2.  コンピューターを再起動します
-3.  ソリューション (.sln) ファイルを開くには、ソリューションをビルドします。 F7 キーを押すか**ビルド -&gt;ソリューションのビルド**サンプルが読み込まれた後は、上部のメニューから。
+2.  コンピューターを再起動する
+3.  ソリューション (.sln) ファイルを開いて、ソリューションをビルドします。 F7 キーを押すか、サンプルが読み込まれた後で、上部のメニューから [**ビルド-&gt;ビルド**] をクリックします。
 
-4.  接続を切断し、プリンターをアンインストールします。 Windows が次に、デバイスが検出されたときに更新済みのデバイス メタデータの読み取りができるように、この手順が必要です。
-5.  編集し、デバイスのメタデータを保存します。 デバイス アプリをデバイスにリンクするには、デバイスでデバイス アプリを関連付ける必要があります。
-    **注**  デバイスのメタデータをまだ作成していない場合は、次を参照してください。 [UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+4.  プリンタを切断し、アンインストールします。 この手順は、デバイスが次回検出されたときに、更新されたデバイスメタデータを Windows が読み取るようにするために必要です。
+5.  デバイスメタデータを編集して保存します。 デバイスアプリをデバイスにリンクするには、デバイスアプリをデバイスに関連付ける必要があります。
+    **注**  デバイスのメタデータをまだ作成していない場合は、「 [UWP デバイスアプリのデバイスメタデータを作成](https://go.microsoft.com/fwlink/p/?LinkId=313644)する」を参照してください。
 
      
 
-    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
-    2.  クリックして**デバイス メタデータの編集**します。 これからは、既存のデバイス メタデータ パッケージを編集できます。
-    3.  **オープン** ダイアログ ボックスで、UWP デバイス アプリに関連付けられている、デバイス メタデータ パッケージを見つけます。 (これが、 **devicemetadata ms**ファイル拡張子)。
-    4.  **指定 UWP デバイスのアプリ情報** ページで、Microsoft Store アプリの情報を入力、 **UWP デバイス アプリ**ボックス。 をクリックして**インポート UWP アプリのマニフェスト ファイル**自動的に入力する、**パッケージ名**、**パブリッシャー名**と**UWP アプリの ID**します。
-    5.  場合は、アプリは、プリンターの通知の登録は、入力、**通知ハンドラー**ボックス。 **イベント ID**、印刷イベント ハンドラーの名前を入力します。 **イベント資産**、そのコードが存在するファイルの名前を入力します。
+    1.  **デバイスメタデータの作成ウィザード**がまだ開いていない場合は、 **DeviceMetadataWizard**をダブルクリックして、 *% ProgramFiles (X86)%* \\Windows kit\\8.1\\bin\\x86 から起動します。
+    2.  **[デバイスメタデータの編集]** をクリックします。 これにより、既存のデバイスメタデータパッケージを編集できるようになります。
+    3.  **[開く]** ダイアログボックスで、UWP デバイスアプリに関連付けられているデバイスメタデータパッケージを見つけます。 ( **Devicemetadata**ファイル拡張子が付いています)。
+    4.  **[Uwp デバイスアプリ情報の指定]** ページで、 **[uwp デバイスアプリ]** ボックスに Microsoft Store アプリ情報を入力します。 **[UWP アプリケーションマニフェストファイルのインポート]** をクリックすると、**パッケージ名**、**発行者名**、および**UWP アプリ ID**が自動的に入力されます。
+    5.  アプリがプリンター通知に登録されている場合は、 **[通知ハンドラー]** ボックスに入力します。 **[イベント ID]** に、印刷イベントハンドラーの名前を入力します。 **[イベントアセット]** に、そのコードが存在するファイルの名前を入力します。
 
-    6.  完了したら、クリックして **[次へ]** に到達するまで、**完了**ページ。
-    7.  **デバイス メタデータ パッケージの確認** ページで、すべての設定が正しいことと選択するかどうかを確認、**デバイス メタデータ パッケージをローカル コンピューター上のメタデータ ストアにコピー**チェック ボックスをオンします。 クリックして**保存**します。
+    6.  完了したら、 **[完了]** ページが表示されるまで **[次へ]** をクリックします。
+    7.  **[デバイスメタデータパッケージの確認]** ページで、すべての設定が正しいことを確認し、 **[ローカルコンピューターのメタデータストアにデバイスメタデータパッケージをコピーする]** チェックボックスをオンにします。 **[保存]** をクリックします。
 
-6.  デバイスが接続されている場合、その Windows が更新されたデバイスのメタデータを読み取り、プリンターに再接続します。
+6.  デバイスが接続されているときに、Windows によって更新されたデバイスメタデータが読み取られるように、プリンターを再接続します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバイスのメンテナンス (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
+[デバイスのメンテナンス (v4 プリンタードライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [V4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 
@@ -245,9 +245,9 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
 [UWP アプリの概要](getting-started.md)
 
-[アプリを作成する UWP デバイス (ステップ バイ ステップ ガイド)](step-1--create-a-uwp-device-app.md)
+[UWP デバイスアプリを作成する (ステップバイステップガイド)](step-1--create-a-uwp-device-app.md)
 
-[UWP デバイスのアプリ (ステップ バイ ステップ ガイド) のデバイス メタデータを作成します。](step-2--create-device-metadata.md)
+[UWP デバイスアプリのデバイスメタデータを作成する (ステップバイステップガイド)](step-2--create-device-metadata.md)
 
  
 

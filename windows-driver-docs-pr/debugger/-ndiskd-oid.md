@@ -1,9 +1,9 @@
 ---
-title: ndiskd.oid
-description: Ndiskd.oid 拡張機能には、NDIS OID 要求に関する情報が表示されます。
+title: ndiskd oid
+description: Ndiskd oid 拡張機能には、NDIS OID 要求に関する情報が表示されます。
 ms.assetid: FCDE2F78-98C0-4437-999A-4566FEB5D7BB
 keywords:
-- デバッグ ndiskd.oid Windows
+- ndiskd oid Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,52 +12,52 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a9af5dcfcdf9e2d2be4f5bd658b746334709b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0045020c01dcab392df1eb507527dacb9f973ffa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363117"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837573"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
 
-**! Ndiskd.oid**拡張機能には、NDIS OID 要求に関する情報が表示されます。 パラメーターなしで、この拡張機能を実行する場合です。 すべてのミニポートおよびフィルターに ndiskd で OID 要求の保留中のすべての一覧が表示されます。 各ミニポートまたはフィルターは、最大で 1 つ保留 OID 要求と任意の数のキューに置かれた OID 要求を持っています。
+**! Ndiskd oid**拡張機能には、NDIS oid 要求に関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべてのミニポートとフィルターに対する保留中のすべての OID 要求の一覧が表示されます。 各ミニポートまたはフィルターには、1つの保留中の OID 要求と、任意の数のキューに置かれた OID 要求があります。
 
-フィルターが通常 OID 要求を複製し、の複製を渡すことに注意してください。 場合でも、プロトコルが 1 つの OID 要求を発行する場合があります複製要求の複数のインスタンスつまり:、各フィルターおよびミニポート内の別の 1 つ。 **! ndiskd.oid**保留中の複数の Oid プロトコルが実際に発行よりもが生じるため、個別に各クローンが表示されます。
+通常、フィルターは OID 要求を複製して、複製を渡すことに注意してください。 つまり、プロトコルが1つの OID 要求を発行する場合でも、複製された要求のインスタンスが複数存在する可能性があります。1つはフィルターごとに、もう1つはミニポートです。 **! ndiskd oid**によって各複製が個別に表示されるため、プロトコルが実際に発行した数よりも多くの保留中の oid が表示される場合があります。
 
 ```console
 !ndiskd.oid [-handle <x>] [-legacyoid] [-nolimit>] [-miniport <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-ハンドルは、NDIS の\_OID\_要求
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+NDIS\_OID\_要求のハンドル
 
 <span id="_______-legacyoid______"></span><span id="_______-LEGACYOID______"></span> *-legacyoid*   
-従来の NDIS として扱います\_、NDIS ではなく要求\_OID\_を要求します。
+は、NDIS\_OID\_要求ではなく、レガシ NDIS\_要求として扱います。
 
 <span id="_______-nolimit______"></span><span id="_______-NOLIMIT______"></span> *-nolimit*   
-表示されている Oid 保留中の数は制限されません。
+では、表示される保留中の Oid の数は制限されません。
 
-<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-miniport*   
-保留中のこのミニポートのスタックに OID 要求を検索します。
+<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-ミニポート*   
+このミニポートのスタックで保留中の OID 要求を検索します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-**! ndiskd.oid**リストが表示保留中のすべての Oid のシステムで一度にシステム ハングのデバッグできるようにまたは[0x9F バグ チェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)状況 (ドライバー\_POWER\_状態\_エラー)。 たとえば、架空の 0x9F バグ チェックが明らかに、システムが IRP のハング状態にして、NDIS を待機していたことを分析します。 は、NDIS、OS から Irp が電源切り替え効果も含めて、Oid に変換を実行してその **! ndiskd.oid** 、この例で、スタックの一番下にあるデバイス可能性がありますがされて音を参照してくださいでした、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)スタックの残りの部分がハングしたとします。 問題を解決するため、そのデバイスが長時間保留中の OID を保持する理由を調査する可能性がありますし、NDIS ドライバーは 1 秒間に複数の OID を保留しないを必要があります。
+**! ndiskd oid**は、システム上のすべての保留中の oid の一覧を一度に表示します。これにより、システムのハングや[0x9f バグチェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)の状況 (ドライバー\_電源\_状態\_エラー) のデバッグに役立ちます。 たとえば、架空の0x9F バグチェックを分析すると、システムが IRP でハングし、NDIS を待機していたことが判明したとします。 NDIS では、OS からの Irp は電源遷移を含む Oid に変換されるため、 **! ndiskd oid**を実行すると、スタックの一番下にあるデバイスが[oid\_PNP\_セットに clinging されている可能性があり\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)スタックの残りの部分をパワーし、ハングします。 NDIS ドライバーでは、OID を1秒以上保留しないようにする必要があります。そのため、デバイスの OID が長時間保留になっている原因を調査して、問題を解決することができます。
 
 <a name="examples"></a>例
 --------
 
-正常に実行するシステムで保留中の OID の例を確認するには、(ミニポートの対応するミニポート ドライバーでは) でミニポートの OID 要求ハンドラー ルーチンにブレークポイントを設定します。 最初に、実行、 [ **! ndiskd.minidriver** ](-ndiskd-minidriver.md)システム上のミニポート ドライバーの一覧を取得するパラメーターなしでコマンド。 この例の出力には、kdnic ミニドライバー、ffffdf801418d650 のハンドルを探します.
+正常に実行されているシステムで保留中の OID の例を確認するには、ミニポートの OID 要求ハンドラールーチンにブレークポイントを設定します (ミニポートの対応するミニポートドライバー)。 最初に、パラメーターを付けずに[ **! ndiskd**](-ndiskd-minidriver.md)コマンドを実行して、システム上のミニポートドライバーの一覧を取得します。 この例の出力では、kdnic ミニドライバー、ffffdf801418d650. のハンドルを探します。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -65,7 +65,7 @@ Ndiskd.dll
     ffffdf801418d650 - kdnic
 ```
 
-ミニドライバーのハンドルをクリックし、そのハンドラーの一覧を表示するには、その詳細ページの下部にある「ハンドラー」リンクをクリックします。 別の方法として入力することができます、 **! ndiskd.minidriver-処理 - ハンドラー**コマンド。 ミニドライバーのハンドラーの一覧にした後は、そのハンドルはこの例では fffff80f1fd71c90、OidRequestHandler を探します。
+ミニドライバーのハンドルをクリックし、詳細ページの下部にある [ハンドラー] リンクをクリックして、そのハンドラーの一覧を表示します。 別の方法として、 **! ミニドライバー**コマンドを入力することもできます。 ミニドライバーのハンドラーの一覧が表示されたら、この例では、ハンドルが fffff80f1fd71c90 である OidRequestHandler を探します。
 
 ```console
 2: kd> !ndiskd.minidriver ffffdf801418d650 -handlers
@@ -96,7 +96,7 @@ HANDLERS
     CancelSendHandler                      fffff80f1fd722c0  bp
 ```
 
-または"bp"、OidRequestHandler の右側へのリンクを入力でクリックするか、これで、 [ **bp-処理**](bp--bu--bm--set-breakpoint-.md)ルーチンにブレークポイントを設定するには、そのハンドルを持つコマンド。 次に、入力、 **g**設定する対象コンピューターを実行し、ブレークポイントにヒットしますが、デバッグ対象を許可するコマンド。
+次に、OidRequestHandler の右側にある "bp" リンクをクリックするか、または[**bp-handle**](bp--bu--bm--set-breakpoint-.md)コマンドにハンドルを入力して、そのルーチンにブレークポイントを設定します。 次に、 **g**コマンドを入力して、デバッグ対象ターゲットマシンの実行を許可し、設定したブレークポイントにヒットします。
 
 ```console
 2: kd> bp fffff80f1fd71c90
@@ -105,7 +105,7 @@ Breakpoint 1 hit
 fffff80f`1fd71c90 448b4204        mov     r8d,dword ptr [rdx+4]
 ```
 
-実行することができます、前の例に示すように、ミニドライバーの OID 要求ハンドラー ルーチンのブレークポイントがトリガーされるが、!、システムで保留中のすべての Oid の一覧を表示する ndiskd.oid コマンド。
+前の例で示したように、ミニドライバーの OID 要求ハンドラールーチンでブレークポイントをトリガーした後、! ndiskd OID コマンドを実行して、システム上のすべての保留中の Oid の一覧を表示できます。
 
 ```console
 1: kd> !ndiskd.oid
@@ -121,32 +121,32 @@ ALL PENDING OIDs
         Current OID        OID_GEN_STATISTICS
 ```
 
-この例では保留中の OID は[OID\_GEN\_統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)します。 結果を表示する! ndiskd.oid、Oid 通常に渡されたフィルターからミニポートとフィルターは、OID 要求を複製し、下位のスタックでは、それらを渡すことを思い出してください。 そのため、この例では同じ名前の 3 つの独立した OID 要求があるように思えるかもしれませんは行われている 3 つの Oid と 3 つのドライバーに物理的に分散 1 論理操作実際にです。
+この例では、保留中の OID は[\_GEN\_の統計情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)です。 ! Ndiskd oid の結果を見ると、フィルターによって OID 要求が複製され、スタックに渡されます。また、Oid は通常、フィルターによってミニポートにフィルター処理されます。 したがって、この例では、同じ名前を持つ3つの別個の OID 要求があるように見えるかもしれませんが、実際には、3つの Oid と3つのドライバーに物理的に分散された論理操作が1つあります。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[0x9F バグ チェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
+[0x9F バグチェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
 
 [OID\_PNP\_設定\_電源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
 [**bp、bu、bm (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_GEN\_統計情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
+[OID\_GEN\_の統計情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
 
-[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[NDIS OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[NDIS OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

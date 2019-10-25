@@ -13,22 +13,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b3471b83fe57ae6d99c4a3fcf649807e80754f
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 8c9fe93aa10b095035653271c6954fc0b2238f6d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359583"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837641"
 ---
-# <a name="bug-check-0x1-apc_index_mismatch"></a>バグチェック 0x1: APC @ no__t-0INDEX @ no__t-1MISMATCH
+# <a name="bug-check-0x1-apc_index_mismatch"></a>バグチェック 0x1: APC\_インデックス\_不一致
 
-APC @ no__t-0INDEX @ no__t-1MISMATCH バグチェックの値は0x00000001 です。 これは、非同期プロシージャ呼び出し (APC) の状態インデックスが一致していないことを示します。
+APC\_のインデックス\_不一致のバグチェックには、0x00000001 の値が指定されています。 これは、非同期プロシージャ呼び出し (APC) の状態インデックスが一致していないことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)」を参照してください。
 
 
-## <a name="apc_index_mismatch-parameters"></a>APC @ no__t-0INDEX @ no__t-1 パラメーターが一致しません。
+## <a name="apc_index_mismatch-parameters"></a>APC\_インデックス\_パラメーターが一致しません
 
 <table>
 <colgroup>
@@ -52,7 +52,7 @@ APC @ no__t-0INDEX @ no__t-1MISMATCH バグチェックの値は0x00000001 で�
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>現在のスレッドの連結<strong>Edapcdisable</strong>フィールドの値。 このフィールドは、次の2つの異なる16ビットフィールドで構成されます。 (<em>スレッド</em>&gt; 特別<strong>apcdisable</strong> &lt; @ no__t-4 16) |<em>スレッド</em>&gt;<strong>KernelApcDisable</strong>。</p></td>
+<td align="left"><p>現在のスレッドの連結<strong>Edapcdisable</strong>フィールドの値。 このフィールドは、次の2つの異なる16ビットフィールドで構成されています: (<em>スレッド</em>&gt;特別<strong>apcdisable</strong> &lt;&lt; 16) |<em>スレッド</em>&gt;<strong>KernelApcDisable</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
@@ -98,7 +98,7 @@ Windows デバッガーを使用してこの問題に対処することができ
 <a name="remarks"></a>注釈
 -------
 
-このバグチェックは、カーネルで内部エラーが発生した結果です。 このエラーは、システムコールの終了時に発生します。 このバグチェックの考えられる原因は、保護された領域または重大な領域を入力または残すためのシステムコールの順序が一致しないファイルシステムまたはドライバーです。 たとえば、 [**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)を呼び出すたびに、 [**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)への呼び出しが一致している必要があります。 
+このバグチェックは、カーネルで内部エラーが発生した結果です。 このエラーは、システムコールの終了時に発生します。 このバグチェックの考えられる原因は、保護された領域または重大な領域を入力または残すためのシステムコールの順序が一致しないファイルシステムまたはドライバーです。 たとえば、 [**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)を呼び出すたびに、 [**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)への呼び出しが一致している必要があります。 
 
 ドライバーを開発している場合は、ドライバーを出荷する前にコードの問題を検出するために、Windows Driver Kit に用意されている静的分析ツールである[静的ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)ツールを使用できます。 [CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)規則を使用して静的ドライバー検証ツールを実行し、ソースコードがこれらのシステム呼び出しを正しい順序で使用していることを確認します。
 

@@ -3,18 +3,18 @@ title: DirectDraw の値を返す
 description: DirectDraw の値を返す
 ms.assetid: da4cc7d7-6826-48aa-96c6-004e31fc3e3e
 keywords:
-- WDK DirectDraw の値を返す
-- WDK DirectDraw を描画するには、戻り値
-- DirectDraw WDK Windows 2000 の表示、戻り値
+- 戻り値 (WDK DirectDraw)
+- WDK DirectDraw の描画、戻り値
+- DirectDraw WDK Windows 2000 display、戻り値
 - エラー WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9994e181f8cc7369fbc6845dcbd968603012c9f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba99c2d0e57d6521b9cb167fcccbdf6e6ffbf073
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365643"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829566"
 ---
 # <a name="return-values-for-directdraw"></a>DirectDraw の値を返す
 
@@ -22,11 +22,11 @@ ms.locfileid: "67365643"
 ## <span id="ddk_return_values_for_directdraw_gg"></span><span id="DDK_RETURN_VALUES_FOR_DIRECTDRAW_GG"></span>
 
 
-によって返されるリストの値を以下に、 [DirectDraw ドライバーによって提供される関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 DDHAL\_ドライバー\_*Xxx*実際に値が DWORD の戻り値で返されます。 DD\_[ok] の値と DDERR\_*Xxx*で返されるエラー コード、 **ddRVal**特定の関数のパラメーターが指す構造体のメンバー。
+次の表は、 [DirectDraw ドライバーが提供する関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)によって返される値を示しています。 DDHAL\_DRIVER\_*Xxx*値は実際には DWORD の戻り値で返されます。 特定の関数のパラメーターが指す構造の**Dderr**メンバーでは、DD\_OK 値と DDERR\_*Xxx*エラーコードが返されます。
 
-各関数が返すことができる特定のエラー コード、リファレンス セクションでは、関数の説明を参照してください。 DirectDraw ヘッダー ファイルを参照してください*ddraw.h*と*dxmini.h*エラー コードと戻り値の完全な一覧についてはします。 エラー コードは負の値で表され、組み合わせることはできませんに注意してください。
+各関数が返すことができる特定のエラーコードについては、「参照」セクションの関数の説明を参照してください。 エラーコードと戻り値の完全な一覧については、DirectDraw ヘッダーファイル*ddraw*と*dxmini .h*を参照してください。 エラーコードは負の値で表されるため、組み合わせることはできません。
 
-DirectDraw ドライバー内の関数は、2 つのリターン コードのいずれかを返す必要があります。DDHAL\_ドライバー\_処理済みまたは DDHAL\_ドライバー\_NOTHANDLED します。 ドライバーが DDHAL を返す場合\_ドライバー\_DD のいずれかを返すことも必要があり、処理\_[ok] またはいずれかのエラー コードが記載*ddraw.h*します。 DirectDraw ドライバーの関数は、次の表に、コードを返すことができます。 これらのコードが定義されている*ddraw.h*します。
+DirectDraw ドライバーの関数は、DDHAL\_DRIVER\_HANDLED または DDHAL\_DRIVER\_NOTHANDLED の2つのリターンコードのいずれかを返す必要があります。 ドライバーが DDHAL\_ドライバー\_処理された場合は、DD\_OK または*ddraw*に示されているエラーコードのいずれかを返す必要もあります。 DirectDraw ドライバーの関数は、次の表に示すコードを返すことができます。 これらのコードは*ddraw*で定義されています。
 
 <table>
 <colgroup>
@@ -35,8 +35,8 @@ DirectDraw ドライバー内の関数は、2 つのリターン コードのい
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">リターン コード</th>
-<th align="left">説明</th>
+<th align="left">リターンコード</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
@@ -46,19 +46,19 @@ DirectDraw ドライバー内の関数は、2 つのリターン コードのい
 </tr>
 <tr class="even">
 <td align="left"><p>DDHAL_DRIVER_HANDLED</p></td>
-<td align="left"><p>ドライバーが操作を実行し、その操作に有効なリターン コードが返されます、 <strong>ddrval</strong>構造体のメンバー、ドライバーのコールバックに渡されます。 このコードが DD_OK の場合は、DirectDraw または Direct3D 関数を実行します。 それ以外の場合、DirectDraw または Direct3D、ドライバーによって提供されるエラー コードを返し、関数を中止します。</p></td>
+<td align="left"><p>ドライバーは操作を実行し、ドライバーのコールバックに渡された構造体の<strong>ddrval</strong>メンバーでその操作の有効なリターンコードを返しました。 このコードが DD_OK の場合、DirectDraw または Direct3D は関数を続行します。 それ以外の場合、DirectDraw または Direct3D はドライバーによって提供されるエラーコードを返し、関数を中止します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DDHAL_DRIVER_NOCKEYHW</p></td>
-<td align="left"><p>ディスプレイ ドライバーは、色の主要なハードウェア リソースが不足しているため、呼び出しを処理できませんでした。</p></td>
+<td align="left"><p>カラーキーハードウェアリソースが不足しているため、表示ドライバーは通話を処理できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DDHAL_DRIVER_NOTHANDLED</p></td>
-<td align="left"><p>要求された操作には、ドライバーのコメントはありません。 ドライバーは、特定のコールバックを実装する必要は、DirectDraw または Direct3D では、エラー状態が報告します。 それ以外の場合、DirectDraw または Direct3D デバイスに依存しない実装を実行することによって、ドライバーのコールバックが定義されていなかった場合に DirectDraw または Direct3D、操作を処理しています。 通常に返される値を無視 DirectDraw、Direct3D、 <strong>ddrval</strong>そのコールバックのパラメーター構造体のメンバー。</p></td>
+<td align="left"><p>ドライバーには、要求された操作に関するコメントがありません。 ドライバーが特定のコールバックを実装する必要がある場合、DirectDraw または Direct3D はエラー状態を報告します。 それ以外の場合、directdraw または Direct3D は、DirectDraw または Direct3D デバイスに依存しない実装を実行して、ドライバーコールバックが定義されていないかのように操作を処理します。 通常、DirectDraw と Direct3D は、そのコールバックのパラメーター構造の<strong>ddrval</strong>メンバーで返される値を無視します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DDERR_GENERIC</p></td>
-<td align="left"><p>未定義のエラー条件があります。</p></td>
+<td align="left"><p>未定義のエラー条件が発生しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DDERR_OUTOFCAPS</p></td>
@@ -73,7 +73,7 @@ DirectDraw ドライバー内の関数は、2 つのリターン コードのい
 
  
 
-A [DxApi 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)で実装される、[ビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)次の表に、コードのいずれかを返します。 これらのコードが定義されている*dxmini.h*します。
+[ビデオミニポートドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)に実装されている[dxapi 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)は、次の表に示すいずれかのコードを返します。 これらのコードは、 *dxmini .h*で定義されています。
 
 <table>
 <colgroup>
@@ -82,8 +82,8 @@ A [DxApi 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">リターン コード</th>
-<th align="left">説明</th>
+<th align="left">リターンコード</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
@@ -93,7 +93,7 @@ A [DxApi 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content
 </tr>
 <tr class="even">
 <td align="left"><p>DXERR_GENERIC</p></td>
-<td align="left"><p>未定義のエラー条件があります。</p></td>
+<td align="left"><p>未定義のエラー条件が発生しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DXERR_OUTOFCAPS</p></td>

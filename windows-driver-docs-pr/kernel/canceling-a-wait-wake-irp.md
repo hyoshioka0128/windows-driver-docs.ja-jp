@@ -3,23 +3,23 @@ title: 待機/ウェイク IRP のキャンセル
 description: 待機/ウェイク IRP のキャンセル
 ms.assetid: 08e1d11a-91a3-496a-b3ad-f99456e4ce1d
 keywords:
-- 電源管理の WDK カーネル、ウェイク アップ機能
-- 外部ウェイク信号 WDK
-- アクティブになるデバイス
-- 電源管理のウェイク アップ機能 WDK
-- デバイスのスリープ解除 ups WDK 電源管理
+- 電源管理 WDK カーネル、ウェイクアップ機能
+- 外部ウェイクアップシグナル WDK
+- 復帰デバイス
+- ウェイクアップ機能 WDK の電源管理
+- デバイスのウェイクアップと WDK の電源管理
 - IRP_MN_WAIT_WAKE
-- 待機/ウェイク Irp WDK の電源管理のキャンセル
-- キャンセル待機/ウェイク Irp
-- キャンセル ルーチン、Irp を待ってスリープ解除.
+- 待機/ウェイク Irp WDK 電源管理, 取り消し
+- 待機/ウェイク Irp をキャンセルしています
+- キャンセルルーチン、待機/ウェイク Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b90b67dd13e51c831319d4684b68f94f9e3ec225
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eabf931baf7b34d4a082c0477c6e8c4116341558
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383367"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828550"
 ---
 # <a name="canceling-a-waitwake-irp"></a>待機/ウェイク IRP のキャンセル
 
@@ -27,53 +27,53 @@ ms.locfileid: "67383367"
 
 
 
-送信待機/ウェイク IRP のドライバーだけでは、その IRP をキャンセルできます。
+待機/ウェイク IRP を送信したドライバーだけが、その IRP をキャンセルできます。
 
-ドライバーは、保留中待機/ウェイク IRP 次の状況をキャンセルする必要があります。
+ドライバーは、次のような状況で、保留中の待機/ウェイク IRP をキャンセルする必要がある場合があります。
 
--   ドライバーが受信、PnP [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)、または[ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)デバイスの要求。 ドライバーは IRP 待機/ウェイクを再発行する必要があります ([**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp))、デバイスが再起動後です。
+-   ドライバーは、\_デバイス、irp\_[ **\_停止**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)し、\_[**デバイスを削除\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)、 [**irp\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)を削除\_、PnP irp\_を受信します。、または IRP\_、デバイスの削除要求を[ **\_驚く\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)します。 ドライバーは、デバイスの再起動後に、待機/ウェイク IRP ([**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)) を再実行する必要があります。
 
--   システムがスリープ状態にしようが、デバイスをシステムをスリープ解除を有効にするされません。
+-   システムはスリープ状態になりますが、システムのスリープ状態を解除するためにデバイスを有効にしないでください。
 
-    たとえば、USB ハブのドライバーは送信、 **IRP\_MN\_待機\_WAKE**スリープ状態に後でその入力デバイスの 1 つ置かれる場合は、デバイスの起動時に要求します。 システムが稼働状態には、ウェイク信号をデバイスからデバイスを動作状態に戻します (ただし、システムの電源状態に影響を与えません)。 システムがシャット ダウンする準備を行います、システムがスリープ解除するデバイスを許可しない場合、USB ハブのドライバーはこの IRP をキャンセルします。
+    たとえば、USB ハブのドライバーは、後で入力デバイスの1つをスリープ状態にする場合に備えて、デバイスの起動時に **\_ウェイク要求\_待機**するように、IRP\_を送信する可能性があります。 システムの状態が [稼働中] になっている間は、デバイスからのウェイク信号によってデバイスが動作中の状態に戻ります (ただし、システムの電源状態に影響はありません)。 システムをシャットダウンする準備ができたら、デバイスがシステムの停止を許可しない場合、USB ハブドライバーはこの IRP をキャンセルします。
 
--   システムが元となるデバイス呼び起こすことはできません、スリープ状態を入力します。 つまりよりも小さいの電源状態が入力、 [ **SystemWake** ](systemwake.md)で指定された値、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。
+-   システムはスリープ状態に入り、デバイスはデバイスを目覚めできません。 つまり、[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造体で指定された[**systemwake**](systemwake.md)値よりも電力が低い状態になります。
 
--   デバイスが応答をウェイク アップ信号できない電源状態を入力します。 つまりより低い電源状態が入力、 [ **DeviceWake** ](devicewake.md)で指定された値、**デバイス\_機能**構造体。
+-   デバイスは、ウェイクアップ信号に応答できない電源状態に入ります。 つまり、**デバイス\_機能**の構造で指定された[**devicewake**](devicewake.md)値よりも電力が低い状態になります。
 
-待機/ウェイク IRP、IRP の呼び出しを送信したドライバーをキャンセルする[ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)、ドライバーが呼び出されたときに以前返された IRP にポインターを渡す**PoRequestPowerIrp**.
+待機/ウェイク IRP をキャンセルするには、IRP を送信したドライバーが[**Iocancelirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)を呼び出し、以前に返された Irp に**PoRequestPowerIrp**という名前のポインターを渡します。
 
-ドライバーは、待機/ウェイク送信しなかった IRP をキャンセルする必要があります。
+ドライバーは、送信されなかった wait/wake IRP をキャンセルすることはできません。
 
-### <a href="" id="ddk-cancel-routines-for-wait-wake-irps-kg"></a>待機/ウェイク Irp のルーチンをキャンセルします。
+### <a href="" id="ddk-cancel-routines-for-wait-wake-irps-kg"></a>待機/ウェイク Irp のキャンセルルーチン
 
-多くの関数とバス ドライバーを設定する必要があります[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)保留中のためのルーチン待機/ウェイク Irp; 次の種類のドライバーは、このようなルーチンを設定する必要があります。
+多くの関数およびバスドライバーでは、保留中の待機/ウェイク Irp に[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンを設定する必要があります。次の種類のドライバーでは、このようなルーチンを設定する必要があります。
 
--   ドライバーを有効または無効のウェイク アップにデバイスの設定を変更します。
+-   ウェイクアップを有効または無効にするためにデバイスの設定を変更するドライバー。
 
--   送信ドライバー [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)親デバイスのドライバーを要求します。
+-   [**IRP\_完了\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)を送信するドライバーは、親デバイスのドライバーに対して\_ウェイク要求を待機します。
 
-A [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチンがそのデバイスのウェイク アップを無効にして、保留中待機/ウェイク IRP に関連するすべてのデータをクリーンアップするドライバーを使用します。 ドライバーの要求を待機/ウェイク Irp の親デバイスにもこれら Irp をキャンセルできます。
+[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンを使用すると、ドライバーはデバイスのウェイクアップを無効にし、保留中の待機/ウェイク IRP に関連するデータをクリーンアップすることができます。 親デバイスの待機/ウェイク Irp を要求するドライバーは、これらの Irp も取り消すことができます。
 
-その待機/ウェイクで*キャンセル*、日常的なドライバーは、以下の手順を実行する必要があります。
+待機/ウェイク*キャンセル*ルーチンでは、ドライバーは次の手順を実行する必要があります。
 
-1.  呼び出す[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)をリセットする、*キャンセル*に IRP の日常的な**NULL**します。
+1.  [**Iosetcancelroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)を呼び出して、IRP の*キャンセル*ルーチンを**NULL**にリセットします。
 
-2.  呼び出す[ **IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))を渡して、 **CancelIRQL** IRP のキャンセル スピン ロックを解除する IRP で指定します。
+2.  [**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))を呼び出し、irp に指定されている**Cancelirql**を渡して、irp のキャンセルスピンロックを解放します。
 
-3.  デバイスの拡張機能内の関連するフィールドをリセットします。 たとえば、待機/ウェイク IRP が保留中の場合は、ほとんどのドライバーは、フラグを設定し、デバイス拡張機能の IRP にポインターを保持すること。
+3.  デバイス拡張機能の関連するフィールドをリセットします。 たとえば、待機/ウェイク IRP が保留中の場合、ほとんどのドライバーはフラグを設定し、デバイス拡張機能で IRP へのポインターを保持します。
 
-    このような別の IRP のキャンセル中に、待機/ウェイク IRP を受信するためのドライバーの可能性があるに注意してください。 ドライバーは IRP スピン ロック保護 (またはそれと同等) を既に持っているかどうかを確認する必要があります。 そうである場合、ドライバーは正しい IRP をキャンセルすることを確認するには、その処理を慎重に同期する必要があります。 スピンの使用に関する詳細についてロックの*キャンセル*ルーチンを参照してください[キャンセル Irp](canceling-irps.md)します。
+    ドライバーが別の IRP をキャンセルしている間に、待機/ウェイク IRP を受信する可能性があることに注意してください。 ドライバーは、スピンロック保護 (またはそれと同等) の下に IRP が既に存在しているかどうかを確認する必要があります。 その場合は、ドライバーが適切な IRP をキャンセルするように、その処理を慎重に同期する必要があります。 *キャンセル*ルーチンでのスピンロックの使用の詳細については、「 [irp の取り消し](canceling-irps.md)」を参照してください。
 
-4.  必要なデバイス設定を変更します。 たとえば、モデムのドライバーが、デバイスのスリープ解除設定を無効にすることにします。
+4.  必要なデバイス設定を変更します。 たとえば、モデムドライバーはデバイスのウェイク設定を無効にします。
 
-5.  設定**Irp -&gt;IoStatus.Status**ステータス\_キャンセルします。
+5.  **Irp&gt;iostatus に設定します。状態**は、\_取り消されました。
 
-6.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)待機/ウェイク IRP を完了するには、IO を指定する\_いいえ\_インクリメントします。
+6.  [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して、待機/ウェイク IRP を完了します。 IO\_\_増分は指定しません。
 
-7.  場合は、ドライバー、関連する以前要求した**IRP\_MN\_待機\_WAKE**親デバイスの場合、ドライバーがその IRP 内からをキャンセルしますその*キャンセル*。ルーチンです。 ドライバーは、親の IRP をキャンセルする前に、キャンセルのスピン ロックを解放する必要があります。
+7.  ドライバーが以前に関連する Irp\_要求されている場合は、親デバイスに対して **\_ウェイク\_待機**します。ドライバーは、*キャンセル*ルーチン内からその irp をキャンセルする必要があります。 ドライバーは、親の IRP をキャンセルする前に、キャンセルスピンロックを解除する必要があります。
 
-    たとえばはデバイスのバス ドライバーとして機能し、その親の電源ポリシーのドライバーを所有しているドライバーでは、関連する待機/ウェイクの IRP をその親に送信された以前を取り消す必要があります。 呼び出す[ **IoCancelIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)は起動の親の*キャンセル*日常的なデバイス スタックの下位にあります。
+    たとえば、デバイスのバスドライバーとして機能し、その親の電源ポリシードライバーを所有するドライバーは、その親に送信された関連の待機/ウェイク IRP をキャンセルする必要があります。 [**Iocancelirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)を呼び出すと、親の*キャンセル*ルーチンが呼び出され、デバイススタックが停止します。
 
  
 

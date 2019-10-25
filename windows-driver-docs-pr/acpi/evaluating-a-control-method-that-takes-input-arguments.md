@@ -4,33 +4,33 @@ description: 入力引数を受け取る制御メソッドを評価する
 ms.assetid: 3a4be8a8-0906-4d38-bf6d-f245e6ae236a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d70d51595e84d44c25d1f77e66849999cdef1c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 365c9511abe7eea29de2857cc6c86cbb2812d011
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355844"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826182"
 ---
 # <a name="evaluating-a-control-method-that-takes-input-arguments"></a>入力引数を受け取る制御メソッドを評価する
 
 
-入力引数を受け取るコントロール メソッドを同期的に評価するデバイスのドライバーの送信、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)要求または、 [**IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)デバイスに要求します。 これら両方の要求を使用するための一般的な手順については、「 [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。 これら 2 つの要求を使用しての特定の違いは次のとおりです。
+入力引数を受け取るコントロールメソッドを同期的に評価するために、デバイスのドライバーは、 [**acpi\_eval\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)の要求、または[**ioctl\_acpi\_eval\_method\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)要求に ioctl\_を送信します。デバイスに対して。 これらの要求の両方を使用するための一般的な手順については、「 [ACPI 制御メソッドを同期的に評価](evaluating-acpi-control-methods-synchronously.md)する」を参照してください。 この2つの要求を使用する場合の具体的な違いは次のとおりです。
 
--   コントロール メソッドは、デバイスの直接の子オブジェクトは、ドライバーは送信 IOCTL\_ACPI\_EVAL\_メソッド要求と次の入力構造体の 1 つを提供します。[**ACPI\_EVAL\_入力\_バッファー\_単純\_整数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)、 [ **ACPI\_EVAL\_の入力\_バッファー\_単純\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)、または[ **ACPI\_EVAL\_入力\_バッファー\_複合**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1).
+-   コントロールメソッドがデバイスの直下の子オブジェクトである場合、ドライバーは IOCTL\_ACPI\_EVAL\_METHOD 要求を送信し、次のいずれかの入力構造を提供します: [**acpi\_EVAL\_入力\_バッファー\_SIMPLE\_INTEGER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)、 [**ACPI\_EVAL\_INPUT\_buffer\_単純な\_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)、または[**ACPI\_EVAL\_INPUT\_buffer\_COMPLEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1)です。
 
--   IOCTL 送信 control メソッドがのデバイスを ACPI 名前空間内の子オブジェクトは、デバイスの直接の子オブジェクトではない場合は、\_ACPI\_EVAL\_メソッド\_EX 要求との 1 つを提供します次の入力構造体。[**ACPI\_EVAL\_入力\_バッファー\_単純\_整数\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1_ex)、 [ **ACPI\_EVAL\_入力\_バッファー\_単純\_文字列\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)、または[ **ACPI\_EVAL\_入力\_バッファー\_複雑な\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)します。
+-   コントロールメソッドがデバイスの ACPI 名前空間の子オブジェクトであり、デバイスの直接の子オブジェクトではない場合、ドライバーは IOCTL\_ACPI\_EVAL\_メソッド\_EX 要求を送信し、次の入力のいずれかを提供します。構造体: [**acpi\_eval\_入力\_バッファー\_単純\_整数\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1_ex)、 [**ACPI\_EVAL\_入力\_バッファー\_単純\_文字列\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)、または[**ACPI\_EVAL\_入力\_BUFFER\_複雑な\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)です。
 
-例では、 *EvaluateABCDWithInputArgument*このトピックで提供されている関数は、ドライバーが IOCTL を使用する方法を示します\_ACPI\_EVAL\_という名前の制御メソッドを評価するメソッドの要求 'ABCD' を 1 つの整数の入力引数を受け取る。
+このトピックで提供する*EvaluateABCDWithInputArgument*関数の例では、ドライバーが IOCTL\_ACPI\_EVAL\_method 要求を使用して、単一の整数入力を受け取る ' ABCD ' という名前のコントロールメソッドを評価する方法を示しています。引数.
 
-入力引数が文字列または整数ではなく、カスタム データの配列である場合のコード例に必要な変更が、文字列入力構造体または整数入力構造体ではなく、複雑な入力構造を指定します。
+入力引数が整数ではなく、文字列またはカスタムデータの配列の場合、例のコードに必要な変更は、整数入力構造ではなく、文字列入力構造または複雑な入力構造を指定することです。
 
-さらに、'ABCD' コントロールのメソッドが直接の子オブジェクトでない場合、必要な変更のコード例を次に示します。
+また、' ABCD ' コントロールメソッドが直接の子オブジェクトではない場合は、次のような変更が必要になります。
 
--   送信 IOCTL\_ACPI\_EVAL\_メソッド\_IOCTL ではなく要求 EX\_ACPI\_EVAL\_メソッド要求。
+-   Ioctl\_ACPI\_EVAL\_METHOD 要求ではなく、\_ACPI\_EVAL\_メソッド\_EX 要求を送信します。
 
--   入力引数の型 (整数の単純な単純な文字列、または複雑な) に対応する拡張入力構造体の型を指定します。
+-   入力引数の型 (単純な整数、単純な文字列、または複合) に対応する拡張入力構造の種類を指定します。
 
-*EvaluateABCDWithInputArgument* ACPI を最初に割り当てる\_EVAL\_入力\_バッファー\_単純\_整数構造*inputBuffer*し設定、 **MethodNameAsUlong**コントロール メソッドの名前にメンバーを設定、 **IntegerArgument**入力の整数値、およびセットへのメンバー、**署名**acpi メンバー\_EVAL\_入力\_バッファー\_単純\_整数\_署名します。
+*EvaluateABCDWithInputArgument*は、最初に ACPI\_EVAL\_入力\_バッファー\_単純\_整数構造体*inputBuffer*に割り当て、次に**methodnameasulong**メンバーをの名前に設定します。制御メソッドは、整数**引数**のメンバーを入力整数値に設定し、**署名**メンバーを ACPI\_EVAL\_入力\_バッファー\_単純\_整数\_署名に設定します。
 
 ```cpp
     // Fill in the input data
@@ -39,29 +39,29 @@ ms.locfileid: "67355844"
     inputBuffer.Signature = ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE;
 ```
 
-*EvaluateABCDWithInputArgument*も割り当てます、 [ **ACPI\_EVAL\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)構造*outputBuffer*のメンバーは設定しませんが、 *outputBuffer*します。
+また、 *EvaluateABCDWithInputArgument*では、 [**ACPI\_EVAL\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)構造の*outputbuffer*も割り当てられますが、 *outputbuffer*のメンバーは設定されません。
 
-*EvaluateABCDWithInputArgument*という名前のドライバーによって提供される関数を呼び出して[SendDownStreamIrp](senddownstreamirp-function.md)次を実行します。
+*EvaluateABCDWithInputArgument*は、次の処理を実行する[Senddownstreamirp](senddownstreamirp-function.md)という名前のドライバー提供関数を呼び出します。
 
-1.  呼び出し[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)要求を構築します。
+1.  [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出して要求をビルドします。
 
-2.  呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)デバイス スタックの要求を送信します。
+2.  [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、デバイススタックで要求を送信します。
 
-3.  下位レベルのドライバーが要求を完了したことをドライバーに通知する I/O マネージャーを待機します。
+3.  I/o マネージャーが、下位レベルのドライバーが要求を完了したことをドライバーに通知するまで待機します。
 
-**SendDownStreamIrp** I/O マネージャーが下位レベルのドライバーが要求を完了したことを通知した後を返します。
+**Senddownstreamirp**は、下位レベルのドライバーが要求を完了したことを i/o マネージャーが通知した後に戻ります。
 
-含まれません*EvaluateABCDWithInputArgument*、ドライバーは、後に、次の追加操作を実行する必要がありますも**SendDownStreamIrp**を返します。
+*EvaluateABCDWithInputArgument*には含まれていませんが、ドライバーは、 **Senddownstreamirp**からの戻り後に、次の追加操作も実行する必要があります。
 
-1.  状態を確認する**SendDownStreamIrp**を返します。 場合**SendDownStreamIrp**状態を返さない\_成功すると、ドライバーは、追加の処理を行わなくても返す必要があります。
+1.  **Senddownstreamirp**が返す状態を確認します。 **Senddownstreamirp**が正常\_状態を返さない場合、ドライバーは追加の処理を行わずにを返します。
 
-2.  出力パラメーターの有効性を確認します。 *OutputBuffer*有効な出力のデータを含む**署名**ACPI に設定する必要があります\_EVAL\_出力\_バッファー\_と署名**カウント**0 より大きい値に設定する必要があります。
+2.  出力パラメーターが有効かどうかを確認します。 *Outputbuffer*に有効な出力データが含まれるようにするには、**署名**が ACPI\_EVAL に設定されている必要があります。\_出力\_バッファー\_署名、**カウント**は0より大きい値に設定する必要があります。
 
-3.  ドライバーに渡された出力パラメーターを処理します。
+3.  ドライバーに戻された出力パラメーターを処理します。
 
-4.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IOCTL を完了する\_ACPI\_EVAL\_メソッド要求。
+4.  [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して、IOCTL\_ACPI\_EVAL\_METHOD 要求を完了します。
 
-ACPI データ構造と次の例で使用される定数で定義されます*Acpiioct.h*します。
+次の例で使用される ACPI データ構造および定数は、 *Acpiioct*で定義されています。
 
 ```cpp
 NTSTATUS

@@ -3,20 +3,20 @@ title: NDIS ポートの状態
 description: NDIS ポートの状態
 ms.assetid: bb13edd2-815b-488a-b36c-21a48809a143
 keywords:
-- WDK NDIS、状態のポート
+- ポート WDK NDIS、状態
 - NDIS ポート WDK、状態
 - WDK NDIS ポートの状態
-- 認証は、WDK NDIS ポートを状態します。
-- リンク状態 WDK NDIS ポート
-- 初期化状態 WDK NDIS ポート
+- '認証の状態: WDK NDIS ポート'
+- リンクの状態 WDK NDIS ポート
+- '初期化の状態: WDK NDIS ポート'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 831188b8fba144458b373d54b2411f76ac2df4f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 04ca4a1df62f3f4b65a29dae0aa35972f353db86
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826916"
 ---
 # <a name="ndis-port-states"></a>NDIS ポートの状態
 
@@ -24,24 +24,24 @@ ms.locfileid: "67354957"
 
 
 
-NDIS ポートがある動作の初期化状態で指定されている状態は、状態、 [ **NDIS\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)構造体。 ポートの状態は、次のカテゴリに合わせます。
+NDIS ポートには、 [**ndis\_PORT\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_state)構造体で指定された初期化状態と状態を含む動作状態があります。 ポートの状態は次のカテゴリに分類されます。
 
 <a href="" id="initialization-states"></a>初期化状態  
-NDIS ポートの状態は、スタートアップの初期化に関連付けられているし、プラグ アンド プレイ (PnP) イベントに初期化します。 NDIS またはミニポート ドライバーは、最初にポートを割り当てますとき、に、ポートが、*割り当てられている状態*します。 NDIS またはミニポート ドライバーにポートがアクティブ化した後にポートが、*状態をアクティブ化される*します。 非アクティブなポートことはできません送受信したりデータ、状態インジケーターを作成、OID の要求を受信したり PnP イベントを開始します。
+NDIS ポートの初期化状態は、スタートアップ初期化およびプラグアンドプレイ (PnP) イベントに関連付けられています。 NDIS またはミニポートドライバーによって最初にポートが割り当てられると、ポートは*割り当て済みの状態*になります。 NDIS の後、またはミニポートドライバーによってポートがアクティブ化されると、ポートは*アクティブ化*された状態になります。 非アクティブなポートは、データの送受信、状態の表示、OID 要求の受信、または PnP イベントの開始を行うことはできません。
 
 <a href="" id="link-states"></a>リンクの状態  
-NDIS ポート リンクの状態はミニポート アダプターに関連付けられているしで指定された状態のリンクに似ています、 [ **NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。 ポートのリンクの状態は、メディア リンクの接続状態とのリンク速度を示します。 ポートのリンクの状態は、関連付けられているミニポート アダプターのリンクの状態を異なっていてもかまいません。
+NDIS ポートリンクの状態は、ミニポートアダプターに関連付けられているリンクの状態に似ています。リンクの状態は、 [**ndis\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造体で指定されています。 ポートリンクの状態は、メディアリンクの接続状態とリンク速度を示します。 ポートのリンクの状態は、関連付けられているミニポートアダプターのリンクの状態とは異なる場合があります。
 
 <a href="" id="authentication-states"></a>認証の状態  
-NDIS ポート認証の状態、ポートが制御されるかどうかを示します (承認が必要)、データ転送の方向 (send、receive、またはその両方)、およびポート (承認または許可されていません) の承認の状態。 ポートが制御されていない場合は、認証と、未認証の状態は無視されます。
+[NDIS ポートの認証状態] は、ポートが制御されている (承認が必要) かどうか、データ転送の方向 (送信、受信、またはその両方)、およびポートの承認状態 (承認済み、または承認されていない) を示します。 ポートが制御されていない場合、認証された状態と認証されていない状態は無視されます。
 
-ミニポート ドライバーでは、ポートをアクティブ化したり、PnP イベントでのポートを非アクティブ化することができます。 アクティブ化して、ポートを非アクティブ化の詳細については、次を参照してください。[ライセンス NDIS ポート](activating-an-ndis-port.md)と[Deactivating NDIS ポート](deactivating-an-ndis-port.md)します。
+ミニポートドライバーは、ポートをアクティブ化するか、PnP イベントを使用してポートを非アクティブ化することができます。 ポートのアクティブ化と非アクティブ化の詳細については、「 [Ndis ポートのアクティブ化](activating-an-ndis-port.md)」および「 [Ndis ポートの非](deactivating-an-ndis-port.md)アクティブ化」をご覧ください。
 
-ドライバーの使用が重なって、 [OID\_GEN\_ポート\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-state)で指定されているポートの現在の状態を取得する OID、 **PortNumber** のメンバー[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 NDIS が、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
+それまでのドライバーでは、 [oid\_GEN\_port\_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-state) oid を使用して、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造**のポート番号メンバーに**指定されているポートの現在の状態を取得します。 NDIS はこの OID を処理し、ミニポートドライバーはこの OID クエリを受信しません。
 
-NDIS ポートをサポートするミニポート ドライバーを使用する必要があります、 [ **NDIS\_状態\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-port-state) NDIS ポートの状態の変化を示すステータスを示す値。 ミニポート ドライバー ポート番号を設定する必要があります、 **PortNumber**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。
+NDIS ポートをサポートするミニポートドライバーでは、ndis [ **\_ステータス\_ポート\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-port-state)の状態の表示を使用して、ndis ポートの状態の変更を示す必要があります。 ミニポートドライバーは、 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体のポート**番号メンバーに**ポート番号を設定する必要があります。
 
-NDIS および上にあるドライバーを使用して、 [OID\_GEN\_ポート\_認証\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-authentication-parameters) NDIS ポートの現在の認証状態を設定する OID。 NDIS ポートをサポートするミニポート ドライバーでは、この OID をサポートする必要があります。
+NDIS およびそれ以降のドライバーでは、 [oid\_GEN\_ポート\_認証\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-authentication-parameters) oid を使用して、ndis ポートの現在の認証状態を設定します。 NDIS ポートをサポートするミニポートドライバーは、この OID をサポートする必要があります。
 
  
 

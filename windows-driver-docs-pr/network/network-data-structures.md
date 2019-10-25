@@ -6,17 +6,17 @@ keywords:
 - NET_BUFFER
 - NET_BUFFER_LIST
 - NET_BUFFER_LIST_CONTEXT
-- ネットワーク データ WDK、構造体
-- ネットワー キング WDK データ、構造体
-- パケットの WDK ネットワーク、データ構造体
+- ネットワークデータ WDK, 構造
+- データ WDK ネットワーク, 構造
+- パケット WDK ネットワーク, データ構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c5534ae67d8e5ffb3358b0a75346b56b302817e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 28de665bbeacbfd2e568eb758847197b7c1f69fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386221"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827244"
 ---
 # <a name="network-data-structures"></a>ネットワーク データ構造
 
@@ -24,38 +24,38 @@ ms.locfileid: "67386221"
 
 
 
-ネットワーク経由で送受信データのパケットのネットワーク データで構成されます。 NDIS は、記述し、このようなデータを整理するデータ構造体を提供します。 NDIS 6.0 以降のプライマリ ネットワーク データの構造は次のとおりです。
+ネットワークデータは、ネットワーク経由で送受信されるデータのパケットで構成されます。 NDIS には、そのようなデータを記述および整理するためのデータ構造が用意されています。 NDIS 6.0 以降のプライマリネットワークデータ構造は次のとおりです。
 
--   [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)
--   [**NET\_バッファーの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
--   [**NET\_バッファー\_一覧\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)
+-   [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)
+-   [**NET\_バッファーの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
+-   [**NET\_BUFFER\_LIST\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)
 
-次の図は、これらの構造体間のリレーションシップを示しています。
+次の図は、これらの構造間の関係を示しています。
 
-![図に示す ndis 6.0 ネットワークのデータ構造体](images/netbufferstructures.png)
+![ndis 6.0 ネットワークデータ構造を示す図](images/netbufferstructures.png)
 
-NDIS 6.0 以降では、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)はネットワーク データをパッケージ化するための基本的な構成要素です。 各ネット\_バッファーの構造体が、MDL チェーン。 データのアドレスは、データをバッファー MDLs マップ領域を NET\_バッファーの構造体を指定します。 このデータ マッピングのと同じですが、MDL チェーンその NDIS 5。*x*で以前のドライバーを使用して、 [ **NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造体。 NDIS は、MDL チェーンを操作する関数を提供します。
+NDIS 6.0 以降では、ネットワークデータをパッケージ化するための基本的な構成要素として、 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)が使用されます。 各 NET\_バッファー構造体には、MDL チェーンがあります。 MDLs は、データバッファーのアドレスを、NET\_BUFFER 構造体で指定されたデータ領域にマップします。 このデータマッピングは、NDIS 5 と同じ MDL チェーンと同じです。*x*以前のドライバーは、 [**NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造で使用されます。 NDIS には、MDL チェーンを操作する関数が用意されています。
 
-複数の NET\_バッファーの構造体は、NET にアタッチできる\_バッファー\_リスト構造体。 NET\_バッファーの構造体が NULL で終わるシングル リンク リストとして構成されています。 NET の発生元のドライバーだけ\_バッファー\_リスト構造体、または NDIS、挿入および削除の NET に直接リンク リストを変更する必要があります\_バッファーの構造体。
+Net\_BUFFER\_LIST 構造体には、複数の NET\_バッファー構造体をアタッチできます。 NET\_バッファー構造は、NULL で終わる単一のシングルリンクリストとして構成されます。 Net\_BUFFER\_LIST 構造体または NDIS の生成元であるドライバーだけが、リンクリストを変更して、NET\_バッファー構造を挿入および削除する必要があります。
 
-[**NET\_バッファー リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体には、すべてを記述する情報が含まれて、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)リストにアタッチされている構造体。 NET に、ドライバーがこのような情報を格納、ドライバーは、コンテキスト情報の追加の領域を必要とする場合\_バッファー\_一覧\_CONTEXT 構造体。 NDIS を割り当て、およびネットワーク内のデータ アクセス機能を提供する\_バッファー\_一覧\_CONTEXT 構造体。
+[**Net\_バッファーリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、リストにアタッチされているすべての[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造を記述する情報が含まれています。 ドライバーがコンテキスト情報用に追加の領域を必要とする場合、ドライバーは、そのような情報を NET\_BUFFER\_LIST\_CONTEXT 構造体に格納できます。 NDIS には、NET\_BUFFER\_LIST\_CONTEXT 構造体のデータを割り当て、解放し、アクセスするための関数が用意されています。
 
-複数の NET\_バッファー\_NET のリストを形成するリストの構造体を接続できる\_バッファー\_リストの構造体。 NET\_バッファー\_リストの構造体が NULL で終わるシングル リンク リストとして構成されています。 ドライバーは、挿入および削除の NET に直接リンク リストを変更できます\_バッファー\_リストの構造体。
+複数の NET\_バッファー\_リスト構造をアタッチして、NET\_BUFFER\_リスト構造のリストを形成できます。 NET\_BUFFER\_LIST 構造体は、NULL で終わる単一のシングルリンクリストとして構成されます。 ドライバーは、リンクリストを直接変更して、NET\_BUFFER\_LIST 構造体を挿入および削除することができます。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)
+[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)
 
-[NET\_バッファーの構造体](net-buffer-structure.md)
+[NET\_のバッファー構造](net-buffer-structure.md)
 
-[**NET\_バッファーの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
+[**NET\_バッファーの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
 
-[NET\_バッファー\_リスト構造](net-buffer-list-structure.md)
+[NET\_BUFFER\_LIST 構造体](net-buffer-list-structure.md)
 
-[**NET\_バッファー\_一覧\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)
+[**NET\_BUFFER\_LIST\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)
 
-[NET\_バッファー\_一覧\_CONTEXT 構造体](net-buffer-list-context-structure.md)
+[NET\_BUFFER\_LIST\_CONTEXT 構造体](net-buffer-list-context-structure.md)
 
  
 

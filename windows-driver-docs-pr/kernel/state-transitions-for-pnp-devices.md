@@ -3,18 +3,18 @@ title: PnP デバイスの状態遷移
 description: PnP デバイスの状態遷移
 ms.assetid: 31969515-899b-407e-ab73-f6f7f36adb85
 keywords:
-- PnP WDK カーネルでは、状態遷移
-- プラグ アンド プレイ WDK カーネルでは、状態遷移
-- 状態遷移 PnP WDK
-- WDK の PnP デバイスの状態
+- PnP WDK カーネル、状態遷移
+- WDK カーネルのプラグアンドプレイ状態遷移
+- 状態遷移 WDK PnP
+- 'デバイスの状態: WDK PnP'
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b44472d466c52daf24e4d28b4a7448f58104d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e8c09d6fc664ea51fd2dacb1bd00b2cba36e425
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382993"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838406"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP デバイスの状態遷移
 
@@ -22,27 +22,27 @@ ms.locfileid: "67382993"
 ## <a href="" id="ddk-state-transitions-for-pnp-devices-kg"></a>
 
 
-PnP システムでは、PnP のさまざまな状態を使用して、デバイス遷移が構成されている、開始、可能性がありますが、リソースを再調整する停止および削除された可能性があります。 このセクションでは、PnP デバイスの状態の概要を示します。 この概要は、PnP ドライバーで必要なサポートの大部分の道路マップです。 このドキュメントの他の部分では、各状態の遷移の詳細について説明します。
+PnP システムでは、デバイスは、構成されている、開始された、リソースの再調整のために停止された可能性があるため、さまざまな PnP 状態を通じて移行します。 このセクションでは、PnP デバイスの状態の概要について説明します。 概要は、ドライバーで必要とされるほとんどの PnP サポートのためのロードマップです。 このドキュメントの他の部分では、各状態遷移の詳細について説明します。
 
-次の図は、デバイス、および 1 つの状態から別に、デバイスの遷移の状態、PnP 示しています。
+次の図は、デバイスの PnP 状態と、デバイスがある状態から別の状態に遷移する方法を示しています。
 
-![プラグ アンド プレイの観点からデバイスの状態を示す図](images/pnp-states.png)
+![プラグアンドプレイの観点から見たデバイスの状態を示す図](images/pnp-states.png)
 
-開始位置として、上記の図の左上、PnP デバイスは、ユーザーがデバイスを挿入したか、またはデバイスがブート時に存在するため、システムに物理的に存在します。 デバイスはまだシステム ソフトウェアには認識されません。
+前の図の左上からは、デバイスを挿入したユーザーまたはデバイスが起動時に存在していたため、PnP デバイスが物理的にシステムに存在しています。 デバイスは、システムソフトウェアではまだ認識されていません。
 
-PnP マネージャーと親バス ドライバーは、デバイスのソフトウェア構成を開始するには、デバイスを列挙します。 PnP マネージャーでは、可能性がありますユーザー モード コンポーネントを活用するには、識別とオプションのフィルター ドライバーの機能のドライバーを含む、デバイスのドライバー。 PnP マネージャー呼び出し、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ドライバーがまだ読み込まれていない場合は、各ドライバーの日常的な。 Reporting と PnP デバイス列挙の詳細については、次を参照してください。 [PnP デバイスを追加するシステムを実行して](adding-a-pnp-device-to-a-running-system.md)します。
+デバイスのソフトウェア構成を開始するには、PnP マネージャーと親バスドライバーがデバイスを列挙します。 PnP マネージャーは、ユーザーモードのコンポーネントからのヘルプを使用して、デバイスのドライバーを識別します。これには、関数ドライバーや任意のフィルタードライバーが含まれます。 PnP マネージャーは、ドライバーがまだ読み込まれていない場合、各ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンを呼び出します。 PnP デバイスのレポートと列挙の詳細については、「[実行中のシステムへの Pnp デバイスの追加](adding-a-pnp-device-to-a-running-system.md)」を参照してください。
 
-ドライバーが初期化されると、そのデバイスを初期化するために準備が必要があります。 PnP マネージャーには、ドライバーの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバイスごとに日常的なドライバーを制御します。
+ドライバーが初期化されたら、そのデバイスを初期化する準備ができている必要があります。 PnP マネージャーは、ドライバーが制御する各デバイスに対して、ドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンを呼び出します。
 
-ドライバーが受信すると、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)ドライバーがデバイスを起動し、I/O 要求を処理する準備ができて、PnP マネージャーからの要求デバイスです。 処理については、 **IRP\_MN\_開始\_デバイス**要求を参照してください[デバイスを起動](starting-a-device.md)します。
+PnP マネージャーから\_デバイスの要求を開始して、ドライバーが[**IRP\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を受け取ると、ドライバーはデバイスを起動し、デバイスの i/o 要求を処理する準備が整います。 **\_デバイス要求の開始\_IRP\_** を処理する方法の詳細については、「[デバイスを開始する](starting-a-device.md)」を参照してください。
 
-PnP マネージャーでは、アクティブなデバイスのハードウェア リソースを再構成する必要がある場合、は、送信[ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)と[**IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)デバイスのドライバーを要求します。 PnP マネージャーに指示を送信することによって、デバイスを再起動するドライバー、ハードウェア リソースを再構成して後、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 処理については Irp を停止しを参照してください[デバイスを停止する](stopping-a-device.md)します。 (ブートに構成されたデバイスのドライバーを受信できる**IRP\_MN\_クエリ\_停止\_デバイス**と**IRP\_MN\_の停止\_デバイス**この手順は前の図に示されていませんが、デバイスが開始する前に要求します)。
+PnP マネージャーは、アクティブなデバイスのハードウェアリソースを再構成する必要がある場合、 [**irp\_\_クエリを送信し\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)と[**IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)を停止し、デバイスのドライバーへのデバイス要求を停止\_停止します。 ハードウェアリソースを再起動した後、PnP マネージャーは、デバイスを再起動するようにドライバーに指示します。これを行うには、 [**IRP\_完了\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)の要求を開始します。 停止 Irp の処理の詳細については、「[デバイスを停止する](stopping-a-device.md)」を参照してください。 (ブートによって構成されたデバイスのドライバーは、デバイスを起動する前に **\_\_デバイス**と**irp\_** \_を停止する\_クエリを実行することで、irp\_を完了することができます。」を参照してください)。
 
-Windows 98 で PnP マネージャーにも送信、/ **IRP\_MN\_クエリ\_停止\_デバイス**と**IRP\_MN\_停止\_デバイス**デバイスは無効化するときに要求します。 これらのシステム上のドライバーがまた表示される、 **IRP\_MN\_停止\_デバイス**失敗した開始後に要求します。
+Windows 98/Me では、PnP マネージャーは、デバイスが無効にされている場合に\_デバイスの要求を停止\_停止する\_デバイスと**irp\_** を**停止する\_\_クエリ**を実行することで、irp\_を送信します。 また、これらのシステム上のドライバーは、障害が発生した開始後にデバイスの要求 **\_\_停止する IRP\_** を受け取ります。
 
-PnP デバイスでは、システムから物理的に削除されていますか、既に削除されている、PnP マネージャーは、デバイスのドライバーをさまざまな削除 Irp を送信をデバイスのソフトウェアの表現 (デバイス オブジェクト、およびなど) を削除します。 処理については Irp を削除しを参照してください[デバイスを削除する](removing-a-device.md)します。
+PnP デバイスがシステムから物理的に削除されているか、既に削除されている場合、PnP マネージャーはデバイスのドライバーにさまざまな削除 Irp を送信し、デバイスのソフトウェア表現 (デバイスオブジェクトなど) を削除するように指示します。 削除 Irp の処理の詳細については、「[デバイスの削除](removing-a-device.md)」を参照してください。
 
-ある時点ですべてのドライバーのデバイスが削除された後、PnP マネージャーは、ドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンとドライバーをアンロードします。
+ドライバーのすべてのデバイスが削除された後のある時点で、PnP マネージャーはドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンを呼び出し、ドライバーをアンロードします。
 
  
 

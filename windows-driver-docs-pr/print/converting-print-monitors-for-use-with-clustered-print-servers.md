@@ -3,18 +3,18 @@ title: クラスター化された印刷サーバーで使用するために印�
 description: クラスター化された印刷サーバーで使用するために印刷モニターを変換する
 ms.assetid: 6b374d61-bb2b-42a4-9609-3cde9b82bb2b
 keywords:
-- 印刷モニター WDK、クラスター化されたプリント サーバー
-- クラスター化されたプリント サーバー WDK
-- プリント サーバーの WDK をクラスタ リング
-- クラスター化されたプリント サーバーの印刷のモニターに変換します。
+- 印刷モニター WDK、クラスター化されたプリントサーバー
+- クラスター化されたプリントサーバー WDK
+- プリントサーバークラスタリング WDK
+- クラスター化されたプリントサーバーの印刷モニターの変換
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 125a535936d85eef548c0bf48725166d72adab36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef7f277ed59fad3b148b7c628d2cc0551b6ca51e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372478"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831817"
 ---
 # <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>クラスター化された印刷サーバーで使用するために印刷モニターを変換する
 
@@ -22,23 +22,23 @@ ms.locfileid: "67372478"
 
 
 
-プリント サーバーのクラスタ リングは、Windows 2000 の新しい機能です。 複数のスプーラー インスタンス (ノードの spooler」および「クラスター スプーラー) から呼び出せるように、Windows 2000 (またはそれ以降) のクラスターで実行するためのものでは、すべてプリンター ポート モニターを変更する必要があります。 次の手順を実行する必要があります。
+プリントサーバーのクラスタリングは、Windows 2000 の新機能です。 Windows 2000 (またはそれ以降) のクラスターで実行するように設計されているすべてのプリンターポートモニターは、複数のスプーラインスタンス (ノードのスプーラおよびクラスタースプーラ) から呼び出すことができるように変更する必要があります。 次の手順を実行する必要があります。
 
--   モニターの[ **InitializePrintMonitor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor)関数を置換する必要がある、 [ **InitializePrintMonitor2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)関数。 後者の関数は、モニターのインスタンス ハンドルを返します。
+-   モニターの[**Initializeprintmonitor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor)関数は、 [**InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor2)関数に置き換える必要があります。 後者の関数は、モニターインスタンスハンドルを返します。
 
--   グローバルに格納された変数は、ローカルに割り当てられたメモリに移動する必要があり、このメモリは、によって返されたモニターのハンドルを関連付ける必要がある[ **InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)します。
+-   グローバルに格納された変数は、ローカルに割り当てられたメモリに移動する必要があり、このメモリは[**InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor2)によって返されるモニターハンドルに関連付けられている必要があります。
 
--   API は、スプーラーのレジストリ関数への呼び出しで置き換える必要がある Win32 のレジストリへの呼び出し、これのアドレスでモニターに渡される、 [ **MONITORREG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitorreg)構造体。 (を参照してください[ポートの構成情報を格納する](storing-port-configuration-information.md))。
+-   Win32 registry API の呼び出しは、スプーラのレジストリ関数の呼び出しに置き換える必要があります。これらのアドレスは、 [**Monitorreg**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_monitorreg)構造でモニタに渡されます。 (「[ポート構成情報の格納](storing-port-configuration-information.md)」を参照してください)。
 
--   ポート モニター UI の DLL とポートの監視サーバー DLL には、ポート モニターを分割する必要があります。 UI の DLL は、スプーラーを呼び出すことによってサーバー DLL と通信する必要があります[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数。
+-   ポートモニターは、ポートモニターの UI DLL とポートモニターのサーバー DLL に分割する必要があります。 UI DLL は、スプーラの[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数を呼び出すことによって、サーバー DLL と通信する必要があります。
 
--   A [**シャット ダウン**](https://docs.microsoft.com/previous-versions/ff562646(v=vs.85))関数を追加する必要があります。
+-   [**シャットダウン**](https://docs.microsoft.com/previous-versions/ff562646(v=vs.85))関数を追加する必要があります。
 
-変換されません印刷のモニターは、非クラスター化環境でのみ使用できます。 これらは、クラスター化されたサーバーで使用できません。
+変換されていない印刷モニターは、非クラスター環境でのみ使用できます。 クラスター化されたサーバーでは使用できません。
 
-したらプリンター ポートを Windows 2000 を実行するマシンのクラスター化されたノードで実行されているかを監視または以降では、(または、ネットワーク経由でローカルに)、接続を確立、ポート モニターが返されます一定の時間内で、スプーラーによって行われた呼び出しからです。 削除を行います (スプーラー リソースのタイムアウトの既定値は 180 秒です。 参照してください[ポートのタイムアウト値を設定](setting-port-time-out-values.md)詳細についてはします)。
+Windows 2000 以降を実行しているコンピューターのクラスターノードで実行されているプリンターポートモニターが (ネットワーク経由またはローカルで) 接続を確立すると、ポートモニターはスプーラによって行われた呼び出しから、適度な時間内にを返す必要があります。 (スプーラリソースのタイムアウトの既定値は180秒です。 詳細については、「ポートのタイムアウト[値の設定](setting-port-time-out-values.md)」を参照してください。)
 
-1 つのクラスター ノードから別のフェールオーバーが発生したときに、スプーラーは現在のすべての印刷ジョブを完了または失敗を待つ必要があります。 保留中の印刷ジョブが、スプーラー リソースのタイムアウトより長くポート モニター保持されている場合、スプーラーがオンラインに戻ります不完全な状態でが一時的に不足しているプリンター。 これらの不足しているプリンターへの接続を持つユーザーに影響を与える可能性があります。
+あるクラスターノードから別のクラスターノードへのフェールオーバーが発生した場合、スプーラは現在のすべての印刷ジョブが完了するか失敗するまで待機する必要があります。 保留中の印刷ジョブがスプーラリソースのタイムアウトよりも長い速度でポートモニターに保持されている場合、スプーラーは一時的に状態が "未完了" になっている可能性があります。 これは、不足しているプリンターに接続しているユーザーに影響を与える可能性があります。
 
  
 

@@ -1,22 +1,22 @@
 ---
 title: ACPI_METHOD_SET_ARGUMENT_BUFFER マクロ
-description: ACPI_METHOD_SET_ARGUMENT_BUFFER マクロは、データ バッファーで指定されているカスタム データの ACPI_METHOD_ARGUMENT 構造体のメンバーを設定します。
+description: ACPI_METHOD_SET_ARGUMENT_BUFFER マクロは、データバッファーに指定されているカスタムデータの ACPI_METHOD_ARGUMENT 構造体のメンバーを設定します。
 ms.assetid: 1f335814-fa9f-45c6-b970-10884e971ec1
 keywords:
 - ACPI_METHOD_SET_ARGUMENT_BUFFER マクロ ACPI デバイス
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d3f5ca7ad3b58d471af4beb33cbf1eb33e6eb2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c29600dc80179b5f8acd81536ff21457ea42103b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355877"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824062"
 ---
-# <a name="acpimethodsetargumentbuffer-macro"></a>ACPI\_メソッド\_設定\_引数\_バッファー マクロ
+# <a name="acpi_method_set_argument_buffer-macro"></a>ACPI\_メソッド\_設定\_引数\_バッファーマクロ
 
 
-ACPI\_メソッド\_設定\_引数\_バッファー マクロがのメンバーを設定、 [ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)データ バッファーで指定されているカスタム データの構造体。
+ACPI\_メソッド\_設定\_引数\_BUFFER マクロは、データバッファーに指定されているカスタムデータに対して、 [**acpi\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)のメンバーを\_引数構造体に設定します。
 
 <a name="syntax"></a>構文
 ------
@@ -33,25 +33,25 @@ void ACPI_METHOD_SET_ARGUMENT_BUFFER(
 ----------
 
 *引数*   
-ACPI へのポインター\_メソッド\_引数構造体。
+引数構造\_の ACPI\_メソッドへのポインター。
 
 *BuffData*   
-カスタム データを格納するデータ バッファーへのポインター。
+カスタムデータを格納するデータバッファーへのポインター。
 
 *BuffLength*   
-カスタム データのバイト単位のサイズ。
+カスタムデータのサイズ (バイト単位)。
 
 <a name="return-value"></a>戻り値
 ------------
 
-このマクロでは、値は返されません。
+このマクロは値を返しません。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバーは、このマクロを使用して ACPI のメンバーを設定する\_メソッド\_カスタム データを提供する引数の構造体。
+ドライバーは、このマクロを使用して、カスタムデータを提供する引数の構造\_、ACPI\_メソッドのメンバーを設定できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -66,7 +66,7 @@ ACPI へのポインター\_メソッド\_引数構造体。
 </tr>
 <tr>
 <td><p>Header</p></td>
-<td>Acpiioct.h (Acpiioct.h を含む)</td>
+<td>Acpiioct (Acpiioct を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -74,4 +74,4 @@ ACPI へのポインター\_メソッド\_引数構造体。
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

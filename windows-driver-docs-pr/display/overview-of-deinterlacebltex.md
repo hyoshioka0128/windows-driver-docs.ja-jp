@@ -7,12 +7,12 @@ keywords:
 - VMR WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb365fdd19804999ad82ccc14cd3983d22843be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa0caa7581add3753a3272aa1d8bdc5f08c123a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354695"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826065"
 ---
 # <a name="overview-of-deinterlacebltex"></a>DeinterlaceBltEx の概要
 
@@ -20,17 +20,17 @@ ms.locfileid: "67354695"
 ## <span id="ddk_overview_of_deinterlacebltex_gg"></span><span id="DDK_OVERVIEW_OF_DEINTERLACEBLTEX_GG"></span>
 
 
-**このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
+**このセクションは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-Windows XP SP2、Windows Server 2003 SP1 以降の VMR し、後で、ディスプレイ ドライバーへの呼び出しを開始することができます[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)デインター レースを結合してサブストリームの合成関数操作です。
+Windows Server 2003 SP1 以降および Windows XP SP2 以降の VMR では、表示ドライバーの[**DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)関数の呼び出しを開始して、ノンインターレース化とサブストリームの合成操作を組み合わせることができます。
 
-Windows Server 2003 と Windows XP SP1 VMR DXVA を使用してインター レース解除するか、フレーム レートがビデオ、および、RGB32 表面にビデオ出力に変換します。 VMR は、Direct3D を使用してビデオ画像とビデオ サブストリームを結合します。 つまり、ビデオは、まず deinterlaced、サイズ変更、および色空間 Direct3D RGB32 に変換をレンダリングする、ディスプレイ ドライバーを使用してターゲット[ **DeinterlaceBlt** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt)関数。 次に、ビデオのサブストリームが合成ディスプレイ ドライバーへの呼び出しを使用して、結果として得られるビデオ画像の上に[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数。
+Windows Server 2003 および Windows XP SP1 の VMR では、DXVA を使用してビデオをインターレース解除またはフレームレート変換し、ビデオを RGB32 表面に出力します。 VMR は、Direct3D を使用してビデオのサブストリームをビデオイメージと結合します。 つまり、ビデオはまず、ディスプレイドライバーの[**DeinterlaceBlt**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt)関数を使用して、最初にインターレースを解除し、サイズを変更した後、カラースペースを Direct3D RGB32 render ターゲットに変換します。 次に、ビデオサブストリームは、表示ドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数の呼び出しを使用して、結果として得られるビデオイメージの上部に合成されます。
 
-使用して*DeinterlaceBltEx*なく*DeinterlaceBlt*と*D3dDrawPrimitives2*組み合わせることで、操作を実行できるより効率的に使用可能なハードウェアで.
+*DeinterlaceBlt*と*D3dDrawPrimitives2*の組み合わせではなく、 *DeinterlaceBltEx*を使用すると、利用可能なハードウェアで操作をより効率的に実行できます。
 
-*DeinterlaceBltEx*関数も呼び出せるプログレッシブ ビデオや複数のビデオ サブストリームとします。 このシナリオは、VMR が段階的なインター レースのビデオの組み合わせを含む DVD の再生に使用される場合に発生します。 ここでは、ドライバーは、ストリームはプログレッシブが既にあるため、ビデオ ストリームをインター レース解除する必要がありますしません。 ドライバーは、任意指定サブストリームとビデオ ストリームを結合し、必要に応じて、各ストリームのサイズを変更する必要があります。
+*DeinterlaceBltEx*関数は、プログレッシブビデオと複数のビデオサブストリームでも呼び出すことができます。 このシナリオは、プログレッシブビデオとインターレースビデオの組み合わせを含む DVD 再生に VMR が使用されている場合に発生する可能性があります。 この場合、ストリームは既にプログレッシブであるため、ドライバーはビデオストリームのインターレースを解除しないようにする必要があります。 ドライバーは、ビデオストリームと特定のサブストリームを結合し、必要に応じて各ストリームのサイズを変更します。
 
-実装する場合、 [ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)関数、ドライバーでは、元も実装する必要があります[ **DeinterlaceBlt** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt)関数。 VMR 以降では、Windows Server 2003 SP1 および Windows XP SP2 以降できます開始呼び出していずれかに、ドライバーの*DeinterlaceBltEx*または*DeinterlaceBlt*関数は、アプリケーションを制御しますVMR を使用する関数。
+ドライバーで[**DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)関数を実装する場合は、元の[**DeinterlaceBlt**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt)関数も実装する必要があります。 Windows Server 2003 SP1 以降および Windows XP SP2 以降の VMR では、ドライバーの*DeinterlaceBltEx*または*DeinterlaceBlt*関数の呼び出しを開始できます。アプリケーションでは、VMR が使用する機能を制御します。
 
  
 

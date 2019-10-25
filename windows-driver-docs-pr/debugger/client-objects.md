@@ -3,16 +3,16 @@ title: クライアント オブジェクト
 description: クライアント オブジェクト
 ms.assetid: 173a67f1-093e-4462-8e2c-41d0f10106d0
 keywords:
-- デバッガー エンジンでは、クライアント オブジェクト
-- クライアント オブジェクト
+- デバッガーエンジン、クライアントオブジェクト
+- クライアントオブジェクト
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c0482dc75eafefc504966c53fb753aa349f27c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15b22ddb8039fe1c602be46b9e82e1dac10a644e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367018"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837824"
 ---
 # <a name="client-objects"></a>クライアント オブジェクト
 
@@ -20,29 +20,29 @@ ms.locfileid: "67367018"
 ## <span id="client-objects"></span><span id="CLIENT_OBJECTS"></span>
 
 
-ほぼすべての対話、[デバッガー エンジン](introduction.md#debugger-engine)は*クライアント オブジェクト*、多くの場合、単に呼ば*クライアント*。 各クライアントは、最上位のエンジンのインターフェイスの実装を提供します。 各インターフェイスでは、エンジンと、ターゲット、エンジンを操作するために使用するには、メソッドの別のセットを提供します。 エンジンのインスタンスには、多くのクライアントがそれぞれ独自の状態を持つことができます。
+ほとんどの場合、[デバッガーエンジン](introduction.md#debugger-engine)とのやり取りは*クライアントオブジェクト*を介して行われ、多くの場合 *、クライアントと呼ばれます。* 各クライアントには、最上位レベルのエンジンインターフェイスの実装が用意されています。 各インターフェイスには、さまざまなメソッドが用意されています。これらのメソッドを使用して、エンジンや、エンジン (ターゲット) を操作できます。 エンジンのインスタンスは、それぞれが独自の状態を持つ多数のクライアントを持つことができます。
 
-### <a name="span-idprimary-clientsspanspan-idprimaryclientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主なクライアント
+### <a name="span-idprimary-clientsspanspan-idprimary_clientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>プライマリクライアント
 
-A*プライマリ クライアント*は現在参加して、クライアントではデバッグ セッション。 最初に、新しいクライアント オブジェクトが作成されると、そのクライアントではないプライマリです。 クライアントは、ターゲットを取得する際にプライマリのクライアントになります (呼び出すことによって、たとえば、 [ **CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) を使用してデバッグ セッションに接続されているまたは[ **ConnectSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-connectsession)します。 デバッガー コマンド[ **.clients** ](-clients--list-debugging-clients-.md)主なクライアントのみを一覧表示されます。
+*プライマリクライアント*は、現在のデバッグセッションに参加しているクライアントです。 初期状態では、新しいクライアントオブジェクトが作成されると、プライマリクライアントではなくなります。 クライアントがターゲットを取得するために使用される場合 (たとえば、 [**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)を呼び出すことによって)、または[**connectsession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-connectsession)を使用してデバッグセッションに接続されている場合は、クライアントがプライマリクライアントになります。 デバッガーコマンド。クライアントには、プライマリクライアントのみが表示され[**ます。** ](-clients--list-debugging-clients-.md)
 
-### <a name="span-idcallback-objectsspanspan-idcallbackobjectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>コールバック オブジェクト
+### <a name="span-idcallback-objectsspanspan-idcallback_objectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>コールバックオブジェクト
 
-コールバック オブジェクトは、各クライアントを登録することができます。 コールバック オブジェクトの 3 つの種類があります。
+コールバックオブジェクトは、各クライアントに登録できます。 コールバックオブジェクトには、次の3種類があります。
 
-1.  **コールバック オブジェクトを入力**(または*入力コールバック*): エンジンは入力を要求する入力のコールバックを呼び出します。 たとえば、コンソール ウィンドウで、デバッガーは、ユーザーからの入力に、エンジンを提供する入力のコールバックを登録でしたまたはデバッガーがファイルからの入力に、エンジンを提供する入力のコールバックを登録します。
+1.  **入力コールバックオブジェクト**(または*入力コールバック*): エンジンは入力コールバックを呼び出して入力を要求します。 たとえば、コンソールウィンドウがあるデバッガーは、入力コールバックを登録してユーザーからの入力をエンジンに提供したり、デバッガーが入力コールバックを登録して、エンジンにファイルからの入力を提供したりする可能性があります。
 
-2.  **コールバック オブジェクトを出力**(または*コールバックを出力*): エンジンは出力を表示する出力のコールバックを呼び出します。 たとえば、コンソール ウィンドウで、デバッガーが登録する、ユーザーに、デバッガーの出力を表示する出力のコールバックをやデバッガーは、出力ログ ファイルを送信する出力のコールバックを登録可能性があります。
+2.  **出力コールバックオブジェクト**(または*出力コールバック*): エンジンは、出力を表示するための出力コールバックを呼び出します。 たとえば、コンソールウィンドウがあるデバッガーでは、出力コールバックを登録してユーザーにデバッガーの出力を表示することも、出力をログファイルに送信するための出力コールバックをデバッガーで登録することもできます。
 
-3.  **イベントのコールバック オブジェクト**(または*イベント コールバック*): ターゲットのイベントが発生した (または、エンジンの状態の変更がある) されるたびに、エンジンはイベント コールバックを呼び出します。 たとえば、デバッガー拡張機能ライブラリは、イベント コールバックを特定のイベントを監視したり、特定のイベントが発生したときに、自動化されたアクションを実行したりを登録するでした。
+3.  **イベントコールバックオブジェクト**(または*イベントコールバック*): エンジンは、ターゲットでイベントが発生するたびにイベントコールバックを呼び出します (またはエンジンの状態が変更されている場合)。 たとえば、デバッガー拡張ライブラリは、特定のイベントを監視したり、特定のイベントが発生したときに自動アクションを実行したりするために、イベントコールバックを登録できます。
 
-### <a name="span-idremote-debuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>リモート デバッグ
+### <a name="span-idremote-debuggingspanspan-idremote_debuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>リモートデバッグ
 
-クライアント オブジェクトには、ホストのエンジンのリモート インスタンスへの通信が容易になります。 [ **DebugConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)関数は、リモート エンジンのインスタンスに接続されているクライアント オブジェクトを作成しますこのクライアントで呼び出されたメソッドが登録されているリモート エンジンとコールバック オブジェクトによって実行されます。ローカル クライアントのときに呼び出されますリモート エンジンはコールバックの呼び出しを行います。
+クライアントオブジェクトは、ホストエンジンのリモートインスタンスへの通信を容易にします。 [**Debugconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)関数は、リモートエンジンインスタンスに接続されているクライアントオブジェクトを作成します。このクライアントで呼び出されたメソッドはリモートエンジンによって実行され、クライアントとローカルに登録されたコールバックオブジェクトは、リモートエンジンがコールバック呼び出しを行うときに呼び出されます。
 
-### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional-informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-作成して、クライアント オブジェクトの使用に関する詳細については、次を参照してください。[コールバック オブジェクトを使用する](using-callback-objects.md)します。 コールバック オブジェクトの登録方法の詳細については、コールバック オブジェクトを使用するを参照してください。
+クライアントオブジェクトの作成と使用の詳細については、「[コールバックオブジェクトの使用](using-callback-objects.md)」を参照してください。 コールバックオブジェクトの登録の詳細については、「コールバックオブジェクトの使用」を参照してください。
 
  
 

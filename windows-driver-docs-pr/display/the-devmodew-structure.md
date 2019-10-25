@@ -3,19 +3,19 @@ title: DEVMODEW 構造体
 description: DEVMODEW 構造体
 ms.assetid: 26212e3b-a591-4ed6-b441-b130d8d4d948
 keywords:
-- GDI WDK Windows 2000 の表示、DEVMODEW 構造体
-- グラフィックス ドライバー WDK Windows 2000 の表示、DEVMODEW 構造体
-- DEVMODEW 構造 WDK Windows 2000 の表示
-- Unicode の WDK グラフィック
-- 描画 WDK GDI、DEVMODEW 構造体
+- GDI WDK Windows 2000 display、DEVMODEW 構造体
+- グラフィックスドライバー WDK Windows 2000 display、DEVMODEW 構造体
+- DEVMODEW structure WDK Windows 2000 display
+- Unicode WDK グラフィック
+- WDK GDI、DEVMODEW 構造の描画
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f6b727fa18d1fd009a098686cd6056ca5a40ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41c5d761890c02a33fb0891b83950406adeb4e37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825512"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 構造体
 
@@ -23,55 +23,55 @@ ms.locfileid: "67384585"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体は、Microsoft Windows SDK ドキュメントに記載されている DEVMODE 構造体の Unicode バージョンです。 (DEVMODEW で 'W' サフィックスは、「ワイド」、または Unicode 文字を表します)。アプリケーションは、いずれかの構造体を使用して、DEVMODE 構造体ではなく DEVMODEW 構造体を使用するドライバーが必要です。
+[**Devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体は、Microsoft Windows SDK のドキュメントで説明されている DEVMODE 構造体の Unicode バージョンです。 (DEVMODEW の ' W ' サフィックスは、"wide" または Unicode 文字を表します)。アプリケーションではいずれかの構造体を使用できますが、DEVMODE 構造体ではなく DEVMODEW 構造体を使用するにはドライバーが必要です。
 
-### <a name="span-idpublicandprivatemembersspanspan-idpublicandprivatemembersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>パブリックおよびプライベート メンバー
+### <a name="span-idpublic_and_private_membersspanspan-idpublic_and_private_membersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>パブリックメンバーとプライベートメンバー
 
-メンバー (そのパブリック DEVMODEW メンバーとも呼ばれます) が定義されている次の DEVMODEW 構造体の直後には、ドライバーで定義されたメンバー (プライベート DEVMODEW メンバー) のセットがあります。 次の図は、パブリックのセクション (実際 DEVMODEW 構造自体) とプライベートのセクションを示します。
+DEVMODEW 構造体の定義済みメンバー (多くの場合、パブリック DEVMODEW メンバーと呼ばれます) の直後には、ドライバー定義メンバー (プライベート DEVMODEW メンバー) のセットが存在する場合があります。 次の図は、パブリックセクション (実際の DEVMODEW 構造体自体) とプライベートセクションを示しています。
 
-![devmodew 構造体のパブリックおよびプライベートのセクションを示す図](images/devmode.png)
+![devmodew 構造体のパブリックセクションとプライベートセクションを示す図](images/devmode.png)
 
-通常、プライベート メンバーは、プリンター ドライバーでのみ使用されます。 このプライベート領域内のバイト単位のサイズを提供するドライバー、 **dmDriverExtra**メンバー。 ドライバーで定義されたプライベート メンバーは、ドライバーによって排他的に使用されます。
+通常、プライベートメンバーはプリンタードライバーによってのみ使用されます。 ドライバーは、 **dmDriverExtra**メンバー内のこのプライベート領域のサイズ (バイト単位) を提供します。 ドライバーによって定義されるプライベートメンバーは、ドライバーによって排他的に使用されます。
 
-プリンター ドライバーでは、印刷ドキュメントのユーザーの選択肢を指定する DEVMODEW 構造が使用されます。 プリンターで印刷、用紙のサイズにコピーの数やその他の属性など、これらのオプションの既定値を指定することも使用されます。 ディスプレイ デバイスの DEVMODEW 構造体にはビット/ピクセル、ピクセルの数、および表示頻度の数などの表示属性を指定します。
+プリンタードライバーの場合、DEVMODEW 構造体を使用して、印刷ドキュメントのユーザー選択を指定します。 また、印刷部数、用紙サイズ、その他の属性など、プリンターに対して選択した既定値を指定するためにも使用されます。 ディスプレイデバイスの場合、DEVMODEW 構造体は、ピクセルあたりのビット数、ピクセルディメンション、表示頻度などの表示属性を指定します。
 
-### <a name="span-idinitializingadevmodewstructurespanspan-idinitializingadevmodewstructurespaninitializing-a-devmodew-structure"></a><span id="initializing_a_devmodew_structure"></span><span id="INITIALIZING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の初期化
+### <a name="span-idinitializing_a_devmodew_structurespanspan-idinitializing_a_devmodew_structurespaninitializing-a-devmodew-structure"></a><span id="initializing_a_devmodew_structure"></span><span id="INITIALIZING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の初期化
 
-プリンタ ドライバまたはディスプレイ ドライバーによって使用されることがあるか、によって DEVMODEW 構造は、2 つの方法で初期化されます。
+ディスプレイドライバーまたはプリンタードライバーによって使用されるかどうかに応じて、DEVMODEW 構造体は2つの異なる方法で初期化されます。
 
--   ディスプレイ ドライバー DEVMODEW 初期化
+-   ディスプレイドライバー DEVMODEW 初期化
 
-    ディスプレイ ドライバーの[ **DrvGetModes** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)エントリ ポイントを 0 に DEVMODEW 構造体のすべてのメンバーを初期化します。 *DrvGetModes* 、ディスプレイ ドライバー DLL の名前をコピーする、 **dmDeviceName** 、メンバーを設定、 **dmSpecVersion**と**dmDriverVersion**メンバーDEVMODEW 構造体とコピーのバージョンでは、適切なメンバーに属性情報を表示します。
+    ディスプレイドライバーの[**DrvGetModes**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)エントリポイントは、DEVMODEW 構造体のすべてのメンバーをゼロに初期化します。 次に、 *DrvGetModes*は、表示ドライバー DLL の名前を**dmdevicename**メンバーにコピーし、 **dmspecversion**と**dmDriverVersion**のメンバーに devmodew 構造体のバージョンを入力して、表示属性をコピーします。適切なメンバーに対する情報。
 
--   プリンター ドライバー DEVMODEW の初期化
+-   プリンタドライバ DEVMODEW 初期化
 
-    アプリケーションがいずれかに呼び出しを実行するときに**DocumentProperties** (DLL 関数、Microsoft Windows SDK ドキュメントで説明されているプリンター インターフェイス) または[ **DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets) (、NT ベースのオペレーティング システム グラフィックス DDI)、既定値を持つ DEVMODEW 構造を作成します。 アプリケーションでは、自由に DEVMODEW のパブリック メンバーのいずれかを変更します。 すべての変更後、アプリケーションする必要があります、ドライバーの内部 DEVMODEW 構造の変更されたメンバーをマージするために、前に呼び出すことが、同じ関数の 2 番目の呼び出しを加えます。 2 番目の呼び出しが必要ないくつかの変更が正しく機能しないからプリンター ドライバーを呼び出す DEVMODEW 構造を修正する必要があります。 アプリケーションがマージされた DEVMODEW 構造に渡す、ドキュメントが印刷しようとしていますが、**フォーマット**(Microsoft Windows SDK のドキュメントで説明されている) 上に渡されますが、 [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI します。 その時点で、ドライバーの DLL のレンダリング DEVMODEW 構造を検証し、印刷ジョブを実行する前に、修復は、必要に応じて、します。
+    アプリケーションが**DocumentProperties** (Microsoft Windows SDK のドキュメントで説明されているプリンターインターフェイス DLL 関数) または[**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) (NT ベースのオペレーティングシステムグラフィックス DDI) のいずれかを呼び出すと、DEVMODEW 構造体が既定値で作成されます。 その後、アプリケーションは、任意のパブリック DEVMODEW メンバーを自由に変更できます。 変更後、アプリケーションは、変更されたメンバーをドライバーの内部 DEVMODEW 構造体とマージするために、前に呼び出したのと同じ関数に対して2回目の呼び出しを行う必要があります。 いくつかの変更が正しく機能しない可能性があるため、2回目の呼び出しが必要です。DEVMODEW 構造を修正するには、プリンタードライバーを呼び出す必要があります。 ドキュメントが印刷されるときに、アプリケーションは、マージされた DEVMODEW 構造を**Createdc** (Microsoft Windows SDK ドキュメントで説明) に渡します。これにより、 [**Drvenablepdev**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI に渡されます。 その時点で、ドライバーの表示 DLL は DEVMODEW 構造を検証し、必要に応じて、印刷ジョブを実行する前に修復を行います。
 
-### <a name="span-idusingadevmodewstructurespanspan-idusingadevmodewstructurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の使用
+### <a name="span-idusing_a_devmodew_structurespanspan-idusing_a_devmodew_structurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の使用
 
-いくつかの Api および Ddi グラフィックは、印刷、デバイス機能、表示されているユーザー インターフェイス、およびその他のユーザーのクエリを実行するために DEVMODEW 構造体の情報を使用します。 たとえば、 [ **DrvConvertDevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvconvertdevmode)印刷スプーラー グラフィックス DDI の 1 つのオペレーティング システムのバージョンから DEVMODEW 構造体を別の変換をします。 プリンター ドライバーを別のオペレーティング システムのバージョンで実行されている別のコンピューターから DEVMODEW 構造体を取得する場合は、必要があります。
+いくつかの Api とグラフィックス DDIs は、印刷、デバイスの機能のクエリ、ユーザーインターフェイスの表示などの目的で、DEVMODEW 構造の情報を使用します。 たとえば、 [**DrvConvertDevMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvconvertdevmode)は、DEVMODEW 構造をオペレーティングシステムのバージョン間で変換する印刷スプーラグラフィック DDI です。 これは、プリンタードライバーが別のオペレーティングシステムのバージョンで実行されている別のコンピューターから DEVMODEW 構造体を取得する場合に必要になることがあります。
 
-### <a name="span-idmodifyingadevmodewstructurespanspan-idmodifyingadevmodewstructurespanmodifying-a-devmodew-structure"></a><span id="modifying_a_devmodew_structure"></span><span id="MODIFYING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造の変更
+### <a name="span-idmodifying_a_devmodew_structurespanspan-idmodifying_a_devmodew_structurespanmodifying-a-devmodew-structure"></a><span id="modifying_a_devmodew_structure"></span><span id="MODIFYING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の変更
 
-アプリケーションとドライバーは DEVMODEW 構造体の要求し、そのパブリックの部分を直接変更するのには無料です。 ただし、唯一のドライバーがプライベート DEVMODEW 構造体のメンバーを変更する許可されます。
+アプリケーションとドライバーは、DEVMODEW 構造を自由に要求し、パブリックパートを直接変更することができます。 ただし、ドライバーだけがプライベート DEVMODEW 構造体のメンバーを変更できます。
 
-プライベート DEVMODEW 構造体のメンバーを変更するには場合は、ドライバーにプライベート データの先頭のオフセットを決定してする必要があります。 この構造体の先頭へのポインターを指定し、 **dmSize**メンバーで、構造体のパブリックの部分のサイズを保持するには、秘密の部分の先頭を検出できます。 次の例では、プライベートのセクションの先頭へのポインターを初期化する方法を示します。 この例で*pdm* DEVMODEW 構造体の先頭を指します。
+プライベート DEVMODEW 構造体のメンバーを変更するには、まず、ドライバーがプライベートデータの先頭のオフセットを確認する必要があります。 この構造体の先頭へのポインターと、構造体のパブリックな部分のサイズを保持する**Dmsize**メンバーが見つかった場合、プライベート部分の先頭が見つかります。 次の例は、プライベートセクションの先頭へのポインターを初期化する方法を示しています。 この例では、 *pdm*は DEVMODEW 構造体の先頭を指しています。
 
 ```cpp
 PVOID pvDriverData = (PVOID)  (((BYTE *) pdm) + (pdm -> dmSize));
 ```
 
-### <a name="span-idprinterdriverdisplaydriverdevmodewdifferencesspanspan-idprinterdriverdisplaydriverdevmodewdifferencesspanprinter-driverdisplay-driver-devmodew-differences"></a><span id="printer_driver_display_driver_devmodew_differences"></span><span id="PRINTER_DRIVER_DISPLAY_DRIVER_DEVMODEW_DIFFERENCES"></span>プリンター ドライバーや表示ドライバー DEVMODEW の違い
+### <a name="span-idprinter_driver_display_driver_devmodew_differencesspanspan-idprinter_driver_display_driver_devmodew_differencesspanprinter-driverdisplay-driver-devmodew-differences"></a><span id="printer_driver_display_driver_devmodew_differences"></span><span id="PRINTER_DRIVER_DISPLAY_DRIVER_DEVMODEW_DIFFERENCES"></span>プリンタドライバ/ディスプレイドライバ DEVMODEW の相違点
 
-DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます。
+DEVMODEW 構造体のメンバーは、次の3つのカテゴリに分類されます。
 
--   プリンター ドライバーでのみ使用するメンバー
+-   プリンタードライバーによってのみ使用されるメンバー
 
--   のみ使用するメンバーのディスプレイ ドライバー
+-   ディスプレイドライバーによってのみ使用されるメンバー
 
--   プリンターとディスプレイ ドライバーの両方で使用するメンバー
+-   プリンターとディスプレイの両方のドライバーで使用されるメンバー
 
-次の表に、使用されるいくつかのパブリック DEVMODEW メンバー*のみ*プリンター ドライバーで。
+次の表は、プリンタードライバーで*のみ*使用される、いくつかのパブリック DEVMODEW メンバーを示しています。
 
 <table>
 <colgroup>
@@ -80,14 +80,14 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プリンター ドライバーでのみ使用する DEVMODEW メンバー</th>
+<th align="left">プリンタードライバーによってのみ使用される DEVMODEW メンバー</th>
 <th align="left">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dmScale</strong></p></td>
-<td align="left"><p>イメージが印刷をスケールする割合を指定します。</p></td>
+<td align="left"><p>画像を印刷用にスケーリングする割合を指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmCopies</strong></p></td>
@@ -95,18 +95,18 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmColor</strong></p></td>
-<td align="left"><p>カラー プリンターがカラーかモノクロ印刷する必要があるかどうかを指定します。</p></td>
+<td align="left"><p>カラープリンターでカラーまたはモノクロを印刷するかどうかを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmOrientation</strong></p></td>
-<td align="left"><p>用紙の向きを指定します縦または横のいずれか。</p></td>
+<td align="left"><p>用紙の向きを縦または横に指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表に、使用されるいくつかのパブリック DEVMODEW メンバー*のみ*でドライバーを表示します。
+次の表に、表示ドライバーで*のみ*使用される、いくつかのパブリック DEVMODEW メンバーを示します。
 
 <table>
 <colgroup>
@@ -115,37 +115,37 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ディスプレイ ドライバーでのみ使用する DEVMODEW メンバー</th>
+<th align="left">ディスプレイドライバーによってのみ使用される DEVMODEW メンバー</th>
 <th align="left">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dmBitsPerPel</strong></p></td>
-<td align="left"><p>色の解像度ディスプレイ デバイスのピクセルあたりのビットを指定します。</p></td>
+<td align="left"><p>ディスプレイデバイスの色解像度をピクセルあたりのビット数で指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmPelsWidth</strong></p></td>
-<td align="left"><p>表示されているデバイスの画面のピクセル単位の幅を指定します。</p></td>
+<td align="left"><p>表示されるデバイスの画面の幅 (ピクセル単位) を指定します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>dmPelsHeight</strong></p></td>
-<td align="left"><p>表示されているデバイスの画面のピクセル、高さを指定します。</p></td>
+<td align="left"><p><strong>調べ</strong></p></td>
+<td align="left"><p>表示されるデバイスの画面の高さ (ピクセル単位) を指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmDisplayFlags</strong></p></td>
-<td align="left"><p>ノンインター レースとインター レース モノクロの場合と色の表示モードを指定します。</p></td>
+<td align="left"><p>表示モード (色はモノクロ、インターレース、ノンインターレース) を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmDisplayFrequency</strong></p></td>
-<td align="left"><p>ヘルツ、ディスプレイのリフレッシュ レートを指定します。</p></td>
+<td align="left"><p>ディスプレイのリフレッシュレートをヘルツ単位で指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-3 番目のテーブルには、ディスプレイ ドライバーとプリンターの両方で使用されるいくつかのパブリック DEVMODEW メンバーが一覧表示されます。
+3番目のテーブルには、プリンターとディスプレイの両方のドライバーで使用される、いくつかのパブリック DEVMODEW メンバーが一覧表示されます。
 
 <table>
 <colgroup>
@@ -154,30 +154,30 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">プリンターやディスプレイ ドライバーによって使用される DEVMODEW メンバー</th>
+<th align="left">プリンターおよびディスプレイドライバーで使用される DEVMODEW メンバー</th>
 <th align="left">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dmDeviceName</strong></p></td>
-<td align="left"><p>表示されたら、ディスプレイ ドライバーの DLL を指定します。</p>
+<td align="left"><p>ディスプレイの場合は、表示ドライバーの DLL を指定します。</p>
 <div>
  
 </div>
-プリンターのプリンターの「表示名」を指定します。</td>
+プリンターの場合は、プリンターの "フレンドリ名" を指定します。</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmFields</strong></p></td>
-<td align="left"><p>それに続くメンバーが使用されている、DEVMODEW を識別するビット フラグを指定します。 たとえば、DM_BITSPERPEL フラグが設定されてときに、 <strong>dmBitsPerPel</strong>メンバーには、有効なデータが含まれています。</p></td>
+<td align="left"><p>後に続く DEVMODEW メンバーのうち、どのメンバーが使用されているかを識別するビットフラグを指定します。 たとえば、DM_BITSPERPEL フラグは、 <strong>dmBitsPerPel</strong>メンバーに有効なデータが含まれている場合に設定されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmSize</strong></p></td>
-<td align="left"><p>DEVMODEW 構造体のパブリックの部分のバイト単位のサイズを指定します。</p></td>
+<td align="left"><p>DEVMODEW 構造体のパブリックな部分のサイズをバイト単位で指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmDriverExtra</strong></p></td>
-<td align="left"><p>次のパブリック構造体のメンバー、プライベートのドライバーのデータのバイト数を指定します。 ディスプレイ ドライバーでは、これは、通常は 0 です。</p></td>
+<td align="left"><p>パブリック構造のメンバーに続くプライベートドライバーデータのバイト数を指定します。 ディスプレイドライバーの場合、通常はゼロになります。</p></td>
 </tr>
 </tbody>
 </table>

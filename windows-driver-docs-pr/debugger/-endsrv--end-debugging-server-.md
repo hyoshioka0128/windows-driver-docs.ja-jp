@@ -1,9 +1,9 @@
 ---
 title: .endsrv (デバッグ サーバーの終了)
-description: .Endsrv コマンドでは、アクティブなデバッグ サーバーをキャンセルするデバッガーを実行します。
+description: Endsrv コマンドを実行すると、デバッガーはアクティブなデバッグサーバーをキャンセルします。
 ms.assetid: 6be6c774-fe6b-4bd4-8174-55ef207db3e6
 keywords:
-- .endsrv (エンド デバッグ サーバー) の Windows デバッグ
+- endsrv (デバッグサーバーの終了) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe73c50d0928ed50945170bec349956c0e23b433
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4f88bed3079c61ca88edb5f8beab9b0bb9ece48e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364328"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837603"
 ---
 # <a name="endsrv-end-debugging-server"></a>.endsrv (デバッグ サーバーの終了)
 
 
-**.Endsrv**コマンドにより、デバッガーをアクティブなデバッグ サーバーを取り消します。
+**Endsrv**コマンドを実行すると、デバッガーはアクティブなデバッグサーバーをキャンセルします。
 
 ```dbgcmd
 .endsrv ServerID 
 ```
 
-## <a name="span-idddkmetaenddebuggingserverdbgspanspan-idddkmetaenddebuggingserverdbgspanparameters"></a><span id="ddk_meta_end_debugging_server_dbg"></span><span id="DDK_META_END_DEBUGGING_SERVER_DBG"></span>パラメーター
+## <a name="span-idddk_meta_end_debugging_server_dbgspanspan-idddk_meta_end_debugging_server_dbgspanparameters"></a><span id="ddk_meta_end_debugging_server_dbg"></span><span id="DDK_META_END_DEBUGGING_SERVER_DBG"></span>パラメータ
 
 
-<span id="_______ServerID______"></span><span id="_______serverid______"></span><span id="_______SERVERID______"></span> *サーバー Id*   
-デバッグ サーバーの ID を指定します。
+<span id="_______ServerID______"></span><span id="_______serverid______"></span><span id="_______SERVERID______"></span>*サーバー id*   
+デバッグサーバーの ID を指定します。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
-このコマンドは、デバッガーからのリモート デバッグを実行している場合にのみ使用できます。
+このコマンドは、デバッガーを使用してリモートデバッグを実行している場合にのみ使用できます。
 
 <table>
 <colgroup>
@@ -46,14 +46,14 @@ ms.locfileid: "67364328"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでのみ</p></td>
+<td align="left"><p>ユーザーモードのみ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>・</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
@@ -61,22 +61,22 @@ ms.locfileid: "67364328"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート デバッグの詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
+リモートデバッグの詳細については、「[デバッガーを使用したリモートデバッグ](remote-debugging-through-the-debugger.md)」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-発行する必要があります、 **.endsrv**デバッグ サーバーまたは 1 つのデバッグのサーバーに接続されているデバッグ クライアントからコマンド。
+デバッグサーバーから、またはデバッグサーバーに接続されているいずれかのデバッグクライアントから、 **endsrv**コマンドを発行する必要があります。
 
-デバッグ サーバーの ID を調べるには、 [ **.servers (デバッグ サーバーの一覧)** ](-servers--list-debugging-servers-.md)コマンド。
+デバッグサーバーの ID を確認するには、 [ **. servers (List デバッグサーバー)** ](-servers--list-debugging-servers-.md)コマンドを使用します。
 
-**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、次を参照してください。[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)します。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-startprocessserver).)
+**Endsrv**コマンドはデバッグサーバーを終了できますが、プロセスサーバーまたは KD 接続サーバーを終了することはできません。 これらのサーバーを終了する方法の詳細については、「[プロセスサーバーセッションを制御](controlling-a-process-server-session.md)する」および「 [KD 接続サーバーセッションを制御](controlling-a-kd-connection-server-session.md)する」を参照してください。 (ただし、プログラムによって起動されたプロセスサーバーを**endsrv**が終了できる場合もあります。詳細については、「 [**IDebugClient:: StartProcessServer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-startprocessserver)」を参照してください)。
 
-デバッグ サーバーをキャンセルした場合、サーバーにアタッチ今後デバッグ クライアントを防ぐ。 ただし、デバッグ サーバーをキャンセルすると、サーバーから現在接続されているすべてのクライアントが切断できません。
+デバッグサーバーをキャンセルした場合は、今後のデバッグクライアントがサーバーにアタッチできなくなります。 ただし、デバッグサーバーをキャンセルした場合、サーバーを介して現在アタッチされているクライアントはデタッチされません。
 
-次のような状況を検討してください。 次の例のようにデバッグの一部のサーバーを起動するとします。
+次のような状況が考えられます。 次の例に示すように、いくつかのデバッグサーバーを起動するとします。
 
 ```dbgcmd
 0:000> .server npipe:pipe=rabbit
@@ -85,14 +85,14 @@ Server started with 'npipe:pipe=rabbit'
 Server started with 'tcp:port=7'
 ```
 
-次に、次の例として、パスワードを使用すること。
+次の例に示すように、パスワードを使用することを決定します。
 
 ```dbgcmd
 0:000> .server npipe:pipe=tiger,password=hardtoguess
 Server started with 'npipe:pipe=tiger,password=hardtoguess'
 ```
 
-ただし、以前のサーバーもを実行しているため、次の例のように、それらを取り消す必要があります。
+ただし、次の例に示すように、以前のサーバーはまだ実行されているので、キャンセルする必要があります。
 
 ```dbgcmd
 0:000> .servers
@@ -111,14 +111,14 @@ the next connection attempt.
 2 - Debugger Server - npipe:Pipe=tiger,Password=*
 ```
 
-最後に、以前のサーバーにアクティブだったときに、コンピューターに接続された何もないように、使用、 [ **.clients (デバッグ クライアントを一覧表示)** ](-clients--list-debugging-clients-.md)コマンド。
+最後に、以前のサーバーがアクティブになっている間にコンピューターに何もアタッチされていないことを確認するには、[[**クライアント (デバッグクライアントの一覧)** ](-clients--list-debugging-clients-.md) ] コマンドを使用します。
 
 ```dbgcmd
 0:000> .clients
 HotMachine\HostUser, last active Mon Mar 04 16:05:21 2002
 ```
 
-**注意**  パスワードが暗号化されていないため、少量の保護のみを提供するパスワード TCP、NPIPE、または COM のプロトコルを使用します。 SSL または SPIPE プロトコルと共にパスワードを使用する場合、パスワードは暗号化されます。 セキュリティで保護されたリモート セッションを確立する場合は、SSL または SPIPE プロトコルを使用する必要があります。
+**注意**   TCP、npipe、または COM プロトコルでパスワードを使用すると、パスワードが暗号化されないため、わずかな保護しか提供されません。 SSL または SPIPE プロトコルと共にパスワードを使用すると、パスワードは暗号化されます。 セキュリティで保護されたリモートセッションを確立する場合は、SSL または SPIPE プロトコルを使用する必要があります。
 
  
 

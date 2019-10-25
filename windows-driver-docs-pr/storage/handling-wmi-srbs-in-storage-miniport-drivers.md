@@ -10,16 +10,16 @@ keywords:
 - SRB WMI での WDK ストレージのサポート
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf7f23c1a2c824962418eb0b28bbd74a9dbd197
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 5ec04a24d0e48a0acc2f7323cd7de543aafe625d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252408"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838005"
 ---
 # <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>記憶域ミニポート ドライバーでの WMI SRB の処理
 
-ホストバスアダプター (HBA) に関する情報を報告したり、WMI クライアントが HBA の記憶域ミニポートドライバーと対話できるようにする WMI インターフェイスは、通常、ミニポートドライバーを WMI プロバイダーとして機能させる必要があります。 記憶域ミニポートドライバーが WMI プロバイダーとして登録された後、Windows Management Instrumentation (WMI) SCSI 要求ブロック ([SCSI_WMI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block)) と呼ばれる特殊な種類の scsi 要求ブロック (SRB) を処理できるように準備する必要があります。
+ホストバスアダプター (HBA) に関する情報を報告したり、WMI クライアントが HBA の記憶域ミニポートドライバーと対話できるようにする WMI インターフェイスは、通常、ミニポートドライバーを WMI プロバイダーとして機能させる必要があります。 記憶域ミニポートドライバーが WMI プロバイダーとして登録された後、Windows Management Instrumentation (WMI) SCSI 要求ブロック ([SCSI_WMI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_wmi_request_block)) と呼ばれる特殊な種類の scsi 要求ブロック (SRB) を処理できるように準備する必要があります。
 
 WMI SRBs を処理するように記憶域ミニポートドライバーを準備するには、次の手順を実行します。
 

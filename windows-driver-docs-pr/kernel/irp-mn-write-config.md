@@ -1,37 +1,37 @@
 ---
 title: IRP_MN_WRITE_CONFIG
-description: 構成の領域を持つバスのバス ドライバーには、子デバイス (子 Pdo) は、この要求を処理する必要があります。 関数とフィルター ドライバーでは、この要求は処理しません。
+description: 構成領域があるバスのバスドライバーは、子デバイス (子 PDOs) に対してこの要求を処理する必要があります。 関数ドライバーとフィルタードライバーは、この要求を処理しません。
 ms.date: 08/12/2017
 ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
-- IRP_MN_WRITE_CONFIG Kernel-Mode Driver Architecture
+- IRP_MN_WRITE_CONFIG カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: b12c949ad7a4ef2f3c56d242645d1aefb77d7176
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59a9e2892f134f883f40e720fff41e34de574f32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376453"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827926"
 ---
-# <a name="irpmnwriteconfig"></a>IRP\_MN\_書き込み\_構成
+# <a name="irp_mn_write_config"></a>IRP\_\_書き込み\_構成
 
 
-構成の領域を持つバスのバス ドライバーには、子デバイス (子 Pdo) は、この要求を処理する必要があります。 関数とフィルター ドライバーでは、この要求は処理しません。
+構成領域があるバスのバスドライバーは、子デバイス (子 PDOs) に対してこの要求を処理する必要があります。 関数ドライバーとフィルタードライバーは、この要求を処理しません。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-ドライバーやその他のシステム コンポーネントは、デバイスの親のバスの構成領域にデータを書き込むには、この IRP を送信します。
+ドライバーまたはその他のシステムコンポーネントは、この IRP を送信して、デバイスの親バスの構成領域にデータを書き込みます。
 
-ドライバーやその他のシステム コンポーネントは、IRQL でこの IRP を送信&lt;ディスパッチ\_任意のスレッド コンテキストでします。
+ドライバーまたはその他のシステムコンポーネントは、任意のスレッドコンテキストでディスパッチ\_レベル &lt;、この IRP を IRQL で送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.ReadWriteConfig**は、次の情報を格納している構造体です。
+**Parameters. ReadWriteConfig**は、次の情報を含む構造体です。
 
 ```cpp
 ULONG WhichSpace;
@@ -40,64 +40,64 @@ ULONG Offset;
 ULONG Length
 ```
 
-構造体のメンバーは、異なるバス ドライバー、によって異なる方法で解釈されることができますが、メンバーは次のように通常定義します。
+構造体のメンバーは、バスドライバーによって異なる方法で解釈できますが、通常、メンバーは次のように定義されます。
 
-<a href="" id="whichspace"></a>**WhichSpace**  
-構成の領域を指定します。 指定できる値について**WhichSpace**を参照してください[ **IRP\_MN\_読み取り\_CONFIG**](irp-mn-read-config.md)します。
+<a href="" id="whichspace"></a>**場所**  
+構成領域を指定します。 **空き領域**として指定できる値の詳細については、「 [**IRP\_\_READ\_CONFIG**](irp-mn-read-config.md)」を参照してください。
 
-<a href="" id="buffer"></a>**バッファー**  
-書き込むデータを格納しているバッファーへのポインター。 バッファーの形式は、バスに固有です。
+<a href="" id="buffer"></a>**格納**  
+書き込まれるデータを格納しているバッファーを指します。 バッファーの形式はバスに固有です。
 
-<a href="" id="offset"></a>**オフセット**  
-構成の領域にオフセットを指定します。
+<a href="" id="offset"></a>**影**  
+構成領域へのオフセットを指定します。
 
-<a href="" id="length"></a>**長さ**  
+<a href="" id="length"></a>**数**  
 書き込むバイト数を指定します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-状態の I/O ブロックで返されます。
+I/o 状態ブロックで返されます。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-バス ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功や状態などの適切なエラー状態に\_無効な\_パラメーター\_ *n*、状態\_いいえ\_かかる\_デバイス、または状態\_デバイス\_いない\_準備します。
+バスドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。または、STATUS\_INVALID\_PARAMETER\_*n*、STATUS\_no\_デバイスなどの適切なエラー状態に設定します。、または状態\_デバイス\_\_準備ができていません。
 
-成功した場合、バス ドライバーの設定**Irp -&gt;IoStatus.Information**に書き込まれたバイト数。
+成功した場合、バスドライバーは**Irp&gt;IoStatus**を、書き込まれたバイト数に設定します。
 
-バス ドライバーは、この要求をすぐに完了できない場合、保留中の IRP をマーク、状態を返す\_保留、後で IRP を完了するとします。
+バスドライバーがこの要求を直ちに完了できない場合は、IRP を保留中としてマークし、戻りステータス\_保留中に設定し、後で IRP を完了することができます。
 
 <a name="operation"></a>操作
 ---------
 
-バス ドライバーでは、その子デバイス (子 Pdo) の場合は、この IRP を処理します。
+バスドライバーは、その子デバイス (子 PDOs) に対してこの IRP を処理します。
 
-関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus.Status**を設定しないと、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
+関数ドライバーとフィルタードライバーは、この IRP を処理しません。**Irp&gt;IoStatus. Status**を変更せずに次の下位のドライバーに渡し、 [*iostatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定しません。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-通常、関数のドライバーでは、デバイス スタックがアタッチされているし、IRP が親のバス ドライバーによって処理されるをこの IRP を送信します。
+通常、関数ドライバーは、この IRP がアタッチされているデバイススタックに送信し、IRP が親バスドライバーによって処理されます。
 
-参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+Irp の送信の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)」を参照してください。 次の手順は、この IRP に特に適用されます。
 
--   ページ プールからバッファーを割り当て、書き込まれるデータで初期化します。
+-   ページングされたプールからバッファーを割り当て、書き込まれるデータで初期化します。
 
--   IRP の I/O スタック内の次の場所の値を設定します設定**MajorFunction**に[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)設定 **。MinorFunction**に**IRP\_MN\_書き込み\_CONFIG**、適切な値を設定し、 **Parameters.ReadWriteConfig**します。
+-   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction**を " **irp\_\_** " に設定して、\_構成の適切な値**を設定します。パラメーター。 ReadWriteConfig**。
 
--   初期化**IoStatus.Status**ステータス\_いない\_サポートされています。
+-   **Iostatus を初期化します。** 状態は状態に\_\_サポートされていません。
 
--   不要になったときに、IRP とバッファーを解放します。
+-   不要になったときに、IRP とバッファーの割り当てを解除します。
 
-ドライバーは、IRQL からこの IRP を送信する必要があります&lt;ディスパッチ\_レベル。
+ドライバーは、この IRP を IRQL &lt; ディスパッチ\_レベルから送信する必要があります。
 
-ドライバーがディスパッチにバスの構成の領域にアクセスできる\_を通じて、バス インターフェイス ルーチンでは、レベルの親のバス ドライバーは、このようなインターフェイスをエクスポートする場合。 バスのインターフェイスを取得するドライバーの送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](irp-mn-query-interface.md)その親のバス ドライバーに要求します。 ドライバーは、インターフェイスで返される適切なルーチンを呼び出します。
+親バスドライバーがそのようなインターフェイスをエクスポートする場合、ドライバーは、バスインターフェイスルーチンを使用して、ディスパッチ\_レベルでバスの構成領域にアクセスできます。 バスインターフェイスを取得するために、ドライバーは、その親バスドライバーに[ **\_インターフェイス要求\_の IRP\_** ](irp-mn-query-interface.md)を送信します。 次に、ドライバーは、インターフェイスで返された適切なルーチンを呼び出します。
 
-例では、ディスパッチから構成領域を書き込む\_レベルのドライバーを呼び出すことができます**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.SetBusData**ルーチン。
+たとえば、ディスパッチ\_レベルから構成領域を作成するために、ドライバーは、ドライバーの初期化時に**IRP\_\_クエリ\_インターフェイス**を呼び出して、[**バス\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)インターフェイスを取得します。親バスドライバー。 ドライバーは、IRQL パッシブ\_レベルからクエリの IRP を送信します。 その後、IRQL ディスパッチ\_レベルのコードから、ドライバーはインターフェイスで返された適切なルーチンを呼び出し**ます (インターフェイスの SetBusData**ルーチンなど)。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -108,7 +108,7 @@ ULONG Length
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -116,9 +116,9 @@ ULONG Length
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_クエリ\_インターフェイス**](irp-mn-query-interface.md)
+[**IRP\_\_クエリ\_インターフェイス**](irp-mn-query-interface.md)
 
-[**IRP\_MN\_READ\_CONFIG**](irp-mn-read-config.md)
+[**IRP\_\_読み取り\_構成**](irp-mn-read-config.md)
 
  
 

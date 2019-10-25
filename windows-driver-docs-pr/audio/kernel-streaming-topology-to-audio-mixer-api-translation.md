@@ -3,26 +3,26 @@ title: カーネル ストリーミング トポロジからオーディオ ミ�
 description: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
 ms.assetid: ee89dc67-c9f3-41cd-8a09-0c46d636fe64
 keywords:
-- API の WDK オーディオ ミキサー
-- WDK オーディオのストリーミング カーネル
-- オーディオ ミキサー行 WDK オーディオ
-- ソース ミキサー行 WDK オーディオ
-- 移行先ミキサー行 WDK オーディオ
-- ミキサー行 WDK オーディオを KS トポロジを翻訳します。
-- ミキサー行 WDK オーディオ
-- KS ミキシング WDK オーディオをストリーミングします。
+- ミキサー API WDK オーディオ
+- カーネルストリーミング WDK オーディオ
+- オーディオミキサーライン WDK オーディオ
+- ソースミキサーライン WDK オーディオ
+- 宛先ミキサーの線 WDK オーディオ
+- KS トポロジからミキサーラインの WDK オーディオへの変換
+- ミキサーの線 WDK オーディオ
+- KS WDK audio との混合ストリーム
 - KS トポロジ WDK オーディオ
-- シンク ピン WDK オーディオ
-- ソース ピン WDK オーディオ
-- KS WDK のピンのオーディオ、翻訳します。
+- シンクが WDK オーディオをピン留めする
+- ソースピン WDK オーディオ
+- KS WDK audio をピン留めし、翻訳する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fb11d4223749d342f0bb0b07cdbbb63016bad2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac47a44751cfe58dcc851fe2c76c3c8fabd91a47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359830"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833167"
 ---
 # <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
 
@@ -30,53 +30,53 @@ ms.locfileid: "67359830"
 ## <span id="kernel_streaming_topology_to_audio_mixer_api_translation"></span><span id="KERNEL_STREAMING_TOPOLOGY_TO_AUDIO_MIXER_API_TRANSLATION"></span>
 
 
-**ミキサー** API は、一連の Windows のマルチ メディア関数オーディオ ミキサー デバイスに関する情報を取得するために使用します。 **ミキサー** API は、オーディオ ミキサー行元とコピー先の行として分類します。 *ソース行*(たとえば、CD、マイク、行で、および wave) は、オーディオ カードへの入力します。 *出力先の行*(たとえば、スピーカー、ヘッドホン、電話回線、および wave) カードからの出力します。 有効にするソース行、先に、元の一意のパスが必要です。 1 つのソース行が 1 つ以上の変換先にマップ可能性がありますが、パスを 1 つ以上が接続できないソースの行出力先の行。 詳細については、**ミキサー** API、Microsoft Windows SDK のドキュメントを参照してください。
+**ミキサー** API は、オーディオミキサーデバイスに関する情報を取得するために使用される一連の Windows マルチメディア機能です。 **ミキサー** API は、オーディオミキサーの線を変換元と変換先の線として分類します。 *ソース行*は、オーディオカードへの入力 (CD、マイク、ライン入力、wave など) です。 *宛先行*はカードからの出力 (たとえば、スピーカー、ヘッドホン、電話回線、wave) です。 ソース行が有効であるためには、変換元から変換先への一意のパスを持つ必要があります。 1つのソース行が複数の変換先にマップされる場合がありますが、1つのパスでコピー先の行にソース行を接続することはできません。 **ミキサ**API の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-オーディオのアダプターの WDM ドライバーでは、ハードウェアとそれらのパスで使用できる関数を介したデータ パスを表す KS フィルター トポロジを公開します。 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver) (Wdmaud.sys と Wdmaud.drv ファイル) 内、KS フィルター トポロジを解釈し、対応するソースとを通じて公開されている変換先ミキサー線を生成する必要があります、**ミキサー**API です。 WDMAud も処理、**ミキサー** API を呼び出すし、フィルターのピンとアダプターのドライバーによって管理されているノードで同等のプロパティの呼び出しに変換します。
+オーディオアダプター用の WDM ドライバーは、ハードウェアおよびそれらのパスで使用できる機能を通じて、データパスを表す KS フィルタートポロジを公開します。 [WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver) (Wdmaud および WDMAud ファイル内) は、KS フィルタートポロジを解釈し、**ミキサー** API を介して公開されている、対応するソースとターゲットのミキサ線を生成する必要があります。 また、WDMAud は、**ミキサー** API 呼び出しを処理し、アダプタードライバーによって管理されるフィルターのピンとノードに対する同等のプロパティ呼び出しに変換します。
 
-[KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver) (Kmixer.sys) と[SWMidi システム ドライバー](kernel-mode-wdm-audio-components.md#swmidi_system_driver) (Swmidi.sys) はカーネル オーディオ スタックの不可欠なコンポーネントです。 KMixer は、システム全体のオーディオ ミキシング、ビット数の変換、サンプル速度変換、および PCM のオーディオ ストリームのチャネルのスピーカーの構成 (supermix) 翻訳を提供します。 SWMidi は、MIDI ストリームの合成を高品質なソフトウェアを提供します。 システム オーディオ ドライバー、SysAudio (Sysaudio.sys; を参照してください[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver))、フォームの拡張機能にインストールされているオーディオ アダプター ドライバー KMixer SWMidi の機能を組み合わせて[仮想オーディオデバイス](virtual-audio-devices.md)します。
+[KMixer システムドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver) (KMixer) と[swmidi システムドライバー](kernel-mode-wdm-audio-components.md#swmidi_system_driver) (swmidi) は、カーネルオーディオスタックの不可欠なコンポーネントです。 KMixer は、システム全体のオーディオミックス、ビット深度の変換、サンプルレートの変換、および PCM オーディオストリームのチャネルからスピーカーへの構成 (スーパーミックス) 変換を提供します。 SWMidi は、MIDI ストリームの高品質なソフトウェア合成機能を提供します。 システムオーディオドライバー、SysAudio (Sysaudio .sys、「 [Sysaudio システムドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)」を参照) は、KMixer と swmidi の機能を、インストールされているオーディオアダプタードライバーと組み合わせて、機能強化された[仮想オーディオデバイス](virtual-audio-devices.md)を形成します。
 
-WDMAud KS 部分と、従来の間のインターフェイスを管理する (を参照してください[WinMM システム コンポーネント](user-mode-wdm-audio-components.md#winmm_system_component))、オーディオ スタックの一部です。 WDMAud は、SysAudio 仮想化されたフィルターのピンを SndVol32 などのアプリケーションで説明されているレガシ ミキサーの行に変換します。 KS トポロジからミキサー行への変換は、次のように実行されます。
+WDMAud は、KS 部分と、オーディオスタックのレガシ ( [Winmm.dll システムコンポーネント](user-mode-wdm-audio-components.md#winmm_system_component)を参照) 部分の間のインターフェイスを管理します。 WDMAud は、SysAudio で仮想化されたフィルターのピンを、SndVol32 などのアプリケーションで提供されている従来のミキサーラインに変換します。 KS トポロジからミキサー行への変換は、次のように実行されます。
 
--   ピンのソース (KSPIN\_データフロー\_アウト)、KS トポロジが出力先ミキサーの行として公開されます (MIXERLINE\_COMPONENTTYPE\_DST\_*XXX*)。
+-   KS トポロジでのソースピン (KSPIN\_データフロー\_OUT) は、ターゲットミキサーラインとして公開されます (MIXERLINE\_COMPONENTTYPE\_DST\_*XXX*)。
 
--   ピンのシンク (KSPIN\_データフロー\_IN)、KS トポロジがソース ミキサーの行として公開されます (MIXERLINE\_COMPONENTTYPE\_SRC\_*XXX*)。
+-   KS トポロジ内のシンクピン (KSPIN\_データフロー\_) は、ソースミキサー行 (MIXERLINE\_COMPONENTTYPE\_SRC\_*XXX*) として公開されます。
 
--   WDMAud には、フィルターのグラフのエンドポイントであるし、シンク暗証番号 (pin) に達するまで、データ フローとは反対方向にあるグラフを走査するソース ピン KS フィルター グラフの先頭がについて説明します。
+-   WDMAud は、フィルターグラフのエンドポイントにあるソースピンから始まる KS フィルターグラフをウォークし、シンクピンに到達するまでデータフローと反対の方向にグラフを走査します。
 
--   移動中に検出される各 KS ノードでサポートされているプロパティは、ミキサーのソース行上のコントロールとして公開されます。
+-   トラバーサル中に検出された各 KS ノードでサポートされているプロパティは、ソースミキサーライン上のコントロールとして公開されます。
 
-KS のマップ上の最初の 2 つの項目をミキサー行の送信先と送信元にソースとシンクのピンは用語で違いがあるため混乱を招く可能性があります。 KS、デバイスがシンク (入力) ピンとソース (出力) ピンを持つフィルターでラップされます。 用語「シンク」と「ソース」は、フィルターにありませんが、2 つのフィルター間 (通常はバッファーされている) の接続にではなくを参照してください。
+上記の最初の2つの項目では、用語の違いによって、KS のソースピンとシンク pin をターゲットとソースのミキサー行にマッピングすることが混乱する可能性があります。 KS では、デバイスは、シンク (入力) ピンとソース (出力) ピンを持つフィルターにラップされます。 "シンク" と "ソース" という用語は、フィルターではなく、2つのフィルター間で (通常はバッファーされる) 接続を指します。
 
--   アップ ストリームのフィルターのソースの暗証番号 (pin) は、接続が入力したデータ ストリームのソースです。
+-   上流フィルターのソースピンは、接続に入るデータストリームのソースです。
 
--   データ ストリームは、ダウン ストリームのフィルターのシンクの暗証番号 (pin) 経由の接続を終了します。
+-   データストリームは、下流のフィルターのシンクピンを介して接続を終了します。
 
-これに対し、ミキサー行の用語はデバイス中心です。
+対照的に、ミキサーラインの用語はデバイス中心です。
 
--   ソース ミキサーの行は、デバイスの入力ストリームのソースです。
+-   ソースミキサーの線は、デバイスに入ってくるストリームのソースです。
 
--   移行先ミキサー線は、デバイスに存在するストリームの転送先です。
+-   ターゲットミキサーの線は、デバイスを終了するストリームの宛先です。
 
-また、KS 用語では、このストリーム フロー方向を KS フィルターで pin を割り当てることでやや一貫性がありません。 暗証番号 (pin) の記述子を使用して、 [ **KSPIN\_データフロー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)方向を指定する列挙値。
+また、KS の用語は、KS フィルターのピンに割り当てられるストリームフローの方向に多少一貫性がありません。 ピン記述子は、 [**Kspin\_データフロー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-kspin_dataflow)列挙値を使用して方向を指定します。
 
--   シンクの暗証番号 (pin) を使用して、フィルターを入力するストリームが KSPIN 方向を\_データフロー\_in です。
+-   シンク pin を介してフィルターに入るストリームには、の KSPIN\_データフロー\_の方向があります。
 
--   ソースの暗証番号 (pin) を使用して、フィルターを終了するストリームが KSPIN 方向を\_データフロー\_アウトします。
+-   ソースピンを介してフィルターを終了するストリームには、KSPIN\_データフロー\_の方向があります。
 
-用語「シンク」と"source"では、接続を中心とした"in"、"out"方向は明確にフィルターを中心とした、です。
+"In" と "out" の方向は明確にフィルター処理を行いますが、"シンク" と "ソース" という用語は接続中心です。
 
-WDMAud で使用されるアルゴリズムの解析中のトポロジの詳細については、次を参照してください。 [WDMAud トポロジ解析](wdmaud-topology-parsing.md)します。
+WDMAud によって使用されるトポロジ解析アルゴリズムの詳細については、「 [WDMAud topology の解析](wdmaud-topology-parsing.md)」を参照してください。
 
-このセクションが含まれています。
+このセクションには次のものも含まれます。
 
-[トポロジのピン](topology-pins.md)
+[トポロジの Pin](topology-pins.md)
 
-[トポロジのノード](topology-nodes.md)
+[トポロジノード](topology-nodes.md)
 
-[システム トレイと SndVol32](systray-and-sndvol32.md)
+[SysTray と SndVol32](systray-and-sndvol32.md)
 
-[フィルターのトポロジを公開します。](exposing-filter-topology.md)
+[フィルタートポロジの公開](exposing-filter-topology.md)
 
  
 

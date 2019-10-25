@@ -1,9 +1,9 @@
 ---
-title: ndiskd.help
-description: Ndiskd.help コマンドでは、それぞれの簡単な説明と使用可能な ndiskd コマンドの一覧が表示されます。
+title: ndiskd ヘルプ
+description: Ndiskd help コマンドを実行すると、使用可能な ndiskd コマンドの一覧と、それぞれの簡単な説明が表示されます。
 ms.assetid: ba9a1364-173b-4258-9894-09271e47786e
 keywords:
-- デバッグ ndiskd.help Windows
+- ndiskd Windows デバッグのヘルプ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f76408e46839fb5d59740adf6bdd0d7504cac470
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8cfee043624b067ce4094e7d353e1e2f5ed696d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364290"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826660"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
 
 
-**! Ndiskd.help**コマンドの使用可能な一覧を表示! ndiskd コマンドは、それぞれの簡単な説明をします。
+**! Ndiskd help**コマンドを実行すると、使用可能な! ndiskd コマンドの一覧と、それぞれの簡単な説明が表示されます。
 
 ```console
 !ndiskd.help 
@@ -31,12 +31,12 @@ ms.locfileid: "67364290"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-次の例を使用してヘルプ コマンドの一覧を表示する **! ndiskd.help**します。
+次の例では、 **! ndiskd help**を使用してヘルプコマンドの一覧を示します。
 
 ```console
 3: kd> !ndiskd.help
@@ -57,10 +57,10 @@ NDIS KD EXTENSIONS
     View examples & tutorials online
 ```
 
-使用して **! ndiskd.help-すべて**、次の例に示すように詳細な一覧を取得します。
+を使用すると、次の例に示すように、より詳細な一覧が表示さ**れます。**
 
 **注:**  
-いくつか別のコマンドは、この例の下部に一覧表示されます。 これらのコマンドは NDIS ドライバー開発者向けに用意する前にそれらを使用しているユーザーが主要なコマンドを代わりに使用することをお勧めします。
+この例の下部には、いくつかの代替コマンドが記載されています。 これらのコマンドは、以前に使用した NDIS ドライバー開発者が使用できますが、代わりにプライマリコマンドを使用することをお勧めします。
 
 
 
@@ -124,16 +124,16 @@ NDIS KD EXTENSIONS
     nbpools            Same as !ndiskd.nbpool
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
 
 

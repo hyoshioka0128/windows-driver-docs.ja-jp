@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES
-description: KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、内側と 3D のサウンド バッファーのプロジェクションのサウンド コーンの外側の円錐の角度を指定します。
+title: KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEANGLES
+description: KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、3D サウンドバッファーのサウンドプロジェクションコーンの内部および外部のコーンの角度を指定します。
 ms.assetid: a3978aaf-218c-4021-abf0-e426eacf52c7
 keywords:
-- KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES オーディオ デバイス
+- KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 828f307e6706305cac2ac2dfd2725e715a0b8ad5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc8a90a0cf85323d1f3c1d28dacb8b5847157b0a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358807"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832835"
 ---
-# <a name="kspropertydirectsound3dbufferconeangles"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES
+# <a name="ksproperty_directsound3dbuffer_coneangles"></a>KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEANGLES
 
 
-KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、内側と 3D のサウンド バッファーのプロジェクションのサウンド コーンの外側の円錐の角度を指定します。
+KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、3D サウンドバッファーのサウンドプロジェクションコーンの内部および外部のコーンの角度を指定します。
 
 ## <span id="ddk_ksproperty_directsound3dbuffer_coneangles_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、内側と 3D �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,31 +50,31 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティは、内側と 3D �
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles" data-raw-source="[&lt;strong&gt;KSDS3D_BUFFER_CONE_ANGLES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)"><strong>KSDS3D_BUFFER_CONE_ANGLES</strong></a></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles" data-raw-source="[&lt;strong&gt;KSDS3D_BUFFER_CONE_ANGLES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)"><strong>KSDS3D_BUFFER_CONE_ANGLES</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は型 KSDS3D の構造体\_バッファー\_CONE\_内側と外側の円錐の角度を指定する角度。
+プロパティ値 (操作データ) は、KSDS3D\_BUFFER 型の構造体であり、円錐の内側と外側の角度を指定する円錐\_角度\_ます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-内側と外側の円錐の角度 DirectSound 3D バッファーのプロジェクションのサウンド コーンの詳細については、Microsoft Windows SDK のドキュメントでは、次を参照してください。
+DirectSound 3D バッファーのサウンドプロジェクションコーンの内部および外部のコーン角度の詳細については、Microsoft Windows SDK のドキュメントで次を参照してください。
 
--   **DwInsideConeAngle**と**dwOutsideConeAngle** DS3DBUFFER 構造体のメンバー。
+-   DS3DBUFFER 構造体の**Dwinsideconeangle**メンバーと**dwOutsideConeAngle**メンバー。
 
--   **IDirectSound3DBuffer::GetConeAngles**と**IDirectSound3DBuffer::SetConeAngles**メソッド。
+-   **IDirectSound3DBuffer:: getconeangles**と**IDirectSound3DBuffer:: setconeangles**メソッド。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,17 +87,17 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES プロパティ要求がステータ
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSDS3D\_バッファー\_CONE\_角度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)
+[**KSDS3D\_バッファー\_円錐\_角度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)
 
  
 

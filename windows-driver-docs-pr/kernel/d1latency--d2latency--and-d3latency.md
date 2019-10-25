@@ -8,12 +8,12 @@ keywords:
 - D3Latency
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e59a3b527ec8c45aaba4c0d38e637d4dea67e7c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eed503600bb9ea9ad4e4a47160c47e588a04e6bd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377140"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836969"
 ---
 # <a name="d1latency-d2latency-and-d3latency"></a>D1Latency、D2Latency、D3Latency
 
@@ -21,7 +21,7 @@ ms.locfileid: "67377140"
 
 
 
-**D1Latency**、 **D2Latency**、および**D3Latency**のメンバー [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)デバイスにスリープ状態のそれぞれから D0 状態に戻るには、100 マイクロ秒単位で、おおよその時間を含めることができます。 ドライバーがサポートされていないデバイスの電源状態にゼロの待機時間を指定する必要があります。
+[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の**D1Latency**、 **D2Latency**、および**D3Latency**メンバーには、デバイスが各スリープ状態から D0 状態に戻るために必要なおおよその時間が100マイクロ秒単位で含まれています。 ドライバーでサポートされていないデバイスの電源状態については、待機時間として0を指定する必要があります。
 
  
 

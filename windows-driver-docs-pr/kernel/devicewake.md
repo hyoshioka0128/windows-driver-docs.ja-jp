@@ -6,12 +6,12 @@ keywords:
 - DeviceWake
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e8d2f2a049a7503cc9c0832f72925168fe43e0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68f6aec1b46d96c20635ea2a384fc38a9e90b921
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384995"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828322"
 ---
 # <a name="devicewake"></a>DeviceWake
 
@@ -19,25 +19,25 @@ ms.locfileid: "67384995"
 
 
 
-**DeviceWake**のメンバー [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)最低 (最小電力) デバイス電源の状態、デバイスが、ウェイクを通知が含まれていますイベント、または**PowerDeviceUnspecified**デバイスは、外部からの信号に対してスリープ解除できない場合。
+[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の**devicewake**メンバーには、デバイスがウェイクアップイベントに信号を送ることができる最も低い (最も電力が少ない) デバイスの電源状態が含まれます。また、デバイスがに応答してスリープ解除できない場合は、 **powerdeviceunspecified**外部シグナル。
 
-バス ドライバーでは、この値を設定します。 高度なドライバーは、パワー状態に値を変更できます。 たとえば、バス ドライバー設定**DeviceWake** D3 には、デバイス スタック サポート ウェイク アップのみ D2 からのドライバーをさらより高度なドライバーは、D2 に値を変更できます。
+バスドライバーは、この値を設定します。 上位レベルのドライバーは、値をより高い電力状態に変更できます。 たとえば、バスドライバーで**Devicewake**をに設定しても、デバイススタックの上位にあるドライバーが d2 からのウェイクアップのみをサポートしている場合は、上位レベルのドライバーによって値が d2 に変更される可能性があります。
 
-ドライバーの変更された場合に注意してください**DeviceWake**、変更する必要がありますも[ **SystemWake** ](systemwake.md)システムからデバイスへのマッピングとの競合を回避するために、 **DeviceState**配列。 たとえば、バス ドライバー、次の設定を想定します。
+ドライバーが**Devicewake**を変更した場合は、 **devicewake**配列内のシステムからデバイスへのマッピングとの競合を避けるために[**systemwake**](systemwake.md)を変更することが必要になる場合もあります。 たとえば、バスドライバーが次のように設定しているとします。
 
--   **DeviceState**\[**PowerSystemSleeping1**\] = **PowerDeviceD1**
+-   **Devicestate**\[**PowerSystemSleeping1**\] = **PowerDeviceD1**
 
--   **DeviceState**\[**PowerSystemSleeping2**\] = **PowerDeviceD3**
+-   **Devicestate**\[**PowerSystemSleeping2**\] = **PowerDeviceD3**
 
--   **DeviceWake** = **PowerDeviceD3**
+-   **Devicewake** = **PowerDeviceD3**
 
--   **SystemWake** = **PowerSystemSleeping2**
+-   **Systemwake** = **PowerSystemSleeping2**
 
-D3、システムのスリープを解除できません、デバイス D2 からのみまたはそれ以降は変更できますより高度なドライバーが判断した場合**DeviceWake** D2 にします。 ただし、この変更は、ことは不可能な D3 に S2 からマッピングをさせます。 注意、 **DeviceState**配列には、特定のシステム電源の状態のデバイスをサポートできる最も高いデバイスの電源状態が一覧表示されます。 場合の例では、システム電源の状態が**PowerSystemSleeping2**、デバイスの電源状態にすることはできません**PowerDeviceD2**します。 この問題を排除するために、ドライバーを変更する必要がありますも**SystemWake**に**PowerSystemSleeping1**します。 場合も同様、**WakeFromD * * * x*と **DeviceD * * * x*設定します。 ドライバーのいずれかの変更されることになりますことを確認する必要があります**SystemWake**または**DeviceWake**と競合していない、**WakeFromD * * * x*と **DeviceD * * *x*値。 値*WakeFromDx*と **DeviceD * * * x*ドライバーを変更することはできません、ハードウェアの特性を反映します。
+上位レベルのドライバーによって、デバイスが D3 からシステムをウェイクアップできないと判断された場合、D2 以上の場合にのみ、 **Devicewake**を d2 に変更できます。 ただし、この変更により、S2 から D3 へのマッピングが不可能になります。 **Devicestate**配列は、デバイスが特定のシステム電源の状態に対してサポートできるデバイスの最大電源状態を一覧表示することに注意してください。 この例のシステム電源の状態が**PowerSystemSleeping2**である場合、デバイスの電源状態を**PowerDeviceD2**にすることはできません。 この問題を回避するには、ドライバーは**Systemwake** to **PowerSystemSleeping1**も変更する必要があります。 \* WakeFromD * **x*と **デバイス * * x*の設定にも同じことが当てはまります。 ドライバーは、 **systemwake**または**devicewake**に対して行われたすべての変更が、**WakeFromD * * x*および **デバイス * * x*値と競合しないようにする必要があります。 *WakeFromDx*と **デバイス * * x*の値には、ドライバーが変更できないハードウェアの特性が反映されます。
 
-両方、 **SystemWake**と**DeviceWake**メンバーは、0 以外の場合 (つまり、いない**PowerSystemUnspecified**)、後、デバイスとそのドライバーのサポート、ウェイク アップのこのシステムで。
+**Systemwake**と**devicewake**の両方のメンバーが0以外 (つまり、 **powersystemunspecified**) の場合、デバイスとそのドライバーはこのシステムでのウェイクアップをサポートします。
 
-非 ACPI のハードウェア上で、 **DeviceWake**メンバーに 0 が含まれています (**PowerSystemUnspecified**)。
+非 ACPI ハードウェアでは、 **Devicewake**メンバーにゼロ (**powersystemunspecified**) が含まれています。
 
  
 

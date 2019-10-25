@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_乗数
-description: クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_KSPROPERTY と共に乗数\_BDA\_RF\_チューナー\_頻度チューナーのノードの頻度の設定を制御します。
+title: KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数
+description: クライアントでは、KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数を使用します。 KSK プロパティ\_、BDA\_RF\_チューナー\_FREQUENCY を使用して、チューナーノードの周波数設定を制御します。
 ms.assetid: bca395b5-3993-42c0-880d-eb38d3b933bb
 keywords:
-- KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER ストリーミング メディア デバイス
+- KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b344f9c195e8273123adb728abf0d5b75bef0615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0103dff1e18d96a9019521d2ae79d0fdfbbaf56d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368866"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838081"
 ---
-# <a name="kspropertybdarftunerfrequencymultiplier"></a>KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_乗数
+# <a name="ksproperty_bda_rf_tuner_frequency_multiplier"></a>KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_KSPROPERTY と共に乗数\_BDA\_RF\_チューナー\_頻度チューナーのノードの頻度の設定を制御します。
+クライアントでは、KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数を使用します。 KSK プロパティ\_、BDA\_RF\_チューナー\_FREQUENCY を使用して、チューナーノードの周波数設定を制御します。
 
 ## <span id="ddk_ksproperty_bda_rf_tuner_frequency_multiplier_ks"></span><span id="DDK_KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67368866"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67368866"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -61,16 +61,16 @@ ms.locfileid: "67368866"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、チューナーノードの識別子を指定します。
 
-プロパティの値を設定する頻度の乗数を指定します。
+プロパティ値は、設定する頻度の乗数を指定します。
 
-場合、KSPROPERTY\_BDA\_RF\_チューナー\_頻度\_乗数プロパティ BDA の乗数を指定する\_頻度\_乗数\_いない\_セット (− 1) または BDA\_頻度\_乗数\_いない\_(0) を定義し、KSPROPERTY\_BDA\_RF\_チューナー\_頻度プロパティキロ ヘルツ (kHz) で、頻度を指定します。 また、ミニドライバーがハンドラーを設定 ([*KStrSetPropertyHandler*](https://docs.microsoft.com/previous-versions/ff567200(v=vs.85))) 頻度の乗数のプロパティが呼び出されないため、ミニドライバーが指定された頻度が表されることを決定する必要がありますkHz (1 Hz x 1000) の単位。 実際には、既定の乗数値は 1000 です。 詳細については、次を参照してください。 [BDA チューナーのノードの周波数のプロパティにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/stream/accessing-frequency-properties-of-a-bda-tuner-node)します。
+KSK プロパティ\_BDA\_RF\_チューナー\_頻度\_乗数プロパティによって、BDA\_FREQUENCY\_の乗数が指定されている場合\_設定 (− 1) または BDA\_FREQUENCY\_乗数\_\_定義されていません (0)。次に、KSK プロパティ\_BDA\_RF\_チューナー\_FREQUENCY プロパティは、キロヘルツ (kHz) 単位で頻度を指定します。 さらに、frequency 乗数プロパティのミニドライバーのセットハンドラー ([*Kstrsetpropertyhandler*](https://docs.microsoft.com/previous-versions/ff567200(v=vs.85))) が呼び出されていない場合、ミニドライバーは、指定された頻度が KHz (1Hz x 1000) 単位で表されることを判断する必要があります。 実際には、既定の乗数値は1000です。 詳細については、「 [BDA チューナーノードの周波数プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/stream/accessing-frequency-properties-of-a-bda-tuner-node)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ ms.locfileid: "67368866"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ ms.locfileid: "67368866"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
-[**KSPROPERTY\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)
+[**KSK プロパティ\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)
 
  
 

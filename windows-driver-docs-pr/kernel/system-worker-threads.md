@@ -3,22 +3,22 @@ title: システム ワーカー スレッド
 description: システム ワーカー スレッド
 ms.assetid: 01ae1c1b-0cb0-4b9b-bd74-341b7c289fd4
 keywords:
-- 実行ワーカー スレッドの WDK カーネル
-- 作業項目の WDK カーネル
-- スレッド オブジェクトの WDK カーネル
+- executive ワーカースレッドの WDK カーネル
+- 作業項目 WDK カーネル
+- スレッドオブジェクト WDK カーネル
 - 作業項目
 - WorkItemEx
-- ワーカー スレッドの WDK カーネル
-- ワーカー スレッド コールバック ルーチン WDK カーネル
-- コールバック ルーチン WDK ワーカー スレッド
+- ワーカースレッドの WDK カーネル
+- ワーカースレッドコールバックルーチン WDK カーネル
+- コールバックルーチン WDK ワーカースレッド
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f24b8ca9dd0a18685daa9976fa5792015b9bceaa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2ae05f02067fe6097b1cf0b95f9935b78fab2624
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382967"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838392"
 ---
 # <a name="system-worker-threads"></a>システム ワーカー スレッド
 
@@ -26,40 +26,40 @@ ms.locfileid: "67382967"
 
 
 
-遅延の処理が必要なドライバーを使用して、*作業項目*、実際の処理を実行するドライバー コールバック ルーチンへのポインターが含まれています。 ドライバーは、作業項目をキューと*システム ワーカー スレッド*キューから作業項目を削除して、ドライバーのコールバック ルーチンを実行します。 システムでは、これらは一度に 1 つの作業項目を処理の各システムのスレッド システム ワーカー スレッドのプールを保持します。
+遅延処理を必要とするドライバーは、実際の処理を実行するドライバーコールバックルーチンへのポインターを含む*作業項目*を使用できます。 このドライバーは作業項目をキューに置いて、*システムワーカースレッド*がキューから作業項目を削除し、ドライバーのコールバックルーチンを実行します。 システムは、これらのシステムワーカースレッドのプールを保持します。これらのスレッドはそれぞれ、一度に1つの作業項目を処理するシステムスレッドです。
 
-ドライバー associates、 [ *WorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_workitem_routine)作業項目とコールバック ルーチン。 システムのワーカー スレッドが作業項目を処理するとき、関連付けられている呼び出し*WorkItem*ルーチン。 Windows Vista および以降のバージョンの Windows では、ドライバーは関連付けることが代わりに、 [ *WorkItemEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_workitem_routine_ex)作業項目と日常的な。 *WorkItemEx*パラメーターとは異なるパラメーターを*作業項目*かかります。
+このドライバー[*は、作業項目のコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_workitem_routine)ルーチンを作業項目に関連付けます。 システムワーカースレッドは、作業項目を処理するときに、関連付けられている*WorkItem*ルーチンを呼び出します。 Windows Vista 以降のバージョンの Windows では、代わりに、ドライバーが[*Workitemex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_workitem_routine_ex)ルーチンを作業項目に関連付けることができます。 *Workitemex*は、 *WorkItem*によって実行されるパラメーターとは異なるパラメーターを受け取ります。
 
-*作業項目*と*WorkItemEx*ルーチンは、システム スレッドのコンテキストで実行します。 ドライバーのディスパッチ ルーチンは、ユーザー モード スレッドのコンテキストで実行できる場合、そのルーチンを呼び出すことができます、 *WorkItem*または*WorkItemEx*システム スレッドのコンテキストを必要とする操作を実行するルーチン。
+*WorkItem*ルーチンと*workitemex*ルーチンは、システムスレッドコンテキストで実行されます。 ドライバーディスパッチルーチンをユーザーモードのスレッドコンテキストで実行できる場合、そのルーチンは、作業*項目*または*workitemex*ルーチンを呼び出して、システムスレッドコンテキストを必要とする操作を実行できます。
 
-作業項目を使用するには、ドライバーは、次の手順を実行します。
+作業項目を使用するために、ドライバーは次の手順を実行します。
 
-1.  割り当てし、新しい作業項目を初期化します。
+1.  新しい作業項目を割り当てて初期化します。
 
-    システムを使用して、 [ **IO\_WORKITEM** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)作業項目を保持する構造体。 新しい割り当てに**IO\_WORKITEM**構造体し作業項目として初期化、ドライバーを呼び出すことができます[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)します。 Windows Vista および Windows の以降のバージョンでは、ドライバーまたはを割り当てることが、独自**IO\_WORKITEM**構造、および呼び出し[ **IoInitializeWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeworkitem)作業項目として構造体を初期化します。 (ドライバーを呼び出す必要があります[ **IoSizeofWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosizeofworkitem)を作業項目を保持するために必要なバイト数を決定します)。
+    システムは、作業項目を保持するために、 [**IO\_WORKITEM**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体を使用します。 新しい**IO\_workitem**構造体を割り当て、それを作業項目として初期化するには、ドライバーは[**Ioallocateworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)を呼び出すことができます。 Windows Vista 以降のバージョンの Windows では、ドライバーによって独自の**IO\_** 作業項目構造を割り当てることができます。また、 [**ioinitializeworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeworkitem)を呼び出して、構造体を作業項目として初期化します。 (ドライバーは、作業項目を保持するために必要なバイト数を判断するために、 [**IoSizeofWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosizeofworkitem)を呼び出す必要があります)。
 
-2.  コールバック ルーチンを作業項目に関連付けるし、システムのワーカー スレッドが処理されるように、作業項目をキューします。
+2.  コールバックルーチンを作業項目に関連付けて、システムワーカースレッドによって処理されるように作業項目をキューに配置します。
 
-    関連付ける、 *WorkItem*ドライバーの呼び出す必要があります、作業項目キュー作業項目と日常的な[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)。 関連付ける代わりに、 *WorkItemEx*ドライバーの呼び出す必要があります、作業項目キュー作業項目と日常的な[ **IoQueueWorkItemEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitemex)します。
+    作業*項目ルーチンを*作業項目に関連付け、作業項目をキューに置いた場合、ドライバーは[**ioqueueworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)を呼び出す必要があります。 代わりに、 *workitemex*ルーチンを作業項目に関連付け、作業項目をキューに置いて、ドライバーは[**Ioqueueworkitemex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitemex)を呼び出す必要があります。
 
-3.  作業項目が必要でなくなった後は、それを解放します。
+3.  作業項目が不要になったら、それを解放します。
 
-    割り当てられた作業項目**IoAllocateWorkItem**によって解放する必要があります[ **IoFreeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeworkitem)します。 によって初期化された作業項目**IoInitializeWorkItem**で初期化する必要があります[ **IoUninitializeWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iouninitializeworkitem)解放できる前にします。
+    **Ioallocateworkitem**によって割り当てられた作業項目は、 [**IoFreeWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem)によって解放される必要があります。 **Ioinitializeworkitem**によって初期化された作業項目は、解放する前に、 [**iouninitializeworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem)で初期化されていない必要があります。
 
-    作業項目は初期化されていないか、作業項目が現在キューにないときに解放のみできます。 そのため、作業項目のコールバック ルーチンを呼び出す前に、システムは、作業項目をデキュー **IoFreeWorkItem**と**IoUninitializeWorkItem**コールバック内から呼び出すことができます。
+    作業項目が現在キューに登録されていない場合にのみ、作業項目を初期化または解放できます。 システムは、作業項目のコールバックルーチンを呼び出す前に作業項目をデキューします。そのため、 **IoFreeWorkItem**と**Iouninitializeworkitem**は、コールバック内から呼び出すことができます。
 
-DPC 時間のかかる処理が必要ですか、ブロッキング呼び出しを実行する処理タスクを開始する必要があるには、1 つまたは複数の作業項目にタスクの処理を委任する必要があります。 DPC の実行中のすべてのスレッドは実行をされません。 さらに、DPC、IRQL でを実行するディスパッチ =\_レベル、ブロッキング呼び出しを行う必要がありません。 ただし、IRQL で作業項目を処理するシステム ワーカー スレッドが実行される = パッシブ\_レベル。 したがって、作業項目は、ブロッキング呼び出しを含めることができます。 たとえば、システム ワーカー スレッドは、ディスパッチャー オブジェクトで待機できます。
+時間のかかる処理を必要とする処理タスクを開始する必要がある DPC、またはブロック呼び出しを行う必要がある場合は、そのタスクの処理を1つ以上の作業項目に委任する必要があります。 DPC の実行中は、すべてのスレッドの実行が妨げられます。 また、IRQL = ディスパッチ\_レベルで実行される DPC は、ブロック呼び出しを行うことはできません。 ただし、作業項目を処理するシステムワーカースレッドは、IRQL = パッシブ\_レベルで実行されます。 このため、作業項目にブロック呼び出しを含めることができます。 たとえば、システムワーカースレッドは、ディスパッチャーオブジェクトを待機できます。
 
-システム ワーカー スレッドのプールが、限られたリソースであるため*WorkItem*と*WorkItemEx*ルーチンを短時間のかかる操作に対してのみ使用できます。 かどうか (たとえば、無限ループがある) 場合、長時間実行されるこれらのルーチンのいずれかまたは長すぎる、システムの間、待機がデッドロックことができます。 そのため、ドライバーは、長時間の遅延の処理を必要とする場合に呼び出す必要があります代わりに[ **PsCreateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)独自のシステム スレッドを作成します。
+システムワーカースレッドのプールは限られたリソースなので、 *WorkItem*と*workitemex*ルーチンは、短時間で実行される操作に対してのみ使用できます。 これらのルーチンの1つが長時間実行されている (たとえば、無限ループが含まれている) 場合や、長時間待機している場合は、システムでデッドロックが発生する可能性があります。 そのため、ドライバーが遅延処理の長い時間を必要とする場合は、代わりに[**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)を呼び出して、独自のシステムスレッドを作成する必要があります。
 
-呼び出さない**IoQueueWorkItem**または**IoQueueWorkItemEx**キューにある作業項目をキューに登録します。 チェック ビルドは、このエラーが原因で、バグ チェックします。 製品版ビルドでエラーが検出されないがシステムの破損をデータ構造ができます。 特定のドライバーのルーチンが実行、ドライバーは毎回同じ作業項目をキューは、キューが既にいる場合は、2 番目の時間、作業項目のキューを避け、次の手法を使用することができます。
+既にキューにある作業項目をキューに登録するには、 **Ioqueueworkitem**または**Ioqueueworkitemex**を呼び出さないでください。 チェックされたビルドでは、このエラーによってバグチェックが発生します。 リテールビルドでは、エラーは検出されませんが、システムデータ構造が破損する可能性があります。 ドライバーが特定のドライバールーチンを実行するたびに同じ作業項目をキューに登録している場合は、次の方法を使用して、既にキューにある場合に、作業項目が2回目にキューに登録されないようにすることができます。
 
--   ドライバーは、ワーカーの日常のタスクの一覧を保持します。
--   このタスクの一覧は、ワーカーのルーチンに渡されるコンテキストで使用できます。 ワーカー ルーチンとタスクの一覧を変更するすべてのドライバー ルーチンは、リストへのアクセスを同期します。
--   ワーカーの日常的な実行されるたびに、一覧で、すべてのタスクを実行し、タスクが完了すると、各タスクを一覧から削除します。
--   新しいタスクが到着すると、ドライバーは、このタスクを一覧に追加します。 タスク一覧が空になる場合にのみ、ドライバーは、作業項目をキューします。
+-   このドライバーは、ワーカールーチンのタスクの一覧を保持します。
+-   このタスク一覧は、ワーカールーチンに提供されているコンテキストで使用できます。 タスク一覧を変更するワーカールーチンとドライバールーチンは、そのアクセスをリストに同期します。
+-   ワーカールーチンを実行するたびに、リスト内のすべてのタスクが実行され、タスクが完了すると、各タスクが一覧から削除されます。
+-   新しいタスクが到着すると、ドライバーはこのタスクを一覧に追加します。 タスク一覧が以前に空だった場合にのみ、ドライバーは作業項目をキューに置いています。
 
-システムのワーカー スレッドは、ワーカー スレッドを呼び出す前に、キューから作業項目を削除します。 そのため、ドライバーのスレッドに安全にキューに配置できます作業項目もう一度ワーカー スレッドが実行を開始するとすぐにします。
+システムワーカースレッドは、ワーカースレッドを呼び出す前に、キューから作業項目を削除します。 したがって、ワーカースレッドが実行を開始するとすぐに、ドライバースレッドで作業項目を安全にキューに戻すことができます。
 
  
 

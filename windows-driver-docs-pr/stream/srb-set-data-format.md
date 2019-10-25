@@ -1,9 +1,9 @@
 ---
-title: SRB\_設定\_データ\_形式
-description: SRB\_設定\_データ\_形式
+title: SRB\_\_データ\_形式の設定
+description: SRB\_\_データ\_形式の設定
 ms.assetid: a111ab92-a0a0-464e-ac13-f5be33ecd064
 keywords:
-- SRB_SET_DATA_FORMAT ストリーミング メディア デバイス
+- SRB_SET_DATA_FORMAT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,34 +12,34 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b97893b39d8e81e11696a6da8ceb00767eba4a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3acabd401f734f1a4e32f5fe3552705ea252b09f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377874"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837709"
 ---
-# <a name="srbsetdataformat"></a>SRB\_設定\_データ\_形式
+# <a name="srb_set_data_format"></a>SRB\_\_データ\_形式の設定
 
 
 ## <span id="ddk_srb_set_data_format_ks"></span><span id="DDK_SRB_SET_DATA_FORMAT_KS"></span>
 
 
-クラスのドライバーでは、ストリームのデータ形式を設定するには、この要求を発行します。
+クラスドライバーは、この要求を発行してストリームのデータ形式を設定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>ステータス\_成功  
-コマンドが正常に完了を示します。
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状態\_成功  
+コマンドが正常に完了したことを示します。
 
-<span id="STATUS_NOT_SUPPORTED"></span><span id="status_not_supported"></span>ステータス\_いない\_サポートされています。  
-ようにミニドライバーに要求されたデータの形式がサポートされていないことを示します。
+<span id="STATUS_NOT_SUPPORTED"></span><span id="status_not_supported"></span>ステータス\_\_サポートされていません  
+ミニドライバーが要求されたデータ形式をサポートしていないことを示します。
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバーで新しいデータ形式を渡す、 **CommandData**.**OpenFormat**のメンバー、 *pSrb*ポインター。 (このポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造です)。
+クラスドライバーは、新しいデータ形式を**Commanddata**に渡します。*PSrb*ポインターの**openformat**メンバー。 (このポインターは、[**ハードウェア\_ストリームを指し、\_ブロック構造\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)します)。
 
-データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)します。 参照してください[AVStream のデータ範囲の交差部分](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)します。
+データ形式の詳細については、「 [Stream クラスミニドライバー Design Guide](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)」を参照してください。 [AVStream のデータ範囲の共通](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)部分も参照してください。
 
  
 

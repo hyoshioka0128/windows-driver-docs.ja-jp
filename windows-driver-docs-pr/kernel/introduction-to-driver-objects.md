@@ -3,19 +3,19 @@ title: ドライバー オブジェクトの概要
 description: ドライバー オブジェクトの概要
 ms.assetid: 497ee2dc-671d-408e-b228-16dc24532375
 keywords:
-- ドライバー オブジェクトの WDK カーネル
-- 標準のドライバー ルーチン WDK カーネル ドライバー オブジェクト
-- ドライバー ルーチン WDK カーネル ドライバー オブジェクト
-- ルーチン WDK カーネル ドライバー オブジェクト
-- WDK ドライバー オブジェクトのオブジェクト
+- ドライバーオブジェクト WDK カーネル
+- 標準ドライバールーチン WDK カーネル、ドライバーオブジェクト
+- ドライバールーチン WDK カーネル、ドライバーオブジェクト
+- ルーチン WDK カーネル、ドライバーオブジェクト
+- オブジェクト WDK ドライバーオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a87caf9dc0ef956877533201d75e32d2bd265793
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5736566d6b407690ceea71b2d7d78a92cff7bc2c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369750"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838629"
 ---
 # <a name="introduction-to-driver-objects"></a>ドライバー オブジェクトの概要
 
@@ -23,22 +23,22 @@ ms.locfileid: "67369750"
 ## <a href="" id="ddk-introduction-to-driver-objects-kg"></a>
 
 
-I/O マネージャーを作成、*ドライバー オブジェクト*各ドライバーのインストールして読み込まれます。 使用してドライバー オブジェクトが定義された[**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)構造体。
+I/o マネージャーは、インストールおよび読み込みが完了した各ドライバーの*ドライバーオブジェクト*を作成します。 ドライバーオブジェクトは、[**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)構造を使用して定義されます。
 
-I/O マネージャーがドライバーを呼び出すときに[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) 、日常的なドライバーのドライバー オブジェクトのアドレスはすべて提供します。 ドライバーのオブジェクトには、ドライバーの標準的な手順の多くへのエントリ ポイントの記憶域が含まれています。 ドライバーは、これらのエントリ ポイントを入力します。
+I/o マネージャーがドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンを呼び出すと、ドライバーのドライバーオブジェクトのアドレスが提供されます。 Driver オブジェクトには、ドライバーの標準ルーチンの多くに対するエントリポイントのストレージが含まれています。 ドライバーは、これらのエントリポイントを入力する役割を担います。
 
 ## <a href="" id="driver-object-illustration"></a>
 
 
-次の図は、最下位レベルで高度なドライバーが必要がありますまたはできるシステム定義の標準的なルーチンのセットでのドライバー オブジェクトを示しています。
+次の図は、ドライバーオブジェクトを示しています。これは、最下位レベルのドライバーと上位レベルのドライバーが持つことができるシステム定義の標準ルーチンのセットです。
 
-I/O 要求パケット (IRP) は、その名の横にアスタリスクで標準的な各ルーチンは、入力として受け取ります。 これらの各標準ルーチンは、I/O 要求の対象のデバイス オブジェクトへのポインターも受信します。
+名前の横にアスタリスクが付いた各標準ルーチンは、i/o 要求パケット (IRP) を入力として受け取ります。 これらの各標準ルーチンは、i/o 要求のターゲットデバイスオブジェクトへのポインターも受け取ります。
 
-![ドライバー オブジェクトを示す図](images/24drvobj.png)
+![driver オブジェクトを示す図](images/24drvobj.png)
 
-I/O マネージャーは、ドライバー オブジェクトの種類を定義し、ドライバーのオブジェクトを使用して登録して、ドライバーの読み込まれるイメージに関する情報を追跡します。 ディスパッチのエントリ ポイントに注意してください ( **DDDispatch * * * Xxx*を通じて**DDDispatch * **Yyy*) ドライバー オブジェクトでは、主要な関数のコードに対応 (** IRP\_MJ\_* XXX * * *) が渡され、Irp の I/O スタックの場所。
+I/o マネージャーは、ドライバーオブジェクトの種類を定義し、ドライバーオブジェクトを使用して、読み込まれたドライバーのイメージに関する情報を登録および追跡します。 Driver オブジェクトのディスパッチエントリポイント ( **dddispatch * * * Xxx*から**Dddispatch * **Yyy*)*** は、の i/o スタックの場所で渡される主な関数コード (IRP\_MJ\_xxx * * *) に対応していることに注意してください。Irp.
 
-I/O マネージャーは、ドライバーが指定したディスパッチ ルーチンに最初に各 IRP をルーティングします。 最下位レベル ドライバーのディスパッチ ルーチンは、通常、I/O サポート ルーチンを呼び出します ([**IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)) キュー (または渡す) ドライバーに有効な引数を持つ各 IRP [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン。 *StartIo*ルーチンが特定のデバイスで要求された I/O 操作を開始します。 通常より高度なドライバーを持っていません*StartIo*ルーチンが、以下のことができます。
+I/o マネージャーは、各 IRP をドライバーが提供するディスパッチルーチンに最初にルーティングします。 一般に、最下位レベルのドライバーのディスパッチルーチンは、ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンに有効な引数を持つ各 IRP をキューに入れて (または成功させる)、i/o サポートルーチン ([**iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)) を呼び出します。 *StartIo*ルーチンは、特定のデバイスで要求された i/o 操作を開始します。 通常、上位レベルのドライバーには*StartIo*ルーチンがありませんが、できます。
 
  
 

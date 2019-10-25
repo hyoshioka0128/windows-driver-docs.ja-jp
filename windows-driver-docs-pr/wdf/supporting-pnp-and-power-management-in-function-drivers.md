@@ -3,44 +3,44 @@ title: 機能ドライバーでの PnP と電源管理のサポート
 description: 機能ドライバーでの PnP と電源管理のサポート
 ms.assetid: 487d4a69-a8a8-406c-8572-688388deabe3
 keywords:
-- PnP WDK KMDF、関数のドライバー
-- プラグ アンド プレイ WDK KMDF、関数のドライバー
-- 電源管理 WDK KMDF、関数のドライバー
-- 機能ドライバー WDK KMDF
+- PnP WDK KMDF, 関数ドライバー
+- プラグアンドプレイ WDK KMDF, 関数ドライバー
+- 電源管理 WDK KMDF, 関数ドライバー
+- 関数ドライバー WDK KMDF
 - 電源ポリシー WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e41bb55e0bbc5460dc6653d8cab5bf45139906c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 518e7a104d572e3fa4d9c63e3f1db28edb85ca7d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368058"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831716"
 ---
 # <a name="supporting-pnp-and-power-management-in-function-drivers"></a>機能ドライバーでの PnP と電源管理のサポート
 
 
-*関数のドライバー*デバイスの操作を制御し、デバイスのハードウェアにアクセスするためです。 これらのドライバーの PnP や電源管理操作をサポートして、通常いくつかのイベントのコールバック関数を登録する必要があるときに、[デバイス オブジェクトを作成する](creating-a-framework-device-object.md)します。
+*関数ドライバー*はデバイスの動作を制御するため、デバイスのハードウェアにアクセスします。 これらのドライバーは、PnP および電源管理操作をサポートし、通常、[デバイスオブジェクトを作成](creating-a-framework-device-object.md)するときに複数のイベントコールバック関数を登録する必要があります。
 
-通常、関数ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベント コールバック関数の呼び出し[ **WdfDeviceInitSetPnpPowerEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)次のコールバック関数を登録します。
+通常、関数ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベントコールバック関数は、 [**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)を呼び出して、次のコールバック関数を登録します。
 
--   [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)ドライバーにデバイスのシステムによって割り当てられたリソースを提供します。 ドライバーは、ハードウェアをドライバーにアクセスできるように、プロセッサの仮想アドレス空間に、デバイスのバスの相対メモリのマッピングなどの操作を実行できます。
+-   デバイスのシステムによって割り当てられたリソースをドライバーに配信する、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)。 ドライバーは、デバイスのバス相対メモリをプロセッサの仮想アドレス空間にマップするなどの操作を実行できます。これにより、ドライバーがハードウェアにアクセスできるようになります。
 
--   [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)ドライバーのデバイスがその作業 (D0) 状態になるなど、読み込み、ファームウェアであるために必要なするごとに、操作を実行します。
+-   [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)は、ドライバーのデバイスが動作 (D0) 状態になるたびに必要な、ファームウェアの読み込みなどの操作を実行します。
 
--   [*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)ドライバーのデバイスがの作業 (D0) 状態のままし、低電力状態に入るたびに必要な操作を実行します。
+-   [*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)。ドライバーのデバイスが動作中 (D0) 状態になり、省電力状態になるたびに必要な操作を実行します。
 
--   [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)、システム リソースを解放するを[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)割り当てられます。
+-   [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)は、[*ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)が割り当てられているシステムリソースを解放します。
 
-すべてのフレームワークで定義されたコールバック関数と同様に、上記の一覧で使用されているは省略可能です。 ドライバーでは、その必要がある場合にのみ、それらを指定するがあります。
+すべてのフレームワーク定義のコールバック関数と同様に、上記の一覧にあるものは任意です。 ドライバーが必要な場合にのみ指定する必要があります。
 
-ドライバーの関数を呼び出すことができます[ **WdfDeviceSetPnpCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetpnpcapabilities)と[ **WdfDeviceSetPowerCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetpowercapabilities)デバイスの PnP を報告してオペレーティング システムに電源管理機能。
+関数ドライバーは、 [**WdfDeviceSetPnpCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetpnpcapabilities)および[**Wdfdevicesetpowercapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetpowercapabilities)を呼び出して、デバイスの PnP および電源管理機能をオペレーティングシステムに報告できます。
 
-通常、フレームワークを使用する*電源管理対象の I/O キュー*ほとんどの I/O 要求。 I/O キューが電源管理対象の場合、フレームワークは、デバイスの作業 (D0) 状態にある場合にのみ、ドライバーに要求を配信します。 電源管理対象の I/O キューの詳細については、次を参照してください。[の I/O キューの電源管理](power-management-for-i-o-queues.md)します。
+通常は、ほとんどの i/o 要求に対して、フレームワークの*電源管理 i/o キュー*を使用します。 I/o キューが電源管理されている場合、フレームワークは、デバイスが動作 (D0) 状態にある場合にのみ、ドライバーに要求を配信します。 電源管理の i/o キューの詳細については、「 [I/o キューの電源管理](power-management-for-i-o-queues.md)」を参照してください。
 
-通常、デバイスの機能のドライバーは、*電源ポリシー所有者*ドライバー スタックの。 電源ポリシー所有者は、適切な決定[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)デバイスの電源の状態が変更されるたびに、デバイスのドライバー スタックへのデバイスと送信要求。 Framework ベースのドライバーでは、フレームワークは、ドライバーのデバイスの電源状態の変更を要求するコードを指定する必要はありませんので、責任を処理します。
+通常、デバイスの関数ドライバーは、ドライバースタックの*電源ポリシーの所有者*です。 電源ポリシーの所有者は、デバイスの適切な[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)を判断し、デバイスの電源状態が変更されるたびにデバイスのドライバースタックに要求を送信します。 フレームワークベースのドライバーの場合、フレームワークはこの役割を処理するので、デバイスの電源状態の変更を要求するためのコードをドライバーに提供する必要はありません。
 
-電源ポリシーの所有者が 2 つの責任を負う: がアイドル状態と、システムのままにする場合は、低電力状態を入力するデバイスの機能を制御、 [(S0) の状態を操作](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)、生成するデバイスの機能を制御し、低電力状態から外部イベントを検出した場合に、信号をスリープ解除します。 場合は、デバイスがアイドル状態または機能をスリープ解除、関数には、ドライバーは追加のコールバック関数を提供できます。 電源ポリシーの所有者の役割の詳細については、次を参照してください。[電源ポリシー所有権](power-policy-ownership.md)します。
+電源ポリシーの所有者には、次の2つの追加の責任があります。アイドル状態になったときに低電力状態になるデバイスの能力を制御し、システムが[動作中 (S0) 状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)のままになっている場合、デバイスがスリープ状態になったときにスリープ信号を生成する機能を制御します。外部イベントを低電力状態から検出します。 デバイスにアイドルまたはウェイクアップ機能がある場合、関数ドライバーは追加のコールバック関数を提供できます。 電源ポリシー所有者の役割の詳細については、「[電源ポリシーの所有権](power-policy-ownership.md)」を参照してください。
 
  
 

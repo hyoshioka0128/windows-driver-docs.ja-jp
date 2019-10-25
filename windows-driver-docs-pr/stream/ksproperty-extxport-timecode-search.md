@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_EXTXPORT\_タイムコード\_検索
-description: KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定のタイムコードを検索します。
+title: KSK プロパティ\_EXTXPORT\_タイムコード\_検索
+description: KSK プロパティ\_EXTXPORT\_タイムコード\_検索プロパティは、特定のタイムコードを検索します。
 ms.assetid: 34252fce-426b-4f75-b57f-fa86654ffc5f
 keywords:
-- KSPROPERTY_EXTXPORT_TIMECODE_SEARCH ストリーミング メディア デバイス
+- KSPROPERTY_EXTXPORT_TIMECODE_SEARCH ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc40c923094601efd31117cb478c339a491b3c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c660bf134de6f8140dbdb96f19eaffa2e7293a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354818"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827008"
 ---
-# <a name="kspropertyextxporttimecodesearch"></a>KSPROPERTY\_EXTXPORT\_タイムコード\_検索
+# <a name="ksproperty_extxport_timecode_search"></a>KSK プロパティ\_EXTXPORT\_タイムコード\_検索
 
 
-KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定のタイムコードを検索します。
+KSK プロパティ\_EXTXPORT\_タイムコード\_検索プロパティは、特定のタイムコードを検索します。
 
 ## <span id="ddk_ksproperty_extxport_timecode_search_ks"></span><span id="DDK_KSPROPERTY_EXTXPORT_TIMECODE_SEARCH_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定の�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,23 +50,23 @@ KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定の�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
-<td><p>埋め込み<strong>タイムコード</strong>構造体</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p>埋め込まれた<strong>タイムコード</strong>構造</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) が埋め込まれた**タイムコード**構造体のメンバー、KSPROPERTY の\_EXTXPORT\_構造を次に、フレームを含む、検索する特定のタイムコードを記述します。分または時間。
+プロパティ値 (操作データ) は、フレーム、秒、分、時間など、検索する特定のタイムコードを記述する KSK プロパティ\_EXTXPORT\_S 構造体の埋め込みの**タイムコード**構造体メンバーです。
 
 <a name="remarks"></a>注釈
 -------
 
-このメソッドが定義されているが、サポートされていません。
+このメソッドは定義されていますが、サポートされていません。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定の�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_EXTXPORT\_タイムコード\_検索プロパティは、特定の�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)
+[**KSK プロパティ\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)
 
  
 

@@ -4,78 +4,78 @@ description: センサー ドライバーのイベントについて
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f30b0c6a0d3f7af4e2945df5f2b4e3c944fc627f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6884756957e2ff96e6a51c85617457710e464ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384511"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824295"
 ---
 # <a name="about-sensor-driver-events"></a>センサー ドライバーのイベントについて
 
 
-アプリケーションは、2 つの方法でのセンサーから情報を受け取ることができます。 特定のプロパティまたはフィールドのデータを要求することによって同期的に、またはセンサー ドライバーで発生するイベントをサブスクライブして、非同期的にします。
+アプリケーションでセンサーから情報を取得するには、センサードライバーによって発生するイベントをサブスクライブすることによって、同期的に、特定のプロパティまたはデータフィールドを要求する、または非同期的に行うという2つの方法があります。
 
-発生する可能性がセンサー ドライバー**状態変更イベント**、新しいオペレーションの条件とその他のイベント通知をデバイスでの遷移をアプリケーションに通知します。 ドライバーは、デバイスを提供する各センサーの個別のイベントを発生させる必要があります。
+センサードライバーは、**状態変更イベント**を発生させることができます。これは、デバイスでの移行についての通知をアプリケーションに通知し、その他の種類のイベント通知を実行します。 ドライバーは、デバイスが提供するセンサーごとに個別のイベントを発生させる必要があります。
 
-**注**  使用しないでください[ **IWDFDevice::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-postevent)センサー イベントを発生させます。 センサー プラットフォームは、接続されているクライアントのプログラム には、このようなイベントを転送しません。
+**注**  [**Iwdfdevice::P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)を使用してセンサーイベントを発生させることはできません。 センサープラットフォームは、接続されたクライアントプログラムにこのようなイベントを転送しません。
 
  
 
 ## <a name="state-change-events"></a>状態変更イベント
 
-センサー ドライバーは、センサー クラスの拡張を呼び出して、状態変更イベントを発生させる[ **ISensorClassExtension::PostStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)メソッド。 たとえば、センサーの初期化が終了するドライバーが、新しい通知するには、このメソッドを呼び出す[ **SensorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)センサーをという名前の値\_状態\_準備。
+センサードライバーは、センサークラス拡張の[**ISensorClassExtension::P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)メソッドを呼び出すことによって、状態変更イベントを発生させます。 たとえば、センサーの初期化を完了したドライバーは、このメソッドを呼び出して、センサー\_STATE\_READY という名前の新しい[**Sensorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)値を通知します。
 
 ## <a name="event-constants"></a>イベント定数
 
-センサー プラットフォームでは、ドライバーのイベントの次の定数を定義します。
+センサープラットフォームは、ドライバーイベントの次の定数を定義します。
 
-**センサー イベントの種類**
+**センサーイベントの種類**
 
-センサー プラットフォームでは、次のセンサー イベントの種類の識別子を定義します。
+センサープラットフォームでは、次のセンサーイベントの種類の識別子が定義されています。
 
 | 名前 | 説明 |
 | --- | --- |
-| SENSOR_EVENT_DATA_UPDATED | 新しいデータが使用できることを示します。
+| SENSOR_EVENT_DATA_UPDATED | 新しいデータが使用可能であることを示します。
 | SENSOR_EVENT_PROPERTY_CHANGED| プロパティ値が変更されたことを示します。|
-| SENSOR_EVENT_STATE_CHANGED| たとえば、操作の状態の変更を SENSOR_STATE_READY SENSOR_STATE_INITIALIZING からを示します。|
+| SENSOR_EVENT_STATE_CHANGED| SENSOR_STATE_INITIALIZING から SENSOR_STATE_READY など、操作状態が変更されたことを示します。|
 
 
-**センサー イベント PROPERTYKEYs**
+**センサーイベントの PROPERTYKEYs**
 
-センサー プラットフォームは、次を定義します。 **PROPERTYKEYs**センサー イベントのパラメーターを特定します。
+センサープラットフォームは、センサーイベントのパラメーターを識別するために、次の**Propertykeys**を定義します。
 
 | 名前 | 説明 |
 | --- | --- |
-| SENSOR_EVENT_PARAMETER_EVENT_ID| IPortableDeviceValues で GUID の値が SENSOR_EVENT_DATA_UPDATED など、イベントの種類 ID であることを示します。|
-| SENSOR_EVENT_PARAMETER_STATE| IPortableDeviceValues の符号なし整数値が SENSOR_STATE_READY など、センサーの状態であることを示します。<br>**注**状態変更イベントを発生させるのには、呼び出す[ISensorClass Extension::PostStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)します。 イベントを発生させる SENSOR_EVENT_PARAMETER_STATE を明示的に指定する必要はありません。|
+| SENSOR_EVENT_PARAMETER_EVENT_ID| IPortableDeviceValues の GUID 値が、SENSOR_EVENT_DATA_UPDATED などのイベントの種類の ID であることを示します。|
+| SENSOR_EVENT_PARAMETER_STATE| IPortableDeviceValues の符号なし整数値がセンサーの状態 (SENSOR_STATE_READY など) であることを示します。<br>**メモ**状態変更イベントを発生させるには、 [ISensorClass Extension::P oststatechange](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)を呼び出します。 SENSOR_EVENT_PARAMETER_STATE を明示的に指定しなくてもイベントを発生させることができます。|
 
 ## <a name="other-events"></a>その他のイベント
 
-センサー ドライバーは、センサー クラスの拡張を呼び出して、その他のすべての種類のイベントを発生させる[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)メソッド。 このメソッドは、ジェネリック、拡張可能な稼動状態に関係のないセンサー イベントを発生させる方法を提供します。 呼び出しごとに**PostEvent**へのポインターを含む[IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)します。 各[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)このコレクション内のオブジェクトが含まれています、 **GUID**センサー値\_イベント\_パラメーター\_イベント\_IDイベントの種類を識別するプロパティとイベント データを含む省略可能なデータ フィールドの値。 たとえば、新しい都市のデータを持つ GPS ドライバーは、センサーを使用して\_イベント\_データ\_イベント ID を更新し、センサーの文字列値を指定\_データ\_型\_CITY プロパティのキー。
+センサードライバーは、センサークラス拡張の[**ISensorClassExtension::P ostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)メソッドを呼び出すことによって、他のすべての種類のイベントを発生させます。 このメソッドは、動作状態に関係のないセンサーイベントを生成するための、汎用的な拡張可能な方法を提供します。 **Postevent**への各呼び出しには、 [Iportabledevicevaluescollection](https://go.microsoft.com/fwlink/p/?linkid=131487)へのポインターが含まれています。 このコレクション内の各[Iportabledevicevalues](https://go.microsoft.com/fwlink/p/?linkid=131486)オブジェクトには、センサー\_イベント\_パラメーター\_イベントの種類を識別するイベント\_ID プロパティの**GUID**値、およびオプションのデータフィールド値が含まれています。イベントデータを格納します。 たとえば、新しい都市データを含む GPS ドライバーでは、センサー\_イベント\_データ\_更新されたイベント ID を使用し、センサー\_データ\_CITY プロパティキーの文字列値を指定します。
 
-後は、ドライバーは、イベントを投稿記事、センサー クラスの拡張機能は、イベントと関連データをセンサー API に転送します。
+ドライバーによってイベントがポストされると、センサークラスの拡張機能によって、イベントとそれに関連付けられているすべてのデータがセンサー API に転送されます。
 
-Sensors.h という名前のファイルのプラットフォームで定義されている定数の定義が表示されます。 センサーのプラットフォームで定義されている定数の詳細については、次を参照してください。[定数](about-sensor-constants.md)します。
+プラットフォーム定義定数の定義は、"センサー. h" という名前のファイルにあります。 プラットフォーム定義センサー定数の詳細については、「[定数](about-sensor-constants.md)」を参照してください。
 
-## <a name="managing-sensor-driver-events"></a>センサー ドライバーのイベントの管理
+## <a name="managing-sensor-driver-events"></a>センサードライバーイベントの管理
 
-イベントの要求を受け入れると、ドライバー、前に別のスレッドを生成し、イベントを投稿を作成する必要があります。 スレッドを使用すると、頻繁にイベント プロシージャがデータ要求のコールバックなどの同期プロシージャをブロックするを防ぐことできます。 データ更新イベントを発生させるスレッド クラスの例は、次を参照してください。 [Raising Data-Updated イベント](raising-events.md)します。
+ドライバーがイベント要求を受け入れる前に、イベントを生成してポストするための別のスレッドを作成する必要があります。 スレッドを使用すると、データ要求のコールバックなどの同期プロシージャを頻繁に発生させないようにすることができます。 データ更新イベントを発生させるスレッドクラスの例については、「[データ更新イベントの発生](raising-events.md)」を参照してください。
 
-センサーは、少なくとも 1 つのクライアント アプリケーションには、イベント通知が要求した場合にのみ、イベントを発生させる必要があります。 センサー クラスの拡張機能を使ってドライバーに通知、アプリケーションの状態変更イベントを含む、イベント通知を要求すると[ **ISensorDriver::OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)します。 この方法では、 [IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)アプリケーションおよびアプリケーションがイベント通知を要求するセンサーを識別する文字列を識別するポインター。 一意の識別子として IWDFFile ポインターを使用して、イベントにサブスクライブしているアプリケーションの追跡に役立つことができます。 特定のセンサーなどのプロパティの値がどのアプリケーション セットを追跡する必要がありますが、センサーは、特定のクライアントに送信されるイベントを発生させることはできません、\_プロパティ\_現在\_レポート\_間隔またはセンサー\_プロパティ\_変更\_と小文字の区別します。
+少なくとも1つのクライアントアプリケーションがイベント通知を要求している場合にのみ、センサーでイベントを発生させる必要があります。 アプリケーションが状態変更イベントなどのイベント通知を要求すると、センサークラスの拡張機能は[**ISensorDriver:: OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)を使用してドライバーに通知します。 このメソッドは、アプリケーションを識別する[Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)ポインターと、アプリケーションがイベント通知を要求しているセンサーを識別する文字列を提供します。 IWDFFile ポインターを一意の識別子として使用すると、イベントにサブスクライブしているアプリケーションを追跡できます。 センサーは特定のクライアント向けのイベントを発生させることはできませんが、センサー\_プロパティ\_現在の\_レポート\_間隔などの特定のプロパティの値を設定することが必要になる場合もあります。センサー\_プロパティ\_\_の感度を変更します。
 
-たとえば、複数のクライアント アプリケーションは、センサーの異なる値を設定\_プロパティ\_現在\_レポート\_間隔が最短の間隔にイベントの頻度を設定する規則を適用できます要求されています。 ただし、センサーが毎回の間隔を調整する必要があります、新しいクライアントがイベントをサブスクライブまたは既存のクライアントをアンサブスク ライブします。 コードの例を含む、レポート間隔の詳細については、次を参照してください。[データのフィルター処理](filtering-data.md)します。
+たとえば、複数のクライアントアプリケーションでセンサー\_プロパティに異なる値が設定されている場合\_現在の\_レポート\_間隔では、イベントの頻度を、要求された最短の間隔に設定するルールを適用できます。 ただし、新しいクライアントがイベントまたは既存のクライアントアンサブスクライブにサブスクライブするたびに、センサーで間隔を調整することが必要になる場合があります。 コード例を含むレポート間隔の詳細については、「[データのフィルター選択](filtering-data.md)」を参照してください。
 
-### <a name="sensor-events-and-data-privacy"></a>センサーのイベントとデータのプライバシー
+### <a name="sensor-events-and-data-privacy"></a>センサーイベントとデータのプライバシー
 
-その他のデータ要求のようにイベント通知の要求は、センサー クラスの拡張機能を使用してセキュリティで保護された行われます。 クラスの拡張機能では、このデータを要求するユーザーに対してのみ場所データができます。
+他のデータ要求と同様に、イベント通知の要求はセンサークラス拡張を使用してセキュリティで保護されます。 クラス拡張では、このデータを要求するユーザーに対してのみ位置データが許可されます。
 
 >[!CAUTION]
-> センサー クラスの拡張機能を使用して、センサーのすべての I/O 要求を処理することを確認してください。 これにより、ユーザーの個人情報を表示する可能性を低減しています。
+> センサーのすべての i/o 要求を処理するためにセンサークラス拡張を使用するようにしてください。 これにより、ユーザーの個人情報が漏洩する可能性は低くなります。
 
  
 
-データのプライバシーの詳細については、次を参照してください[Sensor and Location プラットフォーム セキュリティとプライバシー。](https://docs.microsoft.com/windows-hardware/drivers/gnss/privacy-and-security-in-the-sensor-and-location-platform)
+データのプライバシーの詳細については、「[センサーと場所のプラットフォームのプライバシーとセキュリティ](https://docs.microsoft.com/windows-hardware/drivers/gnss/privacy-and-security-in-the-sensor-and-location-platform)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [**センサーのプロパティ**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)

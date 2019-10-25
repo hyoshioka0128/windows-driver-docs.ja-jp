@@ -1,38 +1,38 @@
 ---
-title: MBB NetAdapterCx クライアント ドライバーを作成します。
-description: MBB NetAdapter クラスの拡張機能と、クライアント ドライバーが MBB moderm に対して実行する必要がありますタスクの動作について説明します。
+title: MBB-NetAdapterCx クライアントドライバーを作成する
+description: MBB クラス拡張と、クライアントドライバーが MBB moderm に対して実行する必要があるタスクの動作について説明します。
 ms.assetid: FE69E832-848F-475A-9BF1-BBB198D08A86
 keywords:
-- (MBB モバイル ブロード バンド) WDF クラスの拡張機能、MBBCx、モバイル ブロード バンド NetAdapterCx
+- モバイルブロードバンド (MBB) WDF クラス拡張、MBBCx、モバイルブロードバンド NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fdbe9f8861a0db9217fdbf4c6276003547a815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac24ff1b5112d158c8a5405055b9144c0ab636c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353409"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838265"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>MBBCx クライアント ドライバーの作成
 
 [!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 >[!WARNING]
->このトピックの「シーケンス図では、あくまで説明のため。 パブリック コントラクトが、今後変更される可能性が。
+>このトピックのシーケンス図は、例示のみを目的としています。 パブリックコントラクトではなく、将来変更される可能性があります。
 
-## <a name="inf-files-for-mbbcx-client-drivers"></a>MBBCx クライアント ドライバーの INF ファイル
+## <a name="inf-files-for-mbbcx-client-drivers"></a>MBBCx クライアントドライバー用の INF ファイル
 
-MBBCx クライアント ドライバーの INF ファイルでは、その他の NetAdapterCx クライアント ドライバーと同じです。 詳細については、次を参照してください。 [NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)します。
+MBBCx クライアントドライバーの INF ファイルは、他の NetAdapterCx クライアントドライバーと同じです。 詳細については、「 [INF files For NetAdapterCx client drivers](inf-files-for-netadaptercx-client-drivers.md)」を参照してください。
 
-## <a name="initialize-the-device"></a>デバイスを初期化します。
+## <a name="initialize-the-device"></a>デバイスを初期化する
 
-これらのタスクの NetAdapterCx で必要なだけでなく[NetAdapter デバイスの初期化](device-and-adapter-initialization.md)、MBB のクライアント ドライバーで次のタスクを実行する必要があります、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+NetAdapterCx が[Netadapter デバイスの初期化](device-and-adapter-initialization.md)に必要なタスクに加えて、MBB クライアントドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数で次のタスクも実行する必要があります。
 
-1. 呼び出す[ **MbbDeviceInitConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceinitconfig)呼び出した後[ *NetAdapterDeviceInitConfig* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)呼び出す前に[ *WdfDeviceCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)、同じ参照[ **WDFDEVICE\_INIT** ](../wdf/wdfdevice_init.md)フレームワークによってオブジェクトが渡されます。
+1. [*NetAdapterDeviceInitConfig*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterdeviceinitconfig)を呼び出した後、 [*WdfDeviceCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す前に[**MbbDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceinitconfig)を呼び出します。このとき、フレームワークによって渡された同じ[**wdfdevice\_INIT**](../wdf/wdfdevice_init.md)オブジェクトを参照します。
 
-2. 呼び出す[ **MbbDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceinitialize) MBB デバイスに固有のコールバックを登録する機能が初期化されたを使用して[ **MBB_DEVICE_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/ns-mbbcx-_mbb_device_config)構造体と WDFDEVICE オブジェクトから取得*WdfDeviceCreate*します。
+2. [**MbbDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceinitialize)を呼び出して、初期化された[**MBB_DEVICE_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/ns-mbbcx-_mbb_device_config)構造体と*WdfDeviceCreate*から取得した wdfdevice オブジェクトを使用して、MBB デバイス固有のコールバック関数を登録します。
 
-次の例では、MBB デバイスを初期化する方法を示します。 エラー処理はわかりやすくするため省略してをいます。
+次の例は、MBB デバイスを初期化する方法を示しています。 わかりやすくするために、エラー処理は省略されています。
 
 ```C++
     status = NetAdapterDeviceInitConfig(deviceInit);
@@ -52,62 +52,62 @@ MBBCx クライアント ドライバーの INF ファイルでは、その他�
     status = MbbDeviceInitialize(wdfDevice, &mbbDeviceConfig);
 ```
 
-NetAdapterCx ドライバーの他の種類とは異なり MBB クライアント ドライバーする必要がありますいないオブジェクトを作成、NETADAPTER 内から、 *EvtDriverDeviceAdd*コールバック関数。 代わりに、後でを MBBCx によって指示されるは。
+他の種類の NetAdapterCx ドライバーとは異なり、MBB クライアントドライバーでは、 *Evtdriverdeviceadd*コールバック関数内から netadapter オブジェクトを作成することはできません。 代わりに、後で MBBCx によって指示されます。
 
-次に、クライアント ドライバーを呼び出す必要があります[ **MbbDeviceSetMbimParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicesetmbimparameters)、通常、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック次の関数。
+次に、クライアントドライバーは[**MbbDeviceSetMbimParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicesetmbimparameters)を呼び出す必要があります。通常は、次のような[*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数で呼び出します。
 
-このメッセージのフロー図は、初期化プロセスを示しています。
+このメッセージフローダイアグラムは、初期化プロセスを示しています。
 
-![MBBCx クライアント ドライバーの初期化プロセス](images/mbbcx_initializing.png)
+![MBBCx クライアントドライバーの初期化プロセス](images/mbbcx_initializing.png)
 
-このメッセージのフロー図は、初期化プロセスを示しています。
+このメッセージフローダイアグラムは、初期化プロセスを示しています。
 
-![MBBCx クライアント ドライバーの初期化プロセス](images/mbbcx_initializing.png)
+![MBBCx クライアントドライバーの初期化プロセス](images/mbbcx_initializing.png)
 
-## <a name="handling-mbim-control-messages"></a>MBIM コントロール メッセージの処理
+## <a name="handling-mbim-control-messages"></a>MBIM 制御メッセージの処理
 
-MBBCx は、MBIM 仕様バージョン 1.0 では、8、9、および 10 のセクションでは、コントロール プレーンので定義されている標準 MBIM 制御コマンドを使用します。 コマンドと応答は、一連のクライアント ドライバーによって提供されるコールバック関数と MBBCx で提供される Api を介して交換されます。 MBBCx は、MBIM 仕様バージョン 1.0、5.3、セクションでこれらの関数呼び出しを使用して定義されている、MBIM デバイスの運用モデルを模倣します。
+MBBCx では、コントロールプレーンの MBIM 仕様リビジョン1.0、セクション8、9、および10で定義されている標準の MBIM 制御コマンドを使用します。 コマンドと応答は、MBBCx によって提供されるクライアントドライバーおよび Api によって提供される一連のコールバック関数によって交換されます。 MBBCx は、次の関数呼び出しを使用して、MBIM 仕様リビジョン1.0、セクション5.3 で定義されている MBIM デバイスの運用モデルを模倣しています。
 
-- MBBCx クライアント ドライバーに呼び出すことによって MBIM コマンド メッセージを送信するその[ *EvtMbbDeviceSendMbimFragment* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/nc-mbbcx-evt_mbb_device_send_mbim_fragment)コールバック関数。 クライアント ドライバーは非同期的に呼び出すことによってこの送信要求を完了[ **MbbRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbrequestcomplete)します。
-- クライアント ドライバーは、呼び出すことによって、結果の可用性を通知[ **MbbDeviceResponseAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceresponseavailable)します。
-- MBBCx クライアント ドライバーから呼び出すことによって、MBIM 応答メッセージをフェッチするその[ *EvtMbbDeviceReceiveMbimFragment* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_receive_mbim_fragment)コールバック関数。 クライアント ドライバーは非同期的に呼び出すことでこの取得応答の要求を完了[ **MbbRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbrequestcompletewithinformation)します。
-- MBB クライアント ドライバーは呼び出すことによって要請されていないデバイス イベントの MBBCx を通知する可能性があります**MbbDeviceResponseAvailable**します。 MBBCx し、情報を取得しますクライアント ドライバーから同様にする MBIM 応答メッセージがフェッチされます。
+- MBBCx は、 [*Evtmbbデバイス Endmbimfragment*](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/nc-mbbcx-evt_mbb_device_send_mbim_fragment)コールバック関数を呼び出すことによって、mbim コマンドメッセージをクライアントドライバーに送信します。 クライアントドライバーは、 [**MbbRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcomplete)を呼び出すことによって、この送信要求を非同期に完了します。
+- クライアントドライバーは、 [**MbbDeviceResponseAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceresponseavailable)を呼び出すことによって、結果の可用性を通知します。
+- MBBCx は、 [*EvtMbbDeviceReceiveMbimFragment*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_receive_mbim_fragment) callback 関数を呼び出して、クライアントドライバーから mbim 応答メッセージをフェッチします。 クライアントドライバーは、 [**MbbRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcompletewithinformation)を呼び出すことによって、この get 応答要求を非同期に完了します。
+- MBB client ドライバーは、 **MbbDeviceResponseAvailable**を呼び出して、要請されていないデバイスイベントを MBBCx に通知する場合があります。 次に、MBBCx は、MBIM 応答メッセージをフェッチするのと同様に、クライアントドライバーから情報を取得します。
 
-次の図は、MBBCx クライアント ドライバーのメッセージ交換フローを示しています。
+次の図は、MBBCx のドライバーメッセージ交換フローを示しています。
 
 ![Mbim メッセージ交換](images/mbim.png)
 
-### <a name="synchronization-of-mbim-control-messages"></a>MBIM コントロール メッセージの同期
+### <a name="synchronization-of-mbim-control-messages"></a>MBIM 制御メッセージの同期
 
-MBBCx フレームワークは、クライアント ドライバーへの呼び出しを常にシリアル化*EvtMbbDeviceSendMbimFragment*と*EvtMbbDeviceReceiveMbimFragment*コールバック関数。 新しい呼び出しは行われません、フレームワークによって、クライアント ドライバーでは、いずれかを呼び出すまで**MbbRequestComplete**または**MbbRequestCompleteWithInformation**します。
+MBBCx フレームワークは、常に、クライアントドライバーの*Evtmbb Endmbimfragment*および*EvtMbbDeviceReceiveMbimFragment*コールバック関数への呼び出しをシリアル化します。 クライアントドライバーが**MbbRequestComplete**または**MbbRequestCompleteWithInformation**のいずれかを呼び出すまで、フレームワークによって新しい呼び出しは行われません。
 
-クライアント ドライバーがオーバー ラップを受け取らないように保証中*EvtMbbDeviceSendMbimFragment*または*EvtMbbDeviceReceiveMbimFragment*コールバックを受け取るを連続してそれらを複数回呼び出す場合があります前に、前のコマンドに対する応答を指定する場合は、デバイスで実行できます。
+クライアントドライバーは、重複する*EvtmbbEvtMbbDeviceReceiveMbimFragment Endmbimfragment*またはコールバックを受信しないことが保証されていますが、前のコマンドの応答が返される前に、連続して複数の呼び出しを受け取ることがあります。デバイスから使用できます。
 
-デバイスがない場合、 *D0* MBBCx フレームワークが D0 にデバイスを最初には、状態 (つまり、呼び出す[ *EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry))を呼び出す前に*EvtMbbDeviceSendMbimFragment*または*EvtMbbDeviceReceiveMbimFragment*します。 MBBCx フレームワークも保証されることが維持されますデバイス D0 状態では呼び出しませんつまり[ *EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)クライアントを呼び出すまで、 **MbbRequestComplete**または**MbbRequestCompleteWithInformation**します。
+デバイスが*d0*状態でない場合、MBBCx フレームワークは最初にデバイスを d0 に (つまり、 [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)を呼び出して)、 *Evtmbb Endmbimfragment*または*EvtMbbDeviceReceiveMbimFragment*を呼び出します。 また、MBBCx フレームワークでは、デバイスを D0 状態のままにすることも保証されます。つまり、クライアントが**MbbRequestComplete**または**MbbRequestCompleteWithInformation**を呼び出すまで、 [*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)は呼び出されません。
 
-## <a name="creating-the-netadapter-interface-for-the-pdp-contexteps-bearer"></a>PDP コンテキスト/EPS ベアラーの NetAdapter インターフェイスの作成
+## <a name="creating-the-netadapter-interface-for-the-pdp-contexteps-bearer"></a>PDP コンテキスト/EPS ベアラー用の NetAdapter インターフェイスを作成する
 
-データのセッションを確立する前に MBBCx が NETADAPTER オブジェクトを作成するクライアント ドライバーを指示してデータ セッションがアクティブ化のネットワーク インターフェイスを表す MBBCx で使用されます。 これは、MBBCx クライアント ドライバーへの呼び出しによって実現されます[ *EvtMbbDeviceCreateAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_create_adapter)コールバック関数。
+データセッションを確立する前に、MBBCx は NETADAPTER オブジェクトを作成するようにクライアントドライバーに指示します。このオブジェクトは、アクティブ化されたデータセッションのネットワークインターフェイスを表すために MBBCx によって使用されます。 これは、クライアントドライバーの[*EvtMbbDeviceCreateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_create_adapter) callback 関数を呼び出すことによって MBBCx によって実現されます。
 
-実装では、 *EvtMbbDeviceCreateAdapter*コールバック関数、MBBCx クライアント ドライバーはすべて NetAdapterCx クライアント ドライバー NETADAPTER オブジェクトを作成するために必要な同じタスクを実行する必要がありますまずします。 さらに、次の追加タスクを実行にする必要があります。
+*EvtMbbDeviceCreateAdapter* callback 関数の実装では、MBBCx client ドライバーは、netadapter オブジェクトを任意の NetAdapterCx クライアントドライバーとして作成するために必要なタスクと同じタスクを最初に実行する必要があります。 さらに、次の追加のタスクも実行する必要があります。
 
-1. 呼び出す[ **MbbAdapterInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbadapterinitialize)によって作成された NETADAPTER オブジェクトで[ *NetAdapterCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)します。
+1. [*NetAdapterCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)によって作成された netadapter オブジェクトで[**MbbAdapterInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbadapterinitialize)を呼び出します。
 
-2. 呼び出した後*MbbAdapterinitialize*、呼び出す[ **MbbAdapterGetSessionId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbadaptergetsessionid)を取得する MBBCx のデータのセッション ID がこの NETADAPTER オブジェクトを使用します。 たとえば、返される値が 0 の場合に MBBCx では、この NETADAPTER インターフェイスを使用してデータ セッションがプライマリの PDP コンテキストと既定の EPS ベアラーを確立するにはなります。
+2. *MbbAdapterinitialize*を呼び出した後、 [**MbbAdapterGetSessionId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbadaptergetsessionid)を呼び出して、MBBCX がこの netadapter オブジェクトを使用するデータセッション ID を取得します。 たとえば、戻り値が0の場合、MBBCx は、プライマリ PDP コンテキスト/既定の EPS ベアラーによって確立されたデータセッションに対して、この NETADAPTER インターフェイスを使用することを意味します。
 
-3. MBBCx クライアント ドライバーが作成された NETADAPTER オブジェクトおよび返された間の内部マッピングを維持することをお勧めします。 *SessionId*します。 これにより、複数の PDP コンテキスト/EPS 担ぎがアクティブになったときに特に便利ですが、データ セッション-NETADAPTER にオブジェクト リレーションシップを追跡できます。
+3. MBBCx クライアントドライバーは、作成された NETADAPTER オブジェクトと返された*SessionId*の間の内部マッピングを保持することをお勧めします。 これは、データセッションから NETADAPTER へのオブジェクトの関係を追跡するのに役立ちます。これは、複数の PDP コンテキスト/EPS bearers がアクティブ化されている場合に特に便利です。
 
-4. 返す前に*EvtMbbDeviceCreateAdapter*、クライアント ドライバーはアダプターを呼び出すことによって開始する必要があります[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)します。 1 つ以上のこれらの関数を呼び出すことによって、アダプターの機能も設定、必要に応じて、*する前に*呼び出し**NetAdapterStart**:
-    - [**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)
-    - [**NetAdapterSetLinkLayerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetlinklayercapabilities)
-    - [**NetAdapterSetLinkLayerMtuSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetlinklayermtusize)
-    - [**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetpowercapabilities)
+4. *EvtMbbDeviceCreateAdapter*から戻る前に、クライアントドライバーは[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出してアダプターを開始する必要があります。 必要に応じて、 **NetAdapterStart**の呼び出しの*前に*、次の関数の1つ以上を呼び出して、アダプターの機能を設定することもできます。
+    - [**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)
+    - [**NetAdapterSetLinkLayerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayercapabilities)
+    - [**NetAdapterSetLinkLayerMtuSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayermtusize)
+    - [**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetpowercapabilities)
 
-MBBCx は、常にプライマリの PDP コンテキストと既定の EPS ベアラーの 1 つの NETADPATER オブジェクトがあるため、少なくとも 1 回このコールバック関数を呼び出します。 複数の PDP コンテキスト/EPS 担ぎがアクティブになる場合 MBBCx がこのコールバック関数を呼び出します他にも 1 回が確立されているすべてのデータ セッション。 次の図に示すように、NETADAPTER オブジェクトおよびデータのセッションで表される、ネットワーク インターフェイスの間で一対一のリレーションシップが必要があります。
+MBBCx は、このコールバック関数を少なくとも1回呼び出します。そのため、プライマリ PDP コンテキスト/既定の EPS ベアラーには、常に1つの NETADPATER オブジェクトが存在します。 複数の PDP コンテキスト/EPS bearers がアクティブ化されている場合、MBBCx は、すべてのデータセッションが確立されるたびに、このコールバック関数をより多く呼び出します。 次の図に示すように、NETADAPTER オブジェクトとデータセッションによって表されるネットワークインターフェイスの間に、一対一のリレーションシップが存在している必要があります。
 
 ![複数の NetAdapters](images/multi-netadapter.png)
 
-次の例では、データ セッション NETADAPTER オブジェクトを作成する方法を示します。 エラー処理とアダプターの機能を設定するために必要なコードを簡潔にするためにわかりやすくするため左はことに注意してください。
+次の例は、データセッションの NETADAPTER オブジェクトを作成する方法を示しています。 アダプターの機能を設定するために必要なエラー処理とコードは、簡潔でわかりやすくするために残されています。
 
 ```C++
     NTSTATUS
@@ -172,28 +172,28 @@ MBBCx は、常にプライマリの PDP コンテキストと既定の EPS ベ�
     }
 ```
 
-データパス機能の設定のコード例では、次を参照してください。[ネットワーク データ バッファー管理](network-data-buffer-management.md)します。
+データパス機能の設定のコード例については、「[ネットワークデータバッファー管理](network-data-buffer-management.md)」を参照してください。
 
-呼び出していることを保証 MBBCx *EvtMbbDeviceCreateAdapter*要求する前に**MBIM_CID_CONNECT**同じのセッション ID に置き換えます。 次のフロー図は、NETADAPTER オブジェクトを作成するクライアント ドライバーと、クラス拡張の間の相互作用を示しています。  
+MBBCx は、同じセッション ID を持つ**MBIM_CID_CONNECT**を要求する前に、 *EvtMbbDeviceCreateAdapter*を呼び出すことを保証します。 次のフロー図は、NETADAPTER オブジェクトを作成するときのクライアントドライバーとクラス拡張との相互作用を示しています。  
 
-![NETADAPTER 作成と、MBB クライアント ドライバーの有効化](images/activation.png)
+![MBB クライアントドライバーの NETADAPTER の作成とアクティブ化](images/activation.png)
 
-プライマリの PDP コンテキストと既定の EPS ベアラーは MBBCx によって開始されるは、NETADAPTER オブジェクトを作成するためのフローと[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)が正常に完了します。
+プライマリ PDP コンテキスト/既定の EPS ベアラーの NETADAPTER オブジェクトを作成するためのフローは、 [*EvtdeviceMBBCx ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)が正常に終了したときに、によって開始されます。
 
-によってセカンダリ PDP コンテキスト/専用の EPS ベアラーがトリガーされるは、NETADAPTER オブジェクトを作成するためのフロー *WwanSvc*アプリケーションがオンデマンドでの接続を要求するたびにします。
+セカンダリ PDP コンテキスト/専用 EPS ベアラーの NETADAPTER オブジェクトを作成するフローは、オンデマンド接続がアプリケーションによって要求されるたびに、 *Wwansvc*によってトリガーされます。
 
 ### <a name="lifetime-of-the-netadapter-object"></a>NETADAPTER オブジェクトの有効期間
 
-クライアント ドライバーによって作成された NETADAPTER オブジェクトが自動的にで破壊する MBBCx 使用がの場合。 たとえば、追加の PDP コンテキスト/EPS 担ぎが非アクティブ化した後にこれが発生します。 **MBBCx クライアント ドライバーを呼び出してはならない[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) NETADAPTER オブジェクトを作成します。**
+クライアントドライバーによって作成された NETADAPTER オブジェクトは、使用されなくなったときに MBBCx によって自動的に破棄されます。 たとえば、追加の PDP コンテキスト/EPS bearers が非アクティブ化された後に発生します。 **MBBCx クライアントドライバーは、作成する NETADAPTER オブジェクトで[Wdfobjectdelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出すことはできません。**
 
-クライアント ドライバーを NETADAPTER オブジェクトに関連付けられているコンテキスト データをクリーンアップする必要がある場合は指定する必要があります、 [ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)関数、オブジェクトの属性の構造を呼び出すときに**NetAdapterCreate**します。  
+クライアントドライバーが NETADAPTER オブジェクトに関連付けられたコンテキストデータをクリーンアップする必要がある場合、 **NetAdapterCreate**を呼び出すときに、オブジェクト属性構造に[*Evtdestroycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)関数を提供する必要があります。  
 
 ## <a name="power-management-of-the-mbb-device"></a>MBB デバイスの電源管理
 
-電源管理のためのクライアント ドライバーが NETPOWERSETTINGS オブジェクトを使用します。[などの他の種類のクライアント ドライバーの NetAdapterCx](configuring-power-management.md)します。
+電源管理では、クライアントドライバーは、[他の種類の NetAdapterCx クライアントドライバーと同様](configuring-power-management.md)に NETPOWERSETTINGS オブジェクトを使用する必要があります。
 
-## <a name="handling-device-service-sessions"></a>デバイス サービス セッションの処理
+## <a name="handling-device-service-sessions"></a>デバイスサービスセッションの処理
 
-アプリケーションでは、モデム デバイス DSS データを送信する MBBCx 呼び出しますクライアント ドライバーの[ *EvtMbbDeviceSendServiceSessionData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_send_device_service_session_data)コールバック関数。 クライアント ドライバーし、データの送信は非同期的に呼び出しとデバイスに[ **MbbDeviceSendDeviceServiceSessionDataComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicesenddeviceservicesessiondatacomplete)送信が完了すると、そのため MBBCx し、メモリを解放できますデータに割り当てられます。
+アプリケーションが DSS データをモデムデバイスに送信すると、MBBCx はクライアントドライバーの[*Evtmbbデバイス Endservicesessiondata*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_send_device_service_session_data) callback 関数を呼び出します。 その後、クライアントドライバーはデータを非同期にデバイスに送信し、送信が完了した後に[**MbbDeviceSendDeviceServiceSessionDataComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicesenddeviceservicesessiondatacomplete)を呼び出す必要があります。 MBBCx を使用すると、データに割り当てられたメモリを解放できます。
 
-逆に、クライアント ドライバーを呼び出す[ **MbbDeviceReceiveDeviceServiceSessionData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicereceivedeviceservicesessiondata) MBBCx 経由でアプリケーションまで、データの受け渡しします。
+逆に、クライアントドライバーは[**MbbDeviceReceiveDeviceServiceSessionData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicereceivedeviceservicesessiondata)を呼び出して、MBBCx を介してアプリケーションにデータを渡します。

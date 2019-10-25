@@ -3,39 +3,39 @@ title: SRB_FUNCTION_EXECUTE_SCSI の処理
 description: SRB_FUNCTION_EXECUTE_SCSI の処理
 ms.assetid: 221e1070-12d8-4870-a23c-426ed4a25b84
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiStartIo
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_EXECUTE_SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8776ccc27ec9dc0f476b2f29850a54f6bd27376
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60ce582d44ec879b42c166c9bdc1fb42bd1a03cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826240"
 ---
-# <a name="handling-srbfunctionexecutescsi"></a>処理 SRB\_関数\_EXECUTE\_SCSI
+# <a name="handling-srb_function_execute_scsi"></a>SCSI\_実行\_SRB\_関数の処理
 
 
 ## <span id="ddk_handling_srb_function_execute_scsi_kg"></span><span id="DDK_HANDLING_SRB_FUNCTION_EXECUTE_SCSI_KG"></span>
 
 
-高度な記憶域クラス ドライバーが読み込まれた後、される Srb のほとんどに送信、 [ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンが、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SCSI です。
+上位レベルのストレージクラスドライバーが読み込まれた後、 [**HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンに送信されるほとんどの SRBs では、**関数**メンバーが SRB\_\_関数に設定されて\_SCSI が実行されます。
 
-SRB の受信時に\_関数\_EXECUTE\_SCSI 要求、ミニポート ドライバーの*HwScsiStartIo*ルーチンは次の処理します。
+\_SCSI 要求を実行\_SRB\_関数を受け取ると、ミニポートドライバーの*HwScsiStartIo*ルーチンは次のことを行います。
 
--   取得や、そのデバイス、論理ユニット、および SRB の拡張機能でミニポート ドライバーは、どのようなコンテキストを設定
+-   ミニポートドライバーがデバイス、論理ユニット、または SRB 拡張機能で保持するコンテキストを取得または設定します。
 
-    SRB 自体と、SRB へのポインターを論理ユニットの拡張機能がありますミニポート ドライバーを設定など**DataBuffer**ポインターの場合、SRB **DataTransferLength**値とドライバーの定義済みの値 (または CDBSCSIOP\_*XXX*値)、HBA に実行する操作を示します。
+    たとえば、ミニポートドライバーでは、SRB 自体へのポインター、SRB **DataBuffer**ポインター、SRB **Datatransの長さ**の値、およびドライバーで定義された値 (または CDB SCSIOP\_*XXX*値) を含む論理ユニット拡張機能を設定する場合があります。HBA で実行される操作を示します。
 
--   部分的に指示として、HBA をプログラムする内部のルーチンを呼び出す、 **SrbFlags**、要求された操作に対して
+-   要求された操作のために、内部ルーチンを呼び出して、 **Srbflags**によって部分的に指示された HBA をプログラミングします。
 
-    デバイス I/O 操作は、内部ルーチンは一般にターゲット デバイスを選択し、ターゲット論理ユニットに、バス経由で CDB を送信します。
+    デバイスの i/o 操作の場合、このような内部ルーチンは通常、ターゲットデバイスを選択し、バスを介してターゲット論理ユニットに CDB を送信します。
 
-呼び出す必要がありますが、ミニポート ドライバーでは、システム DMA を使用する場合[ **ScsiPortIoMapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportiomaptransfer)*する前に*データを転送する HBA をプログラミングします。 **ScsiPortIoMapTransfer**システム DMA コント ローラーを設定し、ミニポート ドライバーの*HwScsiDmaStarted*ルーチンを後で説明されている[SCSI ミニポート ドライバーの HwScsiDmaStarted ルーチン](scsi-miniport-driver-s-hwscsidmastarted-routine.md).
+ミニポートドライバーがシステム DMA を使用する場合は、データを転送するために HBA をプログラミングする*前に* [**ScsiPortIoMapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportiomaptransfer)を呼び出す必要があります。 **ScsiPortIoMapTransfer**は、後で[SCSI ミニポートドライバーの HwScsiDmaStarted ルーチン](scsi-miniport-driver-s-hwscsidmastarted-routine.md)で説明されているように、システム DMA コントローラーを設定し、ミニポートドライバーの*HwScsiDmaStarted*ルーチンを呼び出します。
 
-NT ベースのオペレーティング システムの記憶域クラス ドライバーに送信されたすべてのシステム定義、必要なデバイス I/O 制御要求が使用される Srb にマップされて、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SCSI です。
+NT ベースのオペレーティングシステムストレージクラスに送信されるすべてのシステム定義の必須デバイス i/o 制御要求は、SRBs にマップされます。この**関数メンバーは**SRB\_関数に設定され、SCSI\_実行\_ます。
 
  
 

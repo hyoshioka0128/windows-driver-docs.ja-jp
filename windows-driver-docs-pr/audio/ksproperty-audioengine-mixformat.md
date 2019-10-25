@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDIOENGINE\_MIXFORMAT
-description: KSPROPERTY\_AUDIOENGINE\_MIXFORMAT プロパティ要求が、ハードウェアのオーディオ エンジンでミキサーの設定を取得します。
+title: KSK プロパティ\_AUDIOENGINE\_MIXFORMAT
+description: KSK プロパティ\_AUDIOENGINE\_MIXFORMAT property 要求は、ハードウェアオーディオエンジンのミキサーの設定を取得します。
 ms.assetid: 12353E72-1092-44B4-861A-90C198237670
 keywords:
-- KSPROPERTY_AUDIOENGINE_MIXFORMAT オーディオ デバイス
+- KSPROPERTY_AUDIOENGINE_MIXFORMAT オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32d099ee8d02ad1efe9f5833f62c5b50b8d44499
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ecbb3c9f68a494f6054bc0c9569ee4150cd460d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358854"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830896"
 ---
-# <a name="kspropertyaudioenginemixformat"></a>KSPROPERTY\_AUDIOENGINE\_MIXFORMAT
+# <a name="ksproperty_audioengine_mixformat"></a>KSK プロパティ\_AUDIOENGINE\_MIXFORMAT
 
 
-**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**プロパティ要求が、ハードウェアのオーディオ エンジンでミキサーの設定を取得します。
+**Ksk プロパティ\_AUDIOENGINE\_MIXFORMAT** property 要求は、ハードウェアオーディオエンジンのミキサーの設定を取得します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67358854"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -47,25 +47,25 @@ ms.locfileid: "67358854"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>フィルターを使用してノード</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>フィルターを使用したノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**プロパティ要求を返します**状態\_成功**を正常に完了したことを示します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+**Ksk プロパティ\_AUDIOENGINE\_MIXFORMAT** property 要求は、正常に完了したことを示す**ステータス\_成功**を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-ミックス形式のオーディオ エンジン ノードで任意の時点で設定されているは、オフロード pin ファクトリによってもサポートする必要があります。
+また、任意の時点のオーディオエンジンノードに設定されているミックス形式は、オフロードピンファクトリでもサポートされている必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,12 +87,12 @@ ms.locfileid: "67358854"
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
+[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
 
-[**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
+[**KSK プロパティ\_AUDIOENGINE**](ksproperty-audioengine.md)
 
  
 

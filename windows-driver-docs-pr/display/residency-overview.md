@@ -4,12 +4,12 @@ description: 常駐の概要
 ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0d9f717edf193d8acec81ae3f6111c070d4a4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cecf4e6edd8aa39cc68904b2598ca62bd6977a15
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385657"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829575"
 ---
 # <a name="residency-overview"></a>常駐の概要
 
@@ -17,36 +17,36 @@ ms.locfileid: "67385657"
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
 
 
-現在の割り当てと修正プログラムの場所一覧と共に情報すべてコマンド バッファーを作成、ユーザー モード ドライバーを作成します。 この情報は、2 つの目的のビデオ メモリ マネージャーによって使用されます。
+現在、ユーザーモードドライバーは、ビルドするすべてのコマンドバッファーと共に割り当てとパッチの場所の一覧の情報を作成します。 この情報は、次の2つの目的でビデオメモリマネージャーによって使用されます。
 
--   実際のセグメントのアドレスを持つコマンド バッファーのパッチを適用して、グラフィックス処理ユニット (GPU) エンジンに送信する前に、割り当ての一覧と修正プログラムの場所のリストが使用されます。 Windows Display Driver Model (WDDM) v2 での GPU 仮想アドレスのサポートは、この修正プログラムの必要性を削除します。
--   割り当ての一覧と修正プログラムの場所のリストは、割り当てのコントロールの保存場所、ビデオ メモリ マネージャーによって使用されます。 ビデオ メモリ マネージャーにより、特定のエンジンの実行をコマンド バッファーが送信される前にコマンド バッファーによって参照されるすべての割り当てが常駐行われています。
+-   割り当てリストとパッチの場所の一覧は、実際のセグメントアドレスを使用してコマンドバッファーにパッチを適用してから、GPU (グラフィックスプロセッシングユニット) エンジンに送信するために使用されます。 Windows Display Driver Model (WDDM) v2 での GPU 仮想アドレスのサポートにより、この修正プログラムの適用は不要になります。
+-   割り当ての一覧と修正プログラムの場所の一覧は、割り当ての保存を制御するためにビデオメモリマネージャーによって使用されます。 ビデオメモリマネージャーを使用すると、コマンドバッファーによって参照される割り当ては、特定のエンジンの実行にコマンドバッファーが送信される前に常駐するようになります。
 
-新しい保存場所のモデルの導入に伴い、コマンドごとのバッファーの一覧ではなく、デバイス上の保存場所を明示的なリストに移動中です。 ビデオ メモリ マネージャーがそのデバイスに属する任意のコンテキストが実行をスケジュールする前に特定のデバイスの保存場所の要件の一覧ですべての割り当てが常駐していることを確認します。
+新しいレジデンシーモデルが導入されたことで、常駐サービスは、コマンドごとのバッファー一覧ではなく、デバイス上の明示的なリストに移行されます。 ビデオメモリマネージャーでは、そのデバイスに属するすべてのコンテキストの実行がスケジュールされる前に、特定のデバイスの常駐要件リストに対するすべての割り当てが確実に存在することを確認します。
 
-保存場所を管理するために、ユーザー モード ドライバー アクセスすることが 2 つ新しいデバイス ドライバー インターフェイス (Ddi) [ *MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)と[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)新しい実装するために必要になるほか、 [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)コールバック。 *MakeResident*デバイスの保存場所の要件の一覧に 1 つまたは複数の割り当てを追加します。 *削除*そのリストから複数割り当てのいずれかが削除されます。 *TrimResidency*ユーザー モード ドライバーが常駐要件を削減する必要があるときにそのコールバックがビデオ メモリ マネージャーによって呼び出されます。
+レジデンシーサービスを管理するために、ユーザーモードドライバーは2つの新しいデバイスドライバーインターフェイス (DDIs)、 [*Makeresident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb) 、および[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)にアクセスできます。また、新しい[*TrimResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)コールバックを実装するために必要です。 *Makeresident*は、デバイスの保存要件リストに1つまたは複数の割り当てを追加します。 削除すると、その一覧から1つ以上の割り当てが*削除され*ます。 *TrimResidency*コールバックは、その常駐要件を減らすためにユーザーモードドライバーが必要な場合に、ビデオメモリマネージャーによって呼び出されます。
 
-[*MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)と[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)つまり複数の呼び出しに内部参照カウントを保持する更新された*MakeResident*等しい数が必要になります*削除*の呼び出しを実際には、割り当てを削除します。
+また、 [*makeresident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)と[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)も内部参照カウントを保持するように更新されています。つまり、 *makeresident*を複数回呼び出す場合は、割り当てを実際に削除するために同数の*削除*呼び出しが必要になります。
 
-モデルでは、新しい保存場所、コマンドごとのバッファーの割り当てと修正プログラムの場所のリストが緩やかに変化段階的です。これらのリストに存在するには一部のシナリオで、これらの保存場所を制御がされなくなります。
+新しいインサイトでは、コマンドごとのバッファー割り当てと修正プログラムの場所の一覧が徐々に徐々に減少しています。これらのリストはいくつかのシナリオに存在しますが、これらの一覧は、常駐サービスを制御できなくなります。
 
-**重要な**  WDDM v2 での保存場所は、デバイスの保存場所要件の一覧が排他的制御されます。 これは、すべてのエンジンのすべての API と GPU の間で当てはまります。
+  WDDM v2 の**重要な**は、デバイスの保存要件の一覧によってのみ制御されます。 これは、GPU のすべてのエンジンとすべての API で当てはまります。
 
  
 
-## <a name="span-idphasingoutallocationandpatchlocationlistspanspan-idphasingoutallocationandpatchlocationlistspanspan-idphasingoutallocationandpatchlocationlistspanphasing-out-allocation-and-patch-location-list"></a><span id="Phasing_out_allocation_and_patch_location_list"></span><span id="phasing_out_allocation_and_patch_location_list"></span><span id="PHASING_OUT_ALLOCATION_AND_PATCH_LOCATION_LIST"></span>割り当てと修正プログラムの場所のリストを徐々 に
+## <a name="span-idphasing_out_allocation_and_patch_location_listspanspan-idphasing_out_allocation_and_patch_location_listspanspan-idphasing_out_allocation_and_patch_location_listspanphasing-out-allocation-and-patch-location-list"></a><span id="Phasing_out_allocation_and_patch_location_list"></span><span id="phasing_out_allocation_and_patch_location_list"></span><span id="PHASING_OUT_ALLOCATION_AND_PATCH_LOCATION_LIST"></span>段階的に割り当てとパッチの場所の一覧を表示する
 
 
-割り当てと修正プログラムの場所の一覧のロールでは、新しい保存場所のモデルの導入により大幅に削減は取得し、ハードウェア支援によるスケジュールの導入に伴いは完全に破棄に移動実際にします。
+割り当てとパッチの場所の一覧の役割は、新しい常駐モデルの導入によって大幅に削減され、実際にはハードウェアによるスケジュール設定の導入によって完全に解消されます。
 
-モデルでは、パケットに基づいてスケジュール、割り当ての一覧は次のように存在し続けます。
+パケットベースのスケジュールモデルでは、割り当て一覧は次のようになります。
 
--   エンジンの GPU の仮想アドレス指定をサポートしていない場合、割り当ての一覧と修正プログラムの場所のリストは引き続き存在、ただし、修正プログラムの適用のためだけに使用して、保存場所を制御する必要がなくなります。 ユーザー モード ドライバーと各種の通常 Ddi でカーネル モード ドライバーの両方に提供される、割り当ての一覧と修正プログラムの場所のリストが常駐ではない割り当てへの参照と、GPU スケジューラの送信を拒否し、デバイスを(失わ) エラーが発生します。 この操作モードでは従来と見なされ、将来のリリースのハードウェアをアドレス指定が仮想 GPU のサポートを受けるすべての GPU エンジンを予定します。 この操作モードが失われます将来のバージョン、WDDM のことが必要です。
--   仮想 GPU をサポートしているエンジンのアドレス指定、新しいコンテキストの作成フラグ (**DXGK\_contextinfo です\_いいえ\_修正\_REQUIRED**) があることを示す追加特定コンテキストでは、すべての修正プログラムを必要としません。 このフラグを指定すると、修正プログラムの場所のリストは割り当てられません、割り当てが非常に小さく一覧 (16 個のエントリ) のみが割り当てられます。 割り当ての一覧は、書き込み参照プライマリ サーフェスにし、目的のための追跡に使用されます。 GPU のスケジューラは、プライマリの画面に発生する可能性のあるフリップに関しては、そのバッファーの実行を正しく同期することがあるようにプライマリの画面にで特定のコマンド バッファーが書き込み中に把握する必要があります。
+-   GPU 仮想アドレス指定をサポートしていないエンジンでは、割り当て一覧と修正プログラムの場所の一覧は引き続き存在しますが、修正プログラムの適用目的でのみ使用され、常駐を制御することはできなくなります。 割り当て一覧と修正プログラムの場所の一覧は、通常のさまざまな DDIs のユーザーモードドライバーとカーネルモードドライバーの両方に提供されますが、常駐していない割り当てを参照すると、GPU スケジューラによって送信が拒否され、デバイスが挿入されます。エラー (失われた)。 この操作モードは従来と見なされ、すべての GPU エンジンが将来のハードウェアリリースで GPU 仮想アドレスのサポートを受けることを想定しています。 このモードの操作は、WDDM の将来のバージョンでは削除される予定です。
+-   GPU 仮想アドレス指定をサポートするエンジンの場合、新しいコンテキスト作成フラグ (**DXGK\_CONTEXTINFO\_\_パッチの\_適用を必要としません**) が追加され、特定のコンテキストで修正プログラムを適用する必要がないことが示されます。 このフラグが指定されている場合、修正プログラムの場所の一覧は割り当てられず、非常に小さな割り当てリスト (16 個のエントリ) のみが割り当てられます。 割り当て一覧は、プライマリサーフェイスへの書き込み参照を追跡し、その他の目的には使用されません。 GPU スケジューラは、特定のコマンドバッファーがプライマリサーフェイスに書き込んでいることを認識する必要があります。これにより、プライマリサーフェイスで発生する可能性のあるフリップに関して、そのバッファーの実行を適切に同期することができます。
 
-同様に、割り当ての一覧は、カーネル モード ドライバーで使用*存在*パスを今すぐ、ソースと宛先の詳細については、ドライバーに情報を渡す、*存在*操作。 割り当てリストは引き続きに関するパラメーターを渡す存在このコンテキストでただし、割り当て一覧はしないするための保存場所。 修正プログラムの適用を必要とする Gpu 上、*存在*割り当ての一覧が今日のパッチの適用前情報が表示されます、*存在*場合は、リソースのいずれかのスケジュール設定する前にパケットを再修正プログラムが適用されますGPU 上で、スケジューラにキューに時間と実行のスケジュールされている時間の間のメモリ内で移動します。
+同様に *、現在の操作の*ソースと宛先に関する情報をドライバーに渡すために、現在のカーネルモードドライバー*のパスで*割り当てリストが使用されます。 このコンテキストでは、割り当てリストは引き続きパラメーターを渡すために存在しますが、割り当てリストは常駐環境では使用されません。 パッチの適用を必要とする Gpu では、現在*の割り当てリストには、現在*の動作と同様にパッチ前の情報が含まれています。また、リソースが次の期間の間にメモリ内で移動された場合は、スケジュールされる前に、*現在*のパケットに再適用されます。スケジューラのキューに登録され、GPU での実行がスケジュールされている時刻。
 
-次の表では、WDDM ドライバーを v2 は、さまざまなユーザー モード ドライバーやカーネル モード ドライバー Ddi で、割り当てと修正プログラムの場所のリストを受信することが予想されるときにまとめたものです。
+次の表は、WDDM v2 ドライバーがさまざまなユーザーモードドライバーおよびカーネルモードドライバー DDIs で割り当てと修正プログラムの場所の一覧を受け取る必要がある場合の概要を示しています。
 
 <table>
 <colgroup>
@@ -57,27 +57,27 @@ ms.locfileid: "67385657"
 <thead>
 <tr class="header">
 <th align="left">GPU エンジン</th>
-<th align="left">割り当てのリストかどうか</th>
-<th align="left">修正プログラムの場所のリストですか。</th>
+<th align="left">割り当て一覧</th>
+<th align="left">パッチの場所の一覧</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">GPU 仮想アドレスはサポートされません (修正プログラムの適用を必要と、既定の)</td>
-<td align="left"><p>はい、フル サイズが、純粋な目的で修正プログラムの適用に使用します。</p>
-送信 (失わ) エラーと、送信された、スケジューラによって拒否されている入力デバイスが常駐割り当てへの参照が発生します。</td>
-<td align="left">[はい]、完全なサイズ。</td>
+<td align="left">GPU 仮想アドレスがサポートなし (修正プログラムの適用、既定値)</td>
+<td align="left"><p>はい。完全なサイズですが、更新プログラムの適用のためにのみ使用します。</p>
+存在しない割り当てへの参照によって、送信デバイスがエラーになり (失われ)、スケジューラによって送信が拒否されます。</td>
+<td align="left">はい、完全なサイズです。</td>
 </tr>
 <tr class="even">
-<td align="left">GPU 仮想アドレスのサポート (<strong>DXGK_CONTEXTINFO_NO_PATCHING_REQUIRED</strong>フラグを設定)</td>
-<td align="left"><p>はい、16 個のエントリ。</p>
-コマンド バッファーが書き込んでいるため、存在する場合は、プライマリのサーフェスを参照します。 Lip 表示コント ローラー上で発生すると、GPU スケジューラによって同期に使用します。 デバイスの保存場所の要件の一覧で、プライマリ画面必要があります。 または参照は拒否されます。</td>
-<td align="left">X</td>
+<td align="left">GPU 仮想アドレスサポート (<strong>DXGK_CONTEXTINFO_NO_PATCHING_REQUIRED</strong>フラグセット)</td>
+<td align="left"><p>はい、16エントリ。</p>
+コマンドバッファーによって書き込まれたプライマリサーフェイス (存在する場合) を参照します。 GPU スケジューラが、ディスプレイコントローラーでの lip の同期に使用します。 プライマリサーフェイスは、デバイスの保存要件の一覧に既に存在している必要があります。存在しない場合、参照は拒否されます。</td>
+<td align="left">必須ではない</td>
 </tr>
 <tr class="odd">
-<td align="left">GPU 仮想アドレスのサポート + ハードウェアのスケジュール設定</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left">GPU 仮想アドレスサポート + ハードウェアスケジュール</td>
+<td align="left">必須ではない</td>
+<td align="left">必須ではない</td>
 </tr>
 </tbody>
 </table>

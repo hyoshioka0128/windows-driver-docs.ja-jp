@@ -3,17 +3,17 @@ title: アダプター オブジェクトの概要
 description: アダプター オブジェクトの概要
 ms.assetid: a1a0d516-dee0-484a-b971-c7a595fef155
 keywords:
-- AdapterControl ルーチンについての AdapterControl ルーチン
-- DMA は、WDK カーネルでは、アダプタ オブジェクトを転送します。
-- アダプター オブジェクトについて、アダプター オブジェクトの WDK カーネル
+- AdapterControl ルーチン、AdapterControl ルーチンについて
+- DMA 転送 WDK カーネル、アダプターオブジェクト
+- アダプタオブジェクト WDK カーネル、アダプタオブジェクトについて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a22a13ae844e12d5b2cf339c7a2aeba9200932ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1dd589a676a4d1e2b0785d5b52a4426ed86ca863
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369773"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838635"
 ---
 # <a name="introduction-to-adapter-objects"></a>アダプター オブジェクトの概要
 
@@ -21,27 +21,27 @@ ms.locfileid: "67369773"
 
 
 
-ダイレクト I/O および DMA を使用する任意のドライバーでは、アダプター オブジェクトを作成する必要があります。 アダプター オブジェクトでは、dma コント ローラーまたはポート、またはバス マスター デバイスのいずれかを表します。
+ダイレクト i/o と DMA を使用するドライバーでは、アダプターオブジェクトを作成する必要があります。 アダプターオブジェクトは、DMA コントローラーチャネルまたはポート、またはバスマスタデバイスを表します。
 
-最下位レベルのドライバーの 2 つの種類には、アダプター オブジェクトを使用する必要があります。
+2種類の下位レベルのドライバーでは、アダプターオブジェクトを使用する必要があります。
 
--   システムの DMA コント ローラーを使用するデバイス ドライバーです。 このようなデバイスと呼びます*デバイスを下位*呼ば"システムを使用して (または*下位*) DMA"。
+-   システム DMA コントローラーを使用するデバイスのドライバー。 このようなデバイスは "*下位デバイス*" と呼ばれ、"システム (または*下位*) DMA を使用" と呼ばれます。
 
--   バス マスター アダプターをデバイスのドライバーです。 このようなデバイスでは、システム I/O バスの使用を調停および、したがってバス マスター DMA を使用します。
+-   バスマスターアダプターであるデバイスのドライバー。 このようなデバイスは、i/o バスを使用するためにシステムを調停するため、バスマスタ DMA を使用します。
 
-ドライバーは、アダプター オブジェクトへのポインターのデバイスの拡張機能では、通常のストレージを提供します。
+ドライバーは、アダプターオブジェクトへのポインターのストレージ (通常はデバイス拡張機能) を提供します。
 
-通常、これらの DMA メソッドのいずれかを使用するデバイスのドライバーがある DMA の転送を実行する、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチンとアダプター オブジェクトを操作するシステム提供のサポート ルーチンを呼び出し。 (ドライバーを必要としない*AdapterControl*ルーチンを[使用してスキャッター/ギャザー DMA](using-scatter-gather-dma.md)とそれらを[共通バッファー、バス マスター DMA を使用して、](using-common-buffer-bus-master-dma.md))。
+DMA 転送を実行するために、これらの DMA メソッドのいずれかを使用するデバイスのドライバーは、通常、 [*Adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンを持ち、アダプターオブジェクトを操作するシステム提供のサポートルーチンを呼び出します。 ( *Adaptercontrol*ルーチンを必要としないドライバーには、[スキャッター/ギャザー dma を使用](using-scatter-gather-dma.md)するドライバーと[、一般的なバッファー、バスマスタ dma を使用](using-common-buffer-bus-master-dma.md)するドライバーが含まれます)。
 
-デバイスの起動操作、ハンドルの DMA 操作を呼び出す必要が I/O マネージャー、ドライバーの一部としては、アダプター オブジェクトのセットを作成するプラットフォームに固有の HAL の呼び出しで有効にします。 任意の Windows プラットフォームでアダプター オブジェクトのセットには、アダプター オブジェクトには通常が含まれます。
+デバイスのスタートアップ操作の一部として、DMA 操作を処理するドライバーは、i/o マネージャーを呼び出し、その後、プラットフォーム固有の HAL を呼び出して一連のアダプターオブジェクトを作成します。 すべての Windows プラットフォームで、アダプターオブジェクトのセットには、通常、次のためのアダプターオブジェクトが含まれています。
 
--   各システム DMA コント ローラーのチャネルまたは下位のデバイスが接続されているポート。
+-   下位デバイスが接続されている各システム DMA コントローラーチャネルまたはポート。
 
--   コンピューター内の各のバス マスター DMA デバイス
+-   コンピューターの各バスマスタ DMA デバイス。
 
-(バス マスター DMA の対応の SCSI デバイスの SCSI ポート ドライバーを設定、ミニポート ドライバーの HBA に固有の SCSI アダプター オブジェクト。 ミニポート ドライバーの[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンは、ポート使用してドライバーをアダプターに固有のデータを提供します)。
+(バスマスタ DMA 対応の SCSI デバイスの場合、SCSI ポートドライバーは、HBA 固有の SCSI ミニポートドライバー用のアダプターオブジェクトを設定します。 ミニポートドライバーの[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンは、ポートドライバーにアダプター固有のデータを提供します)。
 
-参照してください[システム DMA を使用して](using-system-dma.md)と[バス マスター DMA を使用して](using-bus-master-dma.md)ドライバーがアダプター オブジェクトを使用するタイミングと方法の詳細については、 *AdapterControl*ルーチン。
+ドライバーがアダプタオブジェクトと*Adaptercontrol*ルーチンを使用するタイミングと方法の詳細については、「[システム Dma](using-system-dma.md)と[バスマスタ DMA](using-bus-master-dma.md)の使用」を参照してください。
 
  
 

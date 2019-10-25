@@ -3,15 +3,15 @@ title: MS-DOS デバイス名の概要
 description: MS-DOS デバイス名の概要
 ms.assetid: 44b2f871-56e1-46d3-aab4-c38f498d089d
 keywords:
-- MS-DOS デバイス名の WDK カーネル
+- MS-DOS デバイス名 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a61531b6f4004a79e3125b36a578d2ea1eaaf209
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 83fac0d285bcaaf5749287f7c0e387b503bf0302
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369924"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838625"
 ---
 # <a name="introduction-to-ms-dos-device-names"></a>MS-DOS デバイス名の概要
 
@@ -19,15 +19,15 @@ ms.locfileid: "67369924"
 
 
 
-通常、非 WDM ドライバーによって作成される名前付きのデバイス オブジェクトには、MS-DOS のデバイス名があります。 MS-DOS のデバイス名は、フォームの名前を含むオブジェクト マネージャーにシンボリック リンク **\\\dosdevices\z\\** <em>DosDeviceName</em>します。
+非 WDM ドライバーによって作成される名前付きデバイスオブジェクトには、通常、MS-DOS デバイス名があります。 MS-DOS デバイス名は、オブジェクトマネージャーのシンボリックリンクであり、 **\\DosDevices\\** <em>dosdevices</em>の形式で名前が付けられています。
 
-MS-DOS デバイス名でのデバイスの例では、COM1 シリアル ポートです。 MS-DOS デバイス名が **\\\dosdevices\z\\COM1**します。 C ドライブの名前が同様に、  **\\\dosdevices\z\\c:** します。
+MS-DOS デバイス名を持つデバイスの例として、シリアルポート COM1 があります。 これには、MS-DOS デバイス名 **\\DosDevices\\COM1**があります。 同様に、C ドライブには **\\DosDevices\\c:** という名前が付いています。
 
-WDM ドライバーは、通常は自分のデバイスの MS-DOS デバイス名を指定しません。 WDM ドライバーの代わりに、使用、 [ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)ルーチンをデバイスのインターフェイスを登録します。 デバイスのインターフェイスは、特定の名前付け規則ではなく、それらの機能でデバイスを指定します。 詳細については、次を参照してください。[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)します。
+通常、WDM ドライバーは、デバイスの MS-DOS デバイス名を提供しません。 代わりに、WDM ドライバーは、 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)ルーチンを使用してデバイスインターフェイスを登録します。 デバイスインターフェイスでは、特定の名前付け規則ではなく、デバイスの機能によってデバイスが指定されます。 詳細については、「[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)」を参照してください。
 
-デバイスがユーザー モードのプログラムを使用する特定知ら MS-DOS デバイス名が必要な場合にのみ、MS-DOS デバイス名を指定するには、ドライバーが必要です。
+ドライバーは、ユーザーモードプログラムを操作するためにデバイスが特定の既知の MS-DOS デバイス名を持っている必要がある場合にのみ、MS-DOS デバイス名を指定する必要があります。
 
-ドライバーを使用してデバイス オブジェクトの MS-DOS デバイス名を提供する、 [ **IoCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesymboliclink)ルーチンをデバイスへのシンボリック リンクを作成します。 たとえば、次のコード例はからシンボリック リンクを作成します **\\\dosdevices\z\\** <em>DosDeviceName</em>に **\\デバイス\\。**  <em>DeviceName</em>します。
+ドライバーは、Ioてデバイスへのシンボリックリンクを作成するために、 [**ioて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesymboliclink)デバイスオブジェクトの MS-DOS デバイス名を提供します。 たとえば、次のコード例では、 **\\DosDevices\\** <em>dosdevices</em>から **\\デバイス\\** <em>DeviceName</em>にシンボリックリンクを作成します。
 
 ```cpp
 UNICODE_STRING DeviceName;
@@ -42,11 +42,11 @@ if (!NT_SUCCESS(status)) {
 }
 ```
 
-システムの複数のバージョンをサポートしています、  **\\\dosdevices\z**ディレクトリ。 ドライバーが意図されているバージョンでそのシンボリック リンクを作成することを確認します。 詳細については、次を参照してください。[ローカルおよびグローバル MS-DOS デバイス名](local-and-global-ms-dos-device-names.md)します。
+システムでは、 **\\DosDevices**ディレクトリの複数のバージョンがサポートされていることに注意してください。 意図したバージョンのシンボリックリンクがドライバーによって作成されていることを確認します。 詳細については、「[ローカルおよびグローバルの MS-DOS デバイス名](local-and-global-ms-dos-device-names.md)」を参照してください。
 
-アクセスする、 **\dosdevices\z**からユーザー モードでは、名前空間を指定 **\\ \\.\\** ファイル名を開くとします。 呼び出すことによって、ユーザー モードで対応するデバイスを開くことができます**CreateFile()** します。
+**Dosdevices**名前空間にユーザーモードでアクセスするには\\\\を指定します。ファイル名を開いたときに **\\します。** **CreateFile ()** を呼び出すことによって、対応するデバイスをユーザーモードで開くことができます。
 
-たとえば、次のコード例が開き、 \\ \\\dosdevices\z\\\\*DosDeviceName*ユーザー モードでのデバイス。
+たとえば、次のコード例では、\\\\DosDevices\\\\*Dosdevices*デバイスをユーザーモードで開きます。
 
 ```cpp
 file = CreateFileW(L"\\\\.\\DosDeviceName",
@@ -58,7 +58,7 @@ file = CreateFileW(L"\\\\.\\DosDeviceName",
     NULL);
 ```
 
-ユーザー モードを使用してシンボリック リンクがユーザー モード アプリケーションから作成することもできます**DefineDosDevice**ルーチン。 詳細については、Microsoft Windows SDK を参照してください。
+ユーザーモードの**デバイス**ルーチンを使用して、ユーザーモードアプリケーションからシンボリックリンクを作成することもできます。 詳細については、Microsoft Windows SDK を参照してください。
 
  
 

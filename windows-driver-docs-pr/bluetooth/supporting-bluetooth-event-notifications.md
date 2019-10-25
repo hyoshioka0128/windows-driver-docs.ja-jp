@@ -3,57 +3,57 @@ title: Bluetooth イベント通知のサポート
 description: Bluetooth イベント通知のサポート
 ms.assetid: ddb6f1d4-0f6e-4b11-93fc-b0886d262749
 keywords:
-- Bluetooth の WDK、イベント通知
+- Bluetooth WDK、イベント通知
 - イベント通知 WDK Bluetooth
-- WDK の Bluetooth の通知
+- 通知 WDK Bluetooth
 - プロファイル ドライバー WDK Bluetooth
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94215bc44f3fbc382a85c6f221a871b6d38f369e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bfb4cae3bee95ad5523df62294b2de24715875c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364611"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837535"
 ---
 # <a name="supporting-bluetooth-event-notifications"></a>Bluetooth イベント通知のサポート
 
 
-プロファイル ドライバーでは、リモート デバイスへの接続が開いたら、接続が閉じられたときに、またはその他の接続に変更が発生したときに通知を受け取る自体に登録する必要があります。 さらをプロファイル ドライバーが着信接続を受け入れる自体を登録する場合にリモート デバイスが接続しようとしたときに通知を受け取ることがあります。
+プロファイルドライバーは、リモートデバイスへの接続を開くときに、接続が閉じられたとき、または接続に対して他の変更が発生したときに通知を受け取るように自身を登録する必要があります。 さらに、プロファイルドライバーが着信接続を受け入れるように登録すると、リモートデバイスからの接続が試行されたときに通知を受け取ることができる必要があります。
 
-Synchronous Connection-Oriented (SCO) 接続を使用するプロファイルのドライバーを実装および登録を[ *SCO コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)します。 クライアント プロファイルのドライバーは、リモート デバイスへの接続を要求するときに、適切なコールバック関数を登録します。
+同期接続指向 (SCO) 接続を使用するプロファイルドライバーは、 [*Sco コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)を実装し、登録します。 クライアントプロファイルドライバーは、リモートデバイスへの接続を要求するときに、適切なコールバック関数を登録します。
 
-SCO プロファイルのドライバーを発行したとき、 **BRB\_SCO\_オープン\_チャネル**BRB へのポインターを指定、 [ *SCO コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_SCO\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_sco_open_channel)構造体。 リモート デバイスが SCO 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー SCO 接続に変更されたとき。
+SCO プロファイルドライバーが**brb\_sco\_** を発行するときに\_CHANNEL BRB を開くと、その Sco[*コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)へのポインターが brb の対応する\_brb\_sco の**コールバック**メンバーに指定され[ **\_OPEN\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_sco_open_channel)構造体。 リモートデバイスが SCO 接続要求を受け入れた場合、デバイスが SCO 接続に変更されたときにコールバック関数を通じて、Bluetooth ドライバースタックからプロファイルドライバーに通知を送信できます。
 
-SCO 接続の作成の詳細については、次を参照してください。 [SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)します。
+SCO 接続の作成の詳細については、「[リモートデバイスへの Sco クライアント接続の作成](creating-a-sco-client-connection-to-a-remote-device.md)」を参照してください。
 
-論理リンク コント ローラーと適応プロトコル (L2CAP) 接続を使用するプロファイルのドライバーを実装および登録、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)します。
+論理リンクコントローラーとアダプテーションプロトコル (L2CAP) 接続を使用するプロファイルドライバーは、 [*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を実装して登録します。
 
-L2CAP プロファイルのドライバーを発行したとき、 **BRB\_L2CA\_オープン\_チャネル**BRB へのポインターを指定、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_L2CA\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_l2ca_open_channel)構造体。 リモート デバイスが L2CAP 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー L2CAP 接続に変更されたとき。
+L2CAP プロファイルドライバーが**brb\_L2CA**を発行するときに\_CHANNEL brb\_開くと、その[*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)へのポインターが brb の対応する\_brb\_L2CA の**コールバック**メンバーに指定されます。 [ **\_オープン\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_open_channel)構造体。 リモートデバイスが L2CAP 接続要求を受け入れると、Bluetooth ドライバースタックは、L2CAP 接続が変更されたときにコールバック関数を介してプロファイルドライバーに通知を送信できます。
 
-L2CAP 接続の作成の詳細については、次を参照してください。 [L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)します。
+L2CAP 接続の作成の詳細については、「[リモートデバイスへの L2CAP クライアント接続の作成](creating-a-l2cap-client-connection-to-a-remote-device.md)」を参照してください。
 
-同様に、ときにプロファイル ドライバー自身を登録 (L2CAP、SCO) の着信接続を受け入れることを要求するリモート デバイスが接続しようとしたときに通知を受け取るコールバック関数を登録する必要があります。
+同様に、プロファイルドライバーが受信 (L2CAP、SCO) 接続要求を受け入れるように自身を登録する場合は、リモートデバイスが接続を試行したときに通知されるコールバック関数を登録する必要があります。
 
-L2CAP を使用するプロファイルのドライバーを指定、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)で、 **IndicationCallback**のメンバー、 [  **\_BRB\_L2CA\_登録\_SERVER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_l2ca_register_server)構造体。 Bluetooth ドライバー スタックは、リモート デバイスが、プロファイルのドライバーに L2CAP 接続を開始しようとすると、プロファイルのドライバーに通知するコールバック関数を呼び出してことができます。
+L2CAP を使用するプロファイルドライバーでは、 [ **\_サーバー構造の登録\_、\_BRB\_L2CA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_register_server)の**IndicationCallback**メンバー内の[*L2CAP Callback 関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)を指定します。 その後、Bluetooth ドライバースタックはコールバック関数を呼び出して、リモートデバイスがプロファイルドライバーへの L2CAP 接続を開始しようとしたときに、プロファイルドライバーに通知できます。
 
-SCO を使用するプロファイルのドライバーを指定、 [ *SCO コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)で、 **IndicationCallback**のメンバー、 [  **\_BRB\_SCO\_登録\_SERVER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_sco_register_server)構造体。 Bluetooth ドライバー スタックは、リモート デバイスが、プロファイルのドライバーに SCO 接続を開始しようとすると、プロファイルのドライバーに通知するコールバック関数を呼び出してことができます。
+SCO を使用するプロファイルドライバーは、sco[*コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)を[ **\_BRB\_SCO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_sco_register_server)の**IndicationCallback**メンバーに指定し\_サーバー構造を登録\_ます。 その後、Bluetooth ドライバースタックはコールバック関数を呼び出して、リモートデバイスがプロファイルドライバーへの SCO 接続を開始しようとしたときに、プロファイルドライバーに通知することができます。
 
-プロファイル ドライバーが適切なコールバック関数を登録した後は、開いている接続経由でイベントが発生した場合、Bluetooth ドライバー スタックもプロファイル ドライバーを通知できます。
+プロファイルドライバーによって適切なコールバック関数が登録されると、Bluetooth ドライバースタックは、開いている接続全体でイベントが発生したかどうかをプロファイルドライバーに通知することもできます。
 
-**注**  プロファイル ドライバーは、変更を送信して同じコールバック関数を登録できますチャネルを開くとそれに接続しようとしています。 リモート デバイスについて通知します。
+プロファイルドライバーは、開いているチャネルと、それに接続しようとしているリモートデバイスに関する変更通知を送信するために、同じコールバック関数を登録でき  ことに**注意**してください。
 
  
 
-L2CAP 接続の場合、 [ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)は 3 つのパラメーターを受け取ります。
+L2CAP 接続の場合、 [*L2CAP callback 関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)は次の3つのパラメーターを受け取ります。
 
--   L2CAP 接続に対して定義されているコンテキスト。 BRB 場合\_L2CA\_登録\_サーバー要求、このコンテキストに渡された値とは、 **IndicationCallbackContext**のメンバー、 \_BRB\_L2CA\_登録\_サーバー構造が要求に渡されます。 場合に**BRB\_L2CA\_オープン\_チャネル**または**BRB\_L2CA\_オープン\_チャネル\_応答**要求すると、このコンテキストに渡された値とは、 **CallbackContext**のメンバー、 \_BRB\_L2CA\_オープン\_要求で渡されるチャネルの構造体。
+-   L2CAP 接続に対して定義されているコンテキスト。 BRB\_L2CA\_登録\_サーバー要求の場合、このコンテキストは \_BRB\_L2CA の**IndicationCallbackContext**メンバーで渡される値です。このコンテキストは、申請. **Brb\_L2CA\_open\_channel**または**BRB\_L2CA\_open\_channel\_応答**要求の場合、このコンテキストはの**コンテキスト**メンバーで渡される値です \_BRB\_L2CA は、要求で渡されたオープン\_チャネル構造\_ます。
 
--   値、 [ **INDICATION\_コード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ne-bthddi-_indication_code)受信 L2CAP 接続または結合状態変更の通知イベントの種類を示す列挙体。
+-   受信 L2CAP 接続または結合状態の変更の通知イベントの種類を示す[ **\_コード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ne-bthddi-_indication_code)列挙の値。
 
--   ポインター、 [ **INDICATION\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_indication_parameters) notification イベントに関連付けられているパラメーターを含む構造体。
+-   Notification イベントに関連付けられているパラメーターを格納している[ **\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_indication_parameters)構造体を示すポインター。
 
-渡された値、 [ *L2CAP コールバック関数の*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)*Indication*パラメーターがでどの共用体のメンバーを指定します、**パラメーター**共用体の*パラメーター*プロファイル ドライバーが使用するパラメーター。
+[*L2CAP callback 関数の*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)*表示パラメーターで*渡される値*は、プロファイル*ドライバーが使用するパラメーターパラメーター**の共用体**のメンバーを指定します。
 
 <table>
 <colgroup>
@@ -62,14 +62,14 @@ L2CAP 接続の場合、 [ *L2CAP コールバック関数*](https://docs.micros
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">場合の値、 <em>Indication</em>パラメーターと等しい.</th>
-<th align="left">...次の共用体メンバーを使用して、<em>パラメーター</em>パラメーター</th>
+<th align="left"><em>指示</em>パラメーターの値が...</th>
+<th align="left">...<em>Parameters</em>パラメーターの次の共用体メンバーを使用します。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>IndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>Connect</strong></p></td>
+<td align="left"><p><strong>関連付け</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IndicationRemoteConfigRequest</strong></p></td>
@@ -96,15 +96,15 @@ L2CAP 接続の場合、 [ *L2CAP コールバック関数*](https://docs.micros
 
  
 
-SCO 接続の場合、 [ *SCO コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)は 3 つの引数を受け取ります。
+SCO 接続の場合、 [*sco コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)は次の3つの引数を受け取ります。
 
--   SCO 接続に対して定義されているコンテキスト。 場合に**BRB\_SCO\_登録\_SERVER**要求すると、このコンテキストに渡された値とは、 **IndicationCallbackContext** のメンバー\_BRB\_SCO\_登録\_サーバー構造が要求に渡されます。 場合に**BRB\_SCO\_オープン\_チャネル**または**BRB\_SCO\_オープン\_チャネル\_応答**要求すると、このコンテキストに渡された値とは、 **CallbackContext**のメンバー、 \_BRB\_SCO\_オープン\_要求で渡されるチャネルの構造体。
+-   SCO 接続に対して定義されているコンテキスト。 **Brb\_sco\_\_サーバー**要求を登録する場合、このコンテキストは \_BRB\_SCO\_REGISTER\_サーバー構造に渡さ**れた値**です。要求を使用します。 **Brb\_sco\_開いて\_channel**または**BRB\_sco\_open\_channel\_応答**要求の場合、このコンテキストは \_brb の の送信**コンテキスト**メンバーで渡される値です。\_SCO\_、要求で渡された\_チャネル構造を開きます。
 
--   値、 [ **SCO\_INDICATION\_コード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ne-bthddi-_sco_indication_code)受信 SCO 接続または結合状態変更の通知の種類を示す列挙体。
+-   [**Sco\_示さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ne-bthddi-_sco_indication_code)れた値は、入力 sco 接続または結合状態の変更の通知の種類を示す\_コードの列挙です。
 
--   ポインターを[ **SCO\_INDICATION\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_sco_indication_parameters) notification イベントに関連付けられているパラメーターを含む構造体。
+-   通知イベントに関連付けられているパラメーターを格納している\_パラメーター構造体を[**示す SCO\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_sco_indication_parameters)を指すポインター。
 
-渡された値、 [ *SCO コールバック関数の*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)*Indication*パラメーターがでどの共用体のメンバーを指定します、**パラメーター**共用体*パラメーター*プロファイル ドライバーが使用するパラメーター。
+[*SCO コールバック関数の*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)*表示パラメーターに*渡された値は、プロファイルドライバーが使用する*parameters*パラメーター**のパラメーターの共用体**のメンバーを指定します。
 
 <table>
 <colgroup>
@@ -113,14 +113,14 @@ SCO 接続の場合、 [ *SCO コールバック関数*](https://docs.microsoft.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">場合の値、 <em>Indication</em>パラメーターと等しい.</th>
-<th align="left">...次の共用体メンバーを使用して、<em>パラメーター</em>パラメーター</th>
+<th align="left"><em>指示</em>パラメーターの値が...</th>
+<th align="left">...<em>Parameters</em>パラメーターの次の共用体メンバーを使用します。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>ScoIndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>Connect</strong></p></td>
+<td align="left"><p><strong>関連付け</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ScoIndicationRemoteDisconnect</strong></p></td>
@@ -131,13 +131,13 @@ SCO 接続の場合、 [ *SCO コールバック関数*](https://docs.microsoft.
 
  
 
-### <a name="span-idhandlingplugandplayremovalirpsspanspan-idhandlingplugandplayremovalirpsspanhandling-plug-and-play-removal-irps"></a><span id="handling_plug_and_play_removal_irps"></span><span id="HANDLING_PLUG_AND_PLAY_REMOVAL_IRPS"></span>プラグ アンド プレイ削除 Irp の処理
+### <a name="span-idhandling_plug_and_play_removal_irpsspanspan-idhandling_plug_and_play_removal_irpsspanhandling-plug-and-play-removal-irps"></a><span id="handling_plug_and_play_removal_irps"></span><span id="HANDLING_PLUG_AND_PLAY_REMOVAL_IRPS"></span>プラグアンドプレイ削除 Irp の処理
 
-プロファイルのドライバーがすべてを渡す必要があります[ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal) Bluetooth ドライバー スタックで処理するには、すぐに下位のスタックの Irp します。 突然の取り外し IRP の処理の一環として任意の開いているチャネルを閉じるしようとしないでください。 ビルドしないようにし、さらに BRBs 突然削除 IRP を受信した後、データを基になるラジオを送信する送信。 ただし、プロファイル ドライバーでは、突然の取り外し IRP の処理中に他のクリーンアップを実行することができます。
+プロファイルドライバーは、Bluetooth ドライバースタックによって処理されるように、直ちにすべての[**IRP\_\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)irp をスタック内に渡す必要があります。 突然削除される IRP の処理の一環として、開いているチャネルを閉じないようにしてください。 予期しない IRP を受け取った後に、基になるラジオにデータを送信する他の BRBs をビルドして送信することは避けてください。 ただし、プロファイルドライバーは、予期しない IRP の処理中に他のクリーンアップを実行できます。
 
-Bluetooth ドライバー スタックが突然削除 IRP を受信した後に合格*ScoIndicationRemoteDisconnect*を[ *SCO コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnsco_indication_callback)指定されています。プロファイルのドライバーが構築され、送信されたときに、プロファイル ドライバーによって、 [ **BRB\_SCO\_オープン\_チャネル**](https://docs.microsoft.com/previous-versions/ff536626(v=vs.85))または[ **BRB\_SCO\_開く\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536627(v=vs.85))要求、現在開いている任意の SCO チャネルを閉じます。 同様に、Bluetooth ドライバー スタックが合格*IndicationRemoteDisconnect*を[ *L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbthport_indication_callback)プロファイル ドライバーによって指定されているときに、プロファイルのドライバーに構築され、送信、 [ **BRB\_L2CA\_オープン\_チャネル**](https://docs.microsoft.com/previous-versions/ff536615(v=vs.85))または[ **BRB\_L2CA\_開く\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536616(v=vs.85))要求、現在開いている任意の L2CAP チャネルを閉じます。
+Bluetooth ドライバースタックは、予期せぬ削除の IRP を受信した後、プロファイルドライバーが Brb\_SCO を構築して送信したときに、プロファイルドライバーによって指定された[*Sco コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnsco_indication_callback)に*ScoIndicationRemoteDisconnect*を渡します。 [ **\_オープン\_チャネル**](https://docs.microsoft.com/previous-versions/ff536626(v=vs.85))または[**brb\_SCO\_オープン\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536627(v=vs.85))要求を開いて、現在開いている sco チャネルを閉じます。 同様に、Bluetooth ドライバースタックは*IndicationRemoteDisconnect*を[*L2CAP コールバック関数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbthport_indication_callback)に渡し、プロファイルドライバーが[**brb\_\_L2CA を構築して送信したときに、プロファイルドライバーによって指定された Callback 関数\_CHANNEL**](https://docs.microsoft.com/previous-versions/ff536615(v=vs.85))または[**brb\_L2CA\_\_チャネル\_応答**](https://docs.microsoft.com/previous-versions/ff536616(v=vs.85))要求を開いて、現在開いているすべての L2CAP チャネルを閉じることができます。
 
-プロファイルのドライバーを処理するときに、すべてのサーバーを登録解除[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device) Irp します。 SCO サーバーの登録を解除するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_登録解除\_SERVER** ](https://docs.microsoft.com/previous-versions/ff536630(v=vs.85))要求。 L2CAP、サーバーの登録を解除するプロファイルのドライバーをビルドを送信してください、 [ **BRB\_L2CA\_登録解除\_SERVER** ](https://docs.microsoft.com/previous-versions/ff536619(v=vs.85))要求。
+プロファイルドライバーは、Irp の処理中にすべてのサーバーの登録を解除し、\_デバイスの irp を[**削除\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)します。 SCO サーバーの登録を解除するには、プロファイルドライバーが[**Brb\_SCO\_** ](https://docs.microsoft.com/previous-versions/ff536630(v=vs.85)) [作成して送信し](building-and-sending-a-brb.md)、\_サーバー要求の登録を解除します。 L2CAP サーバーの登録を解除するには、プロファイルドライバーで[**Brb\_L2CA**](https://docs.microsoft.com/previous-versions/ff536619(v=vs.85))を作成して送信し、\_サーバー要求の登録を解除\_ます。
 
  
 

@@ -3,21 +3,21 @@ title: ドライバー オブジェクト内のドライバー エントリ ポ�
 description: ドライバー オブジェクト内のドライバー エントリ ポイント
 ms.assetid: f004c2b3-8435-4c25-82e9-aff3911dc316
 keywords:
-- ドライバー オブジェクトの WDK カーネル
-- 標準のドライバー ルーチン WDK カーネル ドライバー オブジェクト
-- ドライバー ルーチン WDK カーネル ドライバー オブジェクト
-- ルーチン WDK カーネル ドライバー オブジェクト
-- WDK ドライバー オブジェクトのオブジェクト
-- エントリ ポイントの WDK カーネル
-- ドライバーのエントリ ポイントの WDK カーネル
+- ドライバーオブジェクト WDK カーネル
+- 標準ドライバールーチン WDK カーネル、ドライバーオブジェクト
+- ドライバールーチン WDK カーネル、ドライバーオブジェクト
+- ルーチン WDK カーネル、ドライバーオブジェクト
+- オブジェクト WDK ドライバーオブジェクト
+- エントリポイント WDK カーネル
+- ドライバーエントリポイント WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60018065b47eef6ca229163bcf2c7952efab44b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67b5f2f3ebc0f5a8ee9deaff9056f320b1ad4525
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384960"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836809"
 ---
 # <a name="driver-entry-points-in-driver-objects"></a>ドライバー オブジェクト内のドライバー エントリ ポイント
 
@@ -25,21 +25,21 @@ ms.locfileid: "67384960"
 
 
 
-カーネル モード ドライバーでは、そのドライバー オブジェクトで、次のエントリ ポイントを指定する必要があります。
+カーネルモードドライバーでは、次のエントリポイントを driver オブジェクトに指定する必要があります。
 
--   少なくとも 1 つのディスパッチ ルーチンの PnP、電源、Irp の要求を取得するために、エントリ ポイントと I/O 操作。
+-   少なくとも1つのディスパッチルーチンのエントリポイント。これは、PnP、電力、および i/o 操作を要求する Irp を取得するためのものです。
 
--   エントリ ポイントの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)で、日常的な**DriverObject -&gt; DriverExtension -&gt; AddDevice**します。
+-   **Driverobject-&gt; Driverobject-&gt; AddDevice**の[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンのエントリポイント。
 
--   エントリ ポイントの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) Irp のキューを管理する場合は、ルーチン。
+-   Irp の独自のキューを管理している場合の[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンのエントリポイント。
 
--   ドライバーの読み込みや、動的に置き換えられますことができる場合、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)システム オブジェクトや、ドライバーが割り当てたメモリなどの任意のシステム リソースを解放するために、エントリ ポイント。 (キーボード ドライバーなど、システムの実行中に置き換えることのできないドライバーの指定は、*アンロード*ルーチン)。
+-   ドライバーを動的に読み込んだり、置き換えることができる場合は、ドライバーが割り当てたシステムオブジェクトやメモリなどのシステムリソースを解放するために、[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)エントリポイント。 (キーボードドライバーなど、システムの実行中に置き換えることができないドライバーは、*アンロード*ルーチンを提供する必要はありません)。
 
-これらの要件は、いくつかのミニポート ドライバーを対応するクラスまたはポートのドライバー エントリ ポイントを定義、ドライバー オブジェクトには適用されません。 詳細については、デバイスの種類に固有のドキュメントを参照してください。
+これらの要件は、対応するクラスまたはポートドライバーがドライバーオブジェクトのエントリポイントを定義するミニポートドライバーには適用されません。 詳細については、デバイスタイプ固有のドキュメントを参照してください。
 
-I/O マネージャーは、対応するドライバー オブジェクト内のデバイスのドライバーが作成したオブジェクトに関する情報を保持します。
+I/o マネージャーは、ドライバーによって作成されたデバイスオブジェクトに関する情報を、対応するドライバーオブジェクトに保持します。
 
-ドライバーが読み込まれるときにその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ドライバー オブジェクトへのポインターとルーチンが呼び出されます。 ドライバーの場合に**DriverEntry**ルーチンを呼び出すと、設定*ディスパッチ*、 *StartIo* (ある場合)、および*アンロード*(あれば) エントリ ポイント直接ドライバーのオブジェクトには、次のように。
+ドライバーが読み込まれると、ドライバーオブジェクトへのポインターを使用して[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンが呼び出されます。 ドライバーの**driverentry**ルーチンが呼び出されると、次のように、*ディスパッチ*、 *StartIo* (存在する場合)、および*アンロード*(存在する場合) を設定します。
 
 ```cpp
 DriverObject->MajorFunction[IRP_MJ_xxx] = DDDispatchXxx; 
@@ -51,15 +51,15 @@ DriverObject->DriverUnload = DDUnload;
               :    : 
 ```
 
-**DriverEntry**ルーチンのエントリ ポイントを設定もその*AddDevice*で、日常的な**DriverExtension**の次のように、そのドライバー オブジェクト。
+**Driverentry**ルーチンは、次のように、driver オブジェクトの**Driverentry**の*AddDevice*ルーチンのエントリポイントも設定します。
 
 ```cpp
 DriverObject->DriverExtension->AddDevice = DDAddDevice; 
 ```
 
-A **DriverEntry**または省略可能な[*を再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)ルーチンはまたドライバー オブジェクト内のフィールドを使用できます (に表示されていない、[ドライバー オブジェクトの図は](introduction-to-driver-objects.md#driver-object-illustration))情報を取得したり、configuration manager のレジストリのデータベースに情報を設定します。 詳細については、次を参照してください。[ドライバーのレジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)します。
+**Driverentry**またはオプションの[*再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)ルーチンでは、ドライバーオブジェクトのフィールド ([ドライバーオブジェクトの図](introduction-to-driver-objects.md#driver-object-illustration)には示されていません) を使用して、configuration manager のレジストリデータベースの情報を取得したり、情報を設定したりすることもできます。 詳細については、「[ドライバーのレジストリキー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)」を参照してください。
 
-I/O マネージャーにはドライバー オブジェクトを操作するサポート ルーチン エクスポートしない[**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)構造体。 ドライバー オブジェクトは、現在読み込まれているドライバーを追跡する I/O マネージャーによって使用されます。 ドライバー オブジェクトの一部のメンバーは、I/O マネージャーでのみ使用されます。 他のユーザーでもメンバーを使用するドライバーのライターです。たとえばを定義するには、特定のメンバー名を認識する必要があります*AddDevice*、*ディスパッチ*、 *StartIo*、および*アンロード*エントリ ポイント。 内のドキュメントに未記載のメンバーを使用する必要がありますとも、**ドライバー\_オブジェクト**構造体も、このドキュメントで名前がドライバー オブジェクトのメンバーの場所に関する前提条件を作成します。 それ以外の場合、1 つの Windows プラットフォームから別のドライバーの移植性を維持することはできません。
+I/o マネージャーは、ドライバー [ **\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)構造であるドライバーオブジェクトを操作するためのサポートルーチンをエクスポートしません。 ドライバーオブジェクトは、現在読み込まれているドライバーを追跡するために、i/o マネージャーによって使用されます。 ドライバーオブジェクトの一部のメンバーは、i/o マネージャーによってのみ使用されます。 他のメンバーは、ドライバーライターによっても使用されます。たとえば、 *AddDevice*、 *Dispatch*、 *StartIo*、および*Unload*エントリポイントを定義するには、特定のメンバー名を把握しておく必要があります。 このドキュメントで名前が付けられているドライバーオブジェクトのメンバーの場所については、 **\_オブジェクト**構造では、ドキュメントに記載されていないメンバーを使用しないようにしてください。 そうしないと、1つの Windows プラットフォームから別の Windows プラットフォームへの移植性を維持することができません。
 
  
 

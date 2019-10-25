@@ -4,25 +4,25 @@ description: Windows カーネルモード WMI ライブラリ
 ms.assetid: ca981f38-8f3b-48cc-969f-ce53b85bba20
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2bf108c1d64111182cdac53760f6d3a578163030
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15c18e44e863edae920f1aad230e3a6dfd657732
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386869"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838305"
 ---
 # <a name="windows-kernel-mode-wmi-library"></a>Windows カーネルモード WMI ライブラリ
 
 
-Windows では、コンポーネントを管理するための一般的なメカニズムを提供します。 このシステムは、Windows Management Instrumentation (WMI) と呼ばれます。 Windows Driver Model (WDM) の要件を満たしてに、ドライバーは、システムによって管理できるように、ドライバーの WMI を実装する必要があります。
+Windows には、コンポーネントを管理するための一般的なメカニズムが用意されています。 このシステムは Windows Management Instrumentation (WMI) と呼ばれます。 Satisify Windows Driver Model (WDM) の要件を満たすには、ドライバーをシステムで管理できるように、ドライバーの WMI を実装する必要があります。
 
-WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](implementing-wmi.md)します。
+WMI の詳細については、「 [Windows Management Instrumentation](implementing-wmi.md)」を参照してください。
 
-WMI ライブラリへの直接のインターフェイスを提供するルーチンには、文字のプレフィックス"**Wmi**"WMI のルーチンの一覧を参照してください。 [Windows Management Instrumentation (WMI) ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+WMI ライブラリへの直接インターフェイスを提供するルーチンには、"**wmi**" という文字がプレフィックスとして付けられます。WMI ルーチンの一覧については、「 [Windows Management Instrumentation (wmi) ライブラリルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-WMI のコールバックの一覧は、次を参照してください。 [WMI ライブラリ コールバック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+WMI コールバックの一覧については、「 [Wmi Library Callback ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-WMI との通信は Irp で実行されます。 ドライバーは Irp を受信に使用できるルーチンの一覧は、次を参照してください。 [WMI IRP の処理ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 ドライバーを使用して WMI Irp を送信するルーチンの一覧は、次を参照してください。 [WMI IRP を送信するルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 WMI で使用される Irp の一覧は、次を参照してください。 [WMI マイナー Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-minor-irps)します。
+WMI との通信は、Irp を使用して行われます。 ドライバーが Irp を受信するために使用できるルーチンの一覧については、「 [WMI IRP Processing ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。 ドライバーが WMI Irp の送信に使用できるルーチンの一覧については、「 [WMI Irp 送信ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。 WMI で使用される Irp の一覧については、「 [Wmi Minor irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-minor-irps)」を参照してください。
 
  
 

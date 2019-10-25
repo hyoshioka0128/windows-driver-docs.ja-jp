@@ -4,12 +4,12 @@ description: 用語集のページ-E
 ms.assetid: 1e32bd40-8c77-4c6b-913c-6ec26707ed36
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3eb798f05c3c0bf5440ff4344fbf565f6642d12
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 9770fea32f1285457f6327c58080e105382b4bdb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837761"
 ---
 # <a name="e"></a>E
 
@@ -27,7 +27,7 @@ ms.locfileid: "70387079"
 ターゲットでイベントが発生した後のデバッガーエンジンの処理方法に影響を与えるルールのコレクション。 イベントフィルターには、特定のイベントフィルター、特定の例外フィルター、任意の例外フィルターの3種類があります。
 
 <span id="event_callback_objects"></span><span id="EVENT_CALLBACK_OBJECTS"></span>**イベントコールバックオブジェクト**  
-クライアントに登録されている[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイスのインスタンス。 イベントが発生するたびに、エンジンによってイベントコールバックが通知されます。
+クライアントに登録されている[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイスのインスタンス。 イベントが発生するたびに、エンジンによってイベントコールバックが通知されます。
 
 <span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>**イベントコールバック**  
 「イベントコールバックオブジェクト」を参照してください。

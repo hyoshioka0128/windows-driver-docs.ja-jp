@@ -1,34 +1,34 @@
 ---
 title: デバイスの D3cold 機能
-description: D3cold (コンピューターの S0 内に存続するとき) を入力するデバイスは、デバイスの電源ポリシー所有者 (PPO) である、ドライバーは可能前に、ドライバーは、デバイスが応答および D3cold を入力すると、デバイスが正しく動作しているに確認する必要があります。
+description: デバイスの電源ポリシー所有者 (PPO) であるドライバーがデバイスを D3cold に入力できるようにするには (コンピューターが S0 のままになっている場合)、ドライバーはデバイスの応答性が高く、デバイスが D3cold に入った後も正常に動作し続けることを確認する必要があります。
 ms.assetid: 5A6CB076-7D97-48EC-B2BF-3204CD093B3E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7ffca85cfc5c68ab6dd994e4ddb15dd4ba8f1235
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d89053138d87abd38e2a6b555c65f4f4c6fb819
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377136"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828437"
 ---
 # <a name="d3cold-capabilities-of-a-device"></a>デバイスの D3cold 機能
 
 
-D3cold (コンピューターの S0 内に存続するとき) を入力するデバイスは、デバイスの電源ポリシー所有者 (PPO) である、ドライバーは可能前に、ドライバーは、デバイスが応答および D3cold を入力すると、デバイスが正しく動作しているに確認する必要があります。
+デバイスの電源ポリシー所有者 (PPO) であるドライバーがデバイスを D3cold に入力できるようにするには (コンピューターが S0 のままになっている場合)、ドライバーはデバイスの応答性が高く、デバイスが D3cold に入った後も正常に動作し続けることを確認する必要があります。
 
-プラグ アンド プレイ (PnP) デバイスのオペレーティング システムは通常親バス ドライバーから、デバイスの D3cold 機能に関する情報を取得します。
+プラグアンドプレイ (PnP) デバイスの場合、オペレーティングシステムは通常、親バスドライバーからデバイスの D3cold 機能に関する情報を取得します。
 
-たとえば、デバイスが、PCI や PCI Express バスに接続されている場合、デバイスの PCI 構成領域には電源管理の登録とするブロック デバイスの機能を示すが含まれます。 このブロックで機能フラグは、電源管理イベント、または PME (ウェイク イベントの PCI 語句) をシグナル状態、デバイスをデバイスの電源状態を指定します。 これらの状態は、D3hot と D3cold などがあります。 PCI の電源管理の詳細については、次を参照してください。、 [PCI バス Power Management Interface Specification](https://pcisig.com/specifications/conventional/pci_bus_power_management_interface/)します。
+たとえば、デバイスが PCI または PCI Express バスに接続されている場合、デバイスの PCI 構成領域には、デバイスの機能を示す電源管理レジスタブロックが含まれます。 このブロックの機能フラグは、デバイスが電源管理イベントまたは PME (wake イベントの PCI 用語) を通知できるデバイスの電源状態を指定します。 これらの状態には、D3hot と D3cold が含まれる場合があります。 PCI 電源管理の詳細については、 [Pci バス電源管理インターフェイスの仕様](https://pcisig.com/specifications/conventional/pci_bus_power_management_interface/)を参照してください。
 
-デバイスが D3cold を入力しない場合は、デバイスは、それが入力する低電力 Dx 状態からウェイク イベントを通知できる必要があります、デバイス、親のバス コント ローラー、およびハードウェア プラットフォーム D3cold からウェイク イベントをシグナル通知をサポートしない限り、します。
+デバイスが、入力された低電力の Dx 状態からウェイクアップイベントを通知できる必要がある場合、デバイス、親バスコントローラー、およびハードウェアプラットフォームが D3cold からの wake イベントの通知をサポートしていない限り、デバイスは D3cold に入ってはなりません。
 
-デバイスの KMDF ドライバーは呼び出し、 [ **WdfDeviceAssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)メソッド、デバイスが、ウェイク イベントを信号を利用した最下位のデバイスの電源状態でアイドル状態にデバイスを有効にします。 KMDF バージョン 1.11 以降**WdfDeviceAssignS0IdleSettings** D3cold には低電力 Dx 状態の範囲が含まれています。 このメソッドは、デバイス、デバイス、親のバス ドライバー、および ACPI システム ファームウェア D3cold からウェイク イベントをシグナル化をサポートしている場合にのみ、D3cold でアイドル状態にできます。
+デバイスの KMDF ドライバーは、 [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)メソッドを呼び出して、デバイスがウェイクアップイベントを通知できる最も低い電力状態でデバイスをアイドル状態にします。 KMDF バージョン1.11 以降、 **WdfDeviceAssignS0IdleSettings**には、可能な低電力の Dx 状態の範囲の D3cold が含まれています。 この方法では、デバイス、親バスドライバー、および ACPI システムファームウェアが D3cold からの wake イベントのシグナリングをサポートしている場合にのみ、D3cold でデバイスをアイドル状態にすることができます。
 
-デバイスの WDM ドライバーには、デバイスがアイドル状態の場合、デバイスに移動する低電力 Dx 状態を決める必要があります。 (これに対し、 **WdfDeviceAssignS0IdleSettings**ドライバーがする必要があるないように、この Dx 状態を自動的に選択します)。ドライバーを呼び出すことができる場合、デバイスは、それが入力する低電力 Dx 状態からウェイク イベントを通知できる必要があります、 [ *GetIdleWakeInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_idle_wake_info)元となる最小搭載デバイスの電源状態を確認するルーチンデバイスは、ウェイク イベントを通知できます。 この情報を取得する*GetIdleWakeInfo*バス ドライバーの基になると ACPI システム ファームウェア クエリを実行します。 情報に基づき*GetIdleWakeInfo*、ドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)ルーチンを有効または D3cold にデバイスの移行を無効にします。
+デバイスの WDM ドライバーは、デバイスがアイドル状態のときにデバイスの移動先となる低電力の Dx 状態を決定する必要があります。 (これに対して、 **WdfDeviceAssignS0IdleSettings**は、ドライバーが必要としないように、この Dx 状態を自動的に選択します)。デバイスが、入力された低電力の Dx 状態からウェイクアップイベントを通知できる必要がある場合、ドライバーは[*GetIdleWakeInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info)ルーチンを呼び出して、デバイスがウェイクアップイベントを通知できる最も低い電源装置の電源状態を判断できます。 この情報を取得するために、 *GetIdleWakeInfo*は基になるバスドライバーと ACPI システムファームウェアを照会します。 *GetIdleWakeInfo*からの情報に基づいて、ドライバーは[*SetD3ColdSupport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support)ルーチンを呼び出して、デバイスの D3cold への移行を有効または無効にすることができます。
 
-デバイスでは、D3cold からウェイク イベントを通知する機能は必要はありません。 代わりに、デバイスはソフトウェアによって開始された操作に対する応答としてのみ D3cold から D0 への移行を行うに必要な場合があります。 たとえば、ドライバーは、ドライバー、デバイスの I/O 要求を受信する場合、デバイスのスリープを解除する必要があります。 いくつかの例外を除き、このようなデバイスのドライバーが D3cold を入力するデバイスを有効にできます。 可能性のある例外は、大量の D0 に D3cold から移行する時間を必要とするデバイスです。 たとえば、ディスプレイ デバイスには、大量デバイス D3cold に入る前に保存して、デバイスが D3cold が終了した後に復元する必要があるメモリにはが含まれます。
+デバイスは、D3cold からのウェイクイベントを通知する機能を必要としない場合があります。 デバイスは、ソフトウェアによって開始されるアクションに応答して、D3cold から D0 への移行のみを行う必要がある場合があります。 たとえば、ドライバーがデバイスの i/o 要求を受け取った場合、ドライバーはデバイスのスリープ解除を必要とすることがあります。 いくつかの例外を除き、このようなデバイスのドライバーによって、デバイスで D3cold を入力できるようになります。 例外として、D3cold から D0 への移行を実行するのに長時間かかるデバイスが考えられます。 たとえば、ディスプレイデバイスに大量のメモリが含まれていて、デバイスが D3cold に入ってから、デバイスが D3cold を終了した後に復元される必要がある場合があります。
 
-D3cold の ACPI サポートの詳細については、次を参照してください。 [D3cold のファームウェア要件](https://docs.microsoft.com/windows-hardware/drivers/bringup/firmware-requirements-for-d3cold)します。
+D3cold の ACPI サポートの詳細については、「 [D3cold のファームウェアの要件](https://docs.microsoft.com/windows-hardware/drivers/bringup/firmware-requirements-for-d3cold)」を参照してください。
 
  
 

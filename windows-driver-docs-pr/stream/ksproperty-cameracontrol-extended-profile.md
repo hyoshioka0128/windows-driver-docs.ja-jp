@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイル
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイルを使用すると、どのプロファイルが選択されているカメラのドライバーに通知するためにキャプチャ フレームワークを許可します。 .
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_プロファイル
+description: KSK プロパティ\_CAMERACONTROL\_拡張\_プロファイルを使用して、キャプチャフレームワークが、選択されたプロファイルをカメラドライバーに通知できるようにします。 の順に移動します。
 ms.assetid: 15467152-E514-4DAA-9905-2804802291A5
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_PROFILE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_PROFILE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fb3a15ff015592a8e4e11a6fdb2b76c43bf67ee0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ff90b69dcaba0a6baccfd7698441d868b74820e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824008"
 ---
-# <a name="kspropertycameracontrolextendedprofile"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイル
+# <a name="ksproperty_cameracontrol_extended_profile"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_プロファイル
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイルを使用すると、どのプロファイルが選択されているカメラのドライバーに通知するためにキャプチャ フレームワークを許可します。
+KSK プロパティ\_CAMERACONTROL\_拡張\_プロファイルを使用して、キャプチャフレームワークが、選択されたプロファイルをカメラドライバーに通知できるようにします。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,21 +35,21 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイルを使用すると、どの
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン 1</p></td>
 <td><p>フィルター</p></td>
-<td><p>非同期のキャンセルされません。</p></td>
+<td><p>非同期 (キャンセル不可)</p></td>
 </tr>
 </tbody>
 </table>
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表に、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体のフィールドの説明と要件を示します。
 
 <table>
 <colgroup>
@@ -58,39 +58,39 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_プロファイルを使用すると、どの
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0 xffffffff) 必要があります。</p></td>
+<td><p>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>これは、sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_PROFILE) である必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_PROFILE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL 必要があります。 その他のモードがサポートされていません。</p></td>
+<td><p>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL である必要があります。 他のモードはサポートされていません。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

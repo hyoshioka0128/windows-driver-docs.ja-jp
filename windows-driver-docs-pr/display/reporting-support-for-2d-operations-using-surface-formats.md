@@ -3,18 +3,18 @@ title: サーフェスの形式を使用した 2D 操作に対するサポート
 description: サーフェスの形式を使用した 2D 操作に対するサポートのレポート
 ms.assetid: c7737daf-3342-48dc-a365-f789b7203013
 keywords:
-- 2 次元操作 WDK DirectX 9.0、画面の書式設定します。
-- WDK DirectX 9.0 2D 操作は、画面の書式設定します。
-- 画面は、WDK DirectX 9.0 をフォーマットします。
-- 画面形式 WDK DirectX 9.0、レポートの 2D 操作のサポート
+- 2次元操作 (WDK DirectX 9.0、surface 形式)
+- 2D 操作 WDK DirectX 9.0、surface 形式
+- surface 形式 WDK DirectX 9.0
+- surface 形式 WDK DirectX 9.0、2D 操作のレポートサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db0a10a650dc04096325e111f47b9420ccf19887
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a1728a140c98029b8e3d12a8de9e2b0353dee2e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359308"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829595"
 ---
 # <a name="reporting-support-for-2d-operations-using-surface-formats"></a>サーフェスの形式を使用した 2D 操作に対するサポートのレポート
 
@@ -22,15 +22,15 @@ ms.locfileid: "67359308"
 ## <span id="ddk_reporting_support_for_2d_operations_using_surface_formats_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_2D_OPERATIONS_USING_SURFACE_FORMATS_GG"></span>
 
 
-ドライバーでフラグを指定する、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)サーフェスの形式を使用して 2D 操作を実行できることを示すための構造その形式。
+ドライバーは、その形式を使用して2D 操作を実行できることを示すために、 [**ddの形式の Ddピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)構造の**dwoperations**メンバーのフラグを指定します。
 
-ドライバーことまたはからにコピーし、D3DFORMAT を設定して、画面に塗りつぶしの色を指定するたとえば、\_OP\_OFFSCREENPLAIN フラグ。
+たとえば、ドライバーは、D3DFORMAT\_OP\_OFFSCREENPLAIN フラグを設定することによって、画面の間でコピーや塗りつぶしを行うことができることを示すことができます。
 
-ドライバーはベンダーから提供されたコードや、D3DFORMAT からのコードを使用する場合の列挙型を設定する、 **dwFourCC** DDPIXELFORMAT と割り当て画面、ドライバーの形式のメンバーでは、D3DFORMAT を使用できますも\_OP\_変換\_TO\_ARGB と D3DFORMAT\_MEMBEROFGROUP\_ARGB 色変換をソースとターゲットのサーフェスの間で実行できないかどうかを示すフラグ。 D3DFORMAT を持つターゲット サーフェスは、\_MEMBEROFGROUP\_ARGB フラグが設定を示す D3DFORMAT を持つ任意のソース画面から色の書式を変換できることを示します\_OP\_変換\_TO\_ARGB フラグを設定します。
+ドライバーがベンダーから提供されたコードまたは D3DFORMAT 列挙型のコードを使用して、 **Ddfourcc 形式の dwfourcc**メンバーを設定し、surface の形式を割り当てる場合、ドライバーは D3DFORMAT\_OP\_使用して\_をに変換することもでき @no__t(4_ ARGB および D3DFORMAT\_MEMBEROFGROUP\_、ソースとターゲットの両方のサーフェス間でカラー変換を実行できるかどうかを示すための ARGB フラグです。 つまり、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグが設定されているターゲットサーフェイスは、D3DFORMAT\_\_OP を持つ任意のソースサーフェイスから、\_を\_ARGB フラグセットに変換するために、その色の形式を変換できることを示します。
 
-ドライバーでは、D3DFORMAT を指定できますのみ\_MEMBEROFGROUP\_ターゲット画面形式の場合、少なくとも 5 ビットのカラー チャネルあたりの ARGB フラグ。 D3DFMT つまり\_設定されている A1R5G5B5 形式、 **dwFourCC** DDPIXELFORMAT のメンバーは有効です。 ただし、D3DFMT\_A4R4G4B4 形式が無効です。 D3DFORMAT を指定するときに、ドライバーは特定のソース画面形式に制限も\_OP\_変換\_TO\_ARGB フラグ。 ソースの形式は、D3DFORMAT に対して有効な任意の形式を指定できます\_MEMBEROFGROUP\_ARGB フラグまたは*FOURCC*サーフェスの形式。
+ドライバーで指定できるのは、チャネルごとに少なくとも5ビットの色情報が含まれているターゲットサーフェス形式に対して、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグのみです。 つまり、DDピクセル形式の**Dwfourcc**メンバーで設定されている D3DFMT\_A1R5G5B5 形式が有効です。 ただし、D3DFMT\_A4R4G4B4 形式は無効です。 また、D3DFORMAT\_OP\_指定すると、ドライバーは特定のソースサーフェイス形式に制限され、\_を\_ARGB フラグに変換できます。 ソース形式は、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグまたは*FOURCC*の表面形式に対して有効な任意の形式にすることができます。
 
-反 D3DFORMAT\_OP\_変換\_TO\_ARGB と D3DFORMAT\_MEMBEROFGROUP\_ARGB ARGB 形式を示すため、ランタイムは、サーフェスを指定するドライバーもことができます。XRGB 形式 (たとえば、D3DFMT\_X1R5G5B5)。 ドライバーが D3DFORMAT を指定する場合\_MEMBEROFGROUP\_ARGB または D3DFORMAT\_OP\_変換\_TO\_ARGB 形式が無効です、ランタイムでは、読み込みを Direct3D HAL を禁止します。
+D3DFORMAT\_OP\_\_を\_ARGB および D3DFORMAT\_MEMBEROFGROUP に変換することはできますが、argb 形式が使用されていることに注意してください。このランタイムでは、XRGB 形式のサーフェイスを指定することもできます (たとえば、、D3DFMT\_X1R5G5B5)。 ドライバーで D3DFORMAT\_MEMBEROFGROUP\_ARGB または D3DFORMAT\_OP\_指定した場合、\_を無効な形式で\_に変換すると、ランタイムによって Direct3D HAL が読み込まれなくなります。
 
  
 

@@ -1,18 +1,18 @@
 ---
 title: Hdpi.h マクロ
-description: マクロは Hdpi.h ヘッダーに含まれます。
+description: Hdpi .h ヘッダーに含まれるマクロ。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c3436cd937f900966a33c781d3455e05ebcdbd7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3181026688e74ab47a1fb479712b84fde16c99d3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360870"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824814"
 ---
 # <a name="hdpih-macros"></a>Hdpi.h マクロ
 
-Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれています。 このトピックでは、次のマクロをドキュメントします。
+Hdpi .h ヘッダーファイルには、いくつかのマクロが含まれています。 このトピックでは、次のマクロについて説明します。
 
 * [**HidP\_GetButtons**](#hidp_getbuttons)
 * [**HidP\_GetButtonsEx**](#hidp_getbuttonsex)
@@ -23,7 +23,7 @@ Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれて
 ##  <a name="hidp_getbuttons"></a>HidP\_GetButtons
 
 
-**HidP\_GetButtons**マクロのニーモニック エイリアスとは、 [ **HidP\_GetUsages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusages)ルーチン。
+**Hidp\_GetButtons**マクロは、 [**Hidp\_getbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_GetButtons(Rty, UPa, LCo, ULi, ULe, Ppd, Rep, RLe) \
@@ -33,7 +33,7 @@ Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれて
 ##  <a name="hidp_getbuttonsex"></a>HidP\_GetButtonsEx
 
 
-**HidP\_GetButtonsEx**マクロは、ニーモニックのエイリアス、 [ **HidP\_GetUsagesEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagesex)ルーチン。
+**Hidp\_GetButtonsEx**マクロは、 [**Hidp\_get使用性別**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_GetButtonsEx(Rty, LCo, BLi, ULe, Ppd, Rep, RLe)  \
@@ -44,7 +44,7 @@ Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれて
 ##  <a name="hidp_setbuttons"></a>HidP\_SetButtons
 
 
-**HidP\_SetButtons**マクロのニーモニック エイリアスとは、 [ **HidP\_SetUsages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusages)ルーチン。
+**Hidp\_SetButtons**マクロは、 [**Hidp\_setbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_SetButtons(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle) \
@@ -54,14 +54,14 @@ Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれて
 ##  <a name="hidp_unsetbuttons"></a>HidP\_UnsetButtons
 
 
-**HidP\_UnsetButtons**マクロのニーモニック エイリアスとは、 [ **HidP\_UnsetUsages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_unsetusages)ルーチン。
+**Hidp\_UnsetButtons**マクロは、 [**Hidp\_unsetbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_UnsetButtons(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle) \
         HidP_UnsetUsages(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle)
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -72,20 +72,20 @@ Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれて
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hidpi.h (include Hidpi.h)</td>
+<td>Hidpi. h (Hidpi を含む)</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>関連項目
 
-[**HidP\_GetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusages)
+[**HidP\_GetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)
 
-[**HidP\_GetUsagesEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagesex)
+[**HidP\_Getの性別**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)
 
-[**HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusages)
+[**HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)
 
-[**HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_unsetusages)
+[**HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)
 
 
 

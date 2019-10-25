@@ -1,58 +1,58 @@
 ---
 title: ユーザー モード ドライバーのログ記録
-description: ビデオ メモリのより実用的な内訳を取得するには、Windows Display Driver Model (WDDM) ドライバーはマイクロソフトの Direct3D リソースとビデオ メモリ割り振り間のリレーションシップを公開する必要があります。
+description: ビデオメモリの実用的な内訳を取得するには、Windows Display Driver Model (WDDM) ドライバーが Microsoft Direct3D リソースとビデオメモリ割り当ての関係を公開する必要があります。
 ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4ebe2158b0299a4d5a29937e0347bb0a9809ca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b12be227498c33ebbe103168480602fbba2fb397
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373589"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825409"
 ---
-# <a name="span-iddisplayuser-modedriverloggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>ユーザー モード ドライバーのログ記録
+# <a name="span-iddisplayuser-mode_driver_loggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>ユーザーモードドライバーのログ記録
 
 
-ビデオ メモリのより実用的な内訳を取得するには、Windows Display Driver Model (WDDM) ドライバーはマイクロソフトの Direct3D リソースとビデオ メモリ割り振り間のリレーションシップを公開する必要があります。 これは、その他のユーザー モード ドライバー (UMD) インターフェイスをログ記録の導入に伴い、Windows 8 以降が可能になります。 この情報を Event Tracing for Windows (ETW) トレースに追加するは、API の観点から、ビデオ メモリの割り当てを表示できます。
+ビデオメモリの実用的な内訳を取得するには、Windows Display Driver Model (WDDM) ドライバーが Microsoft Direct3D リソースとビデオメモリ割り当ての関係を公開する必要があります。 これは、Windows 8 以降では、追加のユーザーモードドライバー (UMD) ログインターフェイスの導入によって可能になりました。 この情報を Windows イベントトレーシング (ETW) トレースに追加すると、API の観点からビデオメモリの割り当てを確認することができます。
 
 |                                                                                   |                                  |
 |-----------------------------------------------------------------------------------|----------------------------------|
-| WDDM の最小バージョン                                                              | 1.2                              |
+| 最小 WDDM バージョン                                                              | 1.2                              |
 | Windows の最小バージョン                                                           | 8                                |
-| ドライバーの実装: 完全なグラフィックスとレンダリングのみ                               | 必須                        |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要件とテスト | **Device.Graphics¦UMDLogging** |
+| ドライバーの実装—完全なグラフィックスとレンダーのみ                               | Mandatory                        |
+| [必要条件](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)とテスト | **デバイスのグラフィックヲ UMDLogging** |
 
  
 
-開発者は、UMD ログ記録が現在内部断片化やサーフェスを迅速に破棄の影響などを表示する非常に困難なメモリのコストを明確にできます。 Microsoft は、お客様とパートナー様のパフォーマンスの問題の分析トレースを提供の向上に使用することできます。 具体的には、この機能が、メモリに関連するパフォーマンスの問題の調査に一般的なブロッキングのポイントを克服するために役立ちます。: アプリケーションは、大きすぎてのワーキング セットを使用して、API リソースを決定することはできませんが、または呼び出しは、問題を引き起こしています。
+開発者にとって、UMD ログを使用すると、内部的な断片化、またはサーフェイスを迅速に破棄した場合の影響など、現在見にくいメモリのコストを明確にすることができます。 これにより、Microsoft は、パフォーマンスの問題を分析するためのトレースを提供しているお客様やパートナーとの連携を向上させることができます。 特に、この機能は、メモリ関連のパフォーマンスの問題を調査する際に、一般的なブロックポイントを克服するのに役立ちます。アプリケーションではワーキングセットが大きすぎますが、この問題の原因となっている API リソースや呼び出しを特定することはできません。
 
-ドライバーは、UMD ETW インターフェイスを実装する Direct3D リソースとビデオ メモリ割り振り間のリレーションシップを公開する必要があります。 ドライバーは、だけでなく、ログ記録イベントのリソースと任意の時点の割り当てのすべての既存のマッピングを報告できる必要があります。
+このドライバーは、UMD ETW インターフェイスを実装することによって、Direct3D リソースとビデオメモリ割り当ての間の関係を公開する必要があります。 ドライバーは、ログ記録イベントに加えて、リソースと割り当ての間の既存のすべてのマッピングを任意の時点で報告できる必要があります。
 
-## <a name="span-idumddriverallocationloggingddispanspan-idumddriverallocationloggingddispanspan-idumddriverallocationloggingddispanumd-driver-allocation-logging-ddi"></a><span id="UMD_driver_allocation_logging_DDI"></span><span id="umd_driver_allocation_logging_ddi"></span><span id="UMD_DRIVER_ALLOCATION_LOGGING_DDI"></span>ログ DDI UMD ドライバーの割り当て
-
-
-ユーザー モード ドライバーの割り当てのログ記録のデバイス ドライバー インターフェイス (DDI) は、API リソースは、Microsoft DirectX では、どのカーネル割り当てに関連付けられたかを示す、Event Tracing for Windows (ETW) のカーネル レベルのトレース機能の下のイベントを提供します。グラフィックスのカーネル サブシステム (Dxgkrnl.sys) です。
-
-DDI を使用するには、内部メモリの断片化またはサーフェスを迅速に破棄されるの影響を見つけ、パフォーマンスの問題を特定して、アプリのリソースまたは API を呼び出すと判断するための Microsoft のより詳細なトレース情報を提供するには原因となって、大きすぎてのワーキング セットのメモリを使用するようにします。
-
-これらの関数を使用して、ディスプレイ ドライバーの列挙、およびユーザー モードでイベントを記録する Umdprovider.h ヘッダーからの構造体。
-
--   [**UMDEtwLogMapAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogmapallocation)関数
--   [**UMDEtwLogUnmapAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogunmapallocation)関数
--   [**UMDEtwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwregister)関数
--   [**UMDEtwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwunregister)関数
--   [**UMDETW\_割り当て\_SEMANTIC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)列挙型
--   [**UMDETW\_割り当て\_使用状況**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ns-umdprovider-_umdetw_allocation_usage)構造体
-
-また、Umdetw.h ヘッダーを参照してください。
-
-## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
+## <a name="span-idumd_driver_allocation_logging_ddispanspan-idumd_driver_allocation_logging_ddispanspan-idumd_driver_allocation_logging_ddispanumd-driver-allocation-logging-ddi"></a><span id="UMD_driver_allocation_logging_DDI"></span><span id="umd_driver_allocation_logging_ddi"></span><span id="UMD_DRIVER_ALLOCATION_LOGGING_DDI"></span>UMD ドライバー割り当てログ DDI
 
 
-この機能を実装するときにハードウェア デバイスが満たす必要のある要件については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で**Device.Graphics... UMDLogging**します。
+ユーザーモードドライバー割り当てのログデバイスドライバーインターフェイス (DDI) には、Microsoft DirectX のどのカーネル割り当てに関連付けられている API リソースかを示す、Windows イベントトレーシング (ETW) カーネルレベルのトレース機能の下にあるイベントが用意されています。グラフィックスカーネルサブシステム (Dxgkrnl)。
 
-参照してください[WDDM 1.2 機能](wddm-v1-2-features.md)に Windows 8 で追加された機能の説明。
+この DDI を使用して、内部メモリの断片化を検出したり、データが急激に破棄された場合の影響を検出したりできます。また、パフォーマンスの問題を特定し、アプリのリソースまたは API の呼び出しを特定するのに役立つ Microsoft のトレース情報を提供します。では、メモリのワーキングセットが大きすぎて使用されています。
+
+次の関数、列挙、および Umdprovider .h ヘッダーの構造を使用して、ユーザーモードの表示ドライバーでイベントをログに記録します。
+
+-   [**Umdetwlogmapallocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwlogmapallocation)関数
+-   [**Umdetwlogunmapallocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwlogunmapallocation)関数
+-   [**Umdetwregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwregister)関数
+-   [**Umdetwunregister 解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwunregister)関数
+-   [**UMDETW\_ALLOCATION\_セマンティック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)列挙型
+-   [**UMDETW\_ALLOCATION\_使用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ns-umdprovider-_umdetw_allocation_usage)構造
+
+Umdetw ヘッダーも参照してください。
+
+## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定の要件
+
+
+ハードウェアデバイスがこの機能を実装するときに満たす必要がある要件の詳細については、デバイス上の関連する[whck ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)を参照してください **。**
+
+Windows 8 で追加された機能の確認については、「 [WDDM 1.2 の機能](wddm-v1-2-features.md)」を参照してください。
 
  
 

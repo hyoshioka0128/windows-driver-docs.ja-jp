@@ -3,16 +3,16 @@ title: インストール後のデバイス オブジェクト レジストリ �
 description: インストール後のデバイス オブジェクト レジストリ プロパティの設定
 ms.assetid: e9415497-f61e-49ba-9376-9255e51e72a8
 keywords:
-- デバイス オブジェクトの WDK カーネル、レジストリ
-- レジストリの WDK デバイス オブジェクト
+- デバイスオブジェクト WDK カーネル、レジストリ
+- レジストリ WDK デバイスオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b5b81f71b3e2a2827aad3581cb6e596a11bd5d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 352be178c17be54a1db4faa2d95417fcdc3c9ad0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838429"
 ---
 # <a name="setting-device-object-registry-properties-after-installation"></a>インストール後のデバイス オブジェクト レジストリ プロパティの設定
 
@@ -20,11 +20,11 @@ ms.locfileid: "67360279"
 
 
 
-ユーザー モードのプログラムで使用できる、[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))を取得またはドライバーのデバイス オブジェクトのプロパティのレジストリ設定を設定します。 インストール ソフトウェアをこれらの関数を使用する通常が、それらを任意のユーザー モードのプログラムで使用することができます。 (プログラムは管理者アクセス権を持つユーザーで実行する必要があります)。
+ユーザーモードプログラムでは、デバイスの[インストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))を使用して、ドライバーのデバイスオブジェクトのプロパティのレジストリ設定を取得または設定できます。 通常、これらの関数はインストールソフトウェアによって使用されますが、どのユーザーモードプログラムでも使用できます。 (プログラムは、管理者アクセス権を持つユーザーが実行する必要があります)。
 
-[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)と[ **SetupDiSetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)関数を取得およびレジストリ キーの設定各プロパティを指定します。 *プロパティ*パラメーターを取得または設定するプロパティを指定します。 *PropertyBuffer*プロパティ (プロパティの設定) 場合にコピー先のバッファー (する場合、プロパティの取得) またはソースへのポインターがバッファーします。
+[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)関数と[**SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)関数は、指定された各プロパティのレジストリキーを取得して設定します。 *Property*パラメーターは、取得または設定するプロパティを指定します。 *Propertybuffer*は、プロパティのコピー先のバッファー (プロパティを取得する場合) またはソースバッファー (プロパティを設定する場合) を指します。
 
-値の間の通信、*プロパティ*パラメーターと実際のプロパティを次に示します。
+*プロパティ*パラメーターの値と実際のプロパティの対応は次のとおりです。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ ms.locfileid: "67360279"
 </colgroup>
 <thead>
 <tr class="header">
-<th>場合は値<em>プロパティ</em>パラメーター</th>
-<th>デバイス オブジェクトのプロパティ</th>
+<th><em>Property</em>パラメーターの値</th>
+<th>デバイスオブジェクトのプロパティ</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +44,7 @@ ms.locfileid: "67360279"
 </tr>
 <tr class="even">
 <td><p>SPDRP_DEVTYPE</p></td>
-<td><p>デバイスの種類</p></td>
+<td><p>Device type (デバイスの種類)</p></td>
 </tr>
 <tr class="odd">
 <td><p>SPDRP_EXCLUSIVE</p></td>
@@ -52,7 +52,7 @@ ms.locfileid: "67360279"
 </tr>
 <tr class="even">
 <td><p>SPDRP_SECURITY</p></td>
-<td><p>セキュリティ記述子として、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_security_descriptor" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_security_descriptor)"> <strong>SECURITY_DESCRIPTOR</strong> </a>構造体</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor)"><strong>SECURITY_DESCRIPTOR</strong></a>構造体としてのセキュリティ記述子</p></td>
 </tr>
 <tr class="odd">
 <td><p>SPDRP_SECURITY_SDS</p></td>
@@ -63,11 +63,11 @@ ms.locfileid: "67360279"
 
  
 
-取得またはセキュリティ記述子を設定する 2 つの方法は提供されることに注意してください。 SPDRP を指定する\_セキュリティの値として、セキュリティ記述子を扱う、**セキュリティ\_記述子**構造体、または SPDRP\_セキュリティ\_SDS、セキュリティを処理するにはSDDL 文字列としての記述子。 SDDL 文字列の詳細については、次を参照してください。[デバイス オブジェクトの SDDL](sddl-for-device-objects.md)します。
+セキュリティ記述子を取得または設定するには、2つの異なる方法が用意されていることに注意してください。 セキュリティ記述子を SDDL 文字列として扱うには、SPDRP\_セキュリティ値を指定してセキュリティ記述子をセキュリティ **\_記述子**構造体として扱うか、spdrp\_SECURITY\_SDS として扱うことができます。 SDDL 文字列の詳細については、「[デバイスオブジェクトの sddl](sddl-for-device-objects.md)」を参照してください。
 
-Windows XP と以降のオペレーティング システムでは、プログラムも取得し、デバイス セットアップ クラスのプロパティ値を設定できます。 使用して、 [ **SetupDiGetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)と[ **SetupDiSetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya)関数、プロパティを取得および設定デバイス セットアップ クラスの値。
+Windows XP 以降のオペレーティングシステムでは、プログラムはデバイスセットアップクラスのプロパティ値を取得して設定することもできます。 Device setup クラスのプロパティ値を取得および設定するには、 [**Setupdigetclassregistryproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)関数と[**setupdigetclassregistryproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya)関数を使用します。
 
-使用しての詳細については、 **SetupDi * Xxx*** 関数を参照してください[デバイス インストールの機能を使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)します。
+**Setupdi * Xxx*** 関数の使用方法の詳細については、「[デバイスインストール機能の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)」を参照してください。
 
  
 

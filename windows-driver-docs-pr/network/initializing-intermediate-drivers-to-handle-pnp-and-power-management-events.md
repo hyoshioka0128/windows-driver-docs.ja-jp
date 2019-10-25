@@ -1,58 +1,58 @@
 ---
-title: 中間ドライバーの PnP や電源管理イベントの処理
+title: 中間ドライバーでの PnP および電源管理イベントの処理
 description: PnP および電源管理イベントを処理するための中間ドライバーの初期化
 ms.assetid: 7c9f10f1-1094-4b43-990b-fc3b3fee5ed1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 688ca0538582b0acaf1a413850d02d90bf021010
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d60ef6b907985ddd73028cebd26973e33b51bb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381271"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824444"
 ---
 # <a name="initializing-intermediate-drivers-to-handle-pnp-and-power-management-events"></a>PnP および電源管理イベントを処理するための中間ドライバーの初期化
 
 
-プラグ アンド プレイ (PnP) および電源管理イベントを処理するには、NDIS 中間ドライバは、次の操作を行う必要があります。
+プラグアンドプレイ (PnP) と電源管理イベントを処理するために、NDIS 中間ドライバーは次の操作を行う必要があります。
 
--   NDIS が、中間のドライバーを呼び出すときに[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数の場合、 *BindParameters*パラメーターが指す、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)基になるミニポート アダプターの機能を含む構造体。 電源管理機能は、次のメンバーのいずれかで報告されます。
+-   NDIS が中間ドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出すと、 *bindparameters*パラメーターは、基になるミニポートの機能を含む[**ndis\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造を指します。アダプター. 電源管理機能は、次のいずれかのメンバーで報告されます。
 
-    -   **デバイス**
+    -   **PowerManagementCapabilities**
 
-        このメンバーには、NDIS 内での電源管理機能が含まれていますの NDIS 6.0 および 6.1 の NDIS ドライバーを中間、\_PNP\_機能の構造体。 この構造体の詳細については、次を参照してください。 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)します。
+        NDIS 6.0 および NDIS 6.1 中間ドライバーの場合、このメンバーには、NDIS\_PNP\_機能の構造内の電源管理機能が含まれます。 この構造の詳細については、「 [OID\_PNP\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)」を参照してください。
 
-        **注**の NDIS 6.20 が動作し、後で中間ドライバー、**デバイス**に設定されているメンバー **NULL** に電源管理機能が報告される**PowerManagementCapabilitiesEx**メンバー。
+        **メモ** NDIS 6.20 以降の中間ドライバーでは、 **PowerManagementCapabilities**メンバーが**NULL**に設定され、電源管理機能が**PowerManagementCapabilitiesEx**メンバーに報告されます。
 
 
 
     -   **PowerManagementCapabilitiesEx**
 
-        NDIS 6.20 が動作と中間ドライバーを後で、このメンバーには内での電源管理機能が含まれています、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。
+        NDIS 6.20 以降の中間ドライバーの場合、このメンバーには、 [**ndis\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造内の電源管理機能が含まれます。
 
-        **注**NDIS 6.0 の NDIS 6.1 中級レベルのドライバー、 **PowerManagementCapabilitiesEx**に設定されているメンバー **NULL** に電源管理機能が報告される**デバイス**メンバー。
-
-
-
-
-**注**基になるミニポート アダプターが電源管理のイベントをサポートしていない場合、**デバイス**と**PowerManagementCapabilitiesEx** にメンバーが設定されます**NULL**します。
+        **メモ** NDIS 6.0 および NDIS 6.1 中間ドライバーの場合、 **PowerManagementCapabilitiesEx**メンバーは**NULL**に設定され、電源管理機能は**PowerManagementCapabilities**メンバーに報告されます。
 
 
 
 
--   NDIS を呼び出すと[MiniportInitializeEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS 中間ドライバーでサポートされている各仮想ミニポートのドライバーが呼び出すことによって、電源管理機能を報告[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)次のようにします。
+**メモ** 基になるミニポートアダプターで電源管理イベントがサポートされていない場合、 **PowerManagementCapabilities**メンバーと**PowerManagementCapabilitiesEx**メンバーは**NULL**に設定されます。
 
-    1.  いずれかで報告される電源管理機能、NDIS 中間ドライバのバージョンに応じて、**デバイス**(NDIS 6.0 および 6.1 の NDIS 中間ドライバ) のメンバーまたは**PowerManagementCapabilitiesEx** (NDIS 6.20 が動作を後で中間ドライバー) のメンバー [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)します。 どちらの場合、**デバイス**または**PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体は、 **NULL**、中間のドライバーは、次を実行する必要があります。
 
-        -   元の値を保存、 **MinMagicPacketWakeUp**、 **MinPatternWakeUp**、および**MinLinkChangeWakeUp**のメンバー、 **デバイス**(NDIS 6.0 および 6.1 の NDIS) または**PowerManagementCapabilitiesEx**(NDIS 6.20 およびそれ以降) のメンバー。
 
-        -   電源管理機能を無効に設定して、 **MinMagicPacketWakeUp**、 **MinPatternWakeUp**、および**MinLinkChangeWakeUp**メンバー **NdisDeviceStateUnspecified**します。
 
-        -   変更後のアドレスを渡す[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)として構造体、 *MiniportAttributes*への呼び出しでパラメーター [ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)します。
+-   Ndis が NDIS 中間ドライバーでサポートされている各仮想ミニポートに対して[MiniportInitializeEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)を呼び出すと、ドライバーは次の方法で[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出して電源管理機能を報告します。
 
-    2.  中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 ドライバーとしてこの構造体のアドレスを渡す必要があります、 *MiniportAttributes*への呼び出しでパラメーター [ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)します。
+    1.  NDIS 中間ドライバーのバージョンに応じて、電源管理機能は**PowerManagementCapabilities**メンバー (ndis 6.0 および ndis 6.1 中間ドライバーの場合) または**PowerManagementCapabilitiesEx**で報告されます。[**ndis\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)のメンバー (ndis 6.20 以降の中間ドライバー用)。 [**NDIS\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体の**いずれかの**メンバーが**NULL**でない場合、中間**ドライバーは次**の操作を行う必要があります。
 
-    NDIS 中間ドライバの初期化要件の詳細については、次を参照してください。[初期化仮想ミニポート](initializing-virtual-miniports.md)します。
+        -   **PowerManagementCapabilities**の**MinMagicPacketWakeUp**、 **Minpattern ウェイクアップ**、および**minlinkchangeウェイクアップ**のメンバーの元の値を保存します (Ndis 6.0 と ndis 6.1) または**PowerManagementCapabilitiesEx**(ndis)6.20 以降) のメンバー。
+
+        -   **MinMagicPacketWakeUp**、 **minpattern ウェイクアップ**、および**Minlinkchangeウェイクアップ**メンバーを**NdisDeviceStateUnspecified**に設定して、電源管理機能を無効にします。
+
+        -   [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)への呼び出しで、変更した[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体のアドレスを*miniportattributes*パラメーターとして渡します。
+
+    2.  中間ドライバーでは、ndis\_ミニポート\_アダプターの**Attributeflags**メンバーの\_SUSPEND フラグに\_停止\_\_、NDIS\_ミニポート\_属性を設定する必要があり[ **\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 ドライバーは、この構造体のアドレスを[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)への呼び出しの*miniportattributes*パラメーターとして渡す必要があります。
+
+    NDIS 中間ドライバーの初期化要件の詳細については、「[仮想ミニポートの初期化](initializing-virtual-miniports.md)」を参照してください。
 
 
 

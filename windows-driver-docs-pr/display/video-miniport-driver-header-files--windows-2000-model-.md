@@ -3,16 +3,16 @@ title: ビデオ ミニポート ドライバーのヘッダー ファイル (Wi
 description: ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 ms.assetid: 7ce0df41-ce1e-4d76-b7e8-6d0a3576a58d
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000 では、ヘッダー ファイル
-- ヘッダー ファイル WDK のビデオのミニポート
+- ビデオミニポートドライバー WDK Windows 2000、ヘッダーファイル
+- ヘッダーファイル WDK ビデオミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bee47274052bf2578c58c7f7ccfcae265916e802
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16154fde1ed109735040463c5c7cef216e7a3cce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376126"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825290"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 
@@ -20,7 +20,7 @@ ms.locfileid: "67376126"
 ## <span id="ddk_video_miniport_driver_header_files_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_HEADER_FILES_WINDOWS_2000_MODEL__GG"></span>
 
 
-Windows 2000 のディスプレイ ドライバー モデル内のビデオのミニポート ドライバーでは、次のヘッダー ファイルを含めます。
+Windows 2000 display driver モデルのビデオミニポートドライバーには、次のヘッダーファイルが含まれています。
 
 <table>
 <colgroup>
@@ -30,44 +30,44 @@ Windows 2000 のディスプレイ ドライバー モデル内のビデオの�
 <thead>
 <tr class="header">
 <th align="left">ファイル名</th>
-<th align="left">目次</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><em>dderror.h</em></p></td>
-<td align="left"><p>ミニポート ドライバーの対応するカーネル モードにも返されますが、ビデオ ポート ドライバーに戻るミニポート ドライバーがドライバーを表示する Win32 状態定数が含まれています。</p></td>
+<td align="left"><p><em>dderror. h</em></p></td>
+<td align="left"><p>ミニポートドライバーがビデオポートドライバーに返す Win32 状態定数を格納します。これは、対応するカーネルモード表示ドライバーにも返されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>devioctl.h</em></p></td>
-<td align="left"><p>マクロと I/O 制御コードの定義に使用される定数が含まれています。</p></td>
+<td align="left"><p><em>devioctl</em></p></td>
+<td align="left"><p>I/o 制御コードを定義するために使用されるマクロと定数が含まれています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>miniport.h</em></p></td>
-<td align="left"><p>基本的な型、定数、およびビデオの構造が含まれています (と SCSI) のミニポート ドライバー。</p></td>
+<td align="left"><p><em>ミニポート .h</em></p></td>
+<td align="left"><p>ビデオ (および SCSI) ミニポートドライバーの基本型、定数、および構造体が含まれています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>ntddvdeo.h</em></p></td>
-<td align="left"><p>システム定義の I/O 制御コード (Ioctl) を格納およびビデオ要求パケットで送信される対応する構造体 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>VRPs</em></a>) ビデオのミニポート ドライバー。</p></td>
+<td align="left"><p><em>ntddvdeo</em></p></td>
+<td align="left"><p>ビデオミニポートドライバーにビデオ要求パケット (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>Vrps</em></a>) で送信されるシステム定義の i/o 制御コード (ioctl) とそれに対応する構造体を含みます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>tvout.h</em></p></td>
-<td align="left"><p>含まれています、 <a href="https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)"> <strong>VIDEOPARAMETERS</strong> </a>テレビ コネクタとコピー保護のサポートとこの構造体で使用される定数を実装するために使用される構造体。</p></td>
+<td align="left"><p><em>tvout</em></p></td>
+<td align="left"><p>テレビコネクタおよびコピー防止サポートと、この構造体で使用される定数を実装するために使用される<a href="https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)"><strong>VIDEOPARAMETERS</strong></a>構造体が含まれています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>video.h</em></p></td>
-<td align="left"><p>含まれています、<strong>ビデオ ポート</strong><em>Xxx</em>と<em>SvgaHwIoPortXxx</em>ビデオ ポートにビデオに固有の構造体の宣言、機能など、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)"> <strong>VIDEO_REQUEST_PACKET</strong></a>、および<em>HwVidXxx</em>ビデオのミニポート関数のプロトタイプ。</p></td>
+<td align="left"><p><em>ビデオ. h</em></p></td>
+<td align="left"><p><strong>VideoPort</strong><em>Xxx</em>および<em>Svガス hwioportxxx</em>ビデオポート関数の宣言、ビデオ固有の構造 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)"><strong>VIDEO_REQUEST_PACKET</strong></a>など)、および<em>HwVidXxx</em>ビデオミニポート関数プロトタイプが含まれています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>videoagp.h</em></p></td>
-<td align="left"><p>AGP に固有の構造体を含む<em>AgpXxx</em> 、ミニポート ドライバー関数プロトタイプと<strong>ビデオ ポート</strong><em>Xxx</em> AGP サポートを実装するために必要な宣言を関数ビデオのミニポート ドライバー。</p></td>
+<td align="left"><p><em>videoagp</em></p></td>
+<td align="left"><p>ビデオミニポートドライバーで AGP サポートを実装するために必要な、AGP 固有の構造体、 <em>Agpxxx</em>ミニポートドライバー関数プロトタイプ、および<strong>VideoPort</strong><em>Xxx</em>関数の宣言が含まれています。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらのヘッダーは、Windows Driver Kit (WDK) に付属しています。 詳細については、関数、構造体、システム定義されている I/O 制御コード、およびこれらのヘッダー ファイル内の定数を参照してください。 [GDI 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+これらのヘッダーには、Windows Driver Kit (WDK) が付属しています。 これらのヘッダーファイルの関数、構造体、システム定義 i/o 制御コード、および定数の詳細については、「 [GDI 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
  
 

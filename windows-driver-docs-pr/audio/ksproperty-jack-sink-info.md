@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ジャック\_シンク\_情報
-description: KSPROPERTY\_ジャック\_シンク\_INFO プロパティは、フィルターのハンドルを使用してアクセスされる pin-wise プロパティとして実装されます。
+title: KSK プロパティ\_ジャック\_シンク\_情報
+description: KSK プロパティ\_ジャック\_シンク\_INFO プロパティは、フィルターハンドルを使用してアクセスされるピン方向のプロパティとして実装されます。
 ms.assetid: a51c03fa-91e4-49f2-ad76-35133c3b09ba
 keywords:
-- KSPROPERTY_JACK_SINK_INFO オーディオ デバイス
+- KSPROPERTY_JACK_SINK_INFO オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2953da5c40634cca031f08691c337a44de140b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 855d5c862dd43a3cca61a8a5365b9b991b35ad76
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354399"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832725"
 ---
-# <a name="kspropertyjacksinkinfo"></a>KSPROPERTY\_ジャック\_シンク\_情報
+# <a name="ksproperty_jack_sink_info"></a>KSK プロパティ\_ジャック\_シンク\_情報
 
 
-KSPROPERTY\_ジャック\_シンク\_INFO プロパティは、フィルターのハンドルを使用してアクセスされる pin-wise プロパティとして実装されます。
+KSK プロパティ\_ジャック\_シンク\_INFO プロパティは、フィルターハンドルを使用してアクセスされるピン方向のプロパティとして実装されます。
 
-Windows 7 および以降のオペレーティング システムでは、このプロパティは 1 つまたは複数の物理ジャックに関連付けられているブリッジ暗証番号 (pin) をサポートできます。 KSPROPERTY\_ジャック\_シンク\_説明を取得する情報が使用され、ジャックの機能は、表示関連のデジタル オーディオ デバイス、HDMI デバイスまたはディスプレイ ポートなどのシンクします。
+Windows 7 以降のオペレーティングシステムでは、このプロパティは、1つまたは複数の物理ジャックに関連付けられている任意のブリッジピンでサポートできます。 KSK プロパティ\_ジャック\_シンク\_情報は、ディスプレイ関連のデジタルオーディオデバイス (HDMI デバイス、ディスプレイポートなど) のジャックシンクの説明と機能を取得するために使用されます。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ Windows 7 および以降のオペレーティング システムでは、この
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -49,24 +49,24 @@ Windows 7 および以降のオペレーティング システムでは、この
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>(フィルターのハンドル) を使用してファクトリをピン留めします。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksjack_sink_information" data-raw-source="[&lt;strong&gt;KSJACK_SINK_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksjack_sink_information)"><strong>KSJACK_SINK_INFORMATION</strong></a></p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>Pin ファクトリ (フィルターハンドル経由)</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksjack_sink_information" data-raw-source="[&lt;strong&gt;KSJACK_SINK_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksjack_sink_information)"><strong>KSJACK_SINK_INFORMATION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (インスタンス データ) は、KSJACK\_シンク\_情報構造体。
+プロパティ値 (インスタンスデータ) は、\_シンク\_詳細構造体である KSK ジャックです。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_ジャック\_シンク\_INFO プロパティ要求情報が返されます、 **KSJACK\_シンク\_情報**構造体。
+KSK プロパティ\_ジャック\_シンク\_INFO プロパティ要求では、 **Ksk ジャック\_シンク\_情報**構造体に情報が返されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -90,10 +90,10 @@ KSPROPERTY\_ジャック\_シンク\_INFO プロパティ要求情報が返さ�
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSJACK\_シンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksjack_sink_information)
+[**KSK ジャック\_シンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksjack_sink_information)
 
  
 

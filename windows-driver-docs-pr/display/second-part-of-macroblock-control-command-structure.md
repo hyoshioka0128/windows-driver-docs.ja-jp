@@ -3,15 +3,15 @@ title: マクロブロック制御コマンド構造の 2 番目の部分
 description: マクロブロック制御コマンド構造の 2 番目の部分
 ms.assetid: 94ef61d1-cd7d-4e73-8be8-01f7d23bb91d
 keywords:
-- マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
+- マクロは WDK DirectX VA、汎用コマンド構造をブロックします
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23ac65f56b465b1a3fbacbc76738209780c6bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1bbf2baba7c230556dbd7927ff40460af4f439e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365591"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829510"
 ---
 # <a name="second-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の 2 番目の部分
 
@@ -19,27 +19,27 @@ ms.locfileid: "67365591"
 ## <span id="ddk_second_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_SECOND_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-ジェネリックのマクロ ブロック コントロール コマンド構造体の 2 番目の部分には、画像をデコード処理の構成に応じて、3 つのバリエーションが含まれています。
+汎用マクロブロックコントロールの2番目の部分には、画像デコードプロセスの構成に応じて、3つのバリエーションが含まれています。
 
-1.  場合*HostResidDiff* (11 ビット、 **wMBtype**メンバー) が 1 に等しいのマクロ ブロック コントロールのコマンドは、次の要素が**wPC\_Overflow**。 **WPC\_オーバーフロー**メンバーを使用する場合はマクロ ブロック使用オーバーフロー残存違いデータのブロックを指定します。 **wPC\_Overflow** 0 に等しい DWORD が続きます。
+1.  *Hostresiddiff* ( **wmbtype**メンバーのビット 11) が1に等しい場合、マクロブロックコントロールコマンドの次の要素は**wpc\_Overflow**になります。 **Wpc\_overflow**メンバーが使用されている場合は、マクロブロックでオーバーフロー残差データを使用するかどうかを指定します。 **Wpc\_Overflow**の後に、0に等しい DWORD が続きます。
 
-2.  場合*HostResidDiff* (11 ビット、 **wMBtype**メンバー) が 0 に等しいと**bChromaFormat**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)が 1 に等しいのマクロ ブロック コントロールのコマンドは、次の要素が**bNumCoef、** バイトの 6 要素配列。 **BNumCoef**メンバーは、マクロ ブロックの各ブロックの違いの残存データ バッファーの係数の数を示します。
+2.  *Hostresiddiff* ( **wmbtype**メンバーのビット 11) がゼロで、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**bChromaFormat**メンバーが1に等しい場合、マクロブロックコントロールコマンドの次の要素は**bnumcoef,** aバイトの6要素配列。 **Bnumcoef**メンバーは、マクロブロックの各ブロックの残存差データバッファー内の係数の数を示します。
 
-3.  場合*HostResidDiff* (11 ビット、 **wMBtype**要素) が 0 に等しいと**bChromaFormat** DXVA のメンバー\_PictureParameters が 1 と等しく、マクロ ブロックの制御コマンドの次の要素が**wTotalNumCoef**します。 0 に等しい DWORD が続きます。
+3.  *Hostresiddiff* ( **wmbtype**要素のビット 11) が0と等しく、DXVA\_ピクチャパラメーターの**bChromaFormat**メンバーが1ではない場合、マクロブロックコントロールコマンドの次の要素は**wtotalnumcoef**になります。 この後に、0に等しい DWORD が続きます。
 
-### <a name="span-idwpcoverflowspanspan-idwpcoverflowspanspan-idwpcoverflowspanwpcoverflow"></a><span id="wPC_Overflow"></span><span id="wpc_overflow"></span><span id="WPC_OVERFLOW"></span>wPC\_オーバーフロー
+### <a name="span-idwpc_overflowspanspan-idwpc_overflowspanspan-idwpc_overflowspanwpc_overflow"></a><span id="wPC_Overflow"></span><span id="wpc_overflow"></span><span id="WPC_OVERFLOW"></span>wPC\_オーバーフロー
 
-**WPC\_オーバーフロー**構造体のメンバーをマクロ ブロック使用オーバーフロー残存違いデータのブロックを指定します。
+**Wpc\_オーバーフロー**構造体のメンバーは、マクロブロックでオーバーフロー残差データを使用するブロックを指定します。
 
-残存の違いのホスト ベースのデコードを使用する場合 (と*HostResidDiff*は 1 に等しい) で、 **bPicOverflowBlocks**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)を 1 に等しいと*IntraMacroblock* (8-8 オーバーフロー メソッド) を 0 に等しい**wPC\_オーバーフロー**がパターンを含むコードと同じ方法で指定された、オーバーフロー要素の**wPatternCode**します。 コード化されたオーバーフロー要素のデータ (マイナス 11 のビットがそれらのブロック*は*を 1 に等しい) が同じインデックス作成の順序でバッファーをコーディング残余で見つかった (増加*は*)。
+ホストベースの残余差のデコードを使用する場合 ( *Hostresiddiff*が 1)、 [ **\_DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**bPicOverflowBlocks**メンバーが1に等しく、 *IntraMacroblock*が0に等しい (8-8 overflow)メソッド)、 **Wpc\_overflow**には、 **wpc コード**と同じ方法で指定されたオーバーフローブロックのパターンコードが含まれています。 コード化されたオーバーフローブロック (ビット11から*i*が1に等しいブロック) のデータは、同じインデックス作成順序 (増加する*i*) の残りのコードバッファーにあります。
 
 ### <a name="span-idbnumcoefspanspan-idbnumcoefspanspan-idbnumcoefspanbnumcoef"></a><span id="bNumCoef"></span><span id="bnumcoef"></span><span id="BNUMCOEF"></span>bNumCoef
 
-**BNumCoef**構造体のメンバーが 6 つの要素の配列。 *は*番目の要素の**bNumCoef**配列には、ブロックごとに残存違いデータ バッファー内の係数の数が含まれています*は*、マクロ ブロックのどこ。*は*は指定の mpeg-2 ビデオ図 6 ~ 10、6 ~ 11、および 6 ~ 12 (Cb、Cr の後に続く Y のラスター スキャン order) としてマクロ ブロック内のブロックのインデックスです。 **bNumCoef**される場合にのみ*HostResidDiff*ゼロ、 **bChromaFormat**のメンバー [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)は 1 (4:2:0)。 4 で使用する場合: 2:2 または 4:4:4 つの形式、サイズが増加マクロ ブロックの一般的なコントロールのコマンドの過去のブロックごとに係数の数を決定するため、重要なメモリの配置境界、EOB 変換係数構造内でのみです非-4:2:0 場合。 目的は、 **bNumCoef**をブロックごとに存在する係数の数で表した、残存違いデータ バッファーに存在するデータの量を示すことです。 ときに、 **bConfig4GroupedCoefs**のメンバー [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)は 1 です**bNumCoef**いずれかを含めることができます。ブロックの係数の実際の数が送信または 4 の倍数である値が最大に丸められます。 これらの係数のデータは、同じ順序で残存違いバッファーに検出されます。
+**Bnumcoef**構造体のメンバーは、6つの要素の配列です。 **Bnumcoef**配列の*i*番目の要素には、マクロブロックの各ブロック*i*の残余差データバッファー内の係数の数が含まれます。ここで、 *i*は、MPEG-2 で指定されたマクロブロック内のブロックのインデックスです。ビデオでは、6-10、6-11、6-12 (Y の場合はラスタースキャンの順序、Cb の後には Cr) が使用されます。 **Bnumcoef**は、 *Hostresiddiff*が0で、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**bChromaFormat**メンバーが 1 (4:2:0) の場合にのみ使用されます。 4:2:2 または4:4:4 形式で使用されている場合、一般的なマクロブロックの制御コマンドのサイズが重要なメモリアラインメントの境界を越えて増加するため、で各ブロックの係数の数を決定するために変換係数構造内の EOB のみが使用されます。4:2:0 以外のケース。 **Bnumcoef**の目的は、残存差データバッファー内の各ブロックに存在するデータの量を示します。これは、存在する係数の数として表されます。 **BConfig4GroupedCoefs**の[ **\_DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)メンバーが1に設定されている場合、 **bnumcoef**には、ブロックに対して実際に送信された係数の数または4の倍数として切り上げられた値のいずれかが含まれている可能性があります。 これらの係数のデータは、残余差のバッファーに同じ順序で格納されます。
 
 ### <a name="span-idwtotalnumcoefspanspan-idwtotalnumcoefspanspan-idwtotalnumcoefspanwtotalnumcoef"></a><span id="wTotalNumCoef"></span><span id="wtotalnumcoef"></span><span id="WTOTALNUMCOEF"></span>wTotalNumCoef
 
-**WTotalNumCoef**構造体のメンバーは、全体のマクロ ブロックの違いの残存データ バッファーの係数の合計数を示します。 このメンバーが使用される場合にのみ*HostResidDiff*ゼロ、 **bChromaFormat**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)は 1 (4:2:0) と等しくありません。
+**Wtotalnumcoef**構造体のメンバーは、マクロブロック全体の残存差データバッファー内の係数の合計数を示します。 このメンバーは、 *Hostresiddiff*が0で、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**bChromaFormat**メンバーが 1 (4:2:0) と等しくない場合にのみ使用されます。
 
  
 

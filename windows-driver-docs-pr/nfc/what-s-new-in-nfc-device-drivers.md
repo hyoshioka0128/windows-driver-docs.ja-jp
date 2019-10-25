@@ -1,6 +1,6 @@
 ---
 title: NFC デバイス ドライバーの新機能
-description: このトピックでは、新機能と Windows 10 の NFC デバイス ドライバーの機能強化をまとめたものです。
+description: このトピックでは、Windows 10 での NFC デバイスドライバーの新機能と機能強化について説明します。
 ms.assetid: 07E0E7F4-9D2B-423F-925C-D6923D8D9A4A
 keywords:
 - NFC
@@ -10,25 +10,25 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0423811cbb8ecf2bc871ad04cba894c8aab1b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 978f98b4bda778ba6aab4950f654ba243a61e1c8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380722"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829029"
 ---
-# <a name="whats-new-for-nfc-device-drivers-in-windows-10"></a>Windows 10 でデバイス ドライバーの NFC は新機能
+# <a name="whats-new-for-nfc-device-drivers-in-windows-10"></a>Windows 10 での NFC デバイスドライバーの新機能
 
 
-このトピックでは、新機能と Windows 10 の NFC デバイス ドライバーの機能強化をまとめたものです。
+このトピックでは、Windows 10 での NFC デバイスドライバーの新機能と機能強化について説明します。
 
-* NFC のデバイス ドライバー モデルではユニバーサル NFC デバイス ドライバー モデルを作成するデスクトップとモバイルの両方のデバイスの集中します。 ハードウェア パートナーは、すべての Windows デバイス プラットフォームで実行できる 1 つのドライバーを構築できます。
+* NFC デバイスドライバーモデルは、ユニバーサル NFC デバイスドライバーモデルを作成するために、デスクトップデバイスとモバイルデバイスの両方に収束されています。 ハードウェアパートナーは、すべての Windows デバイスプラットフォームで実行できる1つのドライバーを作成できるようになりました。
 
-* NFC クラス拡張 (CX) は、NFC のコント ローラー、要素のセキュリティで保護されたリモート RF エンドポイントと対話する Windows 定義されているデバイス ドライバー インターフェイスを実装します。
+* NFC クラス拡張 (CX) は、Windows で定義されているデバイスドライバーインターフェイスを実装して、NFC コントローラー、セキュリティで保護された要素、およびリモートの RF エンドポイントと対話します。
 
-* NFC の機内モードを管理するを処理する組み込みの NFC 無線マネージャーが追加されました。 (以前のバージョンの Windows で行われていた) には、NFC ドライバー IHV 提供の NFC 無線マネージャーをパッケージに含めないでいます。 Windows 10 の NFC 無線マネージャーと共にの IHV 提供の NFC 無線マネージャーをインストールすると、これらのソフトウェア コンポーネント間の競合が発生します。
+* NFC の機内モードの管理を行うために、インボックス NFC ラジオマネージャーが追加されました。 IHV が提供した NFC ラジオマネージャーを NFC ドライバーでパッケージ化しないでください (以前のバージョンの Windows で行ったように)。 Windows 10 NFC ラジオマネージャーと共に IHV が提供する NFC ラジオマネージャーをインストールすると、これらのソフトウェアコンポーネント間で競合が発生します。
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+ [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
  

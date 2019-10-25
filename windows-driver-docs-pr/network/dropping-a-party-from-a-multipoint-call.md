@@ -3,18 +3,18 @@ title: マルチポイント呼び出しからのパーティーの削除
 description: マルチポイント呼び出しからのパーティーの削除
 ms.assetid: db23e911-7c70-432e-992a-fdfdf8cb28ae
 keywords:
-- パーティ WDK いる CoNDIS
-- multipoint 呼び出し WDK いる CoNDIS
-- multipoint 呼び出しからパーティを削除しています
-- multipoint 呼び出しからパーティを削除します。
+- パーティ WDK
+- マルチポイント呼び出し WDK CoNDIS
+- multipoint 呼び出しからのパーティの削除
+- multipoint 呼び出しからのパーティの削除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7773aa396daf3a672822d508c6d8fd0387e22af6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6364fd1a2e55d0df092ccd1dfe66503c47197e7d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386549"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834821"
 ---
 # <a name="dropping-a-party-from-a-multipoint-call"></a>マルチポイント呼び出しからのパーティーの削除
 
@@ -22,29 +22,29 @@ ms.locfileid: "67386549"
 
 
 
-Multipoint の呼び出しのルートでは、その呼び出しから各パーティを削除する必要があります最終的には、接続指向のクライアント[ **NdisClDropParty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscldropparty)または[ **NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall).
+Multipoint 呼び出しのルートとして機能する接続指向クライアントは、最終的に[**NdisClDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscldropparty)または[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)を使用して、その呼び出しから各パーティを削除する必要があります。
 
-クライアントは、次の状況での呼び出しからパーティを削除します。
+クライアントは、次の状況で呼び出しからパーティを削除します。
 
--   Multipoint 呼び出しの下、終了処理を開始する前に**NdisClCloseCall**(を参照してください[Client-Initiated の要求の呼び出しを閉じます](client-initiated-request-to-close-a-call.md))、クライアントがへの連続呼び出しで最後のパーティがすべて削除する必要があります**NdisClDropParty**します。 クライアントの呼び出しからを削除する最後のパーティが指定**NdisClCloseCall**します。
+-   **NdisClCloseCall**を使用して multipoint 呼び出しの破棄を開始する前に (クライアントによって開始された[呼び出しを閉じる要求](client-initiated-request-to-close-a-call.md)を参照)、クライアントは、 **NdisClDropParty**を連続して呼び出して、最後のパーティ以外のすべてを削除する必要があります。 クライアントは、 **NdisClCloseCall**を使用して呼び出しから削除する最後のパーティを指定します。
 
--   Multipoint 呼び出しから削除するリモート側の要求に応答 (を参照してください[Multipoint 呼び出しからパーティを削除する受信要求](incoming-request-to-drop-a-party-from-a-multipoint-call.md))、クライアントからその[ **ProtocolClIncomingDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_drop_party)関数では、呼び出し**NdisClDropParty**します。
+-   リモートパーティの要求が multipoint 呼び出しから削除される (「受信要求」を参照して、 [Multipoint 呼び出しからパーティを削除](incoming-request-to-drop-a-party-from-a-multipoint-call.md)する) と、 [**ProtocolClIncomingDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_incoming_drop_party)関数からのクライアントが**NdisClDropParty**を呼び出します。
 
-クライアントの呼び出し**NdisClDropParty** NDIS を呼び出すと、 [ **ProtocolCmDropParty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_drop_party)コール マネージャーまたは同じ共有 MCM ドライバーの機能は*NdisVcHandle* multipoint VC にします。
+クライアントが**NdisClDropParty**を呼び出すと、NDIS は、同じ*NDISVCHANDLE*を multipoint VC と共有する call manager または Mcm ドライバーの[**protocolcmdropparty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_drop_party)関数を呼び出します。
 
-次の図は、multipoint 呼び出しからパーティを削除する要求マネージャーの呼び出しのクライアントを示します。
+次の図は、multipoint 呼び出しからのパーティの削除を要求する呼び出しマネージャーのクライアントを示しています。
 
-![multipoint 呼び出しからパーティを削除する要求のコール マネージャーのクライアントを示す図](images/cm-18.png)
+![multipoint 呼び出しからのパーティの削除を要求する呼び出しマネージャーのクライアントを示す図](images/cm-18.png)
 
-次の図は、multipoint 呼び出しからパーティを削除するように要求して、MCM ドライバーのクライアントを示しています。
+次の図は、multipoint 呼び出しからのパーティの削除を要求している MCM ドライバーのクライアントを示しています。
 
-![multipoint 呼び出しからパーティを削除するように要求して、mcm ドライバーのクライアントを示す図](images/fig1-18.png)
+![multipoint 呼び出しからのパーティの削除を要求している mcm ドライバーのクライアントを示す図](images/fig1-18.png)
 
-*ProtocolCmDropParty*は既存の multipoint 呼び出しからパーティを削除するネットワーク デバイスの制御と通信します。 NDIS を渡すことができます*ProtocolCmDropParty*データを格納するバッファーへのポインター (への呼び出しでクライアントに渡される**NdisClDropParty**)。 *ProtocolCmDropParty*接続が削除される前に、ネットワーク経由でこのようなデータを送信する必要があります。
+*Protocolcmdropparty*は、ネットワークコントロールデバイスと通信して、既存の multipoint 呼び出しからパーティを削除します。 NDIS は、( **NdisClDropParty**の呼び出しでクライアントに提供される) データを含むバッファーへのポインターを*Protocolcmdropparty*に渡すことができます。 *Protocolcmdropparty*は、接続が切断される前に、そのようなデータをネットワーク経由で送信する必要があります。
 
-*ProtocolCmDropParty*で同期的にまたはより可能性があります、非同期的に完了できる[ **NdisCmDropPartyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdroppartycomplete)の場合は、コール マネージャーまたは[ **NdisMCmDropPartyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdroppartycomplete)MCM、ドライバーの場合。
+*Protocolcmdropparty*は、mcm ドライバーの場合は、呼び出しマネージャーまたは[**NdisMCmDropPartyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdroppartycomplete)の場合、 [**NdisCmDropPartyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdroppartycomplete)を使用して同期的に (または可能性がある) 非同期的に完了できます。
 
-呼び出し**Ndis (M) CmDropPartyComplete**を呼び出すクライアントの NDIS と[ **ProtocolClDropPartyComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_drop_party_complete)関数。 クライアントが作成されると、it の multipoint VC 破棄処理中の場合*ProtocolClDropPartyComplete*呼び出すことができます**NdisClDropParty**いずれかで有効な*NdisPartyHandle*multipoint vc のアクティブなクライアントの残りのパーティのいずれかにします。 クライアントが渡すことによってそのパーティを削除する必要があります 1 つのパーティは、その multipoint VC 上に残っている場合のみその*NdisPartyHandle*に**NdisClCloseCall**(を参照してください[Client-Initiated の要求をの呼び出しを閉じます](client-initiated-request-to-close-a-call.md)).
+**Ndis (M) CmDropPartyComplete**の呼び出しにより、ndis はクライアントの[**protocolcldroppartycomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_drop_party_complete)関数を呼び出します。 クライアントが作成した multipoint VC を破棄する処理を実行している場合、 *Protocolcldroppartycomplete*は、クライアントのアクティブな multipoint vc の残りのパーティのいずれかに対して有効な*Ndispartyhandle*で**NdisClDropParty**を呼び出すことができます. Multipoint VC に存在するパーティが1つだけの場合、クライアントはその*Ndispartyhandle*を**NdisClCloseCall**に渡すことによって、そのパーティを削除する必要があります (「クライアントが開始した[呼び出しを閉じる要求](client-initiated-request-to-close-a-call.md)」を参照してください)。
 
  
 

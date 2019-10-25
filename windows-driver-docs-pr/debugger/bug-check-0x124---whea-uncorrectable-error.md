@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x124 WHEA_UNCORRECTABLE_ERROR
-description: WHEA_UNCORRECTABLE_ERROR のバグ チェックでは、0x00000124 の値を持ちます。 このバグ チェックでは、ハードウェアの致命的なエラーが発生したことを示します。
+title: バグチェック 0x124 WHEA_UNCORRECTABLE_ERROR
+description: WHEA_UNCORRECTABLE_ERROR のバグチェックの値は0x00000124 です。 このバグチェックは、致命的なハードウェアエラーが発生したことを示します。
 ms.assetid: b3b7c6dd-3891-4ccb-96d1-49e8a2de34c8
 keywords:
-- Bug Check 0x124 WHEA_UNCORRECTABLE_ERROR
+- バグチェック 0x124 WHEA_UNCORRECTABLE_ERROR
 - WHEA_UNCORRECTABLE_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7b16c3d1f8e98e20c79b8b9d11753bd7eb98e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d891e4291d171d477976d281a38e7f5001d3516c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520782"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837833"
 ---
-# <a name="bug-check-0x124-wheauncorrectableerror"></a>バグ チェック 0x124:WHEA\_修正不可能な\_エラー
+# <a name="bug-check-0x124-whea_uncorrectable_error"></a>バグチェック 0x124: WHEA\_修正不可能\_エラー
 
 
-WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値を持ちます。 このバグ チェックでは、ハードウェアの致命的なエラーが発生したことを示します。 このバグ チェックでは、Windows ハードウェア エラー アーキテクチャ (WHEA) によって提供されるエラー データを使用します。
+WHEA\_修正不可能な\_エラーのバグチェックの値は0x00000124 です。 このバグチェックは、致命的なハードウェアエラーが発生したことを示します。 このバグチェックでは、Windows ハードウェアエラーアーキテクチャ (WHEA) によって提供されるエラーデータを使用します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="wheauncorrectableerror-parameters"></a>WHEA\_修正不可能な\_エラー パラメーター
+## <a name="whea_uncorrectable_error-parameters"></a>WHEA\_修正不可能\_エラーパラメーター
 
 
 <table>
@@ -42,10 +42,10 @@ WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">エラーの原因</th>
 </tr>
 </thead>
@@ -53,45 +53,45 @@ WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値�
 <tr class="odd">
 <td align="left"><p>0x0</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
-<td align="left"><p>エラーが発生した MCA 銀行の MCi_STATUS MSR の上位 32 ビット。</p></td>
-<td align="left"><p>エラーが発生した MCA 銀行の MCi_STATUS MSR の下位 32 ビットです。</p></td>
-<td align="left"><p>マシン チェック例外が発生しました。</p>
-<p>これらのパラメーターの説明が、x64、プロセッサが基づいている場合に適用アーキテクチャ、または x86 MCA 機能が利用可能な (たとえば、Intel Pentium Pro、Pentium IV の場合、または Xeon) アーキテクチャ。</p></td>
+<td align="left"><p>エラーが発生した MCA bank の MCi_STATUS MSR の上位32ビット。</p></td>
+<td align="left"><p>エラーが発生した MCA bank の MCi_STATUS MSR の低32ビット。</p></td>
+<td align="left"><p>コンピューターチェックの例外が発生しました。</p>
+<p>これらのパラメーターの説明は、プロセッサが x64 アーキテクチャに基づいている場合、または MCA 機能を利用できる x86 アーキテクチャ (Intel Pentium Pro、Pentium IV、Xeon など) の場合に適用されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>修正済みのマシン チェック例外が発生しました。</p></td>
+<td align="left"><p>修正されたコンピューターチェックの例外が発生しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>修正済みのプラットフォームのエラーが発生しました。</p></td>
+<td align="left"><p>修正されたプラットフォームエラーが発生しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>マスク不可能割り込み (NMI) エラーが発生しました。</p></td>
+<td align="left"><p>Nonmaskable Interrupt (NMI) エラーが発生しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>PCI Express 修正不可能なエラーが発生しました。</p></td>
+<td align="left"><p>修正できない PCI Express エラーが発生しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>汎用ハードウェア エラーが発生しました。</p></td>
+<td align="left"><p>一般的なハードウェアエラーが発生しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6</p></td>
@@ -105,35 +105,35 @@ WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値�
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>起動エラーが発生しました。</p></td>
+<td align="left"><p>ブートエラーが発生しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>拡張性の高い一貫したインターフェイス (SCI) の一般的なエラーが発生しました。</p></td>
+<td align="left"><p>スケーラブルな一貫性のあるインターフェイス (SCI) の一般的なエラーが発生しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
-<td align="left"><p>長さをバイト単位で SAL ログ。</p></td>
-<td align="left"><p>SAL のログのアドレス。</p></td>
-<td align="left"><p>修正不可能な Itanium ベースのマシン チェック中止エラーが発生しました。</p></td>
+<td align="left"><p>SAL ログの長さ (バイト単位)。</p></td>
+<td align="left"><p>SAL ログのアドレス。</p></td>
+<td align="left"><p>修正できない Itanium ベースのマシンチェック中止エラーが発生しました。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xa</p></td>
+<td align="left"><p>0xA</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>修正済みの Itanium ベースのマシン チェック エラーが発生しました。</p></td>
+<td align="left"><p>修正された Itanium ベースのコンピューター確認エラーが発生しました。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xb</p></td>
+<td align="left"><p>0xB</p></td>
 <td align="left"><p>WHEA_ERROR_RECORD 構造体のアドレス。</p></td>
 <td align="left"><p>予約済み。</p></td>
 <td align="left"><p>予約済み。</p></td>
-<td align="left"><p>修正された Itanium プラットフォームのエラーが発生しました。</p></td>
+<td align="left"><p>修正された Itanium プラットフォームエラーが発生しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -143,30 +143,30 @@ WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値�
 <a name="cause"></a>原因
 -----
 
-このバグ チェックは通常、物理ハードウェア障害に関連します。 関連ヒート、欠陥のあるハードウェア、メモリまたは開始して失敗するかが失敗するプロセッサでもを指定できます。 過剰なクロックが有効になって場合、は、無効にすることをお試しください。 ファンなどの任意の冷却システムが機能していることを確認します。 システム メモリに欠陥がないことを確認するシステム診断を実行します。 ドライバーのこのバグ チェックで失敗するハードウェアが原因であることが勧め可能性は低く、します。
+このバグチェックは、通常、物理的なハードウェア障害に関連しています。 これには、ヒート関連、欠陥のあるハードウェア、メモリ、または障害または障害が発生し始めたプロセッサもあります。 オーバークロックが有効になっている場合は、無効にしてみてください。 ファンなどの冷却システムが機能していることを確認します。 システム診断を実行して、システムメモリに欠陥がないことを確認します。 このバグチェックでは、ドライバーによってハードウェアの障害が発生する可能性は低くなります。
 
-その他の一般的なバグ チェックがトラブルシューティング情報について、次を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
+その他の一般的なバグチェックのトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
-パラメーター 1 では、エラーが報告されたエラーのソースの種類を識別します。 2 番目のパラメーターは、WHEA のアドレスを保持\_エラー\_レコード構造のエラー条件について説明します。
+パラメーター1は、エラーを報告したエラーソースの種類を識別します。 パラメーター2には、エラー状態を説明する WHEA\_ERROR\_レコード構造体のアドレスが保持されます。
 
-ハードウェア エラーが発生したときに、WHEA はハードウェアのエラー状態に関連付けられているエラー情報を格納するエラー レコードを作成します。 各 error レコードには、WHEA によって記述\_エラー\_レコードの構造体。 Windows カーネルには、システム イベント ログにエラー レコードが保存されるように、エラー応答を生成した Event Tracing for Windows (ETW) のハードウェア エラー イベントのエラー レコードが含まれています。 WHEA で使用されるエラー レコードの形式は、Unified Extensible Firmware Interface (UEFI) 仕様のバージョン 2.2 の付録 N」の説明に従って、共通のプラットフォーム エラー レコードに基づいています。 詳細については、次を参照してください。 [WHEA\_エラー\_レコード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record)と[Windows ハードウェア エラー アーキテクチャ (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea)します。
+ハードウェアエラーが発生すると、WHEA は、ハードウェアエラー状態に関連付けられたエラー情報を格納するエラーレコードを作成します。 各エラーレコードは、WHEA\_エラー\_レコードの構造によって記述されます。 Windows カーネルには、エラーレコードがシステムイベントログに保存されるようにエラーに応答して発生する、Windows イベントトレーシング (ETW) ハードウェアエラーイベントを含むエラーレコードが含まれています。 WHEA によって使用されるエラーレコードの形式は、「Unified Extensible Firmware Interface (UEFI) 仕様のバージョン2.2 の付録 N」で説明されている一般的なプラットフォームエラーレコードに基づいています。 詳細については、「 [WHEA\_エラー\_レコード](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)と[Windows ハードウェアエラーアーキテクチャ (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea)」を参照してください。
 
-使用することができます[ **! errrec** ](-errrec.md) &lt;addr&gt; WHEA を表示する\_エラー\_パラメーター 2 で提供されるアドレスを使用してレコードの構造体。 [ **! Whea** ](-whea.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。
+[ **! Errrec**](-errrec.md) &lt;addr&gt; を使用すると、パラメーター2に指定されたアドレスを使用して、WHEA\_エラー\_レコード構造を表示できます。 [ **! Whea**](-whea.md)および[ **! errpkt**](-errpkt.md)拡張機能を使用して、追加の whea 情報を表示できます。
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュダンプ分析](crash-dump-files.md)
 
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg を使用したカーネルモードのダンプファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-[使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)
+[! Analyze 拡張機能](using-the--analyze-extension.md)と[! Analyze](-analyze.md)を使用する
 
-このバグ チェックでは、Windows Vista より前の Windows バージョンでサポートされていません。 マシン チェック例外を報告する代わりに、 [**バグ チェック 0x9C**](bug-check-0x9c--machine-check-exception.md)します。
+Windows Vista より前のバージョンでは、このバグチェックはサポートされていません。 代わりに、コンピューターチェックの例外は、[**バグチェック 0x9C**](bug-check-0x9c--machine-check-exception.md)によって報告されます。
 
  
 

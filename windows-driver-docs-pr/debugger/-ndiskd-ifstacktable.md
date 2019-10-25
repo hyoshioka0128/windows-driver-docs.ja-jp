@@ -1,9 +1,9 @@
 ---
-title: ndiskd.ifstacktable
-description: Ndiskd.ifstacktable 拡張機能では、ネットワーク インターフェイスの履歴テーブル (ifStackTable) が表示されます。
+title: ndiskd ifstacktable
+description: Ndiskd ifstacktable 拡張機能により、ネットワークインターフェイススタックテーブル (ifStackTable) が表示されます。
 ms.assetid: 8166C088-9366-49C4-9C3A-0089807352A9
 keywords:
-- デバッグ ndiskd.ifstacktable Windows
+- ndiskd ifstacktable Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: efbf4ed153769185f81e58286ce55c0c8f71127b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45b17f6bfeebce573a847d9c917571b7ee1edf4f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364285"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826658"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
 
-**! Ndiskd.ifstacktable**拡張機能には、ネットワーク インターフェイスの履歴テーブル (ifStackTable) が表示されます。
+**! Ndiskd ifstacktable**拡張機能により、ネットワークインターフェイススタックテーブル (ifstacktable) が表示されます。
 
-インターフェイスの履歴テーブルの詳細については、次を参照してください。[ネットワーク インターフェイスのスタックを維持](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)します。
+インターフェイススタックテーブルの詳細については、「[ネットワークインターフェイススタックの保守](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)」を参照してください。
 
 ```console
 !ndiskd.ifstacktable 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-この拡張機能には、パラメーターがありません。
+この拡張機能にはパラメーターがありません。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-実行、 **! ndiskd.ifstacktable**コマンドを ifStackTable を参照してください。
+IfStackTable を表示するには、 **! ndiskd ifstacktable**コマンドを実行します。
 
 ```console
 3: kd> !ndiskd.ifstacktable
@@ -56,9 +56,9 @@ INTERFACE STACK TABLE
     ffffdf801494c010   16                  17                 ffffdf801494ba20
 ```
 
-NDIS には、NDIS ミニポート アダプター、NDIS 5.x フィルター中間ドライバー、履歴テーブルとは、NDIS フィルター モジュール、 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)内部インターフェイスの関係を指定するドライバーが必要仮想ミニポート インターフェイスとプロトコルの間には、インターフェイスを低きます。 そのため、ifStackTable はより複雑な MUX ドライバーがインストールされていると、システムでインターフェイスのスタックのリレーションシップを表示するための便利なできます。
+Ndis は、ndis ミニポートアダプター、NDIS 5.x フィルター中間ドライバー、および NDIS フィルターモジュールのスタックテーブルを保持します。一方、ndis [MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)ドライバーは、仮想デバイス間の内部インターフェイス関係を指定するために必要です。ミニポートインターフェイスとプロトコル下位インターフェイス。 したがって、ifStackTable は、より複雑な MUX ドライバーがインストールされているシステムで、インターフェイススタックの関係を確認するのに役立ちます。
 
-この例のシステムにインストールされている NDIS MUX 中間のドライバーがないので、ifStackTable のみ NDIS によって提供されるスタック関係を示しています。 次の例の 3 番目の行 (ハンドル ffffdf801494c010、低い IfIndex 16) の下のインターフェイスは、QoS パケット スケジューラのインターフェイスを示しています、ハンドルをクリックします。
+この例のシステムには NDIS MUX 中間ドライバーがインストールされていないため、ifStackTable では、NDIS が提供しているスタック関係のみが表示されます。 次の例では、3番目の行の下位インターフェイス (handle ffffdf801494c010、Lower IfIndex 16) のハンドルをクリックすると、QoS パケットスケジューラのインターフェイスが表示されます。
 
 ```console
 3: kd> !ndiskd.interface ffffdf801494c010
@@ -109,7 +109,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-同じ例では、続行、WFP 802.3 MAC レイヤー ライトウェイト フィルターの 3 番目の行 (ハンドル ffffdf801494ba20 より高い IfIndex 17) の高いインターフェイスにインターフェイスを示しますのハンドルをクリックします。
+同じ例を続けて、3番目の行の上位のインターフェイス (handle ffffdf801494ba20, IfIndex 17) のハンドルをクリックすると、WFP 802.3 MAC レイヤーライトウェイトフィルターのインターフェイスが表示されます。
 
 ```console
 3: kd> !ndiskd.interface ffffdf801494ba20
@@ -160,26 +160,26 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-これには、WFP 802.3 MAC レイヤー ライトウェイト フィルターがインターフェイスのネットワーク スタックに QoS パケット Scheudler フィルターの上に位置が表示されます。 これを確認するにを実行して、 [ **! ndiskd.netreport** ](-ndiskd-netreport.md)拡張機能では、ネットワーク スタック視覚的にします。
+これは、WFP 802.3 MAC レイヤーライトウェイトフィルタがネットワークインターフェイススタックの QoS パケット Scheudler フィルタの上にあることを示しています。 これを確認するには、 [ **! ndiskd netreport**](-ndiskd-netreport.md)拡張機能を実行します。これにより、ネットワークスタックが視覚的に表示されます。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ネットワーク インターフェイスのスタックを維持](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
+[ネットワークインターフェイススタックの保守](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
 
-[MUX の NDIS 中間ドライバ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)
+[NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)
 
-[ **!ndiskd.netreport**](-ndiskd-netreport.md)
+[ **! ndiskd netreport**](-ndiskd-netreport.md)
 
  
 

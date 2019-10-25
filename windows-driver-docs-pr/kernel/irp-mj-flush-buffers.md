@@ -1,27 +1,27 @@
 ---
 title: IRP_MJ_FLUSH_BUFFERS
-description: データの内部キャッシュを使用したデバイスのドライバーとドライバーのデータの内部バッファーを維持するには、DispatchFlushBuffers ルーチンでは、この要求を処理する必要があります。
+description: データ用の内部キャッシュを持つデバイスのドライバーと、データの内部バッファーを保持するドライバーは、DispatchFlushBuffers ルーチンでこの要求を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: c1023999-0c80-4c09-a9ea-a9422184bba7
 keywords:
-- IRP_MJ_FLUSH_BUFFERS カーネル モード ドライバーのアーキテクチャ
+- IRP_MJ_FLUSH_BUFFERS カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: dafd90b42a77ddaa816278fd6b484ce6a664d6f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4aaa0a47ad4cd013883d5d1b988f026791bac342
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368518"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838605"
 ---
-# <a name="irpmjflushbuffers"></a>IRP\_MJ\_フラッシュ\_バッファー
+# <a name="irp_mj_flush_buffers"></a>IRP\_MJ\_フラッシュ\_バッファー
 
 
-データとデータでこの要求を処理する必要がありますの内部バッファーを維持するドライバーの内部キャッシュを持つデバイスのドライバーを[ *DispatchFlushBuffers* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+データ用の内部キャッシュを持つデバイスのドライバーと、データの内部バッファーを保持するドライバーは、 [*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンでこの要求を処理する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-フラッシュの要求の受信は、ドライバーがデバイスのキャッシュまたは内部バッファーをフラッシュする必要がありますか、場合によっては、内部バッファー内のデータを破棄する必要があることを示します。
+フラッシュ要求の受信は、ドライバーがデバイスのキャッシュまたは内部バッファーをフラッシュする必要があること、または内部バッファー内のデータを破棄する必要があることを示します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -36,9 +36,9 @@ ms.locfileid: "63368518"
 <a name="operation"></a>操作
 ---------
 
-ドライバーは、現在、デバイスにキャッシュされているか、フラッシュの要求を完了する前に、ドライバーの内部バッファーに保持されているすべてのデータを転送します。 ドライバーを専用デバイス内部的にデータ バッファーに格納する可能性があります単にデータを破棄現在バッファリングされているデバイス、デバイスの性質によって、フラッシュの IRP を完了する前にします。
+ドライバーは、フラッシュ要求を完了する前に、デバイスに現在キャッシュされているデータ、またはドライバーの内部バッファーに保持されているすべてのデータを転送します。 内部的にデータをバッファーする入力のみのデバイスのドライバーは、デバイスの性質に応じて、フラッシュ IRP を完了する前に現在バッファーされているデバイスデータを破棄するだけで済みます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -49,7 +49,7 @@ ms.locfileid: "63368518"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +57,7 @@ ms.locfileid: "63368518"
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
  
 

@@ -1,46 +1,46 @@
 ---
 title: 即時アイドル タイムアウトのオプトイン
-description: このトピックでは、Windows 8 ドライバーのオプトイン状態、電源がすぐに電源が不要になったときに使用できる ImmediateIdle レジストリ値について説明します。
+description: このトピックでは、電源が不要になったときに、Windows 8 ドライバーが即座に電源をオンにするために使用できる ImmediateIdle レジストリ値について説明します。
 ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c94997e99e55dec5afe0ce957ae4fc6220c7c36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 020b439b78502ac87841d8062810cf9aed9dad26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833279"
 ---
-# <a name="span-idaudioimmediateidletimeoutopt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>イミディ エイト アイドル タイムアウトのオプトイン
+# <a name="span-idaudioimmediate_idle_timeout_opt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>即時アイドルタイムアウトオプトイン
 
 
-このトピックで説明、 *ImmediateIdle*オプトイン状態、電源がすぐに電力が不要になったときに使用できる Windows 8 ドライバーのレジストリ値。
+このトピックでは、電源が不要になったときに、Windows 8 ドライバーが即座に電源をオンにするために使用できる*ImmediateIdle*レジストリ値について説明します。
 
-説明した既定の電源設定だけでなく[PortCls レジストリ電源設定](portcls-registry-power-settings.md)Windows 8 にも、関連するドライバーの PowerSettings レジストリ キーにある新しいレジストリ値が導入されています。 たとえば、キーを持つ、ドライバーがある場合は&lt;UVXYZ&gt;ドライバーの電源設定の情報は、Windows レジストリ内の次のパスで見つかっては。
+「 [PortCls Registry の電源設定](portcls-registry-power-settings.md)」で説明されている既定の電源設定に加えて、Windows 8 では、関連付けられているドライバーの powersettings レジストリキーにもある新しいレジストリ値が導入されています。 たとえば、キーが UVXYZ&gt;&lt;されているドライバーがある場合、ドライバーの電源設定情報は Windows レジストリの次のパスにあります。
 
-HKLM\\システム\\CurrentControlSet\\コントロール\\クラス\\{4D36E96C-E325-11CE-BFC1-08002BE10318}\\&lt;UVXYZ&gt; \\PowerSettings します。
+HKLM\\System\\CurrentControlSet\\Control\\クラス\\{4D36E96C-E325-11CE-BFC1-08002BE10318}\\&lt;UVXYZ&gt;\\PowerSettings。
 
-出力に表示される値の設定だけでなく、既定および[PortCls レジストリ電源設定](portcls-registry-power-settings.md)、次の行を追加することも、 *ImmediateIdle*:
+また、 [PortCls レジストリの [電源設定](portcls-registry-power-settings.md)] に表示される既定の電源設定値に加えて、 *ImmediateIdle*には次の行も含まれます。
 
 ``` syntax
 "ImmediateIdle"=hex:00,00,00,00  
 ```
 
-*ImmediateIdle* REG のデータ型を持つ\_DWORD とその既定値は「0」を FALSE に相当します。 フラグメントでは、上記の構文、デバイスはすぐの電源の電源が不要になったときに「0」の 16 進数の値。
+*ImmediateIdle*のデータ型は REG\_DWORD で、既定値は "0" で、FALSE になります。 上記の構文フラグメントでは、16進値 "0" は、電力が不要になったときにデバイスの電源がすぐに切断されないことを意味します。
 
-即時の状態、電源をオプトインするドライバーの電源を不要になったときは、次の構文を使用する必要があります。
+ドライバーが即座に電源を切る状態にするには、電源が不要になったら、次の構文を使用する必要があります。
 
 ``` syntax
 "ImmediateIdle"=hex:01,00,00,00  
 ```
 
-前の構文フラグメントでは、「1」の 16 進値として TRUE を保持し、電源が不要になったときに、デバイスがダウン power すぐにことを意味します。
+上記の構文フラグメントでは、16進値 "1" は TRUE に相当します。これは、電源が不要になったときに、デバイスの電源がすぐに切断されることを意味します。
 
-実行時の電源管理フレームワークがのコールバックを呼び出すときに、 **DevicePowerRequired**メソッド、デバイスが不要になった PortCls の電源が必要ですし、によって示されるD状態のデバイスの電源IRPを要求することを示す*IdlePowerState*レジストリ値。 状態が指定されていない場合は、D3 の既定値が使用されます。
+ランタイム電源管理フレームワークが**Devicepowerrequired**メソッドのコールバックを呼び出し、デバイスが電力を必要としないことを示している場合、PortCls は、 *IdlePowerState*によって示された D 状態のデバイス電源 IRP を要求します。レジストリ値。 状態が指定されていない場合は、D3 の既定値が使用されます。
 
-場合、即時のアイドル状態の電源管理に opts ドライバー、連続的に受信したアダプターの Irp の上下に継続的に電源を不必要に防ぐために必要なロジックがシステムの電源エンジン プラグイン (PEP) に含まれています、ことを確認する必要があります。 デバイスの I/O 要求のバッチ用に電源を保持するためにいくつかの保存場所のルールを適用する必要があります。
+ドライバーが即時アイドル電源管理を使用する場合は、システムの電源エンジンプラグイン (PEP) に、不必要に受信した Irp に対してアダプターを上下に継続的に電源投入するために必要なロジックが含まれていることを確認する必要があります。 I/o 要求のバッチに対してデバイスの電源を入れたままにするために、いくつかの常駐ルールを適用する必要があります。
 
-さらに、ドライバーのプログラムで有効または無効に、アイドル状態の電源管理を許可する Windows 7 で導入された新しいインターフェイスは引き続き、ドライバーがないにオプトイン即時のアイドル状態の電源管理が受け入れられます。 使用してこれには、 [ **IPortClsPower::SetIdlePowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclspower-setidlepowermanagement)メソッド場合を除いて、レジストリの設定の上書きが行う*ImmediateIdle*は1 (TRUE) に設定します。
+さらに、Windows 7 で導入された新しいインターフェイスでは、ドライバーがプログラムによってアイドル電源管理を有効または無効にすることができます。これは、ドライバーが即時アイドル電源管理にオプトインしていない場合でも引き続き受け入れられます。 これは[**IPortClsPower:: SetIdlePowerManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclspower-setidlepowermanagement)メソッドを使用して実行され、 *ImmediateIdle*が 1 (TRUE) に設定されている場合を除き、レジストリの設定をオーバーライドします。
 
  
 

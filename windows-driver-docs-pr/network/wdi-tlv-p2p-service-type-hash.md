@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_P2P_SERVICE_TYPE_HASH
-description: WDI_TLV_P2P_SERVICE_TYPE_HASH では、サービスの種類のハッシュを含む TLV です。
+description: WDI_TLV_P2P_SERVICE_TYPE_HASH は、サービスの種類のハッシュを含む TLV です。
 ms.assetid: A475C2E3-F558-47EC-9708-87887AE2D8AF
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_SERVICE_TYPE_HASH ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_P2P_SERVICE_TYPE_HASH ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 8308a82a3c4298b04a5f067ecb3b03d84187bf07
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd2c6d3ef612cbe57dcced5bd5d06422ea87ea23
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355422"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838023"
 ---
-# <a name="wditlvp2pservicetypehash"></a>WDI\_TLV\_P2P\_サービス\_型\_ハッシュ
+# <a name="wdi_tlv_p2p_service_type_hash"></a>WDI\_TLV\_P2P\_サービス\_型\_HASH
 
 
-WDI\_TLV\_P2P\_サービス\_型\_ハッシュは、サービスの種類のハッシュを含む TLV します。
+WDI\_TLV\_P2P\_SERVICE\_TYPE\_HASH は、サービスの種類のハッシュを含む TLV です。
 
-**注**  この TLV は、Windows 10 バージョン 1607、WDI バージョン 1.0.21 で追加されました。
+この TLV は、Windows 10 バージョン1607、WDI version 1.0.21 で追加された  に**注意**してください。
 
  
 
@@ -30,18 +30,18 @@ WDI\_TLV\_P2P\_サービス\_型\_ハッシュは、サービスの種類のハ�
 ## <a name="length"></a>長さ
 
 
-サイズ (バイト単位) で、 [ **WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)構造体。
+[**WDI\_P2P\_サービス\_名\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)構造のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                                    | 説明               |
+| タスクバーの検索ボックスに                                                                    | 説明               |
 |-------------------------------------------------------------------------|---------------------------|
-| [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | サービスの種類のハッシュです。 |
+| [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | サービスの種類のハッシュ。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -60,7 +60,7 @@ WDI\_TLV\_P2P\_サービス\_型\_ハッシュは、サービスの種類のハ�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_接続\_ACQUIREORDERING
-description: KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパティと状態変更の順序は重要では pin 上に実装する必要があります。
+title: KSK プロパティ\_接続\_ACQUIREORDERING
+description: KSK プロパティ\_CONNECTION\_ACQUIREORDERING プロパティは、状態の変更順序が重要な場合に pin に実装する必要があるオプションのプロパティです。
 ms.assetid: b0d27615-bece-49b1-8497-f3c389ea37fc
 keywords:
-- KSPROPERTY_CONNECTION_ACQUIREORDERING ストリーミング メディア デバイス
+- KSPROPERTY_CONNECTION_ACQUIREORDERING ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efe4be575e6a2b8ece4d5223a44bfc6b0be5d7cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0a989d17655c03a8402c6f2c2fff079fa52790a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375596"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826854"
 ---
-# <a name="kspropertyconnectionacquireordering"></a>KSPROPERTY\_接続\_ACQUIREORDERING
+# <a name="ksproperty_connection_acquireordering"></a>KSK プロパティ\_接続\_ACQUIREORDERING
 
 
-KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパティと状態変更の順序は重要では pin 上に実装する必要があります。 たとえば、シンクはシンクのピンを設定する前に取得状態に設定する、通信ソース ピンに接続して pin を必要とする場合、通信シンク ピンのプロパティを実装する必要があります。
+KSK プロパティ\_CONNECTION\_ACQUIREORDERING プロパティは、状態の変更順序が重要な場合に pin に実装する必要があるオプションのプロパティです。 たとえば、シンクが通信ソースピンに接続されているピンが、シンク pin が設定される前に取得状態に設定されるようにする必要がある場合は、通信シンクの pin にプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_connection_acquireordering_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_ACQUIREORDERING_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>BOOL</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>型</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します**TRUE**状態変更の順序が重要な場合。 場合**FALSE**を返すプロパティを実装しない必要があります。
+このプロパティは、状態変更の順序が重要な場合に**TRUE**を返します。 **FALSE**が返される場合は、プロパティを実装する必要はありません。
 
-この読み取り専用プロパティは取得停止状態の変更がこの通信のシンクの pin の重要なかどうかを判断するために使用します。 プロパティが実装されていない場合、前提は、こと順序重要です。 IRP ベースのデータ フローでは、これは実装されます pin 要求の場合、新しい作成の Irp ではなくストリーミング Irp を転送し、接続されたソースの暗証番号 (pin) を適切なスタックの深さを示す必要がある場合。 Pin は Irp を転送しませんが場合、し、スタックの深さの再計算はできません、重要なフィルターのスタックの深さが静的とします。
+この読み取り専用プロパティを使用して、この通信シンクの pin に対して、取得までの状態の変更を停止するかどうかを判断します。 プロパティが実装されていない場合、順序付けは重要ではないと想定されます。 IRP ベースのデータフローでは、要求に対して新しい Irp を作成するのではなく、ストリーミングの Irp を転送するときに pin によって実装されます。したがって、接続されたソースの pin に対する正しいスタックの深さを示す必要があります。 Pin が Irp を転送しなかった場合、フィルターのスタックの深さが静的であるため、スタックの深さの再計算は重要ではありません。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>

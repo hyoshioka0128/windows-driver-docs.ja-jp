@@ -1,53 +1,53 @@
 ---
 title: NX プールの互換性の問題
-description: NX を使用すると Windows 8 用のドライバー バイナリ内の非ページ プールは、Windows の以前のバージョンでこれらのバイナリを実行する場合の互換性の問題が検索されます。
+description: Windows 8 のドライバーバイナリで NX 非ページプールを使用する場合、これらのバイナリを以前のバージョンの Windows で実行すると、互換性の問題が発生します。
 ms.assetid: 652AE9A2-D733-4EC2-9D49-B95DDABE42B1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 67a23d8b593d0bcd944e187980ef25e7f021cc07
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a04248ecd7977ff47f7e836b4d148de7d8c145b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365420"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827794"
 ---
 # <a name="nx-pool-compatibility-issues"></a>NX プールの互換性の問題
 
 
-NX を使用すると Windows 8 用のドライバー バイナリ内の非ページ プールは、Windows の以前のバージョンでこれらのバイナリを実行する場合の互換性の問題が検索されます。
+Windows 8 のドライバーバイナリで NX 非ページプールを使用する場合、これらのバイナリを以前のバージョンの Windows で実行すると、互換性の問題が発生します。
 
-Windows 8、NX をサポートするために Windows の最初のバージョンは、非ページ プール。 ただし、多数の既存のカーネル モード ドライバーのバイナリは、Windows 7 および x86、x64、および IA64 プロセッサのアーキテクチャ上で実行される Windows の以前のバージョンで使用できます。 非ページ メモリを割り当て、これらのドライバーを使用して、実行可能ファイルの非ページ プール代わりに、NX 非ページ プール。 旧バージョンと互換性のため、Windows 7、および、Windows の以前のバージョンで実行して、非ページ プールからメモリを割り当てるカーネル モード ドライバーのバイナリは、変更しなくても Windows 8 で実行されます。 ただし、これらのドライバーは活用できません NX の可用性を Windows 8 での非ページ プール。
+Windows 8 は、NX 非ページプールをサポートするための最初のバージョンの Windows です。 ただし、x86、x64、および IA64 の各プロセッサアーキテクチャで実行される Windows 7 以前のバージョンの Windows では、多数の既存のカーネルモードドライバーバイナリを使用できます。 ページングされていないメモリを割り当てるために、これらのドライバーは、NX 非ページプールではなく、実行可能な非ページプールを使用します。 旧バージョンとの互換性のために、Windows 7 上で実行されるカーネルモードドライバーバイナリ、および windows の以前のバージョンでは、非ページプールからメモリを割り当てますが、Windows 8 では変更なしで実行されます。 ただし、これらのドライバーは Windows 8 の NX 非ページプールの可用性を利用しません。
 
-## <a name="running-existing-driver-binaries-on-windows8"></a>Windows 8 上の既存のドライバー バイナリが実行中
+## <a name="running-existing-driver-binaries-on-windows8"></a>Windows 8 での既存のドライバーバイナリの実行
 
 
-ドライバーのバイナリは、Windows 7 (または可能性があります、Windows の以前のバージョン) をビルドしたし、使用する、 **NonPagedPool**プールの種類、Windows 8 での実行が妨げられていません。 旧バージョンとの互換性を有効にする、 **NonPagedPoolExecute**として同じ値を持つ定数が定義されている、 **NonPagedPool**の定数、 [**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)列挙体。 したがって、このドライバーを実行する Windows のすべてのバージョンでは、非ページ プールから、ドライバーによって割り当てられるメモリは常に実行可能ファイル。
+Windows 7 (または以前のバージョンの Windows) 用に構築されたドライバーバイナリは、 **NonPagedPool**プールの種類を使用していても、windows 8 で実行することはできません。 旧バージョンとの互換性を確保するために、 **NonPagedPoolExecute**定数は[**プール\_TYPE 列挙型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)の**NonPagedPool**定数と同じ値を持つように定義されています。 このため、このドライバーが実行されているすべてのバージョンの Windows では、ドライバーが非ページプールから割り当てたメモリは常に実行可能です。
 
-Windows 8 は、ARM アーキテクチャをサポートするために Windows の最初のバージョンです。 したがって、用のドライバー バイナリ ARM Windows の以前のバージョンに組み込まれているし、旧バージョンと互換性が必要なはありません。 指定する ARM で Windows 用に作成されたすべてのドライバーが代わりに、予想される**NonPagedPoolNx**の代わりに**NonPagedPoolExecute**での非ページ プールの割り当ての実行可能ファイルを明示的に要求しない限りメモリ。
+Windows 8 は、ARM アーキテクチャをサポートするための Windows の最初のバージョンです。 そのため、以前のバージョンの Windows 用に構築され、旧バージョンとの互換性が必要な ARM 用のドライバーバイナリはありません。 代わりに、ARM 上の Windows 用に作成されたすべてのドライバーでは、実行可能メモリを明示的に要求しない限り、非ページプール割り当てで**NonPagedPoolExecute**ではなく**NonPagedPoolNx**を指定する必要があります。
 
-ドライバーは x86、x64、または IA64 から ARM に移植した場合、[プール\_NX\_OPTIN\_自動](multiple-binary-opt-in-pool-nx-optin-auto.md)オプトイン メカニズムは、ドライバーのビルド プロセス中に自動的に適用されます。 このオプトイン メカニズムのすべてのインスタンスを既定では、置換するプリプロセッサを使用して、 **NonPagedPool**定数名を**NonPagedPoolNx**します。 必要に応じてを使って、[プール\_NX\_OPTOUT](selective-opt-out-pool-nx-optout.md)オプトアウト メカニズムを上書きするファイルごとにこのオプトイン メカニズム。
+ドライバーが x86、x64、または IA64 から ARM に移植されている場合、ドライバーのビルドプロセス中に、自動オプトインメカニズムの[プール\_NX\_\_](multiple-binary-opt-in-pool-nx-optin-auto.md)自動的に適用されます。 このオプトインメカニズムでは、プリプロセッサを使用して、既定では**NonPagedPool**定数名のすべてのインスタンスを**NonPagedPoolNx**に置き換えます。 必要に応じて、[プール\_NX\_OPTOUT](selective-opt-out-pool-nx-optout.md)のオプトアウトメカニズムを使用して、このオプトイン機構をファイルごとに overrride ことができます。
 
 ## <a name="other-compatibility-issues"></a>その他の互換性の問題
 
 
-**NonPagedPoolNx**プールの種類が Windows 8 以降でサポートされています。 Windows の以前のバージョンのドライバーでこのプールの種類を使用しないでください。 プール アロケーターは、Windows の以前のバージョンで正常に動作しないドライバーを使用し、割り当てが要求したとき、 **NonPagedPoolNx**プールの種類。
+**NonPagedPoolNx**プールの種類は、Windows 8 以降でサポートされています。 以前のバージョンの Windows のドライバーでは、このプールの種類を使用しないでください。 これらの以前のバージョンの Windows でのプールアロケーターは、ドライバーが**NonPagedPoolNx**プールの種類で割り当てを要求したときに正しく動作しません。
 
-Windows 8 では、前に Windows のバージョンでは、 **NonPagedPoolExecute**の代わりに、プールの種類を自由に使用できる、 **NonPagedPool**プールの種類。 [**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)列挙体を定義**NonPagedPool**と**NonPagedPoolExecute**に同じ値を指定します。
+Windows 8 より前のバージョンの Windows では、 **NonPagedPoolExecute**プールの種類を**NonPagedPool**プールの種類の代替として自由に使用できます。 [**プール\_TYPE 列挙型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)では、 **NonPagedPool**と**NonPagedPoolExecute**が同じ値を持つように定義されています。
 
-## <a name="nx-pool-type-porting-guidelines"></a>NX プール型の移植のガイドライン
+## <a name="nx-pool-type-porting-guidelines"></a>NX プールの種類の移植のガイドライン
 
 
-サポートを追加するいくつかの方法がある Windows 8 または Windows の以前のバージョンから後でドライバー コードを移植するときに、 **NonPagedPoolNx**と**NonPagedPoolExecute**プール種類。 次の一覧から、お客様の要件に最適なアプローチを選択します。
+以前のバージョンの Windows でドライバーコードを Windows 8 以降に移植する場合、 **NonPagedPoolNx**および**NonPagedPoolExecute**プールの種類のサポートを追加するにはいくつかの方法があります。 次の一覧から、要件に最も適した方法を選択します。
 
--   ほとんどまたはすべてのインスタンスを置き換える場合は、ドライバーは、Windows 8 より前のバージョンの Windows で実行するものではありません、 **NonPagedPool**で**NonPagedPoolNx**します。 ほとんど置き換える必要があります、開発者のインスタンスのみ**NonPagedPool**で**NonPagedPoolExecute します。**
+-   ドライバーが Windows 8 より前のバージョンの Windows で実行することを意図していない場合は、 **NonPagedPool**のほとんどまたはすべてのインスタンスを**NonPagedPoolNx**に置き換えます。 開発者が**NonPagedPool**のインスタンスを NonPagedPoolExecute に置き換えることはめったにありませ**ん。**
 
--   ドライバーのソース コードは、Windows 8 および Windows での以前のバージョンの両方を対象バージョンごとのバイナリの別のドライバーを配布する場合は、プールを使用して\_NX\_OPTIN\_自動オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
+-   ドライバーのソースコードが Windows 8 とそれ以前のバージョンの Windows の両方を対象としており、バージョンごとに異なるドライバーバイナリを出荷する場合は、プール\_NX\_OPTIN\_自動オプトインメカニズムを使用します。 この方法では、ドライバーソースの**NonPagedPool**のインスタンスを置き換える必要はありません。 詳細については、「 [NX プールのオプトインメカニズム](nx-pool-opt-in-mechanisms.md)」を参照してください。
 
--   ドライバーのソース コードが Windows 8 および Windows での以前のバージョンの両方を対象とサポートされているすべてのバージョンで実行する二項 1 つのドライバーを配布する場合は、プールを使用して\_NX\_OPTIN オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
+-   ドライバーのソースコードで Windows 8 とそれ以前のバージョンの Windows の両方を対象としていて、サポートされているすべてのバージョンで実行する1つのドライバーバイナリを出荷する場合は、プール\_NX\_OPTIN オプトインメカニズムを使用します。 この方法では、ドライバーソースの**NonPagedPool**のインスタンスを置き換える必要はありません。 詳細については、「 [NX プールのオプトインメカニズム](nx-pool-opt-in-mechanisms.md)」を参照してください。
 
-これら 3 つのアプローチのいずれかは、ほとんどのドライバーを迅速かつ簡単に移植できます。
+これら3つの方法のいずれかを使用すると、ほとんどのドライバーを短時間ですばやく移植できます。
 
-すべてのインスタンスが単純に上書きされない**NonPagedPool**ドライバー コードの**NonPagedPoolExecute**します。 使用して、 **NonPagedPoolExecute**プールのみ実行可能にする必要があるプールの割り当ての種類 (たとえば、コードを実行する - just-in-time で、または、JIT によって生成コンパイラ)。
+ドライバーコード内の**NonPagedPool**のすべてのインスタンスを**NonPagedPoolExecute**に置き換えるのは避けてください。 **NonPagedPoolExecute**プールの種類は、実行可能である必要があるプール割り当て (ジャストインタイム (JIT) コンパイラで生成されたコードを実行する場合など) に対してのみ使用してください。
 
  
 

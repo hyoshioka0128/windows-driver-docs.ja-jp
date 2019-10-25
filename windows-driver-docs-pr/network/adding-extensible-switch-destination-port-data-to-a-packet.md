@@ -4,114 +4,114 @@ description: パケットへの拡張可能スイッチ宛先ポート データ
 ms.assetid: C921D9F8-B6FB-4B53-8CC5-CC941720FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d28f4128b54429938043ae82b885a96c1f61f19
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd6dac07f83f234a043ca75a843c0a5134e35678
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384735"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838239"
 ---
 # <a name="adding-extensible-switch-destination-port-data-to-a-packet"></a>パケットへの拡張可能スイッチ宛先ポート データの追加
 
 
-このトピックでは、転送拡張機能、HYPER-V 拡張可能スイッチでパケットの 1 つまたは複数の宛先ポートへの配信を指定する方法について説明します。 これらの拡張機能は、拡張可能スイッチの外部ネットワーク アダプターにバインドされている個々 の物理ネットワーク アダプターにパケットを転送できます。
+このトピックでは、Hyper-v 拡張スイッチ転送拡張機能が、1つまたは複数の宛先ポートへのパケットの配信を指定する方法について説明します。 これらの拡張機能は、拡張可能スイッチの外部ネットワークアダプターにバインドされている個々の物理ネットワークアダプターにパケットを転送することもできます。
 
-**注**だけで、転送拡張機能またはスイッチ自体は、拡張可能スイッチのポートまたは個々 のネットワーク アダプターにパケットを転送できます。
-
-
-
-次の図には、NDIS 6.40 (Windows Server 2012 R2) と後で拡張可能スイッチ ドライバー スタックを通じたパケット トラフィックのデータ パスが表示されます。 どちらの図では、拡張可能スイッチ ポートに接続されているネットワーク アダプターとの間にパケット トラフィックのデータ パスも表示されます。
-
-![ndis 6.40 の更新された拡張可能スイッチ ポートに接続されているネットワーク アダプターとの間にパケット トラフィック用のデータ パスを示すフローチャート](images/vswitchteam2-ndis640.png)
-
-次の図では、NDIS 6.30 (Windows Server 2012) の拡張可能スイッチ ドライバー スタックを通じたパケット トラフィックのデータ パスが表示されます。
-
-![拡張可能スイッチ ポートに接続されているネットワーク アダプターとの間にパケット トラフィック用のデータ パスを示すフローチャート](images/vswitchteam2.png)
-
-各拡張可能スイッチの宛先ポートがで指定された、 [ **NDIS\_切り替える\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)内の要素、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 この配列は、の帯域外 (OOB) コンテキストのパケットの転送に含まれている[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 このコンテキストの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
-
-転送拡張機能がバインドされ、拡張可能スイッチのドライバー スタックで有効になって場合、は、パケットが、NVGRE パケットでない限り、拡張可能スイッチのイングレス データ パスから取得したすべてのパケットの宛先ポートを判断する責任を負います。 このデータ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのデータ パスの概要](overview-of-the-hyper-v-extensible-switch-data-path.md)します。 NVGRE パケットの詳細については、次を参照してください。[ハイブリッド転送](hybrid-forwarding.md)します。
-
-**注**転送拡張機能をドライバー スタックで有効になっている、またはバインドされていない場合、拡張可能スイッチは、イングレス データのパスから取得するパケットの宛先ポートを決定します。
+**メモ** 転送拡張機能またはスイッチ自体だけが、拡張可能なスイッチポートまたは個々のネットワークアダプターにパケットを転送できます。
 
 
 
-イングレス データ パス取得したパケットの宛先ポートと判断した場合、転送拡張機能は次のガイドラインに従う必要があります。
+次の図は、NDIS 6.40 (Windows Server 2012 R2) 以降の拡張可能なスイッチドライバースタックを介したパケットトラフィックのデータパスを示しています。 どちらの図も、拡張可能なスイッチポートに接続されているネットワークアダプターとの間のパケットトラフィックのデータパスを示しています。
 
--   拡張機能を初期化する必要があります、 [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)内で構造体、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)対象のポートの情報を含む構造体。
+![ndis 6.40 用に更新された拡張スイッチポートに接続されているネットワークアダプターとの間のパケットトラフィックのデータパスを示すフローチャート](images/vswitchteam2-ndis640.png)
 
-    宛先ポートが外部ネットワーク アダプターに接続されていない場合、拡張機能を設定する必要があります、 **NicIndex**のメンバー、 [ **NDIS\_スイッチ\_ポート\_移行先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体を**NDIS\_スイッチ\_既定\_NIC\_インデックス**します。
+次の図は、NDIS 6.30 (Windows Server 2012) の拡張可能なスイッチドライバースタックを介したパケットトラフィックのデータパスを示しています。
 
-    接続先ポートが拡張可能スイッチの外部ネットワーク アダプターに接続されている場合、拡張機能への送信要求を転送するように、基になる物理ネットワーク アダプターのインデックスを指定できます。 拡張機能は設定によって、 **NicIndex**メンバーを 0 以外の NDIS\_スイッチ\_NIC\_外部ネットワーク アダプターにバインドされている変換先のネットワーク アダプターのインデックス値。
+![拡張可能なスイッチポートに接続されているネットワークアダプターとの間のパケットトラフィックのデータパスを示すフローチャート](images/vswitchteam2.png)
 
-    詳細については、次を参照してください。[物理ネットワーク アダプターにパケットを転送](forwarding-packets-to-physical-network-adapters.md)します。
+拡張可能な各スイッチの宛先ポートは、ndis\_スイッチで指定されています。この場合、Ndis\_スイッチ内の[ **\_port\_destination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)要素によって\_転送[**先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造に転送されます。 この配列は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の帯域外 (OOB) 転送コンテキストに含まれています。 このコンテキストの詳細については、「 [Hyper-v 拡張可能スイッチ転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)」を参照してください。
 
--   拡張機能は、アクティブなネットワーク アダプターの接続があるこれらのポートに対してのみ、パケットの OOB データに宛先ポートを追加する必要があります。 拡張機能が転送した場合、 [OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)要求、切断されたネットワーク アダプターに関連付けられている接続先ポートを追加する必要があります。
+拡張可能なスイッチドライバースタックで転送拡張機能がバインドされ、有効になっている場合は、パケットが NVGRE パケットでない限り、拡張可能スイッチの受信データパスから取得したすべてのパケットの宛先ポートを決定します。 このデータパスの詳細については、「 [Hyper-v 拡張可能スイッチのデータパスの概要](overview-of-the-hyper-v-extensible-switch-data-path.md)」を参照してください。 NVGRE パケットの詳細については、「[ハイブリッド転送](hybrid-forwarding.md)」を参照してください。
 
--   パフォーマンスを向上させる、拡張機能はのみパケット配信の有効なポートの送信先を追加する必要があります。 この場合、拡張機能を設定する必要があります、 **IsExcluded**の宛先ポートのメンバー [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体を FALSE にします。
-
--   802.1 q を保持する前に、パケット内の仮想ローカル エリア ネットワーク (VLAN) のデータに配信されます、ポート、拡張機能セット、 **PreserveVLAN**メンバーを TRUE にします。
-
-    802.1 q を削除する前に、パケット内の仮想ローカル エリア ネットワーク (VLAN) のデータに配信されます、ポート、拡張機能セット、 **PreserveVLAN**メンバーを FALSE にします。
-
--   802.1 q を保持する前にパケットの優先順位のデータに配信されます、ポート、拡張機能セット、 **PreservePriority**メンバーを TRUE にします。
-
-    802.1 q を削除する前にパケットの優先順位のデータが配信されるポートに、拡張機能セット、 **PreservePriority**メンバーを FALSE にします。
-
--   転送拡張機能は、パケットの複数の宛先ポートを追加する場合は、次の手順に従う必要があります。
-
-    1.  拡張機能には、パケットの最初にアクセスする[ **NDIS\_スイッチ\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)構造体を使用して、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロ。 次に、拡張機能、読み取り、 **NumAvailableDestinations**先ポートの配列で使用できる未使用の宛先ポート要素の数を決定するメンバー。 呼び出す必要がありますが、拡張機能では、複数の宛先ポート、配列で使用可能な必要がある場合、 [ *GrowNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数で追加の宛先ポートの容量を割り当てる、配列。
-
-        拡張機能を呼び出すと[ *GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)、設定、 *NumberOfNewDestinations*パラメーターに追加する新しい変換先のポートの数をパケットです。
-
-        また、拡張機能、設定、 *NetBufferLists*パケットへのポインターにパラメーター [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
-
-        **注**配列内で使用できる変換先のポートがある場合、拡張機能が呼び出す必要がありますいない[ *GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)します。
-
-    2.  場合、 [ *GrowNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数が正常に取得、追加の宛先ポートでのコピー先の配列の末尾に追加されて、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 この構造体へのポインターが返される、*宛先*パラメーター。
-
-        **注**場合、 [ *GrowNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数は、宛先ポートの要求の数を割り当てることができません、NDIS を返します\_状態\_リソース。
-
-    3.  拡張機能が新しい送信先ポート要素を指定します、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 拡張機能の初期化として新しい各接続先ポート、 [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体。
-
-        拡張機能の初期化を開始位置として、配列に新しい宛先ポート、 **NumDestinations**オフセット。 **NumDestinations**のメンバーである、 [ **NDIS\_スイッチ\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。
-
-    4.  呼び出す必要がありますが、拡張機能には、宛先ポート要素の追加または変更が終了したら、 [ *UpdateNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)変更をコミットします。
-
--   拡張機能は、パケットの 1 つの宛先ポートを追加する場合は、次の手順に従う必要があります。
-
-    1.  拡張機能が拡張機能が割り当てたでパケットの宛先ポート情報を初期化します[ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体.
-
-    2.  拡張機能の呼び出し[ *AddNetBufferListDestination* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)への変更をコミットする、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)パケットの構造体。 拡張機能のアドレスを渡す、 [ **NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造体、*先*パラメーター。
-
-        **注**、拡張機能は呼び出さないでください、 [ *UpdateNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)パケットを 1 つだけの宛先ポートに変更をコミットする関数。
-
--   転送拡張機能を呼び出すと[ *AddNetBufferListDestination* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)または[ *UpdateNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)をコミットします宛先ポートの変更、拡張可能スイッチのインターフェイスは拡張可能スイッチ ポートの要素で指定されている削除されない、 [ **NDIS\_切り替える\_転送\_先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造体。 パケットが送信または受信後は、操作が完了したら、インターフェイスが必要がある場合は、ポートを削除する無料。
-
-    **注**宛先ポートが削除された機能とのみにすることはできません転送拡張機能が転送コンテキストに宛先ポートの変更をコミットした後、 **IsExcluded**の宛先ポートのメンバー [**NDIS\_スイッチ\_ポート\_先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)構造を変更することができます。 詳細については、次を参照してください。[拡張可能スイッチの宛先ポートへのパケット配送の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)します。
-
--   転送拡張機能のオブジェクト識別子 (OID) のセットの要求の処理を同期する必要があります[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)の宛先ポートを追加するそのコードで、切断されたネットワーク アダプター。
-
-    場合、転送拡張機能の[ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)が呼び出されると、 [OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)要求拡張機能は、次のいずれかで実行できます。
-
-    -   拡張機能が呼び出された場合[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)この OID 要求を転送する必要がありますいない指定する必要がポート切断されたネットワーク アダプターを使用したパケットの宛先ポートとして。
-
-        **注**パケットの宛先ポートのみが切断されたネットワーク アダプターを使用した 1 つである場合は、拡張機能によってパケットが破棄する必要があります。
-
-    -   拡張機能は、NDIS を返すことができます\_状態\_保留要求を非同期的に完了します。 これにより、切断されたネットワーク アダプターを使用したパケットの宛先ポートとしてポートを追加する拡張機能です。 また、拡張機能を呼び出す、 [ *AddNetBufferListDestination* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)または[ *UpdateNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)完全なパケットの宛先ポートの追加。
-
-        拡張機能は可能性がありますが破棄する前に、ポートに転送する必要があるパケットのようにします。
-
-        **注**、拡張機能は、NDIS を返す場合\_状態\_保留中、呼び出すことができますも[ *ReferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)とポートの参照カウンターをインクリメントするには切断されたネットワーク アダプター。 ただし、拡張機能は転送できませんまで OID 要求呼び出した後[ *DereferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)ポートの参照カウンターをデクリメントします。
+**メモ** 転送拡張機能がドライバースタックでバインドされていない場合、または有効になっていない場合は、拡張可能スイッチによって、受信データパスから取得するパケットの宛先ポートが決まります。
 
 
 
--   宛先ポートの数が 0 の場合は、転送拡張機能を呼び出す必要があります[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)パケットをドロップします。 拡張機能を呼び出す必要がありますも[ *ReportFilteredNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)に破棄されたパケットの拡張可能スイッチのインターフェイスを通知します。
+転送拡張機能は、受信データパスで取得したパケットの宛先ポートを決定するときに、次のガイドラインに従う必要があります。
 
-    **注**転送拡張機能のリンク リストを取得する場合は[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)必要があります、イングレス データ パスから複数のパケットの構造体は、破棄されたパケットのリストを作成します。 これにより、拡張機能を呼び出すことができます[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)と[ *ReportFilteredNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists) 1 回だけです。
+-   拡張機能では、ndis\_スイッチ内の[**ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造を初期化する必要があります。この\_\_とき\_[**宛先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造を宛先ポートに転送\_ます。参照.
+
+    宛先ポートが外部ネットワークアダプターに接続されていない場合、拡張機能では、 [**ndis\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造の**NicIndex**メンバーを ndis\_スイッチに設定する必要があります **\_既定値\_NIC\_インデックス**です。
+
+    宛先ポートが拡張可能スイッチの外部ネットワークアダプターに接続されている場合、この拡張機能では、送信要求の転送先となる、基になる物理ネットワークアダプターのインデックスを指定できます。 拡張機能は、外部ネットワークアダプターにバインドされている宛先ネットワークアダプターの NIC\_インデックス値\_、 **NicIndex**メンバーを0以外の NDIS\_スイッチに設定することによってこれを行います。
+
+    詳細については、「[物理ネットワークアダプターへのパケットの転送](forwarding-packets-to-physical-network-adapters.md)」を参照してください。
+
+-   拡張機能では、アクティブなネットワークアダプター接続があるポートに対してのみ、パケットの OOB データに宛先ポートを追加する必要があります。 拡張機能が[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)要求を転送した場合、切断されたネットワークアダプターに関連付けられている宛先ポートを追加することはできません。
+
+-   パフォーマンスを向上させるには、拡張機能で、パケット配信に有効なポートの宛先だけを追加する必要があります。 この場合、拡張機能では、宛先ポートの[**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造の**ISEXCLUDED**メンバーを FALSE に設定する必要があります。
+
+-   ポートに送信される前に 802.1 Q 仮想ローカルエリアネットワーク (VLAN) のデータをパケットで保持するために、拡張機能は**PreserveVLAN**メンバーを TRUE に設定します。
+
+    パケット内の 802.1 Q 仮想ローカルエリアネットワーク (VLAN) データをポートに配信する前に削除するには、拡張機能によって**PreserveVLAN**メンバーが FALSE に設定されます。
+
+-   ポートに送信される前に 802.1 Q 優先順位データをパケットで保持するために、拡張機能は**PreservePriority**メンバーを TRUE に設定します。
+
+    パケット内の 802.1 Q 優先度データをポートに配信する前に削除するには、拡張機能によって**PreservePriority**メンバーが FALSE に設定されます。
+
+-   転送拡張機能によってパケットに複数の宛先ポートが追加される場合は、次の手順に従う必要があります。
+
+    1.  拡張機能は、最初にパケットの NDIS\_スイッチにアクセスし\_Net\_BUFFER\_list\_\_を使用して[ **\_詳細 net\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info) buffer\_list\_を転送します。 [ **\_\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロを転送します。 拡張機能は、 **numavailable** destination メンバーを読み取り、宛先ポートアレイで使用可能な未使用の宛先ポート要素の数を確認します。 拡張機能が配列で使用可能なよりも多くの宛先ポートを必要とする場合は、 [*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数を呼び出して、配列内の追加の宛先ポートに領域を割り当てる必要があります。
+
+        拡張機能が[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)を呼び出すと、 *numberofnewdestinations*パラメーターが、パケットに追加される新しい宛先ポートの数に設定されます。
+
+        また、この拡張機能は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体へのポインターに、 *NetBufferLists*パラメーターを設定します。
+
+        **メモ** 配列に使用できる宛先ポートがある場合、拡張機能は[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)を呼び出すことはできません。
+
+    2.  [*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数が正常に復帰した場合は、追加の宛先ポートが NDIS\_スイッチ内のコピー先配列の末尾に追加されて[ **\_転送先\_配列に転送\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)ます。データ. この構造体へのポインターは、*変換先*パラメーターで返されます。
+
+        **メモ** [*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数が、要求された数の宛先ポートを割り当てることができない場合、NDIS\_STATUS\_リソースを返します。
+
+    3.  拡張機能は、[**ターゲット\_配列構造の\_転送\_、NDIS\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)内の新しい宛先ポート要素を指定します。 拡張機能は、新しい宛先ポートを[**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造体として初期化します。
+
+        拡張機能は、 **numdestinations**オフセットを開始位置として、新しい宛先ポートを配列に初期化します。 **NUMDESTINATIONS**は、[**ターゲット\_配列構造\_転送\_、NDIS\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)のメンバーです。
+
+    4.  拡張機能が宛先ポート要素の追加または変更を完了したら、 [*Updatenetbufferlistdestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)を呼び出して変更をコミットする必要があります。
+
+-   拡張機能によってパケットの宛先ポートが1つ追加された場合は、次の手順に従う必要があります。
+
+    1.  拡張機能によって、拡張機能によって割り当てられた[**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造で、パケットの宛先ポート情報が初期化されます。
+
+    2.  拡張機能は、 [*AddNetBufferListDestination*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)を呼び出して、変更をパケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造にコミットします。 拡張機能は、*ターゲット*パラメーターで、 [**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造体のアドレスを渡します。
+
+        **メモ** 拡張機能では[*Updatenetbufferlistdestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)関数を呼び出して、宛先ポートが1つだけのパケットに変更をコミットすることはできません。
+
+-   転送拡張機能が[*AddNetBufferListDestination*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)または[*Updatenetbufferlistdestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)を呼び出して、宛先ポートの変更をコミットすると、拡張可能なスイッチインターフェイスは、以下の拡張可能なスイッチポートを削除しません。NDIS\_スイッチの要素で指定され[ **\_転送先\_配列構造体\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)します。 パケットの送信または受信操作が完了したら、必要に応じて、インターフェイスでポートを自由に削除できます。
+
+    **メモ** 転送拡張機能によって宛先ポートの変更が転送コンテキストにコミットされた後、宛先ポートを削除することはできず、宛先ポートの NDIS\_の**IsExcluded**メンバのみが\_ポートを切り替えることができ[ **\_ターゲット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)構造は変更できます。 詳細については、「[拡張可能スイッチの接続先ポートへのパケット配信の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)」を参照してください。
+
+-   転送拡張機能は、Oid のオブジェクト識別子 (OID) セット要求の処理を同期する必要があります。 [\_スイッチ\_NIC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)は、切断されたネットワークアダプターの宛先ポートを追加するコードとの接続を解除\_ます。
+
+    転送拡張機能の[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)が[OID\_スイッチ\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)要求に対して呼び出された場合、拡張機能は次のいずれかの操作を実行できます。
+
+    -   この OID 要求を転送するために拡張機能が[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出した場合、切断されたネットワークアダプターのポートをパケットの宛先ポートとして指定することはできません。
+
+        **メモ** パケットの宛先ポートが切断されたネットワークアダプターと同じである場合、拡張機能はパケットを削除する必要があります。
+
+    -   拡張機能は、要求を非同期的に完了するために、NDIS\_STATUS\_PENDING を返すことができます。 これにより、拡張機能は、切断されたネットワークアダプターを使用するポートを、パケットの宛先ポートとして追加できます。 これにより、拡張機能が[*AddNetBufferListDestination*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination)または[*Updatenetbufferlistdestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)を呼び出し、パケットへの宛先ポートの追加を完了することもできます。
+
+        拡張機能は、パケットが破棄される前にポートに転送する必要があるパケットに対して、このような処理を行うことができます。
+
+        **メモ** 拡張機能によって、NDIS\_STATUS\_PENDING が返された場合、参照可能な[*Chport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)を呼び出して、切断されたネットワークアダプターでポートの参照カウンターをインクリメントすることもできます。 ただし、拡張機能は、 [*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)を呼び出してポートの参照カウンターをデクリメントするまで OID 要求を転送できません。
 
 
 
--   宛先ポートの数が 0 より大きい場合は、転送拡張機能を呼び出す必要があります[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)のミニポート エッジへのイングレス データ パスでパケットを転送するように、拡張可能スイッチ。
+-   宛先ポートの数が0の場合、転送拡張機能は[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)を呼び出してパケットを削除する必要があります。 拡張機能は、 [*ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)を呼び出して、ドロップされたパケットについて拡張可能なスイッチインターフェイスに通知する必要もあります。
 
-    **注**転送拡張機能のリンク リストを取得する場合は[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)必要があります、イングレス データ パスから複数のパケットの構造体は、転送されたパケットのリストを作成します。 これにより、拡張機能を呼び出すことができます[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)パケットのリストを転送するだけで 1 回です。 さらに、拡張機能は、ポートを 1 つの宛先を持つパケットを転送する個別の一覧を管理する必要があります。 詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの送信と受信フラグ](hyper-v-extensible-switch-send-and-receive-flags.md)します。
+    **メモ** 転送拡張機能が、受信データパスからの複数のパケットについて、 [**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のリンクリストを取得した場合は、破棄されたパケットの個別のリストを作成する必要があります。 これにより、拡張機能は[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)と[*ReportFilteredNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)を1回だけ呼び出すことができます。
+
+
+
+-   宛先ポートの数が0より大きい場合、転送拡張機能は[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を呼び出して、拡張可能スイッチのミニポートエッジにパケットを受信データパス経由で転送する必要があります。
+
+    **メモ** 転送拡張機能が、受信データパスからの複数のパケットについて、 [**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のリンクリストを取得した場合、転送されたパケットの別のリストを作成する必要があります。 これにより、拡張機能は[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を1回だけ呼び出して、パケットの一覧を転送できます。 さらに、同じ宛先ポートを持つパケットを転送するために、拡張機能は個別のリストを保持する必要があります。 詳細については、「 [Hyper-v 拡張可能スイッチの送信フラグと受信フラグ](hyper-v-extensible-switch-send-and-receive-flags.md)」を参照してください。

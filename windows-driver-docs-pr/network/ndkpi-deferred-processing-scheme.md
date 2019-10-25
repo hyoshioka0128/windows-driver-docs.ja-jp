@@ -1,52 +1,52 @@
 ---
-title: 遅延処理の NDKPI スキーム
-description: このセクションには、NDKPI で使用される処理の遅延がについて説明します
+title: NDKPI 遅延処理スキーム
+description: このセクションでは、NDKPI で使用される遅延処理について説明します。
 ms.assetid: DA2D0FCA-D84B-4599-A560-8F87A0918D99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ca56134f3685a11c51f0d6c0425e52e8bef819
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 117a5a871fd87a5eb686a11c487fc5e80f8d01c1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831902"
 ---
 # <a name="ndkpi-deferred-processing-scheme"></a>NDKPI 遅延処理スキーム
 
 
-多くの場合、NDK コンシューマー キュー ペア (QP) にイニシエーターの要求のチェーンを投稿できる場所があります。 たとえば、コンシューマーは、後、送信要求の高速の登録要求数を投稿するでした。 このような要求パターンのパフォーマンスは、要求のチェーンが QP をキューに置かれた場合を改善され、ハードウェアをチェーン内の要求ごとに 1 つずつを示すのではなく、バッチとして処理用のハードウェアに示されている可能性があります。
+NDK コンシューマーは多くの場合、イニシエーター要求のチェーンをキューペア (QP) に送信します。 たとえば、コンシューマーは、多数の高速レジスタ要求の後に送信要求をポストできます。 このような要求パターンのパフォーマンスは、要求のチェーンが QP のキューに登録され、ハードウェアに対して各要求を1つずつ示すのではなく、バッチとして処理するためにハードウェアに指示されると改善される可能性があります。
 
-**NDK\_OP\_フラグ\_DEFER**フラグの値は次の要求の種類では、この目的に使用できます。
+**NDK\_OP\_フラグ\_DEFER**フラグ値は、次の要求の種類を使用してこの目的に使用できます。
 
--   *NdkBind* ([*NDK\_FN\_BIND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_bind))
--   *NdkFastRegister* ([*NDK\_FN\_FAST\_REGISTER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_fast_register))
--   *NdkInvalidate* ([*NDK\_FN\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_invalidate))
--   *NdkRead* ([*NDK\_FN\_READ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_read))
--   *NdkSend* ([*NDK\_FN\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_send))
--   *NdkSendAndInvalidate* ([*NDK\_FN\_SEND\_AND\_INVALIDATE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_send_and_invalidate))
--   *NdkWrite* ([*NDK\_FN\_WRITE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_write))
+-   *Ndkbind* ([*NDK\_FN\_BIND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_bind))
+-   *Ndkfastregister* ([*NDK\_FN\_FAST\_REGISTER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_fast_register))
+-   *NdkInvalidate* ([*NDK\_FN\_無効化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_invalidate))
+-   *Ndkread* ([*NDK\_FN\_読み取り*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_read))
+-   *Ndksend* ([*NDK\_FN\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_send))
+-   *Ndksendandinvalidate* ([*NDK\_FN\_SEND\_および\_無効化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_send_and_invalidate))
+-   *Ndkwrite* ([*NDK\_FN\_書き込み*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_write))
 
-フラグのプレゼンスは、プロバイダーは、いつでも新しい要求を処理することがありますが、処理のためのハードウェアに要求を示すを遅らせることができますが、NDK プロバイダーへのヒントです。
+フラグが存在するかどうかは、ハードウェアへの要求を処理するように要求することを示す、NDK プロバイダーに対するヒントですが、プロバイダーはいつでも新しい要求を処理できます。
 
-有無、 **NDK\_OP\_フラグ\_DEFER**イニシエーターの要求でフラグには、入力候補の生成に関して、NDK プロバイダーの既存の責任は変わりません。 エラー状態を返すイニシエーター要求への呼び出しはする必要があります、失敗した要求の CQ をキューに登録される完了されることはありません。 逆に、成功状態を返す呼び出しとして、コンシューマーは、以下に示す追加の要件を次に、CQ をキューに登録される入力候補で最終的になる必要があります。
+**Ndk\_OP\_フラグ\_遅延**フラグが設定されている場合、発信側の要求に対して、ndk プロバイダーの既存の役割は変更されません。 エラー状態を返す発信側要求への呼び出しでは、失敗した要求に対して CQ のキューに登録が完了しないようにする必要があります。 逆に、成功の状態を返す呼び出しでは、コンシューマーが以下に示す追加の要件に従う限り、最終的には CQ のキューに登録されます。
 
-既存 NDK 要件をすべてに加えて追加の 2 つの要件 (プロバイダーの 1 つ) と、コンシューマーの 1 つを要求を正常にで QP にポストする状況を防ぐために従う必要があります、 **NDK\_OP\_フラグ\_DEFER**フラグが設定が、決して処理のためのハードウェアに示されます。
+すべての既存の NDK 要件に加えて、 **ndk\_OP\_フラグを使用して要求が QP に正常に送信される状況を防ぐために、2つの追加要件 (プロバイダー用とコンシューマー用に1つ) を監視する必要があり\_DEFER**フラグは、ハードウェアに対して処理のために指定されることはありません。
 
--   すべての要求で送信された以前ですが、プロバイダーを保証する必要があります、イニシエーターの要求への呼び出しからエラー状態を返すときに、 **NDK\_OP\_フラグ\_DEFER**フラグには処理のためのハードウェアに示されます。
--   コンシューマーは、インライン エラーのない場合は、すべてのイニシエーター要求チェーンによって終了されます、イニシエーターの要求が設定されていないことを保証、 **NDK\_OP\_フラグ\_DEFER**フラグ。
+-   発信側要求の呼び出しからエラー状態を返す場合、プロバイダーは、以前に**NDK\_OP\_フラグ\_DEFER**フラグを使用して送信されたすべての要求がハードウェアに処理のために示されていることを保証する必要があります。
+-   コンシューマーは、インラインエラーがない場合に、すべてのイニシエーター要求チェーンが、 **NDK\_OP\_フラグ\_DEFER**フラグを設定していないイニシエーター要求によって終了されることを保証します。
 
-たとえば、コンシューマーが 2 つの高速の登録要求と QP に投稿する必要がある送信のチェーンを持つケースを考えてみます。
+たとえば、コンシューマーに2つの高速レジスタ要求のチェーンと、QP に post する必要がある送信がある場合を考えてみます。
 
-1.  コンシューマーで最初の高速レジスタの投稿、 **NDK\_OP\_フラグ\_DEFER**フラグと*NdkFastRegister*ステータスを返します\_成功します。
-2.  含む、2 つ目の高速なレジスタが投稿された、もう一度、 **NDK\_OP\_フラグ\_DEFER**フラグの設定が*NdkFastRegister*エラー状態を返します。 この場合、コンシューマーは、送信要求を通知できません。
-3.  2 番目の呼び出しのインライン エラーを返すときに*NdkFastRegister*、NDK プロバイダーは、すべて以前 unindicated (最初の高速をここで登録) 要求が処理するためのハードウェアに示されることを確認します。
-4.  最初の呼び出しのため*NdkFastRegister*に成功したが完了する必要がありますが生成されること、CQ します。
-5.  2 番目の呼び出しをするため、 *NdkFastRegister*インラインで失敗しました、完了する必要があります、CQ を生成できません。
+1.  コンシューマーは、 **NDK\_OP\_フラグ\_DEFER**フラグと*NDKFASTREGISTER*が成功を返すステータス\_を使用して、ファーストレジスタをポストします。
+2.  ここでも、2番目の高速レジスタは、 **NDK\_OP\_フラグ\_DEFER**フラグが設定された状態で投稿されますが、 *ndkfastregister*はエラー状態を返します。 この場合、コンシューマーは送信要求を送信しません。
+3.  *Ndkfastregister*への2回目の呼び出しでインラインエラーが返されると、NDK プロバイダーは、以前に示されていないすべての要求 (この場合は最初の高速レジスタ) がハードウェアに対して処理のために示されることを確認します。
+4.  *Ndkfastregister*の最初の呼び出しが成功したため、CQ に対して完了を生成する必要があります。
+5.  *Ndkfastregister*への2回目の呼び出しはインラインで失敗したため、CQ に対して完了を生成することはできません。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

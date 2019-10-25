@@ -3,25 +3,25 @@ title: シェーディング要件
 description: シェーディング要件
 ms.assetid: 6c4f3dee-a955-4140-8b64-e9289094f530
 keywords:
-- WDK Direct3D 網掛け
-- フラット シェーディング WDK Direct3D
-- グーロー シェーディング WDK Direct3D
-- 反射ハイライトの WDK Direct3D
-- アルファ ブレンディング WDK Direct3D
-- ディザー WDK Windows 2000 の表示
-- WDK Direct3D のカラー キー
-- WDK Direct3D の透過性
+- シェーディング (WDK Direct3D)
+- フラットシェーディング WDK Direct3D
+- グーローシェーディング WDK Direct3D
+- WDK 光源の強調表示 (WDK Direct3D)
+- アルファブレンド WDK Direct3D
+- WDK Windows 2000 ディスプレイのディザリング
+- カラーキー WDK Direct3D
+- 透過性 WDK Direct3D
 - WDK Direct3D のブレンド
-- WDK の Direct3D を強調表示
+- WDK Direct3D の強調表示
 - D3DPRIMCAPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b281315e1a7332b8fe1d8a576ff48155878394
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0678a0e7f7e8f6e608ee398caa2220965025d6a6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365501"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825730"
 ---
 # <a name="shading-requirements"></a>シェーディング要件
 
@@ -29,69 +29,69 @@ ms.locfileid: "67365501"
 ## <span id="ddk_shading_requirements_gg"></span><span id="DDK_SHADING_REQUIREMENTS_GG"></span>
 
 
-フラットな影付き、グーロー シェーディング、鏡面ハイライト、アルファ ブレンドの要件、ディザリングとカラー キー次に示します。
+フラットシェーディング、グーローシェーディング、反射の強調表示、アルファブレンド、ディザリング、およびカラーキーの要件は次のとおりです。
 
-### <a name="span-idflatshadingspanspan-idflatshadingspanflat-shading"></a><span id="flat_shading"></span><span id="FLAT_SHADING"></span>フラットな影付き
+### <a name="span-idflat_shadingspanspan-idflat_shadingspanflat-shading"></a><span id="flat_shading"></span><span id="FLAT_SHADING"></span>フラットシェーディング
 
-D3DPSHADECAPS\_COLORFLATRGB ビット、 **dwShadeCap**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)適切なプリミティブ型 (行の構造を設定する必要がありますまたは、三角形) フラット シェーディングがそのプリミティブ型のサポートされていることを指定するためにします。
+このプリミティブ型でフラットシェーディングがサポートされていることを示すために、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**DWSHADECAP**メンバーの D3DPSHADECAPS\_COLORFLATRGB ビットを適切なプリミティブ型 (線または三角形) に対して設定する必要があります。
 
-三角形のファンを除くすべてのプリミティブ型、(サポートされている) 場合は、反射の色、およびアルファ データが、各プリミティブの最初の頂点から取得します。 三角形のファンの 2 番目の頂点が使用されます。 三角形全体にわたってこれらの色が変わらない (つまり、補間されません)。
+トライアングルファン以外のすべてのプリミティブ型では、色、スペキュラ (サポートされている場合)、およびアルファデータは、各プリミティブの最初の頂点から取得されます。 トライアングルファンの場合は、2番目の頂点が使用されます。 これらの色は、三角形全体にわたって一定のままです (つまり、補間されていません)。
 
-### <a name="span-idgouraudshadingspanspan-idgouraudshadingspangouraud-shading"></a><span id="gouraud_shading"></span><span id="GOURAUD_SHADING"></span>グーロー シェーディング
+### <a name="span-idgouraud_shadingspanspan-idgouraud_shadingspangouraud-shading"></a><span id="gouraud_shading"></span><span id="GOURAUD_SHADING"></span>グーローシェーディング
 
-**DwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の有効期限があります、D3DPSHADECAPS\_COLORGOURAUDRGB ビットが、適切なプリミティブ型 (の設定線または三角形) を色の補間をグーローがサポートされていることを示します。 色およびスペキュラ コンポーネントはどちらも線形補間しますの頂点の間。
+[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**dwShadeCaps**メンバーには、色のグーロー補間がサポートされることを示すために、適切なプリミティブ型 (線または三角形) に対して D3DPSHADECAPS\_COLORGOURAUDRGB ビットが設定されている必要があります。 色と反射のコンポーネントは、両方とも頂点間で直線的に補間されます。
 
-すべてのプリミティブのカラー データは、プリミティブの頂点の間の線形補間を使用する必要があり、リファレンス ラスタライザーによって生成されたイメージに準拠している必要があります。 さらに、存在する場合は、すべてのカラーとアルファ コンポーネントを同じ方法で挿入する必要があります。 などフラット シェーディングをアルファ コンポーネントを使用しながら、RGB 色のコンポーネントのグーロー補間を使用することはできません。 例外の反射の色のアルファ コンポーネントを使用して、霧コンポーネントが送信されるべきではフラットな影が付きます。
+すべてのプリミティブについて、カラーデータはプリミティブの頂点間の線形補間を使用する必要があり、参照ラスタライザーによって生成されたイメージに準拠している必要があります。 さらに、すべてのカラーおよびアルファコンポーネントが存在する場合は、同じ方法で補間する必要があります。 たとえば、アルファコンポーネントにはフラットシェーディングを使用しながら、色の RGB コンポーネントのグーロー補間を使用することは無効です。 例外として、反射色のアルファ成分を使用したフォグコンポーネントの送信があります。これは、フラットな影付きにすることはできません。
 
-繰り返し行う一連の色要素の奥行修正することをお勧めします。 Directx の最新のリリースでリファレンス ラスタライザーの色要素の奥行修正では既にに注意してください。 これは、現在のテスト手順でに考慮されます。
+反復するカラーコンポーネントのパースペクティブ修正をお勧めします。 最新の Direct X リリースの参照ラスタライザーは、既に色コンポーネントのパースペクティブ修正を行っていることに注意してください。 これは、現在のテスト手順で考慮されます。
 
-### <a name="span-idspecularhighlightingspanspan-idspecularhighlightingspanspecular-highlighting"></a><span id="specular_highlighting"></span><span id="SPECULAR_HIGHLIGHTING"></span>反射ハイライト
+### <a name="span-idspecular_highlightingspanspan-idspecular_highlightingspanspecular-highlighting"></a><span id="specular_highlighting"></span><span id="SPECULAR_HIGHLIGHTING"></span>反射の強調表示
 
-場合のサポートを強調表示が公開されていると後で、次のフラグの一方または両方を設定する必要があります、反射、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)用の構造、適切なプリミティブ型 (線または三角形):
+反射の強調表示のサポートが公開されている場合は、次のフラグのいずれかまたは両方を、適切なプリミティブ型 (線または三角形) の[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**dwShadeCaps**メンバーに設定する必要があります。
 
--   D3DPSHADECAPS\_フラット シェーディングがサポートされている場合、SPECULARFLATRGB を設定する必要があります。
+-   フラットシェーディングがサポートされている場合は、D3DPSHADECAPS\_SPECULARFLATRGB を設定する必要があります。
 
--   D3DPSHADECAPS\_グーロー シェーディングがサポートされている場合、SPECULARGOURAUDRGB を設定する必要があります。
+-   D3DPSHADECAPS\_SPECULARGOURAUDRGB は、グーローシェーディングがサポートされている場合に設定する必要があります。
 
-また、これを有効にするか、D3DRENDERSTATE の適切な値を設定して、反射ハイライトを無効にすることがあります\_SPECULARENABLE が状態を表示します。
+また、D3DRENDERSTATE\_SPECULARENABLE レンダー状態の適切な値を設定して、反射の強調表示を有効または無効にすることもできます。
 
-反射ハイライトと完全の色である必要があります、レンダー ターゲットを使用できる色の完全な範囲を生成できる必要があります。 単色の反射ハイライトはこの要件を満たすために十分ではありません。
+反射の強調表示は、完全な色である必要があり、レンダーターゲットで使用可能なすべての色を生成できる必要があります。 この要件を満たすには、モノクロの反射の強調表示は不十分です。
 
-D3DPSHADECAPS\_SPECULARFLATMONO と D3DPSHADECAPS\_SPECULARGOURAUDMONO フラグは単色の反射ハイライトを示すために使用されます。 のみを反射ハイライトが傾斜モードでサポートされていること示します。 アダプターが、rgb カラー モードでのみモノクロの反射の光源をサポートしているを示すことができるキャップはありません。 アダプターは、rgb カラー モードでのみモノクロの反射の光源をサポートする場合は、SPECULARFLATRGB または SPECULARGOURAUDRGB キャップを設定しないでください。 Monomodes で、ハードウェアは白の強度と反射コンポーネントの青のチャネルをだけ補する必要があります。 これは、D3DRENDERSTATE によって制御\_MONOENABLE が状態を表示します。
+D3DPSHADECAPS\_SPECULARFLATMONO および D3DPSHADECAPS\_SPECULARGOURAUDMONO フラグは、グレーの反射の強調表示を示すためには使用されません。 これは、反射の強調表示がランプモードでサポートされていることのみを示します。 アダプターが RGB モードでの単色の反射の光源のみをサポートしていることを示すキャップはありません。 アダプターが RGB モードでモノクロ反射のハイライトのみをサポートしている場合は、SPECULARFLATRGB または SPECULARGOURAUDRGB のキャップを設定しないでください。 モノモードでは、ハードウェアはスペキュラコンポーネントの青チャネルを白の輝度として補間します。 これは、D3DRENDERSTATE\_モノ ENABLE レンダー状態によって制御されます。
 
-反射の光源を正しく実装するには、補間要素の 2 番目のセットが必要です。 ただし、ハードウェアはそのサポート z バッファーをパーツおよびブレンドできる多くの場合、エミュレート反射の光源 D3DCMP z の比較関数を使用した三角形の上に 2 番目の描画パスに設定することによって\_等しい (D3DCMPFUNC 列挙型を参照してください、DirectX SDK ドキュメント)。 この 2 番目のパスは、最初のパスの中に書き込まれたピクセルに補間の反射コンポーネントを追加する、blend に実行最大数を超える値は、白に飽和する必要があります。
+反射の光源を適切に実装するには、interpolants の2番目のセットが必要です。 ただし、z バッファリングとブレンドをサポートするハードウェアパートでは、多くの場合、三角形に対して2番目のブレンドパスを使用することによって、反射の光源をエミュレートできます (D3DCMP\_等しいとして設定します (DirectX SDK の D3DCMPFUNC 列挙型を参照してください)。ドキュメント)。 この2番目のパスでは、blend を実行して、最初のパス中に書き込まれたピクセルに補間反射成分を追加します。最大値を超える値は、白に飽和する必要があります。
 
-### <a name="span-idalphablendingspanspan-idalphablendingspanalpha-blending"></a><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>アルファ ブレンド
+### <a name="span-idalpha_blendingspanspan-idalpha_blendingspanalpha-blending"></a><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>アルファブレンド
 
-アルファ ブレンドのサポートを公開するで、次のフラグを設定、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)適切なプリミティブ型の構造型 (線または三角形):
+アルファブレンドのサポートを公開するには、次のフラグを適切なプリミティブ型 (線または三角形) の[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**dwShadeCaps**メンバーに設定する必要があります。
 
--   D3DPSHADECAPS\_アルファとフラット シェーディングがサポートされている場合、ALPHAFLATBLEND を設定する必要があります。
+-   D3DPSHADECAPS\_ALPHAFLATBLEND は、アルファでフラットシェーディングがサポートされている場合に設定する必要があります。
 
--   D3DPSHADECAPS\_アルファとグーロー シェーディングがサポートされている場合、ALPHAGOURAUDBLEND を設定する必要があります。
+-   D3DPSHADECAPS\_ALPHAGOURAUDBLEND は、アルファでグーローシェーディングがサポートされている場合に設定する必要があります。
 
-アルファ ブレンドがサポートされている場合は、有効または、D3DRENDERSTATE の適切な値を設定して無効にする時間ができる必要があります\_ALPHABLENDENABLE が状態を表示します。
+アルファブレンドがサポートされている場合は、D3DRENDERSTATE\_ALPHABLENDENABLE render 状態の適切な値を設定することによって、それを有効または無効にできる必要があります。
 
-アルファ ブレンドの場合、または (3 D 空間) から完全な透過性は、受信の色をフレーム バッファーに既にあるデータの値で乗算のプロセスです。 このレンダリング状態が、D3DRENDERSTATE によって設定できるモード\_SRCBLEND と D3DRENDERSTATE\_DESTBLEND が状態を表示します。
+アルファブレンド (3D 空間からの真の透明度) は、フレームバッファーに既に配置されているデータの値によって入力色を modulating するプロセスです。 このレンダリング状態には、D3DRENDERSTATE\_SRCBLEND および D3DRENDERSTATE\_DESTBLEND レンダリング状態で設定できるモードがあります。
 
-描画操作のアルファ値が利用できない場合は、1.0 (不透明) と見なさ 必要があります。 これが可能な場合の例はアルファ チャネルがテクスチャをブレンドしません。
+ブレンド操作のアルファ値を使用できない場合は、1.0 (不透明) であると想定する必要があります。 これが可能な場合の例として、アルファチャネルを持たないテクスチャとのブレンドがあります。
 
-結果のピクセルの書き込み先となるターゲットにアルファ チャネルが含まれている場合は、透明度の適切な蓄積できるように、そのチャネルにアルファ ブレンディング操作の結果のアルファ値を書き込まれなければなりません。
+結果のピクセルが書き込まれるターゲットにアルファチャネルが含まれている場合は、アルファブレンディング演算の結果として得られるアルファ値をそのチャネルに書き込む必要があります。これにより、透明度を適切に累積できます。
 
 ### <a name="span-idditheringspanspan-idditheringspandithering"></a><span id="dithering"></span><span id="DITHERING"></span>ディザリング
 
-特定のプリミティブ型 (線または三角形) にディザリングがサポートされている場合、 **dwRasterCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体は、D3DPRASTERCAPS をいる必要があります\_ディザー フラグを設定します。 機能は、D3DRENDERSTATE によって制御可能である必要があります\_DITHERENABLE が状態を表示します。
+特定のプリミティブ型 (線または三角形) でディザリングがサポートされている場合、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**dwRasterCaps**メンバーには、D3DPRASTERCAPS\_のディザーフラグが設定されている必要があります。 この機能は、D3DRENDERSTATE\_DI[ENABLE render state] を使用して制御可能である必要があります。
 
-ディザリングがサポートされている場合、可能性がありますを既定としないで常に off または常にします。
+ディザリングがサポートされている場合、既定では [オフ] または [常時オン] にならないことがあります。
 
-### <a name="span-idcolorkeyspanspan-idcolorkeyspancolor-key"></a><span id="color_key"></span><span id="COLOR_KEY"></span>カラー キー
+### <a name="span-idcolor_keyspanspan-idcolor_keyspancolor-key"></a><span id="color_key"></span><span id="COLOR_KEY"></span>色キー
 
-カラー キーと関連するテクスチャの透明度、D3DPTEXTURECAPS\_透過性の上限 (を参照してください、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体)。
+カラーキーは、テクスチャの透明度と D3DPTEXTURECAPS\_透明度キャップ ( [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**Dwtexturecaps**メンバーを参照) に関連しています。
 
-カラー キー透明度の 2D スプライトの作成に使用されているオブジェクトの一部の色をフレーム バッファーにそれらの下にある色に置き換えます。 ドライバーが行えるように、シーン全体のカラー キーを有効にすることが - のカラー キー オンとオフをそれぞれの面にすることではなく添付のカラー キー値を持つ特定のサーフェスにだけ色キーを使用するアプリケーション。
+カラーキーの透過性は、2D スプライトを作成するために使用され、オブジェクトの一部の色を、フレームバッファー内でその下にある色に置き換えます。 このドライバーを使用すると、アプリケーションでシーン全体のカラーキーを有効にすることができますが、各画面でカラーキーをオンまたはオフにするのではなく、接続されたカラーキー値を持つ特定のサーフェイスに対してのみカラーキーを使用する必要があります。
 
-場合に、・ カラーキーが有効になっている、D3DRENDERSTATE\_COLORKEYENABLE でレンダリング状態が に設定されている**TRUE**テクスチャ サーフェスであり、DDRAWISURF\_HASCKEYSRCBLT ビットが設定
+D3DRENDERSTATE\_COLORKEYENABLE レンダー状態が**TRUE**に設定され、テクスチャサーフェイスに DDRAWISURF\_HASCKEYSRCBLT ビットセットがある場合は、colorkeyが有効になります。
 
-場合に、カラー キーが有効になっている、D3DRENDERSTATE\_COLORKEYENABLE でレンダリング状態が に設定されている**TRUE**テクスチャ サーフェスであり、DDRAWISURF\_HASCKEYSRCBLT ビットが設定します。 (を参照してください、 **dwFlags**のメンバー、 [ **DD\_画面\_ローカル**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)詳細については、構造体)。アプリケーション作成 DDSD を使用するテクスチャ サーフェス\_CKSRCBLT を呼び出して、 **IDirect3DDevice7::SetRenderState** D3DRENDERSTATE メソッド\_COLORKEYENABLE と**TRUE**. これらの両方のカラー キーが発生する場合は true である必要があるあり、レンダリング状態のままにするアプリケーションを許可する必要があります**TRUE**すべて時間と引き続き選択的にフレームのテクスチャのサブセットを使用してカラー キー (が指定されている、DDRAWISURF\_HASCKEYSRCBLT ビットが設定)。 この動作を正しく処理するために、ドライバーの責任です。 詳細については**IDirect3DDevice7::SetRenderState**、Direct3D SDK のドキュメントを参照してください。
+D3DRENDERSTATE\_COLORKEYENABLE レンダー状態が**TRUE**に設定され、テクスチャサーフェイスに DDRAWISURF\_HASCKEYSRCBLT ビットが設定されている場合、カラーキーが有効になります。 (詳細については、 [**DD\_SURFACE\_ローカル**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)構造の**dwFlags**メンバーを参照してください)。アプリケーションでは、DDSD\_CKSRCBLT を使用するテクスチャサーフェイスを作成し、D3DRENDERSTATE\_COLORKEYENABLE および**TRUE**を使用して**IDirect3DDevice7:: SetRenderState**メソッドを呼び出します。 これらはどちらも、カラーキーを使用するには true である必要があります。また、アプリケーションでは、レンダリング状態を常に**true**のままにしておき、フレームのテクスチャのサブセット (つまり、\_DDRAWISURF を持つもの) に対してカラーキーを選択的に使用することが許可されている必要があります。HASCKEYSRCBLT ビットセット)。 この動作を正しく処理するには、ドライバーが必要です。 **IDirect3DDevice7:: SetRenderState**の詳細については、Direct3D SDK のドキュメントを参照してください。
 
  
 

@@ -3,17 +3,17 @@ title: パケットベース システム DMA の使用
 description: パケットベース システム DMA の使用
 ms.assetid: 5d175193-4a28-49fd-80b5-18f116232c6e
 keywords:
-- DMA WDK カーネルでは、パケットに基づくシステム
-- DMA WDK カーネルのパケットに基づく
-- DMA は、パケットに基づく、WDK のカーネルを転送します。
+- システム DMA WDK カーネル、パケットベース
+- パケットベースの DMA WDK カーネル
+- DMA 転送 WDK カーネル、パケットベース
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c56dc0f2a53b8ea0a3fc706e06cf91641b5ec2c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 592acd1025443207d7c83a105e31721814f98bb1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381580"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835925"
 ---
 # <a name="using-packet-based-system-dma"></a>パケットベース システム DMA の使用
 
@@ -21,29 +21,29 @@ ms.locfileid: "67381580"
 
 
 
-パケットに基づく DMA を使用する下位のデバイスのドライバーは IRP DMA 転送の要求を処理するときにサポート ルーチンの次の一般的なシーケンスを呼び出します。
+パケットベースの DMA を使用する下位デバイスのドライバーは、DMA 転送を要求する IRP を処理するときに、次のような一般的なサポートルーチンを呼び出します。
 
--   [**KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)システム DMA コント ローラーを割り当てようとしての直前に (詳細については、次を参照してください[キャッシュの一貫性を維持](maintaining-cache-coherency.md))。
+-   [**Keflushiobuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers)システム DMA コントローラーの割り当てを試みる直前 (詳細については、「[キャッシュの一貫性の維持](maintaining-cache-coherency.md)」を参照してください)
 
--   [**AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)ドライバーが DMA のデバイスをプログラミングする準備が整うし、システム DMA コント ローラーが必要
+-   ドライバーが DMA 用にデバイスをプログラミングする準備ができていて、システム DMA コントローラーが必要な場合の[**Allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)
 
-    **AllocateAdapterChannel**、ドライバーを呼び出して[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチン。
+    さらに、 **Allocateadapterchannel**は、ドライバーの[*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンを呼び出します。
 
--   [**MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)最初の呼び出しでパラメーターとして必要な MDL にインデックスを取得する**MapTransfer**
+-   [**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)は、 **maptransfer**への最初の呼び出しでパラメーターとして必要な、MDL へのインデックスを取得します。
 
--   [**MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)転送操作のシステムの DMA コント ローラーのプログラミング
+-   転送操作のためにシステム DMA コントローラーをプログラムするための[**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)
 
-    ドライバーを呼び出す必要があります**MapTransfer**で説明したように、すべての要求されたデータを転送する 2 回以上[転送要求の分割](splitting-dma-transfer-requests.md)します。
+    ドライバーは、[転送要求の分割](splitting-dma-transfer-requests.md)に関する説明に従って、要求されたすべてのデータを転送するために**maptransfer**を複数回呼び出す必要がある場合があります。
 
--   [**FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)各 DMA の直後後の転送との下位のデバイスからの操作
+-   1つの下位デバイスとの間で各 DMA 転送操作を行った直後の[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)
 
-    ドライバーを呼び出す必要がある場合**MapTransfer**より後に、要求されたすべてのデータを転送するには、呼び出す必要があります**FlushAdapterBuffers**回数が呼び出されます**MapTransfer**します。
+    ドライバーが**Maptransfer**を複数回呼び出して、要求されたすべてのデータを転送する必要がある場合は、 **maptransfer**を呼び出す回数だけ**flushadapterbuffers**を呼び出す必要があります。
 
--   [**FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)デバイス I/O エラーのため IRP がドライバーに失敗した場合または要求されたすべてのデータが転送されたようになります
+-   すべての要求されたデータが転送された直後、またはデバイス i/o エラーが原因でドライバーが IRP に失敗した場合に、 [**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)
 
-によって返されるアダプター オブジェクト ポインター [ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)を除くこれらのルーチンのそれぞれに必要なパラメーターは、 **KeFlushIoBuffers**と**MmGetMdlVirtualAddress**に渡される MDL へのポインターが必要な**Irp -&gt;MdlAddress**します。
+[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)によって返されるアダプターオブジェクトのポインターは、これらの各ルーチンに必須のパラメーターです。 **Keflushiobuffers**と**Mmgetmdlvirtualaddress**を除きます。これは、 **&gt;Irp に渡された MDL へのポインターを必要とします。MdlAddress**。
 
-個々 のドライバーでは、そのデバイスのサービスを提供する各ドライバーの実装方法に応じて、さまざまな時点でこのサポート ルーチンのシーケンスを呼び出します。 たとえば、1 つのドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンへの呼び出しを行うことがあります**AllocateAdapterChannel**、別のドライバーは Irp からを削除するルーチンから呼び出しを行うことがありますキュー、ドライバーが作成したインター ロックし、その下位の DMA デバイスでは、データを転送する準備が示されている場合、さらに別のドライバーはこの呼び出しを行うことがあります。
+個々のドライバーは、各ドライバーがどのように実装されているかに応じて、さまざまな時点でこの一連のサポートルーチンを呼び出します。 たとえば、1つのドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンが**Allocateadapterchannel**を呼び出す可能性があります。別のドライバーは、ドライバーによって作成されたインタロックされたキューから irp を削除するルーチンからこの呼び出しを行う可能性がありますが、別のドライバーがこれを行う可能性があります。データ転送の準備ができていることを下位 DMA デバイスが示している場合は、を呼び出します。
 
  
 

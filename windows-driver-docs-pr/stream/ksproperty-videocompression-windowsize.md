@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE
-description: KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム サイズを表すデータ速度を制御します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_VIDEOCOMPRESSION\_WINDOWSIZE
+description: KSK プロパティ\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレームサイズを示すデータ速度を制御します。 このプロパティを実装する必要があります。
 ms.assetid: 44cf4bb6-7ddb-4a72-8a77-7dc390aa8c12
 keywords:
-- KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebaed8b3800ebfced36a6a55daee4815f228cbcc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b2d2fd8ad29c110c73ee9240b8ed2600b92caa2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382007"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837877"
 ---
-# <a name="kspropertyvideocompressionwindowsize"></a>KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE
+# <a name="ksproperty_videocompression_windowsize"></a>KSK プロパティ\_VIDEOCOMPRESSION\_WINDOWSIZE
 
 
-KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム サイズを表すデータ速度を制御します。 このプロパティを実装する必要があります。
+KSK プロパティ\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレームサイズを示すデータ速度を制御します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_videocompression_windowsize_ks"></span><span id="DDK_KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,29 +50,29 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、平均フレーム サイズを表すデータ レートを指定する LONG が。
+プロパティ値 (操作データ) は、平均フレームサイズを表すデータ速度を指定する LONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_構造がウィンドウのサイズを指定します。
+KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、ウィンドウのサイズを指定します。
 
-このプロパティをサポートするミニドライバーを設定する必要があります、 **KS\_CompressionCaps\_CanWindow**フラグ、**機能**のメンバー、 [ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)ミニドライバーのビデオの圧縮機能を取得する構造体。 ミニドライバーが設定されている場合、 **KS\_CompressionCaps\_CanWindow**プロパティの get と set の両方のサポートが提供フラグをします。
+このプロパティをサポートするミニドライバーは、 [**ksproperty\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)構造体を\_、KS プロパティの**Capabilities**メンバーで**KS\_CompressionCaps**を設定する必要があります。ミニドライバーのビデオ圧縮機能を取得します。 ミニドライバーで**KS\_CompressionCaps\_CanWindow**フラグが設定されている場合は、プロパティの get と set の両方のサポートを提供する必要があります。
 
-サイズのウィンドウの*n、* 連続する任意の平均フレーム サイズ*n*がフレームする必要があります、ストリームの指定されたデータのレートを超えない*個々*フレームを大きくすることがありますまたはより小さい。 たとえば、データ レートが 150 キロバイト/秒 (KBps) の 2 つ目の (fps) 映画ごとに 15 フレームに設定されている場合、*平均*各フレームのサイズは 10 キロバイト未満をするため必要があります。 個々 のフレームは、いれば (映画の 1 秒あたりの間で計算される 15 のフレーム) の平均サイズが 10 キロバイト以下大きくまたは小さくする可能性があります。
+サイズが*n*のウィンドウの場合、連続する*n*フレームの平均フレームサイズは、ストリームの指定したデータ速度を超えないようにする必要があります。ただし、*個々*のフレームは、サイズが大きくなったり小さくなったりする可能性があります。 たとえば、データレートが1秒あたり15フレーム (fps) のムービーで150キロバイト/秒 (KBps) に設定されている場合、各フレームの*平均*サイズは 10 kb 以下である必要があります。 個々のフレームは、平均サイズ (ムービーの1秒あたりの15フレームに対して計算される) が 10 kb 以下である限り、サイズが大きくなったり小さくなったりする場合があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,7 +83,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,11 +91,11 @@ KSPROPERTY\_VIDEOCOMPRESSION\_WINDOWSIZE プロパティは、平均フレーム
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
+[**KSK プロパティ\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

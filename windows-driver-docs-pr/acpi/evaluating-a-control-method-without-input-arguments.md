@@ -4,31 +4,31 @@ description: 入力引数なしの制御メソッドを評価する
 ms.assetid: dd989b4d-46db-4fe3-aa7b-8dbfe37057cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfac0f1415df62cc09e36f29454f18a055ba2aa0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 02a796fc7cd2713b0fcd4ae8ad3af0ce948b3de8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355831"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826301"
 ---
 # <a name="evaluating-a-control-method-without-input-arguments"></a>入力引数なしの制御メソッドを評価する
 
 
-デバイスのドライバーの送信を入力引数を受け取らないコントロール メソッドを同期的に評価する、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)要求または[ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)デバイスに要求します。 これら両方の要求を使用するための一般的な手順については、「 [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。 これら 2 つの要求を使用しての特定の違いは次のとおりです。
+入力引数を受け取らない制御メソッドを同期的に評価するために、デバイスのドライバーは、 [**acpi\_acpi\_eval\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)要求または[**ioctl\_acpi\_eval\_メソッド\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)に ioctl を送信します。デバイスに要求します。 これらの要求の両方を使用するための一般的な手順については、「 [ACPI 制御メソッドを同期的に評価](evaluating-acpi-control-methods-synchronously.md)する」を参照してください。 この2つの要求を使用する場合の具体的な違いは次のとおりです。
 
--   Control メソッドは、デバイスの直接の子オブジェクトである、ドライバー送信 IOCTL\_ACPI\_EVAL\_メソッド要求と提供を[ **ACPI\_EVAL\_入力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1)構造体を入力します。
+-   コントロールメソッドがデバイスの直接の子オブジェクトである場合、ドライバーは IOCTL\_ACPI\_EVAL\_METHOD 要求を送信し、 [**acpi\_eval\_入力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1)入力構造を提供します。
 
--   IOCTL 送信 control メソッドがのデバイスを ACPI 名前空間内の子オブジェクトは、デバイスの直接の子オブジェクトではない場合は、\_ACPI\_EVAL\_メソッド\_EX 要求し、の提供[**ACPI\_EVAL\_入力\_バッファー\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1_ex)構造体。
+-   コントロールメソッドがデバイスの ACPI 名前空間の子オブジェクトであるのに、デバイスの直接の子オブジェクトではない場合、ドライバーは\_ACPI\_EVAL\_メソッド\_EX 要求を送信し、 [**acpi\_eval を提供します。\_入力\_BUFFER\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1_ex)構造体を入力します。
 
-例では、 *GetAbcData*このトピックで提供されている関数は、デバイスのドライバーが IOCTL を使用する方法を示します\_ACPI\_EVAL\_メソッド要求の制御メソッドを評価する名前 'ABCD' をデバイスをサポートします。 'ABCD' control メソッドは、ACPI 名前空間内のデバイスの直接の子は、および引数を入力したりしない出力引数を返します。
+このトピックで提供する*Getabcdata*関数の例では、デバイスのドライバーが IOCTL\_ACPI\_EVAL\_method 要求を使用して、デバイスがサポートする ' ABCD ' という名前のコントロールメソッドを評価する方法を示しています。 ' ABCD ' コントロールメソッドは、ACPI 名前空間のデバイスの直下の子であり、入力引数を取らず、出力引数を返しません。
 
-'ABCD' コントロールのメソッドが直接の子オブジェクトでない場合、必要な変更を次のコード例を次に示します。
+' ABCD ' コントロールメソッドが直接の子オブジェクトではない場合、このコード例に必要な変更は次のとおりです。
 
--   送信 IOCTL\_ACPI\_EVAL\_メソッド\_IOCTL ではなく要求 EX\_ACPI\_EVAL\_メソッド要求。
+-   Ioctl\_ACPI\_EVAL\_METHOD 要求ではなく、\_ACPI\_EVAL\_メソッド\_EX 要求を送信します。
 
--   ACPI の指定\_EVAL\_入力\_バッファー\_ACPI ではなく構造 EX\_EVAL\_入力\_バッファーの構造体。
+-   Acpi\_EVAL\_入力\_バッファー構造の代わりに、ACPI\_EVAL\_入力\_バッファー\_EX 構造体を指定します。
 
-*GetAbcData* ACPI を最初に割り当てる\_EVAL\_入力\_バッファー構造*inputBuffer*設定と、 **MethodNameAsUlong**メンバーをコントロールのメソッドおよびセットの名前、**署名**acpi メンバー\_EVAL\_入力\_バッファー\_署名します。
+*Getabcdata*はまず、ACPI\_EVAL\_入力\_バッファー構造*inputBuffer*に割り当て、 **methodnameasulong**メンバーをコントロールメソッドの名前に設定し、**署名**メンバーを acpi に設定し @no__t\_入力\_バッファー\_署名を評価する (_s)。
 
 ```cpp
     // Fill in the input data
@@ -36,27 +36,27 @@ ms.locfileid: "67355831"
     inputBuffer.Signature = ACPI_EVAL_INPUT_BUFFER_SIGNATURE;
 ```
 
-*GetAbcData*も割り当てます、 [ **ACPI\_EVAL\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)構造*outputBuffer*が、メンバーは設定しません*outputBuffer*します。
+また、 *Getabcdata*によって、 [**ACPI\_EVAL\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)構造の*outputbuffer*も割り当てられますが、 *outputbuffer*のメンバーは設定されません。
 
-*GetAbcData*という名前のドライバーによって提供される関数を呼び出して[SendDownStreamIrp](senddownstreamirp-function.md)次を実行します。
+次に、 *Getabcdata*は、次の処理を実行する[Senddownstreamirp](senddownstreamirp-function.md)という名前のドライバーで提供される関数を呼び出します。
 
-1.  呼び出し[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)要求を構築します。
+1.  [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出して要求をビルドします。
 
-2.  呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)デバイス スタックの要求を送信します。
+2.  [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、デバイススタックで要求を送信します。
 
-3.  下位レベルのドライバーが要求を完了したことをドライバーに通知する I/O マネージャーを待機します。
+3.  I/o マネージャーが、下位レベルのドライバーが要求を完了したことを示すドライバーを通知するまで待機します。
 
-**SendDownStreamIrp** I/O マネージャーが下位レベルのドライバーが要求を完了したことを通知した後を返します。 前述のコード例は、次を実行します。
+**Senddownstreamirp**は、下位レベルのドライバーが要求を完了したことを i/o マネージャーが通知した後に戻ります。 前に説明したコード例では、次の処理を実行します。
 
-1.  要求の状態を確認し、下位レベルのドライバーがステータスを返さなかった場合は、追加処理することがなくを返します\_成功します。
+1.  下位レベルのドライバーがステータス\_成功を返さなかった場合に、要求の状態を確認し、追加の処理を行わずに返します。
 
-2.  出力引数の有効性を確認します。 *OutputBuffer*有効な出力のデータを含む**署名**ACPI に設定する必要があります\_EVAL\_出力\_バッファー\_と署名**カウント**0 より大きい値に設定する必要があります。
+2.  出力引数が有効かどうかを確認します。 *Outputbuffer*に有効な出力データが含まれるようにするには、**署名**が ACPI\_EVAL に設定されている必要があります。\_出力\_バッファー\_署名、**カウント**は0より大きい値に設定する必要があります。
 
-3.  出力の処理、ドライバーを ACPI ドライバーに渡される引数。
+3.  ACPI ドライバーによってドライバーに戻された出力引数を処理します。
 
-ドライバーも呼び出す必要がありますが、サンプル コードでは、この手順が含まれていない、 [ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)保留中の IOCTL を完了する出力データを処理した後\_ACPI\_EVAL\_メソッド要求または IOCTL\_ACPI\_EVAL\_メソッド要求の制御メソッドを評価するドライバーが送信されることです。
+この手順はサンプルコードに含まれていませんが、ドライバーは、出力データを処理した後に[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して、保留中の IOCTL\_ACPI\_EVAL\_メソッド要求または IOCTL\_ACPI を完了する必要があり\_コントロールメソッドを評価するためにドライバーによって送信された、EVAL\_メソッドの要求。
 
-ACPI データ構造と次の例で使用される定数で定義されます*Acpiioct.h*します。
+次の例で使用される ACPI データ構造および定数は、 *Acpiioct*で定義されています。
 
 ```cpp
 NTSTATUS

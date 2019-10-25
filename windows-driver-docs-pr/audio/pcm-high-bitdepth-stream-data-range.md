@@ -3,16 +3,16 @@ title: PCM 高ビットデプス ストリームのデータ範囲
 description: PCM 高ビットデプス ストリームのデータ範囲
 ms.assetid: 4f3d48ff-e01d-4c80-b493-253afdba6fd7
 keywords:
-- PCM 高深さストリーム データ範囲 WDK
-- ストリーム データを高深さの範囲は WDK
+- PCM 高ビット深度ストリームデータ範囲 WDK
+- 高ビット深度ストリームデータ範囲 (WDK)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4728fbfd303b19da49c9ebac842ad3ff98fd33dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2852f62f95b0792f8e39583b7da377acdfaddcb2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364316"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830263"
 ---
 # <a name="pcm-high-bitdepth-stream-data-range"></a>PCM 高ビットデプス ストリームのデータ範囲
 
@@ -20,7 +20,7 @@ ms.locfileid: "67364316"
 ## <span id="pcm_high_bitdepth_stream_data_range"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) PCM 高深さストリームのデータ範囲を記述する構造体。
+この例では、 [**Ksdatarange\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造を使用して、PCM 高ビット深度ストリームのデータ範囲を記述します。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);
@@ -37,7 +37,7 @@ ms.locfileid: "67364316"
   MaximumSampleFrequency = 48000;
 ```
 
-この例ではメンバーの値と同様に、 [PCM マルチ チャネル Stream データ範囲](pcm-multichannel-stream-data-range.md)の例外は、例、`MaximumBitsPerSample`が 16 より大きい値。 この値は、サポートの有効なビットの最大数に設定されます。 たとえば、デバイスは、24 ビットのコンテナーの値に 20 bits の有効なオーディオ データをサポートしている場合`MaximumBitsPerSample`20 に設定する必要があります。
+この例のメンバー値は、 [PCM マルチチャネルストリームのデータ範囲](pcm-multichannel-stream-data-range.md)の例と似ていますが、`MaximumBitsPerSample` 値は16を超えています。 この値は、サポートされている有効な bits の最大数に設定されます。 たとえば、デバイスが24ビットのコンテナーで20ビットの有効なオーディオデータをサポートしている場合、`MaximumBitsPerSample` の値を20に設定する必要があります。
 
  
 

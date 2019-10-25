@@ -3,17 +3,17 @@ title: 記憶域周辺機器への電源要求の処理
 description: 記憶域周辺機器への電源要求の処理
 ms.assetid: 3cc7b885-27ad-4384-aeec-4d76f9ad4f1c
 keywords:
-- 記憶域周辺機器の WDK、電源を要求します。
-- 記憶域周辺機器 WDK、電源の要求
-- 電源要求 WDK ストレージ
+- 周辺機器 WDK ストレージ、電源要求
+- ストレージ周辺機器 WDK、電源要求
+- WDK ストレージに対する電力要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7230b2a1dd650156495102cd648ac07260b4c17b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b62cf17e23342fb413208bff02cde295f664ba8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378476"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826292"
 ---
 # <a name="handling-power-requests-to-storage-peripherals"></a>記憶域周辺機器への電源要求の処理
 
@@ -21,23 +21,23 @@ ms.locfileid: "67378476"
 ## <span id="ddk_handling_power_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_POWER_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>
 
 
-ストレージ クラス ドライバーは、電源の要求を処理するデバイスに固有のコマンドを発行します。 ほとんどの場合、記憶域クラス ドライバー:
+ストレージクラスドライバーは、電源要求を処理するためのデバイス固有のコマンドを発行する役割を担います。 最も一般的なストレージクラスのドライバーは、次のとおりです。
 
--   クエリ性能の要求に対する応答でそのデバイスに I/O をブロック (IRP\_MJ\_を含む POWER [ **IRP\_MN\_クエリ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)) 場合このような I/O を処理すると、ドライバーがセット power 要求を一定の時間に成功を妨げる可能性
+-   クエリ-電源要求に応答してデバイスに i/o をブロックします (IRP\_MJ は、 [**irp\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)\_パワー)。このような i/o を処理すると、ドライバーが適切な量のセット電源要求を実行できなくなる可能性があります。時間
 
--   セット power 要求への応答でそのデバイスの電源状態を設定 (IRP\_MJ\_を含む POWER [ **IRP\_MN\_設定\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))
+-   Set-パワー要求に応答してデバイスの電源状態を設定します (IRP\_MJ\_、Irp\_を使用した電源[ **\_設定\_電力**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))
 
--   デバイスの電源をセット power 要求に応答には、そのデバイスを I/O で再起動します。
+-   デバイスの電源をオンにするためのセットパワー要求に応じて、デバイスに i/o を再起動します。
 
--   次の下位のドライバーに電源の要求を転送します。
+-   電源要求を次の下位のドライバーに転送します。
 
-ドライバーを呼び出す必要がありますので注意[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)と[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)ではなく、**保留**、電源の要求を送信します。
+ドライバーは、電源要求を送信するために、 **IoCallDriver**ではなく[**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)と[**pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)を呼び出す必要があることに注意してください。
 
-記憶域クラス ドライバーがあるない限り、 [ **StartIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)日常的なその必要がありますロック ストレージ ポート ドライバーの LU 固有のキュー (IRP\_MJ\_SRB の SCSI\_関数\_ロック\_キュー) (これは、いくつかの手順があります)、電源操作が完了するまでに同期されていない操作をブロックする、デバイスの電源状態を設定する前にします。 電源操作を処理するために発行された任意のされる Srb SRB を設定する必要があります\_フラグ\_バイパス\_ロック\_ポート ドライバーに到達するかどうかを確認するキュー。 ドライバーでは、電源状態の設定が完了すると、キューのロック解除にする必要があります (IRP\_MJ\_SRB の SCSI\_関数\_UNLOCK\_キューと SRB\_フラグ\_バイパス\_ロック\_キュー) ポート ドライバーの電源投入後にキューに置かれた Irp をデバイスに送信を再開できるようにします。
+ストレージクラスドライバーに[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンが含まれていない場合は、デバイスの電源状態を設定する前に、ストレージポートドライバーの LU 固有のキュー (IRP\_MJ\_SCSI で SRB\_関数\_ロック\_キュー) をロックする必要があります。電源操作 (いくつかの手順が含まれる場合があります) が完了するまで、同期されていない操作をブロックします。 電源操作を処理するために発行されたすべての SRBs は、SRB\_フラグ\_設定して、ロックされた\_キュー\_バイパスし、ポートドライバーに確実に到着するようにする必要があります。 ドライバーが電源状態の設定を完了したら、キューのロックを解除する必要があります (IRP\_MJ\_SCSI は、SRB\_関数\_ロック解除\_QUEUE および SRB\_フラグ\_\_ロックされている\_キューをバイパス)ポートドライバーは、電源が投入された後、デバイスにキューに入っている Irp の送信を再開できます。
 
-ストレージ クラス ドライバーがある場合、 *StartIo*日常的なそのルーチン処理同期クラス ドライバーは明示的にロックし、ポート ドライバーの LU 固有のキューのロックを解除する必要はありませんので。
+ストレージクラスドライバーに*StartIo*ルーチンが含まれている場合、そのルーチンは同期を処理するので、クラスドライバーはポートドライバーの LU 固有のキューを明示的にロックおよびロック解除する必要がありません。
 
-クラス ドライバーは、別のドライバーによってロックされているキューをバイパスしないようにします。
+クラスドライバーは、別のドライバーによってロックされているキューをバイパスしようとすることはできません。
 
  
 

@@ -1,58 +1,58 @@
 ---
 title: DML を使用したデバッガー出力のカスタマイズ
-description: デバッガーのマークアップ言語 (DML) は、デバッガーと拡張機能からの出力の強化メカニズムを提供します。
+description: デバッガーマークアップ言語 (DML) は、デバッガーと拡張機能からの出力を拡張するための機構を提供します。
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 46be7d6159f7d75d138ab8528f6ff19945a492e7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2fb2477b1e331569a525f9052af6fa16353c5656
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361462"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837815"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>DML を使用したデバッガー出力のカスタマイズ
 
 
-デバッガーのマークアップ言語 (DML) は、デバッガーと拡張機能からの出力の強化メカニズムを提供します。 HTML と同様に、デバッガーのマークアップのサポートには、表示ディレクティブを追加、表示されない情報タグの形式で出力ができます。 WinDbg などのデバッガー ユーザー インターフェイスは、グリッドの表示など、情報の表示を拡張し、新しい動作を提供する DML で提供され、並べ替えの追加情報を解析します。 このトピックでは、DML を使用して、デバッグ出力をカスタマイズする方法について説明します。 有効化と DML での使用の概要については、デバッガーを参照してください[デバッガー マークアップ言語を使用して](debugger-markup-language-commands.md)します。
+デバッガーマークアップ言語 (DML) は、デバッガーと拡張機能からの出力を拡張するための機構を提供します。 HTML と同様に、デバッガーのマークアップサポートにより、出力には、表示ディレクティブや追加の非表示情報をタグの形式で含めることができます。 WinDbg などのデバッガーユーザーインターフェイスは、情報の表示を強化し、グリッドの表示や並べ替えなどの新しい動作を提供するために、DML に用意されている追加情報を解析します。 このトピックでは、DML を使用してデバッグ出力をカスタマイズする方法について説明します。 デバッガーでの DML の有効化と使用に関する一般的な情報については、「[デバッガーマークアップ言語の使用](debugger-markup-language-commands.md)」を参照してください。
 
-DML では、Windows 10 で使用でき、それ以降です。
+DML は、Windows 10 以降で使用できます。
 
-## <a name="span-iddmloverviewspanspan-iddmloverviewspanspan-iddmloverviewspandml-overview"></a><span id="DML_Overview"></span><span id="dml_overview"></span><span id="DML_OVERVIEW"></span>DML の概要
-
-
-上の DML のプライマリのデバッガーの出力に関連する情報にリンクする機能を提供する利点があります。 プライマリの DML タグの 1 つは、&lt;リンク&gt;のリンクからの出力に関連する情報にアクセスできることを示す、出力プロデューサーをタグには、アクションが記載されているします。 として、web ブラウザーで HTML リンクを含むこれにより、ユーザーにハイパーリンクが設定された情報を移動します。
-
-ハイパーリンクが設定されたコンテンツを提供することの利点は、デバッガーとデバッガー拡張機能の検出性を強化するために使用できることです。 デバッガーとその拡張機能に、大量の機能が含まれているが、さまざまなシナリオで使用する適切なコマンドを決定することは難しい。 ユーザーは、どのようなコマンドは、特定のシナリオで使用できる単に知る必要があります。 ユーザーとカーネル デバッグの違いは、複雑さでさらに追加します。 多くの場合、つまり、多くのユーザーはデバッグ コマンドに役立てることができますを意識していません。 DML へのリンクは、わかりやすいテキスト、クリック可能なメニュー システム、またはリンクのヘルプなどの代替のプレゼンテーションでラップされる任意のデバッグ コマンドの機能を提供します。 DML を使用して、コマンドの出力は、手元のタスクに関連するその他の関連コマンドをユーザーに拡張できます。
-
-**デバッガーの DML のサポート**
-
--   WinDbg でコマンド ウィンドウでは、すべての DML 動作をサポートし、色、フォント スタイル、およびリンクに表示されます。
--   – Ntsd、cdb および kd – コンソール デバッガーの色のモードが有効な場合は true。 コンソールで実行するときに DML、および、唯一のカラー属性のみサポートします。
--   リダイレクトされた I/O のデバッガー、ntsd – d または remote.exe セッションでは、色は表示されません。
-
-## <a name="span-iddmlcontentspecificationspanspan-iddmlcontentspecificationspanspan-iddmlcontentspecificationspandml-content-specification"></a><span id="DML_Content_Specification"></span><span id="dml_content_specification"></span><span id="DML_CONTENT_SPECIFICATION"></span>DML コンテンツの指定
+## <a name="span-iddml_overviewspanspan-iddml_overviewspanspan-iddml_overviewspandml-overview"></a><span id="DML_Overview"></span><span id="dml_overview"></span><span id="DML_OVERVIEW"></span>DML の概要
 
 
-DML は、HTML などの完全なプレゼンテーション言語ではありません。 DML は意図的に非常に単純でごく少数のタグ。
+DML の主な利点は、デバッガーの出力の関連情報にリンクする機能を提供することです。 主な DML タグの1つは &lt;リンク&gt; タグです。これにより、出力プロデューサーは、出力に関連する情報に、リンクの記述されたアクションからアクセスできることを示すことができます。 Web ブラウザーの HTML リンクと同様に、これにより、ハイパーリンクされた情報をユーザーがナビゲートできるようになります。
 
-リッチ テキストをサポートしていないすべてのデバッガー ツールためには、DML とプレーン テキスト間の単純な変換を許可する DML が設計されています。 これにより、DML が既存のデバッガー ツールのすべての関数にできます。 色などの効果は、それらを削除しても、実際の情報を伝送するテキストは削除されませんので簡単にサポートできます。
+ハイパーリンクコンテンツを提供する利点は、デバッガーとデバッガー拡張機能の検出性を高めるために使用できることです。 デバッガーとその拡張機能には多くの機能が含まれていますが、さまざまなシナリオで使用する適切なコマンドを決定するのは困難な場合があります。 ユーザーは、特定のシナリオで使用できるコマンドを把握している必要があります。 ユーザーとカーネルのデバッグの違いにより、複雑さが増します。 これは多くの場合、多くのユーザーがデバッグコマンドを認識しないため、役に立ちます。 DML リンクを使用すると、テキストの説明、クリック可能なメニューシステム、リンクされたヘルプなど、任意のデバッグコマンドを別のプレゼンテーションにラップすることができます。 DML を使用すると、コマンドの出力を拡張して、タスクに関連する追加の関連コマンドをユーザーに案内することができます。
 
-DML は、XML ではありません。 DML は、セマンティックも構造化情報を伝達しません。 前述のように、必要があります、単純なこのため、DML の DML とプレーン テキストの間でマッピング タグはすべて破棄します。
+**デバッガーの DML サポート**
 
-DML が拡張可能です。すべてのタグは事前定義されているし、既存のデバッガー ツールのすべてで機能するために検証します。
+-   WinDbg のコマンドウィンドウでは、すべての DML 動作がサポートされており、色、フォントスタイル、およびリンクが表示されます。
+-   コンソールデバッガー– ntsd、cdb、および kd –は、DML の色属性のみをサポートし、色モードが有効になっている真のコンソールで実行する場合にのみサポートします。
+-   リダイレクトされた i/o、ntsd – d、または remote.exe セッションを使用したデバッガーでは、色は表示されません。
 
-**タグの構造体**
+## <a name="span-iddml_content_specificationspanspan-iddml_content_specificationspanspan-iddml_content_specificationspandml-content-specification"></a><span id="DML_Content_Specification"></span><span id="dml_content_specification"></span><span id="DML_CONTENT_SPECIFICATION"></span>DML コンテンツの仕様
 
-XML と同様に、DML タグは、開始点として指定する、 &lt;tagname \[args\] &gt;し、次&lt;/tagname&gt;します。
+
+DML は、HTML などの完全なプレゼンテーション言語としては意図されていません。 DML は意図的に非常に単純であり、いくつかのタグだけが含まれています。
+
+すべてのデバッガーツールがリッチテキストをサポートしているわけではないため、dml は DML とプレーンテキスト間の単純な変換を可能にするように設計されています。 これにより、DML をすべての既存のデバッガーツールで機能させることができます。 色などの効果は、それらを削除しても、実際の情報を保持するテキストは削除されないため、簡単にサポートできます。
+
+DML は XML ではありません。 DML では、セマンティックおよび構造化された情報を実行しません。 前述のように、DML とプレーンテキストの間には単純なマッピングが必要です。このため、DML タグはすべて破棄可能です。
+
+DML は拡張できません。すべてのタグが事前に定義され、すべての既存のデバッガーツールで動作するように検証されます。
+
+**タグ構造**
+
+XML と同様に、DML タグは開始 &lt;tagname \[args\]&gt; および次の &lt;/tagname&gt;として指定されています。
 
 **特殊文字**
 
-DML のコンテンツには、特殊文字の XML や HTML の規則がほぼに従います。 文字 (&)、 &lt;、 &gt; "特別なとはプレーン テキストでは使用できません。 同等のエスケープされたバージョンは、&、 &lt;、&gt;と"。 たとえば文字列:
+DML コンテンツは、特殊文字の XML/HTML ルールにおおよそ従います。 &、&lt;、&gt; および "は特殊文字であり、プレーンテキストでは使用できません。 同じエスケープバージョンは、&、&lt;、&gt;、および "です。 次に例を示します。
 
-"Alice と Bob は、3 を考える&lt;4"
+"Alice & Bob は 3 &lt; 4" と考えています。
 
-次の DML に変換されます。
+は、次の DML に変換されます。
 
 ```text
 "Alice & Bob think 3 &lt 4"
@@ -60,34 +60,34 @@ DML のコンテンツには、特殊文字の XML や HTML の規則がほぼ�
 
 **C プログラミング言語の書式設定文字**
 
-XML や HTML から大きな出発ルール DML テキストが C 言語ストリーム スタイルの書式指定文字をプログラミングなどを含めることができますが\\b、 \\t、 \\r と\\n。 これは、デバッガーのテキストの既存の運用と使用量との互換性をサポートします。
+XML/HTML ルールから大きな出発点として、DML テキストには、\\b、\\t、\\r、\\n などの C プログラミング言語のストリームスタイルの書式設定文字を含めることができます。 これは、既存のデバッガーテキストの実稼働と使用との互換性をサポートするためのものです。
 
-## <a name="span-idexampledmlspanspan-idexampledmlspanspan-idexampledmlspanexample-dml"></a><span id="Example_DML"></span><span id="example_dml"></span><span id="EXAMPLE_DML"></span>DML の例
+## <a name="span-idexample_dmlspanspan-idexample_dmlspanspan-idexample_dmlspanexample-dml"></a><span id="Example_DML"></span><span id="example_dml"></span><span id="EXAMPLE_DML"></span>DML の例
 
 
-たとえば、ファイル c:\\Dml\_Experiment.txt には、次の行が含まれています。
+ファイル C:\\Dml\_実験に次の行が含まれているとします。
 
 ```text
 My DML Experiment
 <link cmd="lmD musb*">List modules that begin with usb.</link>
 ```
 
-次のコマンドは、コマンドのブラウザーのウィンドウで、テキストとリンクを表示します。
+次のコマンドを実行すると、テキストとリンクがコマンドブラウザーウィンドウに表示されます。
 
 ```dbgcmd
 .browse .dml_start c:\Dml_Experiment.txt
 ```
 
-![dml ファイル出力のスクリーン ショット](images/dmlcommands03.png)
+![dml ファイル出力のスクリーンショット](images/dmlcommands03.png)
 
-クリックすると、 **usb で始まるモジュールを一覧表示**リンクでは、次の図のような出力を参照してください。
+**[Usb リンクで始まるモジュールの一覧]** をクリックすると、次の図のような出力が表示されます。
 
-![モジュールの一覧のスクリーン ショット](images/dmlcommands04.png)
+![モジュール一覧のスクリーンショット](images/dmlcommands04.png)
 
-## <a name="span-idright-clickbehaviorindmlspanspan-idright-clickbehaviorindmlspanspan-idright-clickbehaviorindmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>DML での動作を右クリックします。
+## <a name="span-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>DML での右クリック動作
 
 
-右クリックの動作は DML で使用できます。 このサンプルは、定義する方法を示しますを使用して動作を右クリックして&lt;altlink&gt;ブレークポイントを送信する[ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信、 [ **u (Unassemble)** ](u--unassemble-.md)正規表現をクリックします。
+右クリック動作は DML で使用できます。 このサンプルでは、&lt;altlink&gt; を使用して、ブレークポイントの[**bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)** ](u--unassemble-.md)を送信するための右クリック動作を定義する方法を示します。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -96,18 +96,18 @@ u MyProgram!memcpy
 </link>
 ```
 
-## <a name="span-iddmltagreferencespanspan-iddmltagreferencespanspan-iddmltagreferencespandml-tag-reference"></a><span id="DML_Tag_Reference"></span><span id="dml_tag_reference"></span><span id="DML_TAG_REFERENCE"></span>DML タグのリファレンス
+## <a name="span-iddml_tag_referencespanspan-iddml_tag_referencespanspan-iddml_tag_referencespandml-tag-reference"></a><span id="DML_Tag_Reference"></span><span id="dml_tag_reference"></span><span id="DML_TAG_REFERENCE"></span>DML タグリファレンス
 
 
-### <a name="span-idlinkspanspan-idlinkspanltlinkgt"></a><span id="_link_"></span><span id="_LINK_"></span>&lt;リンク&gt;
+### <a name="span-id_link_spanspan-id_link_spanltlinkgt"></a><span id="_link_"></span><span id="_LINK_"></span>&lt;リンク&gt;
 
-*&lt;リンク\[名前 ="text"\] \[cmd ="デバッガー\_コマンド"\]\[alt =「ホバーを表示するテキスト」\] \[セクション ="name"\] &gt;リンク テキスト&lt;/link&gt;*
+*&lt;link \[name = "text"\] \[cmd = "debugger\_command"\]\[alt = "ホバーテキストを表示する"\] \[section = "name"\]&gt;リンクテキスト&lt;/link&gt;*
 
-リンク タグは、DML で基本的なハイパー リンク メカニズムです。 クリック可能なリンクとしてリンク テキストを表示する DML プレゼンテーションをサポートするユーザー インターフェイスがよう指示します。 Cmd 仕様のリンクをクリックすると、デバッガー コマンドが実行され、その出力は、現在の出力を置き換える必要があります。
+Link タグは、DML の基本的なハイパーリンクメカニズムです。 DML プレゼンテーションをサポートするユーザーインターフェイスに、リンクテキストをクリック可能なリンクとして表示するように指示します。 Cmd を指定したリンクがクリックされると、デバッガーコマンドが実行され、その出力が現在の出力と置き換えられます。
 
-HTML のような名前付きのリンクの間を移動できるように、名前とセクションの引数&lt;名前&gt;と\#名前をサポートします。 UI のセクションの引数を持つリンクがクリックされたときは名前が一致するという名前のリンクをスキャンし、をスクロールして表示します。 これにより、同じページのさまざまなセクション (または新しいページの特定のセクション) を指すリンクできます。 DML のセクション名では、コマンド文字列の最後のセクション名ことを許可する新しい構文を定義することを回避するために別です。
+Name 引数と section 引数を使用すると、HTML の &lt;名前&gt; および \#名のサポートと同様に、名前付きリンク間のナビゲーションを行うことができます。 セクションの引数を持つリンクがクリックされると、UI では、名前が一致するリンクがスキャンされ、そのリンクがビューにスクロールされます。 これにより、リンクを同じページ (または新しいページの特定のセクション) の異なるセクションにポイントすることができます。 DML のセクション名は、新しい構文を定義しなくても、コマンド文字列の末尾にセクション名を指定できるようにするために使用します。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
@@ -119,24 +119,24 @@ HTML のような名前付きのリンクの間を移動できるように、名
 
 **例**
 
-この例では、DML リンク上でマウス ポインターを移動するときに表示されるテキストを作成する alt 属性の使用を示します。
+この例では、alt 属性を使用して、DML リンクをポイントしたときに表示されるテキストを作成する方法を示します。
 
 ```text
 <b>Hover Example</b>
 <link cmd="lmD" alt="This link will run the list modules command and display the output in DML format">LmD</link>
 ```
 
-### <a name="span-idaltlinkspanspan-idaltlinkspanltaltlinkgt"></a><span id="_altlink_"></span><span id="_ALTLINK_"></span>&lt;altlink&gt;
+### <a name="span-id_altlink_spanspan-id_altlink_spanltaltlinkgt"></a><span id="_altlink_"></span><span id="_ALTLINK_"></span>&lt;altlink&gt;
 
-*&lt;altlink \[name=”text”\] \[cmd=”debugger\_command”\] \[section=”name”\]&gt;alt link text&lt;/altlink&gt;*
+*&lt;altlink \[name = "text"\] \[cmd = "debugger\_command"\] \[section = "name"\]&gt;alt link text&lt;/altlink&gt;*
 
-&lt;Altlink&gt;右クリックの動作は DML で使用可能なタグを提供します。 Cmd 仕様のリンクをクリックすると、デバッガー コマンドが実行され、その出力は、現在の出力を置き換える必要があります。 &lt;Altlink&gt;  タブと組み合わせるは通常、&lt;リンク&gt;タグを正規表現をサポートし、動作を右クリックします。
+&lt;altlink&gt; タグは、DML で使用できる右クリックの動作を提供します。 Cmd を指定したリンクがクリックされると、デバッガーコマンドが実行され、その出力が現在の出力と置き換えられます。 通常と右のクリック動作をサポートするために、&lt;altlink&gt; tab は通常、&lt;リンク&gt; タグとペアになっています。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
-この例では、定義を使用して動作を右クリックして&lt;altlink&gt;ブレークポイントを送信する[ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信、 [ **u (Unassemble)** ](u--unassemble-.md)正規表現をクリックします。
+この例では、&lt;altlink&gt; を使用して、ブレークポイントの[**bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)** ](u--unassemble-.md)を送信するための右クリック動作を定義する方法を示します。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -145,17 +145,17 @@ u MyProgram!memcpy
 </link>
 ```
 
-### <a name="span-idexecspanspan-idexecspanltexecgt"></a><span id="_exec_"></span><span id="_EXEC_"></span>&lt;exec&gt;
+### <a name="span-id_exec_spanspan-id_exec_spanltexecgt"></a><span id="_exec_"></span><span id="_EXEC_"></span>&lt;exec&gt;
 
-*&lt;exec cmd ="デバッガー\_コマンド"&gt;わかりやすいテキスト&lt;/exec&gt;*
+*&lt;exec cmd = "debugger\_command"&gt;説明テキスト&lt;/exec&gt;*
 
-Exec タグは、クリック可能な項目としてわかりやすいテキストを表示することでリンク タグに似ています。 ただし、コマンドのブラウザー ウィンドウで、exec タグを使用するときに、特定のコマンドは、現在の出力を置き換えることがなく実行が、このタグは、コマンドがメニューからのクリックで実行する方法を提供します。
+Exec タグは link タグに似ています。これは、説明文がクリック可能な項目として表示されることを意味します。 ただし、exec タグがコマンドブラウザーウィンドウで使用されている場合、指定されたコマンドは現在の出力を置き換えずに実行されます。このタグを使用すると、メニューからクリックでコマンドを実行できます。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
-この例では、標準のクリックで 2 つのコマンドを定義する方法を示します。
+この例では、2つのコマンドを通常のクリックで定義する方法を示します。
 
 ```text
 <b>Exec Sample</b>
@@ -163,13 +163,13 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <exec cmd="kM">Display stack information with DML rendering.</exec>
 ```
 
-### <a name="span-idbspanspan-idbspanltbgt"></a><span id="_b_"></span><span id="_B_"></span>&lt;B&gt;
+### <a name="span-id_b_spanspan-id_b_spanltbgt"></a><span id="_b_"></span><span id="_B_"></span>&lt;b&gt;
 
 *&lt;b&gt;太字のテキスト&lt;/b&gt;*
 
-このタグは、太字要求します。 &lt;B&gt;、&lt;は&gt;と&lt;u&gt;プロパティの混在環境に入れ子にすることができます。
+このタグは太字で要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
@@ -179,13 +179,13 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <b>This is bold Text</b>
 ```
 
-### <a name="span-idispanspan-idispanltigt"></a><span id="_i_"></span><span id="_I_"></span>&lt;私&gt;
+### <a name="span-id_i_spanspan-id_i_spanltigt"></a><span id="_i_"></span><span id="_I_"></span>&gt;&lt;
 
-*&lt;&gt;テキストを斜体&lt;/i&gt;*
+*&lt;/i&gt;斜体のテキストを&lt;し&gt;*
 
-このタグは、斜体を要求します。 &lt;B&gt;、&lt;は&gt;と&lt;u&gt;プロパティの混在環境に入れ子にすることができます。
+このタグは、斜体を要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
@@ -195,17 +195,17 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <i>This is italicized Text</i>
 ```
 
-### <a name="span-iduspanspan-iduspanltugt"></a><span id="_u_"></span><span id="_U_"></span>&lt;U&gt;
+### <a name="span-id_u_spanspan-id_u_spanltugt"></a><span id="_u_"></span><span id="_U_"></span>&lt;u&gt;
 
-*&lt;u&gt;underlined text&lt;/u&gt;*
+*&lt;u&gt;下線付きテキスト&lt;/u&gt;*
 
-このタグは、下線付きテキストを要求します。 &lt;B&gt;、&lt;は&gt;と&lt;u&gt;プロパティの混在環境に入れ子にすることができます。
+このタグは、下線付きのテキストを要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
 
-プレーン テキストへの変換では、タグを削除します。
+プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
-この例では、下線付きテキスト。
+この例では、テキストに下線を付けています。
 
 ```text
 <u>This is underlined Text</u>
@@ -213,19 +213,19 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 
 **例**
 
-この例では、太字、下線、およびテキストを斜体にするタグを結合する方法を示します。
+この例では、タグを太字、下線、斜体に組み合わせる方法を示します。
 
 ```text
 <b><u><i>This is bold, underlined and italizized text. </i></u></b> 
 ```
 
-### <a name="span-idcolspanspan-idcolspanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;col&gt;
+### <a name="span-id_col_spanspan-id_col_spanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;col&gt;
 
-&lt;col fg="name" bg="name"&gt;text&lt;/col&gt;
+&lt;col fg = "name" bg = "name"&gt;text&lt;/col&gt;
 
-テキストの前景色と背景の色を要求します。 色は、顧客を表示する色の種類を制御できるようにすると、絶対値ではなく、既知の色の名前として示されます。 (既定値は WinDbg にのみ適用されます) 現在の色の名前。
+テキストの前景色と背景色を要求します。 色は、表示される色の種類をユーザーが制御できるように、絶対値ではなく既知の色の名前として指定されます。 現在の色の名前 (既定では、WinDbg にのみ適用されます)。
 
-**前景色と背景要素タグ**
+**前景と背景の要素タグ**
 
 <table>
 <colgroup>
@@ -238,59 +238,59 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <td align="left"><strong>説明/例</strong></td>
 </tr>
 <tr class="even">
-<td align="left"><p>wbg - Windows の背景</p>
-<p>wfg - Windows の前景色</p></td>
-<td align="left">既定のウィンドウの前景色および背景色。 既定のウィンドウとウィンドウのテキストのシステム カラーになります。
-<p>&lt;col fg ="wfg"bg"wbg"=&gt;これは、標準の前景テキストをバック グラウンド/ &lt;/col&gt;</p></td>
+<td align="left"><p>wbg-Windows の背景</p>
+<p>wfg-Windows フォアグラウンド</p></td>
+<td align="left">既定のウィンドウの背景色と前景色。 ウィンドウおよびウィンドウテキストのシステムカラーの既定値。
+<p>&lt;col fg = "wfg" bg = "wbg"&gt; これは標準の前景/背景のテキスト &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>clbg - 現在の行の前景色</p>
-<p>clfg - 現在の行の背景</p></td>
-<td align="left">現在の行の背景色と前景色。 強調表示のシステム カラーを既定し、テキストを強調表示されます。
-<p>&lt;col fg ="clfg"bg"clbg"=&gt;テスト テキスト - 現在の行&lt;/col&gt;</p></td>
+<td align="left"><p>clbg-現在の行の前景</p>
+<p>clfg-現在の行の背景</p></td>
+<td align="left">現在の線の背景色と前景色。 強調表示および強調表示テキストのシステムカラーを既定値に設定します。
+<p>&lt;col fg = "clfg" bg = "clfg"&gt; テストテキスト-現在の行&lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>empbg の強調表示されたバック グラウンド</p>
-<p>emphfg - 強調フォア グラウンド</p></td>
-<td align="left">強調表示されたテキスト。 薄い青に既定値です。
-<p>&lt;col fg ="empfg"bg ="empbg"&gt;これは、強調の前景色および背景のテキスト&lt;/col&gt;</p></td>
+<td align="left"><p>empbg-強調した背景</p>
+<p>emphfg-強調前面</p></td>
+<td align="left">強調表示したテキスト。 既定値は薄い青です。
+<p>&lt;col fg = "empfg" bg = "empfg"&gt; これは強調表示前/背景のテキスト &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>subbg - バック グラウンドの末</p>
-<p>subfg 末の前景色</p></td>
-<td align="left">末のテキスト。 既定で非アクティブなキャプションのテキストと非アクティブなキャプションのシステム カラーです。
-<p>&lt;col fg ="subfg"bg"subbg"=&gt;フォア グラウンドの末は、このテキストをバック グラウンド/ &lt;/col&gt;</p></td>
+<td align="left"><p>subbg-バックグラウンド</p>
+<p>subfg-サブフォアグラウンド</p></td>
+<td align="left">テキストを入力します。 既定では、非アクティブなキャプションテキストとアクティブでないキャプションのシステムカラーです。
+<p>&lt;col fg = "subfg" bg = "subfg"&gt; これは、前景/背景のテキスト &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>normbg の通常のバック グラウンド</p>
-<p>normfg の通常の前景色</p></td>
-<td align="left">標準
-<p>&lt;col fg ="normfg"bg"normbg"=&gt;テスト テキスト - Normal (normfg/normbg) &lt;/col&gt;</p></td>
+<td align="left"><p>normbg-標準の背景</p>
+<p>normfg-標準の前景</p></td>
+<td align="left">正常
+<p>&lt;col fg = "normfg" bg = "normbg"&gt; テストテキスト-Normal (normfg/normbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>warnbg - バック グラウンドの警告</p>
-<p>warnfg - 警告の前景色</p></td>
-<td align="left">警告
-<p>&lt;col fg ="warnfg"bg"warnbg"=&gt;テストのテキストの警告 (warnfg/warnbg) &lt;/col&gt;</p></td>
+<td align="left"><p>"組み込み"-警告の背景</p>
+<p>warnfg-警告の前景</p></td>
+<td align="left">Warning
+<p>&lt;col fg = "warnfg" bg = ""&gt; テストテキスト-警告 (warnfg/) &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>errbg - エラーの背景</p>
-<p>errfg - エラーの前景色</p></td>
-<td align="left">[エラー]
-<p>&lt;col fg ="errfg"bg"errbg"=&gt;テスト テキスト - エラー (errfg/errbg) &lt;/col&gt;</p></td>
+<td align="left"><p>errbg-エラーの背景</p>
+<p>errfg-エラーの前景</p></td>
+<td align="left">エラー
+<p>&lt;col fg = "errfg" bg = "errfg"&gt; テストテキスト-エラー (errfg/errfg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>verbbg - 詳細な背景</p>
-<p>verbfg - Verbose フォア グラウンド</p></td>
+<td align="left"><p>verbbg-詳細な背景</p>
+<p>verbfg-詳細なフォアグラウンド</p></td>
 <td align="left">Verbose
-<p>&lt;col fg="verbfg" bg="verbbg"&gt; Test Text - Verbose (verbfg / verbbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg = "verbfg" bg = "verbbg"&gt; テストテキスト-Verbose (verbfg/verbbg) &lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-**ソース コードの 1 つの要素タグ**
+**ソースコードの単一要素タグ**
 
 <table>
 <colgroup>
@@ -299,65 +299,65 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>srcnum - ソース数値定数</p></td>
+<td align="left"><p>srcnum-Source numeric 定数</p></td>
 <td align="left">ソース要素の色。
-<p>&lt;col fg="srcnum" bg="wbg"&gt; Test Text - srcnum &lt;/col&gt;</p></td>
+<p>&lt;col fg = "srcnum" bg = "wbg"&gt; テストテキスト-srcnum &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>srcchar - ソース文字定数</p></td>
-<td align="left"><p>&lt;col fg ="srcchar"bg"wbg"=&gt;テスト テキスト - srcchar &lt;/col&gt;</p></td>
+<td align="left"><p>srcchar-ソース文字定数</p></td>
+<td align="left"><p>&lt;col fg = "srcchar" bg = "wbg"&gt; テストテキスト-srcchar &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>srcstr - ソース文字列定数</p></td>
-<td align="left"><p>&lt;col fg ="srcstr"bg"wbg"=&gt;テスト テキスト - srcstr &lt;/col&gt;</p></td>
+<td align="left"><p>srcstr-ソース文字列定数</p></td>
+<td align="left"><p>&lt;col fg = "srcstr" bg = "wbg"&gt; テストテキスト-srcstr &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcid-ソース識別子</p></td>
-<td align="left"><p>&lt;col fg ="srcid"bg"wbg"=&gt;テスト テキスト - srcid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcid" bg = "wbg"&gt; テストテキスト-srcid &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>srckw キーワード</p></td>
-<td align="left"><p>&lt;col fg ="srckw"bg"wbg"=&gt;テスト テキスト - srckw &lt;/col&gt;</p></td>
+<td align="left"><p>srckw-キーワード</p></td>
+<td align="left"><p>&lt;col fg = "srckw" bg = "wbg"&gt; テストテキスト-srckw &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>srcpair - ソースの中かっこまたは一致するシンボル ペア</p></td>
-<td align="left"><p>&lt;col fg ="srcpair"bg"empbbg"=&gt;テスト テキスト - srcpair &lt;/col&gt;</p></td>
+<td align="left"><p>srcpair-Source 中かっこまたは一致するシンボルペア</p></td>
+<td align="left"><p>&lt;col fg = "srcpair" bg = "empbbg"&gt; テストテキスト-srcpair &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>srccmnt - ソースのコメント</p></td>
-<td align="left"><p>&lt;col fg ="srccmnt"bg"wbg"=&gt;テスト テキスト - srccmnt &lt;/col&gt;</p></td>
+<td align="left"><p>srccmnt-ソースコメント</p></td>
+<td align="left"><p>&lt;col fg = "srccmnt" bg = "wbg"&gt; テストテキスト-srccmnt &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>srcdrct - ソース ディレクティブ</p></td>
-<td align="left"><p>&lt;col fg ="srcdrct"bg"wbg"=&gt;テスト テキスト - srcdrct &lt;/col&gt;</p></td>
+<td align="left"><p>srcdrct-Source ディレクティブ</p></td>
+<td align="left"><p>&lt;col fg = "srcdrct" bg = "wbg"&gt; テストテキスト-srcdrct &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>srcspid - ソースの特殊な識別子</p></td>
-<td align="left"><p>&lt;col fg ="srcspid"bg"wbg"=&gt;テスト テキスト - srcspid &lt;/col&gt;</p></td>
+<td align="left"><p>srcspid-ソースの特殊な識別子</p></td>
+<td align="left"><p>&lt;col fg = "srcspid" bg = "wbg"&gt; テストテキスト-srcspid &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>srcannot - ソースの注釈</p></td>
-<td align="left"><p>&lt;col fg ="srcannot"bg"wbg"=&gt;テスト テキスト - srcannot &lt;/col&gt;</p></td>
+<td align="left"><p>srcannot Source 注釈</p></td>
+<td align="left"><p>&lt;col fg = "srcannot" bg = "wbg"&gt; テストテキスト-srcannot/col&gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>変更されたデータを変更</p></td>
-<td align="left">WinDbg で変更されたレジスタなど、以前の停止時点以降に変更されたデータに使用します。 既定値は赤です。
-<p>&lt;col fg =「変更」bg"wbg"=&gt;テスト テキスト - 変更&lt;/col&gt;</p></td>
+<td align="left"><p>変更された変更データ</p></td>
+<td align="left">以前の停止時点以降に変更されたデータ (WinDbg でのレジスタの変更など) に使用されます。 既定値は赤です。
+<p>&lt;col fg = "changed" bg = "wbg"&gt; テストテキスト-変更された&lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="span-iddmlexamplecodespanspan-iddmlexamplecodespanspan-iddmlexamplecodespandml-example-code"></a><span id="DML_Example_Code"></span><span id="dml_example_code"></span><span id="DML_EXAMPLE_CODE"></span>DML のコード例
+## <a name="span-iddml_example_codespanspan-iddml_example_codespanspan-iddml_example_codespandml-example-code"></a><span id="DML_Example_Code"></span><span id="dml_example_code"></span><span id="DML_EXAMPLE_CODE"></span>DML のコード例
 
 
-次のコード例を示しています。
+このコード例は、次のことを示しています。
 
--   デバッグ コマンドを呼び出す
--   コマンドを右クリックを実装します。
--   テキストの上のポイントを実装します。
--   色とリッチ テキストを使用します。
+-   デバッグコマンドの呼び出し
+-   右クリックコマンドの実装
+-   実装 (テキストの上にホバーを)
+-   色とリッチテキストの使用
 
 ```XML
 <col fg="srckw" bg="wbg"> <b>
@@ -415,7 +415,7 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <link cmd="!dml_proc" alt="This link displays process information with DML rendering.">!dml_proc<altlink name="Help about the !dml_proc command" cmd=".hh !dml_proc" /></link> - Display process information with DML rendering
 ```
 
-このコード例では、色と書式設定タグの使用方法を示します。
+このコード例は、色と書式設定タグの使用方法を示しています。
 
 ```XML
 *** Text Tag Examples ****
@@ -477,41 +477,41 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <col fg="srcannot" bg="subbg"> Test Text - srcannot </col>
 ```
 
-## <a name="span-iddmladditionstothedbgenginterfacespanspan-iddmladditionstothedbgenginterfacespanspan-iddmladditionstothedbgenginterfacespandml-additions-to-the-dbgeng-interface"></a><span id="DML_Additions_to_the_dbgeng_Interface"></span><span id="dml_additions_to_the_dbgeng_interface"></span><span id="DML_ADDITIONS_TO_THE_DBGENG_INTERFACE"></span>DML dbgeng インターフェイスの追加
+## <a name="span-iddml_additions_to_the_dbgeng_interfacespanspan-iddml_additions_to_the_dbgeng_interfacespanspan-iddml_additions_to_the_dbgeng_interfacespandml-additions-to-the-dbgeng-interface"></a><span id="DML_Additions_to_the_dbgeng_Interface"></span><span id="dml_additions_to_the_dbgeng_interface"></span><span id="DML_ADDITIONS_TO_THE_DBGENG_INTERFACE"></span>Dbgeng インターフェイスへの DML の追加
 
 
-[デバッガー エンジンと拡張機能 Api](debugger-engine-and-extension-apis.md)デバッガー エンジンを使用して、カスタム アプリケーションを作成するインターフェイスを提供します。 WinDbg、KD、CDB、NTSD で実行されるカスタムの拡張機能を記述することもできます。 詳細については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)です。 このセクションでは、デバッガー エンジンのインターフェイスを使用できる DML 拡張機能について説明します。
+[デバッガーエンジンと拡張 api](debugger-engine-and-extension-apis.md)には、デバッガーエンジンを使用してカスタムアプリケーションを作成するためのインターフェイスが用意されています。 WinDbg、KD、CDB、NTSD で実行されるカスタム拡張機能を作成することもできます。 詳細については、「 [DbgEng 拡張機能の記述](writing-dbgeng-extensions.md)」を参照してください。 このセクションでは、デバッガーエンジンインターフェイスに使用できる DML の機能強化について説明します。
 
-一連のテキスト処理の入力メソッドとインターフェイスの出力に、dbgeng は既に、DML の使用には、入力と出力のテキストに含まれるコンテンツの種類の指定のみが必要です。
+Dbgeng には、既にテキスト処理の入力メソッドと出力インターフェイスのセットがあります。 DML を使用する場合は、入力テキストおよび出力テキストで使用されるコンテンツの種類を指定するだけで済みます。
 
-**Dbgeng に DML のコンテンツを提供します。**
+**Dbgeng に DML コンテンツを提供する**
 
-出力制御フラグ デバッグ\_OUTCTL\_DML では、dbgeng メソッドによって生成されたテキストが DML コンテンツとして処理することを示します。 このフラグを指定しない場合、テキストはプレーン テキストのコンテキストとして扱われます。 デバッグ\_OUTCTL\_DML は、次の方法で使用できます。
+出力コントロールフラグ DEBUG\_OUTCTL\_DML は、dbgeng メソッドによって生成されたテキストを DML コンテンツとして処理する必要があることを示します。 このフラグが指定されていない場合、テキストはプレーンテキストのコンテキストとして扱われます。 デバッグ\_OUTCTL\_DML は次のメソッドで使用できます。
 
--   [**IDebugControl4::ControlledOutput**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
--   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
--   [**IDebugControl4::ControlledOutputWide**](https://msdn.microsoft.com/library/windows/hardware/ff539266)
--   [**IDebugControl4::ControlledOutputVaListWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
+-   [**IDebugControl4:: Controlの出力**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
+-   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
+-   [**IDebugControl4:: Control Outputwide**](https://msdn.microsoft.com/library/windows/hardware/ff539266)
+-   [**IDebugControl4::ControlledOutputVaListWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
 
-指定されたテキストは、有効な文字 DML 規則に従う必要があります。
+指定されたテキストは、有効な文字について DML 規則に従う必要があります。
 
-新しい書式指定子 % を許可するすべての出力ルーチンが強化されています\[h | w\]Y {t} します。 この書式指定子は、引数として文字列ポインターを備え、指定されたテキストがプレーン テキストであり、出力の処理中に DML 形式に変換する必要があることを示します。 これにより、呼び出し元は DML コンテンツに変換しなくても事前 DML 形式自体などのプレーン テキストの簡単な方法です。 H、w の修飾子は、%s と同様、ANSI または Unicode 文字を示します。
+すべての出力ルーチンが拡張され、新しい書式指定子%\[h | w\]Y {t} を使用できるようになりました。 この書式指定子は、引数として文字列ポインターを持ち、指定されたテキストがプレーンテキストであり、出力処理中に DML 形式に変換される必要があることを示します。 これにより、呼び出し元は dml 形式自体に事前に変換することなく、DML コンテンツにプレーンテキストを簡単に含めることができます。 H と w の修飾子は、% s と同様に、ANSI または Unicode のテキストを示します。
 
-次の表では、%Y 書式指定子の使用を示します。
+次の表は、% Y 書式指定子の使用方法をまとめたものです。
 
 |        |                                                                                                                                                                                                                                    |
 |--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| %Y {t}  | 引用符で囲まれた文字列。 テキストは、出力形式の場合、DML に変換されます (最初の引数) は、DML します。                                                                                                                                                   |
-| %Y {T}  | 引用符で囲まれた文字列。 常にテキストに変換する DML 出力形式に関係なく。                                                                                                                                                    |
-| %Y {s}  | 引用符なしの文字列。 テキストは、出力形式の場合、DML に変換されます (最初の引数) は、DML します。                                                                                                                                                 |
-| %Y {S}  | 引用符なしの文字列。 常にテキストに変換する DML 出力形式に関係なく。                                                                                                                                                  |
-| %Y {、} | ULONG64. 空の文字列またはポインター フィールドを書式設定されたデバッガーの上位 32 ビット部のパディングの間隔の 9 文字のいずれかを追加します。 余分なスペースは、上限の 8 ゼロが含まれていますを 9 スペースに出力だけでなく、\`文字。 |
-| %Y {ps} | ULONG64. 埋め込みのデバッガーの余分なスペースがポインターのフィールドを書式設定 (上位 8 ゼロが含まれていますだけでなく、\`文字)。                                                                                                             |
-| %Y {l}  | ULONG64. 行情報のソースとしてのアドレスします。                                                                                                                                                                                       |
+| % Y {t}  | 引用符で囲まれた文字列。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。                                                                                                                                                   |
+| % Y {T}  | 引用符で囲まれた文字列。 は、出力形式に関係なく、常にテキストを DML に変換します。                                                                                                                                                    |
+| % Y {s}  | 引用符で囲まれていない文字列。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。                                                                                                                                                 |
+| % Y {S}  | 引用符で囲まれていない文字列。 は、出力形式に関係なく、常にテキストを DML に変換します。                                                                                                                                                  |
+| % Y {as} | ULONG64. デバッガーの書式設定されたポインターフィールドの上位32ビットの部分に埋め込むために、空の文字列または9文字のスペースを追加します。 余分なスペースによって9つのスペースが出力されます。これには、上位8個のゼロと \` 文字が含まれます。 |
+| % Y {ps} | ULONG64. デバッガーの書式設定されたポインターフィールドに埋め込むための余分なスペース (上位8のゼロと \` 文字を含む)。                                                                                                             |
+| % Y {l}  | ULONG64. ソース行情報としてのアドレス。                                                                                                                                                                                       |
 
 
 
-このコード スニペットでは、%Y 書式指定子の使用方法を示します。
+このコードスニペットは、% Y 書式指定子の使用方法を示しています。
 
 ```cpp
 HRESULT CALLBACK testout(_In_ PDEBUG_CLIENT pClient, _In_ PCWSTR /*pwszArgs*/)
@@ -545,7 +545,7 @@ HRESULT CALLBACK testout(_In_ PDEBUG_CLIENT pClient, _In_ PCWSTR /*pwszArgs*/)
 }
 ```
 
-このサンプル コードでは、次の出力を生成します。
+このサンプルコードでは、次の出力が生成されます。
 
 ```dbgcmd
 0:004> !testout
@@ -565,7 +565,7 @@ DML/NORMAL Y{ps} 32value : '        '
 DML/NORMAL Y{l}: [d:\th\minkernel\kernelbase\debug.c @ 443]
 ```
 
-デバッグ、さらに制御フラグ\_OUTCTL\_アンビエント\_DML、out 出力コントロールの属性を変更することがなく DML コンテキストのテキストを指定をできるようにします。 デバッグ\_OUTCTL\_アンビエント\_テキストが追加されましたもわかりやすいエイリアスとして以前から存在してデバッグ\_OUTCTL\_アンビエントです。 出力の制御フラグは、dbgeng.h で定義されます。
+追加の制御フラグ、デバッグ\_OUTCTL\_アンビエント\_DML では、出力の制御属性を変更せずに DML コンテキストテキストを指定できます。 デバッグ\_OUTCTL\_アンビエント\_テキストも、以前に存在していたデバッグ\_OUTCTL\_アンビエントのわかりやすい別名として追加されています。 出力制御フラグは、dbgeng. h で定義されています。
 
 ```cpp
 #define DEBUG_OUTCTL_DML               0x00000020
@@ -579,34 +579,34 @@ DML/NORMAL Y{l}: [d:\th\minkernel\kernelbase\debug.c @ 443]
 #define DEBUG_OUTCTL_AMBIENT           DEBUG_OUTCTL_AMBIENT_TEXT
 ```
 
-**デバッグ対象から DML のコンテンツを提供します。**
+**デバッグ対象からの DML コンテンツの提供**
 
-されましたが、dbgeng – 特別なマーカーのデバッグ出力をスキャンするように強化 – デバッグ対象の出力の一部では、残りのテキストは、DML として扱うかを示します。 のみモードの変更は、1 つの 1 つの OutputDebugString 文字列などのデバッグ対象の出力に適用され、グローバル モードの切り替えではありません。
+Dbgeng は、特定のマーカーのデバッグ対象の出力をスキャンするように拡張されています。つまり、デバッグ対象の出力の残りのテキストを DML として扱う必要があることを示します。 モードの変更は、1つの OutputDebugString 文字列などの1つのデバッグ対象出力にのみ適用され、グローバルモードスイッチではありません。
 
-この例では、さまざまな形式、および DML の出力を示します。
+この例では、plain と DML の両方の出力が混在しています。
 
 ```text
 OutputDebugString(“This is plain text\n<?dml?>This is <col fg=\”emphfg\”>DML</col> text\n”);
 ```
 
-生成された出力で、プレーン テキストが続く DML DML 頭字語が異なる色で表示される場所の行の行になります。
+生成された出力には、テキストの行が続き、dml が別の色で表示されます。
 
 **IDebugOutputCallbacks2**
 
-IDebugOutputCallbacks2 は、dbgeng プレゼンテーションの完全な DML コンテンツを受信するインターフェイスのクライアントを使用できます。 既存の SetOutputCallbacks メソッドに渡すことができるように、IDebugOutputCallbacks2、IDebugOutputCallbacks (IDebugOutputCallbacksWide されません) の拡張です。 エンジンは、着信出力コールバック オブジェクト サポート インターフェイスを表示する IDebugOutputCallbacks2 の QueryInterface を実行します。 IDebugOutputCallbacks2; IDebugOutputCallbacks2 の拡張メソッドを通じてすべての出力が送信されますが、オブジェクトにサポートしている場合基本的な IDebugOutputCallbacks::Output メソッドは使用されません。
+IDebugOutputCallbacks2 を使用すると、dbgeng インターフェイスクライアントはプレゼンテーション用の完全な DML コンテンツを受信できます。 IDebugOutputCallbacks2 は、IDebugOutputCallbacks (not IDebugOutputCallbacksWide) の拡張機能であり、既存の SetOutputCallbacks バックメソッドに渡すことができます。 エンジンは、IDebugOutputCallbacks2 の QueryInterface を使用して、受信出力コールバックオブジェクトがサポートするインターフェイスを確認します。 オブジェクトが IDebugOutputCallbacks2 をサポートしている場合、すべての出力は拡張 IDebugOutputCallbacks2 メソッドを介して送信されます。基本的な IDebugOutputCallbacks:: Output メソッドは使用されません。
 
 新しいメソッドは次のとおりです。
 
--   IDebugOutputCallbacks2::GetInterestMask – により、受信する通知の出力の種類を記述するコールバック オブジェクトです。 プレーン テキスト コンテンツの間で基本的な選択では (デバッグ\_OUTCBI\_テキスト) と DML コンテンツ (デバッグ\_OUTCBI\_DML)。 さらに、コールバック オブジェクトには通知を明示的なフラッシュが要求するも (デバッグ\_OUTCBI\_EXPLICIT\_フラッシュ)。
--   IDebugOutputCallbacks2::Output2 – Output2 いきます IDebugOutputCallbacks2 のすべての通知。 パラメーターは、どのような種類の通知フラグ中に予定されていることを示します、Arg とテキストのパラメーターは、通知ペイロードを送信します。 通知は次のとおりです。
+-   IDebugOutputCallbacks2:: GetInterestMask –コールバックオブジェクトが、受信する出力通知の種類を記述できるようにします。 基本的な選択肢は、プレーンテキストコンテンツ (デバッグ\_OUTCBI\_テキスト) と DML コンテンツ (デバッグ\_OUTCBI\_DML) です。 また、コールバックオブジェクトは、明示的なフラッシュの通知を要求することもできます (デバッグ\_OUTCBI\_明示的な\_フラッシュ)。
+-   IDebugOutputCallbacks2:: Output2 –すべての IDebugOutputCallbacks2 通知は、Output2 を経由します。 Flags、Arg、および Text パラメーターが通知ペイロードを保持しているときに、どの種類の通知を受信するかを示すパラメーターです。 通知は次のとおりです。
 
-    -   デバッグ\_OUTCB\_テキスト-プレーン テキストを出力します。 フラグは、デバッグから\_OUTCBF\_\*Arg が出力マスクおよびテキストはプレーン テキスト。 場合はこの受信のみデバッグ\_OUTCBI\_関心マスク内のテキストが指定されました。
+    -   \_OUTCB\_TEXT – Plain text の出力をデバッグします。 フラグはデバッグ\_OUTCBF\_\*からのものであり、Arg は出力マスク、テキストはプレーンテキストです。 これは、対象のマスクで デバッグ\_OUTCBI\_テキストが指定されている場合にのみ受信されます。
 
-    -   デバッグ\_OUTCB\_DML – DML コンテンツ出力します。 フラグは、デバッグから\_OUTCBF\_\*Arg が出力マスクし、テキスト、DML コンテンツ。 場合はこの受信のみデバッグ\_OUTCBI\_関心マスクで DML が指定されました。
+    -   デバッグ\_OUTCB\_DML – DML コンテンツ出力。 フラグはデバッグ\_OUTCBF\_\*からのものであり、Arg は出力マスク、テキストは DML コンテンツです。 これは、対象マスクで DML が指定された場合にのみ受信されます\_\_OUTCBI です。
     
-    -   デバッグ\_OUTCB\_EXPLICIT\_フラッシュ: 呼び出し元がという FlushCallbacks バッファー内のテキストがありません。 バッファー内のテキストがフラッシュされるときに通常どおりデバッグ\_OUTCBF\_COMBINED\_EXPLICIT\_を 1 つに 2 つの通知を折りたたみ、フラッシュのフラグが設定されます。 テキストがバッファリングされることはない場合、フラッシュのみ通知が送信されます。
+    -   デバッグ\_OUTCB\_EXPLICIT\_FLUSH –呼び出し元は、バッファーに含まれるテキストなしで FlushCallbacks バックを呼び出しました。 通常、バッファーされたテキストをフラッシュすると、デバッグ\_OUTCBF\_結合\_明示的\_フラッシュフラグが設定され、2つの通知が1つにまとめられます。 テキストがバッファリングされていない場合は、フラッシュのみの通知が送信されます。
 
- 目的のマスク フラグは、次に示すように、dbgeng.h で定義されます。
+ 次に示すように、関心のマスクフラグは dbgeng .h で定義されています。
 
  ```cpp
  // IDebugOutputCallbacks2 interest mask flags.
@@ -624,16 +624,16 @@ IDebugOutputCallbacks2 は、dbgeng プレゼンテーションの完全な DML 
 #define DEBUG_OUTCBI_ANY_FORMAT     0x00000006
  ```
 
-その両方を処理できる場合に、テキストと DML コンテンツの出力オブジェクトを登録できますに注意してください。 出力は、エンジンを取得するコールバックを処理中に形式変換、つまり両方をサポートしているを削減するは、エンジンで変換を減らすことができます。 ただしではありません、必要に応じて、および操作の必要なモードは、1 つだけの形式をサポートします。
+出力オブジェクトは、両方のコンテンツを処理できる場合に、テキストと DML の両方のコンテンツに登録できることに注意してください。 コールバックの出力処理中に、エンジンは変換を減らす形式を選択するため、両方をサポートするとエンジンでの変換が減少する可能性があります。 ただし、必要ではありませんが、1つの形式のみをサポートすることが期待される操作モードです。
 
 **自動変換**
 
-Dbgeng は必要に応じて、プレーン テキストと DML の間に自動的に変換します。 など、エンジンに、呼び出し元がコンテンツにある DML を送信する場合、エンジンに変換プレーン テキスト プレーン テキストのみを許可するすべての出力クライアント。 代わりに、エンジン プレーン テキストに変換する DML をのみ DML を受け入れるすべての出力のコールバック。
+Dbgeng は、必要に応じて、プレーンテキストと DML を自動的に変換します。 たとえば、呼び出し元が DML コンテンツをエンジンに送信する場合、エンジンは、プレーンテキストのみを受け入れるすべての出力クライアントのプレーンテキストに変換します。 また、DML のみを受け入れるすべての出力コールバックに対して、エンジンはプレーンテキストを DML に変換します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバッガーのマークアップ言語を使用してください。](debugger-markup-language-commands.md)
+[デバッガーマークアップ言語の使用](debugger-markup-language-commands.md)
 
 
 

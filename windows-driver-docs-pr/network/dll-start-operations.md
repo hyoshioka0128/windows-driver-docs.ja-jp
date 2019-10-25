@@ -3,17 +3,17 @@ title: DLL 開始操作
 description: DLL 開始操作
 ms.assetid: cab7a4f9-35dc-44fc-bdd0-30bac8beb652
 keywords:
-- IHV 拡張 DLL WDK ネイティブ 802.11、開始操作
-- IHV 拡張 DLL の開始
-- ネイティブの 802.11 IHV 拡張 DLL の WDK の操作を開始します。
+- IHV Extensions DLL WDK ネイティブ802.11、開始操作
+- IHV 拡張 DLL を開始しています
+- ネイティブ 802.11 IHV 拡張 DLL WDK、開始操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2542c6bf488fa0d4576c235a5ece19ac1c332ce3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 873b10569fde25ce9b4bf369532ba5188f04e46c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386557"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838133"
 ---
 # <a name="dll-start-operations"></a>DLL 開始操作
 
@@ -22,29 +22,29 @@ ms.locfileid: "67386557"
 
  
 
-IHV 拡張機能の DLL を読み込み、直後には、オペレーティング システムは、このシーケンスで、次の IHV ハンドラー関数を呼び出します。
+IHV 拡張 DLL を読み込んだ直後に、オペレーティングシステムは、このシーケンスで次の IHV ハンドラー関数を呼び出します。
 
-1.  オペレーティング システムの呼び出し、 [ *Dot11ExtIhvGetVersionInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_get_version_info) IHV 拡張機能の DLL によってサポートされているインターフェイスのバージョンを決定する IHV ハンドラー関数。 この関数へのポインターを渡される、 [ **DOT11\_IHV\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11_ihv_version_info) DLL が最小値と最大のインターフェイスのバージョンを使用した形式の構造サポートしています。
-    **注**  Windows Vista の IHV 拡張機能の DLL を設定する必要があります、 **dwVerMin**と**dwVerMax** 、DOT11 のメンバー\_IHV\_のバージョン\_0 に情報構造体。
-
-     
-
-2.  IHV 拡張機能の DLL は、オペレーティング システムでサポートされているインターフェイスのバージョンをサポートする場合、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvInitService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service) IHV ハンドラー関数を DLL を初期化します。
-
-IHV 拡張機能の DLL が次のガイドラインに従う必要がありますと[ *Dot11ExtIhvInitService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service)が呼び出されます。
-
--   *PDot11ExtAPI*パラメーターにはへのポインターが含まれています、 [ **DOT11EXT\_API** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_apis) IHV 機能拡張のアドレスでフォーマットされた構造体オペレーティング システムでサポートされている機能です。 IHV 拡張機能の DLL は、DOT11EXT をコピーする必要があります\_によって参照されている API の構造体、 *pDot11ExtAPI*パラメーターをグローバルに宣言された DOT11EXT\_API 構造体。
-
--   *PDot11IHVHandlers*パラメーターにはへのポインターが含まれています、 [ **DOT11EXT\_IHV\_ハンドラー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_handlers)構造を IHV 拡張 DLLサポートされている IHV ハンドラー関数のアドレスを持つ形式。
-    **注**  DLL は、DOT11EXT のメンバーのいずれかを設定しない必要があります\_IHV\_ハンドラーが構造体を**NULL**します。
+1.  オペレーティングシステムは、 [*Dot11ExtIhvGetVersionInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_get_version_info) ihv ハンドラー関数を呼び出して、IHV 拡張 DLL によってサポートされるインターフェイスのバージョンを確認します。 この関数には、 [**DOT11\_IHV\_VERSION\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_ihv_version_info)構造体へのポインターが渡されます。この構造体は、サポートされている最小および最大のインターフェイスバージョンと共に DLL 形式になります。
+    **注**  Windows Vista では、IHV 拡張 DLL は、DOT11\_IHV\_VERSION\_INFO 構造体の**DwVerMin**および**dwvermax**メンバーを0に設定する必要があります。
 
      
 
--   IHV 拡張機能の DLL から DLL を返します後に、その IHV ハンドラー関数を呼び出すのための準備の任意の内部の初期化とリソース割り当てを実行する必要があります[ *Dot11ExtIhvInitService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service)します。
+2.  オペレーティングシステムでサポートされているインターフェイスバージョンが IHV 拡張 DLL によってサポートされている場合、オペレーティングシステムは[*Dot11ExtIhvInitService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_service) IHV ハンドラー関数を呼び出して DLL を初期化します。
 
-IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-extensibility-functions)します。
+[*Dot11ExtIhvInitService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_service)が呼び出された場合、IHV 拡張 DLL は次のガイドラインに従う必要があります。
 
-IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-handler-functions)します。
+-   *PDot11ExtAPI*パラメーターには、 [**DOT11EXT\_api**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_apis)構造体へのポインターが含まれています。これは、オペレーティングシステムでサポートされている IHV 拡張機能のアドレスで書式設定されています。 IHV 拡張 DLL は、 *pDot11ExtAPI*パラメーターによって参照される DOT11EXT\_api 構造体を、グローバルに宣言された DOT11EXT\_api 構造体にコピーする必要があります。
+
+-   *PDot11IHVHandlers*パラメーターには、 [**DOT11EXT\_ihv\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_handlers) handler 構造体へのポインターが含まれています。この構造体は、ihv Extensions DLL がサポートする ihv ハンドラー関数のアドレスと共に書式設定します。
+    DLL  、DOT11EXT\_IHV\_ハンドラー構造体のいずれのメンバーも**NULL**に設定する**こと**はできません。
+
+     
+
+-   IHV 拡張 DLL は、 [*Dot11ExtIhvInitService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_service)から dll が返された後に、ihv ハンドラー関数の呼び出しの準備として、内部初期化とリソース割り当てを実行する必要があります。
+
+IHV 拡張機能の詳細については、「[ネイティブ 802.11 Ihv 拡張関数](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-extensibility-functions)」を参照してください。
+
+IHV ハンドラー関数の詳細については、「[ネイティブ 802.11 Ihv ハンドラー関数](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-handler-functions)」を参照してください。
 
  
 

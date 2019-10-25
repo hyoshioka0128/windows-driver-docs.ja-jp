@@ -3,43 +3,43 @@ title: 拡張機能と拡張機能関数の呼び出し
 description: 拡張機能と拡張機能関数の呼び出し
 ms.assetid: 0582cdc2-7059-42db-878b-28767a6fe850
 keywords:
-- デバッガー エンジン API、拡張機能を呼び出す
+- デバッガーエンジン API、呼び出し (拡張機能を)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e46d3c5b1e9a244558d6c9a97d176d48c0aec63
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: daa6f04e85c275a779b876ca01242b4c2f5519a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367042"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837831"
 ---
 # <a name="calling-extensions-and-extension-functions"></a>拡張機能と拡張機能関数の呼び出し
 
 
-拡張機能ライブラリを読み込む (または、既に読み込まれた拡張機能ライブラリのハンドルを取得する) を使用して[ **AddExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-addextension)します。 拡張機能ライブラリをアンロードできるようにする[ **RemoveExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removeextension)します。
+拡張ライブラリを読み込む (または既に読み込まれている拡張ライブラリのハンドルを取得する) には、 [**Addextension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-addextension)を使用します。 拡張ライブラリは、 [**Removeextension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removeextension)を使用してアンロードできます。
 
-使用して拡張機能のコマンドを呼び出すことができます[ **CallExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-callextension)します。
+拡張コマンドは、 [**callextension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-callextension)を使用して呼び出すことができます。
 
-### <a name="span-idextensionfunctionsspanspan-idextensionfunctionsspanextension-functions"></a><span id="extension_functions"></span><span id="EXTENSION_FUNCTIONS"></span>拡張関数
+### <a name="span-idextension_functionsspanspan-idextension_functionsspanextension-functions"></a><span id="extension_functions"></span><span id="EXTENSION_FUNCTIONS"></span>拡張関数
 
-*拡張関数*は拡張機能ライブラリによってエクスポートされる関数です。 任意の関数プロトタイプを使用することができますを使用して直接 C 関数ポインターと呼ばれます。
+*拡張関数*は、拡張ライブラリによってエクスポートされる関数です。 これらは任意の関数プロトタイプを使用でき、C 関数ポインターを使用して直接呼び出されます。
 
-拡張機能のコマンドは、デバッガー コマンドでは利用できません。 拡張関数をリモートから呼び出すことができません。それらを直接呼び出す必要があります。 そのためのクライアントをデバッグから使用できません。 できますのみ呼び出すことがクライアント オブジェクトは、リモートではデバッグ時、またはスマート クライアントを使用する場合、ホストのエンジンの内部でがの場合。
+これらは拡張コマンドではなく、デバッガーコマンドでは使用できません。 拡張関数をリモートで呼び出すことはできません。これらは直接呼び出す必要があります。 そのため、これらをクライアントのデバッグから使用することはできません。 クライアントオブジェクトがホストエンジン内にある場合にのみ呼び出すことができます。リモートでデバッグしない場合、またはスマートクライアントを使用している場合にのみ呼び出すことができます。
 
-拡張関数が、拡張機能ライブラリ内で識別される、"\_EFN\_"名には、先頭に付加します。
+拡張機能は、拡張ライブラリ内で、名前の前に "\_EFN\_" を付加して識別されます。
 
-拡張関数へのポインターを取得する[ **GetExtensionFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getextensionfunction)します。 この関数ポインターの型は、拡張関数のプロトタイプと一致する必要があります。 C 言語で他の関数ポインターと同じように、拡張関数を呼び出すようになりましたことが
+拡張関数へのポインターを取得するには、 [**Getextensionfunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getextensionfunction)を使用します。 この関数ポインターの型は、拡張関数のプロトタイプと一致している必要があります。 拡張関数は、C の他の関数ポインターと同じように呼び出すことができるようになりました。
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
-次の拡張関数が、拡張機能ライブラリに含まれ、デバッガー エンジンに読み込まれます。
+次の拡張関数が拡張ライブラリに含まれており、デバッガーエンジンに読み込まれている場合は、次のようになります。
 
 ```cpp
 HRESULT CALLBACK
 _EFN_GetObject(IDebugClient * client, SomeObject * obj);
 ```
 
-使用して呼び出す可能性があります。
+次のものを使用して呼び出すことができます。
 
 ```cpp
 typedef ULONG (CALLBACK * GET_OBJECT)(IDebugClient * client, SomeObject * obj);

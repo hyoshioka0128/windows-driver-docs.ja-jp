@@ -3,51 +3,51 @@ title: ピア サブユニット ドライバー スタック
 description: ピア サブユニット ドライバー スタック
 ms.assetid: 6ef4b6ae-3802-4ba9-acfa-4b3edba11ba3
 keywords:
-- ピアのサブユニット ドライバー WDK AV/C をスタックします。
-- ドライバーは、WDK AV/C をスタックします。
-- WDK AV/C のスタック
-- サブユニット サポート WDK AV/C
-- AV/C WDK、ドライバー スタック
-- 単位は、WDK AV/C をコマンドします。
-- 組み込みの拡張機能メカニズム WDK AV/C
-- コマンド拡張機能メカニズム WDK AV/C
-- コマンドの対象 WDK AV/C
-- Avc.sys 関数ドライバー WDK、ドライバー スタック
+- ピアサブユニットドライバースタック WDK AV/C
+- ドライバースタック WDK AV/C
+- スタック WDK AV/C
+- サブユニットは WDK AV/C をサポートします
+- AV/C WDK、ドライバースタック
+- 単体コマンド WDK AV/C
+- 組み込みの拡張メカニズム WDK AV/C
+- コマンド拡張機能のメカニズム WDK AV/C
+- コマンドターゲット WDK AV/C
+- Avc 関数ドライバー WDK、ドライバースタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76de7fb53b1746c02a294ab539c03fb175df0b5f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 19bea615f87d4e6fcd5145c3d898540f395bee51
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370375"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823781"
 ---
 # <a name="peer-subunit-driver-stack"></a>ピア サブユニット ドライバー スタック
 
 
-ピアのドライバー スタックは、コンピューターから制御できるし、IEEE 1394 バス上でアクティブになっている AV/C サブユニットを表すために読み込まれるドライバーで構成されます。 AV/C ピア ドライバー スタックを通じた外部デバイスの制御を開始する必要があります。 Windows のインスタンスを読み込みます*Avc.sys*デバイスとは、システムに接続されている (またはシステムの起動中に存在) されるたびに、IEEE 1394 バス上の外部 AV/C デバイスごとにします。 各インスタンス*Avc.sys*はピアのサブユニット ドライバー登録 GUID の新しいインスタンスをサポートするために読み込まれた\_AVC\_クラス デバイスのインターフェイス。 GUID の詳細については\_AVC\_デバイス インターフェイスのクラスを参照してください[を使用して Avc.sys](using-avc-sys.md)と[ **IOCTL\_AVC\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class).
+ピアドライバースタックは、IEEE 1394 バス上でアクティブであり、コンピューターから制御できる AV/C サブユニットを表すために読み込まれたドライバーで構成されます。 外部デバイスコントロールは、AV/C ピアドライバースタックを介して開始する必要があります。 Windows は、デバイスがシステムに接続されている (またはシステムの起動時に存在する) たびに、IEEE 1394 バス上の外部 AV/C デバイスごとに*Avc*のインスタンスを読み込みます。 ピアサブシステムドライバーをサポートするために読み込まれる*avc*の各インスタンスでは、GUID の新しいインスタンス\_AVC\_クラスのデバイスインターフェイスに登録されます。 \_AVC\_クラスデバイスインターフェイスの GUID の詳細については、「avc および[**IOCTL\_avc\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)の[使用](using-avc-sys.md)」を参照してください。
 
-ピアのサブユニット ドライバーに対するアクセスし、制御を通じて、IOCTL 委譲\_AVC\_によってエクスポートされるクラス インターフェイス*Avc.sys*します。 *Avc.sys* IEC 61883 関数制御プロトコル (FCP) でのすべての操作を含む、AV C/コマンド/応答プロトコルを処理します。 ただし、ピアのサブユニット ドライバーがないので注意できなくとの通信および特定に直接アクセスする*61883.sys*必要な場合に機能します。 サブユニット ドライバーと直接通信する必要があります*61883.sys*サブユニット ドライバーが Microsoft をサポートしないストリームの形式を使用する AV/C サブユニットを表す場合。 サブユニット ドライバーを使用して、 **IOCTL\_61883\_クラス**と直接通信できるインターフェイス*61883.sys*必要な場合。 Microsoft は、低いフィルター ドライバーを提供*Avcstrm.sys*DV をストリーミングする役に立つ、MPEG2 書式設定します。 詳細については*Avcstrm.sys*を参照してください[/C AV ストリーミングの概要](av-c-streaming-overview.md)します。
+ピアサブシステムドライバーは、サブユニットによってエクスポートされる IOCTL\_AVC\_クラスインターフェイスを介して、それらのデバイスにアクセスして制御*します。* *Avc*は、AV/C コマンドと応答プロトコルを処理します。これには、IEC 61883 関数制御プロトコル (FCP) とのすべてのやり取りが含まれます。 ただし、ピアサブシステムドライバーは、必要に応じて、特定の*61883*の機能と通信したり、直接アクセスしたりすることができないことに注意してください。 サブシステムドライバーが、Microsoft がサポートしていないストリーム形式を使用する AV/C サブユニットを表している場合、サブ*システム*ドライバーは、直接のデバイスとの通信を必要とすることがあります。 サブユニットドライバーは、必要に応じて、 **IOCTL\_61883\_クラス**インターフェイスを使用して、 *61883*と直接通信できます。 Microsoft では、DV および MPEG2 形式のストリーミングをサポートする低フィルタードライバー *Avcstrm .sys*を提供しています。 *Avcstrm .sys*の詳細については、「 [AV/C Streaming の概要](av-c-streaming-overview.md)」を参照してください。
 
-ユーザーに通知され、AV/C の外部デバイスからの AV/C コマンドを受信するピアのサブユニット ドライバーを登録できます。 ピアのサブユニット ドライバーの問題を登録する、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) でI/O要求パケット(IRP)**IoControlCode**の IOCTL メンバー\_AVC\_クラス I/O 制御コードとサブ機能は、AVC に設定\_関数\_取得\_を要求します。 この機能は、ピアは、サブユニットのドライバーのサブユニットから AV/C 要求を受信し、接続と互換性の管理 (CCM) のプロトコルやデジタル コンテンツの転送の保護 (DTCP) などの仕様のサポートを有効に. 詳細については、CCM は、次を参照してください。、 [IEEE 1394 貿易](https://go.microsoft.com/fwlink/p/?LinkId=518448)web サイト。 DTCP の詳細については、次を参照してください。、[伝送のデジタル ライセンス管理者](https://go.microsoft.com/fwlink/p/?linkid=8731)web サイト。
+ピアサブユニットドライバーは、外部の AV/C デバイスからの通知を受け取り、AV/C コマンドを受信するように登録できます。 登録するには、ピアサブユニットドライバーが[ **\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)i/o 要求パケット (irp) を\_発行します。これには、IOCTL\_AVC\_クラス i/o 制御コードと MJ の**iocontrolcode**メンバーが含まれます。subfunction を AVC\_関数に設定すると、\_要求\_取得されます。 この機能により、ピアサブユニットドライバーはサブユニットから AV/C 要求を受信し、接続と互換性の管理 (CCM) プロトコルやデジタル伝送 Content Protection (DTCP) などの仕様のサポートを有効にすることができます。 CCM の詳細については、「 [IEEE 1394 取引の関連付け](https://go.microsoft.com/fwlink/p/?LinkId=518448)」 web サイトを参照してください。 DTCP の詳細については、[デジタル伝送ライセンス管理者](https://go.microsoft.com/fwlink/p/?linkid=8731)web サイトを参照してください。
 
-この機能が仮想 AV/C サブユニット ドライバー (サブユニット ドライバーは、仮想の AV/C デバイス スタックである)、コンピューターに AV/C コマンドを送信して、AV/C コマンドを送信する外部デバイス上の AV/C のサブユニットを許可をサポートするものであるに注意してください、コンピューター システム。
+この機能は、仮想 AV/c サブシステムドライバーをサポートして、コンピューター (サブシステムドライバーが仮想 AV/C デバイススタックに配置されている) に AV/c コマンドを送信することを目的としています。また、外部デバイスの AV/c サブユニットが av/c コマンドをコンピューターシステム。
 
-### <a href="" id="peer-stack-as-av-c-command-target"></a>**AV/C コマンド ターゲットとしてのピア スタック**
+### <a href="" id="peer-stack-as-av-c-command-target"></a>**AV/C コマンドターゲットとしてのピアスタック**
 
-ピアのサブユニット ドライバー スタックは、ベンダー固有またはデバイスに固有のターゲット AV/C の機能を提供する追加の WDM フィルター ドライバーを含めることができます。 このピアのサブユニット ドライバー スタックの拡張機能メカニズムにより、サード パーティ ベンダー個別に実装できますしない Microsoft によって提供される AV/C 実装の拡張機能と同様に、コピー防止を 5 C などの付加価値機能。
+ピアサブユニットドライバースタックには、ベンダー固有またはデバイス固有のターゲット AV/C 機能を提供する追加の WDM フィルタードライバーを含めることができます。 このピアサブユニットドライバースタック拡張メカニズムを使用すると、サードパーティベンダーは、5C コピー防止などの付加価値機能、および Microsoft が提供する AV/C 実装の拡張機能を個別に実装できます。
 
-サブユニット ドライバーはこの関数を実行できますが、複数のサブユニットでデバイス、WDM フィルター ドライバーは、推奨される方法。 上のドライバー (ドライバーのサブユニットまたはフィルター) を経由の着信要求を受信登録する場合は、コンピューター、AV/C をターゲットとして公開のみ[ **AVC\_関数\_取得\_要求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request). AV/C 単体のコマンドの詳細については、次を参照してください。 [ **AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)します。
+サブユニットドライバーはこの機能を実行できますが、複数のサブユニットを持つデバイスの場合は、WDM フィルタードライバーを使用することをお勧めします。 コンピューターが AV/C ターゲットとして公開されるのは、上位ドライバー (サブユニットまたはフィルタードライバー) が、 [**AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)を使用して受信要求を受信するように登録されている場合\_\_要求を取得する場合のみです。 AV/C ユニットコマンドの詳細については、「 [**AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)」を参照してください。
 
-デバイス識別子 (Id) に基づくドライバーの読み込みそのため、単体の機能を選択的に読み込む特定のデバイスまたはベンダー固有の単位でできます。 一般的に、仮想のサブユニット ドライバー スタックにこのメカニズムがサポートしています (デバイス固有の方法) ではないです。
+ドライバーの読み込みは、デバイス識別子 (Id) に基づいています。そのため、ユニットの機能は、デバイス固有またはベンダー固有の単位で選択的に読み込むことができます。 仮想サブユニットドライバースタックでは、このメカニズムが一般的にサポートされています (デバイス固有の方法ではありません)。
 
-デバイス固有の単位の拡張機能、任意のハンドルされない単位コマンドだけでなく、すべての受信のサブユニット コマンド、ピアのサブユニット ドライバー スタックが実装されている場合にルーティングされるメモ、[仮想サブユニット ドライバー スタック](virtual-subunit-driver-stack.md)します。
+ピアサブモジュールドライバースタックがデバイス固有のユニット拡張を実装している場合は、すべての未処理のユニットコマンドと、すべての受信サブユニットコマンドが仮想サブモジュール[ドライバースタック](virtual-subunit-driver-stack.md)にルーティングされることに注意してください。
 
-### <a name="unit-command-extension-mechanism"></a>**単位コマンド拡張機能のメカニズム**
+### <a name="unit-command-extension-mechanism"></a>**Unit コマンド拡張機能のメカニズム**
 
-ピアのサブユニット ドライバー スタックのコンテキストでは、ターゲットの機能は、AV/C 単体のコマンドのサポートに制限されます。 (仮想のサブユニットまたはピアのサブユニット) 用のサブユニット ドライバーを登録し、AV/C 要求を受信する場合*Avc.sys*サブユニットのみをサポートしている\_情報 (0x31) と単位\_情報 (0x30) オペコードで直接します。 オペコードの詳細については、次を参照してください。、 *AV/C デジタル インターフェイス コマンド Set 全般の仕様、Rev 3.0*します。 CCM プロトコルまたは DTCP などの追加の単体のコマンドをサポートするために*Avc.sys*プラグイン拡張メカニズムを提供します。 サブユニットまたは WDM フィルター ドライバーの任意の数がでサポートされるユニットのオペコードを登録、 **AlternateOpcodes**のメンバー、 [ **AVC\_コマンド\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)を通じて送信された構造体、 [ **AVC\_関数\_取得\_要求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)関数。 **AlternateOpcodes**はカウント対象のバイト配列は要素 0 は、代替のオペコードで残りのバイト数。 **AlternateOpcodes**代替オペコードは、単位の要求を処理するときに非表示にする必要はありませんので、応答を送信するときは無視されます。
+ピアサブユニットドライバースタックのコンテキストでは、ターゲット機能は AV/C ユニットコマンドのサポートに限定されます。 サブシステムドライバー (仮想サブユニットまたはピアサブユニット用) が AV/C 要求を受信するように登録されている場合、 *Avc*は、サブユニット\_情報 (0x31) と UNIT\_INFO (0x30) オペコードのみを直接サポートします。 オペコードの詳細については、「 *AV/C Digital Interface Command Set General Specification, Rev 3.0*」を参照してください。 CCM プロトコルや DTCP などの追加の単位コマンドをサポートするために、 *Avc*はプラグイン拡張機構を提供します。 任意の数のサブユニットまたは WDM フィルタードライバーは、avc\_関数を介して送信された[**avc\_コマンド\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)構造体の**alternateopcodes**メンバーを介して、サポートする単体オペコードを登録でき[ **\_GET\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)関数。 **Alternateopcodes**は、カウントされたバイト配列です。要素0は、残りのバイトの代替オペコードの数です。 応答の送信時に**Alternateopcodes**は無視されるため、単体要求を処理するときに代替オペコードを非表示にする必要はありません。
 
-組み込みの拡張メカニズムを使用するには、0 xff でとして単位アドレスを指定、 **SubunitAddress** 、AVC のメンバー\_コマンド\_IRB 構造体。 **SubunitAddress**メンバーのでは、単独で左単体のコマンド (のサブユニットでドライバーがまだ存在していればそのアドレス単位)。 仮想のサブユニット ドライバーにすることは常にオフのキー、 **SubunitAddress**メンバー。
+組み込みの拡張メカニズムを使用するには、AVC\_\_コマンドの**Subunitaddress**メンバーで、IRB 構造体の単位アドレスを0xff として指定します。 **Subunitaddress**メンバーは、単位コマンドに対してだけで残されています (サブユニットドライバーによって提供されるユニットアドレスはまだ存在しています)。 仮想サブユニットドライバーは、常に**Subunitaddress**メンバーからキーを切ることができます。
 
  
 

@@ -3,35 +3,35 @@ title: シングル デバイス スタックでの操作フロー
 description: シングル デバイス スタックでの操作フロー
 ms.assetid: b7e38844-2e00-48b8-9741-3bfc38869a6d
 keywords:
-- 1 つのデバイス スタック フロー WDK UMDF
+- 単一デバイススタックフロー WDK UMDF
 - 操作フロー WDK UMDF
-- I/O 要求の WDK UMDF、操作フロー
-- 要求の WDK UMDF、操作のフローの処理
+- I/o 要求 WDK UMDF、操作フロー
+- 要求の処理 WDK UMDF、操作フロー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be9e629f9a11b5ac09c684e6810209ac9f518431
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 844dc17ef34f793661ab809f5c00ef78b544cc61
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375056"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827260"
 ---
 # <a name="operation-flow-with-single-device-stack"></a>シングル デバイス スタックでの操作フロー
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-次の図と UMDF 機能ドライバーを 1 つのデバイス スタック内の間に発生する操作の流れを示しています。
+次の図は、1つのデバイススタックで、UMDF 機能ドライバーとの間で発生する操作のフローを示しています。
 
-![ファイルの作成後、読み取り要求の呼び出しシーケンスを umdf](images/umdfflow.gif)
+![create file の後に読み取り要求を行うための umdf 呼び出しシーケンス](images/umdfflow.gif)
 
-**注**  の図に示すように、カーネル モードでアプリケーションによって開始されるすべての I/O がルーティングされます、 [、UMDF のアーキテクチャ](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))セクションで、上記の図にこのような状況が表示されない場合でも.
+アプリケーションによって開始されるすべての i/o は、前の図にはこのような状況が示されていませんが、「UMDF」セクション[のアーキテクチャ](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))の図に示すように、カーネルモード経由でルーティングさ**れる   ます**。
 
  
 
-UMDF ドライバーの呼び出し、 [ **IWDFIoRequest::GetCreateParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters)メソッド、読み取り要求に関連付けられているファイルに関する情報が必要な場合のみです。 UMDF ドライバーの呼び出し、 [ **IWDFIoRequest::GetReadParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters)メソッドの詳細については、読み取り要求は必要な場合のみです。
+UMDF ドライバーは、読み取り要求に関連付けられているファイルに関する情報が必要な場合にのみ、 [**IWDFIoRequest:: GetCreateParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters)メソッドを呼び出します。 UMDF ドライバーは、読み取り要求に関する詳細情報が必要な場合にのみ、 [**IWDFIoRequest:: GetReadParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters)メソッドを呼び出します。
 
-UMDF ドライバーを呼び出すことができます、 [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)メソッドではなく、 [ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)読み取り操作で転送されるバイト数を指定する場合、メソッドは必要ありません。 UMDF ドライバー呼び出し**完了**または**CompleteWithInformation**読み取り操作が完了したシグナルは、アプリケーションは、読み取りデータへのアクセスにします。
+UMDF ドライバーは、読み取り操作で転送されるバイト数を指定する必要がない場合に、 [**IWDFIoRequest:: CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドではなく[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)メソッドを呼び出すことができます。 UMDF ドライバーは、**完了**または**completewithinformation**を呼び出して、読み取り操作が完了したことを通知します。その後、アプリケーションは読み取りデータにアクセスできます。
 
  
 

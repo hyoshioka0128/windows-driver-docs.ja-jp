@@ -4,16 +4,16 @@ description: CustomDpc ルーチンの登録とキュー
 ms.assetid: 7c35f8f8-a6dc-43b1-9120-701227d7b4c5
 keywords:
 - CustomDpc
-- CustomDpc ルーチンを登録します。
-- キューの CustomDpc ルーチン
+- CustomDpc ルーチンを登録しています
+- CustomDpc ルーチンをキューに置いています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0870cc3ce45c59bd07c398d7c6b52c20c58db6ca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3aeacfc3b2ae1c8fddcb53e7f31fa55ac56e87ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385860"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827514"
 ---
 # <a name="registering-and-queuing-a-customdpc-routine"></a>CustomDpc ルーチンの登録とキュー
 
@@ -21,25 +21,25 @@ ms.locfileid: "67385860"
 
 
 
-ドライバーの登録、 [ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)呼び出すことでデバイス オブジェクトの日常的な[ **KeInitializeDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedpc)デバイス作成後オブジェクト。 ドライバーからには、この呼び出しを行うことができます、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンまたは[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)を処理するコード[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。
+ドライバーは、デバイスオブジェクトを作成した後に[**Keinitializer Edpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)を呼び出すことによって、デバイスオブジェクトの[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンを登録します。 ドライバーは、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンからこの呼び出しを行うことができます。または、 [ **\_デバイス要求を開始\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を処理する[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)コードから呼び出すこともできます。
 
-呼び出すことができます、ドライバーの ISR に制御が戻る直前に[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)キューに、 *CustomDpc*ルーチンを実行します。 次の図は、これらのルーチンへの呼び出しを示しています。
+ドライバーの ISR が制御を返す直前に、 [**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)を呼び出して、 *customdpc*ルーチンの実行をキューにすることができます。 次の図は、これらのルーチンの呼び出しを示しています。
 
-![customdpc ルーチンの dpc オブジェクトを使用して説明する図](images/3cstmdpc.png)
+![customdpc ルーチンで dpc オブジェクトを使用する方法を示す図](images/3cstmdpc.png)
 
-前の図に示すように、ドライバーを持つ、 *CustomDpc*ルーチンは、DPC オブジェクトのストレージを提供する必要があります。 ドライバーは、ISR から DPC オブジェクトへのポインターを渡す必要があります、ために、記憶域は、常駐システム容量のメモリでなければなりません。 ほとんどのドライバーを*CustomDpc*ルーチンは、デバイスの拡張機能で、DPC オブジェクトに記憶域を提供するが、ストレージは、ドライバーで使用する場合、コント ローラーの拡張機能のことが、[コント ローラー オブジェクト](using-controller-objects.md)または非ページドライバーによって割り当てられたプール。
+前の図に示すように、 *customdpc*ルーチンがあるドライバーは、dpc オブジェクトのストレージを提供する必要があります。 ドライバーは、ISR から DPC オブジェクトへのポインターを渡す必要があるため、記憶域は常駐システム領域メモリ内に存在する必要があります。 *Customdpc*ルーチンを使用したほとんどのドライバーは、デバイス拡張機能で DPC オブジェクトのストレージを提供しますが、ドライバーが[コントローラーオブジェクト](using-controller-objects.md)を使用している場合、またはドライバーによって割り当てられた非ページプールの場合は、記憶域をコントローラー拡張機能に含めることができます。
 
-ドライバーを呼び出すと**KeInitializeDpc**エントリ ポイントを渡す必要がありますが、 *CustomDpc*とドライバーの定義のコンテキストに DPC オブジェクトのドライバーに割り当てられたストレージへのポインターとルーチン渡される領域で、 *CustomDpc*ルーチンが呼び出されるとします。 コンテキストの領域は、IRQL でアクセス可能である必要がありますので = ディスパッチ\_レベルにする必要がありますメモリ内に常駐します。
+ドライバーが**Keinitializer Edpc**を呼び出す場合は、その*customdpc*ルーチンのエントリポイント、および DPC オブジェクト用のドライバーによって割り当てられたストレージへのポインターと、customdpc に渡されるドライバー定義のコンテキスト領域へのポインターを渡す必要があります。ルーチンが呼び出されたとき。 コンテキスト領域は IRQL = ディスパッチ\_レベルでアクセスできる必要があるため、常駐メモリ内に存在する必要もあります。
 
-異なり、 *DpcForIsr*ルーチンを*CustomDpc*ルーチンは、デバイス オブジェクトに関連付けられていません。 ただし、ドライバーには、通常、ターゲット デバイスのオブジェクトへのポインターが含まれますに指定されたコンテキスト情報に現在の IRP、 *CustomDpc*ルーチン。 ように、 *DpcForIsr* 、ルーチン、 *CustomDpc*ルーチンでは、この情報を使用して、割り込み駆動 ISR よりも低い IRQL で I/O 操作を完了するには
+*DpcForIsr*ルーチンとは異なり、 *customdpc*ルーチンはデバイスオブジェクトに関連付けられていません。 ただし、通常、ドライバーには、 *Customdpc*ルーチンに渡されたコンテキスト情報内のターゲットデバイスオブジェクトと現在の IRP へのポインターが含まれます。 *DpcForIsr*ルーチンと同様に、 *customdpc*ルーチンはこの情報を使用して、ISR より低い IRQL で割り込みドリブン i/o 操作を完了します。
 
-前の図に示すように ISR がポインターを渡す DPC オブジェクトとに、ドライバーの定義は 2 つの追加のパラメーターに[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)します。 コンピューターのすべてのプロセッサがディスパッチと同じかより大きい IRQL で実行中のコードを現在持って場合\_レベル、DPC は、オブジェクトのディスパッチの IRQL を下回るまではキューに配置\_プロセッサのレベル。 DPC オブジェクトと、ドライバーのカーネルが次に、デキュー *CustomDpc*ルーチンは IRQL のディスパッチに、プロセッサの実行\_レベル。
+前の図に示すように、ISR は DPC オブジェクトへのポインター、およびドライバーで定義されている2つの追加のパラメーターを[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)に渡します。 コンピューターのすべてのプロセッサが、ディスパッチ\_レベル以上の IRQL で現在コードを実行している場合、DPC オブジェクトは、IRQL がプロセッサのディスパッチ\_レベルを下回るまでキューに置かれます。 次に、カーネルは DPC オブジェクトをデキューし、ドライバーの*Customdpc*ルーチンは、IRQL ディスパッチ\_レベルでプロセッサ上で実行されます。
 
-1 つの DPC オブジェクトの 1 つのインスタンスが作成は、特定の時点でキューに登録できます。 したがって ISR を呼び出す場合**KeInsertQueueDpc**同じ 2 回以上*Dpc*ドライバーの前にポインター *CustomDpc*ルーチンを実行すると、 *CustomDpc*ルーチンは IRQL を下回るディスパッチ後に 1 回だけ実行\_プロセッサのレベル。
+任意の時点でキューに入れることができるのは、1つの DPC オブジェクトの1つのインスタンス化だけです。 したがって、ISR が同じ*Dpc*ポインターを使用して**KeInsertQueueDpc**を複数回呼び出す場合、ドライバーの*customdpc*ルーチンを実行する前に、IRQL がプロセッサのディスパッチ\_レベルを下回ると、 *customdpc*ルーチンが1回だけ実行されます。
 
-A *CustomDpc*ルーチンは、割り込みの原因となった I/O 操作を完了するために必要なものが責任を負います。
+*Customdpc*ルーチンは、割り込みの原因となった i/o 操作を完了するために必要な処理を行います。
 
-ISR と*CustomDpc*ルーチンは、SMP マシン上で同時に実行することができます。 そのため、書き込み時に*CustomDpc*ルーチンでは、前のセクションでまとめられているガイドラインに従う[DpcForIsr ルーチンのキューの登録と](registering-and-queuing-a-dpcforisr-routine.md)します。
+ISR ルーチンと*Customdpc*ルーチンは、SMP コンピューターで同時に実行できます。 そのため、 *Customdpc*ルーチンを記述するときは、前のセクションで設定したガイドラインに従って、 [DpcForIsr ルーチンを登録してキューに登録](registering-and-queuing-a-dpcforisr-routine.md)します。
 
  
 

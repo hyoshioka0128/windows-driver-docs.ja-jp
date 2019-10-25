@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド
-description: KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティを使用して、イコライゼーション テーブル内の周波数のバンドの数を取得します。 これは EQ ノード内のチャネルの取得専用プロパティ (KSNODETYPE\_イコライザー)。
+title: KSK プロパティ\_AUDIO\_NUM\_EQ\_バンド
+description: KSK プロパティ\_AUDIO\_NUM\_EQ\_帯状プロパティを使用して、イコライゼーションテーブルの周波数バンドの数を取得します。 これは、EQ ノード (KSNODETYPE\_イコライザー) のチャネルの取得専用プロパティです。
 ms.assetid: b7bb9f05-0b27-4b41-aa38-efb87fc1beee
 keywords:
-- KSPROPERTY_AUDIO_NUM_EQ_BANDS オーディオ デバイス
+- KSPROPERTY_AUDIO_NUM_EQ_BANDS オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b6897f612eccbd03a61866d66e7179a9800a48
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1d36d46854b9493413c35ac3a04a985a4bd1265d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360602"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830967"
 ---
-# <a name="kspropertyaudionumeqbands"></a>KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド
+# <a name="ksproperty_audio_num_eq_bands"></a>KSK プロパティ\_AUDIO\_NUM\_EQ\_バンド
 
 
-KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティを使用して、イコライゼーション テーブル内の周波数のバンドの数を取得します。 これは EQ ノード内のチャネルの取得専用プロパティ ([**KSNODETYPE\_イコライザー**](ksnodetype-equalizer.md))。
+KSK プロパティ\_AUDIO\_NUM\_EQ\_帯状プロパティを使用して、イコライゼーションテーブルの周波数バンドの数を取得します。 これは、EQ ノード ([**KSNODETYPE\_イコライザー**](ksnodetype-equalizer.md)) のチャネルの取得専用プロパティです。
 
 ## <span id="ddk_ksproperty_audio_num_eq_bands_ks"></span><span id="DDK_KSPROPERTY_AUDIO_NUM_EQ_BANDS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティを使用して�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティを使用して�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,18 +61,18 @@ KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティを使用して�
 
  
 
-プロパティの値 (データの操作) は ULONG 型のノードのイコライゼーション テーブルで頻度のバンドの数を指定します。
+プロパティ値 (操作データ) の型は ULONG で、ノードのイコライゼーションテーブル内の周波数バンドの数を指定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AUDIO\_NUM\_EQ\_バンドプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-組み合わせてこのプロパティが使用される、 [ **KSPROPERTY\_オーディオ\_EQ\_バンド**](ksproperty-audio-eq-bands.md)と[ **KSPROPERTY\_オーディオ\_EQ\_レベル**](ksproperty-audio-eq-level.md)プロパティをこれらのプロパティの値を格納する配列の長さを確認します。
+このプロパティは、 [**Ksk プロパティ\_audio\_eq\_バンド**](ksproperty-audio-eq-bands.md)および[**ksproperty\_オーディオ\_eq\_LEVEL**](ksproperty-audio-eq-level.md)プロパティと共に使用して、の値を含む配列の長さを決定します。これらのプロパティ。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,21 +83,21 @@ KSPROPERTY\_オーディオ\_NUM\_EQ\_バンド プロパティ要求がステ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY\_AUDIO\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSNODETYPE\_イコライザー**](ksnodetype-equalizer.md)
 
-[**KSPROPERTY\_AUDIO\_EQ\_BANDS**](ksproperty-audio-eq-bands.md)
+[**KSK プロパティ\_AUDIO\_EQ\_バンド**](ksproperty-audio-eq-bands.md)
 
-[**KSPROPERTY\_AUDIO\_EQ\_LEVEL**](ksproperty-audio-eq-level.md)
+[**KSK プロパティ\_AUDIO\_EQ\_レベル**](ksproperty-audio-eq-level.md)
 
  
 

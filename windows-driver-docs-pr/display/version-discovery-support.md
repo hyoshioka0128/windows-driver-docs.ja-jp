@@ -3,27 +3,27 @@ title: バージョン検出のサポート
 description: バージョン検出のサポート
 ms.assetid: 9e37eaad-02b2-43a9-bd1a-4c5b2b02d1b6
 keywords:
-- Direct3D バージョン 10.1 WDK Windows 7 の表示、探索のバージョンのサポート
-- バージョンの検出サポート Windows 7 の WDK の表示
+- Direct3D バージョン 10.1 WDK Windows 7 display、バージョン検出サポート
+- バージョン検出サポート WDK Windows 7 ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2340f21f5067cad774bf56a1e378227bb85a1e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e361febcc217d14d63aa2b8cc70a6d0d50f48ca0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374351"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825298"
 ---
 # <a name="version-discovery-support"></a>バージョン検出のサポート
 
 
-このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。
+このセクションは、Windows 7 以降のオペレーティングシステムにのみ適用されます。
 
-Windows Vista およびそれ以降のバージョンと Windows Server 2008 以降のバージョンで実行されるユーザー モードのディスプレイ ドライバーがアダプターの作成に失敗する必要があります (つまり、ドライバーへの呼び出しは失敗[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)ドライバーが明示的にサポートされていない DDI バージョンに対しては機能)。
+Windows Vista 以降のバージョンおよび Windows Server 2008 以降のバージョンで実行されるユーザーモード表示ドライバーでは、ドライバーが明示的に指定していないバージョンの DDI に対して、アダプターの作成に失敗する (つまり、ドライバーの[**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数への呼び出しが失敗する) 必要があります。ご.
 
-Windows 7 では、Direct3D アプリケーション DDI バージョンとドライバーが明示的にサポートするハードウェアの機能を検出するための手段を提供します。 これにより、バージョンの検証が向上します。 Windows 7 には、バージョン管理を向上させるために、API とドライバーの初期化を最適化する機会を提供する新しいアダプターに固有の機能が導入されています。 実装およびエクスポートする必要があります、 [ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) Direct3D ランタイムは、ドライバーの新しいアダプター固有の関数を呼び出すことができますので、Direct3D バージョン 10.1 ドライバー関数。 代わりに実装する場合[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) 、Direct3D のバージョン 10.1 ドライバー、ドライバーを示すことしか合格または不合格の呼び出しによって DDI バージョンをサポートするかどうか**OpenAdapter10**します。
+Windows 7 は、ドライバーが明示的にサポートしている DDI バージョンとハードウェア機能を Direct3D アプリケーションが検出するための手段を提供します。 これにより、バージョンの検証が向上します。 Windows 7 では、バージョン管理を改善し、API とドライバーの初期化を最適化するための新しいアダプター固有の機能が導入されています。 Direct3d ランタイムがドライバーの新しいアダプター固有の関数を呼び出すことができるように、 [**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数を direct3d バージョン10.1 ドライバーに実装してエクスポートする必要があります。 代わりに、 [**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)を Direct3D バージョン10.1 ドライバーに実装する場合、ドライバーは**OpenAdapter10**の呼び出しを渡したり失敗したりすることによって、DDI バージョンをサポートしているかどうかのみを示すことができます。
 
-[**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)でドライバーのアダプター固有の関数のテーブルを返します、 **pAdapterFuncs\_2**のメンバー、 [ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造体。 **pAdapterFuncs\_2**を指す、 [ **D3D10\_2DDI\_ADAPTERFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体。 Direct3D ランタイムが呼び出す、ドライバーのアダプター固有[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions) DDI バージョンと、ドライバーがサポートするハードウェアの機能を照会する関数。 **GetSupportedVersions** DDI バージョンとハードウェアの機能を 64 ビット値の配列で返します。 次のコード例は、 **GetSupportedVersions**実装。
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)は、 [**D3D10DDIARG\_openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)構造体の**padapterfuncs\_2**メンバーで、ドライバーのアダプター固有の関数のテーブルを返します。 **Padapterfuncs 2**は、 [**D3D10\_2DDI\_adapterの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)構造体を指します。 Direct3D ランタイムは、ドライバーのアダプター固有の[**Getsupportedversions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)関数を呼び出して、ドライバーがサポートする DDI バージョンとハードウェア機能を照会します。 **Getsupportedversions**は、64ビット値の配列に含まれる DDI バージョンとハードウェア機能を返します。 **Getsupportedversions**の実装のコード例を次に示します。
 
 ```cpp
 // Array of 64-bit values that are defined in D3d10umddi.h
@@ -64,13 +64,13 @@ HRESULT APIENTRY GetSupportedVersions(
 }
 ```
 
-Direct3D のバージョン 10.1 ドライバーに渡される値を確認する必要はありません、**インターフェイス**と**バージョン**のメンバー [ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)への呼び出しでその[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)これらの値にする DDI バージョン情報が含まれているにもかかわらず関数ドライバーを初期化します。 ドライバーは DDI バージョンとハードウェアの機能を呼び出すことによって、返すことができます、 [ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)関数。
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)関数の呼び出しで[**D3D10DDIARG\_Openadapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)の**インターフェイス**および**バージョン**メンバーに渡される値を検証するために、Direct3D バージョン10.1 ドライバーは必要ありません。ただし、これらの値には、ドライバーの初期化に使用する DDI バージョン情報が含まれています。 ドライバーは、 [**Getsupportedversions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)関数の呼び出しによって、DDI バージョンとハードウェア機能を返すことができます。
 
-Direct3D の実行時に値を渡すことができます、**インターフェイス**と**バージョン**のメンバー [ **D3D10DDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)ドライバーの呼び出しで[ **CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数に、ランタイムが渡される値とは異なる[ **OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter); ランタイムは、値を渡します、**インターフェイス**と**バージョン**D3D10DDIARG のメンバー\_DDI に基づく CREATEDEVICEバージョンとハードウェアの機能情報をドライバーの[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)ランタイムに返されます。 ドライバーに渡される値を検証する必要はありません、**インターフェイス**と**バージョン**D3D10DDIARG のメンバー\_CREATEDEVICE ドライバーのサポートをすでに示されているためこれらの値をその**GetSupportedVersions**関数。
+Direct3D ランタイムは、 [**D3D10DDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)の**インターフェイス**および**バージョン**のメンバーに、ランタイムによって指定された値とは異なるドライバーの[**CREATEDEVICE (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで値を渡すことができます。[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)に渡されました。ランタイムは、D3D10DDIARG\_CREATEDEVICE の**インターフェイス**と**バージョン**のメンバーに、ドライバーの[**getsupportedversions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)によって返された DDI バージョンとハードウェア機能の情報に基づいて値を渡します。を実行します。 ドライバーは、D3D10DDIARG\_CREATEDEVICE の**インターフェイス**および**バージョン**メンバーに渡された値を検証する必要はありません。これは、ドライバーが getsupportedversions によってこれらの値のサポートを既に示しているためです。関数。
 
-Direct3D バージョン 10.1 Direct3D バージョン 10.0 からは、ドライバーを移植する場合は、のみを監視するドライバーを変換する必要があります、**インターフェイス**と**バージョン**メンバーに渡される[**CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)の代わりに[ **OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)します。 両方を分析する必要があります[ **CalcPrivateDeviceSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)と**CreateDevice(D3D10)** 関数インポートは、前提条件がないことを確認するドライバーの実装内の値に関する、**インターフェイス**と**バージョン**メンバーを*CreateDevice(D3D10)* 内の値に一致する、 **インターフェイス**と**バージョン**メンバーを**OpenAdapter10\_2**します。
+ドライバーを Direct3D バージョン10.0 から Direct3D バージョン10.1 に移植する場合は、OpenAdapter10 ではなく[**CreateDevice (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)に渡される**インターフェイス**と**バージョン**のメンバーのみを監視するようにドライバーを変換する必要があります。 [ **\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) [**CalcPrivateDeviceSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)と**CreateDevice (D3D10)** 関数の両方の実装を移植されたドライバーで分析し、の**インターフェイス**および**バージョン**メンバーの値についての*前提条件がないことを確認する必要があります。CreateDevice (D3D10)* は、 **OpenAdapter10\_2**の**インターフェイス**と**バージョン**メンバーの値に一致します。
 
-**注**  [**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)と同じ関数のシグネチャを持つ[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) (つまり、PFND3D10DDI\_OPENADAPTER で定義されている、 *D3d10umddi.h*ヘッダー)。 どちらの関数は、同じユーザー モード ディスプレイ ドライバー DLL に実装できます。
+**注**  [**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)には、 [**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) ( *D3d10umddi*ヘッダーで定義されている PFND3D10DDI\_openadapter) と同じ関数シグネチャがあります。 同じユーザーモードの表示ドライバー DLL で、両方の関数を実装できます。
 
  
 

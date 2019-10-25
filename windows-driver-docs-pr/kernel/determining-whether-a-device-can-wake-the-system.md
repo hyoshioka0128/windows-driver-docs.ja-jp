@@ -3,20 +3,20 @@ title: デバイスがシステムをウェイクできるかどうかの判断
 description: デバイスがシステムをウェイクできるかどうかの判断
 ms.assetid: 59f23035-4169-4dd4-ac60-882c32efda2c
 keywords:
-- 待機/ウェイク Irp WDK 電源管理では、ウェイク アップ機能を持つデバイス
-- 電源管理の WDK カーネル、ウェイク アップ機能
-- 外部ウェイク信号 WDK
-- アクティブになるデバイス
-- 電源管理のウェイク アップ機能 WDK
-- デバイスのスリープ解除 ups WDK 電源管理
+- 待機/ウェイク Irp WDK 電源管理、ウェイクアップ機能を搭載したデバイス
+- 電源管理 WDK カーネル、ウェイクアップ機能
+- 外部ウェイクアップシグナル WDK
+- 復帰デバイス
+- ウェイクアップ機能 WDK の電源管理
+- デバイスのウェイクアップと WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f73513baa10a47e6bacbbd8ba5bc2e83251f696a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78e0836de1816ec7516f8479d17f58ee03e39b2d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378020"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828364"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>デバイスがシステムをウェイクできるかどうかの判断
 
@@ -24,13 +24,13 @@ ms.locfileid: "67378020"
 
 
 
-キーボード、モデム、およびネットワーク カードなど、一部のデバイスは、デバイスのスリープ状態の間の外部のシグナルに対応できます。 電源管理テクノロジの一部としては、オペレーティング システムは、このようなデバイスの以前のコンテキストを復元することができます、スリープ状態のシステムをスリープ解除する方法を提供します。 ソフトウェアのウェイク アップ メカニズムにより、システム S5 を除く任意の状態から再開する (**PowerSystemShutdown**)、システムとデバイスのハードウェアおよび BIOS でのサポートによって異なります。 S5 の状態でシステムを再起動することが常にあります。
+キーボード、モデム、ネットワークカードなどの一部のデバイスは、デバイスのスリープ状態の間、外部の信号に応答できます。 オペレーティングシステムは、電源管理テクノロジの一部として、このようなデバイスがスリープ状態のシステムをスリープ解除する方法を提供します。これにより、以前のコンテキストを復元できます。 ソフトウェアウェイクアップメカニズムを使用すると、システムとデバイスのハードウェアおよび BIOS のサポートに応じて、S5 (**Powersystemshutdown**) 以外の任意の状態からシステムを起動できます。 状態 S5 のシステムは、常に再起動する必要があります。
 
-オペレーティング システムから中間のスリープ状態のいずれかがスリープ解除するよう設計されていますが、コンピューターから別のコンピューターとデバイスに正確なウェイク アップ機能が異なります。 すべてのシステム スリープ状態をサポートしていないすべてのコンピューターそのため、特定の状態からスリープ解除する機能は、一部のコンピューターでは無意味です。
+オペレーティングシステムはいずれかの中間スリープ状態から復帰するように設計されていますが、正確なウェイクアップ機能はコンピューターやデバイスによって異なります。 すべてのコンピューターがすべてのシステムスリープ状態をサポートしているわけではありません。そのため、一部のコンピューターでは、特定の状態から復帰する機能は無意味です。
 
-同様に、ほとんどのデバイスは、すべてのデバイスの電源の状態もをサポート (D3 を通じて D0) もサポート ウェイク アップのすべてのデバイスの電源をサポートする状態。
+同様に、ほとんどのデバイスは、すべてのデバイスの電源状態 (D0 から D3) をサポートしておらず、サポートしているすべてのデバイスの電源状態からのウェイクアップもサポートしていません。
 
-スリープは、元のことをスリープ解除をサポート、バス ドライバーによって列挙で説明されていると状態に格納されますと共に、デバイスを入力できることを示す、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 次の表は、サポートの待機またはスリープ解除に関連するこの構造体のメンバーを一覧表示します。
+デバイスがウェイクアップをサポートしている状態と共に入力できるスリープ状態は、「バスドライバーによる列挙」で説明されており、[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造に格納されています。 次の表に、待機/ウェイクサポートに関連するこの構造体のメンバーを示します。
 
 <table>
 <colgroup>
@@ -39,59 +39,59 @@ ms.locfileid: "67378020"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="deviced1-and-deviced2.md" data-raw-source="[&lt;strong&gt;DeviceD1&lt;/strong&gt;](deviced1-and-deviced2.md)"><strong>DeviceD1</strong></a></p></td>
-<td><p>デバイス状態 PowerDeviceD1 をサポートしている場合は true。</p></td>
+<td><p>デバイスが state PowerDeviceD1 をサポートしている場合は True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="deviced1-and-deviced2.md" data-raw-source="[&lt;strong&gt;DeviceD2&lt;/strong&gt;](deviced1-and-deviced2.md)"><strong>DeviceD2</strong></a></p></td>
-<td><p>デバイス状態 PowerDeviceD2 をサポートしている場合は true。</p></td>
+<td><p>デバイスが state PowerDeviceD2 をサポートしている場合は True。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD0&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD0</strong></a></p></td>
-<td><p>デバイスが PowerDeviceD0 からウェイクできる場合は true。</p></td>
+<td><p>デバイスを PowerDeviceD0 からウェイクアップできる場合は True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD1&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD1</strong></a></p></td>
-<td><p>デバイスが PowerDeviceD1 からウェイクできる場合は true。</p></td>
+<td><p>デバイスを PowerDeviceD1 からウェイクアップできる場合は True。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD2&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD2</strong></a></p></td>
-<td><p>デバイスが PowerDeviceD2 からウェイクできる場合は true。</p></td>
+<td><p>デバイスを PowerDeviceD2 からウェイクアップできる場合は True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD3&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD3</strong></a></p></td>
-<td><p>デバイスが PowerDeviceD3 からウェイクできる場合は true。</p></td>
+<td><p>デバイスを PowerDeviceD3 からウェイクアップできる場合は True。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="devicestate.md" data-raw-source="[&lt;strong&gt;DeviceState&lt;/strong&gt;](devicestate.md)"><strong>DeviceState</strong> </a> [PowerSystemMaximum]</p></td>
-<td><p>このデバイスをサポートできる PowerSystemShutdown に PowerSystemUnspecified から各システムの電源状態の最大のデバイスの電源状態を指定します。</p></td>
+<td><p><a href="devicestate.md" data-raw-source="[&lt;strong&gt;DeviceState&lt;/strong&gt;](devicestate.md)"><strong>Devicestate</strong></a> [powersystemmaximum]</p></td>
+<td><p>このデバイスがシステムの電源状態ごとにサポートできる最高のデバイス電源状態を指定します。 PowerSystemUnspecified から Powersystemunspecified までです。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="systemwake.md" data-raw-source="[&lt;strong&gt;SystemWake&lt;/strong&gt;](systemwake.md)"><strong>SystemWake</strong></a></p></td>
-<td><p>最小のシステムの電源を指定します (を通じて S4 は S0) の状態、システムを起動できます。</p></td>
+<td><p>システムの起動に使用する最小のシステム電源の状態 (S0 ~ S4) を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="devicewake.md" data-raw-source="[&lt;strong&gt;DeviceWake&lt;/strong&gt;](devicewake.md)"><strong>DeviceWake</strong></a></p></td>
-<td><p>最下位のデバイスの電源を指定します (D3 を通じて D0) の状態、デバイスが再開できます。</p></td>
+<td><p>デバイスを目覚めさせることのできるデバイスの電源の最低状態 (D0 ~ D3) を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**DeviceWake**エントリには、元のデバイスがウェイク アップ信号に応答できる最小のデバイスの電源状態が一覧表示されます。 PowerDeviceUnspecified 値では、デバイスが、システムのスリープを解除できないことを示します。 **SystemWake**エントリには、元のシステムを起動できます最も低いシステム電源の状態が一覧表示されます。 これらの値は親 devnode の機能に基づいており、ドライバーは変更はできません。 詳細については、次を参照してください。[デバイスの電源機能の報告](reporting-device-power-capabilities.md)します。
+**Devicewake**エントリには、デバイスがウェイクアップ信号に応答できる最も低いデバイス電源状態が一覧表示されます。 PowerDeviceUnspecified の値は、デバイスがシステムをウェイクアップできないことを示します。 **Systemwake**エントリには、システムをウェイクアップできる最小のシステム電源の状態が一覧表示されます。 これらの値は、親 devnode の機能に基づいています。ドライバーで変更することはできません。 詳細については、「[デバイスの電源機能の報告](reporting-device-power-capabilities.md)」を参照してください。
 
-一般に、デバイスは、次の条件に当てはまる場合に、システムをスリープ解除できます。
+一般に、次の条件に該当する場合、デバイスはシステムをスリープ解除できます。
 
--   デバイスが電源の状態と等しいかよりも詳細を利用した、 **DeviceWake**値。
+-   デバイスの電源状態が**Devicewake**値以上になっています。
 
--   システムが電源の状態と等しいかそれよりも電源が投入されて、 **SystemWake**値。
+-   システムの電源状態が**Systemwake**値以上になっています。
 
  
 

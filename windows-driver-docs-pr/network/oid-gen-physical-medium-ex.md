@@ -1,40 +1,40 @@
 ---
 title: OID_GEN_PHYSICAL_MEDIUM_EX
-description: クエリとして OID_GEN_PHYSICAL_MEDIUM_EX OID には、ミニポート アダプターをサポートする物理メディアの種類を指定します。
+description: クエリとして、OID_GEN_PHYSICAL_MEDIUM_EX OID は、ミニポートアダプターがサポートする物理メディアの種類を指定します。
 ms.assetid: cbac8c9b-d7fe-4588-8a64-599d04a77a72
 ms.date: 08/08/2017
-keywords: -OID_GEN_PHYSICAL_MEDIUM_EX ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_PHYSICAL_MEDIUM_EX ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 614c3f3b6b761267e060bd68053a47862d7865d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b808aeda7ac7383314f94a1e77b8535ea502843
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382641"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824386"
 ---
-# <a name="oidgenphysicalmediumex"></a>OID\_GEN\_物理\_MEDIUM\_例
+# <a name="oid_gen_physical_medium_ex"></a>OID\_GEN\_物理\_MEDIUM\_EX
 
 
-クエリ、OID として\_GEN\_物理\_MEDIUM\_EX OID ミニポート アダプターをサポートする物理メディアの種類を指定します。
+クエリとして、OID\_GEN\_物理\_MEDIUM\_EX OID は、ミニポートアダプターがサポートする物理メディアの種類を指定します。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、NDIS 6.0 とそれ以降のミニポート ドライバーのこの OID を処理します。 ミニポート ドライバーでは、初期化中に物理中程度の値を提供します。
+Ndis は、この OID を NDIS 6.0 以降のミニポートドライバー用に処理します。 ミニポートドライバーは、初期化中に物理メディアの値を提供します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、NDIS\_物理\_中程度の列挙値。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、NDIS\_物理\_中列挙値が含まれています。
 
-**注**  OID の違い\_GEN\_物理\_MEDIUM\_EX と[OID\_GEN\_物理\_中](oid-gen-physical-medium.md) OID は\_GEN\_物理\_MEDIUM\_EX バージョンがオーバーライドしません、 **NdisPhysicalMedium802\_3** と型**NdisPhysicalMediumUnspecified**は OID\_GEN\_物理\_中は引き続きは。 6\.x のすべてのドライバーが、EX バージョンを使用することをお勧めします。 OID\_GEN\_物理\_MEDIUM\_EX が WMI GUID を介して公開されます。
+OID\_GEN\_PHYSICAL\_MEDIUM\_EX と Oid\_GEN\_物理[\_medium](oid-gen-physical-medium.md)の**違い  、** OID\_GEN\_物理\_中\_EX バージョンでは、 **NdisPhysicalMedium802\_3**型が**NdisPhysicalMediumUnspecified**としてオーバーライドされることはありませんが、OID\_GEN\_物理\_メディアは引き続き動作します。 すべての6.x ドライバーで EX バージョンを使用することをお勧めします。 OID\_GEN\_物理\_MEDIUM\_EX は、WMI GUID を通じて公開されます。
 
  
 
-ミニポート ドライバーでサポートするために宣言されているメディアから、物理メディアを区別するために、物理メディアの種類のレポート、 [OID\_GEN\_メディア\_サポートされている](oid-gen-media-supported.md)OID クエリ。
+ミニポートドライバーは、物理メディアの種類を報告して、 [oid\_GEN\_メディア\_サポート](oid-gen-media-supported.md)対象として宣言したメディアと、サポートされている oid クエリを区別します。
 
-NDIS サポート、OID\_GEN\_物理\_MEDIUM\_ミニポート アダプターがこれらのネットワーク オペレーティング システムおよび NDIS として表示されるパケットを転送する場合でも、新しいネットワークをサポートするための EX OID標準的なよく知られているメディアの種類。
+NDIS でサポートされているのは、新しいネットワークをサポートするミニポートアダプターの OID\_GEN\_物理\_MEDIUM\_EX です。ただし、これらのネットワークでは、オペレーティングシステムに表示されるパケットと NDIS には、標準の既知のメディアとして送信されます。な.
 
-新しいネットワークでは、標準のメディアのように表示される可能性がありますが、新しい機能や、標準のわずかな違いがある可能性がありますのパケットを転送します。 この OID には、上位層のためのドライバーが存在して、アプリケーションは、NIC が接続する実際のネットワークを確認できます。 基になるネットワークに関する情報を取得するには、後に上位層のドライバーとアプリケーションはこのようなドライバーとアプリケーションの動作を変更するのにこの情報を使用できます。
+新しいネットワークでは、標準メディアと同様に表示される可能性のあるパケットが転送されますが、標準とは異なる新しい機能やわずかな違いが生じる可能性があります。 この OID が存在するので、上層のドライバーやアプリケーションが NIC の接続先となる実際のネットワークを判別できるようになります。 基になるネットワークに関する情報を取得した後、上位層のドライバーとアプリケーションはこの情報を使用して、このようなドライバーやアプリケーションの動作を変更できます。
 
-ありませんし、定義されている物理メディアの種類、NDIS 6.0 以降およびそれ以降のバージョン、エミュレートされた 802.3 NIC から NIC、802.3 を明確に区別するためにレポートを 802.3 ミニポート ドライバーを必要とする**NdisPhysicalMedium802\_3**メディアの種類。
+802.3 NIC と、物理的なメディアの種類が定義されていないエミュレートされた 802.3 NIC を明確に区別するために、NDIS 6.0 以降のバージョンでは、 **NdisPhysicalMedium802\_3**メディアタイプを報告するために802.3 ミニポートドライバーが必要です。
 
 <a name="requirements"></a>要件
 ------------
@@ -47,11 +47,11 @@ NDIS サポート、OID\_GEN\_物理\_MEDIUM\_ミニポート アダプターが
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。 ミニポート ドライバーには要求されません。 (「解説」の「」を参照).</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。 ミニポートドライバーが要求されていません。 (「解説」を参照してください。)</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -59,11 +59,11 @@ NDIS サポート、OID\_GEN\_物理\_MEDIUM\_ミニポート アダプターが
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[OID\_GEN\_メディア\_サポートされています。](oid-gen-media-supported.md)
+[OID\_GEN\_メディア\_サポートされています](oid-gen-media-supported.md)
 
-[OID\_GEN\_物理\_中](oid-gen-physical-medium.md)
+[OID\_GEN\_物理\_メディア](oid-gen-physical-medium.md)
 
  
 

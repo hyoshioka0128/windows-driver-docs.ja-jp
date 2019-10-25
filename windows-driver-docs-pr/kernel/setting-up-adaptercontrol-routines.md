@@ -3,18 +3,18 @@ title: AdapterControl ルーチンのセットアップ
 description: AdapterControl ルーチンのセットアップ
 ms.assetid: 0d2add25-711a-4e5d-8409-b7ce60b08858
 keywords:
-- AdapterControl ルーチンを設定します。
-- 書き込みの AdapterControl ルーチン
-- アダプター オブジェクトの WDK カーネル、AdapterControl ルーチンを記述
-- AdapterControl ルーチンを記述、DMA 転送 WDK カーネル
+- AdapterControl ルーチン、設定
+- AdapterControl ルーチン、書き込み
+- アダプタオブジェクト WDK カーネル、AdapterControl ルーチンの記述
+- DMA が WDK カーネルを転送し、AdapterControl ルーチンを作成する
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c992d6f2088e3f63faa1cc949e35eaaaa3c84c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bac0441655c2d251aa8a4035eec3ab034ecbb115
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360262"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838423"
 ---
 # <a name="setting-up-adaptercontrol-routines"></a>AdapterControl ルーチンのセットアップ
 
@@ -22,15 +22,15 @@ ms.locfileid: "67360262"
 
 
 
-PnP ドライバーのディスパッチ ルーチン[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求が、次を実行する必要があります、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチン。
+PnP IRP\_に対して実行されるドライバーのディスパッチルーチンは\_デバイスの要求を[**開始\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) 、 [*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンに対して次の操作を行う必要があります。
 
-1.  入力することでデバイスの DMA の機能のアダプタ オブジェクトを設定、 [**デバイス\_説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_description)構造と通話[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter).
+1.  デバイス[ **\_説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_description)の構造を入力し、 [**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)を呼び出すことによって、デバイスの DMA 機能のアダプターオブジェクトを設定します。
 
-2.  アダプター オブジェクトへのポインターを保存し、 *NumberOfMapRegisters*によって返される**IoGetDmaAdapter**します。
+2.  **IoGetDmaAdapter**によって返されたアダプターオブジェクトポインターと*numberofmapregisters*を保存します。
 
-    プラットフォーム固有の最大*NumberOfMapRegisters*によって返される**IoGetDmaAdapter**またはドライバーのデバイスの転送機能、方制限が厳しい、決定かどうか、ドライバーは、特定の転送要求を分割し、その IRP を満たすために、そのデバイス上の 1 つ以上の DMA 操作を実行する必要があります。
+    **IoGetDmaAdapter**によって返される、またはドライバーのデバイスの転送機能のいずれかが制限されている、プラットフォーム固有の最大*numberofmapregisters*は、ドライバーが特定の転送要求を分割する必要があるかどうかを判断し、その IRP を満たすために、デバイスで複数の DMA 操作を実行します。
 
-返されるアダプター オブジェクトへのポインター、ドライバーのエントリ ポイント*AdapterControl* 、ルーチン、*デバイス オブジェクト*ポインターの現在の IRP では、ターゲット デバイスを表す、*コンテキスト*用に既に設定領域へのポインター、 *AdapterControl*ルーチン、および*NumberOfMapRegisters*上限値より小さいなる値の数より小さい要求の転送への呼び出しで渡す必要がある[ **AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)します。 通常、ドライバーの[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) (または場合によって[ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)) ルーチンがある領域を設定*コンテキスト*を呼び出す前に**AllocateAdapterChannel**します。
+返されたアダプターオブジェクトポインターは、ドライバーの*Adaptercontrol*ルーチンのエントリポイントであり、現在の IRP のターゲットデバイスを表す*DeviceObject*ポインターであり、既に設定されている *領域へのコンテキストポインターです。AdapterControl*ルーチンと*Numberofmapregisters*値 (小さい転送要求で可能な最大数よりも小さくなる可能性があります) は、 [**allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)への呼び出しで渡す必要があります。 通常、ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) (または[*コントロール*](https://msdn.microsoft.com/library/windows/hardware/ff542049)) ルーチンは、 **allocateadapterchannel**を呼び出す前に、*コンテキスト*で領域を設定します。
 
  
 

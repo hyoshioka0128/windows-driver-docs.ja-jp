@@ -3,18 +3,18 @@ title: ファンクション ドライバーまたはフィルター ドライ�
 description: ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
 ms.assetid: 0a095c17-2295-46df-9908-f306f7fe9f67
 keywords:
-- 関数のドライバー WDK カーネル
-- フィルター ドライバー WDK カーネル
-- AddDevice ルーチンの WDK カーネル、関数のドライバー
-- AddDevice ルーチンの WDK カーネル、フィルター ドライバー
+- 関数ドライバー WDK カーネル
+- フィルタードライバーの WDK カーネル
+- AddDevice ルーチン WDK カーネル、関数ドライバー
+- AddDevice ルーチン WDK カーネル, フィルタードライバー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09aa121b406429bfba1e4b117eaf2253041a0e4f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c93c731e858af297dd601a5102d75b40aa98004e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369991"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837277"
 ---
 # <a name="adddevice-routines-in-function-or-filter-drivers"></a>ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
 
@@ -22,51 +22,51 @@ ms.locfileid: "67369991"
 
 
 
-[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)関数またはフィルター ドライバーのルーチンは、次の手順を実行する必要があります。
+関数またはフィルタードライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンでは、次の手順を実行する必要があります。
 
-1.  呼び出す[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)機能を作成または追加されているデバイスのデバイス オブジェクト (FDO またはフィルター操作を実行) をフィルター処理します。
+1.  [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)を呼び出して、追加するデバイスの機能デバイスオブジェクト (FDO またはフィルター DO) を作成します。
 
-    指定しない、 *DeviceName*デバイス オブジェクトのため、そのため、PnP マネージャーのセキュリティをバイパスします。 ユーザー モード コンポーネントは、デバイスへのシンボリック リンクを必要とする場合は、デバイスを登録インターフェイス (次の手順を参照してください)。 カーネル モード コンポーネントは、レガシ デバイス名を必要とする場合は、ドライバーは、デバイス オブジェクトを名前する必要がありますが、名前付けは推奨されません。
+    デバイスオブジェクトの*DeviceName*を指定しないでください。これにより、PnP マネージャーのセキュリティがバイパスされます。 ユーザーモードコンポーネントがデバイスへのシンボリックリンクを必要とする場合は、デバイスインターフェイスを登録します (次の手順を参照してください)。 カーネルモードのコンポーネントにレガシデバイス名が必要な場合、ドライバーはデバイスオブジェクトに名前を付ける必要がありますが、名前付けは推奨されません。
 
-    ファイルを含める\_デバイス\_SECURE\_で開いて、 *DeviceCharacteristics*パラメーター。 このような特性は、I/O マネージャーなどの関連するオープンと末尾の名前でファイルを開く、開いているすべての要求のデバイス オブジェクトに対するセキュリティ チェックを実行するよう指示します。
+    *DeviceCharacteristics*パラメーターで OPEN\_OPEN FILE\_DEVICE\_を含めます。 この特性によって、i/o マネージャーは、開いているすべての要求について、デバイスオブジェクトに対してセキュリティチェックを実行するように指示します。これには、相対オープンと末尾のファイル名が含まれます。
 
-2.  \[省略可能な\]デバイスに 1 つまたは複数のシンボリック リンクを作成します。
+2.  \[オプション\] デバイスへの1つまたは複数のシンボリックリンクを作成します。
 
-    呼び出す[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)デバイスの機能を登録し、そのアプリケーションまたはシステムにシンボリック リンクを作成するコンポーネントが、デバイスを開くに使用できます。 呼び出して、インターフェイスを有効にする必要があります、ドライバー [ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)処理すると、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 詳細については、次を参照してください。[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)します。
+    [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出して、デバイスの機能を登録し、アプリケーションまたはシステムコンポーネントがデバイスを開くために使用できるシンボリックリンクを作成します。 ドライバーは、 [ **\_デバイス要求の開始\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を処理するときに[**Iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を呼び出すことによって、インターフェイスを有効にする必要があります。 詳細については、「[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)」を参照してください。
 
-3.  デバイスの拡張機能には、デバイスの PDO へのポインターを格納します。
+3.  デバイス拡張機能にデバイスの PDO へのポインターを格納します。
 
-    PnP マネージャーとして PDO へのポインターを提供する、 *PhysicalDeviceObject*パラメーターを*AddDevice*します。 ドライバーの PDO ポインターからルーチンの呼び出しでのなど使用[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)します。
+    PnP マネージャーは、 *AddDevice*への*PhysicalDeviceObject*パラメーターとして PDO へのポインターを提供します。 ドライバーは、 [**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)などのルーチンの呼び出しで PDO ポインターを使用します。
 
-4.  フラグで PnP デバイスの状態を追跡するために、デバイスの拡張機能など、デバイスは一時停止、削除すると定義突然削除します。
+4.  デバイスの一時状態を追跡するためのデバイス拡張機能のフラグを定義します。たとえば、デバイスの一時停止、削除、および削除を行います。
 
-    たとえば、デバイスが一時停止状態の間に受信 Irp を保持することを示す 1 つのフラグを定義します。 ドライバーがまだない場合、メカニズム キュー Irp の Irp で保持するためのキューを作成します。 参照してください[キューおよびデキュー Irp](queuing-and-dequeuing-irps.md)詳細についてはします。
+    たとえば、デバイスが一時停止状態のときに受信 Irp を保持することを示すフラグを1つ定義します。 Irp のキューを作成します (ドライバーがまだ Irp をキューに格納していない場合)。 詳細については[、「irp をキュー](queuing-and-dequeuing-irps.md)に追加する」を参照してください。
 
-    割り当てることも、 **IO\_削除\_ロック**デバイス拡張機能と呼び出しで構造[ **IoInitializeRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock)これを初期化するには構造体。 詳細については、次を参照してください。[ロックを使用して削除](using-remove-locks.md)します。
+    また、 **IO\_** 割り当てて、デバイス拡張機能で\_ロック構造を削除し、この構造体を初期化するために[**Ioinitializer Eremovelock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeremovelock)を呼び出します。 詳細については、「 [Remove Locks の使用](using-remove-locks.md)」を参照してください。
 
-5.  設定\_バッファーに格納された\_IO または\_直接\_I/O マネージャーで、デバイス スタックに送信される I/O 要求を使用するバッファーの種類を指定するデバイス オブジェクトの IO フラグ ビットです。 高度なドライバーまたはこのメンバーと同じ値をスタックでは、次の下位ドライバーとしてを除く可能性がある最上位レベルのドライバーです。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+5.  デバイススタックに送信される i/o 要求に対して i/o マネージャーが使用するバッファリングの種類を指定するには、\_バッファー\_IO また\_はデバイスオブジェクトのダイレクト\_IO フラグビットを設定します。 上位レベルのドライバー、またはスタック内の次に小さいドライバーと同じ値を持つこのメンバー (最上位レベルのドライバーの場合を除く)。 詳細については、「[デバイスオブジェクトの初期化](initializing-a-device-object.md)」を参照してください。
 
-6.  設定\_POWER\_突入または\_POWER\_電源管理、必要に応じてページング可能なフラグ。 ページング可能なドライバーをする必要があります設定\_POWER\_ページング可能なフラグ。 デバイス オブジェクトのフラグは、デバイスの PDO を作成するときに通常、バス ドライバーによって設定されます。 ただしより高度なドライバーは、これらのフラグでの値を変更する必要があります、 *AddDevice*ルーチン、FDO を作成または操作フィルターを適用したとき。 参照してください[電源管理のためのデバイス オブジェクトのフラグの設定](setting-device-object-flags-for-power-management.md)詳細についてはします。
+6.  必要に応じて、電源管理の DO\_POWER\_突入電流フラグまた\_は電源\_PAGABLE フラグを設定します。 ページング可能なドライバーは、DO\_POWER\_PAGABLE フラグを設定する必要があります。 デバイスオブジェクトフラグは、通常、デバイスの PDO を作成するときにバスドライバーによって設定されます。 ただし、上位レベルのドライバーでは、FDO またはフィルターを作成するときに、 *AddDevice*ルーチン内のこれらのフラグの値を変更することが必要になる場合があります。 詳細については、「[電源管理用のデバイスオブジェクトフラグの設定](setting-device-object-flags-for-power-management.md)」を参照してください。
 
-7.  作成/イベント、スピン ロック、またはその他のオブジェクトなど、このデバイスを管理するドライバーを使用してその他のソフトウェア リソースを初期化します。 (への応答、I/O ポートなどのハードウェア リソースは、後で構成されている、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求します)。
+7.  ドライバーがこのデバイスを管理するために使用する他のソフトウェアリソース (イベント、スピンロック、その他のオブジェクトなど) を作成または初期化します。 (I/o ポートなどのハードウェアリソースは、IRP\_に応答して、 [ **\_デバイス要求を開始\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)に応答して、後で構成されます)。
 
-    *AddDevice* IRQL でシステム スレッド コンテキストで実行されるルーチン = パッシブ\_レベルでメモリが割り当てられた[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)使用初期化中にのみできますページ プールからの長さにドライバーがシステムのページング ファイルを保持するデバイスを制御しません。 このようなメモリの割り当てを解放する必要があります[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)する前に*AddDevice*コントロールを返します。
+    *AddDevice*ルーチンは、IRQL = パッシブ\_レベルのシステムスレッドコンテキストで実行されるため、初期化時にのみ使用するために[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)で割り当てられたメモリは、ドライバーがページプールを使用しない限り、システムページファイルを保持するデバイスを制御します。 *AddDevice*が制御を返す前に、このようなメモリ割り当てを[**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)と共に解放する必要があります。
 
-8.  デバイス オブジェクト、デバイス スタックをアタッチ ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack))。
+8.  デバイスオブジェクトをデバイススタックにアタッチします ([**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack))。
 
-    デバイスの PDO へのポインターを指定、*台*パラメーター。
+    *ほか*パラメーターで、デバイスの PDO へのポインターを指定します。
 
-    によって返されたポインターを格納**IoAttachDeviceToDeviceStack**します。 デバイスの次の下位のドライバーのデバイス オブジェクトを指すポインターが必要なパラメーターを[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)と[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)デバイス スタック Irp を渡すときにします。
+    **Ioattachdevicetodevicestack**によって返されるポインターを格納します。 このポインターは、デバイスの次に低いドライバーのデバイスオブジェクトを指します。 Irp をデバイススタックに渡すときに、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)と[**pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)に対して必須のパラメーターです。
 
-9.  オフにします\_デバイス\_FDO またはフィルターの初期化フラグは、次のようなステートメントを使用しないでください。
+9.  FDO または filter で次のようなステートメントを使用して、DO\_デバイス\_初期化フラグをクリアします。
 
     ```cpp
     FunctionalDeviceObject->Flags &= ~DO_DEVICE_INITIALIZING;
     ```
 
-10. デバイスの PnP Irp の処理 (など[ **IRP\_MN\_クエリ\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)と**IRP\_MN\_開始\_デバイス**)。
+10. デバイスの PnP Irp を処理できるように準備します (たとえば、 [**irp\_\_クエリ\_リソース\_の要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)や**IRP\_\_デバイスの開始**)。
 
-ドライバーを受信するまで、デバイスの制御を開始する必要がありますされません、 **IRP\_MN\_開始\_デバイス**PnP マネージャーによって、デバイスに割り当てられたハードウェア リソースの一覧を格納しています。
+ドライバーは、IRP マネージャーによってデバイスに割り当てられたハードウェアリソースの一覧を含む **\_デバイス\_開始**するように、IRP\_を受け取るまでデバイスの制御を開始することはできません。
 
  
 

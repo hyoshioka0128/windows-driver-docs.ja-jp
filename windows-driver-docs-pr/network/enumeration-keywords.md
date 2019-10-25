@@ -3,16 +3,16 @@ title: 列挙キーワード
 description: 列挙キーワード
 ms.assetid: ac1fb871-7720-4497-b9f7-8f592fe19bd0
 keywords:
-- インストールのキーワードの WDK ネットワー キング、列挙型のキーワード
-- 列挙型のキーワードの WDK NDIS ミニポート
+- インストールキーワード WDK ネットワーク、列挙型キーワード
+- 列挙型キーワード WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db8feca170edc2f17035b7b46bd9cfee2d19aa9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1cef94a547a7b3724102c9f9fd5ad5b5ba7fcf4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384563"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838116"
 ---
 # <a name="enumeration-keywords"></a>列挙キーワード
 
@@ -20,9 +20,9 @@ ms.locfileid: "67384563"
 
 
 
-NDIS 6.0 および以降のバージョンの NDIS ミニポート ドライバーのネットワーク デバイスの標準化された列挙型のキーワードを提供します。 列挙型のキーワードは、メニューのリストとして表示される値に関連付けられます。
+Ndis 6.0 以降のバージョンの NDIS では、ネットワークデバイスのミニポートドライバー用の標準化された列挙キーワードを提供しています。 列挙キーワードは、メニューの一覧として表示される値に関連付けられています。
 
-次の例では、列挙型、キーワードの INF ファイルの定義を示します。
+次の例は、列挙型キーワードの INF ファイル定義を示しています。
 
 ```INF
 HKR, Ndi\params\<SubkeyName>, ParamDesc, 0, "%<SubkeyName>%"
@@ -35,83 +35,83 @@ HKR, Ndi\params\<SubkeyName>\enum, "2", 0, "%Rx Enabled%"
 HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 ```
 
-一般的な列挙型のキーワードは次のとおりです。
+一般的な列挙キーワードは次のとおりです。
 
 <a href="" id="-speedduplex"></a> **\*SpeedDuplex**  
-速度と、デバイスをサポートする双方向の設定。 デバイスの INF ファイルには、関連付けられているデバイスがサポートされる設定のみが一覧表示します。 つまり、全二重モードのみをサポートできる 10/100 イーサネット デバイスの場合、ギガビットまたはより高速または半二重モードの設定は、関連付けられている INF ファイルには表示されませんする必要があります。
+デバイスがサポートする速度と双方向の設定。 デバイスの INF ファイルには、関連付けられているデバイスがサポートする設定のみが表示されます。 つまり、全二重モードのみをサポートするイーサネット10/100 デバイスの場合、ギガビット以上の速度または半二重の設定は、関連する INF ファイルに記載されていない必要があります。
 
-数値を直接 Mbps の値として 0 ~ 10 の列挙の値を既に持つ具体的には定義されていない速度値を設定できます。  直接の値は、少なくとも 1,000 Mbps である必要があります (1 Gbps) 以上です。  速度を直接指定するためのいくつかの例を次に示します。
+明示的に定義されていない速度値 (0 ~ 10 の列挙値) は、値が直接 Mbps で設定される数値として設定できます。  直接値は、1000 Mbps 以上である必要があります。  速度を直接指定するいくつかの例を次に示します。
 
-| SpeedDuplex 値 | 結果として得られる速度 |
+| SpeedDuplex 値 | 結果の速度 |
 | ---| ---|
-| 1,000 | 1 Gbps |
+| 1000 | 1 Gbps |
 | 10,000 | 10 Gbps |
-| 25,000 | 25 Gbps |
-| 50,000 | 50 Gbps |
-| 100,000 | 100 Gbps |
+| 25000 | 25 Gbps |
+| 5万 | 50 Gbps |
+| 10万 | 100 Gbps |
 
 <a href="" id="-flowcontrol"></a> **\*FlowControl**  
-有効またはフローを無効にするデバイスの機能では、送信を制御またはパスを受信します。
+デバイスが送信または受信パスのフロー制御を有効または無効にする機能。
 
-**注**  現時点イーサネット デバイスは、フローの制御をサポートし、LAN の Windows 8 のインボックス ドライバーがあるフロー制御が既定で有効にします。 これらの LAN アダプターのいずれかにカーネル デバッガーをアタッチします、ネットワークへのフロー制御の一時停止のフレームのプッシュ、NIC が開始されます。 ほとんどのネットワーク スイッチは、一時的に同じハブに接続されているその他のすべてのコンピューターのネットワーク停止させるして対応されます。 これは一般的な開発シナ リオであり、エンド ユーザー エクスペリエンスが望ましくないと、診断が難しい。
+**注**   イーサネットデバイスではフロー制御がサポートされており、LAN の Windows 8 インボックスドライバーでは既定でフロー制御が有効になっています。 カーネルデバッガーがこれらの LAN アダプターのいずれかに接続すると、NIC はネットワークへのフロー制御の一時停止フレームのプッシュを開始します。 ほとんどのネットワークスイッチは、同じハブに接続されている他のすべてのコンピューターに対して、一時的にネットワークをダウンさせることで反応します。 これは一般的な開発シナリオであり、エンドユーザーエクスペリエンスは望ましくないため、診断が困難です。
 
-このため、Windows 8 以降では、NDIS が無効になりますフロー制御に自動的にコンピューターでデバッグが有効になっているときに (」と入力して、たとえば、 **bcdedit/set でデバッグ**コマンドラインで)。 カーネル デバッグを有効な場合に、ミニポート呼び出し[**エミュレーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)渡します"\*FlowControl"用、*キーワード*パラメーター、NDIS は構成済みの値をオーバーライドし、0 を返します。
+このため、Windows 8 以降では、コンピューターでデバッグが有効になっている場合 (たとえば、コマンドラインで「 **bcdedit/set debug** 」と入力した場合など)、NDIS はフロー制御を自動的に無効にします。 カーネルデバッグが有効になっていて、ミニポートが[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)を呼び出し、*キーワード*パラメーターに "\*flowcontrol" を渡した場合、NDIS は構成された値をオーバーライドし、0を返します。
 
-NDIS は、デバッグ中にフロー制御を有効にする必要がある場合、 **AllowFlowControlUnderDebugger**を実行できるようにするレジストリ値。 **AllowFlowControlUnderDebugger**レジストリ値は、NDIS がフローの制御を無効にでき、Nic が構成されている動作を維持します。 次のレジストリ キーの下で見つかります。
+デバッグ中にフロー制御を有効にする必要がある場合は、NDIS によって**Allowflowcontrol過小デバッガー**レジストリ値が提供され、これを行うことができます。 **Allowflowcontrol過小デバッガー**のレジストリ値は、NDIS によってフロー制御が無効にされないようにし、nic が構成済みの動作を保持できるようにします。 これは、次のレジストリキーの下にあります。
 
-**HKEY\_LOCAL\_MACHINE**\\**System**\\**CurrentControlSet**\\**Services**\\**NDIS**\\**Parameters**
+**HKEY\_ローカル\_マシン**\\**System**\\**CurrentControlSet**\\**Services**\\**NDIS**\\**パラメーター**
 
-このレジストリ値を 0x00000001 に設定します。
+このレジストリ値を0x00000001 に設定します。
 
-存在しない場合、名前の値を作成することができます**AllowFlowControlUnderDebugger**と種類**REG\_DWORD** 0x00000001 に設定します。
+この値が存在しない場合は、 **Allowflowcontrol過小デバッガー**という名前の値を作成し、型**REG\_DWORD**に設定して、0x00000001 に設定します。
 
  
 
 <a href="" id="-priorityvlantag"></a> **\*PriorityVLANTag**  
-デバイスが有効になっているまたは 802.1 q を挿入する機能を無効になっているかどうかを示す値のタグをパケットの優先順位と仮想 Lan (Vlan)。 このキーワードは、デバイスが有効になっていること、またはパケットの優先順位または VLAN タグを無効になっているかどうかは示されません。 代わりに、次について説明します。
+パケットの優先順位および仮想 Lan (Vlan) の 802.1 Q タグを挿入する機能をデバイスが有効または無効にしているかどうかを示す値。 このキーワードは、デバイスがパケットの優先順位または VLAN タグを有効または無効にしているかどうかを示すものではありません。 代わりに、次のことについて説明します。
 
--   デバイスが 802.1 q を挿入するかどうか、送信操作中にタグ
--   かどうか 802.1 q タグ情報が表示されます、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)アウト オブ バンド (OOB) の情報
--   デバイス コピー 802.1 q タグの中に OOB が操作を受信するかどうか
+-   送信操作中にデバイスが 802.1 Q タグを挿入するかどうか
+-   802.1 Q タグ情報を[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)で使用できるかどうか\_帯域外 (OOB) 情報の一覧表示
+-   受信操作中にデバイスが OOB に 802.1 Q タグをコピーするかどうか
 
-ミニポート ドライバーは、802.1 q を削除する必要がありますすべてからヘッダーに関係なくパケットの受信、  **\*PriorityVLANTag**設定します。 場合、802.1 q ヘッダーは、パケットに残される、その他のドライバーでは、パケットを正しく解析できない可能性があります。
+ミニポートドライバーは、 **\*PriorityVLANTag**の設定に関係なく、すべての受信パケットから 802.1 q ヘッダーを削除する必要があります。 802.1 Q ヘッダーがパケットに残されている場合、他のドライバーがパケットを正しく解析できない可能性があります。
 
-ミニポート ドライバーが削除された 802.1 q をコピーする必要があります受信パスに Rx フラグが有効な場合に、OOB ヘッダー。
+受信パスで Rx フラグが有効になっている場合、ミニポートドライバーは、削除された 802.1 Q ヘッダーを OOB にコピーする必要があります。
 
-それ以外の場合、Rx フラグが無効になっている場合、ミニポート ドライバーにコピー、削除された 802.1 q ヘッダーではありませんが OOB にください。
+それ以外の場合、Rx フラグが無効になっていると、ミニポートドライバーは、削除された 802.1 Q ヘッダーを OOB にコピーしません。
 
-Tx フラグは、送信パスに有効になっている、ミニポート ドライバーが、次の操作にする必要があります。
+送信パスで Tx フラグが有効になっている場合、ミニポートドライバーは次の操作を実行します。
 
--   それぞれに挿入、802.1 q ヘッダーは、パケットを送信と、これデータを入力 OOB から (OOB 内のゼロ以外のデータが存在する) 場合です。
--   適切なアドバタイズ**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS\_MAC\_オプション\_8021 P\_優先度**と**NDIS\_MAC\_オプション\_8021Q\_VLAN**)。
+-   各送信パケットに 802.1 Q ヘッダーを挿入し、OOB のデータを入力します (OOB にゼロ以外のデータが存在する場合)。
+-   [**Ndis\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の適切な**macoptions**を提供\_全般\_属性 (**ndis\_mac\_オプション\_8021P\_PRIORITY**および**NDIS\_mac\_オプション\_8021Q\_VLAN**)。
 
-それ以外の場合、Tx フラグが無効な場合。
+それ以外の場合、Tx フラグが無効になっている場合は、次のようになります。
 
--   ミニポート フィルターは、802.1 q を考慮する必要があります OOB 内の情報 (と任意のタグは挿入できません)。
--   ミニポート フィルターが適切なにアドバタイズする必要がありますしない**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes).
+-   ミニポートフィルターでは、OOB の 802.1 Q 情報を無視する (したがって、タグを挿入しない) ことはできません。
+-   ミニポートフィルターでは、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の適切な**macoptions**をアドバタイズしないでください。
 
-**注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
+**注**  ミニポートドライバーが NDIS quality of Service (qos) をサポートしている場合は、 **\*qos**キーワードの値も読み取る必要があります。 **\*QOS**キーワードの値に基づいて、 **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、「 [NDIS QoS の標準化](standardized-inf-keywords-for-ndis-qos.md)された INF キーワード」を参照してください。
 
  
 
 <a href="" id="-interruptmoderation"></a> **\*InterruptModeration**  
-デバイスが有効になっていること、または割り込み節度を無効になっているかどうかを示す値。 割り込み節度アルゴリズムは、デバイスに依存します。 デバイスの製造元は、アルゴリズムの設定をサポートするために、非標準化されたキーワードを使用できます。 割り込み調整の詳細については、次を参照してください。[割り込み節度](interrupt-moderation.md)します。
+デバイスで割り込みモデレーションを有効または無効にするかどうかを示す値。 割り込みモデレーションアルゴリズムは、デバイスに依存します。 デバイスの製造元は、標準化されていないキーワードを使用して、アルゴリズムの設定をサポートできます。 割り込みモデレーションの詳細については、「[割り込みモデレーション](interrupt-moderation.md)」を参照してください。
 
 <a href="" id="-rss"></a> **\*RSS**  
-デバイスが有効または無効になっているかどうかを示す値を受信側 scaling (RSS)。 RSS の詳細については、次を参照してください。 [Receive Side Scaling](ndis-receive-side-scaling2.md)します。
+デバイスの receive side scaling (RSS) を有効にするか無効にするかを示す値です。 RSS の詳細については、「 [Receive Side Scaling](ndis-receive-side-scaling2.md)」を参照してください。
 
 <a href="" id="-headerdatasplit"></a> **\*HeaderDataSplit**  
-デバイスが有効になっていること、またはヘッダー データの分割を無効になっているかどうかを示す値。 ヘッダー データの分割の詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
+デバイスの有効または無効になっているヘッダーデータの分割を示す値。 ヘッダーデータの分割の詳細については、「 [header-データの分割](header-data-split.md)」を参照してください。
 
-次のキーワードは、接続のオフロード サービスに関連付けられました。
+次のキーワードは、接続オフロードサービスに関連付けられています。
 
 **\*TCPConnectionOffloadIPv4**
 
 **\*TCPConnectionOffloadIPv6**
 
-接続のオフロード キーワードの詳細については、次を参照してください。[接続オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-connection-offloading.md)します。
+接続のオフロードのキーワードの詳細については、「[レジストリ値を使用した接続オフロードの有効化と無効化](using-registry-values-to-enable-and-disable-connection-offloading.md)」を参照してください。
 
-次のキーワードは、タスクのオフロード サービスに関連付けられました。
+次のキーワードは、タスクオフロードサービスに関連付けられています。
 
 **\*IPChecksumOffloadIPv4**
 
@@ -127,7 +127,7 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*LsoV2IPv4**
 
-**注**  の両方をサポートするデバイス大量送信オフロード バージョン 1 (LSOv1) および ipv4 のみ LSOv2、  **\*LsoV2IPv4**キーワードは、INF ファイルおよびレジストリ値で使用する必要があります。 例については、場合、  **\*LsoV2IPv4**キーワードは、INF ファイルに表示されます、  **\*LsoV1IPv4**キーワードは、レジストリに (またはその逆) が表示されます、  **\*LsoV2IPv4**キーワードは常に優先します。
+**注**  large send offload version 1 (LSOv1) と LSOv2 over IPv4 の両方をサポートするデバイスの場合、INF ファイルとレジストリ値では、 **\*LsoV2IPv4**キーワードのみを使用する必要があります。 たとえば、 **\*LsoV2IPv4**キーワードが INF ファイルに存在し、 **\*LsoV1IPv4**キーワードがレジストリに存在する (またはその逆の場合) 場合、 **\*LsoV2IPv4**キーワードは常に優先されます。
 
  
 
@@ -143,26 +143,26 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*TCPUDPChecksumOffloadIPv6**
 
-TCP/IP のオフロード キーワードの詳細については、次を参照してください。[タスク オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-task-offloading.md)します。
+TCP/IP オフロードのキーワードの詳細については、「[レジストリ値を使用してタスクオフロードを有効または無効にする](using-registry-values-to-enable-and-disable-task-offloading.md)」を参照してください。
 
-このトピックの最後にテーブルの列には、列挙型のキーワードは次の属性について説明します。
+このトピックの最後にある表の列では、列挙型キーワードの次の属性について説明します。
 
 <a href="" id="subkeyname"></a>SubkeyName  
-レジストリ内の INF ファイルに指定する必要があります、キーワードの名前が表示されます。
+INF ファイルで指定する必要があり、レジストリに表示されるキーワードの名前。
 
 <a href="" id="paramdesc"></a>ParamDesc  
-表示テキストに関連付けられている**SubkeyName**します。
+**Subkeyname**に関連付けられている表示テキスト。
 
-<a href="" id="value"></a>値  
-リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\** <em>SubkeyName</em> **\\** <em>値</em>します。
+<a href="" id="value"></a>数値  
+リスト内の各オプションに関連付けられている列挙整数値。 この値は、 **Ndi\\params\\** <em>subkeyname</em> **\\** <em>値</em>に格納されます。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 メニューに表示される各値に関連付けられている表示テキスト。
 
-<a href="" id="default"></a>既定値  
+<a href="" id="default"></a>標準  
 メニューの既定値。
 
-次の表は、すべてのキーワードの一覧し、ドライバーは、上記の属性に使用する必要があります値を示します。 キーワードの詳細については、WDK ドキュメントでのキーワードを検索してください。
+次の表に、すべてのキーワードの一覧と、上記の属性に対してドライバーが使用する必要がある値について説明します。 キーワードの詳細については、WDK のドキュメントでキーワードを検索してください。
 
 <table>
 <colgroup>
@@ -175,46 +175,46 @@ TCP/IP のオフロード キーワードの詳細については、次を参照
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">[値]</th>
+<th align="left">Value</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>SpeedDuplex</strong></p></td>
-<td align="left"><p>速度と二重</p></td>
-<td align="left"><p>0 (既定)</p></td>
+<td align="left"><p>速度 & 両面</p></td>
+<td align="left"><p>0 (既定値)</p></td>
 <td align="left"><p>自動ネゴシエーション</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>半二重を 10 Mbps</p></td>
+<td align="left"><p>10 Mbps 半二重</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>10 Mbps Full Duplex</p></td>
+<td align="left"><p>10 Mbps 全二重</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3</p></td>
-<td align="left"><p>半二重の 100 Mbps</p></td>
+<td align="left"><p>100 Mbps 半二重</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>4</p></td>
-<td align="left"><p>100 Mbps Full Duplex</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>100 Mbps 全二重</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>5</p></td>
-<td align="left"><p>1.0 Gbps 半二重モード</p></td>
+<td align="left"><p>1.0 Gbps 半二重</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -226,67 +226,67 @@ TCP/IP のオフロード キーワードの詳細については、次を参照
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>7</p></td>
-<td align="left"><p>10 Gbps の完全な双方向</p></td>
+<td align="left"><p>10 Gbps 全二重</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>8</p></td>
-<td align="left"><p>20 Gbps Full Duplex</p></td>
+<td align="left"><p>20 Gbps 全二重</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>9</p></td>
-<td align="left"><p>40 Gbps Full Duplex</p></td>
+<td align="left"><p>40 Gbps 全二重</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>10</p></td>
-<td align="left"><p>100 Gbps Full Duplex</p></td>
+<td align="left"><p>100 Gbps 全二重</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em>FlowControl</strong></p></td>
 <td align="left"><p>フロー制御</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 <td align="left"><p>自動ネゴシエーション</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PriorityVLANTag</strong></p></td>
-<td align="left"><p>パケットの優先順位と VLAN</p></td>
+<td align="left"><p>VLAN & パケット優先順位</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>パケットの優先順位と VLAN を無効になっています</p></td>
+<td align="left"><p>VLAN 無効 & パケット優先順位</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>パケットの優先順位が有効になっています。</p></td>
+<td align="left"><p>パケットの優先順位の有効化</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -298,36 +298,36 @@ TCP/IP のオフロード キーワードの詳細については、次を参照
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>パケットの優先順位と VLAN を有効になっています。</p></td>
+<td align="left"><p>VLAN 有効 & パケット優先順位</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>InterruptModeration</strong></p></td>
 <td align="left"><p>割り込み節度</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>RSS</strong></p></td>
 <td align="left"><p>Receive Side Scaling</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>HeaderDataSplit</strong></p></td>
-<td align="left"><p>ヘッダーのデータの分割</p></td>
-<td align="left"><p>0 (既定)</p></td>
+<td align="left"><p>ヘッダーデータの分割</p></td>
+<td align="left"><p>0 (既定値)</p></td>
 <td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
@@ -338,303 +338,303 @@ TCP/IP のオフロード キーワードの詳細については、次を参照
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPConnectionOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP 接続のオフロード (IPv4)</p></td>
+<td align="left"><p>TCP 接続オフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP 接続のオフロード (IPv6)</p></td>
+<td align="left"><p>TCP 接続オフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>IPv4 チェックサム オフロード</p></td>
+<td align="left"><p>IPv4 チェックサムオフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP チェックサム オフロード (IPv4)</p></td>
+<td align="left"><p>TCP チェックサムオフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP チェックサム オフロード (IPv6)</p></td>
+<td align="left"><p>TCP チェックサムオフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>UDP チェックサム オフロード (IPv4)</p></td>
+<td align="left"><p>UDP チェックサムオフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>UDP チェックサム オフロード (IPv6)</p></td>
+<td align="left"><p>UDP チェックサムオフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
+<td align="left"><p>Rx & Tx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
-<td align="left"><p>大量送信オフロード バージョン 1 (IPv4)</p></td>
+<td align="left"><p>Large Send Offload Version 1 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>LsoV2IPv4</strong></p></td>
-<td align="left"><p>大量送信オフロード バージョン 2 (IPv4)</p></td>
+<td align="left"><p>Large Send Offload Version 2 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV2IPv6</strong></p></td>
-<td align="left"><p>大量送信オフロード バージョン 2 (IPv6)</p></td>
+<td align="left"><p>Large Send Offload Version 2 (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 (既定)</p></td>
+<td align="left"><p>1 (既定値)</p></td>
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV1IPv4</strong></p></td>
-<td align="left"><p>IPsec オフロード バージョン 1 (IPv4)</p></td>
+<td align="left"><p>IPsec オフロードバージョン 1 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>認証ヘッダーに有効になっています。</p></td>
+<td align="left"><p>認証ヘッダーが有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>ESP を有効になっています。</p></td>
+<td align="left"><p>ESP 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
+<td align="left"><p>認証ヘッダー & ESP 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
 <td align="left"><p>IPsec オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>認証ヘッダーに有効になっています。</p></td>
+<td align="left"><p>認証ヘッダーが有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>ESP を有効になっています。</p></td>
+<td align="left"><p>ESP 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
+<td align="left"><p>認証ヘッダー & ESP 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV2IPv4</strong></p></td>
 <td align="left"><p>IPsec オフロード (IPv4 のみ)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>認証ヘッダーに有効になっています。</p></td>
+<td align="left"><p>認証ヘッダーが有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>ESP を有効になっています。</p></td>
+<td align="left"><p>ESP 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
+<td align="left"><p>認証ヘッダー & ESP 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP または UDP チェックサム オフロード (IPv4)</p></td>
+<td align="left"><p>TCP/UDP チェックサムオフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>テキサス州と Rx が有効になっています。</p></td>
+<td align="left"><p>Tx と Rx が有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*TCPUDPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP または UDP チェックサム オフロード (IPv6)</p></td>
+<td align="left"><p>TCP/UDP チェックサムオフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>無効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx を有効になっています。</p></td>
+<td align="left"><p>Tx 有効</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx が有効になっています。</p></td>
+<td align="left"><p>Rx 有効</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>テキサス州と Rx が有効になっています。</p></td>
+<td align="left"><p>Tx と Rx が有効</p></td>
 </tr>
 </tbody>
 </table>

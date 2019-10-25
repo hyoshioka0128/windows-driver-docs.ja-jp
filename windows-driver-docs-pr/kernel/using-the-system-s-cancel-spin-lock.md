@@ -3,18 +3,18 @@ title: システムのキャンセル スピン ロックの使用
 description: システムのキャンセル スピン ロックの使用
 ms.assetid: dd3cf1e7-8ecc-4721-9160-86bf928687e4
 keywords:
-- スピン ロック WDK カーネルをキャンセルします。
-- スピン ロック WDK カーネル
-- システムは、スピン ロック WDK カーネルをキャンセルします。
+- キャンセルスピンロック WDK カーネル
+- スピンロック WDK カーネル
+- システムのキャンセルスピンロックの WDK カーネル
 - STATUS_CANCELLED
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de5d057827710875c458c933e3d7086e09e2d74
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef5450e4f50cac20440edfcae29caa671fba3288
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387001"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835846"
 ---
 # <a name="using-the-systems-cancel-spin-lock"></a>システムのキャンセル スピン ロックの使用
 
@@ -22,19 +22,19 @@ ms.locfileid: "67387001"
 
 
 
-1 つに、システムは*スピン ロックをキャンセル*が取得または特定のシステム ルーチンを呼び出すときにリリースされました。
+システムには、特定のシステムルーチンが呼び出されたときに取得または解放される、1回の*キャンセルスピンロック*が用意されています。
 
-ステータスの IRP を完了することがありますすべてのルーチンを含む、キャンセル可能な Irp の状態を変更するドライバー ルーチン\_取り消された場合を取得およびこのセクションのガイドラインに従ってシステム キャンセル スピン ロックを解放する必要があります。
+状態\_キャンセルされた IRP を完了する可能性のあるすべてのルーチンなど、キャンセル可能な Irp の状態を変更するドライバールーチンは、このセクションのガイドラインに従って、システムキャンセルスピンロックを取得して解放する必要があります。
 
-以外の I/O マネージャーが指定したデバイスのキュー、ドライバーの任意のルーチンを使用するドライバー、*キャンセル*IRP のキャンセル可能な状態を変更するルーチンを呼び出す必要がありますまず[ **IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))システム キャンセル スピン ロックを取得します。
+I/o マネージャーが提供するデバイスキューを使用するドライバーでは、IRP の取り消し可能な状態を変更する*キャンセル*ルーチン以外のドライバールーチンは、まず[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))を呼び出してシステムキャンセルスピンロックを取得する必要があります。
 
-キャンセルのスピン ロックの獲得により、呼び出し元だけがその IRP のキャンセル可能な状態を変更できます。 I/O マネージャーがドライバーを呼び出すことはできません、呼び出し元は、スピン ロックを保持しているときに*キャンセル*その IRP のルーチンです。 同様に、別のドライバーなど、日常的な*DispatchCleanup*ルーチンをその IRP のキャンセル可能な状態を変更することはできません同時に再試行してください。
+キャンセルスピンロックを取得すると、その IRP の取り消し可能な状態を呼び出し元だけが変更できるようになります。 呼び出し元がスピンロックを保持している間、i/o マネージャーはその IRP のドライバーの*キャンセル*ルーチンを呼び出すことができません。 同様に、 *DispatchCleanup*ルーチンなどの別のドライバールーチンは、その IRP の取り消し可能な状態を同時に変更することはできません。
 
-Irp の独自のキューを管理し、ドライバーによって提供されるスピン ロックを使用して、キューのアクセスを同期するドライバー、ドライバー ルーチン必要はありません呼び出す前にキャンセル スピン ロックの取得を[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine). ただし、これらのドライバーを確認する必要があります、*キャンセル*日常的なポインターを**IoSetCancelRoutine**判断を返すかどうか、*キャンセル*ルーチンが既に開始します。 参照してください[Driver-Supplied スピン ロックを使用する](using-a-driver-supplied-spin-lock.md)詳細についてはします。
+Irp の独自のキューを管理し、ドライバーによって提供されるスピンロックを使用してキューアクセスを同期するドライバーでは、ドライバールーチンは[**Iosetcancelroutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)を呼び出す前にキャンセルスピンロックを取得する必要はありません。 ただし、これらのドライバーは、 **Iosetcancelroutine**が返す*キャンセル*ルーチンポインターを確認して、*キャンセル*ルーチンが既に開始されているかどうかを確認する必要があります。 詳細について[は、「ドライバーによって提供されるスピンロックの使用](using-a-driver-supplied-spin-lock.md)」を参照してください。
 
-呼び出すドライバーのルーチン**IoAcquireCancelSpinLock**呼び出す必要があります**IoReleaseCancelSpinLock**できるだけ早くします。
+**IoAcquireCancelSpinLock**を呼び出すドライバールーチンは、できるだけ早く**IoReleaseCancelSpinLock**を呼び出す必要があります。
 
-ドライバーは呼び出す必要がありますしない[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP スピン ロックを保持しているときに使用します。 スピン ロックを保持しながら、IRP を完了しようとすると、デッドロックが起こります。
+スピンロックを保持した状態で、ドライバーが IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出すことはできません。 スピンロックを保持した状態で IRP を完了しようとすると、デッドロックが発生する可能性があります。
 
  
 

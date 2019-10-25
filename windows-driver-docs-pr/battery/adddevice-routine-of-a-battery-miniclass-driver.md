@@ -7,12 +7,12 @@ keywords:
 - バッテリ miniclass ドライバー WDK、ルーチン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ea8bc8c250f38ec144e8484d84b5ca13e95bf5a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3ddbfc3ea8a22318cf78316a91e2d3574f47742b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354081"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832229"
 ---
 # <a name="adddevice-routine-of-a-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの AddDevice ルーチン
 
@@ -20,15 +20,15 @@ ms.locfileid: "67354081"
 ## <span id="ddk_adddevice_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_ADDDEVICE_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>
 
 
-すべてのバッテリ miniclass ドライバーが必要、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンで、バッテリ固有の状態を初期化します。 PnP マネージャー呼び出し、 *AddDevice*この miniclass ドライバーによって制御される各バッテリのデバイスの日常的な。
+すべてのバッテリ miniclass ドライバーには、バッテリ固有の状態を初期化する[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンが必要です。 PnP マネージャーは、この miniclass ドライバーによって制御される各バッテリデバイスの*AddDevice*ルーチンを呼び出します。
 
-PnP の必要なタスクだけでなく*AddDevice* 、ルーチン、 *AddDevice*バッテリ miniclass ドライバーのルーチンでは、次を行う必要がありますも。
+PnP *AddDevice*ルーチンに必要なタスクに加えて、バッテリ miniclass ドライバーの*AddDevice*ルーチンでは、次の操作も行う必要があります。
 
-1.  バッテリの FDO を作成し、コント ローラー デバイス スタックを FDO を関連付けます。
+1.  バッテリの FDO を作成し、コントローラーのデバイススタックに FDO をアタッチします。
 
-2.  初期化、 [**バッテリ\_ミニポート\_情報**](https://docs.microsoft.com/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)構造と呼び出し[ **BatteryClassInitializeDevice** ](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)バッテリ クラス ドライバーを使用した miniclass ドライバーを登録します。
+2.  [**バッテリ\_ミニポート\_情報**](https://docs.microsoft.com/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)構造体を初期化し、 [**BatteryClassInitializeDevice**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)を呼び出して、miniclass ドライバーをバッテリクラスドライバーに登録します。
 
-3.  他のデバイスに必要な初期化を実行します。
+3.  デバイスに必要なその他の初期化を実行します。
 
  
 

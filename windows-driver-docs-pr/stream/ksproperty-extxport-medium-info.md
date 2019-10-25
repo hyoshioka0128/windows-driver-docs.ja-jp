@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_EXTXPORT\_MEDIUM\_情報
-description: KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイスのメディアに関する情報を取得します。
+title: KSK プロパティ\_EXTXPORT\_中\_情報
+description: KSK プロパティ\_EXTXPORT\_MEDIUM\_INFO プロパティは、外部デバイスのメディアに関する情報を取得します。
 ms.assetid: 04b98c50-ebb0-4224-b476-d261b7c5dd79
 keywords:
-- KSPROPERTY_EXTXPORT_MEDIUM_INFO ストリーミング メディア デバイス
+- KSPROPERTY_EXTXPORT_MEDIUM_INFO ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f708586880b3d761c2ba6e4e30c4d3ffd4cac9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3466e28f22a9c3e3ebf749f7079efebfd0460c81
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354846"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838061"
 ---
-# <a name="kspropertyextxportmediuminfo"></a>KSPROPERTY\_EXTXPORT\_MEDIUM\_情報
+# <a name="ksproperty_extxport_medium_info"></a>KSK プロパティ\_EXTXPORT\_中\_情報
 
 
-KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイスのメディアに関する情報を取得します。
+KSK プロパティ\_EXTXPORT\_MEDIUM\_INFO プロパティは、外部デバイスのメディアに関する情報を取得します。
 
 ## <span id="ddk_ksproperty_extxport_medium_info_ks"></span><span id="DDK_KSPROPERTY_EXTXPORT_MEDIUM_INFO_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイス�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイス�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-medium_info" data-raw-source="[&lt;strong&gt;MEDIUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-medium_info)"><strong>MEDIUM_INFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-medium_info" data-raw-source="[&lt;strong&gt;MEDIUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-medium_info)"><strong>MEDIUM_INFO</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、メディア\_外部デバイスにメディアを記述する情報の構造体が読み込まれます。 、カセット テープなどは、テープのグレードと、書き込み保護。
+プロパティ値 (操作データ) は、外部デバイスに読み込まれるメディアを記述する中\_の情報構造です。 たとえば、カセットテープ、テープグレード、書き込み保護などです。
 
 <a name="remarks"></a>注釈
 -------
 
-**MediumInfo** 、KSPROPERTY のメンバー\_EXTXPORT\_構造情報を指定します。
+KSK プロパティ\_EXTXPORT\_S 構造体の**MediumInfo**メンバーは、情報を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイス�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,11 +87,11 @@ KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイス�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)
+[**KSK プロパティ\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)
 
-[**MEDIUM\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-medium_info)
+[**中程度の\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-medium_info)
 
  
 

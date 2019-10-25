@@ -3,20 +3,20 @@ title: IoTimer ルーチン
 description: IoTimer ルーチン
 ms.assetid: bc69c7b5-ce63-435e-b5b4-0d65ee153d31
 keywords:
-- 同期の WDK カーネル、タイマー
+- 同期 WDK カーネル、タイマー
 - IoTimer
-- デバイスのタイムアウトの WDK カーネル
-- タイムアウトの WDK カーネル
-- タイミング操作 WDK カーネル
-- タイムアウトのデバイスの I/O 操作の WDK カーネル
+- デバイスのタイムアウト WDK カーネル
+- タイムアウト WDK カーネル
+- タイミング操作の WDK カーネル
+- デバイス i/o 操作のタイムアウト (WDK カーネル)
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4b3f1c9d838d7a7b0d1c143301a30c2fc56c906
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4aa68224a0af2a5c1e0600a445e36c8540bcac57
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381676"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828157"
 ---
 # <a name="iotimer-routines"></a>IoTimer ルーチン
 
@@ -24,17 +24,17 @@ ms.locfileid: "67381676"
 
 
 
-判断 (カウンター) などのドライバーの定義の変数を更新するか、どの短い時間の間隔で必須ではありませんすべての操作にかかる時間をデバイスの操作がタイムアウトしてかどうかに、定期的に呼び出される必要のあるドライバーを使用できます、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチン。 *IoTimer*ルーチンは、DPC ルーチンでは実際には、I/O マネージャーが 1 秒あたり 1 回呼び出し、デバイス オブジェクトに関連付けられています。 ドライバーが持つことができます、 *IoTimer*ルーチンが作成する各デバイス オブジェクトにします。
+デバイスの操作がタイムアウトしたかどうかを判断したり、ドライバーで定義された変数 (カウンターなど) を更新したり、小さな時間間隔が不要な操作を実行したりするために、 [*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンを使用できるようにするために定期的に呼び出す必要があるドライバー。 *Iotimer*ルーチンは、実際にはデバイスオブジェクトに関連付けられている DPC ルーチンで、i/o マネージャーは1秒間に1回呼び出します。 ドライバーは、作成するデバイスオブジェクトごとに*Iotimer*ルーチンを持つことができます。
 
-一般に、ドライバーを使用する必要があります、 *IoTimer*ルーチンを 1 秒間の一定の間隔を必要とする時の操作をします。 変数を必要とする時の操作を間隔または毎秒 1 回よりも短い間隔では、ドライバーは、タイマー オブジェクトを割り当てる必要があります。 詳細については、次を参照してください。[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)します。
+一般に、ドライバーでは、通常の1秒間隔を必要とする時間操作に*Iotimer*ルーチンを使用する必要があります。 1秒間に1回の間隔または間隔を短縮する必要がある時間操作には、ドライバーがタイマーオブジェクトを割り当てる必要があります。 詳細については、「 [Timer オブジェクトと dpc](timer-objects-and-dpcs.md)」を参照してください。
 
 このセクションでは、次のトピックについて説明します。
 
-[登録して、IoTimer ルーチンを有効にします。](registering-and-enabling-an-iotimer-routine.md)
+[IoTimer ルーチンの登録と有効化](registering-and-enabling-an-iotimer-routine.md)
 
-[IoTimer コンテキスト情報を提供します。](providing-iotimer-context-information.md)
+[IoTimer コンテキスト情報の提供](providing-iotimer-context-information.md)
 
-[IoTimer ルーチンを使用します。](using-an-iotimer-routine.md)
+[IoTimer ルーチンの使用](using-an-iotimer-routine.md)
 
  
 

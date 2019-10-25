@@ -3,16 +3,16 @@ title: デバイス オブジェクトの初期化
 description: デバイス オブジェクトの初期化
 ms.assetid: 97820c62-aade-4ae7-92a6-7490d0ad5697
 keywords:
-- デバイス オブジェクトの WDK カーネルの初期化
-- デバイス オブジェクトの初期化
+- デバイスオブジェクト WDK カーネル、初期化
+- デバイスオブジェクトの初期化
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 348b2c19535a2cd1852ac5ffef7aa03ff20e1703
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 53a64482195cfa380aec5cb09f727fa4ee8799de
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369793"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828299"
 ---
 # <a name="initializing-a-device-object"></a>デバイス オブジェクトの初期化
 
@@ -20,31 +20,31 @@ ms.locfileid: "67369793"
 
 
 
-後[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)返します、呼び出し元へのポインターを提供する*デバイス オブジェクト*へのポインターを格納している、 [*デバイス拡張機能*](device-extensions.md)ドライバーは、それぞれの物理、論理、および仮想デバイスのデバイス オブジェクトの特定のフィールドを設定する必要があります。
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)が返された後、[*デバイス拡張機能*](device-extensions.md)へのポインターを含む*DeviceObject*へのポインターを呼び出し元に与えると、ドライバーは、デバイスオブジェクト内の特定のフィールドをそれぞれの物理、論理、および/またはに設定する必要があります。仮想デバイス。
 
-**IoCreateDevice**設定、 **StackSize**いずれかに新しく作成したデバイス オブジェクトのフィールド。 最下位レベルのドライバーでは、このフィールドを無視できます。 高度なドライバーを呼び出すと[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)ルーチン自体を次の下位ドライバーに添付する設定に自動的に、 **StackSize**フィールド次の下位ドライバーのデバイス オブジェクトと 1 つのデバイス オブジェクト。 デバイスの種類によっては、ただしより高度なドライバーが設定する必要が、 **StackSize**デバイス固有のドキュメントで説明したように大きい値をフィールド。 スタック サイズを設定すると、ドライバーに固有では I/O スタックの場所と、I/O スタックの場所、チェーン内のすべての下位のドライバーの正しい数上位レベルのドライバーに送信される Irp にが含まれます。
+**IoCreateDevice**は、新しく作成されたデバイスオブジェクトの**StackSize**フィールドを1に設定します。 最下位レベルのドライバーでは、このフィールドを無視できます。 上位レベルのドライバーが[**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)を呼び出して、それ自体を次の下位のドライバーにアタッチすると、そのルーチンによって、デバイスオブジェクトの**StackSize**フィールドが、次に低いドライバーのデバイスオブジェクトと1つの値に自動的に設定されます。 ただし、デバイスの種類によっては、デバイス固有のドキュメントに記載されているように、上位レベルのドライバーで**StackSize**フィールドをより大きな値に設定することが必要になる場合があります。 スタックサイズを設定すると、上位レベルのドライバーに送信される Irp には、ドライバー固有の i/o スタックの場所が含まれ、チェーン内のすべての下位のドライバーに対して、正しい数の i/o スタックの場所が含まれるようになります。
 
-**IoCreateDevice**設定、 **AlignmentRequirement**からダイレクト I/O に使用されるバッファーを正しく整列していることを確認する 1 を引いた、プロセッサのデータのキャッシュ ラインのサイズを新しく作成したデバイス オブジェクトのフィールド。 後**IoCreateDevice**返します、最下位レベルの物理的なデバイス ドライバーは、次を実行する必要があります。
+**IoCreateDevice**は、直接 i/o で使用されるバッファーが適切にアラインされるように、新しく作成されたデバイスオブジェクトのの**要求**フィールドをプロセッサのデータキャッシュの行サイズから1つ引いた値に設定します。 **IoCreateDevice**が返された後、最下位レベルの物理デバイスドライバーは次の操作を行う必要があります。
 
-1.  デバイスのアラインメント要件から 1 を減算します。
+1.  デバイスのアラインメント要件から1つを減算します。
 
-2.  デバイス オブジェクトの現在の値で、手順 1 の結果を比較**AlignmentRequirement**します。
+2.  ステップ1の結果とデバイスオブジェクトの現在の値を比較**します。**
 
-3.  デバイスのアラインメント要件が大きい場合は、設定**AlignmentRequirement**手順 1 の結果にします。 それ以外の場合、ままにして、 **AlignmentRequirement**によって設定された値**IoCreateDevice**します。
+3.  デバイスのアラインメント要件が大きい場合は、手順 1. の結果に [配置**要件**] を設定します。 それ以外の場合は、 **IoCreateDevice**によって設定された並べ替え**要件**の値をそのまま使用します。
 
-高度なドライバーがチェーン自体別のドライバー経由で呼び出すことによって後[ **IoGetDeviceObjectPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)、上位レベルのドライバーを設定する必要があります、 **AlignmentRequirement**の下位レベルの次のドライバーのデバイス オブジェクトの新しく作成したデバイス オブジェクトのフィールド。 一般的な規則としてより高度なドライバーはこの値を変更する必要があります。 高度なドライバーを呼び出す場合[ **IoAttachDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevice)または[ **IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)、これらのルーチンが自動的に設定します**AlignmentRequirement**フィールドの下位レベルのドライバーのデバイス オブジェクトのデバイス オブジェクトにします。
+[**Iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)を呼び出すことにより上位レベルのドライバーが別のドライバーにチェーンされた後、上位レベルのドライバーは、新しく作成されたデバイスオブジェクトの [並べ替えの**要件**] フィールドを次の下位レベルのものに設定する必要があります。ドライバーのデバイスオブジェクト。 一般的な規則として、上位レベルのドライバーではこの値を変更しないでください。 上位レベルのドライバーが[**ioattachdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)または[**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)を呼び出すと、これらのルーチンによって、デバイスオブジェクトの [値の自動**設定] フィールドが下位**レベルのドライバーのデバイスオブジェクトの値に自動的に設定されます。
 
-[**IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)下位レベルのドライバーのデバイス オブジェクトと関連付けられているファイルのオブジェクトの両方のポインターを返します。 FSD のみ (または、場合によっては、別の最上位レベルのドライバー)、返されるファイル オブジェクト ポインターを使用することができます。 呼び出すための中間ドライバー **IoGetDeviceObjectPointer**呼び出すことによって逆参照できるように、このファイル オブジェクト ポインターを保存する必要があります[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)ときドライバーでは、読み込まれます。
+[**Iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)は、下位レベルのドライバーのデバイスオブジェクトと関連付けられているファイルオブジェクトの両方にポインターを返します。 返されたファイルオブジェクトポインターを使用できるのは、FSD (または他の最上位レベルのドライバー) だけです。 **Iogetdeviceobjectpointer**を呼び出す中間ドライバーは、ドライバーがアンロードされたときに[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出すことによって逆参照できるように、このファイルオブジェクトポインターを保存する必要があります。
 
-FSD は、下位のドライバーのデバイス オブジェクトを表すファイル オブジェクトを含むボリュームをマウント後、中間ドライバーことはできませんチェーン自体、ファイル システムおよび下位のドライバーの間で呼び出すことによって**IoAttachDevice**または**IoAttachDeviceToDeviceStack**します。 さらに、FSD が設定できる、**セクタサイズ**マウントが発生した場合、基になるボリュームのハードウェアのジオメトリ ベースのデバイス オブジェクトのメンバー。 詳細については、次を参照してください。 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)します。
+FSD は、下位のドライバーのデバイスオブジェクトを表すファイルオブジェクトを含むボリュームをマウントした後、 **Ioattachdevice**または**を呼び出して、ファイルシステムと下位ドライバーの間で中間ドライバーをチェーンすることはできません。IoAttachDeviceToDeviceStack**。 また、FSD は、マウントが発生したときに、基になるボリュームハードウェアのジオメトリに基づいて、デバイスオブジェクトの**SectorSize**メンバーを設定できます。 詳細については、「[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)」を参照してください。
 
-中級以上の最下位レベルのドライバーもビットを設定、デバイス オブジェクトの**フラグ**Or で、いずれかで\_直接\_IO または操作を行います\_バッファーに格納された\_オブジェクトのすべてのデバイスの IO作成します。 論理または仮想デバイスの最上位レベルのドライバーは、設定を回避できます**フラグ**ドライバー ライターに関連する追加作業が決定した場合は、直接またはバッファー内のいずれかの I/O がドライバーのパフォーマンスが向上支払いいただけます。 中間のドライバーをセットアップする必要があります、**フラグ**次の下位ドライバーのデバイス オブジェクトの一致するように、デバイス オブジェクトのフィールド。
+また、中間レベルまたは最下位のドライバーは、デバイスオブジェクトの**フラグ**にビットを設定します。これは、作成されるすべてのデバイスオブジェクトで IO\_IO\_バッファー io を使用して\_\_します。 論理デバイスまたは仮想デバイスの最上位レベルのドライバーでは、関連する追加の作業がドライバーの実行によって決定された場合に、バッファーまたは直接 i/o の**フラグ**を設定しないようにすることができます。 中間ドライバーは、デバイスオブジェクトの**Flags**フィールドを、次に低いドライバーのデバイスオブジェクトのものと一致するように設定する必要があります。
 
-デバイス オブジェクトを設定**フラグ**フィールドの操作を行います\_直接\_IO または\_バッファーに格納された\_IO は、I/O マネージャーを渡す方法へのアクセスでは、すべてのデータ転送バッファーをユーザーに要求を決定します。その後、ドライバーに送信されます。
+DO\_DIRECT\_IO によってデバイスオブジェクト**フラグ**フィールドを設定するか、バッファー\_IO\_実行すると、i/o マネージャーが、その後ドライバーに送信されるすべてのデータ転送要求のユーザーバッファーに対するアクセス権をどのように渡すかが決まります。
 
-ドライバーは、デバイス オブジェクトの他のデバイスに依存する値を設定できます。 たとえば、リムーバブル メディア デバイスの非 WDM ドライバーが必要があります OR デバイス オブジェクトの**フラグ**でメンバー\_を確認してください\_ボリュームが検出 (または疑いがある) 場合、メディア、I/O 操作中に変更します。 (を参照してください[リムーバブル メディアをサポートしている](supporting-removable-media.md)詳細についてはします)。突入電力を必要とするデバイスのドライバーにする必要がありますまたは**フラグ**かメンバー\_POWER\_突入、およびシステムのページング パス上にないデバイスのドライバーにする必要がありますまたは**フラグ**かメンバー\_POWER\_PAGABLE します。 関数とフィルター ドライバーをオフに、操作を実行する必要があります\_デバイス\_フラグを初期化しています。
+その後、ドライバーはデバイスオブジェクト内のその他のデバイスに依存する値を設定できます。 たとえば、リムーバブルメディアデバイス用の非 WDM ドライバーは、i/o 操作中に**メディアの変更**を検出 (または問題あり) する場合に、\_ボリュームを\_確認する必要があります。 (詳細については、「[リムーバブルメディアのサポート](supporting-removable-media.md)」を参照してください)。突入電流電源が必要なデバイスのドライバー、またはの**フラグ**メンバーが突入電流を\_\_使用する必要があります。また、システムのページングパスにないデバイスのドライバー、またはの**フラグ**メンバーが電源\_pagable を\_する必要があります。 関数ドライバーとフィルタードライバーは、DO\_デバイス\_初期化フラグをクリアする必要があります。
 
-デバイス オブジェクトを初期化した後、ドライバーはカーネル定義オブジェクトとデバイスの拡張機能での記憶域を提供してその他のシステム定義のデータ構造も初期化できます。 ドライバーがこれらのタスクを実行する場合に正確には、そのデバイスは、オブジェクトの種類やデータの性質によって異なります。 PnP の開始を永続化および要求を停止できるオブジェクトやデータ構造を初期化してで一般に、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 PnP で提供されたリソース情報を必要とする[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)デバイスが、要求、またはをすると、変更が必要する可能性があります停止または再起動されると、ドライバーが処理されるときに初期化する必要があります、 **IRP\_MN\_開始\_デバイス**要求。 詳細については*AddDevice*ルーチンを参照してください[、AddDevice ルーチンを記述](writing-an-adddevice-routine.md)します。
+デバイスオブジェクトを初期化した後、ドライバーは、デバイス拡張機能に格納されているカーネル定義オブジェクトやその他のシステム定義データ構造を初期化することもできます。 ドライバーがこれらのタスクを実行するタイミングは、デバイス、オブジェクトの種類、またはデータの性質によって異なります。 一般に、PnP の開始要求と停止要求を通じて保持できるオブジェクトまたはデータ構造は、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンで初期化できます。 PnP Irp\_によって提供されるリソース情報を必要とするものは、\_デバイスの要求を[**開始\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)か、デバイスの停止時または再起動時に変更が必要になる可能性があるため、ドライバーが IRP を処理するときに初期化される必要があります。 **\_は、\_デバイス**の要求を開始\_ます。 *AddDevice*ルーチンの詳細については、「 [AddDevice ルーチンを記述する](writing-an-adddevice-routine.md)」を参照してください。
 
  
 

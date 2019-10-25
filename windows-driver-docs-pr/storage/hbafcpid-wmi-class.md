@@ -4,12 +4,12 @@ description: HBAFCPID WMI クラス
 ms.assetid: 6b0d0f79-a7a8-4341-955b-2c3068936a1d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f51d8ff3f8e3d8aaf0cf613ffa2418cd8395902f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2b8d5193f9afad12b778eea527e8c23c9c02a8a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360218"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823802"
 ---
 # <a name="hbafcpid-wmi-class"></a>HBAFCPID WMI クラス
 
@@ -17,11 +17,11 @@ ms.locfileid: "67360218"
 ## <span id="ddk_hbafcpid_wmi_class_kr"></span><span id="DDK_HBAFCPID_WMI_CLASS_KR"></span>
 
 
-T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPID クラスを使用して、論理ユニットのファイバー チャネル プロトコル (FCP) 識別子を定義します。 FCP 識別子には、マシン上にある論理ユニットとアクセスできる、HBA ポートの名前を指定します。
+T11 委員会の*ファイバーチャネル HBA API*仕様をサポートする hba ミニポートドライバーは、HBAFCPID クラスを使用して、論理ユニットのファイバーチャネルプロトコル (FCP) 識別子を定義します。 FCP 識別子は、論理ユニットが配置されているコンピューターの名前と、それにアクセスできる HBA ポートを指定します。
 
-ミニポート ドライバーでは、この識別子を使用して、論理ユニットのオペレーティング システムを使用して論理ユニットを識別する情報および FCP 識別子の間のバインドを構築します。 この種類のバインドの詳細については、次を参照してください。 [ **HBAFCPBindingEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)します。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。
+ミニポートドライバーは、この識別子を使用して、オペレーティングシステムが論理ユニットを識別するために使用する情報と論理ユニットの FCP 識別子との間のバインドを作成します。 この種類のバインドの詳細については、「 [**Hbafcpbindingentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)」を参照してください。 ファイバーチャネルプロトコルの詳細については、「SCSI 仕様」の「T11 委員会の*Dpans ファイバーチャネルプロトコル*」を参照してください。
 
-HBAFCPID クラスは次のように定義されている*Hbaapi.mof*:
+HBAFCPID クラスは、 *Hbaapi .mof*で次のように定義されています。
 
 ```cpp
 class HBAFCPID {
@@ -32,9 +32,9 @@ class HBAFCPID {
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**HBAFCPID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpid)
+[**HBAFCPID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpid)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

@@ -1,59 +1,59 @@
 ---
 title: コンポーネント レベルのパフォーマンス状態の管理
-description: Windows 10 以降では、電源管理フレームワーク (PoFx) は、デバイス内の個々 のコンポーネントを個別に調整可能なパフォーマンスの状態の 1 つまたは複数のセットを定義するためのドライバーを使用できます。
+description: Windows 10 以降、電源管理フレームワーク (PoFx) を使用すると、ドライバーは、デバイス内の個々のコンポーネントに対して個別に調整可能なパフォーマンス状態を1つ以上定義できます。
 ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9df895638ec56c6c814fe2586e7a55df24bc5a56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01b7a194aee6e8c97cfd4462dc5ddaa762b3b42a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377220"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837065"
 ---
 # <a name="component-level-performance-state-management"></a>コンポーネント レベルのパフォーマンス状態の管理
 
 
-Windows 10 以降では、電源管理フレームワーク (PoFx) は、デバイス内の個々 のコンポーネントを個別に調整可能なパフォーマンスの状態の 1 つまたは複数のセットを定義するためのドライバーを使用できます。 このドライバーは、パフォーマンスの状態を使ってコンポーネントのワークロードを調整し、現在のニーズに最適なパフォーマンスを提供します。
+Windows 10 以降、電源管理フレームワーク (PoFx) を使用すると、ドライバーは、デバイス内の個々のコンポーネントに対して個別に調整可能なパフォーマンス状態を1つ以上定義できます。 このドライバーは、パフォーマンスの状態を使ってコンポーネントのワークロードを調整し、現在のニーズに最適なパフォーマンスを提供します。
 
-## <a name="overview-of-performance-states"></a>パフォーマンス状態の概要
-
-
-Windows 8 および Windows 8.1 では、PoFx は、コンポーネント レベルの電源を節約するため、電力および特定の F 状態が入力されると、クロックのレール ゲート アイドル状態の状態 (F 状態) を提供します。 このモデルでは、電力を節約しますコンポーネント (F0 以外)、アイドル状態には、電力使用量を最適化したり、コンポーネントがアクティブなときにパフォーマンスのニーズに対して分散の任意のメカニズムは提供されません。 場合でも、コンポーネント (F0) でアクティブでは、要求をサービスするが必要し、しない可能性、デバイスの完全なパフォーマンス。 たとえば、グラフィックス カードがのみ、点滅するカーソルを更新する必要があり、この完全なパフォーマンスを必要はありません。
-
-変数のパフォーマンス状態の現在のニーズに合わせてのに十分なパフォーマンスを提供するデバイスのコンポーネントをスロットルするドライバーを許可することでこの問題に対処します。 Windows 8 および Windows 8.1 では、コンポーネントは、パフォーマンスの状態をサポートしている場合各ドライバーする必要があります、ドライバーの内部に独自のパフォーマンス状態の選択アルゴリズムを実装し、必要な場合、通知、プラットフォーム拡張機能プラグイン (PEP)、独自の方法。 PEP は、チップ (SoC) モジュールにプロセッサまたはシステムの特定の製品ラインに固有の電源管理タスクを実行するソフトウェア コンポーネントです。 ドライバー固有の独自のパフォーマンスの状態ソリューションには、PEP に密結合のデメリットがあり、簡単にデバッグすることはできません。
-
-PoFx 以降 Windows 10 では、パフォーマンスの状態管理の API を提供します。 この API では、2 つの主な目標があります。
-
--   デバイス ドライバー、PEP のパフォーマンス、適切に対処するために、PEP のパフォーマンス状態の変更を通知する手段を提供します。
--   各ドライバーのカスタム プラグインをしなくても、OS のログと Windows パフォーマンス アナライザー (WPA) では、分析のパフォーマンス状態の変更を通知するドライバーの標準的な方法を提供します。
-
-## <a name="introduction-to-the-pofx-api-for-component-level-performance-states"></a>コンポーネント レベルのパフォーマンス状態の PoFX API の概要
+## <a name="overview-of-performance-states"></a>パフォーマンスの状態の概要
 
 
-PoFx は、次の種類の各コンポーネントのパフォーマンス状態を定義するデバイスを有効にします。
+Windows 8 と Windows 8.1 では、PoFx は、特定の F 状態が入力されたときに、電源とクロックレールによって、コンポーネントレベルの電力節約のアイドル状態 (F 状態) を提供します。 このモデルは、コンポーネントがアイドル状態 (非 F0) のときに電力を節約しますが、コンポーネントがアクティブなときに電力使用量を最適化したり、パフォーマンスのニーズに合わせたりするためのメカニズムを備えていません。 コンポーネントがアクティブ (F0) であり、要求を処理している場合でも、デバイスの完全なパフォーマンスを必要としない可能性があります。 たとえば、グラフィックスカードでは、点滅するカーソルだけを更新する必要があり、完全なパフォーマンスは必要ない場合があります。
 
--   頻度 (Hz で測定)、帯域幅 (1 秒あたりのビット単位) または非透過のインデックス番号の単位で状態の不連続の数。
--   最小値と最大値の間の状態の継続的な配布します。
+可変パフォーマンス状態: 現在のニーズに十分なパフォーマンスを提供するようにドライバーがデバイスコンポーネントを調整できるようにすることで、この問題に対処します。 Windows 8 および Windows 8.1 では、コンポーネントがパフォーマンス状態をサポートしている場合、各ドライバーは、ドライバー内部の独自のパフォーマンス状態選択アルゴリズムを実装する必要があります。また、必要に応じて、プラットフォーム拡張機能プラグイン (PEP) に独自のものを通知する必要があります。ながら. PEP は、チップ (SoC) モジュール上の特定の製品ラインプロセッサまたはシステムに固有の電源管理タスクを実行するソフトウェアコンポーネントです。 ドライバー固有の独自のパフォーマンス状態ソリューションには、PEP と密結合されるという欠点があり、簡単にデバッグすることはできません。
 
-パフォーマンスの状態は、セットにまとめられているし、コンポーネントごとに登録されます。 セット内のパフォーマンスの状態は 1 ずつ増やす必要があります。 ほとんどのドライバーは、コンポーネントごとのパフォーマンス状態の 1 つのセットを定義する必要があります。 たとえば、ドライバーは、コンポーネントのクロック周波数を制御するためのパフォーマンス状態の 1 つのセットを定義する可能性があります。 ただし、一部のドライバーは、コンポーネントのパフォーマンス状態の複数のディメンションを制御する設定は、複数のパフォーマンス状態を定義する必要があります。 たとえば、ドライバーでは、クロック周波数とバスの帯域幅を制御するためのパフォーマンス状態の 2 つのセットを定義します。
+Windows 10 以降では、PoFx はパフォーマンス状態管理のための API を提供します。 この API には、主に次の2つの目標があります。
 
-PoFx によるパフォーマンスの状態管理のため、デバイスのコンポーネントを登録するには、ドライバーには、一般的な手順が次に示します。
+-   デバイスドライバーは、パフォーマンスの状態の変化について PEP に通知する標準的な方法を提供し、PEP が適切なアクションを実行できるようにします。
+-   ドライバーは、ドライバーごとにカスタムプラグインを用意することなく、Windows Performance Analyzer (WPA) でのログ記録と分析のために、パフォーマンスの状態の変化を OS に通知するための標準的な方法を提供します。
 
-1.  ドライバーは、PoFx によって管理されるデバイスのコンポーネントを登録します。 詳細については、次を参照してください。[コンポーネント レベルの電源管理](component-level-power-management.md)します。
+## <a name="introduction-to-the-pofx-api-for-component-level-performance-states"></a>コンポーネントレベルのパフォーマンス状態に関する PoFX API の概要
 
-2.  ドライバーは、呼び出すことによってパフォーマンスの状態のサポートを登録[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)します。 登録の呼び出しの一環として、ドライバー自体が特定のコンポーネントのパフォーマンスの状態を定義するかプラットフォーム拡張機能にプラグインを代わりに定義するには、(PEP) を延期します。
 
-    デバイス ドライバー、または PEP は、コンポーネント、パフォーマンスの状態 (不連続または範囲に基づく) の種類と値の詳細と実際のパフォーマンスの数ごとのパフォーマンス状態のセットの数など、パフォーマンスの状態のナレッジを保持する必要があります。示されます。 PEP がパフォーマンスの状態をサポートしていない場合、ドライバーをまだ PoFx のパフォーマンス状態のサポートについては登録およびログと分析では、Windows パフォーマンス アナライザー (WPA) のパフォーマンス状態の変更の OS に通知。
+PoFx を使用すると、デバイスは、各コンポーネントに対して次の種類のパフォーマンス状態を定義できます。
 
-    正常に完了すると、いずれの場合も[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)、ドライバーは、 [ **PO\_FX\_コンポーネント\_PERF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)登録済みのパフォーマンス状態のセットを含む構造体。
+-   周波数の単位 (Hz 単位)、帯域幅 (ビット/秒単位)、または不透明なインデックス番号の個別の状態の数。
+-   最小値と最大値の間の状態の連続分布。
 
-3.  ドライバーは、コンポーネントは、パフォーマンスの状態を変更する必要がありますを決定したら、それを呼び出す[ **PoFxIssueComponentPerfStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)または[ **PoFxIssueComponentPerfStateChangeMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)します。 PoFx 呼び出すドライバーの[ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)ルーチン パフォーマンス状態の変更が完了するとします。
+パフォーマンスの状態は、セットごとにまとめられ、コンポーネントごとに登録されます。 セット内のパフォーマンスの状態は、単調に増加する必要があります。 ほとんどのドライバーでは、コンポーネントごとにパフォーマンス状態の1つのセットを定義することが想定されています。 たとえば、1つのドライバーで1つのパフォーマンス状態を定義して、コンポーネントのクロック周波数を制御できます。 ただし、一部のドライバーでは、コンポーネントのパフォーマンス状態の複数の次元を制御するために複数のパフォーマンス状態セットを定義する必要がある場合があります。 たとえば、ドライバーでは、クロック周波数とバス帯域幅を制御するために、2つのパフォーマンス状態のセットを定義できます。
 
-4.  ドライバーを活用して、 [ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)日常的なかどうか、PEP が成功したか、パフォーマンスの状態の変更を拒否します。 PEP に変更が成功した場合、ドライバーは、その観点からパフォーマンスの状態を変更するために必要な作業を実行します。 PEP には、変更が拒否されている場合、何もしないか、同じまたは別のパフォーマンスが状態を使用して要求を再試行するドライバーを引き起こすことができます。
+PoFx によるパフォーマンス状態管理のためにデバイスコンポーネントを登録するには、次の一般的な手順に従います。
+
+1.  ドライバーは、PoFx によって管理されるようにデバイスコンポーネントを登録します。 詳細については、「[コンポーネントレベルの電源管理](component-level-power-management.md)」を参照してください。
+
+2.  このドライバーは、 [**Pofxregistercomponentperfstates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregistercomponentperfstates)を呼び出すことによって、パフォーマンス状態のサポートを登録します。 登録呼び出しの一部として、ドライバーは、特定のコンポーネントのパフォーマンス状態を定義するか、プラットフォーム拡張機能プラグイン (PEP) に従って代わりに定義することができます。
+
+    デバイスドライバーまたは PEP は、パフォーマンス状態の情報を保持する必要があります。これには、コンポーネントごとのパフォーマンス状態セットの数、パフォーマンス状態の種類 (不連続または範囲ベース)、および実際のパフォーマンスの値と数の詳細が含まれます。米. PEP でパフォーマンス状態がサポートされていない場合でも、ドライバーは PoFx によるパフォーマンス状態のサポートに登録し、Windows Performance Analyzer (WPA) でログと分析のためにパフォーマンスの状態の変化を OS に通知する場合があります。
+
+    どちらの場合でも、 [**Pofxregistercomponentperfstates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregistercomponentperfstates)が正常に完了すると、ドライバーには、登録されているパフォーマンス状態セットを含む、 [ **\_FX\_コンポーネント\_PERF\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_perf_info)構造体が含まれます。
+
+3.  ドライバーは、コンポーネントのパフォーマンス状態を変更する必要があると判断した場合、 [**PoFxIssueComponentPerfStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechange)または[**PoFxIssueComponentPerfStateChangeMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)を呼び出します。 パフォーマンス状態の変更が完了すると、PoFx はドライバーによって提供される[**ComponentPerfStateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_perf_state_callback)ルーチンを呼び出します。
+
+4.  このドライバーは、PEP がパフォーマンス状態の変化を成功したか拒否したかにかかわらず、 [**ComponentPerfStateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_perf_state_callback)ルーチンによって通知されます。 PEP によって変更が成功した場合、ドライバーは、パフォーマンスの状態をパースペクティブから変更するために必要なすべての作業を実行します。 PEP で変更が拒否された場合、ドライバーは何も実行しないか、同じまたは代替のパフォーマンス状態でもう一度要求を再試行することができます。
 
 ## <a name="related-topics"></a>関連トピック
-[デバイスの電源管理リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[デバイスの電源管理のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 
 
 

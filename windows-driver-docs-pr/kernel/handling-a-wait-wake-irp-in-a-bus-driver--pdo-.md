@@ -3,17 +3,17 @@ title: バス ドライバー (PDO) での待機/ウェイク IRP の処理
 description: バス ドライバー (PDO) での待機/ウェイク IRP の処理
 ms.assetid: 9583b935-26e1-49c6-827d-932762af114d
 keywords:
-- 受信側の待機またはスリープ解除 Irp
-- 待機/ウェイク Irp WDK の電源管理の受信
-- バス ドライバー WDK 電源管理
+- 待機/ウェイク Irp の受信
+- 待機/ウェイク Irp WDK 電源管理、受信
+- バスドライバーの WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78189ea8fb8879618e6f36f8d36e22a04d8639c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6bb0e76278833de1559b728c7b51c3ae65b1a773
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836609"
 ---
 # <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>バス ドライバー (PDO) での待機/ウェイク IRP の処理
 
@@ -21,39 +21,39 @@ ms.locfileid: "67384244"
 
 
 
-その他の power Irp のように IRP の完了を最終的には、バス ドライバー (PDO) に IRP 待機/ウェイク デバイス スタックの一番下渡す必要があります。 IRP を受信すると、バス ドライバーがすぐに失敗するか保持する保留中の後で完了します。 以下は、バス ドライバーが実行する必要があります手順です。
+他の電源 Irp と同様に、各待機/ウェイク IRP を、デバイススタックからバスドライバー (PDO) に渡す必要があります。これは、最終的に IRP の完了を担当します。 バスドライバーは、IRP を受け取るとすぐに失敗するか、後で完了するために保留中のままにすることができます。 バスドライバーで実行する必要がある手順は次のとおりです。
 
-1.  値を検査**Irp -&gt;Parameters.WaitWake.PowerState**します。 指定したから、デバイスが、ウェイク アップをサポートしている場合は[ **SystemWake** ](systemwake.md)状態または現在のデバイスの電源状態からではなく、ドライバーは IRP を失敗次のようにします。
+1.  **Irp-&gt;Parameters. PowerState**の値を調べます。 デバイスがウェイクアップをサポートしていても、指定した[**Systemwake**](systemwake.md)状態からではなく、現在のデバイスの電源状態からのものではない場合、ドライバーは次のように IRP を失敗させる必要があります。
 
-    -   状態を設定\_無効な\_デバイス\_で状態**Irp -&gt;IoStatus.Status**します。
+    -   状態\_無効\_デバイス\_状態が**Irp-&gt;IoStatus. STATUS**に設定されています。
 
-    -   IRP の完了 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))、IO の優先順位を指定する\_いいえ\_インクリメントします。
+    -   IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。 IO の priority boost\_\_増分は指定しません。
 
-    -   設定の状態を返す**Irp -&gt;IoStatus.Status**から、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+    -   [*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンから、 **Irp-&gt;iostatus. status**に設定されている状態を返します。
 
-2.  待機/ウェイク IRP が既に保留中かどうかを確認、pdo します。 場合、その設定**Irp -&gt;IoStatus.Status**ステータス\_デバイス\_ビジー、待機/ウェイク Irp のドライバーの内部のカウントをインクリメントし、前の手順に従って、IRP を完了します。
+2.  待機/ウェイク IRP が PDO に対して既に保留中であるかどうかを確認します。 その場合は、[ **Irp-&gt;iostatus. status** ] を [STATUS\_DEVICE\_BUSY] に設定し、ドライバーの内部の待機/ウェイク irp の数を増やして、前の手順で説明したように irp を完了します。
 
-    1 つだけ待機/ウェイク IRP が保留されている PDO の。
+    1つの PDO に対して保留できる待機/ウェイク IRP は1つだけです。
 
-3.  指定したシステムの電源状態と待機/ウェイク IRP が既に保留中デバイスは、ウェイク アップをサポートしている場合は、呼び出す[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending) IRP が完了する I/O マネージャーに示すために、または後で取り消されました。 設定しないでください、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
+3.  デバイスが、指定されたシステム電源状態からのウェイクアップをサポートしていて、待機中の待機時間が既に保留中でない場合は、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出して、IRP が完了するか、後でキャンセルされることを i/o マネージャーに示します。 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定しないでください。
 
-4.  ウェイク アップを有効にする、デバイスのハードウェアを設定します。
+4.  デバイスのハードウェアをウェイクアップを有効にするように設定します。
 
-    バス ドライバーにより、そのハードウェアのウェイク アップされる特定のメカニズムは、デバイスによって異なります。 PCI デバイス、Pci.sys はこのドライバーは、PME レジスタを所有しているため、PME の有効にするビットの設定を行います。 その他のデバイスでは、デバイス固有クラスのドキュメントを参照してください。
+    バスドライバーがウェイクアップ用にハードウェアを使用できるようにする特定のメカニズムは、デバイスによって異なります。 PCI デバイスの場合、このドライバーは PME 登録を所有しているため、Pci は PME-enable ビットを設定する必要があります。 その他のデバイスについては、デバイスクラス固有のドキュメントを参照してください。
 
-5.  PDO FDO の子である場合[要求待機/ウェイク IRP](sending-a-wait-wake-irp.md) 、FDO のために設定してください、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)現在 IRP (保留中、保持している IRP) のルーチン。 渡すか、現在の IRP を再利用しないでください。
+5.  PDO が FDO の子である場合は、FDO の[待機/ウェイク IRP を要求](sending-a-wait-wake-irp.md)し、現在の irp (保留中の irp) に対して[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンを設定します。 現在の IRP を成功させたり再利用したりしないでください。
 
-6.  状態を返す\_から PENDING、 *DispatchPower*ルーチン。
+6.  *DispatchPower*ルーチンから STATUS\_PENDING が返されます。
 
-7.  ウェイク アップのシグナルを受け取ったときに呼び出す**IoCompleteRequest**保留中待機/ウェイク IRP、設定を完了する**Irp IoStatus.Status**ステータス\_成功した場合、および IO の優先順位を指定します。\_いいえ\_インクリメントします。
+7.  ウェイクアップシグナルが到着したら、 **IoCompleteRequest**を呼び出して、保留中の待機/ウェイク IRP を完了し**ます。 IRP-iostatus を完了し、Irp-iostatus**を status\_SUCCESS に設定し、IO の priority boost\_\_インクリメントを指定します。
 
-### <a name="for-devices-that-do-not-support-wake-up"></a>ウェイク アップをサポートしていないデバイス
+### <a name="for-devices-that-do-not-support-wake-up"></a>ウェイクアップをサポートしていないデバイスの場合
 
-デバイスがウェイク アップをサポートしていない場合、バス ドライバー (PDO) する必要がありますに従います。
+デバイスがウェイクアップをサポートしていない場合、バスドライバー (PDO) は次のように処理する必要があります。
 
-1.  待機/ウェイク IRP を呼び出すことによって完了**IoCompleteRequest**、IO を指定する\_いいえ\_インクリメントします。
+1.  **IoCompleteRequest**を呼び出して wait/wake IRP を完了します。 IO\_\_増分は指定しません。
 
-2.  戻り値、 *DispatchPower*で値を渡すルーチン**Irp -&gt;IoStatus.Status**戻り値として返します。
+2.  *DispatchPower*ルーチンから戻り値として、 **Irp-&gt;Iostatus. Status**の値を戻り値として渡します。
 
  
 

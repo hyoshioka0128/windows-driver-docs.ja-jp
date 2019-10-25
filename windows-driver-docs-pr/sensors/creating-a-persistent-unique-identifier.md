@@ -1,26 +1,26 @@
 ---
-title: センサーの永続的な一意の識別子を作成します。
-description: センサーの永続的な一意の識別子を作成します。
+title: センサーの永続的な一意識別子の作成
+description: センサーの永続的な一意識別子の作成
 ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 766ff37235b6beb096470558d18656f81e03c18f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f5fa27226dd42f64517508d29ea2764d31abb9ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360692"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837627"
 ---
-# <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>センサーの永続的な一意の識別子を作成します。
+# <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>センサーの永続的な一意識別子の作成
 
 
-ドライバーは、永続的な一意識別子 (PUID) 各センサーを作成する必要があります。 PUID は、セッション間で格納され、デバイス上のオブジェクトを一意に識別する GUID 値です。 ドライバーは、センサーをという名前のプロパティに対してクエリを実行時に、PUID の値を返す必要があります\_プロパティ\_持続\_UNIQUE\_id。 デバイスに複数のセンサーが含まれている場合各センサーは、独自の PUID 割り当てる必要があります。 アプリケーションは呼び出すことでこの ID を取得することができます、 [ISensor::GetID](https://go.microsoft.com/fwlink/p/?linkid=157812)センサー API のメソッド。
+ドライバーは、センサーごとに永続的な一意識別子 (PUID) を作成する必要があります。 PUID は、セッション間で格納され、デバイス上のオブジェクトを一意に識別する GUID 値です。 ドライバーは、センサー\_プロパティ\_永続的\_一意の\_ID という名前のプロパティを照会したときに、PUID 値を返す必要があります。 デバイスに複数のセンサーが含まれている場合は、各センサーに独自の PUID が割り当てられている必要があります。 アプリケーションは、センサー API で[ISensor:: GetID](https://go.microsoft.com/fwlink/p/?linkid=157812)メソッドを呼び出すことによって、この ID を取得できます。
 
-センサーが最初に、コンピューターに接続するときに、各センサーの新しい PUID を作成し、し、後で使用するためには、この値を格納する必要があります。
+センサーがコンピューターに初めて接続し、後で使用するためにこの値を保存するときに、センサーごとに新しい PUID を作成する必要があります。
 
-ドライバーを作成またはセンサー クラスの拡張機能が初期化される前に、たとえば呼び出された場合は、PUID を取得する必要があります[ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)します。 このメソッドへのポインターを提供する、 [IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)センサーを表すインターフェイスです。 このポインターを使用して、各デバイスの特定のプロパティ ストアにアクセスすることができます。
+ドライバーは、センサークラス拡張が初期化される前に、 [**IPnpCallbackHardware:: On ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)で呼び出されたときなど、PUID を作成または取得する必要があります。 このメソッドは、センサーを表す[Iwdfdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスへのポインターを提供します。 このポインターを使用して、各デバイスの特定のプロパティストアにアクセスできます。
 
-次のコード例は、必要に応じて、作成、格納、および、PUID を取得する関数を作成します。
+次のコード例では、必要に応じて、PUID を作成、格納、および取得する関数を作成します。
 
 ```cpp
 // Sets the persistent unique ID property in the WDF property store
@@ -84,7 +84,7 @@ HRESULT CMyDevice::GetUniqueID(__in IWDFDevice* pWdfDevice,
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[センサー地理位置情報ドライバー サンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
+[センサーの地理位置情報ドライバーのサンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

@@ -1,62 +1,62 @@
 ---
-Description: 方法、複合のドライバーと呼ばれる USB 多機能デバイスを登録し、基になる USB ドライバー スタックと複合デバイスの登録を解除します。
+Description: 複合ドライバーと呼ばれる USB マルチ機能デバイスが、基になる USB ドライバースタックで複合デバイスを登録および登録解除する方法を説明します。
 title: 複合デバイスを登録する方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0351a0869e3cb6d9ecc2b869f69929b735df4339
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9394af1e736b767d9cacb9ac16be5ee3588eb03
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368800"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824198"
 ---
 # <a name="how-to-register-a-composite-device"></a>複合デバイスを登録する方法
 
 
-このトピックでは、複合のドライバーと呼ばれる、USB 多機能デバイスのドライバーを登録および基になる USB ドライバー スタックと複合デバイスの登録を解除する方法について説明します。 Microsoft 提供のドライバーで、Usbccgp.sys は、Windows によって読み込まれる既定の複合ドライバーです。 このトピックの手順では、カスタム Windows Driver Model WDM ベース複合ドライバーで、Usbccgp.sys を置換するには適用されます。
+このトピックでは、複合ドライバーと呼ばれる USB マルチ機能デバイスのドライバーが、基になる USB ドライバースタックを使用して複合デバイスを登録および登録解除する方法について説明します。 Microsoft 提供のドライバーである Usbccgp は、Windows によって読み込まれる既定の複合ドライバーです。 このトピックの手順は、Usbccgp を置き換えるカスタム Windows Driver Model (WDM) ベースの複合ドライバーに適用されます。
 
-ユニバーサル シリアル バス (USB) デバイスでは、同時にアクティブになっている複数の関数を提供できます。 このような多機能デバイスとも呼ばれます*複合デバイス*します。 たとえば、キーボード機能のための関数とマウスの別の関数複合デバイスを定義します。 デバイスの機能は、複合、ドライバーによって列挙されます。 複合のドライバーでは、モノリシック モデル自体これらの機能を管理したり、各関数の物理デバイス オブジェクト (Pdo) を作成することができます。 これらの個々 の Pdo は、それぞれのそれぞれの USB 機能ドライバー、キーボード ドライバーおよびマウス ドライバーによって管理されます。
+ユニバーサルシリアルバス (USB) デバイスは、同時にアクティブになっている複数の機能を提供できます。 このようなマルチ関数デバイスは、*複合デバイス*とも呼ばれます。 たとえば、複合デバイスでは、キーボード機能用の関数と、マウスの別の機能を定義できます。 デバイスの機能は、複合ドライバーによって列挙されます。 複合ドライバーは、これらの関数自体をモノリシックモデルで管理したり、各関数に対して物理デバイスオブジェクト (PDOs) を作成したりすることができます。 これらの個々の PDOs は、それぞれの USB 機能ドライバー、キーボードドライバー、およびマウスドライバーによって管理されます。
 
-USB 3.0 の仕様の定義、*関数の中断とリモート ウェイク アップ機能*個々 の関数を入力し、その他の関数または全体のデバイスの電源状態の影響を与えずに低電力状態を終了できるようにします。 機能の詳細については、次を参照してください。[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)します。
+USB 3.0 仕様では、*関数の中断機能とリモートウェイクアップ機能*を定義しています。この機能を使用すると、他の機能やデバイス全体の電源状態に影響を与えずに、個々の機能で低電力状態を入力および終了できます。 この機能の詳細については、「[複合ドライバーで関数の中断を実装する方法](how-to--implement-remote-and-function-wake-support.md)」を参照してください。
 
-機能を使用するには、複合ドライバーは、基になる USB ドライバー スタックと、デバイスを登録する必要があります。 複合のドライバーを基になるスタック USBD のバージョンをサポートしていることを確認して行う必要があります機能は、USB 3.0 デバイスに適用される、ため\_インターフェイス\_バージョン\_602 します。 登録要求は、複合ドライバー: から
+この機能を使用するには、複合ドライバーが、基になる USB ドライバースタックにデバイスを登録する必要があります。 この機能は USB 3.0 デバイスに適用されるため、複合ドライバーは、基になるスタックがバージョン USBD\_インターフェイス\_バージョン\_602 をサポートしていることを確認する必要があります。 登録要求では、複合ドライバーは次のようになります。
 
--   基になる USB ドライバー スタックにドライバーがリモート ウェイク アップの関数を arm に要求を送信する役割があることを通知します。 リモートのウェイク アップ要求は、デバイスに必要なプロトコルの要求を送信する USB ドライバー スタックによって処理されます。
--   USB ドライバー スタックによって割り当てられた関数ハンドル (関数ごとに 1 つ) の一覧を取得します。 複合ドライバーを使用できますドライバーの機能ハンドル要求ハンドルに関連付けられている関数のリモート ウェイク アップ。
+-   基になる USB ドライバースタックに、ドライバーがリモートウェイクアップ用の機能を arm に送信するように要求していることを通知します。 リモートウェイクアップ要求は、USB ドライバースタックによって処理されます。このスタックは、必要なプロトコル要求をデバイスに送信します。
+-   USB ドライバースタックによって割り当てられた関数ハンドルのリスト (関数ごとに1つ) を取得します。 その後、複合ドライバーは、そのハンドルに関連付けられている関数のリモートウェイクアップを要求するドライバーの関数ハンドルを使用できます。
 
-複合のドライバーがドライバーの AddDevice またはデバイスの起動のルーチン処理するために登録要求を送信する通常[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device). 複合のドライバーがデバイスの停止など、ドライバーのアンロードのルーチンで登録に割り当てられているリソースを解放するそのため、([**IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)) または装置を削除するルーチン ([**IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device))。
+通常、複合ドライバーは、ドライバーの AddDevice または開始デバイスルーチンに登録要求を送信して、 [ **\_デバイスの起動\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を処理します。 その結果、複合ドライバーは、ドライバーのアンロードルーチンで登録に割り当てられているリソースを解放します。たとえば、停止デバイス ([**irp\_、\_デバイスの停止\_停止**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device))、またはデバイスを削除するルーチン (irp\_になります。[ **\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)) を削除します。
 
 ### <a name="prerequisites"></a>前提条件
 
-登録要求を送信する前にことを確認します。
+登録要求を送信する前に、次のことを確認してください。
 
--   関数の数が、デバイスであります。 数ができる、構成の取得要求によって取得された記述子を派生します。
--   以前の呼び出しで USBD ハンドルを取得した[ **USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)します。
--   基になる USB ドライバー スタックは、USB 3.0 デバイスをサポートします。 これを行うには、呼び出す[ **USBD\_IsInterfaceVersionSupported** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isinterfaceversionsupported) USBD を渡すと\_インターフェイス\_バージョン\_602 バージョンを確認するとします。
+-   デバイス内の関数の数がわかっています。 この数値は、get 構成要求によって取得された記述子を派生させることができます。
+-   前の[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)の呼び出しで USBD ハンドルを取得しました。
+-   基になる USB ドライバースタックは、USB 3.0 デバイスをサポートしています。 これを行うには、 [**USBD\_IsInterfaceVersionSupported**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_isinterfaceversionsupported)を呼び出し、USBD\_INTERFACE\_version\_602 を、確認するバージョンとして渡します。
 
-コード例では、次を参照してください。[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)します。
+コード例については、「[複合ドライバーで関数の中断を実装する方法](how-to--implement-remote-and-function-wake-support.md)」を参照してください。
 手順
 ------------
 
-### <a name="register-a-composite-device"></a>複合デバイスを登録します。
+### <a name="register-a-composite-device"></a>複合デバイスを登録する
 
-次の手順では、複合のドライバーを USB ドライバー スタックに関連付けるための登録要求を送信およびビルドを行う方法について説明します。
+次の手順では、複合ドライバーを USB ドライバースタックと関連付けるための登録要求を作成して送信する方法について説明します。
 
-1.  割り当て、 [**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)構造体を呼び出すことによって初期化、 [**複合\_デバイス\_機能\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-composite_device_capabilities_init)マクロ。
-2.  設定、 **CapabilityFunctionSuspend**のメンバー [**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)を 1 にします。
-3.  割り当て、 [**登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)構造体し、構造体を呼び出すことによって初期化、 [ **USBD\_BuildRegisterCompositeDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_buildregistercompositedevice)ルーチン。 呼び出しで指定、初期化された USBD ハンドル[**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)構造、および関数の数。
-4.  I/O 要求パケット (IRP) を呼び出すことによって割り当てる[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp) IRP の最初のスタックの場所へのポインターを取得し、([**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)) を呼び出して[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)します。
-5.  関数のハンドルの配列を保持するために十分な大きさであるバッファーのメモリを割り当てる (USBD\_関数\_処理)。 配列内の要素の数は、Pdo の数である必要があります。
-6.  次のメンバーを設定して、要求を構築、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location):
-    -   要求の種類を設定して指定**Parameters.DeviceIoControl.IoControlCode**に[ **IOCTL\_内部\_USB\_登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)します。
-    -   入力パラメーターを設定して指定**Parameters.Others.Argument1** 、初期化済みのアドレスに[**登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)構造体。
-    -   出力パラメーターを設定して指定**AssociatedIrp.SystemBuffer**手順 5. で割り当てられたバッファーにします。
+1.  [**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_composite_device_capabilities)の構造体を割り当て、[**複合\_デバイス\_\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-composite_device_capabilities_init)を呼び出すことによって初期化マクロを初期化します。
+2.  [**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_composite_device_capabilities)の**CapabilityFunctionSuspend**メンバーを1に設定します。
+3.  [**USBD\_BuildRegisterCompositeDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_buildregistercompositedevice)ルーチンを呼び出して、[**登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_register_composite_device)構造体に割り当て、構造体を初期化します。 呼び出しで、USBD ハンドル、初期化された[**複合\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_composite_device_capabilities)の構造体、および関数の数を指定します。
+4.  [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)を呼び出して i/o 要求パケット (irp) を割り当て、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)ドの場所を呼び出して、irp の最初のスタック位置 ([**IO\_スタックの\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)) へのポインターを取得します。
+5.  関数ハンドルの配列を保持するのに十分な大きさのバッファー (USBD\_関数\_ハンドル) にメモリを割り当てます。 配列内の要素の数は、PDOs の数である必要があります。
+6.  [**IO\_STACK\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)の次のメンバーを設定して、要求を作成します。
+    -   要求の種類を指定するには、 [ **\_内部\_USB\_\_複合\_デバイスを登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)し**ます。**
+    -   入力パラメーターを指定するには、**引数 1**を、初期化されたレジスタのアドレスに設定します。[**複合\_デバイス構造\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_register_composite_device)ます。
+    -   **AssociatedIrp**を、手順 5. で割り当てたバッファーに設定して、出力パラメーターを指定します。
 
-7.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRP をスタックの次の場所に渡すことによって、要求を送信します。
+7.  [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、IRP を次のスタック位置に渡して要求を送信します。
 
-完了したら、USB ドライバー スタックによって返される関数のハンドルの配列を検査します。 将来使用するため、ドライバーのデバイス コンテキストで配列を格納することができます。
+完了したら、USB ドライバースタックによって返される関数ハンドルの配列を調べます。 将来使用するために、ドライバーのデバイスコンテキストに配列を格納できます。
 
-次のコード例では、ビルドし、登録要求を送信する方法を示します。 例には、複合のドライバーは、以前に取得した関数の数を格納します。 ドライバーのデバイス コンテキストでは、USBD の処理を前提としています。
+次のコード例は、登録要求をビルドして送信する方法を示しています。 この例では、複合ドライバーが、以前に取得した関数の数と USBD ハンドルをドライバーのデバイスコンテキストに格納していることを前提としています。
 
 ```ManagedCPlusPlus
 VOID  RegisterCompositeDriver(PPARENT_FDO_EXT parentFdoExt)  
@@ -143,15 +143,15 @@ End:
 }
 ```
 
-### <a name="unregister-the-composite-device"></a>複合デバイスの登録を解除します。
+### <a name="unregister-the-composite-device"></a>複合デバイスの登録解除
 
-1.  呼び出すことによって、IRP を割り当てる[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp) IRP の最初のスタックの場所へのポインターを取得し、([**IO\_スタック\_場所** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)) を呼び出して[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)します。
-2.  設定して、要求を構築、 **Parameters.DeviceIoControl.IoControlCode**のメンバー [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) に[ **IOCTL\_内部\_USB\_登録解除\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)します。
-3.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRP をスタックの次の場所に渡すことによって、要求を送信します。
+1.  [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)を呼び出して irp を割り当て、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)ドの場所を呼び出して、irp の最初のスタック位置 ([**IO\_stack\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)) へのポインターを取得します。
+2.  [**IO\_STACK\_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)の**Parameters. DeviceIoControl**メンバーを[**IOCTL\_内部\_USB\_登録解除\_複合\_デバイスの登録を解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)して、要求をビルドします.
+3.  [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、IRP を次のスタック位置に渡して要求を送信します。
 
-[ **IOCTL\_内部\_USB\_登録解除\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)で複合ドライバーによって要求が 1 回送信します装置を削除するルーチンのコンテキスト。 要求では、USB ドライバー スタックと複合ドライバーとその列挙型の関数間の関連付けを削除します。 要求は、その関連付けを維持するために作成されたすべてのリソースと前回の登録要求で返されたすべての機能ハンドルによってクリーンアップされます。
+[ **\_内部\_USB\_登録解除\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)の要求は、デバイスの削除ルーチンのコンテキストで複合ドライバーによって1回送信されます。 要求の目的は、USB ドライバースタックと複合ドライバーとその列挙関数との関連付けを削除することです。 また、要求は、その関連付けと、前の登録要求で返されたすべての関数ハンドルを維持するために作成されたすべてのリソースをクリーンアップします。
 
-次のコード例では、ビルドして、複合デバイスの登録を解除する要求を送信する方法を示します。 例では、複合ドライバーが以前登録されている登録要求をこのトピックで前述したよう想定しています。
+次のコード例は、複合デバイスの登録を解除する要求を作成して送信する方法を示しています。 この例では、このトピックで既に説明したように、複合ドライバーが登録要求によって既に登録されていることを前提としています。
 
 ```ManagedCPlusPlus
 VOID  UnregisterCompositeDriver(  
@@ -192,8 +192,8 @@ VOID  UnregisterCompositeDriver(
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[**IOCTL\_内部\_USB\_登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)  
-[**IOCTL\_内部\_USB\_登録解除\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)  
+[**IOCTL\_内部\_USB\_登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)  
+[**IOCTL\_内蔵\_USB\_\_複合\_デバイスの登録解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)  
 
 
 

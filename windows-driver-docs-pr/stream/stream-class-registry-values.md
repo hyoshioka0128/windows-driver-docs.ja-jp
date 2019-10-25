@@ -3,18 +3,18 @@ title: ストリーム クラスのレジストリ値
 description: ストリーム クラスのレジストリ値
 ms.assetid: a6800f53-4d55-4a28-839b-47f0cecc17bf
 keywords:
-- Stream.sys クラス ドライバー WDK Windows 2000 のカーネルでは、レジストリ
-- ストリーミング ミニドライバー WDK Windows 2000 のカーネル、レジストリ
-- WDK Windows 2000 のカーネル ストリーミング ミニドライバー、レジストリ
-- レジストリの WDK ストリーミング ミニドライバー
+- .Sys クラスドライバー WDK Windows 2000 カーネル、レジストリ
+- streaming ミニドライバー WDK Windows 2000 カーネル、レジストリ
+- ミニドライバー WDK Windows 2000 カーネルストリーミング、レジストリ
+- レジストリ WDK streaming ミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0f71193b94d7c91e83ebf8d5529959f18b11695
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7166f776544d495aecae084703fc51317819eb50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377812"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837685"
 ---
 # <a name="stream-class-registry-values"></a>ストリーム クラスのレジストリ値
 
@@ -22,28 +22,28 @@ ms.locfileid: "67377812"
 
 
 
-下のミニドライバーをインストールする*Stream.sys*、仕入先に準拠しているデバイスに固有の INF ファイルを指定する必要があります[INF ファイルの一般的な要件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。 このファイルで、ストリーム クラスで実行されているミニドライバーがデバイスに固有の特殊なレジストリ値を設定できます[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)セクション。 これらのレジストリ エントリがバイナリ インジケーターとして使用: 01、機能を有効にする 16 進数の値に設定します。
+ミニドライバー*の下に*インストールするには、ベンダーが[汎用の inf ファイル要件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)に準拠したデバイス固有の inf ファイルを提供する必要があります。 このファイルでは、stream クラスで実行されているミニドライバーは、デバイス固有の[**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)セクションに特別なレジストリ値を設定できます。 これらのレジストリエントリは、バイナリインジケーターとして機能します。この機能を有効にするには、16進値01に設定します。
 
-Stream クラス ミニドライバーでは、次のレジストリ値を使用できます。
+ストリームクラスミニドライバーは、次のレジストリ値を使用できます。
 
-<a href="" id="pageoutwhenunopened"></a>**PageOutWhenUnopened**  
-このレジストリ エントリは、開かれていないときに、デバイス ドライバーがページングされることを示します。 デバイスは開かれていないときに、ページ アウトできません、この機能は全体のドライバーを無効になります。
+<a href="" id="pageoutwhenunopened"></a>**PageOutWhenUnopened 開かない**  
+このレジストリエントリは、デバイスドライバーが開かれていないときにページアウトする必要があることを示します。 デバイスが開かれていないときにページアウトできない場合、ドライバー全体でこの機能はオフになっています。
 
-<a href="" id="powerdownwhenunopened"></a>**PowerDownWhenUnopened**  
-このレジストリ エントリは、開かれていない場合はことデバイスを電源にする必要がありますを示します。
+<a href="" id="powerdownwhenunopened"></a>**PowerDownWhenUnopened 未開封**  
+このレジストリエントリは、デバイスが開かれていないときに電源を切る必要があることを示します。
 
 <a href="" id="driverusesswenumtoload"></a>**DriverUsesSWEnumToLoad**  
-ソフトウェア専用デバイス ドライバーは、デバイス ドライバーが必要であるさまざまなストリーム クラスを通知するためにこのレジストリ文字列を使用する必要があります*AddRef/DecRef*ハードウェア デバイスのドライバーよりも処理します。
+ソフトウェアのみのデバイスドライバーでは、このレジストリ文字列を使用して、デバイスドライバーがハードウェアデバイスドライバーとは異なる*AddRef/DecRef*処理を必要とすることをストリームクラスに通知する必要があります。
 
-次のフラグが 9 の Windows でサポートされていましたが、x、NT ベースのオペレーティング システムでは古いは。
+次のフラグは、Windows 9x ではサポートされていましたが、NT ベースのオペレーティングシステムでは互換性のために残されています。
 
 <a href="" id="dontsuspendifstreamsarerunning"></a>**DontSuspendIfStreamsAreRunning**  
-このレジストリ変数は、Windows 2000 以降の NT ベースのオペレーティング システムで廃止されています。 (時点で、このリリースでは、DirectShow power クエリをリッスンおよび低電力のクエリを受信すると、一時停止にすべてのストリームを格納します。)アプリケーションが呼び出すことによって使用されているシステムを通知できますも**SetThreadExecutionState**します。 このルーチンは、Microsoft Windows SDK ドキュメントで説明します。 また、ドライバーを使用できる[ **PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)します。
+このレジストリ変数は、Windows 2000 以降の NT ベースのオペレーティングシステムでは廃止されています。 (このリリースでは、DirectShow は power query をリッスンし、低電力のクエリを受信したときにすべてのストリームを一時停止します)。アプリケーションは、 **SetThreadExecutionState**を呼び出すことによって、使用されていることをシステムに通知することができます。 このルーチンについては、Microsoft Windows SDK のドキュメントを参照してください。 または、ドライバーで[**Posetsystemstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)を使用することもできます。
 
 <a href="" id="oktohibernate"></a>**OkToHibernate**  
-このレジストリ文字列で、Windows 98 で実行されているドライバーのみです。 NT ベースのオペレーティング システムでは使用されません。
+このレジストリ文字列は、Windows 98 で実行されているドライバーに対してのみ有効です。 NT ベースのオペレーティングシステムでは使用されません。
 
-抜粋を次に、 *Usbintel.inf*ファイルをこれらのレジストリ値を設定する方法を示します。 このファイルでは、UsbIntel サンプルの一部は、ドライバー開発キット (DDK) および Windows XP、Windows 7 (ビルド 7600) のように、Windows Driver Kit (WDK) で使用できます。
+次に示すのは、これらのレジストリ値を設定する方法を示す、 *Usbintel .inf*ファイルから抜粋したものです。 このファイルは、UsbIntel サンプルに含まれています。 Driver Development Kit (DDK) と windows XP の windows Driver Kit (WDK) で windows 7 (ビルド 7600) から入手できます。
 
 ```INF
 [Intel.USBDCam]

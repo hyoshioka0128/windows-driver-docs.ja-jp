@@ -3,18 +3,18 @@ title: AVStream のデバイス ミューテックス
 description: AVStream のデバイス ミューテックス
 ms.assetid: cec2a040-59d6-44ef-aef1-04f434811d60
 keywords:
-- AVStream mutexes WDK
-- ミュー テックス WDK AVStream
-- デバイスのミュー テックス WDK AVStream
-- WDK AVStream の同期
+- AVStream ミューテックス WDK
+- mutex WDK AVStream
+- デバイスミューテックス WDK AVStream
+- 同期 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d31d1ffcbd610162cf3f3084eaf6362aa15884d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1413f52aef699028839a4ad4c883e892d850431b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360171"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826211"
 ---
 # <a name="device-mutex-in-avstream"></a>AVStream のデバイス ミューテックス
 
@@ -22,33 +22,33 @@ ms.locfileid: "67360171"
 
 
 
-フィルターまで、デバイスから階層内のオブジェクトを同期するのにには、デバイスのミュー テックスを使用します。 各 AVStream デバイスでは、1 つの関連付けられているデバイスのミュー テックスを持っています。 両方の作成と破棄は、ファクトリをフィルター処理して、フィルターは、このミュー テックスと同期されます。 特定のプラグ アンド プレイと電源管理操作は、このミュー テックスとも同期されます。 ミニドライバーは、デバイスのミュー テックスに関して 2 つの主な問題について説明します。
+デバイスミューテックスを使用して、階層内のオブジェクトをデバイスからフィルターに同期します。 各 AVStream デバイスには、関連付けられた1つのデバイスミューテックスがあります。 フィルターファクトリとフィルターの両方の作成と破棄が、この mutex と同期されます。 特定のプラグアンドプレイおよび電源管理操作も、この mutex と同期されます。 ミニドライバーは、デバイスミューテックスに関して主に2つの問題に焦点を当てています。
 
-オブジェクト階層の安定したことが保証されて*のみ*デバイス ミュー テックスが保持されている場合、個別のフィルターまで、デバイスから。 結果として、ミニドライバーは、手動で呼び出すことによってフィルター ファクトリを作成する前のデバイスのミュー テックスを取得する必要があります[ **KsCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatefilterfactory)します。 ミニドライバーを呼び出して、オブジェクト階層を移動する前に、デバイスのミュー テックスを取得する必要がありますも、**Ks***Xxx***GetFirstChild * * * Xxx*と **Ks***Xxx***GetNextSibling * * * Xxx*関数。
+オブジェクトの階層は、デバイスのミューテックスが保持されている場合に、デバイスから個別のフィルターまで *、安定し*た状態であることが保証されます。 そのため、ミニドライバーは、 [**KsCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatefilterfactory)を呼び出してフィルターファクトリを手動で作成する前に、デバイスのミューテックスを取得する必要があります。 また、ミニドライバーは、**Ks***xxx***getfirstchild * * * xxx*関数および **ks***xxx***GetNextSibling * * * xxx*関数を呼び出すことによって、オブジェクト階層を走査する前にデバイスのミューテックスを取得する必要があります。
 
-AVStream は、次の要求を受信すると、ミニドライバーに代わってデバイス ミュー テックスを保持します。
+AVStream は、次の要求を受け取ったときに、ミニドライバーに代わってデバイスミューテックスを保持します。
 
--   [**IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)
+-   [**IRP\_\_クエリ\_\_デバイスの停止**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)
 
--   [**IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
+-   [**IRP\_\_クエリ\_\_デバイスの削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
 
--   [*PostStart ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdevice)
+-   [*PostStart ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdevice)
 
--   [**IRP\_MN\_START\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
+-   [ **\_デバイスを起動\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
 
--   [**IRP\_MN\_クエリ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)
+-   [**IRP\_\_クエリ\_電力**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)
 
--   [**IRP\_MN\_SET\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)
+-   [**IRP\_\_設定\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)
 
--   スリープし、復帰のフィルターと pin で通知します。 参照してください[ **KsFilterRegisterPowerCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilterregisterpowercallbacks)と[ **KsPinRegisterPowerCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinregisterpowercallbacks)します。
+-   フィルターとピンのスリープおよびウェイク通知。 「 [**Ksk Filterregisterpowerコールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterregisterpowercallbacks)と[**KsPinRegisterPowerCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinregisterpowercallbacks)」を参照してください。
 
-再帰的にことはできませんデバイス ミュー テックスを取得することに注意してください。 次の例を検討してください。 AVStream は、スリープという通知を受け取ります。 前述のよう、ミニドライバーに代わって、デバイスのミュー テックスがかかります。 AVStream し、スレッド A のコンテキストで、ミニドライバーで提供されるコールバック ルーチンを呼び出すと場合、ミニドライバー後しようとしないでスレッド自体でデッドロックが発生するスレッド A A. の実行とデバイスのミュー テックスを取得します。
+デバイスミューテックスを再帰的に取得することはできないことに注意してください。 次の例について考えてみましょう。 AVStream はスリープ通知を受け取ります。 前述のように、ミニドライバーの代わりにデバイスのミューテックスを取得します。 AVStream がスレッド A のコンテキストでミニドライバーから提供されるコールバックルーチンを呼び出す場合、ミニドライバーは、その後スレッド a のデバイスミューテックスを取得しようとする必要がありません。これにより、スレッド A がそれ自体でデッドロックする原因になります。
 
-デバイスのミュー テックスが既に保持されている間、AVStream は多くの場合、フィルター コントロール ミュー テックスを取得します。 その結果、一般的な規則として、スレッド フィルター コントロール ミュー テックスが実行した後で受け取ることはできませんデバイス ミュー テックス。
+多くの場合、AVStream は、デバイスミューテックスが既に保持されている間、フィルターコントロールのミューテックスを取得します。 そのため、一般的な規則として、フィルターコントロールのミューテックスを取得したスレッドは、その後、デバイスのミューテックスを取得しないようにする必要があります。
 
-デバイスのミュー テックスを操作するには、次の関数を使用します。
+デバイスミューテックスを操作するには、次の関数を使用します。
 
-[**KsAcquireDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksacquiredevice)、 [ **KsReleaseDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksreleasedevice)
+[**KsAcquireDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice)、 [ **ksreleasedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice)
 
  
 

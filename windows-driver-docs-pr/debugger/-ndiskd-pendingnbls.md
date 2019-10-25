@@ -1,9 +1,9 @@
 ---
-title: ndiskd.pendingnbls
-description: Ndiskd.pendingnbls 拡張機能は、保留中の転送中に含まれる NBLs (NET_BUFFER_LISTs) が表示されます。
+title: ndiskd pendingnbls
+description: Pendingnbls 拡張機能は、転送中の保留中の NBLs (NET_BUFFER_LISTs) を表示します。
 ms.assetid: 9137B995-FCCA-4E25-85D3-FCB5B717EBDF
 keywords:
-- デバッグ ndiskd.pendingnbls Windows
+- pendingnbls Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d160bc4300164e477624716ca41f5c989f599a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e2721e2ea83a9b14c18be328d1ce2e511d5ce24
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362460"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826540"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
 
 
-**! Ndiskd.pendingnbls** NBLs 保留中の拡張機能が表示されます ([**NET\_バッファー\_を一覧表示**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) に転送します。
+**! Ndiskd pendingnbls**拡張機能には、転送中の保留中の NBLs ([**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) が表示されます。
 
 ```console
 !ndiskd.pendingnbls [-handle <x>] [-fullstack] [-verbosity <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 NDIS ミニポート、フィルター、またはオープンのハンドル。
 
 <span id="_______-fullstack______"></span><span id="_______-FULLSTACK______"></span> *-fullstack*   
-保留中の NBLs、ハンドルに関連付けられたスタック全体が表示されます。
+ハンドルに関連付けられているスタック全体から保留中の NBLs を表示します。
 
-<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-verbosity*   
-表示する詳細のレベルです。
+<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-詳細*   
+表示する詳細レベル。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-**! ndiskd.pendingnbls** NDIS ミニポート、フィルター、またはオープンのハンドルを渡すことができます。 次の一連の例では、ミニポート ハンドルを使用します。 すべてミニポートと関連付けられている、ミニドライバーの一覧を表示するには、実行、 [ **! ndiskd.netadapter** ](-ndiskd-netadapter.md)パラメーターなしで拡張機能。 次の出力例では、Microsoft カーネル デバッグ ネットワーク アダプターが、そのハンドルは ffffe00bc3f701a0 を探します。 そのミニドライバーのハンドルは、ffffe00bc51b9ae0 です。
+**! pendingnbls**には、NDIS ミニポート、フィルター、またはオープンのハンドルを渡すことができます。 次の一連の例では、ミニポートハンドルを使用します。 すべてのミニポートとそれに関連付けられているミニドライバーの一覧を表示するには、パラメーターを使用せずに[ **! ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。 次の出力例では、ffffe00bc3f701a0 というハンドルを持つ Microsoft カーネルデバッグネットワークアダプターを探します。 ミニドライバーのハンドルは ffffe00bc51b9ae0 です。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -56,7 +56,7 @@ Ndiskd.dll
     ffffe00bc51b9ae0   ffffe00bc3f701a0    Microsoft Kernel Debug Network Adapter
 ```
 
-ミニポートの保留中の NBLs を表示するには、そのミニドライバーの SendNetBufferListsHandler にブレークポイントを設定します。 ミニドライバーのハンドルを使用して実行する、 [ **! ndiskd.minidriver-処理 - ハンドラー** ](-ndiskd-minidriver.md)コマンドをそのハンドラーの一覧を表示し、SendNetBufferListsHandler の右側に"bp"リンクをクリックします。 別の方法として入力することができます、 [ **bp-処理**](bp--bu--bm--set-breakpoint-.md)コマンド ライン コマンド。
+ミニポートの保留中の NBLs を表示するには、ミニドライバーの SendNetBufferListsHandler にブレークポイントを設定します。 ミニドライバーのハンドルを使用して[ **! ndiskd**](-ndiskd-minidriver.md)コマンドを実行し、ハンドラーの一覧を表示します。次に、SendNetBufferListsHandler の右側にある "bp" リンクをクリックします。 または、コマンドラインで[**bp-handle**](bp--bu--bm--set-breakpoint-.md)コマンドを入力することもできます。
 
 ```console
 0: kd> !ndiskd.minidriver ffffe00bc51b9ae0 -handlers
@@ -87,7 +87,7 @@ HANDLERS
     CancelSendHandler                      fffff80ae96122c0  bp
 ```
 
-入力、SendNetBufferListsHandler でブレークポイントを設定した後、 **g**デバッグ対象のターゲット コンピューターを実行し、ブレークポイントにヒットさせるコマンド。
+SendNetBufferListsHandler にブレークポイントを設定した後、 **g**コマンドを入力して、デバッグ対象対象コンピューターが実行されるようにし、ブレークポイントにヒットします。
 
 ```console
 0: kd> bp fffff80ae9611870
@@ -96,9 +96,9 @@ Breakpoint 0 hit
 fffff80a`e9611870 4053            push    rbx
 ```
 
-ここで、ミニドライバーの SendNetBufferListsHandler ブレークポイントをヒットした後の表示できます NBLs 保留中のミニポートを入力して、 **! ndiskd.pendingnbls-処理**ミニポートのハンドルを持つコマンド。
+これで、ミニドライバーの SendNetBufferListsHandler ブレークポイントに達した後、ミニポートのハンドルを使用して **! ndiskd pendingnbls**コマンドを入力することで、ミニポートの保留中の NBLs を確認できます。
 
-**注**  トラフィックがミニポートのデータパス経由で流れているように、ブレークポイントをヒットしたときにこの例では、デバッグ対象のターゲット コンピューターで web ページが読み込み。 そのため、保留中の NBL を送信する必要があります。 NBL ハンドラーの 1 つ以上で、ミニドライバーのブレークポイントを設定した後でも見えないことがあります、保留中の NBLs データパスにアクティビティが存在しない場合。
+この例のデバッグ対象ターゲットコンピューターは、ブレークポイントにヒットしたときに web ページを読み込んでいたので、ミニポートのデータパスを経由してトラフィックが流れています **。  ** そのため、保留中の NBL が送信されました。 ミニドライバーの1つ以上の NBL ハンドラーにブレークポイントを設定した後でも、データパスにアクティビティがない場合は、保留中の NBLs が表示されないことがあります。
 
  
 
@@ -116,24 +116,24 @@ PHASE 3/3: Found 1 pending NBL(s) of 4817 total NBL(s).
 Search complete.
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
 
-[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
+[ **! ndiskd ミニドライバー**](-ndiskd-minidriver.md)
 
 [**bp、bu、bm (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)
 

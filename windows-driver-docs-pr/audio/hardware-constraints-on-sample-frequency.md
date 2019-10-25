@@ -3,19 +3,19 @@ title: サンプル周波数に対するハードウェアの制約
 description: サンプル周波数に対するハードウェアの制約
 ms.assetid: e0041fd9-073c-4779-a3cf-6d0527ba847b
 keywords:
-- サンプル周波数制約 WDK オーディオ
-- 制約のサンプル周波数 WDK オーディオ
-- ハードウェアの制約の WDK オーディオ
-- 頻度の制約の WDK オーディオ
-- 交差部分のデータ ハンドラー WDK オーディオ、サンプル周波数制約
+- サンプル頻度制約 WDK オーディオ
+- サンプル頻度 WDK オーディオを制限する
+- ハードウェア制約 WDK オーディオ
+- 頻度の制約 WDK オーディオ
+- データ交差ハンドラー WDK audio、サンプル頻度制約
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a931f26852294a9405b62e869ded796b67ee816
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 81a1141ee10b40d1b16ac058af9517fb2d4a020e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360009"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831223"
 ---
 # <a name="hardware-constraints-on-sample-frequency"></a>サンプル周波数に対するハードウェアの制約
 
@@ -23,11 +23,11 @@ ms.locfileid: "67360009"
 ## <span id="hardware_constraints_on_sample_frequency"></span><span id="HARDWARE_CONSTRAINTS_ON_SAMPLE_FREQUENCY"></span>
 
 
-一部のオーディオ デバイスでは、アダプターのフィルターのシンクの暗証番号 (pin) のサンプル周波数がデジタル出力ポートまたはマイクからの入力ストリームの頻度と一致している必要があります。 たとえば、サウンド Blaster 16 と互換性のあるハードウェアでは、通常、1 つ crystal、同じクロック速度で実行する、入力と出力ストリームに制限があります。 そのさまざまなオンボードのオーディオ ストリームは、複数のクロック速度をサポートできるアダプターは、いくつかの小さな数を別のクロック速度の数を制限するまだ必要があります。
+一部のオーディオデバイスでは、アダプターフィルターのシンク pin のサンプル周波数が、デジタル出力ポートの周波数またはマイクからの入力ストリームと一致している必要があります。 たとえば、Sound Blaster 16 と互換性のあるハードウェアには、通常、1つの crystal があり、入力ストリームと出力ストリームは同じクロックレートで実行されるように制限されています。 さまざまなオンボードオーディオストリームに対して複数のクロックレートをサポートできるアダプターでも、異なるクロックレートの数をいくつかの小さな数値に制限する必要がある場合があります。
 
-これらの理由から、アダプターのドライバーは、サンプル周波数のオンボードの別のストリームの一致するように 1 つのオンボード ストリームを制限する必要があります。 サウンド Blaster の 16 と互換性のあるアダプターからアダプターのシンクの暗証番号 (pin) のサンプル周波数が出力されるラッチのクロック速度を一致が必要などの Dac。
+このような理由から、アダプタードライバーでは、1つのオンボードストリームでサンプル頻度を制限して、別のオンボードストリームと一致させることが必要になる場合があります。 たとえば、Sound Blaster 16 互換アダプターでは、アダプターのシンク pin のサンプル周波数が、出力 Dac でのラッチのクロックレートと一致している必要があります。
 
-以前は、KMixer で説明したようでは、Windows Server 2003、Windows XP、Windows 2000、および Windows システム ミキサーをサイトに問題は 98/。 KMixer のソースの暗証番号 (pin) がアダプターのシンクのピンに接続しているときに KMixer は、アダプターを呼び出す必要があります**SetFormat**メソッド (たとえばを参照してください[ **IMiniportWavePciStream::SetFormat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setformat))その入力のオーディオ ストリームの最も高い頻度のサンプルと一致する接続のサンプル周波数を調整します。 場合は、アダプターは、頻度を変更することはおそらく--オンボード他のストリームのクロック速度に制限があるため、停止する可能性が、 **SetFormat**呼び出します。 詳細を KMixer が応答するこの例では、 **SetFormat**呼び出しが成功するまで、連続して低いサンプル周波数を使用した呼び出し。 KMixer 削減サンプル周波数がもやや後に、サンプル ダウン頻度の高い、入力ストリームそれに応じて。
+既に説明したように、KMixer は、Windows Server 2003、Windows XP、Windows 2000、および Windows Me/98 のシステムミキサーです。 KMixer のソース pin がアダプターのシンク pin に接続されている場合、KMixer は、アダプターの**setformat**メソッド (たとえば、 [**IMiniportWavePciStream:: setformat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-setformat)を参照) を呼び出して、接続でのサンプル頻度を調整し、入力時のオーディオストリームの最大サンプル周波数。 アダプターが周波数を変更できない場合 (他のオンボードストリームのクロックレートによって制限されている場合など)、 **Setformat**呼び出しが失敗する可能性があります。 この場合、KMixer は、呼び出しが成功するまで、より小さなサンプル周波数でより多くの**Setformat**呼び出しを行うことで応答します。 KMixer が低サンプル頻度で決済されると、それに応じて、より高い頻度の入力ストリームがサンプリングされます。
 
  
 

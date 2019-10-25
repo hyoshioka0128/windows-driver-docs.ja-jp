@@ -3,25 +3,25 @@ title: オーディオ データ形式
 description: オーディオ データ形式
 ms.assetid: e16c10ea-0193-4cf4-91a3-4f8d4a0d5cf6
 keywords:
-- データ形式の WDK オーディオ
-- WDK のオーディオ、データを書式設定します。
-- オーディオ データ形式 WDK
+- データ形式 WDK オーディオ
+- WDK オーディオ、データをフォーマットします
+- WDK のオーディオデータ形式
 - wave ストリーム WDK オーディオ
-- デジタル形式の WDK オーディオ
-- ストリーム形式の WDK オーディオ
-- KS データ形式の WDK オーディオ
+- デジタル形式 WDK オーディオ
+- WDK オーディオのストリーム形式
+- KS データ形式 WDK オーディオ
 - KSDATAFORMAT 構造体
-- オーディオ データ形式の WDM WDK
-- WDK のオーディオを形式します。
-- データ形式のオーディオ データ形式の詳細については、WDK オーディオ
+- WDM オーディオデータ形式 WDK
+- WDK オーディオをフォーマットします
+- データ形式 WDK オーディオ、オーディオデータ形式について
 ms.date: 02/15/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f6d9fff6d993d9fba7a671ec41f014d9d6391b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff9d0612bcd7149b8c0159ce25d3c547107bd452
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355734"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831909"
 ---
 # <a name="audio-data-formats"></a>オーディオ データ形式
 
@@ -29,23 +29,23 @@ ms.locfileid: "67355734"
 ## <span id="audio_data_formats"></span><span id="AUDIO_DATA_FORMATS"></span>
 
 
-Wave オーディオ ストリームのデータ形式を指定する、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)構造がいずれかですぐにその後に、 [ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または[ **KSDSOUND\_BUFFERDESC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdsound_bufferdesc)構造体、および**指定子**KSDATAFORMAT のメンバーは、次のいずれかに設定に応じて2 つの値。
+Wave オーディオストリームのデータ形式を指定するには、 [**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)構造体の直後に[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または[**KSDSOUND\_bufferdesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdsound_bufferdesc)構造体を指定します。 KSDATAFORMAT の**指定子**メンバーはです。それに応じて、次の2つの値のいずれかに設定されます。
 
 -   KSDATAFORMAT\_指定子\_WAVEFORMATEX
 
-    Wave ストリーム、waveIn または waveOut アプリケーションによって使用されているデータ形式が属していることを示します。 この場合は場合、KSDATAFORMAT 構造体の*FormatSize*十分では、次のデータ形式指定子 KSDATAFORMAT 構造は WAVEFORMATEX 構造。
+    WaveIn または waveOut アプリケーションによって使用されている wave ストリームにデータ形式が属していることを示します。 この場合、KSDATAFORMAT 構造体の*Formatsize*が十分な大きさであれば、KSDATAFORMAT 構造体の後のデータ形式指定子は WAVEFORMATEX 構造体になります。
 
 -   KSDATAFORMAT\_指定子\_DSOUND
 
-    DirectSound アプリケーションによって使用されている wave ストリームにデータ形式が属していることを示します。 ここでは、KSDATAFORMAT 構造を次のデータ形式指定子を KSDSOUND\_BUFFERDESC 構造体、WAVEFORMATEX 埋め込み構造体が含まれています。
+    DirectSound アプリケーションによって使用されている wave ストリームにデータ形式が属していることを示します。 この場合、KSDATAFORMAT 構造体の後のデータ形式指定子は、埋め込み WAVEFORMATEX 構造体を含む KSDSOUND\_BUFFERDESC 構造体です。
 
-[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造 KSDATAFORMAT 構造とそれに続く WAVEFORMATEX 構造の両方をカプセル化します。 同様に、 [ **KSDATAFORMAT\_DSOUND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound)構造 KSDATAFORMAT 構造と、DSOUND の両方をカプセル化\_それに続く BUFFERDESC 構造体。
+[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造体は、KSDATAFORMAT 構造体とそれに続く WAVEFORMATEX 構造体の両方をカプセル化します。 同様に、 [**KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)構造体は、KSDATAFORMAT 構造体と、それに続く DSOUND\_bufferdesc 構造体の両方をカプセル化します。
 
-いずれかの KSDATAFORMAT\_WAVEFORMATEX または KSDATAFORMAT\_DSOUND、構造体の最後の項目は、埋め込み WAVEFORMATEX 構造体; KSDATAFORMAT 場合\_DSOUND、WAVEFORMATEX 構造に含まれている、埋め込み DSOUND\_BUFFERDESC 構造体。 先頭にある可能性がありますいずれの場合も、WAVEFORMATEX 構造、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造体の場合、 **wFormatTag** WAVEFORMATEX のメンバーの設定WAVE 値に\_形式\_拡張可能です。 詳細については、次を参照してください。 [Wave 形式の拡張可能な記述子](extensible-wave-format-descriptors.md)します。
+KSDATAFORMAT\_WAVEFORMATEX または KSDATAFORMAT\_DSOUND では、構造体の最後の項目は埋め込みの WAVEFORMATEX 構造体です。KSDATAFORMAT\_DSOUND の場合、WAVEFORMATEX 構造体は、埋め込みの DSOUND\_BUFFERDESC 構造体に含まれています。 どちらの場合も、WAVEFORMATEX 構造体は[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)構造体の先頭になることがあります。この場合、WAVEFORMATEX の**wFormatTag**メンバーは、値の WAVE\_形式\_拡張可能に設定されます。 詳細については、「[拡張 Wave 形式記述子](extensible-wave-format-descriptors.md)」を参照してください。
 
-MIDI ストリームまたは DirectMusic ストリームのデータ形式を指定するには KSDATAFORMAT 構造で十分です。その他の情報に続くされません。
+MIDI ストリームまたは DirectMusic ストリームのデータ形式を指定するには、KSDATAFORMAT 構造体で十分です。その後に追加情報はありません。
 
-Wave と DirectSound データ形式の例については、次を参照してください。 [PCM Stream データ形式](pcm-stream-data-format.md)と[DirectSound Stream データ形式](directsound-stream-data-format.md)します。 MIDI と DirectMusic データ形式の例については、次を参照してください。 [MIDI Stream データ形式](midi-stream-data-format.md)と[DirectMusic Stream データ形式](directmusic-stream-data-format.md)します。
+Wave および DirectSound データ形式の例については、「 [PCM ストリームデータ形式](pcm-stream-data-format.md)」と「 [Directsound ストリームのデータ形式](directsound-stream-data-format.md)」を参照してください。 MIDI と DirectMusic のデータ形式の例については、「 [Midi ストリームのデータ](midi-stream-data-format.md)形式」と「 [Directmusic ストリームのデータ形式](directmusic-stream-data-format.md)」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_全般\_COMPONENTID
-description: KSPROPERTY\_全般\_COMPONENTID プロパティは、省略可能なプロパティにより、クライアントは KSCOMPONENTID 構造体に格納されているコンポーネントの一般的な情報にアクセスします。
+title: KSK プロパティ\_GENERAL\_COMPONENTID
+description: KSK プロパティ\_GENERAL\_COMPONENTID プロパティは、クライアントが KSCOMPONENTID 構造体に格納されている一般的なコンポーネント情報にアクセスできるようにするオプションのプロパティです。
 ms.assetid: fbbdf3f6-c71a-4a6d-ba15-ec7b7bdc1e0e
 keywords:
-- KSPROPERTY_GENERAL_COMPONENTID ストリーミング メディア デバイス
+- KSPROPERTY_GENERAL_COMPONENTID ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 866414c5c0ded0200ac59971e9425a57af2134c9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 26f8a692ea075b632fa387e035076e5d97f06728
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354819"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838052"
 ---
-# <a name="kspropertygeneralcomponentid"></a>KSPROPERTY\_全般\_COMPONENTID
+# <a name="ksproperty_general_componentid"></a>KSK プロパティ\_GENERAL\_COMPONENTID
 
 
-KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティに格納されているコンポーネントの一般的な情報にアクセスするクライアントを許可する、 [ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)構造体。
+KSK プロパティ\_GENERAL\_COMPONENTID プロパティは、クライアントが[**KSCOMPONENTID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)構造体に格納されている一般的なコンポーネント情報にアクセスできるようにするオプションのプロパティです。
 
 ## <span id="ddk_ksproperty_general_componentid_ks"></span><span id="DDK_KSPROPERTY_GENERAL_COMPONENTID_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid" data-raw-source="[&lt;strong&gt;KSCOMPONENTID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)"><strong>KSCOMPONENTID</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid" data-raw-source="[&lt;strong&gt;KSCOMPONENTID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)"><strong>KSCOMPONENTID</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 <a name="remarks"></a>注釈
 -------
 
-[ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)構造の GUID 値に含まれる**製造元**、**製品**、**コンポーネント**、および**名前**します。 ULONG の値が含まれている**バージョン**と**リビジョン**します。
+[**KSCOMPONENTID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)構造体には、**製造元**、**製品**、**コンポーネント**、および**名前**の GUID 値が含まれています。 **バージョン**と**リビジョン**の ULONG 値が含まれています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSCOMPONENTID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)
+[**KSCOMPONENTID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)
 
  
 

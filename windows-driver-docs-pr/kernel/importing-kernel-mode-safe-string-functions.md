@@ -3,20 +3,20 @@ title: カーネルモード セーフ文字列関数のインポート
 description: カーネルモード セーフ文字列関数のインポート
 ms.assetid: f1cee7e0-151b-4e03-bf4d-400f328083fa
 keywords:
-- 安全な文字列関数をインポートします。
-- インライン安全な文字列関数のバージョンの WDK カーネル
-- ライブラリ安全な文字列関数のバージョンの WDK カーネル
-- バイト カウント関数 WDK カーネル
-- 関数の文字カウント WDK カーネル
-- WDK の安全な文字列関数
+- 安全な文字列関数のインポート
+- インラインセーフ文字列関数バージョン WDK カーネル
+- ライブラリの安全な文字列関数のバージョン WDK カーネル
+- バイトカウント関数 WDK カーネル
+- 文字カウント関数 WDK カーネル
+- 安全な文字列関数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aeddeea0d159ece37d624c28af2966ca1c4fb0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4cb386f4c92bbcc2133be9ca330464af2d4547c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369801"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828308"
 ---
 # <a name="importing-kernel-mode-safe-string-functions"></a>カーネルモード セーフ文字列関数のインポート
 
@@ -24,56 +24,56 @@ ms.locfileid: "67369801"
 
 
 
-以降 Windows XP では、カーネル モードの文字列を安全なライブラリは Ntstrsafe.h ヘッダー ファイルで定義されているインライン関数のコレクションとして使用できます。
+Windows XP 以降では、カーネルモードのセーフ文字列ライブラリは、、Ntstrsafe.h ヘッダーファイルで定義されているインライン関数のコレクションとして使用できます。
 
-### <a href="" id="to-use-the-inline-versions-of-the-kernel-mode--safe-string-functions"></a>カーネル モードの安全な文字列関数を使用するには
+### <a href="" id="to-use-the-inline-versions-of-the-kernel-mode--safe-string-functions"></a>カーネルモードの安全な文字列関数を使用するには
 
-ように、ヘッダー ファイルが含まれます。
+次に示すように、ヘッダーファイルをインクルードします。
 
 ```cpp
 #include <ntstrsafe.h>
 ```
 
-だけのバイト数または安全な文字列の文字カウント関数のみに使用可能なを作成できます。
+バイトカウントのみを使用できます。または、文字がカウントされた安全な文字列関数だけを使用できます。
 
-### <a name="to-allow-only-byte-counted-functions"></a>バイト カウント関数のみを許可するには
+### <a name="to-allow-only-byte-counted-functions"></a>バイトカウント関数のみを許可するには
 
-Ntstrsafe.h ヘッダー ファイルをインクルードする前に、コードで次の行を含めます。
+、Ntstrsafe.h ヘッダーファイルをインクルードする前に、コードに次の行を追加します。
 
 ```cpp
 #define NTSTRSAFE_NO_CCH_FUNCTIONS
 ```
 
-### <a name="to-allow-only-character-counted-functions"></a>関数の文字カウントのみを許可するには
+### <a name="to-allow-only-character-counted-functions"></a>文字カウント関数のみを許可するには
 
-Ntstrsafe.h ヘッダー ファイルをインクルードする前に、コードで次の行を含めます。
+、Ntstrsafe.h ヘッダーファイルをインクルードする前に、コードに次の行を追加します。
 
 ```cpp
 #define NTSTRSAFE_NO_CB_FUNCTIONS
 ```
 
-NTSTRSAFE いずれかを定義することができます\_いいえ\_CB\_関数または NTSTRSAFE\_いいえ\_CCH\_両方ではなく、機能します。
+、NTSTRSAFE.H\_NO\_CB\_FUNCTIONS または\_、NTSTRSAFE.H を定義して、\_CCH\_関数を使用することはできませんが、両方を定義することはできません。
 
-行うことができます、 [ **UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)関数を使用できない構造体します。
+[**UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)構造関数を使用できないようにすることができます。
 
-### <a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>UNICODE に\_文字列構造体の関数が使用できません。
+### <a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>UNICODE\_文字列構造体関数を使用できないようにするには
 
-Ntstrsafe.h ヘッダー ファイルをインクルードする前に、コードで次の行を含めます。
+、Ntstrsafe.h ヘッダーファイルをインクルードする前に、コードに次の行を追加します。
 
 ```cpp
 #define NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 ```
 
-任意の ANSI または Unicode 文字列に含めることができる文字の最大数は NTSTRSAFE\_最大\_CCH します。 文字の最大数、 **UNICODE\_文字列**構造に含めることができますが NTSTRSAFE\_UNICODE\_文字列\_最大\_CCH します。 これらの定数は、Ntstrsafe.h で定義されます。
+ANSI または Unicode 文字列に含めることができる最大文字数は、、NTSTRSAFE.H\_MAX\_CCH です。 **Unicode\_文字列**構造に含めることができる最大文字数は、、NTSTRSAFE.H\_UNICODE\_STRING\_MAX\_cch です。 これらの定数は、、Ntstrsafe.h で定義されています。
 
-ドライバーが NTSTRSAFE に小さい値を割り当てることができます\_最大\_CCH と NTSTRSAFE\_UNICODE\_文字列\_最大\_インクルードする前に、コードで、次の行を含めることによって CCHNtstrsafe.h します。
+ドライバーでは、、Ntstrsafe.h を含める前に次の行をコードに含めることにより、、NTSTRSAFE.H\_MAX\_CCH および、NTSTRSAFE.H\_UNICODE\_STRING\_MAX\_CCH に小さい値を割り当てることができます。
 
 ```cpp
 #define NTSTRSAFE_MAX_CCH  <new-value>
 #define NTSTRSAFE_UNICODE_STRING_MAX_CCH  <new-value>
 ```
 
-Ntstrsafe.h ディレクティブは、新しい値が既定値を超えていないことを確認します。
+、Ntstrsafe.h のディレクティブは、新しい値が既定値よりも大きくないことを確認します。
 
  
 

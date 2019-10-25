@@ -3,44 +3,44 @@ title: ビデオ キャプチャおよびその他の子デバイスのサポー
 description: ビデオ キャプチャおよびその他の子デバイスのサポート
 ms.assetid: 15575700-7525-459e-a099-158f0c13899c
 keywords:
-- ビデオ キャプチャ WDK の表示
-- WDK のビデオ ディスプレイのキャプチャ
-- インターフェイスの WDK の表示
-- 子ビデオ キャプチャ ドライバー WDK を表示します。
-- MDLs WDK の表示
-- メモリの記述子には、WDK の表示が一覧表示されます。
-- キャプチャ WDK 表示バッファー
-- ドライバー モデル WDK Windows Vista では、子のビデオ キャプチャ ドライバーの表示します。
-- Windows Vista のディスプレイ ドライバー モデル WDK、子のビデオ キャプチャ ドライバー
+- ビデオキャプチャの WDK ディスプレイ
+- キャプチャビデオの WDK ディスプレイ
+- インターフェイス WDK 表示
+- 子ビデオキャプチャドライバーの WDK ディスプレイ
+- MDLs WDK 表示
+- メモリ記述子の一覧 WDK 表示
+- キャプチャバッファーの WDK 表示
+- ディスプレイドライバーモデル WDK Windows Vista、子ビデオキャプチャドライバー
+- Windows Vista display driver model WDK、子ビデオキャプチャドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2acc87ecba4885c27d68ce7bec36895288215c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1eefa7fffe1692cdbb2a731e79dd85205a498ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361202"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825558"
 ---
 # <a name="supporting-video-capture-and-other-child-devices"></a>ビデオ キャプチャおよびその他の子デバイスのサポート
 
 
-ディスプレイのミニポート ドライバーとのビデオ キャプチャ デバイスまたは別の子デバイス ドライバーでは、子ドライバーは、親のミニポート ドライバーを介してそのデバイスとの通信に使用できるプライベート インターフェイスを相互に定義できます。 子のビデオ キャプチャ ドライバーは、親の表示のミニポート ドライバーに密に結合する必要があります。 実際には、ビデオ キャプチャは、場合によって、ディスプレイのミニポート ドライバーの一部として実装できます。 ビデオ キャプチャ ドライバーにアクセスする、ディスプレイのミニポート ドライバーでプライベート インターフェイスを使用することができます、 *I2C*バスと他の目的です。
+ビデオキャプチャデバイスまたは別の子デバイスの表示ミニポートドライバーとドライバーでは、子ドライバーが親ミニポートドライバーを介してそのデバイスと通信するために使用できるプライベートインターフェイスを相互に定義できます。 子ビデオキャプチャドライバーは、親ディスプレイミニポートドライバーに密に結合されている必要があります。 実際、ビデオキャプチャは、ディスプレイミニポートドライバーの一部として実装される可能性があります。 ビデオキャプチャドライバーは、ディスプレイミニポートドライバーと共にプライベートインターフェイスを使用して、 *I2C*バスにアクセスしたり、その他の目的に使用したりできます。
 
-ビデオ キャプチャ ドライバーの送信、プライベート インターフェイスを初期化するために、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)ディスプレイ ポート ドライバー (の一部への要求*Dxgkrnl.sys*) 表示のミニポート ドライバーにします。 ミニポート ドライバーのポートのディスプレイ ドライバーは、このような要求を受信した後に呼び出す[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数し、へのポインターを渡す、 [**クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_query_interface)プライベート インターフェイスを初期化するために情報を含む構造体。
+プライベートインターフェイスを初期化するために、ビデオキャプチャドライバーは、ディスプレイミニポートドライバーのディスプレイポートドライバー ( *Dxgkrnl*の一部) に[ **\_インターフェイス要求\_の IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)を送信します。 表示ポートドライバーは、このような要求を受信した後、ミニポートドライバーの[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数を呼び出し、プライベートインターフェイスを初期化するための情報を含む[**クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_query_interface)構造体にポインターを渡します.
 
-**注**  ビデオ キャプチャは、ディスプレイのミニポート ドライバーの一部として実装されている場合、ビデオのキャプチャが呼び出すことができます*DxgkDdiQueryInterface*直接します。
+ビデオキャプチャがディスプレイミニポートドライバーの一部として実装されている場合、ビデオキャプチャは*DxgkDdiQueryInterface*を直接**呼び出すことが**あります。  
 
  
 
-子デバイス (ビデオ キャプチャ デバイスを含む) の各ドライバーでは、アダプターのデバイスに関連付けられているハードウェアを示す GUID を返す必要があります。 ディスプレイのミニポート ドライバーに GUID が指定されたアダプター、 **AdapterGuid**のメンバー、 [ **DXGK\_開始\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_start_info)構造体指す、 *DxgkStartInfo*のパラメーター、 [ **DxgkDdiStartDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)アダプターが初期化されるときに送信される関数。 ユーザー モード キャプチャ コンポーネントは、ディスプレイ アダプターにこのアダプターの GUID を後でマップできます。
+子デバイス (ビデオキャプチャデバイスを含む) の各ドライバーは、デバイスが関連付けられているハードウェアを示すアダプターの GUID を返す必要があります。 アダプター GUID は、 [**DxgkDdiStartDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)の*DxgkStartInfo*パラメーターによってポイントされる[**DXGK\_START\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_start_info)構造体の**adapterguid**メンバーのディスプレイミニポートドライバーに提供されます。アダプターが初期化されるときに送信される関数。 ユーザーモードのキャプチャコンポーネントは、後でこのアダプターの GUID をディスプレイアダプターにマップできます。
 
-Microsoft Windows 2000 Display Driver Model の構造および送信のビデオに MDLs ドライバーをキャプチャします。 システム メモリへのキャプチャをサポートしているだけでなく、Windows Vista のディスプレイ ドライバー モデルは、ビデオ メモリをキャプチャをサポートします。 Direct3D ランタイムでは、キャプチャ データの後処理を実行する GPU に出力するための DirectX ビデオ アクセラレータ 2.0 型の関数を呼び出します。 ビデオ メモリ バッファーを記述する MDLs を送信する代わりに、ユーザー モードのディスプレイ ドライバーが D3DKMT を送信\_バッファーの割り当てをキャプチャするハンドルをハンドル型の値。 ビデオ キャプチャ ドライバーと表示のミニポート ドライバーの組み合わせがなどの既存のコールバック関数を使用するため、 [ **DxgkCbGetHandleData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata)キャプチャを説明するプライベート データを参照するにはバッファー。 ドライバーの組み合わせを使用することも、 [ **DxgkCbGetCaptureAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_getcaptureaddress)キャプチャ バッファーの物理アドレスを返すコールバック関数。
+Microsoft Windows 2000 Display Driver モデル構造では、MDLs がビデオキャプチャドライバーに送信されます。 Windows Vista display driver model は、システムメモリへのキャプチャをサポートするだけでなく、ビデオメモリへのキャプチャをサポートしています。 Direct3D ランタイムは、DirectX Video 加速度 2.0-type 関数を呼び出して、キャプチャデータに対して後処理を実行するように GPU に指示します。 ビデオメモリバッファーを記述するために MDLs を送信する代わりに、ユーザーモードの表示ドライバーは、バッファー割り当てをキャプチャするハンドルである D3DKMT\_ハンドル型の値を送信します。 このため、ビデオキャプチャドライバーとディスプレイミニポートドライバーの組み合わせでは、 [**DxgkCbGetHandleData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata)などの既存のコールバック関数を使用して、キャプチャバッファーを記述するプライベートデータを参照できます。 ドライバーの組み合わせでは、 [**DxgkCbGetCaptureAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_getcaptureaddress) callback 関数を使用してキャプチャバッファーの物理アドレスを返すこともできます。
 
-ビデオ キャプチャ アプリケーション キャプチャ バッファーを作成する Direct3D の実行時に呼び出すランタイムは、その後、ユーザー モードのディスプレイ ドライバーを呼び出します。 共通言語ランタイムは、ユーザー モードのディスプレイ ドライバーの[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数と、 **CaptureBuffer**フラグのビット フィールドを設定、**フラグ**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)キャプチャ バッファーを作成する構造体。 ディスプレイのミニポート ドライバーを指定する必要がありますも、**キャプチャ**メモリ マネージャーは、ディスプレイ ミニポート ドライバーを呼び出すときに、ビデオ メモリ マネージャーのフラグをビット フィールド[ **DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)キャプチャ バッファーの割り当てを作成する関数。 キャプチャ バッファーを作成するがすぐにピン留めされているメモリ内と、リリースされるまではピンを外したはないです。 共通言語ランタイムは、ユーザー モードのディスプレイ ドライバーのキャプチャのスタックは、キャプチャ ドライバーに、キャプチャ バッファーのカーネル モードの割り当てのハンドルを送信する必要があります、ため[ **GetCaptureAllocationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaptureallocationhandle)各リソース ハンドルをそのリソースのカーネル モード割り当てハンドルにマップする関数。
+ビデオキャプチャアプリケーションは、Direct3D ランタイムを呼び出してキャプチャバッファーを作成します。その後、ランタイムはユーザーモードの表示ドライバーを呼び出します。 ランタイムは、 [**D3DDDIARG\_createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体の**Flags**メンバーに設定された**CaptureBuffer**ビットフィールドフラグを使用して、ユーザーモードの display ドライバーの[**createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数を呼び出し、キャプチャバッファーを作成します。 また、メモリマネージャーがディスプレイミニポートドライバーの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数を呼び出してキャプチャバッファーの割り当てを作成するときに、video memory manager の [ビットフィールドの**キャプチャ**] フラグも指定する必要があります. キャプチャバッファーが作成されると、それらはすぐにメモリに固定され、解放されるまで固定解除されません。 キャプチャスタックはキャプチャバッファーのカーネルモード割り当てハンドルをキャプチャドライバーに送信する必要があるため、ランタイムはユーザーモードの表示ドライバーの[**GetCaptureAllocationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaptureallocationhandle)関数を呼び出して、各リソースハンドルをカーネルモードにマップします。そのリソースの割り当てハンドル。
 
-キャプチャ ドライバーでは、システム メモリへの直接キャプチャをサポートするかどうかを報告できます。 キャプチャ ドライバーでは、システム メモリに直接キャプチャをサポートする場合、MDLs がこの目的のため、キャプチャ ドライバーに送信されます。 キャプチャ ドライバーがシステム メモリへの直接のキャプチャをサポートしていない場合は、ランタイムは、キャプチャ バッファー ビデオ メモリを作成し、キャプチャ ドライバーが入力する必要があります。 ユーザー モードのディスプレイ ドライバーの[ **CaptureToSysMem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_capturetosysmem)をシステム メモリの画面キャプチャ バッファーの内容をコピーする関数が呼び出されます。 ランタイムを使用できます*CaptureToSysMem*なく[ **Blt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)活用するために特殊なハードウェア ビット ブロック転送 (bitblt) を必要としない関数ユーザー モード ドライバーの呼び出しを表示する、 [ **pfnRenderCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)関数。
+キャプチャドライバーは、システムメモリへのキャプチャを直接サポートしているかどうかを報告できます。 キャプチャドライバーがシステムメモリへの直接キャプチャをサポートしている場合は、この目的のために MDLs がキャプチャドライバーに送信されます。 キャプチャドライバーがシステムメモリへの直接キャプチャをサポートしていない場合、ランタイムはビデオメモリキャプチャバッファーを作成し、キャプチャドライバーはそれらを格納する必要があります。 ユーザーモードの表示ドライバーの[**CaptureToSysMem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_capturetosysmem)関数を呼び出して、キャプチャバッファーの内容をシステムのメモリ領域にコピーします。 ランタイムは、 [**Blt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)関数ではなく*CaptureToSysMem*を使用して、ビットブロック転送 (bitblt) 用の特殊なハードウェアを利用できます。これにより、ユーザーモードの Display ドライバーが[**pfnrendercb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)関数を呼び出す必要がありません。
 
-AVStream ビデオ キャプチャを制御するため、DirectX グラフィックスのカーネル サブシステムはビデオ キャプチャが発生したときの対応ではありません。 ただし、グラフィックス カーネル サブシステムは、キャプチャ バッファーとして使用される割り当てに注意してください。 グラフィックスのカーネルのサブシステムがディスプレイ ミニポート ドライバーを呼び出してキャプチャ バッファーは破棄されますが、 [ **DxgkDdiStopCapture** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_stopcapture)キャプチャ操作が必要かを示す関数割り当てを使用して、キャプチャ バッファーとしてすぐに停止します。 キャプチャ操作は、キャプチャのスタックを既に停止されていますが場合、ドライバーでは、呼び出しを無視してかまいません。
+AVStream はビデオキャプチャを制御するので、ビデオキャプチャが発生するタイミングを DirectX グラフィックスカーネルサブシステムが認識していません。 ただし、グラフィックスカーネルサブシステムは、キャプチャバッファーとして使用される割り当てを認識しています。 キャプチャバッファーを破棄しようとすると、グラフィックスカーネルサブシステムは、ディスプレイミニポートドライバーの[**DxgkDdiStopCapture**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_stopcapture)関数を呼び出して、キャプチャ操作がキャプチャバッファーとしての割り当ての使用をすぐに停止する必要があることを示します。 キャプチャ操作がキャプチャスタックを介して既に停止している場合、ドライバーはその呼び出しを無視しても安全です。
 
  
 

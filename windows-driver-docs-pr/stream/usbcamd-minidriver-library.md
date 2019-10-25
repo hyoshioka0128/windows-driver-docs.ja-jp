@@ -3,53 +3,53 @@ title: USBCAMD ミニドライバー ライブラリ
 description: USBCAMD ミニドライバー ライブラリ
 ms.assetid: 4447bf3d-5eaa-4de7-96bb-22dae68b44eb
 keywords:
-- Windows 2000 カーネル ストリーミング モデル WDK、USBCAMD2 ミニドライバー ライブラリ
-- ストリーミング モデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバー ライブラリ
-- カーネル ストリーミング モデルの WDK、USBCAMD2 ミニドライバー ライブラリ
-- WDK Windows 2000 のカーネル ストリーミング USBCAMD2 ミニドライバー ライブラリ
-- USB ベースのストリーミング カメラ WDK USBCAMD2
+- Windows 2000 カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- ストリーミングモデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバーライブラリ
+- カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- USBCAMD2 ミニドライバー library WDK Windows 2000 カーネルストリーミング
+- USB ベースのストリーミングカメラの WDK USBCAMD2
 - カメラ WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b49a397adcd4ba4a22567b7979b408443cedda3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b926488600223a4bcc974937304b43ed51c3926
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383125"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827367"
 ---
 # <a name="usbcamd-minidriver-library"></a>USBCAMD ミニドライバー ライブラリ
 
 
-USBCAMD2 は、ストリーミングのカメラを USB ベースのドライバーの開発を簡素化するカーネル モード ミニドライバー ライブラリです。 Stream クラスを使用して USBCAMD2 ミニドライバー ライブラリ インターフェイス (*stream.sys*) と、USB バス ドライバーのカメラのプロパティと画像処理のサポートの実装に専念できるようにします。
+USBCAMD2 は、USB ベースのストリーミングカメラのドライバー開発を簡素化するカーネルモードのミニドライバーライブラリです。 USBCAMD2 ミニドライバーライブラリは、ストリームクラス ( *.sys*) と USB バスドライバーを使用してインターフェイスを作成し、カメラのプロパティとイメージ処理のサポートの実装に専念できるようにします。
 
-Microsoft は、元の USBCAMD ミニドライバー ライブラリで、Microsoft Windows 98 ドライバー開発キット (DDK) をリリースしました。 元のライブラリは、Windows Server 2003、Windows XP、および Windows 2000 Ddk、Windows Driver Kit (WDK) で USBCAMD2 に更新されました。 USBCAMD2 追加[の新機能](usbcamd2-features.md)ピンが引き続きサポートを提供する power (休止状態) などの管理と拡張のバージョンの元の Api。
+Microsoft は、Microsoft Windows 98 Driver Development Kit (DDK) を使用して、元の USBCAMD ミニドライバーライブラリをリリースしました。 元のライブラリは、windows Server 2003、Windows XP、および Windows 2000 DDKs および windows Driver Kit (WDK) の USBCAMD2 に更新されました。 USBCAMD2 には、引き続き pin、電源管理 (休止状態など)、および元の Api の拡張バージョンをサポートする[新機能](usbcamd2-features.md)が追加されています。
 
-Microsoft のもの提供、USBCAMD2 ミニドライバー ライブラリだけでなく、 [USB ビデオ クラス (UVC) ドライバー](usb-video-class-driver.md) USB ベースのカメラをサポートするためにします。 UVC は、USBCAMD2 で機能のスーパー セットをサポートします。 新しいすべてのハードウェア開発の UVC ドライバーを使用することをお勧めします。 ただし、UVC に準拠するハードウェアの設計を変更することはできません場合、USBCAMD2 ミニドライバーを作成する必要があります。
+Microsoft では、USBCAMD2 ミニドライバーライブラリに加えて、usb ベースのカメラをサポートするための[Usb ビデオクラス (UVC) ドライバー](usb-video-class-driver.md)も提供しています。 UVC は、USBCAMD2 の機能のスーパーセットをサポートしています。 Microsoft では、すべての新しいハードウェア開発に UVC ドライバーを使用することをお勧めします。 ただし、ハードウェア設計を UVC 準拠に変更できない場合は、USBCAMD2 ミニドライバーを作成する必要があります。
 
-ミニドライバー ライブラリは、維持、USB バスでストリームに関連付けられている開始、停止、同期、およびエラー回復の問題の処理が含まれると、デバイスから、USB バスでのデータ ストリームを管理します。 USBCAMD2 は、カーネル プロパティのサポートのストリーミング、代替の USB インターフェイスの設定、およびイメージの圧縮解除を選択すると、処理などのハードウェアの特定の操作を処理するためにベンダによって実装されたコールバック関数を呼び出します。
+ミニドライバーライブラリは、デバイスからの USB バス上のデータストリームを管理します。これには、USB バスでのストリームの保持に関連する開始、停止、同期、エラー回復の問題の処理が含まれます。 USBCAMD2 は、ベンダーが実装したコールバック関数を呼び出して、カーネルストリーミングプロパティのサポート、代替 USB インターフェイス設定の選択、イメージの展開と処理など、ハードウェア固有の操作を処理します。
 
-カメラのミニドライバーが責任を負います。
+カメラミニドライバーは次の役割を担います。
 
--   カーネルなどのプロパティをストリーミング用のサポートを実装する[PROPSETID\_しました\_ビデオ プロシージャ アンプ](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)と[PROPSETID\_しました\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol).
+-   [Propsetid\_VIDCAP\_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp) 、 [PROPSETID\_VIDCAP\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)などのカーネルストリーミングプロパティのサポートを実装しています。
 
--   データ ストリームが有効でありでカメラ ミニドライバーの現在または次のビデオ フレームの一部であるかどうかを決定する[ *CamProcessUSBPacketEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)コールバック関数。
+-   データストリームが有効であるかどうか、およびカメラミニドライバーの[*CamProcessUSBPacketEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)コールバック関数の現在または次のビデオフレームの一部であるかどうかを確認しています。
 
--   ストリームからビデオ フレームを抽出し、ビデオ フレームの処理を実行する前に、カメラのミニドライバーのでは、呼び出し元のアプリケーションに返されます[ *CamProcessRawVideoFrameEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)コールバック関数。
+-   カメラミニドライバーの[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex) callback 関数で、ストリームからビデオフレームを抽出し、ビデオフレームの処理を実行してから、そのビデオフレームが呼び出し元のアプリケーションに返されるようにします。
 
-元の USBCAMD ミニドライバー ライブラリとして Windows 98 ではサポートされて*usbcamd.sys*が Windows 2000 ではサポートされていません。 Windows 2000 で、後で、Windows Millennium Edition 以降で両方と USBCAMD2 はサポートされて*usbcamd.sysand usbcamd2.sys*します。 USBCAMD2 も USBCAMD ミニドライバーの元のライブラリは、64 ビット プラットフォームでサポートされます。
+元の USBCAMD ミニドライバーライブラリは、 *USBCAMD*として windows 98 でサポートされていますが、windows 2000 ではサポートされていません。 USBCAMD2 は、 *usbcamd と USBCAMD2*の両方として、windows 2000 以降および Windows Millennium Edition 以降でサポートされています。 64ビットプラットフォームでは、元の USBCAMD ミニドライバーライブラリも USBCAMD2 もサポートされていません。
 
-Windows 2000 以降と Windows Millennium Edition と以降のオペレーティング システムの場合は、カメラのベンダーがライブラリを使用 USBCAMD2 ミニドライバー、元のライブラリではなくカメラ ミニドライバーを開発します。
+Windows 2000 以降および Windows Millennium Edition 以降のオペレーティングシステムでは、カメラベンダーは、元のライブラリの代わりに USBCAMD2 ミニドライバーライブラリを使用して、カメラミニドライバーを開発する必要があります。
 
-使用することができます、 *usbintel*開始点としてカメラ ミニドライバーの例です。 このサンプルは、ドライバー開発キット (DDK) および Windows XP、Windows 7 (ビルド 7600) のように、Windows Driver Kit (WDK) で使用できます。 WDK には、このサンプルをインストールする*src\\wdm\\videocap\\usbintel* (これをインストールするオプションとして選択した) 場合。
+出発点として、 *usbintel* example camera ミニドライバーを使用できます。 このサンプルは、Driver Development Kit (DDK) と windows XP の windows Driver Kit (WDK) windows 7 (ビルド 7600) で入手できます。 WDK は、このサンプルを*src\\wdm\\videocap\\usbintel* (インストールするオプションとして選択されている場合) にインストールします。
 
 **その他のリソース**
 
-開発者の内容を理解する必要があります[カーネル ストリーミング](kernel-streaming.md)、[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)と[ビデオ キャプチャ デバイス](video-capture-devices.md)します。
+開発者は、[カーネルストリーミング](kernel-streaming.md)、[ストリーミングミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)、および[ビデオキャプチャデバイス](video-capture-devices.md)の資料を理解する必要があります。
 
-USB の仕様を含むその他の開発者については、次を参照してください。 [USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)します。
+USB 仕様など、開発者向けのその他の情報については、「 [usb (開発者](https://go.microsoft.com/fwlink/p/?linkid=8781))」の領域を参照してください。
 
-[全般]、またはコンシューマーは、次を参照してください。 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780)します。
+一般情報またはコンシューマー情報については、「 [USB 実装者フォーラム](https://go.microsoft.com/fwlink/p/?linkid=8780)」を参照してください。
 
  
 

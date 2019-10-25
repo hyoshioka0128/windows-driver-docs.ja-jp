@@ -1,9 +1,9 @@
 ---
 title: SendRNIDV2 関数
-description: SendRNIDV2 WMI メソッドは、バージョン 2 の RNID コマンドを指定されたポートに送信します。
+description: SendRNIDV2 WMI メソッドは、指定されたポートにバージョン 2 RNID コマンドを送信します。
 ms.assetid: ac9304b3-498b-4349-befd-529a4978bb52
 keywords:
-- 記憶装置の SendRNIDV2 関数
+- SendRNIDV2 function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f1e8d47913b215bba7052bf45d7b7411095934f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03c2970e4ac9ed95c2566d8a1852facae0d9502c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362662"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832019"
 ---
 # <a name="sendrnidv2-function"></a>SendRNIDV2 関数
 
 
-**SendRNIDV2** WMI メソッドは、指定されたポートにバージョン 2 RNID コマンドを送信します。
+**SendRNIDV2** WMI メソッドは、指定されたポートにバージョン 2 rnid コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,29 +46,29 @@ void SendRNIDV2(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNIDV2\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 *PortWWN*   
-バージョン 2 RNID コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)構造体。
+バージョン2の RNID コマンドの送信に使用されるローカルポートの世界規模の名前。 この情報は、構造体の[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)の**PortWWN**メンバーのミニポートドライバーに配信されます。
 
-*DestWWN*   
-接続先ポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **DestWWN**のメンバー、 [ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)構造体。
+*Destwwn*   
+宛先ポートの世界規模の名前。 この情報は、構造[**内の SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)の**destwwn**メンバーのミニポートドライバーに配信されます。
 
 *DestFCID*   
-接続先ポートのアドレス識別子。 この情報は、ミニポート ドライバーに配信される、 **DestFCID**のメンバー、 [ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)構造体。
+宛先ポートのアドレス識別子。 この情報は、構造体の[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)の**DestFCID**メンバーのミニポートドライバーに配信されます。
 
 *NodeIdDataFormat*   
-ノードの id データの形式。 このメンバーの値については、T11 委員会を参照してください。*ファイバー チャネル HBA API*仕様。 この情報は、ミニポート ドライバーに配信される、 **NodeIdDataFormat**のメンバー、 [ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)構造体。
+ノード識別データ形式。 このメンバーが持つことができる値の詳細については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。 この情報は、構造体の[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)の**NodeIdDataFormat**メンバーのミニポートドライバーに配信されます。
 
-*TotalRspBufferSize*   
-バージョン 2 の RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendRNIDV2\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体。
+*Totalrspbuffersize*   
+バージョン 2 RNID コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、 [**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体の**Totalrspbuffersize**メンバーにこの情報を返します。
 
-*ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendRNIDV2\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体。
+*Actualrspbuffersize*   
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、 [**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体の**Actualrspbuffersize**メンバーにこの情報を返します。
 
-*RspBuffer*   
-バージョン 2 の RNID コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendRNIDV2\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体。
+*Rspbuffer*   
+バージョン 2 RNID コマンドの結果。 ミニポートドライバーは、 [**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)構造体の**rspbuffer**メンバーでこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -78,7 +78,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -95,23 +95,23 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SendRNIDV2\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
+[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
 
-[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
+[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: ndiskd.netadapter
-description: Ndiskd.netadapter 拡張機能では、NDIS ミニポート、またはシステムでアクティブなネットワーク アダプターに関する情報が表示されます。
+title: ndiskd netadapter
+description: Ndiskd netadapter 拡張機能には、システム上でアクティブになっている NDIS ミニポートまたはネットワークアダプターに関する情報が表示されます。
 ms.assetid: 7D55F7CE-5DDB-4C80-8C27-F619F2FB7F15
 keywords:
-- デバッグ ndiskd.netadapter Windows
+- ndiskd netadapter Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 26838626ff25b1805dc025755db97f955f5a4d45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b04dfc644c9125e6fd3d43943cbaa37514f4661
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837571"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 
 
-**! Ndiskd.netadapter**拡張機能は、NDIS ミニポート、またはシステムでアクティブなネットワーク アダプターに関する情報を表示します。 パラメーターなしで、このコマンドを実行する場合。 ndiskd すべてのネットワーク アダプターの一覧が表示されます。
+**! Ndiskd netadapter**拡張機能には、システム上でアクティブになっている NDIS ミニポートまたはネットワークアダプターに関する情報が表示されます。 パラメーターを使用せずにこのコマンドを実行すると、すべてのネットワークアダプターの一覧が表示されます。
 
 ```console
      !ndiskd.netadapter [-handle <x>] [-basic] [-diag] [-state] [-bindings] 
@@ -34,119 +34,119 @@ ms.locfileid: "67364244"
         [-vfs] [-vports] [-iftrace] [-ip]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 NDIS ミニポートのハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
-ミニポートに関する概要情報が表示されます。
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+ミニポートに関する概要情報を表示します。
 
-<span id="_______-diag______"></span><span id="_______-DIAG______"></span> *-診断*   
-自動診断アラートが表示されます (ある場合)。
+<span id="_______-diag______"></span><span id="_______-DIAG______"></span> *-diag*   
+自動診断アラート (存在する場合) を表示します。
 
-<span id="_______-state______"></span><span id="_______-STATE______"></span> *-state*   
+<span id="_______-state______"></span><span id="_______-STATE______"></span> *-状態*   
 ミニポートの現在の状態を表示します。
 
 <span id="_______-bindings______"></span><span id="_______-BINDINGS______"></span> *-バインド*   
-ミニポート バインドを表示します。
+ミニポートバインドを表示します。
 
 <span id="_______-ports______"></span><span id="_______-PORTS______"></span> *-ポート*   
-NDIS ポートの一覧が表示されます。
+NDIS ポートの一覧を表示します。
 
-<span id="_______-offloads______"></span><span id="_______-OFFLOADS______"></span> *負荷を軽減*   
-タスクのオフロード状態と機能を示します。
+<span id="_______-offloads______"></span><span id="_______-OFFLOADS______"></span> *-  のオフロード*  
+タスクのオフロードの状態と機能を示します。
 
 <span id="_______-filterdb______"></span><span id="_______-FILTERDB______"></span> *-filterdb*   
-現在のパケット フィルターを示しています。
+現在のパケットフィルターを表示します。
 
 <span id="_______-timers______"></span><span id="_______-TIMERS______"></span> *-タイマー*   
-ミニポートによって割り当てられたタイマー オブジェクトを示しています。
+ミニポートによって割り当てられたタイマーオブジェクトを表示します。
 
 <span id="_______-rst______"></span><span id="_______-RST______"></span> *-rst*   
-受信側の制限の状態を示しています。
+受信側の制限の状態を表示します。
 
 <span id="_______-pm______"></span><span id="_______-PM______"></span> *-pm*   
-電源管理の状態と機能を示しています。
+電源管理の状態と機能を表示します。
 
 <span id="_______-ss______"></span><span id="_______-SS______"></span> *-ss*   
-セレクティブ サスペンド状態を示しています。
+セレクティブサスペンドの状態を表示します。
 
-<span id="_______-aoac______"></span><span id="_______-AOAC______"></span> *-aoac*   
-AOAC (コネクト スタンバイ) の状態を示しています。
+<span id="_______-aoac______"></span><span id="_______-AOAC______"></span> *-電源*   
+接続スタンバイ状態を示します。
 
 <span id="_______-wol______"></span><span id="_______-WOL______"></span> *-wol*   
-Wake on LAN (WoL) の構成を示します。
+Wake on LAN (WoL) 構成を示します。
 
 <span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span> *-protocoloffloads*   
-アクティブな電源管理プロトコルの表示をオフロードします。
+アクティブな電源管理プロトコルのオフロードを示します。
 
 <span id="_______-rss______"></span><span id="_______-RSS______"></span> *-rss*   
-Receive Side Scaling のパラメーターを示します。
+受信側のスケーリングパラメーターを示します。
 
 <span id="_______-hw______"></span><span id="_______-HW______"></span> *-hw*   
-ハードウェア リソースが表示されます。
+ハードウェアリソースが表示されます。
 
-<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-device*   
-基になる NT デバイス オブジェクトに関する情報が表示されます。
+<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-デバイスの*   
+基になる NT デバイスオブジェクトに関する情報を表示します。
 
 <span id="_______-wmi______"></span><span id="_______-WMI______"></span> *-wmi*   
-アダプターに登録されている WMI の Guid を示しています。
+アダプターに登録されている WMI Guid を表示します。
 
 <span id="_______-customwmi______"></span><span id="_______-CUSTOMWMI______"></span> *-customwmi*   
-ミニポートによって登録されているカスタムの WMI Guid を示しています。
+ミニポートによって登録されたカスタム WMI Guid を表示します。
 
 <span id="_______-ndiswmi______"></span><span id="_______-NDISWMI______"></span> *-ndiswmi*   
-NDIS で提供される WMI の Guid を示しています。
+NDIS によって提供される WMI Guid を示します。
 
 <span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
-ミニポートには、参照の内訳を示します。
+ミニポートの参照の内訳を表示します。
 
-<span id="_______-log______"></span><span id="_______-LOG______"></span> *-log*   
-PnP と電力のイベント ログを表示します。
+<span id="_______-log______"></span><span id="_______-LOG______"></span> *-ログ*   
+PnP および電源イベントログを表示します。
 
 <span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-grovel*   
-メモリ内を検索するミニポートのブロックを強制的にします。
+メモリ内のミニポートブロックを強制的に検索します。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
-ミニポートを名のプレフィックスでフィルター処理します。
+ミニポートを名前プレフィックスでフィルター処理します。
 
 <span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span> *-rcvfilter*   
-表示には、フィルター処理機能が表示されます。
+受信フィルター処理機能を示します。
 
 <span id="_______-nicswitch______"></span><span id="_______-NICSWITCH______"></span> *-nicswitch*   
-NIC のスイッチ機能を示しています。
+NIC スイッチの機能を示します。
 
 <span id="_______-rcvqueues______"></span><span id="_______-RCVQUEUES______"></span> *-rcvqueues*   
-表示には、キューが表示されます。
+受信キューを表示します。
 
 <span id="_______-nicswitches______"></span><span id="_______-NICSWITCHES______"></span> *-nicswitches*   
-NIC のスイッチを示します。
+NIC スイッチを表示します。
 
-<span id="_______-iov______"></span><span id="_______-IOV______"></span> *-iov*   
-SR-IOV (Single Root I/O Virtualization) 機能を示しています。
+<span id="_______-iov______"></span><span id="_______-IOV______"></span> *-sr-iov*   
+SR-IOV (シングルルート i/o 仮想化) 機能を示します。
 
 <span id="_______-vfs______"></span><span id="_______-VFS______"></span> *-vfs*   
-SR-IOV Vf (仮想フィルター) を示しています。
+Sr-iov の VFs (仮想フィルター) を示します。
 
-<span id="_______-vports______"></span><span id="_______-VPORTS______"></span> *-拡張*   
-拡張 (仮想ポート) を示しています。
+<span id="_______-vports______"></span><span id="_______-VPORTS______"></span> *-vports*   
+Vports (仮想ポート) を表示します。
 
 <span id="_______-ifrtrace______"></span><span id="_______-IFRTRACE______"></span> *-ifrtrace*   
-実行中のレコーダーのトレースを示しています。
+インフライトレコーダーのトレースを表示します。
 
-<span id="_______-ip______"></span><span id="_______-IP______"></span> *ip アドレス*   
-ネットワークのインターフェイスで IP アドレスを示しています。
+<span id="_______-ip______"></span><span id="_______-IP______"></span> *-ip*   
+ネットワークのインターフェイスの IP アドレスを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-実行して **! ndiskd.netadapter**パラメーターなしで、関連付けられているミニポート ドライバーと共にシステム上ですべてのネットワーク アダプターの一覧を取得することができます。 この出力の例では、Microsoft カーネル デバッグ ネットワーク アダプターが、そのハンドルは ffffdf80140c71a0 を探します。 カーネル デバッグ ネットワーク アダプターに関する詳細については、次を参照してください。[ネットワーク経由でのカーネル デバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)NDIS ブログ。
+パラメーターを使用せずに **! ndiskd netadapter**を実行すると、システム上のすべてのネットワークアダプターの一覧と、関連するミニポートドライバーを取得できます。 この例の出力では、ffffdf80140c71a0 というハンドルを持つ Microsoft カーネルデバッグネットワークアダプターを探しています。 カーネルデバッグネットワークアダプターの詳細については、NDIS ブログの「[ネットワーク経由でのカーネルデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)」を参照してください。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -155,9 +155,9 @@ Ndiskd.dll
     ffffdf801418d650   ffffdf80140c71a0    Microsoft Kernel Debug Network Adapter
 ```
 
-ミニポート ドライバーのハンドルをクリックするか入力して、 **! ndiskd.netadapter-処理**、そのデバイスで参照すべて NDIS の状態のようになりました。 これは、トラブルシューティングのネットワーク ドライバーまたはネットワーク スタックに問題がある場合を把握するための出発点として非常に役立ちます。 たとえば、ドライバーのデータパス状態を確認でき、か接続されているかどうかを参照してください。
+ミニポートドライバーのハンドルをクリックするか、 **! ndiskd ハンドル**を入力することで、そのデバイス上のすべての NDIS の状態を確認できるようになりました。 これは、ネットワークドライバーのトラブルシューティングを行う場合や、ネットワークスタック内で問題が発生している場所を調べる場合に役立ちます。 たとえば、ドライバーのデータパスの状態を確認して、接続されているかどうかを確認できます。
 
-このネット アダプターのレポートの下部にある、他のリンクが多数など、保留中の Oid の詳細情報を調べたりをクリックすることができ、タスクの状態の負荷を軽減します。 これらのリンクは、多くのパラメーターの対応 **! ndiskd.netadapter**します。
+このネットアダプターのレポートの下部には、他にも多数のリンクがあります。これをクリックすると、保留中の Oid やタスクのオフロードの状態などの詳細情報を確認できます。 これらのリンクは、 **! ndiskd netadapter**のパラメーターの多くに対応しています。
 
 ```console
 3: kd> !ndiskd.netadapter ffffdf80140c71a0
@@ -235,7 +235,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-使用例として **! ndiskd.netadapter**さらにデバッグするための出発点としてこのネット アダプターのミニポートのすべての登録済みのドライバーのコールバック ハンドラーの一覧を表示するレポートの下部にある「ドライバー ハンドラー」リンクをクリックします。ドライバー。 次の例では、リンクをクリックすると、! ndiskd を実行する、 [ **! ndiskd.minidriver** ](-ndiskd-minidriver.md)このネット アダプターのミニポート ドライバーのハンドルを持つ拡張機能。 ミニポート ドライバーが kdnic 4.2 とそのハンドルは ffffdf801418d650 します。
+さらにデバッグするための開始位置として **! ndiskd netadapter**を使用する例として、レポートの下部にある [ドライバーハンドラー] リンクをクリックして、このネットアダプターのミニポートドライバーのすべての登録済みドライバーコールバックハンドラーの一覧を表示します。 次の例では、リンクをクリックすると、このネットアダプターのミニポートドライバーのハンドルを使用して! ndiskd[**ミニドライバー**](-ndiskd-minidriver.md)拡張機能が実行されます。 ミニポートドライバーは kdnic 4.2 で、ハンドルは ffffdf801418d650 です。
 
 ```console
 3: kd> !ndiskd.minidriver ffffdf801418d650 -handlers
@@ -266,24 +266,24 @@ HANDLERS
     CancelSendHandler                      fffff80f1fd722c0  bp
 ```
 
-特定の問題をデバッグするには、そのハンドラーにブレークポイントを設定する各ハンドラーの右側に"bp"リンクをクリックすることができますようになりました。 たとえば、データパス ハングがある場合は、ドライバーの SendNetBufferListsHandler または ReturnNetBufferListsHandler を調査できます。
+各ハンドラーの右側にある "bp" リンクをクリックして、特定の問題をデバッグするハンドラーにブレークポイントを設定できるようになりました。 たとえば、データパスにハングがある場合は、ドライバーの SendNetBufferListsHandler または ReturnNetBufferListsHandler を調べることができます。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[カーネルは、ネットワーク経由でのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)
+[ネットワーク経由でのカーネルデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)
 
-[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
+[ **! ndiskd ミニドライバー**](-ndiskd-minidriver.md)
 
 
 

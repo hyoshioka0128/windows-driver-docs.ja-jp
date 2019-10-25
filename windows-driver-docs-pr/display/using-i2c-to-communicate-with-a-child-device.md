@@ -3,18 +3,18 @@ title: I2C を使用した子デバイスとの通信
 description: I2C を使用した子デバイスとの通信
 ms.assetid: 5eea2257-49ca-4d76-a6a1-91401595750f
 keywords:
-- I2C WDK ビデオのミニポート
-- ビデオのミニポート ドライバー WDK Windows 2000 では、子デバイス
-- 子デバイス WDK ビデオのミニポート、I2C を使用して通信するには
-- ビデオのミニポート ドライバー WDK Windows 2000、I2C
+- I2C WDK ビデオミニポート
+- ビデオミニポートドライバー WDK Windows 2000、子デバイス
+- 子デバイス WDK ビデオミニポート、I2C を使用した通信
+- ビデオミニポートドライバー WDK Windows 2000、I2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8c0cdb4eaff53afe057cb85f2adea6ce4c48ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d1d016d337519b24cba0e9dbdddda0e8939eec4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370614"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829259"
 ---
 # <a name="using-i2c-to-communicate-with-a-child-device"></a>I2C を使用した子デバイスとの通信
 
@@ -22,21 +22,21 @@ ms.locfileid: "67370614"
 ## <span id="ddk_using_i2c_to_communicate_with_a_child_device_gg"></span><span id="DDK_USING_I2C_TO_COMMUNICATE_WITH_A_CHILD_DEVICE_GG"></span>
 
 
-Microsoft Windows xp 以降、プラグ アンド プレイ マネージャがビデオ アダプターの子のデバイスを列挙した後、ミニポート ドライバーできますデバイスと通信、アダプターの子で、 *I2C*バス I²C プロトコルを使用します。 ミニポート ドライバーによって公開されているソフトウェア インターフェイスを使用して、ミニポート ドライバーと WDM ドライバー I²C バス上のそれらのデバイスの間の通信が行われる (」の説明に従って[子デバイスのドライバーとの通信](communicating-with-the-driver-of-a-child-device.md))。 ミニポート ドライバーでは、それらのビデオ ポート ドライバーによって公開される、新しいハードウェア インターフェイスを使用して I²C バス上のデバイス間の物理的な通信を開始できます。 ビデオ ポート ドライバーのによって提供されるハードウェア I²C インターフェイスを使用できます、ミニポート ドライバーからの読み取りまたは I²C バス経由で子の物理デバイスに書き込みを I²C マスター デバイス (通常は、グラフィックス チップ) 場合は、 [ **VideoPortQueryServices** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueryservices)ルーチン。 I²C バス経由でこの通信が同じ I²C バス上のハードウェア デバイスに厳密に制限されることに注意してください。 ミニポート ドライバーの作成者は、このようなすべての通信にこれらのルーチンを使用する、強くお勧めします。
+Microsoft Windows XP 以降では、プラグアンドプレイマネージャーがビデオアダプターの子デバイスを列挙した後、ミニポートドライバーは、I ² C プロトコルを使用して、 *I2C*バス上のアダプターの子デバイスと通信できます。 I ² C バス上のこれらのデバイスのミニポートドライバーと WDM ドライバーの間の通信は、ミニポートドライバーによって公開されているソフトウェアインターフェイス (「[子デバイスのドライバーとの通信](communicating-with-the-driver-of-a-child-device.md)」を参照) によって発生する可能性があります。 ミニポートドライバーは、ビデオポートドライバーによって公開されている新しいハードウェアインターフェイスを使用して、I ² C バス上のデバイス間の物理的な通信を開始できます。 ミニポートドライバーが i ² C バスを介して物理的な子デバイスの読み取りまたは書き込みを行うために I ² C マスターデバイス (通常はグラフィックスチップ) を必要とする場合は、ビデオポートドライバーの[**Videoportqueryservices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportqueryservices)ルーチンによって提供されるハードウェア i ² c インターフェイスを使用できます。 I ² C バスを介したこの通信は、同じ I ² C バス上のハードウェアデバイスのみに制限されていることに注意してください。 ミニポートドライバーの作成者は、これらのルーチンをすべての通信に使用することを強くお勧めします。
 
-このモードでの通信もビデオ アダプターがコンポーネントを WDM ドライバーがない場合に役立ちます。 たとえば、ビデオ アダプターには、ドーター ボードまたはデジタルのフラット パネルにあるビデオ画像を送信するために使用する回線があります。 この場合、ミニポート ドライバーと、によって提供されるハードウェア I²C インターフェイスの使用**VideoPortQueryServices** I²C バス経由でその回線にコマンドを送信します。
+この通信モードは、WDM ドライバーがないコンポーネントがビデオアダプターに含まれている場合にも役立ちます。 たとえば、ビデオアダプターには、ビデオイメージをデジタルフラットパネルに送信するために使用される1つのボードまたは回線がある場合があります。 この場合、ミニポートドライバーは、 **Videoportqueryservices**によって提供されるハードウェア I ² c インターフェイスを使用して、i ² c バス経由でその回路にコマンドを送信できます。
 
-![回線 (i2c) の間の統合インターフェイスを使用して子デバイスとの通信を示す図](images/i2cfig1.png)
+![統合回線 (i2c) インターフェイスを介して子デバイスと通信する方法を示す図](images/i2cfig1.png)
 
-上記の図は、ミニポート ドライバーが I²C バス上の 2 つのハードウェア デバイス間の通信を開始する方法を示しています。
+上の図は、ミニポートドライバーが I ² C バス上の2つのハードウェアデバイス間の通信を開始する方法を示しています。
 
-ビデオ ポートの I²C ルーチンを利用するには、ミニポート ドライバーはクエリの I²C インターフェイスのビデオ ポート ドライバーを実行する必要があります。 この準備として、ミニポート ドライバーを割り当てる必要があります、 [**ビデオ\_ポート\_I2C\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_port_i2c_interface)構造体、およびその最初の 2 つのメンバーを初期化 (、**サイズ**と**バージョン**メンバー) に適切な値。 ミニポート ドライバーを呼び出して、ビデオ ポート ドライバーの[ **VideoPortQueryServices** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueryservices)ルーチン、設定、 *servicesType*パラメーターを**VideoPortServicesI2C**、および設定、 *pInterface*パラメーターを部分的に初期化ビデオ\_ポート\_I2C\_インターフェイス構造体。
+ビデオポートの I ² C ルーチンを活用するために、ミニポートドライバーは、ビデオポートドライバーで I ² C インターフェイスを照会する必要があります。 このための準備として、ミニポートドライバーは、 [**I2C\_インターフェイス構造\_のビデオ\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_port_i2c_interface)を割り当て、最初の2つのメンバー (**サイズ**と**バージョン**のメンバー) を適切な値に初期化する必要があります。 次に、ミニポートドライバーはビデオポートドライバーの[**Videoportqueryservices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportqueryservices)ルーチンを呼び出し、 *Servicestype*パラメーターを**VideoPortServicesI2C**に設定し、 *pinterface*パラメーターを部分的に初期化されたに設定します。VIDEO\_PORT\_I2C\_インターフェイス構造です。
 
-場合に呼び出し**VideoPortQueryServices**が成功すると、ビデオの残りのメンバーでのビデオ ポート ドライバーが\_ポート\_I2C\_インターフェイス構造体、4 つのアドレスを含むI²C ルーチン:[**I2CStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_start)、 [ **I2CStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_stop)、 [ **I2CRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_read)、および[ **I2CWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_write).
+**Videoportqueryservices**の呼び出しが成功した場合、ビデオポートドライバーは、次の4つの I ² C ルーチンのアドレスを[**含む、video**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pi2c_start)\_ポート\_I2C\_インターフェイス構造の残りのメンバーを入力します。 [**I2CStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pi2c_stop)、 [**I2CRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pi2c_read)、および[**I2CWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pi2c_write)。
 
-*I2CStart*と*I2CStop* 、それぞれ子デバイスとの通信を開始して使用との通信を終了します。
+*I2CStart*と*I2CStop*はそれぞれ、子デバイスとの通信を開始し、そのデバイスとの通信を終了するために使用されます。
 
-*I2CRead*子デバイスから、指定したバイト数を読み取ります*I2CWrite*指定したバイト数を書き込みます。
+*I2CRead*は、子デバイスから指定されたバイト数を読み取ります。*I2CWrite*は、指定されたバイト数をそれに書き込みます。
 
  
 

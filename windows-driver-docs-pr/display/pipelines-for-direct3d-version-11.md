@@ -3,145 +3,145 @@ title: Direct3D バージョン 11 のパイプライン
 description: Direct3D バージョン 11 のパイプライン
 ms.assetid: 7d724751-761e-409c-8398-d1b5d58c057c
 keywords:
-- Direct3D のバージョン 11 WDK Windows 7 の表示、パイプラインします。
-- Direct3D のバージョン 11 WDK Windows Server 2008 R2 を表示するためのパイプライン
-- パイプラインを Direct3D のバージョンの WDK Windows 7 の 11 の表示
-- Direct3D のバージョン 11 WDK Windows Server 2008 R2 の表示用のパイプライン
-- ハル シェーダー WDK Windows 7 の表示
-- ハル シェーダー WDK Windows Server 2008 R2 の表示
-- テッセレータ WDK Windows 7 の表示
-- テッセレータ WDK Windows Server 2008 R2 の表示
-- ドメイン シェーダー WDK Windows 7 の表示
-- ドメイン シェーダー WDK Windows Server 2008 R2 の表示
-- 計算シェーダー WDK Windows 7 の表示
-- 計算シェーダー WDK Windows Server 2008 R2 の表示
-- 順序付けられていないアクセス リソース ビュー WDK Windows 7 を表示します。
-- 順序付けられていないアクセス リソース ビューの WDK Windows Server 2008 R2 の表示
+- Direct3D バージョン 11 WDK Windows 7 display、パイプライン
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 の表示、パイプライン
+- Direct3D version 11 WDK Windows 7 ディスプレイのパイプライン
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 のパイプラインの表示
+- ハル shader WDK Windows 7 ディスプレイ
+- ハル shader WDK Windows Server 2008 R2 ディスプレイ
+- テッセレータ WDK Windows 7 ディスプレイ
+- テッセレータ WDK Windows Server 2008 R2 ディスプレイ
+- ドメインシェーダー WDK Windows 7 ディスプレイ
+- ドメインシェーダー WDK Windows Server 2008 R2 ディスプレイ
+- コンピューティングシェーダー WDK Windows 7 ディスプレイ
+- コンピューティングシェーダー WDK Windows Server 2008 R2 ディスプレイ
+- 順序付けられていないアクセスリソースビュー WDK Windows 7 ディスプレイ
+- 順序付けられていないアクセスリソースビュー WDK Windows Server 2008 R2 ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2597e2e73e3330a2109e731fabc9bb6b2877107
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d659bbfd55d0db3b99f5b44ae6925846851e7a9b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385573"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829810"
 ---
 # <a name="pipelines-for-direct3d-version-11"></a>Direct3D バージョン 11 のパイプライン
 
 
-このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
+このセクションは、windows 7 以降、および windows Server 2008 R2 以降のバージョンの Windows オペレーティングシステムにのみ適用されます。
 
-Direct3D のバージョン 11 のグラフィックのレンダリング パイプラインから展開されますが、[バージョン 10 で Direct3D グラフィックスのレンダリング パイプライン](rendering-pipeline.md)します。 Direct3D のバージョン 11、プログラミング可能なシェーダーが共有コア、Direct3D のバージョン 10 がサポートされているだけでもサポートしていますハル、ドメイン、および計算シェーダーのコア。
+Direct3D バージョン11用のグラフィックスレンダリングパイプラインは、 [direct3d バージョン10用のグラフィックスレンダリングパイプライン](rendering-pipeline.md)から展開されています。 Direct3d バージョン10でサポートされている共有のプログラミング可能なシェーダーコアに加えて、Direct3D バージョン11では、ハル、ドメイン、およびコンピューティングシェーダーコアもサポートされています。
 
-Direct3D のバージョン 11 が実際には 2 つの異なるパイプラインをサポートしています: 描画パイプライン (グラフィックス レンダリング パイプライン) とディスパッチ パイプライン (計算シェーダー パイプライン)。 描画とディスパッチのパイプラインは、技術的には両方のパイプラインで同時に、作成するためのバインドまたはバインドされた 1 つのパイプラインを作成するため、および他のパイプラインでの読み取り用に同じ subresource ができないという意味で接続疎されます。
+Direct3D バージョン11では、描画パイプライン (グラフィックスレンダリングパイプライン) とディスパッチパイプライン (計算シェーダーパイプライン) という2つの異なるパイプラインが実際にサポートされています。 描画とディスパッチのパイプラインは、両方のパイプラインで同時に書き込みを行うために同じサブリソースをバインドすることも、1つのパイプラインで書き込みを行うためにバインドすることも、もう一方のパイプラインで読み取ることもできないという点で、技術的には緩やかに接続されています。
 
-次の図は、Direct3D のバージョン 11 の描画パイプラインの機能ブロックを示します。
+次の図は、Direct3D バージョン11用の描画パイプラインの機能ブロックを示しています。
 
 ![描画パイプラインの機能ブロックを示す図](images/pipeline-dx11.png)
 
-次の図は、Direct3D のバージョン 11 のディスパッチ パイプラインの機能ブロックを示します。
+次の図は、Direct3D バージョン11のディスパッチパイプラインの機能ブロックを示しています。
 
-![ディスパッチのパイプラインの機能ブロックを示す図](images/pipeline-compute.png)
+![ディスパッチパイプラインの機能ブロックを示す図](images/pipeline-compute.png)
 
-次のセクションでは、上記の図に示すような Direct3D の新しい 11 要素について説明します。
+以下のセクションでは、前の図に示されている新しい Direct3D 11 ブロックについて説明します。
 
-### <a name="span-idhullshaderspanspan-idhullshaderspanhull-shader"></a><span id="hull_shader"></span><span id="HULL_SHADER"></span>ハル シェーダー
+### <a name="span-idhull_shaderspanspan-idhull_shaderspanhull-shader"></a><span id="hull_shader"></span><span id="HULL_SHADER"></span>ハルシェーダー
 
-ハル シェーダーは、修正プログラムあたり 1 回は動作します。 ハル シェーダーを使用するには、入力アセンブラーから修正プログラムを適用します。 ハル シェーダーは出力制御点に修正プログラムを構成する入力の制御点を変換できます。 ハル シェーダーは、固定関数テッセレータ ステージの他のセットアップを実行できます。 たとえば、ハル シェーダーは tess 要因は、テセレーションする量を示す数値を出力できます。
+ハルシェーダーは、修正プログラムごとに1回動作します。 ハルシェーダーは、入力アセンブラーの修正プログラムと共に使用できます。 ハルシェーダーは、修正プログラムを構成する入力コントロールポイントを出力制御ポイントに変換できます。 ハルシェーダーは、固定関数テッセレータステージに対して他の設定を実行できます。 たとえば、ハルシェーダーは、テセレーションを示す数値である tess 要因を出力できます。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ハル シェーダーを破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、ハルシェーダーを作成、設定、および破棄します。
 
-[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateHullShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createhullshader)
+[*CreateHullShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createhullshader)
 
-[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**HsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
+[**HsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**HsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
+[**HsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**HsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
+[**HsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**HsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
+[**HsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**HsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
+[**HsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
 ### <a name="span-idtessellatorspanspan-idtessellatorspantessellator"></a><span id="tessellator"></span><span id="TESSELLATOR"></span>テッセレータ
 
-テッセレータは、ある操作が、ハル シェーダー内の宣言によって定義されている固定機能単位です。 テッセレータは、ハル シェーダーによって出力が更新プログラムごとに動作します。 ハル シェーダー tess 要因は、テセレーションにどの程度、テッセレータを通知する数字が生成されます (geometry と接続の生成)、修正プログラムのドメイン。
+テッセレータは、ハルシェーダー内の宣言によって操作が定義されている固定関数単位です。 テッセレータは、ハルシェーダーによって出力される修正プログラムごとに1回動作します。 ハルシェーダーは tess 要因を生成します。これは、修正プログラムのドメインでテセレーション (geometry と接続の生成) の量をテッセレータに通知する数値です。
 
-Direct3D ランタイムが呼び出す、ドライバーの[ **CalcPrivateTessellationShaderSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)包またはドメイン シェーダーのメモリ領域のサイズを計算する関数。
+Direct3D ランタイムは、ドライバーの[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)関数を呼び出して、ハルまたはドメインシェーダーのメモリ領域のサイズを計算します。
 
-### <a name="span-iddomainshaderspanspan-iddomainshaderspandomain-shader"></a><span id="domain_shader"></span><span id="DOMAIN_SHADER"></span>ドメイン シェーダー
+### <a name="span-iddomain_shaderspanspan-iddomain_shaderspandomain-shader"></a><span id="domain_shader"></span><span id="DOMAIN_SHADER"></span>ドメインシェーダー
 
-ドメイン シェーダーは、テッセレータによって生成される、頂点ごと 1 回呼び出されます。 各呼び出しは、汎用的なドメインでは、その座標によって識別されます。 ドメイン シェーダーの役割は、3-D 空間内のポイント) (など、具体的なものには、その座標を有効にするドメイン シェーダーのストリームを使用します。 修正プログラムで、各ドメイン シェーダーの呼び出しでは、ハル シェーダーのすべての出力を (など、出力の制御点) の入力を共有にもアクセスします。
+ドメインシェーダーは、テッセレータによって生成される頂点ごとに1回呼び出されます。 各呼び出しは、一般的なドメインの座標によって識別されます。 ドメインシェーダーの役割は、ドメインシェーダーの下位ストリームを使用するために、その座標を (3 次元空間のポイントなどの) 明確なものにすることです。 パッチの各ドメインシェーダー呼び出しも、すべてのハル shader 出力 (出力制御ポイントなど) の共有入力にアクセスします。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ドメイン シェーダーを破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、ドメインシェーダーを作成、設定、および破棄します。
 
-[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateDomainShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdomainshader)
+[*CreateDomainShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdomainshader)
 
-[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**DsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
+[**DsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**DsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
+[**DsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**DsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
+[**DsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**DsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
+[**DsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**DsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
+[**DsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
-### <a name="span-idcomputeshaderspanspan-idcomputeshaderspancompute-shader"></a><span id="compute_shader"></span><span id="COMPUTE_SHADER"></span>計算シェーダー
+### <a name="span-idcompute_shaderspanspan-idcompute_shaderspancompute-shader"></a><span id="compute_shader"></span><span id="COMPUTE_SHADER"></span>計算シェーダー
 
-計算シェーダーは、GPU が描画パイプラインからのすべてのグラフィックス懸案事項なしのデータを並列プロセッサの一般的なグリッドと見なすことができます。 計算シェーダーが高速に明示的なアクセス権をシェーダーの呼び出しのグループ間の通信を容易にメモリを共有します。 計算シェーダーも分散読み込みを実行する権限を持ち、メモリに書き込みます。 アトミック操作の可用性には、共有メモリ アドレスに一意のアクセスができます。 計算シェーダーは描画パイプラインの一部ではありません。 計算シェーダーは、独自に存在します。 ただし、計算シェーダーは、その他のすべてのシェーダー ステージと同じデバイスに存在します。 Direct3D ランタイムが呼び出す、ドライバーの*DispatchXxx*ドライバーのではなく関数*DrawXxx*計算シェーダーを呼び出す関数。
+コンピューティングシェーダーを使用すると、GPU をデータ並列プロセッサの汎用グリッドとして表示できます。描画パイプラインからのグラフィックスの障害は発生しません。 コンピューティングシェーダーは、高速共有メモリに明示的にアクセスして、シェーダー呼び出しのグループ間の通信を容易にします。 コンピューティングシェーダーでは、メモリに対して散在する読み取りと書き込みを実行する機能も備えています。 アトミック操作の可用性は、共有メモリアドレスへの一意のアクセスを可能にします。 コンピューティングシェーダーは、描画パイプラインの一部ではありません。 コンピューティングシェーダーは、それ自体に存在します。 ただし、コンピューティングシェーダーは、他のすべてのシェーダーステージと同じデバイスに存在します。 Direct3D ランタイムは、ドライバーの*Drawxxx*関数ではなく、ドライバーの*DispatchXxx*関数を呼び出して、コンピューティングシェーダーを呼び出します。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、計算シェーダーを破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、コンピューティングシェーダーを作成、設定、および破棄します。
 
-[*CreateComputeShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcomputeshader)
+[*CreateComputeShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcomputeshader)
 
-[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**CsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
+[**CsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**CsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
+[**CsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**CsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
+[**CsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**CsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
+[**CsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**CsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
+[**CsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
-[**CsSetUnorderedAccessViews**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setunorderedaccessviews)
+[**CsSetUnorderedAccessViews**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setunorderedaccessviews)
 
-[**Dispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatch)
+[**Dispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatch)
 
-[**DispatchIndirect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatchindirect)
+[**DispatchIndirect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatchindirect)
 
-### <a name="span-idunorderedaccessresourceviewsspanspan-idunorderedaccessresourceviewsspanunordered-access-resource-views"></a><span id="unordered_access_resource_views"></span><span id="UNORDERED_ACCESS_RESOURCE_VIEWS"></span>順序付けられていないアクセス リソース ビュー
+### <a name="span-idunordered_access_resource_viewsspanspan-idunordered_access_resource_viewsspanunordered-access-resource-views"></a><span id="unordered_access_resource_views"></span><span id="UNORDERED_ACCESS_RESOURCE_VIEWS"></span>順序付けられていないアクセスのリソースビュー
 
-順序付けられていないアクセス リソース ビューは、計算シェーダーまたはピクセル シェーダーにバインドできる読み取り/書き込みリソースです。 順序付けられていないアクセス リソース ビューのバインドは、任意のシェーダー ステージのシェーダー リソース ビューは読み取り専用のリソースのバインド方法に似ています。
+順序付けられていないアクセスリソースビューは、コンピューティングシェーダーまたはピクセルシェーダーにバインドできる読み取り/書き込みリソースです。 順序付けられていないアクセスリソースビューのバインドは、読み取り専用のリソースであるシェーダーのリソースビューを任意のシェーダーステージにバインドする方法に似ています。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、順序付けられていないアクセス リソース ビューを破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、順序付けられていないアクセスリソースビューを作成、設定、および破棄します。
 
-[**CalcPrivateUnorderedAccessViewSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivateunorderedaccessviewsize)
+[**CalcPrivateUnorderedAccessViewSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivateunorderedaccessviewsize)
 
-[**CreateUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createunorderedaccessview)
+[**CreateUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createunorderedaccessview)
 
-[**DestroyUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroyunorderedaccessview)
+[**DestroyUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroyunorderedaccessview)
 
-[**ClearUnorderedAccessViewFLOAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewfloat)
+[**ClearUnorderedAccessViewFLOAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewfloat)
 
-[**ClearUnorderedAccessViewUINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewuint)
+[**ClearUnorderedAccessViewUINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewuint)
 
-[**CopyStructureCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_copystructurecount)
+[**CopyStructureCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_copystructurecount)
 
-[**SetRenderTargets(D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
+[**SetRenderTargets (D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
 
  
 

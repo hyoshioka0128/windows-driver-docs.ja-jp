@@ -3,19 +3,19 @@ title: SAP の登録解除
 description: SAP の登録解除
 ms.assetid: 2d279348-b58e-4d7e-ac8b-211e9b8a0622
 keywords:
-- WDK いる CoNDIS のサービス アクセス ポイントします。
-- SAPs WDK いる CoNDIS
-- SAPs の登録を解除
-- SAPs の登録を解除
-- SAPs を削除します。
+- サービスアクセスポイント WDK の接続
+- Sap WDK の切断
+- Sap の登録解除
+- Sap の登録解除
+- Sap の削除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13cab6798f8c26fb5921f49dac0e737ae43eb8f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 051ca43c6e04cce2c1780929482b8980993cace4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384573"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834921"
 ---
 # <a name="deregistering-a-sap"></a>SAP の登録解除
 
@@ -23,23 +23,23 @@ ms.locfileid: "67384573"
 
 
 
-接続指向のクライアントでの SAP の登録を解除[ **NdisClDeregisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclderegistersap)します。
+[**NdisClDeregisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap)を使用する接続指向のクライアント解除。
 
-次の図は、マネージャーは、SAP の登録解除の呼び出しのクライアントを示します。
+次の図は、コールマネージャーのクライアントが SAP の登録を解除していることを示しています。
 
-![sap の登録を解除コール マネージャーのクライアントを示す図](images/cm-04.png)
+![コールマネージャーのクライアントが sap の登録を解除することを示す図](images/cm-04.png)
 
-次の図は、SAP の登録を解除、MCM ドライバーのクライアントを示します。
+次の図は、SAP の登録を解除する MCM ドライバーのクライアントを示しています。
 
-![sap の登録を解除、mcm ドライバーのクライアントを示す図](images/fig1-04.png)
+![mcm ドライバーのクライアントが sap の登録を解除したことを示す図](images/fig1-04.png)
 
-呼び出し**NdisClDeregisterSap**と呼び出しを上司に NDIS または MCM ドライバーの[ **ProtocolCmDeregisterSap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_deregister_sap)関数。 *ProtocolCmDeregisterSap*、コール マネージャーまたは MCM ドライバーは、ネットワーク デバイスの制御や、ネットワーク上の SAP の登録を解除するには、他のメディア固有エージェントと通信できます。 さらに、 *ProtocolCmDeregisterSap* sap 動的に割り当てられているリソースを解放する必要があります。
+**NdisClDeregisterSap**を呼び出すと、NDIS は呼び出しマネージャーまたは mcm ドライバーの[**ProtocolCmDeregisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_deregister_sap)関数を呼び出します。 *ProtocolCmDeregisterSap*では、コールマネージャーまたは mcm ドライバーがネットワーク制御デバイスやその他のメディア固有のエージェントと通信し、ネットワーク上の SAP の登録を解除することがあります。 また、 *ProtocolCmDeregisterSap*は、SAP に対して動的に割り当てられたリソースを解放する必要があります。
 
-*ProtocolCmDeregisterSap*同期または非同期で完了できます。 非同期的に完了する、 *ProtocolCmDeregisterSap*コール マネージャーの関数を呼び出す[ **NdisCmDeregisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmderegistersapcomplete)します。 *ProtocolCmDeregisterSap* MCM ドライバーの関数を呼び出す[ **NdisMCmDeregisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmderegistersapcomplete)します。 **Ndis (M) CmDegisterSapComplete** NDIS とクライアントの両方の通知、コール マネージャーでの SAP 登録解除要求が完了したこと、 *ProtocolCmDeregisterSap* NDIS以前に返した関数\_ステータス\_保留します。
+*ProtocolCmDeregisterSap*は同期的または非同期的に完了できます。 非同期的に完了するために、呼び出しマネージャーの*ProtocolCmDeregisterSap*関数は[**NdisCmDeregisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmderegistersapcomplete)を呼び出します。 MCM ドライバーの*ProtocolCmDeregisterSap*関数は、 [**NdisMCmDeregisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmderegistersapcomplete)を呼び出します。 **Ndis (M) CmdegiProtocolCmDeregisterSap**によって、ndis とクライアントの両方に対して、呼び出しマネージャーが以前に NDIS\_状態を返した SAP 登録解除要求を完了したことが通知され\_行わ.
 
-呼び出し**Ndis (M) CmDeregisterSapComplete**を呼び出すクライアントの NDIS と[ **ProtocolClDeregisterSapComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_deregister_sap_complete)関数。 呼び出し*ProtocolClDeregisterSapComplete*クライアントへの呼び出しの前のことを示します**NdisClDeregisterSap**コール マネージャーまたは MCM ドライバーによって処理されました。
+**Ndis (M) CmDeregisterSapComplete**を呼び出すと、ndis によってクライアントの[**ProtocolClDeregisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_deregister_sap_complete)関数が呼び出されます。 *ProtocolClDeregisterSapComplete*を呼び出すと、クライアントの前の**NdisClDeregisterSap**呼び出しが、呼び出しマネージャーまたは mcm ドライバーによって処理されたことを示します。
 
-その SAP で受信されている着信呼び出しの影響を与えずに、その着信呼び出しの VC の影響を与えずに、クライアントに SAP を解除できますに注意してください。
+クライアントは、その SAP で既に受信されている着信呼び出しに影響を与えずに、その着信呼び出しの VC に影響を与えずに、SAP の登録を解除できます。
 
  
 

@@ -4,20 +4,20 @@ description: ISCSI\_LoginOptions WMI クラス
 ms.assetid: dc05f8e9-599d-4963-98a8-64e1d23c37a1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc45a124ad183b7f52a81e52442ee877a8dac8f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a90a6f0f5b2bbabdc64a593c6e3a4797a4abc4d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378430"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826315"
 ---
-# <a name="iscsiloginoptions-wmi-class"></a>ISCSI\_LoginOptions WMI クラス
+# <a name="iscsi_loginoptions-wmi-class"></a>ISCSI\_LoginOptions WMI クラス
 
 
 ## <span id="ddk_iscsi_loginoptions_wmi_class_kr"></span><span id="DDK_ISCSI_LOGINOPTIONS_WMI_CLASS_KR"></span>
 
 
-ISCSI\_LoginOptions クラスがターゲットのログオン セッションの特性について説明します。 このクラスが次のように定義されている*Common.mof*します。
+ISCSI\_LoginOptions クラスは、ターゲットログオンセッションの特性を記述します。 このクラスは、*一般的な .mof*で次のように定義されています。
 
 ```cpp
 class ISCSI_LoginOptions {
@@ -73,7 +73,7 @@ class ISCSI_LoginOptions {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_LoginOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsidef/ns-iscsidef-_iscsi_loginoptions)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**ISCSI\_LoginOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsidef/ns-iscsidef-_iscsi_loginoptions)データ構造を生成します。
 
  
 

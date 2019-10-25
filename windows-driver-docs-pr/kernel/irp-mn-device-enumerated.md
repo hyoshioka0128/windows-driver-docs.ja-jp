@@ -1,30 +1,30 @@
 ---
 title: IRP_MN_DEVICE_ENUMERATED
-description: PnP マネージャーでは、この I/O 要求パケット (IRP) を使用して、デバイス オブジェクトが存在して、プラグ アンド プレイ マネージャによって完全に列挙されていますが、バス ドライバーに通知します。
+description: PnP マネージャーは、この i/o 要求パケット (IRP) を使用して、デバイスオブジェクトが存在することと、プラグアンドプレイマネージャーによって完全に列挙されたことをバスドライバーに通知します。
 ms.date: 08/12/2017
 ms.assetid: 50ECF6E1-4FC6-4EEA-BACF-EBAD0329DA2E
 keywords:
-- IRP_MN_DEVICE_ENUMERATED Kernel-Mode Driver Architecture
+- IRP_MN_DEVICE_ENUMERATED カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ce4ed5f8781a720a2268c020a57deebd0efa71
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51de059536e25608d0c2b3746ab04ba56d27492f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384943"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828072"
 ---
-# <a name="irpmndeviceenumerated"></a>IRP\_MN\_デバイス\_列挙
+# <a name="irp_mn_device_enumerated"></a>IRP\_\_デバイス\_列挙されています
 
 
-PnP マネージャーでは、この I/O 要求パケット (IRP) を使用して、デバイス オブジェクトが存在して、プラグ アンド プレイ マネージャによって完全に列挙されていますが、バス ドライバーに通知します。
+PnP マネージャーは、この i/o 要求パケット (IRP) を使用して、デバイスオブジェクトが存在することと、プラグアンドプレイマネージャーによって完全に列挙されたことをバスドライバーに通知します。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーがユーザー モードには GUID で通知する前に、この IRP を送信\_デバイス\_列挙します。 IRP の前処理ルーチンを提供するドライバーにより、この IRP\_MN\_デバイス\_列挙など、追加のデバイス プロパティを入力します。 主に、この IRP により、ドライバーを使用して物理デバイス オブジェクト (PDO) のデバイスのプロパティを設定する[ **IoSetDevicePropertyData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdevicepropertydata)します。
+PnP マネージャーは、GUID\_デバイス\_列挙された状態でユーザーモードに通知する直前に、この IRP を送信します。 この IRP を使用すると、ドライバーは、追加のデバイスプロパティの入力など、列挙された IRP\_\_デバイス\_の前処理ルーチンを提供できます。 この IRP は、主に[**Iosetdevicepropertydata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdevicepropertydata)を使用して、ドライバーが物理デバイスオブジェクト (PDO) のデバイスプロパティを設定できるようにします。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -39,19 +39,19 @@ PnP マネージャーがユーザー モードには GUID で通知する前に
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-この IRP を処理するドライバーの設定[Irp -&gt;IoStatus.Status](https://docs.microsoft.com/windows-hardware/drivers/kernel/i-o-status-blocks)ステータス\_成功またはエラーを適切な状態です。
+この IRP を処理するドライバーは、 [irp&gt;iostatus](https://docs.microsoft.com/windows-hardware/drivers/kernel/i-o-status-blocks)を、STATUS\_SUCCESS または適切なエラー状態に設定します。
 
 <a name="operation"></a>操作
 ---------
 
-**IRP\_MN\_デバイス\_列挙**をバス ドライバーの PDO が存在することを示すために、バス ドライバーの PDO に IRP が送信されます。
+**Irp\_\_デバイス\_列挙**型の irp をバスドライバーの pdo に送信して、バスドライバーの pdo が存在することを示します。
 
 ## <a name="sending-the-irp"></a>IRP の送信
 
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -62,11 +62,11 @@ PnP マネージャーがユーザー モードには GUID で通知する前に
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdm.h</td>
+<td>Wdm</td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +74,7 @@ PnP マネージャーがユーザー モードには GUID で通知する前に
 ## <a name="see-also"></a>関連項目
 
 
-[プラグ アンド プレイのマイナー Irp](plug-and-play-minor-irps.md)
+[プラグアンドプレイの小さな Irp](plug-and-play-minor-irps.md)
 
  
 

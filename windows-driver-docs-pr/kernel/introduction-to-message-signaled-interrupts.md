@@ -3,45 +3,45 @@ title: メッセージ シグナル割り込みの概要
 description: メッセージ シグナル割り込みの概要
 ms.assetid: 035207a1-762d-463e-822e-64ac4833afa4
 keywords:
-- メッセージ シグナル割り込み WDK カーネル
+- メッセージシグナル割り込み (WDK カーネル)
 - Msi WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9110bf7890c3d370c9e636eb6725e2c9e01dfbe5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8aa41f84a55415070c884bc5d916c82d0ddf1fef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369932"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828193"
 ---
 # <a name="introduction-to-message-signaled-interrupts"></a>メッセージ シグナル割り込みの概要
 
 
-メッセージ シグナル割り込み (Msi) は、行ベースの割り込みの代替として、PCI 2.2 仕様で導入されました。 割り込みをトリガーする専用の pin を使用する代わりには、Msi を使用するデバイスは、特定のメモリ アドレスに値を記述することで、割り込みをトリガーします。 PCI 3.0 と呼ばれる、MSI の拡張の形式を定義する*MSI X*、大きいプログラミングできるようにします。 Windows Vista および Windows の以降のバージョンは、MSI と MSI X をサポートします。 1 つのデバイスには、MSI と MSI X の両方をサポートできます。 このようなデバイスでは、オペレーティング システムが MSI X 自動的を使用します。
+行ベースの割り込みの代わりとして、PCI 2.2 仕様では、メッセージシグナル割り込み (Msi) が導入されました。 専用の pin を使用して割り込みをトリガーするのではなく、Msi を使用するデバイスは、特定のメモリアドレスに値を書き込むことによって割り込みをトリガーします。 PCI 3.0 では、より高度なプログラミングを可能にする Msi の拡張形式 ( *msi-X*) が定義されています。 Windows Vista 以降のバージョンの Windows では、MSI と MSI-X がサポートされています。 1つのデバイスで MSI と MSI-X の両方をサポートできます。 このようなデバイスの場合、オペレーティングシステムは自動的に MSI-X を使用します。
 
-*割り込みメッセージ*は特定の値をデバイスは、割り込みを発生させる特定のアドレスに書き込みます。 行ベースの割り込みとは異なりは、メッセージ シグナル割り込みは、edge のセマンティクスを持ちます。 デバイスは、メッセージを送信しますが、割り込みを受信したハードウェア受信確認応答を受信しません。
+*割り込みメッセージ*は、デバイスが特定のアドレスに書き込んで割り込みをトリガーする特定の値です。 行ベースの割り込みとは異なり、メッセージシグナルの割り込みにはエッジセマンティクスがあります。 デバイスはメッセージを送信しますが、割り込みを受信したハードウェア受信確認は受け取りません。
 
-PCI 2.2 では、メッセージは、アドレスと部分的に非透過的な 16 ビット値で構成されます。 各デバイスには、1 つのアドレスが割り当てられます。 デバイスは、複数のメッセージを送信するには、メッセージを区別するためにメッセージの値の下位 4 ビットを使用できます。 そのため、PCI 2.2 では、デバイスは、最大 16 個のメッセージをサポートできます。
+PCI 2.2 の場合、メッセージは、アドレスと部分的に不透明な16ビット値で構成されます。 各デバイスには1つのアドレスが割り当てられます。 複数のメッセージを送信する場合、デバイスはメッセージ値の下位4ビットを使用してメッセージを区別できます。 したがって、PCI 2.2 では、デバイスは最大16個のメッセージをサポートできます。
 
-PCI 3.0 では、メッセージは、アドレスと非透過の 32 ビット値で構成されます。 それぞれ別のメッセージが、独自の一意のアドレス。 異なり PCI 2.2 では、デバイスは値は変更されません。 PCI 3.0 では、デバイスはさまざまなメッセージの最大長は 2,048 をサポートできます。 PCI 3.0 MSI-x をサポートするデバイスには、デバイスの割り込みのソースの各エントリを含むハードウェアの動的プログラミング可能なテーブルが機能します。 このテーブル内の各エントリは、デバイスに割り当てられているし、しない個別にマスクできるメッセージのいずれかでプログラミングできます。 ドライバーは、テーブル エントリとエントリのマスクが指定されているかどうかにある interrupt メッセージのプログラミングを変更できます。 詳細については、次を参照してください。[動的に構成する MSI-x](dynamically-configuring-msi-x.md)します。
+PCI 3.0 の場合、メッセージはアドレスと非透過的な32ビット値で構成されます。 各メッセージには、独自の一意のアドレスがあります。 PCI 2.2 とは異なり、デバイスは値を変更しません。 PCI 3.0 では、デバイスは最大2048の異なるメッセージをサポートできます。 PCI 3.0 の MSI-X 機能をサポートするデバイスは、デバイス内の各割り込みソースのエントリを含む動的にプログラミング可能なハードウェアテーブルを提供します。 このテーブルの各エントリは、デバイスに割り当てられているメッセージの1つを使用してプログラミングできます。また、個別にマスクすることもできます。 ドライバーは、割り込みメッセージのプログラミングをテーブルエントリに変更したり、エントリがマスクされているかどうかを変更したりすることができます。 詳細については、「 [MSI-X を動的に構成する](dynamically-configuring-msi-x.md)」を参照してください。
 
-ドライバーは、1 つを登録できます[ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)個人またはすべての可能なメッセージを処理するルーチン[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)メッセージごとのルーチンです。
+ドライバーは、各メッセージに対して可能なすべてのメッセージまたは個別の[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)ルーチンを処理する1つの[*InterruptMessageService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kmessage_service_routine)ルーチンを登録できます。
 
-ドライバーは、デバイスが送信する次のように Msi を処理できます。
+ドライバーは、デバイスが送信する Msi を次のように処理できます。
 
-1.  ドライバーのインストール中に、レジストリで Msi を有効にします。 デバイスの割り当てへのメッセージの数を指定するのにレジストリを使用することもできます。 詳細については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](enabling-message-signaled-interrupts-in-the-registry.md)します。
+1.  ドライバーのインストール中に、レジストリで Msi を有効にします。 また、レジストリを使用して、デバイスに割り当てるメッセージの数を指定することもできます。 詳細については、「[レジストリでのメッセージシグナル割り込みの有効化](enabling-message-signaled-interrupts-in-the-registry.md)」を参照してください。
 
-2.  必要に応じて、割り込みメッセージの数を増やすし、応答することで、いくつかのメッセージごとの設定を保存、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)要求。 詳細については、次を参照してください。 [Interrupt リソースの記述子を使用して](using-interrupt-resource-descriptors.md)します。
+2.  必要に応じて、割り込みメッセージの数を増やし、メッセージごとの設定を保存します。これには、 [**IRP\_\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)の要求に応答します。 詳細については、「[割り込みリソース記述子の使用](using-interrupt-resource-descriptors.md)」を参照してください。
 
-3.  用のドライバーのディスパッチ ルーチンで[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)、呼び出す[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 *InterruptService*または*InterruptMessageService*にデバイスの割り込みサービス ルーチン。 接続を使用して\_完全\_の指定されたバージョン**IoConnectInterruptEx**を登録する、 *InterruptService*特定のメッセージまたは CONNECTの日常的な\_メッセージ\_ベース バージョンの**IoConnectInterruptEx** 、1 つを登録する*InterruptMessageService*ルーチンのすべてのメッセージ。 詳細については、次を参照してください[、CONNECT を使用して\_メッセージ\_IoConnectInterruptEx のバージョンのベース](using-the-connect-message-based-version-of-ioconnectinterruptex.md)と[、CONNECT を使用して\_完全\_バージョンの指定。IoConnectInterruptEx](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)します。
+3.  [**IRP\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)のドライバーのディスパッチルーチンで\_デバイスを起動し、デバイスの割り込みを処理する*InterruptService*または*InterruptMessageService*ルーチンを登録するには、 [**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を呼び出します. 指定されたバージョンの**IoConnectInterruptEx**\_完全に接続\_を使用して、特定のメッセージに対する*InterruptService*ルーチン、または IOCONNECTINTERRUPTEX の CONNECT\_message\_BASED バージョンを登録します。すべてのメッセージに対して1つの*InterruptMessageService*ルーチンを登録します。 詳細については、「 [connect\_MESSAGE\_BASED バージョンの IoConnectInterruptEx](using-the-connect-message-based-version-of-ioconnectinterruptex.md) 」を参照してください。また、 [Connect\_を使用して、指定したバージョンの IoConnectInterruptEx を完全に\_](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)します。
 
-4.  ドライバーは、デバイスからサービスの割り込みを不要になったが後で呼び出す[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex) (後に、デバイスの割り込みを無効にする) を削除するには、割り込みサービスを登録ルーチン。
+4.  ドライバーがデバイスからの割り込みを処理しないようになったら、(デバイスの割り込みを無効にした後) [**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)を呼び出して、登録されている割り込みサービスルーチンを削除します。
 
-複数のメッセージを使用するように設計されたドライバーは予想メッセージ数が割り当てられていることをチェックします。 場合は、プラグ アンド プレイ (PnP) マネージャーでは、要求されたメッセージ数を割り当てることができません、代わりに、デバイスを正確に 1 つのメッセージを割り当てます。 ドライバーは、次の方法のいずれかで実際に割り当てられているメッセージの数を確認できます。
+複数のメッセージを使用するように設計されたドライバーは、予想される数のメッセージが割り当てられていることを確認する必要があります。 プラグアンドプレイ (PnP) マネージャーが、要求された数のメッセージを割り当てることができない場合は、そのデバイスにメッセージを1つだけ割り当てます。 ドライバーは、次のいずれかの方法で実際に割り当てられたメッセージの数を確認できます。
 
--   PnP マネージャーでは、生のリソースの記述子の一覧に割り当てられているメッセージの数を報告します。 詳細については、次を参照してください。 [Interrupt リソースの記述子を使用して](using-interrupt-resource-descriptors.md)します。
+-   PnP マネージャーは、未加工のリソース記述子の一覧に、割り当てられたメッセージの数を報告します。 詳細については、「[割り込みリソース記述子の使用](using-interrupt-resource-descriptors.md)」を参照してください。
 
--   ときに**IoConnectInterruptEx** 、設定を返します*パラメーター*-&gt;**MessageBased.ConnectContext.InterruptMessageTable-&gt;MessageCount**に割り当てられているメッセージの数。
+-   **IoConnectInterruptEx**がを返すと、&gt;**Messagebased. InterruptMessageTable-&gt;Messagecount**-*パラメーター*が割り当てられたメッセージの数に設定されます。
 
  
 

@@ -3,17 +3,17 @@ title: MIDI ミニポート ドライバー
 description: MIDI ミニポート ドライバー
 ms.assetid: 38aeba40-35da-4bfd-a8fe-cf8f7e96f286
 keywords:
-- オーディオのミニポート ドライバー WDK、MIDI
-- ミニポート ドライバー WDK オーディオ、MIDI
-- MIDI ミニポート ドライバー WDK オーディオ
+- オーディオミニポートドライバー WDK、MIDI
+- ミニポートドライバー WDK オーディオ、MIDI
+- MIDI ミニポートドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a018ddb93f1af9cd817067d2bc924bf8b3fec3f3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c87dec9b878ec5cf74abd4ca2d1aea9be055881
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363239"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830365"
 ---
 # <a name="midi-miniport-driver"></a>MIDI ミニポート ドライバー
 
@@ -21,49 +21,49 @@ ms.locfileid: "67363239"
 ## <span id="midi_miniport_driver"></span><span id="MIDI_MINIPORT_DRIVER"></span>
 
 
-MIDI ミニポート ドライバーでは、ハードウェアのシーケンス処理とダウンロード可能なサウンド (DL) などの高度な機能のない単純な MIDI デバイスのハードウェアに依存する機能を管理します。 MIDI ポート ドライバーでは、シンセサイザーへ MIDI メッセージの配信のタイミングを処理します。 シンセサイザー ポート ドライバーからの要求に応答する MIDI メッセージの転送にのみ、MIDI ミニポート ドライバーが担当します。 MIDI の高度な機能を持つデバイスを使用する必要があります、 [Dmu ミニポート ドライバー](dmus-miniport-driver.md)代わりにします。
+MIDI ミニポートドライバーは、ハードウェアシーケンスやダウンロード可能なサウンド (DLS) などの高度な機能がないシンプルな MIDI デバイスのハードウェアに依存する機能を管理します。 MIDI ポートドライバーは、シンセサイザーへの MIDI メッセージ配信のタイミングを処理します。 MIDI ミニポートドライバーは、ポートドライバーからの要求に応答して、シンセサイザーへの MIDI メッセージの転送のみを行います。 高度な MIDI 機能を搭載したデバイスでは、代わりに[Dmus ミニポートドライバー](dmus-miniport-driver.md)を使用する必要があります。
 
-MIDI ミニポート ドライバーでは、2 つのインターフェイスを実装する必要があります。
+MIDI ミニポートドライバーは、次の2つのインターフェイスを実装する必要があります。
 
--   *ミニポート インターフェイス*ミニポート オブジェクトを初期化し、MIDI ストリームを作成します。
+-   *ミニポートインターフェイス*は、ミニポートオブジェクトを初期化し、MIDI ストリームを作成します。
 
--   *ストリーム インターフェイス*MIDI ストリームを管理し、ミニポート ドライバーの機能のほとんどを公開します。
+-   *ストリームインターフェイス*は、MIDI ストリームを管理し、ほとんどのミニポートドライバーの機能を公開します。
 
-ミニポート インターフェイス[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)でメソッドを継承、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)インターフェイス。 **IMiniportMidi**次の追加のメソッドを提供します。
+ミニポートインターフェイス[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)は、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)インターフェイスのメソッドを継承します。 **IMiniportMidi**には、次の追加のメソッドが用意されています。
 
-[**IMiniportMidi::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-init)
+[**IMiniportMidi:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-init)
 
-ミニポート オブジェクトを初期化します。
+ミニポートオブジェクトを初期化します。
 
-[**IMiniportMidi::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-newstream)
+[**IMiniportMidi:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-newstream)
 
-新しいストリーム オブジェクトを作成します。
+新しいストリームオブジェクトを作成します。
 
-[**IMiniportMidi::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-service)
+[**IMiniportMidi:: Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-service)
 
-サービスに対する要求のミニポート ドライバーに通知します。
+サービスの要求をミニポートドライバーに通知します。
 
-ストリーム インターフェイス、 [IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)でメソッドを継承、 **IUnknown**インターフェイス。 **IMiniportMidiStream**次の追加のメソッドを提供します。
+ストリームインターフェイス[IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidistream)は、 **IUnknown**インターフェイスのメソッドを継承します。 **IMiniportMidiStream**には、次の追加のメソッドが用意されています。
 
-[**IMiniportMidiStream::Read**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidistream-read)
+[**IMiniportMidiStream:: Read**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidistream-read)
 
-読み取りは、MIDI キャプチャ デバイスからデータを入力します。
+MIDI キャプチャデバイスから入力データを読み取ります。
 
-[**IMiniportMidiStream::SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidistream-setformat)
+[**IMiniportMidiStream:: SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidistream-setformat)
 
 MIDI ストリームのデータ形式を設定します。
 
-[**IMiniportMidiStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidistream-setstate)
+[**IMiniportMidiStream:: SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidistream-setstate)
 
 MIDI ストリームの状態を設定します。
 
-[**IMiniportMidiStream::Write**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidistream-write)
+[**IMiniportMidiStream:: Write**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidistream-write)
 
-MIDI シンセサイザーへのデータを出力します。
+出力データを MIDI シンセサイザーに書き込みます。
 
-MIDI ポート ドライバーは、双方向ですべてのタイミングの問題を処理し、オンとオフ、アダプターにポート ドライバーの呼び出しに応答を迅速にデータを移動するミニポート ドライバーに依存しています、 **IMiniportMidiStream**読み取りおよび書き込みメソッド。
+MIDI ポートドライバーは、双方向のすべてのタイミングの問題を処理します。また、ポートドライバーによる**IMiniportMidiStream**の読み取りおよび書き込みメソッドの呼び出しに応答して、アダプターとの間でデータを迅速に移動するために、ミニポートドライバーに依存します。
 
-PortCls には、FM シンセサイザーと UART 関数を持つ MIDI デバイス用の組み込みの MIDI ミニポート ドライバーが含まれています。 詳細については、次を参照してください。 [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)します。
+PortCls には、FM シンセサイザーと UART の機能を備えた MIDI デバイス用の組み込みの MIDI ミニポートドライバーが含まれています。 詳細については、「 [**Pcnewminiport ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)」を参照してください。
 
  
 

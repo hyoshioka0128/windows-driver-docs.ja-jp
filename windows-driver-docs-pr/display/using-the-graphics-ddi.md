@@ -3,22 +3,22 @@ title: グラフィックス DDI の使用
 description: グラフィックス DDI の使用
 ms.assetid: e48d117b-8c1c-4617-84f8-b0b489b1083a
 keywords:
-- WDK の GDI 描画 DDI
-- GDI WDK Windows 2000 の表示、DDI
-- グラフィックス ドライバー WDK Windows 2000 の表示、DDI
-- DDI WDK グラフィック
-- GDI WDK Windows 2000 の表示、関数
-- グラフィックス ドライバー WDK Windows 2000 の表示、関数
-- WDK グラフィックス関数
-- 描画 WDK GDI や関数
+- WDK GDI、DDI の描画
+- GDI WDK Windows 2000 display、DDI
+- グラフィックスドライバー WDK Windows 2000 display、DDI
+- DDI WDK グラフィックス
+- GDI WDK Windows 2000 display、functions
+- グラフィックスドライバー WDK Windows 2000 display、functions
+- functions WDK グラフィックス
+- WDK GDI、functions の描画
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b5e4faf5b22f8d3dfe2109671cdf71f967c00c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c025e698b78d7e6c4d854d99121654ed3e3dc237
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353831"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825390"
 ---
 # <a name="using-the-graphics-ddi"></a>グラフィックス DDI の使用
 
@@ -26,27 +26,27 @@ ms.locfileid: "67353831"
 ## <span id="ddk_using_the_graphics_ddi_gg"></span><span id="DDK_USING_THE_GRAPHICS_DDI_GG"></span>
 
 
-グラフィックス デバイス インターフェイス (GDI) 経由のルーティング デバイスに依存しないアプリケーションの呼び出しに応答して、グラフィックス ドライバーはする必要があります、グラフィックス デバイスが必要な出力を生成することを確認します。 グラフィック ドライバーは、グラフィックス デバイス ドライバー インターフェイス (DDI) は、必要な限り実装することによってグラフィックスの出力を制御します。
+グラフィックスデバイスインターフェイス (GDI) を介してルーティングされるデバイスに依存しないアプリケーション呼び出しに応答して、グラフィックスドライバーは、グラフィックスデバイスが必要な出力を生成することを確認する必要があります。 グラフィックスドライバーは、必要なだけのグラフィックスデバイスドライバーインターフェイス (DDI) を実装することによって、グラフィックス出力を制御します。
 
-グラフィックス DDI 関数名は、 *DrvXxx*フォーム。 GDI を呼び出す*DrvXxx*ドライバーにデータを渡す関数。 ときに、アプリケーションには、GDI および GDI の要求には、ドライバーは、関連する関数をサポートしています、GDI がその関数を呼び出すことが決定します。 関数を提供し、関数の完了時に、GDI に戻り、ドライバーの役目です。
+グラフィック DDI 関数の名前は、 *DrvXxx*の形式になっています。 GDI は、これらの*DrvXxx*関数を呼び出して、データをドライバーに渡します。 アプリケーションが GDI の要求を行うと、そのドライバーが関連する機能をサポートしていることが GDI によって判断されます。 関数を提供し、関数の完了時に GDI に戻るのは、ドライバーの役割です。
 
-このセクションでは、グラフィックス ディスプレイおよびプリンター ドライバーのライターが認識する必要がある DDI 関数について説明します。 グラフィックス DDI 関数に対する宣言、構造体の定義、および定数が記載*winddi.h*します。 グラフィックス DDI 関数の詳細については、次を参照してください。 [GDI 関数は、プリンターやディスプレイ ドライバーによって実装される](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+ここでは、表示のライターとプリンタードライバーが認識する必要があるグラフィックス DDI 関数について説明します。 グラフィックス DDI 関数の宣言、構造体の定義、および定数は、 *winddi*にあります。 グラフィックス DDI 関数の詳細については、「[プリンターとディスプレイドライバーによって実装される GDI 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-このセクションのトピックは次のとおりです。
+このセクションに含まれるトピックは次のとおりです。
 
-[グラフィックス ドライバー関数](graphics-driver-functions.md)
+[グラフィックスドライバーの機能](graphics-driver-functions.md)
 
-[初期化と終了関数をサポートしています。](supporting-initialization-and-termination-functions.md)
+[初期化関数と終了関数のサポート](supporting-initialization-and-termination-functions.md)
 
-[浮動小数点演算でグラフィックス ドライバー関数](floating-point-operations-in-graphics-driver-functions.md)
+[グラフィックスドライバー関数における浮動小数点演算](floating-point-operations-in-graphics-driver-functions.md)
 
-[デバイス依存ビットマップを作成します。](creating-device-dependent-bitmaps.md)
+[デバイスに依存するビットマップの作成](creating-device-dependent-bitmaps.md)
 
-[グラフィックスの出力をサポートしています。](supporting-graphics-output.md)
+[グラフィックス出力のサポート](supporting-graphics-output.md)
 
-[グラフィックス DDI 色およびパターンの機能をサポート](supporting-graphics-ddi-color-and-pattern-functions.md)
+[グラフィックス DDI の色およびパターン関数のサポート](supporting-graphics-ddi-color-and-pattern-functions.md)
 
-[グラフィックス DDI フォントおよびテキストの機能をサポート](supporting-graphics-ddi-font-and-text-functions.md)
+[グラフィックス DDI のフォントおよびテキスト関数のサポート](supporting-graphics-ddi-font-and-text-functions.md)
 
 [DEVMODEW 構造体](the-devmodew-structure.md)
 

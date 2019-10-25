@@ -1,58 +1,58 @@
 ---
 title: HFP デバイスの接続
-description: HFP デバイス接続のトピックでは、オーディオ システムを決定する方法について説明し、Bluetooth の接続の状態情報をハンドル ハンズフリー プロファイル (HFP) デバイス。
+description: HFP デバイス接続のトピックでは、オーディオシステムが Bluetooth ハンズフリープロファイル (HFP) デバイスの接続状態情報を決定および処理する方法について説明します。
 ms.assetid: 29B33A3F-63BB-4E1E-B245-E90372A7812F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e258dcc100aae52bb40b8e206ab8406c30592dd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2feea23c231598f93d69b8c8f2d384e4be31139d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359975"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831188"
 ---
 # <a name="hfp-device-connection"></a>HFP デバイスの接続
 
 
-HFP デバイス接続のトピックでは、オーディオ システムを決定する方法について説明し、Bluetooth の接続の状態情報をハンドル ハンズフリー プロファイル (HFP) デバイス。
+HFP デバイス接続のトピックでは、オーディオシステムが Bluetooth ハンズフリープロファイル (HFP) デバイスの接続状態情報を決定および処理する方法について説明します。
 
-オーディオ ドライバーをサポートする必要があります、オーディオ ドライバーのすべての必要に応じて[ **KSPROPERTY\_ジャック\_説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)します。 オーディオ ドライバーは、 *IsConnected*フィールド フィルター ファクトリのコンテキストでします。 処理するときに、オーディオ ドライバーはこの値を使用して、 **KSPROPERTY\_ジャック\_説明**プロパティ。
+すべてのオーディオドライバーに必要な場合は、オーディオドライバーが[**Ksk プロパティ\_ジャック\_の説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)をサポートしている必要があります。 オーディオドライバーは、フィルターファクトリコンテキストに*IsConnected*フィールドを保持します。 この値は、 **Ksk プロパティ\_ジャック\_DESCRIPTION**プロパティを処理するときに、オーディオドライバーによって使用されます。
 
-ときに[ **IOCTL\_BTHHFP\_デバイス\_取得\_接続\_状態\_UPDATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_connection_status_update) 、正常に完了します。オーディオ ドライバー更新し*IsConnected*新しい接続の状態にします。 状態が変更された、オーディオ ドライバーが発生、 [ **KSEVENT\_PINCAPS\_JACKINFOCHANGE** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-jackinfochange)イベント、接続状態を再評価するオーディオ システム。 オーディオ ドライバーの別のインスタンスを呼び出して**IOCTL\_BTHHFP\_デバイス\_取得\_接続\_状態\_UPDATE** [次へ] の状態を受信するには変更します。 以前の状態の変更を要求し、保留中、引き続き、この 2 つ目の呼び出しは失敗、オーディオ ドライバーが接続状態が更新されないし、状態の情報を変更する別の要求がなさないつまりがあるかどうか。
+[**IOCTL\_BTHHFP\_デバイス\_\_接続を取得し\_更新**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_connection_status_update)を正常に完了すると、オーディオドライバーは新しい接続状態で*IsConnected*を更新します。 状態が変化した場合、オーディオドライバーは[**KSEVENT\_PINCAPS\_JACKINFOCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-jackinfochange)イベントを発生させ、オーディオシステムが接続状態を再評価します。 次に、オーディオドライバーは、 **BTHHFP\_\_デバイス\_** の別の IOCTL インスタンスを呼び出して、\_接続\_状態\_更新を取得して次の状態の変更を受信します。 まだ保留中の状態の変更要求がある場合、この2回目の呼び出しは失敗し、オーディオドライバーは接続状態を更新せず、状態の変更に関する別の要求を行いません。
 
-説明したよう[カーネル ストリーミングに関する考慮事項](kernel-streaming-considerations.md)、オーディオ ドライバーをサポートする必要があります[ **KSPROPERTY\_ONESHOT\_再接続**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)と[**KSPROPERTY\_ONESHOT\_切断**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)、これらのプロパティのハンドラーでする必要がありますそれぞれと送信 REQUESTCONNECT と REQUESTDISCONNECT Ioctl、HFP ドライバーにします。 これらの Ioctl が、すぐに完了して、オーディオ ドライバーは、返された結果に応答する準備が完了する必要があります。
+「[カーネルストリーミングに関する考慮事項](kernel-streaming-considerations.md)」で説明されているように、オーディオドライバーは[**KSK プロパティ\_ONESHOT\_RECONNECT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)および[**KSPROPERTY\_ONESHOT\_切断**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)をサポートする必要があります。これらのプロパティのハンドラーは、REQUESTCONNECT と REQUESTCONNECT の Ioctl をそれぞれ HFP ドライバーに送信します。 これらの Ioctl は迅速に完了します。オーディオドライバーは、返された結果に応答する準備ができている必要があります。
 
-ここでは、いくつかその他の Bluetooth のオーディオ デバイス接続関連の要因、オーディオ ドライバー開発者が意識する必要があります。
+オーディオドライバーの開発者が知っておく必要があるその他の Bluetooth オーディオデバイス接続関連の要因を次に示します。
 
-## <a name="span-idstreamchannelspanspan-idstreamchannelspanspan-idstreamchannelspanstream-channel"></a><span id="Stream_channel"></span><span id="stream_channel"></span><span id="STREAM_CHANNEL"></span>Stream のチャンネル
-
-
-Stream チャネルは、無線による帯域幅のオーディオ ドライバーの割り当てを表します。 ほとんどの場合、これは、SCO チャネルです。 ただし、SCO チャネルの状態の管理の詳細の一部は HFP ドライバー内に完全処理されます。 これには、例のリモート接続を切断なる可能性があるため、呼び出しのシナリオ、HF が可用性グループへのオーディオの転送を開始します (場所、PC の役割を果たし、AG ここで) が含まれます。
-
-## <a name="span-idaudiofilterpinstatesspanspan-idaudiofilterpinstatesspanspan-idaudiofilterpinstatesspanaudio-filter-pin-states"></a><span id="Audio_filter_pin_states"></span><span id="audio_filter_pin_states"></span><span id="AUDIO_FILTER_PIN_STATES"></span>オーディオ フィルター暗証番号 (pin) の状態
+## <a name="span-idstream_channelspanspan-idstream_channelspanspan-idstream_channelspanstream-channel"></a><span id="Stream_channel"></span><span id="stream_channel"></span><span id="STREAM_CHANNEL"></span>ストリームチャネル
 
 
-オーディオ ドライバー ハンドラーを実装、KS 暗証番号 (pin) の状態 (AVStrMiniPinSetDeviceState に類似) KS ピンが 2 つです。 SCO ストリーム チャネルは、これらのピンを無線でデータを転送するのいずれかの必要があります。 これらのピンのいずれかの KSSTATE への移行時に\_取得、オーディオ ドライバーに送信することによって、チャネルが表示されます[ **IOCTL\_BTHHFP\_ストリーム\_オープン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_open)HFP ドライバーにします。 これは非同期の呼び出しであり、完了までに数秒かかります。 オーディオ ドライバーを選択し、タイムアウト メカニズムを実装する必要はありません、IOCTL KSSTATE への移行を完了する前に完了するまで待つか\_取得します。
+ストリームチャネルは、オーディオドライバーによる無線帯域幅の割り当てを表します。 ほとんどの場合、これは SCO チャネルです。 ただし、SCO チャネルの状態の管理の詳細については、HFP ドライバー内で完全に処理されます。 これには、たとえば、HF が AG へのオーディオ転送を開始する (このケースでは、PC が AG の役割を果たす) 呼び出しシナリオが原因であるリモート切断の例が含まれます。
 
-両方の KS ピンが KSSTATE に移行するタイミング\_、オーディオ ドライバーの送信を停止[ **IOCTL\_BTHHFP\_ストリーム\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_close) HFP ドライバーにします。 これを迅速に完了します。
-
-送信するタイミングを決定する**IOCTL\_BTHHFP\_ストリーム\_オープン**と**IOCTL\_BTHHFP\_ストリーム\_閉じる**、オーディオ ドライバー、SCO ストリーム チャネルを必要とするピンの数を追跡するために、単純な参照カウントのメカニズムを使用できます。 オーディオ ドライバーは、開いてから、参照カウントが 0 から 1 に変更されたときに、SCO ストリーム チャネルを閉じます。
-
-**IOCTL\_BTHHFP\_ストリーム\_開く**HFP ドライバー、SCO チャネルを要求するがない場合は、開くには、および SCO 要求からの結果に要求を完了します。 **IOCTL\_BTHHFP\_ストリーム\_閉じる**HFP ドライバーは、1 つが開いている場合に、SCO チャネル切断を要求します。
-
-## <a name="span-idremotescoconnectanddisconnectspanspan-idremotescoconnectanddisconnectspanspan-idremotescoconnectanddisconnectspanremote-sco-connect-and-disconnect"></a><span id="Remote_SCO_connect_and_disconnect"></span><span id="remote_sco_connect_and_disconnect"></span><span id="REMOTE_SCO_CONNECT_AND_DISCONNECT"></span>リモート SCO 接続し、切断
+## <a name="span-idaudio_filter_pin_statesspanspan-idaudio_filter_pin_statesspanspan-idaudio_filter_pin_statesspanaudio-filter-pin-states"></a><span id="Audio_filter_pin_states"></span><span id="audio_filter_pin_states"></span><span id="AUDIO_FILTER_PIN_STATES"></span>オーディオフィルターの pin の状態
 
 
-リモート SCO 切断、Stream チャネルが閉じられた場合、HFP ドライバー何もしません。 Stream チャネルが開かれている場合、HFP ドライバーは再接続タイマーを開始します。 SCO の切断されている状態を Stream のチャネルがまだ開いている場合、タイマーの期限が切れると、ドライバーは SCO チャネルを要求します。 オーディオ データが転送されない無線 SCO が切断されているため、この期間中にオーディオではギャップが存在がするときに注意してください。 HFP ドライバーは、任意の呼び出しを実行して、オーディオ ドライバーに Stream チャネル状態の変更を通知し、SCO 要求が失敗した場合[ **IOCTL\_BTHHFP\_ストリーム\_取得\_状態\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_get_status_update)します。 リモート SCO 切断が HF デバイス要求への転送呼び出しオーディオのオーディオのゲートウェイに通常関連付けられるので、まれで、この必要があります。 オーディオ ドライバー検討これの途中でエラー状態。
+オーディオドライバーは、2つの KS ピンの KS ピン状態ハンドラー (AVStrMiniPinSetDeviceState に似ています) を実装しています。 これらのいずれかのピンが無線経由でデータを転送するには、SCO ストリームチャネルが必要です。 これらのいずれかのピンが KSK 状態に遷移すると\_取得されます。そのため、オーディオドライバーは、HFP ドライバーに対して開いている[**IOCTL\_BTHHFP\_\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_open)を送信することによってチャネルを開きます。 これは非同期呼び出しであり、完了するまでに数秒かかることがあります。 オーディオドライバーは、独自のタイムアウトメカニズムを実装する必要はなく、IOCTL が完了するまで待機してから、KSSTATE\_の取得への移行を完了する必要があります。
 
-この手順では、VoIP アプリケーション CallButtons API から、オーディオ転送コールバックを受信し、正常にストリーミングのエラーが発生するのではなく、HFP エンドポイントでのオーディオのリソースを解放する時間ができます。
+両方の KS ピンが KSK 状態に移行すると\_停止すると、オーディオドライバーは[**BTHHFP\_\_ストリームの\_IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_close)を hfp ドライバーの近くに送信します。 これは短時間で完了します。
 
-SCO をリモートで接続、ドライバーが単に、接続を受け入れる Stream チャネルが開いている場合。 Stream チャネルが閉じられた HFP ドライバーは接続を受け付けも切断タイマーを開始します。 切断タイマー期限が切れたとき、Stream チャネルを閉じたまま SCO がまだ接続されている場合、ドライバー、SCO 接続が解除されます。
+**Bthhfp\_ストリーム\_オープン**および**ioctl\_bthhfp\_ストリーム**を\_送信するタイミングを決定するために、オーディオドライバーは単純な参照カウントメカニズムを使用して、の pin の数を追跡できます。SCO ストリームチャネルが必要です。 参照カウントが0から1に変更されると、オーディオドライバーは SCO ストリームチャネルを開いて閉じます。
 
-この手順では、VoIP アプリケーション CallButtons API から、オーディオ転送コールバックを受信し、途中で拒否または SCO 接続を閉じることがなく、HFP エンドポイントでのオーディオのリソースを確立する時間ができます。
+**IOCTL\_BTHHFP\_ストリーム\_開い**ている場合、hfp ドライバーは sco チャネル (まだ開いていない場合) を要求し、sco 要求の結果を使用して要求を完了します。 **IOCTL\_BTHHFP\_ストリーム\_** hfp ドライバーが開いている場合は、SCO チャネルの切断を要求します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[操作の理論を概説します。](theory-of-operation.md)  
+## <a name="span-idremote_sco_connect_and_disconnectspanspan-idremote_sco_connect_and_disconnectspanspan-idremote_sco_connect_and_disconnectspanremote-sco-connect-and-disconnect"></a><span id="Remote_SCO_connect_and_disconnect"></span><span id="remote_sco_connect_and_disconnect"></span><span id="REMOTE_SCO_CONNECT_AND_DISCONNECT"></span>リモート SCO 接続と切断
+
+
+リモート SCO 切断では、ストリームチャネルが閉じている場合、HFP ドライバーは何も行いません。 ストリームチャネルが開かれている場合、HFP ドライバーは再接続タイマーを開始します。 タイマーの有効期限が切れた場合、SCO がまだ切断されていて、ストリームチャネルが開いたままになっていると、ドライバーは SCO チャネルを要求します。 SCO が切断されている間は、電波を介したオーディオデータ転送が行われないので、この期間中はオーディオに差が生じます。 SCO 要求が失敗した場合、HFP ドライバーは、呼び出し中の[**IOCTL\_BTHHFP\_ストリーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_get_status_update)を完了することによって、ストリームチャネルの状態の変更をオーディオドライバーに通知します。これにより\_状態\_更新プログラムが取得され\_ます。 リモートの SCO 切断は通常、オーディオゲートウェイへの呼び出しオーディオの転送を要求する HF デバイスに関連付けられているため、この方法はめったに発生しません。 オーディオドライバーは、これをストリームストリームのエラー状態と見なす必要があります。
+
+この手順によって、VoIP アプリケーションが CallButtons API からオーディオ転送コールバックを受信し、そのオーディオリソースを HFP エンドポイントでクリーンに解放する時間が発生します。ストリーミングエラーは発生しません。
+
+リモート SCO 接続では、ストリームチャネルが開いている場合、ドライバーは単に接続を受け入れます。 ストリームチャネルが閉じている場合、HFP ドライバーは接続を受け入れ、切断タイマーも開始します。 切断タイマーの有効期限が切れた場合、SCO がまだ接続されていて、ストリームチャネルがまだ閉じていると、ドライバーは SCO 接続を解除します。
+
+この手順では、VoIP アプリケーションが CallButtons API からオーディオ転送コールバックを受信し、HFP エンドポイントでオーディオリソースを確立するまでの時間を指定します。これにより、SCO 接続を早めに拒否したり閉じたりする必要がなくなります。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[操作の理論](theory-of-operation.md)  
 
 
 

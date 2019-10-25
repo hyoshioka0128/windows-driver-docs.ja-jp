@@ -1,9 +1,9 @@
 ---
-title: ndiskd.nbllog
-description: Ndiskd.nbllog 拡張機能は、システム上の NBL (NET_BUFFER_LIST) のすべてのアクティビティのログを表示します。
+title: ndiskd ndiskd
+description: Ndiskd ndiskd 拡張機能によって、システム上のすべての NBL (NET_BUFFER_LIST) アクティビティのログが表示されます。
 ms.assetid: 59CB6B60-E0B3-435E-A6F6-82A715E87C69
 keywords:
-- デバッグ ndiskd.nbllog Windows
+- ndiskd ndiskd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e57e8e2e4b78563a0e9a38b1e17f56187774f3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0898a87ef75f767eecdb38df4bd3c0f99c04f2ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363132"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826619"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**! Ndiskd.nbllog**拡張機能がすべて NBL のログを表示します ([**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) システム上のアクティビティ。
+**! Ndiskd ndiskd**拡張機能によって、システム上のすべての NBL ([**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) アクティビティのログが表示されます。
 
 ```console
 !ndiskd.nbllog [-stacks] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-履歴*   
-呼び出し履歴が含まれます。
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-スタック*   
+呼び出し履歴を含めます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-**重要な**  
- **! ndiskd.nbllog** NBL の追跡、デバッグ対象のターゲット コンピューターで有効にする必要があります。 NBL の追跡は、Windows のすべての構成で既定では無効です。 NBL の追跡が有効でない場合。 ndiskd が表示されます手順については、有効にする方法については、次のスニペットに示すようにします。
+**重要**  
+ **! ndiskd。 ndiskd**では、デバッグ対象ターゲットコンピューターで NBL の追跡が有効になっている必要があります。 NBL の追跡は、Windows のすべての構成で既定で有効になっていません。 NBL tracking が有効になっていない場合は、次のスニペットに示すように、有効にする方法についての説明があります。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -63,12 +63,12 @@ Ndiskd.dll
 
  
 
-NBL ログは、システム上のネットワーク トラフィックを表示します。 [ **! ndiskd.netreport** ](-ndiskd-netreport.md)視覚的にこのネットワーク トラフィックを表示する NBL 追跡ログを解析します。 そのため、NBL の追跡が有効な場合、 **! ndiskd.netreport**この情報を表示することはできません。
+NBL ログには、システム上のネットワークトラフィックが表示されます。 [ **! ndiskd netreport**](-ndiskd-netreport.md)は、NBL 追跡ログを解析して、このネットワークトラフィックを視覚的に表示します。 このため、NBL tracking が有効になっていない場合、 **! ndiskd netreport**はこの情報を表示できません。
 
 <a name="examples"></a>例
 --------
 
-NBL のターゲットのデバッグ対象のマシンで追跡を有効にした後、入力、 **! ndiskd.nbllog**コマンドをシステムに NBL のすべてのトラフィックのログを参照してください。 次の例に示すように実行されている **! ndiskd.nbllog**パラメーターなしでコマンドを再実行することによって回避できますが、200 のイベントへの出力が制限されます、 *-強制*オプション。 この例では、出力の中央が簡潔にするための excised されています。
+ターゲットのデバッグ対象マシンで NBL 追跡を有効にした後、 **! ndiskd ndiskd**コマンドを入力して、システム上のすべての NBL トラフィックのログを確認します。 次の例に示すように、パラメーターを指定せずに **! ndiskd ndiskd**を実行すると、出力は200イベントに制限されます。これは、 *-force*オプションを指定してコマンドを再実行することによってバイパスできます。 この例の出力の中間部分は簡潔にするために excised されています。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -102,24 +102,24 @@ NBL のターゲットのデバッグ対象のマシンで追跡を有効にし�
     Rerun with the '-force' option to bypass this limit.
 ```
 
-結果を解釈する方法の詳細な説明の **! ndiskd.nbllog**を参照してください[! ndiskd.nbl-ログ](https://go.microsoft.com/fwlink/p/?linkid=846176)NDIS ブログ。
+**! Ndiskd ndiskd**の結果を解釈する方法の詳細については、NDIS ブログの「 [! ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176) 」を参照してください。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[!ndiskd.nbl -log](https://go.microsoft.com/fwlink/p/?linkid=846176)
+[! ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176)
 
  
 

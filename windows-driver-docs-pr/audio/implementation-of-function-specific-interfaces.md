@@ -3,17 +3,17 @@ title: 関数固有のインターフェイスの実装
 description: 関数固有のインターフェイスの実装
 ms.assetid: 6a15c8b5-17ca-4658-bf52-cf9b3307e706
 keywords:
-- オーディオのミニポート ドライバー WDK、ポート クラス
-- ミニポート ドライバー WDK オーディオ、ポート クラス
-- ミニポート インターフェイス WDK オーディオ
+- オーディオミニポートドライバー WDK、ポートクラス
+- ミニポートドライバー WDK オーディオ、ポートクラス
+- ミニポートインターフェイス WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c646dc9a6704081994cdbc3fa3226dfdcd4b7fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab1a400576228688e10321c72a64d4273e1709ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833255"
 ---
 # <a name="implementation-of-function-specific-interfaces"></a>関数固有のインターフェイスの実装
 
@@ -21,9 +21,9 @@ ms.locfileid: "67359939"
 ## <span id="implementation_of_function_specific_interfaces"></span><span id="IMPLEMENTATION_OF_FUNCTION_SPECIFIC_INTERFACES"></span>
 
 
-通常のオーディオ アダプター カード IMiniport の対応するコレクションを介して WDM オーディオ システムに公開できるアダプター ドライバー、オーディオ ハードウェア関数のコレクションを格納する*Xxx*インターフェイス。 すべての IMiniport*Xxx*インターフェイスを継承[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)します。 ミニポート インターフェイス--wave、MIDI、トポロジの各型し、ため on--特定の種類のアダプター カードのオーディオ機能を制御するためのミニポート ドライバーをカプセル化します。 ドライバーは、同じ (または同等) のハードウェア機能の複数のインスタンスを表すため、同じミニポート インターフェイスの複数のインスタンスを公開することもできます。
+一般的なオーディオアダプターカードには、オーディオハードウェア関数のコレクションが含まれており、アダプタードライバーは、対応する IMiniport*Xxx*インターフェイスのコレクションを介して WDM オーディオシステムに公開できます。 すべての IMiniport*Xxx*インターフェイスは、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)から継承します。 各種類のミニポートインターフェイス (wave、MIDI、トポロジなど) は、アダプターカードの特定の種類のオーディオ機能を制御するためのミニポートドライバーをカプセル化します。 また、同じ (または同様の) ハードウェア関数の複数のインスタンスを表すために、ドライバーは同じミニポートインターフェイスの複数のインスタンスを公開することもできます。
 
-詳細については、次を参照してください。[ミニポート インターフェイス](miniport-interfaces.md)します。
+詳細については、「[ミニポートインターフェイス](miniport-interfaces.md)」を参照してください。
 
  
 

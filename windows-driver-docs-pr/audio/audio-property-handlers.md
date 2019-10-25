@@ -3,25 +3,25 @@ title: オーディオのプロパティのハンドラー
 description: オーディオのプロパティのハンドラー
 ms.assetid: 4bf176ae-b3fd-47e6-9802-a92ef5e9904f
 keywords:
-- WDK、ハンドラーのオーディオのプロパティ
-- WDM オーディオ プロパティ WDK、ハンドラー
-- ハンドラーの WDK オーディオ
-- プロパティ ハンドラー WDK オーディオ
-- WDK オーディオのプロパティの設定
-- プロパティの get WDK オーディオ
-- basic - クエリ WDK オーディオをサポート
+- オーディオプロパティ WDK、ハンドラー
+- WDM オーディオプロパティ WDK、ハンドラー
+- WDK のオーディオをハンドラする
+- プロパティハンドラー WDK audio
+- set プロパティ WDK audio
+- get プロパティ WDK audio
+- basic-サポートクエリ WDK オーディオ
 - automation テーブル WDK オーディオ
-- プロパティ ハンドラーのオーディオ、WDK をフィルター処理します。
-- プロパティ ハンドラーのオーディオ、WDK をピン留め
-- ノード WDK オーディオ、プロパティ ハンドラー
+- WDK オーディオ、プロパティハンドラーをフィルター処理します
+- WDK オーディオ、プロパティハンドラーをピン留めする
+- ノード WDK オーディオ、プロパティハンドラー
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a90f9ac8f1924d275c61f751a050d984ed8cb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd5c5ea8c8945f4ef1dd15d2d594ac6b21995c47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355650"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831332"
 ---
 # <a name="audio-property-handlers"></a>オーディオのプロパティのハンドラー
 
@@ -29,59 +29,59 @@ ms.locfileid: "67355650"
 ## <span id="audio_property_handlers"></span><span id="AUDIO_PROPERTY_HANDLERS"></span>
 
 
-ミニポート ドライバーでサポートされている各プロパティに関する情報を格納する、 [ **PCPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcproperty_item)構造体。 この構造体には、プロパティの詳細については、次の情報が含まれています。
+ミニポートドライバーは、 [**pcproperty\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)構造体でサポートされている各プロパティに関する情報を格納します。 この構造体には、プロパティに関する次の情報が含まれています。
 
--   プロパティ セット GUID およびプロパティ ID (またはインデックス)
+-   プロパティセット GUID とプロパティ ID (またはインデックス)
 
--   プロパティのハンドラー ルーチンへの関数ポインター
+-   プロパティのハンドラールーチンへの関数ポインター
 
--   ハンドラーをサポートするプロパティの操作を指定するフラグ
+-   ハンドラーがサポートするプロパティ操作を指定するフラグ
 
-ミニポート ドライバーは、automation のテーブルを提供します (で指定された、 [ **PCAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcautomation_table)構造) フィルター。 ノードの種類が独自のテーブルまたはドライバーが、フィルターの暗証番号 (pin) の型とノード型の各ピン テーブルの追加のオートメーションを提供します。 Automation の各テーブルには、PCPROPERTY の (場合によっては空) の配列が含まれています。\_項目の構造体、および各構造体は、フィルター、pin、またはノードの 1 つのプロパティについて説明します。 クライアントは、フィルター、pin、またはノードをプロパティ要求を送信するポート ドライバーは、automation テーブルを介して要求を適切なプロパティのハンドラーにルーティングされます。
+ミニポートドライバーは、フィルターのために ( [**Pcautomation\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcautomation_table)構造によって指定される) オートメーションテーブルを提供します。 ドライバーは、フィルターのピンの種類とノードの種類に対して追加のオートメーションテーブルを提供します。各ピンまたはノードの種類には独自のテーブルがあります。 各オートメーションテーブルには、PCPROPERTY\_項目構造の (空の場合もありますが) 配列が含まれます。これらの各構造体は、フィルター、ピン、またはノードの1つのプロパティを表します。 クライアントがプロパティ要求をフィルター、ピン、またはノードに送信すると、ポートドライバーは、その要求をオートメーションテーブルを介して適切なプロパティハンドラーにルーティングします。
 
-ミニポート ドライバーでは、各プロパティの一意のプロパティ ハンドラー ルーチンを指定できます。 ただし、ドライバーは、いくつかのようなプロパティを処理する場合これらできる場合があります統合便宜上 1 つのハンドラー ルーチンです。 ドライバー開発者が作成した実装上の決定は、各プロパティの一意のハンドラーを指定するか、単一のハンドラーにいくつかのプロパティを統合するプロパティの要求を送信するクライアントに対して透過的である必要があります。
+ミニポートドライバーでは、各プロパティに対して一意のプロパティハンドラールーチンを指定できます。 ただし、ドライバーがいくつかの類似したプロパティを処理する場合は、便宜上、1つのハンドラールーチンに統合することもできます。 各プロパティに対して一意のハンドラーを提供するか、複数のプロパティを1つのハンドラーに統合するかは、ドライバーライターによって決定され、プロパティ要求を送信するクライアントに対して透過的である必要があります。
 
-ユーザー モードのクライアントは Microsoft Win32 関数を呼び出すことによって取得、セット、またはプロパティの基本サポート要求を送信できます[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)で、 *dwIoControlCode*を呼び出すパラメーターには、IOCTL 設定\_KS\_プロパティ。 オペレーティング システムがこの呼び出しに変換する[ **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)、クラス ドライバーにディスパッチします。 詳細については、次を参照してください。 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
+ユーザーモードのクライアントは、 *Dwiocontrolcode*呼び出しパラメーターを IOCTL\_KS\_property に設定して Microsoft Win32 関数[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を呼び出すことによって、get、set、または basic サポートプロパティ要求を送信できます。 オペレーティングシステムは、この呼び出しを IRP に変換します。この[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)はクラスドライバーにディスパッチされます。 詳細については、「 [KS のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)」を参照してください。
 
-クライアントが KS プロパティの要求を送信します (IOCTL では、\_KS\_プロパティ I/O-コントロール IRP) フィルター ハンドルまたは暗証番号 (pin) のハンドルでは、KS システム ドライバー (Ks.sys) は、フィルター オブジェクトまたは pin オブジェクト用のポート ドライバーへの要求を提供します。 ミニポート ドライバーでは、プロパティのハンドラーを提供する場合、ポート、ドライバーは、ハンドラーに要求を転送します。 要求を転送する前に、ポート ドライバー情報を変換しますプロパティ要求で指定された形式に、 [ **PCPROPERTY\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcproperty_request)構造体。 ポートのドライバーでは、この構造体をミニポート ドライバーのハンドラーに渡します。
+クライアントが KS プロパティ要求 (つまり、IOCTL\_KS\_プロパティ i/o 制御 IRP) をフィルターハンドルまたはピンハンドルに送信すると、KS システムドライバー (Ks) は、フィルターオブジェクトまたはピンオブジェクトのポートドライバーに要求を配信します。 ミニポートドライバーがプロパティのハンドラーを提供する場合、ポートドライバーはハンドラーに要求を転送します。 要求を転送する前に、ポートドライバーは、プロパティ要求の情報を[**pcproperty\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcproperty_request)構造によって指定された形式に変換します。 ポートドライバーは、この構造体をミニポートドライバーのハンドラーに渡します。
 
-**MajorTarget** PCPROPERTY のメンバー\_オーディオ デバイスのプライマリのミニポート ドライバー インターフェイスを指す要求。 たとえば、WavePci デバイスは、これは、ミニポート ドライバー オブジェクトへのポインター [IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepci)インターフェイス。
+PCPROPERTY\_要求の**MajorTarget**メンバーは、オーディオデバイスのプライマリミニポートドライバーインターフェイスをポイントします。 たとえば、WavePci デバイスの場合、これはミニポートドライバーオブジェクトの[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)インターフェイスへのポインターです。
 
-フィルターのハンドルに送信される KS プロパティ要求の場合、 **MinorTarget** PCPROPERTY のメンバー\_要求が**NULL**します。 暗証番号 (pin) のハンドルに送信される要求の場合**MinorTarget**暗証番号 (pin) のストリーム インターフェイスを指します。 ストリーム オブジェクトへのポインターは、この WavePci デバイスは、たとえば、 [IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)インターフェイス。
+フィルターハンドルに送信される KS プロパティ要求の場合、PCPROPERTY\_要求の**Minortarget**メンバーは**NULL**になります。 ピンハンドルに要求が送信された場合、 **Minortarget**はピンのストリームインターフェイスをポイントします。 たとえば、WavePci デバイスの場合、これはストリームオブジェクトの[IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream)インターフェイスへのポインターです。
 
-**インスタンス**と**値**PCPROPERTY のメンバー\_KS プロパティ要求のそれぞれを要求がポイントして、入力と出力バッファー。 (バッファーがで指定された、 *lpInBuffer*と*lpOutBuffer*のパラメーター、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数です)。これらのバッファーには、それぞれで説明するプロパティ記述子 (インスタンス データ) とプロパティの値 (操作データ) が格納[オーディオ ドライバーのプロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)します。 **値**、出力バッファーの先頭を指すメンバーが、**インスタンス**ポインター入力バッファーの先頭からのオフセットです。
+PCPROPERTY\_の**インスタンス**と**値**のメンバーは、それぞれ KS プロパティ要求の入力バッファーと出力バッファーを参照します。 (バッファーは、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数の*lpinbuffer*パラメーターと*lpoutbuffer*パラメーターによって指定されます)。これらのバッファーには、プロパティ記述子 (インスタンスデータ) とプロパティ値 (操作データ) がそれぞれ含まれています。詳細については、「[オーディオドライバーのプロパティセット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)」を参照してください。 **値**のメンバーは出力バッファーの先頭を指しますが、**インスタンス**ポインターは入力バッファーの先頭からのオフセットです。
 
-入力バッファーがいずれかで始まる、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))または[ **KSNODEPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)構造体。 ポートのドライバーでは、この構造体の情報をコピー、PCPROPERTY に\_要求構造体の**ノード**、 **PropertyItem**、および**動詞**メンバー。 ポートのドライバーが読み込まれるすべてのデータは、バッファーに KSPROPERTY または KSNODEPROPERTY 構造に従っての場合、**インスタンス**このデータへのポインターを持つメンバー。 それ以外の場合、設定**インスタンス**に**NULL**します。
+入力バッファーは、 [**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))または[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)構造体のいずれかで始まります。 ポートドライバーは、この構造の情報を PCPROPERTY\_要求構造体の**Node**、 **propertyitem**、および**Verb**メンバーにコピーします。 データが、バッファー内の KSK プロパティまたは KSNODEPROPERTY 構造体の後に続く場合、ポートドライバーは、このデータへのポインターを使用して**インスタンス**メンバーを読み込みます。 それ以外の場合は、**インスタンス**を**NULL**に設定します。
 
-ポート ドライバーが、PCPROPERTY を設定して、入力バッファーがノードの情報を含まない、KSPROPERTY 構造体で始まる場合\_要求構造体の**ノード**ULONG(-1) するメンバー。 ここで、ポート ドライバーは、フィルターまたはフィルターのハンドルまたは暗証番号 (pin) のハンドルによってプロパティ要求のターゲットを指定するかどうかに応じて、pin、ミニポート ドライバーのオートメーションのテーブルから適切なハンドラーを呼び出します。 (テーブルでは、プロパティのハンドラーを指定しない場合、ポート ドライバー要求を処理、代わりにします。)
+入力バッファーが、ノード情報を含まない KSK プロパティ構造で始まる場合、ポートドライバーは PCPROPERTY\_要求構造の**ノード**メンバーを ULONG (-1) に設定します。 この場合、ポートドライバーは、プロパティ要求のターゲットがフィルターハンドルまたはピンハンドルによって指定されているかどうかに応じて、フィルターまたはピンのミニポートドライバーのオートメーションテーブルから適切なハンドラーを呼び出します。 (テーブルでプロパティのハンドラーが指定されていない場合、ポートドライバーは代わりに要求を処理します)。
 
-場合、入力バッファーの先頭 KSNODEPROPERTY 構造体が、ポート ドライバー ノード ID この構造体からにコピー、PCPROPERTY\_要求構造体の**ノード**メンバーから適切なハンドラーを呼び出すと、ノードのミニポート ドライバーのオートメーション テーブルです。 (ここでも、テーブルでは、プロパティのハンドラーを指定しない場合、ポート ドライバー要求を処理代わりにします。)
+入力バッファーが KSNODEPROPERTY 構造体で始まる場合、ポートドライバーは、この構造体から PCPROPERTY\_要求構造体の**ノード**メンバーにノード ID をコピーし、ミニポートドライバーのオートメーションから適切なハンドラーを呼び出します。ノードのテーブルです。 (この場合も、テーブルでプロパティのハンドラーが指定されていない場合は、ポートドライバーによって要求が処理されます)。
 
-ポート ドライバー チェック、KSPROPERTY\_型\_KSPROPERTY または KSNODEPROPERTY、2 つの構造を決定するプロパティの要求の操作フラグのビット トポロジは、入力バッファーの先頭が存在します。
+ポートドライバーは、プロパティ要求の操作フラグに\_トポロジビット\_型を確認し、次の2つの構造体 (KSK プロパティまたは KSNODEPROPERTY) が入力バッファーの先頭に存在するかどうかを判断します。
 
--   このビットが設定されている場合はノードのプロパティを要求し、入力バッファーが KSNODEPROPERTY 構造で始まります。
+-   このビットが設定されている場合、要求はノードプロパティ用であり、入力バッファーは KSNODEPROPERTY 構造体で始まります。
 
--   それ以外の場合、入力バッファーから始まります KSPROPERTY 構造体。
+-   それ以外の場合、入力バッファーは KSK プロパティ構造で始まります。
 
-KSPROPERTY の詳細については\_型\_トポロジを参照してください[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))します。
+KSK プロパティ\_型\_トポロジの詳細については、「 [**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))」を参照してください。
 
-PCPROPERTY\_要求構造体の**InstanceSize**と**ValueSize**メンバーが指すバッファーのサイズを指定する、**インスタンス**と**値**メンバー。 **ValueSize**プロパティの要求の出力バッファーのサイズと同じですが、 **InstanceSize**は入力バッファーに KSPROPERTY または KSNODEPROPERTY 構造に従っているデータのサイズです。 つまり、 **InstanceSize** KSPROPERTY または KSNODEPROPERTY 構造体のサイズ-入力バッファーのサイズです。 この構造体を適合する追加のデータ ポート ドライバー設定**InstanceSize**をゼロに (と**インスタンス**に**NULL**)。
+PCPROPERTY\_要求構造体の**InstanceSize**および**valuesize**メンバーは、**インスタンス**と**値**のメンバーが指すバッファーのサイズを指定します。 **Valuesize**は、プロパティ要求の出力バッファーのサイズと同じですが、 **InstanceSize**は、入力バッファーの KSK プロパティまたは KSNODEPROPERTY 構造に従うデータのサイズです。 つまり、 **InstanceSize**は、入力バッファーのサイズから ksk プロパティまたは KSNODEPROPERTY 構造体のサイズを差し引いたものです。 この構造体の後にデータが追加されていない場合、ポートドライバーは**InstanceSize**をゼロ (および**インスタンス**から**NULL**) に設定します。
 
-たとえば、クライアントが指定されている場合、 [ **KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)ポート ドライバー、入力バッファー内のインスタンス データと構造体は、ハンドラーに渡します、PCPROPERTY\_要求が構造体が**インスタンス**メンバーが、KSNODEPROPERTY を指す\_オーディオ\_チャネル構造体の**チャネル**メンバー、およびその**InstanceSize**メンバーには、値が含まれています。
+たとえば、クライアントが[**KSNODEPROPERTY\_AUDIO\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)構造体を入力バッファーのインスタンスデータとして指定した場合、ポートドライバーは、その**インスタンス**メンバーを持つ pcproperty\_要求構造体を渡します。KSNODEPROPERTY\_AUDIO\_CHANNEL 構造体の**チャネル**メンバーを指し、その**InstanceSize**メンバーに値が含まれています。
 
-**sizeof**(KSNODEPROPERTY\_オーディオ\_チャネル)- **sizeof**(KSNODEPROPERTY)
+**sizeof**(KSNODEPROPERTY\_AUDIO\_CHANNEL)- **sizeof**(KSNODEPROPERTY)
 
-プロパティ値を取得するプロパティの get 要求を送信する前に、クライアントは、ミニポート ドライバーのプロパティのハンドラーがプロパティの値を書き込むことができます、出力バッファーを割り当てる必要があります。 一部のプロパティの出力バッファーのサイズは、デバイスに依存する、およびクライアントが必要なバッファー サイズのプロパティのハンドラーをクエリする必要があります。 このような場合は、クライアントは、nullptr の出力バッファー ポインターと、出力バッファーの長さが 0 で、プロパティの初期要求を送信します。 ハンドラーは、状態コード STATUS_BUFFER_OVERFLOW と共に必要なバッファー サイズを返すことで応答します。 次に、クライアントは 2 番目のプロパティの get 要求でこのバッファーを送信する指定されたサイズの出力バッファーを割り当てることで、プロパティ値を取得します。
+プロパティ値を取得するために get property 要求を送信する前に、クライアントは、ミニポートドライバーのプロパティハンドラーがプロパティ値を書き込むことができる出力バッファーを割り当てる必要があります。 一部のプロパティでは、出力バッファーのサイズはデバイスに依存し、クライアントはプロパティハンドラーに必要なバッファーサイズを照会する必要があります。 このような場合、クライアントは、出力バッファーポインターが nullptr で出力バッファーの長さが0である初期プロパティ要求を送信します。 ハンドラーは、必要なバッファーサイズと状態コード STATUS_BUFFER_OVERFLOW を返すことによって応答します。 次に、クライアントは、指定されたサイズの出力バッファーを割り当て、2番目の get プロパティ要求でこのバッファーを送信することによって、プロパティ値を取得します。
  
-指定されたバッファー サイズが小さすぎて要求された情報が表示される場合、メソッドは STATUS_BUFFER_TOO_SMALL を返します。 
+指定されたバッファーサイズが小さすぎて要求された情報を取得できない場合、メソッドは STATUS_BUFFER_TOO_SMALL を返します。 
  
-場合によっては、PortCls ポートのドライバーは、0 以外の出力バッファーのアドレスのサイズとプロパティの要求に応答 STATUS_BUFFER_TOO_SMALL STATUS_BUFFER_OVERFLOW ではなくを返します。 必要なバッファー サイズは、このような場合は返されません。 
+場合によっては、PortCls port ドライバーが、出力バッファーのアドレスとサイズが0以外のプロパティ要求に応答して、STATUS_BUFFER_OVERFLOW ではなく STATUS_BUFFER_TOO_SMALL を返します。 このような場合、必要なバッファーサイズは返されません。 
  
-詳細については、次を参照してください。 [NTSTATUS 値を使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)と次のブログ投稿。
+詳細については、次を参照してください。 NTSTATUS 値とこれらのブログ投稿[を使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)します。
 
-- [その後の操作に必要なバイト数を返す方法](https://blogs.msdn.microsoft.com/doronh/2006/12/12/how-to-return-the-number-of-bytes-required-for-a-subsequent-operation/)
+- [後続の操作に必要なバイト数を返す方法](https://blogs.msdn.microsoft.com/doronh/2006/12/12/how-to-return-the-number-of-bytes-required-for-a-subsequent-operation/)
 
-- [STATUS_BUFFER_OVERFLOW 本当に名前を付ける STATUS_BUFFER_OVERFLOW_PREVENTED](https://devblogs.microsoft.com/oldnewthing/?p=22863)
+- [STATUS_BUFFER_OVERFLOW は、STATUS_BUFFER_OVERFLOW_PREVENTED という名前にする必要があります。](https://devblogs.microsoft.com/oldnewthing/?p=22863)
 
 
 

@@ -3,18 +3,18 @@ title: 遅延の時計
 description: 遅延の時計
 ms.assetid: 3cdd4c69-d99d-48bc-a1d9-9da2a2511e94
 keywords:
-- シンセサイザー WDK のオーディオ、待機時間の時計
-- WDK オーディオ、時計の待機時間
-- WDK のオーディオ、待機時間をクロックします。
-- 待機時間の WDK オーディオ
+- シンセサイザー WDK オーディオ、待機時間クロック
+- 待機時間 WDK オーディオ、クロック
+- クロック WDK オーディオ、待機時間
+- 待機時間 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6ed612864e2436c2bdc57a077f2dd44867f02fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d785389606d4b2a2c4b21c89c5ed928f657cb3a3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832661"
 ---
 # <a name="latency-clocks"></a>遅延の時計
 
@@ -22,23 +22,23 @@ ms.locfileid: "67360461"
 ## <span id="latency_clocks"></span><span id="LATENCY_CLOCKS"></span>
 
 
-シンセサイザーのミニポート ドライバー モデルは、複数のデバイス間でのオーディオ出力の同期を許可する設計されています。 そのため、純粋な UART デバイスで提供されるよりさらに複雑なタイミング モデルが含まれています。
+シンセサイザーミニポートドライバーモデルは、複数のデバイス間でオーディオ出力を同期できるように設計されています。 そのため、純粋な UART デバイスによって提供されるよりも複雑なタイミングモデルが含まれています。
 
-イベントが配信を (されからキャプチャされた) 関連付けられているタイムスタンプを持つミニポート ドライバー。 このタイムスタンプが関連して、[マスター クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)します。 マスターのクロックは、システム全体ですべてのシーケンス処理で使用される同じクロックです。 マスター クロック時間は 100 ナノ秒タイマー刻み単位で測定されます。
+イベントは、関連付けられたタイムスタンプを使用してミニポートドライバーに配信 (およびキャプチャ) されます。 このタイムスタンプは、[マスタークロック](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)を基準としています。 マスタークロックは、システム全体のすべてのシーケンス処理で使用されるクロックと同じです。 マスタークロック時間は、100ナノ秒単位で計測されます。
 
-ミニポート ドライバー マスター クロックから呼び出すことによって、現在の時刻を取得する[ **IMasterClock::GetTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imasterclock-gettime)します。 Pin の作成時に、ポート ドライバーはカーネル モードを渡します[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)インターフェイスへの入力パラメーターの 1 つとして、ミニポート ドライバーを、 [ **IMiniportDMus::NewStream** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)メソッド。 現時点では、マスターのクロックは、システムのリアルタイム クロックをラップします。 マスターのクロックが変化しないにする必要がある pin がある場合に、*実行*状態。 一時停止することはありませんが一定の割合のクロックになります。
+ミニポートドライバーは、 [**Imasterclock:: GetTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imasterclock-gettime)を呼び出すことによって、マスタークロックから現在の時刻を取得します。 Pin の作成時に、ポートドライバーは、 [**IMiniportDMus:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)メソッドへの入力パラメーターの1つとして、カーネルモードの[imasterclock](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imasterclock)インターフェイスをミニポートドライバーに渡します。 現在、マスタークロックはシステムのリアルタイムクロックをラップします。 *実行*状態にする必要がある pin がある場合、マスタークロックは変更されません。 これは、一時停止しない一定の速度のクロックです。
 
-すべてのレンダリング デバイスでは、一定のイベントを承諾する時間と、イベントが聞こえる時刻間の待機時間があります。 この待機時間は、定数または (待機時間がオーディオのバッファーの現在の再生位置には依存シンセサイザー ソフトウェアの場合) のように変数を指定できます。 この待機時間は、ことで補正は。
+すべてのレンダリングデバイスは、イベントが受理されてからイベントが発生するまでの間に一定の待機時間があります。 この待機時間は、定数または変数にすることができます (ソフトウェアシンセサイザーの場合と同様に、待機時間はオーディオバッファーの現在の再生位置に依存します)。 この待機時間は、次のものによって補正されます。
 
--   Dmu のミニポート ドライバー、デバイスの待機時間に関係なく、時間で再生できるように、事前に十分なイベントを受信することができます。 イベントは、Dmu ポート ドライバー sequencer エンジンによってミニポート ドライバーのシーケンス処理します。
+-   デバイスの待機時間に関係なく、時間どおりに再生できるように、DMus ミニポートドライバーが事前に十分な量のイベントを受信できるようにします。 イベントは、DMus ポートドライバーの sequencer エンジンによってミニポートドライバー用にシーケンス処理されます。
 
-    Pin の作成時に、ポート ドライバーは 100 ナノ秒単位のデルタ時間のミニポート ドライバーを照会します。 このデルタ時間は、どの程度ミニポート ドライバーが、イベントを受信する各イベントのプレゼンテーション時間います。 ポート ドライバーにより、最も効果的にこのイベントを配信するまでに先行します。 この差分の非常に大きな値を指定 (で指定された*SchedulePreFetch*のパラメーター [ **IMiniportDMus::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)) にイベントを渡すポート ドライバーにより、ミニポート ドライバーがユーザー モードからポート ドライバーに配信されるとすぐにします。
+    Pin の作成時に、ポートドライバーはミニポートドライバーに100ナノ秒単位のデルタ時間を照会します。 この差分時間は、ミニポートドライバーがイベントを受信しようとしている各イベントのプレゼンテーション時間の前までの時間です。 ポートドライバーを使用すると、このようなイベントを事前に配信することができます。 このデルタに非常に大きな値 ( [**IMiniportDMus:: NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)の*scheduleprefetch フェッチ*パラメーターで指定) を指定すると、ユーザーモードからポートドライバーに配信されるとすぐに、ポートドライバーによってイベントがミニポートドライバーに渡されます。
 
--   アプリケーションをどの程度進んでイベントのスケジュールをお知らせいたします。 最大待機時間の使用が望ましくないこの場合です。 自分が送信した後、イベントをキャンセルすることはできませんので、近いこと送信できるイベントのプレゼンテーション時間にアプリケーションとシンセサイザーを操作できるより応答性が向上します。 この要件を処理するには、DirectMusic には、待機時間の時計の概念が導入されています。
+-   アプリケーションにイベントをスケジュールするまでの時間を通知します。 この場合、最大待機時間を使用することは望ましくありません。 イベントが送信された後にキャンセルすることはできないため、イベントがプレゼンテーション時間に近いほど、アプリケーションとシンセサイザーが対話できる応答性が増えます。 この要件に対応するために、DirectMusic では待機時間クロックの概念が導入されました。
 
-    待機時間の時計は、最も近い将来の時刻に再生し、再生時間にスケジュールできるイベントを提供します。 つまり、アプリケーションのスケジュールを待機時間の時計に準じた現在時刻の前に再生できるイベントは場合、イベントが再生される遅延します。 シンセサイザーのミニポート ドライバーに応答して待機時間の時計を提供する、 [ **KSPROPERTY\_シンセサイザー\_LATENCYCLOCK** ](https://docs.microsoft.com/previous-versions/ff537402(v=vs.85))プロパティ項目。
+    待機時間の時計は、イベントを再生するようにスケジュールすることができ、時間どおりに再生できるようにするための最も近い時間を提供します。 つまり、待機時間の時刻に従って、現在の時刻より前に再生されるイベントをアプリケーションがスケジュールした場合、イベントは遅延して再生されます。 シンセサイザーミニポートドライバーは、 [**Ksk プロパティ\_シンセサイザー\_LATENCYCLOCK**](https://docs.microsoft.com/previous-versions/ff537402(v=vs.85))プロパティ項目に応答することによって、待機時間クロックを提供します。
 
-    ミニポート ドライバーが照会されます[KSPROPSETID\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)と KSPROPERTY\_シンセサイザー\_LATENCYCLOCK します。 ミニポート ドライバーのプロパティのハンドラーは、次回の時間にデータを表示することができますが、マスターのクロックの観点からを指定する待機時間の時計を返す必要があります。 たとえば、マスターのクロックが現在、50 を読み取り、現在 25 の単位の待機時間は、75 読み取り待機時間の時計にします。 クロックがこの方法で実装されている理由は、待機時間が一定である必要はありません、返される値はデルタだけよりもアプリケーションに複数の使用のことです。
+    Ksk\_LATENCYCLOCK に対して、 [Kspropsetid\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)および ksプロパティ\_のミニポートドライバーが照会されます。 ミニポートドライバーのプロパティハンドラーは、次回データを時間にレンダリングするときに、マスタークロックの観点から指定する待機時間クロックを返す必要があります。 たとえば、マスタークロックが現在50を読み取り、現在25単位の待機時間がある場合、待機時間クロックは75を読み取ります。 このようにクロックが実装される理由は、待機時間を一定にする必要がなく、返される値がデルタだけでなくアプリケーションにも使用されることです。
 
  
 

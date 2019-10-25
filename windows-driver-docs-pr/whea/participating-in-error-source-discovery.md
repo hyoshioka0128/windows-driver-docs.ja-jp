@@ -3,28 +3,28 @@ title: エラー ソース検出への参加
 description: エラー ソース検出への参加
 ms.assetid: 349c8f06-be79-4a40-8b9f-cbefc563f6de
 keywords:
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラー ソースの検出
-- WHEA WDK、エラー ソースの検出
-- ハードウェア エラー WDK WHEA、エラー ソースの検出
-- エラー WDK WHEA、エラー ソースの検出
-- プラットフォーム固有のハードウェア エラー ドライバー プラグインを WDK WHEA、エラー ソースの検出
-- PSHED プラグイン WDK WHEA、エラー ソースの検出
-- WDK WHEA エラー ソースの検出
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーソース検出
+- WHEA WDK、エラーソースの検出
+- ハードウェアエラー WDK WHEA、エラーソース検出
+- エラー WDK WHEA、エラーソース検出
+- プラットフォーム固有のハードウェアエラードライバープラグイン WDK WHEA、エラーソース検出
+- PSHED プラグイン WDK WHEA、エラーソース検出
+- エラーソース検出 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee5bad768e29f04c4822d51506d324a68bfbb26f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0bea3f2ed669be34924d20197658dee6b610cd4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387159"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837997"
 ---
 # <a name="participating-in-error-source-discovery"></a>エラー ソース検出への参加
 
 
-エラー ソースの検出に参加するにプラグインの PSHED を実装する必要があります、 [ *GetAllErrorSources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_all_error_sources)コールバック関数。 エラー ソースの検出に参加している PSHED プラグインは、省略可能な実装も[ *GetErrorSourceInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_error_source_info)コールバック関数。
+エラーソースの検出に参加するには、 [*GetAllErrorSources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_all_error_sources)コールバック関数を実装する必要があります。 エラーソースの検出に参加しているプラグインは、オプションの[*GetErrorSourceInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_error_source_info)コールバック関数を実装することもできます。
 
-次のコード例では、これらのコールバック関数を実装する方法を示します。
+これらのコールバック関数を実装する方法を次のコード例に示します。
 
 ```cpp
 //
@@ -103,7 +103,7 @@ NTSTATUS
 }
 ```
 
-エラー ソースの検出に参加している PSHED プラグインを指定する必要があります、 **PshedFADiscovery**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)自体と、オペレーティング システムを使用します。
+エラーソースの検出に参加しているプラグインでは、オペレーティングシステムに[登録](registering-a-pshed-plug-in.md)するときに**PshedFADiscovery**フラグを指定する必要があります。
 
  
 

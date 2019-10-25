@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的範囲の上限 (HDR) のビデオ ドライバーを無効にします。 これは、暗証番号 (pin) レベルの制御のビデオ ピン留めするだけです。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOHDR
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOHDR は、ドライバーの高ダイナミックレンジ (HDR) ビデオを有効または無効にするために使用されます。 これは、ビデオ pin の pin レベルコントロールです。
 ms.assetid: AC798BF1-4E1A-48D8-8F56-986F89D9C153
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8b124f0d13ce5e5ba68c3db7037b68db2c8d80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 050e2dcc7cf7315ceae4cabb6da3ae17cc910a36
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341857"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826201"
 ---
-# <a name="kspropertycameracontrolextendedvideohdr"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR
+# <a name="ksproperty_cameracontrol_extended_videohdr"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOHDR
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的範囲の上限 (HDR) のビデオ ドライバーを無効にします。 これは、暗証番号 (pin) レベルの制御のビデオ ピン留めするだけです。
+KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOHDR は、ドライバーの高ダイナミックレンジ (HDR) ビデオを有効または無効にするために使用されます。 これは、ビデオ pin の pin レベルコントロールです。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的
 </tbody>
 </table>
 
-次のフラグは、KSCAMERA に配置できる\_EXTENDEDPROP\_ヘッダー。ビデオ HDR を制御するフラグ フィールドです。 既定では、ドライバーを VIDEOHDR に設定する必要があります\_OFF。
+次のフラグは、KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。ビデオの HDR を制御するフラグフィールド。 既定では、ドライバーは VIDEOHDR\_OFF に設定する必要があります。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VIDEOHDR_OFF      0x0000000000000000
@@ -57,15 +57,15 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的
 #define KSCAMERA_EXTENDEDPROP_VIDEOHDR_AUTO     0x0000000000000002 
 ```
 
-VIDEOHDR をサポートする必要があります、ドライバーは、このコントロールをサポートする場合\_ON/VIDEOHDR\_OFF。
+ドライバーがこのコントロールをサポートしている場合は、VIDEOHDR\_ON/VIDEOHDR\_OFF をサポートする必要があります。
 
-ドライバーがビデオ HDR をサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
+ドライバーでビデオの HDR がサポートされていない場合、ドライバーはこのコントロールを実装しないでください。
 
-このコントロールは、ドライバーにヒントとして機能します。 VIDEOHDR に設定すると\_ドライバーはベスト エフォートとしてビデオ HDR を実行する必要があります。
+このコントロールは、ドライバーのヒントとして機能します。 VIDEOHDR\_に設定すると、ドライバーはビデオ HDR をベストエフォートとして実行する必要があります。
 
-このコントロールの設定の呼び出しも何も起こりませんビデオ ピンが KSSTATE\_の実行の状態。 ドライバーはビデオの暗証番号 (pin) が実行中の状態とステータスを返しますが受信設定の呼び出し元に戻す\_無効な\_デバイス\_状態。 GET 呼び出しでは、ドライバーは、フラグ フィールドの現在の設定を返す必要があります。
+ビデオ pin が KSK 状態\_実行状態の場合、このコントロールの SET 呼び出しは効果がありません。 ビデオの pin が実行中の状態である場合、ドライバーは受信したセットの呼び出しを拒否し、デバイス\_状態\_無効\_状態を返します。 GET 呼び出しでは、ドライバーは Flags フィールドの現在の設定を返します。
 
-次の表では、フラグの機能について説明します。
+次の表では、フラグ機能について説明します。
 
 <table>
 <colgroup>
@@ -81,20 +81,20 @@ VIDEOHDR をサポートする必要があります、ドライバーは、こ�
 <tbody>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOHDR_OFF</p></td>
-<td><p>これは、必須の機能です。 指定した場合、HDR がドライバーとドライバーで無効になっているビデオのビデオ ストリームにビデオ HDR は実行されません。</p></td>
+<td><p>これは必須の機能です。 指定した場合、ドライバーでビデオの HDR が無効になり、ドライバーはビデオストリームでビデオの HDR を実行しません。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOHDR_ON</p></td>
-<td><p>これは、必須の機能です。 指定した場合、HDR になって、ドライバーとドライバー、ビデオはベスト エフォートとしてビデオ HDR を実施するものとします。 このフラグは VIDEOHDR_AUTO と VIDEOHDR_OFF フラグで相互に排他的です。</p></td>
+<td><p>これは必須の機能です。 指定した場合、ドライバーでビデオの HDR が有効になり、ドライバーはビデオの HDR をベストエフォートとして実行します。 このフラグは、VIDEOHDR_AUTO および VIDEOHDR_OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOHDR_AUTO</p></td>
-<td><p>この機能は省略可能です。 指定した場合、このような機能をサポートするドライバーはビデオ HDR をシーン分析に基づいて実行するかどうかを決定します。 このフラグは VIDEOHDR_ON と VIDEOHDR_OFF フラグで相互に排他的です。</p></td>
+<td><p>この機能は省略可能です。 指定した場合、このような機能をサポートするドライバーは、シーン分析に基づいてビデオの HDR を実行するかどうかを決定します。 このフラグは、VIDEOHDR_ON および VIDEOHDR_OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 </tbody>
 </table>
 
-次の表には、説明と要件が含まれています、 [KSCAMERA\_EXTENDEDPROP\_ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表には、コントロールを使用する場合の[KSCAMERA\_EXTENDEDPROP\_ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -103,39 +103,39 @@ VIDEOHDR をサポートする必要があります、ドライバーは、こ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必要がある、暗証番号 (pin) の ID に関連付けられているビデオ ピン留めします。</p></td>
+<td><p>は、ビデオ pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>これは、sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>ビットごとの OR、サポートされている KSCAMERA_EXTENDEDPROP_VIDEOHDR_ * フラグの上に定義されている必要があります。</p></td>
+<td><p>は、上で定義された、サポートされている KSCAMERA_EXTENDEDPROP_VIDEOHDR_ * フラグのビットごとの OR である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された KSCAMERA_EXTENDEDPROP_VIDEOHDR_ * フラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている KSCAMERA_EXTENDEDPROP_VIDEOHDR_ * フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

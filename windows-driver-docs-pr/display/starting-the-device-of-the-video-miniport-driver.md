@@ -3,19 +3,19 @@ title: ビデオのミニポート ドライバーのデバイスの起動
 description: ビデオのミニポート ドライバーのデバイスの起動
 ms.assetid: e51a9483-eb12-4f7c-943f-075e670e97b1
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000、デバイスの起動
-- ビデオのミニポート ドライバーのデバイスを開始
-- デバイス startups WDK のビデオのミニポート
-- ビデオのミニポート ドライバー WDK Windows 2000 では、初期化しています
-- ビデオのミニポート ドライバーの初期化
+- ビデオミニポートドライバー WDK Windows 2000、開始デバイス
+- ビデオミニポートドライバーのデバイスを起動しています
+- デバイスのスタートアップ WDK ビデオミニポート
+- ビデオミニポートドライバー WDK Windows 2000、初期化
+- ビデオミニポートドライバーの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5af495bcee5aa2715a7f1a56904700c954f5ff7c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 32eeace79229ead28a6a6dfdee4a1a4701fefddf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376052"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825706"
 ---
 # <a name="starting-the-device-of-the-video-miniport-driver"></a>ビデオのミニポート ドライバーのデバイスの起動
 
@@ -23,13 +23,13 @@ ms.locfileid: "67376052"
 ## <span id="ddk_starting_the_device_of_the_video_miniport_driver_gg"></span><span id="DDK_STARTING_THE_DEVICE_OF_THE_VIDEO_MINIPORT_DRIVER_GG"></span>
 
 
-PnP マネージャー IRP コードの送信 (を参照してください[IRP の主な機能コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)) グラフィックス アダプターの開始を要求しているビデオ ポート ドライバーにします。 ビデオ ポート ドライバーのディスパッチ ルーチンの呼び出し、ミニポート ドライバーの[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)この IRP コードへの応答で日常的な。 詳細の一部を*HwVidFindAdapter*のタスクは、次のトピックで説明します。
+PnP マネージャーは、グラフィックスアダプターの起動を要求する IRP コード ( [irp の主要な関数コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)を参照) をビデオポートドライバーに送信します。 ビデオポートドライバーのディスパッチルーチンは、この IRP コードに応答して、ミニポートドライバーの[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)ルーチンを呼び出します。 いくつかの*HwVidFindAdapter*のタスクの詳細については、次のトピックで説明します。
 
-[ビデオ アダプターへのアクセスの範囲を設定します。](setting-up-video-adapter-access-ranges.md)
+[ビデオアダプターのアクセス範囲の設定](setting-up-video-adapter-access-ranges.md)
 
-[レジストリ内のハードウェア情報の設定](setting-hardware-information-in-the-registry.md)
+[レジストリでのハードウェア情報の設定](setting-hardware-information-in-the-registry.md)
 
-[アダプターの状態を変更します。](changing-state-on-the-adapter.md)
+[アダプターの状態の変更](changing-state-on-the-adapter.md)
 
  
 

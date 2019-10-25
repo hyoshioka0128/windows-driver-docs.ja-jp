@@ -4,12 +4,12 @@ description: VMQ フィルターのクリア
 ms.assetid: 34efeb28-dcd6-4a8b-89d2-6065830e03ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbd3b5d390aad74ea176d6e3acec983706506cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dae482cc260d3e01aebc3b1c4addf900ef35f447
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385535"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838205"
 ---
 # <a name="clearing-a-vmq-filter"></a>VMQ フィルターのクリア
 
@@ -17,13 +17,13 @@ ms.locfileid: "67385535"
 
 
 
-上にある、ドライバーの問題を受信キューにフィルターを解放する、 [OID\_受信\_フィルター\_クリア\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter) OID 要求のセット。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)構造体。
+受信キューのフィルターを解放するには、その後のドライバーが Oid を発行して、フィルター\_OID 要求を[クリア\_、\_フィルターを\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_RECEIVE\_FILTER\_CLEAR\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)構造体へのポインターが含まれています。
 
-プロトコル ドライバーでは、フィルターの識別子を取得、以前から[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)メソッド要求の OID。 フィルターの設定の詳細については、次を参照してください。 [VMQ フィルター設定](setting-a-vmq-filter.md)します。
+プロトコルドライバーは、以前の Oid からフィルター識別子を取得し、フィルター\_の OID 要求[\_設定して\_フィルターを受信\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 フィルターの設定の詳細については、「 [VMQ フィルターの設定](setting-a-vmq-filter.md)」を参照してください。
 
-プロトコル ドライバーには、設定されると、キューを解放する前に、キューのすべてのフィルターをクリアする必要があります。 プロトコル ドライバーも設定されると、ネットワーク アダプターには、そのバインドが閉じる前に、既定のキューのすべてのフィルターをオフにする必要があります。
+プロトコルドライバーは、キューを解放する前に、キューに設定されているすべてのフィルターをクリアする必要があります。 また、プロトコルドライバーは、ネットワークアダプターへのバインドを閉じる前に、既定のキューに設定されているすべてのフィルターをクリアする必要があります。
 
-OID が完了しなかった場合、ミニポート ドライバーは既定以外のキューでパケットを示していませんする必要があります\_受信\_フィルター\_オフ\_フィルター OID 要求キューの最後のフィルターをクリアまたは、が完了したかどうか[OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) OID 要求キューを解放します。
+\_フィルターを受け取る OID\_受信した場合は、ミニポートドライバーが既定以外のキューにあるパケットを示すことはできません。\_\_の OID 要求では、キューの最後のフィルターをクリアするか、Oid\_RECEIVE を完了しているかどうかを確認[\_フィルター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) 、キューを解放するための無料\_キュー OID 要求です。
 
  
 

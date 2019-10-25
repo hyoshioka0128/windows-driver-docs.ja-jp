@@ -1,9 +1,9 @@
 ---
-title: ndiskd.cxadapter
-description: Ndiskd.cxadapter 拡張機能では、NETADAPTER オブジェクトに関する情報が表示されます。
+title: ndiskd cxadapter
+description: Ndiskd cxadapter 拡張機能には、NETADAPTER オブジェクトに関する情報が表示されます。
 ms.assetid: 5BE91B1C-9795-4E2C-834A-B7424FF1FCDB
 keywords:
-- デバッグ ndiskd.cxadapter Windows
+- ndiskd cxadapter Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,47 +12,47 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b5d56253956c86e914cb379858bcb5a02d019f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b525a33656b9077ce310ef5d9e1afc0cf72ea797
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365776"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826680"
 ---
 # <a name="ndiskdcxadapter"></a>!ndiskd.cxadapter
 
 
-**! Ndiskd.cxadapter**拡張機能は、NETADAPTER オブジェクトに関する情報を表示します。
+**! Ndiskd cxadapter**拡張機能には、netadapter オブジェクトに関する情報が表示されます。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
+ネットワークアダプターの WDF クラス拡張 (NetAdapterCx) の詳細については、「 [Network ADAPTER WDF Class extension (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)」を参照してください。
 
 ```console
 !ndiskd.cxadapter [-handle <x>] [-basic] [-power] [-datapath] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
 必須。 NETADAPTER のハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
-基本的な情報を表示します。
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+基本情報を表示します。
 
-<span id="_______-power______"></span><span id="_______-POWER______"></span> *電源*   
-NETADAPTER NETPOWERSETTINGS オブジェクトに関する情報を表示します。
+<span id="_______-power______"></span><span id="_______-POWER______"></span> *-電源*   
+NETADAPTER の NETPOWERSETTINGS オブジェクトに関する情報を表示します。
 
-<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span> *-datapath*   
-データパス キューに関する情報が表示されます。
+<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span> *-データパス*   
+データパスキューに関する情報を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-NETADAPTER オブジェクトのハンドルを取得して最初に実行、 [ **! ndiskd.netadapter** ](-ndiskd-netadapter.md)システム上のすべての NIC ドライバーと NetAdapters 一覧を表示するコマンド。 次の例を探して、ハンドル、NetAdapter Realtek PCIe GBE ファミリ コント ローラー NetAdapter サンプル ドライバーをという名前の\#2。 そのハンドルは、ffffd1022d048030 です。
+NETADAPTER オブジェクトのハンドルを取得するには、最初に[ **! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを実行して、システム上のすべての NIC ドライバーと netadapter の一覧を表示します。 次の例では、Realtek PCIe GBE ファミリコントローラー NetAdapter サンプルドライバー \#2 という名前の NetAdapter のハンドルを探します。 そのハンドルは ffffd1022d048030 です。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -61,7 +61,7 @@ NETADAPTER オブジェクトのハンドルを取得して最初に実行、 [ 
     ffffd1022ed908e0   ffffd1022e8611a0    Microsoft Kernel Debug Network Adapter
 ```
 
-この NetAdapter のハンドルを入力するかをクリックして、 **! ndiskd.netadapter-処理**コマンドラインでそのハンドルでコマンドをその NETADAPTER オブジェクトを含む、この NetAdapter の詳細を確認することができます。 Realtek PCIe GBE ファミリ コント ローラー NetAdapter サンプル ドライバー \#2 の NETADAPTER ハンドルが 00002efdd0e5f988 します。
+この NetAdapter のハンドルをクリックするか、 **! ndiskd netadapter-handle**コマンドにコマンドラインでハンドルを入力することにより、netadapter オブジェクトなど、この netadapter の詳細を確認できます。 Realtek PCIe GBE ファミリコントローラーの NetAdapter サンプルドライバー \#2 の NETADAPTER ハンドルは、00002efdd0e5f988 です。
 
 ```console
 0: kd> !ndiskd.netadapter ffffd1022d048030
@@ -144,7 +144,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-NETADAPTER オブジェクトは、WDF オブジェクトでは、そのハンドルをクリックすると、デバッガーを実行する、 [ **! wdfkd.wdfhandle** ](-wdfkd-wdfhandle.md)コマンドを WDF の観点から詳細情報が表示されます。 ネットワークの観点から NETADAPTER に関する詳細情報を表示するを実行する NETADAPTER のハンドルの右側に「詳細」リンクをクリックします。、 **! ndiskd.cxadapter**そのハンドルを持つコマンド。
+NETADAPTER オブジェクトは WDF オブジェクトであるため、そのハンドルをクリックすると、デバッガーは[ **! wdfkd. wdfkd**](-wdfkd-wdfhandle.md)コマンドを実行します。これにより、WDF の観点から詳細な情報が得られます。 ネットワークの観点から NETADAPTER に関する詳細情報を表示するには、NETADAPTER のハンドルの右側にある [詳細情報] リンクをクリックして、 **! ndiskd cxadapter**コマンドをハンドルで実行します。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720
@@ -164,7 +164,7 @@ NETADAPTER
     Show NETPOWERSETTINGS info
 ```
 
-これを組み合わせることもなどその他のパラメーターをコマンド *- データパス*この NETADAPTER の詳細を表示します。
+このコマンドと *-データパス*などの他のパラメーターを組み合わせて、この netadapter の詳細情報を確認することもできます。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720 -basic -datapath
@@ -187,24 +187,24 @@ DATAPATH QUEUES
     NETRXQUEUE         ffffd1022cc7b0d0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
 
-[ **!wdfkd.wdfhandle**](-wdfkd-wdfhandle.md)
+[ **! wdfkd. wdfkd**](-wdfkd-wdfhandle.md)
 
  
 

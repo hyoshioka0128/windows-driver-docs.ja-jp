@@ -3,26 +3,26 @@ title: ハードウェア機能スキャンの実行
 description: ハードウェア機能スキャンの実行
 ms.assetid: 966b30b7-2f08-4611-9f4d-f85b301de414
 keywords:
-- OPM WDK の表示、HFS
-- OPM WDK の表示、ハードウェアの機能のスキャン
+- OPM WDK ディスプレイ、HFS
+- OPM WDK ディスプレイ、ハードウェア機能スキャン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4118d3b34858c9e4f86c8c2e5e2003e665faab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c27888c5663a0e0de5cc6558396aefcaf861a8ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829802"
 ---
 # <a name="performing-a-hardware-functionality-scan"></a>ハードウェア機能スキャンの実行
 
 
-ディスプレイ ミニポート ドライバーのハードウェア機能スキャン (HFS) によりミニポート ドライバーが必要なハードウェアと通信するようになります。 HFS の詳細については、出力コンテンツの保護ドキュメントのダウンロード、[出力 Content Protection と Windows Vista](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/output_protect.doc) web サイト。
+ミニポートドライバーのハードウェア機能スキャン (HFS) を使用すると、ミニポートドライバーが必要なハードウェアと通信できるようになります。 HFS の詳細については、出力 Content Protection ドキュメントを、[出力 Content Protection と Windows Vista](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/output_protect.doc)の web サイトからダウンロードしてください。
 
-ディスプレイのミニポート ドライバーは、HFS の実行を開始する必要がありますたびに Microsoft DirectX グラフィックスのカーネル サブシステム (*Dxgkrnl.sys*) ドライバーの次の関数を呼び出します。
+Microsoft DirectX グラフィックカーネルサブシステム (*Dxgkrnl*) が次のドライバー関数を呼び出すたびに、ディスプレイミニポートドライバーが HFS の実行を開始する必要があります。
 
--   [**DxgkDdiStartDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)
+-   [**DxgkDdiStartDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)
 
--   [**DxgkDdiSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_set_power_state)グラフィックス アダプターの電源の状態が D0 に設定します。
+-   グラフィックスアダプターの電源状態が D0 に設定された[**DxgkDdiSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 。
 
-HFS が非同期にすることができ、前に完了する必要はありません[ **DxgkDdiStartDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)または[ **DxgkDdiSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_set_power_state)を返します。 ただし、ありません[OPM DDI](supporting-output-protection-manager.md) HFS が完了するまで関数が返すことができます。
+HFS は非同期にすることができ、 [**DxgkDdiStartDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)または[**DxgkDdiSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state)が戻る前に完了する必要はありません。 ただし、 [OPM DDI](supporting-output-protection-manager.md)関数は、HFS が完了するまで返すことはできません。

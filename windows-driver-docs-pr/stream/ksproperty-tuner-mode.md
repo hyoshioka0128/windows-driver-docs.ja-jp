@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_チューナー\_モード
-description: ユーザー モードのクライアントの使用、KSPROPERTY\_チューナー\_モード プロパティを取得または設定、アナログ テレビ、デジタル テレビ、FM AM などのデバイスのチューニング モードまたは DSS します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_チューナー\_モード
+description: ユーザーモードクライアントは、KSK プロパティ\_チューナー\_MODE プロパティを使用して、アナログテレビ、デジタルテレビ、FM、AM、DSS などのデバイスのチューニングモードを取得または設定します。 このプロパティを実装する必要があります。
 ms.assetid: 84df4030-3836-48de-be83-ecd749839081
 keywords:
-- KSPROPERTY_TUNER_MODE ストリーミング メディア デバイス
+- KSPROPERTY_TUNER_MODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b96328c765e52cd5b35e8ec5606aa97be79d0f6a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7e3e7891b71f706caafd3309ca3a1cc171f841e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837912"
 ---
-# <a name="kspropertytunermode"></a>KSPROPERTY\_チューナー\_モード
+# <a name="ksproperty_tuner_mode"></a>KSK プロパティ\_チューナー\_モード
 
 
-ユーザー モードのクライアントの使用、KSPROPERTY\_チューナー\_モード プロパティを取得または設定、アナログ テレビ、デジタル テレビ、FM AM などのデバイスのチューニング モードまたは DSS します。 このプロパティを実装する必要があります。
+ユーザーモードクライアントは、KSK プロパティ\_チューナー\_MODE プロパティを使用して、アナログテレビ、デジタルテレビ、FM、AM、DSS などのデバイスのチューニングモードを取得または設定します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_tuner_mode_ks"></span><span id="DDK_KSPROPERTY_TUNER_MODE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67355987"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "67355987"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ ms.locfileid: "67355987"
 
  
 
-プロパティの値 (データの操作) は、チューナーの現在のチューニング モードを指定する ULONG です。
+プロパティ値 (操作データ) は、チューナーの現在のチューニングモードを指定する ULONG です。
 
 <a name="remarks"></a>注釈
 -------
 
-**モード**、KSPROPERTY のメンバー\_チューナー\_モード\_の構造をチューナーの現在のモードを指定します。
+KSK プロパティ\_チューナー\_モード\_S 構造体の**モード**メンバーは、現在のチューナーモードを指定します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ ms.locfileid: "67355987"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ ms.locfileid: "67355987"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_チューナー\_モード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)
+[**KSK プロパティ\_チューナー\_モード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)
 
  
 

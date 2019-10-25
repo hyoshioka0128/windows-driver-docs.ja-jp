@@ -3,17 +3,17 @@ title: ストリーム クラス ミニドライバーの作成に関する注�
 description: ストリーム クラス ミニドライバーの作成に関する注意事項
 ms.assetid: dc966b47-4ffe-4122-847d-118a465bf5f5
 keywords:
-- Stream.sys クラス ドライバー WDK Windows 2000 のカーネルでは、書き込み
-- ミニドライバー WDK Windows 2000 のカーネルのストリーミング、書き込み
-- ミニドライバー WDK Windows 2000 のカーネル ストリーム、書き込み
+- .Sys クラスドライバー WDK Windows 2000 カーネル、書き込み
+- streaming ミニドライバー WDK Windows 2000 カーネル、書き込み
+- ミニドライバー WDK Windows 2000 カーネルストリーミング、書き込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d64e0bd9d9450ab59e4155df3b8a27e98d426381
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff26c752670f79f7c7e8a9f3153eddcb95596e0a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353208"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823592"
 ---
 # <a name="notes-on-writing-stream-class-minidrivers"></a>ストリーム クラス ミニドライバーの作成に関する注意事項
 
@@ -21,21 +21,21 @@ ms.locfileid: "67353208"
 
 
 
--   ミニドライバーは、プロセッサでは、Intel と非 Intel x86 の両方で実行する必要があり、C# (またはその他の高級言語) で記述する必要があります。 ミニドライバーは、アセンブリ言語のソース コードを含めることはできません。
+-   ミニドライバーは Intel と Intel 以外の両方の x86 プロセッサで実行する必要があるため、C (またはその他の高水準言語) で記述する必要があります。 ミニドライバーにアセンブリ言語のソースコードを含めることはできません。
 
--   一部のハードウェアでは、ファームウェアを読み込む前に、機能することが必要です。 ミニドライバーは、ミニドライバーのデータ セグメントのファームウェアを埋め込む必要があります。 必要に応じて、ミニドライバーがなど、ミニドライバーはいくつかのバージョンのファームウェアとなると埋め込むことは実用的でないを使用している場合は、適切な WDM ファイル I/O の関数を呼び出すことによってのファームウェアを動的に読み込むことができます。
+-   一部のハードウェアでは、機能する前にファームウェアを読み込む必要があります。 ミニドライバーは、ミニドライバーのデータセグメントにファームウェアを埋め込む必要があります。 必要に応じて、ミニドライバーは適切な WDM ファイル i/o 関数を呼び出すことによって、ファームウェアを動的に読み込むことができます。たとえば、ミニドライバーでは、埋め込みを行うことができない複数のバージョンのファームウェアを使用する場合などです。
 
--   同期をオフに (設定して、 **TurnOffSynchronization**内のメンバー、 [ **HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data) 構造体**TRUE**)、ミニドライバーは、パッシブに移動する必要がある場合\_ほとんど依頼のレベル (低優先度)。 参照してください、[ミニドライバー同期](minidriver-synchronization.md)同期の詳細については、セクション。
+-   ミニドライバーがほとんどの要求に対してパッシブ\_レベル (低優先度) に移行する必要がある場合は、同期をオフにします ( [**HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)構造の**TurnOffSynchronization**メンバーを**TRUE**に設定します)。 同期の詳細については、「[ミニドライバー synchronization](minidriver-synchronization.md) 」セクションを参照してください。
 
--   見つかったマクロを使用するハードウェア リソース (ポートまたはメモリ アドレス) にアクセスする必要があります*wdm.h*します。 たとえば、word のポートに書き込むマクロ記述\_ポート\_USHORT を使用する必要があります。 ポートにバッファーを記述するには記述\_ポート\_バッファー\_USHORT を使用する必要があります。
+-   ハードウェアリソース (ポートまたはメモリアドレス) には、 *wdm*で見つかったマクロを使用してアクセスする必要があります。 たとえば、word のポートに書き込むには、マクロの書き込み\_ポート\_USHORT を使用する必要があります。 ポートにバッファーを書き込むには、\_ポート\_バッファーを書き込み\_USHORT を使用する必要があります。
 
--   ミニドライバーでスピン ループが保護されないいない必要があります。 ミニドライバーは、変更するポートの値の待機中に迅速に作成する必要があります、ループがループ カウンターによって保護する必要があります。
+-   ミニドライバーは、保護されていないスピンループを含むことはできません。 ポートの値が変更されるのを待機している間にミニドライバーがスピンする必要がある場合、ループはループカウンターで保護されている必要があります。
 
--   ミニドライバーを小さな一定期間を使用する必要がありますを同期的に待機する必要がある[ **KeStallExecutionProcessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)します。 システムのパフォーマンスが低下しないようにこのルーチンを控えめに使用する必要があります。
+-   短時間にわたって同期的に待機する必要があるミニドライバーは、 [**Kestallexecutionprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor)を使用する必要があります。 システムのパフォーマンスが低下しないように、このルーチンは控えめに使用する必要があります。
 
--   ミニドライバーを長期間 (複数のマイクロ秒)、操作が完了するを待機する必要がある必要がある割り込み駆動またはいずれかを使用して、 [ **StreamClassScheduleTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassscheduletimer)関数時間指定のコールバックをスケジュールします。 ミニドライバーは、システム全体のパフォーマンスが低下するために、状態の変更の待機している複数のマイクロ秒単位の回転しない必要があります。
+-   操作完了のために長時間 (数マイクロ秒以上) 待機する必要があるミニドライバーは、割り込みドリブンであるか、または[**Streamclassscheduletimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassscheduletimer)関数を使用して時間指定のコールバックをスケジュールする必要があります。 ミニドライバーは、システム全体のパフォーマンスを低下させるため、状態の変化を待機するのに数マイクロ秒を超える時間は必要ありません。
 
--   バス マスター DMA を使用するデバイスでのみストリーム要求のブロック構造体で提供されるスキャッター/ギャザー DMA の一覧を使用する必要があります ([**HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)). ロックまたは DMA バッファーのマッピングは必要ありません。 参照してください、 **HW\_ストリーム\_要求\_ブロック**詳細については、構造体。 さらに、ミニドライバーは、DMA の要求を分割する必要がある場合、 [ **StreamClassGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassgetphysicaladdress)内の仮想バッファー ポインターのオフセットの物理アドレスを取得する関数を使用できます。
+-   バスマスタ DMA を使用するデバイスでは、ストリーム要求ブロック構造に指定されたスキャッター/ギャザー DMA リスト ([**HW\_stream\_request\_block**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)) を使用する必要があります。 DMA バッファーのロックまたはマッピングは必要ありません。 詳細については、「ハードウェア\_ストリーム」を参照して **\_ブロック構造\_要求**してください。 さらに、ミニドライバーが DMA 要求を分割する必要がある場合は、 [**StreamClassGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassgetphysicaladdress)関数を使用して、仮想バッファーポインター内のオフセットの物理アドレスを取得できます。
 
  
 

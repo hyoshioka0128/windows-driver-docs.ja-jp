@@ -3,16 +3,16 @@ title: コレクションの機能
 description: コレクションの機能
 ms.assetid: 228fab4f-ff90-43c5-bc68-26b29e8a7dd6
 keywords:
-- コレクションの WDK を非表示の機能
-- WDK の HID 概要機能
+- 機能 WDK HID コレクション
+- 概要機能 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a396ebe313943520269c8f2c507659b99b7deb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 477888c224dca2ca8f075d6e649b1bd0d069c89d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375768"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824844"
 ---
 # <a name="collection-capability"></a>コレクションの機能
 
@@ -20,19 +20,19 @@ ms.locfileid: "67375768"
 
 
 
-コレクションの機能は、その使用状況、レポート、リンクのコレクション、およびコントロールによって定義されます。 ユーザー モード アプリケーションまたはカーネル モード ドライバーを呼び出し、コレクションの機能の概要を取得する[ **HidP\_GetCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getcaps)を取得する、 [ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)構造体。 この構造体には、コレクションの詳細については、次の情報が含まれています[コレクションをリンク](link-collections.md)、[機能の配列をボタン](button-capability-arrays.md)、と[機能配列値](value-capability-arrays.md):。
+コレクションの機能は、その使用、レポート、リンクコレクション、およびコントロールによって定義されます。 コレクションの機能の概要を取得するために、ユーザーモードのアプリケーションまたはカーネルモードドライバーは、 [**hidp\_GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getcaps)を呼び出して、 [**HIDP\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)構造体を取得します。 この構造体には、コレクションの[リンクコレクション](link-collections.md)、[ボタン機能配列](button-capability-arrays.md)、および[値機能配列](value-capability-arrays.md)に関する次の情報が含まれています。
 
--   コレクションの[使用状況 ページ](hid-usages.md#usage-page)と[使用状況 ID](hid-usages.md#usage-id)
+-   コレクションの [[使用状況] ページ](hid-usages.md#usage-page)と[使用状況 ID](hid-usages.md#usage-id)
 
--   コレクションのバイト単位のサイズが入力の出力、および機能の報告 (を参照してください[HID 概念の紹介](introduction-to-hid-concepts.md))
+-   コレクションの入力、出力、および機能レポートのサイズ (バイト単位) (「HID の[概念の概要」を](introduction-to-hid-concepts.md)参照)
 
--   数[ **HIDP\_リンク\_コレクション\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_link_collection_node)構造、コレクションの[リンク コレクションの配列](link-collections.md#ddk-link-collection-array-kg)
+-   コレクションの[リンクコレクション配列](link-collections.md#ddk-link-collection-array-kg)の[ **\_コレクション\_ノード構造の\_リンク**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_link_collection_node)の数
 
--   各レポートの種類の数の[ **HIDP\_ボタン\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_button_caps)ボタンの機能の配列内の構造がによって返される[ **HidP\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)
+-   各レポートの種類では、hidp [ **\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps)によって返されたボタン機能の配列の[ **\_、hidp\_ボタン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_button_caps)の数がキャップ構造になります。
 
--   各レポートの種類の数の[ **HIDP\_値\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_value_caps)によって返される値の機能の配列内の構造体[ **HidP\_GetValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getvaluecaps)
+-   各レポートの種類について、hidp [ **\_GetValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getvaluecaps)によって返された値機能配列の[ **\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_value_caps)構造の\_の値の数。
 
--   各レポートの種類のボタンとを指定して、コレクションによってサポートされる値の数、**数***Xxx***DataIndices**メンバー。
+-   各レポートの種類について、 **Number***Xxx***DataIndices**メンバーによって指定された、コレクションでサポートされているボタンと値の数。
 
  
 

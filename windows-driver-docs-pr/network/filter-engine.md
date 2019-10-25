@@ -3,20 +3,20 @@ title: フィルター エンジン
 description: フィルター エンジン
 ms.assetid: 87bf23c7-4086-4016-b712-a083d3d69bbe
 keywords:
-- フィルター エンジン WDK Windows フィルタ リング プラットフォーム
+- フィルターエンジン WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e2c1f85e6812f3c6b615376525d8db5ab8dd77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85a876b83206b0285f12054b8f8399f951c5977c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363414"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834710"
 ---
 # <a name="filter-engine"></a>フィルター エンジン
 
 
-*フィルター エンジン*フィルターを格納し、フィルターの決定を実行する Windows フィルタ リング プラットフォームのコンポーネントです。 [フィルター](filter.md)フィルター エンジンに追加で指定された[レイヤーをフィルター処理](filtering-layer.md)フィルター エンジンは、目的のフィルター アクション (許可、drop、または引き出し) を実行できるようにします。 フィルター エンジン内のフィルターが指定されている場合、[コールアウト](callout.md)フィルターのアクションでは、フィルター エンジンの呼び出しのコールアウトの[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)吹き出しが実行できるように関数ネットワークのデータを処理します。
+*フィルターエンジン*は、フィルターを格納し、フィルターの決定を実行する Windows フィルタリングプラットフォームのコンポーネントです。 フィルターは、フィルターエンジンが目的のフィルター処理 (許可、削除、またはコールアウト) を実行できるように、指定された[フィルターレイヤー](filtering-layer.md)のフィルターエンジンに追加[されます](filter.md)。 フィルターエンジンのフィルターによってフィルターのアクションの[コールアウト](callout.md)が指定されている場合、フィルターエンジンはコールアウトの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数を呼び出して、コールアウトがネットワークデータを処理できるようにします。
 
  
 

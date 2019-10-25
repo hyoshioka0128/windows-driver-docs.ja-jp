@@ -3,75 +3,75 @@ title: 64 ビット プリンター ドライバーの記述
 description: 64 ビット プリンター ドライバーの記述
 ms.assetid: 41f1a521-980e-4ccd-a395-e1d1bf0114d1
 keywords:
-- プリンター ドライバー WDK、64 ビット
-- 64 ビットの WDK プリンター
+- プリンタードライバー WDK、64ビット
+- 64-bit WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33389049704eb125b82ee7b3cd78e91c2a0d9e91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d80723ccdf10843329b7d470605bb1ca6d8eaf0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356978"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832101"
 ---
 # <a name="writing-64-bit-printer-drivers"></a>64 ビット プリンター ドライバーの記述
 
 
-64 ビット ドライバーを作成またはの 32 ビットと 64 ビットの両方のシステムでコンパイルできるドライバーを記述する場合に 64 ビット移植のガイドラインに従って[ドライバーのプログラミング手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/miscellaneous-driver-programming-techniques)します。 このトピックでは、いくつかの制限事項と 64 ビット プリンター ドライバーの書き込みで発生する可能性がある問題について説明します。
+64ビットのドライバーを記述する場合、または32ビットと64ビットの両方のシステムで実行するようにコンパイルできるドライバーを作成する場合は、[ドライバーのプログラミング手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/miscellaneous-driver-programming-techniques)における64ビット移植のガイドラインに従ってください。 このトピックでは、64ビットのプリンタードライバーを記述する際に発生する可能性がある制限事項と問題について説明します。
 
-装飾を使用して、64 ビット アーキテクチャを特定する方法の詳細については、次のトピックを参照してください。
+装飾を使用して64ビットアーキテクチャを識別する方法の詳細については、次のトピックを参照してください。
 
--   [プリンターの INF ファイルで装飾](decorations-in-printer-inf-files.md)
+-   [プリンターの INF ファイルでの装飾](decorations-in-printer-inf-files.md)
 
--   [プリンター ドライバーの INF ファイルで装飾を使用する方法](how-to-use-decorations-in-inf-files-for-printer-drivers.md)
+-   [プリンタードライバーの INF ファイルでの装飾の使用方法](how-to-use-decorations-in-inf-files-for-printer-drivers.md)
 
-### <a name="limitations-on-device-context-handles"></a>デバイス コンテキスト ハンドルに関する制限事項
+### <a name="limitations-on-device-context-handles"></a>デバイスコンテキストハンドルに関する制限事項
 
-プリンター ドライバー プラグイン Splwow64.exe サンク プロセスのコンテキストで実行されているが、GDI を呼び出さない場合は、32 ビット アプリケーションは、Microsoft Windows オペレーティング システムの 64 ビット版で実行されて、**フォーマット**関数。この呼び出しは失敗します。
+32ビットアプリケーションが64ビットバージョンの Microsoft Windows オペレーティングシステムで実行されている場合、Splwow64 のサンプロセスのコンテキストで実行されているプリンタードライバープラグインは、GDI **Createdc**関数を呼び出すことはできません。この呼び出しは失敗します。
 
-### <a name="problems-with-writing-64-bit-drivers"></a>64 ビット ドライバーの記述に関する問題
+### <a name="problems-with-writing-64-bit-drivers"></a>64ビットドライバーの記述に関する問題
 
-既存の 32 ビット ドライバー コードには、ポインター型や DWORD または ULONG などの整数型の間の変換に関して注意します。 32 ビットのコンピューターでコードを作成した経験がある場合は、ポインター値が DWORD または ULONG 適合と仮定するできます使用する可能性があります。 64 ビット コードでは、この想定は危険です。 DWORD または ULONG 型へのポインターをキャストすると、64 ビットのポインターは切り捨てられます。
+既存の32ビットドライバーコードでは、ポインター型と DWORD や ULONG などの整数型の間の変換に注意してください。 32ビットコンピューター用のコードを記述する経験がある場合は、ポインター値が DWORD または ULONG に収まると想定して使用することがあります。 64ビットコードの場合、この想定は危険です。 ポインターを DWORD または ULONG 型にキャストした場合、64ビットポインターが切り捨てられる可能性があります。
 
-代わりに、DWORD へのポインターをキャスト\_PTR または ULONG\_PTR。 DWORD 型の符号なし整数\_PTR または ULONG\_PTR は 32 ビットまたは 64 ビット コンピューターのコードをコンパイルするかどうかに関係なく、全体のポインターを格納するのに十分な大きさでは常にします。
+代わりに、ポインターを\_PTR または ULONG\_PTR の型にキャストします。 \_PTR\_PTR または ULONG 型の符号なし整数は、コードが32ビットまたは64ビットのコンピューター用にコンパイルされているかどうかに関係なく、常にポインター全体を格納するのに十分な大きさです。
 
-PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_oemcuipparam)構造体は ULONG 型\_PTR。 次のコード例は、このフィールドに 64 ビット ポインターの値をコピーする場合のように指定しない動作を示しています。
+たとえば、 [**Oemcuipparam**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam)構造体内の pDrvOptItems ポインターフィールドの型は、ULONG\_PTR です。 次のコード例は、64ビットポインター値をこのフィールドにコピーした場合に実行されないことを示しています。
 
 ```cpp
     PUSERDATA pData;
     OEMCUIPPARAM->pDrvOptItems.UserData = (ULONG)pData;  // Wrong
 ```
 
-上記のコード例のキャスト、 *pData*場合、ポインター値を切り捨てることができる ULONG 型へのポインター **sizeof**(*pData*) &gt; **sizeof**(ULONG)。 正しいアプローチは、ULONG へのポインターをキャストする\_PTR、次のコード例に示すようにします。
+前のコード例では、 *pdata*ポインターを ulong 型にキャストします。 **sizeof**(*pData*) &gt; **sizeof**(ulong) の場合、ポインター値を切り捨てることができます。 正しい方法は、次のコード例に示すように、ポインターを ULONG\_PTR にキャストすることです。
 
 ```cpp
     PUSERDATA pData;
     OEMCUIPPARAM->pDrvOptItems.UserData = (ULONG_PTR)pData;  // Correct
 ```
 
-上記のコード例では、ポインター値の 64 ビットをすべて保持されます。
+上記のコード例では、すべての64ビットのポインター値が保持されます。
 
-などの 64 ビットのインライン関数**PtrToUlong**と**UlongToPtr**ポインターと整数型間でこれらの種類の相対的なサイズを推測に頼ることがなく安全に変換します。 1 つの型が他方より短い場合は、長い型に変換するときに拡張する必要があります。 短い型は符号ビット、または 0 で入力することで拡張は、各 Win64 関数は、このような状況を処理できます。 次のコード例を検討してください。
+**PtrToUlong**や**UlongToPtr**などのインライン64ビット関数は、これらの型の相対的なサイズに関する仮定に依存せずに、ポインター型と整数型を安全に変換します。 一方の型が他方より短い場合は、長い型に変換するときに拡張する必要があります。 符号ビットまたは0を使用して短い型が拡張された場合、各 Win64 関数はこれらの状況を処理できます。 次のコード例について考えてみます。
 
 ```cpp
     ULONG ulHWPhysAddr[NUM_PHYS_ADDRS];
     ulSlotPhysAddr[0] = ULONG(pulPhysHWBuffer) + HW_BUFFER_SIZE;  // wrong
 ```
 
-上記のコード例を次のコード例と置き換える必要があります。
+前のコード例を次のコード例に置き換える必要があります。
 
 ```cpp
     ULONG_PTR ulHWPhysAddr[NUM_PHYS_ADDRS];
     ulSlotPhysAddr[0] = PtrToUlong(pulPhysHWBuffer) + HW_BUFFER_SIZE;  // correct
 ```
 
-2 番目のコード例が優先される場合でも
+2番目のコード例は、
 
 ```cpp
 ulSlotPhysAddr
 ```
 
-64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://docs.microsoft.com/windows-hardware/drivers/kernel/the-new-data-types)します。
+は、64ビットの長さではなく32ビットのハードウェアレジスタの値を表す場合があります。 ポインター型と整数型の間で変換を行うための新しいすべての Win64 ヘルパー関数の一覧については、[新しいデータ型](https://docs.microsoft.com/windows-hardware/drivers/kernel/the-new-data-types)を参照してください。
  
 
  

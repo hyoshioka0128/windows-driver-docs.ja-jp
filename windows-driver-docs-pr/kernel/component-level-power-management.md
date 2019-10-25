@@ -4,12 +4,12 @@ description: Windows 8 以降では、電源管理フレームワーク (PoFx) �
 ms.assetid: 77866143-FB10-4623-9923-368B23808715
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b4912cc47399751fa3d0e9a4a330baefd65dc018
-ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
+ms.openlocfilehash: 5e75083b75146ec2024a502e58b2770a664b49e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866772"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828516"
 ---
 # <a name="component-level-power-management"></a>コンポーネント レベルの電源管理
 
@@ -30,7 +30,7 @@ PoFx は、この情報に基づいて、コンポーネントが低電力状態
 ## <a name="introduction-to-the-pofx-api-for-component-level-power-management"></a>コンポーネントレベルの電源管理用の PoFx API の概要
 
 
-PoFx によって管理されるようにデバイスを登録するために、ドライバーは[**Pofxregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregisterdevice)ルーチンを呼び出します。 ドライバーは、このルーチンを、他のデータと共に[ **\_po fx\_コンポーネント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_v1)構造体の配列を含む[ **\_po fx\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)構造体に渡します。 この配列の各要素は、デバイス内のコンポーネントの Fx 電源状態と各 Fx 状態の属性を表します。 (少なくとも、コンポーネントレベルの電源管理をサポートしていないコンポーネントは、F0 状態のみを実装します)。特定のコンポーネントの特定の Fx 電源状態の属性は、次の値[**を\_含む PO\_Fx\_\_コンポーネントのアイドル状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)構造によって記述されます。
+PoFx によって管理されるようにデバイスを登録するために、ドライバーは[**Pofxregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice)ルーチンを呼び出します。 このルーチンは、このルーチンを、他のデータの一部である po [ **\_fx\_コンポーネント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_v1)構造の配列を含む[ **\_fx\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_device_v1)構造に渡します。 この配列の各要素は、デバイス内のコンポーネントの Fx 電源状態と各 Fx 状態の属性を表します。 (少なくとも、コンポーネントレベルの電源管理をサポートしていないコンポーネントは、F0 状態のみを実装します)。特定のコンポーネントの特定の Fx 電源状態の属性は、 [**PO\_fx\_コンポーネント\_アイドル状態の\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_idle_state)構造によって記述されます。これには次の値が含まれます。
 
 -   遷移待機時間。これは、この Fx 状態から F0 (完全にオン) 状態への遷移を行うために必要な時間です。
 -   常駐の要件。これは、コンポーネントがこの Fx 状態を使用して、状態への遷移を行う必要がある時間です。
@@ -40,7 +40,7 @@ PoFx は、この情報 (他のシステム全体の入力と依存関係に加�
 
 コンポーネントレベルの電源管理を実行できるのは、デバイスが D0 (完全電源) 状態のときだけです。 デバイスが D1 (ほぼオン)、D2 (ほぼオフ)、または D3 の電源状態にある場合、デバイスにアクセスすることはできません。 デバイスが D0 状態にある場合、ドライバーがアクティブに使用しているコンポーネントのみが、F0 状態のままである必要があります。 アイドル状態のコンポーネントは、電力消費を減らすために、低電力の Fx 状態に切り替える可能性があります。
 
-デバイスが D0 の電源状態にある間、ドライバーはシンプルなプロトコルに従ってコンポーネントレベルの電源管理を有効にします。 ドライバーがコンポーネントにアクセスする必要がある場合、ドライバーは[**PoFxActivateComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxactivatecomponent)ルーチンを呼び出して、コンポーネントへのアクセスを要求します。 この呼び出しが行われたときにコンポーネントが低電力の Fx 状態にある場合、PoFx は F0 状態への遷移を開始し、この移行が完了するとドライバーに通知します。 その後、ドライバーはコンポーネントにアクセスできます。 ドライバーがコンポーネントにアクセスする必要がなくなった場合、ドライバーは[**PoFxIdleComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxidlecomponent)ルーチンを呼び出して pofx に通知します。 この呼び出しに応答して、PoFx はコンポーネントを低電力の Fx 状態に切り替える可能性があります。
+デバイスが D0 の電源状態にある間、ドライバーはシンプルなプロトコルに従ってコンポーネントレベルの電源管理を有効にします。 ドライバーがコンポーネントにアクセスする必要がある場合、ドライバーは[**PoFxActivateComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxactivatecomponent)ルーチンを呼び出して、コンポーネントへのアクセスを要求します。 この呼び出しが行われたときにコンポーネントが低電力の Fx 状態にある場合、PoFx は F0 状態への遷移を開始し、この移行が完了するとドライバーに通知します。 その後、ドライバーはコンポーネントにアクセスできます。 ドライバーがコンポーネントにアクセスする必要がなくなった場合、ドライバーは[**PoFxIdleComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxidlecomponent)ルーチンを呼び出して pofx に通知します。 この呼び出しに応答して、PoFx はコンポーネントを低電力の Fx 状態に切り替える可能性があります。
 
 アクセス可能なコンポーネントが*アクティブ条件*に含まれています。 アクセスできないコンポーネントは、*アイドル状態*にあります。 デバイス内のコンポーネントのアクセシビリティを追跡するために、PoFx は各コンポーネントにアクティベーション参照カウントを保持します。 **PoFxActivateComponent**呼び出しは、指定されたコンポーネントのカウントを1だけインクリメントし、 **PoFxIdleComponent**呼び出しはカウントを1だけデクリメントします。
 

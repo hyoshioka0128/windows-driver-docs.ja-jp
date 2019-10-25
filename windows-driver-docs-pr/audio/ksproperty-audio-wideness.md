@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_ワイドかどうか
-description: KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティは、ステレオのイメージのワイドかどうか (明らかな幅) を指定します。
+title: KSK プロパティ\_AUDIO\_WIDENESS
+description: KSK プロパティ\_AUDIO\_WIDENESS プロパティは、ステレオ画像の WIDENESS (見かけ上の幅) を指定します。
 ms.assetid: 56b18337-c29b-437f-b52f-8d804d857729
 keywords:
-- KSPROPERTY_AUDIO_WIDENESS オーディオ デバイス
+- KSPROPERTY_AUDIO_WIDENESS オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39139a500d9ccdceb437d03d4e9e31ab40f001af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3b478ab06e023429c69996408f6d60f9afdd0467
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360577"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832898"
 ---
-# <a name="kspropertyaudiowideness"></a>KSPROPERTY\_オーディオ\_ワイドかどうか
+# <a name="ksproperty_audio_wideness"></a>KSK プロパティ\_AUDIO\_WIDENESS
 
 
-KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティは、ステレオのイメージのワイドかどうか (明らかな幅) を指定します。
+KSK プロパティ\_AUDIO\_WIDENESS プロパティは、ステレオ画像の WIDENESS (見かけ上の幅) を指定します。
 
 ## <span id="ddk_ksproperty_audio_wideness_ks"></span><span id="DDK_KSPROPERTY_AUDIO_WIDENESS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティは、ステ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティは、ステ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,28 +61,28 @@ KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティは、ステ
 
  
 
-プロパティの値 (データの操作) は ULONG 型で、ワイドかどうかを指定します。 ワイドかどうかは、16 ビットの分数で署名されていない固定小数点の値として表されます。 ワイドかどうかの値では、0 から 0 xffffffff に線形範囲に従います。
+プロパティ値 (操作データ) の型は ULONG で、wideness を指定します。 Wideness は、16ビット分の符号なし固定小数点値として表現されます。 Wideness 値は、0から0xFFFFFFFF までの線形範囲に従います。
 
--   0x00010000 の値は、ステレオの画像の幅が、左右のスピーカーで囲まれているリージョンと一致する必要があることを示します unity (100%) を表します。
+-   値0x00010000 は unity (100%) を表します。これは、ステレオイメージの幅が、左右のスピーカーによってフレームされた領域と一致する必要があることを示します。
 
--   値が unity よりも大きい場合、左右のスピーカーで囲まれている領域の外側を拡張するステレオの画像が表示されます。
+-   Unity よりも大きい値の場合、ステレオ画像は、左右のスピーカーで囲まれた領域の外側に拡大表示されます。
 
--   Unity よりも小さいか、値は、ステレオの画像の見かけ上の幅が左右のスピーカーの領域よりも小さい必要があります。
+-   Unity より小さい値の場合、ステレオイメージの認識される幅は、左右のスピーカー間のスペースよりも小さくする必要があります。
 
--   値 0 は、左右のスピーカー位置の途中からサウンドが表示されることを示します。
+-   値が0の場合は、サウンドが左と右のスピーカーの中間の位置からのものであることを示します。
 
-ワイドかどうかの値の線形増加とステレオの画像の明らかな幅が直線的に増やす必要があります。
+ステレオイメージの見かけ上の幅は、wideness 値の直線的な増加に比例して増加します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティの要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AUDIO\_WIDENESS property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-これは、ワイドかどうかのノードのプロパティ ([**KSNODETYPE\_ステレオ\_ワイド**](ksnodetype-stereo-wide.md))。 ワイドかどうかのノードでは、既存のステレオ (2 つのチャネル) ストリームに広がりを追加できます。 この効果を実現するためには、ノードは、左右のスピーカーで囲まれている領域の外側の位置から出ているようにいくつかの音を鳴らすにストリームを処理します。
+これは、wideness ノード ([**KSNODETYPE\_ステレオ\_ワイド**](ksnodetype-stereo-wide.md)) のプロパティです。 Wideness ノードでは、既存のステレオ (2 チャネル) ストリームに spaciousness を追加できます。 この効果を実現するために、ノードはストリームを処理して、左右のスピーカーで囲まれた領域の外側の位置から音が出てくるように見えます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -93,15 +93,15 @@ KSPROPERTY\_オーディオ\_ワイドかどうかのプロパティの要求が
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_ステレオ\_ワイド**](ksnodetype-stereo-wide.md)
 

@@ -3,15 +3,15 @@ title: 多機能デバイスの制限
 description: 多機能デバイスの制限
 ms.assetid: 9375c451-b83f-4655-b1e2-cbd693eaaf5f
 keywords:
-- 多機能オーディオ デバイス WDK、制限
+- 多機能オーディオデバイス WDK、制限
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a94fe1c2210cdf3800f08b7ed82cbe14ffc8188
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc780ab2bd7c1684c0d520747e9977b9708217de
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363224"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832567"
 ---
 # <a name="multifunction-device-limits"></a>多機能デバイスの制限
 
@@ -19,9 +19,9 @@ ms.locfileid: "67363224"
 ## <span id="multifunction_device_limits"></span><span id="MULTIFUNCTION_DEVICE_LIMITS"></span>
 
 
-多機能デバイスあたりのオーディオの関数の数は、次の要因によって制限されます。
+多機能デバイスごとのオーディオ関数の数は、次の要因によって制限されます。
 
--   アダプタのドライバを呼び出すと[ **PcAddAdapterDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcaddadapterdevice)、関数の 4 番目のパラメーター、 *MaxObjects*、ミニポート ドライバーの最大数のオブジェクトを指定します。ドライバーをサポートできます。 サンプル アダプターのドライバーで、Microsoft Windows Driver Kit (WDK) では、このパラメーターを設定する最大の整数の定数\_を小さな値 (5 個以下) は通常、ミニポートします。 複数のステレオのペアまたは他の種類のオーディオ サブデバイスをサポートする場合は、この値を大きく必要があります。
+-   アダプタードライバーが[**Pcaddadapterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcaddadapterdevice)を呼び出すと、関数の4番目のパラメーター *maxobjects*によって、ドライバーがサポートできるミニポートドライバーオブジェクトの最大数が指定されます。 Microsoft Windows Driver Kit (WDK) のサンプルアダプタードライバーでは、このパラメーターを整数定数 MAX\_ミニポートに設定しています。これは通常、小さい値 (5 以下) になるように定義されています。 複数のステレオペアまたはその他の種類のオーディオサブデバイスをサポートする場合は、この値を大きくすることが必要になる場合があります。
 
  
 

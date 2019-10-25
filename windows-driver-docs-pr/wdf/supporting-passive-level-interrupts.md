@@ -1,54 +1,54 @@
 ---
 title: パッシブ レベルの割り込みのサポート
-description: フレームワーク バージョン 1.11 以降、WDF ドライバーはパッシブ レベルの処理が必要な割り込みオブジェクトを作成できます。
+description: Framework バージョン1.11 以降では、WDF ドライバーは、パッシブレベルの処理を必要とする割り込みオブジェクトを作成できます。
 ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e08dfa1d9ae8348241e043af442b6407502c20f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24d99eadcc8999e3dd2daec4e7639f3a67f221c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368059"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831727"
 ---
 # <a name="supporting-passive-level-interrupts"></a>パッシブ レベルの割り込みのサポート
 
 
-Windows 8 またはそれ以降のバージョンのオペレーティング システムで実行されているドライバーは、framework のバージョン 1.11、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) で始まるパッシブ レベルの処理が必要な割り込みオブジェクトを作成できます。 フレームワークが、ドライバーの割り込みサービス ルーチン (ISR) およびその他の場合は、ドライバーは、パッシブ レベル割り込み処理の割り込みオブジェクトを構成、[オブジェクト イベントのコールバック関数を中断](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/)IRQL = パッシブ\_パッシブ レベル割り込みロックを保持しているときにレベル。
+Framework バージョン1.11 以降では、Windows 8 以降のバージョンのオペレーティングシステムで実行されているカーネルモードドライバーフレームワーク (KMDF) とユーザーモードドライバーフレームワーク (UMDF) ドライバーは、パッシブレベルの処理を必要とする割り込みオブジェクトを作成できます。 ドライバーがパッシブレベルの割り込み処理のために割り込みオブジェクトを構成した場合、フレームワークは、ドライバーの interrupt service ルーチン (ISR) およびその他の[割り込みオブジェクトイベントコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)を IRQL = パッシブ\_レベルで呼び出します。パッシブレベルの割り込みロック。
 
-チップ (SoC) プラットフォーム上のシステムを framework ベースのドライバーを開発している場合は、パッシブ モードの割り込みを I²C、SPI、UART などの低速バス経由で、SoC をデバイスとの通信に使用できます。
+チップ (SoC) プラットフォーム上のシステム用のフレームワークベースのドライバーを開発している場合は、パッシブモードの割り込みを使用して、(I ² C、SPI、UART などの) 高速バス経由で SoC 以外のデバイスと通信することができます。
 
-それ以外の場合、使用する必要があります[デバイスの IRQL で処理が必要な割り込み](creating-an-interrupt-object.md)(DIRQL)。 ドライバーは、メッセージ シグナル割り込み (Msi) をサポートする場合は、DIRQL を使用する必要があります割り込みを処理します。 バージョン 1.9 以降では、フレームワーク、常に処理割り込み IRQL で DIRQL を = です。
+それ以外の場合は、[デバイスの IRQL](creating-an-interrupt-object.md) (dirql) での処理を必要とする割り込みを使用する必要があります。 ドライバーがメッセージシグナル割り込み (Msi) をサポートしている場合は、DIRQL 割り込み処理を使用する必要があります。 バージョン1.9 以前では、フレームワークは常に IRQL = DIRQL で割り込みを処理します。
 
-このトピックで説明する方法[作成](#creating-a-passive-level-interrupt)、[サービス](#servicing)、および[同期](#synchronizing)パッシブ レベルの割り込みです。
+このトピックでは、パッシブレベルの割り込みを[作成](#creating-a-passive-level-interrupt)、[サービス](#servicing)、および[同期](#synchronizing)する方法について説明します。
 
-## <a name="creating-a-passive-level-interrupt"></a>パッシブ レベル割り込みを作成します。
-
-
-パッシブ レベル割り込みオブジェクトを作成するドライバーを初期化する必要があります、 [ **WDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体に渡すと、 [ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)メソッド。 構成構造体で、ドライバーを行ってください。
-
--   設定、 **PassiveHandling**メンバーを TRUE にします。
--   提供、 [ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)パッシブ レベルで呼び出されるコールバック関数。
--   必要に応じて設定、 **AutomaticSerialization**を TRUE にします。 ドライバーが設定されている場合**AutomaticSerialization**を TRUE に、フレームワークは、割り込みオブジェクトの実行を同期し、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)割り込みの親オブジェクトの下にあるその他のオブジェクトからのコールバック関数のコールバック関数。
--   どちらも、ドライバーが必要に応じて、提供、 [ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) IRQL で呼び出されるコールバック関数、パッシブ =\_レベル、または[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) IRQL で呼び出されるコールバック関数のディスパッチを =\_レベル。
-
-上記構成構造体のメンバーの設定の詳細については、次を参照してください。 [ **WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)します。
-有効にして、パッシブ レベルの割り込みを無効化については、次を参照してください。[の有効化と無効にする割り込み](enabling-and-disabling-interrupts.md)します。
-
-## <a href="" id="servicing"></a>パッシブ レベル割り込みを処理します。
+## <a name="creating-a-passive-level-interrupt"></a>パッシブレベルの割り込みの作成
 
 
-[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) IRQL で実行されるコールバック関数は、パッシブ =\_割り込みが作業項目または割り込みを DPC レベル パッシブ レベル割り込みロックを保持し、通常のスケジュール後で割り込み関連の情報を処理します。 フレームワーク ベースのドライバーは、作業項目またはとして DPC ルーチンを実装[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数。
+パッシブレベルの割り込みオブジェクトを作成するには、ドライバーが[**WDF\_interrupt\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体を初期化し、それを[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)メソッドに渡す必要があります。 構成構造では、ドライバーは次のことを行う必要があります。
 
-実行をスケジュールする、 [ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数では、ドライバーを呼び出す[ **WdfInterruptQueueWorkItemForIsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr)内から、 [ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)コールバック関数。
+-   "設定のない**ve"** メンバーを TRUE に設定します。
+-   [*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) callback 関数を指定します。このコールバック関数は、パッシブレベルで呼び出されます。
+-   必要に応じて、自動**シリアル化**を TRUE に設定します。 ドライバーが自動**シリアル化**を TRUE に設定すると、フレームワークは、割り込みオブジェクトの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数の実行を、他のオブジェクトのコールバック関数と同期します。は、割り込みの親オブジェクトの下にあります。
+-   必要に応じて、ドライバーは、IRQL = パッシブ\_レベルで呼び出される[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数を提供したり、IRQL = DISPATCH\_レベルで呼び出される[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数を提供したりすることができます。
 
-実行をスケジュールする、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数では、ドライバーを呼び出す[ **WdfInterruptQueueDpcForIsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr)から内で、 [ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)コールバック関数。 (リコールを運転免許*EvtInterruptIsr*コールバック関数を呼び出すことができます[ **WdfInterruptQueueWorkItemForIsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr)または**WdfInterruptQueueDpcForIsr**、両方ではなく)。
+構成構造の上のメンバーを設定する方法の詳細については、「 [**WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)」を参照してください。
+パッシブレベルの割り込みの有効化と無効化の詳細については、「[割り込みの有効化と無効化](enabling-and-disabling-interrupts.md)」を参照してください。
 
-ほとんどのドライバーを使用して、1 つ[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)割り込みの種類ごとのコールバック関数。 ドライバーは、割り込みオブジェクト デバイスごとに複数のフレームワークを作成する場合は、別の使用を検討*EvtInterruptWorkItem*または*EvtInterruptDpc*各割り込みのコールバック。
+## <a href="" id="servicing"></a>パッシブレベルの割り込みの提供
 
-ドライバーは、通常の I/O 要求を完了、 [ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数。
 
-次のコード例では、パッシブ レベルの割り込みを使用して、ドライバー可能性がありますスケジュールを設定する方法を示します、 [ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック内からその[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)関数。
+[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) callback 関数は、パッシブレベルの割り込みロックが保持されている IRQL = パッシブ\_レベルで実行されます。通常、割り込みに関連する情報を後で処理するために、割り込み作業項目または割り込み DPC をスケジュールします。 フレームワークベースのドライバーは、作業項目または DPC ルーチンを[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数として実装します。
+
+[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) callback 関数の実行をスケジュールするために、ドライバーは[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) Callback 関数内から[**WdfInterruptQueueWorkItemForIsr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr)を呼び出します。
+
+[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数の実行をスケジュールするために、ドライバーは[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) Callback 関数内から[**WdfInterruptQueueDpcForIsr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr)を呼び出します。 (ドライバーの*EvtInterruptIsr* callback 関数は[**WdfInterruptQueueWorkItemForIsr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr)または**WdfInterruptQueueDpcForIsr**を呼び出すことができますが、両方は呼び出せないことに注意してください)。
+
+ほとんどのドライバーでは、割り込みの種類ごとに1つの[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数を使用します。 ドライバーが各デバイスに対して複数のフレームワーク割り込みオブジェクトを作成する場合は、割り込みごとに個別の*EvtInterruptWorkItem*または*EvtInterruptDpc*コールバックを使用することを検討してください。
+
+ドライバーは通常、 [*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)または[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数で i/o 要求を完了します。
+
+次のコード例は、パッシブレベルの割り込みを使用するドライバーが、 [*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)関数内から[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバックをスケジュールする方法を示しています。
 
 ```cpp
 BOOLEAN
@@ -305,21 +305,21 @@ EvtIoInternalDeviceControl(
 }
 ```
 
-## <a href="" id="synchronizing"></a>パッシブ レベル割り込みを同期します。
+## <a href="" id="synchronizing"></a>パッシブレベルの割り込みの同期
 
 
-デッドロックを防ぐためには、パッシブ レベル割り込み処理を実装するドライバーを記述する場合、次のガイドラインに従います。
+デッドロックを回避するには、次のガイドラインに従って、パッシブレベルの割り込み処理を実装するドライバーを記述します。
 
--   場合**AutomaticSerialization** TRUE に設定されていない[同期要求を送信する](sending-i-o-requests-synchronously.md)内から、 [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数。
--   前にパッシブ レベル割り込みロックの解放[I/O 要求の完了](completing-i-o-requests.md)します。
--   提供[ *EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)、 [ *EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)、および[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)に応じて。
--   場合は、ドライバーになど、任意のスレッド コンテキストでは、割り込みに関連する作業を実行する必要があります、[要求ハンドラー](request-handlers.md)を使用して、 [ **WdfInterruptTryToAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439284)と[**WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)します。 呼び出さない[ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)、 [ **WdfInterruptSynchronize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize)、 [ **WdfInterruptEnable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptenable)、または[ **WdfInterruptDisable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptdisable)任意のスレッド コンテキストから。 呼び出すことによって生じるおそれのあるデッドロックのシナリオの例については**WdfInterruptAcquireLock**任意のスレッド コンテキストからの「解説」を参照してください。 [ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340).
+-   自動**シリアル化**が TRUE に設定されている場合、 [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) callback 関数内から[同期要求を送信](sending-i-o-requests-synchronously.md)しません。
+-   [I/o 要求を完了](completing-i-o-requests.md)する前に、パッシブレベルの割り込みロックを解放します。
+-   必要に応じて、 [*EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)、 [*EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)、および[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)を指定します。
+-   ドライバーが、[要求ハンドラー](request-handlers.md)など、任意のスレッドコンテキストで割り込み関連の作業を実行する必要がある場合は、 [**WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)と[**WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)を使用します。 任意のスレッドコンテキストから[**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)、 [**WdfInterruptSynchronize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize)、 [**WdfInterruptEnable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptenable)、または[**WdfInterruptDisable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptdisable)を呼び出さないでください。 任意のスレッドコンテキストから**WdfInterruptAcquireLock**を呼び出すことによって発生する可能性のあるデッドロックシナリオの例については、 [**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)の「解説」を参照してください。
 
-    場合への呼び出し[ **WdfInterruptTryToAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439284)作業項目に割り込みに関連する作業を延期できるは、ドライバーは失敗します。 その作業項目で、ドライバーに安全にロックを取得できる割り込みを呼び出して[ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)します。 詳細については、次を参照してください。 [ **WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)します。
+    [**WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)の呼び出しが失敗した場合、ドライバーは、その割り込みに関連する作業を作業項目に延期できます。 この作業項目では、ドライバーは[**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)を呼び出すことによって、割り込みロックを安全に取得できます。 詳細については、「 [**WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)」を参照してください。
 
-    ドライバーを呼び出すことができます、作業項目などの非任意のスレッド コンテキストで[ **WdfInterruptAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547340)または[ **WdfInterruptSynchronize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize).
+    任意のスレッドコンテキスト (作業項目など) では、ドライバーは[**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)または[**WdfInterruptSynchronize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize)を呼び出すことができます。
 
-詳細については、割り込みのロックを使用して、次を参照してください。[同期割り込みコード](synchronizing-interrupt-code.md)します。
+割り込みロックの使用の詳細については、「[割り込みコードの同期](synchronizing-interrupt-code.md)」を参照してください。
 
  
 

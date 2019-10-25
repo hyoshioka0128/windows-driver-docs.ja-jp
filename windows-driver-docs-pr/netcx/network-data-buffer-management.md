@@ -3,54 +3,54 @@ title: ネットワーク データ バッファーの管理
 description: ネットワーク データ バッファーの管理
 ms.assetid: BFE1D376-88FB-41CB-AB6D-A0D6BB83128C
 keywords:
-- WDF ネットワーク アダプター クラス拡張バッファー マネージャー、ネットワーク データ バッファー管理
+- WDF ネットワークアダプタークラス拡張バッファーマネージャー, ネットワークデータバッファー管理
 ms.date: 02/20/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1172ec333545655055c8b1a28c577d8854834ccd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89fdc71382c4dd62f0a003d4e925f9db574c97d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375350"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835509"
 ---
 # <a name="network-data-buffer-management"></a>ネットワーク データ バッファーの管理
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-バッファー管理は、ネットワーク インターフェイス カード (NIC) のクライアント ドライバーと、オペレーティング システム (テキサス州) の送信用のシステム メモリからのパケット データ バッファーの割り当てと共同で作業し、受信 (Rx) のデータ パスを可能にする機能です。 これにより、NIC のパフォーマンスを向上させる、NIC のクライアント ドライバーでは、メモリの有効期間管理をしやすくなりますし、メモリ経由でシステムの詳細に制御します。
+バッファー管理は、ネットワークインターフェイスカード (NIC) クライアントドライバーとオペレーティングシステムを連携させる機能です。この機能を使用すると、送信 (Tx) および受信 (Rx) データパスのシステムメモリからパケットデータバッファーを割り当てることができます。 これにより、NIC のパフォーマンスが向上し、NIC のクライアントドライバーのメモリ有効期間の管理が容易になり、メモリのシステムをより細かく制御できるようになります。
 
-## <a name="the-benefits-of-buffer-management-in-netadaptercx"></a>NetAdapterCx でバッファー管理の利点があります。
+## <a name="the-benefits-of-buffer-management-in-netadaptercx"></a>NetAdapterCx でのバッファー管理の利点
 
-データ バッファーがパケットのペイロードのシステム メモリから割り当てられた場所の選択は、データ パスのパフォーマンスにとって重要です。 NetAdapterCx では、バッファー管理モデルは DMA 対応 NIC ハードウェアでは、最適化され、クライアント ドライバーに活用するために最適な方法は、テキサス州と Rx のパスの代わりにデータ バッファーを割り当てるシステム。 ただし、クライアント ドライバーがどこに影響を与えるし、システムがデータを割り当てる方法をバッファーするため、クライアントのハードウェアによって簡単に使用することができます。 
+パケットペイロードのシステムメモリからデータバッファーが割り当てられる場所の選択は、データパスのパフォーマンスにとって重要です。 NetAdapterCx では、バッファー管理モデルは DMA 対応の NIC ハードウェア用に最適化されています。また、クライアントドライバーが利用できる最適な方法は、システムが送信パスと Rx パスの両方に代わってデータバッファーを割り当てられるようにすることです。 ただし、クライアントドライバーは、クライアントのハードウェアで簡単に使用できるように、データバッファーの割り当てと方法に影響を与える可能性があります。 
 
-たとえば、一般的な DMA 対応の NIC を検討してください。 ストアには、このアプローチにまでの利点があります。
+たとえば、一般的な DMA 対応 NIC について考えてみましょう。 このアプローチには、次のような利点があります。
 
-1. データ バッファーに割り当てられ、システムによって解放されます。 そのため、クライアント ドライバーは、メモリの有効期間管理の負担から解放されます。
-2. システムにより、割り当て済みのデータ バッファーにあるクライアント ドライバーで宣言されている機能に基づく NIC ハードウェアの DMA の準備完了です。 次に、クライアント ドライバーだけにプログラムできるデータ バッファーとして、ハードウェアの追加の DMA マッピング操作を実行せず。
-3. システムにローカル エンド ツー エンドのパフォーマンスだけではなくグローバルのエンド ツー エンドのパフォーマンスを最適化するために決定できるようには、バッファーのデータを割り当てるときに考慮上位層のアプリケーションのニーズを実行できます。
+1. データバッファーが割り当てられ、システムによって解放されます。 そのため、クライアントドライバーは、メモリの有効期間管理の負荷から解放されます。
+2. システムは、割り当てられたデータバッファーが、クライアントドライバーによって宣言された機能に基づいて、NIC ハードウェアに対して DMA 対応であることを確認します。 その後、クライアントドライバーは、追加の DMA マッピング操作を実行することなく、単にデータバッファーをそのままの状態でプログラムによってプログラムすることができます。
+3. システムは、データバッファーを割り当てるときに、上位層アプリケーションのニーズを考慮に入れることができるため、ローカルのエンドツーエンドのパフォーマンスだけでなく、グローバルなエンドツーエンドのパフォーマンスを最適化することを決定できます。
 
-非 DMA capabile Nic などの USB ベースのネットワーク ドングルまたは他の高度/ソフトウェア Nic バッファー管理モデルが用意されています、クライアント ドライバーを完全にデータ バッファー管理のままにするオプション。 
+USB ベースのネットワークドングルや、その他の拡張/ソフトウェア Nic のような非 DMA の機能の場合、バッファー管理モデルでは、データバッファー管理をクライアントドライバーに対して完全に終了するオプションも提供されます。 
 
 ## <a name="how-to-leverage-buffer-management"></a>バッファー管理を活用する方法
 
 > [!IMPORTANT]
-> ハードウェアが DMA サポートしている場合は、Rx、Tx 機能を設定する前に WDFDMAENABLER オブジェクトを作成する必要があります。 WDFDMAENABLER オブジェクトを構成するときに、 [ **WDF_DMA_ENABLER_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/ns-wdfdmaenabler-_wdf_dma_enabler_config)構造体を設定することを確認、 **WdmDmaVersionOverride** メンバー**3** DMA バージョン 3 を指定します。
+> お使いのハードウェアが DMA に対応している場合は、Rx および Tx の機能を設定する前に、WDFDMAENABLER オブジェクトを作成する必要があります。 [**WDF_DMA_ENABLER_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ns-wdfdmaenabler-_wdf_dma_enabler_config)構造体を使用して WDFDMAENABLER オブジェクトを構成する場合は、 **Wdmdmaversionoverride**メンバーを**3**に設定して、DMA バージョン3を指定するようにしてください。
 
-バッファー管理するオプトインするには、これらの手順に従います。
+バッファー管理をオプトインするには、次の手順を実行します。
 
-1. ネット アダプターを開始するときに、呼び出す前に[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)、ハードウェアのデータ バッファーの機能や制約を使用して通知システム、 [ **NET_ADAPTER_RX_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_rx_capabilities)と[ **NET_ADAPTER_TX_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_tx_capabilities)データは、Rx、Tx パスをそれぞれ構造体します。 
-2. 初期化関数の 1 つを呼び出すことによって、2 つの機能の構造体を初期化します。 たとえば、DMA 対応の NIC のクライアント ドライバーは使用[ **NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma)と[ **NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED_DMA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed_dma)そのハードウェア DMA capablities を宣言して、自身のためにデータ バッファーを完全に管理するシステムに指示します。
-3. 初期化された送受信機能の構造に渡す、 [ **NetAdapterSetDatapathCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)メソッド。
+1. Net アダプターを起動するときに、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前に、 [**NET_ADAPTER_RX_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_rx_capabilities)と[**NET_ADAPTER_TX_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_tx_capabilities)のデータを使用してハードウェアのデータバッファー機能と制約についてシステムに通知します。それぞれ Rx パスと Tx パスの構造。 
+2. 初期化関数のいずれかを呼び出すことによって、2つの機能構造を初期化します。 たとえば、DMA 対応の NIC クライアントドライバーでは、 [**NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma)と[**NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED_DMA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed_dma)を使用して、ハードウェア DMA capablities を宣言し、システムに完全にデータバッファーを代わりに管理します。
+3. 初期化された Tx および Rx 機能の構造体を[**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)メソッドに渡します。
 
 
 ## <a name="example"></a>例
 
-次の例は、NIC は、クライアント ドライバー バッファー マネージャーの使用を開始する方法については、前のセクションに記載されている基本的な手順を示しています。 例は、そのデバイス コンテキストの領域に保存しておいた WDFDMAENABLER オブジェクトを以前に作成したので、テキサス州と Rx では、両方の DMA を使用します。 
+次の例は、NIC クライアントドライバーでバッファーマネージャーの使用を開始する方法について、前のセクションで説明した基本的な手順を示しています。 この例では、Tx と Rx の両方に DMA を使用しているため、以前はデバイスコンテキスト空間に格納されている WDFDMAENABLER オブジェクトが作成されていました。 
 
-送受信機能の構造体を初期化した後、例がそのフラグメント バッファーが、いくつかのヒントも設定されるに注意してください。 これらのヒントは、NetAdapterCx およびプロトコルのドライバーによってパフォーマンスを向上させるために使用できます。
+この例では、Tx および Rx 機能の構造体を初期化した後に、フラグメントバッファーに関するヒントもいくつか設定します。 これらのヒントは、パフォーマンスを向上させるために、NetAdapterCx ドライバーとプロトコルドライバーで使用できます。
 
-エラー処理はわかりやすくするため省略してをいます。
+わかりやすくするために、エラー処理は省略されています。
 
 ```C++
 VOID

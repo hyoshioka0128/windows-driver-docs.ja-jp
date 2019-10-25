@@ -1,9 +1,9 @@
 ---
 title: INF InterfaceInstall32 セクション
-description: このセクションでは、1 つまたは複数の新しいデバイス インターフェイス クラスを作成します。
+description: このセクションでは、1つまたは複数の新しいデバイスインターフェイスクラスを作成します。
 ms.assetid: 7cd576a7-aa5b-486c-a622-cdcb9e7448b5
 keywords:
-- INF InterfaceInstall32 セクションのデバイスとドライバーのインストール
+- INF InterfaceInstall32 セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c89ab6b7aae50594f6ad329144e83b0b288eda8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b796df56b49314620121fa654d31b1dc41995333
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365833"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828797"
 ---
 # <a name="inf-interfaceinstall32-section"></a>INF InterfaceInstall32 セクション
 
 
-このセクションでは 1 つまたは複数を新規作成[デバイス インターフェイス クラス](device-interface-classes.md)します。 使用して、新しいデバイスのインターフェイス クラスをサポートするために、その後にインストールされているデバイスとドライバーを登録できる新しいクラスが作成されると、 [ **INF *DDInstall*します。インターフェイスのセクションでは**](inf-ddinstall-interfaces-section.md) 、それぞれの INF ファイル、または呼び出すことによって[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)します。
+このセクションでは、1つまたは複数の新しい[デバイスインターフェイスクラス](device-interface-classes.md)を作成します。 新しいクラスが作成されると、その後にインストールされたデバイス/ドライバーを、 [**INF *ddinstall*を使用して新しいデバイスインターフェイスクラスをサポートするように登録できます。** ](inf-ddinstall-interfaces-section.md)各 INF ファイル内のセクションをインターフェイスするか、 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出します。
 
 ```ini
 [InterfaceInstall32]
@@ -35,26 +35,26 @@ ms.locfileid: "67365833"
 
 
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
-新しくエクスポートを識別する GUID 値を示す[デバイス インターフェイス クラス](device-interface-classes.md)します。
+新しくエクスポートされた[デバイスインターフェイスクラス](device-interface-classes.md)を識別する GUID 値を指定します。
 
-インターフェイス クラスのインスタンスを登録するには、このセクションで指定された GUID 値で参照する必要が、 [ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)で、 [ **INF *DDInstall*します。インターフェイス セクション**](inf-ddinstall-interfaces-section.md)、それ以外の場合、新しくインストールしたデバイスのドライバーを呼び出す必要がありますまたは[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)この GUID を持つ。
+インターフェイスクラスのインスタンスを登録するには、このセクションの指定された GUID 値が inf Ddinstall の[**Inf AddInterface ディレクティブ**](inf-addinterface-directive.md)によって参照されている必要があり[**ます。インターフェイスセクション**](inf-ddinstall-interfaces-section.md)、または新しくインストールされたデバイスのドライバーは、この GUID を使用して[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出す必要があります。
 
-GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)します。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイス。
+GUID を作成する方法の詳細については、「[ドライバーでの guid の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)」を参照してください。 システム定義のインターフェイスクラス GUID については、カーネルストリーミングインターフェイスの*Ks*など、適切なヘッダーを参照してください。
 
-<a href="" id="install-interface-section"></a>*インストール-section インターフェイス*  
-場合によってはシステム定義された拡張機能の他の場所でこの INF のいずれかでの INF ライター定義のセクションを参照します。
+<a href="" id="install-interface-section"></a>*install-interface-section*  
+この INF 内の他の場所で、場合によっては、システム定義の拡張機能を使用して、INF ライターで定義されたセクションを参照します。
 
-<a href="" id="flags"></a>*フラグ*  
-指定すると、このエントリがゼロにあります。
+<a href="" id="flags"></a>*示す*  
+指定する場合、このエントリは0である必要があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-指定したときに*InterfaceClassGUID*が既にインストールされていないシステムでは、対応するインターフェイスのクラスがインストールされている<em>DDInstall</em>**します。インターフェイス**セクションは、によって処理される、 [SetupAPI](setupapi.md)デバイスのインストールまたはときにそのデバイスのドライバーは、最初の呼び出し中に関数**IoRegisterDeviceInterface**.
+指定された*InterfaceClassGUID*がシステムにまだインストールされていない場合、そのインターフェイスクラスは対応する<em>ddinstall</em>としてインストールされ**ます。インターフェイス**セクションは、デバイスのインストール中、またはデバイスのドライバーが**IoRegisterDeviceInterface**への最初の呼び出しを行うときに、 [setupapi.log](setupapi.md)関数によって処理されます。
 
-各*インストール-section インターフェイス*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*インストールインターフェイスセクション*名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-指定した任意*インストール-section インターフェイス*は次の一般的な形式があります。
+指定したすべての*インストールインターフェイスセクション*の一般的な形式は次のとおりです。
 
 ```ini
 [interface-install-section] | 
@@ -81,17 +81,17 @@ AddReg=add-registry-section[, add-registry-section] ...
 ...
 ```
 
-内のエントリの詳細については、*インターフェイス-section インストール*を参照してください[ **INF DDInstall セクション**](inf-ddinstall-section.md)します。
+*Interface-install*セクションのエントリの詳細については、「 [**INF Ddinstall」セクション**](inf-ddinstall-section.md)を参照してください。
 
-設定できます以降 Windows Vista では、[デバイス インターフェイス クラス](device-interface-classes.md)プロパティを含めることによって[ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md)インターフェイス インストール セクションでします。 含めることによって、デバイス インターフェイス クラスのプロパティを削除することも[ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)インターフェイス インストール セクションでします。 ただし、使用する必要があります、 **AddProperty**または**DelProperty**ディレクティブは、Windows Vista またはそれ以降のバージョンの Windows オペレーティング システムを新しいデバイス インターフェイスのクラスのプロパティを変更するだけです。 デバイス インターフェイス クラス、プロパティの Windows Server 2003、Windows XP、または Windows 2000 で導入された、対応するレジストリ値のエントリがある、使用する続行する必要があります[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)と[ **INF してディレクティブ**](inf-delreg-directive.md)を設定し、デバイス インターフェイス クラスのプロパティを削除します。 システム定義プロパティとカスタム プロパティに次のガイドラインが適用されます。 使用する方法についての詳細、 **AddProperty**ディレクティブと**DelProperty**ディレクティブを参照してください[INF AddProperty ディレクティブとINFDelPropertyディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md).
+Windows Vista 以降では、interface-install セクションに[**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)を含めることによって、[デバイスインターフェイスクラス](device-interface-classes.md)のプロパティを設定できます。 また、interface-install セクションに[**INF DelProperty ディレクティブ**](inf-delproperty-directive.md)を含めることによって、デバイスインターフェイスクラスのプロパティを削除することもできます。 ただし、 **Addproperty**または**delproperty**ディレクティブは、windows Vista 以降のバージョンの windows オペレーティングシステムに新しく追加されたデバイスインターフェイスクラスのプロパティを変更する場合にのみ使用してください。 Windows Server 2003、Windows XP、または Windows 2000 で導入され、対応するレジストリ値のエントリを持つデバイスインターフェイスクラスのプロパティについては、 [**Inf AddReg ディレクティブ**](inf-addreg-directive.md)と[**inf delreg ディレクティブ**](inf-delreg-directive.md)を使用してください。デバイスインターフェイスクラスのプロパティを設定および削除します。 これらのガイドラインは、システム定義のプロパティとカスタムプロパティに適用されます。 **Addproperty**ディレクティブおよび**delproperty**ディレクティブの使用方法の詳細については、「 [INF Addproperty ディレクティブと inf delproperty ディレクティブ](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)の使用」を参照してください。
 
-**AddReg**ディレクティブは、このインターフェイスのインストール中にレジストリにデバイスにインターフェイス固有の情報を設定する 1 つまたは複数のレジストリを追加セクションを参照します。 **HKR**などで指定された追加レジストリ セクションを指定、 **.DeviceClasses\\{** <em>InterfaceClassGUID</em> **}** キー。
+**AddReg**ディレクティブは、このインターフェイスのインストール時にレジストリにデバイスインターフェイス固有の情報を設定する1つ以上の追加レジストリセクションを参照します。 このような add registry セクションで指定された**Hkr**は **..Deviceclasses\\{** <em>InterfaceClassGUID</em> **}** キー。
 
-レジストリのこのインターフェイスのクラスについては、少なくともの新しいフレンドリ名を含める必要があります[デバイス インターフェイス クラス](device-interface-classes.md)し、すべての情報を開き、このインターフェイスを使用しているときより高いレベルのコンポーネントに必要があります。
+このインターフェイスクラスに関するレジストリ情報には、少なくとも新しい[デバイスインターフェイスクラス](device-interface-classes.md)のフレンドリ名と、このインターフェイスを開いて使用するときに上位レベルのコンポーネントが必要とする情報が含まれている必要があります。
 
-さらに、このような*インストール-section インターフェイス*ここで示すように、インターフェイスに固有のインストールの操作を指定する省略可能なディレクティブのいずれかを使用する可能性があります。
+また、このような*インストールインターフェイスセクション*では、ここに示した任意のディレクティブを使用して、インターフェイス固有のインストール操作を指定することもできます。
 
-詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、 **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、 **ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
@@ -108,7 +108,7 @@ AddReg=add-registry-section[, add-registry-section] ...
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)
+[***Ddinstall *.インターフェイス**](inf-ddinstall-interfaces-section.md)
 
 [**DelFiles**](inf-delfiles-directive.md)
 
@@ -118,7 +118,7 @@ AddReg=add-registry-section[, add-registry-section] ...
 
 [**Ini2Reg**](inf-ini2reg-directive.md)
 
-[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)
 
 [**RenFiles**](inf-renfiles-directive.md)
 

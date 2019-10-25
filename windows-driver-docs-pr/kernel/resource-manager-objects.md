@@ -3,35 +3,35 @@ title: リソース マネージャー オブジェクト
 description: リソース マネージャー オブジェクト
 ms.assetid: b44f2035-ee9f-453b-b12d-89ca36a8b280
 keywords:
-- WDK KTM、オブジェクトのリソース マネージャー
-- リソース マネージャー WDK KTM
-- WDK KTM、ルーチンのリソース マネージャー
-- カーネル トランザクション マネージャ WDK、リソース マネージャー
-- KTM WDK、リソース マネージャー
-- リソース マネージャーは、WDK KTM をオブジェクトします。
+- リソースマネージャー WDK KTM、オブジェクト
+- リソースマネージャーの WDK KTM
+- リソースマネージャー WDK KTM、ルーチン
+- カーネルトランザクションマネージャー WDK、リソースマネージャー
+- KTM WDK、リソースマネージャー
+- resource manager オブジェクト WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a99a4897b5eb225b524af70fe8057c464ae107
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a94ba8f32324703715e2c4393c6ec332b0e7f50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373410"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836419"
 ---
 # <a name="resource-manager-objects"></a>リソース マネージャー オブジェクト
 
 
-*リソース マネージャー オブジェクト*リソース マネージャーを表します。 各リソース マネージャーを呼び出す必要があります[ **ZwCreateResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager) KTM を登録します。
+*Resource manager オブジェクト*は、リソースマネージャーを表します。 各リソースマネージャーは、 [**Zwcreateresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)を呼び出して、それ自体を KTM に登録する必要があります。
 
-KTM のセットを提供する[リソース マネージャー オブジェクト ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)カーネル モードのリソース マネージャーを呼び出すことができます。 KTM では、ユーザー モード アプリケーションを呼び出すことができるユーザー モード ルーチンのようなセットも提供します。 ユーザー モードのルーチンの詳細については、Microsoft Windows SDK を参照してください。
+KTM は、カーネルモードのリソースマネージャーが呼び出すことができる[resource manager オブジェクトルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)のセットを提供します。 また、KTM は、ユーザーモードアプリケーションが呼び出すことができる同様のユーザーモードルーチンのセットも提供します。 ユーザーモードルーチンの詳細については、「Microsoft Windows SDK」を参照してください。
 
-リソース マネージャーを呼び出すと、KTM がリソース マネージャー オブジェクトを作成します**ZwCreateResourceManager**します。
+リソースマネージャーが**Zwcreateresourcemanager**を呼び出すと、KTM によって resource manager オブジェクトが作成されます。
 
-[TP コンポーネント](understanding-tps-components.md)呼び出すことができます[ **ZwOpenResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenresourcemanager)を resource manager のオブジェクトに追加のハンドルを開きます。 ただし、ほとんどの TP の設計に追加の開いているハンドルが必要としません。
+[Tp コンポーネント](understanding-tps-components.md)は、 [**Zwopenresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenresourcemanager)を呼び出して、resource manager オブジェクトへの追加ハンドルを開くことができます。 ただし、ほとんどの TPS デザインでは、追加の開いているハンドルは必要ありません。
 
-リソース マネージャーは、呼び出すことで resource manager のオブジェクトへのハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 かどうかの最後のハンドルは閉じられ、KTM がトランザクションを送信する場合は、リソース マネージャーがまだコミットされていないトランザクションに参加リストを使用して、\_通知\_はトランザクションのすべてのリソース マネージャーにロールバック通知これらの参加リストに関連付けられました。
+リソースマネージャーは、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出すことによって、リソースマネージャーオブジェクトのハンドルを閉じます。 最後のハンドルが閉じていても、まだコミットされていないトランザクションにリソースマネージャーが参加している場合、KTM は\_トランザクションを送信して、関連付けられているトランザクションのすべてのリソースマネージャーにロールバック通知\_通知します。参加させることができます。
 
-オペレーティング システムは、最後のハンドルが閉じられ、KTM には、オブジェクトへのすべての参照がリリース後に、オブジェクトを削除します。
+最後のハンドルが閉じられ、KTM によってオブジェクトへのすべての参照が解放された後、オペレーティングシステムによってオブジェクトが削除されます。
 
  
 

@@ -4,22 +4,22 @@ description: MSFC\_FibrePortHBAStatistics WMI クラス
 ms.assetid: 24c787b6-b9f7-4c9b-8d1d-6b2796f65622
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e333ed7bc83204f5ade7990b763937abe817a044
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91e67801cd058a2cd88a8a8dac3b3f0c32d0bbb4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380601"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826164"
 ---
-# <a name="msfcfibreporthbastatistics-wmi-class"></a>MSFC\_FibrePortHBAStatistics WMI クラス
+# <a name="msfc_fibreporthbastatistics-wmi-class"></a>MSFC\_FibrePortHBAStatistics WMI クラス
 
 
 ## <span id="ddk_msfc_fibreporthbastatistics_wmi_class_kr"></span><span id="DDK_MSFC_FIBREPORTHBASTATISTICS_WMI_CLASS_KR"></span>
 
 
-WMI クライアントが使用、MSFC\_クエリ統計の HBA ミニポート ドライバーに FibrePortHBAStatistics クラスの HBA ポートに関連します。 MSFC\_FibrePortHBAStatistics クラスでは、すべての情報の報告、 [MSFC\_HBAPortStatistics WMI クラス](msfc-hbaportstatistics-wmi-class.md)さらに、ポートの場合は、いくつかの識別子情報。
+WMI クライアントは、MSFC\_FibrePortHBAStatistics クラスを使用して、hba のポートに関連する統計を HBA ミニポートドライバーに照会します。 MSFC\_FibrePortHBAStatistics クラスは、 [msfc\_HBAPORTSTATISTICS WMI クラス](msfc-hbaportstatistics-wmi-class.md)のすべての情報に加え、ポートのいくつかの識別子情報を報告します。
 
-MSFC\_FibrePortHBAStatistics クラスが次のように定義されている*Hbaapi.mof*:
+MSFC\_FibrePortHBAStatistics クラスは、次のように*Hbaapi .mof*で定義されます。
 
 ```cpp
 class MSFC_FibrePortHBAStatistics
@@ -50,9 +50,9 @@ class MSFC_FibrePortHBAStatistics
 };
 ```
 
-WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
+WMI ツールスイートによってコンパイルされた場合、このクラス定義では次のデータ構造が生成されます。
 
-[**MSFC\_FibrePortHBAStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbastatistics)
+[**MSFC\_FibrePortHBAStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbastatistics)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

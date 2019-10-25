@@ -3,8 +3,8 @@ title: ビデオ デコードの機能の提供
 description: ビデオ デコードの機能の提供
 ms.assetid: bffcc0da-7b1a-4f70-98f5-4841c8df9f12
 keywords:
-- 要求の種類ごとにビデオのデコード WDK DirectX VA 機能提供
-- ビデオの WDK DirectX va なので、要求の種類ごとに提供される機能のデコード
+- ビデオデコード WDK DirectX VA、要求の種類ごとに提供される機能
+- ビデオをデコードする WDK DirectX VA、要求の種類ごとに提供される機能
 - D3DDDICAPS_GETDECODEGUIDCOUNT
 - D3DDDICAPS_GETDECODEGUIDS
 - D3DDDICAPS_GETDECODERTFORMATCOUNT
@@ -15,20 +15,20 @@ keywords:
 - D3DDDICAPS_GETDECODECONFIGURATIONS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db47d1af1643b2395fc13e67a66342d8fe648319
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 805bdcecd5a8806d70ca77d3401add29c2108baf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383899"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829673"
 ---
 # <a name="providing-capabilities-for-video-decoding"></a>ビデオ デコードの機能の提供
 
 
-ときにその[ **GetCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数が呼び出されると、要求の種類に基づくビデオ デコーディングのユーザー モードのディスプレイ ドライバーは、次の機能を提供します (で指定される、**型**のメンバー、 [ **D3DDDIARG\_GETCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)構造体、 *GetCaps*関数の*pData*パラメーターが指す)。
+[**Getcaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)関数が呼び出されると、ユーザーモードの表示ドライバーは、要求の種類に基づいてビデオをデコードするための次の機能を提供します ( [**D3DDDIARG\_getcaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)構造体の**type**メンバーで指定されています)。*Getcaps*関数の*pData*パラメーターがを指す):
 
-<span id="D3DDDICAPS_GETDECODEGUIDCOUNT_and_D3DDDICAPS_GETDECODEGUIDS_request_types"></span><span id="d3dddicaps_getdecodeguidcount_and_d3dddicaps_getdecodeguids_request_types"></span><span id="D3DDDICAPS_GETDECODEGUIDCOUNT_AND_D3DDDICAPS_GETDECODEGUIDS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODEGUIDCOUNT と D3DDDICAPS\_GETDECODEGUIDS 要求の種類  
-ユーザー モードは、数とビデオ アクセラレータ (VA) のデコードをサポートしている次の Guid のリストに、ドライバーを返します。 を表示します。 マイクロソフトの Direct3D ランタイムは、まず Guid の後にサポートされている Guid の一覧については、要求の数を要求します。
+<span id="D3DDDICAPS_GETDECODEGUIDCOUNT_and_D3DDDICAPS_GETDECODEGUIDS_request_types"></span><span id="d3dddicaps_getdecodeguidcount_and_d3dddicaps_getdecodeguids_request_types"></span><span id="D3DDDICAPS_GETDECODEGUIDCOUNT_AND_D3DDDICAPS_GETDECODEGUIDS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODEGUIDCOUNT および D3DDDICAPS\_GETDECODEGUIDS 要求の種類  
+ユーザーモード表示ドライバーは、ビデオアクセラレーション (VA) のデコードでサポートされている次の Guid の番号と一覧を返します。 Microsoft Direct3D ランタイムは、最初に Guid の数を要求し、次にサポートされている Guid の一覧を要求します。
 
 ```cpp
 DEFINE_GUID(DXVADDI_ModeMPEG2_MoComp, 0xe6a9f44b, 0x61b0, 0x4563,0x9e,0xa4,0x63,0xd2,0xa3,0xc6,0xfe,0x66);
@@ -76,14 +76,14 @@ DEFINE_GUID(DXVADDI_ModeVC1_D,   0x1b81beA3, 0xa0c7, 0x11d3,0xb9,0x84,0x00,0xc0,
 #define DXVADDI_ModeH264_VLD_FGT  DXVADDI_ModeH264_F
 ```
 
-<span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_and_D3DDDICAPS_GETDECODERTFORMATS_request_types"></span><span id="d3dddicaps_getdecodertformatcount_and_d3dddicaps_getdecodertformats_request_types"></span><span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_AND_D3DDDICAPS_GETDECODERTFORMATS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODERTFORMATCOUNT と D3DDDICAPS\_GETDECODERTFORMATS 要求の種類  
-ユーザー モードのディスプレイ ドライバー返します数と、一覧のレンダリングの特定の DirectX VA をサポートしているターゲットの形式は、型をデコードします。 Direct3D のランタイムは特定の DirectX VA デコード変数内の型の GUID を指定する、 **pInfo**のメンバー [ **D3DDDIARG\_GETCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)ポイント宛先。
+<span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_and_D3DDDICAPS_GETDECODERTFORMATS_request_types"></span><span id="d3dddicaps_getdecodertformatcount_and_d3dddicaps_getdecodertformats_request_types"></span><span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_AND_D3DDDICAPS_GETDECODERTFORMATS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODERTFORMATCOUNT および D3DDDICAPS\_GETDECODERTFORMATS 要求の種類  
+ユーザーモード表示ドライバーは、特定の DirectX VA デコードの種類に対してサポートされているレンダーターゲット形式の数とリストを返します。 Direct3D ランタイムは、 **pInfo**の[ **\_D3DDDIARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)のメンバーが指す変数に、特定の DirectX VA デコードの種類の GUID を指定します。
 
-<span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_and_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_request_types"></span><span id="d3dddicaps_getdecodecompressedbufferinfocount_and_d3dddicaps_getdecodecompressedbufferinfo_request_types"></span><span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_AND_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFOCOUNT と D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFO 要求の種類  
-ユーザー モードは、数とビデオのデコードを促進するために必要な圧縮バッファーの種類については、ドライバーを返します。 を表示します。 Direct3D のランタイムを指定します、 [ **DXVADDI\_DECODEINPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvaddi_decodeinput)特定の DirectX VA の構造は、変数内の型をデコードする、 **pInfo**のメンバーD3DDDIARG\_GETCAPS を指します。 ユーザー モードのディスプレイ ドライバーがの配列で、圧縮されたバッファーの種類に関する情報を返す[ **DXVADDI\_DECODEBUFFERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferinfo)構造を**pData** D3DDDIARG のメンバー\_GETCAPS を指定します。
+<span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_and_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_request_types"></span><span id="d3dddicaps_getdecodecompressedbufferinfocount_and_d3dddicaps_getdecodecompressedbufferinfo_request_types"></span><span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_AND_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFOCOUNT および D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFO 要求の種類  
+ユーザーモード表示ドライバーは、ビデオのデコードを高速化するために必要な、圧縮されたバッファーの種類に関する情報と情報を返します。 Direct3D ランタイムは、D3DDDIARG\_GETCAPS が指し示す**pInfo**メンバーが指す変数に、特定の DirectX VA デコードの種類の[**DXVADDI\_DECODEINPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodeinput)構造体を指定します。 ユーザーモードの表示ドライバーは、 [**DXVADDI\_DECODEBUFFERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferinfo)構造体の配列内の圧縮されたバッファーの種類に関する情報を返します。この構造体は、D3DDDIARG\_Getcaps の**pData**メンバーによって指定されます。
 
-<span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_and_D3DDDICAPS_GETDECODECONFIGURATIONS_request_types"></span><span id="d3dddicaps_getdecodeconfigurationcount_and_d3dddicaps_getdecodeconfigurations_request_types"></span><span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_AND_D3DDDICAPS_GETDECODECONFIGURATIONS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECONFIGURATIONCOUNT と D3DDDICAPS\_GETDECODECONFIGURATIONS 要求の種類  
-ユーザー モードは、ドライバーを返します。 番号を表示し、アクセラレータの一覧を使用した特定の DirectX VA デコード型のサポートされる構成をデコードします。 Direct3D ランタイム指定、DXVADDI\_DECODEINPUT 構造の特定の DirectX VA デコード変数内の型を**pInfo** D3DDDIARG のメンバー\_GETCAPS が指します。 高速ユーザー モードのディスプレイ ドライバー返しますデコードの配列で構成[ **DXVADDI\_CONFIGPICTUREDECODE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvaddi_configpicturedecode)構造を**pData**D3DDDIARG のメンバー\_GETCAPS を指定します。
+<span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_and_D3DDDICAPS_GETDECODECONFIGURATIONS_request_types"></span><span id="d3dddicaps_getdecodeconfigurationcount_and_d3dddicaps_getdecodeconfigurations_request_types"></span><span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_AND_D3DDDICAPS_GETDECODECONFIGURATIONS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECONFIGURATIONCOUNT および D3DDDICAPS\_GETDECODECONFIGURATIONS 要求の種類  
+ユーザーモード表示ドライバーは、特定の DirectX VA デコードの種類に対してサポートされている、高速デコード構成の数とリストを返します。 Direct3D ランタイムは、D3DDDIARG\_GETCAPS が指し示す**pInfo**メンバーが指す変数に、特定の DirectX VA デコードの種類の DXVADDI\_DECODEINPUT 構造体を指定します。 ユーザーモードの表示ドライバーは、 [ **\_DXVADDI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_configpicturedecode)の配列内の高速デコード構成を返します。この構造は、D3DDDIARG\_Getcaps の**pData**メンバーによって指定されます。
 
  
 

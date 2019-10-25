@@ -1,34 +1,34 @@
 ---
 title: IRP_MN_QUERY_RESOURCE_REQUIREMENTS
-description: PnP マネージャーでは、この IRP を使用して、デバイスのリソース要件の一覧を取得します。バス ドライバーには、ハードウェア リソースを必要とされる子デバイスは、この要求を処理する必要があります。
+description: PnP マネージャーは、この IRP を使用して、デバイスのリソース要件の一覧を取得します。バスドライバーは、ハードウェアリソースを必要とする子デバイスに対して、この要求を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 5a77f8d6-2b6b-4eff-8d48-e7942976ec52
 keywords:
-- IRP_MN_QUERY_RESOURCE_REQUIREMENTS カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_RESOURCE_REQUIREMENTS カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: f31fe049760b89fa31b9eead5d2d345016835a8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e42098dd6e7869e0e562bbcca7b756f8e86ed9e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370842"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827987"
 ---
-# <a name="irpmnqueryresourcerequirements"></a>IRP\_MN\_クエリ\_リソース\_要件
+# <a name="irp_mn_query_resource_requirements"></a>IRP\_\_クエリ\_リソース\_の要件
 
 
-PnP マネージャーでは、この IRP を使用して、デバイスのリソース要件の一覧を取得します。
+PnP マネージャーは、この IRP を使用して、デバイスのリソース要件の一覧を取得します。
 
-バス ドライバーには、ハードウェア リソースを必要とされる子デバイスは、この要求を処理する必要があります。 バス フィルター ドライバーは、この要求を処理できます。 関数とフィルター ドライバーでは、この IRP は処理されません。
+バスドライバーは、ハードウェアリソースを必要とする子デバイスに対して、この要求を処理する必要があります。 バスフィルタードライバーは、この要求を処理できます。 関数ドライバーとフィルタードライバーは、この IRP を処理しません。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーは、デバイスにリソースを割り当てる前に、デバイスが列挙されたときに、ドライバーは、そのデバイスのリソース要件が変更されたことを報告したときに、この IRP を送信します。
+PnP マネージャーは、デバイスが列挙されたとき、デバイスにリソースを割り当てる前、およびドライバーがそのデバイスのリソース要件を変更したことを報告したときに、この IRP を送信します。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意のスレッド コンテキストでします。
+PnP マネージャーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -38,31 +38,31 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-状態の I/O ブロックで返されます。
+I/o 状態ブロックで返されます。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-この IRP を処理するドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功またはエラーを適切な状態です。
+この IRP を処理するドライバーは、 **irp&gt;iostatus**を、STATUS\_SUCCESS または適切なエラー状態に設定します。
 
-成功した場合、ドライバーの設定**Irp -&gt;IoStatus.Information**へのポインター、 [ **IO\_リソース\_要件\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)要求された情報を格納します。 ドライバーの設定エラーが発生、 **Irp -&gt;IoStatus.Information**をゼロにします。
+成功すると、ドライバーは**Irp&gt;IoStatus. 情報**を、要求された情報を含む[**IO\_リソース\_要件\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)へのポインターに設定します。 エラーが発生した場合、ドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
 
 <a name="operation"></a>操作
 ---------
 
-割り当てるバス ドライバーでは、この IRP への応答でリソースの要件の一覧が返された場合、 **IO\_リソース\_要件\_一覧**ページングされたメモリから。 PnP マネージャーは、不要になったときにバッファーを解放します。
+この IRP に応答してバスドライバーがリソース要件の一覧を返す場合は、ページングされたメモリから **\_一覧の IO\_リソース\_要件**を割り当てます。 不要になったときに、PnP マネージャーによってバッファーが解放されます。
 
-デバイスのバス ドライバーが IRP を完了すると、デバイスには、ハードウェア リソースは必要ない場合、([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) を変更しなくても**Irp-&gt;IoStatus.Status**または**Irp -&gt;IoStatus.Information**します。
+デバイスにハードウェアリソースが必要ない場合、デバイスのバスドライバーは、 **irp&gt;IoStatus. Status**または**Irp-&gt;Iostatus. Information**を変更せずに、irp ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-バスのフィルター ドライバーは、この IRP を処理する場合は、バス ドライバーで作成したリソースの要件のリストが変更されます。 バスのフィルター ドライバーは IRP デバイス stack のバックアップ方法の一覧を変更します。 Bus フィルター ドライバーは、リソース要件の一覧内のリソースの順序を維持する必要があり、ハンドルされないリソースのタグを変更する必要があります。 Bus フィルター ドライバーには、リソース要件の一覧のサイズが変更された場合、ドライバーはページングされたメモリから、新しい構造体を割り当てし、前の構造体を解放する必要があります。 ドライバーでの新しいリソースをフィルター処理する必要があります bus フィルター ドライバーは、新しいリソース要件を一覧に追加リソースがデバイスに割り当てられている場合は、 [ **IRP\_MN\_開始\_デバイス**](irp-mn-start-device.md) IRP バス ドライバーが渡されないようにします。
+バスフィルタードライバーがこの IRP を処理する場合は、バスドライバーによって作成されたリソース要件の一覧を変更します。 バスフィルタードライバーは、IRP によってデバイススタックがバックアップされるように一覧を変更します。 バスフィルタードライバーはリソース要件の一覧にリソースの順序を保持する必要があり、処理しないリソースタグは変更できません。 バスフィルタードライバーがリソース要件の一覧のサイズを変更する場合、ドライバーはページングされたメモリから新しい構造体を割り当てて、前の構造体を解放する必要があります。 バスフィルタードライバーによって新しいリソース要件がリストに追加され、そのリソースがデバイスに割り当てられている場合、ドライバーはバスドライバーに渡されないように、Irp から新しいリソースをフィルター処理して\_デバイスの irp を[**開始\_\_** ](irp-mn-start-device.md)する必要があります。
 
-関数と非 bus フィルター ドライバー; この IRP を処理しません。[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus**します。
+関数および非バスフィルタードライバーは、この IRP を処理しません。**Irp&gt;IoStatus**を変更せずに、次の下位のドライバーに渡します。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
 <a name="requirements"></a>要件
 ------------
@@ -75,7 +75,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +83,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="see-also"></a>関連項目
 
 
-[**IO\_リソース\_要件\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)
+[**IO\_リソース\_要件\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)
 
  
 

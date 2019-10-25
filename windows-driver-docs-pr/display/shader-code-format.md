@@ -4,12 +4,12 @@ description: シェーダーのコード形式
 ms.assetid: 62377d19-8e45-4d0c-b974-0c0417d1a948
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e7fe190eee8b7a56147fac027e58709ff6043003
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5dc4eb7da4c092f541874c0f70e574b125a7073
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365502"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829461"
 ---
 # <a name="shader-code-format"></a>シェーダーのコード形式
 
@@ -17,24 +17,24 @@ ms.locfileid: "67365502"
 ## <span id="ddk_shader_code_format_gg"></span><span id="DDK_SHADER_CODE_FORMAT_GG"></span>
 
 
-ピクセルまたは頂点シェーダーを作成するコマンドは、シェーダー コードのグループで構成されます。 これらのコードは、シェーダーを作成する方法のドライバーに指示します。 各シェーダー コード内のトークンの形式は、その一意性を決定します。 A[シェーダー コード トークン](shader-code-tokens.md)は、特定の形式を持つ DWORD。
+ピクセルシェーダーまたは頂点シェーダーを作成するコマンドは、シェーダーコードのグループで構成されます。 これらのコードは、シェーダーの作成方法をドライバーに指示します。 各シェーダーコード内のトークンの形式によって、一意性が決まります。 [シェーダーコードトークン](shader-code-tokens.md)は、特定の形式の DWORD です。
 
-DirectX3D ランタイムは、ドライバーのコードに渡す前に、シェーダー コードを検証します。 ドライバーでシェーダー コードが到着すると、ドライバーは、コードの形式が有効であるため、コードを解釈できます。 ドライバーは、シェーダー コードを解釈するコードのトークンを読み取ります。
+DirectX3D ランタイムは、コードをドライバーに渡す前にシェーダーコードを検証します。 シェーダーコードがドライバーに到着すると、コードの形式が有効であるため、ドライバーはコードを解釈できます。 ドライバーは、コードを解釈するためにシェーダーコードのトークンを読み取ります。
 
-各個々 のシェーダー コードには、一般的なトークンのレイアウトが表示されます。 最初のトークンである必要があります、[バージョン トークン](version-token.md)します。 バージョン トークンは、コードのバージョン番号を示しもピクセルまたは頂点シェーダーのコードは、かどうかを決定します。 シェーダー コンテンツが依存して、バージョン トークンと、さまざまなで構成されます[命令トークン](instruction-token.md)でおそらく、混在した状態で、[コメント トークン](comment-token.md)および空白です。 命令のトークンを指定する正確な動作によって[ラベル](label-token.md)、 [destination パラメーター](destination-parameter-token.md)、および[パラメーター トークンをソース](source-parameter-token.md)シェーダーの一部にすることもできますコンテンツは、命令、トークンに従ってください。 たとえば、次の命令のトークンを指定します、 [ADD 命令](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)ドライバーは、1 つの送信先と 2 つのソース パラメーター トークンが命令のトークンを従うことを決定します。 [トークンの終了](end-token.md)シェーダー コードが完了するとします。
+個々のシェーダーコードは、一般的なトークンレイアウトで書式設定されます。 最初のトークンは[バージョントークン](version-token.md)である必要があります。 バージョントークンは、コードのバージョン番号を提供します。また、コードがピクセルシェーダーと頂点シェーダーのどちらであるかを判断します。 シェーダーコンテンツは、バージョントークンに従い、さまざまな[命令トークン](instruction-token.md)で構成されます。これは、多くの場合、[コメントトークン](comment-token.md)と空白と混在しています。 命令トークンによって指定される正確な操作に応じて、[ラベル](label-token.md)、[宛先パラメーター](destination-parameter-token.md)、および[ソースパラメータートークン](source-parameter-token.md)もシェーダーの内容の一部にすることができ、命令トークンに従うことができます。 たとえば、命令トークンで[ADD 命令](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)が指定されている場合、ドライバーは、1つの変換先と2つのソースパラメータートークンが命令トークンに従うことを決定します。 [終了トークン](end-token.md)がシェーダーコードを完了します。
 
-セットアップ手順 (D3DSIO など\_DCL と D3DSIO\_DEF) 一意に書式設定されたトークンを含めることができます。
+セットアップ手順 (たとえば、D3DSIO\_DCL と D3DSIO\_DEF) には、一意に書式設定されたトークンが含まれています。
 
-各シェーダーの命令には、特定のトークン形式が含まれています。 [シェーダー オペレーション コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)セクションには、各シェーダーの命令のトークンの形式がについて説明します。
+各シェーダー命令には、特定のトークン形式が含まれています。 「[シェーダー操作コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)」セクションでは、各シェーダー命令のトークン形式について説明します。
 
-シェーダー命令がプライマリの命令の先頭し、末尾を D3DSIO 使用\_RET または D3DSIO\_END 命令。 次のサブルーチン、D3DSIO\_RET 命令。
+シェーダー命令は、最初の命令で始まり、D3DSIO\_RET または D3DSIO\_の終了命令で終了します。 サブルーチンは、D3DSIO\_RET 命令に従います。
 
-命令のトークンで指定できる操作の詳細については、最新の DirectX SDK ドキュメントでは、ピクセル シェーダーの参照と頂点シェーダーのリファレンスを参照してください。
+命令トークンで指定できる操作の詳細については、最新の DirectX SDK ドキュメントの「ピクセルシェーダーの参照と頂点シェーダーのリファレンス」を参照してください。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要件
 
 
-Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。
+Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。
 
  
 

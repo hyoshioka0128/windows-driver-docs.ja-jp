@@ -1,9 +1,9 @@
 ---
-title: EXT\_TDOP\_取得\_フィールド\_オフセット
-description: EXT\_TDOP\_取得\_フィールド\_、デバッグのサブ操作のオフセット\_要求\_EXT\_型指定された\_データ\_ANSI 要求操作構造体のメンバーのオフセットを返します。
+title: EXT\_TDOP\_\_フィールド\_のオフセットを取得します
+description: EXT\_TDOP\_、DEBUG\_要求の\_フィールド\_OFFSET サブ操作で、型指定された\_データ\_データ\_ANSI 要求操作は、構造内のメンバーのオフセットを返します。
 ms.assetid: 2703d518-1bc3-42a2-9a22-f9ea88a12c05
 keywords:
-- デバッグ EXT_TDOP_GET_FIELD_OFFSET Windows
+- EXT_TDOP_GET_FIELD_OFFSET Windows のデバッグ
 topic_type:
 - apiref
 api_name:
@@ -12,52 +12,52 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d12cd2a78a51fb2c4ffbd6ae37b4dd47fd01d6f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a2b1b59ef256d9f1739f797efd2f33c772a563ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361360"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826468"
 ---
-# <a name="exttdopgetfieldoffset"></a>EXT\_TDOP\_取得\_フィールド\_オフセット
+# <a name="ext_tdop_get_field_offset"></a>EXT\_TDOP\_\_フィールド\_のオフセットを取得します
 
 
-EXT\_TDOP\_取得\_フィールド\_のサブ操作のオフセット、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作は、構造内のメンバーのオフセットを返します。
+EXT\_TDOP\_、DEBUG\_要求の\_フィールド\_OFFSET サブ操作 (型指定された[ **\_データ\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作では、メンバーのオフセットが返されます。データ.
 
 **Parameters**
 
-<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
-EXT に設定\_TDOP\_取得\_フィールド\_このサブ操作のオフセットします。
+<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**運用**  
+このサブ操作の\_フィールド\_オフセットを取得\_には、EXT\_TDOP に設定します。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-オフセットが要求されているメンバーを格納する構造体のインスタンスを表す、型指定されたデータを指定します。
+オフセットが要求されているメンバーを含む構造体のインスタンスを表す型指定されたデータを指定します。
 
 <span id="InStrIndex"></span><span id="instrindex"></span><span id="INSTRINDEX"></span>**InStrIndex**  
-オフセットが要求されているメンバーの名前を指定します。 名前は、ドットで区切られたパスし、サブ メンバーを含めることができます。 たとえば、 **mymember.mysubmember**します。 このドットで区切られたパス上のポインターを自動的に逆参照します。 ただし、ドット演算子 ( **.** ) 引き続き使用する必要がありますここで、通常の C ポインターではなく逆参照演算子 ( **-&gt;** )。
+オフセットが要求されるメンバーの名前を指定します。 名前はドットで区切られたパスであり、サブメンバーを含めることができます。 たとえば、 **mymember. mysubmember**です。 このドット区切りパスのポインターは、自動的に逆参照されます。 ただし、通常の C ポインター逆参照演算子 ( **-&gt;** ) の代わりに、ここではドット演算子 ( **.** ) を使用する必要があります。
 
 <span id="Out32"></span><span id="out32"></span><span id="OUT32"></span>**Out32**  
-構造体のインスタンス内のメンバーのオフセットを受け取ります。 これは、構造体のインスタンスの先頭とメンバー間のバイト数です。
+構造体のインスタンス内のメンバーのオフセットを受け取ります。 これは、構造体のインスタンスの先頭とメンバーの間のバイト数です。
 
-<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状態**  
-このサブ操作によって返されるステータス コードを受け取ります。 これは、によって返される値と同じ[**要求**](request.md)します。
+<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**オンライン**  
+このサブ操作によって返されたステータスコードを受け取ります。 これは、[**要求**](request.md)によって返される値と同じです。
 
 <a name="remarks"></a>注釈
 -------
 
-EXT\_TDOP\_取得\_フィールド\_オフセットの値は、 [ **EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)列挙体。
+EXT\_TDOP\_取得\_フィールド\_オフセットは、 [**ext\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)列挙の値です。
 
-このサブ操作のパラメーターのメンバーである、 [ **EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)構造体。 EXT のメンバー\_型指定された\_データは、前のパラメーター セクションには示されていないこのサブ操作では使用されませんし、0 に設定する必要があります。 前のパラメーター セクション内のメンバーの説明では、使用は、メンバーを指定します。 参照してください**EXT\_型指定された\_データ**の詳細。
+このサブ操作のパラメーターは、 [**EXT\_型指定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)された\_データ構造体のメンバーです。 前の Parameters セクションに記載されていない EXT\_\_型のメンバーは、このサブ操作では使用されず、0に設定する必要があります。 前の Parameters セクションのメンバーの説明では、メンバーがどのように使用されるかを指定します。 詳細については、「 **EXT\_型指定**された\_データ」を参照してください。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)
+[ **\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)
 
-[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
+[**EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**要求**](request.md)
+[**申請**](request.md)
 
  
 

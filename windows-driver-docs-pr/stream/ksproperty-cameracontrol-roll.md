@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_ロール
-description: ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_ロール プロパティを取得またはカメラのロールの設定を設定します。 このプロパティは省略可能です。
+title: KSK プロパティ\_CAMERACONTROL\_ROLL
+description: ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_ROLL プロパティを使用して、カメラのロール設定を取得または設定します。 このプロパティは省略可能です。
 ms.assetid: 58b09e8d-7c0c-4e32-b124-5722bd09f011
 keywords:
-- KSPROPERTY_CAMERACONTROL_ROLL ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_ROLL ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b8da38c16b73f78ba016cc962a93e71ac64152
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ea4343a3df475a1884b42e40293ba5a6d4a0ab62
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373179"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826914"
 ---
-# <a name="kspropertycameracontrolroll"></a>KSPROPERTY\_CAMERACONTROL\_ロール
+# <a name="ksproperty_cameracontrol_roll"></a>KSK プロパティ\_CAMERACONTROL\_ROLL
 
 
-ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_ロール プロパティを取得またはカメラのロールの設定を設定します。 このプロパティは省略可能です。
+ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_ROLL プロパティを使用して、カメラのロール設定を取得または設定します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_cameracontrol_roll_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_ROLL_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373179"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,31 +50,31 @@ ms.locfileid: "67373179"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラのロールの設定を指定する LONG が。 この値は度数で表されます。
+プロパティ値 (操作データ) は、カメラのロール設定を指定する LONG です。 この値は度数で表されます。
 
-正の値では、画像表示の軸に沿ったカメラの時計回りの回転が発生します。 負の値では、次の図に示すように、カメラの反時計回りに回転が発生します。
+正の値を指定すると、画像を表示する軸に沿ってカメラが時計回りに回転します。 負の値を指定すると、次の図に示すように、カメラが反時計回りに回転します。
 
-![図が表示されたカメラ ロール値](images/cam-roll-1.png)
+![カメラのロール値を示す図](images/cam-roll-1.png)
 
-このプロパティをサポートするすべてのビデオ キャプチャ ミニドライバーには、このプロパティの値を範囲と既定値を定義する必要があります。 デバイスの範囲は-180 +180 経由である必要があり、既定値は 0 である必要があります。
+このプロパティをサポートするすべてのビデオキャプチャミニドライバーで、このプロパティの範囲と既定値を定義する必要があります。 デバイスの範囲は-180 ~ + 180 で、既定値は0にする必要があります。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_CAMERACONTROL\_の構造は、ロール設定を指定します。
+CAMERACONTROL\_S 構造体\_KSK プロパティの**値**メンバーは、ロール設定を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ ms.locfileid: "67373179"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,9 +93,9 @@ ms.locfileid: "67373179"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
+[**KSK プロパティ\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
 
  
 

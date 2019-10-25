@@ -3,24 +3,24 @@ title: 非同期ドライバー通知登録
 description: 非同期ドライバー通知登録
 ms.assetid: e1f97a65-7c82-4d7b-97ec-0293fc69fd8c
 keywords:
-- ドライバーの通知の WDK が動的なハードウェア パーティション分割、登録します。
-- WDK の動的なハードウェア パーティショニングの非同期通知
-- 通知 WDK 動的ハードウェア パーティション分割、登録します。
-- ドライバーの非同期通知の WDK が動的なハードウェア パーティション分割、登録します。
-- ドライバーの通知の WDK の動的なハードウェア パーティショニングの登録
+- ドライバー通知 WDK 動的ハードウェアパーティション分割、登録
+- 非同期通知 WDK 動的ハードウェアパーティション分割
+- 通知 WDK 動的ハードウェアのパーティション分割、登録
+- 非同期ドライバー通知 WDK 動的ハードウェアパーティション分割、登録
+- ドライバー通知の登録 WDK 動的ハードウェアパーティション分割
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3369dbee672557ff7572eda4281a4f56bc2820f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6439c3de8468bbe9aab944dab5188f1d2adeb6d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360285"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838465"
 ---
 # <a name="registering-for-asynchronous-driver-notification"></a>非同期ドライバー通知登録
 
 
-ドライバーの非同期通知を使用してデバイス ドライバーでは、オペレーティング システムが動的に追加すると、プロセッサやメモリ モジュール ハードウェア パーティションに呼び出すコールバック関数が実装されています。 次のコード例では、このようなコールバック関数のプロトタイプを示しています。
+非同期ドライバー通知を使用するために、デバイスドライバーは、プロセッサまたはメモリモジュールをハードウェアパーティションに動的に追加するときに、オペレーティングシステムが呼び出すコールバック関数を実装します。 次のコード例は、このようなコールバック関数のプロトタイプを示しています。
 
 ```cpp
 // Prototypes for the asynchronous
@@ -38,17 +38,17 @@ NTSTATUS
     );
 ```
 
-デバイス ドライバーを呼び出して非同期通知の登録、 [ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)関数は、1 回の各デバイス ドライバーのコールバック関数、ポインターを指定します。対応する Guid の次のいずれかに、 *EventCategoryData*パラメーター。
+デバイスドライバーは、 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)関数を呼び出して非同期通知を登録します。各デバイスドライバーのコールバック関数では *、次の guid のいずれかへのポインターを指定します。Eventカテゴリデータ*パラメーター:
 
 <a href="" id="guid-device-processor"></a>GUID\_デバイス\_プロセッサ  
-プロセッサがハードウェアのパーティションに動的に追加されたときに通知に登録します。
+プロセッサがハードウェアパーティションに動的に追加されたときに通知されるように登録します。
 
 <a href="" id="guid-device-memory"></a>GUID\_デバイス\_メモリ  
-ハードウェア パーティションにメモリが動的に追加される通知に登録します。
+メモリがハードウェアパーティションに動的に追加されたときに通知されるように登録します。
 
-これらの Guid は、ヘッダー ファイル、Poclass.h で定義されます。
+これらの Guid は、ヘッダーファイルの Poclass に定義されています。
 
-次のコード例では、両方の通知に登録する方法を示します。
+次のコード例は、両方の通知に登録する方法を示しています。
 
 ```cpp
 PVOID ProcessorNotificationEntry;
@@ -78,11 +78,11 @@ Status =
     );
 ```
 
-**注**  にされている場合、デバイス ドライバーのみプロセッサに関する通知を受けることはありませんメモリのコールバック関数を実装またはメモリについての通知に登録します。 同様に、デバイス ドライバーは、メモリに関する通知を受けるのみがないプロセッサ用のコールバック関数を実装またはプロセッサについての通知に登録します。
+**注**   デバイスドライバーにプロセッサに関する通知のみを行う必要がある場合は、メモリのコールバック関数を実装したり、メモリに関する通知を登録したりする必要はありません。 同様に、デバイスドライバーにメモリに関する通知のみを行う必要がある場合は、プロセッサのコールバック関数を実装したり、プロセッサに関する通知を受け取るように登録したりする必要はありません。
 
  
 
-ときにデバイス ドライバーする必要がありますの受信を停止、ドライバーが非同期通知など、呼び出すことによって各コールバック関数を解除する必要がありますアンロードされているときに、 [ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)関数。 次のコード例では、コールバック関数を登録解除する方法を示します。
+デバイスドライバーが、アンロード中などの非同期ドライバー通知の受信を停止する必要がある場合は、 [**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)関数を呼び出すことによって、各コールバック関数の登録を解除する必要があります。 次のコード例は、コールバック関数の登録を解除する方法を示しています。
 
 ```cpp
 // Unregister for asynchronous notifications

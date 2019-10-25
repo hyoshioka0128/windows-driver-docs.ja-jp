@@ -4,39 +4,39 @@ description: カーネル モードのパフォーマンス カウンターの�
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f302ce1ab595bedb5622be8cb4d7e9c7a438b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae840dc8c6d5703f4a2a5fe0d36c493499e95a3e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363783"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839993"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>カーネル モードのパフォーマンス カウンターの使用
 
 
-カーネル モード PCW では、既存のパフォーマンス カウンター バージョン 2 のプラットフォームを使用するパフォーマンス カウンターを簡単に公開するカーネル モード コンポーネントを拡張機能です。 この新しい拡張機能を組み込むには、バージョン 2 のカウンターを記述するマニフェストに最小限の項目を追加する必要があると、カーネル モードのパフォーマンス カウンターのインターフェイスを使用する必要があります。
+カーネルモード PCW は、既存のパフォーマンスカウンターバージョン2プラットフォームの拡張機能であり、カーネルモードコンポーネントがパフォーマンスカウンターを簡単に公開できるようにします。 この新しい拡張機能を組み込むには、バージョン2のカウンターを記述するマニフェストに最小限の追加を加える必要があります。また、カーネルモードのパフォーマンスカウンターインターフェイスを使用する必要があります。
 
-新しいカウンターを開発するのにには、次の手順を使用します。
+新しいカウンターを開発するには、次の手順に従います。
 
-1.  プロバイダーとそのカウンターを記述するマニフェストを設定します。
+1.  プロバイダーとそのカウンターセットを記述するマニフェストを記述します。
 
-    要素と、マニフェスト内の属性の詳細については、次を参照してください。[パフォーマンス カウンター スキーマ](https://go.microsoft.com/fwlink/p/?linkid=147029)します。 カウンター マニフェストは、パフォーマンス カウンター プロバイダーとそのカウンターを定義する XML フォーマット ファイルを設定します。
+    マニフェスト内の要素と属性の詳細については、「[パフォーマンスカウンターのスキーマ](https://go.microsoft.com/fwlink/p/?linkid=147029)」を参照してください。 カウンターマニフェストは、パフォーマンスカウンタープロバイダーとそのカウンターセットを定義する XML 形式のファイルです。
 
-    マニフェストを手動で作成または Ecmangen.exe、マニフェスト ジェネレータ ツールを使用して作成できます。 ツールは WDK に含まれているし、ビルド環境ウィンドウにある (型**ecmangen**コマンド プロンプトで)。
+    マニフェストは、手動で作成することも、マニフェストジェネレーターツールである Ecmangen を使用して作成することもできます。 このツールは WDK に含まれており、ビルド環境ウィンドウで使用できます (コマンドプロンプトで「 **ecmangen** 」と入力します)。
 
-2.  使用して、 [CTRPP ツール](https://go.microsoft.com/fwlink/p/?linkid=144441)マニフェストからの登録のコードと文字列リソースを生成します。
+2.  [Ctrpp ツール](https://go.microsoft.com/fwlink/p/?linkid=144441)を使用して、マニフェストから登録コードと文字列リソースを生成します。
 
-    カウンター プリプロセッサ (CTRPP) ツールは WDK に含まれているし、ビルド環境ウィンドウにある (型**ctrpp**コマンド プロンプトで)。
+    カウンタプリプロセッサ (CTRPP) ツールは、WDK に含まれており、ビルド環境ウィンドウで使用できます (コマンドプロンプトで「 **ctrpp** 」と入力します)。
 
-3.  登録およびカウンター セットを登録解除するためのコードを追加します。
+3.  カウンターセットの登録と登録解除を行うコードを追加します。
 
-    詳細については、次を参照してください。、 [ **PcwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwregister)と[ **PcwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwunregister)関数。
+    詳細については、 [**Pcwregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)および[**Pcwregister 解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwunregister)関数に関する説明を参照してください。
 
 4.  インスタンスを公開するコードを追加します。
 
-5.  新しいコードと文字列リソースを含むバイナリをビルドします。
+5.  新しいコードと文字列リソースを含むバイナリを作成します。
 
-カーネル モード PCW プロバイダーの例は、次を参照してください。、[カーネル カウンター サンプル (Kcs)](https://go.microsoft.com/fwlink/p/?LinkId=617718)で、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+カーネルモード PCW プロバイダーの例については、GitHub の[Windows ドライバーサンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)リポジトリにある[カーネルカウンターのサンプル (Kcs)](https://go.microsoft.com/fwlink/p/?LinkId=617718)を参照してください。
 
  
 

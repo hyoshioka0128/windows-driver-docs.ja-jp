@@ -1,27 +1,27 @@
 ---
 title: IRP_MJ_CLEANUP
-description: プロセス固有のコンテキスト情報を管理するドライバーには、DispatchCleanup ルーチンでクリーンアップ要求を処理する必要があります。
+description: プロセス固有のコンテキスト情報を保持するドライバーは、DispatchCleanup ルーチンでクリーンアップ要求を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 097f5f1d-3e88-4db0-bb79-db2267bdaf38
 keywords:
-- IRP_MJ_CLEANUP Kernel-Mode Driver Architecture
+- IRP_MJ_CLEANUP カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 47c51e1c775002577f4d2ae9f89ac95cbc6c439f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2305708032d2ad491766481b78194de4af836efd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370918"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828136"
 ---
-# <a name="irpmjcleanup"></a>IRP\_MJ\_CLEANUP
+# <a name="irp_mj_cleanup"></a>IRP\_MJ\_CLEANUP
 
 
-プロセス固有のコンテキスト情報を管理するドライバーのクリーンアップ要求を処理する必要があります[ *DispatchCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+プロセス固有のコンテキスト情報を保持するドライバーは、 [*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンでクリーンアップ要求を処理する必要があります。
 
 <a name="when-sent"></a>送信時
 ---------
 
-この要求の受信は、ターゲット デバイス オブジェクトに関連付けられているファイル オブジェクトの最後のハンドルが閉じられたことを示します (ただし、未処理の I/O のため、要求が解放されていない)。
+この要求の受信は、ターゲットデバイスオブジェクトに関連付けられているファイルオブジェクトの最後のハンドルが閉じられていることを示します (ただし、未処理の i/o 要求によって、解放されていない可能性があります)。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -36,13 +36,13 @@ ms.locfileid: "67370918"
 <a name="operation"></a>操作
 ---------
 
-ファイル オブジェクトのハンドルを終了したプロセスのコンテキストでは、この IRP が送信されます。 そのため、ドライバーはドライバーが以前ロックされているか、マップされていることをユーザー メモリなどのプロセスに固有のリソースをリリースする必要があります。
+この IRP は、ファイルオブジェクトハンドルを閉じたプロセスのコンテキストで送信されます。 そのため、ドライバーは、以前にロックまたはマップされたユーザーメモリなどのプロセス固有のリソースを解放する必要があります。
 
-ドライバーのデバイス オブジェクトが設定されている場合の排他として、一度に 1 つのスレッドのみがデバイスを使用できるようにドライバーする必要があります完了現在ターゲット デバイス オブジェクトをキューに登録し、状態を設定するすべての IRP\_各 IRP の I/O の状態が取り消されましたブロックです。
+ドライバーのデバイスオブジェクトが排他的として設定されていて、1つのスレッドのみが一度にデバイスを使用できるようにする場合、ドライバーは、ターゲットデバイスオブジェクトに現在キューに置かれているすべての IRP を完了し、各 IRP の i/o 状態ブロックで状態\_キャンセルする必要があります。
 
-それ以外の場合、ドライバーはキャンセルし、リリースされる、ファイル オブジェクトのハンドルに関連付けられている現在キューに置かれた Irp の完了する必要があります。 (ファイル オブジェクトへのポインターにある、 **FileObject**のドライバーのメンバー [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) IRP の)。ドライバーが IRP のクリーンアップが完了して状態を設定後、これらをキャンセルするには、Irp をキューに置かれた、\_I/O の状態のブロックで成功します。
+それ以外の場合、ドライバーは、解放されているファイルオブジェクトハンドルに関連付けられている現在のキューにある Irp だけをキャンセルして完了する必要があります。 (ファイルオブジェクトへのポインターは、ドライバーの[**IO\_スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)の**FILEOBJECT**メンバー\_IRP の場所にあります)。これらのキューに登録された Irp を取り消した後、ドライバーはクリーンアップ IRP を完了し、i/o 状態ブロックの状態\_成功に設定します。
 
-この要求の処理の詳細については、次を参照してください。 [DispatchCleanup ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcleanup-routines)します。
+この要求の処理の詳細については、「 [DispatchCleanup ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcleanup-routines)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -55,7 +55,7 @@ ms.locfileid: "67370918"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -63,11 +63,11 @@ ms.locfileid: "67370918"
 ## <a name="see-also"></a>関連項目
 
 
-[*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IRP\_MJ\_CLOSE**](irp-mj-close.md)
+[**IRP\_MJ\_閉じる**](irp-mj-close.md)
 
  
 

@@ -3,42 +3,42 @@ title: エンコーダーのインストールと登録
 description: エンコーダーのインストールと登録
 ms.assetid: 6ce0c504-977a-4db5-b5ee-128b69ce8eba
 keywords:
-- カーネル ストリーミング カテゴリ WDK エンコーダー
-- エンコーダー デバイス WDK AVStream
-- AVStream WDK、エンコーダーのデバイス
-- 非圧縮データ ストリームの WDK AVStream
+- カーネルストリーミングカテゴリ WDK エンコーダー
+- エンコーダーデバイス WDK AVStream
+- AVStream WDK、エンコーダーデバイス
+- 非圧縮データストリーム WDK AVStream
 - エンコードされたストリーム WDK AVStream
-- オーディオ エンコーダー デバイス WDK AVStream
-- ビデオ エンコーダー デバイス WDK AVStream
+- オーディオエンコーダーデバイス WDK AVStream
+- ビデオエンコーダーデバイス WDK AVStream
 - INF ファイル WDK エンコーダー
-- メタデータの WDK エンコーダー
+- メタデータ WDK エンコーダー
 - KS プロキシ WDK AVStream
-- カーネル ストリーミング プロキシ WDK AVStream
+- カーネルストリーミングプロキシ WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d283b45c3df0f5490e55cf84220d7a62cb19cbc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab5542fd5b9fd72244ebdc491049391e33f1fdc6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384121"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834429"
 ---
 # <a name="encoder-installation-and-registration"></a>エンコーダーのインストールと登録
 
 
-エンコーダー フィルター ドライバーの INF ファイルには、以下を定義するエントリを含める必要があります。
+エンコーダーフィルターが適用されたドライバーの INF ファイルには、次の項目を定義するエントリが含まれている必要があります。
 
--   追加のカーネル ストリーミング キャプチャ コンポーネント
+-   その他のカーネルストリーミングキャプチャコンポーネント
 
--   COM インターフェイス KsProxy を公開する必要があります。
+-   COM インターフェイス Ksk プロキシで公開する必要があるもの
 
--   エンコーダーのフィルターの機能を記述するメタデータ値
+-   エンコーダーフィルターの機能を記述するメタデータ値
 
--   フィルターのカーネルのカテゴリのストリーミング
+-   フィルターのカーネルストリーミングカテゴリ
 
-### <a name="additional-kernel-streaming-capture-components"></a>**Capture コンポーネントの追加のカーネルのストリーミング**
+### <a name="additional-kernel-streaming-capture-components"></a>**その他のカーネルストリーミングキャプチャコンポーネント**
 
-エンコーダーのデバイスを参照する必要がありますのドライバーをインストールするために使用する INF ファイル*ks.inf*と*kscaptur.inf*でその\[DefaultInstall\]のためキャプチャ ドライバーとしてセクションこれらファイルは、エンコーダー コンポーネントのために必要なサポートを追加します。 次に、例を示します。
+エンコーダーデバイス用のドライバーをインストールするために使用する INF ファイルでは、\[DefaultInstall\] セクションの*ks*と*kscaptur*をキャプチャドライバーとして参照する必要があります。これらのファイルでは、エンコーダーコンポーネントに必要なサポートが追加されるためです。 次に、例を示します。
 
 ```INF
 [DefaultInstall]
@@ -46,9 +46,9 @@ include=ks.inf,kscaptur.inf
 needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 ```
 
-### <a name="which-com-interface-ksproxy-should-expose"></a>**どの COM インターフェイス KsProxy を公開する必要があります。**
+### <a name="which-com-interface-ksproxy-should-expose"></a>**COM インターフェイス Ksk プロキシで公開する必要があるもの**
 
-**AddReg**セクション、ドライバーの INF ファイルの指定を COM インターフェイスを示すために次の 3 つの Guid のいずれかのプラグインの KsProxy (*encapi.dll*) クライアントに公開する必要があります。 COM インターフェイスは、エンコーダーのフィルターで実装したプロパティのサポートによって決定されます。
+ドライバーの INF ファイルの**AddReg**セクションで、次の3つの guid のいずれかを指定して、ksk プロキシプラグイン (*encapi .dll*) がクライアントに公開する COM インターフェイスを示します。 COM インターフェイスは、エンコーダーフィルターで実装したプロパティサポートによって決定されます。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 </colgroup>
 <thead>
 <tr class="header">
-<th>インターフェイスの GUID</th>
+<th>インターフェイス GUID</th>
 <th>名前</th>
 <th>説明</th>
 </tr>
@@ -67,17 +67,17 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 <tr class="odd">
 <td><p>{B43C4EEC-8C32-4791-9102-508ADA5EE8E7}</p></td>
 <td><p><strong>CLSID_IVideoEncoderProxy</strong></p></td>
-<td><p>KsProxy を公開するには、この GUID を指定、 <strong>IVideoEncoder</strong> (古い世代 Microsoft によって提供されるエンコーダー サポートの旧バージョンとの互換性) 用の COM インターフェイスです。 クライアントはこのインターフェイスから派生する必要があります、 <strong>IEncoderAPI</strong> COM インターフェイスです。</p></td>
+<td><p>この GUID を指定すると、Ksk プロキシが<strong>Ivideoencoder</strong> COM インターフェイスを公開するようになります (Microsoft が提供する以前の世代のエンコーダーサポートとの下位互換性のため)。 クライアントは、 <strong>IEncoderAPI</strong> COM インターフェイスからこのインターフェイスを派生させる必要があります。</p></td>
 </tr>
 <tr class="even">
-<td><p>{7FF0997A-1999-4286-A73C-622B8814E7EB}</p></td>
+<td><p>{7FF0997A-1999-4286-A73C-622B88 14E7EB}</p></td>
 <td><p><strong>CLSID_ICodecAPIProxy</strong></p></td>
-<td><p>KsProxy を公開するには、この GUID を指定、 <strong>ICodecAPI</strong> (オーディオ専用のエンコーダーなどないビデオ エンコード デバイス) の COM インターフェイスです。</p></td>
+<td><p>この GUID を指定すると、Ksk プロキシで<strong>ICodecAPI</strong> COM インターフェイスが公開されます (オーディオ専用エンコーダーなどのビデオ以外のエンコードデバイスの場合)。</p></td>
 </tr>
 <tr class="odd">
 <td><p>{B05DABD9-56E5-4FDC-AFA4-8A47E91F1C9C}</p></td>
 <td><p><strong>CLSID_IVideoEncoderCodecAPIProxy</strong></p></td>
-<td><p>両方を公開する KsProxy させるには、この GUID を指定、 <strong>IVideoEncoder</strong>と<strong>ICodecAPI</strong> (下位互換性および上位互換性) 用の COM インターフェイスです。</p></td>
+<td><p>この GUID を指定すると、KsProxy は<strong>Ivideoencoder</strong>インターフェイスと<strong>ICodecAPI</strong> COM インターフェイスの両方を公開します (後方互換性のために)。</p></td>
 </tr>
 </tbody>
 </table>
@@ -91,15 +91,15 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 HKR,Interfaces\{B43C4EEC-8C32-4791-9102-508ADA5EE8E7},,,
 ```
 
-これが原因でのみを公開する KsProxy、 **IVideoEncoder** (**CLSID\_IVideoEncoderProxy**) COM インターフェイスです。
+これにより、KsProxy は**Ivideoencoder** (**CLSID\_IVideoEncoderProxy**) COM インターフェイスのみを公開するようになります。
 
-これらの COM インターフェイスは、DirectX 9 と Windows Sdk for Windows XP SP1 以降の DirectShow セクションに記載されています。
+これらの COM インターフェイスについては、DirectX 9 の DirectShow セクションと Windows XP SP1 以降の Windows Sdk に記載されています。
 
-### <a href="" id="metadata-values-that-advertise-the-encoder-filter-s-capabilities"></a>**エンコーダー フィルターの機能を提供するメタデータ値**
+### <a href="" id="metadata-values-that-advertise-the-encoder-filter-s-capabilities"></a>**エンコーダーフィルターの機能を提供するメタデータ値**
 
-内のメタデータ値を指定することができます、*デバイス パラメーター\\機能*エンコーダーの INF ファイルで、レジストリの領域。 アプリケーションでは、実装、またはユーザーに公開するのにには、どのような機能を決定するのに、これらのメタデータ値を使用できます。
+エンコーダーの INF ファイルのレジストリの [*デバイスパラメーター\\機能*] 領域で、メタデータ値を指定できます。 アプリケーションでは、これらのメタデータ値を使用して、ユーザーに実装または公開する機能を決定できます。
 
-例:
+次に、例を示します。
 
 ```INF
 [Your driver's AddReg section]
@@ -107,15 +107,15 @@ HKR,Capabilities,,,
 HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 ```
 
-これは、ように、メタデータ項目が作成"{12345678-1234-1234-1234-12345678abcd} guid1 を ="で、*デバイス パラメーター\\機能*エンコーダーのレジストリ設定の領域。 空の行は、存在しない場合は、レジストリ キーを作成する必要があります。
+これにより、エンコーダーのレジストリ設定の [*デバイスパラメーター\\機能*] 領域にメタデータ項目 "{12345678-1234-1234-1234-12345678abcd} = guid1" が作成されます。 レジストリキーが存在しない場合は、空の行を作成する必要があります。
 
-エンコーダー フィルターは、アプリケーションで使用するための INF ファイルでこのような静的メタデータを指定できます。 たとえば、Windows XP Media Center Edition は、Windows XP Media Center Edition-対応していることを示すエンコーダーをチェックします。
+エンコーダーフィルターでは、アプリケーションで使用するためにそのような静的メタデータを INF ファイルに指定できます。 たとえば、Windows XP Media Center Edition では、Windows XP Media Center エディションに準拠していることを示すエンコーダーが確認されます。
 
-### <a href="" id="the-filter-s-kernel-streaming-category"></a>**フィルターのカーネルのカテゴリのストリーミング**
+### <a href="" id="the-filter-s-kernel-streaming-category"></a>**フィルターのカーネルストリーミングカテゴリ**
 
-カーネル ストリーム フィルターには、カーネルが属するカテゴリのストリーミングを指定しなければなりません。 Microsoft では、エンコーダーのフィルター、マルチプレクサー (マルチプレクサー) フィルターなどの一般的なカテゴリの Guid を定義します。
+カーネルストリーミングフィルターでは、それらが属するカーネルストリーミングカテゴリを指定する必要があります。 Microsoft では、エンコーダーフィルターやマルチプレクサー (mux) フィルターなど、一般的なカテゴリの Guid を定義しています。
 
-フィルター内の Guid に次の 1 つ以上を指定することで、それぞれのカテゴリを示すため、 **AddInterface**ミニドライバーの INF ファイルのフィルターのセクションのディレクティブ。
+フィルターはそれぞれのカテゴリを示します。そのためには、ミニドライバーの INF ファイルのフィルターのセクションの**Addinterface**ディレクティブで、次の guid を1つ以上指定します。
 
 <table>
 <colgroup>
@@ -125,7 +125,7 @@ HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 </colgroup>
 <thead>
 <tr class="header">
-<th>カーネル ストリーミング カテゴリ GUID</th>
+<th>カーネルストリーミングカテゴリ GUID</th>
 <th>名前</th>
 <th>説明</th>
 </tr>
@@ -134,19 +134,19 @@ HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 <tr class="odd">
 <td><p>{19689BF6-C384-48FD-AD51-90E58C79F70B}</p></td>
 <td><p>KSCATEGORY_ENCODER</p></td>
-<td><p>エンコーダーのフィルターには、この GUID を指定します。</p></td>
+<td><p>エンコーダーフィルターにこの GUID を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>{7A5DE1D3-01A1-452C-B481-4FA2B96271E8}</p></td>
 <td><p>KSCATEGORY_MULTIPLEXER</p></td>
-<td><p>Mux フィルターには、この GUID を指定します。</p></td>
+<td><p>Mux フィルターにこの GUID を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-エンコーダー フィルターを登録するには、指定、KSCATEGORY\_、ドライバーのエンコーダー GUID *DDInstall*.**インターフェイス**INF ファイルのセクション。 次に、例を示します。
+エンコーダーフィルターを登録するには、ドライバーの*Ddinstall*で KSCATEGORY\_encoder GUID を指定します。**インターフェイス**INF ファイルセクション。 次に、例を示します。
 
 ```INF
 [Your Driver's DDInstall.Interface section]
@@ -166,7 +166,7 @@ KSProxy.CLSID="17CCA71B-ECD7-11D0-B908-00A0C9223196"
 MyEncoderDeviceFriendlyName="My Encoder Device"
 ```
 
-**注:** 指定された GUID *KSNAME\_フィルター*と一致する必要があります、 **ReferenceGuid**で指定されたメンバー、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)フィルターを記述する構造体。
+**注:** *Ksk 名\_フィルター*に指定する guid は、フィルターを記述する[**KSK フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)の構造体で指定した**referenceguid**メンバーと一致している必要があります。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: PcUnmapAllocatedPages ルール (オーディオ)
-description: PcUnmapAllocatedPages ルールでは、A PortCls ミニポート ドライバーが、最初のマッピング解除せずに現在割り当てられて、MDL にマップされないことを指定します。PortCls ミニポート ドライバー IMiniportWaveRTStream インターフェイスを使用して解放する前にメモリの割り当てを解除します。
+description: PcUnmapAllocatedPages 規則は、PortCls ミニポートドライバーが現在マップされている MDL を最初にマップ解除せずにマップしないことを指定します。PortCls ミニポートドライバーは、IMiniportWaveRTStream インターフェイスを使用して解放する前に、メモリを解除します。
 ms.assetid: 0ADF523C-9480-4AD2-8B98-23C95571CB0B
 ms.date: 05/21/2018
 keywords:
@@ -12,20 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 410739f75183b2c5110821ab61a0d6dd11252e7e
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 0b237d2e0ea3c34261a8a06fdddcbe1ec630adc8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394046"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839583"
 ---
 # <a name="pcunmapallocatedpages-rule-audio"></a>PcUnmapAllocatedPages ルール (オーディオ)
 
 
-PcUnmapAllocatedPages ルールを使用することを指定します。
+PcUnmapAllocatedPages ルールでは、次のことを指定します。
 
--   PortCls ミニポート ドライバーは、最初解除せずに現在割り当てられて、MDL にマップされません。
--   PortCls ミニポート ドライバーを使用して解放する前にメモリの割り当てを解除、 [IMiniportWaveRTStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstream)インターフェイス。
+-   PortCls ミニポートドライバーは、最初にマップを解除せずに現在マップされている MDL をマップしません。
+-   PortCls ミニポートドライバーは、 [IMiniportWaveRTStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstream)インターフェイスを使用して解放する前に、メモリを解除します。
 
 |              |       |
 |--------------|-------|
@@ -33,7 +33,7 @@ PcUnmapAllocatedPages ルールを使用することを指定します。
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00071004) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出され\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)が発生しました (0x00071004) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -44,15 +44,15 @@ PcUnmapAllocatedPages ルールを使用することを指定します。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain オーディオ</strong>します。</p>
-<p>以下に例を示します。</p>
-<p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
+<td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 Driver Verifier コマンドを入力し、 <strong>/domain audio</strong>を指定します。</p>
+<p>次に、例を示します。</p>
+<p><strong>verifier/domain audio</strong> [<em>オプション</em>] <strong>/driver</strong> <em>&lt;ドライバー&gt;</em></p>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

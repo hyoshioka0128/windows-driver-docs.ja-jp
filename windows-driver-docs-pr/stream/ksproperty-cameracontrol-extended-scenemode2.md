@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE プロパティ ID、KSPROPERTY で定義されている\_CAMERACONTROL\_拡張\_プロパティ列挙の Oem を提供します。正常に機能は、必要に応じてその他の ISP コントロール パラメーターと共に、シーンのモードを調整します。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE
+description: Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE プロパティ ID\_で定義されている CAMERACONTROL\_拡張\_プロパティ列挙型の場合、Oem はシーンモードを微調整する機能を提供します。必要に応じて、その他の ISP コントロールパラメーターと共に使用します。
 ms.assetid: CB3F89AD-4B53-4E47-B60E-4B584DB8418B
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_SCENEMODE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_SCENEMODE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da09f764efcbae8e64916046cbaf47a50005fa09
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 73795fac93c1b22ff4d8ea43df3a0ec100162ad2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366502"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823942"
 ---
-# <a name="kspropertycameracontrolextendedscenemode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE
+# <a name="ksproperty_cameracontrol_extended_scenemode"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙体は Oem に細かく調整機能を他の ISP 制御パラメーターと共にシーン モードに応じて。
+Ksk プロパティ **\_CAMERACONTROL\_extended\_SCENEMODE**プロパティ ID に定義されています。この ID は、 [**CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙型に\_定義されており、oem は必要に応じて、他の ISP コントロールパラメーターと共にシーンモードを微調整します。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "67366502"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,25 +49,25 @@ ms.locfileid: "67366502"
 </tbody>
 </table>
 
-シーン モードは、特定の操作を最適化するためにカメラ システム ガイドへのヒントを条件として使用されます。 シーンのモードとホワイト バランスでは、ISO などの他の ISP コントロールの露出時間、および EV 補正を互いに影響を与えることがなく独立して動作することにある必要があります。
+シーンモードは、特定の条件に対する操作を最適化するためにカメラシステムをガイドするヒントとして使用されます。 シーンモードおよびその他の ISP コントロール (白のバランス、ISO、露出時間、EV 補正など) は、互いに影響を与えることなく、独立して動作できる必要があります。
 
--   その他の ISP コントロール パラメーターを変更する既存のシーン モードを変更する必要があります。 ドライバーは、その他の ISP パラメーターを変更した後、シーンのモードを手動に変更する必要はありません。
+-   他の ISP コントロールパラメーターを変更しても、既存のシーンモードを変更することはできません。 他の ISP パラメーターを変更した後に、ドライバーはシーンモードを手動に変更する必要はありません。
 
--   自動シーン モードの設定は、その他のコントロールの ISP の既存の設定を変更することではできません。 ドライバーでは、その他の ISP のコントロールの完全な自動モードに戻すには必要ありません。
+-   自動シーンモードを設定しても、他の ISP コントロールの既存の設定を変更することはできません。 ドライバーは、他の ISP コントロールのフル自動モードに戻す必要はありません。
 
 **KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_AUTO**
 
-このフラグは、auto モードのシーンを示します。 カメラのドライバーは自動的にシーンに基づいて最適なシーン モード設定を確認し、シーンの必要に応じて、さまざまな ISP の設定を最適化します。
+このフラグは、自動シーンモードを示します。 カメラドライバーは、シーンに基づいて最適なシーンモード設定を自動的に決定し、シーンに必要なさまざまな ISP 設定を最適化します。
 
-**KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_手動**
+**KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_MANUAL**
 
-このフラグは適用されません。
+このフラグは適用できません。
 
-**KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_MACRO\\PORTRAIT\\SPORT\\SNOW\\NIGHT\\BEACH\\SUNSET\\CANDLELIGHT\\LANDSCAPE\\NIGHTPORTRAIT\\BACKLIT**
+**KSCAMERA\_EXTENDEDPROP\_SCENEMODE\_マクロ\\縦\\スポーツ\\雪\\夜\\ビーチ\\日没\\CANDLELIGHT\\横\\NIGHTPORTRAIT\\バック**
 
-これらのフラグは、定義されている、対応するシーン モードを示します。 カメラのドライバーは、必要に応じて、さまざまな ISP の設定を最適化するためにヒントとして指定されたシーン モードを使用 (たとえば、夜の ISP の設定は環境に最適な夜時間)。
+これらのフラグは、定義されているように、対応するシーンモードを示します。 カメラドライバーでは、必要に応じてさまざまな ISP 設定を最適化するためのヒントとして指定されているシーンモードが使用されます (たとえば、夜の場合、ISP の設定は夜の時間環境向けに最適化されています)。
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**プロパティ。 [ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)の構造は無視されます**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**します。
+次の表には、 **Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_SCENEMODE**プロパティを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件が含まれています。 [**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)構造体は、 **KSK プロパティ\_CAMERACONTROL\_拡張\_SCENEMODE**に対しては無視されます。
 
 <table>
 <colgroup>
@@ -76,39 +76,39 @@ ms.locfileid: "67366502"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これでなければなりません<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0 xffffffff) です。</p></td>
+<td><p>これは<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_VALUE</strong>)。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<strong>KSCAMERA_EXTENDEDPROP_VALUE</strong>) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。 値 0 は、エラーが検出されなかったことを示します。</p></td>
+<td><p>これは、最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。 値0は、エラーが検出されなかったことを示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>ビットごとの OR の必要があります<strong>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL</strong>および上記で定義された、サポートされているシーン モードのいずれか。 <strong>KSCAMERA_EXTENDEDPROP_SCENEMODE_AUTO</strong>カメラのドライバーは、このコントロールをサポートしている場合にサポートする必要があります。</p></td>
+<td><p>これは、 <strong>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL</strong>のビットごとの or であるか、上で定義されているサポートされているシーンモードである必要があります。 カメラドライバーがこのコントロールをサポートしている場合は、 <strong>KSCAMERA_EXTENDEDPROP_SCENEMODE_AUTO</strong>をサポートする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>前に示した、サポートされているシーン モードのいずれかを指定できます。</p></td>
+<td><p>これは、上記のサポートされているシーンモードのいずれかになります。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

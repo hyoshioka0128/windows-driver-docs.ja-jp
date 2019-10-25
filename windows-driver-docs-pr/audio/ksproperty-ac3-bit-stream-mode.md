@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AC3\_ビット\_ストリーム\_モード
-description: KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティをビット ストリーム モードで、ac-3 ストリームにエンコードされたオーディオのサービスの種類を指定します。
+title: KSK プロパティ\_AC3\_ビット\_ストリーム\_モード
+description: KSK プロパティ\_AC3\_BIT\_STREAM\_MODE プロパティは、AC-3 ストリームにエンコードされるオーディオサービスの種類であるビットストリームモードを指定します。
 ms.assetid: ee3705f5-f16d-4f5e-a551-bea8986d88b6
 keywords:
-- KSPROPERTY_AC3_BIT_STREAM_MODE オーディオ デバイス
+- KSPROPERTY_AC3_BIT_STREAM_MODE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b08f9752eb65493157589ff50c2e58f5d219b40f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1a6d4e1d1247c8c9bf58a22810b16637fdab6c1a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391524"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831143"
 ---
-# <a name="kspropertyac3bitstreammode"></a>KSPROPERTY\_AC3\_ビット\_ストリーム\_モード
+# <a name="ksproperty_ac3_bit_stream_mode"></a>KSK プロパティ\_AC3\_ビット\_ストリーム\_モード
 
 
-KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティをビット ストリーム モードで、ac-3 ストリームにエンコードされたオーディオのサービスの種類を指定します。
+KSK プロパティ\_AC3\_BIT\_STREAM\_MODE プロパティは、AC-3 ストリームにエンコードされるオーディオサービスの種類であるビットストリームモードを指定します。
 
 ## <span id="ddk_ksproperty_ac3_bit_stream_mode_ks"></span><span id="DDK_KSPROPERTY_AC3_BIT_STREAM_MODE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティをビッ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティをビッ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksac3_bit_stream_mode" data-raw-source="[&lt;strong&gt;KSAC3_BIT_STREAM_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)"><strong>KSAC3_BIT_STREAM_MODE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode" data-raw-source="[&lt;strong&gt;KSAC3_BIT_STREAM_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)"><strong>KSAC3_BIT_STREAM_MODE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSAC3\_ビット\_ストリーム\_モード構造体のビット ストリーム モードを指定します。
+プロパティ値 (操作データ) は、ビットストリームモードを指定する KSAC3\_ビット\_ストリーム\_モード構造体です。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AC3\_ビット\_ストリーム\_モードプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="requirements"></a>要件
 ------------
@@ -78,17 +78,17 @@ KSPROPERTY\_AC3\_ビット\_ストリーム\_モード プロパティ要求が�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAC3\_ビット\_ストリーム\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)
+[**KSAC3\_ビット\_ストリーム\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)
 
  
 

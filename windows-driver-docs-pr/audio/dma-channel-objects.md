@@ -3,20 +3,20 @@ title: DMA チャネルのオブジェクト
 description: DMA チャネルのオブジェクト
 ms.assetid: 2064bbdf-62b7-454f-8764-b2aa21636c02
 keywords:
-- ヘルパー オブジェクト WDK オーディオ、DMA チャネル オブジェクト
-- DMA チャネル オブジェクトの WDK オーディオ
-- マスター デバイス WDK オーディオ
-- スレーブ デバイス WDK オーディオ
+- ヘルパーオブジェクト WDK オーディオ、DMA チャネルオブジェクト
+- DMA チャネルオブジェクト WDK オーディオ
+- マスターデバイス WDK オーディオ
+- スレーブデバイス WDK オーディオ
 - IDmaChannel インターフェイス
-- チャネル オブジェクトの WDK オーディオ
+- チャネルオブジェクト WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c315ea0f58297ba2ab6ec655553e2d14e7def245
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b4b4ba0b9ce16ed8a9ebe5ee88926d37cfc1f08
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833469"
 ---
 # <a name="dma-channel-objects"></a>DMA チャネルのオブジェクト
 
@@ -24,95 +24,95 @@ ms.locfileid: "67360127"
 ## <span id="dma_channel_objects"></span><span id="DMA_CHANNEL_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idmachannel)と[IDmaChannelSlave](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idmachannelslave) WaveCyclic と WavePci のミニポート ドライバーのためのインターフェイス。 **IDmaChannel** DMA チャネルとその関連する DMA バッファーおよびバッファーの使用状況パラメーターを表します。 WaveCyclic ミニポート ドライバーを使用して、さらに、 **IDmaChannelSlave**下位デバイス DMA チャネルを管理します。 **IDmaChannelSlave**継承**IDmaChannel**します。 制御の DMA 操作については、次を参照してください。[アダプター オブジェクトと DMA](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)します。
+PortCls システムドライバーは、WaveCyclic および WavePci ミニポートドライバーの利点を得るために、 [IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)インターフェイスと[IDmaChannelSlave](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannelslave)インターフェイスを実装しています。 **IDmaChannel**は、dma チャネルとそれに関連付けられている dma バッファーおよびバッファー使用法パラメーターを表します。 また、WaveCyclic ミニポートドライバーは、 **IDmaChannelSlave**を使用して下位デバイスの DMA チャネルを管理します。 **IDmaChannelSlave**は**IDmaChannel**から継承します。 DMA 操作の制御の詳細については、「[アダプターオブジェクトと dma](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)」を参照してください。
 
-**IDmaChannel**オブジェクトは、次をカプセル化します。
+**IDmaChannel**オブジェクトは、次のものをカプセル化します。
 
--   マスターまたは下位のデバイス用の DMA チャネル
+-   マスターデバイスまたは下位デバイスの DMA チャネル
 
--   チャネルに関連付けられているデータのバッファー
+-   チャネルに関連付けられているデータバッファー
 
--   チャネルが使用される方法を説明する情報
+-   チャネルの使用方法を説明する情報
 
-ポートおよびミニポート ドライバーでは、DMA チャネルの使用状況に関する情報を通信するために DMA チャネル オブジェクトを使用します。 通常、ミニポート ドライバーは、初期化時またはストリームの作成時に、一連の DMA チャネルを割り当てます。 新しいストリームを作成する際は、ミニポート ドライバーは、ストリームの使用は DMA チャネル オブジェクトをポート ドライバーに指示します。
+ポートとミニポートドライバーは、dma チャネルオブジェクトを使用して、DMA チャネルの使用状況に関する情報を伝達します。 通常、ミニポートドライバーは、初期化中またはストリームの作成中に、一連の DMA チャネルを割り当てます。 新しいストリームの作成時に、ミニポートドライバーは、ストリームに使用する DMA チャネルオブジェクトをポートドライバーに伝えます。
 
-マスターまたは下位のデバイスには、DMA チャネル オブジェクトを作成できます。
+DMA チャネルオブジェクトは、マスターデバイスまたは下位デバイスに対して作成できます。
 
--   下位のデバイスでは、組み込みの DMA ハードウェア機能がないので、デバイスを必要とする任意のデータ転送を実行するシステムの DMA コント ローラーに依存する必要があります。
+-   下位デバイスには DMA ハードウェア機能が組み込まれていないため、デバイスに必要なデータ転送を実行するには、システム DMA コントローラーに依存する必要があります。
 
--   マスターのデバイスでは、バス マスター DMA の独自のハードウェアを使用して、システム バス上のデータ転送を実行します。
+-   マスターデバイスは、独自のバスマスタリング DMA ハードウェアを使用して、システムバス上でデータ転送を実行します。
 
-下位の DMA チャネル オブジェクトを使用して WaveCyclic デバイスの例は、Sb16 サンプル オーディオ ドライバーで、Microsoft Windows Driver Kit (WDK) を参照してください。 マスター DMA チャネル オブジェクトが、ポートおよびミニポート ドライバー間 DMA チャネルについての情報を共有するための backboard よりも少し。 マスターおよび下位のデバイスの詳細については、次を参照してください。[アダプター オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-adapter-objects)します。
+下位 DMA チャネルオブジェクトを使用する WaveCyclic デバイスの例については、Microsoft Windows Driver Kit (WDK) の Sb16 サンプルオーディオドライバーを参照してください。 マスタ DMA チャネルオブジェクトは、ポートとミニポートドライバー間の DMA チャネルに関する情報を共有するためのバックボードよりもわずかです。 マスターデバイスと下位デバイスの詳細については、「[アダプターオブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-adapter-objects)」を参照してください。
 
-マスターまたは下位のデバイスの DMA チャネル オブジェクトには、次は公開します。
+マスターデバイスまたは下位デバイスの DMA チャネルオブジェクトでは、次のものが公開されます。
 
--   アダプター オブジェクト
+-   アダプターオブジェクト
 
--   ドライバーと DMA のハードウェアを共有できる 1 つの一般的なバッファー
+-   ドライバーと DMA ハードウェアが共有できる1つの共通バッファー
 
--   バッファー サイズの値を照会および変更できます。
+-   クエリと変更が可能なバッファーサイズ値
 
-*アダプター オブジェクト*の DMA アダプターの構造は、*物理デバイス オブジェクト (PDO)* します。 ミニポート ドライバーは、次のメソッドのいずれかを呼び出すことによって、DMA チャネル オブジェクトを作成するときに、アダプター オブジェクトが自動的に作成されます。
+*アダプターオブジェクト*は、*物理デバイスオブジェクト (PDO)* の DMA アダプター構造です。 次のいずれかのメソッドを呼び出すことによって、ミニポートドライバーが DMA チャネルオブジェクトを作成すると、アダプターオブジェクトが自動的に作成されます。
 
-[**IPortWavePci::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-newmasterdmachannel)
+[**IPortWavePci::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-newmasterdmachannel)
 
-[**IPortWaveCyclic::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavecyclic-newmasterdmachannel)
+[**IPortWaveCyclic::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavecyclic-newmasterdmachannel)
 
-[**IPortWaveCyclic::NewSlaveDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavecyclic-newslavedmachannel)
+[**IPortWaveCyclic::NewSlaveDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavecyclic-newslavedmachannel)
 
-メソッド[ **IDmaChannel::GetAdapterObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-getadapterobject)アダプター オブジェクトへのポインターを取得するために使用できます。
+[**IDmaChannel:: GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-getadapterobject)メソッドを使用して、アダプターオブジェクトへのポインターを取得できます。
 
-アダプタのドライバを呼び出すことも、 [ **PcNewDmaChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewdmachannel) DMA チャネル オブジェクトを作成する機能が、この関数が使用するよりも難しく、 **IPortWave*Xxx*:: 新規*Xxx*もできます**呼び出すため、呼び出し元は、明示的にデバイス オブジェクトとその他のコンテキスト情報を指定する必要があります。
+アダプタードライバーでは、 [**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)関数を呼び出して DMA チャネルオブジェクトを作成することもできますが、呼び出し元は明示的に指定する必要があるため、この関数は**IPortWave*Xxx*:: New*xxx*DmaChannel**呼び出しよりも使用するのが困難です。デバイスオブジェクトとその他のコンテキスト情報を指定します。
 
-下位のデバイスでは、DMA チャネルの場合、 [ **IDmaChannel::TransferCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-transfercount)メソッドは、最大転送サイズを返します (、 *MapSize*パラメーター) が呼び出しで指定された[ **IDmaChannelSlave::Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-start)します。 また、アダプター オブジェクトを操作して、DMA デバイスのクエリを実行するいくつかのメソッドを提供します。 これらのメソッドのいずれもマスター DMA チャネルで意味のありません。
+下位デバイスの DMA チャネルの場合、 [**IDmaChannel:: TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)メソッドは、 [**IDmaChannelSlave:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)の呼び出しで指定された最大転送サイズ ( *mapsize*パラメーター) を返します。 また、アダプターオブジェクトには、DMA デバイスの操作とクエリを実行するためのメソッドが用意されています。 これらの方法のいずれも、マスタ DMA チャネルでは意味がありません。
 
-[**IDmaChannel::AllocateBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatebuffer)と[ **IDmaChannel::FreeBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-freebuffer) DMA チャネル オブジェクトに関連付けられている 1 つの一般的なバッファーを管理するために使用します。 オブジェクトによって割り当てられたバッファー ドライバー (カーネルの仮想メモリのアドレス) と (物理メモリのアドレス) を持つ DMA デバイスの両方にアクセスすることが保証されます。 さらに、バッファーは、物理的に連続するになります。 通常、最適な戦略は、物理的に連続するメモリが十分にある最もミニポート ドライバーの初期化中に、DMA バッファーを割り当てることです。 [**IDmaChannel::AllocatedBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatedbuffersize)への呼び出しで指定されたバッファーのサイズを返します**IDmaChannel::AllocateBuffer**します。
+[**IDmaChannel:: AllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatebuffer)と[**IDmaChannel:: FREEBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-freebuffer)は、DMA チャネルオブジェクトに関連付けられている単一の共通バッファーを管理するために使用されます。 オブジェクトによって割り当てられたバッファーは、ドライバー (カーネルの仮想メモリアドレスを持つ) と DMA デバイス (物理メモリアドレスを持つ) の両方からアクセスできることが保証されます。 また、バッファーは物理的に連続しています。 通常、最適な方法は、物理的に連続するメモリが最も多くある場合に、ミニポートドライバーの初期化時に DMA バッファーを割り当てることです。 [**IDmaChannel:: AllocatedBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatedbuffersize)は、 **IDmaChannel:: allocatebuffer**の呼び出しで指定されたバッファーのサイズを返します。
 
-[**IDmaChannel::MaximumBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-maximumbuffersize)のために使用できる実際の最大バッファー サイズを示します。 割り当てのサイズがページ サイズの倍数でない場合は、割り当てサイズを超えるこの可能性があります。 割り当てられているサイズより小さいは、DMA デバイスに割り当てられたサイズの転送をサポートできない場合られます可能性があります。 [**IDmaChannel::BufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-buffersize)と[ **IDmaChannel::SetBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-setbuffersize)クエリし、DMA の転送に使用するバッファーのサイズの設定に使用されます。 バッファーが割り当てられると、バッファー サイズが最大バッファー サイズを設定します。 初期化後は、ポート ドライバーとミニポート ドライバーすると、バッファー サイズを変更するか、現在の値を検出する機会があります。 ミニポート ドライバーの結果を使用して**IDmaChannel::BufferSize** DMA チャネルが開始されると、DMA 操作の転送サイズを決定します。 [**IDmaChannel::SystemAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-systemaddress)と[ **IDmaChannel::PhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-physicaladdress)バッファーの仮想および物理アドレスをそれぞれ取得するために使用します。
+[**IDmaChannel:: MaximumBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-maximumbuffersize)は、使用できる実際の最大バッファーサイズを示します。 割り当てられたサイズがページサイズの偶数倍でない場合は、割り当てられたサイズを超える可能性があります。 DMA デバイスで割り当てられたサイズの転送がサポートされていない場合、割り当てられたサイズよりも小さくなることがあります。 [**IDmaChannel:: BufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-buffersize)と[**IDmaChannel:: SETBUFFERSIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-setbuffersize)は、DMA 転送に使用するバッファーのサイズを照会および設定するために使用されます。 バッファーが割り当てられると、バッファーサイズは最大バッファーサイズに設定されます。 初期化後、ポートドライバーとミニポートドライバーの両方で、バッファーサイズを変更したり、現在の値を検出したりすることができます。 ミニポートドライバーは、 **IDmaChannel:: BufferSize**の結果を使用して、dma チャネルが開始されたときの dma 操作の転送サイズを決定します。 [**IDmaChannel:: systemaddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-systemaddress)と[**IDmaChannel::P Hysare address**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-physicaladdress)は、バッファーの仮想アドレスと物理アドレスをそれぞれ取得するために使用されます。
 
-[**IDmaChannel::CopyTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto)と[ **IDmaChannel::CopyFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom) DMA バッファーとの間に、サンプル データをコピーします。 WaveCyclic ポート ドライバーでは、アプリケーションのバッファーと、ミニポート ドライバーの循環バッファー間でのオーディオ データをコピーするこれらのメソッドを呼び出します。
+[**IDmaChannel:: CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)と[**IDmaChannel:: copyfrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyfrom)サンプルデータを DMA バッファーとの間でコピーします。 WaveCyclic port ドライバーは、これらのメソッドを呼び出して、アプリケーションバッファーとミニポートドライバーの循環バッファーとの間でオーディオデータをコピーします。
 
-必ずしも、DMA バッファーは、ストリーミングされたデータを転送するのには使用されません。 WavePci ポート ドライバーの場合、ストリーミングされたデータに配信 (またはから取得した) スキャッター/ギャザー マッピングの一覧としてミニポート ドライバー。 ただし、ミニポート ドライバーがまだを使用する、DMA バッファーとしてアダプターのドライバーと通信するための共有メモリ領域です。
+DMA バッファーは、ストリーミングされたデータの転送に必ずしも使用されるわけではありません。 WavePci port ドライバーの場合、ストリーミングされたデータは、分散/収集マッピングの一覧としてミニポートドライバーに配信 (または取得) されます。 ただし、ミニポートドライバーは、アダプタードライバーと通信するための共有メモリ領域として DMA バッファーを引き続き使用する場合があります。
 
-ポートのドライバーでは、ミニポート ドライバーが DMA チャネルの作成に使用できる機能を提供します。 ポートのドライバーの説明で特に明記されていない限り、ポート ドライバーから割り当てられた DMA オブジェクトを使用する絶対必要はありません。 ポート ドライバーへのポインターだけが必要です、 **IDmaChannel**必要なメソッドをサポートするインターフェイス。 ポートのドライバーを必要とする DMA チャネル メソッドの一覧については、各ポート ドライバーのドキュメントを確認します。
+ポートドライバーには、DMA チャネルを作成するために使用できる機能を備えたミニポートドライバーが用意されています。 ポートドライバーの説明で特に明記されていない限り、ポートドライバーから割り当てられた DMA オブジェクトを使用する必要はありません。 ポートドライバーは、必要なメソッドをサポートする**IDmaChannel**インターフェイスへのポインターを必要とします。 ポートドライバーが必要とする DMA チャネルメソッドの一覧については、各ポートドライバーのドキュメントを参照してください。
 
-通常、ポート ドライバーでは、DMA チャネル割り当て関数を使用することが最も簡単な方法です。 まれに、ミニポート ドライバー開発者は、特定のアダプターの特別な要件を満たすために、独自の DMA チャネル オブジェクトを実装する必要があります。 これには、新しいオブジェクトの実装もが必要です。 それ以外の時間は、ミニポート ドライバーのストリーム オブジェクトを公開するための十分な**IDmaChannel**インターフェイスし、自体 DMA チャネル メソッドを実装します。
+通常、最も簡単な方法は、ポートドライバーが実装する DMA チャネル割り当て関数を使用することです。 まれに、ミニポートドライバーの開発者は、特定のアダプターの特別な要件を満たすために独自の DMA チャネルオブジェクトを実装する必要がある場合があります。 これには、新しいオブジェクトの実装が必要になる場合があります。 それ以外の場合は、ミニポートドライバーのストリームオブジェクトが**IDmaChannel**インターフェイスを公開し、DMA チャネルメソッド自体を実装するだけで十分です。
 
 **IDmaChannel**インターフェイスは、次のメソッドをサポートしています。
 
-[**IDmaChannel::AllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatebuffer)
+[**IDmaChannel:: AllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatebuffer)
 
-[**IDmaChannel::AllocatedBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatedbuffersize)
+[**IDmaChannel::AllocatedBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatedbuffersize)
 
-[**IDmaChannel::BufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-buffersize)
+[**IDmaChannel:: BufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-buffersize)
 
-[**IDmaChannel::CopyFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom)
+[**IDmaChannel:: CopyFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyfrom)
 
-[**IDmaChannel::CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto)
+[**IDmaChannel:: CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)
 
-[**IDmaChannel::FreeBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-freebuffer)
+[**IDmaChannel:: FreeBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-freebuffer)
 
-[**IDmaChannel::GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-getadapterobject)
+[**IDmaChannel:: GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-getadapterobject)
 
-[**IDmaChannel::MaximumBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-maximumbuffersize)
+[**IDmaChannel:: MaximumBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-maximumbuffersize)
 
-[**IDmaChannel::PhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-physicaladdress)
+[**IDmaChannel::P Hysのアドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-physicaladdress)
 
-[**IDmaChannel::SetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-setbuffersize)
+[**IDmaChannel:: SetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-setbuffersize)
 
-[**IDmaChannel::SystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-systemaddress)
+[**IDmaChannel:: SystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-systemaddress)
 
-[**IDmaChannel::TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-transfercount)
+[**IDmaChannel:: TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)
 
-**IDmaChannelSlave**インターフェイスは、拡張**IDmaChannel**次のメソッドを追加します。
+**IDmaChannelSlave**インターフェイスは、次のメソッドを追加して**IDmaChannel**を拡張します。
 
-[**IDmaChannelSlave::ReadCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-readcounter)
+[**IDmaChannelSlave:: ReadCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-readcounter)
 
-[**IDmaChannelSlave::Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-start)
+[**IDmaChannelSlave:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)
 
-[**IDmaChannelSlave::Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-stop)
+[**IDmaChannelSlave:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-stop)
 
-[**IDmaChannelSlave::WaitForTC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-waitfortc)
+[**IDmaChannelSlave:: WaitForTC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-waitfortc)
 
  
 

@@ -3,22 +3,22 @@ title: オブジェクト バッグ
 description: オブジェクト バッグ
 ms.assetid: b7ee5756-1c79-4ead-9999-d13be9a0d3d9
 keywords:
-- AVStream オブジェクト バッグ WDK
-- WDK AVStream バッグをオブジェクトします。
-- WDK AVStream オブジェクト
-- WDK AVStream のメモリ管理
-- AVStream WDK のデータを共有を動的に割り当てられています。
+- AVStream オブジェクトバッグ WDK
+- オブジェクトバッグ WDK AVStream
+- オブジェクト WDK AVStream
+- メモリ管理 (WDK AVStream)
+- AVStream WDK 用に動的に割り当てられたデータを共有する
 - 動的に割り当てられたデータ WDK AVStream
 - AVStream 記述子 WDK
-- WDK AVStream 記述子
+- 記述子 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d35628bd23d5f87dc3db0fc9dcbc799a9c035d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 334f5da09ea3f1cb7b9c26a2245dfc64aebdc3ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377515"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823567"
 ---
 # <a name="object-bags"></a>オブジェクト バッグ
 
@@ -26,29 +26,29 @@ ms.locfileid: "67377515"
 
 
 
-AVStream は、ミニドライバーに表示される AVStream オブジェクトごとに、オブジェクトのバッグと呼ばれる構造を管理します。 オブジェクト、バッグは、割り当てられている特定のオブジェクトに関連付けられているメモリを動的に保持するための汎用コンテナーです。
+AVStream は、ミニドライバーに表示される各 AVStream オブジェクトのオブジェクトバッグと呼ばれるコンストラクトを管理します。 オブジェクトバッグは、特定のオブジェクトに関連付けられた動的に割り当てられたメモリを保持するための汎用コンテナーです。
 
-次の構造が KSOBJECT 型のメンバーを持つ\_バッグは、これは PVOID に相当します。[**KSDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice)、 [ **KSFILTERFACTORY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilterfactory)、 [ **KSFILTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter)、および[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)します。
+次の構造体には KSOBJECT\_BAG 型のメンバーがあります。これは PVOID: [**Ksdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)、 [**ksfilterfactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilterfactory)、 [**Ksdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter)、および[**kspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)と同等です。
 
-オブジェクトのバッグの用途は次のとおりです。
+オブジェクトバッグの用途は次のとおりです。
 
--   メモリ管理します。
+-   メモリ管理。
 
-    ミニドライバーは、メモリ管理オブジェクトのバッグを使用して、クリーンアップ作業を削減できます。 これを行うために、ミニドライバーは呼び出す必要がありますまず[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)を動的メモリを割り当てたり、特定のオブジェクトに関連付けます。 ミニドライバーし、割り当てられたメモリをバッグに追加のオブジェクトを呼び出して[ **KsAddItemToObjectBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadditemtoobjectbag)します。
+    ミニドライバーでは、メモリ管理にオブジェクトバッグを使用して、クリーンアップ作業を減らすことができます。 これを行うには、ミニドライバーが最初に[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を呼び出して動的メモリを割り当て、特定のオブジェクトに関連付ける必要があります。 次に、ミニドライバーは、 [**Ksk Additemtoobjectbag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksadditemtoobjectbag)を呼び出して、割り当てられたメモリをオブジェクトバッグに追加します。
 
-    ミニドライバーを呼び出すと**KsAddItemToObjectBag**、AVStream に既定のクリーンアップ関数が関連付けられます (通常[ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)) オブジェクトを使用します。 または、ミニドライバーは内のミニドライバーのクリーンアップ ルーチンへのポインターを含めることができます、 *Free*パラメーターの**KsAddItemToObjectBag**します。 オブジェクトが閉じられたときに AVStream オブジェクト バッグからのすべての項目を削除し、関連するクリーンアップ ルーチンを呼び出します。
+    ミニドライバーが**Ksk Additemtoobjectbag**を呼び出すと、avstream は既定のクリーンアップ関数 (通常は[**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)) をオブジェクトと関連付けます。 また、ミニドライバーには、ミニドライバーによって提供されるクリーンアップルーチンへのポインターを、 **Ksadditemtoobjectbag**の*Free*パラメーターに含めることができます。 オブジェクトが閉じられると、AVStream はオブジェクトバッグからすべての項目を削除し、関連付けられたクリーンアップルーチンを呼び出します。
 
--   動的に共有には、いくつかの AVStream オブジェクト間でデータが割り当てられます。
+-   複数の AVStream オブジェクト間で動的に割り当てられたデータを共有します。
 
-    ミニドライバーは、1 つ以上のオブジェクトのバッグで特定の項目を配置することで AVStream のいくつかのオブジェクト間で動的に割り当てられたデータを共有できます。 この場合は、任意のオブジェクトのバッグで不要になったに含まれるまで、AVStream は特定の項目を解放できません。 唯一の制限できる、オブジェクトのバッグに含まれる項目の数には、使用可能なメモリです。
+    ミニドライバーは、複数のオブジェクトバッグに特定の項目を配置することで、動的に割り当てられたデータを複数の AVStream オブジェクト間で共有できます。 この場合、AVStream は、オブジェクトバッグに含まれなくなるまで、指定された項目を解放しません。 オブジェクトバッグに含めることができる項目の数に関する制限は、使用可能なメモリだけです。
 
--   どの構造体は、記述子で編集できるかを決定します。
+-   記述子を使用して編集できる構造を決定します。
 
-    記述子または記述子のサブ構造体、ミニドライバーを動的に割り当てます、ミニドライバーは、関連するオブジェクトのバッグで記述子を配置します。 [  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)関数が、この情報を使用して特定の構造を編集できるかどうかを判断します。
+    ミニドライバーが記述子または記述子サブ構造体を動的に割り当てる場合、ミニドライバーは該当するオブジェクトバッグに記述子を配置します。 次に、 [ **\_KsEdit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit)関数は、この情報を使用して、特定の構造体を編集できるかどうかを判断します。
 
-AVStream を使用、オブジェクトのバッグから所有するオブジェクトが削除された場合の項目が自動的に削除します。
+所有オブジェクトが削除されると、AVStream はオブジェクトバッグから項目を自動的に削除します。
 
-ミニドライバーは呼び出すことによって、オブジェクトのバッグから個々 の項目を削除することができます[ **KsRemoveItemFromObjectBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksremoveitemfromobjectbag)または[ **KsDiscard**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdiscard)します。
+ミニドライバーは、 [**KsRemoveItemFromObjectBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksremoveitemfromobjectbag)または[**ksdiscard**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksdiscard)を呼び出すことによって、オブジェクトバッグから個々の項目を削除できます。
 
  
 

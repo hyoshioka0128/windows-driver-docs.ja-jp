@@ -3,18 +3,18 @@ title: デバイス セットアップ情報の取得
 description: デバイス セットアップ情報の取得
 ms.assetid: 95e88e4a-5a31-4d82-99ea-c9a4d7766c0f
 keywords:
-- オーディオ アダプター WDK、セットアップ情報の取得
-- アダプターのドライバー WDK オーディオは、セットアップ情報の取得
-- ポート クラス オーディオ アダプター WDK、セットアップ情報の取得
-- デバイスのセットアップ情報の取得
+- オーディオアダプター WDK、セットアップ情報の取得
+- アダプタードライバー WDK オーディオ、セットアップ情報の取得
+- ポートクラスオーディオアダプター WDK、セットアップ情報の取得
+- デバイスのセットアップ情報を取得しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f176bd20c8313e2981041e9554bc3ae9737c823
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f00508bdca84a825bfa43dee1d956d5f06edcdf1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355267"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830181"
 ---
 # <a name="retrieving-device-setup-information"></a>デバイス セットアップ情報の取得
 
@@ -22,9 +22,9 @@ ms.locfileid: "67355267"
 ## <span id="retrieving_device_setup_information"></span><span id="RETRIEVING_DEVICE_SETUP_INFORMATION"></span>
 
 
-セットアップ情報をレジストリから取得するアダプターのドライバーを呼び出すことができます、 [ **PcGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcgetdeviceproperty)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::GetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-getdeviceproperty)メソッド。
+レジストリからセットアップ情報を取得するために、アダプタードライバーは[**Pcgetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcgetdeviceproperty)関数を呼び出すことができます。また、ミニポートドライバーは、ポートドライバーの[**IPort:: getdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-getdeviceproperty)メソッドを呼び出すことができます。
 
-これらの呼び出しのいずれか、呼び出し元を選択します。 次のデバイスのいずれかに、デバイス プロパティのパラメーターを設定して要求するセットアップ情報の種類\_レジストリ\_ファイル Wdm.h のヘッダーからプロパティの列挙値。
+これらの呼び出しのいずれかについて、呼び出し元は、デバイスプロパティパラメーターを次のいずれかのデバイス\_レジストリに設定することによって、要求するセットアップ情報の種類を選択します。これは、ヘッダーファイルの\_プロパティの列挙値です。
 
 -   **DevicePropertyAddress**
 
@@ -40,7 +40,7 @@ ms.locfileid: "67355267"
 
 -   **DevicePropertyClassName**
 
--   **DevicePropertyCompatibleIDs**
+-   **Deviceproperty互換 Id**
 
 -   **DevicePropertyDetachability**
 
@@ -48,7 +48,7 @@ ms.locfileid: "67355267"
 
 -   **DevicePropertyDriverKeyName**
 
--   **DevicePropertyEnumeratorName**
+-   **Deviceproperty列挙 Atorname**
 
 -   **DevicePropertyFriendlyName**
 
@@ -66,7 +66,7 @@ ms.locfileid: "67355267"
 
 -   **DevicePropertyUINumber**
 
-については、DeviceProperty*Xxx*上記の値を参照してください[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)します。
+上の DeviceProperty*Xxx*値の詳細については、「 [**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)」を参照してください。
 
  
 

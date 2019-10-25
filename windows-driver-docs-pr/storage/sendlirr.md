@@ -1,9 +1,9 @@
 ---
 title: SendLIRR 関数
-description: SendLIRR WMI メソッドでは、リンクのインシデント レコードの登録 (LIRR) コマンドを指定のローカル ポートを介して、指定したリモート ポートに送信します。
+description: SendLIRR WMI メソッドは、指定されたローカルポートを介して、指定されたリモートポートにリンクインシデントレコード登録 (LIRR) コマンドを送信します。
 ms.assetid: ca54161d-d5fe-4775-a38c-dfaf3fd8c00b
 keywords:
-- 記憶装置の SendLIRR 関数
+- SendLIRR 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d3d5fd4d4f87928abda7e1c91e3bc9a42e8e5c44
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c17a6c0a401ab17b519842506055e81ccc570a52
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362674"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832077"
 ---
 # <a name="sendlirr-function"></a>SendLIRR 関数
 
 
-**SendLIRR** WMI メソッドは、指定したリモート ポートに示されたローカル ポートを通じてリンク インシデント レコードの登録 (LIRR) コマンドを送信します。
+**Sendlirr** WMI メソッドは、指定されたローカルポートを介して、指定されたリモートポートにリンクインシデントレコード登録 (lirr) コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,29 +46,29 @@ void SendLIRR(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Sendlirr\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造の**hbastatus**メンバーにこの情報を返します。
 
-*SourceWWN*   
-LIRR コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **SourceWWN**のメンバー、 [ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)構造体。
+*Sourcewwn*   
+LIRR コマンドの送信に使用されるローカルポートの世界規模の名前。 この情報は、構造[**内の Sendlirr\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_in)の**sourcewwn**メンバーのミニポートドライバーに配信されます。
 
-*DestWWN*   
-接続先ポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **DestWWN**のメンバー、 [ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)構造体。
+*Destwwn*   
+宛先ポートの世界規模の名前。 この情報は、構造[**内の Sendlirr\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_in)の**destwwn**メンバーのミニポートドライバーに配信されます。
 
 *関数*   
-登録関数を識別するコードの実行します。 詳細についてはこのメンバーにする値を割り当てることができます、T11 委員会を参照してください。*ファイバー チャネルのフレームとシグナリング*仕様。 この情報は、ミニポート ドライバーに配信される、**関数**のメンバー、 [ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)構造体。
+実行する登録関数を識別するコード。 このメンバーに割り当てることができる値の説明については、T11 委員会の*ファイバーチャネルフレーミングとシグナリング*の仕様を参照してください。 この情報は、構造[**内の Sendlirr\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_in)の**関数**メンバーのミニポートドライバーに配信されます。
 
 *型*   
-リンクの情報が要求されたデバイスの種類。 詳細についてはこのメンバーにする値を割り当てることができます、T11 委員会を参照してください。*ファイバー チャネルのフレームとシグナリング*仕様。 この情報は、ミニポート ドライバーに配信される、**関数**のメンバー、 [ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)構造体。
+リンク情報が要求されるデバイスの種類。 このメンバーに割り当てることができる値の説明については、T11 委員会の*ファイバーチャネルフレーミングとシグナリング*の仕様を参照してください。 この情報は、構造[**内の Sendlirr\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_in)の**関数**メンバーのミニポートドライバーに配信されます。
 
-*TotalRspBufferSize*   
-LIRR コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体。
+*Totalrspbuffersize*   
+LIRR コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendlirr\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体の**Totalrspbuffersize**メンバーにこの情報を返します。
 
-*ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体。
+*Actualrspbuffersize*   
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、 [**Sendlirr\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体の**Actualrspbuffersize**メンバーにこの情報を返します。
 
-*RspBuffer*   
-LIRR コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体。
+*Rspbuffer*   
+LIRR コマンドの結果。 ミニポートドライバーは、 [**Sendlirr\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_out)構造体の**rspbuffer**メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -78,7 +78,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -95,23 +95,23 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SendLIRR\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)
+[**SendLIRR\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_in)
 
-[**SendLIRR\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)
+[**SendLIRR\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendlirr_out)
 
  
 

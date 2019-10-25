@@ -3,20 +3,20 @@ title: インターフェイス インデックスの割り当て
 description: インターフェイス インデックスの割り当て
 ms.assetid: f1315da2-16da-4320-9d0d-1270396af38b
 keywords:
-- NDIS ネットワーク インターフェイス、WDK インターフェイス インデックスの割り当て
-- ネットワーク インターフェイス、WDK インターフェイス インデックスの割り当て
-- インターフェイス インデックス WDK ネットワーク
-- ネットワーク インターフェイスのインデックスの割り当てください。
-- インデックス操作の WDK のネットワーク インターフェイス
-- WDK ローカル一意識別子
+- NDIS ネットワークインターフェイス WDK、インターフェイスインデックスの割り当て
+- ネットワークインターフェイス WDK、インターフェイスインデックスの割り当て
+- インターフェイスインデックス WDK ネットワーク
+- ネットワークインターフェイスインデックスを割り当てています
+- インデックス操作の WDK ネットワークインターフェイス
+- ローカル一意識別子 (WDK)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e177131df795ddd6b2fcd77972f689674a9fbd87
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e887742f5099b0e7192245a31b0af376ef0803a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382919"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835367"
 ---
 # <a name="allocating-an-interface-index"></a>インターフェイス インデックスの割り当て
 
@@ -24,7 +24,7 @@ ms.locfileid: "67382919"
 
 
 
-インターフェイスをプロバイダーが、呼び出すことによって、インターフェイスを正常に登録するかどうか、 [ **NdisIfRegisterInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)関数、NDIS はそのインターフェイスのインターフェイス インデックスを割り当て、およびのインデックス値を返します場所を*pIfIndex*パラメーターを指定します。 インターフェイス インデックスは、ローカル コンピューター上で一意である 16 ビット値です。 NDIS は同じインターフェイスをプロバイダーの登録時に、同じインターフェイス インデックスを割り当てることは保証されません[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)コンピューターの再起動後の値。 インターフェイスのインデックス 0 の値 (NET\_IFINDEX\_未指定) は予約されている、および NDIS では任意のインターフェイスに割り当てられません。
+インターフェイスプロバイダーが[**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)関数を呼び出すことによってインターフェイスを正常に登録すると、NDIS によってそのインターフェイスのインターフェイスインデックスが割り当てられ、 *pifindex*パラメーターの位置にあるインデックス値が返されます。か. インターフェイスインデックスは、ローカルコンピューター上で一意の16ビット値です。 NDIS は、コンピューターの再起動後にインターフェイスプロバイダーが同じ[**NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)値を登録した場合に、同じインターフェイスインデックスが割り当てられることを保証しません。 インターフェイスインデックス値ゼロ (NET\_IFINDEX\_未指定) は予約されており、NDIS はインターフェイスに割り当てません。
 
  
 

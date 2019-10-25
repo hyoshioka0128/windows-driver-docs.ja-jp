@@ -3,17 +3,17 @@ title: PCM 以外のピン ファクトリの要件
 description: PCM 以外のピン ファクトリの要件
 ms.assetid: 3ba5da2e-f96f-4645-8a37-dd985287a9f2
 keywords:
-- 非 PCM オーディオ形式 WDK、暗証番号 (pin) ファクトリ
-- 暗証番号 (pin) ファクトリ WDK オーディオ
-- 交差部分のデータ ハンドラーの WDK オーディオ、wave 形式の非 PCM
+- PCM 以外のオーディオ形式 WDK、pin ファクトリ
+- ファクトリ WDK オーディオをピン留めする
+- データ交差ハンドラー WDK オーディオ、PCM 以外の wave 形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29c63c268a9631e7dcc4f87fdd77f9eb6b0b5949
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00a7953817a2fe3809abc8fc898bf27a1c95de6c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355283"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830197"
 ---
 # <a name="requirements-for-a-non-pcm-pin-factory"></a>PCM 以外のピン ファクトリの要件
 
@@ -21,19 +21,19 @@ ms.locfileid: "67355283"
 ## <span id="requirements_for_a_non_pcm_pin_factory"></span><span id="REQUIREMENTS_FOR_A_NON_PCM_PIN_FACTORY"></span>
 
 
-Windows xp 以降、および Microsoft Windows Me、非 PCM を再生ドライバー [ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)形式は次のガイドラインに従って PCM 以外の pin を公開する必要があります。
+Windows XP 以降、および Microsoft Windows Me では、PCM 以外の[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)形式を再生するドライバーは、次のガイドラインに従って pcm 以外の pin を公開する必要があります。
 
-最初に、PCM 非データ形式は、PCM の暗証番号 (pin) ファクトリから別のピン留めするファクトリを定義します。 PCM と PCM 以外は、自動的にピン留めする唯一のインスタンスが KMixer に割り当てられるため、同じ単一インスタンスの暗証番号 (pin) ファクトリを共有することはできません。 暗証番号 (pin) ファクトリは、複数のインスタンスをサポートする PCM および非 PCM が同じ pin ファクトリで共存できます。 この場合、ただしは保証できないことは、これらのピン留めするインスタンスは実行時に非 PCM クライアントに使用可能な - PCM クライアントが既にが割り当てられていること。 最も安全なオプションでは、PCM 以外の形式のピン留めする個別のファクトリを提供します。
+最初に、pcm ピン工場とは別の PCM データ形式以外の pin ファクトリを定義します。 唯一のピンのインスタンスが自動的に KMixer に割り当てられるため、PCM と非 PCM で同じ単一インスタンスのピンファクトリを共有することはできません。 ピンファクトリが複数のインスタンスをサポートしている場合は、PCM と PCM 以外は同じ pin ファクトリに共存できます。 ただし、この場合は、これらの pin インスタンスを実行時に PCM クライアントが使用できないことを保証することはできません。 PCM クライアントが既に割り当てている可能性があります。 最も安全なオプションは、PCM 以外の形式に個別の pin ファクトリを提供することです。
 
-Pin が検出され、DirectSound 8 で使用されるためには、PCM を既にサポートしているフィルターでこの非 PCM 暗証番号 (pin) ファクトリを定義します。 それ以外の場合、DirectSound では、非 PCM の暗証番号 (pin) が検出されません。 PCM をまったくサポートしないデバイスが非 PCM 形式をサポートできないことも意味します。
+DirectSound 8 で pin が検出されて使用されるようにするには、PCM を既にサポートしているフィルターにこの PCM 以外の pin ファクトリを定義します。 それ以外の場合、DirectSound は PCM 以外の pin を検出しません。 これは、PCM をサポートしていないデバイスが PCM 形式ではサポートできないことも意味します。
 
-第 2 に、実装、[交差部分のデータ ハンドラー](proprietary-data-intersection-handlers.md)非 PCM pin にします。 PortCls、組み込みのハンドラーを提供しますが、この既定のハンドラーは、PCM 以外の形式の独自のハンドラーを追加する必要がありますので常に、PCM を選択します。 WAVE をサポートする必要がありますいない\_形式\_非 PCM pin の積集合のハンドラーで PCM。 このハンドラーを呼び出すことができるに注意してください、 *OutputBufferLength* 0 の場合、呼び出し元がデータ自体ではなく、優先されるデータの範囲のサイズに対してのみを要求します。 この場合、ハンドラーに PCM 以外のデータ範囲のサイズをコピーすることで応答する必要が、 *ResultantFormatLength*パラメーターと状態を返す\_バッファー\_オーバーフローします。 Windows Driver Kit (WDK) で Msvad サンプルにはコードが含まれています、 [ **DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)ハンドラーの例として使用できるルーチン。 テストする、 **DataRangeIntersection**ルーチンを使用して、 [KsStudio ユーティリティ](ksstudio-utility.md)暗証番号 (pin)--をインスタンス化する、最初にハンドラーを呼び出す、積集合、使用可能な既定の形式を決定するためにします。 PCM 以外の形式をサポートして、ドライバーする必要があります適切に処理するには、次の場所。
+2つ目の方法として、PCM 以外の pin に[データの交差ハンドラー](proprietary-data-intersection-handlers.md)を実装します。 PortCls には組み込みハンドラーが用意されていますが、この既定のハンドラーは常に PCM を選択するので、PCM 以外の形式に独自のハンドラーを追加する必要があります。 PCM 以外の pin の交差ハンドラーでは、WAVE\_形式\_PCM をサポートしないようにする必要があります。 このハンドラーは*Outputbufferlength* 0 で呼び出すことができます。この場合、呼び出し元は、データ自体ではなく、優先データ範囲のサイズのみを要求します。 この場合、ハンドラーは、PCM データ範囲のサイズを*resultの*形式の値パラメーターにコピーして、ステータス\_バッファー\_オーバーフローを返すことで応答する必要があります。 Windows Driver Kit (WDK) の Msvad サンプルには、ハンドラーの例として使用できる[**Datarangeintersection 集合**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)ルーチンのコードが含まれています。 **Datarangeintersection 部分**ルーチンをテストするには、 [ksk studio ユーティリティ](ksstudio-utility.md)を使用して pin をインスタンス化します。最初に、使用可能な既定の形式を決定するために、共通部分ハンドラーを呼び出します。 PCM 以外の形式をサポートするには、ドライバーが次の場所で適切に処理する必要があります。
 
--   [**IMiniport::DataRangeIntersection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)
+-   [**IMiniport::D ataRangeIntersection 部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)
 
--   ミニポート ドライバー メソッド**Init**と**NewStream** (たとえばを参照してください[ **IMiniportWavePci::Init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)と[ **IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream))。
+-   ミニポートドライバーのメソッド**init**と**newstream** (たとえば、「 [**IMiniportWavePci:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init) 」と「 [**IMiniportWavePci:: newstream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)」を参照してください)。
 
--   ミニポート ストリーム メソッド**SetFormat** (たとえばを参照してください[ **IMiniportWavePciStream::SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setformat))。
+-   ミニポート-ストリームメソッドの**setformat** (例[ **: IMiniportWavePciStream:: setformat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-setformat)を参照)。
 
  
 

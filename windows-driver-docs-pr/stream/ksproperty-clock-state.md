@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_クロック\_状態
-description: クライアントの使用、KSPROPERTY\_クロック\_STATE プロパティ、pin のストリーミングの状態を確認します。
+title: KSK プロパティ\_CLOCK\_状態
+description: クライアントは、KSK プロパティ\_CLOCK\_STATE プロパティを使用して、pin のストリーミング状態を判断します。
 ms.assetid: c041b896-524b-4a7a-bb2c-9061c08f763c
 keywords:
-- KSPROPERTY_CLOCK_STATE ストリーミング メディア デバイス
+- KSPROPERTY_CLOCK_STATE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a00284a74243602da6004af8757d9823f264707
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 87a478367b0412722ff142f4a0b29763fda79acc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373135"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826883"
 ---
-# <a name="kspropertyclockstate"></a>KSPROPERTY\_クロック\_状態
+# <a name="ksproperty_clock_state"></a>KSK プロパティ\_CLOCK\_状態
 
 
-クライアントの使用、KSPROPERTY\_クロック\_STATE プロパティ、pin のストリーミングの状態を確認します。
+クライアントは、KSK プロパティ\_CLOCK\_STATE プロパティを使用して、pin のストリーミング状態を判断します。
 
 ## <span id="ddk_ksproperty_clock_state_ks"></span><span id="DDK_KSPROPERTY_CLOCK_STATE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373135"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373135"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)"><strong>KSSTATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)"><strong>KSSTATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ ms.locfileid: "67373135"
 <a name="remarks"></a>注釈
 -------
 
-参照してください[KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
+「 [KS のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)」も参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ ms.locfileid: "67373135"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ ms.locfileid: "67373135"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)
+[**KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)
 
  
 

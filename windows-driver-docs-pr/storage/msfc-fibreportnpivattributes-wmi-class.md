@@ -4,19 +4,19 @@ description: MSFC\_FibrePortNPIVAttributes WMI クラス
 ms.assetid: A778E00A-476C-4763-B652-3312B7913F9C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b2df992d966c401eb5f3e1c18b40c927538413e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a35aa5a94f30d268eb28b510d6ba1d2a2d2352d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382557"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826136"
 ---
-# <a name="msfcfibreportnpivattributes-wmi-class"></a>MSFC\_FibrePortNPIVAttributes WMI クラス
+# <a name="msfc_fibreportnpivattributes-wmi-class"></a>MSFC\_FibrePortNPIVAttributes WMI クラス
 
 
-WMI クライアントが使用、MSFC\_FibrePortNPIVAttributes クラス仮想ポートを物理ポートの作成に関する情報を取得します。
+WMI クライアントは、MSFC\_FibrePortNPIVAttributes クラスを使用して、物理ポート用に作成された仮想ポートに関する情報を取得します。
 
-MSFC\_FibrePortNPIVAttributes クラスが次のように定義されている*Npivwmi.mof*:
+MSFC\_FibrePortNPIVAttributes クラスは、 *Npivwmi*で次のように定義されています。
 
 ```mof
 class MSFC_FibrePortNPIVAttributes   
@@ -41,9 +41,9 @@ class MSFC_FibrePortNPIVAttributes
 };
 ```
 
-WMI ツール スイートによってコンパイルされると、このクラスの定義には、次のデータ構造が生成されます。
+このクラス定義は、WMI ツールスイートによってコンパイルされると、次のデータ構造を生成します。
 
-[**MSFC\_FibrePortNPIVAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/npivwmi/ns-npivwmi-_msfc_fibreportnpivattributes)
+[**MSFC\_FibrePortNPIVAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/npivwmi/ns-npivwmi-_msfc_fibreportnpivattributes)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

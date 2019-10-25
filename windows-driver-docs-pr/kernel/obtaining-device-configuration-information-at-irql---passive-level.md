@@ -1,32 +1,32 @@
 ---
-title: IRQL PASSIVE_LEVEL にデバイスの構成情報の取得
-description: IRQL PASSIVE_LEVEL にデバイスの構成情報の取得
+title: IRQL PASSIVE_LEVEL でのデバイス構成情報の取得
+description: IRQL PASSIVE_LEVEL でのデバイス構成情報の取得
 ms.assetid: 672fb3d8-6e64-425b-a035-8f8ecfd624f1
 keywords:
-- デバイス構成領域、I/O の WDK カーネル
-- デバイス構成領域 WDK I/O
-- 構成領域 WDK I/O
-- WDK の I/O の領域
+- I/o WDK カーネル、デバイス構成領域
+- デバイス構成領域 WDK i/o
+- 構成領域の WDK i/o
+- 領域 WDK i/o
 - PASSIVE_LEVEL WDK
-- ドライバー スタック WDK 構成情報
+- ドライバースタック WDK の構成情報
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df25c490a2d5145a65ba8b5bab1a3d8ca134fb47
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cebb5529949268dd829db22c20b9e77a88ff348f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384931"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827747"
 ---
-# <a name="obtaining-device-configuration-information-at-irql--passivelevel"></a>IRQL でデバイスの構成情報を取得するパッシブ =\_レベル
+# <a name="obtaining-device-configuration-information-at-irql--passive_level"></a>IRQL = パッシブ\_レベルでのデバイス構成情報の取得
 
 
 
 
 
-IRQL でアクセスのデバイス構成領域にパッシブ =\_レベルが使用する必要があります[ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[ **IRP\_MN\_書き込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)します。 IRP スタックの指定の構成領域にアクセスして、I/O バッファーがします。 説明を参照して、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)詳細については、構造体。
+IRQL = パッシブ\_レベルでデバイスの構成領域にアクセスするには、Irp を使用する必要があります。 [ **\_\_読み取り\_config**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[**irp\_\_書き込み\_構成を書き込む**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)必要があります。 IRP スタックで、アクセスする構成領域と i/o バッファーの場所を指定します。 詳細については、 [**IO\_STACK\_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)構造体の説明を参照してください。
 
-次のコード サンプルでは、デバイスの構成の領域にアクセスする方法を示します。
+次のコードサンプルは、デバイスの構成領域にアクセスする方法を示しています。
 
 ```cpp
 NTSTATUS

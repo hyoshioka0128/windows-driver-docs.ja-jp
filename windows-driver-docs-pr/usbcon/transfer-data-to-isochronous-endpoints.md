@@ -1,200 +1,200 @@
 ---
-Description: このトピックでは、クライアント ドライバーが、USB 要求ブロック (URB) USB デバイス アイソクロナス エンドポイントとの間のデータ転送を作成する方法について説明します。
+Description: このトピックでは、USB デバイスでアイソクロナスエンドポイントとの間でデータを転送するために、クライアントドライバーで USB 要求ブロック (URB) を作成する方法について説明します。
 title: USB 等時性エンドポイントへのデータの転送方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24bcfa23b9930ed85d4c2a99b2f813b37cd34ea0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d586ab2251a957c305980424bfd7e09532d05f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369544"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824164"
 ---
 # <a name="how-to-transfer-data-to-usb-isochronous-endpoints"></a>USB 等時性エンドポイントへのデータの転送方法
 
 
-このトピックでは、クライアント ドライバーが、USB 要求ブロック (URB) USB デバイス アイソクロナス エンドポイントとの間のデータ転送を作成する方法について説明します。
+このトピックでは、USB デバイスでアイソクロナスエンドポイントとの間でデータを転送するために、クライアントドライバーで USB 要求ブロック (URB) を作成する方法について説明します。
 
-ユニバーサル シリアル バス (USB) デバイスでは、オーディオ/ビデオ ストリーミングなど、一定の速度で時間に依存するデータを転送するアイソクロナス エンドポイントをサポートできます。 データを転送するには、クライアント ドライバーは、アイソクロナス エンドポイントにデータを読み書きの要求を発行します。 その結果、ホスト コント ローラーは、一定の間隔でデバイスをポーリングすることによってデータを送受信するアイソクロナスの転送を開始します。
+ユニバーサルシリアルバス (USB) デバイスでは、オーディオ/ビデオストリーミングなど、時間に依存するデータを安定した速度で転送するために、アイソクロナスエンドポイントをサポートできます。 データを転送するために、クライアントドライバーは、アイソクロナスエンドポイントに対してデータの読み取りまたは書き込みを行う要求を発行します。 その結果、ホストコントローラーは、デバイスを定期的にポーリングすることによってデータを送受信するアイソクロナス転送を開始します。
 
-高速とフル_スピードのデバイスでは、(入力/出力) パケットのトークンを使用して、ポーリングが行われます。 エンドポイントのデータを送信する準備ができたら、デバイスは、データを送信して IN トークン パケットの 1 つに応答します。 デバイスへの書き込みには、ホスト コント ローラーは、データ パケットを続けて、外トークン パケットを送信します。 ホスト コント ローラーまたはデバイスのハンドシェイク パケットを送信しませんし、そのため、配信の保証はありません。 ホスト コント ローラーが、転送を再試行しませんのでは、エラーが発生した場合のデータが失われます。
+高速および高速のデバイスの場合、ポーリングは (IN/OUT) トークンパケットを使用して行われます。 エンドポイントがデータを送信する準備ができたら、デバイスはデータを送信することによって、トークンパケット内のいずれかに応答します。 デバイスに書き込むには、ホストコントローラーは、OUT トークンパケットの後にデータパケットを送信します。 ホストコントローラーまたはデバイスでハンドシェイクパケットが送信されないため、保証された配信が行われません。 ホストコントローラーは転送を再試行しないため、エラーが発生するとデータが失われる可能性があります。
 
-Isochronous 転送には、ホスト コント ローラーは、バス上の特定の期間を予約します。 アイソクロナス エンドポイントの予約済みの時間を管理するため、時間が分割連続する論理スニーカーと呼びます*間隔のバス*します。 バスの間隔の単位は、バス速度に依存します。
+アイソクロナス転送の場合、ホストコントローラーは特定の期間をバスに予約します。 アイソクロナスエンドポイントの予約時間を管理するには、時間を連続する論理 chucks に分割して、*バス間隔*と呼びます。 バス間隔の単位はバス速度によって異なります。
 
-フル スピードは、バスの間隔は、*フレーム*します。 フレームの長さは、1 ミリ秒です。
+完全な速度の場合、バス間隔は*フレーム*です。 フレームの長さは1ミリ秒です。
 
-高速および SuperSpeed は、バス間隔は、microframe です。 Microframe の長さは、125 (マイクロ秒) です。 8 つの連続する microframes を構成するいずれかの高速または SuperSpeed フレーム。
+高速および SuperSpeed の場合、バス間隔はマイクロフレームです。 マイクロフレームの長さは125マイクロ秒です。 8個の連続するマイクロフレームは、1つの高速または SuperSpeed フレームを構成します。
 
-Isochronous 転送は、基に、パケットです。 用語*アイソクロナス パケット*このトピックでは 1 つのバスの間隔で転送されるデータの量を指します。 エンドポイントの特性は、各パケットのサイズが固定されており、エンドポイントの特性によって決まりますを決定します。
+アイソクロナス転送はパケットベースです。 このトピックの「*アイソクロナスパケット*とは」という用語は、1つのバス間隔で転送されるデータの量を指します。 エンドポイントの特性によって、各パケットのサイズが固定され、エンドポイントの特性によって決定されます。
 
-クライアント ドライバーでは、要求に対して、URB を作成し、USB ドライバー スタックに URB を送信してアイソクロナスの転送を開始します。 USB ドライバー スタックの下位のドライバーのいずれかによって、要求が処理されます。 URB を受信すると、USB ドライバー スタックは、要求の一連の検証とスケジュールのトランザクションを実行します。 フル スピードは、各 bus 間隔で転送されるアイソクロナスのパケットは、ネットワーク上で単一のトランザクションで含まれています。 特定の高速デバイスは、バスの間隔で複数のトランザクションを許可します。 その場合は、クライアント ドライバーは送信または 1 つの要求 (URB) isochronous パケットでより多くのデータを受信できます。 SuperSpeed デバイスは、複数のトランザクションをサポートし、バースト転送では、バスの間隔ごとのさらに多くのバイト数を許可します。 バースト転送の詳細については、USB 3.0 仕様ページ 9 42 を参照してください。
+クライアントドライバーは、要求の URB を作成し、USB ドライバースタックに URB を送信することによって、アイソクロナス転送を開始します。 要求は、USB ドライバースタック内の下位のドライバーのいずれかによって処理されます。 USB ドライバースタックは、URB を受け取ると、一連の検証を実行し、要求のトランザクションをスケジュールします。 全速度で、各バス間隔で転送されるアイソクロナスパケットは、ネットワーク上の1つのトランザクションに含まれます。 特定の高速デバイスでは、バス間隔で複数のトランザクションを許可します。 この場合、クライアントドライバーは、1つの要求 (URB) で、アイソクロナスパケット内のデータをさらに送受信できます。 SuperSpeed デバイスでは、複数のトランザクションとバースト転送がサポートされているため、バス間隔ごとにさらに多くのバイトを利用できます。 バースト転送の詳細については、「USB 3.0 仕様ページ9-42」を参照してください。
 
 ### <a name="prerequisites"></a>前提条件
 
-アイソクロナスの転送要求を作成する前に、アイソクロナス エンドポイントが開かれたパイプに関する情報が必要です。
+アイソクロナス転送の要求を作成する前に、アイソクロナスエンドポイント用に開かれているパイプに関する情報が必要です。
 
-Windows Driver Model (WDM) ルーチンを使用するクライアント ドライバーでは、いずれかでパイプ情報が含まれている、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)の構造を[ **USBD\_インターフェイス\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列。 クライアント ドライバーでは、ドライバーの構成を選択する前回の要求では、その配列またはデバイスのインターフェイスを取得します。
+Windows Driver Model (WDM) ルーチンを使用するクライアントドライバーには、 [**USBD\_インターフェイス\_LIST\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)配列の[**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造のいずれかにパイプ情報が含まれています。 クライアントドライバーは、デバイスの構成またはインターフェイスを選択するために、ドライバーの前の要求でその配列を取得します。
 
-Windows Driver Framework (WDF) のクライアント ドライバーは、フレームワークの対象になるパイプ オブジェクトと呼び出しへの参照を取得する必要があります[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)パイプ情報を取得する、 [**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体。
+Windows Driver Framework (WDF) クライアントドライバーは、フレームワークのターゲットパイプオブジェクトへの参照を取得し、 [**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)を呼び出して[**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)のパイプ情報を取得する必要があります。データ.
 
-パイプの情報に基づき、この一連の情報を決定します。
+パイプ情報に基づいて、次の情報セットを決定します。
 
--   ホスト コント ローラーは、パイプの各パケットに、データの量を送信できます。
+-   ホストコントローラーが各パケットのパイプに送信できるデータの量。
 
-    クライアント ドライバーは、要求で送信できるデータの量は、ホスト コント ローラーが送信またはエンドポイントから受信するバイトの最大数を超えることはできません。 最大バイト数がで示される、 **MaximumPacketSize**のメンバー [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)と[**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体。 USB ドライバー スタックのセット、 **MaximumPacketSize**値、構成を選択または選択インターフェイス要求中にします。
+    クライアントドライバーが要求で送信できるデータの量は、ホストコントローラーがエンドポイントから送受信できる最大バイト数を超えることはできません。 最大バイト数は、 [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)と[**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体の**MaximumPacketSize**メンバーによって示されます。 USB ドライバースタックは、選択構成または選択インターフェイスの要求中に、 **MaximumPacketSize**値を設定します。
 
-    フル スピード デバイス、 **MaximumPacketSize**の最初の 11 ビットから派生したが、 **wMaxPacketSize**のエンドポイントができるバイトの最大数を示すエンドポイント記述子フィールド送信またはトランザクションで受信します。 フル スピード デバイスのコント ローラーは、バス間隔ごとの 1 つのトランザクションを送信します。
+    全速度のデバイスの場合、 **MaximumPacketSize**はエンドポイント記述子の**wMaxPacketSize**フィールドの最初の11ビットから派生します。これは、エンドポイントがトランザクションで送受信できる最大バイト数を示します。 全速度のデバイスの場合、コントローラーはバス間隔ごとに1つのトランザクションを送信します。
 
-    Isochronous 転送を高速ホスト コント ローラーが、エンドポイントを使用して場合に、バスの間隔で追加のトランザクションを送信できます。 その他のトランザクションの数が、デバイスごとに設定し、のビット 12..11 に示されている、 **wMaxPacketSize**します。 その数 0、1、または 2 を使用できます。 12..11 0 場合、microframe あたり追加のトランザクションは、エンドポイントではサポートされていません。 数が 1 の場合は、ホスト コント ローラーが別のトランザクション (microframe あたり 2 つのトランザクションの合計); できます送信2 では、2 つの追加トランザクション (microframe あたり 3 つのトランザクションの合計) を示します。 **MaximumPacketSize** USB ドライバー スタックで設定されている値には、追加のトランザクションで送信できるバイト数が含まれています。
+    高速のアイソクロナス転送では、ホストコントローラーは、エンドポイントで許可されている場合、追加のトランザクションをバス間隔で送信できます。 追加トランザクションの数はデバイスによって設定され、 **wMaxPacketSize**のビット 12.. 11 で示されます。 この数値には、0、1、または2を指定できます。 12.. 11 が0を示す場合、マイクロフレームあたりの追加トランザクションは、エンドポイントでサポートされていません。 この数値が1の場合、ホストコントローラーは追加のトランザクション (マイクロフレームあたり2つのトランザクションの合計) を送信できます。2 2 つの追加トランザクション (マイクロフレームあたり3トランザクションの合計) を示します。 USB ドライバースタックによって設定される**MaximumPacketSize**値には、追加のトランザクションで送信できるバイト数が含まれます。
 
-    USB の特定の値、SuperSpeed isochronous 転送の\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子が重要です (Usbspec.h を参照してください)。 USB ドライバー スタックでは、これらの値を使って、バス間隔の最大バイト数を計算します。
+    SuperSpeed アイソクロナス転送の場合、USB\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子の特定の値 (Usbspec を参照) が重要です。 USB ドライバースタックは、これらの値を使用して、バス間隔の最大バイト数を計算します。
 
-    -   **Isochronous.Mult**エンドポイント コンパニオンの記述子フィールド。 SuperSpeed isochronous 転送では、(より高速デバイス) などの追加のトランザクションをバースト トランザクションと呼びます。 **Mult**値は、エンドポイントがサポートされるバースト トランザクションの最大数を示します。 サービス期間内 (0 ~ 2 のインデックス付き)、3 つまでのバースト トランザクションがあります。
-    -   **bMaxBurst**エンドポイント コンパニオンの記述子フィールド。 この値は、チャンクの数を示します。 **wMaxPacketSize**バーストの 1 つのトランザクション内に存在することができます。 バーストのトランザクションで最大 16 のチャンクが (0 ~ 15 のインデックス付き) があります。
-    -   **wBytesPerInterval**ホストが送信できるまたはバス間隔で受信するバイトの合計数を示します。 場合でも、バス間隔あたりのバイト数の最大数として計算できます (**bMaxBurst**+1) \* (**Mult**+1) \* **wMaxPacketSize**、USB 3.0 の仕様では、使用することをお勧め、 **wBytesPerInterval**値の代わりにします。 **WBytesPerInterval**値はその計算値未満である必要があります。
+    -   エンドポイントコンパニオン記述子の**Mult**フィールド。 SuperSpeed アイソクロナス転送では、追加のトランザクション (高速デバイスと同様) がバーストトランザクションと呼ばれます。 **Mult**値は、エンドポイントがサポートするバーストトランザクションの最大数を示します。 サービス間隔には、最大3つのバーストトランザクション (インデックス 0 ~ 2) を指定できます。
+    -   エンドポイントコンパニオン記述子の**Bmaxburst**フィールド。 この値は、1つのバーストトランザクション内に存在できる**wMaxPacketSize**のチャンクの数を示します。 バーストトランザクションでは、最大16個のチャンク (インデックス0から 15) を使用できます。
+    -   **Wbytesperinterval**は、ホストがバス間隔で送信または受信できるバイトの合計数を示します。 バス間隔あたりの最大バイト数は、(**Bmaxburst**+ 1) \* (**Mult**+ 1) \* **wMaxPacketSize**として計算できますが、USB 3.0 仕様では**wbytesperinterval**値を使用することをお勧めします。 **Wbytesperinterval**値は、その計算値以下である必要があります。
 
-    **重要な**上記で説明されている値は、クライアント ドライバーは情報提供用です。 ドライバーは常に使用する必要があります、 **MaximumPacketSize**転送バッファーのレイアウトを判別エンドポイント記述子の値。
+    **重要** クライアントドライバーの場合は、上記で説明した値のみが情報に使用されます。 ドライバーは、常にエンドポイント記述子の**MaximumPacketSize**値を使用して、転送バッファーのレイアウトを決定する必要があります。
 
 
 
--   どのくらいの頻度は、エンドポイント データ送信または受信します。
+-   エンドポイントは、どのくらいの頻度でデータを送受信します。
 
-    **間隔**メンバーは、エンドポイントが送信またはデータの受信頻度を決定するために使用します。 値と、クライアント ドライバー変更することはできませんが、デバイスに設定します。 USB ドライバー スタックは別の番号を使用してデータ ストリームにアイソクロナス パケットを挿入する頻度を決定します。 から派生するポーリング期間、**間隔**値。
+    **Interval**メンバーは、エンドポイントがデータを送受信する頻度を決定するために使用されます。 デバイスはその値を設定し、クライアントドライバーは変更できません。 USB ドライバースタックでは、別の数値を使用して、データストリームにアイソクロナスパケットを挿入する頻度を決定します。ポーリング期間は、**間隔**の値から派生します。
 
-    フル スピードの送信、**間隔**とポーリングの期間の値は常に 1; USB ドライバー スタックは、その他の値を無視します。
+    高速転送の場合、**間隔**とポーリング期間の値は常に1です。USB ドライバースタックでは、他の値は無視されます。
 
-    次の表は**間隔**と高速および SuperSpeed 転送の計算のポーリング期間。
+    次の表に、高速転送と SuperSpeed 転送の**間隔**と計算されたポーリング期間を示します。
 
-    | 間隔 | ポーリング間隔 (2Interval 1)                      |
+    | 間隔 | ポーリング期間 (2Interval-1)                      |
     |----------|---------------------------------------------------|
-    | 1        | 1 になります。データが転送されるすべてのバス間隔。        |
-    | 2        | 2 です。データが転送される 2 つ目のバス間隔。 |
-    | 3        | 4 です。データが転送される 4 つ目のバス間隔。 |
-    | 4        | 8 です。データが転送される 8 番目のバス間隔。 |
+    | 1        | 1データはバス間隔ごとに転送されます。        |
+    | 2        | 3データは、2番目のバス間隔ごとに転送されます。 |
+    | 3        | 4/44番目のバス間隔ごとにデータが転送されます。 |
+    | ホーム フォルダーが置かれているコンピューターにアクセスできない        | 8データは、8番目のバス間隔ごとに転送されます。 |
 
 
 
--   各バス速度のパケットの数に制限は。
+-   各バス速度のパケット数の制限は何ですか。
 
-    URB、のみを送信できます最大 255 アイソクロナス パケット フル スピード デバイスです。高速および SuperSpeed デバイスでの URB で 1024 パケット。 URB で送信するパケットの数は、各フレームでパケットの数の倍数である必要があります。
+    URB では、最大255のアイソクロナスパケットを送信できるのは、全速度のデバイスに対してのみです。1024高速および SuperSpeed デバイスでの URB 内のパケット数。 URB で送信するパケットの数は、各フレームのパケット数の倍数である必要があります。
 
-    | ポーリング間隔 | 高速/SuperSpeed のパケットの数 |
+    | ポーリング期間 | 高速/SuperSpeed のパケット数 |
     |----------------|---------------------------------------------|
-    | 1              | 8 の倍数                               |
-    | 2              | 4 の倍数                               |
-    | 3              | 2 の倍数                               |
-    | 4              | 任意                                         |
+    | 1              | 8の倍数                               |
+    | 2              | 4の倍数                               |
+    | 3              | 2の倍数                               |
+    | ホーム フォルダーが置かれているコンピューターにアクセスできない              | 任意                                         |
 
 
 
-例の完全な速度エンドポイントを検討してください**wMaxPacketSize** 1,023 です。 この例では、アプリケーションは、25,575 バイトのバッファーを提供します。 そのバッファーの転送には、25 アイソクロナス パケット (25575/1023) が必要です。
+**WMaxPacketSize**が1023の高速エンドポイントの例を考えてみましょう。 この例では、アプリケーションによって25575バイトのバッファーが提供されています。 このバッファーの転送には、25台のアイソクロナスパケット (25575/1023) が必要です。
 
-次の特性を持つ高速のエンドポイントをエンドポイント記述子に示されている例を検討してください。
+エンドポイント記述子に示されている次の特性を持つ高速エンドポイントの例を考えてみましょう。
 
--   **wMaxPacketSize** 1,024 です。
--   12..11 のビットは、2 つの追加トランザクションを示します。
--   **間隔**は 1 です。
+-   **wMaxPacketSize**は1024です。
+-   Bits 12.. 11 では、2つのトランザクションが追加で示されます。
+-   **間隔**は1です。
 
-クライアント ドライバーを選択した後構成では、 **MaximumPacketSize**アイソクロナス パイプ示します 3,072 バイトの (トランザクション数合計\* **wMaxPacketSize**)。 その他のトランザクションを使用すると、クライアント ドライバーですべての microframe 3,072 バイトおよび 1 つのフレームで 24,576 バイト数の合計を転送します。 次の図は、高速な転送の 1 つ microframe でアイソクロナスのパケットを転送する頻度を示します。
+クライアントドライバーによって構成が選択されると、MaximumPacketSize パイプのは3072バイト (\* トランザクション総数は**wMaxPacketSize**) を示します。 追加のトランザクションを使用すると、クライアントドライバーはすべてのマイクロフレームで3072バイト、1フレームで合計24576バイトを転送できます。 次の図は、高速転送のために1つのマイクロフレームでアイソクロナスパケットが転送される頻度を示しています。
 
 ![アイソクロナス転送](images/iso-packets.png)
 
-エンドポイントと SuperSpeed エンドポイント コンパニオンの記述子に示されているこれらの特性を持つ、たとえば、SuperSpeed エンドポイントを考慮してください。
+エンドポイントおよび SuperSpeed エンドポイントコンパニオン記述子に示されている以下の特性を持つ SuperSpeed エンドポイントの例を考えてみましょう。
 
--   **wMaxPacketSize** 1,024 です。
--   **bMaxBurst** 15 です。
--   **間隔**は 1 です。
--   **Isochronous.Mult**は 2 です。
--   **wBytesPerInterval** 45000 です。
+-   **wMaxPacketSize**は1024です。
+-   **Bmaxburst**は15です。
+-   **間隔**は1です。
+-   **Mult**は2です。
+-   **Wbytesperinterval**は45000です。
 
-前の例では、最大バイト数として計算できますもで**wMaxPacketSize** \* (**bMaxBurst** +1) \* (**Mult** + 1)49,152 バイトでその結果、デバイスの制限値を**wBytesPerInterval** 45,000 バイト値。 値がも反映**MaximumPacketSize** 45,000 します。 クライアント ドライバーを使用する必要がありますのみ、 **MaximumPacketSize**値。 この例では、バーストの 3 つのトランザクションに要求を分割できます。 最初の 2 つのバースト トランザクションの 16 のチャンクを含む**wMaxPacketSize**します。 最後のバースト トランザクションには、残りのバイトを保持するために 12 のチャンクが含まれています。 このイメージは、ポーリング間隔と SuperSpeed 伝送アイソクロナスのパケットを転送されたバイト数を示します。
+前の例では、最大バイト数を**wMaxPacketSize** \* (**bmaxburst** + 1) \* (**Mult** + 1) として計算し、49152バイトにすることができましたが、デバイスは**wbytesperinterval**に値を制限します。45000バイトの値。 この値は、 **MaximumPacketSize** 45000 にも反映されます。 クライアントドライバーは、 **MaximumPacketSize**値のみを使用する必要があります。 この例では、要求を3つのバーストトランザクションに分割できます。 最初の2つのバーストトランザクションには、 **wMaxPacketSize**の16個のチャンクが含まれています。 最後のバーストトランザクションには、残りのバイトを保持する12個のチャンクが含まれています。 このイメージは、SuperSpeed 伝送のために、ポーリング間隔とアイソクロナスパケット経由で転送されたバイト数を示します。
 
 ![superspeed アイソクロナス](images/iso-packets-superspeed.png)
 
-次の手順では、アイソクロナスの転送の要求を構築する方法について説明します。
+次の手順では、アイソクロナス転送の要求を作成する方法について説明します。
 
-1.  各 isochronous パケットのサイズを取得します。
-2.  フレームごとの isochronous パケットの数を決定します。
-3.  転送内容をすべてのバッファーを保持するために必要な isochronous パケットの数を計算します。
-4.  割り当て、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)転送の詳細を説明する構造体。
-5.  各 isochronous パケット、パケットのオフセットなどの詳細を指定します。
+1.  各アイソクロナスパケットのサイズを取得します。
+2.  フレームあたりのアイソクロナスパケット数を決定します。
+3.  転送バッファー全体を保持するために必要なアイソクロナスパケットの数を計算します。
+4.  転送の詳細を説明するために、 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体を割り当てます。
+5.  パケットオフセットなど、各アイソクロナスパケットの詳細を指定します。
 
-完全なコード アイソクロナスを送信する方法の例は、USBSAMP 要求を転送します。
+アイソクロナス転送要求の送信に関する完全なコード例については、USBSAMP をご覧ください。
 
-この例では、このトピックでは、アイソクロナス転送の USBSAMP 実装を簡略化します。 サンプルでは、転送に必要なフレームの合計数を計算します。 転送バッファーは、フレームに送信できるデータの量に基づき、小さいチャンク サイズ (バイト) に分けられます。
+このトピックのこの例では、USBSAMP のアイソクロナス転送の実装を簡略化します。 このサンプルでは、転送に必要な合計フレーム数を計算します。 フレームで送信できるデータの量に基づいて、転送バッファーはより小さなチャンクサイズのバイトに分割されます。
 
-次の手順では、上記の手順を詳しく説明して、計算とクライアント ドライバーは、ビルドし、高速アイソクロナス エンドポイント アイソクロナス転送要求の送信に使用できるルーチンを示しています。 プロシージャで使用される値は、前に説明した例のエンドポイントの特性に基づいています。
+次の手順では、前の手順を詳述し、クライアントドライバーが高速のアイソクロナスエンドポイントのアイソクロナス転送要求を作成して送信するために使用できる計算とルーチンを示します。 このプロシージャで使用される値は、前に説明したエンドポイントの特性の例に基づいています。
 
 <a name="instructions"></a>手順
 ------------
 
-### <a href="" id="get-the-size-of-an-isochronous-packet--"></a>手順 1:アイソクロナスのパケットのサイズを取得します。
+### <a href="" id="get-the-size-of-an-isochronous-packet--"></a>手順 1: アイソクロナスパケットのサイズを取得します。
 
-パイプの検査することによってアイソクロナスのパケット サイズを決定する**MaximumPacketSize**値。
+パイプの**MaximumPacketSize**値を調べることによって、アイソクロナスパケットのサイズを決定します。
 
-完全な高速転送、アイソクロナスのパケットのサイズは 1 つのフレームで転送できるバイト数です。 高速および SuperSpeed 転送、アイソクロナスのパケットのサイズが 1 つ microframe で転送できるバイトの合計数。 これらの値は、パイプに示される**MaximumPacketSize**します。
+高速転送では、アイソクロナスパケットのサイズは1つのフレームで転送可能なバイト数です。 高速伝送と SuperSpeed 転送の場合、1つのマイクロフレームで転送できる合計バイト数は、アイソクロナスパケットのサイズです。 これらの値は、パイプの**MaximumPacketSize**に示されます。
 
-例では、 **MaximumPacketSize**は 1023 バイト (フル_スピード) フレームあたり; microframe (高速) あたりのバイト数を 3072; microframe (SuperSpeed) あたり 45,000 のバイト数。
+この例では、 **MaximumPacketSize**はフレームあたり1023バイト (全速度) です。マイクロフレームあたり3072バイト (高速);マイクロフレームあたり45000バイト (SuperSpeed)。
 
-**注**、 **MaximumPacketSize**値がアイソクロナス パケットの最大許容サイズを示します。 クライアント ドライバーは、任意の値を各 isochronous パケットのサイズを設定できますより小さい**MaximumPacketSize**値。
+**メモ** **MaximumPacketSize**値は、アイソクロナスパケットの最大許容サイズを示します。 クライアントドライバーは、各アイソクロナスパケットのサイズを**MaximumPacketSize**値よりも小さい値に設定できます。
 
 
 
-### <a href="" id="determine-the-number-of-isochronous-packets-per-frame-"></a>手順 2:フレームごとの isochronous パケットの数を決定します。
+### <a href="" id="determine-the-number-of-isochronous-packets-per-frame-"></a>手順 2: フレームあたりのアイソクロナスパケット数を決定します。
 
-フル スピードの伝送の各フレームで 1 つの isochronous パケットを転送します。
+高速転送では、各フレームで1つのアイソクロナスパケットを転送します。
 
-高速および SuperSpeed 転送では、この値は、間隔の値から派生する必要があります。 この例では間隔は 1 です。 そのため、isochronous パケットの数がフレームあたり 8 個である必要があります。 その他の間隔の値は、前提条件のセクションの表を参照してください。
+高速伝送と SuperSpeed 転送の場合、この値は Interval 値から派生する必要があります。 この例では、Interval は1です。 そのため、アイソクロナスパケットの数はフレームあたり8個である必要があります。 その他の間隔の値については、「前提条件」セクションの表を参照してください。
 
-### <a href="" id="calculate-the-number-of-isochronous-packets-that-are-required-to-hold-the-entire-transfer-buffer-"></a>手順 3:転送内容をすべてのバッファーを保持するために必要な isochronous パケットの数を計算します。
+### <a href="" id="calculate-the-number-of-isochronous-packets-that-are-required-to-hold-the-entire-transfer-buffer-"></a>手順 3: 転送バッファー全体を保持するのに必要なアイソクロナスパケットの数を計算します。
 
-バッファー全体を転送するために必要な isochronous パケットの数を計算します。 転送バッファーの長さをアイソクロナスのパケットのサイズで割ることによって、この値を計算できます。
+バッファー全体を転送するために必要なアイソクロナスパケットの数を計算します。 この値は、転送バッファーの長さをアイソクロナスパケットのサイズで割ることによって計算できます。
 
-この例で仮定アイソクロナス各パケットのサイズがある**MaximumPacketSize**転送バッファーの長さは、複数の**MaximumPacketSize**値。
+この例では、各アイソクロナスパケットのサイズが**MaximumPacketSize**で、転送バッファーの長さが**MaximumPacketSize**値の倍数であると想定しています。
 
-たとえば、完全高速転送 25,575 バイトの指定されたバッファー 25 アイソクロナス パケット (25575/1023) が必要です。 高速の転送には、24,576 サイズのバッファーは、転送 8 アイソクロナス パケット (24576/3072) に分けられます。 SuperSpeed、360,000 バイト サイズのバッファーは 8 つアイソクロナス パケット (360000/45000) に適合します。
+たとえば、フルスピード転送の場合、指定されたバッファーの25575バイトには25個のアイソクロナスパケット (25575/1023) が必要です。 高速転送の場合、サイズが24576のバッファーは、転送用に8つのアイソクロナスパケット (24576/3072) に分割されます。 SuperSpeed の場合、サイズが36万バイトのバッファーは8つのアイソクロナスパケット (360000/45000) に収まります。
 
-クライアント ドライバーでは、これらの要件を検証する必要があります。
+クライアントドライバーは、次の要件を検証する必要があります。
 
--   アイソクロナス パケットの数は、フレームごとのパケットの数の倍数である必要があります。
--   アイソクロナス パケットを転送する必要がの最大数は、フル スピード デバイス; 255 を超えていない必要があります。1024 を高速または SuperSpeed デバイス。
+-   アイソクロナスパケットの数は、フレームあたりのパケット数の倍数である必要があります。
+-   完全な速度のデバイスでは、転送に必要なアイソクロナスパケットの最大数が255を超えないようにする必要があります。高速または SuperSpeed デバイスの場合は1024。
 
-### <a href="" id="allocate-an-urb-structure-to-describe-the-details-of-the-transfer-"></a>手順 4:転送の詳細を説明する URB 構造体を割り当てます。
+### <a href="" id="allocate-an-urb-structure-to-describe-the-details-of-the-transfer-"></a>手順 4: 転送の詳細を説明するために、URB 構造体を割り当てます。
 
-1.  割り当て、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)非ページ プール内の構造体。
+1.  非ページプールに[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体を割り当てます。
 
-    ドライバーを呼び出す必要があります、クライアント ドライバー WDM ルーチンを使用する場合、 [ **USBD\_IsochUrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate) for Windows 8、Windows Driver Kit (WDK) がある場合。 クライアント ドライバーでは、Windows Vista および Windows オペレーティング システムの以降のバージョンを対象に、ルーチンを使用できます。 Windows 8 の WDK がないか、クライアント ドライバーを以前のバージョンのオペレーティング システムの場合は、呼び出すことによってスタックまたは非ページ プール内の構造を割り当てることができるかどうか[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag).
+    クライアントドライバーが WDM ルーチンを使用している場合、windows 8 用の Windows Driver Kit (WDK) がある場合、ドライバーは[**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_isochurballocate)を呼び出す必要があります。 クライアントドライバーは、このルーチンを使用して、windows Vista 以降のバージョンの Windows オペレーティングシステムを対象にすることができます。 Windows 8 用の WDK がない場合、またはクライアントドライバーが以前のバージョンのオペレーティングシステムを対象としている場合は、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を呼び出して、その構造をスタックまたは非ページプールに割り当てることができます。
 
-    WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)メモリを割り当てる対象のメソッド、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体。
+    WDF クライアントドライバーは、 [**WdfUsbTargetDeviceCreateIsochUrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)メソッドを呼び出して、 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体にメモリを割り当てることができます。
 
-2.  **UrbIsochronousTransfer**のメンバー、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)へのポインターを構造体、 [  **\_URB\_アイソクロナス\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)アイソクロナスの転送の詳細を記述する構造体。 次の初期化**UrbIsochronousTransfer**メンバーとして次のとおりです。
-    -   設定、 **UrbIsochronousTransfer.Hdr.Length** URB のサイズのメンバー。 URB のサイズを取得するには、呼び出す[**取得\_ISO\_URB\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-get_iso_urb_size)マクロ パケットの数を指定します。
-    -   設定、 **UrbIsochronousTransfer.Hdr.Function**メンバー`URB_FUNCTION_ISOCH_TRANSFER`します。
-    -   設定、 **UrbIsochronousTransfer.NumberOfPackets**アイソクロナス パケットの数のメンバー。
-    -   設定、 **UrbIsochronousTransfer.PipeHandle**パイプ エンドポイントに関連付けられている不透明なハンドルにします。 パイプ ハンドルが、ユニバーサル シリアル バス (USB) ドライバー スタックで使用される USBD パイプ ハンドルであることを確認します。
+2.  [**Urb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体の**UrbIsochronousTransfer**メンバーは、アイソクロナス転送の詳細を記述する[ **\_URB\_ISOCH\_TRANSFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer)構造体を指します。 次の**UrbIsochronousTransfer**メンバーを次のように初期化します。
+    -   **UrbIsochronousTransfer**メンバーに URB のサイズを設定します。 URB のサイズを取得するには、 [**get\_ISO\_urb\_size**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-get_iso_urb_size)マクロを呼び出し、パケットの数を指定します。
+    -   **UrbIsochronousTransfer**メンバーを `URB_FUNCTION_ISOCH_TRANSFER`に設定します。
+    -   **UrbIsochronousTransfer**のメンバーに、アイソクロナスパケットの数を設定します。
+    -   UrbIsochronousTransfer を、エンドポイントに関連付けられているパイプの不透明ハンドルに設定し**ます。** パイプハンドルが、Universal Serial Bus (USB) ドライバースタックで使用される USBD パイプハンドルであることを確認します。
 
-        USBD パイプ ハンドルを取得するには、WDF のクライアント ドライバーを呼び出すことができます、 [ **WdfUsbTargetPipeWdmGetPipeHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)メソッドとフレームワークのパイプ オブジェクトへの WDFUSBPIPE ハンドルを指定します。 WDM クライアント ドライバーで取得したのと同じハンドルを使用する必要があります、 **PipeHandle**のメンバー、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。
+        USBD パイプハンドルを取得するために、WDF client ドライバーは[**WdfUsbTargetPipeWdmGetPipeHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)メソッドを呼び出し、フレームワークのパイプオブジェクトへの WDFUSBPIPE ハンドルを指定できます。 WDM クライアントドライバーは、 [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の**PipeHandle**メンバーで取得したものと同じハンドルを使用する必要があります。
 
-    -   転送の方向を指定します。 設定**UrbIsochronousTransfer.TransferFlags** USBD に\_転送\_方向\_IN isochronous 転送 (デバイスからの読み取り); でのUSBD\_転送\_方向\_アイソクロナス (デバイスへの書き込み) 転送の。
-    -   指定、USBD\_開始\_ISO\_転送\_ASAP フラグ**UrbIsochronousTransfer**します。TransferFlags します。 フラグは、次の適切なフレームで、転送を送信する USB ドライバー スタックを指示します。 クライアント ドライバーは、このパイプ アイソクロナスの URB を送信する最初に、可能なとすぐに、ドライバー スタックは URB でアイソクロナス パケットを送信します。 USB ドライバー スタックは、そのパイプで後続の翻訳を使用する次のフレームを追跡します。 USBD を使用する後続の isochronous URB の送信に遅延がある場合\_開始\_ISO\_転送\_ASAP フラグ、ドライバー スタックが遅延するには、その URB の一部またはすべてのパケットを考慮して、ものは転送されませんパケット。
+    -   転送の方向を指定します。 UrbIsochronousTransfer を USBD に設定して、(デバイスからの) アイソクロナス転送の場合は、で\_を\_\_転送**します**。USBD\_転送では、(デバイスへの書き込み) アイソクロナス転送に対して\_方向\_送信します。
+    -   **UrbIsochronousTransfer**で USBD\_START\_ISO\_転送\_ASAP フラグを指定します。TransferFlags。 フラグは、次の適切なフレームで転送を送信するように USB ドライバースタックに指示します。 クライアントドライバーがこのパイプのアイソクロナスの URB を初めて送信する場合、ドライバースタックは可能な限り早く、URB 内のアイソクロナスパケットを送信します。 USB ドライバースタックは、そのパイプの後続の URBs に使用する次のフレームを追跡します。 USBD\_を使用するその後のアイソクロナス URB の送信で遅延が発生した場合、\_ASAP フラグの転送\_ISO\_転送を開始します。ドライバースタックは、その URB の一部またはすべてのパケットが遅延していると見なし、それらのパケットを転送しません。
 
-        USB ドライバー スタックのリセット、USBD\_開始\_ISO\_転送\_ASAP 開始フレーム追跡、スタックがそのパイプの前の URB を完了した後、アイソクロナス URB 1024 フレームを受信しない場合。 USBD を指定する代わりに\_開始\_ISO\_転送\_ASAP フラグは、開始フレームを指定することができます。 詳細については、「解説」を参照してください。
+        USB ドライバースタックは、そのパイプの前の URB を完了した後、スタックが1024フレームに対してアイソクロナスの URB を受信しない場合、USBD\_START\_ISO\_TRANSFER\_ASAP start フレーム追跡をリセットします。 USBD\_START\_ISO\_転送\_ASAP フラグを指定する代わりに、開始フレームを指定できます。 詳細については、「解説」を参照してください。
 
-    -   転送バッファーとそのサイズを指定します。 ポインターを設定するには、バッファーに**UrbIsochronousTransfer.TransferBuffer**または[ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)でバッファーを記述する**UrbIsochronousTransfer.TransferBufferMDL**します。
+    -   転送バッファーとそのサイズを指定します。 **UrbIsochronousTransfer**のバッファーへのポインター、または**UrbIsochronousTransfer**内のバッファーを記述する[**MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)を設定できます。
 
-        取得する、 [ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl) WDF のクライアント ドライバーを呼び出すことができます、転送バッファーの[ **WdfRequestRetrieveOutputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)または[ **WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)転送の方向に応じて、します。
+        転送バッファーの[**MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl)を取得するために、WDF クライアントドライバーは、転送の方向に応じて[**WdfRequestRetrieveOutputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)または[**WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)を呼び出すことができます。
 
-### <a href="" id="specify-the-details-of-each-isochronous-packet-in-the-transfer-"></a>手順 5:転送では、各アイソクロナス パケットの詳細を指定します。
+### <a href="" id="specify-the-details-of-each-isochronous-packet-in-the-transfer-"></a>手順 5: 転送における各アイソクロナスパケットの詳細を指定します。
 
-USB ドライバー スタックは、新しい割り当て[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)各アイソクロナスのパケットが、パケットに含まれるデータではなく、情報を保持するのに十分な大きさである構造体。 **URB**構造、 **UrbIsochronousTransfer.IsoPacket**メンバーの配列は、 [ **USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_iso_packet_descriptor)各 isochronous パケットを転送の詳細を説明します。 パケットは、連続している必要があります。 配列内の要素の数は、URB で指定された isochronous パケットの数である必要があります**UrbIsochronousTransfer.NumberOfPackets**メンバー。
+USB ドライバースタックは、パケットに含まれるデータではなく、各アイソクロナスパケットに関する情報を保持するのに十分な大きさの新しい[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造を割り当てます。 **URB**構造体では、 **UrbIsochronousTransfer の IsoPacket**メンバーは、転送中の各アイソクロナスパケットの詳細を示す[**USBD\_ISO\_パケット\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_iso_packet_descriptor)の配列です。 パケットは連続している必要があります。 配列内の要素の数は、URB の**UrbIsochronousTransfer**メンバーに指定されているアイソクロナスパケットの数である必要があります。
 
-高速転送では、配列内の各要素は microframe の 1 つで 1 つの isochronous パケットに関連付けます。 全体の速度、各要素は 1 つのフレームで isochronous パケットが転送された 1 つに関連付けます。
+高速転送の場合、配列内の各要素は1つのマイクロフレーム内の1つのアイソクロナスパケットに関連付けられます。 全スピードでは、各要素が1つのフレームで転送された1つのアイソクロナスパケットに関連付けられます。
 
-各要素に対して、要求の転送内容をすべてのバッファーの先頭からアイソクロナス各パケットのバイト オフセットを指定します。 その値を指定するを設定、 **UrbIsochronousTransfer.IsoPacket\[は\]します。オフセット**メンバー。 USB ドライバー スタックは、送信または受信するのにデータの量を追跡するために、指定した値を使用します。
+各要素について、要求の転送バッファー全体の先頭からの各アイソクロナスパケットのバイトオフセットを指定します。 この値は、\]\[を設定することによって指定できます。 **オフセット**メンバー。 USB ドライバースタックは、指定された値を使用して、送信または受信するデータの量を追跡します。
 
-**完全な高速転送のオフセットを設定**
+**フルスピード転送のオフセットの設定**
 
-例については、これらは、転送バッファーの配列エントリを最高速度で。 フル スピードは、クライアント ドライバーは、1,023 バイトまでの 1 つの isochronous パケットを転送する 1 つのフレームがあります。 25,575 バイトのバッファー転送では、各 1,023 バイト長、25 isochronous パケットを保持できます。 フレーム数が 25 の合計は、バッファー全体の必要があります。
+この例では、転送バッファーの配列エントリは完全に高速です。 クライアントドライバーは、最大で1023バイトまでの1つのアイソクロナスパケットを転送する1つのフレームを備えています。 25575バイトの転送バッファーでは、1023バイトごとに25個のアイソクロナスパケットを保持できます。 バッファー全体には、合計25フレームが必要です。
 
 ``` syntax
 Frame 1 IsoPacket [0].Offset = 0 (start address)
@@ -207,9 +207,9 @@ Frame 25 IsoPacket [24].Offset = 24552
 Total length transferred is 25,575 bytes.
 ```
 
-**高速転送のオフセットを設定**
+**高速転送のオフセットの設定**
 
-例については、高速転送バッファーの配列エントリのうちします。 例は、バッファーが 24,576 (バイト単位) と、クライアント ドライバーには、各 3, 072 バイト長、8 つ isochronous パケットを転送する 1 つのフレームが含まれていることを想定しています。
+この例では、転送バッファーの配列エントリが高速です。 この例では、バッファーが24576バイトであることを前提としています。クライアントドライバーは、8つのアイソクロナスパケット (3072 バイト) を転送するためのフレームを1つ持ちます。
 
 ``` syntax
 Microframe 1 IsoPacket [0].Offset = 0 (start address)
@@ -224,9 +224,9 @@ Microframe 8 IsoPacket [7].Offset = 21504
 Total length transferred is 24,576 bytes.
 ```
 
-**SuperSpeed 転送のオフセットを設定**
+**SuperSpeed 転送のオフセットの設定**
 
-例については、SuperSpeed の配列オフセットです。 45,000 バイトまでの 1 つのフレームを転送することができます。 転送バッファーのサイズ 360,000 が 8 microframes 内に収まります。
+この例では、SuperSpeed の配列オフセットです。 最大45000バイトを1つのフレームに転送できます。 サイズ36万の転送バッファーは8マイクロフレーム内に収まります。
 
 ``` syntax
 Microframe 1 IsoPacket [0].Offset = 0 (start address)
@@ -241,18 +241,18 @@ Microframe 8 IsoPacket [7].Offset = 315000
 Total length transferred is 360,000 bytes.
 ```
 
-**UrbIsochronousTransfer.IsoPacket\[は\]** します。長さのメンバーでは、アイソクロナス URB の各パケットの長さは意味しません。 **IsoPacket\[は\]します。長さ**を実際のアイソクロナス内のデバイスから受信したバイト数を示すために、USB ドライバー スタックによって更新された転送。 転送をアイソクロナスで設定されている値はドライバー スタックには無視**IsoPacket\[は\]します。長さ**します。
+**\]\[UrbIsochronousTransfer** 。Length メンバーは、アイソクロナスの URB の各パケットの長さを意味しません。 **IsoPacket\[\]。長さ**は、USB ドライバースタックによって更新され、転送中のアイソクロナスのデバイスから実際に受信したバイト数を示します。 アイソクロナス出力転送の場合、ドライバースタックは、IsoPacket\[i\]で設定されている値を無視**します。長さ**。
 
 <a name="remarks"></a>注釈
 -------
 
-**転送の開始の USB フレーム番号を指定します。**
+**転送の開始 USB フレーム番号を指定します**
 
-**UrbIsochronousTransfer.StartFrame** URB のメンバーは、転送の開始の USB フレーム数を指定します。 クライアント ドライバーが、URB を送信する時間と USB ドライバー スタックが URB を処理する時間の間の待機時間は常にします。 そのため、クライアント ドライバーはドライバー URB を送信するときは、現在のフレームより後の開始フレームを常に指定する必要があります。 現在のフレーム数を取得するには、クライアント ドライバーが URB を送信できる\_関数\_取得\_現在\_フレーム\_USB ドライバー スタックへの要求の数 ([  **\_URB\_取得\_現在\_フレーム\_数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_get_current_frame_number))。
+URB の UrbIsochronousTransfer メンバーは、転送の開始 USB フレーム番号を指定します **。** クライアントドライバーが URB を送信してから、USB ドライバースタックが URB を処理するまでの間には常に待機時間があります。 したがって、クライアントドライバーは、ドライバーが URB を送信するときに、常に最新のフレームよりも後の開始フレームを指定する必要があります。 現在のフレーム番号を取得するには、クライアントドライバーが URB\_関数を送信して\_現在の\_FRAME\_NUMBER 要求を USB ドライバースタックに取得\_ます ([ **\_urb\_\_現在の\_フレームを取得します。\_番号**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_get_current_frame_number))。
 
-Isochronous 転送の場合、絶対パスは、現在のフレームの違い、 **StartFrame** USBD より小さい値があります\_ISO\_開始\_フレーム\_範囲。 適切な範囲内 StartFrame でない場合、USB ドライバー スタックの設定、**状態**URB ヘッダーのメンバー (を参照してください[  **\_URB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_header)) するUSBD\_状態\_不適切な\_開始\_フレームおよび全体の URB を破棄します。
+アイソクロナス転送の場合、現在のフレームと**Startframe**の値の絶対差は、USBD\_ISO\_\_フレーム\_範囲を開始する必要があります。 StartFrame が適切な範囲内にない場合、USB ドライバースタックは、URB ヘッダーの**status**メンバー ( [ **\_urb\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_header)を参照) を USBD\_\_status に設定します。これは、正しくない\_開始\_フレームであり、urb 全体を破棄します。
 
-**StartFrame** URB で指定された値は、最初のアイソクロナス URB パケットが転送されるフレーム数を示します。 以降のパケットのフレーム数は、バス スピードとエンドポイントの期間の値をポーリングに依存します。 などの高速転送では、最初のパケットで転送される**StartFrame**もう 1 つでパケットが転送される**StartFrame**+1、という具合です。 USB ドライバー スタックがフレームでのフル スピードのアイソクロナスのパケットを転送する方法が表示されます。
+URB に指定された**startframe**値は、urb の最初のアイソクロナスパケットが転送されるフレーム番号を示します。 後続のパケットのフレーム番号は、エンドポイントのバス速度とポーリング期間の値によって異なります。 たとえば、高速転送の場合、最初のパケットは**Startframe**で転送されます。2番目のパケットは、 **Startframe**+ 1 のように転送されます。 USB ドライバースタックが、フレーム内のアイソクロナスパケットを完全に転送する方法は、次のようになります。
 
 ``` syntax
 Frame (StartFrame)   IsoPacket [0]
@@ -262,7 +262,7 @@ Frame (StartFrame+3) IsoPacket [3]
 ...
 ```
 
-間隔の値が 1 で高速のデバイスについては、フレーム番号は、すべての 8 番目 microframe を変更します。 USB ドライバー スタックがフレームでの高速の isochronous パケットを転送する方法が表示されます。
+間隔の値が1の高速デバイスの場合、フレーム番号は8フレームごとに変更されます。 USB ドライバーのスタックがパケットを高速に転送する方法は、次のようになります。
 
 ``` syntax
 Frame (StartFrame) Microframe 1 IsoPacket [0]
@@ -276,14 +276,14 @@ Frame (StartFrame+2) Microframe 1 IsoPacket [16]
 Frame (StartFrame+2) Microframe 8 IsoPacket [23]
 ```
 
-ときに URB、ドライバーのフレーム番号は URB 内のすべての isochronous パケットを破棄する USB ドライバー スタックのプロセスは、現在のフレーム数よりも低きます。 ドライバー スタックのセット、**状態**USBD に破棄されたパケットの各パケットの記述子のメンバー\_状態\_ISO\_NA\_遅れて\_し、USBPORT、USBD\_状態\_ISO\_いない\_アクセス\_BY\_ハードウェア、または USBD\_状態\_ISO\_いない\_アクセス\_遅延します。 ドライバー スタックがそれらのパケットのみを送信しようとした場合でも、URB でいくつかのパケットは破棄されますフレーム番号が、現在のフレーム数を超えています。
+USB ドライバースタックが URB を処理すると、ドライバーは、フレーム番号が現在のフレーム番号よりも小さい、URB 内のすべてのアイソクロナスパケットを破棄します。 ドライバースタックは、破棄された各パケットのパケット記述子の**status**メンバーを USBD\_STATUS\_ISO\_NA\_遅延\_usbport、USBD\_STATUS\_iso\_\_アクセスされていません @no__\_HW、または USBD\_状態\_ISO\_、\_にアクセスされていないことを。 URB 内の一部のパケットが破棄されても、ドライバースタックは、フレーム番号が現在のフレーム番号よりも大きいパケットだけを送信しようとします。
 
-有効なためチェック**StartFrame** USB ドライバー スタックが高速の microframe; に各 isochronous パケットを読み込むため、メンバーがよりも若干複雑で高速な転送がただし、値**StartFrame** 1 ミリ秒 (完全な速度) フレーム番号、および microframe されませんを指します。 たとえば場合、 **StartFrame** URB で記録された値が 1 つ小さい、現在のフレームよりもドライバー スタックが 8 個までのパケットを破棄できます。 破棄されたパケットの正確な数は、アイソクロナス パイプに関連付けられている、ポーリング期間によって異なります。
+有効な**startframe**メンバーのチェックは、USB ドライバースタックが各アイソクロナスパケットを高速マイクロフレームに読み込むため、高速転送では若干複雑になります。ただし、 **Startframe**の値はマイクロフレームではなく、1ミリ秒 (全速度) のフレーム番号を表します。 たとえば、URB に記録された**Startframe**の値が現在のフレームよりも1小さい場合、ドライバースタックは最大8個のパケットを破棄できます。 破棄されたパケットの正確な数は、アイソクロナスパイプに関連付けられているポーリング期間によって異なります。
 
 ## <a name="isochronous-transfer-example"></a>アイソクロナス転送の例
 
 
-次のコード例では、フル_スピード、高速および SuperSpeed 伝送のアイソクロナスの転送、URB を作成する方法を示します。
+次のコード例では、全速度、高速、SuperSpeed 伝送のために、アイソクロナス転送の URB を作成する方法を示します。
 
 ```cpp
 #define MAX_SUPPORTED_PACKETS_FOR_HIGH_OR_SUPER_SPEED 1024
@@ -438,7 +438,7 @@ Exit:
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[USB I/O 操作](usb-device-i-o.md)  
+[USB i/o 操作](usb-device-i-o.md)  
 
 
 

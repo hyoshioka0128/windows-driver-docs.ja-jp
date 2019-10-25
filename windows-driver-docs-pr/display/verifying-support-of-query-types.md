@@ -3,17 +3,17 @@ title: クエリの種類のサポートの確認
 description: クエリの種類のサポートの確認
 ms.assetid: 0f925796-d827-42ba-9232-8f221919e6d4
 keywords:
-- 非同期クエリ操作 WDK DirectX 9.0、クエリの種類のサポートを確認しています
-- クエリ操作 WDK DirectX 9.0、クエリの種類のサポートを確認しています
-- WDK DirectX 9.0 のクエリの種類
+- 非同期クエリ操作 WDK DirectX 9.0、クエリの種類のサポートの確認
+- クエリ操作 WDK DirectX 9.0、クエリの種類のサポートの確認
+- クエリの種類 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 018eaaa9984b4ac9ada2877afe3a46af50fa7251
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 579724169f8b5e77d31efbadf682e2b646e923c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374358"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825320"
 ---
 # <a name="verifying-support-of-query-types"></a>クエリの種類のサポートの確認
 
@@ -21,9 +21,9 @@ ms.locfileid: "67374358"
 ## <span id="ddk_verifying_support_of_query_types_gg"></span><span id="DDK_VERIFYING_SUPPORT_OF_QUERY_TYPES_GG"></span>
 
 
-DirectX 9.0 ランタイムでは、すべて非同期クエリ操作の前に、ドライバーをサポートするどのクエリの種類を実行することができますを確認してください。 ドライバーがサポートするクエリの種類の数を確認するランタイムの送信、 **GetDriverInfo2** 、D3DGDI2 を使用して要求\_型\_GETD3DQUERYCOUNT 値。 ドライバーが任意のクエリの種類をサポートしていない場合に 0 を返します、 **dwNumQueries**のメンバー、 [ **DD\_GETD3DQUERYCOUNTDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getd3dquerycountdata)この構造体要求。
+DirectX 9.0 ランタイムは、非同期クエリ操作を実行する前に、ドライバーがサポートしているクエリの種類を確認する必要があります。 ドライバーがサポートしているクエリの種類の数を確認するために、ランタイムは D3DGDI2\_TYPE\_GETD3DQUERYCOUNT value を使用して**GetDriverInfo2**要求を送信します。 ドライバーでクエリの種類がサポートされていない場合は、この要求の[**DD\_GETD3DQUERYCOUNTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getd3dquerycountdata)構造体の**dwnumqueries**メンバーで0が返されます。
 
-各に関する情報を受信するサポートされているクエリの種類、ランタイムが送信を**GetDriverInfo2** 、D3DGDI2 を使用して要求\_型\_GETD3DQUERY 値の種類ごと。 ドライバーが後でクエリの種類に関する情報を返します、 [ **DD\_GETD3DQUERYDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getd3dquerydata)構造体。 詳細については**GetDriverInfo2**を参照してください[サポート GetDriverInfo2](supporting-getdriverinfo2.md)します。
+サポートされている各クエリの種類に関する情報を受信するために、ランタイムは D3DGDI2\_TYPE\_GETD3DQUERY value を使用して、各型の**GetDriverInfo2**要求を送信します。 次に、ドライバーは、クエリの種類に関する情報を[**DD\_GETD3DQUERYDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getd3dquerydata)構造体に返します。 **GetDriverInfo2**の詳細については、「 [GetDriverInfo2 のサポート](supporting-getdriverinfo2.md)」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: ndiskd.netrb
-description: Ndiskd.netrb 拡張機能では、NET_RING 構造に関する情報が表示されます。
+title: ndiskd netrb
+description: NET_RING 構造体に関する情報が表示されます。
 ms.assetid: 2D749E7E-00A5-422B-B785-B8DB3393A74F
 keywords:
-- デバッグ ndiskd.netrb Windows
+- ndiskd netrb Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,60 +13,60 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 749d4025f2203cc5642567f442fde6c010d98616
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 576c721fa9e10d4404d8fda641c445b346426a3e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362480"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826547"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
 
-**! Ndiskd.netrb**拡張機能に関する情報を表示する、 [NET\_リング\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)構造体。
+**! Ndiskd netrb**拡張機能には、 [NET\_RING\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)構造に関する情報が表示されます。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
+ネットワークアダプターの WDF クラス拡張 (NetAdapterCx) の詳細については、「 [Network ADAPTER WDF Class extension (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)」を参照してください。
 
 ```console
 !ndiskd.netrb [-handle <x>] [-basic] [-dump] [-elementtype <str>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-必須。 アドレス、NET の\_リング\_バッファー。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+必須。 \_バッファーの NET\_RING のアドレス。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
-基本的な情報を表示します。
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+基本情報を表示します。
 
-<span id="_______-dump______"></span><span id="_______-DUMP______"></span> *-dump*   
-NET の各要素に関する情報を表示します。\_リング\_バッファー。
+<span id="_______-dump______"></span><span id="_______-DUMP______"></span> *-ダンプ*   
+NET\_RING\_BUFFER の各要素に関する情報を表示します。
 
 <span id="_______-elementtype______"></span><span id="_______-ELEMENTTYPE______"></span> *-elementtype*   
-リング バッファーの要素を参照するときに使用するデータ型の文字列。
+リングバッファー要素を参照するときに使用するデータ型の文字列。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd.dll
+Ndiskd .dll
 
 <a name="examples"></a>例
 --------
 
-**注**  を参照してください[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)NET のリレーションシップを説明する図を参照する\_リング\_NetAdapterCx の他のオブジェクトのバッファー オブジェクト。
+**  、** [オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)を参照して、NET\_リング\_BUFFER オブジェクトと NetAdapterCx 内の他のオブジェクトとの関係を説明する図を参照してください。
 
  
 
-NET のハンドルを取得する\_リング\_バッファー、これらの手順に従います。
+NET\_RING\_BUFFER のハンドルを取得するには、次の手順を実行します。
 
-1.  実行、 [ **! ndiskd.netadapter** ](-ndiskd-netadapter.md)拡張機能。
+1.  [ **! Ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。
 2.  NetAdapterCx ドライバーがインストールされている NetAdapter のハンドルをクリックします。
-3.  実行する NetAdapter の NETADAPTER オブジェクトの右側に「詳細情報」リンクをクリックして、 [ **! ndiskd.cxadapter** ](-ndiskd-cxadapter.md)拡張機能。
-4.  入力、 **! ndiskd.cxadapter**コマンドと、 *- データパス*パラメーターをその NETADAPTER のデータパス キューを参照してください。
-5.  データパス キューのいずれかのハンドルをクリックします。
+3.  NetAdapter の NETADAPTER オブジェクトの右側にある [詳細情報] リンクをクリックして、 [ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)拡張機能を実行します。
+4.  *-データパス*パラメーターを指定して **! ndiskd cxadapter**コマンドを入力すると、netadapter のデータパスキューが表示されます。
+5.  データパスキューのいずれかのハンドルをクリックします。
 
-この手順の手順 1 ~ 4 について詳しくは、上の例を参照してください。、 **! ndiskd.cxadapter**トピック。 この手順の手順 5 について詳しくは、上の例を参照してください。、 [ **! ndiskd.netqueue** ](-ndiskd-netqueue.md)トピック。
-次の例では、この NETTXQUEUE のリング バッファー、ffffd1022d000000 のハンドルを探します。
+この手順の手順1-4 の詳細については、 **! ndiskd cxadapter**トピックの例を参照してください。 この手順の手順5の詳細については、 [ **! ndiskd netqueue**](-ndiskd-netqueue.md)のトピックの例を参照してください。
+次の例では、この NETTXQUEUE のリングバッファーのハンドル ffffd1022d000000 を探します。
 
 ```console
 0: kd> !ndiskd.netqueue ffffd1022f512700
@@ -82,7 +82,7 @@ NET のハンドルを取得する\_リング\_バッファー、これらの手
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-リング バッファーを入力するか、ハンドルをクリックして、 **! ndiskd.netrb-処理**この NET の詳細を確認することができますが、コマンドラインでコマンド\_リング\_が含まれている要素の数を含むバッファーその開始と終了インデックスのアドレス。
+リングバッファーのハンドルをクリックするか、またはコマンドラインで **! ndiskd. netrb-handle**コマンドを入力して、この NET\_RING\_バッファーの詳細を確認できます。これには、含まれている要素の数や、その Begin と End のアドレスも含まれます。連想.
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
@@ -100,7 +100,7 @@ NET のハンドルを取得する\_リング\_バッファー、これらの手
     List all elements
 ```
 
-このネットワークを表示する\_リング\_バッファーの要素、クリックするか"List のすべての要素"の詳細 の下部にあるリンクまたは入力、 **! ndiskd.netrb-ダンプ**コマンドラインでコマンド。 次の例を簡潔にするための excised 中間要素としました。
+この NET\_リング\_バッファーの要素を確認するには、詳細の下部にある [すべての要素の一覧表示] リンクをクリックするか、コマンドラインで **! ndiskd netrb-dump**コマンドを入力します。 次の例では、簡潔にするために中間要素を excised しています。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000 -dump
@@ -121,30 +121,30 @@ NET のハンドルを取得する\_リング\_バッファー、これらの手
     [07f] ffffd1022d003fc0 - NET_PACKET
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **! ndiskd ヘルプ**](-ndiskd-help.md)
 
-[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
 [オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
 
-[NET\_リング\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
+[NET\_RING\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
 
-[ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
+[ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)
 
-[ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
+[ **! ndiskd netqueue**](-ndiskd-netqueue.md)
 
  
 

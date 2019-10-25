@@ -1,101 +1,101 @@
 ---
-title: Windows 10 のディスプレイ ドライバーの新機能については (WDDM 2.x)
-description: ディスプレイ ドライバーの Windows 10 の新機能について説明します
+title: Windows 10 ディスプレイドライバーの新機能 (WDDM 2.x)
+description: ディスプレイドライバー用の Windows 10 の新機能について説明します。
 ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: f90dfdd233b62da43af50797b1ee82b9c9e68ed8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 324764a486e5988fb41d4a68c8ab9b5bff0adf9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829161"
 ---
-# <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>Windows 10 のディスプレイ ドライバー (WDDM 2.0 以降) の新機能については
+# <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>Windows 10 ディスプレイドライバーの新機能 (WDDM 2.0 以降)
 
 ## <a name="wddm-26"></a>WDDM 2.6
 
-### <a name="super-wet-ink"></a>Super ウェット インク
+### <a name="super-wet-ink"></a>スーパーウェットインク
 
-*超ウェット インク*中心とする機能は、*フロント バッファー レンダリング*します。 IHV ドライバーでは、形式や、ハードウェアでサポートされていないモードの「表示可能な」テクスチャの作成をサポートできます。 これは、アプリが要求したテクスチャを割り当てることによって、表示できる形式/レイアウトで「シャドウ」テクスチャとして存在する時に 2 つのコピーと共に、実行できます。 この「シャドウ」必ずしもテクスチャ考えてみるとしますが、圧縮データを単なる通常の方法でします。 さらに、その必要はありませんが存在するが、代わりに、最適化をする可能性があります。
+*スーパーウェットインク*は、*フロントバッファーレンダリング*を中心とした機能です。 IHV ドライバーは、ハードウェアでサポートされていない形式またはモードの "表示可能な" テクスチャの作成をサポートできます。 これを行うには、アプリが要求したテクスチャと、表示可能な形式/レイアウトの "影" テクスチャを割り当てて、現在の2つの間でコピーします。 この "影" は、通常の方法ではテクスチャであるとは限りませんが、圧縮データのみになる可能性があります。 また、存在する必要がない場合もありますが、最適化されている可能性があります。
 
-ランタイムは、表示可能なサーフェイスのこれらの側面を理解する進化は。
+次のように、表示可能なサーフェイスのこれらの側面を理解するために、ランタイムが進化します。
 
-* かどうか特定の VidPnSource/平面上に表示する影が存在する必要があります。
+* 特定の VidPnSource/平面での表示に影が存在する必要があるかどうか。
 
-* 存在する影のより最適なかどうか。
+* シャドウが存在するかどうかを指定します。
 
-* アプリケーションの画面からシャドウ画面に内容を転送するときにします。
+* アプリケーション画面からシャドウサーフェイスにコンテンツを転送する場合。
 
-    * ランタイムは、現在内で暗黙的になることではなく、この操作を明示的になります。
+    * ランタイムは、この操作について明示的に実行されますが、現在は暗黙的であるとは限りません。
 
-* 要求モードの設定や元とシャドウ サーフェスの間で動的に反転する方法。
+* モードの設定を要求する方法、または元のサーフェスとシャドウサーフェスを動的に反転する方法。
 
-Scanout は、VBlank、イメージの下に上から縦方向にスキャン後、間もなく開始可能性があり、[次へ] の VBlank の少し前に完了します。 これは常にピクセルのクロックのタイミングと、テクスチャ; 内のデータのレイアウトに応じて、ケース特に実際に圧縮を使用できる場合。 
+Scanout は、VBlank の直後に開始され、イメージの上から下へスキャンされ、次の VBlank のすぐ前に完了します。 これは、ピクセルクロックのタイミングやテクスチャ内のデータのレイアウトによっては、常にそうであるとは限りません。特に、圧縮が実際に使用可能な場合。 
 
-分離し、理解 (可能な) 場合に、scanout する前に発生する変換は、フロント バッファーのレンダリングを有効にするは、新しい Ddi が追加されました。 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) と [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation) を参照してください。
+スキャンを実行する前に発生する変換を個別に理解するために新しい DDIs を追加し、可能な場合は、フロントバッファーレンダリングを有効にします。 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) と [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation) を参照してください。
 
-### <a name="variable-rate-shading"></a>可変レートの網掛け
+### <a name="variable-rate-shading"></a>変動率の網掛け
 
-可変レートの網かけ、またはピクセルが粗い網掛けは、レンダリングされたイメージ間でさまざまな料金でのパフォーマンス/電源のレンダリングの割り当てを有効にするメカニズムです。
+変動率の網かけ、または粗いピクセルの網掛けは、レンダリングされた画像全体にわたって、表示パフォーマンスと電力の割り当てをさまざまな速度で実現するためのメカニズムです。
 
-で以前のモデル、ジオメトリのエイリアスを削減する MSAA (マルチ サンプル アンチエイリアシング) を使用するには。
+前のモデルで、MSAA (複数のサンプルのアンチエイリアシング) を使用して幾何学的な別名を減らすには、次の手順を実行します。
 
-* ジオメトリのエイリアスを削減する量必要があります既知である初期ターゲットが割り当てられる場合。
-* ターゲットが割り当てられると、ジオメトリのエイリアスを削減する量を変更できません。
+* ターゲットが割り当てられているときに、幾何学的なエイリアスを減らすための量を事前に把握しておく必要があります。
+* ターゲットが割り当てられると、幾何学的なエイリアシングを減らすための量を変更することはできません。
 
-新しいモデルが、反対に MSAA を拡張、WDDM 2.6 で*ピクセルが粗い*の新しい概念を追加することで、方向*粗い網掛け*します。 これは、網掛けをピクセルよりも粗い頻度で実行できます。 結果は、グループのすべてのサンプルをブロードキャストし、ピクセルのグループを 1 つの単位として網掛けことができます。
+WDDM 2.6 では、新しいモデルは、*粗い網掛け*の新しい概念を追加することによって、MSAA を粒度の*粗いピクセル*方向に拡張します。 ここでは、網掛けをピクセルよりも粗い頻度で実行できます。 ピクセルのグループは1つの単位として網掛けでき、結果はグループ内のすべてのサンプルにブロードキャストされます。
 
-網掛けが粗い API は、影付きのグループに属しているピクセルの数を指定するアプリを使用できます。 レンダー ターゲットが割り当てられた後は、ピクセルが粗いサイズを変えることができます。 そのため、画面または別の描画パスの異なる部分では、別のコースの網掛け料金ことができます。
+粗いシェーディング API を使用すると、アプリは、網掛けされたグループに属するピクセル数を指定できます。 粗いピクセルサイズは、レンダーターゲットが割り当てられた後に変化する可能性があります。 そのため、画面のさまざまな部分や描画パスが異なると、コースの網掛け率が異なる場合があります。
 
-複数層の実装では 2 つのユーザー クエリ可能なキャップを持つです。 階層 1 と 2 は、粗い網掛けがサンプリングされた単一の両方で使用可能と MSAA リソース。 MSAA のリソースの網掛けに実行されるピクセルあたりの粗い- したり、サンプルごとのいつものようです。 ただし、層 1 と 2 は、MSAA のリソースでは、粗いサンプリングをピクセル単位とサンプルごとの間の頻度で網掛けを使用できません。
+多層実装は、2つのユーザークエリキャップで使用できます。 階層1および2では、1つのサンプリングリソースと MSAA リソースの両方に対して粗い網掛けを使用できます。 MSAA リソースの場合、シェーディングは、通常どおり、粗いピクセル単位またはサンプル単位で実行できます。 ただし、階層1および2では、MSAA リソースに対して、粒度の粗いサンプリングを使用して、ピクセルごととサンプルごとの頻度で網掛けを行うことはできません。
 
-第 1 層:
+階層 1:
 
-* 網掛けレートはごとの描画の単位でのみ指定できます。何もするよりも細かい
+* 網掛け率は、描画単位でのみ指定できます。これよりも詳細なものはありません。
 
-* レンダー ターゲット内に設定とは無関係にどのような描画が一様に適用されますレートを網掛け  
+* シェード率は、レンダーターゲット内の場所とは無関係に描画されるものに一様に適用されます。  
 
-第 2 層:
+階層 2:
 
-* ごとの描画-ごとに、階層 1 のように、網掛けのレートを指定できます。 およびごとの描画-ごとの組み合わせによって指定することもできます。
+* 網掛け率は、階層1のように、描画単位で指定できます。 また、描画ごとにとの組み合わせで指定することもできます。
 
-    * 富んだ-頂点ごと、セマンティックと
-    * スクリーン空間イメージ
+    * Provoking からのセマンティック、および
+    * Screenspace イメージ
 
-* 次の 3 つのソースからの網掛けの料金は、コンバイナーのセットを使用して結合されます。
-* 画面領域の画像タイルのサイズは 16 x 16 以下です。 アプリから要求レートを網掛け正確に (時間およびその他の再構築のフィルターの精度) で配信することが保証されます。 
+* コンバイナーのセットを使用して3つのソースからの網掛け率が組み合わされます。
+* 画面領域のイメージタイルのサイズは16x16 以下です。 アプリによって要求された網掛け率は、正確に配信されることが保証されています (テンポラルとその他の再構築フィルターの有効桁数) 
 
-* SV_ShadingRate PS 入力がサポートされています。 あたり富んだ頂点率もここでは、プリミティブ単位のレートとして呼ばれるは、1 つのビューポートが使用され、SV_ViewportIndex に書き込まれない場合にのみ有効です。
+* SV_ShadingRate PS 入力がサポートされています。 1つのビューポートが使用されていて、SV_ViewportIndex が書き込まれていない場合にのみ、provoking の頂点レートが有効になります。
 
-* SupportsPerVertexShadingRateWithMultipleViewports キャップが true でマークされている場合、1 つ以上のビューポートとあたり富んだ頂点の割合、プリミティブ単位の料金とも呼ばを使用できます。 さらに、その場合は、ことができますに SV_ViewportIndex が書き込まれたとき。
+* SupportsPerVertexShadingRateWithMultipleViewports cap が true とマークされている場合、provoking の頂点レートは、プリミティブごとのレートとも呼ばれ、複数のビューポートで使用できます。 また、その場合は、SV_ViewportIndex を書き込むときに使用できます。
 
-[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) と [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062) を参照してください。
+[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) と [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062) を参照してください。
 
-### <a name="collect-diagnostic-info"></a>診断情報を収集します。
+### <a name="collect-diagnostic-info"></a>診断情報の収集
 
-*診断情報を収集*により、OS の両方のレンダリングで構成され、関数を表示するグラフィックス アダプターのドライバーからプライベート データを収集します。 この新しい機能は、WDDM 2.6 での要件です。 
+*診断情報を収集*すると、OS はレンダリングと表示の両方の機能で構成されたグラフィックスアダプターのドライバーからプライベートデータを収集できます。 この新機能は、WDDM 2.6 の要件です。 
 
-新しい DDI には、ドライバーが読み込まれる、いつでも情報を収集する OS を許可する必要があります。 現在、OS が (タイムアウト検出と回復) TDR のミニポート ドライバーのプライベート データのクエリによって実装される DxgkDdiCollectDebugInfo 関数を使用してケースに関連します。 新しい DDI は、さまざまな理由のデータの収集に使用されます。 要求されている種類の情報を提供する診断が必要なときに、OS はこの DDI を呼び出します。 ドライバーは、問題を調査し、OS に提出する重要なすべての個人情報を収集する必要があります。 DxgkDdiCollectDebugInfo は最終的に非推奨し、DxgkDdiCollectDiagnosticInfo に置き換えられます。
+新しい DDI では、ドライバーが読み込まれるたびに、OS が情報を収集できるようにする必要があります。 現時点では、OS は、ミニポートによって実装された DxgkDdiCollectDebugInfo 関数を使用して、TDR (タイムアウト検出と復旧) 関連のケースに対してドライバーのプライベートデータを照会します。 新しい DDI は、さまざまな理由でデータを収集するために使用されます。 OS は、要求された種類の情報を提供する診断が必要になったときに、この DDI を呼び出します。 ドライバーは、問題を調査して OS に送信するために重要なすべてのプライベート情報を収集する必要があります。 DxgkDdiCollectDebugInfo は、最終的には非推奨となり、DxgkDdiCollectDiagnosticInfo に置き換えられます。
 
-[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo) を参照してください。
+[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo) を参照してください。
 
-### <a name="background-processing"></a>バック グラウンド処理
+### <a name="background-processing"></a>バックグラウンド処理
 
-バック グラウンド処理は、ユーザーを表現するモード ドライバー許可し、動作、およびランタイムのスレッドを必要なコントロールまたはそのモニターにします。 ユーザー モード ドライバーでは、バックグラウンド スレッドをスピンアップし、可能な限り低い優先度を割り当てます。また、これらのスレッドによってクリティカル パス スレッドが中断せず、全般的には成功するように NT スケジューラを利用します。
+バックグラウンド処理を使用すると、ユーザーモードドライバーは必要なスレッド動作を表現でき、ランタイムは制御/監視を行うことができます。 ユーザー モード ドライバーでは、バックグラウンド スレッドをスピンアップし、可能な限り低い優先度を割り当てます。また、これらのスレッドによってクリティカル パス スレッドが中断せず、全般的には成功するように NT スケジューラを利用します。
 
-Api は、どのようなバック グラウンド処理量がのワークロードに対する適切なと、その作業を実行するタイミングを調整するアプリを許可します。
+Api を使用すると、アプリは、ワークロードに適したバックグラウンド処理の量と、その作業を実行するタイミングを調整できます。
 
-[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062) を参照してください。
+[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062) を参照してください。
 
-### <a name="driver-hot-update"></a>ホット アップデートのドライバー
+### <a name="driver-hot-update"></a>ドライバーのホットアップデート
 
-ホット アップデートのドライバーは、OS コンポーネントを更新する必要がある場合、可能な限りサーバーのダウンタイムを減らします。
+ドライバーのホットアップデートでは、OS コンポーネントを更新する必要がある場合に備えて、サーバーのダウンタイムを削減できます。
 
-ホット パッチのドライバーを使用して、カーネル モード ドライバーにセキュリティ更新プログラムを適用します。 ここで、ドライバーはアダプターのメモリを節約するよう求められます、アダプターが停止された、ドライバーが読み込まれて、新しいドライバーが読み込まれるおよびアダプターが再び開始します。
+ドライバーホットパッチは、カーネルモードドライバーにセキュリティ修正プログラムを適用するために使用されます。 この場合、ドライバーはアダプターのメモリを保存するように求められます。アダプターが停止し、ドライバーがアンロードされ、新しいドライバーが読み込まれ、アダプターが再起動されます。
 
-参照してください[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)と[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)します。
+「[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) and [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)」を参照してください。
 
 ## <a name="wddm-25"></a>WDDM 2.5
 
@@ -103,55 +103,55 @@ Api は、どのようなバック グラウンド処理量がのワークロー
 
 | トピック | 日付 | 説明 |
 | --- | --- | --- |
-| [EDID 拡張機能 (VSDB) HMDs し、特殊な表示](specialized-monitors-edid-extension.md) | 12/03/2018 | 表示の製造元の仕様 |
-| [DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys)](directx-graphics-kernel-subsystem.md) | 12/04/2018 | Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) を通じて、Windows オペレーティング システムを実装するカーネル モード インターフェイス。 |
-| [WDDM 2.1 機能](wddm-2-1-features.md) | 01/10/2019|WDDM 2.1 の新機能と更新された機能について説明します |
+| [HMDs および特殊な表示用の EDID 拡張機能 (VSDB)](specialized-monitors-edid-extension.md) | 12/03/2018 | ディスプレイの製造元の仕様 |
+| [DirectX グラフィックスカーネルサブシステム (Dxgkrnl)](directx-graphics-kernel-subsystem.md) | 12/04/2018 | Windows オペレーティングシステムが Microsoft DirectX グラフィックスカーネルサブシステム (Dxgkrnl) を介して実装するカーネルモードインターフェイス。 |
+| [WDDM 2.1 の機能](wddm-2-1-features.md) | 01/10/2019|WDDM 2.1 の新機能と更新された機能について説明します。 |
 
 ### <a name="raytracing"></a>Raytracing
 
-新しい Direct3D DDI は、並列の Direct3D API の raytracing のハードウェア アクセラレーションをサポートするために作成されました。 次のような DDI があります。 
+新しい Direct3D DDI は、ハードウェアアクセラレータの raytracing をサポートするために、Direct3D API と並行して作成されました。 次のような DDI があります。 
 
-* [PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054) 
-* [PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)
-* [PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_emit_raytracing_acceleration_structure_postbuild_info_0054)
-* [PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_get_raytracing_acceleration_structure_prebuild_info_0054)
+* [PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054) 
+* [PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)
+* [PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_emit_raytracing_acceleration_structure_postbuild_info_0054)
+* [PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_get_raytracing_acceleration_structure_prebuild_info_0054)
 
-Raytracing に関する詳細についてを参照してください。
+Raytracing の詳細については、次の情報を参照してください。
 
 * [Microsoft DirectX Raytracing の発表](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)
-* [DirectX Raytracing と Windows 10 年 2018年 10 月の更新プログラム](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
-* [DirectX のフォーラム](https://forums.directxtech.com/index.php?topic=5985.0)
+* [DirectX Raytracing と Windows 10 10 月2018更新プログラム](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
+* [DirectX フォーラム](https://forums.directxtech.com/index.php?topic=5985.0)
 
-### <a name="display-synchronization"></a>同期を表示します。
+### <a name="display-synchronization"></a>同期の表示
 
-OS は、表示は、OS、表示を有効にする前にそのために、ドライバーによって公開されるときに、同期を表示するための機能確認されます。 TypeIntegratedDisplay 子デバイスでは、これが報告される呼び出しを経由して[DxgkDdiQueryAdapterInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)で*型* [DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)アダプターの初期化中に ホット プラグを使用して処理の一部として、WDDM 2.5 以降でサポートされる、TypeVideoOutput 子デバイスの機能の報告[DxgkDdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo)に基づいているため、機能が変わる可能性があります、ターゲットまたは接続されているモニター。
+ディスプレイがドライバーによって OS に公開されている場合、OS はディスプレイの同期機能をチェックし、表示を有効にします。 TypeIntegratedDisplay 子デバイスの場合は、アダプターの初期化時に[DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype) *型*の[DxgkDdiQueryAdapterInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)を呼び出すことによって報告されます。 WDDM 2.5 以降でサポートされている TypeVideoOutput 子デバイスの場合、機能はターゲットまたは接続されているかに基づいて変更される可能性があるため、 [DxgkDdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo)を介してホットプラグ処理の一部として報告されます。monitor.
 
-OS でディスプレイの同期を指定します、 [DxgkDdiSetTimingsFromVidPn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_settimingsfromvidpn)呼び出しの入力フィールドに、パスごと[DXGK_SET_TIMING_PATH_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_set_timing_path_info#input)構造体。
+OS は、 [DxgkDdiSetTimingsFromVidPn](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_settimingsfromvidpn)呼び出しで、パスごとの[DXGK_SET_TIMING_PATH_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_set_timing_path_info#input)構造体の入力フィールドの表示同期を指定します。
 
 ## <a name="wddm-21"></a>WDDM 2.1
 
-WDDM 2.1 では、新しいシナリオを実現し、パフォーマンス、信頼性、アップグレードの回復性、診断の向上、Windows グラフィックス サブシステムの今後のシステムの機能強化の領域が大幅に向上を提供します。
-WDDM 2.0 ドライバー モデルは D3D12 の前提条件です。 WDDM 2.0 と DirectX12 は、以降 Windows 10 でのみ利用できます。
+WDDM 2.1 を使用すると、新しいシナリオが可能になり、パフォーマンス、信頼性、アップグレードの回復性、診断の改善、および Windows グラフィックスサブシステムの将来のシステムの向上の領域が大幅に改善されます。
+WDDM 2.0 ドライバーモデルは、D3D12 の前提条件です。 WDDM 2.0 および DirectX12 は、Windows 10 以降でのみ使用できます。
 
-次に機能の追加と WDDM 2.1 の更新プログラムの一覧を示します。
+WDDM 2.1 の機能の追加と更新の一覧を次に示します。
 
-* グラフィックスの向上パフォーマンス オーバーヘッド時間を減らすことでは、メモリ管理と不足しているグラフィックス メモリの使用状況をより効率的に費やされました。 グラフィックスのパフォーマンスの向上は次のとおりです。
+* メモリ管理に費やされるオーバーヘッド時間を短縮し、大量のグラフィックスメモリをより効率的に使用することで、グラフィックスのパフォーマンスが向上しました。 グラフィックスパフォーマンスの向上は次のとおりです。
 
-    * プランしリソースを解放 - 提供し、バック グラウンド モードで実行されているアプリケーションのメモリ使用量の短縮による改善を再利用します。
-    * WDDM 2.1 では、大規模なページ テーブル エントリ (PTE) VRAM でのエンコードを 2 MB のページ テーブル エントリをエンコードするためのサポートを有効にします。 この変更では、サポートされているシステムでのパフォーマンスが向上します。
-    * 64 KB のメモリ ページ - 64 KB の粒度を使用して、仮想メモリの割り当てのサポートは、WDDM 2.1 でもサポートされます。 この変更では、仮想メモリ ページにアクセスするためのオーバーヘッドを減らすことでさらなると Soc を特に利用できます。
+    * リソースの提供と回収-バックグラウンドモードで実行されているアプリケーションのメモリフットプリントを削減するための機能強化を提供し、再利用できます。
+    * 2 MB のページテーブルエントリエンコーディングのサポート-WDDM 2.1 では、VRAM の大きなページテーブルエントリ (PTE) エンコードが有効になっています。 この変更により、それをサポートするシステムのパフォーマンスが向上します。
+    * 64 KB のメモリページのサポート-64 KB の粒度を使用した仮想メモリの割り当ては、WDDM 2.1 でもサポートされています。 この変更は、仮想メモリページにアクセスするためのオーバーヘッドを減らすことによって、特に APUs とソケットによる恩恵を受けます。
 
-* コンテンツの強化と保護されているハードウェア ベース*バッチ処理を提示*([PlayReady 3.0](https://docs.microsoft.com/playready/))
+* *現在のバッチ*処理を使用したハードウェアベースの保護されたコンテンツの改善 ([PlayReady 3.0](https://docs.microsoft.com/playready/))
 
-* ドライバーのアップグレードの回復性を向上させるためにグラフィック ドライバーをドライバー ストアのインストール。
+* ドライバーストアによるドライバーのアップグレードの回復性を向上させるために、グラフィックスドライバーをインストールします。
 
-* DXIL、新しいシェーダー コンパイラ言語
+* DXIL、新しいシェーダーコンパイラ言語
 
-* D3D12 のパフォーマンスと最適化の機能強化
+* D3D12 のパフォーマンスと最適化の向上
 
-* 開発者向けの強化された診断オプション
+* 開発者向けの診断オプションの向上
 
-詳細については、次を参照してください。 [WDDM 2.1 機能](wddm-2-1-features.md)します。
+詳細については、「 [WDDM 2.1 の機能](wddm-2-1-features.md)」を参照してください。
 
 ## <a name="wddm-20"></a>WDDM 2.0
 
@@ -159,18 +159,18 @@ WDDM 2.0 には、メモリ管理の更新プログラムが含まれていま�
 
 ### <a name="gpu-virtual-memory"></a>GPU 仮想メモリ
 
--   すべての物理メモリは、グラフィックス処理ユニット (GPU) のメモリ マネージャーによって管理できる仮想セグメントに抽象化されています。
--   各プロセスは、GPU 仮想アドレス空間を取得します。
--   スウィズ リング範囲のサポートが削除されました。
+-   すべての物理メモリは、グラフィックス処理装置 (GPU) メモリマネージャーで管理できる仮想セグメントに抽象化されます。
+-   各プロセスは、独自の GPU 仮想アドレス空間を取得します。
+-   スウィズリング範囲のサポートは削除されました。
 
-詳細については、次を参照してください。 [WDDM 2.0 での GPU 仮想メモリ](gpu-virtual-memory-in-wddm-2-0.md)します。
+詳細については、「 [WDDM 2.0 の GPU 仮想メモリ](gpu-virtual-memory-in-wddm-2-0.md)」を参照してください。
 
-### <a name="driver-residency"></a>ドライバーの保存場所
+### <a name="driver-residency"></a>ドライバーの常駐
 
--   ビデオ メモリ マネージャーは、ドライバーをコマンド バッファーを送信する前に、割り当てがメモリに常駐していることを確認します。 この機能を容易に新しいユーザー モード ドライバーのデバイス ドライバー インターフェイス (Ddi) が追加されました ([*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)、 [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)、 [*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb))。
--   割り当てと修正プログラムの場所の一覧が廃止されるため、新しいモデルで必要はありません。
--   ユーザー モード ドライバーは割り当ての追跡を処理するようになりましたし、これを有効にするいくつかの新しい Ddi が追加されました。
--   ドライバーはメモリの予算を指定して、メモリ負荷の下での適応が必要です。 これは、アプリケーション プラットフォーム間で機能するユニバーサル Windows ドライバーを許可します。
--   プロセスの同期とコンテキストの監視のため、新しい Ddi が追加されました。
+-   ビデオメモリマネージャーは、ドライバーにコマンドバッファーを送信する前に、割り当てがメモリ内に存在することを確認します。 この機能を容易にするために、新しいユーザーモードドライバーデバイスドライバーのインターフェイス (DDIs) が追加されました ([*Makeresident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)、 [*TrimResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)、[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb))。
+-   割り当てとパッチの場所の一覧は、新しいモデルでは不要なため、段階的に廃止されます。
+-   ユーザーモードドライバーは、割り当ての追跡を処理するようになりました。これを可能にするために、新しい DDIs がいくつか追加されています。
+-   ドライバーにはメモリの量が割り当てられ、メモリの負荷に応じて調整されることが予想されます。 これにより、ユニバーサル Windows ドライバーをアプリケーションプラットフォーム間で機能させることができます。
+-   プロセスの同期とコンテキストの監視のために、新しい DDIs が追加されました。
 
-詳細については、次を参照してください。 [WDDM 2.0 でのドライバーの常駐](driver-residency-in-wddm-2-0.md)します。
+詳細については、 [WDDM 2.0 の「ドライバーの](driver-residency-in-wddm-2-0.md)使用」を参照してください。

@@ -3,15 +3,15 @@ title: NDIS 構成関数
 description: NDIS 構成関数
 ms.assetid: 248e08d0-6145-499a-b307-2a5ffbd3733f
 keywords:
-- WDK NDIS の構成関数
+- 構成関数 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0229b025dc27fe2859e7e6642fbe77d138024c3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 44dfcebfbc70ec7f8a50c79f639252b3b8a383c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823694"
 ---
 # <a name="ndis-configuration-functions"></a>NDIS 構成関数
 
@@ -19,17 +19,17 @@ ms.locfileid: "67387279"
 
 
 
-NDIS にはドライバーの構成を簡略化するには、次の関数が含まれています。
+NDIS には、ドライバーの構成を簡素化するための次の関数が含まれています。
 
-[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationex)
+[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)
 
-[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismgetbusdata)
+[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)
 
-[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetbusdata)
+[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)
 
-NDIS ミニポート ドライバーを呼び出し、アダプターの構成情報を取得する**NdisOpenConfigurationEx**と[**エミュレーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)します。 ドライバーを呼び出すことができます**NdisMGetBusData** bus 固有の情報を取得します。 ドライバーを呼び出すことができます**NdisMSetBusData** bus 固有の情報を設定します。
+アダプターの構成情報を取得するために、NDIS ミニポートドライバーは**NdisOpenConfigurationEx**と[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)を呼び出します。 ドライバーは**NdisMGetBusData**を呼び出して、バス固有の情報を取得できます。 ドライバーは**NdisMSetBusData**を呼び出して、バス固有の情報を設定できます。
 
-プロトコル ドライバーでは、アダプターの名前へのレジストリ パスを使用して、ドライバーと基になるアダプター間のバインディングに固有の構成パラメーターを読み取ります。 NDIS への呼び出しで、レジストリ パスを提供する、 [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。 ドライバーは、このレジストリ パスを渡すことができます、 [ **NdisOpenProtocolConfiguration** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553683(v=vs.85))関数またはレジストリを直接呼び出します。 代わりに、ドライバーを渡すことができます、 *BindParameters*構造体を**NdisOpenConfigurationEx**を同じパラメーターを読み取る関数。
+プロトコルドライバーは、アダプター名へのレジストリパスを使用して、ドライバーと基になるアダプターのバインドに固有の構成パラメーターを読み取ります。 NDIS は、 [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数の呼び出しでレジストリパスを提供します。 ドライバーは、このレジストリパスを[**NdisOpenProtocolConfiguration**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553683(v=vs.85))関数に渡したり、レジストリ呼び出しを直接実行したりすることができます。 別の方法として、ドライバーは、 **NdisOpenConfigurationEx**関数に*bindparameters*構造体を渡して、同じパラメーターを読み取ることができます。
 
  
 

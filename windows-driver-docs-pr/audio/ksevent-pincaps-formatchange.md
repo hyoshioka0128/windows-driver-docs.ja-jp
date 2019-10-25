@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_PINCAPS\_段落
-description: KSEVENT\_PINCAPS\_オーディオ デバイスのオーディオ データ形式が変更されたこと、オーディオ スタックに段落のイベントを示します。
+title: KSEVENT\_PINCAPS\_FORMATCHANGE
+description: KSEVENT\_PINCAPS\_FORMATCHANGE イベントは、オーディオデバイスのオーディオデータ形式が変更されたことをオーディオスタックに示します。
 ms.assetid: ca9ee246-7fca-42df-89e0-7ace6b1f808a
 keywords:
-- KSEVENT_PINCAPS_FORMATCHANGE オーディオ デバイス
+- KSEVENT_PINCAPS_FORMATCHANGE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e48cadb86e5767cbd91ab57dbf2c7c812b16d060
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 2cb5a4119f2ebcf9ba08a9b90b5d3a77c1491d29
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391529"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833146"
 ---
-# <a name="kseventpincapsformatchange"></a>KSEVENT\_PINCAPS\_段落
+# <a name="ksevent_pincaps_formatchange"></a>KSEVENT\_PINCAPS\_FORMATCHANGE
 
 
-`KSEVENT_PINCAPS_FORMATCHANGE`イベント オーディオ デバイスのオーディオ データ形式が変更されたことをオーディオ スタックを示します。
+`KSEVENT_PINCAPS_FORMATCHANGE` イベントは、オーディオデバイスのオーディオデータ形式が変更されたことをオーディオスタックに示します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespan-usage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span> 使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespan-usage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -38,28 +38,28 @@ ms.locfileid: "67391529"
 <tr class="header">
 <th align="left">対象</th>
 <th align="left">イベント記述子の種類</th>
-<th align="left">イベント値の型</th>
+<th align="left">イベント値の種類</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-イベント値の型 (データの操作) は、 **KSEVENTDATA**をこのイベントに使用する通知方法を指定します。
+イベント値の種類 (操作データ) は、このイベントに使用する通知方法を指定する**KSEVENTDATA**構造体です。
 
 <a name="remarks"></a>注釈
 -------
 
-オーディオ ポート、ドライバーを呼び出すと、 [ **EventHandler** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nc-portcls-pcpfnevent_handler) 、ミニポート ドライバーのルーチンを渡す、 [ **PCEVENT\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcevent_request)構造体。 この構造体にはへのポインターが含まれています、 [ **PCEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcevent_item)フィルター、pin、またはノードでサポートされているイベントについて説明するために使用する構造体。
+オーディオポートドライバーは、そのミニポートドライバーの[**EventHandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nc-portcls-pcpfnevent_handler)ルーチンを呼び出すと、 [**PCEVENT\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcevent_request)構造体を渡します。 この構造体には、フィルター、ピン、またはノードでサポートされるイベントを記述するために使用される[**Pcevent\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcevent_item)構造体へのポインターが含まれています。
 
-そのため、たとえば、ドライバーをサポートする、`KSEVENT_PINCAPS_FORMATCHANGE`イベントを設定する必要があります、 **PCEVENT\_項目**次のように構造体します。
+そのため、たとえば、`KSEVENT_PINCAPS_FORMATCHANGE` イベントをサポートするドライバーは、次のように**Pcevent\_項目**構造を設定する必要があります。
 
 ```cpp
 static PCEVENT_ITEM FormatChangePinEvent[] = {
@@ -72,11 +72,11 @@ static PCEVENT_ITEM FormatChangePinEvent[] = {
 };
 ```
 
-上記のコード例で MyEventHandler カスタム イベント ハンドラーを監視する必要があります、`KSEVENT_PINCAPS_FORMATCHANGE`イベント Portcls に登録と KSEVENT\_PINCAPS\_段落がトリガーされます。 ミニポート ドライバーを呼び出す必要があります、 [ **IPortEvents::AddEventToEventList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-addeventtoeventlist)イベントを登録するメソッド。
+前のコード例では、MyEventHandler カスタムイベントハンドラーは、KSEVENT\_PINCAPS\_FORMATCHANGE がトリガーされたときに、`KSEVENT_PINCAPS_FORMATCHANGE` イベントを監視し、Portcls に登録する必要があります。 ミニポートドライバーは、 [**Iportevents:: AddEventToEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-addeventtoeventlist)メソッドを呼び出して、イベントを登録する必要があります。
 
-ポート ドライバーを呼び出し、pin、ノード、接続およびミニポート ドライバーでサポートされるプロパティの説明を取得するには、するには、 [ **IMiniport::GetDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)メソッド。 このメソッドの呼び出しを返します、 [ **PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor) 、automation のテーブルを指す構造体 ([**PCAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcautomation_table)). **PCAUTOMATION\_テーブル**構造体が、**イベント**メンバー。 このメンバーは、ミニポート ドライバーがサポートするフィルターに関連付けられているイベントの配列を指します。 設定する必要があります、**イベント**メンバーを含むイベントの配列を指す、 **PCEVENT\_項目**用の構造、`KSEVENT_PINCAPS_FORMATCHANGE`イベント。
+ミニポートドライバーでサポートされているピン、ノード、接続、およびプロパティの説明を取得するために、ポートドライバーは[**IMiniport:: GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)メソッドを呼び出します。 このメソッド呼び出しは、オートメーションテーブル ([**Pcfilter\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcautomation_table)) を指す[**PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)構造体を返します。 **Pcautomation\_テーブル**構造には、 **Events**メンバーがあります。 このメンバーは、ミニポートドライバーがサポートするフィルターに関連付けられているイベントの配列を指します。 その**ため、イベントメンバーを**、`KSEVENT_PINCAPS_FORMATCHANGE` イベントの**PCEVENT\_項目**構造を含むイベント配列を指すように設定する必要があります。
 
-呼び出す必要がありますが、ミニポート ドライバーでは、動的形式の変更を検出すると、 [ **IPortEvents::GenerateEventList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-generateeventlist)を通知するメソッド、`KSEVENT_PINCAPS_FORMATCHANGE`イベント。
+ミニポートドライバーで動的な形式の変更が検出された場合は、 [**Iportevents:: GenerateEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-generateeventlist)メソッドを呼び出して、`KSEVENT_PINCAPS_FORMATCHANGE` イベントを通知する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,37 +89,37 @@ static PCEVENT_ITEM FormatChangePinEvent[] = {
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 7 および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows 7 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ks.h (Ks.h を含む)</td>
+<td align="left">Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**EventHandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nc-portcls-pcpfnevent_handler)
+[**ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nc-portcls-pcpfnevent_handler)
 
-[**IMiniport::GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)
+[**IMiniport:: GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)
 
-[**IPortEvents::AddEventToEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-addeventtoeventlist)
+[**IPortEvents:: AddEventToEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-addeventtoeventlist)
 
-[**IPortEvents::GenerateEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-generateeventlist)
+[**IPortEvents:: GenerateEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-generateeventlist)
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**PCAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcautomation_table)
+[**PCAUTOMATION\_テーブル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcautomation_table)
 
-[**PCEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcevent_item)
+[**PCEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcevent_item)
 
-[**PCEVENT\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcevent_request)
+[**PCEVENT\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcevent_request)
 
-[**PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)
+[**PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)
 
  
 

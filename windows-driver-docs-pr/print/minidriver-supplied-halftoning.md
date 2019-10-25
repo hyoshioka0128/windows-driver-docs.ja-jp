@@ -3,16 +3,16 @@ title: ミニドライバーで指定されるハーフトーン
 description: ミニドライバーで指定されるハーフトーン
 ms.assetid: 15af499a-c541-4d61-ace3-5a211574674c
 keywords:
-- ミニドライバーが指定したハーフトーン WDK Unidrv
+- ミニドライバーが提供するハーフトーン WDK Unidrv
 - カスタマイズされたハーフトーン WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 280fd2a3e7e7440e9e4c86b9aec7ab05a3dd95ee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fc1828e70d99dba4bd7a077798e4963e32c7051
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382047"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824267"
 ---
 # <a name="minidriver-supplied-halftoning"></a>ミニドライバーで指定されるハーフトーン
 
@@ -20,17 +20,17 @@ ms.locfileid: "67382047"
 
 
 
-かどうか、指定した色形式は 1 ピクセルあたりのビット数が、イメージの描画に使用されているいずれか (\*DrvBPP) が、プリンターでサポートされるピクセルあたりのビットを超える (\*DevBPP を乗算して\*DevNumOfPlanes)、その後カスタマイズされたハーフトーン機能を提供する必要があります。
+指定された色の形式が、イメージのレンダリングに使用されるピクセルあたりのビット数 (\*DrvBPP) が、プリンターでサポートされているピクセルあたりのビット数 (\*DevBPP に \*DevNumOfPlanes を掛けた値) より大きい場合は、次のように指定する必要があります。カスタマイズされたハーフトーン機能。
 
 カスタマイズされたハーフトーン機能を提供するには、次の操作を行う必要があります。
 
--   提供、[プラグインでレンダリング](rendering-plug-ins.md)を実装する、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッド。
+-   [**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドを実装する[レンダリングプラグイン](rendering-plug-ins.md)を提供します。
 
--   ハーフトーンを含める\*GPD ファイルと、各機能のエントリは、ハーフトーン メソッドをカスタマイズ、インクルード、\*ハーフトーン メソッドを記述するオプションのエントリ。 (いずれにも使用しないでください、[ハーフトーン機能の属性をオプション](option-attributes-for-the-halftone-feature.md))。
+-   GPD ファイルにハーフトーン\*機能のエントリを含め、カスタマイズされた各ハーフトーン方式には、ハーフトーン方式を説明する \*オプションのエントリを含めます。 ([ハーフトーン機能に](option-attributes-for-the-halftone-feature.md)は、いずれのオプション属性も使用しないでください)。
 
--   含めるを返さ\*GPD ファイルのエントリに機能します。 色の書式設定オプションを指定された各にする必要があります、 \*IPCallbackID 属性の場合は、 **IPrintOemUni::ImageProcessing**その色形式のハーフトーン処理するメソッド。
+-   ColorMode \*機能のエントリを GPD ファイルに含めます。 指定された各色書式設定オプションについて、 **Iprintoemuni:: ImageProcessing**メソッドでその色の形式のハーフトーンを処理する場合は、\*IPCallbackID 属性を含める必要があります。
 
-次の例では、2 つの色形式と 4 つのハーフトーン メソッドを定義します。 この例では[制約オプション](option-constraints.md)ハーフトーン メソッド Unidrv は、ユーザーは、各色形式を選択を許可する必要がありますを指定します。
+次の例では、2つのカラー形式と4つのハーフトーンメソッドを定義します。 この例では、[オプション制約](option-constraints.md)を使用して、どのハーフトーン方式を使用してユーザーが各カラー形式に対して選択できるようにするかを指定します。
 
 ```cpp
 *Feature: ColorMode
@@ -77,9 +77,9 @@ ms.locfileid: "67382047"
 }
 ```
 
-説明したように例では、ColorFormat1 と ColorFormat2 返さの両方のオプションが Unidrv を処理できる、色の形式を表す[色形式の処理](handling-color-formats.md)します。 ColorFormat2、用、 \* **IPCallbackID**属性が指定されています。 Unidrv にプリンターの呼び出し、プリンターのユーザーは、色の書式として ColorFormat2 を選択した場合[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)ハーフトーン処理するために COM メソッド。 メソッドのパラメーターの 1 つは、現在選択されているハーフトーン メソッドを表す文字列名へのポインターです。
+この例では、ColorFormat1 オプションと ColorFormat2 ColorMode オプションの両方が、[色の書式の処理](handling-color-formats.md)に関する説明に従って、Unidrv が処理できるカラー形式を表しています。 ColorFormat2 では、\***Ip id**属性が指定されています。 プリンターユーザーがカラー形式として ColorFormat2 を選択した場合、Unidrv は、プリンターの[**Iprintoemuni:: ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing) COM メソッドを呼び出して、ハーフトーンを処理します。 メソッドのパラメーターの1つは、現在選択されているハーフトーンメソッドを表す文字列名へのポインターです。
 
-ハーフトーンの詳細については、次を参照してください。[カスタマイズ ハーフトーン](customized-halftoning.md)します。
+ハーフトーンの詳細については、「カスタマイズされた[ハーフトーン](customized-halftoning.md)」を参照してください。
 
  
 

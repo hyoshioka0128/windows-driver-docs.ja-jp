@@ -3,17 +3,17 @@ title: PnP ドライバーのアンロード ルーチン
 description: PnP ドライバーのアンロード ルーチン
 ms.assetid: 71b30a84-d3c7-4674-94a6-b99f83567183
 keywords:
-- ルーチンの WDK カーネルをアンロード、PnP ドライバー
-- PnP WDK カーネルの日常的なアンロード
-- プラグ アンド プレイ アンロード ルーチン WDK カーネル
+- アンロードルーチン WDK カーネル、PnP ドライバー
+- PnP Unload ルーチンの WDK カーネル
+- プラグアンドプレイアンロードルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc8430d2035ba3320e72a69a31738e8d8997782
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf0c226fdd2d78a10d9c4bb4bdcd68d58d71ffd9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827698"
 ---
 # <a name="pnp-drivers-unload-routine"></a>PnP ドライバーのアンロード ルーチン
 
@@ -21,15 +21,15 @@ ms.locfileid: "67369727"
 
 
 
-PnP ドライバーが必要、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)など、メモリ、スレッド、およびイベントは、によって作成されるすべてのドライバー固有のリソースを削除するルーチン、 [ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。 ドライバーがありますを削除するドライバー固有のリソースがない場合、*アンロード*ルーチンを返すだけです。
+PnP ドライバーには、 [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンによって作成されたドライバー固有のリソース (メモリ、スレッド、イベントなど) を削除する[*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンが必要です。 ドライバー固有のリソースを削除する必要がない場合は、ドライバーに*アンロード*ルーチンが含まれている必要がありますが、単にを返すことができます。
 
-ドライバーの*アンロード*ルーチンは、すべてのドライバーのデバイスが削除された後、いつでも呼び出すことができます。 PnP マネージャーには、ドライバーの*アンロード*IRQL でシステムのスレッドのコンテキストで日常的なパッシブ =\_レベル。
+ドライバーの*アンロード*ルーチンは、すべてのドライバーのデバイスが削除された後でいつでも呼び出すことができます。 PnP マネージャーは、IRQL = パッシブ\_レベルで、システムスレッドのコンテキストでドライバーの*アンロード*ルーチンを呼び出します。
 
-PnP ドライバーでは、デバイスに固有のリソースとデバイスの削除の Irp の PnP への応答内のデバイス オブジェクトを解放します。 PnP マネージャーこれら Irp に代わって送信各が列挙ルート列挙とするレガシ デバイスとドライバーの PnP デバイスのレポートを使用して[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)します。
+Pnp ドライバーは、PnP デバイス削除 Irp に応答して、デバイス固有のリソースとデバイスオブジェクトを解放します。 PnP マネージャーは、列挙された各 PnP デバイスに代わってこれらの Irp を送信します。また、ドライバーが[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)を使用して報告する、ルートで列挙されたレガシデバイスも送信します。
 
-その結果、*アンロード*PnP ドライバーのルーチンは、通常は単純で、多くの場合のみで構成される、**返す**ステートメント。 ただし、ドライバーがドライバー全体のリソースを割り当てられている場合、 **DriverEntry**日常的なその必要がありますの割り当てを解除でそれらのリソースの*アンロード*それが既に完了しない限り、日常的な。 一般に、PnP ドライバーをアンロードするプロセスでは、同期操作です。
+そのため、通常、PnP ドライバーの*アンロード*ルーチンは単純であり、多くの場合**return**ステートメントのみで構成されます。 ただし、ドライバーによってドライバー全体のリソースが**Driverentry**ルーチンに割り当てられている場合は、そのリソースを*アンロード*する前に、そのリソースの割り当てを解除する必要があります。 通常、PnP ドライバーのアンロードプロセスは同期操作です。
 
-I/O マネージャーがドライバー オブジェクトとドライバー オブジェクトの拡張機能を使用して、ドライバーの割り当てを解放[ **IoAllocateDriverObjectExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatedriverobjectextension)します。
+I/o マネージャーは、ドライバーオブジェクトと、 [**Ioallocatedriverobjectextension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatedriverobjectextension)を使用してドライバーが割り当てたドライバーオブジェクト拡張機能を解放します。
 
  
 

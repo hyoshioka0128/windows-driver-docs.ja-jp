@@ -3,43 +3,43 @@ title: 取り出し可能デバイスのサポート
 description: 取り出し可能デバイスのサポート
 ms.assetid: 7820bb71-7218-4c5f-af2b-f41e1b5f696d
 keywords:
-- PnP WDK KMDF、フロッピー デバイス
-- プラグ アンド プレイ WDK KMDF、フロッピー デバイス
-- 電源管理 WDK KMDF、フロッピー デバイス
-- WDK KMDF のドッキング ステーション
-- バス ドライバー WDK KMDF
-- デバイス WDK KMDF の取り出し
-- 取り出し関係 WDK KMDF
-- 移動可能なリムーバブル デバイスの削除
-- 移動可能なリムーバブル デバイス WDK KMDF を一覧表示します。
-- WDK KMDF の移動可能なリムーバブル デバイスのロック
-- WDK KMDF のポータブル デバイス
-- モバイル デバイス、WDK KMDF
-- リムーバブル デバイス WDK KMDF
-- WDK のモバイル デバイス
+- PnP WDK KMDF、ejectable デバイス
+- プラグアンドプレイ WDK KMDF、ejectable デバイス
+- 電源管理 WDK KMDF、ejectable デバイス
+- ドッキングステーション WDK KMDF
+- バスドライバー WDK KMDF
+- デバイスの取り出し (WDK KMDF)
+- 排出関係 WDK KMDF
+- ejectable デバイスの削除
+- ejectable devices WDK KMDF の一覧表示
+- ejectable デバイスをロックする WDK KMDF
+- ポータブルデバイス WDK KMDF
+- モバイルデバイス WDK、KMDF
+- リムーバブルデバイスの WDK KMDF
+- モバイルデバイス WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f6d1bf883ef0306caab428139eb582bf2148c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7906c466a2f0511bf99a469cdef9b2718827ae31
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368661"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831994"
 ---
 # <a name="supporting-ejectable-devices"></a>取り出し可能デバイスのサポート
 
 
-*移動可能なリムーバブル デバイス*デバイスがドッキング ステーションに挿入され、ドッキング ステーションから取り出すことができます。 通常、デバイスを削除する前に移動可能なリムーバブル デバイスのバスの電源は無効にする必要があります。
+*Ejectable デバイス*は、ドッキングステーションに挿入し、ドッキングステーションから取り出すことができるデバイスです。 通常、デバイスを削除する前に、ejectable デバイスのバス電源を無効にする必要があります。
 
-デバイスができる場合は、デバイスのバスのバス ドライバーを設定する必要があります、 **EjectSupported**メンバーで、デバイスの[ **WDF\_デバイス\_PNP\_機能** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)構造体。
+デバイスが ejectable の場合、デバイスのバスのバスドライバーは、デバイスの[**WDF\_デバイス\_PNP\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)の構造体の**EjectSupported**メンバーを設定する必要があります。
 
-いずれかを呼び出す、バス ドライバーは、約を取り出すにその列挙子のデバイスのいずれかが判断した場合[ **WdfPdoRequestEject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdorequesteject)または[ **WdfChildListRequestChildEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistrequestchildeject)します。 たとえば、バス ドライバーは、ユーザーに取り出しボタンが押されたことを検出することがあります。
+バスドライバーは、列挙された子デバイスの1つが取り出しようとしていると判断したときに、 [**WdfPdoRequestEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdorequesteject)または[**WdfChildListRequestChildEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistrequestchildeject)を呼び出します。 たとえば、バスドライバーは、ユーザーが取り出しボタンを押したことを検出する場合があります。
 
-ドライバーを呼び出すと[ **WdfChildListRequestChildEject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistrequestchildeject)または[ **WdfPdoRequestEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdorequesteject)、PnP マネージャーを使用して、 [正しく削除](a-user-unplugs-a-device.md#orderly-removal)シナリオに、デバイスが削除されることをデバイスのドライバーに通知します。 フレームワークが呼び出された後、 [ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)フレームワークであるデバイスのバスのバス ドライバーでのコールバック関数呼び出す、バス ドライバーの[ *EvtDeviceEject* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_eject)を物理的にデバイスを取り出すために必要なすべての操作を実行するコールバック関数。
+ドライバーが[**WdfChildListRequestChildEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistrequestchildeject)または[**WdfPdoRequestEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdorequesteject)を呼び出すと、PnP マネージャーは、デバイスが削除されていることをデバイスのドライバーに通知するために、[正常な削除](a-user-unplugs-a-device.md#orderly-removal)のシナリオを使用します。 フレームワークは、デバイスのバスのバスドライバーで[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) callback 関数を呼び出した後、バスドライバーの[*Evtdeviceeject*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_eject)コールバック関数を呼び出します。これにより、デバイスを物理的に取り出します。
 
-バス ドライバーのリストを維持できる追加のデバイスを取り出すにも発生すると、デバイスを取り出し、*取り出し関係*します。 ユーザーは、デバイスを削除するとき、PnP マネージャーは自分のデバイスも削除すること、リスト内のデバイスのドライバーを通知します。 取り出し関係の一覧を維持するために、バス ドライバーを使用して、 [ **WdfPdoAddEjectionRelationsPhysicalDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoaddejectionrelationsphysicaldevice)、 [ **WdfPdoRemoveEjectionRelationsPhysicalDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoremoveejectionrelationsphysicaldevice)、および[ **WdfPdoClearEjectionRelationsDevices** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoclearejectionrelationsdevices)メソッド。
+デバイスの取り出しによって追加のデバイスも排出されると、バスドライバーは*取り出し関係*のリストを保持できます。 ユーザーがデバイスを削除すると、デバイスが削除されていることをリスト内のデバイスのドライバーに通知します。 [**WdfPdoAddEjectionRelationsPhysicalDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoaddejectionrelationsphysicaldevice)、 [**WdfPdoRemoveEjectionRelationsPhysicalDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoremoveejectionrelationsphysicaldevice)、および[**WdfPdoClearEjectionRelationsDevices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoclearejectionrelationsdevices)の各メソッドを使用すると、排出関係のリストを保持できます。
 
-バス ドライバーを設定する必要があります、ドッキング ステーションにデバイスをロックできる場合、 **LockSupported**メンバーで、デバイスの[ **WDF\_デバイス\_PNP\_機能** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)構造体。 バス ドライバーを提供する必要がありますも、 [ *EvtDeviceSetLock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_set_lock)の取り出しを無効にするデバイスをロックまたは取り出しを有効にするデバイスのロックを解除するコールバック関数。
+ドッキングステーションでデバイスをロックできる場合、バスドライバーはデバイスの WDF\_デバイスの**locksupported**メンバー [ **\_PNP\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)構造体を設定する必要があります。 バスドライバーは、 [*Evtdevicesetlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_set_lock)コールバック関数も提供する必要があります。これにより、デバイスをロックして、排出を無効にしたり、デバイスのロックを解除したりすることができます。
 
  
 

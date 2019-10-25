@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正プロパティは、カメラの背面 light 補正設定を制御します。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOPROCAMP\_バックライト\_補正
+description: KSK プロパティ\_VIDEOPROCAMP\_バックライト\_補正プロパティは、カメラのバックライト補正設定を制御します。 このプロパティは省略可能です。
 ms.assetid: d893fc01-048a-4f2e-8587-d71be0796dcc
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4311773cb1076de566cb2c512da72b469cb8d94
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d86f4f2131a3f23febdee16db88d508e90b0486e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381981"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837862"
 ---
-# <a name="kspropertyvideoprocampbacklightcompensation"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正
+# <a name="ksproperty_videoprocamp_backlight_compensation"></a>KSK プロパティ\_VIDEOPROCAMP\_バックライト\_補正
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正プロパティは、カメラの背面 light 補正設定を制御します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_バックライト\_補正プロパティは、カメラのバックライト補正設定を制御します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_backlight_compensation_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの背面 light 補正設定を指定する LONG が。 この値は 0 または 1 のいずれかにあります。 このプロパティの既定値は 1 です。 値 0 は、戻る光補正が無効になっていることを示します。 既定値の 1 では、戻る光補正が有効になっていることを示します。
+プロパティ値 (操作データ) は、カメラのバックライト補正設定を指定する LONG です。 この値には、0または1を指定できます。 このプロパティの既定値は1です。 値0は、バックライト補正が無効であることを示します。 既定値の1は、バックライト補正が有効になっていることを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_の構造は、バックライト補正が有効になっているかどうかを指定します。
+VIDEOPROCAMP\_S 構造体\_KSK プロパティの**値**メンバーは、バックライト補正が有効か無効かを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_バックライト\_補正�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

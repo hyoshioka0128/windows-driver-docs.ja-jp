@@ -3,18 +3,18 @@ title: I/O 操作用のコントローラー オブジェクトの割り当て
 description: I/O 操作用のコントローラー オブジェクトの割り当て
 ms.assetid: 8a5e3741-f8ea-4e27-bb7f-6c20da1d618d
 keywords:
-- コント ローラー オブジェクトの WDK カーネルの割り当て
-- ControllerControl ルーチン、コント ローラー オブジェクトの割り当て
+- コントローラーオブジェクト WDK カーネル、割り当て
+- コントローラーオブジェクトの割り当てであるコントロールルーチン
 - IoAllocateController
-- コント ローラーのオブジェクトを割り当てください。
+- コントローラーオブジェクトの割り当て
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1d2b9aa7e305295ca8a226057d83e1b5f5aba9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3cde992b60248b28a62a25e924c5c187753cc4d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828644"
 ---
 # <a name="allocating-controller-objects-for-io-operations"></a>I/O 操作用のコントローラー オブジェクトの割り当て
 
@@ -22,41 +22,41 @@ ms.locfileid: "67369966"
 
 
 
-コント ローラー オブジェクトを使用するドライバーがそのデバイスを起動した後、プロセス Irp がそのオブジェクトはターゲット デバイスに送信する準備が。 IRP が I/O 操作のコント ローラーのオブジェクトによって表される物理デバイスのプログラムにドライバーを必要とされるたびに、ドライバーが呼び出す[ **IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioallocatecontroller)します。 次の図は、このような呼び出しを示しています。
+コントローラーオブジェクトを使用するドライバーによってデバイスが起動されると、そのターゲットデバイスオブジェクトに送信される Irp を処理する準備が整います。 IRP で、i/o 操作のコントローラーオブジェクトによって表される物理デバイスをプログラムする必要がある場合、ドライバーは[**IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioallocatecontroller)を呼び出します。 次の図は、このような呼び出しを示しています。
 
-![i/o コント ローラー オブジェクトの割り当てを示す図](images/3ctlaloc.png)
+![i/o のコントローラーオブジェクトの割り当てを示す図](images/3ctlaloc.png)
 
-前の図に示すようにドライバーを指定する必要がありますよりも多く*ControllerObject*によって返されたポインター [ **IoCreateController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller) 呼び出し時に[ **IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioallocatecontroller)します。 このポインターと共に、ドライバーが提供する現在の I/O 要求の対象を表すデバイス オブジェクト、ポインターを渡す必要があります、 [ *ControllerControl* ](https://msdn.microsoft.com/library/windows/hardware/ff542049)ルーチン、およびどのに*コンテキスト*その*ControllerControl*ルーチンは、要求された I/O 操作のデバイスを設定する必要があります。
+前の図に示されているように、ドライバーは[**IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioallocatecontroller)を呼び出すときに[**IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatecontroller)によって返されたコントローラー以外の*オブジェクト*ポインターを指定する必要があります。 このポインターと共に、現在の i/o 要求のターゲットを表すデバイスオブジェクトへのポインター、ドライバーによって提供される[*コントローラー制御*](https://msdn.microsoft.com/library/windows/hardware/ff542049)ルーチン、および*コントローラー*が必要とする*コンテキスト*を渡す必要があります。要求された i/o 操作のためにデバイスを設定します。
 
-**IoAllocateController**ドライバーによって提供されるキュー *ControllerControl*ルーチンの場合は、コント ローラー オブジェクトによって表されるデバイスがビジー状態です。 それ以外の場合、 *ControllerControl*ルーチンは、上記の図に示すように入力パラメーターを使用してすぐに呼び出されます。 入力*コンテキスト*へのポインター **IoAllocateController**ドライバーに渡される*ControllerControl*ルーチンを実行した場合。
+**IoAllocateController**は、コントローラーオブジェクトによって表されるデバイスがビジーである場合に、ドライバーによって提供される*コントロール*ルーチンをキューに置いています。 それ以外の場合は、前の図に示した入力パラメーターを使用して、*コントローラー制御*ルーチンが直ちに呼び出されます。 **IoAllocateController**への入力*コンテキスト*ポインターは、実行時にドライバーの*コントローラーの制御*ルーチンに渡されます。
 
-コンテキスト情報を格納するのに場所を特定するのにには、次のガイドラインを使用します。
+コンテキスト情報を格納する場所を決定するには、次のガイドラインに従います。
 
--   コント ローラー拡張機能で、ドライバーは、物理コント ローラーで別の操作を開始する前に完了するまで各 IRP を処理しない限り、ドライバーによって提供されるコンテキストの領域がすることはできません。 それ以外の場合、または新しい IRP の受信時にその他のドライバーのルーチンでコント ローラー拡張機能でコンテキストの領域は上書きされることができます。
+-   ドライバーによって提供されるコンテキスト領域は、ドライバーが各 IRP を完了に処理した後、物理コントローラーで別の操作を開始するまでは、コントローラーの拡張機能に含まれないようにする必要があります。 それ以外の場合、コントローラー拡張機能内のコンテキスト領域は、他のドライバールーチンまたは新しい IRP の受信時に上書きされる可能性があります。
 
--   ドライバーには、デバイス別のデバイス オブジェクトの I/O 操作が重なっていると、場合でも、ターゲット デバイス オブジェクトの拡張機能でデバイス コンテキストの領域を上書きできません。
+-   ドライバーが別のデバイスオブジェクトのデバイス i/o 操作と重複する場合でも、ターゲットデバイスオブジェクトのデバイス拡張機能のコンテキスト領域を上書きすることはできません。
 
--   特定のデバイス オブジェクトの別の I/O 要求が行われ、ドライバーは場合、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) 、日常的なデバイスの拡張機能内のコンテキストの領域も上書きできません受信 IRP があるため、ドライバーを呼び出すときにキューに置かれた[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)と同じ IRP はキューに残ります、デバイス ドライバー呼び出しまで[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)直前にそのデバイス オブジェクトの現在の IRP を完了します。
+-   特定のデバイスオブジェクトに対して別の i/o 要求が行われ、ドライバーに[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンがある場合、ドライバーが[**iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)を呼び出したときに着信 IRP がキューに入れられるため、そのデバイス拡張機能のコンテキスト領域も上書きされません。同じ IRP がデバイスキューに保持されるのは、そのデバイスオブジェクトの現在の IRP を完了する直前に、ドライバーが[**Iostartnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)を呼び出すまでです。
 
-I/O マネージャーへのポインターを渡す、*デバイス オブジェクト*-&gt;**CurrentIrp**を*ControllerControl*ルーチンの場合、ドライバーは、 *StartIo*ルーチン。 かどうか、ドライバーは Irp の専用キューではなくを管理、 *StartIo* I/O マネージャーを与えることはできません、日常的な*ControllerControl*ルーチン現在 IRP へのポインター。 ドライバーを呼び出すと**IoAllocateController**、現在の IRP の一部として渡すか、*コンテキスト*-アクセス可能なデータ。
+ドライバーに*StartIo*ルーチンが含まれている場合、i/o マネージャーは、 *DeviceObject* **-&gt;のポインターを、** この*コントロール*ルーチンに渡します。 *StartIo*ルーチンを使わずに、ドライバーが irp の独自のキューを管理している場合、i/o マネージャーは、*コントローラー*に現在の IRP へのポインターを与えることはできません。 ドライバーが**IoAllocateController**を呼び出すと、*コンテキスト*にアクセスできるデータの一部として現在の IRP を渡す必要があります。
 
-ドライバーのルーチンを呼び出す**IoAllocateController** IRQL で実行する必要があります = ディスパッチ\_レベルの呼び出しが発生した場合。 この呼び出しからは、ドライバー、 *StartIo*ルーチンがディスパッチで既に実行されている\_レベル。
+**IoAllocateController**を呼び出すドライバールーチンは、呼び出しが発生したときに、IRQL = ディスパッチ\_レベルで実行されている必要があります。 *StartIo*ルーチンからこの呼び出しを行うドライバーは、ディスパッチ\_レベルで既に実行されています。
 
-*ControllerControl*ルーチンが IRP の要求された操作の物理的なコント ローラーを設定します。
+コントローラー*制御*ルーチンは、IRP の要求された操作の物理コントローラーを設定します。
 
-前の図に示すように、 *ControllerControl*ルーチンは、型の値を返します[ **IO\_割り当て\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_io_allocation_action)、なることができます次のシステム定義の値のいずれか:
+前の図に示されているように、*コントローラーの制御*ルーチンは、次のシステム定義の値のいずれかを使用して、 [**IO\_割り当て\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_io_allocation_action)の値を返します。
 
--   場合、 *ControllerControl*返すか、物理コント ローラーで別の操作を起動できるは、ルーチン、 **DeallocateObject**次に I/O 操作が要求されたため、ドライバーが重複することができます。
+-   *コントローラーが*物理コントローラー上で別の操作を開始できる場合は、ドライバーが次に要求された i/o 操作と重複するように**Deallocateobject**を返す必要があります。
 
-    たとえば場合、 *ControllerControl*ルーチンは、プログラムの 1 つのディスクのシーク操作のディスク コント ローラー、その IRP の完了、および戻り値**DeallocateObject**、 *ControllerControl*ルーチンは、転送要求は、他のディスクにキューが現在場合、その他のディスク上の転送操作のディスク コント ローラーをプログラムをもう一度呼び出すことができます。
+    たとえば、コントローラー*制御*ルーチンが1つのディスクでシーク操作のためにディスクコントローラーをプログラミングし、その IRP を完了して**Deallocateobject**を返すことができる場合、*コントロール*ルーチンを再び呼び出してディスクをプログラミングできます。他のディスクに対する転送操作のためのコントローラー。現在、転送要求が他のディスクのキューに格納されている場合。
 
--   現在の IRP では、その他のドライバー ルーチンでさらに処理が必要な場合、 *ControllerControl*ルーチンを返す必要があります**KeepObject**します。
+-   現在の IRP が他のドライバールーチンによってさらに処理を必要とする場合、*コントローラーの制御*ルーチンは**KeepObject**を返す必要があります。
 
-    たとえば、ドライバーは、転送操作のディスク コント ローラーのプログラムが、転送が完了するまで、IRP を完了することはできません、 *ControllerControl*ルーチンを返す必要があります**KeepObject**します。
+    たとえば、ドライブが転送操作のためにディスクコントローラーをプログラムするが、転送が完了するまで IRP を完了できない場合、*コントローラー制御*ルーチンは**KeepObject**を返す必要があります。
 
-ときに、 *ControllerControl*ルーチンを返します**KeepObject**、デバイスが割り込み、ときに、ドライバーの ISR が通常実行し、その[ *DpcForIsr* 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンでは、I/O 操作と対象のデバイス オブジェクトの現在の IRP が完了するとします。
+コントローラーの*制御*ルーチンが**KeepObject**を返すと、通常、ドライバーの ISR はデバイスの割り込み時に実行され、その[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)または[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンは、ターゲットデバイスの i/o 操作と現在の IRP を完了します。素材.
 
-たびに、 *ControllerControl*ルーチンを返します**KeepObject**、IRP を完了するルーチンを呼び出す必要があります[ **IoFreeController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iofreecontroller). このようなドライバーのルーチンを呼び出す必要があります**IoFreeController**次のデバイスの I/O 操作をすぐ設定できるように、できるだけ早くします。
+コントローラーの*制御*ルーチンが**KeepObject**を返すたびに、IRP を完了するルーチンは[**IoFreeController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iofreecontroller)を呼び出す必要があります。 このようなドライバールーチンは、次のデバイス i/o 操作をすぐに設定できるように、できるだけ早く**IoFreeController**を呼び出す必要があります。
 
  
 

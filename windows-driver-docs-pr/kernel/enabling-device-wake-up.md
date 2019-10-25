@@ -3,22 +3,22 @@ title: デバイス ウェイクアップの有効化
 description: デバイス ウェイクアップの有効化
 ms.assetid: 1c3b9ebc-cc77-4562-9c57-56f2c9a69772
 keywords:
-- Irp WDK の電源管理
-- アクティブになるデバイス
-- 電源管理のウェイク アップ機能 WDK
-- デバイスのスリープ解除 ups WDK 電源管理
+- Irp WDK 電源管理
+- 復帰デバイス
+- ウェイクアップ機能 WDK の電源管理
+- デバイスのウェイクアップと WDK の電源管理
 - IRP_MN_WAIT_WAKE
 - IRP_MJ_POWER
 - DEVICE_CAPABILITIES 構造体
-- WDK カーネルの電源を復元します。
+- パワー WDK カーネルを復元しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b48d4dfe950e7909bff5ec52ed259f3027241325
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8a4e488c13fc3705d9b83cc8fa98e31714648fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384947"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836787"
 ---
 # <a name="enabling-device-wake-up"></a>デバイス ウェイクアップの有効化
 
@@ -26,11 +26,11 @@ ms.locfileid: "67384947"
 
 
 
-デバイスは、ウェイク アップをサポートする場合、電源ポリシー所有者を有効にして、デバイスのウェイク アップを無効にすることである必要があります。 ドライバーにより、ウェイク アップを送信する[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)マイナー関数コードで要求を[ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)以前送信を取り消すと、ウェイク アップを有効または無効に**IRP\_MN\_待機\_WAKE**します。 デバイスがある 1 つだけ**IRP\_MN\_待機\_WAKE**一度に保留中の要求。
+デバイスでウェイクアップがサポートされている場合は、そのデバイスの電源ポリシー所有者がウェイクアップを有効または無効にできる必要があります。 ドライバーを使用すると、 [**irp\_MJ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求を、マイナー関数コード[**IRP\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)正常に送信することによってウェイクアップできます。また、以前に送信された**irp\_完了\_待機をキャンセルすると、ウェイクアップが無効になり\___ のスリープ解除**。 1つのデバイスには、一度に保留 **\_ウェイク要求を待機\_** 1 つの IRP\_しか設定できません。
 
-そこからは、ウェイク アップ、およびシステム電源の状態、デバイスが、システムを起動できます通知デバイスの電源の状態、デバイスは、ウェイク アップをサポートするかどうかを確認するのにはドライバーによってチェックされます、 **SystemWake**、 **DeviceWake**、および **WakeFromD * * * x*内のメンバー、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。
+デバイスがウェイクアップをサポートしているかどうか、ウェイクアップできるデバイスの電源状態、およびデバイスがシステムをスリープ解除できるシステム電源の状態を確認するには、ドライバーは**Systemwake**、 **devicewake**、および **WakeFromD * * * を確認します。* [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造の x メンバー。
 
-有効にする方法の詳細については、無効化、およびドライバー、ウェイク アップ シグナルへの応答を参照してください[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)します。
+ドライバーのウェイクアップシグナルを有効化、無効化、および応答する方法の詳細については、「[ウェイクアップ機能を搭載したデバイスのサポート](supporting-devices-that-have-wake-up-capabilities.md)」を参照してください。
 
  
 

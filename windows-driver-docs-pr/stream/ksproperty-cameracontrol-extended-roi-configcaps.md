@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS プロパティ ID、KSPROPERTY で定義されている\_CAMERACONTROL\_拡張\_プロパティ列挙は、ROI 機能の照会に使用されます。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS
+description: KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS プロパティ ID に定義されています。\_拡張\_プロパティ列挙型を使用して、ROI 機能のクエリを実行します。
 ms.assetid: 29722CE2-81D3-453E-82C5-98C8E7115448
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_CONFIGCAPS ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_CONFIGCAPS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9975dab538daa1f2b07d01d69efdeda8091d3519
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2731b0512dfc024b99dab0e4a4df51d472938163
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377914"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823985"
 ---
-# <a name="kspropertycameracontrolextendedroiconfigcaps"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS
+# <a name="ksproperty_cameracontrol_extended_roi_configcaps"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙体は、ROI 機能のクエリに使用されます。
+**Ksk プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**プロパティ ID で定義されている\_[**CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙を使用して roi をクエリします。機能.
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "67377914"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,17 +49,17 @@ ms.locfileid: "67377914"
 </tbody>
 </table>
 
-クエリのドライバーと ROI の機能を**KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**と共にドライバーに拡張プロパティのコントロールが送信される、標準[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造が続く、 [ **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPSHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcapsheader)構造体は、1 つまたは複数続く[ **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcaps)構造体。 次の一覧は、2 つの ROI 設定キャップを持つデータ構造を示しています。
+ドライバーを使用して ROI 機能のクエリを実行するために、 **Ksk プロパティ\_CAMERACONTROL\_extended\_ROI\_CONFIGCAPS**拡張プロパティコントロールが、標準の[**KSCAMERA\_extendedprop と共にドライバーに送信され @no**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) [**KSCAMERA\_extendedprop\_ROI\_CONFIGCAPSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcapsheader)構造体の後に続けて1つ以上の[**KSCAMERA\_extendedprop\_roi\_configcaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcaps)が続きます。構成. 次の一覧は、2つの ROI 構成キャップを持つデータ構造を示しています。
 
 -   **KSCAMERA\_EXTENDEDPROP\_ヘッダー**
 
--   **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPSHEADER** (ConfigCapCount = 2)
+-   **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPSHEADER** (configcapcount = 2)
 
 -   **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPS**
 
 -   **KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPS**
 
-次の表には、説明と要件が含まれています、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー**フィールドを構造体を使用する場合、 **KSPROPERTY\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS**拡張、ROI コントロールのプロパティ。
+次の表には、Ksk プロパティ\_CAMERACONTROL\_拡張\_ROI\_CONFIGCAPS を使用する場合の**KSCAMERA\_EXTENDEDPROP\_ヘッダー**構造のフィールドの説明と要件が含まれています。拡張された ROI コントロールのプロパティ。
 
 <table>
 <colgroup>
@@ -68,39 +68,39 @@ ms.locfileid: "67377914"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1、</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>これでなければなりません<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0 xffffffff)</p></td>
+<td><p>これは<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong> + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS</strong>) * ConfigCapCount します。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong> + Sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS</strong>) * configcapcount である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>これは、0 でなければなりません。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り専用フィールドです。 これは、0 でなければなりません。</p></td>
+<td><p>これは読み取り専用フィールドです。 0にする必要があります。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

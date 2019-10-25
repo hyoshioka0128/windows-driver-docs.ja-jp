@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e86a743e2328344a8194fb200c2753dc23773b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0dbdfaea474136031da514840cd4c5d167d2729
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385507"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824052"
 ---
-# <a name="oidcotapitranslatendiscallparams"></a>OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
+# <a name="oid_co_tapi_translate_ndis_callparams"></a>OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
 
-OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS OID 要求 NDIS 呼び出しのパラメーターを変換するには、コール マネージャーまたは MCM ドライバー (渡された、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体をクライアントの[ProtocolClIncomingCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_call)関数) から TAPI には、呼び出しパラメーター。 クライアントでは、コール マネージャーまたは MCM ドライバーによって返される翻訳された TAPI 呼び出しパラメーターを使用して、受け入れるか、着信通話を拒否するかどうかを判断します。
+OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS OID は、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体でクライアントの[ProtocolClIncomingCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_incoming_call)関数に渡される NDIS 呼び出しパラメーターを TAPI 呼び出しパラメーターに変換するように、呼び出しマネージャーまたは mcm ドライバーに要求します。 クライアントは、通話マネージャーまたは MCM ドライバーによって返された変換済みの TAPI 呼び出しパラメーターを使用して、着信呼び出しを受け入れるか拒否するかを決定します。
 
-この要求は、次のように定義されている CO_TAPI_TRANSLATE_NDIS_CALLPARAMS 構造体を使用します。
+この要求では、次のように定義されている CO_TAPI_TRANSLATE_NDIS_CALLPARAMS 構造体を使用します。
 
 ```c++
 typedef struct _CO_TAPI_TRANSLATE_NDIS_CALLPARAMS {
@@ -27,25 +27,25 @@ typedef struct _CO_TAPI_TRANSLATE_NDIS_CALLPARAMS {
 } CO_TAPI_TRANSLATE_NDIS_CALLPARAMS, *PCO_TAPI_TRANSLATE_NDIS_CALLPARAMS;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **ulFlags**  
-クライアントは、ビット CO_TAPI_FLAG_INCOMING_CALL を設定する必要があります**ulFlags**します。
+クライアントは、 **Ulflags**に CO_TAPI_FLAG_INCOMING_CALL ビットを設定する必要があります。
 
 **NdisCallParams**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体。 NDIS_VAR_DATA_DESC 構造体には、CO_CALL_PARAMETERS 構造体の長さも含まれています。 クライアントは、TAPI 呼び出しのパラメーターに変換する NDIS 呼び出しパラメーターを持つ CO_CALL_PARAMETERS 構造体に格納します。
+NDIS_VAR_DATA_DESC 構造体の先頭から[CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体までのオフセットを格納する[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 NDIS_VAR_DATA_DESC 構造体には、CO_CALL_PARAMETERS 構造体の長さも含まれます。 クライアントは、CO_CALL_PARAMETERS 構造体に NDIS 呼び出しパラメーターを入力して、TAPI 呼び出しパラメーターに変換します。
 
 **LineCallInfo**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) LINE_CALL_INFO 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造体には、CO_CALL_PARAMETERS 構造体の長さも含まれています。 LINE_CALL_INFO 構造では、翻訳されたパラメーターを呼び出し、特定の NDIS 先 TAPI 呼び出しのパラメーターを指定します。 LINE_CALL_INFO 構造の詳細については、Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
+NDIS_VAR_DATA_DESC 構造体の先頭から LINE_CALL_INFO 構造体までのオフセットを格納する[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 NDIS_VAR_DATA_DESC 構造体には、CO_CALL_PARAMETERS 構造体の長さも含まれます。 LINE_CALL_INFO 構造体は、指定された NDIS 呼び出しパラメーターが変換された TAPI 呼び出しパラメーターを指定します。 LINE_CALL_INFO 構造体の詳細については、Windows SDK と ndistapi .h のヘッダーファイルを参照してください。
 
 ## <a name="remarks"></a>注釈
 
-によって参照される LINE_CALL_PARAMS 構造でコール マネージャーまたは MCM ドライバーが入力要求が成功した場合、 **LineCallInfo**翻訳 tapi 呼び出しパラメーター。 呼ばれるフラットなメモリの範囲内で LINE_CALL_INFO 構造を割り当てる必要があります、コール マネージャーまたは MCM ドライバー **LineCallInfo**します。 LINE_CALL_INFO 構造体の長さの合計は、クライアントが書き込む**LineCallInfo.Length**します。
+要求が成功した場合、呼び出しマネージャーまたは MCM ドライバーは、 **LineCallInfo**によって参照される LINE_CALL_PARAMS 構造体に、変換された TAPI 呼び出しパラメーターを入力します。 呼び出しマネージャーまたは MCM ドライバーは、 **LineCallInfo**と呼ばれるフラットメモリセクション内に LINE_CALL_INFO 構造体を割り当てる必要があります。 クライアントは、LINE_CALL_INFO 構造体の合計長を**LineCallInfo**に書き込みます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 

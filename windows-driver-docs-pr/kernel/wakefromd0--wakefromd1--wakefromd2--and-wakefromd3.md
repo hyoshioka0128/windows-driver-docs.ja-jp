@@ -9,12 +9,12 @@ keywords:
 - WakeFromD3
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b90c70565ee9992607398f8fcc10923ee03fdd96
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0d6015f4d0a6c63754b1dabbe2b5256ba01700ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358117"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835771"
 ---
 # <a name="wakefromd0-wakefromd1-wakefromd2-and-wakefromd3"></a>WakeFromD0、WakeFromD1、WakeFromD2、WakeFromD3
 
@@ -22,9 +22,9 @@ ms.locfileid: "67358117"
 
 
 
-これらの各[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体のメンバーは、デバイスことができます、デバイスが指定された状態を受信する外部のシグナルへの応答がスリープ解除するかどうかを示します。
+これらの各[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造体のメンバーは、デバイスが指定された状態になったときに着信する外部シグナルに応答してデバイスを目覚めさせることができるかどうかを示します。
 
-すべての 4 つのデバイスの電源をサポートするデバイスのことができます (D0、D1、D2、D3) の状態を再開状態 D0 および D1 からのみ、 **WakeFromD0**と**WakeFromD1**ビットが設定されている、 **WakeFromD2**と**WakeFromD3**のビットがクリアされます。
+4つのデバイスの電源状態 (D0、D1、D2、D3) をすべてサポートしているデバイスでは、状態が D0 および D1 の場合にのみ機能しますが、 **WakeFromD0**と**WakeFromD1**のビットは設定され、 **WakeFromD2**と**WakeFromD3**のビットはクリアされます。
 
  
 

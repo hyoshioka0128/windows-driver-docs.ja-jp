@@ -3,18 +3,18 @@ title: ミニポート中間ドライバーの初期化
 description: ミニポート中間ドライバーの初期化
 ms.assetid: b0beea1f-7374-49e9-9650-0bdb37902469
 keywords:
-- NDIS 中間ドライバ、WDK の初期化
-- ドライバー WDK 中級レベルのネットワーク、初期化しています
-- ミニポート中間ドライバーの初期化
-- ミニポート中間ドライバー WDK NDIS
+- NDIS 中間ドライバー WDK、初期化中
+- 中間ドライバー WDK ネットワーク、初期化
+- ミニポート-中間ドライバーの初期化
+- ミニポート-中間ドライバー WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4498be2cd4df1cc5072fd28be5df05d41d7f0a3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 057230284757b87e77fe7c174904155718fe5892
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379216"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824503"
 ---
 # <a name="initializing-a-miniport-intermediate-driver"></a>ミニポート中間ドライバーの初期化
 
@@ -22,11 +22,11 @@ ms.locfileid: "67379216"
 
 
 
-ミニポート中間ドライバーには、仮想デバイス用のミニポート ドライバー、プロトコル ドライバーでは、物理デバイスのミニポート ドライバーが統合されています。 ミニポート ドライバーの上層に中間のドライバーと同様にミニポート中間ドライバー機能。 このようなドライバーには、2 つの個別のドライバーとなる可能性があるパフォーマンスの低下を発生させずに、基になるミニポート ドライバーと直接通信する中間のドライバーができます。
+ミニポート中間ドライバーは、仮想デバイス用のミニポートドライバー、プロトコルドライバー、および物理デバイス用のミニポートドライバーを結合します。 ミニポート中間ドライバーは、ミニポートドライバーに階層化された中間ドライバーと同様に機能します。 このようなドライバーを使用すると、中間ドライバーは、2つの異なるドライバーを使用した場合にパフォーマンスの低下を招くことなく、基になるミニポートドライバーと直接通信することができます。
 
-ミニポート中間ドライバーを呼び出してその物理ミニポート ドライバーに登録する、 [ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)ミニポート ドライバーと同様の適切なパラメーターを持つ関数です。 その仮想のミニポート ドライバーの呼び出しを登録する**NdisMRegisterMiniportDriver** NDIS がもう一度、\_中間\_ドライバー フラグの設定の構造で*MiniportDriverCharacteristics*します。
+物理ミニポートドライバーを登録するために、ミニポート中間ドライバーは、任意のミニポートドライバーと同様に、適切なパラメーターを使用して[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)関数を呼び出します。 仮想ミニポートを登録するために、ドライバーは**NdisMRegisterMiniportDriver**を再度呼び出しますが、NDIS\_中間\_ドライバーフラグを*Miniportdrivercharacteristics*の構造体に設定します。
 
-ミニポート中間ドライバーの場合は、各仮想または物理デバイス インスタンスの場合、 **IMMiniport**にレジストリ キーが設定されている**DWORD:0x0000001**、NDIS 呼び出し、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)仮想デバイスのドライバーが登録されている関数。 それ以外の場合、ドライバーの呼び出す NDIS *MiniportInitializeEx*物理的なデバイス ドライバーが登録されている関数。
+ミニポート中間ドライバーの仮想または物理デバイスインスタンスごとに、 **Imminiport ポート**レジストリキーが**DWORD: 0x0000001**に設定されている場合、NDIS は、ドライバーによって仮想マシンに登録された[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出します。ドライブ. それ以外の場合、NDIS はドライバーによって物理デバイスに登録されたドライバーの*MiniportInitializeEx*関数を呼び出します。
 
  
 

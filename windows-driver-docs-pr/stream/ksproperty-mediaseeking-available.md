@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_MEDIASEEKING\_利用可能
-description: KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現在利用可能なメディアの期間を取得します。
+title: KSK プロパティ\_MEDIASEEKING\_使用可能
+description: KSK プロパティ\_MEDIASEEKING\_AVAILABLE プロパティは、現在フィルターで使用できるメディアの時間間隔を取得します。
 ms.assetid: df59f32e-2783-418d-85b9-f9285034c6fa
 keywords:
-- KSPROPERTY_MEDIASEEKING_AVAILABLE ストリーミング メディア デバイス
+- KSPROPERTY_MEDIASEEKING_AVAILABLE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c6064e8996cf86f6e0c9ec6c6ba139c1ada0ce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce2b9c599d75605a9462e5190bc27c6b29afcbde
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360165"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827278"
 ---
-# <a name="kspropertymediaseekingavailable"></a>KSPROPERTY\_MEDIASEEKING\_利用可能
+# <a name="ksproperty_mediaseeking_available"></a>KSK プロパティ\_MEDIASEEKING\_使用可能
 
 
-KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現在利用可能なメディアの期間を取得します。
+KSK プロパティ\_MEDIASEEKING\_AVAILABLE プロパティは、現在フィルターで使用できるメディアの時間間隔を取得します。
 
 ## <span id="ddk_ksproperty_mediaseeking_available_ks"></span><span id="DDK_KSPROPERTY_MEDIASEEKING_AVAILABLE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable" data-raw-source="[&lt;strong&gt;KSPROPERTY_MEDIAAVAILABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable)"><strong>KSPROPERTY_MEDIAAVAILABLE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_mediaavailable" data-raw-source="[&lt;strong&gt;KSPROPERTY_MEDIAAVAILABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_mediaavailable)"><strong>KSPROPERTY_MEDIAAVAILABLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 <a name="remarks"></a>注釈
 -------
 
-メディアの有効期間は、期間をクライアントがシークできます。
+メディアの期間は、クライアントがシークできる期間です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_MEDIAAVAILABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable)
+[**KSK プロパティ\_MEDIAAVAILABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_mediaavailable)
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
 

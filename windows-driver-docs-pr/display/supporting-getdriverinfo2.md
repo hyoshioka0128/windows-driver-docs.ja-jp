@@ -3,16 +3,16 @@ title: GetDriverInfo2 のサポート
 description: GetDriverInfo2 のサポート
 ms.assetid: 5e2dd363-9e72-4674-940e-8b4f06f6eb14
 keywords:
-- DirectX 8.0 リリース ノートには、Windows 2000 の WDK 表示 GetDriverInfo2
+- DirectX 8.0 リリースノート WDK Windows 2000 display、GetDriverInfo2
 - GetDriverInfo2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6ac0c875f2f2b3dff1084cbe137c85a781d240
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7aa383699431b8a625772de198ffef7d94325ee1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386444"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825624"
 ---
 # <a name="supporting-getdriverinfo2"></a>GetDriverInfo2 のサポート
 
@@ -20,23 +20,23 @@ ms.locfileid: "67386444"
 ## <span id="ddk_supporting_getdriverinfo2_gg"></span><span id="DDK_SUPPORTING_GETDRIVERINFO2_GG"></span>
 
 
-DirectX の 8.0 DDI には、クエリについては、ドライバーを実行するための新しいメカニズムが導入されています。 このメカニズムは拡張既存[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)ドライバーから追加情報を照会するエントリ ポイント。 現時点では、このメカニズムは DX8 スタイル D3D cap を照会するためにのみ使用します。
+DirectX 8.0 DDI では、ドライバーに情報を照会するための新しいメカニズムが導入されています。 このメカニズムにより、既存の[**Ddgetdriverinfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)エントリポイントが拡張され、ドライバーからの追加情報が照会されます。 現時点では、このメカニズムは DX8 スタイルの D3D キャップのクエリにのみ使用されます。
 
-**注**  理由を疑問可能性があります、次を読み、 **GetDriverInfo2**メカニズムが必要です。 単に新しいを定義することをお勧め思えます**GetDriverInfo** D3DCAP8 構造体を返すことによって、ドライバーを処理する GUID。 **GetDriverInfo2**、次の段落で導入された、DirectX 8.0 レベルの機能を有効にし、そのため、DirectX 8.0 ランタイムの再配布実用的な Windows オペレーティング システムに必要な変更を最小限に抑えるメカニズムです。
+**GetDriverInfo2**のメカニズムが必要な理由については、以下をお読みください **。  ** D3DCAP8 構造体を返すことによって、ドライバーが処理する新しい**Getdriverinfo** GUID を単に定義することをお勧めします。 次の段落で導入された**GetDriverInfo2**は、directx 8.0 レベルの機能を有効にするために Windows オペレーティングシステムに必要な変更を最小限に抑え、directx 8.0 ランタイムを実際に再配布できるようにするためのメカニズムです。
 
  
 
-この拡張機能を**GetDriverInfo**の形式を*DdGetDriverInfo* GUID を持つ呼び出し\_GetDriverInfo2 します。 ときに、 *DdGetDriverInfo*ドライバーによってその GUID を持つ呼び出しが受信されると、渡されたデータ構造を調べる必要があります、 **lpvData**のフィールド、 [ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)データ構造にどのような情報が要求されているを参照してください。 以下に示すよう**lpvData**いずれかを指すことができます、 [ **DD\_GETDRIVERINFO2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getdriverinfo2data)または[ **DD\_STEREOMODE** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_stereomode)構造体。
+この**Getdriverinfo**の拡張機能は、GUID\_GetDriverInfo2 を持つ*ddgetdriverinfo*呼び出しの形式を受け取ります。 この GUID を持つ*Ddgetdriverinfo*呼び出しがドライバーによって受信された場合、要求されている情報を確認するには、 [**DD\_getdriverinfodata**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)データ構造の**lpvdata**フィールドで渡されたデータ構造を確認する必要があります。 以下で説明するように、 **Lpvdata**は、 [**dd\_GETDRIVERINFO2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getdriverinfo2data)または[**dd\_STEREOMODE**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_stereomode)構造体を指すことができます。
 
-GUID\_GetDriverInfo2 は GUID と同じ GUID 値\_DDStereoMode します。 ドライバーは GUID を処理しない場合\_DDStereoMode、問題ではありません。 ただし、DirectX 8.0、ドライバーが GUID を処理する場合\_DDStereoMode への呼び出し時に注意して*DdGetDriverInfo*の GUID を持つ\_GetDriverInfo2 (GUID\_DDStereoMode) を行うと、ランタイム セット、**dwHeight** 、DD のフィールド\_特別な値 D3DGDI2 STEREOMODE 構造\_マジックです。 このフィールドに対応して、 **dwMagic** 、DD のフィールド\_GETDRIVERINFO2DATA 構造体。 そのため、キャストすることによって、 **lpvData** DD へのポインターへのポインター\_STEREOMODE 構造体または DD へのポインター\_GETDRIVERINFO2DATA 構造と対応する値をチェックするフィールド (**dwHeight**または**dwMagic**) 値 D3DGDI2\_マジック、ステレオ モード機能または Direct3D 8.0 機能の要求を確認する呼び出しの間で区別できます。
+Guid\_GetDriverInfo2 は guid\_DDStereoMode と同じ guid 値です。 ドライバーが GUID\_DDStereoMode を処理しない場合、これは問題ではありません。 ただし、DirectX 8.0 ドライバーが GUID\_DDStereoMode を処理する場合、GUID\_GetDriverInfo2 (GUID\_DDStereoMode) を持つ*Ddgetdriverinfo*の呼び出しが行われると、ランタイムは DD の**dwHeight**フィールドを設定することに注意してください\_STEREOMODE 構造体を特別な値 D3DGDI2\_マジックにします。 このフィールドは、DD\_GETDRIVERINFO2DATA 構造体の**Dwmagic**フィールドに対応しています。 そのため、 **Lpvdata**ポインターを、DD\_STEREOMODE 構造体へのポインター、または DD\_GETDRIVERINFO2DATA 構造体へのポインターにキャストし、対応するフィールド (**DwHeight**または**dwmagic**) の値を確認します。値 D3DGDI2\_マジックの場合、ステレオモード機能を決定する呼び出しと Direct3D 8.0 機能の要求を区別できます。
 
-呼び出しである、ドライバーを特定した後**GetDriverInfo2**ランタイムによって要求されている情報の種類を選択する必要があります。 この型は、 **dwType** 、DD のフィールド\_GETDRIVERINFO2DATA データ構造体。
+ドライバーが**GetDriverInfo2**の呼び出しであると判断したら、ランタイムによって要求されている情報の種類を判断する必要があります。 この型は、DD\_GETDRIVERINFO2DATA データ構造体の**dwType**フィールドに含まれています。
 
-最後に、ドライバーは、指定されたバッファーに、要求されたデータをコピーします。 重要な点は、 **lpvData** 、DD のフィールド\_GETDRIVERINFODATA データ構造は、要求されたデータをコピー先バッファーを指します。 **lpvData** 、DD を指す\_GETDRIVERINFO2DATA 構造体。 これは、ドライバーによって返されるデータが、DD を上書きすることを意味\_GETDRIVERINFO2DATA 構造 (そのため、ことと、DD、\_GETDRIVERINFO2DATA 構造は、バッファーの最初のいくつか Dword を占める)。
+最後に、指定したバッファーに要求されたデータをコピーします。 DD\_GETDRIVERINFODATA データ構造の**Lpvdata**フィールドは、要求されたデータのコピー先のバッファーを指していることに注意する必要があります。 また、 **Lpvdata**は、DD\_GETDRIVERINFO2DATA 構造体も指します。 これは、ドライバーによって返されるデータが、DD\_GETDRIVERINFO2DATA 構造体を上書きすることを意味します (したがって、DD\_GETDRIVERINFO2DATA 構造体がバッファーの最初のいくつかの Dword を占有することを意味します)。
 
-呼び出しに使用されるために**GetDriverInfo2**、DDHALINFO 新しいフラグを設定するドライバーの必要がある、DirectX 8.0 のレポート機能と\_で GETDRIVERINFO2、 **dwFlags**のフィールド、[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)ドライバーによって返される構造体。 このフラグが設定されていない場合、ランタイムは送信しません**GetDriverInfo2**ドライバーとドライバーへの呼び出しは DirectX 8.0 レベルのドライバーとして認識されません。
+**GetDriverInfo2**で呼び出されるようにし、DirectX 8.0 の機能を報告するには、GetDriverInfo2 HALINFO 構造体[ **\_** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)の**DWFLAGS**フィールドに新しいフラグ ddhalinfo\_を設定する必要があります。ドライバー。 このフラグが設定されていない場合、ランタイムはドライバーへの**GetDriverInfo2**呼び出しを送信せず、ドライバーは DirectX 8.0 レベルのドライバーとして認識されません。
 
-ランタイムを使用して**GetDriverInfo2**型 D3DGDI2\_型\_DXVERSION アプリケーションで使用されている現在 DX ランタイムのバージョンのドライバーに通知します。 ランタイムへのポインターを提供する、 [ **DD\_DXVERSION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_dxversion)構造体、 **lpvData** DD のフィールド\_GETDRIVERINFODATA します。
+ランタイムは、\_type\_DXVERSION の**GetDriverInfo2**を使用して、アプリケーションによって使用されている現在の DX ランタイムバージョンをドライバーに通知します。 ランタイムは、dd\_GETDRIVERINFODATA の**Lpvdata**フィールド内の[**DD\_dxversion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_dxversion)構造体へのポインターを提供します。
 
  
 

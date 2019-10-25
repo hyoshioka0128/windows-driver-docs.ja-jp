@@ -1,66 +1,66 @@
 ---
-title: NDKPI リスナー、コネクタ、およびエンドポイント
-description: このセクションでは、NDKPI リスナー、コネクタ、およびエンドポイント、および参照カウントのコネクタとエンドポイントについて説明します。
+title: NDKPI リスナー、コネクタ、エンドポイント
+description: このセクションでは、NDKPI のリスナー、コネクタ、エンドポイント、およびコネクタとエンドポイントの参照カウントについて説明します。
 ms.assetid: 956D3550-11C8-48D0-BCF4-9027515C7C0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1077bc6630531ca3000e56f0b1be3c62212141f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd82fbeb957402088d81e7c6c2ca88b8c2ac7815
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364043"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831895"
 ---
 # <a name="ndkpi-listeners-connectors-and-endpoints"></a>NDKPI リスナー、コネクタ、およびエンドポイント
 
 
-NDK コンシューマーを呼び出すことによって、NDK コネクタの接続、 *NdkConnect* ([*NDK\_FN\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect)) または*NdkConnectWithSharedEndpoint* ([*NDK\_FN\_CONNECT\_WITH\_SHARED\_エンドポイント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 関数。
+NDK コンシューマーは、 *Ndkconnect* ([*ndk\_fn\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) または*Ndkconnectwithsharedendpoint* ([*ndk\_FN\_CONNECT\_と\_共有\_を呼び出すことにより、ndk コネクタに接続します。エンドポイント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 関数。
 
-接続されている状態にある各コネクタでは、確立された NDK 接続のローカル側を表す基になるエンドポイントにもあります。
+接続された状態の各コネクタには、確立された NDK 接続のローカルエンドを表す基になるエンドポイントもあります。
 
--   コネクタを確立するには、NDK リスナー経由で着信接続を自動的にそのまま使用して、ローカルの暗黙的なエンドポイントとしてリスナーの暗黙的なエンドポイントを継承します。
--   コネクタを介して接続されている、 *NdkConnect*関数には、独自の専用暗黙のローカル エンドポイント。
--   コネクタを介して接続されている、 *NdkConnectWithSharedEndpoint*関数には、明示的なローカル エンドポイント経由で接続している他のコネクタを共有できる、 *NdkConnectWithSharedEndpoint*関数。
+-   NDK リスナー経由で受信接続を受け入れることによって確立されたコネクタは、リスナーの暗黙的なエンドポイントをローカルの暗黙的なエンドポイントとして自動的に継承します。
+-   *Ndkconnect*関数を介して接続されるコネクタには、独自の専用の暗黙的なローカルエンドポイントがあります。
+-   *Ndkconnectwithsharedendpoint*関数を介して接続されているコネクタには、 *ndkconnectwithsharedendpoint*関数を介して接続されている他のコネクタと共有できる、明示的なローカルエンドポイントがあります。
 
-NDK プロバイダーがなんらかの各暗黙的または明示的なエンドポイントの参照カウントを保持し、エンドポイントをリリースする必要があります (つまり、もう一度使用する利用可能なアドレスとポートをマークする)、参照カウントがゼロになったとき。
+NDK プロバイダーは、暗黙的または明示的なエンドポイントごとに何らかの参照カウントを保持し、エンドポイントを解放する必要があります (つまり、参照カウントが0になったときに、使用可能なアドレスとポートをマークします)。
 
-### <a name="reference-counting-for-non-shared-endpoints"></a>エンドポイントの (非共有) に対して参照カウント
+### <a name="reference-counting-for-non-shared-endpoints"></a>(非共有) エンドポイントの参照カウント
 
-コンシューマーを呼び出すと、 *NdkListen* ([*NDK\_FN\_リッスン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_listen)) 関数、プロバイダーは、暗黙的なエンドポイントを作成します。 この暗黙的なエンドポイントでプロバイダーは次のように参照カウントを維持する必要があります。
+コンシューマーが*Ndklisten* ([*NDK\_FN\_LISTEN*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_listen)) 関数を呼び出すと、プロバイダーは暗黙的なエンドポイントを作成します。 この暗黙的なエンドポイントの場合、プロバイダーは次のように参照カウントを維持する必要があります。
 
--   エンドポイントの参照カウントには、リスナー自体の参照を追加します。
--   各リスナーで受け入れられるコネクタへの参照を追加します。
--   リスナーで受け入れられた以前コネクタが閉じられたときに、参照を削除します。
--   リスナー自体が閉じられたときに、参照を削除します。
-    **注**  のすべてのコネクタが閉じられるまで、リスナーを閉じることができません。
+-   リスナー自体の参照をエンドポイントの参照カウントに追加します。
+-   そのリスナーで受け入れられる各コネクタの参照を追加します。
+-   リスナーで既に受け入れられているコネクタが閉じている場合は、参照を削除します。
+-   リスナー自体が閉じられている場合は、参照を削除します。
+    すべてのコネクタが閉じられるまでリスナーを閉じることができない  に**注意**してください。
 
      
 
--   参照カウントがゼロに返されるときに、エンドポイントをリリースします。 (これは大文字と小文字が既に閉じられているリスナーとのすべてのコネクタが、リスナー経由で許可される場合のみ) です。
--   リスナーを閉じるだけは、エンドポイントを解放しませんまだ閉じていない承認済みのコネクタがある限り。 つまり、その新しい*NdkListen*、 *NdkConnect*、および*NdkConnectWithSharedEndpoint*要求は、このようなすべての接続まで、同じローカル アドレスとポートは失敗閉じられます。 リスナーを閉じる要求が保留中も残ることに注意してください。 このようなすべての接続が閉じられるまで (で説明する/後続処理の継続元の規則により[NDKPI オブジェクトの有効期間の要件](ndkpi-object-lifetime-requirements.md))。 (その終了要求が保留中、新しい接続を受け入れるできません)、終了要求が発行されるとすぐに、プロバイダーは、リスナーでさらに着信接続を拒否する必要があります。
+-   参照カウントが0に戻ると、エンドポイントが解放されます。 (これは、リスナーと、リスナーで受け入れられたすべてのコネクタが閉じられている場合にのみ発生します)。
+-   リスナーを閉じるだけでは、まだ閉じていない承認済みのコネクタが存在する限り、エンドポイントは解放されません。 これは、同じローカルアドレスとポートに対する新しい*Ndklisten*、 *ndklisten*、および*Ndkconnectwithsharedendpoint*要求が、すべての接続が閉じられるまで失敗することを意味します。 このような接続がすべて閉じられるまで、リスナーでのクローズ要求も保留状態のままになります ( [Ndkpi オブジェクトの有効期間要件](ndkpi-object-lifetime-requirements.md)に記載されている継続元/後続規則によります)。 Close 要求が発行されるとすぐに、プロバイダーがリスナーで受信接続を拒否する必要があります (終了要求の保留中に新しい接続が受け入れられないようにするため)。
 
-### <a name="reference-counting-for-connectors"></a>参照コネクタのカウント
+### <a name="reference-counting-for-connectors"></a>コネクタの参照カウント
 
-コンシューマーを呼び出すと*NdkConnect*プロバイダーを作成し、暗黙的なエンドポイント。 この暗黙的なエンドポイントの場合、プロバイダーが必要です。
+コンシューマーが*Ndkconnect*を呼び出すと、プロバイダーによってと暗黙のエンドポイントが作成されます。 この暗黙的なエンドポイントの場合、プロバイダーは次のことを行う必要があります。
 
--   コネクタでの参照を追加します。 1 つだけのコネクタ、そのため 1 つだけ参照があります。
--   コネクタが閉じられたときに、エンドポイントへのコネクタの参照を削除します。
--   その参照されなくなったときにエンドポイントをリリースします。
+-   コネクタによって参照を追加します。 コネクタは1つしか存在しないため、参照は1つだけです。
+-   コネクタが閉じられたときに、コネクタのエンドポイントへの参照を削除します。
+-   参照が失われたときにエンドポイントを解放します。
 
-### <a name="reference-counting-for-shared-endpoints"></a>共有のエンドポイントに対する参照カウント
+### <a name="reference-counting-for-shared-endpoints"></a>共有エンドポイントの参照カウント
 
-コンシューマーを呼び出すと*NdkConnectWithSharedEndpoint*プロバイダーは、明示的な共有エンドポイントを作成します。 この明示的な共有エンドポイント プロバイダー必要があります。
+コンシューマーが*Ndkconnectwithsharedendpoint*を呼び出すと、プロバイダーは明示的な共有エンドポイントを作成します。 この明示的な共有エンドポイントでは、プロバイダーは次のことを行う必要があります。
 
--   共有のエンドポイントの参照カウントに共有エンドポイントそのものへの参照を追加します。
--   その共有エンドポイント経由で接続されている各コネクタへの参照を追加します。
--   共有エンドポイント経由で接続されているコネクタが閉じられたときに、参照を削除します。
--   エンドポイント参照カウントのリリースでは、0 を返します。 (この場合、共有のエンドポイントと共有エンドポイント経由で接続されているすべてのコネクタが終了した場合にします。)
--   単に、共有のエンドポイントを終了しても、エンドポイントは解放されませんまだ終了していない以前接続されているコネクタがある限り。 つまり、その新しい*NdkListen*、 *NdkConnect*、および*NdkConnectWithSharedEndpoint*要求は、このようなすべての接続まで、同じローカル アドレスとポートは失敗閉じられます。 共有のエンドポイントに要求が保留中も残ることに注意してください。 このようなすべての接続が閉じられるまで (で説明する/後続処理の継続元の規則により[NDKPI オブジェクトの有効期間の要件](ndkpi-object-lifetime-requirements.md))。
+-   共有エンドポイント自体の参照を共有エンドポイントの参照カウントに追加します。
+-   その共有エンドポイントで接続されている各コネクタの参照を追加します。
+-   以前に共有エンドポイント経由で接続されていたコネクタが閉じている場合は、参照を削除します。
+-   参照カウントが0に戻るエンドポイントを解放します。 (共有エンドポイントと、共有エンドポイントを介して接続されているすべてのコネクタが閉じられている場合)。
+-   共有エンドポイントを閉じるだけでは、まだ閉じていないコネクタが既に接続されている限り、エンドポイントは解放されません。 これは、同じローカルアドレスとポートに対する新しい*Ndklisten*、 *ndklisten*、および*Ndkconnectwithsharedendpoint*要求が、すべての接続が閉じられるまで失敗することを意味します。 共有エンドポイントでのクローズ要求も、このようなすべての接続が閉じられるまで保留状態のままになります (「 [Ndkpi オブジェクトの有効期間の要件](ndkpi-object-lifetime-requirements.md)」に記載されている継続元/後続の規則によります)。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[ネットワークダイレクトカーネルプロバイダーインターフェイス (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

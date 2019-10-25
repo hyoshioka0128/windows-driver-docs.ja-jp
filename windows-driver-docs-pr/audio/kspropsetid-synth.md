@@ -6,29 +6,29 @@ keywords:
 - KSPROPSETID_Synth
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 205d9ee065972cb55732d91f0b5c5a1f59a2818b
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: e18d48653f747c8b77ac4ee23146532031b94b87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391578"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830459"
 ---
-# <a name="kspropsetidsynth"></a>KSPROPSETID\_シンセサイザー
+# <a name="kspropsetid_synth"></a>KSPROPSETID\_シンセサイザー
 
 
 ## <span id="ddk_kspropsetid_synth_ks"></span><span id="DDK_KSPROPSETID_SYNTH_KS"></span>
 
 
-`KSPROPSETID_Synth`シンセサイザー ノードの構成のグローバルなプロパティがプロパティ セットに含まれています ([**KSNODETYPE\_シンセサイザー**](ksnodetype-synthesizer.md))。
+`KSPROPSETID_Synth` プロパティセットには、シンセサイザーノード ([**KSNODETYPE\_シンセサイザー**](ksnodetype-synthesizer.md)) の構成に対してグローバルなプロパティが含まれています。
 
-このセット内のプロパティ項目が KSPROPERTY によって指定された\_シンセサイザー列挙値では、ヘッダーで定義されているファイル Dmusprop.h します。
+このセットのプロパティ項目は、ヘッダーファイル Dマス Prop. h で定義されているように、KSK プロパティ\_シンセサイザー列挙値によって指定されます。
 
 ## <span id="ddk_ksproperty_synth_caps_ks"></span><span id="DDK_KSPROPERTY_SYNTH_CAPS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_CAPS プロパティは、シンセサイザーの機能を決定する、システムによって使用されます。
+KSK プロパティ\_シンセサイザー\_CAPS プロパティは、シンセサイザーの機能を決定するためにシステムによって使用されます。
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ KSPROPERTY\_シンセサイザー\_CAPS プロパティは、シンセサイザ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -49,43 +49,43 @@ KSPROPERTY\_シンセサイザー\_CAPS プロパティは、シンセサイザ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps" data-raw-source="[&lt;strong&gt;SYNTHCAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps)"><strong>SYNTHCAPS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps" data-raw-source="[&lt;strong&gt;SYNTHCAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps)"><strong>SYNTHCAPS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) では、型 SYNTHCAPS の構造体をシンセサイザーの機能を指定します。 これらの機能は次のとおりです。
+プロパティ値 (操作データ) は、SYNTHCAPS 型の構造であり、シンセサイザーの機能を指定します。 次のような機能があります。
 
--   使用可能なサンプルのメモリの量
+-   使用可能なサンプルメモリの量
 
--   チャネルのグループの最大数
+-   チャネルグループの最大数
 
 -   音声の最大数
 
--   オーディオ チャネルの最大数
+-   オーディオチャンネルの最大数
 
--   効果のレンダリング
+-   レンダリング効果
 
-詳細については、次を参照してください。 [ **SYNTHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps)します。
+詳細については、「 [**Synthcaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps)」を参照してください。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_CAPS プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+の KSK プロパティ\_シンセサイザー\_CAPS プロパティ要求は正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-シンセサイザーの機能の詳細については、次を参照してください。、 **IDirectMusicPort::GetCaps**メソッドと、DMU\_、Microsoft Windows SDK ドキュメントで PORTCAPS 構造体。
+シンセサイザーの機能の詳細については、Microsoft Windows SDK のドキュメントの「 **IDirectMusicPort:: getcaps**メソッド」と「dmus\_portcaps 構造体」を参照してください。
 
 ## <span id="ddk_ksproperty_synth_channelgroups_ks"></span><span id="DDK_KSPROPERTY_SYNTH_CHANNELGROUPS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_CHANNELGROUPS プロパティが設定または暗証番号 (pin) のインスタンスでアクティブなチャネルのグループの数を取得する、システムによって使用されます。 チャネルのグループは各ピンのインスタンスで、0 から始まる番号が付けられます。
+KSK プロパティ\_シンセサイザー\_CHANNELGROUPS プロパティは、pin インスタンス上のアクティブなチャネルグループの数を設定または取得するためにシステムによって使用されます。 チャネルグループは、各 pin インスタンスに対して0から始まる番号が付けられます。
 
 <table>
 <colgroup>
@@ -97,7 +97,7 @@ KSPROPERTY\_シンセサイザー\_CHANNELGROUPS プロパティが設定また�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -106,10 +106,10 @@ KSPROPERTY\_シンセサイザー\_CHANNELGROUPS プロパティが設定また�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -117,11 +117,11 @@ KSPROPERTY\_シンセサイザー\_CHANNELGROUPS プロパティが設定また�
 
  
 
-プロパティの値 (データの操作) は ULONG 型で、チャネルの数、暗証番号 (pin) がサポートのグループを指定します。 Pin をサポートしている場合*n*チャネル グループ、ピン チャネル グループは、0 から番号が*n*-1。
+プロパティ値 (操作データ) は ULONG 型で、pin がサポートするチャネルグループの数を指定します。 Pin で*n*チャネルグループがサポートされている場合、pin のチャネルグループには 0 ~ *n*-1 の番号が付けられます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_CAPS プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+の KSK プロパティ\_シンセサイザー\_CAPS プロパティ要求は正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -131,31 +131,31 @@ KSPROPERTY\_シンセサイザー\_CAPS プロパティ要求がステータス�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-チャネルのグループの詳細については、の説明を参照してください、 **IDirectMusicPort::GetNumChannelGroups**と**IDirectMusicPort::SetNumChannelGroups** Microsoft Windows SDK 内のメソッドドキュメントです。
+チャネルグループの詳細については、Microsoft Windows SDK のドキュメントの**IDirectMusicPort:: getnumchannelgroups**メソッドと**IDirectMusicPort:: setnumchannelgroups**メソッドの説明を参照してください。
 
 ## <span id="ddk_ksproperty_synth_latencyclock_ks"></span><span id="DDK_KSPROPERTY_SYNTH_LATENCYCLOCK_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティは、ストリームの現在の待機時間制時刻、マスター クロックの時刻よりも大きいは常に、ミニポート ドライバーをクエリに使用します。
+KSK プロパティ\_シンセサイザー\_LATENCYCLOCK プロパティは、ストリームの現在の待機時間の時刻をミニポートドライバーに照会するために使用されます。これは、常にマスタークロック時間よりも大きくなります。
 
 <table>
 <colgroup>
@@ -167,7 +167,7 @@ KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティは、ストリ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -176,10 +176,10 @@ KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティは、ストリ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONGLONG</p></td>
 </tr>
 </tbody>
@@ -187,11 +187,11 @@ KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティは、ストリ�
 
  
 
-ULONGLONG 型とプロパティ値 (データの操作) のシンセサイザーの現在の待機時間を表します。 今回はマスター クロックに対して相対的に指定し、100 ナノ秒単位で表されます。
+プロパティ値 (操作データ) は ULONGLONG 型で、シンセサイザーの現在の待機時間を表します。 この時刻は、マスタークロックに対して相対的に指定され、100ナノ秒単位で表されます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+KSK プロパティ\_シンセサイザー\_LATENCYCLOCK property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -201,43 +201,43 @@ KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティ要求がステ�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_INVALID_DEVICE_REQUEST</p></td>
-<td align="left"><p>このデバイスの操作が正しくありません。</p></td>
+<td align="left"><p>このデバイスでは、この操作は無効です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-クロックの待機時間は通常、複数のデバイス間でのオーディオ出力ストリームの同期に使用されます。
+待機時間クロックは、通常、オーディオ出力ストリームを複数のデバイス間で同期するために使用されます。
 
-KSPROPERTY\_シンセサイザー\_LATENCYCLOCK プロパティの get 要求は、現在のマスター クロック時間に相当する遅延時間を返すようにするし、最小値は、ストリームを通過するオーディオ フィルターの待機時間を保証します。 アプリケーション プログラムを遅延に再生データを持つ現在の待機時間クロック時間リスクよりも前に再生できるオーディオ データをスケジュールします。
+KSK プロパティ\_シンセサイザー\_LATENCYCLOCK 要求では、現在のマスタークロック時間と同じ待機時間 (クロック時間) と、ストリームが通過するオーディオフィルターの最小待機時間を返す必要があります。 現在の待機時間の時間が経過したときに再生されるオーディオデータをスケジュールするアプリケーションプログラム。データが遅れて再生されるリスクがあります。
 
-待機時間のクロックの詳細については、次を参照してください。
+待機時間の詳細については、次を参照してください。
 
--   KSPROPERTY のディスカッション\_シンセサイザー\_LATENCYCLOCK プロパティ[待機時間のクロック](https://docs.microsoft.com/windows-hardware/drivers/audio/latency-clocks)します。
+-   [待機時間クロック](https://docs.microsoft.com/windows-hardware/drivers/audio/latency-clocks)での ksk プロパティ\_シンセサイザー\_LATENCYCLOCK プロパティについて説明します。
 
--   説明については、 **IDirectMusicPort::GetLatencyClock**と**IReferenceClock::GetTime** Microsoft Windows SDK のドキュメント内のメソッド。
+-   Microsoft Windows SDK ドキュメントの**IDirectMusicPort:: GetLatencyClock**メソッドと**Ireferenceclock:: GetTime**メソッドの説明。
 
 ## <span id="ddk_ksproperty_synth_portparameters_ks"></span><span id="DDK_KSPROPERTY_SYNTH_PORTPARAMETERS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_PORTPARAMETERS プロパティを使用する DirectMusic の構成パラメーターの取得を*ポート*、送信または音楽データを受信するデバイスの DirectMusic 用語であります。 (KS 用語では、DirectMusic ポートは対応しません Dmu ポート ドライバーにします。 DirectMusic フィルターでレンダリングまたはキャプチャ pin にで対応にします。)
+"KSK プロパティ\_シンセサイザー\_PORTPARAMETERS" プロパティは、DirectMusic*ポート*の構成パラメーターを取得するために使用されます。これは、音楽データを送信または受信するデバイスの directmusic 用語です。 (KS の用語では、DirectMusic ポートは DMus ポートドライバーに対応していません。 これは、DirectMusic フィルターのレンダーピンまたは capture ピンに対応します)。
 
 <table>
 <colgroup>
@@ -249,7 +249,7 @@ KSPROPERTY\_シンセサイザー\_PORTPARAMETERS プロパティを使用する
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -258,24 +258,24 @@ KSPROPERTY\_シンセサイザー\_PORTPARAMETERS プロパティを使用する
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams)"> <strong>SYNTH_PORTPARAMS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、シンセサイザー直後に続くです KSNODEPROPERTY 構造\_PORTPARAMS 構造体。 プロパティの要求を送信する前に、クライアントは、シンセサイザーに書き込むことによって、要求されたパラメーター値を指定します\_PORTPARAMS 構造体。
+プロパティ記述子 (インスタンスデータ) は、KSNODEPROPERTY 構造体で構成され、その直後には、その直後に、データの\_PORTPARAMS 構造体が続きます。 クライアントは、プロパティ要求を送信する前に、要求されたパラメーター値を、シンセ\_PORTPARAMS 構造体に書き込むことによって指定します。
 
-プロパティ値 (データの操作) が型シンセサイザーも\_PORTPARAMS します。 ミニポート ドライバーには、実際には、ポート構成に使用されるパラメーター値では、この構造が読み込まれます。
+プロパティ値 (操作データ) の種類は、\_PORTPARAMS でもあります。 ミニポートドライバーは、ポートの構成に実際に使用するパラメーター値を使用して、この構造体を読み込みます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-ステータスを返す、呼び出し元が指定されているとおり DirectMusic ポートの構成に成功すると、ミニポート ドライバー、\_成功コード。 それ以外の場合、該当するエラー コードを返します。 次の表では、可能性のあるエラー状態コードの一部を示します。
+ミニポートドライバーが、呼び出し元によって指定されたとおりに DirectMusic ポートの構成に成功した場合は、状態\_成功コードとして返されます。 それ以外の場合は、適切なエラーコードを返します。 次の表は、考えられるエラー状態コードの一部を示しています。
 
 <table>
 <colgroup>
@@ -285,39 +285,39 @@ KSPROPERTY\_シンセサイザー\_PORTPARAMETERS プロパティを使用する
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_NOT_ALL_ASSIGNED</p></td>
-<td align="left"><p>操作が成功したが、ミニポート ドライバーが 1 つまたは複数の呼び出し元のプロパティの値としてマークするパラメーターの値を変更する必要があります。</p></td>
+<td align="left"><p>操作は成功しましたが、ミニポートドライバーは、呼び出し元がプロパティ値で有効としてマークした1つ以上のパラメーター値を変更する必要がありました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これは、処理するために DirectMusic プロパティ項目の中で最も複雑です。 このプロパティには、get 要求のみがサポートされていますが、get 要求はまた、ポート パラメーターを設定します。 ポート渡しますをシンセサイザー\_プロパティ要求のプロパティ記述子と PORTPARAMS 構造体。 プロパティ値のバッファーには、プロパティの要求が付属してが get 要求であるために、バッファーは、ミニポート ドライバーから情報を取得、使用のみ。
+これは、処理する DirectMusic プロパティ項目の中で最も複雑なものです。 このプロパティでは get 要求のみがサポートされますが、get 要求ではポートパラメーターも設定されます。 ポートは、プロパティ要求のプロパティ記述子として、\_PORTPARAMS 構造体を渡します。 プロパティ値バッファーはプロパティ要求に付随していますが、これは get 要求であるため、バッファーはミニポートドライバーから情報を取得するためだけに使用されます。
 
-ミニポート ドライバーはまず、シンセサイザー、コピー\_プロパティ値のバッファーをプロパティ記述子から PORTPARAMS 構造体。 次に、すべてのパラメーター値を呼び出し元が要求した (有効なものとしてマークされている) をサポートできるかどうかを確認にする必要があります。 'File.' を上書きする必要があります、ミニポート ドライバーが要求されたパラメーター値の 1 つ以上をサポートするためにできない場合は、(、シンセサイザーで\_PORTPARAMS 構造、プロパティ値のバッファーで)、要求された値これら特定のパラメーターの値を使用しています。サポートできます。
+ミニポートドライバーは、最初に、プロパティ記述子からプロパティ値バッファーに、シンセ\_PORTPARAMS 構造体をコピーする必要があります。 次に、呼び出し元が要求したすべてのパラメーター値 (有効としてマークされている) をサポートできるかどうかを確認する必要があります。 1つまたは複数の要求されたパラメーター値をミニポートドライバーがサポートできない場合は、その特定のパラメーターに対して指定された値を使用して、指定したパラメーターの値を\_上書きする必要があります。ご.
 
-呼び出し元のシンセサイザーするかどうか、ミニポート ドライバーに変更が加えられなければ\_PORTPARAMS、呼び出し元得られるはず、呼び出し元はもともとミニポート ドライバーに送信されるプロパティ記述子では、パラメーターを正確に一致するプロパティの値。
+ミニポートドライバーによって、呼び出し元のシンセサイザー\_PORTPARAMS に変更が加えられない場合、呼び出し元は、呼び出し元が最初にミニポートドライバーに送信したプロパティ記述子のパラメーターと正確に一致するプロパティ値を返す必要があります。
 
-慣例により、ドライバーも入力で設定された対応するビットがないパラメーターの値、 **dwValidParams**シンセサイザーのメンバー\_PORTPARAMS します。 これにより、呼び出し元がどのような既定値はこれらのパラメーターを使用するミニポート ドライバーを確認できます。 ミニポート ドライバーでは、wave インターフェイス デバイスを作成するために使用する実際のパラメーター値を出力します。
+規則により、ドライバーは、シンセサイザー\_PORTPARAMS の**Dwvalidparams**メンバーに対応するビットが設定されていないパラメーターの値も入力します。 これにより、呼び出し元は、これらのパラメーターに対してミニポートドライバーが使用する既定値を確認できます。 ミニポートドライバーは、wave インターフェイスデバイスを構築するために使用した実際のパラメーター値を出力します。
 
-ミニポート ドライバーの KSPROPERTY\_シンセサイザー\_PORTPARAMETERS ハンドラーを正しくサンプル速度の変更の要求を処理するために準備する必要があります。
+サンプルレートの変更に対する要求を正しく処理するには、ミニポートドライバーの KSK プロパティ\_シンセサイザー\_PORTPARAMETERS ハンドラーを準備する必要があります。
 
 ## <span id="ddk_ksproperty_synth_runningstats_ks"></span><span id="DDK_KSPROPERTY_SYNTH_RUNNINGSTATS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_RUNNINGSTATS プロパティは、クエリ シンセサイザーのパフォーマンス統計のミニポート ドライバーを使用します。
+KSK プロパティ\_シンセサイザー\_RUNNINGSTATS プロパティは、シンセサイザーのパフォーマンス統計情報をミニポートドライバーに照会するために使用されます。
 
 <table>
 <colgroup>
@@ -329,7 +329,7 @@ KSPROPERTY\_シンセサイザー\_RUNNINGSTATS プロパティは、クエリ �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -338,32 +338,32 @@ KSPROPERTY\_シンセサイザー\_RUNNINGSTATS プロパティは、クエリ �
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_stats" data-raw-source="[&lt;strong&gt;SYNTH_STATS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_stats)"><strong>SYNTH_STATS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_stats" data-raw-source="[&lt;strong&gt;SYNTH_STATS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_stats)"><strong>SYNTH_STATS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は型シンセサイザーの構造体\_統計。 ミニポート ドライバーのプロパティのハンドラーは、この構造体に、以下の統計情報を書き込みます。
+プロパティ値 (操作データ) は、\_STATS 型の構造体です。 ミニポートドライバーのプロパティハンドラーは、次の統計情報をこの構造体に書き込みます。
 
--   音声の再生の平均数
+-   再生の平均数
 
 -   CPU 使用率
 
 -   失われたメモの数
 
--   空きメモリの量
+-   空きメモリ容量
 
--   ピーク時のボリューム レベル
+-   ピーク時のボリュームレベル
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_RUNNINGSTATS プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+KSK プロパティ\_シンセサイザー\_RUNNINGSTATS property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -373,37 +373,37 @@ KSPROPERTY\_シンセサイザー\_RUNNINGSTATS プロパティ要求がステ�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_INVALID_DEVICE_REQUEST</p></td>
-<td align="left"><p>このデバイスの操作が正しくありません。</p></td>
+<td align="left"><p>このデバイスでは、この操作は無効です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-デバイスが、KSSTATE でままシンセサイザーのパフォーマンス統計が更新継続的に\_の実行の状態。 デバイスがこの状態になるたびに、統計は、ピーク時のボリュームの番号などの累積的な値をゼロにリセットされますノートが失われるのです。
+デバイスが KSK 状態\_実行状態のままになっている間、シンセサイザーのパフォーマンス統計が継続的に更新されます。 デバイスがこの状態になるたびに、統計がリセットされます。これにより、ピークボリュームや失われたメモの数などの累積値がゼロになります。
 
-詳細については、の説明を参照して、 **IDirectMusicPort::GetRunningStats**メソッドと、DMU\_Microsoft Windows SDK ドキュメントで SYNTHSTATS 構造体。
+詳細については、Microsoft Windows SDK のドキュメントで、 **IDirectMusicPort:: GetRunningStats**メソッドと dmus\_SYNTHSTATS 構造体の説明を参照してください。
 
 ## <span id="ddk_ksproperty_synth_voicepriority_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOICEPRIORITY_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティは、その音声キャッシュから音声をどのような優先度のミニポート ドライバーを増やす必要がある場合、MIDI シンセサイザーで特定の音声がありますを指定します。
+KSK プロパティ\_シンセサイザー\_VOICEPRIORITY プロパティは、ミニポートドライバーが音声キャッシュから音声を取得する必要がある場合に、MIDI シンセサイザー内の特定の音声が持つ優先度を指定します。
 
 <table>
 <colgroup>
@@ -415,7 +415,7 @@ KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティは、その音�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -424,10 +424,10 @@ KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティは、その音�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthvoicepriority_instance" data-raw-source="[&lt;strong&gt;SYNTHVOICEPRIORITY_INSTANCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthvoicepriority_instance)"><strong>SYNTHVOICEPRIORITY_INSTANCE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthvoicepriority_instance" data-raw-source="[&lt;strong&gt;SYNTHVOICEPRIORITY_INSTANCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthvoicepriority_instance)"> <strong>SYNTHVOICEPRIORITY_INSTANCE</strong></a></p></td>
 <td align="left"><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -435,13 +435,13 @@ KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティは、その音�
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、SYNTHVOICEPRIORITY 直後に続くです KSNODEPROPERTY 構造\_インスタンスの構造は、音声のチャネルのグループ (16 MIDI チャネルのセット) およびチャネルの数 (を指定しますグループ内)。
+プロパティ記述子 (インスタンスデータ) は、KSNODEPROPERTY 構造体で構成されます。この構造体には、直後に SYNTHVOICEPRIORITY\_インスタンス構造が続きます。この構造では、音声のチャネルグループ (16 の MIDI チャネルのセット) とチャネル番号 (グループ)。
 
-プロパティの値 (データの操作) は、優先順位を指定する DWORD です。 クライアントの使用、KSPROPERTY\_シンセサイザー\_、ミニポート ドライバーと音声の新しい優先順位の送信 VOICEPRIORITY プロパティの設定要求は、KSPROPERTY を使用して\_シンセサイザー\_VOICEPRIORITY プロパティの get 要求ミニポート ドライバーから音声の現在の優先順位を取得します。
+プロパティ値 (操作データ) は、優先度を指定する DWORD です。 クライアントは、KSK プロパティ\_シンセサイザー\_VOICEPRIORITY 要求を使用して、ボイスの新しい優先順位をミニポートドライバーに送信します。また、KSK プロパティ\_シンセサイザー\_VOICEPRIORITY の get プロパティ要求を使用して音声を取得します。ミニポートドライバーからの現在の優先順位。
 
-**音声の優先順位**
+**音声の優先度**
 
-Dmusprop.h のヘッダー ファイルでは、次のチャネル グループの優先順位が定義されています。
+次のチャネルグループの優先順位は、ヘッダーファイル Dマス Prop. h で定義されています。
 
 ```cpp
   DAUD_CRITICAL_VOICE_PRIORITY
@@ -451,19 +451,19 @@ Dmusprop.h のヘッダー ファイルでは、次のチャネル グループ�
   DAUD_PERSIST_VOICE_PRIORITY
 ```
 
-上記の一覧は、一覧の上部にある最も高い優先順位と下部には、最低で並んでいます。 これらの優先順位は、チャネルのグループ内の各チャネルの音声の優先順位に到着するチャネルの優先順位のオフセットを持つ論理和が。 結果として得られる優先度は、get および set プロパティ要求で渡されます。
+上記のリストは、最上位の優先順位と一番下の方の順に並んでいます。 これらの優先順位は、チャネルグループ内の各チャネルの音声優先順位に到達するチャネル優先順位オフセットと共に使用されます。 結果として得られる優先順位は、get および set プロパティの要求で渡されます。
 
-前述のチャネル グループの優先順位値は、チャネルの優先順位のオフセットに比べると大規模なです。 チャネル グループの優先順位の発生またはチャネル グループ内のチャネルの相対的な優先度を変更することがなく他のチャネルのグループの基準とした全体のチャンネルのグループの優先度を下げて、その変更になります。
+上記のチャネルグループの優先順位値は、チャネルの優先順位オフセットと比較して大きくなります。 その結果、チャネルグループの優先順位を変更すると、チャネルグループ内のチャネルの相対的な優先順位を変更せずに、他のチャネルグループを基準にして、チャネルグループ全体の優先順位を上げたり下げたりすることになります。
 
-### <a name="span-iddefaultprioritiesspanspan-iddefaultprioritiesspan-default-priorities"></a><span id="default_priorities"></span><span id="DEFAULT_PRIORITIES"></span> 既定の優先順位
+### <a name="span-iddefault_prioritiesspanspan-iddefault_prioritiesspan-default-priorities"></a><span id="default_priorities"></span><span id="DEFAULT_PRIORITIES"></span>既定の優先順位
 
-シンセサイザーのミニポート ドライバーを作成すると、その音声のそれぞれに既定の優先順位が割り当てられます。 既定値の定義は次のとおりです。
+シンセサイザーミニポートドライバーが作成されると、各音声に既定の優先順位が割り当てられます。 既定値は次のように定義されています。
 
--   既定では優先順位はチャネルのグループ間で等しくなります。 つまり、たとえば、チャネル グループ 1 の 5 そのチャネルがチャネル グループ 2 のチャネル 5 と同じ優先順位。
+-   既定では、優先順位はチャネルグループによって異なります。 これは、たとえば、チャネルグループ1のチャネル5は、チャネルグループ2のチャネル5と同じ優先順位を持つことを意味します。
 
--   DLS レベル 1 の仕様に従って channel 10 (MIDI パーカッション チャネル) は、1 ~ 9、および 11 ~ 16 の後に、最高の優先順位を持ちます。
+-   DLS レベル1の仕様に従って、チャネル 10 (MIDI percussion チャネル) の優先順位は最も高くなり、その後に 1 ~ 9 および 11 ~ 16 が続きます。
 
-ヘッダー ファイル Dmusprop.h では、次の優先度のオフセットを定義します。
+ヘッダーファイル Dマス Prop は、次の優先順位のオフセットを定義します。
 
 ```cpp
   DAUD_CHAN10_VOICE_PRIORITY_OFFSET
@@ -484,16 +484,16 @@ Dmusprop.h のヘッダー ファイルでは、次のチャネル グループ�
   DAUD_CHAN16_VOICE_PRIORITY_OFFSET
 ```
 
-オフセットの前のリストの順序は、一覧の上部にある優先順位が高い。 ヘッダー ファイル Dmusprop.h ダウドとオフセットをこれらの各ビットごとの Or では、各チャネル グループ内のチャネルの既定の優先順位も定義します\_標準\_音声\_優先順位。 たとえば、次の定義には、各チャネル グループ チャネル 1 の既定の優先順位が与えられます。
+上記のオフセットの一覧は、優先順位が最も高い順に一覧の一番上に表示されます。 また、ヘッダーファイル Dマスを使用すると、各チャネルグループ内のチャネルの既定の優先順位も定義されます。これにより、これらの各オフセットが DAUD\_標準\_音声\_優先順位になります。 たとえば、次の定義は、各チャネルグループのチャネル1の既定の優先順位を示しています。
 
 ```cpp
   #define DAUD_CHAN1_DEF_VOICE_PRIORITY \
     (DAUD_STANDARD_VOICE_PRIORITY | DAUD_CHAN1_VOICE_PRIORITY_OFFSET)
 ```
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+KSK プロパティ\_シンセサイザー\_VOICEPRIORITY property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -503,31 +503,31 @@ KSPROPERTY\_シンセサイザー\_VOICEPRIORITY プロパティ要求がステ�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-音声の優先順位の詳細については、の説明を参照してください、 **IDirectMusicPort::GetChannelPriority**と**IDirectMusicPort::SetChannelPriority** Microsoft Windows SDK 内のメソッドドキュメントです。
+音声の優先順位の詳細については、Microsoft Windows SDK のドキュメントで**IDirectMusicPort:: getchannelpriority**メソッドと**IDirectMusicPort:: setchannelpriority**メソッドの説明を参照してください。
 
 ## <span id="ddk_ksproperty_synth_volume_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOLUME_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_ボリュームのプロパティを取得またはシンセサイザー デバイスのボリューム レベルを設定します。
+KSK プロパティ\_シンセサイザー\_VOLUME プロパティは、シンセサイザーデバイスのボリュームレベルを取得または設定します。
 
 <table>
 <colgroup>
@@ -539,7 +539,7 @@ KSPROPERTY\_シンセサイザー\_ボリュームのプロパティを取得ま
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -548,22 +548,22 @@ KSPROPERTY\_シンセサイザー\_ボリュームのプロパティを取得ま
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p>LONG</p></td>
+<td align="left"><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) は LONG 型のシンセサイザー デバイスのボリューム レベルを指定します。 ボリュームの設定は、1/100ths デシベル単位で指定されます。 ミニポート ドライバーは、する必要がありますか、そのボリュームを変更または要求が、プロパティを取得または設定があるかによって、そのボリュームをレポートします。
+プロパティ値 (操作データ) は LONG 型で、シンセサイザーデバイスのボリュームレベルを指定します。 ボリュームの設定は、1/100 単位で指定します。 ミニポートドライバーは、プロパティを取得するか設定するかに応じて、ボリュームを変更するか、ボリュームを報告する必要があります。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_ボリューム プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+KSK プロパティ\_シンセサイザー\_ボリュームプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -573,17 +573,17 @@ KSPROPERTY\_シンセサイザー\_ボリューム プロパティ要求がス�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
@@ -593,9 +593,9 @@ KSPROPERTY\_シンセサイザー\_ボリューム プロパティ要求がス�
 ## <span id="ddk_ksproperty_synth_volumeboost_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOLUMEBOOST_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-KSPROPERTY\_シンセサイザー\_VOLUMEBOOST プロパティをシンセサイザー デバイスのボリュームがブーストされる量を指定します。
+KSK プロパティ\_シンセサイザー\_VOLUMEBOOST ストプロパティは、シンセサイザーデバイスのボリュームをブーストする量を指定します。
 
 <table>
 <colgroup>
@@ -607,7 +607,7 @@ KSPROPERTY\_シンセサイザー\_VOLUMEBOOST プロパティをシンセサイ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -616,22 +616,22 @@ KSPROPERTY\_シンセサイザー\_VOLUMEBOOST プロパティをシンセサイ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>LONG</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) は LONG 型のミックス段階の後のオーディオ信号を促進する量を指定します。 これは、すべての音声アーティキュレーション後のシンセサイザーの最終的な出力に追加するボリュームの量との混在が完了します。 ボリューム boost 量は、1/100ths デシベルで指定されます。 この値は、正または負の値を指定できます。
+プロパティ値 (操作データ) は LONG 型で、ミックスステージの後にオーディオ信号をブーストする量によって指定されます。 これは、すべての音声 articulation とミックスが完了した後に、シンセサイザーの最終出力に追加するボリュームの量です。 ボリュームブースト量は、1/100 単位で指定されます。 この値には、正または負の値を指定できます。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_シンセサイザー\_VOLUMEBOOST プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。 次の表では、可能性のあるエラー コードの一部を示します。
+KSK プロパティ\_シンセサイザー\_VOLUMEBOOST ストプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。 次の表に、考えられるエラーコードを示します。
 
 <table>
 <colgroup>
@@ -641,26 +641,26 @@ KSPROPERTY\_シンセサイザー\_VOLUMEBOOST プロパティ要求がステー
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>バッファーが小さすぎるため、操作を完了します。</p></td>
+<td align="left"><p>バッファーが小さすぎて操作を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>操作が正常に完了しませんでした。</p></td>
+<td align="left"><p>操作は正常に完了しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-他のブーストを出力に追加する必要がありますはされません。 シンセサイザーは、アーティキュレーションの厳密な DLS レベル 1 の規則に従う必要があります。
+他のブーストを出力に追加することはできません。 シンセサイザーは、articulation の厳密な DLS レベル1規則に従う必要があります。
 
-このプロパティは、システムでは、その他のオーディオ出力のシンセサイザーの量を均等に使用され、すべてのデバイスで一貫した方法で boost 金額が解釈したがって必要があります。
+このプロパティは、シンセサイザーの音量をシステム内の他のオーディオ出力とイコライズするために使用されます。したがって、増加量はすべてのデバイスで一貫した方法で解釈されます。
 
  
 

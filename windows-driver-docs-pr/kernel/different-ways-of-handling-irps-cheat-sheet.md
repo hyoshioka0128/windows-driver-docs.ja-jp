@@ -1,37 +1,37 @@
 ---
 title: IRP 処理のさまざまな方法 - チート シート
 author: kaushika-msft
-description: さまざまな Irp の処理方法
+description: Irp を処理するさまざまな方法
 keywords:
 - Irp WDK カーネル、Irp の処理
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bccfd7b4ba8f0a8514520220105b6b6f50031eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f037021882b9c45f4101789549d8f22de7802fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384991"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828324"
 ---
 # <a name="different-ways-of-handling-irps---cheat-sheet"></a>IRP 処理のさまざまな方法 - チート シート 
 
-通常、Windows Driver Model (WDM) ドライバーは、他のドライバーに入力/出力要求パケット (Irp) を送信します。 ドライバーが IRP を独自に作成し、下位のドライバーに送信します。 または、ドライバーは Irp の上に接続されている別のドライバーから受信するに転送します。 
+通常、Windows Driver Model (WDM) ドライバーは、入力/出力要求パケット (Irp) を他のドライバーに送信します。 ドライバーは独自の IRP を作成し、それを下位のドライバーに送信します。または、ドライバーが、上でアタッチされている別のドライバーから受信した Irp を転送します。 
 
-この記事では、ドライバーは Irp を下位のドライバーに送信して、注釈付きのサンプル コードが含まれるさまざまな方法について説明します。
+この記事では、ドライバーがより低いドライバーに Irp を送信し、注釈付きサンプルコードを含むさまざまな方法について説明します。
 
-* シナリオ 1 ~ 5 は、下位のドライバーにディスパッチ ルーチンから IRP を転送する方法の詳細についてです。
-* 6 ~ 12 のシナリオでは、さまざまな方法は IRP を作成して、別のドライバーに送信することについて説明します。
+* シナリオ1-5 は、IRP をディスパッチルーチンから下位のドライバーに転送する方法を示しています。
+* シナリオ6-12 では、さまざまな方法で IRP を作成し、別のドライバーに送信する方法について説明します。
 
-さまざまなシナリオを検証する前に、STATUS_MORE_PROCESSING_REQUIRED または STATUS_SUCCESS IRP の完了ルーチンが返すことができますに注意してください。
+さまざまなシナリオを確認する前に、IRP 完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED または STATUS_SUCCESS を返す可能性があることに注意してください。
 
-I/O マネージャーは、状態を確認するときに、次の規則を使用します。
+I/o マネージャーは、状態を調べるときに次の規則を使用します。
 
-* 状態が STATUS_MORE_PROCESSING_REQUIRED、停止、IRP の完了の場合は、スタックの場所を変更しないままにし、返します。
-* ステータスが STATUS_MORE_PROCESSING_REQUIRED 以外の場合は、上方向 IRP の完了を続行します。
+* 状態が STATUS_MORE_PROCESSING_REQUIRED の場合は、IRP の完了を停止し、スタックの場所はそのままにして、を返します。
+* 状態が STATUS_MORE_PROCESSING_REQUIRED 以外のものである場合は、IRP を上方向へ続行します。
 
-I/O マネージャーが使用されている STATUS_MORE_PROCESSING_REQUIRED 以外の値を把握する必要はありません、ため (値 0 がほとんどのプロセッサ アーキテクチャに効率的に読み込まれる) ために STATUS_SUCCESS を使用します。
+I/o マネージャーは、使用されている STATUS_MORE_PROCESSING_REQUIRED 以外の値を知る必要がないので、STATUS_SUCCESS を使用します (ほとんどのプロセッサアーキテクチャで値0が効率的に読み込まれるため)。
 
-次のコードを読み、STATUS_CONTINUE_COMPLETION がエイリアスは WDK に STATUS_SUCCESS に注意してください。
+次のコードを読むと、STATUS_CONTINUE_COMPLETION は WDK の STATUS_SUCCESS にエイリアスされていることに注意してください。
 
 ```cpp
 // This value should be returned from completion routines to continue
@@ -50,10 +50,10 @@ typedef enum _IO_COMPLETION_ROUTINE_RESULT {
 } IO_COMPLETION_ROUTINE_RESULT, *PIO_COMPLETION_ROUTINE_RESULT;
 ```
 
-## <a name="forwarding-an-irp-to-another-driver"></a>別のドライバーは IRP の転送
+## <a name="forwarding-an-irp-to-another-driver"></a>IRP を別のドライバーに転送する
 
-### <a name="scenario-1-forward-and-forget"></a>シナリオ 1:転送し、もご活用ください。
-ドライバーは、ダウン IRP を転送し、追加操作は不要にだけ必要がある場合は、次のコードを使用します。 ドライバーは、完了ルーチンをここで設定する必要はありません。 ドライバーが最上位レベルのドライバーの場合は、IRP が行うことができます同期または非同期では、下位のドライバーによって返される状態に応じて。 
+### <a name="scenario-1-forward-and-forget"></a>シナリオ 1: 転送と破棄
+ドライバーが IRP を転送するだけで、追加のアクションを実行しない場合は、次のコードを使用します。 この場合、ドライバーは完了ルーチンを設定する必要はありません。 ドライバーが最上位のドライバーである場合は、下位のドライバーによって返される状態に応じて、同期的または非同期的に IRP を完了できます。 
 
 ```cpp
 NTSTATUS
@@ -71,9 +71,9 @@ DispatchRoutine_1(
 } 
 ```
 
-### <a name="scenario-2-forward-and-wait"></a>例 2:前方参照と待機
+### <a name="scenario-2-forward-and-wait"></a>シナリオ 2: 転送と待機
 
-ドライバーは、下位のドライバーに IRP を転送し、返す IRP を処理できるようにするまで待機する必要がある場合は、次のコードを使用します。 これは、PNP Irp を処理するときに頻繁に実行されます。 たとえば、受信、 [IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP、バス ドライバーに IRP を転送し、デバイスを開始する前に完了するまで待機します。 呼び出すことができます[ **IoForwardIrpSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioforwardirpsynchronously)を簡単にこの操作を実行します。
+ドライバーが irp を下位のドライバーに転送し、が返されるのを待って IRP を処理できるようにする場合は、次のコードを使用します。 これは、PNP Irp を処理するときに頻繁に実行されます。 たとえば、 [IRP_MN_START_DEVICE](irp-mn-start-device.md) irp を受信した場合、irp をバスドライバーに転送し、完了するのを待ってから、デバイスを起動する必要があります。 [**IoForwardIrpSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioforwardirpsynchronously)を呼び出すと、この操作を簡単に行うことができます。
 
 ```cpp
 NTSTATUS
@@ -148,9 +148,9 @@ CompletionRoutine_2(
 } 
 ```
 
-### <a name="scenario-3-forward-with-a-completion-routine"></a>例 3:完了ルーチンを転送します。
+### <a name="scenario-3-forward-with-a-completion-routine"></a>シナリオ 3: 完了ルーチンを使用して転送する
 
-この場合、ドライバーは完了ルーチンの設定、IRP を転送が下位のドライバーの状態を返します。 設定完了ルーチンの目的は、戻る途中で IRP のコンテンツを変更します。 
+この場合、ドライバーは完了ルーチンを設定し、IRP を転送してから、下位ドライバーの状態をその状態に戻します。 完了ルーチンを設定する目的は、IRP の内容を元の位置に変更することです。 
 
 ```cpp
 NTSTATUS
@@ -180,13 +180,13 @@ DispathRoutine_3(
 }
 ```
 
-場合は、ディスパッチ ルーチンから下位のドライバーの状態が返されます。
+ディスパッチルーチンから下位のドライバーの状態を返す場合は、次の手順を実行します。
 
-* 完了ルーチンの IRP の状態を変更する必要がありますできません。 これは、(Irp が IoStatus.Status を ->) の IRP IoStatus ブロックで設定された状態値が下位のドライバーの戻り値の状態と同じであることを確認します。
-* Irp が示すとおり、IRP の保留中の状態を反映する必要があります PendingReturned]-> [です。
-* IRP の同期を変更する必要がありません。
+* 完了ルーチンの IRP の状態を変更することはできません。 これは、IRP の IoStatus ブロック (Irp > IoStatus. Status) に設定されている状態値が、下位のドライバーのリターンステータスと同じであることを確認するためです。
+* Irp > PendingReturned によって示されているように、IRP の保留状態を反映する必要があります。
+* IRP の同期を変更することはできません。
 
-その結果、(31 および 32) は、このシナリオでは完了ルーチンの 2 つの有効なバージョンはのみです。
+そのため、このシナリオでは、次の2つの有効なバージョンの完了ルーチン (31 と 32) のみが存在します。
 
 ```cpp
 NTSTATUS
@@ -241,9 +241,9 @@ CompletionRoutine_32 (
 } 
 ```
 
-### <a name="scenario-4-queue-for-later-or-forward-and-reuse"></a>シナリオ 4:後で、キューまたは転送して再利用
+### <a name="scenario-4-queue-for-later-or-forward-and-reuse"></a>シナリオ 4: 後で使用するためのキュー、または転送と再利用
 
-キュー IRP いると後で処理または下位のドライバーに IRP を転送して特定の IRP が完了するまでの時間数で再利用するドライバーが必要があるような状況では、次のコード スニペットを使用します。 ディスパッチ ルーチンは、保留中の IRP をマークし、IRP が別のスレッドに後で完了するために STATUS_PENDING を返します。 ここでは、完了のルーチンは、(前のシナリオでは) とは異なり、必要に応じて、IRP の状態を変更できます。 
+次のコードスニペットは、ドライバーが IRP をキューに配置し、後で処理するか、または IRP を下位ドライバーに転送し、IRP を完了する前に特定の回数だけ再利用する必要がある状況で使用します。 ディスパッチルーチンは、irp が別のスレッドで後で完了する予定のため、保留中の IRP をマークし、ありますを返します。 ここでは、必要に応じて、完了ルーチンが IRP の状態を変更できます (前のシナリオとは異なります)。 
 
 ```cpp
 NTSTATUS
@@ -284,7 +284,7 @@ DispathRoutine_4(
 }
 ```
 
-STATUS_CONTINUE_COMPLETION または STATUS_MORE_PROCESSING_REQUIRED 完了ルーチンを返すか、できます。 別のスレッドから IRP を再利用し、後で入力する場合にのみ、STATUS_MORE_PROCESSING_REQUIRED を返します。
+完了ルーチンは、STATUS_CONTINUE_COMPLETION または STATUS_MORE_PROCESSING_REQUIRED を返すことができます。 STATUS_MORE_PROCESSING_REQUIRED は、別のスレッドから IRP を再利用し、後で完了する場合にのみ返されます。
 
 ```cpp
 NTSTATUS
@@ -317,11 +317,11 @@ CompletionRoutine_42 (
 }
 ```
 
-### <a name="scenario-5-complete-the-irp-in-the-dispatch-routine"></a>シナリオ 5:ディスパッチ ルーチンで IRP を完了します。
+### <a name="scenario-5-complete-the-irp-in-the-dispatch-routine"></a>シナリオ 5: ディスパッチルーチンで IRP を完了する
 
-このシナリオでは、ディスパッチ ルーチンで IRP を完了する方法を示します。 
+このシナリオでは、ディスパッチルーチンで IRP を完了する方法を示します。 
 
-**重要な**ディスパッチ ルーチンでは IRP を完了するとディスパッチ ルーチンの戻り値の状態が IRP の IoStatus ブロックで設定されている値の状態に一致する必要があります (Irp が IoStatus.Status を ->)。
+**重要**ディスパッチルーチンで IRP を完了すると、ディスパッチルーチンの戻りステータスは、IRP の IoStatus ブロックで設定されている値の状態 (Irp > IoStatus. Status) と一致する必要があります。
 
 ```cpp
 NTSTATUS
@@ -340,24 +340,24 @@ DispatchRoutine_5(
 }
 ```
 
-## <a name="creating-irps-and-sending-them-to-another-driver"></a>Irp を作成して、別のドライバーに送信
+## <a name="creating-irps-and-sending-them-to-another-driver"></a>Irp の作成と他のドライバーへの送信
 
 ### <a name="introduction"></a>概要
 
-シナリオを検証する前に、同期入力/出力要求のドライバーが作成したパケット (IRP) と非同期の要求の違いを理解する必要があります。 
+シナリオを確認する前に、ドライバーで作成された同期入出力要求パケット (IRP) と非同期要求の違いを理解しておく必要があります。 
 
-|    同期 (スレッド) の IRP                                                                                                                        |    非同期 (非スレッド) の IRP                                                                                                                       |
+|    同期 (スレッド) IRP                                                                                                                        |    非同期 (非スレッド) IRP                                                                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    IoBuildSynchronousFsdRequest または IoBuildDeviceIoControlRequest を使用して作成されます。                                                                  |    IoBuildAsynchronousFsdRequest または IoAllocateIrp を使用して作成されます。 これは、ドライバーの通信用。                                 |
-|    スレッドは IRP が完了するまで待つ必要があります。                                                                                                         |    スレッドは IRP が完了するまで待機する必要はありません。                                                                                                 |
-|    作成したスレッドに関連付けられた、そのため、スレッド Irp という名前です。 そのため、スレッドが終了すると、I/O マネージャーは IRP をキャンセルします。     |    作成したスレッドに関連付けられていません。                                                                                                       |
-|    任意のスレッド コンテキストで作成できません。                                                                                                 |    スレッドは IRP が完了するまで待たないために、任意のスレッド コンテキストで作成できます。                                             |
-|    I/O マネージャーは IRP に関連付けられているバッファーを解放するための完了後です。                                                     |    I/O マネージャーは、クリーンアップを行うことはできません。 ドライバーは、完了ルーチンを提供し、IRP に関連付けられているバッファーを解放する必要があります。          |
-|    PASSIVE_LEVEL 等しく IRQL レベルで送信する必要があります。                                                                                                |    IRQL で送信できる以下 DISPATCH_LEVEL ターゲット ドライバーのディスパッチ ルーチンは DISPATCH_LEVEL で要求を処理できる場合にします。     |
+|    IoBuildSynchronousFsdRequest または IoBuildDeviceIoControlRequest を使用して作成されます。                                                                  |    IoBuildAsynchronousFsdRequest または IoAllocateIrp を使用して作成されます。 これは、ドライバーとドライバーの通信を目的としています。                                 |
+|    スレッドは、IRP が完了するまで待機する必要があります。                                                                                                         |    スレッドが IRP の完了を待機する必要がありません。                                                                                                 |
+|    これは、それを作成したスレッドに関連付けられます。したがって、名前スレッドの Irp です。 そのため、スレッドが終了すると、i/o マネージャーは IRP をキャンセルします。     |    作成したスレッドに関連付けられていません。                                                                                                       |
+|    は、任意のスレッドコンテキストで作成することはできません。                                                                                                 |    は、スレッドが IRP の完了を待機しないため、任意のスレッドコンテキストで作成できます。                                             |
+|    I/o マネージャーは、IRP に関連付けられているバッファーを解放するために、post の完了を行います。                                                     |    I/o マネージャーはクリーンアップを実行できません。 ドライバーは、完了ルーチンを提供し、IRP に関連付けられているバッファーを解放する必要があります。          |
+|    は、PASSIVE_LEVEL に等しい IRQL レベルで送信される必要があります。                                                                                                |    ターゲットドライバーのディスパッチルーチンが DISPATCH_LEVEL で要求を処理できる場合、DISPATCH_LEVEL 以下の IRQL で送信できます。     |
 
-### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6: IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信します。
+### <a name="scenario-6-send-a-synchronous-device-control-request-irp_mj_internal_device_controlirp_mj_device_control-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6: IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信する
 
-次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)同期 IOCTL 要求に要求します。  詳細については、次を参照してください。 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)します。
+次のコードは、 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) request を呼び出して同期 IOCTL 要求を作成する方法を示しています。  詳細については、「 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md) and [IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)」を参照してください。
 
 ```cpp
 NTSTATUS
@@ -446,8 +446,8 @@ Return Value:
 }
 ```
 
-### <a name="scenario-7-send-a-synchronous-device-control-ioctl-request-and-cancel-it-if-not-completed-in-a-certain-time-period"></a>シナリオ 7:同期デバイス制御 (IOCTL) 要求を送信し、一定時間で完了していない場合は、キャンセル 
-このシナリオでは、無期限に待機している要求が完了するため、代わりにユーザーが指定した時間の待機していることを除いては、前のシナリオに似ていますし、待機がタイムアウトした場合に安全に IOCTL 要求を取り消します。 
+### <a name="scenario-7-send-a-synchronous-device-control-ioctl-request-and-cancel-it-if-not-completed-in-a-certain-time-period"></a>シナリオ 7: 同期デバイス制御 (IOCTL) 要求を送信し、一定の期間内に完了していない場合はキャンセルする 
+このシナリオは、要求が完了するまで無期限に待機するのではなく、ユーザーが指定した時間待機し、待機がタイムアウトした場合に IOCTL 要求を安全にキャンセルすることを除いて、前のシナリオに似ています。 
 
 ```cpp
 typedef enum {
@@ -627,8 +627,8 @@ MakeSynchronousIoctlWithTimeOutCompletion(
 }
 ```
 
-### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statuscontinuecompletion"></a>シナリオ 8: IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_CONTINUE_COMPLETION を返します
-次のコードは、呼び出すことによって、IOCTL 以外の同期要求を作成する方法を示しています。 [ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)します。 ここで示す手法は、シナリオ 6 に似ています。
+### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-status_continue_completion"></a>シナリオ 8: IoBuildSynchronousFsdRequest を使用して同期非 IOCTL 要求を送信する-完了ルーチンが STATUS_CONTINUE_COMPLETION を返す
+次のコードは、 [**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)を呼び出して、非同期の非 IOCTL 要求を行う方法を示しています。 ここに示す手法は、シナリオ6に似ています。
 
 ```cpp
 NTSTATUS
@@ -726,8 +726,8 @@ MakeSynchronousNonIoctlRequestCompletion(
 }
 ```
 
-### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statusmoreprocessingrequired"></a>シナリオ 9: IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返します 
-このシナリオと 8 のシナリオの唯一の違いは、完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返します。 
+### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-status_more_processing_required"></a>シナリオ 9: IoBuildSynchronousFsdRequest を使用して同期非 IOCTL 要求を送信する-完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返す 
+このシナリオとシナリオ8の唯一の違いは、完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返すことです。 
 
 ```cpp
 NTSTATUS MakeSynchronousNonIoctlRequest2(
@@ -832,10 +832,10 @@ NTSTATUS MakeSynchronousNonIoctlRequestCompletion2(
 }
 ```
 
-### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>シナリオ 10: IoBuildAsynchronousFsdRequest を使用して非同期要求を送信します。 
-このシナリオは、呼び出すことによって、非同期要求を作成する方法を示しています。 [ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)します。 
+### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>シナリオ 10: IoBuildAsynchronousFsdRequest を使用して非同期要求を送信する 
+このシナリオでは、 [**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を呼び出して非同期要求を行う方法を示します。 
 
-非同期の要求で要求を作成したスレッドは IRP が完了するまで待機するがありません。 IRP がスレッドに関連付けられていないために、IRP を任意のスレッド コンテキストで作成できます。 完了ルーチンを提供し、IRP を再利用する予定がない場合に、完了ルーチンのバッファーと IRP をリリースする必要があります。 これは I/O マネージャーがドライバーを作成する非同期 Irp の完了後のクリーンアップを実行できないためです (で作成された**IoBuildAsynchronousFsdRequest**と**IoAllocateIrp**)。 
+非同期要求では、要求を行ったスレッドは、IRP が完了するまで待機する必要がありません。 Irp はスレッドに関連付けられていないため、任意のスレッドコンテキストで IRP を作成できます。 IRP を再利用する予定がない場合は、完了ルーチンを提供し、完了ルーチンでバッファーと IRP を解放する必要があります。 これは、i/o マネージャーが、ドライバーによって作成された非同期 Irp ( **IoBuildAsynchronousFsdRequest**と**Ioallocateirp**で作成) の完了後のクリーンアップを実行できないためです。 
 
 ```cpp
 NTSTATUS
@@ -963,9 +963,9 @@ MakeAsynchronousRequestCompletion(
 }
 ```
 
-### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>シナリオ 11:IoAllocateIrp を使用して非同期要求を送信します。
+### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>シナリオ 11: IoAllocateIrp を使用して非同期要求を送信する
 
-このシナリオは、呼び出す代わりに点を除いて前のシナリオに似ています[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)、このシナリオでは、 [ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp) IRP を作成する関数。
+このシナリオは、前のシナリオに似ています。ただし、このシナリオでは、 [**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を呼び出す代わりに、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)関数を使用して IRP を作成します。
 
 ```cpp
 NTSTATUS
@@ -1097,12 +1097,12 @@ MakeAsynchronousRequestCompletion2(
 }
 ```
 
-### <a name="scenario-12-send-an-asynchronous-request-and-cancel-it-in-a-different-thread"></a>シナリオ 12:非同期要求を送信し、別のスレッドでキャンセルします。 
-このシナリオは、送信する方法 1 つの要求時に、下位のドライバーに完了するには、要求を待つことがなくを表示し、別のスレッドから、いつでも、要求をキャンセルすることもできます。 
+### <a name="scenario-12-send-an-asynchronous-request-and-cancel-it-in-a-different-thread"></a>シナリオ 12: 非同期要求を送信して別のスレッドで取り消す 
+このシナリオでは、要求の完了を待たずに、一度に1つの要求を下位のドライバーに送信する方法について説明します。また、他のスレッドからいつでも要求をキャンセルすることもできます。 
 
-デバイスの拡張機能またはデバイスを次に示すようにグローバル context 構造は、この作業を行うには、IRP とその他の変数を覚えてことができます。 IRP の状態は、デバイスの拡張機能で IRPLOCK 変数で追跡されます。 IrpEvent を使用している IRP が完全に完了 (または解放)、次の要求を行う前にかどうかを確認します。 
+次に示すように、IRP とその他の変数を記憶して、デバイスの拡張機能や、デバイスに対してグローバルなコンテキスト構造でこの作業を行うことができます。 IRP の状態は、デバイス拡張機能の IRPLOCK 変数を使用して追跡されます。 IrpEvent は、次の要求を行う前に、IRP が完全に完了 (または解放) されるようにするために使用されます。 
 
-このイベントは、処理する際にも役立ちます[IRP_MN_REMOVE_DEVICE](irp-mn-remove-device.md)と[IRP_MN_STOP_DEVICE PNP](irp-mn-stop-device.md)がない保留中の Irp これらの要求を完了する前に確認するに要求します。 このイベントは、同期イベント AddDevice またはその他の初期化ルーチンとして初期化するときに最適です。
+このイベントは、要求を完了する前に保留中の Irp がないことを確認する必要がある場合に、 [IRP_MN_REMOVE_DEVICE](irp-mn-remove-device.md)と[IRP_MN_STOP_DEVICE の PNP](irp-mn-stop-device.md)要求を処理するときにも役立ちます。 このイベントは、AddDevice または他の初期化ルーチンで同期イベントとして初期化するときに最適に動作します。
 
 ```cpp
 typedef struct _DEVICE_EXTENSION{
@@ -1306,5 +1306,5 @@ CancelPendingIrp(
 }
 ```
 
-## <a name="references"></a>参考資料 
-* Walter Oney します。 Windows Driver Model、第 2 版、第 5 章をプログラミングします。
+## <a name="references"></a>参照先 
+* Walter Oney。 プログラミング Windows Driver Model、第5章を参照してください。

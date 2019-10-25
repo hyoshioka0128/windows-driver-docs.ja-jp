@@ -5,16 +5,16 @@ ms.assetid: 3782f812-bb95-4735-9635-e721ccda92b5
 keywords:
 - IMXF
 - MIDI トランスポート WDK オーディオ
-- wave オーディオ、MIDI トランスポートの WDK をシンクします。
+- wave シンク WDK オーディオ、MIDI トランスポート
 - シンセサイザー WDK オーディオ、MIDI トランスポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7989fe5ac93cde4b31742e467ab0c63b31cdc64d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2baafb72144c9d32c858ca4cf8f420506a72bb91
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359905"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833227"
 ---
 # <a name="imxf-interfaces"></a>IMXF インターフェイス
 
@@ -22,35 +22,35 @@ ms.locfileid: "67359905"
 ## <span id="imxf_interfaces"></span><span id="IMXF_INTERFACES"></span>
 
 
-MIDI トランスポート DirectMusic ポートおよびミニポート ドライバーではすべては、同じインターフェイスを使用して実行されます。[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)します。
+DirectMusic ポートとミニポートドライバーのすべての MIDI トランスポートは、 [Imxf](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)と同じインターフェイスを使用して実行されます。
 
-**IMXF** DirectMusic MIDI 変換のフィルターの COM インターフェイスです。 ミニポート ドライバー、シーケンサー、およびポート ドライバー MIDI データの使用を処理する他のエンティティ**IMXF**の一般的な COM インターフェイスとして。 ミニポート ドライバーは、このインターフェイスを実装すると、MIDI トランスポートに参加できます。 [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)、管理、PortCls に存在する**IMXF**します。 シンクをキャプチャするキャプチャ デバイスからのインターフェイスも、 **IMXF**インターフェイス。
+**Imxf**は、DirectMusic MIDI 変換フィルターの COM インターフェイスです。 MIDI データを処理するポートドライバーのミニポートドライバー、sequencer、およびその他のエンティティは、共通の COM インターフェイスとして**Imxf**を使用します。 ミニポートドライバーは、このインターフェイスを実装するときに、MIDI トランスポートに参加できます。 PortCls に存在する[Iportdmus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)は、 **imxf**を管理します。 キャプチャデバイスからキャプチャシンクへのインターフェイスは、 **Imxf**インターフェイスでもあります。
 
-MIDI データはユーザー モードとカーネル モード パックされたタイムスタンプ付きのデータのバッファーの間で転送されます。 カーネル ポート ドライバーは、個々 のイベントにこれらのバッファーを分割 (を参照してください[ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event))。 高解像度、MIDI sequencer では、トリガーの時間が発生した場合、これらのイベントをミニポート ドライバーに渡します。
+MIDI データは、パックされたタイムスタンプ付きデータのバッファーで、ユーザーモードとカーネルモードの間で転送されます。 カーネルポートドライバーは、これらのバッファーを個々のイベントに分割します (「 [**Dmus\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/ns-dmusicks-_dmus_kernel_event)」を参照してください)。 高解像度の MIDI sequencer は、トリガー時間が発生したときに、これらのイベントをミニポートドライバーに渡します。
 
-入力側では、カーネル ポート ドライバーは、ミニポート ドライバーから個々 の入力メッセージを抽出し、ユーザー モードに渡すようにするパックされたバッファーを構築します。 したがって、DirectMusic ミニポート ドライバーのデータ モデルはトランスポートから成る[ **IMXF::PutMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)と[ **IAllocatorMXF::GetMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage).
+入力側では、カーネルポートドライバーはミニポートドライバーから個々の入力メッセージを抽出し、ユーザーモードに渡すために、パックされたバッファーを構築します。 したがって、DirectMusic ミニポートドライバーのデータトランスポートモデルは、 [**Imxf::P utMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-putmessage)と[**IAllocatorMXF:: GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getmessage)で構成されます。
 
-**IMXF**インターフェイスは、次のメソッドをサポートしています。
+**Imxf**インターフェイスは、次のメソッドをサポートしています。
 
-[**IMXF::ConnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-connectoutput)
+[**IMXF:: ConnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-connectoutput)
 
-[**IMXF::DisconnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-disconnectoutput)
+[**IMXF::D isconnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-disconnectoutput)
 
-[**IMXF::PutMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)
+[**IMXF::P utMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-putmessage)
 
-[**IMXF::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-setstate)
+[**IMXF:: SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-setstate)
 
-[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)インターフェイスは、拡張**IMXF**次のメソッドを追加します。
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf)インターフェイスは、次のメソッドを追加することで、 **imxf**を拡張します。
 
-[**IAllocatorMXF::GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)
+[**IAllocatorMXF:: GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getmessage)
 
-[**IAllocatorMXF::GetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getbuffersize)
+[**IAllocatorMXF:: GetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getbuffersize)
 
-[**IAllocatorMXF::GetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getbuffer)
+[**IAllocatorMXF:: GetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getbuffer)
 
-[**IAllocatorMXF::PutBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-putbuffer)
+[**IAllocatorMXF::P utBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-putbuffer)
 
-これらのインターフェイスの使用に関する詳細については、次を参照してください。[アロケーター](allocator.md)します。
+これらのインターフェイスの使用方法の詳細については、「[アロケーター](allocator.md)」を参照してください。
 
  
 

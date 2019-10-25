@@ -7,12 +7,12 @@ keywords:
 - パラレル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b4ed3ad500a19b9566aa52426e84984aa83fc12
-ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
+ms.openlocfilehash: 615d1e94a7a7b04edf7474183b60fed9b10114f2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "67376976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831490"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-devices"></a>パラレル デバイスの I/O 要求に対するデバイス固有の操作
 このトピックでは、並列デバイスの i/o 要求に対する、デバイス固有の次の操作について説明します。
@@ -68,7 +68,7 @@ STATUS_NOT_A_DIRECTORY
 デバイスがディレクトリではありません。
 
 ### <a name="operation"></a>操作
-パラレルデバイスは、排他的なデバイスです。 パラレルデバイスが開いている場合、パラレルポート用のシステム提供のバスドライバーは、デバイスが閉じられるまで、デバイスに対する後続の[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求をすべて失敗させます。 クライアントは、デバイスに他の i/o 要求を送信する前に、または[並列デバイスコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)を呼び出すために、並列デバイスを開く必要があります。
+パラレルデバイスは、排他的なデバイスです。 パラレルデバイスが開いている場合、パラレルポート用のシステム提供のバスドライバーは、デバイスが閉じられるまで、デバイスに対する後続の[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求をすべて失敗させます。 クライアントは、デバイスに他の i/o 要求を送信する前に、または[並列デバイスコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を呼び出すために、並列デバイスを開く必要があります。
 
 詳細については、「[並列デバイスのオープンと使用](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)」を参照してください。
 
@@ -82,7 +82,7 @@ STATUS_NOT_A_DIRECTORY
 * デバイスに関する情報を取得する
 * デバイスの動作モードの設定
 
-「[デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)参照してください。
+「[デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)参照してください。
 
 ### <a name="input-parameters"></a>入力パラメーター
 要求固有。
@@ -138,7 +138,7 @@ STATUS_UNSUCCESSFUL
 * パラレルポートに関する接続情報の取得
 * デバイスで排他的に使用するためにパラレルポートをロックおよびロック解除する
 
-「[並列デバイスの内部デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)参照してください。
+「[並列デバイスの内部デバイス制御要求」を](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)参照してください。
 
 ### <a name="input-parameters"></a>入力パラメーター
 要求固有。
@@ -197,13 +197,13 @@ STATUS_UNSUCCESSFUL
 
 **Filestandardinformation**要求:
  
-**AssociatedIrp**のメンバーは、ファイル情報の出力に対してクライアントが割り当てる[FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)構造体を指します。
+**AssociatedIrp**のメンバーは、ファイル情報の出力に対してクライアントが割り当てる[FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_standard_information)構造体を指します。
 
 **FILE_STANDARD_INFORMATION**構造体のサイズ (バイト単位) には、**パラメーターの値**を設定します。
 
 **Filepositioninformation**要求: 
 
-**AssociatedIrp**は、ファイル情報の出力にクライアントが割り当てる[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)構造体を指します。
+**AssociatedIrp**は、ファイル情報の出力にクライアントが割り当てる[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)構造体を指します。
 
 **FILE_POSITION_INFORMATION**構造体の**パラメーターの値**は、バイト単位で設定されます。
 
@@ -296,7 +296,7 @@ STATUS_DEVICE_REMOVED
 デバイスは削除されています。
 
 ### <a name="operation"></a>操作
-パラレルポート用のシステム提供のバスドライバーは、並列デバイスに対して読み取りプロトコルセットを使用します。 既定の読み取りプロトコルは NIBBLE_MODE です。 クライアントは、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求を使用して、読み取りプロトコルをネゴシエートできます。
+パラレルポート用のシステム提供のバスドライバーは、並列デバイスに対して読み取りプロトコルセットを使用します。 既定の読み取りプロトコルは NIBBLE_MODE です。 クライアントは、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求を使用して、読み取りプロトコルをネゴシエートできます。
 
 パラレルポートバスドライバーは、読み取り要求に対してキャンセルルーチンを設定し、読み取り要求を保留中としてマークし、ワークキューで読み取り要求をキューに入れます。 読み取り要求は、読み取り要求が完了するかクライアントによって取り消されるまでキャンセルできる状態で、ワークキューに保持されます。
 
@@ -347,7 +347,7 @@ STATUS_DEVICE_REMOVED
 デバイスは削除されています。
 
 ### <a name="operation"></a>操作
-パラレルポート用のシステム提供のバスドライバーは、並列デバイスに設定されている書き込みプロトコルを使用してデータを転送します。 既定の書き込みプロトコルは、セントロニクスです。 クライアントは、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求を使用して書き込みプロトコルをネゴシエートできます。 
+パラレルポート用のシステム提供のバスドライバーは、並列デバイスに設定されている書き込みプロトコルを使用してデータを転送します。 既定の書き込みプロトコルは、セントロニクスです。 クライアントは、 [IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)要求を使用して書き込みプロトコルをネゴシエートできます。 
 
 パラレルポートバスドライバーは、書き込み要求に対してキャンセルルーチンを設定し、書き込み要求を保留中としてマークし、ワークキューで書き込み要求をキューに入れます。 書き込み要求は、要求が完了するか取り消されるまでキャンセルできる状態で保持されます。
 
@@ -355,15 +355,15 @@ STATUS_DEVICE_REMOVED
 
 ## <a name="related-topics"></a>関連トピック
 
-[パラレルデバイスのデバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+[パラレルデバイスのデバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information) [FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)
+[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information) [FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_standard_information)
 
 [並列デバイスを開いて使用する](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)
 
 [パラレルポートに接続されているパラレルデバイスの操作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[並列デバイスのコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[並列デバイスのコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [並列デバイスの読み取りと書き込み](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)
 

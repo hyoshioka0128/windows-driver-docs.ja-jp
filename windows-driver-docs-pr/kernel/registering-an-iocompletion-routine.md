@@ -4,15 +4,15 @@ description: IoCompletion ルーチンの登録
 ms.assetid: 413d8463-b2ce-44b6-846c-f853b5cd580e
 keywords:
 - IoCompletion ルーチン
-- IoCompletion ルーチンを登録します。
+- IoCompletion ルーチンを登録しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 981e8874a97ef95715db99c01c2b894a7a4536d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a68722e5287668feab988b5a8abafa04b5a4a4c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378738"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838471"
 ---
 # <a name="registering-an-iocompletion-routine"></a>IoCompletion ルーチンの登録
 
@@ -20,51 +20,51 @@ ms.locfileid: "67378738"
 
 
 
-登録する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なディスパッチ ルーチンを呼び出す[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)、を指定して*IoCompletion*ルーチンのアドレスとは、その後に渡されることを使用して下位のドライバーを IRP [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを登録するために、ディスパッチルーチンは[**iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出します。 *iocompletion*ルーチンのアドレスと、後で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して下位のドライバーに渡す IRP を渡します。
 
-呼び出し時に**IoSetCompletionRoutine**、ディスパッチ ルーチンが I/O マネージャーが呼び出すサーバーの指定した状況を指定します*IoCompletion*ルーチン。 選択できます、 *IoCompletion*下位レベルのドライバーが IRP を正常に完了する場合、ルーチンが呼び出されます (*InvokeOnSuccess*)、エラー状態の値を持つ IRP の完了 (*InvokeOnError*)、IRP をキャンセルするか (*InvokeOnCancel*)、任意の組み合わせ。
+**Iosetcompletion ルーチン**を呼び出す場合、ディスパッチルーチンは、i/o マネージャーが指定された*iocompletion*ルーチンを呼び出す必要がある状況を指定します。 低いレベルのドライバーが IRP を正常に完了した場合 (*InvokeOnSuccess*)、エラー状態の値 (*invokeonerror*) を使用して irp を完了するか、irp をキャンセルする (InvokeOnCancel) 場合は、 *iocompletion*ルーチンを呼び出すことができます。)、任意の組み合わせ。
 
-目的、 *IoCompletion*ルーチンは、下位レベルのドライバーが IRP にでしたを監視し、必要に応じて、追加の完了処理を実行します。 ドライバーの最も一般的なを使用して具体的には、 *IoCompletion*ルーチンが次に示します。
+*Iocompletion*ルーチンの目的は、IRP で実行された下位レベルのドライバーを監視し、必要に応じて追加の完了処理を実行することです。 具体的には、ドライバーの*Iocompletion*ルーチンの最も一般的な用途は次のとおりです。
 
--   割り当てられて、ドライバーは IRP を破棄する[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)または[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
+-   ドライバーが[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)または[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を使用して割り当てた IRP を破棄するには
 
-    高度なドライバーは IRP を使用してこれらのサポートのルーチンを指定する必要がありますのいずれかによって割り当てられる、 *IoCompletion*その IRP のルーチンです。 *IoCompletion*ルーチンを呼び出す必要があります[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)ドライバーに割り当てられた Irp を破棄します。
+    これらのサポートルーチンのいずれかを使用して IRP を割り当てる上位レベルのドライバーは、その IRP の*Iocompletion*ルーチンを提供する必要があります。 *Iocompletion*ルーチンは[**Iofreeirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)を呼び出して、ドライバーによって割り当てられた irp を破棄する必要があります。
 
--   要求元の要求を満足し、完了するまで、下位のドライバーがいくつかの部分の転送などの操作を完了する受信の IRP を再利用する、 *IoCompletion*ルーチン
+-   受信 IRP を再利用して、より低いドライバーが一部の操作 (部分的な転送など) を完了するように要求するには、 *Iocompletion*ルーチンによって元の要求が満たされて完了するまでの間、
 
--   下位のドライバーがエラーで完了した要求を再試行するには
+-   下位のドライバーがエラーで完了したことを要求を再試行するには
 
-    など、ファイル システムの最上位レベルのドライバーがある可能性が高い*IoCompletion*以上を除く、中間のドライバーを可能性がありますが、要求を再試行しようとするルーチン クラス ドライバーが密接に結合されたポート ドライバーの上に配置します。 ただし、ドライバーの使用を中間任意*IoCompletion*要求を再試行するルーチン。
+    ファイルシステムなどの最上位レベルのドライバーは、厳密に結合されたポートドライバーの上に階層化されている場合を除き、中間ドライバーよりも要求の再試行を試みる*Iocompletion*ルーチンを持つ可能性が高くなります。 ただし、中間ドライバーでは、 *Iocompletion*ルーチンを使用して要求を再試行します。
 
-最上位レベルまたは中間ドライバーの中に[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは Irp を必要とするプロセスに最も可能性の高い、 *IoCompletion*ルーチン、ディスパッチIrp を下位のドライバーに渡される任意のドライバーのルーチンを登録できる、 *IoCompletion*ルーチン。
+最高レベルまたは中間ドライバーの[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、 *iocompletion*ルーチンを必要とする irp を処理する可能性が最も高いものの、irp を下位のドライバーに渡すすべてのドライバーのディスパッチルーチンは、 *IoCompletion*ルーチン。
 
-Irp のドライバーに割り当てられたと再利用の Irp では、ディスパッチ ルーチンを呼び出す必要があります**IoSetCompletionRoutine**次のブール型パラメーターを使用します。
+ドライバーによって割り当てられる Irp と再利用される Irp の場合、ディスパッチルーチンは、次のブール型パラメーターを使用して**Ioset補完ルーチン**を呼び出す必要があります。
 
--   *InvokeOnSuccess*設定**は TRUE。**
+-   *InvokeOnSuccess*が**TRUE**に設定される
 
--   *InvokeOnError*設定**は TRUE。**
+-   *Invokeonerror*を**TRUE**に設定
 
--   *InvokeOnCancel*設定**TRUE**場合は、チェーン内の下位のドライバーがキャンセル可能な Irp を処理
+-   *InvokeOnCancel*は、チェーン内の下位のドライバーがキャンセル可能な irp を処理する可能性がある場合に**TRUE**に設定されます。
 
-    通常、 *InvokeOnCancel*に設定されている**TRUE**IRP を状態と共に返される可能性があるかどうかに関係なく、\_取り消し済み、いることを確認する、 *IoCompletion*ルーチンは、各ドライバーに割り当てられた IRP の解放または IRP の各を再利用の完了ステータスを確認します。
+    通常、 *InvokeOnCancel*が**TRUE**に設定されているかどうかに関係なく、状態\_がキャンセルされた irp が返されるかどうかにかかわらず、 *iocompletion*ルーチンが各ドライバー割り当ての IRP を解放するか、それぞれの完了状態を確認します。IRP を再利用します。
 
-使用してドライバを下の Irp を割り当てるディスパッチ ルーチン**IoAllocateIrp**または[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)設定する必要があります、 *IoCompletion*各ドライバーに割り当てられた IRP のルーチンです。
+**Ioallocateirp**または[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を使用して下位のドライバーの irp を割り当てるディスパッチルーチンでは、ドライバーによって割り当てられた各 IRP に*iocompletion*ルーチンを設定する必要があります。
 
--   ディスパッチ ルーチンは、IRP とその割り当てられた IRP(s) の元の両方についての状態を設定する必要があります、 *IoCompletion*ルーチンを使用します。 少なくとも、 *IoCompletion*ルーチンには、元の IRP へのアクセスが必要があり、割り当てられた数の追加 Irp の数。
+-   ディスパッチルーチンは、使用する*Iocompletion*ルーチンに対して、元の irp とその割り当てられた irp の両方について状態を設定する必要があります。 少なくとも、 *Iocompletion*ルーチンは、元の irp と、割り当てられた追加の irp の数に対するアクセス権を必要とします。
 
--   ディスパッチ ルーチンを呼び出す必要があります**IoSetCompletionRoutine**すべて*InvokeOnXxx*のパラメーターを設定**TRUE**割り当てる IRP(s) の。
+-   ディスパッチルーチンは、割り当てられる IRP に対して、すべての*Invokeonxxx*パラメーターを**TRUE**に設定して**ioset補完ルーチン**を呼び出す必要があります。
 
-操作のシーケンスの Irp を再使用する、または I/O 操作を再試行するディスパッチ ルーチンを呼び出す必要があります**IoSetCompletionRoutine**再利用または再試行される各 IRP の。
+一連の操作に対して Irp を再利用したり、i/o 操作を再試行したりするディスパッチルーチンは、再利用または再試行される各 IRP に対して**Iosetてルーチン**を呼び出す必要があります。
 
--   ディスパッチ ルーチンを後で使用して、元の IRP の状態情報を保存する必要があります、 *IoCompletion*ルーチン。
+-   ディスパッチルーチンは、後で*Iocompletion*ルーチンが使用できるように、元の IRP の状態情報を保存する必要があります。
 
-    たとえば、 [ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが入力の IRP のパラメーターには、関連する転送の保存する必要があります、 *IoCompletion*部分をセットアップする前に日常的なその IRP で次の下位のドライバーを転送します。 パラメーターを保存することは特に重要だ場合、 *DispatchReadWrite*ルーチンは、任意のパラメーターを変更する、 *IoCompletion*ルーチンは、元の要求がされた時点を決定する必要があります満たされます。
+    たとえば、 [*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、その irp 内の次に低いドライバーの部分転送を設定する前に、 *iocompletion*ルーチンの入力 IRP の関連する転送パラメーターを保存する必要があります。 パラメーターの保存は、 *DispatchReadWrite*ルーチンによって、元の要求が満たされたときに*iocompletion*ルーチンが決定する必要があるパラメーターを変更する場合に特に重要です。
 
--   場合、 *IoCompletion*ルーチンが、要求を再試行してください、ディスパッチ ルーチンは、再試行の回数のドライバーが指定の上限値を設定する必要があります、 *IoCompletion*ルーチンは、その前に試みる必要があります。エラーで元の IRP を完了します。
+-   *Iocompletion*ルーチンが要求を再試行できる場合は、ディスパッチルーチンで、待機の回数の上限を設定する必要があります。これにより、最初の IRP がエラーで完了する前に、 *iocompletion*ルーチンが試行する再試行回数が制限されます。
 
--   IRP が再利用する場合は、ディスパッチ ルーチンを呼び出す必要があります**IoSetCompletionRoutine**すべて*InvokeOnXxx*のパラメーターを設定**TRUE**します。
+-   IRP を再利用する場合、ディスパッチルーチンは、すべての*Invokeonxxx*パラメーターを**TRUE**に設定して**ioset補完ルーチン**を呼び出す必要があります。
 
--   任意の中間ドライバーのディスパッチ ルーチンを呼び出す必要があります、非同期の要求の[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)元 IRP の。 状態を返す必要がありますし、その\_IRP が下位のドライバーに送信後に保留します。
+-   非同期要求の場合、中間ドライバーのディスパッチルーチンは、元の IRP に対して[**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出す必要があります。 その後、IRP を下位のドライバーに送信した後に、状態\_PENDING を返す必要があります。
 
  
 

@@ -1,39 +1,39 @@
 ---
-title: その使用法を指定することで値のデータを抽出
-description: その使用法を指定することで値のデータを抽出
+title: 使用法を指定して値データを抽出する
+description: 使用法を指定して値データを抽出する
 ms.assetid: 043cdb68-ead8-4ccf-ae00-1165fe2988f4
 keywords:
-- HID レポート WDK、コントロールのデータの抽出
-- コントロールのデータの抽出、WDK を非表示レポート
-- HID コントロール データの抽出
-- WDK の HID データ使用量の抽出
+- HID レポート WDK、抽出 (コントロールデータを)
+- WDK HID を報告し、コントロールデータを抽出します
+- HID コントロールデータの抽出
+- データ使用量抽出 WDK HID
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ca44de04741406a403ffcde4737995cdf7ded34
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6c6982fb567b1ee0319a5d5411c94a123c3869a0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375725"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824820"
 ---
-# <a name="extracting-value-data-by-specifying-its-usage"></a>その使用法を指定することで値のデータを抽出
+# <a name="extracting-value-data-by-specifying-its-usage"></a>使用法を指定して値データを抽出する
 
 
 
 
 
-HID レポートから値のデータを抽出するには、アプリケーションまたはドライバーを使用できます、次の HID サポート ルーチンのいずれか。
+HID レポートから値データを抽出するために、アプリケーションまたはドライバーは、次のいずれかの HID サポートルーチンを使用できます。
 
-<a href="" id="hidp-getscaledusagevalue"></a>[**HidP\_GetScaledUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getscaledusagevalue)  
-署名とスケールの値を返します。
+<a href="" id="hidp-getscaledusagevalue"></a>[**HidP\_Get/Edの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getscaledusagevalue)  
+符号付きおよびスケーリングされた値を返します。
 
-<a href="" id="hidp-getusagevalue"></a>[**HidP\_GetUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevalue)  
-符号なしの形式か、調整された値のうちある nonscaled 値を返します、**標準**範囲。
+<a href="" id="hidp-getusagevalue"></a>[**HidP\_Getの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevalue)  
+非スケール値を符号なしの形式で返します。または、**通常**の範囲外のスケール値を返します。
 
-<a href="" id="hidp-getusagevaluearray"></a>[**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevaluearray)  
+<a href="" id="hidp-getusagevaluearray"></a>[**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray)  
 使用状況の値の配列を返します。
 
-使用する**HidP\_GetUsageValueArray**アプリケーションとドライバーは、使用状況の値の配列を保持するのに十分な大きさがゼロに初期化のバッファーを割り当てる必要があります。 (バイト単位)、必要なサイズの製品、 **BitSize**と**ReportCount**使用率値の配列のメンバー [ **HIDP\_値\_キャップ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_value_caps)構造体、最も近いバイトに切り上げられます。
+**Hidp\_GetUsageValueArray**を使用するには、アプリケーションとドライバーが、使用状況の値の配列を保持するのに十分な大きさのゼロ初期化バッファーを割り当てる必要があります。 必要なサイズ (バイト単位) は、使用状況値配列の[**Hidp\_value\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_value_caps)構造体の**ビットサイズ**と**reportcount**メンバーの積で、最も近いバイトに切り上げられます。
 
  
 

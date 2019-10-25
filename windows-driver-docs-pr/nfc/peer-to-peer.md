@@ -7,20 +7,20 @@ keywords:
 - proximity
 - 近距離近接通信
 - NFP
-description: NFC フォーラムに関する情報は、ピア ツー ピアの標準を定義して、デバイスを確認します。 プロトコルは NFC を使用してやり取りできます。
+description: デバイスが NFC を使用して対話できることを保証する、NFC フォーラムで定義されているピアツーピア標準とプロトコルに関する情報。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8212c433858234ceeb26aeb821e873339ae6ad6e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7867e588b2b534512e8fd38c24ba87b5f7240485
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834085"
 ---
 # <a name="peer-to-peer"></a>ピアツーピア
 
 
-2 つのデバイスが NFC を使用してやり取りできるように、ドライバーが次の NFC フォーラムを使用してデータを送受信する必要がありますには、ピア ツー ピアの規格とプロトコルを定義しました。
+2つのデバイスが NFC を使用して対話できるようにするには、ドライバーは次の NFC フォーラムで定義されているピアツーピアの標準とプロトコルを使用してデータを送受信する必要があります。
 
 -   LLCP v1.1
 -   SNEP v1.0
@@ -28,16 +28,16 @@ ms.locfileid: "67383161"
 ## <a name="driver-requirements"></a>ドライバーの要件
 
 
-LLCP NDEF メッセージ交換を実行している既定の SNEP サーバーをサポートするドライバーの必要があります。
+ドライバーは、LLCP 経由で実行されている既定の SNEP サーバーをサポートし、NDEF メッセージを交換する必要があります。
 
--   リモートの P2P デバイスの着信、ドライバーは、("DeviceArrived"サブスクリプションがトリガーされた後に)、リモート デバイスの既定の SNEP サーバーとクライアント SNEP 接続を確立する必要があります。
--   ドライバーは、その既定の SNEP サーバー リモート デバイスの SNEP クライアント接続からで接続を受け入れることもあります。
--   このドキュメントで定義されている、SNEP サーバーで受信したすべての NDEF メッセージをメッセージの種類に変換する必要があります。
--   パブリッシュするすべてのメッセージの種類は NDEF メッセージに変換および前述のように、リモート デバイスに送信する必要があります。 メッセージが送信されると、 [ **IOCTL\_NFP\_取得\_[次へ]\_送信\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)で定義されているとおりに完了このドキュメントでは。
+-   リモートの P2P デバイスに到着した場合、ドライバーは、リモートデバイスの既定の SNEP サーバーとのクライアント SNEP 接続を確立する必要があります (その後に "DeviceArrived" サブスクリプションがトリガーされます)。
+-   また、ドライバーは、リモートデバイスの SNEP クライアント接続から、既定の SNEP サーバーでの接続を受け入れることもできなければなりません。
+-   SNEP サーバーで受信したすべての NDEF メッセージは、このドキュメントで定義されているメッセージの種類に変換される必要があります。
+-   公開されるすべてのメッセージの種類は、NDEF メッセージに変換され、前述のようにリモートデバイスに送信される必要があります。 メッセージが送信されると、このドキュメントで定義されているように、 [**IOCTL\_NFP\_\_次\_送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)された\_メッセージが完了します。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

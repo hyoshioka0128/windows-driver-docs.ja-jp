@@ -1,6 +1,6 @@
 ---
 title: RF 検出シーケンス
-description: 次の図は、探索を開始するために、NFC CX によって実行される NCI 操作のシーケンスを示しています。
+description: 次の図は、検出を開始するために NFC CX によって実行される一連の NCI 操作を示しています。
 ms.assetid: 392F8A06-262D-4CF9-B510-C3FE86291026
 keywords:
 - NFC
@@ -10,24 +10,24 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a312190e7d84499c2ecc1940fdbfd5dcf07599
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4fb19b87ab12200f532f816aaa7f838c062a1ddf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386510"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834017"
 ---
 # <a name="rf-discovery-sequence"></a>RF 検出シーケンス
 
 
-次の図は、探索を開始するために、NFC CX によって実行される NCI 操作のシーケンスを示しています。 StateRfIdle から入力 StateRfDiscovery RF 探索シーケンスを開始をトリガーします。 この状態で実行される操作の主なセットは、RF 検出のパラメーターの構成のオプションの構成は、ルーティング テーブル、モードをリッスン、NCI のコマンドを検出、RF での探索を有効にするとします。 NFC のクライアント ドライバーは、SequencePreRfDiscStart を使用して、検出プロセスを最適化するために非標準の NCI コマンドを追加できます。
+次の図は、検出を開始するために NFC CX によって実行される一連の NCI 操作を示しています。 StateRfIdle から入力された StateRfDiscovery は、開始 RF 検出シーケンスをトリガーします。 この状態で実行される主な操作のセットは、RF 検出パラメーターの構成、リッスンモードルーティングテーブルのオプションの構成、RF discover NCI コマンドを使用した探索の有効化です。 NFC クライアントドライバーでは、SequencePreRfDiscStart を使用して、非標準の NCI コマンドを追加して、検出プロセスを最適化できます。
 
-![探索を開始するために、NFC CX によって実行される、NCI の操作を表すシーケンス図](images/staterfdiscoverysequence.png)
+![検出を開始するために NFC CX によって実行される NCI 操作を示すシーケンス図](images/staterfdiscoverysequence.png)
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

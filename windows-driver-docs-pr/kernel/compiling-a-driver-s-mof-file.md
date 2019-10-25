@@ -3,19 +3,19 @@ title: ドライバーの MOF ファイルのコンパイル
 description: ドライバーの MOF ファイルのコンパイル
 ms.assetid: 0a4ab163-3e2c-48e9-9659-756d35ad445f
 keywords:
-- WMI の WDK カーネルでは、スキーマの公開
-- 発行の WMI スキーマ WDK
-- 発行 WDK WMI スキーマ
-- MOF ファイルの WDK WMI
+- WMI WDK カーネル、発行スキーマ
+- WMI スキーマの発行 WDK
+- スキーマ発行 WDK WMI
+- MOF ファイル WDK WMI
 - MOF ファイルのコンパイル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03d163be6616e0d03ab665dafce2faa3b5184f3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1692dcd7b8639161c03ecd02a2a88f8a4940fd0a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383331"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837073"
 ---
 # <a name="compiling-a-drivers-mof-file"></a>ドライバーの MOF ファイルのコンパイル
 
@@ -23,42 +23,42 @@ ms.locfileid: "67383331"
 
 
 
-WMI データとイベント ブロックを定義する MOF ファイルをコンパイル、Mofcomp であると呼ばれる MOF コンパイラを使用してオペレーティング システムを Microsoft Windows に付属します。 使用する構文は以下のとおりです。
+WMI データとイベントブロックを定義する MOF ファイルをコンパイルするには、Microsoft Windows オペレーティングシステムに含まれている、Mofcomp.exe という MOF コンパイラを使用します。 使用する構文は以下のとおりです。
 
 ```cpp
  mofcomp -WMI -B:filename.bmf filename.mof
 ```
 
-上記の構文で、次のものが表示されます。
+上記の構文では、次の項目が表示されます。
 
 <a href="" id="-wmi"></a> **-WMI**  
-すべてのクラスを検証します*filename.mof* WMI を使用します。 Mofcomp が出力ファイルを削除する任意のクラス定義が有効でない場合*filename.bmf*します。 場合 **- WMI**が実行を省略すると、 [Wmimofck](using-wmimofck-exe.md)で*filename.bmf*クラスを検証します。 ドライバーはする必要があります WMI スイッチを使用してか、MOF を検証する Wmimofck を実行します。 そのために発生する可能性が MOF ファイルが、WMI スキーマに正しく読み込まれていません。
+WMI で使用するために、*ファイル名 .mof*内のすべてのクラスを検証します。 クラス定義が無効な場合、Mofcomp.exe は出力ファイル*filename. bmf*を削除します。 **-WMI**が省略されている場合は、 [Wmimofck](using-wmimofck-exe.md)を実行してクラスを検証する必要があり*ます。* ドライバーは、WMI スイッチを使用するか、Wmimofck を実行して MOF を検証する必要があります。 そうしないと、MOF ファイルが WMI スキーマに正しく読み込まれないことがあります。
 
-<a href="" id="-b-filename-bmf"></a> **-B:** <em>filename.bmf</em>  
-コンパイラが MOF ファイルのプラットフォームに依存しないバイナリ バージョンを作成することを要求*filename.bmf* CIMOM オブジェクト リポジトリに変更を加えずにします。
+<a href="" id="-b-filename-bmf"></a> **-B:** <em>ファイル名。 bmf</em>  
+コンパイラが、CIMOM オブジェクトリポジトリを変更することなく、プラットフォームに依存しないバイナリバージョンの MOF ファイルを*ファイル名. bmf*に作成するように要求します。
 
-<a href="" id="filename-mof"></a>*filename.mof*  
-入力の MOF ファイルの名前を指定します。
+<a href="" id="filename-mof"></a>*ファイル名 .mof*  
+入力 MOF ファイルの名前を指定します。
 
-Mofcomp を使用する方法についての詳細についてに、コマンド プロンプト ウィンドウを開き**mofcomp/でしょうか。** します。
+Mofcomp.exe の使用方法の詳細については、コマンドプロンプトウィンドウを開き、「 **mofcomp.exe/?** 」と入力してください。
 
-Mofcomp の詳細については、次を参照してください。 [MofComp](https://go.microsoft.com/fwlink/p/?linkid=51316)と Windows SDK の他のトピックです。
+Mofcomp.exe の詳細については、「」の「 [mofcomp.exe](https://go.microsoft.com/fwlink/p/?linkid=51316) 」および「Windows SDK」を参照してください。
 
-ドライバーのバイナリ イメージのリソースとしてコンパイル済みの MOF ファイルを含めるドライバーのリソース スクリプト (RC) のファイルに次の行を追加します。
+コンパイルされた MOF ファイルをリソースとしてドライバーのバイナリイメージに含めるには、ドライバーのリソーススクリプト (RC) ファイルに次の行を追加します。
 
-**MofResource MOFDATA** *filename.bmf*
+**MOFRESOURCE MOFDATA** *. bmf*
 
-ドライバーは、登録要求に応答の MOF リソース名を指定します (、 [ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)要求**Parameters.WMI.DataPath** WMIREGISTER に設定)。
+ドライバーは、登録要求に応答してその MOF リソース名を指定します ( [**irp\_\_reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[**Irp\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)データパスに設定さ**れたパラメーター**を使用した要求\_EX 要求)。
 
--   ドライバーは Irp の WMI を処理するために WMI のライブラリ ルーチンを使用している場合、MOF リソースの名前を指定します。 その[ *DpWmiQueryReginfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)ルーチン。
+-   ドライバーが wmi の Irp を処理するために WMI ライブラリルーチンを使用している場合は[ *、そのドライバー*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)のリソース名を指定します。
 
--   場合は、ドライバーは Irp の WMI を直接処理は、MOF リソースの名前を指定します、 [ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)ドライバーが WMI に渡される構造体。
+-   ドライバーが WMI Irp を直接処理している場合は、ドライバーが WMI に渡す、 [**wmi のリソース**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)名を指定します。
 
-処理の詳細については**IRP\_MN\_REGINFO**と**IRP\_MN\_REGINFO\_EX**要求、確認[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
+REGINFO と**irp\_\_** \_reginfo\_EX の要求に対する**irp\_** 処理の詳細については、「 [WMI Data Provider としての登録](registering-as-a-wmi-data-provider.md)」を参照してください。
 
-WMI iibrary ルーチンを使用して WMI Irp の処理の詳細については、次を参照してください。 [WMI 要求の処理](handling-wmi-requests.md)します。
+Wmi iibrary ルーチンを使用して WMI Irp を処理する方法の詳細については、「 [Wmi 要求の処理](handling-wmi-requests.md)」を参照してください。
 
-定義して、実行可能ファイルにリソースを含める方法の詳細については、Microsoft Windows SDK を参照してください。
+実行可能ファイルにリソースを定義して含める方法の詳細については、「Microsoft Windows SDK」を参照してください。
 
  
 

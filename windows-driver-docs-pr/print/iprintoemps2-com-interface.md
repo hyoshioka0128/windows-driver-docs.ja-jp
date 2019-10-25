@@ -6,12 +6,12 @@ keywords:
 - IPrintOemPS2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64fe0c66d523ed99d412a64537aafb239e687eab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd2b08c5878ec785db631ab50860dee9bdd6e3f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386948"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837859"
 ---
 # <a name="iprintoemps2-com-interface"></a>IPrintOemPS2 COM インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "67386948"
 
 
 
-`IPrintOemPS2` COM インターフェイスのすべてのメソッドが含まれていますとの機能を拡張、 [IPrintOemPS COM インターフェイス](iprintoemps-com-interface.md)します。 このインターフェイスは、Windows XP およびそれ以降のバージョンの Windows オペレーティング システムで実行される Pscript5 レンダリング プラグインに制限されます。
+`IPrintOemPS2` COM インターフェイスには、のすべてのメソッドが含まれており、 [IPRINTOEMPS Com インターフェイス](iprintoemps-com-interface.md)の機能が拡張されています。 このインターフェイスは、Windows XP 以降のバージョンの Windows オペレーティングシステムで動作する Pscript5 レンダリングプラグインに限定されています。
 
-次の表とによって提供されるメソッドのすべてについて説明します、`IPrintOemPS2`インターフェイス。 プラグインを表示、表示されているすべてのメソッドを定義する必要があります。 かどうか、メソッドは必要ありません、単に返すことができます E\_NOTIMPL します。
+次の表に、`IPrintOemPS2` インターフェイスによって提供されるすべてのメソッドとその説明を示します。 レンダリングプラグインでは、表示されているすべてのメソッドを定義する必要があります。 メソッドが不要な場合は、単に E\_NOTIMPL を返すことができます。
 
 <table>
 <colgroup>
@@ -36,19 +36,19 @@ ms.locfileid: "67386948"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemPS2::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment)"><strong>IPrintOemPS2::GetPDEVAdjustment</strong></a></p></td>
-<td><p>特定の PDEV 設定を上書きするプラグインを使用できます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemPS2::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment)"><strong>IPrintOemPS2:: GetPDEVAdjustment</strong></a></p></td>
+<td><p>プラグインが特定の PDEV 設定をオーバーライドできるようにします。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemPS2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-writeprinter)"><strong>IPrintOemPS2::WritePrinter</strong></a></p></td>
-<td><p>Postscript ドライバーによって生成されたすべての出力データをキャプチャするプラグインを使用できます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemPS2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps2-writeprinter)"><strong>IPrintOemPS2:: WritePrinter</strong></a></p></td>
+<td><p>プラグインが Postscript ドライバーによって生成されたすべての出力データをキャプチャできるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

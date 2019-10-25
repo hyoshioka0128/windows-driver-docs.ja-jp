@@ -1,32 +1,32 @@
 ---
 title: OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
-description: 上にあるドライバーはクエリとして OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES OID を使用して、デバイスの PCI のカスタム プロパティを取得します。
+description: クエリとして、後続のドライバーは OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES OID を使用してデバイスの PCI カスタムプロパティを取得します。
 ms.assetid: fe94884b-f5e3-4c60-8f52-e61d0df81a2a
 ms.date: 08/08/2017
-keywords: -OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: b4682a1d13192db3a0cfe06dce88da1446a1dbda
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ded468b6321b33200058aa9cdb06575cb0760bbb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386219"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824388"
 ---
-# <a name="oidgenpcidevicecustomproperties"></a>OID\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
+# <a name="oid_gen_pci_device_custom_properties"></a>OID\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
 
 
-上にあるドライバーが、OID を使用するクエリとして\_GEN\_PCI\_デバイス\_カスタム\_デバイスの PCI のカスタム プロパティを取得するプロパティの OID。
+クエリとして、これまでのドライバーでは、デバイスの PCI カスタムプロパティを取得するために、カスタム\_プロパティ OID\_、OID\_GEN\_PCI\_デバイスを使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS 処理 OID\_GEN\_PCI\_デバイス\_カスタム\_プロパティおよびミニポート ドライバーが、OID クエリを受信しません。
+NDIS は、\_PCI\_デバイスの OID\_GEN を処理\_カスタム\_プロパティとミニポートドライバーは OID クエリを受け取りません。
 
-このクエリでは、その他の NDIS ドライバーのオプションです。
+このクエリは、他の NDIS ドライバーでは省略可能です。
 
-NDIS を返します、 [ **NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties) PCI のカスタム プロパティを含む構造体。
+NDIS は、PCI カスタムプロパティを含む[**カスタム\_プロパティの構造\_、ndis\_pci\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)を返します。
 
-NDIS ミニポート アダプターが非 PCI、OID は失敗\_GEN\_PCI\_デバイス\_カスタム\_NDIS プロパティ\_状態\_無効な\_デバイス\_状態コードを要求します。
+PCI 以外のミニポートアダプターの場合、NDIS は、\_PCI\_デバイスの\_GEN に失敗します。これは、NDIS\_ステータスを持つカスタム\_プロパティ\_無効\_デバイス\_要求状態コードです。
 
 <a name="requirements"></a>要件
 ------------
@@ -39,11 +39,11 @@ NDIS ミニポート アダプターが非 PCI、OID は失敗\_GEN\_PCI\_デバ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 以降をサポートします。</p></td>
+<td><p>NDIS 6.0 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -51,7 +51,7 @@ NDIS ミニポート アダプターが非 PCI、OID は失敗\_GEN\_PCI\_デバ
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
+[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
 
  
 

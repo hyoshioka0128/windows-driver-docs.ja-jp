@@ -1,24 +1,24 @@
 ---
-title: WdfObjectDereference マクロ
-description: 指定のフレームワーク オブジェクトの参照カウントを WdfObjectDereference マクロをデクリメントします。
+title: WdfObjectDereference 参照マクロ
+description: WdfObjectDereference 参照マクロは、指定されたフレームワークオブジェクトの参照カウントをデクリメントします。
 ms.assetid: e945202c-7e6b-47b7-9216-d7a3a694489e
 keywords:
-- WdfObjectDereference マクロ
+- WdfObjectDereference 参照マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a709b437c9e3606a76a9c789dac74881cce3e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c0766856892b80bd9e870138792ed9f1f5d8414
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823926"
 ---
-# <a name="wdfobjectdereference-macro"></a>WdfObjectDereference マクロ
+# <a name="wdfobjectdereference-macro"></a>WdfObjectDereference 参照マクロ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-**WdfObjectDereference**マクロ フレームワークの指定したオブジェクトの参照カウントをデクリメントします。
+**Wdfobjectdereference 参照**マクロは、指定されたフレームワークオブジェクトの参照カウントをデクリメントします。
 
 <a name="syntax"></a>構文
 ------
@@ -32,37 +32,37 @@ VOID WdfObjectDereference(
 <a name="parameters"></a>パラメーター
 ----------
 
-*処理*\[で\]  
-Framework のオブジェクトへのハンドル。
+\] での \[の*処理*  
+フレームワークオブジェクトへのハンドル。
 
 <a name="return-value"></a>戻り値
 ------------
 
 なし。
 
-バグ チェックでは、ドライバー、無効なオブジェクトのハンドルを提供する場合に発生します。
+バグチェックは、ドライバーが無効なオブジェクトハンドルを提供した場合に発生します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-前に、オブジェクトが削除されるオブジェクトの参照カウントには、0 になると、 **WdfObjectDereference**を返します。
+オブジェクトの参照カウントが0になると、 **Wdfobjectdereference 参照**が返される前にオブジェクトが削除される可能性があります。
 
-ドライバーが呼び出せる**WdfObjectDereference**が以前に呼び出された場合にのみ[ **WdfObjectReference**](wdfobjectreference.md)します。
+以前に[**Wdfobjectdereference**](wdfobjectreference.md)が呼び出されている場合にのみ、ドライバーは**Wdfobjectdereference**参照を呼び出すことができます。
 
-呼び出す代わりに**WdfObjectDereference**、ドライバーが呼び出せる[ **WdfObjectDereferenceWithTag** ](wdfobjectdereferencewithtag.md)または[ **WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)します。
+[**WdfObjectDereferenceWithTag**](wdfobjectdereferencewithtag.md)または[**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)を呼び出す代わりに、 **wdfobjectdereference 参照**を呼び出すことはできません。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)します。
+オブジェクト参照カウントの詳細については、「[フレームワークオブジェクトのライフサイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)」を参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-オブジェクトの参照カウントを次のコード例をデクリメントします。
+次のコード例では、オブジェクトの参照カウントをデクリメントします。
 
 ```cpp
 WdfObjectDereference(Object); 
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,19 +85,19 @@ WdfObjectDereference(Object);
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfobject.h (Wdf.h を含む)</td>
+<td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 <tr class="odd">
 <td><p>Library</p></td>
-<td>Wdf01000.sys (KMDF)。WUDFx02000.dll (UMDF)</td>
+<td>Wdf01000 (KMDF);WUDFx02000 (UMDF)</td>
 </tr>
 <tr class="even">
 <td><p>IRQL</p></td>
 <td><p>&lt;= DISPATCH_LEVEL</p></td>
 </tr>
 <tr class="odd">
-<td><p>DDI 準拠の規則</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate" data-raw-source="[&lt;strong&gt;DriverCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate)"><strong>DriverCreate</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIntIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla)"> <strong>MemAfterReqCompletedIntIoctlA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla)"> <strong>MemAfterReqCompletedIoctlA</strong></a>、<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedReadA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada)"> <strong>MemAfterReqCompletedReadA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedWriteA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea)"> <strong>MemAfterReqCompletedWriteA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueuefindrequestfailed" data-raw-source="[&lt;strong&gt;wdfioqueuefindrequestfailed&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueuefindrequestfailed)"> <strong>wdfioqueuefindrequestfailed</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueueretrievefoundrequest" data-raw-source="[&lt;strong&gt;wdfioqueueretrievefoundrequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueueretrievefoundrequest)"> <strong>wdfioqueueretrievefoundrequest</strong></a></td>
+<td><p>DDI コンプライアンス規則</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate" data-raw-source="[&lt;strong&gt;DriverCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate)"><strong>Drivercreate</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIntIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla)"><strong>MemAfterReqCompletedIntIoctlA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla)"><strong>MemAfterReqCompletedIoctlA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedReadA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada)"><strong>MemAfterReqCompletedReadA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedWriteA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea)"><strong>MemAfterReqCompletedWriteA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueuefindrequestfailed" data-raw-source="[&lt;strong&gt;wdfioqueuefindrequestfailed&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueuefindrequestfailed)"><strong>wdfioqueuefindrequestfailed</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueueretrievefoundrequest" data-raw-source="[&lt;strong&gt;wdfioqueueretrievefoundrequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-wdfioqueueretrievefoundrequest)"><strong>wdfioqueueretrievefoundrequest</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -105,7 +105,7 @@ WdfObjectDereference(Object);
 ## <a name="see-also"></a>関連項目
 
 
-[**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)
+[**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)
 
 [**WdfObjectDereferenceWithTag**](wdfobjectdereferencewithtag.md)
 

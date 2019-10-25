@@ -4,29 +4,29 @@ description: デバイスの電源切断
 ms.assetid: d2525e15-9590-4fc0-955c-ca3540c13375
 keywords:
 - デバイスの電源ダウン WDK カーネル
-- WDK カーネルのデバイスの電源
+- デバイスの電源切断 (WDK カーネル)
 - IRP_MN_REMOVE_DEVICE
-- WDK 電源管理のデバイスをオフにします。
-- 自動電源ダウン WDK カーネル
-- シャット ダウンの電源管理の WDK カーネル
-- WDK のカーネルを電源オフ
-- Irp WDK の電源管理
-- 突然削除 WDK の電源管理
-- デバイス削除 WDK の電源管理
+- デバイスをオフにする WDK 電源管理
+- 自動パワーダウン WDK カーネル
+- 電源管理のシャットダウン WDK カーネル
+- オフパワー WDK カーネル
+- Irp WDK 電源管理
+- 予期しない削除 WDK の電源管理
+- デバイス削除の WDK 電源管理
 - デバイスの削除
-- I/O WDK 電源管理
-- 予期しないデバイスの削除の WDK 電源管理
-- アイドル状態検出 WDK 電源管理
-- WDK カーネルの電源を節約します。
-- I/O 要求パケット WDK 電源管理
+- I/o WDK 電源管理
+- 予期しないデバイス削除の WDK 電源管理
+- アイドル検出 WDK 電源管理
+- power WDK カーネルを節約する
+- I/o 要求パケットの WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d45f2103467af7e2b0aa543b78b5f4873787e45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b8fb0eb5ec4ce7e4db0c2e8d619e0fdea022077
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374186"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838500"
 ---
 # <a name="powering-down-a-device"></a>デバイスの電源切断
 
@@ -34,17 +34,17 @@ ms.locfileid: "67374186"
 
 
 
-ウェイク アップでデバイスを有効にしない限り、そのドライバー電源をオフ、システムのシャット ダウン時。 デバイスの削除または突然の削除時にオフ電源常にする必要があります。
+デバイスでウェイクアップが有効になっていない限り、システムのシャットダウン時にドライバーの電源がオフになります。 デバイスは、削除または突然削除したときに常に電源をオフにする必要があります。
 
-デバイスが削除されるときに、プラグ アンド プレイ マネージャに送信、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)デバイス スタックを要求します。 この IRP への応答、デバイスのドライバーがいることを確認デバイスの電源ダウン。 削除処理の暗黙の部分には、デバイスの電源デバイスの電源ポリシー所有者は、送信する必要はありません、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)の**PowerDeviceD3**します。
+デバイスが削除されると、プラグアンドプレイ manager は、デバイススタックに\_デバイスの要求を[**削除\_、IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)送信します。 この IRP に応答して、デバイスのドライバーによってデバイスの電源が切れていることを確認する必要があります。 デバイスの電源を切ることは、削除処理の暗黙的な部分です。デバイスの電源ポリシーの所有者は、 **PowerDeviceD3**の[ **\_電力\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された IRP\_送信する必要はありません。
 
-ドライバーの処理、 **IRP\_MN\_削除\_デバイス**要求、保留中の呼び出しを完了して、処理、任意の必要な削除を実行する I/O の待機[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate) D3、状態、デバイスが電源マネージャーに通知し、このデバイスの作成、デバイス オブジェクトを削除します。 通常、バス ドライバーは、デバイスの電源をオフにします。
+ドライバーが IRP\_処理し、 **\_デバイスの要求\_削除**すると、保留中の i/o が完了するまで待機し、必要な削除処理を実行し、 [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を呼び出して、デバイスが状態 D3 であることを電源マネージャーに通知します。このデバイス用に作成したデバイスオブジェクトを削除します。 通常、バスドライバーはデバイスの電源をオフにします。
 
-デバイスは、Windows 2000 以降のオペレーティング システムから削除されるが予期せず、プラグ アンド プレイ manager 送信、 [ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)対応するデバイス スタックの一番上に要求します。 この IRP への応答、デバイスのドライバーする必要があります突然の削除、処理を実行」の説明に従って[IRP の処理\_MN\_突然\_削除要求](handling-an-irp-mn-surprise-removal-request.md)します。
+デバイスが Windows 2000 以降のオペレーティングシステムから予期せずに削除された場合、プラグアンドプレイマネージャーは、\_削除要求を、対応するデバイススタックの一番上にある[ **\_\_IRP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)を送信します。 この IRP への応答として、デバイスのドライバーは、「 [IRP\_\_\_の処理](handling-an-irp-mn-surprise-removal-request.md)」で説明されているように、予期しない削除処理を実行する必要があります。
 
-システムのシャット ダウン、電源マネージャー送信、 **IRP\_MN\_設定\_POWER**システム電源の状態 (S4 または S5)。 デバイスの電源ポリシー所有者は、この IRP を受信するときに送信する必要があります、 **IRP\_MN\_設定\_POWER**の**PowerDeviceD3**下位のドライバーを終了できるように、職場と電力は、デバイスをダウンします。
+システムのシャットダウン時に、電源管理者は、システムの電源状態 (S4 または S5) の **\_電源\_設定**された IRP\_を送信します。 デバイスの電源ポリシー所有者は、この IRP を受信したときに、 **PowerDeviceD3**に対して **\_\_設定**された irp\_を送信する必要があります。これにより、低いドライバーが作業を完了し、デバイスの電源を切ることができるようになります。
 
-ドライバーは、そのデバイスのアイドル状態の検出を実行できます必要に応じてまたはデバイス電源を切断できる場合に使用中でないように電源マネージャーがアイドル状態の検出を実行することを要求できます。 詳細については、次を参照してください。 [、アイドル状態のデバイスを検出する](detecting-an-idle-device.md)します。
+ドライバーは必要に応じて、デバイスのアイドル状態の検出を実行できます。また、電源マネージャーがアイドル状態の検出を実行するように要求することもできます。これにより、使用されていないときにデバイスの電源を切ることができます。 詳細については、「[アイドル状態のデバイスの検出](detecting-an-idle-device.md)」を参照してください。
 
  
 

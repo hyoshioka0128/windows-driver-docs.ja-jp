@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_クロック\_FUNCTIONTABLE
-description: クライアントの使用、KSPROPERTY\_クロック\_FUNCTIONTABLE プロパティ ディスパッチ時刻を照会するためのエントリ ポイントを取得する\_により、正確な速度の一致を実行するためのフィルターのレベル。
+title: KSK プロパティ\_CLOCK\_FUNCTIONTABLE
+description: クライアントは、KSK プロパティ\_CLOCK\_FUNCTIONTABLE プロパティを使用して、ディスパッチ\_レベルで時間をクエリするためのエントリポイントを取得します。これにより、フィルターは正確なレート一致を実行できます。
 ms.assetid: 6dac5688-fd69-416c-a4e4-da9ccc45c32a
 keywords:
-- KSPROPERTY_CLOCK_FUNCTIONTABLE ストリーミング メディア デバイス
+- KSPROPERTY_CLOCK_FUNCTIONTABLE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b71dc49caeb92730c33e6265d71288e0ce475c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b15fe10a798fb8b19e56f4c83036238d353c2506
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373145"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826899"
 ---
-# <a name="kspropertyclockfunctiontable"></a>KSPROPERTY\_クロック\_FUNCTIONTABLE
+# <a name="ksproperty_clock_functiontable"></a>KSK プロパティ\_CLOCK\_FUNCTIONTABLE
 
 
-クライアントの使用、KSPROPERTY\_クロック\_FUNCTIONTABLE プロパティ ディスパッチ時刻を照会するためのエントリ ポイントを取得する\_により、正確な速度の一致を実行するためのフィルターのレベル。 このプロパティを設定、 [ **KSCLOCK\_FUNCTIONTABLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksclock_functiontable)時計が解放されるに、ファイル オブジェクトまで有効な関数ポインターを含む構造体。
+クライアントは、KSK プロパティ\_CLOCK\_FUNCTIONTABLE プロパティを使用して、ディスパッチ\_レベルで時間をクエリするためのエントリポイントを取得します。これにより、フィルターは正確なレート一致を実行できます。 このプロパティは、クロックのファイルオブジェクトが解放されるまで有効な関数ポインターを使用して、 [**Ksclock\_FUNCTIONTABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksclock_functiontable)構造体に格納します。
 
 ## <span id="ddk_ksproperty_clock_functiontable_ks"></span><span id="DDK_KSPROPERTY_CLOCK_FUNCTIONTABLE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373145"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373145"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksclock_functiontable" data-raw-source="[&lt;strong&gt;KSCLOCK_FUNCTIONTABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksclock_functiontable)"><strong>KSCLOCK_FUNCTIONTABLE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksclock_functiontable" data-raw-source="[&lt;strong&gt;KSCLOCK_FUNCTIONTABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksclock_functiontable)"><strong>KSCLOCK_FUNCTIONTABLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ ms.locfileid: "67373145"
 <a name="remarks"></a>注釈
 -------
 
-*FileObject*これらのエントリ ポイントへの呼び出しを行うときに、クライアントが提供するパラメーターは、クロックのインスタンスが作成されたときに返されたファイル ハンドルを基になるファイル オブジェクトを指定します。
+これらのエントリポイントを呼び出すときにクライアントが提供する*FileObject*パラメーターは、クロックインスタンスの作成時に返されたファイルハンドルの基になるファイルオブジェクトを指定します。
 
-*SystemTime*パラメーター相関のシステム時刻を格納する場所を指します。 システム時刻は、関数を使用して取得した**KeQueryInterruptTime**します。
+*SystemTime*パラメーターは、相関システム時刻を格納する場所を指します。 システム時刻は、関数**KeQueryInterruptTime**を使用して取得されます。
 
-参照してください[KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)します。
+「 [KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)」も参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ ms.locfileid: "67373145"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ ms.locfileid: "67373145"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSCLOCK\_FUNCTIONTABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksclock_functiontable)
+[**関数テーブル\_KSCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksclock_functiontable)
 
-[**KeQueryInterruptTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryinterrupttime)
+[**KeQueryInterruptTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryinterrupttime)
 
  
 

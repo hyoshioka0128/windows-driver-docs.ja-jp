@@ -1,23 +1,23 @@
 ---
 title: WDM ドライバーでの浮動小数点の使用
-description: 浮動小数点演算を使用する場合、Windows のカーネル モード WDM ドライバーは特定のガイドラインに従う必要があります。 これらは、x86 および x64 システムによって異なります。 既定では、Windows は、両方のシステムの算術例外をオフにします。
+description: Windows 用のカーネルモード WDM ドライバーは、浮動小数点演算を使用するときに特定のガイドラインに従う必要があります。 これらは、x86 システムと x64 システムで異なります。 既定では、Windows は両方のシステムの算術例外をオフにします。
 ms.assetid: 73414084-4054-466a-b64c-5c81b224be92
 keywords:
-- 浮動小数点のポイントの WDK カーネル
-- 浮動小数点ユニットの WDK カーネル
+- 浮動小数点 WDK カーネル
+- 浮動小数点単位の WDK カーネル
 - FPU WDK カーネル
-- KeSaveFloatingPointState
-- KeRestoreFloatingPointState
+- Kesaveflo/Pointstate
+- Kerestoreflo/Pointstate
 - WDM ドライバー WDK カーネル、浮動小数点演算
 - MMX WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5acd8de89dbf9386de1466bc0bcc1ed9c1368347
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4177a3d8552e84f228e48119fe29405b8d98032f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381644"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835993"
 ---
 # <a name="using-floating-point-in-a-wdm-driver"></a>WDM ドライバーでの浮動小数点の使用
 
@@ -26,26 +26,26 @@ ms.locfileid: "67381644"
 
 -   2016 年 7 月
 
-浮動小数点演算を使用する場合、Windows のカーネル モード WDM ドライバーは特定のガイドラインに従う必要があります。 これらは、x86 および x64 システムによって異なります。 既定では、Windows は、両方のシステムの算術例外をオフにします。
+Windows 用のカーネルモード WDM ドライバーは、浮動小数点演算を使用するときに特定のガイドラインに従う必要があります。 これらは、x86 システムと x64 システムで異なります。 既定では、Windows は両方のシステムの算術例外をオフにします。
 
 ## <a name="x86-systems"></a>x86 システム
 
 
-X86 システムは、浮動小数点計算への呼び出しの間での使用をラップする必要がありますのカーネル モード WDM ドライバー [ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)と[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)します。 浮動小数点演算は、浮動小数点演算がの戻り値をチェックする前に実行しないことを確認する非インライン サブルーチンに配置する必要があります**KeSaveExtendedProcessorState**コンパイラによる並べ替えのためです。
+X86 システム用のカーネルモード WDM ドライバーでは、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)と[**Kerestoreextendedprocessorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)の呼び出しの間で、浮動小数点の計算の使用をラップする必要があります。 浮動小数点演算は、コンパイラの並べ替えによって**KeSaveExtendedProcessorState**の戻り値をチェックする前に、浮動小数点の計算が実行されないようにするために、非インラインのサブルーチンに配置する必要があります。
 
-コンパイラは、MMX/x87 浮動小数点ユニット (FPU) の登録とも呼ばれるこのような計算では、ユーザー モード アプリケーションで同時に使用できるを使用します。 完了したら、それらを復元する、または失敗を使用する前にこれらのレジスタの保存に失敗したアプリケーションで計算エラーがあります。
+コンパイラは、このような計算に対して、浮動小数点ユニット (FPU) レジスタとも呼ばれる MMX/x87 を使用します。このような計算は、ユーザーモードアプリケーションで同時に使用することができます。 これらのレジスタを使用する前に保存しなかった場合、または完了時に復元できなかった場合は、アプリケーションで計算エラーが発生する可能性があります。
 
-システムを呼び出すことができます x86 用のドライバー [ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate) IRQL で浮動小数点演算の実行と&lt;= ディスパッチ\_レベル。 浮動小数点演算が x86 では、割り込みサービス ルーチン (Isr) でサポートされていないシステム。
+X86 システムのドライバーは、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)を呼び出し、IRQL &lt;= ディスパッチ\_レベルで浮動小数点演算を実行できます。 浮動小数点演算は、x86 システム上の割り込みサービスルーチン (Isr) ではサポートされていません。
 
 ## <a name="x64-systems"></a>x64 システム
 
 
-64 ビット コンパイラでは、浮動小数点演算の/x87 MMX レジスタを使用しません。 代わりに、SSE レジスタを使用します。 x64/x87 MMX レジスタにアクセスするカーネル モード コードが許可されていません。 コンパイラも正しく保存の処理し、そのため、呼び出し、SSE 状態の復元[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)と[ **KeRestoreExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate) isr を特定の操作を使用できる、不要なおよび浮動小数点のポイントします。 AVX などその他のプロセッサの拡張機能の使用、拡張状態の保存と復元が必要です。 詳細については、次を参照してください。 [Windows ドライバーでプロセッサ機能を拡張を使用して](floating-point-support-for-64-bit-drivers.md)します。
+64ビットコンパイラでは、浮動小数点演算に MMX/x87 レジスタは使用されません。 代わりに、SSE レジスタを使用します。 x64 カーネルモードコードは MMX/x87 レジスタへのアクセスが許可されていません。 また、コンパイラは SSE 状態を適切に保存して復元します。したがって、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)と[**Kerestoreextendedprocessorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)の呼び出しは不要で、浮動小数点演算を isr で使用できます。 AVX などの他の拡張プロセッサ機能を使用するには、拡張された状態を保存および復元する必要があります。 詳細については、「 [Windows ドライバーでの拡張プロセッサ機能の使用](floating-point-support-for-64-bit-drivers.md)」を参照してください。
 
 ## <a name="example"></a>例
 
 
-次の例では、WDM ドライバーが、FPU のアクセスをラップする方法を示しています。
+次の例は、WDM ドライバーが FPU アクセスをラップする方法を示しています。
 
 ```cpp
 __declspec(noinline)
@@ -91,11 +91,11 @@ exit:
 }
 ```
 
-例では、浮動小数点変数への代入はへの呼び出し間で行われます[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)と[ **KeRestoreExtendedProcessorState。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate). ドライバーを確認する必要があります浮動小数点変数に割り当てを使用して、FPU、ため**KeSaveExtendedProcessorState**がこのような変数を初期化する前にエラーが発生せず返されます。
+この例では、浮動小数点変数への代入は、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)と[**Kerestoreextendedprocessorstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)の呼び出しの間で行われます。 浮動小数点変数への代入では FPU が使用されるため、ドライバーは、このような変数を初期化する前に、 **KeSaveExtendedProcessorState**がエラーなしで返されたことを確認する必要があります。
 
-前の呼び出しは、x64 不要システムと無害な場合に、XSTATE\_マスク\_レガシ フラグが指定されています。 そのため、x64 用のドライバーをコンパイルするときに、コードを変更する必要はありませんシステム。
+前の呼び出しは x64 システムでは不要であり、XSTATE\_MASK\_レガシフラグが指定されている場合は無害です。 そのため、x64 システムのドライバーをコンパイルするときに、コードを変更する必要はありません。
 
-X86 ベースのシステムでは、既定の状態に、FPU をリセット FNINIT への呼び出しから戻ったときで[ **KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)します。
+X86 ベースのシステムでは、 [**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)から戻ったときに、FNINIT の呼び出しによって FPU が既定の状態にリセットされます。
 
  
 

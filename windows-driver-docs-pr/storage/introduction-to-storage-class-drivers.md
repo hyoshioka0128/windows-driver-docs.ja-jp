@@ -3,44 +3,32 @@ title: 記憶域クラス ドライバーの概要
 description: 記憶域クラス ドライバーの概要
 ms.assetid: 0ea462a9-5e6f-419f-af36-50f50901143d
 keywords:
-- 記憶域クラス ドライバーに関する記憶域クラス ドライバー WDK、
-- 記憶域クラス ドライバーについてのクラス ドライバー WDK ストレージ
-- HBA の WDK ストレージ
-ms.date: 04/20/2017
+- ストレージクラスドライバー WDK, ストレージクラスドライバーについて
+- クラスドライバー WDK ストレージ、ストレージクラスドライバーについて
+- HBA WDK ストレージ
+ms.date: 10/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 67fae9653f9ef8842ff00aff6a2691d9b339c79c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 94049848af080157b95f778f6eb7190f7a56cca2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360201"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838091"
 ---
 # <a name="introduction-to-storage-class-drivers"></a>記憶域クラス ドライバーの概要
 
-
 ## <span id="ddk_introduction_to_storage_class_drivers_kg"></span><span id="DDK_INTRODUCTION_TO_STORAGE_CLASS_DRIVERS_KG"></span>
 
+*ストレージクラスドライバー*は、適切に確立された scsi クラス/ポートインターフェイスを使用して、システムが記憶ポートドライバー (現在は SCSI、IDE、USB、および IEEE 1394) を供給する任意のバス上のその種類の大容量記憶装置デバイスを制御します。 ストレージデバイスが接続されている特定のバスは、ストレージクラスドライバーに対して透過的です。
 
-A*記憶域クラス ドライバー*システムがストレージ ポート ドライバー (現在 SCSI、IDE、USB および IEEE 1394) を提供する任意のバスにその型のマス ストレージ デバイスを制御するために確立された SCSI クラス/ポート インターフェイスを使用します。 ストレージ デバイスが接続されている特定のバスは、記憶域クラス ドライバーに対して透過的です。
+すべてのストレージクラスドライバーでは、*コマンド記述子ブロック*(cdbs) を含む*SCSI 要求ブロック*(SRBs) を作成し、介在するフィルタードライバーを介して、それらを送信することによって、ユーザーアプリケーションまたは上位レベルのドライバーからの i/o 要求を処理します。基になるストレージポートドライバー。
 
-任意のストレージ クラス ドライバーでは、ユーザーのアプリケーションまたはより高度なドライバーからの I/O 要求を処理を構築して*SCSI 要求のブロック*(される Srb) を含む*記述子のブロックをコマンド*(Cdb) して、送信します。使用する基になる記憶域ポート ドライバー、介在するフィルター ドライバー。
+ストレージクラスドライバーは、SRB 内のアドレス指定情報を提供しません。 代わりに、ポートドライバー (またはそれよりも下位のドライバー) は、必要なアドレス指定を行います。 ストレージポートドライバーは、SRBs を、基になるホストバスアダプター (HBA) が必要とする形式に変換します。これは、SCSI または1394ホストバスアダプター、IDE コントローラー、その他のハードウェアである可能性があり、コマンドをデバイスに発行します。 Windows Driver Kit (WDK) では、"HBA" という用語は、そのような基になるアダプターまたはコントローラーを意味します。
 
-ストレージ クラス ドライバーは、SRB のアドレス指定情報を提供しません。 代わりに、ポート ドライバー (またはまだ下ドライバー) は、対処の必要な責任を負います。 記憶域ポート ドライバーは、される Srb を基になるホスト バス アダプター (HBA)、SCSI 可能性のあるまたは 1394 ホスト バス アダプター、IDE コント ローラー、またはこのようなその他のハードウェアで必要な形式に変換し、デバイスにコマンドを発行します。 Windows Driver Kit (WDK) で"HBA"という用語は、このような基になるアダプターまたはコント ローラーを表します。
+I/o マネージャーと、ストレージクラスドライバーの上に階層化された上位レベルのドライバーには、ほとんどのストレージクラスドライバーは標準のカーネルモード中間ドライバーです。 したがって、すべてのクラスドライバーには[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチン、 [**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチン、 [**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチン、1つ以上の[**Iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチン、および[**DispatchPnP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)と[**DispatchPower**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが必要です。再生と電源 Irp。
 
-I/O マネージャーとストレージ クラス ドライバーの上に配置より高度なドライバーの場合には、ほとんどのストレージ クラス ドライバーは、標準のカーネル モード中間ドライバーです。 したがってすべてのクラス ドライバーが必要、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、 [ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device) 、ルーチン、 [ **アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンを 1 つまたは複数[ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン、plus [ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)と[ **DispatchPower** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)プラグ アンド プレイと電源 Irp を処理するルーチン。
+また、ストレージクラスドライバーは、システム制御の Irp を処理する[**DispatchSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンも必要とします。また、ドライバーデザイナーによって決定された[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンなど、他の標準の上位レベルのドライバールーチンを持つことができます。 システム制御と標準カーネルモードドライバールーチンの詳細については、「[標準ドライバールーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)」を参照してください。
 
-ストレージ クラス ドライバーが必要、 [ **DispatchSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)システム コントロールの Irp を処理するルーチンとその他標準より高度なドライバーのルーチンなどがあることができます、 [ **StartIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン、ドライバー デザイナーによって決定されます。 システム コントロールと標準のカーネル モード ドライバーのルーチンの詳細については、次を参照してください。[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)します。
+PnP マネージャーには、ストレージクラスドライバーは、個々のデバイスを駆動する[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)です。 ストレージクラスドライバーは、[バスドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)として機能し、デバイスの子デバイスを列挙することもできます。 たとえば、ディスクなどのパーティション分割されたメディアデバイスのクラスドライバーは、パーティションを表す PDOs の一覧を返します。 このような PDO はそれぞれ、ターゲットデバイスとしてアドレス指定でき、独自のクラスドライバーによって処理されます。
 
-PnP マネージャーでは、ストレージ クラス ドライバーは、[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)、ドライブの個々 のデバイスは、いずれのか。 ストレージ クラス ドライバーとしても機能、[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)、そのデバイスのデバイスを子を列挙します。 たとえば、ディスクなどのパーティション分割されたメディア デバイスのクラス ドライバーの一覧を返します Pdo のパーティションを表します。 このような各 PDO は、ターゲット デバイスとしてアドレス指定することができ、独自のクラス ドライバーによりサービスを提供します。
-
-**注**  このセクションで説明した、プリンターやスキャナーなどの SCSI デバイスのドライバーを実装する必要があります。 このような SCSI デバイスのドライバーでは、そのデバイスを制御するのと同じ SCSI クラス/ポート インターフェイスを利用し、同様の役割を Irp の処理、作成される Srb、およびストレージ デバイスのドライバーとは、基になるポート ドライバーに送信するが。
-
- 
-
- 
-
- 
-
-
-
-
+**注:** このセクションで説明するように、プリンターやスキャナーなどの SCSI デバイス用のドライバーを実装する必要があり  。 このような SCSI デバイスのドライバーは、同じ SCSI クラス/ポートインターフェイスを利用してデバイスを制御し、Irp の処理、SRBs の構築、および記憶装置のドライバーと同様に基になるポートドライバーへの送信を行います。

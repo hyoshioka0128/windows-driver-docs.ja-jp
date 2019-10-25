@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_SURFACEPARAMS
-description: KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビデオ ポート設定を指定します.
+title: KSK プロパティ\_VPCONFIG\_SURFACEPARAMS
+description: KSK プロパティ\_VPCONFIG\_SURFACEPARAMS プロパティは、ビデオポート画面の設定を指定します。
 ms.assetid: cb8ebaea-4667-43c6-964f-89d55d4ff9be
 keywords:
-- KSPROPERTY_VPCONFIG_SURFACEPARAMS ストリーミング メディア デバイス
+- KSPROPERTY_VPCONFIG_SURFACEPARAMS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 407d073947ae2221e05d4036611da645674c3cf2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23a520dc526973f891b8a3d9c2649346c4fcc16f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380590"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823615"
 ---
-# <a name="kspropertyvpconfigsurfaceparams"></a>KSPROPERTY\_VPCONFIG\_SURFACEPARAMS
+# <a name="ksproperty_vpconfig_surfaceparams"></a>KSK プロパティ\_VPCONFIG\_SURFACEPARAMS
 
 
-KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビデオ ポート設定を指定します.
+KSK プロパティ\_VPCONFIG\_SURFACEPARAMS プロパティは、ビデオポート画面の設定を指定します。
 
 ## <span id="ddk_ksproperty_vpconfig_surfaceparams_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_SURFACEPARAMS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams" data-raw-source="[&lt;strong&gt;KSVPSURFACEPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams)"><strong>KSVPSURFACEPARAMS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpsurfaceparams" data-raw-source="[&lt;strong&gt;KSVPSURFACEPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpsurfaceparams)"><strong>KSVPSURFACEPARAMS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、サーフェス声の高さを記述する KSVPSURFACEPARAMS 構造体と*x*と*y*原点。
+プロパティ値 (操作データ) は、表面のピッチと*x*と*y*の原点を記述する KSVPSURFACEPARAMS 構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS プロパティがサーフェイスのビ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSVPSURFACEPARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams)
+[**KSVPSURFACEPARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksvpsurfaceparams)
 
  
 

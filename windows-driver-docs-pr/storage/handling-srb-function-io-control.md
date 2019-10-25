@@ -3,33 +3,33 @@ title: SRB_FUNCTION_IO_CONTROL の処理
 description: SRB_FUNCTION_IO_CONTROL の処理
 ms.assetid: 92d09a49-d8e8-4d97-b334-c42d5b04ee8d
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiStartIo
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_IO_CONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a1eaf4fbc5bdc9013cc6b0fdc739e01d009976d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcf4211764199d6671ce27fa8f385c7210e74025
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325973"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837844"
 ---
-# <a name="handling-srbfunctioniocontrol"></a>処理 SRB\_関数\_IO\_コントロール
+# <a name="handling-srb_function_io_control"></a>IO\_制御\_の SRB\_関数の処理
 
 
 ## <span id="ddk_handling_srb_function_io_control_kg"></span><span id="DDK_HANDLING_SRB_FUNCTION_IO_CONTROL_KG"></span>
 
 
-ミニポート ドライバーが SRB を処理するかどうか\_関数\_IO\_コントロール要求、HBA がユーザー モード アプリケーションの専用サポートを提供するかどうかに依存します。 この要求をサポートするいると、一連のミニポート ドライバーに直接送信する ("private") I/O 制御の要求をドライバー定義できます。 使用される Srb の**関数**メンバー SRB に設定\_関数\_IO\_コントロール、 **DataBuffer**メンバーには、システム定義の SRBへのポインターが含まれています\_。IO\_ドライバー定義されており、アプリケーションで指定されたを含む制御構造**ControlCode**します。
+ミニポートドライバーが SRB\_機能を処理するかどうか\_IO\_制御要求は、HBA がユーザーモードアプリケーションの専用サポートを提供するかどうかによって異なります。 この要求をサポートすることで、ドライバーによって定義された ("プライベート") i/o 制御要求のセットをミニポートドライバーに直接送信できるようになります。 **関数**メンバーが SRB\_関数\_IO\_コントロールに設定されている場合、 **DataBuffer**メンバーには、ドライバー定義のとを含むシステム定義の SRB\_IO\_制御構造へのポインターが含まれます。アプリケーションによって指定された**コントロールコード**。
 
-NT ベースのオペレーティング システムの記憶域クラス ドライバーに送信されたすべてのシステム定義、必要なデバイス I/O 制御要求が使用される Srb にマップされて、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SRB が、SCSI\_関数\_IO\_コントロール。
+NT ベースのオペレーティングシステムストレージクラスに送信されるすべてのシステム定義の必須デバイス i/o 制御要求は、SRB\_関数ではなく\_SCSI\_実行されるように、**関数**メンバーが SRB\_関数に設定された SRBs にマップされます。IO\_制御を\_します。
 
-##  <a name="-see--also"></a>-- も参照
+##  <a name="-see--also"></a>-参照
 
 [SRB_FUNCTION_EXECUTE_SCSI の処理](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-srb-function-execute-scsi)
 
-[SRB_IO_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ns-ntddscsi-_srb_io_control)
+[SRB_IO_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)
 
  
 

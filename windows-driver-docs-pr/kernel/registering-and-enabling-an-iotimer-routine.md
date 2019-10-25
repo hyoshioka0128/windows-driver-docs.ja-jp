@@ -6,15 +6,15 @@ keywords:
 - IoTimer
 - IoInitializeTimer
 - IoStartTimer
-- IoTimer ルーチンを登録します。
+- IoTimer ルーチンを登録しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f94cc6d46cd0c0fdb9c2fc4c8fed9603ef522810
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ea8ebb185831571dafbb1622a248df4f054f0ccf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385855"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838469"
 ---
 # <a name="registering-and-enabling-an-iotimer-routine"></a>IoTimer ルーチンの登録と有効化
 
@@ -22,19 +22,19 @@ ms.locfileid: "67385855"
 
 
 
-すべてのドライバーが登録できる、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンを呼び出すことによって、1 つまたは複数のデバイス オブジェクトが作成された後[ **IoInitializeTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializetimer)します。 ドライバーを呼び出してタイマーを開始できます[ **IoStartTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostarttimer)します。 次の図は、これらの呼び出しを示しています。
+すべてのドライバーは、 [**Ioinitializetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializetimer)を呼び出すことにより、1つまたは複数のデバイスオブジェクトを作成した後に、 [*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンを登録できます。 ドライバーは、 [**Iostarttimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostarttimer)を呼び出すことによってタイマーを開始できます。 次の図は、これらの呼び出しを示しています。
 
-![iotimer ルーチンを使用して説明する図](images/3iotmer.png)
+![iotimer ルーチンの使用方法を示す図](images/3iotmer.png)
 
-呼び出した後[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)デバイス オブジェクトを作成するドライバーを呼び出すことができます**IoInitializeTimer**のエントリ ポイントとその*IoTimer*日常的なデバイスのドライバーが作成したオブジェクトと、ドライバーがどのようなコンテキストを保持しますコンテキスト領域へのポインターと共にその*IoTimer*ルーチン。 I/O マネージャーは、タイマーのカーネルに割り当てられたオブジェクトをデバイス オブジェクトを関連付け、1 秒ごとにこのタイムアウト タイマー オブジェクトを設定します。
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)を呼び出してデバイスオブジェクトを作成すると、ドライバーは**ioinitializetimer**のエントリポイントと共に、ドライバーによって作成されたデバイスオブジェクトへのポインターと、ドライバーがあるコンテキスト領域を呼び出すことができます。*Iotimer*ルーチンが使用するすべてのコンテキストを保持します。 I/o マネージャーは、デバイスオブジェクトをカーネルに割り当てられたタイマーオブジェクトに関連付け、timer オブジェクトを毎秒タイムアウトに設定します。
 
-ドライバーの呼び出し後**IoStartTimer**その*IoTimer*ルーチンはドライバー呼び出されるまで 1 秒あたり 1 回呼び出されます[ **IoStopTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostoptimer)します。 ドライバーの呼び出しを再び有効にできる、 *IoTimer*ルーチン**IoStartTimer**します。 (多くの場合、ドライバーを呼び出すと**IoStartTimer**、現在の IRP の I/O スタックの場所から取得したデバイス オブジェクト ポインターを提供します)。
+ドライバーが**Iostarttimer**を呼び出した後、ドライバーが[**Iostarttimer er**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostoptimer)を呼び出すまで、 *iotimer*ルーチンは1秒間に1回呼び出されます。 ドライバーは、 **Iostarttimer**を使用して*iotimer*ルーチンへの呼び出しを再び有効にすることができます。 (多くの場合、ドライバーが**Iostarttimer**を呼び出すと、現在の IRP の i/o スタックの場所から取得したデバイスオブジェクトポインターが提供されます)。
 
-開始時、 *IoTimer*ルーチンには、デバイスのオブジェクト ポインターが渡された<em>、</em>ドライバーにはときに指定したコンテキストのポインターと共にと呼ばれる**IoInitializeTimer**。
+エントリでは、 **Ioinitializetimer**を呼び出したときに、ドライバーが指定したコンテキストポインターと共に、 *iotimer*ルーチンにデバイス<em>オブジェクトポインターが</em>渡されます。
 
-ドライバーを呼び出してはならない**IoStopTimer**内から、 *IoTimer*ルーチン。
+ドライバーは**Iost最適化 er**を*iotimer*ルーチン内から呼び出すことはできません。
 
-I/O マネージャーが、指定したデバイス オブジェクトのタイマーのルーチンの登録を解除し、ドライバーを呼び出すと、その関連付けられたコンテキストを解放[ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)します。
+I/o マネージャーは、指定されたデバイスオブジェクトのタイマールーチンの登録を解除し、ドライバーが[**Iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)を呼び出すと、関連付けられているコンテキストを解放します。
 
  
 

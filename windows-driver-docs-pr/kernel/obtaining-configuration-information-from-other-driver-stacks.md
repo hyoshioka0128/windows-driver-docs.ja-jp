@@ -3,20 +3,20 @@ title: その他のドライバー スタックからの構成情報の取得
 description: その他のドライバー スタックからの構成情報の取得
 ms.assetid: ca0f3d51-24c6-44df-828f-6aeb2565c1ae
 keywords:
-- デバイス構成領域、I/O の WDK カーネル
-- デバイス構成領域 WDK I/O
-- 構成領域 WDK I/O
-- WDK の I/O の領域
-- ドライバー スタック WDK 構成情報
+- I/o WDK カーネル、デバイス構成領域
+- デバイス構成領域 WDK i/o
+- 構成領域の WDK i/o
+- 領域 WDK i/o
+- ドライバースタック WDK の構成情報
 - BUS_INTERFACE_STANDARD
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f669fab6b62f25ceeb82143c60d3aa6d54834b86
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 55878ba280d2fe1464fc1cd029aa7ae95e0ff72e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827767"
 ---
 # <a name="obtaining-configuration-information-from-other-driver-stacks"></a>その他のドライバー スタックからの構成情報の取得
 
@@ -24,15 +24,15 @@ ms.locfileid: "67716976"
 
 
 
-時以外に、ドライバーがある 1 つのスタック上のドライバーがデバイスの構成領域から情報を取得する必要があります。 たとえば、PCI、PCI へのブリッジの構成領域でビットを設定して、ブリッジの PDO へのポインターがありません。 オペレーティング システムでは、PCI、PCI へのブリッジを列挙し、システム上のすべてのブリッジの PDO を作成がこれらのデバイスのデバイスのインターフェイスは登録されません。 そのため、これらのブリッジの構成領域にアクセスするのにデバイス インターフェイス メカニズムを使用することはできません。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)します。
+ドライバーが含まれているもの以外のスタック上にあるデバイスの構成領域から情報を取得する必要がある場合があります。 たとえば、PCI から PCI へのブリッジの構成領域にビットを設定し、ブリッジの PDO へのポインターを持っていないとします。 オペレーティングシステムは、PCI から PCI へのブリッジを列挙し、システム上のすべてのブリッジ用に PDO を作成しますが、これらのデバイスのデバイスインターフェイスは登録しません。 そのため、デバイスインターフェイス機構を使用して、これらのブリッジの構成領域にアクセスすることはできません。 デバイスインターフェイスの詳細については、「[デバイスインターフェイスの概要」を](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)参照してください。
 
-Windows NT 4.0 では、ドライバーがアクセスを使用してこのようなデバイスの構成領域、 [ **HalGetBusData** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))と[ **HalSetBusData** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))ルーチン。 Windows 2000 および以降のバージョンの Windows では、これは、不要になった場合。
+Windows NT 4.0 では、ドライバーは[**HalGetBusData**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))ルーチンと[**HalSetBusData**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))ルーチンを使用して、このようなデバイスの構成領域にアクセスできます。 Windows 2000 以降のバージョンの Windows では、これは不要になりました。
 
-Windows 2000 と Windows の以降のバージョンでは、その他のドライバー スタックに属しているハードウェアにアクセスするドライバーは許可されません。 必要な機能を提供するフィルター ドライバーを記述できます。 たとえば、ブリッジのハードウェアにアクセスする場合は、ブリッジの構成領域で必要な操作を実装するフィルター ドライバーを設計する必要があります。 PnP マネージャーは、ブリッジのデバイス ID を検出した場合に、ブリッジのドライバー スタックに、フィルター ドライバーを読み込むことができますので、ブリッジのハードウェアのハードウェア Id を指定する INF ファイルを指定することも必要があります。
+Windows 2000 以降のバージョンの Windows では、ドライバーが他のドライバースタックに属するハードウェアにアクセスすることは許可されていません。 フィルタードライバーは、必要な機能を提供するために記述できます。 たとえば、ブリッジハードウェアにアクセスする場合は、ブリッジの構成領域に対して必要な操作を実装するフィルタードライバーを設計する必要があります。 また、ブリッジハードウェアの可能性のあるハードウェア Id を指定する INF ファイルを指定する必要があります。これにより、PnP マネージャーは、ブリッジのデバイス ID を検出したときに、フィルタードライバーをブリッジのドライバースタックに読み込むことができます。
 
-プログラムで使用してフィルターをインストールする代わりに、 **SetupDi<em>Xxx</em>** デバイスの共同インストーラー内の関数。
+または、デバイスの共同インストーラーで**Setupdi<em>Xxx</em>** 関数を使用して、プログラムでフィルターをインストールすることもできます。
 
-フィルター ドライバーにブリッジを使用して、アクセスできる、 [ **BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)インターフェイス。
+フィルタードライバーは、[**バス\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)インターフェイスを使用してブリッジにアクセスできます。
 
  
 

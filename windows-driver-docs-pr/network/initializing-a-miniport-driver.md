@@ -3,43 +3,43 @@ title: ミニポート ドライバーの初期化
 description: ミニポート ドライバーの初期化
 ms.assetid: cda2437c-b292-4d21-b200-89c7b55cd46c
 keywords:
-- ミニポート ドライバー WDK ネットワーク、初期化しています
-- ミニポート ドライバーの初期化
-- NDIS ミニポート ドライバー WDK、初期化しています
+- ミニポートドライバー WDK ネットワーク、初期化
+- ミニポートドライバーの初期化
+- NDIS ミニポートドライバー WDK、初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8c3e70b744f0dbae050466f6587b1aab52fa05
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a69cc4ecad861ec9515c16006c1f8a22970b4b9a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381328"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824505"
 ---
 # <a name="initializing-a-miniport-driver"></a>ミニポート ドライバーの初期化
 
 
 
-ネットワーク デバイスが使用可能になるときに、システムは、NDIS ミニポート ドライバー (ドライバーがまだ読み込まれていない) 場合、デバイスを管理するを読み込みます。 すべてのミニポート ドライバーを提供する必要があります、 [DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 システム コール**DriverEntry**ドライバーが読み込まれた後です。 **DriverEntry** NDIS (サポートされている NDIS バージョンとドライバーのエントリ ポイントを含む) を使用して、ミニポート ドライバーの特性を登録します。
+ネットワークデバイスが使用可能になると、システムはデバイスを管理するために NDIS ミニポートドライバーを読み込みます (ドライバーがまだ読み込まれていない場合)。 すべてのミニポートドライバーは[Driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数を提供する必要があります。 ドライバーが読み込まれた後、システムは**Driverentry**を呼び出します。 **Driverentry**は、ミニポートドライバーの特性を ndis に登録します (サポートされている ndis のバージョンとドライバーのエントリポイントを含む)。
 
-システムは、2 つの引数を渡します[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize):
+システムは[Driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)に2つの引数を渡します。
 
--   I/O システムによって作成されたドライバー オブジェクトへのポインター。
+-   I/o システムによって作成された driver オブジェクトへのポインター。
 
--   ドライバー固有のパラメーターを格納する場所を指定するレジストリ パスへのポインター。
+-   ドライバー固有のパラメーターが格納される場所を指定するレジストリパスへのポインター。
 
-[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、ミニポート ドライバーがこれらのポインターの両方への呼び出しに渡す、 [NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)関数。 ミニポート ドライバーは、標準のセットをエクスポート*MiniportXxx*関数で、エントリ ポイントを格納することにより、 [ **NDIS\_ミニポート\_ドライバー\_特性** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)構造と構造体を渡す**NdisMRegisterMiniportDriver**します。 
+[Driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)では、ミニポートドライバーは、 [NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)関数の呼び出しでこれらの両方のポインターを渡します。 ミニポートドライバーは、標準の*Miniportxxx*関数のセットをエクスポートします。そのためには、 [**NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の構造体にエントリポイントを格納し、その構造体をに**渡します。NdisMRegisterMiniportDriver**。 
 
-**DriverEntry**ミニポート ドライバーへの呼び出しによって返される値を返します**NdisMRegisterMiniportDriver**します。
+ミニポートドライバーの**Driverentry**は、 **NdisMRegisterMiniportDriver**への呼び出しによって返される値を返します。
 
-ミニポート ドライバーで必要なその他の個々 のドライバーの初期化を実行も[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)します。 ドライバーのアダプター固有の初期化を実行する、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。 アダプターの初期化の詳細については、次を参照してください。 [、アダプターの初期化](initializing-a-miniport-adapter.md)します。
+また、ミニポートドライバーは、 [Driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)で必要なドライバー固有のその他の初期化も実行します。 ドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数でアダプター固有の初期化を実行します。 アダプターの初期化の詳細については、「[アダプターの初期化](initializing-a-miniport-adapter.md)」を参照してください。
 
-[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)割り当てることができます、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics) NDIS ライブラリをコピーするために、スタックの構造体独自のストレージに関連する情報。 **DriverEntry**でこの構造体のメモリをオフにする必要があります[NdisZeroMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiszeromemory)そのメンバー内のドライバーが指定した値を設定する前にします。 **MajorNdisVersion**と**MinorNdisVersion**メンバーは、ドライバーがサポートする NDIS のメジャーおよびマイナーのバージョンを含める必要があります。 各 Xxx の**ハンドラー**特性構造体のメンバー **DriverEntry**のドライバーが指定したエントリ ポイントを設定する必要があります*MiniportXxx*関数、またはメンバーである必要があります**NULL**します。
+[Driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)は、ndis ライブラリが関連する情報を独自のストレージにコピーするため、 [**NDIS\_ミニポート\_ドライバー\_の特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)構造をスタックに割り当てることができます。 **Driverentry**では、そのメンバーにドライバーで指定された値を設定する前に、 [NdisZeroMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiszeromemory)を使用してこの構造体のメモリをクリアする必要があります。 **MajorNdisVersion**と**MinorNdisVersion**のメンバーには、ドライバーがサポートする NDIS のメジャーバージョンとマイナーバージョンが含まれている必要があります。 特性の構造体の各 Xxx**ハンドラー**メンバーで、 **driverentry**はドライバーによって指定された*miniportxxx*関数のエントリポイントを設定するか、メンバーを**NULL**にする必要があります。
 
-NDIS の呼び出しを省略可能なサービスを構成するミニポート ドライバーを有効にする、 [MiniportSetOptions](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)ミニポート ドライバーの呼び出しのコンテキスト内で関数[NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。 省略可能なサービスの詳細については、次を参照してください。[省略可能なミニポート ドライバー サービスを構成する](configuring-optional-miniport-driver-services.md)します。
+ミニポートドライバーでオプションのサービスを構成できるようにするために、NDIS は[NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)へのミニポートドライバーの呼び出しのコンテキスト内で[MiniportSetOptions](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)関数を呼び出します。 オプションのサービスの詳細については、「[オプションのミニポートドライバーサービスの構成](configuring-optional-miniport-driver-services.md)」を参照してください。
 
-呼び出すドライバー [NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver) NDIS を呼び出すために準備する必要があります、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数の後にいつでも**DriverEntry**を返します。 そのような情報が必要十分なインストールと構成、レジストリに格納されているまたはへの呼び出しから使用可能な**NdisXxx**ドライバーを任意の NIC に固有のリソースを設定するバスの種類に固有の構成関数ネットワーク I/O 操作を実行する必要があります。
+[NdisMRegisterMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)を呼び出すドライバーは、 **driverentry**が返された後、いつでも[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すように NDIS に準備する必要があります。 このようなドライバーには、レジストリに格納されている十分なインストールおよび構成情報が必要です。または、ドライバーが実行する必要のある NIC 固有のリソースを設定するために、 **NdisXxx** bus タイプ固有の構成関数の呼び出しから使用できます。ネットワーク i/o 操作。
 
-最終的に、ミニポート ドライバーを呼び出す必要があります[ **NdisMDeregisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver)呼び出すことによって、割り当てられたリソースを解放する[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver). 呼び出した後、ドライバーの初期化に失敗した場合**NdisMRegisterMiniportDriver**ドライバーを呼び出すことができますが成功した**NdisMDeregisterMiniportDriver**内から[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize). ミニポート ドライバーがで割り当てるドライバー固有のリソースを解放する必要がありますそれ以外の場合、その[ *MiniportDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_unload)関数。 つまり NdisMRegisterMiniportDriver に NDIS_STATUS_SUCCESS、返さない場合、 **DriverEntry**リソースを解放する必要があります制御を返す前に、割り当てられました。 このような場合、ドライバーは読み込まれません。 詳細については、次を参照してください。[ミニポート ドライバーをアンロード](unloading-a-miniport-driver.md)します。
+ミニポートドライバーは、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)を呼び出すことによって割り当てられたリソースを解放するために、最終的に[**NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver)を呼び出す必要があります。 **NdisMRegisterMiniportDriver**への呼び出しが成功した後にドライバーの初期化が失敗した場合、ドライバーは[driverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)内から**NdisMDeregisterMiniportDriver**を呼び出すことができます。 それ以外の場合、ミニポートドライバーは、 [*Miniportdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_unload)関数に割り当てられているドライバー固有のリソースを解放する必要があります。 つまり、NdisMRegisterMiniportDriver が NDIS_STATUS_SUCCESS を返さない場合、 **Driverentry**はコントロールを返す前に割り当てられたリソースを解放する必要があります。 このエラーが発生した場合、ドライバーは読み込まれません。 詳細については、「[ミニポートドライバーのアンロード](unloading-a-miniport-driver.md)」を参照してください。
 
  
 

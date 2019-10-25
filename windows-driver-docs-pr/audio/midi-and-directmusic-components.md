@@ -3,24 +3,24 @@ title: MIDI と DirectMusic のコンポーネント
 description: MIDI と DirectMusic のコンポーネント
 ms.assetid: 6334f332-31ba-4daf-aad1-94bb65d25153
 keywords:
-- WDM オーディオ コンポーネント WDK
-- ユーザー モード コンポーネント WDK オーディオ
-- カーネル モード コンポーネント WDK オーディオ
-- コンポーネントの WDK オーディオをキャプチャします。
+- WDM オーディオコンポーネント WDK
+- ユーザーモードコンポーネント WDK オーディオ
+- カーネルモードコンポーネント WDK オーディオ
+- コンポーネントのキャプチャ WDK オーディオ
 - MIDI コンポーネント WDK オーディオ
-- DirectMusic WDK オーディオ、コンポーネント
-- WDK オーディオを再生
-- MIDI WDK オーディオのタイムスタンプ
-- 注上のイベントの WDK オーディオ
-- 注オフ イベント WDK オーディオ
+- DirectMusic WDK audio, コンポーネント
+- WDK オーディオの再生
+- タイムスタンプ付き MIDI WDK オーディオ
+- メモ-イベントの WDK オーディオ
+- メモオフイベント WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 808313dd844ef120261f58f03988b993eaff336e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22546ede83dc9a6eb09ddb44670741b5fa15cd2a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363256"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832626"
 ---
 # <a name="midi-and-directmusic-components"></a>MIDI と DirectMusic のコンポーネント
 
@@ -28,75 +28,75 @@ ms.locfileid: "67363256"
 ## <span id="midi_and_directmusic_components"></span><span id="MIDI_AND_DIRECTMUSIC_COMPONENTS"></span>
 
 
-アプリケーション プログラムは、キャプチャし、再生 MIDI と DirectMusic ストリームを行うユーザー モードとカーネル モード コンポーネントとの組み合わせに依存します。
+アプリケーションプログラムは、ユーザーとカーネルモードのコンポーネントを組み合わせて、MIDI と DirectMusic のストリームをキャプチャして再生します。
 
-アプリケーションは、次のいずれかを使用できます MIDI の再生とキャプチャ ソフトウェア インターフェイス。
+アプリケーションでは、次のいずれかのソフトウェアインターフェイスを使用して、MIDI の再生とキャプチャを行うことができます。
 
--   Microsoft Windows のマルチ メディア **midiOut * * * Xxx*と **midiIn * * * Xxx*関数
+-   Microsoft Windows マルチメディア **Midiout * * * xxx*および **midiout ** * * xxx 関数
 
 -   DirectMusic API
 
-動作、**midiOut * * * Xxx*と **midiIn * * * Xxx*関数はレガシ MIDI ドライバーとデバイスの機能に基づいています。 Windows 98 以降、 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver) WDM オーディオ ドライバーをコマンドにこれらの関数の呼び出しを変換します。 ソフトウェアとハードウェアの以前の動作をエミュレートすることにより、ただし、**midiOut * * * Xxx*と **midiIn * * * Xxx*関数犠牲の有効桁数のタイミングと拡張機能を使用できますを通じて、DirectMusic API。 DirectMusic と Windows のマルチ メディア MIDI 関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+**Midiout ** * * xxx 関数と **midiout * * * xxx*関数の動作は、従来の MIDI ドライバーとデバイスの機能に基づいています。 Windows 98 以降、 [WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)は、これらの関数の呼び出しを、WDM オーディオドライバーへのコマンドに変換します。 ただし、古いソフトウェアやハードウェアの動作をエミュレートすることで、**Midiout * * * xxx*および **midiout * * * xxx 関数に*よって、DirectMusic API で使用できるようになった有効桁数と拡張機能が犠牲になります。 DirectMusic と Windows マルチメディア MIDI 関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-DirectMusic と Windows のマルチ メディア MIDI 関数は、クライアントの[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)MIDI と DirectMusic ストリームを処理できるオーディオ フィルター グラフをビルドします。 グラフの構築は、これらのソフトウェアのインターフェイスを使用するアプリケーションに対して透過的です。
+DirectMusic と Windows マルチメディア MIDI 関数は、MIDI および DirectMusic ストリームを処理するオーディオフィルターグラフを構築する[sysaudio システムドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)のクライアントです。 グラフの作成は、これらのソフトウェアインターフェイスを使用するアプリケーションに対して透過的です。
 
-### <a name="span-idmidicomponentsspanspan-idmidicomponentsspanspan-idmidicomponentsspanmidi-components"></a><span id="MIDI_Components"></span><span id="midi_components"></span><span id="MIDI_COMPONENTS"></span>MIDI コンポーネント
+### <a name="span-idmidi_componentsspanspan-idmidi_componentsspanspan-idmidi_componentsspanmidi-components"></a><span id="MIDI_Components"></span><span id="midi_components"></span><span id="MIDI_COMPONENTS"></span>MIDI コンポーネント
 
-次の図は、ユーザー モードおよびカーネル モード コンポーネント、MIDI アプリケーションを使用している*再生*MIDI データ。 このアプリケーションのインターフェイスを通じて WDM オーディオ ドライバーを **midiOut * * * Xxx*で実装される、関数、 [WinMM システム コンポーネント](user-mode-wdm-audio-components.md#winmm_system_component)、Winmm.dll します。
+次の図は、midi アプリケーションが midi データを*再生*するために使用するユーザーモードとカーネルモードのコンポーネントを示しています。 このアプリケーションは、 [winmm.dll システムコンポーネント](user-mode-wdm-audio-components.md#winmm_system_component)である winmm.dll に実装されている **midiout * * * Xxx*関数を使用して、WDM オーディオドライバーに対してインターフェイスを行います。
 
 ![midi 再生コンポーネントを示す図](images/midiplay.png)
 
-前の図に MIDI アプリケーションでは、MIDI ファイルから MIDI イベントのタイムスタンプを読み取るし、再生されます。 MIDI と Dmu ミニポート ドライバーは、コンポーネントのベンダーが提供できることを示すために暗いボックスとして表示されます。 該当する場合は、仕入先のカスタムのミニポート ドライバーを記述する代わりに、システム提供のミニポート ドライバー--FMSynth、UART、または DMusUART--のいずれかを使用こともできます。 すべての他のコンポーネントの図には、システム提供します。
+上の図の MIDI アプリケーションは、タイムスタンプ付きの MIDI イベントを MIDI ファイルから読み取り、再生します。 MIDI および DMus ミニポートドライバーは、ベンダーが提供するコンポーネントであることを示すために、暗いボックスとして表示されます。 必要に応じて、ベンダーは、システムが提供するミニポートドライバー (FMSynth、UART、または Dマス目の Uart) のいずれかを使用することを選択できます。これは、カスタムミニポートドライバーを記述する代わりに使用します。 図内の他のすべてのコンポーネントは、システムによって提供されます。
 
-一般的な MIDI 再生アプリケーション呼び出しのメイン ループ**timeSetEvent**次のメモまたは注オフ イベントがスケジュールされます。 この呼び出しはそのパラメーターの 1 つとして、アプリケーションのコールバック ルーチンへの関数ポインターを受け取ります。 このルーチンを呼び出すイベントが発生するし、オペレーティング システムは、コールバック ルーチンを呼び出し、 **midiOutShortMsg**を 1 つまたは複数のスケジュールされたノート有効または無効にします。 **MidiOutShortMsg**関数は、ページにこのメモリの呼び出し中に不要にページ ロックされたデータ バッファーで MIDI メッセージを格納します。 詳細については、 **timeSetEvent**と**midiOutShortMsg**呼び出しは、Microsoft Windows SDK ドキュメントを参照してください。
+一般的な MIDI 再生アプリケーションのメインループは、 **timeSetEvent**を呼び出して、次のノートオンイベントまたはノートオフイベントをスケジュールします。 この呼び出しは、そのパラメーターの1つとして、アプリケーションのコールバックルーチンへの関数ポインターを受け取ります。 イベントが発生し、オペレーティングシステムがコールバックルーチンを呼び出すと、このルーチンは**Midiout短縮メッセージ**を呼び出して、1つまたは複数のスケジュールされたメモをオンまたはオフにします。 **Midiout短縮 msg**関数は、ページロックされたデータバッファーに MIDI メッセージを格納し、呼び出し中にこのメモリをページに記録する必要がないようにします。 **TimeSetEvent**と**Midiout短縮メッセージ**の呼び出しの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-WDMAud、両方のユーザー モードとカーネル モード コンポーネント (Wdmaud.drv および Wdmaud.sys) から成る、位置からメッセージを生 MIDI 時刻を記録しますが、 **midiOutShortMsg**呼び出しが到着します。 WDMAud は、WDMAud 下の図に表示されるカーネル モード コンポーネントの 1 つに送られる MIDI ストリームを生成する MIDI メッセージをこれらのタイムスタンプを結合します。
+WDMAud は、ユーザーとカーネルモードの両方のコンポーネント (Wdmaud と Wdmaud) で構成され、 **Midiout短縮メッセージ**からの未加工の MIDI メッセージが到着した時刻を記録します。 WDMAud は、これらのタイムスタンプを MIDI メッセージと組み合わせて、図の WDMAud の下に表示されるカーネルモードコンポーネントのいずれかに送信する MIDI ストリームを生成します。
 
-MIDI アプリケーションのオーディオ フィルター グラフを作成するときに、次の 3 つ考えられるへの接続の--SWMidi、MIDI ポート、または Dmu ポート ドライバー - 前の図に表示される 1 つだけ SysAudio を選択します。 アプリケーションでは、既定の MIDI デバイスを選択した場合は、SysAudio は最初にシンセサイザー デバイスが MIDI または Dmu ミニポート ドライバーには、MIDI 暗証番号 (pin) が含まれています。 SysAudio は代わりに、レジストリでこのようなデバイスが見つからない場合、 [SWMidi システム ドライバー](kernel-mode-wdm-audio-components.md#swmidi_system_driver) (Swmidi.sys)。 SWMidi はソフトウェアでは、ウェーブ シンセサイザーを実装する KS フィルターと wave オーディオ ストリームをレンダリングするデバイスのみが必要です。
+MIDI アプリケーションのオーディオフィルターグラフを構築する場合、SysAudio は、3つの可能な接続 (SWMidi、MIDI ポート、または DMus ポートドライバー) のいずれか1つだけを選択します。これは、前の図に示されています。 アプリケーションで既定の MIDI デバイスを選択すると、まず、midi または DMus ミニポートドライバーに MIDI ピンがあるシンセサイザーデバイスが、SysAudio によって検索されます。 そのようなデバイスがレジストリに見つからない場合、SysAudio は[swmidi システムドライバー](kernel-mode-wdm-audio-components.md#swmidi_system_driver) (swmidi .sys) を代わりに使用します。 SWMidi は、ソフトウェアで wavetable シンセサイザーを実装する KS フィルターであり、wave オーディオストリームをレンダリングできるデバイスのみを必要とします。
 
-SWMidi ミックスへの出力が 1 つのウェーブ PCM のストリームを生成するには、その音声はすべて、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)します。 さらに、KMixer は、図の左下隅にあるポートおよびミニポート ドライバーが表示される、WaveCyclic または WavePci デバイスに PCM でフォーマットされた wave ストリームを渡します。 または、KMixer はによって制御される USB オーディオ デバイスにその出力ストリームを渡すことができます、 [USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver) (図に示されていません)。
+SWMidi は、すべての音声を組み合わせて1つの wave PCM ストリームを生成し、 [KMixer システムドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)に出力します。 KMixer は、PCM 形式の wave ストリームを WaveCyclic または WavePci デバイスに渡します。このデバイスのポートとミニポートドライバーは、図の左下隅に表示されます。 また、KMixer は、 [usbaudio クラスシステムドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)によって制御される USB オーディオデバイスに出力ストリームを渡すことができます (図には示されていません)。
 
-上記の図では、MIDI ポート ドライバーは WDMAud から MIDI のタイムスタンプ付きストリームを受け取るし、シンセサイザー デバイスを介して、MIDI ミニポート ドライバーを再生する生の MIDI メッセージに変換します。 MIDI ポート ドライバーには、シーケンサー、ソフトウェアに実装され、生 MIDI メッセージ 1 ミリ秒のタイマー精度のスケジュールを設定することはこれが含まれています。
+上の図では、MIDI ポートドライバーは WDMAud からタイムスタンプ付きの MIDI ストリームを受け取り、それを未加工の MIDI メッセージに変換します。これは、MIDI ミニポートドライバーがシンセサイザーデバイスを経由して再生します。 MIDI ポートドライバーには、ソフトウェアで実装され、タイマー精度1ミリ秒で未加工の MIDI メッセージをスケジュールすることができる sequencer が含まれています。
 
-Dmu ポート ドライバーはシンセサイザー デバイスには、ハードウェア sequencer が含まれている場合は、MIDI ポート ドライバーよりもはるかに高いタイミング精度を実現できます。 この場合は、Dmu のミニポート ドライバーでは、Isr (割り込みサービス ルーチン) での CPU 時間とその他の優先度の高い操作での競合に起因ジッターを緩和するのに十分な大きさであるハードウェア バッファーを指定する必要があります。 Dmu ポート ドライバーに出力するミニポート ドライバー MIDI ストリームのタイムスタンプは、100 ナノ秒単位の精度と 64 ビット値です。
+DMus ポートドライバーは、シンセサイザーデバイスにハードウェア sequencer が搭載されている場合、MIDI ポートドライバーよりもはるかに高いタイミングの精度を実現できます。 この場合、DMus ミニポートドライバーでは、Isr (割り込みサービスルーチン) およびその他の高優先度操作を使用した CPU 時間の競合によって生じるジッターを吸収するのに十分な大きさのハードウェアバッファーを指定する必要があります。 DMus ポートドライバーがミニポートドライバーに出力する MIDI ストリーム内のタイムスタンプは、100ナノ秒解像度の64ビット値です。
 
-DMusic シンセサイザーでは、ハードウェア sequencer はありません、MIDI ポート ドライバーが 1 ミリ秒のタイマー精度を Dmu ポート ドライバーのソフトウェアの sequencer に依存する必要があります。
+DMusic シンセがハードウェアシーケンサーを搭載していない場合は、DMus ポートドライバーのソフトウェア sequencer に依存する必要があります。これは、MIDI ポートドライバーの場合と同様に、1ミリ秒のタイマー精度を持ちます。
 
-アダプタのドライバを呼び出して MIDI または Dmu ポート ドライバーを作成します[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値を持つ**CLSID\_PortMidi**または**CLSID\_PortDMus**、それぞれします。 Windows XP 以降では、MIDI、Dmu ポート ドライバーは、同じソフトウェア実装を共有します。
+アダプタードライバーは、GUID 値が**clsid\_PortMidi**または**Clsid\_Portdmus**で[**PCNEWPORT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出して、MIDI または dmus のポートドライバーを作成します。 Windows XP 以降では、MIDI および DMus ポートドライバーは同じソフトウェア実装を共有します。
 
-上記の図の下部に表示されるは、FMSynth、UART、および DMusUART、Portcls.sys に含まれているシステム提供のミニポート ドライバーの名前です。 呼び出して、アダプターのドライバーがこれらのミニポート ドライバーのいずれかに作成します. [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)します。 FMSynth と UART 提供[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)インターフェイス、および DMusUART を提供する[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)インターフェイス。 UART (Windows 98 金) した後は廃止されておりは既存のドライバーに対してのみサポートされていることに注意してください。 新しいアダプターのドライバーでは、DMusUART (Windows 98 se と後で、および Windows 2000 以降)、UART の機能のスーパー セットを実装する代わりに使用する必要があります。 DMusUART は、DLS ダウンロードもハードウェアのシーケンス処理をサポートしている Dmu ミニポート ドライバーの例に示します。 FMSynth と DMusUART ミニポート ドライバーのソース コードは、サンプル オーディオ ドライバーには、Windows Driver Kit (WDK) で使用できます。
+前の図の下部に表示されるのは、Portcls に含まれるシステム指定のミニポートドライバー FMSynth、UART、および Dマス Uart です。 アダプタードライバーは、 [**Pcnewminiport ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)を呼び出すことによって、これらのミニポートドライバーのいずれかを作成します。 FMSynth と UART は[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)インターフェイスを提供し、Dマス Uart は[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)インターフェイスを提供します。 UART は現在互換性のために残されています (Windows 98 Gold の後)。また、既存のドライバーに対してのみサポートされています。 新しいアダプタードライバーでは、代わりに、UART の機能のスーパーセットを実装する Dマス Uart (Windows 98 SE 以降、Windows 2000 以降) を使用する必要があります。 Dマス Uart は、DLS ダウンロードもハードウェアシーケンスもサポートしない DMus ミニポートドライバーの一例です。 Windows Driver Kit (WDK) のサンプルオーディオドライバーでは、FMSynth ドライバーと Dマスの Uart ミニポートドライバーのソースコードを使用できます。
 
-次の図は、ユーザー モードおよびカーネル モード コンポーネント、MIDI アプリケーション プログラムを使用している*キャプチャ*MIDI データ。 このアプリケーション インターフェイスを通じて WDM オーディオ ドライバー、**midiIn * * * Xxx*関数。
+次の図は、midi アプリケーションプログラムが midi データを*キャプチャ*するために使用するユーザーモードとカーネルモードのコンポーネントを示しています。 このアプリケーションは、**Midiin * * * Xxx*関数を介して、WDM オーディオドライバーに対してインターフェイスを行います。
 
-![midi キャプチャ コンポーネントを示す図](images/midicapt.png)
+![midi キャプチャコンポーネントを示す図](images/midicapt.png)
 
-上記の図では、MIDI、Dmu ミニポート ドライバーは、コンポーネントのベンダーが提供できることを示す暗くなったボックスとして表示されます。 該当する場合は、仕入先は UART または DMusUARTCapture、システム提供のミニポート ドライバーのいずれかを使用する代わりに選択可能性があります。 すべての他のコンポーネントの図には、システム提供します。
+上の図では、MIDI および DMus ミニポートドライバーが、ベンダーが提供するコンポーネントであることを示すために、暗くなったボックスとして表示されています。 必要に応じて、ベンダーはシステムが提供するミニポートドライバー、UART または Dマス目のキャプチャを使用することを選択できます。 図内の他のすべてのコンポーネントは、システムによって提供されます。
 
-MIDI データのソースは、通常、片方デバイスです。 呼び出して**PcNewMiniport**アダプターのドライバーはシステム提供のミニポート ドライバー、MIDI デバイスからデータを片方をキャプチャするには、UART または DMusUARTCapture のいずれかで作成できます。 ここでも、UART は廃止、され、新しいドライバーは代わりに DMusUARTCapture (Windows 98 se と後で、および Windows 2000 以降) を使用する必要があります。
+MIDI データのソースは通常、MPU-401 デバイスです。 **Pcnewminiport ポート**を呼び出すことにより、アダプタードライバーはシステムが提供するミニポートドライバー、UART または dマス目のキャプチャを作成し、MPU-401 デバイスから MIDI データをキャプチャできます。 ここでも、UART は互換性のために残されています。代わりに、新しいドライバーで Dマスの Uartcapture を使用する必要があります (Windows 98 SE 以降、Windows 2000 以降)。
 
-MIDI 注上または注オフ イベントが発生するたび、MIDI または DMusic キャプチャ ミニポート ドライバー (上記の図の下部) MIDI または Dmu ポート ドライバーに流れる MIDI ストリームに追加する前に、MIDI メッセージにタイムスタンプを追加します。
+Midi ノートオンまたはノートオフイベントが発生するたびに、midi または DMusic キャプチャミニポートドライバー (前の図の下部) は、midi メッセージにタイムスタンプを追加してから、midi または DMus ポートドライバーにフローする MIDI ストリームに追加します。
 
-MIDI または DMusic キャプチャ ポート ドライバーは、WDMAud システム ドライバーの半分を Wdmaud.sys、カーネル モードには、タイムスタンプ付き MIDI ストリームに出力します。 ユーザー モードの半分、Wdmaud.drv を通じてアプリケーション プログラムへの出力タイムスタンプ MIDI ストリーム、**midiIn * * * Xxx*関数で、Winmm.dll で実装されます。
+MIDI または DMusic キャプチャポートドライバーは、タイムスタンプ付きの MIDI ストリームを Wdmaud に出力します。これは、WDMAud システムドライバーのカーネルモードの半分です。 ユーザーモードの半分 (Wdmaud) は、Winmm.dll に実装されている **Midiin * * * Xxx*関数を使用して、タイムスタンプ付きの MIDI ストリームをアプリケーションプログラムに出力します。
 
-図の上部にある MIDI アプリケーションでは、MIDI イベントのタイムスタンプを MIDI ファイルを書き込みます。 アプリケーションの呼び出し時に**midiInOpen** MIDI 入力ストリームを開くには、関数ポインターに渡す、コールバック ルーチン。 注上または注オフ イベントが発生、オペレーティング システムは、1 つ以上のタイムスタンプ付き MIDI メッセージを含むデータ ブロックでコールバック ルーチンを呼び出します。 これらのメッセージのタイムスタンプは基本的に同じものを MIDI または Dmu のミニポート ドライバーが当初生成したです。
+図の上部にある MIDI アプリケーションは、タイムスタンプ付きの MIDI イベントを MIDI ファイルに書き込みます。 アプリケーションが**Midiinopen**を呼び出して MIDI 入力ストリームを開くと、関数ポインターがコールバックルーチンに渡されます。 ノートオンまたは終了イベントが発生すると、オペレーティングシステムは、1つまたは複数のタイムスタンプ付き MIDI メッセージを含むデータブロックを使用してコールバックルーチンを呼び出します。 これらのメッセージのタイムスタンプは、MIDI または DMus ミニポートドライバーによって最初に生成されたものと基本的に同じです。
 
-### <a name="span-iddirectmusiccomponentsspanspan-iddirectmusiccomponentsspanspan-iddirectmusiccomponentsspandirectmusic-components"></a><span id="DirectMusic_Components"></span><span id="directmusic_components"></span><span id="DIRECTMUSIC_COMPONENTS"></span>DirectMusic コンポーネント
+### <a name="span-iddirectmusic_componentsspanspan-iddirectmusic_componentsspanspan-iddirectmusic_componentsspandirectmusic-components"></a><span id="DirectMusic_Components"></span><span id="directmusic_components"></span><span id="DIRECTMUSIC_COMPONENTS"></span>DirectMusic コンポーネント
 
-次の図は、DirectMusic アプリケーション プログラムで使用されるユーザー モードとカーネル モード コンポーネントを示しています。*再生*または*キャプチャ*MIDI データ。
+次の図は、DirectMusic アプリケーションプログラムが MIDI データを*再生*または*キャプチャ*するために使用するユーザーおよびカーネルモードのコンポーネントを示しています。
 
-![directmusic 再生とキャプチャ コンポーネントを示す図](images/dmusplay.png)
+![directmusic の再生とキャプチャのコンポーネントを示す図](images/dmusplay.png)
 
-再生コンポーネントは上記の図の左半分に表示され、キャプチャ コンポーネントが、右側に表示されます。 Dmu のミニポート ドライバーは、コンポーネントのベンダーが提供できることを示すために暗いボックスとして表示されます。 必要に応じて、仕入先代わりに使用できます、DMusUART または DMusUARTCapture のシステム提供のミニポート ドライバーのいずれか。 他のコンポーネントの図には、システムが提供します。
+再生コンポーネントは、前の図の左半分に表示され、キャプチャコンポーネントは右側に表示されます。 DMus ミニポートドライバーは、ベンダーが提供するコンポーネントであることを示すために、暗いボックスとして表示されます。 必要に応じて、ベンダーはシステムが提供するミニポートドライバー、Dマス目または Dマス目のキャプチャを使用することもできます。 図のその他のコンポーネントはシステムによって提供されます。
 
-図の左上隅で DirectMusic アプリケーションに指示タイムスタンプ MIDI からのストリーム ファイルをユーザー モードに[DirectMusic システム コンポーネント](user-mode-wdm-audio-components.md#directmusic_system_component)(DMusic.dll) を順番に指示 Dmu ポート ドライバーにストリームします。 このドライバーは、1 つが使用可能な場合、DirectMusic シンセサイザーまたは片方のデバイスのミニポート ドライバーにバインドできます。 または、ポート ドライバーにバインドできる、 [DMusic システム ドライバー](kernel-mode-wdm-audio-components.md#dmusic_system_driver) (Dmusic.sys)、これは、システム提供の Dmu ミニポート ドライバー ソフトウェアでは、DL 対応ウェーブ シンセサイザーを実装して、デバイスのみを必要とします。wave オーディオ ストリームを表示できます。
+図の左上隅にある DirectMusic アプリケーションは、タイムスタンプ付きの MIDI ストリームをファイルからユーザーモードの[DirectMusic システムコンポーネント](user-mode-wdm-audio-components.md#directmusic_system_component)(dmusic .dll) に送信します。これにより、ストリームが dmus ポートドライバーに送信されます。 このドライバーは、DirectMusic シンセサイザーまたは MPU-401 デバイス (使用可能な場合) のミニポートドライバーにバインドできます。 または、ポートドライバーを[dmusic システムドライバー](kernel-mode-wdm-audio-components.md#dmusic_system_driver) (dmusic .sys) にバインドすることもできます。これは、ソフトウェアで DLS 対応 wavetable シンセサイザーを実装し、wave オーディオをレンダリングできるデバイスのみを必要とする、システムによって提供される dmus ミニポートドライバーです。一連.
 
-など、SWMidi DMusic ドライバー、Dmusic.sys、KMixer に出力される 1 つの PCM でフォーマットされた wave ストリームを生成するには、その音声のすべてを合成します。 KMixer、さらに、渡すことができます、wave ストリーム ポートおよびミニポート ドライバーが、図の左下隅に現れる場合、wave デバイス、または USB オーディオ デバイスが、図に表示されない、USBAudio システム ドライバーによって制御されます。
+SWMidi と同様に、dmusic ドライバー (Dmusic) は、すべての音声を組み合わせて1つの PCM 形式の wave ストリームを生成し、KMixer に出力します。 KMixer は、wave ストリームを wave デバイスに渡すことができます。この場合、ポートとミニポートドライバーは、図の左下隅に表示されます。また、この図には表示されない USBAudio システムドライバーによって制御される USB オーディオデバイスに渡すこともできます。
 
-DirectMusic キャプチャ コンポーネントは、上記の図の右半分に表示されます。 図の右下隅で DMusic キャプチャ ミニポート ドライバーは、各 MIDI メッセージを記録する、そのキャプチャ ハードウェアとタイムスタンプを制御します。 Dmu ポート ドライバーでは、ユーザー モードの DirectMusic コンポーネント DMusic.dll タイムスタンプ付きの MIDI ストリームを出力します。 アプリケーションでは、DirectMusic API を介してこのストリームにアクセスして、MIDI のタイムスタンプ データをファイルに書き込みます。
+DirectMusic キャプチャコンポーネントは、前の図の右側半分に表示されます。 図の右下隅にある DMusic capture ミニポートドライバーは、キャプチャハードウェアを制御し、記録する各 MIDI メッセージにタイムスタンプを設定します。 DMus ポートドライバーは、タイムスタンプ付きの MIDI ストリームをユーザーモードの DirectMusic コンポーネント (DMusic .dll) に送信します。 アプリケーションは、このストリームに DirectMusic API 経由でアクセスし、タイムスタンプ付きの MIDI データをファイルに書き込みます。
 
-アダプターのドライバーでは、片方のキャプチャ デバイスを制御するのにシステム提供の DMusUARTCapture ミニポート ドライバーを使用できます。 アダプタのドライバを呼び出してこのミニポート ドライバーを作成します**PcNewMiniport**の GUID 値**CLSID\_DMusUARTCapture**します。 結果として得られるミニポート ドライバー オブジェクトがサポートする、 **IMiniportDMus**インターフェイス。 DMusUARTCapture ミニポート ドライバーのソース コードは、サンプル オーディオ ドライバーには、Windows Driver Kit (WDK) で使用できます。
+アダプタードライバーでは、システムによって提供される Dマス間キャプチャミニポートドライバーを使用して、MPU-401 キャプチャデバイスを制御できます。 アダプタードライバーは、このミニポートドライバーを作成します。これは、GUID 値の**CLSID\_Dマス**を持つ**pcnewminiport ポート**を呼び出します。 結果として得られるミニポートドライバーオブジェクトは、 **IMiniportDMus**インターフェイスをサポートします。 Dマスソースコードは、Windows Driver Kit (WDK) のサンプルオーディオドライバーに含まれています。
 
-DirectMusic アプリケーションも一通り、**midiOut * * * Xxx* SWMidi (Swmidi.sys) を選択した場合などのデバイス。 わかりやすくするため、このパスは、上記の図から省略されます。 DMusic ドライバー (Dmusic.sys) は正しく実行するには、最初の DL ダウンロードが必要です。SWMidi を使用すると、この要件が回避できます。
+DirectMusic アプリケーションは、(SWMidi (Swmidi) などの **Midiout * * * Xxx*デバイスを選択した場合にも実行できます。 わかりやすくするために、前の図ではこのパスを省略しています。 正常に動作させるには、DMusic ドライバー (Dmusic .sys) に最初の DLS ダウンロードが必要です。SWMidi を使用すると、この要件を回避できます。
 
  
 

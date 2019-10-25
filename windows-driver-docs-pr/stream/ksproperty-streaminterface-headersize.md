@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE
-description: KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 (pin) を使用してストリーム ヘッダーのサイズの暗証番号 (pin) をクエリします。
+title: KSK プロパティ\_STREAMINTERFACE\_HEADERSIZE
+description: KSK プロパティ\_STREAMINTERFACE\_HEADERSIZE プロパティは、このピンが使用するストリームヘッダーのサイズの pin を照会します。
 ms.assetid: 45c2e10a-c223-4d96-9055-cf012dc50e7a
 keywords:
-- KSPROPERTY_STREAMINTERFACE_HEADERSIZE ストリーミング メディア デバイス
+- KSPROPERTY_STREAMINTERFACE_HEADERSIZE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fc02562dd9f47e1c4f9a178ba660eab0e79f3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3f0b9e161e145af1b85b91fa61d13023f04788d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384011"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837931"
 ---
-# <a name="kspropertystreaminterfaceheadersize"></a>KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE
+# <a name="ksproperty_streaminterface_headersize"></a>KSK プロパティ\_STREAMINTERFACE\_HEADERSIZE
 
 
-KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 (pin) を使用してストリーム ヘッダーのサイズの暗証番号 (pin) をクエリします。
+KSK プロパティ\_STREAMINTERFACE\_HEADERSIZE プロパティは、このピンが使用するストリームヘッダーのサイズの pin を照会します。
 
 ## <span id="ddk_ksproperty_streaminterface_headersize_ks"></span><span id="DDK_KSPROPERTY_STREAMINTERFACE_HEADERSIZE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 
 <a name="remarks"></a>注釈
 -------
 
-参照してください、 **StreamHeaderSize**のメンバー [ **KSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)詳細についてはします。
+詳細については、「 [**Kspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)の**streamheadersize**メンバー」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +85,9 @@ KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE プロパティは、この暗証番号 
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)
+[**KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)
 
  
 

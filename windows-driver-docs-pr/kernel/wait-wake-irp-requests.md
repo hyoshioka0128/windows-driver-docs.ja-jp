@@ -3,17 +3,17 @@ title: 待機/ウェイク IRP 要求
 description: 待機/ウェイク IRP 要求
 ms.assetid: c67d6dcb-f4a9-4df0-abb8-9d84fc44ec40
 keywords:
-- 送信待機/ウェイク Irp
-- ウェイク アップ信号には、WDK のカーネルが有効になっています。
-- Irp WDK の電源管理のウェイク/待機を送信します。
+- 待機/ウェイク Irp の送信
+- ウェイクアップシグナルが有効になっている WDK カーネル
+- 待機/ウェイク Irp WDK 電源管理、送信
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c08b0f0a7a51accbccadec3e05ba797777acf418
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4775a1efd8115fbd73aa46d750dbf1cecf42f1b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358135"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835795"
 ---
 # <a name="waitwake-irp-requests"></a>待機/ウェイク IRP 要求
 
@@ -21,17 +21,17 @@ ms.locfileid: "67358135"
 
 
 
-送信する、 [ **IRP\_MN\_待機\_WAKE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)、ドライバーを呼び出す[ **PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)、PDO のターゲットへのポインター、システム電源の状態、およびコールバック ルーチンへのポインター (その他のパラメーター) の間で渡すことです。
+[**IRP\_\_待機\_ウェイクアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)を送信するには、ドライバーは[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出し、ターゲット PDO へのポインター、システムの電源状態、コールバックルーチンへのポインターを渡します。
 
-システムの電源状態では、この IRP がシステムを wake 最小電源の状態を指定します。 等しいかそれよりもさらに電源を値として使用することがあります、 [ **SystemWake** ](systemwake.md)状態で、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。 たとえば、ドライバーに渡します**PowerSystemSleeping2**の IRP で、関連付けられている IRP の S0、S1、S2 の状態から復帰するシステム可能性があります。 システムがこのような場合は、S0 と s2 の場合サポートする必要があります (範囲の最高と最低の搭載状態) が必要な S1 をサポートしていません。
+システム電源の状態は、この IRP がシステムをスリープ解除できる最小電力状態を指定します。 値は、[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)の構造の[**systemwake**](systemwake.md)状態と同じかそれ以上である必要があります。 たとえば、ドライバーが IRP に**PowerSystemSleeping2**を渡すと、関連する irp によってシステムが状態 S0、S1、S2 から復帰する可能性があります。 このような場合、システムは S0 と S2 (範囲内で最高および最低の状態) をサポートする必要がありますが、S1 はサポートしていません。
 
-待機/ウェイク IRP を要求するすべてのドライバーを指定する必要があります、[コールバック ルーチン](wait-wake-callback-routines.md)、他のすべてのドライバーは IRP を完了した後に呼び出されます。 このルーチンで、ドライバーが、そのデバイスを動作状態に戻るに必要なことすべてを実行できます。
+待機/ウェイク IRP を要求するすべてのドライバーは、他のすべてのドライバーが IRP を完了した後に呼び出される[コールバックルーチン](wait-wake-callback-routines.md)を指定する必要があります。 このルーチンでは、ドライバーは、デバイスを動作状態に戻すために必要な操作を実行できます。
 
-応答で**PoRequestPowerIrp**、電源マネージャーの割り当てコードを少しで累乗 IRP **IRP\_MN\_待機\_WAKE**デバイスの上部に送信しますPDO のターゲットのスタック。 呼び出し元には、IRP をキャンセルする必要がある場合に後で使用できる割り当て済みの IRP にポインターが返されます。
+**PoRequestPowerIrp**への応答として、電源管理者は、マイナーコード IRP を使用して電源 irp を **\_し\_待機\_ウェイク**し、ターゲット PDO のデバイススタックの一番上に送信します。 呼び出し元は、割り当てられた IRP へのポインターを返します。これは、後で IRP をキャンセルする必要がある場合に使用できます。
 
-エラーが発生しなかった場合**PoRequestPowerIrp**ステータスを返します\_保留します。 この状態は、IRP が正常に送信され、完了待ちの状態を意味します。
+エラーが発生しなかった場合、 **PoRequestPowerIrp**は STATUS\_PENDING を返します。 この状態は、IRP が正常に送信され、完了待ちになっていることを意味します。
 
-待機/ウェイク IRP では、システムまたはデバイスの電源の状態は変更されません。 デバイスのウェイク アップ シグナルだけができます。 IRP が保留外部からの信号は、システムまたはデバイスがスリープ解除するまでです。
+待機/ウェイク IRP は、システムまたはデバイスの電源状態を変更しません。 デバイスのウェイクアップシグナルを有効にするだけです。 IRP は、外部シグナルによってシステムまたはデバイスが停止するまで保留状態のままになります。
 
  
 

@@ -3,24 +3,24 @@ title: IRP のキューとデキュー
 description: IRP のキューとデキュー
 ms.assetid: 736107bf-4790-4562-8785-c37fbbed03d3
 keywords:
-- Irp WDK カーネルでは、キュー
+- Irp WDK カーネル、キュー
 - キューの Irp
-- Irp をデキューする.
-- WDK のカーネルを処理する複数の I/O 要求
-- IRP キュー WDK カーネルの内部
+- Irp のデキュー
+- 複数の i/o 要求による WDK カーネルの処理
+- 内部 IRP キュー WDK カーネル
 - WDK Irp の同期
-- I/O 操作の開始
-- I/O WDK カーネルでは、開始操作
+- i/o 操作の開始
+- I/o WDK カーネル、操作開始
 - StartIo ルーチン
-- キャンセルの安全な IRP キュー WDK カーネル
+- キャンセル-セーフな IRP キュー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ff9062fc46d403ecd8bbcc4db244431b459e52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 067b8a95987ec8415117aeca88461dd7143cc7d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378756"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827581"
 ---
 # <a name="queuing-and-dequeuing-irps"></a>IRP のキューとデキュー
 
@@ -28,51 +28,51 @@ ms.locfileid: "67378756"
 
 
 
-I/O マネージャーは、マルチタス キング、マルチ スレッド システム内での非同期 I/O をサポートするためにデバイス I/O 要求はそのドライバーが完了すると、特にマルチプロセッサ コンピューターでを処理できるよりも高速取得できます。 その結果、Irp の特定のデバイスにバインドされている必要がありますキューに入れられ、ドライバーでそのデバイスが別の IRP の処理でビジー状態では既にします。
+I/o マネージャーでは、マルチタスクおよびマルチスレッドシステム内の非同期 i/o がサポートされるため、デバイスへの i/o 要求は、そのドライバーが、特にマルチプロセッサコンピューターでは、そのドライバーによって処理されるようになります。 そのため、特定のデバイスにバインドされている Irp は、デバイスが別の IRP を処理しているときに、ドライバーでキューに入れられる必要があります。
 
 そのため、最下位レベルのドライバーには、次のいずれかが必要です。
 
--   A [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio) 、日常的な I/O マネージャーが Irp の I/O 操作を開始するドライバーを呼び出しますがキューに登録するシステム提供の IRP キュー (を参照してください[ **IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)).
+-   [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチン。 i/o マネージャーが irp の i/o 操作を開始するために、システムによって提供される irp キューのキューに登録されています (「 [**iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)」を参照してください)。
 
--   内部 IRP のキューおよびデキューのメカニズムは、それよりも高速には Irp を管理するドライバーを使用して満たすことが。 ドライバーは、デバイスのキュー、インタロックされたキュー、またはキャンセルの安全なキューを使用できます。 詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
+-   内部の IRP キューとデキューメカニズム。ドライバーは、このメカニズムを使用して、より高速な Irp を管理します。 ドライバーは、デバイスキュー、インタロックしたキュー、またはキャンセルセーフキューを使用できます。 詳細については、「[ドライバーによって管理される IRP キュー](driver-managed-irp-queues.md)」を参照してください。
 
-最下位レベルのデバイス ドライバを満たすことができます、ディスパッチ ルーチンですべての可能な IRP の完了を必要なしのみ*StartIo*ルーチンと Irp のドライバー管理キューがありません。
+ディスパッチルーチン内のすべての IRP を満たすことができる最低レベルのデバイスドライバーのみが、Irp に対して*StartIo*ルーチンを使用したり、ドライバーで管理されたキューを使用したりすることはできません。
 
-高度なドライバーがほとんどないが*StartIo*ルーチン。 ほとんどの中間ドライバーでは、どちらも必要がある*StartIo*ルーチンも内部キュー中間のドライバーできます通常そのディスパッチ ルーチンから有効なパラメーター Irp を渡すとはどのような後処理が任意の IRP で必要です。その[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
+上位レベルのドライバーには、ほとんどの場合、 *StartIo*ルーチンがありません。 ほとんどの中間ドライバーには、 *StartIo*ルーチンも内部キューもありません。中間ドライバーは、通常、有効なパラメーターを持つ Irp をディスパッチルーチンから渡し、その[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチン内の任意の irp に必要なすべての後処理を実行できます。
 
-以下に示します、一般に、設計の考慮事項を実装するかどうかを決定するためのいくつか、 *StartIo* Irp の内部のドライバー管理キューの有無ルーチン。
+ここでは、Irp に対してドライバーで管理された内部キューを使用するかどうかに関係なく、 *StartIo*ルーチンを実装するかどうかを決定するための設計上の考慮事項について、一般的に説明します。
 
-### <a name="startio-routines-in-drivers"></a>ドライバーで StartIo ルーチン
+### <a name="startio-routines-in-drivers"></a>ドライバーの StartIo ルーチン
 
-コンピューター周辺機器、一度に 1 つだけのデバイスの I/O 操作を処理できる、デバイス ドライバーを実装できます*StartIo*ルーチン。 I/O マネージャーは、これらのドライバーの[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)と[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)キューおよびデキューを Irp をルーチンとシステム提供の IRP キューです。
+一度に1つのデバイス i/o 操作のみを処理できるコンピューター周辺機器の場合、デバイスドライバーは*StartIo*ルーチンを実装できます。 これらのドライバーについては、i/o マネージャーによって、システムによって提供される IRP キューとの間で Irp をキューにしたりデキューしたりするための[**iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)ルーチンと[**iostartnextnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)ルーチンが用意されています。
 
-詳細については*StartIo*ルーチンを参照してください[StartIo ルーチンを記述](writing-a-startio-routine.md)します。
+*StartIo*ルーチンの詳細については、「 [StartIo ルーチンの記述](writing-a-startio-routine.md)」を参照してください。
 
-### <a name="internal-queues-for-irps-in-drivers"></a>Irp がドライバーでの内部キュー
+### <a name="internal-queues-for-irps-in-drivers"></a>ドライバー内の Irp の内部キュー
 
-デバイスは、同時実行の 1 つ以上の I/O 操作をサポートできますが、最下位レベルのデバイス ドライバーのでは内部要求キューを設定し、独自 Irp のキューを管理する必要があります。 たとえば、システム シリアル ドライバーは、別のキューの読み取り、書き込み、削除、および全二重シリアル デバイスをサポートしているために、そのデバイスでの操作を待機を保持します。
+デバイスが複数の同時 i/o 操作をサポートできる場合、その最下位レベルのデバイスドライバーで内部要求キューを設定し、Irp の独自のキューを管理する必要があります。 たとえば、システムのシリアルドライバーは、すべての二重シリアルデバイスをサポートするため、デバイスに対する読み取り、書き込み、消去、待機の各操作用に個別のキューを保持します。
 
-いくつかの基になるデバイスのドライバーに要求を送信するより高度なドライバーが Irp の内部キューを維持することがありますもできます。 たとえば、ファイル システム ドライバーは、Irp の内部キューをほぼ常にあります。
+いくつかの基になるデバイスドライバーに要求を送信する上位レベルのドライバーも、Irp の内部キューを維持する場合があります。 たとえば、ファイルシステムドライバーには、ほとんどの場合、Irp の内部キューがあります。
 
-詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
+詳細については、「[ドライバーによって管理される IRP キュー](driver-managed-irp-queues.md)」を参照してください。
 
 ### <a name="internal-queue-synchronization"></a>内部キューの同期
 
-デバイス専用のスレッドと、通常は Irp の自分のキューを設定 (ほとんどのファイル システム ドライバーを含む) 実行ワーカー スレッドを使用する最上位レベルのドライバーのドライバーです。 キューは Irp を処理するその他のドライバー ルーチンとドライバーのスレッドまたはワーカー スレッドをドライバーが指定したコールバックによって共有されます。
+デバイス専用のスレッドを使用するドライバーと、executive ワーカースレッドを使用する最上位レベルのドライバー (ほとんどのファイルシステムドライバーを含む) は、通常、Irp 用に独自のキューを設定します。 キューは、ドライバースレッドまたはドライバーによって提供されるワーカースレッドコールバックと、Irp を処理する他のドライバールーチンによって共有されます。
 
-独自のキューの構造を実装するドライバーには、キューへのアクセスが同期されていると、取り消された Irp がキューから削除する必要がありますを確認します。 ドライバーのライターのこのタスクを簡素化するには、は、キャンセルの安全な IRP のキューは、標準的なフレームワーク、IRP のキューを実装する場合に使用することができますを提供します。 参照してください[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)詳細についてはします。 これは、IRP のキューを実装するための推奨される方法です。
+独自のキュー構造を実装するドライバーは、キューへのアクセスが同期され、キャンセルされた Irp がキューから削除されることを保証する必要があります。 このタスクをドライバー作成者にとって簡単にするために、キャンセルセーフな IRP キューには、IRP キューを実装するときに使用できる標準のフレームワークが用意されています。 詳細については[、「キャンセルセーフな IRP キュー](cancel-safe-irp-queues.md) 」を参照してください。 これは、IRP キューを実装する場合に推奨される方法です。
 
-ドライバーは IRP キューのすべての同期を実装し、ロジックを明示的にキャンセルできます。 たとえば、ドライバーは、インタロックされたキューを使用できます。 ドライバーのディスパッチ ルーチンは、インタロックされたキューおよびドライバーが作成したスレッドに Irp を挿入するか、ドライバーのワーカー スレッドのコールバックを削除して呼び出すことによって、 **ExInterlocked*Xxx*一覧**サポートルーチン。
+ドライバーは、すべての IRP キュー同期とキャンセルロジックを明示的に実装することもできます。 たとえば、ドライバーは、インタロックキューを使用できます。 ドライバーのディスパッチルーチンは、ロックされたキューに Irp を挿入し、ドライバーによって作成されたスレッドまたはドライバーのワーカースレッドのコールバックは、 **Exinterlocked ロック*Xxx*リスト**サポートルーチンを呼び出してそれらを削除します。
 
-たとえば、システム フロッピー コント ローラーのドライバーは、インタロックされたキューを使用します。 そのデバイス専用のスレッドが他のデバイス ドライバーのによって行われる Irp の同じ処理を行います*StartIo*ルーチンとその他のデバイス ドライバーのによって行われる同じ Irp の処理の一部を[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。
+たとえば、システムのフロッピーコントローラードライバーは、インタロックされたキューを使用します。 デバイス専用スレッドは、他のデバイスドライバーの*StartIo*ルーチンによって実行される irp の処理と、他のデバイスドライバーの[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンによって実行される同じ irp の処理を処理します。
 
-### <a name="internal-queues-with-startio-routines-in-drivers"></a>ドライバーで StartIo ルーチンでキューの内部
+### <a name="internal-queues-with-startio-routines-in-drivers"></a>ドライバー内の StartIo ルーチンを使用した内部キュー
 
-独自の内部キューを管理するドライバーを持つことも、 *StartIo*ルーチン必要はありませんが、します。 いずれかがあるほとんどの最下位レベルのデバイス ドライバー、 *StartIo*ルーチンまたは独自の Irp では、両方ではなくキューを管理します。
+独自の内部キューを管理するドライバーも*StartIo*ルーチンを持つことができますが、そうする必要はありません。 最下位レベルのデバイスドライバーには、 *StartIo*ルーチンがあるか、または irp の独自のキューが管理されていますが、両方がありません。
 
-SCSI ポート ドライバーには、例外、 *StartIo*ルーチンおよび Irp の内部キューを管理します。 I/O マネージャーが Irp をポート ドライバーのキューに入れ*StartIo* SCSI HBA を表すデバイスのドライバーが作成したオブジェクトに関連付けられているデバイスのキューで日常的な。 SCSI ポート ドライバーも設定し、Irp のマシンの場合は、任意 HBA ドリブン SCSI バス上の (SCSI 論理ユニットに対応する) 各ターゲット デバイスにデバイスのキューを管理します。
+この例外は、 *StartIo*ルーチンがあり、irp の内部キューを管理する SCSI ポートドライバーです。 I/o マネージャーは、SCSI HBA を表すドライバーによって作成されたデバイスオブジェクトに関連付けられているデバイスキューで、ポートドライバーの*StartIo*ルーチンの irp をキューに置いています。 また、SCSI ポートドライバーは、コンピューターの任意の HBA 駆動型 SCSI バス上の各ターゲットデバイス (SCSI 論理ユニットに対応) に対する Irp のデバイスキューを設定し、管理します。
 
-SCSI ポート ドライバーでは、SCSI バス上の任意のデバイスが特に負荷の高いたびに Irp が SCSI のクラス ドライバー LU 固有のキューから送信を保持するために、補足的なデバイス キューを使用します。 実際には、このドライバーの補足、LU 固有のデバイスのキューは、その HBA の SCSI バス上の各デバイスをできるだけビジー状態で維持しながら、HBA 経由の異種の SCSI デバイスの操作をシリアル化する、SCSI ポート ドライバーを使用します。
+Scsi ポートドライバーは、追加のデバイスキューを使用して、SCSI バス上の任意のデバイスが特にビジー状態になったときに、LU 固有のキューにある SCSI クラスドライバーから送信される Irp を保持します。 実際には、このドライバーの追加の LU 固有のデバイスキューを使用すると、SCSI ポートドライバーは HBA を介して異種 SCSI デバイスの操作をシリアル化しながら、各デバイスを可能な限りビジー状態にすることができます。
 
  
 

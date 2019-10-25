@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_接続\_ALLOCATORFRAMING
-description: クライアントが、KSPROPERTY を使用して、ストリーム クラスのモデルで\_接続\_ALLOCATORFRAMING プロパティ、pin のフレームの要件を決定します。
+title: KSK プロパティ\_接続\_ALLOCATORFRAMING
+description: Stream クラスモデルでは、クライアントは、KSK プロパティ\_接続\_ALLOCATORFRAMING プロパティを使用して、pin のフレーム要件を決定します。
 ms.assetid: 02cacade-938b-4fab-928f-75f790692324
 keywords:
-- KSPROPERTY_CONNECTION_ALLOCATORFRAMING ストリーミング メディア デバイス
+- KSPROPERTY_CONNECTION_ALLOCATORFRAMING ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 051fcc3bca820d5180286790c8ad36d895211ed9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7176f4ea607ecd0f03dbd5ab317a67bb050747b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373124"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826803"
 ---
-# <a name="kspropertyconnectionallocatorframing"></a>KSPROPERTY\_接続\_ALLOCATORFRAMING
+# <a name="ksproperty_connection_allocatorframing"></a>KSK プロパティ\_接続\_ALLOCATORFRAMING
 
 
-クライアントが、KSPROPERTY を使用して、ストリーム クラスのモデルで\_接続\_ALLOCATORFRAMING プロパティ、pin のフレームの要件を決定します。
+Stream クラスモデルでは、クライアントは、KSK プロパティ\_接続\_ALLOCATORFRAMING プロパティを使用して、pin のフレーム要件を決定します。
 
 ## <span id="ddk_ksproperty_connection_allocatorframing_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_ALLOCATORFRAMING_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373124"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373124"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)"><strong>KSALLOCATOR_FRAMING</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)"><strong>KSALLOCATOR_FRAMING</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "67373124"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します、 [ **KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)pin のフレームの要件をについて説明します。 たとえば、**フレーム ・ サイズ**メンバーが、ピンでデータのフレーム サイズを指定します。
+このプロパティは、ピンのフレーム要件を記述する[**Ksallocator\_フレーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)を返します。 たとえば、 **Framesize**メンバーは、ピン上のデータのフレームサイズを指定します。
 
-AVStream ミニドライバーを使用する必要があります[ **KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX**](ksproperty-connection-allocatorframing-ex.md)します。
+AVStream ミニドライバーは、 [ **\_ALLOCATORFRAMING\_EX の\_接続**](ksproperty-connection-allocatorframing-ex.md)を使用する必要があります。
 
-参照してください[KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)します。 [AVStream アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-allocators)します。
+「 [KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)」を参照してください。 および[Avstream アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-allocators)。
 
 <a name="requirements"></a>要件
 ------------
@@ -81,7 +81,7 @@ AVStream ミニドライバーを使用する必要があります[ **KSPROPERTY
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ AVStream ミニドライバーを使用する必要があります[ **KSPROPERTY
 ## <a name="see-also"></a>関連項目
 
 
-[**KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)
+[**KSALLOCATOR\_フレーミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)
 
  
 

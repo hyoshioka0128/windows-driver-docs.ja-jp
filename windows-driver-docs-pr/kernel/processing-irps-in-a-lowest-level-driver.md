@@ -3,26 +3,26 @@ title: 最下位レベル ドライバーでの IRP の処理
 description: 最下位レベル ドライバーでの IRP の処理
 ms.assetid: 9b8c2586-d47b-49ab-bf65-a298af36304c
 keywords:
-- Irp WDK カーネル、処理の例
-- Irp WDK カーネルでは、I/O の状態のブロック
-- I/O 状態ブロック WDK カーネル
-- 状態ブロックの WDK カーネル
-- います
+- Irp WDK カーネル、処理例
+- Irp WDK カーネル、i/o 状態ブロック
+- I/o ステータスが WDK カーネルをブロックする
+- 状態は WDK カーネルをブロックします
+- IoStartNextPacket
 - IoCompleteRequest
 - IoRequestDpc
 - AllocateAdapterChannel
 - MapTransfer
 - IoStartPacket
 - IoMarkIrpPending
-- IoGetCurrentIrpStackLocation
+- Iogetlocation Entiの場所
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af990ffb007eaa2070157c3864de358198ac32c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 26448d746e4e6e729f5cd254a0c3a612fbcdf4f0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378829"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827610"
 ---
 # <a name="processing-irps-in-a-lowest-level-driver"></a>最下位レベル ドライバーでの IRP の処理
 
@@ -30,85 +30,85 @@ ms.locfileid: "67378829"
 
 
 
-最下位レベルの物理的なドライバーより高度なドライバーが不要な特定の標準的なルーチンがあります。 最下位レベルのドライバーに対して標準的なルーチンのセットは、次の基準に従っても異なります。
+最下位レベルの物理ドライバーには、上位レベルのドライバーが必要としない特定の標準ルーチンがあります。 最下位レベルのドライバーの標準ルーチンのセットも、次の条件によって異なります。
 
--   各ドライバーを制御するデバイスの種類
+-   各ドライバーが制御するデバイスの性質
 
--   直接またはバッファー内の I/O オブジェクトをそのデバイス ドライバーを設定するかどうか
+-   ドライバーが直接またはバッファー内の i/o のためにデバイスオブジェクトを設定するかどうか
 
--   個々 のドライバーの設計
+-   個々のドライバーの設計
 
-標準のドライバーのルーチンのロールを示すためには、次の図は、パスを IRP が最下位レベルの大容量記憶装置ドライバーでは、処理にかかる場合があるサンプルに示します。 図に、ドライバーでは、次の特徴があります。
+標準のドライバールーチンの役割を説明するために、次の図は、最小レベルの大容量記憶装置ドライバーによって処理されるときに、サンプルの IRP が実行する可能性のあるパスを示しています。 図のドライバーには、次の特性があります。
 
--   デバイスには、各 I/O 操作の最後に割り込みが生成されるので、このドライバーは ISR と[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。
+-   デバイスは各 i/o 操作の終了時に割り込みを生成するため、このドライバーには ISR ルーチンと[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンがあります。
 
--   ドライバーは、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンではなく Irp の内部キューの設定と、独自のキューを管理します。
+-   このドライバーには、Irp の内部キューを設定し、独自のキューを管理するのではなく、 [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンがあります。
 
--   そのデバイス オブジェクトを設定するため、ドライバーはシステム、DMA を使用して**フラグ**ダイレクト i/o であり、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチン。
+-   ドライバーはシステム DMA を使用するので、デバイスオブジェクトの**フラグ**をダイレクト i/o 用に設定し、 [*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンを持っています。
 
-![最下位レベルのドライバーのルーチンを irp のパスを示す図](images/4loddirp.png)
+![下位レベルのドライバールーチンを使用した irp パスを示す図](images/4loddirp.png)
 
-この図に示す、I/O マネージャーは IRP を作成し、特定の主要な関数のコード用のドライバーのディスパッチ ルーチンに送信します。 いずれかと仮定すると、関数コードが[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)または[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)、ディスパッチ ルーチンは**DDDispatchReadWrite**します。
+この図に示すように、i/o マネージャーは IRP を作成し、指定された主要な関数コードのドライバーのディスパッチルーチンに送信します。 関数コードが[**irp\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)または[**irp\_MJ\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)のいずれかであると仮定すると、ディスパッチルーチンは**DDDispatchReadWrite**です。
 
-### <a name="calling-iogetcurrentirpstacklocation"></a>IoGetCurrentIrpStackLocation を呼び出す
+### <a name="calling-iogetcurrentirpstacklocation"></a>Iogetを呼び出しています。
 
-IRP パラメーターが必要なドライバーのルーチンを呼び出す必要があります[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ドライバーの入手[I/O スタックの場所](i-o-stack-locations.md)します。 このようなルーチンには、1 つ以上の主要な I/O 関数コードを処理するディスパッチ ルーチン (<strong>IRP\_MJ\_* XXX</strong><em>)、マイナー機能をサポートする関数の処理 (</em> <em>IRP\_MN\_</em>XXX<strong><em>)、またはデバイス I/O 制御要求の処理 ([</em>* IRP\_MJ\_デバイス\_制御</strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>)や[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control))、と共にすべてIRP の処理の他のドライバー ルーチンです。
+IRP パラメーターを必要とするドライバールーチンでは、 [**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)を呼び出して、ドライバーの[i/o スタックの場所](i-o-stack-locations.md)を取得する必要があります。 このようなルーチンには、複数の主要 i/o 関数コード (<strong>irp\_MJ\_* XXX</strong>) を処理するディスパッチルーチン<em>、マイナー関数をサポートする関数 (</em><em>irp\_</em>によって処理される\_XXX<strong><em>)、またはデバイス i/o を処理するディスパッチルーチンが含まれます。[</em></strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>) irp を処理する他のすべてのドライバールーチンと共に、制御要求 (* irp\_MJ\_デバイス\_制御や[**IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control))。
 
-このドライバーの I/O スタックの場所は、最低 1 つの不特定数の上位レベルのドライバーの網掛け表示 I/O スタックの場所を使用します。 わかりやすくするため、呼び出し**IoGetCurrentIrpStackLocation**から、 [ *DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 *StartIo*、 *AdapterControl*、および[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチンは、上記の図に表示されません。
+このドライバーの i/o スタックの場所は、最も低いものであり、より高レベルのドライバーの i/o スタックの場所が影付きで表示されます。 わかりやすくするために、 [*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 *StartIo*、 *adaptercontrol*、および[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)の各ルーチンから**ioget**を呼び出すための呼び出しは、前の図には記載されていません。
 
-### <a name="calling-iomarkirppending-and-iostartpacket"></a>IoMarkIrpPending および IoStartPacket の呼び出し
+### <a name="calling-iomarkirppending-and-iostartpacket"></a>IoMarkIrpPending と IoStartPacket を呼び出しています
 
-サンプル ドライバーは、ディスパッチ ルーチン内の IRP が完了しないが、代わりにで IRP を処理、 *StartIo*ルーチン。 これを行う前に、ディスパッチ ルーチンを呼び出す[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)を IRP が完了していないことを示します。 呼び出して[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket) IRP がドライバーのによってさらに処理をキューに*StartIo*ルーチン。 ディスパッチ ルーチンも NTSTATUS 値の状態を返します\_保留します。
+サンプルドライバーは、そのディスパッチルーチンで IRP を完了するのではなく、代わりに*StartIo*ルーチンで irp を処理します。 これを行う前に、ディスパッチルーチンは[**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出して、IRP がまだ完了していないことを示します。 次に、 [**Iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)を呼び出して、ドライバーの*StartIo*ルーチンによる後続の処理のために IRP をキューに追加します。 また、ディスパッチルーチンは、NTSTATUS 値の状態\_PENDING を返します。
 
-次の図への呼び出しを示しています。 **IoStartPacket**します。
+次の図は、 **Iostartpacket**の呼び出しを示しています。
 
-![iostartpacket への呼び出しを示す図](images/4strtpak.png)
+![iostartpacket の呼び出しを示す図](images/4strtpak.png)
 
-ドライバーが、デバイス上の別の IRP の処理でビジー状態の場合**IoStartPacket** IRP をデバイス オブジェクトに関連付けられているデバイスのキューに挿入します。 必要に応じて、ドライバーを指定できます、*キー*へのパラメーターとして値**IoStartPacket**デバイスのキューの Irp でのドライバーにより決定された順序を強制します。
+ドライバーがデバイス上の別の IRP を処理しているときに、デバイスオブジェクトに関連付けられているデバイスキューに IRP**が挿入さ**れます。 ドライバーは、必要に応じて**Iostartpacket**のパラメーターとして*キー*値を指定して、ドライバーによってデバイスキュー内の irp に対して順序を決定することができます。
 
-I/O マネージャーがすぐに呼び出し、ドライバーがビジー状態ではなく、デバイスのキューが空場合は、その*StartIo*ルーチン、IRP の入力を渡します。
+ドライバーがビジーでなく、デバイスキューが空の場合、i/o マネージャーはすぐに*StartIo*ルーチンを呼び出し、入力 IRP を渡します。
 
-大容量記憶装置デバイスの場合は、最下位レベルのドライバーを指定する必要ありません、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチンを呼び出すときに**IoStartPacket** 2 つの理由。
+大容量記憶装置の場合、最低レベルのドライバーでは、次の2つの理由で**Iostartpacket**を呼び出すときに[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンを指定する必要はありません。
 
-1.  このようなドライバーの上層に通常のファイル システムでは、ファイル I/O 要求のキャンセルを処理します。
+1.  通常、このようなドライバーで階層化されたファイルシステムは、ファイル i/o 要求のキャンセルを処理します。
 
-2.  大容量記憶装置デバイス ドライバーは Irp を迅速に処理します。
+2.  大容量記憶装置ドライバーは、Irp を迅速に処理します。
 
-通常、複数層のドライバーのチェーンの最上位レベルのドライバーは Irp のキャンセルを処理します。
+通常、階層化されたドライバーのチェーンの最上位レベルのドライバーは、Irp のキャンセルを処理します。
 
-### <a name="calling-allocateadapterchannel-and-maptransfer"></a>AllocateAdapterChannel および MapTransfer の呼び出し
+### <a name="calling-allocateadapterchannel-and-maptransfer"></a>AllocateAdapterChannel と MapTransfer の呼び出し
 
-仮定すると、 *StartIo*最下位レベルのドライバーのルーチンを IRP のパスを示すには、転送要求を 1 つの DMA 操作を行うことが決定しますの図のように、日常的な*StartIo*ルーチンの呼び出し[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)ドライバーのエントリ ポイントで*AdapterControl*ルーチンと IRP します。
+図に示されているように、最下位レベルのドライバールーチンを介した IRP パスを示す*StartIo*ルーチンが、転送要求を1つの DMA 操作で実行できると判断した場合、 *StartIo*ルーチンはを呼び出し[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)ドライバーの*adaptercontrol*ルーチンと IRP のエントリポイントを持つ AllocateAdapterChannel。
 
-システムの DMA コント ローラーを使用できる I/O マネージャー呼び出し、ドライバーの*AdapterControl*転送操作で転送を設定するルーチン。 *AdapterControl*ルーチンの呼び出し[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)システム DMA コント ローラーを設定します。 ドライバーはそのデバイス DMA 操作をプログラムし、返します。 (詳細については、DMA とアダプター オブジェクトを使用して、次を参照してください[入力/出力手法](i-o-programming-techniques.md)。)。
+システム DMA コントローラーが使用可能な場合は、i/o マネージャーがドライバーの*Adaptercontrol*ルーチンを呼び出して転送操作を設定します。 *Adaptercontrol*ルーチンは、システム DMA コントローラーを設定するために[**maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)を呼び出します。 次に、ドライバーは DMA 操作用にデバイスをプログラムし、を返します。 (DMA とアダプタオブジェクトの使用方法の詳細については、「[入出力技法](i-o-programming-techniques.md)」を参照してください)。
 
-### <a name="calling-iorequestdpc-from-the-drivers-isr"></a>ドライバーから IoRequestDpc を呼び出す ISR
+### <a name="calling-iorequestdpc-from-the-drivers-isr"></a>ドライバーの ISR から IoRequestDpc を呼び出しています
 
-デバイスの割り込みをその転送操作の完了を示すために、ドライバーの ISR 停止、デバイスからの割り込みおよび呼び出し生成[ **IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)図の説明のように、最下位レベルのドライバーのルーチンを IRP のパス。
+転送操作が完了したことを示すためにデバイスが中断した場合、ドライバーの ISR は、デバイスが割り込みを生成しないようにし、 [**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)を呼び出します。図に示すように、下位レベルのドライバールーチンによる IRP パスを示しています。
 
-この呼び出しはキュー、ドライバーの*DpcForIsr*ルーチンをできるだけ低いハードウェア優先順位 (IRQL) で転送操作の多くの部分を完了します。
+この呼び出しは、ドライバーの*DpcForIsr*ルーチンをキューに置いて、できるだけ低いハードウェア優先度 (IRQL) で、可能な限り多くの転送操作を完了します。
 
-### <a name="calling-iostartnextpacket-and-iocompleterequest"></a>いますおよび IoCompleteRequest の呼び出し
+### <a name="calling-iostartnextpacket-and-iocompleterequest"></a>IoStartNextPacket と IoCompleteRequest を呼び出しています
 
-ときに、 *DpcForIsr*ルーチンには、転送の処理が完了しました、呼び出す[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)迅速にできるように、ドライバーの*StartIo*いずれかがキューに置かれた場合にそのルーチンがデバイスのキューで [次へ] の IRP で呼び出されます。 *DpcForIsr*ルーチンも完了したばかりの IRP の I/O の状態のブロックを設定し、呼び出します[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP の。
+*DpcForIsr*ルーチンが転送の処理を完了すると、デバイスキュー内の次の IRP でドライバーの*StartIo*ルーチンが呼び出されるように、 [**iostartnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)が即座に呼び出されます (キューに登録されている場合)。 また、 *DpcForIsr*ルーチンは、完了した irp の i/o 状態ブロックも設定し、Irp の[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。
 
-次の図は、このドライバーの呼び出しを**います**と**IoCompleteRequest**します。
+次の図は、このドライバーによる**Iostartnextpacket**と**IoCompleteRequest**の呼び出しを示しています。
 
-![呼び出し元のいます、iocompleterequest](images/4snxtpak.png)
+![iostartnextpacket と iocompleterequest を呼び出しています](images/4snxtpak.png)
 
-ドライバーを呼び出す必要があります**います**または[ **IoStartNextPacketByKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacketbykey) [次へ] を開始する要求された I/O 操作をできるだけ早く可能であれば呼び出しの前に**IoCompleteRequest**します。
+ドライバーは、次に要求された i/o 操作をできるだけ早く開始するために、 **Iostartnextpacket**または[**Iostartnextpacketbykey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacketbykey)を呼び出す必要があります。可能であれば、 **IoCompleteRequest**を呼び出す前に行う必要があります。
 
-デバイスの任意の Irp がキューに置かれた場合**います**呼び出し[ **KeRemoveDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovedevicequeue) IRP が [次へ] をキューから削除します。 I/O マネージャーを呼び出してドライバーの*StartIo*ルーチン、キューから取り出された IRP を渡します。 Irp 現在存在しない場合、デバイスのキューで**います**だけで、呼び出し元に返します。
+デバイスの Irp がキューに登録されている場合、 **Iostartnextpacket**は[**Keremovedevicequeue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovedevicequeue)を呼び出して、キューから次の irp を削除します。 次に、i/o マネージャーは、デキューされた IRP を渡して、ドライバーの*StartIo*ルーチンを呼び出します。 現在デバイスキューに Irp が存在しない場合、 **Iostartnextpacket**は単に呼び出し元に戻ります。
 
-### <a href="" id="ddk-setting-the-i-o-status-block-in-an-irp-kg"></a>IRP の状態の I/O ブロックの設定
+### <a href="" id="ddk-setting-the-i-o-status-block-in-an-irp-kg"></a>IRP での i/o 状態ブロックの設定
 
-最下位レベルのすべてのドライバーは IRP を設定する必要があります[状態の I/O ブロック](i-o-status-blocks.md)呼び出す前に[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。 (前の図に、2 つ目の網掛けを表します状態ブロック。)状態の I/O ブロックより高度なドライバーと、最終的は、I/O 操作の元の要求者の情報を提供します。 前の図に、ドライバーの上に配置されたより高度なドライバーを設定することがありますが、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)状態の I/O ブロックを読み取るルーチンは、このドライバーで設定します。 通常より高度なドライバーにはデバイス ドライバーによって完了されたより高度なドライバーはで、再試行の IRP では、その場合はしない限り、状態の I/O ブロックを再初期化する IRP の I/O 状態ブロック変更しません。
+すべての最下位レベルのドライバーは、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出す前に、IRP の[i/o 状態ブロック](i-o-status-blocks.md)を設定する必要があります。 (前の図では、2番目の影付き領域は状態ブロックを表しています)。I/o 状態ブロックは、上位レベルのドライバーに情報を提供し、最終的には i/o 操作の元の要求元に情報を渡します。 前の図のドライバーの上にある上位レベルのドライバーは、このドライバーによって設定された i/o 状態ブロックを読み取る[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定している可能性があります。 上位レベルのドライバーは、通常、デバイスドライバーによって完了された IRP 内の i/o 状態ブロックを変更しません。ただし、上位レベルのドライバーが IRP を再試行している場合は、i/o 状態ブロックが再初期化されます。
 
-[次へ] の下位のドライバーに送信する I/O の状態を設定する必要がありますもせずに IRP が完了するとすべての高度なドライバーを呼び出す前にその IRP でブロック**IoCompleteRequest**します。 全体的な I/O スループットの高いより高度なドライバー各 IRP の独自 I/O スタックの場所では、パラメーターを確認する必要があり場合パラメーターが有効でない必要があります状態の I/O ブロックの設定自体、要求を完了します。 可能であれば、ドライバーは、チェーン内の下位のドライバーに無効な要求を渡すことを避ける必要があります。
+次に低いドライバーに送信せずに IRP を完了するすべての上位レベルのドライバーでは、 **IoCompleteRequest**を呼び出す前に、その irp の i/o 状態ブロックも設定する必要があります。 全体的な i/o スループットを向上させるには、上位レベルのドライバーで各 IRP の専用の i/o スタックの場所にあるパラメーターを確認し、パラメーターが無効な場合は i/o 状態ブロックを設定して要求自体を完了する必要があります。 可能な限り、ドライバーは、チェーン内の下位のドライバーに対して無効な要求を渡すことを避ける必要があります。
 
-前の図の転送操作が成功したと仮定すると、 *DpcForIsr*の図のように、日常的な状態を設定最下位レベルのドライバーのルーチンからの IRP パスを示す、\_で成功**状態**で転送されたバイト数と**情報**IRP の I/O の状態のブロックにします。
+前の図の転送操作が成功した場合、図に示されている*DpcForIsr*ルーチンは、最下位レベルのドライバールーチンを介した IRP パスを示しています。状態が成功に設定されていることを示す**状態とバイト**数を\_設定します。IRP の i/o 状態ブロックの**情報**が転送されました。
 
-標準のドライバーのルーチンの多くも NTSTATUS 型の値を返します。 NTSTATUS 定数状態などの詳細については\_成功するを参照してください[ログ エラー](logging-errors.md)します。
+標準ドライバールーチンの多くは、NTSTATUS 型の値も返します。 ステータス\_成功などの NTSTATUS 定数の詳細については、「[ログエラー](logging-errors.md)」を参照してください。
 
  
 

@@ -3,15 +3,15 @@ title: 出力ストリーム
 description: 出力ストリーム
 ms.assetid: 91be637c-f195-4713-bfb0-b41c0346e390
 keywords:
-- 出力ストリームの WDK DVD デコーダー
+- 出力ストリーム WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 732f192f3ff95a972cd9ca6941162a64a1f6585c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c6a6545857cceb4b747d30b19fef5ab2d55a60d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370396"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823508"
 ---
 # <a name="output-streams"></a>出力ストリーム
 
@@ -19,7 +19,7 @@ ms.locfileid: "67370396"
 
 
 
-次の表では、ビデオ ポート出力ストリーム メディアを Dvd で使用される型について説明します。
+次の表では、Dvd で使用されるビデオポートの出力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -28,13 +28,13 @@ ms.locfileid: "67370396"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_VIDEO</p></td>
 </tr>
 <tr class="even">
@@ -42,21 +42,21 @@ ms.locfileid: "67370396"
 <td><p>KSDATAFORMAT_SUBTYPE_VPVideo</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_NULL</p>
 <div>
  
 </div>
-形式ブロックがありません。</td>
+フォーマットブロックがありません。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-カーネル モード インターフェイスでは、ビデオ ポート (VPE) の拡張機能設定の制御を提供します。 詳細については、次を参照してください。[ビデオ ポート拡張機能のバック グラウンド](https://docs.microsoft.com/windows-hardware/drivers/display/video-port-extensions-background)します。
+カーネルモードインターフェイスは、ビデオポート拡張 (VPE) の設定を制御します。 詳細については、「 [VideoPort Extensions Background](https://docs.microsoft.com/windows-hardware/drivers/display/video-port-extensions-background)」を参照してください。
 
-次の表では、クローズド キャプション (CC) 出力ストリーム メディアを Dvd で使用される型について説明します。
+次の表では、Dvd で使用されるクローズドキャプション (CC) 出力ストリームメディアの種類について説明します。
 
 <table>
 <colgroup>
@@ -65,13 +65,13 @@ ms.locfileid: "67370396"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>備わっている</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>主な形式の GUID</p></td>
+<td><p>メジャー形式 GUID</p></td>
 <td><p>KSDATAFORMAT_TYPE_AUXLine21Data</p></td>
 </tr>
 <tr class="even">
@@ -79,19 +79,19 @@ ms.locfileid: "67370396"
 <td><p>KSDATAFORMAT_SUBTYPE_Line21_GOPPacket</p></td>
 </tr>
 <tr class="odd">
-<td><p>書式指定子のブロックの GUID</p></td>
+<td><p>書式指定子の GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_NONE</p>
 <div>
  
 </div>
-形式ブロックがありません。</td>
+フォーマットブロックがありません。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-200 (小数) でのフレーム サイズ、 **SampleSize**のメンバー、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)構造を指定する必要があります。 詳細については、次を参照してください。[クローズド キャプション ストリーム](closed-captioning-streams.md)します。
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)構造体の**SampleSize**メンバーのフレームサイズ 200 (10 進数) を指定する必要があります。 詳細については、「[クローズドキャプションストリーム](closed-captioning-streams.md)」を参照してください。
 
  
 

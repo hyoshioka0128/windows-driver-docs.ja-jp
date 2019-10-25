@@ -6,23 +6,23 @@ keywords:
 - 生体認証ドライバー WDK、WinUSB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88e7667e3a7b36638937af29cb4efd69fc1a52d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db1906e4202fba1cd20f319fa51f5da2edb1c51c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354061"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833911"
 ---
 # <a name="using-winusb-in-a-wbdi-driver"></a>WBDI ドライバーでの WinUSB の使用
 
 
-Microsoft WBDI ドライバーを使用することをお勧め、 [USB I/O ターゲット](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets-in-umdf)ユーザー モード ドライバー フレームワーク (UMDF) には構築されています。
+WBDI ドライバーでは、ユーザーモードドライバーフレームワーク (UMDF) に組み込まれている[USB i/o ターゲット](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets-in-umdf)を使用することをお勧めします。
 
-### <a name="span-idsettingumdfdispatcherspanspan-idsettingumdfdispatcherspansetting-umdfdispatcher"></a><span id="setting_umdfdispatcher"></span><span id="SETTING_UMDFDISPATCHER"></span>UmdfDispatcher の設定
+### <a name="span-idsetting_umdfdispatcherspanspan-idsetting_umdfdispatcherspansetting-umdfdispatcher"></a><span id="setting_umdfdispatcher"></span><span id="SETTING_UMDFDISPATCHER"></span>UmdfDispatcher の設定
 
-UMDF ドライバーをインストールする INF ファイルは、特定の WDF を含める必要があります**DDInstall**セクション。 UMDF で USB I/O ターゲットを使用する場合は、この UmdfDispatcher レジストリ ディレクティブを設定する必要があります**DDInstall**セクション。
+UMDF ドライバーをインストールする INF ファイルには、WDF 固有の**Ddinstall**セクションが含まれている必要があります。 UMDF で USB i/o ターゲットを使用する場合は、この**Ddinstall**セクション内で UmdfDispatcher registry ディレクティブを設定する必要があります。
 
-次のセクションで WudfBioUsbSample.inx から、 [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)サンプルは、このディレクティブを設定する方法を示します。
+[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)サンプルの WudfBioUsbSample の次のセクションは、このディレクティブの設定方法を示しています。
 
 ```cpp
 [Biometric_Install.NT.Wdf]
@@ -32,27 +32,27 @@ UmdfService=WudfBioUsbSample, WudfBioUsbSample_Install
 UmdfServiceOrder=WudfBioUsbSample
 ```
 
-UmdfDispatcher 詳細については、次を参照してください。 [UmdfDispatcher INF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。 WDF レジストリ ディレクティブについては、次を参照してください。 [WDF ディレクティブを指定する](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。
+UmdfDispatcher の具体的な情報については、「 [UMDFDISPATCHER INF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)」を参照してください。 WDF registry ディレクティブに関する一般的な情報については、「 [WDF ディレクティブの指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)」を参照してください。
 
-### <a name="span-idpendingasynchronousreadrequestsspanspan-idpendingasynchronousreadrequestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>保留中の非同期読み取り要求
+### <a name="span-idpending_asynchronous_read_requestsspanspan-idpending_asynchronous_read_requestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>保留中の非同期読み取り要求
 
-WinUsb には、複数の未処理の読み取り要求を処理できます。 スキャン中に読み取り操作の間の最小限の待機時間を必要とするデバイスは、いくつかの保留中の未処理の非同期読み取り要求を保持する必要があります。 ドライバーは、非同期要求を行う、WinUsb は以前の読み取り要求の完了ルーチンのユーザー モードに戻す、転送する前にこれらの要求を発行します。
+WinUsb では、複数の未処理の読み取り要求を処理できます。 スキャン中に読み取り操作間の待機時間を最小限にする必要があるデバイスは、いくつかの未処理の非同期読み取り要求を保留状態のままにしておく必要があります。 ドライバーが非同期要求を行う場合、WinUsb は、前の読み取り要求の完了ルーチンのユーザーモードへの転送前に、これらの要求を発行します。
 
-参照することができます、`CBiometricDevice::InitiatePendingRead`メソッドで Device.cpp [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)に読み取り要求を保留する方法のコード例を参照してください。
+[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)の `CBiometricDevice::InitiatePendingRead` メソッドを参照して、読み取り要求を保留する方法のコード例を確認できます。
 
-読み取り要求を保留するコードは、次の手順のループになります。
+読み取り要求を保留するコードは、次の手順のループにする必要があります。
 
-1.  呼び出して、事前に割り当てられた framework メモリ オブジェクトを作成する[ **IWDFDriver::CreatePreallocatedWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)します。
+1.  [**Iwdfdriver:: CreatePreallocatedWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)を呼び出して、事前に割り当てられたフレームワークメモリオブジェクトを作成します。
 
-2.  コールバック コードで提供、 [ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチン。 参照してください`CBiometricDevice::OnCompletion`サンプル。
+2.  [**Oncompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチンでコールバックコードを指定します。 このサンプルの「`CBiometricDevice::OnCompletion`」を参照してください。
 
-3.  ポインターを取得、 [ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)所有するオブジェクトのインターフェイス。
+3.  所有しているオブジェクトの[**Irequestの要求完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)インターフェイスへのポインターを取得します。
 
-4.  コールバック関数を呼び出すことによって登録[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)へのポインターを渡して[ **IRequestCallbackRequestCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)前の手順で取得したものでした。 I/O 要求が完了すると、フレームワークは、コールバックを呼び出しますようになりました。
+4.  [**IWDFIoRequest:: Setcompletion callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)を呼び出し、前の手順で取得した[**irequestcallbackrequestcompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)へのポインターを渡すことによって、コールバック関数を登録します。 これで、i/o 要求が完了すると、フレームワークはコールバックを呼び出します。
 
-5.  呼び出す[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)デバイスに、読み取り要求を送信します。
+5.  [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を呼び出して、読み取り要求をデバイスに送信します。
 
-6.  プロセスは、コールバックの完了が発生したときに要求を読み取る。 前に、 [ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチンを開始する、新しい読み取り要求の保留中、I/O のターゲットの状態を確認する必要があります。 これを行うには、クエリ[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)へのポインターの[IWDFIoTargetStateManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイス。 呼び出して[ **IWDFIoTargetStateManagement::GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate):
+6.  コールバックの完了時に読み取り要求を処理します。 [**Oncompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)ルーチンは、保留中の新しい読み取り要求を開始する前に、i/o ターゲットの状態を確認する必要があります。 これを行うには、 [IWDFIoTargetStateManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイスへのポインターに対して[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)をクエリします。 次に、 [**IWDFIoTargetStateManagement:: GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate)を呼び出します。
     ```cpp
     IWDFIoTarget * pTarget
     IWDFIoTargetStateManagement * pStateMgmt = NULL;
@@ -64,26 +64,26 @@ WinUsb には、複数の未処理の読み取り要求を処理できます。 
     state = pStateMgmt->GetState();
     ```
 
-スキャンが完了したら、保留中の読み取り要求をキャンセルします。
+スキャンが完了したら、保留中の読み取り要求を取り消します。
 
-UMDF USB ターゲットを使用した場合は、保留状態のままに読み取り要求を許可できます電源の間で、電源アップします。
+UMDF USB ターゲットを使用している場合は、電源を入れながら電源を入れて、読み取り要求を保留したままにすることができます。
 
-UMDF USB ターゲットを使用しない場合ドライバーが D0Exit に読み取り要求の保留中の送信を停止し、D0Entry で再起動する必要があります。
+UMDF USB ターゲットを使用しない場合、ドライバーは D0Exit で保留中の読み取り要求の送信を停止し、D0Entry で再起動する必要があります。
 
-### <a name="span-idselectivesuspendspanspan-idselectivesuspendspanselective-suspend"></a><span id="selective_suspend"></span><span id="SELECTIVE_SUSPEND"></span>選択的な中断
+### <a name="span-idselective_suspendspanspan-idselective_suspendspanselective-suspend"></a><span id="selective_suspend"></span><span id="SELECTIVE_SUSPEND"></span>選択的中断
 
-WBDI ドライバーをサポートする必要があります[USB のセレクティブ サスペンド](../usbcon/usb-selective-suspend.md)します。
+WBDI ドライバーは、 [USB のセレクティブサスペンド](../usbcon/usb-selective-suspend.md)をサポートする必要があります。
 
-システム スリープ解除をサポートするデバイスとデバイスがアイドル状態のレジストリ設定を有効にする必要があります選択的 WudfBioUsbSample.inx からこのコード例で示すように、WinUsb で中断します。
+システムのスリープとデバイスのアイドル状態をサポートするデバイスでは、次の WudfBioUsbSample のコード例に示すように、WinUsb でのセレクティブサスペンドのレジストリ設定を有効にする必要があります。
 
 ```cpp
 HKR,,"SystemWakeEnabled",0x00010001,1
 HKR,,"DeviceIdleEnabled",0x00010001,1
 ```
 
-オペレーティング システムの USB スタックは、システムのスリープ解除と、ドライバーがデバイスから読み取りを開始するときのタイミングを保証できません。
+オペレーティングシステムの USB スタックは、システムのスリープ解除と、ドライバーがデバイスからの読み取りを開始できるタイミングを保証できません。
 
-理想的には、デバイスが状態のままに、システムが中断されている場合、スキャンをキャプチャする準備が。 システムが中断されている間に、スキャンが発生した場合、デバイスは、全体の指紋のスキャンの入力データをキャッシュする必要があります。 ときに、システムは、ドライバー、スリープ状態を解除し、デバイスからデータを読み取ります。 このシナリオをサポートすることでシステムのスリープ解除を有効にしてシナリオのロックを解除/ログインします。
+理想的には、デバイスは、システムが中断されたときにスキャンをキャプチャする準備ができている状態のままにしておく必要があります。 システムが中断されている間にスキャンが実行された場合、デバイスは、指紋スキャン全体の入力データをキャッシュする必要があります。 システムが起動すると、ドライバーはデバイスからデータを読み取ります。 このシナリオをサポートすることで、システムのスリープ解除とロック解除/ログインのシナリオを有効にすることができます。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_オーディオ\_コピー\_保護
-description: KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ ストリームのコピー防止の状態を指定します。
+title: KSK プロパティ\_AUDIO\_コピー\_保護
+description: KSK プロパティ\_AUDIO\_COPY\_PROTECTION プロパティは、オーディオストリームのコピー防止の状態を指定します。
 ms.assetid: 68896bd4-9ffe-4632-a3b2-441b5d04208a
 keywords:
-- KSPROPERTY_AUDIO_COPY_PROTECTION オーディオ デバイス
+- KSPROPERTY_AUDIO_COPY_PROTECTION オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 601da5beb0e302729882b6c7e9e0977d2fecae47
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: e07a90b94148bad35114a5d6be35d121b08fd7c7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391484"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831059"
 ---
-# <a name="kspropertyaudiocopyprotection"></a>KSPROPERTY\_オーディオ\_コピー\_保護
+# <a name="ksproperty_audio_copy_protection"></a>KSK プロパティ\_AUDIO\_コピー\_保護
 
 
-KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ ストリームのコピー防止の状態を指定します。
+KSK プロパティ\_AUDIO\_COPY\_PROTECTION プロパティは、オーディオストリームのコピー防止の状態を指定します。
 
 ## <span id="ddk_ksproperty_audio_copy_protection_ks"></span><span id="DDK_KSPROPERTY_AUDIO_COPY_PROTECTION_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,39 +50,39 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_copy_protection" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_copy_protection)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は型 KSAUDIO の構造体\_コピー\_保護します。 構造体かどうか、ストリームは著作権は; を指定しますまた、ストリームが元のストリームまたは元のストリームのコピーがあるかどうかを指定します。
+プロパティ値 (操作データ) は、KSK AUDIO\_COPY\_PROTECTION 型の構造体です。 構造体は、ストリームに著作権があるかどうかを指定します。また、ストリームが元のストリームであるか、元のストリームのコピーであるかも指定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_オーディオ\_コピー\_保護プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+\_\_コピー\_保護プロパティ要求\_KSK プロパティは、正常に完了したことを示すステータス成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-KSPROPERTY\_オーディオ\_コピー\_保護プロパティは、シリアル コピー管理システム (SCMS) するような保護スキームをサポートするオーディオ デバイスのプロパティ。 プロパティは、デジタルのストリームが著作権によって保護されているかどうかと、元のストリームとコピーであるかを示します。
+KSK プロパティ\_AUDIO\_COPY\_PROTECTION プロパティは、シリアルコピー管理システム (SCMS) と同様の保護スキームをサポートするオーディオデバイスのプロパティです。 プロパティは、デジタルストリームが著作権によって保護されているかどうか、および元のストリームまたはコピーかどうかを示します。
 
-SCMS には、オーディオ コンテンツの保護の 3 つのレベルを指定できます。
+SCMS は、次の3つのレベルのオーディオコンテンツ保護を提供できます。
 
-**レベル 0:** 無制限の著作権が不足していますかを著作権情報をアサートしませんストリームのコピー。
+**レベル 0:** 著作権が不足している、または著作権をアサートしていないストリームの無制限のコピー。
 
-**レベル 1:** 第 1 世代のストリームへのコピーの制限。 ユーザーは、元の著作権で保護されたストリームのコピーを作成できますが、ストリームのコピーのコピーを作成することはできません。
+**レベル 1:** 最初の生成ストリームへのコピーの制限。 ユーザーは、元の著作権を持つストリームのコピーを作成できますが、ストリームのコピーを作成することはできません。
 
-**レベル 2:** ストリームのすべてコピーするありません。
+**レベル 2:** すべてのストリームでコピーすることはできません。
 
-KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した関連付けられていない機能の実装に[デジタル著作権管理 (DRM)](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)と Windows のセキュリティで保護されたオーディオのパス (SAP)メディア。 SAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+KSK プロパティ\_AUDIO\_COPY\_PROTECTION プロパティは、[デジタル Rights Management (DRM)](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)と Windows Media のセキュリティで保護されたオーディオパス (SAP) の実装とは別のものです。 SAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -93,17 +93,17 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_コピー\_保護**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)
+[**KSAUDIO\_コピー\_保護**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_copy_protection)
 
  
 

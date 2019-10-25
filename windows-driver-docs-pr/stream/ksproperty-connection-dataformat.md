@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_接続\_DATAFORMAT
-description: クライアントの使用、KSPROPERTY\_接続\_DATAFORMAT プロパティを現在のデータ形式を設定します。
+title: KSK プロパティ\_接続\_DATAFORMAT
+description: クライアントは、KSK プロパティ\_接続\_DATAFORMAT プロパティを使用して、現在のデータ形式を設定します。
 ms.assetid: c5f37f1b-7dc6-46d2-aba2-b6c03f07228d
 keywords:
-- KSPROPERTY_CONNECTION_DATAFORMAT ストリーミング メディア デバイス
+- KSPROPERTY_CONNECTION_DATAFORMAT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f64c5341e9a3a57d08d807c3cf558de1313f00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5aa1e35d2ecf6fe5d855f7a3e24c84af6543d404
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373118"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826797"
 ---
-# <a name="kspropertyconnectiondataformat"></a>KSPROPERTY\_接続\_DATAFORMAT
+# <a name="ksproperty_connection_dataformat"></a>KSK プロパティ\_接続\_DATAFORMAT
 
 
-クライアントの使用、KSPROPERTY\_接続\_DATAFORMAT プロパティを現在のデータ形式を設定します。
+クライアントは、KSK プロパティ\_接続\_DATAFORMAT プロパティを使用して、現在のデータ形式を設定します。
 
 ## <span id="ddk_ksproperty_connection_dataformat_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_DATAFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67373118"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67373118"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ ms.locfileid: "67373118"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)要求されたデータ形式を指定します。
+このプロパティは、要求されたデータ形式を指定する[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)構造体を受け取ります。
 
-のみ、KS フィルターは、クライアントが現在のプロパティをリセットすることを許可する場合、または指定された不完全なデータ形式で接続ができる場合は、このプロパティをサポートする必要があります。
+KS フィルターでは、クライアントが現在のプロパティをリセットすることを許可している場合、またはデータ形式が不完全な場合に接続を確立できる場合にのみ、このプロパティをサポートする必要があります。
 
-KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参照してください[KS データ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)と[AVStream のデータ範囲の交差部分](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)します。
+DATAFORMAT プロパティの KSK プロパティ\_接続\_の詳細については、「 [KS データ形式とデータ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)範囲」と「データ[範囲の積集合 (avstream](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream))」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,11 +89,11 @@ KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参
 ## <a name="see-also"></a>関連項目
 
 
-[**KSSTREAM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)
+[**KSK ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)
 
-[**KSPROPERTY\_接続\_PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md)
+[**KSK プロパティ\_接続\_PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
+[**KSK プロパティ\_PIN\_PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
 
  
 

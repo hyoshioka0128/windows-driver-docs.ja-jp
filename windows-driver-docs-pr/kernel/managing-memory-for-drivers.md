@@ -9,12 +9,12 @@ keywords:
 - 領域 WDK 「メモリ WDK」を参照
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8caf435ef9954b1759d76591a536440c1ac1d92
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.openlocfilehash: f8ba2e0c5e31b9cc0dd739792343ff2caa810238
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827876"
 ---
 # <a name="memory-management-for-windows-drivers"></a>Windows ドライバーのメモリ管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "72512072"
 
 *メモリマネージャー*は、Windows のメモリ管理操作を実行するカーネルコンポーネントです。 詳細については、「 [Windows カーネルモードのメモリマネージャー](windows-kernel-mode-memory-manager.md)」を参照してください。
 
-メモリマネージャーでは、ドライバーがメモリの割り当てと管理を行うために呼び出すカーネルモードサポートルーチンが多数実装されています。 詳細については、「[メモリ割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)」を参照してください。
+メモリマネージャーでは、ドライバーがメモリの割り当てと管理を行うために呼び出すカーネルモードサポートルーチンが多数実装されています。 詳細については、「[メモリ割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel/#memory-allocation-and-buffer-management)」を参照してください。
 
 カーネルモードドライバーのメモリ管理機能は、ユーザーモードアプリケーションとは異なります。 アプリケーションのメモリ管理の詳細については、「[メモリ管理](https://docs.microsoft.com/windows/desktop/Memory/memory-management)」を参照してください。
 

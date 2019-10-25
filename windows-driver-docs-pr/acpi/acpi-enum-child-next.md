@@ -1,22 +1,22 @@
 ---
 title: ACPI_ENUM_CHILD_NEXT マクロ
-description: ACPI_ENUM_CHILD_NEXT マクロは、可変長 ACPI_ENUM_CHILD 構造体の配列で、次の ACPI_ENUM_CHILD 構造体へのポインターを計算します。
+description: ACPI_ENUM_CHILD_NEXT マクロは、可変長 ACPI_ENUM_CHILD 構造体の配列内の次の ACPI_ENUM_CHILD 構造体へのポインターを計算します。
 ms.assetid: 1ff37770-b0ea-4275-9568-611ec125a0b6
 keywords:
 - ACPI_ENUM_CHILD_NEXT マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49af38a832a22bcb06c11e1f5b5986c06506a5ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0082e2a8ec9ca30d6aeed8e8725e15b12bef5b87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355889"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824114"
 ---
-# <a name="acpienumchildnext-macro"></a>ACPI\_ENUM\_子\_次のマクロ
+# <a name="acpi_enum_child_next-macro"></a>ACPI\_列挙\_子\_次のマクロ
 
 
-ACPI\_列挙型\_子\_マクロ [次へ]、[次へ] へのポインターを計算する[ **ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)の配列の構造可変長 ACPI\_ENUM\_子構造体。
+ACPI\_ENUM\_CHILD\_NEXT マクロは、次の[**acpi\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)構造体へのポインターを計算します。これは、変数の長さが acpi\_列挙型\_子構造体の配列に含まれています。
 
 <a name="syntax"></a>構文
 ------
@@ -31,19 +31,19 @@ void ACPI_ENUM_CHILD_NEXT(
 ----------
 
 *子*   
-ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定されていないポインターを返す子\_列挙\_ACPI の可変長の配列内の子構造\_ENUM\_子構造体。
+ACPI\_列挙型の変数へのポインター\_子の場合は、固定されていないポインターを次の ACPI\_\_列挙型 ACPI の配列内の子構造体に返す、列挙型\_子構造体。
 
 <a name="return-value"></a>戻り値
 ------------
 
-[次へ] の ACPI へのポインター\_ENUM\_ACPI の可変長の配列内の子構造\_列挙\_子構造体。
+次の ACPI\_列挙型の\_子構造体を指すポインターは、可変長 ACPI\_列挙型\_子構造体の配列にあります。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバーを使用した後、 [ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)で子デバイス名の配列を取得する要求、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)要求と、ドライバーは、このマクロを使用して、可変長 ACPIへのポインターのシーケンスを決定するには\_列挙型\_内の子構造体、**子**出力バッファーを含む配列。
+ドライバーが IOCTL を使用して[ **\_acpi\_enum\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)デバイス名の配列を取得するために、子\_子デバイス\_名の配列を取得することを要求\_[**出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)要求では、このマクロを使用して、出力バッファーに格納されている**子**配列内の可変長 ACPI\_列挙型\_子構造体へのポインターのシーケンスを決定できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -58,7 +58,7 @@ ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定�
 </tr>
 <tr>
 <td><p>Header</p></td>
-<td>Acpiioct.h (Acpiioct.h を含む)</td>
+<td>Acpiioct (Acpiioct を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -66,11 +66,11 @@ ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定�
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)
+[**ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)
 
-[**ACPI\_ENUM\_子\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
+[**ACPI\_列挙\_子\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
 
-[**IOCTL\_ACPI\_ENUM\_CHILDREN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)
+[**IOCTL\_ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)
 
  
 

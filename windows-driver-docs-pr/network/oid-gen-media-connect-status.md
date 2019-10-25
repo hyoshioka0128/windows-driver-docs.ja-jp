@@ -1,51 +1,51 @@
 ---
 title: OID_GEN_MEDIA_CONNECT_STATUS
-description: クエリとしては、OID_GEN_MEDIA_CONNECT_STATUS OID は、ネットワーク上の NIC の接続の状態を要求します。
+description: クエリとして、OID_GEN_MEDIA_CONNECT_STATUS OID はネットワーク上の NIC の接続状態を要求します。
 ms.assetid: 3ed26e62-a285-4b78-91c6-7c3cc0963570
 ms.date: 08/08/2017
-keywords: -OID_GEN_MEDIA_CONNECT_STATUS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_MEDIA_CONNECT_STATUS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 991e796be503fc0acff52df400c9819dcfbcd805
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 417fed779300e0c485d2487f9ca220d130d06e9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369038"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834157"
 ---
-# <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_メディア\_CONNECT\_状態
+# <a name="oid_gen_media_connect_status"></a>OID\_GEN\_メディア\_接続\_の状態
 
 
-クエリ、OID として\_GEN\_メディア\_CONNECT\_状態 OID は、ネットワーク上の NIC の接続の状態を要求します。
+クエリとして、OID\_GEN\_MEDIA\_CONNECT\_STATUS OID は、ネットワーク上の NIC の接続状態を要求します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず.
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず.
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、NDIS 6.0 とそれ以降のミニポート ドライバーのこの OID を処理します。
+Ndis は、この OID を NDIS 6.0 以降のミニポートドライバー用に処理します。
 
-OID\_GEN\_メディア\_CONNECT\_状態 OID は、次のシステム定義の値の 1 つとして、ネットワーク上の NIC の接続の状態を要求します。
+OID\_GEN\_MEDIA\_CONNECT\_STATUS OID は、次のシステム定義の値のいずれかとしてネットワーク上の NIC の接続状態を要求します。
 
 **NdisMediaStateConnected**
 
 **NdisMediaStateDisconnected**
 
-呼び出す必要がありますもミニポート ドライバーでは、ネットワーク接続が失われたことを検知、ときに、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)または[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex) NDIS で関数を\_状態\_メディア\_(NDIS 5.1) の切断または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateDisconnected** MediaConnectState プロパティ (NDIS の 6.x)。 呼び出す必要がありますし、接続が復元されると、 **NdisM (Co) IndicateStatus** NDIS に\_状態\_メディア\_(NDIS 5.1) の接続または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateConnected** MediaConnectState プロパティ (NDIS の 6.x)。
+ネットワーク接続が失われたことがミニポートドライバーによって検知された場合、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)または[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)関数も、NDIS\_STATUS\_MEDIA\_DISCONNECT (ndis 5.1 の場合) または ndis で呼び出される必要があります。ステータス\_MediaConnectStateDisconnected に\_状態をリンクするには、プロパティ (NDIS 6.x の場合) を使用します。\_ 接続が復元されたら、NDIS\_STATUS\_MEDIA\_CONNECT (NDIS 5.1 の場合) または NDIS\_ステータス\_リンク\_状態を MediaConnectStateConnected として、 **Ndism (Co) IndicateStatus**を呼び出す必要があります。MediaConnectState プロパティ (NDIS 6.x の場合)。
 
 <a name="requirements"></a>要件
 ------------
@@ -58,7 +58,7 @@ OID\_GEN\_メディア\_CONNECT\_状態 OID は、次のシステム定義の値
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -66,9 +66,9 @@ OID\_GEN\_メディア\_CONNECT\_状態 OID は、次のシステム定義の値
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)
 
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

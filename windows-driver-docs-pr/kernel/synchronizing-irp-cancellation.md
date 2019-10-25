@@ -3,18 +3,18 @@ title: IRP キャンセルの同期
 description: IRP キャンセルの同期
 ms.assetid: a110c6ad-794d-4b8a-a89d-bceb08ea82b8
 keywords:
-- Irp、同期をキャンセル
-- キャンセル ルーチンでは、同期
+- Irp の取り消し、同期
+- キャンセルルーチン、同期
 - WDK Irp の同期
-- Irp WDK のキャンセル可能なカーネル
+- 取り消し可能 Irp WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5947725b86a7f4221a1e06d56d8f7e0e8b647e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6780fe0356e005b2baaa25c6aebed83d2a4112c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355468"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836163"
 ---
 # <a name="synchronizing-irp-cancellation"></a>IRP キャンセルの同期
 
@@ -22,35 +22,35 @@ ms.locfileid: "67355468"
 
 
 
-ドライバーの観点からは IRP をいつでもキャンセルできます。 IRP のキャンセルに非同期的に発生しますそのため、ドライバーは、多数の潜在的な競合状態、IRP が、次の点のいずれかで取り消された場合の作成を処理できる必要があります。
+ドライバーの観点からは、IRP はいつでも取り消すことができます。 IRP のキャンセルが非同期に行われます。したがって、次のいずれかの時点で IRP が取り消された場合に作成される、潜在的な競合状態の多くをドライバーが処理できる必要があります。
 
--   ドライバーのルーチンが呼び出された後が IRP をキューに配置する前に。
+-   ドライバールーチンが呼び出された後、が IRP をキューに置いた後。
 
--   ルーチンは、ドライバーの後に呼び出されるしますが、IRP の処理を試みる前にします。 たとえば、ドライバーの後に IRP をキャンセルする可能性があります[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンを呼び出すと、前に、 *StartIo*ルーチン IRP をデバイスのキューから削除します。
+-   ドライバールーチンが呼び出された後、IRP の処理を試みる前。 たとえば、IRP は、ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンが呼び出された後、 *StartIo*ルーチンがデバイスキューから irp を削除する前にキャンセルされる場合があります。
 
--   ルーチンはドライバーの後に、IRP をデキューが要求された I/O を開始する前にします。
+-   ドライバールーチンが IRP をデキューした後、要求された i/o を開始する前。
 
-ドライバーは IRP のキューしキューを保護するスピン ロックは解放、別のスレッドにアクセスして IRP の変更に注意してください。 元のスレッドを再開したとき-もすぐに次のコード行: IRP を既にされた可能性がありますがキャンセルまたはそれ以外の場合は変更します。
+ドライバーが IRP をキューに置いて、キューを保護するすべてのスピンロックを解放すると、別のスレッドが IRP にアクセスして変更できることに注意してください。 元のスレッドが再開されたとき (次のコード行の直後でも)、IRP は既に取り消されているか、または変更されている可能性があります。
 
-ドライバーでは、IRP のキューを実装するために、キャンセルの安全な IRP のキューのフレームワークを使用できます。 システムを登録し、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) Irp をキャンセルしても安全に同期を自動的に処理するドライバーの日常的な。 参照してください[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)詳細についてはします。 それ以外の場合、ドライバーは、独自の同期を実装する必要があります。
+ドライバーは、キャンセルセーフな IRP キューフレームワークを使用して、IRP キューを実装できます。 次に、Irp を安全にキャンセルするために同期を自動的に処理するドライバーの[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンが登録されます。 詳細については[、「キャンセルセーフな IRP キュー](cancel-safe-irp-queues.md) 」を参照してください。 それ以外の場合、ドライバーは独自の同期を実装する必要があります。
 
-IRP の次のメンバーには、取り消し処理についての情報が含まれます。
+IRP の次のメンバーには、キャンセルに関する情報が含まれています。
 
--   **Irp -&gt;キャンセル**IRP が取り消されているか、取り消す必要があるかどうかを示します。
+-   **Irp&gt;Cancel**は、irp が取り消されているか、取り消す必要があるかどうかを示します。
 
--   **Irp -&gt;CancelRoutine** IRP がキャンセル可能かどうかを示します。 このメンバーにキャンセル ルーチンへのポインターが含まれている場合、IRP がキャンセル可能です。 このメンバーがある場合**NULL**IRP は取り消し可能ではありません。 このメンバーがある場合**NULL**が**Irp -&gt;キャンセル**がキャンセル ルーチンが実行されていると、IRP が取り消されていることを示す設定。
+-   **Irp&gt;CancelRoutine**は、irp がキャンセル可能かどうかを示します。 このメンバーにキャンセルルーチンへのポインターが含まれている場合、IRP はキャンセル可能です。 このメンバーが**NULL**の場合、IRP はキャンセルできません。 このメンバーが**NULL**でも、 **irp&gt;cancel**が設定されている場合は、キャンセルルーチンが実行中で、irp がキャンセル処理中であることを示します。
 
-ドライバーは、キャンセル可能な Irp を処理する場合は、設定、適切な責任を負います*キャンセル*取り消しできる状態で保持している各の IRP で日常的な。
+ドライバーがキャンセル可能な Irp を処理する場合は、キャンセル可能な状態で保持されている各 IRP で適切な*キャンセル*ルーチンを設定する必要があります。
 
-このセクションには、IRP のキャンセルを同期する方法は、次のトピックが含まれています。
+ここでは、IRP のキャンセルの同期に関する次のトピックについて説明します。
 
-[システムのキャンセル スピン ロックを使用します。](using-the-system-s-cancel-spin-lock.md)
+[システムのキャンセルスピンロックの使用](using-the-system-s-cancel-spin-lock.md)
 
-[Irp を処理するルーチンをドライバーでの同期のキャンセル](synchronizing-cancellation-in-driver-routines-that-process-irps.md)
+[Irp を処理するドライバールーチンでのキャンセルの同期](synchronizing-cancellation-in-driver-routines-that-process-irps.md)
 
-[キャンセル ルーチンなしの上位レベルのドライバーでの取り消し処理の同期](synchronizing-cancellation-in-higher-level-drivers-without-cancel-rout.md)
+[キャンセルルーチンを使用しない、上位レベルのドライバーでのキャンセルの同期](synchronizing-cancellation-in-higher-level-drivers-without-cancel-rout.md)
 
-[ドライバーによって提供されるスピン ロックを使用します。](using-a-driver-supplied-spin-lock.md)
+[ドライバーによって提供されるスピンロックの使用](using-a-driver-supplied-spin-lock.md)
 
  
 

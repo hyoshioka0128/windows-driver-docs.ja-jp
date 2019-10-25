@@ -3,17 +3,17 @@ title: 着信呼び出しの表示
 description: 着信呼び出しの表示
 ms.assetid: ca7f4a1f-47a2-4ac0-b4a2-d0367163135f
 keywords:
-- WDK いる CoNDIS 通話のセットアップ
-- 着信呼び出し WDK いる CoNDIS
-- WDK いる CoNDIS の着信呼び出しを示す
+- WDK セットアップの呼び出し
+- 受信した呼び出し (WDK)
+- 受信呼び出しの WDK を示す
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d27d75eb50f4d658b8f5f953f147edacbad4b578
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98105b99f67daa32d53988bb141c16a3a85307e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374834"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824727"
 ---
 # <a name="indicating-an-incoming-call"></a>着信呼び出しの表示
 
@@ -21,43 +21,43 @@ ms.locfileid: "67374834"
 
 
 
-ネットワークからメッセージを通知することによってを着信呼び出しがコール マネージャーまたは MCM のドライバーを知らせます。 シグナリング メッセージから、コール マネージャーまたは MCM ドライバーは、着信呼び出しが対応する SAP を含む、呼び出しの呼び出しのパラメーターを抽出します。
+通話マネージャーまたは MCM ドライバーは、ネットワークからのメッセージをシグナリングすることによって着信呼び出しに対して警告されます。 これらの通知メッセージから、通話マネージャーまたは MCM ドライバーは、呼び出しの呼び出しパラメーターを抽出します。これには、着信呼び出しの宛先となる SAP も含まれます。
 
-次の図は、着信呼び出しを示す、MCM ドライバーを示します。
+次の図は、着信呼び出しを示す MCM ドライバーを示しています。
 
-![着信呼び出しを示すコール マネージャーを示す図](images/cm-13.png)
+![着信呼び出しを示す呼び出しマネージャーを示す図](images/cm-13.png)
 
-次の図は、着信呼び出しを示す manager の呼び出しを示します。
+次の図は、着信呼び出しを示す呼び出しマネージャーを示しています。
 
-![mcm ドライバーを通じて着信呼び出しを示す](images/fig1-13.png)
+![mcm ドライバー経由の着信呼び出しを示す](images/fig1-13.png)
 
-着信呼び出しのパラメーターが、コール マネージャーまたは MCM ドライバーに許容される場合は、シグナリング プロトコルによって自動的にネゴシエーションが許可されている場合は、リモート側でこれらのパラメーターの変更をネゴシエートする試行できます。 または、着信通話の先となるクライアントは、コール マネージャーまたは MCM ドライバーからの呼び出しを示す値を受信した後、呼び出しのパラメーターをネゴシエートする試行でした (を参照してください[Client-Initiated 要求の変更を呼び出すパラメーター](client-initiated-request-to-change-call-parameters.md)). リモート パーティによる呼び出しの許容される呼び出しのパラメーターをネゴシエートできないのは、コール マネージャーまたは MCM ドライバー場合、呼び出しを拒否する可能性があります。 このような場合で何ができます、シグナリングのプロトコルを決定します。
+着信呼び出しパラメーターが呼び出しマネージャーまたは MCM ドライバーで受け入れられない場合、シグナリングプロトコルによってこのようなネゴシエーションが許可されると、これらのパラメーターの変更をリモートパーティとネゴシエートすることができます。 または、着信呼び出しの送信先のクライアントが、呼び出しマネージャーまたは MCM ドライバーからの呼び出しを示す呼び出しパラメーターを受け取った後に、呼び出しパラメーターをネゴシエートしようとすることができます (「[クライアントが開始した要求の呼び出しパラメーターの変更](client-initiated-request-to-change-call-parameters.md)」を参照してください)。 呼び出しマネージャーまたは MCM ドライバーが、リモートパーティとの呼び出しの受け入れ可能な呼び出しパラメーターをネゴシエートできない場合、呼び出しを拒否することがあります。 このような場合に可能なことは、シグナリングプロトコルによって決まります。
 
-クライアントに着信呼び出しを示す、する前に、コール マネージャーまたは MCM ドライバーは、呼び出しの先となる SAP を確認する必要があります。 SAP は以前にされている必要があります[登録](registering-a-sap.md)クライアント。 コール マネージャーまたは MCM のドライバーを開始する必要がありますも、 [VC の作成](creating-a-vc.md)を開始し、[この VC のアクティブ化](activating-a-vc.md)します。
+クライアントへの着信呼び出しを示す前に、通話マネージャーまたは MCM ドライバーが、呼び出しの送信先となる SAP を識別する必要があります。 SAP は、クライアントによって事前に[登録](registering-a-sap.md)されている必要があります。 また、呼び出しマネージャーまたは MCM ドライバーも[vc の作成](creating-a-vc.md)を開始し、[この vc のアクティブ化](activating-a-vc.md)を開始する必要があります。
 
-コール マネージャーまたは MCM ドライバーは、着信通話の先となる SAP に登録されているクライアントへの着信通話を示します。 コール マネージャーの着信呼び出しを示す[ **NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)します。 着信呼び出しを示します、MCM ドライバー [ **NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall)します。
+呼び出しマネージャーまたは MCM ドライバーは、着信呼び出しの送信先である SAP を登録したクライアントへの着信呼び出しを示します。 呼び出しマネージャーは、 [**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)を使用した着信呼び出しを示します。 MCM ドライバーは、 [**NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)を使用した着信呼び出しを示します。
 
-呼び出しで**Ndis (M) CmDispatchIncomingCall**、コール マネージャーまたは MCM ドライバーは、次を渡します。
+**Ndis (M) CmDispatchIncomingCall**の呼び出しでは、呼び出しマネージャーまたは mcm ドライバーは次のものを渡します。
 
--   *NdisSapHandle*着信呼び出しが対応する SAP を識別します。
+-   受信呼び出しをアドレス指定する SAP を識別する*NdisSapHandle* 。
 
--   *NdisVcHandle*着信通話の仮想回線を識別します。
+-   着信呼び出しの仮想回線を識別する*NdisVcHandle* 。
 
--   型の構造体へのポインター [ **CO\_呼び出す\_パラメーター**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))呼び出しの呼び出しのパラメーターを含むです。
+-   型の構造体へのポインターは、呼び出しの呼び出しパラメーターを格納する[ **\_パラメーターを\_呼び出し**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))ます。
 
-呼び出し**Ndis (M) CmDispatchIncomingCall**を呼び出すクライアントの NDIS と[ **ProtocolClIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_call)をクライアントを受け入れるか拒否している関数要求された接続。 *ProtocolClIncomingCall* SAP、VC を検証し、パラメーターを呼び出す必要があります。
+**Ndis (M) CmDispatchIncomingCall**を呼び出すと、ndis はクライアントの[**ProtocolClIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_incoming_call)関数を呼び出します。この関数内で、要求された接続をクライアントが受け入れるか拒否します。 *ProtocolClIncomingCall*は、SAP、VC、および呼び出しパラメーターを検証する必要があります。
 
-*ProtocolClIncomingCall*同期的に完了できるか、NDIS を返すことができます\_状態\_に非同期で完了し、保留中の[ **NdisClIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclincomingcallcomplete). 呼び出し**NdisClIncomingCallComplete**と呼び出しを上司に NDIS または MCM ドライバーの[ **ProtocolCmIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_incoming_call_complete)関数。
+*ProtocolClIncomingCall*は同期的に完了できます。また\_\_は、 [**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)を使用して、保留と完了を非同期的に実行することができます。 **NdisClIncomingCallComplete**を呼び出すと、NDIS によって、呼び出しマネージャーまたは mcm ドライバーの[**Protocolcmincomingcallcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_incoming_call_complete)関数が呼び出されます。
 
-NDIS\_の同期の完了によって返されるステータス コード*ProtocolClIncomingCall*またはに指定された**NdisClIncomingCallComplete**クライアントの承認をことを示しますまたは。着信通話の拒否します。 クライアントがバッファー内の CO でも、呼び出しの呼び出しのパラメーターを返します\_呼び出す\_パラメーター構造体。 呼び出しのパラメーターの許容が見つかると、クライアント、信号のプロトコルで許可されている場合変更を要求できる関数のパラメーターに設定して、**フラグ**CO でメンバー\_呼び出す\_パラメーター構造体の呼び出しで\_パラメーター\_CHANGED、改訂版を提供することによってバッファー内の CO でパラメーターを呼び出すと\_呼び出す\_パラメーター構造体。
+*ProtocolClIncomingCall*または**NdisClIncomingCallComplete**に渡された同期完了によって返される NDIS\_状態コードは、クライアントが受信呼び出しを受け入れるか拒否するかを示します。 また、クライアントは、バッファーされた CO\_呼び出し\_PARAMETERS 構造体で、呼び出しの呼び出しパラメーターを返します。 クライアントが呼び出しパラメーターを許容できない場合に検出した場合は、シグナル化プロトコルによって許可されている場合は、呼び出しパラメーターに**Flags**\_\_\_メンバーを設定して、呼び出しパラメーターに変更を要求します変更された\_、変更された呼び出しパラメーターをバッファーされた CO\_呼び出し\_PARAMETERS 構造体に指定することにより、変更されます。
 
-クライアントは、コール マネージャー、着信呼び出しを受け入れるか、MCM のドライバーを送信する必要がありますがある場合は、呼び出し元のエンティティに呼び出しが受け入れられたことを示すメッセージ シグナル通知します。 コール マネージャーまたは MCM のドライバーを送信する必要がありますそれ以外の場合、呼び出しが拒否されたことを示すメッセージを通知します。 場合は、クライアントは、呼び出しのパラメーター、コール マネージャーまたは MCM ドライバーの送信信号呼び出しのパラメーターの変更を要求するメッセージの変更を要求しています。
+クライアントが着信呼び出しを受け入れる場合は、呼び出しが受け入れられたことを呼び出し元のエンティティに示すために、呼び出しマネージャーまたは MCM ドライバーがシグナリングメッセージを送信する必要があります。 それ以外の場合、呼び出しマネージャーまたは MCM ドライバーは、呼び出しが拒否されたことを示すシグナルメッセージを送信する必要があります。 クライアントが呼び出しパラメーターの変更を要求している場合、呼び出しマネージャーまたは MCM ドライバーは、シグナルメッセージを送信して、呼び出しパラメーターの変更を要求します。
 
-クライアントが、通話を承諾したかコール マネージャーが呼び出す関数のパラメーターに変更がリモート側によって受け付け、クライアントが要求の場合[ **NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchcallconnected)、し、MCM ドライバーを呼び出します[**NdisMCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchcallconnected)します。 呼び出し**Ndis (M) CmDispatchCallConnected**を呼び出すクライアントの NDIS と*ProtocolClCallConnected*関数。
+クライアントが呼び出しを受け入れた場合、または呼び出しパラメーターでクライアントの要求された変更がリモートパーティによって受け入れられた場合、呼び出しマネージャーは[**NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchcallconnected)を呼び出し、mcm ドライバーは[**NdisMCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchcallconnected)を呼び出します。 **Ndis (M) CmDispatchCallConnected**を呼び出すと、ndis によってクライアントの*Protocolclcallconnected*関数が呼び出されます。
 
-コール マネージャーまたは MCM のドライバーを呼び出すの呼び出しと呼び出し manager クライアントが拒否された、または着信通話の VC を MCM のドライバーが既にアクティブ化、 **Ndis (M) CmDeactivateVc** VC がアクティブの場合は、VC を非アクティブ化します。 コール マネージャーまたは MCM のドライバーを開始し、 [VC の削除](deleting-a-vc.md)呼び出して[ **NdisCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)コール マネージャーの場合、または[ **NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc) MCM ドライバーの場合。
+クライアントが呼び出しを拒否し、呼び出しマネージャーまたは MCM ドライバーが既に受信呼び出しの VC をアクティブ化している場合、呼び出しマネージャーまたは MCM ドライバーは、vc がアクティブになっている場合に VC を非アクティブ化するために**Ndis (M) CmDeactivateVc**を呼び出します。 呼び出しマネージャーまたは MCM ドライバーは、MCM ドライバーの場合は、呼び出しマネージャーまたは[**NdisMCmDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc)の場合に[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)を呼び出すことによって、 [VC の削除](deleting-a-vc.md)を開始できます。
 
-コール マネージャーまたは MCM のドライバーが呼び出していませんが、クライアントが通話を承諾した場合は、エンド ツー エンド接続が正常に確立されません (ため、たとえば、リモート パーティは、呼び出しをどれ) **Ndis (M) CmDispatchCallConnected**. 代わりに、呼び出すことが、 **Ndis (M) CmDispatchIncomingCloseCall**、それが原因でを呼び出すクライアントの NDIS *ProtocolClIncomingCloseCall*関数。 クライアントが呼び出す必要がありますし、 [ **NdisClCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)呼び出しの終了処理を完了します。 コール マネージャーまたは MCM のドライバーを呼び出して**Ndis (M) CmDeactivateVC**に[VC を非アクティブ化](deactivating-a-vc.md)着信呼び出し用に作成します。 コール マネージャーまたは MCM のドライバーを開始し、 [VC の削除](deleting-a-vc.md)呼び出して[ **NdisCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)コール マネージャーの場合、または[ **NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc) MCM ドライバーの場合。
+クライアントが呼び出しを受け入れたが、エンドツーエンド接続が正常に確立されなかった場合 (たとえば、リモートパーティが呼び出しを t した場合)、呼び出しマネージャーまたは MCM ドライバーは**Ndis (M) CmDispatchCallConnected**を呼び出しません。 代わりに、ndis **(M) CmDispatchIncomingCloseCall**を呼び出します。これにより、ndis はクライアントの*ProtocolClIncomingCloseCall*関数を呼び出します。 その後、クライアントは[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)を呼び出して、呼び出しの破棄を完了する必要があります。 次に、呼び出しマネージャーまたは MCM ドライバーが**Ndis (M) CmDeactivateVC**を呼び出して、着信呼び出し用に作成された[VC を非アクティブ化](deactivating-a-vc.md)します。 呼び出しマネージャーまたは MCM ドライバーは、MCM ドライバーの場合は、呼び出しマネージャーまたは[**NdisMCmDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc)の場合に[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)を呼び出すことによって、 [VC の削除](deleting-a-vc.md)を開始できます。
 
  
 

@@ -1,28 +1,28 @@
 ---
-title: IoIs32bitProcess を使用して詳細な例
-description: IoIs32bitProcess を使用して詳細な例
+title: IoIs32bitProcess を使用した拡張例
+description: IoIs32bitProcess を使用した拡張例
 ms.assetid: bb73d16c-9f9f-41ff-ac0b-8af31c6f55f4
 keywords:
-- 32 ビットの I/O は、WDK の 64 ビット、IoIs32bitProcess をサポートします。
+- 32ビット i/o サポート WDK 64 ビット、IoIs32bitProcess
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9efdfbc5e25566cad35329c83f0dab809e3d54a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12a11edda5de2fe28e1216986f2ee333b1585e9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386620"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836720"
 ---
-# <a name="extended-example-using-iois32bitprocess"></a>拡張の例: IoIs32bitProcess の使用
+# <a name="extended-example-using-iois32bitprocess"></a>拡張例: IoIs32bitProcess の使用
 
 
 
 
 
-次の例への呼び出しを追加することで、64 ビットの 32 ビット ドライバーを変更する方法を示します[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)します。 この例に変更する必要があるドライバー コードの部分のみが表示されるに注意してください。
+次の例では、 [**IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)への呼び出しを追加して、64ビットの32ビットドライバーを変更する方法を示します。 この例では、変更する必要があるドライバーコードの部分のみを示しています。
 
-### <a name="original-driver-code"></a>元のドライバー コード
+### <a name="original-driver-code"></a>元のドライバーコード
 
 ```cpp
 typedef struct _TESTDRV_EVENT_BUFFER {
@@ -60,7 +60,7 @@ TestdrvFsControl (
 }
 ```
 
-### <a name="driver-code-with-thunking-support"></a>ドライバーのコードをサンクのサポート
+### <a name="driver-code-with-thunking-support"></a>サンキングサポート付きドライバーコード
 
 ```cpp
 typedef struct _TESTDRV_EVENT_BUFFER {

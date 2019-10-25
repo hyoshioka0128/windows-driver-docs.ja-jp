@@ -3,18 +3,18 @@ title: DLL 停止操作
 description: DLL 停止操作
 ms.assetid: b49e9215-3781-4e19-8287-f484553ccb2e
 keywords:
-- IHV 拡張 DLL WDK ネイティブ 802.11、停止操作
-- IHV 拡張 DLL のアンロード
-- IHV 拡張機能の DLL を停止しています
-- ネイティブの 802.11 IHV 拡張 DLL の WDK、操作を停止します。
+- IHV 拡張機能 DLL WDK ネイティブ802.11、停止操作
+- IHV 拡張 DLL をアンロードしています
+- IHV 拡張 DLL を停止しています
+- ネイティブ 802.11 IHV 拡張 DLL WDK、停止操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8943a76f41f542724050de91b7c4268cd177f3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16f4a7cfe8eac2677b1f8573203047c38a2b0670
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386556"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838130"
 ---
 # <a name="dll-stop-operations"></a>DLL 停止操作
 
@@ -23,25 +23,25 @@ ms.locfileid: "67386556"
 
  
 
-オペレーティング システムが停止し、IHV 拡張 DLL をアンロードするたびにします。
+オペレーティングシステムは、常に IHV 拡張 DLL を停止し、アンロードします。
 
--   DLL によって管理されている最後のワイヤレス LAN (WLAN) アダプターが削除または無効になっています。
+-   DLL によって管理されている最後のワイヤレス LAN (WLAN) アダプタは、削除されるか無効になります。
 
--   ホスト コンピューターはリセットまたはシャット ダウンします。
+-   ホストコンピューターはリセットまたはシャットダウンされます。
 
-オペレーティング システムでは、このシーケンスを停止すると、IHV 拡張 DLL のアンロードに従います。
+IHV 拡張 DLL を停止およびアンロードする場合、オペレーティングシステムはこのシーケンスに従います。
 
-1.  オペレーティング システムの最初の呼び出し、 [ *Dot11ExtIhvDeinitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter) IHV 拡張機能の DLL によって管理されるすべての WLAN アダプターの IHV ハンドラー関数。 この操作の詳細については、次を参照してください。 [802.11 WLAN アダプター削除](802-11-wlan-adapter-removal.md)します。
+1.  オペレーティングシステムは、まず、IHV 拡張 DLL によって管理されるすべての WLAN アダプターに対して[*Dot11ExtIhvDeinitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter) IHV ハンドラー関数を呼び出します。 この操作の詳細については、「 [802.11 WLAN アダプターの削除](802-11-wlan-adapter-removal.md)」を参照してください。
 
-    呼び出し後*Dot11ExtIhvDeinitAdapter*、IHV 拡張機能の DLL などのアダプター固有の操作に関連するすべての IHV 拡張関数を呼び出してはならない[ **Dot11ExtNicSpecificExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension).
+    *Dot11ExtIhvDeinitAdapter*の呼び出しの後、IHV 拡張 DLL は、 [**Dot11ExtNicSpecificExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension)などのアダプター固有の操作に関連する ihv 拡張機能を呼び出すことはできません。
 
-2.  オペレーティング システムを呼び出して、 [ *Dot11ExtIhvDeinitService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_service) IHV ハンドラー関数。 この関数し、呼び出され、IHV 拡張機能の DLL する必要があります割り当てられているすべてのリソースを解放自体をアンロードするために準備します。
+2.  次に、オペレーティングシステムは[*Dot11ExtIhvDeinitService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_deinit_service) IHV ハンドラー関数を呼び出します。 この関数が呼び出されると、IHV 拡張 DLL は、割り当てられたすべてのリソースを解放し、アンロード用に準備する必要があります。
 
-    呼び出し後*Dot11ExtIhvDeinitService*、IHV 拡張機能の DLL は任意の拡張機能の IHV 関数を呼び出す必要がありますされません。
+    *Dot11ExtIhvDeinitService*の呼び出しの後、IHV 拡張 DLL は、任意の ihv 拡張機能を呼び出すことはできません。
 
-3.  最後に、オペレーティング システムの呼び出し、 *DllMain*を IHV 拡張 DLL 内の関数、 *fdwReason* DLL にパラメーターが設定\_プロセス\_デタッチします。 詳細については*DllMain*と Dll は、Microsoft Windows SDK のドキュメント内のトピック「ダイナミック リンク ライブラリについて」を参照してください。
+3.  最後に、オペレーティングシステムは、 *Fdwreason*パラメーターを dll に設定して、IHV 拡張 DLL の*DllMain*関数を呼び出し\_プロセス\_デタッチします。 *DllMain*と dll の詳細については、Microsoft Windows SDK のドキュメント内の「ダイナミックリンクライブラリについて」を参照してください。
 
-IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-extensibility-functions)します。
+IHV 拡張機能の詳細については、「[ネイティブ 802.11 Ihv 拡張関数](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-extensibility-functions)」を参照してください。
 
  
 

@@ -3,15 +3,15 @@ title: PCM ストリームのデータ形式
 description: PCM ストリームのデータ形式
 ms.assetid: 86599e55-e771-4d6e-ad59-6dc905c53cd8
 keywords:
-- PCM のストリーム データ形式 WDK
+- PCM ストリームデータ形式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7e07a4a8fa01905791091d0312046f9a9f79bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b98ab151d3b2ba6a1e467970f42dbec82910bd21
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355307"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832539"
 ---
 # <a name="pcm-stream-data-format"></a>PCM ストリームのデータ形式
 
@@ -19,7 +19,7 @@ ms.locfileid: "67355307"
 ## <span id="pcm_stream_data_format"></span><span id="PCM_STREAM_DATA_FORMAT"></span>
 
 
-この例では、 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex) PCM ストリームのデータ形式を記述する構造体。
+この例では、 [**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)構造体を使用して、PCM ストリームのデータ形式を記述します。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT_WAVEFORMATEX);

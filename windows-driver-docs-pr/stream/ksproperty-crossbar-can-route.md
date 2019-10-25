@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_クロスバー\_できます\_ルート
-description: KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバイスが、指定したルーティングをサポートできるかどうかを取得します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_クロスバー\_は\_ルートを持つことができます
+description: KSK プロパティ\_クロスバー\_は\_ROUTE プロパティで、デバイスが指定されたルーティングをサポートできるかどうかを取得します。 このプロパティを実装する必要があります。
 ms.assetid: bb966d0a-6ecf-4bbb-a881-30d468abe220
 keywords:
-- KSPROPERTY_CROSSBAR_CAN_ROUTE ストリーミング メディア デバイス
+- KSPROPERTY_CROSSBAR_CAN_ROUTE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c7131899b9fa3e8e800ae4bf9f9214790b8aea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5bb31cb48292da6a950a532cebd0add3579741eb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373098"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826776"
 ---
-# <a name="kspropertycrossbarcanroute"></a>KSPROPERTY\_クロスバー\_できます\_ルート
+# <a name="ksproperty_crossbar_can_route"></a>KSK プロパティ\_クロスバー\_は\_ルートを持つことができます
 
 
-KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバイスが、指定したルーティングをサポートできるかどうかを取得します。 このプロパティを実装する必要があります。
+KSK プロパティ\_クロスバー\_は\_ROUTE プロパティで、デバイスが指定されたルーティングをサポートできるかどうかを取得します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_crossbar_can_route_ks"></span><span id="DDK_KSPROPERTY_CROSSBAR_CAN_ROUTE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_ROUTE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s)"><strong>KSPROPERTY_CROSSBAR_ROUTE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_ROUTE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s)"><strong>KSPROPERTY_CROSSBAR_ROUTE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,14 +61,14 @@ KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバ
 
  
 
-プロパティの値 (データの操作) は、ストリーミングのミニドライバーが 2 つの pin の間で指定したルーティングをサポートしているかどうかを指定する ULONG。 0 以外の値は、ルーティングがサポートされていることを示します。 ミニドライバーは、2 つの pin の間のルーティングをサポートしていません、この値は 0 です。
+プロパティ値 (操作データ) は、2つのピン間の指定したルーティングを streaming ミニドライバーがサポートするかどうかを指定する ULONG です。 0以外の値は、ルーティングがサポートされていることを示します。 ミニドライバーが2つのピン間のルーティングをサポートしていない場合、この値は0になります。
 
 <a name="remarks"></a>注釈
 -------
 
-**CanRoute** 、KSPROPERTY のメンバー\_クロスバー\_ルート\_の構造は、デバイスが、指定したルーティングをサポートできることを示します。
+KSK プロパティ\_クロスバー\_ROUTE\_S 構造体の**Canroute**メンバーは、デバイスが指定されたルーティングをサポートできるかどうかを示します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_クロスバー\_できます\_ルート プロパティは、デバ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_クロスバー\_ルート\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s)
+[**KSPROPERTY\_クロスバー\_ROUTE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_route_s)
 
  
 

@@ -1,10 +1,10 @@
 ---
-title: バグ チェック 0x14B SOC_SUBSYSTEM_FAILURE
-description: SOC_SUBSYSTEM_FAILURE のバグ チェックでは、0x0000014B の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムに回復不能なエラーが発生したことを示します。
+title: バグチェック 0x14B SOC_SUBSYSTEM_FAILURE
+description: SOC_SUBSYSTEM_FAILURE のバグチェックには、0x0000014B という値が指定されています。 これは、チップ (SoC) サブシステム上のシステムで回復不能なエラーが発生したことを示します。
 ms.assetid: CC42D634-90CE-43F1-8552-E5DE711D2117
 keywords:
-- バグ チェック 0x14B SOC_SUBSYSTEM_FAILURE
-- バグ チェック 0x14B SOC_SUBSYSTEM_FAILURE
+- バグチェック 0x14B SOC_SUBSYSTEM_FAILURE
+- バグチェック 0x14B SOC_SUBSYSTEM_FAILURE
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb96356b7096d0291c0da35285d7d89cddf4518
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 50b51c398a54d1f2ca19ebe0c22c9d3d4735c9cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520095"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827239"
 ---
-# <a name="bug-check-0x14b-socsubsystemfailure"></a>バグ チェック 0x14B:SOC\_サブシステム\_エラー
+# <a name="bug-check-0x14b-soc_subsystem_failure"></a>バグチェック 0x14B: SOC\_サブシステム\_エラー
 
 
-SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムに回復不能なエラーが発生したことを示します。
+SOC\_サブシステム\_エラーのバグチェックには、0x0000014B という値があります。 これは、チップ (SoC) サブシステム上のシステムで回復不能なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
+## <a name="bug-check-0x14b-soc_subsystem_failure-parameters"></a>バグチェック 0x14B SOC\_サブシステム\_エラーパラメーター
 
 
 <table>
@@ -46,7 +46,7 @@ SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>アドレス、 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体。</p></td>
+<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体のアドレス。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -57,18 +57,18 @@ SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を
 <td align="left"><p>予約済み。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>4</p></td>
-<td align="left"><p>(省略可能)。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>(省略可能)。 ベンダーから提供されたデータブロックのアドレス。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 ```dbgcmd
 2: kd> !analyze -v
@@ -87,7 +87,7 @@ Arg3: 00000000, Reserved
 Arg4: a126c000, (Optional) address to vendor supplied general purpose data block.
 ```
 
-指定された nt を使用します。SOC\_サブシステム\_エラー\_dt コマンドと Arg1 によって提供されるアドレスを使用して、エラー データをダンプする詳細の構造体。
+指定された nt を使用します。SOC\_サブシステム\_エラー\_詳細構造を使用して、エラーデータをダンプします。これには、dt コマンドと、Arg1 によって指定されたアドレスを使用します。
 
 ```dbgcmd
 2: kd> dt nt!SOC_SUBSYSTEM_FAILURE_DETAILS 9aa8d630
@@ -98,25 +98,25 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
    +0x01c UnifiedFailureRegion : [1]  "F"
 ```
 
-さらに、省略可能な仕入先など、データを解析する SoC ベンダーとの作業では、汎用データ ブロックを提供します。
+SoC ベンダと連携して、オプションのベンダーが提供している汎用データブロックなど、データをさらに解析します。
 
-使ってスタック トレースを確認することも、 [ **k、kb、kc、kd、kp、kP、kv (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド。 すべてのプロセッサでスタックを確認するプロセッサ数を指定できます。
+[**K、kb、kc、kd、kp、kp、kv (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンドを使用して、スタックトレースを調べることができます。 プロセッサ番号を指定して、すべてのプロセッサのスタックを調べることができます。
 
-また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。
+また、コード内でこの停止コードまでのブレークポイントを設定し、エラーが発生したコードへのシングルステップフォワードを試行することもできます。
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュダンプ分析](crash-dump-files.md)
 
-Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
+Windows デバッガーを使用してこの問題に対処することができない場合は、いくつかの基本的なトラブルシューティング手法を使用できます。
 
--   デバイスまたはこのバグ チェックが原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。
+-   このバグチェックの原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。
 
 -   バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
 
--   システム製造元から提供されたハードウェア診断を実行して確認することができます。
+-   システムの製造元から提供されているハードウェア診断を実行できます。
 
--   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
+-   一般的なトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------

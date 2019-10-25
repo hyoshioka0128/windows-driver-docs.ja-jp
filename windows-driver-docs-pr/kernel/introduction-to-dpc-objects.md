@@ -4,12 +4,12 @@ description: DPC オブジェクトの概要
 ms.assetid: ae8758f5-0e23-4db2-9eac-aab31d98247b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ad5796d121b085cd806c29894045608509c148d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a07943c5a620ff57f51de078729ed9b45af01848
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369768"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828227"
 ---
 # <a name="introduction-to-dpc-objects"></a>DPC オブジェクトの概要
 
@@ -17,13 +17,13 @@ ms.locfileid: "67369768"
 
 
 
-Isr を特定可能な限り早く実行する必要があります、ため、ドライバーは通常 ISR 返します後まで、割り込みを処理の完了を延期する必要があります。 そのため、システムはサポートを提供します*遅延プロシージャ呼び出し*(Dpc) は、Isr からキューと isr よりも低いかどうかと、後で実行される。
+Isr は可能な限り迅速に実行する必要があるため、通常、ドライバーは、ISR が戻るまで割り込みのサービスの完了を延期する必要があります。 このため、システムでは*遅延プロシージャ呼び出し*(dpc) がサポートされています。 dpc は、isr からキューに配置できます。これは、後で ISR と低い IRQL で実行されます。
 
-各 DPC がシステム定義に関連付けられて*DPC オブジェクト*します。 システムでは、デバイス オブジェクトごとに 1 つの DPC オブジェクトを提供します。 ドライバーと呼ばれる DPC ルーチンの登録時に、システムはこの DPC オブジェクトを初期化します、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。 ドライバーは、1 つ以上の DPC が必要な場合、追加の DPC オブジェクトを作成できます。 これらの余分な Dpc と呼ばれます。 [ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
+各 DPC は、システム定義の*dpc オブジェクト*に関連付けられています。 システムは、デバイスオブジェクトごとに1つの DPC オブジェクトを提供します。 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンと呼ばれる dpc ルーチンがドライバーによって登録されると、システムによってこの dpc オブジェクトが初期化されます。 複数の DPC が必要な場合、ドライバーは追加の DPC オブジェクトを作成できます。 これらの追加 Dpc は[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンと呼ばれます。
 
-ドライバーによって DPC オブジェクトの内容は直接参照されない必要があります。 オブジェクトの構造が記載されていません。 ドライバーでは、各デバイス オブジェクトに割り当てられたシステム提供の DPC オブジェクトへのアクセスはありません。 ドライバーの余分な Dpc、記憶域の割り当てが、これらの DPC オブジェクトの内容は、システム ルーチンのみが参照する必要があります。
+DPC オブジェクトの内容は、ドライバーによって直接参照されることはできません。 オブジェクトの構造は記載されていません。 ドライバーは、各デバイスオブジェクトに割り当てられたシステム指定の DPC オブジェクトにアクセスできません。 ドライバーは、追加の Dpc 用にストレージを割り当てますが、これらの DPC オブジェクトの内容は、システムルーチンによってのみ参照される必要があります。
 
-DPC オブジェクトと Dpc は、タイマーにも使用できます。 詳細については、次を参照してください。[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)します。
+DPC オブジェクトと Dpc は、タイマーでも使用できます。 詳細については、「 [Timer オブジェクトと dpc](timer-objects-and-dpcs.md)」を参照してください。
 
  
 

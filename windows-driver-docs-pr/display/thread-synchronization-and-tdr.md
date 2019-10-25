@@ -3,44 +3,44 @@ title: スレッドの同期および TDR
 description: スレッドの同期および TDR
 ms.assetid: 3690ad06-002a-4939-9b04-b87245678464
 keywords:
-- WDK の表示、TDR スレッド処理
-- WDK の表示、TDR の同期
-- (タイムアウト検出と回復) TDR WDK の表示、およびスレッドの同期
+- スレッド化 WDK display、TDR
+- 同期 WDK display、TDR
+- TDR (タイムアウト検出と復旧) WDK の表示とスレッドの同期
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d69ebfec70ff8e2a990446a10ce0fc8ebfae75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0898d70c34d915ca2096019e85ab655f649e59c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354699"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825501"
 ---
 # <a name="thread-synchronization-and-tdr"></a>スレッドの同期および TDR
 
 
-次の図は、ディスプレイのミニポート ドライバー Windows 表示 Driver Model (WDDM) でのスレッドの同期のしくみを示しています。
+次の図は、Windows Display Driver Model (WDDM) のディスプレイミニポートドライバーでスレッドの同期がどのように機能するかを示しています。
 
-![windows vista のスレッドの同期を示す図](images/lddmsync.png)
+![windows vista スレッド同期を示す図](images/lddmsync.png)
 
-ハードウェアのタイムアウトが発生した場合、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)処理を開始します。 GPU スケジューラ呼び出してドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数で、GPU をリセットします。 *DxgkDdiResetFromTimeout*がその他の表示ミニポート ドライバー機能、実行時の電源管理関数を除くで同期的に呼び出された[ *DxgkDdiSetPowerComponentFState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate)と[ *DxgkDdiPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)します。 つまり、他のスレッドなしで実行中にドライバー、 *DxgkDdiResetFromTimeout*スレッドの実行。 オペレーティング システムが呼び出し中に任意のアプリケーションからフレーム バッファーへのアクセスは発生しないことを保証しても*DxgkDdiResetFromTimeout*。 したがって、ドライバーでは、メモリ コント ローラー フェーズ ロックされているループ (PLL) をこれにリセットします。
+ハードウェアのタイムアウトが発生すると、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)プロセスが開始されます。 GPU スケジューラは、ドライバーの[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数を呼び出します。これにより、gpu がリセットされます。 *DxgkDdiResetFromTimeout*は、ランタイム電源管理関数[*DxgkDdiSetPowerComponentFState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate)と[*DxgkDdiPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)を除き、他のすべてのディスプレイミニポートドライバー関数と同期的に呼び出されます。 つまり、 *DxgkDdiResetFromTimeout*スレッドの実行中に、ドライバーで他のスレッドは実行されません。 また、オペレーティングシステムは、 *DxgkDdiResetFromTimeout*の呼び出し中に、どのアプリケーションからもフレームバッファーにアクセスできないことを保証します。そのため、ドライバーはメモリコントローラーのフェーズロックループ (PLL) などをリセットできます。
 
-復旧スレッドを実行しながら[ *DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)、割り込みを遅延プロシージャ呼び出し (Dpc) が呼び出され続けますことができます。 [ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)デバイス割り込みとリセットの手順の一部を同期する関数を使用できます。
+復旧スレッドによって[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)が実行されている間は、割り込みと遅延プロシージャ呼び出し (dpc) を引き続き呼び出すことができます。 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)関数を使用すると、reset プロシージャの一部をデバイス割り込みと同期することができます。
 
-ドライバーから返された後[ *DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)、もう一度、ほとんどのドライバー関数を呼び出すことができます、およびオペレーティング システムの起動時に不要になったリソースをクリーンアップします。 クリーンアップの期間中に指定された上の理由から、次のドライバー関数が呼び出されます。
+ドライバーが[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)から戻ると、ほとんどのドライバー関数を再度呼び出すことができ、オペレーティングシステムは不要になったリソースのクリーンアップを開始します。 クリーンアップ期間中は、次のドライバー関数が示されている理由で呼び出されます。
 
--   ドライバーが削除される割り当てについての通知と呼ばれます。
+-   ドライバーは、割り当てが削除されたことを通知するために呼び出されます。
 
-    たとえば、割り当て、メモリ内でページを送信した場合をセグメント化、ドライバーの[ *DxgkDdiBuildPagingBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を呼び出すと、**操作**のメンバー[**DXGKARG\_BUILDPAGINGBUFFER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer) DXGK に設定\_操作\_転送を使用して、 **Transfer.Size**メンバー削除、ドライバーに通知する 0 に設定します。 コンテンツの転送がないこと関連するコンテンツが、リセット時に失われたために注意してください。
+    たとえば、割り当てがメモリセグメントにページングされている場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は、 [**Dxgkarg\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)構造体を DXGK\_操作に設定して、**操作**メンバーと共に呼び出されます。\_転送し、**転送サイズ**のメンバーを0に設定して、ドライバーに削除を通知します。 リセット中にコンテンツが失われたため、コンテンツの転送が行われないことに注意してください。
 
-    ページ割り当てを aperture で送信した場合は、セグメント化、ドライバーの[ *DxgkDdiBuildPagingBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を呼び出すと、**操作**DXGKARGのメンバー\_BUILDPAGINGBUFFER 設定 DXGK\_操作\_UNMAP\_APERTURE\_開口部からの割り当てを解除するドライバーに通知するセグメント。
+    割り当てがアパーチャセグメントにページングされている場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は DXGKARG の**操作**メンバー\_BUILDPAGINGBUFFER を DXGK\_operation に設定し、マップを解除\_\_アパーチャ\_セグメントは、割り当てを絞りからマップ解除するようにドライバーに通知します。
 
--   ドライバーの[ *DxgkDdiReleaseSwizzlingRange* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)アンスィズル aperture とセグメントの開口部の範囲を解放する関数が呼び出されます。
+-   ドライバーの[*DxgkDdiReleaseSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)関数は、unswizzling アパーチャとセグメントの絞りの範囲を解放するために呼び出されます。
 
-ドライバーにアクセスしないように、上記の中に GPU を呼び出す場合を除き、どうしても必要な。
+絶対に必要な場合を除き、ドライバーは、上記の呼び出し中に GPU にアクセスしないようにする必要があります。
 
-オペレーティング システムは、ドライバーの呼び出しますクリーンアップ期間が終了したら[ *DxgkDdiRestartFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)そのクリーンアップが完了すると、ドライバーに通知する関数と、オペレーティング システムが再開されますアダプターを使用して、レンダリングします。
+クリーンアップ期間が終了すると、オペレーティングシステムはドライバーの[*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)関数を呼び出して、クリーンアップが完了したこと、およびレンダリングのためにオペレーティングシステムがアダプターを使用して再開することをドライバーに通知します。
 
-**注**  Windows 8 の TDR の機能が更新されました。 参照してください[Windows 8 での TDR 変更](tdr-changes-in-windows-8.md)します。
+Windows 8 の TDR 機能が更新されている**ことに注意**してください  。 「 [Windows 8 の TDR の変更点」を](tdr-changes-in-windows-8.md)参照してください。
 
  
 

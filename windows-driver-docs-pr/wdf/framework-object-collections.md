@@ -3,18 +3,18 @@ title: フレームワーク オブジェクトのコレクション
 description: フレームワーク オブジェクトのコレクション
 ms.assetid: e3f29be6-ee4c-487a-8c85-18be8b6a5cdc
 keywords:
-- framework は、WDK KMDF、コレクションをオブジェクトします。
-- WDK KMDF のコレクション
-- framework のコレクション オブジェクト WDK KMDF
-- オブジェクトのコレクション WDK KMDF
+- フレームワークオブジェクト WDK KMDF、コレクション
+- コレクション WDK KMDF
+- フレームワークコレクションオブジェクト WDK KMDF
+- オブジェクトコレクション WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9021fce6e571bc110c4965eeb885d6d99ba480ae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15ead2c00ce24a40be79a1d988ac4c32c931f34a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384462"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823701"
 ---
 # <a name="framework-object-collections"></a>フレームワーク オブジェクトのコレクション
 
@@ -22,53 +22,53 @@ ms.locfileid: "67384462"
 
 
 
-ドライバーは、framework のオブジェクトをグループ化によって表されるコレクションに*framework のコレクション オブジェクト*します。
+ドライバーは、フレームワーク*コレクションオブジェクト*によって表されるコレクションに framework オブジェクトをグループ化できます。
 
-たとえば、ドライバーは、大規模な I/O 要求を表す framework 要求オブジェクトを受信する場合、ドライバーに送信できる小規模の要求に、大きな要求を分割する必要があります、 [I/O ターゲット](using-i-o-targets.md)します。 大きな要求を細かく分割、ドライバーは、一連の小さな要求を表す要求オブジェクトを作成する必要があります。 これらのドライバーが作成した要求オブジェクトを追跡するのには、ドライバー可能性がありますコレクション オブジェクトを作成し、コレクションに追加します。
+たとえば、大量の i/o 要求を表すフレームワーク要求オブジェクトをドライバーが受け取った場合、ドライバーは、大量の要求を、 [i/o ターゲット](using-i-o-targets.md)に送信できる小さな要求に分割することが必要になる場合があります。 大きい要求を小さいものに分割するには、ドライバーは小さい要求を表す一連の要求オブジェクトを作成する必要があります。 ドライバーによって作成された要求オブジェクトを追跡するために、ドライバーはコレクションオブジェクトを作成し、コレクションに追加することがあります。
 
-通常、framework のオブジェクトの 1 つの型のオブジェクトのコレクション内のオブジェクトで構成されますが、ドライバーは、さまざまな種類のオブジェクトで構成されるコレクションを作成できます。
+通常、オブジェクトコレクション内のオブジェクトは、単一の種類のフレームワークオブジェクトで構成されますが、ドライバーは、さまざまな種類のオブジェクトで構成されるコレクションを作成できます。
 
-ドライバーは、コレクションのコレクションを作成することもできます。 つまり、コレクションは、一連のコレクション オブジェクトで構成できます。
+また、ドライバーはコレクションのコレクションを作成することもできます。 つまり、コレクションはコレクションオブジェクトのセットで構成されます。
 
-フレームワーク ベースのドライバーでは、オブジェクトのコレクションでは、次の操作を実行できます。
+フレームワークベースのドライバーは、オブジェクトコレクションに対して次の操作を実行できます。
 
--   コレクション オブジェクトを作成します。
+-   コレクションオブジェクトを作成します。
 
-    新しいコレクションを作成するドライバーを呼び出すことができます[ **WdfCollectionCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectioncreate)します。
+    新しいコレクションを作成するために、ドライバーは[**Wdfcollectioncreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectioncreate)を呼び出すことができます。
 
 -   オブジェクトをコレクションに追加します。
 
-    オブジェクトをコレクションに追加するドライバーを呼び出すことができます[ **WdfCollectionAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionadd)、1 つまたは複数の時刻。 呼び出しごとに**WdfCollectionAdd**コレクションの末尾にオブジェクトを追加し、追加されたオブジェクトの参照カウントをインクリメントします。
+    オブジェクトをコレクションに追加するために、ドライバーは[**Wdfcollectionadd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectionadd)を1回以上呼び出すことができます。 **Wdfcollectionadd**を呼び出すたびに、オブジェクトがコレクションの末尾に追加され、追加されたオブジェクトの参照カウントがインクリメントされます。
 
 -   オブジェクトをコレクションから削除します。
 
-    ドライバーを呼び出すことができますをコレクションからオブジェクトを削除し、その参照カウントをデクリメント、 [ **WdfCollectionRemove** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionremove)または[ **WdfCollectionRemoveItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionremoveitem). オブジェクトが削除されると、削除された後にすべてのオブジェクトは、インデックスを自動的にデクリメントがあります。
+    コレクションからオブジェクトを削除し、その参照カウントをデクリメントするために、ドライバーは[**wdfcollectionremove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectionremove)または[**Wdfcollectionremoveitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectionremoveitem)を呼び出すことができます。 オブジェクトが削除されると、削除されたオブジェクトの後にあるすべてのオブジェクトのインデックスが自動的にデクリメントされます。
 
 -   コレクション内のオブジェクトの数を取得します。
 
-    コレクションが含まれているオブジェクトの数を決定するには、ドライバーを呼び出すことができます[ **WdfCollectionGetCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetcount)します。
+    コレクションに含まれるオブジェクトの数を確認するために、ドライバーは[**WdfCollectionGetCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectiongetcount)を呼び出すことができます。
 
--   コレクション内のオブジェクトを識別するハンドルを取得します。
+-   コレクション内のオブジェクトへのハンドルを取得します。
 
-    ドライバーを呼び出す場合[ **WdfCollectionGetItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetitem)、入力引数としてインデックス値を指定するには、ドライバーが、インデックス値に関連付けられているオブジェクトを識別するハンドルを受信します。 (コレクションの最初のオブジェクトを表すインデックス値は 0、1 つのインデックス値を表す 2 つ目のオブジェクト、およびリンク リストなどのようになってします。 ときに項目、ドライバーを削除します*は*、コレクションから項目*は*項目になります +1*は*)。
+    ドライバーが[**Wdfcollectiongetitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectiongetitem)を呼び出して、入力引数としてインデックス値を指定した場合、ドライバーは、インデックス値に関連付けられているオブジェクトへのハンドルを受け取ります。 (インデックス値が0の場合は、コレクション内の最初のオブジェクト、1のインデックス値が2番目のオブジェクトを表します。同様に、リンクリストのようになります。 ドライバーがコレクションから項目*i*を削除すると、item *i*+ 1 が item *i*になります)。
 
-    ドライバーを呼び出すことも[ **WdfCollectionGetFirstItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetfirstitem)または[ **WdfCollectionGetLastItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetlastitem)最初と最後の項目を識別するハンドルを取得するにはコレクションに追加されました。
+    ドライバーは、 [**Wdfcollectiongetfirstitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectiongetfirstitem)または[**Wdfcollectiongetfirstitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/nf-wdfcollection-wdfcollectiongetlastitem)を呼び出して、コレクションに追加された最初または最後の項目へのハンドルを取得することもできます。
 
 -   コレクションをロックします。
 
-    ドライバーを呼び出すことができます[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)アクセスを同期する IRQL でコレクションに = パッシブ\_レベル、またはそれが呼び出すことができます[ **WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))のアクセスを同期 IRQL = ディスパッチ\_レベル。 呼び出すことも、ドライバーでは、他のコードでコレクションにアクセスすることはできません後、ドライバーは、ロックを取得する**WdfWaitLockAcquire**または**WdfSpinLockAcquire**します。 コレクションに対する操作を完了すると、ドライバーを呼び出す必要があります[ **WdfWaitLockRelease**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfsync/nf-wdfsync-wdfwaitlockrelease)します。
+    ドライバーは、 [**Wdfwaitlockacquire**](https://msdn.microsoft.com/library/windows/hardware/ff551168)を呼び出して、IRQL = パッシブ\_レベルのコレクションへのアクセスを同期するか、IRQL = DISPATCH\_Level で[**WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85)) synchronize アクセスを呼び出すことができます。 ドライバーがロックを取得した後、このコレクションには、 **Wdfwaitlockacquire**または**WdfSpinLockAcquire**も呼び出すドライバー内の他のコードからアクセスすることはできません。 コレクションに対して操作を完了した後、ドライバーは[**Wdfwaitlockrelease**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockrelease)を呼び出す必要があります。
 
-    呼び出す[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)または[ **WdfSpinLockAcquire** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))同時に、ドライバーからの他のコードを妨げませんその他のコードにも要求されていない場合、コレクションにアクセスする**WdfWaitLockAcquire**または**WdfSpinLockAcquire**します。
+    [**Wdfwaitlockacquire**](https://msdn.microsoft.com/library/windows/hardware/ff551168)または[**WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))を呼び出しても、他のコードが**Wdfwaitlockacquire**または**WdfSpinLockAcquire**を呼び出さない場合、ドライバー内の他のコードがコレクションに同時にアクセスするのを防ぐことはできません。
 
 -   コレクションを削除します。
 
-    コレクション オブジェクトを削除するドライバーを呼び出すことができます[ **WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)します。 一般的には、ただし、ドライバーを指定、親オブジェクト、コレクションを作成すると、フレームワークは、親オブジェクトを削除するときにコレクション オブジェクトを削除します。
+    コレクションオブジェクトを削除するために、ドライバーは[**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出すことができます。 ただし、通常は、コレクションを作成するときにドライバーが親オブジェクトを指定し、親オブジェクトを削除するときに、フレームワークによってコレクションオブジェクトが削除されます。
 
-    たとえば、ドライバーは、小さな要求に大規模な I/O 要求を中断にするように一連の要求オブジェクトを作成する場合は、オブジェクトのコレクション オブジェクトの親オブジェクト、大規模な I/O 要求の要求を行う、ことができます。 最終的に、ドライバーの I/O ターゲットを呼び出す[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)小さな要求を完了します。 ドライバーがその時点で呼び出すことができます**WdfRequestComplete**大きなの I/O 要求の要求オブジェクトとその子オブジェクトを削除するためにフレームワークの原因: コレクション オブジェクト。
+    たとえば、大量の i/o 要求を小さい要求に分割できるように、ドライバーが要求オブジェクトのセットを作成する場合、サイズの大きい i/o 要求の要求オブジェクトをコレクションオブジェクトの親オブジェクトにすることができます。 最終的に、ドライバーの i/o ターゲットは、小さい要求を完了するために[**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出します。 この時点で、ドライバーは大きな i/o 要求に対して**Wdfrequestcomplete**を呼び出すことができます。これにより、フレームワークは、要求オブジェクトとその子オブジェクトを削除します。コレクションオブジェクト。
 
-    含むコレクション オブジェクトをオブジェクトが削除されていないフレームワークの削除、フレームワークからのオブジェクトを削除しますが、デクリメント、コレクションの参照がカウント、コレクション オブジェクトのみを削除します。
+    フレームワークは、削除されていないオブジェクトを含むコレクションオブジェクトを削除すると、そのオブジェクトをコレクションから削除し、参照カウントをデクリメントしますが、コレクションオブジェクトのみを削除します。
 
-場合があります、ドライバーでは、コレクション内のオブジェクトのすべてを調べる必要があります。 次のコード例では、このような状況を示しています。
+場合によっては、ドライバーがコレクション内のすべてのオブジェクトを調べる必要があります。 この状況を示すコード例を次に示します。
 
 ```cpp
 WdfWaitLockAcquire(CollectionLockHandle, NULL);

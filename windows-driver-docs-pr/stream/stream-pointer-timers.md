@@ -3,17 +3,17 @@ title: ストリーム ポインター タイマー
 description: ストリーム ポインター タイマー
 ms.assetid: 98413fc6-2b62-4c52-9ac4-bd2a3a60db60
 keywords:
-- WDK AVStream、タイマーのポインターをストリーム配信します。
-- WDK AVStream のタイマー
-- WDK AVStream のタイムアウト
+- ストリームポインター WDK AVStream、タイマー
+- タイマー WDK AVStream
+- タイムアウト WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10317e951a5f6e606d46194554eb2343aa674e55
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3773e0ca6019315bf73d0c780227c852c2a152f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377802"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837679"
 ---
 # <a name="stream-pointer-timers"></a>ストリーム ポインター タイマー
 
@@ -21,9 +21,9 @@ ms.locfileid: "67377802"
 
 
 
-ストリーム ポインターでは、タイマーを設定するには、呼び出す[ **KsStreamPointerScheduleTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerscheduletimeout)します。 時間で指定したストリーム ポインターが削除されていないかどうかは*間隔*有効期限が切れる、AVStream ベンダーから提供されたタイマーのコールバック ルーチンを呼び出すとします。 指定*間隔*を 100 ナノ秒単位で。
+ストリームポインターにタイマーを設定するには、 [**Ksk streampointer Scheduletimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerscheduletimeout)を呼び出します。 指定されたストリームポインター*が有効期限*までに削除されていない場合、avstream は、ベンダーが提供するタイマーコールバックルーチンを呼び出します。 *間隔*を100ナノ秒単位で指定します。
 
-タイムアウトをキャンセルする[ **KsStreamPointerCancelTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointercanceltimeout)します。
+タイムアウトを取り消すには、 [**Ksstreamポインター Canceltimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointercanceltimeout)を呼び出します。
 
  
 

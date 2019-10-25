@@ -3,15 +3,15 @@ title: アンロード ルーチンの環境
 description: アンロード ルーチンの環境
 ms.assetid: 4acf66f1-7b97-494e-9f84-14292e971542
 keywords:
-- アンロード ルーチン WDK カーネル、環境
+- アンロードルーチン WDK カーネル、環境
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb61fb9e1920cf753adef3a345bf26161e5c1f36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17d56760466fa4ab827ff326029f14094544d246
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382938"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836094"
 ---
 # <a name="unload-routine-environment"></a>アンロード ルーチンの環境
 
@@ -19,21 +19,21 @@ ms.locfileid: "67382938"
 
 
 
-オペレーティング システム、ドライバーが置き換えられるとき、またはドライバーがアンロードされるすべてのデバイス ドライバー サービスが削除されていること。 PnP マネージャーを呼び出す、PnP ドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンの場合は、ドライバーがあるない複数のデバイス オブジェクトを処理した後、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)要求。
+ドライバーが交換されるとき、またはドライバーサービスによって削除されたすべてのデバイスが削除されたときに、オペレーティングシステムによってドライバーがアンロードされます。 PnP マネージャーは、PnP ドライバーの[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンを呼び出します。これにより、ドライバーが IRP\_処理した後にデバイスオブジェクトがなくなり、 [ **\_デバイスの要求\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)されます。
 
-アンロードのシーケンスの先頭には、I/O マネージャーまたはマネージャーの PnP ドライバー オブジェクトとそのデバイス オブジェクトとしてマーク「アンロードは保留中」します。 ドライバーは、「アンロードは保留中」としてマークされたが後、は、ドライバーには、追加のドライバーが接続することはありませんもことができます、追加の参照は、ドライバーのデバイス オブジェクトを作成します。 ドライバーは未解決の Irp を入力できますが、システムは、ドライバーをすべて新しい Irp を送信しません。
+アンロードシーケンスの開始時に、i/o マネージャーまたは PnP マネージャーは、ドライバーオブジェクトとそのデバイスオブジェクトを "アンロード待ち" としてマークします。 ドライバーが "アンロード待ち" としてマークされている場合、そのドライバーに追加のドライバーをアタッチしたり、ドライバーのデバイスオブジェクトに追加の参照を加えたりすることはできません。 ドライバーは未処理の Irp を完了できますが、システムはドライバーに新しい Irp を送信しません。
 
-I/O マネージャーには、ドライバーの*アンロード*ルーチンに次のすべてに該当する場合。
+I/o マネージャーは、次のすべてに該当する場合にドライバーの*アンロード*ルーチンを呼び出します。
 
--   ドライバーが作成したデバイス オブジェクトのいずれかに参照が残っていません。 つまり、開放できる基になるデバイスに関連付けられているファイルはありません。 またことができます、Irp がドライバーのデバイス オブジェクトのいずれかの未処理。
+-   ドライバーによって作成されたデバイスオブジェクトには、参照が残っていません。 つまり、基になるデバイスに関連付けられているファイルを開くことはできません。また、どの Irp もドライバーのデバイスオブジェクトに対して未処理になることはありません。
 
--   その他のドライバーはこのドライバーに接続されている残っていません。
+-   このドライバーには他のドライバーがアタッチされていません。
 
--   ドライバーが呼び出されて[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)を登録されているすべての PnP 通知の登録を解除します。
+-   ドライバーは、以前に登録されたすべての PnP 通知の登録を解除するために[**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)を呼び出しました。
 
-なお、*アンロード*ルーチンは、ドライバーの場合は呼び出されません[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンがエラー状態を返します。 この場合、I/O マネージャーでは、単に、ドライバーによって使用されるメモリ領域を解放します。
+ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンがエラー状態を返す場合、 *Unload*ルーチンは呼び出されないことに注意してください。 この場合、i/o マネージャーは、ドライバーによって使用されるメモリ領域を単純に解放します。
 
-PnP マネージャーでも I/O マネージャーを呼び出す*アンロード*システム シャット ダウン時にルーチン。 シャット ダウン処理を実行する必要があるドライバーを登録する必要があります、 [ *DispatchShutdown* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+PnP マネージャーも i/o マネージャーも、システムのシャットダウン時に*アンロード*ルーチンを呼び出しません。 シャットダウン処理を実行する必要があるドライバーは、 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンを登録する必要があります。
 
  
 

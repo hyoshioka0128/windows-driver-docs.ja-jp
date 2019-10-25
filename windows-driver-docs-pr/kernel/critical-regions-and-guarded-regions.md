@@ -3,45 +3,45 @@ title: クリティカル領域と保護された領域
 description: クリティカル領域と保護された領域
 ms.assetid: 3781498a-45e9-4f24-8fd2-830eed61298c
 keywords:
-- 非同期プロシージャ呼び出しの WDK カーネル
+- 非同期プロシージャ呼び出し WDK カーネル
 - Apc WDK カーネル
-- クリティカル領域 WDK カーネル
-- 保護された領域の WDK カーネル
+- 重要なリージョン WDK カーネル
+- 保護されたリージョンの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb0c1166abc2a23c67e9077725db4507ac256cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf81928dd90ff25c9b8279505929c80032447d24
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377148"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836971"
 ---
 # <a name="critical-regions-and-guarded-regions"></a>クリティカル領域と保護された領域
 
 
-内にあるスレッドを*クリティカル領域*Apc のユーザーと無効になっている通常のカーネル Apc を実行します。 内でスレッドを*保護された領域*無効になっているすべての Apc を使用して実行します。
+*クリティカル領域*内のスレッドは、ユーザー apc と通常のカーネル apc を無効にして実行されます。 保護された*リージョン*内のスレッドは、すべての apc を無効にして実行されます。
 
-### <a name="critical-regions"></a>クリティカル領域
+### <a name="critical-regions"></a>重要なリージョン
 
-ドライバーは、入力し、次のように重要な領域を終了します。
+ドライバーは、次のように、重要なリージョンに入力して終了することができます。
 
--   呼び出す[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)クリティカル領域を入力します。
+-   [**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)を呼び出して、重要なリージョンを入力します。
 
--   呼び出す[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)クリティカル領域を終了します。
+-   [**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)を呼び出して、重要なリージョンを終了します。
 
-呼び出しごとに**KeEnterCriticalRegion**に一致する呼び出しがあります。 **KeLeaveCriticalRegion**します。
+**KeEnterCriticalRegion**を呼び出すたびに、 **KeLeaveCriticalRegion**への呼び出しが一致している必要があります。
 
-### <a name="guarded-regions"></a>保護された領域
+### <a name="guarded-regions"></a>保護されたリージョン
 
-ドライバーは、入力し、次のように保護された領域を終了します。
+ドライバーは、次のように保護されたリージョンに入力して終了することができます。
 
--   呼び出す[ **KeEnterGuardedRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keenterguardedregion)保護された領域を入力します。
+-   [**KeEnterGuardedRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keenterguardedregion)を呼び出して、保護されたリージョンを入力します。
 
--   呼び出す[ **KeLeaveGuardedRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleaveguardedregion)保護された領域のままにします。
+-   [**KeLeaveGuardedRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleaveguardedregion)を呼び出して、保護されたリージョンを脱退します。
 
-呼び出しごとに**KeEnterGuardedRegion**に一致する呼び出しがあります。 **KeLeaveGuardedRegion**します。
+**KeEnterGuardedRegion**を呼び出すたびに、 **KeLeaveGuardedRegion**への呼び出しが一致している必要があります。
 
-Windows Server 2003 および Windows の以降のバージョン用に開発されたドライバーは、特別なカーネル Apc を無効にするのに保護された領域を使用できます。 ドライバーの以前のオペレーティング システムは、特別なカーネル Apc を無効に APC を現在の IRQL を発生させることによって開発された\_呼び出してレベル[ **KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql)します。 使用[ **KeLowerIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)前の値を現在の IRQL を削減します。
+Windows Server 2003 以降のバージョンの Windows 用に開発されたドライバーでは、保護された領域を使用して特殊なカーネル Apc を無効にすることができます。 以前のオペレーティングシステム用に開発されたドライバーは、 [**Keraiseirql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)を呼び出すことにより、現在の IRQL を APC\_レベルに上げることによって、特殊なカーネル apc を無効にすることができます。 [**Kelower irql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)を使用して、現在の irql を前の値に下げます。
 
  
 

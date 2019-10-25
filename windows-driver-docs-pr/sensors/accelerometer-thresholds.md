@@ -1,36 +1,36 @@
 ---
 title: 加速度計のしきい値
-description: このトピックでは、加速度計しきい値に関する情報を提供します。
+description: このトピックでは、加速度計しきい値について説明します。
 ms.assetid: 7BB8B087-6CE5-4BD2-9286-350AE607B1D7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6715820e6eb21af2b4452bfa9d00b67078c9f655
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2de9645ac133d999f1a368643a1a15d7f23f43d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360931"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824292"
 ---
 # <a name="accelerometer-thresholds"></a>加速度計のしきい値
 
 
-このトピックでは、加速度計しきい値に関する情報を提供します。
+このトピックでは、加速度計しきい値について説明します。
 
-次の表では、加速度計に利用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表に、加速度計で使用可能なしきい値の一覧を示します。 [型] 列に表示される型の詳細については、「 [Propvariant 構造体](https://go.microsoft.com/fwlink/p/?linkid=313395)」を参照してください。
 
-|プロパティのキー|種類|必須/オプション|既定値|説明|
+|プロパティキー|タスクバーの検索ボックスに|必須/オプション|既定値|説明|
 |---|---|---|---|---|
-|PKEY_SensorData_AccelerationX_Gs|VT_R4|必須|0.1f|G's 単位の高速化を上げたり下げたり、しきい値に到達するために必要な軸の最小量|
-|PKEY_SensorData_AccelerationY_Gs|VT_R4|必須|0.1f|G's 単位の高速化を上げたり下げたり、しきい値に到達するために必要な軸の最小量|
-|PKEY_SensorData_AccelerationZ_Gs|VT_R4|必須|0.1f|G's 単位の高速化を上げたり下げたり、しきい値に到達するために必要な z 軸に沿って量の最小値|
+|PKEY_SensorData_AccelerationX_Gs|VT_R4|必須かどうか|0.1 f|しきい値に達するために必要な x 軸に沿って加速度の最小量を増減させます (g ので測定)。|
+|PKEY_SensorData_AccelerationY_Gs|VT_R4|必須かどうか|0.1 f|しきい値に達するために必要な y 軸に沿った加速度の最小値の増減 (g ので測定)。|
+|PKEY_SensorData_AccelerationZ_Gs|VT_R4|必須かどうか|0.1 f|しきい値に達するために必要な z 軸に沿って加速度の最小量を増減します (g ので測定)。|
 
-加速度計ドライバーは、呼び出すことによって、センサー クラスの拡張機能に、サンプルの読み取りを報告する必要があります[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/nf-sensorscx-sensorscxsensordataready)とき PKEY_SensorData_AccelerationX_Gs、PKEY_SensorData_AccelerationY_Gs、または PKEY_SensorData_AccelerationZ_Gs しきい値が満たされています。 各閾値は軸ごとの測定である必要があります。 軸のいずれかでしきい値の条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出すため必要があります。
-PKEY_SensorData_AccelerationX_Gs、または PKEY_SensorData_AccelerationY_Gs、PKEY_SensorData_AccelerationZ_Gs を 0.0f に設定すると、ドライバーはすべて 1 つの間隔でサンプル測定値、センサー クラスの拡張機能を報告する必要があります。 このモードと呼ばれます*センサー サンプル ストリーミング*します。
+加速度計ドライバーは、PKEY_SensorData_AccelerationX_Gs、PKEY_SensorData_AccelerationY_Gs、または PKEY_SensorData_AccelerationZ_Gs のいずれかで[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready)を呼び出すことによって、センサークラス拡張に対するサンプルの読み取りを報告する必要があります。しきい値が満たされています。 各しきい値は、軸ごとに測定する必要があります。 そのため、いずれかの軸でしきい値条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出す必要があります。
+PKEY_SensorData_AccelerationX_Gs、PKEY_SensorData_AccelerationY_Gs、または PKEY_SensorData_AccelerationZ_Gs が 0.0 f に設定されている場合、ドライバーは、1回の間隔でセンサークラス拡張にサンプルの読み取りを報告する必要があります。 このモードは*センサーサンプルストリーミング*と呼ばれています。
 
-加速度計ドライバーは、センサー クラスの拡張機能の呼び出し直後に、1 つの例に読み取り常に報告する必要があります、 [EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)しきい値の値に関係なくコールバック。 このサンプルと呼ばれると呼ばれる*サンプル読み取りの初期*します。
+センサークラス拡張がしきい値に関係なく[Evtsensorstart](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)コールバックを呼び出すと、加速度計ドライバーは常に1つのサンプル読み取りを報告する必要があります。 このサンプルは、「*最初のサンプルの読み取り*」と呼ばれています。
 
 >[!NOTE]
->加速度計ドライバーでは、PKEY_SensorData_Shake データ フィールドの変更 (サポートされている) 場合、設定されているしきい値に関係なく、センサー クラスの拡張機能に読み取るサンプルも報告する必要があります。
+>また、加速度計ドライバーは、設定されているしきい値に関係なく、PKEY_SensorData_Shake データフィールドが (サポートされている場合) 変更されたときにセンサークラスの拡張機能に対する読み取りサンプルを報告する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 

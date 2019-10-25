@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS
-description: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS は、NDIS_STATUS_WDI_INDICATION_DISASSOCIATION の関連付けの解除を示す値のパラメーターを含む TLV です。
+description: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS は、NDIS_STATUS_WDI_INDICATION_DISASSOCIATION の関連付けを示すパラメーターを含む TLV です。
 ms.assetid: AD799DAA-B89D-4015-8DC5-53057C4DA43E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 346b0005a76203a8b9c68a8b61feba0394650055
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1bdd2e7f2b3350da6be78c9d92c2449ba0d016b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360235"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834140"
 ---
-# <a name="wditlvdisassociationindicationparameters"></a>WDI\_TLV\_戻せません\_INDICATION\_パラメーター
+# <a name="wdi_tlv_disassociation_indication_parameters"></a>WDI\_TLV\_関連付け\_示さ\_パラメーター
 
 
-WDI\_TLV\_関連付け解除\_INDICATION\_パラメーターがの関連付けの解除を示す値のパラメーターを含む TLV [NDIS\_状態\_WDI\_INDICATION\_戻せません](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-disassociation)します。
+WDI\_TLV\_関連付け\_示さ\_パラメーターは、 [NDIS\_STATUS\_関連付け\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-disassociation)\_WDI を示す関連付けを示すパラメーターを含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,19 +26,19 @@ WDI\_TLV\_関連付け解除\_INDICATION\_パラメーターがの関連付け�
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                         | 説明                                                                |
+| タスクバーの検索ボックスに                                                         | 説明                                                                |
 |--------------------------------------------------------------|----------------------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)            | 関連付けの解除の指示に関連付けられているピアの MAC アドレス。 |
-| [**WDI\_ASSOC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) (UINT32) | 関連付けの解除を示す値をトリガーします。                             |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)            | 関連付けに関連付けられているピアの MAC アドレス。 |
+| [**WDI\_ASSOC\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status) (UINT32) | 関連付けを示すトリガー。                             |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -57,7 +57,7 @@ WDI\_TLV\_関連付け解除\_INDICATION\_パラメーターがの関連付け�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

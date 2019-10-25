@@ -3,25 +3,25 @@ title: WMI 登録フラグ
 description: WMI 登録フラグ
 ms.assetid: 001d4840-0ed4-464d-8379-7bbd0afce28c
 keywords:
-- WDK の WMI の名前の動的インスタンス
-- 静的なインスタンス名を WDK WMI
-- 登録は、WDK の WMI をフラグします。
-- WDK の WMI のフラグ
-- WMI の WDK カーネルでは、WMI に登録します。
-- WMI データ プロバイダーを登録します。
-- WDK の WMI のデータ プロバイダー
-- ドライバー WDK WMI の登録
-- イベントは、WDK の WMI をブロックします。
-- WDK の WMI をブロックします。
-- ブロックを登録します。
+- 動的インスタンス名 WDK WMI
+- 静的インスタンス名 WDK WMI
+- 登録フラグ WDK WMI
+- WDK WMI にフラグをする
+- WMI WDK カーネル、WMI への登録
+- WMI データプロバイダーの登録
+- データプロバイダー WDK WMI
+- ドライバー登録 WDK WMI
+- イベントブロック WDK WMI
+- WDK WMI をブロックする
+- 登録 (ブロックを)
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eecddaf1a6e8afa134bea883f84581c3c54ebee4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e8fe309f38ab40c68a2b98f573e9feb59b0e284
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369900"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835653"
 ---
 # <a name="wmi-registration-flags"></a>WMI 登録フラグ
 
@@ -29,33 +29,33 @@ ms.locfileid: "67369900"
 
 
 
-ドライバーは、ブロックは、静的なを使用するかどうかまたは動的なインスタンス名しフラグを設定して、ブロックの他の特性を指定することを示します、 [ **WMIGUIDREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmiguidreginfo)または[ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)ブロックを登録する WMI に合格する構造体。
+ドライバーは、ブロックが静的[**または動的**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)なインスタンス名を使用しているかどうかを示します。また、ブロックを登録するために WMI に渡す[**Wmiguidreginfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmiguidreginfo)構造体またはのように、このブロックの他の特性を指定します。
 
-ドライバーでは、次のフラグのいずれかを設定して、ブロックが静的インスタンス名を使用することを示します。
+ドライバーは、次のいずれかのフラグを設定することによって、ブロックが静的インスタンス名を使用することを示します。
 
--   WMIREG\_フラグ\_インスタンス\_一覧は、ドライバーがすべてのインスタンスの静的リスト内の名前を提供することを示します。
+-   WMI REG\_フラグ\_インスタンス\_リストは、ドライバーが静的リスト内のすべてのインスタンス名を提供することを示します。
 
-    処理によってブロック登録されている場合にのみ、ドライバーはこのフラグを設定できる、 [ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)呼び出しではなく、要求[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)します。 ドライバー書き込みます、インスタンス名の文字列で示されるバイト オフセット位置に**InstanceNameList**ブロックの**WMIREGGUID**構造体。
+    ドライバーがこのフラグを設定できるのは、このフラグを設定できるのは、 [**Wmi コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)を呼び出さずに、irp\_によって[ **\_Reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[**IRP\_\_、reginfo\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)要求を処理することによってブロックが登録されている場合のみです。 ドライバーは、**ブロックの** **InstanceNameList**によって示されるバイトオフセットにインスタンス名文字列を書き込みます。
 
--   WMIREG\_フラグ\_インスタンス\_BASENAME ドライバー定義した基本名文字列から静的なインスタンス名を生成する WMI に指示します。
+-   WMI REG\_フラグ\_インスタンス\_のベース名文字列から静的インスタンス名を生成するように WMI に指示します。
 
-    処理するドライバー、 **IRP\_MN\_REGINFO**または**IRP\_MN\_REGINFO\_EX**要求がある基本名文字列を書き込みます、示されたオフセット**BaseNameOffset**ブロックの**WMIREGGUID**構造体。
+    Irp\_によって処理されるドライバーが **\_reginfo**または irp\_によって処理される **\_REGINFO\_EX**要求によって、**ブロックの** **BaseNameOffset**によって示されるオフセットにベース名文字列が書き込まれます。データ.
 
-    呼び出すドライバー **WmiSystemControl**の基本名文字列を指定します、 *InstanceName*のパラメーターの[ **DpWmiQueryReginfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)ルーチン。
+    **[Wmi システムコントロール]** を呼び出すドライバーは[ **、その**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)*インスタンスのインスタンス*名を指定します。
 
--   WMIREG\_フラグ\_インスタンス\_PDO ドライバーの PDO のデバイス インスタンス ID からの静的インスタンス名を生成する WMI に指示します。
+-   WMI REG\_フラグ\_インスタンス\_PDO は、ドライバーの PDO のデバイスインスタンス ID から静的インスタンス名を生成するように WMI に指示します。
 
-    処理するドライバー、 **IRP\_MN\_REGINFO**または**IRP\_MN\_REGINFO\_EX**要求は、でPDOにポインターを書き込みます**Pdo**のブロックのメンバー **WMIREGGUID**構造体。 要求が場合**IRP\_MN\_REGINFO\_EX**、ドライバーは、呼び出すことによって渡される各 PDO の参照カウントを増やす必要があります、 [ **ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)ルーチン。 (システムが逆参照各 PDO 後。)
+    Irp\_によって処理されるドライバーが **\_reginfo**または irp\_\_によって処理される場合は、 **REGINFO\_EX**要求によって、ブロックの**Wmi reginfo**構造の**pdo**メンバーに pdo へのポインターが書き込まれます。 要求が**IRP\_\_REGINFO\_EX**である場合、ドライバーは、 [**obreferenceobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)ルーチンを呼び出すことによって渡された各 PDO の参照カウントを増やす必要があります。 (システムは、後で各 PDO を逆参照します)。
 
-    呼び出すドライバー **WmiSystemControl**で PDO にポインターを書き込みます、 *Pdo*のパラメーターの[ *DpWmiQueryReginfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)ルーチン。
+    呼び出し[*元の*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)ドライバーは、その**システムコントロール**の*pdo*パラメーターにある pdo へのポインターを書き込みます。
 
-ブロックでの動的インスタンス名を使用することを示す、ドライバーする必要がありますを設定できませんの次のフラグ。WMIREG\_フラグ\_インスタンス\_リスト、WMIREG\_フラグ\_インスタンス\_PDO、または WMIREG\_フラグ\_インスタンス\_BASENAME します。
+ブロックで動的インスタンス名が使用されていることを示すには、ドライバーは、次のフラグを設定しないようにする必要があります。\_フラグ\_インスタンス\_リスト、の場合は、WMI REG\_フラグ\_インスタンス\_PDO,、または WMI REG\_フラグ\_インスタンス\_ベースです。
 
-ドライバーは、データ ブロックが WMIREG を設定して、収集する高価であることを示します\_フラグ\_高コストです。 これに指示を送信する WMI、 [ **IRP\_MN\_を有効にする\_コレクション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)初めて WMI クライアントが開くデータ ブロックの要求と[ **IRP\_MN\_を無効にする\_コレクション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)最後の WMI クライアントが、ブロックを閉じるときに要求します。 受信するまで、ドライバーは、このようなブロックのデータを収集しない必要があります、 **IRP\_MN\_を有効にする\_コレクション**要求。
+ドライバーは、データブロックが収集にかかるコストが高いことを示しています。これを行うには、\_フラグ\_コストを設定します。 これにより、wmi クライアントが最初にデータブロックを開いたときに[ **\_コレクション要求を有効に**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)し、最後の wmi クライアントが終了したときに[**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)\_\_収集要求を無効にするように、wmi に\_対して実行するように wmi に指示します。ブロック。 このようなブロックのデータを収集する必要があるのは、 **\_COLLECTION 要求を有効にする\_IRP\_** を受信するまでの間です。
 
-ドライバーが WMIREG を設定して、イベント ブロックを示す\_フラグ\_イベント\_のみ\_GUID。 これは、ブロックができることを示します。 有効になっているまたはのみ、イベントとして無効になっているとできません照会または設定します。
+ドライバーは、イベントブロックを示しています。これは、\_イベント\_\_フラグを設定することによって\_GUID のみになります。 これは、ブロックをイベントとして有効または無効にすることができ、クエリや設定を行うことができないことを示します。
 
-ドライバーに指示 WMIREG を設定して、以前に登録されたブロックを削除する WMI\_フラグ\_削除\_GUID。 このフラグは、登録情報を更新する要求に対する応答でのみ有効です ([**IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex) WMIUPDATE で)。 詳細については、次を参照してください。 [WMI 登録情報を更新する](updating-wmi-registration-information.md)します。
+ドライバーは、WMI に対して、以前に登録されたブロックを削除するように指示します。\_GUID\_削除するには、\_フラグを設定します。 このフラグは、登録情報を更新するための要求に応答する場合にのみ有効です ([ **\_reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または irp\_によって、レジストリ情報[ **\_EX\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)の更新を含む)。 詳細については、「 [WMI の登録情報を更新](updating-wmi-registration-information.md)する」を参照してください。
 
  
 

@@ -4,23 +4,23 @@ description: Windows カーネルモード構成マネージャー
 ms.assetid: 0499121b-6f0b-464f-b422-610122fb7d3b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d5afb5aa574b1a50f17eda4fb92ed4e03ff59b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7dbae31bc252300f1e62abdf27b5f869e4cfd42d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358065"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838309"
 ---
 # <a name="windows-kernel-mode-configuration-manager"></a>Windows カーネルモード構成マネージャー
 
 
-Microsoft Windows の以前の日、アプリケーションとオペレーティング システムは、"INI"(初期化) ファイル内の構成値を格納します。 これは、次の 1 つの Windows セッションから保持でした状態値を格納する簡単な方法を提供します。 ただし、Windows 環境が複雑になると、オペレーティング システムとアプリケーションについての永続的な情報を保存する新しいシステムが必要でした。 ハードウェアとソフトウェアに関するデータを格納する Windows レジストリが作成されました。
+Microsoft Windows の以前のバージョンでは、アプリケーションとオペレーティングシステムによって構成値が "INI" (初期化) ファイルに格納されていました。 これにより、Windows セッション間で保持される可能性のある状態値を格納する簡単な方法が提供されました。 ただし、Windows 環境がより複雑になったため、オペレーティングシステムとアプリケーションに関する永続的な情報を格納する新しいシステムが必要でした。 Windows レジストリは、ハードウェアとソフトウェアに関するデータを格納するために作成されました。
 
-Windows カーネル モードの構成マネージャーでは、レジストリを管理します。 ドライバーは、レジストリの変更について知っておく必要がある場合、によって、特定のレジストリ データに対してコールバックを登録する configuration manager のルーチンを使用できます。 次に、レジストリ内のデータが変更されたときに、コールバックがトリガーされ、コールバック情報は、ドライバーを処理するコードを実行することができます。
+Windows カーネルモード構成マネージャーは、レジストリを管理します。 ドライバーがレジストリの変更について認識する必要がある場合、特定のレジストリデータにコールバックを登録することによって、構成マネージャーのルーチンを使用することができます。 次に、レジストリ内のデータが変更されると、コールバックがトリガーされ、コードを実行して、ドライバー内のコールバック情報を処理できます。
 
-Configuration manager への直接インターフェイスを提供するルーチンの文字が付いて"**Cm**"。 たとえば、 **CmRegisterCallback**します。 Configuration manager のルーチンの一覧は、次を参照してください。 [Configuration Manager ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+構成マネージャーに直接インターフェイスを提供するルーチンには、先頭に文字 "**Cm**" が付いています。たとえば、 **Cmregistercallback**です。 Configuration manager ルーチンの一覧については、「 [Configuration Manager ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
-直接、構成マネージャーを呼び出し、その他の方法は、ドライバーのレジストリを操作することがあります。 詳細については、ドライバーのレジストリを使用して、次を参照してください。 [、ドライバーのレジストリを使用して](using-the-registry-in-a-driver.md)と[ドライバーのレジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)します。
+構成マネージャーを直接呼び出すだけでなく、ドライバーでレジストリを操作する方法もあります。 ドライバーでのレジストリの使用の詳細については、「ドライバー[でのレジストリの使用](using-the-registry-in-a-driver.md)」および「[ドライバーのレジストリキー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)」を参照してください。
 
  
 

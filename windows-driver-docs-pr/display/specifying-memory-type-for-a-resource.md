@@ -3,36 +3,36 @@ title: リソースのメモリの種類の指定
 description: リソースのメモリの種類の指定
 ms.assetid: b4691de0-d3c9-4a6f-a9f4-aafb22ea3e97
 keywords:
-- ビデオ メモリの種類の WDK の表示
-- メモリの種類の WDK の表示
-- リソースのメモリの種類の WDK 表示
+- ビデオメモリの種類 WDK ディスプレイ
+- メモリの種類 WDK ディスプレイ
+- リソースメモリの種類 WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7383a7f037e6cddfbf0fb8b55a623a7105699de3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e2fe99adf82eb1cea8fe4bb24bcc00f60297f65
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376066"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825720"
 ---
 # <a name="specifying-memory-type-for-a-resource"></a>リソースのメモリの種類の指定
 
 
-ユーザー モードのディスプレイ ドライバーが受け取ったときに使用されるメモリの種類に関する情報を受け取る、[リソースを作成する要求](requesting-and-using-surface-memory.md)します。 システムまたはビデオのいずれかのメモリを割り当て、D3DDDIPOOL としてメモリの種類が指定されて\_SYSTEMMEM または D3DDDIPOOL\_グラフィックスアクセラレータ列挙子のそれぞれの**プール**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体。 さらに、マイクロソフトの Direct3D ランタイムがで次の列挙子のいずれかを指定して使用するビデオ メモリの種類について、ドライバーにヒントを提供、**プール**メンバー。
+ユーザーモードの表示ドライバーは、[リソースの作成要求](requesting-and-using-surface-memory.md)を受信するときに使用する必要があるメモリの種類に関する情報を受け取ります。 メモリ型は、 [**D3DDDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体の**プール**メンバーの D3DDDIPOOL\_SYSTEMMEM または D3DDDIPOOL\_videomemory 列挙子を通じて、システムメモリまたはビデオメモリのどちらかとして指定されます. さらに、Microsoft Direct3D ランタイムは、**プール**メンバーで次の列挙子のいずれかを指定することによって、使用するビデオメモリの種類に関するヒントをドライバーに提供します。
 
 -   D3DDDIPOOL\_LOCALVIDMEM
 
-    ランタイムは、ドライバーの使用のローカル ビデオ メモリをお勧めします。
+    ランタイムは、ドライバーがローカルのビデオメモリを使用することを推奨します。
 
 -   D3DDDIPOOL\_NONLOCALVIDMEM
 
-    ランタイムは、ドライバーがローカルでないビデオ メモリ (AGP メモリなど) を使用することをお勧めします。
+    ランタイムは、ドライバーが非ローカルビデオメモリ (たとえば、AGP メモリ) を使用することを推奨します。
 
-ランタイムは、ユーザー モードへのヒントの表示パフォーマンスを向上させるためにドライバーを提供します。 たとえば、ランタイムを指定 D3DDDIPOOL\_NONLOCALVIDMEM 場合は、CPU が高速非ローカルのビデオ メモリを使用して実行すると、画面に書き込みます。
+ランタイムは、パフォーマンスを向上させるために、ユーザーモードの表示ドライバーにヒントを提供します。 たとえば、CPU が画面に書き込まれた場合に、非ローカルビデオメモリを使用して高速に実行される場合、ランタイムは D3DDDIPOOL\_NONLOCALVIDMEM を指定することがあります。
 
-ユーザー モードのディスプレイ ドライバーを使って表示ミニポート ドライバーにヒントを通過する、 **pPrivateDriverData**のメンバー、 [ **D3DDDI\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)と[ **DXGK\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)ベンダー固有の方法で構造体。 ディスプレイのミニポート ドライバーでビデオ メモリ マネージャーに、適切なメモリのセグメントのセグメントの識別子を返すことで使用することを示します、 **HintedSegmentId** 、DXGK のメンバー\_ALLOCATIONINFO 構造体ドライバーの呼び出しから[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数。
+ユーザーモードの表示ドライバーは、ベンダー固有の方法で[**D3DDDI\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)の割り当て情報構造と[**DXGK\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当て情報構造体の**pprivatedriverdata**メンバーを介して、ヒントをディスプレイミニポートドライバーに渡します。 ディスプレイのミニポートドライバーは、ビデオメモリマネージャーに対して、DXGK\_**HintedSegmentId**のメンバーにあるセグメントの識別子を、ドライバーの呼び出しから取得することによって、適切なメモリセグメントを示します。[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数。
 
-、リソースの作成に使用されるビデオ メモリの種類に関係なく、ユーザー モードのディスプレイ ドライバーは、実行時に、セマンティックの相違点を公開する必要がありますしません。 ビデオ メモリの種類ごとに、ドライバーと同じ情報を表示する必要があり、値が同じ戻り値を返す必要があります。
+リソースの作成に使用されるビデオメモリの種類に関係なく、ユーザーモードの表示ドライバーでは、セマンティクスの違いをランタイムに公開しないようにする必要があります。 つまり、ビデオメモリの種類ごとに、ドライバーは情報をまったく同じようにレンダリングする必要があり、同じ戻り値を返す必要があります。
 
  
 

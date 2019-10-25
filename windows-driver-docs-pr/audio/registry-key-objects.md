@@ -3,16 +3,16 @@ title: レジストリ キーのオブジェクト
 description: レジストリ キーのオブジェクト
 ms.assetid: c666f0cc-5a8a-4df8-9c65-08e3b044a08f
 keywords:
-- ヘルパーは、WDK オーディオ、レジストリ キー オブジェクトをオブジェクトします。
-- レジストリ キー オブジェクトの WDK オーディオ
+- ヘルパーオブジェクト WDK オーディオ、レジストリキーオブジェクト
+- レジストリキーオブジェクト WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0c5a8bf902385b163568e8c35eece77fa41800c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fcc9cc335f01795f22a5539d98f8b4cc16ee4dc0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355273"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830224"
 ---
 # <a name="registry-key-objects"></a>レジストリ キーのオブジェクト
 
@@ -20,15 +20,15 @@ ms.locfileid: "67355273"
 ## <span id="registry_key_objects"></span><span id="REGISTRY_KEY_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IRegistryKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iregistrykey)ミニポート ドライバーのためのインターフェイス。 IRegistryKey オブジェクトは、レジストリ キーを表します。 ミニポート ドライバーでは、レジストリ キー オブジェクトを使用して、次の操作します。
+PortCls システムドライバーは、ミニポートドライバーの利点を得るために[Iregistrykey](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iregistrykey)インターフェイスを実装しています。 IRegistryKey オブジェクトは、レジストリキーを表します。 ミニポートドライバーは、次の操作を行うためにレジストリキーオブジェクトを使用します。
 
--   作成し、レジストリ キーの削除
+-   レジストリキーの作成と削除
 
--   レジストリ キーを列挙します。
+-   レジストリキーの列挙
 
--   クエリを実行し、レジストリ キーを設定
+-   クエリとレジストリキーの設定
 
-については、指定したキーの下のレジストリ エントリをレジストリ キー オブジェクトを照会するときに、クエリは異なるキー クエリ構造体を使用してそれぞれの 3 つの形式のいずれかの情報を出力できます。 次の表は、 [**キー\_情報\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_key_information_class)の 3 つのキー クエリの構造を示す列挙値は、クエリによって出力します。
+指定されたキーの下にあるレジストリエントリに関する情報をレジストリキーオブジェクトに照会すると、クエリは3つの形式のいずれかで情報を出力することができ、それぞれが異なるキークエリ構造を使用します。 次の表に、クエリによって出力される3つのキークエリ構造の種類を示す、\_クラス列挙値の[**キー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_key_information_class)を示します。
 
 <table>
 <colgroup>
@@ -38,48 +38,48 @@ PortCls システム ドライバーの実装、 [IRegistryKey](https://docs.mic
 <thead>
 <tr class="header">
 <th align="left">KEY_INFORMATION_CLASS 値</th>
-<th align="left">キー クエリ構造</th>
+<th align="left">キークエリの構造</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>KeyBasicInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_basic_information" data-raw-source="[&lt;strong&gt;KEY_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_basic_information)"><strong>KEY_BASIC_INFORMATION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information" data-raw-source="[&lt;strong&gt;KEY_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information)"><strong>KEY_BASIC_INFORMATION</strong></a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>KeyFullInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_full_information" data-raw-source="[&lt;strong&gt;KEY_FULL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_full_information)"><strong>KEY_FULL_INFORMATION</strong></a></p></td>
+<td align="left"><p><strong>キー・マトリックス</strong></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information" data-raw-source="[&lt;strong&gt;KEY_FULL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information)"><strong>KEY_FULL_INFORMATION</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>KeyNodeInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_node_information" data-raw-source="[&lt;strong&gt;KEY_NODE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_key_node_information)"><strong>KEY_NODE_INFORMATION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information" data-raw-source="[&lt;strong&gt;KEY_NODE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information)"><strong>KEY_NODE_INFORMATION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-既存のレジストリ キーを開くか、新しいレジストリ キーの作成、アダプタのドライバを呼び出すことができます、 [ **PcNewRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewregistrykey)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::NewRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-newregistrykey)メソッド。 2 つの呼び出しは似ていますが、 **PcNewRegistryKey**関数には、2 つのパラメーターの追加が必要な*デバイス オブジェクト*と*サブデバイス*。 詳細については、次を参照してください。 **PcNewRegistryKey**します。
+既存のレジストリキーを開くか、新しいレジストリキーを作成するには、アダプタードライバーが[**Pcnewregistrykey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewregistrykey)関数を呼び出すことができます。また、ミニポートドライバーは、ポートドライバーの[**IPort:: newregistrykey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-newregistrykey)メソッドを呼び出すことができます。 2つの呼び出しは似ていますが、 **Pcnewregistrykey**関数には、 *DeviceObject*と*subdevice*という2つの追加パラメーターが必要です。 詳細については、「 **Pcnewregistrykey**」を参照してください。
 
-ミニポート ドライバーが新しいを作成します[IRegistryKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iregistrykey)オブジェクト、オブジェクトは、既存のサブキーを開きますかが存在しない場合は、新しいレジストリ サブキーを作成します。 どちらの場合は、レジストリ キー オブジェクトは、キーを識別するハンドルを格納します。 そのオブジェクトが後で解放されるときに、その参照カウントをデクリメントを 0 に、オブジェクトは、キーへのハンドルを自動的に閉じます。
+ミニポートドライバーによって新しい[Iregistrykey](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iregistrykey)オブジェクトが作成されると、既存のサブキーが開かれるか、または新しいレジストリサブキーが存在しない場合は作成されます。 どちらの場合も、レジストリキーオブジェクトはキーへのハンドルを格納します。 このオブジェクトが後で解放され、その参照カウントが0に減少すると、オブジェクトはキーへのハンドルを自動的に閉じます。
 
-[IRegistryKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iregistrykey)インターフェイスは、次のメソッドをサポートしています。
+[Iregistrykey](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iregistrykey)インターフェイスは、次のメソッドをサポートしています。
 
-[**IRegistryKey::DeleteKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-deletekey)
+[**IRegistryKey::D eleteKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-deletekey)
 
-[**IRegistryKey::EnumerateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-enumeratekey)
+[**IRegistryKey:: EnumerateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-enumeratekey)
 
-[**IRegistryKey::EnumerateValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-enumeratevaluekey)
+[**IRegistryKey:: EnumerateValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-enumeratevaluekey)
 
-[**IRegistryKey::NewSubKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-newsubkey)
+[**IRegistryKey:: NewSubKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-newsubkey)
 
-[**IRegistryKey::QueryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-querykey)
+[**IRegistryKey:: QueryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-querykey)
 
-[**IRegistryKey::QueryRegistryValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-queryregistryvalues)
+[**IRegistryKey:: QueryRegistryValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-queryregistryvalues)
 
-[**IRegistryKey::QueryValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-queryvaluekey)
+[**IRegistryKey:: QueryValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-queryvaluekey)
 
-[**IRegistryKey::SetValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iregistrykey-setvaluekey)
+[**IRegistryKey:: SetValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-setvaluekey)
 
  
 

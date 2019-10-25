@@ -3,16 +3,16 @@ title: デバイス インターフェイスの使用
 description: デバイス インターフェイスの使用
 ms.assetid: a41f9ae2-6128-43e2-a6b5-4d0bd45371bd
 keywords:
-- インターフェイス クラス WDK デバイスのインストール
-- デバイスのインターフェイス クラス WDK デバイスのインストール
+- インターフェイスクラス WDK デバイスのインストール
+- デバイスインターフェイスクラス WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3fd04fd5e73bc498dc0b2202f8691b98bf05a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae2d98c7851a8b735f2926f130f624d1cb84849e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380446"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837351"
 ---
 # <a name="using-a-device-interface"></a>デバイス インターフェイスの使用
 
@@ -20,19 +20,19 @@ ms.locfileid: "67380446"
 
 
 
-デバイスのインターフェイスは、カーネル モード コンポーネントとユーザー モード アプリケーションの両方に使用します。 ユーザー モード コードで使用できる **SetupDi * * * Xxx*関数について説明する登録されている、デバイスのインターフェイスを有効にします。 参照してください[SetupDi デバイス インターフェイス関数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)詳細についてはします。
+デバイスインターフェイスは、カーネルモードコンポーネントとユーザーモードアプリケーションの両方で使用できます。 ユーザーモードのコードでは、**Setupdi * * * Xxx*関数を使用して、登録済みの有効なデバイスインターフェイスを調べることができます。 詳細については、「 [Setupdi デバイスインターフェイス関数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)」を参照してください。
 
-カーネル モード コンポーネントには、特定のデバイスまたはファイル オブジェクトを使用できます、前に、次の操作する必要があります。
+カーネルモードコンポーネントが特定のデバイスまたはファイルオブジェクトを使用できるようにするには、次の操作を行う必要があります。
 
-1.  必要なデバイスのインターフェイス クラスが登録され、有効になっているかどうかを決定します。
+1.  必要なデバイスインターフェイスクラスが登録され、有効になっているかどうかを確認します。
 
-    ドライバー、PnP マネージャー デバイス インターフェイスのインスタンスを有効または無効になっているときに通知を登録できます。 登録するコンポーネントの呼び出しに[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。 このルーチンは、デバイス インターフェイスのインスタンスのインスタンスを有効または無効になっている、指定したデバイス クラスのたびに呼び出されるドライバーが指定したコールバックのアドレスを格納します。 コールバック ルーチンの受信、 [ **DEVICE_INTERFACE_CHANGE_NOTIFICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_interface_change_notification)構造体、インターフェイス インスタンスのシンボリック リンクを表す Unicode 文字列が含まれています。 参照してください[PnP のデバイス インターフェイスの変更通知を使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-pnp-device-interface-change-notification)詳細についてはします。
+    ドライバーは、デバイスインターフェイスのインスタンスが有効または無効になったときに通知を受けるように、PnP マネージャーに登録できます。 登録するために、コンポーネントは[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出します。 このルーチンは、指定されたデバイスクラスについて、デバイスインターフェイスインスタンスのインスタンスが有効または無効になるたびに呼び出される、ドライバーによって提供されるコールバックのアドレスを格納します。 コールバックルーチンは、インターフェイスインスタンスのシンボリックリンクを表す Unicode 文字列を含む[**DEVICE_INTERFACE_CHANGE_NOTIFICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_interface_change_notification)構造体を受け取ります。 詳細については、「 [PnP デバイスインターフェイス変更通知の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-pnp-device-interface-change-notification)」を参照してください。
 
-    ドライバーまたはその他のカーネル モード コンポーネントを呼び出すことも[ **IoGetDeviceInterfaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces) 、登録されているすべての一覧を取得するには、デバイス インターフェイスのクラスのインスタンスを特定のデバイス インターフェイスを有効にします。 返された一覧には、デバイス インターフェイスのインスタンスを識別する Unicode シンボリック リンクの文字列へのポインターが含まれています。
+    ドライバーまたはその他のカーネルモードコンポーネントは、 [**Iogetdeviceinterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)を呼び出して、特定のデバイスインターフェイスクラスの登録済みの有効なデバイスインターフェイスインスタンスの一覧を取得することもできます。 返される一覧には、デバイスインターフェイスインスタンスを識別する Unicode シンボリックリンク文字列へのポインターが含まれています。
 
-2.  インターフェイスのインスタンスに対応するデバイスまたはファイル オブジェクトへのポインターを取得します。
+2.  インターフェイスのインスタンスに対応するデバイスまたはファイルオブジェクトへのポインターを取得します。
 
-    特定のデバイス オブジェクトにアクセスするドライバーを呼び出す必要があります[ **IoGetDeviceObjectPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)、必要なインターフェイスでの Unicode 文字列を渡す、 *ObjectName*パラメーター。 ファイル オブジェクトにアクセスするドライバーを呼び出す必要があります[ **InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)での Unicode 文字列を渡す、 *ObjectName*パラメーターであり、パス、正常に呼び出しに属性の構造を初期化[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)します。
+    特定のデバイスオブジェクトにアクセスするには、ドライバーが[**Iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)を呼び出し、必要なインターフェイスの Unicode 文字列を*ObjectName*パラメーターに渡す必要があります。 ファイルオブジェクトにアクセスするには、ドライバーは[**Initializeobjectattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)を呼び出し、 *ObjectName*パラメーターで Unicode 文字列を渡し、 [**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)への呼び出しで正常に初期化された属性構造を渡す必要があります。
 
  
 

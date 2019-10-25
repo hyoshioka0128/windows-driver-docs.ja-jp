@@ -3,19 +3,19 @@ title: カスタマイズされたデータ ストリーム圧縮
 description: カスタマイズされたデータ ストリーム圧縮
 ms.assetid: 7e42f3c7-c833-49ee-976b-ed32b921af95
 keywords:
-- Unidrv、データ ストリームの圧縮
-- データ ストリーム圧縮 WDK Unidrv
-- カスタマイズされたデータ ストリームの圧縮 WDK Unidrv
-- 圧縮データ ストリームの WDK Unidrv
-- Unidrv WDK の印刷
+- Unidrv、データストリームの圧縮
+- データストリームの圧縮 WDK Unidrv
+- カスタマイズされたデータストリームの圧縮 WDK Unidrv
+- 圧縮されたデータストリーム WDK Unidrv
+- Unidrv WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8390c9690a2a1a8c314f47a257f1c21128640370
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93964f4a0185ed4c8068241db74424c4d04d7fb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372426"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838007"
 ---
 # <a name="customized-data-stream-compression"></a>カスタマイズされたデータ ストリーム圧縮
 
@@ -23,17 +23,17 @@ ms.locfileid: "67372426"
 
 
 
-Unidrv カスタマイズ コードを使用してデータの圧縮操作を実行することができます。 カスタマイズされた圧縮操作を実行するには、次の手順を実行します。
+Unidrv では、カスタマイズされたコードを使用してデータ圧縮操作を実行できます。 カスタマイズした圧縮操作を実行するには、次の手順を実行します。
 
-1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::Compression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-compression)メソッド。
+1.  [**Iprintoemuni:: Compression**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-compression)メソッドを実装するレンダリングプラグインを提供します。
 
-2.  プリンターの CmdEnableOEMComp コマンドの入力を含める*GPD*ファイル。
+2.  Cmデ Ableoemcomp コマンドエントリをプリンターの*GPD*ファイルに含めます。
 
-IPrintOemUni::Compression メソッドは、スキャン ラインのデータを入力として受け取ります。 メソッドは、データを圧縮し、Unidrv に結果を返す必要があります。 **CmdEnableOEMComp**コマンドのエントリをプリンターが圧縮されたデータを受け入れるように、プリンターに送信する必要がありますのコマンドを指定します。 プリンターに送信するのには、各スキャン ライン Unidrv のスキャン ラインのデータを圧縮する IPrintOemUni::Compression を呼び出し。 次に、これが唯一の圧縮方法である場合は、Unidrv プリンターに送信で指定されたコマンド、 **CmdEnableOEMComp**コマンド エントリ、圧縮されたデータが続きます。
+IPrintOemUni:: Compression メソッドは、スキャンラインデータを入力として受信します。 メソッドは、データを圧縮してから、結果を Unidrv に返す必要があります。 **Cm、Ableoemcomp**コマンドエントリは、プリンターが圧縮データを受け入れることができるように、プリンターに送信する必要があるコマンドを指定します。 Unidrv は、プリンターに送信される各スキャンラインに対して IPrintOemUni:: Compression を呼び出してスキャンラインデータを圧縮します。 これが使用可能な唯一の圧縮方法である場合、Unidrv は、 **Cmカンプ Ableoemcomp**コマンドエントリによって指定されたコマンドをプリンターに送信し、その後に圧縮データを送信します。
 
-プリンター ミニドライバーに Unidrv でサポートされている圧縮方法を有効にも GPD エントリが含まれている場合、Unidrv は各スキャン ラインの場合は、各圧縮アルゴリズムを試行し、最適な結果を生成するアルゴリズムを選択します。 Unidrv の圧縮機能の詳細については、次を参照してください。[ラスター データの圧縮](compressing-raster-data.md)します。
+ミニドライバーによってサポートされる圧縮方法を有効にする GPD エントリがプリンターに含まれている場合、Unidrv はスキャンラインごとに各圧縮アルゴリズムを試行し、最適な結果を生成するアルゴリズムを選択します。 Unidrv の圧縮機能の詳細については、「[ラスターデータの圧縮](compressing-raster-data.md)」を参照してください。
 
-1 つだけのカスタマイズされた圧縮方法は、一度に 1 つ有効にできます。
+カスタマイズされた圧縮方法は一度に1つしか有効にできません。
 
  
 

@@ -1,27 +1,27 @@
 ---
 title: GPIO コントローラー ドライバーの実装上の問題
-description: GPIO フレームワーク拡張機能 (GpioClx) は、柔軟性に優れたデバイス ドライバー インターフェイス (DDI) を提供します。
+description: GPIO framework 拡張機能 (GpioClx) は、柔軟なデバイスドライバーインターフェイス (DDI) を提供します。
 ms.assetid: 303A6034-7ED7-4C21-86E5-076383AF3A5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c3db49ee9d007272ba8cc0dcc7f44a45039d302
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 39d7af056020240b3e89bacc13fcd3358a383ae2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824958"
 ---
 # <a name="implementation-issues-for-gpio-controller-drivers"></a>GPIO コントローラー ドライバーの実装上の問題
 
 
-GPIO フレームワーク拡張機能 (GpioClx) は、柔軟性に優れたデバイス ドライバー インターフェイス (DDI) を提供します。 この DDI では、代替のコールバック インターフェイスを選択することができます。 ドライバー開発者は、ターゲットの GPIO コント ローラー デバイスのハードウェア アーキテクチャに最適であるイベントのコールバック関数のセットを実装する必要があります。
+GPIO framework 拡張機能 (GpioClx) は、柔軟なデバイスドライバーインターフェイス (DDI) を提供します。 この DDI を使用すると、開発者は別のコールバックインターフェイスを選択できます。 ドライバー開発者は、ターゲットの GPIO コントローラーデバイスのハードウェアアーキテクチャに最適な一連のイベントコールバック関数を実装する必要があります。
 
-たとえばからの読み取りと書き込み I/O の GPIO ピンを GPIO コント ローラー用ドライバーをサポートする場合、開発者は次のコールバック関数のペアの 1 つを実装するために選択できます。
+たとえば、gpio コントローラードライバーが GPIO i/o ピンの読み取りと書き込みをサポートしている場合、開発者は次のいずれかのコールバック関数を実装することを選択できます。
 
-[*クライアント\_ReadGpioPins* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins)と[*クライアント\_WriteGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins)
-[*クライアント\_ReadGpioPinsUsingMask* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)と[*クライアント\_WriteGpioPinsUsingMask* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins_mask) 、*クライアント\_ReadGpioPins*と*クライアント\_WriteGpioPins*関数受信銀行番号、GPIO ピンの数値の配列、およびビット値のデータ バッファーから読み取りまたはこれらのピンに書き込まれます。 GPIO ピンの数が少ないは通常、読み取りまたは書き込み操作のアクセス、だけの場合、この 2 つのコールバックは、最適な実装を生じる可能性があります。 この実装が使用される通常の GPIO コント ローラーがハードウェアの登録がないメモリ マップトします。 ただし、いくつかの GPIO ピンが書き込み操作、または読み取り中にアクセスする可能性がある場合、または GPIO コント ローラーのハードウェアが並列で複数の GPIO ピンを効率的にアクセスできる場合は、他の 2 つのコールバック関数は、実装を生成可能性があります。
+クライアント[ *\_readgpiopins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins)および[*Client\_writegpiopins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins)
+[*client\_ReadGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)および[*Client\_WriteGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins_mask) *クライアント\_readgpiopins*と*クライアント\_* のデータ書き込み機能は、銀行番号、GPIO pin 番号の配列、およびこれらの pin から読み取られるか、またはこれらのピンから読み取られるビット値のデータバッファーを受け取ります。 読み取りまたは書き込み操作で通常アクセスされる GPIO pin の数が少ない場合は、このコールバックのペアによって最適な実装が生成される可能性があります。 この実装は、通常、ハードウェアレジスタがメモリマップトではない GPIO controller に使用されます。 ただし、読み取りまたは書き込み操作中に複数の GPIO ピンがアクセスされる可能性がある場合や、GPIO コントローラーハードウェアが複数の GPIO ピンに同時にアクセスできる場合は、他のコールバック関数のペアによって実装が改善される可能性があります。
 
-*クライアント\_ReadGpioPinsUsingMask*と*クライアント\_WriteGpioPinsUsingMask*コールバック関数が読み取りまたは 1 回の呼び出しで最大 64 個のピンの銀行を記述します。 *クライアント\_ReadGpioPinsUsingMask*関数は、64 ビット マスクに GPIO ピンの値を読み取ります。 *クライアント\_WriteGpioPinsUsingMask*関数は 2 つの 64 ビット マスクを使用します。 1 つのマスクを設定するには、どの GPIO ピンを示し、その他のマスクは、GPIO ピンをオフにすることを示します。 この実装は、メモリ マップト GPIO コント ローラーの通常使用されます。
+*クライアント\_ReadGpioPinsUsingMask*と*client\_WriteGpioPinsUsingMask* callback 関数では、1回の呼び出しで最大64ピンの銀行を読み書きできます。 *クライアント\_ReadGpioPinsUsingMask*関数は、GPIO ピンの値を64ビットマスクに読み取ります。 *クライアント\_WriteGpioPinsUsingMask*関数は、2 64 ビットマスクを使用します。 1つのマスクは、どの GPIO ピンを設定するかを示し、もう一方のマスクはどの GPIO ピンをクリアするかを示します。 この実装は、通常、メモリマップトの GPIO コントローラーに使用されます。
 
  
 

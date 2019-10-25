@@ -3,18 +3,18 @@ title: DispatchSystemControl ルーチン
 description: DispatchSystemControl ルーチン
 ms.assetid: b885a4a3-a9b6-423c-83bb-ee502724b0d0
 keywords:
-- ディスパッチ ルーチンの WDK カーネル、DispatchSystemControl ルーチン
-- システム コントロール ディスパッチ ルーチン WDK カーネル
-- IRP_MJ_SYSTEM_CONTROL I/O 関数のコード
+- ディスパッチルーチン WDK カーネル、DispatchSystemControl ルーチン
+- システム制御ディスパッチルーチン WDK カーネル
+- IRP_MJ_SYSTEM_CONTROL i/o 関数のコード
 - DispatchSystemControl ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4e59815ff2b921e6eb350415632549757b73561
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 14d4b1f204b9f6e30d0149993717b17388f12098
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384971"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836811"
 ---
 # <a name="dispatchsystemcontrol-routines"></a>DispatchSystemControl ルーチン
 
@@ -22,11 +22,11 @@ ms.locfileid: "67384971"
 
 
 
-ドライバーの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_システム\_コントロール** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control) I/O 関数のコード。
+ドライバーの[*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、 [**irp\_MJ\_システム\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control) I/o 関数コードの irp を処理します。
 
-すべてのドライバーを提供する必要があります、 *DispatchSystemControl*ルーチン。 このルーチンでは、Windows Management Instrumentation (WMI) のサポートを提供します。 ドライバーが、WMI をサポートするかどうかに関係なく、このルーチンは次の下位のドライバーに IRP を渡す必要があります。
+すべてのドライバーは、 *DispatchSystemControl*ルーチンを提供する必要があります。 このルーチンの目的は、Windows Management Instrumentation (WMI) のサポートを提供することです。 ドライバーで WMI がサポートされているかどうかにかかわらず、このルーチンは IRP を次の下位のドライバーに渡す必要があります。
 
-実装する方法については、 *DispatchSystemControl*ルーチンと一般に WMI をサポートする方法[Windows Management Instrumentation](implementing-wmi.md)します。
+*DispatchSystemControl*ルーチンを実装する方法と、一般的な WMI をサポートする方法については、「 [Windows Management Instrumentation](implementing-wmi.md)」を参照してください。
 
  
 

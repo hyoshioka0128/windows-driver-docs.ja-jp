@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_PRESENTATIONEXTENT
-description: クライアントに送信、KSPROPERTY\_ストリーム\_PRESENTATIONEXTENT 要求ストリームのエクステントを照会します。
+title: KSK プロパティ\_ストリーム\_のプレゼンテーションエクステント
+description: クライアントは、ストリームエクステントのクエリを実行するために、KSK プロパティ\_ストリーム\_のプレゼンテーションエクステント要求を送信します。
 ms.assetid: 36b66035-f935-4264-8555-d949865d708e
 keywords:
-- KSPROPERTY_STREAM_PRESENTATIONEXTENT ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_PRESENTATIONEXTENT ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c6eafdaf4c0d7e10e9a9f7700e0a50c49e1bae7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba7f985f152e51be68e0d4dfc091b1d6d2516255
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324224"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837947"
 ---
-# <a name="kspropertystreampresentationextent"></a>KSPROPERTY\_ストリーム\_PRESENTATIONEXTENT
+# <a name="ksproperty_stream_presentationextent"></a>KSK プロパティ\_ストリーム\_のプレゼンテーションエクステント
 
 
-クライアントに送信、KSPROPERTY\_ストリーム\_PRESENTATIONEXTENT 要求ストリームのエクステントを照会します。
+クライアントは、ストリームエクステントのクエリを実行するために、KSK プロパティ\_ストリーム\_のプレゼンテーションエクステント要求を送信します。
 
 ## <span id="ddk_ksproperty_stream_presentationextent_ks"></span><span id="DDK_KSPROPERTY_STREAM_PRESENTATIONEXTENT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "63324224"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "63324224"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ ms.locfileid: "63324224"
 <a name="remarks"></a>注釈
 -------
 
-プロパティは、プレゼンテーション時間と同じ解像度形式で表示、LONGLONG として範囲を返します。
+プロパティは、プレゼンテーション時間と同じ解像度形式で、長さを LONGLONG として返します。
 
 <a name="requirements"></a>要件
 ------------
@@ -77,7 +77,7 @@ ms.locfileid: "63324224"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ ms.locfileid: "63324224"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

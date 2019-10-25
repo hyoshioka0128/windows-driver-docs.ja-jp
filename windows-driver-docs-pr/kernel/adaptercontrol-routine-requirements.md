@@ -4,17 +4,17 @@ description: AdapterControl ルーチンの要件
 ms.assetid: 09ce4ad8-eb1b-4fd0-9a22-4249d09584b3
 keywords:
 - AdapterControl ルーチン、要件
-- 書き込みの AdapterControl ルーチン
-- アダプター オブジェクトの WDK カーネル、AdapterControl ルーチンを記述
-- AdapterControl ルーチンを記述、DMA 転送 WDK カーネル
+- AdapterControl ルーチン、書き込み
+- アダプタオブジェクト WDK カーネル、AdapterControl ルーチンの記述
+- DMA が WDK カーネルを転送し、AdapterControl ルーチンを作成する
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1df2308627d03bd8dd3521871a2024a02280178
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 62d40d7fdac43e42143ccd8322ba4ee70921b27b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370010"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837281"
 ---
 # <a name="adaptercontrol-routine-requirements"></a>AdapterControl ルーチンの要件
 
@@ -22,37 +22,37 @@ ms.locfileid: "67370010"
 
 
 
-少なくとも、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチンは、次を実行する必要があります。
+少なくとも、 [*Adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンは次の操作を行う必要があります。
 
-1.  入力を保存*MapRegisterBase*値と、ドライバーは IRP が現在の 1 つまたは複数の DMA 転送操作を実行する必要があるその他のコンテキスト情報。 ドライバーを渡す必要があります、 *MapRegisterBase*値を[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)各 DMA 転送操作が完了するとします。
+1.  入力*Mapregisterbase*値とその他のコンテキスト情報を保存します。この情報は、ドライバーが現在の IRP に対して1つ以上の DMA 転送操作を実行するために必要です。 各 DMA 転送操作が完了すると、ドライバーは*Mapregisterbase*値を[**flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)に渡す必要があります。
 
-2.  適切な返す[ **IO\_割り当て\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_io_allocation_action)値。
+2.  適切な[**IO\_割り当て\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_io_allocation_action)値を返します。
 
-    -   **KeepObject**のため、ドライバーはシステム DMA を使用して、デバイスが下位のデバイスの場合。
+    -   デバイスが下位デバイスであり、ドライバーがシステム DMA を使用する場合は**KeepObject** 。
 
-    -   **DeallocateObjectKeepRegisters**のため、ドライバーがパケットに基づく、バス マスター DMA を使用して、デバイスがバス マスターがかどうか。
+    -   **DeallocateObjectKeepRegisters**デバイスがバスマスターの場合、ドライバーはパケットベースのバスマスタ DMA を使用します。
 
-ドライバーの設計によってその*AdapterControl*ルーチンも以下を実行前に、コントロールを返します。
+ドライバーの設計によっては、 *adaptercontrol*ルーチンも制御を返す前に、次の操作を実行できます。
 
-1.  デバイス上で転送の開始位置を決定します。
+1.  デバイスでの転送の開始位置を決定します。
 
-2.  転送の開始位置のため、デバイスの制限を指定可能であれば、転送のサイズを計算します。
+2.  転送の開始位置によってデバイスの制限がある場合に、可能な転送のサイズを計算します。
 
-    呼び出すルーチンの責任は一般に、 [ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)によりプラットフォーム固有部分の転送転送要求を分割する必要があるかどうかを判断するには上の制限事項、 *NumberOfMapRegisters*ごとに利用可能な DMA、前のセクションで説明したように、操作を転送およびに記載された[転送要求の分割](splitting-dma-transfer-requests.md)します。
+    一般に、 *Numberofmapregisters*におけるプラットフォーム固有の制限により、転送要求を部分的な転送に分割する必要があるかどうかを判断するために、 [**Allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)を呼び出すルーチンの役割を担います。前のセクションで説明した DMA 転送操作ごとに使用でき、[転送要求の分割](splitting-dma-transfer-requests.md)について詳しく説明します。
 
-3.  ドライバーで維持される各転送デバイス (またはコント ローラー) で要求の拡張機能に関する状態を設定します。
+3.  デバイス (またはコントローラー) 拡張機能で、各転送要求について、ドライバーによって維持される状態を設定します。
 
-    たとえば、 *AdapterControl*ルーチンを呼び出すことができます[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)のエントリ ポイントで、 [ *CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)ドライバーの DMA 転送操作がタイムアウトするルーチン。
+    たとえば、 *Adaptercontrol*ルーチンは、ドライバーの DMA 転送操作をタイムアウトにする[*customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンのエントリポイントを使用して[**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)を呼び出す場合があります。
 
-4.  呼び出す[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)に渡される MDL ポインター **Irp -&gt;MdlAddress**渡すに適した、転送の開始インデックスを取得するには[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)します。
+4.  **Irp&gt;MdlAddress**で渡された MDL ポインターを使用して[**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出し、転送の開始のインデックスを取得します。 [**maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)に渡すのに適しています。
 
-5.  呼び出す**MapTransfer**システム DMA コント ローラーを設定するか、バス マスター デバイスの物理-論理アドレス マッピングを取得します。
+5.  **Maptransfer**を呼び出して、システム DMA コントローラーを設定するか、バスマスタデバイスの物理-論理アドレスのマッピングを取得します。
 
-6.  転送操作では、ドライバーのデバイスを使用して、プログラム、 [ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンの呼び出しによって呼び出される[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution). 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+6.  [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を呼び出すことによって呼び出される[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンを使用して、転送操作用にドライバーのデバイスをプログラムします。 詳細については、「[クリティカルセクションの使用](using-critical-sections.md)」を参照してください。
 
-譲渡要求が、ドライバーを現在、ドライバーの IRP を満たすために部分的な転送操作のシーケンスを実行する必要があるかどうか[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンは通常、後続の転送操作のデバイスを再プログラミング責任を負います。 *AdapterControl* IRP の各着信転送のルーチンを 1 回だけ呼び出されます。
+転送要求で、現在の IRP を満たすために部分転送操作のシーケンスを実行する必要がある場合、ドライバーの[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)または[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンは、通常、次のようにデバイスの reprogramming を行います。転送操作。 *Adaptercontrol*ルーチンは、受信転送の IRP ごとに1回だけ呼び出されます。
 
-通常、IRP の現在の転送が完了するとドライバーのルーチン、 *DpcForIsr*または*CustomDpc*ルーチンも呼び出すことによって、DMA コント ローラーのシステムまたはバス マスター アダプターを解放する必要が[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)または[ **FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)、それぞれします。 このドライバーのルーチンが呼び出しを行う適切なできるだけ早く DMA の下位のデバイスのドライバーがシステム DMA コント ローラーに割り当てることができるまたはバス マスターのドライバーが次の転送の処理を開始することができるように、その最後の部分転送操作が行われるときIRP 速やかにします。
+現在の転送 IRP (通常は*DpcForIsr*または*customdpc*ルーチン) を完了するドライバールーチンも、 [**freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)または[**を呼び出して、システム DMA コントローラーまたはバスマスターアダプターを解放します。FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers)。 このドライバールーチンは、最後の部分転送操作が実行されたときに、できるだけ早く適切な呼び出しを行う必要があります。これにより、下位の DMA デバイスのドライバーがシステム DMA コントローラーまたはバスマスタドライバーが次の転送の処理を開始できるようになります。IRP を迅速に行います。
 
  
 

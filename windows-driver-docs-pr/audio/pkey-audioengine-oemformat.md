@@ -1,22 +1,22 @@
 ---
-title: 鍵\_AudioEngine\_OEMFormat
-description: 鍵\_AudioEngine\_OEMFormat
+title: PKEY\_AudioEngine\_OEMFormat
+description: PKEY\_AudioEngine\_OEMFormat
 ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4299536514cc9ac11f244cae8b45a2e940eb11
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d20c3384d555edb36f7274663beb2e3cd1e3a8d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355292"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832490"
 ---
-# <a name="pkeyaudioengineoemformat"></a>鍵\_AudioEngine\_OEMFormat
+# <a name="pkey_audioengine_oemformat"></a>PKEY\_AudioEngine\_OEMFormat
 
 
-Windows Vista 以降では、**鍵\_AudioEngine\_OEMFormat**プロパティのキーは、エンドポイントのオーディオ デバイスの既定のストリームの形式を識別します。 レンダリングとキャプチャの両方のデバイスでは、既定の形式があります。 グローバル オーディオ エンジンでは、デバイスの既定の形式を使用して、共有モードでの操作については、デバイスに接続します。 デバイスをインストールする INF ファイルでは、レジストリにデバイスの既定の形式を読み込みます。 ユーザーは、Windows のマルチ メディア コントロール パネル (Mmsys.cpl) 既定の形式を変更できます。 Windows XP および Windows の以前のバージョンはサポートされず、**鍵\_AudioEngine\_OEMFormat**プロパティのキー。
+Windows Vista 以降では、 **PKEY\_AudioEngine\_OEMFormat**プロパティキーによって、オーディオエンドポイントデバイスの既定のストリーム形式が識別されます。 レンダリングとキャプチャの両方のデバイスには、既定の形式があります。 グローバルオーディオエンジンは、デバイスの既定の形式を使用して、共有モードの操作でデバイスに接続します。 デバイスをインストールする INF ファイルによって、デバイスの既定の形式がレジストリに読み込まれます。 ユーザーは、Windows のマルチメディアコントロールパネル (Mmsys. cpl) を使用して、既定の形式を変更できます。 Windows XP およびそれ以前のバージョンの Windows では、 **OEMFormat プロパティキー\_PKEY\_AudioEngine**はサポートされていません。
 
-INF ファイルでは、そのデバイスの追加レジストリ セクションでは、エンドポイントのオーディオ デバイスの既定の形式を指定します。 INF の次の例では、レジストリにデバイスのエンドポイントの既定の形式をロードする追加レジストリ セクションを示します。
+INF ファイルでは、そのデバイスの [レジストリの追加] セクションにオーディオエンドポイントデバイスの既定の形式を指定します。 次の INF の例は、エンドポイントデバイスの既定の形式をレジストリに読み込む、レジストリの追加セクションを示しています。
 
 ```inf
 ;;
@@ -32,7 +32,7 @@ HKR,"EP\\0", %PKEY_AudioEngine_OEMFormat%, %REG_BINARY%, 41,00,00,00,28,00,00,00
 HKR,"EP\\0", %PKEY_AudioEndpoint_ControlPanelProvider%,,%AUDIOENDPOINT_EXT_UI_CLSID
 ```
 
-前の例は、Windows Driver Kit で Sysfx オーディオ サンプルでは、ファイル Sysfx.inf から取得されます。 この INF ファイルの文字列のセクションには、次の定義が含まれています。
+前の例は、Windows Driver Kit の Sysfx オーディオサンプルにある Sysfx ファイルから取得されています。 この INF ファイルの文字列セクションには、次の定義が含まれています。
 
 ```inf
 PKEY_AudioEndpoint_ControlPanelProvider = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},1"
@@ -40,15 +40,15 @@ PKEY_AudioEndpoint_Association          = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E
 PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},3"
 ```
 
-前の例では、OEMSettingsOverride.AddReg の追加レジストリ セクションの名前が定義されている、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) Sysfx.inf でインターフェイスのインストール セクション ディレクティブ。 前の例はエンドポイント数が 0 のいくつかのプロパティを追加します (文字列で識別される"EP\\\\0")、デバイス インターフェイスのレジストリ エントリにします。 (デバイスのインターフェイスを表している場合、 [wave フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/wave-filters)追加のエンドポイントは番号付き 1、2、およびでは、複数のエンドポイントを使用します)。インターフェイスのセクションではインストールの詳細については、次を参照してください。 [ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)します。
+前の例では、OEMSettingsOverride の AddReg セクションの名前は、 [**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブによって定義されています。これは、sysfx のインターフェイスインストールセクションにあります。 前の例では、デバイスインターフェイスのレジストリエントリに、エンドポイント番号 0 (文字列 "EP\\\\0" によって識別される) のプロパティをいくつか追加しています。 (デバイスインターフェイスが複数のエンドポイントを持つ[wave フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/wave-filters)を表している場合、追加のエンドポイントには1、2などの番号が付けられます)。インターフェイスのインストールセクションの詳細については、「 [**INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)」を参照してください。
 
-アプリケーションが取得することで、プロパティにアクセスできます INF ファイルは、3 つのプロパティのキーを作成し、関連する値をレジストリに読み込まれるが後、 [IPropertyStore](https://docs.microsoft.com/windows/desktop/api/propsys/nn-propsys-ipropertystore)エンドポイント デバイスのインターフェイス。 ヘッダー ファイル、Windows sdk Mmdeviceapi.h には、次の 3 つのプロパティのキーの C と C++ の定義が含まれています。 IPropertyStore インターフェイスを取得する方法の詳細については、の説明を参照して、 [ **IMMDevice::OpenPropertyStore** ](https://docs.microsoft.com/windows/desktop/api/mmdeviceapi/nf-mmdeviceapi-immdevice-openpropertystore) Windows SDK のドキュメント内のメソッド。
+INF ファイルによって3つのプロパティキーが作成され、関連する値がレジストリに読み込まれると、アプリケーションはエンドポイントデバイスの[IPropertyStore](https://docs.microsoft.com/windows/desktop/api/propsys/nn-propsys-ipropertystore)インターフェイスを取得することによってプロパティにアクセスできるようになります。 Windows SDK のヘッダーファイル Mmdeviceapi .h には、3つC++のプロパティキーの C/定義が含まれています。 IPropertyStore インターフェイスの取得の詳細については、Windows SDK のドキュメントの[**IMMDevice:: OpenPropertyStore**](https://docs.microsoft.com/windows/desktop/api/mmdeviceapi/nf-mmdeviceapi-immdevice-openpropertystore)メソッドの説明を参照してください。
 
-INF の例で、**鍵\_AudioEndpoint\_アソシエーション**プロパティのキーは、エンドポイント デバイス KS pin カテゴリ GUID を識別します。 **鍵\_AudioEndpoint\_ControlPanelProvider** Mmsys.cpl でエンドポイントのプロパティ ページに、プロパティ値を提供する COM インターフェイス オブジェクトのクラス GUID を識別するプロパティのキーデバイスです。 これらのプロパティのキーの詳細については、Windows SDK のドキュメントを参照してください。 KS の詳細については、カテゴリの Guid をピン留めは、「 [Pin Category プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/pin-category-property)します。
+前の INF の例では、 **PKEY\_audioendpoint\_アソシエーション**プロパティキーによって、エンドポイントデバイスの KS PIN カテゴリ GUID が識別されます。 **PKEY\_audioendpoint\_controlobwi provider**プロパティキーは、エンドポイントデバイスの mmsys のプロパティページにプロパティ値を提供する COM インターフェイスオブジェクトのクラス GUID を識別します。 これらのプロパティキーの詳細については、Windows SDK のドキュメントを参照してください。 KS pin カテゴリ Guid の詳細については、「[ピンカテゴリのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/pin-category-property)」を参照してください。
 
-前の INF 例では、プロパティの値に関連付けられている、**鍵\_AudioEngine\_OEMFormat**プロパティ キーは 48 バイト REG\_を含む、シリアル化されたバイナリ値表現、 [ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)形式を記述する構造体。 登録を計算する\_に関連付けるバイナリ データ値、**鍵\_AudioEngine\_OEMFormat**プロパティ キーを埋め込む、 **WAVEFORMATEX**または**WAVEFORMATEXTENSIBLE**構造体、 **PropVariant**構造体、およびシリアル化、 **PropVariant**構造を呼び出すことによって、 **StgSerializePropVariant**関数。 詳細については、 **PropVariant**構造と**StgSerializePropVariant**関数を Windows SDK のマニュアルを参照してください。
+前の INF の例では、 **PKEY\_AudioEngine\_OEMFormat**プロパティキーに関連付けられているプロパティ値は、シリアル化された[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)の表現を含む48バイトの REG\_バイナリ値です。形式を記述する[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)構造体。 **PKEY\_AudioEngine\_OEMFormat**プロパティキーに関連付ける REG\_バイナリデータ値を計算するには、 **propvariant**構造体に**WAVEFORMATEX**または**WAVEFORMATEXTENSIBLE**構造体を埋め込みます。およびは、 **StgSerializePropVariant**関数を呼び出すことによって、 **propvariant**構造体をシリアル化します。 **Propvariant**構造体と**StgSerializePropVariant**関数の詳細については、Windows SDK のドキュメントを参照してください。
 
-次のコード例は、REG を出力するコンソール アプリケーション\_INF の前の例に表示されるバイナリ データ。
+次のコード例は、前の INF の例に示されている REG\_バイナリデータを出力するコンソールアプリケーションです。
 
 ```cpp
 //
@@ -118,9 +118,9 @@ void main()
 }
 ```
 
-上記のコード サンプルのメイン関数を作成、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造体を既定の形式について説明します。 作成する主な機能を変更することができます、 [ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または**WAVEFORMATEXTENSIBLE**エンドポイント デバイスの既定の形式を記述する構造体。
+前のコード例の main 関数は、既定の書式を記述する[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)構造体を作成します。 Main 関数を変更して、エンドポイントデバイスの既定の形式を記述する[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または**WAVEFORMATEXTENSIBLE**構造体を作成することができます。
 
-上記のコード例で PrintSerializedFormat 関数が形式に関する説明をシリアル化および REG としてシリアル化された形式の説明を出力します\_バイナリ データ。 関数によって生成された印刷出力をコピーして、INF ファイルに貼り付けます。
+前のコード例の PrintSerializedFormat 関数は、形式の説明をシリアル化し、シリアル化された形式の説明を REG\_バイナリデータとして出力します。 関数によって生成された出力をコピーして、INF ファイルに貼り付けることができます。
 
  
 

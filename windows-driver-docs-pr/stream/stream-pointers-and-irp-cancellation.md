@@ -3,18 +3,18 @@ title: ストリーム ポインターと IRP のキャンセル
 description: ストリーム ポインターと IRP のキャンセル
 ms.assetid: ce392496-ca07-497d-af8a-709239a7bd5e
 keywords:
-- ストリーム ポインター WDK AVStream、IRP の取り消し
-- IRP 欠航 WDK AVStream
-- Irp WDK AVStream のキャンセル
-- ロックされているストリーム ポインター WDK AVStream
+- ストリームポインター WDK AVStream、IRP キャンセル
+- IRP キャンセル WDK AVStream
+- Irp WDK AVStream をキャンセルしています
+- ロックされたストリームポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 784f1ea2f73f89062a22cf82586b00854d8e7d72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5225d26830a089d2e51366d87a361132c58267b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377794"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837677"
 ---
 # <a name="stream-pointers-and-irp-cancellation"></a>ストリーム ポインターと IRP のキャンセル
 
@@ -22,9 +22,9 @@ ms.locfileid: "67377794"
 
 
 
-フレームにはロックされているストリーム ポインターを参照している場合は、このフレームに対応する IRP をキャンセルできません。 参照してください[ロックと Stream のポインターをロック解除](locking-and-unlocking-stream-pointers.md)します。
+フレームにロックされているストリームポインターがある場合、そのフレームに対応する IRP はキャンセルできません。 「[ストリームポインターのロックとロック解除」を](locking-and-unlocking-stream-pointers.md)参照してください。
 
-次の表では、ミニドライバーは IRP のキャンセルをサポートするために使用できる手法が一覧表示します。 キャンセルの戦略は、左端の列」の説明に従ってのミニドライバーのストリーム アクセスの要件に基づく必要があります。
+次の表は、ミニドライバーが IRP のキャンセルをサポートするために使用できる手法を示しています。 キャンセル戦略は、一番左の列で説明されているように、ミニドライバーのストリームアクセス要件に基づいている必要があります。
 
 <table>
 <colgroup>
@@ -34,38 +34,38 @@ ms.locfileid: "67377794"
 </colgroup>
 <thead>
 <tr class="header">
-<th>場合必要があります.</th>
-<th>方法</th>
+<th>必要に応じて</th>
+<th>操作</th>
 <th>コメント</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>単一のアクセス ポイントにデータをストリーミングする簡単なアクセス</p></td>
-<td><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer" data-raw-source="[&lt;strong&gt;KsPinGetLeadingEdgeStreamPointer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)"> <strong>KsPinGetLeadingEdgeStreamPointer</strong> </a>で、<em>状態</em>パラメーター KSSTREAM_POINTER_STATE_LOCKED に設定します。 呼び出して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)"> <strong>KsStreamPointerUnlock</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvanceoffsetsandunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerAdvanceOffsetsAndUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvanceoffsetsandunlock)"> <strong>KsStreamPointerAdvanceOffsetsAndUnlock</strong> </a>の処理直後後完了します。</p></td>
-<td><p>ポインターの取得とロックの解除の間、スレッドをブロックしない限り、キャンセルに高速の応答性を提供します。</p></td>
+<td><p>単一のアクセスポイントでのストリームデータへの簡単なアクセス</p></td>
+<td><p><em>State</em>パラメーターを KSSTREAM_POINTER_STATE_LOCKED に設定して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer" data-raw-source="[&lt;strong&gt;KsPinGetLeadingEdgeStreamPointer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)"><strong>KsPinGetLeadingEdgeStreamPointer</strong></a>を呼び出します。 次に、処理が完了した直後に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)"><strong>Ksstreamポインタ unlock</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvanceoffsetsandunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerAdvanceOffsetsAndUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvanceoffsetsandunlock)"><strong>KsStreamPointerAdvanceOffsetsAndUnlock</strong></a>を呼び出します。</p></td>
+<td><p>は、ポインターの取得とロック解除の間にスレッドがブロックしない限り、キャンセルに迅速な応答性を提供します。</p></td>
 </tr>
 <tr class="even">
-<td><p>無制限のアクセス時間の長さの取り消しのコールバック コンテキストにクレームを放棄することができますが、</p></td>
-<td><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)"> <strong>KsStreamPointerClone</strong> </a>はロックされているストリーム ポインターを (通常のリーディング エッジ) を複製するには、ロックを解除、および対応を<em>CancelCallback</em>します。 キューのスピン ロックを保持、したがって DISPATCH_LEVEL にし、コールバックが発生します。 したがって、ベンダーから提供された<em>CancelCallback</em>ルーチンは、ミュー テックスを取得するキューの操作や呼び出し関数を実行できません。 代わりに、コールバック ルーチンで、ミニドライバーことを検証、関連付けられているデータ、後ではアクセスされませんを呼び出して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)"> <strong>KsStreamPointerDelete</strong></a>します。</p></td>
-<td><p>実装するには困難になりますが、多くの場合、効率的にアクセスし、キャンセルに迅速な応答の最適なバランスを提供します。</p></td>
+<td><p>アクセス時間の長さは不定ですが、キャンセルコールバックのコンテキストで要求を放棄できます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)"><strong>Ksstreampointer clone</strong></a>を呼び出して、ロックされたストリームポインター (通常は先頭のエッジ) を複製し、ロックを解除して、 <em>cancelcallback</em>に応答します。 このコールバックは、キューのスピンロックが保持されている状態で発生します。そのため、DISPATCH_LEVEL になります。 したがって、ベンダーから提供された<em>Cancelcallback</em>ルーチンは、キューの操作を実行したり、ミューテックスを取得する関数を呼び出したりすることはできません。 代わりに、コールバックルーチンでは、ミニドライバーは、関連付けられたデータに後でアクセスできないことを確認してから、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)"><strong>Ksstreamポインター delete</strong></a>を呼び出します。</p></td>
+<td><p>を実装するのはより困難ですが、多くの場合、効率的なアクセスとキャンセルへの迅速な対応とのバランスを取ることができます。</p></td>
 </tr>
 <tr class="odd">
-<td><p>定期的なフレームへのアクセスし、アクセスのフレームの消失を許容できます。</p></td>
-<td><p>複製のロックを解除し、呼び出しを維持<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)"> <strong>KsStreamPointerLock</strong> </a>をアクセス時にロックします。 フレームが取り消された、ストリーム ポインターをロックする次の試行が失敗した場合、および、ミニドライバーは呼び出すことができる場合<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)"> <strong>KsStreamPointerDelete</strong></a>します。</p></td>
-<td><p>最初のオプションでは、キャンセルに応答性はストリーム ポインターをどのくらいの時間の関数がロックされています。</p></td>
+<td><p>フレームへの定期的なアクセスにより、アクセス間のフレームの消失が許容されます。</p></td>
+<td><p>ロック解除された複製を保持し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock)"><strong>Ksk Streampoインタ</strong></a>ロックを呼び出してアクセス時にロックします。 フレームがキャンセルされると、次にストリームポインターをロックしようとして失敗し、ミニドライバーは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)"><strong>Ksstreampointer delete</strong></a>を呼び出すことができます。</p></td>
+<td><p>最初のオプションと同様に、キャンセルに対する応答性は、ストリームポインターがロックされている期間の関数です。</p></td>
 </tr>
 <tr class="even">
-<td><p>無期限のアクセス時刻およびコールバックへの応答で要求を解放することはできません</p></td>
-<td><p>キャンセルを防ぐために時間の任意の長さの複製がロックされているストリーム ポインターを維持します。 複製のストリーム ポインターを作成するには<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)"> <strong>KsStreamPointerClone</strong></a>します。 呼び出して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)"> <strong>KsStreamPointerLock</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)"> <strong>KsStreamPointerUnlock</strong> </a>をロックまたはクローンのロックを解除します。</p></td>
-<td><p>キャンセルに応答性が低下する可能性があります。 使用を検討して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerscheduletimeout" data-raw-source="[&lt;strong&gt;stream pointer timeouts&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerscheduletimeout)"><strong>ストリーム ポインター タイムアウト</strong></a>この手法でします。</p></td>
+<td><p>アクセス時間の長さが不定で、コールバックへの応答として要求を放棄できません</p></td>
+<td><p>ロックされた複製ストリームポインターを任意の期間保持して、キャンセルされないようにします。 複製ストリームポインターを作成するには、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)"><strong>Ksk streampointer clone</strong></a>を呼び出します。 次に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock)"><strong>Ksstreampointerlock</strong></a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)"><strong>ksstreamポインター unlock</strong></a>を呼び出して、複製をロックまたはロック解除します。</p></td>
+<td><p>取り消しに対する応答性が低下する可能性があります。 この手法では、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerscheduletimeout" data-raw-source="[&lt;strong&gt;stream pointer timeouts&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerscheduletimeout)"><strong>ストリームポインタータイムアウト</strong></a>の使用を検討してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-フレームにそれを参照するストリーム ポインターがある場合、ミニドライバーを呼び出すことができます[ **KsStreamPointerGetIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointergetirp)このフレームに対応する IRP にアクセスします。 フレームに関連付けられているメモリの記述子リスト (MDL) を取得する[ **KsStreamPointerGetMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointergetmdl)します。
+フレームにストリームポインターがある場合、ミニドライバーは、このフレームに対応する IRP にアクセスするために、 [**Ksstreampointer Getirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointergetirp)を呼び出すことができます。 フレームに関連付けられているメモリ記述子リスト (MDL) を取得するには、 [**Ksk Streamポインター Getmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointergetmdl)を呼び出します。
 
  
 

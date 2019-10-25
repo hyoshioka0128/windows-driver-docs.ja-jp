@@ -3,17 +3,17 @@ title: NDPROXY の概要
 description: NDPROXY の概要
 ms.assetid: 98d01249-8a6d-42b3-a91c-811352c8b638
 keywords:
-- ネットワーク NDPROXY WDK
-- ネットワーク NDISWAN WDK
-- アーキテクチャの WDK WAN NDPROXY
+- NDPROXY WDK ネットワーク
+- NDISWAN WDK ネットワーク
+- アーキテクチャ WDK WAN、NDPROXY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 315849ded4c0d8e8156e6a78c30396d1b659c604
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae77a667a7eb68af84d84e25c13e461aabd4568e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364031"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829095"
 ---
 # <a name="ndproxy-overview"></a>NDPROXY の概要
 
@@ -21,43 +21,43 @@ ms.locfileid: "67364031"
 
 
 
-**注**  27 の 2013 年 11 月のため、このページを読んでいるかどうかは[マイクロソフト セキュリティ アドバイザリ (2914486)](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2914486) Windows XP および Windows Server 2003 に影響を与えることがありますこの信頼できるコンピューティング[ブログの投稿](https://blogs.technet.microsoft.com/msrc/2013/11/27/microsoft-releases-security-advisory-2914486/)に役立ちます。
+**注**  このページを読んでいる場合は、windows XP と windows Server 2003 に影響する、2013年11月の[マイクロソフトセキュリティアドバイザリ (2914486)](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2914486)が原因で、この信頼できるコンピューティングの[ブログ投稿](https://blogs.technet.microsoft.com/msrc/2013/11/27/microsoft-releases-security-advisory-2914486/)が役に立つことがあります。
 
  
 
-NDPROXY は、システム指定のドライバーで、TAPI サービスへの NDISWAN およびいる CoNDIS WAN ドライバー (WAN ミニポート ドライバー、コール マネージャー、およびミニポート コール マネージャー) のインターフェイスです。 ここでさらに記載されている NDPROXY 操作[いる CoNDIS WAN 操作電話サービスをサポートする](condis-wan-operations-that-support-telephonic-services.md)します。
+NDPROXY は、NDISWAN と CoNDIS WAN ドライバー (WAN ミニポートドライバー、コールマネージャー、およびミニポートコールマネージャー) を TAPI サービスにインターフェイスするシステム提供のドライバーです。 このトピックでは、[電話 Services をサポートする CONDIS WAN 操作](condis-wan-operations-that-support-telephonic-services.md)で詳細に説明されている ndproxy 操作について説明します。
 
-次の図は、RAS アーキテクチャでは、他のコンポーネントと NDPROXY のインターフェイスを示します。
+次の図は、RAS アーキテクチャの他のコンポーネントと NDPROXY のインターフェイスを示しています。
 
-![ndproxy が ras アーキテクチャの他のコンポーネントとやり取りする方法を示す図](images/ndproxy.png)
+![ras アーキテクチャの他のコンポーネントと ndproxy のインターフェイスを示す図](images/ndproxy.png)
 
-NDPROXY いる CoNDIS WAN のサービス プロバイダー インターフェイス (SPI) のカーネル モード コンポーネントを提供します。 TAPI 対応のアプリケーションはユーザー モードの TAPI 要求を行い、TAPI サービスが NDPTSP にこれらの要求をルーティングします。 NDPTSP では、カーネル モードの SPI の要求とパス、SPI を NDPROXY を要求するユーザー モードの TAPI サービス要求に変換します。
+NDPROXY には、CoNDIS WAN 用の service provider interface (SPI) のカーネルモードコンポーネントが用意されています。 TAPI 対応アプリケーションは、ユーザーモードの TAPI 要求を行い、TAPI サービスはこれらの要求を NDPTSP にルーティングします。 NDPTSP は、ユーザーモードの TAPI サービス要求をカーネルモードの SPI 要求に変換し、その SPI 要求を NDPROXY に渡します。
 
-NDPROXY は、次のいずれかの NDISWAN ドライバーと NDIS を通じて通信します。
+NDPROXY は、NDISWAN ドライバーと、次のいずれかの方法で NDIS を介して通信します。
 
--   ミニポート ドライバーを個別に呼び出してマネージャー
+-   別のコールマネージャーがあるミニポートドライバー
 
--   統合のミニポート マネージャー (MCM) を呼び出す
+-   Integrated ミニポート呼び出しマネージャー (MCM)
 
-ミニポート ドライバー インターフェイスと NDISWAN を NDPROXY マネージャー インターフェイスの呼び出しは、構成に関係なく同じです。
+構成に関係なく、NDISWAN と NDPROXY に対するミニポートドライバーインターフェイスとコールマネージャーインターフェイスは同じです。
 
-**注**  を別個の呼び出しのマネージャーで複数のハードウェア プラットフォームをサポートする必要がある場合、ミニポート ドライバーを使用することができます。 このような状況では、同じコール マネージャーは開発を簡略化の複数のミニポート ドライバーと組み合わせて使用できます。
+複数のハードウェアプラットフォームをサポートする必要がある場合は、別の呼び出しマネージャーでミニポートドライバーを使用でき  ことに**注意**してください。 このような状況では、同じコールマネージャーを複数のミニポートドライバーと組み合わせて使用して、開発を簡素化できます。
 
  
 
-NDPROXY と WAN いる CoNDIS ドライバー スタックの他のコンポーネント間に存在するインターフェイスを次に示します。
+次の一覧は、NDPROXY と、CoNDIS WAN ドライバースタック内の他のコンポーネントとの間に存在するインターフェイスの概要を示しています。
 
--   NDPROXY いる CoNDIS WAN ミニポート ドライバー インターフェイスと NDISWAN にコール マネージャー インターフェイス、接続指向のクライアントを表示します。
+-   NDPROXY は、接続指向のクライアントインターフェイスを提供し、WAN ミニポートドライバーと、NDISWAN へのコールマネージャーインターフェイスを提供します。
 
--   NDISWAN NDPROXY、するクライアントの接続指向のインターフェイスを表示しましている CoNDIS WAN ミニポート ドライバー、および MCMs します。
+-   NDISWAN は、NDPROXY、CoNDIS WAN ミニポートドライバー、および MCMs への接続指向クライアントインターフェイスを提供します。
 
--   いる CoNDIS WAN のコール マネージャーまたは MCMs は、NDPROXY にコール マネージャー インターフェイスを提供します。
+-   CoNDIS WAN 呼び出しマネージャーまたは MCMs は、NDPROXY にコールマネージャーインターフェイスを提供します。
 
--   いる CoNDIS WAN ミニポート ドライバーと MCMs は、NDISWAN にいる CoNDIS ミニポート ドライバー インターフェイスを提供します。
+-   CoNDIS WAN ミニポートドライバーおよび MCMs には、NDISWAN への condis ミニポートドライバーインターフェイスが存在します。
 
-クライアントの接続指向、コール マネージャー、ミニポート ドライバー、および MCMs の詳細については、次を参照してください。 [Connection-Oriented 環境](connection-oriented-environment.md)します。
+接続指向クライアント、通話マネージャー、ミニポートドライバー、および MCMs の詳細については、「[接続指向環境](connection-oriented-environment.md)」を参照してください。
 
-NDPROXY 呼び出し、 [ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)接続指向の TAPI Oid いる CoNDIS WAN ミニポート ドライバーの機能を決定する関数。 NDPROXY も TAPI に固有のアドレス ファミリを登録、仮想接続 (VCs) を作成します、によりし、呼び出しを受け入れますおよびデータを送信して、それらの VCs で受信したように、VCs をアクティブにします。 いる CoNDIS WAN ミニポート ドライバーで OID 要求の処理の詳細については、次を参照してください。[いる CoNDIS WAN ミニポート ドライバーで処理クエリ](handling-queries-in-a-condis-wan-miniport-driver.md)と[設定いる CoNDIS WAN ミニポート ドライバー情報](setting-condis-wan-miniport-driver-information.md)します。
+NDPROXY は、接続指向の TAPI Oid を使用して[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)関数を呼び出し、CONDIS WAN ミニポートドライバーの機能を決定します。 また、NDPROXY は、TAPI 固有のアドレスファミリを登録し、仮想接続 (VCs) を作成し、呼び出しを許可して、VCs をアクティブ化して、それらの VCs でデータを送受信できるようにします。 CoNDIS WAN ミニポートドライバーでの OID 要求の処理の詳細については、「condis wan ミニポート[ドライバーでのクエリの処理](handling-queries-in-a-condis-wan-miniport-driver.md)」および「 [Condis Wan ミニポートドライバー情報の設定](setting-condis-wan-miniport-driver-information.md)」を参照してください。
 
  
 

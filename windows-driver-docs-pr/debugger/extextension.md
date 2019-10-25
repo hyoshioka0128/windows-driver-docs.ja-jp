@@ -1,9 +1,9 @@
 ---
 title: ExtExtension
-description: ExtExtension クラスは、EngExtCpp の拡張機能ライブラリを表す C++ クラスの基本クラスです。
+description: ExtExtension クラスは、EngExtCpp extension ライブラリを表すC++クラスの基本クラスです。
 ms.assetid: 9c6c4633-df49-4f49-8116-d680bb20c3f5
 keywords:
-- デバッグ ExtExtension Windows
+- ExtExtension Windows デバッグ
 topic_type:
 - apiref
 api_name:
@@ -12,31 +12,31 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d24605444c5472ee2638e23928ce46a5bc9d34da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f25d147f26847895d94e02d009b69acc36e255a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366830"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826423"
 ---
 # <a name="extextension"></a>ExtExtension
 
 
-**ExtExtension**クラスは EngExtCpp の拡張機能ライブラリを表す C++ クラスの基本クラスです。
+**Extextension**クラスは、EngExtCpp extension ライブラリを表すC++クラスの基本クラスです。
 
-**ExtExtension**クラスにはサブクラスで使用できる次のメソッドが含まれています。
+**Extextension**クラスには、サブクラスで使用できる次のメソッドが含まれています。
 
-[**初期化します。** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))
+[**化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))
 
-[**初期化を解除します。** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))
+[**解除**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))
 
 [**OnSessionActive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))
 
 [**OnSessionInactive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552318(v=vs.85))
 
-[**OnSessionAccessible**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552310(v=vs.85))
+[**OnSessionAccessible 可能**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552310(v=vs.85))
 
-[**OnSessionInaccessible**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552315(v=vs.85))
+[**OnSessionInaccessible 不可**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552315(v=vs.85))
 
 **IsUserMode**
 
@@ -98,13 +98,13 @@ ms.locfileid: "67366830"
 
 **GetRawArgCopy**
 
-**Out**
+**入出力**
 
-**警告を表示します。**
+**呼びかけ**
 
-**エラー**
+**警戒**
 
-**動詞**
+**助動詞**
 
 **Dml**
 
@@ -118,7 +118,7 @@ ms.locfileid: "67366830"
 
 **DmlCmdExec**
 
-**RefreshOutputCallbackFlags**
+**Refreshoutputのフラグ**
 
 **WrapLine**
 
@@ -186,7 +186,7 @@ ms.locfileid: "67366830"
 
 **ThrowLastError**
 
-**ExtExtension**クラスには、サブクラスで使用できる次のフィールドも含まれています。
+**Extextension**クラスには、サブクラスで使用できる次のフィールドも含まれています。
 
 ```cpp
 class ExtExtension
@@ -246,115 +246,115 @@ public:
 };
 ```
 
-## <a name="span-idmembersspanspan-idmembersspanspan-idmembersspanmembers"></a><span id="Members"></span><span id="members"></span><span id="MEMBERS"></span>メンバー
+## <a name="span-idmembersspanspan-idmembersspanspan-idmembersspanmembers"></a><span id="Members"></span><span id="members"></span><span id="MEMBERS"></span>属する
 
 
 <span id="m_ExtMajorVersion"></span><span id="m_extmajorversion"></span><span id="M_EXTMAJORVERSION"></span>**m\_ExtMajorVersion**  
-拡張機能ライブラリのメジャー バージョン番号。 これで設定する必要があります、 [**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッド。 設定されていない場合に既定値**1**します。
+拡張ライブラリのメジャーバージョン番号。 これは、 [**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドによって設定する必要があります。 設定されていない場合、既定値は**1**です。
 
 <span id="m_ExtMinorVersion"></span><span id="m_extminorversion"></span><span id="M_EXTMINORVERSION"></span>**m\_ExtMinorVersion**  
-拡張機能ライブラリのマイナー バージョン番号。 これで設定する必要があります、 [**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッド。 設定されていない場合に既定値**0** (ゼロ)。
+拡張ライブラリのマイナーバージョン番号。 これは、 [**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドによって設定する必要があります。 設定されていない場合、既定値は**0** (ゼロ) です。
 
 <span id="m_ExtInitFlags"></span><span id="m_extinitflags"></span><span id="M_EXTINITFLAGS"></span>**m\_ExtInitFlags**  
-DbgEng 拡張機能の初期化フラグ[ *DebugExtensionInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_initialize)します。
+[*Debugextensioninitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nc-dbgeng-pdebug_extension_initialize)の DbgEng 拡張初期化フラグ。
 
 <span id="m_KnownStructs"></span><span id="m_knownstructs"></span><span id="M_KNOWNSTRUCTS"></span>**m\_KnownStructs**  
-配列の[ **ExtKnownStruct** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/ns-engextcpp-extknownstruct)拡張ライブラリは、出力の書式設定の対応する構造体。 このメンバーを設定する必要があります、 [**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドとは、このメソッドから戻ると、変更できません。
+拡張ライブラリが出力の書式を設定できる[**Extknownstruct**](https://docs.microsoft.com/windows-hardware/drivers/ddi/engextcpp/ns-engextcpp-extknownstruct)構造体の配列。 このメンバーは[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドによって設定される必要があります。このメソッドが返されると、このメンバーを変更することはできません。
 
-場合**m\_KnownStructs**ない**NULL**、 **TypeName** 、最後のメンバー **ExtKnownStruct**配列内の構造必要があります**NULL**します。
+**M\_knownstructs**が**null**でない場合、配列内の最後の**Extknownstruct**構造体の**TypeName**メンバーは**null**である必要があります。
 
-構造体の型の名前と一致する場合は、出力では、ターゲットの構造をフォーマットするときに、 **TypeName**のいずれかのメンバー、 **ExtKnownStruct**コールバック関数が指定された、この配列内の構造体**メソッド**書式設定を実行するメンバーが呼び出されます。
+出力用のターゲットの構造を書式設定するときに、構造体の型の名前がこの配列内の**Extknownstruct**構造体のいずれかの**TypeName**メンバーと一致する場合、**メソッド**メンバーで指定されたコールバック関数が呼び出されます。書式設定を実行します。
 
-<span id="m_ProvidedValues"></span><span id="m_providedvalues"></span><span id="M_PROVIDEDVALUES"></span>**m\_ProvidedValues**  
-配列の**ExtProvidedValue**構造擬似を一覧表示拡張機能ライブラリの値を提供できることを登録します。 このメンバーを設定する必要があります、 [**初期化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドとは、このメソッドから戻ると、変更できません。
+<span id="m_ProvidedValues"></span><span id="m_providedvalues"></span><span id="M_PROVIDEDVALUES"></span>**m\_プロビジョニング値**  
+拡張ライブラリが値を提供できる擬似レジスタを一覧表示する**ext/Dedvalue**構造体の配列。 このメンバーは[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))メソッドによって設定される必要があります。このメソッドが返されると、このメンバーを変更することはできません。
 
-場合**m\_ProvidedValues**ない**NULL**、 **ValueName** 、最後のメンバー **ExtProvidedValue**構造体、配列である必要があります**NULL**します。
+**M\_の値**が**null**でない場合は、配列内の最後の**extの Dedvalue**構造体の**ValueName**メンバーが**null**である必要があります。
 
-仮想デバイスの名前の登録と一致する場合に、擬似レジスタを評価するときに、 **ValueName**のいずれかのメンバー、 **ExtProvidedValue** でコールバック関数が指定された、この配列内の構造体**メソッド**擬似レジスタを評価するメンバーが呼び出されます。
+擬似レジスタを評価するときに、擬似レジスタの名前がこの配列内のいずれかの**Extの値**構造体の**ValueName**メンバーと一致する場合、**メソッド**メンバーで指定されたコールバック関数が呼び出され、擬似レジスタ。
 
-<span id="m_Advanced"></span><span id="m_advanced"></span><span id="M_ADVANCED"></span>**m\_高度な**  
-[ **IDebugAdvanced** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+<span id="m_Advanced"></span><span id="m_advanced"></span><span id="M_ADVANCED"></span>**m\_詳細設定**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugAdvanced**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
 <span id="m_Client"></span><span id="m_client"></span><span id="M_CLIENT"></span>**m\_クライアント**  
-[ **IDebugClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
 <span id="m_Control"></span><span id="m_control"></span><span id="M_CONTROL"></span>**m\_コントロール**  
-[ **IDebugControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
 <span id="m_Data"></span><span id="m_data"></span><span id="M_DATA"></span>**m\_データ**  
-[ **IDebugDataSpaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugDataSpaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
-<span id="m_Registers"></span><span id="m_registers"></span><span id="M_REGISTERS"></span>**m\_を登録します**  
-[ **IDebugRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugregisters)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+<span id="m_Registers"></span><span id="m_registers"></span><span id="M_REGISTERS"></span>**m\_レジスタ**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
-<span id="m_Symbols"></span><span id="m_symbols"></span><span id="M_SYMBOLS"></span>**m\_シンボル**  
-[ **IDebugSymbols** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+<span id="m_Symbols"></span><span id="m_symbols"></span><span id="M_SYMBOLS"></span>**m\_記号**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSymbols**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
 <span id="m_System"></span><span id="m_system"></span><span id="M_SYSTEM"></span>**m\_システム**  
-[ **IDebugSystemObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSystemObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。
 
 <span id="m_Advanced2"></span><span id="m_advanced2"></span><span id="M_ADVANCED2"></span>**m\_Advanced2**  
-[ **IDebugAdvanced2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugAdvanced2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Advanced3"></span><span id="m_advanced3"></span><span id="M_ADVANCED3"></span>**m\_Advanced3**  
-[ **IDebugAdvanced3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugAdvanced3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
-<span id="m_Client2"></span><span id="m_client2"></span><span id="M_CLIENT2"></span>**m\_Client2**  
-[ **IDebugClient2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+<span id="m_Client2"></span><span id="m_client2"></span><span id="M_CLIENT2"></span>**m\_**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugClient2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Client3"></span><span id="m_client3"></span><span id="M_CLIENT3"></span>**m\_Client3**  
-[ **IDebugClient3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugClient3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Client4"></span><span id="m_client4"></span><span id="M_CLIENT4"></span>**m\_Client4**  
-[ **IDebugClient4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugClient4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Client5"></span><span id="m_client5"></span><span id="M_CLIENT5"></span>**m\_Client5**  
-[ **IDebugClient5** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugClient5**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Control2"></span><span id="m_control2"></span><span id="M_CONTROL2"></span>**m\_Control2**  
-[ **IDebugControl2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugControl2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Control3"></span><span id="m_control3"></span><span id="M_CONTROL3"></span>**m\_Control3**  
-[ **IDebugControl3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugControl3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Control4"></span><span id="m_control4"></span><span id="M_CONTROL4"></span>**m\_Control4**  
-[ **IDebugControl4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugControl4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Data2"></span><span id="m_data2"></span><span id="M_DATA2"></span>**m\_Data2**  
-[ **IDebugDataSpaces2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugDataSpaces2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Data3"></span><span id="m_data3"></span><span id="M_DATA3"></span>**m\_Data3**  
-[ **IDebugDataSpaces3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugDataSpaces3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Data4"></span><span id="m_data4"></span><span id="M_DATA4"></span>**m\_Data4**  
-[IDebugDataSpaces4](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[IDebugDataSpaces4](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Registers2"></span><span id="m_registers2"></span><span id="M_REGISTERS2"></span>**m\_Registers2**  
-[ **IDebugRegisters2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugregisters)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugRegisters2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Symbols2"></span><span id="m_symbols2"></span><span id="M_SYMBOLS2"></span>**m\_Symbols2**  
-[ **IDebugSymbols2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSymbols2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_Symbols3"></span><span id="m_symbols3"></span><span id="M_SYMBOLS3"></span>**m\_Symbols3**  
-[ **IDebugSymbols3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSymbols3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
-<span id="m_System2"></span><span id="m_system2"></span><span id="M_SYSTEM2"></span>**m\_システム 2**  
-[ **IDebugSystemObjects2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+<span id="m_System2"></span><span id="m_system2"></span><span id="M_SYSTEM2"></span>**m\_System2**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSystemObjects2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
 <span id="m_System3"></span><span id="m_system3"></span><span id="M_SYSTEM3"></span>**m\_System3**  
-[ **IDebugSystemObjects3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSystemObjects3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
-<span id="m_System4"></span><span id="m_system4"></span><span id="M_SYSTEM4"></span>**m\_system4 のマニュアル ページ**  
-[ **IDebugSystemObjects4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)拡張機能ライブラリで使用できるクライアント オブジェクトのインターフェイス ポインター。 拡張の外部から呼び出されるメソッドの呼び出し中に無効です-たとえば、拡張機能の実行コマンドを呼び出し[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**します。 このインターフェイスは、デバッガー エンジンのすべてのバージョンでできない可能性があります。
+<span id="m_System4"></span><span id="m_system4"></span><span id="M_SYSTEM4"></span>**m\_System4**  
+拡張ライブラリで使用できるクライアントオブジェクトの[**IDebugSystemObjects4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)インターフェイスポインター。 これは、外部から呼び出される拡張メソッドの呼び出し中に有効です。たとえば、拡張コマンドの実行、 [*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))と**ExtProvideValueMethod**の呼び出しなどです。 このインターフェイスは、すべてのバージョンのデバッガーエンジンで使用できるとは限りません。
 
-<span id="m_PtrSize"></span><span id="m_ptrsize"></span><span id="M_PTRSIZE"></span>**m\_から検出しました。**  
-現在のターゲットのポインターのサイズ。 ターゲットは、32 ビット ポインターを使用している場合**m\_から検出した**は 4 です。 ターゲットは、64 ビットのポインターを使用している場合**m\_から検出した**は 8 です。
+<span id="m_PtrSize"></span><span id="m_ptrsize"></span><span id="M_PTRSIZE"></span>**m\_PtrSize**  
+現在のターゲット上のポインターのサイズ。 ターゲットが32ビットポインターを使用している場合、 **m\_PtrSize**は4になります。 ターゲットが64ビットポインターを使用している場合、 **m\_PtrSize**は8です。
 
 <span id="m_AppendBuffer"></span><span id="m_appendbuffer"></span><span id="M_APPENDBUFFER"></span>**m\_AppendBuffer**  
-拡張ライブラリからエンジンに文字列を返すために使用する文字のバッファー。 このバッファーのサイズは**m\_AppendBufferChars**します。 メソッド**AppendBufferString**、 **AppendStringVa**、および**もう 1 つ**このバッファーに文字列を書き込むために使用できます。
+拡張ライブラリからエンジンに文字列を返すために使用される文字バッファー。 このバッファーのサイズは**m\_AppendBufferChars**です。 メソッド**Appendbufferstring**、 **Appendbufferstring**、および**appendstring**を使用して、このバッファーに文字列を書き込むことができます。
 
 <span id="m_AppendBufferChars"></span><span id="m_appendbufferchars"></span><span id="M_APPENDBUFFERCHARS"></span>**m\_AppendBufferChars**  
-文字バッファーのサイズを**m\_AppendBuffer**します。
+バッファー **m\_AppendBuffer**のサイズ (文字数)。
 
 
 

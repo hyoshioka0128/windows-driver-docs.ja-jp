@@ -15,12 +15,12 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd117702ffff4e3124ea83a884397b65d9f4dac
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: ce4768dc9f371ed7270fcd04260d2da6f3a9f860
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025223"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826681"
 ---
 # <a name="lookaside"></a>!lookaside
 
@@ -39,7 +39,7 @@ ms.locfileid: "70025223"
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
 表示または変更するルックアップリストの16進数のアドレスを指定します。
 
-*Address*が省略されている場合 (または 0)、 **-all**オプションが指定されていない場合は、既知の標準システムのルックアップリストが表示されます。 リストのセットは完全ではありません。つまり、すべてのシステムのルックアップリストが含まれているわけではありません。 また、このセットには、 [**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)または[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)の呼び出しによって作成されたカスタムのルックアサイドリストは含まれません。
+*Address*が省略されている場合 (または 0)、 **-all**オプションが指定されていない場合は、既知の標準システムのルックアップリストが表示されます。 リストのセットは完全ではありません。つまり、すべてのシステムのルックアップリストが含まれているわけではありません。 また、このセットには、 [**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist)または[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)の呼び出しによって作成されたカスタムのルックアサイドリストは含まれません。
 
 *Address*が省略されている場合 (または 0)、 **-all**オプションが指定されている場合は、すべてのルックアップリストが表示されます。
 
@@ -55,14 +55,14 @@ ms.locfileid: "70025223"
 <span id="2"></span>3  
 指定したルックアップリストの深さを変更します。 このオプションは、*アドレス*が0以外の場合にのみ使用できます。
 
-<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span>*深さ*   
+<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span>*深さ*の   
 指定された検索除外リストの新しい最大深度を指定します。 このパラメーターは、 *Address*が0以外で、*オプション*が2に等しい場合にのみ許可されます。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 ルックアサイドリストの詳細については、「 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=201141) 」のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ルックアサイドリストは、ページ分割されたメモリまたはページングされていないメモリの固定サイズのエントリのプールを管理するためのマルチプロセッサセーフメカニズムです。
@@ -85,7 +85,7 @@ Lookaside "" @ 0xfffff88001294f80  Tag(hex): 0x7366744e "Ntfs"
     Hit Rate       =         99% Hit Rate   =        100%
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

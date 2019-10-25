@@ -6,16 +6,16 @@ keywords:
 - AcceptAcpiNotification
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e81a13f8e055292cbbcb1ad98df1b7dacf6116d8
-ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
+ms.openlocfilehash: cffafd3bdb8d2af44411ade19f480294d065cbfe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72549761"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828678"
 ---
 # <a name="acpi-notifications"></a>ACPI 通知
 
-PEP の[*AcceptAcpiNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyacpi)コールバックルーチンによって受信される各 ACPI 通知には、通知の種類を示す通知パラメーターと、そのデータ構造を指すデータパラメーター (指定された通知の種類に関する情報です。
+PEP の[*AcceptAcpiNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyacpi)コールバックルーチンによって受信される各 ACPI 通知には、通知の種類を示す通知パラメーターと、そのデータ構造を指すデータパラメーター (指定された通知の種類に関する情報です。
 
 この呼び出しでは、通知パラメーターは、通知の種類を示す PEP_NOTIFY_ACPI_XXX 定数値に設定されます。 データパラメーターが、この通知の種類に関連付けられている PEP_ACPI_XXX 構造体の型を指しています。
 

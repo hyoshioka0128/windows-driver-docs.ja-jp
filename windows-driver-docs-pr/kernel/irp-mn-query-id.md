@@ -1,144 +1,144 @@
 ---
 title: IRP_MN_QUERY_ID
-description: バス ドライバーは、その子デバイス (子 Pdo)、BusQueryDeviceID の要求を処理する必要があります。 バス ドライバーは、その子デバイス BusQueryHardwareIDs、BusQueryCompatibleIDs、および BusQueryInstanceID 要求を処理できます。
+description: バスドライバーは、子デバイス (子 PDOs) の BusQueryDeviceID の要求を処理する必要があります。 バスドライバーは、その子デバイスの Busquerydevices Id、Busquery/Ids、BusQueryInstanceID の要求を処理できます。
 ms.date: 08/12/2017
 ms.assetid: 3135cb30-a696-4201-8dfc-cdc1a29fe52b
 keywords:
-- IRP_MN_QUERY_ID カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_ID カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa130fb052422e49dbde20411d8de42fe31c34b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9caa4d0e24eca9d73f3058b366e945c1799877e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383282"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828023"
 ---
-# <a name="irpmnqueryid"></a>IRP\_MN\_QUERY\_ID
+# <a name="irp_mn_query_id"></a>IRP\_\_クエリ\_ID
 
 
-バス ドライバーに対する要求を処理する必要があります**BusQueryDeviceID**の子デバイス (子 Pdo)。 バス ドライバーの要求を処理できる**BusQueryHardwareIDs**、 **BusQueryCompatibleIDs**と**BusQueryInstanceID**子デバイス用です。
+バスドライバーは、子デバイス (子 PDOs) の**Busquerydeviceid**の要求を処理する必要があります。 バスドライバーは、その子デバイスの**Busquerydevices id**、 **Busquery/Ids**、 **busqueryinstanceid**の要求を処理できます。
 
-Windows 7 以降、バス ドライバーする必要がありますもの要求を処理 BusQueryContainerID その子の Pdo をします。
+Windows 7 以降では、バスドライバーは、子 PDOs の BusQueryContainerID の要求も処理する必要があります。
 
-これらの識別子 (Id) の詳細については、次を参照してください。[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
+これらの識別子 (IDs) の詳細については、「[デバイス Id 文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)」を参照してください。
 
-**注**  関数およびフィルター ドライバーでこの IRP を処理しません。
+**メモ**  関数ドライバーとフィルタードライバーがこの IRP を処理しないことに注意してください。
 
  
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーは、デバイスが列挙されたときに、この IRP を送信します。 ドライバーでは、そのデバイスの 1 つのインスタンス ID を取得するには、この IRP を送信します。
+PnP マネージャーは、デバイスが列挙されたときにこの IRP を送信します。 ドライバーは、そのデバイスの1つのインスタンス ID を取得するために、この IRP を送信する場合があります。
 
-PnP マネージャーとドライバーは、この IRP を送信 IRQL パッシブで\_任意のスレッド コンテキストでします。
+PnP マネージャーとドライバーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.QueryId.IdType**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location) ID(s) 要求の種類を指定します。 使用可能な値には、BusQueryDeviceID、BusQueryHardwareIDs、BusQueryCompatibleIDs、BusQueryInstanceID、および BusQueryContainerID が含まれます。 次の ID の種類は予約されています。BusQueryDeviceSerialNumber します。
+[**IO\_STACK\_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)構造体の**Parameters. idtype**メンバーは、要求された ID の種類を指定します。 指定できる値は、BusQueryDeviceID、Busquerydeviceid Id、Busquerydeviceid Ids、Busquerydeviceid、Busquerydeviceid です。 次の ID の種類は予約されています: Busqueryデバイス Erialnumber。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-状態の I/O ブロックで返されます。
+I/o 状態ブロックで返されます。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態にします。
+ドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS または適切なエラー状態に設定します。
 
-成功した場合、ドライバーの設定**Irp -&gt;IoStatus.Information**に要求された情報を指す WCHAR ポインター。 ドライバーの設定エラーが発生した**Irp -&gt;IoStatus.Information**をゼロにします。
+成功すると、ドライバーは、要求された情報を指す WCHAR ポインターに**Irp&gt;IoStatus. 情報**を設定します。 エラーが発生した場合、ドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
 
 <a name="operation"></a>操作
 ---------
 
-ドライバーで ID(s) この IRP への応答を返す場合は、ページ プールを含む、ID(s) から WCHAR 構造体を割り当てます。 PnP マネージャーは、不要になったときに、構造体を解放します。
+ドライバーがこの IRP への応答として ID を返す場合、その ID を格納するために、ページプールから WCHAR 構造体を割り当てます。 不要になったときに、PnP マネージャーによって構造が解放されます。
 
 ドライバーは、次のいずれかを返します。
 
--   21\_BusQueryDeviceID、BusQueryInstanceID への応答で SZ 文字列または BusQueryContainerID 要求。
+-   BusQueryDeviceID、Busquerydeviceid、または Busquerydeviceid 要求への応答としての REG\_SZ 文字列。
 
--   21\_マルチ\_SZ 文字列 BusQueryHardwareIDs または BusQueryCompatibleIDs 要求に応答します。
+-   Busqueryの Id または Busqueryて Ids 要求への応答として、REG\_複数\_SZ 文字列。
 
-ドライバーが無効な文字の ID を返す場合、システム チェックのバグは。 次の値を持つ文字では、この IRP の ID に正しくありません。
+ドライバーが無効な文字を含む ID を返す場合、システムはバグチェックを行います。 次の値を持つ文字は、この IRP の ID では無効です。
 
--   0x20 小さい (' ')
+-   0x20 (' ') 以下
 
--   0x7F よりも大きい
+-   0x7F より大きい
 
--   0x2C と等しく (',')
+-   0x2C (', ') と等しい
 
-ドライバーは、Id には、次の長さ制限に従う必要があります。
+ドライバーは、Id に対して次の長さの制限に準拠している必要があります。
 
--   各ハードウェア ID または互換性 ID をドライバーの返すこの IRP では最大未満である必要があります\_デバイス\_ID\_LEN 文字。 この定数は、sdk で定義されている現在 200 の値を持つ\\inc\\cfgmgr32.h します。
+-   この IRP でドライバーが返す各ハードウェア ID または互換性 ID は、最大\_デバイス\_ID\_LEN 文字未満である必要があります。 現在、この定数には、sdk\\inc.\\cfgmgr32 で定義されている値200があります。
 
--   この IRP のドライバーが返すコンテナー ID がグローバルに一意の識別子 (GUID) としてフォーマットする必要があり、最大にする必要があります\_GUID\_文字列\_LEN 文字は、null 終端文字が含まれています。
+-   この IRP でドライバーから返されるコンテナー ID は、グローバル一意識別子 (GUID) として書式設定されている必要があります。また、null 終端文字を含む最大\_GUID\_文字列\_LEN 文字である必要があります。
 
--   その子デバイスにグローバルに一意のインスタンス Id を提供するバス ドライバー場合、(ドライバーの設定は、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)**します。UniqueID** 、デバイスの場合)、デバイス ID とインスタンス ID の組み合わせである必要がありますしより小さい (最大\_デバイス\_ID\_LEN - 1) 文字。 オペレーティング システムでは、パスの区切り文字の追加の文字が必要です。
+-   バスドライバーが子デバイスのグローバルに一意のインスタンス Id を提供する場合 (つまり、ドライバーは[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)を設定し**ます)。** デバイスの UniqueID。デバイス id とインスタンス ID の組み合わせは、(最大\_デバイス\_ID\_LEN-1) 文字未満である必要があります。 オペレーティングシステムでは、パスの区切り記号に追加の文字が必要です。
 
--   バス ドライバーがその子デバイスにグローバルに一意のインスタンス Id を指定しないかどうかは、デバイス ID とインスタンス ID の組み合わせである必要がありますより小さい (最大\_デバイス\_ID\_LEN - 28)。 この式の値が 172 では現在です。
+-   バスドライバーが子デバイスに対してグローバルに一意のインスタンス id を指定していない場合、デバイス ID とインスタンス ID の組み合わせは、(最大\_デバイス\_ID\_LEN-28) 未満である必要があります。 この式の値は現在172です。
 
-デバイスが列挙された後すぐには、この IRP の子デバイスを処理するために、バス ドライバーを準備する必要があります。
+バスドライバーは、デバイスが列挙された直後に、子デバイスに対してこの IRP を処理するように準備する必要があります。
 
-**BusQueryDeviceID と BusQueryInstanceID を指定します。**
+**BusQueryDeviceID と Busquerydeviceid の指定**
 
-BusQueryDeviceID と BusQueryInstanceID バス ドライバーを提供する値は、コンピューター上の他のデバイスからデバイスを区別するために、オペレーティング システムを許可します。 オペレーティング システム、デバイス ID とで返されるインスタンス ID を使用して、 **IRP\_MN\_クエリ\_ID** IRP と一意の ID フィールドで返される、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md) IRP をデバイスのレジストリ情報を特定します。
+バスドライバーが BusQueryDeviceID に提供する値と Busquerydeviceid を使用すると、オペレーティングシステムは、コンピューター上の他のデバイスとデバイスを区別できます。 オペレーティングシステムは、Irp に返されたデバイス ID とインスタンス ID を使用します。この id は、irp **\_\_クエリ\_ID** IRP と、\_irp に返された一意の ID フィールドで、 [ **\_クエリ\_機能**](irp-mn-query-capabilities.md)の irp によって返されます。デバイスのレジストリ情報。
 
-**BusQueryDeviceID**、バス ドライバーは、デバイスの*デバイス ID*します。 デバイス ID は、可能な場合は、製造元、デバイス、リビジョン、パッケー ジャー、およびパッケージの製品を識別する文字列、列挙子の名前を組み込むことのデバイスの可能な最も固有の説明を含める必要があります。 PCI バス ドライバーは PCI 形式のデバイス Id で応答など\\VEN\_xxxx & DEV\_xxxx & SUBSYS\_xxxxxxxx & REV\_xx、5 つすべて上記で説明した項目のエンコードします。 ただし、デバイス ID は、2 つの同一デバイスを区別するために十分な情報を含めることはできません。 インスタンス ID でこの情報をエンコードする必要があります。
+**Busquerydeviceid**の場合、バスドライバーはデバイスの*デバイス ID*を提供します。 デバイス ID には、可能な場合は、列挙子の名前と製造元、デバイス、リビジョン、パッケージャー、およびパッケージ化された製品を識別する文字列を組み込んで、可能な限り具体的なデバイスの説明を含める必要があります。 たとえば、PCI バスドライバーは、PCI\\VEN\_xxxx & DEV\_xxxx & SUBSYS\_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx & REV\_xx という形式のデバイス Id で応答し、上記で説明した5つのすべての項目をエンコードします。 ただし、デバイス ID には、同一の2つのデバイスを区別するための十分な情報が含まれていてはなりません。 この情報は、インスタンス ID でエンコードする必要があります。
 
-バス ドライバー BusQueryInstanceID を含む文字列を指定する必要があります、*インスタンス ID*デバイス。 セットアップとバス ドライバーでは、他の情報と、インスタンス ID を使用して、コンピューター上の 2 つの同一デバイスを区別します。 インスタンス ID は、コンピューター全体の間で一意か、デバイスの親のバス上でのみ一意です。
+BusQueryInstanceID の場合、バスドライバーは、デバイスの*インスタンス ID*を含む文字列を提供する必要があります。 セットアップとバスドライバーは、コンピューター上の2つの同一のデバイスを区別するために、インスタンス ID とその他の情報を使用します。 インスタンス ID は、コンピューター全体で一意であるか、デバイスの親バス上で一意であるかのいずれかです。
 
-インスタンス ID は、バス上で一意では、バス ドライバー BusQueryInstanceID をその文字列を指定しますがも指定します、 **UniqueID** @property **FALSE**への応答、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)デバイスの要求。 場合**UniqueID**は**FALSE**、PnP マネージャーについては、デバイスの親を追加することで、インスタンス ID を強化し、ため、ID 一意のコンピューターにします。 ここで、バス ドライバーでする必要がありますに、そのデバイスのインスタンス Id はグローバルに一意では追加の手順を実行しません。戻り値とオペレーティング システムの適切な機能については、処理がされます。
+インスタンス ID がバス上でのみ一意である場合、バスドライバーは BusQueryInstanceID の文字列を指定しますが、 [**IRP\_\_\_** ](irp-mn-query-capabilities.md)に応答して、 **UniqueID**の値を**FALSE**に指定します。デバイス。 **UniqueID**が**FALSE**の場合、PnP マネージャーは、デバイスの親に関する情報を追加することによってインスタンス id を拡張します。これにより、コンピューター上で一意の id が作成されます。 この場合、バスドライバーは、デバイスのインスタンス Id をグローバルに一意にするための追加の手順を実行する必要はありません。適切な機能情報を返すだけで、オペレーティングシステムによって処理されます。
 
-バス ドライバーが BusQueryInstanceID のこれらの文字列を指定し、指定バス ドライバーが、シリアル番号などの子デバイスごとにグローバルに一意の ID を指定する場合、 **UniqueID** @property **TRUE**で応答、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)デバイスごとに要求します。
+バスドライバーがシリアル番号などの各子デバイスに対してグローバルに一意な ID を提供できる場合、バスドライバーは、BusQueryInstanceID に対してこれらの文字列を指定し、IRP の\_に応答して、 **UniqueID**の値として**TRUE**を指定し[ **\_** ](irp-mn-query-capabilities.md)各デバイスに対するクエリ\_機能要求。
 
-**BusQueryHardwareIDs と BusQueryCompatibleIDs を指定します。**
+**Busqueryハードウェア Id と Busqueryの Id の指定**
 
-値 BusQueryHardwareIDs のバス ドライバーを提供し、BusQueryCompatibleIDs はバスの子のデバイス用の適切なドライバーを検索する設定を許可します。
+バスドライバーが Busquerydrivers Id と busqueryの Id に提供する値により、セットアップによって、バスの子デバイスに適したドライバーを見つけることができます。
 
-バス ドライバーに応答する、REG でこれらの要求の各\_マルチ\_SZ リスト Id、デバイスを記述するのです。 リストを終了する 2 つの NULL 文字を含む Id の一覧の文字の最大長は REGSTR\_VAL\_最大\_HCID\_LEN します。
+バスドライバーは、デバイスを記述する Id の REG\_複数\_SZ リストを使用して、これらの要求に応答します。 リストを終了する2つの NULL 文字を含む Id のリストの最大文字数は、REGSTR\_VAL\_MAX\_HCID\_LEN です。
 
-1 つ以上返す場合*ハードウェア ID*および 1 つ以上の*互換性 ID*、バス ドライバーには、最も一般に最も固有の順序に最も一致するドライバーを選択するための Id が一覧表示デバイス ハードウェア Id の一覧の最初のエントリは、デバイスのほとんどに固有の説明と、そのため、通常は同じデバイス ID には
+複数の*ハードウェア id*または互換性のある*id*を返す場合、バスドライバーは、デバイスに最適なドライバーの一致を選択しやすくするために、最も固有の順序で id を一覧表示する必要があります。 ハードウェア Id の一覧の最初のエントリは、デバイスの最も具体的な説明です。そのため、通常、デバイス ID と同じです。
 
-セットアップは、一致候補の INF ファイルに表示される Id に対して Id を確認します。 セットアップでは、ハードウェア Id の一覧、互換性のある Id の一覧で、最初にスキャンします。 以前のエントリは、デバイス、およびデバイスの一般的な (およびそのため、小さいに最適な) の一致として以降のエントリのより具体的な説明として扱われます。 ハードウェア Id の一覧に一致するものがない場合、セットアップは、互換性 Id の一覧に進む前にインストール メディアのユーザーを要求する可能性があります。
+セットアップでは、一致候補について、INF ファイルに示されている Id に対して Id がチェックされます。 セットアップでは、最初にハードウェア Id の一覧、次に互換性のある Id の一覧がスキャンされます。 以前のエントリは、デバイスのより具体的な説明として扱われ、後でデバイスに対してより一般的な (つまり、最適ではない) 一致として処理されます。 ハードウェア Id の一覧に一致する項目が見つからない場合は、互換性のある Id の一覧に移動する前に、インストールメディアの入力を求めるメッセージが表示されることがあります。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**BusQueryContainerIDs を指定します。**
+**BusQueryContainerIDs の指定**
 
-Windows 7 以降、バス ドライバーが文字列を指定を含む BusQueryContainerID の[コンテナー ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)デバイス。 コンテナー ID には、単一の物理リムーバブル デバイスの機能すべてのデバイスをグループ化するオペレーティング システムができるようにします。 たとえば、リムーバブル多機能デバイスからすべての機能のデバイスにある同じコンテナー ID 複数のコンテナー内の複数のディスクにまたがる可能性がありますが、任意のコンテナーに属さないボリューム デバイスなどの特殊なケースでコンテナー Id をレポートの詳細については、次を参照してください。[コンテナー Id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)します。
+Windows 7 以降では、バスドライバーは、デバイスの[コンテナー ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)を含む BusQueryContainerID の文字列を提供する必要があります。 コンテナー ID を使用すると、オペレーティングシステムは1つのリムーバブル物理デバイスからすべての機能デバイスをグループ化できます。 たとえば、リムーバブルの多機能デバイスのすべての機能デバイスは、同じコンテナー ID を持ちます。 複数のコンテナー内の複数のディスクにまたがり、どのコンテナーにも属していないボリュームデバイスなど、特殊なケースでのレポートコンテナー Id の詳細については、「[コンテナー id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)」を参照してください。
 
-物理リムーバブル デバイスが、バス ドライバーを指定する子デバイスとして定義されている、**リムーバブル**の機能**TRUE**への応答、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)要求。 詳細については、**リムーバブル**値を参照してください[**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)します。
+リムーバブル物理デバイスは子デバイスとして定義されます。これは、バスドライバーが、 [**IRP\_\_クエリ\_機能**](irp-mn-query-capabilities.md)の要求に応じて、**リムーバブル**機能を**TRUE**として指定します。 **リムーバブル**値の詳細については、「[**デバイス\_の機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)」を参照してください。
 
-バス ドライバーでは、デバイスは、バスに固有の一意の ID に基づくコンテナー ID を作成します。 詳細については、次を参照してください。[どのコンテナー Id が生成される](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)します。
+バスドライバーは、デバイスが提供するバス固有の一意の ID に基づいて、コンテナー ID を作成します。 詳細については、「[コンテナー id の生成方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)」を参照してください。
 
-ドライバーは IRP の要求は失敗し、設定する必要があります**IoStatus.Status**ステータス\_いない\_次のいずれかに当てはまる場合にサポートされます。
+ドライバーは、IRP 要求を失敗させ、Iostatus を設定する必要があり**ます。** 次のいずれかに該当する場合、状態は [状態] に\_\_サポートされません。
 
--   デバイスは、バス ドライバーを使用してコンテナー ID を生成するバスに固有の一意の ID をサポートしていません。
+-   デバイスは、バスドライバーがコンテナー ID を生成するために使用できるバス固有の一意の ID をサポートしていません。
 
--   以前指定したバス ドライバー、**リムーバブル**の機能**FALSE**への応答、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)デバイスの要求。
+-   バスドライバーでは、デバイスに対する[ **\_クエリ\_機能**](irp-mn-query-capabilities.md)の要求に対して、IRP\_に応答して、既に**FALSE**の**リムーバブル**機能が指定されていました。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-通常、PnP マネージャーだけでは、この IRP を送信します。
+通常、この IRP を送信するのは PnP マネージャーだけです。
 
-デバイスのハードウェア Id または互換性 Id を取得する[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)この IRP を送信する代わりにします。
+デバイスのハードウェア Id または互換性のある Id を取得するには、この IRP を送信する代わりに[**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出します。
 
-ドライバーでは、そのデバイスの 1 つのインスタンス ID を取得するには、この IRP を送信します。 たとえば、関数は独立して動作しない PnP ISA 多機能デバイスを検討してください。 PnP マネージャーが別のデバイスとして関数を列挙しますが、このようなデバイスのドライバーは、関数の 1 つ以上を関連付ける必要があります。 PnP ISA は一意のインスタンス ID を保証するためのような多機能デバイス ドライバーは、同じデバイス上に常駐する関数を検索するのにインスタンス Id を使用できます。 このようなデバイスのドライバー呼び出すことでデバイスの列挙子の名前を取得する必要がありますも[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)デバイスが、ISA の PnP デバイスであることを確認します。
+ドライバーは、そのデバイスの1つのインスタンス ID を取得するために、この IRP を送信する場合があります。 たとえば、機能が独立して動作しない多機能 PnP ISA デバイスがあるとします。 PnP マネージャーでは、機能が個別のデバイスとして列挙されますが、このようなデバイスのドライバーは、1つまたは複数の機能を関連付けるために必要になる場合があります。 PnP ISA は一意のインスタンス ID を保証するため、このような多機能なデバイスのドライバーは、インスタンス Id を使用して、同じデバイス上に存在する機能を見つけることができます。 このようなデバイスのドライバーも、デバイスが PnP ISA デバイスであることを確認するために、 [**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出してデバイスの列挙子名を取得する必要があります。
 
-参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+Irp の送信の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)」を参照してください。 次の手順は、この IRP に特に適用されます。
 
--   IRP の I/O スタック内の次の場所の値を設定します設定**MajorFunction**に[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)設定 **。MinorFunction** IRP を\_MN\_クエリ\_ID、およびセット**Parameters.QueryId.IdType**に**BusQueryInstanceID**します。
+-   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction**を "IRP\_\_QUERY\_ID" に設定し、QueryId をに **設定します。BusQueryInstanceID**。
 
--   設定**IoStatus.Status**ステータス\_いない\_サポートされています。
+-   **Iostatus を設定します。** 状態\_サポートされていません\_。
 
-クエリ ID IRP を送信するだけでなく、ドライバーを呼び出す必要があります[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)を取得する、 **DevicePropertyEnumeratorName**デバイス。
+ドライバーは、クエリ ID IRP を送信するだけでなく、デバイスの**Deviceproperty列挙 Atorname**を取得するために[**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出す必要があります。
 
-IRP が完了するし、id、ドライバーが完了したら、ドライバーは IRP のクエリを処理するドライバーによって返される ID の構造体を解放する必要があります。
+IRP が完了し、ドライバーが ID で終了すると、ドライバーは、クエリ IRP を処理したドライバーによって返された ID 構造を解放する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -151,7 +151,7 @@ IRP が完了するし、id、ドライバーが完了したら、ドライバ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -159,9 +159,9 @@ IRP が完了するし、id、ドライバーが完了したら、ドライバ�
 ## <a name="see-also"></a>関連項目
 
 
-[デバイスの識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
+[デバイス識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
 
-[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)
 
  
 

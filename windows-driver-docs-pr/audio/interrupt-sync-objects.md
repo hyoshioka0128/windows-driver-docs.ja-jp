@@ -3,21 +3,21 @@ title: 割り込み同期のオブジェクト
 description: 割り込み同期のオブジェクト
 ms.assetid: c9e228e0-6178-442d-a82a-6b14ed67c9d2
 keywords:
-- ヘルパー オブジェクトの WDK オーディオ、割り込み同期オブジェクト
-- 同期オブジェクトの WDK オーディオを中断します。
+- ヘルパーオブジェクト WDK オーディオ、割り込み同期オブジェクト
+- interrupt sync オブジェクト WDK audio
 - IInterruptSync インターフェイス
-- 同期の WDK オーディオ
-- 割り込みサービス ルーチン WDK オーディオ
+- WDK オーディオの同期
+- 割り込みサービスルーチン WDK オーディオ
 - Isr WDK オーディオ
 - 非割り込みルーチン WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a98c5cfb3c3da30d781916bdfb93628732420620
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 27065946638fe81450cdc49ebae2cf35d721bab3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359864"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833207"
 ---
 # <a name="interrupt-sync-objects"></a>割り込み同期のオブジェクト
 
@@ -25,17 +25,17 @@ ms.locfileid: "67359864"
 ## <span id="interrupt_sync_objects"></span><span id="INTERRUPT_SYNC_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IInterruptSync](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iinterruptsync)ミニポート ドライバーのためのインターフェイス。 **IInterruptSync**以外からの割り込みルーチンと割り込みサービス ルーチン (Isr) の一覧の実行を同期する割り込み同期オブジェクトを表します。
+PortCls システムドライバーは、ミニポートドライバーの利点を得るために[IInterruptSync](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iinterruptsync)インターフェイスを実装しています。 **IInterruptSync**は、割り込みサービスルーチン (isr) の一覧の実行を非割り込みルーチンと同期する割り込み同期オブジェクトを表します。
 
-割り込み同期オブジェクトでは、2 つの主要機能を提供します。
+割り込み同期オブジェクトは、次の2つの主要な機能を提供します。
 
--   実行、割り込みに応答で isr を特定のリスト。 同期オブジェクトは、割り込みソースに接続されます。 毎回、割り込みが発生する同期オブジェクトが、選択したモードに従って、指定された順序で、Isr を実行します。 (次の 3 つのモードの説明を参照してください)。
+-   割り込みに対する応答としての Isr の一覧の実行。 同期オブジェクトは割り込みソースに接続されています。 同期オブジェクトは、割り込みが発生するたびに、選択されたモードに従って、指定された順序で Isr を実行します。 (3 つのモードについては、次の説明を参照してください)。
 
--   Isr を特定できないルーチンの実行。 これら以外からの割り込みのルーチンは、同期オブジェクトの割り込みに接続されていません。 代わりに、呼び出し元の選択時以外からの割り込みのルーチンが実行されます。 ただし、同期オブジェクトは、isr を特定のオブジェクトの一覧で同期的に非割り込みルーチンを実行します。 つまり、非割り込みルーチンの実行が完了を実行する同期オブジェクトのリストに isr を特定のいずれかの開始前に、またはその逆です。
+-   Isr ではないルーチンの実行。 これらの非割り込みルーチンは、同期オブジェクトの割り込みに接続されていません。 代わりに、割り込み以外のルーチンは、呼び出し元が選択したときに実行されます。 ただし、同期オブジェクトは、オブジェクトの Isr のリストを使用して、非割り込みルーチンを同期的に実行します。 つまり、非割り込みルーチンは、同期オブジェクトのリスト内のいずれかの Isr の実行が開始される前に完了するように実行されます。その逆も同様です。
 
-割り込みの同期オブジェクトは、複数の Isr を処理する柔軟性があります。 Isr を特定は、割り込み時に、同期オブジェクトを通過するリンクのリストに存在します。 ミニポート ドライバーで ISR 同期オブジェクトを登録する場合は、ISR を先頭またはこのリストの末尾に追加するかどうかを指定します。
+割り込み同期オブジェクトは、複数の Isr を処理するのに柔軟です。 Isr は、同期オブジェクトが割り込み時間に通過するリンクリストに存在します。 ミニポートドライバーが ISR を同期オブジェクトに登録する場合は、このリストの先頭または末尾に ISR を追加する必要があるかどうかを指定します。
 
-ミニポート ドライバーは呼び出し、 [ **PcNewInterruptSync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewinterruptsync)割り込み同期オブジェクトを作成する関数。 この呼び出し中には、ドライバーは、割り込み時に isr を特定のリストを走査するオブジェクトの方法を指定します。 呼び出しには、次の表に INTERRUPTSYNCMODE 列挙定数で指定されている 3 つのオプションがサポートしています。
+ミニポートドライバーは、 [**PcNewInterruptSync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewinterruptsync)関数を呼び出して、割り込み同期オブジェクトを作成します。 この呼び出しの間に、ドライバーは、割り込み時にオブジェクトが Isr の一覧を走査する方法を指定します。 この呼び出しでは、次の表の INTERRUPTSYNCMODE 列挙定数で指定される3つのオプションがサポートされています。
 
 <table>
 <colgroup>
@@ -45,46 +45,46 @@ PortCls システム ドライバーの実装、 [IInterruptSync](https://docs.m
 <thead>
 <tr class="header">
 <th align="left">定数</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>InterruptSyncModeNormal</strong></p></td>
-<td align="left"><p>STATUS_SUCCESS を返す 1 つまで、リスト内の各 ISR を呼び出します。</p></td>
+<td align="left"><p>リスト内の各 ISR は、そのいずれかが STATUS_SUCCESS を返すまで呼び出します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>InterruptSyncModeAll</strong></p></td>
-<td align="left"><p>上記の isr を特定のリターン コードに関係なく 1 回だけリストの各 ISR を呼び出します。</p></td>
+<td align="left"><p>前の Isr のリターンコードに関係なく、リスト内の各 ISR を1回だけ呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>InterruptSyncModeRepeat</strong></p></td>
-<td align="left"><p>一覧で、乗車を一覧の ISR 返さない STATUS_SUCCESS が発生するまでは、isr を特定のリスト全体を走査します。</p></td>
+<td align="left"><p>リスト内の ISR が STATUS_SUCCESS を返さないようになるまで、Isr のリスト全体を走査します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**InterruptSyncModeNormal**モードでは、同期オブジェクトを呼び出す各 ISR リストのうち 1 つの状態を返すまで\_成功します。 この ISR に続く Isr が一覧には呼び出されません。 このモードでは、オペレーティング システムが通常 Isr を処理する方法をエミュレートします。 None、isr を特定の状態を返す場合\_成功すると、動作は同じ**InterruptSyncModeAll**します。
+**InterruptSyncModeNormal**モードでは、同期オブジェクトは、そのいずれかが状態\_SUCCESS を返すまで一覧内の各 ISR を呼び出します。 この ISR に従うリスト内のすべての Isr は呼び出されません。 このモードは、通常、オペレーティングシステムが Isr を処理する方法をエミュレートします。 Isr が正常に\_返されない場合、の動作は**InterruptSyncModeAll**と同じになります。
 
-**InterruptSyncModeAll**モードでは、各 ISR の一覧でが呼び出される厳密に 1 回は、上記の isr を特定のリターン コードに関係なく。 これは、プリミティブではハードウェア割り込みのソースがない確定的でも、他の状況で便利ですです。 たとえば、特定の割り込みが元の 2 つのソースに関係なく、すべての割り込みで割り込みの 2 つのソースを緊密に同期可能性があります。
+**InterruptSyncModeAll**モードでは、リスト内の各 ISR は、前の isr のリターンコードに関係なく、1回だけ呼び出されます。 これは、割り込みの原因が決定的ではない、より多くのプリミティブハードウェアを対象としていますが、他の状況でも役に立つ可能性があります。 たとえば、2つの割り込みソースは、特定の割り込みの原因となる2つのソースのいずれかに関係なく、すべての割り込みで緊密に同期されている可能性があります。
 
-**InterruptSyncModeRepeat**モードでは、同期オブジェクト繰り返しはリストを走査全体 isr を特定のリストで、乗車では、ルーチンの一覧で返すにない状態が発生するまで\_成功します。 このモードは、状況、同時に同じ割り込み行に複数のソースからの割り込みが発生可能性がありますまたは ISR 処理中に 2 つ目の割り込みが発生します。 すべての割り込みのソースは、処理が必要かどうかを判断できる必要があります。 システムの状態が常に返す ISR 場合の応答が停止\_成功がこのモードでの同期オブジェクトに登録されています。
+**InterruptSyncModeRepeat**モードでは、リスト内のルーチンによって状態\_SUCCESS が返されないようにするために、同期オブジェクトは isr のリスト全体を繰り返し走査します。 このモードは、複数のソースからの割り込みが同時に同じ割り込み回線で発生する場合や、ISR の処理中に2つ目の割り込みが発生する場合に適しています。 すべての割り込みソースは、処理が必要かどうかを判断できなければなりません。 常にステータス\_成功した ISR がこのモードで同期オブジェクトに登録されている場合、システムは応答を停止します。
 
-これらのモードで、同期オブジェクトは認識、割り込み、オペレーティング システムに登録されている isr を特定の状態を返す場合\_成功します。 すべての 3 つのモードで割り込みのすべてのソースを示すことが正常に処理しなかった、割り込み同期オブジェクト コードが返されます、失敗した結果、オペレーティング システムにします。
+これらのいずれかのモードでは、登録されている Isr の戻り状態\_成功した場合、同期オブジェクトはオペレーティングシステムへの割り込みを認識します。 3つのモードでは、すべての割り込みソースによって割り込みが正常に処理されなかったことが示された場合、同期オブジェクトは失敗した結果コードをオペレーティングシステムに返します。
 
 **IInterruptSync**インターフェイスは、次のメソッドをサポートしています。
 
-[**IInterruptSync::CallSynchronizedRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-callsynchronizedroutine)
+[**IInterruptSync::CallSynchronizedRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-callsynchronizedroutine)
 
-[**IInterruptSync::Connect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-connect)
+[**IInterruptSync:: Connect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-connect)
 
-[**IInterruptSync::Disconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-disconnect)
+[**IInterruptSync::D isconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-disconnect)
 
-[**IInterruptSync::GetKInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-getkinterrupt)
+[**IInterruptSync:: GetKInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-getkinterrupt)
 
-[**IInterruptSync::RegisterServiceRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-registerserviceroutine)
+[**IInterruptSync:: RegisterServiceRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-registerserviceroutine)
 
  
 

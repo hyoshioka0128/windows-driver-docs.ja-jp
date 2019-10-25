@@ -4,33 +4,33 @@ description: Windows Vista より前の IoConnectInterruptEx の使用
 ms.assetid: a08b2869-93f8-440b-9fbe-068604c6007d
 keywords:
 - IoConnectInterruptEx
-- iointex.h
-- 行ベースの割り込み WDK カーネル
-- メッセージ シグナル割り込み WDK カーネル
+- iointex .h
+- 行ベースの割り込み (WDK カーネル)
+- メッセージシグナル割り込み (WDK カーネル)
 - CONNECT_LINE_BASED
 - CONNECT_MESSAGE_BASED
 - CONNECT_FULLY_SPECIFIED
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21f8ef9078271bf00db99b62aabc2f8ca61586f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fcca8da985eb669e465112886236dc96010d789
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381617"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835989"
 ---
 # <a name="using-ioconnectinterruptex-prior-to-windows-vista"></a>Windows Vista より前の IoConnectInterruptEx の使用
 
 
-Windows 2000、Windows XP、または Windows Server 2003 用のドライバーを使用する Iointex.lib ライブラリにリンクできます[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)でこれらのバージョンのオペレーティング システム。
+Windows 2000、Windows XP、または Windows Server 2003 用のドライバーは、これらのバージョンのオペレーティングシステムで[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を使用するために Iointex ライブラリにリンクできます。
 
-使用する**IoConnectInterruptEx**このようなドライバー、Wdm.h または Ntddk.h 後すぐ、ドライバーのソース コードで Iointex.h を含めます。 Iointex.h ヘッダーは、ルーチンのプロトタイプを宣言します。 ドライバーをビルドすると、Iointex.lib に静的にリンクされていることを確認します。
+このようなドライバーで**IoConnectInterruptEx**を使用するには、ドライバーのソースコードに Iointex .h を追加します。その直後に、Wdm または Ntddk を指定します。 Iointex .h ヘッダーは、ルーチンのプロトタイプを宣言します。 ドライバーをビルドするときは、そのドライバーが Iointex .lib に静的にリンクされていることを確認してください。
 
-バージョンの Windows Vista では、以前のオペレーティング システム**IoConnectInterruptEx**接続 Iointex.lib のみをサポートによって提供される\_完全\_ルーチンのバージョンを指定します。 ルーチンが NTSTATUS エラー コードを返すし、設定、他のバージョンが指定されている場合*パラメーター*-&gt;**バージョン**connect\_完全\_指定します。
+Windows Vista より前のオペレーティングシステムの場合、Iointex によって提供される**IoConnectInterruptEx**のバージョンでサポートされるのは、CONNECT\_\_指定されたバージョンのルーチンのみです。 他のバージョンが指定されている場合、ルーチンは NTSTATUS エラーコードを返し、&gt;**バージョン**-*パラメーター*を設定して、完全\_指定された\_接続します。
 
-この動作を使用することができます記述には、ドライバーの接続を使用するよう\_行\_ベースまたは CONNECT\_メッセージ\_Windows Vista、および接続に基づく\_完全\_で以前に指定オペレーティング システムです。 まず**IoConnectInterruptEx**で*パラメーター*-&gt;**バージョン**接続と等しく\_行\_ベースまたは CONNECT\_メッセージ\_ベース。 戻り値がエラー コードの場合と*パラメーター*-&gt;**バージョン**! = CONNECT\_完全\_で操作を再試行して指定すると、*パラメーター*-&gt;**バージョン**接続 に設定\_完全\_に指定します。
+この動作を使用すると、ドライバーが\_ベースの接続\_使用されるように、または Windows Vista に基づく\_メッセージ\_に接続して、以前のオペレーティングシステムで指定され\_完全に\_接続するようにドライバーを作成できます。 最初に*パラメーター*-を呼び出します。&gt;**バージョン**は、\_LINE\_ベースの接続または\_メッセージ\_**ベースの接続**に相当します。 戻り値がエラーコードおよび*パラメーター*-&gt;**Version** ! = connect\_完全\_指定されている場合は、接続するために-**バージョン**に設定されている*パラメーター*を使用して操作を再試行してください&gt;10_ 完全\_指定。
 
-次のコード例は、この手法を示しています。
+次のコード例は、の手法を示しています。
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

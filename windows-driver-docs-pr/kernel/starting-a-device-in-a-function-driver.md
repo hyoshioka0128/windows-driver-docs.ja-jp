@@ -3,15 +3,15 @@ title: ファンクション ドライバーでのデバイスの開始
 description: ファンクション ドライバーでのデバイスの開始
 ms.assetid: 148a3128-9cb1-4a2c-a62e-45199476d968
 keywords:
-- 機能ドライバー WDK PnP
+- 関数ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a19fd96e6894f27a58cb789bbe89bd7cf7721e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bb7b5f39d6526a13b60bcf42266cdfae4766ed66
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382996"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838409"
 ---
 # <a name="starting-a-device-in-a-function-driver"></a>ファンクション ドライバーでのデバイスの開始
 
@@ -19,57 +19,57 @@ ms.locfileid: "67382996"
 
 
 
-関数のドライバーの設定、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なパス、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)デバイス スタックを要求し、下のすべてのドライバーが IRP に完了するまで、その開始操作を延期します。 参照してください[を延期する PnP IRP の処理まで低いドライバー完了](postponing-pnp-irp-processing-until-lower-drivers-finish.md)のカーネル イベントの使用に関する詳細情報と*IoCompletion* IRP の処理を延期するルーチン。
+関数ドライバーは、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定し、 [**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)に渡して、デバイススタックを\_デバイスの要求を開始\_ます。また、すべての下位ドライバーが irp で終了するまで、開始操作を延期します。 カーネルイベントと*Iocompletion*ルーチンを使用して IRP 処理を延期する方法の詳細については、「[ドライバーが低いまで PnP IRP 処理を延期](postponing-pnp-irp-processing-until-lower-drivers-finish.md)する」を参照してください。
 
-ときにその[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、下のすべてのドライバーが IRP が完了した後にコントロールを再度獲得、関数ドライバー、デバイスを起動するためのタスクを実行します。 関数のドライバーでは、次のようにプロシージャを使用したデバイスを開始します。
+すべての下位ドライバーが IRP で終了した後で、その[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンが制御を取り戻すと、関数ドライバーはデバイスを起動するためのタスクを実行します。 関数ドライバーは、次のような手順でデバイスを起動します。
 
-1.  下位のドライバーが IRP が失敗した場合 ([**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)がエラーを返しました)、IRP の処理を続行しないでください。 戻って、必要なクリーンアップを行う、 *DispatchPnP*ルーチン (この一覧の最後のステップに移動) します。
+1.  低いドライバーが IRP に失敗した場合 ([**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)からエラーが返された場合) は、irp の処理を続行しないでください。 必要なクリーンアップを実行し、 *DispatchPnP*ルーチンから戻ります (この一覧の最後の手順に進みます)。
 
-2.  下位のドライバーが IRP を正常に処理する場合は、デバイスを起動します。
+2.  低いドライバーが IRP を正常に処理した場合は、デバイスを起動します。
 
-    デバイスを起動する正確な手順には、デバイスからデバイスが異なります。 マップ I/O 領域、ハードウェア レジスタの初期化、D0 の電源状態で、デバイスの設定、および割り込みを接続するこのような手順が含まれます[ **IoConnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)します。 ドライバーが後にデバイスを再起動する場合、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求と、ドライバーはデバイスの状態を復元する必要があります。
+    デバイスを起動するための正確な手順は、デバイスによって異なります。 このような手順には、i/o スペースのマッピング、ハードウェアレジスタの初期化、デバイスの D0 電源状態の設定、 [**Ioconnectinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterrupt)による割り込みの接続などがあります。 IRP\_完了した後にデバイスを再起動している場合は、デバイスの要求を[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device) 、ドライバーのデバイスの状態が復元される可能性があります。
 
-    すべてのドライバーがアクセスする前に、デバイスの電源を必要があります。 参照してください[、デバイスの電源を入れて](powering-up-a-device.md)詳細についてはします。
+    すべてのドライバーがデバイスにアクセスできるようにするには、デバイスの電源がオンになっている必要があります。 詳細について[は、「デバイスの電源投入](powering-up-a-device.md)」を参照してください。
 
-    ウェイク アップには、デバイスを有効にする場合、その電源ポリシー所有者 (関数ドライバーでは、通常は) 送信待機/ウェイク IRP と完了前に、デバイスに電源がオンにした後、 **IRP\_MN\_開始\_デバイス**要求。 詳細については、次を参照してください。[送信待機/ウェイク IRP](sending-a-wait-wake-irp.md)します。
+    デバイスでウェイクアップが有効になっている場合、その電源ポリシーの所有者 (通常は関数ドライバー) は、デバイスの電源を入れた後、Irp\_完了してから **\_デバイス**の要求を開始\_まで待機します。 詳細については、「 [Wait/WAKE IRP の送信](sending-a-wait-wake-irp.md)」を参照してください。
 
-3.  IRP を保持するキューでは、Irp を起動します。
+3.  IRP を保持するキューで Irp を開始します。
 
-    ドライバーの定義済みの保留を解除\_新規\_要求フラグし、IRP を保持するキューで、Irp を起動します。 ドライバーは、最初に、クエリ停止後にデバイスを再起動すると、デバイスを開始するときに、この操作を行います。 または、IRP を停止する必要があります。 参照してください[を保持している受信 Irp ときに、デバイスが一時停止](holding-incoming-irps-when-a-device-is-paused.md)詳細についてはします。
+    ドライバーによって定義された HOLD\_NEW\_REQUESTS フラグをクリアし、IRP を保持するキューで Irp を開始します。 ドライバーは、初めてデバイスを起動するときと、クエリの停止または停止の後にデバイスを再起動するときに、この処理を実行します。 詳細について[は、「デバイスが一時停止したときの受信 irp の保持](holding-incoming-irps-when-a-device-is-paused.md)」を参照してください。
 
-4.  \[省略可能な\]呼び出すことによって、デバイス用のインターフェイスを有効にする[ **IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)します。
+4.  \[オプション\] [**Iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を呼び出して、デバイスのインターフェイスを有効にします。
 
-    有効にするインターフェイス、存在する場合、ドライバーが以前に登録されているその[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)日常的な (または、INF または共同インストーラーなどの別のコンポーネントで)。
+    ドライバーが存在する場合は、そのインターフェイスを有効にします (または、INF で、または別のコンポーネント ( [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) ) に以前に登録していた場合)。
 
-    Windows 2000 および以降のバージョンの Windows では、PnP マネージャー通知は送信されませんデバイス インターフェイス到着するまでの**IRP\_MN\_開始\_デバイス**IRP が完了したことを示すすべてデバイスのドライバーは、その開始操作が完了しました。 PnP マネージャーでは、デバイスのすべてのドライバーが IRP スタートを完了する前に配信される作成要求も失敗します。
+    Windows 2000 以降のバージョンの Windows では、 **irp\_の\_が開始\_デバイス**の irp が完了するまで、デバイスインターフェイスの到着通知は送信されません。これは、デバイスのすべてのドライバーが使用できることを示します。開始操作を完了しました。 また、PnP マネージャーは、デバイスのすべてのドライバーが開始 IRP を完了する前に受信したすべての作成要求に失敗します。
 
 5.  IRP を完了します。
 
-    関数のドライバーの*IoCompletion*ルーチンには、状態が返されました\_詳細\_処理\_」の説明に従って、必要な[を延期する PnP IRP の処理まで低いドライバー完了。](postponing-pnp-irp-processing-until-lower-drivers-finish.md)ため、関数のドライバーの*DispatchPnP*ルーチンを呼び出す必要があります[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) I/O 完了処理を再開します。
+    関数ドライバーの*Iocompletion*ルーチンは、より多くの\_処理\_必要な\_を返しました。詳細については、「[ドライバーが終了するまで PnP IRP 処理を延期する](postponing-pnp-irp-processing-until-lower-drivers-finish.md)」で説明されているように、関数ドライバーの*DispatchPnP*を参照してください。ルーチンは、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して、i/o 完了の処理を再開する必要があります。
 
-    Function ドライバーの開始操作が成功した場合、ドライバーは設定**Irp の&gt;IoStatus.Status**ステータス\_成功すると、呼び出し**IoCompleteRequest**より優先度がIO のブースト\_いいえ\_増分値、および状態を返します。\_成功からその*DispatchPnP*ルーチン。
+    関数ドライバーの開始操作が成功した場合、ドライバーは**Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定し、IO\_\_priority boost を使用して**IoCompleteRequest**を呼び出します。*DispatchPnP*ルーチンから成功を\_します。
 
-    ドライバーが IRP の呼び出しではエラー状態を設定する関数のドライバーには、その開始操作中にエラーが発生すると場合、 **IoCompleteRequest** IO と\_いいえ\_インクリメントし、そのからエラーを返します*DispatchPnP*ルーチン。
+    関数ドライバーが開始操作中にエラーを検出した場合、ドライバーは IRP にエラー状態を設定し、 **IoCompleteRequest**を呼び出して IO\_\_インクリメントを呼び出し、その*DispatchPnP*ルーチンからエラーを返します。
 
-    下位のドライバーが IRP が失敗した場合 (**保留**がエラーを返しました)、ドライバーの関数呼び出し**IoCompleteRequest** IO と\_いいえ\_インクリメントし、を返します**保留**エラーからその*DispatchPnP*ルーチン。 関数のドライバーを設定しない**Irp -&gt;IoStatus.Status**ここで IRP の失敗した下位のドライバーによって、状態は既に設定されているためです。
+    低いドライバーが IRP (**IoCallDriver**がエラーを返しました) に失敗した場合、関数ドライバーは**IoCompleteRequest**を呼び出して IO\_\_を呼び出し、 *DispatchPnP*ルーチンから**IoCallDriver**エラーを返します。 この場合、関数ドライバーは、irp に失敗した下位のドライバーによって状態が既に設定されているため、 **irp&gt;iostatus. status**を設定しません。
 
-関数のドライバーが受信すると、 **IRP\_MN\_開始\_デバイス**に構造を調べる必要があります、要求**IrpSp-&gt;Parameters.StartDevice.AllocatedResources**と**IrpSp -&gt;Parameters.StartDevice.AllocatedResourcesTranslated**、それぞれ、生と翻訳済みのリソースについて説明します。ある PnP マネージャーがデバイスに割り当てられます。 ドライバーは、デバッグのため、デバイスの拡張機能の各リソースの一覧のコピーを保存する必要があります。
+関数ドライバーは、\_デバイスの要求を**開始\_\_、IRP**を受信したときに、構造体を**irpsp-&gt;パラメーターで調べます。 AllocatedResources**と**irpsp-&gt;AllocatedResourcesTranslated。** PnP マネージャーによってデバイスに割り当てられた生リソースと変換されたリソースをそれぞれ記述します。 ドライバーは、デバッグを支援するために、デバイス拡張機能に各リソースリストのコピーを保存する必要があります。
 
-リソースの一覧はペアになっている[ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list) 、生のリストの各要素が変換されたリストの同じ要素に対応する構造体。 たとえば場合、 **AllocatedResources.List**\[0\]未処理の I/O ポート範囲をについて説明し、 **AllocatedResourcesTranslated.List**\[0\]変換後の同じ範囲をについて説明します。 変換された各リソースには、物理アドレスとリソースの種類が含まれています。
+リソースリストは[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)の構造体であり、未加工のリストの各要素は翻訳されたリストの同じ要素に対応しています。 たとえば、 **AllocatedResources**\[0\] によって raw i/o ポート範囲が記述されている場合、 **AllocatedResourcesTranslated**\[0\] は翻訳後の同じ範囲を示します。 変換された各リソースには、物理アドレスとリソースの種類が含まれます。
 
-ドライバーでの翻訳済みのメモリ リソースが割り当てられている場合 (**CmResourceTypeMemory**) を呼び出す必要があります[ **MmMapIoSpace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)を通じて仮想アドレスを物理アドレスにマップするにはそのは、デバイスの登録にアクセスできます。 プラットフォームの独立した方法で動作するドライバーの場合、返された各翻訳されたリソースを確認して、必要に応じてマップします。
+ドライバーに変換されたメモリリソース (**CmResourceTypeMemory**) が割り当てられている場合は、 [**Mmmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)を呼び出して、物理アドレスをデバイスレジスタにアクセスできる仮想アドレスにマップする必要があります。 ドライバーがプラットフォームに依存しない方法で動作するようにするには、返された各リソースをチェックし、必要に応じてマップします。
 
-関数のドライバーへの応答では、次を行う必要があります、 **IRP\_MN\_開始\_デバイス**デバイスのすべてのリソースにアクセスできるようにします。
+関数ドライバーは、すべてのデバイスリソースへのアクセスを確保するために **\_デバイス\_開始する IRP\_** に応答して、次の処理を実行する必要があります。
 
-1.  コピー **IrpSp -&gt;Parameters.StartDevice.AllocatedResources**デバイス拡張機能にします。
+1.  **Irpsp-&gt;AllocatedResources パラメーター**をデバイス拡張機能にコピーします。
 
-2.  コピー **IrpSp -&gt;Parameters.StartDevice.AllocatedResourcesTranslated**デバイス拡張機能にします。
+2.  **Irpsp-&gt;AllocatedResourcesTranslated パラメーター**をデバイス拡張機能にコピーします。
 
-3.  ループ内の各記述子要素を検査**AllocatedResourcesTranslated**します。 記述子リソースの種類が場合**CmResourceTypeMemory**、呼び出す**MmMapIoSpace**、物理アドレスと翻訳されたリソースの長さを渡します。
+3.  ループで、 **AllocatedResourcesTranslated**内の各記述子要素を検査します。 記述子のリソースの種類が**CmResourceTypeMemory**の場合は、 **Mmmapiospace**を呼び出して、翻訳されたリソースの物理アドレスと長さを渡します。
 
-ドライバーが受信すると、 **IRP\_MN\_停止\_デバイス**、 **IRP\_MN\_削除\_デバイス**、または**IRP\_MN\_突然\_削除**呼び出すことによってマッピングをリリースする必要がありますが、要求[ **MmUnmapIoSpace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)で、ようなループします。 ドライバーは呼び出す必要がありますも**MmUnmapIoSpace**にする必要がありますが失敗した場合、 **IRP\_MN\_開始\_デバイス**要求。
+ドライバーが Irp を受信し、 **\_デバイス\_停止**した場合は、 **irp\_** \_\_デバイス、または irp\_削除要求\_**突然**\_削除要求同様のループで[**Mmunmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)を呼び出すことによって、マッピングを解放する必要があります。 また、ドライバーは、**デバイス要求\_開始\_IRP\_** が失敗する必要がある場合に、 **Mmunmapiospace**を呼び出す必要があります。
 
-参照してください[Bus 相対アドレスを仮想のアドレスにマッピング](mapping-bus-relative-addresses-to-virtual-addresses.md)詳細についてはします。
+詳細については、「[バスの相対アドレスを仮想アドレスにマップする](mapping-bus-relative-addresses-to-virtual-addresses.md)」を参照してください。
 
  
 

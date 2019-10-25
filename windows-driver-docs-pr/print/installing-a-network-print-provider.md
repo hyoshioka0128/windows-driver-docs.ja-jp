@@ -3,17 +3,17 @@ title: ネットワーク印刷プロバイダーのインストール
 description: ネットワーク印刷プロバイダーのインストール
 ms.assetid: 448101f8-cb26-4a6f-807d-f110978321da
 keywords:
-- 印刷プロバイダー、WDK をインストールします。
-- ネットワーク印刷プロバイダー、WDK をインストールします。
-- 印刷プロバイダー WDK をインストールします。
+- 印刷プロバイダー WDK、インストール
+- ネットワーク印刷プロバイダー WDK、インストール
+- 印刷プロバイダー WDK のインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dffd766a2ab27bd678d675dee9a5e949ce5a91e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aa1291646a5c139ef4b0f5e1a31fc234b44c0504
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385975"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832104"
 ---
 # <a name="installing-a-network-print-provider"></a>ネットワーク印刷プロバイダーのインストール
 
@@ -21,9 +21,9 @@ ms.locfileid: "67385975"
 
 
 
-新しいネットワーク印刷プロバイダーをインストールするには、ターゲット システムのプロバイダーの DLL をコピーするインストーラーを指定する必要があります\\System32 サブディレクトリに呼び出し**AddPrintProvidor** (Microsoft Windows で説明します。SDK ドキュメントの場合)。 この関数は、プロバイダーのレジストリ エントリを作成し、プロバイダーがインストールされているプロバイダーのスプーラーの一覧の末尾に追加されます。 関数は、プロバイダーの DLL を読み込み、プロバイダーの呼び出し[ **InitializePrintProvidor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)関数。
+新しいネットワーク印刷プロバイダーをインストールするには、プロバイダー DLL をターゲットシステムの \\System32 サブディレクトリにコピーするインストーラーを指定してから、 **Addprintの Dor**を呼び出します (Microsoft Windows SDK のドキュメントを参照してください)。 この関数は、プロバイダーのレジストリエントリを作成し、インストールされているプロバイダーのスプーラの一覧の末尾にプロバイダーを追加します。 次に、この関数はプロバイダー DLL を読み込み、プロバイダーの[**Initializeprintdor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)関数を呼び出します。
 
-ネットワーク印刷プロバイダーでサポートされているプリンターへの接続を作成するには、ユーザーは、プリンターの追加ウィザードを起動し、「ネットワーク プリンター サーバー」オプションを選択します。 ユーザーは、印刷キューを使用して、指定します、 \\ \\ *Server*\\*プリンター*形式、およびプロバイダーの**ようになりました**関数で、印刷キューの名前を認識する必要があります。
+ネットワーク印刷プロバイダーでサポートされているプリンターへの接続を作成するには、ユーザーがプリンターの追加ウィザードを起動し、[ネットワークプリンターサーバー] オプションを選択します。 ユーザーは \\\\*Server*\\*プリンター*形式を使用して印刷キューを指定します。また、プロバイダーの**OpenPrinter**関数は、その印刷キュー名を認識している必要があります。
 
  
 

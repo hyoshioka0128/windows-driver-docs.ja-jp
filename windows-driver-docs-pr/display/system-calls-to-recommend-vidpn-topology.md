@@ -4,19 +4,19 @@ description: 推奨される VidPN トポロジへのシステム コール
 ms.assetid: cc23be93-be31-4069-960c-268a8b151063
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d214f6f60699a32b97bb9aeb6ca10a689eb1ffae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba2a559dabddfb1a65c13c207d29cbd57397c078
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372040"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829333"
 ---
 # <a name="system-calls-to-recommend-vidpn-topology"></a>推奨される VidPN トポロジへのシステム コール
 
 
-Windows 7 を実行するコンピューターでは、表示モード マネージャー (DMM) は、適用 CCD データベースで VidPN 履歴データを使用する適切な VidPN トポロジを決定します。 不要になった DMM は、Windows vista と同様に、最後の既知の適切なトポロジに基づいて VidPN トポロジを決定します。 その結果、Windows 7 DMM で呼び出すことはありません、 [ **DxgkDdiRecommendVidPnTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendvidpntopology)関数。
+Windows 7 を実行しているコンピューターでは、表示モードマネージャー (DMM) によって、CCD データベースの VidPN 履歴データを使用して適用する適切な VidPN トポロジが決定されます。 DMM では、Windows Vista と同じように、前回正常起動時のトポロジに基づいて、VidPN トポロジが決定されなくなりました。 その結果、Windows 7 では、DMM は[**DxgkDdiRecommendVidPnTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendvidpntopology)関数を呼び出しません。
 
-Windows Vista およびそのサービス パック、DMM の継続を呼び出す*DxgkDdiRecommendVidPnTopology*ドライバーが推奨される機能 VidPN トポロジを提供することを要求します。
+Windows Vista とそのサービスパックでは、DMM は引き続き*DxgkDdiRecommendVidPnTopology*を呼び出して、推奨されている機能的な VidPN トポロジをドライバーが提供するように要求します。
 
  
 

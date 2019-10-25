@@ -1,30 +1,30 @@
 ---
 title: NDIS_STATUS_WWAN_VENDOR_SPECIFIC
-description: ミニポート ドライバーでは、NDIS_STATUS_WWAN_VENDOR_SPECIFIC 通知を使用して、仕入先の特定の操作のトランザクションの完了の応答を実装する、またはベンダー固有の変更通知します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_VENDOR_SPECIFIC 通知を使用して、ベンダー固有の操作またはベンダー固有の変更通知に対するトランザクション完了応答を実装します。
 ms.assetid: 2032ed5e-8a4a-4c1c-9dbe-05e7cec1b683
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_VENDOR_SPECIFIC ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_VENDOR_SPECIFIC ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: a90a1013e6e62224a1f536c42b26012fe644d520
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d7e66cda2941f45fc8aa93298c6e99201510ed6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372509"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834649"
 ---
-# <a name="ndisstatuswwanvendorspecific"></a>NDIS\_状態\_WWAN\_ベンダー\_特定
+# <a name="ndis_status_wwan_vendor_specific"></a>NDIS\_状態\_WWAN\_ベンダー\_固有
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_ベンダー\_仕入先の特定の操作またはベンダー固有のトランザクションの完了の応答を実装するために特定の通知は通知を変更します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_ベンダ\_特定の通知を使用して、ベンダー固有の操作またはベンダー固有の変更通知に対するトランザクション完了応答を実装します。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_ベンダー\_特定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_vendor_specific)構造体。
+この通知では、 [**NDIS\_WWAN\_ベンダ\_特定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_vendor_specific)の構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -35,11 +35,11 @@ ms.locfileid: "67372509"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -47,9 +47,9 @@ ms.locfileid: "67372509"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_ベンダー\_特定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_vendor_specific)
+[**NDIS\_WWAN\_ベンダー\_固有**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_vendor_specific)
 
-[OID\_WWAN\_ベンダー\_特定](oid-wwan-vendor-specific.md)
+[OID\_WWAN\_ベンダー\_固有のもの](oid-wwan-vendor-specific.md)
 
  
 

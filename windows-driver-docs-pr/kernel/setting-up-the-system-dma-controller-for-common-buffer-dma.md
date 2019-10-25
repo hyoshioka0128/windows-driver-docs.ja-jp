@@ -3,19 +3,19 @@ title: 共通バッファー DMA 用のシステム DMA コントローラーの
 description: 共通バッファー DMA 用のシステム DMA コントローラーのセットアップ
 ms.assetid: 279776e0-dead-4763-9aae-33950837c27c
 keywords:
-- システム DMA WDK カーネルでは、一般的なバッファー
-- 一般的なバッファー DMA WDK カーネル
-- DMA は、WDK カーネルでは、一般的なバッファーを転送します。
+- システム DMA WDK カーネル、共通バッファー
+- 共通バッファー DMA WDK カーネル
+- DMA 転送 WDK カーネル、共通バッファー
 - AllocateAdapterChannel
 - MapTransfer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52173d03b09ab3259c44d6336483a306ea536999
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65dea46b56f2b4177338d34768aff729d1c9098b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836341"
 ---
 # <a name="setting-up-the-system-dma-controller-for-common-buffer-dma"></a>共通バッファー DMA 用のシステム DMA コントローラーのセットアップ
 
@@ -23,25 +23,25 @@ ms.locfileid: "67371244"
 
 
 
-ときに**AllocateAdapterChannel**にドライバーの制御を転送[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control) 、日常的なドライバー"所有"するシステム DMA コント ローラーと、マップのレジスタのセット。 次に、ドライバーを呼び出す必要があります[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)ドライバーは、転送操作のデバイスを設定する前に、ドライバーに割り当てられた共通バッファーを使用するシステムの DMA コント ローラーを設定します。
+**Allocateadapterchannel**がドライバーの[*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンに制御を転送する場合、ドライバーはシステム DMA コントローラーと一連のマップレジスタを "所有" します。 次に、ドライバーが転送操作用にデバイスを設定する前に、ドライバーが割り当てられた共通のバッファーを使用するようにシステム DMA コントローラーを設定するために、 [**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)を呼び出す必要があります。
 
-ドライバーには、次のパラメーターを提供する**MapTransfer**:
+ドライバーは、 **Maptransfer**に次のパラメーターを提供します。
 
--   によって返されるアダプター オブジェクト ポインター **IoGetDmaAdapter**
+-   **IoGetDmaAdapter**によって返されるアダプターオブジェクトポインター
 
--   ドライバーによって割り当てられた一般的なバッファーを記述する MDL へのポインター
+-   ドライバーによって割り当てられた共通バッファーを記述する MDL へのポインター
 
--   *MapRegisterBase*にドライバーのハンドルが渡される*AdapterControl*で日常的な**AllocateAdapterChannel**
+-   **Allocateadapterchannel**によってドライバーの*adaptercontrol*ルーチンに渡された*mapregisterbase*ハンドル
 
--   変数へのポインター (*長さ*) ドライバーに割り当てられた一般的なバッファーのバイト サイズを示す
+-   ドライバーによって割り当てられた共通バッファーのサイズ (バイト単位) を示す変数 (*長さ*) へのポインター
 
--   転送操作 (デバイスへのシステム メモリから要求された転送 TRUE) の方向を示すブール値
+-   転送操作の方向を示すブール値 (システムメモリからデバイスへの要求された転送の場合は TRUE)
 
-**MapTransfer** DMA を無視する必要がありますどのドライバーがシステムを使用する、論理アドレスを返します。 ときに**MapTransfer**コントロールを返します、ドライバーは、DMA 操作には、そのデバイスを設定する必要があります。 ドライバー呼び出し**MapTransfer** 1 回だけが、要求された転送が完了するまで、一般的なバッファーのロックされたユーザー バッファーとの間でデータをコピーするにが続行されます。
+**Maptransfer**は論理アドレスを返します。システム DMA を使用するドライバーは無視する必要があります。 **Maptransfer**が制御を返す場合、ドライバーは DMA 操作用にデバイスを設定する必要があります。 ドライバーは**Maptransfer**を1回だけ呼び出しますが、要求された転送が完了するまで、共通バッファーとロックダウンされたユーザーバッファーの間でデータのコピーを続けます。
 
-ドライバーが呼び出せる[ **ReadDmaCounter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pread_dma_counter)を決定するバイト数現在されません一般的なバッファーで転送されるユーザー データまたはデータのコピーをその共通のバッファーに入力を続行できますドライバー。DMA 操作の方向に応じて、ユーザーのバッファーに、一般的なバッファーから
+ドライバーは[**ReadDmaCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pread_dma_counter)を呼び出して、現在、共通バッファーで転送されているバイト数を確認できます。ドライバーは、DMA 操作の方向に応じて、ユーザーデータを使用して共通バッファーにデータを格納したり、共通バッファーからユーザーバッファーにデータをコピーしたりすることができます。
 
-転送が完了すると、ドライバーを呼び出す場合は、ドライバーは IRP のエラー状態を返す必要があります、 [ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers) DMA システムにキャッシュされているすべてのデータを確実に、コント ローラーがシステムに読み込まれるメモリまたはデバイスに書き込まれます。 ドライバーを呼び出す必要がありますし、 [ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel) (自体を含む) 任意のドライバーで使用するためのシステム DMA コント ローラーを解放するには、すぐにします。
+転送が完了するか、ドライバーが IRP のエラー状態を返す必要がある場合、ドライバーは[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)を呼び出して、システム DMA コントローラーにキャッシュされているすべてのデータがシステムメモリに読み込まれるか、デバイスに書き込まれるようにします。 次に、ドライバーは、任意のドライバー (それ自体を含む) で使用するために、 [**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)をすぐに呼び出して、システム DMA コントローラーを解放する必要があります。
 
  
 

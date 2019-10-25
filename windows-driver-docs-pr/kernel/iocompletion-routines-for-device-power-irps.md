@@ -5,17 +5,17 @@ ms.assetid: c275fcba-5fa9-427c-8d7e-2339563985e4
 keywords:
 - IoCompletion ルーチン
 - 電源 Irp WDK カーネル、デバイスの変更
-- 状態遷移の WDK 電源管理
-- デバイスの状態遷移の WDK 電源管理
-- 動作状態は、WDK の電源管理を返します
+- 状態遷移 WDK 電源管理
+- デバイスの状態遷移 WDK の電源管理
+- 動作状態は WDK 電源管理を返します
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 244c56d1fdd835fbb78e7c6dad3785c0f2a28aac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b001f69ae04ec826deb611d93d62b00221999a39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381690"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828166"
 ---
 # <a name="iocompletion-routines-for-device-power-irps"></a>デバイス電源 IRP の IoCompletion ルーチン
 
@@ -23,29 +23,29 @@ ms.locfileid: "67381690"
 
 
 
-I/O マネージャーを呼び出す、バス ドライバーが IRP を完了したら、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP が渡されるときより高度なドライバーによって登録されたルーチンがスタックをダウンします。
+バスドライバーが IRP を完了すると、i/o マネージャーは、上位レベルのドライバーによって登録された[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが、スタックに渡されたときにそのルーチンを呼び出します。
 
-各ドライバーの設定する必要があります、デバイス、D0 状態が入力、 *IoCompletion*稼働状態に戻すために必要な作業のほとんどを実行するルーチン。 ドライバーを設定する必要があります、 *IoCompletion* D0 状態へのすべての遷移の日常的なかどうか、デバイスから返されるスリープ状態またはシステムの起動時に D0 を入力します。 次の図は、タスクなど、 *IoCompletion*ルーチンを実行する必要があります。
+デバイスが D0 状態になるたびに、各ドライバーは、動作状態に戻すために必要なほとんどのタスクを実行する*Iocompletion*ルーチンを設定する必要があります。 ドライバーは、デバイスがスリープ状態から復帰するか、システムの起動時に D0 に入っているかどうかにかかわらず、D0 状態への遷移に対して*Iocompletion*ルーチンを設定する必要があります。 次の図は、 *Iocompletion*ルーチンによって実行されるタスクを示しています。
 
 ![デバイスの電源投入 iocompletion ルーチンを示す図](images/d0-comp.png)
 
-これらのタスクは次のとおりです。
+次のようなタスクがあります。
 
--   デバイスの電源状態を復元またはとして、デバイスを再初期化が必要なおよびデバイスが稼働状態にいないときにドライバーによってキューに置かれたすべての I/O を処理する準備をしています
+-   デバイスの電源状態を復元するか、必要に応じてデバイスを再初期化し、デバイスが動作状態でない間にドライバーによってキューに登録されている i/o を処理する準備をする
 
--   呼び出す[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate) D0 電源の状態、デバイスが電源マネージャーに通知します。
+-   [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を呼び出して、デバイスが D0 の電源状態であることを電源マネージャーに通知します。
 
--   呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)ドライバーが IRP の現在の電源を最初に送信しなかった場合、[次へ] のパワー IRP を受信します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ)。
+-   ドライバーが最初に現在の電源 IRP を送信しなかった場合は、 [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出して次の電源 irp を受信します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ)。
 
--   デバイス コンテキストに割り当てられたメモリを解放します。
+-   デバイスコンテキストに割り当てられたメモリを解放します。
 
--   呼び出す[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)でドライバーが取得されたロックを解放するその[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが受信したときに、IRP します。
+-   [**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)を呼び出して、IRP を受信したときにドライバーが[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで取得したロックを解放します。
 
--   状態を返す\_成功します。
+-   正常\_状態を返します。
 
-バス ドライバーのデバイスを電源まで、または高いドライバーは、デバイスと通信する必要があります。
+バスドライバーは、デバイスがデバイスと通信する必要があるまで、デバイスの電源を入れません。
 
-ドライバーを設定する必要があります、デバイスがスリープ状態になったとき、 *IoCompletion*ルーチンを呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) (の Windows Server 2003、Windows XP、および Windows2000 でのみ使用) し、削除ロックを解放します。 デバイスがスリープ状態中に、ドライバーがそのデバイスをアクセスできないことに注意してください。
+デバイスがスリープ状態になると、ドライバーは、 [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) (windows Server 2003、windows XP、および windows 2000 のみ) を呼び出す*iocompletion*ルーチンを設定し、削除ロックを解除する必要があります。 デバイスがスリープ状態の間は、ドライバーがそのデバイスにアクセスできないことに注意してください。
 
  
 

@@ -3,18 +3,18 @@ title: 仮想ミニポートの初期化
 description: 仮想ミニポートの初期化
 ms.assetid: b712fe29-fd56-4abd-bab6-e335350a20c2
 keywords:
-- 基になるアダプターの WDK ネットワークを開く
-- アダプターを基になるを開く
+- 基になるアダプターが WDK ネットワークを開く
+- 基になるアダプターを開く
 - 仮想ミニポート WDK ネットワーク
-- 初期化中の仮想ミニポート
+- 仮想ミニポートの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2350d6f02d6ff0ead15182017ea7f83eb1c823fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64ade6793baf5249b53c256bd5dc5b7e731b8f05
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381255"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824409"
 ---
 # <a name="initializing-virtual-miniports"></a>仮想ミニポートの初期化
 
@@ -22,23 +22,23 @@ ms.locfileid: "67381255"
 
 
 
-中間のドライバーは、基になるミニポート アダプターが正常に開かれてと要求を受け入れる準備が整うし、その仮想ミニポートに送信した後、その仮想 miniports を初期化します。 中間のドライバーは呼び出し[ **NdisIMInitializeDeviceInstanceEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiminitializedeviceinstanceex)からその[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex) 1 つまたは複数の関数1 つまたは複数の仮想ミニポートの初期化を要求する回数。
+中間ドライバーは、基になるミニポートアダプターが正常に開かれ、要求を受け入れて仮想ミニポートで送信する準備ができた後に、その仮想ミニポートを初期化します。 中間ドライバーは、 [*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数から[**NdisIMInitializeDeviceInstanceEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex)を1回以上呼び出して、1つまたは複数の仮想ミニポートの初期化を要求します。
 
-**注**  中間のドライバーを呼び出す必要はありません**NdisIMInitializeDeviceInstanceEx**基になるミニポート アダプターを開いたとき。 存在する必要はありません仮想ミニポートと開いているアダプターの一対一の関係があります。
+基になるミニポートアダプターを開いたときに**NdisIMInitializeDeviceInstanceEx**を呼び出すために中間ドライバーが必要ない  に**注意**してください。 仮想ミニポートとオープンアダプターの間には、一対一のリレーションシップは必要ありません。
 
  
 
-設定、 *DriverInstance*パラメーターの**NdisIMInitializeDeviceInstanceEx**仮想ミニポートの初期化中のデバイス名にします。 中間ドライバーからデバイス名の取得、 **UpperBindings**レジストリ キー。
+**NdisIMInitializeDeviceInstanceEx**の*driverinstance*パラメーターに、初期化する仮想ミニポートのデバイス名を設定します。 中間ドライバーは、 **UpperBindings**レジストリキーからデバイス名を取得します。
 
-*N*-を-1 つのマルチプレクサー中間レイヤーを 1 つの物理 NIC に複数の仮想ミニポート ドライバー、すべて仮想ミニポートのデバイス名が必要があります。 MUX 中間ドライバーには、仮想ミニポート デバイス名の一覧を保持する通知オブジェクトが必要です。 一覧については、推奨される場所は、 **UpperBindings**レジストリ キー。 ここで、 **UpperBindings**レジストリ キーは、マルチ\_デバイス名の一覧を含む SZ エントリ。 MUX 中間ドライバー呼び出し**NdisIMInitializeDeviceInstanceEx**デバイス名の一覧で指定されているデバイス名ごとに 1 回です。
+1つの物理 NIC に対して複数の仮想ミニポートをレイヤーする*n*対1の MUX 中間ドライバーの場合は、すべての仮想ミニポートにデバイス名が必要です。 MUX 中間ドライバーには、仮想ミニポートデバイス名の一覧を保持する notify オブジェクトが必要です。 一覧の推奨される場所は、 **UpperBindings**レジストリキーです。 この場合、 **UpperBindings**レジストリキーは、デバイス名の一覧を含む複数\_SZ エントリです。 MUX 中間ドライバーは、[デバイス名] の一覧に指定されているデバイス名ごとに**NdisIMInitializeDeviceInstanceEx**を呼び出します。
 
-呼び出す**NdisIMInitializeDeviceInstanceEx**中間ドライバーの呼び出しで結果[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)の初期化を実行する関数、NDIS IRP を受信することは、仮想のミニポートを指定した\_MN\_開始\_デバイスのデバイスを起動します。 NDIS 中間ドライバは呼び出しません NDIS がこのような IRP を受信しない場合*MiniportInitializeEx*関数。 呼び出し*MiniportInitializeEx*は後で発生することができます、そのため必ずしもへの呼び出しのコンテキスト内で**NdisIMInitializeDeviceInstanceEx**します。 NDIS は呼び出すことはない場合*MiniportInitializeEx*への呼び出しで参照されている仮想ミニポートの**NdisIMInitializeDeviceInstanceEx**、中間のドライバーが仮想のミニポートを不要と中間のドライバーを呼び出す必要があります[ **NdisIMCancelInitializeDeviceInstance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisimcancelinitializedeviceinstance)仮想ミニポートの初期化をキャンセルします。 たとえば、中間のドライバーが、基になるミニポートへのバインドを成功への応答で仮想ミニポートを作成します。 NDIS 呼び出される前にそのバインドが削除された場合*MiniportInitializeEx*、中間のドライバーを呼び出す必要があります**NdisIMCancelInitializeDeviceInstance**ミニポートの初期化をキャンセルします。
+**NdisIMInitializeDeviceInstanceEx**を呼び出すと、NDIS によって @no__\_IRP が正常に受信された場合に、中間ドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出して、指定された仮想ミニポートの初期化を実行します。t_4_ デバイスを起動するには\_デバイスを起動します。 NDIS がこのような IRP を受信しない場合、NDIS は中間ドライバーの*MiniportInitializeEx*関数を呼び出しません。 *MiniportInitializeEx*の呼び出しは、後で発生する可能性があるため、必ずしも**NdisIMInitializeDeviceInstanceEx**の呼び出しのコンテキスト内にあるとは限りません。 NDIS が**NdisIMInitializeDeviceInstanceEx**の呼び出しで参照される仮想ミニポートに対して*MiniportInitializeEx*を呼び出さず、中間ドライバーが仮想ミニポートを必要としない場合、中間ドライバーはを呼び出す[**必要があります。NdisIMCancelInitializeDeviceInstance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisimcancelinitializedeviceinstance)は、仮想ミニポートの初期化をキャンセルします。 たとえば、基になるミニポートへのバインドが成功した場合に、中間ドライバーが仮想ミニポートを作成したとします。 NDIS が*MiniportInitializeEx*を呼び出す前にバインドが削除された場合、中間ドライバーは**NdisIMCancelInitializeDeviceInstance**を呼び出してミニポートの初期化をキャンセルする必要があります。
 
-*MiniportInitializeEx*割り当ておよび仮想ミニポートに固有のコンテキストの領域を初期化する必要があります。 コンテキストの領域を指定する方法については、次を参照してください。[初期化仮想ミニポート](initializing-a-virtual-miniport.md)します。
+*MiniportInitializeEx*は、仮想ミニポート固有のコンテキスト領域を割り当てて初期化する必要があります。 コンテキスト領域の指定の詳細については、「[仮想ミニポートの初期化](initializing-a-virtual-miniport.md)」を参照してください。
 
-中間のドライバーは、逆シリアル化されたドライバーとして機能する必要があります。 逆シリアル化されたドライバーの詳細については、次を参照してください。 [NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)します。
+中間ドライバーは、逆シリアル化されたドライバーとして動作する必要があります。 逆シリアル化されたドライバーの詳細については、「シリアル化解除された[NDIS ミニポートドライバー](deserialized-ndis-miniport-drivers.md)
 
-中間のドライバーでは、状態情報を保持が正しく初期化されているを確認してください。 たとえば、新しいドライバーに送信に関連するリソースが必要な場合[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)ネットワーク データの構造を[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)は [次へ] の下位の層 - NET に送信する\_バッファー\_リスト構造プールこの時点で割り当てることができます。
+中間ドライバーは、管理する状態情報が適切に初期化されていることを確認する必要があります。 ドライバーが送信関連のリソースを必要とする場合 (たとえば、新しい[**net\_buffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)は、 [*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)が次の下位の層に送信するネットワークデータのリスト構造\_、net\_バッファーに転送\_この時点では、リスト構造プールを割り当てることができます。
 
  
 

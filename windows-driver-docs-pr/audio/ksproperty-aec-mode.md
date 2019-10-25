@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AEC\_モード
-description: KSPROPERTY\_AEC\_モード プロパティを使用して、操作の AEC ノードのモードを制御します。 これは省略可能な AEC ノードのプロパティ (KSNODETYPE\_音響\_エコー\_キャンセル)。
+title: KSK プロパティ\_AEC\_モード
+description: KSK プロパティ\_AEC\_MODE プロパティは、AEC ノードの操作モードを制御するために使用されます。 これは、AEC ノードのオプションのプロパティです (KSNODETYPE\_音響\_ECHO\_CANCEL)。
 ms.assetid: 79f0d655-4764-454f-8867-6cf1b5cedc82
 keywords:
-- KSPROPERTY_AEC_MODE オーディオ デバイス
+- KSPROPERTY_AEC_MODE オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94b8ab727bf813ea9f281b6416cff78505df9d5f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d7cb680fc14c3dde6f4f9692b240f659cb72a10
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354423"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831137"
 ---
-# <a name="kspropertyaecmode"></a>KSPROPERTY\_AEC\_モード
+# <a name="ksproperty_aec_mode"></a>KSK プロパティ\_AEC\_モード
 
 
-KSPROPERTY\_AEC\_モード プロパティを使用して、操作の AEC ノードのモードを制御します。 これは省略可能な AEC ノードのプロパティ ([**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md))。
+KSK プロパティ\_AEC\_MODE プロパティは、AEC ノードの操作モードを制御するために使用されます。 これは、AEC ノードのオプションのプロパティです ([**KSNODETYPE\_音響\_ECHO\_CANCEL**](ksnodetype-acoustic-echo-cancel.md))。
 
 ## <span id="ddk_ksproperty_aec_mode_ks"></span><span id="DDK_KSPROPERTY_AEC_MODE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_AEC\_モード プロパティを使用して、操作の AEC ノー
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_AEC\_モード プロパティを使用して、操作の AEC ノー
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>[はい]</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,27 +61,27 @@ KSPROPERTY\_AEC\_モード プロパティを使用して、操作の AEC ノー
 
  
 
-プロパティの値 (データの操作) は ULONG 型のヘッダー ファイル Ksmedia.h から次のモードの定数のいずれかに設定することができます。
+プロパティ値 (操作データ) の型は ULONG で、ヘッダーファイル Ksmedia. h の次のいずれかのモード定数に設定できます。
 
--   AEC\_モード\_渡す\_を通じて
+-   AEC\_モード\_渡す\_
 
-    パススルー モードでは、AEC のノードは、キャプチャでき、変更されず、単にノードを通過するデータを表示します。
+    パススルーモードでは、AEC ノードは、データのキャプチャとレンダリングを許可して、変更せずにノードをパススルーします。
 
--   AEC\_モード\_半分\_双方向
+-   AEC\_モード\_半\_双方向
 
-    AEC アルゴリズムは、スピーカー フォンを操作に似ていますが、半二重モードで実行しています。 このモードでは、ローカル ユーザーの音声認識は、リモート ユーザーのより高いボリューム レベルにされるたびに、スピーカーの音量がミュートします。
+    AEC アルゴリズムは、スピーカー電話に似た半二重モードで実行されています。 このモードでは、スピーカーの音量は、ローカルユーザーの音声がリモートユーザーの音量レベルより高い場合にミュートされます。
 
--   AEC\_モード\_完全\_双方向
+-   AEC\_モード\_全二重\_
 
     AEC アルゴリズムは、全二重モードで実行されています。
 
-パススルー モードでは、既定値です。 AEC ノードを含んでいるフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
+既定では、パススルーモードが使用されます。 AEC ノードを含むフィルターが作成されるか、ノードがリセットされると、ノードは最初にパススルーモードで動作するように構成されます。
 
-Windows XP では、AEC のアルゴリズムの最初のリリースを[AEC システム フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/aec-system-filter)使用が半二重モードをサポートしていません。
+Windows XP の最初のリリースでは、 [aec システムフィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/aec-system-filter)が使用する aec アルゴリズムでは、ハーフデュプレックスモードはサポートされていません。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_AEC\_モード プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+KSK プロパティ\_AEC\_MODE プロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="requirements"></a>要件
 ------------
@@ -94,17 +94,17 @@ KSPROPERTY\_AEC\_モード プロパティ要求がステータスを返しま�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)
+[**KSNODETYPE\_音響\_ECHO\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)
 
  
 

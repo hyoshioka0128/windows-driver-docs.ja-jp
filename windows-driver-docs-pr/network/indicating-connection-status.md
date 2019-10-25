@@ -3,28 +3,28 @@ title: 接続状態の表示
 description: 接続状態の表示
 ms.assetid: 8a511c14-6b09-47fe-90de-6a90dab93171
 keywords:
-- WMI の WDK にネットワーク接続、メディア接続の状態
-- ミニポート ドライバー WDK ネットワー キング、メディア接続の状態
-- NDIS ミニポート ドライバー WDK、メディア接続の状態
-- 接続状態の WDK ネットワーク
+- WMI WDK ネットワーク, メディア接続の状態
+- ミニポートドライバー WDK ネットワーク、メディア接続の状態
+- NDIS ミニポートドライバー WDK、メディア接続の状態
+- 接続ステータス WDK ネットワーク
 - メディア接続 WDK ネットワーク
 - NDIS_STATUS_MEDIA_CONNECT
 - NDIS_STATUS_MEDIA_DISCONNECT
-- WDK の NDIS ミニポートのステータス情報
-- 状態インジケーターの WDK ネットワー キング、メディアの接続
+- ステータス情報 WDK NDIS ミニポート
+- WDK ネットワーク、メディア接続の状態を示す状態
+- 休止状態 WDK ネットワーク
 - スリープ状態の WDK ネットワーク
-- WDK ネットワークの状態を解除
-- WDK ネットワークの状態をリセットします。
-- WDK ネットワークの状態を停止します。
-- WDK ネットワークの状態を初期化しています
+- 状態 WDK ネットワークをリセットしています
+- 状態 WDK ネットワークの停止
+- 状態 WDK ネットワークを初期化しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2289a5f5a01341114dc409587f4fef8ed20554a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 27f9759419fcae3deedde11c1138063d2946a4d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356263"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824706"
 ---
 # <a name="indicating-connection-status"></a>接続状態の表示
 
@@ -32,60 +32,60 @@ ms.locfileid: "67356263"
 
 
 
-ミニポート ドライバーは呼び出し[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)または[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)メディア接続の変更を示す状態です。 ミニポート ドライバーを通過する次の状態インジケーターのいずれかの**NdisM (Co) IndicateStatus**:
+ミニポートドライバーは、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)または[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)を呼び出して、メディア接続状態の変更を示します。 ミニポートドライバーは、 **Ndism (Co) IndicateStatus**に次のいずれかの状態を渡します。
 
 <a href="" id="ndis-status-media-connect"></a>NDIS\_状態\_メディア\_接続  
-接続を切断からのメディア接続状態変更を示します。 メディアの状態の接続、切断されたアダプターがネットワーク接続を行うと、変更が発生します。 たとえば、(ワイヤレス アダプター) の範囲内に入ることや、ユーザーは、ネットワーク ケーブルを接続するときに、アダプターが接続します。
+メディア接続の状態が切断から接続に変更されたことを示します。 切断されたアダプターがネットワークに接続すると、メディア接続の状態が変化します。 たとえば、アダプターは、(ワイヤレスアダプターの) 範囲内にある場合、またはユーザーがネットワークケーブルを接続する場合に接続します。
 
-<a href="" id="ndis-status-media-disconnect"></a>NDIS\_状態\_メディア\_切断  
-接続を切断する接続からのメディア接続の状態変更を示します。 メディア切断状態の変更は、接続されているアダプターがネットワーク接続を失ったときに発生します。 たとえば、アダプターでは、(ワイヤレス アダプター) の範囲外であるか、ユーザーからネットワーク ケーブルを切り離しために、接続が失われます。
+<a href="" id="ndis-status-media-disconnect"></a>NDIS\_ステータス\_メディア\_切断  
+メディア接続の状態が接続済みから切断済みに変更されたことを示します。 メディア切断状態の変更は、接続されているアダプターがネットワーク接続を失ったときに発生します。 たとえば、アダプターは、(ワイヤレスアダプターの) 範囲外にあるか、ユーザーがネットワークケーブルを unplugs しているため、接続を失います。
 
-未指定の場合、ミニポート ドライバーは、状態の変更を検出した後、2 秒以内メディア接続状態の変更を示す必要があります。
+特に指定しない限り、ミニポートドライバーは、状態の変更を検出してから2秒以内にメディア接続の状態の変化を示す必要があります。
 
-ミニポート ドライバーでは、(次の一覧を参照してください) の特定の操作を実行中にメディア接続の状態を確認できます。 状態、同じように、操作を開始する前に、操作が完了した後である場合、ミニポート ドライバーが操作中に発生した、状態の変更を報告する必要はありません。
+ミニポートドライバーは、特定の操作の実行中にメディア接続の状態を確認できます (次の一覧を参照してください)。 操作が開始されてから操作が完了した後に状態が同じ場合、ミニポートドライバーは、操作中に発生した可能性のある状態の変更を報告する必要がありません。
 
-次の一覧には、メディア、ミニポート ドライバーの接続状態の変更を示す追加の要件について説明します。
+次の一覧では、ミニポートドライバーのメディア接続状態の変更を示す追加の要件について説明します。
 
-<a href="" id="resetting"></a>リセットします。  
-NDIS 呼び出し[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)ミニポート ドライバーをリセットします。 同期または非同期、ミニポート ドライバーでは、リセットを完了できます。
+<a href="" id="resetting"></a>戻す  
+ミニポートドライバーをリセットするために、NDIS は[*Miniportresetex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)を呼び出します。 ミニポートドライバーは、同期または非同期のいずれかでリセットを完了できます。
 
-リセットした後にメディア接続の状態が異なる場合、ドライバーは、リセットを完了した後、2 秒以内状態を示します。
+リセット後にメディア接続の状態が異なる場合、ドライバーはリセットの完了後2秒以内に状態を示す必要があります。
 
-メディア接続の状態と判断されるまで、ミニポート ドライバーは、リセット操作を完了できません。
+ミニポートドライバーは、メディアの接続状態を確認するまで、リセット操作を完了できません。
 
-<a href="" id="halting"></a>停止します。  
-NDIS を呼び出すと、ミニポート ドライバーは、メディア接続状態の変更を示していない必要があります[ *MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)します。
+<a href="" id="halting"></a>禁止  
+ミニポートドライバーは、NDIS が[*ミニ Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)を呼び出すときに、メディア接続の状態の変更を示すことはできません。
 
 <a href="" id="initializing"></a>初期化  
-NDIS ミニポート ドライバーを呼び出す[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)アダプターを初期化します。 アダプターの初期化中に、ミニポート ドライバーは次のガイドラインに従う必要があります。
+NDIS は、ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出して、アダプターを初期化します。 アダプターの初期化中に、ミニポートドライバーは次のガイドラインに従う必要があります。
 
--   返された後、ミニポート ドライバーがメディア接続の状態を表していない場合*MiniportInitializeEx*、NDIS の値を使用して、 **MediaConnectState**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)メディア接続状態を確認する構造体。 ミニポート ドライバーがドライバーを呼び出すときに、この構造体に NDIS を提供[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)からその*MiniportInitializeEx*関数。
+-   *MiniportInitializeEx*から戻った後、ミニポートドライバーがメディア接続の状態を示していない場合、Ndisは[**NDIS\_ミニポート\_アダプターの MediaConnectState メンバーの値を使用して\_全般\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体を指定して、メディア接続の状態を確認します。 ドライバーが*MiniportInitializeEx*関数から[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出すと、ミニポートドライバーはこの構造を使用して NDIS を提供します。
 
-    **注**  場合、 **MediaConnectState** MediaConnectStateUnknown にメンバーが設定されている、アダプターが切断されている場合は、NDIS が続行されます。
+    **注**  **MediaConnectState**メンバーが MediaConnectStateUnknown に設定されている場合、NDIS はアダプターが切断されているかのように処理を続行します。
 
      
 
--   NDIS 呼び出した後、アダプターが接続されている場合*MiniportInitializeEx*、ミニポート ドライバーが NDIS を示す\_状態\_メディア\_から戻った後に5秒以内のCONNECT*MiniportInitializeEx*します。
+-   NDIS が*MiniportInitializeEx*を呼び出した後、アダプターが接続されている場合、ミニポートドライバーは、 *MiniportInitializeEx*から戻ってから5秒以内に、NDIS\_ステータス\_メディア\_接続を示すことができます。
 
--   NDIS 呼び出した後、アダプターが切断された場合*MiniportInitializeEx*、ミニポート ドライバーは、NDIS を示す必要があります\_状態\_メディア\_から戻った後に2秒以内の切断*MiniportInitializeEx*します。
+-   NDIS が*MiniportInitializeEx*を呼び出した後にアダプターが切断された場合、ミニポートドライバーは、 *MiniportInitializeEx*からの戻り後2秒以内にデバイス\_切断する NDIS\_ステータス\_を示す必要があります。
 
--   ミニポート ドライバーが処理する必要があります、初期化中に[OID\_GEN\_メディア\_CONNECT\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status)または[OID\_GEN\_CO\_メディア\_CONNECT\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-connect-status)非同期的に要求します。 ミニポート ドライバーは、接続の状態と判断された後までには、このような要求を完了できません。
+-   初期化中に、ミニポートドライバーは、 [oid\_gen\_media\_接続\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status)または[oid\_生成\_CO\_メディア\_接続\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-connect-status)要求を非同期に処理する必要があります。 ミニポートドライバーは、接続状態を確認するまで、このような要求を完了することはできません。
 
--   メディアの接続状態の決定は、初期化を遅延しない必要があります。 必要に応じてのかどうか、ミニポート ドライバーする必要があります内で接続の状態を確認するプロセスを開始*MiniportInitializeEx*、後で、プロセスを完了します。 たとえば、ミニポート ドライバーは、アダプターの接続の状態をポーリングするタイマーを設定する可能性があります。
+-   メディア接続の状態を決定するときに、初期化を遅らせないようにしてください。 必要に応じて、ミニポートドライバーは、 *MiniportInitializeEx*内の接続状態を確認するプロセスを開始し、後でプロセスを完了する必要があります。 たとえば、ミニポートドライバーは、アダプターに接続状態をポーリングするタイマーを設定できます。
 
--   逆シリアル化されたミニポート ドライバーには、初期化中に、メディアが切断がシリアル化されたミニポート ドライバーがない必要がありますを指定できます。
+-   逆シリアル化されたミニポートドライバーは、初期化中にメディアの切断を示すことができますが、シリアル化されたミニポートドライバーは使用できません。
 
-<a href="" id="sleeping"></a>スリープ状態  
-受信すると、ミニポート ドライバーがネットワーク スリープ状態に入る、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power) D1、d2 に切り替わり、または D3 のデバイスの電源状態を設定する要求。
+<a href="" id="sleeping"></a>あっ  
+ミニポートドライバーは、 [OID\_PNP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)を受信したときにネットワークスリープ状態になり、\_電源要求を設定して、D1、D2、または D3 のデバイスの電源状態を設定する\_ます。
 
-ミニポート ドライバーである必要がありますがスリープ状態に入ると、またはスリープ状態になっている、メディア接続状態の変更は示されません。
+ミニポートドライバーは、スリープ状態に入ったとき、またはスリープ状態のときに、メディア接続状態の変化を示すことはできません。
 
-<a href="" id="waking"></a>ウェイク アップ  
-OID の受信時に、ミニポート ドライバーがスリープ状態から再開\_PNP\_設定\_D0 にデバイスの電源状態を設定する電源要求。
+<a href="" id="waking"></a>起き  
+デバイスの電源状態を D0 に設定するために\_電源要求を受信すると、ミニポートドライバーは、OID\_\_PNP を受信したときにスリープ状態から復帰します。
 
-スリープ状態の前に、アダプターのメディア接続の状態、状態と同じがスリープ解除した後であった場合ミニポート ドライバーがメディア接続状態の変更を示していません。 接続の状態が変更された場合、ミニポート ドライバーは、スリープ解除後の 2 つの数秒以内新しい接続の状態を示す必要があります。
+スリープ解除後のメディア接続状態がスリープ状態の場合と同じである場合、ミニポートドライバーはメディア接続状態の変更を示すことはできません。 接続状態が変更された場合は、スリープ解除してから2秒以内に新しい接続状態をミニポートドライバーが示す必要があります。
 
-ミニポート ドライバー、スリープ中に OID を処理する必要があります\_GEN\_メディア\_CONNECT\_状態または OID\_GEN\_CO\_メディア\_CONNECT\_状態を非同期的に要求します。 ミニポート ドライバーは、接続の状態と判断された後までには、このような要求を完了できません。
+スリープ状態のときに、ミニポートドライバーでは、OID\_GEN\_MEDIA\_接続\_状態または OID\_の生成\_の CO\_メディア\_非同期に接続する必要があります。 ミニポートドライバーは、接続状態を確認するまで、このような要求を完了することはできません。
 
  
 

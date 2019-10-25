@@ -3,16 +3,16 @@ title: 接続オフロード サービスの有効化と無効化
 description: 接続オフロード サービスの有効化と無効化
 ms.assetid: 3d353f87-1cd7-483a-b8eb-d45ec3b8f94e
 keywords:
-- 接続の負荷を軽減 WDK TCP/IP トランスポートは、サービスを有効にします。
-- 接続の負荷を軽減 WDK TCP/IP トランスポートは、サービスを無効にします。
+- 接続オフロード WDK TCP/IP トランスポート、サービスの有効化
+- 接続オフロード WDK TCP/IP トランスポート、サービスの無効化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c031940bf2ea35467aebf7ec82684bd31fea0faa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 21e76b8c4ef870379e0e4af186e773d872ea4e66
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378689"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838125"
 ---
 # <a name="enabling-and-disabling-connection-offload-services"></a>接続オフロード サービスの有効化と無効化
 
@@ -20,15 +20,15 @@ ms.locfileid: "67378689"
 
 
 
-プロトコル ドライバーには、オブジェクト識別子 (OID) 要求と接続のオフロード サービスが有効にします。
+プロトコルドライバーは、オブジェクト識別子 (OID) 要求を使用して接続オフロードサービスを有効にします。
 
-**注**  有効化またはタスクのオフロード サービスを無効にすると、有効にするとは異なるまたはオフロード サービスの接続を無効にするとします。 プロトコル ドライバーをカプセル化の種類を指定した後、ミニポート ドライバーはすべての利用可能なタスク オフロード サービス有効にします。
+タスクオフロードサービスを有効または無効に**する  、** 接続オフロードサービスの有効化または無効化とは異なります。 ミニポートドライバーは、プロトコルドライバーがカプセル化の種類を指定した後に、利用可能なすべてのタスクオフロードサービスをアクティブにします。
 
  
 
-TCP/IP トランスポートを有効またはネットワーク インターフェイス カード (NIC) の接続のオフロード機能を無効に設定して、 [OID\_TCP\_接続\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-parameters)OID。 この設定の操作、TCP/IP トランスポートは、NDIS を渡します\_TCP\_接続\_オフロード\_パラメーター構造体、 **InformationBuffer** のメンバー[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 (NDIS について\_TCP\_接続\_オフロード\_パラメーターを参照して[NDIS 6.0 TCP chimney オフロード ドキュメント](full-tcp-offload.md))。
+TCP/IP トランスポートは、ネットワークインターフェイスカード (NIC) の接続オフロード機能を有効または無効にします。これを行うには、 [oid\_tcp\_接続\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-parameters) oid を設定します。 この設定操作では、TCP/IP トランスポートは ndis [ **\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーの\_オフロード\_パラメーター構造に、NDIS\_tcp\_接続を渡します。 (NDIS\_TCP\_接続\_オフロード\_のパラメーターについては、「 [ndis 6.0 tcp chimney オフロードのドキュメント](full-tcp-offload.md)」を参照してください)。
 
-オフロード サービス接続の構成の詳細についてでのオフロードのターゲットの初期化を参照してください、 [NDIS 6.0 TCP chimney オフロード ドキュメント](full-tcp-offload.md)します。
+接続オフロードサービスの構成の詳細については、「 [NDIS 6.0 TCP chimney オフロードのドキュメント](full-tcp-offload.md)」の「オフロードターゲットの初期化」を参照してください。
 
  
 

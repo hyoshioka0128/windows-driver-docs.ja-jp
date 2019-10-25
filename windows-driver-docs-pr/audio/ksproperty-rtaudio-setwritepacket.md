@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
-description: KSPROPERTY\_RTAUDIO\_SETWRITEPACKET は、OS に WaveRT バッファーに有効なデータによって書き込まれたことをドライバーに通知します。
+title: KSK プロパティ\_RTAUDIO\_SETWRITEPACKET
+description: KSK プロパティ\_RTAUDIO\_SETWRITEPACKET は、OS が有効なデータを Walastbuffer に書き込んだことをドライバーに通知します。
 ms.assetid: 2827D6BC-B669-4AAC-967C-99B068DCC29B
 keywords:
-- KSPROPERTY_RTAUDIO_SETWRITEPACKET Audio Devices
+- KSPROPERTY_RTAUDIO_SETWRITEPACKET オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,41 +14,41 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e1692f2ceb2d01781eeb12f85511c5c89eb75a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d514bf69465a7dafd97630c6286c12a3bebc85ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354379"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830593"
 ---
-# <a name="kspropertyrtaudiosetwritepacket"></a>KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
+# <a name="ksproperty_rtaudio_setwritepacket"></a>KSK プロパティ\_RTAUDIO\_SETWRITEPACKET
 
 
-KSPROPERTY\_RTAUDIO\_SETWRITEPACKET は、OS に WaveRT バッファーに有効なデータによって書き込まれたことをドライバーに通知します。
+KSK プロパティ\_RTAUDIO\_SETWRITEPACKET は、OS が有効なデータを Walastbuffer に書き込んだことをドライバーに通知します。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
-|取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
+|[購入]|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|X|〇|Pin|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
+|必須ではない|[はい]|Pin|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
 
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を含む値を持つ構造体を読み込みます。
+プロパティ記述子 (インスタンスデータ) は、 [**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体です。 クライアントは、要求を送信する前に、パケット番号、パケット長、およびその他の情報を含む値を使用して構造体を読み込みます。
 
-プロパティの値は型の構造体[ **KSRTAUDIO\_SETWRITEPACKET\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)します。
+プロパティ値は、 [**Ksrtaudio\_SETWRITEPACKET\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)型の構造体です。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_RTAUDIO\_SETWRITEPACKET プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+RTAUDIO\_SETWRITEPACKET プロパティ要求\_KSK プロパティは、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-この KSPROPERTY がサポートされている場合、ドライバーがハードウェアの転送を最適化するために、提供された情報を使用できます必要に応じて。 など、OS が別のパケットのドライバーを通知するためにもう一度このルーチンを呼び出さない場合、指定されたパケットの最後の転送を停止するには、DMA 転送、またはプログラム ハードウェア ドライバーを最適化できます。 これは、アンダー フロー、循環バッファーを繰り返しするのではなく、たとえば可聴のギャップの概要の音の効果を軽減できます。 ただし、ドライバーは、その内部のパケット カウンターを増やし、リアルタイムの標準料金での通知イベントを通知する義務がまだは。
+この KSK プロパティがサポートされている場合、ドライバーは必要に応じて、提供された情報を使用してハードウェアの転送を最適化することができます。 たとえば、ドライバーは DMA 転送を最適化することができます。また、OS が別のパケットのドライバーに通知するためにこのルーチンを再度呼び出していない場合は、指定されたパケットの最後でのプログラムハードウェアの転送を停止することがあります。 これにより、たとえば、円形のバッファーを繰り返すのではなく、可聴ギャップを導入するなど、アンダーフローの可聴効果を軽減できます。 ただし、ドライバーは内部パケットカウンターを増やし、シグナル通知イベントを一定の時間内に増加させることになります。
 
-OS を指定した場合を除く、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTREAM*フラグ、パケット サイズは、WaveRT バッファー サイズで割った値に渡される NotificationCount [**KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)します。
+OS で*Ksk ストリーム\_ヘッダー\_オプション sf\_endofstream*フラグが指定されている場合を除き、パケットサイズは、 [**KSK プロパティ\_RTAUDIO\_buffer に渡された notificationcount で割ったバッファーサイズになり\_\_通知を含む**](ksproperty-rtaudio-buffer-with-notification.md)。
 
-ハードウェアの機能に応じて場合、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTREAM*フラグを指定すると、ドライバーには、サイレント状態の塗りつぶし、EOS に続く WaveRT バッファーの一部が可能性があります場合は、ハードウェアのパケットは、EOS 位置を超えるデータを転送します。
+ハードウェアの機能によっては、 *Ksk ストリーム\_ヘッダー\_オプション sf\_endofstream*フラグが指定されている場合、ドライバーは、ハードウェアがデータを転送するときに、EOS パケットの後にある wavert バッファーの一部に対して無音になることがあります。EOS 位置を超えています。
 
 <a name="requirements"></a>要件
 ------------
@@ -61,7 +61,7 @@ OS を指定した場合を除く、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTR
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 10 以降の Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows 10 以降の Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
@@ -70,10 +70,10 @@ OS を指定した場合を除く、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTR
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSPROPERTY\_RTAUDIO\_GETREADPACKET**](ksproperty-rtaudio-getreadpacket.md)
+[**KSK プロパティ\_RTAUDIO\_GETREADPACKET**](ksproperty-rtaudio-getreadpacket.md)
 
 [UsePositionLock](usepositionlock.md)
 

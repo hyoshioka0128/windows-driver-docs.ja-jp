@@ -4,33 +4,33 @@ description: ライブラリとヘッダー
 ms.assetid: 0d4d0273-775f-4cbb-8b7f-63b22f3ccdae
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 94bec3be577f763a15bef7f4f2404a1fea850d24
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3b3d89749b120cf33e5a3f8c0c84821f517c874
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384227"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827903"
 ---
 # <a name="libraries-and-headers"></a>ライブラリとヘッダー
 
 
-カーネル モード ドライバーでは、ネイティブ システム サービス ルーチンを使用して、呼び出すことによって、 **Nt**と**Zw** Ntoskrnl.exe ダイナミック リンク ライブラリ (DLL) 内のエントリ ポイント。 この DLL には、これらのルーチンの実際の実装が含まれています。 これらのエントリ ポイントにアクセスするには、ドライバーは Windows Driver Kit (WDK) で使用される Ntoskrnl.lib ライブラリに静的にリンクします。 Ntoskrnl.lib で実装されているルーチンでは、実行時に、Ntoskrnl.exe のエントリ ポイントに動的にリンク スタブがあります。
+カーネルモードドライバーは、Ntoskrnl.exe ダイナミックリンクライブラリ (DLL) の**Nt**および**Zw**エントリポイントを呼び出すことによって、ネイティブシステムサービスルーチンを使用します。 この DLL には、これらのルーチンの実際の実装が含まれています。 これらのエントリポイントにアクセスするために、ドライバーは、Windows Driver Kit (WDK) で使用できる Ntoskrnl.exe ライブラリに静的にリンクされています。 Ntoskrnl.exe で実装されるルーチンは、実行時に Ntoskrnl.exe のエントリポイントに動的にリンクするスタブです。
 
-WDK ドキュメントでは、いくつかについて説明しますのすべてではありません、 **Zw** Ntoskrnl.exe 内のエントリ ポイント。 説明については、 **Zw**ドライバーによって呼び出すことができるルーチンを参照してください[ZwXxx ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567122(v=vs.85))します。
+WDK のドキュメントでは、 **Zw**のエントリポイントの一部 (すべてではありません) について説明しています。 ドライバーから呼び出すことができる**Zw**ルーチンの説明については、「 [Zwxxx ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567122(v=vs.85))」を参照してください。
 
-ドキュメントのほとんど**Zw**ルーチンは、WDK で Wdm.h ヘッダー ファイルで定義されているが、いくつかは Ntddk.h Ntifs.h などの他のヘッダー ファイルで定義します。
+ドキュメント化された**Zw**ルーチンのほとんどは、WDK の Wdm ヘッダーファイルで定義されていますが、いくつかは、Ntddk や Ntifs などの他のヘッダーファイルで定義されています。
 
-通常、ユーザー モード アプリケーションは呼び出しません、 **Nt**と**Zw**ルーチン。 代わりに、アプリケーションは可能性があります、Win32 のルーチンをなど、呼び出す[CreateFile](https://go.microsoft.com/fwlink/p/?linkid=152795)、しなど、ネイティブ システム サービス ルーチンの呼び出し[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)または[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)を要求された操作を実行します。 ただし、ユーザー モード アプリケーションを呼び出すことがあります直接、 **Nt**または**Zw** Win32 ルーチンによってサポートされていない操作を実行するルーチン。
+通常、ユーザーモードアプリケーションでは、 **Nt**および**Zw**ルーチンは呼び出されません。 代わりに、アプリケーションは、 [CreateFile](https://go.microsoft.com/fwlink/p/?linkid=152795)などの Win32 ルーチンを呼び出すことができます。これにより、要求された操作を実行するために、 [Ntcreatefile](https://go.microsoft.com/fwlink/p/?linkid=157250)や[**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)などのネイティブシステムサービスルーチンが呼び出されます。 ただし、ユーザーモードアプリケーションでは、Win32 ルーチンでサポートされていない操作を実行するために、 **Nt**または**Zw**ルーチンを直接呼び出す場合があります。
 
-ユーザー モード アプリケーションでは、Ntdll.dll ダイナミック リンク ライブラリのエントリ ポイントを呼び出すことによって、ネイティブ システム サービス ルーチンを使用します。 これらのエントリ ポイントへの呼び出しを変換する**Nt**と**Zw**カーネル モードには、トラップ システム コールにルーチン。 これらのエントリ ポイントにアクセスするには、ユーザー モード アプリケーションは WDK で使用可能な Ntdll.lib ライブラリに静的にリンクします。 Ntdll.lib で実装されているルーチンでは、実行時に、Ntdll.dll のエントリ ポイントに動的にリンク スタブがあります。
+ユーザーモードアプリケーションでは、Ntdll ダイナミックリンクライブラリ内のエントリポイントを呼び出すことによって、ネイティブシステムサービスルーチンを使用します。 これらのエントリポイントは、 **Nt**および**Zw**ルーチンへの呼び出しを、カーネルモードにトラップされるシステム呼び出しに変換します。 これらのエントリポイントにアクセスするために、ユーザーモードアプリケーションは、WDK で使用できる Ntdll ライブラリに静的にリンクします。 Ntdll で実装されるルーチンは、実行時に Ntdll のエントリポイントに動的にリンクするスタブです。
 
-Windows SDK のドキュメントでは、いくつかについて説明しますのすべてではありません、 **Nt** Ntdll.lib 内のエントリ ポイント。 ドキュメントのほとんど**Nt**ルーチンは、Windows SDK の Winternl.h ヘッダー ファイルで定義されます。 このドキュメントは、ほとんどのメンションの**Zw** 、エントリ ポイントとの定義を含む、Windows SDK でないヘッダー ファイル**Zw**ルーチン。
+Windows SDK のドキュメントでは、Ntdll の**Nt**エントリポイントの一部ではありませんが説明されています。 ドキュメントに記載されているほとんどの**Nt**ルーチンは、Windows SDK の Winternl ヘッダーファイルで定義されています。 このドキュメントでは、Zw エントリポイントについて簡単に説明していません。また Windows SDK、のヘッダーファイルに**Zw**ルーチンの定義が含まれていません。
 
-いくつかの小さな例外を各エントリ ポイントの Ntdll.dll で、 **Nt**ルーチンの一致するエントリ ポイントには、 **Zw**ルーチン。 WDK と Windows SDK のドキュメントでは、アプリケーション開発者が記載されていない呼び出しを避けることをお勧め**Nt**エントリ ポイント、および警告が表示されますが、 **Zw**で Ntdll.dll からエントリ ポイントが消える可能性があります、Windows の将来のバージョン。 アプリケーション開発者が呼び出す、 **Zw**この状況の発生をユーザー モードからのルーチンを準備する必要があります。
+いくつかの小さな例外を除き、 **Nt**ルーチンの Ntdll の各エントリポイントには、 **Zw**ルーチンのエントリポイントが一致しています。 WDK および Windows SDK のドキュメントでは、アプリケーション開発者がドキュメントに記載されていない**Nt**エントリポイントを呼び出さないようにすることを推奨しています。また、今後のバージョンの Windows では、 **Zw**エントリポイントが Ntdll から消失する可能性があることを警告します。 ユーザーモードから**Zw**ルーチンを呼び出すアプリケーション開発者は、このような場合に備えて準備する必要があります。
 
-説明については、 **Nt** 、アプリケーションで呼び出すことができるルーチンを参照してください[Winternl](https://go.microsoft.com/fwlink/p/?linkid=157253)、[ファイル](https://go.microsoft.com/fwlink/p/?linkid=157254)、および[その他の低レベル クライアント サポート](https://go.microsoft.com/fwlink/p/?linkid=157255). 一部のページを参照**Nt** Windows sdk でルーチンは、「非推奨」ルーチンは、ラベルを付けるし、リーダーではなく、非推奨と等価の Win32 ルーチンを使用することをお勧め**Nt**ルーチン。
+アプリケーションから呼び出すことができる**Nt**ルーチンの説明については、「 [Winternl](https://go.microsoft.com/fwlink/p/?linkid=157253)、 [Files](https://go.microsoft.com/fwlink/p/?linkid=157254)、および[その他の低レベルクライアントサポート](https://go.microsoft.com/fwlink/p/?linkid=157255)」を参照してください。 Windows SDK のドキュメントに記載されている**Nt**ルーチンの一部の参照ページでは、ルーチンが "非推奨" としてラベル付けされ、推奨されていない**Nt**ルーチンの代わりに同等の Win32 ルーチンを使用するように指示されます。
 
-ユーザー モード アプリケーションが、Ntoskrnl.exe のエントリ ポイントを呼び出すことはできませんし、カーネル モード ドライバー Ntdll.dll のエントリ ポイントを呼び出すことはできません。
+ユーザーモードのアプリケーションは、Ntoskrnl.exe 内のエントリポイントを呼び出すことができません。また、カーネルモードドライバーは、Ntdll のエントリポイントを呼び出すことができません。
 
  
 

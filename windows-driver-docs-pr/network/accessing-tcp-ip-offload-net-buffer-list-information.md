@@ -3,58 +3,58 @@ title: TCP/IP オフロード NET_BUFFER_LIST 情報へのアクセス
 description: TCP/IP オフロード NET_BUFFER_LIST 情報へのアクセス
 ms.assetid: 555c9533-ab3f-43f0-9139-b1de33a6b1a7
 keywords:
-- TCP/IP は、WDK のネットワークの帯域外のデータをオフロードします。
-- WDK TCP/IP トランスポート、WDK TCP/IP offload 帯域外のデータをオフロードします。
-- OOB データ WDK TCP/IP の負荷を軽減します。
+- TCP/IP オフロード WDK ネットワーク、帯域外データ
+- WDK TCP/IP トランスポートのオフロード、帯域外データの WDK TCP/IP オフロード
+- OOB データ WDK TCP/IP オフロード
 - NET_BUFFER_LIST
-- タスクは、WDK TCP/IP トランスポート、帯域外のデータをオフロードします。
-- 接続は、WDK TCP/IP トランスポート、帯域外のデータをオフロードします。
+- タスクオフロード WDK TCP/IP トランスポート、帯域外データ
+- 接続オフロード WDK TCP/IP トランスポート、帯域外データ
 ms.date: 10/23/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48c2eacd25e671b5d43203ecefd8ccf432fa5c67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bb4574033e864b4a2bff593f087e32a89b63f5f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384423"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838252"
 ---
-# <a name="accessing-tcpip-offload-netbufferlist-information"></a>NET TCP/IP にアクセスする負荷を軽減\_バッファー\_情報を一覧表示
+# <a name="accessing-tcpip-offload-net_buffer_list-information"></a>TCP/IP オフロード NET\_バッファー\_一覧情報へのアクセス
 
-NDIS 6.0 以降のバージョンで TCP/IP オフロード アウト オブ バンド (OOB) データを提供する、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)のリンクされたリストを指定する構造体[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 **NetBufferListInfo**メンバーは、NET のすべてに共通する情報が含まれている値の配列\_リスト内のバッファーの構造体。
+NDIS バージョン6.0 以降では、net [ **\_buffer\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NETBUFFERLISTINFO**メンバーに tcp/ip オフロード帯域外 (OOB) データが提供されます。このデータは、 [**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造のリンクリストを指定します。 **NetBufferListInfo**メンバーは、リスト内のすべての NET\_バッファー構造に共通する情報を含む値の配列です。
 
-次の識別子を使用して、 [ **NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)設定 TCP/IP のオフロード OOB のデータを取得するマクロ、 **NetBufferListInfo**配列。
+次の識別子を[**NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロと共に使用して、 **NETBUFFERLISTINFO**配列の tcp/ip オフロード OOB データを設定して取得します。
 
 <a href="" id="tcpipchecksumnetbufferlistinfo"></a>**TcpIpChecksumNetBufferListInfo**  
-ミニポート ドライバーに TCP/IP プロトコルからチェックサム タスクをオフロードで使用されるチェックサム情報を指定します。 指定すると**TcpIpChecksumNetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体 (構造体をポインターではなく)。 この構造体には、1 つの PVOID 値、またはビット フィールドとして、アクセスするチェックサム情報をできるようにする共用体が含まれています。
+チェックサムタスクを TCP/IP プロトコルからミニポートドライバーにオフロードするときに使用するチェックサム情報を指定します。 **TcpIpChecksumNetBufferListInfo**、NET\_BUFFER\_list を指定すると\_情報は[**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体を返します(構造体へのポインターではありません)。 この構造体には、チェックサム情報に1つの PVOID 値またはビットフィールドとしてアクセスできるようにする共用体が含まれています。
 
 <a href="" id="ipsecoffloadv1netbufferlistinfo"></a>**IPsecOffloadV1NetBufferListInfo**  
-インターネット プロトコル セキュリティ (IPsec) オフロード、ミニポート ドライバーに TCP/IP プロトコルからの IPsec タスク オフロードで使用されている情報を指定します。 指定すると**IPsecOffloadV1NetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_IPSEC\_オフロード\_V1\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v1_net_buffer_list_info)構造体。
+TCP/IP プロトコルからミニポートドライバーへの IPsec タスクのオフロードに使用されるインターネットプロトコルセキュリティ (IPsec) オフロード情報を指定します。 **IPsecOffloadV1NetBufferListInfo**、NET\_BUFFER\_list を指定すると\_情報は[**NDIS\_IPSEC\_オフロード\_V1\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v1_net_buffer_list_info)を返します。データ.
 
 <a href="" id="tcplargesendnetbufferlistinfo"></a>**TcpLargeSendNetBufferListInfo**  
-ミニポート ドライバーに TCP/IP プロトコルから大きな TCP パケットのセグメント化オフロードで使用される情報を指定します。 指定すると**TcpLargeSendNetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造体 (構造体をポインターではなく)。 この構造体には、1 つの PVOID 値、またはビット フィールドとしてアクセスする情報をできるようにする共用体が含まれています。
+TCP/IP プロトコルからミニポートドライバーへの、サイズの大きい TCP パケットのセグメント化をオフロードするために使用される情報を指定します。 **TcpLargeSendNetBufferListInfo**、NET\_BUFFER\_list を指定した場合、\_情報は、 [**NDIS\_TCP\_大きい\_送信\_オフロード\_NET\_BUFFER\_list を返し\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造体 (構造体へのポインターではありません)。 この構造体には、1つの PVOID 値またはビットフィールドとして情報にアクセスできるようにする共用体が含まれています。
 
 <a href="" id="ieee8021qnetbufferlistinfo"></a>**Ieee8021QNetBufferListInfo**  
-802.1 q を指定します、パケットに関する情報。 指定すると**Ieee8021QNetBufferListInfo**、NET\_バッファー\_一覧\_情報を返します、**値**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造体。 この構造体には、802.1 p の優先度の仮想 LAN (VLAN) id 情報を指定できます。 802.1p の優先順位情報は、共有メディア 802 ネットワーク パケットの優先順位を確立するために使用されます。
+パケットに関する 802.1 Q 情報を指定します。 **Ieee8021QNetBufferListInfo**、NET\_BUFFER\_list を指定すると\_情報は、 [**NDIS\_NET\_buffer\_List\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)の**値**のメンバーを返します。 この構造では、802.1 p priority および仮想 LAN (VLAN) の識別子情報を指定できます。 802.1 p の優先順位情報は、共有メディア802ネットワークでパケットの優先順位を確立するために使用されます。
 
-ミニポート ドライバーは、NDIS のサポートを報告する場合\_カプセル化\_IEEE\_802\_3\_P\_AND\_Q\_IN\_OOB カプセル化挿入する必要がありますが、 **Ieee8021QNetBufferListInfo**にデータを大量送信オフロード バージョン 1 (LSOV1) および大量送信オフロード バージョン 2 (LSOV2) イーサネットのパケットです。
+ミニポートドライバーが NDIS\_カプセル化のサポートを報告している場合\_IEEE\_802\_3\_P\_、および\_OOB カプセル化で Q\_を報告します。では、 **Ieee8021QNetBufferListInfo**データを large send offload version 1 (LSOV1) と large send offload version 2 (LSOV2) イーサネットパケットに挿入する必要があります。
 
 <a href="" id="tcpoffloadbytestransferred"></a>**TcpOffloadBytesTransferred**  
-TCP chimney で転送されたバイトが送信の負荷を軽減し、受信、または切断操作のデータの数を指定します。
+TCP chimney オフロードの送信、受信、または切断の各操作で転送されたデータのバイト数を指定します。
 
 <a href="" id="tcpreceivenopush"></a>**TcpReceiveNoPush**  
-プッシュ モードの TCP chimney オフロードを表しますが、要求を受信するブール値を指定します。 場合**TRUE**、受信要求が非プッシュ モードでします。 それ以外の場合、受信要求はプッシュ モードです。
+TCP chimney オフロード受信要求のプッシュモードを表すブール値を指定します。 **TRUE**の場合、受信要求は非プッシュモードになります。 それ以外の場合、受信要求はプッシュモードになります。
 
-LSOV1、LSOV2、チェックサム、および IPsec オフロードの種類、ミニポート ドライバーが OOB データと、報告されたオフロード機能の種類に基づくタスク オフロードを実行します。 たとえば、プロトコル ドライバーには、IPv4 パケット LSOV1 サービスが必要とする場合、プロトコルのドライバーを提供する各送信要求には情報が含まれますから、 **LsoV1Transmit**内のメンバー、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) OOB データ。 ミニポート ドライバーが、送信要求を行う前の指定のカプセル化の種類、IPv4 をサポートしているプロトコルのドライバーを確認する必要があることに注意してください。
+LSOV1、LSOV2、checksum、および IPsec オフロードの種類の場合、ミニポートドライバーは、OOB データの種類と、報告されたオフロード機能に基づいて、タスクのオフロードを実行します。 たとえば、プロトコルドライバーが IPv4 パケット用に LSOV1 services を必要とする場合、プロトコルドライバーによって提供される各送信要求には、NDIS の**LsoV1Transmit**メンバーからの情報が含まれます。これには[ **\_TCP\_LARGE\_send\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) OOB data。 プロトコルドライバーは、送信要求を行う前に、指定されたカプセル化の種類を使用して、ミニポートドライバーが IPv4 をサポートしていることを確認する必要があることに注意してください。
 
-NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報構造体には、最大セグメント サイズ (MSS) が含まれています。 **TcpHeaderOffset**ミニポート ドライバーが IP ヘッダー、IP オプション、または IP 拡張ヘッダーを解析する必要があるないように、メンバーは、TCP ヘッダーの場所を指定します。
+NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO 構造体には、最大セグメントサイズ (MSS) が含まれています。 **Tcpheaderoffset**メンバーは、ミニポートドライバーが ip ヘッダー、ip オプション、または ip 拡張ヘッダーを解析する必要がないように、TCP ヘッダーの場所を指定します。
 
-NDIS 6.0 と LSOV2 と LSOV1 をサポートする以降のバージョンのミニポート ドライバーを確認する必要があります、**型**のメンバー [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)ドライバー スタックが LSOV2 または LSOV1 を使用して、適切なオフロードを実行する必要があり、かどうかを決定します。
+LSOV2 と LSOV1 をサポートする NDIS 6.0 およびそれ以降のミニポートドライバーでは、Ndis の**型**のメンバーを確認する必要があります[ **\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)を確認して、ドライバースタックが LSOV2 と LSOV1 のどちらを使用しているかを示し、適切なオフロードを実行する必要があります。
 
-LSOv1 のミニポートする前にドライバーには、LSO を使用して、小さなパケットにセグメント化した大きな TCP パケットの送信が完了すると、ドライバー書き込みますでセグメント化されたパケットで送信された TCP ペイロードのバイト数、 **TcpPayload**NDIS のメンバー\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報。
+LSOv1 の場合、ポートドライバーは、LSO を使用して小さいパケットに分割されているサイズの大きい TCP パケットの送信を完了する前に、NDIS の**tcppayload**メンバーのセグメント化されたパケットで送信した tcp ペイロードのバイト数を書き込みます\_TCP\_LARGE\_\_オフロード\_NET\_バッファー\_一覧\_情報を送信します。
 
-NDIS ミニポート ドライバー場合\_カプセル化\_IEEE\_802\_3\_P\_AND\_タスク オフロード サービスを実行する機能、ドライバーは、Q フラグ[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) VLAN のヘッダーのバッファーのデータを含む構造体。 受信したデータの場合は、このフラグは、ミニポート ドライバー受信チェックサムの計算を実行し、イーサネットのパケットで VLAN のヘッダーを配置することを示します。
+ミニポートドライバーによって、NDIS\_カプセル化\_IEEE\_802\_3\_P\_および\_Q フラグが指定されている場合、ドライバーは NET\_BUFFER のタスクオフロードサービスを実行でき[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)バッファーデータ内の VLAN ヘッダーを含む構造体を一覧表示します。 受信したデータの場合、このフラグはミニポートドライバーが受信チェックサムの計算を実行し、VLAN ヘッダーをイーサネットパケットに入れることを示します。
 
-NDIS ミニポート ドライバー場合\_カプセル化\_IEEE\_802\_3\_P\_AND\_Q\_IN\_OOB、機能フラグドライバーは、NET のオフロードを実行できる\_バッファー\_リスト構造で VLAN ヘッダーが含まれる、 **Ieee8021QnetBufferListInfo** OOB データ。 受信チェックサムでオフロード ケース、ミニポートに VLAN ヘッダーの挿入、 **Ieee8021QnetBufferListInfo** OOB データ。
+ミニポートドライバーによって NDIS\_カプセル化が指定されている場合\_IEEE\_802\_3\_P\_および\_の機能の OOB フラグで Q\_を指定します。では、ドライバーは、 **Ieee8021QnetBufferListInfo** OOB データ内の VLAN ヘッダーを含むネットワーク\_バッファー\_リスト構造のオフロードを実行できます。 受信チェックサムオフロードの場合、ミニポートは、VLAN ヘッダーを**Ieee8021QnetBufferListInfo** OOB データに挿入します。
 
  
 

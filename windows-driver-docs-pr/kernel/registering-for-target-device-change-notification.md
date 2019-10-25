@@ -3,43 +3,43 @@ title: ターゲット デバイス変更の通知登録
 description: ターゲット デバイス変更の通知登録
 ms.assetid: 5f7a9c44-c9a4-4ff8-a97d-ad2462b86af0
 keywords:
-- 通知 WDK PnP、ターゲット デバイスの変更
-- ターゲット デバイスの変更通知 PnP WDK
-- EventCategoryTargetDeviceChange 通知
-- ターゲット デバイスの変更通知を登録します。
+- 通知 WDK PnP、ターゲットデバイスの変更
+- ターゲットデバイスの変更通知の WDK PnP
+- Eventカテゴリ Targetdevicechange notification
+- ターゲットデバイスの変更通知を登録しています
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f50583b3b101d28c2fa8b71e185efa0c30245b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c7490335a9b315ad9d3c28b286c7a1c0d2c1b73
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827464"
 ---
 # <a name="registering-for-target-device-change-notification"></a>ターゲット デバイス変更の通知登録
 
-ドライバーを呼び出すことによって PnP ターゲット デバイスの変更イベントの通知の登録[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。
+ドライバーは、 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出して、PnP ターゲットデバイス変更イベントの通知を登録します。
 
-次の情報は、ターゲット デバイスの変更通知のこのルーチンの呼び出しに適用されます。
+次の情報は、ターゲットデバイス変更通知に対してこのルーチンを呼び出す場合に適用されます。
 
--   指定、*によって*の**EventCategoryTargetDeviceChange**します。
+-   Eventcategory **Targetdevicechange**の*eventcategory*を指定します。
 
--   *EventCategoryData*通知を要求したデバイスのファイル オブジェクトをポイントする必要があります。
+-   *Eventカテゴリデータ*は、通知が要求されたデバイスのファイルオブジェクトを指している必要があります。
 
-    ドライバーを呼び出す前に、ファイル オブジェクトの参照を取得する必要があります、ドライバーのコールバック ルーチンは、ファイル オブジェクトへのアクセスを必要とする場合**IoRegisterPlugPlayNotification**します。
+    ドライバーのコールバックルーチンがファイルオブジェクトへのアクセスを必要とする場合、ドライバーは**IoRegisterPlugPlayNotification**を呼び出す前に、ファイルオブジェクトの参照を取得する必要があります。
 
-    ドライバーのコールバック ルーチンに、ファイル オブジェクトへのアクセスが必要としない場合、ドライバーが、オブジェクトを参照する必要はありません。
+    ドライバーのコールバックルーチンがファイルオブジェクトへのアクセスを必要としない場合、ドライバーはオブジェクトを参照する必要はありません。
 
-    ファイル オブジェクトが閉じられた後、ドライバーは、その通知の登録を削除するまで、デバイスの通知を受信するドライバーが続行されます。 この設計により、GUID の通知を受け取るドライバー\_ターゲット\_デバイス\_削除\_など、イベントをキャンセルします。
+    ファイルオブジェクトが閉じられると、ドライバーはその通知登録を削除するまで、デバイスの通知を受信し続けます。 このように設計することで、ドライバーは、GUID\_ターゲット\_デバイスの通知を受信し\_\_取り消されたイベントを削除することができます。
 
--   ドライバーの定義を指定*コンテキスト*PnP マネージャーは、コールバック ルーチンに渡す。
+-   PnP マネージャーがコールバックルーチンに渡すドライバー定義の*コンテキスト*を指定します。
 
-    ドライバーを使用して、可能性があります、*コンテキスト*ファイル オブジェクトの現在の状態に関する情報を保持するパラメーター (たとえば、きました閉じた削除) します。
+    ドライバーは、 *Context*パラメーターを使用して、ファイルオブジェクトの現在の状態に関する情報を保持する場合があります (たとえば、閉じられたか、削除されています)。
 
-    また、ドライバーを使用して、*コンテキスト*当初デバイスを開くために使用するパスを格納します。 ドライバーは、このパスを使用して、操作の削除を取り消された後、デバイスを再度開きます。 (を参照してください[処理 GUID\_ターゲット\_デバイス\_削除\_キャンセル イベント](handling-a-guid-target-device-remove-cancelled-event.md)詳細についてはします)。
+    また、ドライバーは、最初にデバイスを開いたときに使用したパスを格納するために*コンテキスト*を使用する場合もあります。 ドライバーは、このパスを使用して、削除操作の取り消し後にデバイスを再度開くことができます。 (詳細については[、「\_デバイス\_\_ターゲット\_ターゲットを処理する](handling-a-guid-target-device-remove-cancelled-event.md)」を参照してください。
 
-ドライバーを呼び出して通知登録を削除する[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)で、 *NotificationEntry*によって返される**IoRegisterPlugPlayNotification**します。 ドライバーは、通知に登録し、参照が未解決のまま、ファイル オブジェクトの参照が失われた、登録を削除して、ドライバーは、参照を解放する必要があります。
+ドライバーは、 **IoRegisterPlugPlayNotification**によって返された*notificationentry*を使用して[**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)を呼び出すことによって、通知登録を削除します。 ドライバーが通知用に登録されているときにファイルオブジェクトの参照を受け取り、その参照が未解決のままである場合、ドライバーは登録を削除した後に参照を解放する必要があります。
 
  
 

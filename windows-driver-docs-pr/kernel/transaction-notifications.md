@@ -3,203 +3,203 @@ title: トランザクション通知
 description: トランザクション通知
 ms.assetid: 62169b56-e70f-4d32-a051-a7fd947dbc64
 keywords:
-- WDK KTM の通知
-- WDK KTM、通知のトランザクション
-- WDK KTM、通知のリソース マネージャー
-- カーネル トランザクション マネージャ WDK、通知
+- 通知 WDK KTM
+- トランザクション WDK KTM、通知
+- リソースマネージャーの WDK KTM、通知
+- カーネルトランザクションマネージャー WDK、通知
 - KTM WDK、通知
-- 優先的なトランザクション マネージャー WDK KTM
+- 上位のトランザクションマネージャー WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d231f88e1dfca5914c354251e739799adc184be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a425b3fddd5986e934b2d385eda2a8b9ba71257
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382953"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838383"
 ---
 # <a name="transaction-notifications"></a>トランザクション通知
 
 
-KTM では、各リソース マネージャーの通知キューを提供します。 KTM では、リソース マネージャーのキューに置くことによって、リソース マネージャーに通知を配信します。
+KTM は、各リソースマネージャーの通知キューを提供します。 KTM は、リソースマネージャーのキューに配置することによって、リソースマネージャーに通知を配信します。
 
-リソース マネージャーは、同期または非同期で、そのキューから通知を取得できます。
+リソースマネージャーは、同期または非同期のいずれかで、キューから通知を取得できます。
 
--   リソース マネージャーを繰り返し呼び出しする通知を同期的に取得する[ **ZwGetNotificationResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntgetnotificationresourcemanager)します。
+-   通知を同期的に取得するには、リソースマネージャーが[**Zwgetnotificationresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)を繰り返し呼び出すことができます。
 
--   通知を非同期的に受信する、resource manager を呼び出すことができます[ **TmEnableCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmenablecallbacks)コールバック ルーチンを設定します。 その it はこのリソース マネージャーのキューに通知するたびに、KTM は、コールバック ルーチンを呼び出します。
+-   通知を非同期に受信するために、リソースマネージャーは[**Tmenablecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)を呼び出して、コールバックルーチンを設定できます。 KTM は、リソースマネージャーのキューに通知を配置するたびにコールバックルーチンを呼び出します。
 
-リソース マネージャーを呼び出すと[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)リソース マネージャーをトランザクションの参加リストを作成するを受信する通知の種類を指定します。 リソース マネージャーでは、ご登録いただく通知だけを受信します。
+リソースマネージャーが[**Zwcreateenlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)を呼び出してトランザクションの参加リストを作成する場合、リソースマネージャーは受信する通知の種類を指定します。 リソースマネージャーは、受信するために登録された通知のみを受信します。
 
-通知の定数は、Ktmtypes.h で定義されます。 トランザクションの形式である通知の定数名\_通知\_*Xxx*します。
+通知定数は、Ktmtypes. h で定義されています。 通知定数名には、 *Xxx*\_通知\_トランザクションの形式があります。
 
-このトピックの残りの部分では、すべての通知定数 Ktmtypes.h を定義し、3 つのグループに分割して、示します。
+このトピックの残りの部分では、Ktmtypes によって定義され、3つのグループに分割されるすべての通知定数を示します。
 
--   リソース マネージャーが受信可能な通知
+-   リソースマネージャーが受信できる通知
 
--   優先的なトランザクション マネージャーが受信可能な通知
+-   上位トランザクションマネージャーが受信できる通知
 
--   定義されているが、現在使用されていない通知定数
+-   定義されているが現在使用されていない通知定数
 
-### <a href="" id="notifications-for-resource-managers"></a> リソース マネージャーの通知
+### <a href="" id="notifications-for-resource-managers"></a>リソースマネージャーの通知
 
-トランザクションを受信するすべてのリソース マネージャーを登録する必要があります\_通知\_PREPREPARE、トランザクション\_通知\_準備、およびトランザクション\_通知\_でもコミット通知その後を呼び出す場合に[ **ZwReadOnlyEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)読み取り専用と参加リストをマークします。
+すべてのリソースマネージャーは、トランザクションを受け取るために登録する必要があります。\_事前準備、トランザクション\_通知\_準備、およびトランザクション\_は、後でを呼び出し[**た場合でもコミット通知を通知\_通知\_ます。ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment)は、参加リストを読み取り専用としてマークします。
 
-リソース マネージャーがトランザクションをサポートできる\_通知\_単一\_フェーズ\_がコミットする必要がありますも複数フェーズ pre-prepare をサポートして、準備、および通知をコミットします。
+リソースマネージャーは、トランザクション\_をサポートして、単一\_フェーズ\_コミット\_通知を行うことができますが、マルチフェーズ事前準備、準備、およびコミット通知もサポートする必要があります。
 
-次の一覧には、リソース マネージャーが受信可能なすべての通知が含まれています。
+次の一覧には、リソースマネージャーが受信できるすべての通知が含まれています。
 
-<a href="" id="transaction-notify-preprepare"></a>トランザクション\_通知\_PREPREPARE  
-**送信されたときに**:クライアントが呼び出す[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)とリソース マネージャーが単一フェーズ コミットをサポートしない場合は、[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)呼び出し[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)します。
+<a href="" id="transaction-notify-preprepare"></a>トランザクション\_\_PREPREPARE に通知する  
+**送信された場合**: クライアントは[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出しますが、リソースマネージャーが単一フェーズコミットをサポートしていないか、[上位トランザクションマネージャー](creating-a-superior-transaction-manager.md)が[**zwcommittransaction 参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreprepareenlistment)を呼び出しています。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者のアクションを必須**:実行操作を事前に準備し、呼び出す[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)します。 (詳細については操作を事前準備を参照してください[コミット操作の処理](handling-commit-operations.md))。
+**受信者の必須のアクション**: 事前準備操作を実行し、 [**Zwpreプロビジョニング完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepreparecomplete)を呼び出します。 (事前準備操作の詳細については、「[コミット操作の処理](handling-commit-operations.md)」を参照してください)。
 
-**制限:** リソース マネージャーがトランザクションをサポートする必要がありますも\_通知\_準備とトランザクション\_通知\_をコミットします。
+**制限:** リソースマネージャーは、トランザクション\_をサポートする必要もあります。\_準備とトランザクション\_通知\_コミットに通知します。
 
 <a href="" id="transaction-notify-prepare"></a>トランザクション\_通知\_準備  
-**送信されたときに**:トランザクション後\_通知\_PREPREPARE クライアントが呼び出す場合[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)リソース マネージャーが単一フェーズ コミットをサポートしないと、優先的なトランザクションの場合、またはmanager 呼び出し[ **ZwPrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)します。
+**送信時**: クライアントが[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出し、リソースマネージャーが単一フェーズコミットをサポートしていない場合、または上位トランザクションマネージャーが[**zw/参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepareenlistment)を呼び出す場合、トランザクション\_後に、事前準備\_通知します。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者には、アクションを必須します。** 実行操作を準備し、呼び出す[ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)します。 (詳細については操作の準備を参照してください[コミット操作の処理](handling-commit-operations.md))。
+**受信者の必須の操作:** 準備操作を実行し、 [**Zw/complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)を呼び出します。 (準備操作の詳細については、「[コミット操作の処理](handling-commit-operations.md)」を参照してください)。
 
-**制限:** リソース マネージャーがトランザクションをサポートする必要がありますも\_通知\_PREPREPARE とトランザクション\_通知\_をコミットします。
+**制限:** リソースマネージャーは、トランザクション\_をサポートしている必要があります\_事前準備とトランザクション\_\_COMMIT を通知します。
 
-<a href="" id="transaction-notify-commit"></a>トランザクション\_通知\_コミット  
-**送信されたときに**:トランザクション後\_通知\_クライアントが呼び出す場合の準備[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)リソース マネージャーが単一フェーズ コミットをサポートしないと、優先的なトランザクションの場合、またはmanager 呼び出し[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)します。
+<a href="" id="transaction-notify-commit"></a>コミット\_通知するトランザクション\_  
+**送信時**: クライアントが[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出し、リソースマネージャーが単一フェーズコミットをサポートしていない場合、または上位トランザクションマネージャーが[**zwcommittransaction リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)を呼び出す場合、トランザクション\_後に通知\_準備をします。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者のアクションを必須**:コミット操作を行い、呼び出して[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)します。 (コミット操作の詳細については、次を参照してください[コミット操作の処理](handling-commit-operations.md)。)。
+**受信者の必須のアクション**: コミット操作を実行し、 [**Zwcommitcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)を呼び出します。 (コミット操作の詳細については、「[コミット操作の処理](handling-commit-operations.md)」を参照してください)。
 
-**制限:** リソース マネージャーがトランザクションをサポートする必要がありますも\_通知\_PREPREPARE とトランザクション\_通知\_準備します。
+**制限:** リソースマネージャーは、トランザクション\_\_事前準備とトランザクション\_通知\_準備を行う必要があります。
 
-<a href="" id="transaction-notify-single-phase-commit"></a>トランザクション\_通知\_単一\_フェーズ\_コミット  
-**送信されたときに**:クライアントが呼び出す[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)リソース マネージャーが単一フェーズ コミット操作をサポートしています。
+<a href="" id="transaction-notify-single-phase-commit"></a>トランザクション\_\_単一\_フェーズ\_コミットに通知します  
+**送信された場合**: クライアントは[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出し、resource manager は単一フェーズコミット操作をサポートします。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者のアクションを必須**:呼び出し、トランザクションをコミットするか[ **ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)します。 (単一フェーズ コミット操作の詳細については、次を参照してください[コミット操作の処理](handling-commit-operations.md)。)。
+**受信者の必須のアクション**: トランザクションをコミットするか、 [**ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsinglephasereject)を呼び出します。 (単一フェーズコミット操作の詳細については、「[コミット操作の処理](handling-commit-operations.md)」を参照してください)。
 
-**制限:** リソース マネージャーがトランザクションをサポートする必要がありますも\_通知\_PREPREPARE、トランザクション\_通知\_準備、およびトランザクション\_通知\_をコミットします。
+**制限:** リソースマネージャーは、トランザクション\_もサポートしている必要があります。\_事前準備、トランザクション\_通知\_準備、およびトランザクション\_コミット\_通知します。
 
 <a href="" id="transaction-notify-rollback"></a>トランザクション\_通知\_ロールバック  
-**送信されたときに**:クライアントが呼び出す[ **ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)、優先的なトランザクション マネージャーは、 [ **ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)KTM を検出したか、ログ ストリームに失敗した書き込み) などのエラーです。
+**送信されると**、クライアントが[**ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)を呼び出すか、上位のトランザクションマネージャーが[**ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackenlistment)を呼び出します。または、KTM によってエラー (ログストリームへの書き込みに失敗したなど) が検出されます。
 
-**受信した**:リソース マネージャーと優れたトランザクション マネージャーの両方。
+**受信者**: リソースマネージャーと上位トランザクションマネージャーの両方。
 
-**受信者のアクションを必須**:トランザクションのデータをロールバックし、呼び出すために必要な操作を実行[ **ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)します。 (ロールバック操作の詳細については、次を参照してください[ロールバック操作の処理](handling-rollback-operations.md)。)。
+**受信者の必須のアクション**: トランザクションのデータをロールバックするために必要な操作を実行し、 [**ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete)を呼び出します。 (ロールバック操作の詳細については、「[ロールバック操作の処理](handling-rollback-operations.md)」を参照してください)。
 
-**制限:** すべてのリソース マネージャーおよび優先的なトランザクション マネージャーがトランザクションをサポートする必要があります\_通知\_ロールバックします。
+**制限:** すべてのリソースマネージャーと上位のトランザクションマネージャーは、トランザクションをサポートして\_ロールバックを通知\_必要があります。
 
-<a href="" id="transaction-notify-recover"></a>トランザクション\_通知\_回復  
-**送信されたときに**:リソース マネージャーは、 [ **ZwRecoverResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager)します。
+<a href="" id="transaction-notify-recover"></a>トランザクション\_\_の回復を通知する  
+**送信された場合**: リソースマネージャーは、 [**Zw回復マネージャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)を呼び出します。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者のアクションを必須**:リソース マネージャーを呼び出す必要があります[ **ZwRecoverEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment)します。 (回復操作の詳細については、次を参照してください[回復操作の処理](handling-recovery-operations.md)。)。
+**受信者の必須アクション**: リソースマネージャーは、 [**Zw回復参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverenlistment)を呼び出す必要があります。 (回復操作の詳細については、「[復旧操作の処理](handling-recovery-operations.md)」を参照してください)。
 
-**制限:** なし。
+**制限:** 存在.
 
-<a href="" id="transaction-notify-last-recover"></a>トランザクション\_通知\_最後\_回復  
-**送信されたときに**:KTM で最後のトランザクションが送信後\_通知\_リソース マネージャーの参加リストを回復します。
+<a href="" id="transaction-notify-last-recover"></a>最後\_回復\_通知するトランザクション\_  
+**送信日時**: KTM が最後のトランザクションを送信した後に、リソースマネージャーの参加リストを\_復旧\_通知します。
 
-**受信した**:リソース マネージャー。
+**受信者**: リソースマネージャー。
 
-**受信者のアクションを必須**:回復操作を終了します。 (回復操作の詳細については、次を参照してください[回復操作の処理](handling-recovery-operations.md)。)。
+**受信者の必須の操作**: 回復操作を終了します。 (回復操作の詳細については、「[復旧操作の処理](handling-recovery-operations.md)」を参照してください)。
 
-**制限:** なし。
+**制限:** 存在.
 
 <a href="" id="transaction-notify-indoubt"></a>トランザクション\_通知\_INDOUBT  
-**送信されたときに**:リソース マネージャーを呼び出してから[ **ZwRecoverEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment)KTM は、トランザクションをコミットまたはロールバックするかどうかを判断できない場合、(通常、優先的なトランザクション マネージャーが、TPご利用いただけません)。
+**送信時**: リソースマネージャーが[**Zw回復参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverenlistment)を呼び出した後、KTM がトランザクションをコミットするかロールバックするかを決定できない場合 (通常は、tp に使用できない上位のトランザクションマネージャーがあるため)。
 
-受信しました。リソース マネージャー。
+受信者: リソースマネージャー。
 
-**受信者のアクションを必須**:KTM トランザクションを送信するまで何もしない\_通知\_COMMIT transaction または TRANSACTION\_通知\_ロールバックします。
+**受信者の必須のアクション**: KTM がトランザクションを送信するまで何もしないで、\_コミットまたはトランザクション\_通知\_ロールバックを通知\_ます。
 
-**制限:** なし。
+**制限:** 存在.
 
-<a href="" id="transaction-notify-rm-disconnected"></a>トランザクション\_通知\_RM\_切断  
-**送信されたときに**:単一フェーズ コミット操作を処理しているリソース マネージャーは、ことを示すことがコミットされたトランザクションをロールバックせず登録ハンドルを閉じます。
+<a href="" id="transaction-notify-rm-disconnected"></a>\_RM\_DISCONNECTED に通知するトランザクション\_  
+**送信された場合**: 単一フェーズのコミット操作を処理しているリソースマネージャーは、トランザクションをコミットまたはロールバックしたことを示すことなく、参加リストを閉じます。
 
-**受信した**:リソース マネージャーと優れたトランザクション マネージャーをトランザクションの参加リストを持ちます。
+**受信者**: トランザクションに参加しているリソースマネージャーと上位のトランザクションマネージャー。
 
-**受信者のアクションを必須**:トランザクションに固有のクリーンアップ操作。 通常、この通知は、読み取り専用のリソース マネージャーに便利です。
+**受信者の必須の操作**: トランザクション固有のクリーンアップ操作。 通常、この通知は読み取り専用のリソースマネージャーに役立ちます。
 
-**制限:** なし。
+**制限:** 存在.
 
-### <a href="" id="notifications-for-superior-transaction-managers"></a> 優先的なトランザクション マネージャーの通知
+### <a href="" id="notifications-for-superior-transaction-managers"></a>上位トランザクションマネージャーの通知
 
-[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)次の通知を受け取ることができます。
+[上位トランザクションマネージャー](creating-a-superior-transaction-manager.md)は、次の通知を受け取ることができます。
 
 <a href="" id="transaction-notify-rollback"></a>トランザクション\_通知\_ロールバック  
-以前の説明を参照してください。
+前の説明を参照してください。
 
-<a href="" id="transaction-notify-rm-disconnected"></a>トランザクション\_通知\_RM\_切断  
-以前の説明を参照してください。
+<a href="" id="transaction-notify-rm-disconnected"></a>\_RM\_DISCONNECTED に通知するトランザクション\_  
+前の説明を参照してください。
 
-<a href="" id="transaction-notify-preprepare-complete"></a>トランザクション\_通知\_PREPREPARE\_完了  
-**送信されたときに**:すべてのリソースの後に、マネージャーのトランザクションが受信した\_通知\_PREPREPARE 呼び出すことで応答し[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)します。
+<a href="" id="transaction-notify-preprepare-complete"></a>トランザクション\_\_PREPREPARE\_完了を通知します  
+**送信日時**: すべてのリソースマネージャーがトランザクションを受信した後に、 [**Zwpreプロビジョニング完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepreparecomplete)を呼び出して\_事前準備と応答を\_に通知します。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:上位のトランザクション マネージャーを呼び出す必要があります[ **ZwPrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)します。
+**受信者の必須のアクション**: 上位トランザクションマネージャーは[**Zw/参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepareenlistment)を呼び出す必要があります。
 
 <a href="" id="transaction-notify-prepare-complete"></a>トランザクション\_通知\_準備\_完了  
-**送信されたときに**:すべてのリソースの後に、マネージャーのトランザクションが受信した\_通知\_準備と呼び出すことによって応答[ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)します。
+**送信された場合**: すべてのリソースマネージャーがトランザクションを受信した後に、 [**Zwの完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)を呼び出して準備と応答を\_に通知\_通知します。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:上位のトランザクション マネージャーを呼び出す必要があります[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)します。
+**受信者の必須のアクション**: 上位トランザクションマネージャーは[**Zwcommitenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)を呼び出す必要があります。
 
-<a href="" id="transaction-notify-commit-complete"></a>トランザクション\_通知\_コミット\_完了  
-**送信されたときに**:すべてのリソースの後に、マネージャーのトランザクションが受信した\_通知\_をコミットし、呼び出すことによって応答[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)します。
+<a href="" id="transaction-notify-commit-complete"></a>トランザクション\_\_コミット\_完了を通知します  
+**送信された場合**: すべてのリソースマネージャーがトランザクションを受信した後\_\_コミットに通知し、 [**Zwcommitcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)を呼び出して応答します。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:トランザクションのクリーンアップ操作。
+**受信者の必須のアクション**: トランザクションのクリーンアップ操作。
 
-<a href="" id="transaction-notify-rollback-complete"></a>トランザクション\_通知\_ロールバック\_完了  
-**送信されたときに**:すべてのリソースの後に、マネージャーのトランザクションが受信した\_通知\_ロールバックと呼び出すことによって応答[ **ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)します。
+<a href="" id="transaction-notify-rollback-complete"></a>トランザクション\_\_ロールバック\_完了を通知します  
+**送信日時**: すべてのリソースマネージャーがトランザクションを受信した後、 [**ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete)を呼び出すことによって\_ロールバックを通知し、応答\_ます。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:トランザクションのクリーンアップ操作。
+**受信者の必須のアクション**: トランザクションのクリーンアップ操作。
 
-<a href="" id="transaction-notify-recover-query"></a>トランザクション\_通知\_回復\_クエリ  
-**送信されたときに**:優先的なトランザクション マネージャーは、 [ **ZwRecoverResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager)します。
+<a href="" id="transaction-notify-recover-query"></a>トランザクション\_通知\_復旧\_クエリ  
+**送信時**: 上位トランザクションマネージャーが[**zw回復**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)マネージャーを呼び出します。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:上位のトランザクション マネージャーは、いずれかを呼び出す必要があります[ **ZwCommitEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)または[ **ZwRollbackEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)の参加します。
+**受信者の必須アクション**: 上位トランザクションマネージャーは、参加リストに対して[**Zwcommitenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)または[**ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackenlistment)のいずれかを呼び出す必要があります。
 
-<a href="" id="transaction-notify-commit-request"></a>トランザクション\_通知\_コミット\_要求  
-**送信されたときに**:クライアントが呼び出す[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)します。 優先的なトランザクション マネージャーが参加リスト用には、この通知の登録、KTM 送信トランザクション\_通知\_コミット\_優れたトランザクション マネージャーに要求**の代わりに**トランザクションを送信する\_通知\_リソース マネージャーにコミットします。
+<a href="" id="transaction-notify-commit-request"></a>トランザクション\_\_コミット\_要求に通知します  
+**送信日時**: クライアントは[**Zwcommittransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)を呼び出します。 上位トランザクションマネージャーが参加リストに対してこの通知を登録している場合、KTM はトランザクション\_通知を送信するのでは**なく**、\_コミット\_要求\_通知します。リソースマネージャーにコミット\_ます。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:優先的なトランザクション マネージャーの呼び出し[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)します。
+**受信者の必須のアクション**: 上位トランザクションマネージャーが[**Zwcommitenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)を呼び出します。
 
-<a href="" id="transaction-notify-request-outcome"></a>トランザクション\_通知\_要求\_結果  
-**送信されたときに**:リソース マネージャーは、 [ **TmRequestOutcomeEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-tmrequestoutcomeenlistment)トランザクションの準備済み状態の中。
+<a href="" id="transaction-notify-request-outcome"></a>トランザクション\_\_要求\_結果に通知します  
+**送信時**: リソースマネージャーは、トランザクションが準備された状態のときに[**TmRequestOutcomeEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmrequestoutcomeenlistment)を呼び出します。
 
-**受信した**:優先的なトランザクション マネージャー。
+**受信者**: 上位トランザクションマネージャー。
 
-**受信者のアクションを必須**:上位のトランザクション マネージャーを呼び出す必要があります[ **ZwCommitEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)または[ **ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)します。
+**受信者の必須のアクション**: 上位トランザクションマネージャーは[**Zwcommitenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)または[**ZwRollbackEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackenlistment)を呼び出す必要があります。
 
-### <a href="" id="unused-notifications"></a> 未使用の通知
+### <a href="" id="unused-notifications"></a>未使用の通知
 
-次の通知が Ktmtypes.h で定義されますが、KTM 現在はサポートしていません。
+次の通知は Ktmtypes .h で定義されていますが、現在、KTM ではサポートされていません。
 
-トランザクション\_通知\_デリゲート\_コミット
+トランザクション\_\_デリゲート\_COMMIT に通知します
 
-トランザクション\_通知\_参加\_マスク
+\_マスクの参加\_トランザクション\_通知
 
-トランザクション\_通知\_参加\_PREPREPARE
+トランザクション\_通知\_登録\_事前準備
 
-トランザクション\_通知\_マーシャ リングする.
+トランザクション\_通知\_マーシャリング
 
 トランザクション\_通知\_昇格
 
@@ -209,9 +209,9 @@ KTM では、各リソース マネージャーの通知キューを提供しま
 
 トランザクション\_通知\_伝達\_プッシュ
 
-トランザクション\_通知\_TM\_オンライン
+トランザクション\_\_TM\_オンラインに通知します
 
-トランザクション\_通知\_コミット\_FINALIZE
+トランザクション\_\_コミット\_最終処理に通知します
 
  
 

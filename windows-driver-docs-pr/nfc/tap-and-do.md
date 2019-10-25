@@ -1,6 +1,6 @@
 ---
 title: Tap and Do
-description: タップし、操作を行いますが保持しているデバイスの間でまとめて処理をトリガーするために使用近接内のユーザーの間の自然な操作であるジェスチャにです。
+description: Tap と Do は、近接しているユーザー間の自然な相互作用であり、保持しているデバイス間で何かを実行するために使用されます。
 ms.assetid: 0A00A00B-E136-4755-8FEE-03018491D0AF
 keywords:
 - NFC
@@ -10,24 +10,24 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4cbe79058f711c589cd91ab115ded93c32739e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 258ee0f6110cddbb3652d6013c5a1e0f86bb701c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353278"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827318"
 ---
 # <a name="tap-and-do"></a>Tap and Do
 
 
-*タップし、操作を行います*が近接が保持しているデバイスの間でまとめて処理をトリガーに使用するユーザーの間の自然な操作であるジェスチャ。
+*Tap と Do*は、近接しているユーザー間の自然な相互作用であり、保持しているデバイス間で何かを実行するために使用されます。
 
-Windows 8 以降、新しいジェスチャを導入という現実の世界の相互作用の*をタップし、操作を行います*します。 *タップし、操作を行います*(センチメートル) 数の幅が狭い物理ボリューム内で動作できるように非常に意図的なものになります。 プログラミング モデルでは、物理環境内のデバイス間での操作のトリガーにこの記事がマップされます。 基になるシステムのほぼフィールド近接 (NFP) は、電磁場、NFC などを使用するテクノロジで主にモデル化されたが、プラットフォームは柔軟性があり NFP 要件を満たすその他の革新的なシステムがサポートされています。 Windows では、軽量かつ直感的に理解しやすい NFP に基づいてユーザー モデルを提供します。 Windows には、さまざまな NFP を利用する組み込みのエクスペリエンスが含まれます。 API は、サード パーティ製の開発に使用できます。
+Windows 8 以降では、 *Tap と Do*と呼ばれる実際の対話に新しいジェスチャが導入されました。 *タップして*、小さい物理ボリューム (センチメートルの順序) で動作します。これは、意図的なものです。 プログラミングモデルでは、この intentionality を物理環境内のデバイス間のアクションのトリガーにマップします。 Near Field 近接 (NFP) の基になるシステムは、NFC などの電磁フィールドを使用するテクノロジを中心に設計されていますが、プラットフォームは柔軟であり、NFP 要件を満たす他の革新的なシステムもサポートされています。 Windows では、NFP に基づくユーザーモデルが提供されており、わかりやすく、軽量で直観的です。 Windows には、NFP を利用する多くの組み込みエクスペリエンスが含まれています。 この API は、サードパーティ製の開発に使用できます。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+ [NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

@@ -3,21 +3,21 @@ title: COPP と ChangeDisplaySettingsEx
 description: COPP と ChangeDisplaySettingsEx
 ms.assetid: 5c729bfd-0758-4de5-9e81-a3279f8aab56
 keywords:
-- 保護 WDK COPP、ChangeDisplaySettingsEx をコピーします。
-- ビデオのコピー防止 WDK COPP、ChangeDisplaySettingsEx
-- COPP WDK DirectX va なので、ChangeDisplaySettingsEx
-- ビデオの WDK COPP ChangeDisplaySettingsEx の保護
+- コピー防止 WDK COPP、ChangeDisplaySettingsEx
+- ビデオコピー防止 WDK COPP、ChangeDisplaySettingsEx
+- COPP WDK DirectX VA、ChangeDisplaySettingsEx
+- 保護されたビデオ WDK COPP、ChangeDisplaySettingsEx
 - ChangeDisplaySettingsEx
-- アナログ コンテンツ保護 WDK COPP
-- 保護の種類の ACP WDK COPP
+- アナログコンテンツ保護 WDK COPP
+- ACP 保護タイプ WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e14718f2b7a0593851e3a9e03c50f11c8d8663f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d38267a5945ba880cadd83a85bbf571b7ab722b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370270"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839040"
 ---
 # <a name="copp-and-changedisplaysettingsex"></a>COPP と ChangeDisplaySettingsEx
 
@@ -25,11 +25,11 @@ ms.locfileid: "67370270"
 ## <span id="ddk_copp_and_changedisplaysettingsex_gg"></span><span id="DDK_COPP_AND_CHANGEDISPLAYSETTINGSEX_GG"></span>
 
 
-**このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
+**このセクションは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-アナログ コンテンツ保護 (ACP) を Microsoft win32 レベルのアプリケーションを変更できるため、 **ChangeDisplaySettingsEx**関数の場合、ビデオのミニポート ドライバーを確認してください、ACP 保護の調整がを通じて型を**ChangeDisplaySettingsEx**はによって行われる調整に依存しない、 **IAMCertifiedOutputProtection**インターフェイス。 つまり、ビデオのミニポート ドライバーの物理的なコネクタで ACP 保護の種類が設定されている場合[ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)関数の場合、ビデオのミニポート ドライバーを許可すべき、ACP を無効にします。保護の種類の物理コネクタ経由で、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)要求。 ユーザー モードへの呼び出しに注意してください。 **ChangeDisplaySettingsEx** IOCTL 開始\_ビデオ\_処理\_ビデオのミニポート ドライバーに VIDEOPARAMETERS 要求。
+アプリケーションでは、Microsoft Win32 **Changedisplaysettingsex**関数を呼び出すことによってアナログコンテンツ保護 (ACP) レベルを変更できるため、ビデオミニポートドライバーは、を使用**して、acp 保護の種類をChangeDisplaySettingsEx**は、 **IAMCertifiedOutputProtection**インターフェイスによって行われる調整に依存しません。 つまり、ビデオミニポートドライバーの[*Coppcommand*](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)関数を使用して、物理コネクタで acp 保護の種類が設定されている場合、ビデオミニポートドライバーでは、物理コネクタでの acp 保護の種類の無効化を[**IOCTL\_VIDEO\_\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)要求を処理します。 **Changedisplaysettingsex**のユーザーモード呼び出しでは、ビデオミニポートドライバーへの VIDEOPARAMETERS 要求を処理\_、ビデオ\_ハンドル\_ます。
 
-詳細については、 **ChangeDisplaySettingsEx**関数を Windows SDK のマニュアルを参照してください。
+**Changedisplaysettingsex**関数の詳細については、Windows SDK のドキュメントを参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOSTABILIZATION
-description: この拡張プロパティのコントロールは、ドライバーでのデジタル ビデオ安定化の制御に使用されます\\MFT0 します。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOSTABILIZATION
+description: この拡張プロパティコントロールは、ドライバー\\MFT0 のデジタルビデオ安定化を制御するために使用されます。
 ms.assetid: 60F7D1B2-02F1-459A-8F6A-FC61D65705E1
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOSTABILIZATION ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOSTABILIZATION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e9564f4d5bf27437b18ca386db43b636618b83df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9c85ba2466499f5ccefe7633cbe13824ef37dd4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341878"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826200"
 ---
-# <a name="kspropertycameracontrolextendedvideostabilization"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOSTABILIZATION
+# <a name="ksproperty_cameracontrol_extended_videostabilization"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_VIDEOSTABILIZATION
 
-この拡張プロパティのコントロールは、ドライバーでのデジタル ビデオ安定化の制御に使用されます\\MFT0 します。
+この拡張プロパティコントロールは、ドライバー\\MFT0 のデジタルビデオ安定化を制御するために使用されます。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "63341878"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ ms.locfileid: "63341878"
 </tbody>
 </table>
 
-次のフラグ、KSCAMERA 内に配置できる\_EXTENDEDPROP\_ヘッダー。フラグは、ドライバーでのデジタル ビデオ安定化を制御するフラグをフィールド\\MFT0 します。 既定では、ドライバーはビデオ安定化をが必要です。
+次のフラグは、KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。ドライバー\\MFT0 のデジタルビデオ安定化を制御するフラグフィールドフラグを指定します。 既定では、ドライバーはビデオが安定化されている必要があります。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_OFF       0x0000000000000000
@@ -57,18 +57,18 @@ ms.locfileid: "63341878"
 #define KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_AUTO      0x0000000000000002
 ```
 
-ドライバーがデジタル ビデオ安定化をサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
+ドライバーがデジタルビデオ安定化をサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
 
-VIDEOSTABILIZATION をサポートする必要があります、ドライバーは、このコントロールをサポートする場合\_ON\\OFF。
+ドライバーがこのコントロールをサポートしている場合は、\\オフになっている VIDEOSTABILIZATION\_をサポートする必要があります。
 
-このコントロールの設定の呼び出しも何も起こりませんビデオの暗証番号 (pin) が、状態、KSSTATE よりも高い\_停止状態です。 ドライバーはビデオ ピンが停止状態でないとステータスを返す場合の受信設定の呼び出し元に戻す\_無効な\_デバイス\_状態。 ドライバーは、GET 呼び出しで、フラグ フィールドの現在の設定を返す必要があります。
+このコントロールの SET 呼び出しは、ビデオの pin が KSK 状態\_停止状態よりも大きい状態にある場合は効果がありません。 ビデオの pin が停止状態ではない場合、ドライバーは受信した設定の呼び出しを拒否し、デバイス\_状態\_無効\_状態を返します。 GET 呼び出しでは、ドライバーは Flags フィールドの現在の設定を返します。
 
-このコントロールは、プロファイルのコンテキストで使用するプロファイルは、品質モードのドライバーにヒントとして機能します。 ドライバーは、ビデオ会議、または高品質のビデオ記録ビデオ安定化を有効にする基に、プロファイルを選択すると、たとえば、低待機時間または高品質を最適化するかどうかを判断できます。
+このコントロールがプロファイルのコンテキストで使用される場合、プロファイルは品質モードのドライバーのヒントとして機能します。 ドライバーは、選択したプロファイルに基づいてビデオの安定化が有効になっている場合、低待機時間と高品質のどちらを最適化するかを決定できます。たとえば、ビデオ会議や高品質のビデオ記録などです。
 
 > [!NOTE]
-> PROPSETID\_しました\_CAMERACONTROL\_ビデオ\_安定化は、Windows 10 で非推奨になります。
+> PROPSETID\_VIDCAP\_CAMERACONTROL\_VIDEO\_安定化は Windows 10 で非推奨となります。
 
-次の表では、フラグの機能について説明します。
+次の表では、フラグ機能について説明します。
 
 <table>
 <colgroup>
@@ -84,33 +84,33 @@ VIDEOSTABILIZATION をサポートする必要があります、ドライバー�
 <tbody>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_OFF</p></td>
-<td><p>これは、必須の機能です。 指定した場合、driver\MFT0 でデジタル ビデオ安定化は無効です。</p></td>
+<td><p>これは必須の機能です。 指定した場合、driver\MFT0. でデジタルビデオ安定化が無効になります。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_ON</p></td>
-<td><p>これは、必須の機能です。 Driver\MFT0 でデジタル ビデオ安定化が有効になっている指定した場合、および padding 設定既定オーバーがドライバーの責任です。 このフラグは、自動と OFF のフラグで相互に排他的です。</p></td>
+<td><p>これは必須の機能です。 このオプションを指定すると、driver\MFT0 でデジタルビデオの安定化が有効になり、既定のオーバースキャンの設定はドライバーによって有効になります。 このフラグは、AUTO および OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_AUTO</p></td>
-<td><p>この機能は省略可能です。 指定した場合、ビデオ安定化を実行するかどうかと、シーンの分析とキャプチャのシナリオに基づいて、どの程度の安定化を適用するこのような機能をサポートしているドライバーが決まります。 このフラグは、ON、OFF のフラグで相互に排他的です。</p></td>
+<td><p>この機能は省略可能です。 指定した場合、このような機能をサポートするドライバーは、ビデオ安定化を実行する必要があるかどうか、およびシーン分析とキャプチャシナリオに基づいて適用される安定化の量を決定します。 このフラグは、ON および OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 </tbody>
 </table>
 
 > [!NOTE]
-> 実装によって overscanned バッファーが割り当てられ、ドライバーによって内部的に、またはパイプラインによって。
+> 実装によっては、過剰にスキャンされたバッファーが、内部的に、またはパイプラインによって、ドライバーによって割り当てられる場合があります。
 
-Overscanned バッファーをドライバーによって割り当てられる場合は、ドライバーは定期的なメディアの種類し、overscanned メディアの種類の両方を提供する必要があります。 MFT0 には、定期的なメディアの種類を提供する必要があります。 MFT0 の出力メディアの種類の定期的なメディアの種類を設定したときに、MFT0 が対応する overscanned メディアを選択します。 ビデオ安定化が有効な場合、ドライバーからの型がその入力メディアの種類としてメディアの種類を提供します。 ビデオ安定化をオフにすると、MFT0 は入力メディアの種類として定期的なメディアの種類を選択する必要があります。 MF を返す必要があります、MFT0\_E\_INVALIDMEDIATYPE overscanned メディアの種類の場合は、ビデオ安定化をオンにするとメディアの種類を出力として設定されます。
+過剰スキャンされたバッファーがドライバーによって割り当てられる場合、ドライバーは通常のメディアの種類と過剰にスキャンされたメディアの種類の両方をアドバタイズする必要があります。 MFT0 は、通常のメディアの種類をアドバタイズする必要があります。 MFT0 の出力メディアの種類で通常のメディアの種類を設定すると、ビデオ安定化が有効になっている場合、MFT0 は入力メディアの種類として、提供されたメディアの種類として、対応する過剰スキャンされたメディアの種類を選択する必要があります。 ビデオの安定化がオフになっている場合、MFT0 は入力メディアの種類として通常のメディアの種類を選択する必要があります。 MFT0 は、ビデオ安定化が有効になっているときに、過剰スキャンされたメディアの種類が出力メディアの種類として設定されている場合、MF\_E\_INVALIDMEDIATYPE を返します。
 
-Overscanned バッファーが、ドライバーによって割り当てられている場合、ドライバーと MFT0 は定期的なメディアの種類を提供する必要があります。 MFT0 は、両方の入力メディアの種類の定期的なメディアの種類を設定し、メディアの種類を出力する必要があります。
+過剰スキャンされたバッファーがドライバーによって割り当てられている場合、ドライバーと MFT0 の両方が通常のメディアの種類をアドバタイズする必要があります。 MFT0 は、入力メディアの種類と出力メディアの種類の両方に通常のメディアの種類を設定する必要があります。
 
-影響でビデオ安定化 (つまり、ビデオ安定化ドライバーも MFT0 完了) をサポートするために、ドライバーと MFT0 する必要がありますさらにアドバタイズ overscanned メディアの種類に関係なく。 この場合、両方の正規表現と overscanned メディアの種類は、ドライバーと MFT0 によって公開されます。 次の規則ベースの効果とドライバーの両方を確実に適用されます\\ベース MFT0 ビデオ安定化が正常に動作します。
+効果ベースのビデオ安定化をサポートするために (つまり、ドライバーでも MFT0 でもビデオの安定化が行われていません)、ドライバーと MFT0 はに関係なく、過剰にスキャンされたメディアの種類をさらにアドバタイズする必要があります。 この場合、通常のメディアと過剰にスキャンされたメディアの種類は、ドライバーと MFT0 によって公開されます。 次の規則が適用されて、効果ベースとドライバー\\MFT0 ベースのビデオ安定化が正常に機能していることを確認します。
 
--   ドライバーの中に MFT0 出力メディアの種類として、overscanned メディアの種類が設定されている場合\\ベース MFT0 ビデオ安定化は、MF を返す必要があります MFT0\_E\_INVALIDMEDIATYPE。
+-   ドライバー\\MFT0 based video 安定化がオンになっているときに、過剰スキャンされたメディアの種類が MFT0 の出力メディアの種類として設定されている場合、MFT0 はを\_\_返します。
 
--   MFT0 出力メディアの種類として、定期的なメディアの種類を設定すると、アプリのベースの効果のビデオ安定化 overscanned メディアの種類を受け取ることができるベースのビデオ安定化に効果を有効にする試行でエラーを返します。
+-   通常のメディアの種類が MFT0 出力メディアの種類として設定されている場合、効果ベースのビデオ安定化が過剰にスキャンされたメディアの種類のみを使用できる場合、アプリは効果ベースのビデオ安定化をオンにしようとしてエラーを返します。
 
-次の表には、説明と要件が含まれています、 [KSCAMERA\_EXTENDEDPROP\_ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)ビデオ安定化コントロールを使用する場合は、フィールドを構造体します。
+次の表には、ビデオ安定化コントロールを使用する場合の[KSCAMERA\_EXTENDEDPROP\_ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造フィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -119,34 +119,34 @@ Overscanned バッファーが、ドライバーによって割り当てられ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必要がある、暗証番号 (pin) の ID に関連付けられているビデオ ピン留めします。</p></td>
+<td><p>は、ビデオ pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>これは、sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>定義したように、サポートされている KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX フラグのビットごとの OR があります。</p></td>
+<td><p>これは、前述のように、サポートされている KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX フラグのビットごとの OR である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX フラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>

@@ -3,18 +3,18 @@ title: NDIS ポートの識別
 description: NDIS ポートの識別
 ms.assetid: 40917e62-5424-4c46-9b5b-a1a15812ef59
 keywords:
-- WDK NDIS、identifyng のポート
-- NDIS ポート WDK、identifyng
-- identifyng NDIS ポート
-- ポート番号の WDK NDIS
+- ポート WDK NDIS、識別子
+- NDIS ポート WDK、識別子
+- NDIS ポートの識別子
+- ポート番号 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e300f9b14e3bbe3eae24ec3c47ef3b86f2f7ca38
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67a63ee26490bd126d2ba1174b19d13aac3573f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384551"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823826"
 ---
 # <a name="identifying-an-ndis-port"></a>NDIS ポートの識別
 
@@ -22,9 +22,9 @@ ms.locfileid: "67384551"
 
 
 
-NDIS、ポートは、そのポート番号によって識別されます。 ミニポート ドライバーを呼び出すと、 [ **NdisMAllocatePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocateport)関数、ポートの割り当てを割り当ての NDIS およびポートに最下位の使用可能なポート番号を割り当てます。 ミニポート ドライバーを呼び出すと、 [ **NdisMFreePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreeport)ポートを解放する機能、NDIS も NDIS は、ポート番号を再利用できるように、解放されたポートに割り当てられているポート番号を解放します。
+NDIS ポートは、そのポート番号によって識別されます。 ミニポートドライバーがポートを割り当てるために[**NdisMAllocatePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocateport)関数を呼び出すと、NDIS はポートに使用可能な最も小さいポート番号を割り当てて割り当てます。 ミニポートドライバーがポートを解放するために[**NdisMFreePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)関数を呼び出すと、ndis は解放されたポートに割り当てられているポート番号も解放して、ndis がポート番号を再利用できるようにします。
 
-ポートごとに別のコンテキストの領域は、ドライバーは、ドライバーは、対応するコンテキストの領域にポート番号を変換するため効率的なアルゴリズムを提供する必要があります。
+ドライバーがポートごとに個別のコンテキスト領域を保持している場合、ドライバーは、対応するコンテキスト領域にポート番号を変換するための効率的なアルゴリズムを提供する必要があります。
 
  
 

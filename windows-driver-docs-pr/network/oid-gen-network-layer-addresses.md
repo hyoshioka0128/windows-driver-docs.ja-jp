@@ -1,43 +1,43 @@
 ---
 title: OID_GEN_NETWORK_LAYER_ADDRESSES
-description: セットとして OID_GEN_NETWORK_LAYER_ADDRESSES OID ミニポート ドライバーを基になるとバインドされたインスタンスに関連付けられているネットワーク層のアドレスの一覧について複数層の他のドライバーに通知します。
+description: セットとして、OID_GEN_NETWORK_LAYER_ADDRESSES OID は、バインドされたインスタンスに関連付けられているネットワーク層のアドレスの一覧について、基になるミニポートドライバーやその他の階層化されたドライバーに通知します。
 ms.assetid: 4a75c2ca-1a58-462e-876a-a65cfe63441e
 ms.date: 08/08/2017
-keywords: -OID_GEN_NETWORK_LAYER_ADDRESSES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_NETWORK_LAYER_ADDRESSES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 09263514e2bb79c5a29b8cf58f4285f74091dae0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d49a908fc5f128d8c70f8adf30a66f159630a77
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383667"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824392"
 ---
-# <a name="oidgennetworklayeraddresses"></a>OID\_GEN\_ネットワーク\_レイヤー\_アドレス
+# <a name="oid_gen_network_layer_addresses"></a>OID\_GEN\_ネットワーク\_レイヤーの\_アドレス
 
 
-OID、セットとして\_GEN\_ネットワーク\_レイヤー\_アドレス OID は、基になるミニポート ドライバーやバインドのインスタンスに関連付けられているネットワーク層のアドレスの一覧について階層型の他のドライバーに通知します。
+設定として、OID\_GEN\_ネットワーク\_レイヤー\_アドレス OID は、基になるミニポートドライバーおよびその他の階層化されたインスタンスに関連付けられているネットワーク層のアドレスの一覧に関する他の階層化されたドライバーに通知します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
 (省略可能)。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a name="remarks"></a>注釈
 -------
 
-バインドのインスタンスは、呼び出し元のトランスポートへの呼び出しで設定するドライバーの間のバインド[ **NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)します。 トランスポートは、トランスポートを使用して\_アドレスと TA\_アドレス構造を基になるミニポート ドライバーおよびその他の通知がネットワーク層のアドレスの一覧のドライバーを階層化します。 ミニポート ドライバーやその他の階層型のドライバーを使用して、互換性のあるネットワーク\_アドレス\_一覧とネットワーク\_アドレス構造体、バインドされたインターフェイスのネットワーク層のアドレスの一覧を設定する次のように定義します。
+バインドされたインスタンスとは、呼び出し元トランスポートと、 [**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)の呼び出しによって設定されたドライバーとの間のバインドです。 トランスポート\_アドレス構造と TA\_アドレス構造を使用して、ネットワーク層のアドレスの一覧について、基になるミニポートドライバーやその他の階層化されたドライバーに通知します。 ミニポートドライバーおよびその他の階層化ドライバーでは、互換性のあるネットワーク\_アドレス\_リストとネットワーク\_アドレス構造を使用して、次のように定義して、バインドされたインターフェイスのネットワーク層アドレスの一覧を設定します。
 
 ```C++
 typedef struct _NETWORK_ADDRESS_LIST {
@@ -47,15 +47,15 @@ typedef struct _NETWORK_ADDRESS_LIST {
 } NETWORK_ADDRESS_LIST, *PNETWORK_ADDRESS_LIST;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 <a href="" id="addresscount"></a>**AddressCount**  
-配列内に表示されているネットワーク層のアドレスの数を指定します、**アドレス**メンバー。
+**アドレス**メンバーの配列に一覧表示されているネットワーク層アドレスの数を指定します。
 
 <a href="" id="addresstype"></a>**AddressType**  
-この OID を送信するプロトコルの種類を指定します。 このメンバーは有効な場合、 **AddressCount**メンバーが 0 に設定されます。 **AddressCount**メンバー ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスの一覧を消去するその他の複数層のドライバーに通知する 0 に設定されます。 プロトコルには、次の値のいずれかを指定できます。
+この OID を送信するプロトコルの種類を指定します。 このメンバーは、 **Addresscount**メンバーが0に設定されている場合にのみ有効です。 **Addresscount**メンバーは0に設定され、ミニポートドライバーまたはその他の層ドライバーに、バインドされたインターフェイスのネットワーク層アドレスの一覧をクリアするように通知します。 プロトコルには、次のいずれかの値を指定できます。
 
-<a href="" id="ndis-protocol-id-default"></a>NDIS\_プロトコル\_ID\_既定  
+<a href="" id="ndis-protocol-id-default"></a>NDIS\_プロトコル\_ID\_既定値  
 既定のプロトコル
 
 <a href="" id="ndis-protocol-id-tcp-ip"></a>NDIS\_プロトコル\_ID\_TCP\_IP  
@@ -67,8 +67,8 @@ NetWare IPX プロトコル
 <a href="" id="ndis-protocol-id-nbf"></a>NDIS\_プロトコル\_ID\_NBF  
 NetBIOS プロトコル
 
-<a href="" id="address"></a>**アドレス**  
-ネットワークの種類のネットワーク層のアドレスの配列\_アドレス。 **AddressCount**メンバーは、この配列内の要素の数を指定します。
+<a href="" id="address"></a>**先**  
+ネットワーク\_アドレスの種類のネットワーク層アドレスの配列。 **Addresscount**メンバーは、この配列内の要素の数を指定します。
 
 ```C++
 typedef struct _NETWORK_ADDRESS {
@@ -78,24 +78,24 @@ typedef struct _NETWORK_ADDRESS {
 } NETWORK_ADDRESS, *PNETWORK_ADDRESS;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 <a href="" id="addresslength"></a>**AddressLength**  
-このネットワーク層のアドレスのバイト単位のサイズを指定します。 **アドレス**メンバーには、このアドレスを指定するバイトの配列が含まれています。
+このネットワーク層アドレスのサイズをバイト単位で指定します。 **アドレス**メンバーには、このアドレスを指定するバイトの配列が含まれます。
 
 <a href="" id="addresstype"></a>**AddressType**  
-この OID とこのネットワーク層のアドレスを送信するプロトコルの種類を指定します。 このメンバーは有効な場合、 **AddressCount**ネットワーク内のメンバー\_アドレス\_リスト構造が 0 以外の値に設定されます。 **AddressCount**ネットワーク内のメンバー\_アドレス\_一覧は、ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスのリストを変更するその他の複数層のドライバーに通知する 0 以外の値に設定されます。 プロトコルの種類は、上記の一覧で定義されます。
+この OID とこのネットワーク層アドレスを送信するプロトコルの種類を指定します。 このメンバーは、ネットワーク\_アドレス\_リスト構造の**Addresscount**メンバーが0以外の値に設定されている場合にのみ有効です。 ネットワーク\_アドレス\_リストの**Addresscount**メンバーは0以外の値に設定され、ミニポートドライバーまたはその他のレイヤードドライバーに、バインドされたインターフェイスのネットワーク層アドレスの一覧を変更するように通知します。 プロトコルの種類は、上記の一覧で定義されています。
 
-<a href="" id="address"></a>**アドレス**  
-このネットワーク層のアドレスを指定するバイトの配列。 **AddressLength**メンバーは、この配列内のバイト数を指定します。
+<a href="" id="address"></a>**先**  
+このネットワーク層アドレスを指定するバイトの配列。 **Addresslength**メンバーは、この配列内のバイト数を指定します。
 
-トランスポートが呼び出すことができます、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)関数を渡すことができます、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)OID で塗りつぶされている構造\_GEN\_ネットワーク\_レイヤー\_アドレス コード。 この呼び出しでは、そのインスタンスに関連付けられているアドレスが変更されたバインドのインスタンスに通知します。 この呼び出しで、トランスポートも渡す、バインドされたインスタンスで、 *NdisBindingHandle*パラメーター。 バインドされたインスタンスが、トランスポートと基になるミニポート ドライバーまたはその他の複数層のドライバーの間のバインディング設定です。 この呼び出しで、トランスポートを入力する必要があります、 **InformationBuffer**の NDIS メンバー\_OID\_トランスポートへのポインターを要求\_アドレス構造体。 トランスポート\_アドレスがネットワークに対応\_アドレス\_構造体を一覧表示し、ネットワーク層のアドレスの一覧を含める必要があります。
+トランスポートは、 [**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)関数を呼び出すことができます。また、OID\_GEN\_ネットワーク\_レイヤー\_アドレスコードに格納されている[**要求構造\_NDIS\_oid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)を渡すことができます。 この呼び出しは、バインドされたインスタンスに、そのインスタンスに関連付けられているアドレスの変更を通知します。 この呼び出しでは、トランスポートは*NdisBindingHandle*パラメーターにバインドされたインスタンスも渡します。 バインドされたインスタンスは、トランスポートと、基になるミニポートドライバーまたはその他の階層化ドライバーの間に設定されたバインドです。 この呼び出しでは、トランスポートは、トランスポート\_アドレス構造体へのポインターを使用して、NDIS\_OID\_要求の**Informationbuffer**メンバーに入力する必要があります。 トランスポート\_アドレスは、ネットワーク\_アドレス\_リスト構造に対応し、ネットワーク層アドレスの一覧が含まれている必要があります。
 
-トランスポートが基になるミニポート ドライバーに中間のドライバーを使用して住所を渡すとします。 中間のドライバーには、アドレスも必要とする場合、基になるミニポート ドライバーに渡す前にメモがかかります。 基になるミニポート ドライバー、古いドライバーでは特に、NDIS のステータス値を返すことができます\_状態\_いない\_サポートされているか、NDIS\_状態\_成功します。 基になるミニポート ドライバーでは、トランスポートに対するバックアップ操作の状態を伝達します。 中間ドライバーでは、アドレスの通知を受信し続ける必要があります、その中間のドライバーが NDIS に状態を変更する必要があります必要がある場合\_状態\_成功します。トランスポートが NDIS を解釈場合がありますそれ以外の場合、\_状態\_いない\_基になるミニポート ドライバーをトランスポートが追加のアドレスを発行する必要がないことを示す値を更新するように、サポートします。 場合 NDIS\_状態\_成功が返される、基になるドライバーのアドレスの追加と削除を含む、関連付けられているアドレスの変更の通知を続行する義務のあるトランスポート。
+たとえば、トランスポートが中間ドライバーを介してアドレスを基になるミニポートドライバーに渡すとします。 中間ドライバーもアドレスを必要とする場合は、基になるミニポートドライバーに渡す前に、それらを書き留めておく必要があります。 基になるミニポートドライバー (特に古いドライバー) は、NDIS\_STATUS の状態値を返すことができます。この値はサポートされていないか、NDIS\_ステータス\_成功した\_\_ありません。 基になるミニポートドライバーによって、操作の状態がトランスポートに反映されます。 中間ドライバーがアドレス通知を引き続き受信する必要があり、必要に応じて中間ドライバーがステータスを NDIS\_STATUS\_SUCCESS に変更する必要がある場合。そうしないと、トランスポートは NDIS\_の状態を解釈することがあり\_\_サポートされていません。これは、基になるミニポートドライバーでは、トランスポートが追加のアドレスを更新する必要がないことを示しています。 NDIS\_STATUS\_SUCCESS が返された場合、アドレスの追加や削除など、関連付けられているアドレスの変更について、基になるドライバーへの通知を継続する義務があります。
 
-プロトコルを設定できる、 **AddressCount**トランスポートのメンバー\_ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスの一覧を消去するその他の複数層のドライバーに通知する、0 のアドレス。 場合**AddressCount** 0 に設定されている、 **AddressType**ネットワーク内のメンバー\_アドレス\_リストが有効では、 **AddressType**内のメンバーネットワーク\_構造体のアドレスが無効です。 これに対して、プロトコルを設定できます**AddressCount**ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスのリストを変更するその他の複数層のドライバーに通知する 0 以外の値。 この場合、 **AddressType**ネットワーク内のメンバー\_アドレス\_リストが無効です、 **AddressType**ネットワーク内のメンバー\_アドレス構造体が無効です。
+プロトコルでは、トランスポート\_アドレスの**Addresscount**メンバーを0に設定することにより、バインドされたインターフェイス上のネットワーク層アドレスの一覧をクリアするようにミニポートドライバーまたはその他の層ドライバーに通知できます。 **Addresscount**が0に設定されている場合は、NETWORK\_ADDRESS\_リストの**addresstype**メンバーが有効であり、ネットワーク\_アドレス構造の**addresstype**メンバーが有効ではありません。 一方、プロトコルでは、 **Addresscount**を0以外の値に設定して、ミニポートドライバーまたはその他の層ドライバーに対して、バインドされたインターフェイスのネットワーク層アドレスの一覧を変更するように通知できます。 この場合は、NETWORK\_ADDRESS\_LIST の**addresstype**メンバーが有効ではなく、ネットワーク\_アドレス構造の**addresstype**メンバーが有効です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -106,7 +106,7 @@ typedef struct _NETWORK_ADDRESS {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -114,11 +114,11 @@ typedef struct _NETWORK_ADDRESS {
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)
+[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)
 
-[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)
+[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)
 
  
 

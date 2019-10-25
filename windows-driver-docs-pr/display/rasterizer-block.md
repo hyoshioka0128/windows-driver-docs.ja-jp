@@ -4,33 +4,33 @@ description: ラスタライザー ブロック
 ms.assetid: 115c265d-0264-4a8a-b07b-710438394c68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23f122fb8a13fb17d175d2b9f9f660e94705eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5203d58a17ae4aec5c0a3d704bb1e55b39411cb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385035"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825950"
 ---
 # <a name="rasterizer-block"></a>ラスタライザー ブロック
 
 
-ラスタライザー ブロックは、クリップ、プリミティブを設定し、ピクセル シェーダーのステージを呼び出す方法を決定します。 Direct3D のランタイムでは、パイプラインのステージとしてラスタライザー ブロックは表示されません。 代わりに、Direct3D のランタイムは、重要な固定機能の操作を実行するために発生するパイプライン ステージの間のインターフェイスとしてラスタライザーのブロックを表示します。 これらの固定機能操作の多くは、ソフトウェア開発者が調整できます。
+ラスタライザーは、プリミティブを設定し、ピクセルシェーダーステージの呼び出し方法を決定します。 Direct3D ランタイムは、ラスタライザーブロックをパイプラインのステージとして表示しません。 代わりに、Direct3D ランタイムは、一連の固定関数操作を実行するために発生するパイプラインステージ間のインターフェイスとして、ラスタライザーブロックを表示します。 これらの固定関数操作の多くは、ソフトウェア開発者によって調整できます。
 
-ラスタライザー常に判断入力位置クリップ空間に用意されて、クリッピングとパースペクティブの除算を実行し、ビューポートのスケールとオフセットが適用されます。
+ラスタライザーは、入力位置がクリップスペースで提供されることを常に判断し、クリッピングとパースペクティブの分割を実行し、ビューポートのスケールとオフセットを適用します。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ラスタライザーの状態を破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、ラスタライザーの状態を作成、設定、および破棄します。
 
-[**CalcPrivateRasterizerStateSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivaterasterizerstatesize)
+[**CalcPrivateRasterizerStateSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivaterasterizerstatesize)
 
-[**CreateRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createrasterizerstate)
+[**CreateRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createrasterizerstate)
 
-[**DestroyRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyrasterizerstate)
+[**DestroyRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyrasterizerstate)
 
-[**SetRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setrasterizerstate)
+[**SetRasterizerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setrasterizerstate)
 
-[**SetScissorRects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setscissorrects)
+[**SetScissorRects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setscissorrects)
 
-[**SetViewports**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setviewports)
+[**SetViewports ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setviewports)
 
  
 

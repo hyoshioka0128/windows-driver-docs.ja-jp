@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_EXTDEVICE\_ID
-description: KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化されたシステムの id を取得します。
+title: KSK プロパティ\_EXTDEVICE\_ID
+description: KSK プロパティ\_EXTDEVICE\_ID プロパティは、外部デバイスの汎用システム全体の Id を取得します。
 ms.assetid: ff0f37f8-55a8-45b9-8cf1-81e2cc5ac3aa
 keywords:
-- KSPROPERTY_EXTDEVICE_ID ストリーミング メディア デバイス
+- KSPROPERTY_EXTDEVICE_ID ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7cf5337107d9806321123f3ecfd548aa6604d23
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0992004c619088921974b2a7c4653b63b85f4939
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354871"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827030"
 ---
-# <a name="kspropertyextdeviceid"></a>KSPROPERTY\_EXTDEVICE\_ID
+# <a name="ksproperty_extdevice_id"></a>KSK プロパティ\_EXTDEVICE\_ID
 
 
-KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化されたシステムの id を取得します。
+KSK プロパティ\_EXTDEVICE\_ID プロパティは、外部デバイスの汎用システム全体の Id を取得します。
 
 ## <span id="ddk_ksproperty_extdevice_id_ks"></span><span id="DDK_KSPROPERTY_EXTDEVICE_ID_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
-<td><p>DWORD の配列</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
+<td><p>DWORD 配列</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、外部のデバイスの一意のノード Id を指定する DWORD 配列です。
+プロパティ値 (操作データ) は、外部デバイスの一意のノード Id を指定する DWORD 配列です。
 
 <a name="remarks"></a>注釈
 -------
 
-**NodeUniqueID** 、KSPROPERTY のメンバー\_EXTDEVICE\_構造を指定、外部のデバイスの一意のノード id。
+KSK プロパティの**Nodeuniqueid**メンバー\_extdevice\_S 構造体は、外部デバイスの一意のノード Id を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_EXTDEVICE\_ID プロパティは、外部のデバイスの汎用化
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTDEVICE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
+[**KSK プロパティ\_EXTDEVICE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
 
  
 

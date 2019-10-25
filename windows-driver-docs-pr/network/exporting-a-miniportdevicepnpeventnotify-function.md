@@ -3,19 +3,19 @@ title: MiniportDevicePnPEventNotify 関数のエクスポート
 description: MiniportDevicePnPEventNotify 関数のエクスポート
 ms.assetid: 1c6dce4e-c452-48ce-b3c9-a3fb7842f060
 keywords:
-- プラグ アンド プレイ WDK の NDIS ミニポート、イベント通知
+- WDK NDIS ミニポートのプラグアンドプレイ、イベント通知
 - MiniportDevicePnPEventNotify
 - 通知
-- WDK PnP、NDIS ミニポート ドライバーの通知
+- 通知 WDK PnP、NDIS ミニポートドライバー
 - イベント通知の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca306701c973e56aba974cb88613a32a96eaf667
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e416d8b709f2228280d3f6bce1d009322c6e3ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373350"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838111"
 ---
 # <a name="exporting-a-miniportdevicepnpeventnotify-function"></a>MiniportDevicePnPEventNotify 関数のエクスポート
 
@@ -23,15 +23,15 @@ ms.locfileid: "67373350"
 
 
 
-NDIS ミニポート ドライバーを呼び出す[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)関数は、次のプラグ アンド プレイ (PnP) イベントのミニポート ドライバーに通知します。
+NDIS は、ミニポートドライバーの[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)関数を呼び出して、次のプラグアンドプレイ (PnP) イベントのミニポートドライバーに通知します。
 
--   ミニポート ドライバーを制御する NIC の突然の削除。
+-   ミニポートドライバーで制御される NIC の突然の削除。
 
--   システムの電源に変更されました。
+-   システムの電源の変更。
 
-ミニポート ドライバーがエクスポートされない場合は、 *MiniportDevicePnPEventNotify*関数は、NDIS ドライバーの PnP これらのイベントを通知できません。
+ミニポートドライバーで*MiniportDevicePnPEventNotify*関数がエクスポートされない場合、NDIS はこれらの PnP イベントをドライバーに通知できません。
 
-すべての NDIS 6.0 とそれ以降のミニポート ドライバー*する必要があります*エクスポート、 *MiniportDevicePnPEventNotify*関数。 さらに、edge の削減を WDM を持つすべてのミニポート ドライバー*する必要があります*エクスポート、 *MiniportDevicePnPEventNotify*関数。
+すべての NDIS 6.0 およびそれ以降のミニポートドライバーは、 *MiniportDevicePnPEventNotify*関数をエクスポート*する必要があり*ます。 さらに、WDM が動作しているすべてのミニポートドライバーは、 *MiniportDevicePnPEventNotify*関数をエクスポート*する必要があり*ます。
 
  
 

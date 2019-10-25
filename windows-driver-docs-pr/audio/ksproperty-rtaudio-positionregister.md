@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_POSITIONREGISTER
-description: KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ、クライアントがアクセスできる仮想メモリの場所に特定のストリームをオーディオ デバイスの位置のレジスタにマップします。次の表では、このプロパティの機能をまとめたものです。
+title: KSK プロパティ\_RTAUDIO\_POSITIONREGISTER
+description: KSK プロパティ\_RTAUDIO\_POSITIONREGISTER プロパティは、特定のストリームのオーディオデバイスの位置登録をクライアントがアクセスできる仮想メモリ位置にマップします。次の表は、このプロパティの機能をまとめたものです。
 ms.assetid: 812072ec-d2a5-4e84-aebe-f24ca0d3cb21
 keywords:
-- KSPROPERTY_RTAUDIO_POSITIONREGISTER オーディオ デバイス
+- KSPROPERTY_RTAUDIO_POSITIONREGISTER オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72456c91aa4bab11f174bbf54b688183a3bdc6c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8095b94a315c2443800ed8600df65b6369223717
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354383"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830643"
 ---
-# <a name="kspropertyrtaudiopositionregister"></a>KSPROPERTY\_RTAUDIO\_POSITIONREGISTER
+# <a name="ksproperty_rtaudio_positionregister"></a>KSK プロパティ\_RTAUDIO\_POSITIONREGISTER
 
 
-KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ、クライアントがアクセスできる仮想メモリの場所に特定のストリームをオーディオ デバイスの位置のレジスタにマップします。
+KSK プロパティ\_RTAUDIO\_POSITIONREGISTER プロパティは、特定のストリームのオーディオデバイスの位置登録をクライアントがアクセスできる仮想メモリ位置にマップします。
 
-次の表では、このプロパティの機能をまとめたものです。
+次の表は、このプロパティの機能をまとめたものです。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ、クライアントがア
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">取得</th>
+<th align="left">[購入]</th>
 <th align="left">設定</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
@@ -49,53 +49,53 @@ KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ、クライアントがア
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>[はい]</p></td>
+<td align="left"><p>必須ではない</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) は、KSRTAUDIO\_HWREGISTER\_プロパティ構造体が含まれています、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、登録の推奨されるベース アドレスを示す値を含む構造体を読み込みます。
+プロパティ記述子 (インスタンスデータ)\_は、HWREGISTER\_プロパティ構造体であり、 [**Ksproperty**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造を格納しています。 クライアントは、要求を送信する前に、レジスタの優先ベースアドレスを示す値を使用して構造体を読み込みます。
 
-プロパティの値 (データの操作) は、KSRTAUDIO\_プロパティ ハンドラーが、ハードウェア、マップが先の仮想アドレスを書き込む先 HWREGISTER 構造体はレジスタを配置します。 クライアントは、このアドレスから直接登録を読み取ることができます。 KSRTAUDIO\_HWREGISTER 構造では、速度を位置レジスタをインクリメント自体も指定します。
+プロパティ値 (操作データ) は、KSRTAUDIO\_HWREGISTER 構造体です。この構造体は、ハードウェアの位置登録がマップされている仮想アドレスをプロパティハンドラーが書き込みます。 クライアントは、このアドレスから登録を直接読み取ることができます。 KSRTAUDIO\_HWREGISTER 構造体は、位置レジスタがそれ自体をインクリメントする速度も指定します。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
+RTAUDIO\_POSITIONREGISTER property 要求\_は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-通常、オーディオのアプリケーションは、オーディオ ストリームの現在の位置を監視する必要があります。 この位置はストリームの先頭からのバイト オフセットとして指定します。
+通常、オーディオアプリケーションでは、オーディオストリームの現在位置を監視する必要があります。 この位置は、ストリームの先頭からのバイトオフセットとして指定されます。
 
--   レンダリングのストリームの場合は、ストリームの位置は、アナログ デジタル コンバーター (Dac) を使って現在再生されているオーディオ フレームのバイト オフセットは。
+-   レンダリングストリームの場合、ストリームの位置は、デジタル-アナログコンバーター (Dac) を通じて現在再生されているオーディオフレームのバイトオフセットです。
 
--   キャプチャのストリームの場合は、ストリームの位置は、アナログ/デジタル コンバーター (Adc) を使って現在記録中のオーディオのフレームのバイト オフセットは。
+-   キャプチャストリームの場合、ストリームの位置は、現在アナログ-デジタルコンバーター (ADCs) を介して記録されているオーディオフレームのバイトオフセットです。
 
-一部のオーディオ デバイスには、ストリームの実行中に継続的にインクリメントする位置のレジスタが含まれています。 1 つのチップにすべてのデジタルおよびアナログ関数が組み込まれているオーディオ デバイス、位置、レジスタ通常を示します、現在のストリームの位置直接。
+一部のオーディオデバイスには、ストリームの実行中に継続的に増加する位置レジスタが含まれています。 すべてのデジタルおよびアナログの機能が1つのチップに組み込まれているオーディオデバイスでは、通常、位置登録は現在のストリームの位置を直接示します。
 
-ただし、バス コント ローラーとコーデックのチップを個別にデジタルおよびアナログ関数を分割するチップセット、位置、レジスタ バス コント ローラー チップでは一般にし、次のことを示します。
+ただし、デジタルおよびアナログ機能を別個のバスコントローラーとコーデックチップに分割するチップセットの場合、通常、位置登録はバスコントローラーチップに配置され、次のことが示されます。
 
--   レンダリングのストリームの場合は、位置、レジスタは、バス コント ローラーは、コーデックを記述したオーディオ フレームの最後のバイト オフセットを示します。
+-   レンダリングストリームの場合、位置レジスタは、バスコントローラーがコーデックに書き込んだ最後のオーディオフレームのバイトオフセットを示します。
 
--   キャプチャのストリームの場合は、位置、レジスタは、バス コント ローラーは、コーデックから読み取る直前のオーディオ フレームのバイト オフセットを示します。
+-   キャプチャストリームの場合、位置レジスタは、バスコントローラーがコーデックから読み取った最後のオーディオフレームのバイトオフセットを示します。
 
-どちらの場合も、位置レジスタの値では、コーデックを遅延は含まれません。 クライアントでは、コーデックの遅延を特定した場合は、(、Dac または ADCs) にある場合は true。 ストリームの位置を推定する位置のレジスタ値をこの遅延を追加できます。 照会することができます、コーデックから最悪の遅延を指定する CodecDelay 値の[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](ksproperty-rtaudio-hwlatency.md)プロパティ。
+どちらの場合も、位置レジスタの値にはコーデックの遅延が含まれません。 クライアントがコーデックの遅延を決定した場合、この遅延を位置レジスタの値に追加して、実際のストリームの位置 (Dac または ADCs) を推定することができます。 コーデックを使用した最悪の遅延を指定する CodecDelay 値の場合は、 [**RTAUDIO\_HWLATENCY プロパティ\_** ](ksproperty-rtaudio-hwlatency.md)にクエリを実行できます。
 
-成功した場合、KSPROPERTY\_RTAUDIO\_POSITIONREGISTER プロパティ要求位置の登録をユーザー モードまたはカーネル モード クライアントで指定したとおりのいずれかからクライアントにアクセスできる仮想メモリ アドレスにマップされます。 その後、クライアントは、現在の位置、レジスタの値を取得するには、このアドレスから読み取ります。
+正常に実行された場合、RTAUDIO\_POSITIONREGISTER プロパティ要求で\_は、クライアントが指定したとおりに、ユーザーモードまたはカーネルモードからクライアントにアクセスできる仮想メモリアドレスに位置レジスタがマップされます。 その後、クライアントはこのアドレスから読み取り、位置レジスタの現在の値を取得します。
 
-オーディオ ハードウェアでの仮想アドレスにマップできる位置登録がサポートされていない場合、プロパティの要求が失敗します。 この場合、クライアントがから位置を決定する必要があります、 [ **KSPROPERTY\_オーディオ\_位置**](ksproperty-audio-position.md)プロパティ。
+オーディオハードウェアが、仮想アドレスにマップできる位置登録をサポートしていない場合、プロパティ要求は失敗します。 この場合、クライアントは、 [**Ksk プロパティ\_AUDIO\_position**](ksproperty-audio-position.md)プロパティからの位置を決定する必要があります。
 
-Pin を閉じるときに、位置、レジスタのマッピングは破棄されます。 クライアントは、開かれた pin の有効期間内に 1 回だけ登録をマップでき、暗証番号 (pin) の位置の登録を再マップするための後続の呼び出しは失敗します。
+位置レジスタのマッピングは、ピンが閉じたときに破棄されます。 クライアントは、開いている pin の有効期間中に1回だけレジスタをマップできます。また、pin の位置レジスタを再マップするための後続の呼び出しは失敗します。
 
-通常は高速になります、KSPROPERTY を送信するよりも、位置、レジスタの読み取り\_オーディオ\_位置の要求は、ユーザー モードのクライアントのユーザー モードとカーネル モードの切り替えが必要です。
+通常、位置レジスタは、KSK プロパティ\_AUDIO\_POSITION 要求を送信するよりも高速です。この場合、ユーザーモードのクライアントではユーザーモードとカーネルモードの間の移行が必要になります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -106,7 +106,7 @@ Pin を閉じるときに、位置、レジスタのマッピングは破棄さ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista 以降の Windows オペレーティング システムで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降の Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
@@ -115,18 +115,18 @@ Pin を閉じるときに、位置、レジスタのマッピングは破棄さ�
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_HWREGISTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)
+[**KSRTAUDIO\_HWREGISTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister)
 
-[**KSRTAUDIO\_HWREGISTER\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)
+[**KSRTAUDIO\_HWREGISTER\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)
 
-[**KSPROPERTY\_オーディオ\_位置**](ksproperty-audio-position.md)
+[**KSK プロパティ\_オーディオ\_位置**](ksproperty-audio-position.md)
 
-[**KSPROPERTY\_RTAUDIO\_HWLATENCY**](ksproperty-rtaudio-hwlatency.md)
+[**KSK プロパティ\_RTAUDIO\_HWLATENCY**](ksproperty-rtaudio-hwlatency.md)
 
  
 

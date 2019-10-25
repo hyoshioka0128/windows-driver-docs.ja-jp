@@ -1,17 +1,17 @@
 ---
 title: KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
-description: Windows 2000 以降、KeXxxTimer ルーチンのセットはタイマーの管理に使用できます。
+description: Windows 2000 以降では、一連の KeXxxTimer ルーチンを使用してタイマーを管理できます。
 ms.assetid: b58487de-6e9e-45f4-acb8-9233c8718ee2
 keywords:
-- タイマーの WDK カーネル
-- タイマー オブジェクトの WDK カーネル
-- タイマー オブジェクトについて、タイマー オブジェクトの WDK カーネル
-- 遅延プロシージャ呼び出しの WDK カーネル
+- タイマー WDK カーネル
+- タイマーオブジェクト WDK カーネル
+- タイマーオブジェクト WDK カーネル、タイマーオブジェクトについて
+- 遅延プロシージャ呼び出し WDK カーネル
 - Dpc WDK カーネル
-- カーネルのディスパッチャー オブジェクト WDK、タイマー オブジェクト
-- ディスパッチャー オブジェクト WDK カーネル、タイマー オブジェクト
+- カーネルディスパッチャーオブジェクト WDK、タイマーオブジェクト
+- ディスパッチャーオブジェクト WDK カーネル、タイマーオブジェクト
 - 通知タイマー WDK カーネル
-- 同期のタイマーの WDK カーネル
+- 同期タイマー WDK カーネル
 - KTIMER
 - KeXxxTimer ルーチン
 - KeInitializeTimer
@@ -19,43 +19,43 @@ keywords:
 - KeSetTimer
 - KeSetTimerEx
 - CustomTimerDpc
-- タイムアウト間隔の WDK カーネル
+- タイムアウト間隔 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6129d2abd868a0be01b638fabc3cf4ed8320a39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cb51282f76bee15468be7957802307bc761b0369
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838387"
 ---
 # <a name="kexxxtimer-routines-ktimer-objects-and-dpcs"></a>KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
 
 
-以降では、Windows 2000 では、一連の**Ke*Xxx*タイマー**ルーチンがタイマーの管理に使用します。 これらのルーチンを使用して、タイマー オブジェクトに基づく、 [ **KTIMER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 タイマー オブジェクトを作成するドライバーを最初にストレージを割り当てるを**KTIMER**構造体。 ドライバーなどのルーチンの呼び出し、 [ **KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)または[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)この構造体を初期化します。
+Windows 2000 以降では、タイマーを管理するための一連の**Ke*Xxx*タイマー**ルーチンを使用できます。 これらのルーチンは、 [**Ktimer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造に基づくタイマーオブジェクトを使用します。 タイマーオブジェクトを作成するために、ドライバーはまず**Ktimer**構造にストレージを割り当てます。 次に、ドライバーは[**Keinitializetimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer)や[**Keinitializetimerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex)などのルーチンを呼び出して、この構造体を初期化します。
 
 
 
 
-1 回だけは、有効期限が切れるか、繰り返し一定期間切れになるよう、タイマーを設定できます。 [**KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)常に 1 回だけの有効期限をタイマーを設定します。 [**KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)受け取る省略可能な*期間*パラメーターで、定期的なタイマーの間隔を指定します。
+タイマーは、1回だけ有効期限が切れるように設定することも、特定の間隔で繰り返し有効期限を切れるように設定することもできます。 [**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)は、常に1回だけ有効期限が切れるタイマーを設定します。 [**Kesettimerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)は、定期的なタイマー間隔を指定するオプションの*Period*パラメーターを受け取ります。
 
-省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、次を参照してください。[タイマー オブジェクトを使用する](using-timer-objects.md)します。
+省略可能な[*Customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの一種) は、通知タイマーまたは同期タイマーに関連付けることができます。 このルーチンは、指定した時間間隔が経過すると実行されます。 詳細については、「 [Timer オブジェクトの使用](using-timer-objects.md)」を参照してください。
 
-タイマーを*通知タイマー*または*同期タイマー*します。
+タイマーは、*通知タイマー*または*同期タイマー*にすることができます。
 
--   通知タイマーがシグナルを受け取る、待機中のすべてのスレッドは満足の待機があります。 タイマーの状態をシグナル状態のまま、明示的にリセットされるまでです。
+-   通知タイマーがシグナル状態になると、待機中のすべてのスレッドの待機が満たされます。 タイマーの状態は、明示的にリセットされるまでシグナル状態のままになります。
 
--   同期のタイマーの期限が切れると、単一の待機スレッドが解放されるまでに、その状態がシグナルされたに設定されます。 タイマーは、非シグナル状態にリセットされます。
+-   同期タイマーの有効期限が切れると、1つの待機中のスレッドが解放されるまで、その状態はシグナル状態に設定されます。 その後、タイマーはシグナル状態ではない状態にリセットされます。
 
-**KeInitializeTimer**通知タイマーを常に作成されます。 **KeInitializeTimerEx**を受け入れる、*型*パラメーターとして指定できます**NotificationTimer**または**SynchronizationTimer**します。
+**Keinitializetimer**は、常に通知タイマーを作成します。 **Keinitializetimerex**は、 **Notificationtimer**または**同期タイマー**として使用できる*型*パラメーターを受け取ります。
 
-タイマー オブジェクトと Dpc の詳細については、以下のトピックです。
+次のトピックでは、タイマーオブジェクトと Dpc の詳細について説明します。
 
-[タイマー オブジェクトを使用して](using-timer-objects.md)
+[タイマーオブジェクトの使用](using-timer-objects.md)
 [タイマー精度](timer-accuracy.md)
-[CustomTimerDpc ルーチンのキューの登録と](registering-and-queuing-a-customtimerdpc-routine.md)
-[を提供します。CustomTimerDpc コンテキスト情報](providing-customtimerdpc-context-information.md)
-[CustomTimerDpc ルーチンを使用して](using-a-customtimerdpc-routine.md)
+Customtimerdpc ルーチンを[登録してキューに登録し](registering-and-queuing-a-customtimerdpc-routine.md)、Customtimerdpc[コンテキスト
+情報を提供](providing-customtimerdpc-context-information.md)する
+[customtimerdpc ルーチンを使用](using-a-customtimerdpc-routine.md)する
  
 
  

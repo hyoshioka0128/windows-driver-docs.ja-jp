@@ -3,28 +3,28 @@ title: IPrintCoreHelperPS インターフェイスの詳細
 description: IPrintCoreHelperPS インターフェイスの詳細
 ms.assetid: 0e00012c-6ced-4369-b367-675465e29d93
 keywords:
-- IPrintCoreHelperPS
+- Iprintcoreの Perps
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18b4bea3e7f34b7fd840b7b81e675f0a692d8af5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 708a6c67a7da234d786cd7379df7569d9ddcabeb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382059"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829018"
 ---
 # <a name="details-of-the-iprintcorehelperps-interface"></a>IPrintCoreHelperPS インターフェイスの詳細
 
 
-GDL パーサーに相当する型を持たない Pscript5 PPD ファイルに表示されるデータを読み取る Pscript5 ドライバーでは、追加のメソッドが提供されているためです。 すべてのベースのメソッドだけでなく**IPrintCoreHelper** 、インターフェイス、 **IPrintCoreHelperPS**インターフェイスには PPD ファイル内のデータへのアクセスを提供する次のメソッドが含まれています。
+Pscript5 は GDL パーサーに相当するものではないため、Pscript5 ドライバーでは、PPD ファイルに表示されるデータを読み取るための追加のメソッドが提供されています。 **Iprintcorehelper**ヘルパーインターフェイスには、基本の**iprintcorehelper**インターフェイスのすべてのメソッドに加えて、次のメソッドが含まれています。これらのメソッドは、PPD ファイル内のデータへのアクセスを提供します。
 
--   [**IPrintCoreHelperPS::GetFeatureAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getfeatureattribute)
+-   [**Iprintcore/Perps:: GetFeatureAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperps-getfeatureattribute)
 
--   [**IPrintCoreHelperPS::GetGlobalAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getglobalattribute)
+-   [**Iprintcore/Perps:: GetGlobalAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperps-getglobalattribute)
 
--   [**IPrintCoreHelperPS::GetOptionAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperps-getoptionattribute)
+-   [**IprintcoreGetOptionAttribute Perps::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperps-getoptionattribute)
 
-PPD 情報は、構成に依存しない、ためには、入力を指定する必要はありません[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)これらのメソッドのパラメーター。
+PPD 情報は構成に依存しないため、これらのメソッドに[**Devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)パラメーターを指定する必要はありません。
 
  
 

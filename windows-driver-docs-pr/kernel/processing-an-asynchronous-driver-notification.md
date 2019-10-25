@@ -3,24 +3,24 @@ title: 非同期ドライバー通知の処理
 description: 非同期ドライバー通知の処理
 ms.assetid: 7e7ed971-5891-4b91-909a-1e140b764fed
 keywords:
-- ドライバーの通知の WDK が動的なハードウェア パーティション分割、処理
-- ドライバーの非同期通知の WDK が動的なハードウェア パーティション分割、処理
-- ドライバー WDK の動的なハードウェア パーティション分割、非同期の通知に登録します。
+- ドライバー通知 WDK 動的ハードウェアのパーティション分割, 処理
+- 非同期ドライバー通知 WDK 動的ハードウェアのパーティション分割、処理
+- ドライバー通知に登録する WDK 動的ハードウェアパーティション分割、非同期
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a926e447e2ce368943e3ce6342b20f1a28f145
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef4ced4edbab7e150342cfd600db011b2c187d50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378815"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838487"
 ---
 # <a name="processing-an-asynchronous-driver-notification"></a>非同期ドライバー通知の処理
 
 
-ポインターを渡す、オペレーティング システムに登録されたコールバック関数を呼び出すと、 [**デバイス\_インターフェイス\_変更\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_interface_change_notification)構造体、*NotificationStructure*パラメーター。
+オペレーティングシステムは、登録されているコールバック関数を呼び出すと、デバイス\_インターフェイスへのポインターを渡し、 *notificationstructure*パラメーターの[**通知構造\_変更\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_interface_change_notification)ます。
 
-次のコード例では、プロセッサのドライバーが非同期通知を処理するコールバック関数の実装を示しています。
+次のコード例は、プロセッサの非同期ドライバー通知を処理するコールバック関数の実装を示しています。
 
 ```cpp
 // Asynchronous processor notification callback function
@@ -75,7 +75,7 @@ NTSTATUS
 }
 ```
 
-次のコード例では、メモリのドライバーが非同期通知を処理するコールバック関数の実装を示しています。
+次のコード例は、メモリの非同期ドライバー通知を処理するコールバック関数の実装を示しています。
 
 ```cpp
 // Asynchronous memory notification callback function

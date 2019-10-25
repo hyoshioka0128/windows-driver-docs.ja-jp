@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_RF\_チューナー\_範囲
-description: クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_範囲は、チューナー範囲を制御する特定のキャリア周波数を検索するドメイン。
+title: KSK プロパティ\_BDA\_RF\_チューナー\_範囲
+description: クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_範囲を使用して、チューナーの範囲 (特定のキャリア周波数を検索するドメイン) を制御します。
 ms.assetid: 2f2aa515-3f3c-419f-a817-0d597466ec85
 keywords:
-- KSPROPERTY_BDA_RF_TUNER_RANGE ストリーミング メディア デバイス
+- KSPROPERTY_BDA_RF_TUNER_RANGE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7abc9ce5aa97de256624367630b22a3d53281ed2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70aeaee6522dfa336b210bb856d088aec1c92837
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361135"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838074"
 ---
-# <a name="kspropertybdarftunerrange"></a>KSPROPERTY\_BDA\_RF\_チューナー\_範囲
+# <a name="ksproperty_bda_rf_tuner_range"></a>KSK プロパティ\_BDA\_RF\_チューナー\_範囲
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_RF\_チューナー\_範囲は、チューナー範囲を制御する特定のキャリア周波数を検索するドメイン。
+クライアントは、KSK プロパティ\_BDA\_RF\_チューナー\_範囲を使用して、チューナーの範囲 (特定のキャリア周波数を検索するドメイン) を制御します。
 
 ## <span id="ddk_ksproperty_bda_rf_tuner_range_ks"></span><span id="DDK_KSPROPERTY_BDA_RF_TUNER_RANGE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361135"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67361135"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -61,22 +61,22 @@ ms.locfileid: "67361135"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、チューナーノードの識別子を指定します。
 
-プロパティの値を設定するチューナーの範囲を指定します。
+プロパティ値は、設定するチューナーの範囲を指定します。
 
-指定、KSPROPERTY\_BDA\_RF\_チューナー\_で範囲のプロパティ。
+次を使用して、KSK プロパティ\_BDA\_RF\_チューナー\_範囲プロパティを指定します。
 
--   BDA\_範囲\_いない\_セット (-1) では、チューナーの範囲が設定されていないことを示します。
+-   BDA\_範囲\_\_設定されていません (− 1) は、チューナーの範囲が設定されていないことを示します。
 
--   BDA\_範囲\_いない\_定義 (0) では、チューナーの範囲が定義されていないことを示します。
+-   \_定義されていない BDA\_範囲\_(0) は、チューナーの範囲が定義されていないことを示します。
 
-いくつかのチューナーを複数のスイッチ、特定のキャリア周波数を検索するドメインを定義するなどの外部のデバイスを制御します。 このプロパティは、− 1、チューナーの範囲が特定のチューニングの領域を使用していないことを意味するか、チューニングの領域に固有の値にチューナーの範囲を設定します。
+一部のチューナーは、特定のキャリア周波数を検索するドメインを定義するマルチスイッチなどの外部デバイスを制御します。 このプロパティは、チューナーの範囲を−1に設定します。これは、特定のチューニング領域にチューナーの範囲が使用されないこと、またはチューニング領域に固有の値に設定されることを意味します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ ms.locfileid: "67361135"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -95,7 +95,7 @@ ms.locfileid: "67361135"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 
