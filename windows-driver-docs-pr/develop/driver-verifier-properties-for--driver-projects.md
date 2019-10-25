@@ -4,12 +4,12 @@ title: ドライバー パッケージ プロジェクトのドライバーの�
 description: ドライバー検証ツールは、ドライバーのテストの効果を高める、実行時検証ツールです。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3537290ee321df517088dd181c556960f3d643
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 42f53baf932735ec28168f437aeebad78c69eeac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020652"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839611"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
 
@@ -98,7 +98,7 @@ ms.locfileid: "70020652"
 
 -   [保留中の I/O 要求を強制する](https://docs.microsoft.com/windows-hardware/drivers/devtest/force-pending-i-o-requests)
 
-    このオプションがアクティブになっていると、ドライバー検証ツールはランダムな [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) の呼び出しに STATUS\_PENDING を返すことによって、STATUS\_PENDING 戻り値へのドライバーの応答をテストします。
+    このオプションがアクティブになっていると、ドライバー検証ツールはランダムな [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) の呼び出しに STATUS\_PENDING を返すことによって、STATUS\_PENDING 戻り値へのドライバーの応答をテストします。
 
 -   [IRP ログ](https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging)
 

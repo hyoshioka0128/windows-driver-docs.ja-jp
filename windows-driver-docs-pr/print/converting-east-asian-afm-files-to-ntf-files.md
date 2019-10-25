@@ -39,7 +39,7 @@ ms.locfileid: "63365696"
 
 簡体字、繁体字中国語、日本語、および韓国語の .ntf ファイルを作成するために必要な .map と .ps ファイルは、以下の一覧に表示されます。 これらのファイルおよび .afm ファイルを同じディレクトリに配置します。
 
-### <a name="chinese-simplified"></a>簡体字中国語
+### <a name="chinese-simplified"></a>簡体中国語
 
 -   ucs2gbk.map
 

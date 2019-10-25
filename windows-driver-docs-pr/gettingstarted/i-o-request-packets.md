@@ -4,19 +4,19 @@ description: I/O 要求パケット
 ms.assetid: 72288D9A-86F7-4145-8470-FFA1AC26E9BF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d61c83d5f2403d57b7e266172f37db0762a797f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29efe2ed355650db9e7e95bb1cd80b1cb9e49229
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371956"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829122"
 ---
 # <a name="io-request-packets"></a>I/O 要求パケット
 
 
-デバイス ドライバーに送信される要求のほとんどは、I/O 要求パケット ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)) にパッケージ化されます。 オペレーティング システムのコンポーネントまたはドライバーが、[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) を呼び出すことにより、ドライバーに IRP を送信します。IoCallDriver には、[**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) へのポインターと **IRP** へのポインターを指定する 2 つのパラメーターがあります。 **DEVICE\_OBJECT** には、関連付けられている [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object) に対するポインターがあります。 コンポーネントから **IoCallDriver** が呼び出されると、コンポーネントが "*IRP をデバイス オブジェクトに送信する*"、"*IRP をデバイス オブジェクトに関連付けられたドライバーに送信する*"、などの表現を使うことがあります。 また、*IRP を送信する*、という言い方の代わりに *IRP を渡す*や *IRP を転送する*、などの言い方をする場合もあります。
+デバイス ドライバーに送信される要求のほとんどは、I/O 要求パケット ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)) にパッケージ化されます。 オペレーティング システムのコンポーネントまたはドライバーが、[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) を呼び出すことにより、ドライバーに IRP を送信します。IoCallDriver には、[**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) へのポインターと **IRP** へのポインターを指定する 2 つのパラメーターがあります。 **DEVICE\_OBJECT** には、関連付けられている [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) に対するポインターがあります。 コンポーネントから **IoCallDriver** が呼び出されると、コンポーネントが "*IRP をデバイス オブジェクトに送信する*"、"*IRP をデバイス オブジェクトに関連付けられたドライバーに送信する*"、などの表現を使うことがあります。 また、*IRP を送信する*、という言い方の代わりに *IRP を渡す*や *IRP を転送する*、などの言い方をする場合もあります。
 
-通常、IRP は、1 つのスタック上に配置されたいくつかのドライバーによって処理されます。 スタック上の各ドライバーは、それぞれ個別のデバイス オブジェクトに関連付けられます。 詳しくは、「[デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)」をご覧ください。 [  **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp) がデバイス スタックにより処理されると、通常、**IRP** はまずデバイス スタックの最上段にあるデバイス オブジェクトに送信されます。 たとえば、次の図のように、**IRP** がデバイス スタックによって処理されると、IRP は、デバイス スタックの最上段にあるフィルター デバイス オブジェクト (Filter DO) に送信されます。
+通常、IRP は、1 つのスタック上に配置されたいくつかのドライバーによって処理されます。 スタック上の各ドライバーは、それぞれ個別のデバイス オブジェクトに関連付けられます。 詳しくは、「[デバイス ノードとデバイス スタック](device-nodes-and-device-stacks.md)」をご覧ください。 [  **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp) がデバイス スタックにより処理されると、通常、**IRP** はまずデバイス スタックの最上段にあるデバイス オブジェクトに送信されます。 たとえば、次の図のように、**IRP** がデバイス スタックによって処理されると、IRP は、デバイス スタックの最上段にあるフィルター デバイス オブジェクト (Filter DO) に送信されます。
 
 ![デバイス ノードとデバイス スタックの図](images/prosewaredevicenode03.png)
 

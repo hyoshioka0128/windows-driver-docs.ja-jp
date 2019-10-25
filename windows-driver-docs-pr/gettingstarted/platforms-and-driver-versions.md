@@ -4,12 +4,12 @@ description: 異なるバージョンの Windows に対するドライバーの�
 ms.assetid: 7519235c-46c5-49aa-8b11-9e9ac5a51026
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b135f00ba40f3d8cbf267bff7c19fb3973b50
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 107cc59327605255a735af304d8637f93cfcb5c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363673"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825152"
 ---
 # <a name="writing-drivers-for-different-versions-of-windows"></a>異なるバージョンの Windows に対するドライバーの作成
 
@@ -40,7 +40,7 @@ ms.locfileid: "67363673"
 
 ### <a name="span-iddetermining_the_windows_versionspanspan-iddetermining_the_windows_versionspandetermining-the-windows-version"></a><span id="determining_the_windows_version"></span><span id="DETERMINING_THE_WINDOWS_VERSION"></span>Windows バージョンの特定
 
-[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) は、Windows の特定バージョンで提供される機能が利用可能かどうかを、ドライバーが実行時に判断するために利用できる関数です。 この関数のプロトタイプは次のとおりです。
+[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) は、Windows の特定バージョンで提供される機能が利用可能かどうかを、ドライバーが実行時に判断するために利用できる関数です。 この関数のプロトタイプは次のとおりです。
 
 ```cpp
 BOOLEAN RtlIsNtDdiVersionAvailable(IN ULONG Version)
@@ -48,9 +48,9 @@ BOOLEAN RtlIsNtDdiVersionAvailable(IN ULONG Version)
 
 このプロトタイプで、*Version* は、必要な Windows DDI バージョンを表す値です。 この値は、sdkddkver.h で定義された DDI バージョン定数のいずれか (NTDDI\_WIN8、NTDDI\_WIN7 など) でなければなりません。
 
-[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) は、呼び出し元が *Version* で指定されたバージョン、またはそれ以降の Windows で実行されている場合に、TRUE を返します。
+[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) は、呼び出し元が *Version* で指定されたバージョン、またはそれ以降の Windows で実行されている場合に、TRUE を返します。
 
-ドライバーでは、[**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) 関数を呼び出すことにより、特定のサービス パックのチェックを実行することもできます。 この関数のプロトタイプは次のとおりです。
+ドライバーでは、[**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 関数を呼び出すことにより、特定のサービス パックのチェックを実行することもできます。 この関数のプロトタイプは次のとおりです。
 
 ```cpp
 BOOLEAN RtlIsServicePackVersionInstalled(IN ULONG Version)
@@ -58,11 +58,11 @@ BOOLEAN RtlIsServicePackVersionInstalled(IN ULONG Version)
 
 このプロトタイプで、*Version* は、必要な Windows バージョンとサービス パックを表す値です。 この値は、sdkddkver.h で定義された DDI バージョン定数のいずれか (NTDDI\_WS08SP3 など) でなければなりません。
 
-[  **RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) は、オペレーティング システムのバージョンと、指定されたバージョンが一致した場合に限り、TRUE を返します。 したがって、*Version* を NTDDI\_WS08SP3 に設定して **RtlIsServicePackVersionInstalled** を呼び出すと、ドライバーが Windows Server 2008 SP4 で実行されていない限り、失敗することになります。
+[  **RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) は、オペレーティング システムのバージョンと、指定されたバージョンが一致した場合に限り、TRUE を返します。 したがって、*Version* を NTDDI\_WS08SP3 に設定して **RtlIsServicePackVersionInstalled** を呼び出すと、ドライバーが Windows Server 2008 SP4 で実行されていない限り、失敗することになります。
 
 ### <a name="span-idconditionally_calling_windows_version_dependent_functionsspanspan-idconditionally_calling_windows_version_dependent_functionsspanconditionally-calling-windows-version-dependent-functions"></a><span id="conditionally_calling_windows_version_dependent_functions"></span><span id="CONDITIONALLY_CALLING_WINDOWS_VERSION_DEPENDENT_FUNCTIONS"></span>Windows バージョンに依存する関数の条件付き呼び出し
 
-ドライバーは、コンピューター上で指定したバージョンのオペレーティング システムが利用可能と判断した後、[**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemroutineaddress) 関数を使って、ルーチンを動的に探したり、ポインターを介してこの関数を呼び出すことができます。 この関数は、Windows 7 とそれ以降のオペレーティング システム バージョンで利用可能です。
+ドライバーは、コンピューター上で指定したバージョンのオペレーティング システムが利用可能と判断した後、[**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemroutineaddress) 関数を使って、ルーチンを動的に探したり、ポインターを介してこの関数を呼び出すことができます。 この関数は、Windows 7 とそれ以降のオペレーティング システム バージョンで利用可能です。
 
 **注**  型チェックの結果を維持し、意図しないエラーを防ぐために、元の関数の型をミラー化した typedef を作る必要があります。
 
@@ -117,9 +117,9 @@ PAISQSL AcquireInStackQueued = NULL;
 }
 ```
 
-この例では、ドライバーが [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) を呼び出すことにより、ドライバーが Windows 7 またはそれ以降のバージョンで実行されているかどうかを判断します。 バージョンが Windows 7 以降であれば、[**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemroutineaddress) を呼び出して、[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 関数に対するポインターを取得し、このポインターを `AcquireInStackQueued` という変数 (PAISQSL 型として宣言されている) に格納します。
+この例では、ドライバーが [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) を呼び出すことにより、ドライバーが Windows 7 またはそれ以降のバージョンで実行されているかどうかを判断します。 バージョンが Windows 7 以降であれば、[**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemroutineaddress) を呼び出して、[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 関数に対するポインターを取得し、このポインターを `AcquireInStackQueued` という変数 (PAISQSL 型として宣言されている) に格納します。
 
-後でドライバーがスピン ロックを取得する必要が生じた場合、[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 関数に対するポインターを既に受け取っているかどうかを確認します。 このポインターを既に取得している場合、ドライバーはこのポインターにより、**KeAcquireInStackQueuedSpinLock** を呼び出します。 **KeAcquireInStackQueuedSpinLock** へのポインターが null の場合、ドライバーは [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock) を使ってスピン ロックを取得します。
+後でドライバーがスピン ロックを取得する必要が生じた場合、[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 関数に対するポインターを既に受け取っているかどうかを確認します。 このポインターを既に取得している場合、ドライバーはこのポインターにより、**KeAcquireInStackQueuedSpinLock** を呼び出します。 **KeAcquireInStackQueuedSpinLock** へのポインターが null の場合、ドライバーは [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) を使ってスピン ロックを取得します。
 
 
 

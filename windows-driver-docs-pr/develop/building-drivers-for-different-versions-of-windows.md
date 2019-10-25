@@ -4,12 +4,12 @@ title: 異なるバージョンの Windows に対するドライバーのビル�
 description: 以下のセクションでは、異なるバージョンの Windows に対するドライバーの作成をしている方のために、Windows Driver Kit (WDK) 8.1 か WDK 8、Visual Studio、MSBuild を使ってドライバーをビルドするためのガイドラインをいくつか紹介しています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ed6f801a077a40912921455f3c904721f09397
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d00ea320f46d52efb357a2c28489b7788dbdba4b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370356"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829904"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>異なるバージョンの Windows に対するドライバーのビルド
 
@@ -27,7 +27,7 @@ ms.locfileid: "67370356"
 
 -   カーネル モード ドライバーを複数の Windows バージョンに対応させ、ドライバーから利用できる機能を動的に判断させる場合、最新バージョンのオペレーティング システム用のビルド構成を使ってドライバーをビルドします。 たとえば、Windows 7 以降のすべての Windows バージョンをサポートする一方で、ドライバーが Windows 8.1 以降のバージョンで実行されている場合には Windows 8.1 で新たに導入された特定の機能を利用できるようにするには、ターゲット構成として Windows 8.1 (**Win8.1**) を指定します。
 
--   ドライバーから利用できる Windows のバージョンを実行時に調べるには、[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) 関数と [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) 関数を使います。 詳しくは、「[異なるバージョンの Windows に対するドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)」をご覧ください。
+-   ドライバーから利用できる Windows のバージョンを実行時に調べるには、[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 関数と [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 関数を使います。 詳しくは、「[異なるバージョンの Windows に対するドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)」をご覧ください。
 -   ドライバーから条件付きで呼び出す関数へのポインターのプロトタイプを作成します。
 -   WDM ドライバーまたは非 KMDF カーネル モード ドライバーで、Windows 8.1 Preview や Windows 8 をターゲットとしながら、それ以前のバージョンの Windows でも動作させる必要がある場合は、リンカーの **$(KernelBufferOverflowLib)** オプションを上書きする必要があります。 Windows 8 または Windows 8.1 Preview の構成を選んだ場合、ドライバーは BufferOverflowFastFailK.lib とリンクされますが、これは以前のバージョンの Windows では利用できません。 Windows 7 と Vista では、BufferOverflowK.lib をリンクする必要があります。
 

@@ -1,12 +1,12 @@
 ---
 title: ドライバー パッケージの分離
 ms.date: 10/01/2019
-ms.openlocfilehash: d68677c90cec4c2aa630f8595d2f272c355d8dd8
-ms.sourcegitcommit: 0b38c5075d85ede328bf9901b0d36e84ec0e3d66
+ms.openlocfilehash: 1da8fc165779b46c9bbbb05466cb9442ef0095f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71830025"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839615"
 ---
 # <a name="driver-package-isolation"></a>ドライバー パッケージの分離
 
@@ -26,9 +26,9 @@ ms.locfileid: "71830025"
 
 分離されているすべてのドライバー パッケージでは、ドライバー パッケージ ファイルがドライバー ストアに配置されます。 つまり、インストール時のドライバー パッケージ ファイルの場所を指定するため、INF に [**DIRID 13**](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids) と指定されるということです。
 
-ドライバー ストアから実行されていて、ドライバー パッケージの他のファイルにアクセスする必要がある WDM または KMDF ドライバーでは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioqueryfulldriverpath) を使用してそのパスを見つけ、読み込み元のディレクトリ パスを取得し、そのパスから見て相対的な場所にある構成ファイルを探します。
+ドライバー ストアから実行されていて、ドライバー パッケージの他のファイルにアクセスする必要がある WDM または KMDF ドライバーでは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を使用してそのパスを見つけ、読み込み元のディレクトリ パスを取得し、そのパスから見て相対的な場所にある構成ファイルを探します。
 
-あるいは、Windows 10 バージョン 1803 以降では、ディレクトリの種類として *DriverDirectoryImage* を指定して [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) を呼び出し、ドライバーの読み込み元であるディレクトリ パスを取得します。
+あるいは、Windows 10 バージョン 1803 以降では、ディレクトリの種類として *DriverDirectoryImage* を指定して [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) を呼び出し、ドライバーの読み込み元であるディレクトリ パスを取得します。
 
 INF によってペイロードされたファイルの場合、INF 内のそのファイルに対する [**SourceDisksFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section) エントリにリストされている *subdir* は、INF 内の同じファイルに対する [**DestinationDirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section) エントリにリストされている subdir と一致している必要があります。
 
@@ -51,7 +51,7 @@ INF によってペイロードされたファイルの場合、INF 内のその
 
 これらのインターフェイスまたは状態 (使用する共有方法による) は、適切にバージョン管理される必要があります。これは、状態を所有するドライバーが、状態にアクセスする他のドライバーから独立してサービスの提供を受けられるようにするためです。 ドライバー ベンダーは、両方のドライバーが同時にサービスを受け、同じバージョンを保つと見なすことはできません。  
 
-インターフェイスを制御するデバイスとドライバーは頻繁に切り替わるので、ドライバーとアプリケーションは、コンポーネントの起動時に [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出して有効なインターフェイスのリストを取得すべきではありません。
+インターフェイスを制御するデバイスとドライバーは頻繁に切り替わるので、ドライバーとアプリケーションは、コンポーネントの起動時に [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出して有効なインターフェイスのリストを取得すべきではありません。
 
 ベスト プラクティスは、デバイス インターフェイスの到着と削除の通知に登録してから適切な関数を呼び出し、マシン上の既存の有効なインターフェイスのリストを取得することです。
 
@@ -80,8 +80,8 @@ INF によってペイロードされたファイルの場合、INF 内のその
 
 分離されているドライバー パッケージとユーザーモード コンポーネントは、通常 2 つの場所を使用してデバイスの状態をレジストリ内に保存します。 デバイスの*ハードウェア キー* (デバイス キー) と、デバイスの*ソフトウェア キー* (ドライバーキー) です。 これらのレジストリの場所へのハンドルを取得するには、使用しているプラットフォームに基づいて、次のオプションのうちの 1 つをご使用ください。
 
-* [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
-* [**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)、[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) (WDF)
+* [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)、[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) (WDF)
 * [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) (ユーザーモード コード)
 * [**INF AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) ディレクティブ。次に示すとおり、[INF DDInstall](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section) セクションまたは [DDInstall.HW](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section) セクションから参照される *add-registry-section* 内で HKR *reg-root* エントリを使用します。
 
@@ -98,7 +98,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 デバイス インターフェイスのレジストリの状態を読み取りおよび書き込みするには、使用しているプラットフォームに基づいて、次のオプションのうち 1 つを使用します。
 
-* [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
+* [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
 * [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keya) (ユーザーモード コード)
 * [INF AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) ディレクティブ。*add-interface-section* セクションから参照される [add-registry-section](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive) 内の HKR *reg-root* エントリを使用します。
 
@@ -124,16 +124,16 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 この状態の場所にアクセスするには、お使いのプラットフォームに基づいて次の関数のうちの 1 つを使用します。
 
-* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
-* [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
+* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
 * **GetServiceRegistryStateKey** (Win32 サービス)
 
 ### <a name="device-file-state"></a>デバイス ファイルの状態
 
 デバイスと関連するファイルに書き込む必要がある場合、これらのファイルは、OS API を介して提供されるハンドルまたはファイル パスに対する相対的な位置に保存される必要があります。 そのデバイスに特有の構成ファイルは、そこに保存すべきファイルの種類の一例です。
 
-* [**IoGetDeviceDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdevicedirectory) (WDM)
-* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring) (WDF)
+* [**IoGetDeviceDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory) (WDM)
+* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring) (WDF)
 
 ### <a name="service-file-state"></a>サービス ファイルの状態
 
@@ -141,9 +141,9 @@ Win32 とドライバー サービスは両方とも、自分自身の状態の�
 
 自身の内部状態の値にアクセスするには、サービスは次のオプションの 1 つを使用します。 
 
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (WDM)
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
-* [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (WDM)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
+* [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
 * **GetServiceDirectory** (Win32 サービス)
 
 サービスの内部状態を他のコンポーネントと共有するには、レジストリまたはファイルを直接読み取るのではなく、制御され、バージョン管理されたインターフェイスを使用します。

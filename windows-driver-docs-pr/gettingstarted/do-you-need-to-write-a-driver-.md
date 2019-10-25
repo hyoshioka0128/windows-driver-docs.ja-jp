@@ -4,12 +4,12 @@ description: Microsoft Windows には、さまざまなデバイスの種類に�
 ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cebfaae84f8fe6e9a3e37691786e9c79230a8ff9
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: ff119ad2519b741d0af87982c10203474e20f2c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394126"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829120"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>ドライバーの作成の必要性
 
@@ -19,7 +19,7 @@ Microsoft Windows には、さまざまなデバイスの種類に対応する�
 ## <a name="span-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanbuilt-in-drivers-for-usb-devices"></a><span id="Built-in_drivers_for_USB_devices"></span><span id="built-in_drivers_for_usb_devices"></span><span id="BUILT-IN_DRIVERS_FOR_USB_DEVICES"></span>USB デバイス用の組み込みドライバー
 
 
-デバイスが USB Device Working Group (DWG) によって定義されるデバイス クラスに属している場合は、既に Windows USB クラス ドライバーが用意されている可能性があります。 詳しくは、「[サポートされる USB デバイス クラスのドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)」をご覧ください。
+デバイスが USB Device Working Group (DWG) によって定義されるデバイス クラスに属している場合は、既に Windows USB クラス ドライバーが用意されている可能性があります。 詳しくは、「[サポートされる USB デバイス クラスのドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」をご覧ください。
 
 ## <a name="span-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanbuilt-in-drivers-for-other-devices"></a><span id="Built-in_drivers_for_other_devices"></span><span id="built-in_drivers_for_other_devices"></span><span id="BUILT-IN_DRIVERS_FOR_OTHER_DEVICES"></span>その他のデバイス用の組み込みドライバー
 
@@ -120,7 +120,7 @@ Microsoft Windows には、さまざまなデバイスの種類に対応する�
 <td align="left"><p>印刷:Microsoft v4 プリンター ドライバー</p></td>
 <td align="left"></td>
 <td align="left"><p>Windows 8 以降</p></td>
-<td align="left"><p>Windows 8 以降では、PostScript と PostScript 以外のプリンター、およびプロッターをサポートする 1 つのインボックス クラス ドライバーが Microsoft から提供されています。 このドライバーは、Microsoft プロッター ドライバー、Microsoft ユニバーサル プリンター ドライバー、Microsoft PostScript プリンター ドライバーよりも優先されます。 このプリンター ドライバーは、変更せずに単独で使用した場合に、基本的な印刷機能をサポートします。 詳しくは、<a href="https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver" data-raw-source="[V4 Printer Driver](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)">V4 プリンター ドライバーに関するページ</a>をご覧ください。</p></td>
+<td align="left"><p>Windows 8 以降では、PostScript と PostScript 以外のプリンター、およびプロッターをサポートする 1 つのインボックス クラス ドライバーが Microsoft から提供されています。 このドライバーは、Microsoft プロッター ドライバー、Microsoft ユニバーサル プリンター ドライバー、Microsoft PostScript プリンター ドライバーよりも優先されます。 このプリンター ドライバーは、変更せずに単独で使用した場合に、基本的な印刷機能をサポートします。 詳しくは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver" data-raw-source="[V4 Printer Driver](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)">v4 プリンター ドライバーに関するページ</a>をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>印刷:Microsoft XPS プリンター ドライバー</p></td>

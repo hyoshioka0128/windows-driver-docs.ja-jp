@@ -4,12 +4,12 @@ description: デバイス ドライバーに送信される要求のほとんど
 ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0813e3d13bc4a74b2331dbd4965ab4fd60ea31e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3b4acd32c0824b28c7c45101b6da0c57aedae67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825181"
 ---
 # <a name="driver-stacks"></a>ドライバー スタック
 
@@ -60,7 +60,7 @@ I/O 要求のドライバー スタックは、デバイス ノードに対す�
 
 特定のテクノロジ、またはオペレーティング システムに含まれる特定のコンポーネントや部分に対するドライバーをすべて記載したブロック図のことを、"*テクノロジ ドライバー スタック*" と呼びます。 通常、テクノロジ ドライバー スタックには USB Core Driver Stack、Storage Stack、1394 Driver Stack、Audio Driver Stack などの名前が付けられています。
 
-**注**  このトピックの USB コア ブロック図は、USB 1.0 と 2.0 のテクノロジ ドライバー スタックを表す各種の方法のうちの 1 つを表しています。 USB 1.0、2.0 と 3.0 のドライバー スタックの正式な図については、「[USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)」をご覧ください。
+**注**  このトピックの USB コア ブロック図は、USB 1.0 と 2.0 のテクノロジ ドライバー スタックを表す各種の方法のうちの 1 つを表しています。 USB 1.0、2.0 と 3.0 のドライバー スタックの正式な図については、「[USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」をご覧ください。
 
  
 

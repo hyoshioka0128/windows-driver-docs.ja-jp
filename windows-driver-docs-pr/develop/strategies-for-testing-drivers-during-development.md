@@ -4,12 +4,12 @@ title: ドライバー コードとドライバー パッケージのテスト�
 description: テストを開始するタイミング。 ドライバーの要件がある場合はすぐに、テスト ケースの設計を開始して、重要な要件が実装されていることをテストできます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2273cafe071233a29c0af92a2728a78c2be8c7f9
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: d87219f107954890359a79e613281d014498edd7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020630"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840321"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント
 
@@ -38,7 +38,7 @@ ms.locfileid: "70020630"
 
 -   「[開発とテストにおけるドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/signing-drivers-during-development-and-test)」の説明に従って、ドライバーのインストールとテストを容易にするためドライバーに署名します。
 
--   WDK で提供される Device Fundamental テストの一部として含まれている **DriverInstall** テストを実行します。 「[Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)」と「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。 **DriverInstall** テストは、ドライバーがテスト コンピューターに展開された後に実行できます。 **DriverInstall** テストをドライバー テスト グループに追加できます。 **DriverInstall** テストは、All Tests\\Basic\\Device Fundamentals\\DriverInstall の下の **[Driver Test Categories (ドライバー テスト カテゴリ)]** に表示されます。 [  **IWDTFDriverPackageAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2) インターフェイスを使って、独自のテストを作成することもできます。
+-   WDK で提供される Device Fundamental テストの一部として含まれている **DriverInstall** テストを実行します。 「[Visual Studio を使って実行時にドライバーをテストする方法](testing-a-driver-at-runtime.md)」と「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。 **DriverInstall** テストは、ドライバーがテスト コンピューターに展開された後に実行できます。 **DriverInstall** テストをドライバー テスト グループに追加できます。 **DriverInstall** テストは、All Tests\\Basic\\Device Fundamentals\\DriverInstall の下の **[Driver Test Categories (ドライバー テスト カテゴリ)]** に表示されます。 [  **IWDTFDriverPackageAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2) インターフェイスを使って、独自のテストを作成することもできます。
 
 -   デバイス マネージャーを使ってドライバーとデバイスに関するシステム情報を確認し、SetupAPI ログを参照して、[デバイス インストールの問題のトラブルシューティング](https://docs.microsoft.com/windows-hardware/drivers/install/troubleshooting-device-and-driver-installations)を行います。 SetupAPI ログには、デバイスまたはドライバーのインストール中に実行された一連の操作に関する情報が含まれています。
 

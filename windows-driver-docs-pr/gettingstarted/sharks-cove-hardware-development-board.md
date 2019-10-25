@@ -4,12 +4,12 @@ description: Sharks Cove は、Windows 向けのハードウェアやドライ�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d8f91d435020e2314a071c71f959df24c6e8e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05949ca727d68333f60016df1ef8e06797a5f980
+ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385171"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681934"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove ハードウェア開発ボード
 
@@ -63,7 +63,7 @@ WDK のオンライン ドキュメントについては、[ここ](https://go.m
 
 Debugging Tools for Windows のオンライン ドキュメントについては、[ここ](https://go.microsoft.com/fwlink/p?linkid=223405)をご覧ください。
 
-Debugging Tools for Windows のドキュメントは、インストール ディレクトリに CHM ファイルとしても保存されています 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm
+Debugging Tools for Windows のドキュメントは、インストール ディレクトリに CHM ファイルとしても保存されています 例:C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm
 
 ## <a name="span-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>手順 3: Sharks Cove ボードに Windows をインストールする
 
@@ -108,7 +108,7 @@ Debugging Tools for Windows のドキュメントは、インストール ディ
 -   **本ソフトウェアを使用することにより、お客様は本ライセンス条項に同意されたものとします。** これらの条項に同意せず従わない場合は、ソフトウェアおよびその機能を使うことができないものとします。
 
 [Windows Embedded 8.1 Industry (x86) Pro Evaluation](https://go.microsoft.com/fwlink/p?linkid=403173) または Windows Embedded 8.1 Industry Pro Update (x86) - DVD をダウンロードします。
-ダウンロードしたファイルを探します。 以下に例を示します。
+ダウンロードしたファイルを探します。 たとえば、
 
 9600.17050.WINBLUE\_REFRESH...X86FRE\_EN-US\_DV9.ISO
 
@@ -121,7 +121,7 @@ ISO ファイルをダブルクリックして、次のファイルを *Root*\\S
 
 -   Boot
 -   Efi
--   Sources
+-   ソース
 -   サポート
 -   Autorun.inf
 -   Bootmgr
@@ -157,7 +157,7 @@ Windows の通常版を使っている場合は、次のコマンドを入力し
 .\Create-DevboardImage -SourcePath Setup\sources\install.wim -Index 1 -BspManifest SharksCoveBsp\SharksCoveBsp.xml
 ```
 
-**注** **Create-DevboardImage** スクリプトを実行する前に、実行ポリシーの設定が必要になる場合があります。 次に、例を示します。
+**注** **Create-DevboardImage** スクリプトを実行する前に、実行ポリシーの設定が必要になる場合があります。 たとえば、次のように入力します。
 
 
 
@@ -169,7 +169,7 @@ BSP が Windows イメージに追加されたので、次のフォルダーと�
 
 -   Boot
 -   Efi
--   Sources
+-   ソース
 -   サポート
 -   Autorun.inf
 -   Bootmgr
@@ -237,7 +237,7 @@ SSDT の変更例を次に示します。 ここでは、[ADXL345](https://go.mi
 
 1.  x86 バージョンの ASL.exe を Sharks Cove ボードにコピーします。 ASL.exe は WDK に付属しています。
 
-    以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
+    例:C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
 
 2.  管理者としてコマンド プロンプト ウィンドウを開きます。 次のコマンドを入力して、SSDT を逆コンパイルします。
 
@@ -398,7 +398,7 @@ Sharks Cove ヘッダーとピンの仕様を、[ここ](https://go.microsoft.co
 
 その仕様を参照して、デバイスで使うピンを特定します。 たとえば、ADXL345 加速度計を I2C バスに接続するとします。 仕様では、J1C1 ヘッダーが必要なピンを保持していることを確認できます。 次に、J1C1 ヘッダーで使うピンの一部を示しますが、これがすべてではありません。
 
-| Pin | ピンの名前        | コメント                            | ACPI オブジェクト      |
+| Pin | ピンの名前        | 備考                            | ACPI オブジェクト      |
 |-----|-----------------|-------------------------------------|------------------|
 | 7   | GPIO\_S5\[23\]  | 加速度計割り込みのシグナル      | \_SB.GPO2 {0x17} |
 | 13  | SIO\_I2C2\_DATA | I2C コント ローラー 2 の I2C データ ライン  | \_SB.I2C3        |
@@ -472,9 +472,6 @@ Visual Studio を使う場合でも、WinDbg を使う場合でも、デバッ�
 Windows ドライバーでの Simple Peripheral Bus の操作方法については、「[Simple Peripheral Bus](https://go.microsoft.com/fwlink/p?linkid=399232)」をご覧ください。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
-
-[SharksCove.org](https://go.microsoft.com/fwlink/p?linkid=403167)
 
 [すべてのドライバー開発者のための概念](https://go.microsoft.com/fwlink/p/?linkid=399233)
 

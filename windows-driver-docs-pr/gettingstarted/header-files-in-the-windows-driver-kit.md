@@ -13,17 +13,17 @@ keywords:
 - ファイル WDK ヘッダー ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d517eb0cf67d274bbffd80403f7927400793a76
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2613202fb101bcd13bd6cbc2d76c1ab39b7766f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371965"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825156"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows Driver Kit (WDK) のヘッダー ファイル
 
 
-[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) には、カーネル モード ドライバーとユーザー モード ドライバーをビルドする際に必要となるすべてのヘッダー ファイル (.h ファイル) が含まれています。 ヘッダー ファイルは WDK インストール フォルダー内の Include フォルダーにあります。 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\10\\Include
+[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) には、カーネル モード ドライバーとユーザー モード ドライバーをビルドする際に必要となるすべてのヘッダー ファイル (.h ファイル) が含まれています。 ヘッダー ファイルは WDK インストール フォルダー内の Include フォルダーにあります。 例:C:\\Program Files (x86)\\Windows Kits\\10\\Include
 
 ヘッダー ファイルには、バージョン情報も含まれているため、ドライバーを実行する Windows のバージョンには関係なく、同じヘッダー ファイル セットを使用できます。
 
@@ -43,7 +43,7 @@ WDK 中のヘッダー ファイルには、Windows オペレーティング シ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">定数</th>
+<th align="left">Constant</th>
 <th align="left">オペレーティング システムのバージョン</th>
 </tr>
 </thead>
@@ -99,7 +99,7 @@ KeSetTargetProcessorDpcEx (
 #endif
 ```
 
-この例で、[**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettargetprocessordpcex) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
+この例で、[**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettargetprocessordpcex) 関数は Windows 7 とそれ以降の Windows バージョンでのみ利用できることがわかります。
 
 この条件付き宣言は、Winspool.h ヘッダー ファイルにあります。このヘッダー ファイルは、ユーザー モード ドライバーに含まれることがあります。
 

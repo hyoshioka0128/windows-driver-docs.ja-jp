@@ -7,12 +7,12 @@ keywords:
 - デバイス スタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99befc5f4c2bc04430dbdcbc164c3681d5d95621
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68cafd6b5f4929e1b17b77f6e6a1907edc4daa18
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371975"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825192"
 ---
 # <a name="device-nodes-and-device-stacks"></a>デバイス ノードとデバイス スタック
 
@@ -37,7 +37,7 @@ PCI バスに接続されているデバイスの一部は、それら自体が�
 ## <a name="span-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>デバイス オブジェクトとデバイス スタック
 
 
-"*デバイス オブジェクト*" は、[**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) 構造のインスタンスです。 PnP デバイス ツリーの各デバイス ノードには順序が付けられたデバイス オブジェクトの一覧があり、これらの各デバイス オブジェクトはドライバーに関連付けられています。 順序が付けられたデバイス オブジェクトの一覧と、関連付けられているドライバーを、デバイス ノードの*デバイス スタック*と呼びます。
+"*デバイス オブジェクト*" は、[**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 構造のインスタンスです。 PnP デバイス ツリーの各デバイス ノードには順序が付けられたデバイス オブジェクトの一覧があり、これらの各デバイス オブジェクトはドライバーに関連付けられています。 順序が付けられたデバイス オブジェクトの一覧と、関連付けられているドライバーを、デバイス ノードの*デバイス スタック*と呼びます。
 
 デバイス スタックは、いく通りかに考えることができます。 正式な意味では、デバイス スタックは順序が付けられた (デバイス オブジェクト、ドライバー) のペアです。 ただし、特定のコンテキストでは、デバイス スタックを順序が付けられたデバイス オブジェクトの一覧と考えると便利です。 また、他のコンテキストでは、デバイス スタックを順序が付けられたドライバーの一覧と考えると便利です。
 

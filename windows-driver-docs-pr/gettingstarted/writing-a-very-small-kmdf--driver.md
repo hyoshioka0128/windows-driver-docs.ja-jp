@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d41c513bf9ad3a7ae05b15c59028c85af430e77e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d43b1c8593473a5724208048d9acfa78803fe95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359288"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825163"
 ---
 # <a name="write-a-universal-hello-world-driver-kmdf"></a>ユニバーサル Hello World ドライバー (KMDF) の作成
 
@@ -66,7 +66,7 @@ ms.locfileid: "67359288"
     #include <wdf.h>
     ```
 
-    [Ntddk.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk) には、すべてのドライバーのコア Windows カーネルの定義が含まれ、[Wdf.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf) には、Windows Driver Framework (WDF) に基づくドライバーの定義が含まれます。 
+    [Ntddk.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk) には、すべてのドライバーのコア Windows カーネルの定義が含まれ、[Wdf.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf) には、Windows Driver Framework (WDF) に基づくドライバーの定義が含まれます。 
 
 2. 次に、使用する 2 つのコールバックの宣言を指定します。
 
@@ -110,7 +110,7 @@ ms.locfileid: "67359288"
     }
     ```
 
-    [*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) はすべてのドライバーのエントリ ポイントで、多くのユーザー モード アプリケーションに使用される `Main()` と同様です。 *DriverEntry* には、ドライバー全体の構造とリソースを初期化する役割があります。 この例では、 *DriverEntry* の "Hello World" を出力し、*EvtDeviceAdd* コールバックのエントリ ポイントを登録するためのドライバー オブジェクトを構成し、ドライバー オブジェクトを作成して返しました。 
+    [*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) はすべてのドライバーのエントリ ポイントで、多くのユーザー モード アプリケーションに使用される `Main()` と同様です。 *DriverEntry* には、ドライバー全体の構造とリソースを初期化する役割があります。 この例では、 *DriverEntry* の "Hello World" を出力し、*EvtDeviceAdd* コールバックのエントリ ポイントを登録するためのドライバー オブジェクトを構成し、ドライバー オブジェクトを作成して返しました。 
 
     ドライバー オブジェクトは、ドライバーで作成する可能性のあるその他すべてのフレームワーク オブジェクトの親オブジェクトとして機能し、デバイス オブジェクト、I/O キュー、タイマー、スピンロックなどを含みます。 フレームワーク オブジェクトの詳細については、「[フレームワーク オブジェクトの紹介](../wdf/introduction-to-framework-objects.md)」を参照してください。
 
@@ -147,7 +147,7 @@ ms.locfileid: "67359288"
     }
     ```
 
-    [*EvtDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) は、デバイスが到着したことが検出されたときに、システムによって呼び出されます。 その役割は、デバイスの構造体とリソースを初期化することです。 この例では、単に *EvtDeviceAdd* の "Hello World" のメッセージを出力し、デバイス オブジェクトを作成して返しました。 記述するその他のドライバーでは、ハードウェアの I/O キューを作成したり、デバイス固有の情報のための*デバイス コンテキスト*記憶域スペースを設定したり、デバイスを準備するために必要なその他のタスクを実行したりする場合があります。
+    [*EvtDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) は、デバイスが到着したことが検出されたときに、システムによって呼び出されます。 その役割は、デバイスの構造体とリソースを初期化することです。 この例では、単に *EvtDeviceAdd* の "Hello World" のメッセージを出力し、デバイス オブジェクトを作成して返しました。 記述するその他のドライバーでは、ハードウェアの I/O キューを作成したり、デバイス固有の情報のための*デバイス コンテキスト*記憶域スペースを設定したり、デバイスを準備するために必要なその他のタスクを実行したりする場合があります。
 
     > [!TIP]
     > デバイスの追加コールバックでは、ドライバーの名前をプレフィックスとして名前を付けた方法に注目してください (*KmdfHelloWorld*EvtDeviceAdd)。 一般に、他のドライバーの関数と区別できるようにするために、この方法で、ドライバーの関数の名前を付けることをお勧めします。 *DriverEntry* だけはまさにその名前を付ける必要があります。

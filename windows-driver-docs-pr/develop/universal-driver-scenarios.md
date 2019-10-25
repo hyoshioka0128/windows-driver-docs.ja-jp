@@ -3,12 +3,12 @@ title: ユニバーサル ドライバーのシナリオ
 description: 'DCHU ユニバーサル ドライバーのサンプルに、DCHU 設計原則 (Declarative: 宣言型、Componentized: コンポーネント化済み、Hardware Support Apps [HSA]: ハードウェア サポート アプリ、Universal API Compliance: ユニバーサル API 準拠) がどのように適用されているかについて説明します。'
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da943cd371aeb509cb346afd13ab78cae06f9280
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a868e73ff14234fea0cc4721fc0a7ed7e1be8765
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364182"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839607"
 ---
 # <a name="universal-driver-scenarios"></a>ユニバーサル ドライバーのシナリオ
 
@@ -198,7 +198,7 @@ CopyInf=osrfx2_DCHU_component.inf
 [DestinationDirs]
 OsrFx2_UserSvcCopyFiles = 13 ; copy to Driver Store
 ```
-ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  次に、例を示します。 
+ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  たとえば、次のように入力します。 
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
@@ -248,13 +248,13 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
 上記の例では、空フラグの値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) を呼び出して、パスの環境変数を解決します。 
 
-カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。 
+カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。 
 
 この設定がデバイスの状態の一部である場合にアクセスするには、まずアプリケーションはデバイスの ID を検索する必要があります。  ユーザー モード コードでは、[**CM_Get_Device_ID_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用してデバイスの一覧 (必要に応じて、フィルタ適用) を取得できます。 このデバイスの一覧には複数のデバイスが含まれている場合があるため、デバイスから状態を読み取る前に、適切なデバイスを検索します。 たとえば、特定の条件に一致するデバイスを検索するときに、[**CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw) を呼び出して、そのデバイスのプロパティを取得します。
 
 適切なデバイスが見つかったら、[**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) を呼び出して、デバイスの状態が格納されたレジストリの場所へのハンドルを取得します。 
 
-カーネル モード コードでは、PDO (物理デバイス オブジェクト) を取得し、[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey) を呼び出す必要があります。 
+カーネル モード コードでは、PDO (物理デバイス オブジェクト) を取得し、[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) を呼び出す必要があります。 
 
 デバイス インターフェイスの状態の場合にこの設定にアクセスするために、ユーザー モード コードで [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizea) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を呼び出すことができます。
 
@@ -262,14 +262,14 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 適切なインターフェイスが見つかったら、[**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw) を呼び出します。
 
-カーネル モード コードでは、状態を取得するデバイス インターフェイスのシンボリック リンク名を取得できます。 そのためには、[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification) を呼び出して、適切なデバイス インターフェイス クラスでデバイス インターフェイス通知に登録します。  別の方法として、システム上の現在のデバイス インターフェイスの一覧を取得するために [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出すこともできます。  上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、読み込まれる設定を持つ適切なインターフェイスを特定します。
+カーネル モード コードでは、状態を取得するデバイス インターフェイスのシンボリック リンク名を取得できます。 そのためには、[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) を呼び出して、適切なデバイス インターフェイス クラスでデバイス インターフェイス通知に登録します。  別の方法として、システム上の現在のデバイス インターフェイスの一覧を取得するために [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出すこともできます。  上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、読み込まれる設定を持つ適切なインターフェイスを特定します。
 
-適切なシンボリック リンク名が見つかったら、[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) を呼び出して、デバイス インターフェイスの状態が格納されたレジストリの場所へのハンドルを取得します。 
+適切なシンボリック リンク名が見つかったら、[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) を呼び出して、デバイス インターフェイスの状態が格納されたレジストリの場所へのハンドルを取得します。 
 
 > [!NOTE]
 > **CM_GETIDLIST_FILTER_PRESENT** フラグと [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用するか、**CM_GET_DEVICE_INTERFACE_LIST_PRESENT** フラグと [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を使用します。 これにより、ハードウェアが存在し、通信の準備ができていることを確認します。 
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 次の図は、Fabrikam と Contoso がユニバーサル Windows ドライバー用に作成したドライバー パッケージを示したものです。  疎結合の例では、[Windows ハードウェア デベロッパー センター ダッシュボード](https://partner.microsoft.com/dashboard/Registration/Hardware)で、基本パッケージ、拡張パッケージ、コンポーネントパッケージの 3 回にわたってパッケージが別個に提出されます。  密結合の例では、基本パッケージと拡張/コンポーネント パッケージの 2 つが提出されます。
 
@@ -277,7 +277,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 コンポーネント INF はコンポーネント ハードウェア ID に一致し、基本 INF と拡張 INF はボードのハードウェア ID に一致することに注意してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [ユニバーサル Windows ドライバーの概要](getting-started-with-universal-drivers.md)
 

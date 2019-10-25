@@ -4,12 +4,12 @@ title: Device Fundamental テストを選んで構成する方法
 description: Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連のテストを含むドライバー テスト フレームワークが用意されています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d711a7140ce1c284d80122efa70adf8f739efeac
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 155e3e4d792052db0e7bb4a24fb439bb8eefcf69
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020644"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839613"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
 
@@ -43,7 +43,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 
 多くの Device Fundamental テストで、ランタイム パラメーターを編集できます。 [Driver Test Group] (ドライバー テスト グループ) ウィンドウで、テスト名の横に表示される矢印 (») は、そのテストに変更できるパラメーターがあることを示しています。 矢印 (») をクリックして、実行時パラメーターを表示します。
 
-最も有用なパラメーターの 1 つは *DQ* で、テスト対象のデバイスを指定します。 既定値 (**IsDevice**) の場合は、ターゲット コンピューター上のすべてのデバイスがテストされます。 *DQ* パラメーターは、対象のデバイスを特定する [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) クエリを受け取ります。 特定のデバイスをテスト対象に指定できます。たとえば、
+最も有用なパラメーターの 1 つは *DQ* で、テスト対象のデバイスを指定します。 既定値 (**IsDevice**) の場合は、ターゲット コンピューター上のすべてのデバイスがテストされます。 *DQ* パラメーターは、対象のデバイスを特定する [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) クエリを受け取ります。 特定のデバイスをテスト対象に指定できます。たとえば、
 
 **DeviceID=’USB\\ROOT\_HUB\\4&1CD5D022&0’** は、**DeviceID** で指定されたデバイスのみをテスト対象として選択します。
 
@@ -66,7 +66,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="DQ"></span><span id="dq"></span><em>DQ</em></p></td>
-<td align="left"><p>テストに使うデバイスを特定します。 <em>DQ</em> パラメーターは、対象のデバイスを特定する <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">SDEL</a> クエリを受け取ります。 このクエリは非常に柔軟で、任意の数のデバイス (1 つのデバイスからシステム内のすべてのデバイスまで) を表すのに使うことができます。</p>
+<td align="left"><p>テストに使うデバイスを特定します。 <em>DQ</em> パラメーターは、対象のデバイスを特定する <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)">SDEL</a> クエリを受け取ります。 このクエリは非常に柔軟で、任意の数のデバイス (1 つのデバイスからシステム内のすべてのデバイスまで) を表すのに使うことができます。</p>
 <p>一般的な例:</p>
 <p></p>
 <dl>

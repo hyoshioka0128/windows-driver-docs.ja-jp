@@ -4,12 +4,12 @@ title: コマンド プロンプトから実行時にドライバーをテスト
 description: WDK には、ネットワーク上のテスト コンピューターでドライバーをテストできるように、デバイス テスト コンポーネントが用意されています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b921a17bd2ea98fccfa4481fe6ad321971cfbf3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b913f148d2430c7068b16cb582d42dfe7e02708c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370748"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839609"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>コマンド プロンプトから実行時にドライバーをテストする方法
 
@@ -21,7 +21,7 @@ WDK 8.1 以降、コマンド スクリプトを使って、テスト コンピ�
 
 -   Visual Studio と WDK を開発用のコンピューターにインストールします。
 -   Visual Studio から、テスト用のコンピューターの構成とプロビジョニングを行うことができます。 テスト コンピューターを構成すると、WDK ドライバー テスト フレームワークは自動的にテスト コンピューターのリモート デバッグを有効にして、必要なテスト バイナリとサポート ファイルを転送します。 まだ準備ができていない場合は、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」の指示に従ってください。
--   お勧めしませんが、必要なテスト コンポーネントを手動でインストールすることもできます。 指示に従って、[Test Authoring and Execution Framework (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) と WDTF をテスト コンピューターにインストールします。 「[手動によるテスト コンピューターへの TAEF のインストールとアンインストール](https://docs.microsoft.com/windows-hardware/drivers/taef/getting-started#manual_install_taef)」と「[手動によるテスト コンピューターへの WDTF のインストール](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index#manual_install_wdtf)」をご覧ください。
+-   お勧めしませんが、必要なテスト コンポーネントを手動でインストールすることもできます。 指示に従って、[Test Authoring and Execution Framework (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) と WDTF をテスト コンピューターにインストールします。 「[手動によるテスト コンピューターへの TAEF のインストールとアンインストール](https://docs.microsoft.com/windows-hardware/drivers/taef/getting-started#manual_install_taef)」と「[手動によるテスト コンピューターへの WDTF のインストール](https://docs.microsoft.com/windows-hardware/drivers/ddi/index#manual_install_wdtf)」をご覧ください。
 
 <a name="instructions"></a>手順
 ------------
