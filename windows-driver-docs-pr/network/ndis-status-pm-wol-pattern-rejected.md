@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_PM_WOL_PATTERN_REJECTED
-description: NDIS_STATUS_PM_WOL_PATTERN_REJECTED 状態は、電源管理の wake on LAN (WOL) パターンが拒否されたドライバーの関連を示します。
+description: NDIS_STATUS_PM_WOL_PATTERN_REJECTED の状態は、電源管理の wake on LAN (WOL) パターンが拒否されたことを示します。
 ms.assetid: 49180c69-a3b8-4a6f-b34f-93e063c88f43
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_PM_WOL_PATTERN_REJECTED ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_PM_WOL_PATTERN_REJECTED ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f8b18c4093f7b697834cbdabd517cdaa937a3a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c03d74ba9fd8c956ef0d3bfb5fc28930b36cd945
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381198"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843533"
 ---
-# <a name="ndisstatuspmwolpatternrejected"></a>NDIS\_状態\_PM\_WOL\_パターン\_拒否済み
+# <a name="ndis_status_pm_wol_pattern_rejected"></a>NDIS\_状態\_PM\_WOL\_パターン\_拒否されました
 
 
-NDIS\_状態\_PM\_WOL\_パターン\_拒否済みの状態が電源管理の wake on LAN (WOL) パターンが拒否されたドライバーを関連することを示します。
+NDIS\_ステータス\_PM\_WOL\_パターン\_拒否状態は、電源管理 wake on LAN (WOL) パターンが拒否されたことを示します。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS ミニポート ドライバーは、NDIS を生成できる\_状態\_PM\_WOL\_パターン\_WOL パターンを削除してのいずれかの拒否の状態を示す値。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体には WOL パターン識別子の ULONG が含まれています、WOL パターンを拒否します。 NDIS WOL パターンの識別子を提供する、 **PatternId**のメンバー、 [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造体。
+NDIS またはミニポートドライバーでは、NDIS\_ステータス\_PM\_WOL\_パターンが生成されます。いずれかの\_が WOL パターンを削除すると、拒否された状態が示されます。 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーは、拒否された wol パターンの WOL パターン識別子の ULONG を含みます。 NDIS では、 [**ndis\_PM\_wol\_pattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造体の**PATTERNID**メンバーに wol パターン識別子が指定されています。
 
-NDIS 生成、NDIS\_状態\_PM\_WOL\_パターン\_拒否状態の表示と、そのネットワーク アダプターから以前に追加された WOL パターンを削除する必要があります。 たとえば、NDIS より高い優先順位 WOL パターンのリソースを解放する WOL パターンを削除する場合があります。 Notification イベントは、削除のパターンを追加するバインディングにのみ送信されます。
+NDIS は、以前に追加された WOL パターンをネットワークアダプターから削除する必要がある場合に、NDIS\_STATUS\_PM\_WOL\_パターン\_拒否状態を示します。 たとえば、NDIS は、高い優先順位の WOL パターンのリソースを解放するために WOL パターンを削除する場合があります。 Notification イベントは、削除されたパターンを追加したバインディングにのみ送信されます。
 
-パターンをオフロードし、インフラストラクチャの間でローミングするインフラストラクチャの要素を使用するワイヤレス ネットワーク アダプターでは、新しいインフラストラクチャ要素が 1 つ前と同じ機能をサポートしていないことことができます。 ここでは、ミニポート ドライバーは、NDIS の状態の表示を発行できます NDIS を発行する NDIS および\_状態\_PM\_WOL\_パターン\_固有のエラー コードで拒否されます。
+インフラストラクチャ要素を使用するワイヤレスネットワークアダプターで、インフラストラクチャを介してパターンのオフロードとローミングを行う場合は、新しいインフラストラクチャ要素が前のものと同じ機能をサポートしていない可能性があります。 この場合、ミニポートドライバーは NDIS に状態を示す状態を発行します。 NDIS は、特定のエラーコードによって拒否された\_\_PM\_WOL\_\_パターンを発行します。
 
-WiFi ドライバーは、ウェイク アップのパターンをローカルにキャッシュ可能性があります。 ドライバーの追加や削除、ウェイク アップ パターンの OID を処理するときのみ、ローカル キャッシュを更新するドライバーを選択できます。 受信するまで、ドライバーは、インフラストラクチャの更新を遅らせることができます、 [OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters) OID。
+WiFi ドライバーによって、ウェイクアップパターンがローカルにキャッシュされる場合があります。 ドライバーがウェイクアップパターンを追加または削除するための OID を処理する場合、ドライバーはローカルキャッシュの更新のみを選択できます。 ドライバーは、 [oid\_PM\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters) oid を受け取るまで、インフラストラクチャの更新を遅らせることができます。
 
-インフラストラクチャでは、すべてのウェイク アップのパターンに対応するために十分なリソースがあります。 ここでは、インフラストラクチャでは、ウェイク アップ パターンの一覧の一部を受け入れることができます。 ミニポート ドライバーが、OID が完了したとき\_PM\_パラメーターが要求を設定、ドライバーは、NDIS を行う必要があります\_状態\_PM\_WOL\_パターン\_拒否済みの状態各アクセス ポイント (AP) を拒否する WOL パターンの兆候です。
+インフラストラクチャには、すべてのウェイクアップパターンに対応するのに十分なリソースがない可能性があります。 この場合、インフラストラクチャはウェイクアップパターンの一部を受け入れることができます。 ミニポートドライバーが OID\_PM\_PARAMETERS set 要求を完了すると、ドライバーは、アクセスする各 WOL パターンについて、NDIS\_ステータス\_PM\_WOL\_PATTERN を作成する必要があります。ポイント (AP) は拒否します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -42,11 +42,11 @@ WiFi ドライバーは、ウェイク アップのパターンをローカル�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>以降では、NDIS 6.20 が動作をサポートします。</p></td>
+<td><p>NDIS 6.20 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -54,9 +54,9 @@ WiFi ドライバーは、ウェイク アップのパターンをローカル�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
+[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
 [OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)
 

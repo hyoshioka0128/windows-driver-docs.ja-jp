@@ -3,72 +3,72 @@ title: サブユニット ドライバーの初期化とピン接続の確立
 description: サブユニット ドライバーの初期化とピン接続の確立
 ms.assetid: 08c7a604-3aa5-4ee0-be55-b58bea0e6df1
 keywords:
-- Avc.sys 関数ドライバー WDK、サブユニットのドライバーの初期化
-- Avc.sys 関数ドライバー WDK、暗証番号 (pin) の接続
-- 接続 WDK AV/C をピン留め
-- WDK AV/C の接続
-- AV/C サブユニット ドライバーの初期化
-- pin は、WDK AV/C をカウントします。
-- WDK AV/C を書式設定します。
-- データ形式の WDK AVStream
+- Avc 関数ドライバー WDK、サブユニットドライバーの初期化
+- Avc 関数ドライバー WDK、pin 接続
+- ピン接続 WDK AV/C
+- 接続 WDK AV/C
+- AV/C サブユニットドライバーの初期化
+- pin カウント WDK AV/C
+- WDK AV/C の形式
+- データ形式 WDK AVStream
 - AVCCONNECTINFO
-- 外部のプラグイン接続 WDK AV/C
+- 外部プラグ接続 WDK AV/C
 - KSPIN_DESCRIPTOR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b606726bc6c909006d3df095ba09a478c83ec9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6a72d381977d6c073bf408a5118fa8402fe8f8d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360682"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845571"
 ---
 # <a name="initializing-a-subunit-driver-and-establishing-pin-connections"></a>サブユニット ドライバーの初期化とピン接続の確立
 
 
-でサブユニット ドライバーを初期化して、暗証番号 (pin) の接続を確立するには、次の手順を実行します。
+サブユニットドライバーを初期化し、pin 接続を確立するには、次の手順を実行します。
 
-1.  送信、 [ **AVC\_関数\_取得\_PIN\_カウント**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-pin-count)要求。 この手順では、後続の関数の結果として得られるピンの数を使用すると、(0 ~ PinCount 1 の範囲をオフセット) の暗証番号 (pin) を指定します。
+1.  AVC\_関数を送信して[ **\_PIN\_COUNT 要求\_取得**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-pin-count)します。 この手順の後続の関数で生成された pin の数を使用して、pin を示します (オフセットの範囲は 0 ~ PinCount-1)。
 
-2.  各ピンには、送信、 [ **AVC\_関数\_取得\_PIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-pin-descriptor)要求。 (KS) フィルターの定義をストリーミングするカーネルを完了するには、するには、返された使用[ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)のメンバー、 [ **AVC\_暗証番号(pin)\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_descriptor)で渡された構造体、 **AVC\_関数\_取得\_PIN\_記述子**要求。 *Avc.sys*塗りつぶす、 **MediumsCount**、**メディア**、**データフロー**、および**通信**KSPINのメンバー\_記述子。 サブユニット ドライバーのコピー、KSPIN で許可されている\_記述子構造体であり (一覧は、合成の永続的なサブユニット プラグ接続 Guid を含む可能性があります)、そのままから中程度リストのままにして、ことをお勧めしますが、メンバーのオーバーライド.
+2.  各 pin について、 [ **\_pin\_記述子要求\_、AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-pin-descriptor)を送信します。 カーネルストリーミング (KS) フィルターの定義を完了するには、avc\_関数と共に渡された、 [**avc\_PIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_pin_descriptor)構造体の返された[**KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)のメンバーを**取得\_10_ PIN\_記述子**要求。 *Avc*は、kspin\_記述子の**MediumsCount**、**メディア**、データ**フロー**、および**通信**メンバーを入力します。 サブユニットドライバーは、KSPIN\_記述子の構造をコピーし、メンバーをオーバーライドすることを許可されていますが、中程度の一覧はそのままにしておくことをお勧めします (パーマネントサブレベルのプラグ接続用に合成された Guid が一覧に含まれる場合があります)。
 
-    KSPIN ポインター\_サブユニット ドライバーの物理デバイス オブジェクト (PDO) が削除されるまでに残っているページのプールに記述子構造体のポイント。 内容を破棄するように注意する必要があります。
+    KSPIN\_記述子構造内のポインターは、サブユニットドライバーの物理デバイスオブジェクト (PDO) が削除されるまで残っているページプールを指します。 コンテンツを破棄しないように注意する必要があります。
 
-    指す、またはより適していますが、構造がある場合は、ポインターを置換するサブユニット ドライバーが許可されます。 ただし、サブユニット ドライバーは、これらのメモリ範囲を解放する必要があります。 サブユニット ドライバー (Stream クラスにある) ではなく AVStream を使用するかどうかは、どちらを使用する、 **KsEdit**ルーチンをこのようなメモリ参照に置き換えます。
+    サブユニットドライバーは、ポインターがより適した、またはより適切な構造を指している場合、ポインターを置き換えることができます。 ただし、サブユニットドライバーでは、これらのメモリ範囲を解放しないでください。 サブユニットドライバーで (Stream クラスではなく) AVStream が使用されている場合は、 **KsEdit**ルーチンを使用して、このようなメモリ参照を置き換える必要があります。
 
-    なお*Avc.sys*は*いない*、KSPIN 入力\_記述子の**インターフェイス**、 **DataRanges**、 **カテゴリ**、**名前**、または**ConstrainedDataRanges**メンバー。 サブユニット ドライバーは、これらのメンバーに格納だけでなく**IntersectHandler**と省略可能な**コンテキスト**メンバー (手順 3. で説明されている) 場合、低いフィルター ドライバー *Avcstrm.sys*が存在しません。
+    *Avc*では、kspin\_記述子の**インターフェイス**、 **DataRanges**、 **Category**、 **Name**、または**ConstrainedDataRanges**の各メンバーは満たさ*れない*ことに注意してください。 サブシステムドライバーでは、これらのメンバーだけでなく、 **IntersectHandler**と省略可能な**コンテキスト**メンバー (手順3で説明します) が、下位フィルタードライバーの*avcstrm .sys*が存在しない場合にも入力します。
 
-    配信元に関係なく、 **DataRanges** 、メンバーが重複する範囲で、それぞれの標準的な範囲を組み合わせる必要があります、 [ **AVCPRECONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcpreconnectinfo)構造追加時 (で適切な指定子の Guid を使用して) 両方デバイスのコンピューターをサポートするために*と*デバイスからデバイスへの接続。 *Avc.sys*を通じて各ピンの AVCPRECONNECTINFO 構造体を指定することができます、 [ **AVC\_関数\_取得\_接続情報**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-connectinfo)要求。
+    **DataRanges**メンバーのオリジンに関係なく、各標準範囲は、 [**Avcpreconnectinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcpreconnectinfo)構造体が追加された (適切な指定子 guid を使用して) 重複する範囲とペアにして、デバイスからコンピューター*への両方をサポートする必要があります。デバイスからデバイスへ*の接続。 *Avc*は、AVC\_関数を介して各ピンの AVCPRECONNECTINFO 構造を提供し、 [ **\_connectinfo 要求\_取得**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-connectinfo)できます。
 
-3.  **IntersectHandler**ルーチンを作成し、 **DataFormat**の一致するペアの構造**DataRanges**構造体。 積集合ルーチンがの結果で指定されたか、 **AVC\_関数\_取得\_暗証番号 (pin)\_記述子**サブユニット ドライバーによって提供されるか。 サブユニット ドライバーでは、独自の積集合のハンドラーを提供する場合は、次を参照してください。 [ **AV/C 交差ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/nc-avc-pfnavcintersecthandler)します。 データの交差部分の詳細については、次を参照してください。 [AVStream の交差部分を DataRange](data-range-intersections-in-avstream.md)します。
+3.  **IntersectHandler**ルーチンは、一致する**DataRanges**構造体の**DataFormat**構造体を作成します。 積集合ルーチンは、AVC\_関数の結果で指定されるか、 **\_記述子を\_取得**したり、サブユニットドライバーによって提供されたりする\_ます。 サブユニットドライバーが独自の交差ハンドラーを提供する場合は、「 [**AV/C Intersect ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/nc-avc-pfnavcintersecthandler)」を参照してください。 データの積集合の詳細については、 [AVStream の Datarange 重なり集合](data-range-intersections-in-avstream.md)に関するセクションを参照してください。
 
-    **DataFormat**が AVCPRECONNECTINFO 範囲に一致する構造体、 [ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)構造が追加されます。 この構造体をローカルの pin の AVCPRECONNECTINFO 構造体のコピーである、**フラグ**メンバーに置き換え、 **hPlug**メンバー。 **HPlug**メンバーである必要があります**NULL**場合、 **KSPIN\_フラグ\_AVC\_永続的な**ビットが設定されます。 場合、 **KSPIN\_フラグ\_AVC\_PCRONLY**または**KSPIN\_フラグ\_AVC\_FIXEDPCR** で設定されたビット**フラグ**、 **UnitPlugNumber**と**データフロー**取得に使用されるメンバー、 **hPlug**から処理*61883 します。sys*します。 ビット (またはないビット) の他の任意の組み合わせ。 つまり、 **hPlug**使用可能なプラグインの任意の数を取得することができます (を使用して、**データフロー**プラグの方向を判断するにはメンバー)。
+    AVCPRECONNECTINFO 範囲に一致する**DataFormat**構造体に[**avcconnectinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)構造体が追加されています。 この構造体は、ローカル pin の AVCPRECONNECTINFO 構造体のコピーであり、**フラグ**メンバーが**hplug**メンバーに置き換えられています。 **Kspin\_フラグ\_AVC\_パーマネント**ビットが設定されている場合、 **Hplug**メンバーは**NULL**のままである必要があります。 **Kspin\_フラグ\_avc\_PCRONLY**または**kspin\_フラグ\_AVC\_Fixedpcr**ビットが**フラグ**に設定されている場合は、 **UnitPlugNumber**とデータ**フロー**のメンバーを使用してを取得します。*61883*の**hplug**ハンドル。 その他のビットの組み合わせ (またはビットなし) は、使用可能な任意のプラグ番号に対して**Hplug**を取得できることを意味します (データ**フロー**メンバーを使用してプラグの方向を決定します)。
 
-    **IntersectHandler**ルーチンは、下に結果として得られる AVCCONNECTINFO 構造体を渡す必要があります*Avc.sys* (手順 4 で説明)。 確実に渡す AVCCONNECTINFO *Avc.sys*後自体 (たとえば、単位入力またはサブユニットの宛先にプラグインするときに出力プラグインするときにソース間の接続) を単位内のすべてのプラグインが必要な接続を行うことができます。
+    **IntersectHandler**ルーチンは、結果として得られた AVCCONNECTINFO 構造体を*Avc*に渡す必要があります (手順 4. で説明)。 AVCCONNECTINFO を渡すことによって、 *Avc*は後から必要なプラグ接続をユニット内に作成できます (たとえば、ユニット入力または出力プラグとサブユニットの接続先またはソースプラグとの間の接続)。
 
-4.  最後に、(形式のネゴシエーションとデータの交点) した後、暗証番号 (pin) のデータ形式を設定すると、pin は AVCCONNECTINFO 構造体の形式を調べる必要があります。 この構造体が見つかると、pin からの IEEE 1394 bus との間、またはコンピューターに、データを移動されません。 代わりに、使用[ **AVC\_関数\_設定\_接続情報**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-set-connectinfo) AVCCONNECTINFO 内容を下位のドライバーに送信します。 場合によっては、両方、低いフィルター ドライバー (たとえば、 *Avcstrm.sys*) および*Avc.sys*ドライバー接続操作を実行するが、この時点では、AVCCONNECTINFO 内容のみがキャッシュされている (をする必要があります接続操作では実行されません)。 下位のドライバーを提供している AVCCONNECTINFO をキャッシュしません。 1 つだけの pin では、この方法で**hPlug**ユニット間の接続。 低いフィルター ドライバーがない場合は、サブユニット ドライバーは、AVCCONNECTINFO を下位のドライバーに配信するかどうかを決定する必要があります。 *Avc.sys*必要があるプラグの AVCCONNECTINFO 構造を表示するコントロールを登録しません (PCR) の接続のみです。
+4.  最後に、データ形式がピンに設定されている場合 (形式ネゴシエーションとデータの交差部分)、pin は AVCCONNECTINFO 構造体の形式を確認する必要があります。 この構造が検出された場合、pin は IEEE 1394 bus との間で、またはコンピューターとの間でデータを移動しません。 代わりに、AVC\_関数を使用して[ **\_connectinfo\_設定**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-set-connectinfo)し、AVCCONNECTINFO の内容を下位のドライバーに送信します。 低いフィルタードライバー ( *Avcstrm .sys*など) と*Avc*ドライバーの両方が接続操作を実行する可能性がありますが、この時点では avcstrm の内容のみがキャッシュされます (接続操作は実行されません)。 下位のドライバーは、提供された AVCCONNECTINFO をキャッシュしません。 このようにして、1つの pin のみが、ユニット間の**Hplug**接続を確立します。 下位フィルタードライバーがない場合は、サブユニットドライバーが AVCCONNECTINFO を下位のドライバーに配信するかどうかを決定する必要があります。 *Avc*は、プラグ制御レジスタ (PCR) のみの接続に対して AVCCONNECTINFO 構造を表示する必要がありません。
 
-    サブユニットは stream の形式を管理する低いフィルター ドライバーが使用していない場合、サブユニット ドライバーは、IEEE 1394 シリアル バス プラグの接続を設定します。 詳細については、次を参照してください。 [/C AV ストリーミングの概要](av-c-streaming-overview.md)します。
+    サブユニットが、ストリーム形式の管理に下位フィルタードライバーを使用していない場合、サブユニットドライバーは、IEEE 1394 serial bus プラグ接続を設定します。 詳細については、「 [AV/C ストリーミングの概要](av-c-streaming-overview.md)」を参照してください。
 
-    サブユニット ドライバーをキャッシュする必要があります、 **hPlug**場合、ピア ツー ピア接続をセットアップする形式のメンバー。
+    サブユニットドライバーは、次の場合にピアツーピア接続を設定するために、形式の**Hplug**メンバーをキャッシュする必要があります。
 
-    -   **HPlug**メンバーは、サブユニット ドライバーによって作成されたものと一致しません。
-    -   **DeviceID**メンバーは、サブユニットのドライバーを AVCPRECONNECTINFO で受信した 1 つと一致しません。
-    -   **データフロー**メンバーは、サブユニットの暗証番号 (pin) のデータ フローと一致しません。
+    -   **Hplug**メンバーがサブユニットドライバーによって作成されたものと一致しません。
+    -   **DeviceID**メンバーが AVCPRECONNECTINFO でサブユニットドライバーによって受信されたものと一致しません。
+    -   データ**フローメンバーが**サブユニットの pin のデータフローと一致しません。
 
-5.  暗証番号 (pin) の接続リソースは、取得するのには、送信、 [ **AVC\_関数\_ACQUIRE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)要求。 下位のドライバー (または自身のサブユニット ドライバー) を使用して、キャッシュされた AVCCONNECTINFO、 **hPlug**接続します。 サブユニットおよび単位のプラグ間の内部接続がによって行われた*Avc.sys*受信すると、 **AVC\_関数\_取得**要求と、キャッシュされた AVCCONNECTINFO を使用します。 *Avc.sys*は情報をキャッシュも試行内部プラグイン接続内部プラグイン コントロールがない場合や、接続は的なものとしてマークされている場合。
+5.  ピン接続リソースを取得する場合は、要求を[**取得\_AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)を送信します。 下位のドライバー (またはサブユニットドライバー自体) は、キャッシュされた AVCCONNECTINFO を使用して**Hplug**接続を行います。 サブユニットとユニットプラグ間の内部接続は、キャッシュされた AVCCONNECTINFO を使用して、要求の**取得\_avc\_関数**を受け取ったときに、 *avc*によって行われます。 *Avc*は、内部プラグ制御がない場合、または接続が永続的とマークされている場合に、情報をキャッシュしたり、内部プラグ接続を試行したりしません。
 
-6.  暗証番号 (pin) の接続リソースは、解放するのには、送信、 [ **AVC\_関数\_リリース**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release)要求。 下位のドライバーと*Avc.sys*ように、キャッシュされた AVCCONNECTINFO 交互*取得*と*リリース*操作を実行できます。
+6.  ピン接続リソースを解放する場合は、 [**AVC\_関数\_リリース**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release)要求を送信します。 下位のドライバーと*Avc*は、キャッシュされた AVCCONNECTINFO を保持します。これにより、代替の*取得*操作と*解放*操作を実行できます。
 
-7.  送信、 [ **AVC\_関数\_CLR\_接続情報**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-clr-connectinfo) AVCCONNECTINFO のキャッシュされたデータを削除する構造体。
+7.  [**CLR\_connectinfo 構造体\_AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-clr-connectinfo)を送信して、キャッシュされた AVCCONNECTINFO データを削除します。
 
-なお、 **AVC\_関数\_設定\_接続情報**構造体は、データの交差部分 (ローカル AVCCONNECTINFO) 中に作成された AVCCONNECTINFO 構造で 1 回呼び出す必要があり、もう一度ときに渡される AVCCONNECTINFO 構造を持つには、(外部 AVCCONNECTINFO) の形式を設定します。 サブユニット フィルター ドライバーのさまざまなデバイスの間の接続 (たとえば、 *Avcstrm.sys)* 外部の情報をキャッシュ (外部**hPlug**)、および*Avc.sys*ローカル情報をキャッシュします。 同じデバイス内のサブユニットの間で接続の場合、フィルター ドライバーをキャッシュしませんの情報と*Avc.sys*外部のサブユニットの情報のみをキャッシュします。 フィルター ドライバーは、すべてを渡す必要があります**AVC\_関数\_設定\_接続情報**下に要求*Avc.sys*に関する意思決定をシールドすることができるように、サブユニットは、接続を接続します。
+**AVC\_関数\_SET\_CONNECTINFO**構造体は、データ共通部分 (ローカル avcconnectinfo) 中に作成される avcconnectinfo 構造体で1回、avcconnectinfo でもう一度呼び出す必要があることに注意してください。形式 (外部 AVCCONNECTINFO) の設定時に渡される構造体。 異なるデバイスのサブユニット間の接続では、フィルタードライバー (たとえば*Avcstrm .sys)* によって外部情報 (外部**hplug**) がキャッシュされ、 *Avc*によってローカル情報がキャッシュされます。 同じデバイス内のサブユニット間の接続の場合、フィルタードライバーは情報をキャッシュしません。また、 *Avc*は外部サブユニットの情報のみをキャッシュします。 フィルタードライバーは、すべての**avc\_関数\_\_CONNECTINFO**要求を*avc*に渡す必要があります。これにより、サブユニットプラグ接続に関する意思決定からもシールドされるようになります。
 
-接続するときに、AV/C 接続のロックのビットが設定されています。 (ソースの接続) の出力ピンは、(同じ出力に追加の入力) からのオーバーレイの接続を許可する複数の暗証番号 (pin) のインスタンスを公開します。 ただし、オーバーレイの接続が許可されている場合何もできないように、*切断*コマンドからのすべての既存の接続を削除しています。 これには、AV/C 仕様に固有です。 接続をオーバーレイのサブユニットを複数送信**AVC\_関数\_設定\_接続情報**と**AVC\_関数\_の取得**のペアを要求 (の介在なし**AVC\_関数\_リリース**要求)。 さらに、2 番目のコンピューターが IEEE 1394 バスに導入された、または同じコンピューターで 2 つ目の互換性のないアプリケーションを実行時に、これと同じ動作が発生することができます。
+AV/C 接続ロックビットは、接続時に設定されます。 出力ピン (ソースプラグ) は、オーバーレイ接続を可能にする複数のピンインスタンス (同じ出力から追加の入力へ) を公開します。 ただし、オーバーレイ接続が許可されている場合、*切断*コマンドによって既存のすべての接続が削除されるのを防ぐことはできません。これは、AV/C 仕様に固有のものです。 接続をオーバーレイするときに、サブユニットは複数の**avc\_関数を送信し\_\_CONNECTINFO**関数と**avc\_関数**を設定して、\_を介在させずに要求のペアを取得 **\_リリース**要求)。 さらに、2台目のコンピューターが IEEE 1394 バスに導入された場合や、2つ目の互換性のないアプリケーションが同じコンピューター上で実行されている場合にも、この動作が発生する可能性があります。
 
-AV/C プラグの外部接続がによって直接サポートされていない*Avc.sys*が*Avc.sys*提供することでサブユニット プラグと外部プラグ間の内部接続を確立できますも合成AVCCONNECTINFO 構造体。 サブユニット ドライバーを使用して AVCCONNECTINFO 構造体を作成することができます、 [ **AVC\_関数\_取得\_UNIQUE\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-unique-id)関数コードを入力するには**DeviceID**単位アドレス 0 xff までを提供して、メンバーと外部の番号 (番号のプラグに論理 OR 演算子を使用して、0x80 に参加させる) を接続、 **SubunitAddress**と**SubunitPlugNumber**メンバーと適切なデータを提供するフロー方向、**データフロー**メンバー。 **HPlug**と**UnitPlugNumber**にメンバーを設定する必要があります**NULL**します。 によって外部プラグが入力と出力の数を検出できる場合、 **AVC\_関数\_取得\_EXT\_プラグ\_カウント**関数。
+AV/C 外部プラグ接続は、 *avc*で直接サポートされていませんが、合成された AVCCONNECTINFO 構造を提供して、サブユニットプラグと外部プラグ間の内部接続を*確立すること*ができます。 サブユニットドライバーは、 [**AVC\_\_関数**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-unique-id)を使用して AVCCONNECTINFO 構造体を作成できます。\_一意の\_ID 関数コードを取得して、 **DeviceID**メンバーを入力し、単位アドレス0xff と外部プラグ番号を指定します。**Subunitaddress**メンバーと**SubunitPlugNumber**メンバーに対して、論理 OR 演算子を使用して0x80 と結合されたプラグ番号。データ**フローメンバーで**正しいデータフロー方向を指定します。 **Hplug**メンバーと**UnitPlugNumber**メンバーを**NULL**に設定する必要があります。 入力および出力の外部プラグの数は、AVC\_関数を使用して検出できます。これは、 **\_EXT\_プラグ\_カウント関数\_取得**します。
 
-許可する手法*Avc.sys*アプリケーションへの接続が可能な各外部プラグインのフィルター ファクトリには、適切な内部のプラグイン接続および公開可能な外部プラグをします。 結果として得られるフィルター インスタンスは、適切な入力または出力ピンは、さらに AVCCONNECTINFO 構造体を提供を公開します。
+*Avc*が適切な内部プラグ接続を作成し、可能な外部プラグ接続をアプリケーションに公開できるようにする方法は、可能な外部プラグごとにフィルターファクトリを用意することです。 結果として得られるフィルターインスタンスは、適切な入力ピンまたは出力ピンを公開し、さらに AVCCONNECTINFO 構造体を提供します。
 
  
 

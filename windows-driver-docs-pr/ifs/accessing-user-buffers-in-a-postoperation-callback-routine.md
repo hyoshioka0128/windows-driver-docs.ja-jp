@@ -3,15 +3,15 @@ title: 操作後コールバック ルーチン内でユーザー バッファ�
 description: 操作後コールバック ルーチン内でユーザー バッファーへアクセスする
 ms.assetid: a980f302-6fde-461e-8b11-313530aff350
 keywords:
-- postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、バッファー
+- postoperation コールバックルーチン WDK ファイルシステムミニフィルター、バッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73faf5545cbd8db2a4240324e972a0d00eff3213
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 000401f32303a44a5ce129fdb526fadcc34adba3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381738"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841505"
 ---
 # <a name="accessing-user-buffers-in-a-postoperation-callback-routine"></a>操作後コールバック ルーチン内でユーザー バッファーへアクセスする
 
@@ -19,11 +19,11 @@ ms.locfileid: "67381738"
 ## <span id="ddk_accessing_user_buffers_in_a_postoperation_callback_routine_if"></span><span id="DDK_ACCESSING_USER_BUFFERS_IN_A_POSTOPERATION_CALLBACK_ROUTINE_IF"></span>
 
 
-ミニフィルター ドライバー [ **postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)扱う必要があります、バッファー、IRP ベースの I/O 操作で次のようにします。
+ミニフィルタードライバー [**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)は、次のように、IRP ベースの i/o 操作でバッファーを処理する必要があります。
 
--   バッファーの MDL が存在するかどうかを確認します。 見つかる MDL ポインター、 *MdlAddress*または*OutputMdlAddress*パラメーター、 [ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の操作。 ミニフィルター ドライバーが呼び出せる[ **FltDecodeParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdecodeparameters) MDL ポインターを照会します。
+-   バッファーに対して MDL が存在するかどうかを確認します。 MDL ポインターは、操作の[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)の*mdladdress*パラメーターまたは*outputmdladdress*パラメーターにあります。 ミニフィルタードライバーは、 [**FltDecodeParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdecodeparameters)を呼び出して、MDL ポインターを照会できます。
 
-    有効な MDL を取得するための 1 つのメソッドが IRP 検索\_MN\_MDL フラグ、 **MinorFunction** I/O パラメーター ブロックのメンバー [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)コールバックのデータ。 次の例は、IRP をチェックする方法を示しています。\_MN\_MDL フラグ。
+    有効な MDL を取得するための1つの方法として、コールバックデータ内の i/o パラメーターブロック[**FLT\_IO\_parameter\_block**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)の**minorfunction**メンバーで、IRP\_\_MDL フラグを探します。 次の例では、IRP\_\_MDL フラグをチェックする方法を示します。
 
     ```ManagedCPlusPlus
     NTSTATUS status;
@@ -36,7 +36,7 @@ ms.locfileid: "67381738"
     }
     ```
 
-    ただし、IRP\_MN\_MDL フラグ操作と書き込み操作の読み取りのみ設定できます。 使用することをお勧め[ **FltDecodeParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdecodeparameters)ルーチンは、すべての操作に対して有効な MDL のチェックがあるため、MDL を取得します。 次の例では、有効な場合、MDL パラメーターのみが返されます。
+    ただし、IRP\_\_MDL フラグは、読み取りおよび書き込み操作に対してのみ設定できます。 [**FltDecodeParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdecodeparameters)を使用して mdl を取得することをお勧めします。これは、ルーチンが任意の操作に対して有効な mdl をチェックするためです。 次の例では、有効な場合にのみ、MDL パラメーターが返されます。
 
     ```ManagedCPlusPlus
     NTSTATUS status;
@@ -46,9 +46,9 @@ ms.locfileid: "67381738"
     status = FltDecodeParameters(CallbackData, &ReadMdl, NULL, NULL, NULL);
     ```
 
--   バッファーの MDL が存在する場合に呼び出す[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)バッファーのシステム アドレスを取得し、このアドレスを使用して、バッファーへのアクセスにします。 (**MmGetSystemAddressForMdlSafe** IRQL で呼び出すことができます&lt;= ディスパッチ\_レベルです)。
+-   バッファーに対して MDL が存在する場合は、 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出してバッファーのシステムアドレスを取得し、このアドレスを使用してバッファーにアクセスします。 (**MmGetSystemAddressForMdlSafe**は IRQL &lt;= DISPATCH\_LEVEL で呼び出すことができます)。
 
-    前の例から続行すると、次のコードは、システムのアドレスを取得します。
+    前の例から続けると、次のコードはシステムアドレスを取得します。
 
     ```ManagedCPlusPlus
     if (*ReadMdl != NULL)
@@ -62,23 +62,23 @@ ms.locfileid: "67381738"
     }
     ```
 
--   バッファーの MDL がない場合は、操作を使用してシステム バッファー フラグが設定するかどうかを確認、 [ **FLT\_IS\_システム\_バッファー** ](https://docs.microsoft.com/previous-versions/ff544663(v=vs.85))マクロ。
+-   バッファー用の MDL がない場合は、 [**FLT\_is\_システム\_buffer**](https://docs.microsoft.com/previous-versions/ff544663(v=vs.85))マクロを使用して、システムバッファーフラグが操作に対して設定されているかどうかを確認します。
 
-    -   場合、FLT\_IS\_システム\_バッファー マクロを返します**TRUE**操作がバッファー内の I/O を使用し、バッファーは、IRQL で安全にアクセスできる、ディスパッチ =\_レベル。
+    -   FLT\_が\_システム\_バッファーマクロによって**TRUE**が返された場合、操作はバッファー i/o を使用し、IRQL = ディスパッチ\_レベルでバッファーに安全にアクセスできます。
 
-    -   場合、FLT\_IS\_システム\_バッファー マクロを返します**FALSE**、バッファーは、IRQL で安全にアクセスできない = ディスパッチ\_レベル。 ディスパッチで postoperation コールバック ルーチンを呼び出すことができるかどうか\_呼び出す必要がありますレベル、 [ **FltDoCompletionProcessingWhenSafe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe) IRQLで処理することができるまで、操作を保留する&lt;APC を =\_レベル。 コールバック ルーチンを指していますが、 *SafePostCallback*パラメーターの**FltDoCompletionProcessingWhenSafe**呼び出す必要がありますまず[ **FltLockUserBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer)バッファーをロックし、呼び出す[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)バッファーのシステム アドレスを取得します。
+    -   FLT\_が\_システム\_バッファーマクロによって**FALSE**が返された場合、IRQL = ディスパッチ\_レベルでバッファーに安全にアクセスすることはできません。 Postoperation コールバックルーチンをディスパッチ\_レベルで呼び出すことができる場合、この呼び出しは、IRQL &lt;= APC\_レベルで処理できるようになるまで、操作を保留するために[**Fltdo補完 Processingwhensafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)を呼び出す必要があります。 **FltdoFltLockUserBuffer Processingwhensafe**の*safepostcallback*パラメーターが指すコールバックルーチンは、最初にバッファーをロックしてから[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出すために、まず** should first call [**FltLockUserBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)を呼び出します。バッファーのシステムアドレスを取得します。
 
-Postoperation コールバック ルーチンを高速な I/O 操作では、バッファーを次のように扱う必要があります。
+Postoperation コールバックルーチンは、次のように、高速の i/o 操作でバッファーを処理する必要があります。
 
--   (高速な I/O 操作を MDL ことがあるできない) ため、バッファーにアクセスするのにには、バッファーのアドレスを使用します。
+-   バッファーアドレスを使用してバッファーにアクセスします (高速 i/o 操作には MDL を設定できないため)。
 
--   ユーザー領域バッファーのアドレスが有効では、ミニフィルター ドライバーなどでルーチンを使用する必要があります[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)、内のすべてのバッファー参照を囲む**お試しください**/**を除く**ブロックします。
+-   ユーザー領域のバッファーアドレスが有効であることを確認するには、ミニフィルタードライバーで[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)や[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)などのルーチンを使用し**て、try**/**以外**のブロックですべてのバッファー参照を囲む必要があります。
 
--   高速な I/O 操作の postoperation コールバック ルーチンを適切なスレッド コンテキストで呼び出されることが保証されます。
+-   高速 i/o 操作の postoperation コールバックルーチンは、正しいスレッドコンテキストで呼び出されることが保証されています。
 
--   高速な I/O 操作の postoperation コールバック ルーチンは IRQL で呼び出される保証&lt;APC を =\_レベルなどのルーチンを呼び出すことが安全に[ **FltLockUserBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer)します。
+-   高速 i/o 操作の postoperation コールバックルーチンは、IRQL &lt;= APC\_レベルで呼び出されることが保証されているので、 [**FltLockUserBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)などのルーチンを安全に呼び出すことができます。
 
-システムのバッファーの次の例のコード フラグメントをチェックまたは高速な I/O フラグのディレクトリの管理操作と完了に必要な場合の処理を延期します。
+次のコード例では、ディレクトリ制御操作のシステムバッファーまたは高速 i/o フラグをチェックし、必要に応じて完了処理を延期します。
 
 ```CSS
 if (*DirectoryControlMdl == NULL)
@@ -99,7 +99,7 @@ if (*DirectoryControlMdl == NULL)
 }
 ```
 
-できる、高速な I/O 操作の IRP に基づくすべてのバッファー参照で囲むか、または**お試しください**/**を除く**ブロックします。 バッファー内の I/O を使用する IRP ベース操作でこれらの参照を囲む必要はありませんが、**お試しください**/**を除く**ブロックは、安全な予防措置です。
+高速 i/o または IRP ベースのいずれかの操作を実行するには、すべてのバッファー参照を**try**/**以外**のブロックで囲む必要があります。 バッファリングされた i/o を使用する IRP ベースの操作では、これらの参照を囲む必要はありませんが、 **try**/**except**ブロックは安全な予防措置です。
 
  
 

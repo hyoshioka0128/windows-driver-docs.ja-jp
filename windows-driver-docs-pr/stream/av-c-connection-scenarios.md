@@ -3,27 +3,27 @@ title: AV/C 接続シナリオ
 description: AV/C 接続シナリオ
 ms.assetid: 392f996c-47aa-4ceb-adf9-0c8fd114a511
 keywords:
-- WDK AV/C の接続
-- AV/C WDK、接続のシナリオ
-- デジタル ビデオ WDK AV/C
+- 接続 WDK AV/C
+- AV/C WDK、接続シナリオ
+- デジタルビデオ WDK AV/C
 - DV WDK AV/C
-- セットトップ ボックス WDK AV/C
+- セットトップボックス WDK AV/C
 - STB WDK AV/C
-- テレビの WDK AV/C
+- TV WDK AV/C
 - テレビ WDK AV/C
-- サブユニット サポート WDK AV/C
-- 内通信ユニット接続 WDK AV/C
-- WDK AV/C 単位間の接続
-- Avc.sys 関数ドライバー WDK、接続
-- 外部のプラグイン接続 WDK AV/C
+- サブユニットは WDK AV/C をサポートします
+- ユニット内接続の WDK AV/C
+- ユニット間接続の WDK AV/C
+- Avc 関数ドライバー WDK、接続
+- 外部プラグ接続 WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 503fac06f40129fee3101c993859b7d5c01ea1db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c62ae8ec252385b330f9479551e47a5cec9ee68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386767"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843365"
 ---
 # <a name="avc-connection-scenarios"></a>AV/C 接続シナリオ
 
@@ -31,35 +31,35 @@ ms.locfileid: "67386767"
 
 
 
-Windows Vista では、前に、接続と互換性の管理 (CCM) プロトコルの*Avc.sys*コンピューターが、データ ストリーミングを開始する外部の AV/C デバイスのコント ローラーとして動作する 1 つの接続シナリオでは、サポートされていますデバイスです。 たとえばでの接続管理のストリーミングを開始する*Avc.sys* connect を使用して、デバイス上のサブユニットとデバイス単位のアイソクロナス出力プラグイン間の接続を確立し、単体のコマンド (の切断[**AVC\_関数\_ACQUIRE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)と[ **AVC\_関数\_リリース**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release)、それぞれ)。 AV/C 仕様と CCM プロトコルの詳細については、次を参照してください。、 [1394 貿易](https://go.microsoft.com/fwlink/p/?linkid=518448)web サイト。
+Windows Vista より前の場合、 *Avc*の接続と互換性管理 (CCM) プロトコルでは単一の接続シナリオがサポートされています。このシナリオでは、外部の AV/C デバイスがデバイスからデータストリーミングを開始するためのコントローラーとして機能していました。 たとえば、ストリーミングを開始するには、デバイスのサブユニットとデバイスユニットのアイソクロナス出力プラグの間の接続を確立するために、接続と切断ユニットのコマンド (Avc\_を使用し*ます。* [**関数\_取得**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)と[**AVC\_関数\_リリース**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release))。 AV/C 仕様と CCM プロトコルの詳細については、1394の[取引アソシエーション](https://go.microsoft.com/fwlink/p/?linkid=518448)web サイトを参照してください。
 
-多くの 7 つの接続シナリオをサポートするために、Windows Vista での接続管理が改善されように*Avc.sys* 8 単位のサブユニット/接続のシナリオをサポートしています。 接続の管理の機能強化のサブユニット プラグから他のサブユニット プラグ; に接続のサポートを追加します。サブユニットは、同じ AV/C 単位内または異なる AV/C 単位で指定できます。 *Avc.sys*信号のソースと入力選択し、CCM プロトコル単位コマンドを使用して接続を確立します。 (*Avc.sys* AV/C 仕様を必要とするレベルにのみ出力プリセットなど他の CCM のプロトコル単位コマンドをサポートしています)。
+Windows Vista では、7つ以上の接続シナリオをサポートするために接続管理が強化されているため、 *Avc*は8つのユニット/サブユニット接続シナリオをサポートします。 接続管理の機能強化により、サブユニットプラグから他のサブユニットプラグへの接続のサポートが追加されました。サブユニットは、同じ AV/C ユニット内、または別の AV/C ユニットに配置できます。 *Avc*は、signal source を使用して接続を確立し、次に CCM プロトコルユニットコマンドを入力します。 (*Avc. sys*では、出力プリセットなどの他の CCM プロトコルユニットコマンドがサポートされているのは、AV/C 仕様で必要なレベルのみです)。
 
-AV/C ユニットとのサブユニットに関連する接続の 2 つの一般的な種類があります。
+AV/C ユニットとサブユニットに関連する一般的な接続には、次の2種類があります。
 
--   *ホスト コンピューターとコンピューターに接続する外部デバイスの接続が接続を制御できますが、接続の一部ではない*します。 この接続の種類では、任意のホスト ベースのメモリは使用しません。 代わりに、接続は、デバイスのメモリのないメディアとは、単に、ホストが、コント ローラーとして機能します。 この種類の接続の例は、チューナーのサブユニットのセットトップ ボックス (STB) コンピューターのデータ ストリームを処理せず、デジタルのテレビのモニターのサブユニットに直接データをストリーミングします。
+-   *外部デバイスがホストコンピューターに接続し、コンピューターが接続を制御できるが接続の一部ではない接続*。 この接続の種類では、ホストベースのメモリは使用されません。 この接続は、デバイスを含むメモリ不足メディアであり、ホストは単にコントローラーとして機能します。 この種類の接続の例として、データストリームを処理するコンピューターを使用せずに、デジタルテレビの監視サブユニットにデータを直接ストリーミングするセットトップボックス (STB) のチューナーサブ区分があります。
 
--   *外部デバイスは、標準的なメディアを使用して、ホスト コンピューターに接続し、デバイスから、ホスト コンピューターのメモリにデータをコピーするバッファーを使用して接続*します。 この種類の接続の例では、処理は、後で、コンピューターにデータをストリーミングするデジタル ビデオ (DV) デバイスです。 *Msdv.sys*ドライバーはこの種類の (DV デバイスおよびホスト コンピューター) の間の接続を使用します。
+-   *外部デバイスが標準メディアを使用してホストコンピューターに接続し、バッファーを使用してデバイスからホストコンピューターのメモリにデータをコピーする接続*。 この種類の接続の例として、デジタルビデオ (DV) デバイスがあります。このデバイスでは、データをコンピューターにストリーミングし、後で処理します。 *Msdv .sys*ドライバーは、この種類の接続 (DV デバイスとホストコンピューターの間) を使用します。
 
-Windows vista の場合に実装されている強化された接続の管理*Avc.sys*接続、デバイスが内部接続するために、AV/C コマンドに応答できますの最初の型に適用されます。 強化された接続の管理*Avc.sys* AV/C CCM プロトコルをサポートして、デバイスの場合との間で異なる AV/C (バス上のデバイスと同じ IEEE 1394)、2 つのテープ サブユニット エンド ツー エンド接続を確立することができます。
+*Avc*で Windows Vista に実装される強化された接続管理は、最初の種類の接続に適用されます。この場合、デバイスは AV/C コマンドに応答して内部接続を行うことができます。 *Avc*での接続管理の強化により、デバイスが Av/c CCM プロトコルをサポートしている場合、異なる Av/c デバイス (同じ IEEE 1394 バス) にある2つのテープサブユニット間のエンドツーエンド接続を確立できます。
 
-**注**  *Avc.sys*接続 (メモリ バッファー) の 2 つ目の種類をサポートしていません。 ただし、接続のメモリ バッファーの種類に依存、 [IEC 61883](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)プロトコルし、基になるではサポートされて*61883.sys* (、コンピューターに含まれるメモリ バッファーの同じスタック内のドライバー接続の場合)。
+**注**  *Avc*は、2番目の種類の接続 (メモリバッファー) をサポートしていません。 ただし、接続のメモリバッファーの種類は、 [IEC 61883](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)プロトコルに従い、基になる*61883 .sys*ドライバーが同じスタック (コンピューターがメモリバッファー接続に関係する場所) でサポートされています。
 
  
 
-### <a name="supported-connection-scenarios-in-windows-vista"></a>Windows Vista でサポートされている接続のシナリオ
+### <a name="supported-connection-scenarios-in-windows-vista"></a>Windows Vista でサポートされている接続シナリオ
 
-4 つのシナリオ (1 ~ 4) を表す*内通信*-単位の接続。 これらの接続は、内で完全に 1 つの AV/C の単位に格納されます。 その他の 4 つのシナリオ (5 ~ 8) を表す*inter*-単位の接続。 これらの接続は、2 つの異なる AV/C 単位です。
+4つのシナリオ (1 ~ 4) は、ユニット*内*接続を表します。 これらの接続は、1つの AV/C ユニット内に完全に含まれています。 他の4つのシナリオ (5 ~ 8) は、ユニット*間*の接続を表します。 これらの接続は、2つの異なる AV/C ユニット間にあります。
 
-次のトピックがのメンバーの AV/C 接続管理の 8 つのさまざまなシナリオとそれぞれの値をについて説明します、 [ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)構造体。
+次のトピックでは、8つの異なる AV/C 接続管理シナリオと、 [**Avcconnectinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)構造体のメンバーに対応する値について説明します。
 
-[サブユニット プラグと 1 つの AV/C 単位内でユニット プラグ間の接続](connections-between-subunit-plugs-and-unit-plugs-within-one-av-c-unit.md)
+[1つの AV/C ユニット内のサブユニットプラグとユニットプラグ間の接続](connections-between-subunit-plugs-and-unit-plugs-within-one-av-c-unit.md)
 
-[1 つの AV/C ユニット内の 2 つのサブユニット プラグ間の接続](connections-between-two-subunit-plugs-within-one-av-c-unit.md)
+[1つの AV/C ユニット内の2つのサブユニット間の接続](connections-between-two-subunit-plugs-within-one-av-c-unit.md)
 
-[2 つのサブユニット プラグ AV/C の異なる単位間の接続](connections-between-two-subunit-plugs-in-different-av-c-units.md)
+[2つのサブユニットが異なる AV/C ユニットに接続する](connections-between-two-subunit-plugs-in-different-av-c-units.md)
 
-[異なる AV/C 単位ユニット プラグインするときに 2 つの間の接続](connections-between-two-unit-plugs-in-different-av-c-units.md)
+[異なる AV/C ユニットにある2つのユニットプラグ間の接続](connections-between-two-unit-plugs-in-different-av-c-units.md)
 
  
 

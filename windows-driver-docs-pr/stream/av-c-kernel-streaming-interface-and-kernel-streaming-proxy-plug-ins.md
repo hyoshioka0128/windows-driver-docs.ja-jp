@@ -1,37 +1,37 @@
 ---
-title: AV/C カーネル インターフェイスとプロキシのプラグインのストリーミング
-description: AV/C カーネル ストリーミングに関する情報を提供インターフェイスとカーネル ストリーミング プロキシ プラグイン
+title: AV/C カーネルインターフェイスとストリーミングプロキシプラグイン
+description: AV/C カーネルストリームインターフェイスとカーネルストリーミングプロキシプラグインに関する情報を提供します。
 ms.assetid: 0831d917-5afc-4c0c-832a-c2b2669b8c22
 keywords:
-- カーネル ストリーミング インターフェイス WDK AV/C
-- プロキシのカーネル ストリーミング プラグインを WDK AV/C
-- AV/C WDK、カーネル ストリーミング プロキシ プラグイン
-- AV/C WDK、カーネル ストリーミング インターフェイス
-- プロキシ プラグイン WDK AV/C
-- カーネル ストリーミング プロキシ WDK AVStream
+- カーネルストリーミングインターフェイス WDK AV/C
+- カーネルストリーミングプロキシプラグイン (WDK AV/C)
+- AV/C WDK、カーネルストリーミングプロキシプラグイン
+- AV/C WDK、カーネルストリーミングインターフェイス
+- プロキシプラグイン WDK AV/C
+- カーネルストリーミングプロキシ WDK AVStream
 - KS プロキシ WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc02eef75431bd795800b7e95c4b4c0384d839d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cc33372dfec78326972d926dd7b19d7d119b617
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386761"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843359"
 ---
-# <a name="avc-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins"></a>AV/C カーネル ストリーミング インターフェイスとカーネル ストリーミング プロキシ プラグイン
+# <a name="avc-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins"></a>AV/C カーネルストリームインターフェイスとカーネルストリーミングプロキシプラグイン
 
 
 
-ベンダーは Stream クラス インターフェイスを使用している WDM ドライバーとしてピアまたは仮想のサブユニット ドライバーを記述する必要があります (ファイルに実装されているカーネル ストリーミング 1.0、 *Stream.sys*) または (カーネル Streaming 2.0、AVStream インターフェイスファイルに実装されている*Ks.sys*)。 ストリーム クラスのインターフェイスは廃止され、Microsoft はこれでさらに、開発を廃止 AVStream 好みのインターフェイスです。
+ベンダーは、ストリームクラスインターフェイス (ファイルの .sys で実装されている Kernel Streaming 1.0) または AVStream インターフェイス (カーネルストリーミング 2.0) を使用する WDM ドライバー (または、実装されている) を使用する WDM ドライバーとして、ピアまたは仮想サブユニットドライバーを書き込む必要があります *。* ファイルを*Ks*) にします。 ストリームクラスのインターフェイスは互換性のために残されているため、AVStream は推奨インターフェイスです。
 
-いずれかのインターフェイスを使用するサブユニット ドライバーは、同じ AV/C 単位内であっても共存できます。 たとえば、サブユニット ドライバー AVStream を使用する場合、サブユニット ドライバーは、サブユニットの暗証番号 (pin) とフィルター記述子に対応する静的構造体をレイアウトします。 サブユニット ドライバーし登録 AVStream 呼び出すことによって、 [ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver) AVStream 関数。 両方のインターフェイスで使用される概念の詳細については、次を参照してください。[カーネル ストリーミング](kernel-streaming.md)します。 AVStream の詳細については、次を参照してください。 [AVStream の概要](avstream-overview.md)します。 Stream クラスの詳細については、次を参照してください。[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。
+いずれかのインターフェイスを使用するサブユニットドライバーは、同じ AV/C ユニット内であっても共存できます。 たとえば、サブユニットドライバーが AVStream を使用している場合、サブユニットドライバーは、サブユニットのピンとフィルター記述子に対応する静的構造をレイアウトします。 次に、サブユニットドライバーは、 [**Ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver) avstream 関数を呼び出して avstream に登録します。 両方のインターフェイスで使用される概念の詳細については、「[カーネルストリーミング](kernel-streaming.md)」を参照してください。 AVStream の詳細については、「 [Avstream の概要](avstream-overview.md)」を参照してください。 Stream クラスの詳細については、「 [Streaming ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)」を参照してください。
 
-カーネル ストリーミングのいずれかのインターフェイスは、アプリケーション制御のサブユニット ドライバーと対話に使用する同じ標準メカニズムを提供します。 アプリケーション レベルのサブユニットの AV/C を制御するための推奨される方法は Microsoft DirectShow フィルターとグラフをフィルターします。 DirectShow の (KS) プロキシ機能をストリーミングするカーネルが汎用フィルターを提供します (*ksproxy.ax*) できるように、サブユニットのプロパティを表す標準的な方法と、サブユニットがイベントを表す標準的な方法トリガーです。 AV/C サブユニットは、ドライバー、関連する KS プロパティとイベントをサポートするために必要なコードを実装します。 詳細については、サブユニット プロパティを表す、次を参照してください。[カーネル ストリーミング プロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)します。 詳細については、サブユニットのイベントを表す、次を参照してください。[ストリーミング イベントのセットのカーネル](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-event-sets)します。
+カーネルストリーミングインターフェイスには、アプリケーションがサブユニットドライバーを操作および制御するために使用するのと同じ標準メカニズムが用意されています。 アプリケーションレベルで AV/C サブユニットを制御するために推奨される方法は、Microsoft DirectShow フィルターとフィルターグラフを使用することです。 DirectShow の kernel streaming (KS) プロキシメカニズムには汎用的なフィルター (*ksproxy.ax*) が用意されています。これを使用すると、サブユニットのプロパティを標準の方法で表すことができ、サブユニットがトリガーする可能性のあるイベントを表すことができます。 AV/C サブユニットドライバーで、関連する KS プロパティとイベントをサポートするために必要なコードを実装します。 サブユニットのプロパティの表現の詳細については、「[カーネルストリーミングのプロパティセット](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)」を参照してください。 サブユニットイベントの表現の詳細については、「[カーネルストリーミングイベントセット](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-event-sets)」を参照してください。
 
-プロキシ プラグイン、ベンダーまたは Microsoft によって提供されると、KS プロキシのフィルターを拡張できます。 KS プロキシのフィルターを拡張するには、KS プロパティとイベントのセットの低レベルの詳細を非表示にする COM インターフェイスが使用できます。 デバイスの INF ファイルで、サブユニットのドライバー プラグイン関連付けます。
+KS プロキシフィルターは、Microsoft またはベンダーによって提供されるプロキシプラグインを使用して拡張できます。 KS プロキシフィルターを拡張すると、COM インターフェイスは、KS プロパティとイベントセットの下位レベルの詳細を非表示にすることができます。 プラグインは、デバイスの INF ファイルのサブユニットドライバーに関連付けられています。
 
-プロパティとイベントに直接アクセスする一般的な方法では、使用可能なままを設定します。 **IAMExtTransport**インターフェイス (テープのサブユニットに使用)、プロキシ プラグインで実装されるインターフェイスの例に示します。 プラグインは、デバイスを制御ユーザー インターフェイスを提供するプロパティ ページとも含まれます。 エンドユーザーのデバイスの操作ではなく、テスト目的で、これらのプロパティ ページが通常使用されます。 GraphEdit または AMCap ユーティリティを使用して、KS、プラグインのプロパティをテストできます。 これらのユーティリティは、WDK と Windows SDK の両方に含まれます。
+プロパティとイベントセットに直接アクセスする一般的な方法は、引き続き使用できます。 (Tape サブユニットに使用される) **Iamexttransport**インターフェイスは、プロキシプラグインで実装されるインターフェイスの一例です。 プラグインには、デバイスを制御するためのユーザーインターフェイスを提供するプロパティページを含めることもできます。 これらのプロパティページは、通常、エンドユーザーのデバイスの操作ではなく、テスト目的で使用されます。 GraphEdit または AMCap ユーティリティを使用して、プラグインの KS プロパティをテストできます。 これらのユーティリティは、WDK と Windows SDK の両方に含まれています。
 
  
 

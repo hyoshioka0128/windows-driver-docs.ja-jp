@@ -4,15 +4,15 @@ description: AVStream ミニドライバーの初期化
 ms.assetid: 666d6efb-93ec-43f3-87c5-ea1a3983bfd0
 keywords:
 - AVStream WDK、ミニドライバーの初期化
-- ミニドライバー WDK AVStream、初期化しています
+- ミニドライバー WDK AVStream、初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db50de85c55d68cc83f2dd8349601de078dd907b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 44f6c78e8e089e36feb9c5f94e8d74c1ea5ca307
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360672"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845569"
 ---
 # <a name="initializing-an-avstream-minidriver"></a>AVStream ミニドライバーの初期化
 
@@ -20,28 +20,28 @@ ms.locfileid: "67360672"
 
 
 
-独自の呼び出しでデバイスの初期化を処理しない AVStream ミニドライバー [ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)ミニドライバーから[ **DriverEntry**](https://docs.microsoft.com/previous-versions/ff554081(v=vs.85))ルーチン。 **KsInitializeDriver** AVStream ドライバーのドライバー オブジェクトを初期化します、ディスパッチ、PnP IRP だけでなく、デバイスのメッセージを追加およびアンロードします。
+独自の呼び出しでデバイスの初期化を処理しない AVStream ミニドライバーは、ミニドライバーの[**Driverentry**](https://docs.microsoft.com/previous-versions/ff554081(v=vs.85))ルーチンから、 [**ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)を呼び出します。 **Ksk Initializedriver**は、IRP のディスパッチ、PnP によるデバイスメッセージの追加、およびアンロードに加えて、avstream ドライバーのドライバーオブジェクトを初期化します。
 
-呼び出し元に**KsInitializeDriver**、ミニドライバーがレジストリのパスへのポインターを初期化するためにドライバー オブジェクトと、必要に応じて、デバイス記述子オブジェクトへのポインターを渡します。 渡すことに注意してください、 [ **KSDEVICE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_descriptor)オブジェクトは必要ありません。 ミニドライバーがデバイス記述子を渡すと場合、AVStream は AddDevice 時に指定された特性を持つデバイスを作成します。
+**Ksinitializedriver**の呼び出しでは、ミニドライバーはドライバーオブジェクトへのポインターを渡して、レジストリパスへのポインターと、必要に応じてデバイス記述子オブジェクトを初期化します。 [**Ksk デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_descriptor)オブジェクトを渡す必要はありません。 ミニドライバーがデバイス記述子を渡すと、AVStream は、指定された特性を持つデバイスを AddDevice 時に作成します。
 
-デバイス記述子オブジェクトにはへのポインターが含まれています、 [ **KSDEVICE\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_dispatch)構造だけでなく、配列のフィルター記述子。 提供、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)の各フィルターの種類、ミニドライバーをサポートします。 ミニドライバーを呼び出すと[ **KsInitializeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)AVStream、ミニドライバーによって公開されているフィルターの種類ごとにフィルター ファクトリ オブジェクトを作成します。 個別のフィルターは、関連付けを作成する項目の作成 IRP の受信時にフィルター ファクトリによってインスタンス化されます。 各フィルター記述子の配列へのポインターを格納する[ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)オブジェクト。 AVStream では、pin、ミニドライバーは、そのフィルターを通じて公開の種類ごとに関連するフィルターをピン留めするファクトリを作成します。
+デバイス記述子オブジェクトには、 [**Ksk デバイス\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_dispatch)構造体、およびフィルター記述子の配列へのポインターが含まれています。 ミニドライバーでサポートされているフィルターの種類ごとに、 [**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)を指定します。 ミニドライバーが[**Ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)を呼び出すと、avstream は、ミニドライバーによって公開されるフィルターの種類ごとにフィルターファクトリオブジェクトを作成します。 個々のフィルターは、関連付けられた create item に対して create IRP を受信したときに、フィルターファクトリによってインスタンス化されます。 各フィルター記述子には、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)オブジェクトの配列へのポインターが含まれています。 AVStream は、ミニドライバーがそのフィルターを通じて公開する pin の種類ごとに、関連するフィルターにピンファクトリを作成します。
 
-フィルターにピン留めする指定された型への接続が確立、AVStream 暗証番号 (pin) のファクトリは、暗証番号 (pin) オブジェクトを作成します。 各フィルターが少なくとも 1 つの pin を公開する必要がありますに注意してください。 ミニドライバーを使用して、 **InstancesNecessary** KSPIN のメンバー\_記述子\_EX が正常に機能するフィルターのために必要なこのピンの型のインスタンスの数を識別するためにします。 同様に、ミニドライバーが最大値を使用してインスタンス化できる、暗証番号 (pin) ファクトリ ピンの数を適用できます、 **InstancesPossible**この構造体のメンバー。
+フィルターで特定のピンの種類への接続が確立されると、AVStream の pin ファクトリによってピンオブジェクトが作成されます。 各フィルターが少なくとも1つの pin を公開する必要があることに注意してください。 ミニドライバーは、KSPIN\_記述子\_EX の**InstancesNecessary**メンバーを使用して、フィルターが正しく機能するために必要なこの pin の種類のインスタンス数を特定します。 同様に、ミニドライバーは、この構造体の**InstancesPossible**メンバーを使用して、pin ファクトリがインスタンス化できる pin の数に最大値を課すことができます。
 
-AVStream が 2 つの種類の処理をサポートしています:[フィルターを中心とした処理](filter-centric-processing.md)、および[暗証番号 (pin) を中心とした処理](pin-centric-processing.md)します。 記述子をレイアウトするときに、各フィルターの種類の処理の種類は実行を決定します。
+AVStream では、[フィルター中心](filter-centric-processing.md)の処理と[ピン中心の](pin-centric-processing.md)処理の2種類の処理がサポートされています。 記述子をレイアウトするときに、各フィルターの種類で実行する処理の種類を決定します。
 
-### <a name="installing-an-avstream-minidriver"></a>AVStream、ミニドライバーをインストールします。
+### <a name="installing-an-avstream-minidriver"></a>AVStream ミニドライバーのインストール
 
-AVStream ミニドライバーは、システムを使用してドライバーをインストールする INF ファイルが必要です。 AVStream INF ファイルが説明されている共通の INF 形式に基づいて[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)します。 AVStream サンプル ドライバーで、Windows Driver Kit (WDK) で提供される INF ファイルを参照することもできます。 AVStream 固有の次のガイドラインに留意してください。
+AVStream ミニドライバーには、ドライバーをインストールするためにシステムで使用される INF ファイルが必要です。 AVStream INF ファイルは、「 [Inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)」で説明されている一般的な inf 形式に基づいています。 また、Windows Driver Kit (WDK) の AVStream サンプルドライバーで提供されている INF ファイルを参照することもできます。 次の AVStream 固有のガイドラインに注意してください。
 
-親デバイスの場合、ミニドライバーを作成する場合、 **AddReg** INF ファイルのセクションを含める必要があります。
+親デバイスのミニドライバーを作成する場合は、INF ファイルの**AddReg**セクションに次の内容が含まれている必要があります。
 
 ```INF
 [ParentName.AddReg]
 HKR,"ENUM\[DeviceName]",pnpid,,"[string]"
 ```
 
-子デバイスの場合、ミニドライバーを作成する場合、 **AddReg**セクションを含める必要があります。
+子デバイスのミニドライバーを作成する場合、 **AddReg**セクションには次のものが含まれている必要があります。
 
 ```INF
 [Manufacturer]
@@ -50,8 +50,8 @@ HKR,"ENUM\[DeviceName]",pnpid,,"[string]"
 ...=ChildName.Device,AVStream\[string]
 ```
 
-注"AVStream"ストリーム クラス ドライバーの"Stream"となります。
+ストリームクラスドライバーの "AVStream" は "ストリーム" であることに注意してください。
 
-すべての AVStream ミニドライバーの INF ファイルでフィルターに固有の参照文字列が一致する必要があります、 **ReferenceGuid**のメンバー、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)構造体。
+すべての AVStream ミニドライバーについて、INF ファイル内のフィルター固有の参照文字列は、 [**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造体の**referenceguid**メンバーと一致している必要があります。
 
-記述子の詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。
+記述子の詳細については、「 [Avstream 記述子](avstream-descriptors.md)」を参照してください。

@@ -1,9 +1,9 @@
 ---
 title: SM\_SendRLS 関数
-description: SM\_SendRLS WMI メソッドは、指定したローカル ポートを介して読み取りリンクのステータス (RLS) を送信します。 この RLS は、リモートのポートに関連付けられているリンク エラー状態のブロックを取得する対象のリモート ポートに送信されます。
+description: SM\_SendRLS WMI メソッドは、指定されたローカルポートを介して読み取りリンクステータス (RLS) を送信します。 この RLS は、リモートポートに関連付けられているリンクエラー状態ブロックを取得するために、示されたリモートポートに送信されます。
 ms.assetid: 4498edde-1249-43b8-b581-37e24f8bd2d3
 keywords:
-- 記憶装置の SM_SendRLS 関数
+- SM_SendRLS function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b33cba1205e17c14783c461e5a489b7d27976d8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d779aeb2d2c17ae6f44ff87a891925c2e2c6123
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384291"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845459"
 ---
-# <a name="smsendrls-function"></a>SM\_SendRLS 関数
+# <a name="sm_sendrls-function"></a>SM\_SendRLS 関数
 
 
-SM\_SendRLS WMI メソッドは、指定したローカル ポートを介して読み取りリンクのステータス (RLS) を送信します。 この RLS は、リモートのポートに関連付けられているリンク エラー状態のブロックを取得する対象のリモート ポートに送信されます。
+SM\_SendRLS WMI メソッドは、指定されたローカルポートを介して読み取りリンクステータス (RLS) を送信します。 この RLS は、リモートポートに関連付けられているリンクエラー状態ブロックを取得するために、示されたリモートポートに送信されます。
 
 <a name="syntax"></a>構文
 ------
@@ -45,25 +45,25 @@ void SM_SendRLS(
 ----------
 
 *HbaPortWWN*   
-RLS コマンドを送信するローカル ポートの世界中の名 (WWN)。 この情報は、SM の HbaPortWWN メンバーのミニポート ドライバーに配信\_SendRLS\_構造体。
+RLS コマンドの送信に使用されるローカルポートのワールド名 (WWN)。 この情報は、SM\_SendRLS\_構造の HbaPortWWN メンバーのミニポートドライバーに配信されます。
 
-*DestWWN*   
-接続先ポートの世界中の名 (WWN)。 この情報は、SM の DestWWN メンバーのミニポート ドライバーに配信\_SendRLS\_構造体。
+*Destwwn*   
+宛先ポートのワールド名 (WWN)。 この情報は、SM の DestWWN メンバーのミニポートドライバーに配信されます。\_SendRLS\_構造体です。
 
-*InRespBufferMaxSize*   
-応答バッファーのバイト単位で最大サイズ。
+*In火炎 Buffermaxsize*   
+応答バッファーの最大サイズ (バイト単位)。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendRLS\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_SendRLS\_OUT 構造体の HBAStatus メンバーにこの情報を返します。
 
-*TotalRespBufferSize*   
-RLS コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalRespBufferSize メンバー\_SendRLS\_構造体。
+*Total火炎 buffersize*   
+RLS コマンドの結果のサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendRLS\_OUT 構造体の Totalの値のメンバーにこの情報を返します。
 
-*OutRespBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の OutRespBufferSize メンバー\_SendRLS\_構造体。
+* *  
+実際に取得されたデータのサイズ (バイト単位)。 この情報は、ミニポートドライバーによって、SM\_SendRLS\_OUT 構造体の Outて Buffersize のメンバーに返されます。
 
-*RespBuffer*   
-RLS コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の RespBuffer メンバー\_SendRLS\_構造体。
+* *  
+RLS コマンドの結果。 ミニポートドライバーは、この情報を SM\_SendRLS\_OUT 構造体の出力バッファーに返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -73,7 +73,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -90,17 +90,17 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SendRLS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrls_out)
+[**SM\_SendRLS\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrls_out)
 
  
 

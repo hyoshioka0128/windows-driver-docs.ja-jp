@@ -12,12 +12,12 @@ keywords:
 - マイナーバージョン番号 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67147e2201e9364928be3b1c27ad1c9ac8b85eb
-ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
+ms.openlocfilehash: e9a602f425af889bc26c738e89f90e63e77fafdd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68341187"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843163"
 ---
 # <a name="framework-library-versioning"></a>フレームワーク ライブラリのバージョン
 
@@ -29,7 +29,7 @@ ms.locfileid: "68341187"
 
 メジャーバージョン番号とマイナーバージョン番号は、KMDF ライブラリの各バージョンに割り当てられます。 ライブラリのファイル名にメジャーバージョン番号が含まれています。 ファイル名の形式は次のとおりです。
 
-**Wdf**&lt;MajorVersionNumber000&gt; **. sys**
+**Wdf**&lt;*MajorVersionNumber*&gt;**000. sys**
 
 メジャーバージョン番号は2文字を使用します。 たとえば、ライブラリのバージョン1.0 のファイル名は*Wdf01000*です。 バージョン1.9、1.11 なども*Wdf01000*という名前で、新しいマイナーバージョンのライブラリファイルは、以前のバージョンのファイルを上書きします。
 
@@ -39,7 +39,7 @@ ms.locfileid: "68341187"
 
 ドライバーをビルドすると、MSBuild ユーティリティは、MSBuild ユーティリティが使用したライブラリのバージョン番号を含むスタブファイルにドライバーをリンクします。 オペレーティングシステムによってドライバーが読み込まれると、フレームワークのローダーは、ドライバーのスタブ内のバージョン情報をチェックして、ドライバーがシステム上のフレームワークライブラリのバージョンで実行されるかどうかを判断します。
 
-ドライバーが実行されているライブラリのバージョンを確認するには、ドライバーは[**Wdfdriverisversionavailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)または[**WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring)を呼び出すことができます。
+ドライバーが実行されているライブラリのバージョンを確認するには、ドライバーは[**Wdfdriverisversionavailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)または[**WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring)を呼び出すことができます。
 
 WDF を使用すると、ドライバーが実行されるのとは異なるバージョンの Windows を使用してドライバーをビルドできます。  詳細については、「[複数のバージョンの Windows 用の WDF ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows)」を参照してください。
 

@@ -4,45 +4,45 @@ description: 割り込みオブジェクトの作成
 ms.assetid: D281F2E8-3ADA-4F4E-B345-CE72FA3C69EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7442cbcafec322027c0c82acb43a985500f2638f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5dce34ac5d365a953b9d8811461ced870f477d8e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382421"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845614"
 ---
 # <a name="creating-an-interrupt-object"></a>割り込みオブジェクトの作成
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-デバイスのハードウェアの割り込みを処理する UMDF ドライバーでは、各デバイスをサポートする各割り込みの framework 割り込みオブジェクトを作成する必要があります。
+デバイスのハードウェア割り込みを処理する UMDF ドライバーは、各デバイスがサポートできる各割り込みのフレームワーク割り込みオブジェクトを作成する必要があります。
 
-通常、ドライバー オブジェクトを作成します framework 割り込みで[ **IDriverEntry::OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)します。 ただし、割り込みのオブジェクトの作成も[ **IPnpCallbackHardware2::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)します。
+通常、ドライバーは[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)にフレームワークの割り込みオブジェクトを作成します。 ただし、 [**IPnpCallbackHardware2:: On ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)に割り込みオブジェクトを作成することもできます。
 
-フレームワークの割り込みオブジェクトを作成するには、ドライバーを初期化する必要があります、 [ **WUDF\_割り込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体に渡すと、 [ **IWDFDevice3::CreateInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)メソッド。 このメソッドは、次のドライバーが指定したイベントのコールバック関数を登録します。
+フレームワークの interrupt オブジェクトを作成するには、ドライバーが[**Wudf\_interrupt\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を初期化し、それを[**IWDFDevice3:: createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)メソッドに渡す必要があります。 このメソッドは、ドライバーによって提供される次のイベントコールバック関数を登録します。
 
-<a href="" id="oninterruptenable"></a>[*OnInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_enable)  
+<a href="" id="oninterruptenable"></a>[*OnInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_enable)  
 ハードウェアの割り込みを有効にします。
 
-<a href="" id="oninterruptdisable"></a>[*OnInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_disable)  
+<a href="" id="oninterruptdisable"></a>[*OnInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_disable)  
 ハードウェアの割り込みを無効にします。
 
-<a href="" id="oninterruptisr"></a>[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)  
-割り込みの割り込みサービス ルーチン (ISR)。
+<a href="" id="oninterruptisr"></a>[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)  
+割り込みの割り込みサービスルーチン (ISR)。
 
-<a href="" id="oninterruptworkitem"></a>[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)  
-割り込みのワーカーのルーチンです。
+<a href="" id="oninterruptworkitem"></a>[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)  
+割り込みのワーカールーチン。
 
-ドライバーを呼び出すことができます必要に応じて、 [ **IWDFInterrupt::SetPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-setpolicy)または[ **IWDFInterrupt::SetExtendedPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfinterrupt-setextendedpolicy)追加を指定するにはパラメーターを中断します。
+必要に応じて、ドライバーは[**Iwdfinterrupt:: SetPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-setpolicy)または[**Iwdfinterrupt:: SetExtendedPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-setextendedpolicy)を呼び出して、追加の割り込みパラメーターを指定できます。
 
-フレームワークは、ドライバーの[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)プラグ アンド プレイ (PnP) マネージャーがデバイスにベクトルの割り込みなどのシステム リソースを割り当てられる前に、コールバック関数。 後 PnP マネージャーでは、リソースを割り当てる、フレームワークには、割り込みのリソースがデバイスの割り込みのオブジェクトに格納します。 (プラグ アンド プレイをサポートしていないドライバーは、割り込みのオブジェクトを使用できません)
+このフレームワークは、ドライバーの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数を呼び出して、プラグアンドプレイ (PnP) マネージャーが割り込みベクターなどのシステムリソースをデバイスに割り当てます。 PnP マネージャーによってリソースが割り当てられると、そのデバイスの interrupt オブジェクトに割り込みリソースが格納されます。 (プラグアンドプレイをサポートしていないドライバーは、interrupt オブジェクトを使用できません)。
 
-Windows Vista およびそれ以降のバージョンのオペレーティング システムでは、メッセージ シグナル割り込み (Msi) がサポートされています。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](https://docs.microsoft.com/windows-hardware/drivers/kernel/enabling-message-signaled-interrupts-in-the-registry)します。
+Windows Vista 以降のバージョンのオペレーティングシステムでは、メッセージシグナル割り込み (Msi) がサポートされています。 オペレーティングシステムがデバイスの Msi をサポートできるようにするには、ドライバーの INF ファイルでレジストリに値を設定する必要があります。 これらの値を設定する方法については、「[レジストリでのメッセージシグナル割り込みの有効化](https://docs.microsoft.com/windows-hardware/drivers/kernel/enabling-message-signaled-interrupts-in-the-registry)」を参照してください。
 
-デバイスは、MSI のメッセージ数をサポートできますが、PnP マネージャーはその数のメッセージをデバイスに割り当てるしようとします。 PnP マネージャーは、すべてのデバイスをサポートするメッセージを割り当てることはできない場合、は、1 つのメッセージをデバイスに割り当てます。
+デバイスで特定の数の MSI メッセージがサポートされている場合、PnP マネージャーはその数のメッセージをデバイスに割り当てようとします。 PnP マネージャーが、デバイスがサポートできるすべてのメッセージを割り当てることができない場合、デバイスには1つのメッセージのみが割り当てられます。
 
-ドライバーは、割り込みベクトルまたはデバイスをサポートできる MSI メッセージごとに framework 割り込みオブジェクトを作成する必要があります。 PnP マネージャーは付与されないデバイスのすべてのデバイスをサポートする割り込みリソース、余分な割り込みオブジェクトを使用しませんし、これらのコールバック関数は呼び出されません。
+ドライバーは、デバイスがサポートできる各割り込みベクターまたは MSI メッセージに対して、フレームワークの interrupt オブジェクトを作成する必要があります。 デバイスがサポートできるすべての割り込みリソースがデバイスに付与されていない場合、余分な割り込みオブジェクトは使用されず、コールバック関数は呼び出されません。
 
  
 

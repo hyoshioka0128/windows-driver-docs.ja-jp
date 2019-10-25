@@ -3,69 +3,69 @@ title: ドライバー作成ファイル オブジェクトの作成と使用
 description: ドライバー作成ファイル オブジェクトの作成と使用
 ms.assetid: 84b677b4-fddf-4f06-9ea6-e4642c3f1b2d
 keywords:
-- ドライバーに作成されたファイル オブジェクト WDK UMDF
-- ドライバーに作成されたファイル オブジェクトの作成と使用の WDK UMDF
-- I/O WDK の UMDF ドライバー-作成されたときに、ハンドルが作成、および使用するファイル オブジェクト
-- I/O 要求の WDK UMDF、ファイルのオブジェクトの作成と使用
-- ユーザー モード ドライバー フレームワーク WDK、ファイル オブジェクトの作成と使用の I/O ハンドルを
-- UMDF WDK、ファイル オブジェクトの作成と使用の I/O ハンドルを
-- ユーザー モード ドライバー WDK UMDF、ファイル オブジェクトの作成と使用の I/O ハンドルを
+- ドライバーで作成されたファイルオブジェクト WDK UMDF
+- ドライバーによって作成されたファイルオブジェクト WDK UMDF、作成と使用
+- i/o WDK UMDF、ドライバー作成、作成、および使用を処理するファイルオブジェクト
+- I/o 要求 WDK UMDF、ファイルオブジェクト、作成と使用
+- ユーザーモードドライバーフレームワーク WDK、i/o を処理するためのファイルオブジェクト、作成および使用
+- UMDF WDK、i/o を処理するためのファイルオブジェクト、作成と使用
+- ユーザーモードドライバー WDK UMDF、i/o を処理するためのファイルオブジェクト、作成、使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 252089bc68f053ca823bd7bd7dce7717789023fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b14670c7a8ca5d1ccc34a641f330852aea777d6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382409"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845608"
 ---
 # <a name="creating-and-using-driver-created-file-objects"></a>ドライバー作成ファイル オブジェクトの作成と使用
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ドライバーは、作成しの 次へ のドライバー スタック (既定の I/O ターゲット) にアプリケーションから独立している I/O 要求を送信する必要があります、ドライバーでを作成し、独自のファイル オブジェクトを閉じる必要があります。
+ドライバーで、アプリケーションから独立した i/o 要求を作成し、スタック内の次のドライバー (既定の i/o ターゲット) に送信する必要がある場合、ドライバーは独自のファイルオブジェクトを作成して閉じる必要があります。
 
-### <a name="creating-a-file-object"></a>ファイル オブジェクトを作成します。
+### <a name="creating-a-file-object"></a>ファイルオブジェクトの作成
 
-ドライバーを呼び出す必要があります、 [ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)ドライバーの使用するためのファイル オブジェクトを作成します。 ドライバーを呼び出すと**IWDFDevice::CreateWdfFile**フレームワークでは、要求の作成をスタック内の次のドライバーに送信します。 カーネル モードまたはユーザー モードで、次のドライバー スタックの可能性があります。
+ドライバーが使用するファイルオブジェクトを作成するには、ドライバーが[**Iwdfdevice:: createwdffile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)メソッドを呼び出す必要があります。 ドライバーが**Iwdfdevice:: CreateWdfFile**を呼び出すと、フレームワークはスタック内の次のドライバーに create 要求を送信します。 スタック内の次のドライバーは、カーネルモードまたはユーザーモードである可能性があります。
 
-このファイルの作成要求の処理は、Windows Driver Model (WDM) で異なります。 WDM への呼び出しで、 [ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)関数により作成 IRP、カーネル モード スタックの一番上に移動します。 次の図では、UMDF WDM とでファイルの作成要求の処理を示しています。
+このファイルの作成要求処理は、Windows Driver Model (WDM) では異なります。 WDM では、 [**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)関数を呼び出すと、create IRP がカーネルモードスタックの最上位に送られます。 次の図は、UMDF と WDM でのファイルの作成要求処理を示しています。
 
-![ファイルの作成要求が wdm と umdf の処理](images/drvrcrtfile.gif)
+![umdf と wdm でのファイル要求処理の作成](images/drvrcrtfile.gif)
 
-呼び出して[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)ドライバーは、ファイル オブジェクトを作成し、スタック全体が開始する前にデバイスの起動中に I/O 要求を送信します。
+[**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)を呼び出すと、ドライバーは、ファイルオブジェクトを作成し、デバイスの起動時に、スタック全体が開始される前に i/o 要求を送信できます。
 
-スタック内の次のドライバーには、ファイルの作成要求を処理できる場合、または下位のスタックでさらに、要求を転送する必要がありますを決定する必要があります。
+スタック内の次のドライバーは、ファイルの作成要求を処理できるかどうか、または要求をスタックの下位に転送する必要があるかどうかを判断する必要があります。
 
-呼び出した後[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)ドライバーは、作成操作を取り消すことはできません。
+[**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)を呼び出した後、ドライバーは作成操作を取り消すことができません。
 
-## <a name="using-the-file-object"></a>ファイル オブジェクトを使用します。
-
-
-ドライバー積み上げ下に、次のドライバーに非同期の読み取り要求を送信するには、次のパターンを使用できます。
-
-1.  呼び出す[ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)ファイル オブジェクトを作成します。
-2.  呼び出す[ **IWDFDevice::GetDefaultIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)下位レベルのドライバーを表すインターフェイスを取得します。
-3.  呼び出す[ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を作成、書式設定されていない[ **IWDFIoRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)オブジェクト。
-4.  呼び出す[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)を登録する、 [ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion) のインターフェイス[**OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion) I/O 要求が完了したときにフレームワークから呼び出されるメソッド。
-5.  呼び出す[ **IWDFIoTarget::FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)へのポインターを提供する、 [ **IWDFDriverCreatedFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdrivercreatedfile) インターフェイス*pFile*パラメーター。
-6.  呼び出す[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)要求を送信します。
-
-## <a name="closing-the-file-object"></a>ファイル オブジェクトを閉じる
+## <a name="using-the-file-object"></a>File オブジェクトの使用
 
 
-呼ばれるドライバー [ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)後で呼び出す必要があります[ **IWDFDriverCreatedFile::Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)します。
+非同期読み取り要求をその下にある次のドライバーに送信するために、ドライバーは次のパターンを使用できます。
 
-通常、ドライバーの呼び出し[ **IWDFDriverCreatedFile::Close** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)のいずれかからその[ **IPnpCallbackHardware::OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)または[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)コールバック メソッド。
+1.  [**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)を呼び出して、ファイルオブジェクトを作成します。
+2.  [**Iwdfdevice:: GetDefaultIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)を呼び出して、下位レベルのドライバーを表すインターフェイスを取得します。
+3.  [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出して、書式設定されていない[**IWDFIoRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)オブジェクトを作成します。
+4.  [**IWDFIoRequest:: Setcompletion callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)を呼び出して、i/o 要求が完了したときにフレームワークによって呼び出される[**Oncompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)メソッドの[**irequestcallback requestcompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)インターフェイスを登録します。
+5.  [**Iwdfiotarget:: FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)を呼び出し、 *PFile*パラメーターの[**Iwdfiotarget ファイル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)インターフェイスへのポインターを提供します。
+6.  [**IWDFIoRequest:: send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を呼び出して、要求を送信します。
 
-ドライバーを呼び出すと[ **IWDFDriverCreatedFile::Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)、フレームワークは、次のドライバーの[ **IFileCallbackCleanup::OnCleanupFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)メソッド。 このメソッドは、次のドライバーがキャンセルまたは、ファイル オブジェクトに関連付けられているすべての保留中 I/O 要求を完了する必要があります。 フレームワークと呼ばれるドライバーによって作成されたすべての I/O 要求をキャンセルし[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)します。 フレームワークでは、スタックの下位のドライバーが、ファイル オブジェクトに関連付けられているすべての I/O 要求は取り消されません。 このようなすべての要求をキャンセルするドライバーの役目です。 関連付けられているすべての I/O 要求が完了した後のみ、ファイル オブジェクトを終了します。
+## <a name="closing-the-file-object"></a>ファイルオブジェクトを閉じる
 
-次に、フレームワークが、[次へ] のドライバーを呼び出す[ **IFileCallbackClose::OnCloseFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)メソッド。 この時点では、フレームワークでは、次のドライバーは、このファイル オブジェクトの追加の I/O 要求を受け取りませんが保証されます。
 
-Framework の呼び出し後に[ **OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)、破棄、 [IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)ファイル オブジェクトを表すインターフェイスです。
+[**Iwdfdevice:: createwdffile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)という名前のドライバーは、後で[**Iwdfdriverokfile:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)を呼び出す必要があります。
 
-ドライバーに作成されたファイル オブジェクトが、ドライバーのデバイスの削除メソッドの後に残っている場合 (たとえば[ **IPnpCallbackHardware::OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)と[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)) 戻り、ドライバーの停止はフレームワークに生成されます。 この問題をトラブルシューティングする方法の詳細については、次を参照してください。[を決定する理由 UMDF 示します未処理のファイルがデバイスの削除時に](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)します。
+通常、ドライバーは、 [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)または[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)コールバックメソッドから[**iwdfdriverを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)呼び出します。
+
+ドライバーが[**IwdfdriverIFileCallbackCleanup file:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)を呼び出すと、フレームワークは次のドライバーの[ **:: oncleanupfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)メソッドを呼び出します。 この方法では、次のドライバーは、ファイルオブジェクトに関連付けられているすべての保留中の i/o 要求をキャンセルまたは完了する必要があります。 次に、 [**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)というドライバーによって作成されたすべての i/o 要求をキャンセルします。 このフレームワークでは、スタック内の下位のドライバーがファイルオブジェクトに関連付けられている可能性がある i/o 要求はキャンセルされません。 このような要求をキャンセルするのは、ドライバーの役割です。 ファイルオブジェクトは、関連付けられているすべての i/o 要求が完了した後にのみ閉じます。
+
+次に、フレームワークは次のドライバーの[**IFileCallbackClose:: OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)メソッドを呼び出します。 この時点で、フレームワークは、次のドライバーがこのファイルオブジェクトに対して追加の i/o 要求を受信しないことを保証します。
+
+フレームワークは[**Onclosefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)を呼び出すと、ファイルオブジェクトを表す[iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)インターフェイスを破棄します。
+
+ドライバーによって作成されたデバイスの削除方法 ( [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)や[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)など) の後にドライバーによって作成されたファイルオブジェクトが返された場合、フレームワークはを生成します。ドライバーを停止します。 この問題のトラブルシューティングの詳細については、「 [UMDF が未解決のファイルをデバイスの削除時に示し](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)ている理由を特定する」を参照してください。
 
  
 

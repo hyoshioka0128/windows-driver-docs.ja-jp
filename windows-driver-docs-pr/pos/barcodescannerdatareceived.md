@@ -1,21 +1,21 @@
 ---
 title: BarcodeScannerDataReceived
-description: BarcodeScannerDataReceived イベントは、スキャンが成功イベントの後に発生します。
+description: Barの実行が成功したイベントが発生すると、barのイベントが発生します。
 ms.assetid: 3dd7699a-5e2b-484b-bd83-c37ee7f0e851
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 450fc0aee14ee72711803b150beb0f6a83420690
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6c1cff03e585c428ed8aac80aa0c038fcdce02b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382065"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843577"
 ---
 # <a name="barcodescannerdatareceived"></a>BarcodeScannerDataReceived
 
-このイベントは、スキャンが成功イベントの後に発生します。
+このイベントは、スキャンイベントが成功した後に発生します。
 
-スキャンされたデータは可変長とから成る、 [PosBarcodeScannerDataReceivedEventData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ns-pointofservicedriverinterface-_posbarcodescannerdatareceivedeventdata)構造が続く**ScanDataLength**バイトの生のスキャン データが続く**ScanDataLabelLength**スキャナーのデータのみを残したまま、ヘッダーとフッターの情報が削除されたをデコードされたスキャン データのバイト数。 このイベントのデータ バッファーは次のとおりです。
+スキャンされたデータは可変長で、 [PosBarcodeScannerDataReceivedEventData](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ns-pointofservicedriverinterface-_posbarcodescannerdatareceivedeventdata)構造体の後**に生**のスキャンデータの ScanDataLabelLength バイトが続き、デコードされたスキャンデータのバイトが含まれます。ヘッダーとフッターの情報は削除され、スキャナーデータだけが残ります。 このイベントのデータバッファーは次のとおりです。
 
 ## <a name="syntax"></a>構文
 
@@ -29,18 +29,18 @@ typedef struct _PosBarcodeScannerDataReceivedEventData
 } PosBarcodeScannerDataReceivedEventData;
 ```
 
-次の表では、このイベントのデータ バッファーのメモリ レイアウトを示します。
+次の表は、このイベントのデータバッファーのメモリレイアウトを示しています。
 
-| メモリの値                                            | 説明                                                                                                                          |
+| メモリ値                                            | 説明                                                                                                                          |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| 0x00000005                                   | **Header.EventType PosEventType::BarcodeScannerDataReceived を =**                                                           |
-| 0000020 + スキャン データの長さ + ラベル データの長さ | **Header.DataLength** = sizeof(**PosBarcodeScannerDataReceivedEventData**) + **ScanDataLength** + **ScanDataLabelLength** |
-| UINT32                                       | **PosBarcodeScannerDataReceivedEventData.DataType**                                                                       |
-| UINT32                                       | **PosBarcodeScannerDataReceivedEventData.ScanDataLength**                                                                 |
+| 0x00000005                                   | **Header. EventType = PosEventType:: Barのイベント受信**                                                           |
+| 0000020 + Scan data length + label data length | **Header. DataLength** = Sizeof (**PosBarcodeScannerDataReceivedEventData**) + **scandatalength** + **ScanDataLabelLength** |
+| UINT32                                       | **PosBarcodeScannerDataReceivedEventData**                                                                       |
+| UINT32                                       | **PosBarcodeScannerDataReceivedEventData**                                                                 |
 | UINT32                                       | **PosBarcodeScannerDataReceivedEventData.ScanDataLabelLength**                                                            |
-| バイト \[\]                                    | **ScanDataLength**生のスキャン データのバイト数                                                                                 |
-| バイト \[\]                                    | **ScanDataLabelLength**スキャンのデコードされたデータのバイト数                                                                     |
+| バイト \[\]                                    | 生のスキャンデータの**Scandatalength**バイト数                                                                                 |
+| バイト \[\]                                    | デコードされたスキャンデータの**ScanDataLabelLength**バイト数                                                                     |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**ヘッダー:** pointofservicedriverinterface.h
+**ヘッダー:** pointofservicedriverinterface

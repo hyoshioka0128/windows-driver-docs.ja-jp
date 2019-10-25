@@ -3,18 +3,18 @@ title: フレームワーク ファイル オブジェクト
 description: フレームワーク ファイル オブジェクト
 ms.assetid: 93ec5dd7-8ef0-4cea-9253-ea5d7869d4b8
 keywords:
-- I/O 要求の WDK KMDF、ファイル オブジェクト
-- ファイル オブジェクト WDK KMDF
-- 要求の WDK KMDF、ファイル オブジェクトの処理
-- フレームワークは、WDK KMDF、ファイル オブジェクトをオブジェクトします。
+- I/o 要求 WDK KMDF、ファイルオブジェクト
+- ファイルオブジェクト WDK KMDF
+- WDK KMDF、ファイルオブジェクトを処理する要求
+- フレームワークオブジェクト WDK KMDF、ファイルオブジェクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b12671be25a5bbb1a605a50bb73bd5242f63f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e7946f9ddb7a2342aca791c6b7b8ea151b6b827
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384277"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843173"
 ---
 # <a name="framework-file-objects"></a>フレームワーク ファイル オブジェクト
 
@@ -22,81 +22,81 @@ ms.locfileid: "67384277"
 
 
 
-アプリケーションまたはドライバーは、デバイスへのアクセスを試みると、通常、作成するか、ファイルを開くオペレーティング システム ファイルの作成に要求を送信ドライバー スタック。 アプリケーションまたはドライバーがデバイスを使用して完了したら、システムはファイルのクリーンアップを送信し、ドライバー スタックへの要求を閉じます。 [要求の種類は](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ne-wdfrequest-_wdf_request_type)これら 3 つの要求は**WdfRequestTypeCreate**、 **WdfRequestTypeCleanup**、および**WdfRequestTypeClose**、それぞれします。
+アプリケーションまたはドライバーが、通常はファイルを作成または開くことによってデバイスにアクセスしようとすると、オペレーティングシステムからドライバースタックにファイル作成要求が送信されます。 アプリケーションまたはドライバーがデバイスの使用を終了すると、システムは、ファイルのクリーンアップと終了要求をドライバースタックに送信します。 これら3つの要求の[要求の種類](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_type)は、それぞれ**WdfRequestTypeCreate**、 **WdfRequestTypeCleanup**、および**WdfRequestTypeClose**です。
 
-通常、ドライバーが呼び出されていない限り[ **WdfDeviceInitSetExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)ドライバーは、特定のファイルを実行する必要があります、またはその他のアクセスに特化した操作の受信時にファイルの作成、クリーンアップ、および閉じるファイルを複数開くことができる同時にまたは複数のアプリケーションでは、デバイスを同時にアクセスするために要求します。 ドライバーする必要がありますのでの追跡ファイルまたはアプリケーションに関連付けられている I/O 要求。
+通常、ドライバーが[**Wdfdeviceinitsetexclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)を呼び出していない場合、ドライバーは、複数のファイルを開くことができるため、ファイルの作成、クリーンアップ、および終了要求を受信するときに、ファイル固有またはその他のアクセス固有の操作を実行する必要があります。同時に、または複数のアプリケーションが同時にデバイスにアクセスできます。 したがって、ドライバーは、各ファイルまたはアプリケーションに関連付けられている i/o 要求を追跡する必要があります。
 
-フレームワーク定義*framework ファイル オブジェクト*、表しますアプリケーションまたはファイル、ディレクトリ、ボリュームなどのデバイスにアクセスするためのドライバーの手段メール スロットは、名前付きパイプ、またはデバイス全体。 ファイル名は、ファイル オブジェクトを関連付けることができますが、ファイル名の意味は、ドライバー固有です。 ファイル名の詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)します。
+フレームワークは、ファイル、ディレクトリ、ボリューム、メールスロット、名前付きパイプ、デバイス全体など、デバイスにアクセスするためのアプリケーションまたはドライバーの手段を表す*フレームワークファイルオブジェクト*を定義します。 ファイル名はファイルオブジェクトに関連付けることができますが、ファイル名の意味はドライバーによって異なります。 ファイル名の詳細については、「[デバイスの名前空間へのアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)」を参照してください。
 
-呼び出す必要がありますが、ドライバーは、ファイル操作を処理する必要がある場合、 [ **WdfDeviceInitSetFileObjectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)内からその[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。 **WdfDeviceInitSetFileObjectConfig**メソッドは受信、 [ **WDF\_FILEOBJECT\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)入力として構造体します。 ドライバーでは、この構造を使用して、登録、 [ *EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)、 [ *EvtFileCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)、および[ *EvtFileClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数と、必要に応じて、フレームワークを作成する必要があるかどうかを示すフレームワーク ファイル オブジェクトごとにドライバー ファイルの作成要求を受信します。
+ドライバーでファイル操作を処理する必要がある場合は、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数内から[**Wdfdeviceinitsetfileobjectconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)を呼び出す必要があります。 **Wdfdeviceinitsetfileobjectconfig**メソッドは、 [**WDF\_FILEOBJECT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)構造体を入力として受け取ります。 ドライバーは、この構造体を使用して[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)、 [*EvtFileCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)、および[*evtfileclose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数を登録し、必要に応じて、次の操作を行うたびにフレームワークがフレームワークファイルオブジェクトを作成する必要があるかどうかを示します。ドライバーは、ファイル作成要求を受信します。
 
-ファイル操作を処理するほとんどのドライバーが framework ファイル オブジェクトのファイルに固有の情報を格納[コンテキスト領域](framework-object-context-space.md)します。 ドライバーでファイルの操作を処理している場合、ファイル オブジェクトのコンテキストの領域に情報を格納する必要はありません、フレームワークがフレームワークに、ドライバーのファイル オブジェクトを作成する必要はありません。
+ファイル操作を処理するほとんどのドライバーは、フレームワークファイルオブジェクトの[コンテキスト空間](framework-object-context-space.md)にファイル固有の情報を格納します。 ドライバーがファイルの操作を処理するが、ファイルオブジェクトのコンテキスト空間に情報を格納する必要がない場合、フレームワークはドライバー用のフレームワークファイルオブジェクトを作成する必要はありません。
 
-### <a name="creating-or-opening-a-file"></a>作成またはファイルを開く
+### <a name="creating-or-opening-a-file"></a>ファイルの作成または開く
 
-フレームワークは、関数のドライバーのファイルの作成要求を受け取ること。
+フレームワークが関数ドライバーのファイル作成要求を受信すると、次のようになります。
 
-1.  されていない限り、ドライバー以前 framework ファイル オブジェクトを使用する必要はありません、ファイルを表すフレームワーク ファイル オブジェクトを作成します。
+1.  以前にフレームワークファイルオブジェクトを使用する必要がないことをドライバーが指定していない限り、ファイルを表すフレームワークファイルオブジェクトを作成します。
 
-2.  ドライバーの呼び出す[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)ドライバーには、コールバック関数が登録されている場合、コールバック関数。
+2.  ドライバーがコールバック関数を登録している場合は、ドライバーの[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create) callback 関数を呼び出します。
 
-[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数を通常[情報を取得する](#obtaining-file-information)その名前とファイル オブジェクト フラグなどのファイルについて。 ドライバーは、通常、この情報をフレームワークのファイル オブジェクトのコンテキストの領域に格納します。
+[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create) callback 関数は、通常、ファイル名やファイルオブジェクトフラグなど、ファイルに関する[情報を取得](#obtaining-file-information)します。 通常、この情報は、フレームワークファイルオブジェクトのコンテキスト空間に格納されます。
 
-指定する代わりに、 [ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数では、ドライバーが呼び出せる[ **WdfDeviceConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)を受信する I/O キューを設定するのには、すべてのファイルの作成要求 (**WdfRequestTypeCreate**要求の種類)。 ドライバーはキューのファイルの作成要求を受信後[ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)要求ハンドラー。 (場合に、I/O キューがファイルの作成要求を受信できません、 **DefaultQueue**のキューのメンバー [ **WDF\_IO\_キュー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)構造に設定されている**TRUE**)。
+[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数を提供する代わりに、ドライバーは[**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)を呼び出して、すべてのファイル作成要求 (**WdfRequestTypeCreate**要求の種類) を受信するように i/o キューを設定できます。 その後、ドライバーは、キューの[*Evtiodefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)要求ハンドラーでファイル作成要求を受信します。 (キューの[**WDF\_IO\_queue\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)構造体の**Defaultqueue**メンバーが**TRUE**に設定されている場合、i/o キューはファイル作成要求を受信できません)。
 
-ドライバーが提供されていない場合、 [ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数と処理するために、I/O キューを設定しないは**WdfRequestTypeCreate**の I/O 要求の場合は、型指定された、フレームワーク:
+ドライバーが[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数を提供しておらず、 **WdfRequestTypeCreate**で型指定された i/o 要求を処理するための i/o キューを設定していない場合、フレームワークは次のようになります。
 
--   状態のステータス値を持つドライバーのすべてのファイルの作成要求が完了すると\_成功した場合、ドライバーには関数の場合。
+-   ドライバーが関数ドライバーである場合、\_状態が [成功] になっているドライバーのすべてのファイル作成要求を完了します。
 
--   場合は、ドライバーは、フィルター ドライバーは、次の下位のドライバーにすべてのファイルの作成要求を転送します。
+-   ドライバーがフィルタードライバーである場合、すべてのファイル作成要求を次の下位のドライバーに転送します。
 
-(この動作を変更する方法については、次を参照してください、 **AutoForwardCleanupClose**のメンバー、 [ **WDF\_FILEOBJECT\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)構造です。)。
+(この動作を変更する方法については、 [**WDF\_FILEOBJECT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)構造体の**Autoforwardcleanupclose**メンバーを参照してください)。
 
-**注**  関数には、ドライバーがいずれかを提供しない場合[デバイス インターフェイス](using-device-interfaces.md)こと、ドライバーのデバイスへのアクセスを使用するアプリケーション、ドライバーが提供する必要があります、 [ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)はすべて完了コールバック関数では、どの NT のステータス値を持つ作成要求を提出\_成功 (*状態*) と等しい**FALSE**. それ以外の場合、悪意のあるアプリケーションは、デバイスの物理デバイス オブジェクト (PDO) の名前を使用して、デバイスにアクセスしよう可能性があります。 (すべての Pdo が[名](controlling-device-access-in-kmdf-drivers.md#naming-device-objects-only-when-necessary))。
+**注**   アプリケーションがドライバーのデバイスにアクセスするために使用できる[デバイスインターフェイス](using-device-interfaces.md)が関数ドライバーによって提供されていない場合、ドライバーは、すべてのファイルを完了する[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数を提供する必要があります。NT\_SUCCESS (*状態*) が**FALSE**と等しい状態値を持つ作成要求。 そうしないと、悪意のあるアプリケーションが、デバイスの物理デバイスオブジェクト (PDO) の名前を使用してデバイスにアクセスしようとする可能性があります。 (すべての PDOs に[名前](controlling-device-access-in-kmdf-drivers.md#naming-device-objects-only-when-necessary)が付いています)。
 
  
 
-場合、ドライバー[転送](forwarding-i-o-requests.md)I/O のターゲットに作成要求、ドライバーはその必要が[完了](completing-i-o-requests.md)I/O からドライバーがエラー状態の値を受信されていない場合に、エラー状態が、要求が値ターゲット。 それ以外の場合、作成要求が失敗し、ファイルが開くように動作を試みること、下位のドライバーは通知されません。
+ドライバーが作成要求を i/o ターゲットに[転送](forwarding-i-o-requests.md)する場合、ドライバーは、i/o ターゲットからエラー状態の値を受信しない限り、エラー状態の値を指定して要求を[完了](completing-i-o-requests.md)することはできません。 それ以外の場合、下位のドライバーには作成要求が失敗したことが通知されず、ファイルが開いているかのように操作が試行される可能性があります。
 
-ドライバーは、I/O のターゲットに作成要求を転送する場合、ドライバーは設定できません、 [ **WDF\_要求\_送信\_オプション\_送信\_AND\_破棄** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)フレームワークが、framework のファイル オブジェクトの作成要求を作成した場合にフラグを設定します。 そのため、ドライバーは、WDF を設定できません\_要求\_送信\_オプション\_送信\_AND\_破棄フラグ作成の要求も設定しない限り、 [ **WdfFileObjectNotRequired** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)フラグ。
+ドライバーが作成要求を i/o ターゲットに転送する場合、ドライバーは、 [**WDF\_要求\_送信\_\_\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)を設定できません。そのためには、フレームワークによってのフレームワークファイルオブジェクトが作成されます。作成要求。 このため、ドライバーは、 [**WdfFileObjectNotRequired**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)フラグも設定しない限り、作成要求に対して\_送信\_と\_忘れるフラグ送信\_オプションを送信するように、WDF\_\_要求を設定することはできません。
 
-ドライバーはエラー状態で作成要求が完了すると、フレームワーク フレームワーク ファイル オブジェクトを削除しますが、ドライバーは呼び出しません[ *EvtFileCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)または[ *EvtFileClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数。 そのため、ドライバー ファイル オブジェクトのコンテキストの領域外のオブジェクトに固有の余分なメモリを割り当てる場合は、提供する、 [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)または[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数を割り当てられたメモリを削除します。
+ドライバーがエラー状態の作成要求を完了した場合、フレームワークは、フレームワークファイルオブジェクトを削除しますが、ドライバーの[*EvtFileCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)または[*evtfileclose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数を呼び出しません。 したがって、ドライバーがファイルオブジェクトのコンテキスト空間の外部にオブジェクト固有の追加メモリを割り当てる場合は、割り当てられたメモリを削除する[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)または[*evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数を指定する必要があります。
 
-Windows Vista 以降、ファイルの作成要求ができる[キャンセル](canceling-i-o-requests.md)します。 以前のバージョンの Windows オペレーティング システムでは、ファイルの作成要求をキャンセルできません。
+Windows Vista 以降では、ファイル作成要求を[取り消す](canceling-i-o-requests.md)ことができます。 以前のバージョンの Windows オペレーティングシステムでは、ファイル作成要求の取り消しはサポートされていません。
 
-システムには、ユーザー アプリケーションから取得された各作成の要求のファイル オブジェクトを Windows Driver Model (WDM) を常に作成します。 ドライバーは、作成要求を送信する場合は、要求の WDM ファイル オブジェクトを作成、可能性がありますできません。 通常、WDM ファイル オブジェクトが存在しない場合、フレームワークはフレームワーク ファイル オブジェクトを作成できません。 ただし、ドライバーが呼び出された場合[ **WdfDeviceInitSetExclusive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)ドライバーを設定した場合と[ **WdfFileObjectWdfCannotUseFsContexts** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)で、 **FileObjectClass**のメンバー、 [ **WDF\_FILEOBJECT\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)構造、フレームワークによって作成します。フレームワークのファイル オブジェクト場合でも、WDM ファイル オブジェクトが存在しません。
+システムは、ユーザーアプリケーションからの作成要求ごとに、常に Windows Driver Model (WDM) ファイルオブジェクトを作成します。 ドライバーが作成要求を送信した場合、その要求に対して WDM ファイルオブジェクトが作成されない可能性があります。 通常、WDM ファイルオブジェクトが存在しない場合、フレームワークはフレームワークファイルオブジェクトを作成しません。 ただし、ドライバーが[**Wdfdeviceinitsetexclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)を呼び出し、ドライバーが[**WDF\_FILEOBJECT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)構造体の**Fileobjectclass**メンバーに set [**WdfFileObjectWdfCannotUseFsContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)を設定している場合は、フレームワークは、WDM ファイルオブジェクトが存在しない場合でも、フレームワークファイルオブジェクトを作成します。
 
-### <a href="" id="obtaining-file-information"></a> ファイル情報を取得します。
+### <a href="" id="obtaining-file-information"></a>ファイル情報の取得
 
-ドライバーの[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数は、1 つまたは複数のアプリケーションまたはデバイスへのドライバーのアクセスに関する情報を取得する次のオブジェクトのメソッドを呼び出すことができます。
+ドライバーの[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create) callback 関数は、次のオブジェクトメソッドの1つ以上を呼び出して、デバイスへのアプリケーションまたはドライバーのアクセスに関する情報を取得できます。
 
-<a href="" id="---------wdffileobjectgetfilename--------"></a>[**WdfFileObjectGetFileName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)  
-フレームワークのファイル オブジェクト内に含まれているファイル名を返します。
+<a href="" id="---------wdffileobjectgetfilename--------"></a>[**WdfFileObjectGetFileName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)  
+フレームワークファイルオブジェクトに格納されているファイル名を返します。
 
-<a href="" id="---------wdffileobjectgetflags--------"></a>[**WdfFileObjectGetFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetflags)  
-フレームワークのファイル オブジェクト内に含まれるフラグを返します。
+<a href="" id="---------wdffileobjectgetflags--------"></a>[**WdfFileObjectGetFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectgetflags)  
+フレームワークファイルオブジェクト内に含まれるフラグを返します。
 
-<a href="" id="---------wdffileobjectwdmgetfileobject--------"></a>[**WdfFileObjectWdmGetFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectwdmgetfileobject)  
-フレームワークのファイル オブジェクトに関連付けられている WDM ファイル オブジェクトを返します。
+<a href="" id="---------wdffileobjectwdmgetfileobject--------"></a>[**Wdffileを Twdmgetfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectwdmgetfileobject)  
+フレームワークファイルオブジェクトに関連付けられている WDM ファイルオブジェクトを返します。
 
-<a href="" id="---------wdfrequestgetparameters--------"></a>[**WdfRequestGetParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)  
-フレームワークの要求オブジェクトに関連付けられているパラメーターを取得します。 場合、[要求の種類](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ne-wdfrequest-_wdf_request_type)は**WdfRequestTypeCreate**、 **Parameters.Create**のメンバー、 [ **WDF\_要求\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_parameters)構造体には、ファイルの作成要求に関する情報が含まれています。
+<a href="" id="---------wdfrequestgetparameters--------"></a>[**WdfRequestGetParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)  
+フレームワークの要求オブジェクトに関連付けられているパラメーターを取得します。 要求の[種類](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_type)が**WdfRequestTypeCreate**の場合、 [**WDF\_request\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_parameters)構造体の Create member には、ファイル作成要求に関する情報が含まれています **。**
 
-通常、ドライバーは、フレームワーク ファイル オブジェクトのコンテキストの領域でファイル情報を格納します。 ドライバーを呼び出すことができます、ドライバーは、の I/O キュー、1 つの場合、I/O 要求を取得するときに[ **WdfRequestGetFileObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetfileobject)要求に関連付けられている framework ファイル オブジェクトを識別するハンドルを取得します。 ドライバーは、フレームワーク ファイル オブジェクトのコンテキストの領域に保存しておいたファイル情報を取得できます。
+通常、ドライバーはフレームワークファイルオブジェクトのコンテキスト空間にファイル情報を格納します。 ドライバーが i/o キューから i/o 要求を取得すると、ドライバーは[**Wdfrequestgetfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetfileobject)を呼び出して、要求に関連付けられているフレームワークファイルオブジェクトへのハンドルを取得できます。 ドライバーは、フレームワークファイルオブジェクトのコンテキスト空間に格納されているファイル情報を取得できます。
 
-ドライバーは、呼び出すことによって、特定のファイルに関連付けられている要求のキューを I/O を検索できます[ **WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)します。
+ドライバーは、 [**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)を呼び出して、特定のファイルに関連付けられている要求の i/o キューを検索できます。
 
-ドライバー、WDM へのポインターがある場合[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体、ドライバーが呼び出せる[ **WdfDeviceGetFileObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetfileobject)WDM デバイス オブジェクトに関連付けられている framework ファイル オブジェクトを識別するハンドルを取得します。
+ドライバーが WDM[**デバイス\_のオブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)構造を指すポインターを持っている場合、ドライバーは[**Wdfdevicegetfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetfileobject)を呼び出して、wdm デバイスオブジェクトに関連付けられているフレームワークファイルオブジェクトへのハンドルを取得できます。
 
 ### <a name="closing-a-file"></a>ファイルを閉じる
 
-アプリケーションまたは別のドライバー ファイルを閉じると、フレームワークは、クリーンアップ要求と、ドライバーの終了要求を受信します。 フレームワーク:
+アプリケーションまたはその他のドライバーがファイルを閉じると、フレームワークはクリーンアップ要求を受け取り、ドライバーに対して close 要求を受け取ります。 フレームワーク:
 
-1.  ドライバーの呼び出す[ *EvtFileCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)と[ *EvtFileClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_close)ドライバーがこれらのコールバックを登録した場合、コールバック関数関数。
+1.  ドライバーがこれらのコールバック関数を登録している場合は、ドライバーの[*EvtFileCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)コールバック関数と[*evtfileclose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数を呼び出します。
 
-2.  ファイルを表すフレームワーク ファイル オブジェクトを削除します。
+2.  ファイルを表すフレームワークファイルオブジェクトを削除します。
 
-ドライバーの[ *EvtFileCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)と[ *EvtFileClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数が framework ファイル オブジェクトへのハンドルを受信します。 ドライバーを呼び出すことができます[ **WdfFileObjectGetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetdevice) framework デバイス オブジェクトが framework ファイルのオブジェクトに関連付けられたを確認します。
+ドライバーの[*EvtFileCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_cleanup)および[*evtfileclose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_file_close)コールバック関数は、フレームワークファイルオブジェクトへのハンドルを受け取ります。 このドライバーは、 [**Wdffileobjectgetdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectgetdevice)を呼び出して、フレームワークファイルオブジェクトに関連付けられているフレームワークデバイスオブジェクトを判別できます。
 
  
 

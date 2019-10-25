@@ -1,19 +1,19 @@
 ---
 title: MagneticStripeReaderDataReceived
-description: 成功の磁気ストライプ リーダー (MSR) がイベントをスキャンした後、MagneticStripeReaderDataReceived イベントが発生します。
+description: MagneticStripeReaderDataReceived イベントは、正常に実行された磁気ストライプリーダー (MSR) スキャンイベントの後に発生します。
 ms.assetid: 5074669c-3914-4d15-983b-d979c7f88b21
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bc54dbb622efcc825566822ad88687b07a423d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c82de8f8149b208fb8d26cad7101e8617ca5770
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363382"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843574"
 ---
 # <a name="magneticstripereaderdatareceived"></a>MagneticStripeReaderDataReceived
 
-成功の磁気ストライプ リーダー (MSR) がイベントをスキャンした後、このイベントが発生します。
+このイベントは、正常に実行された磁気ストライプリーダー (MSR) スキャンイベントの後に発生します。
 
 ## <a name="syntax"></a>構文
 
@@ -48,39 +48,39 @@ typedef struct _MSR_DATA_RECEIVED {
 } MSR_DATA_RECEIVED, *PMSR_DATA_RECEIVED;
 ```
 
-次の表では、このイベントのデータ バッファーのメモリ レイアウトを示します。
+次の表は、このイベントのデータバッファーのメモリレイアウトを示しています。
 
-| メモリの値 | 説明 
+| メモリ値 | 説明 
 |---|---|
-| 0x00000008                                                          | **EventType = PosEventType:。MagneticStripeReaderDataReceived**                                                                       |
-| UINT32                                                              | **DataLength** = sizeof(**PosEventDataHeader**) + sizeof(**MSR\_DATA\_RECEIVED**)                                                     |
-| 32 ビット MsrCardType                                                  | [MsrCardType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrcardtype)                                                                                                        |
-| unsigned char                                                       | **Track1EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track2EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track3EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track4EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track1EncryptedDataLength**トラック 1 の暗号化されたデータのバイト数                                                                         |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track2EncryptedDataLength**トラック 2 の暗号化されたデータのバイト数                                                                         |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track3EncryptedDataLength** 3 の暗号化された追跡データのバイト数                                                                         |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track4EncryptedDataLength** 4 の暗号化された追跡データのバイト数                                                                         |
+| 0x00000008                                                          | **EventType = PosEventType:: MagneticStripeReaderDataReceived**                                                                       |
+| UINT32                                                              | **DataLength** = Sizeof (**PosEventDataHeader**) + SIZEOF (**MSR\_データ\_受信**)                                                     |
+| 32-bit MsrCardType                                                  | [MsrCardType](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrcardtype)                                                                                                        |
+| unsigned char                                                       | **Track1EncryptedDataLength** - [msrdataencryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)が**Msrdataencryption\_None**の場合、常にゼロ (0) になります。 |
+| unsigned char                                                       | **Track2EncryptedDataLength** - [msrdataencryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)が**Msrdataencryption\_None**の場合、常にゼロ (0) になります。 |
+| unsigned char                                                       | **Track3EncryptedDataLength** - [msrdataencryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)が**Msrdataencryption\_None**の場合、常にゼロ (0) になります。 |
+| unsigned char                                                       | **Track4EncryptedDataLength** - [msrdataencryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)が**Msrdataencryption\_None**の場合、常にゼロ (0) になります。 |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 暗号化されたトラック1データの**Track1EncryptedDataLength**バイト数                                                                         |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 暗号化されたトラック2データの**Track2EncryptedDataLength**バイト数                                                                         |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 暗号化されたトラック3データの**Track3EncryptedDataLength**バイト数                                                                         |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 暗号化されたトラック4データの**Track4EncryptedDataLength**バイト数                                                                         |
 | unsigned char                                                       | **Track1MaskedDataLength**                                                                                                            |
 | unsigned char                                                       | **Track2MaskedDataLength**                                                                                                            |
 | unsigned char                                                       | **Track3MaskedDataLength**                                                                                                            |
 | unsigned char                                                       | **Track4MaskedDataLength**                                                                                                            |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track1MaskedDataLength**マスクのバイトが 1 つのデータを追跡                                                                               |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track2MaskedDataLength**マスクのバイト数が 2 つのデータを追跡                                                                               |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track3MaskedDataLength**バイトのマスクされた 3 つのデータを追跡します。                                                                               |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track4MaskedDataLength**マスクのバイト数が 4 つのデータを追跡                                                                               |
-| unsigned char                                                       | **Track1DiscretionaryDataLength** – 場合、ゼロ (0) を必ずは**MagneticStripeReaderIsDecodeDataEnabled**は false です。                |
-| unsigned char                                                       | **Track2DiscretionaryDataLength**– 場合、ゼロ (0) を必ずは**MagneticStripeReaderIsDecodeDataEnabled**は false です。                 |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track1DiscretionaryDataLength**随意のバイトが 1 つのデータを追跡                                                                 |
-| unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track2DiscretionaryDataLength**随意のバイト数が 2 つのデータを追跡                                                                 |
-| unsigned char                                                       | **CardAuthenicationDataLength** -埋め込みを含むバイトの暗号化されたデータの長さ                                            |
-| unsigned char                                                       | **CardAuthenticationDataAbsoluteLength** -バイト (暗号化解除中にパディングを削除する必要があります) で暗号化されていないデータの長さ  |
-| unsigned char\[MSR\_追加\_セキュリティ\_情報\_データ\_サイズ\] | **CardAuthenticationDataAbsoluteLength**カードの認証データのバイト数                                                            |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | マスクされるトラック1データの**Track1MaskedDataLength**バイト数                                                                               |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | マスクされるトラック2データの**Track2MaskedDataLength**バイト数                                                                               |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | マスクされるトラック3データの**Track3MaskedDataLength**バイト数                                                                               |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | マスクされるトラック4データの**Track4MaskedDataLength**バイト数                                                                               |
+| unsigned char                                                       | **Track1DiscretionaryDataLength** – **MagneticStripeReaderIsDecodeDataEnabled**が false の場合、常にゼロ (0) になります。                |
+| unsigned char                                                       | **Track2DiscretionaryDataLength**– **MagneticStripeReaderIsDecodeDataEnabled**が false の場合、常にゼロ (0) になります。                 |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 随意トラック1データの**Track1DiscretionaryDataLength**バイト数                                                                 |
+| 署名されていない char \[MSR\_追跡\_サイズ\]                                  | 随意トラック2データの**Track2DiscretionaryDataLength**バイト数                                                                 |
+| unsigned char                                                       | **Cardauthenicationdatalength** -バイト単位の暗号化されたデータの長さ (埋め込みを含む)                                            |
+| unsigned char                                                       | **CardAuthenticationDataAbsoluteLength** -暗号化されていないデータの長さ (バイト単位) (暗号化解除中にパディングを取り除く必要がある場合があります)  |
+| 署名されていない char\[MSR\_追加\_セキュリティ\_情報\_データ\_サイズ\] | **CardAuthenticationDataAbsoluteLength** bytes authentication data (カード認証データのバイト数)                                                            |
 | unsigned char                                                       | **AdditionalSecurityInformationLength**                                                                                               |
-| unsigned char\[MSR\_追加\_セキュリティ\_情報\_サイズ\]       | **AdditionalSecurityInformationLength**バイトの追加のセキュリティ情報                                                      |
+| 署名されていない char\[MSR\_追加\_セキュリティ\_情報\_サイズ\]       | 追加のセキュリティ情報の**Additionalsecurityinformationlength**バイト                                                      |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**ヘッダー:** pointofservicedriverinterface.h
+**ヘッダー:** pointofservicedriverinterface

@@ -3,17 +3,17 @@ title: NDIS インターフェイス情報
 description: NDIS インターフェイス情報
 ms.assetid: 35187fda-a239-4801-b0be-53fcbee7d24e
 keywords:
-- 管理情報ベース WDK ネットワーク
-- WDK のネットワー キングを (mib)
+- 管理情報ベースの WDK ネットワーク
+- Mib WDK ネットワーク
 - NDIS WDK、インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 742f31dcc55f3820ceeedf5c475d1bd945176097
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fce0c042aca1937373c49f0785554f48eb90723b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385513"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843545"
 ---
 # <a name="ndis-interface-information"></a>NDIS インターフェイス情報
 
@@ -21,11 +21,11 @@ ms.locfileid: "67385513"
 
 
 
-NDIS 管理情報ベース (Mib) を照会するためのインターフェイスが標準化によって、重なってドライバーとネットワーク インターフェイスに関する情報を照会ユーザー モード アプリケーションを簡単にできます。 MIB クライアントは、基になる NDIS インターフェイス プロバイダーから情報を要求する NDIS が指定した関数を呼び出します。 これにより、情報を取得する OID 要求を発行する NDIS です。 クライアントに情報を指定するには、NDIS は、NDIS を使用して、クライアントが登録されているコールバック関数を呼び出します。
+NDIS 管理情報ベース (Mib) に対してクエリを実行するための標準化されたインターフェイスにより、より簡単にネットワークインターフェイスに関する情報をクエリするために、より簡単にドライバーやユーザーモードアプリケーションを使用できるようになります。 MIB クライアントは、基になる NDIS インターフェイスプロバイダーから情報を要求するために、NDIS によって提供される関数を呼び出します。 これにより、NDIS は OID 要求を発行して情報を取得します。 クライアントに情報を提供するために、NDIS はクライアントが NDIS に登録したコールバック関数を呼び出します。
 
-NDIS ネットワーク インターフェイスのサービスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+NDIS ネットワークインターフェイスサービスの詳細については、「 [Ndis ネットワークインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
-NDIS は、強化されたサポートの Management Instrumentation (WMI) を提供します。 WMI の NDIS 6.0 のサポートの詳細については、次を参照してください。 [NDIS が WMI のサポート](ndis-support-for-wmi.md)します。
+NDIS では、Management Instrumentation (WMI) のサポートが強化されています。 WMI の NDIS 6.0 サポートの詳細については、「 [wmi の Ndis サポート](ndis-support-for-wmi.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

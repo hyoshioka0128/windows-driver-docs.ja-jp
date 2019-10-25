@@ -3,16 +3,16 @@ title: SCSI ポート WMI ライブラリの使用
 description: SCSI ポート WMI ライブラリの使用
 ms.assetid: cb55bbb3-39bb-491f-a6d2-50dceace4a86
 keywords:
-- WMI される Srb WDK ストレージ、SCSI ポート WMI ライブラリ
+- WMI SRBs WDK storage、SCSI ポート WMI ライブラリ
 - SCSI ポート WMI ライブラリ WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2fe6318f020c7df3210cc4819fdcd48a365c82
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 530e9ae66d20a5f212183be07d89d2543e788133
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386795"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845588"
 ---
 # <a name="using-the-scsi-port-wmi-library"></a>SCSI ポート WMI ライブラリの使用
 
@@ -20,25 +20,25 @@ ms.locfileid: "67386795"
 ## <span id="ddk_using_the_scsi_port_wmi_library_kg"></span><span id="DDK_USING_THE_SCSI_PORT_WMI_LIBRARY_KG"></span>
 
 
-WMI プロバイダーとして機能する記憶域ミニポート ドライバーでは、SCSI ポート WMI ライブラリを使用して、WMI コマンドが含まれている SCSI 要求ブロック (される Srb) の処理のタスクを簡略化します。 ミニポート ドライバーの I/O ルーチンを開始する[ **HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))への呼び出しによって、処理の SCSI ポート WMI ライブラリに WMI SRB の関連情報を渡します、 [ **ScsiPortWmiDispatchFunction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)ライブラリのディスパッチ ルーチン。 ミニポート ドライバーでは、次のデータをディスパッチ ルーチンを渡します。
+WMI プロバイダーとして機能する記憶域ミニポートドライバーは、SCSI ポート WMI ライブラリを使用して、WMI コマンドを含む SCSI 要求ブロック (SRBs) を処理するタスクを簡略化できます。 ミニポートドライバーの開始 i/o ルーチン[**HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))は、wmi SRB の関連情報を、 [**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)ライブラリのディスパッチルーチンの呼び出しによって処理するために、SCSI ポート wmi ライブラリに渡します。 ミニポートドライバーは、次のデータをディスパッチルーチンに渡します。
 
--   *WmiLibInfo*パラメーター: [ **SCSI\_WMILIB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)ミニポート ドライバーのコールバック ルーチンへのポインターを含む構造体。
+-   *WmiLibInfo*パラメーターでは、 [**SCSI\_wmは**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-_scsiwmilib_context)、ミニポートドライバーのコールバックルーチンへのポインターを含むコンテキスト構造\_します。
 
--   *WMISubFunction*パラメーター: の値、 **WMISubFunction** SRB のメンバー。
+-   *WMISubFunction*パラメーターの場合: SRB の**WMISubFunction**メンバーの値。
 
--   *DeviceContext*パラメーター: デバイスの拡張機能へのポインター。
+-   *Devicecontext*パラメーターに、デバイス拡張機能へのポインターを指定します。
 
--   *RequestContext*パラメーター: 型の要求コンテキストの構造体[ **SCSIWMI\_要求\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)を SCSI ポート WMI返される状態とデータのサイズなど、情報を記録するライブラリを使用します。
+-   *RequestContext*パラメーター: SCSIWMI 型の要求コンテキスト構造は、SCSI ポート WMI ライブラリが情報 (返されたデータの状態やサイズなど) を記録するために使用する[**コンテキスト\_要求\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmi_request_context)です。
 
--   *データパス*パラメーター: の値、**データパス**SRB のメンバー。
+-   *データパス*パラメーターの場合: SRB の**データパス**メンバーの値。
 
--   *BufferSize*パラメーター: の値、 **DataTransferLength** SRB のメンバー。
+-   *BufferSize*パラメーターで、SRB の**Datatransの長さ**のメンバーの値。
 
--   *バッファー*パラメーター: の値、 **DataBuffer** SRB のメンバー。
+-   *Buffer*パラメーターで、SRB の**DataBuffer**メンバーの値。
 
-これを入力する必要があります、ミニポート ドライバーが初期化されると、 [ **SCSI\_WMILIB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)必要ミニポート ドライバーのコールバック ルーチンへのポインターを使用した構造しドライバーの拡張機能など、ミニポート ドライバー固有のストレージ領域で、構造を格納します。 説明に従って、マイナー IRP 番号に対応する各ミニポート ドライバー コールバック ルーチン[方法、ポート ドライバー プロセスの WMI 要求](how-the-port-driver-processes-wmi-requests.md)します。 ミニポート ドライバー コールバック ルーチンへの設計方法については、次を参照してください[WMI ミニポートのドライバー コールバック ルーチンを設計。](designing-wmi-miniport-driver-callback-routines.md)
+ミニポートドライバーが初期化されるときに、必要なミニポートドライバーコールバックルーチンへのポインターを使用して[**SCSI\_WMB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-_scsiwmilib_context)構造に入力し、その構造をミニポートドライバー固有のストレージ領域に格納する必要があります (例:)。ドライバーの拡張機能。 各ミニポートドライバーコールバックルーチンは、「[ポートドライバーが WMI 要求を処理する方法](how-the-port-driver-processes-wmi-requests.md)」で説明されているように、小さな IRP 番号に対応します。 ミニポートドライバーのコールバックルーチンをデザインする方法については、「 [WMI ミニポートドライバーのコールバックルーチンの設計](designing-wmi-miniport-driver-callback-routines.md)」を参照してください。
 
-**GuidList** SCSI のメンバー\_WMILIB\_CONTEXT 構造は、型の要素の配列を指す必要があります[ **SCSIWMIGUIDREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo)ですについては、MOF ファイルで定義されている、サポートされている WMI クラスを一意に識別する Guid を含めることができます。 次のコード スニペットは、このような要素の配列の定義を示しています。
+SCSI\_WM/b の**Guidlist**メンバー\_コンテキスト構造体は、 [**SCSIWMIGUIDREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo)型の要素の配列を指す必要があります。これには、「」で定義されているサポート対象の WMI クラスを一意に識別する guid に関する情報が含まれていなければなりません。MOF ファイル。 次のコードスニペットは、このような要素の配列の定義を示しています。
 
 ```cpp
 SCSIWMIGUIDREGINFO GuidList[] = 
@@ -56,9 +56,9 @@ SCSIWMIGUIDREGINFO GuidList[] =
 };
 ```
 
-配列には、2 つの WMI クラスの Guid に関する情報が含まれています。 **HBAStatistics**と**HBAAttributes**します。 Guid のシンボリック定数は、WMI ツール スイートでは、2 つのクラスを定義する MOF ファイルのコンパイルによって生成されたヘッダー ファイルから取得されました (、 **mofcomp**と**wmimofck**ツール)。 これらのツールを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)と[wmimofck.exe を使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)します。
+配列には、2つの WMI クラス ( **Hbastatistics**および**hbastatistics**) の guid に関する情報が含まれています。 Guid のシンボル定数は、WMI ツールスイート ( **mofcomp.exe**および**wmimofck**ツール) を使用して2つのクラスを定義する MOF ファイルをコンパイルして生成されたヘッダーファイルから取得されました。 これらのツールの使用方法の詳細については、「[ドライバーの MOF ファイルのコンパイル](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)と[wmimofck の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)」を参照してください。
 
-WMI ツールのスイートでは、WMI クラスの名前に"GUID"のサフィックスを連結して、GUID のシンボリック定数の名前を生成します。 クラスのインスタンス、 **HBAStatistics、** と呼ばれるシンボリック定数は、ツールで作成**HBAStatisticsGUID**そのクラスの GUID を表します。
+WMI ツールスイートは、"GUID" のサフィックスを WMI クラスの名前に連結することによって、GUID のシンボル定数の名前を生成します。 たとえば、クラス**Hbastatistics**の場合、ツールは**HBAStatisticsGUID**という名前のシンボル定数を作成します。これは、そのクラスの GUID を表します。
 
  
 

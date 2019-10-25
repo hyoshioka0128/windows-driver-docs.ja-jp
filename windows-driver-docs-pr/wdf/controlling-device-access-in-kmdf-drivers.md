@@ -3,64 +3,64 @@ title: KMDF ドライバーでのデバイス アクセスの制御
 description: KMDF ドライバーでのデバイス アクセスの制御
 ms.assetid: 62bbc69f-0754-4d37-a476-dd2ac3d70de6
 keywords:
-- デバイスへのアクセス制御の WDK KMDF
-- WDK のデバイス オブジェクトの名前
-- デバイス オブジェクト WDK KMDF
-- framework オブジェクト WDK KMDF、デバイスのアクセス制御
+- デバイスアクセス制御 (WDK KMDF)
+- WDK デバイスオブジェクトの名前
+- デバイスオブジェクト WDK KMDF
+- フレームワークオブジェクト WDK KMDF、デバイスアクセス制御
 - セキュリティ記述子 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 837ddaddbdec442a48dac7cc7a71267d9603b317
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f69f7c9b294b7e66b39b67492ed3e3c5ecf2f347
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382876"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845623"
 ---
 # <a name="controlling-device-access-in-kmdf-drivers"></a>KMDF ドライバーでのデバイス アクセスの制御
 
 
-ドライバーは、コンピューターのデバイスやファイルを不適切にアクセスできないようにする必要があります。 デバイスとファイルを不正アクセスを防ぐため、次の操作をする必要があります。
+ユーザーがコンピューターのデバイスとファイルに不適切にアクセスするのを防ぐために、ドライバーを使用する必要があります。 デバイスとファイルへの不正アクセスを防ぐには、次のことを行う必要があります。
 
--   必要な場合にのみ、デバイス オブジェクトの名前を付けます。
+-   必要な場合にのみ、デバイスオブジェクトに名前を指定します。
 
--   デバイス オブジェクトとインターフェイスのセキュリティ記述子を提供します。
+-   デバイスオブジェクトとインターフェイスのセキュリティ記述子を指定します。
 
-### <a href="" id="naming-device-objects-only-when-necessary"></a> 必要な場合にのみ、デバイス オブジェクトの名前付け
+### <a href="" id="naming-device-objects-only-when-necessary"></a>必要な場合にのみデバイスオブジェクトに名前を付ける
 
-ほとんどの Windows Driver Model (WDM) ドライバーのようなフレームワーク ベースのドライバー通常名前を指定しません、デバイス オブジェクト。 アプリケーションは、各追加のデバイス オブジェクトの名前は、アプリケーションがデバイスへのアクセスに使用できる追加のパスを表すため、デバイスのオブジェクト名を指定することで、デバイスにアクセスできます。
+ほとんどの Windows Driver Model (WDM) ドライバーと同様に、フレームワークベースのドライバーは通常、デバイスオブジェクトに名前を指定しません。 アプリケーションはデバイスオブジェクト名を指定することによってデバイスにアクセスできます。そのため、追加の各デバイスオブジェクト名は、アプリケーションがデバイスにアクセスするために使用できる追加のパスを表します。
 
-未承認のアクセスを防ぐため、デバイスに、デバイス オブジェクトは名前と、各ドライバーでのセキュリティ記述子を指定できます。 ただし、ファイル名をオペレーティング システム、ドライバーを提供します (を参照してください[ **WdfFileObjectGetFileName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)) アプリケーションを使用するデバイス オブジェクトの名前は含まれません。 そのため、ドライバーのスタックのいくつかのドライバーがそれらのデバイス オブジェクトの名前を指定する場合、ドライバーは、アプリケーションがデバイスを開くために使用するオブジェクト名を特定できません。 結果として、アプリケーションは、ドライバーが必要ですがより緩いセキュリティ記述子を使用してデバイスを開く可能性があります。
+デバイスへの不正アクセスを防ぐために、各ドライバーは、デバイスオブジェクトに名前を指定するときにセキュリティ記述子を指定できます。 ただし、オペレーティングシステムによってドライバーに提供されるファイル名 (「 [**Wdffileobjectgetfilename**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)」を参照) には、アプリケーションが使用するデバイスオブジェクト名が含まれていません。 したがって、ドライバーのスタック内の複数のドライバーによってデバイスオブジェクトの名前が指定されている場合、そのデバイスを開くためにアプリケーションが使用したオブジェクト名をドライバーが判断できません。 その結果、アプリケーションは、使用しているドライバーよりも制限の緩いセキュリティ記述子を持つデバイスを開く可能性があります。
 
-物理デバイス オブジェクト (Pdo) 名が必要です。 通常、フレームワークに基づくバス ドライバーは、(既定) フレームワークに指示オペレーティング システムの名前を生成するために、PDO の名前を指定しません。
+物理デバイスオブジェクト (PDOs) には名前が必要です。 通常、フレームワークによって (既定では)、名前を生成するようにオペレーティングシステムに指示するため、フレームワークベースのバスドライバーは PDO の名前を指定しません。
 
-その一方で、framework ベースのドライバー割り当てることができます、デバイス名デバイス オブジェクトを呼び出すことによって[ **WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)します。 ドライバーは、その場合にのみ、ドライバーは特定のデバイス名、または、ドライバーで以前のドライバー スタックにあるアーキテクチャが属している場合を必要とする古いアプリケーションをサポートする必要があります。 (FDO) の機能のデバイス オブジェクト、デバイス オブジェクトのフィルター (フィルター操作を行います)、または PDO 名前必要があります。オブジェクトの名前。
+一方、フレームワークベースのドライバーは、 [**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出すことによってデバイスオブジェクトにデバイス名を割り当てることができます。 ドライバーは、特定のデバイス名を必要とする古いアプリケーションをドライバーがサポートしている必要がある場合、またはそのアーキテクチャに必要な古いドライバースタックにドライバーが属している場合にのみ、機能デバイスオブジェクト (FDO)、フィルターデバイスオブジェクト (フィルター処理)、または PDO に名前を指定する必要があります。オブジェクト名。
 
-Fdo と DOs のフィルターの名前を付けではなく WDM ドライバーやフレームワーク ベースのドライバーは、アプリケーションにアクセスできるデバイスのインターフェイスを提供する必要があります。 オペレーティング システムは、デバイスの PDO およびドライバー パッケージの INF ファイルを指定するレジストリ エントリから、デバイス インターフェイスのセキュリティ記述子を取得します。 バス ドライバーは、ドライバーのデバイスが関数のドライバーがない、raw モードで動作している場合、PDO のデバイスのインターフェイスを提供できます。
+WDM ドライバーおよびフレームワークベースのドライバーは、FDOs に名前を付けたり、DOs をフィルター処理したりする代わりに、アプリケーションがアクセスできるデバイスインターフェイスを提供する必要があります。 オペレーティングシステムは、デバイスの PDO から、およびドライバーパッケージの INF ファイルによって指定されたレジストリエントリから、デバイスインターフェイスのセキュリティ記述子を取得します。 バスドライバーは、ドライバーのデバイスが raw モードで動作している場合に、関数ドライバーを使用せずに PDO のデバイスインターフェイスを提供できます。
 
-一部のドライバーを呼び出す必要があります[ **WdfDeviceCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)デバイスのシンボリック リンクの名前を作成します。 たとえば、ドライバーを作成、 [MS-DOS デバイス名](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-ms-dos-device-names)場合アプリケーションは、MS-DOS デバイス名を参照してください。 ドライバーを作成する場合は、名前のない FDO またはフィルターにシンボリック リンクの名前は、フレームワークは、PDO の名前のシンボリック リンクの名前を関連付けます。 (デバイスの制御に関連付けられていない、PDO のためには、ドライバーは、デバイスの名前のないコントロールのシンボリック リンクの名前を作成できません。)
+一部のドライバーでは、 [**WdfDeviceCreateSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)を呼び出して、デバイスのシンボリックリンク名を作成する必要があります。 たとえば、アプリケーションがデバイスの MS-DOS 名を確認する場合、ドライバーは[ms-dos デバイス名](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-ms-dos-device-names)を作成することがあります。 ドライバーによって名前のない FDO またはフィルターのシンボリックリンク名が作成された場合、フレームワークによって、シンボリックリンク名が PDO の名前に関連付けられます。 (コントロールデバイスは PDO に関連付けられていないため、名前のないコントロールデバイスのシンボリックリンク名をドライバーで作成することはできません)。
 
-### <a href="" id="providing-security-descriptors-for-device-objects-and-interfaces"></a> デバイス オブジェクトとインターフェイスのセキュリティ記述子を提供します。
+### <a href="" id="providing-security-descriptors-for-device-objects-and-interfaces"></a>デバイスオブジェクトとインターフェイスのセキュリティ記述子の提供
 
-すべてのデバイスの名前付きオブジェクトには、セキュリティ記述子が必要です。 オペレーティング システムでは、デバイス オブジェクトのセキュリティ記述子を使用して、デバイスとそのデバイス インターフェイスへのアクセスを許可するユーザーの種類を決定します。 セキュリティ記述子でデバイス オブジェクトを割り当てることができます。
+すべての名前付きデバイスオブジェクトには、セキュリティ記述子が必要です。 オペレーティングシステムは、デバイスオブジェクトのセキュリティ記述子を使用して、デバイスとそのデバイスインターフェイスにアクセスすることが許可されているユーザーの種類を決定します。 セキュリティ記述子は、次の方法でデバイスオブジェクトに割り当てることができます。
 
--   デバイス オブジェクトの既定のセキュリティ記述子を提供するオペレーティング システム (を参照してください[デバイスへのアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access))。
+-   デバイスオブジェクトの既定のセキュリティ記述子を提供するオペレーティングシステム (「[デバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)」を参照)。
 
--   既定のセキュリティ記述子を提供すると、フレームワーク (SDDL を使用して\_DEVOBJ\_SYS\_すべて\_ADM\_すべての値) には、ドライバーを呼び出す場合[ **WdfDeviceInitAssignName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)デバイス オブジェクトに名前を割り当てる (を参照してください[デバイス オブジェクトの SDDL](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects))。
+-   既定のセキュリティ記述子を提供するフレームワーク。ドライバーが[**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出してデバイスオブジェクトに名前を割り当てる場合 (sddl\_devobj\_SYS\_ALL\_ADM\_すべての値) を使用します (「sddl」を参照してください)。 [デバイスオブジェクトの場合](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects))。
 
--   フレームワークの既定のセキュリティ記述子を呼び出すことによってオーバーライドできるドライバー [ **WdfDeviceInitAssignSDDLString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)します。
+-   ドライバー。 [**Wdfdeviceinit割り当て Sddlstring**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)を呼び出すことによって、フレームワークの既定のセキュリティ記述子をオーバーライドできます。
 
-既定では、オペレーティング システムもドライバーを提供するデバイス インターフェイスへのアクセス権を確認するのにデバイス PDO のセキュリティ記述子を使用します。
+既定では、オペレーティングシステムは、デバイス PDO のセキュリティ記述子も使用して、ドライバーが提供するデバイスインターフェイスへのアクセス権を決定します。
 
-ドライバー パッケージとデバイスのセキュリティ記述子を指定する INF ファイルを提供できます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)内、 [ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section).
+ドライバーパッケージは、inf [**DDInstall. HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)内の[**inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を使用して、デバイスのセキュリティ記述子を指定する inf ファイルを提供できます。
 
-INF ファイルでのセキュリティ記述子の指定に関する詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)します。
+INF ファイルでセキュリティ記述子を指定する方法の詳細については、「[セキュリティで保護されたデバイスのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)」を参照してください。
 
-かどうか、ドライバーは、raw モードで動作するデバイスの Pdo を作成するドライバーを指定する必要があります、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)呼び出し時に[ **WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)します。 さらに、ドライバーは、デバイスの制御を作成する場合は、呼び出すことができます[ **WdfDeviceInitSetDeviceClass** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)デバイス セットアップ クラスを指定します。 どちらのこのような場合、システム管理者は、デバイスのセキュリティ記述子を格納するのに、指定したセットアップ クラスのレジストリ キーを使用できます。
+ドライバーが raw モードで動作するデバイスに対して PDOs を作成する場合、ドライバーは[**Wdfpdoinit割り当て Rawdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)を呼び出すときに、[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)を指定する必要があります。 また、ドライバーがコントロールデバイスを作成する場合は、 [**Wdfdeviceinitsetdeviceclass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)を呼び出して、デバイスセットアップクラスを指定できます。 どちらの場合も、システム管理者は、指定されたセットアップクラスのレジストリキーを使用して、デバイスのセキュリティ記述子を格納できます。
 
-オペレーティング システムがデバイスを使用するセキュリティ記述子を決定する方法については、次を参照してください。[デバイスへのアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)します。
+デバイスで使用するセキュリティ記述子をオペレーティングシステムがどのように判断するかについては、「[デバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)」を参照してください。
 
-常に、ファイルを設定、フレームワークは、デバイス オブジェクトを作成するとき\_デバイス\_SECURE\_オープン オペレーティング システムは、任意の名前にアクセスするアプリケーションを許可する前に、デバイスのセキュリティ記述子を確認するためのフラグデバイスの名前空間。 ファイルの詳細については\_デバイス\_SECURE\_フラグとデバイスの名前空間を開きを参照してください[デバイス Namespace のアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)します。
+フレームワークは、デバイスオブジェクトを作成するとき、常にファイル\_デバイス\_セキュリティで保護された\_OPEN フラグを設定します。これにより、オペレーティングシステムはデバイスのセキュリティ記述子を確認してから、アプリケーションがデバイス内の任意の名前にアクセスできるようになります。空間. ファイル\_デバイス\_セキュリティで保護された\_オープンフラグとデバイスの名前空間の詳細については、「[デバイスの名前空間へのアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)」を参照してください。
 
  
 

@@ -3,17 +3,17 @@ title: BDA フィルターの初期化
 description: BDA フィルターの初期化
 ms.assetid: 716978f5-4bdd-4673-8c4a-14dc76947fba
 keywords:
-- BDA ミニドライバー WDK AVStream、フィルターの初期化
-- BDA フィルターを初期化しています
-- 初期フィルター インスタンス WDK BDA
+- BDA ミニドライバー WDK AVStream, フィルター初期化
+- BDA フィルターの初期化
+- 初期フィルターインスタンス WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2cfe00db17856c80fc85579323438242ad7ab58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc6e63dcd775ce42df8f0ba7ca82dda00b1d26e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360687"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845575"
 ---
 # <a name="initializing-a-bda-filter"></a>BDA フィルターの初期化
 
@@ -21,9 +21,9 @@ ms.locfileid: "67360687"
 
 
 
-ネットワーク プロバイダーのフィルターでは、BDA デバイスの初期のフィルター記述子の作成のディスパッチ ルーチンを使用して、ネットワーク プロバイダーがフィルター グラフを作成するときに、BDA デバイスの初期フィルター インスタンスを作成します。 この最初のフィルター記述子は、フィルター ファクトリとして設定され、BDA デバイスが開始したときに、BDA デバイス BDA フィルター テンプレートに関連付けられています。 作成される初期フィルター インスタンスには、少なくとも 1 つの入力を公開する必要があります。 通常、初期フィルター インスタンスは、最初のフィルター記述子で可能な各入力ピンの入力のピンを公開しますが、出力ピンを公開しません。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)と[ディスパッチ テーブルを作成](creating-dispatch-tables.md)詳細についてはします。
+ネットワークプロバイダーフィルターでは、ネットワークプロバイダーがフィルターグラフを作成するときに、BDA デバイスの初期フィルター記述子の作成ディスパッチルーチンを使用して、BDA デバイスの初期フィルターインスタンスを作成します。 この初期フィルター記述子はフィルターファクトリとして設定され、bda デバイスの開始時に bda デバイスの BDA フィルターテンプレートに関連付けられていました。 最初に作成されるフィルターインスタンスは、少なくとも1つの入力を公開する必要があります。 通常、最初のフィルターインスタンスは、初期フィルター記述子で使用可能な入力ピンごとに入力ピンを公開しますが、出力ピンは公開しません。 詳細について[は、「BDA ミニドライバーを開始する](starting-a-bda-minidriver.md)」および「[ディスパッチテーブルを作成](creating-dispatch-tables.md)する」を参照してください。
 
-ルーチンを作成、BDA フィルターのフィルター、そのオブジェクトのメモリを割り当てる必要がありますや、フィルター オブジェクトのメンバー変数を設定する必要がありますし、呼び出す必要があります、 [ **BdaInitFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter)を初期化する関数をサポートフィルターのインスタンス。 この呼び出しで BDA フィルターのパスを作成しますルーチンへのポインター、 [ **KSFILTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter)構造を作成する最初のフィルターとへのポインター、 [ **BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template)初期フィルター インスタンスのフィルターのテンプレートのトポロジのさまざまな可能性を記述する構造体。
+BDA フィルターの create ルーチンは、フィルターオブジェクトにメモリを割り当て、フィルターオブジェクトのメンバー変数を設定する必要があります。その後、 [**BdaInitFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdainitfilter) support 関数を呼び出して、フィルターインスタンスを初期化します。 この呼び出しでは、BDA フィルターの create ルーチンは、作成する初期フィルターの[**Ksk フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter)構造へのポインターと、フィルターのの可能性を記述する[**bda\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_filter_template)構造へのポインターを渡します。初期フィルターインスタンスのテンプレートトポロジ。
 
  
 

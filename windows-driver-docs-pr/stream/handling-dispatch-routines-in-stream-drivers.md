@@ -1,67 +1,67 @@
 ---
 title: ストリーム ドライバーのディスパッチ ルーチンの処理
-description: ドライバーのディスパッチ ルーチンの処理に関するガイダンスを提供します。
+description: ドライバーのディスパッチルーチンの処理に関するガイダンスを提供します。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ee7740ce65caa8c981912125f2d2e19512dc81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69300a688cebcb5c2a21917f077247b6fb1a3da6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384051"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843357"
 ---
 # <a name="handling-dispatch-routines-in-stream-drivers"></a>ストリーム ドライバーのディスパッチ ルーチンの処理
 
-このトピックでは、ドライバーのディスパッチ ルーチンの処理に関するガイダンスを提供します。
+このトピックでは、ドライバーのディスパッチルーチンの処理に関するガイダンスを提供します。
 
 ## <a name="adddevice-routine-for-avstream-minidrivers"></a>AVStream ミニドライバーの AddDevice ルーチン
 
-ほとんどの AVStream ミニドライバーを指定しない独自*AddDevice*ルーチン。 代わりに、使用[ **KsAddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadddevice)、既定の*AddDevice*によってインストールされているハンドラー [ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver). それでもの提供を希望独自ミニドライバー *AddDevice*ハンドラーは、次のガイドラインに従う必要があります。
+ほとんどの AVStream ミニドライバーは、独自の*AddDevice*ルーチンを提供しません。 代わりに、 [**KsAddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksadddevice)を使用します。これは、 [**ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)によってインストールされる既定の*AddDevice*ハンドラーです。 それでも独自の*AddDevice*ハンドラーを提供する必要があるミニドライバーは、次のガイドラインに従う必要があります。
 
-ドライバーを呼び出す場合[ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)中に*DriverEntry*され、後で置き換えられます、 *AddDevice*ハンドラー、ミニドライバーできます呼び出す[ **KsAddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadddevice)からこのルーチン内で実行する既定の処理を追加します。
+ドライバーが*Driverentry*で[**ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)を呼び出し、後で*AddDevice*ハンドラーを置き換える場合、ミニドライバーはこのルーチン内から[**KsAddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksadddevice)を呼び出して、既定の追加処理を実行できます。
 
-呼び出すことができます、ミニドライバー [ **KsCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatedevice)名目上オプションを渡して、このルーチンから[ **KSDEVICE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_descriptor). 場合[ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)がこれには、記述子によって記述された AVStream デバイスを作成する最高レベルの呼び出しが呼び出されない。
+ミニドライバーは、このルーチンから[**KsCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatedevice)を呼び出して、とオプションの[**KSDEVICE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_descriptor)で渡すことができます。 [**Ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)が呼び出されていない場合、これは、記述子によって記述された avstream デバイスを作成する最上位レベルの呼び出しです。
 
-呼び出す必要がありますが、ミニドライバーは、独自 FDO を作成し、手動でデバイス スタックに添付されて場合、 [ **KsInitializeDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedevice) AVStream デバイスを作成します。
+ミニドライバーが独自の FDO を作成し、デバイススタックに手動でアタッチする場合は、 [**Ksinitializedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedevice)を呼び出して avstream デバイスを作成する必要があります。
 
-ドライバーが提供されていない場合、 [ **KSDEVICE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_descriptor)デバイスがまだ作成して AVStream 既定 AVStream のデバイスを作成します。 このデバイスは、フィルター ファクトリが含まれていないし、決してミニドライバーにディスパッチします。 ミニドライバーをインスタンス化も[ **KSFILTERFACTORY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilterfactory)呼び出すことによって、デバイス上の構造[ **KsCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatefilterfactory)します。
+ドライバーが[**Ksk デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_descriptor)を提供せず、まだデバイスを作成している場合は、avstream によって既定の avstream デバイスが作成されます。 このデバイスにはフィルターファクトリが含まれておらず、ミニドライバーにディスパッチされることはありません。 ミニドライバーは、 [**KsCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatefilterfactory)を呼び出すことによって、デバイス上で[**ksk filterfactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilterfactory)構造体をインスタンス化することもできます。
 
-独自にインストールする*AddDevice*ハンドラー。
+独自の*AddDevice* handler をインストールするには:
 
 ```cpp
 DriverObject->DriverExtension->AddDevice=MyAddDevice();
 ```
-AVStream ミニドライバーが提供する機能を使用することをお勧めします[ **KsInitializeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)ではなく、既定値よりも*AddDevice*によって提供されるルーチン。クラスのドライバーです。
+AVStream ミニドライバーは、クラスドライバーによって提供される既定の*AddDevice*ルーチンをオーバーライドするのではなく、 [**ksinitializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)によって提供される機能を使用することをお勧めします。
 
-詳細については、次を参照してください。、 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)コールバック関数。
+詳細については、「 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) callback 関数」を参照してください。
 
-## <a name="driverentry-routine-for-stream-class-minidrivers"></a>Stream クラス ミニドライバーの DriverEntry ルーチン
+## <a name="driverentry-routine-for-stream-class-minidrivers"></a>ストリームクラスミニドライバーの DriverEntry ルーチン
 
-**DriverEntry**ストリーム クラスのミニドライバーの初期のエントリ ポイントです。 このルーチンが必要です。
+**Driverentry**は、ストリームクラスミニドライバーの最初のエントリポイントです。 このルーチンは必須です。
 
-[ **StreamClassRegisterMinidriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassregisteradapter) 、必要なドライバーの初期化のストリーム クラス ミニドライバーの主要なタスクのほとんどを実行**DriverEntry**ルーチン割り当てし、入力には、 [ **HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)ドライバー固有の定数とエントリ ポイントを含む構造体。 **DriverEntry**呼び出す必要がありますし、 **StreamClassRegisterMinidriver**します。
+[**StreamClassRegisterMinidriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassregisteradapter)は、必要なドライバーの初期化の大部分を実行するため、ストリームクラスミニドライバーの**driverentry**ルーチンの主要なタスクは、[**ハードウェア\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)を割り当てて入力することです。ドライバー固有の定数とエントリポイントを含む構造体。 **Driverentry**は**StreamClassRegisterMinidriver**を呼び出す必要があります。
 
-詳細については、次を参照してください。、 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)コールバック関数。
+詳細については、「 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) callback 関数」を参照してください。
 
 ## <a name="driverentry-function-of-avstream-minidriver-function"></a>AVStream ミニドライバー関数の DriverEntry 関数
 
-*DriverEntry*関数は、AVStream ミニドライバーへの初期のエントリ ポイント。
+*Driverentry*関数は、avstream ミニドライバーへの最初のエントリポイントです。
 
-各 AVStream ミニドライバーは、明示的にという名前の関数をいる必要があります*DriverEntry*読み込まれるためです。 *DriverEntry* I/O システムで直接呼び出されます。 通常、 *DriverEntry*呼び出し[ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)によって返される値を返します**KsInitializeDriver**します。
+各 AVStream ミニドライバーには、読み込まれるために*Driverentry*という名前の関数が明示的に指定されている必要があります。 *Driverentry*は、i/o システムによって直接呼び出されます。 通常、 *Driverentry*は[**ksk initializedriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)を呼び出し、次に**ksk initializedriver**から返された値を返します。
 
-詳細については、次を参照してください。、 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)コールバック関数。
+詳細については、「 [DRIVER_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) callback 関数」を参照してください。
 
 ## <a name="kscancelroutine-function"></a>KsCancelRoutine 関数
 
-**KsCancelRoutine**関数は、標準的な IRP のキャンセル機能を実行します。 エントリを削除およびをキャンセルし、要求を完了します。 関数が、PDRIVER として定義されている\_キャンセル ルーチン。 使用される既定の関数は**KsAddIrpToCancelableQueue**がない場合。
+**Kscancelroutine**関数は、標準の IRP キャンセル機能を実行します。この関数は、エントリを削除してから、要求をキャンセルして完了します。 関数は、キャンセルルーチン\_PDRIVER として定義されています。 指定されていない場合は、 **Ksk Addiの Tocancelablequeue**に使用される既定の関数です。
 
-この関数は、通常キャンセル IRP の I/O サブシステムによって呼び出されますが、KSMETHOD への応答で直接呼び出すことができます\_ストリーム\_要求のプレゼンテーションを設定します。 任意の一般的なキャンセル ルーチンとは、この関数は、関数の入力時に取得された I/O キャンセル スピン ロックを要求します。
+通常、この関数は、IRP をキャンセルするときに i/o サブシステムによって呼び出されますが、\_プレゼンテーションセット要求をストリーム\_ストリームメソッドに応答して直接呼び出すことができます。 一般的なキャンセルルーチンと同様に、この関数は、関数を入力したときに i/o キャンセルスピンロックが取得されていることを想定しています。
 
-このルーチンが、KSQUEUE を期待しているメモ\_スピンロック\_IRP\_で指定されたリストへのアクセスのスピン ロックを指す STORAGE(Irp) **KsAddIrpToCancelableQueue**します。
+このルーチンでは、ksk キュー\_スピンロック\_IRP\_ストレージ (Irp) が、 **Ksaddiに**指定されたリストアクセススピンロックをポイントする必要があることに注意してください。
 
-**KsCancelRoutine** IRP を実際に完了しなくても、処理、暫定版 ボックスの一覧の削除を行うために使用できます。 場合 Irp -&gt;IoStatus.Status が状態に設定されている\_取り消された場合に、この関数を入力して、IRP は完了しません。 ステータス、状態を設定する場合は、\_キャンセルおよび IRP が完了します。 これは、 **KsCancelRoutine**を最初のリストの操作を行います、スピン ロック操作と固有の処理と最終的な IRP の完了を行うドライバーの完了ルーチンに戻りますキャンセル ルーチン内で使用できます。
+**Kscancelroutine**を使用して、実際に IRP を完了することなく、暫定的なリスト削除処理を行うことができます。 この関数の入力時に、Irp&gt;IoStatus. Status が STATUS\_に設定されている場合、IRP は完了しません。 それ以外の場合、状態は 状態\_キャンセル に設定され、IRP は完了します。 この**Kscancelroutine**をキャンセルルーチン内で使用すると、最初のリストを実行し、ロック操作をスピンして、特定の処理と最終的な IRP 完了を実行するために、ドライバーの完了ルーチンに戻ることができます。
 
-詳細については、次を参照してください。、 [DRIVER_CANCEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチン。
+詳細については、「 [DRIVER_CANCEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチン」を参照してください。
 
 ## <a name="ksdefaultdispatchpnp-function"></a>KsDefaultDispatchPnp 関数
 
@@ -70,13 +70,13 @@ KSDDKAPI
 _Dispatch_type_(IRP_MJ_PNP) DRIVER_DISPATCH KsDefaultDispatchPnp;
 ```
 
-**KsDefaultDispatchPnp**関数は、既定では、メインの PnP ディスパッチ ハンドラーは、このハンドラーに機能するデバイスのオブジェクトに関する通知を送信できます。 この関数は、以前の PnP デバイス オブジェクトにすべての通知を渡します**KsSetDevicePnpAndBaseObject**デバイス ヘッダーの使用を前提としています。 関数が IRP を渡された場合\_MN\_削除\_デバイス、デバイス オブジェクトを削除します。
+**KsDefaultDispatchPnp**関数は、既定の主 PnP ディスパッチハンドラーです。機能デバイスオブジェクトに関する通知は、このハンドラーに送信できます。 この関数は、すべての通知を、以前に**KsSetDevicePnpAndBaseObject**で設定された PnP デバイスオブジェクトに渡し、デバイスヘッダーの使用を前提としています。 関数に\_デバイス\_削除された IRP\_渡されると、デバイスオブジェクトが削除されます。
 
-**KsDefaultDispatchPnp**関数は、基になる物理デバイス オブジェクト IRP の処理の状態を返します。
+**KsDefaultDispatchPnp**関数は、基になる物理デバイスオブジェクトの IRP 処理の状態を返します。
 
-**KsDefaultDispatchPnp**関数は、デバイスのヘッダーを解放して、実際のデバイス オブジェクトを削除する以外にデバイスを削除するときに必要な追加のクリーンアップがない場合に便利です。
+**KsDefaultDispatchPnp**関数は、デバイスヘッダーを解放し、実際のデバイスオブジェクトを削除する以外に、デバイスを削除するときに余分なクリーンアップが不要な場合に便利です。
 
-詳細については、次を参照してください。、 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+詳細については、「 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン」を参照してください。
 
 
 ## <a name="ksdefaultdispatchpower-function"></a>KsDefaultDispatchPower 関数
@@ -86,11 +86,11 @@ KSDDKAPI
 _Dispatch_type_(IRP_MJ_POWER) DRIVER_DISPATCH KsDefaultDispatchPower;
 ```
 
-**KsDefaultDispatchPower**関数は、既定のメインの電源ディスパッチ ハンドラー。 機能のデバイス オブジェクトに関する通知は、ここに移動できます。 この関数は、以前 PnP デバイス オブジェクトにすべての通知を渡します**KsSetDevicePnpAndBaseObject**デバイスのヘッダーの使用を前提としています。
+**KsDefaultDispatchPower**関数は、既定のメインの電源ディスパッチハンドラーです。 機能デバイスオブジェクトに関する通知は、ここに記載されています。 この関数は、すべての通知を、以前に**KsSetDevicePnpAndBaseObject**で設定された PnP デバイスオブジェクトに渡し、デバイスヘッダーを使用することを前提としています。
 
-**KsDefaultDispatchPower**関数は、電源の Irp または電力 IRP の完了方法と同様に必要な追加のクリーンアップがない場合に便利です。 また既定クロック imlementation などの特定のファイル オブジェクト自体を使用して電源 Irp をアタッチする、 **KsSetPowerDispatch**、しては、このルーチンが完了する前に対処します。 この関数は、IRP を完了する前に、各 power ディスパッチ ルーチンを呼び出します。
+**KsDefaultDispatchPower**関数は、電源 irp に余分なクリーンアップが必要ない場合、または電源 irp を完了する手段として使用する場合に便利です。 また、既定のクロック imlementation などの特定のファイルオブジェクトを、 **Ksk Setpowerdispatch**を使用して電源 irp に接続し、このルーチンによって処理が完了する前に操作することもできます。 この関数は、IRP を完了する前に各電源ディスパッチルーチンを呼び出します。
 
-詳細については、次を参照してください。、 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+詳細については、「 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン」を参照してください。
 
 ## <a name="ksdefaultforwardirp-routine"></a>KsDefaultForwardIrp ルーチン
 
@@ -101,40 +101,40 @@ _Dispatch_type_(IRP_MJ_DEVICE_CONTROL)
 DRIVER_DISPATCH KsDefaultForwardIrp;
 ```
 
-この既定のハンドラーは、対応する物理デバイスのオブジェクトへの I/O 要求を転送するルーチンをディスパッチできます。
+この既定のハンドラーを使用すると、ディスパッチルーチンは、対応する物理デバイスオブジェクトに i/o 要求を転送できます。
 
-この既定のハンドラーは、ドライバーが IRP ある要件を満たすためにディスパッチ ルーチンの手段を提供します。\_MJ\_ \*特定の主要な関数の関数のハンドラー。
+この既定のハンドラーを使用すると、ディスパッチルーチンは、ドライバーが特定の主要な関数に対する IRP\_MJ\_\* 関数ハンドラーを持つという要件を満たすことができます。
 
-詳細については、次を参照してください。、 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+詳細については、「 [DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン」を参照してください。
 
 <a name="see-also"></a>関連項目
 --------
 
-[KsAddDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadddevice)
+[KsAddDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksadddevice)
 
-[KsCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatedevice)
+[KsCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatedevice)
 
-[KSDEVICE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice)
+[KSDEVICE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)
 
-[KsDispatchIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdispatchirp)
+[KsDispatchIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksdispatchirp)
 
-[KsInitializeDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedevice)
+[KsInitializeDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedevice)
 
-[KsInitializeDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)
+[KsInitializeDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)
 
-[KsAddIrpToCancelableQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksaddirptocancelablequeue)
+[Ksk Addiの Tocancelablequeue](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksaddirptocancelablequeue)
 
-[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)
+[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)
 
-[ドライバー\_オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)
+[ドライバー\_オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)
 
-[デバイス\_オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)
+[デバイス\_オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)
 
-[StreamClassRegisterMinidriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassregisteradapter)
+[StreamClassRegisterMinidriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassregisteradapter)
 
-[HW\_初期化\_データ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)
+[ハードウェア\_初期化\_データ](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)
 
-[DriverEntry ルーチンを記述します。](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-driverentry-routine)
+[DriverEntry ルーチンを記述する](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-driverentry-routine)
 
 
 

@@ -3,30 +3,30 @@ title: フレームワーク I/O キュー オブジェクト
 description: フレームワーク I/O キュー オブジェクト
 ms.assetid: b343c61a-8252-4e46-9013-bef29d9ec360
 keywords:
-- UMDF オブジェクト WDK、I/O の queue オブジェクトします。
-- フレームワークは、WDK UMDF、I/O キューのオブジェクトをオブジェクトします。
-- I/O キュー オブジェクト WDK UMDF
+- UMDF オブジェクト WDK、i/o キューオブジェクト
+- フレームワークオブジェクト WDK UMDF、i/o queue オブジェクト
+- I/o キューオブジェクト WDK UMDF
 - IWDFIoQueue
-- queue オブジェクトは WDK UMDF
+- queue オブジェクト WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93db224fe5a7b912130f745a2a1d49d23d73add5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1484087c0f45fa42875233e737d1caeb5b8a22bc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373724"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843175"
 ---
 # <a name="framework-io-queue-object"></a>フレームワーク I/O キュー オブジェクト
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-Framework I/O キュー オブジェクトが、ドライバーに公開される、 [IWDFIoQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfioqueue)インターフェイス。 I/O 要求のコンテナーは、I/O キューを表します。 I/O キューをドライバーに要求のフローを制御します。 I/O 要求が到着するは、適切なキューに配置されます。 I/O キューのオブジェクトの子である[UMDF デバイス オブジェクト](framework-device-object.md)します。 ドライバーを呼び出すことができます、 [ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) I/O キューのオブジェクトを作成します。 呼び出しで**IWDFDevice::CreateIoQueue**ドライバーは、キューが、既定のキューであるかどうかを指定できます。
+フレームワークの i/o キューオブジェクトは、 [Iwdfioqueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfioqueue)インターフェイスによってドライバーに公開されます。 これは i/o キューを表します。これは、i/o 要求のコンテナーです。 I/o キューは、ドライバーへの要求のフローを制御します。 I/o 要求が到着すると、適切なキューに配置されます。 I/o キューオブジェクトは、 [UMDF デバイスオブジェクト](framework-device-object.md)の子です。 ドライバーは、 [**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して、i/o キューオブジェクトを作成できます。 **Iwdfdevice:: CreateIoQueue**の呼び出しでは、キューが既定のキューであるかどうかをドライバーが指定できます。
 
-ドライバーは、I/O キューを作成するときに、ドライバーへの要求の配信を制御するディスパッチ モデルを指定します。 詳細については、次を参照してください。 [I/O キューのディスパッチ モードを構成する](configuring-dispatch-mode-for-an-i-o-queue.md)します。
+ドライバーは、i/o キューを作成するときに、ドライバーへの要求の配信を制御するディスパッチモデルを指定します。 詳細については、「 [I/o キューのディスパッチモードの構成](configuring-dispatch-mode-for-an-i-o-queue.md)」を参照してください。
 
-ドライバーは、I/O キューを作成するときに、インターフェイスに関連するイベントが発生した場合、ドライバーに通知するフレームワークから呼び出されるコールバック関数のインターフェイスを提供できます。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
+ドライバーが i/o キューを作成するときに、そのインターフェイスに関連するイベントが発生したときに、そのドライバーに通知するためにフレームワークが呼び出すコールバック関数のインターフェイスを提供できます。 詳細については、「 [I/o キューイベントコールバック関数](i-o-queue-event-callback-functions.md)」を参照してください。
 
  
 

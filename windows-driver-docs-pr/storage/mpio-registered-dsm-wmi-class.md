@@ -1,20 +1,20 @@
 ---
-title: MPIO\_REGISTERED\_DSM WMI クラス
-description: MPIO\_REGISTERED\_DSM WMI クラス
+title: MPIO\_\_DSM WMI クラスに登録されています
+description: MPIO\_\_DSM WMI クラスに登録されています
 ms.assetid: 3be335bd-e5d8-4611-9ccf-bd7fb0457b61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc5270747e93080250298617e67fe566043065d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cb832ee0201ae52fc9207244098a92bc3d833037
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386145"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843567"
 ---
-# <a name="mpioregistereddsm-wmi-class"></a>MPIO\_REGISTERED\_DSM WMI クラス
+# <a name="mpio_registered_dsm-wmi-class"></a>MPIO\_\_DSM WMI クラスに登録されています
 
 
-WMI クライアントが、MPIO を使用して\_登録されている\_DSM WMI クラスは、システムで構成されているすべての DSMs のクエリを実行します。
+WMI クライアントは、システムで構成されているすべての dsm を照会するために、\_DSM WMI クラスに登録されている MPIO\_を使用します。
 
 ```cpp
 class MPIO_REGISTERED_DSM
@@ -44,7 +44,7 @@ class MPIO_REGISTERED_DSM
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_REGISTERED\_DSM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_registered_dsm)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**DSM データ構造\_登録された MPIO\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_registered_dsm)生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

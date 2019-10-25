@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_PM_HARDWARE_CAPABILITIES
-description: NDIS_STATUS_PM_HARDWARE_CAPABILITIES 状態は、後続のネットワーク アダプターの電源管理 (PM) のハードウェア機能の変更が発生したドライバーを示します。
+description: NDIS_STATUS_PM_HARDWARE_CAPABILITIES の状態は、ネットワークアダプターの電源管理 (PM) ハードウェア機能が変更されたことを示しています。
 ms.assetid: A4AACA48-DCD2-44FA-B016-52C37EE9A1D6
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_PM_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_PM_HARDWARE_CAPABILITIES ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a6bc7069ca6321a5929f341a319f893dd625c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef77df27720c7ec00afb1a1d750712feddbf966b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368528"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843539"
 ---
-# <a name="ndisstatuspmhardwarecapabilities"></a>NDIS\_状態\_PM\_ハードウェア\_機能
+# <a name="ndis_status_pm_hardware_capabilities"></a>NDIS\_STATUS\_PM\_ハードウェア\_機能
 
 
-**NDIS\_状態\_PM\_ハードウェア\_機能**ドライバーに関連する状態を示しますネットワークの電源管理 (PM) のハードウェア機能の変更アダプターが発生しました。
+**NDIS\_STATUS\_PM\_ハードウェア\_機能**の状態は、ネットワークアダプターの電源管理 (pm) ハードウェア機能が変更されたことを示します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーが生成されます、 **NDIS\_状態\_PM\_ハードウェア\_機能**と以前に報告された電源管理機能の更新プログラムの状態表示必要です。
+以前に報告された電源管理機能を更新する必要がある場合は、ミニポートドライバーによって、 **\_PM\_ハードウェア\_機能**の状態を示す NDIS\_の状態が生成されます。
 
-802.11 のネットワーク アダプターのミニポート ドライバーでは、この状態を示す値を生成できます。
+802.11 ネットワークアダプターのミニポートドライバーは、この状態を示すことができます。
 
-負荷分散のフェールオーバー (LBFO) のサポートを提供する MUX 中間ドライバーには、この状態を示す値を生成できます。 MUX driver は、基になるネットワーク アダプター LBFO チームの一部であるの PM 機能を集計します。 PM 機能は、アダプターが、追加または削除されたチームのために変更する場合、MUX ドライバーは、この状態を示す値を生成する必要があります。 LBFO MUX 中間ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)します。
+また、負荷分散フェールオーバー (LBFO) のサポートを提供する MUX 中間ドライバーでも、この状態を示すことができます。 MUX ドライバーは、LBFO チームの一部である基になるネットワークアダプターの PM 機能を集約します。 アダプターがチームに追加または削除されたために PM 機能が変更された場合、MUX ドライバーはこのステータス表示を生成する必要があります。 LBFO MUX 中間ドライバーの詳細については、「 [NDIS Mux 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)」を参照してください。
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)更新された電源管理機能を含む構造体。
+[**Ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーには、更新された電源管理機能を使用して、 [**ndis\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造へのポインターが含まれています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -40,11 +40,11 @@ ms.locfileid: "67368528"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -52,9 +52,9 @@ ms.locfileid: "67368528"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
+[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
  
 

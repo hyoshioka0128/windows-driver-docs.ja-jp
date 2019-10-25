@@ -3,28 +3,28 @@ title: USBCAMD2 機能の取得
 description: USBCAMD2 機能の取得
 ms.assetid: 39db38a8-8279-4c61-9010-cc6d4767efc2
 keywords:
-- Windows 2000 カーネル ストリーミング モデル WDK、USBCAMD2 ミニドライバー ライブラリ
-- ストリーミング モデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバー ライブラリ
-- カーネル ストリーミング モデルの WDK、USBCAMD2 ミニドライバー ライブラリ
-- WDK Windows 2000 のカーネル ストリーミング USBCAMD2 を機能します。
-- USB ベースのストリーミング カメラ WDK USBCAMD2
+- Windows 2000 カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- ストリーミングモデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバーライブラリ
+- カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- USBCAMD2 機能 WDK Windows 2000 カーネルストリーミング
+- USB ベースのストリーミングカメラの WDK USBCAMD2
 - カメラ WDK USBCAMD2
 - IRP_MN_QUERY_INTERFACE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6db0717e2266aa112513bc6e9b9f63064935d2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 919fb3ebe55b60bab3677ab48601fbad458396e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386779"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843368"
 ---
 # <a name="acquiring-usbcamd2-features"></a>USBCAMD2 機能の取得
 
 
-ポインターを取得する必要があります、 [ **USBCAMD\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-usbcamd_interface) USBCAMD2 の新機能を使用する前に構造体します。 ポインターを取得するためにビルドし、送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)カメラ ミニドライバーからの要求[ **SRB\_初期化\_完了**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-initialization-complete)ハンドラーで、 [ *AdapterReceivePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)コールバック関数。 USBCAMD2 ミニドライバーのライブラリは、この IRP を処理し、型 USBCAMD の直接呼び出しインターフェイスを返します\_カメラ ミニドライバー インターフェイス。 インターフェイスは、基本的に関数ポインターのテーブルです。
+新しい USBCAMD2 機能を使用する前に、 [**USBCAMD\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/ns-usbcamdi-usbcamd_interface)構造へのポインターを取得する必要があります。 ポインターを取得するには、 [*Adapterreceivepacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)コールバックで、\_ミニドライバーの[**SRB 初期化\_完全な**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-initialization-complete)ハンドラーから[ **\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求を作成して\_送信します。プロシージャ. USBCAMD2 ミニドライバーライブラリは、この IRP を処理し、カメラミニドライバーに USBCAMD\_インターフェイス型の直接呼び出しインターフェイスを返します。 インターフェイスは、基本的には関数ポインターのテーブルです。
 
-次のコードをビルドし、IRP を送信する方法を示して\_MN\_クエリ\_カメラ ミニドライバーからインターフェイスの要求。
+次のコードは、カメラミニドライバーから\_クエリ\_インターフェイス要求の IRP\_を作成して送信する方法を示しています。
 
 ```cpp
 KeInitializeEvent(&Event, NotificationEvent, FALSE);

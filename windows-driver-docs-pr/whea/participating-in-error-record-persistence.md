@@ -3,34 +3,34 @@ title: エラー レコードの永続化への参加
 description: エラー レコードの永続化への参加
 ms.assetid: 06cbcccf-7cda-468d-aa6e-b8ecf95adf16
 keywords:
-- Windows ハードウェア アーキテクチャ WDK のエラー、エラー レコードの永続化
-- WHEA WDK、エラー レコードの永続化
-- ハードウェア エラー WDK WHEA、エラー レコードの永続化
-- WDK WHEA、エラー レコードの永続化エラー
-- プラットフォーム固有のハードウェア エラー ドライバー プラグインを WDK WHEA、エラー レコードの永続化
-- PSHED プラグイン WDK WHEA、エラー レコードの永続化
-- WDK WHEA を永続化エラー レコード
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーレコードの永続性
+- WHEA WDK、エラーレコードの永続化
+- ハードウェアエラー WDK WHEA、エラーレコードの永続化
+- エラー WDK WHEA、エラーレコードの永続化
+- プラットフォーム固有のハードウェアエラードライバープラグイン WDK WHEA、エラーレコードの永続化
+- PSHED プラグイン WDK WHEA、エラーレコードの永続化
+- エラーレコードの永続性 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5b431ca415b565bd505abac48b95dd8dad874cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3d709cf134f82e3dc25b030cfac5602a489c6b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386448"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843551"
 ---
 # <a name="participating-in-error-record-persistence"></a>エラー レコードの永続化への参加
 
 
-エラー レコードの永続化に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
+エラーレコードの永続化に参加するには、次のコールバック関数を実装する必要があります。
 
-[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_write_error_record)
+[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_write_error_record)
 
-[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_read_error_record)
+[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_read_error_record)
 
-[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_record)
+[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_record)
 
-次のコード例では、これらのコールバック関数を実装する方法を示します。
+これらのコールバック関数を実装する方法を次のコード例に示します。
 
 ```cpp
 //
@@ -181,9 +181,9 @@ NTSTATUS
 }
 ```
 
-エラー レコードの永続化に参加している PSHED プラグインを指定する必要があります、 **PshedFAErrorRecordPersistence**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)自体と、オペレーティング システムを使用します。
+エラーレコードの永続化に参加するプラグインでは、オペレーティングシステムに[登録](registering-a-pshed-plug-in.md)するときに**PshedFAErrorRecordPersistence**フラグを指定する必要があります。
 
-エラー レコードの永続化の詳細については、次を参照してください。[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)します。
+エラーレコードの永続化の詳細については、「[エラーレコードの永続化メカニズム](error-record-persistence-mechanism.md)」を参照してください。
 
  
 

@@ -3,46 +3,46 @@ title: フレームワーク デバイス オブジェクトの作成
 description: フレームワーク デバイス オブジェクトの作成
 ms.assetid: 25023c19-a153-4bd4-9fb6-3a1bf85860aa
 keywords:
-- PnP WDK KMDF、デバイス オブジェクト
-- プラグ アンド プレイ WDK KMDF、デバイス オブジェクト
-- 電源管理 WDK KMDF、デバイス オブジェクト
-- デバイス オブジェクト WDK KMDF
-- フレームワークは、WDK KMDF、デバイス オブジェクトをオブジェクトします。
+- PnP WDK KMDF、デバイスオブジェクト
+- WDK KMDF、デバイスオブジェクトのプラグアンドプレイ
+- 電源管理 WDK KMDF、デバイスオブジェクト
+- デバイスオブジェクト WDK KMDF
+- フレームワークオブジェクト WDK KMDF、デバイスオブジェクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0ae33c4247b688b2dba8f851ce1bd6b64a2d68
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f0a1a7e4e819304fe7bbda42537f6ade2ac30be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383113"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845619"
 ---
 # <a name="creating-a-framework-device-object"></a>フレームワーク デバイス オブジェクトの作成
 
 
-すべての関数のドライバー、フィルター ドライバー、およびバス ドライバーは、システムに接続されているサポートされているデバイスの各インスタンスの framework デバイス オブジェクトを作成する必要があります。
+すべての関数ドライバー、フィルタードライバー、およびバスドライバーは、システムに接続されているサポート対象デバイスの各インスタンスに対して、フレームワークデバイスオブジェクトを作成する必要があります。
 
-Framework デバイス オブジェクトを作成するには、3 つの手順が含まれます。
+フレームワークデバイスオブジェクトの作成には、次の3つの手順が含まれます。
 
-1.  ポインターを取得する、 [ **WDFDEVICE\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。
+1.  [**Wdfdevice\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体へのポインターを取得しています。
 
-    これは、デバイスに関する情報を格納しているドライバーをシステムによって割り当てられた構造体の非透過です。
+    これは、システムによって割り当てられた非透過の構造体で、ドライバーはデバイスに関する情報を格納します。
 
-2.  初期化、WDFDEVICE\_INIT 構造体。
+2.  WDFDEVICE\_INIT 構造体を初期化しています。
 
-    ドライバーは、一連の構造体に情報を追加するフレームワークが指定した関数を呼び出します。
+    ドライバーは、構造体に情報を追加する、フレームワークが提供する一連の関数を呼び出します。
 
-3.  呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+3.  [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出しています。
 
-    ドライバーに渡します、WDFDEVICE\_へのポインターを初期化構造体の**WdfDeviceCreate**メソッド。 メソッドは、framework デバイス オブジェクトを作成し、情報を使用して、WDFDEVICE\_INIT 構造オブジェクトを初期化します。
+    このドライバーは、WDFDEVICE\_INIT 構造体のポインターを**WdfDeviceCreate**メソッドに渡します。 メソッドは、フレームワークデバイスオブジェクトを作成し、WDFDEVICE\_INIT 構造体の情報を使用してオブジェクトを初期化します。
 
-フレームワークにデバイス オブジェクトを作成する方法の詳細については、次のトピックを参照してください。
+フレームワークデバイスオブジェクトの作成の詳細については、次のトピックを参照してください。
 
--   [関数のドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)
+-   [関数ドライバーでのデバイスオブジェクトの作成](creating-device-objects-in-a-function-driver.md)
 
--   [フィルター ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-filter-driver.md)
+-   [フィルタードライバーでのデバイスオブジェクトの作成](creating-device-objects-in-a-filter-driver.md)
 
--   [バス ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-bus-driver.md)
+-   [バスドライバーでのデバイスオブジェクトの作成](creating-device-objects-in-a-bus-driver.md)
 
  
 

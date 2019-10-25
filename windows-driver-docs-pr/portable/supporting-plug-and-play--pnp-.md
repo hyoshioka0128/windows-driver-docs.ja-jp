@@ -1,40 +1,40 @@
 ---
-Description: ユーザー モード ドライバー フレームワーク (UMDF) では、ドライバーが、電源管理操作のために、プラグ アンド プレイ (PnP) 操作の IPnpCallback インターフェイスと IPnpCallbackSelfManagedIo インターフェイスをサポートすることが必要です。
+Description: ユーザーモードドライバーフレームワーク (UMDF) では、ドライバーがプラグアンドプレイ (PnP) 操作用の IPnpCallback インターフェイス、および電源管理操作用の IPnpCallbackSelfManagedIo インターフェイスをサポートしている必要があります。
 title: プラグ アンド プレイ (PnP) と電源管理のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e13508feaaf868bca8aeb08324511ce4555b3dc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0e0a4c0ca4dc3e6e83dbda69109291ee5cccf95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387179"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843579"
 ---
 # <a name="supporting-plug-and-play-pnp-and-power-management"></a>プラグ アンド プレイ (PnP) と電源管理のサポート
 
 
-ユーザー モード ドライバー フレームワーク (UMDF) は、ドライバーがサポートする必要があります、 [ **IPnpCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)プラグ アンド プレイ (PnP) 操作のためのインターフェイスと[ **IPnpCallbackSelfManagedIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackselfmanagedio)電源管理操作のためのインターフェイス。
+ユーザーモードドライバーフレームワーク (UMDF) では、ドライバーがプラグアンドプレイ (PnP) 操作用の[**IPnpCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback)インターフェイス、および電源管理操作用の[**IPnpCallbackSelfManagedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackselfmanagedio)インターフェイスをサポートしている必要があります。
 
-最初のインターフェイス**IPnpCallback**プラグでは、ユーザーのときに呼び出されるメソッドをサポートまたはから切り離し、自分のデバイス。 2 番目のインターフェイス**IPnpCallbackSelfManagedIo**デバイスは、低電力状態にまたは、その稼働状態に戻ったときに呼び出されるメソッドをサポートしています。
+1つ目のインターフェイスである**IPnpCallback**は、ユーザーがデバイスをプラグインまたは unplugs するときに呼び出されるメソッドをサポートしています。 2番目のインターフェイス**IPnpCallbackSelfManagedIo**は、デバイスが低電力状態になったときに呼び出されるメソッドをサポートします。または、が動作状態に戻ります。
 
-WPD サンプルの 1 つを除くすべては、ハードウェアをエミュレートするため、これらのインターフェイス メソッドは意味のある作業を実行しないと、すぐに返します。
+1つを除くすべての WPD サンプルはハードウェアをエミュレートするため、これらのインターフェイスのメソッドは意味のある処理を行わず、すぐに制御を戻します。
 
-1 つの例外は、WpdBasicHardwareDriver サンプルです。 このドライバーは、実際のハードウェアをサポートするための 2 つの方法で動作するコードが含まれている、 **IPnpCallback**インターフェイス。 このサンプルでサポートされている 2 つのメソッドは[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)と[ **IPnpCallback::OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)します。 最初のメソッドは、カーネル モードの RS232 ドライバーへの I/O 要求を転送するように、ドライバーのサンプルを使用する I/O ターゲットへのポインターを取得します。 このポインターを取得した後、 **IPnpCallback::OnDOEntry**メソッドは、I/O ターゲットを開始します。 2 番目のメソッドでは、 **IPnpCallback::OnD0Exit** I/O ターゲットへのポインターを取得し、それを停止します。
+1つの例外は、Wpdbasicハードウェアドライバーサンプルです。 このドライバーは実際のハードウェアをサポートしているため、 **IPnpCallback**インターフェイスの2つのメソッドの作業コードが含まれています。 このサンプルでサポートされている2つの方法は、 [**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)と[**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)です。 最初のメソッドは、カーネルモードの RS232 ドライバーに i/o 要求を転送するためにサンプルドライバーが使用する i/o ターゲットへのポインターを取得します。 このポインターを取得すると、 **IPnpCallback:: OnDOEntry**メソッドによって i/o ターゲットが開始されます。 2番目のメソッド**IPnpCallback:: OnD0Exit**は、i/o ターゲットへのポインターを取得し、それを停止します。
 
-ドライバーは、ハードウェアをサポートする場合、またはこれらのインターフェイスの両方のサポートを追加します。 PnP の詳細な説明とユーザー モード デバイス ドライバーの電源管理では、次を参照してください。 [UMDF での PnP および電源管理のシナリオ](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-scenarios-in-umdf)します。
+ドライバーがハードウェアをサポートしている場合は、これらのインターフェイスのいずれかまたは両方のサポートを追加することをお勧めします。 ユーザーモードのデバイスドライバーでの PnP と電源管理の詳細については、「 [UMDF の pnp および電源管理のシナリオ](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-scenarios-in-umdf)」を参照してください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**IPnpCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)
+[**IPnpCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback)
 
-[**IPnpCallback::OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)
+[**IPnpCallback::OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)
 
-[**IPnpCallback::OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)
+[**IPnpCallback::OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)
 
-[**IPnpCallbackSelfManagedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackselfmanagedio)
+[**IPnpCallbackSelfManagedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackselfmanagedio)
 
-[UMDF PnP や電源管理のシナリオ](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-scenarios-in-umdf)
+[UMDF の PnP および電源管理のシナリオ](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-scenarios-in-umdf)
 
  
 
