@@ -1,46 +1,46 @@
 ---
-title: 動的生成プリンター コマンド
-description: 動的生成プリンター コマンド
+title: 動的に生成されたプリンターコマンド
+description: 動的に生成されたプリンターコマンド
 ms.assetid: ba395716-6906-4f23-a050-79d808ccd44b
 keywords:
 - Unidrv、動的に生成されたコマンド
 - 動的に生成された印刷コマンド WDK Unidrv
 - GPD ファイル WDK Unidrv
-- Unidrv WDK の印刷
+- Unidrv WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 838014830cc16dffc340327da3dc516bcd3f8504
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f2f6a7d9122ddb1565db3dc37a121497fed8d51
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372374"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841636"
 ---
-# <a name="dynamically-generated-printer-commands"></a>動的生成プリンター コマンド
+# <a name="dynamically-generated-printer-commands"></a>動的に生成されたプリンターコマンド
 
 
 
 
 
-毎回、Unidrv ミニドライバーのプリンター コマンド ファイルを指定する次の 2 つのメソッドのいずれかを使用できます。
+Unidrv ミニドライバーのプリンターコマンドファイルを指定するたびに、次の2つの方法のいずれかを使用できます。
 
--   GPD ファイルにコマンド文字列を配置します。
+-   コマンド文字列を GPD ファイルに配置します。
 
-    GPD ファイルにコマンド文字列を配置すると Unidrv は、適切なタイミングで印刷スプーラーにコマンドを送信します。 これらのコマンド文字列には、標準的な変数は、コマンドを送信する前に評価される Unidrv を含めることができます。
+    GPD ファイルにコマンド文字列を配置すると、適切なタイミングでコマンドが印刷スプーラに送信されます。 これらのコマンド文字列には、コマンドを送信する前に Unidrv が評価する標準変数を含めることができます。
 
--   コールバック関数を提供します。
+-   コールバック関数を指定します。
 
-    コールバック関数を指定する場合、Unidrv は、コマンドの送信時間であり、関数は、印刷スプーラーにコマンドを送信する場合に関数を呼び出します。 これにより、コマンド文字列を動的に生成し、プリンターに送信し、コードを含めることができます。
+    コールバック関数を指定した場合、Unidrv はコマンドの送信時に関数を呼び出し、関数はコマンドを印刷スプーラに送信します。 これにより、コマンド文字列を動的に生成し、それをプリンターに送信するコードを含めることができます。
 
-コマンド文字列を GPD ファイルに配置するにを含める必要があります、\*コマンドの内の Cmd 属性\*コマンドを入力します。
+GPD ファイルにコマンド文字列を配置するには、コマンドの \*コマンドエントリ内に \*Cmd 属性を含める必要があります。
 
 コマンド文字列を動的に生成するコードを提供するには、次の操作を行う必要があります。
 
--   実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッド。
+-   [**Iprintoemuni:: CommandCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)メソッドを実装するレンダリングプラグインを提供します。
 
--   含める、 \*CallbackID コマンド属性と、必要に応じて、 \*Params 属性には、コマンドの内\*GPD ファイル内のエントリをコマンドします。
+-   GPD ファイルのコマンドの \*コマンドエントリ内に、\*の \*Params 属性を含めます (オプション)。
 
-Unidrv プリンター コマンドを発行する準備ができたらでコマンドが指定されているかどうかを判断するミニドライバー データベースを確認します。、 \*Cmd 属性、または、 \*CallbackID 属性。 前者の場合は、Unidrv は、印刷スプーラーにコマンド文字列を送信します。 Unidrv を呼び出し、後者の場合、 **IPrintOemUni::CommandCallback**渡して、メソッド、 \*CallbackID と\*Params 引数の入力としての値します。
+Unidrv がプリンターコマンドを発行する準備が整うと、ミニドライバーデータベースをチェックして、コマンドが \*Cmd 属性で指定されているか、または \*のの属性を使用して指定されているかどうかを確認します。 前者の場合、Unidrv はコマンド文字列を印刷スプーラに送信します。 後者の場合、Unidrv は**Iprintoemuni:: CommandCallback**メソッドを呼び出し、\*のコールバック id と \*Params の値を入力引数として渡します。
 
  
 

@@ -4,158 +4,158 @@ description: パケット結合機能のレポート
 ms.assetid: 6118F648-87FE-4B9E-9535-1602F4FF79D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f47c6a37f46c2a80e4f4b7873d4a1fe18dbbb3c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6cf6184fe6467341f9f2e99605b44cb685f8fa6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373250"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842043"
 ---
 # <a name="reporting-packet-coalescing-capabilities"></a>パケット結合機能のレポート
 
 
-ミニポート ドライバーは、NDIS を使用して、ネットワーク アダプターの初期化中に、次の機能を登録します。
+ミニポートドライバーは、ネットワークアダプターの初期化中に、次の機能を NDIS に登録します。
 
--   ネットワーク アダプターでサポートされるパケット結合機能。
+-   ネットワークアダプターがサポートするパケット合体機能。
 
--   ネットワーク アダプターで現在有効になっているパケット結合機能。
+-   ネットワークアダプターで現在有効になっているパケット合体機能。
 
--   ネットワーク アダプター上で現在有効なフィルター処理機能を受信パケットの結合します。
+-   パケット合体は、ネットワークアダプターで現在有効になっているフィルター処理機能を提供します。
 
-**注**パケットの結合のミニポート ドライバーのサポートを有効または無効にできる、  **\*PacketCoalescing** INF キーワードの設定。 この設定が表示されます、**詳細**ネットワーク アダプターのプロパティ ページ。 パケット結合 INF ファイルの設定の詳細については、次を参照してください。[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)します。
+**メモ** ポートのパケット合体のサポートは、 **\*packetcoalescing** INF キーワード設定を使用して有効または無効にすることができます。 この設定は、ネットワークアダプターの **[詳細**設定] プロパティページに表示されます。 パケット合体 INF ファイル設定の詳細については、「[パケット合体用の標準化](standardized-inf-keywords-for-packet-coalescing.md)された inf キーワード」を参照してください。
 
 
 
-ミニポート ドライバー、パケットの結合とフィルターを通じて基になるネットワーク アダプターの機能の報告、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 場合、  **\*PacketCoalescing**キーワード、レジストリ設定は、1 つの値を持つ、パケットの結合が有効になっているし、ミニポート ドライバーを初期化します、 **NDIS\_受信\_フィルター\_機能**次のように構造体。
+ミニポートドライバーは、基盤となるネットワークアダプターのパケット合体機能とフィルター機能を、 [**NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造を通じて報告します。 レジストリの **\*PacketCoalescing**キーワード設定の値が1の場合、パケット合体が有効になり、ミニポートドライバーによって、 **\_受信\_フィルター\_機能**の構造を受け取るための NDIS が初期化されます。次のようにします。
 
-1.  ミニポート ドライバーを初期化します、**ヘッダー**メンバー。 ドライバーのセット、**型**のメンバー**ヘッダー** NDIS に\_オブジェクト\_型\_既定します。
+1.  ミニポートドライバーは、**ヘッダー**メンバーを初期化します。 ドライバーは、**ヘッダー**の**type**メンバーを、既定\_\_型の NDIS\_OBJECT に設定します。
 
-    ドライバーは、パケットの結合をサポートする場合、設定、**リビジョン**のメンバー**ヘッダー** NDIS に\_受信\_フィルター\_機能\_リビジョン\_2 と**サイズ**NDIS メンバー\_SIZEOF\_受信\_フィルター\_機能\_リビジョン\_2。
+    ドライバーがパケット合体をサポートしている場合は、**ヘッダー**の**リビジョン**メンバーを NDIS\_受信\_フィルター\_機能\_リビジョン\_2 および**SIZE**メンバーを ndis\_SIZEOF に設定 @no__t\_リビジョン\_2\_機能を受信\_フィルター処理 (_m)
 
-2.  ミニポート ドライバーの設定、NDIS\_受信\_フィルター\_パケット\_COALESCING\_サポートされている\_ON\_既定\_のキューフラグ**SupportedQueueProperties**メンバー。
+2.  このミニポートドライバーは、 **Supportedqueueproperties**メンバーの\_既定の\_QUEUE フラグで\_サポートされている\_、\_フィルター\_パケット\_合体するように NDIS\_受信するように設定します。
 
-    このフラグが設定されている場合、ネットワーク アダプターがハードウェアでの受信マルチキャスト パケットのフィルター処理をサポートする必要があります。 NDIS が送信することで、ネットワーク アダプターにオフロードするマルチキャスト アドレスに基づく、このフィルタ リング[OID\_802\_3\_マルチキャスト\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list)OID が要求を設定します。
+    このフラグが設定されている場合、ネットワークアダプターは、ハードウェアで受信したマルチキャストパケットのフィルター処理をサポートする必要があります。 このフィルター処理は、NDIS [\_802\_3\_マルチキャスト\_リスト](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list)oid セット要求を送信することによって、NDIS がネットワークアダプターにオフロードするマルチキャストアドレスに基づいています。
 
-    **注**プロトコル ドライバーはマルチキャスト アドレスの一覧の内容を送信することによって変更できますも[OID\_802\_3\_追加\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)[OID\_802\_3\_削除\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)要求。 NDIS にこれらの要求を結合する[OID\_802\_3\_マルチキャスト\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list)OID が要求を設定します。
+    **メモ** また、プロトコルドライバーは、 [OID\_802\_3\_\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)および[oid\_802\_3\_削除\_マルチキャストを送信することで、マルチキャストアドレス一覧の内容を変更することもでき\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)要求。 NDIS は、これらの要求を[oid\_802\_3\_マルチキャスト\_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list) oid set requests に結合します。
 
 
 
 
-**注**アダプターが宛先メディア アクセス制御 (MAC) アドレスと一致しませんこの OID セットの要求で指定されたマルチキャスト アドレスのいずれかの受信マルチキャスト パケットを拒否するために必要です。
+**メモ** アダプターは、宛先のメディアアクセス制御 (MAC) アドレスが、これらの OID セット要求で指定されたマルチキャストアドレスと一致しない着信マルチキャストパケットを拒否する必要があります。
 
 
 
 
-3.  ミニポート ドライバーの設定、NDIS\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、 **EnabledFilterTypes**メンバー.
+3.  ミニポートドライバーは、 **Enabledfiltertypes**メンバーで\_フィルター\_enabled フラグを結合してフィルター\_パケット\_\_フィルターを受け取るように NDIS\_設定します。
 
-    **注**NDIS が設定する必要がありますも場合は、ドライバーは、このフラグを設定、\_受信\_フィルター\_パケット\_COALESCING\_サポートされている\_ON\_既定\_キュー フラグ、 **SupportedQueueProperties**メンバー。 それ以外の場合、NDIS はへの呼び出しは失敗[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes) NDIS を返すことによって\_状態\_不良\_特性。
+    **メモ** ドライバーがこのフラグを設定する場合は、 **Supportedqueueproperties**メンバーの\_既定の\_QUEUE フラグで\_サポートされている\_に対して、NDIS\_RECEIVE\_FILTER\_パケット\_合体するように設定する必要もあります。 それ以外の場合、NDIS は NDIS\_STATUS\_無効な\_特性を返すことで、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)への呼び出しに失敗します。
 
 
 
-4.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーすべてのサポートは、フィルター条件を受け取る必要があります。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedFilterTests**メンバー。
+4.  ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されている場合、ドライバーはすべての受信フィルターテスト条件をサポートする必要があります。 ドライバーは、 **Supportedfiltertests**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_等しい\_サポートされています。
+    -   NDIS\_\_フィルター\_テスト\_ヘッダー\_フィールド\_同等\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_マスク\_等しい\_サポートされています。
+    -   NDIS\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_マスク\_等しい\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_いない\_等しい\_サポートされています。
+    -   NDIS\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_\_同等\_サポートされていません
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedFilterTests**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**Supportedfiltertests**メンバーを0に設定する必要があります。
 
 
 
-5.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーがさまざまな内のデータのフィルタ リングをサポートする必要がありますメディアのフィールドへのアクセス制御 (MAC)、IP version 4 (IPv4) と IP version 6 (IPv6) のヘッダー。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedHeaders**メンバー。
+5.  ミニポートドライバーによって NDIS\_受信\_フィルター\_パケット\_合体\_フィルター\_有効フラグが設定されている場合、ミニポートドライバーは、メディアアクセスコントロール (MAC) のさまざまなフィールド内のデータのフィルター処理をサポートする必要があります。、IP version 4 (IPv4)、および IP version 6 (IPv6) ヘッダーがあります。 ドライバーは、 **Supportedheaders**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_サポートされています。
+    -   NDIS\_\_フィルター\_MAC\_ヘッダー\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_サポートされています。
+    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_IPV4\_ヘッダー\_サポートされています。
+    -   NDIS\_受信\_フィルター\_IPV4\_ヘッダー\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_IPV6\_ヘッダー\_サポートされています。
+    -   NDIS\_\_フィルター\_IPV6\_ヘッダー\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_UDP\_ヘッダー\_サポートされています。
+    -   NDIS\_\_フィルター\_UDP\_ヘッダー\_サポートされています
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedHeaders**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**Supportedheaders**メンバーを0に設定する必要があります。
 
 
 
-6.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーは、メディア内にあるデータのフィルター処理をサポートする必要があります受信パケットのアクセス制御 (MAC) ヘッダー。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedMacHeaderFields**メンバー。
+6.  ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効フラグが設定されている場合、ミニポートドライバーは、のメディアアクセスコントロール (MAC) ヘッダー内のデータのフィルター処理をサポートする必要があります。受信パケット。 ドライバーは、 **SupportedMacHeaderFields**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_DEST\_ADDR\_サポートされています。
+    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_DEST\_ADDR\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_プロトコル\_サポートされています。
+    -   NDIS\_\_フィルター\_MAC\_ヘッダー\_プロトコル\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_パケット\_型\_サポートされています。
+    -   NDIS\_受信\_フィルター\_MAC\_ヘッダー\_パケット\_種類\_サポートされています
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedMacHeaderFields**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**SupportedMacHeaderFields**メンバーを0に設定する必要があります。
 
 
 
-7.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーが内のデータのフィルター処理をサポートする必要があります、アドレス解決プロトコル (ARP) の受信パケットのヘッダー。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedARPHeaderFields**メンバー。
+7.  ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効フラグが設定されている場合、ミニポートドライバーは、受信したアドレス解決のヘッダー内のデータのフィルター処理をサポートする必要があります。プロトコル (ARP) パケット。 ドライバーは、 **SupportedARPHeaderFields**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_操作\_サポートされています。
+    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_操作\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_SPA\_サポートされています。
+    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_SPA\_サポートされています
 
-    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_TPA\_サポートされています。
+    -   NDIS\_受信\_フィルター\_ARP\_ヘッダー\_TPA\_サポートされています
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedARPHeaderFields**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**SupportedARPHeaderFields**メンバーを0に設定する必要があります。
 
 
 
-8.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーが開く内のデータのフィルター処理をサポートする必要がありますOSI) レイヤー 3 の (L3) ヘッダーを受信した IP バージョン 4 (IPv4) のパケットです。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedIPv4HeaderFields**メンバー。
+8.  ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されている場合、ミニポートドライバーは、Open Systems 相互接続 (OSI) レイヤー 3 (L3) 受信 IP バージョン 4 (IPv4) パケットのヘッダー。 ドライバーは、 **SupportedIPv4HeaderFields**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_IPV4\_ヘッダー\_プロトコル\_サポートされています。
+    -   NDIS\_受信\_フィルター\_IPV4\_ヘッダー\_プロトコル\_サポートされています
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedIPv4HeaderFields**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**SupportedIPv4HeaderFields**メンバーを0に設定する必要があります。
 
 
 
-9.  ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーが、L3 内のデータのフィルター処理をサポートする必要があります受信 IP version 6 (IPv6) のヘッダー パケット。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedIPv6HeaderFields**メンバー。
+9.  ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効フラグが設定されている場合、ミニポートドライバーは、受信 IP バージョン 6 (IPv6) の L3 ヘッダー内のデータのフィルター処理をサポートする必要があります。パック. ドライバーは、 **SupportedIPv6HeaderFields**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_IPV6\_ヘッダー\_プロトコル\_サポートされています。
+    -   NDIS\_\_フィルター\_IPV6\_ヘッダー\_プロトコル\_サポートされています
 
-    **注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedIPv6HeaderFields**メンバーをゼロにします。
+    **メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**SupportedIPv6HeaderFields**メンバーを0に設定する必要があります。
 
 
 
-10. ミニポート ドライバーの設定、NDIS 場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ミニポート ドライバーは、OSI 内のデータのフィルタ リングをサポートする必要があります受信したユーザー データグラム プロトコル (UDP) パケットの 4 (L4) ヘッダーをレイヤーします。 ドライバーでは、このサポートをアドバタイズで、次のフラグを設定して、 **SupportedIUdpHeaderFields**メンバー。
+10. ミニポートドライバーによって\_受信\_フィルター\_パケット\_結合\_フィルター\_有効フラグが設定されている場合、ミニポートドライバーは、受信したユーザーの OSI レイヤー 4 (L4) ヘッダー内のデータのフィルター処理をサポートする必要があります。データグラムプロトコル (UDP) パケット。 ドライバーは、 **SupportedIUdpHeaderFields**メンバーで次のフラグを設定することによって、このサポートをアドバタイズします。
 
-    -   NDIS\_受信\_フィルター\_UDP\_ヘッダー\_DEST\_ポート\_サポートされています。
+    -   NDIS\_受信\_フィルター\_UDP\_ヘッダー\_DEST\_ポート\_サポートされています
 
-    **注**UDP フィルターのテストに失敗した場合、オプションの IPv4 または IPv6 拡張ヘッダーが受信 UDP パケットが含まれる場合、ネットワーク アダプターではパケットを処理できます。 これにより、アダプターは受信したパケットを自動的に削除できます。
+    **メモ** 受信 UDP パケットに IPv4 オプションまたは IPv6 拡張ヘッダーが含まれている場合、ネットワークアダプターは UDP フィルターテストに失敗したかのようにパケットを処理できます。 このようにして、アダプターは受信パケットを自動的に削除できます。
 
 
 
 
-**注**ミニポート ドライバーは、NDIS を設定していない場合\_受信\_フィルター\_パケット\_COALESCING\_フィルター\_有効フラグ、ドライバーは、を設定する必要があります**SupportedIUdpHeaderFields**メンバーをゼロにします。
+**メモ** ミニポートドライバーで NDIS\_受信\_フィルター\_パケット\_結合\_フィルター\_有効にするフラグが設定されていない場合、ドライバーは**SupportedIUdpHeaderFields**メンバーを0に設定する必要があります。
 
 
 
 
-11. ミニポート ドライバーでは、パケット ヘッダー フィールドに指定できる 1 つのパケットの結合フィルターのテストの最大数を報告する必要があります。 ドライバーは、この値を指定します、 **MaxFieldTestsPerPacketCoalescingFilter**メンバー。
+11. ミニポートドライバーは、1つのパケット合体フィルターに指定できるパケットヘッダーフィールドに対するテストの最大数を報告する必要があります。 ドライバーは、 **MaxFieldTestsPerPacketCoalescingFilter**メンバーにこの値を指定します。
 
-    **注**パケットの結合をサポートするネットワーク アダプターが 1 つのパケットの結合フィルターの指定できる 5 つ以上のパケット ヘッダー フィールドをサポートする必要があります。 アダプターがパケットの結合をサポートしていない場合、ミニポート ドライバーは 0 にこの値を設定する必要があります。
+    **メモ** パケット合体をサポートするネットワークアダプターでは、1つのパケット合体フィルターに指定できる5つ以上のパケットヘッダーフィールドがサポートされている必要があります。 アダプターがパケット合体をサポートしていない場合、ミニポートドライバーはこの値を0に設定する必要があります。
 
 
 
-12. ミニポート ドライバーでは、ネットワーク アダプターでサポートされているパケット結合フィルターの最大数を報告する必要があります。 ドライバーは、この値を指定します、 **MaxPacketCoalescingFilters**メンバー。
+12. ミニポートドライバーは、ネットワークアダプターでサポートされているパケット合体フィルターの最大数を報告する必要があります。 ドライバーは、 **MaxPacketCoalescingFilters**メンバーにこの値を指定します。
 
-    **注**パケットの結合をサポートするネットワーク アダプターが 10 個以上のパケットの結合フィルターをサポートする必要があります。 アダプターがパケットの結合をサポートしていない場合、ミニポート ドライバーは 0 にこの値を設定する必要があります。
+    **メモ** パケット合体をサポートするネットワークアダプターは、10個以上のパケット合体フィルターをサポートする必要があります。 アダプターがパケット合体をサポートしていない場合、ミニポートドライバーはこの値を0に設定する必要があります。
 
 
 
-NDIS のミニポート ドライバーの呼び出したときに[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数の場合、ドライバーがパケットの結合と基になるネットワーク アダプターの機能をフィルター処理に従うと報告手順:
+NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すと、ドライバーは、次の手順に従って、基になるネットワークアダプターのパケット合体およびフィルター機能を報告します。
 
--   ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
+-   ミニポートドライバーは、 [**NDIS\_ミニポート\_アダプター\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)の構造を初期化します。
 
-    場合、  **\*PacketCoalescing**キーワード、レジストリ設定は、1、ミニポート ドライバーのセットの値を持つ、 **HardwareReceiveFilterCapabilities**メンバーへのポインターを以前初期化[ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
+    レジストリの **\*PacketCoalescing**キーワード設定の値が1の場合、ミニポートドライバーは、以前に初期化された NDIS\_RECEIVE へのポインターに**HardwareReceiveFilterCapabilities**メンバーを設定[ **\_\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造をフィルター処理します。
 
-    場合、  **\*PacketCoalescing**キーワード、レジストリ設定が 0 の値を持つ、ミニポート ドライバーがパケットの結合のサポートをアドバタイズしません。 設定する必要がありますが、 **HardwareReceiveFilterCapabilities**メンバーを NULL にします。
+    レジストリの **\*PacketCoalescing**キーワード設定の値が0の場合、ミニポートドライバーはパケット合体のサポートをアドバタイズしません。 **HardwareReceiveFilterCapabilities**メンバーを NULL に設定する必要があります。
 
--   ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
+-   ドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出し、 *miniportattributes*パラメーターを[**NDIS\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)へのポインターに設定します。\_ハードウェア\_\_属性の構造をサポートします。
 
-結合して、基になるネットワーク アダプターの機能をフィルター処理、パケットを報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+基になるネットワークアダプターのパケット合体およびフィルター機能を報告するために、ミニポートドライバーによって使用される方法は、電源管理機能を報告するための NDIS 6.20 の方法に基づいています。 この方法の詳細については、「[電源管理機能のレポート](reporting-power-management-capabilities.md)」を参照してください。
 
-アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+アダプター初期化プロセスの詳細については、「[ミニポートアダプターの初期化](initializing-a-miniport-adapter.md)」を参照してください。

@@ -2,87 +2,87 @@
 title: シーケンスの例
 ms.assetid: 2B15570A-A220-4BF7-B595-D9CF66E02673
 keywords:
-- スタートアップの接続と切断を含む、スマート カード リソース マネージャーでの Ioctl のシーケンスの例
+- スマートカードリソースマネージャーにおける、スタートアップ接続と切断を含む Ioctl のシーケンスの例
 - NFC
 - 近距離無線通信
 - proximity
 - 近距離近接通信
 - NFP
-description: スマート カード リソース マネージャーで、起動、接続、切断などの Ioctl のシーケンスの例を示します。
+description: 起動時、接続、切断など、スマートカードリソースマネージャーの Ioctl のシーケンスの例を示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d85138dfb1fe9ee298d72c85d8788709ac55888
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fff748d7c696c5c0abf46e539a65c92aca542d89
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370524"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843413"
 ---
 # <a name="example-sequence"></a>シーケンスの例
 
 
-スマート カード リソース マネージャーでの ioctl 例シーケンスを次に示します。
+次に、スマートカードリソースマネージャーにおける Ioctl のシーケンス例を示します。
 
-## <a name="start-up-sequence"></a>起動シーケンス
+## <a name="start-up-sequence"></a>スタートアップシーケンス
 
 
-1.  スマート カードのアクセスのデバイス インターフェイスの GUID を DevObj または CfgMgr API を使用して、NFC デバイス ドライバーの名前を検出し、CreateFile でデバイス ハンドルを開くために使用します。
+1.  DevObj または CfgMgr API とスマートカードアクセスデバイスインターフェイスの GUID を使用して、NFC デバイスドライバーの名前を検出し、それを CreateFile と共に使用してデバイスハンドルを開きます。
 
-2.  スレッド プールを初期化します。
+2.  スレッドプールを初期化します。
 
-3.  リーダーの名前を決定します。
+3.  閲覧者名を決定します。
 
-    -   IOCTL\_スマート カード\_取得\_s カード属性\_ATTR\_ベンダー\_名、s カード\_ATTR\_ベンダー\_IFD\_型、および s カード\_ATTR\_デバイス\_単位
+    -   IOCTL\_スマートカード\_破棄\_ATTR\_VENDOR\_NAME、破棄\_ATTR\_VENDOR\_IFD\_TYPE、破棄\_ATTR\_デバイスの\_属性を取得し\_ユニット
 
 4.  リーダーの特性を決定します。
-    -   IOCTL\_スマート カード\_取得\_s カード属性\_ATTR\_特性
+    -   IOCTL\_スマートカード\_破棄\_ATTR\_特性の\_属性を取得します。
 
-5.  カードの状態のモニターを起動します。
-    -   IOCTL\_スマート カード\_IS\_スマート カードの到着を待機する – 存在します。
+5.  カード状態モニターを起動します。
+    -   スマートカードの到着を待機するために、IOCTL\_スマートカード\_が存在\_。
 
-    -   IOCTL\_スマート カード\_IS\_ABSENT – スマート カードからを待機します。
+    -   スマートカードの出発を待機するために、IOCTL\_スマートカード\_は存在し\_いません。
 
-電源リセットは、s カードはサポートされていませんので、関連する\_SWALLOWED、s カード\_電源の状態。
+破棄\_飲み込む、破棄\_電源状態がサポートされていないため、電源リセットは関係ありません。
 
-## <a name="connect-sequence"></a>シーケンスを接続します。
+## <a name="connect-sequence"></a>接続シーケンス
 
 
 1.  ループの開始。
 
-2.  IOCTL\_スマート カード\_取得\_状態
+2.  スマートカードによる\_状態の取得\_IOCTL\_
 
-    -   大文字の s カード\_不明および s カード\_ABSENT、何もしません。
+    -   Case 破棄\_UNKNOWN と破棄\_存在しません。何も行いません。
 
-    -   大文字の s カード\_現在のところ、理解しカード
+    -   Case 破棄\_PRESENT、飲み込む card
 
-    -   大文字の s カード\_受け入れられる、コールド リセット
+    -   ケース破棄\_飲み込む、コールドリセット
 
-    -   大文字の s カード\_リセットを利用した、ウォーム
+    -   ケース破棄\_電源、ウォームリセット
 
-    -   大文字の s カード\_ネゴシエーション可、カードの ATR を確認
+    -   ケース破棄\_の譲渡、カード ATR の特定
 
-    -   大文字 s カード\_特定、カード ATR とプロトコルの確認
+    -   ケース破棄\_固有で、カードの ATR とプロトコルを決定します。
 
-3.  IOCTL\_スマート カード\_設定\_プロトコル
+3.  スマートカードの IOCTL\_\_プロトコルの設定\_
 
-## <a name="disconnect-sequence"></a>シーケンスを切断します。
+## <a name="disconnect-sequence"></a>シーケンスの切断
 
 
-1.  電源のタイムアウトが開始されます。
+1.  電源ダウンタイムアウトが開始されます。
 
 2.  ループの開始。
 
-3.  IOCTL\_スマート カード\_取得\_状態
+3.  スマートカードによる\_状態の取得\_IOCTL\_
 
-    -   大文字の s カード\_特定、s カード\_ネゴシエーション可、s カード\_設定の電源を
+    -   大文字と小文字の区別\_具体的には、破棄\_譲渡、破棄\_電源、電源をオンに設定
 
-    -   大文字の s カード\_SWALLOWED、s カード\_存在する場合は、何もしません。
+    -   Case 破棄\_飲み込む、破棄\_PRESENT、nothing
 
-    -   大文字の s カード\_不在であれば、s カード\_不明は、何もしません。
+    -   Case 破棄\_存在しない、破棄\_UNKNOWN、do nothing
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[スマートカード DDI とコマンドリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

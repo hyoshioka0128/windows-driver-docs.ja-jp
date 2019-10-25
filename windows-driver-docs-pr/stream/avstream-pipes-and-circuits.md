@@ -1,81 +1,81 @@
 ---
-title: AVStream のパイプと回路
-description: AVStream のパイプと回路
+title: AVStream パイプと回線
+description: AVStream パイプと回線
 ms.assetid: 7e4db0da-7faf-4155-ab9d-f8651db834ec
 keywords:
-- AVStream allocators WDK
+- AVStream アロケーター WDK
 - アロケーター WDK AVStream
-- ユーザー モード WDK AVStream をソースします。
-- WDK AVStream フレーム
-- WDK AVStream のフィルターを変換します。
-- パイプを使用して WDK AVStream
+- ユーザーモードのソース WDK AVStream
+- WDK AVStream のフレーム
+- 変換フィルター WDK AVStream
+- パイプ WDK AVStream
 - AVStream パイプ WDK
 - アロケーター WDK AVStream の共有
-- インプレース変換を使用して WDK AVStream
-- ソース フィルター WDK AVStream
-- レンダラーが WDK AVStream をフィルター処理します。
-- 非インプレース変換を使用して WDK AVStream
-- WDK AVStream の回路
+- インプレース変換フィルター WDK AVStream
+- ソースフィルター WDK AVStream
+- レンダラーフィルター WDK AVStream
+- 非インプレース変換フィルター WDK AVStream
+- 接続 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac274e6c6a0d14cca9e530f3fd72a6379fcb8471
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d96576f9a23798707e9de816dea80ce69e51cdc0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386705"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840620"
 ---
-# <a name="avstream-pipes-and-circuits"></a>AVStream のパイプと回路
+# <a name="avstream-pipes-and-circuits"></a>AVStream パイプと回線
 
 
 
 
 
-A*パイプ*は一連の共通 AVStream フィルター[アロケーター](avstream-allocators.md)します。
+*パイプ*は、共通の[アロケーター](avstream-allocators.md)を共有する avstream フィルターのセットです。
 
-次の図は、パイプから成る AVStream の 3 つのフィルター: ソース フィルター、*インプレース*フィルター、およびレンダラーのフィルターを変換します。
+次の図は、3つの AVStream フィルター (ソースフィルター、*インプレース*変換フィルター、およびレンダラーフィルター) で構成されるパイプを示しています。
 
-![avstream のすべてのフィルターを使用してパイプを示す図](images/pipe1.png)
+![すべての avstream フィルターを使用したパイプを示す図](images/pipe1.png)
 
-この例で[KSProxy](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index) (非表示) で表される、アロケーターは、選択した、**アロケーション**の図は、ブロックします。
+この例では、 [Ksk プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)(示されていません) は、図の**Alloc**ブロックで表されるアロケーターを選択しています。
 
-AVStream は、ソース フィルターに関連付けられた内部の要求元オブジェクトを作成します。 図では、依頼者として表示されます。 **Req**します。ミニドライバーを指定します、 **AllocatorFraming**のメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)メモリとの継続的な量の種類フレームに割り当てるメモリ。 それに応じて、依頼者は、アロケーターからフレームを取得および回路の次のコンポーネントに渡します。
+AVStream は、ソースフィルターに関連付けられた内部要求者オブジェクトを作成します。 この図では、要求元が要求**として**表示されます。ミニドライバーは、 [**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**allocatorframing**メンバーで、メモリの種類とフレームに割り当てる連続メモリの量\_を指定します。 それに応じて、要求者はアロケーターからフレームを取得し、それらを回線内の次のコンポーネントに渡します。
 
-ソース フィルターからのデータは、別の AVStream ドライバーによって実装される変換のフィルターに渡されます。
+ソースフィルターのデータは、別の AVStream ドライバーによって実装された変換フィルターにフローします。
 
-最後に、データは、サードパーティ AVStream フィルターによって実装されているレンダラーのフィルターに渡されます。
+最後に、データは3番目の AVStream フィルターによって実装されたレンダラーフィルターに送られます。
 
-AVStream で独自のトランスポートの内部インターフェイスを使用して、Irp を送信する代わりに AVStream ピンをすべてのこのグラフのピンは[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)待ち時間の短縮とパフォーマンスの向上.
+このグラフ内のすべてのピンが AVStream の pin であるため、AVStream は、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して irp を送信するのではなく、独自の内部トランスポートインターフェイスを使用して、待機時間を短縮し、パフォーマンスを向上させます。
 
-具体的には、アプリケーションがグラフへの移行を原因と[ **KSSTATE\_ACQUIRE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate) (ユーザーがクリックすると、**再生**GraphEdit で)、直接 AVStream は、上記のように、キューにフィルターを接続します。
+具体的には、アプリケーションによってグラフが[**ksk\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)に遷移する場合 (たとえば、ユーザーが graphedit で **[Play]** をクリックしたとき)、avstream は、上記のようにフィルターキューに直接接続します。
 
-そのため、ダウン ストリームに送信されたフレームを返す、要求元にできます再利用されるレンダリングが完了するとします。 この AVStream データ パスは、*回線*します。
+したがって、ダウンストリームで送信されたフレームは、要求元に戻ります。この要求は、レンダリングの完了時に再利用できます。 この AVStream データパスは*回線*です。
 
-次の図で、変換、フィルターは AVStream フィルターでは、なくカーネル モードのフィルターが示すように、2 番目の例を検討してください。
+次の図に示すように、変換フィルターは AVStream フィルターではなくカーネルモードフィルターである2番目の例を考えてみます。
 
-![非 avstream カーネル モードの変換のフィルターを使用してパイプを示す図](images/pipe2.png)
+![avstream 以外のカーネルモードの変換フィルターを使用するパイプを示す図](images/pipe2.png)
 
-最初の例では、この例では 3 つのフィルター: AVStream ソースを (これは KS を直接使用するドライバーまたはストリーム クラスの下のミニドライバー) KS 変換、および、AVStream レンダラーです。
+最初の例と同様に、この例には3つのフィルターが含まれています。 AVStream ソース、KS 変換 (これは、KS を直接使用するドライバーか、ストリームクラスでミニドライバーを使用するドライバーであり、AVStream レンダラー) です。
 
-最初の図のように、pin が最初に相互接続します。 フィルターのグラフに遷移するときに**KSSTATE\_ACQUIRE**、ただし、カーネル ストリーミング 1.0 フィルターが AVStream 転送インターフェイスをサポートしません。 その結果、AVStream が; ピンをバイパスしません。代わりに、I/O を使用して、フィルターの間でデータを移動するがあります。
+最初の図と同様に、ピンは最初に相互接続されます。 ただし、フィルターグラフが Ksk 状態に遷移すると **\_取得**しますが、カーネルストリーミング1.0 フィルターでは avstream トランスポートインターフェイスがサポートされません。 その結果、AVStream は pin をバイパスしません。代わりに、フィルター間でデータを移動するには i/o を使用する必要があります。
 
-具体的には、フレームを離れると、ソース フィルターのキュー、AVStream 呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。 この呼び出しで、 *Irp*パラメーターには、ソースの出力ピンから変換フィルターに渡すフレームが含まれています。
+具体的には、フレームがソースフィルターのキューから出たときに、AVStream は[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出します。 この呼び出しでは、 *Irp*パラメーターに、ソースの出力ピンから変換フィルターに渡すフレームが格納されます。
 
-レンダラーの入力ピンは IRP を受信すると、pin は IRP をキューに配置します。 レンダラーのドライバーには、フレームが完了すると、そのフレームを返します、レンダラーの入力ピンに 2 番目の例で示すように。
+レンダラーの入力ピンが IRP を受け取ると、pin は IRP をキューに配置します。 レンダラードライバーがフレームを完了すると、2番目の例に示すように、レンダラーの入力ピンにフレームが返されます。
 
-AVStream 呼び出し[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)をアップ ストリームにフレームを返します。 ソース フィルターの出力ピンは、完了通知を受信します。 ミニドライバーの[*暗証番号 (pin) プロセスのコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspin)ルーチンを呼び出して[ **KsStreamPointerUnlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)フレームを要求元に戻す回線を再利用します。
+AVStream は[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出し、フレームアップストリームを返します。 ソースフィルターの出力ピンは、完了通知を受け取ります。 ミニドライバーの[*ピンプロセスコールバック*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)ルーチンは、 [**ksk ストリームポインターのロックを解除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)し、フレームを要求元に戻して回線に再利用できるようにします。
 
-フレームのソースがユーザー モードでの最後の例を検討してください。 (または、フレームの最終的な宛先できますユーザー モードでします。)
+フレームソースがユーザーモードである最後の例を考えてみましょう。 (または、最終的なフレームの変換先がユーザーモードである可能性があります)。
 
-カーネル モードを次の図の*非-force-inplace*変換フィルターがユーザー モード DirectShow フィルターからフレームを受信し、カーネル モードの AVStream レンダラーに変換されたフレームを送信。
+次の図では、カーネルモードの*非インプレース*変換フィルターは、ユーザーモードの DirectShow フィルターからフレームを受け取り、変換されたフレームをカーネルモード avstream レンダラーに送信します。
 
-![ユーザー モードのソースから受け取るし、avstream レンダラーに送信されたフレームを示す図](images/pipe3.png)
+![ユーザーモードのソースから受信し、avstream レンダラーに送信されたフレームを示す図](images/pipe3.png)
 
-フレームがユーザー モードから届いたら、AVStream 暗証番号 (pin) のオブジェクトはそれらを入力パイプでのキューに配置します。
+フレームがユーザーモードから到着すると、AVStream のピンオブジェクトによって、入力パイプセクションのキューに配置されます。
 
-非-force-inplace 変換フィルターでは、カーネル モードで変換されたフレームを割り当て、回線としてこれらのフレームの 2 つ目のパイプを使用し、します。 レンダラーが、AVStream フィルターであるため、AVStream はピンをバイパスし、AVStream 転送インターフェイスを使用して表示フィルターのキューで直接、フレームを配置しています。
+非インプレース変換フィルターでは、変換されたフレームがカーネルモードで割り当てられ、2番目のパイプがこれらのフレームの回線として使用されます。 レンダラーは AVStream フィルターであるため、AVStream はピンをバイパスし、AVStream トランスポートインターフェイスを使用してフレームをレンダリングフィルターのキューに直接配置します。
 
-ミニドライバーは[フレームを挿入](frame-injection.md)呼び出すことで、回線に[ **KsPinSubmitFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframe)または[ **KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframemdl). ミニドライバーは、このメソッドを使用して、AVStream 依頼者はカーネル モード アロケーターからではなく、これらの呼び出しの結果として、フレームを受け取ります。
+ミニドライバーは、 [**KsPinSubmitFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframe)または[**KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframemdl)を呼び出すことによって、回線に[フレームを挿入](frame-injection.md)できます。 ミニドライバーがこのメソッドを使用する場合、AVStream リクエスターは、カーネルモードアロケーターではなく、これらの呼び出しの結果としてフレームを受け取ります。
 
  
 

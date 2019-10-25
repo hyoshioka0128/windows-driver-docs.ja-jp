@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_WAVE\_ボリューム
-description: KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボリュームの設定を指定します。
+title: KSK プロパティ\_WAVE\_ボリューム
+description: KSK プロパティ\_WAVE\_VOLUME プロパティは、wave デバイスのボリューム設定を指定します。
 ms.assetid: c5725f7d-b965-43f3-9c49-faff82d99580
 keywords:
-- KSPROPERTY_WAVE_VOLUME ストリーミング メディア デバイス
+- KSPROPERTY_WAVE_VOLUME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04cb22bce7d1a32da3b32ace6f9e112da504f451
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0081da607e0195d901198d8d2a332033100624fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364835"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845547"
 ---
-# <a name="kspropertywavevolume"></a>KSPROPERTY\_WAVE\_ボリューム
+# <a name="ksproperty_wave_volume"></a>KSK プロパティ\_WAVE\_ボリューム
 
 
-KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボリュームの設定を指定します。
+KSK プロパティ\_WAVE\_VOLUME プロパティは、wave デバイスのボリューム設定を指定します。
 
 ## <span id="ddk_ksproperty_wave_volume_ks"></span><span id="DDK_KSPROPERTY_WAVE_VOLUME_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_volume" data-raw-source="[&lt;strong&gt;KSWAVE_VOLUME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_volume)"><strong>KSWAVE_VOLUME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kswave_volume" data-raw-source="[&lt;strong&gt;KSWAVE_VOLUME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kswave_volume)"><strong>KSWAVE_VOLUME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSWAVE\_左と右の減衰の量をについて説明します。 ボリューム構造。
+プロパティ値 (操作データ) は、左と右の減衰の量を表す KSWAVE\_ボリューム構造です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +82,9 @@ KSPROPERTY\_WAVE\_ボリュームのプロパティを wave デバイスのボ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSWAVE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_volume)
+[**KSWAVE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kswave_volume)
 
  
 

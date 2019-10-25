@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、カメラの彩度、または値の彩度の向上の設定を制御します。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOPROCAMP\_鮮やかさ
+description: KSK プロパティ\_VIDEOPROCAMP\_鮮やかさプロパティは、カメラの鮮やかさ (彩度) 設定を制御します。 このプロパティは省略可能です。
 ms.assetid: 1b7fd731-088b-4370-a537-9e302d28864b
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_SATURATION ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_SATURATION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72dd24d7e03064cce06d95c9768af0605c34b211
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4d3a033f6c1716ec4307090d80720ed97701199
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381921"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842822"
 ---
-# <a name="kspropertyvideoprocampsaturation"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度
+# <a name="ksproperty_videoprocamp_saturation"></a>KSK プロパティ\_VIDEOPROCAMP\_鮮やかさ
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、カメラの彩度、または値の彩度の向上の設定を制御します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_鮮やかさプロパティは、カメラの鮮やかさ (彩度) 設定を制御します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_saturation_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_SATURATION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの彩度 設定を指定する LONG が。 鮮やかさの設定の値は 100 倍してゲインとして表されます。
+プロパティ値 (操作データ) は、カメラの鮮やかさの設定を指定する LONG です。 鮮やかさの設定の値は、ゲインに100を掛けた値で表されます。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_構造が飽和状態設定を指定します。
+VIDEOPROCAMP\_S 構造体\_KSK プロパティの**値**メンバーは、鮮やかさの設定を指定します。
 
-すべてのビデオ キャプチャ ミニドライバーには、このプロパティの値を範囲と既定値を定義する必要があります。 必要な範囲は 0 ~ 10000 である必要があります。 既定値は 100 (1 x) である必要があります。
+すべてのビデオキャプチャミニドライバーで、このプロパティの範囲と既定値を定義する必要があります。 必要な範囲は 0 ~ 1万でなければなりません。 既定値は 100 (1x) である必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,7 +81,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,9 +89,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_彩度プロパティは、�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

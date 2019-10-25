@@ -4,12 +4,12 @@ description: ファイル転送
 ms.assetid: 1c776dc5-982a-4652-bc03-f334fda30055
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a94ccac4efd642ccddcf07baf11f3c0f0a98b2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 550c2d7868956268a3306f541ca5e9552b1ba61d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385553"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840838"
 ---
 # <a name="file-transfers"></a>ファイル転送
 
@@ -17,17 +17,17 @@ ms.locfileid: "67385553"
 
 
 
-**注**  ファイル転送は、Windows Vista 以前のオペレーティング システム。
+**注**   ファイル転送は、Windows Vista より前のオペレーティングシステム用です。
 
  
 
-A*ファイル データの転送*WIA ミニドライバーから WIA サービスを作成したファイルにイメージ データの転送。 データ転送を開始する WIA アプリケーションは、ファイル転送を実行する準備ができたことを WIA サービスを示します。
+*ファイルデータ転送*とは、wia ミニドライバーから、wia サービスによって作成されたファイルに画像データを転送することです。 データ転送を開始する WIA アプリケーションは、ファイル転送を実行する準備ができていることを、WIA サービスに示します。
 
-WIA サービスは、ファイルを作成し、WIA ミニドライバーをファイルにデータを転送するように指示します。 WIA ミニドライバーは、転送されるデータを要求することによって、デバイスを接続します。 ミニドライバーでは、ため、低レベル バス ドライバー スタックは、バッファーに取得したデータを格納することが、独自のメモリが必要です。 WIA ミニドライバーは、バッファー内のデータを受け取る、使用して、 [ **wiasWriteBufToFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritebuftofile) WIA サービス ライブラリ関数は、メモリ バッファーに渡すことです。 WIA サービス ライブラリは、WIA サービスとして作成し、次の図は、のファイルに、WIA ミニドライバーのメモリ バッファーの内容を書き込みます。
+次に、WIA サービスがファイルを作成し、ファイルにデータを転送するように WIA ミニドライバーに指示します。 WIA ミニドライバーは、転送されるデータを要求することによってデバイスに接続します。 ミニドライバーには独自のメモリが必要なので、低いレベルのバスドライバースタックでは、取得したデータをバッファーに配置できます。 WIA ミニドライバーは、バッファー内のデータを受信すると、 [**wiasWriteBufToFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritebuftofile) WIA サービスライブラリ関数を使用して、メモリバッファーを渡します。 次の図に示すように、wia サービスライブラリは、wia サービスによって作成されたファイルに、wia ミニドライバーのメモリバッファーの内容を書き込みます。
 
-![wia ドライバー ファイルのデータ転送を示す図](images/wia-imagedatafile.png)
+![wia ドライバーファイルのデータ転送を示す図](images/wia-imagedatafile.png)
 
-使用して、 **wiasWriteBufToFile**サービス ライブラリ関数のほとんどのファイル転送。 使用して、 [ **wiasWritePageBufToFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritepagebuftofile)ライブラリ関数を WIA を必要とするドライバーが複数ページの TIFF ファイルの書き込みにサービスに対してのみのサービスを提供します。 マルチページの TIFF ファイルを記述するときに、独自の TIFF ヘッダーを使用するドライバーを使用する必要があります**wiasWriteBufToFile**します。
+ほとんどのファイル転送には、 **wiasWriteBufToFile** service library 関数を使用します。 [**WiasWritePageBufToFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritepagebuftofile) service library 関数は、WIA サービスが複数ページの TIFF ファイルの書き込みを必要とするドライバーに対してのみ使用します。 複数ページにわたる TIFF ファイルを書き込むときに独自の TIFF ヘッダーを使用するドライバーは、 **wiasWriteBufToFile**を使用する必要があります。
 
  
 

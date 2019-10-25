@@ -3,45 +3,45 @@ title: USBCAMD2 の機能
 description: USBCAMD2 の機能
 ms.assetid: e800948a-6903-496e-9561-697ff5ccd1d7
 keywords:
-- Windows 2000 カーネル ストリーミング モデル WDK、USBCAMD2 ミニドライバー ライブラリ
-- ストリーミング モデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバー ライブラリ
-- カーネル ストリーミング モデルの WDK、USBCAMD2 ミニドライバー ライブラリ
-- WDK Windows 2000 のカーネル ストリーミング USBCAMD2 を機能します。
-- USB ベースのストリーミング カメラ WDK USBCAMD2
+- Windows 2000 カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- ストリーミングモデル WDK Windows 2000 カーネル、USBCAMD2 ミニドライバーライブラリ
+- カーネルストリーミングモデル WDK、USBCAMD2 ミニドライバーライブラリ
+- USBCAMD2 機能 WDK Windows 2000 カーネルストリーミング
+- USB ベースのストリーミングカメラの WDK USBCAMD2
 - カメラ WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f9a228f501881ef5cc42ebcab1360bf5c79ca2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54d9eab21c09a27f0411e916cd3ba1c13731f014
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369535"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843223"
 ---
 # <a name="usbcamd2-features"></a>USBCAMD2 の機能
 
 
-次の機能は USBCAMD2 (元の USBCAMD ミニドライバー ライブラリではこれらの機能はサポートされません) 内に存在します。
+USBCAMD2 には次の機能があります (元の USBCAMD ミニドライバーライブラリはこれらの機能をサポートしていません)。
 
--   **される Srb のオート コンプリート**
+-   **SRBs のオートコンプリート**
 
-    USBCAMD2 はされる Srb を自動的に完了できます。 元の USBCAMD カメラ ミニドライバーされる Srb を完了する必要があります。 USBCAMD2 がされる Srb を自動的に完了することを指定するには、渡す**TRUE**で、 *NeedsCompletion*パラメーターを呼び出すと[ **USBCAMD\_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)します。
+    USBCAMD2 は自動的に SRBs を完了できます。 SRBs を完了するために必要な元の USBCAMD カメラミニドライバー。 USBCAMD2 が自動的に SRBs を完了するように指定するには、 [**USBCAMD\_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)を呼び出すときに、必要な*Scompletion*パラメーターに**TRUE**を渡します。
 
--   **割り込み、パイプを介してハードウェアによってトリガーされたイベントのサポート**
+-   **割り込みパイプを使用した、ハードウェアによってトリガーされるイベントのサポート**
 
-    USBCAMD2 カメラ ミニドライバーは、割り込みパイプを介して通知される外部トリガー イベントを登録できます。 USBCAMD2 では、割り込みを処理できます。 たとえば、割り込みパイプは、スナップショット ボタンが押されたときに、カメラのミニドライバーを通知できます。 デバイス イベントのイメージ (まだ STI) アーキテクチャのイベント モニターを通知できます。 スナップショット ボタンを押して、STI 監視通知の送信し、STI プッシュ モデルを使用して、カメラの pin にまだ関連付けられている、以前に登録された STI アプリケーションを起動できます。 外部トリガー イベントを送信する USBCAMD2 を構成するには、渡す、 *USBCAMD\_CamControlFlag\_EnableDeviceEvents*フラグ、 *CamControlFlag*を呼び出すときのパラメーター[ **USBCAMD\_InitializeNewInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)します。
+    USBCAMD2 camera ミニドライバーは、割り込みパイプを介して通知される外部トリガーイベントを登録できます。 割り込みは、USBCAMD2 で処理できます。 たとえば、割り込みパイプは、[スナップショット] ボタンが押されたときにカメラミニドライバーに信号を送ることができます。 静止画像 (STI) アーキテクチャイベントモニターには、デバイスイベントの通知を受け取ることができます。 [スナップショット] ボタンを押すと、STI モニターが通知され、カメラの静止ピンに関連付けられている以前に登録された STI アプリケーションが、STI プッシュモデルを使用して起動できます。 外部トリガーイベントを送信するように USBCAMD2 を構成するには、 [**USBCAMD\_InitializeNewInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)を呼び出すときに、 *CamControlFlag*パラメーターに*USBCAMD\_CamControlFlag\_enabledeviceevents*フラグを渡します。
 
--   **汎用 USB パイプ構成のサポート**
+-   **多目的 USB パイプ構成のサポート**
 
-    USBCAMD2 は一括または転送のビデオおよび静止画像データをアイソクロナス パイプを使用するカメラをサポートします。 USBCAMD2 は、ミニドライバーを照会し、初期化中に、パイプの構成情報を動的に作成します。 元の USBCAMD ライブラリでは、数または種類が使用されるパイプの操作について、パイプの事前設定された構成と見なされます。 パイプの構成で指定する、 [ **USBCAMD\_パイプ\_Config\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)配列に渡す[ *CamConfigureEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)します。
+    USBCAMD2 は、一括またはアイソクロナスパイプを使用してビデオと静止画像データを転送するカメラをサポートしています。 USBCAMD2 は、ミニドライバーに対してクエリを実行し、初期化中にパイプ構成情報を動的に構築します。 元の USBCAMD ライブラリは、使用されるパイプの数または種類に関する事前設定されたパイプ構成情報を前提としています。 [*CamConfigureEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)に渡す[**USBCAMD\_パイプ\_Config\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)配列で、パイプ構成を指定します。
 
--   **まだピン留めし、Pin のサポートのキャプチャ**
+-   **Pin とキャプチャのサポートを引き続きピン留めする**
 
-    USBCAMD2 が静止する際に pin を公開、 *stream.sys*元 USBCAMD が公開されているキャプチャの暗証番号 (pin) だけでなくクラス。 イメージング デバイスもピンのいずれか専用のパイプがあるかをまだとビデオの両方のピンを多重化する同じパイプを使用するは、静止暗証番号 (pin) を公開できます。 まだ暗証番号 (pin) を公開する、USBCAMD に静止画像データを含む、パイプを指定する\_パイプ\_Config\_記述子の配列を配列に渡す前に**CamConfigureEx**します。
+    USBCAMD2 は、元の USBCAMD が公開しているキャプチャピンに加え*て、引き続きクラスに*ピンを公開できます。 静止しているピン用の専用パイプを使用するか、同じパイプを使用して静止ピンとビデオ pin の両方を多重化するデバイスのイメージを作成する場合は、静止 pin を公開できます。 静止ピンを公開するには、配列を**CamConfigureEx**に渡す前に、USBCAMD\_パイプ\_Config\_記述子配列に静止画像データを含むパイプを指定します。
 
--   **プラグ アンド プレイし、電源管理のサポートの強化**
+-   **プラグアンドプレイと電源管理のサポートの強化**
 
-    USBCAMD2 は、Windows 2000 および突然デバイスの削除など、以降のバージョンのプラグ アンド プレイのサポートを提供します。 USBCAMD2 には、Windows XP 以降のシステムの休止状態もサポートしています (休止状態のサポートがサービス パックがインストールされていない Windows 98、Windows 98 SE、または Windows 2000 に存在しない) および Windows Millennium Edition 以降。
+    USBCAMD2 では、デバイスの突然の削除など、Windows 2000 以降のバージョンでのプラグアンドプレイがサポートされています。 USBCAMD2 は、Windows XP 以降のシステム休止状態もサポートしています (休止状態のサポートは、サービスパックがインストールされていない Windows 98、Windows 98 SE、Windows 2000)、および Windows Millennium Edition 以降ではサポートされていません。
 
  
 

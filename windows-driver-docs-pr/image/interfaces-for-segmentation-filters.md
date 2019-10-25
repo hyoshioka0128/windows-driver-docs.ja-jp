@@ -1,43 +1,43 @@
 ---
-title: セグメンテーション フィルターのインターフェイス
-description: セグメンテーション フィルターのインターフェイス
+title: セグメンテーションフィルターのインターフェイス
+description: セグメンテーションフィルターのインターフェイス
 ms.assetid: 428f6fce-d76c-4485-aa92-39f2b608160d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd074b613f7badbbf97dc69118fe46d4ba565b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97309c6a71bbfb1eddbf8158e9882ec4f1ddb377
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378918"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840812"
 ---
-# <a name="interfaces-for-segmentation-filters"></a>セグメンテーション フィルターのインターフェイス
+# <a name="interfaces-for-segmentation-filters"></a>セグメンテーションフィルターのインターフェイス
 
 
 
 
 
-WIA は、Windows Vista 以降、セグメント化フィルターをサポートします。 セグメント化フィルターを実装する必要があります、 [IWiaSegmentationFilter インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nn-wia_lh-iwiasegmentationfilter)します。
+Windows Vista 以降では、WIA でセグメンテーションフィルターがサポートされるようになります。 セグメンテーションフィルターでは、 [IWiaSegmentationFilter インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter)を実装する必要があります。
 
-**IWiaSegmentationFilter**インターフェイスは、(Windows Vista) の新しいインターフェイスに依存**IWiaItem2**のスーパー セットは、このセクションでは、全体で使用される**IWiaItem**. 加え、 **IWiaItem** 、メソッド、 **IWiaItem2**インターフェイスには、メソッドが含まれています**IWiaItem2::GetExtension**、WIA を作成するアプリケーションで使用する。拡張機能、セグメント化フィルターなど。 **IWiaItem**と**IWiaItem2**インターフェイスが、Microsoft Windows SDK ドキュメントに記載されています。
+**IWiaSegmentationFilter**インターフェイスは、このセクション全体で使用される new (For Windows Vista) インターフェイス**IWiaItem2**に依存しています。これは**iwiaitem**のスーパーセットです。 **Iwiaitem**メソッドに加えて、 **IWiaItem2**インターフェイスには、 **IWiaItem2:: getextension**というメソッドが含まれています。これは、アプリケーションがセグメンテーションフィルターを含む WIA 拡張機能を作成するために使用します。 **Iwiaitem**インターフェイスと**IWiaItem2**インターフェイスについては、Microsoft Windows SDK のドキュメントを参照してください。
 
-**IWiaSegmentationFilter**インターフェイスが 1 つのメソッドを実装する**DetectRegions**します。 このメソッドは 3 つのパラメーター、 *lFlags*、 *pInputStream*、および*pWiaItem2*します。
+**IWiaSegmentationFilter**インターフェイスは、1つのメソッドである検出**領域**を実装します。 このメソッドには、 *Lflags*、 *pinputstream*、および*pWiaItem2*という3つのパラメーターがあります。
 
-*LFlags*パラメーターは現在使用されていません。
+*Lflags*パラメーターは現在使用されていません。
 
-*PInputStream*パラメーターは、セグメント化を実行するイメージへのポインター。 通常これは、フラット ベッドのスキャンの表面全体を表すプレビュー イメージです。 アプリケーションにストリームが作成されたその**IWiaTransferCallback::GetNextStream**メソッド。 このメソッド画像を取得中に呼び出されます。 ドライバー、イメージを取得したデータ ストリームに書き込みますを**IWiaTransferCallback::GetNextStream**メソッドを返します。 これは、アプリケーションによってセグメント化のフィルターに渡す必要があるストリームです。 **IWiaTransferCallback**インターフェイスは、Windows SDK のドキュメントで説明します。
+*Pinputstream*パラメーターは、セグメント化を実行するイメージへのポインターです。 通常、これは、フラットベッドのスキャンサーフェイス全体を表すプレビューイメージです。 ストリームは、アプリケーションによって**Iwiatransfercallback:: GetNextStream**メソッドに作成されます。このメソッドは、イメージの取得中に呼び出されます。 ドライバーは、取得したイメージデータを**Iwiatransの callback:: GetNextStream**メソッドが返すストリームに書き込みます。 これは、アプリケーションによってセグメンテーションフィルターに渡されるストリームでもあります。 **Iwiatransのコールバック**インターフェイスについては、Windows SDK のドキュメントを参照してください。
 
-*PWiaItem2*パラメーターは、WIA アイテムへのポインター *pInputStream*取得されました。 親アイテムとも呼ばれます。 たとえば、項目を*pWiaItem2*へのポインターには、フラット ベッド項目可能性があります。
+*PWiaItem2*パラメーターは、 *pinputstream*が取得された WIA 項目へのポインターです。 親項目とも呼ばれます。 たとえば、 *pWiaItem2*が指す項目は、フラットな項目である可能性があります。
 
-[ **IWiaSegmentationFilter::DetectRegions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)によって表されるイメージのサブ領域を判断するメソッドが使用される*pInputStream*します。 検出されると、各サブ地域の**IWiaSegmentationFilter::DetectRegions**によって示される項目の下に新しい子 WIA 項目を作成します。 *pWiaItem2*します。 各子項目のセグメント化、フィルターは、次の WIA プロパティの値を設定する必要があります。[**WIA\_IP\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [ **WIA\_IP\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)、 [ **WIA\_IP\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)、および[ **WIA\_IP\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)します。 これらのプロパティは、スキャンする領域の外接する四角形を表します。 高度なセグメント化フィルターすることも、他の WIA プロパティを設定します。 [WIA プロパティ セグメント化フィルターを](wia-properties-for-segmentation-filters.md)デスキュー場合、ドライバーをサポートしています。
+[**IWiaSegmentationFilter::D Etピン領域**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)メソッドは、 *pinputstream*によって表されるイメージの地区を決定するために使用されます。 検出された各サブ領域について、 **IWiaSegmentationFilter::D etが**、 *pWiaItem2*が指す項目の下に新しい子の WIA 項目を作成します。 セグメンテーションフィルターでは、各子項目について、次の WIA プロパティの値を設定する必要があります。 [**wia\_ips\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [**wia\_ip\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)、 [**WIA\_ip\_xextent**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)、および[**wia\_IP\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)。 これらのプロパティは、スキャンする領域の外接する四角形を表します。 さらに高度なセグメンテーションフィルターでは、ドライバーで deskewing がサポートされている場合に、[セグメンテーションフィルターの Wia プロパティ](wia-properties-for-segmentation-filters.md)など、他の wia プロパティを設定することもできます。
 
-次の図は、セグメント化フィルターがアプリケーション項目のツリーを変更する方法を示します。 この図では、セグメント化フィルターが、ベッドで 3 つのイメージを検出し、イメージごとに、フラット ベッド項目の下に新しい子項目が作成します。
+次の図は、セグメント化フィルターによってアプリケーション項目ツリーがどのように変更されるかを示しています。 この図では、セグメント化フィルターによって、フラット化された3つのイメージが検出され、各イメージに対して、フラット化された項目の下に新しい子項目が作成されています。
 
-![セグメント化フィルターがアプリケーション項目のツリーを変更する方法を示す図](images/art-segmentation2.png)
+![セグメンテーションフィルターによってアプリケーション項目ツリーがどのように変更されるかを示す図](images/art-segmentation2.png)
 
-セグメント化フィルターでは、拡張するドライバーでサポートされるすべてのイメージ形式をサポートする必要があります。 Microsoft が提供するセグメント化フィルターでは、BMP、GIF、JPEG、PNG、TIFF 形式をサポートします。 したがって、このフィルターを使用するすべてのドライバーは、これらの形式に制限されます。
+セグメンテーションフィルターでは、拡張するドライバーでサポートされているすべてのイメージ形式をサポートする必要があります。 Microsoft が提供するセグメンテーションフィルターでは、BMP、GIF、JPEG、PNG、TIFF の各形式がサポートされています。 このため、このフィルターを使用するドライバーは、これらの形式に制限されます。
 
-セグメント化を子項目を作成するには、呼び出しをフィルター処理、 **IWiaItem2::CreateChildItem**メソッド。 このような呼び出しの例を次に示します。
+子項目を作成するために、セグメンテーションフィルターは**IWiaItem2:: CreateChildItem**メソッドを呼び出します。 このような呼び出しの例を次に示します。
 
 ```cpp
 lItemFlags = WiaItemTypeGenerated | WiaItemTypeTransfer | WiaItemTypeImage | WiaItemTypeFile |
@@ -51,23 +51,23 @@ pWiaItem2->CreateChildItem(lItemFlags,
                            &pChildItem);
 ```
 
-**IWiaItem2::CreateChildItem**とは若干異なります**IWiaItem::CreateChildItem**します。 **IWiaItem2::CreateChildItem**メソッドが新しいパラメーター、 *lCreationFlags*;**IWiaItem2::CreateChildItem**メソッドの*lItemFlags*パラメーターに対応、 *lFlags*パラメーターの**IWiaItem:。CreateChildItem**します。 コピーを渡して\_親\_プロパティ\_値で、 *lCreationFlags*すべて読み取り/書き込み可能な設定を WIA サービスがサービスへのパラメーターの前のコード スニペットに示すわかります親のと同じ値に子項目の WIA プロパティ。 セグメント化フィルターは、このフラグを渡す必要があります理由は、イメージのフォーマットと新しく作成された子項目を解像度などのプロパティは、同じことを確認する親項目です。 解像度が同じである子項目にセグメント化フィルターを設定する範囲のプロパティが、画像の解像度に依存するために重要です。 イメージのフォーマットと解像度が同じである子項目にアプリケーションをプレビュー コンポーネント (Microsoft Windows SDK のドキュメントで説明) を使用する必要がある場合が重要です。 最終的なイメージを取得する前に、アプリケーションは、スキャナーから高品質のイメージを取得する解像度を変更できます。
+**IWiaItem2:: CreateChildItem**は、 **Iwiaitem:: CreateChildItem**とは若干異なります。 **IWiaItem2:: CreateChildItem**メソッドに新しいパラメーター、 *l flags*があります。**IWiaItem2:: CreateChildItem**メソッドの*lItemFlags*パラメーターは、 **Iwiaitem:: CreateChildItem**の*lflags*パラメーターに対応しています。 前のコードスニペットに示されているように、コピー\_親\_プロパティ\_値を、 *Lのフラグ*パラメーターを持つ値として wia サービスに渡すと、子項目の読み取り可能または書き込み可能なすべての WIA プロパティがに設定されます。親のと同じ値です。 セグメンテーションフィルターがこのフラグを渡す理由は、新しく作成された子項目のイメージ形式や解像度などのプロパティが親項目としてであることを確認するためです。 セグメント化フィルターによって子項目に設定されるエクステントプロパティは、イメージの解像度に依存しているため、解決方法が同じであることが重要です。 また、アプリケーションでプレビューコンポーネント (Microsoft Windows SDK のドキュメントで説明されています) を使用する場合は、イメージの形式と解像度が子項目でも同じであることが重要です。 アプリケーションでは、最終的なイメージを取得する前に、スキャナーから品質の高いイメージを取得するように解像度を変更できます。
 
-セグメント化、フィルターは、できること確認と、実行できないことで、アプリケーションと同じ制約で連結する重要です。 これは、アプリケーションが、セグメント化フィルターを作成する子項目を変更できることを意味します。 たとえば、ユーザー可能性がある満たされていない領域にセグメント化フィルターが検出され、その角をドラッグしてこのリージョンを変更するには、アプリケーションを調べることができます。 アプリケーションできますもセグメント化フィルターによって作成された子項目を削除するだけでなく新しいものを追加します。
+セグメンテーションフィルターは、アプリケーションと同じ制限によって制約され、実行できないことに注意する必要があります。 これは、アプリケーションがセグメンテーションフィルターによって作成される子項目を変更できることを意味します。 たとえば、セグメンテーションフィルターによって検出された領域でユーザーが満足されていない場合や、その領域をドラッグしてこの領域を変更するようにアプリケーションに指示する場合があります。 アプリケーションでは、セグメンテーションフィルターによって作成された子項目を削除したり、新しい子項目を追加したりすることもできます。
 
-セグメント化フィルターが作成した子項目を「クリーンアップ」責任を負うことに注意してください。 そのため、アプリケーションを呼び出す場合**IWiaSegmentationFilter::DetectRegions**複数回、アプリケーションには最初の呼び出しで作成された子アイテムが削除する必要があります最初、 **IWiaSegmentationFilter::DetectRegions**メソッド。 セグメント化フィルターがリセットを担当することも、 *pInputStream*パラメーター。 アプリケーションでは、セグメント化フィルターを呼び出す前に、ストリームの先頭にシーク ポインターを設定したことを確認する必要があります。
+セグメンテーションフィルターでは、作成した子項目の "クリーンアップ" は行われないことに注意してください。 そのため、アプリケーションが**IWiaSegmentationFilter::D Etて region**を複数回呼び出す場合、アプリケーションは最初に**IWiaSegmentationFilter::D et region**メソッドの呼び出しで作成された子項目を削除する必要があります。 また、セグメント化フィルターは、 *Pinputstream*パラメーターのリセットも行いません。 アプリケーションでは、セグメント化フィルターを呼び出す前に、ストリームの先頭にシークポインターが設定されていることを確認する必要があります。
 
-フィルム項目と、フラット ベッド項目にのみ、セグメント化フィルターを使用してください。 フィルムをスキャンするため、スキャナーはよく固定のフレームを持つ場合ドライバーを作成、子項目 (を参照してください[WIA スキャナー項目のツリー レイアウト](wia-scanner-item-tree-layout.md)詳細については)。 この場合、アプリケーションでは領域の検出および子項目の作成のセグメント化フィルターを呼び出す必要がありますされません。
+セグメンテーションフィルターは、フィルム項目とフラット化項目でのみ使用する必要があります。 フィルムスキャンでは、多くの場合、スキャナーに固定フレームが付属しています。この場合、ドライバーは子項目を作成します (詳細については、「 [WIA スキャナーの項目ツリーのレイアウト](wia-scanner-item-tree-layout.md)」を参照してください)。 この場合、アプリケーションでは、領域の検出と子項目の作成にセグメンテーションフィルターを呼び出すことはできません。
 
-セグメント化フィルターを使用した場合、ドライバーを実装しなければなりません、 [ **WIA\_IP\_セグメンテーション**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-segmentation)ベッドと映画 WIA アイテムのプロパティ。 この読み取り専用プロパティでは、2 つの有効な値があります。WIA\_使用\_セグメンテーション\_フィルターと WIA\_不要\_使用\_セグメンテーション\_フィルターで、ドライバーの設定。 このプロパティは、特定の項目領域の検出に、ドライバーのセグメント化フィルターを使用する場合、アプリケーションを使用できます。
+ドライバーにセグメンテーションフィルターが付属している場合は、そのフラットベッドおよびフィルムの WIA 項目に対して、 [**wia\_ip\_セグメンテーション**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-segmentation)プロパティを実装する必要があります。 この読み取り専用プロパティには、次の2つの有効な値があります。 WIA\_使用\_セグメンテーション\_フィルターおよび WIA\_、ドライバーが設定する\_のセグメンテーション\_フィルターを使用\_ません。 このプロパティを使用すると、特定の項目の地域の検出にドライバーのセグメンテーションフィルターを使用する必要があるかどうかをアプリケーションが認識できます。
 
-スキャナーは、フィルムをスキャンするため、固定のフレームを使用している場合、このプロパティを設定 WIA を\_不要\_使用\_セグメンテーション\_フィルム項目フィルター。 この場合、アプリケーションを試みるのでフィルムのプレビューが取得されたされた後、セグメント化フィルターを読み込む代わりに、ドライバーによって作成された子アイテムが列挙にする必要があります。 これらの子項目は、固定のフレームを表します。
+スキャナーがフィルムスキャン用に固定フレームを使用している場合、このプロパティを [WIA] に設定すると、フィルム項目内のフィルター\_フィルター\_使用\_\_ません。 この場合、フィルムプレビューを取得した後、アプリケーションはセグメンテーションフィルターを読み込もうとしないでください。代わりに、ドライバーによって作成された子項目を列挙する必要があります。 これらの子項目は、固定フレームを表します。
 
-WIA 項目に渡されるため、 **IWiaSegmentationFilter::DetectRegions**、セグメント化フィルターの項目、つまり、フラット ベッドまたはフィルムのカテゴリによって異なるアルゴリズムを使用することができます。 項目のカテゴリが格納されている、 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)プロパティ。
+WIA 項目は**IWiaSegmentationFilter::D Etて region**に渡されるため、セグメントフィルターでは、アイテムのカテゴリ (つまり、フラットベッドやフィルム) に応じて異なるアルゴリズムを使用することができます。 項目のカテゴリは、 [**WIA\_IPA\_item\_category**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)プロパティに格納されます。
 
-アプリケーションで任意のプロパティが変更された場合*pWiaItem2*間でイメージを取得する*pInputStream*アプリケーションの呼び出しと**IWiaSegmentationFilter::DetectRegions**、元のプロパティ設定 (つまり、項目が、ストリームが取得されたときにプロパティ設定) を復元する必要があります。 これを使用して、 **IWiaPropertyStorage::GetPropertyStream**と**IWiaPropertyStorage::SetPropertyStream**メソッド。 これらの変更を復元する必要がある理由は、セグメント化フィルターでは、必要なのですが、いないイメージ ヘッダーに格納されている、WIA 項目内の情報があることです。 このような情報の例としてに格納されたデータ、 [ **WIA\_IP\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [ **WIA\_IP\_YPOS** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)、および[ **WIA\_IP\_回転**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)プロパティ。 **IWiaPropertyStorage**インターフェイスとそのメソッドは、Windows SDK のドキュメントで説明します。
+アプリケーションが*pWiaItem2*のプロパティを変更した場合、 *pinputstream*のイメージを取得してから、アプリケーションの**IWiaSegmentationFilter::D etピン留め region**に対する呼び出し (プロパティの設定など) を変更します。項目は、ストリームが取得されたとき) を復元する必要があります。 これを行うには、 **Iwiapropertystorage:: getpropertystream**メソッドと**Iwiapropertystorage:: setpropertystream**メソッドを使用します。 これらの変更を復元する必要がある理由は、セグメント化フィルターに必要な情報が WIA 項目に含まれていても、イメージヘッダーに格納されていないことです。 このような情報の例としては、 [**wia\_ips\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [**wia\_ips\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)、および[**wia\_ip\_ローテーション**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)の各プロパティに格納されているデータなどがあります。 **Iwiapropertystorage**インターフェイスとそのメソッドについては、Windows SDK のドキュメントを参照してください。
 
-アプリケーションで呼び出すことによって、セグメント化フィルターのインスタンスを取得**IWiaItem2::GetExtension** (Windows SDK のドキュメントで説明)。 通常、アプリケーションは、プレビュー ウィンドウを表示する前にこのメソッドを呼び出します。 これは、ドライバーがなど、サポートされていないボタンを表示しないように知っておく必要が、UI の場合、セグメント化フィルターに付属していないため**実行セグメント化**します。
+アプリケーションは、 **IWiaItem2:: GetExtension** (Windows SDK のドキュメントで説明) を呼び出すことによって、セグメンテーションフィルターのインスタンスを取得します。 通常、アプリケーションは、プレビューウィンドウを表示する前にこのメソッドを呼び出します。 これは、ドライバーにセグメンテーションフィルターが適用されていない可能性があるためです。この場合、UI は、セグメント化の**実行**など、サポートされていないボタンを表示しないことを認識している必要があります。
 
  
 
