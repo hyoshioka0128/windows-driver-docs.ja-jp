@@ -1,53 +1,53 @@
 ---
 title: OID_WWAN_PACKET_SERVICE
-description: OID_WWAN_PACKET_SERVICE を使用すると、GSM ベースし、CDMA ベースの両方の MB デバイスの場合、現在登録されているプロバイダーのネットワークでパケット サービスのアタッチ/デタッチ操作を実行するミニポート ドライバーに指示します。
+description: OID_WWAN_PACKET_SERVICE は、GSM ベースのデバイスと CDMA ベースの MB デバイスの両方について、現在登録されているプロバイダーのネットワークに対して、パケットサービスのアタッチ/デタッチ操作を実行するようにミニポートドライバーに指示するために使用されます。
 ms.assetid: 97bb9324-8052-437c-baa5-fb9a8176c779
 ms.date: 04/04/2019
-keywords: -OID_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_PACKET_SERVICE ネットワークドライバー
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 96229795d60683f4185809b5ba47ee8f73b0604e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee44aacaab4fdae455f57036c0171e975ff1fa31
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360784"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843823"
 ---
-# <a name="oidwwanpacketservice"></a>OID\_WWAN\_パケット\_サービス
+# <a name="oid_wwan_packet_service"></a>OID\_WWAN\_パケット\_サービス
 
 
-OID\_WWAN\_パケット\_サービスを使用すると、GSM ベースし、CDMA ベースの両方の MB デバイスの場合、現在登録されているプロバイダーのネットワークでパケット サービスのアタッチ/デタッチ操作を実行するミニポート ドライバーに指示します。 パケット サービスのアタッチ/デタッチ状態だけでなくこの OID を使用して、データ クラスの可用性と現在使用されているデータ クラス情報を決定します。
+OID\_WWAN\_パケット\_サービスを使用して、GSM ベースのデバイスと CDMA ベースの MB デバイスの両方について、現在登録されているプロバイダーのネットワークでパケットサービスのアタッチ/デタッチアクションを実行するようにミニポートドライバーに指示します。 この OID は、パケットサービスのアタッチ/デタッチの状態に加えて、データクラスの可用性と現在使用されているデータクラスの情報を決定するために使用されます。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)状態通知を含む、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)または要求のクエリ セットの完了に関係なく、現在のパケット サービス状態に関する情報を指定する構造体。
+ミニポートドライバーは、セットおよびクエリ要求を非同期的に処理し、最初に NDIS\_\_状態を返し、元の要求に必要な\_を示し、その後、 [**ndis\_ステータス\_WWAN\_パケットに送信する必要があり @no**](ndis-status-wwan-packet-service.md)set 要求またはクエリ要求の完了に関係なく現在のパケットサービスの状態に関する情報を提供する[**NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)構造を含む、サービス状態通知.
 
-呼び出し元のパケット サービスの現在の状態を設定する要求を提供する[ **NDIS\_WWAN\_設定\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)構造体を適切な情報のミニポート ドライバー。
+現在のパケットサービスの状態を設定するように要求している呼び出し元は、 [**NDIS\_WWAN\_\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)構造をミニポートドライバーに設定し、適切な情報を提供します。
 
 <a name="remarks"></a>注釈
 -------
 
-参照してください[WWAN パケット サービスのアタッチ操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)詳細については、この OID を使用します。
+この OID の使用方法の詳細については、「 [WWAN パケットサービスのアタッチ操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)」を参照してください。
 
-ミニポート ドライバーは、処理するときに、プロバイダーのネットワークにアクセスできるクエリまたはの集合演算、Subscriber Identity Module (SIM カード) にアクセスしないでください。
+ミニポートドライバーは、クエリまたはセット操作を処理するときにプロバイダーネットワークにアクセスできますが、サブスクライバー Id モジュール (SIM カード) にはアクセスできません。
 
-CDMA ベースのデバイスがこれを使用して機会として可能であれば、ネットワーク リソースの割り当てを解放します。
+CDMA ベースのデバイスは、可能であれば、これをネットワークリソースの割り当てを解放する機会として使用する必要があります。
 
-SIM カードの中には、パケットのドメインと回線交換ドメイン以外でのみ登録する MB デバイスが有効にします。 データの呼び出しを終了、VAN UI 送信 OID\_WWAN\_パケット\_パケット サービスをデタッチするサービス セットの要求。 これにより、パケットのドメインから切断する MB デバイスです。 MB デバイスのネットワークから登録を解除し、電力には、モードを保存します。 その結果、デバイスは、登録を解除する、結果として、VAN UI が表示されなくなり、再起動にのみ復元できます。 このシナリオでミニポート ドライバーは、MB デバイスをこのようなモードに設定しなくても正の値のデータを返すことによって、パケットのアタッチ/デタッチ操作を偽装する必要があります。
+一部の SIM カードを使用すると、MB デバイスは、サーキットスイッチドメインではなく、パケットドメインにのみ登録できます。 データ呼び出しが終了すると、VAN UI は OID\_WWAN\_パケット\_サービスセット要求を送信してパケットサービスをデタッチします。 これにより、MB デバイスがパケットドメインから切断されます。 MB デバイスはネットワークから登録解除され、省電力モードになります。 その結果、デバイスは、登録が解除された結果として VAN UI から消え、再起動することによってのみ回復できます。 このシナリオでは、ミニポートドライバーは、MB デバイスをこのようなモードに設定せずに正のデータを返すことにより、パケットのアタッチ/デタッチ操作をスプーフィングする必要があります。
 
-パケット アタッチをサポートしていないテクノロジ、ミニポート ドライバーは MB サービス コンテキストのアクティブ化を続行することを把握できるようにする、接続状態を偽装する必要があります。 ミニポート ドライバー セット OID のスプーフィングもする必要があります\_WWAN\_パケット\_ミニポート ドライバーでのサービス要求します。 ミニポート ドライバーに送信する必要があります[ **NDIS\_状態\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)通知クエリ操作と要請していません。イベント。 デバイスのパケット サービスの状態に設定されていない場合、ミニポート ドライバーの PDP アクティブ化が失敗する*WwanPacketServiceStateAttached*します。
+パケット接続をサポートしていないテクノロジの場合、ミニポートドライバーは、コンテキストのアクティブ化を続行できることを MB サービスに通知するために、接続状態を偽装する必要があります。 また、ミニポートドライバーは、ミニポートドライバーで\_パケット\_サービス要求の OID\_設定します。 ミニポートドライバーは、クエリ操作および要請されていないイベントに対して、 [ **\_パケット\_サービスの通知\_NDIS\_ステータス**](ndis-status-wwan-packet-service.md)を送信する必要があります。 デバイスパケットサービスの状態が*Wwanpacketservicestateattached*設定されていない場合、ミニポートドライバーは PDP のアクティブ化を失敗させる必要があります。
 
-コンテキストのアクティブ化では、パケット サービスの状態に到達するまで MB サービスは続行されません*WwanPacketServiceStateAttached*します。
+この MB サービスは、パケットサービスの状態が*Wwanpacketservicestateattached*達しない限り、コンテキストのアクティブ化を続行できません。
 
 ### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
-この OID の新しいリビジョン 2 は、Windows 10、バージョンが 1903 以降はサポートされています。 拡張機能をモデムが現在 5 G で動作周波数の範囲クエリをホストできるようにします。
+この OID の新しいリビジョン2は、Windows 10 バージョン1903以降でサポートされています。 この拡張機能により、ホストは、5G で現在動作している周波数範囲に対してクエリを実行できるようになります。
 
-ホストは、いつでも拡張パケット サービス状態情報を照会できます。 応答では、リビジョン 2 がある 2 つの新しいフィールドを除いてリビジョン 1 の場合と同じです。
+ホストは、拡張パケットサービスの状態情報をいつでも照会できます。 この応答はリビジョン1と同じですが、リビジョン2には2つの新しいフィールドがあります。
 
-モデムは、5 G ドメインに登録されて、通信事業者の 5 G 周波数の範囲が返されます。 複数の 5 G 通信事業者が存在しない場合は、すべての有効な範囲が返されます。
+モデムが5G ドメインに登録されている場合は、通信事業者の 5G frequency 範囲が返されます。 複数の 5G carrier が存在する場合は、すべての有効な範囲が返されます。
 
-5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
+5G data クラスのサポートの詳細については、「 [MB 5G データクラスのサポート](mb-5g-data-class-support.md)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -58,11 +58,11 @@ SIM カードの中には、パケットのドメインと回線交換ドメイ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -70,11 +70,11 @@ SIM カードの中には、パケットのドメインと回線交換ドメイ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)
+[**NDIS\_WWAN\_\_パケット\_サービスの設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)
 
-[**NDIS\_状態\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)
+[**NDIS\_ステータス\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)
 
-[WWAN パケット サービス アタッチの操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)
+[WWAN パケットサービスのアタッチ操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)
 
  
 

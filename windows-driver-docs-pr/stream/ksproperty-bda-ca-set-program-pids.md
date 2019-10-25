@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_設定\_プログラム\_PID
-description: クライアントを使用して、KSPROPERTY\_BDA\_CA\_設定\_プログラム\_PID パケット識別子の一覧を特定のプログラムで設定します。
+title: KSK プロパティ\_BDA\_CA\_設定\_プログラム\_PID
+description: クライアントは、KSK プロパティ\_BDA\_CA を使用\_\_プログラム\_PID を設定して、特定のプログラムのパケット識別子の一覧を設定します。
 ms.assetid: 5cc049f7-df97-4739-8ec4-22ab646781a6
 keywords:
-- KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS ストリーミング メディア デバイス
+- KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d15d6d1cac90709fa45414ace31a5f8f223065a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd6131bbc58139e9c0866d91d1ef032469938202
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364892"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842157"
 ---
-# <a name="kspropertybdacasetprogrampids"></a>KSPROPERTY\_BDA\_CA\_設定\_プログラム\_PID
+# <a name="ksproperty_bda_ca_set_program_pids"></a>KSK プロパティ\_BDA\_CA\_設定\_プログラム\_PID
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_CA\_設定\_プログラム\_PID パケット識別子の一覧を特定のプログラムで設定します。
+クライアントは、KSK プロパティ\_BDA\_CA を使用\_\_プログラム\_PID を設定して、特定のプログラムのパケット識別子の一覧を設定します。
 
 ## <span id="ddk_ksproperty_bda_ca_set_program_pids_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364892"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364892"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BDA_PROGRAM_PID_LIST</p></td>
@@ -64,9 +64,9 @@ ms.locfileid: "67364892"
 <a name="remarks"></a>注釈
 -------
 
-BDA\_プログラム\_PID\_リスト構造体には、パケットの識別子を指定したプログラムの一覧が含まれています。
+BDA\_プログラム\_PID\_LIST 構造体には、指定したプログラムのパケット識別子の一覧が含まれています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ BDA\_プログラム\_PID\_リスト構造体には、パケットの識別子�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,11 +85,11 @@ BDA\_プログラム\_PID\_リスト構造体には、パケットの識別子�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_プログラム\_PID\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_program_pid_list)
+[**BDA\_プログラム\_PID\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_program_pid_list)
 
-[**KSEVENT\_BDA\_プログラム\_フロー\_状態\_CHANGED**](ksevent-bda-program-flow-status-changed.md)
+[**KSEVENT\_BDA\_プログラム\_フロー\_状態\_変更されました**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

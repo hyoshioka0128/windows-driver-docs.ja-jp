@@ -1,9 +1,9 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_EXCLUSIVELOCK\ ルーチン
-description: MRxLowIOSubmit\ LOWIO\_OP\_EXCLUSIVELOCK\ ルーチンは、ネットワークのミニ リダイレクターが、ファイル オブジェクトの排他ロックを開くことを要求する RDBSS によって呼び出されます。
+title: MRxLowIOSubmit \ LOWIO\_OP\_EXCLUSIVELOCK \ ルーチン
+description: MRxLowIOSubmit \ LOWIO\_OP\_EXCLUSIVELOCK \ ルーチンは RDBSS によって呼び出され、ネットワークミニリダイレクターがファイルオブジェクトの排他ロックを開くことを要求します。
 ms.assetid: 7f6613d1-63fb-4505-966d-155dc2b80ffe
 keywords:
-- MRxLowIOSubmit LOWIO_OP_EXCLUSIVELOCK ルーチン インストール可能なファイル システム ドライバー
+- MRxLowIOSubmit LOWIO_OP_EXCLUSIVELOCK ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bce00e566709355985b92f2ddd33cd593207daa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c415a76228751be395b17ab4a46f447f438ceb7b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370098"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841106"
 ---
-# <a name="mrxlowiosubmitlowioopexclusivelock-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]ルーチン
+# <a name="mrxlowiosubmitlowio_op_exclusivelock-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\] ルーチン
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)を要求できるネットワークのミニ リダイレクター オープン、ファイル オブジェクトの排他ロック。
+*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチンは、ネットワークミニリダイレクターがファイルオブジェクトに対して排他ロックを開くように要求するために[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK](
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* は正常に完了したか、次のいずれかの適切な NTSTATUS 値を\_返します。
 
 <table>
 <colgroup>
@@ -68,23 +68,23 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>要求を完了するリソースの不足が発生しました。</p></td>
+<td align="left"><p>要求を完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>無効な応答は、リモート サーバーから受信しました。</p></td>
+<td align="left"><p>リモートサーバーから無効な応答を受信しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>無効なパラメーターがで指定された<em>RxContext</em>します。</p></td>
+<td align="left"><p><em>RxContext</em>で無効なパラメーターが指定されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_LINK_FAILED</strong></td>
-<td align="left"><p>要求を完了するリモート サーバーへの再接続に失敗しました。</p></td>
+<td align="left"><p>リモートサーバーに再接続して要求を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>このルーチンが実装されていません。</p></td>
+<td align="left"><p>このルーチンは実装されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_SHARING_VIOLATION</strong></td>
@@ -102,29 +102,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* 受信に応答する[ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md) IRP のコードを少し使用して要求\_MN\_場合ロック**IrpSp -&gt;フラグ**が、SL\_排他\_ロック ビットが設定されます。
+RDBSS は、 *MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* を呼び出します。これに応じて、IRP\_[**MJ\_ロック\_制御**](irp-mj-lock-control.md)要求が発生した場合**に応答します。IrpSp-&gt;フラグ**には、SL\_排他\_ロックビットが設定されています。
 
-呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* 、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、*RxContext*パラメーター。
+*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* を呼び出す前に、RDBSS は、 *RxContext*パラメーターが指す RX\_CONTEXT 構造体の次のメンバーを変更します。
 
-**LowIoContext.Operation** LOWIO にメンバーが設定されている\_OP\_EXCLUSIVELOCK します。
+**Lowiocontext. Operation**メンバーは lowio\_OP\_EXCLUSIVELOCK に設定されています。
 
-**LowIoContext.ResourceThreadId**メンバー RDBSS で操作を開始したプロセスのスレッドに設定されます。
+**Lowiocontext threadid**メンバーは、RDBSS で操作を開始したプロセスのスレッドに設定されます。
 
-**LowIoContext.ParamsFor.Locks.ByteOffset**メンバーの値に設定されます**IrpSp -&gt;Parameters.LockControl.ByteOffset.QuadPart**します。
+QuadPart の値には、 **Lowiocontext** ... byteoffset メンバーは、 **irpsp-&gt;パラメーター**の値に設定されます。
 
-**LowIoContext.ParamsFor.Locks.Key**メンバーの値に設定されます**IrpSp -&gt;Parameters.LockControl.Key**します。
+**Lowiocontext. Paramsfor Locks. キー**メンバーは、 **irpsp-&gt;Parameters. lockcontrol. key**の値に設定されます。
 
-**LowIoContext.ParamsFor.Locks.Flags**メンバーの値に設定されます**IrpSp -&gt;フラグ**します。
+**Lowiocontext. Locks. flags**メンバーは、 **irpsp-&gt;フラグ**の値に設定されます。
 
-**LowIoContext.ParamsFor.Locks.Length**メンバーの値に設定されます**IrpSp -&gt;Parameters.LockControl.Length.QuadPart**します。
+QuadPart**メンバーには、** irpsp-&gt;パラメーターの値が設定されています. **Lockcontrol. length.** 。
 
-**LowIoContext.Operation** 、RX のメンバー\_CONTEXT 構造体を低の I/O 操作を実行するを指定します。 ネットワークのミニ リダイレクターで同じルーチンを指すため、低い I/O ルーチンのいくつかのことがこの**LowIoContext.Operation**メンバーは、要求は低の I/O 操作を区別するために使用することができます。 たとえば、ファイルのロックに関連するすべての I/O 呼び出しは、ネットワーク ミニリダイレクターで同じ低い I/O ルーチンを呼び出す可能性があり、そのルーチンを使用できます、 **LowIoContext.Operation**ロックとを区別し、ロックを解除するにはメンバー要求される演算。
+RX\_コンテキスト構造の**Lowiocontext 操作**メンバーは、実行する低 i/o 操作を指定します。 低 i/o ルーチンのいくつかは、ネットワークミニリダイレクターで同じルーチンを指すことができます。これは、この**Lowiocontext 操作**のメンバーが、要求された低 i/o 操作を区別するために使用できるためです。 たとえば、ファイルロックに関連するすべての i/o 呼び出しで、ネットワークミニリダイレクターで同じ低 i/o ルーチンを呼び出すことができ、そのルーチンは**Lowiocontext. operation**メンバーを使用して、要求されたロック操作とロック解除操作を区別できます。
 
-場合、 *MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチン完了までに時間がかかることができます、ネットワークのミニ リダイレクター ドライバーが前に、FCB 構造をリリースする必要がありますネットワーク通信を開始しています。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。 中に、 *MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RX のメンバー\_コンテキスト RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。
+*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチンが完了するまでに時間がかかる場合は、ネットワーク通信を開始する前に、ネットワークミニリダイレクタードライバーが FCB 構造体を解放する必要があります。 FCB 構造体は、 [**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)を呼び出すことによって解放できます。 *MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* ルーチンが処理されている間、RX\_コンテキストの**lowiocontext**スレッドメンバーは、プロセスのスレッドを示すことが保証されます。RDBSS で操作を開始しました。
 
-**LowIoContext.ResourceThreadId** RX のメンバー\_別のスレッドの代わり FCB 構造体を解放するコンテキストを使用できます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。
+RX\_コンテキストの**Lowiocontext threadid**メンバーを使用すると、別のスレッドに代わって FCB 構造体を解放できます。 非同期ルーチンが完了すると、初期スレッドから取得された FCB 構造体が解放されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -139,7 +139,7 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* 受信に応答�
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -151,19 +151,19 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]* 受信に応答�
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_\_\_ディレクトリの変更を通知\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\_複数\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

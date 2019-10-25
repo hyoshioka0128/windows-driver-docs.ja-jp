@@ -3,19 +3,19 @@ title: 中間ドライバー経由のネットワーク データの転送
 description: 中間ドライバー経由のネットワーク データの転送
 ms.assetid: 90759322-810b-47fd-896c-465c96be4cdd
 keywords:
-- 中間ドライバー WDK ネットワーク、データの送信
-- NDIS 中間ドライバー WDK、データの送信
-- ネットワーク データを送信
-- WDK NDIS 中間のデータを転送します。
-- WDK NDIS 中間のデータを転送します。
+- 中間ドライバー WDK ネットワーク、転送データ
+- NDIS 中間ドライバー WDK、データの転送
+- ネットワークデータの転送
+- データ転送 WDK NDIS 中間
+- データの転送 (WDK)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62ac6cad007a0af7fc8f9d836207369250e3764b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3f5fe24a256ed82473cd2cb40f71f7e3fe88d25
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368452"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841774"
 ---
 # <a name="transmitting-network-data-through-an-intermediate-driver"></a>中間ドライバー経由のネットワーク データの転送
 
@@ -23,11 +23,11 @@ ms.locfileid: "67368452"
 
 
 
-説明したよう[ミニポート ドライバーとして中間のドライバーを登録する](registering-an-intermediate-driver-as-a-miniport-driver.md)、中間のドライバーを提供する必要があります、 [ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)関数と、登録[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。 *MiniportSendNetBufferLists*関数は、着信を転送できる[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)呼び出して構造[**NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)場合、ドライバーはコネクションレスの下端。 *MiniportSendNetBufferLists* NET の一覧を送信できる\_バッファー\_リストの構造体を受け取る**NdisSendNetBufferLists**基になるミニポートの機能に関係なくドライバー。
+「[中間ドライバーをミニポートドライバーとして登録](registering-an-intermediate-driver-as-a-miniport-driver.md)する」で説明されているように、中間ドライバーは、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)に登録するときに[*miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数を提供する必要があります。 *Miniportsendnetbufferlists*関数は、ドライバーにコネクションレスエッジがある場合に[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)を呼び出すことによって、受信する[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体を転送できます。 *Miniportsendnetbufferlists*は、基になるミニポートドライバーの機能に関係なく、 **NdisSendNetBufferLists**によって受信される、NET\_BUFFER\_list 構造体の一覧を送信できます。
 
-*MiniportSendNetBufferLists* NET の一覧を受信\_バッファー\_リストの構造体の後続の呼び出し元によって定義された順序で配置された**NdisSendNetBufferLists**します。 ほとんどの場合、中間のドライバーが保持この順序 NET の受信の配列が渡されます\_バッファー\_基になるミニポート ドライバーにリストの構造体。 基になるドライバーに渡す前に、ネットワーク データでデータを変更する中間のドライバーでは、一覧を並べ替えることができます。
+*Miniportsendnetbufferlists*は、 **NdisSendNetBufferLists**の呼び出し元によって決定された順序で配置された、NET\_BUFFER\_list 構造体の一覧を受け取ります。 ほとんどの場合、中間ドライバーは、この順序を維持する必要があります。これにより、受信した NET\_BUFFER\_LIST 構造体が、基になるミニポートドライバーに渡されます。 ネットワークデータ内のデータを基になるドライバーに渡す前に変更する中間ドライバーは、リストの順序を変更できます。
 
-NDIS の順序を常に維持[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)ポインターへのリンク リストとして渡された構造体**NdisSendNetBufferLists**. 基になるミニポート ドライバーは、そのリストに渡されるも想定しています。 その*MiniportSendNetBufferLists*関数では、同じ順序でネットワーク データを送信する必要があることを意味します。
+NDIS では、 **NdisSendNetBufferLists**にリンクリストとして渡されるように、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体ポインターの順序は常に保持されます。 また、基になるミニポートドライバーは、 *Miniportsendnetbufferlists*関数に渡されるリストが同じ順序でネットワークデータを送信する必要があることを前提としています。
 
  
 

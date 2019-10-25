@@ -4,15 +4,15 @@ description: BDA ミニドライバーの起動
 ms.assetid: c71e1483-756c-4e98-a413-64ff02ee4a9b
 keywords:
 - BDA ミニドライバー WDK AVStream、開始
-- BDA ミニドライバー WDK AVStream の開始
+- BDA ミニドライバー WDK AVStream を開始しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e09e5381a25b1a3e8ffadb6a680aa46052f604
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bb26d511dd464ceb3213af7d50252872355c6104
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377846"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837699"
 ---
 # <a name="starting-a-bda-minidriver"></a>BDA ミニドライバーの起動
 
@@ -20,18 +20,18 @@ ms.locfileid: "67377846"
 
 
 
-BDA デバイスの運用開始時に、プラグ アンド プレイ (PnP) マネージャーのディスパッチ[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)します。 AVStream クラスは、BDA デバイスに関連付けられた BDA ミニドライバーの開始ルーチンを呼び出します。 この開始ルーチン レジストリからデバイスに関する情報を取得、デバイスに関する情報を設定およびを呼び出して、 [ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)に関数をサポートします。
+BDA デバイスが動作を開始すると、プラグアンドプレイ (PnP) マネージャーは、 [ **\_デバイスの開始\_、IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)をディスパッチします。 AVStream クラスは、BDA デバイスに関連付けられている BDA ミニドライバーの開始ルーチンを呼び出します。 この開始ルーチンは、レジストリからデバイスに関する情報を取得し、デバイスに関する情報を設定した後、 [**Bdacreatefilterfactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)サポート関数を呼び出して次のことを行います。
 
--   最初のフィルター記述子からデバイスのフィルター ファクトリの作成 ([**KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)) デバイス。 最初のフィルター記述子は、フィルターおよび入力ピンのディスパッチと自動化のテーブルを参照します。 参照してください[ディスパッチ テーブルを作成](creating-dispatch-tables.md)と[Automation テーブルを定義する](defining-automation-tables.md)詳細についてはします。
+-   デバイスの初期フィルター記述子 ([**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)) からデバイスのフィルターファクトリを作成します。 初期フィルター記述子は、フィルターおよび入力ピンのディスパッチテーブルとオートメーションテーブルを参照します。 詳細については、「[ディスパッチテーブルを作成する](creating-dispatch-tables.md)」および「[オートメーションテーブルを定義](defining-automation-tables.md)する」を参照してください。
 
--   フィルター ファクトリに関連付ける、 [ **BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template)構造体。 この構造体は、デバイスと、入力と出力ピンの考えられるペアの一覧のテンプレートのフィルター記述子を参照します。 この記述子と一覧がさらに参照します。
-    -   ネットワーク プロバイダーが BDA フィルターのトポロジの決定に使用できる静的テンプレート構造体。
-    -   ノードと、フィルターを接続する方法と共に BDA フィルターの pin。
-    -   ネットワーク プロバイダーが作成し、フィルターのインスタンスを閉じるに使用できるルーチン。
-    -   ネットワーク プロバイダーは、BDA フィルターの操作に使用できる静的テンプレート構造体。
--   BDA で指定されている静的テンプレート構造体を登録\_フィルター\_ライブラリは、既定の BDA ミニドライバーのプロパティとメソッドの処理を提供できるように、BDA でテンプレートがライブラリをサポートします。
+-   フィルターファクトリを[**BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_filter_template)構造に関連付けます。 この構造体は、デバイスのテンプレートフィルター記述子と、使用可能な入力ピンと出力ピンのペアの一覧を参照します。 次に、この記述子とリストのリファレンスを示します。
+    -   ネットワークプロバイダーが BDA フィルターのトポロジを決定するために使用できる静的テンプレート構造。
+    -   ノードとは、フィルターを接続するために使用できる方法と共に、BDA フィルターをピン留めします。
+    -   フィルターインスタンスを作成して閉じるためにネットワークプロバイダーが使用できるルーチン。
+    -   ネットワークプロバイダーが BDA フィルターを操作するために使用できる静的テンプレート構造。
+-   Bda\_FILTER\_テンプレートによって指定された静的なテンプレート構造を BDA サポートライブラリと共に登録して、ライブラリが BDA ミニドライバーのプロパティとメソッドの既定の処理を提供できるようにします。
 
-次のコード スニペットの例を示します、デバイスの最初のフィルター記述子を**BdaCreateFilterFactory**フィルター ファクトリとして設定します。
+次のコードスニペットは、フィルターファクトリとして**Bdacreatefilterfactory**セットを設定するデバイスの初期フィルター記述子の例を示しています。
 
 ```cpp
 const KSFILTER_DESCRIPTOR    InitialTunerFilterDescriptor;
@@ -67,7 +67,7 @@ DEFINE_KSFILTER_DESCRIPTOR(InitialTunerFilterDescriptor)
 };
 ```
 
-次のコード スニペットでは、初期化済みのフィルターによって公開されている最初の pin 記述子の配列の例を示します。 ネットワーク プロバイダーには、ネットワーク プロバイダーは、そのフィルターを構成する前に、このような配列を使用してフィルターを初期化します。 ただし、初期化済みのフィルターを構成するときに、ネットワーク プロバイダーを選択しますピンが参照されている、BDA のフィルター記述子のメンバーへのポインターで\_フィルター\_テンプレート構造体。 参照してください[BDA フィルターを構成する](configuring-a-bda-filter.md)詳細についてはします。
+次のコードスニペットは、初期化されたフィルターによって公開される初期 pin 記述子の配列の例を示しています。 ネットワークプロバイダーは、このような配列を使用してフィルターを初期化してから、ネットワークプロバイダーがそのフィルターを構成します。 ただし、初期化されたフィルターを構成する場合、ネットワークプロバイダーは、BDA\_フィルター\_テンプレート構造のフィルター記述子メンバーへのポインターで参照されているピンを選択します。 詳細について[は、「BDA フィルターの構成](configuring-a-bda-filter.md)」を参照してください。
 
 ```cpp
 //
@@ -109,9 +109,9 @@ InitialPinDescriptors[] =
 };
 ```
 
-初期化済みのフィルターが 1 つのまたは複数の入力ピンが公開されていることに注意してくださいように Microsoft DirectShow **IFilterMapper2**または**IFilterMapper**インターフェイスは、そのフィルターを見つけることができます。 これらの DirectShow インターフェイスについては、Microsoft Windows SDK ドキュメントを参照してください。
+初期化されたフィルターには1つ以上の入力ピンが公開されていなければならないことに注意してください。これにより、Microsoft DirectShow **IFilterMapper2**または**ifiltermapper**インターフェイスでそのフィルターを見つけることができます これらの DirectShow インターフェイスの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-次のコード スニペットは、BDA の例を示します\_フィルター\_テンプレートの構造と関連構造と配列。
+次のコードスニペットは、BDA\_フィルター\_テンプレート構造と関連する構造体および配列の例を示しています。
 
 ```cpp
 const KSFILTER_DESCRIPTOR  TemplateTunerFilterDescriptor;

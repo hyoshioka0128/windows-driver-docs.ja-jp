@@ -3,16 +3,16 @@ title: NDIS 6.20 のメディア拡張性
 description: NDIS 6.20 のメディア拡張性
 ms.assetid: abc240da-be6e-4a7a-a9d1-186633c5bfd3
 keywords:
-- NDIS 6.20 WDK、メディアの機能拡張
-- メディアの機能拡張 WDK NDIS 6.20 が動作
+- NDIS 6.20 WDK、メディア拡張
+- メディア拡張機能 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7364adcd5a0eccf5175322d0941b74b0a0bdd8a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e2fe7f34974a03acb9213717be402e32ecd8594
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844265"
 ---
 # <a name="media-extensibility-in-ndis-620"></a>NDIS 6.20 のメディア拡張性
 
@@ -20,15 +20,15 @@ ms.locfileid: "67373987"
 
 
 
-NDIS 6.20 が動作には、追加のメディア拡張機能が導入されています。 これは、ドライバー スタックのネットワーク層では、独立した複数のメディアがあります。
+NDIS 6.20 では、追加のメディア拡張機能が導入されています。 つまり、ドライバースタックのネットワーク層は、よりメディアに依存しません。
 
-これらの機能では、NDIS 6.20 が動作し、後では、IEEE 802.3 を実装していないドライバーを実装するために必要なコードの複雑さを軽減します。 さらに、これらの非 802.3 実装は、ARP と DHCP を実装するためにはありません。
+NDIS 6.20 以降のこれらの機能により、IEEE 802.3 を実装していないドライバーの実装に必要なコードの複雑さが軽減されます。 また、これらの IEEE 802.3 以外の実装では、ARP と DHCP を実装する必要はありません。
 
-NDIS 6.20 以降提供*生 IP*フレームの生 IP (NdisMediumIP) の新しいメディアの種類をサポートします。 たとえば、NDIS WWAN サポートは、生 IP を使用します。
+NDIS 6.20 以降では、raw ip (NdisMediumIP) の新しいメディアの種類を使用して、*生の ip*フレームのサポートを提供します。 たとえば、NDIS WWAN サポートは生の IP を使用します。
 
-NDIS 6.20 が動作には、バンド (OOB) データを使用して特定のメディアのサポートの強化が導入されています。 特定のメディア情報には、Microsoft を代入するタグがあります。 NDIS 6.20 以降では、複数のメディア固有の情報タグをサポートします。
+NDIS 6.20 では、メディア固有の帯域外 (OOB) データのサポートが強化されています。 メディア固有の情報には、Microsoft によって割り当てられるタグがあります。 NDIS 6.20 以降では、複数のメディア固有の情報タグがサポートされています。
 
-メディア拡張機能の詳細については、メディア固有の情報の詳細については、次を参照してください[OID\_GEN\_物理\_MEDIUM\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium-ex)と[。**NDIS\_NBL\_メディア\_特定\_情報\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_nbl_media_specific_information_ex)します。
+メディア固有の情報の詳細については、メディア拡張機能の詳細については、「 [OID\_GEN\_物理\_MEDIUM\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium-ex)および[**NDIS\_NBL\_media\_特定の\_」を参照してください。情報\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_nbl_media_specific_information_ex)
 
  
 

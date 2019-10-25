@@ -4,27 +4,27 @@ description: MB ミニポート ドライバー エラー ログ
 ms.assetid: 57f83d03-29e5-4a20-8c0c-2d00954e7ccb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 318916f6d7cb1acd42bea89b5e43830823e495cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed3cfa5a7d5663a359f7aa8d411614789aaff63c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357794"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844287"
 ---
 # <a name="mb-miniport-driver-error-logging"></a>MB ミニポート ドライバー エラー ログ
 
 
-MB のミニポート ドライバーでは、次のチェックを実行する必要があります、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)などの関数。
+MB ミニポートドライバーは、次のように、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数で次のチェックを実行する必要があります。
 
--   MB ドライバー モデルをサポートするために必要な正しいデバイス ファームウェア バージョンが存在します。
+-   MB ドライバーモデルをサポートするために必要な正しいデバイスファームウェアバージョンが存在すること。
 
--   デバイスとの通信に使用可能な COM ポート。
+-   デバイスと通信するために使用できる COM ポート。
 
--   リソース競合はありません。
+-   リソースの競合はありません。
 
-NDIS を返す必要がありますミニポート ドライバーに必要なリソースの取得に失敗すると、\_状態\_その MiniportInitializeEx 関数からのリソース。 ミニポート ドライバーを呼び出す必要があります[ **NdisWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswriteerrorlogentry)エラーの詳細を Windows イベント ログに記録します。
+ミニポートドライバーが必要なリソースを取得できない場合は、MiniportInitializeEx 関数から NDIS\_STATUS\_リソースを返す必要があります。 ミニポートドライバーは、エラーの詳細を Windows イベントログに記録するために[**NdisWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiswriteerrorlogentry)を呼び出す必要があります。
 
-ミニポート ドライバーは、次の表の情報に従って NdisWriteErrorLogEntry (可変サイズの配列を ULONGs) への呼び出しの最後のパラメーターの最初の要素でエラー コードを指定する必要があります。
+ミニポートドライバーでは、次の表の情報に従って、NdisWriteErrorLogEntry (ULONGs の可変サイズの配列) の呼び出しで、最後のパラメーターの最初の要素にエラーコードを指定する必要があります。
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ NDIS を返す必要がありますミニポート ドライバーに必要な�
 <tbody>
 <tr class="odd">
 <td align="left"><p>WWAN_ERROR_UNSUPPORTED_FIRMWARE</p></td>
-<td align="left"><p>デバイスがサポートされていないファームウェア バージョンを実行します。</p></td>
+<td align="left"><p>デバイスは、サポートされていないファームウェアバージョンを実行しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WWAN_ERROR_COM_PORT_CONFLICT</p></td>
@@ -48,14 +48,14 @@ NDIS を返す必要がありますミニポート ドライバーに必要な�
 </tr>
 <tr class="odd">
 <td align="left"><p>WWAN_ERROR_RESOURCE_CONFLICT_OTHER</p></td>
-<td align="left"><p>リソース競合します。</p></td>
+<td align="left"><p>その他のリソースの競合。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ミニポート ドライバーでは、可変サイズの配列の要素の残りの部分を他の値を格納できます。
+ミニポートドライバーは、可変サイズの配列の残りの要素に他の値を設定できます。
 
  
 

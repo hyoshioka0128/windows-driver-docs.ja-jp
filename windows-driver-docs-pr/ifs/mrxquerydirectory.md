@@ -1,9 +1,9 @@
 ---
 title: MRxQueryDirectory ルーチン
-description: MRxQueryDirectory ルーチンによって呼び出されますを要求できる RDBSS ネットワーク ミニリダイレクター クエリについては、ファイルのディレクトリで。
+description: MRxQueryDirectory ルーチンは RDBSS によって呼び出され、ネットワークミニリダイレクターがファイルディレクトリに関する情報を照会するように要求します。
 ms.assetid: 26c7c7fa-7dfa-43fb-a1db-cfc2fc40b969
 keywords:
-- MRxQueryDirectory ルーチン インストール可能なファイル システム ドライバー
+- MRxQueryDirectory ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf42a7d4d4f02646f91c2aaeb70b73d2e74c568
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef35dd5a37265c13b45a73a6c6964064d87216ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841092"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory ルーチン
 
 
-*MRxQueryDirectory*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイルのディレクトリの情報を照会することを要求します。
+*MRxQueryDirectory*ルーチンは[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出され、ネットワークミニリダイレクターがファイルディレクトリに関する情報を照会するように要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxQueryDirectory(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxQueryDirectory*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxQueryDirectory*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,27 +64,27 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>リモート サーバーから、無効なファイル情報バッファーを受け取りましたまたは返されたファイル名の長さが許容最大長を超えています。</p></td>
+<td align="left"><p>リモートサーバーから無効なファイル情報バッファーを受信したか、返されたファイル名の長さが許容最大長を超えました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>無効な FileInformationClass がで指定された、 <strong>Info.FileInformationClass</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーター。</p></td>
+<td align="left"><p>RxContext パラメーターによって示されている RX_CONTEXT 構造体の <strong>クラス</strong>メンバーに無効な fileinformationclass が指定されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_LINK_FAILED</strong></td>
-<td align="left"><p>クエリ完了までのリモート サーバーへの再接続に失敗しました。</p></td>
+<td align="left"><p>リモートサーバーに再接続してクエリを完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NO_SUCH_FILE</strong></td>
-<td align="left"><p>すべてのエントリを検索するクエリが失敗しました。</p></td>
+<td align="left"><p>クエリでエントリが見つかりませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_SHARING_VIOLATION</strong></td>
@@ -98,29 +98,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-呼び出しの前に*MRxQueryDirectory*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxQueryDirectory*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**Info.FileInformationClass**に設定されているメンバー **IrpSp -&gt;Parameters.QueryDirectory.FileInformationClass**します。
+**Info. fileinformationclass**メンバーは**irpsp-&gt;Parameters. Querydirectory. fileinformationclass**に設定されます。
 
-**Info.Buffer**メンバーは、I/O 要求パケットからユーザー バッファーに設定されます。 このバッファーが RDBSS によってロックされて既に必要な場合。
+**情報バッファー**のメンバーは、i/o 要求パケットからのユーザーバッファーに設定されます。 このバッファーは、必要に応じて、RDBSS によって既にロックされています。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryDirectory.Length**します。
+**LengthRemaining**メンバーは**irpsp-&gt;Parameters. Querydirectory. Length**に設定されています。
 
-**QueryDirectory.FileIndex**に設定されているメンバー **IrpSp -&gt;Parameters.QueryDirectory.FileIndex**します。
+**Querydirectory. fileindex**メンバーは**irpsp-&gt;Parameters. Querydirectory. fileindex**に設定されます。
 
-**QueryDirectory.RestartScan**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_再起動\_ビットをスキャンします。
+**Irpsp-&gt;フラグ**に SL\_再起動\_スキャンビットがある場合、 **RestartScan**メンバーは0以外に設定されます。
 
-**QueryDirectory.ReturnSingleEntry**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_返す\_単一\_ビットにエントリ。
+**Irpsp-&gt;フラグ**に SL\_\_単一\_エントリビットが返される場合、**このメンバーは0以外の値**に設定されます。
 
-**QueryDirectory.IndexSpecified**メンバーが 0 以外の値に設定されている**IrpSp -&gt;フラグ**が、SL\_インデックス\_ビットを指定します。
+**Irpsp-&gt;フラグ**に SL\_インデックス\_指定されたビットがオンになっている場合、**指定さ**れたメンバーは0以外に設定されます。
 
-**QueryDirectory.InitialQuery**メンバーが 0 以外の値に設定されている**UnicodeQueryTemplate.Buffer**関連付けられている FOBX のメンバーが**NULL**と**フラグ** FOBX のメンバーには、FOBX はありません。\_フラグ\_一致\_ですべてのビット。
+関連する FOBX の**UnicodeQueryTemplate**メンバーが NULL で、Fobx の**Flags**メンバーが fobx\_フラグ\_一致しない場合、 **querydirectory. initialquery**メンバーは0以外の**値**に設定され\_ALL bit on。
 
-ワイルドカード クエリ ("\*.\*"など)、RDBSS は設定、 **UnicodeQueryTemplate.Buffer**ワイルドカード クエリに関連付けられている FOBX のメンバーが渡されます。
+ワイルドカードクエリ ("\*。\*"など) の場合、RDBSS は、関連付けられている FOBX の**UnicodeQueryTemplate**メンバーを、渡されたワイルドカードクエリに設定します。
 
-場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryDirectory*、RDBSS は呼び出す[ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest) RX を渡す\_ワーカー キュー、ファイル システムのプロセス (FSP) による処理のための構造体。
+*MRxQueryDirectory*から返されたときに RX\_コンテキスト構造の**Postrequest**メンバーが**TRUE**の場合、RDBSS は[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)を呼び出して、によって処理するために rx\_コンテキスト構造をワーカーキューに渡します。ファイルシステムプロセス (FSP)。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -135,7 +135,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -143,7 +143,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryEaInfo**](mrxqueryeainfo.md)
 
@@ -167,7 +167,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

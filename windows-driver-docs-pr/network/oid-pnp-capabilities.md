@@ -1,21 +1,21 @@
 ---
 title: OID_PNP_CAPABILITIES
-description: OID_PNP_CAPABILITIES OID は、要求のネットワーク アダプターのウェイク アップ機能を返すミニポート ドライバーまたは中間ドライバーのウェイク アップ機能を返す、中間のドライバーを要求します。
+description: OID_PNP_CAPABILITIES OID は、ミニポートドライバーに対して、ネットワークアダプターのウェイクアップ機能を返すか、中間ドライバーのウェイクアップ機能を返すための中間ドライバーを要求します。
 ms.assetid: f2e3a867-d7d2-4d09-b84b-e8f8610b8535
 ms.date: 08/08/2017
-keywords: -OID_PNP_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_PNP_CAPABILITIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f536a86cfcbb8d9a0f95ef55191bdfba1bfee1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00e74bb683c85ca09deecb9190bfd741c459b663
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380847"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844042"
 ---
-# <a name="oidpnpcapabilities"></a>OID\_PNP\_機能
+# <a name="oid_pnp_capabilities"></a>OID\_PNP\_機能
 
 
-OID\_PNP\_機能の OID は、要求のネットワーク アダプターのウェイク アップ機能を返すミニポート ドライバーまたは中間のドライバーのウェイク アップ機能を返す、中間のドライバーを要求します。 ウェイク アップ機能として書式設定、 **NDIS\_PNP\_機能**構造体は、次のように定義されます。
+OID\_PNP\_機能 OID は、ネットワークアダプターのウェイクアップ機能を返すためにミニポートドライバーを要求します。または、中間ドライバーのウェイクアップ機能を返すための中間ドライバーを要求します。 ウェイクアップ機能は、次のように定義されている**NDIS\_PNP\_機能**の構造としてフォーマットされています。
 
 ```C++
     typedef struct _NDIS_PNP_CAPABILITIES {
@@ -27,15 +27,15 @@ OID\_PNP\_機能の OID は、要求のネットワーク アダプターのウ�
 
 
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
-<a href="" id="flags"></a>**フラグ**  
-**NDIS\_デバイス\_WAKE\_を\_を有効にします。**
+<a href="" id="flags"></a>**示す**  
+**NDIS\_デバイス\_ウェイク\_UP\_ENABLE**
 
-NDIS は、基になるミニポート ドライバーが 1 つまたは複数のウェイク アップ機能をサポートしている場合、このフラグを設定します。 プロトコル ドライバーには、基になるミニポート ドライバーがウェイク アップ機能を持つかどうかを決定するには、このフラグをテストできます。 ミニポート ドライバーでは、このフラグはアクセスしないでください。
+基になるミニポートドライバーが1つ以上のウェイクアップ機能をサポートしている場合、NDIS はこのフラグを設定します。 プロトコルドライバーは、このフラグをテストして、基になるミニポートドライバーにウェイクアップ機能があるかどうかを判断できます。 ミニポートドライバーがこのフラグにアクセスすることはできません。
 
 <a href="" id="wakeupcapabilities"></a>**WakeUpCapabilities**  
-**NDIS\_PM\_WAKE\_を\_機能**ミニポート ドライバーのネットワーク アダプターのウェイク アップ機能を指定する構造体。 **NDIS\_PM\_WAKE\_を\_機能**構造は次のように定義されます。
+ミニポートドライバーのネットワークアダプターのウェイクアップ機能を指定する**NDIS\_PM\_ウェイクアップ\_\_機能**の構造。 **NDIS\_PM\_ウェイク\_UP\_機能**の構造は、次のように定義されています。
 
 ```C++
 typedef struct _NDIS_PM_WAKE_UP_CAPABILITIES {
@@ -45,72 +45,72 @@ typedef struct _NDIS_PM_WAKE_UP_CAPABILITIES {
        } NDIS_PM_WAKE_UP_CAPABILITIES, *PNDIS_PM_WAKE_UP_CAPABILITIES;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 <a href="" id="minmagicpacketwakeup"></a>**MinMagicPacketWakeUp**  
-ミニポート ドライバーのネットワーク アダプターがマジック パケットの受信時にウェイク アップを通知デバイスの最下位の電源状態を指定します。 (A*マジック パケット*は受信側のネットワーク アダプターのイーサネット アドレスの 16 個の連続したコピーを含むパケットです)。デバイスの電源の状態は、次のいずれかとして指定[ **NDIS\_デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)値。
+ミニポートドライバーのネットワークアダプターがマジックパケットの受信時にウェイクアップを通知できる最も低いデバイス電源状態を指定します。 (*マジックパケット*は、受信側のネットワークアダプターのイーサネットアドレスの連続した16個のコピーを含むパケットです)。デバイスの電源状態は、次のいずれかの[**NDIS\_デバイス\_電源\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)の値として指定されます。
 
 <a href="" id="ndisdevicestateunspecified"></a>**NdisDeviceStateUnspecified**  
-ネットワーク アダプターがマジック パケット ウェイク アップの見逃しをサポートしていません。
+ネットワークアダプターはマジックパケットウェイクアップをサポートしていません。
 
 <a href="" id="ndisdevicestated0"></a>**NdisDeviceStateD0**  
-ネットワーク アダプターでは、デバイスの電源状態 D0 からマジック パケットのウェイク アップを通知できます。 D0 が完全に電源状態であるため、このウェイク アップ実行されませんが、実行時イベントとして使用できます。
+ネットワークアダプターは、デバイスの電源状態の D0 からのマジックパケットウェイクアップを通知できます。 D0 は完全な電力状態であるため、ウェイクアップは発生しませんが、実行時イベントとして使用できます。
 
 <a href="" id="ndisdevicestated1"></a>**NdisDeviceStateD1**  
-ネットワーク アダプターでは、デバイスの電源状態 D1 と D0 からマジック パケットのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの電源状態 D1 および D0 からのマジックパケットウェイクアップを通知できます。
 
 <a href="" id="ndisdevicestated2"></a>**NdisDeviceStateD2**  
-ネットワーク アダプターでは、デバイスの状態 D2、D1、および D0 からマジック パケットのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの状態 D2、D1、および D0 からのマジックパケットウェイクアップを通知できます。
 
 <a href="" id="ndisdevicestated3"></a>**NdisDeviceStateD3**  
-ネットワーク アダプターでは、デバイスの電源状態 D3、D2、D1、および D0 からマジック パケットのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの電源状態 D3、D2、D1、および D0 からのマジックパケットウェイクアップを通知できます。
 
-<a href="" id="minpatternwakeup"></a>**MinPatternWakeUp**  
-ミニポート ドライバーのネットワーク アダプターがプロトコル ドライバーで指定されたパターンを含むネットワーク フレームの受信時にウェイク アップのイベントを信号最低のデバイスの電源状態を指定します。 電源の状態は、次のいずれかとして指定[ **NDIS\_デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)値。
+<a href="" id="minpatternwakeup"></a>**Minpattern ウェイクアップ**  
+プロトコルドライバーによって指定されたパターンを含むネットワークフレームの受信時に、ミニポートドライバーのネットワークアダプターがウェイクアップイベントを通知できる最も小さいデバイスの電源状態を指定します。 電源状態は、次のいずれかの[**NDIS\_デバイス\_電源\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)の値として指定されます。
 
 <a href="" id="ndisdevicestateunspecified"></a>**NdisDeviceStateUnspecified**  
-ネットワーク アダプターでは、パターン マッチ ウェイク アップの見逃しはサポートしません。
+ネットワークアダプターは、パターン一致のウェイクアップをサポートしていません。
 
 <a href="" id="ndisdevicestated0"></a>**NdisDeviceStateD0**  
-ネットワーク アダプターでは、デバイスの電源状態 D0 からパターン マッチのウェイク アップを通知できます。 D0 が完全に電源状態であるため、このウェイク アップ実行されませんが、実行時イベントとして使用できます。
+ネットワークアダプターは、デバイスの電源状態の D0 からパターン一致のウェイクアップを通知できます。 D0 は完全な電力状態であるため、ウェイクアップは発生しませんが、実行時イベントとして使用できます。
 
 <a href="" id="ndisdevicestated1"></a>**NdisDeviceStateD1**  
-ネットワーク アダプターでは、D1 と D0 のデバイスの電源状態から、パターン マッチのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの電源状態 D1 と D0 からパターン一致のウェイクアップを通知できます。
 
 <a href="" id="ndisdevicestated2"></a>**NdisDeviceStateD2**  
-ネットワーク アダプターでは、デバイスの電源状態 D2、D1、および D0 からパターン マッチのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの電源状態 D2、D1、および D0 からパターン一致のウェイクアップを通知できます。
 
 <a href="" id="ndisdevicestated3"></a>**NdisDeviceStateD3**  
-ネットワーク アダプターでは、D3、D2、D1、および D0 のデバイスの電源状態から、パターン マッチのウェイク アップを通知できます。
+ネットワークアダプターは、デバイスの電源状態 D3、D2、D1、および D0 からパターン一致のウェイクアップを通知できます。
 
 <a href="" id="minlinkchangewakeup"></a>**MinLinkChangeWakeUp**  
-予約済み。 NDIS は、このメンバーは無視されます。
+予約済み。 NDIS は、このメンバーを無視します。
 
-**ミニポート ドライバー**
+**ミニポートドライバーの場合**
 
-ミニポート ドライバーには、初期化が完了すると、プロトコル ドライバーおよび NDIS の両方で以下の観点からこの OID のミニポート ドライバーを照会できます。
+ミニポートドライバーの初期化が完了すると、プロトコルドライバーと NDIS の両方で、この OID でミニポートドライバーを照会して、次のことを判断できます。
 
--   ミニポート ドライバーが PM に対応したかどうか。
+-   ミニポートドライバーが PM 対応であるかどうか。
 
--   ネットワーク アダプターの機能を示すはネットワーク ウェイク アップ イベントです。
+-   ネットワークアダプターのネットワークウェイクアップイベントを示す機能。
 
-ミニポート ドライバーに返された場合**NDIS\_状態\_成功**OID のクエリに\_PNP\_機能、NDIS 考慮ミニポート ドライバーで PM に注意してください。 ミニポート ドライバーに返された場合**NDIS\_状態\_いない\_サポートされている**、NDIS ミニポート ドライバーを PM 対応でないレガシ ミニポート ドライバーを検討します。
+ミニポートドライバーが、OID\_PNP\_機能のクエリに対して**ndis\_STATUS\_SUCCESS**を返した場合、ndis はミニポートドライバーを PM 対応と見なします。 ミニポートドライバーが**ndis\_STATUS を返し\_\_サポートされていない**場合、ndis ではミニポートドライバーが、PM 非対応のレガシミニポートドライバーであると見なされます。
 
-呼び出すときに[ **NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))、ウェイク アップ機能をサポートしていませんが、保存し、電源状態遷移の間でのネットワーク アダプターの状態を復元することができます、ミニポート ドライバーを設定できます、**NDIS\_属性\_いいえ\_HALT\_ON\_SUSPEND**フラグ。 このフラグを設定できなくなります NDIS ドライバーの呼び出し*MiniportHalt* (スリープ) 低電力状態にシステム遷移する前に関数。 ただし、ミニポート ドライバーに返された場合**NDIS\_状態\_いない\_サポートされている**OID のクエリに対する応答で\_PNP\_機能、NDIS 無視、 **NDIS\_属性\_いいえ\_HALT\_ON\_SUSPEND**フラグを設定し、システムが低電力状態になった場合は、ネットワーク アダプターを停止します。
+[**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))を呼び出すと、ウェイクアップ機能をサポートしていないが、電源状態の移行中にそのネットワークアダプターの状態を保存および復元できるミニポートドライバーは、 **NDIS\_属性\_[いいえ] に設定でき\_\_SUSPEND フラグの\_を停止**します。 このフラグを設定すると、システムが低電力 (スリープ状態) 状態に移行する前に、NDIS がドライバーの*Miniporthalt*関数を呼び出すことができなくなります。 ただし、ミニポートドライバーが、クエリ OID\_PNP\_機能に応答し**て\_サポートされていない ndis\_ステータス\_** 返された場合、Ndis は NDIS\_属性を無視し\_\_停止\_は**ありません。** システムが低電力状態になった場合は、中断フラグを\_し、ネットワークアダプターを停止します。
 
-ミニポート ドライバーのネットワーク アダプターには、ウェイク アップ イベント、ウェイク アップ イベントなどの任意の組み合わせをサポートできます。 ネットワーク アダプターにウェイク アップ イベント シグナルをできない場合でも、ミニポート ドライバーは電源管理をサポートもできます。 この場合、唯一の電源管理 OID だけでなく、ミニポート ドライバーをサポートする Oid\_PNP\_機能は[OID\_PNP\_クエリ\_POWER](oid-pnp-query-power.md)と[OID\_PNP\_設定\_POWER](oid-pnp-set-power.md)します。
+ミニポートドライバーのネットワークアダプターは、ウェイクアップイベントなど、ウェイクアップイベントの任意の組み合わせをサポートできます。 ミニポートドライバーは、ネットワークアダプターがウェイクアップイベントを通知できない場合でも、電源管理を引き続きサポートできます。 この場合、OID\_PNP\_機能に加えてミニポートドライバーがサポートする唯一の電源管理 Oid は、 [\_pnp\_クエリ\_power](oid-pnp-query-power.md)および[oid\_pnp\_設定\_電力](oid-pnp-set-power.md)です。
 
-かどうか、ミニポート ドライバーのネットワーク アダプターは、特定のウェイク アップ イベントをサポートしていない、ミニポート ドライバーが指定する必要があります、 [ **NDIS\_デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)@property **NdisDeviceStateUnspecified**でウェイク アップ イベント、 **NDIS\_PM\_WAKE\_を\_機能**構造体。
+ミニポートドライバーのネットワークアダプターで特定のウェイクアップイベントがサポートされていない場合、ミニポートドライバーは、 [**NDIS\_デバイス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)のウェイクアップイベントの**NdisDeviceStateUnspecified**の電源\_状態の値を示す必要があります。**NDIS\_PM\_ウェイクアップ\_\_機能**の構造です。
 
-OID\_PNP\_機能では、ミニポート ドライバーのウェイク アップ機能のみを示します ' s; のネットワーク アダプターなどの機能を有効にしません。 [OID\_PNP\_を有効にする\_WAKE\_を](oid-pnp-enable-wake-up.md)ネットワーク アダプターのウェイク アップ機能を有効にするために使用します。
+OID\_PNP\_機能は、ミニポートドライバーのネットワークアダプターのウェイクアップ機能のみを示します。このような機能は有効になりません。 [OID\_PNP\_有効にする\_ウェイクアップ\_up](oid-pnp-enable-wake-up.md)を使用して、ネットワークアダプターのウェイクアップ機能を有効にします。
 
-**中間ドライバー**
+**中間ドライバーの場合**
 
-かどうか、基になるネットワーク アダプターが PM 対応で、中間のドライバーが返す必要があります**NDIS\_状態\_成功**OID のクエリに\_PNP\_機能します。 **NDIS\_PM\_WAKE\_を\_機能**構造体がこの OID、によって返される中間のドライバーのデバイスの電源状態を指定する必要があります**NdisDeviceStateUnspecified**ウェイク アップ機能ごと ( **MinMagicPacketWakeUp**または**MinPatternWakeUp**)。 このような応答は、中間のドライバーが PM に対応してが、物理デバイスが管理していないことを示します。
+基になるネットワークアダプターが PM 対応の場合、中間ドライバーは、OID\_PNP\_機能のクエリに対して、 **NDIS\_STATUS\_SUCCESS**を返す必要があります。 この OID によって返される**NDIS\_PM\_wake\_\_機能**の構造では、中間ドライバーは、各ウェイクアップ機能について**NdisDeviceStateUnspecified**のデバイスの電源状態を指定する必要があります ( **MinMagicPacketWakeUp**または**Minpattern ウェイクアップ**)。 このような応答は、中間ドライバーが PM 対応であり、物理デバイスを管理していないことを示します。
 
-中間のドライバーを返す必要があります、基になるネットワーク アダプターがないかどうか PM に対応した、 **NDIS\_状態\_いない\_サポートされている**OID のクエリに\_PNP\_機能。
+基になるネットワークアダプターが PM を認識していない場合、中間ドライバーは、OID\_PNP\_機能のクエリで**サポート\_されていない NDIS\_の状態\_** 返す必要があります。
 
-**注**  NDIS 6.20 が動作し、それ以降のミニポート ドライバーの電源管理機能を報告する方法については、次を参照してください。[電源管理機能の報告](https://docs.microsoft.com/windows-hardware/drivers/network/reporting-power-management-capabilities)します。
+詳細について 6.20**は  「** 電源管理機能の[報告](https://docs.microsoft.com/windows-hardware/drivers/network/reporting-power-management-capabilities)」を参照してください。
 
  
 
@@ -125,11 +125,11 @@ OID\_PNP\_機能では、ミニポート ドライバーのウェイク アッ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 および 6.1 NDIS でサポートされています。 NDIS 6.20 以降を使用して<a href="oid-pm-current-capabilities.md" data-raw-source="[OID_PM_CURRENT_CAPABILITIES](oid-pm-current-capabilities.md)">OID_PM_CURRENT_CAPABILITIES</a>代わりにします。</p></td>
+<td><p>NDIS 6.0 および NDIS 6.1 でサポートされています。 NDIS 6.20 以降では、代わりに<a href="oid-pm-current-capabilities.md" data-raw-source="[OID_PM_CURRENT_CAPABILITIES](oid-pm-current-capabilities.md)">OID_PM_CURRENT_CAPABILITIES</a>を使用してください。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -137,19 +137,19 @@ OID\_PNP\_機能では、ミニポート ドライバーのウェイク アッ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)
+[**NDIS\_デバイス\_電源\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)
 
 [**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))
 
-[OID\_PM\_現在\_機能](oid-pm-current-capabilities.md)
+[OID\_PM\_現在の\_機能](oid-pm-current-capabilities.md)
 
-[OID\_PNP\_を有効にする\_WAKE\_を](oid-pnp-enable-wake-up.md)
+[\_\_ウェイクアップ\_を有効にする OID\_の PNP](oid-pnp-enable-wake-up.md)
 
-[OID\_PNP\_クエリ\_電源](oid-pnp-query-power.md)
+[OID\_PNP\_クエリ\_の機能](oid-pnp-query-power.md)
 
 [OID\_PNP\_設定\_電源](oid-pnp-set-power.md)
 
-[電源管理機能の報告](https://docs.microsoft.com/windows-hardware/drivers/network/reporting-power-management-capabilities)
+[電源管理機能のレポート](https://docs.microsoft.com/windows-hardware/drivers/network/reporting-power-management-capabilities)
 
  
 

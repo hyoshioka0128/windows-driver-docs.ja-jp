@@ -4,89 +4,89 @@ description: 仮想ポート (VPort)
 ms.assetid: FCE0B5F5-5E2E-493A-BE25-57FB2C8B0389
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 030cd0f7603ea00852d0e891d75be5b1d70fbc8f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18a6422f02ff8b8a78b33de69cb03cdf3b90b2e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353639"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842950"
 ---
 # <a name="virtual-ports-vports"></a>仮想ポート (VPort)
 
 
-仮想ポート (VPort) には、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC のスイッチを内部ポートを表すデータ オブジェクトです。 各 NIC スイッチでは、ネットワーク接続のため、次のポートがあります。
+仮想ポート (VPort) は、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの NIC スイッチの内部ポートを表すデータオブジェクトです。 各 NIC スイッチには、ネットワーク接続用に次のポートがあります。
 
--   1 つ外部の物理ポートの外部の物理ネットワークに接続します。
+-   外部物理ネットワークに接続するための1つの外部物理ポート。
 
--   1 つまたは複数の内部拡張 PCI Express 物理機能 (PF) または仮想機能 (Vf) に接続しています。
+-   PCI Express 物理機能 (PF) または仮想関数 (VFs) に接続されている1つ以上の内部 VPorts。
 
-    PF は、HYPER-V 親パーティションに接続され、そのパーティションで実行されている管理オペレーティング システム内の仮想ネットワーク アダプターとして公開されます。
+    PF は、Hyper-v の親パーティションにアタッチされ、そのパーティションで実行されている管理オペレーティングシステムの仮想ネットワークアダプターとして公開されます。
 
-    VF は、HYPER-V 子パーティションに接続され、そのパーティションで実行されるゲスト オペレーティング システム内の仮想ネットワーク アダプターとして公開されます。
+    VF は、Hyper-v 子パーティションにアタッチされ、そのパーティションで実行されるゲストオペレーティングシステムの仮想ネットワークアダプターとして公開されます。
 
-NIC は、1 つまたは複数の拡張に物理ポートからのブリッジ ネットワーク トラフィックを切り替えます。 これは、基になる物理ネットワーク インターフェイスを仮想化のアクセスを提供します。
+NIC スイッチは、物理ポートから1つまたは複数の VPorts にネットワークトラフィックをブリッジします。 これにより、基になる物理ネットワークインターフェイスへの仮想アクセスが提供されます。
 
-各 VPort に一意の識別子 (*VPortId*) ネットワーク アダプターで NIC スイッチに一意です。 VPort の既定値は常に既定の NIC スイッチに存在し、削除できません。 既定 VPort が VPortId の NDIS\_既定\_VPORT\_id。
+各 VPort には、ネットワークアダプターの NIC スイッチに固有の一意の識別子 (*VPortId*) があります。 既定の VPort は常に既定の NIC スイッチに存在するため、削除することはできません。 既定の VPort には、NDIS\_既定\_VPORT\_ID の VPortId があります。
 
-PF のミニポート ドライバーでのオブジェクト識別子 (OID) メソッド要求を処理するときに[OID\_NIC\_スイッチ\_作成\_切り替える](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)NIC のスイッチと、既定値を作成 VPort のそのスイッチ。 既定値 VPort は PF に常にアタッチされてし、動作の状態は常にします。
+PF ミニポートドライバーが Oid\_\_のオブジェクト識別子 (OID) メソッドの要求を処理するときに[\_スイッチ\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)、スイッチの nic スイッチと既定の vport が作成されます。 既定の VPort は常に PF にアタッチされ、常に動作状態になります。
 
-既定以外の拡張の OID メソッド要求が作成された[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 1 つだけの既定以外 VPort、VF にアタッチできます。 アタッチされると、既定では動作の状態です。 1 つまたは複数の既定以外拡張も作成され、PF. にアタッチされています。 これらの拡張が作成されたときに操作不可状態との OID セット要求を稼動[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)します。
+既定以外の VPorts は oid\_NIC\_スイッチの OID メソッド要求を使用して作成され、 [\_vports\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)ます。 VF にアタッチできる既定以外の VPort は1つだけです。 アタッチされると、既定値は動作状態になります。 1つまたは複数の既定以外の VPorts を作成し、PF に接続することもできます。 これらの VPorts は作成時に nonoperational され、 [oid\_NIC\_スイッチ\_vports\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を使用して操作できるようになります。
 
-**注**後、VPort が動作可能になります、のみになる操作不可状態の OID 要求をで削除されるとき[OID\_NIC\_スイッチ\_削除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport).
-
-
-
-各 VPort が、それを受信し、パケットを送信するために関連付けられている 1 つまたは複数のハードウェア キュー ペア。 ネットワーク アダプターの既定のキュー ペアは、既定 VPort で使用するために予約されています。 キューの拡張が割り当てられ、VPort がで作成したときに割り当てられている既定以外のペア、 [OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)要求。
-
-既定以外の拡張が作成されの OID メソッド要求を使用して構成[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 OID のセット要求を通じた既定 VPort と既定以外の拡張を再構成[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)します。 各 OID 要求に含まれる、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)次の構成を指定する構造体パラメーター:
-
--   PCIe 関数は、VPort がアタッチされています。
-
-    各 VPort かアタッチできます PF したり、VF いつでも。 VPort が作成され、PCIe 関数に接続されている場合は後、別の PCIe 関数に、添付ファイルを動的に変更できません。
-
-    **注**VPort が常にネットワーク アダプターの PF に接続されている既定値。
+**メモ** VPort が操作可能になると、oid [\_\_\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)の oid 要求によって削除された場合にのみ、nonoperational になります。
 
 
 
+各 VPort には、パケットの受信と送信のために1つ以上のハードウェアキューペアが関連付けられています。 ネットワークアダプターの既定のキューペアは、既定の VPort で使用するために予約されています。 [OID\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)を使用して vports が作成されたときに、既定以外の vports のキューペアが割り当てられて割り当てられ、\_vports 要求を作成\_ます。
 
-Windows Server 2012 の 1 つだけの既定以外の NDIS 6.30 以降 VPort は、VF にアタッチすることができます。 ただし、既定 VPort と共に既定以外の拡張は複数をアタッチして、PF. する
+既定以外の VPorts は oid\_NIC\_スイッチの OID メソッド要求を使用して作成および構成され[\_vports\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 既定の VPort と既定以外の Vport は、oid [\_NIC\_スイッチ\_vport\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を使用して再構成されます。 各 OID 要求には、次の構成パラメーターを指定する[**NDIS\_NIC\_スイッチ\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造が含まれています。
 
+-   VPort がアタッチされている PCIe 関数。
 
--   VPort に割り当てられているハードウェア キュー ペアの数。
+    各 VPort は、任意の時点で PF に接続するか、または VF に接続することができます。 VPort が作成され、PCIe 関数にアタッチされた後、添付ファイルを別の PCIe 関数に動的に変更することはできません。
 
-    各 VPort には、使用することのあるハードウェア キュー ペアのセットがあります。 キューの各ペアは、個別の送信で構成され、受信ネットワーク アダプターのキュー。
-
-    キュー ペアは、ネットワーク アダプターの限られたリソースです。 NIC スイッチの作成時に、既定と既定以外の拡張で使用するために予約されているキュー ペアの合計数が指定します。 これにより、既定以外の拡張とは異なるに VPort の既定値に割り当てられているキュー ペアの数。
-
-    各既定以外の VPort を構成して、キュー ペアの数が異なるすることができます。 これと呼ばれます*非対称割り当て*キュー ペアの。 NIC がこのような非対称割り当てを許可しない場合は、各既定以外の VPort を構成するキューのペアの数が等しい。 これと呼ばれます*対称割り当て*キュー ペアの。 詳細については、次を参照してください。[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)します。
-
-    **注**、PF ミニポート ドライバーの中にキュー ペアの非対称の割り当てをサポートするかどうかを報告[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)します。 詳細については、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。
+    **メモ** 既定の VPort は、ネットワークアダプター上の PF に常に接続されています。
 
 
 
 
-各 VPort に割り当てられているキュー ペアの数は動的に変更されません。 VPort が作成された後、VPort に割り当てられているキュー ペアの数を変更できません。
-
-**注**拡張を使用できる既定以外に割り当てられているキュー ペアが 1 つまたは複数の受信側 scaling (RSS) を使用してゲスト オペレーティング システムで実行されている VF ミニポート ドライバー。
+Windows Server 2012 の NDIS 6.30 以降では、VF にアタッチできる既定以外の VPort は1つだけです。 ただし、既定の Vports と共に複数の既定以外の VPorts を PF に接続することができます。
 
 
+-   VPort に割り当てられているハードウェアキューペアの数。
+
+    各 VPort には、使用可能なハードウェアキューペアのセットがあります。 各キューペアは、ネットワークアダプター上の個別の送信キューと受信キューで構成されます。
+
+    キューペアは、ネットワークアダプター上のリソースに制限があります。 既定値および既定以外の VPorts で使用するために予約されているキューペアの合計数は、NIC スイッチを作成するときに指定します。 これにより、既定の VPort に割り当てられているキューペアの数を既定以外の Vport と異なるものにすることができます。
+
+    既定以外の各 VPort は、異なる数のキューペアを持つように構成できます。 これは、キューペアの*非対称割り当て*と呼ばれます。 NIC でこのような非対称割り当てが許可されていない場合、各既定以外の VPort は、同じ数のキューペアを持つように構成されます。 これは、キューペアの*対称割り当て*と呼ばれます。 詳細については、「[キューペアの対称および非対称割り当て](symmetric-and-asymmetric-assignment-of-queue-pairs.md)」を参照してください。
+
+    **メモ** PF ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)中にキューペアの非対称割り当てをサポートするかどうかを報告します。 詳細については、「 [PF ミニポートドライバーの初期化](initializing-a-pf-miniport-driver.md)」を参照してください。
 
 
--   VPort のモデレート パラメーターを中断します。
 
-    複数の割り込みのモデレート型は、さまざまな拡張に対して指定できます。 これにより、特定の VPort によって生成される割り込みの数を制御する仮想化スタックができます。
 
-表示されるフィルターを各 VPort の OID メソッド要求を発行してでドライバーを後続のパラメーターを構成できる構成に加えて[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter). NIC のスイッチを指定した実行 VPort ごとにフィルター処理を受信します。
+各 VPort に割り当てられたキューペアの数は動的に変更されません。 Vport が作成された後に、VPort に割り当てられたキューペアの数を変更することはできません。
 
-拡張には、パケットのフィルター条件は、メディア アクセス制御 (MAC) アドレスと仮想 LAN (VLAN) id の一覧などが含まれているフィルター パラメーターを受信します。 MAC アドレスと VLAN 識別子フィルターでは同時に指定常には、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) に関連付けられています。[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)要求。 NIC スイッチ スイッチへの受信パケット フィルターする必要がありますが接続先 MAC アドレスと VLAN 識別子、VPort に設定された受信フィルター条件に一致します。 NIC のスイッチは、いずれかの別の VPort や外部の物理ポートから受信したパケットをフィルター処理します。 パケットがフィルターに一致する場合、NIC スイッチする必要がありますに転送する、VPort します。
+**メモ** 既定以外の VPorts に割り当てられた1つ以上のキューペアは、ゲストオペレーティングシステムで実行されている VF ミニポートドライバーによる receive side scaling (RSS) に使用できます。
 
-VPort の複数の MAC アドレスと VLAN 識別子のペアを設定することがあります。 MAC アドレスを設定すると、専用の場合、VPort が次の条件に一致するパケットを受信する受信フィルターを指定します。
 
--   パケットの宛先 MAC アドレスでは、フィルターの MAC アドレスと一致します。
 
--   パケットが VLAN タグを持っているか (VLAN タグがあるかどうか)、0 の VLAN 識別子です。
 
-既定以外の拡張が削除の OID のセット要求を通じた[OID\_NIC\_スイッチ\_削除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 既定の OID セットの要求を通じて NIC スイッチが削除された場合にのみ、VPort が削除[OID\_NIC\_切り替える\_削除\_切り替える](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)します。
+-   VPort の割り込みモデレーションパラメーター。
+
+    異なる VPorts に対して異なる割り込みモデレーションの種類を指定できます。 これにより、仮想化スタックは、特定の VPort によって生成される割り込みの数を制御できます。
+
+構成パラメーターに加えて、追加のドライバーでは、\_Oid の OID メソッド要求を発行することによって、各 VPort の受信フィルターを構成できます。 [\_フィルター\_設定\_フィルターを設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 NIC スイッチは、VPort に対して指定された受信フィルター処理を実行します。
+
+VPorts の受信フィルターパラメーターには、メディアアクセス制御 (MAC) アドレスの一覧や、仮想 LAN (VLAN) 識別子などのパケットフィルター条件が含まれます。 MAC アドレスと VLAN 識別子用のフィルターは、常に[**NDIS\_受信\_フィルター\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 、\_OID に関連付けられているパラメーターを受信[\_フィルター\_設定\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)フィルター申請. NIC スイッチでは、宛先 MAC アドレスと VLAN 識別子が VPort で設定された受信フィルター条件と一致するスイッチに、着信パケットをフィルター処理する必要があります。 NIC スイッチは、別の VPort または外部の物理ポートから受信したパケットをフィルター処理します。 パケットがフィルターに一致する場合、NIC スイッチはそれを VPort に転送する必要があります。
+
+VPort では、複数の MAC アドレスと VLAN 識別子のペアを設定できます。 MAC アドレスのみが設定されている場合、受信フィルターは、VPort が次の条件に一致するパケットを受信するように指定します。
+
+-   パケットの宛先 MAC アドレスは、フィルターの MAC アドレスと一致します。
+
+-   パケットに vlan タグがあるか (VLAN タグが存在する場合)、VLAN 識別子が0になっています。
+
+Oid\_NIC\_スイッチの OID セット要求を使用して、既定以外の VPorts が削除され[\_vports\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)されます。 既定の VPort が削除されるのは、oid セットの oid 設定要求を使用して NIC スイッチが削除された場合のみです[\_nic\_スイッチ\_削除\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)です。
 
 
 

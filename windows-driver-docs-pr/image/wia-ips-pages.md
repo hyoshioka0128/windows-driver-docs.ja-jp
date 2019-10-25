@@ -1,9 +1,9 @@
 ---
 title: WIA\_IP\_ページ
-description: WIA\_IP\_自動ドキュメント フィーダーから取得するページの現在の数がページのプロパティに含まれています。
+description: WIA\_IP\_ページのプロパティには、自動ドキュメントフィーダーから取得する現在のページ数が含まれています。
 ms.assetid: 638f816b-0efd-4885-b285-4fa6a42272bc
 keywords:
-- WIA_IPS_PAGES イメージング デバイス
+- WIA_IPS_PAGES イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,30 +14,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d47cd0a6b495a0971f73117dfd6ac200736bc0b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 72d237bb3fed1abcb74e01c97f0daf91fdd01c73
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385304"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840684"
 ---
-# <a name="wiaipspages"></a>WIA\_IP\_ページ
+# <a name="wia_ips_pages"></a>WIA\_IP\_ページ
 
 
-WIA\_IP\_自動ドキュメント フィーダーから取得するページの現在の数がページのプロパティに含まれています。
+WIA\_IP\_ページのプロパティには、自動ドキュメントフィーダーから取得する現在のページ数が含まれています。
 
-プロパティの種類:VT\_I4
+プロパティの型: VT\_I4
 
-有効な値 :WIA\_PROP\_範囲 (0 ~ ゼロ (0) に設定して、継続的にスキャン; スキャナーがスキャンできるページの最大数)
+有効な値: WIA\_PROP\_RANGE (スキャナーがスキャンできる最大ページ数を0に設定します。連続スキャンするにはゼロ (0) に設定します。
 
-アクセス権:読み取り/書き込み
+アクセス権: 読み取り/書き込み
 
 <a name="remarks"></a>注釈
 -------
 
-アプリケーションは、WIA を読み取ります\_IP\_ドキュメント フィーダー付きを確認するページのページの容量。 アプリケーションでは、このプロパティを WIA の現在のセッションでスキャンするページの最大数に設定します。 WIA ミニドライバーは、作成し、このプロパティを保持します。
+アプリケーションでは、ドキュメントフィーダーのページ容量を決定するために、WIA\_IP\_ページを読み取ります。 アプリケーションは、このプロパティを、現在の WIA セッションでスキャンするページの最大数に設定します。 このプロパティは、WIA ミニドライバーによって作成および管理されます。
 
-次の表に、WIA で有効な定数\_IP\_ページ。
+次の表では、WIA\_IP\_ページで有効な定数について説明します。
 
 <table>
 <colgroup>
@@ -53,17 +53,17 @@ WIA\_IP\_自動ドキュメント フィーダーから取得するページの�
 <tbody>
 <tr class="odd">
 <td><p>ALL_PAGES</p></td>
-<td><p>複数のドキュメントではありませんが、ADF に渡すまで継続的にスキャンします。 この値は、WIA_PROP_RANGE をゼロ (0) に設定すると同じです。</p></td>
+<td><p>ADF にドキュメントが送られなくなるまで、継続的にスキャンします。 この値は、WIA_PROP_RANGE をゼロ (0) に設定した場合と同じです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  二重モードが有効になっている場合 (場合に、WIA\_IP\_ドキュメント\_処理\_フィーダーに設定されている選択 |双方向)、WIA\_IP\_ページは依然としてスキャンするページ数。
-1 枚の用紙が自動的に入力 2 つのページ二重モードが有効になっている場合、ページの背面にある空白である場合でもです。
+双方向モードが有効になっている場合 (つまり、WIA\_IP\_ドキュメント\_処理\_SELECT が [フィーダー] に設定されている場合は  ) に**注意**してください。両面)、WIA\_IP\_ページはスキャンするページ数と同じです。
+両面が有効になっている場合、ページの裏面が空白の場合でも、1枚の用紙に自動的に2つのページが表示されます。
 
-WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合、WIA を変更する必要があります、ことをお勧めします\_IP\_ページ値、 **Inc**のメンバー、 [ **WIA。\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体を 2 にします。 この値は、アプリケーションは 2 つの倍数単位のページを要求する必要があります。 値が 0 のことを意味*すべて*ドキュメント フィーダーに現在読み込まれているページがスキャンされるは。
+[WIA\_IP\_ページ] を1に設定すると、スキャナーはページのいずれかの辺を処理します。 スキャナーが両面モードでページの片面だけをスキャンできない場合は、wia [ **\_プロパティ\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体の**Inc**メンバーの [WIA\_ip\_ページ] の値を2に変更することをお勧めします。 この値を使用すると、アプリケーションは2つの倍数でページを要求する必要があります。 値が0の場合は、現在ドキュメントフィーダーに読み込まれている*すべて*のページがスキャンされます。
 
  
 
@@ -78,11 +78,11 @@ WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ペ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista およびそれ以降のオペレーティング システムで使用できます。 Windows XP では、代わりに WIA_DPS_PAGES プロパティを使用します。</p></td>
+<td><p>Windows Vista 以降のオペレーティングシステムで使用できます。 Windows XP の場合は、代わりに WIA_DPS_PAGES プロパティを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wiadef.h (Wiadef.h を含む)</td>
+<td>Wiadef (Wiadef を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -92,7 +92,7 @@ WIA を設定した場合\_IP\_を 1 に、スキャナーのページは、ペ�
 
 [**WIA\_DPS\_ページ**](wia-dps-pages.md)
 
-[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
+[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

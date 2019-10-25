@@ -1,27 +1,27 @@
 ---
 title: OID_WWAN_NETWORK_IDLE_HINT
-description: OID_WWAN_NETWORK_IDLE_HINT は、データのインターフェイスでのアクティブまたはアイドル状態のことが必要だかどうかに関するネットワーク インターフェイスにヒントを送信します。
+description: OID_WWAN_NETWORK_IDLE_HINT は、データがアクティブであるか、またはインターフェイスでアイドル状態であることが予想されるかについて、ネットワークインターフェイスにヒントを送信します。
 ms.assetid: 1FE758C1-543A-45B4-A377-336A1307689F
 ms.date: 08/08/2017
-keywords: -OID_WWAN_NETWORK_IDLE_HINT ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_NETWORK_IDLE_HINT ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: e2765c66ef4da9ffa395171c5c38a0dabdce77d7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 939db61fdaa8139b7363a5ba8515161016e22d56
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360773"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843828"
 ---
-# <a name="oidwwannetworkidlehint"></a>OID\_WWAN\_ネットワーク\_IDLE\_ヒント
+# <a name="oid_wwan_network_idle_hint"></a>OID\_WWAN\_ネットワーク\_アイドル\_ヒント
 
 
-OID\_WWAN\_ネットワーク\_IDLE\_ヒントは、データのインターフェイスでのアクティブまたはアイドル状態のことが必要だかどうかに関するネットワーク インターフェイスにヒントを送信します。 ネットワーク サービスでは、ヒューリスティックを使用して、一定期間があるネットワーク トラフィックを削減することを算出する場合、またはシステムがアイドル状態になった (コネクト スタンバイ) などを入力する場合に、インターフェイスにこの要求を通常送信するかを判断します。 ネットワーク インターフェイスを使用できますこのヒューリスティックへの入力として「高速休止期間」などの手順の実装します。
+OID\_WWAN\_ネットワーク\_アイドル状態の\_ヒントは、データがアクティブであるか、またはインターフェイスでアイドル状態になっているかどうかに関するヒントをネットワークインターフェイスに送信します。 ネットワークサービスはヒューリスティックを使用して、この要求をインターフェイスに送信するタイミングを決定します。通常は、一定期間にわたってネットワークトラフィックが減少すること、またはシステムがアイドル状態 (コネクトスタンバイなど) に入っているかどうかを推定します。 ネットワークインターフェイスは、これをヒューリスティックへの入力として使用して、"fast うち休止期間" などのプロシージャを実装できます。
 
 クエリ要求はサポートされていません。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)ネットワーク アイドル状態のヒントを示す構造体。
+ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_\_状態を返し、元の要求に必要な\_を示し、その後、 [**ndis\_WWAN\_ネットワークを使用して要求を完了する必要があり @no__t_ネットワークアイドルヒントを示す 7_ IDLE\_HINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -32,11 +32,11 @@ OID\_WWAN\_ネットワーク\_IDLE\_ヒントは、データのインターフ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 10 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 10 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -44,7 +44,7 @@ OID\_WWAN\_ネットワーク\_IDLE\_ヒントは、データのインターフ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)
+[**NDIS\_WWAN\_ネットワーク\_アイドル\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)
 
  
 

@@ -1,48 +1,48 @@
 ---
 title: OID_QOS_CURRENT_CAPABILITIES
-description: 上にある、ドライバーは、ネットワーク アダプターの現在有効になっている NDIS サービスの品質 (QoS) のハードウェア機能を取得する OID_QOS_CURRENT_CAPABILITIES のオブジェクト識別子 (OID) のクエリ要求を発行します。
+description: OID_QOS_CURRENT_CAPABILITIES のオブジェクト識別子 (OID) クエリ要求を実行するドライバーが、ネットワークアダプターの現在有効な NDIS Quality of Service (QoS) ハードウェア機能を取得するために、この要求を発行します。
 ms.assetid: E9013EB2-5EDB-4BCB-BC1D-17345B85D1C4
 ms.date: 08/08/2017
-keywords: -OID_QOS_CURRENT_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_QOS_CURRENT_CAPABILITIES ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a46722ca18615f2b1d5850901c632cc20bb9b8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9528517a8367b1acefbc08fbfed9f3f5cc1a2af
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385233"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844031"
 ---
-# <a name="oidqoscurrentcapabilities"></a>OID\_QOS\_現在\_機能
+# <a name="oid_qos_current_capabilities"></a>OID\_QOS\_現在の\_機能
 
 
-上にある、ドライバーの OID オブジェクト識別子 (OID) のクエリ要求を発行する\_QOS\_現在\_ネットワーク アダプターの現在有効になっている NDIS サービスの品質 (QoS) のハードウェア機能を取得する機能。
+その後のドライバーは、OID\_のオブジェクト識別子 (OID) クエリ要求を使用して、現在有効になっているネットワークアダプターのサービス品質 (QoS) ハードウェア機能を取得するために、現在の\_機能を\_します。
 
-OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。
+OID クエリ要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_QOS\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体へのポインターが含まれています。
 
-**注**  IEEE 802.1 データ センター ブリッジング (DCB) インターフェイスをサポートするミニポート ドライバーの NDIS がこの OID クエリ要求を処理します。
+この OID クエリ要求は、IEEE 802.1 データセンターブリッジング (DCB) インターフェイスをサポートするミニポートドライバー用に NDIS によって処理される  に**注意**してください。
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバー、ネットワーク アダプターの現在有効になっている NDIS QoS ハードウェア機能を登録するときにその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が呼び出されます。 ドライバーは、次の手順に従って、これらの機能を登録します。
+ミニポートドライバー [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が呼び出されると、ネットワークアダプターの現在有効な NDIS QoS ハードウェア機能が登録されます。 ドライバーは、次の手順に従ってこれらの機能を登録します。
 
-1.  ドライバーの初期化、 [ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities) QoS ハードウェアの機能を有効になっているを含む構造体。
+1.  このドライバーは、有効になっている QoS ハードウェア機能を使用して、 [**NDIS\_qos\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)の構造を初期化します。
 
-2.  ドライバーのセット、 **CurrentQosCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体へのポインターを[ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。
+2.  このドライバーは、ndis [ **\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)の**CurrentQosCapabilities**メンバーを設定し、\_の属性構造を[**NDIS\_の QOS\_機能へのポインターに\_\_します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。
 
-3.  ミニポート ドライバーを呼び出して、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数とセット、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
+3.  次に、ミニポートドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、 *miniportattributes*パラメーターを NDIS\_ミニポート\_アダプターへのポインターに設定します[ **\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
 
-**注**  NDIS が現在有効になっている NDIS QoS のハードウェア機能、ネットワーク アダプターにバインド中にプロトコルとフィルター ドライバーを関連するレポートまたはアタッチ操作していません。
+**注**  ndis は、バインドまたはアタッチ操作中に、ネットワークアダプターの現在有効になっている ndis QoS ハードウェア機能を、後続のプロトコルおよびフィルタードライバーに報告しません。
 
  
 
-NDIS QoS 機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](https://docs.microsoft.com/windows-hardware/drivers/network/registering-ndis-qos-capabilities)します。
+NDIS QoS 機能の登録方法の詳細については、「 [Ndis Qos 機能の登録](https://docs.microsoft.com/windows-hardware/drivers/network/registering-ndis-qos-capabilities)」を参照してください。
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-OID の OID のクエリ要求を処理する NDIS\_QOS\_現在\_機能要求のミニポート ドライバー、および次のステータス コードの 1 つを返します。
+NDIS は、OID\_の oid クエリ要求を、ミニポートドライバーに対する現在の\_機能要求\_処理し、次のステータスコードのいずれかを返します。
 
 <table>
 <colgroup>
@@ -58,19 +58,19 @@ OID の OID のクエリ要求を処理する NDIS\_QOS\_現在\_機能要求の
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>ミニポート ドライバーでは、NDIS QoS インターフェイスはサポートしません。</p></td>
+<td><p>ミニポートドライバーは、NDIS QoS インターフェイスをサポートしていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof より小さい (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities" data-raw-source="[&lt;strong&gt;NDIS_QOS_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)"><strong>NDIS_QOS_CAPABILITIES</strong></a>)。 NDIS セット、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities" data-raw-source="[&lt;strong&gt;NDIS_QOS_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)"><strong>NDIS_QOS_CAPABILITIES</strong></a>) 未満です。 NDIS はデータを設定<strong>します。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,11 +88,11 @@ OID の OID のクエリ要求を処理する NDIS\_QOS\_現在\_機能要求の
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.30 以降をサポートします。</p></td>
+<td><p>NDIS 6.30 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -101,15 +101,15 @@ OID の OID のクエリ要求を処理する NDIS\_QOS\_現在\_機能要求の
 
 
 ****
-[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)
 
-[**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
+[**NDIS\_ミニポート\_アダプター\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)
+[**NDIS\_QOS\_の機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)
 
  
 

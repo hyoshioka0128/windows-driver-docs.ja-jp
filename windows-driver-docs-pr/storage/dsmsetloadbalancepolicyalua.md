@@ -1,9 +1,9 @@
 ---
 title: DsmSetLoadBalancePolicyALUA 関数
-description: DsmSetLoadBalancePolicyALUA メソッドは、DSM ALUA の負荷分散ポリシーの設定に使用されます。
+description: DsmSetLoadBalancePolicyALUA メソッドは、DSM ALUA の負荷分散ポリシーを設定するために使用されます。
 ms.assetid: f63bdf0a-5b78-475d-b7c5-2af587b6356f
 keywords:
-- 記憶装置の DsmSetLoadBalancePolicyALUA 関数
+- DsmSetLoadBalancePolicyALUA function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: febb28cf8a4b2881c4449fee8c21aa4a8d4f25fd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7f75320262701266f584b9851e7344ce723d0a6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844559"
 ---
 # <a name="dsmsetloadbalancepolicyalua-function"></a>DsmSetLoadBalancePolicyALUA 関数
 
 
-**DsmSetLoadBalancePolicyALUA** DSM ALUA の負荷分散ポリシーを設定するメソッドを使用します。
+**DsmSetLoadBalancePolicyALUA**メソッドは、DSM ALUA の負荷分散ポリシーを設定するために使用されます。
 
 <a name="syntax"></a>構文
 ------
@@ -40,7 +40,7 @@ void DsmSetLoadBalancePolicyALUA(
 ----------
 
 *LoadBalancePolicy*   
-A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)構造体。
+[**DsmSetLoadBalancePolicyALUA\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)構造体。
 
 *状態*   
 操作の状態。
@@ -53,9 +53,9 @@ A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://docs.microsoft.com/windo
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [DSM\_LB\_操作](dsm-lb-operations-wmi-class.md)WMI クラスです。
+この WMI メソッドは、 [DSM\_LB\_Operations](dsm-lb-operations-wmi-class.md) WMI クラスに属しています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -70,7 +70,7 @@ A [ **DsmSetLoadBalancePolicyALUA\_アウト**](https://docs.microsoft.com/windo
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">MPIOdisk.h (MPIOdisk.h を含む)</td>
+<td align="left">MPIOdisk .h (MPIOdisk. h を含む)</td>
 </tr>
 </tbody>
 </table>

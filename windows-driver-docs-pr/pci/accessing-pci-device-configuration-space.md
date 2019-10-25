@@ -3,39 +3,39 @@ title: PCI デバイス構成領域へのアクセス
 description: PCI デバイス構成領域へのアクセス
 ms.assetid: 05e0ada9-d465-4787-abc5-469a75352ee0
 keywords:
-- 構成領域 WDK の PCI バス
-- 領域 WDK バスの構成
+- PCI 構成領域 WDK バス
+- 構成領域の WDK バス
 - IRP_MN_READ_CONFIG
 - IRP_MN_WRITE_CONFIG
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ba655885c886f5930ca91c925ec5b2865ee005a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6dddd28faeddcb591bc4ee1218c4008b59e2fea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353559"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837733"
 ---
 # <a name="accessing-pci-device-configuration-space"></a>PCI デバイス構成領域へのアクセス
 
 
-デバイスの機能のドライバーでは、周辺機器のコンポーネントの相互接続 (PCI) デバイスの操作の一部は予約されます。 このような操作などが、バスのデバイスに固有の構成領域にアクセスして、ダイレクト メモリ アクセス (DMA) コント ローラーをプログラミングします。 マイクロソフトは、2 つの方法で PCI デバイスの構成領域にアクセスするためのシステムのサポートを提供します。
+周辺コンポーネントインターコネクト (PCI) デバイス上の一部の操作は、デバイスの関数ドライバー用に予約されています。 このような操作には、たとえば、バスのデバイス固有の構成領域へのアクセスや、ダイレクトメモリアクセス (DMA) コントローラーのプログラミングなどがあります。 Microsoft では、次の2つの方法で PCI デバイスの構成領域にアクセスするためのシステムサポートを提供しています。
 
--   [ **BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)バスのインターフェイス
+-   [**バス\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)バスインターフェイス
 
--   構成の I/O 要求パケット (Irp) [ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[ **IRP\_MN\_書き込み\_構成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)
+-   構成 i/o 要求パケット (Irp)、 [**irp\_、\_読み取り\_構成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[**irp\_、\_構成の書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)\_
 
-Windows XP と Windows Server 2003 以降のオペレーティング システムで定義されている構成領域のヘッダーを排他的に制御がある、 *PCI ローカル バス*とすべての機能で機能仕様リンクのリスト。 ドライバーは、これらのレジスタを変更する必要がありますしません。
+Windows XP および Windows Server 2003 以降のオペレーティングシステムでは、 *PCI ローカルバス*仕様で定義されているように、構成領域のヘッダー、および機能のリンクリストのすべての機能が排他的に制御されています。 ドライバーは、これらのレジスタを変更しないようにする必要があります。
 
-ただし、ドライバーは、ヘッダーまたはベンダー定義な IRP を使用して、機能の一覧に属していない構成領域に書き込むことができます\_MN\_書き込み\_構成の要求または**SetBusData**メソッド バスの\_インターフェイス\_標準。 ドライバーは IRP を使用して、デバイスの機能を読み取ることができますも\_MN\_読み取り\_構成の要求または**GetBusData**メソッド バスの\_インターフェイス\_標準。 IRP を使用する\_MN\_読み取り\_構成または IRP\_MN\_書き込み\_構成では、ドライバーは、パッシブで実行する必要があります\_レベル。 機能とドライバーを照会している対応する構造については、次を参照してください。、 [PCI 構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)セクション。
+ただし、ドライバーは、ヘッダーに属していない構成領域またはベンダー定義の機能リストに書き込むことができます。これを行うには、IRP\_\_書き込み\_CONFIG 要求またはバスの**Setbusdata**メソッドを使用\_INTERFACE\_STANDARD。 また、ドライバーは、IRP\_\_読み取り\_構成要求またはバス\_\_インターフェイスの**Getbusdata**メソッドを使用して、デバイスの機能を読み取ることもできます。 IRP\_を使用するには、\_CONFIG または IRP\_\_読み取り\_構成\_を使用して、ドライバーをパッシブ\_レベルで実行する必要があります。 ドライバーがクエリを実行できる機能とそれに対応する構造の一覧については、「 [PCI 構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」セクションを参照してください。
 
-ドライバーが拡張 PCI デバイス構成領域から読み取ることができます (つまり、複数の構成データの 256 バイト)、IRP を使用して\_MN\_読み取り\_構成の要求または**GetBusData**のメソッドバス\_インターフェイス\_標準。 同様に、ドライバーは IRP を使用して拡張 PCI デバイス構成領域に記述できます\_MN\_書き込み\_構成の要求または**SetBusData**メソッド バスの\_インターフェイス\_標準です。 デバイスには、拡張の構成領域がないか、プラットフォームがデバイスで、拡張の構成領域のパスを定義していない場合、0 xffff および書き込み要求は影響しません、読み取り要求を返します。 操作が成功したかを判断、ドライバーは、読み取りまたは書き込みバイト数を調べることができます。
+ドライバーは、IRP\_\_読み取り\_構成要求またはバス\_インターフェイスの**Getbusdata**メソッドを使用して、拡張された PCI デバイス構成領域 (つまり、構成データの256バイト以上) から読み取ることができ\_規格. 同様に、ドライバーは、IRP\_\_書き込み\_CONFIG 要求またはバス\_インターフェイス\_標準の**Setbusdata**メソッドを使用して、拡張 PCI デバイス構成領域に書き込むことができます。 デバイスに拡張された構成領域がない場合、またはプラットフォームがデバイスの拡張構成領域のパスを定義していない場合、読み取り要求は0xFFFF を返し、書き込み要求は無効になります。 操作が成功したかどうかを判断するために、ドライバーは、読み取りまたは書き込みのバイト数を調べることができます。
 
-PCI Express および PCI X モード 2 の 256 バイトより大きい拡張 PCI デバイスの構成領域をサポートします。 ドライバーは、読み取りし、書き込みでは、適切なハードウェアと BIOS サポートのみが、この構成領域に。 ACPI BIOS 内でルート バスに PNP0A08 または PNP0A03 のいずれかの PNP ID が必要です。 ルートのバス PNP0A03 の PNP ID と、\_関数 4 DSM メソッドは、現在のモードが PCI X モード 2 を示す必要があります。 すべてのブリッジとデバイスする必要がありますか、pci express または PCI X モード 2 で動作します。
+PCI Express と PCI X モード2では、256バイトを超える拡張 PCI デバイス構成領域がサポートされます。 ドライバーは、この構成領域に対して読み取りと書き込みを行うことができますが、適切なハードウェアと BIOS をサポートしている必要があります。 ACPI BIOS では、ルートバスの PNP ID は PNP0A08 または PNP0A03 のいずれかである必要があります。 PNP ID が PNP0A03 のルートバスの場合、\_DSM メソッド (関数 4) は、現在のモードが PCI X モード2であることを示す必要があります。 すべてのブリッジとデバイスは、PCI express であるか、または PCI X モード2で動作している必要があります。
 
-さらに、システムでは、構成のメモリ マップ領域のアクセスをサポートする必要があります。 システム/の BIOS ファームウェアで、MCFG テーブルを定義することになります。 Windows Vista および Windows Server 2008 以降のオペレーティング システムは自動的に構成のメモリ マップ領域のアクセスをサポートします。
+また、システムでは、メモリマップトの構成領域へのアクセスをサポートする必要があります。 これは、システムの BIOS/ファームウェアで MCFG テーブルを定義することによって行います。 Windows Vista および Windows Server 2008 以降のオペレーティングシステムでは、メモリマップトの構成領域へのアクセスが自動的にサポートされます。
 
-次のコード例では、デバイスの電源管理機能のデータに対してクエリを実行する方法を示します。
+次のコード例は、デバイスの電源管理機能データを照会する方法を示しています。
 
 ```cpp
 #define LSZ sizeof(ULONG)

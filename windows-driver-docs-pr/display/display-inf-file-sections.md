@@ -3,20 +3,20 @@ title: ディスプレイ INF ファイルのセクション
 description: ディスプレイ INF ファイルのセクション
 ms.assetid: 2075a10f-a504-4bdc-8112-9c583c5084bb
 keywords:
-- Windows 2000 の WDK の表示をアドレス指定側波帯
-- 転送率の AGP WDK Windows 2000 を表示します。
-- SoftwareSettings セクション
+- sideband での WDK Windows 2000 ディスプレイのアドレス指定
+- AGP 転送率 WDK Windows 2000 ディスプレイ
+- ソフトウェア設定セクション
 - CapabilityOverride
-- Windows 2000 の WDK の INF ファイルを表示します。
-- INF ファイルのセクションでは Windows 2000 の WDK を表示します。
+- INF ファイル WDK Windows 2000 display
+- INF ファイルセクションの表示 WDK Windows 2000 display
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37cad16e0acf7f77a5c116454b6260b20dccb7a3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7f22d7938de2acbe4181a5e9e4bc949f62713be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365754"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839742"
 ---
 # <a name="display-inf-file-sections"></a>ディスプレイ INF ファイルのセクション
 
@@ -24,13 +24,13 @@ ms.locfileid: "67365754"
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
 
 
-このセクションでは、具体的には、グラフィックス アダプターのインストールに適用されます (INF) のセクションで、セットアップ情報ファイルを記述する方法を指示します。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
+このセクションでは、グラフィックスアダプターのインストールに特に適用されるセットアップ情報ファイル (INF) のセクションを記述する方法について説明します。 INF ファイルの一般的な情報については、「 [Inf ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)」を参照してください。
 
-### <a name="span-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall.SoftwareSettings セクション
+### <a name="span-idddinstallsoftwaresettings_sectionspanspan-idddinstallsoftwaresettings_sectionspanspan-idddinstallsoftwaresettings_sectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall. ソフトウェア設定セクション
 
-A *DDInstall*.**SoftwareSettings**セクションが含まれています、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブや、 [**して**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブ。 各ディレクティブは、レジストリ エントリを追加または削除するためにインストーラーを含む別のライター定義の INF セクションを指します。
+*Ddinstall*。 **[ソフトウェアの設定]** セクションに、 [**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブ、または[**delreg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブが含まれています。 各ディレクティブは、追加または削除するインストーラーのレジストリエントリを含む、ライターによって定義された別の INF セクションを指します。
 
-たとえば、次のコードは、 **AddReg**という名前のライター定義のレジストリの追加セクションを指すディレクティブ**ACME 1234\_SoftwareDeviceSettings**します。 **して**ディレクティブがという名前の削除レジストリ セクションを指す**ACME 1234\_DeleteSWSettings**します。
+たとえば、次のコードは、 **AddReg**ディレクティブを示しています。このディレクティブは、 **ACME-1234\_devicedevicesettings**という名前のライター定義の add registry セクションを指します。 **Delreg**ディレクティブは、 **ACME-1234\_DeleteSWSettings**という名前の削除レジストリセクションを指します。
 
 ```inf
 [ACME-1234.SoftwareSettings]
@@ -38,7 +38,7 @@ AddReg=ACME-1234_SoftwareDeviceSettings
 DelReg=ACME-1234_DeleteSWSettings
 ```
 
-追加レジストリ セクションでは、4 つのエントリをレジストリに追加し、次のコードに示すように、その値を設定します。
+[レジストリの追加] セクションでは、次のコードに示すように、レジストリに4つのエントリを追加し、値を設定します。
 
 ```inf
 [ACME-1234_SoftwareDeviceSettings]
@@ -48,20 +48,20 @@ HKR,, MultiFunctionSupported, %REG_DWORD%, 1
 HKR,, VideoDebugLevel, %REG_DWORD%, 2
 ```
 
-上記のコードは最初の値を設定、 **InstalledDisplayDrivers**ディスプレイ ドライバーの名前を入力します。 コードの値を設定し、 **OverRideMonitorPower**エントリを 0 に (つまり、 **FALSE**)。 このエントリは、OEM システム ベンダーによってのみ使用する必要があります (たとえば、LCD、CRT、またはテレビ) モニター デバイスの電源の動作を制御します。 1 に設定すると**OverRideMonitorPower** D0 を D3 モニターのデバイスの電力状態を制限します。
+前のコードでは、最初に、**によって**、表示ドライバーの名前に対して、その値が設定されています。 次に、このコードでは、 **Overridemonitorpower** entry の値を0に設定します (つまり、 **FALSE**)。 このエントリは、OEM システムベンダーだけが使用する必要があります。モニターデバイス (LCD、CRT、TV など) の電源動作を制御します。 1に設定すると、 **Overridemonitorpower**によってモニターデバイスの電源状態が D0 および D3 に制限されます。
 
-3 番目に、コードがの値を設定、 **MultiFunctionSupported**エントリを 1 に (つまり、 **TRUE**)、これは、必要な値は複数の PCI 関数をサポートするアダプターの。 最後の値の設定、コード、 **VideoDebugLevel**エントリで、デバッグ メッセージのビルドの使用をチェックするグローバル デバッグ レベルを制御します。 この値の範囲は 0 (デバッグ メッセージはありません) 3 (最も詳細なメッセージ) ~ です。 グローバル デバッグ レベルの詳細については、次を参照してください。 [ **VideoDebugPrint**](https://docs.microsoft.com/previous-versions/ff570170(v=vs.85))します。
+3番目のコードでは、 **Multifunctionsupported**エントリの値を 1 (つまり、 **TRUE**) に設定しています。これは、複数の PCI 関数をサポートするアダプターに必要な値です。 最後に、コードは**Videodebuglevel**エントリの値を設定します。これは、チェックされたビルドがデバッグメッセージに使用するグローバルデバッグレベルを制御します。 この値の範囲は、0 (デバッグメッセージなし) から 3 (最も詳細なメッセージ) です。 グローバルデバッグレベルの詳細については、「 [**Videodebugprint**](https://docs.microsoft.com/previous-versions/ff570170(v=vs.85))」を参照してください。
 
-ほとんどのビデオのミニポート ドライバー VGA と互換性がないと、no を必要と**VgaCompatible**レジストリのエントリ。 ビデオのミニポート ドライバーが VGA と互換性のある場合は追加、 **VgaCompatible**エントリをレジストリにその値を 1 に設定 (**TRUE**) 追加レジストリ セクションが表示され、次に示すように。
+ほとんどのビデオミニポートドライバーは、VGA 互換ではなく、レジストリに**VgaCompatible**エントリを必要としません。 ビデオミニポートドライバーが VGA と互換性がある場合は、次に示すように、レジストリに**VgaCompatible**エントリを追加し、[レジストリの追加] セクションで値を 1 (**TRUE**) に設定します。
 
 ```registry
 [ACME-1234_SoftwareDeviceSettings]
 HKR,, VgaCompatible, %REG_DWORD%, 1
 ```
 
-VGA と互換性のあるビデオのミニポート ドライバーの詳細については、次を参照してください。 [VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)します。
+VGA と互換性のあるビデオミニポートドライバーの詳細については、「 [Vga 互換ビデオミニポートドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)」を参照してください。
 
-Delete レジストリの次のセクションでは、次の 3 つのレジストリ エントリを削除します。**GraphicsClocking**、 **MemClocking**、および**CapabilityOverride**します。
+次の GraphicsClocking セクションでは、3つのレジストリエントリ (、 **Memclocking**、 **CapabilityOverride**) を削除します。
 
 ```inf
 [ACME-1234_DeleteSWSettings]
@@ -70,9 +70,9 @@ HKR,, MemClocking
 HKR,, CapabilityOverride
 ```
 
-**CapabilityOverride**エントリをシステムは、ディスプレイ ドライバーを無効にする機能を指定します。 たとえば、ディスプレイ ドライバーが実装されている場合でも、 [ **DrvEscape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)関数 0x10 フラグが設定されている場合に機能を使用できないこと、 **CapabilityOverride**エントリ。
+**CapabilityOverride**エントリは、ディスプレイドライバーのシステムの電源をオフにする機能を指定します。 たとえば、表示ドライバーが[**DrvEscape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)関数を実装している場合でも、 **CapabilityOverride**エントリに0x10 フラグが設定されていると、その機能は使用できません。
 
-値、 **CapabilityOverride**レジストリ エントリは、次の表に記載されているフラグの 1 つ以上のビット演算 OR。
+**CapabilityOverride**レジストリエントリの値は、次の表に示す1つ以上のフラグのビットごとの or です。
 
 <table>
 <colgroup>
@@ -88,38 +88,38 @@ HKR,, CapabilityOverride
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>すべてのハードウェア アクセラレータを無効にします。 ハードウェア アクセラレータ スライド バーを移動するのと同じです (で、<strong>表示</strong>コントロール パネルの項目) の最小値設定をします。</p></td>
+<td align="left"><p>すべてのハードウェアアクセラレータを無効にします。 ハードウェアアクセラレータのスライドバー (コントロールパネルの<strong>表示</strong>項目) を最小値に移動することと同じです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>Microsoft DirectDraw とマイクロソフトの Direct3D ハードウェア アクセラレータのサポートを無効にします。</p></td>
+<td align="left"><p>Microsoft DirectDraw および Microsoft Direct3D ハードウェアアクセラレータのすべてのサポートを無効にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>Direct3D ハードウェア アクセラレータのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"> <strong>DdGetDriverInfo</strong></a><em>、</em>ドライバーに到達できない Direct3D とコールバックの機能については、どの要求。</p></td>
+<td align="left"><p>Direct3D ハードウェアアクセラレータのすべてのサポートを無効にします。 は、ドライバーに到達<em>するために</em>Direct3D の機能とコールバック情報を要求する<a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"><strong>ddgetdriverinfo</strong></a>を呼び出しません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>OpenGL インストール可能なクライアント ドライバー (ICD) と miniclient ドライバー (MCD) のすべてのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"> <strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"> <strong>DrvDescribePixelFormat</strong></a>、および<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"> <strong>DrvSwapBuffers</strong> </a>ドライバーに到達します。 また、ドライバーに到達できない OPENGL_GETINFO、OPENGL_CMD および MCDFUNCS のエスケープを防止します。</p></td>
+<td align="left"><p>OpenGL インストール可能なクライアントドライバー (ICD) と miniclient driver (MCD) のすべてのサポートを無効にします。 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>、および<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a>への呼び出しがドライバーに到達しないようにします。 また、OPENGL_GETINFO、OPENGL_CMD、および MCDFUNCS のエスケープがドライバーに到達しないようにします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>ドライバーのすべてのエスケープのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"> <strong>DrvEscape</strong> </a>と<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"> <strong>DrvDrawEscape</strong> </a>ドライバーに到達します。</p></td>
+<td align="left"><p>ドライバー内のすべてのエスケープのサポートを無効にします。 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong></a>と<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"><strong>DrvDrawEscape</strong></a>の呼び出しがドライバーに到達しないようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-、Windows に同梱されているディスプレイ ドライバーの**CapabilityOverride**は通常 0x8、OpenGL を無効にするに設定します。 OpenGL を無効にする 0x10 フラグを設定する必要はありません、すべてのエスケープを無効にする場合を除き、0x10 フラグを設定する必要がありますに注意してください。
+Windows に付属しているディスプレイドライバーの場合、 **CapabilityOverride**は通常、"0x8" に設定されます。これにより、OpenGL が無効になります。 0x10 フラグを設定して OpenGL を無効にする必要はないことに注意してください。すべてのエスケープを無効にする場合を除き、0x10 フラグは設定しないでください。
 
-Microsoft Windows XP およびそれ以前のオペレーティング システムを削除しないでください、 **CapabilityOverride**ディスプレイ ドライバーが更新されたときに--などによって提供される最新のドライバーを Windows に含まれるドライバーからのレジストリ エントリを独立系ハードウェア ベンダー (IHV)。 永続的な**CapabilityOverride**エントリ、更新されたドライバに古いドライバーを無効にするのと同じ機能を無効になります。 したがって、Windows XP 用と以前では、次のとおり、**して**既存を明示的に削除する INF ファイルでディレクティブ**CapabilityOverride**エントリ。 Windows XP SP1 と以降のオペレーティング システムを自動的に削除、 **CapabilityOverride**エントリ、これらのシステムは、のでいないを削除するために必要なドライバーが更新されたときに、 **CapabilityOverride**エントリ。
+Microsoft Windows XP およびそれ以前のオペレーティングシステムでは、ディスプレイドライバーが更新されたときに**CapabilityOverride**レジストリエントリは削除されません。たとえば、Windows に付属しているドライバーから、独立したハードウェアによって提供されたより新しいドライバーに更新された場合などです。ベンダー (IHV)。 Persistent **CapabilityOverride**エントリは、古いドライバーで無効にした更新されたドライバーの同じ機能を無効にします。 そのため、Windows XP およびそれ以前のバージョンでは、既存の**CapabilityOverride**エントリを明示的に削除する**DELREG**ディレクティブを INF ファイルに追加します。 Windows XP SP1 以降のオペレーティングシステムでは、ドライバーが更新されたときに**CapabilityOverride**エントリが自動的に削除されます。そのため、これらのシステムでは、 **CapabilityOverride**エントリを削除する必要はありません。
 
-### <a name="span-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspandisabling-agp-transfer-rates-and-sideband-addressing"></a><span id="Disabling_AGP_Transfer_Rates_and_Sideband_Addressing"></span><span id="disabling_agp_transfer_rates_and_sideband_addressing"></span><span id="DISABLING_AGP_TRANSFER_RATES_AND_SIDEBAND_ADDRESSING"></span>AGP 転送の料金と側波帯がアドレス指定を無効にします。
+### <a name="span-iddisabling_agp_transfer_rates_and_sideband_addressingspanspan-iddisabling_agp_transfer_rates_and_sideband_addressingspanspan-iddisabling_agp_transfer_rates_and_sideband_addressingspandisabling-agp-transfer-rates-and-sideband-addressing"></a><span id="Disabling_AGP_Transfer_Rates_and_Sideband_Addressing"></span><span id="disabling_agp_transfer_rates_and_sideband_addressing"></span><span id="DISABLING_AGP_TRANSFER_RATES_AND_SIDEBAND_ADDRESSING"></span>AGP 転送率と Sideband のアドレス指定の無効化
 
-必要に応じて、特定の転送率を AGP または側波帯がアドレス指定を無効にするディスプレイ アダプターの INF ファイルを変更できます。 呼び出すときに、ミニポート ドライバーが AGP 転送速度を変更できることに注意してください[ **AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_set_rate)がこのような呼び出しは、INF ファイルで無効になっている転送速度を変更するのには使用できません。
+必要に応じて、ディスプレイアダプターの INF ファイルを変更して、特定の AGP 転送率または sideband のアドレス指定を無効にすることができます。 ミニポートドライバーは[**AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_set_rate)を呼び出すときに AGP 転送速度を変更することができますが、このような呼び出しでは、INF ファイルで無効になっている転送速度を変更することはできません。
 
-*Regstr.h*ヘッダー ファイルは、Windows Driver Kit (WDK) に付属している、次のフラグのセットを定義します。
+Windows Driver Kit (WDK) に付属している*regstr .h*ヘッダーファイルでは、次のフラグのセットが定義されています。
 
 <table>
 <colgroup>
@@ -138,66 +138,66 @@ Microsoft Windows XP およびそれ以前のオペレーティング システ�
 <tr class="odd">
 <td align="left"><p>AGP_FLAG_NO_1X_RATE</p></td>
 <td align="left"><p>0x00000001L</p></td>
-<td align="left"><p>1 つの速度 (MHz 66) の転送速度を無効にします。</p></td>
+<td align="left"><p>1倍速 (66 MHz) の転送速度を無効にします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AGP_FLAG_NO_2X_RATE</p></td>
 <td align="left"><p>0x00000002L</p></td>
-<td align="left"><p>2 回、1 つ速度転送率を無効にします。</p></td>
+<td align="left"><p>1倍速転送速度の2倍を無効にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>AGP_FLAG_NO_4X_RATE</p></td>
 <td align="left"><p>0x00000004L</p></td>
-<td align="left"><p>4 回、1 つ速度転送率を無効にします。</p></td>
+<td align="left"><p>1倍速転送速度の4倍を無効にします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AGP_FLAG_NO_8X_RATE</p></td>
 <td align="left"><p>0x00000008L</p></td>
-<td align="left"><p>8 回、1 つ速度転送率を無効にします。</p></td>
+<td align="left"><p>単一速度の転送速度の8倍を無効にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>AGP_FLAG_NO_SBA_ENABLE</p></td>
 <td align="left"><p>0x00000100L</p></td>
-<td align="left"><p>(SBA) のアドレス指定側波帯を無効にします。</p></td>
+<td align="left"><p>Sideband アドレス指定 (SBA) を無効にします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-設定の 2 つの種類があります。 グローバルとプラットフォーム固有です。 レジストリには、次の場所にグローバル エントリが含まれています。
+グローバルとプラットフォーム固有の2種類の設定があります。 レジストリには、次の場所にあるグローバルエントリが格納されます。
 
 ```registry
 HKLM,"SYSTEM\CurrentControlSet\Control\AGP"
 ```
 
-フィルター ドライバー サービス キーでは、"Parameters"の下にあるプラットフォーム固有のエントリが見つかります。 たとえば、これらのエントリは、レジストリの次の場所で仮定 AcmeAGP アダプターが存在します。
+プラットフォーム固有のエントリは、フィルタードライバーサービスキーの "Parameters" の下にあります。 たとえば、次のレジストリの場所にある架空の AcmeAGP アダプターに対して、これらのエントリが存在します。
 
 ```registry
 HKLM,"SYSTEM\CurrentControlSet\Services\AcmeAGP\Parameters"
 ```
 
-持つ 0x012A (Nuclear3D) の DeviceID、VendorID 0x1AD0 のテクノロジを使用してプラットフォームでデバイスのアドレス指定側波帯を無効にするには追加、 **Nuclear3D\_Install.HW** INF ファイルにセクション。 (この種類のインストールの INF セクションの詳細については、次を参照してください[ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。)。このセクションでは、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブは、次のようにします。
+DeviceID が 0x012A (Nuclear3D) で、VendorID が0x1AD0 であるデバイスの sideband アドレス指定を無効にするには、 **Nuclear3D\_Install. HW**セクションを INF ファイルに追加します。 (この種類の INF インストールセクションの詳細については、「 [**Inf DDInstall. HW」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)を参照してください)。このセクションでは、次のような[**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブを追加します。
 
 ```inf
 [Nuclear3D_Install.HW] 
 AddReg = Nuclear3D_Reg 
 ```
 
-次に、次を作成するセクション、 **AddReg**ディレクティブが指します。
+次に、 **AddReg**ディレクティブが指す次のセクションを作成します。
 
 ```inf
 [Nuclear3D_Reg] 
 HKLM,"SYSTEM\CurrentControlSet\Services\viaagp\Parameters","1AD0012A",0x00030003,00,01,00,00,00,00,00,00 
 ```
 
-上記のエントリは、HKEY の下のレジストリに追加する HKLM に続く文字列で識別されるサブキーがあることを示します\_ローカル\_マシン ルート。 "1AD0012A"文字列は、エントリ名、元の最初の 4 つの文字は、DeviceID を作成し、最後の 4 つは、この部分の VendorID を作成します。 エントリ名に続く 16 進数のエントリのデータ型を示すフラグのセットで構成されます。 最後の部分は、側波帯がアドレス指定を無効にするエントリの値です。
+上記のエントリは、HKLM の下にある文字列によって識別されるサブキーがレジストリに追加されることを示しています。これは、HKEY\_ローカル\_マシンのルートにあります。 "1AD0012A" 文字列はエントリ名で、最初の4文字が DeviceID を構成し、最後の4文字がこのパートの VendorID を構成します。 エントリ名の後に続く16進数は、エントリのデータ型を示す一連のフラグで構成されます。 最後の部分はエントリ値です。これにより、sideband のアドレス指定が無効になります。
 
-**重要な**   AGP の逆の順序では、値のエントリでバイト\_フラグ\_いいえ\_SBA\_上記の表に、フラグの定義を有効にします。
+**重要**   [値] エントリのバイトは、前の表の\_\_SBA\_ENABLE フラグの定義とは逆の\_順序になっています。
 
  
 
-たとえば、AGP 4 X がこの同じデバイスのすべてのチップセットで区切られていることを確認します。 この事実を示すために 2 番目のエントリを追加、Nuclear3D に\_Reg セクション。
+この同じデバイスのすべてのチップセットで AGP 4 が破損していると判断したとします。 この事実を示すには、Nuclear3D\_Reg セクションに2番目のエントリを追加します。
 
 ```inf
 [Nuclear3D_Reg] 
@@ -205,7 +205,7 @@ HKLM,"SYSTEM\CurrentControlSet\Services\viaagp\Parameters","1AD0012A",0x00030003
 HKLM,"SYSTEM\CurrentControlSet\Control\AGP","1AD0012A",0x00030003,04,00,00,00,00,00,00,00 
 ```
 
-上記のコードでは、2 番目のエントリは、HKEY の下のレジストリに追加する HKLM に続く文字列で識別されるサブキーがあることを示します\_ローカル\_マシン ルート。 前のエントリのように、このサブキーに関連付けられている値の名前は、デバイスの DeviceID、VendorID で構成される文字列です。 フラグの値も同じです。 値のエントリが AGP\_フラグ\_いいえ\_4 X\_レートで、転送速度 X AGP 4 を無効にします。 前に、この値のエントリ内のバイトが上記の表に、フラグの値の逆の順序では、いることを確認します。
+上記のコードの2番目のエントリは、HKLM の下にある文字列によって識別されるサブキーがレジストリに追加されることを示します。これは、HKEY\_ローカル\_マシンのルートにあります。 前のエントリと同様に、このサブキーに関連付けられている値の名前は、デバイスの DeviceID と VendorID で構成される文字列です。 フラグの値も同じです。 値のエントリは AGP\_フラグ\_4 × 4\_率\_ないため、AGP 4 の転送速度を無効にします。 前と同様に、この値エントリのバイトは、前の表のフラグの値と逆の順序になっています。
 
  
 

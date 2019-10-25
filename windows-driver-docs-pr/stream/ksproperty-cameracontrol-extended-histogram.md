@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ヒストグラム
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ヒストグラムは、ドライバーによって生成されたヒストグラム メタデータを制御するために使用するプロパティ ID。 これは、暗証番号 (pin) レベルの制御のプレビューのピン留めだけです。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_ヒストグラム
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_ヒストグラムは、ドライバーによって生成されるヒストグラムメタデータを制御するために使用されるプロパティ ID です。 これは、プレビューの pin のピンレベルコントロールです。
 ms.assetid: 638AA1AA-F8E5-4FD7-9283-CF1F23266474
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_HISTOGRAM ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_HISTOGRAM ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b8d49557c2d767d44bb3e58bc75091be2e2f7719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 678986809f5efc2152997fa74f602f98a80af3ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364096"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841598"
 ---
-# <a name="kspropertycameracontrolextendedhistogram"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ヒストグラム
+# <a name="ksproperty_cameracontrol_extended_histogram"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_ヒストグラム
 
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_ヒストグラム**はドライバーによって生成されたヒストグラム メタデータを制御するために使用するプロパティ ID です。 これは、暗証番号 (pin) レベルの制御のプレビューのピン留めだけです。
+**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_ヒストグラム**は、ドライバーによって生成されるヒストグラムメタデータを制御するために使用されるプロパティ ID です。 これは、プレビューの pin のピンレベルコントロールです。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,9 +37,9 @@ ms.locfileid: "63364096"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -53,24 +53,24 @@ ms.locfileid: "63364096"
 
  
 
-次のフラグを配置することができます、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー。フラグ**ドライバーのヒストグラムのメタデータを制御するフィールド。 既定値は**ヒストグラム\_OFF**します。
+次のフラグは、 **KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。[フラグ**] フィールドを指定して、ドライバーのヒストグラムメタデータを制御します。 既定値は **ヒストグラム\_オフ**です。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_HISTOGRAM_OFF      0x0000000000000000
 #define KSCAMERA_EXTENDEDPROP_HISTOGRAM_ON       0x0000000000000001
 ```
 
-このコントロールは、前に使用する必要があります、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ**](ksproperty-cameracontrol-extended-metadata.md)コントロール、サイズ、適切なメタデータ バッファーことを確認するには割り当てられます。
+このコントロールは、 [**Ksk プロパティ\_CAMERACONTROL\_拡張\_メタデータ**](ksproperty-cameracontrol-extended-metadata.md)コントロールの前に使用して、適切なサイズのメタデータバッファーが割り当てられるようにする必要があります。
 
-場合設定**ヒストグラム\_OFF**ドライバーはプレビューの暗証番号 (pin) のヒストグラムのメタデータを配信できません。 ドライバーは、そのメタデータのバッファーのサイズ要件に、ヒストグラムのメタデータのサイズを含めないでください。
+[**ヒストグラム\_オフ**] に設定した場合、ドライバーは、プレビューピンのヒストグラムメタデータを配信しません。 ドライバーでは、メタデータバッファーサイズの要件にヒストグラムメタデータのサイズを含めないでください。
 
-場合設定**ヒストグラム\_ON**ドライバーはプレビューの暗証番号 (pin) のヒストグラムのメタデータを提供するものとします。 ドライバーは、そのメタデータのバッファーのサイズ要件に、ヒストグラムのメタデータのサイズを含める必要があります。
+**ヒストグラム\_** に設定すると、ドライバーはプレビューピンにヒストグラムメタデータを配信します。 ドライバーでは、メタデータバッファーサイズの要件にヒストグラムメタデータのサイズが含まれている必要があります。
 
-ドライバーでは、ヒストグラムのメタデータを生成するために機能することはありません、ドライバーでは、このコントロールは実装しないでください。 サポートする必要がありますも、ドライバーは、このコントロールをサポートする場合[ **KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ**](ksproperty-cameracontrol-extended-metadata.md)コントロール。
+ドライバーがヒストグラムメタデータを生成する機能を備えていない場合、ドライバーはこのコントロールを実装しません。 ドライバーがこのコントロールをサポートしている場合は、 [**CAMERACONTROL\_拡張\_メタデータコントロールである Ksk プロパティ\_** ](ksproperty-cameracontrol-extended-metadata.md)もサポートする必要があります。
 
-**設定**このコントロールの呼び出しも何も起こりませんプレビューの暗証番号 (pin) が、状態、KSSTATE よりも高い\_停止状態です。 ドライバーは元に戻す、**設定**プレビューが停止状態ではない、返された場合に受信した呼び出し**状態\_無効な\_デバイス\_状態**。 **取得**呼び出し、ドライバーは現在の設定を返す必要があります**フラグ**フィールド。
+このコントロールの**SET**呼び出しは、プレビューピンが ksk 状態\_停止状態よりも大きい状態にある場合は効果がありません。 Preview が停止状態でない場合は、ドライバーは**SET**呼び出しを拒否し、**デバイス\_状態\_無効\_状態**を返します。 **GET**呼び出しでは、ドライバーは**Flags**フィールドの現在の設定を返します。
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表に、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体のフィールドの説明と要件を示します。
 
 <table>
 <colgroup>
@@ -79,41 +79,41 @@ ms.locfileid: "63364096"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必要がありますが、暗証番号 (pin) の ID に関連付けられているプレビューの暗証番号 (pin)。</p></td>
+<td><p>は、プレビュー pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>)。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>前回のエラーの結果を示す<strong>設定</strong>操作。 ない場合は<strong>設定</strong>操作が行われた、0 があります。</p></td>
+<td><p>最後の<strong>設定</strong>操作のエラー結果を示します。 <strong>設定</strong>操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>0 を指定する必要があります。</p></td>
+<td><p>0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 これのいずれを指定することができます、 <strong>KSCAMERA_EXTENDEDPROP_HISTOGRAM_ *</strong>上記で定義されたフラグ。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている<strong>KSCAMERA_EXTENDEDPROP_HISTOGRAM_ *</strong>フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

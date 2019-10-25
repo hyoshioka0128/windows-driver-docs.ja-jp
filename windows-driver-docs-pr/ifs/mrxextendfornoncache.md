@@ -1,9 +1,9 @@
 ---
 title: MRxExtendForNonCache ルーチン
-description: MRxExtendForNonCache ルーチンは、キャッシュ マネージャーによって、ファイルがキャッシュされていないときに、ネットワークのミニ リダイレクターがファイルを拡張する要求を RDBSS によって呼び出されます。
+description: MRxExtendForNonCache ルーチンは、ファイルがキャッシュマネージャーによってキャッシュされていない場合に、ネットワークミニリダイレクターがファイルを拡張するよう要求するために、RDBSS によって呼び出されます。
 ms.assetid: 80ec5142-7188-45ba-a1cb-73be99ce1ac4
 keywords:
-- MRxExtendForNonCache ルーチン インストール可能なファイル システム ドライバー
+- MRxExtendForNonCache ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_EXTENDFILE_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be87cff4701ac24baefd15e01e2d362c7902fece
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a04795dd28991dbff6802a7976dada38d8f42420
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363530"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841111"
 ---
 # <a name="mrxextendfornoncache-routine"></a>MRxExtendForNonCache ルーチン
 
 
-*MRxExtendForNonCache*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)キャッシュ マネージャーによって、ファイルがキャッシュされていないときに、ネットワークのミニ リダイレクターがファイルを拡張することを要求します。
+*MRxExtendForNonCache*ルーチンは、ファイルがキャッシュマネージャーによってキャッシュされていない場合に、ネットワークミニリダイレクターがファイルを拡張するよう要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -44,34 +44,34 @@ ULONG MRxExtendForNonCache(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
-*pNewFileSize* \[in, out\]  
-全体へのポインター\_新しいファイル サイズのバイト数を示す整数値。
+*Pnewfilesize サイズ*の \[in、out\]  
+新しいファイルサイズのバイト数を示す大きな\_整数値へのポインター。
 
-*pNewAllocationSize* \[out\]  
-全体へのポインター\_する場合、新しい割り当てを格納するための整数のサイズ[ **MRxExtendForCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)を返します。
+*Pnewのサイズ*\[out\]  
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)が返されたときに、新しい割り当てサイズを格納するための大きな\_整数へのポインター。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxExtendForNonCache*ステータスを返します\_成功または失敗した場合、エラー コードに成功しました。
+*MRxExtendForNonCache*は、成功した場合は状態\_成功した場合は、失敗した場合はエラーコードを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-*MRxExtendForNonCache*ハンドルはネットワーク I/O の非キャッシュのファイルを拡張する要求。
+*MRxExtendForNonCache*は、キャッシュされていない i/o 用にファイルを拡張するネットワーク要求を処理します。
 
-呼び出しの前に*MRxExtendForNonCache*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxExtendForNonCache*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**LowIoContext.Operation** LOWIO に設定されている\_OP\_書き込み
+**Lowiocontext。操作**は LOWIO\_OP\_WRITE に設定されています
 
-**LowIoContext.ParamsFor.ReadWrite.Flags** 、LOWIO は\_READWRITEFLAG\_拡張\_FILESIZE ビットが設定
+**Lowiocontext** . READWRITEFLAG には、\_の\_のビットセットを拡張する LOWIO\_があります
 
-ファイルまたはディレクトリの情報をキャッシュするネットワーク ・ mini-リダイレクターは、ファイルを拡張するときにその情報をキャッシュを無効にする必要があります。
+ファイルまたはディレクトリの情報をキャッシュするネットワークミニリダイレクターは、ファイルが拡張されるときに、キャッシュ情報を無効にすることが必要になる場合があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -86,7 +86,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -94,27 +94,27 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

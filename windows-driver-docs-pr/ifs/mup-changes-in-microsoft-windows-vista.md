@@ -3,122 +3,122 @@ title: Microsoft Windows Vista における MUP の変更点
 description: Microsoft Windows Vista における MUP の変更点
 ms.assetid: 8ca2f9bc-14f1-45d3-a397-f3e5459cf8ec
 keywords:
-- カーネル ネットワーク リダイレクター WDK、MUP
-- MUP WDK ネットワーク リダイレクター
-- 複数 UNC プロバイダー WDK ネットワーク リダイレクター
-- UNC WDK ネットワーク リダイレクター
-- カーネル ネットワーク リダイレクター WDK、Windows Vista リダイレクター モデル
-- レガシ リダイレクター WDK ファイル システム
-- プレフィックス解決の WDK ネットワーク リダイレクター
-- プレフィックス キャッシュ WDK ネットワーク リダイレクター
-- 二重のフィルタ リング WDK ネットワーク リダイレクター
+- カーネルネットワークリダイレクター WDK、MUP
+- MUP WDK ネットワークリダイレクター
+- 複数の UNC プロバイダー WDK ネットワークリダイレクター
+- UNC WDK ネットワークリダイレクター
+- カーネルネットワークリダイレクター WDK、Windows Vista リダイレクターモデル
+- 従来のリダイレクター WDK ファイルシステム
+- プレフィックス解決 WDK ネットワークリダイレクター
+- プレフィックスキャッシュ WDK ネットワークリダイレクター
+- WDK ネットワークリダイレクターのダブルフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af631e09ac2dafb3fa7ffbadad9ea52e79b58534
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b00c81dc2705d811708d1c183bcfb04a29ca18a0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386069"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841058"
 ---
 # <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista における MUP の変更点
 
 
-Windows Vista では、さまざまなネットワーク リダイレクターに影響を与える複数 UNC プロバイダー (MUP) の変更を実装します。
+Windows Vista では、ネットワークリダイレクターに影響を与える可能性がある複数の UNC プロバイダー (MUP) に対して多数の変更が実装されています。
 
-MUP と分散ファイル システム (DFS) クライアントは、個別のバイナリ ファイルがあります。 MUP コンポーネントは mup.sys であり、DFS クライアントが dfsc.sys。 Windows Server 2003、Windows XP、および Windows 2000、MUP カーネル コンポーネント、mup.sys も含まれている DFS クライアント。
+MUP と分散ファイルシステム (DFS) クライアントは別々のバイナリファイルにあります。 MUP コンポーネントは mup.sys にあり、DFS クライアントは dfsc にあります。 Windows Server 2003、Windows XP、および Windows 2000 では、MUP カーネルコンポーネントである mup.sys にも、DFS クライアントが含まれていました。
 
-新しいリダイレクター モデルは、Windows Vista で定義されます。
+Windows Vista では、新しいリダイレクターモデルが定義されています。
 
--   MUP を呼び出すことによって、I/O マネージャーとファイル システムとして登録[ **IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem)します。
+-   MUP は、 [**IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfilesystem)を呼び出すことによって、i/o マネージャーを使用してファイルシステムとして登録します。
 
--   ネットワーク リダイレクターに MUP を使用して登録[ **FsRtlRegisterUncProviderEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex) 、Windows Vista で導入された新しいルーチン。
+-   ネットワークリダイレクターは、Windows Vista で導入された新しいルーチンである[**Fsrtlregisteruncproviderex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)を使用して、MUP に登録します。
 
--   ネットワーク リダイレクターに名前のないデバイス オブジェクトを渡します[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)します。
+-   ネットワークリダイレクターは、名前のないデバイスオブジェクトを[**Fsrtlregisterfinalex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)に渡します。
 
--   ネットワーク リダイレクターがデバイス名を渡します[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)します。
+-   ネットワークリダイレクターは、デバイス名を[**Fsrtlregisteruncproviderex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)に渡します。
 
--   ネットワーク リダイレクターは I/O マネージャーとファイル システムとして登録しません (呼び出しません[ **IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem))。
+-   ネットワークリダイレクターは、i/o マネージャーを使用してファイルシステムとして登録しません ( [**IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfilesystem)を呼び出すことはありません)。
 
--   プレフィックスの解決、Ioctl、FSCTLs など、ネットワーク リダイレクターを MUP からすべての呼び出しは、Apc が有効になっているで行われます。 Apc が有効になっていることに加えその他のコンポーネントからすべての呼び出しが予想されます。 呼び出しを使用するときに[ **FsRtlCancellableWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff545738)または[ **FsRtlCancellableWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff545731)、newルーチンは Windows Vista で導入された、これにより、I/O 要求を発行したスレッドが終了した場合に待機時間が長いを中止できます。
+-   MUP からネットワークリダイレクターへのすべての呼び出し (プレフィックス解決、Ioctl、FSCTLs を含む) は、Apc が有効になっています。 他のコンポーネントから MUP へのすべての呼び出しは、Apc が有効になっていると想定されます。 [**FsRtlCancellableWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff545738)または[**FsRtlCancellableWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff545731)で呼び出しを使用し、Windows Vista で導入された新しいルーチンがある場合、i/o 要求を発行したスレッドが末尾.
 
--   プレフィックスの解決は IOCTL を使用して、実行\_REDIR\_クエリ\_パス\_EX、Windows Vista で導入された新しい IOCTL します。
+-   プレフィックスの解決は、Windows Vista で導入された新しい IOCTL である、IOCTL\_REDIR\_クエリ\_パス\_EX を使用して実行されます。
 
--   MUP に登録されているネットワーク リダイレクター デバイス名では、MUP デバイス オブジェクトへのシンボリック リンクになります。
+-   MUP に登録されているネットワークリダイレクターのデバイス名は、MUP デバイスオブジェクトへのシンボリックリンクになります。
 
-Windows Vista のリダイレクター モデルに準拠している、ネットワーク リダイレクターの MUP シンボリック リンクを作成オブジェクト マネージャーの名前空間への呼び出しでネットワーク リダイレクターで指定されたデバイス名で[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)します。 このシンボリック リンクのターゲットは MUP のデバイス オブジェクト (\\デバイス\\Mup)。
+Windows Vista リダイレクターモデルに準拠するネットワークリダイレクターの場合、MUP では、オブジェクトマネージャーの名前空間にシンボリックリンクを作成します。これには、 [**Fsrtlregisterの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)呼び出しでネットワークリダイレクターによって指定されたデバイス名が使用されます。 このシンボリックリンクのターゲットは、MUP デバイスオブジェクト (\\デバイス\\Mup) です。
 
-MUP デバイス オブジェクトへのシンボリック リンクされているネットワーク リダイレクターのデバイス名とファイル システムとして MUP の登録の利点は、MUP を介してすべてのリモート ファイル システム I/O 操作といないだけ名前ベースの操作を参照してください。 そのリモート ファイル システム スタック上に存在する必要があるファイル システム フィルター ドライバーは MUP のデバイス オブジェクトを単にアタッチできます。 ファイル システム フィルター ドライバーのプロバイダー デバイス オブジェクトの名前をハードコーディングする必要はありません (\\デバイス\\LanmanRedirector、たとえば) そのドライバーをもはやにします。 これにより、ファイル システム フィルター ドライバーは、1 つの添付ファイルによってすべてのネットワーク リダイレクターに発行されるすべての I/O 操作を監視できます。 DFS (mup.sys) と個々 のネットワーク リダイレクターが個別に接続されている Windows Vista より前に、ファイル システム フィルター ドライバーに表示される重複の I/O 操作も削除されます (\\デバイス\\例については、LanmanRedirector) でI/O 操作を両方に監視する順序。
+MUP をファイルシステムとして登録し、ネットワークリダイレクターのデバイス名を、MUP デバイスオブジェクトにシンボリックリンクとして登録する利点は、名前ベースの操作だけでなく、すべてのリモートファイルシステム i/o 操作が、MUP を経由することです。 したがって、リモートファイルシステムスタックに存在する必要があるファイルシステムフィルタードライバーは、単に MUP デバイスオブジェクトにアタッチできます。 ファイルシステムフィルタードライバーは、プロバイダーのデバイスオブジェクト名 (\\デバイス\\LanmanRedirector など) をドライバーにハードコーディングする必要はありません。 これにより、ファイルシステムフィルタードライバーは、すべてのネットワークリダイレクターに発行されたすべての i/o 操作を1つの添付ファイルで監視できます。 これにより、Windows Vista より前のファイルシステムフィルタードライバーによって検出された重複 i/o 操作が回避されます。これは、DFS (mup.sys) と個々のネットワークリダイレクター (\\デバイス\\LanmanRedirector など) に個別に接続されています。i/o 操作を両方に対して監視します。
 
-MUP のデバイス オブジェクトに関連付けられているファイル システム フィルター ドライバーは、特定のネットワーク リダイレクターに送信されるトラフィックをフィルター選択的にできます。 このような状況で、フィルター ドライバー関心のあるネットワーク リダイレクターのデバイス名にマップ プロバイダーの識別子を呼び出して、 [ **FsRtlMupGetProviderIdFromName** ](https://msdn.microsoft.com/library/windows/hardware/ff546971)ルーチン。 フィルター ドライバーを呼び出すことによって取得したプロバイダー識別子を比較することによって、特定のファイル オブジェクトのトラフィックをフィルター処理かどうか決定できます、 [ **FsRtlMupGetProviderInfoFromFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff546981)関心のあるネットワークの取締役会プロバイダー識別子を持つルーチン。
+MUP デバイスオブジェクトに接続されているファイルシステムフィルタードライバーは、特定のネットワークリダイレクターに送信されるトラフィックを選択的にフィルター処理できます。 この場合、フィルタードライバーは、 [**FsRtlMupGetProviderIdFromName**](https://msdn.microsoft.com/library/windows/hardware/ff546971)ルーチンを呼び出すことによって、目的のネットワークリダイレクターのデバイス名をプロバイダー識別子にマップします。 フィルタードライバーは、特定のファイルオブジェクトのトラフィックをフィルター処理するかどうかを判断できます。そのためには、 [**FsRtlMupGetProviderInfoFromFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff546981)ルーチンの呼び出しによって取得されたプロバイダー識別子を、のプロバイダー識別子と比較します。対象のネットワークディレクター。
 
-Windows Vista のリダイレクター モデルに準拠しているネットワーク リダイレクター。
+Windows Vista リダイレクターモデルに準拠するネットワークリダイレクターの場合:
 
--   リモート ファイル システムのスタック上のすべてのファイル オブジェクトは、MUP に解決します。 そのため、 [ **IoGetDeviceAttachmentBaseRef** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetdeviceattachmentbaseref) MUP、ファイル オブジェクトを所有するネットワーク リダイレクターいないのデバイス オブジェクトを返します。 ただし、ファイル オブジェクトのコンテンツは、ネットワーク リダイレクターで所有されています。
+-   リモートファイルシステムスタック上のすべてのファイルオブジェクトが、MUP に解決されます。 そのため、 [**IoGetDeviceAttachmentBaseRef**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetdeviceattachmentbaseref)は、ファイルオブジェクトを所有するネットワークリダイレクターではなく、MUP のデバイスオブジェクトを返します。 ただし、ファイルオブジェクトの内容はネットワークリダイレクターによって所有されています。
 
--   IRP\_MJ\_発行先のネットワーク リダイレクターのデバイスの名前を作成する (\\デバイス\\LanmanRedirector\\server\\を共有) にそのネットワーク リダイレクターの対象となります。MUP プレフィックスの解決を経由せずに、これとまったく同じでは、Windows Server 2003、Windows XP、および Windows 2000 をしました。
+-   ネットワークリダイレクター (\\デバイス\\LanmanRedirector\\server\\share など) のデバイス名に対して発行された IRP\_MJ\_の作成は、MUP プレフィックスを経由せずに、そのネットワークリダイレクターを対象とします。解決方法は、Windows Server 2003、Windows XP、および Windows 2000 の場合とまったく同じです。
 
-(動的または静的にリンクの) Windows Vista RDBSS に基づいていないネットワーク リダイレクターは、「レガシ リダイレクター」と呼ばれます。 これらのレガシ ネットワーク リダイレクターは次のとおりです。
+Windows Vista RDBSS (動的または静的にリンク) に基づいていないネットワークリダイレクターは、"従来のリダイレクター" と呼ばれます。 これらのレガシネットワークリダイレクターには次のものが含まれます。
 
--   ネットワークの MUP を使用して直接登録する Windows Server 2003、Windows XP、および Windows 2000 用に記述されたリダイレクター [ **FsRtlRegisterUncProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)します。
+-   Windows Server 2003、Windows XP、および Windows 2000 用に記述されたネットワークリダイレクターは、 [**Fsrtlregisteruncprovider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)を使用して、MUP に直接登録します。
 
--   ネットワークのミニ-Windows Server 2003、Windows XP、および Windows 2000 用に記述するリダイレクター rdbsslib.lib ライブラリを使用した Windows Server 2003、Windows XP、または Windows 2000 用に静的にリンクします。
+-   Windows server 2003、windows XP、または Windows 2000 の rdbsslib ライブラリと静的にリンクする Windows Server 2003、Windows XP、および Windows 2000 用に作成されたネットワークミニリダイレクター。
 
--   ネットワークの MUP を使用して直接登録する Windows Vista 用に記述されたリダイレクター [ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)します。
+-   [**Fsrtlregisterの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)登録を使用して、MUP に直接登録する Windows Vista 用に記述されたネットワークリダイレクター。
 
-RDBSS MUP を使用して登録するために、ネットワーク ミニ-リダイレクターに動的に Windows Vista RDBSS (rdbss.sys) に対して自動的にリンクするが、Windows Vista リダイレクターのモデルに準拠[ *FsRtlRegisterUncProviderEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex). RDBSS MUP を使用して登録するために、静的にも自動的にリンク Windows Vista RDBSS (rdbsslib.lib) に対してネットワーク ミニ-リダイレクターが Windows Vista リダイレクター モデルに準拠**FsRtlRegisterUncProviderEx**.
+Windows Vista RDBSS (RDBSS) に動的にリンクするネットワークミニリダイレクターは、Windows Vista リダイレクターモデルに自動的に準拠します。これは、RDBSS が[*Fsrtlregister Providerex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)を使用して MUP に登録するためです。 Windows Vista RDBSS (rdbsslib) に対して静的にリンクされるネットワークミニリダイレクターは、Windows Vista リダイレクターモデルにも自動的に準拠します。これは、RDBSS が**Fsrtlregister Providerex**を使用して MUP に登録するためです。
 
-MUP と直接登録する Windows Vista 用に記述されたレガシ ネットワーク リダイレクターは、Windows Vista のリダイレクター モデルに準拠する必要があります。
+Windows Vista 用に作成された従来のネットワークリダイレクターは、MUP に直接登録する必要があります Windows Vista リダイレクターモデルに準拠している必要があります。
 
-ネットワークを使用して直接 MUP を登録する Windows Server 2003、Windows XP、および Windows 2000 用に記述されたリダイレクター、 [ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)と同様に、まったく同じ方法を作業を続けるWindows Server 2003、Windows XP、および Windows 2000。 ネットワークのミニ-リダイレクター Windows Server 2003、Windows XP、および Windows 2000 用に記述された Windows Server 2003、Windows XP、および Windows 2000 がまったく同じ方法で Windows Server 2003 と同じ動作を続行の rdbsslib.lib ライブラリに静的にリンクWindows XP、および Windows 2000 の場合は。 これらのレガシ ネットワーク リダイレクターとミニ リダイレクターが、次の動作があります。
+Windows Server 2003、Windows XP、および Windows 2000 用に記述されたネットワークリダイレクターは、 [**Fsrtlregisterプロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)を使用して直接 MUP に登録すると、windows server 2003、windows xp、および windows 2000 で行ったのとまったく同じ方法で動作します。 Windows server 2003、windows XP、および Windows 2000 の rdbsslib ライブラリと静的にリンクする Windows Server 2003、Windows XP、および windows 2000 用に作成されたネットワークミニリダイレクターは、Windows Server 2003 とまったく同じように動作します。Windows XP および Windows 2000。 これらのレガシネットワークリダイレクターとミニリダイレクターは、次の動作を示しています。
 
--   ファイル システムの登録を監視するファイル システム フィルター ドライバーに表示されます。
+-   ファイルシステムの登録を監視するファイルシステムフィルタードライバーに表示されます。
 
--   それらのデバイス オブジェクトがという名前です。 デバイス名のシンボリック リンクではないとを指していません\\デバイス\\MUP します。
+-   デバイスオブジェクトにはという名前が付けられます。 デバイス名はシンボリックリンクではなく、\\デバイス\\MUP を指していません。
 
--   ファイル オブジェクトは、ネットワーク リダイレクターの名前付きのデバイス オブジェクトに解決します。
+-   ファイルオブジェクトは、ネットワークリダイレクターの名前付きデバイスオブジェクトに解決されます。
 
--   プレフィックスの解決操作でのみ MUP が関係しています。 ネットワーク プロバイダーが識別されると、MUP「取得の」状態を返すことによって\_再解析します。 後続のすべての操作は、MUP が通過されます。
+-   MUP は、プレフィックス解決操作にのみ関係します。 ネットワークプロバイダーが特定されると、状態\_再解析を返すことによって、MUP "がその方法を利用できなくなります。 後続のすべての操作は、MUP を通過しません。
 
-この動作は、それ以外の場合なら場合、プロバイダーのデバイス名へのシンボリック リンクが行われる double のフィルタ リングを防ぐために保持されているが\\デバイス\\MUP します。 この 2 つのフィルターが処理されて、次の理由になります。
+この動作は、プロバイダーのデバイス名が \\デバイス\\MUP にシンボリックリンクされている場合に発生する可能性がある、ダブルフィルター処理を防ぐために保持されています。 この2つのフィルター処理は、次の理由で発生します。
 
--   ファイル システム フィルター ドライバーが既にアタッチされている\\デバイス\\MUP します。
+-   ファイルシステムフィルタードライバーは、既に \\デバイス\\MUP にアタッチされています。
 
--   ファイル システム フィルター ドライバーは、任意の登録ファイル システムにアタッチします。 ネットワーク リダイレクター以降、名前付きのデバイス オブジェクトを使用して自身を登録、ファイル システムとして、ファイル システム フィルター ドライバーは最終的に 2 回、同じ I/O をフィルター処理します。
+-   ファイルシステムフィルタードライバーは、登録している任意のファイルシステムにアタッチします。 名前付きデバイスオブジェクトを使用するネットワークリダイレクターは自身をファイルシステムとして登録するため、ファイルシステムフィルタードライバーは、同じ i/o を2回フィルター処理することになります。
 
-Windows vista MUP の間の呼び出しが有効にすると、次の影響のある Apc で行われます。
+Windows Vista での MUP との呼び出しは、Apc が有効になっているため、次のような影響があります。
 
--   保護するために必要な場合、コードから呼び出すと MUP のスレッドの中断に対して特に IOCTL、適切な方法でパスすることが重要\_REDIR\_クエリ\_パス ハンドラー。 スレッドの中断です、可能性のある"unbounded wait"操作長時間続くことができます。
+-   必要に応じて、必要に応じて、適切な方法によってスレッドの中断に対して MUP から呼び出されるコードパスを保護することが重要です。特に、IOCTL\_REDIR\_クエリ\_パスハンドラーによって実行されます。 スレッドの中断は、長時間に及ぶ可能性がある "無制限の待機" 操作であることに注意してください。
 
--   (システムのスレッド) ではなくユーザー モード スレッドに常に関連するすべての「I/O の待機の」操作が「キャンセル可能な待機」に使用されるように重要です。 参照してください、 [ **FsRtlCancellableWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff545738)と[ **FsRtlCancellableWaitForMultipleObjects** ](https://msdn.microsoft.com/library/windows/hardware/ff545731)詳細については、ルーチン。
+-   (システムスレッドではなく) ユーザーモードスレッドに関係する "wait for i/o" 操作では、常に "キャンセル可能な wait" が使用されるようにすることが重要です。 詳細については、 [**FsRtlCancellableWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff545738)ルーチンと[**FsRtlCancellableWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff545731)ルーチンを参照してください。
 
--   いくつかの重要なロックを保持しているスレッドが中断を取得時に、デッドロックが発生する可能性があります。 ユーザー モード スレッドがデッドロック状態を確認する任意に中断された作業がある場合のテストの実行に重要です。
+-   何らかの重要なロックを保持しているスレッドが中断されると、デッドロックが発生する可能性があります。 ユーザーモードのスレッドが存在する場合は、デッドロック状態をチェックするために中断されないように、テストを実行することが重要です。
 
--   テストを実行することを確認することが重要かどうか「待機の I/O 操作の」は本当にキャンセル可能なとをユーザー モード アプリケーションを終了できますスレッド迅速にする際に「非対応」状態にするのには、アプリケーションが表示されないように前述のスレッドを終了します。
+-   テストを実行して、"i/o 操作の待機" が本当にキャンセル可能なかどうかを確認し、ユーザーモードアプリケーションがスレッドをすぐに終了できるようにすることが重要です。これにより、アプリケーションは、スレッドを終了します。
 
-Windows vista MUP によって使用されるタイムアウトとプレフィックスのキャッシュ サイズは、次のレジストリ値によって制御されますようになりました。
+Windows Vista の MUP で使用されるプレフィックスキャッシュサイズとタイムアウトは、次のレジストリ値によって制御されるようになりました。
 
 -   PrefixCacheSizeInKB
 
--   PrefixCacheTimeoutInSeconds します。
+-   PrefixCacheTimeoutInSeconds.
 
-これらのレジストリ値は、再起動せず、動的に変更することができます。 これらのレジストリ値は、次のレジストリ キーの下です。
+これらのレジストリ値は、再起動せずに動的に変更できます。 これらのレジストリ値は、次のレジストリキーの下にあります。
 
 ```cpp
 HKLM\System\CurrentControlSet\Services\Mup\Parameters.
 ```
 
-システムを再起動しなくても問題が解決要求を個々 のリダイレクターをプレフィックスどの MUP の順序を決定する ProviderOrder レジストリ値を動的に変更することができます。 このレジストリ値は、次のレジストリ キーの下にあります。
+プロバイダーが個々のリダイレクターにプレフィックス解決要求を発行する順序を決定する ProviderOrder レジストリ値は、システムを再起動しなくても動的に変更できます。 このレジストリ値は、次のレジストリキーの下にあります。
 
 ```cpp
 HKLM\CurrentControlSet\Control\NetworkProvider\Order
 ```
 
-呼び出すネットワーク リダイレクターを MUP に登録するかどうかに応じて異なる方法でプレフィックスの解決を実行している MUP Windows vista では、 [ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)または[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)します。 呼び出して MUP を登録する従来のネットワーク リダイレクター **FsRtlRegisterUncProvider**が表示されます、 [ **IOCTL\_REDIR\_クエリ\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path)プレフィックス解決の要求。 これは、Windows Server 2003、Windows XP、および Windows 2000 で使用される同じメソッドです。
+Windows Vista では、MUP は、ネットワークリダイレクターが MUP に登録されているかどうかによって、 [**Fsrtlregisteruncprovider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)または[**fsrtlregisterを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)呼び出すことによって、プレフィックスの解決方法が異なります。 **FsrtlregisterREDIR プロバイダー**を呼び出すことによって MUP に登録するレガシネットワークのリダイレクターは、プレフィックス解決のために\_パス要求に対して、 [**IOCTL\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ni-ntifs-ioctl_redir_query_path)を受け取ります。 これは、Windows Server 2003、Windows XP、および Windows 2000 で使用される方法と同じです。
 
-Windows Vista のリダイレクター モデルに準拠しており、呼び出すことによって MUP を登録するリダイレクターがネットワーク[ **FsRtlRegisterUncProviderEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)が表示されます、 [ **IOCTL\_REDIR\_クエリ\_パス\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path_ex)プレフィックス解決の要求。 呼び出しは、Windows vista では、ネットワークのミニ リダイレクター rdbsslib.lib と静的にリンクや rdbss.sys を動的にリンクされている**FsRtlRegisterUncProviderEx** RDBSS を通じて間接的にします。
+Windows Vista リダイレクターモデルに準拠し、 [**FsrtlregisterREDIR Providerex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)を呼び出すことによって MUP に登録されたネットワークリダイレクターは[ **\_、\_クエリ\_\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ni-ntifs-ioctl_redir_query_path_ex)を使用して、プレフィックスに対する EX 要求を送信します。解決. Windows Vista では、ネットワークミニリダイレクターは rdbsslib に静的にリンクされているか、rdbss で動的にリンクされているため、RDBSS を通じて間接的に**Fsrtlregister**を呼び出します。
 
-IOCTL の入力と出力バッファー\_REDIR\_クエリ\_パス\_EX が次のようには。
+IOCTL\_REDIR\_クエリ\_パス\_EX の入力バッファーと出力バッファーは、次のようになります。
 
 <table>
 <colgroup>
@@ -129,12 +129,12 @@ IOCTL の入力と出力バッファー\_REDIR\_クエリ\_パス\_EX が次の�
 <tbody>
 <tr class="odd">
 <td align="left"></td>
-<td align="left">パラメーターでご利用いただけます</td>
+<td align="left">パラメーターはで使用できます。</td>
 <td align="left">データ構造の形式</td>
 </tr>
 <tr class="even">
 <td align="left"><p>入力バッファー</p></td>
-<td align="left"><p>IrpSp-&gt; Parameters.DeviceIoControl.Type3InputBuffer</p></td>
+<td align="left"><p>IrpSp-&gt; Parameters. DeviceIoControl. Type3InputBuffer</p></td>
 <td align="left"><p>QUERY_PATH_REQUEST_EX</p></td>
 </tr>
 <tr class="odd">
@@ -147,11 +147,11 @@ IOCTL の入力と出力バッファー\_REDIR\_クエリ\_パス\_EX が次の�
 
 
 
-IOCTL と、データ構造は、ntifs.h で定義されます。 バッファーは、非ページ プールから割り当てられます。
+IOCTL とデータ構造は、ntifs で定義されています。 バッファーは、非ページプールから割り当てられます。
 
-ネットワーク リダイレクターことを確認して、この IOCTL のカーネル モードの送信者を受け入れる必要があるのみ**Irp -&gt;requestormode で**は**kernelmode である**します。
+ネットワークリダイレクターは、 **Irp&gt;irp->requestormode**が**kernelmode で**であることを確認することによって、この IOCTL のカーネルモードの送信者のみに優先する必要があります。
 
-MUP は、クエリを使用して\_パス\_要求\_EX 要求については、データ構造体。
+MUP では、クエリの\_パス\_要求情報に\_EX データ構造を使用します。
 
 ```cpp
 typedef struct _QUERY_PATH_REQUEST_EX {
@@ -169,33 +169,33 @@ typedef struct _QUERY_PATH_REQUEST_EX {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構造体のメンバー</th>
+<th align="left">構造体メンバー</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>pSecurityContext</strong></p></td>
-<td align="left"><p>セキュリティ コンテキストへのポインター。</p></td>
+<td align="left"><p>セキュリティコンテキストへのポインター。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>EaLength</strong></p></td>
-<td align="left"><p>拡張属性のバッファーの長さ、(バイト単位)。</p></td>
+<td align="left"><p>拡張属性バッファーの長さ (バイト単位)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>pEaBuffer</strong></p></td>
 <td align="left"><p>拡張属性バッファーへのポインター。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>PathName</strong></p></td>
-<td align="left"><p>NULL 以外で終わる、フォームの Unicode 文字列&lt;server&gt;&lt;共有&gt;&lt;パス&gt;します。</p></td>
+<td align="left"><p><strong>パス名</strong></p></td>
+<td align="left"><p>&lt;server&gt;&lt;&gt;&lt;パス&gt;の形式の NULL で終わる NULL 以外の Unicode 文字列。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-UNC プロバイダーは、クエリを使用する必要があります\_パス\_応答情報の応答データの構造体。
+UNC プロバイダーでは、クエリ\_パス\_応答データ構造を使用して応答情報を提供する必要があります。
 
 ```cpp
 typedef struct _QUERY_PATH_RESPONSE {
@@ -210,45 +210,45 @@ typedef struct _QUERY_PATH_RESPONSE {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構造体のメンバー</th>
+<th align="left">構造体メンバー</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>LengthAccepted</strong></p></td>
-<td align="left"><p>指定された Unicode 文字列のパスから、プロバイダーによって要求されたプレフィックスの長さ、(バイト単位)、 <strong>PathName</strong> QUERY_PATH_REQUEST_EX 構造体のメンバー。</p></td>
+<td align="left"><p><strong>許容される長さ</strong></p></td>
+<td align="left"><p>QUERY_PATH_REQUEST_EX 構造体の<strong>PathName</strong>メンバーに指定された Unicode 文字列パスからプロバイダーによって要求されたプレフィックスの長さ (バイト単位)。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-注その IOCTL\_REDIR\_クエリ\_パス\_EX メソッドは、\_も IOCTL します。 これは、同じアドレスに入力と出力バッファーが存在しないことを意味します。 UNC プロバイダーでよくある間違いでは、入力バッファーと出力バッファーは同じであり、入力バッファーのポインターを使用して、応答を提供することを前提としています。
+IOCTL\_REDIR\_クエリ\_パス\_EX は、IOCTL ではないメソッド\_メソッドであることに注意してください。 これは、入力バッファーと出力バッファーが同じアドレスにない可能性があることを意味します。 UNC プロバイダーでよくある間違いは、入力バッファーと出力バッファーが同じであると想定し、入力バッファーポインターを使用して応答を提供することです。
 
-UNC プロバイダーが、IOCTL を受信すると\_REDIR\_クエリ\_パス\_の要求例で指定された UNC パスを処理できるかどうかを判断が、 **PathName**クエリのメンバー\_パス\_要求\_EX 構造体。 更新があるため、UNC プロバイダー場合、 **LengthAccepted** 、クエリのメンバー\_パス\_は要求し、状態がIRPの完了のプレフィックスの長さ、(バイト単位)と応答の構造\_成功します。 プロバイダーは、指定した UNC パスを処理できない場合は、IOCTL が失敗する必要があります\_REDIR\_クエリ\_パス\_EX で要求を適切な NTSTATUS エラー コードと、更新する必要があります、 **LengthAccepted** 、クエリのメンバー\_パス\_応答の構造。 プロバイダーは変更しないで、その他のメンバーのいずれかまたは**PathName**いずれかの条件下での文字列。
+UNC プロバイダーが\_\_クエリ\_PATH\_EX 要求の IOCTL を受け取ると、クエリの**PathName**メンバーに指定されている unc パスを処理できるかどうかを判断する必要があります\_パス\_要求\_exデータ. その場合、UNC プロバイダーは、\_\_クエリの**許容**される長さのメンバーを、要求されたプレフィックスの長さ (バイト単位) で更新する必要があります。これにより、状態\_SUCCESS で IRP を完了します。 プロバイダーは、指定された UNC パスを処理できない場合、IOCTL\_REDIR\_QUERY\_PATH\_EX 要求を適切な NTSTATUS エラーコードで失敗させる必要があります。また、クエリの許容される**長さ**のメンバーを更新することはできません\_パス\_応答構造体。 プロバイダーは、任意の条件下で、他のメンバーまたは**パス名**文字列を変更することはできません。
 
-Windows vista では、ネットワーク ミニ-リダイレクター UNC プロバイダーはこのプレフィックスの要求を受信は正規のツリーに接続した場合と同じサポートを示す RDBSS を使用して作成、ファイルを使用してユーザー モード Createfile の呼び出しに似ています\_作成\_ツリー\_接続フラグを設定します。 RDBSS を送り、 [ **MRxCreateSrvCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)要求への呼び出し後にネットワーク ミニ リダイレクターを[ **MRxSrvCallWinnerNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_srvcall_winner_notify)[ **MRxCreateVNetRoot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_v_net_root)します。 呼び出しとしてこのプレフィックスの要求が送られて[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。 ネットワークのミニ リダイレクター登録される RDBSS と、キー RDBSS 内部 RDBSS エントリ ポイントをポイントする場所を空けるのネットワークのミニ リダイレクター ドライバー ディスパッチ テーブルがコピーされます。 この IOCTL 受信 RDBSS\_REDIR\_クエリ\_パス\_ネットワーク ミニリダイレクターと呼び出しを内部的に EX **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**します。 元の IOCTL\_REDIR\_クエリ\_パス\_EX IRP が RX に含まれる\_コンテキストに渡され、 **MRxCreateSrvCall**ルーチン。 さらに、次のメンバー、RX で\_に渡されるコンテキスト**MRxCreateSrvCall**が変更されます。
+Windows Vista では、UNC プロバイダーとしてのサポートを示す RDBSS の使用に基づくネットワークミニリダイレクターは、このプレフィックス要求を、ファイル\_作成\_ツリーを使用したユーザーモードの Createfile 呼び出しと同様に、通常のツリー接続作成として受信し\_接続フラグを設定します。 RDBSS は、 [**MRxCreateSrvCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall)要求をネットワークミニリダイレクターに送信し、その後に[**MRxSrvCallWinnerNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify)と[**MRxCreateVNetRoot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)を呼び出します。 このプレフィックス要求は、 [**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)への呼び出しとして受信されません。 ネットワークミニリダイレクターが RDBSS に登録すると、ネットワークミニリダイレクターのドライバーディスパッチテーブルが RDBSS によってコピーされ、内部 RDBSS エントリポイントをポイントします。 RDBSS は、この IOCTL\_REDIR\_クエリ\_パス\_EX をネットワークミニリダイレクターの内部で受信し、 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**を呼び出します。 元の IOCTL\_REDIR\_クエリ\_パス\_EX IRP は、 **MRxCreateSrvCall**ルーチンに渡される RX\_コンテキストに含まれます。 また、 **MRxCreateSrvCall**に渡される RX\_コンテキストの次のメンバーが変更されます:
 
-**MajorFunction** IRP にメンバーが設定されている\_MJ\_作成元の IRP が IRP も\_MJ\_デバイス\_コントロール。
+元の IRP が IRP\_MJ\_デバイス\_コントロールでも、 **MajorFunction**メンバーは IRP\_MJ\_CREATE に設定されます。
 
-**PrefixClaim.SuppliedPathName.Buffer**にメンバーが設定されている、 **PathName.Buffer** 、クエリのメンバー\_パス\_要求\_EX 構造体。
+**SuppliedPathName**メンバーは、クエリ\_PATH\_REQUEST\_EX 構造体の PrefixClaim**のメンバーに**設定されます。
 
-**PrefixClaim.SuppliedPathName.Length**にメンバーが設定されている、 **PathName.Length** 、クエリのメンバー\_パス\_要求\_EX 構造体。
+SuppliedPathName メンバー**は、クエリ**\_PATH\_REQUEST\_EX 構造体の**PrefixClaim**メンバーに設定されます。
 
-**Create.ThisIsATreeConnectOpen**にメンバーが設定されている、 **TRUE**します。
+**ThisIsATreeConnectOpen**メンバーは**TRUE**に設定されます。
 
-**Create.ThisIsAPrefixClaim**にメンバーが設定されている、 **TRUE**します。
+**ThisIsAPrefixClaim**メンバーは**TRUE**に設定されます。
 
-**Create.NtCreateParameters.SecurityContext**にメンバーが設定されている、 **SecurityContext** 、クエリのメンバー\_パス\_要求\_EX 構造体。
+**SecurityContext**メンバーは、クエリ\_PATH\_REQUEST\_EX 構造体の**SecurityContext**メンバーに設定されます。
 
-**Create.EaBuffer**にメンバーが設定されている、 **pEaBuffer** 、クエリのメンバー\_パス\_要求\_EX 構造体。
+**EaBuffer**メンバーは、クエリ\_PATH\_REQUEST\_EX 構造体の**pEaBuffer**メンバーに設定されます。
 
-**Create.EaLength**にメンバーが設定されている、 **EaLength** 、クエリのメンバー\_パス\_要求\_EX 構造体。
+**EaLength**メンバーは、クエリ\_PATH\_REQUEST\_EX 構造体の**EaLength**メンバーに設定されます。
 
-**Create.Flags**メンバーは、RX が\_コンテキスト\_作成\_フラグ\_UNC\_名ビットが設定されます。
+**Create. Flags**メンバーには、RX\_コンテキスト\_作成\_フラグ\_UNC\_名前ビットセットが設定されます。
 
-RX でこれらのメンバーを読み取ることができるプレフィックスの要求の詳細を表示する場合、ネットワーク ミニリダイレクター\_に渡されるコンテキスト構造[ **MRxCreateSrvCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)します。 それ以外の場合、そのサーバー共有に接続して状態を返す試みることができますのみ\_成功した場合、 **MRxCreateSrvCall**呼び出しに成功しました。 RDBSS はミニ リダイレクターにに代わってネットワーク要求のプレフィックスになります。
+ネットワークミニリダイレクターがプレフィックス要求の詳細を表示する必要がある場合は、 [**MRxCreateSrvCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall)に渡される RX\_コンテキスト構造でこれらのメンバーを読み取ることができます。 それ以外の場合は、サーバー共有への接続を試行するだけで、 **MRxCreateSrvCall**の呼び出しが成功した場合には状態\_SUCCESS を返すことができます。 RDBSS は、ネットワークミニリダイレクターに代わってプレフィックス要求を行います。
 
 
 

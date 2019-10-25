@@ -3,15 +3,15 @@ title: MiniportXxx 関数
 description: MiniportXxx 関数
 ms.assetid: b992c3ff-deb1-49e2-a99f-310cc4cb81c3
 keywords:
-- MiniportXxx 関数 WDK ネットワーク
+- MiniportXxx functions WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc1ece15239edda28c6f381e5b973f9226a3ddbb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cba2c13efb2c3768cef0b8e1d1edaa56dd908a40
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382213"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844229"
 ---
 # <a name="miniportxxx-functions"></a>MiniportXxx 関数
 
@@ -19,11 +19,11 @@ ms.locfileid: "67382213"
 
 
 
-一般的なミニポート ドライバーでは、関数の数が少ないを使用して、ハードウェアと上位層で NDIS 経由で通信します。 すべての機能が必要です。 関数の省略可能なについての詳細については、必要な場合と理由を参照してください[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
+一般的なミニポートドライバーでは、いくつかの関数を使用して、NDIS を介して上位のレイヤーおよびハードウェアと通信します。 これらの関数のすべてが必要なわけではありません。 必須の関数とその理由の詳細については、「[ミニポートドライバーの初期化](initializing-a-miniport-driver.md)」を参照してください。
 
-NDIS ミニポート ドライバーおよび上位層のドライバーは、呼び出しを通して互いと通信する NDIS ライブラリ (Ndis.sys) を使用して**Ndis * Xxx*** 関数。
+Ndis ミニポートドライバーおよび上位層ドライバーは、ndis ライブラリ (Ndis) を使用して、ndis *** Xxx*** 関数の呼び出しによって相互に通信します。
 
-多くのミニポート ドライバー関数は、同期または非同期に動作します。 非同期関数が**Ndis*Xxx*完了**操作が終了したときに呼び出す必要がある関数。 プロトコル ドライバーを呼び出す場合など、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)ミニポート ドライバー情報のクエリ、ミニポート ドライバーの*MiniportOidRequest*関数できますを保留しますNDIS を返すことによってリセット操作\_状態\_保留します。 最終的に、ミニポート ドライバーを呼び出す必要があります[ **NdisMOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)のクエリ要求の最終的な状態を示します。
+多くのミニポートドライバー関数は、同期的または非同期的に動作できます。 非同期関数には、操作の完了時に呼び出す必要がある**Ndis*Xxx*の完全な**関数があります。 たとえば、プロトコルドライバーが[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)を呼び出してミニポートドライバー情報を照会する場合、ミニポートドライバーの*Miniportoidrequest*関数は、NDIS\_STATUS\_PENDING を返すことによってリセット操作を保留できます。 最終的に、ミニポートドライバーは[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)を呼び出して、クエリ要求の最終ステータスを示す必要があります。
 
  
 

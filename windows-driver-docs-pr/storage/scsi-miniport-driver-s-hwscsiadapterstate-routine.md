@@ -7,12 +7,12 @@ keywords:
 - HwScsiAdapterState
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24144f42be36e851d16fb1d348e1cf8ad137c754
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 0de942bc7eaa88abe53061936c3b4ee60634655a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252457"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842679"
 ---
 # <a name="scsi-miniport-drivers-hwscsiadapterstate-routine"></a>SCSI ミニポート ドライバーの HwScsiAdapterState ルーチン
 
@@ -20,7 +20,7 @@ ms.locfileid: "72252457"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiadapterstate_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIADAPTERSTATE_ROUTINE_KG"></span>
 
 
-NT ベースのオペレーティングシステムでは、[**ハードウェア @ no__t-3INITIALIZATION @ no__t-4DATA (scsi)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)で、このエントリポイントを**NULL**に設定する必要があります ( [scsi ミニポートドライバールーチン](scsi-miniport-driver-routines.md)を参照してください)。次の条件のいずれかが満たされている場合のみです。
+NT ベースのオペレーティングシステムでは、[**ハードウェア\_初期化\_データ (scsi)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_hw_initialization_data)で、このエントリポイントを**NULL**に設定する必要があります ( [scsi ミニポートドライバールーチン](scsi-miniport-driver-routines.md)を参照してください)。次のいずれかの条件に当てはまる場合のみです。
 
 -   ミニポートドライバーは、一般にハイエンドの RISC ベースのプラットフォームでのみ検出される i/o バス上で、HBA を接続します。 つまり、x86 専用の Microsoft Windows システムを実行している x86 ベースのプラットフォームには、HBA をサポートする種類の i/o バスがありません。
 

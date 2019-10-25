@@ -6,19 +6,19 @@ keywords:
 - IPrintOemUIMXDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eb9ec92512289fa3bd2c05446ce5cb5ac95555d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d04b164d87926c7a923a8b81bf1dbb07fc030d06
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371750"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842302"
 ---
 # <a name="iprintoemuimxdc-com-interface"></a>IPrintOemUIMXDC COM インターフェイス
 
 
-`IPrintOemUIMXDC` COM インターフェイスにより、情報を表示したり、XPS フィルター パイプラインのドライバーを[プリンター インターフェイス DLL](printer-interface-dll.md)のプリンター構成を管理します。 XPS ドライバーを通じてこの COM インターフェイスにアクセスする、 [Unidrv またはプラグイン Pscript](xpsdrv-driver-options.md)します。
+`IPrintOemUIMXDC` COM インターフェイスを使用すると、XPS フィルターパイプラインドライバーは、プリンターの構成用の[プリンターインターフェイス DLL](printer-interface-dll.md)によって管理される情報を表示および変更できます。 XPS ドライバーは、 [Unidrv または Pscript プラグイン](xpsdrv-driver-options.md)を介してこの COM インターフェイスにアクセスします。
 
-次の表に、すべてのメソッドを示し、`IPrintOemUIMXDC`インターフェイスを定義します。
+次の表に、`IPrintOemUIMXDC` インターフェイスで定義されているすべてのメソッドの一覧とその説明を示します。
 
 <table>
 <colgroup>
@@ -33,23 +33,23 @@ ms.locfileid: "67371750"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageableArea&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea)"><strong>IPrintOEMUIMXDC::AdjustImageableArea</strong></a></p></td>
-<td><p>UnidrvUI.dll または PS5UI.dll を使用して、向き、回転の方向など、印刷可能領域の構成をサポートする XPS フィルター パイプライン ドライバーを有効にします。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageableArea&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea)"><strong>IPrintOEMUIMXDC::AdjustImageableArea</strong></a></p></td>
+<td><p>XPS フィルターパイプラインドライバーが UnidrvUI または PS5UI を使用して、回転の向きや向きなど、印刷可能領域の構成をサポートできるようにします。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageCompression&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression)"><strong>IPrintOEMUIMXDC::AdjustImageCompression</strong></a></p></td>
-<td><p>UnidrvUI.dll または PS5UI.dll を使用して、JPEG 画像の圧縮レベルの構成をサポートする XPS フィルター パイプライン ドライバーを有効にします。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageCompression&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression)"><strong>IPrintOEMUIMXDC::AdjustImageCompression</strong></a></p></td>
+<td><p>XPS フィルターパイプラインドライバーが、JPEG イメージの圧縮レベルの構成をサポートするために UnidrvUI または PS5UI を使用できるようにします。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustDPI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi)"><strong>IPrintOEMUIMXDC::AdjustDPI</strong></a></p></td>
-<td><p>UnidrvUI.dll または PS5UI.dll を使用して、画像の解像度の構成をサポートする XPS フィルター パイプライン ドライバーを有効にします。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustDPI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi)"><strong>IPrintOEMUIMXDC::AdjustDPI</strong></a></p></td>
+<td><p>XPS フィルターパイプラインドライバーが、イメージの解像度の構成をサポートするために UnidrvUI または PS5UI を使用できるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: FSCTL_SET_EXTERNAL_BACKING 制御コード
-description: FSCTL\_設定\_外部\_バッキング制御コードは Windows Image Format (WIM) ファイルまたは外部バックアップ プロバイダーによって、圧縮されたファイルなど、ファイルのバックアップ ソースを設定します。
+description: '\_外部制御コード\_設定された FSCTL\_は、外部バッキングプロバイダーによって、Windows イメージフォーマット (WIM) ファイルや圧縮ファイルなどのファイルのバッキングソースを設定します。'
 ms.assetid: 5CB9FD4D-AF29-4438-B0B5-49871102968A
 keywords:
-- FSCTL_SET_EXTERNAL_BACKING 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_SET_EXTERNAL_BACKING 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,59 +14,59 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f7f0cf2dd5b3e00668751e6e964a29b8326a3ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 703bc6cada1475c12ee16965770d381b24f51c5b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380052"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841253"
 ---
-# <a name="fsctlsetexternalbacking-control-code"></a>FSCTL\_設定\_外部\_バッキング制御コード
+# <a name="fsctl_set_external_backing-control-code"></a>FSCTL\_設定\_外部\_バッキングコントロールコード
 
 
-**FSCTL\_設定\_外部\_バックアップ**制御コードは、Windows Image Format (WIM) ファイルまたは外部バックアップ プロバイダーによって、圧縮されたファイルなど、ファイルのバックアップ ソースを設定します。 以外のファイルが存在するボリューム上のボリュームは、外部からバックアップされたファイルのコンテンツをソースとする可能性があります。
+**\_外部制御コード\_設定**された FSCTL\_は、外部バッキングプロバイダーによって、Windows イメージフォーマット (WIM) ファイルや圧縮ファイルなどのファイルのバッキングソースを設定します。 外部でサポートされるファイルのコンテンツは、ファイルが存在するボリューム以外のボリュームで発生する可能性があります。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、次のパラメーターを使用して[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
 **Parameters**
 
-<a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
+<a href="" id="instance--in-"></a> *\]のインスタンス \[*  
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 呼び出し元の非透過インスタンスポインター。 このパラメーターは必須であり、NULL にすることはできません。
 
-<a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 バックアップを設定する対象のファイルのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
+<a href="" id="fileobject--in-"></a> *\]の FileObject \[*  
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 バッキングが設定されているファイルのファイルポインターオブジェクト。 このパラメーターは必須であり、NULL にすることはできません。
 
-<a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 バックアップを設定する対象のファイルのハンドル。 このパラメーターは、必要なは、NULL にすることはできません。
+<a href="" id="filehandle--in-"></a> *\]の FileHandle \[*  
+[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみ。 バッキングが設定されているファイルのハンドル。 このパラメーターは必須であり、NULL にすることはできません。
 
-<a href="" id="fscontrolcode--in-"></a>*FsControlCode\[で\]*  
-操作の制御コード。 使用**FSCTL\_設定\_外部\_バックアップ**この操作にします。
+<a href="" id="fscontrolcode--in-"></a> *\]の FsControlCode \[*  
+操作の制御コード。 この操作を行うには、FSCTL\_使用して **\_外部\_を設定**します。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-含まれていますが、入力バッファーへのポインター [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体のプロバイダー データが続きます。 WIM のバックアップ ファイル、 **WOF\_外部\_情報**が続く、 [ **WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)構造体。
+入力バッファーへのポインター。これには、 [**WOF\_外部\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)構造体の後にプロバイダーデータが格納されます。 WIM によってサポートされるファイルの場合、 **WOF\_外部\_情報**の後に[**wim\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_external_info)構造が続きます。
 
-<a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
-提供されるデータのサイズ、 *InputBuffer*します。
+<a href="" id="inputbufferlength--in-"></a> *\]内の InputBufferLength \[*  
+*InputBuffer*で提供されるデータのサイズ。
 
-<a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-なし。 NULL に設定します。
+<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[out\]*  
+なし。 を NULL に設定します。
 
-<a href="" id="outputbufferlength--in-"></a>*OutputBufferLength\[で\]*  
-0 に設定します。
+<a href="" id="outputbufferlength--in-"></a> *\]の OutputBufferLength \[*  
+を0に設定します。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な NTSTATUS 値が返されます。
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)は、操作が成功した場合に STATUS\_SUCCESS を返します。 それ以外の場合は、適切な NTSTATUS 値が返されます。
 
 <a name="remarks"></a>注釈
 -------
 
-追加されたデータ ソースのバックアップ プロバイダーが WIM プロバイダーの場合は、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造が続く、 [**WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)構造体。 *InputBufferLength*ここでは、 **sizeof**(**WOF\_外部\_情報**) + **sizeof**(**WIM\_プロバイダー\_外部\_情報**)。
+追加されたデータソースのバッキングプロバイダーが WIM プロバイダーである場合、入力バッファーには、[**外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)構造に加えて、 [**wim\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_external_info)構造が\_含まれます。 この場合、 *Inputbufferlength*は**sizeof**(**WOF\_外部\_info**) + **sizeof**(**WIM\_PROVIDER\_外部\_INFO**) になります。
 
-個別に圧縮されたファイルは変更されません、実行可能ファイルを含むデータの適切な圧縮を提供します。 書き込み用にこれらが開いて、ファイルが透過的に圧縮されていない状態になります。 入力バッファーには個別に圧縮されたファイルを指定するには、および、 [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_provider_external_info_v1)構造体。 *InputBufferLength*ここでは、 **sizeof**(**WOF\_外部\_情報**) + **sizeof**(**ファイル\_プロバイダー\_外部\_情報\_V1**)。 個々 の圧縮されたファイルでは、Windows 10 以降で使用できます。
+個別に圧縮されたファイルは、変更されないデータ (実行可能ファイルを含む) に適した圧縮を提供します。 これらが書き込み用に開かれている場合、ファイルは透過的に圧縮解除されます。 個別に圧縮されたファイルを指定するために、入力バッファーには、外部[ **\_情報\_V1 構造\_ファイル\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_provider_external_info_v1) 、 [ **\_の\_外部の情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)構造が含まれます。 この場合、 *Inputbufferlength*は**sizeof**(**WOF\_外部\_info**) + **sizeof**(**ファイル\_プロバイダー\_外部\_情報\_V1**) になります。 個々の圧縮ファイルは、Windows 10 以降で使用できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,11 +77,11 @@ ms.locfileid: "67380052"
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 8.1 Update 以降を利用できます。</p></td>
+<td align="left"><p>Windows 8.1 更新プログラムから使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h または Fltkernel.h を含む)</td>
+<td align="left">Ntifs (Ntifs または Fltkernel .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,17 +89,17 @@ ms.locfileid: "67380052"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
-[**FSCTL\_削除\_外部\_バックアップ**](fsctl-delete-external-backing.md)
+[**FSCTL\_\_外部\_の削除**](fsctl-delete-external-backing.md)
 
-[**FSCTL\_取得\_外部\_バックアップ**](fsctl-get-external-backing.md)
+[**FSCTL\_外部\_バッキング\_取得する**](fsctl-get-external-backing.md)
 
-[**WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)
+[**WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_external_info)
 
-[**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)
+[**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)
 
  
 

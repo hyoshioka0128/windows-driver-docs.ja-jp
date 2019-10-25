@@ -1,54 +1,54 @@
 ---
 title: XPSDrv の改善
-description: このトピックでは、XPSDrv レンダリング アーキテクチャに加えられた更新プログラムに関する情報を提供します。
+description: このトピックでは、XPSDrv 表示アーキテクチャに対して行われた更新について説明します。
 ms.assetid: 5D76ECA2-C5F6-47E4-BC05-B5137AD4196B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e04029b4557c9e9908e6c044d7e8590dcd1265c3
-ms.sourcegitcommit: 444ae04cb8f6da8964eef89524a5671c1e949f7f
+ms.openlocfilehash: 10ff7a5d3cec465f7e850937d20b4aa57940f22a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67416494"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842310"
 ---
 # <a name="improvements-in-xpsdrv"></a>XPSDrv の改善
 
-このトピックでは、XPSDrv レンダリング アーキテクチャに加えられた更新プログラムに関する情報を提供します。
+このトピックでは、XPSDrv 表示アーキテクチャに対して行われた更新について説明します。
 
 ## <a name="xps-format"></a>XPS 形式
 
-XPS 印刷 API や印刷フィルター パイプラインの間でシームレスに変換されます[Microsoft ホワイト ペーパーの仕様 『 Xml 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85)) (MS XPS) と[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm) (ECMA 388)。 指定しない場合、v4、MS XPS を使用するドライバーの既定を印刷します。 ドライバーは XpsFormat マニフェストのディレクティブを使用して、使用可能な XPS 形式の一方または両方をサポートするために選択できます。 OpenXPS サポートの詳細については、次を参照してください。 [Windows の OpenXPS サポート](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)します。
+XPS 印刷 API や印刷フィルターパイプラインは、 [Microsoft Xml Paper Specification 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85)) (MS XPS) と[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm) (ECMA-388) の間でシームレスに変換されます。 特に指定がない限り、v4 印刷ドライバーは既定で MS XPS を使用します。 Manifest ディレクティブ XpsFormat を使用すると、ドライバーは、使用可能な XPS 形式のいずれかまたは両方をサポートすることができます。 OpenXPS のサポートの詳細については、「 [OpenXPS support In Windows](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)」を参照してください。
 
-## <a name="xps-rasterization-service-improvements"></a>XPS ラスタライズ サービスの機能強化
+## <a name="xps-rasterization-service-improvements"></a>XPS ラスタライズサービスの機能強化
 
-XPS ラスタライズ サービスが高速の XPS ラスタライズを提供するグラフィックス処理ユニット (GPU) を使用する Windows 8 で改善されました。 これらのパフォーマンスの向上は Windows Display Driver Model (WDDM) 1.2 を使用する gpu を搭載した Windows 8 のシステムで使用できます。 XPS 表示フィルターには、この機能強化を活用するために、変更は不要し、v3 と v4 印刷ドライバーの使用可能なことができます。
+XPS ラスタライズサービスが Windows 8 で改良され、グラフィックス処理装置 (GPU) を使用して XPS ラスタライズを高速にするようになりました。 これらのパフォーマンスの向上は、windows Display Driver Model (WDDM) 1.2 を使用する Gpu を搭載した Windows 8 システムで利用できます。 XPS 表示フィルターでは、この改善を利用するための変更は必要ありません。 v3 と v4 の両方の印刷ドライバーで使用できます。
 
-XPS ラスタライズ サービスでは、次の精度の高い、新しい形式をなど、いくつかのピクセル形式でラスタライズも提供できます。 その結果、XPS ラスタライズ サービスを使用して印刷ドライバーでは、8 ビット、16 ビットおよび 32 ビット チャネルごとに色の精度が対象ようになりましたことができます。 ピクセル形式の詳細については、次を参照してください。[ネイティブ ピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)します。 これらの新しいピクセル形式がサポートされている、 [ **XPSRaterizationFactory1::CreateRasterizer1** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))メソッド。 次の表は、XPS ラスタライズ サービスのピクセル形式を示します。
+XPS ラスタライズサービスでは、次の新しい高精度形式を含む、いくつかのピクセル形式でラスタライズを行うこともできます。 その結果、XPS ラスタライズサービスを使用する印刷ドライバーは、チャネルあたり8ビット、16ビット、32ビットのカラー精度をターゲットにできるようになりました。 ピクセル形式の詳細については、「[ネイティブピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)」を参照してください。 これらの新しいピクセル形式は、 [**XPSRaterizationFactory1:: CreateRasterizer1**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))メソッドによってサポートされています。 次の表は、XPS ラスタライズサービスのピクセル形式を示しています。
 
-| Value                                | チャネルの数 | チャネルあたりのビット数 | ピクセルあたりのビット数 | 記憶域の種類 |
+| Value                                | チャネル数 | チャネルあたりのビット数 | ピクセルあたりのビット数 | 記憶域の種類 |
 |--------------------------------------|---------------|------------------|----------------|--------------|
-| GUID\_WICPixelFormat32bppPBGRA       | 4             | 8                | 32             | UINT         |
-| GUID\_WICPixelFormat64bppPRGBAHalf   | 4             | 16               | 64             | Float        |
-| GUID\_WICPixelFormat128bppPRGBAFloat | 4             | 32               | 128            | Float        |
+| GUID\_WICPixelFormat32bppPBGRA       | ホーム フォルダーが置かれているコンピューターにアクセスできない             | 8                | 32             | UINT         |
+| GUID\_WICPixelFormat64bppPRGBAHalf   | ホーム フォルダーが置かれているコンピューターにアクセスできない             | 16               | 64             | Float        |
+| GUID\_WICPixelFormat128bppPRGBAFloat | ホーム フォルダーが置かれているコンピューターにアクセスできない             | 32               | 128            | Float        |
 
 ## <a name="iprintcorehelperuni2"></a>IPrintCoreHelperUni2
 
-[IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni2)インターフェイスは GPD ファイルからのコマンド文字列の取得をサポートする Windows 8 で導入されました。 インターフェイスは同じ[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)、を除き、追加**GetNamedCommand**メソッド。
+[IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2)インターフェイスは、GPD ファイルからのコマンド文字列の取得をサポートするために Windows 8 で導入されました。 インターフェイスは[Iprintcoreの Peruni](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)と同じですが、追加の**getnamedcommand**メソッドは除きます。
 
 ## <a name="related-topics"></a>関連トピック
 
-[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)  
+[Iprintcoreの Peruni](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)  
 
-[IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni2)  
+[IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2)  
 
 [Microsoft Xml Paper Specification 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85))  
 
-[ネイティブのピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)  
+[ネイティブピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)  
 
 [OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm)  
 
-[Windows の OpenXPS サポート](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)  
+[Windows での OpenXPS のサポート](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)  
 
-[V4 プリンター ドライバーのレンダリング アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/print/v4-driver-rendering-architecture)  
+[V4 プリンタードライバーのレンダリングアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/print/v4-driver-rendering-architecture)  
 
 [**XPSRaterizationFactory1::CreateRasterizer1**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))  

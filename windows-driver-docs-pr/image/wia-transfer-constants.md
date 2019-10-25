@@ -4,29 +4,29 @@ description: WIA 転送定数
 ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 973911ef639af6ecbf4ffbb1b7ff1a6135d35c60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 53852889e9fea285928d576a3c1935e0b11648c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840667"
 ---
 # <a name="wia-transfer-constants"></a>WIA 転送定数
 
 
-このトピックでは、WIA に使用される定数の一覧を含む**IStream**-ベースの転送。
+このトピックには、WIA **IStream**ベースの転送に使用される定数の一覧が含まれています。
 
-これらの定数は、3 つのサブグループに分類されます。
+これらの定数は、次の3つのサブグループに分かれています。
 
--   アイテムの種類
+-   項目の種類
 
--   コールバック メッセージ
+-   コールバックメッセージ
 
 -   転送フラグ
 
-### <a name="item-type"></a>アイテムの種類
+### <a name="item-type"></a>項目の種類
 
-次の表はどの WIA 項目型のビットは、ストリーム ベースのデータ転送に関連します。
+次の表は、ストリームベースのデータ転送に関連する WIA 項目の種類を示しています。
 
 <table>
 <colgroup>
@@ -42,16 +42,16 @@ ms.locfileid: "67369816"
 <tbody>
 <tr class="odd">
 <td><p><strong>WiaItemTypeTransfer</strong></p></td>
-<td><p>これは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)"> <strong>WIA_IPA_ITEM_FLAGS</strong> </a>ビットは、データを転送することができるすべての項目で設定する必要があります。 は、アプリケーションをダウンロードを開始またはことには、このビット セットのアイテムをアップロードできます。</p></td>
+<td><p>この<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)"><strong>WIA_IPA_ITEM_FLAGS</strong></a>ビットは、データを転送できるすべての項目に対して設定する必要があります。つまり、このビットが設定されている項目に対して、アプリケーションがダウンロードまたはアップロードを開始できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="callback-messages"></a>コールバック メッセージ
+### <a name="callback-messages"></a>コールバックメッセージ
 
-次の表に、使用可能な値の*lFlags*パラメーターの**IWiaTransferCallback::TransferCallback**します。
+次の表は、 **Iwiatransfercallback:: transfercallback**の*lflags*パラメーターに使用できる値を示しています。
 
 <table>
 <colgroup>
@@ -67,19 +67,19 @@ ms.locfileid: "67369816"
 <tbody>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_STATUS</p></td>
-<td><p>転送の進行状況のアプリケーションに通知します。</p>
-<p><em>pWiaTransferParams</em> - &gt; <em>lPercentComplete</em>このアイテムは、転送されているページの達成率が含まれています。</p></td>
+<td><p>転送の進行状況をアプリケーションに通知します。</p>
+<p><em>Pwiatransの params</em>-&gt; <em>lpercentcomplete</em>率には、この項目の完了率と転送されているページが含まれます。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>現在のデータ ストリームに転送するデータがあることと、ストリームを閉じることができます、アプリケーションに通知します。</p>
-<p>複数項目または複数の転送に、新しいストリームを要求後場合があります。</p>
-<p>ドライバー メッセージを送信しないこの - 手動で、WIA、ドライバーは、次のストリームを要求時に、サービスにこのメッセージは送信自動的にします。</p></td>
+<td><p>現在のデータストリームに転送されるデータがなくなったこと、およびストリームが閉じられている可能性があることをアプリケーションに通知します。</p>
+<p>その後、複数項目または複数ページの転送で、新しいストリームが要求される可能性があります。</p>
+<p>ドライバーは、このメッセージを手動で送信しません。このメッセージは、ドライバーが次のストリームを要求したときに、自動的に送信されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
-<td><p>転送の終了時に、アプリケーションで受信します。</p>
-<p>ドライバーは、--このメッセージの WIA を送信できませんはサービスがこのメッセージを自動的に送信、転送が終了した後 (への呼び出しは、 <strong>IWiaMiniDrv::drvAcquiItemData</strong>返します)。</p></td>
+<td><p>転送の最後にアプリケーションによって受信されます。</p>
+<p>ドライバーはこのメッセージを送信しません。このメッセージは、転送が終了した後 (つまり、 <strong>IWiaMiniDrv::D rvacquiitemdata</strong>を呼び出すと)、WIA サービスによって自動的に送信されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_ERROR</p></td>
@@ -87,12 +87,12 @@ ms.locfileid: "67369816"
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_DEVICE_STATUS</p></td>
-<td><p>(たとえば、紙詰まり)、転送中にエラーを示します。</p>
-<p><em>pWiaTransferParams</em>-&gt;<em>hrErrorStatus</em>エラー ステータス コードが含まれています。</p></td>
+<td><p>転送中にエラーが発生したことを示します (紙詰まりなど)。</p>
+<p><em>Pwiatransferparams</em>-&gt;<em>hrErrorStatus</em>には、エラー状態コードが含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_NEW_PAGE</p></td>
-<td><p>1 つのファイル (マルチファイル TIFF) などの複数のページをサポートする形式が使用されているときに、新しいページが複数ページの転送中に転送されていることを示します。</p></td>
+<td><p>1つのファイル内の複数のページ (マルチファイル TIFF など) をサポートする形式が使用されている場合に、マルチページ転送中に新しいページが転送されることを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ ms.locfileid: "67369816"
 
 ### <a name="transfer-flags"></a>転送フラグ
 
-次の表に渡すことのできるフラグ[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)します。
+次の表は、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)に渡すことができるフラグを示しています。
 
 <table>
 <colgroup>
@@ -117,25 +117,25 @@ ms.locfileid: "67369816"
 <tbody>
 <tr class="odd">
 <td><p>WIA_MINIDRV_TRANSFER_DOWNLOAD</p></td>
-<td><p>転送が、ダウンロードのストリーム ベースの操作 (つまり、データ転送、デバイスからアプリケーションに) であることを示します。</p>
-<p>アプリケーションでは、このビットを直接設定しないでください。 WIA サービスは、アプリケーションから呼び出す場合にこのビットを設定<strong>IWiaTransfer::Download</strong>します。</p></td>
+<td><p>転送がストリームベースのダウンロード操作 (つまり、デバイスからアプリケーションへのデータ転送) であることを示します。</p>
+<p>アプリケーションでは、このビットを直接設定しません。 アプリケーションが<strong>IWiaTransfer::D o)</strong>を呼び出す場合、WIA サービスはこのビットを設定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MINIDRV_TRANSFER_UPLOAD</p></td>
-<td><p>転送はストリーム ベースのアップロード操作 (デバイスにアプリケーションからのデータ転送) であることを示します。</p>
-<p>アプリケーションでは、このビットを直接設定しないでください。 WIA サービスは、アプリケーションから呼び出す場合にこのビットを設定<strong>IWiaTransfer::Upload</strong>します。</p></td>
+<td><p>転送がストリームベースのアップロード操作 (つまり、アプリケーションからデバイスへのデータ転送) であることを示します。</p>
+<p>アプリケーションでは、このビットを直接設定しません。 アプリケーションが<strong>IWiaTransfer:: Upload</strong>を呼び出すと、WIA サービスはこのビットを設定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_MINIDRV_TRANSFER_ACQUIRE_CHILDREN</p></td>
-<td><p>ドライバーをフォルダーの転送を実行することを示します。 この値は、フォルダー アイテムで呼び出されると、そのフォルダーの子を転送するアプリケーションを要求します。</p>
-<p>アプリケーションを設定して、フォルダーの転送を要求する場合は、この値を設定するが、 <em>lFlags</em>パラメーターの<strong>IWiaTransfer::Download</strong> WIA _TRANSFER_ACQUIRE_CHILDREN に<em>と</em>ドライバーが 1 つのスキャンで複数の子要素を転送できることを指定します。 ドライバーは、この種類の転送を実行できません WIA サービスは、ドライバーに複数の呼び出しを行い、WIA_MINIDRV_TRANSFER_ACQUIRE_CHILDREN は場合<em>いない</em>を設定します。</p></td>
+<td><p>ドライバーがフォルダー転送を実行する必要があることを示します。 この値がフォルダー項目で呼び出された場合、アプリケーションはそのフォルダーの子の転送を要求します。</p>
+<p>この値は、 <strong>IWiaTransfer::D o)</strong>の<em>LFLAGS</em>パラメーターを<em>WIA _TRANSFER_ACQUIRE_CHILDREN に</em>設定することによって、アプリケーションがフォルダー転送を要求する場合に設定されます。ドライバーでは、複数の子を転送できるように指定されています。1つのスキャン。 ドライバーがこの種類の転送を実行できない場合、WIA サービスはドライバーに対して複数の呼び出しを行い、WIA_MINIDRV_TRANSFER_ACQUIRE_CHILDREN は設定され<em>ません</em>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、 **IWiaTransfer**と**IWiaTransferCallback**インターフェイス、Microsoft Windows SDK のドキュメントを参照してください。
+**IWiaTransfer**および**Iwiatrancallback**インターフェイスの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: FltReleaseResource ルーチン
-description: FltReleaseResource ルーチンでは、現在のスレッドによって所有されている、指定したリソースを解放します。
+description: FltReleaseResource ルーチンは、現在のスレッドが所有する指定されたリソースを解放します。
 ms.assetid: 2884c596-77ec-4cba-b6cb-000d96cc6342
 keywords:
-- FltReleaseResource ルーチン インストール可能なファイル システム ドライバー
+- FltReleaseResource ルーチンのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a203ac43821c62122e35f410b330f8e9b3c6e7ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b0891934ca079c1bbfa929ff5a7cfbfeff803a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384576"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841327"
 ---
 # <a name="fltreleaseresource-routine"></a>FltReleaseResource ルーチン
 
 
-**FltReleaseResource**ルーチンは、現在のスレッドによって所有されている、指定したリソースを解放します。
+**FltReleaseResource**ルーチンは、現在のスレッドが所有する指定されたリソースを解放します。
 
 <a name="syntax"></a>構文
 ------
@@ -38,8 +38,8 @@ VOID FltReleaseResource(
 <a name="parameters"></a>パラメーター
 ----------
 
-*リソース*\[入力、出力\]  
-リソースが解放される非透過のスケジュール作成構造体へのポインター。
+*リソース*\[in、out\]  
+解放されるリソースの不透明なリソース構造体へのポインター。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -49,23 +49,23 @@ VOID FltReleaseResource(
 <a name="remarks"></a>注釈
 -------
 
-**FltReleaseResource**が前に呼び出すことによって取得したリソースが解放[ **FltAcquireResourceExclusive** ](fltacquireresourceexclusive.md)または[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
+**FltReleaseResource**は、 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)または[**FltAcquireResourceShared**](fltacquireresourceshared.md)を呼び出すことによって既に取得されたリソースを解放します。
 
-**FltReleaseResource**用のラッパーです[ **ExReleaseResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)通常カーネル APC 配信を再び有効にします。
+**FltReleaseResource**は、通常のカーネル APC 配信を再び実現する[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)のラッパーです。
 
-**FltReleaseResource**通常カーネル APC の配信を再有効化を呼び出す必要はありません[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)または[ **FsRtlExitFileSystem** ](fsrtlexitfilesystem.md)呼び出した後**FltReleaseResource**します。
+**FltReleaseResource**は通常のカーネル APC 配信を再び行うため、 **FltReleaseResource**を呼び出した後に[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)または[**fsrtlexitfilesystem**](fsrtlexitfilesystem.md)を呼び出す必要はありません。
 
-リソースへの排他アクセスを取得するために呼び出す[ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)します。
+排他アクセスのためにリソースを取得するには、 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)を呼び出します。
 
-共有アクセス用のリソースを取得するために呼び出す[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
+共有アクセス用のリソースを取得するには、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)を呼び出します。
 
-システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)します。
+システムのリソースリストからリソースを削除するには、 [**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)を呼び出します。
 
-再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
+再利用するためにリソースを初期化するには、 [**Exreinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)を呼び出します。
 
-次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)でカーネルのアーキテクチャの設計ガイド。
+÷の構造体の詳細については、「カーネルアーキテクチャの設計ガイド」の「のについて」[を](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -80,19 +80,19 @@ VOID FltReleaseResource(
 </tr>
 <tr class="even">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>このルーチンは Microsoft Windows XP SP2、Microsoft Windows Server 2003 SP1 で使用できる以降。</p></td>
+<td align="left"><p>このルーチンは、Microsoft Windows XP SP2、Microsoft Windows Server 2003 SP1 以降で使用できます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 <tr class="even">
 <td align="left"><p>Library</p></td>
-<td align="left">FltMgr.lib</td>
+<td align="left">fltMgr .lib</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DLL</p></td>
-<td align="left">Fltmgr.sys</td>
+<td align="left">Fltmgr .sys</td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRQL</p></td>
@@ -104,13 +104,13 @@ VOID FltReleaseResource(
 ## <a name="see-also"></a>関連項目
 
 
-[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
+[**Ex/Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
+[**Exreinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
 
-[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -118,7 +118,7 @@ VOID FltReleaseResource(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)
 
  
 

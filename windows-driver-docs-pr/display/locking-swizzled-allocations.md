@@ -3,56 +3,56 @@ title: スウィズル割り当てのロック
 description: スウィズル割り当てのロック
 ms.assetid: c9be52d9-36b2-4a0f-9629-01b31293af38
 keywords:
-- WDK の表示のロック スィズルの割り当て
-- WDK 表示スィズル割り当てのロック
-- によってアンスウィズル割り当て WDK を表示します。
-- メモリのセグメントの WDK 表示、スィズル割り当てのロック
-- 割り当てスィズル ロック WDK の表示
-- 削除された割り当て WDK を表示します。
+- スィズル割り当てロックの WDK ディスプレイ
+- スィズル割り当てのロックの WDK ディスプレイ
+- 未スィズル割り当て WDK 表示
+- メモリセグメント WDK 表示、スィズル割り当てのロック
+- allocation swizzle locks の WDK 表示
+- 削除した割り当ての WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 114256e7cc9f1e6e79ca5b39e45967156f467dcf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0089975bb28eead2e58131df202db298a093f654
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360890"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840598"
 ---
 # <a name="locking-swizzled-allocations"></a>スウィズル割り当てのロック
 
 
-ビデオ メモリ マネージャー スィズル割り当てに直接アクセスする CPU の特別なサポートを提供します (を割り当て、ディスプレイのミニポート ドライバーの[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数のセット**Swizzled**フラグ、**フラグ**のメンバー、 [ **DXGK\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)構造)。
+ビデオメモリマネージャーは、スィズルされた割り当てへの直接の CPU アクセス (つまり、ディスプレイミニポートドライバーの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数が**フラグ**の**スィズル**フラグを設定する割り当て) への特別なサポートを提供します。[**DXGK\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当て情報構造体) のメンバー。
 
-ビデオ メモリ マネージャーは、メモリのセグメントからスィズルとしてドライバーによってマークされていない CPU アクセスの割り当てを削除、ときにディスプレイのミニポート ドライバー常に保存する必要あります線形の形式でします。 そのため、このような割り当てすることはできませんスィズル、aperture セグメント内にある、スィズルまたはドライバーのによって unswizzled が必ず[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数。
+ビデオメモリマネージャーが、ドライバーによってマークされていない CPU アクセス可能な割り当てをメモリセグメントから見つけした場合、ディスプレイミニポートドライバーは、常にそれらを線形形式で格納する必要があります。 そのため、このような割り当ては、アパーチャセグメントに配置されている間はスィズルできません。また、ドライバーの[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数によって常にスィズルまたはスィズル解除される必要があります。
 
-その一方で、スィズルとしてマークされている割り当てでは、常にメモリのセグメントから削除されるときに、線形形式で格納する必要はありません。 このような割り当てのビデオ メモリ マネージャーはそれらの割り当てのスウィズ リングの状態を追跡およびのみ、ドライバーの必要があります*DxgkDdiBuildPagingBuffer*転送の特定の操作中に割り当てをすべてに機能します。
+一方、スィズルとしてマークされている割り当ては、メモリセグメントから削除されるときに常に線形形式で格納される必要はありません。 このような割り当ての場合、ビデオメモリマネージャーはこれらの割り当てのスウィズリング状態を追跡し、特定の転送操作中に割り当てを unswizzle するにはドライバーの*DxgkDdiBuildPagingBuffer*関数のみを必要とします。
 
-ユーザー モードの表示後、ドライバーは、マイクロソフトの Direct3D ランタイムを呼び出して[ **pfnLockCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)関数、ビデオ メモリ マネージャーおよびディスプレイのミニポート ドライバーの動作に応じて次の方法で、割り当ての状態:
+ユーザーモードディスプレイドライバーが Microsoft Direct3D ランタイムの[**Pfnlockcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)関数を呼び出すと、ビデオメモリマネージャーとディスプレイミニポートドライバーは、割り当ての状態に応じて次のように動作します。
 
-1.  メモリのセグメントに割り当て
+1.  メモリセグメントに配置されている割り当て
 
-    ビデオ メモリ マネージャーは、割り当てに線形のアクセスを提供する CPU aperture の取得を試みます。 ビデオ メモリ マネージャーがシステム メモリに再度割り当てを削除する場合は、ビデオ メモリ マネージャーは、開口部を取得できません、(ドライバーを設定しない限り、 **DonotEvict**のメンバー、 [ **D3DDDICB\_LOCKFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)構造)。 ビデオ メモリ マネージャーが、表示ミニポート ドライバーを呼び出すときに[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)割り当てを転送する機能、ディスプレイのミニポート ドライバーすべて割り当てする必要があります。
+    ビデオメモリマネージャーは、割り当てに対する直線的なアクセスを提供するために CPU のアパーチャを獲得しようとします。 ビデオメモリマネージャーが絞りを取得できない場合、ビデオメモリマネージャーは、 [**D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)構造体のに**見つけメンバーを設定しない**限り、割り当てをシステムメモリに戻します。 ビデオメモリマネージャーがディスプレイミニポートドライバーの[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を呼び出して割り当てを転送すると、ディスプレイミニポートドライバーによって割り当てが unswizzle されます。
 
-2.  割り当ての削除 (スィズル)、aperture セグメントであるか
+2.  割り当てが削除された (スィズルされている) か、またはアパーチャセグメントに配置されている
 
-    割り当ては、CPU がアクセスする前に、によってアンスウィズルにすることがあります。 そのため、まず、ビデオ メモリ マネージャがページ メモリのセグメントに割り当てを試みます。 割り当てがメモリ セグメントにある後、ビデオ メモリ マネージャーとディスプレイのミニポート ドライバー番号 1 のように動作します。
+    CPU がアクセスできるようにするには、割り当てを解除する必要があります。 そのため、ビデオメモリマネージャーは、最初にメモリセグメントへの割り当てのページを試行します。 割り当てがメモリセグメントに配置されると、ビデオメモリマネージャーと表示ミニポートドライバーは、番号1と同じように動作します。
 
-3.  割り当ての削除 (によってアンスウィズル)
+3.  割り当てを削除した (非スィズル)
 
-    割り当てがシステム メモリによってアンスウィズルで既に場合は、ビデオ メモリ マネージャーは、さらに処理することがなく既存の割り当てのポインターを返します。
+    割り当てが既にシステムメモリに割り当てられていない場合、ビデオメモリマネージャーは、それ以上の処理を行わずに既存の割り当てポインターを返します。
 
-    GPU されていたによってアンスウィズル割り当てを使用するためには、割り当てがあります reswizzled GPU がこれを使用する前にします。 そのため、サーフェスの障害でビデオ メモリ マネージャーとディスプレイのミニポート ドライバー動作は、次の方法で。
+    GPU で以前にスィズルされていなかった割り当てを使用するには、GPU がそれを使用する前に割り当てを reswizzled する必要があります。 そのため、surface エラーの場合、ビデオメモリマネージャーとディスプレイミニポートドライバーは、次のように動作します。
 
-    -   メモリのセグメント (CPU の開口部によってその場でによってアンスウィズル) の割り当て
+    -   メモリセグメント内の割り当て (CPU アパーチャによってすぐに非スィズル)
 
-        割り当ては、GPU で処理できるスィズルの形式で既には。 そのため、さらに処理は必要ありません、ビデオ メモリ マネージャー。
+        この割り当ては、GPU が処理できるスィズルされた形式になっています。 そのため、ビデオメモリマネージャーではそれ以上の処理は必要ありません。
 
-    -   システム メモリ (によってアンスウィズル) に移動された割り当て
+    -   割り当てがシステムメモリ (非スィズル) に対して削除された
 
-        割り当てのページでは、によってアンスウィズル データが含まれ、aperture セグメントにマップすることはできません。 そのため、割り当ては、メモリのセグメントをページングする必要があります。 ビデオ メモリ マネージャーが、表示ミニポート ドライバーを呼び出すときに[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数で割り当て、ビデオ メモリ マネージャー ページを要求する、ディスプレイのミニポート ドライバースィズル割り当てです。
+        割り当てのページには、スィズルされていないデータが含まれているため、アパーチャセグメントにマップできません。 そのため、割り当てはメモリセグメント内でページングされている必要があります。 ビデオメモリマネージャーがディスプレイミニポートドライバーの[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を呼び出して割り当てのページを表示すると、ビデオメモリマネージャーは、ディスプレイミニポートドライバーが割り当てを swizzle するように要求します。
 
-**注**  スィズル割り当ては、CPU aperture を通じて CPU へのアクセスが、そのまま削除できるユーザー モードのディスプレイ ドライバーが、CPU へのアクセスを終了する前にします。 この場合は、番号 2 のように処理されます。 ユーザー モードのディスプレイ ドライバーとアプリケーションを表示できないような方法で、削除が実行されます。
-No-overwrite ロックではまた、(設定してロックを取得、 **IgnoreSync**のメンバー [ **D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags))、スィズルでは使用できません割り当てです。 のみの CPU または GPU は、任意の時点で、このような割り当てにアクセスできます。
+**  、** cpu アパーチャを介してスィズル割り当てが cpu アクセスを使用している場合は、ユーザーモードのディスプレイドライバーが cpu アクセスを終了する前に削除することができます。 このケースは、数値2のように処理されます。 削除は、アプリケーションおよびユーザーモードの表示ドライバーで非表示になるように実行されます。
+また、非上書きロック ( [**D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)の**IgnoreSync**メンバーの設定によって取得されたロック) は、スィズル割り当てでは許可されません。 特定の時点で、CPU または GPU だけがこのような割り当てにアクセスできます。
 
  
 

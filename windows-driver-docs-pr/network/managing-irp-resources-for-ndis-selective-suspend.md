@@ -4,23 +4,23 @@ description: NDIS セレクティブ サスペンドの IRP リソースの管�
 ms.assetid: 542A96A7-AD6D-4780-8FEF-34730A663C1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3958b35086b5d884e13a9b8b3776cc9ea5bba5f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 014594e1bafb69003dde7923f6e8715ba68aa840
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356165"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844118"
 ---
 # <a name="managing-irp-resources-for-ndis-selective-suspend"></a>NDIS セレクティブ サスペンドの IRP リソースの管理
 
 
-ミニポート ドライバーがサポートされ、選択的 NDIS、可能である場合の中断、NDIS 呼び出し[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ネットワーク アダプターが非アクティブになった場合、ドライバーをアイドル状態の通知を発行します。 ミニポート ドライバーでは、この通知を処理する場合は、I/O 要求パケット (Irp) を基になるバス ドライバーに発行する必要があります。 これらの Irp では、アダプターのアイドル状態と、アダプターは、低電力状態に移行することを確認する要求について、バス ドライバーに通知します。
+ミニポートドライバーで NDIS のセレクティブサスペンドがサポートされ、有効になっている場合、NDIS は[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)を呼び出して、ネットワークアダプターが非アクティブになった場合にドライバーへのアイドル通知を発行します。 ミニポートドライバーがこの通知を処理するときに、基になるバスドライバーに i/o 要求パケット (Irp) を発行することが必要になる場合があります。 これらの Irp は、アダプターのアイドル状態についてバスドライバーに通知し、アダプターが低電力状態に移行できることを確認するように要求します。
 
-ミニポート ドライバーで発行される Irp では、bus 固有です。 たとえば、NDIS を呼び出すと[ *MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)、USB ミニポート USB アイドル状態の要求を発行する ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) IRP を基になる USB バス ドライバー。
+ミニポートドライバーによって発行される Irp はバス固有です。 たとえば、NDIS が[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)を呼び出すと、usb ミニポートは、基になる usb バスドライバーに、usb アイドル要求[ **\_(内部\_usb\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) IRP を発行します。
 
-NDIS は、可能性があります、アイドル状態の通知を発行、ミニポート ドライバー何度も、ドライバーが初期化された後します。 ドライバーがドライバーへの呼び出しのコンテキストで USB アイドル要求 IRP のリソースを割り当てること勧めそのため、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。
+NDIS は、ドライバーが初期化された後に、ミニポートドライバーへのアイドル通知を何度も発行する場合があります。 このため、ドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数への呼び出しのコンテキストで、USB アイドル要求の IRP のリソースを割り当てることをお勧めします。
 
-次の例では、ミニポート ドライバーが IRP のリソースを割り当てる方法を示します。
+次の例は、ミニポートドライバーが IRP リソースを割り当てる方法を示しています。
 
 ```C++
 //
@@ -57,9 +57,9 @@ NDIS_STATUS MiniportInitializeEx(
     }
 ```
 
-呼び出し中に、ミニポート ドライバーが IRP リソースを割り当てますかどうか[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)、ドライバーが呼び出し中にこれらのリソースを解放する必要があります[ *MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)します。
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)の呼び出し中にミニポートドライバーによって IRP リソースが割り当てられた場合、ドライバーは[*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)の呼び出し中にこれらのリソースを解放する必要があります。
 
-次の例では、ミニポート ドライバーが IRP のリソースを解放する方法を示します。
+次の例は、ミニポートドライバーが IRP リソースを解放する方法を示しています。
 
 ```C++
 //

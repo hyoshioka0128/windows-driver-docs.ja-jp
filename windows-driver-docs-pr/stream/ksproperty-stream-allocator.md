@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_アロケーター
-description: KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能なプロパティ、暗証番号 (pin) のストリーム バッファーを割り当てまたはアロケーターを提供することができる場合に実装する必要があります
+title: KSK プロパティ\_STREAM\_アロケーター
+description: KSK プロパティ\_STREAM\_アロケータープロパティは省略可能なプロパティであり、pin がストリームバッファーを割り当てる場合、またはアロケーターを提供できる場合に実装する必要があります。
 ms.assetid: 9a13efe6-4ad4-49bc-b9f1-10c22b47d9d0
 keywords:
-- KSPROPERTY_STREAM_ALLOCATOR ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_ALLOCATOR ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d720349855711e149387112f4503ff8f025a1042
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdb64a6fbb1850fe785dcb3b99d69f6c7748ae4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392705"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844965"
 ---
-# <a name="kspropertystreamallocator"></a>KSPROPERTY\_ストリーム\_アロケーター
+# <a name="ksproperty_stream_allocator"></a>KSK プロパティ\_STREAM\_アロケーター
 
 
-KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能なプロパティ、暗証番号 (pin) のストリーム バッファーを割り当てまたはアロケーターを提供することができる場合に実装する必要があります
+KSK プロパティ\_STREAM\_アロケータープロパティは省略可能なプロパティであり、pin がストリームバッファーを割り当てる場合、またはアロケーターを提供できる場合に実装する必要があります。
 
 ## <span id="ddk_ksproperty_stream_allocator_ks"></span><span id="DDK_KSPROPERTY_STREAM_ALLOCATOR_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>ハンドル</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>扱え</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能�
 <a name="remarks"></a>注釈
 -------
 
-返される値は常に、 **NULL**を処理します。 ただし、サポートは、呼び出しが正常に終了するかどうかによって決まります。
+戻り値は常に**NULL**ハンドルです。 ただし、呼び出しが正常に返されたかどうかによってサポートが決定されます。
 
-プロパティは、ストリームの接続ポイントに割り当てられたアロケーターのハンドルを設定します。 KSPIN のコネクション ポイント\_通信\_ソース データの割り当てに使用するアロケーターのハンドルを判別するプロパティを確認します。 このプロパティは通常、DirectShow などのグラフ マネージャーによって設定します。
+プロパティは、ストリーム接続ポイントに割り当てられたアロケーターのハンドルを設定します。 KSPIN\_通信\_ソースの接続ポイントは、プロパティをチェックして、データの割り当てに使用するアロケーターのハンドルを決定します。 このプロパティは、通常、DirectShow などのグラフマネージャーによって設定されます。
 
-アロケーターのハンドルは取得され、別のフィルターの pin のアロケーターを設定するために使用できます。 アロケーターを使用してフィルターには、ファイル オブジェクトへのポインターを取得し、新しいアロケーターが割り当てられている場合、または接続が閉じられたときに、ファイル オブジェクトを逆参照するオブジェクトを参照する必要があります。 コネクション ポイントが、アロケーターを提供することをサポートしているかどうか、プロパティを照会こともできます。
+アロケーターハンドルが取得され、別のフィルターピンのアロケーターを設定するために使用できます。 アロケーターを使用するフィルターでは、オブジェクトを参照して、ファイルオブジェクトへのポインターを取得し、新しいアロケーターが割り当てられたとき、または接続が閉じられたときに、ファイルオブジェクトを逆参照する必要があります。 プロパティを照会して、このコネクションポイントがアロケーターの提供をサポートしているかどうかを判断することもできます。
 
 <a name="requirements"></a>要件
 ------------
@@ -81,7 +81,7 @@ KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ KSPROPERTY\_ストリーム\_アロケーター プロパティが省略可能�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

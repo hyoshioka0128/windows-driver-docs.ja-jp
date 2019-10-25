@@ -3,19 +3,19 @@ title: ストリーム バッファーと頂点バッファーのバインドの
 description: ストリーム バッファーと頂点バッファーのバインドの通知
 ms.assetid: 9ab9727f-053d-404b-95cc-ffd64fde7997
 keywords:
-- WDK の Windows 2000 の表示、複数のストリームの頂点の DirectX 8.0 リリース ノートします。
-- 複数の頂点 WDK DirectX 8.0 をストリームします。
-- 頂点 WDK DirectX 8.0 の複数のストリーム
+- DirectX 8.0 リリースノート WDK Windows 2000 display、複数の頂点ストリーム
+- 複数の頂点ストリーム (WDK DirectX 8.0)
+- 頂点マルチストリーム WDK DirectX 8.0
 - 頂点バッファー WDK DirectX 8.0
-- 頂点へのバインドのストリーム バッファーの WDK DirectX 8.0
+- 頂点バッファーへのストリームバインド WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27a8caba2ef2f8b90ec4329ed72dbbbb2b8401a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd84d46baa25b70ee776039fa5cba586bcdb7b85
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372799"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840528"
 ---
 # <a name="notification-of-stream-and-vertex-buffer-binding"></a>ストリーム バッファーと頂点バッファーのバインドの通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "67372799"
 ## <span id="ddk_notification_of_stream_vertex_buffer_binding_gg"></span><span id="DDK_NOTIFICATION_OF_STREAM_VERTEX_BUFFER_BINDING_GG"></span>
 
 
-ドライバーは、次のように新しい DP2 トークン D3DDP2OP で特定のストリームを頂点バッファーのバインドの通知\_SETSTREAMSOURCE、およびその関連付けられている HAL データ構造[ **D3DHAL\_DP2SETSTREAMSOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2setstreamsource).
+ドライバーは、新しい DP2 token、D3DDP2OP\_SETSTREAMSOURCE、およびそれに関連付けられている HAL データ構造体[**D3DHAL\_DP2SETSTREAMSOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2setstreamsource)を通じて、特定のストリームに頂点バッファーをバインドすることを通知します。
 
  
 

@@ -3,21 +3,21 @@ title: SO_RCVBUF
 description: SO_RCVBUF
 ms.assetid: 218b52ac-95ee-4047-ad75-76d6ae6ab14e
 ms.date: 08/08/2017
-keywords: -SO_RCVBUF ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の SO_RCVBUF ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 5359ac9f72fda333d14fcc3275cac74a0e9cb641
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f5d3f0aa519cabf2ca6abea464894258c8b1de66
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374746"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841884"
 ---
-# <a name="sorcvbuf"></a>したがって\_RCVBUF
+# <a name="so_rcvbuf"></a>RCVBUF\_
 
 
-SO\_RCVBUF ソケット オプションは、ソケットのサイズには、基になるトランスポートによって使用されるバッファーの受信を決定します。 このソケット オプションは、リッスンしているソケット、データグラム ソケットでは、接続指向のソケットにのみ適用されます。
+SO\_RCVBUF socket オプションは、基になるトランスポートが使用するソケットの受信バッファーのサイズを決定します。 このソケットオプションは、リッスンしているソケット、データグラムソケット、および接続指向のソケットにのみ適用されます。
 
-このソケット オプションの値を設定する WSK アプリケーションを呼び出す、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
+このソケットオプションの値を設定するために、WSK アプリケーションは次のパラメーターを使用して[**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)関数を呼び出します。
 
 <table>
 <colgroup>
@@ -40,16 +40,16 @@ SO\_RCVBUF ソケット オプションは、ソケットのサイズには、�
 <td><p>SO_RCVBUF</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
-<td><p>取得</p></td>
+<td><p><em>平準</em></p></td>
+<td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>sizeof(ULONG)</p></td>
+<td><p>sizeof (ULONG)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>受信バッファーのソケットの新しいサイズを含む ULONG に型指定された変数へのポインター</p></td>
+<td><p>ソケットの受信バッファーの新しいサイズを格納する、ULONG 型の変数へのポインター。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -66,7 +66,7 @@ SO\_RCVBUF ソケット オプションは、ソケットのサイズには、�
 </tbody>
 </table>
 
-SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケーションを呼び出す、 **WskControlSocket**関数は次のパラメーター。
+RCVBUF socket オプション\_の値を取得するために、WSK アプリケーションは次のパラメーターを使用して**Wskcontrolsocket**関数を呼び出します。
 
 <table>
 <colgroup>
@@ -89,8 +89,8 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 <td><p>SO_RCVBUF</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
-<td><p>取得</p></td>
+<td><p><em>平準</em></p></td>
+<td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
@@ -102,11 +102,11 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
-<td><p>sizeof(ULONG)</p></td>
+<td><p>sizeof (ULONG)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>受信バッファーのソケットの現在のサイズを受け取る ULONG に型指定された変数へのポインター</p></td>
+<td><p>ソケットの受信バッファーの現在のサイズを受け取る、ULONG 型の変数へのポインター</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -116,13 +116,13 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 </table>
 
 
-呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**などの値を取得または設定する関数\_RCVBUF ソケット オプション。
+WSK アプリケーションは、 **Wskcontrolsocket**関数を呼び出して、SO\_RCVBUF socket オプションの値を設定または取得するときに、IRP へのポインターを指定する必要があります。
 
-ソケットの既定のサイズの受信バッファーがトランスポートに固有です。 一部のトランスポートが、このソケット オプションをサポートしていません。
+ソケットの受信バッファーの既定のサイズは、トランスポートに固有です。 一部のトランスポートでは、このソケットオプションがサポートされていない可能性があります。
 
-このソケット オプションがリスニング ソケットに設定されている場合、受信バッファーがリスニング ソケットに対して指定されているのと同じサイズに設定があるすべての着信接続をリッスンしているソケットの受け入れられる。 WSK アプリケーションが呼び出すことができます、 **WskControlSocket**で受け入れられたソケット、リッスン ソケットから継承された受信バッファーのサイズをオーバーライドする関数。
+このソケットオプションがリッスンソケットに設定されている場合、そのリッスンソケットで受け入れられるすべての受信接続には、リッスンしているソケットに対して指定されたのと同じサイズの受信バッファーが設定されます。 WSK アプリケーションは、受け入れられたソケットで**Wskcontrolsocket**関数を呼び出して、リッスンしているソケットから継承された受信バッファーのサイズをオーバーライドできます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -133,11 +133,11 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ws2def.h (Wsk.h を含む)</td>
+<td>Ws2def (Wsk .h を含む)</td>
 </tr>
 </tbody>
 </table>

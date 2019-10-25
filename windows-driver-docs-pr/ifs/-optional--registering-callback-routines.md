@@ -1,32 +1,32 @@
 ---
-title: '[省略可能]コールバック ルーチンを登録します。'
-description: '[省略可能]コールバック ルーチンを登録します。'
+title: Optional登録 (コールバックルーチンを)
+description: Optional登録 (コールバックルーチンを)
 ms.assetid: 59d15b37-e31e-45fc-bdb0-fed6f791839c
 keywords:
-- コールバック ルーチンを登録します。
-- コールバック ルーチン WDK ファイル システム
+- 登録 (コールバックルーチンを)
+- コールバックルーチン WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ded069c1223c5579a1b10b17369bc5f6151d573b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eeb9552cd4a9985fdd6c37f258a848f8f1ef1ab2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381004"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841519"
 ---
-# <a name="optional-registering-callback-routines"></a>\[省略可能な\]コールバック ルーチンを登録します。
+# <a name="optional-registering-callback-routines"></a>\[オプション\] コールバックルーチンの登録
 
 
 ## <span id="ddk_registering_callback_routines_if"></span><span id="DDK_REGISTERING_CALLBACK_ROUTINES_IF"></span>
 
 
-フィルター ドライバーが呼び出せる[ **IoRegisterFsRegistrationChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfsregistrationchange)ファイル システム ドライバーを呼び出すたびに呼び出されるコールバック ルーチンを登録する[ **IoRegisterFileSystem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem)または[ **IoUnregisterFileSystem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iounregisterfilesystem)を登録または登録解除します。 フィルター ドライバーは、新しいファイル システム、システムを入力し、選択にアタッチするかどうかを確認できるように、このコールバック ルーチンを登録します。
+フィルタードライバーは、 [**IoRegisterFsRegistrationChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfsregistrationchange)を呼び出して、ファイルシステムドライバーが[**IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfilesystem)または[**iounregisterfilesystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iounregisterfilesystem)を呼び出して自身を登録または登録解除するたびに呼び出されるコールバックルーチンを登録できます。 フィルタードライバーこのコールバックルーチンを登録すると、新しいファイルシステムにシステムを入力し、アタッチするかどうかを選択できます。
 
-**注**  ファイル システム フィルター ドライバーは呼び出す必要がありますしない[ **IoRegisterFileSystem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem)または[ **IoUnregisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iounregisterfilesystem). これらのルーチンは、ファイル システム専用です。
+**注**   ファイルシステムフィルタードライバーは、 [**IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfilesystem)または[**iounregisterfilesystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iounregisterfilesystem)を呼び出すことはできません。 これらのルーチンは、ファイルシステム専用です。
 
  
 
-(たとえば、ユーザー モード アプリケーション) を明示的に指定されている場合にのみ、ボリュームに接続されているフィルター ドライバーは呼び出さないでください[ **IoRegisterFsRegistrationChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfsregistrationchange)します。 ただし、このルーチンを使用するフィルターがそのボリュームがマウントされている後すぐに、特定のボリュームにアタッチする機能を持つことに注意してください。 このルーチンを使用しても、ボリュームのデバイス オブジェクトに直接、フィルターをアタッチすることとは限りません。 このようなフィルターを確認する前に (そして下) にアタッチしますすべてのフィルターのみ、ファイル システム ボリューム デバイスの現在のスタックの上部にあるフィルターをアタッチできるため、代わりに、ユーザー モード アプリケーションからのコマンドの待機をします。
+明示的に指示された場合 (ユーザーモードアプリケーションなど) にのみボリュームにアタッチするフィルタードライバーは、 [**IoRegisterFsRegistrationChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioregisterfsregistrationchange)を呼び出すことはできません。 ただし、このルーチンを使用するフィルターは、そのボリュームがマウントされた直後に任意のボリュームにアタッチすることができます。 このルーチンを使用しても、フィルターが直接ボリュームデバイスオブジェクトにアタッチされるとは限りません。 ただし、このようなフィルターは、現在のファイルシステムボリュームのデバイススタックの最上位にしか接続できないため、ユーザーモードアプリケーションからのコマンドを待機するフィルターの前 (およびその下) にアタッチされることを保証します。
 
  
 

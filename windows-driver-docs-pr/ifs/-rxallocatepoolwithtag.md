@@ -1,9 +1,9 @@
 ---
 title: '\_RxAllocatePoolWithTag 関数'
-description: '\_RxAllocatePoolWithTag は、メモリの破壊のインスタンスを検出するときに使用できるブロックの先頭 4 バイトのタグを使用して、プールからメモリを割り当てます。'
+description: '\_RxAllocatePoolWithTag は、メモリ trashing のインスタンスをキャッチするために使用できる、ブロックの先頭に4バイトのタグがあるプールからメモリを割り当てます。'
 ms.assetid: 5e999d06-ebcf-433a-a714-f340a1c74be1
 keywords:
-- インストール可能なファイル システム ドライバーの _RxAllocatePoolWithTag 関数
+- _RxAllocatePoolWithTag 関数のインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf3a6e36aaec881d46eb1307f45a732d0ed5036c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3e769e9952757794394cf5e92861bdbba07c69b4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381768"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841513"
 ---
-# <a name="rxallocatepoolwithtag-function"></a>\_RxAllocatePoolWithTag 関数
+# <a name="_rxallocatepoolwithtag-function"></a>\_RxAllocatePoolWithTag 関数
 
 
-**\_RxAllocatePoolWithTag**メモリの破壊のインスタンスを検出するときに使用できるブロックの先頭 4 バイトのタグを使用して、プールからメモリを割り当てます。
+**\_RxAllocatePoolWithTag**は、メモリ trashing のインスタンスをキャッチするために使用できる、ブロックの先頭に4バイトのタグがあるプールからメモリを割り当てます。
 
 <a name="syntax"></a>構文
 ------
@@ -43,45 +43,45 @@ VOID* _RxAllocatePoolWithTag(
 ----------
 
 *型*   
-プールが割り当てられるの型。 このパラメーターは、プールの列挙値は次のいずれかを指定できます\_型。
+割り当てられるプールの種類。 このパラメーターには、プール\_型の次の列挙値のいずれかを指定できます。
 
 <a href="" id="nonpagedpool"></a>**NonPagedPool**  
-IRQL からアクセスできる非ページ システム メモリです。 **NonPagedPool**メモリが不足しているリソースであり、ドライバーには、必要な場合にのみ割り当てる必要があります。 システムは、ページよりも大きいバッファーを割り当てることができますのみ\_からサイズ**NonPagedPool**ページの倍数で\_サイズ。 ページよりも大きいバッファーに対する要求\_、サイズがページではなく\_複数のサイズを非ページング メモリを無駄にします。
+非ページングは、任意の IRQL からアクセスできるシステムメモリを使用します。 **NonPagedPool**メモリは不足しているリソースであり、ドライバーは必要なときにのみ割り当てます。 システムで割り当てることができるのは、ページ\_サイズの倍数で**NonPagedPool**からページ\_サイズより大きいバッファーのみです。 ページ\_サイズより大きいバッファーの要求に対して、複数の非ページングメモリを\_サイズではありません。
 
 <a href="" id="pagedpool"></a>**PagedPool**  
-ページング可能なシステム メモリを割り当てられたし、IRQL でアクセスできるだけ&lt;ディスパッチ\_レベル。
+IRQL &lt; ディスパッチ\_レベルでのみ割り当ておよびアクセスできるページング可能なシステムメモリ。
 
-*サイズ*   
-割り当てるバイトで、メモリ ブロックのサイズ。
+ *サイズ*  
+割り当てるメモリブロックのサイズ (バイト単位)。
 
 *タグ*   
-割り当てられたバッファーをマークするために使用する 4 バイト タグ。 タグを使用する方法については、次を参照してください。 [ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。 タグ内の各文字の ASCII 値は 0 ~ 127 の範囲にある必要があります。
+割り当てられたバッファーをマークするために使用される4バイトのタグ。 タグの使用方法の詳細については、「 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)」を参照してください。 タグ内の各文字の ASCII 値は、0 ~ 127 の範囲で指定する必要があります。
 
 *ファイル名*   
-メモリの割り当てが発生したソース ファイル名へのポインター。 このパラメーターは現在は使用されません。
+メモリ割り当てが発生したソースファイル名へのポインター。 このパラメーターは現在使用されていません。
 
 *LineNumber*   
-メモリの割り当てが発生したソース ファイル内の行番号。 このパラメーターは現在は使用されません。
+メモリ割り当てが発生したソースファイル内の行番号。 このパラメーターは現在使用されていません。
 
 <a name="return-value"></a>戻り値
 ------------
 
-**RxAllocatePoolWithTag**返します**NULL**要求を満たすための空きプールに十分なメモリがある場合。 それ以外の場合、ルーチンは、割り当てられたメモリへのポインターを返します。
+**RxAllocatePoolWithTag**は、要求を満たすために空きプール内のメモリが不足している場合に**NULL**を返します。 それ以外の場合、ルーチンは割り当てられたメモリへのポインターを返します。
 
 <a name="remarks"></a>注釈
 -------
 
-推奨されます、 **RxAllocatePoolWithTag**このルーチンを直接使用する代わりにマクロが呼び出されます。 呼び出す製品版ビルドでこのマクロが定義されている[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)します。 呼び出すチェック済みのビルドでこのマクロが定義されている **\_RxAllocatePoolWithTag**します。
+このルーチンを直接使用するのではなく、 **RxAllocatePoolWithTag**マクロを呼び出すことをお勧めします。 リテールビルドでは、このマクロは[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を呼び出すように定義されています。 チェックを行ったビルドでは、このマクロは **\_RxAllocatePoolWithTag**を呼び出すように定義されています。
 
-**\_RxAllocatePoolWithTag**ルーチンの呼び出し**ExAllocatePoolWithTagPriority** LowPoolPriority に設定された優先順位 (要求の重要度) にします。 システムは、リソースの少ない実行時に、LowPoolPriority の要求は失敗します。 このルーチンを使用する場合、割り当てエラーから回復するには、ドライバーを準備する必要があります。
+**\_RxAllocatePoolWithTag**ルーチンは、lowpoolpriority に設定された優先度 (要求の重要度) を使用して**Exallocatepoolwithtagpriority**を呼び出します。 リソースが不足している場合、システムは LowPoolPriority の要求に失敗する可能性があります。 このルーチンを使用する場合は、ドライバーを割り当てエラーから回復するように準備する必要があります。
 
-ときに、システムがページのメモリをプールからバッファーを割り当てます\_サイズ以上、バッファー ページ境界に合わせて配置します。 メモリの要求ページよりも小さい\_サイズは必ずしもページの境界にアラインされますが、常に 1 つのページに収まるし、は、8 バイト境界にアラインされます。 ページを超えるブロックを要求するすべての成功した割り当て\_ページの倍数でないサイズ\_サイズが最後に割り当てられたページで使用されていないすべてのバイトを浪費します。
+システムがページの\_サイズ以上のプールメモリからバッファーを割り当てた場合、バッファーはページの境界に配置されます。 ページ\_サイズより小さいメモリ要求は、必ずしもページの境界に沿って配置されるわけではありませんが、常に1つのページに収まるように、8バイトの境界に合わせて配置されます。 ページサイズの倍数ではないブロックを要求する正常に割り当てられた場合は、最後に割り当てられたページの未使用のバイトがすべて無駄になります。これは、ページ\_サイズの倍数ではない\_ブロックを要求します。
 
-システムでは、割り当てられたメモリをプール タグを関連付けます。 プログラミング、WinDbg などのツールと、割り当てられた各バッファーに関連付けられたプール タグを表示できます。 値*タグ*通常逆の順序で表示します。 たとえば、呼び出し元は 'Fred' として渡します、*タグ*、メモリ ダンプの場合、またはデバッガーのメモリ使用量を追跡する場合は 'derF' として表示されます。
+システムは、割り当てられたメモリに pool タグを関連付けます。 WinDbg などのプログラミングツールでは、割り当てられた各バッファーに関連付けられたプールタグを表示できます。 *タグ*の値は通常、逆順で表示されます。 たとえば、呼び出し元が "Fred" を*タグ*として渡すと、メモリがダンプされた場合、またはデバッガーのメモリ使用量を追跡している場合は、' derf ' として表示されます。
 
-割り当てられたメモリ **\_RxAllocatePoolWithTag**を呼び出して解放する必要が[  **\_RxFreePool**](-rxfreepool.md)します。
+**\_RxAllocatePoolWithTag**で割り当てられたメモリは[ **\_RxFreePool**](-rxfreepool.md)を呼び出すことによって解放する必要があります。
 
-呼び出し元 **\_RxAllocatePoolWithTag** IRQL で実行する必要があります&lt;= ディスパッチ\_レベル。 ディスパッチを実行して呼び出し元\_レベルを指定する必要があります、 **NonPagedPool**値、*型*パラメーター。 IRQL でを実行する呼び出し元&lt;APC を =\_レベルは、すべてのプールを指定できます\_の型の値、*型*パラメーター。
+**\_RxAllocatePoolWithTag**の呼び出し元は、IRQL &lt;= ディスパッチ\_レベルで実行されている必要があります。 ディスパッチ\_レベルで実行している呼び出し元は、*型*パラメーターに**NonPagedPool**値を指定する必要があります。 IRQL &lt;= APC\_LEVEL で実行される呼び出し元は、*型*パラメーターに任意のプール\_型の値を指定できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -98,11 +98,11 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ntrxdef.h (Ntrxdef.h を含む)</td>
+<td align="left">Ntrxdef. h (Ntrxdef. h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
-<td align="left"><p>「解説」セクションをご覧ください。</p></td>
+<td align="left"><p>「解説」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -110,7 +110,7 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 ## <a name="see-also"></a>関連項目
 
 
-[**Exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
+[**Exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
 [ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
 

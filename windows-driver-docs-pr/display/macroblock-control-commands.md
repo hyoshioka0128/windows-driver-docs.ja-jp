@@ -3,19 +3,19 @@ title: マクロブロック制御コマンド
 description: マクロブロック制御コマンド
 ms.assetid: be70ec8f-1821-4075-b5e3-b7574fbe4e27
 keywords:
-- WDK の DirectX va なので、コマンドをマクロ ブロック
+- マクロは WDK DirectX VA、コマンドをブロックします
 - DXVA_MBctrl_I_HostResidDiff_1
 - DXVA_MBctrl_I_OffHostIDCT_1
 - DXVA_MBctrl_P_HostResidDiff_1
 - DXVA_MBctrl_P_OffHostIDCT_1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d76743e7c97e34a31420044bfd407bd2920e5058
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 32fd7ef9f75f018eb0663fafff314a0a543dfb6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385602"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840588"
 ---
 # <a name="macroblock-control-commands"></a>マクロブロック制御コマンド
 
@@ -23,91 +23,91 @@ ms.locfileid: "67385602"
 ## <span id="ddk_macroblock_control_commands_gg"></span><span id="DDK_MACROBLOCK_CONTROL_COMMANDS_GG"></span>
 
 
-デコードされた各マクロ ブロックの圧縮された画像をデコード中に生成するマクロ ブロック コントロール コマンドの構造が適用されます。 定義された 4 つのマクロ ブロック コントロール コマンド構造がある、 *dxva.h*ヘッダー ファイル。
+圧縮された画像のデコード中の、デコードされた各マクロブロックの生成は、マクロブロックコントロールのコマンド構造によって管理されます。 *Dxva*ヘッダーファイルには、次の4つのマクロブロックコントロールコマンド構造が定義されています。
 
-[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)
+[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)
+[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)
 
-[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)
+[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)
+[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)
 
-構造体で明示的に定義されている*dxva.h*マクロ ブロック コントロールのコマンドの DirectX 問い合わせください使用される汎用的なデザインの特殊なケース。 この汎用的な設計については、次を参照してください。[マクロ ブロック コントロール コマンド構造の汎用フォーム](generic-form-of-macroblock-control-command-structures.md)します。
+*Dxva*で明示的に定義された構造体は、DirectX VA のマクロブロックコントロールコマンドに使用される一般的なデザインの特殊なケースです。 この汎用デザインの詳細については、「[汎用形式のマクロブロックコントロールのコマンド構造](generic-form-of-macroblock-control-command-structures.md)」を参照してください。
 
-使用できるマクロ ブロック コントロール コマンド構造体の選択はデコードする画像の種類とデコードする方法に基づいています。 次の構造体のメンバーとフラグ オプション、および 4 つの DirectX VA マクロ ブロックの制御構造のどちらを使用するデコードを画像の種類に決定します。
+使用するマクロブロックコントロールのコマンド構造の選択は、デコードする画像の種類とデコードされる方法に基づいて行われます。 次の構造体のメンバーとフラグによって、画像の種類、デコードオプション、4つの DirectX VA マクロブロック制御構造のうち、どれが使用されるかが決まります。
 
--   **BPicIntra**、 **bChromaFormat**、 **bPicOBMC**、 **bPicBinPB**、 **bPic4MVallowed**と**bMV\_RPS**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。
+-   **BbChromaFormat 内部**、、 **b絵文字 obmc**、 **bbPic4MVallowed Binpb**、 、および**Bmv\_RPS**のメンバーは、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体です。
 
--   **BConfigResidDiffHost**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体。
+-   [**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**bConfigResidDiffHost**メンバー。
 
--   *HostResidDiff*フラグ (の 10 ビット、 **wMBtype**各マクロ ブロック コントロールの構造体のメンバー)。
+-   *Hostresiddiff*フラグ (各マクロブロック制御構造の**wmbtype**メンバーのビット 10)。
 
-これらの構造体のメンバーとフラグの値は、次のセクションに表示されます。
+次のセクションでは、これらの構造体のメンバーとフラグの値について説明します。
 
-### <a name="span-iddxvambctrlihostresiddiff1spanspan-iddxvambctrlihostresiddiff1spanspan-iddxvambctrlihostresiddiff1spandxvambctrlihostresiddiff1"></a><span id="DXVA_MBctrl_I_HostResidDiff_1"></span><span id="dxva_mbctrl_i_hostresiddiff_1"></span><span id="DXVA_MBCTRL_I_HOSTRESIDDIFF_1"></span>DXVA\_MBctrl\_I\_HostResidDiff\_1
+### <a name="span-iddxva_mbctrl_i_hostresiddiff_1spanspan-iddxva_mbctrl_i_hostresiddiff_1spanspan-iddxva_mbctrl_i_hostresiddiff_1spandxva_mbctrl_i_hostresiddiff_1"></a><span id="DXVA_MBctrl_I_HostResidDiff_1"></span><span id="dxva_mbctrl_i_hostresiddiff_1"></span><span id="DXVA_MBCTRL_I_HOSTRESIDDIFF_1"></span>DXVA\_MBctrl\_I\_HostResidDiff\_1
 
-**DXVA\_MBctrl\_は\_HostResidDiff\_1**します。 次の構造体のメンバーとフラグ値でなければなりません。
+**DXVA\_MBctrl\_I\_HostResidDiff\_1**です。 次の構造体のメンバーとフラグは、指定された値と同じである必要があります。
 
--   **bPicIntra** 1 (内の画像) でなければなりません。
+-   **B絵文字**は、1 (画像内) に等しくなければなりません。
 
--   **bChromaFormat** 1 (4:2:0 サンプリング) に等しい必要があります。
+-   **bChromaFormat**は 1 (4:2:0 サンプリング) に等しくなければなりません。
 
--   *HostResidDiff* (ホスト ベース IDCT) を 1 に等しい必要があります。
+-   *Hostresiddiff*は 1 (ホストベースの idct) と同じである必要があります。
 
--   **bConfigResidDiffHost** (残存違いのホストベースのデコード) 1 でなければなりません。
+-   **bConfigResidDiffHost**は 1 (ホストベースの残余差のデコード) に等しくなければなりません。
 
-### <a name="span-iddxvambctrlioffhostidct1spanspan-iddxvambctrlioffhostidct1spanspan-iddxvambctrlioffhostidct1spandxvambctrlioffhostidct1"></a><span id="DXVA_MBctrl_I_OffHostIDCT_1"></span><span id="dxva_mbctrl_i_offhostidct_1"></span><span id="DXVA_MBCTRL_I_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_I\_OffHostIDCT\_1
+### <a name="span-iddxva_mbctrl_i_offhostidct_1spanspan-iddxva_mbctrl_i_offhostidct_1spanspan-iddxva_mbctrl_i_offhostidct_1spandxva_mbctrl_i_offhostidct_1"></a><span id="DXVA_MBctrl_I_OffHostIDCT_1"></span><span id="dxva_mbctrl_i_offhostidct_1"></span><span id="DXVA_MBCTRL_I_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_I\_OffHostIDCT\_1
 
-[ **DXVA\_MBctrl\_は\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)構造が 4 内の画像の使用: 2:0 サンプリング オフホスト残存相違点がありますデコードします。 次の構造体のメンバーとフラグ値でなければなりません。
+[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)構造体は、4:2:0 サンプリングを使用して、ホスト間の残留差のデコードを無効にして、画像内で使用されます。 次の構造体のメンバーとフラグは、指定された値と同じである必要があります。
 
--   **bPicIntra** 1 (内の画像) でなければなりません。
+-   **B絵文字**は、1 (画像内) に等しくなければなりません。
 
--   **bChromaFormat** 1 (4:2:0 サンプリング) に等しい必要があります。
+-   **bChromaFormat**は 1 (4:2:0 サンプリング) に等しくなければなりません。
 
--   *HostResidDiff* 0 (オフホスト IDCT) を等しく必要があります。
+-   *Hostresiddiff*は0に等しくなければなりません (ホスト id を無効にする必要があります)。
 
--   **bConfigResidDiffHost** 0 (オフホスト残存違いデコード) と等しく必要があります。
+-   **bConfigResidDiffHost**は0に等しくする必要があります (オフホストの残留差のデコード)。
 
-### <a name="span-iddxvambctrlphostresiddiff1spanspan-iddxvambctrlphostresiddiff1spanspan-iddxvambctrlphostresiddiff1spandxvambctrlphostresiddiff1"></a><span id="DXVA_MBctrl_P_HostResidDiff_1"></span><span id="dxva_mbctrl_p_hostresiddiff_1"></span><span id="DXVA_MBCTRL_P_HOSTRESIDDIFF_1"></span>DXVA\_MBctrl\_P\_HostResidDiff\_1
+### <a name="span-iddxva_mbctrl_p_hostresiddiff_1spanspan-iddxva_mbctrl_p_hostresiddiff_1spanspan-iddxva_mbctrl_p_hostresiddiff_1spandxva_mbctrl_p_hostresiddiff_1"></a><span id="DXVA_MBctrl_P_HostResidDiff_1"></span><span id="dxva_mbctrl_p_hostresiddiff_1"></span><span id="DXVA_MBCTRL_P_HOSTRESIDDIFF_1"></span>DXVA\_MBctrl\_P\_HostResidDiff\_1
 
-[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)残存違いのホスト ベースのデコードの P と B の画像の構造を使用します。 次のマクロ ブロック制御プロセスは使用されません。OBMC、PB 図の B 部分のマクロ ブロックごとの 4 つの動きベクトルの使用および動きベクトルの使用は、画像の選択を参照します。
+[**DXVA\_MBctrl\_p\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)構造体は、ホストベースの残余差のデコードを含む p および B の画像に使用されます。 次のマクロブロックの制御プロセスは使用されません。 OBMC、PB 画像の B 部分のマクロブロックごとに4つのモーションベクターを使用し、モーションベクター参照の画像選択を使用します。
 
-次の構造体のメンバーとフラグ値でなければなりません。
+次の構造体のメンバーとフラグは、指定された値と同じである必要があります。
 
--   **bPicIntra** 0 と等しく必要があります (のデコード*P 画像*と*B 画像*またはで動きベクトルの補填*画像は*)。
+-   **bpicture** in は0に等しくなければなりません ( *P* picture と*B picture*または concealment motion vector for *I picture*)。
 
--   **bChromaFormat** 1 (4:2:0 サンプリング) に等しい必要があります。
+-   **bChromaFormat**は 1 (4:2:0 サンプリング) に等しくなければなりません。
 
--   *HostResidDiff* (ホスト ベース IDCT) を 1 に等しい必要があります。
+-   *Hostresiddiff*は 1 (ホストベースの idct) と同じである必要があります。
 
--   **bPicOBMC** 0 (OBMC 使用されません) を等しく必要があります。
+-   **B絵文字 Obmc**は0に等しくなければなりません (obmc は使用されません)。
 
--   **bMV\_RPS** 0 (動きベクトルの参照を画像の選択使用されません) を等しく必要があります。
+-   **Bmv\_RPS**は0に等しくなければなりません (モーションベクター参照画像の選択は使用されません)。
 
--   少なくとも 1 つの**bPicBinPB** PB フレーム モーション報酬が使用されません (B の画像) と**bPic4MVallowed** (未使用のマクロ ブロックあたり 4 つの前方参照モーション ベクトル) は 0 と等しく必要があります。
+-   **BbPic4MVallowed Binpb**の少なくとも1つ (PB-フレームモーション補正が使用されていません) と (マクロブロックが使用されていない場合は、4つの前方参照モーションベクトル) が0になる必要があります。
 
--   **bConfigResidDiffHost** (残存違いのホストベースのデコード) 1 でなければなりません。
+-   **bConfigResidDiffHost**は 1 (ホストベースの残余差のデコード) に等しくなければなりません。
 
-### <a name="span-iddxvambctrlpoffhostidct1spanspan-iddxvambctrlpoffhostidct1spanspan-iddxvambctrlpoffhostidct1spandxvambctrlpoffhostidct1"></a><span id="DXVA_MBctrl_P_OffHostIDCT_1"></span><span id="dxva_mbctrl_p_offhostidct_1"></span><span id="DXVA_MBCTRL_P_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_P\_OffHostIDCT\_1
+### <a name="span-iddxva_mbctrl_p_offhostidct_1spanspan-iddxva_mbctrl_p_offhostidct_1spanspan-iddxva_mbctrl_p_offhostidct_1spandxva_mbctrl_p_offhostidct_1"></a><span id="DXVA_MBctrl_P_OffHostIDCT_1"></span><span id="dxva_mbctrl_p_offhostidct_1"></span><span id="DXVA_MBCTRL_P_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_P\_OffHostIDCT\_1
 
-[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造が 4 で画像を P と B の使用: 2:0 サンプリング オフホスト残存相違点がありますデコードします。 次のマクロ ブロック制御プロセスは使用されません。OBMC、PB 図の B 部分のマクロ ブロックごとの 4 つの動きベクトルの使用および動きベクトルの使用は、画像の選択を参照します。
+[**DXVA\_MBctrl\_p\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体は、p と B の画像に対して使用されます。4:2:0 サンプリングでは、ホストの残留差の不一致があります。 次のマクロブロックの制御プロセスは使用されません。 OBMC、PB 画像の B 部分のマクロブロックごとに4つのモーションベクターを使用し、モーションベクター参照の画像選択を使用します。
 
-次の構造体のメンバーとフラグ値でなければなりません。
+次の構造体のメンバーとフラグは、指定された値と同じである必要があります。
 
--   **bPicIntra**のメンバー、 **DXVA\_PictureParameters**またはで動きベクトルの補填*画像は*)。
+-   **DXVA\_ピクチャパラメーター**または concealment motion Vector in *I Pictures*) の**b** 。
 
--   **bChromaFormat** 1 (4:2:0 サンプリング) に等しい必要があります。
+-   **bChromaFormat**は 1 (4:2:0 サンプリング) に等しくなければなりません。
 
--   *HostResidDiff* 0 (オフホスト IDCT) を等しく必要があります。
+-   *Hostresiddiff*は0に等しくなければなりません (ホスト id を無効にする必要があります)。
 
--   **bPicOBMC** 0 (OBMC 使用されません) を等しく必要があります。
+-   **B絵文字 Obmc**は0に等しくなければなりません (obmc は使用されません)。
 
--   **bMV\_RPS** 0 (動きベクトルの参照を画像の選択使用されません) を等しく必要があります。
+-   **Bmv\_RPS**は0に等しくなければなりません (モーションベクター参照画像の選択は使用されません)。
 
--   少なくとも 1 つの**bPicBinPB** PB フレーム モーション報酬が使用されません (B の画像) と**bPic4MVallowed** (未使用のマクロ ブロックあたり 4 つの前方参照モーション ベクトル) は 0 と等しく必要があります。
+-   **BbPic4MVallowed Binpb**の少なくとも1つ (PB-フレームモーション補正が使用されていません) と (マクロブロックが使用されていない場合は、4つの前方参照モーションベクトル) が0になる必要があります。
 
--   **bConfigResidDiffHost** 0 (オフホスト残存違いデコード) と等しく必要があります。
+-   **bConfigResidDiffHost**は0に等しくする必要があります (オフホストの残留差のデコード)。
 
  
 

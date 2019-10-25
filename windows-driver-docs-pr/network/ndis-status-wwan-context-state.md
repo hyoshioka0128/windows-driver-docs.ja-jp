@@ -1,40 +1,40 @@
 ---
 title: NDIS_STATUS_WWAN_CONTEXT_STATE
-description: ミニポート ドライバーでは、NDIS_STATUS_WWAN_CONTEXT_STATE 通知を使用して、特定のコンテキストのアクティブ化の状態が変更されたときにイベント通知を送信します。
+description: ミニポートドライバーは、特定のコンテキストのアクティブ化状態が変化したときに、NDIS_STATUS_WWAN_CONTEXT_STATE 通知を使用してイベント通知を送信します。
 ms.assetid: 6713f6a3-d1b7-49d0-83e1-50a33e9fff32
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_CONTEXT_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_CONTEXT_STATE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: d488069c2c19d2e385ccc6a0f192a8c411698129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3b55732d4c213fbe96c303b05febb9d750a62ad7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382651"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842634"
 ---
-# <a name="ndisstatuswwancontextstate"></a>NDIS\_状態\_WWAN\_コンテキスト\_状態
+# <a name="ndis_status_wwan_context_state"></a>NDIS\_ステータス\_WWAN\_コンテキスト\_状態
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_コンテキスト\_状態通知の特定のコンテキストのアクティブ化の状態が変更されたときにイベント通知を送信します。
+ミニポートドライバーは、特定のコンテキストのアクティベーション状態が変更されたときにイベント通知を送信するために、NDIS\_ステータス\_WWAN\_コンテキスト\_状態通知を使用します。
 
-ミニポート ドライバーには、この通知が不要なイベントを送信できます。
+ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)構造体。
+この通知では、 [**NDIS\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)構造を使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-結果として、コンテキストの状態の変更の原因がないときに、ミニポート ドライバーは MB サービスを通知もする必要があります、*設定*MB サービスから要求します。 たとえば、ネットワークには、コンテキストが非アクティブ化する場合、ミニポート ドライバーは MB サービスに通知する必要があります。 ミニポート ドライバーでは、ネットワークが開始されたコンテキストのアクティブ化は実装しないでください。
+また、MB サービスからの*set*要求の結果としてコンテキスト状態の変更が発生しない場合、ミニポートドライバーは mb サービスに通知する必要があります。 たとえば、ネットワークがコンテキストを非アクティブにした場合、ミニポートドライバーは MB サービスに通知する必要があります。 ミニポートドライバーでは、ネットワークで開始されたコンテキストのアクティブ化を実装しないでください。
 
-ミニポート ドライバーは、すべての該当するコンテキストの状態変更については、直接 Windows をよう通知する必要があります NDIS を処理するときに\_状態\_WWAN\_パケット\_サービスまたは NDIS\_状態\_WWAN\_登録\_状態通知の状態。
+ミニポートドライバーは、適用されるすべてのコンテキスト状態の変更について、Windows に直接通知する必要があります。たとえば、NDIS\_ステータス\_WWAN\_パケット\_サービスまたは NDIS\_状態\_WWAN\_REGISTER\_状態の通知。
 
-別の音声およびデータ接続をサポートする MB デバイスのミニポート ドライバーは、次のガイドラインに従う必要があります。
+個別の音声接続とデータ接続をサポートする、MB のミニポートドライバーは、次のガイドラインに従う必要があります。
 
--   初期化時に、WwanVoiceCallStateNone に、VoiceCallState を設定する必要があります。
+-   初期化時には、VoiceCallState を WwanVoiceCallStateNone に設定する必要があります。
 
--   音声通話の開始には、VoiceCallState WwanVoiceCallStateInProgress に設定したイベント通知を送信します。 その他のすべてのメンバーは、その現在の状態を反映する必要があります。 音声通話中にアクティブな接続がないが発生した場合、ConnectionId を「0」に設定してください。
+-   音声通話の開始時に、VoiceCallState を WwanVoiceCallStateInProgress に設定してイベント通知を送信します。 他のすべてのメンバーは、現在の状態を反映している必要があります。 音声通話中にアクティブな接続がない場合は、ConnectionId を "0" に設定する必要があります。
 
--   音声通話が完了した後は、VoiceCallState WwanVoiceCallStateHangUp に設定したイベント通知を送信します。 その他のすべてのメンバーは、その現在の状態を反映する必要があります。 音声通話切断中にアクティブな接続がないが発生した場合、ConnectionId を「0」に設定してください。 このイベントは後、に、VoiceCallState を設定する必要があります**WwanVoiceCallStateNone**ミニポート ドライバーでします。
+-   音声通話が完了したら、VoiceCallState を WwanVoiceCallStateHangUp に設定してイベント通知を送信します。 他のすべてのメンバーは、現在の状態を反映している必要があります。 音声通話の切断中にアクティブな接続がない場合は、ConnectionId を "0" に設定する必要があります。 このイベントの後に、ミニポートドライバーで VoiceCallState を**WwanVoiceCallStateNone**に設定する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -47,11 +47,11 @@ ms.locfileid: "67382651"
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -59,9 +59,9 @@ ms.locfileid: "67382651"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)
+[**NDIS\_WWAN\_コンテキスト\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)
 
-[OID\_WWAN\_プロビジョニング済み\_コンテキスト](oid-wwan-provisioned-contexts.md)
+[OID\_WWAN\_プロビジョニングされた\_コンテキスト](oid-wwan-provisioned-contexts.md)
 
  
 

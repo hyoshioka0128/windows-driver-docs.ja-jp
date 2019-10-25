@@ -3,22 +3,22 @@ title: RDBSS が使用しないルーチン
 description: RDBSS が使用しないルーチン
 ms.assetid: bf3e2936-05c9-4012-a55b-40022844f5db
 keywords:
-- ミニ-リダイレクター WDK、RDBSS
+- ミニリダイレクター WDK、RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 114552f3848f9da5b0b440436681dcd58e6f9356
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 183069f6d22ce2d5c6c390a9a42d115fa4732d8c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371932"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840980"
 ---
 # <a name="routines-not-used-by-rdbss"></a>RDBSS が使用しないルーチン
 
 
-多くのルーチン、MINIRDR に記載\_ディスパッチ構造が呼び出されるか RDBSS で使用できません。 呼び出されないために、これらのルーチンのいずれかを実装するために、ネットワーク ミニ リダイレクターの必要はありません。 ネットワークのミニ リダイレクターを設定する必要があります、 **NULL** 、MINIRDR でこれらすべてのルーチンへのポインター\_に渡された構造体のディスパッチ[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)その[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
+MINIRDR\_ディスパッチ構造体に示されている多くのルーチンが、RDBSS で呼び出されていないか、使用されていません。 ネットワークミニリダイレクターは呼び出されないため、これらのルーチンを実装する必要はありません。 ネットワークミニリダイレクターは、その[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンから[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)に渡された minirdr\_ディスパッチ構造に含まれるすべてのルーチンに**NULL**ポインターを設定する必要があります。
 
-次は RDBSS では使用されませんルーチンの完全な一覧です。
+RDBSS によって使用されていないルーチンの完全な一覧を次に示します。
 
 -   **MRxCancel**
 
@@ -32,7 +32,7 @@ ms.locfileid: "67371932"
 
 -   **MRxEnumeratePrintQueue**
 
--   **MRxLowIOSubmit\[LOWIO\_OP\_で\]**
+-   **MRxLowIOSubmit\[LOWIO\_OP\_CLEAROUT\]**
 
 -   **MRxOpenPrintFile**
 

@@ -4,21 +4,21 @@ description: キャンセルされた要求のロジックを修正する
 ms.assetid: 8246826A-BDBD-4A9B-9FFC-B813033E0FDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ea240da4298cdf810d3d7c9de5f1b0edded90c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7013926ddcb1692e54d1ccd15cb1bd4ff7165ab3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376252"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842207"
 ---
 # <a name="revise-canceled-request-logic"></a>キャンセルされた要求のロジックを修正する
 
 
-I/O 要求が取り消されると、WDM ドライバーは、いくつかの困難な競合状態を管理する必要があります。 キューまたはドライバーが処理中には、要求をキャンセル可能性があります。 各ケースで、ドライバーをキャンセルし、要求の完了を 1 回だけであることを確認するのにロックの組み合わせを使用する必要があります。
+I/o 要求が取り消された場合、WDM ドライバーはいくつかの複雑な競合状態を管理する必要があります。 要求は、キュー内にあるとき、またはドライバーが処理中のときにキャンセルされる可能性があります。 どちらの場合も、ドライバーはロックの組み合わせを使用して、要求が1回だけキャンセルされ、完了するようにする必要があります。
 
-WDF のキュー メカニズムには、キャンセルが大幅に簡略化します。 キューで実行されるときに、要求が取り消された場合、フレームワークは、ドライバーを通知することがなくキャンセルを処理します。 ドライバーは登録することで通知を要求することができます、 [ *EvtIoCanceledOnQueue* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)コールバック関数。 フレームワークは、ドライバーに要求を配信するが、後に、要求は既定では取り消し可能ではありません。 ドライバーを呼び出すことができます[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)いつでも、要求がキャンセルされたかどうかを確認します。
+WDF キューメカニズムによって、キャンセルが大幅に簡素化されます。 要求がキューにある間にキャンセルされた場合、フレームワークはドライバーに通知せずにキャンセルを処理します。 ドライバーは、 [*EvtIoCanceledOnQueue*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)コールバック関数を登録することによって通知を要求できます。 フレームワークがドライバーに要求を配信した後、既定では、要求はキャンセルできません。 ドライバーは、いつでも[**Wdfrequestiscanceled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)を呼び出して、要求が取り消されたかどうかを確認できます。
 
-詳細については、次を参照してください。 [I/O 要求のキャンセル](canceling-i-o-requests.md)します。
+詳細については、「 [I/o 要求のキャンセル](canceling-i-o-requests.md)」を参照してください。
 
  
 

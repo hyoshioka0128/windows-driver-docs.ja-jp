@@ -3,17 +3,17 @@ title: 操作前と操作後のコールバック ルーチンの登録
 description: 操作前と操作後のコールバック ルーチンの登録
 ms.assetid: 9f89ca46-8a8f-422f-9dbe-2620b944a3ae
 keywords:
-- preoperation コールバック ルーチン WDK ファイル システム ミニフィルターを登録します。
-- postoperation コールバック ルーチン WDK ファイル システム ミニフィルターを登録します。
-- コールバック ルーチンを登録します。
+- preoperation コールバックルーチン WDK ファイルシステムミニフィルター、登録
+- postoperation コールバックルーチン WDK ファイルシステムミニフィルター、登録
+- 登録 (コールバックルーチンを)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dbf3f69c83057bd083ad9257c55a61c85cf6d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0500bc598ecc9bdc954dd92bd3e4268d787673fe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385128"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841002"
 ---
 # <a name="registering-preoperation-and-postoperation-callback-routines"></a>操作前と操作後のコールバック ルーチンの登録
 
@@ -21,19 +21,19 @@ ms.locfileid: "67385128"
 ## <span id="ddk_registering_preoperation_and_postoperation_callback_routines_if"></span><span id="DDK_REGISTERING_PREOPERATION_AND_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-登録する[ **preoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)と[ **postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)、ミニフィルター ドライバーは、1 回の呼び出し[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)でその**DriverEntry**ルーチン。 *登録*パラメーター **FltRegisterFilter**、ミニフィルター ドライバーへのポインターを渡す、 [ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)構造体。 **OperationRegistration**この構造体のメンバーの配列へのポインターを格納する[ **FLT\_操作\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_operation_registration)ミニフィルター ドライバーをフィルター処理する必要がある I/O 操作の種類ごとに 1 つずつ構造。
+[**Preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)と[**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)を登録するために、ミニフィルタードライバーは、 **Driverentry**ルーチンで[**fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)を1回呼び出します。 **Fltregisterfilter**での*登録*パラメーターの場合、ミニパスドライバーは、 [**FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)構造体へのポインターを渡します。 この構造体の**Operationregistration**メンバーには、 [**FLT\_\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration)の配列へのポインターが含まれています。これは、ミニフィルタードライバーがフィルター処理する必要がある i/o 操作の種類ごとに1つです。
 
-各 FLT\_操作\_の最後のものを除く、配列内の登録の構造体には、次の情報が含まれています。
+配列の各 FLT\_操作\_登録構造には、最後の構造体を除き、次の情報が含まれています。
 
--   操作の主な機能のコード。 参照してください[FLT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) I/O 操作、およびその要求の種類に固有のパラメーターについてです。
+-   操作の主要な関数コード。 I/o 操作の詳細については、「 [FLT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 」を、要求の種類に固有のパラメーターを参照してください。
 
--   読み取りおよび書き込み操作 (IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込み)、無視するかどうかを指定するフラグのセットには、I/O、ページング I/O、またはその両方の IRP ベースの I/O 操作がキャッシュされています。
+-   読み取りと書き込みの操作 (IRP\_MJ\_READ および IRP\_MJ\_WRITE) の場合、キャッシュされた i/o またはページング i/o を無視するか、両方とも IRP ベースの i/o 操作を行うかを指定するフラグのセット
 
--   最大で 1 つの preoperation コールバック ルーチンと 1 つの postoperation コールバック ルーチンのエントリ ポイント
+-   最大1つの preoperation コールバックルーチンと1つの postoperation コールバックルーチンのエントリポイント
 
-配列内の最後の要素である必要があります {0} IRP\_MJ\_操作\_終了しました。
+配列の最後の要素は、{IRP\_MJ\_OPERATION\_END} である必要があります。
 
-ミニフィルター ドライバーには、スキャナーのサンプルから取得されますが、次のコード例は、FLT の配列を示しています。\_操作\_登録構造体。 スキャナー サンプル ミニフィルター ドライバーは IRP の preoperation と postoperation コールバック ルーチンに登録\_MJ\_IRP の preoperation コールバック ルーチンの作成と\_MJ\_クリーンアップと IRP\_MJ\_書き込み操作です。
+スキャナーのサンプルミニフィルタードライバーから取得した次のコード例では、登録構造\_FLT\_操作の配列が示されています。 スキャナーのサンプルミニフィルタードライバーは、irp\_MJ の preoperation および postoperation コールバックルーチンを登録し、IRP\_MJ\_CLEANUP および IRP\_MJ\_書き込み操作のための\_作成および事前操作コールバックルーチンを登録します。
 
 ```cpp
 const FLT_OPERATION_REGISTRATION Callbacks[] = {

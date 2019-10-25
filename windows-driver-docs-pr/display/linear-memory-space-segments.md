@@ -3,17 +3,17 @@ title: 線形のメモリ領域セグメント
 description: 線形のメモリ領域セグメント
 ms.assetid: c937eb39-b9ec-454e-98c5-7f5274328226
 keywords:
-- メモリのセグメントの WDK 表示、線形のメモリ領域のセグメント
-- 線形のメモリ領域のセグメントの WDK の表示
-- メモリ空間のセグメントの WDK の表示
+- メモリセグメント WDK 表示、線形メモリスペースセグメント
+- 線形メモリスペースセグメント WDK ディスプレイ
+- メモリスペースセグメントの WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9579d2b255aae299305d8a5c4da835ae3b2852
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2b2434a41cb91a47ea46d17612e9bd4e7fe9c21f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372903"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840391"
 ---
 # <a name="linear-memory-space-segments"></a>線形のメモリ領域セグメント
 
@@ -21,23 +21,23 @@ ms.locfileid: "67372903"
 ## <span id="ddk_linear_memory_space_segments_gg"></span><span id="DDK_LINEAR_MEMORY_SPACE_SEGMENTS_GG"></span>
 
 
-メモリ領域の直線セグメントは、ハードウェアの使用方法を表示するセグメントの従来の型です。 メモリ領域の直線セグメントでは、次のモデルに準拠しています。
+線形メモリ空間セグメントは、ハードウェアが使用する従来の種類のセグメントです。 線形メモリ空間セグメントは、次のモデルに準拠しています。
 
--   グラフィックス アダプター上にあるビデオ メモリを仮想化します。
+-   グラフィックスアダプターにあるビデオメモリを仮想化します。
 
--   GPU から直接アクセスは (つまり、ページ マッピングを通じてリダイレクトなし)。
+-   は GPU によって直接アクセスされます (つまり、ページマッピングを介してリダイレクトされることはありません)。
 
--   1 次元のアドレス空間では直線的に管理されます。
+-   は、1次元のアドレス空間で直線的に管理されます。
 
-ドライバーのセット、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)メモリ領域の直線セグメントを指定する 0 に構造体。 ただし、ドライバーは、次のビット フィールドを追加のセグメントのサポートを示すためにフラグを設定できます。
+ドライバーは、 [**DXGK\_SEGMENTDESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)構造体の**Flags**メンバーを0に設定して、線形メモリスペースセグメントを指定します。 ただし、ドライバーは次のビットフィールドフラグを設定して、追加のセグメントのサポートを示すことができます。
 
--   **CpuVisible**セグメントが CPU アクセス可能であることを示します。
+-   CPU がアクセス可能であることを示すために**表示される**cpu。
 
--   **UseBanking**を銀行にセグメントが分割されているかを示します。
+-   セグメントが銀行に分割されていることを示すには、" **usebanking** " を指定します。
 
-次の図は、メモリ領域の直線セグメントの視覚的表現を示します。
+次の図は、線形メモリスペースセグメントを視覚的に表したものです。
 
-![メモリ領域の直線セグメントを示す図](images/memspac.png)
+![線形メモリスペースセグメントを示す図](images/memspac.png)
 
  
 

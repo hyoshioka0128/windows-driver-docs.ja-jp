@@ -3,18 +3,18 @@ title: システムの電源の変更の処理
 description: システムの電源の変更の処理
 ms.assetid: 80e36a23-8a41-46f0-a7cb-0039c306a695
 keywords:
-- 電源は、WDK ネットワークを変更します。
-- Nic の WDK ネットワーク、電源のソースの変更
-- ネットワーク インターフェイス カード WDK ネットワーク、電源のソースの変更
-- プラグ アンド プレイ WDK NDIS ミニポート、電源のソースの変更
+- power source の WDK ネットワークの変更
+- Nic WDK ネットワーク、電源ソースの変更
+- ネットワークインターフェイスカード WDK ネットワーク、電源ソースの変更
+- WDK NDIS ミニポートのプラグアンドプレイ、電源の変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fec6724de9c670a1c0d7c8974091f7a1c6d31cf7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c24cb49f705d3ac9c7f3f7df3bdf77cc52fe0e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379830"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842116"
 ---
 # <a name="handling-a-change-in-the-systems-power-source"></a>システムの電源の変更の処理
 
@@ -22,9 +22,9 @@ ms.locfileid: "67379830"
 
 
 
-システムは、AC 電源、またはその逆に、バッテリ電源から変更できます。
+システムは、バッテリ電源、AC 電源、またはその逆に変化することがあります。
 
-NDIS ミニポート ドライバーを初期化した後、ミニポート ドライバーが呼び出し[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)システムの電源のミニポート ドライバーに通知します。 ミニポート ドライバーは、この情報を使用して、NIC の電力消費量を調整するには たとえば、ワイヤレス LAN (WLAN) デバイス用のミニポート ドライバーは、電力消費の削減、システムがバッテリ電源で実行されている場合や、システムが AC 電源で実行されている場合は、電力消費量を増やします。
+ミニポートドライバーを初期化した後、NDIS はミニポートドライバーの[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)関数を呼び出して、システムの電源のミニポートドライバーに通知します。 ミニポートドライバーは、この情報を使用して NIC の電力消費を調整できます。 たとえば、ワイヤレス LAN (WLAN) デバイス用のミニポートドライバーにより、システムがバッテリ電源で動作している場合は電力消費が減少し、システムが AC 電源で実行されている場合は電力消費が増加する可能性があります。
 
  
 

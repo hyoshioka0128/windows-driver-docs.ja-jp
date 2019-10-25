@@ -4,12 +4,12 @@ description: VM キューの割り当て
 ms.assetid: 2645a6e5-3824-469c-84d5-8e49fa01f494
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 120f2d898edbc9a16050e5434a0249008f33e30b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1a1d0fec4665ac6c690687f62530f37d3cc9764
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384418"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835389"
 ---
 # <a name="allocating-a-vm-queue"></a>VM キューの割り当て
 
@@ -17,55 +17,55 @@ ms.locfileid: "67384418"
 
 
 
-上位のドライバーの問題、初期構成パラメーターのセットを持つキューを割り当てるには、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)メソッド要求の OID。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 **NDIS\_OID\_要求**構造体にはへのポインターが含まれています、 **NDIS\_受信\_キュー\_パラメーター**新しいキューの id と、MSI X テーブルのエントリを持つ構造体。
+構成パラメーターの初期セットを使用してキューを割り当てるには、後のドライバーが\_キューメソッド OID 要求を[割り当てる\_\_フィルターを受け取る oid を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、最初に[**ndis\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体へのポインターが含まれています。 OID メソッド要求から正常に復帰した後、 **ndis\_oid\_要求**構造の**informationbuffer**メンバーには、 **ndis\_RECEIVE\_QUEUE\_パラメーター**へのポインターが含まれています。新しいキュー識別子と MSI-X テーブルエントリを持つ構造体。
 
-[ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)で構造が使用される、 [OID\_受信\_フィルター\_割り当てる\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters) OID。 VM キュー パラメーターの詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)します。
+[**NDIS\_receive\_queue\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体を使用して\_キュー OID の[割り当て\_フィルター\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)を受け取る oid、および[oid\_フィルター\_キューを受け取る\_を受信します。\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters) OID。 VM キューのパラメーターの詳細については、「 [Vm キューのパラメーターの取得と更新](obtaining-and-updating-vm-queue-parameters.md)」を参照してください。
 
-上にあるドライバーを初期化します、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)次のキュー構成パラメーターを含む構造体。
+前のドライバーは、次のキュー構成パラメーターを使用して、 [ **\_キュー\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)を初期化します。
 
--   キューの種類 (**NdisReceiveQueueTypeVMQueue**から、 [ **NDIS\_受信\_キュー\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_receive_queue_type)列挙します)。
+-   キューの種類 ( [**NDIS\_は、\_queue\_type 列挙型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_receive_queue_type)) を受信します。
 
--   キューのプロセッサの関係。
+-   キューのプロセッサ関係。
 
--   キュー名と仮想マシンの名前。
+-   キュー名と仮想マシン名。
 
 -   先読み分割パラメーター。
 
-    **注**  NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。
+    **注**  NDIS 6.30 以降では、パケットデータを個別の先読みバッファーに分割することはサポートされなくなりました。
 
      
 
-**注**  上にあるドライバーは、NDIS を設定できる\_受信\_キュー\_パラメーター\_1 秒あたり\_キュー\_受信\_を示す値とNDIS\_受信\_キュー\_パラメーター\_先読み\_分割\_で必須フラグ、**フラグ**のメンバー[ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体。 その他のフラグは、キューの割り当ては使用されません。
+\_キューの\_パラメーター\_受信\_通知と NDIS\_受信\_キュー\_のパラメーターを受け取ることができるように、このドライバーでは、NDIS\_を設定  ことに**注意**してください\__t_12_ 先読み\_、\_NDIS の**flags**メンバー内の必須フラグ\_分割され、 [ **\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体を受け取ることができます。 その他のフラグは、キューの割り当てには使用されません。
 
  
 
-NDIS は、受信キューを割り当てる OID 要求を受信、キューのパラメーターを確認します。 NDIS は、必要なリソースとキューの id を割り当て後、は、基になるミニポート ドライバーに OID 要求を送信します。 キューの id は、関連付けられているネットワーク アダプターに固有です。
+NDIS は、受信キューの割り当てに OID 要求を受信すると、キューパラメーターを確認します。 NDIS によって必要なリソースとキュー識別子が割り当てられると、基になるミニポートドライバーに OID 要求が送信されます。 キュー識別子は、関連付けられているネットワークアダプターに対して一意です。
 
-ミニポート ドライバーは、受信キューに、必要なソフトウェアとハードウェア リソースを割り当てることができますが正常に場合、に、成功のステータスの OID 要求を完了します。
+ミニポートドライバーが受信キューに必要なソフトウェアとハードウェアリソースを正常に割り当てることができる場合は、正常終了の状態で OID 要求を完了します。
 
-NDIS がキュー識別子を割り当てます NDIS ミニポート ドライバーに OID 要求を送信する前に、 **QueueId**のメンバー、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体であり、ミニポート ドライバーにメソッド要求を渡します。 ミニポート ドライバー MSI X テーブルのエントリを提供する、 **MSIXTableEntry**メンバー。
+Ndis は、この OID 要求をミニポートドライバーに送信する前に、Ndis の**Queueid**メンバーにキュー識別子を割り当てて、 [ **\_queue\_PARAMETERS 構造体\_受信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)し、そのメソッド要求をミニポートドライバーに渡します。 ミニポートドライバーは、 **MSIXTableEntry**メンバーに MSI-X テーブルエントリを提供します。
 
-ミニポート ドライバーでは、割り当てられた受信キューのキューの識別子を保持する必要があります。 NDIS は、ミニポート ドライバーに後続の呼び出しの受信キューのキューの id を使用して受信キューで受信フィルターを設定、受信キュー パラメーターを変更または無料の受信キュー。
+ミニポートドライバーは、割り当てられた受信キューのキュー識別子を保持する必要があります。 NDIS は、受信キューのキュー識別子を使用して、ミニポートドライバーを呼び出して受信キューに受信フィルターを設定したり、受信キューパラメーターを変更したり、受信キューを解放したりします。
 
-**注**  既定のキュー (キューの id 0) が常に割り当てられ、解放することはできません。
-
- 
-
-上にあるドライバーは、キュー パラメーターを変更またはキューを解放するなど、NDIS が提供、OID の後続の要求でキューの id を使用する必要があります。 キューの id はすべての OOB データにも含まれています。 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)キューに関連付けられている構造体。 ドライバーを使用して、 [ **NET\_バッファー\_一覧\_受信\_キュー\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id) NETでキューのidを取得するマクロ\_バッファー\_リスト構造体。
-
-**注**  プロトコル ドライバーは、キューが正常に割り当てられ、キューが削除される前に、いつでもの VMQ フィルターを設定できます。
+既定のキュー (キュー識別子ゼロ) は常に割り当てられている  解放できない**ことに注意**してください。
 
  
 
-プロトコル ドライバーの問題、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)メソッド OID 要求のキューの割り当てを完了します。 割り当てが完了すると、ミニポート ドライバーは共有メモリおよびその他のリソースを割り当てることができます。 共有メモリ リソース割り当ての詳細については、次を参照してください。[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)します。
+その後のドライバーでは、その後の OID 要求で NDIS が提供するキュー識別子を使用する必要があります。たとえば、キューパラメーターを変更したり、キューを解放したりできます。 キュー id は、キューに関連付けられているすべての[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の OOB データにも含まれます。 ドライバーは、net [ **\_buffer\_list\_受信\_queue\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)マクロを使用して、NET\_BUFFER\_LIST 構造体のキュー識別子を取得します。
 
-ミニポート後は、ドライバーは OID を受け取ります。\_受信\_フィルター\_キュー\_割り当て OID 要求とハンドルが正常にキュー内にある、 *Allocated*状態。 キューの状態の詳細については、次を参照してください。[キューの状態と操作](queue-states-and-operations.md)します。
+プロトコルドライバーでは、キューが正常に割り当てられてからキューが削除されるまで、いつでも VMQ フィルターを設定でき  ことに**注意**してください。
 
-これを発行する必要があります、上にあるドライバーを割り当てる後、1 つまたは複数のキューの受信 (および必要に応じて、最初のフィルターを設定) [OID\_受信\_フィルター\_キュー\_割り当て\_完全な](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)割り当てが受信キューの現在のバッチの完了したミニポート ドライバーに通知する OID 要求を設定します。
+ 
 
-フィルターがそのキューに設定されていない場合、ミニポート ドライバーは受信キュー内のすべてのパケットを保持する必要があります。 キューのなかった、フィルターを設定またはすべてのフィルターをクリア、キューを空にする必要があり、すべてのパケットを破棄する必要があります。 ドライバー スタックを示されたまたは、キューに保持されますができません。
+プロトコルドライバーは、キューの割り当てを完了するための完全なメソッド OID 要求[\_、\_フィルター\_キュー\_割り当て\_受信する oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)を発行します。 割り当てが完了すると、ミニポートドライバーは共有メモリおよびその他のリソースを割り当てることができます。 共有メモリリソースの割り当ての詳細については、「[共有メモリリソースの割り当て](shared-memory-resource-allocation.md)」を参照してください。
 
-後続のドライバーが使用、 [OID\_受信\_フィルター\_FREE\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) OID を割り当て、キューを解放します。 キューを解放する方法の詳細については、次を参照してください。 [VM キューの解放](freeing-a-vm-queue.md)します。
+ミニポートドライバーが OID を受信した後\_フィルター\_キュー\_割り当て OID 要求を受信して正常に処理する\_、キューは*割り当て済み*の状態になります。 キューの状態の詳細については、「[キューの状態と操作](queue-states-and-operations.md)」を参照してください。
+
+1つ以上の受信キューが割り当てられた後、(必要に応じて初期フィルターを設定して) 1 つ以上の受信キューが割り当てられた後、oid を\_\_発行して[\_キュー\_割り当てを完了し\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)に通知するための oid 要求を完了する必要があります。受信キューの現在のバッチに割り当てが完了したことを示すミニポートドライバー。
+
+そのキューにフィルターが設定されていない場合、ミニポートドライバーは受信キューにあるパケットを保持しないようにする必要があります。 キューにフィルターが設定されていない場合、またはすべてのフィルターがオフになっている場合は、キューを空にして、すべてのパケットを破棄する必要があります。 つまり、ドライバースタックが示されていないか、キューに保持されていません。
+
+その後のドライバーでは、Oid を使用して[\_フィルターを受信し\_\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue) oid を使用して、割り当てたキューを解放\_ます。 キューの解放の詳細については、「 [VM キューの解放](freeing-a-vm-queue.md)」を参照してください。
 
  
 

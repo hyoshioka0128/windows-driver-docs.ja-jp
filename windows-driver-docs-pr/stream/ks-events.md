@@ -3,18 +3,18 @@ title: KS のイベント
 description: KS のイベント
 ms.assetid: 3eaa1d65-8417-4a07-b358-823394baec9b
 keywords:
-- カーネルの WDK、イベントのストリーミング
+- カーネルストリーミング WDK、イベント
 - KS WDK、イベント
-- ストリーミング イベント WDK カーネル
-- WDK カーネル ストリーミング イベントを設定します。
+- イベント WDK カーネルストリーミング
+- イベントセット WDK カーネルストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7753843fe9ccabccb34978f279f23deb1864374
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a8cbd98e9f3d02d5d3b288d4a658e3f4b385ee3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382511"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842518"
 ---
 # <a name="ks-events"></a>KS のイベント
 
@@ -22,21 +22,21 @@ ms.locfileid: "67382511"
 
 
 
-AVStream、ミニドライバーを作成する場合は、次を参照してください。 [AVStream でのイベント処理](event-handling-in-avstream.md)します。
+AVStream ミニドライバーを作成する場合は、 [avstream のイベント処理に](event-handling-in-avstream.md)関する記述を参照してください。
 
-イベントのセットは、リスナーが通知を要求できる関連するイベントのグループです。 たとえば、リスナーは、デバイス状態の変更、またはストリームの位置の変更の通知を受ける登録でした。 イベントが発生したときにカーネルのストリーミング、このイベントに対して登録されているすべてのクライアントに通知します。
+イベントセットは、リスナーが通知を要求できる関連イベントのグループです。 たとえば、リスナーはデバイスの状態の変更またはストリームの位置の変更が通知されるように登録できます。 イベントが発生すると、カーネルストリーミングは、このイベントに登録されているすべてのクライアントに通知します。
 
-ミニドライバーは、提供することで、イベントに活かす方法について説明します、 [ **KSEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_item)処理ルーチンへのポインターを含む構造体。
+ミニドライバーは、ルーチンを処理するポインターを含む[**KSEVENT\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_item)の構造を提供することによって、イベントがどのようにサポートされるかを説明します。
 
-プロキシのルーチンをストリーミングするカーネルを呼び出すことによって、リスナーが通知の登録[ **KsSynchronousDeviceControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol) IOCTL で\_KS\_を有効にする\_イベント制御コードとポインター [ **KSEVENT** ](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))と[ **KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata).structures します。
+リスナーは、IOCTL\_\_KS を使用してカーネルストリームプロキシルーチン[**KsSynchronousDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)を呼び出して、通知を登録します。これにより、 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))と[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)への\_イベント制御コードとポインターが有効になります。構成.
 
-IOCTL\_KS\_を無効にする\_イベント要求は、指定したイベントを無効にします。 無効にするイベントを有効にするために使用された同じポインターを使用する必要があります。 このポインターは、イベントを一意に識別します。 クライアントを必要に応じて、指定することがあります、 **NULL**ポインターと長さが 0、クライアントのすべてのアクティブなイベントを無効にします。
+IOCTL\_KS\_無効化\_イベント要求は、指定されたイベントを無効にします。 イベントを有効にするために使用したものと同じポインターを使用して無効にする必要があります。 このポインターは、イベントを一意に識別します。 必要に応じて、クライアントは**NULL**ポインターと長さ0を指定して、クライアントのすべてのアクティブなイベントを無効にすることができます。
 
-すべてのイベント セットに、KSEVENT をサポートする必要があります\_型\_BASICSUPPORT フラグ。 参照してください[ **KSEVENT** ](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))使用可能なイベント フラグの一覧についてはします。
+すべてのイベントセットで、KSEVENT\_TYPE\_BASICSUPPORT フラグがサポートされている必要があります。 使用可能なイベントフラグの一覧については、 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))を参照してください。
 
-いくつかのイベントの種類には、イベント通知の登録に追加のパラメーターが必要です。 たとえば、 [ **KSEVENT\_クロック\_位置\_マーク**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-clock-position-mark)クロックが特定のタイムスタンプに達すると、時計のイベントがトリガーされます。 したがって、このイベントの通知を登録するクライアントでは、イベントをトリガーするタイムスタンプを指定する必要があります。
+一部のイベントの種類では、イベント通知に登録するために追加のパラメーターが必要です。 たとえば、クロックが特定のタイムスタンプに達したときに、時計の[**KSEVENT\_clock\_POSITION\_MARK**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-clock-position-mark)イベントがトリガーされます。 そのため、このイベントの通知を受け取るように登録されているクライアントは、イベントをトリガーするタイムスタンプを指定する必要があります。
 
-このような場合は、ミニドライバーは後のデータ バッファーに追加のデータ パラメーターを渡す、 [ **KSEVENTDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)構造体。 このようなイベントの種類をサポートするミニドライバーは、通知のデータを保持するために、KSEVENTDATA、型のうち最初のメンバーは、拡張データ構造体を使用します。
+このような場合、ミニドライバーは、 [**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)構造体の後に、データバッファーに追加のデータパラメーターを渡します。 このようなイベントの種類をサポートするミニドライバーは、通知データを保持するために、最初のメンバーが KSEVENTDATA 型である拡張データ構造を使用します。
 
  
 

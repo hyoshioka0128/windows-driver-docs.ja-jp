@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_トポロジ\_接続
-description: KSPROPERTY\_トポロジ\_接続プロパティは、KS フィルターのノード間のすべての接続を照会します。
+title: KSK プロパティ\_トポロジ\_接続
+description: KSK プロパティ\_TOPOLOGY\_CONNECTIONS プロパティは、KS フィルターのノード間のすべての接続を照会します。
 ms.assetid: 8ea77244-14c1-4e27-9b96-e0f5a6c491e9
 keywords:
-- KSPROPERTY_TOPOLOGY_CONNECTIONS ストリーミング メディア デバイス
+- KSPROPERTY_TOPOLOGY_CONNECTIONS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1b19b3141e0845e01547a1e66016aab7a382164
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2aacbf495426f3bbac04e3e40d39e1b931ea022
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383997"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837925"
 ---
-# <a name="kspropertytopologyconnections"></a>KSPROPERTY\_トポロジ\_接続
+# <a name="ksproperty_topology_connections"></a>KSK プロパティ\_トポロジ\_接続
 
 
-KSPROPERTY\_トポロジ\_接続プロパティは、KS フィルターのノード間のすべての接続を照会します。
+KSK プロパティ\_TOPOLOGY\_CONNECTIONS プロパティは、KS フィルターのノード間のすべての接続を照会します。
 
 ## <span id="ddk_ksproperty_topology_connections_ks"></span><span id="DDK_KSPROPERTY_TOPOLOGY_CONNECTIONS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_トポロジ\_接続プロパティは、KS フィルターのノー
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_トポロジ\_接続プロパティは、KS フィルターのノー
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>A <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"> <strong>KSMULTIPLE_ITEM</strong> </a>のシーケンスに続く構造<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection" data-raw-source="[&lt;strong&gt;KSTOPOLOGY_CONNECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)"> <strong>KSTOPOLOGY_CONNECTION</strong> </a>構造体。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>構造体の後に、一連の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection" data-raw-source="[&lt;strong&gt;KSTOPOLOGY_CONNECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)"><strong>KSTOPOLOGY_CONNECTION</strong></a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ KSPROPERTY\_トポロジ\_接続プロパティは、KS フィルターのノー
 <a name="remarks"></a>注釈
 -------
 
-KSMULTIPLE\_項目ヘッダーの後に、KSTOPOLOGY\_接続の構造は、KS フィルター内の 1 つのデータ パス接続について説明します。
+KSMULTIPLE\_ITEM ヘッダーの後に KSTOPOLOGY\_接続構造が続き、KS フィルターで1つのデータパス接続が記述されています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSMULTIPLE\_項目ヘッダーの後に、KSTOPOLOGY\_接続の構造は、KS �
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,11 +85,11 @@ KSMULTIPLE\_項目ヘッダーの後に、KSTOPOLOGY\_接続の構造は、KS �
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
-[**KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)
+[**KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)
 
  
 

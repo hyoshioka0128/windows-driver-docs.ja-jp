@@ -3,18 +3,18 @@ title: デバイスが一時停止したときの着信 IRP の保留
 description: デバイスが一時停止したときの着信 IRP の保留
 ms.assetid: 4964e06b-f1b9-4421-89d1-ad79ce7d7307
 keywords:
-- Irp を保持します。
-- WDK PnP Irp
-- I/O 要求パケット PnP WDK
+- 保持 (Irp を)
+- Irp WDK PnP
+- I/o 要求パケットの WDK PnP
 - PnP デバイスの一時停止
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f18513365c36fbb0c26811af5930ab1025bc6b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5dd8faaca80925c34f837175048b24c146b1921a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363434"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836485"
 ---
 # <a name="holding-incoming-irps-when-a-device-is-paused"></a>デバイスが一時停止したときの着信 IRP の保留
 
@@ -22,31 +22,31 @@ ms.locfileid: "67363434"
 
 
 
-デバイスのドライバーでは、そのリソースが調整されている場合、デバイスを一時停止する必要があります。 リソースが再調整中に一部のドライバーは、デバイスへの応答を一時停止、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求およびその他ドライバーの遅延を受け取るまで、デバイスの一時停止、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求。 どちらの場合、デバイスがある必要がありますと一時停止、 **IRP\_MN\_停止\_デバイス**が成功するとします。
+デバイスのドライバーは、そのリソースが再分配されているときに、デバイスを一時停止する必要があります。 リソースの再調整中に、一部のドライバーは、Irp\_が完了したことを通知してデバイスを一時停止[ **\_クエリ\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)の要求を停止し、その他のドライバーが irp を受信するまでデバイスの一時停止を遅延[ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求を\_しています。 どちらの場合も、 **IRP\_\_が停止し\_デバイス**が成功すると、デバイスを一時停止する必要があります。
 
-ドライバーは、デバイス上で進行中の任意の Irp を完了し、デバイスへのアクセスを必要とする新しい Irp を開始しない必要があります。
+ドライバーは、デバイスで実行中のすべての Irp を完了し、デバイスへのアクセスを必要とする新しい Irp を開始しないようにする必要があります。
 
-デバイスが一時停止中に Irp を保持するには、ドライバーは、次の手順を実装します。
+デバイスの一時停止中に Irp を保持するために、ドライバーは次のような手順を実装します。
 
-1.  その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、保留中のような名前で、デバイスの拡張機能のフラグを定義する\_新規\_要求。 フラグをオフにします。
+1.  [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンで、デバイス拡張機能のフラグを定義します。これには、NEW\_要求を保留\_という名前が付けられます。 フラグをクリアします。
 
-2.  Irp を保持するため、FIFO キューを作成します。
+2.  Irp を保持するための FIFO キューを作成します。
 
-    場合は、ドライバーは Irp を既にキューでは、ドライバーがデバイスを一時停止する前に、未処理の要求を完了に必要なために、同じキューが再利用できます。
+    ドライバーが既に Irp をキューに登録している場合は、デバイスを一時停止する前に、ドライバーが未処理の要求を完了する必要があるため、同じキューを再利用できます。
 
-    1 つで、作成する必要がありますドライバーにまだ、IRP キューがない場合、 *AddDevice*ルーチン。 キューの種類を作成、ドライバーが、キューをフラッシュする方法によって異なります。 ドライバーは、インタロックされた、二重にリンクされたリストを使用して可能性があります、 **ExInterlocked*Xxx*一覧**ルーチン。
+    ドライバーがまだ IRP キューを持っていない場合は、 *AddDevice*ルーチンで作成する必要があります。 どのような種類のキューが作成されるかは、ドライバーがキューをフラッシュする方法によって異なります。 ドライバーは、インタロック、ダブルリンクリスト、および**Exinterlocked ロック*Xxx*リスト**ルーチンを使用する場合があります。
 
-3.  その*DispatchPnP*のコードを**IRP\_MN\_クエリ\_停止\_デバイス**(または**IRP\_MN\_停止\_デバイス**)、未処理の要求を完了し、保留の設定、\_新規\_要求フラグ。
+3.  **Irp\_完了\_クエリ\_\_デバイス**(または**IRP\_\_デバイスの停止**) を停止し、未処理の要求を完了し、保留\_新しい\_要求を設定します。誤り.
 
-4.  などのデバイスにアクセスするディスパッチ ルーチンで[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、確認するかどうか保留\_新規\_要求フラグを設定します。 そうである場合、ドライバーは IRP の保留をマークし、再生待ちにする必要があります。
+4.  デバイスにアクセスするディスパッチルーチン ( [*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)や[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)など) で、[HOLD\_NEW\_REQUESTS] フラグが設定されているかどうかを確認します。 その場合、ドライバーは IRP を pending としてマークし、キューに入れる必要があります。
 
-    ドライバーの*DispatchPnP*ルーチンがそれを保持するのではなく、PnP Irp の処理を続行する必要があります、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、電源 Irp の処理を続行する必要があります。
+    ドライバーの*DispatchPnP*ルーチンは、それを保持するのではなく、PnP irp の処理を続行する必要があります。また、 [*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、引き続き電源 irp を処理する必要があります。
 
-5.  *DispatchPnP*、開始とキャンセル停止 IRP に対して保留を解除\_新規\_要求フラグし、IRP を保持するキューで、Irp を起動します。
+5.  *DispatchPnP*で、start または cancel-stop IRP に応答して、HOLD\_NEW\_REQUESTS フラグを解除し、irp を保持するキューで irp を開始します。
 
-    これらのアクションは、これらの PnP Irp を処理するための最後の手順では可能性があります。 など開始 IRP への応答、ドライバーは、デバイスを開始する操作を実行する必要がありますまずとし、Irp IRP を保持するキューで開始できます。
+    これらの PnP Irp を処理するための最後の手順は、これらのアクションです。 たとえば、start IRP に応答する場合、ドライバーはまずデバイスを起動する操作を実行し、次に IRP を保持するキューで Irp を開始する必要があります。
 
-    IRP を保持するキューから Irp の処理中のエラーでは、開始やキャンセル停止 Irp の返される状態は影響しません。
+    IRP を保持するキューからの Irp の処理でエラーが発生しても、開始または取り消しの Irp に対して返される状態には影響しません。
 
  
 

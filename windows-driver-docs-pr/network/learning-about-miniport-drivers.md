@@ -3,28 +3,28 @@ title: ミニポート ドライバーについて
 description: ミニポート ドライバーについて
 ms.assetid: faaeee13-7d21-4e06-a33c-da249716d925
 keywords:
-- コネクションレス ドライバー WDK ネットワーク
-- 接続指向のドライバー WDK ネットワーク
-- WAN ミニポート ドライバー WDK ネットワーク
-- ミニポート ドライバー WDK ネットワーク、WAN ミニポート ドライバー
-- NDIS ミニポート ドライバー WDK、WAN ミニポート ドライバー
-- ミニポート ドライバー WDK ネットワー キング、ミニポート ドライバー WDM 下端が
-- NDIS ミニポート ドライバー WDK、ミニポート ドライバー WDM が削減エッジ
-- WDM 低い edge WDK ネットワーク
-- ミニポート ドライバー WDK ネットワー キング、IrDA ミニポート ドライバー
-- NDIS ミニポート ドライバー WDK、IrDA ミニポート ドライバー
+- コネクションレスドライバー WDK ネットワーク
+- 接続指向ドライバー WDK ネットワーク
+- WAN ミニポートドライバーの WDK ネットワーク
+- ミニポートドライバー WDK ネットワーク、WAN ミニポートドライバー
+- NDIS ミニポートドライバー WDK、WAN ミニポートドライバー
+- ミニポートドライバー WDK ネットワーク, ミニポートドライバー (WDM)
+- NDIS ミニポートドライバー、WDM を使用したミニポートドライバー
+- WDM 低エッジの WDK ネットワーク
+- ミニポートドライバー WDK ネットワーク、IrDA ミニポートドライバー
+- NDIS ミニポートドライバー WDK、IrDA ミニポートドライバー
 - IrDA ドライバー WDK ネットワーク
-- ミニポート ドライバー WDK ネットワークでスケーラブルなネットワー キングのサポート
-- NDIS ミニポート ドライバー WDK、スケーラブルなネットワー キングのサポート
-- ネットワーク ドライバー WDK、種類
+- ミニポートドライバー WDK ネットワーク、スケーラブルなネットワークサポート
+- NDIS ミニポートドライバー WDK、スケーラブルなネットワークサポート
+- ネットワークドライバー WDK、種類
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e39dd3c0a960ba85871d2221a09908e9b3655a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 33bcfc001801a71d86873737595281f33c37059c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369193"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844147"
 ---
 # <a name="learning-about-miniport-drivers"></a>ミニポート ドライバーについて
 
@@ -32,50 +32,50 @@ ms.locfileid: "67369193"
 
 
 
-いくつかの種類のミニポート ドライバーがあります。 次の一覧では、WDK ドキュメントのセクションをお読みください、書き込みを行っているミニポート ドライバーの種類に応じてについて説明します。
+ミニポートドライバーにはいくつかの種類があります。 次の一覧は、作成するミニポートドライバーの種類に応じて、読み取る必要がある WDK ドキュメントのセクションを示しています。
 
-<a href="" id="connectionless-miniport-drivers"></a>**コネクションレスのミニポート ドライバー**  
-コネクションレス型ネットワークのメディア (イーサネット) などのネットワーク インターフェイス カード (NIC) を制御するミニポート ドライバーを作成する場合は、次の読み取り。
+<a href="" id="connectionless-miniport-drivers"></a>**コネクションレスミニポートドライバー**  
+コネクションレスネットワークメディア (イーサネットなど) 用のネットワークインターフェイスカード (NIC) を制御するミニポートドライバーを作成する場合は、次のドキュメントを参照してください。
 
--   [NDIS ミニポート ドライバーの概要](introduction-to-ndis-miniport-drivers.md)
+-   [NDIS ミニポートドライバーの概要](introduction-to-ndis-miniport-drivers.md)
 
--   [NDIS ミニポート ドライバー](writing-ndis-miniport-drivers.md)
+-   [NDIS ミニポートドライバー](writing-ndis-miniport-drivers.md)
 
-<a href="" id="connection-oriented-miniport-drivers"></a>**接続指向のミニポート ドライバー**  
-接続指向ネットワークのメディア (ISDN) などのミニポート ドライバーを作成する場合は、次の読み取り。
+<a href="" id="connection-oriented-miniport-drivers"></a>**接続指向ミニポートドライバー**  
+接続指向のネットワークメディア (ISDN など) 用のミニポートドライバーを作成する場合は、次のドキュメントを参照してください。
 
--   すべての「コネクションレス ミニポート ドライバー」 の下には、このトピックに記載されているセクション
+-   このトピックの「コネクションレスミニポートドライバー」に記載されているすべてのセクション
 
 -   [接続指向の NDIS](connection-oriented-ndis.md)
 
-<a href="" id="wan-miniport-drivers"></a>**WAN ミニポート ドライバー**  
-ワイド エリア ネットワーク (WAN) の NIC を制御するミニポート ドライバーを作成する場合は、次の読み取り。
+<a href="" id="wan-miniport-drivers"></a>**WAN ミニポートドライバー**  
+ワイドエリアネットワーク (WAN) NIC を制御するミニポートドライバーを作成する場合は、次のドキュメントを参照してください。
 
--   すべての「コネクションレス ミニポート ドライバー」 の下には、このトピックに記載されているセクション
+-   このトピックの「コネクションレスミニポートドライバー」に記載されているすべてのセクション
 
--   [WAN ミニポート ドライバー](wan-miniport-drivers.md)
+-   [WAN ミニポートドライバー](wan-miniport-drivers.md)
 
-<a href="" id="miniports-with-a-wdm-lower-interface"></a>**WDM 低いインターフェイスを備えたミニポート**  
-他のカーネル ドライバー インターフェイスで Microsoft Windows Driver Model (WDM) の下のインターフェイスを備えたミニポート ドライバーを作成する場合は、次の読み取り。
+<a href="" id="miniports-with-a-wdm-lower-interface"></a>**WDM インターフェイスがあるミニポート**  
+他のカーネルドライバーにインターフェイスするミニポートドライバーを作成しており、Microsoft Windows Driver Model (WDM) 下位インターフェイスを備えている場合は、次のようにします。
 
--   すべての「コネクションレス ミニポート ドライバー」 の下には、このトピックに記載されているセクション
+-   このトピックの「コネクションレスミニポートドライバー」に記載されているすべてのセクション
 
--   [ミニポート ドライバー WDM がインターフェイスを削減します。](miniport-drivers-with-a-wdm-lower-interface.md)
+-   [WDM インターフェイスがあるミニポートドライバー](miniport-drivers-with-a-wdm-lower-interface.md)
 
-<a href="" id="irda-miniport-drivers"></a>**IrDA ミニポート ドライバー**  
-IrDA アダプターを制御するミニポート ドライバーを作成する場合は、次の読み取り。
+<a href="" id="irda-miniport-drivers"></a>**IrDA ミニポートドライバー**  
+IrDA アダプターを制御するミニポートドライバーを作成する場合は、次のドキュメントを参照してください。
 
--   すべての「コネクションレス ミニポート ドライバー」 の下には、このトピックに記載されているセクション
+-   このトピックの「コネクションレスミニポートドライバー」に記載されているすべてのセクション
 
-<a href="" id="miniport-drivers-that-support-scalable-networking"></a>**スケーラブルなネットワークをサポートするミニポート ドライバー**  
-スケーラブルなネットワークをサポートするミニポート ドライバーの詳細については、次のようになります。
+<a href="" id="miniport-drivers-that-support-scalable-networking"></a>**スケーラブルなネットワークをサポートするミニポートドライバー**  
+スケーラブルなネットワークをサポートするミニポートドライバーの詳細については、以下を参照してください。
 
--   [スケーラブル ネットワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+-   [スケーラブル ネットワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-<a href="" id="miniport-drivers-that-support-offloading-tcp-ip--------to-hardware-------"></a>**TCP/IP をハードウェアにオフロードをサポートするミニポート ドライバー**   
-TCP/IP をハードウェアにオフロード ミニポート ドライバーの詳細については、次のようになります。
+<a href="" id="miniport-drivers-that-support-offloading-tcp-ip--------to-hardware-------"></a>**ハードウェアへの tcp/ip のオフロードをサポートするミニポートドライバー**   
+TCP/IP をハードウェアにオフロードするミニポートドライバーの詳細については、次を参照してください。
 
--   [TCP/IP のオフロード](tcp-ip-offload.md)
+-   [TCP/IP オフロード](tcp-ip-offload.md)
 
  
 

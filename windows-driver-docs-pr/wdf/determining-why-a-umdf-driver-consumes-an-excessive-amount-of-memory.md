@@ -1,44 +1,44 @@
 ---
-title: UMDF ドライバーが過度にメモリを消費する理由
-description: Wudfext.dll を使用して、バージョン 1 の UMDF ドライバーが大量のメモリを消費する理由を判断する方法について説明します。
+title: UMDF ドライバーが過剰なメモリを消費する理由
+description: Wudfext .dll を使用して、UMDF version 1 ドライバーが大量のメモリを消費する理由を確認する方法について説明します。
 ms.assetid: 01316c4e-24e8-467c-af52-900b3fe042db
 keywords:
-- UMDF ドライバー WDK UMDF のシナリオをデバッグするには、過剰なメモリを消費します。
-- UMDF デバッグ シナリオでは、WDK UMDF ドライバーが過剰なメモリを消費します。
-- UMDF WDK、過剰なメモリを消費する UMDF ドライバー
+- デバッグシナリオ WDK UMDF、UMDF ドライバーが過剰なメモリを消費する
+- UMDF WDK、デバッグシナリオ、UMDF ドライバーが過剰なメモリを消費する
+- UMDF WDK、UMDF ドライバーは過剰なメモリを消費する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40ae0ade1c7f959b09d287983bbcc3357b1b301a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0955d276d1cbd51ebec7e8bdd38ea186ba061190
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377448"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840387"
 ---
 # <a name="determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory"></a>UMDF ドライバーが大量にメモリを消費する理由の特定
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のドライバーと組み合わせて Wudfext.dll デバッガー拡張機能を使用して UMDF ドライバーが大量のメモリを消費する理由を判断する方法について説明します。
+このトピックでは、Wudfext デバッガー拡張機能をユーザーモードドライバーフレームワーク (UMDF) バージョン1ドライバーと組み合わせて使用して、UMDF ドライバーが大量のメモリを消費する原因を特定する方法について説明します。
 
-以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)します。
+UMDF バージョン2以降では、代わりに、Wdfkd デバッガー拡張機能を使用する必要があります。 詳細については、「 [Windows Driver Framework Extensions (Wdfkd .dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)」を参照してください。
 
 メモリ使用量を調査するには、次の手順を使用します。
 
-1.  使用してオブジェクト ツリー内の未処理のオブジェクトを表示、 **! wudfext.wudfobject** UMDF デバッガー拡張機能。
+1.  オブジェクトツリー内の未処理のオブジェクトを表示するには、 **! wudfext. wudfext**の UMDF デバッガー拡張機能を使用します。
 
-    **! Wudfext.wudfobject**拡張機能は、その親と子のリレーションシップが含まれています、WDF のオブジェクトに関する情報を表示します。 ビットの 0 が設定した場合、*フラグ*パラメーターを 1 (0x01) **! wudfext.wudfobject**が渡されるオブジェクトをルートとするオブジェクト ツリーの再帰的なダンプを実行します。 完全なオブジェクトのツリーを表示するには、次のコマンドの例を使用します。
+    **! Wudfext. wudfext**拡張機能には、親と子のリレーションシップを含む WDF オブジェクトに関する情報が表示されます。 *Flags*パラメーターのビット0を 1 (0x01) に設定すると、 **! wudfext. wudfext**は、渡されたオブジェクトをルートとするオブジェクトツリーの再帰ダンプを実行します。 完全なオブジェクトツリーを表示するには、次のコマンド例を使用します。
 
-    **!wudfext.wudfobject &lt;IWDFDriver\*&gt; 1**
+    **! wudfext. wudfext &lt;IWDFDriver\*&gt; 1**
 
-2.  予想より優れた物体を見るかどうかを決定します。
+2.  未解決のオブジェクトが予想よりも多いかどうかを確認します。
 
-    ドライバーが最終的にこれらのオブジェクトをリークする可能性があります (WDF オブジェクトのリークについての詳細については、次を参照してください。 [Determining If ドライバー リークのフレームワーク オブジェクト](determining-if-a-driver-leaks-framework-objects.md))。
+    ドライバーが最終的にこれらのオブジェクトをリークする可能性があります (WDF オブジェクトのリークの詳細については、「[ドライバーがフレームワークオブジェクトをリークするか](determining-if-a-driver-leaks-framework-objects.md)どうかを判断する」を参照してください)。
 
-    これらのオブジェクトは、オブジェクト ツリー内にあり、、最終的に解放されるためです。 ただし、それらが累積されているが不必要にします。 これらのオブジェクトが必要です。
+    これらのオブジェクトはオブジェクトツリーに存在する可能性があるため、最終的に解放されます。 ただし、これらは不必要に蓄積されています。 次のオブジェクトが必要になる場合があります。
 
-    -   親オブジェクトを修正します。
-    -   明示的な削除を使用して、 [ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッド。
+    -   親オブジェクトの修正。
+    -   [**Iwdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を使用した明示的な削除::D eletewdfobject メソッド。
 
  
 

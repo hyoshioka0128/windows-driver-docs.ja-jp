@@ -1,22 +1,22 @@
 ---
 title: Irql の規則セット (KMDF)
-description: これらの規則を使用すると、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。IRQL の規則に従っていないドライバーは、デッドロック状態またはコンピューターがクラッシュする可能性のある操作中に重大な問題を発生することができます。
+description: これらのルールを使用して、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。IRQL 規則に従っていないドライバーは、デッドロック状態またはコンピューターのクラッシュにつながる可能性がある操作中に重大な問題を引き起こす可能性があります。
 ms.assetid: B02D196F-E8D5-4FE9-8983-AD08EAE00DE5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a90f0200d22c637e361b0ae188b8283e86205b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b51d51661d66440bbd3e6245fdf8167870ce9dae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373671"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839547"
 ---
 # <a name="irql-rule-set-kmdf"></a>Irql の規則セット (KMDF)
 
 
-これらの規則を使用すると、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。
+これらのルールを使用して、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。
 
-IRQL の規則に従っていないドライバーは、デッドロック状態またはコンピューターがクラッシュする可能性のある操作中に重大な問題を発生することができます。
+IRQL 規則に従っていないドライバーは、デッドロック状態またはコンピューターのクラッシュにつながる可能性がある操作中に重大な問題を引き起こす可能性があります。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -34,51 +34,51 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="kmdf-kmdfirql.md" data-raw-source="[&lt;strong&gt;KmdfIrql&lt;/strong&gt;](kmdf-kmdfirql.md)"><strong>KmdfIrql</strong></a></p></td>
-<td align="left"><p><a href="kmdf-kmdfirql.md" data-raw-source="[&lt;strong&gt;KmdfIrql&lt;/strong&gt;](kmdf-kmdfirql.md)"> <strong>KmdfIrql</strong> </a>ルールでは、ドライバーが、そのメソッドの最大の IRQL 小さい IRQL でフレームワーク メソッドを呼び出すことを指定します。</p></td>
+<td align="left"><p><a href="kmdf-kmdfirql.md" data-raw-source="[&lt;strong&gt;KmdfIrql&lt;/strong&gt;](kmdf-kmdfirql.md)"><strong>Kmdの Ql</strong></a></p></td>
+<td align="left"><p><a href="kmdf-kmdfirql.md" data-raw-source="[&lt;strong&gt;KmdfIrql&lt;/strong&gt;](kmdf-kmdfirql.md)"><strong>Kmdno ql</strong></a>ルールは、ドライバーが、そのメソッドの最大 irql 以下の irql でフレームワークメソッドを呼び出すことを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="kmdf-kmdfirql2.md" data-raw-source="[&lt;strong&gt;KmdfIrql2&lt;/strong&gt;](kmdf-kmdfirql2.md)"><strong>KmdfIrql2</strong></a></p></td>
-<td align="left"><p><a href="kmdf-kmdfirql2.md" data-raw-source="[&lt;strong&gt;KmdfIrql2&lt;/strong&gt;](kmdf-kmdfirql2.md)"> <strong>KmdfIrql2</strong> </a>ルールでは、ドライバーが、そのメソッドの最大の IRQL 小さい IRQL でフレームワーク メソッドを呼び出すことを指定します。</p></td>
+<td align="left"><p><a href="kmdf-kmdfirql2.md" data-raw-source="[&lt;strong&gt;KmdfIrql2&lt;/strong&gt;](kmdf-kmdfirql2.md)"><strong>KmdfIrql2</strong></a>規則は、ドライバーが、そのメソッドの最大 irql 以下の irql でフレームワークメソッドを呼び出すことを指定します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="kmdf-usbkmdfirql.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql&lt;/strong&gt;](kmdf-usbkmdfirql.md)"><strong>UsbKmdfIrql</strong></a></p></td>
-<td align="left"><p><a href="kmdf-usbkmdfirql.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql&lt;/strong&gt;](kmdf-usbkmdfirql.md)"> <strong>UsbKmdfIrql</strong> </a>ルールでは、KMDF ドライバーは呼び出さないことに固有の USB デバイス ドライバー インターフェイス (DDI) 不適切な IRQL でレベルを指定します。</p></td>
+<td align="left"><p><a href="kmdf-usbkmdfirql.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql&lt;/strong&gt;](kmdf-usbkmdfirql.md)"><strong>Usbkmdファイヤ Ql</strong></a></p></td>
+<td align="left"><p><a href="kmdf-usbkmdfirql.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql&lt;/strong&gt;](kmdf-usbkmdfirql.md)"><strong>Usbkmdql ql</strong></a>ルールは、kmdf ドライバーが、正しくない IRQL レベルで USB 固有のデバイスドライバーインターフェイス (DDI) を呼び出さないことを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="kmdf-usbkmdfirql2.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql2&lt;/strong&gt;](kmdf-usbkmdfirql2.md)"><strong>UsbKmdfIrql2</strong></a></p></td>
-<td align="left"><p><a href="kmdf-usbkmdfirql2.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql2&lt;/strong&gt;](kmdf-usbkmdfirql2.md)"> <strong>UsbKmdfIrql2</strong> </a>ルールは、KMDF ドライバー呼び出さないでください USB 固有 Ddi 不適切な IRQL でレベルを指定します。</p></td>
+<td align="left"><p><a href="kmdf-usbkmdfirql2.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrql2&lt;/strong&gt;](kmdf-usbkmdfirql2.md)"><strong>UsbKmdfIrql2</strong></a>規則は、kmdf ドライバーが、正しくない IRQL レベルで USB 固有の DDIs を呼び出さないように指定します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="usbkmdfirqlexplicit.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrqlExplicit&lt;/strong&gt;](usbkmdfirqlexplicit.md)"><strong>UsbKmdfIrqlExplicit</strong></a></p></td>
-<td align="left"><p><a href="usbkmdfirqlexplicit.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrqlExplicit&lt;/strong&gt;](usbkmdfirqlexplicit.md)"> <strong>UsbKmdfIrqlExplicit</strong> </a>ルールは、KMDF Ddi が適切な IRQL レベルと呼ばれることを確認します。 このルールは、すべての EvtIoCallback 関数に適用されます。</p></td>
+<td align="left"><p><a href="usbkmdfirqlexplicit.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrqlExplicit&lt;/strong&gt;](usbkmdfirqlexplicit.md)"><strong>Usbkmdの Qlexplicit</strong></a></p></td>
+<td align="left"><p><a href="usbkmdfirqlexplicit.md" data-raw-source="[&lt;strong&gt;UsbKmdfIrqlExplicit&lt;/strong&gt;](usbkmdfirqlexplicit.md)"><strong>Usbkmdの Qlexplicit</strong></a>ルールは、Kmdf DDIs が正しい IRQL レベルで呼び出されることを確認します。 このルールは、すべての EvtIoCallback 関数に適用されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdfrequestsendsyncatdispatch.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch&lt;/strong&gt;](wdfrequestsendsyncatdispatch.md)"><strong>WdfRequestSendSyncAtDispatch</strong></a></p></td>
-<td align="left"><p><a href="wdfrequestsendsyncatdispatch.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch&lt;/strong&gt;](wdfrequestsendsyncatdispatch.md)"> <strong>WdfRequestSendSyncAtDispatch</strong> </a>ルールを確認、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend" data-raw-source="[&lt;strong&gt;WdfRequestSend&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)"> <strong>WdfRequestSend</strong> </a>関数は、適切な IRQL の優先順位で送信されますレベルです。</p></td>
+<td align="left"><p><a href="wdfrequestsendsyncatdispatch.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch&lt;/strong&gt;](wdfrequestsendsyncatdispatch.md)"><strong>Wdfrequestsendsyncatdispatch</strong></a>ルールは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend" data-raw-source="[&lt;strong&gt;WdfRequestSend&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)"><strong>Wdfrequestsend</strong></a>関数が正しい IRQL 優先度レベルで送信されることを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wdfrequestsendsyncatdispatch2.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch2&lt;/strong&gt;](wdfrequestsendsyncatdispatch2.md)"><strong>WdfRequestSendSyncAtDispatch2</strong></a></p></td>
-<td align="left"><p><a href="wdfrequestsendsyncatdispatch2.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch2&lt;/strong&gt;](wdfrequestsendsyncatdispatch2.md)"> <strong>WdfRequestSendSyncAtDispatch2</strong> </a>ルールを確認、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend" data-raw-source="[&lt;strong&gt;WdfRequestSend&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)"> <strong>WdfRequestSend</strong> </a>関数は、適切な IRQL の優先順位で送信されますレベルです。</p></td>
+<td align="left"><p><a href="wdfrequestsendsyncatdispatch2.md" data-raw-source="[&lt;strong&gt;WdfRequestSendSyncAtDispatch2&lt;/strong&gt;](wdfrequestsendsyncatdispatch2.md)"><strong>WdfRequestSendSyncAtDispatch2</strong></a>ルールは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend" data-raw-source="[&lt;strong&gt;WdfRequestSend&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)"><strong>Wdfrequestsend</strong></a>関数が正しい IRQL 優先度レベルで送信されることを確認します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**Irql ルールを選択するには、次のように設定します。**
+**Irql 規則セットを選択するには**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
+1.  Microsoft Visual Studio でドライバープロジェクト (.Vcxproj) を選択します。 **[ドライバー]** メニューの **[静的ドライバー検証ツールの起動]** をクリックします。
 
-2.  をクリックして、**ルール**タブ。**規則セット**、 **Irql**します。
+2.  **[ルール]** タブをクリックします。 **[規則セット]** で **[Irql]** を選択します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Irql.sdv**で、 **/check**オプション。 以下に例を示します。
+    Visual Studio 開発者コマンドプロンプトウィンドウから既定の規則セットを選択するには、 **/チェック**オプションを指定して、 **Irql**を指定します。 次に、例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
+    詳細については、「 [Using Static Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers) 」を参照して、ドライバーと[静的ドライバー検証コマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)で欠陥を検出してください。
 
  
 

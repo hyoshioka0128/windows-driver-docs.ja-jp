@@ -4,17 +4,17 @@ description: 記憶域クラス ドライバーの SplitTransferRequest ルー�
 ms.assetid: 4f449d3b-9a0a-4ff9-a7fb-bfa21b8a56c0
 keywords:
 - SplitTransferRequest
-- WDK の記憶域を連続していないページ
-- 分割の転送要求
-- 譲渡要求は WDK ストレージの分割
+- 非連続ページ WDK storage
+- 転送要求の分割
+- 転送要求の分割 WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a30aac1b4615b80a01c9f4b99a21b2f4328d17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3420d968d87a9822cb1c8bd377a17f839e80d81d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368884"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841606"
 ---
 # <a name="storage-class-drivers-splittransferrequest-routine"></a>記憶域クラス ドライバーの SplitTransferRequest ルーチン
 
@@ -22,11 +22,11 @@ ms.locfileid: "67368884"
 ## <span id="ddk_storage_class_drivers_splittransferrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_SPLITTRANSFERREQUEST_ROUTINE_KG"></span>
 
 
-記憶域\_アダプター\_に返されるデータの記述子、*いる出力*ルーチンをクラス ドライバーを特定の HBA の転送機能を示します。 具体的には、このデータを示します、 **MaximumTransferLength** (バイト単位) と**MaximumPhysicalPages**: は、非連続のページ数、HBA で管理できる、システムのバックアップの物理メモリバッファー (つまり、スキャッター/ギャザーのサポートのエクステント)。
+*Getdescriptor*ルーチンに返されるストレージ\_アダプター\_記述子データは、特定の HBA のクラスドライバーへの転送機能を示します。 具体的には、このデータは **、システム**バッファーをバッキングする物理メモリ内で HBA が管理できる連続したページの数 (バイト数) と**maximumtransferlength**(たとえば、散布図/の範囲) を示します。収集のサポート)。
 
-ほとんどのクラス ドライバーでは、記憶域クラス ドライバーはデータを転送する HBA の機能を超えるすべての転送要求を分割するために各デバイス オブジェクトの拡張機能でデバイスこの構成データへのポインターを格納します。 つまり、クラス ドライバーの[ **DispatchReadWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが各 IRP が HBA が 1 つの転送操作で処理できるよりも多くの転送を要求するかどうかを特定する必要があります。
+ほとんどのクラスドライバーは、この構成データへのポインターを各デバイスオブジェクトのデバイス拡張に格納します。これは、記憶域クラスドライバーが、データ転送のために HBA の機能を超えるすべての転送要求を分割するためです。 言い換えると、クラスドライバーの[**DispatchReadWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンは、各 IRP が1回の転送操作で処理できるよりも多くの転送を要求するかどうかを判断する必要があります。
 
-たとえば、このような*DispatchReadWrite*ルーチンは、次のようなコードがある可能性があります。
+たとえば、このような*DispatchReadWrite*ルーチンは、次のようなコードを持つことができます。
 
 ```cpp
 PSTORAGE_ADAPTER_DESCRIPTOR adapterDescriptor = 
@@ -60,23 +60,23 @@ if (currentIrpStack->Parameters.Read.Length > maximumTransferLength ||
     :        : 
 ```
 
-クラス ドライバーは、バッファーは、その転送には、各ページは連続していないし、許可されている物理的な改行の数と、ページの数を比較が想定する必要がありますのでしたら、それがマップされている必要がどのように多くの物理区切りを見分けることはできません。
+クラスドライバーは、バッファーが割り当てられた後の物理中断の数を判断できません。そのため、転送の各ページが連続していないと想定し、ページ数と、許可されている物理中断の数を比較する必要があります。
 
-このようなドライバーに注意してください*DispatchReadWrite*ルーチンの呼び出し**IoMarkIrpPending**ステータスを返す\_への呼び出し後すぐに保留その*SplitTransferRequest*元 IRP ルーチン。
+このようなドライバーの*DispatchReadWrite*ルーチンは**Iomarkirppending**を呼び出し、元の IRP との*splittransferrequest*ルーチンの呼び出しの直後に、ステータス\_を返します。
 
-ドライバーの元の転送要求を実行するために*SplitTransferRequest*ルーチンに HBA の機能に合わせて大きさを subbuffers を処理するために 1 つまたは複数の Irp を作成します。 このような IRP の*SplitTransferRequest*ルーチン。
+元の転送要求を実行するために、ドライバーの*Splittransferrequest*ルーチンは、HBA の機能に合わせてサイズが設定されたサブバッファーを処理する1つ以上の irp を作成します。 このような IRP の場合、 *Splittransferrequest*ルーチンは次のようになります。
 
--   内部で呼び出すことによって、通常、SRB を設定*BuildRequest*ルーチン (を参照してください[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md))
+-   SRB を設定します。通常は内部*Buildrequest*ルーチンを呼び出します (「[ストレージクラスドライバーの buildrequest ルーチン](storage-class-driver-s-buildrequest-routine.md)」を参照してください)。
 
--   MDL のコピーが新しい IRP を元の IRP からアドレスします。
+-   元の IRP の MDL アドレスを新しい IRP にコピーします。
 
--   セット、 **DataBuffer**転送のこの部分の MDL にバイトのオフセットに SRB で
+-   この転送のために、SRB の**DataBuffer**をバイト単位のオフセットに設定します。
 
--   設定その*IoCompletion*ポート ドライバーに IRP を送信する前に日常的な[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+-   [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)で IRP をポートドライバーに送信する前に、その*iocompletion*ルーチンを設定します。
 
-転送の各部分を追跡するために*SplitTransferRequest*登録、 *IoCompletion*下ドライバーに送信する各ドライバーに割り当てられた IRP の日常的な。 *IoCompletion*ルーチンでは、元の IRP では、部分的な転送が完了した要求の数を保持するを使用して**InterlockedIncrement**と**InterlockedDecrement**に数が正確であることを確認します。
+転送の各部分を追跡するために、 *Splittransferrequest*は、ドライバーによって割り当てられた各 IRP に対して、次の下位のドライバーに送信する*iocompletion*ルーチンを登録します。 *Iocompletion*ルーチンは、 **InterlockedIncrement**と**InterlockedDecrement**を使用して、カウントが正確であることを確認するために、元の IRP で完了した部分転送要求の数を保持します。
 
-このような*IoCompletion*れた Irp とされる Srb ドライバーが割り当てられているし、すべての要求されたデータが転送されたとき、またはクラス ドライバーは IRP の再試行回数が不足し、失敗する必要があります、元の IRP を完了する必要がありますルーチンを解放する必要がありますデバイスの転送エラーのためにします。
+このような*Iocompletion*ルーチンでは、ドライバーが割り当てたすべての Irp や SRBs を解放する必要があります。また、要求されたすべてのデータが転送されたとき、またはクラスドライバーが irp の再試行を終了し、デバイスのために失敗する必要がある場合は、元の irp を完了する必要があります。転送エラー。
 
  
 

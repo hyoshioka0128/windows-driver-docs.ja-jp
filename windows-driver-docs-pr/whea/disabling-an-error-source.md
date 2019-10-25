@@ -3,27 +3,27 @@ title: エラー ソースを無効にする
 description: エラー ソースを無効にする
 ms.assetid: a481ac98-0ff1-4583-a81a-1d2e4f968111
 keywords:
-- エラー ソース WDK WHEA、無効にします。
-- エラーのソースを無効にすると、Windows ハードウェア エラー アーキテクチャ WDK
-- WHEA WDK、エラーのソースを無効にします。
-- エラーのソースを無効にすると、WDK WHEA エラー
-- ハードウェア エラー ソース WDK WHEA、無効にします。
-- エラーのソースを無効にします。
+- WDK WHEA、無効化、エラーソース
+- Windows ハードウェアエラーアーキテクチャ WDK、エラーソースの無効化
+- WHEA WDK、エラーソースの無効化
+- エラー WDK WHEA、エラーソースの無効化
+- ハードウェアエラーソース WDK WHEA、無効化
+- エラー sourc を無効にする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fddf8ae85f646b20b28ece20c801fae47678ebc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06e1f1285809df70bc09191daa1606b8969ed26a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362596"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844382"
 ---
 # <a name="disabling-an-error-source"></a>エラー ソースを無効にする
 
 
-ユーザー モード アプリケーションを無効にすることができます、[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods::D isableErrorSourceRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、[エラーソース](hardware-errors-and-error-sources.md)を無効にすることができます。
 
-次のコード例では、エラーのソースを無効にする方法を示します。
+次のコード例は、エラーソースを無効にする方法を示しています。
 
 ```cpp
 IWbemServices *pIWbemServices;
@@ -124,7 +124,7 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-ユーザー モード アプリケーションを再度有効にする[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 エラーのソースを有効にする方法の詳細については、次を参照してください。 [、エラーの発生元を有効にする](enabling-an-error-source.md)します。
+ユーザーモードアプリケーションでは、 [**WHEAErrorSourceMethods:: EnableErrorSourceRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)メソッドを呼び出すことによって、[エラーソース](hardware-errors-and-error-sources.md)を再度有効にすることができます。 エラーソースを有効にする方法の詳細については、「[エラーソースの有効化](enabling-an-error-source.md)」を参照してください。
 
  
 

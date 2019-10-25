@@ -3,25 +3,25 @@ title: その他の SRB_FUNCTION_XXX 要求
 description: その他の SRB_FUNCTION_XXX 要求
 ms.assetid: b0430d8e-e5cd-4f17-b77f-ec608b1469da
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiStartIo
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiStartIo
 - HwScsiStartIo
-- SRB_FUNCTION_XXX 将来の使用
+- 将来使用する SRB_FUNCTION_XXX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e49772ea85345a30585d8d76f895d547cbd5d2d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b41f49529b06ff831fce2f6fe0d9da4af8bc542e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384654"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842734"
 ---
-# <a name="other-srbfunctionxxx-requests"></a>その他の SRB\_関数\_XXX 要求
+# <a name="other-srb_function_xxx-requests"></a>その他の SRB\_関数\_XXX 要求
 
 
 ## <span id="ddk_other_srb_function_xxx_requests_kg"></span><span id="DDK_OTHER_SRB_FUNCTION_XXX_REQUESTS_KG"></span>
 
 
-次の SRB**関数**オペレーティング システムの将来のバージョンで使用するために値が定義されます。
+次の SRB**関数**の値は、将来のバージョンのオペレーティングシステムで使用するために定義されています。
 
 -   SRB\_関数\_受信\_イベント
 
@@ -29,9 +29,9 @@ ms.locfileid: "67384654"
 
 -   SRB\_関数\_リセット\_デバイス
 
--   SRB\_関数\_TERMINATE\_IO
+-   SRB\_関数\_終了\_IO
 
-NT ベースのオペレーティング システムの SCSI ポート ドライバー次 SRB の要求を処理する**関数**SCSI ミニポート ドライバーを呼び出さずに値。
+NT ベースのオペレーティングシステムの SCSI ポートドライバーは、SCSI ミニポートドライバーを呼び出さずに、次の SRB**関数**の値を持つ要求を処理します。
 
 -   SRB\_関数\_要求\_デバイス
 
@@ -43,13 +43,13 @@ NT ベースのオペレーティング システムの SCSI ポート ドライ
 
 -   SRB\_関数\_ロック\_キュー
 
--   SRB\_関数\_UNLOCK\_キュー
+-   SRB\_関数\_\_キューのロック解除
 
-詳細については、これらの関数は、次を参照してください。[ストレージ クラス ドライバー](storage-class-drivers.md)します。
+これらの関数の詳細については、「[ストレージクラスドライバー](storage-class-drivers.md)」を参照してください。
 
-ミニポート ドライバーのデザイナーは、ミニポート ドライバーが、想定できます*決して*、SRB、すぐに上記のいずれかで送信**関数**値。 NT ベースのオペレーティング システムのポート ドライバー HBA 固有 (またはミニポート ドライバー固有) にアクセスすることから高度なドライバーを保護する記憶域クラスおよびフィルター ドライバーからこれらの要求を処理する状態情報がデバイスを検索するかを取り消すキューに置かれた要求。 これにより、NT ベースのオペレーティング システムの記憶域クラスおよびフィルター ドライバーは、HBA の特殊なモデルでは依存関係がないこと。
+ミニポートドライバーの設計者は、そのミニポートドライバーが、直前の**関数**の値のいずれかと共に SRB に送信されることを想定でき*ませ*ん。 NT ベースのオペレーティングシステムポートドライバーは、これらの要求をストレージクラスおよびフィルタードライバーから処理して、上位レベルのドライバーが、HBA 固有 (またはミニポートドライバー固有) の状態情報にアクセスしてデバイスを検索したり、キャンセルしたりすることを防止します。キューに置かれた要求。 これにより、NT ベースのオペレーティングシステムの記憶域クラスとフィルタードライバーは、特定のモデルの HBA に依存しなくなります。
 
-参照してください[ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)詳細については、構造体。
+詳細については、「 [**SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)の構造」を参照してください。
 
  
 

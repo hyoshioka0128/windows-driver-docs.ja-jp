@@ -4,12 +4,12 @@ description: ネットワーク デバイス用の標準化された INF キー�
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf83131e0ab1b8b65a5268b27a71de74335c544
-ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
+ms.openlocfilehash: 09f77d3d5cde454777adb118e73360ea4ea0fb70
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71285090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841846"
 ---
 # <a name="standardized-inf-keywords-for-network-devices"></a>ネットワーク デバイス用の標準化された INF キーワード
 
@@ -35,7 +35,7 @@ ms.locfileid: "71285090"
 
 -   **\*PhysicalMediaType**
 
-必須キーワードがドライバーの INF ファイルにない場合、NDIS はミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数を呼び出しません。
+必須キーワードがドライバーの INF ファイルにない場合、NDIS はミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出しません。
 
 次の両方に該当する場合、NDIS 6.0 以降のミニポートドライバーには標準化されたキーワードが必要です。
 
@@ -43,7 +43,7 @@ ms.locfileid: "71285090"
 
 -   デバイスは、指定されたプロパティを完全にサポートしています。
 
-**注標準化さ**れたキーワードは省略可能ですが、ndis 5.1 およびそれ以前の ndis ミニポートドライバーに推奨されます。  
+**注**  標準化されたキーワードは省略可能ですが、ndis 5.1 およびそれ以前の ndis ミニポートドライバーでは推奨されています。
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "71285090"
 
 INF ファイル内では、これらのキーワードの定義は、[詳細プロパティ] ページの他の定義と共に配置されます。 詳細プロパティの詳細については、「 [[詳細プロパティ] ページの構成パラメーターの指定](specifying-configuration-parameters-for-the-advanced-properties-page.md)」を参照してください。
 
-すべての標準化されたキーワード名は **\*** 、アスタリスク () で始まります。 この名前付け規則を使用すると、標準以外の名前から標準化された名前を簡単に区別できます。
+すべての標準化されたキーワード名は、アスタリスク ( **\*** ) で始まります。 この名前付け規則を使用すると、標準以外の名前から標準化された名前を簡単に区別できます。
 
 ユーザーインターフェイスで公開される標準化されたキーワードデータには、次の3種類があります。
 

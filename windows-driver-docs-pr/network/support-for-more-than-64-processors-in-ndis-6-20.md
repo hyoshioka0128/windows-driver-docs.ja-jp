@@ -3,15 +3,15 @@ title: NDIS 6.20 の 64 を超えるプロセッサのサポート
 description: NDIS 6.20 の 64 を超えるプロセッサのサポート
 ms.assetid: 3fb2a09c-e2dd-48b8-a631-3793bd023ef0
 keywords:
-- NDIS 6.20 WDK、64 を超えるプロセッサのサポート
+- NDIS 6.20 WDK、64を超えるプロセッサのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b37c0e070b74cb01ccc1532d4384ac71271cd07d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a2712415bf1f98b72c97dd3489f05a6ee6280338
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381169"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841802"
 ---
 # <a name="support-for-more-than-64-processors-in-ndis-620"></a>NDIS 6.20 の 64 を超えるプロセッサのサポート
 
@@ -19,21 +19,21 @@ ms.locfileid: "67381169"
 
 
 
-NDIS 6.20 インターフェイスには、64 を超えるプロセッサのサポートが導入されています。 以前のバージョンの NDIS は 64 個のプロセッサに制限されます (x86 32 オペレーティング システムのバージョン)。
+NDIS 6.20 インターフェイスでは、64を超えるプロセッサのサポートが導入されています。 以前のバージョンの NDIS は、64プロセッサ (x86 バージョンのオペレーティングシステムでは 32) 以下に制限されています。
 
-旧バージョンとのまま、以前の実装と互換性のある NDIS をサポートしていますのプロセッサ グループ。 64 を超えるプロセッサをサポートするために更新されていないソフトウェアの既定のプロセッサ グループ 0 にできます。
+以前の実装との下位互換性を維持するために、NDIS はプロセッサグループをサポートしています。 64を超えるプロセッサをサポートするように更新されていないソフトウェアは、既定でプロセッサグループゼロに設定できます。
 
-64 を超えるプロセッサ、NDIS 6.20 が動作をサポートし、後でこれらのインターフェイスの更新バージョンを指定します。
+64を超えるプロセッサをサポートするために、NDIS 6.20 以降では、これらのインターフェイスの更新バージョンが提供されます。
 
 -   [Receive Side Scaling (RSS)](ndis-receive-side-scaling2.md)
 
--   プロセッサ情報デバイス ドライバー インターフェイス (を参照してください[NDIS システム情報関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/))
+-   プロセッサ情報デバイスドライバーインターフェイス (「 [NDIS システム情報機能](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照)
 
--   リソースの割り当て (を参照してください[NDIS メモリ管理インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/))
+-   リソース割り当て (「 [NDIS メモリ管理インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照)
 
--   読み取り/書き込みロック (を参照してください[NDIS 読み取り書き込みロック参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/))
+-   読み取りおよび書き込みロック (「 [NDIS Read Write Lock Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照)
 
-デバイス ドライバーの NDIS インターフェイス要素の一部は、NDIS 6.20 が動作し、以降のドライバーの廃止されています。 古い形式のインターフェイスの詳細については、次を参照してください。 [NDIS 6.20 で古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)します。
+Ndis デバイスドライバーのインターフェイス要素の一部は、NDIS 6.20 以降のドライバーでは廃止されています。 互換性のために残されているインターフェイスの詳細については、「 [NDIS 6.20 の古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)」を参照してください。
 
  
 

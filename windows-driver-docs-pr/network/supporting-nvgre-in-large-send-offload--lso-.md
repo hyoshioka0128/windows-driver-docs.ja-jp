@@ -1,54 +1,54 @@
 ---
 title: Large Send Offload (LSO) での NVGRE のサポート
-description: このセクションでは、NVGRE で Large Send Offload (LSO) のサポートについて説明します
+description: このセクションでは、Large Send Offload (LSO) での NVGRE のサポートについて説明します。
 ms.assetid: 1EB1B8C2-85C1-4256-BE96-C8B9F1D222B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11639cc8b14819bc90107f57fe8e664b433d4a86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c0cbb039154408e217fd85ad804fdea1bcf0c99
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381164"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841794"
 ---
 # <a name="supporting-nvgre-in-large-send-offload-lso"></a>Large Send Offload (LSO) での NVGRE のサポート
 
 
-NDIS 6.30 (Windows Server 2012) が導入されています[Network Virtualization using Generic Routing Encapsulation (NVGRE)](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)します。 NDIS ミニポート、プロトコル、およびフィルター ドライバーおよび大きなを実行するための Nic は、NVGRE をサポートするための方法で実行する必要がありますオフロード (LSO) バージョン 2 (LSOV2) を送信します。
+NDIS 6.30 (Windows Server 2012) では、[汎用ルーティングカプセル化 (NVGRE) を使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)が導入されています。 大量の送信オフロード (LSO) バージョン 2 (LSOV2) を実行する NDIS ミニポート、プロトコル、およびフィルタードライバーと Nic は、NVGRE をサポートするようにする必要があります。
 
-**注**  このページは、内の情報に精通していることを前提としています。 [、セグメント化の大きな TCP パケットのオフロード](offloading-the-segmentation-of-large-tcp-packets.md)します。
+**注**  このページでは、[サイズの大きい TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)に関する情報について理解していることを前提としています。
 
  
 
-場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**は**TRUE**と**TcpIpChecksumNetBufferListInfo**アウト オブ バンド (OOB) の情報が有効でこれを示すその NVGREサポートが必要ですし、NIC は、次の条件と、NVGRE でフォーマットされたパケットの LSOV2 オフロードを実行する必要があります。
+[**NDIS\_TCP\_送信\_\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)のオフロード。**IsEncapsulatedPacket**が**TRUE**で、 **TCPIPCHECKSUMNETBUFFERLISTINFO**の帯域外 (OOB) 情報が有効であることを示します。これは、nvgre のサポートが必要であり、NIC が nvgre 形式で LSOV2 オフロードを実行する必要があることを示します。次の条件を満たすパケット。
 
--   値のみ、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**構造が無効です。 NIC とミニポート ドライバーが必要があります内の値を参照していません、 **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**.**LsoV1Transmit**構造体。
--   [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**.**TcpHeaderOffset**メンバーに適切なオフセット値がないと、NIC またはミニポート ドライバーでは使用しないでください。
+-   [**NDIS\_TCP\_LARGE\_は、\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)の値のみを送信します。**LsoV2Transmit**構造体は有効です。 NIC とミニポートドライバーは、 **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO**の値を参照することはできません。**LsoV1Transmit**構造体。
+-   [**NDIS\_TCP\_LARGE\_\_オフロード\_NET\_BUFFER\_LIST\_情報を送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)します。**LsoV2Transmit**。**Tcpheaderoffset**メンバーに正しいオフセット値が指定されていません。 NIC またはミニポートドライバーでは使用できません。
 
-LSOV2 で NVGRE をサポートするには、プロトコルとフィルター ドライバーは、次の変更を加える必要があります。
+LSOV2 で NVGRE をサポートするには、プロトコルドライバーとフィルタードライバーで次の変更を行う必要があります。
 
--   削減、 **MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**新しい GRE ヘッダーに対応する構造体。
--   送信 TCP ペイロードの長さの短縮ができない可能性があるダウン**MSS**値。
--   調整、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset**値、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info) GRE に対応する構造体ヘッダー。
+-   [**NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)の**MSS**の値を小さくします。新しい GRE ヘッダーを考慮する**LsoV2Transmit**構造体。
+-   短縮された**MSS**値の倍数ではない可能性のある TCP ペイロードの長さを送信します。
+-   NDIS\_TCP\_送信\_オフロード\_補足\_NET\_BUFFER の**innerフレームオフセット**、TransportIpHeaderRelativeOffset、および**TcpHeaderRelativeOffset**の値を調整[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)は、GRE ヘッダーを考慮して\_INFO 構造体を一覧表示します。
 
-Nic とミニポート ドライバーを使用して、可能性があります、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset** で提供される値[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体。 NIC またはミニポート ドライバーでは、トンネル (外部) の IP ヘッダーまたはこれらのオフセットを検証する後続のヘッダーで、必要なヘッダーのチェックを実行できます。
+Nic およびミニポートドライバーでは、NDIS\_TCP\_送信\_オフロード\_補足の**innerフレームオフセット**、 **TransportIpHeaderRelativeOffset**、および TcpHeaderRelativeOffset の値を使用できます。 [ **\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体です。 NIC またはミニポートドライバーは、これらのオフセットを検証するために、トンネル (外部) IP ヘッダーまたはそれ以降のヘッダーに対して必要なヘッダーチェックを実行する場合があります。
 
-ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
+ミニポートドライバーは、 [**NDIS\_TCP\_送信\_オフロード\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)の場合に対処する必要があります。**Innerフレームオフセット**は、パケットの先頭とは異なるスキャッター/ギャザーリストに存在する可能性があります。 プロトコルドライバーは、先頭にあるすべてのカプセル化ヘッダー (ETH、IP、GRE) が物理的に連続しており、パケットの最初の MDL に含まれることを保証します。
 
-プロトコルとフィルター ドライバーは、TCP ペイロード長さの合計が、制限の倍数であることを確認しない**MSS**値。 このため、ミニポート ドライバーと Nic は、トンネル (外部) の IP ヘッダーを更新する必要があります。 Nic がに基づいて、削減できるだけ多くのフル サイズのセグメントを生成する必要が**MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit** OOB 情報。 1 つだけ sub -**MSS**セグメントを生成することが LSOv2 送信ごと。
+プロトコルおよびフィルタードライバーでは、TCP ペイロードの合計長が、減少した**MSS**値の正確な倍数であることは保証されません。 このため、ミニポートドライバーと Nic はトンネル (外部) IP ヘッダーを更新する必要があります。 Nic では、できるだけ多くの最大サイズのセグメントを生成する必要があります。これは、 [**NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)**の値に**基づいて発生します。**LsoV2Transmit**OOB 情報。 LSOv2 send ごとに生成されるサブ**MSS**セグメントは1つだけです。
 
-ミニポート ドライバーでは、次の操作を行う必要があります。
+ミニポートドライバーは、次の操作を行う必要があります。
 
--   トンネル (外部) の IP ヘッダーのチェックサムを計算します。
--   IP id (IP ID) がすべてのパケットのトンネル (外側) IP ヘッダーの値をインクリメントします。 最初のパケットは、元のトンネル (外側) IP ヘッダーで IP ID を使用する必要があります。
--   すべてのパケットのトランスポート (内部) の IP ヘッダーの IP の ID をインクリメントします。 最初のパケットは、元のトランスポート (内部) IP ヘッダーで IP ID を使用する必要があります。
--   TCP ヘッダーとトランスポート (内部) の IP ヘッダーのチェックサムを計算します。
--   生成されたすべてのパケットをカプセル化トンネル (外側) ヘッダーを含む、完全なヘッダーが追加されたことを確認します。
+-   トンネル (外部) IP ヘッダーのチェックサムを計算します。
+-   すべてのパケットについて、トンネル (外側) IP ヘッダーの IP 識別 (IP ID) 値を増やします。 最初のパケットでは、元のトンネル (外部) IP ヘッダーの IP ID を使用する必要があります。
+-   すべてのパケットについて、トランスポート (内部) IP ヘッダーの IP ID を増やします。 最初のパケットでは、元のトランスポート (内部) IP ヘッダーの IP ID を使用する必要があります。
+-   TCP ヘッダーとトランスポート (内部) IP ヘッダーのチェックサムを計算します。
+-   生成されたすべてのパケットに、カプセル化トンネル (外側) ヘッダーを含む完全なヘッダーが追加されていることを確認します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[大きな TCP パケットのセグメント化をオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
+[大きな TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
 
  
 

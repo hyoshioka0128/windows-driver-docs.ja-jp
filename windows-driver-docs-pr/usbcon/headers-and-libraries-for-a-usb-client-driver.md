@@ -1,21 +1,21 @@
 ---
-Description: このトピックでは、ヘッダーと、Windows Driver Model (WDM) USB クライアント ドライバーを記述するために必要なライブラリを一覧表示します。
+Description: このトピックでは、Windows Driver Model (WDM) USB クライアントドライバーの作成に必要なヘッダーとライブラリを示します。
 title: USB クライアント ドライバーで必要なヘッダーとライブラリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ac904d1cff057d67412bb3e98f762da30ea49f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ce12d6cdfd4b3f3862f6f352a869694c41b8333
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378340"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844997"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB クライアント ドライバーで必要なヘッダーとライブラリ
 
 
-このトピックでは、ヘッダーと、Windows Driver Model (WDM) USB クライアント ドライバーを記述するために必要なライブラリを一覧表示します。
+このトピックでは、Windows Driver Model (WDM) USB クライアントドライバーの作成に必要なヘッダーとライブラリを示します。
 
-特定のデバイス ドライバー インターフェイス (DDI) のヘッダーとライブラリを検索のリファレンス ページを参照してください。、 [USB 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/)します。
+特定のデバイスドライバーインターフェイス (DDI) のヘッダーとライブラリを検索するには、 [USB リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)の参照ページを参照してください。
 
 ## <a name="headers"></a>ヘッダー
 
@@ -29,117 +29,117 @@ ms.locfileid: "67378340"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ヘッダー ファイル</th>
-<th>パス</th>
-<th>含まれています</th>
+<th>ヘッダーファイル</th>
+<th>Path</th>
+<th>が含まれ</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>hubbusif.h</td>
-<td>Include\km</td>
+<td>hubbusif</td>
+<td>Include/km</td>
 <td></td>
-<td>USB ポート ドライバーによってエクスポートされた、USB ハブのドライバーで使用可能なサービスを定義します。</td>
+<td>Usb ポートドライバーによってエクスポートされ、USB ハブドライバーで使用できるようにするサービスを定義します。</td>
 </tr>
 <tr class="even">
-<td>usb.h</td>
-<td>Include\shared</td>
+<td>usb. h</td>
+<td>Include\ 共有</td>
 <td></td>
-<td>定義<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)"> <strong>URB</strong> </a> USB ドライバー スタックに要求を送信するために必要なクライアント ドライバーで USB 要求のブロック (翻訳) の構造体。</td>
+<td>USB ドライバースタックに要求を送信するためにクライアントドライバーが必要とする、USB 要求ブロック (URBs) の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a>構造を定義します。</td>
 </tr>
 <tr class="odd">
-<td>usb100.h</td>
-<td>Include\shared</td>
+<td>usb100</td>
+<td>Include\ 共有</td>
 <td></td>
-<td>公式の USB 1.0 仕様に従って、USB 記述子を定義します。</td>
+<td>公式 USB 1.0 仕様に従って、USB 記述子を定義します。</td>
 </tr>
 <tr class="even">
-<td>usb200.h</td>
-<td>Include\shared</td>
-<td><p>usb100.h</p></td>
-<td>公式の USB 2.0 仕様どおりの USB ディスクリプターを定義します。</td>
+<td>usb200</td>
+<td>Include\ 共有</td>
+<td><p>usb100</p></td>
+<td>公式 USB 2.0 仕様に従って、USB 記述子を定義します。</td>
 </tr>
 <tr class="odd">
-<td>usbbusif.h</td>
-<td>Include\km</td>
+<td>usbbusif .h</td>
+<td>Include/km</td>
 <td></td>
-<td>しくみに直接リンクではなくポート ドライバーに直接リンクする必要があるの USB クライアント ドライバー (FDO) に対して定義されているバス インターフェイスを定義します。</td>
+<td>Usbd に直接リンクするのではなく、ポートドライバーに直接リンクする必要がある USB クライアントドライバー (FDO) に対して定義されているバスインターフェイスを定義します。</td>
 </tr>
 <tr class="even">
-<td>usbdi.h</td>
-<td>Include\shared</td>
-<td><p>usb.h</p>
-<p>usbioctl.h</p></td>
-<td>特定の種類の要求の翻訳を書式設定するためのヘルパー マクロを定義します。</td>
+<td>usbdi. h</td>
+<td>Include\ 共有</td>
+<td><p>usb. h</p>
+<p>usbioctl</p></td>
+<td>特定の種類の要求に対して URBs を書式設定するためのヘルパーマクロを定義します。</td>
 </tr>
 <tr class="odd">
-<td>usbdlib.h</td>
-<td>Include\km</td>
+<td>usbdlib. h</td>
+<td>Include/km</td>
 <td></td>
-<td>USB ドライバー スタックに要求を送信する USB クライアント ドライバーによって使用される Ddi を定義します。</td>
+<td>Usb ドライバースタックに要求を送信するために USB クライアントドライバーによって使用される DDIs を定義します。</td>
 </tr>
 <tr class="even">
-<td>usbdrivr.h</td>
-<td>Include\km</td>
-<td><p>usb.h</p>
-<p>usbdlib.h</p>
-<p>usbioctl.h</p>
-<p>usbbusif.h</p></td>
+<td>usbdrivr</td>
+<td>Include/km</td>
+<td><p>usb. h</p>
+<p>usbdlib. h</p>
+<p>usbioctl</p>
+<p>usbbusif .h</p></td>
 <td>USB_KERNEL_IOCTL を定義します。</td>
 </tr>
 <tr class="odd">
-<td>usbioctl.h</td>
-<td>Include\shared</td>
-<td><p>usbiodef.h</p>
-<p>usb200.h</p></td>
-<td>IOCTL を定義します。 USB ドライバー スタックでサポートされているコード。 クライアント ドライバーのカーネル モードの IOCTL コードが含まれていますアプリケーションのユーザー モードの IOCTL コード。</td>
+<td>usbioctl</td>
+<td>Include\ 共有</td>
+<td><p>usbiodef</p>
+<p>usb200</p></td>
+<td>USB ドライバースタックでサポートされる IOCTL コードを定義します。 クライアントドライバーのカーネルモード IOCTL コードを含みます。アプリケーションのユーザーモード IOCTL コード。</td>
 </tr>
 <tr class="even">
-<td>usbiodef.h</td>
-<td>Include\shared</td>
+<td>usbiodef</td>
+<td>Include\ 共有</td>
 <td></td>
 <td>インターフェイスと WMI の Guid を定義します。</td>
 </tr>
 <tr class="odd">
-<td>usbkern.h</td>
-<td>Include\km</td>
-<td><p>usbioctl.h</p></td>
+<td>usbkern。 h</td>
+<td>Include/km</td>
+<td><p>usbioctl</p></td>
 <td>使用しないでください。</td>
 </tr>
 <tr class="even">
-<td>usbrpmif.h</td>
-<td>Include\um</td>
-<td><p>usb100.h</p>
-<p>windef.h</p>
-<p>winapifamily.h</p></td>
-<td>USB デバイスのドライバーのリダイレクトを行うために自身を登録するアプリケーションの関数を定義します。</td>
+<td>usbrpmif. h</td>
+<td>Include\ um</td>
+<td><p>usb100</p>
+<p>windef. h</p>
+<p>winapifamily .h</p></td>
+<td>アプリケーションが USB デバイスのドライバーリダイレクト操作を実行するために自身を登録するための関数を定義します。</td>
 </tr>
 <tr class="odd">
-<td>usbspec.h</td>
-<td>Include\shared</td>
+<td>usbspec. h</td>
+<td>Include\ 共有</td>
 <td></td>
-<td>公式の USB 仕様に従って、デバイス ドライバー インターフェイスを定義します。</td>
+<td>公式の USB 仕様に従って、デバイスドライバーのインターフェイスを定義します。</td>
 </tr>
 <tr class="even">
-<td>usbuser.h</td>
-<td>Include\um</td>
+<td>usbuser. h</td>
+<td>Include\ um</td>
 <td></td>
-<td>USB ポート ドライバーでサポートされている IOCTL コードをユーザー モードを定義します。</td>
+<td>USB ポートドライバーでサポートされているユーザーモードの IOCTL コードを定義します。</td>
 </tr>
 <tr class="odd">
-<td>winusb.h</td>
-<td>Include\um</td>
-<td><p>winapifamily.h</p>
-<p>winusbio.h</p></td>
-<td>定義<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB functions</a> Winusb.dll、によって公開される関数のドライバーを USB デバイスとしてインストールされている Winusb.sys に要求を送信する必要があるアプリケーションによって使用されます。</td>
+<td>winusb. h</td>
+<td>Include\ um</td>
+<td><p>winapifamily .h</p>
+<p>winusbio. h</p></td>
+<td>Winusb .dll によって公開される<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">winusb 関数</a>を定義します。この機能は、usb デバイスの関数ドライバーとしてインストールされている winusb に要求を送信するアプリケーションによって使用されます。</td>
 </tr>
 <tr class="even">
-<td>winusbio.h</td>
-<td>Include\shared</td>
-<td><p>winapifamily.h</p>
-<p>usb.h</p></td>
-<td>フラグを定義<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB functions</a>します。</td>
+<td>winusbio. h</td>
+<td>Include\ 共有</td>
+<td><p>winapifamily .h</p>
+<p>usb. h</p></td>
+<td><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">Winusb 関数</a>のフラグを定義します。</td>
 </tr>
 </tbody>
 </table>
@@ -158,53 +158,53 @@ ms.locfileid: "67378340"
 <thead>
 <tr class="header">
 <th>Library</th>
-<th>パス</th>
+<th>Path</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>usbd.lib</td>
-<td><p>\Lib\win8\km&lt;em&gt;&lt;arch&gt;</em></p>
+<td>usbd</td>
+<td><p>\ Lib& win8em&lt;em&gt;&lt;arch&gt;</em></p>
 <p>\Lib\win7\km&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&lt;arch&gt;</em></p></td>
-<td>USB ドライバー スタックから情報を取得すると、要求の翻訳を書式設定には、ヘルパー ルーチンを提供します。</td>
+<p>\ Lib& winv6.2&lt;em&gt;&lt;arch&gt;</em></p></td>
+<td>USB ドライバースタックから情報を取得し、要求の URBs を書式設定するためのヘルパールーチンを提供します。</td>
 </tr>
 <tr class="even">
-<td>usbrpm.lib</td>
-<td><p>\Lib\win8\km&lt;em&gt;&lt;arch&gt;</em></p>
+<td>usbrpm .lib</td>
+<td><p>\ Lib& win8em&lt;em&gt;&lt;arch&gt;</em></p>
 <p>\Lib\win7\km&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&lt;arch&gt;</em></p></td>
-<td>サード パーティ製の RPM ドライバーを使用した Microsoft から提供されたドライバーを置換するための操作を実行するアプリケーションの機能を提供します。</td>
+<p>\ Lib& winv6.2&lt;em&gt;&lt;arch&gt;</em></p></td>
+<td>Microsoft 提供のドライバーをサードパーティの RPM ドライバーに置き換える操作をアプリケーションで実行するための機能を提供します。</td>
 </tr>
 <tr class="odd">
-<td>usbdex.lib</td>
-<td><p>\Lib\win8\km&lt;em&gt;&lt;arch&gt;</em></p>
+<td>usbdex .lib</td>
+<td><p>\ Lib& win8em&lt;em&gt;&lt;arch&gt;</em></p>
 <p>\Lib\win7\km&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&lt;arch&gt;</em></p></td>
-<td>基になる USB ドライバー スタックに要求を送信するクライアント ドライバー用のヘルパー ルーチンを提供します。 ライブラリは、読み込まれ、ビルド時に、クライアント ドライバーのモジュールに静的にリンクを取得します。 これらのルーチンを呼び出すクライアント ドライバーは、Windows Vista および Windows の以降のバージョンで実行できます。</td>
+<p>\ Lib& winv6.2&lt;em&gt;&lt;arch&gt;</em></p></td>
+<td>クライアントドライバーが基になる USB ドライバースタックに要求を送信するためのヘルパールーチンを提供します。 ライブラリは、構築時にクライアントドライバーモジュールに読み込まれ、静的にリンクされます。 これらのルーチンを呼び出すクライアントドライバーは、Windows Vista 以降のバージョンの Windows で実行できます。</td>
 </tr>
 <tr class="even">
-<td>winusb.lib</td>
-<td><p>\Lib\win8\km&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\win8\um&lt;em&gt;&lt;arch&gt;</em></p>
+<td>winusb .lib</td>
+<td><p>\ Lib& win8em&lt;em&gt;&lt;arch&gt;</em></p>
+<p>\ Lib& win8\ um&lt;em&gt;&lt;arch&gt;</em></p>
 <p>\Lib\win7\km&lt;em&gt;&lt;arch&gt;</em></p>
 <p>\Lib\win7\um&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&lt;arch&gt;</em></p>
-<p>\Lib\winv6.3\um&lt;em&gt;&lt;arch&gt;</em></p></td>
-<td>ユーザー モードのクライアント ドライバーまたは Winusb.sys 関数ドライバーとして読み込まれている USB デバイスと通信するアプリケーションの機能を提供します。</td>
+<p>\ Lib& winv6.2&lt;em&gt;&lt;arch&gt;</em></p>
+<p>\ Lib& winv6.3 3\ um&lt;em&gt;&lt;arch&gt;</em></p></td>
+<td>ユーザーモードのクライアントドライバーまたはアプリケーションが、関数ドライバーとして Winusb .sys を読み込んだ USB デバイスと通信するための機能を提供します。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="header-changes-in-windows8"></a>Windows 8 のヘッダーの変更点
+## <a name="header-changes-in-windows8"></a>Windows 8 でのヘッダーの変更点
 
 
-Windows Driver Kit (WDK) では、Windows 8 以降、ヘッダー ファイル usbspec.h USBProtocolDefs.h を置き換えます。
+Windows 8 用 Windows Driver Kit (WDK) 以降では、ヘッダーファイル usbspec. h は USBProtocolDefs を置き換えます。
 
-新しいヘッダー ファイル、usbspec.h、公式の USB 仕様に従って定義されている Ddi のプロトコルの定義を提供します。 ヘッダー ファイルには、Ddi には for USB 3.0 仕様が含まれています。
+新しいヘッダーファイルである usbspec は、公式の USB 仕様に従って定義されている DDIs のプロトコル定義を提供します。 ヘッダーファイルには、USB 3.0 仕様の DDIs が含まれています。
 
 ## <a name="related-topics"></a>関連トピック
 [ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

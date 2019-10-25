@@ -3,16 +3,16 @@ title: マクロブロック制御コマンド バッファー
 description: マクロブロック制御コマンド バッファー
 ms.assetid: ed6905f6-7e7c-47d2-8f6e-95cfa03e21cb
 keywords:
-- マクロ ブロック WDK DirectX va なので、コマンド バッファー
-- コマンド バッファー WDK DirectX VA
+- マクロが WDK DirectX VA、コマンドバッファーをブロックする
+- コマンドバッファーの WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afa3a7e32347105f30dee80d67d3e642d1573697
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a1ba990931c31097bfe935dafdbdb9c2dea8645f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385605"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840590"
 ---
 # <a name="macroblock-control-command-buffers"></a>マクロブロック制御コマンド バッファー
 
@@ -20,29 +20,29 @@ ms.locfileid: "67385605"
 ## <span id="ddk_macroblock_control_command_buffers_gg"></span><span id="DDK_MACROBLOCK_CONTROL_COMMAND_BUFFERS_GG"></span>
 
 
-デコードされた画像には、(ビット ストリーム バッファーは含まれません) 場合の 1 つまたは複数のマクロ ブロック コントロール コマンド バッファーが含まれています。 すべてのマクロ ブロックのデコード処理は、マクロ ブロック コントロール コマンド バッファーで (1 回だけ) 指定されます。
+デコードされた画像には、1つ以上のマクロブロックコントロールコマンドバッファーが含まれています (ビットストリームバッファーが含まれていない場合)。 すべてのマクロブロックのデコードプロセスは、マクロブロックコントロールのコマンドバッファーに指定されています (1 回だけ)。
 
-各マクロ ブロック コントロール コマンド バッファーには、マクロ ブロックの同じセットのデータを含む対応する残存違いブロック データ バッファーです。 1 つまたは複数[フィルター コントロールのバッファーを非ブロック化](deblocking-filter-commands.md)送信されると、各 deblocking フィルター コントロール バッファー内のマクロ ブロックのセットは、対応するマクロ ブロック コントロールおよび残余違いブロックでのマクロ ブロックのセットと同じです。データ バッファー。
+すべてのマクロブロックコントロールのコマンドバッファーには、同じマクロブロックのセットのデータを格納する残存差ブロックデータバッファーがあります。 1つ以上の[deblocking フィルターコントロール](deblocking-filter-commands.md)バッファーが送信された場合、各 deblocking フィルターコントロールバッファーのマクロブロックのセットは、対応するマクロブロックコントロールと残留差ブロックデータバッファー内のマクロブロックのセットと同じになります。
 
-画像の処理では、各マクロ ブロックのモーション予測残存違いデータの追加の前にする必要があります。 画像をデコードすることは、次の 2 つの方法のいずれかで実行できます。
+画像を処理するには、各マクロブロックのモーション予測を残存差データの追加の前に行う必要があります。 画像のデコードは、次の2つの方法のいずれかで行うことができます。
 
--   モーションの予測コマンド マクロ ブロック コントロールのコマンドは、最初のバッファーします。 その後、動き補償予測データを戻して、圧縮されていない宛先表面から残存の違いのデータ バッファーの処理中にするプロセス。
+-   残存差データバッファーを処理しながら、まず、マクロブロックコントロールのコマンドバッファーでモーション予測コマンドを処理してから、圧縮されていないターゲット画面からモーション補正予測データを読み取ります。
 
--   マクロ ブロック コントロール コマンド バッファーと連携的に残留違いデータ バッファーを処理します。 圧縮されていない宛先表面に、結果を書き込む前に、予測に残存違いデータ バッファーで指定された残留データを追加します。
+-   マクロブロックコントロールのコマンドバッファーと残留差のデータバッファーを調整された方法で処理します。 残差データバッファーに指定された残存データを予測に追加してから、圧縮されていないターゲットサーフェイスに結果を書き込みます。
 
-マクロ ブロック コントロール コマンドおよびデータは、各マクロ ブロックの残存の相違は、そのマクロ ブロック内で四角形の領域のみに影響します。
+マクロブロックコントロールコマンドと各マクロブロックの残存差データは、そのマクロブロック内の四角形の領域にのみ影響します。
 
-マクロ ブロック コントロール コマンド バッファーで管理コマンドをマクロ ブロックの合計数がで指定された、 **dwNumMBsInBuffer**の対応するメンバー [ **DXVA\_BufferDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_bufferdescription)構造体。
+マクロブロックコントロールコマンドバッファー内のマクロブロックコントロールコマンドの合計数は、対応する[**DXVA\_BufferDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)構造体の**Dwnummbsinbuffer**メンバーによって指定されます。
 
-量と残存違いデータ バッファー内のデータの種類によって決まりますが、 **wPatternCode**、 **wPC\_Overflow**、および**bNumCoef**のメンバー対応するマクロ ブロック コントロール コマンド。
+残存差データバッファー内のデータの数量と種類は、対応するマクロブロックコントロールコマンドの**Wpattern コード**、 **Wpc\_Overflow**、 **bnumcoef**の各メンバーによって決定されます。
 
-次の図は、マクロ ブロック コントロールのコマンド バッファーと残存違いデータ バッファー間の関係を示します。
+次の図は、マクロブロックコントロールのコマンドバッファーと残差のデータバッファーとの関係を示しています。
 
-![マクロ ブロック コントロール コマンド バッファーと残存の違いのデータ バッファーの間の関係を示す図](images/residdiffdata.png)
+![マクロブロックコントロールのコマンドバッファーと残差のデータバッファーとの関係を示す図](images/residdiffdata.png)
 
-場合、 **bConfigMBcontrolRasterOrder**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体が 1 に、その後に次の式が適用されます前の図で*は*マクロ ブロック コントロール コマンド バッファー内のマクロ ブロックのインデックスです。
+[**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**bConfigMBcontrolRasterOrder**メンバーが1と等しい場合、次の式は前の図に適用されます。ここで、 *i*は、のマクロブロックのインデックスです。マクロブロックコントロールコマンドバッファー。
 
-![mb コントロール コマンド バッファーと残存違いデータ バッファーの間の関係を示す図](images/formula3.png)
+![mb 制御コマンドバッファーと残差データバッファーの関係を示す図](images/formula3.png)
 
  
 

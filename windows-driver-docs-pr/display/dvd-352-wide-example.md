@@ -3,18 +3,18 @@ title: DVD 352 幅の例
 description: DVD 352 幅の例
 ms.assetid: 22047c8e-30e3-4204-9f7d-b8b97be668ae
 keywords:
-- アルファ ブレンド組み合わせ WDK DirectX va なので、DVD 352 全体の例
-- ブレンド画像 WDK DirectX va なので、DVD 352 全体の例
-- DVD 352 全体例 WDK DirectX VA
-- WDK DirectX VA 352 全体の使用例
+- アルファブレンドの組み合わせ WDK DirectX VA、DVD 352 全体の例
+- 画像のブレンド WDK DirectX VA、DVD 352 全体の例
+- DVD 352 全体の例 WDK DirectX VA
+- 352全体の例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 688383d8cebb22d77c9a02d077d7fba2a15892b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68d550b9e68bcbd8a41f0be7fbb3a7d5049d97d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839727"
 ---
 # <a name="dvd-352-wide-example"></a>DVD 352 幅の例
 
@@ -22,27 +22,27 @@ ms.locfileid: "67380243"
 ## <span id="ddk_dvd_352_wide_example_gg"></span><span id="DDK_DVD_352_WIDE_EXAMPLE_GG"></span>
 
 
-DVD を使用して、704 の幅に拡大できます 352 全体図を使用できます、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)(輝度サンプル間隔の解決策の 1/16) で構造体。
+DVD では352の画像を使用できます。これは、 [**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体の**PictureSourceRect16thPel**メンバーを使用することによって、幅704に拡張できます (輝度サンプル間隔解像度の 1 ~ 16)。
 
-**PictureSourceRect16thPel**メンバーは、次の値と元の四角形を定義します。
+**PictureSourceRect16thPel**メンバーは、次の値を使用してソースの四角形を定義します。
 
--   **left** = 0
+-   **左**= 0
 
--   **適切な**= 16 X (**左** + *水平\_サイズ*) 5632 を =
+-   **右**= 16 X (**左** + *横\_サイズ*) = 5632
 
-**PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)構造体を 2 つの代替のターゲットの四角形を定義します次の値。
+[**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体の**ピクチャ destinationrect**メンバーは、次の値を持つ2つの代替変換先の四角形を定義します。
 
-1.  次の値が先の四角形。
+1.  次の値を持つコピー先の四角形。
     -   **左**= 8
-    -   **適切な** = **左**+ (2 X*水平\_サイズ*) 712 を =
+    -   **右** = **左**+ (2 X*横\_サイズ*) = 712
 
-2.  次の値が先の四角形。
-    -   **left** = 0
-    -   **適切な**左 = + (2 X*水平\_サイズ*) 704 を =
+2.  次の値を持つコピー先の四角形。
+    -   **左**= 0
+    -   **右**= 左 + (2 X*横\_サイズ*) = 704
 
-2 番目のケースでは、四角形がで示される、 **GraphicDestinationRect**メンバーは、DXVA の\_BlendCombination 構造がシフトの画像の保存先を補正する 8 で、左にずれている場合
+2番目のケースでは、DXVA\_BlendCombination 構造体の**GraphicDestinationRect**メンバーによって示される四角形は、シフトされた画像の変換先を補正するために、左に8ずつ置き換えられます。
 
-これら 2 つの方法の 2 つ目は、表示に使用するコピー先の領域のみを作成します。
+この2つの方法のうち2番目の方法では、表示に使用されるコピー先の領域のみが作成されます。
 
  
 

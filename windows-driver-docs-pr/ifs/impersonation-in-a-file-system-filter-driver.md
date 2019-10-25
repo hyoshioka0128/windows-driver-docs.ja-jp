@@ -3,16 +3,16 @@ title: ファイル システム フィルター ドライバーでの偽装
 description: ファイル システム フィルター ドライバーでの偽装
 ms.assetid: ee56cd54-01ac-46ad-8ee4-e76131b058f3
 keywords:
-- セキュリティの WDK ファイル システム、権限借用
-- 権限借用 WDK ファイル システム
+- セキュリティ WDK ファイルシステム、偽装
+- 権限借用 WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13eaab1da6e87e96f0641c2917eaa72a247279d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab5432cd537ba355f37964a413581b2efdedd84d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375704"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841208"
 ---
 # <a name="impersonation-in-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーでの偽装
 
@@ -20,11 +20,11 @@ ms.locfileid: "67375704"
 ## <span id="ddk_impersonation_in_a_file_system_filter_driver_if"></span><span id="DDK_IMPERSONATION_IN_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
 
 
-ファイル システム フィルター ドライバーは可能性がありますを使用しようとします。 別の操作では、偽装があります。 権限借用には、他のスレッドの代わりのセキュリティを処理するための非常に強力な手法が、これも注意が必要です適切な任意のコンポーネントの代わりに使用するためです。 ファイル システム フィルター ドライバーでは、実行する必要のある操作を識別するために重要な権限借用を使用します。 重要なため、ファイル システム フィルター ドライバーによって実行されるその他の操作を実行しない必要がありますが、権限借用を使用します。 権限借用でリスクとは通常、呼び出し元が、呼び出しを行うドライバーよりも少ない権限を持っています。 そのため、権限借用で呼び出しが行われた場合、可能性があります失敗、偽装を使用しないことに成功します。
+ファイルシステムフィルタードライバーが使用しようとしている可能性のある別の操作は、偽装です。 偽装は、他のスレッドの代わりにセキュリティを処理するための非常に強力な手法ですが、コンポーネントの代わりに使用するための適切な注意も必要です。 ファイルシステムフィルタードライバーの場合は、偽装を使用して実行する必要がある操作を識別することが重要です。 次に、ファイルシステムフィルタードライバーによって実行される他の操作を、偽装を使用して実行しないようにする必要があります。 偽装のリスクは、通常、呼び出し元のドライバーよりも呼び出し元の特権が低いことを示します。 したがって、偽装を使用して呼び出しが行われた場合、偽装を行わずに成功する可能性がありますが、失敗する可能性があります。
 
-ハンドル オブジェクトへの参照を表すポイントして、セキュリティ チェックが実行されているために、新しいハンドルを作成する操作の偽装が必要です。 たとえば、偽装は、必要なファイルまたはその他のオブジェクトを開くときに (を使用して[ **ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)、 [ **ZwCreateEvent**](https://msdn.microsoft.com/library/windows/hardware/ff566423)と[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)など)。 これらの呼び出しで、それらを呼び出すフィルター ドライバーは必ず他のオペレーティング システムの操作では、カーネル モードから発信された通話は有効なパラメーターがあると想定されますので、渡されるパラメーターが有効であることを確認する必要があります。 そのため、フィルター ドライバーを渡すことはできません安全にユーザー バッファーのアドレス、これらの関数のいずれかに偽装するときにします。
+ハンドルはオブジェクトへの参照を表し、セキュリティチェックが実行されたポイントであるため、新しいハンドルを作成するすべての操作には偽装が必要です。 たとえば、ファイルまたは他のオブジェクト ( [**Zw/** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection) [**zwcreateevent、Zwcreateevent**](https://msdn.microsoft.com/library/windows/hardware/ff566423)、 [**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)など) を開くときには偽装が必要になります。 これらの呼び出しでは、これらを呼び出すフィルタードライバーが、渡されたパラメーターが有効であることを確認する必要があります。これは、他のオペレーティングシステム操作では、カーネルモードからの呼び出しに有効なパラメーターがあると想定されるためです。 したがって、フィルタードライバーは、偽装している場合でも、これらの関数のいずれかにユーザーバッファーアドレスを安全に渡すことができません。
 
-場合に[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、対応する I/O マネージャー呼び出しがある[ **IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)で使用する必要があります。権限借用 IO を指定するフィルター ドライバーを許容するため\_FORCE\_アクセス\_を確認します。 このオプションは、存在しない I/O マネージャーに適切なユーザー レベルのアクセス確認は適用されません。
+[**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)の場合は、対応する i/o Manager 呼び出し[**iocreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)を使用する必要があります。これは、フィルタードライバーが IO\_指定して\_アクセス\_チェックを強制することができるためです。 このオプションを指定しないと、i/o マネージャーは適切なユーザーレベルのアクセスチェックを強制しません。
 
  
 

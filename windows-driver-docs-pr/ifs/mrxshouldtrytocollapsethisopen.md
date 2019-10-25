@@ -1,9 +1,9 @@
 ---
 title: MRxShouldTryToCollapseThisOpen ルーチン
-description: MRxShouldTryToCollapseThisOpen ルーチンは、ネットワークのミニ リダイレクターが RDBSS がお試しくださいし、既存のファイル システム オブジェクトに、オープンの要求を折りたたむかどうかを示すことを要求する RDBSS によって呼び出されます。
+description: MRxShouldTryToCollapseThisOpen ルーチンは RDBSS によって呼び出され、ネットワークミニリダイレクターが、開いている要求を既存のファイルシステムオブジェクトに対して試行するかどうかを示すことを要求します。
 ms.assetid: a68755c1-73f5-4134-b506-2a0163637a13
 keywords:
-- MRxShouldTryToCollapseThisOpen ルーチン インストール可能なファイル システム ドライバー
+- MRxShouldTryToCollapseThisOpen ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4c93574b06189c7522016b044fe0c221a47151
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eeed09a83fa2ef39ad224f661c7b7093e492defb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383868"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841069"
 ---
 # <a name="mrxshouldtrytocollapsethisopen-routine"></a>MRxShouldTryToCollapseThisOpen ルーチン
 
 
-*MRxShouldTryToCollapseThisOpen*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library) RDBSS がお試しくださいし、既存のファイル システム オブジェクトに、オープンの要求を折りたたむかどうかにネットワークのミニ リダイレクターを示すことを要求するには.
+*MRxShouldTryToCollapseThisOpen*ルーチンは[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出され、ネットワークミニリダイレクターが、開いている要求を既存のファイルシステムオブジェクトに対して試行するかどうかを示すことを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxShouldTryToCollapseThisOpen(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxShouldTryToCollapseThisOpen*ステータスを返します\_次のよう、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxShouldTryToCollapseThisOpen*は正常に完了した状態\_成功したか、次のような適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_MORE_PROCESSING_REQUIRED</strong></td>
-<td align="left"><p>ネットワークのミニ リダイレクターは、このオープン要求の折りたたみを無効にするには、この値を返します。</p></td>
+<td align="left"><p>ネットワークミニリダイレクターはこの値を返して、開いている要求の折りたたみを無効にします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,17 +74,17 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-*MRxShouldTryToCollapseThisOpen*が呼び出され、オープンの要求を折りたたまれていないかどうかを判断します。
+*MRxShouldTryToCollapseThisOpen*は、開いている要求を折りたたむ必要があるかどうかを判断するために呼び出されます。
 
-呼び出しの前に*MRxShouldTryToCollapseThisOpen*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxShouldTryToCollapseThisOpen*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**PRelevantSrvOpen** 、SRV にメンバーが設定されている\_開きます。
+**PRelevantSrvOpen**メンバーは、開いている SRV\_に設定されます。
 
-呼び出し*MRxShouldTryToCollapseThisOpen*変更通知のディレクトリを要求する可能性があります。 そのため、ネットワークのミニ リダイレクターでは、正しく通知の動作を変更するためのオープン要求を折りたたむことがありますできません。
+*MRxShouldTryToCollapseThisOpen*の呼び出しは、ディレクトリの変更通知要求である可能性があります。 そのため、ネットワークミニリダイレクターは、変更通知が正しく機能するように、開いている要求を折りたたむことができない可能性があります。
 
-場合、RDBSS 禁止折りたたみが開き、 **Create.NtCreateParameters.CreateOptions** 、RX のメンバー\_CONTEXT 構造は、ファイル\_オープン\_の\_バックアップ\_インテント オプションまたはファイル\_削除\_ON\_閉じるオプションを設定します。
+RX\_コンテキスト構造の RDBSS メンバーに、\_BACKUP\_インテントオプションまたはファイル\_削除用の\_を開く\_が含まれている場合は、[折りたたみ**を**許可しない] が開き\_\_閉じるオプションセットです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -99,7 +99,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -107,29 +107,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxTruncate**](mrxtruncate.md)
 

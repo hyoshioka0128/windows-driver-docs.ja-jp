@@ -4,24 +4,24 @@ description: I/O キューの移植
 ms.assetid: 90319342-5FAB-451B-BCA1-B273B81418DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c050bb2e22959ccc263884802d1b45c6d1a0129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01923c4f80e55c3adbeb07ac40c0dd0cf7e5c8cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379636"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842255"
 ---
 # <a name="porting-io-queues"></a>I/O キューの移植
 
 
-WDF のドライバーは、キューを作成し、I/O イベント コールバックを登録、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック。 既定では、各 I/O キュー オブジェクトは、デバイス オブジェクトの子が。 WDF ドライバーでは、キューごとに、次のタスクを構成できます。
+WDF ドライバーは、キューを作成し、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックに i/o イベントコールバックを登録します。 既定では、各 i/o queue オブジェクトはデバイスオブジェクトの子です。 WDF ドライバーでは、キューごとに次のタスクを構成できます。
 
--   どの I/O 要求の種類は、キューに送られます。
--   かどうかの要求は、(到着) としてと同時に並列にディスパッチ順番に (一度に 1 つ)、または手動で (要求時にドライバー)。
--   かどうか I/O イベント コールバック ルーチンは同時にまたは連続的に呼び出されます。
--   フレームワークまたはドライバーがシステムとデバイスの電源でキューを管理するかどうかに移行します。
+-   キューに送信される i/o 要求の種類。
+-   要求が並列で (到着するとすぐに)、順番に (一度に1つずつ)、または手動で (ドライバー要求時に) 手動でディスパッチされるかどうか。
+-   I/o イベントのコールバックルーチンが同時に呼び出されるか、直列で呼び出されるか。
+-   フレームワークまたはドライバーが、システムとデバイスの電源切り替えによってキューを管理するかどうか。
 
-キューの作成の詳細については、次を参照してください[I/O キューの作成。](creating-i-o-queues.md)
+キューの作成の詳細については、「 [I/o キューの作成](creating-i-o-queues.md)」を参照してください。
 
  
 

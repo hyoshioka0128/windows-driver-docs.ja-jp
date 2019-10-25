@@ -4,12 +4,12 @@ description: 静止画像デバイスのイベント
 ms.assetid: 5f9be89c-8442-4894-b2f6-a4d3558464bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e738fde61797cff31c11a9b554aa5f6edcef159
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 099ab5af5aa14525e3db36aa435140500764d0cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386913"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840747"
 ---
 # <a name="still-image-device-events"></a>静止画像デバイスのイベント
 
@@ -17,11 +17,11 @@ ms.locfileid: "67386913"
 
 
 
-A*イメージ デバイス イベントではまだ*上位レベルのソフトウェアについて、通知をデバイス レベルの出現は、そのソフトウェアがこのような通知を要求された場合。 ユーザー モード ミニドライバーは、ほとんどのデバイスのイベントを定義して、イベントが発生したときに通知を配信する責任を負います。 一般に、イベントは、上位のソフトウェアが何らかのアクションを実行する必要はしようとしていることを示しています。
+*静止イメージデバイスイベント*は、ソフトウェアが通知を要求した場合に、上位レベルのソフトウェアに通知する必要があるデバイスレベルのイベントです。 ユーザーモードミニドライバーは、ほとんどのデバイスイベントを定義し、イベントが発生したときに通知を配信します。 一般に、イベントは、何らかのアクションを実行するために、上位レベルのソフトウェアが必要であることを示します。
 
-静止画像の一般的なデバイスのイベントは、プッシュ ボタンが押されるの検出します。 たとえば、スキャナーは、テキストや写真のスキャンを開始するには、個別のボタンを持つユーザーを提供する可能性があります。 ボタンが押されたときに、上位のソフトウェアを表示またはイメージを格納するために必要になります。 静止画像イベント モニタは、イベントが発生したことを検出 (を使用して、 [IStiDevice COM インターフェイス](istidevice-com-interface.md)) 既に登録済み静止画像アプリケーションを呼び出すことができます (を使用して、 [IStillImage COM インターフェイス](istillimage-com-interface.md)).
+一般的な静止イメージデバイスイベントは、押されたプッシュボタンの検出です。 たとえば、スキャナーは、テキストや写真のスキャンを開始するためのボタンをユーザーに提供する場合があります。 ボタンを押すと、イメージを表示または保存するために、上位レベルのソフトウェアが必要になります。 静止イメージイベントモニタは、( [IIStillImage](istidevice-com-interface.md)com インターフェイスを使用して) イベントが発生したことを検出し、以前に登録された静止イメージアプリケーションを呼び出すことができます ( [COM インターフェイス](istillimage-com-interface.md)を使用)。
 
-まだデバイス イベントのイメージは、Guid で表されます。 *Sti.h*Microsoft は、次の静止画像デバイス イベントを定義します。
+静止イメージデバイスイベントは Guid によって表されます。 *Sti*では、Microsoft は次の静止イメージデバイスイベントを定義します。
 
 <table>
 <colgroup>
@@ -30,61 +30,61 @@ A*イメージ デバイス イベントではまだ*上位レベルのソフト
 </colgroup>
 <thead>
 <tr class="header">
-<th>イベントの GUID</th>
+<th>イベント GUID</th>
 <th>目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>GUID_DeviceArrivedLaunch</strong></p></td>
-<td><p>静止画像デバイスは、システムに関連付けられているだけです。</p></td>
+<td><p>静止イメージデバイスがシステムにアタッチされたばかりです。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GUID_ScanImage</strong></p></td>
-<td><p>コンピューターにイメージをスキャンする必要があります。</p></td>
+<td><p>イメージをコンピューターでスキャンする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>GUID_ScanFaxImage</strong></p></td>
-<td><p>イメージをコンピューターにスキャンされ、fax で送信する必要があります。</p></td>
+<td><p>イメージをコンピューターにスキャンして、fax を送信する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GUID_ScanPrintImage</strong></p></td>
-<td><p>イメージは、コンピューターをスキャンし、し、印刷する必要があります。</p></td>
+<td><p>イメージをコンピューターにスキャンしてから印刷する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>GUID_STIUserDefined1</strong></p></td>
-<td><p>ユーザー定義可能なボタンが押されました。</p></td>
+<td><p>ユーザー定義のボタンが押されました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GUID_STIUserDefined2</strong></p></td>
-<td><p>ユーザー定義可能なボタンが押されました。</p></td>
+<td><p>ユーザー定義のボタンが押されました。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>GUID_STIUserDefined3</strong></p></td>
-<td><p>ユーザー定義可能なボタンが押されました。</p></td>
+<td><p>ユーザー定義のボタンが押されました。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ユーザー モードのミニドライバーの開発者は、可能な限りこれらのイベントの定義済み Guid を使用してください。 これらの Guid が適切でない場合は、デバイス固有のイベントの Guid を定義する必要があります。
+ユーザーモードミニドライバーの開発者は、可能な限りこれらの定義済みイベント Guid を使用する必要があります。 これらの Guid が適切でない場合は、デバイス固有のイベントの Guid を定義する必要があります。
 
-静止画像デバイス イベントを定義するには、次の必要があります。
+静止イメージデバイスイベントを定義するには、次のことを行う必要があります。
 
 -   各イベントの GUID を指定します。
 
--   ユーザー モード ドライバーの INF ファイルには、各 GUID を含めます。
+-   ユーザーモードドライバーの INF ファイルに各 GUID を含めます。
 
-ドライバーの INF ファイル内では、各 GUID 仕様は、アスタリスク (つまり、「すべてのアプリケーション」) またはイベントの発生時にアプリケーションを開始するかを示す特定のアプリケーションの一覧のいずれかを含める必要があります。 静止画像イベント モニターでは、このリストを使用して、イベントをアプリケーションの既定の割り当てを行います。 ユーザーは、スキャナーとカメラのコントロール パネルでこれらの割り当てを変更できます。
+ドライバーの INF ファイル内では、各 GUID 指定にアスタリスク ("すべてのアプリケーション") または特定のアプリケーションの一覧が含まれている必要があります。これは、イベントの発生時にどのアプリケーションを起動する必要があるかを示します。 静止画像イベントモニタは、この一覧を使用して、アプリケーションのイベントへの既定の割り当てを提供します。 ユーザーは、[スキャナーとカメラ] コントロールパネルを使用して、これらの割り当てを変更できます。
 
 ### <a name="event-notification"></a>イベント通知
 
-ドライバーは、(いずれかの非同期 I/O を使用またはポーリング) デバイスを監視する必要がありますを GUID ごとに関連付けられているイベントの発生時に決定します。 デバイスの機能に応じて、ドライバーを非同期的にまたはデバイスをポーリングする要求に応答することによってクライアント デバイス イベントの発生を通知できます。 (いずれかの方法) をデバイス イベントの通知を配信することができるすべてのドライバーが、STI に設定する必要があります\_GENCAP\_デバイスの通知フラグ[ **STI\_DEV\_キャップ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_dev_caps)構造体。 ドライバーが、ポーリングとしない非同期の通知をサポートする必要があります、STI を設定しても\_GENCAP\_ポーリング\_同じ構造にフラグが必要です。 (これらの機能を使用して指定することも必要があります、**機能**キーワード[の INF ファイルは、デバイスを静止画像](inf-files-for-still-image-devices.md))。
+ドライバーは、(非同期 i/o またはポーリングを使用して) デバイスを監視し、各 GUID に関連付けられているイベントがいつ発生するかを判断する必要があります。 デバイスの機能に応じて、ドライバーは、デバイスイベントの発生をクライアントに非同期で通知することも、デバイスのポーリング要求に応答してクライアントに通知することもできます。 デバイスイベントの通知を配信できるすべてのドライバー (いずれの方法でも) は、デバイスの[**sti\_DEV\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_sti_dev_caps)構造体で、STI\_GENCAP\_通知フラグを設定する必要があります。 非同期通知ではなく、ポーリングをサポートするドライバーも、同じ構造内の\_GENCAP\_ポーリング\_必要なフラグを設定する必要があります。 (これらの機能は、[イメージデバイス用の INF ファイル](inf-files-for-still-image-devices.md)の**capabilities**キーワードを使用しても指定する必要があります)。
 
-呼び出し、ドライバーは、イベントの非同期通知をサポートする場合、イベントの監視[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)通知を要求して、イベント ハンドルを指定します。 デバイス イベントの発生時、ドライバーは、呼び出すことによってイベント モニタを通知する必要があります**SetEvent** (Microsoft Windows SDK のドキュメントを参照)、引数としてイベント ハンドルを使用します。 クライアントが呼び出すことができますし、 [ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata) GUID のイベントを取得します。
+ドライバーがイベントの非同期通知をサポートしている場合、イベントモニターは[**Istiusd:: SetNotificationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-setnotificationhandle)を呼び出して通知を要求し、イベントハンドルを提供します。 デバイスイベントが発生した場合、ドライバーは、イベントハンドルを引数として使用して、 **SetEvent**を呼び出すことによってイベントモニターに通知する必要があります (Microsoft Windows SDK のドキュメントを参照してください)。 その後、クライアントは、 [**I、usd:: GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getnotificationdata)を呼び出して、イベントの GUID を取得できます。
 
-イベントのポーリングが必要な場合は、呼び出しの監視[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus) 、ドライバーは、デバイスと戻り値の結果をさらにポーリングする必要がありますをポーリングする、 [ **STI\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)構造体。
+ポーリングが必要な場合、イベントモニターは[**IGetStatus usd::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getstatus)を呼び出してドライバーをポーリングします。これにより、デバイスをポーリングして、[**デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)構造体の STI\_に結果を返す必要があります。
 
  
 

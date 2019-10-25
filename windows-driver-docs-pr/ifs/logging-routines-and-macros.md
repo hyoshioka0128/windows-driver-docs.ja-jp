@@ -3,18 +3,18 @@ title: ログ記録用ルーチンとマクロ
 description: ログ記録用ルーチンとマクロ
 ms.assetid: 343605bc-7992-4e9c-a9af-f57bb958a38b
 keywords:
-- RDBSS WDK ファイル システムでは、ログ記録
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、ログ記録
+- RDBSS WDK ファイルシステム、ログ記録
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、ログ記録
 - WDK RDBSS のログ記録
 - RDBSSLOG マクロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 190e9119daad1001e99e94ea7bcc91cbb66f9fb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 849ade2630632c9629474431ad96c43470dd36ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375996"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841138"
 ---
 # <a name="logging-routines-and-macros"></a>ログ記録用ルーチンとマクロ
 
@@ -22,9 +22,9 @@ ms.locfileid: "67375996"
 ## <span id="ddk_logging_functions_and_macros_if"></span><span id="DDK_LOGGING_FUNCTIONS_AND_MACROS_IF"></span>
 
 
-RDBSS は、ログ記録のさまざまなルーチンを提供します。 これらのログ記録機能は、常に存在します。 RDBSSLOG マクロが定義されている場合、世代のチェック ビルドでログ記録の呼び出しは有効です。 ない場合\_RDBSSLOG が設定されている、ロギング呼び出しは無効になります。
+RDBSS には、ログ記録用のルーチンが多数用意されています。 これらのログ記録機能は常に存在します。 RDBSSLOG マクロが定義されている場合は、チェックされたビルドでのログ呼び出しの生成が有効になります。 \_RDBSSLOG が設定されていない場合、ログ記録の呼び出しは無効になります。
 
-ログ記録ルーチンでは、循環バッファーに格納されているログ レコードを作成します。 各レコードは、いずれかの側レコード記述子によって制限されます。 このレコードの記述子は、4 バイトです。
+ログルーチンは、循環バッファーに格納されているログレコードを作成します。 各レコードは、レコード記述子によって左右に境界されます。 このレコード記述子の長さは4バイトです。
 
 次の表には、ログ記録ルーチンが含まれています。
 
@@ -41,31 +41,31 @@ RDBSS は、ログ記録のさまざまなルーチンを提供します。 こ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a></p></td>
-<td align="left"><p>このルーチンは、I/O エラー ログにエラーをログに呼び出されます。</p>
-<p>推奨されます、 <strong>RxLogFailure</strong>または<strong>RxLogEvent</strong>このルーチンを直接呼び出す代わりにマクロを使用します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a></p></td>
+<td align="left"><p>このルーチンは、i/o エラーログにエラーを記録するために呼び出されます。</p>
+<p>このルーチンを直接呼び出すのではなく、 <strong>RxLogFailure</strong>または<strong>RxLogEvent</strong>マクロを使用することをお勧めします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithannotation" data-raw-source="[&lt;strong&gt;RxLogEventWithAnnotation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithannotation)"><strong>RxLogEventWithAnnotation</strong></a></p></td>
-<td align="left"><p>このルーチンは、I/O エラーのログ レコードを割り当て、ログ レコードには、入力され、I/O エラー ログにこのレコードを書き込みます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation" data-raw-source="[&lt;strong&gt;RxLogEventWithAnnotation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation)"><strong>RxLogEventWithAnnotation</strong></a></p></td>
+<td align="left"><p>このルーチンは、i/o エラーログレコードを割り当て、ログレコードを入力して、このレコードを i/o エラーログに書き込みます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a></p></td>
-<td align="left"><p>このルーチンは、I/O エラーのログ レコードを割り当て、ログ レコードには、入力され、I/O エラー ログにこのレコードを書き込みます。 このルーチンは、I/O エラーのログ レコードに格納されている生データのバッファーに行番号と状態をエンコードします。</p>
-<p>推奨されます、 <strong>RxLogFailureWithBuffer</strong>このルーチンを直接呼び出す代わりにマクロを使用します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a></p></td>
+<td align="left"><p>このルーチンは、i/o エラーログレコードを割り当て、ログレコードを入力して、このレコードを i/o エラーログに書き込みます。 このルーチンは、行番号と状態を、i/o エラーログレコードに格納されている生データバッファーにエンコードします。</p>
+<p>このルーチンを直接呼び出すのではなく、 <strong>RxLogFailureWithBuffer</strong>マクロを使用することをお勧めします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a></p></td>
-<td align="left"><p>このルーチンは、書式指定文字列と可変数のパラメーターを受け取りし、ログ記録が有効になっている場合は、I/O エラーのログ エントリとして記録するため、出力文字列の書式を設定します。</p>
-<p>推奨されます、 <strong>RxLog</strong>このルーチンを直接呼び出す代わりにマクロを使用します。</p>
-<p>このルーチンでは、Windows Server 2003、Windows XP、および Windows 2000 RDBSS のチェック ビルドで使用できるのみです。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a></p></td>
+<td align="left"><p>このルーチンは、書式指定文字列と可変数のパラメーターを受け取り、ログ記録が有効になっている場合、i/o エラーログエントリとして記録するための出力文字列を書式設定します。</p>
+<p>このルーチンを直接呼び出すのではなく、 <strong>RxLog</strong>マクロを使用することをお勧めします。</p>
+<p>このルーチンは、Windows Server 2003、Windows XP、および Windows 2000 の RDBSS のチェックされたビルドでのみ使用できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次のマクロは、前の表に表示されているルーチンを呼び出す rxlog.h と rxprocs.h のヘッダー ファイルで定義されます。 これらのマクロは、通常これらのルーチンを直接呼び出す代わりに使用されます。
+次のマクロは、前の表に示したルーチンを呼び出す rxlog と rxprocs のヘッダーファイルで定義されています。 これらのマクロは、通常、これらのルーチンを直接呼び出す代わりに使用されます。
 
 <table>
 <colgroup>
@@ -81,27 +81,27 @@ RDBSS は、ログ記録のさまざまなルーチンを提供します。 こ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>RxLog</strong>(<em>Args</em>)</p></td>
-<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog)"> <strong>_RxLog</strong> </a>ルーチン。</p>
-<p>製品版ビルドでこのマクロは何もしません。</p>
-<p>なお、引数を<strong>RxLog</strong>追加のログ記録をオフにするときに、null の呼び出しに変換を有効にするかっこのペアで囲む必要があります。</p></td>
+<td align="left"><p>チェックされたビルドでは、このマクロは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a>ルーチンを呼び出します。</p>
+<p>リテールビルドでは、このマクロは何も行いません。</p>
+<p><strong>RxLog</strong>への引数は、ログ記録をオフにする必要がある場合に null 呼び出しに変換できるようにするために、追加のかっこのペアで囲む必要があることに注意してください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxLogEvent</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p><strong>RxLogEvent</strong> (<em>_DeviceObject</em>、 <em>id</em>、 <em>EventId</em>、 <em>Status</em>)</p></td>
+<td align="left"><p>このマクロは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a>ルーチンを呼び出します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>RxLogFailure</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventdirect)"> <strong>RxLogEventDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p><strong>RxLogFailure</strong> (<em>_DeviceObject</em>、 <em>id</em>、 <em>EventId</em>、 <em>Status</em>)</p></td>
+<td align="left"><p>このマクロは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a>ルーチンを呼び出します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxLogFailureWithBuffer</strong> (<em>_DeviceObject</em>, <em>_OriginatorId</em>, <em>_EventId</em>, <em>_Status</em>, <em>_Buffer</em>, <em>_Length</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"> <strong>RxLogEventWithBufferDirect</strong> </a>ルーチン。</p></td>
+<td align="left"><p><strong>RxLogFailureWithBuffer</strong> (<em>_DeviceObject</em>,、" <em>"、"</em> <em>"、"</em><em>状態</em>"、"<em>バッファー</em>の長さ"、"<em>長さ</em>なし")</p></td>
+<td align="left"><p>このマクロは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a>ルーチンを呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogRetail</strong>(<em>Args</em>)</p></td>
-<td align="left"><p>チェック ビルドは、このマクロを呼び出す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxlog/nf-rxlog-_rxlog)"> <strong>_RxLog</strong> </a>ルーチン。</p>
-<p>製品版ビルドでこのマクロは何もしません。</p>
-<p>なお、引数を<strong>RxLogRetail</strong>追加のログ記録をオフにするときに、null の呼び出しに変換を有効にするかっこのペアで囲む必要があります。</p></td>
+<td align="left"><p>チェックされたビルドでは、このマクロは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a>ルーチンを呼び出します。</p>
+<p>リテールビルドでは、このマクロは何も行いません。</p>
+<p><strong>RxLogRetail</strong>への引数は、ログ記録をオフにする必要がある場合に null 呼び出しに変換できるようにするために、追加のかっこのペアで囲む必要があることに注意してください。</p></td>
 </tr>
 </tbody>
 </table>

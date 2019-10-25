@@ -3,17 +3,17 @@ title: 線形のアパーチャ領域セグメント
 description: 線形のアパーチャ領域セグメント
 ms.assetid: bf818841-eb73-442e-8745-a59d9c3a527c
 keywords:
-- メモリのセグメントの WDK 表示、線形 aperture 領域セグメント
-- 線形 aperture 領域セグメント WDK の表示
-- aperture 空間セグメントの WDK の表示
+- メモリセグメント WDK 表示、線形アパーチャスペースセグメント
+- 線形アパーチャ-スペースセグメントの WDK ディスプレイ
+- アパーチャスペースセグメントの WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629c9746aa1b4c8e5ecce5e3ce17dc7305ec84d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7909593e5afe1423d2a0ff90784b0f544349f2a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372916"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840329"
 ---
 # <a name="linear-aperture-space-segments"></a>線形のアパーチャ領域セグメント
 
@@ -21,19 +21,19 @@ ms.locfileid: "67372916"
 ## <span id="ddk_linear_aperture_space_segments_gg"></span><span id="DDK_LINEAR_APERTURE_SPACE_SEGMENTS_GG"></span>
 
 
-線形 aperture 領域セグメントは、線形のメモリ領域セグメントに似ていますただし、aperture 領域セグメントは、アドレス空間のみであり、ビットを保持することはできません。 ビットを保持するためには、システム メモリのページを割り当てる必要がある、およびそれらのページを参照するアドレス空間範囲をリダイレクトする必要があります。 ディスプレイのミニポート ドライバーを実装する必要があります、 [ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) DXGK 関数\_操作\_マップ\_APERTURE\_セグメントと DXGK\_操作\_UNMAP\_APERTURE\_リダイレクトを処理するために操作の種類をセグメント化し、」の説明に従って、この関数を公開する必要があります[ **表示のミニポート ドライバーの DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-display-miniport-driver)します。 *DxgkDdiBuildPagingBuffer*関数は、リダイレクトする範囲と割り当てられた物理システム メモリ ページを参照する MDL を受け取ります。
+線形のアパーチャ空間セグメントは、線形メモリスペースセグメントに似ています。ただし、アパーチャスペースセグメントはアドレス空間であるため、ビットを保持することはできません。 ビットを保持するには、システムメモリページを割り当てる必要があります。また、これらのページを参照するには、アドレス空間の範囲をリダイレクトする必要があります。 ディスプレイミニポートドライバーは、DXGK\_操作のための[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を実装する必要があります\_マップ\_アパーチャ\_セグメントと DXGK\_操作\_\_のアパーチャ\_セグメントをマップ解除リダイレクトを処理する操作の種類。「 [**Driverentry in The Display ミニポートドライバー**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-display-miniport-driver)」で説明されているように、この関数を公開する必要があります。 *DxgkDdiBuildPagingBuffer*関数は、リダイレクトされる範囲と、割り当てられた物理システムメモリページを参照する MDL を受け取ります。
 
-通常、ディスプレイのミニポート ドライバーは、ビデオ メモリ マネージャーに既知でない、ページの表をプログラミングでアドレス空間範囲のリダイレクトを実現します。
+通常、ディスプレイミニポートドライバーは、ページテーブルをプログラミングすることによって、アドレス空間の範囲をリダイレクトします。これは、ビデオメモリマネージャーでは不明です。
 
-ドライバーを設定する必要があります、 **Aperture**でフラグをビット フィールド、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)線形 aperture 領域セグメントを指定する構造体。 ドライバーでは、追加のセグメントのサポートを示すため、次のビット フィールド フラグも設定できます。
+ドライバーは、 [**DXGK\_SEGMENTDESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)構造体の**Flags**メンバーで、**アパーチャ**ビットフィールドフラグを設定して、線形のアパーチャスペースセグメントを指定する必要があります。 ドライバーでは、次のビットフィールドフラグを設定して、追加のセグメントのサポートを示すこともできます。
 
--   **CpuVisible**セグメントが CPU アクセス可能であることを示します。
+-   CPU がアクセス可能であることを示すために**表示される**cpu。
 
--   **コヒーレント**をセグメントにセグメントがリダイレクトされるページの cpu 使用率とキャッシュの一貫性が管理していることを示します。
+-   **CacheCoherent**は、セグメントが、セグメントがリダイレクトされるページの CPU とキャッシュの一貫性を維持していることを示します。
 
-次の図は、線形 aperture 領域セグメントの視覚的表現を示します。
+次の図は、線形のアパーチャスペースセグメントの視覚的表現を示しています。
 
-![線形 aperture 領域セグメントを示す図](images/aptrspac.png)
+![線形のアパーチャスペースセグメントを示す図](images/aptrspac.png)
 
  
 

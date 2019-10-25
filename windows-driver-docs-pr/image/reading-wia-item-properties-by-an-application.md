@@ -4,12 +4,12 @@ description: アプリケーションによる WIA 項目のプロパティの�
 ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4354291206d0996660b9103cd83949b521f7200
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: a19af7d39c3d80b0c341e17b35f1a9d07e5bb24a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716832"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840761"
 ---
 # <a name="reading-wia-item-properties-by-an-application"></a>アプリケーションによる WIA 項目のプロパティの読み取り
 
@@ -17,23 +17,23 @@ ms.locfileid: "67716832"
 
 
 
-アプリケーション要求 WIA 項目のプロパティを読み取ると、WIA サービスを呼び出し、 [ **IWiaMiniDrv::drvReadItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)メソッド。
+アプリケーションが WIA 項目のプロパティを読み取る要求を行うと、WIA サービスは[**IWiaMiniDrv::D rvreaditemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)メソッドを呼び出します。
 
-**IWiaMiniDrv::drvReadItemProperties**メソッドは、次のタスクを実行する必要があります。
+**IWiaMiniDrv::D rvreaditemproperties**メソッドでは、次のタスクを実行する必要があります。
 
-1.  プロパティの読み取り中に実行時の更新プログラムが必要かどうかを決定します。 WIA プロパティが読み取られるを確認するのには、WIA ミニドライバーは (Microsoft Windows SDK のドキュメントで定義されている) PROPSPEC 配列を使用できます。 WIA ミニドライバーが PROPSPEC 配列を処理する前に、項目の種類を決定することをお勧めします。 これで配列を走査する必要性が軽減すべて**IWiaMiniDrv::drvReadItemProperties**を呼び出します。 このデバイスの子項目の実行時のプロパティがない場合、のみのルート項目のプロパティでは、要求が処理する読み取り専用です。
+1.  読み取り中のプロパティにランタイムの更新が必要かどうかを判断します。 どの WIA プロパティが読み取られているかを判断するために、WIA ミニドライバーは PROPSPEC 配列 (Microsoft Windows SDK ドキュメントで定義されています) を使用できます。 PROPSPEC 配列を処理する前に、WIA ミニドライバーが項目の種類を決定することをお勧めします。 これにより、すべての**IWiaMiniDrv::D rvreaditemproperties**呼び出しで配列を走査する必要性が軽減されます。 このデバイスの子項目に実行時プロパティがない場合は、ルート項目のプロパティ読み取り要求だけが処理されます。
 
-2.  呼び出すことによって、現在の値を更新、 [ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)または**wiasWriteProp**_Xxx_サービス、WIA を使用して、すべての機能プロパティの id。 これにより、更新、ドライバー項目に格納されている、WIA プロパティ セットと、WIA サービスは、アプリケーションに新しい値を返します。
+2.  WIA プロパティの ID を使用して、 [**wiasWriteMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiaswritemultiple)または**Wiaswriteprop**_Xxx_サービス関数を呼び出すことにより、現在の値を更新します。 これにより、ドライバー項目に格納されている WIA プロパティセットが更新され、WIA サービスによって新しい値がアプリケーションに返されます。
 
-WIA ミニドライバーがこの関数で WIA プロパティに、実行時の調整を実行しない場合、WIA サービスは自動的にアプリケーションに現在の WIA のプロパティ値のみを返します。 この関数は、デバイスの時計などのプロパティまたはドキュメント フィーダーの状態などのハードウェア固有のチェックを必要とする WIA プロパティに対してのみ使用する必要があります。
+この関数で wia ミニドライバーが WIA プロパティの実行時調整を実行しない場合、WIA サービスは、現在の WIA プロパティ値のみをアプリケーションに自動的に返します。 この関数は、デバイスクロックなどのプロパティや、ドキュメントフィーダーの状態など、ハードウェア固有のチェックを必要とする WIA プロパティに対してのみ使用してください。
 
-### <a href="" id="implementing-iwiaminidrv--drvreaditemproperties-"></a>IWiaMiniDrv::drvReadItemProperties を実装します。
+### <a href="" id="implementing-iwiaminidrv--drvreaditemproperties-"></a>IWiaMiniDrv の実装::d rvReadItemProperties
 
-**IWiaMiniDrv::drvReadItemProperties**アプリケーションが、WIA 項目のプロパティの読み取りを試みると、メソッドが呼び出されます。 最初、WIA サービスは、このメソッドを呼び出すことによって、ドライバーを通知します。 WIA ドライバーでは、読み取られるプロパティが正しいことを確認する必要があります。 これは、デバイスの状態を必要とするプロパティをハードウェアにアクセスするに適して (など[ **WIA\_DPS\_ドキュメント\_処理\_状態**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)、または[ **WIA\_DPA\_デバイス\_時間**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-device-time)デバイスは、クロックをサポートしている場合)。
+**IWiaMiniDrv::D rvreaditemproperties**メソッドは、アプリケーションが WIA 項目のプロパティを読み取ろうとしたときに呼び出されます。 最初に、このメソッドを呼び出して、WIA サービスがドライバーに通知します。 WIA ドライバーは、読み取られているプロパティが正しいことを確認する必要があります。 これは、デバイスの状態を必要とするプロパティのハードウェアにアクセスするのに適しています ( [**wia\_DPS\_ドキュメント\_\_の状態を処理**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)したり、デバイスがある場合は、 [**wia\_DPA\_デバイス\_時刻**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-device-time)など)。時計をサポートします)。
 
-ことが重要なまれな状況でのみ、WIA ドライバーが、ハードウェアと通信する必要があることに注意してください。 WIA ドライバーと通信するハードウェアも遅くおよび低速この呼び出しで多く表示されます。
+WIA ドライバーは、まれな場合にのみハードウェアと通信する必要があることに注意してください。 この呼び出しでは、ハードウェアと通信する WIA ドライバーの動作が遅く、低速であると表示されます。
 
-次の例の実装を示しています、 [ **IWiaMiniDrv::drvReadItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)メソッド。
+次の例は、 [**IWiaMiniDrv::D rvreaditemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)メソッドの実装を示しています。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvReadItemProperties(

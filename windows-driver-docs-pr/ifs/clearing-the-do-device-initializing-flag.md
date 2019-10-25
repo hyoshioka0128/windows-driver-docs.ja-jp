@@ -3,35 +3,35 @@ title: DO_DEVICE_INITIALIZING フラグのクリア
 description: DO_DEVICE_INITIALIZING フラグのクリア
 ms.assetid: 1c1cca60-bb95-4a8d-9e17-4db54983bbb0
 keywords:
-- フィルターをアタッチ、フィルター ドライバー WDK ファイル システム
-- ファイル システム フィルター ドライバー WDK、フィルターをアタッチします。
-- ファイル システムまたはボリュームにフィルターをアタッチします。
-- WDK のボリュームのファイル システム、フィルターをアタッチします。
+- フィルタードライバー WDK ファイルシステム、フィルターのアタッチ
+- ファイルシステムフィルタードライバー WDK、添付フィルター
+- ファイルシステムまたはボリュームへのフィルターのアタッチ
+- ボリューム WDK ファイルシステム、フィルターのアタッチ
 - DO_DEVICE_INITIALIZING
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bcd78c2ea07d6bd5550cada1c16b158ef062d75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: acb85c2c7a922dd0e06ac8b6ef363a7a29183c03
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379000"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841473"
 ---
-# <a name="clearing-the-dodeviceinitializing-flag"></a>オフ\_デバイス\_初期化フラグ
+# <a name="clearing-the-do_device_initializing-flag"></a>DO\_デバイス\_初期化フラグをクリアしています
 
 
 ## <span id="ddk_clearing_the_do_device_initializing_flag_if"></span><span id="DDK_CLEARING_THE_DO_DEVICE_INITIALIZING_FLAG_IF"></span>
 
 
-ファイル システムまたはボリュームをフィルター デバイス オブジェクトをアタッチした後を必ずオフにします\_デバイス\_フィルター デバイス オブジェクトの初期化フラグ。 (このフラグの詳細については、次を参照してください[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)でカーネルの参照。)。これを使用して次のように、 **ClearFlag**マクロで定義されている*ntifs.h*:
+フィルターデバイスオブジェクトをファイルシステムまたはボリュームにアタッチした後は、常に、フィルターデバイスオブジェクトの [初期化] フラグをオフにして、[デバイスの\_\_を初期化する] を選択します。 (このフラグの詳細については、「カーネルリファレンス」の「 [**DEVICE\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)」を参照してください)。これは、 *ntifs*で定義されている**clearflag**マクロを使用して、次のように実行できます。
 
 ```cpp
 ClearFlag(NewDeviceObject->Flags, DO_DEVICE_INITIALIZING);
 ```
 
-フィルターのデバイス オブジェクトが作成されると、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)設定、DO\_デバイス\_デバイス オブジェクトの初期化フラグ。 フィルターが正常に接続されると、このフラグをクリアする必要があります。 場合、このフラグをオフにすると、フィルター ドライバーにアタッチできるフィルター チェーンのために注意してください。 呼び出し[ **IoAttachDeviceToDeviceStackSafe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)は失敗します。
+フィルターデバイスオブジェクトが作成されると、 [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)はデバイスオブジェクトの初期化フラグ\_DO\_デバイスを設定します。 フィルターが正常にアタッチされたら、このフラグをクリアする必要があります。 このフラグがオフになっていない場合は、 [**Ioattachdevicetodevicestacksafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)の呼び出しが失敗するため、これ以上フィルタードライバーをフィルターチェーンにアタッチすることはできません。
 
-**注**   、操作をクリアする必要はありません\_デバイス\_のため、これは、自動的に I/O マネージャーによって、DriverEntry 内に作成したデバイス オブジェクトの初期化フラグ。 ただし、ドライバーを作成する他のすべてのデバイス オブジェクトでは、このフラグをオフにする必要があります。
+**注意**   driverentry で作成されたデバイスオブジェクトに対して、DO\_デバイス\_初期化フラグをクリアする必要はありません。これは、i/o マネージャーによって自動的に行われるためです。 ただし、ドライバーは、作成する他のすべてのデバイスオブジェクトでこのフラグをクリアする必要があります。
 
  
 

@@ -3,79 +3,79 @@ title: UMDF 1.x ドライバーでのクライアント偽装の処理
 description: UMDF 1.x ドライバーでのクライアント偽装の処理
 ms.assetid: 25beab8c-e6b8-479b-ad60-fcc3b5b56a6d
 keywords:
-- ユーザー モード ドライバー フレームワーク WDK、権限借用
-- UMDF WDK、権限借用
-- ユーザー モード ドライバー WDK UMDF、権限借用
+- ユーザーモードドライバーフレームワーク WDK、偽装
+- UMDF WDK、偽装
+- ユーザーモードドライバー WDK UMDF、偽装
 - 権限借用 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d6a0f03b75345989b5b8ad5ee01b52a7e9ec56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fc53b3d055f7efc784be844f94513821b6becad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382855"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843639"
 ---
 # <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのクライアント偽装の処理
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-UMDF ドライバーは通常、LocalService アカウントで実行し、ファイルまたは保護されたファイルなど、ユーザーの資格情報を必要とするリソースまたはその他の保護されたリソースにアクセスできません。 UMDF ドライバーは、通常、コマンドと、クライアント アプリケーションとデバイス間を流れるデータに対して動作します。 そのため、ほとんどの UMDF ドライバーでは、保護されたリソースはアクセスしません。
+UMDF ドライバーは通常、LocalService アカウントで実行され、保護されたファイルやその他の保護されたリソースなどのユーザー資格情報を必要とするファイルまたはリソースにはアクセスできません。 通常、UMDF ドライバーは、クライアントアプリケーションとデバイスとの間でやり取りされるコマンドとデータを操作します。 そのため、ほとんどの UMDF ドライバーは保護されたリソースにアクセスしません。
 
-ただし、一部のドライバーでは、保護されたリソースへのアクセスを必要があります。 たとえば、UMDF ドライバーでは、クライアント アプリケーションが提供するファイルからのデバイスにファームウェアを読み込む可能性があります。 ファイルは、未承認のユーザー ファイルとデバイスの管理の変更できないようにするアクセス制御リスト (ACL) である可能性があります。 残念ながら、この ACL は、ファイルへのアクセス UMDF ドライバーも防止します。
+ただし、一部のドライバーでは、保護されたリソースへのアクセスが必要になる場合があります。 たとえば、UMDF ドライバーは、クライアントアプリケーションによって提供されるファイルからデバイスにファームウェアを読み込む場合があります。 このファイルには、承認されていないユーザーがファイルを変更してデバイスを制御することを防止するアクセス制御リスト (ACL) が含まれている場合があります。 残念ながら、この ACL は、UMDF ドライバーがファイルにアクセスできないようにします。
 
-フレームワークは、ドライバーのドライバーのクライアントを偽装し、保護されたリソースへのクライアントのアクセス権の取得を許可する権限の借用機能を提供します。
+フレームワークには、ドライバーがドライバーのクライアントを偽装し、保護されたリソースへのクライアントのアクセス権を取得できるようにする偽装機能が用意されています。
 
-### <a name="enabling-impersonation"></a>権限借用を有効にします。
+### <a name="enabling-impersonation"></a>偽装の有効化
 
-UMDF ドライバーのインストール パッケージと、クライアント アプリケーションの両方必要がありますを有効にするフレームワークの権限の借用機能では、次のように。
+次のように、UMDF ドライバーのインストールパッケージとクライアントアプリケーションの両方で、フレームワークの偽装機能を有効にする必要があります。
 
--   UMDF ドライバーのインストール パッケージの INF ファイルを含める必要があります、 **UmdfImpersonationLevel**ディレクティブと許容される最大の偽装レベルを設定します。 偽装を有効にすると、INF ファイルが含まれる場合にのみ、 **UmdfImpersonationLevel**ディレクティブ。 権限借用レベルを設定する方法についての詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+-   UMDF ドライバーのインストールパッケージの INF ファイルには、 **UmdfImpersonationLevel**ディレクティブを含め、許容される最大の偽装レベルを設定する必要があります。 権限借用は、INF ファイルに**UmdfImpersonationLevel**ディレクティブが含まれている場合にのみ有効になります。 偽装レベルの設定の詳細については、「 [INF ファイルでの WDF ディレクティブの指定](specifying-wdf-directives-in-inf-files.md)」を参照してください。
 
--   クライアント アプリケーションでは、各ファイル ハンドル用に許可される偽装レベルを設定する必要があります。 アプリケーションでは、Microsoft Win32 の品質 (QoS) のサービスの設定の**CreateFile**許可される偽装レベルを設定します。 これらの設定の詳細については、次を参照してください。、 *dwFlagsAndAttributes*パラメーターの**CreateFile** Windows SDK のドキュメント。
+-   クライアントアプリケーションは、各ファイルハンドルに対して許可されている偽装レベルを設定する必要があります。 アプリケーションでは、Microsoft Win32 **CreateFile**関数のサービス品質 (QoS) 設定を使用して、許可される偽装レベルを設定します。 これらの設定の詳細については、Windows SDK のドキュメントの**CreateFile**の*dwFlagsAndAttributes*パラメーターを参照してください。
 
-### <a name="handling-impersonation-for-an-io-request"></a>I/O 要求の処理権限の借用
+### <a name="handling-impersonation-for-an-io-request"></a>I/o 要求の偽装の処理
 
-UMDF ドライバー、フレームワークは、次の順序で、I/O 要求の権限借用を処理します。
+UMDF ドライバーとフレームワークは、次の順序で i/o 要求の偽装を処理します。
 
-1.  ドライバーの呼び出し、 [ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)必要な偽装レベルを指定するメソッドと[ **IImpersonateCallback::OnImpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iimpersonatecallback-onimpersonate)コールバック関数。
+1.  ドライバーは[**IWDFIoRequest:: Impersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)メソッドを呼び出して、必要な偽装レベルと[**IImpersonateCallback:: onimpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iimpersonatecallback-onimpersonate)コールバック関数を指定します。
 
-2.  フレームワークは、要求された偽装レベルを確認します。 要求されたレベルが UMDF ドライバーのインストール パッケージと、クライアント アプリケーションを使用するレベルよりも大きい場合は、権限借用の要求は失敗します。 それ以外の場合、フレームワークは、クライアントを偽装し、すぐに呼び出し、 **OnImpersonate**コールバック関数。
+2.  フレームワークは、要求された偽装レベルを確認します。 要求されたレベルが、UMDF ドライバーのインストールパッケージおよびクライアントアプリケーションが許可するレベルよりも大きい場合、権限借用要求は失敗します。 それ以外の場合、フレームワークはクライアントの権限を借用し、すぐに**Onimpersonate**コールバック関数を呼び出します。
 
-**OnImpersonate**コールバック関数は、保護されたファイルを開くなど、要求された偽装レベルを必要とする操作のみを実行する必要があります。
+**Onimpersonate**コールバック関数は、保護されたファイルを開くなど、要求された偽装レベルを必要とする操作のみを実行する必要があります。
 
-UMDF にドライバーを許可しない**OnImpersonate** framework のオブジェクトのメソッドの呼び出しにコールバック関数。 これにより、ドライバーが偽装レベルを他のドライバーのコールバック機能またはその他のドライバーを公開しません。
+UMDF では、ドライバーの**Onimpersonate**コールバック関数がフレームワークのオブジェクトメソッドを呼び出すことはできません。 これにより、ドライバーが偽装レベルを他のドライバーコールバック関数やその他のドライバーに公開しないようにすることができます。
 
-**注**  バージョン 1.0 ~ UMDF の 1.7 で[ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)こと、クライアント アプリケーションと INF ファイルには、さらに、最高の権限借用レベルを付与場合は、ドライバーが要求される偽装レベルは低くなります。 UMFD バージョン 1.9 以降で、 **Impersonate**メソッドは、ドライバーが要求を権限借用レベルのみに付与します。
+**注**   UMDF のバージョン 1.0 ~ 1.7 では、 [**IWDFIoRequest:: Impersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)は、ドライバーが要求する偽装レベルが低い場合でも、クライアントアプリケーションと INF ファイルで許可される最も高い偽装レベルを付与します。 UMFD バージョン1.9 以降では、 **Impersonate**メソッドによって、ドライバーが要求する偽装レベルだけが付与されます。
 
  
 
-### <a name="passing-credentials-down-the-driver-stack"></a>下位のドライバー スタックの資格情報を渡す
+### <a name="passing-credentials-down-the-driver-stack"></a>資格情報をドライバースタックに渡す
 
-ドライバーが受信すると、 [ **WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_type)-型指定された I/O 要求、ドライバーは、カーネル モード ドライバーをドライバー スタックを I/O 要求を転送場合があります。 カーネル モード ドライバーには、権限の借用機能がないを**IWDFIoRequest::Impersonate** UMDF ベースのドライバーを提供します。
+ドライバーが[**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_type)によって型指定された i/o 要求を受信すると、ドライバーが i/o 要求をドライバースタックからカーネルモードドライバーに転送する場合があります。 カーネルモードドライバーには、 **IWDFIoRequest:: Impersonate**が UMDF ベースのドライバーに提供する偽装機能がありません。
 
-そのため、カーネル モード ドライバーがクライアントのユーザーの資格情報を受信するようにする場合 (の資格情報ではなく、[ドライバー ホスト プロセス](umdf-driver-host-process.md))、ドライバーを設定する必要があります、 [ **WDF\_要求\_送信\_オプション\_IMPERSONATE\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)フラグを呼び出すときに[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)を送信する、I/O ターゲットへの要求を作成します。 **送信**エラー メソッドを返しますのコード権限借用に失敗した場合、ドライバーによっても設定しない限り、 **WDF\_要求\_送信\_オプション\_権限借用\_無視\_エラー**フラグ。
+したがって、カーネルモードドライバーがクライアントのユーザー資格情報 ([ドライバーホストプロセス](umdf-driver-host-process.md)の資格情報) を受信するようにするには、ドライバーで[**WDF\_REQUEST\_SEND\_オプションを IMPERSONATE\_IMPERSONATE に設定する必要があり\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)フラグ。 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を呼び出して、作成要求を i/o ターゲットに送信します。 この**メソッドで**は、偽装の試行が失敗した場合に、エラーコードが返されます。ただし、ドライバーが WDF\_\_要求を設定している場合は、 **\_オプション\_偽装\_無視\_エラー**フラグが無視されます。
 
-ドライバーを呼び出す必要はありません**IWDFIoRequest::Impersonate** I/O ターゲットに、要求を送信する前にします。
+ドライバーは、要求を i/o ターゲットに送信する前に**IWDFIoRequest:: Impersonate**を呼び出す必要はありません。
 
-要求を転送する下位レベルのドライバーも、クライアントの偽装レベルはドライバー スタックを下へ移動します。
+下位レベルのドライバーも要求を転送する場合、クライアントの偽装レベルはドライバースタックを経由します。
 
-### <a name="reducing-security-threats"></a>セキュリティの脅威を軽減
+### <a name="reducing-security-threats"></a>セキュリティの脅威の軽減
 
-「特権が昇格される」攻撃の可能性を減らすためには、次の操作を行う必要があります。
+"特権の昇格" 攻撃の可能性を低減するには、次のことを行う必要があります。
 
--   権限借用の使用を回避しようとしてください。
+-   偽装を使用しないようにしてください。
 
-    たとえば、ドライバーを使用する必要がありますファイルを開く権限借用の使用を避けるためには、クライアント アプリケーションできますファイルを開き I/O 操作を使用して、ドライバー ファイルの内容を送信します。
+    たとえば、偽装を使用してドライバーが使用する必要のあるファイルを開くことを避けるために、クライアントアプリケーションはファイルを開き、i/o 操作を使用してファイルの内容をドライバーに送信することができます。
 
--   ドライバーが必要な最小の偽装レベルを使用します。
+-   ドライバーに必要な最も低い偽装レベルを使用します。
 
-    できるだけ低く、ドライバーの INF ファイルでの偽装レベルを設定します。 ドライバーに権限借用を必要としない場合は含まれません、 **UmdfImpersonationLevel** INF ファイルでディレクティブ。
+    ドライバーの INF ファイルの偽装レベルをできるだけ低く設定します。 ドライバーが偽装を必要としない場合は、 **UmdfImpersonationLevel**ディレクティブを INF ファイルに含めないでください。
 
--   攻撃者は、ドライバーを悪用する機会を最小限に抑えます。
+-   攻撃者がドライバーを悪用する機会を最小限に抑えます。
 
-    **OnImpersonate**コールバック関数は、権限借用を必要とする操作のみを実行するコードの小さなセクションを含める必要があります。 たとえば、ファイル ハンドルを開くときにのみ、ドライバーが保護されたファイルにアクセスする場合権限借用が必要があります。 読み取りまたはファイルへの書き込み権限の借用は必要ありません。
+    **Onimpersonate**コールバック関数には、偽装を必要とする操作のみを実行するコードの小さなセクションを含める必要があります。 たとえば、保護されたファイルにアクセスするドライバーは、ファイルハンドルを開いたときにのみ偽装を必要とします。 ファイルに対して読み取りまたは書き込みを行うための権限借用は必要ありません。
 
  
 

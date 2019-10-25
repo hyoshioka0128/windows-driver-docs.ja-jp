@@ -4,27 +4,27 @@ description: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
 ms.assetid: e32aeec6-1a0a-4d21-8358-89d9fc0a15eb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f529755102f85ed4e142d2d1a76de2347e4dcab3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9db0913111c33f163e8e07004df19a49ce7102f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380269"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840939"
 ---
-# <a name="using-extra-create-parameters-with-an-irpmjcreate-operation"></a>IRP のパラメーターを作成する余分なを使用して\_MJ\_作成操作
+# <a name="using-extra-create-parameters-with-an-irp_mj_create-operation"></a>IRP\_MJ\_CREATE 操作で追加の Create Parameters を使用する
 
 
-追加のオペレーティング システムの使用のコンポーネントで追加情報を関連付けるには、(ECPs) のパラメーターを作成、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルを操作します。 ドライバーの処理または追加情報を関連付ける IRP ECPs を使用できますも\_MJ\_次の状況でファイルを作成する操作。
+オペレーティングシステムのコンポーネントでは、追加の作成パラメーター (ECPs) を使用して、ファイルの[**IRP\_MJ\_create**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作に追加情報を関連付けます。 また、ドライバーは、次の状況で、ECPs を使用して、ファイルに対する IRP\_MJ\_CREATE 操作に追加情報を処理したり、関連付けたりすることもできます。
 
--   カーネル モード ドライバーを呼び出すと、 [ **FltCreateFileEx2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefileex2)または[ **IoCreateFileEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)ルーチンを作成するか、ファイルを開きます
+-   カーネルモードドライバーが[**FltCreateFileEx2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefileex2)または[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefileex)ルーチンを呼び出してファイルを作成または開くとき
 
--   ファイル システム フィルター ドライバーを処理すると、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルの操作
+-   ファイルシステムフィルタードライバーが、ファイルの[**IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作を処理するとき
 
-次のセクションでは、定義、アタッチ、および ECPs を使用する方法について説明します。 次のセクションには、オペレーティング システム定義の ECPs もについて説明します。
+以下のセクションでは、ECPs を定義、アタッチ、および使用する方法について説明します。 次のセクションでは、オペレーティングシステムで定義されている ECPs についても説明します。
 
-[IRP への ECPs\_MJ\_作成操作、カーネル モード ドライバーで発生しました。](attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md)
+[カーネルモードドライバーが開始する操作を作成するために ECPs を IRP\_MJ にアタッチ\_](attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md)
 
-[ECPs を使用して、IRP を処理する\_MJ\_作成操作、ファイル システム フィルター ドライバー](using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md)
+[ECPs を使用して IRP\_MJ を処理し\_ファイルシステムフィルタードライバーで操作を作成する](using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md)
 
 [ユーザー定義の ECPs](user-defined-ecps.md)
 

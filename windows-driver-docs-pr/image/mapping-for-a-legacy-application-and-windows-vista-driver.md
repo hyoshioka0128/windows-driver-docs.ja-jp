@@ -4,21 +4,21 @@ description: レガシ アプリケーションと Windows Vista ドライバー
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52bc8ff3126171f533c65de6cde87e9206e7b774
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6b771ae00a837fc269429617dbc61abc6c9f212
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378850"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840786"
 ---
 # <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバーのマッピング
 
 
-このセクションでは、Windows Vista のメッセージの転送とデータ フローにマップする方法従来の転送メッセージとデータ フロー、レガシ アプリケーションは、Windows Vista ドライバーを使用する必要がある場合について説明します。
+このセクションでは、レガシアプリケーションで Windows Vista ドライバーを使用する必要がある場合に、Windows Vista 転送メッセージとデータフローが従来の転送メッセージとデータフローにどのようにマップされるかについて説明します。
 
 ### <a name="callback-transfers"></a>コールバックの転送
 
-この表では、レガシ アプリケーションに送信されるメッセージに、Windows Vista のドライバーのコールバックの転送メッセージのマッピングを示します。
+次の表は、レガシアプリケーションに送信されるメッセージへの Windows Vista ドライバーのコールバックメッセージのマッピングを示しています。
 
 <table>
 <colgroup>
@@ -27,8 +27,8 @@ ms.locfileid: "67378850"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Windows Vista ドライバー メッセージ</strong></p></td>
-<td><p><strong>(互換性レイヤーの変換) した後、従来のアプリケーション メッセージ</strong></p></td>
+<td><p><strong>Windows Vista ドライバーメッセージ</strong></p></td>
+<td><p><strong>レガシアプリケーションメッセージ (互換性レイヤー変換後)</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_STATUS</p></td>
@@ -36,11 +36,11 @@ ms.locfileid: "67378850"
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_ERROR</p></td>
-<td><p>無視されます。</p></td>
+<td><p>無効.</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 すべてのメッセージを重複していない、これは実装、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
+<td><p>無効. このメッセージは、常に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"><strong>IwiatransGetNextStream callback::</strong></a>の呼び出しと共に表示されます。 メッセージが複製されていない場合は、 <strong>GetNextStream</strong>の実装で実装されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -48,19 +48,19 @@ ms.locfileid: "67378850"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_DEVICE_STATUS</p></td>
-<td><p>場合 hrErrorStatus WIA_STATUS_WARMING_UP、= = 互換性レイヤーをアプリケーションだけでなく、Windows Vista アプリケーションの可能性を与える、転送をキャンセルするいくつかの状態を提供するために IT_STATUS_TRANSFER_FROM_DEVICE で IT_MSG_STATUS を送信します。</p></td>
+<td><p>HrErrorStatus = = WIA_STATUS_WARMING_UP の場合、互換性レイヤーは、アプリケーションに何らかの状態を提供し、転送を取り消す可能性を Windows Vista アプリケーションに与えるために、IT_STATUS_TRANSFER_FROM_DEVICE と IT_MSG_STATUS を送信します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_NEW_PAGE</p></td>
-<td><p>無視されます。 送信しない Windows Vista のドライバーによってこの場合、TYMED_FILE で Windows Vista のドライバーに呼び出し以降。</p></td>
+<td><p>無効. この場合、windows vista ドライバーで TYMED_FILE を使用してを呼び出すため、このドライバーからは送信しないでください。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>IWiaTransferCallback::GetNextStream</strong></p></td>
-<td><p>最初のページ:IT_MSG_DATA_HEADER</p>
-<p>後続のページ:IT_MSG_NEW_PAGE</p></td>
+<td><p><strong>IWiaTransferCallback:: GetNextStream</strong></p></td>
+<td><p>最初のページ: IT_MSG_DATA_HEADER</p>
+<p>後続のページ: IT_MSG_NEW_PAGE</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>IStream::Write</strong></p></td>
+<td><p><strong>IStream:: Write</strong></p></td>
 <td><p>IT_MSG_DATA</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ ms.locfileid: "67378850"
 
 ### <a name="file-transfers"></a>ファイル転送
 
-この表では、レガシ アプリケーションに送信されるメッセージに、Windows Vista のドライバーのファイルの転送メッセージのマッピングを示します。
+次の表は、レガシアプリケーションに送信されるメッセージへの Windows Vista ドライバーのファイル転送メッセージのマッピングを示しています。
 
 <table>
 <colgroup>
@@ -79,8 +79,8 @@ ms.locfileid: "67378850"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Windows Vista ドライバー メッセージ</strong></p></td>
-<td><p><strong>(互換性レイヤーの変換) した後、従来のアプリケーション メッセージ</strong></p></td>
+<td><p><strong>Windows Vista ドライバーメッセージ</strong></p></td>
+<td><p><strong>レガシアプリケーションメッセージ (互換性レイヤー変換後)</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_STATUS</p></td>
@@ -88,11 +88,11 @@ ms.locfileid: "67378850"
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_ERROR</p></td>
-<td><p>無視されます。</p></td>
+<td><p>無効.</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 重複するメッセージを避けるためには、このメッセージが実装されている、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
+<td><p>無効. このメッセージは、常に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"><strong>IwiatransGetNextStream callback::</strong></a>の呼び出しと共に表示されます。 メッセージが重複しないようにするために、このメッセージは<strong>GetNextStream</strong>の実装で実装されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -100,32 +100,32 @@ ms.locfileid: "67378850"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_DEVICE_STATUS</p></td>
-<td><p>場合 hrErrorStatus WIA_STATUS_WARMING_UP、= = アプリケーションだけでなく、Windows Vista アプリケーションの可能性を与える転送をキャンセルするいくつかの状態を提供するために IT_MSG_STATUS は IT_STATUS_TRANSFER_FROM_DEVICE と共に送信されます。</p></td>
+<td><p>HrErrorStatus = = WIA_STATUS_WARMING_UP の場合、IT_MSG_STATUS は IT_STATUS_TRANSFER_FROM_DEVICE と一緒に送信されます。これは、アプリケーションに何らかの状態を提供し、Windows Vista アプリケーションに転送を取り消す可能性を与えるためのものです。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_NEW_PAGE</p></td>
 <td><p>IT_MSG_NEW_PAGE</p>
-<p>注: この動作は複数のページとは少し異なるために、このファイル転送を今すぐ<em>wiasWritePageBufToFile</em> IT_MSG_NEW_PAGE を送信しません。</p></td>
+<p>注: <em>wiasWritePageBufToFile</em>が IT_MSG_NEW_PAGE を送信することはないため、この動作は、現在、複数ページのファイル転送とは多少異なります。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>IWiaTransferCallback::GetNextStream</strong></p></td>
-<td><p>最初のページ:IT_MSG_FILE_PREVIEW_DATA_HEADER</p>
-<p>後続のページ:(、WIA_ERROR_GENERAL_ERROR をドライバーに返される) にエラーが発生しました。 <strong>IWiaTransferCallback::GetNextStream</strong>のみ、Windows Vista ドライバーを呼び出すのみ TYMED_FILE と TYMED_MULTIPAGE_FILE 転送中に 1 つのページ、転送できるため、後にのみ呼び出す<strong>GetNextStream</strong>したらため、すべてのページは、同じストリームに移動する必要があります。</p></td>
+<td><p><strong>IWiaTransferCallback:: GetNextStream</strong></p></td>
+<td><p>最初のページ: IT_MSG_FILE_PREVIEW_DATA_HEADER</p>
+<p>後続ページ: エラー (WIA_ERROR_GENERAL_ERROR はドライバーに戻されます)。 <strong>Iwiatransfercallback:: GetNextStream</strong>を呼び出すことができるのは、TYMED_FILE を使用して1ページのみを転送でき、TYMED_MULTIPAGE_FILE 転送中は Windows Vista ドライバーが<strong>GetNextStream</strong>を呼び出す必要があるためです。ページは同じストリームに入る必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>IStream::Write</strong></p></td>
-<td><p>送信されたメッセージはありません。 ファイルの転送が発生した場合、互換性レイヤーは変換されません (イメージ処理 filter) ドライバーは、従来の転送メッセージに書き込みますデータのいずれか。 代わりに、データは単に転送の最後に、ユーザーに返されるファイルに書き込まれます。</p></td>
+<td><p><strong>IStream:: Write</strong></p></td>
+<td><p>メッセージは送信されませんでした。 ファイル転送の場合、ドライバー (画像処理フィルター) によって従来の転送メッセージに書き込まれるデータは、互換性レイヤーによって変換されません。 データは、転送の最後にユーザーに返されるファイルに単純に書き込まれます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、従来の転送でメッセージを参照してください、 [IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)します。
+従来の転送メッセージの詳細については、「 [IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)」を参照してください。
 
-TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
+TYMED 定数の詳細については、「 [TYMED](understanding-tymed.md)について」を参照してください。
 
-**IStream**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
+**IStream**インターフェイスについては、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

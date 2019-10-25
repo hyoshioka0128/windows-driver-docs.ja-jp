@@ -1,9 +1,9 @@
 ---
-title: KSEVENT\_BDA\_CA\_モジュール\_状態\_CHANGED
-description: クライアントを使用して、KSEVENT\_BDA\_CA\_モジュール\_状態\_CA モジュールの状態が、ECM マップのノードに関連付けられているときに通知を要求するための変更を変更します。
+title: KSEVENT\_BDA\_CA\_モジュール\_状態\_変更
+description: クライアントは、KSEVENT\_BDA\_CA\_モジュールを使用し\_状態\_、ECM マップノードに関連付けられている CA モジュールの状態が変化したときに通知を要求するように変更されました。
 ms.assetid: a331cfa9-abd0-422e-8c39-0ff01f9dcc6a
 keywords:
-- KSEVENT_BDA_CA_MODULE_STATUS_CHANGED ストリーミング メディア デバイス
+- KSEVENT_BDA_CA_MODULE_STATUS_CHANGED ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,28 +14,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ef9a6d807530be321b45bb6eae7f8d01151b77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51cd8e00c1d7715bdfa64110f81cfe3fed05cb67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382481"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842503"
 ---
-# <a name="kseventbdacamodulestatuschanged"></a>KSEVENT\_BDA\_CA\_モジュール\_状態\_CHANGED
+# <a name="ksevent_bda_ca_module_status_changed"></a>KSEVENT\_BDA\_CA\_モジュール\_状態\_変更
 
 
-クライアントを使用して、KSEVENT\_BDA\_CA\_モジュール\_状態\_CA モジュールの状態が、ECM マップのノードに関連付けられているときに通知を要求するための変更を変更します。
+クライアントは、KSEVENT\_BDA\_CA\_モジュールを使用し\_状態\_、ECM マップノードに関連付けられている CA モジュールの状態が変化したときに通知を要求するように変更されました。
 
 ## <span id="ddk_ksevent_bda_ca_module_status_changed_ks"></span><span id="DDK_KSEVENT_BDA_CA_MODULE_STATUS_CHANGED_KS"></span>
 
 
-### <a name="span-idspecifyingthiseventspanspan-idspecifyingthiseventspanspecifying-this-event"></a><span id="specifying_this_event"></span><span id="SPECIFYING_THIS_EVENT"></span>このイベントを指定します。
+### <a name="span-idspecifying_this_eventspanspan-idspecifying_this_eventspanspecifying-this-event"></a><span id="specifying_this_event"></span><span id="SPECIFYING_THIS_EVENT"></span>このイベントの指定
 
 KSEVENT
 
-### <a name="span-ideventdataspanspan-ideventdataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベント データ
+### <a name="span-idevent_dataspanspan-idevent_dataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベントデータ
 
-イベントに関する通知方法を説明する KSEVENTDATA 構造体。
+イベントについて通知する方法を記述する KSEVENTDATA 構造体。
 
 <a name="requirements"></a>要件
 ------------
@@ -48,7 +48,7 @@ KSEVENT
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -58,9 +58,9 @@ KSEVENT
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**KSPROPERTY\_BDA\_CA\_モジュール\_状態**](ksproperty-bda-ca-module-status.md)
+[**KSK プロパティ\_BDA\_CA\_モジュール\_の状態**](ksproperty-bda-ca-module-status.md)
 
  
 

@@ -1,35 +1,35 @@
 ---
-title: 例の単純なパススルー ディスパッチと完了
-description: 例の単純なパススルー ディスパッチと完了
+title: 単純なパススルーディスパッチと完了の例
+description: 単純なパススルーディスパッチと完了の例
 ms.assetid: dae3a450-37b1-470b-a0f3-4108075e06ac
 keywords:
-- IRP の完了ルーチン WDK ファイル システム、例
+- IRP 完了ルーチン WDK ファイルシステム、例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3856021d75e23bdf78bf2034bbd113a2d57ae697
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfcae8b6d968581e660060832441237c55be47f8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386089"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841422"
 ---
-# <a name="example-simple-pass-through-dispatch-and-completion"></a>以下に例を示します。ディスパッチと完了間のシンプルなパススルー
+# <a name="example-simple-pass-through-dispatch-and-completion"></a>例: 単純なパススルーディスパッチと完了
 
 
 ## <span id="ddk_example_simple_pass_through_dispatch_and_completion_if"></span><span id="DDK_EXAMPLE_SIMPLE_PASS_THROUGH_DISPATCH_AND_COMPLETION_IF"></span>
 
 
-IRP の完了ルーチンを設定して、IRP を渡す、ディスパッチ ルーチンは、次の操作を行う必要があります。
+IRP の完了ルーチンを設定して IRP を停止するには、ディスパッチルーチンで次の操作を行う必要があります。
 
--   呼び出す[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)パラメーターの現在のスタックの場所から下位レベルの次のドライバーのコピー。
+-   [**Iocopycurrent entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)呼び出して、現在のスタックの場所から次の下位レベルのドライバーのパラメーターにコピーします。
 
--   呼び出す[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine) IRP の完了ルーチンを指定します。
+-   [**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出して、IRP の完了ルーチンを指定します。
 
--   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)を下位レベルの次のドライバーに IRP を渡します。
+-   [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、次の下位レベルのドライバーに IRP を渡します。
 
-この手法は、次のコード例に示します。
+この手法を次のコード例に示します。
 
-### <a name="span-iddispatchroutinespanspan-iddispatchroutinespanspan-iddispatchroutinespandispatch-routine"></a><span id="Dispatch_Routine"></span><span id="dispatch_routine"></span><span id="DISPATCH_ROUTINE"></span>ディスパッチ ルーチン
+### <a name="span-iddispatch_routinespanspan-iddispatch_routinespanspan-iddispatch_routinespandispatch-routine"></a><span id="Dispatch_Routine"></span><span id="dispatch_routine"></span><span id="DISPATCH_ROUTINE"></span>ディスパッチルーチン
 
 ```cpp
 IoCopyCurrentIrpStackLocationToNext( Irp ); 
@@ -42,15 +42,15 @@ IoSetCompletionRoutine( Irp,                                 // Irp
 return IoCallDriver ( NextLowerDriverDeviceObject, Irp ); 
 ```
 
-この例への呼び出しで[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine) IRP の完了ルーチンを設定します。
+この例では、 [**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出して、IRP の完了ルーチンを設定します。
 
-最初の 2 つのパラメーターへの呼び出しで[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)は IRP 完了ルーチンの名前へのポインター。 3 番目のパラメーターでは、完了ルーチンに渡されるドライバー定義構造体へのポインターです。 この構造体には、完了ルーチンが IRP の完了処理を実行するときに必要のあるコンテキスト情報が含まれています。 Context 構造は、IRQL のディスパッチの完了ルーチンを呼び出すことがあるために、非ページ プールから割り当てる必要がある\_レベル。
+[**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)の呼び出しの最初の2つのパラメーターは、IRP へのポインターと、完了ルーチンの名前です。 3番目のパラメーターは、完了ルーチンに渡されるドライバー定義の構造体へのポインターです。 この構造体には、IRP で完了処理を実行するときに完了ルーチンが必要とするコンテキスト情報が含まれます。 完了ルーチンは IRQL ディスパッチ\_レベルで呼び出すことができるので、非ページプールからコンテキスト構造を割り当てる必要があります。
 
-最後の 3 つのパラメーターに渡す[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)が I/O 要求が成功すると、失敗した場合、またはが取り消されたときに、完了ルーチンを呼び出すかどうかを指定するフラグ。
+[**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)に渡される最後の3つのパラメーターは、i/o 要求が成功したとき、失敗したとき、または取り消されたときに、完了ルーチンを呼び出すかどうかを指定するフラグです。
 
-### <a name="span-idcompletionroutinespanspan-idcompletionroutinespanspan-idcompletionroutinespancompletion-routine"></a><span id="Completion_Routine"></span><span id="completion_routine"></span><span id="COMPLETION_ROUTINE"></span>完了ルーチン
+### <a name="span-idcompletion_routinespanspan-idcompletion_routinespanspan-idcompletion_routinespancompletion-routine"></a><span id="Completion_Routine"></span><span id="completion_routine"></span><span id="COMPLETION_ROUTINE"></span>完了ルーチン
 
-ディスパッチ ルーチンが完了ルーチンを設定し、呼び出した後すぐに返された場合[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (ように、上記のディスパッチ ルーチン)、対応する完了ルーチンを確認する必要があります、IRP の PendingReturned フラグを設定し、設定されている場合は、呼び出す**IoMarkIrpPending**します。 状態を返す必要があります\_成功すると、次の例に示すようにします。
+ディスパッチルーチンが完了ルーチンを設定し、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出した後 (上記のディスパッチルーチンに示されているように) すぐに戻る場合は、対応する完了ルーチンが IRP の pendingreturned フラグをチェックし、設定されている場合は、を呼び出し**ます。IoMarkIrpPending**。 その後、次の例に示すように、STATUS\_SUCCESS が返されます。
 
 ```cpp
 if (Irp->PendingReturned) {
@@ -59,13 +59,13 @@ if (Irp->PendingReturned) {
 return STATUS_SUCCESS;
 ```
 
-### <a name="span-idadvantagesofthisapproachspanspan-idadvantagesofthisapproachspanspan-idadvantagesofthisapproachspanadvantages-of-this-approach"></a><span id="Advantages_of_This_Approach"></span><span id="advantages_of_this_approach"></span><span id="ADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの利点
+### <a name="span-idadvantages_of_this_approachspanspan-idadvantages_of_this_approachspanspan-idadvantages_of_this_approachspanadvantages-of-this-approach"></a><span id="Advantages_of_This_Approach"></span><span id="advantages_of_this_approach"></span><span id="ADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの利点
 
-完了ルーチンを設定すると、下位レベルのドライバーが処理された後、プロセス、IRP をさらに、ドライバーができます。 完了ルーチンでは、要求された I/O 操作の結果に基づいて IRP の処理方法を決定できます。
+完了ルーチンを設定すると、ドライバーは、下位レベルのドライバーによって処理された後に、IRP をさらに処理することができます。 完了ルーチンは、要求された i/o 操作の結果に基づいて、IRP を処理する方法を決定できます。
 
-### <a name="span-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspandisadvantages-of-this-approach"></a><span id="Disadvantages_of_This_Approach"></span><span id="disadvantages_of_this_approach"></span><span id="DISADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの欠点
+### <a name="span-iddisadvantages_of_this_approachspanspan-iddisadvantages_of_this_approachspanspan-iddisadvantages_of_this_approachspandisadvantages-of-this-approach"></a><span id="Disadvantages_of_This_Approach"></span><span id="disadvantages_of_this_approach"></span><span id="DISADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの欠点
 
-IRQL で任意のスレッド コンテキストで実行されるため&lt;= ディスパッチ\_レベル、完了のルーチンに対して実行できる限定的な処理だけ IRP します。
+IRQL &lt;= ディスパッチ\_レベルでは任意のスレッドコンテキストで実行されるため、完了ルーチンは、IRP に対して制限付きの処理のみを実行できます。
 
  
 

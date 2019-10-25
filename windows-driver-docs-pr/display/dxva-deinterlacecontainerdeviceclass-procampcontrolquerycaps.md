@@ -1,11 +1,11 @@
 ---
 title: ProcAmpControlQueryCaps メソッド
-description: サンプルの DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps 関数により、クエリ、ProcAmp コントロール デバイスとなる可能性があるその他のビデオの処理操作の入力の要件を決定するドライバーを VMRサポートされています。
+description: Sample DXVA\_DeinterlaceContainerDeviceClass::P rocAmpControlQueryCaps 関数を使用すると、VMR はドライバーに対してクエリを実行し、ProcAmp コントロールデバイスの入力要件とサポートされている追加のビデオ処理操作を決定することができます.
 ms.assetid: e89f9a01-e8b3-4311-ad3b-296021c9795e
 keywords:
-- ディスプレイ デバイスの ProcAmpControlQueryCaps メソッド
-- ProcAmpControlQueryCaps メソッド ディスプレイ デバイス、DXVA_DeinterlaceContainerDeviceClass インターフェイス
-- DXVA_DeinterlaceContainerDeviceClass は、ProcAmpControlQueryCaps メソッドのディスプレイ デバイスをインターフェイスします。
+- ProcAmpControlQueryCaps メソッドの表示デバイス
+- ProcAmpControlQueryCaps メソッドの表示デバイス, DXVA_DeinterlaceContainerDeviceClass インターフェイス
+- DXVA_DeinterlaceContainerDeviceClass インターフェイス表示デバイス, ProcAmpControlQueryCaps メソッド
 topic_type:
 - apiref
 api_name:
@@ -17,17 +17,17 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 3c2288e10d494ac8c3475f01992a920abc3af77f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9daafd95a48c6f312b6871ad90749075a14840c8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375814"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839716"
 ---
-# <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps メソッド
+# <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::P rocAmpControlQueryCaps メソッド
 
 
-サンプル*ProcAmpControlQueryCaps*関数により、 *VMR* ProcAmp 制御デバイスおよび可能性があります追加ビデオ処理操作の入力の要件を決定するドライバーを照会するにはサポートされます。 クエリに ProcAmp 調整操作が実行されるのと同時に発生します。
+Sample *ProcAmpControlQueryCaps*関数を使用すると、 *VMR*はドライバーにクエリを実行し、ProcAmp コントロールデバイスの入力要件とサポートされている追加のビデオ処理操作を確認できます。 クエリは、ProcAmp 調整操作の実行時に同時に発生することがあります。
 
 <a name="syntax"></a>構文
 ------
@@ -42,21 +42,21 @@ HRESULT ProcAmpControlQueryCaps(
 <a name="parameters"></a>パラメーター
 ----------
 
-*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc) ProcAmp の制御パラメーターを定義する構造体処理するビデオです。
+\] の*Lpvideodescription* \[は、処理するビデオの ProcAmp コントロールパラメーターを定義する[**DXVA\_videodesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)構造体へのポインターを提供します。
 
-*lpProcAmpCaps* \[アウト\]へのポインターを受け取る、 [ **DXVA\_ProcAmpControlCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)のドライバーの機能を含む構造体ProcAmp コントロールの操作です。
+*lpProcAmpCaps* \[out\] は、ProcAmp コントロール操作のドライバー機能を含む[**DXVA\_ProcAmpControlCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)構造体へのポインターを受け取ります。
 
 <a name="return-value"></a>戻り値
 ------------
 
-0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
+成功した場合は 0 (S\_OK または DD\_OK) を返します。それ以外の場合は、エラーコードを返します。 エラーコードの完全な一覧については、 *ddraw*を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバーの ProcAmp コントロール モードでのユーザー モード コンポーネントには、その機能の報告、 [ **DXVA\_ProcAmpControlCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)によって示される構造*lpProcAmpCaps*.
+ドライバーは、 *lpProcAmpCaps*が指す[**DXVA\_ProcAmpControlCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)構造の ProcAmp コントロールモードのユーザーモードコンポーネントに機能を報告します。
 
-サンプル*ProcAmpControlQueryCaps*関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造体。 **RenderMoComp**関数は、ドライバーによって提供される指す*DdMoCompRender*参照コールバック、 [ **DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
+Sample *ProcAmpControlQueryCaps*関数は、 [**DD\_MOTIONCOMPコールバック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造の**rendermocomp**メンバーへの呼び出しに直接マップされます。 **Rendermocomp**関数は、 [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体を参照する、ドライバーが提供する*ddmocomprender*コールバックを指します。 DD\_RENDERMOCOMPDATA 構造体は、次のように入力されます。
 
 <table>
 <colgroup>
@@ -65,14 +65,14 @@ HRESULT ProcAmpControlQueryCaps(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">メンバー</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dwNumBuffers</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpBufferInfo</strong></p></td>
@@ -80,26 +80,26 @@ HRESULT ProcAmpControlQueryCaps(
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwFunction</strong></p></td>
-<td align="left"><p><strong>DXVA_ProcAmpControlQueryCapsFnCode</strong>定数 (で定義されている<em>dxva.h</em>)</p></td>
+<td align="left"><p><strong>DXVA_ProcAmpControlQueryCapsFnCode</strong>定数 ( <em>DXVA</em>で定義)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>塗りつぶしへのポインター <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)"> <strong>DXVA_VideoDesc</strong> </a>構造体。</p></td>
+<td align="left"><p>塗りつぶされた<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)"><strong>DXVA_VideoDesc</strong></a>構造体へのポインター。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
-<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)"> <strong>DXVA_ProcAmpControlCaps</strong> </a>構造体。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)"><strong>DXVA_ProcAmpControlCaps</strong></a>構造体へのポインター。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-関数を使用せず、ディスプレイ ドライバーによって提供される BeginMoCompFrame または EndMoCompFrame 最初に呼び出される RenderMoComp 関数が呼び出されることに注意してください。
+RenderMoComp 関数は、ディスプレイドライバーが提供する BeginMoCompFrame または EndMoCompFrame 関数が最初に呼び出されずに呼び出されることに注意してください。
 
 **コード例**
 
-次のコードを実装する方法の例を示します、 *ProcAmpControlQueryCaps*関数。
+次のコードは、 *ProcAmpControlQueryCaps*関数を実装する方法の例を示しています。
 
 ```cpp
 HRESULT
@@ -140,19 +140,19 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps(
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">N/A (Declared ドライバーによって提供されるヘッダー ファイル内)</td>
+<td align="left">N/A (ドライバーによって指定されたヘッダーファイルで宣言されています。)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_ProcAmpControlCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)
+[**DXVA\_ProcAmpControlCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD\_MOTIONCOMPCALLBACKS バック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 

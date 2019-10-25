@@ -1,40 +1,40 @@
 ---
 title: OID_GEN_LINK_STATE
-description: クエリとして NDIS および上にあるドライバーはミニポート アダプターの現在のリンクの状態を判断するのに OID_GEN_LINK_STATE OID を使用します。
+description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_LINK_STATE OID を使用して、ミニポートアダプターの現在のリンクの状態を判断します。
 ms.assetid: 75a30054-8700-4b79-902c-c8382a25c0a2
 ms.date: 08/08/2017
-keywords: -OID_GEN_LINK_STATE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_LINK_STATE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f70e82fb4da4a2523dcd56cc0d4de01b2d5447
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20d1c7b8b2b11fc5e4d51ee3b7fddb6be105e3a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844617"
 ---
-# <a name="oidgenlinkstate"></a>OID\_GEN\_リンク\_状態
+# <a name="oid_gen_link_state"></a>OID\_GEN\_LINK\_の状態
 
 
-クエリ、NDIS と関連付けたドライバーを使用、OID\_GEN\_リンク\_状態 OID ミニポート アダプターの現在のリンクの状態を確認します。 ミニポート ドライバーで、リンクの状態の受信、 [ **NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。
+クエリとして、NDIS およびそれ以降のドライバーは OID\_GEN\_リンク\_状態 OID を使用して、ミニポートアダプターの現在のリンクの状態を判断します。 ミニポートドライバーは、 [**NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造のリンク状態を受け取ります。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。 (「解説」を参照してください セクション)
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。 (「解説」を参照してください)
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーでは、初期化中に、リンクの状態を指定し、状態インジケーターの更新プログラムを提供します。
+ミニポートドライバーは、初期化中にリンク状態を提供し、状態を示す更新プログラムを提供します。
 
-リンクの状態を指定するには、設定、 **MediaConnectState**、 **MediaDuplexState**、 **XmitLinkSpeed**、 **RcvLinkSpeed**、 **PauseFunctions**、および**AutoNegotiationFlags**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_[全般]\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)ミニポート ドライバーに渡します構造、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
+リンクの状態を指定するには、NDIS\_ミニポートの MediaConnectState、 **MediaDuplexState**、 **XmitLinkSpeed**、 **rcvlinkspeed**、 **PauseFunctions**、および**AutoNegotiationFlags**の各メンバーを設定し[ **@no__t\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)ミニポートドライバーが[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数に渡す一般的な\_属性の構造体。
 
-ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS を返す必要があります\_状態\_いない\_サポートされています。 ミニポート ドライバーは、この OID をサポートしている場合は、接続状態、双方向の状態を返します内のリンクが高速化、 [ **NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)構造体。
+ミニポートドライバーでこの OID がサポートされていない場合、ドライバーは、サポートされて\_いない\_の NDIS\_状態を返します。 この OID がミニポートドライバーによってサポートされている場合は、 [**NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造の接続状態、双方向の状態、およびリンク速度が返されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,7 +45,7 @@ ms.locfileid: "67369071"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -53,15 +53,15 @@ ms.locfileid: "67369071"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)
+[**NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
+[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[OID\_GEN\_メディア\_CONNECT\_状態\_例](oid-gen-media-connect-status-ex.md)
+[OID\_GEN\_MEDIA\_CONNECT\_STATUS\_EX](oid-gen-media-connect-status-ex.md)
 
 [OID\_GEN\_メディア\_双方向\_状態](oid-gen-media-duplex-state.md)
 

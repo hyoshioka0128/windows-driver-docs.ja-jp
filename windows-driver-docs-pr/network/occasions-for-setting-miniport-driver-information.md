@@ -4,12 +4,12 @@ description: ミニポート ドライバー情報の設定の場面
 ms.assetid: 46834d76-e1b9-440c-af18-a4b564d1a76e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab733cf4cb30b9e25ecb8a13e77f6a4c7adad042
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 577b0f667b328acd120966f9d4647cb6f84b14ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368508"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842166"
 ---
 # <a name="occasions-for-setting-miniport-driver-information"></a>ミニポート ドライバー情報の設定の場面
 
@@ -17,15 +17,15 @@ ms.locfileid: "67368508"
 
 
 
-[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)コネクションレス ミニポート ドライバーで関数と[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)関数で、接続指向のミニポート ドライバーは初期化中に呼び出されます。 これらの関数を呼び出すこともできます。
+コネクションレスミニポートドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数と接続指向ミニポートドライバーの[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数は、初期化中に呼び出されます。 これらの関数は、次のように呼び出すこともできます。
 
--   ハードウェアのリセット中
+-   ハードウェアのリセット中に、
 
--   プロトコルを呼び出す場合[ **NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)します。
+-   プロトコルが[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)を呼び出す場合。
 
-*MiniportOidRequest*または*MiniportCoOidRequest*中に呼び出される[ハードウェア リセット操作](hardware-reset.md)します。 この場合、 *MiniportOidRequest*または*MiniportCoOidRequest*ミニポート ドライバーをそのアドレスに対して初期状態にリセットすると呼びます。
+*Miniportoidrequest*または*MiniportCoOidRequest*は、[ハードウェアのリセット操作](hardware-reset.md)中に呼び出されます。 この場合、 *Miniportoidrequest*または*MiniportCoOidRequest*が呼び出され、ミニポートドライバーがそのアドレスに対して初期状態にリセットされます。
 
-NDIS 呼び出し*MiniportOidRequest*または*MiniportCoOidRequest*プロトコルのミニポート ドライバーの NIC を閉じるときに[ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)呼び出します。 アドレス指定情報を更新するこのようなミニポート ドライバーが要求されます。
+ミニポートドライバーの NIC がプロトコルの[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)呼び出しによって閉じられた場合、NDIS は*Miniportoidrequest*または*MiniportCoOidRequest*を呼び出します。 このようなミニポートドライバーは、アドレス指定情報を更新するように要求されます。
 
  
 

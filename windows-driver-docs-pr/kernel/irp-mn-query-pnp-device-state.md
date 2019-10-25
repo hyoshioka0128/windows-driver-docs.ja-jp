@@ -1,32 +1,32 @@
 ---
 title: IRP_MN_QUERY_PNP_DEVICE_STATE
-description: 関数、フィルター、およびバス ドライバーには、この要求を処理できます。
+description: 関数、フィルター、およびバスドライバーは、この要求を処理できます。
 ms.date: 08/12/2017
 ms.assetid: 24362a20-9e9d-4566-bc95-ce52b91056af
 keywords:
-- IRP_MN_QUERY_PNP_DEVICE_STATE カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_PNP_DEVICE_STATE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afe46bba59aa0c583d67619522f60ab71080d26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5a10868d8a153fff60cd1f7e10658473cea04e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370868"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838569"
 ---
-# <a name="irpmnquerypnpdevicestate"></a>IRP\_MN\_クエリ\_PNP\_デバイス\_状態
+# <a name="irp_mn_query_pnp_device_state"></a>IRP\_\_クエリ\_PNP\_デバイス\_状態
 
 
-関数、フィルター、およびバス ドライバーには、この要求を処理できます。
+関数、フィルター、およびバスドライバーは、この要求を処理できます。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーは、デバイスのドライバーからの成功の return の後にこの IRP を送信、 [ **IRP\_MN\_開始\_デバイス**](irp-mn-start-device.md)デバイスが最初に送信された要求開始します。 この IRP は、開始時の負荷を分散リソースの停止後に送信されません。 PnP マネージャーでは、この IRP の呼び出しにデバイス ドライバーの場合にも送信します[ **IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)します。
+PnP マネージャーは、デバイスのドライバーが\_正常に復帰した後に、デバイスが最初に起動されたときに送信された[ **\_デバイスの要求\_開始**](irp-mn-start-device.md)するように、この irp を送信します。 この IRP は、リソースの再配分の停止後に開始時に送信されません。 また、デバイスのドライバーが[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)を呼び出すと、この IRP が送信されます。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意のスレッドのコンテキストでレベル。
+PnP マネージャーは、任意のスレッドのコンテキストで、この IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -36,32 +36,32 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-状態の I/O ブロックで返されます。
+I/o 状態ブロックで返されました。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功や状態などの適切なエラー状態に\_失敗しました。
+ドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。または、状態\_失敗など、適切なエラー状態に設定します。
 
-成功した場合、ドライバーの設定**Irp -&gt;IoStatus.Information**を[ **PNP\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request#about-pnpdevicestate)ビットマスク。
+成功すると、ドライバーは**Irp&gt;IoStatus**を設定します。[**デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request#about-pnpdevicestate)のビットマスク\_ます。
 
 
-呼び出す関数またはフィルター ドライバーがこの IRP を処理しない場合[ **IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、設定されていない、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンと次のドライバーに IRP のパス。 このようなドライバーを変更する必要がありますいない**Irp -&gt;IoStatus** IRP を完了する必要があります。
+関数またはフィルタードライバーがこの IRP を処理しない場合は、 [**Ioskipfinalentifinallocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出し、 [*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを設定せずに、irp を次のドライバーに渡します。 このようなドライバーでは、 **irp&gt;IoStatus**を変更しないでください。 irp を完了することはできません。
 
-バス ドライバーがこの IRP を処理しない場合の外に出て**Irp -&gt;IoStatus.Status** IRP の完了であり。
+バスドライバーがこの IRP を処理しない場合は、 **irp&gt;iostatus**がそのままの状態になり、irp が完了します。
 
 <a name="operation"></a>操作
 ---------
 
-デバイス スタックの上部にある、ドライバー、続いて各 [次へ] の下位のドライバー スタックでこの IRP が最初に処理されます。
+この IRP は、デバイススタックの最上位にあるドライバーによって最初に処理され、次にスタック内の1つ下のドライバーによって処理されます。
 
-ドライバーは、PnP デバイスの状態に関する情報がある場合、この IRP を処理します。 ドライバーを設定したり、PNP でフラグをクリア\_デバイス\_状態のビットマスク。 別のドライバー、PNP を設定した場合\_デバイス\_で状態**Irp -&gt;IoStatus.Information**、構造全体を上書きするのではなく、そのビットマスク内のフラグを変更するドライバーを処理する必要があります。
+ドライバーは、デバイスの PnP 状態に関する情報を持っている場合、この IRP を処理します。 ドライバーは、PNP\_デバイス\_状態ビットマスクのフラグを設定または解除できます。 別のドライバーによって、 **Irp&gt;IoStatus. 情報**で PNP\_デバイス\_状態が設定されている場合、ドライバーは、構造体全体を上書きするのではなく、そのビットマスクのフラグを変更する必要があります。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,6 +82,6 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="see-also"></a>関連項目
 
 
-[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)
+[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)
 
-[**PNP\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request#about-pnpdevicestate)
+[**PNP\_デバイスの\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request#about-pnpdevicestate)

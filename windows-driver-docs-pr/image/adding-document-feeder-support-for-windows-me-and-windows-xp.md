@@ -4,49 +4,49 @@ description: Windows Me および Windows XP のドキュメント フィーダ�
 ms.assetid: f3be94fa-6fb7-45de-a3ce-f3d173e802cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e337db52a16eb9d732e088b5112e57ba603ea0e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6aa09bef818282a8a0ca8b298b6327e8beedeecf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375944"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840910"
 ---
-# <a name="adding-document-feeder-support"></a>ドキュメント フィーダーのサポートを追加します。
+# <a name="adding-document-feeder-support"></a>ドキュメントフィーダーサポートの追加
 
-ドキュメント フィーダー付きは、ユニットに接続されている、またはスキャナーをスキャンする位置に紙のドキュメントを自動的にフィードに組み込まれています。 ドキュメント フィーダーの付いたスキャナーなどの機能が公開され、次の一覧に含まれるプロパティの追加により制御されます。 Windows Me と Windows XP は、ルート項目は次のプロパティがあります。
+ドキュメントフィーダーは、スキャナーに関連付けられているか、スキャナーに組み込まれているユニットで、スキャンする位置に用紙ドキュメントを自動的にフィードします。 ドキュメントフィーダーを備えたスキャナーでは、次の一覧に示すプロパティを追加することによって機能が公開され、制御されます。 Windows Me と Windows XP では、次のプロパティがルート項目に配置されています。
 
-- [**WIA\_DPS\_水平\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-horizontal-sheet-feed-size)
+- [**WIA\_DPS\_横\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-horizontal-sheet-feed-size)
 - [**WIA\_DPS\_垂直\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-vertical-sheet-feed-size)
-- [**WIA\_DPS\_MIN\_水平\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-horizontal-sheet-feed-size)
-- [**WIA\_DPS\_MIN\_垂直\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-vertical-sheet-feed-size)
+- [**WIA\_DPS\_最小\_横\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-horizontal-sheet-feed-size)
+- [**WIA\_DPS\_最小\_垂直\_シート\_フィード\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-vertical-sheet-feed-size)
 - [**WIA\_DPS\_シート\_フィーダー\_登録**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-sheet-feeder-registration)
 - [**WIA\_DPS\_ドキュメント\_処理\_機能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)
-- [**WIA\_DPS\_ドキュメント\_処理\_状態**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)
-- [**WIA\_DPS\_ドキュメント\_処理\_を選択します**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)
+- [**WIA\_DPS\_ドキュメント\_\_の状態を処理する**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)
+- [**WIA\_DPS\_ドキュメント\_処理\_選択**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)
 - [**WIA\_DPS\_ページ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pages)
 
-Windows Me と Windows XP は、子項目では、次の省略可能なドキュメント フィーダー プロパティにあります。
+Windows Me と Windows XP では、次のオプションのドキュメントフィーダーのプロパティが子項目に配置されています。
 
 - [**WIA\_DPS\_ページ\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)
 - [**WIA\_DPS\_ページ\_幅**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-width)
-- [**WIA\_DPS\_ページ\_高さ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-height)
-- [**WIA\_IP\_向き**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)
+- [**WIA\_DPS\_ページ\_の高さ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-height)
+- [**WIA\_IP\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)
 
-ドライバーが、WIA を報告するデバイスに、フラット ベッドやドキュメント フィーダー付き、両面印刷ユニットがある場合は、\_DPS\_ドキュメント\_処理\_としての機能のプロパティ (フィード |フラット |DUP)。 確認します WIA の有効な値\_DPS\_ドキュメント\_処理\_選択が正しく設定されています。
+デバイスにフラットベッド、ドキュメントフィーダー、および両面印刷装置が搭載されている場合、ドライバーは\_機能のプロパティを処理する\_\_ドキュメントを\_します。FLAT |DUP)。 WIA\_DPS\_ドキュメント\_処理\_選択の有効な値が正しく設定されていることを確認します。
 
-たとえば、アプリケーションがドキュメント フィーダーの 3 つのページの双方向のスキャンを実行しようとします。 これを実現するアプリケーションは、設定、WIA\_DPS\_ドキュメント\_処理\_にプロパティを選択します (フィーダー |双方向)、WIA を設定および\_DPS\_3 ページのプロパティ。 WIA を設定する必要があります、アプリケーションが最初に、ページの先頭をスキャンしようとすると場合、\_DPS\_ドキュメント\_処理\_にプロパティを選択します (フィーダー |双方向 |前部\_最初)。 これが完了したらアプリケーションがデータ転送元となる要求すべき子項目に移動します。 3 ページ目としてフィーダーに 2 番目のページの一番前と、ミニドライバーは、1、2 つのページとしてそのページのページとしてフィーダーに最初のページの先頭を報告します。
+たとえば、アプリケーションがドキュメントフィーダーから3ページの両面スキャンを実行するとします。 これを実現するために、アプリケーションは\_SELECT プロパティを処理\_、\_ドキュメントに対して、WIA\_DPS を設定します。また、[WIA\_DPS\_ページ] プロパティを3に設定します。 アプリケーションで最初にページの先頭をスキャンする場合は、WIA\_DPS\_ドキュメント\_処理\_SELECT プロパティを設定する必要があります (フィーダー |両面 |FRONT\_最初)。 この処理が完了すると、アプリケーションは、データ転送を要求する子項目に移動する必要があります。 ミニドライバーは、フィーダー内の最初のページの前をページ1、ページ2として、フィーダーの2ページ目をページ3として報告します。
 
-デバイスがドキュメント フィーダー付きの場合、ドキュメント フィーダー付きのプロパティをサポートする必要があることに注意してください。
+デバイスがドキュメントフィーダーを持っている場合は、ドキュメントフィーダーのプロパティをサポートしている必要があることに注意してください。
 
-## <a name="acquiring-data-from-a-document-feeder"></a>ドキュメント フィーダー付きのデータの取得
+## <a name="acquiring-data-from-a-document-feeder"></a>ドキュメントフィーダーからデータを取得する
 
-実装で行う必要があるいくつかの変更がある、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッド、スキャナーがドキュメント フィーダー付きのイメージを取得するとします。
+スキャナーがドキュメントフィーダーからイメージを取得する場合、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッドの実装にはいくつかの変更を加える必要があります。
 
-1. アプリケーションの読み取り、WIA\_DPS\_ドキュメント\_処理\_スキャナーがドキュメント フィーダーを使用してスキャンをサポートしているかどうかを判断する機能のプロパティ。
-1. アプリケーションの読み取り、WIA\_DPS\_ドキュメント\_処理\_ドキュメント フィーダーを使用してスキャンするスキャナーが構成されているかどうかを決定するプロパティを選択します。
-1. アプリケーションは、WIA を読み取ることによってドキュメント フィーダーに用紙が表示がかどうかを判断します。\_DPS\_ドキュメント\_処理\_状態。 フィーダーに用紙がない場合は、設定の WIA\_DPS\_ドキュメント\_処理\_状態を適切な状態コードおよび戻り値の WIA\_エラー\_用紙\_から空**IWiaMiniDrv::drvAcquireItemData**取得が行われた後すぐにします。
-1. チェック、WIA\_DPS\_スキャンの動作を決定するページのプロパティ。 このプロパティが 0 の場合は、フィーダーが空になるまでのすべてのページをスキャンします。 正の場合は、WIA に含まれている値で示されるページの数のみをスキャン\_DPS\_ページのプロパティ。
-1. ループを制御する、継続的にスキャン、およびデータ (一度に 1 つのページ) を呼び出すことによって、WIA アプリケーションを送信して、要求されたページ数をスキャン、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)メソッド。 次のコード例では、これが機能する方法を示します。
+1. アプリケーションは、ドキュメントフィーダーを使用したスキャンがスキャナーでサポートされているかどうかを判断するために、\_機能プロパティを処理する WIA\_DPS\_ドキュメント\_読み取ります。
+1. アプリケーションは、\_SELECT プロパティを処理\_WIA\_DPS\_ドキュメントを読み取り、スキャナーがドキュメントフィーダーを使用してスキャンするように構成されているかどうかを判断します。
+1. アプリケーションは、WIA\_DPS\_ドキュメント\_\_の状態を読み取ることによって、ドキュメントフィーダーに用紙があるかどうかを判断します。 フィーダーに用紙がない場合は、WIA\_DPS\_ドキュメント\_\_の状態を適切な状態コードに設定し、WIA\_エラーを返します\_用紙は IWiaMiniDrv から空で\_ **:** 取得が行われた直後に rvacquireitemdata を:d します。
+1. スキャン動作を決定するには、WIA\_DPS\_ページのプロパティを確認します。 このプロパティが0の場合は、フィーダーが空になるまですべてのページをスキャンします。 正の値の場合は、[WIA\_DPS\_ページ] プロパティに含まれている値によって示されたページ数だけをスキャンします。
+1. [**IWiaMiniDrvCallBack:: MiniDrvCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)メソッドを呼び出すことにより、ループを制御し、継続的にスキャンし、WIA アプリケーションにデータを送信することで、要求された数のページをスキャンします。 これがどのように機能するかを次のコード例に示します。
 
     ```cpp
     for(int x=1; x=Pagecount; x++)
@@ -57,18 +57,18 @@ Windows Me と Windows XP は、子項目では、次の省略可能なドキュ
     }
     ```
 
-1. 場合[ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed) TYMED に設定されている\_コールバックまたは TYMED\_マルチページ\_コールバックし、余分なメッセージ (IT\_MSG\_新規\_ページ) 1 つのページがスキャンされた後、次の 1 つは、スキャンする前に送信する必要があります。 これは、呼び出すことで、 [ **wiasSendEndOfPage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiassendendofpage) WIA サービス ユーティリティ関数。
+1. [**WIA\_IPA\_tymed**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)が tymed\_callback または tymed\_マルチページ\_コールバックに設定されている場合、1つのページがスキャンされた後、追加のメッセージ (メッセージ\_新しい\_ページ) を送信する必要があります。次のものをスキャンする前。 これを行うには、 [**Wiassendendofpage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiassendendofpage)の WIA サービスユーティリティ関数を呼び出します。
 
-ドキュメント フィーダー付きのドライバーが返すページ数は、WIA の設定によって異なります。\_DPS\_ページのプロパティ。
+ドキュメントフィーダードライバーが返すページ数は、WIA の\_DPS\_ページ プロパティの設定によって異なります。
 
-## <a name="if-wiadpspages-is-zero"></a>場合 WIA\_DPS\_ページには 0 です
+## <a name="if-wia_dps_pages-is-zero"></a>WIA\_DPS\_ページがゼロの場合
 
-1. スキャナーは、最初のページをスキャンできない場合は、すぐに、エラー コードを返します。 これには、紙詰まりと用紙、スキャナーを実行するとが含まれます。
-1. スキャナーが正常に最初のページをスキャンし、かつはスキャンを続行できますが紙不足しています、WIA 成功コードを返す\_状態\_エンド\_の\_メディア。 アプリケーションは、スキャナーの用紙が不足していますが、転送が成功すると、この通知します。 WIA に一部のアプリケーションが応答\_エラー\_用紙\_よう WIA には、同じ方法で空\_状態\_エンド\_の\_メディア。
-1. スキャナーが正常に最初のページをスキャンし、かつはスキャンを続行できますがデータの損失にならないエラーが発生した、WIA を返す\_状態\_エンド\_の\_メディア。 これにより、アプリケーションを回復して、エラーが発生する前にスキャンした任意のページを保存できます。 スキャナーが障害から回復した正しくまでにすぐに、後続のスキャンは、エラー コードを返す必要があります。
-1. スキャナーが正常に最初のページをスキャンし、かつはスキャンを続行できますがデータの損失が発生するエラーが発生した、エラー コードをすぐに返します。
+1. スキャナーが最初のページをスキャンできない場合は、すぐにエラーコードを返します。 これには、紙詰まりや、スキャナーの用紙が不足している場合も含まれます。
+1. スキャナーが最初のページを正常にスキャンし、スキャンを続行できても、用紙が不足している場合は、成功コード WIA\_STATUS\_\_メディアの終了\_を返します。 これは、転送が成功したことをアプリケーションに通知しますが、スキャナーの用紙が不足しています。 一部のアプリケーションでは、wia\_ステータス\_\_メディアの終了\_と同じように、wia\_エラー\_用紙\_空になることがあります。
+1. スキャナーが最初のページを正常にスキャンし、スキャンを続行できても、データの損失を発生させないエラーが発生した場合は、WIA\_の状態を返して\_メディアの\_を終了\_ます。 これにより、アプリケーションは、エラーが発生する前にスキャンされたすべてのページを回復し、保存することができます。 その後のスキャンでは、スキャナーがエラーから正常に回復するまで、エラーコードを直ちに返します。
+1. スキャナーが最初のページを正常にスキャンし、スキャンを続行できても、データ損失の原因となるエラーが発生した場合は、直ちにエラーコードを返します。
 
-## <a name="if-wiadpspages-is-positive"></a>場合 WIA\_DPS\_ページが正の値
+## <a name="if-wia_dps_pages-is-positive"></a>WIA\_DPS\_ページが正の場合
 
-1. どの WIA のすべての規則\_DPS\_ページは、0 個適用します。
-1. 要求されたページ数をスキャンする前に、スキャナーに紙が不足している場合は、WIA を返す\_状態\_エンド\_の\_メディア。 これにより、アプリケーション ページが既に正常にスキャンの数を保つため、スキャンのセッションを閉じることができます。 WIA に一部のアプリケーションが応答\_エラー\_用紙\_よう WIA には空のと同じ方法\_状態\_エンド\_の\_メディア。
+1. WIA\_DPS\_ページのすべてのルールが0になります。
+1. 要求された数のページがスキャンされる前にスキャナーの用紙が不足している場合は、WIA\_の状態を返して\_メディアの\_を終了\_ます。 これにより、アプリケーションはスキャンセッションを終了し、既に正常にスキャンされているページの数を保持することができます。 一部のアプリケーションでは、wia\_エラー\_用紙\_、\_メディアの終了\_を WIA\_ステータス\_する場合と同じように、空になることがあります。

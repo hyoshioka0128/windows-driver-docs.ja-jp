@@ -3,53 +3,53 @@ title: PnP マネージャーがシステム リソースを再配布する
 description: PnP マネージャーがシステム リソースを再配布する
 ms.assetid: c8e6277b-b1e5-449f-b5a0-f5a46b46e56e
 keywords:
-- WDK UMDF 電源管理のシナリオ、PnP マネージャーは、システム リソースを再分配します。
-- システム リソースのシナリオを WDK UMDF の再配布
+- 電源管理のシナリオ WDK UMDF、PnP マネージャーによるシステムリソースの再配布
+- システムリソースの再配布のシナリオ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd0a136682f788e8ebdee1beff9fb56e270dc82
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2ab0d6a3bbfe4e93dd7dd1d3054eb98c3dea39a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372312"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831615"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources"></a>PnP マネージャーがシステム リソースを再配布する
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ユーザーがシステムでは、デバイスを追加し、PnP マネージャーが別のデバイスに既に割り当てられているシステム リソースがデバイスに必要な場合、PnP マネージャーは、リソースを再割り当てを試みます。
+ユーザーがデバイスをシステムに追加し、PnP マネージャーが既に別のデバイスに割り当てているシステムリソースがデバイスに必要な場合は、PnP マネージャーがリソースの再割り当てを試行します。
 
-このプロセス中には、PnP マネージャーは、デバイスを停止し、外の作業 (D0) 状態に移動します。 提供新しいリソースの一覧をデバイスに新しいリソースを使用して、再起動ができるようにします。
+このプロセスの間、PnP マネージャーはデバイスを停止し、動作 (D0) 状態から除外します。 その後、新しいリソースリストがデバイスに配信され、新しいリソースを使用して再起動できるようになります。
 
-リソースを再頒布時に、PnP マネージャーは変更されません、デバイスのリソースの割り当て、デバイスの UMDF に基づいたドライバーのいずれかが提供されている場合、 [ **IPnpCallback::OnQueryStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)コールバック関数、し、コールバック関数が再割り当てを拒否しました。
+リソースを再配布するときに、デバイスの UMDF ベースのドライバーのいずれかで[**IPnpCallback:: OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)コールバック関数が提供され、コールバック関数が再割り当てを拒否した場合、PnP マネージャーはデバイスのリソース割り当てを変更しません.
 
-<a href="" id="power-down-sequence"></a>**シーケンスを電源**  
-各 UMDF ベース関数とフィルター ドライバーを停止中でデバイスをサポートするために、フレームワークはシーケンス、ドライバー スタックの最上位である driver 以降では、一度に 1 つのドライバーで、次を行います。
+<a href="" id="power-down-sequence"></a>**電源ダウンシーケンス**  
+各 UMDF ベースの関数とフィルタードライバーが停止しているデバイスをサポートしている場合、フレームワークは、ドライバースタックの最上位にあるドライバーから、一度に1つのドライバーを順番に実行します。
 
-1.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoSuspend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediosuspend)コールバック関数。
+1.  ドライバーが自己管理型 i/o を使用している場合、フレームワークは、ドライバーの[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoSuspend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediosuspend)コールバック関数を呼び出します。
 
-2.  フレームワークは、すべてのデバイスの電源管理対象の I/O キューを停止します。
+2.  フレームワークは、デバイスのすべての電源管理 i/o キューを停止します。
 
-3.  フレームワークは、ドライバーの[ **IPnpCallback::OnD0Exit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit) (存在する) 場合、コールバック関数。
+3.  フレームワークは、ドライバーの[**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit) callback 関数 (存在する場合) を呼び出します。
 
-4.  フレームワークは、ドライバーの[ **IPnpCallbackHardware::OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)コールバック関数 (存在する) 場合、PnP マネージャーがデバイスに割り当てられているハードウェア リソースの一覧を渡します。
+4.  このフレームワークは、PnP マネージャーによってデバイスに割り当てられたハードウェアリソースのリストを渡して、ドライバーの[**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)コールバック関数 (存在する場合) を呼び出します。
 
-次の手順を示す図を表示するには、図計画的な削除を参照してください。[ユーザーがデバイスから切り離し](a-user-unplugs-a-device.md)します。
+これらの手順を示す図を表示するには、[ユーザーがデバイスを Unplugs](a-user-unplugs-a-device.md)していることを確認してください。
 
 <a href="" id="power-up-sequence-------"></a>**電源投入シーケンス**   
-各 UMDF ベース関数とフィルター ドライバーのデバイスをサポートする、フレームワークは、一度に 1 つのドライバーをドライバー スタックの最下位レベルである driver 以降では、シーケンスで、次を行います。
+デバイスをサポートする各 UMDF ベースの関数とフィルタードライバーについて、フレームワークは次の処理を一度に1つずつ実行します。ドライバーはドライバースタックの一番下のドライバーから始まります。
 
-1.  フレームワークは、ドライバーの[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数 (存在する) 場合、PnP マネージャーがデバイスに割り当てられているハードウェア リソースの一覧を渡します。
+1.  このフレームワークは、ドライバーの[**IPnpCallbackHardware:: On ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数 (存在する場合) を呼び出し、PnP マネージャーがデバイスに割り当てたハードウェアリソースのリストを渡します。
 
-2.  フレームワークは、ドライバーの[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) (存在する) 場合、コールバック関数。
+2.  フレームワークは、ドライバーの[**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) callback 関数 (存在する場合) を呼び出します。
 
-3.  フレームワークは、すべてのデバイスの電源管理対象の I/O キューを再起動します。
+3.  フレームワークは、デバイスのすべての電源管理 i/o キューを再起動します。
 
-4.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediorestart)コールバック関数。
+4.  ドライバーが自己管理型 i/o を使用している場合、フレームワークはドライバーの[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoRestart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediorestart) callback 関数を呼び出します。
 
-次の手順を示す図を表示するには、次を参照してください。[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)します。
+これらの手順を示す図については、「[デバイスにユーザーが](a-user-plugs-in-a-device.md)接続している」を参照してください。
 
  
 

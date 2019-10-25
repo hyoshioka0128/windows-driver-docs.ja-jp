@@ -1,31 +1,31 @@
 ---
 title: OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS
-description: OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS を使用して、優先する複数の通信事業者ネットワーク プロバイダーの一覧を照会または設定します。 マルチ キャリア プロバイダーは、ホーム プロバイダーとして設定できるものです。
+description: OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS は、優先するマルチキャリアネットワークプロバイダーの一覧を設定または照会するために使用されます。 マルチキャリアプロバイダーは、ホームプロバイダーとして設定できるものです。
 ms.assetid: BA78E0B9-1B57-412C-83E7-328F8304C82D
 ms.date: 08/08/2017
-keywords: -OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 753dd6da2f49bc748e8d8f21949a162f32918746
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 43f87b7a2173dabb20661ed5aea1aa5599b577b5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843811"
 ---
-# <a name="oidwwanpreferredmulticarrierproviders"></a>OID\_WWAN\_優先\_マルチ\_プロバイダー
+# <a name="oid_wwan_preferred_multicarrier_providers"></a>OID\_WWAN\_優先\_マルチキャリア\_プロバイダー
 
 
-OID\_WWAN\_優先\_マルチ\_プロバイダーを使用する*設定*または*クエリ*優先の複数の通信事業者ネットワーク プロバイダーの一覧。 マルチ キャリア プロバイダーは、可能性のあるもの*設定*ホーム プロバイダーとしてサポートします。
+OID\_\_優先\_マルチキャリア\_プロバイダーは、優先するマルチキャリアネットワークプロバイダーの一覧を*設定*または*照会*するために使用されます。 マルチキャリアプロバイダーは、ホームプロバイダーとして*設定*できるものです。
 
-両方*設定*と*クエリ*要求がサポートされています。 ミニポート ドライバーを処理する必要があります*設定*と*クエリ*NDIS を返す非同期的に、最初に要求\_状態\_INDICATION\_元に必要な要求、およびそれ以降の送信、 [ **NDIS\_状態\_WWAN\_優先\_マルチ\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)状態通知を含む、 [ **NDIS\_WWAN\_優先\_マルチ\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)構造体。
+*セット*要求と*クエリ*要求の両方がサポートされています。 ミニポートドライバーは、*セット*および*クエリ*要求を非同期的に処理し、最初に NDIS\_の\_状態を返し、元の要求に必要な\_を示し、その後、 [**ndis\_ステータス\_WWAN を送信する必要があります。\_\_マルチキャリア\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)の状態通知では、 [**NDIS\_WWAN\_推奨される\_マルチキャリア\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)の構造が含まれています。
 
-ミニポート ドライバーを設定する必要があります、 **PreferredListHeader.ElementType**メンバー **WwanStructProvider2**と**PreferredListHeader.ElementCount**メンバーをOID に応答するときに、リスト内のプロバイダーの番号\_WWAN\_優先\_プロバイダー*クエリ*要求。 返されるマルチ キャリア プロバイダー、*クエリ*優先マルチ キャリア一覧は、サービスに返される時に、ホーム プロバイダーとして設定できる必要があります。
+ミニポートドライバーでは、 **PreferredListHeader**メンバーを**WwanStructProvider2**に設定し、 **PreferredListHeader**のメンバーが OID\_WWAN に応答するときにリスト内のプロバイダーの数に設定する必要があり @no__t優先\_プロバイダーの*クエリ*要求 (_s) *クエリ*で返されるマルチキャリアプロバイダーは、優先されるマルチキャリアリストがサービスに返されるときにホームプロバイダーとして設定できる必要があります。
 
-ミニポート ドライバーを設定する必要があります、 **PreferredListHeader.ElementType**メンバー **WwanStructProvider2**と**PreferredListHeader.ElementCount**場合は 0 をメンバーOID に応答して\_WWAN\_優先\_プロバイダー*設定*要求。
+ミニポートドライバーは、 **PreferredListHeader**メンバーを**WwanStructProvider2**に設定し、 **PreferredListHeader**が\_\_OID に応答するときにを0に設定する必要があり\_プロバイダーが要求を*設定*します。
 
-エラー ミニポートを設定する必要があります、 **uStatus**の NDIS メンバー\_WWAN\_優先\_マルチ\_障害状態プロバイダーの構造と**PreferredListHeader.ElementCount**を 0 にし、 **PreferredLIstHeader.ElementType**に**WwanStructProvider2**します。
+エラーミニポートでは、NDIS\_WWAN\_優先\_マルチキャリア\_PROVIDERS 構造体の**uStatus**メンバーを、エラー状態と**PreferredListHeader**を 0**に設定し、PreferredLIstHeader**を**WwanStructProvider2**にします。
 
-**Rssi**と**ErrorRate** WWAN のメンバー\_PROVIDER2 構造は、使用可能な場合、設定する必要があります。
+WWAN\_PROVIDER2 構造体の**Rssi**および**errorrate**メンバーは、使用可能な場合は設定する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -38,11 +38,11 @@ OID\_WWAN\_優先\_マルチ\_プロバイダーを使用する*設定*または
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>バージョン:Windows 8 および Windows の以降のバージョンでサポートされています。</p></td>
+<td><p>バージョン: Windows 8 以降のバージョンの Windows でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -50,11 +50,11 @@ OID\_WWAN\_優先\_マルチ\_プロバイダーを使用する*設定*または
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_優先\_マルチ\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
+[**NDIS\_WWAN\_優先\_マルチキャリア\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
 
-[**NDIS\_状態\_WWAN\_優先\_マルチ\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)
+[**NDIS\_ステータス\_WWAN\_優先\_マルチキャリア\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)
 
-[MB プロバイダー操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
+[MB プロバイダーの操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

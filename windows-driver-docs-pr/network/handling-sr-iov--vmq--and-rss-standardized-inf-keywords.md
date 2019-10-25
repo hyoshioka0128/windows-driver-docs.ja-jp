@@ -4,71 +4,71 @@ description: SR-IOV、VMQ、および RSS の標準化された INF キーワー
 ms.assetid: EF556563-4097-4388-A563-29FC891AC626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091d8b2fda2829dc24af30d0c6330e4ffb8b1d61
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76e0dfe1be079ae85d9ffb1ea478799e2b22bbf2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381357"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842562"
 ---
 # <a name="handling-sr-iov-vmq-and-rss-standardized-inf-keywords"></a>SR-IOV、VMQ、および RSS の標準化された INF キーワードの処理
 
 
-シングル ルート I/O 仮想化 (SR-IOV) 仮想マシン キュー (VMQ) をサポートし、受信側 scaling (RSS) ネットワーク アダプターは、次のように、これらのインターフェイスの使用を有効にできます。
+シングルルート i/o 仮想化 (SR-IOV)、仮想マシンキュー (VMQ)、receive side scaling (RSS) をサポートするネットワークアダプターでは、次の方法でこれらのインターフェイスを使用できます。
 
--   個別にまたは同時に、SR-IOV と VMQ を有効にすることができます。
+-   Sr-iov と VMQ は、個別に、または同時に有効にすることができます。
 
--   SR-IOV または VMQ が有効にすると、ネットワーク アダプターで RSS を有効にできません。
+-   SR-IOV または VMQ が有効になっている場合、ネットワークアダプターで RSS を有効にすることはできません。
 
-オペレーティング システムでは、次のように、SR-IOV、VMQ、または RSS インターフェイスの使用を有効にします。
+オペレーティングシステムにより、sr-iov、VMQ、または RSS インターフェイスを次のように使用できるようになります。
 
--   TCP/IP スタックにネットワーク アダプターがバインドされると、オペレーティング システムは、RSS 機能を使用できるようにします。
+-   ネットワークアダプターが TCP/IP スタックにバインドされている場合、この動作により RSS 機能を使用できるようになります。
 
--   ネットワーク アダプターが HYPER-V 拡張可能スイッチのドライバー スタックにバインドされると、オペレーティング システム、SR-IOV または VMQ のいずれかの機能の使用を有効にします。
+-   ネットワークアダプターが Hyper-v 拡張可能スイッチドライバースタックにバインドされている場合、オペレーティングシステムは sr-iov または VMQ 機能のいずれかを使用できます。
 
-    HYPER-V 拡張可能スイッチの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
+    Hyper-v 拡張可能スイッチの詳細については、「 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)」を参照してください。
 
-ネットワーク アダプターが、TCP/IP スタックと、HYPER-V 拡張可能スイッチのドライバー スタックからバインドできない場合は、ミニポート ドライバーが停止され、し、再初期化します。 このため、RSS、VMQ、SR-IOV 対応の間に自動的に切り替えるには、このようなネットワーク アダプターのことはできません。
+ネットワークアダプターが TCP/IP スタックと Hyper-v 拡張可能スイッチドライバースタックからバインド解除されると、ミニポートドライバーが停止してから再初期化されます。 このため、このようなネットワークアダプターは RSS、VMQ、および sr-iov を自動的に切り替えることはできません。
 
-NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数、ミニポート ドライバーこれらの手順に従う NDIS に、現在有効になっている、SR-IOV、VMQ、または RSS の機能を報告する前に。
+NDIS が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すと、ミニポートドライバーは、現在有効になっている SR-IOV、VMQ、RSS の各機能を ndis に報告する前に、次の手順に従います。
 
-1.  ミニポート ドライバーの読み込み、  **\*SriovPreferred** NDIS を現在有効な機能を報告する前にキーワード。
+1.  ミニポートドライバーは、現在有効になっている機能を NDIS に報告する前に、 **\*Sriの優先**キーワードを読み取ります。
 
-    場合の値、  **\*SriovPreferred**キーワードは、1 つ、ミニポート ドライバーが SR-IOV 対応の基本設定の構成します。
+    **Sri\*優先**キーワードの値が1の場合、ミニポートドライバーは sr-iov 設定用に構成されています。
 
-2.  ミニポート ドライバーの読み込み、  **\*RssOrVmqPreference** NDIS を現在有効な機能を報告する前にキーワード。
+2.  ミニポートドライバーは、現在有効になっている機能を NDIS に報告する前に、 **\*RssOrVmqPreference**キーワードを読み取ります。
 
-    場合の値、  **\*RssOrVmqPreference**キーワードは、1 つ、VMQ の基本設定が構成されているミニポート ドライバー。
+    **\*RssOrVmqPreference**キーワードの値が1の場合、ミニポートドライバーは VMQ 優先順位用に構成されています。
 
-    場合の値、  **\*RssOrVmqPreference**キーワードは、0 またはキーワードが存在しない、RSS の基本設定が構成されているミニポート ドライバー。
+    **\*RssOrVmqPreference**キーワードの値が0であるか、キーワードが存在しない場合、ミニポートドライバーは RSS 設定用に構成されます。
 
-3.  これを読み取る必要があるかどうかミニポート ドライバーが SR-IOV 対応の基本設定の構成で、  **\*SRIOV**ネットワーク アダプターで SR-IOV が有効になっているかどうかを決定するキーワード。 キーワードは、いずれかに設定されている場合、ドライバーは現在有効になっている SR-IOV 設定を報告します。
+3.  ミニポートドライバーが sr-iov 設定用に構成されている場合は、ネットワークアダプターで sr-iov が有効になっているかどうかを確認するために、 **\*SRIOV**キーワードを読み取る必要があります。 キーワードが1に設定されている場合は、現在有効になっている SR-IOV 設定がドライバーによって報告されます。
 
-    ミニポート ドライバーが SR-IOV 設定を報告する方法の詳細については、次を参照してください。 [SR-IOV 機能を決定する](determining-sr-iov-capabilities.md)します。
+    ミニポートドライバーが sr-iov 設定を報告する方法の詳細については、「sr-iov[機能の決定](determining-sr-iov-capabilities.md)」を参照してください。
 
-    SR-IOV キーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+    Sr-iov キーワードの詳細については、「sr-iov[用の標準化](standardized-inf-keywords-for-sr-iov.md)された INF キーワード」を参照してください。
 
-    **注**  キーワードを標準化、RSS のいずれかを読み取り、ミニポート ドライバーが SR-IOV 対応の基本設定で構成された場合いない必要があります。 ただし、ドライバーは、VMQ を読み取る必要があります **\*VMQVlanFiltering**標準化されたキーワードです。 このキーワードは、ミニポート ドライバーがメディア アクセス制御 (MAC) ヘッダーで仮想の VLAN (VLAN) id を使用してネットワーク パケットをフィルター処理を有効になっているかどうかを指定します。 ミニポート ドライバーでは、この機能を報告するには、NDIS\_受信\_フィルター\_MAC\_ヘッダー\_VLAN\_ID\_でサポートされているフラグ、 **SupportedMacHeaderFields**のメンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 詳細については、  **\*VMQVlanFiltering**標準化されたキーワードを参照してください[VMQ の標準化された INF キーワード](standardized-inf-keywords-for-vmq.md)します。
-
-     
-
-4.  それを読み取る必要があるかどうかミニポート ドライバーは VMQ の基本設定の構成で、  **\*VMQ**ネットワーク アダプターで VMQ が有効になっているかどうかを決定するキーワード。 キーワードは、いずれかに設定されている場合、ドライバーは現在有効になっている VMQ 設定を報告します。 ミニポート ドライバーで VMQ 設定を報告する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
-
-    VMQ キーワードの詳細については、次を参照してください。 [VMQ の標準化された INF キーワード](standardized-inf-keywords-for-vmq.md)します。
-
-    **注**  ミニポート ドライバーは VMQ の基本設定を構成する場合にする必要がありますを読み取れません RSS または SR-IOV 対応のいずれかのキーワードを標準化します。
+    **注**  sr-iov の設定用にミニポートドライバーが構成されている場合は、RSS の標準化されたキーワードを読み取ることができません。 ただし、ドライバーは VMQ **\*VMQVlanFiltering**標準化されたキーワードを読み取る必要があります。 このキーワードは、ミニポートドライバーが、メディアアクセスコントロール (MAC) ヘッダーの仮想 VLAN (VLAN) 識別子を使用してネットワークパケットをフィルター処理できるようにするかどうかを指定します。 ミニポートドライバーは、ndis\_受信\_フィルター\_MAC\_ヘッダー\_VLAN\_ID\_Ndis の**SupportedMacHeaderFields**メンバーでサポートされているフラグを設定することによって、この機能を報告し[ **\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造です。 **\*VMQVlanFiltering**の標準化されたキーワードの詳細については、「 [VMQ の標準化](standardized-inf-keywords-for-vmq.md)された INF キーワード」を参照してください。
 
      
 
-5.  これを読み取る必要があるかどうかは、RSS の基本設定のミニポート ドライバーが構成されている、  **\*RSS**ネットワーク アダプターで RSS が有効になっているかどうかを決定するキーワード。 キーワードは、いずれかに設定されている場合、ドライバーは現在有効な RSS 設定を報告します。 ミニポート ドライバーが RSS の設定を報告する方法の詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
+4.  ミニポートドライバーが VMQ 優先用に構成されている場合、ネットワークアダプターで VMQ が有効になっているかどうかを確認するには、 **\*vmq**キーワードを読み取る必要があります。 キーワードが1に設定されている場合は、現在有効になっている VMQ の設定がドライバーによって報告されます。 ミニポートドライバーが VMQ 設定を報告する方法の詳細については、「[ネットワークアダプターの Vmq 機能の決定](determining-the-vmq-capabilities-of-a-network-adapter.md)」を参照してください。
 
-    RSS キーワードの詳細については、次を参照してください。[の RSS の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)します。
+    VMQ キーワードの詳細については、「 [vmq の標準化](standardized-inf-keywords-for-vmq.md)された INF キーワード」を参照してください。
 
-    **注**  ミニポート ドライバーは RSS の基本設定を構成する場合にする必要がありますを読み取れません VMQ または SR-IOV 対応のいずれかのキーワードを標準化します。
+    **注**  ミニポートドライバーが VMQ に設定されている場合は、RSS または sr-iov の標準化されたキーワードを読み取ることができません。
 
      
 
-次の表では、ミニポート ドライバーが、ネットワーク アダプターで適切なインターフェイスを有効にするには、SR-IOV、VMQ、または RSS の基本設定を決定する方法について説明します。
+5.  ミニポートドライバーが RSS 設定用に構成されている場合、ネットワークアダプターで RSS が有効になっているかどうかを確認するには、 **\*の rss**キーワードを読む必要があります。 キーワードが1に設定されている場合は、現在有効になっている RSS 設定がドライバーによって報告されます。 ミニポートドライバーが RSS 設定を報告する方法の詳細については、「 [rss の構成](rss-configuration.md)」を参照してください。
+
+    RSS キーワードの詳細については、「 [rss 用の標準化](standardized-inf-keywords-for-rss.md)された INF キーワード」を参照してください。
+
+    **注**  ミニポートドライバーが RSS 設定用に構成されている場合は、VMQ または sr-iov の標準化されたキーワードを読み取ることができません。
+
+     
+
+次の表は、ネットワークアダプターで正しいインターフェイスを有効にするために、ミニポートドライバーによって sr-iov、VMQ、または RSS の設定がどのように決定されるかを示しています。
 
 <table style="width:100%;">
 <colgroup>
@@ -81,7 +81,7 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><em>SriovPreferred</th>
+<th align="left"><em>Sriを優先</th>
 <th align="left"></em>RssOrVmqPreference</th>
 <th align="left"><em>SRIOV</th>
 <th align="left"></em>VMQ</th>
@@ -95,54 +95,54 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>なし</p></td>
-<td align="left"><p>SR-IOV と VMQ</p></td>
+<td align="left"><p>該当なし</p></td>
+<td align="left"><p>Sr-iov と VMQ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>VMQ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>1、0、またはレジストリに存在しません</p></td>
+<td align="left"><p>1、0、またはレジストリに存在しません。</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>なし</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>VMQ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>なし</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
-<td align="left"><p>なし</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
+<td align="left"><p>該当なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>RSS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
-<td align="left"><p>0 の場合、またはレジストリに存在しません</p></td>
-<td align="left"><p>なし</p></td>
-<td align="left"><p>なし</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
+<td align="left"><p>0、またはレジストリに存在しません。</p></td>
+<td align="left"><p>該当なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>なし</p></td>
 </tr>
@@ -151,13 +151,13 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com
 
  
 
-**注**  ときの SR-IOV 対応および VMQ インターフェイスの両方が有効、SR-IOV 既定以外のバーチャル ポート (拡張) を PCI Express (PCIe) 物理機能 (PF) にアタッチされているが VMQ インターフェイスの VM のキューの代わりに使用します。 詳細については、次を参照してください。[既定以外の仮想ポートおよび VMQ](nondefault-virtual-ports-and-vmq.md)します。
+**注**  SR-IOV と vmq のインターフェイスの両方が有効になっている場合、PCI Express (PCIe) 物理機能 (PF) に接続されている sr-iov の既定以外の仮想ポート (vports) は、VMQ インターフェイスの VM キューの代わりに使用されます。 詳細については、「[既定以外の仮想ポートと VMQ](nondefault-virtual-ports-and-vmq.md)」を参照してください。
 
  
 
-ミニポート ドライバーでは、現在有効なインターフェイスの機能を提供する必要があります。 たとえば、SR-IOV が有効になっている場合、ミニポート ドライバーする必要がありますアドバタイズ SR-IOV 機能が機能しない VMQ または RSS。 ただし、ミニポート ドライバーが、ネットワーク アダプターに関係なく、インターフェイスが有効になって完了の RSS、VMQ、SR-IOV 対応ハードウェアの機能を常に報告する必要があります。
+ミニポートドライバーは、現在有効になっているインターフェイスの機能をアドバタイズする必要があります。 たとえば、sr-iov が有効になっている場合、ミニポートドライバーは sr-iov 機能をアドバタイズする必要がありますが、VMQ または RSS の機能は提供しません。 ただし、ミニポートドライバーは、ネットワークアダプターで有効になっているインターフェイスに関係なく、RSS、VMQ、および SR-IOV の完全なハードウェア機能を常に報告する必要があります。
 
-**注**  VMQ と SR-IOV のインターフェイスを使用するは、VM キューまたは SR-IOV 仮想ポート (拡張) 経由でフィルター処理を受信します。 フィルター処理結果として、いくつか表示される機能では、同じが必要なまたはインターフェイスのいずれかのときに、さまざまな設定が有効にします。 受信側の SR-IOV インターフェイスのフィルタ リング機能を報告する方法の詳細については、次を参照してください。[受信フィルタ リング機能を決定する](determining-receive-filtering-capabilities.md)します。 VMQ インターフェイスのフィルタ リング機能の受信を報告する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
+VMQ および sr-iov インターフェイスは、VM キューまたは sr-iov 仮想ポート (VPorts) に対して受信フィルター処理を使用する  に**注意**してください。 そのため、これらのインターフェイスのいずれかが有効になっている場合、一部の受信フィルター処理機能には同じまたは異なる設定が必要です。 SR-IOV インターフェイスの受信フィルター処理機能を報告する方法の詳細については、「[受信フィルター機能の決定](determining-receive-filtering-capabilities.md)」を参照してください。 VMQ インターフェイスの受信フィルター処理機能を報告する方法の詳細については、「[ネットワークアダプターの Vmq 機能の決定](determining-the-vmq-capabilities-of-a-network-adapter.md)」を参照してください。
 
  
 

@@ -3,19 +3,19 @@ title: アクセス制御
 description: アクセス制御
 ms.assetid: 7f87276f-4014-4b37-b051-4bf02acbf575
 keywords:
-- 脅威を最小限に抑え、セキュリティ WDK ファイル システム
-- アクセス制御の WDK ファイル システム
-- アクセスの検証の WDK ファイル システム
-- WDK ファイル システムのセキュリティを検証しています
-- セキュリティのチェック
+- セキュリティ WDK ファイルシステム、脅威の最小化
+- アクセス制御 WDK ファイルシステム
+- 検証 WDK ファイルシステムへのアクセス
+- セキュリティ WDK ファイルシステムの検証
+- セキュリティの確認
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 556036d7912104cbdf448345a125711f9355bcfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 196c68ef022781b1e2d2e935765b2e8715e9480e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381772"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841510"
 ---
 # <a name="access-control"></a>アクセス制御
 
@@ -23,21 +23,21 @@ ms.locfileid: "67381772"
 ## <span id="ddk_access_control_if"></span><span id="DDK_ACCESS_CONTROL_IF"></span>
 
 
-不適切なアクセスからの保護は、ほとんどのドライバーは、それらのデバイス オブジェクトに対して I/O マネージャーによって適用される既定のアクセス制御に依存します。 その他のメカニズムのドライバーを利用できます。 おそらく最も簡単な標準のドライバーは、ドライバーをインストールするときに、明示的なセキュリティ記述子を適用します。 デバイス オブジェクトにセキュリティ記述子を適用する例については、後のセクションで説明します。
+不適切なアクセスから保護するために、ほとんどのドライバーは、デバイスオブジェクトに対して i/o マネージャーによって適用される既定のアクセス制御に依存しています。 ドライバーでは、他のメカニズムを使用できます。 通常は、ドライバーをインストールするときに、明示的なセキュリティ記述子を適用するのが最も簡単です。 デバイスオブジェクトにセキュリティ記述子を適用する例については、後のセクションで説明します。
 
-セキュリティ ポリシーを実装するドライバーはでしたアシスタンス管理のセキュリティ アクセス用の標準の Windows Api に依存します。 この場合、ドライバーは、セキュリティ記述子の記憶域を管理し、セキュリティを検証するセキュリティの参照の監視ルーチンの呼び出しを担当します。 次などの多数のルーチンが含まれます。
+独自のセキュリティポリシーを実装するドライバーは、標準の Windows Api に依存して、セキュリティアクセスの管理を支援することができます。 この場合、ドライバーはセキュリティ記述子の格納を管理し、セキュリティを検証するためにセキュリティ参照モニタールーチンを呼び出します。 これには、次のような多くのルーチンが含まれます。
 
--   [**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)--このルーチンは、呼び出し元のセキュリティ資格情報に対して、セキュリティ記述子を比較します。
+-   [**Seaccesscheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-seaccesscheck)--このルーチンは、セキュリティ記述子を呼び出し元のセキュリティ資格情報と比較します。
 
--   [**SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seprivilegecheck)--このルーチンは、特定の権限が呼び出し元が有効である決定します。
+-   [**SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seprivilegecheck)--このルーチンは、指定された特権が呼び出し元に対して有効になっているかどうかを判断します。
 
--   [**SeSinglePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-sesingleprivilegecheck)--このルーチンは、呼び出し元が特定の特権が有効になっているかどうかを決定します。
+-   [**SeSinglePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-sesingleprivilegecheck)--このルーチンは、呼び出し元に対して特定の特権が有効になっているかどうかを判断します。
 
--   [**SeAuditingFileOrGlobalEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seauditingfileorglobalevents)--このルーチンは、システムが監査を有効なかどうかを示します。
+-   [**SeAuditingFileOrGlobalEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seauditingfileorglobalevents)--このルーチンは、システムで監査が有効になっているかどうかを示します。
 
--   [**SeOpenObjectAuditAlarm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seopenobjectauditalarm)--このルーチンは、開いているオブジェクトのイベントを監査します。
+-   [**SeOpenObjectAuditAlarm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seopenobjectauditalarm)--このルーチンは、開いているオブジェクトイベントを監査します。
 
-この一覧が完了していないが、さまざまなアクセスの検証を実行するをドライバー内で使用できる主な機能がについて説明します。
+この一覧は完全ではありませんが、アクセス検証を実行するためにドライバー内で使用できる主な機能をいくつか説明しています。
 
  
 

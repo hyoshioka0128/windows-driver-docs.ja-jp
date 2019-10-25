@@ -6,12 +6,12 @@ keywords:
 - ネットワークドライバー WDK、ドキュメント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4832be8f00942e6d0682de8febaf6368fc963d2c
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: b2a3d3d20c325524060aa34608349c6f8cc4721a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70063875"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842969"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>ネットワーク ドライバー設計ガイドのナビゲーション
 
@@ -39,7 +39,7 @@ Microsoft Windows ベースのオペレーティングシステムでは、さ�
 
     NDIS 6.1 の詳細については、「 [ndis 6.1 の概要](introduction-to-ndis-6-1.md)」を参照してください。
 
--   NDIS 6.0。 Windows Vista 以降のバージョンの Windows でサポートされています。 NDIS 6.0 では、以前のバージョンの NDIS では提供されていなかったフィルタードライバーと多くの追加サービスがサポートされています。 NDIS 6.0 には、ドライバーの初期化とネットワークデータ管理の主要な更新プログラムが含まれています。これには、実行時にドライバーを再構成する必要があることや、ネットワークパケットデータを処理するための[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)アーキテクチャなどがあります ランタイムの再構成のサポートの詳細については、「[ドライバースタックの管理](driver-stack-management.md)」を参照してください。 NDIS 6.0 でネットワークパケットデータを処理する方法の詳細については、「 [\_NET BUFFER Architecture](net-buffer-architecture.md)」を参照してください。
+-   NDIS 6.0。 Windows Vista 以降のバージョンの Windows でサポートされています。 NDIS 6.0 では、以前のバージョンの NDIS では提供されていなかったフィルタードライバーと多くの追加サービスがサポートされています。 NDIS 6.0 には、ドライバーの初期化とネットワークデータ管理の主要な更新プログラムが含まれています。これには、実行時にドライバーを再構成する必要があることや、ネットワークパケットデータを処理するための[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)アーキテクチャなどがあります ランタイムの再構成のサポートの詳細については、「[ドライバースタックの管理](driver-stack-management.md)」を参照してください。 NDIS 6.0 でネットワークパケットデータを処理する方法の詳細については、「 [NET\_のバッファーアーキテクチャ](net-buffer-architecture.md)」を参照してください。
 
     NDIS 6.0 の詳細については、「 [ndis 6.0 の概要](introduction-to-ndis-6-0.md)」を参照してください。
 
@@ -70,7 +70,7 @@ Windows ネットワークアーキテクチャとプログラミングに関す
 次の追加ドライバーモデルを使用して、特定のハードウェアテクノロジとアーキテクチャを使用することができます。
 
 <table>  
-<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">テクノロジ</th>
@@ -79,7 +79,7 @@ Windows ネットワークアーキテクチャとプログラミングに関す
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Scalable Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">スケーラブル ネットワーク</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Scalable Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">スケーラブル ネットワーク</a></p></td>
 <td align="left"><p>ネットワークアダプターに対するタスクのオフロードをサポートするネットワークテクノロジ。次に例を示します。</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">ヘッダー-データを分割</a>します。これは、受信したイーサネットフレームのヘッダーとデータを別々のバッファーに分割するサービスです。</p></li>
@@ -106,15 +106,15 @@ Windows ネットワークアーキテクチャとプログラミングに関す
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Wireless Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">ワイヤレス ネットワーキング</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Wireless Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">ワイヤレス ネットワーキング</a></p></td>
 <td align="left"><p>ネイティブ802.11 ワイヤレス LAN を含むネットワーク機能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Network Module Registrar](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">ネットワーク モジュール レジストラー</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Network Module Registrar](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">ネットワーク モジュール レジストラー</a></p></td>
 <td align="left"><p>ドライバーがネットワークモジュールを相互に接続できるようにするシステム機能。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">Winsock カーネル</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">Winsock カーネル</a></p></td>
 <td align="left"><p>カーネルモードのネットワークプログラミングインターフェイス (NPI)。</p></td>
 </tr>
 <tr class="even">

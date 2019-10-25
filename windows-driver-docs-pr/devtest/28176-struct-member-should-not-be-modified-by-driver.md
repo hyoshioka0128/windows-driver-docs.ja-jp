@@ -1,29 +1,29 @@
 ---
 title: C28176
-description: 警告 C28176 が構造体のメンバーは、ドライバーによっては変更しないでください。
+description: 警告 C28176 構造体のメンバーは、ドライバーによって変更されてはなりません。
 ms.assetid: 837b2dcd-0682-460f-a3ae-ebd82bcc451b
 keywords:
-- '警告は、WDK: PREfast for Drivers を一覧表示'
-- 'エラーは、WDK: PREfast for Drivers を一覧表示'
+- ドライバーの WDK PREfast の一覧に警告が表示される
+- ドライバーの WDK PREfast の一覧にエラーが表示される
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28176
-ms.openlocfilehash: bbf48ababf2ce0be16ea35978aa91b76de5dc1d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e0e2ea1ae7d3e8360fac0755b9b18f4371bf1c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371478"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839591"
 ---
 # <a name="c28176"></a>C28176
 
 
-C28176 を警告します。構造体のメンバーは、ドライバーによっては変更しないでください。
+警告 C28176: 構造体のメンバーはドライバーによって変更されないようにする必要があります
 
-この警告は、ドライバーがドライバーを決して変更ドキュメントに未記載の構造体メンバーを変更することを示します。
+この警告は、ドライバーによって変更されないように、ドキュメント化されていない構造体のメンバーが変更されたことを示します
 
-ドライバーは、指定されたドキュメントに未記載の構造体のメンバーには記述しないでください。 非透過または部分的に非透過構造体のメンバーの最も文書化されていない場合は、この禁止は絶対です。 ただし、ドライバーは、特定するルーチン内から特定のドキュメントに未記載の構造体メンバーを記述することがあります。 たとえば、 [**デバイス\_オブジェクト。NextDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)メンバーは、ドライバー内でのみ記述できます\_ドライバーの初期化または\_アンロード ルーチン。
+ドライバーは、指定された非公開の構造体のメンバーに書き込むことはできません。 不透明な、または部分的に不透明な構造体のほとんどのドキュメントに記載されていないメンバーの場合、この禁止は absolute です。 ただし、ドライバーは、特定のルーチン内から、ドキュメントに記載されていない構造体のメンバーを書き込む場合があります。 たとえば、[**デバイス\_オブジェクトなどです。NextDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)メンバーを書き込むことができるのは、初期化またはドライバー\_のアンロードルーチン\_ドライバー内に限られています。
 
  
 

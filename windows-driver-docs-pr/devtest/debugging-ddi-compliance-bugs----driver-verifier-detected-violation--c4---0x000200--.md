@@ -1,34 +1,34 @@
 ---
-title: デバッグ (C4) DRIVER_VERIFIER_DETECTED_VIOLATION 0x20002 - 0x20022
-description: DDI 準拠の検査、選択したオプションがあるし、Driver Verifier DDI 準拠の規則のいずれかに違反するドライバー、Driver Verifier 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION のバグの確認を生成することを検出したときに (パラメーター 1 と等しく、ルールの識別子、特定の対応)。
+title: デバッグ DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x20002-0x20022
+description: '[DDI 準拠の確認] オプションを選択した場合、ドライバーの検証ツールによって、いずれかの DDI コンプライアンス規則に違反していることが検出されると、ドライバーの検証ツールによってバグチェック 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION が生成されます (パラメーター1は特定のコンプライアンス規則の識別子。'
 ms.assetid: 9817AC4B-2BE8-44AC-8C9B-DED5EF0A7DD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0768eeced30f61df33e77a794776cab31d6ce26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec8f7bc380af1b3dc71e157a8e40c447e8d82310
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371562"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839571"
 ---
-# <a name="debugging-ddi-compliance-bugs---driververifierdetectedviolation-c4-0x20002---0x20022"></a>DDI 準拠のバグのドライバーをデバッグ\_VERIFIER\_検出\_違反 (C4)。0x20002 - 0x20022
+# <a name="debugging-ddi-compliance-bugs---driver_verifier_detected_violation-c4-0x20002---0x20022"></a>DDI 準拠のバグのデバッグ-DRIVER\_VERIFIER\_検出された\_違反 (C4): 0x20002-0x20022
 
 
-ある場合、 [DDI 準拠の検査](ddi-compliance-checking.md)オプションを選択し、Driver Verifier は、ドライバーが違反 DDI 準拠規則のいずれかを検出[Driver Verifier](driver-verifier.md)生成[ **バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (パラメーター 1 で特定のコンプライアンス規則の識別子に等しい)。
+[ [Ddi 準拠チェック](ddi-compliance-checking.md)] オプションを選択した場合、ドライバーの検証ツールによって、いずれかの ddi コンプライアンス規則に違反していることが検出されると、[ドライバーの検証ツール](driver-verifier.md)は[**バグチェック 0XC4: ドライバー\_検証\_検出されました\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(パラメーター1が特定のコンプライアンス規則の識別子と等しい)。
 
-DDI 準拠規則では、ドライバーは、Windows オペレーティング システムのカーネルと正しく対話することを確認します。 たとえば、ルールには、ドライバーが、関数の適切な IRQL で関数呼び出しを行うこと、またはドライバーが正しく取得し、スピン ロックを解放することを確認します。 このセクションでは、これらの違反をデバッグするため、いくつかの戦略の例について説明します。
+DDI コンプライアンス規則は、ドライバーが Windows オペレーティングシステムのカーネルと正しく通信するようにします。 たとえば、ルールによって、ドライバーが関数に対して必要な IRQL で関数呼び出しを行うかどうか、またはドライバーがスピンロックを正しく取得して解放することが確認されます。 ここでは、これらの違反をデバッグするための方法の例について説明します。
 
-## <a name="debugging-ddi-compliance-checking-violations"></a>DDI 準拠のチェック違反をデバッグします。
+## <a name="debugging-ddi-compliance-checking-violations"></a>DDI 準拠チェックの違反のデバッグ
 
 
--   [使用してバグ チェックに関する情報を表示するために分析。](#use-analyze-to-display-information-about-the-bug-check)
--   [使用して、! ruleinfo 拡張コマンド](#use-the-ruleinfo-extension-command)
--   [使用して、!、違反のソース コードの場所を識別するために、– v コマンドの分析](#use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code)
--   [DDI 準拠の違反の原因を修正](#fixing-the-cause-of-the-ddi-compliance-violation)
+-   [! Analyze を使用して、バグチェックに関する情報を表示します](#use-analyze-to-display-information-about-the-bug-check)
+-   [! Ruleinfo extension コマンドを使用します。](#use-the-ruleinfo-extension-command)
+-   [! Analyze – v コマンドを使用して、ソースコード内の違反の場所を特定します。](#use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code)
+-   [DDI 準拠違反の原因を修正する](#fixing-the-cause-of-the-ddi-compliance-violation)
 
-### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用してバグ チェックに関する情報を表示するために分析。
+### <a name="use-analyze-to-display-information-about-the-bug-check"></a>! Analyze を使用して、バグチェックに関する情報を表示します
 
-デバッガーの制御をした後に発生するすべてのバグ チェックと同様、最適な最初の手順が実行するが、 [ **! 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)コマンド。
+バグチェックが発生した場合と同様に、デバッガーを制御したら、最初に[ **! analyze-v**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)コマンドを実行します。
 
 ```
 *******************************************************************************
@@ -59,21 +59,21 @@ DV_MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=216021
 DV_RULE_INFO: 0x20004
 ```
 
-たびに[Driver Verifier](driver-verifier.md)キャッチ、 [DDI 準拠の検査](ddi-compliance-checking.md)違反、違反に関する情報が記載された、 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)出力します。
+[Driver Verifier](driver-verifier.md)が DDI の[準拠チェック](ddi-compliance-checking.md)の違反をキャッチするたびに、 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)出力に違反に関する情報が提供されます。
 
-この例で[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)パラメーター 1 (Arg1) の 0x20004、ドライバーが違反したことを示す値、 [ **IrqlExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)コンプライアンス規則。
+この例では、[**バグチェック 0xC4: driver\_VERIFIER\_検出されました。\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)には、パラメーター 1 (Arg1) の値0x20004 が含まれています。これは、ドライバーが[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)のコンプライアンス規則に違反したことを示します。
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)出力には、次の情報が含まれています。
+[ **! Analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)出力には、次の情報が含まれています。
 
-**DV\_VIOLATED\_条件。** このフィールドは、規則違反の原因の説明を示します。 この例で、条件に違反しましたを非常に高い IRQL レベルでのメモリを割り当てようとしたドライバーまたはディスパッチでページ プール メモリを割り当てられたしようとしています。\_レベル。 たとえば、このされた可能性がある呼び出しを試みるがドライバー [ **ExAllocatePoolWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)割り込みサービス ルーチン (ISR)、またはページ プール メモリを割り当てようとしたドライバー中に、スピン ロックを保持します。
+**DV\_\_条件に違反**しました:このフィールドには、ルール違反の原因の説明が表示されます。 この例では、ドライバーが非常に高い IRQL レベルでメモリを割り当てようとしたか、またはディスパッチ\_レベルでページプールメモリを割り当てようとしたため、条件に違反しました。 たとえば、割り込みサービスルーチン (ISR) で[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)を呼び出そうとしたドライバー、またはスピンロックを保持しながらページプールメモリを割り当てようとしたドライバーがある可能性があります。
 
-**DV\_MSDN\_LINK:** についての詳細を示す、MSDN のページを開きます、デバッガーがライブ リンク、WinDBG では、 [ **IrqlExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)ルール。
+**DV\_MSDN\_リンク:** WinDBG では、これはライブリンクです。これにより、デバッガーは[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)規則に関する詳細情報を示す MSDN ページを開きます。
 
-**DV\_ルール\_情報。** 、WinDBG では、このルール使用可能なヘルプからについては、デバッガーで表示されるライブ リンクです。
+**DV\_ルールの\_情報:** WinDBG では、これは、デバッガーで利用できるヘルプからこの規則に関する情報を表示するライブリンクです。
 
-### <a name="use-the-ruleinfo-extension-command"></a>使用して、! ruleinfo 拡張コマンド
+### <a name="use-the-ruleinfo-extension-command"></a>! Ruleinfo extension コマンドを使用します。
 
-**DV\_ルール\_情報:** のフィールド、 **! 分析**出力は、この規則違反に関する詳細情報を使用できるコマンドを示しています。 この例では、コマンドを使用することができます: **! ruleinfo 0x20004**
+**! Analyze**出力の**DV\_RULE\_INFO:** フィールドは、この規則違反に関する詳細情報を検索するために使用できるコマンドを示しています。 この例では、 **! ruleinfo 0x20004**コマンドを使用できます。
 
 ```
 kd> !ruleinfo 0x20004
@@ -97,9 +97,9 @@ specify any POOL_TYPE value.
 MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=216021
 ```
 
-### <a name="use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code"></a>使用して、!、違反のソース コードの場所を識別するために分析 – v コマンド
+### <a name="use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code"></a>! Analyze-v コマンドを使用して、ソースコード内の違反の場所を特定します。
 
-Driver Verifier のバグはこの違反が検出されるとすぐに、システムを確認します。 **! 分析**出力が表示されます、現在の IRQL、現在のスタック メモリを割り当て、呼び出しが行われたとのソース コードが有効にした場合のポイント、 **! 分析 – v** (の詳細な) 出力は、ソースも表示されます割り当て要求が行われたファイルと行の数:
+この違反が検出されると、ドライバーの検証ツールによってシステムが即座にチェックされます。 **! Analyze**出力には、現在の IRQL、現在のスタック、メモリを割り当てるための呼び出しが行われたポイントが表示されます。また、ソースコードが **! analyze – v** (詳細) 出力を有効にした場合は、割り当てのソースファイルと行番号も表示されます。要求が行われました:
 
 ```
 CURRENT_IRQL:  10
@@ -136,26 +136,26 @@ FAULTING_SOURCE_FILE:  d:\drvsrc\mydriver\isrhandler.c
 FAULTING_SOURCE_LINE_NUMBER:  206
 ```
 
-### <a name="fixing-the-cause-of-the-ddi-compliance-violation"></a>DDI 準拠の違反の原因を修正
+### <a name="fixing-the-cause-of-the-ddi-compliance-violation"></a>DDI 準拠違反の原因を修正する
 
-ドライバーが、対応するドキュメントで説明されている API と DDI 使用条件を満たしていることを確認は、一般に範囲 0x00020000 に 0x00020022 に Arg1 値を持つこれらのバグ チェックを修正して、します。
+これらのバグチェックを修正すると、範囲が0x00020000 から0x00020022 になります。一般に、ドライバーが、対応するドキュメントに記載されている API と DDI の使用状況の条件を満たしていることを確認します。
 
-ISR でどのような種類のメモリ割り当てが設定 IRQL 規則に違反しようとしたここで使用した (0x20004) の例で、 [ **ExAllocatePoolWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)ルーチン。
+ここで使用した例 (0x20004) では、ISR における任意の並べ替えのメモリ割り当ては、 [**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)ルーチンに設定されている IRQL 規則に違反します。
 
-一般に、IRQL と適切な使用方法については、ルーチンに関するドキュメントを確認する必要があります。 特定のレビュー [DDI 準拠規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)関数をテストします。 ルールは、この場合、 [ **IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)します。
+一般に、IRQL と適切な使用法に関する情報については、ルーチンに関するドキュメントを参照してください。 関数をテストする特定の[DDI コンプライアンス規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を確認します。 この場合、ルールは[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)です。
 
-使用[Static Driver Verifier](static-driver-verifier.md)同じ規則を使用して、ドライバー ソース コードを分析します。 Static Driver Verifier は、Windows ドライバーのソース コードをスキャンし、さまざまなコード パスの実行をシミュレートすることで考えられる問題を報告するツールです。 Static Driver Verifier は、このような問題を識別するための優れた開発時ユーティリティです。
+同じルールを使用して、ドライバーのソースコードを分析するには、[静的なドライバーの検証ツール](static-driver-verifier.md)を使用します。 静的ドライバー検証ツールは、Windows ドライバーのソースコードをスキャンし、さまざまなコードパスの使用をシミュレートすることによって発生する可能性のある問題を報告するツールです。 静的ドライバー検証ツールは、これらの種類の問題を特定するのに役立つ優れた開発時ユーティリティです。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[DDI 準拠の確認](ddi-compliance-checking.md)
+[DDI のコンプライアンスチェック](ddi-compliance-checking.md)
 
-[DDI 準拠の規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[DDI コンプライアンス規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [静的ドライバー検証ツール](static-driver-verifier.md)
 
-[**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
+[**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
 
  
 

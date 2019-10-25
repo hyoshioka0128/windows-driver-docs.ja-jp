@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_DELETE_MAC
-description: OID_WWAN_DELETE_MAC は、NDIS_WWAN_MAC_INFO パラメーターで指定された NDIS ポートを削除するミニポート ドライバーを要求します。
+description: OID_WWAN_DELETE_MAC は、NDIS_WWAN_MAC_INFO パラメーターに指定されている NDIS ポートを削除するようにミニポートドライバーに要求します。
 ms.assetid: 3C992E0D-132E-4687-B38E-31409E1A9F54
 ms.date: 08/08/2017
-keywords: -OID_WWAN_DELETE_MAC ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_DELETE_MAC ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: ae5d5e1f04ffef07ef6d6b37083f52caa912c5e0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc43a11868e9efa52bc8aa280dd618cc0233af96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362850"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843865"
 ---
-# <a name="oidwwandeletemac"></a>OID\_WWAN\_削除\_MAC
+# <a name="oid_wwan_delete_mac"></a>OID\_WWAN\_削除\_MAC
 
 
-OID\_WWAN\_削除\_MAC 要求、NDIS で指定された NDIS ポートを削除するミニポート ドライバー\_WWAN\_MAC\_INFO パラメーター。 NDIS ポートが作成を使用して[OID\_WWAN\_作成\_MAC](oid-wwan-create-mac.md)します。
+OID\_WWAN\_DELETE\_MAC は、NDIS\_WWAN\_MAC\_INFO パラメーターに指定されている NDIS ポートを削除するようにミニポートドライバーに要求します。 NDIS ポートは、前の手順で作成した[OID\_WWAN\_\_MAC を作成](oid-wwan-create-mac.md)する必要があります。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_元の要求と後で NDIS を使用して要求を完了する保留\_状態\_成功します。
+ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_STATUS\_を元の要求に戻してから、NDIS\_STATUS を使用して要求を完了\_成功させる必要があります。
 
 クエリ要求はサポートされていません。
 
 <a name="remarks"></a>注釈
 -------
 
-ミニポート ドライバーを削除する要求を処理する必要があります (非アクティブ化) のデッドロックを防ぐために非同期的に NDIS ポート。
+ミニポートドライバーは、デッドロックを防ぐために、NDIS ポートを非同期的に削除 (非アクティブ化) する要求を処理する必要があります。
 
-OID\_WWAN\_削除\_NDIS 状態エラー コード NDIS 削除の既定のポートに送信された MAC 要求は失敗\_状態\_無効な\_ポート。
+OID\_WWAN\_\_既定のポートを削除するために送信された MAC 要求を削除すると、NDIS 状態エラーコード NDIS\_ステータス\_無効な\_ポートで失敗します。
 
-OID を受け取ると\_WWAN\_削除\_ミニポート ドライバーを非アクティブ化、ポートに関連付けられた PDP コンテキストがない既に非アクティブの場合、MAC を要求します。 これは、突然の削除イベントが発生する可能性があるためにです。 このような時に PDP コンテキストを非アクティブ化では、モデムとミニポート ドライバーを正常な状態で維持することが確認されます。
+デバイスが非アクティブ化されていない場合は、OID\_WWAN を受信し\_MAC 要求\_削除すると、ポートに関連付けられている PDP コンテキストが非アクティブになります。 これは、突然の削除イベントが発生する可能性があるためです。 このようなときに PDP コンテキストを非アクティブ化すると、モデムとミニポートドライバーが良好な状態であることが保証されます。
 
-ときに、ドライバーは、突然削除すると、ドライバーのブロックを受信し、さらにすべての Oid を取り消します。 つまり、ドライバーが除外 OID\_WWAN\_削除\_Windows OID で呼び出しを送信する場合でも MAC\_WWAN\_削除\_MAC の一部として、 [ *フィルター\_デタッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)呼び出します。
+ドライバーが突然削除されると、ドライバーはすべての Oid をブロックして取り消します。 これは、[*フィルター\_DETACH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)呼び出しの一部として、WINDOWS が OID\_wwan を使用して呼び出しを送信し、\_mac を削除して\_を削除することを意味する OID\_wwan を除外することを意味します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -43,11 +43,11 @@ OID を受け取ると\_WWAN\_削除\_ミニポート ドライバーを非ア�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 と Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows の Windows 8.1 以降のバージョンで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +55,7 @@ OID を受け取ると\_WWAN\_削除\_ミニポート ドライバーを非ア�
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_作成\_MAC](oid-wwan-create-mac.md)
+[OID\_WWAN\_\_MAC の作成](oid-wwan-create-mac.md)
 
  
 

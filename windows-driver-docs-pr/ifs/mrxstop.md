@@ -1,9 +1,9 @@
 ---
 title: MRxStop ルーチン
-description: TheMRxStop ルーチンは、ネットワークのミニ リダイレクターを停止する RDBSS によって呼び出されます。
+description: TheMRxStop ルーチンは、ネットワークミニリダイレクターを停止するために RDBSS によって呼び出されます。
 ms.assetid: 7600335e-ab7c-4993-9e27-18e530496b1c
 keywords:
-- MRxStop ルーチン インストール可能なファイル システム ドライバー
+- MRxStop ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN_CTX
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c333347a3a9354e184efcffb0e7b512c8ef3d53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8b4d2b12d52c667eb3caf818ec4dbe0dbd6176e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384804"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841066"
 ---
 # <a name="mrxstop-routine"></a>MRxStop ルーチン
 
 
-*MRxStop*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニリダイレクターを停止します。
+*MRxStop*ルーチンは、ネットワークミニリダイレクターを停止するために[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -43,16 +43,16 @@ NTSTATUS MRxStop(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、要求を停止するネットワークのミニ リダイレクター IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、ネットワークミニリダイレクターの停止を要求した IRP が含まれます。
 
-*RxDeviceObject* \[入力、出力\]  
-RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイレクターのオブジェクトの構造体。
+*RxDeviceObject* \[in、out\]  
+このネットワークミニリダイレクターの RDBSS\_デバイス\_オブジェクト構造へのポインター。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxStop*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxStop*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -68,11 +68,11 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_REDIRECTOR_HAS_OPEN_HANDLES</strong></td>
-<td align="left"><p>ネットワークのミニ リダイレクターが、この時点で停止することを防ぐことが開いているハンドル。</p></td>
+<td align="left"><p>ネットワークミニリダイレクターに開いているハンドルがあるため、この時点では停止できません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_REDIRECTOR_NOT_STARTED</strong></td>
-<td align="left"><p>ネットワークのミニ リダイレクターは開始されませんでした。</p></td>
+<td align="left"><p>ネットワークミニリダイレクターが開始されませんでした。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,25 +82,25 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 <a name="remarks"></a>注釈
 -------
 
-*MRxStop*を停止し、ネットワークのミニ リダイレクター RDBSS の観点からの初期化を解除します。 ネットワークのミニ リダイレクターを停止では、メモリの割り当てとその他のシステム リソースを解放する必要があります可能性があります。
+*MRxStop*は、RDBSS の観点からネットワークミニリダイレクターを停止して初期化前します。 ネットワークミニリダイレクターを停止すると、メモリ割り当てやその他のシステムリソースが解放される可能性があります。
 
-呼び出しの前に*MRxStop*RDBSS は、次の値を変更します。
+*MRxStop*を呼び出す前に、RDBSS によって次の値が変更されます。
 
-**MajorFunction** 、RX でメンバー\_によって示される CONTEXT 構造*RxContext*は IRP の主要な関数に設定します。
+*RxContext*によってポイントされる RX\_コンテキスト構造の**MajorFunction**メンバーは、IRP のメジャー関数に設定されます。
 
-**LowIoContext.ParamsFor.FsCtl.FsControlCode** 、RX でメンバー\_によって示される CONTEXT 構造*RxContext*これは、FSTCL 要求を使用して停止する場合、IRP の FSCTL コードに設定されますネットワーク ミニのリダイレクターです。
+*RxContext*によってポイントされている RX\_コンテキスト構造の**Lowiocontext のコード**メンバーは、ネットワークミニリダイレクターを停止するために使用された FSTCL 要求の場合、IRP の FsCtl コードに設定されます。
 
-**StartStopContext.State** 、RDBSS のメンバー\_デバイス\_によって示されるオブジェクトの構造*RxDeviceObject* RDBSS に設定されている\_停止\_IN\_進行状況
+*RxDeviceObject*によってポイントされている RDBSS\_デバイス\_オブジェクト構造の**startstopcontext. State**メンバーは、\_の進行状況で RDBSS\_STOP\_に設定されます。
 
-**StartStopContext.pStopContext** 、RDBSS のメンバー\_デバイス\_によって示されるオブジェクトの構造*RxDeviceObject*に設定されている、 *RxContext*パラメーター。
+*RxDeviceObject*によってポイントされるオブジェクト構造の RDBSS\_\_デバイスの**Startstopcontext の pstopcontext**メンバーは、 *RxContext*パラメーターに設定されます。
 
-*MRxStop*から RDBSS によって呼び出される、 [ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)ルーチン。
+*MRxStop*は、 [**RXSTOPMINIRDR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)ルーチンから RDBSS によって呼び出されます。
 
-場合*MRxStop*ステータスを返します\_成功すると、そのルーチンが成功しました。 その他の戻り値は、ネットワークのミニ リダイレクターを停止でエラーが発生したことを示します。
+*MRxStop*が STATUS\_SUCCESS を返した場合、ルーチンは成功しました。 その他の戻り値は、ネットワークミニリダイレクターの停止中にエラーが発生したことを示します。
 
-場合*MRxStop*ステータスを返します\_RDBSS に成功すると、RDBSS の設定の RDBSS 状態\_STARTABLE します。 この状態は、 **StartStopContext.State** 、RDBSS のメンバー\_デバイス\_によって示されるオブジェクトの構造*RxDeviceObject*します。
+*MRxStop*によって STATUS\_SUCCESS が返された場合、RDBSS は RDBSS の状態を\_RDBSS に設定します。 この状態は、 *RxDeviceObject*によってポイントされるオブジェクト構造\_RDBSS\_デバイスの**startstopcontext. state**メンバーに格納されます。
 
-ネットワークのミニ リダイレクターは、ネットワークのミニ リダイレクターが開始したかどうかを示す内部変数を保持して通常します。 など、開始、停止されるとき、および操作の開始または停止操作が進行中、ネットワークのミニ リダイレクターは追跡可能性があります。
+ネットワークミニリダイレクターは、通常、ネットワークミニリダイレクターが開始されているかどうかを示す内部変数を保持します。 たとえば、ネットワークミニリダイレクターは、停止、開始、および開始操作または停止操作が進行中であることを追跡できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -117,7 +117,7 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -127,9 +127,9 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 
 [**MRxDevFcbXXXControlFile**](mrxdevfcbxxxcontrolfile.md)
 
-[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
+[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)
 
-[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)
+[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)
 
  
 

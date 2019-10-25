@@ -1,5 +1,5 @@
 ---
-title: ログの記録
+title: ログ
 ms.assetid: CB7FE988-6E5A-4669-9FFB-A2B3F8DAF30F
 keywords:
 - NFC
@@ -7,20 +7,20 @@ keywords:
 - proximity
 - 近距離近接通信
 - NFP
-description: 関数やメソッド、NCI パケット/プロトコル、およびその他の詳細なログ記録の NFC ログを記録します。
+description: NFC は、関数/メソッド、NCI パケット/プロトコル、およびその他の詳細ログをログに記録します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf627fd102ebf04e36d01296e70efd718ecbeed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cdefeb5dd08f8b8cb816738df50d72bca510f87d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375112"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842740"
 ---
-# <a name="logging"></a>ログの記録
+# <a name="logging"></a>ログ
 
 
-関数またはメソッドと、その他の詳細ログ記録の*Windows ソフトウェア トレース プリプロセッサ*(WPP) ログを使用します。 NCI パケット/プロトコルのログ記録、Event Tracing for Windows (ETW) を使用します。 WPP デバッグのログ記録を有効にするには、次のコマンドを使用します。
+関数/メソッドとその他の詳細ログについては、 *Windows software trace プリプロセッサ*(WPP) のログ記録が使用されます。 NCI パケット/プロトコルのログ記録では、Windows イベントトレーシング (ETW) が使用されます。 デバッグのために WPP ログ記録を有効にするには、次のコマンドを使用します。
 
 ```cpp
 tracelog -start MyNfcSession -f C:\Data\test\bin\MyNfcSession.etl
@@ -32,12 +32,12 @@ tracelog -enableex MyNfcSession -guid #D976D933-B88B-4227-95F8-00513C0986DE -mat
 tracelog -stop MyNfcSession
 ```
 
-これは、c: MySession.etl という名前の ETL ファイルを生成\\データ フォルダー。 それらをデコードすることができますしを使用して[Tracepdb](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb) (Tracepdb.exe) と[Tracefmt](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt) (Tracefmt.exe)、Windows ドライバー キットに含まれています。
+これにより、C:\\データフォルダーに MySession という名前の ETL ファイルが生成されます。 その後、 [tracepdb](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb) (tracepdb) と[tracefmt](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt) (tracefmt) を使用してデコードできます。このファイルは、Windows Driver Kit に含まれています。
 
-NFC CX では、すべてのデバッグ拡張機能は含まれません。
+NFC CX には、デバッグ拡張機能は含まれていません。
 
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[Event Tracing for Windows (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-software-tracing)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC クラス拡張 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[Windows イベントトレーシング (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-software-tracing)  
 [ソフトウェア トレース用ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)  

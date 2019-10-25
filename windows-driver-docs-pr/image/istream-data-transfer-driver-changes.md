@@ -4,45 +4,45 @@ description: IStream データ転送のドライバー変更
 ms.assetid: 1c837e4f-8d53-40ed-8f5b-0d525c7dd758
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c7658c9251d613b86f742639f2bd4a99569f03
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbcee2701620d01d965d8937fc1396573d57e895
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378884"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840804"
 ---
 # <a name="istream-data-transfer-driver-changes"></a>IStream データ転送のドライバー変更
 
 
-Windows Vista より前に開発されたドライバーへの変更を最小限に抑えるには、ドライバーはありませんをサポートするために、新しいインターフェイスを実装する**IStream**データ転送。 代わりに、新しいインターフェイスはによって公開された、 [IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)します。 ドライバーを呼び出すことができます**IWiaMiniDrvCallBack::QueryInterface**新しい**IWiaTransfer**がそれらにアクセスできるように、データ ストリームと状態の通知されるコールバック関数。 **IWiaTransfer**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
+Windows Vista より前に開発されたドライバーの変更を最小限に抑えるために、ドライバーは、 **IStream**データ転送をサポートする新しいインターフェイスを実装する必要はありません。 代わりに、新しいインターフェイスが[IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)を介して公開されました。 ドライバーは、新しい**IWiaTransfer** callback 関数に対して**IWiaMiniDrvCallBack:: QueryInterface**を呼び出すことができます。これにより、データストリームと状態通知にアクセスできるようになります。 **IWiaTransfer**インターフェイスについては、Microsoft Windows SDK のドキュメントを参照してください。
 
-すべての転送では、同様はないファイルまたはメモリの転送分岐ロジックで処理するため、ドライバー内部のデータ転送のコードはより単純なようになりました。
+ファイルまたはメモリ転送の分岐ロジックを使用せずにすべての転送が同じように処理されるため、ドライバー内のデータ転送コードがより簡単になりました。
 
-サポートしていないドライバー、 **IStream**転送モデルは通常、次の手順を実行します。
+**IStream**転送モデルをサポートしていないドライバーは、通常、次の手順を実行します。
 
-1.  要求がアップロードまたはダウンロードするのかを判断するフラグを確認します。
+1.  フラグをチェックして、要求がアップロードまたはダウンロードのどちらであるかを確認します。
 
-2.  取得、 [IWiaMiniDrvCallBack](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)インターフェイス。
+2.  [IWiaMiniDrvCallBack](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)インターフェイスを取得します。
 
-3.  コールバック関数からコピー先のストリームを受信します。
+3.  コールバック関数から変換先ストリームを受信します。
 
-4.  データ転送のループを実行します。
+4.  データ転送ループを実行します。
     1.  デバイスからデータを受信します。
-    2.  データ ストリームを書き込みます。
+    2.  ストリームにデータを書き込みます。
 
-ただし、実装、新しいドライバーの**IStream**転送モデルでは、WIA サービスの呼び出しがない[ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)のため*フォルダー取得*はサポートされています。
+ただし、新しい**IStream**転送モデルを実装するドライバーでは、*フォルダーの取得*がサポートされているため、WIA サービスは[**IWiaMiniDrv::d rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)を呼び出しません。
 
-フォルダーの取得で 1 つの転送要求は、親アイテムに対してが、実際のアイテム プロパティが転送されている子項目の各。 **IWiaMiniDrv::drvWriteItemProperties**デバイスの設定をプログラムにこのメソッドは使用できませんので、各子項目のメソッドが呼び出されません。 サポートするドライバーに対して**IStream**データ転送、サービス呼び出しで WIA [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)代わりにします。
+フォルダーの取得では、1つの転送要求が親アイテムに対して行われますが、実際のアイテムのプロパティは、転送される各子アイテムにあります。 **IWiaMiniDrv::D rvwriteitemproperties**メソッドは各子項目に対して呼び出されないため、このメソッドを使用してデバイスの設定をプログラミングすることはできません。 **IStream**データ転送をサポートするドライバーの場合、WIA サービスは[**IWiaMiniDrv::d rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)を代わりに呼び出します。
 
-**注**  この変更が新しいデータ転送をサポートするドライバーだけに影響します。 従来のドライバーがサポートされていない**IStream**データ転送の場合に影響しません。、WIA サービスの呼び出しは引き続き、 **IWiaMiniDrv::drvWriteItemProperties**それらのメソッド。
+この変更は、新しいデータ転送をサポートするドライバーのみに影響する  **注意**してください。 **IStream**データ転送をサポートしていないレガシドライバーは影響を受けません。この場合、WIA サービスは**IWiaMiniDrv::D rvwriteitemproperties**メソッドの呼び出しを続けます。
 
  
 
-ドライバーが複数の呼び出しをフォルダーの買収**IWiaTransferCallback::GetNextStream** (これについては説明、Microsoft Windows SDK ドキュメントで)、ドライバーは、一度に 1 つだけアクティブなストリームことができます。
+ドライバーが**Iwiatransfercallback:: GetNextStream** (Microsoft Windows SDK のドキュメントで説明されています) に対して複数の呼び出しを行うフォルダーの取得では、ドライバーは一度に1つのアクティブなストリームしか保持できません。
 
-ドライバーのみ、ストリームを呼び出す必要があります**IStream::Write**、 **IStream::Seek**、および**IStream::SetSize**メソッド (これは、Windows SDK のドキュメントで説明しています)ダウンロード操作の実行中 この制限を簡単にフィルターを作成します。 ドライバーでは、コピー先のストリームが、他のメソッドを実装することは期待できません。
+ドライバーは、ダウンロード操作中に、ストリームの**istream:: Write**、 **Istream:: Seek**、および**istream:: SetSize**メソッド (Windows SDK のドキュメントで説明されています) のみを呼び出す必要があります。 この制限により、フィルターを簡単に記述できるようになります。 ドライバーでは、コピー先のストリームが他のメソッドを実装するとは限りません。
 
-ときに、 [ **WIA\_DPS\_ページ\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)プロパティが WIA\_ページ\_自動 (つまり、ページの自動サイズ検出は、有効)、ドライバーは正確なディメンションについて情報イメージ イメージ データの転送が完了した後にのみ。 ストリーム ベースの転送では、ドライバーは、転送の最後にイメージ ヘッダーにイメージのサイズを更新する必要があります。 新しいセッション、WIA の値の先頭に\_DPS\_ページ\_サイズ プロパティは、WIA 以外の値に常に設定する必要があります\_ページ\_自動。
+[**Wia\_DPS\_ページの\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)プロパティが WIA\_ページ\_自動 (ページサイズの自動検出が有効) に設定されている場合、ドライバーは、その後にのみイメージに関する正確なディメンション情報を提供する必要があります。画像データの転送を完了します。 ストリームベースの転送の場合、ドライバーは、転送が終了したときにイメージヘッダー内のイメージのサイズを更新する必要があります。 新しいセッションの開始時に、WIA の\_DPS\_ページ\_SIZE プロパティの値は、常に、WIA\_PAGE\_AUTO 以外の値に設定する必要があります。
 
  
 

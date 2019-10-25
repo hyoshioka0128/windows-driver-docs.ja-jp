@@ -4,12 +4,12 @@ description: SCSI ドライバー
 ms.assetid: e69e3ac6-6726-4f63-afdb-2da1255dde19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 088a3c14cb6d00f513284350aa03c12862c1c2d7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70706845b4bec3cb4203dd83632c33d03c1f4260
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374252"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840751"
 ---
 # <a name="scsi-driver"></a>SCSI ドライバー
 
@@ -17,7 +17,7 @@ ms.locfileid: "67374252"
 
 
 
-SCSI の静止画像カーネル モード ドライバー サポートのバス**ReadFile** SCSI を含むコマンド記述子ブロック (CDB) を作成して**読み取り**コマンド。 サポート**WriteFile** SCSI を含む CDB を作成して**書き込み**コマンド。 ユーザー モードのミニドライバーは、呼び出すことによってカスタマイズされた Cdb を指定できます[ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)します。 詳細については、次を参照してください。 [SCSI まだイメージ I/O 制御コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)します。 Microsoft Windows SDK ドキュメントの説明を参照して**ReadFile**と**WriteFile**します。
+SCSI バス用のカーネルモード静止イメージドライバーは、SCSI**読み取り**コマンドを含むコマンド記述子ブロック (CDB) を作成することによって、 **ReadFile**をサポートします。 また、SCSI**書き込み**コマンドを含む CDB を作成することによって、 **WriteFile**をサポートしています。 ユーザーモードミニドライバーでは、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を呼び出すことで、カスタマイズされた cdbs を指定できます。 詳細については、「 [SCSI のイメージ I/o 制御コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index)」を参照してください。 **ReadFile**と**WriteFile**の説明については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

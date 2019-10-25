@@ -8,12 +8,12 @@ keywords:
 - SRB の変更に関する WDK ストレージ
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 235a11afbd05d21136382cce3e0c939b88c846ca
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 19276bce6f47708f1bfd3afdc94ad59061ae5a37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252465"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841612"
 ---
 # <a name="modifying-srbs"></a>SRB の変更
 
@@ -31,7 +31,7 @@ ms.locfileid: "72252465"
 
 - ミニポートドライバーが8個以上の論理ユニットをサポートする場合は、 **lun**メンバーを論理ユニット番号に設定します。
 
-*HwScsiFindAdapter*が[PORT_CONFIGURATION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)を設定するときに示されているように、HBA が8個を超える論理ユニットを処理できる場合、ポートドライバーは LUN 情報を解釈しません。 ミニポートドライバーは、必要に応じて、8ビット LUN を SRB アドレスから SCSI 3 アドレスにマップする役割を担います。
+*HwScsiFindAdapter*が[PORT_CONFIGURATION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)を設定するときに示されているように、HBA が8個を超える論理ユニットを処理できる場合、ポートドライバーは LUN 情報を解釈しません。 ミニポートドライバーは、必要に応じて、8ビット LUN を SRB アドレスから SCSI 3 アドレスにマップする役割を担います。
 
 8ビット LUN から SCSI-3 アドレスへのマッピングは、ミニポートドライバーに固有です。 次の表は推奨マッピングを示しています。ここで、 *P*は物理アドレッシングモード、 *B*はバス、 *T*はターゲットです。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72252465"
 <td align="left"><p>7</p></td>
 <td align="left"><p>6</p></td>
 <td align="left"><p>5</p></td>
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 <td align="left"><p>3</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>1</p></td>
@@ -95,7 +95,7 @@ SCSI-3 アドレス
 <td align="left"><p>7</p></td>
 <td align="left"><p>6</p></td>
 <td align="left"><p>5</p></td>
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 <td align="left"><p>3</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>1</p></td>

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOCONTROL\_キャップ
-description: KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コントロールの機能を識別します。 このプロパティを実装する必要があります。
+title: KSK プロパティ\_VIDEOCONTROL\_CAPS
+description: KSK プロパティ\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオコントロール機能を識別します。 このプロパティを実装する必要があります。
 ms.assetid: 5861ae38-3253-4546-bd9f-975f98e9e3f4
 keywords:
-- KSPROPERTY_VIDEOCONTROL_CAPS ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOCONTROL_CAPS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 244091a5143561e1d7d2ea709ccb5b3aa2fb1912
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 591ba0f7ddc16f5306d4d90f59010e4acf500163
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381999"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845064"
 ---
-# <a name="kspropertyvideocontrolcaps"></a>KSPROPERTY\_VIDEOCONTROL\_キャップ
+# <a name="ksproperty_videocontrol_caps"></a>KSK プロパティ\_VIDEOCONTROL\_CAPS
 
 
-KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コントロールの機能を識別します。 このプロパティを実装する必要があります。
+KSK プロパティ\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオコントロール機能を識別します。 このプロパティを実装する必要があります。
 
 ## <span id="ddk_ksproperty_videocontrol_caps_ks"></span><span id="DDK_KSPROPERTY_VIDEOCONTROL_CAPS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KSPROPERTY\_VIDEOCONTROL\_CAP\_構造をイメージの回転、または機能をトリガーするイベントなど、ミニドライバーのビデオ コントロールの機能を指定します。
+プロパティ値 (操作データ) は、ミニドライバーのビデオコントロール機能 (画像の反転やイベントトリガー機能など) を指定する、VIDEOCONTROL\_CAPS\_S 構造体\_KSK プロパティです。
 
 <a name="remarks"></a>注釈
 -------
 
-**VideoControlCaps** 、KSPROPERTY のメンバー\_VIDEOCONTROL\_CAP\_S 構造体をデバイスのビデオ コントロールの機能を指定します。
+KSK プロパティの**Videocontrolcaps**メンバー\_videocontrol\_CAPS\_S 構造体は、デバイスのビデオコントロール機能を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ KSPROPERTY\_VIDEOCONTROL\_CAPS プロパティは、デバイスのビデオ コ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCONTROL\_CAP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)
+[**KSK プロパティ\_VIDEOCONTROL\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocontrol_caps_s)
 
  
 

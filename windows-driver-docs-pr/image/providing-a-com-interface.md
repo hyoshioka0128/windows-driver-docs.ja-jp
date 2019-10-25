@@ -4,12 +4,12 @@ description: COM インターフェイスの提供
 ms.assetid: c3e1578e-26f1-4fe3-b56d-a2baacb8e4c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8483cca790314125087e10be0941a71c45dad1ae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6be693a184e2c98db2850032aad49c6b8cf73336
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840769"
 ---
 # <a name="providing-a-com-interface"></a>COM インターフェイスの提供
 
@@ -17,17 +17,17 @@ ms.locfileid: "67374313"
 
 
 
-WIA ミニドライバーをサポートする必要があります、 **IWiaMiniDrv**、 **IStiUSD**、および**IUnknown**インターフェイスが認識され、WIA サービスによって読み込まれます。 WIA ドライバーに次のインターフェイス id を追加する必要があります**QueryInterface**メソッド。
+Wia ミニドライバーは、WIA サービスによって認識されて読み込まれるように、 **IWiaMiniDrv**、 **i usd**、 **IUnknown**の各インターフェイスをサポートする必要があります。 次のインターフェイス識別子は、WIA ドライバーの**QueryInterface**メソッドに追加する必要があります。
 
--   **IID\_IWiaMiniDrv** -のインターフェイスの識別子、 [IWiaMiniDrv インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)、標準的な WIA インターフェイス WIA 固有の機能にアクセスするために使用します。
+-   **IID\_IWiaMiniDrv** - [IWiaMiniDrv インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)のインターフェイス識別子。 wia 固有の機能にアクセスするために使用される標準的な wia インターフェイスです。
 
--   **IID\_IStiUSD** -のインターフェイスの識別子、 [IStiUSD インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)、標準的な STI インターフェイス WIA ドライバーの STI 機能にアクセスするために使用
+-   **IID\_iで**は、 [i、usd インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index)のインターフェイス識別子です。これは、WIA ドライバーの sti 機能へのアクセスに使用される標準の sti インターフェイスです。
 
--   **IID\_IUnknown** -のインターフェイスの識別子、 **IUnknown** Microsoft Windows SDK ドキュメントで定義されている標準の COM インターフェイスのインターフェイスします。
+-   **IID\_** iunknown-Microsoft Windows SDK ドキュメントで定義されている標準の COM インターフェイスである**iunknown**インターフェイスのインターフェイス識別子。
 
-呼び出すようにミニドライバーの WIA サービスへの応答でこれらのインターフェイス id をエクスポート、ミニドライバー **QueryInterface**メソッド。
+ミニドライバーは、ミニドライバーの**QueryInterface**メソッドを呼び出す WIA サービスへの応答として、これらのインターフェイス識別子をエクスポートします。
 
-これらのインターフェイスを実装する方法の例については、次を参照してください、 *wiascanr*スキャナー サンプル ミニドライバー ファイル*wiascanr.h*、 *iwiaminidrv.cpp*と *。istiusd.cpp または s*ee、 *wiacam*カメラ サンプル ミニドライバー ファイル*IWiaMiniDrv.cpp*と*IStiUSD.cpp*します。
+これらのインターフェイスの実装方法の例については、 *wiascanr*スキャナーのサンプルミニドライバーファイル*wiascanr. h*、 *iwiaminidrv* *、およびミニドライバー*を参照してください。 *wiacam*カメラサンプルファイル*IWiaMiniDrv*と*iは、.cpp*です。
 
  
 

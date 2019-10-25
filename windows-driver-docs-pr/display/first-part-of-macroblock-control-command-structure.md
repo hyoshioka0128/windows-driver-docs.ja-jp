@@ -3,15 +3,15 @@ title: マクロブロック制御コマンド構造の最初の部分
 description: マクロブロック制御コマンド構造の最初の部分
 ms.assetid: b282adac-3bf3-4477-a817-371d37b174a5
 keywords:
-- マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
+- マクロは WDK DirectX VA、汎用コマンド構造をブロックします
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 410ac772bd3a765585fe5c4f592aa2e6b8b9896b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa77e27bb9078f8ead49294ee1177f854522b3e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369863"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839693"
 ---
 # <a name="first-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の最初の部分
 
@@ -19,7 +19,7 @@ ms.locfileid: "67369863"
 ## <span id="ddk_first_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_FIRST_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-ジェネリックのマクロ ブロック コントロール コマンド構造体の最初の 4 つのメンバーは、常に同じです。 次の表では、この構造体の最初の部分のメンバーについて説明します。
+汎用マクロブロックコントロールコマンド構造の最初の4つのメンバーは常に同じです。 次の表では、この構造体の最初の部分のメンバーについて説明します。
 
 <table>
 <colgroup>
@@ -28,28 +28,28 @@ ms.locfileid: "67369863"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Member</th>
+<th align="left">メンバー</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>wMBaddress</strong></p></td>
-<td align="left"><p>現在処理中のマクロ ブロックのマクロ ブロックのアドレスを指定します。</p></td>
+<td align="left"><p>現在処理されているマクロブロックのマクロブロックアドレスを指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>wMBtype</strong></p></td>
-<td align="left"><p>処理中のマクロ ブロックの種類を指定します。 このメンバーには、マクロ ブロックの値を予測する動き補正を使用するかどうかと、どの種類の違いの残存データが送信されることを示すフラグが含まれています。</p></td>
+<td align="left"><p>処理するマクロブロックの種類を指定します。 このメンバーには、マクロブロックの値を予測するためにモーション補正を使用するかどうか、およびどのような種類の残存差データが送信されるかを示すフラグが含まれています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwMB_SNL</strong></p></td>
-<td align="left"><p>2 つのフィールドが含まれています<em>MBskipsFollowing</em> (で上限の 8 ビット) および<em>MBdataLocation</em> (下位 24 ビット) にします。</p>
-<p><em>MBskipsFollowing</em>を現在のマクロ ブロックの後に生成するマクロ ブロックをスキップした数を指定します。</p>
-<p><em>MBdataLocation</em> IDCT 残存違いブロック データ バッファーに、データは、現在のマクロ ブロックのブロックの残存の相違の位置を示すインデックスします。</p></td>
+<td align="left"><p><em>Mbskipsfollowing</em> (上位8ビット) と<em>MBdataLocation</em> (下位24ビット) の2つのフィールドが含まれています。</p>
+<p><em>Mbskipsfollowing</em>は、現在のマクロブロックの後に生成されるスキップされるマクロブロックの数を指定します。</p>
+<p><em>MBdataLocation</em>は、idct 残差ブロックデータバッファーへのインデックスであり、現在のマクロブロックの残存差データの場所を示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>wPatternCode</strong></p></td>
-<td align="left"><p>残存の違いのデータをマクロ ブロック内の各ブロックに送信するかどうかを示します。</p></td>
+<td align="left"><p><strong>Wpattern コード</strong></p></td>
+<td align="left"><p>マクロブロックの各ブロックに残差のデータが送信されるかどうかを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,7 +58,7 @@ ms.locfileid: "67369863"
 
 ### <a name="span-idwmbaddressspanspan-idwmbaddressspanspan-idwmbaddressspanwmbaddress"></a><span id="wMBaddress"></span><span id="wmbaddress"></span><span id="WMBADDRESS"></span>wMBaddress
 
-**WMBaddress**構造体のメンバーは、ラスター スキャンの順序で現在のマクロ ブロックのマクロ ブロックのアドレスを指定します。 次の表では、マクロ ブロックのアドレスの例を示します。
+**Wmbaddress**構造体のメンバーは、ラスタースキャンの順序で現在のマクロブロックのマクロブロックアドレスを指定します。 次の表は、マクロブロックアドレスの例を示しています。
 
 <table>
 <colgroup>
@@ -67,14 +67,14 @@ ms.locfileid: "67369863"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">マクロ ブロック</th>
+<th align="left">マクロブロック</th>
 <th align="left">Address</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>左</p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>左上</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右上</p></td>
@@ -82,22 +82,22 @@ ms.locfileid: "67369863"
 </tr>
 <tr class="odd">
 <td align="left"><p>左下</p></td>
-<td align="left"><p><strong>wPicHeightInMBminus1</strong> x (<strong>wPicWidthInMBminus1</strong>+1)</p></td>
+<td align="left"><p><strong>wPicHeightInMBminus1</strong> x (<strong>wPicWidthInMBminus1</strong>+ 1)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右下</p></td>
-<td align="left"><p>(<strong>wPicHeightInMBminus1</strong>+1) x (<strong>wPicWidthInMBminus1</strong>+1) - 1</p></td>
+<td align="left"><p>(<strong>wPicHeightInMBminus1</strong>+ 1) x (<strong>wPicWidthInMBminus1</strong>+ 1)-1</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**WPicWidthInMBminus1**と**wPicHeightInMBminus1**アドレスのメンバーである、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。
+**WPicWidthInMBminus1**と**wPicHeightInMBminus1**のアドレスは、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体のメンバーです。
 
 ### <a name="span-idwmbtypespanspan-idwmbtypespanspan-idwmbtypespanwmbtype"></a><span id="wMBtype"></span><span id="wmbtype"></span><span id="WMBTYPE"></span>wMBtype
 
-**WMBtype**構造体のメンバーが処理されているマクロ ブロックの種類を指定します。 このメンバーには一連の方法のマクロ ブロックを定義するビットと動きベクトルが処理されます。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure**、および**bPicScanFixed**アドレスのメンバーである、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。 **BConfigHostInverseScan**アドレスのメンバーである、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体。
+**Wmbtype**構造体のメンバーは、処理されるマクロブロックの種類を指定します。 このメンバーには、マクロブロックとモーションベクターの処理方法を定義する一連のビットが含まれています。 **BPic4MVallowed**、 **b scanmethod**、 **bPicBackwardPrediction**、 **b Structure**、 **BDXVA Scanの各固定**アドレスは、 [ **\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体のメンバーです。 **BConfigHostInverseScan**アドレスは、 [**DXVA\_configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体のメンバーです。
 
 <table>
 <colgroup>
@@ -113,103 +113,103 @@ ms.locfileid: "67369863"
 <tbody>
 <tr class="odd">
 <td align="left"><p>15 ~ 12</p></td>
-<td align="left"><p><em>MvertFieldSel_3</em> (15、最上位ビット) を通じて<em>MvertFieldSel</em>0 (12 ビット)</p>
-<p>マクロ ブロック コントロール コマンドの次の表に示したように後で送信される対応する動きベクトルの垂直方向のフィールドの選択を指定します。 (たとえば、H.261 と H.263) のフレームの画像構造でのモーションをフレーム ベースのこれらのビットすべてゼロなければなりません。 内のビット<em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2、</em>と<em>MvertFieldSel_3</em> motion_vertical_field_select [r] [s] セクション 6.3.17.2 mpeg-2 のビットに対応しています。</p></td>
+<td align="left"><p><em>MvertFieldSel_3</em> (ビット15、最も重要) は、 <em>Mvertfieldsel</em>0 (ビット 12) を使用します。</p>
+<p>次の表で指定されているように、後でマクロブロックコントロールコマンドで送信される対応するモーションベクターの垂直方向のフィールド選択を指定します。 フレームの画像構造を使用したフレームベースのモーションの場合 (たとえば、たとえば、たとえば、-261 と-263)、これらのビットはすべてゼロである必要があります。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2、</em>および<em>MvertFieldSel_3</em>のビットは、mpeg-2 のセクション motion_vertical_field_select の 6.3.17.2 [r] [s] のビットに対応しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>11</p></td>
-<td align="left"><p>予約済みのビット。 0 にする必要があります。</p></td>
+<td align="left"><p>予約済みビット。 0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>10</p></td>
 <td align="left"><p><em>HostResidDiff</em></p>
-<p>デコードされたドメイン空間残存違いブロックが送信されるかどうか、または現在のマクロ ブロックのオフホスト IDCT の変換係数を送信するかどうかを指定します。 場合は 0 にする必要があります<strong>bConfigResidDiffHost</strong>は 0 です。 場合 1 をする必要があります<strong>bConfigResidDiffAccelerator</strong>は 0 です。</p></td>
+<p>空間ドメインの残りの、デコードされたブロックが送信されるかどうか、または現在のマクロブロックのオフホスト IDCT に対して変換係数を送信するかどうかを指定します。 <strong>BConfigResidDiffHost</strong>が0の場合は0にする必要があります。 <strong>BConfigResidDiffAccelerator</strong>が0の場合、は1である必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>9、8</p></td>
+<td align="left"><p>9と8</p></td>
 <td align="left"><p><em>MotionType</em></p>
-<p>図では、アニメーションの種類を指定します。 たとえば、(H.261) のように、フレームの画像構造でのモーションをフレーム ベースのビット 9 は、1 と第 8 ビットはゼロである必要があります。</p>
-<p>これらのビットの使用の使用に直接対応、 <em>frame_motion_type</em>または<em>field_motion_type</em>セクション 6.3.17.1 およびテーブルの 6-17 とこれらのビットが mpeg-2 ビデオ標準の 6-18 ビットmpeg-2 のビット ストリームに存在します。 この表の後、これらのビットを使用がさらに説明します。</p></td>
+<p>画像のモーションの種類を指定します。 たとえば、フレーム画像構造を使用したフレームベースのモーションの場合 (例: のように)、ビット9は1、ビット8は0にする必要があります。</p>
+<p>これらのビットを使用することは、mpeg-2 ビットストリームにこれらのビットが含まれている場合に、6-18 6-17 6.3.17.1 ビデオ標準の<em>frame_motion_type</em>または<em>field_motion_type</em>ビットを使用することに直接対応します。 これらのビットの使用方法については、次の表で詳しく説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>7 および 6</p></td>
+<td align="left"><p>7および6</p></td>
 <td align="left"><p><em>MBscanMethod</em></p>
-<p>マクロ ブロックの scan メソッドを指定します。 これと同じである必要があります<strong>bPicScanMethod</strong>場合<strong>bPicScanFixed</strong>は 1 です。 場合<em>HostResidDiff</em> 1 で、この変数は意味を持たず、これらのビットを 0 に設定する必要があります。</p>
-<p>場合<strong>bConfigHostInverseScan</strong>ゼロ、 <em>MBscanMethod</em>値は次のいずれかを指定する必要があります。</p>
+<p>マクロブロックスキャンメソッドを指定します。 <strong>Bbfile Scanfixed</strong>が1の場合、この<strong>メソッドは b絵文字 scanmethod</strong>と同じである必要があります。 <em>Hostresiddiff</em>が1の場合、この変数は意味を持たず、これらのビットは0に設定する必要があります。</p>
+<p><strong>BConfigHostInverseScan</strong>が0の場合、 <em>mbscanmethod</em>は次のいずれかの値である必要があります。</p>
 <ul>
-<li><p>6 ビットがゼロ、ビット 7 はジグザグ スキャン (mpeg-2 図 7-2) のゼロ</p></li>
-<li><p>6 ビットが 1 と 7 ビットが 0 の代替垂直スキャン (mpeg-2 図 7-3)</p></li>
-<li><p>6 ビットが 0 と 7 のビットが 1 のスキャンを代替水平 (H.263 図 I.2 の一部を)</p></li>
+<li><p>ビット6がゼロで、ジグザグスキャンのビット7が0である (MPEG-2 図 7-2)</p></li>
+<li><p>ビット6は1で、代替垂直スキャンの場合はビット7が0です (MPEG-2 図 7-3)</p></li>
+<li><p>ビット6はゼロで、ビット7は代替水平スキャンの場合は1です (263 図 i. 2 部)</p></li>
 </ul>
-<p>場合<strong>bConfigHostInverseScan</strong>は 1 です。 <em>MBscanMethod</em>次の値と等しくする必要があります。</p>
+<p><strong>BConfigHostInverseScan</strong>が1の場合、 <em>mbscanmethod</em>は次の値と同じである必要があります。</p>
 <ul>
-<li><p>6 ビットが 1 で、ビット 7 は係数の絶対アドレスを使用して任意のスキャンの 1 です。</p></li>
+<li><p>ビット6は1で、ビット7は、絶対係数アドレスを使用した任意のスキャンの場合は1です。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5</p></td>
 <td align="left"><p><em>FieldResidual</em></p>
-<p>残存の違いのブロックが mpeg-2 で指定されているフィールド IDCT 構造体を使用するかどうかを示します。</p>
-<p>場合、このフラグは 1 をする必要があります<strong>bPicStructure</strong>が 1 または 2 です。 このフラグは mpeg-2 場合に使用する場合、0 である必要があります、 <em>frame_pred_frame_DCT</em> mpeg-2 構文のフラグは 1 です。 このフラグでなければなりません、 <em>dct_type</em> mpeg-2 場合に使用する場合は、mpeg-2 構文の要素<em>dct_type</em>マクロ ブロックに存在します。</p></td>
+<p>残存差ブロックが MPEG-2 で指定されたフィールド IDCT 構造体を使用するかどうかを示します。</p>
+<p><strong>B絵文字構造</strong>が1または2の場合、このフラグは1にする必要があります。 Mpeg-2 構文の<em>frame_pred_frame_DCT</em>フラグが1の場合、このフラグは mpeg-2 で使用する場合は0にする必要があります。 <em>Dct_type</em>がマクロブロックに指定されている場合、このフラグは mpeg-2 構文の<em>dct_type</em>要素と同じである必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 <td align="left"><p><em>H261LoopFilter</em></p>
-<p>H.261 ループ フィルター (セクション 3.2.3 H.261 の) が現在のマクロ ブロック予測アクティブかどうかを指定します。 H.261 ループのフィルターとは分離 ¼, ½, ¼ フィルターに適用される両方水平および垂直に H.261 マクロ ブロックでは、内のすべての 6 つのブロックを除く、タップのいずれかのどこブロックの外側に当てはまるブロックにします。 係数 0、1、0 に、フィルターを変更する、このような場合。 完全な算術演算の精度は、2 D のフィルター処理 (整数値の半分以上の値が切り上げ中) の出力の 8 ビット整数に丸めを適用した保持されます。</p></td>
+<p>現在のマクロブロック予測に対して、3.2.3 ループフィルター (セクションの .H) がアクティブかどうかを指定します。 -261 ループフィルターは、分離可能な1/4、1/2、1/4 フィルターであり、水平方向と垂直方向の両方に適用されます。ただし、ブロックエッジでは、タップの1つがブロックの外側にあります。 このような場合は、係数が0、1、0になるようにフィルターが変更されます。 完全な算術精度は、2-d フィルター処理の出力時に8ビットの整数に丸められて保持されます (半整数またはそれより大きい値が切り上げられます)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
 <td align="left"><p><em>Motion4MV</em></p>
-<p>H.263 別冊 F および j. で使用されるよう、前進が、マクロ ブロックの 4 つの明るさブロックごとに個別の動きベクトルを使用することを示します<em>Motion4MV</em>場合は 0 にする必要があります<em>MotionForward</em>ゼロ場合<strong>bPic4MVallowed</strong>は 0 です。</p></td>
+<p>前方モーションが、BPic4MVallowed で使用される、マクロブロック内の4つの輝度ブロックのそれぞれに対して個別のモーションベクターを使用することを示します。 <em>Motion4MV</em>は、 <em>motionforward</em>が0の場合、またはが0の場合は0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><em>MotionBackward</em></p>
-<p>この変数の使用に対して、対応する指定された<em>macroblock_motion_backward</em> mpeg-2 内のパラメーター。 場合、 <strong>bPicBackwardPrediction</strong> DXVA_PictureParameters 構造体のメンバーは 0、 <em>MotionBackward</em> 0 にする必要があります。</p></td>
+<p>この変数は、MPEG-2 の対応する<em>macroblock_motion_backward</em>パラメーターに指定されたとおりに使用されます。 DXVA_PictureParameters 構造体の<strong>bPicBackwardPrediction</strong>メンバーが0の場合、 <em>motionbackward</em>を0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
 <td align="left"><p><em>MotionForward</em></p>
-<p>この変数の使用に対して、対応する指定された<em>macroblock_motion_forward</em> mpeg-2 でします。 このビットの使用はさらに次の表に続くテキストでについて説明します。</p></td>
+<p>この変数は、MPEG-2 の対応する<em>macroblock_motion_forward</em>に対して指定されたとおりに使用されます。 このビットの使用方法については、この表の後のテキストで詳しく説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>
 <td align="left"><p><em>IntraMacroblock</em></p>
-<p>内に、マクロ ブロックがコード化されたことと、現在のマクロ ブロックの動きベクトルが使用されていないことを示します。</p>
-<p>この変数に対応して、 <em>macroblock_intra</em> mpeg-2 変数。 このビットの使用はさらに次の表に続くテキストでについて説明します。</p></td>
+<p>マクロブロックが内部としてコード化され、現在のマクロブロックにモーションベクターが使用されないことを示します。</p>
+<p>この変数は、MPEG-2 の<em>macroblock_intra</em>変数に対応します。 このビットの使用方法については、この表の後のテキストで詳しく説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-マクロ ブロックは、コード化された、ときに動きベクトルの値に関連付けられています。 フィールドのコード化されたまたはフレームのコード化された画像のマクロ ブロックを使用するかどうかに基づいて、値が生成されます。 適切に考慮されます (特に、フィールドの構造化の画像またはデュアル素数モーション) の使用率が低いマクロ ブロックの種類ごとに任意の実装用に重要です。
+マクロブロックが predictively によってコード化されている場合は、モーションベクター値が関連付けられています。 値は、フィールドコードまたはフレームによってコード化された画像にマクロブロックが使用されているかどうかに基づいて生成されます。 すべての実装で、使用されているすべてのマクロブロック型 (特に、フィールド構造化画像またはデュアルプライムモーション) を適切に考慮することが重要です。
 
-このセクションでは次の 2 つのテーブルの有効な組み合わせを示す*IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、および**MVector**フレーム-コード化されたおよびフィールド-コード化された画像。 **MVector**動きベクトルの水平および垂直方向のコンポーネントが含まれます。 残りの変数とフラグは、動きベクトルへの操作を指定します。 これは、マクロ ブロックの処理の種類とフレームのコード化されたまたはフィールド-コード化された画像のマクロ ブロックを使用されているかどうかに従って決定されます。
+このセクションの次の2つの表は、 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、および**mvector** (フレームコードとフィールドコード) の有効な組み合わせを示しています。写真. **Mvector**には、モーションベクターの水平方向と垂直方向のコンポーネントが含まれています。 残りの変数とフラグは、モーションベクター演算を指定します。 これは、処理されたマクロブロックの種類と、フレームコードまたはフィールドでコード化された画像にマクロブロックが使用されているかどうかによって決まります。
 
-(このセクションでは、次の表に示した値は、次の条件が発生します。
+次の表に示す値 (このセクションの) は、次の条件で発生します。
 
--   *H261LoopFilter*、 *Motion4MV*、および**bPicOBMC**は 0。
+-   *H261LoopFilter*、 *Motion4MV*、 **b絵文字 obmc**はゼロです。
 
--   *PicCurrentField*フラグはしない限り、0 **bPicStructure** 2 (下部にあるフィールド) です。 この場合、 *PicCurrentField*は 1 です。
+-   、 **B絵文字構造**が 2 (下のフィールド) でない限り、*ピクチャ*は0になります。 この例では、 *"ピクチャ" フィールド*は1です。
 
-**MVector**のメンバーである、 [ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)と[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*、および*Motion4MV*フラグと変数は、ビット フィールドに含まれている、 **wMBtype**メンバーは、DXVA の\_MBctrl\_P\_HostResidDiff\_1 と DXVA\_MBctrl\_P\_OffHostIDCT\_1 構造体。 **bPicOBMC**のメンバーである、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。 *PicCurrentField*フラグがから派生した、 **bPicStructure**の DXVA メンバー\_PictureParameters します。
+**Mvector**は、 [**DXVA\_mbctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)および[**DXVA\_Mbctrl\_P\_offhostidct\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体のメンバーです。 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、 *H261LoopFilter*、および*Motion4MV*の各フラグと変数は、 **wmbtype**に含まれています。DXVA のメンバー\_MBctrl\_P\_HostResidDiff\_1 および DXVA\_MBctrl\_P\_OffHostIDCT\_1 構造体です。 **BDXVA Obmc**は、 [ **\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体のメンバーです。 DXVA\_ピクチャパラメーターの**B絵文字構造体**から派生した、画像形式の*フィールド*です。
 
-このセクションでは、次の表を確認する際に、次の考慮事項が適用されます。
+このセクションの次の表を確認する場合は、次の点に注意してください。
 
--   さまざまな場所、mpeg-2 変数名で*PMV*動きベクトルの値を示すために使用します。 この表記が識別するために使用、 *PMV*フレームの座標、および可能性がある場合 (つまり、半分垂直方向の解像度) でフィールドの座標で動きベクトルである mpeg-2 で定義されている変数。 すべてのケースで*PMV*の値を指す*後 PMV* (で指定されている mpeg-2 ビデオ セクション 7.6.3.1) として現在の動きベクトルの値で更新されています。
+-   さまざまな場所で、MPEG 2 変数名*Pmv*を使用して、モーションベクターの値を示します。 この表記は、フレーム座標にある MPEG-2 で定義されている*Pmv*変数と、フィールド座標にある (つまり、半垂直解像度の) モーションベクターを区別するために使用されます。 どのような場合でも、 *Pmv*は、現在のモーションベクター値によって更新され*た後の pmv*の値を参照します (MPEG 2 video Section 7.6.3.1 で指定)。
 
--   ベクターの定義 '\[2\]\[0\]とベクター'\[3\]\[0\] mpeg-2 セクション内にある 7.6.3.6 します。 左 **-** 表示シフト演算は、フレームの座標を垂直方向のコンポーネントが変更されることを示します。
+-   Vector '\[2\]\[0\] および vector '\[3\]\[0\] の定義は、MPEG-2 セクション7.6.3.6 にあります。 左 **-** シフト操作は、垂直コンポーネントがフレーム座標に変更されたことを示します。
 
--   両方の「場合、モーション」(0,0,0) の場合、マクロ ブロック パラメーターは、モーションの値が 0 のベクターで前方予測マクロ ブロック (0,1,0) をエミュレートします。 (Mpeg-2 セクション 7.6.3.5 も参照してください)。
+-   "モーションなし" の場合 (0, 0, 0)、マクロブロックパラメーターは、ゼロ値モーションベクターを使用して前方予測マクロブロック (0, 1, 0) をエミュレートします。 (「MPEG-2 セクション7.6.3.5」も参照してください)。
 
--   用に表示される値*MotionType*は単一引用符で囲まれたバイナリ表現です (最初の数値がビット 9、および、2 つ目は 8 ビット)。
+-   *Motiontype*を単一引用符で示す値は、バイナリ表現です (最初の数値はビット9用、2番目はビット8用)。
 
--   最初の表の左シフト演算子は、2 番目の値にのみ適用されます。
+-   最初のテーブルの左シフト演算子は、表示されている2番目の値にのみ適用されます。
 
-### <a name="span-idframe-structuredpicturesspanspan-idframe-structuredpicturesspanspan-idframe-structuredpicturesspanframe-structured-pictures"></a><span id="Frame-Structured_Pictures"></span><span id="frame-structured_pictures"></span><span id="FRAME-STRUCTURED_PICTURES"></span>画像をフレーム構造
+### <a name="span-idframe-structured_picturesspanspan-idframe-structured_picturesspanspan-idframe-structured_picturesspanframe-structured-pictures"></a><span id="Frame-Structured_Pictures"></span><span id="frame-structured_pictures"></span><span id="FRAME-STRUCTURED_PICTURES"></span>フレーム構造化画像
 
-次の表に、有効な画像をフレーム構造の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造が 3 に等しい)。
+次の表は、フレーム構造化画像の要素設定の有効な組み合わせを示しています ( [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**b絵文字構造**体のメンバーが 3)。
 
 <table>
 <colgroup>
@@ -222,18 +222,18 @@ ms.locfileid: "67369863"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">IntraMacroblock、MotionForward、MotionBackward</th>
-<th align="left">MotionType (意味は、画像の種類によって異なります)</th>
-<th align="left">[0] MVector MvertFieldSel_0 (1 日、dir1)</th>
-<th align="left">[1] MVector MvertFieldSel_1 (1 日、ディレクトリ 2)</th>
-<th align="left">[2] の MVector MvertFieldSel_2 (2 番目、dir1)</th>
-<th align="left">[3] の MVector MvertFieldSel_3 (2 つ目は、ディレクトリ 2)</th>
+<th align="left">IntraMacroblock、MotionForward、Motionforward</th>
+<th align="left">MotionType (画像の種類によって異なります)</th>
+<th align="left">MVector [0] MvertFieldSel_0 (1、dir1)</th>
+<th align="left">MVector [1] MvertFieldSel_1 (1、dir2)</th>
+<th align="left">MVector [2] MvertFieldSel_2 (2, dir1)</th>
+<th align="left">MVector [3] MvertFieldSel_3 (2, dir2)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1,0,0 (内)</p></td>
-<td align="left"><p>' 00' (内)</p></td>
+<td align="left"><p>1、0、0 (内部)</p></td>
+<td align="left"><p>' 00 ' (内部)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -244,8 +244,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,0,0 (モーションなし)</p></td>
-<td align="left"><p>' 10' (モーションなし)</p></td>
+<td align="left"><p>0、0、0 (動作なし)</p></td>
+<td align="left"><p>' 10 ' (モーションなし)</p></td>
 <td align="left"><p>0</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -256,8 +256,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 10' (フレーム MC)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 10 ' (フレーム MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -268,8 +268,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,0,1</p></td>
-<td align="left"><p>' 10' (フレーム MC)</p></td>
+<td align="left"><p>0、0、1</p></td>
+<td align="left"><p>' 10 ' (フレーム MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -280,8 +280,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,1</p></td>
-<td align="left"><p>' 10' (フレーム MC)</p></td>
+<td align="left"><p>0、1、1</p></td>
+<td align="left"><p>' 10 ' (フレーム MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -292,20 +292,20 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [1] [0]</p>
-<p>[1] [0] の選択</p></td>
+<p>sel [1] [0]</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,0,1</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、0、1</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -316,26 +316,26 @@ ms.locfileid: "67369863"
 <p>sel [1] [1]</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,1,1</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、1、1</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
 <p>sel [0] [1]</p></td>
 <td align="left"><p>PMV [1] [0]</p>
-<p>[1] [0] の選択</p></td>
+<p>sel [1] [0]</p></td>
 <td align="left"><p>PMV [1] [1]</p>
 <p>sel [1] [1]</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 11' (デュアル素数)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 11 ' (デュアルプライム)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <div>
  
 </div>
 <p>0 (上)</p></td>
-<td align="left"><p>ベクター ' [2] [0] [0]</p>
+<td align="left"><p>ベクター ' [2] [0] [0]、</p>
 <div>
  
 </div>
@@ -346,7 +346,7 @@ ms.locfileid: "67369863"
  
 </div>
 <p>1</p></td>
-<td align="left"><p>ベクター ' [3] [0] [0]</p>
+<td align="left"><p>ベクター ' [3] [0] [0]、</p>
 <div>
  
 </div>
@@ -358,9 +358,9 @@ ms.locfileid: "67369863"
 
  
 
-### <a name="span-idfield-structuredpicturesspanspan-idfield-structuredpicturesspanspan-idfield-structuredpicturesspanfield-structured-pictures"></a><span id="Field-Structured_Pictures"></span><span id="field-structured_pictures"></span><span id="FIELD-STRUCTURED_PICTURES"></span>フィールドの構造化の画像
+### <a name="span-idfield-structured_picturesspanspan-idfield-structured_picturesspanspan-idfield-structured_picturesspanfield-structured-pictures"></a><span id="Field-Structured_Pictures"></span><span id="field-structured_pictures"></span><span id="FIELD-STRUCTURED_PICTURES"></span>フィールド構造化画像
 
-次の表に、有効なフィールド構造の図の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体が 1 または 2 と等しい)。
+次の表は、フィールド構造化画像の要素設定の有効な組み合わせを示しています ( [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**b 構造**体メンバーが1または2に等しい場合)。
 
 <table>
 <colgroup>
@@ -373,18 +373,18 @@ ms.locfileid: "67369863"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">IntraMacroblock、MotionForward、MotionBackward</th>
-<th align="left">MotionType (意味は、画像の種類によって異なります)</th>
-<th align="left">[0] MVector MvertFieldSel_0 (1 日、dir1)</th>
-<th align="left">[1] MVector MvertFieldSel_1 (1 日、ディレクトリ 2)</th>
-<th align="left">[2] の MVector MvertFieldSel_2 (2 番目、dir1)</th>
-<th align="left">[3] の MVector MvertFieldSel_3 (2 つ目は、ディレクトリ 2)</th>
+<th align="left">IntraMacroblock、MotionForward、Motionforward</th>
+<th align="left">MotionType (画像の種類によって異なります)</th>
+<th align="left">MVector [0] MvertFieldSel_0 (1、dir1)</th>
+<th align="left">MVector [1] MvertFieldSel_1 (1、dir2)</th>
+<th align="left">MVector [2] MvertFieldSel_2 (2, dir1)</th>
+<th align="left">MVector [3] MvertFieldSel_3 (2, dir2)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1,0,0 (内)</p></td>
-<td align="left"><p>' 00' (内)</p></td>
+<td align="left"><p>1、0、0 (内部)</p></td>
+<td align="left"><p>' 00 ' (内部)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -395,10 +395,10 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,0,0 (モーションなし)</p></td>
-<td align="left"><p>' 01' (モーションなし)</p></td>
+<td align="left"><p>0、0、0 (動作なし)</p></td>
+<td align="left"><p>' 01 ' (モーションなし)</p></td>
 <td align="left"><p>0</p>
-<p><em>PicCurrentField</em></p></td>
+<p><em>ピクチャフィールド</em></p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -407,8 +407,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -419,8 +419,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,0,1</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、0、1</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -431,8 +431,8 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,1</p></td>
-<td align="left"><p>' 01' (フィールド MC)</p></td>
+<td align="left"><p>0、1、1</p></td>
+<td align="left"><p>' 01 ' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -443,20 +443,20 @@ ms.locfileid: "67369863"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 10' (16 x 8 MC)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 10 ' (16x8 MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [1] [0]</p>
-<p>[1] [0] の選択</p></td>
+<p>sel [1] [0]</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,0,1</p></td>
-<td align="left"><p>' 10' (16 x 8 MC)</p></td>
+<td align="left"><p>0、0、1</p></td>
+<td align="left"><p>' 10 ' (16x8 MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -467,24 +467,24 @@ ms.locfileid: "67369863"
 <p>sel [1] [1]</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0,1,1</p></td>
-<td align="left"><p>' 10' (16 x 8 MC)</p></td>
+<td align="left"><p>0、1、1</p></td>
+<td align="left"><p>' 10 ' (16x8 MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
 <p>sel [0] [1]</p></td>
 <td align="left"><p>PMV [1] [0]</p>
-<p>[1] [0] の選択</p></td>
+<p>sel [1] [0]</p></td>
 <td align="left"><p>PMV [1] [1]</p>
 <p>sel [1] [1]</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0,1,0</p></td>
-<td align="left"><p>' 11' (デュアル素数)</p></td>
+<td align="left"><p>0、1、0</p></td>
+<td align="left"><p>' 11 ' (デュアルプライム)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
-<p><em>PicCurrentField</em></p></td>
+<p><em>ピクチャフィールド</em></p></td>
 <td align="left"><p>ベクター ' [2] [0]</p>
-<p><em>PicCurrentField</em></p></td>
+<p><em>ピクチャフィールド</em></p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -495,9 +495,9 @@ ms.locfileid: "67369863"
 
  
 
-### <a name="span-idadditionalvalidelementsettingsforfieldandframepicturesspanspan-idadditionalvalidelementsettingsforfieldandframepicturesspanspan-idadditionalvalidelementsettingsforfieldandframepicturesspanadditional-valid-element-settings-for-field-and-frame-pictures"></a><span id="Additional_Valid_Element_Settings_for_Field_and_Frame_Pictures"></span><span id="additional_valid_element_settings_for_field_and_frame_pictures"></span><span id="ADDITIONAL_VALID_ELEMENT_SETTINGS_FOR_FIELD_AND_FRAME_PICTURES"></span>フィールドおよびフレームの画像の追加の要素が有効な設定
+### <a name="span-idadditional_valid_element_settings_for_field_and_frame_picturesspanspan-idadditional_valid_element_settings_for_field_and_frame_picturesspanspan-idadditional_valid_element_settings_for_field_and_frame_picturesspanadditional-valid-element-settings-for-field-and-frame-pictures"></a><span id="Additional_Valid_Element_Settings_for_Field_and_Frame_Pictures"></span><span id="additional_valid_element_settings_for_field_and_frame_pictures"></span><span id="ADDITIONAL_VALID_ELEMENT_SETTINGS_FOR_FIELD_AND_FRAME_PICTURES"></span>フィールドおよびフレームの画像に対する追加の有効な要素の設定
 
-フレーム構造およびフィールド構造の画像の許可されている残りのケースは、次のとおりです。
+フレーム構造およびフィールド構造化画像で許可される残りのケースは次のとおりです。
 
 <table>
 <colgroup>
@@ -513,35 +513,35 @@ ms.locfileid: "67369863"
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>H261LoopFilter</em> = 1</p>
-<p><strong>bPicOBMC</strong> = 0</p>
+<p><strong>B絵文字 Obmc</strong> = 0</p>
 <p><em>Motion4MV</em> = 0</p></td>
-<td align="left"><p>その 1 つの前方動きベクトル送信されることを示します<strong>MVector</strong>[0] H.261 ループのフィルターがアクティブで、マクロ ブロックで前方の予測であるとします。</p>
-<p><em>MotionForward</em> 1 をここである必要がありますと<em>IntraMacroblock</em>と<em>MotionBackward</em>どちらもゼロがある必要があります。</p></td>
+<td align="left"><p>1つの前方モーションベクターが<strong>Mvector</strong>[0] で送信され、マクロブロック内の前方予測に対して、[-261 loop] フィルターがアクティブになっていることを示します。</p>
+<p>この場合、 <em>Motionforward</em>は1である必要があります。また、 <em>IntraMacroblock</em>と<em>motionforward</em>の両方を0にする必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>bPicOBMC</strong> = 0</p>
+<td align="left"><p><strong>B絵文字 Obmc</strong> = 0</p>
 <p><em>Motion4MV</em> = 1</p></td>
-<td align="left"><p>4 つの前方動きベクトル送信されることを示します<strong>MVector</strong>[0] から<strong>MVector</strong>[3]。 <em>MotionForward</em> 1 をここである必要がありますと<em>IntraMacroblock</em> 0 にする必要があります。</p>
-<p>場合<em>MotionBackward</em> 1、5 番目は、旧バージョンとの予測に動きベクトルが送信される<strong>MVector</strong>[4]。</p></td>
+<td align="left"><p>4つの前方モーションベクトルが<strong>mvector</strong>[0] から<strong>mvector</strong>[3] に送信されることを示します。 この場合、 <em>Motionforward</em>は1である必要があり、 <em>IntraMacroblock</em>はゼロである必要があります。</p>
+<p><em>Motionbackward</em>が1の場合、 <strong>mvector</strong>[4] の後方予測用に5番目のモーションベクトルが送信されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong><em>bPicOBMC</em></strong>  = 1</p>
+<td align="left"><p><strong><em>B絵文字 Obmc</em></strong> = 1</p>
 <p><em>Motion4MV</em> = 0</p></td>
-<td align="left"><p>10 前方動きベクトル送信されることを示します<strong>MVector</strong>[0] から<strong>MVector</strong>[9] OBMC の仕様、モーション センサーとの最初の 4 はこのような値がベクトルをモーションがすべて等しい。</p>
-<p>場合<em>MotionBackward</em> 1 に設定されて、11 番目の旧バージョンと予測の動きベクトルが送信される<strong>MVector</strong>[10]。</p></td>
+<td align="left"><p>10個の前方モーションベクトルが、OBMC モーションの指定のために<strong>Mvector</strong>[0] から<strong>mvector</strong>[9] に送信され、最初の4つのモーションベクターの値がすべて等しいことを示します。</p>
+<p><em>Motionbackward</em>が1の場合、11番目のモーションベクターが<strong>mvector</strong>[10] の後方予測用に送信されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>bPicOBMC</strong> = 1</p>
+<td align="left"><p><strong>B絵文字 Obmc</strong> = 1</p>
 <p><em>Motion4MV</em> = 1</p></td>
-<td align="left"><p>10 の前方動きベクトル送信されることを示します<strong>MVector</strong>[0] から<strong>MVector</strong>[9] OBMC の仕様の動き、および最初の 4 はこのような値がベクトルをモーションがからそれぞれ異なる場合がありますその他。</p>
-<p>場合<em>MotionBackward</em> 1 に設定されて、11 番目の旧バージョンと予測の動きベクトルが送信される<strong>MVector</strong>[10]。</p></td>
+<td align="left"><p>10個の前方モーションベクトルが、OBMC モーションの指定のために<strong>Mvector</strong>[0] から<strong>mvector</strong>[9] の順に送信され、最初の4つのモーションベクターの値が相互に異なる場合があることを示します。</p>
+<p><em>Motionbackward</em>が1の場合、11番目のモーションベクターが<strong>mvector</strong>[10] の後方予測用に送信されます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**   average 演算子は数学的に同じです ((s1 s2、+ 1)&gt;&gt;1)、mpeg-1 mpeg-2 半分サンプルの予測をフィルター処理、双方向平均、およびデュアル素数同じ逆パリティの結合. H.263 双方向の平均化演算子は、右シフトする前に +1 のオフセットを追加できません。 **BBidirectionalAveragingMode**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)使用がどちらの方法を決定します。
+**注**   average 演算子は、(s1 + s2 + 1)&gt;&gt;1)、mpeg-2、mpeg-2 ハーフサンプリングの予測フィルター、双方向平均、および2つの主要な同等のパリティの組み合わせに対しては数学的に同一です。 -263 双方向平均演算子は、右シフトの前に + 1 のオフセットを追加しません。 これらのメソッドのうち、どれを使用するかは、 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**bBidirectionalAveragingMode**メンバーによって決まります。
 
  
 

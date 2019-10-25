@@ -3,18 +3,18 @@ title: ネットワーク データの送信
 description: ネットワーク データの送信
 ms.assetid: d3b960a7-bd2e-463c-b08b-5c3e4ecc36d0
 keywords:
-- ネットワーク、WDK のデータを送信します。
-- WDK のデータ ネットワーク、送信します。
-- WDK のパケットを送信するネットワークを
-- WDK ネットワークのデータを送信します。
+- ネットワークデータ WDK、送信
+- データ WDK ネットワーク, 送信
+- パケット WDK ネットワーク、送信
+- データの送信 (WDK ネットワーク)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6853384772288d9c45592d8c518f61cf4feb5fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47398fa1404040303dd58fbcacd625ccfbbbe705
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386841"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841963"
 ---
 # <a name="sending-network-data"></a>ネットワーク データの送信
 
@@ -22,23 +22,23 @@ ms.locfileid: "67386841"
 
 
 
-次の図では、プロトコル ドライバー、NDIS、およびミニポート ドライバーは、基本的な送信操作を示しています。
+次の図は、プロトコルドライバー、NDIS、およびミニポートドライバーを含む基本的な送信操作を示しています。
 
-![送信操作の基本的な ndis を示す図](images/netbuffersend.png)
+![基本的な ndis 送信操作を示す図](images/netbuffersend.png)
 
-プロトコルのドライバーの呼び出し、 [ **NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)を送信する関数[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)バインディングで構造体。 NDIS ミニポート ドライバーの呼び出す[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)ネットを転送するように関数\_バッファー\_ミニポート ドライバーの基になるリストの構造体。
+プロトコルドライバーは、 [**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)関数を呼び出して、[**ネットワーク\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体をバインドに送信します。 NDIS は、ミニポートドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数を呼び出して、NET\_BUFFER\_LIST 構造体を基になるミニポートドライバーに転送します。
 
-すべての NET\_バッファーに基づく送信操作は非同期です。 ミニポート ドライバーの呼び出し、 [ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数は、そのときの適切な状態コード。 各ネットの送信\_バッファー\_リスト構造は個別に完了することができます。 NDIS 呼び出しプロトコル ドライバーの[ **ProtocolSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)関数を各時間、ミニポート ドライバー呼び出し**NdisMSendNetBufferListsComplete**します。
+すべての NET\_バッファーベースの送信操作は非同期です。 ミニポートドライバーは、完了時に適切な状態コードを使用して[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数を呼び出します。 各 NET\_BUFFER\_リスト構造の送信は、個別に完了できます。 ミニポートドライバーが**NdisMSendNetBufferListsComplete**を呼び出すたびに、NDIS はプロトコルドライバーの[**ProtocolSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)関数を呼び出します。
 
-NET の所有権を再利用できるプロトコル ドライバー\_バッファー\_リストの構造体と関連付けられているすべての構造とデータ、NDIS 呼び出しプロトコル ドライバーのようになります*ProtocolSendNetBufferListsComplete*関数。
+プロトコルドライバーは、NDIS がプロトコルドライバーの*ProtocolSendNetBufferListsComplete*関数を呼び出すとすぐに、NET\_BUFFER\_LIST 構造体と、関連するすべての構造およびデータの所有権を再利用できます。
 
-ミニポート ドライバーまたは NDIS を返すことができます、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)任意の順序で構造体。 プロトコル ドライバーが保証されている一連の[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体は、各ネットワークに接続されている\_バッファー\_リスト構造が変更されていません。
+ミニポートドライバーまたは NDIS は、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体を任意の順序で返すことができます。 プロトコルドライバーは、各 NET\_バッファー\_リスト構造にアタッチされている[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造の一覧が変更されていないことを保証します。
 
-NDIS ドライバーは、NET を分離できます\_バッファーの構造体で、NET\_バッファー\_リスト構造体。 NDIS ドライバーでは、NET で MDLs を区切ることができますも\_バッファーの構造体。 ただし、ドライバーには、NET が返す必要があります常に\_バッファー\_、NET でリストの構造体\_バッファーの構造と元のフォームで MDLs します。 中間のドライバーなど、NET の個別可能性があります\_バッファー\_一覧に 2 つの新しい NET\_バッファー\_構造体を一覧表示し、次のドライバーに、元のデータの一部で渡します。 ただし、中間のドライバーが元 NET の処理を完了する\_バッファー\_一覧の完全な NET を返す必要があります\_バッファー\_元 NET で一覧\_バッファーの構造とMDLs します。
+NDIS ドライバーでは、net\_BUFFER\_LIST 構造体で、NET\_のバッファー構造を分離できます。 また、すべての NDIS ドライバーは、NET\_のバッファー構造で MDLs を分離することもできます。 ただし、ドライバーは常に、net\_BUFFER 構造体と MDLs を元の形式で使用して、NET\_バッファー\_リスト構造を返す必要があります。 たとえば、中間ドライバーでは、NET\_BUFFER\_リストを2つの新しい NET\_BUFFER\_リスト構造に分割し、元のデータの一部を次のドライバーに渡すことができます。 ただし、中間ドライバーが元の NET\_BUFFER\_リストの処理を完了すると、元の NET\_BUFFER 構造と MDLs を使用して、完全な NET\_BUFFER\_リストを返す必要があります。
 
-プロトコルのドライバー セット、 **SourceHandle**ネット メンバー\_バッファー\_リスト構造体を*NdisBindingHandle* NDIS がへの呼び出しで提供される、 [ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)関数。 NDIS を使用して、 **SourceHandle**ネットを返すメンバー\_バッファー\_ネット送信プロトコル ドライバーにリストの構造体\_バッファー\_リストの構造体。
+プロトコルドライバーは、NET\_BUFFER\_LIST 構造体の**Sourcehandle**メンバーを、 [**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)関数の呼び出しで NDIS が提供した*NdisBindingHandle*に設定します。 NDIS は、 **Sourcehandle**メンバーを使用して、NET\_BUFFER\_リスト構造を送信したプロトコルドライバーに、NET\_BUFFER\_list 構造体を返します。
 
-中間ドライバーの設定も、 **SourceHandle**ネット メンバー\_バッファー\_リスト構造体を*NdisBindingHandle* への呼び出しで提供されるそのNDIS値**NdisOpenAdapterEx**します。 中間のドライバーでは、送信要求を転送する場合、ドライバーを保存する必要があります、 **SourceHandle**値に書き込みを行う前に提供される上にあるドライバー、 **SourceHandle**メンバー。 NDIS に転送された NET が返されるときに\_バッファー\_中間のドライバーでは、中間のドライバーをリストの構造を復元する必要があります、 **SourceHandle**保存することです。
+また、中間ドライバーは、NET\_BUFFER\_LIST 構造体の**Sourcehandle**メンバーを、 *NdisBindingHandle*の呼び出しで提供**された**NDIS の値に設定します。 中間ドライバーが送信要求を転送する場合、ドライバーは、 **sourcehandle**メンバーに書き込む前に、そのドライバーによって提供された**sourcehandle**値を保存する必要があります。 NDIS が転送された NET\_BUFFER\_LIST 構造体を中間ドライバーに返す場合、中間ドライバーは、保存した**Sourcehandle**を復元する必要があります。
 
  
 

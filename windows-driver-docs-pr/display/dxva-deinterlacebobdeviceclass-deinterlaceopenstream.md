@@ -1,11 +1,11 @@
 ---
 title: DeinterlaceOpenStream メソッド
-description: DXVA_DeinterlaceBobDeviceClass::DeinterlaceOpenStream 関数のサンプルでは、作成し、インター ストリーム オブジェクトを開きます。
+description: Sample DXVA_DeinterlaceBobDeviceClass::D einterlaceOpenStream 関数は、ノンインターレースストリームオブジェクトを作成して開きます。
 ms.assetid: 975d5f6a-8d92-4da5-846c-1637fca58eb1
 keywords:
-- ディスプレイ デバイスの DeinterlaceOpenStream メソッド
-- DeinterlaceOpenStream メソッド ディスプレイ デバイス、DXVA_DeinterlaceBobDeviceClass インターフェイス
-- DXVA_DeinterlaceBobDeviceClass は、DeinterlaceOpenStream メソッドのディスプレイ デバイスをインターフェイスします。
+- DeinterlaceOpenStream メソッドの表示デバイス
+- DeinterlaceOpenStream メソッドの表示デバイス, DXVA_DeinterlaceBobDeviceClass インターフェイス
+- DXVA_DeinterlaceBobDeviceClass インターフェイス表示デバイス, DeinterlaceOpenStream メソッド
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: cf4aee45fb98a422dc8d226e2448818af560f3d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5b2a01fc74d0c2bc76638d01d40b70ef2ed3709
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375821"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838967"
 ---
-# <a name="dxvadeinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceOpenStream メソッド
+# <a name="dxva_deinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA\_DeinterlaceBobDeviceClass::D einterlaceOpenStream メソッド
 
 
-サンプル*DeinterlaceOpenStream*関数を作成し、インター ストリーム オブジェクトを開きます。
+Sample *DeinterlaceOpenStream*関数は、ノンインターレースストリームオブジェクトを作成して開きます。
 
 <a name="syntax"></a>構文
 ------
@@ -39,32 +39,32 @@ HRESULT DeinterlaceOpenStream(
 <a name="parameters"></a>パラメーター
 ----------
 
-*lpVideoDescription* \[で\]へのポインターを提供する**DXVA\_VideoDesc**ハードウェア。
+\] の*Lpvideodescription* \[は、 **DXVA\_videodesc**ハードウェアへのポインターを提供します。
 
 <a name="return-value"></a>戻り値
 ------------
 
-0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
+成功した場合は 0 (S\_OK または DD\_OK) を返します。それ以外の場合は、エラーコードを返します。 エラーコードの完全な一覧については、 *ddraw*を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-使用して GUID を確認した後のインター モード、 [ **DeinterlaceQueryAvailableModes** ](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数、インター ストリーム オブジェクトを作成できます。 このオブジェクトは、任意のハードウェアを予約するディスプレイ ドライバーを使用できます。 要求されたを実行するために必要なリソース操作インター レースを解除します。
+[**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数を使用してノンインターレースモード GUID が見つかった後、ノンインターレースストリームオブジェクトを作成できます。 このオブジェクトを使用すると、表示ドライバーは、要求されたインターレース解除操作を実行するために必要なハードウェアリソースを予約できます。
 
-ドライバーを実行する方法の詳細についてはインター レースを解除またはによって提供される情報を使用して、フレーム レートの変換操作、 *lpVideoDescription*パラメーターを参照してください[インターのビデオのコンテンツとフレーム レート変換](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)します。
+*Lpvideodescription*パラメーターによって指定された情報を使用してドライバーがインターレース解除操作またはフレームレート変換操作を実行する方法の詳細については、「[インターレース解除とフレームレート変換のビデオコンテンツ](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)」を参照してください。
 
-サンプル*DeinterlaceOpenStream*関数のマップに直接、 **CreateMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造、GUID はインター モードを要求します。 **LpData**のメンバー、 [ **DD\_CREATEMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)へのポインターを構造体、 [ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)構造体。
+Sample *DeinterlaceOpenStream*関数は、 [**DD\_MOTIONCOMPCALLBACKS バック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造の**createmocomp**メンバーに直接マップします。 GUID は、要求されたノンインターレースモードです。 [**DD\_CREATEMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)構造体の**lpData**メンバーは、 [**DXVA\_videodesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)構造体を指します。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD\_MOTIONCOMPCALLBACKS バック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DD\_CREATEMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
 
 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)
 
-[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)
 
  
 

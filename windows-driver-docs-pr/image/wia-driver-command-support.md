@@ -4,12 +4,12 @@ description: WIA ドライバー コマンドのサポート
 ms.assetid: 9c552316-7dd6-4102-88d3-fab9732d1e5d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 704189e861cc4e97b71b530327eceb848830cee3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7784bb3fdcfc8eac3e76203a9abdde545a4de086
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383767"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840712"
 ---
 # <a name="wia-driver-command-support"></a>WIA ドライバー コマンドのサポート
 
@@ -17,9 +17,9 @@ ms.locfileid: "67383767"
 
 
 
-WIA デバイス コマンドは、WIA ミニドライバーは、特定のアクションを実行するように指示する (イメージング アプリケーション) に代わって、WIA サービスによって送信される要求です。
+WIA デバイスコマンドは、(イメージングアプリケーションに代わって) wia サービスによって WIA ミニドライバーに送信される要求であり、特定のアクションを実行するように指示します。
 
-WIA デバイス コマンドを発行すると、ミニドライバーの一覧を次には。
+ミニドライバーに発行できる WIA デバイスコマンドの一覧を次に示します。
 
 <table>
 <colgroup>
@@ -29,17 +29,17 @@ WIA デバイス コマンドを発行すると、ミニドライバーの一覧
 <thead>
 <tr class="header">
 <th>コマンド</th>
-<th>説明</th>
+<th>意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_CMD_CHANGE_DOCUMENT</p></td>
-<td><p>次のドキュメント (複数ドキュメントのみをスキャナーに発行された) に変更します。</p></td>
+<td><p>次のドキュメントに移動します (multidocument スキャナーのみに発行されます)。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_CMD_DELETE_ALL_ITEMS</p></td>
-<td><p>ドライバーの項目のツリーを削除します。</p></td>
+<td><p>ドライバーの項目ツリーを削除します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_CMD_DIAGNOSTIC</p></td>
@@ -47,35 +47,35 @@ WIA デバイス コマンドを発行すると、ミニドライバーの一覧
 </tr>
 <tr class="even">
 <td><p>WIA_CMD_SYNCHRONIZE</p></td>
-<td><p>ドライバーの項目のツリーを再構築します。 すべてのミニドライバーは、このコマンドをサポートする必要があります。</p></td>
+<td><p>ドライバーの項目ツリーを再構築します。 すべてのミニドライバーがこのコマンドをサポートする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_CMD_TAKE_PICTURE</p></td>
-<td><p>(カメラのみを発行) を撮影します。</p></td>
+<td><p>画像を撮影します (カメラにのみ発行されます)。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_CMD_UNLOAD_DOCUMENT</p></td>
-<td><p>(複数ドキュメントのみをスキャナーに発行された) 現在のドキュメントをアンロードします。</p></td>
+<td><p>現在のドキュメントをアンロードします (multidocument スキャナーのみに発行されます)。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-WIA\_CMD\_XXX コマンドが、Microsoft Windows SDK ドキュメントに記載されています。 コマンドの独自のカスタム リストを含めることができます。
+WIA\_CMD\_XXX コマンドについては、Microsoft Windows SDK のドキュメントを参照してください。 コマンドの独自のカスタムリストを含めることができます。
 
-### <a name="adding-device-command-support"></a>デバイス コマンドのサポートを追加します。
+### <a name="adding-device-command-support"></a>デバイスコマンドサポートの追加
 
-To device コマンドのレポート、WIA ミニドライバーを正しく設定するには、レポートでサポートされているコマンドの配列、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。 実装例については、 **IWiaMiniDrv::drvGetCapabilities**メソッドを参照してください[中断イベントのサポートを追加する](adding-interrupt-event-support.md)します。
+デバイスコマンドを報告するように WIA ミニドライバーを適切に設定するには、 [**IWiaMiniDrv::D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッドでサポートされているコマンドの配列を報告します。 **IWiaMiniDrv::D rvgetcapabilities**メソッドの実装例については、「[割り込みイベントのサポートの追加](adding-interrupt-event-support.md)」を参照してください。
 
-### <a name="implementing-the-iwiaminidrvdrvdevicecommand-method"></a>IWiaMiniDrv::drvDeviceCommand メソッドを実装します。
+### <a name="implementing-the-iwiaminidrvdrvdevicecommand-method"></a>IWiaMiniDrv::d rvDeviceCommand メソッドの実装
 
-WIA サービスの呼び出し、 [ **IWiaMiniDrv::drvDeviceCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)メソッドへのアプリケーションの呼び出しに応答、 **IWiaItem::DeviceCommand**メソッド (で説明されている、Microsoft Windows SDK のドキュメント)。 **IWiaMiniDrv::drvDeviceCommand**メソッドは、次のタスクを実行する必要があります。
+WIA サービスは、アプリケーションの**Iwiaitem::D evicecommand**メソッドへの呼び出しに応答して[**IWiaMiniDrv::d rvdevicecommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)メソッドを呼び出します (Microsoft Windows SDK のドキュメントを参照)。 **IWiaMiniDrv::D rvdevicecommand**メソッドでは、次のタスクを実行する必要があります。
 
-1.  送信されたコマンドがサポートされているコマンドであるかどうかを確認します。
+1.  送信されたコマンドがサポートされているコマンドであるかどうかを判断します。
 
-2.  コマンドの要求を処理します。
+2.  コマンド要求を処理します。
 
-WIA ドライバーを使用して、デバイス コマンドを受信する WIA アイテムを確認する必要があります、 *pWiasContext*ポインター。 さらに、WIA ドライバーは、受信 WIA 項目を対象とした受信デバイス コマンドを処理する必要があります。 サポートされていない、WIA ドライバーに送信される任意のコマンドは、E で失敗する必要があります\_INVALIDARG エラー コード。
+WIA ドライバーは、 *Pwiascontext*ポインターを使用して、デバイスコマンドを受信する wia 項目を決定する必要があります。 その後、WIA ドライバーは、受信した WIA 項目を対象とした受信デバイスコマンドを処理する必要があります。 サポートされていない WIA ドライバーに送信されたコマンドは、E\_INVALIDARG エラーコードで失敗する必要があります。
 
-実装例については、 **IWiaMiniDrv::drvDeviceCommand**メソッドを参照してください[、アプリケーションのアイテム ツリーの変更を通知](informing-an-application-of-item-tree-changes.md)します。
+**IWiaMiniDrv::D rvdevicecommand**メソッドの実装例については、「[項目ツリーの変更をアプリケーションに通知](informing-an-application-of-item-tree-changes.md)する」を参照してください。

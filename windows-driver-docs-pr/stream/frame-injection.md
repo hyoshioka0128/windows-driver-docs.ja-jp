@@ -3,23 +3,23 @@ title: フレーム挿入
 description: フレーム挿入
 ms.assetid: cdfb1763-92a8-4a60-8f49-2af34a8beca5
 keywords:
-- WDK AVStream フレーム
-- 挿入モードの WDK AVStream フレーム
-- フレームの WDK AVStream の挿入
-- 暗証番号 (pin) を中心としたフィルター WDK AVStream
-- フィルターを中心としたフィルター WDK AVStream
+- WDK AVStream のフレーム
+- インジェクションモード WDK AVStream フレーム
+- フレームインジェクション WDK AVStream
+- pin 中心のフィルター (WDK AVStream)
+- フィルター中心のフィルター (WDK AVStream)
 - 空のフレーム WDK AVStream
 - 既定のフレーム動作 WDK AVStream
-- 既定のフレーム動作 WDK ストリーミング メディアを上書きします。
-- WDK AVStream の回路
+- 既定のフレーム動作のオーバーライド WDK streaming media
+- 接続 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c9a61903cbbb61e825eaceb18d768fadc8f65d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b35de0fd7d27bd90a4ea6f1c40b846cd224b6563
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842597"
 ---
 # <a name="frame-injection"></a>フレーム挿入
 
@@ -27,21 +27,21 @@ ms.locfileid: "67384071"
 
 
 
-AVStream で既定では、依頼者は、アロケーターから空のフレームを取得し、キューに配置します。 ミニドライバーでいずれかのフレームの塗りつぶし、[暗証番号 (pin) を中心とした処理](pin-centric-processing.md)または[フィルターを中心とした処理](filter-centric-processing.md)します。 フレームは、トランスポートの間で最終的に、回線を完了して、要求元に返すことは、回線の次のオブジェクトに移動します。 AVStream には、次のフレームが再利用します。
+AVStream の既定では、要求元はアロケーターから空のフレームを取得し、キューに配置します。 ミニドライバーは、[ピン中心](pin-centric-processing.md)の処理または[フィルター処理を中心](filter-centric-processing.md)とした処理のいずれかによってフレームを塗りつぶします。 このフレームは、トランスポートを経由して回線内の次のオブジェクトに移動し、最終的には回線を完了し、要求元に戻ります。 AVStream はフレームを再利用します。
 
-ミニドライバーを使用してこの既定の動作をオーバーライドできます*インジェクション モード*します。 挿入モードでは、ミニドライバーは、回線にフレームを配置する責任を負います。 既定の方法で、回線の周囲にフレームが反映されます。 フレームは、起動した AVStream オブジェクトに戻り、AVStream 呼び出しミニドライバーの[ *AVStrMiniFrameReturn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinframereturn)ルーチン。
+ミニドライバーは、*挿入モード*を使用して、この既定の動作をオーバーライドできます。 挿入モードでは、ミニドライバーは、フレームを回線に配置する役割を担います。 フレームは、既定の方法で回線の周りに伝達されます。 フレームが開始された AVStream オブジェクトに戻ると、AVStream はミニドライバーが提供する[*AVStrMiniFrameReturn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinframereturn)ルーチンを呼び出します。
 
-このルーチンで、ミニドライバーでしたインスタンスのフレームの割り当てを解除、フレームの戻り値の保留中の作業を完了または補充し、フレームを再挿入します。
+このルーチンでは、ミニドライバーは、インスタンスの割り当てを解除したり、フレームを返したときに保留中の作業を完了したり、フレームを補充して reinject したりすることができます。
 
-挿入モードをミニドライバーの呼び出しを設定する[ **KsPinRegisterFrameReturnCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinregisterframereturncallback)へのポインターとその*AVStrMiniFrameReturn*ルーチン。
+挿入モードを設定するために、ミニドライバーは[**KsPinRegisterFrameReturnCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinregisterframereturncallback)を呼び出し、 *AVStrMiniFrameReturn*ルーチンへのポインターを提供します。
 
-*呼び出さない* ***KsPinRegisterFrameReturnCallback*** *フィルターが停止状態でない限り、します。*
+*フィルターが停止状態の場合を除き*、 ***KsPinRegisterFrameReturnCallback***を*呼び出さない*でください。
 
-回路にフレームを挿入するには、呼び出す[ **KsPinSubmitFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframe)または[ **KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframemdl)します。
+回線にフレームを挿入するには、 [**KsPinSubmitFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframe)または[**KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframemdl)を呼び出します。
 
-次の図は、ソース フィルターの構成設定、AVStream フィルターを示します、*インプレース*フレームを挿入するソースとフィルター、およびレンダリングのフィルターを変換します。
+次の図は、ソースフィルター、*インプレース*変換フィルター、およびソースの挿入フレームを使用したレンダリングフィルターで構成される avstream フィルターセットを示しています。
 
-![avstream のフィルター セットを示す図](images/inject1.png)
+![avstream フィルターセットを示す図](images/inject1.png)
 
  
 

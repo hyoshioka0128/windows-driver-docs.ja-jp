@@ -1,9 +1,9 @@
 ---
-title: MRxQuerySdInfo routine
-description: TheMRxQuerySdInfo ルーチンによって呼び出されます RDBSS 要求をネットワーク ミニリダイレクター クエリ セキュリティ記述子の情報をファイル システム オブジェクト。
+title: MRxQuerySdInfo ルーチン
+description: TheMRxQuerySdInfo ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのセキュリティ記述子情報を照会するように要求するために、RDBSS によって呼び出されます。
 ms.assetid: 5bab05f1-2a79-42c0-ba70-e1124f7b1528
 keywords:
-- MRxQuerySdInfo ルーチン インストール可能なファイル システム ドライバー
+- MRxQuerySdInfo ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 089d3293af3429121f7dec3dabeecfacbefa11f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a207efdd43553fd209f4c991ccb9bde7be30d74
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361180"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841084"
 ---
-# <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo routine
+# <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo ルーチン
 
 
-*MRxQuerySdInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのセキュリティ記述子の情報を照会することを要求します。
+*MRxQuerySdInfo*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトのセキュリティ記述子情報を照会するように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxQuerySdInfo(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxQuerySdInfo*ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxQuerySdInfo*は正常に完了した状態\_成功したか、または次のいずれかのような NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,17 +64,17 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>呼び出し元には、この操作に適切なセキュリティが不足していました。</p></td>
+<td align="left"><p>呼び出し元には、この操作に対する適切なセキュリティが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
 <td align="left"><p>セキュリティ記述子の情報を受信するバッファーが小さすぎます。</p>
-<p>これは戻り値は、成功を考慮してでできるだけの非常に有効なデータとして返す必要がある、 <strong>Info.Buffer</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーター。</p></td>
+<p>この戻り値は成功と見なす必要があり、可能な限り多くの有効なデータが、 <em>RxContext</em>パラメーターによって示される RX_CONTEXT 構造体の<strong>情報バッファー</strong>のメンバーに返される必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>要求されたデータを受信するには、バッファーが小さすぎます。</p>
-<p>この値が返された場合、 <strong>InformationToReturn</strong>によって示される RX_CONTEXT 構造体のメンバー、 <em>RxContext</em>パラメーターは、呼び出しに必要なバッファーの最小サイズを設定する必要があります成功します。</p></td>
+<td align="left"><p>バッファーが小さすぎて要求されたデータを受け取ることができません。</p>
+<p>この値が返される場合、 <em>RxContext</em>パラメーターが指す RX_CONTEXT 構造体の<strong>InformationToReturn</strong>メンバーは、呼び出しが成功するために必要なバッファーの最小サイズに設定されている必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -82,7 +82,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>クエリ完了までのリソースの不足が発生しました。</p></td>
+<td align="left"><p>クエリを完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -90,23 +90,23 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NETWORK_ACCESS_DENIED</strong></td>
-<td align="left"><p>ネットワーク アクセスが拒否されました。</p></td>
+<td align="left"><p>ネットワークアクセスが拒否されました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>リモートのページ ファイルに関する情報など、要求された機能が実装されていません。</p></td>
+<td align="left"><p>リモートページファイルの情報など、要求された機能は実装されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>セキュリティ記述子の情報は、リモート共有に対するサポートされていません。</p></td>
+<td align="left"><p>セキュリティ記述子の情報は、リモート共有ではサポートされていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクトのパスが見つかりませんでした。 このエラーは、NTFS ストリーム オブジェクトの情報を要求したし、リモート ファイル システムがストリームをサポートしていない場合に返されることができます。</p></td>
+<td align="left"><p>オブジェクトのパスが見つかりませんでした。 このエラーは、NTFS ストリームオブジェクトの情報が要求され、リモートファイルシステムでストリームがサポートされていない場合に返されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_REPARSE</strong></td>
-<td align="left"><p>シンボリック リンクを処理するために、再解析が必要です。</p></td>
+<td align="left"><p>シンボリックリンクを処理するには、再解析が必要です。</p></td>
 </tr>
 </tbody>
 </table>
@@ -116,17 +116,17 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS への呼び出しを発行する*MRxQuerySdInfo*受信に応答する[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)要求。
+RDBSS は、 [**IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)要求の受信に応答して、 *MRxQuerySdInfo*への呼び出しを発行します。
 
-呼び出しの前に*MRxQuerySdInfo*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
+*MRxQuerySdInfo*を呼び出す前に、RDBSS は、 *RxContext*パラメーターによって示される RX\_コンテキスト構造内の次のメンバーを変更します。
 
-**QuerySecurity.SecurityInformation**に設定されているメンバー **IrpSp -&gt;Parameters.QuerySecurity.SecurityInformation**します。
+**Querysecurity. securityinformation**メンバーは、 **irpsp-&gt;Parameters. Querysecurity. securityinformation**に設定されています。
 
-**Info.Buffer**メンバーは、I/O 要求パケットからユーザー バッファーに設定されます。 このバッファーが RDBSS によってロックされて既に必要な場合。
+**情報バッファー**のメンバーは、i/o 要求パケットからのユーザーバッファーに設定されます。 このバッファーは、必要に応じて、RDBSS によって既にロックされています。
 
-**Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QuerySecurity.Length**します。
+**LengthRemaining**メンバーは**irpsp-&gt;Parameters. Querysecurity. Length**に設定されています。
 
-成功した場合、ネットワークのミニ リダイレクターを設定する必要があります、 **InformationToReturn** 、RX のメンバー\_セキュリティ情報の長さの CONTEXT 構造体が返されます。 場合に呼び出し*MRxQuerySdInfo*が成功した場合は、RDBSS セット、 **IoStatus.Information**に IRP のメンバー、 **InformationToReturn** RX のメンバー\_コンテキスト。
+成功した場合、ネットワークミニリダイレクターは、RX\_コンテキスト構造の**InformationToReturn**メンバーを、返されたセキュリティ情報の長さに設定する必要があります。 *MRxQuerySdInfo*への呼び出しが成功した場合、RDBSS は IRP の**Iostatus. 情報**メンバーを RX\_コンテキストの**InformationToReturn**メンバーに設定します。
 
 <a name="requirements"></a>要件
 ------------
@@ -143,7 +143,7 @@ RDBSS への呼び出しを発行する*MRxQuerySdInfo*受信に応答する[ **
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -151,7 +151,7 @@ RDBSS への呼び出しを発行する*MRxQuerySdInfo*受信に応答する[ **
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

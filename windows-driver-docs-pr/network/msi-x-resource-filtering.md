@@ -3,18 +3,18 @@ title: MSI-X リソース フィルター処理
 description: MSI-X リソース フィルター処理
 ms.assetid: ccc6aac0-7c89-4e48-ac53-9e3a72965a43
 keywords:
-- MSI X の WDK ネットワーク、リソース要件をフィルター処理関数
-- メッセージ シグナル割り込み WDK ネットワーク、リソース要件フィルター関数
+- MSI-X WDK ネットワーク, リソース要件フィルター関数
+- メッセージシグナル割り込み、WDK ネットワーク、リソース要件フィルター関数
 - Msi WDK ネットワーク、リソース要件フィルター関数
-- リソース要件関数 net WDK をフィルター処理します。
+- リソース要件フィルター関数 WDK net
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1583ad40480342e45b490069c0aeb080c59dd91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01efd6bc1d50d37ebae7a9a1f90d8ce55dde608f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359222"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844211"
 ---
 # <a name="msi-x-resource-filtering"></a>MSI-X リソース フィルター処理
 
@@ -22,27 +22,27 @@ ms.locfileid: "67359222"
 
 
 
-ミニポート ドライバーは、MSI をサポートし、MSI X メッセージごとに割り込みアフィニティを変更またはメッセージの割り込みのリソースが削除される場合、リソース要件フィルター関数を登録する必要があります。
+ミニポートドライバーは、MSI-X をサポートする場合はリソース要件フィルター関数を登録する必要があり、各 MSI-X メッセージの割り込み関係を変更するか、メッセージ割り込みリソースを削除します。
 
-NDIS 呼び出し、 [ *MiniportFilterResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pnp_irp)関数 NDIS を受信した後、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)ネットワーク インターフェイス カード (NIC) の I/O 要求パケット (IRP)。 NDIS 呼び出し*MiniportFilterResourceRequirements*デバイス スタックの基になる関数ドライバーは IRP を完了した後。
+Ndis は、NDIS が Irp を受信した後、 [*MiniportFilterResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pnp_irp)関数を呼び出します。これは、ネットワークインターフェイスカード (NIC) の[ **\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)I/O 要求パケット (irp) を\_します。 NDIS は、デバイススタック内の基になる関数ドライバーが IRP を完了した後に*MiniportFilterResourceRequirements*を呼び出します。
 
-NDIS が呼び出す*MiniportFilterResourceRequirements*後、 [ *MiniportAddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_add_device) NDIS を返します\_状態\_成功します。 NDIS を呼び出すことが*MiniportFilterResourceRequirements*呼び出す前にいつでも再び[ *MiniportRemoveDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_remove_device)します。 NDIS を呼び出すことが*MiniportFilterResourceRequirements*ミニポートの実行中にします。 ミニポートは、以下に示すようにリソースの一覧を変更可能性があります、ミニポートすぐにしようとしないでください、新しいリソースを使用します。 NDIS は最終的に停止し、新しいリソースにミニポートを再初期化、新しいリソースを使用するミニポートが試みる必要があるはその後。
+[*MiniportAddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_add_device)関数が ndis\_\_STATUS を返した後、Ndis は*MiniportFilterResourceRequirements*を呼び出しますが、成功します。 *MiniportFilterResourceRequirements*は、 [*Miniportremovedevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_remove_device)を呼び出す前に、いつでも再度呼び出すことができます。 ミニポートの実行中に、NDIS は*MiniportFilterResourceRequirements*を呼び出すことができます。 ミニポートでは、以下に示すようにリソース一覧が変更される場合がありますが、ミニポートでは、新しいリソースの使用をすぐに試みることはできません。 NDIS は、新しいリソースを使用して、最終的にミニポートを停止し、再初期化します。その後、ミニポートで新しいリソースの使用を試みる必要があります。
 
-[**IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)とリソースの一覧を提供する[ **IO\_リソース\_要件\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)で構造体**Irp -&gt;IoStatus.Information**します。 一覧内のリソースが記載されている[ **IO\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_descriptor)構造体。
+[**Irp\_\_フィルター\_リソース\_の要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)では、 **Irp-\_Iostatus. 情報**の[ **\_リスト構造\_IO&gt;リソース**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)の一覧が提供されます。 一覧のリソースは、 [**IO\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_descriptor)の構造によって記述されます。
 
-ミニポート ドライバーは、各リソースの種類の割り込みアフィニティ ポリシーを変更する**CmResourceTypeInterrupt** MSI X メッセージについて説明します。 アフィニティのポリシーを特定の対象とするプロセッサのミニポート ドライバーも設定セットを要求する場合、 [ **KAFFINITY** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/interrupt-affinity-and-priority#about-kaffinity)でマスク**Interrupt.TargetedProcessors**で、IO\_リソース\_記述子構造体。
+ミニポートドライバーは、MSI-X メッセージを記述する**Cmresourcetypeinterrupt**型のリソースごとに割り込みアフィニティポリシーを変更できます。 アフィニティポリシーが特定のプロセッサセットのターゲット設定を要求した場合は、ミニ[**アフィニティ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/interrupt-affinity-and-priority#about-kaffinity)マスクも、IO\_リソース\_記述子構造内の割り込みによって設定さ**れます。**
 
-ミニポート ドライバーは、型のすべてのリソースを削除できます**CmResourceTypeInterrupt**メッセージ割り込みリソースであります。 割り込みの行ベースのドライバーを登録できますし、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。 ミニポート ドライバーがこれらのメッセージ割り込みリソースを削除しない場合、ドライバーで線ベースの割り込みを登録しようとする場合に、オペレーティング システムは失敗*MiniportInitializeEx*します。
+ミニポートドライバーは、メッセージ割り込みリソースである**Cmresourcetypeinterrupt**型のすべてのリソースを削除できます。 ドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数の行ベースの割り込みに登録できます。 これらのメッセージ割り込みリソースがミニポートドライバーによって削除されない場合、ドライバーが*MiniportInitializeEx*に行ベースの割り込みを登録しようとすると、オペレーティングシステムは失敗します。
 
-NDIS 6.1 または以降のバージョンのミニポート ドライバーは、リソースの一覧にメッセージの割り込みのリソースを追加できます。 8 個の cpu を搭載したコンピューター上など、NIC が MSI X の 4 つのメッセージを生成し、オペレーティング システムで 4 つのメッセージ割り込み場合、オペレーティング システム、デバイスの MSI X 構成領域の 4 つのメッセージ テーブル エントリを初期化し、4 は、リソースの一覧でメッセージ割り込みリソース。 ここでは、ミニポート ドライバーには、メッセージの割り込みの他のリソースが必要であるため割り込みリソース、リソースの一覧を次の 4 つ以上のメッセージを割り当てるし、CPU に MSI X の各メッセージのアフィニティを設定できます。 オペレーティング システムがメッセージの割り込みの他のリソースを提供できる場合、ミニポート アダプターは、実行しているメッセージ割り込みの 8 つのリソースを受信します。 この場合、メッセージには、0 ~ 7 の数字があります。
+NDIS 6.1 以降のミニポートドライバーでは、リソースの一覧にメッセージ割り込みリソースを追加できます。 たとえば、8個の Cpu を搭載したコンピューターで、NIC が4つの MSI-X メッセージを生成でき、オペレーティングシステムで4つのメッセージ割り込みが有効になっている場合、オペレーティングシステムはデバイスの MSI-X 構成領域で4つのメッセージテーブルエントリを初期化し、4つのリソース一覧のメッセージ割り込みリソース。 この場合、ミニポートドライバーでは、より多くのメッセージ割り込みリソースが必要になるため、4つのメッセージ割り込みリソースをリソースリストに割り当て、各 MSI-X メッセージの関係を CPU に設定することができます。 オペレーティングシステムがより多くのメッセージ割り込みリソースを提供できる場合、ミニポートアダプターは、開始時に8個のメッセージ割り込みリソースを受け取ります。 この場合、メッセージには 0 ~ 7 の数値が含まれます。
 
-リスト内の各メッセージ割り込みリソースには、一覧の表示順序をメッセージ番号を後で対応するが割り当てられます。 たとえば、最初のメッセージ割り込みリソースの一覧では、0 をメッセージに割り当てられている、して、メッセージ 1、2 つ目が割り当てられます。
+リスト内の各メッセージ割り込みリソースには、後で一覧に表示される順序に対応するメッセージ番号が割り当てられます。 たとえば、リスト内の最初のメッセージ割り込みリソースは、メッセージ0に割り当てられ、2つ目のメッセージはメッセージ1に割り当てられます。
 
-実行時に、CPU に MSI X テーブル エントリを割り当てる、ミニポート ドライバーを呼び出すことができます、 [ **NdisMConfigMSIXTableEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismconfigmsixtableentry)関数で、テーブル エントリに関係セットが既にいる MSI X メッセージ マップCPU。 MSI X テーブル エントリの構成操作の詳細については、次を参照してください。 [MSI X テーブル エントリの CPU 関係を変更する](changing-the-cpu-affinity-of-msi-x-table-entries.md)します。
+実行時に MSI-X テーブルのエントリを CPU に割り当てるために、ミニポートドライバーは[**NdisMConfigMSIXTableEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismconfigmsixtableentry)関数を呼び出すことができます。この関数は、既に関係が CPU に設定されている Msi-x メッセージにテーブルエントリをマップします。 MSI-X のテーブルエントリの構成操作の詳細については、「 [msi-x テーブルエントリの CPU 関係の変更](changing-the-cpu-affinity-of-msi-x-table-entries.md)」を参照してください。
 
-新しいリソース要件の一覧については、メモリを割り当て、使用、 [ **NdisAllocateMemoryWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatememorywithtagpriority)関数。 古いリソース要件の一覧については、メモリを解放することができます、 [ **NdisFreeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreememory)関数。
+新しいリソース要件の一覧にメモリを割り当てるには、 [**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatememorywithtagpriority)関数を使用します。 [**NdisFreeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreememory)関数を使用すると、以前のリソース要件の一覧のメモリを解放できます。
 
-ミニポート ドライバーがなどその他のリソースを変更しない必要があります**CmResourceTypeMemory**と**CmResourceTypePort**リソース。 ミニポート ドライバーでは、リソースの一覧に新しいリソースを追加することを避ける必要があります。 ただし、NDIS 6.1 と以降のミニポート ドライバーでは、メッセージの割り込みの他のリソースを追加できます。 ミニポート ドライバーでは、メッセージの割り込みの他のリソースを追加する場合、削除しないでから、 [ *MiniportStartDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pnp_irp)関数。
+ミニポートドライバーは、 **CmResourceTypeMemory**や**Cmresourcetypeport**リソースなどの他のリソースを変更しないでください。 ミニポートドライバーは、リソースの一覧に新しいリソースを追加しないようにする必要があります。 ただし、NDIS 6.1 以降のミニポートドライバーでは、より多くのメッセージ割り込みリソースを追加できます。 ミニポートドライバーにより多くのメッセージ割り込みリソースが追加される場合は、 [*Miniportstartdevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pnp_irp)関数から削除しないでください。
 
-追加して、リソースの削除の詳細については、次を参照してください。 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)します。
+リソースの追加と削除の詳細については、「 [**IRP\_\_フィルター\_リソース\_の要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)」を参照してください。
 

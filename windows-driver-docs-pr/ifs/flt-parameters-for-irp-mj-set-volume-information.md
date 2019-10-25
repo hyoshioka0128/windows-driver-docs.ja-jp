@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_SET_VOLUME_INFORMATION 共用体
-description: 共用体のコンポーネントで使用されるときに、FLT の MajorFunction フィールド\_IO\_パラメーター\_操作のブロック構造は IRP\_MJ\_設定\_ボリューム\_情報。
+title: IRP_MJ_SET_VOLUME_INFORMATION 共用体の FLT_PARAMETERS
+description: FLT\_IO\_パラメーターの MajorFunction フィールドが操作の\_ブロック構造体である場合に使用される共用体コンポーネント\_は、\_ボリューム\_情報を設定します。
 ms.assetid: 316ce14c-02ea-45ab-8a2f-1b096f631d23
 keywords:
-- FLT_PARAMETERS IRP_MJ_SET_VOLUME_INFORMATION 共用体インストール可能なファイル システム ドライバー
-- FLT_PARAMETERS union インストール可能なファイル システム ドライバー
-- PFLT_PARAMETERS 共用体ポインター インストール可能なファイル システム ドライバー
+- IRP_MJ_SET_VOLUME_INFORMATION union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
+- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
+- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaad1d33441b956694a21468d579a0609f9ff64a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7175be67e12802bd9a08ea2aaba870b97771b4f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380500"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841343"
 ---
-# <a name="fltparameters-for-irpmjsetvolumeinformation-union"></a>FLT\_IRP のパラメーター\_MJ\_設定\_ボリューム\_情報共用体
+# <a name="flt_parameters-for-irp_mj_set_volume_information-union"></a>IRP\_MJ の FLT\_パラメーター\_設定\_ボリューム\_情報共用体
 
 
-共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)用の構造、操作が[ **IRP\_MJ\_設定\_ボリューム\_情報**](irp-mj-set-volume-information.md)します。
+[**FLT\_IO\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)の**MajorFunction**フィールドが操作の\_ブロック構造体である場合に使用される共用体コンポーネント\_は、 [ **\_ボリューム\_情報を設定**](irp-mj-set-volume-information.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -50,10 +50,10 @@ typedef union _FLT_PARAMETERS {
 次のメンバーを含む構造体。
 
 **長さ**  
-バッファーの長さを (バイト単位) で**VolumeBuffer**します。
+**Volumebuffer**に格納されているバッファーの長さ (バイト単位)。
 
 **FsInformationClass**  
-ボリューム用に設定する情報の種類。 次のいずれかです。
+ボリュームに対して設定する情報の種類。 次のいずれかです。
 
 <table>
 <colgroup>
@@ -63,21 +63,21 @@ typedef union _FLT_PARAMETERS {
 <thead>
 <tr class="header">
 <th align="left">Value</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileFsControlInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)"> <strong>FILE_FS_CONTROL_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)"><strong>FILE_FS_CONTROL_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsLabelInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information)"> <strong>FILE_FS_LABEL_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)"><strong>FILE_FS_LABEL_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsObjectIdInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)"> <strong>FILE_FS_OBJECTID_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -85,14 +85,14 @@ typedef union _FLT_PARAMETERS {
  
 
 **VolumeBuffer**  
-設定するボリュームの情報の値を格納している入力バッファーへのポインター。
+設定するボリューム情報の値を格納している入力バッファーへのポインター。
 
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の構造体[ **IRP\_MJ\_設定\_ボリューム\_情報** ](irp-mj-set-volume-information.md)操作にはコールバック データによって表される一連のボリューム情報操作のパラメーターが含まれています ([**FLT\_コールバック\_データ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+[**IRP\_MJ\_設定\_ボリューム\_情報**](irp-mj-set-volume-information.md)操作の[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータによって表されるセットボリューム情報操作のパラメーターが含まれています ([**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
-IRP\_MJ\_設定\_ボリューム\_情報は IRP ベースの操作。
+IRP\_MJ\_設定\_ボリューム\_情報は、IRP ベースの操作です。
 
 <a name="requirements"></a>要件
 ------------
@@ -105,7 +105,7 @@ IRP\_MJ\_設定\_ボリューム\_情報は IRP ベースの操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -113,25 +113,25 @@ IRP\_MJ\_設定\_ボリューム\_情報は IRP ベースの操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_FS\_コントロール\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)
+[**ファイル\_FS\_制御\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
 
-[**ファイル\_FS\_ラベル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information)
+[**ファイル\_FS\_ラベル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)
 
-[**ファイル\_FS\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)
+[**ファイル\_FS\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_は\_高速な操作\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_は\_FS\_フィルターの\_操作です。** ](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_は\_IRP\_操作です**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MJ\_設定\_ボリューム\_情報**](irp-mj-set-volume-information.md)
+[**IRP\_MJ\_\_ボリューム\_情報の設定**](irp-mj-set-volume-information.md)
 
 [**ZwSetVolumeInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567112)
 

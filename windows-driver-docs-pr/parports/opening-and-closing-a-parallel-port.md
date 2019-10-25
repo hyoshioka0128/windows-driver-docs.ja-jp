@@ -3,17 +3,17 @@ title: パラレル ポートの開始と終了
 description: パラレル ポートの開始と終了
 ms.assetid: 2183ffd9-8265-4848-b5d1-703643e0d0e6
 keywords:
-- パラレル ポートを開く WDK
-- パラレル ポートを閉じる WDK
-- パラレル ポート、WDK の共有
+- パラレルポート WDK、開く
+- パラレルポート WDK、終了
+- パラレルポート WDK、共有
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b9245151e32fa40d4ec69aa99b8b5d26c63889
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64fb36c198e9e1777f48ed9b8bbbe11899f08e39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358500"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844495"
 ---
 # <a name="opening-and-closing-a-parallel-port"></a>パラレル ポートの開始と終了
 
@@ -21,9 +21,9 @@ ms.locfileid: "67358500"
 
 
 
-クライアントは、パラレル ポートを共有できます。 クライアントは、クライアントが他の I/O 要求を使用して、または使用前にパラレル ポート上のファイルを開く必要があります、[ポート コールバック ルーチンを並列](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 クライアントは、クライアントがポートでは、そのファイルを閉じた後、パラレル ポートと通信する必要があります試行しません。
+クライアントは、パラレルポートを共有できます。 クライアントは、他の i/o 要求を使用したり、[パラレルポートコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を使用したりする前に、パラレルポートでファイルを開く必要があります。 クライアントがポートでファイルを閉じた後に、クライアントがパラレルポートとの通信を試行することはできません。
 
-プラグ アンド プレイ環境でデバイスを削除したり、上、開いているファイルがないときに追加されるに注意してください。 一般に、パラレル ポートが追加されるたびにプラグ アンド プレイが別の場所とリソースを割り当てます。
+プラグアンドプレイ環境では、開いているファイルがないときは常にデバイスを削除または追加できます。 一般に、パラレルポートが追加されるたびに、プラグアンドプレイによって別の場所とリソースが割り当てられます。
 
  
 

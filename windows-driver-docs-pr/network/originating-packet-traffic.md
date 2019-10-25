@@ -4,57 +4,57 @@ description: パケット トラフィックの生成
 ms.assetid: 613C7E82-387D-47AE-A699-A799087D3C1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 342caa2b600b4fd92b69af626f1f8f05272f8dc9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 50081c0012b757f426b66c5e600910df1b7897c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366542"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843757"
 ---
 # <a name="originating-packet-traffic"></a>パケット トラフィックの生成
 
 
-このトピックでは、HYPER-V の拡張機能が新しいパケットの発信元し、拡張可能スイッチのデータ パスに挿入する方法について説明します。
+このトピックでは、Hyper-v 拡張機能によって新しいパケットが生成され、拡張可能なスイッチのデータパスに挿入されるしくみについて説明します。
 
-**注**  このページは、情報とでのダイアグラムに精通していることを前提としています。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)します。
-
- 
-
-**注**  、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*拡張可能スイッチ ドライバー スタック*. 拡張機能に関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)します。
+**注**  このページでは、 [Hyper-v の拡張可能スイッチ](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)の概要に関する情報と図について理解していることを前提としています。
 
  
 
-拡張可能スイッチの拡張機能は、拡張可能スイッチのイングレス データ パスに新しいパケットをのみ挿入できます。 これにより、拡張可能スイッチのインターフェイスがフィルター処理してこれらのパケットを正しく転送できます。 拡張機能は、受信データのパスに新しいパケットを挿入する次のガイドラインに従う必要があります。
+**注**  拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは拡張*可能なスイッチ拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。 拡張機能の詳細については、「 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)」を参照してください。
 
--   拡張機能に割り当てる必要があります最初、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)新しいパケットの構造体。
+ 
 
--   拡張機能の割り当て後に、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)構造新しいパケットの場合は、呼び出す必要があります、 [ *AllocateNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)ハンドラー関数にパケットを転送の拡張可能スイッチのコンテキストを割り当てられません。
+拡張可能なスイッチ拡張機能では、拡張可能なスイッチの受信データパスに新しいパケットのみを挿入できます。 これにより、拡張可能なスイッチインターフェイスは、これらのパケットをフィルター処理し、適切に転送できます。 拡張機能は、次のガイドラインに従って、新しいパケットを受信データパスに挿入する必要があります。
 
-    転送コンテキストは、パケットの帯域外の (OOB) データに存在します。 その発信元ポートと 1 つまたは複数の宛先ポートの配列など、パケットの転送情報が含まれています。
+-   拡張機能では、最初に新しいパケットに対して[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)構造体を割り当てる必要があります。
 
-    転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+-   拡張機能によって、新しいパケットに対して[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)構造体が割り当てられた後、 [*AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context) handler 関数を呼び出して、パケットの拡張可能なスイッチ転送コンテキストを割り当てる必要があります。
 
--   拡張機能の呼び出し後[ *AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)、パケットの発信元ポートに設定する**NDIS\_スイッチ\_既定\_ポート\_ID**します。 パケットの送信元ポートの識別子を**NDIS\_切り替える\_既定\_ポート\_ID**が信頼されており、アクセス制御リスト (Acl など、拡張可能スイッチ ポートのポリシーをバイパスします。) とサービスの品質 (QoS)。
+    転送コンテキストは、パケットの帯域外 (OOB) データに存在します。 送信元ポート、1つまたは複数の宛先ポートの配列など、パケットの転送情報が含まれています。
 
-    拡張機能は、特定のポートから送信されたかのように扱う場合にパケットを必要があります。 これにより、パケットに適用するには、そのポートのポリシーができます。 拡張機能の呼び出し[ *SetNetBufferListSource* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)パケットの発信元ポートを変更します。
+    転送コンテキストの詳細については、「 [Hyper-v 拡張可能スイッチ転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)」を参照してください。
 
-    ただし、ある可能性があります、拡張機能にパケットの送信元ポートの識別子を割り当てる必要のある状況**NDIS\_スイッチ\_既定\_ポート\_ID**します。 など、拡張機能に設定するソース ポート識別子**NDIS\_スイッチ\_既定\_ポート\_ID**でデバイスに送信されるパケットの独自のコントロール、外部ネットワークです。
+-   拡張機能が[*AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)を呼び出した後、パケットの送信元ポートは**NDIS\_スイッチ\_既定\_ポート\_ID**に設定されます。 NDIS\_スイッチの発信元ポート識別子を持つパケット **\_既定の\_ポート\_ID**は信頼されており、アクセス制御リスト (acl) やサービスの品質 (QoS) などの拡張可能なスイッチポートポリシーをバイパスします。
 
--   転送拡張機能がイングレス データ パスが新しいパケットを送信する場合、パケットの宛先ポートそれを判断する必要があります。 この手順の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
+    この拡張機能では、パケットが特定のポートから送信されたものとして扱われるようにすることができます。 これにより、そのポートのポリシーをパケットに適用できます。 この拡張機能は、 [*SetNetBufferListSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)を呼び出してパケットの送信元ポートを変更します。
 
-    **注**  キャプチャまたは拡張機能をフィルター処理は、新しいパケットを新しい変換先のポートを追加できません。
+    ただし、この拡張機能では、パケットの発信元ポート識別子を**NDIS\_スイッチ\_既定の\_ポート\_ID**に割り当てることが必要になる場合があります。 たとえば、外部ネットワーク上のデバイスに送信される専用の制御パケットに対して、発信元ポートの識別子を**NDIS\_スイッチ\_既定の\_ポート\_ID**に設定することができます。
+
+-   転送拡張機能が受信データパスに新しいパケットを送信する場合は、パケットの宛先ポートを決定する必要があります。 この手順の詳細については、「[拡張可能スイッチの宛先ポートデータをパケットに追加](adding-extensible-switch-destination-port-data-to-a-packet.md)する」を参照してください。
+
+    キャプチャまたはフィルター拡張機能が新しいパケットに新しい宛先ポートを追加できない  に**注意**してください。
 
      
 
--   パケット データがローカルである、拡張機能は、新しいパケットを作成するときまたは*信頼*HYPER-V 親パーティションの親のオペレーティング システムのメモリ。 このメモリは、子パーティションでアクセスできません。 そのためと見なされます「安全」同期されていない更新プログラムからによってそのパーティションで実行されるゲスト オペレーティング システム。
+-   拡張機能によって新しいパケットが作成されると、パケットデータは、Hyper-v の親パーティションの親オペレーティングシステムのローカルまたは*信頼さ*れたメモリに配置されます。 このメモリには、子パーティションからアクセスできません。 そのため、そのパーティションで実行されているゲストオペレーティングシステムによる同期されていない更新からは、"安全" と見なされます。
 
-    拡張機能を取得する必要があります、 [ **NDIS\_スイッチ\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)を使用して、新しいパケットの共用体、 [ **NET\_バッファー\_一覧\_スイッチ\_転送\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロ。 拡張機能を設定する必要があります、 **IsPacketDataSafe**メンバーを TRUE にします。 これは、信頼されているメモリ内のすべてのパケット データがあることを指定します。
+    拡張機能は、Net\_BUFFER\_LIST\_スイッチを使用して、新しいパケットの[ **\_詳細\_net\_buffer\_list\_\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)するために、NDIS\_スイッチを取得する必要があります。 [ **\_\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロを転送します。 拡張機能では、 **IsPacketDataSafe**メンバーを TRUE に設定する必要があります。 これは、すべてのパケットデータが信頼できるメモリ内にあることを指定します。
 
--   拡張機能を呼び出すと[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)イングレス データ パスにパケットを挿入することを設定する必要があります、*フラグ*拡張可能な適切なパラメーターフラグの設定を切り替えます。 これらの詳細については、フラグの設定を参照してください[HYPER-V 拡張可能スイッチの送信と受信フラグ](hyper-v-extensible-switch-send-and-receive-flags.md)します。
+-   拡張機能が[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を呼び出してパケットを受信データパスに挿入するときは、 *Flags*パラメーターに適切な拡張可能なスイッチフラグ設定を設定する必要があります。 これらのフラグ設定の詳細については、「 [Hyper-v 拡張可能スイッチの送信フラグと受信フラグ](hyper-v-extensible-switch-send-and-receive-flags.md)」を参照してください。
 
--   NDIS が、拡張機能を呼び出すときに[ *FilterSendNetBufferListsComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists_complete)新しいパケットの送信要求を完了する関数を拡張機能を呼び出す必要があります[ *FreeNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context)を割り当てられた転送のコンテキストを解放します。 拡張機能を解放または再利用する前にこれにする必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)パケットの構造体。
+-   NDIS が拡張機能の[*FilterSendNetBufferListsComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete)関数を呼び出して新しいパケットの送信要求を完了する場合、拡張機能は[*FreeNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context)を呼び出して、割り当てられた転送コンテキストを解放する必要があります。 この拡張機能は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)構造体を解放または再利用する前に、この操作を行う必要があります。
 
-拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
+拡張可能なスイッチの受信と送信のデータパスの詳細については、「 [Hyper-v 拡張可能スイッチのデータパス](hyper-v-extensible-switch-data-path.md)」を参照してください。
 
  
 

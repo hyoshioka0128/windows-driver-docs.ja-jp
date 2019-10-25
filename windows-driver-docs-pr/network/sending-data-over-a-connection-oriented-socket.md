@@ -3,23 +3,23 @@ title: 接続指向ソケット経由でのデータの送信
 description: 接続指向ソケット経由でのデータの送信
 ms.assetid: 290f3a8a-6bdc-4dd9-a9bf-4eede37bf1e5
 keywords:
-- 接続指向のソケット WDK Winsock カーネル
+- 接続指向ソケット WDK Winsock カーネル
 - WskSend
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c63ec7780ff4c31489c50b20e229750eafaaa410
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4fe2aef88176a0b7acff4a4a695cc822637b29d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378646"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841972"
 ---
 # <a name="sending-data-over-a-connection-oriented-socket"></a>接続指向ソケット経由でのデータの送信
 
 
-Winsock カーネル (WSK) アプリケーションがリモートのトランスポート アドレスに接続指向のソケットを接続した後、ソケットを使ってデータを送信できます。 WSK アプリケーションも、リッスン ソケットの受け入れ、接続指向のソケット経由でデータを送信できます。 WSK アプリケーション接続指向のソケット経由で呼び出すことによってデータを送信する、 [ **WskSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send)関数。
+Winsock カーネル (WSK) アプリケーションは、接続指向のソケットをリモートトランスポートアドレスに接続した後、ソケット経由でデータを送信できます。 WSK アプリケーションは、リッスンしているソケットで受け入れられた接続指向のソケットを介してデータを送信することもできます。 WSK アプリケーションは、 [**Wsksend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send)関数を呼び出すことにより、接続指向のソケットを介してデータを送信します。
 
-次のコード例では、WSK アプリケーションが接続指向のソケット経由でデータを送信する方法を示します。
+次のコード例は、WSK アプリケーションが接続指向のソケットを介してデータを送信する方法を示しています。
 
 ```C++
 // Prototype for the send IoCompletion routine

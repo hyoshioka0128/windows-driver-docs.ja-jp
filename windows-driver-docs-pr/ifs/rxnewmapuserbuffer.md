@@ -1,9 +1,9 @@
 ---
 title: RxNewMapUserBuffer 関数
-description: RxNewMapUserBuffer 低い I/O で使用されるユーザー バッファーのアドレスを返します。
+description: RxNewMapUserBuffer は、低 i/o に使用されるユーザーバッファーアドレスを返します。
 ms.assetid: 90ab7793-55ed-47f7-b55d-f4205488796c
 keywords:
-- インストール可能なファイル システム ドライバーの RxNewMapUserBuffer 関数
+- RxNewMapUserBuffer 関数のインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eed833830e1ba889ac011875314cf14dab6ccdc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3e98730bf8888210995c9fc5bedd6b1bb45bd9a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359266"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840974"
 ---
 # <a name="rxnewmapuserbuffer-function"></a>RxNewMapUserBuffer 関数
 
 
-**RxNewMapUserBuffer**低い I/O で使用されるユーザー バッファーのアドレスを返します。
+**RxNewMapUserBuffer**は、低 i/o に使用されるユーザーバッファーアドレスを返します。
 
 <a name="syntax"></a>構文
 ------
@@ -38,22 +38,22 @@ PVOID RxNewMapUserBuffer(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[in\]  
-RX へのポインター\_この要求のコンテキスト構造体。
+\] の*RxContext* \[  
+この要求の RX\_コンテキスト構造体へのポインター。
 
 <a name="return-value"></a>戻り値
 ------------
 
-**RxNewMapUserBuffer**成功した場合にマップされたアドレスのポインターを返しますまたは**NULL**失敗します。
+**RxNewMapUserBuffer**は、成功した場合はマップされたアドレスポインターを返し、失敗した場合は**NULL**を返します。
 
 <a name="remarks"></a>注釈
 -------
 
-MDL が存在するかどうかは、MDL バッファーを記述、ユーザー、および、MDL のシステム アドレスは、によって返されることが前提です**RxNewMapUserBuffer**します。 それ以外の場合、ユーザー バッファーがによって直接返される**RxNewMapUserBuffer**します。
+MDL が存在する場合は、MDL によってユーザーバッファーが記述され、MDL のシステムアドレスが**RxNewMapUserBuffer**によって返されることが前提となります。 それ以外の場合は、ユーザーバッファーは**RxNewMapUserBuffer**によって直接返されます。
 
-**RxNewMapUserBuffer**ルーチン チェックの場合、 **CurrentIrp**-&gt;**MdlAddress**のメンバー、 *RxContext*変数**NULL**を返します、 **CurrentIrp**-&gt;**UserBuffer**のメンバー、 *RxContext*変数とこれに該当します。 場合、 **CurrentIrp**-&gt;**MdlAddress**メンバーでない**NULL**、し**RxNewMapUserBuffer**されます呼び出す[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) IRP から MDL を返す。
+RxNewMapUserBuffer ルーチンは、 *RxContext*変数のの&gt;**Mdladdress**メンバーが**NULL**で**ある-か**どうかを確認**し、** **UserBuffer を&gt;-返します。** この場合の*RxContext*変数のメンバー。 -&gt;**Mdladdress**メンバーが**NULL**でない**場合、** **RxNewMapUserBuffer**は IRP から MDL を返すために[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出します。
 
-なお、 **RxNewMapUserBuffer**ルーチンは Windows XP および Windows 2000 で利用できるのみです。
+**RxNewMapUserBuffer**ルーチンは、windows XP と windows 2000 でのみ使用できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -70,11 +70,11 @@ MDL が存在するかどうかは、MDL バッファーを記述、ユーザー
 </tr>
 <tr class="even">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>RxNewMapUserBuffer ルーチンは、Windows XP および Windows 2000 にできるだけです。</p></td>
+<td align="left"><p>RxNewMapUserBuffer ルーチンは、Windows XP および Windows 2000 でのみ使用できます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Rxprocs.h (Rxcontx.h または Rxprocs.h を含む)</td>
+<td align="left">Rxprocs (Rxcontx または Rxprocs を含む)</td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRQL</p></td>
@@ -88,13 +88,13 @@ MDL が存在するかどうかは、MDL バッファーを記述、ユーザー
 
 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
 
-[**RxLowIoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lowio/nf-lowio-rxlowiocompletion)
+[**RxLowIoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lowio/nf-lowio-rxlowiocompletion)
 
-[**RxLowIoGetBufferAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lowio/nf-lowio-rxlowiogetbufferaddress)
+[**RxLowIoGetBufferAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lowio/nf-lowio-rxlowiogetbufferaddress)
 
-[**RxMapSystemBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxmapsystembuffer)
+[**RxMapSystemBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxmapsystembuffer)
 
-[**RX\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/ns-rxcontx-_rx_context)
+[**RX\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/ns-rxcontx-_rx_context)
 
  
 

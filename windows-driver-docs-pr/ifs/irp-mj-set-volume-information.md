@@ -1,9 +1,9 @@
 ---
 title: IRP_MJ_SET_VOLUME_INFORMATION
-description: IRP\_MJ\_設定\_ボリューム\_情報
+description: IRP\_MJ\_\_ボリューム\_情報の設定
 ms.assetid: 7c317e8b-ffa9-47f7-ac53-23b09873fab9
 keywords:
-- IRP_MJ_SET_VOLUME_INFORMATION インストール可能なファイル システム ドライバー
+- IRP_MJ_SET_VOLUME_INFORMATION インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,27 +12,27 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e209d6494548e404cf6f6c684d18953727b631d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 193450fd1cb3e9844a163a0af323f10de6efa6bb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375678"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841156"
 ---
-# <a name="irpmjsetvolumeinformation"></a>IRP\_MJ\_設定\_ボリューム\_情報
+# <a name="irp_mj_set_volume_information"></a>IRP\_MJ\_\_ボリューム\_情報の設定
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_設定\_ボリューム\_情報の要求が I/O マネージャーによって送信されます。 送信できる、たとえば、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**SetVolumeLabel**します。
+IRP\_MJ\_SET\_VOLUME\_INFORMATION 要求は、i/o マネージャーによって送信されます。 たとえば、ユーザーモードアプリケーションが**SetVolumeLabel**などの Microsoft Win32 関数を呼び出したときに送信できます。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-ファイル システム ドライバーは、抽出して、ユーザー ボリュームのオープンを表すかどうかを確認するファイル オブジェクトをデコードする必要があります。 場合は、ファイル システム ドライバーが適切なボリュームの情報を設定し、IRP の完了する必要があります。 それ以外の場合、ファイル システムは IRP を適切なボリューム情報を設定せずに完了する必要があります。
+ファイルシステムドライバーは、開いているユーザーボリュームを表すかどうかを判断するために、ファイルオブジェクトを抽出してデコードする必要があります。 存在する場合は、ファイルシステムドライバーが適切なボリューム情報を設定し、IRP を完了する必要があります。 それ以外の場合、ファイルシステムは、ボリューム情報を設定せずに、必要に応じて IRP を完了する必要があります。
 
-設定可能なボリューム情報の種類はファイル システムに依存するが、一般に、次の 1 つ以上が含まれます。
+設定できるボリューム情報の種類は、ファイルシステムによって異なりますが、一般的には次の1つ以上を含みます。
 
 FileFsControlInformation
 
@@ -40,39 +40,39 @@ FileFsLabelInformation
 
 FileFsObjectIdInformation
 
-すべての可能な情報の種類の一覧を参照してください、FS\_情報\_ntifs.h でクラスの列挙体。
+使用可能なすべての情報の種類の一覧については、ntifs の「FS\_INFORMATION\_クラス列挙体」を参照してください。
 
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
 
-フィルター ドライバーは、スタックの次の下位ドライバーには、この IRP を渡す必要があります。
+フィルタードライバーは、この IRP をスタック上の次の下位のドライバーに渡す必要があります。
 
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の一連のボリューム情報の要求の処理に IRP スタックの場所は、次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、set volume information 要求の処理で、IRP の次のメンバーと IRP スタックの場所に設定されている情報を使用できます。
 
-<a href="" id="deviceobject"></a>*デバイス オブジェクト*  
-ターゲット デバイスのオブジェクトへのポインター。
+<a href="" id="deviceobject"></a>*DeviceObject*  
+ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-設定するボリューム情報の値を含む入力バッファーへのポインター。 この情報は、次の構造体のいずれかに格納されます。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp*  
+設定するボリューム情報の値を格納している入力バッファーへのポインター。 この情報は、次のいずれかの構造に格納されます。
 
-ファイル\_FS\_コントロール\_情報
+ファイル\_FS\_制御\_情報
 
 ファイル\_FS\_ラベル\_情報
 
 ファイル\_FS\_OBJECTID\_情報
 
-<a href="" id="irp--iostatus"></a>*Irp -&gt;IoStatus*へのポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)に関する最終的な完了の状態および情報を受け取る、要求された操作。
+<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp -&gt;FileObject*に関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
+<a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_設定\_ボリューム\_情報とすることはできませんこのオプションを使用するとします。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造**の "関連性のある"** フィールドは無効になります。\_ボリューム\_情報を\_設定して使用することはできません。
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp -&gt;MajorFunction* IRP を指定します\_MJ\_設定\_ボリューム\_情報。
+<a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*\_ボリューム\_情報を設定\_IRP\_MJ を指定します。
 
-<a href="" id="irpsp--parameters-setvolume-fsinformationclass"></a>*IrpSp -&gt;Parameters.SetVolume.FsInformationClass*ボリューム用に設定する情報の種類を指定します。 この値には、次のいずれかを指定できます。
+<a href="" id="irpsp--parameters-setvolume-fsinformationclass"></a>*Irpsp-&gt;Parameters. SetVolume. FsInformationClass*ボリュームに対して設定する情報の種類を指定します。 この値には、次のいずれかを指定できます。
 
 <table>
 <colgroup>
@@ -82,45 +82,45 @@ FileFsObjectIdInformation
 <thead>
 <tr class="header">
 <th align="left">Value</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileFsControlInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)"> <strong>FILE_FS_CONTROL_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)"><strong>FILE_FS_CONTROL_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsLabelInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information)"> <strong>FILE_FS_LABEL_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)"><strong>FILE_FS_LABEL_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsObjectIdInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)"> <strong>FILE_FS_OBJECTID_INFORMATION</strong> </a>ボリューム。</p></td>
+<td align="left"><p>ボリュームの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a href="" id="irpsp--parameters-setvolume-length"></a>*IrpSp -&gt;Parameters.SetVolume.Length*によって指し示されるバッファーの長さをバイト単位で*Irp -&gt;AssociatedIrp.SystemBuffer*します。
+<a href="" id="irpsp--parameters-setvolume-length"></a>*Irpsp-&gt;Parameters. SetVolume. Length* *Irp&gt;AssociatedIrp*によってポイントされるバッファーの長さ (バイト単位)。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_FS\_コントロール\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)
+[**ファイル\_FS\_制御\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
 
-[**ファイル\_FS\_ラベル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_label_information)
+[**ファイル\_FS\_ラベル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)
 
-[**ファイル\_FS\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)
+[**ファイル\_FS\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_クエリ\_ボリューム\_情報**](irp-mj-query-volume-information.md)
 

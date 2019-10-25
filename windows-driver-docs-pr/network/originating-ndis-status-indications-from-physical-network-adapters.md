@@ -1,103 +1,103 @@
 ---
-title: 物理ネットワーク アダプターからの発信元の NDIS 状態インジケーター
+title: 物理ネットアダプターからの元の NDIS ステータスのインジケーター
 description: 物理ネットワーク アダプターからの NDIS 状態表示の生成
 ms.assetid: D588CD7E-98A3-4BA8-A467-6492DA2186CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 454de7901324d442734ebdfc02a1c8160df0ae74
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9a65f56229bb38114cf9f5d6fc7a58cf34d83ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366549"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843759"
 ---
 # <a name="originating-ndis-status-indications-from-physical-network-adapters"></a>物理ネットワーク アダプターからの NDIS 状態表示の生成
 
 
-このトピックでは、スイッチに接続されているネットワーク アダプターの NDIS 状態インジケーターを送信する転送拡張機能を拡張可能スイッチで使用されるメソッドを説明します。 次の種類のアダプターの NDIS 状態を示す値を開始できるは、拡張機能。
+このトピックでは、スイッチに接続されているネットワークアダプターの NDIS ステータスを示すために拡張可能なスイッチ転送拡張機能によって使用される方法について説明します。 拡張機能は、次の種類のアダプターに対して NDIS ステータスを示すことができます。
 
--   1 つ以上の物理アダプターにバインドされている基になる、[外部ネットワーク アダプター](external-network-adapters.md)の拡張可能スイッチ。
+-   拡張可能スイッチの[外部ネットワークアダプター](external-network-adapters.md)にバインドされている、1つまたは複数の基になる物理アダプター。
 
-    たとえば、外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX driver は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドされます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。
+    たとえば、外部ネットワークアダプターは、NDIS マルチプレクサー (MUX) 中間ドライバーの仮想ミニポートエッジにバインドできます。 MUX ドライバーは、ホスト上の1つまたは複数の物理ネットワークのチームにバインドされています。 この構成は、*拡張可能なスイッチチーム*と呼ばれています。
 
-    この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
+    この構成では、拡張可能なスイッチ拡張機能がチーム内のすべてのネットワークアダプターに公開されます。 これにより、拡張機能がチーム内の個々のネットワークアダプターの構成と使用を管理できるようになります。 たとえば、転送拡張機能は、送信パケットを個々のアダプターに転送することによって、チームで負荷分散フェールオーバー (LBFO) ソリューションのサポートを提供できます。 拡張可能なスイッチチームを管理する転送拡張機能は、*チーミングプロバイダー*と呼ばれます。 チーミングプロバイダーの詳細については、「[チーミングプロバイダーの拡張機能](teaming-provider-extensions.md)」を参照してください。
 
--   HYPER-V 子パーティション内で公開され、拡張可能スイッチ ポートに接続される仮想マシン (VM) ネットワーク アダプター。
+-   Hyper-v 子パーティション内で公開され、拡張可能なスイッチポートに接続されている仮想マシン (VM) ネットワークアダプター。
 
-次の図は、物理環境から NDIS 状態インジケーターと NDIS 6.40 (Windows Server 2012 R2) 以降の VM ネットワーク アダプターの HYPER-V 拡張可能スイッチ コントロール パスを示します。
+次の図は、ndis 6.40 (Windows Server 2012 R2) 以降の物理ネットワークアダプターと VM ネットワークアダプターからの NDIS ステータス表示の Hyper-v 拡張可能スイッチ制御パスを示しています。
 
-![ndis 6.40 およびそれ以降の物理マシンと vm のネットワーク アダプターから ndis 状態インジケーターの vswitch コントロール パス](images/vswitch-status-controlpath3-ndis640.png)
+![ndis 6.40 以降の物理および vm ネットワークアダプターからの ndis 状態を示す vswitch 制御パス](images/vswitch-status-controlpath3-ndis640.png)
 
-次の図は、物理環境から NDIS 状態インジケーターの HYPER-V 拡張可能スイッチ コントロール パスと NDIS 6.30 (Windows Server 2012) の VM のネットワーク アダプターを示します。
+次の図は、NDIS 6.30 (Windows Server 2012) の物理ネットワークアダプターと VM ネットワークアダプターからの NDIS ステータス表示の Hyper-v 拡張可能スイッチ制御パスを示しています。
 
-![物理から状態インジケーターの ndis および ndis 6.30 の vm のネットワーク アダプターの vswitch コントロール パス](images/vswitch-status-controlpath3.png)
+![ndis 6.30 の物理ネットワークアダプターと vm ネットワークアダプターからの ndis ステータスを示す vswitch 制御パス](images/vswitch-status-controlpath3.png)
 
-**注**  、拡張可能スイッチのインターフェイスでは、NDIS フィルター ドライバーと呼ばれます*拡張*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*。
-
- 
-
-転送拡張機能は、後続の拡張可能スイッチのドライバー スタックのドライバーをカプセル化されたハードウェア オフロード状態インジケーターを取得できます。 これは、基になる物理アダプターの拡張可能スイッチの外部ネットワーク アダプターにバインドされているチームの現在のオフロード機能を変更する拡張機能もできます。 アダプターのチームが外部ネットワーク アダプターにバインドされると、チームの一般的な機能のみが NDIS または上位のプロトコルとフィルター ドライバーにアドバタイズされます。 拡張機能は、チーム内で一部のアダプターでサポートされている機能を提供するカプセル化された状態のインジケーターを送信して提供機能を拡張できます。 たとえば、拡張機能がカプセル化されたに発行できます[ **NDIS\_状態\_受信\_フィルター\_現在\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)現在有効な変更を示す値には、チーム全体でのフィルター機能が表示されます。
-
-**注**  転送拡張機能と、カプセル化された状態の問題が発生することだけです。 この種類の拡張機能の詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
+**注**  拡張可能なスイッチインターフェイスでは、NDIS フィルタードライバーは*拡張機能*と呼ばれ、ドライバースタックは*拡張可能なスイッチドライバースタック*と呼ばれます。
 
  
 
-通常、転送拡張機能では、基になる物理アダプターのアドバタイズされたハードウェア オフロード機能を変更するのカプセル化された NDIS 状態インジケーターが生成されます。 たとえば、ハードウェアのオフロードの次の種類の状態インジケーターを開始できるは、拡張機能。
+転送拡張機能は、拡張可能なスイッチドライバースタックで、カプセル化されたハードウェアオフロードステータスの兆候を、さらにドライバーに送信できます。 これにより、拡張機能では、拡張可能なスイッチの外部ネットワークアダプターにバインドされている物理アダプターの基になるチームの現在のオフロード機能を変更することもできます。 アダプターのチームが外部ネットワークアダプターにバインドされている場合、NDIS またはそれ以降のプロトコルとフィルタードライバーに提供されるのは、チームの共通機能のみです。 拡張機能を使用すると、チーム内の一部のアダプターでサポートされている機能をアドバタイズすることで、アドバタイズされた機能を拡張できます。 たとえば、拡張機能は、カプセル化された NDIS\_の状態を発行して[ **\_フィルター\_現在の\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)に関する情報を受け取り\_チーム全体で現在有効になっている受信フィルターの機能を変更できます。
 
--   インターネット プロトコル セキュリティ (IPsec)。
+**注**  転送拡張機能のみがカプセル化された状態を示すことができます。 この種類の拡張機能の詳細については、「[拡張機能の転送](forwarding-extensions.md)」を参照してください。
 
--   仮想マシン キュー (VMQ)。
+ 
+
+通常、転送拡張機能は、カプセル化された NDIS ステータスのインジケーターを生成して、基になる物理アダプターのアドバタイズされたハードウェアオフロード機能を変更します。 たとえば、拡張機能は、次の種類のハードウェアオフロードの状態を示すことができます。
+
+-   インターネットプロトコルセキュリティ (IPsec)。
+
+-   仮想マシンキュー (VMQ)。
 
 -   シングル ルート I/O 仮想化 (SR-IOV)。
 
-転送拡張機能は、HYPER-V 子パーティションに割り当てられているハードウェア オフロード リソースを変更するのカプセル化された NDIS 状態インジケーターも取得できます。 NDIS 6.30 以降では、拡張機能をカプセル化された発行[ **NDIS\_状態\_スイッチ\_ポート\_削除\_VF** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)VM のネットワーク アダプターと PCI Express (PCIe) 仮想機能 (VF) 間のバインドを削除するを示す値。 VF が公開され、サポートする、基になる物理ネットワーク アダプターでサポートされている、[シングル ルート I/O 仮想化 (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)インターフェイス。
+また、転送拡張機能は、カプセル化された NDIS 状態のインジケーターを生成して、Hyper-v 子パーティションに割り当てられているハードウェアオフロードリソースを変更することもできます。 NDIS 6.30 以降では、拡張機能は、カプセル化された NDIS\_状態を発行して[ **\_\_\_ポート\_切り替え**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)ます。これにより、VM ネットワークアダプターと PCI Express (PCIe) 仮想関数 (VF)。 VF は、[シングルルート i/o 仮想化 (sr-iov)](single-root-i-o-virtualization--sr-iov-.md)インターフェイスをサポートする、基になる物理ネットワークアダプターによって公開およびサポートされます。
 
-メンバーを設定する必要があります、転送拡張機能では、カプセル化された NDIS 状態を示す値のハードウェアのオフロード リソースについて、基になる物理アダプターの作成元である場合、 [ **NDIS\_スイッチ\_NIC\_ステータス\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)次のように構造体。
+転送拡張機能が、基になる物理アダプターのハードウェアオフロードリソースについて、カプセル化された NDIS 状態を示すものである場合は、Ndis\_スイッチのメンバーを設定する必要があります[ **\_NIC\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体は次のようになります。
 
--   **DestinationPortId**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_ポート\_ID**します。
--   **DestinationNicIndex**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_NIC\_インデックス**
+-   **DestinationPortId**メンバーは、**既定\_ポート\_ID に\_スイッチ\_、NDIS**に設定する必要があります。
+-   DestinationNicIndex メンバーは、**既定\_NIC\_インデックス\_** 、\_に設定する必要があります。
 
--   **SourcePortId**メンバーは、外部ネットワーク アダプターが接続されている拡張可能スイッチ ポートの識別子を設定する必要があります。
+-   **SourcePortId**メンバーは、外部ネットワークアダプターが接続される拡張可能なスイッチポートの識別子に設定する必要があります。
 
--   **SourceNicIndex**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_NIC\_インデックス**します。 これにより、外部ネットワーク アダプターにバインドされている全体の拡張可能スイッチ チームからのものとして解釈される状態の表示ができます。
+-   **Sourcenicindex**メンバーは、**既定\_\_NIC\_インデックス**に設定する必要があります\_に設定する必要があります。 これにより、外部ネットワークアダプターにバインドされている拡張可能なスイッチチーム全体からの状態を示すことができます。
 
-    **注**  転送拡張機能にこのメンバーを設定する必要がありますも**NDIS\_スイッチ\_既定\_NIC\_インデックス**場合、単一の物理ネットワークのみアダプターは、外部ネットワーク アダプターにバインドされます。
-
-     
-
--   **StatusIndication**へのポインターにメンバーを設定する必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。 この構造体には、カプセル化された NDIS 状態表示のデータが含まれています。
-
-メンバーを設定する必要があります、転送拡張機能には、HYPER-V 子パーティションのハードウェアのオフロード リソース用の NDIS 状態表示が発信をしている場合、 [ **NDIS\_スイッチ\_NIC\_ステータス\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)次のように構造体。
-
--   **DestinationPortId**と**DestinationNicIndex**メンバーは、パーティションによって使用されるネットワーク接続のポートとネットワーク アダプターのインデックスの対応する値に設定する必要があります。
-
--   **SourcePortId**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_ポート\_ID**します。
-
--   **SourceNicIndex**にメンバーを設定する必要があります**NDIS\_スイッチ\_既定\_NIC\_インデックス**します。
-
--   **StatusIndication**へのポインターにメンバーを設定する必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。 この構造体には、カプセル化された NDIS 状態表示のデータが含まれています。
-
-拡張機能がカプセル化された NDIS 状態表示を発行するときは、次の手順に従う必要があります。
-
-1.  拡張機能の呼び出し[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)元または転送先のネットワーク アダプター接続の参照カウンターをインクリメントします。 これにより、エントリの中に、その参照カウンターが 0 以外の場合、拡張可能スイッチのインターフェイスはネットワーク アダプターの接続が削除されません。
-
-    拡張機能を呼び出すと[ *ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)、次の方法でパラメーターを設定します。
-
-    -   転送拡張機能には、基になる物理アダプターのカプセル化された NDIS 状態表示が発信場合、設定、 *SwitchPortId*パラメーターに指定された値を**SourcePortId**メンバー。 また、拡張機能、設定、 *SwitchNicIndex*パラメーターに指定された値を**SourceNicIndex**メンバー。
-
-    -   転送拡張機能は、HYPER-V 子パーティションの NDIS 状態を示す値を発信元は場合、設定、 *SwitchPortId*パラメーターに指定された値を**DestinationPortId**メンバー。 また、拡張機能、設定、 *SwitchNicIndex*パラメーターに指定された値を**DestinationNicIndex**メンバー。
-
-    **注**  場合[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic) NDIS を返さない\_状態\_成功した場合、カプセル化された NDIS 状態表示を発行することはできません.
+    また、転送拡張機能では、1つの物理ネットワークアダプターが外部ネットワークアダプターにバインドされている場合にのみ、このメンバーを**NDIS\_SWITCH\_既定\_NIC\_インデックス**に設定する必要がある**ことに注意**してください  。
 
      
 
-2.  拡張機能の呼び出し[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)をカプセル化された状態の通知を転送します。
+-   **Statusindication**メンバーは、 [**NDIS\_ステータス\_示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターに設定する必要があります。 この構造体には、カプセル化された NDIS 状態を示すデータが含まれます。
 
-    **注**  呼び出す必要がありますが、拡張機能では、フィルター選択された OID 要求の転送する場合[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)への呼び出しのコンテキスト内でその[ *FilterStatus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)関数。
+転送拡張機能が、Hyper-v 子パーティションのハードウェアオフロードリソースに対して NDIS 状態を示すものである場合、 [**ndis\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造のメンバーを設定する必要があります。次のようにします。
+
+-   **DestinationPortId**メンバーと**DestinationNicIndex**メンバーは、パーティションによって使用されるネットワーク接続のポートおよびネットワークアダプターインデックスの対応する値に設定されている必要があります。
+
+-   **SourcePortId**メンバーは、**既定\_ポート\_ID に\_スイッチ\_、NDIS**に設定する必要があります。
+
+-   **Sourcenicindex**メンバーは、**既定\_\_NIC\_インデックス**に設定する必要があります\_に設定する必要があります。
+
+-   **Statusindication**メンバーは、 [**NDIS\_ステータス\_示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターに設定する必要があります。 この構造体には、カプセル化された NDIS 状態を示すデータが含まれます。
+
+拡張機能がカプセル化された NDIS 状態を示す場合は、次の手順に従う必要があります。
+
+1.  この拡張機能は参照ファイルを呼び出して、ソースまたは宛先のネットワークアダプター接続の参照[*カウンターをインクリメント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)します。 これにより、拡張可能なスイッチインターフェイスは、参照カウンターが0以外の場合にネットワークアダプター接続を削除しません。
+
+    拡張機能では[ *、次*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)の方法でパラメーターを設定します。
+
+    -   転送拡張機能が、基になる物理アダプターに対してカプセル化された NDIS 状態を示している場合は、 *SwitchPortId*パラメーターを**SourcePortId**メンバーに対して指定された値に設定します。 また、この拡張機能は、 *SwitchNicIndex*パラメーターを**Sourcenicindex**メンバーに指定された値に設定します。
+
+    -   転送拡張機能が Hyper-v 子パーティションの NDIS 状態を示すものである場合は、 *SwitchPortId*パラメーターを**DestinationPortId**メンバーに指定された値に設定します。 また、この拡張機能は、 *SwitchNicIndex*パラメーターを**DestinationNicIndex**メンバーに指定された値に設定します。
+
+    **注**  は、\_ステータス\_成功しなかっ[*た場合に*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)、カプセル化された ndis ステータスを発行できません。
 
      
 
-3.  後[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)拡張機能の呼び出しから返される[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)の参照カウンターをオフにします送信元または送信先のネットワーク アダプター接続します。 拡張機能セット、 *SwitchPortId*と*SwitchNicIndex*を同じパラメーター値への呼び出しで使用されるその it [ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic).
+2.  この拡張機能は、 [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)を呼び出して、カプセル化された状態通知を転送します。
+
+    **注**  フィルター処理された OID 要求を転送する場合は、 [*filterstatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)関数の呼び出しのコンテキスト内で[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)を呼び出す必要があります。
+
+     
+
+3.  [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)が返された後、拡張機能は[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)を呼び出して、送信元または送信先のネットワークアダプター接続の参照カウンターをクリアします。 この拡張機能は、 *SwitchPortId*パラメーターと*SwitchNicIndex*パラメーターを、の呼び出しで使用したものと同じ値に設定[*します。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)
 
  
 

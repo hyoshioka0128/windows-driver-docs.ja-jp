@@ -3,58 +3,58 @@ title: ドライバーのテストとデバッグ用のブート オプション
 description: ドライバーのテストとデバッグ用のブート オプション変更ツール
 ms.assetid: 4fd58868-7a43-42e3-adf9-5a82593c1675
 keywords:
-- ツールを WDK、ブート オプション
-- ドライバーの開発ツールを WDK、ブート オプション
-- WDK のブート オプション
-- ドライバー WDK ブート オプションをテストします。
-- テスト ドライバー WDK ブート オプション
-- ドライバー WDK ブート オプションのデバッグ
-- ドライバー WDK ブート オプションのデバッグ
-- WDK のオペレーティング システムのブート オプション
-- WDK のブート オプションの構成を読み込む
+- ツール WDK、ブートオプション
+- ドライバー開発ツール WDK, ブートオプション
+- ブートオプション WDK
+- WDK ブートオプションのドライバーテスト
+- ドライバーのテスト WDK ブートオプション
+- デバッグドライバーの WDK ブートオプション
+- ドライバーのデバッグ WDK ブートオプション
+- オペレーティングシステムのブートオプション WDK
+- 負荷構成の WDK ブートオプション
 ms.date: 04/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e08f97513d125f2bad0365a6475883e63338afd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ea275914a28b606b5e58bacf250db537108829f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360428"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840301"
 ---
 # <a name="tools-for-changing-boot-options-for-driver-testing-and-debugging"></a>ドライバーのテストとデバッグ用のブート オプション変更ツール
 
-テストして、Microsoft Windows オペレーティング システム上のドライバーをデバッグを有効にして、オペレーティング システムの読み込み時に確立されている機能を構成する必要があります。 これらの機能の設定が含まれている、*ブート オプション*--ブート ローダーの読み込みし、オペレーティング システムとその他の起動可能なプログラム、およびデバイスの構成を決定する値。
+Microsoft Windows オペレーティングシステムでドライバーをテストおよびデバッグするには、オペレーティングシステムの読み込み時に確立される機能を有効にして構成する必要があります。 これらの機能の設定は、ブートローダーがオペレーティングシステムやその他の起動可能なプログラムとデバイスをどのように読み込んで構成するかを決定する値として、*ブートオプション*に含まれています。
 
 
-このセクションでは、追加、削除、およびオペレーティング システムの負荷の新しい構成を作成するためのブート オプションを変更する方法と、ブート エントリのパラメーターを使用して、ドライバーのテストとデバッグの構成をロードをカスタマイズする方法について説明します。
+このセクションでは、ブートオプションを追加、削除、変更して、オペレーティングシステムの新しい負荷構成を作成する方法、およびブートエントリパラメーターを使用してドライバーのテストとデバッグの負荷構成をカスタマイズする方法について説明します。
 
-ブート オプションを編集するには、次の操作を実行できます。
+ブートオプションを編集することで、次のことができます。
 
-- 有効にして、デバッグの構成
+- デバッグを有効にして構成する
 
-- 特定のカーネル、またはハードウェア アブストラクション レイヤー (HAL) ファイルを読み込む
+- 特定のカーネルまたはハードウェアアブストラクションレイヤー (HAL) ファイルを読み込む
 
-- Windows で使用できる物理メモリを制限します。
+- Windows で使用可能な物理メモリを制限する
 
-- 有効化、無効にする、および 32 ビット バージョンの Windows の物理アドレス拡張 (PAE) を構成します。
+- 32ビットバージョンの Windows での物理アドレス拡張 (PAE) の有効化、無効化、および構成
 
-- 非常に小さなカーネル モード アドレス空間でドライバーをテストする (3 GB) のユーザー モードとカーネル モード コンポーネント間の仮想アドレス空間を配分します。
+- ユーザーモードとカーネルモードのコンポーネント (3GB) の間で仮想アドレス空間を再分配し、非常に小さなカーネルモードのアドレス空間でドライバーをテストします。
 
-- 有効にして構成データ実行防止 (/noexecute)
+- データ実行防止の有効化と構成 (/noexecute)
 
-- ヘッドレス サーバーでコンソール リダイレクトを緊急管理サービス (EMS) 用のポートを指定します。
+- ヘッドレスサーバーでの緊急管理サービス (EMS) コンソールのリダイレクトに使用するポートの指定
 
-- 読み込まれるドライバーの名前を表示します。
+- ドライバーが読み込まれたときの名前の表示
 
 このセクションの内容:
 
-- [ブート オプションの概要](introduction-to-boot-options.md)
-- [ブートの概要については、Windows でオプション](boot-options-in-windows.md)します。
-- [ブート オプションの識別子](boot-options-identifiers.md)
-- [ブート オプションの編集](editing-boot-options.md)
-- [BCD のブート オプション リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
-- [ブート パラメーターを使用します。](using-boot-parameters.md)
-- [バイパスのブート オプション](bypassing-boot-options.md)
-- [BCD のブート オプション リファレンス](bcd-boot-options-reference.md)
-- [以前のバージョンの Windows のブート オプション](boot-options-in-previous-versions-of-windows.md)
+- [ブートオプションの概要](introduction-to-boot-options.md)
+- [Windows のブートオプションの概要に](boot-options-in-windows.md)ついて説明します。
+- [ブートオプション識別子](boot-options-identifiers.md)
+- [ブートオプションの編集](editing-boot-options.md)
+- [BCD ブートオプションのリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+- [ブートパラメーターの使用](using-boot-parameters.md)
+- [ブートオプションのバイパス](bypassing-boot-options.md)
+- [BCD ブートオプションのリファレンス](bcd-boot-options-reference.md)
+- [以前のバージョンの Windows でのブートオプション](boot-options-in-previous-versions-of-windows.md)
 

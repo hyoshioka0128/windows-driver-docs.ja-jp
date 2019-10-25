@@ -1,6 +1,6 @@
 ---
-title: アソシエーション後の操作の概要
-description: アソシエーション後の操作の概要
+title: 関連付け後の操作の概要
+description: 関連付け後の操作の概要
 ms.assetid: e4c7ea7a-53ad-41b2-bf3f-03c770e58043
 keywords:
 - IHV 拡張 DLL WDK ネイティブ802.11、関連付け後の操作
@@ -8,18 +8,18 @@ keywords:
 - ネイティブ 802.11 IHV 拡張 DLL WDK、関連付け後の操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1115071454884eafc0d8138aab1ec3dc2837e78c
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: a670e81fdffa71b3dcd61d5366a96b47d8faf9c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565126"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843683"
 ---
-# <a name="post-association-operations-overview"></a>アソシエーション後の操作の概要
+# <a name="post-association-operations-overview"></a>関連付け後の操作の概要
 
-ワイヤレス LAN (WLAN) アダプターがアクセスポイント (AP) との関連付け操作を正常に完了すると、オペレーティングシステムは関連付け用のデータポートを作成します。 次に、オペレーティングシステムは、 [*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)関数を呼び出すことによって、データポートに対して関連付け後の操作を開始します。
+ワイヤレス LAN (WLAN) アダプターがアクセスポイント (AP) との関連付け操作を正常に完了すると、オペレーティングシステムは関連付け用のデータポートを作成します。 次に、オペレーティングシステムは、 [*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)関数を呼び出すことによって、データポートに対して関連付け後の操作を開始します。
 
-**注 Windows Vista**では、IHV 拡張 DLL は、インフラストラクチャの基本サービスセット (BSS) ネットワークのみをサポートしています。  
+**注**  Windows Vista では、IHV 拡張 DLL は、インフラストラクチャの基本サービスセット (BSS) ネットワークのみをサポートしています。
 
  
 
@@ -31,7 +31,7 @@ ms.locfileid: "69565126"
 
 -   暗号化キーを取得し、WLAN アダプターにダウンロードします。
 
-WLAN アダプターが AP との関連付け操作を完了すると、オペレーティングシステムは[*Dot11ExtIhvStopPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_stop_post_associate)関数を呼び出して、データポートの関連付け後の操作を終了します。 この呼び出しの後、オペレーティングシステムは関連付けのデータポートを削除します。
+WLAN アダプターが AP との関連付け操作を完了すると、オペレーティングシステムは[*Dot11ExtIhvStopPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_stop_post_associate)関数を呼び出して、データポートの関連付け後の操作を終了します。 この呼び出しの後、オペレーティングシステムは関連付けのデータポートを削除します。
 
 次のトピックでは、IHV 拡張 DLL が関連付け後の操作を実行または停止するために行う必要があることについて説明します。
 

@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_P2P_LISTEN_STATE
-description: WDI_TLV_P2P_LISTEN_STATE は、Wi-Fi Direct を含む TLV リッスン状態です。
+description: WDI_TLV_P2P_LISTEN_STATE は、Wi-fi ダイレクトリッスン状態を含む TLV です。
 ms.assetid: 66BDF96A-2B9D-4188-AFC8-465786924B47
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_LISTEN_STATE ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_P2P_LISTEN_STATE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f336c090e7a494ec74113682e7ddcfa157c8e0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 428f0ee295da7c987346a3e34a539ee2d9e535f4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355428"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842460"
 ---
-# <a name="wditlvp2plistenstate"></a>WDI\_TLV\_P2P\_リッスン\_状態
+# <a name="wdi_tlv_p2p_listen_state"></a>WDI\_TLV\_P2P\_リッスン\_状態
 
 
-WDI\_TLV\_P2P\_リッスン\_状態は、Wi-Fi Direct リッスン状態を含む TLV します。
+WDI\_TLV\_P2P\_リッスン\_状態は、Wi-fi ダイレクトリッスン状態を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,18 @@ WDI\_TLV\_P2P\_リッスン\_状態は、Wi-Fi Direct リッスン状態を含�
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
 
-| 型                                                         | 説明                            |
+| タスクバーの検索ボックスに                                                         | 説明                            |
 |--------------------------------------------------------------|----------------------------------------|
-| [**WDI\_P2P\_リッスン\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_listen_state) | 必要な Wi-Fi Direct の状態をリッスンします。 |
+| [**WDI\_P2P\_リッスン\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_listen_state) | 必要な Wi-fi ダイレクトリッスン状態。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,7 +56,7 @@ WDI\_TLV\_P2P\_リッスン\_状態は、Wi-Fi Direct リッスン状態を含�
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

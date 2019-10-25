@@ -3,26 +3,26 @@ title: フィルタリング レイヤー
 description: フィルタリング レイヤー
 ms.assetid: db2fd1dc-c080-4f12-8138-7e66c74adacd
 keywords:
-- WDK Windows フィルタ リング プラットフォームのレイヤーをフィルター処理
+- フィルターレイヤー WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a491eddb04c6eb29981ee3291925386ccd609ec
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 8f31bf376e8c4f0a4137ae21fed2fc9d22724ffd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716922"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840487"
 ---
 # <a name="filtering-layer"></a>フィルタリング レイヤー
 
 
-A*レイヤーをフィルター処理*ネットワーク データに渡される、TCP/IP ネットワーク スタック内のポイントは、[フィルター エンジン](filter-engine.md)の現在のフィルターのセットに対して照合します。 ネットワーク スタックの各フィルターのレイヤーが一意で識別される[レイヤー識別子のフィルタ リング](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-layer-identifiers)します。
+フィルター*レイヤー*は、現在のフィルターセットと照合するためにネットワークデータが[フィルターエンジン](filter-engine.md)に渡される、tcp/ip ネットワークスタック内のポイントです。 ネットワークスタック内の各フィルターレイヤーは、一意の[フィルターレイヤー識別子](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-layer-identifiers)によって識別されます。
 
-ときに、[フィルター](filter.md)ネットワーク データをフィルターで指定されたフィルタ リング層で追加されて、フィルター エンジンに追加されます。 特定[データ フィールド](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)で利用可能なフィルター処理の各層でそのレイヤーで、フィルター エンジンに追加されているフィルター。 フィルター エンジンは、ネットワーク データを渡す場合、[コールアウト](callout.md)、追加の処理、およびこれらのデータ フィールドを含む[メタデータ](https://docs.microsoft.com/windows-hardware/drivers/network/metadata-fields)そのフィルタ リング層で提供されます。
+[フィルターがフィルター](filter.md)エンジンに追加されると、指定したフィルター処理レイヤーに追加され、ネットワークデータがフィルター処理されます。 特定の[データフィールド](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)は、そのレイヤーのフィルターエンジンに追加されたフィルターによって処理されるように、各フィルターレイヤーで使用できるようになります。 フィルターエンジンは、追加処理のためにネットワークデータを[コールアウト](callout.md)に渡す場合、これらのデータフィールドと、そのフィルターレイヤーで使用できる[メタ](https://docs.microsoft.com/windows-hardware/drivers/network/metadata-fields)データを含みます。
 
-[実行時のフィルター処理レイヤー識別子](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)(FWPS\_*XXX*) コールアウト ドライバーのカーネル モードで使用します。 [管理のフィルタ リング層識別子](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)(FWPM\_*XXX*) を使って**Fwpm<em>Xxx</em>** ベースのフィルター処理とやり取りする機能ユーザー モードまたはカーネル モードのいずれかからエンジン (BFE) (たとえば、 [ **FwpmFilterAdd0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmfilteradd0))。
+[実行時のフィルターレイヤー識別子](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)(fwps\_*XXX*) は、カーネルモードのコールアウトドライバーによって使用されます。 [管理フィルターレイヤー識別子](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)(FWPM\_*XXX*) は、ユーザーモードまたはカーネルモード (たとえば[**FwpmFilterAdd0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmfilteradd0)) からベースフィルターエンジン (BFE) と対話する**FWPM<em>XXX</em>** 関数によって使用されます。
 
-FWPS データ型は、対応する FWPM よりも小さい: FWPM フィルタ リング層識別子は Guid (128 ビット)、レイヤーの識別子をフィルタ リング FWPS は[ **Luid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid)(64 ビット)。 FWPS データ型のサイズを小さくは、整数の比較では、リアルタイムのトラフィックの GUID の比較よりも高速化し、カーネル メモリ FWPS 型をより効率的に処理するために、システムのパフォーマンスを向上します。
+FWPS データ型は、対応する FWPM よりも小さくなります。 FWPM フィルターレイヤー識別子は Guid (128 ビット) であるのに対し、FWPS フィルターレイヤー識別子は[**luid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)(64 ビット) です。 FWPS データ型のサイズを小さくすると、リアルタイムトラフィックの GUID 比較よりも整数比較が高速になるため、システムパフォーマンスが向上します。また、カーネルメモリは FWPS タイプをより効率的に処理します。
 
  
 

@@ -3,17 +3,17 @@ title: FsFilter コールバック ルーチンの登録
 description: FsFilter コールバック ルーチンの登録
 ms.assetid: d040e61c-514e-446b-9e72-934fd4322d3b
 keywords:
-- コールバック ルーチンを登録します。
-- コールバック ルーチン WDK ファイル システム
-- FsFilter 通知コールバック ルーチン WDK ファイル システム
+- 登録 (コールバックルーチンを)
+- コールバックルーチン WDK ファイルシステム
+- FsFilter 通知コールバックルーチン WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a4c78f1f1cfd755c4204346e660fc3bc890c2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d2bb0491d0762e5e10983aea14e155d8d0fdc83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385133"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841007"
 ---
 # <a name="registering-fsfilter-callback-routines"></a>FsFilter コールバック ルーチンの登録
 
@@ -21,11 +21,11 @@ ms.locfileid: "67385133"
 ## <span id="ddk_registering_fsfilter_callback_routines_if"></span><span id="DDK_REGISTERING_FSFILTER_CALLBACK_ROUTINES_IF"></span>
 
 
-FsFilter 通知コールバック ルーチンは、基になるファイル システムは、特定の操作を実行した後と前に呼び出されます。 FsFilter コールバック ルーチンの詳細については、次を参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)します。
+FsFilter 通知コールバックルーチンは、基になるファイルシステムが特定の操作を実行する前と後に呼び出されます。 FsFilter のコールバックルーチンの詳細については、「 [**Fsrtlregisterfilesystemfiltercallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)」を参照してください。
 
-FsFilter 通知のコールバック ルーチンを登録するには必要がありますを割り当てるし、初期化、FS\_フィルター\_コールバックは、構造体、構造体で FsFilter コールバック ルーチンのエントリ ポイントを保存してのアドレスを渡す、構造体、*コールバック*パラメーターを**FsRtlRegisterFileSystemFilterCallbacks**します。
+FsFilter 通知コールバックルーチンを登録するには、FS\_フィルター\_コールバック構造体を割り当てて初期化し、FsFilter コールバックルーチンのエントリポイントを構造体に格納して、構造体のアドレスを**Fsrtlregisterfilesystemfiltercallbacks バック**への*コールバック*パラメーター。
 
-たとえば、仮想的な"MyLegacyFilter"ドライバーはその FsFilter コールバック ルーチンをよう登録できます。
+たとえば、架空の "MyLegacyFilter" ドライバーは、次のように、その FsFilter コールバックルーチンを登録できます。
 
 ```cpp
 fsFilterCallbacks.SizeOfFsFilterCallbacks = sizeof(FS_FILTER_CALLBACKS);

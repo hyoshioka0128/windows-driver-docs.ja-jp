@@ -3,7 +3,7 @@ title: IRP_MJ_SET_INFORMATION
 description: IRP\_MJ\_SET\_INFORMATION
 ms.assetid: cc1b539c-8d39-4f4d-93b1-ce9fcdb8c555
 keywords:
-- IRP_MJ_SET_INFORMATION インストール可能なファイル システム ドライバー
+- IRP_MJ_SET_INFORMATION インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,95 +12,95 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95250d81dfde250b576f4a3382a1f2db8db14f99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e00751c2759dacb592957a61c3e43535416342b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359267"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841150"
 ---
-# <a name="irpmjsetinformation"></a>IRP\_MJ\_SET\_INFORMATION
+# <a name="irp_mj_set_information"></a>IRP\_MJ\_SET\_INFORMATION
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_設定\_や他のカーネル モード ドライバー情報の要求が I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。 送信できる、たとえば、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**SetEndOfFile**カーネル モード コンポーネントが呼び出されたときまたは[ **ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile).
+IRP\_MJ\_SET\_情報要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。 たとえば、ユーザーモードのアプリケーションが**Setendoffile**などの Microsoft Win32 関数を呼び出したときや、カーネルモードのコンポーネントが[**Zwsetinformationfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)を呼び出したときなどに送信できます。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-ファイル システム ドライバーは、抽出して、ユーザー ファイルを表しますか、ディレクトリを開くかどうかを判断する、ファイル オブジェクトをデコードする必要があります。 場合は、ファイル システム ドライバーとして適切な要求を処理し、IRP の完了する必要があります。
+ファイルシステムドライバーは、ファイルオブジェクトを抽出してデコードし、ユーザーファイルまたはディレクトリが開いているかどうかを判断する必要があります。 存在する場合は、ファイルシステムドライバーが要求を適切に処理し、IRP を完了する必要があります。
 
-次の種類の情報は、ファイルとディレクトリで設定できます。
+ファイルとディレクトリには、次の種類の情報を設定できます。
 
 FileBasicInformation
 
 FileDispositionInformation
 
-FileLinkInformation (ディレクトリ階層内に作成するサイクルを許可するファイル システム) の場合
+FileLinkInformation (ディレクトリ階層でサイクルを作成できるようにするファイルシステムの場合)
 
 FilePositionInformation
 
 FileRenameInformation
 
-次の種類の情報は、ファイルにのみ設定できます。
+次の種類の情報は、ファイルに対してのみ設定できます。
 
-FileAllocationInformation
+Fileの情報
 
 FileEndOfFileInformation
 
-FileLinkInformation (NTFS ディレクトリ階層内に作成するサイクルを許可しないなどのファイル システム) の場合
+FileLinkInformation (NTFS などのファイルシステムの場合は、ディレクトリ階層内でサイクルを作成することはできません)
 
 FileValidDataLengthInformation
 
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
 
-フィルター ドライバーは、スタックの次の下位ドライバーには、この IRP を渡す必要があります。
+フィルタードライバーは、この IRP をスタック上の次の下位のドライバーに渡す必要があります。
 
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP とセット ファイル情報の要求の処理に IRP スタックの場所の次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、set file information 要求の処理で、IRP の次のメンバーと IRP スタックの場所に設定されている情報を使用できます。
 
-<a href="" id="deviceobject"></a>*デバイス オブジェクト*  
-ターゲット デバイスのオブジェクトへのポインター。
+<a href="" id="deviceobject"></a>*DeviceObject*  
+ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-設定するファイルまたはディレクトリの情報を含む入力バッファーへのポインター。 この情報は、次の構造体のいずれかに格納されます。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp*  
+設定するファイルまたはディレクトリの情報が格納されている入力バッファーへのポインター。 この情報は、次のいずれかの構造に格納されます。
 
-[**ファイル\_割り当て\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_allocation_information)
+[**ファイル\_割り当て\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
 
-[**ファイル\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
+[**ファイル\_基本\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
 
-[**ファイル\_廃棄\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information)
+[**ファイル\_の後処理\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
 
-[**ファイル\_エンド\_の\_ファイル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_end_of_file_information)
+[**ファイル\_\_ファイル\_情報の末尾\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
 
-[**ファイル\_リンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_link_information)
+[**ファイル\_リンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
 
-[**ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)
+[**ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
 
-[**ファイル\_の名前を変更\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_rename_information)
+[**ファイル\_\_情報の名前変更**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
 
-[**ファイル\_有効\_データ\_長さ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_valid_data_length_information)
+[**ファイル\_有効な\_データ\_の長さ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
 
-<a href="" id="irp--iostatus"></a>*Irp -&gt;IoStatus*へのポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)に関する最終的な完了の状態および情報を受け取る、要求された操作。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーターを[ **ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)します。
+<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。 詳細については、 [**Zwsetinformationfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)への*iostatusblock*パラメーターの説明を参照してください。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp -&gt;FileObject*に関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
+<a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_設定\_情報、使用する必要があります。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造の**参照フィールドが**無効になります。このフィールドは\_情報を設定し\_使用できません。
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp -&gt;MajorFunction* IRP を指定します\_MJ\_設定\_情報。
+<a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*\_情報を設定\_IRP\_MJ を指定します。
 
-<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*IrpSp -&gt;Parameters.SetFile.AdvanceOnly*ファイルの終わりの操作に使用するフラグ。 使用を指定します、 **EndOfFile**メンバー [**ファイル\_エンド\_の\_ファイル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_end_of_file_information)ときに構造体**FileInformationClass** == **FileEndOfFileInformation**します。 場合**TRUE**、設定は、ファイルの新しい有効なデータ長**EndOfFile**現在有効なデータの長さを増加している場合にのみです。 場合**FALSE**、新しいファイル サイズの設定から**EndOfFile**します。
+<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*Irpsp-&gt;Parameters. SetFile. AdvanceOnly*ファイルの終わり操作のフラグ。 これにより、 **Fileinformationclass** == **Fileendoffileinformation**の場合に、 [ **\_ファイル\_情報構造の\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information) 、 **endoffile**メンバーファイルの使用が決定されます。 **TRUE**の場合、ファイルの新しい有効なデータ長は、現在の有効なデータ長が増加した場合にのみ、 **endoffile**から設定されます。 **FALSE**の場合は、新しいファイルサイズが**endoffile**から設定されます。
 
-<a href="" id="irpsp--parameters-setfile-clustercount"></a>*IrpSp -&gt;Parameters.SetFile.ClusterCount*システム用に予約されています。
+<a href="" id="irpsp--parameters-setfile-clustercount"></a>*Irpsp-&gt;Parameters. SetFile. ClusterCount*システム用に予約されています。
 
-<a href="" id="irpsp--parameters-setfile-deletehandle"></a>*IrpSp -&gt;Parameters.SetFile.DeleteHandle*システム用に予約されています。
+<a href="" id="irpsp--parameters-setfile-deletehandle"></a>*Irpsp-&gt;Parameters. SetFile. DeleteHandle*システム用に予約されています。
 
-<a href="" id="irpsp--parameters-setfile-fileinformationclass"></a>*IrpSp -&gt;Parameters.SetFile.FileInformationClass*ファイル用に設定する情報の種類を指定します。 次のいずれかです。
+<a href="" id="irpsp--parameters-setfile-fileinformationclass"></a>*Irpsp-&gt;パラメーター。 SetFile. FileInformationClass*ファイルに設定する情報の種類を指定します。 次のいずれかです。
 
 <table>
 <colgroup>
@@ -110,88 +110,88 @@ FileValidDataLengthInformation
 <thead>
 <tr class="header">
 <th align="left">Value</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>FileAllocationInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_allocation_information" data-raw-source="[&lt;strong&gt;FILE_ALLOCATION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_allocation_information)"> <strong>FILE_ALLOCATION_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p><strong>Fileの情報</strong></p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information" data-raw-source="[&lt;strong&gt;FILE_ALLOCATION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)"><strong>FILE_ALLOCATION_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileBasicInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)"> <strong>FILE_BASIC_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)"><strong>FILE_BASIC_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileDispositionInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information" data-raw-source="[&lt;strong&gt;FILE_DISPOSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information)"> <strong>FILE_DISPOSITION_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information" data-raw-source="[&lt;strong&gt;FILE_DISPOSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)"><strong>FILE_DISPOSITION_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileEndOfFileInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_end_of_file_information" data-raw-source="[&lt;strong&gt;FILE_END_OF_FILE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_end_of_file_information)"> <strong>FILE_END_OF_FILE_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information" data-raw-source="[&lt;strong&gt;FILE_END_OF_FILE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)"><strong>FILE_END_OF_FILE_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileLinkInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_link_information" data-raw-source="[&lt;strong&gt;FILE_LINK_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_link_information)"> <strong>FILE_LINK_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information" data-raw-source="[&lt;strong&gt;FILE_LINK_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)"><strong>FILE_LINK_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FilePositionInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)"> <strong>FILE_POSITION_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)"><strong>FILE_POSITION_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileRenameInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_rename_information" data-raw-source="[&lt;strong&gt;FILE_RENAME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_rename_information)"> <strong>FILE_RENAME_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information" data-raw-source="[&lt;strong&gt;FILE_RENAME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)"><strong>FILE_RENAME_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileValidDataLengthInformation</strong></p></td>
-<td align="left"><p>設定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_valid_data_length_information" data-raw-source="[&lt;strong&gt;FILE_VALID_DATA_LENGTH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_valid_data_length_information)"> <strong>FILE_VALID_DATA_LENGTH_INFORMATION</strong> </a>ファイル。</p></td>
+<td align="left"><p>ファイルの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information" data-raw-source="[&lt;strong&gt;FILE_VALID_DATA_LENGTH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)"><strong>FILE_VALID_DATA_LENGTH_INFORMATION</strong></a>を設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a href="" id="irpsp--parameters-setfile-fileobject"></a>*IrpSp -&gt;Parameters.SetFile.FileObject*の名前を変更またはリンクの操作。 場合*Irp の&gt;AssociatedIrp.SystemBuffer -&gt;ファイル名*、完全修飾ファイル名を含む場合、または*Irp -&gt;AssociatedIrp.SystemBuffer-&gt;RootDirectory*以外**NULL**、このメンバーは、操作の対象となっているファイルの親ディレクトリのファイル オブジェクト ポインター。 それ以外の場合は**NULL**します。
+<a href="" id="irpsp--parameters-setfile-fileobject"></a>*Irpsp-&gt;Parameters. SetFile. FileObject*名前変更またはリンク操作に使用します。 *Irp-&gt;AssociatedIrp-&gt;FileName*に完全修飾ファイル名が含まれている場合、または*Irp-&gt;AssociatedIrp Rootdirectory*が**NULL**以外の場合、このメンバーはファイルオブジェクトポインターになります&gt;。操作の対象となるファイルの親ディレクトリ。 それ以外の場合は**NULL**になります。
 
-<a href="" id="irpsp--parameters-setfile-length"></a>*IrpSp -&gt;Parameters.SetFile.Length*によって指し示されるバッファーの長さをバイト単位で*Irp -&gt;AssociatedIrp.SystemBuffer*します。
+<a href="" id="irpsp--parameters-setfile-length"></a>*Irpsp-&gt;Parameters. SetFile. Length* *Irp&gt;AssociatedIrp*によってポイントされるバッファーの長さ (バイト単位)。
 
-<a href="" id="irpsp--parameters-setfile-replaceifexists"></a>*IrpSp -&gt;Parameters.SetFile.ReplaceIfExists*設定**TRUE**ことと同じ名前のファイルが既に存在する場合、指定されたファイルに置き換える必要がそれを指定します。 設定**FALSE**指定した名前のファイルが既に存在する場合、名前の変更操作が失敗する必要があります。
+<a href="" id="irpsp--parameters-setfile-replaceifexists"></a>*Irpsp-&gt;Parameters. SetFile. 置換 Eifexists*同じ名前のファイルが既に存在する場合に、指定したファイルに置き換える必要があることを指定するには、 **TRUE**に設定します。 指定した名前のファイルが既に存在する場合に名前の変更操作が失敗する場合は、 **FALSE**に設定します。
 
 <a name="remarks"></a>注釈
 -------
 
-**AdvanceOnly**に設定されているメンバー **TRUE**を現在の有効なデータの長さをディスク上に新しい有効なデータ長に進み、ファイル システムに通知する、キャッシュ マネージャーによって**EndOfFile**. 場合**AdvanceOnly**は**FALSE**、新しいファイル サイズで、 **EndOfFile**現在のファイル サイズよりも大きくなることができます、メンバーが設定されています。
+**AdvanceOnly**メンバーは、ディスク上の現在の有効なデータ長を**endoffile**の新しい有効なデータ長に進めるようにファイルシステムに通知するために、キャッシュマネージャーによって**TRUE**に設定されます。 **AdvanceOnly**が**FALSE**の場合は、 **endoffile**メンバー内の新しいファイルサイズが、現在のファイルサイズより大きいまたは小さい値に設定されています。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_割り当て\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_allocation_information)
+[**ファイル\_割り当て\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
 
-[**ファイル\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
+[**ファイル\_基本\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
 
-[**ファイル\_廃棄\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information)
+[**ファイル\_の後処理\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
 
-[**ファイル\_エンド\_の\_ファイル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_end_of_file_information)
+[**ファイル\_\_ファイル\_情報の末尾\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
 
-[**ファイル\_リンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_link_information)
+[**ファイル\_リンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
 
-[**ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)
+[**ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
 
-[**ファイル\_の名前を変更\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_rename_information)
+[**ファイル\_\_情報の名前変更**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
 
-[**ファイル\_有効\_データ\_長さ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_valid_data_length_information)
+[**ファイル\_有効な\_データ\_の長さ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_クエリ\_情報**](irp-mj-query-information.md)
 
-[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)
+[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)
 
  
 

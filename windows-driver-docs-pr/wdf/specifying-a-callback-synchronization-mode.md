@@ -4,28 +4,28 @@ description: コールバック同期モードの指定
 ms.assetid: 3e041493-1095-47cb-b9a7-879a4cf1bd2e
 keywords:
 - コールバック同期 WDK UMDF
-- WDK UMDF の同期
-- queue WDK UMDF のコールバック関数
-- WDK UMDF のコールバック関数
-- WDK UMDF の I/O キュー
-- ロックの WDK UMDF
+- WDK の同期の UMDF
+- キューコールバック関数 WDK UMDF
+- コールバック関数 WDK UMDF
+- I/o キュー WDK UMDF
+- WDK の UMDF をロックする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caa43943f6925481bf4527a58da4266dbf3444a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58546459818257e2104754e2857caa77c9973b7d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376181"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842198"
 ---
 # <a name="specifying-a-callback-synchronization-mode"></a>コールバック同期モードの指定
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ドライバーは、フレームワークによってそのコールバック関数の呼び出し方法を指定できます。 ドライバーを同期を指定します (またはロック) を呼び出す前にデバイスのモード、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を作成する方法、[デバイス オブジェクト](framework-device-object.md)デバイス. 同期モードを指定するドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize::SetLockingConstraint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)メソッド。 ドライバーへのポインターを受け取る、 [IWDFDeviceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスの場合にその[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)システムにデバイスを追加するメソッドが呼び出されます。
+ドライバーは、そのコールバック関数がフレームワークによってどのように呼び出されるかを指定できます。 ドライバーは、 [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドを呼び出してデバイスの[デバイスオブジェクト](framework-device-object.md)を作成する前に、デバイスの同期 (またはロック) モードを指定します。 同期モードを指定するには、ドライバーは[**Iwdfdeviceinitialize:: Setロック制約**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)メソッドを呼び出す必要があります。 ドライバーは、デバイスをシステムに追加するために、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドが呼び出されたときに、 [Iwdfdeviceinitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスへのポインターを受け取ります。
 
-ドライバーは、WDF から、次のいずれかの値を指定できます\_コールバック\_で列挙型の制約、 *LockType*パラメーターの**IWDFDeviceInitialize::SetLockingConstraint**ロック モードを識別します。 制約 (またはロック) の指定された型はどの程度の並列処理にハードウェア デバイスを悪用できるし、量、ドライバーを処理できます。
+ドライバーは、 **Iwdfdeviceinitialize:: SetWDF 制約**の*LockType*パラメーターで、次のいずれかの\_\_値を指定して、ロックモードを識別できます。 指定された制約の種類 (またはロック) は、ハードウェアデバイスが利用できる並列処理の量と、ドライバーが処理できる量によって異なります。
 
 <table>
 <colgroup>
@@ -40,33 +40,33 @@ ms.locfileid: "67376181"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>None</strong> (0)</p></td>
-<td align="left"><p>ドライバーにコールバック関数が同期されないことを示します。</p></td>
+<td align="left"><p><strong>なし</strong>(0)</p></td>
+<td align="left"><p>ドライバーへのコールバック関数が同期されていないことを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>WdfDeviceLevel</strong> (1)</p></td>
-<td align="left"><p>ドライバーにすべてのキューのコールバック関数が同期されていることを示します。</p></td>
+<td align="left"><p>ドライバーへのすべてのキューコールバック関数が同期されることを示します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  ドライバーが要求されていない場合**IWDFDeviceInitialize::SetLockingConstraint**フレームワークには、このプロパティの既定値の設定値を指定する**WdfDeviceLevel**.
+  **なお**、ドライバーが**Iwdfdeviceinitialize:: setWdfDeviceLevel 制約**を呼び出して値を指定していない場合、フレームワークはこのプロパティの既定値をに設定します。
 
  
 
-制約は、キューのコールバック関数にのみ、プラグ アンド プレイ (PnP) と電源管理のコールバック関数が適用されます。 キューのコールバック関数を以下に示します。
+制約は、キューコールバック関数にのみ適用され、プラグアンドプレイ (PnP) および電源管理コールバック関数には適用されません。 キューコールバック関数には、次のものがあります。
 
--   自動のディスパッチのコールバック関数を次のように、 [ **IQueueCallbackRead::OnRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackread-onread)と[ **IQueueCallbackWrite::OnWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)します。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
+-   、 [**Iqueuecallbackread:: OnRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread) 、 [**Iqueuecallbackread:: onread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)などの自動ディスパッチコールバック関数。 詳細については、「 [I/o キューイベントコールバック関数](i-o-queue-event-callback-functions.md)」を参照してください。
 
--   キューの状態を変更するなど、コールバック関数、 [ **IQueueCallbackStateChange::OnStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackstatechange-onstatechange)します。
+-   キュー状態変更コールバック関数 ( [**IQueueCallbackStateChange:: OnStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackstatechange-onstatechange)など)。
 
--   キャンセル コールバック関数を次のように、要求[ **IRequestCallbackCancel::OnCancel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackcancel-oncancel)します。
+-   、 [**Irequestcallback cancel:: OnCancel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackcancel-oncancel)などのキャンセルコールバック関数を要求します。
 
--   ファイルのクリーンアップなど、コールバック関数を閉じたり[ **IFileCallbackCleanup::OnCleanupFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)と[ **IFileCallbackClose::OnCloseFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile).
+-   [**IFileCallbackCleanup:: OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)や[**IFileCallbackClose:: oncleanupfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)など、ファイルのクリーンアップと終了のコールバック関数。
 
-完了コールバック関数の要求 ([**IRequestCallbackRequestCompletion::OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)) キューではないをコールバック関数には。 そのため、これらは同期されません。
+要求の完了コールバック関数 ([**Irequestcallback Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)) は、キューのコールバック関数ではありません。 そのため、同期されません。
 
  
 

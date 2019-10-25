@@ -3,29 +3,29 @@ title: MPEG2_A
 description: MPEG2_A
 ms.assetid: 4f9e2aad-4072-4a49-87df-dfc6b4bf5f56
 keywords:
-- MPEG2_A プロファイル WDK DirectX VA を制限します。
+- MPEG2_A restricted profile WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af2561413249315ed6e225c570448af736090ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 421e88d375641edf2540ecd8f322d740ad223b70
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372863"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840544"
 ---
-# <a name="mpeg2a"></a>MPEG2\_A
+# <a name="mpeg2_a"></a>MPEG2\_A
 
 
 ## <span id="ddk_mpeg2_a_gg"></span><span id="DDK_MPEG2_A_GG"></span>
 
 
-MPEG2\_制限プロファイルには、mpeg-2 ビデオのメイン プロファイルをサポートするために必要な機能のセットが含まれています。 このプロファイルのサポートは、ビデオ アクセラレータ ドライバー ハードウェア ビデオ アクセラレータ機能を提供する必要があります。
+MPEG2\_制限付きプロファイルには、MPEG-2 ビデオメインプロファイルのサポートに必要な一連の機能が含まれています。 このプロファイルのサポートは、ハードウェアのビデオアクセラレータ機能を提供するビデオアクセラレータドライバーに必要です。
 
-MPEG2\_プロファイルは、次の制限のセットによって定義されます。
+プロファイル\_の MPEG2 は、次の制限のセットによって定義されます。
 
-### <a name="span-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanrestrictions-on-dxvaconnectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA に関する制限事項\_ConnectMode
+### <a name="span-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanrestrictions-on-dxva_connectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA\_ConnectMode に関する制限事項
 
-に対して次の制限、 [ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)構造体に適用されるときに、 *bDXVA\_Func* で定義された変数**dwFunction**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体が 1 にします。
+[**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**dwfunction**メンバーで定義されている*bDXVA\_Func*変数が1と等しい場合は、 [**DXVA\_connectmode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)構造体に対する次の制限が適用されます。
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構造体のメンバー</th>
+<th align="left">構造体メンバー</th>
 <th align="left">Value</th>
 </tr>
 </thead>
@@ -48,7 +48,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 
  
 
-### <a name="span-idrestrictionsondxvapictureparametersspanspan-idrestrictionsondxvapictureparametersspanspan-idrestrictionsondxvapictureparametersspanrestrictions-on-dxvapictureparameters"></a><span id="Restrictions_on_DXVA_PictureParameters"></span><span id="restrictions_on_dxva_pictureparameters"></span><span id="RESTRICTIONS_ON_DXVA_PICTUREPARAMETERS"></span>DXVA に関する制限事項\_PictureParameters
+### <a name="span-idrestrictions_on_dxva_pictureparametersspanspan-idrestrictions_on_dxva_pictureparametersspanspan-idrestrictions_on_dxva_pictureparametersspanrestrictions-on-dxva_pictureparameters"></a><span id="Restrictions_on_DXVA_PictureParameters"></span><span id="restrictions_on_dxva_pictureparameters"></span><span id="RESTRICTIONS_ON_DXVA_PICTUREPARAMETERS"></span>DXVA\_ピクチャパラメーターに関する制限事項
 
 <table>
 <colgroup>
@@ -57,7 +57,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構造体のメンバー</th>
+<th align="left">構造体メンバー</th>
 <th align="left">Value</th>
 </tr>
 </thead>
@@ -67,7 +67,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 <td align="left"><p>0x0A</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>BPP</em>変数 (1 を追加することで定義されている<strong>bBPPminus1)</strong></p></td>
+<td align="left"><p><em>BPP</em>変数 (1 に bBPPminus1 を追加することで定義<strong>)</strong></p></td>
 <td align="left"><p>8</p></td>
 </tr>
 <tr class="odd">
@@ -92,42 +92,42 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bRcontrol</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bBidirectionalAveragingMode</strong></p></td>
-<td align="left"><p>0 (mpeg-2 双方向の平均を計算)</p></td>
+<td align="left"><p>ゼロ (MPEG-2 双方向平均)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bMVprecisionAndChromaRelation</strong></p></td>
-<td align="left"><p>0 (mpeg-2 半分サンプル モーション)</p></td>
+<td align="left"><p>ゼロ (MPEG 2 ハーフサンプルモーション)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>bPicExtrapolation</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p><strong>B絵文字の外挿</strong></p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>bPicDeblocked</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p><strong>B絵文字 Deブロック</strong></p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bPic4MVallowed</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>bPicOBMC</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p><strong>B絵文字 Obmc</strong></p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bMV_RPS</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>SpecificIDCT</strong></p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p><strong>固有の Idct</strong></p></td>
+<td align="left"><p>回</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>bPicScanFixed</strong></p></td>
+<td align="left"><p><strong>B絵文字 Scanfixed</strong></p></td>
 <td align="left"><p>1</p></td>
 </tr>
 </tbody>
@@ -135,7 +135,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 
  
 
-### <a name="span-idrestrictionsondxvambctrlihostresiddiff1dxvambctrlioffhostidct1dxvambctrlphostresiddiff1anddxvambctrlpoffhostidct1spanspan-idrestrictionsondxvambctrlihostresiddiff1dxvambctrlioffhostidct1dxvambctrlphostresiddiff1anddxvambctrlpoffhostidct1spanspan-idrestrictionsondxvambctrlihostresiddiff1dxvambctrlioffhostidct1dxvambctrlphostresiddiff1anddxvambctrlpoffhostidct1spanrestrictions-on-dxvambctrlihostresiddiff1-dxvambctrlioffhostidct1-dxvambctrlphostresiddiff1-and-dxvambctrlpoffhostidct1"></a><span id="Restrictions_on_DXVA_MBctrl_I_HostResidDiff_1__DXVA_MBctrl_I_OffHostIDCT_1__DXVA_MBctrl_P_HostResidDiff_1__and_DXVA_MBctrl_P_OffHostIDCT_1"></span><span id="restrictions_on_dxva_mbctrl_i_hostresiddiff_1__dxva_mbctrl_i_offhostidct_1__dxva_mbctrl_p_hostresiddiff_1__and_dxva_mbctrl_p_offhostidct_1"></span><span id="RESTRICTIONS_ON_DXVA_MBCTRL_I_HOSTRESIDDIFF_1__DXVA_MBCTRL_I_OFFHOSTIDCT_1__DXVA_MBCTRL_P_HOSTRESIDDIFF_1__AND_DXVA_MBCTRL_P_OFFHOSTIDCT_1"></span>DXVA に関する制限事項\_MBctrl\_は\_HostResidDiff\_1、DXVA\_MBctrl\_は\_OffHostIDCT\_1、DXVA\_MBctrl\_P\_HostResidDiff\_1、および DXVA\_MBctrl\_P\_OffHostIDCT\_1
+### <a name="span-idrestrictions_on_dxva_mbctrl_i_hostresiddiff_1__dxva_mbctrl_i_offhostidct_1__dxva_mbctrl_p_hostresiddiff_1__and_dxva_mbctrl_p_offhostidct_1spanspan-idrestrictions_on_dxva_mbctrl_i_hostresiddiff_1__dxva_mbctrl_i_offhostidct_1__dxva_mbctrl_p_hostresiddiff_1__and_dxva_mbctrl_p_offhostidct_1spanspan-idrestrictions_on_dxva_mbctrl_i_hostresiddiff_1__dxva_mbctrl_i_offhostidct_1__dxva_mbctrl_p_hostresiddiff_1__and_dxva_mbctrl_p_offhostidct_1spanrestrictions-on-dxva_mbctrl_i_hostresiddiff_1-dxva_mbctrl_i_offhostidct_1-dxva_mbctrl_p_hostresiddiff_1-and-dxva_mbctrl_p_offhostidct_1"></a><span id="Restrictions_on_DXVA_MBctrl_I_HostResidDiff_1__DXVA_MBctrl_I_OffHostIDCT_1__DXVA_MBctrl_P_HostResidDiff_1__and_DXVA_MBctrl_P_OffHostIDCT_1"></span><span id="restrictions_on_dxva_mbctrl_i_hostresiddiff_1__dxva_mbctrl_i_offhostidct_1__dxva_mbctrl_p_hostresiddiff_1__and_dxva_mbctrl_p_offhostidct_1"></span><span id="RESTRICTIONS_ON_DXVA_MBCTRL_I_HOSTRESIDDIFF_1__DXVA_MBCTRL_I_OFFHOSTIDCT_1__DXVA_MBCTRL_P_HOSTRESIDDIFF_1__AND_DXVA_MBCTRL_P_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_I\_HostResidDiff\_1、DXVA\_MBctrl\_I\_OffHostIDCT\_1、DXVA\_MBctrl\_P\_HostResidDiff\_1、および DXVA\_MBctrl\_P\_OffHostIDCT\_1
 
 <table>
 <colgroup>
@@ -151,22 +151,22 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>MBscanMethod</em></p></td>
-<td align="left"><p>場合、0 (ジグザグ) の値または値 1 (代替垂直) することがあります、 <strong>ConfigHostInverseScan</strong>のメンバー <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)"> <strong>DXVA_ConfigPictureDecode</strong> </a>が 0 に等しい。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)"><strong>DXVA_ConfigPictureDecode</strong></a>の<strong>ConfigHostInverseScan</strong>メンバーが0の場合は、0 (ジグザグ) または 1 (代替の垂直) の値を指定できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>H261LoopFilter</p></td>
-<td align="left"><p>Zero</p></td>
+<td align="left"><p>回</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idrestrictionsonbitstreambuffersspanspan-idrestrictionsonbitstreambuffersspanspan-idrestrictionsonbitstreambuffersspanrestrictions-on-bitstream-buffers"></a><span id="Restrictions_on_Bitstream_Buffers"></span><span id="restrictions_on_bitstream_buffers"></span><span id="RESTRICTIONS_ON_BITSTREAM_BUFFERS"></span>ビット ストリーム バッファーに関する制限事項
+### <a name="span-idrestrictions_on_bitstream_buffersspanspan-idrestrictions_on_bitstream_buffersspanspan-idrestrictions_on_bitstream_buffersspanrestrictions-on-bitstream-buffers"></a><span id="Restrictions_on_Bitstream_Buffers"></span><span id="restrictions_on_bitstream_buffers"></span><span id="RESTRICTIONS_ON_BITSTREAM_BUFFERS"></span>ビットストリームバッファーに関する制限事項
 
-ビット ストリーム バッファーの内容は、mpeg-2 メイン プロファイルのビデオ形式でデータを含める必要があります。
+ビットストリームバッファーの内容には、MPEG-2 メインプロファイルビデオ形式のデータが含まれている必要があります。
 
-**BNewQmatrix**のメンバー [ **DXVA\_QmatrixData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_qmatrixdata)を 0 に等しいは行列の逆行列量子化を使用する場合は、2 および 3 を = です。
+逆量子化行列が使用されている場合、 [**DXVA\_QmatrixData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_qmatrixdata)の**Bnewqmatrix**メンバーは0になり、i = 2 および3になります。
 
  
 

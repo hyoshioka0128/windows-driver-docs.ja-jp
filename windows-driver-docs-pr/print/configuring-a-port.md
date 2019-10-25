@@ -3,16 +3,16 @@ title: ポートの構成
 description: ポートの構成
 ms.assetid: f5996e94-aa48-4aa0-82f5-331a57d2fb6b
 keywords:
-- ポート管理 WDK の印刷、ポートを構成します。
+- ポート管理 WDK 印刷、ポートの構成
 - ConfigurePort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a00ee45aab2f46107444d67d832a259ac86889
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9a50bed088d0aaea74f55ff2c7661bdd1324df2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379708"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843681"
 ---
 # <a name="configuring-a-port"></a>ポートの構成
 
@@ -20,19 +20,19 @@ ms.locfileid: "67379708"
 
 
 
-ポートの構成は、以前に追加されたポートのポート モニター サーバー DLL の格納されている構成情報を変更することで構成されます。
+ポートの構成は、以前に追加されたポートに対してポートモニターサーバー DLL の格納されている構成情報を変更することで行います。
 
-アプリケーションから印刷スプーラの[ **ConfigurePort** ](https://docs.microsoft.com/previous-versions/ff546286(v=vs.85)) (Microsoft Windows SDK のドキュメントで説明)、関数、 **ConfigurePort**関数呼び出し[ **ConfigurePortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)ポート モニター、適切なポート モニターの UI の DLL に含まれる関数。
+アプリケーションが印刷スプーラの[**ConfigurePort**](https://docs.microsoft.com/previous-versions/ff546286(v=vs.85))関数 (Microsoft Windows SDK のドキュメントで説明) を呼び出すと、 **ConfigurePort**関数は、のポートモニター UI DLL に含まれている[**ConfigurePortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)関数を呼び出します。適切なポートモニター。
 
-ポート モニター UI の DLL の[ **ConfigurePortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)関数は、次の操作を実行する必要があります。
+ポートモニターの UI DLL の[**ConfigurePortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)関数は、次の操作を実行する必要があります。
 
-1.  関数を呼び出して印刷スプーラーのようになりました (Windows SDK のドキュメントで説明)、これにより、 [ **XcvOpenPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvopenport)ポート監視のサーバー DLL を呼び出す関数。
+1.  (Windows SDK のドキュメントで説明されている) 印刷スプーラの OpenPrinter 関数を呼び出します。これにより、ポートモニターサーバー DLL の[**XcvOpenPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvopenport)関数が呼び出されます。
 
-2.  印刷スプーラーを呼び出す[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)) UI の DLL と、サーバー DLL 間構成情報を転送する 1 つ以上の時間に機能します。 **XcvData**関数呼び出しのサーバー DLL の[ **XcvDataPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvdataport)関数。 [ **ConfigurePortUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)関数通常構成情報を取得、ユーザーからのダイアログ ボックスを表示することで。
+2.  印刷スプーラの[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))関数を1回以上呼び出して、UI dll とサーバー DLL の間で構成情報を転送します。 **XcvData**関数は、サーバー DLL の[**XcvDataPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)関数を呼び出します。 [**ConfigurePortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)関数は、通常、ダイアログボックスを表示して、ユーザーから構成情報を取得します。
 
-3.  関数を呼び出して、印刷スプーラー ClosePrinter (Windows SDK のドキュメントで説明)、これにより、 [ **XcvClosePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvcloseport)ポート監視のサーバー DLL を呼び出す関数。
+3.  (Windows SDK のドキュメントで説明されている) 印刷スプーラの ClosePrinter 関数を呼び出します。これにより、ポートモニターサーバー DLL の[**XcvClosePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvcloseport)関数が呼び出されます。
 
-これらの操作の詳細については、の説明を参照してください。 [ **ConfigurePortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)します。 参照してください[ポートの構成情報を格納する](storing-port-configuration-information.md)します。
+これらの操作の詳細については、 [**ConfigurePortUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)の説明を参照してください。 「[ポート構成情報の格納](storing-port-configuration-information.md)」も参照してください。
 
  
 

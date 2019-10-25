@@ -1,9 +1,9 @@
 ---
 title: MRxFlush ルーチン
-description: MRxFlush ルーチンは、ネットワークのミニ リダイレクターがストレージにファイル システム オブジェクトの内容を記述することを要求する RDBSS によって呼び出されます。 RDBSS IRP を受信したときにこの呼び出しを発行する\_MJ\_フラッシュ\_バッファー要求。
+description: MRxFlush ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトの内容をストレージに書き込むように要求するために、RDBSS によって呼び出されます。 RDBSS は、IRP\_MJ\_FLUSH\_BUFFERS 要求の受信に応答して、この呼び出しを発行します。
 ms.assetid: b133a91f-3f8c-45af-a02c-58d894a2fa2e
 keywords:
-- MRxFlush ルーチン インストール可能なファイル システム ドライバー
+- MRxFlush ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2915bcec1c3c0dde62cf0e7403b03b78d530c6dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5490d869c7886cc79f5c7c4e65e454f16cde7976
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374323"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841109"
 ---
 # <a name="mrxflush-routine"></a>MRxFlush ルーチン
 
 
-*MRxFlush*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがストレージにファイル システム オブジェクトの内容を記述することを要求します。 RDBSS が応答を受信するには、この呼び出しを発行する[ **IRP\_MJ\_フラッシュ\_バッファー** ](irp-mj-flush-buffers.md)要求。
+*MRxFlush*ルーチンは、ネットワークミニリダイレクターがファイルシステムオブジェクトの内容をストレージに書き込むように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。 RDBSS は、 [**IRP\_MJ\_FLUSH\_BUFFERS**](irp-mj-flush-buffers.md)要求の受信に応答して、この呼び出しを発行します。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxFlush(
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxFlush*ステータスを返します\_次のよう、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxFlush*は正常に完了した状態\_成功したか、次のような適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>操作を完了するリソースの不足が発生しました。</p></td>
+<td align="left"><p>操作を完了するためのリソースが不足しています。</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,9 +74,9 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-*MRxFlush*ハンドルのネットワーク ファイルのフラッシュの要求。
+*MRxFlush*は、ファイルフラッシュのネットワーク要求を処理します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -91,7 +91,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -99,29 +99,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

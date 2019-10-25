@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_サンプル\_時間
-description: クライアントを使用して、KSPROPERTY\_BDA\_サンプル\_レベルと品質を平均する信号をサンプル時間を決定します。
+title: KSK プロパティ\_BDA\_サンプル\_時間
+description: クライアントは、KSK プロパティ\_BDA\_サンプル\_時間を使用して、シグナルレベルと品質の平均を示すサンプル時間を決定します。
 ms.assetid: 53252e11-2a18-42d5-aed8-99052a2b0f21
 keywords:
-- KSPROPERTY_BDA_SAMPLE_TIME ストリーミング メディア デバイス
+- KSPROPERTY_BDA_SAMPLE_TIME ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a628ae779152d791dda2dc4a61ae75344527473
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b3b0ccf4f70ec576eb9962df92e8a01b7da2fe4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838072"
 ---
-# <a name="kspropertybdasampletime"></a>KSPROPERTY\_BDA\_サンプル\_時間
+# <a name="ksproperty_bda_sample_time"></a>KSK プロパティ\_BDA\_サンプル\_時間
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_サンプル\_レベルと品質を平均する信号をサンプル時間を決定します。
+クライアントは、KSK プロパティ\_BDA\_サンプル\_時間を使用して、シグナルレベルと品質の平均を示すサンプル時間を決定します。
 
 ## <span id="ddk_ksproperty_bda_sample_time_ks"></span><span id="DDK_KSPROPERTY_BDA_SAMPLE_TIME_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361139"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67361139"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-<td><p>Pin またはフィルター</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
+<td><p>ピン留めまたはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>LONG</p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,15 +64,15 @@ ms.locfileid: "67361139"
 <a name="remarks"></a>注釈
 -------
 
-**NodeId** KSP のメンバー\_ノードの管理ノードの識別子を指定しますまたは、暗証番号 (pin) を指定する − 1 に設定されています。
+KSP の**NodeId**メンバー\_node は、コントロールノードの識別子を指定します。または、pin を指定するために−1に設定されています。
 
-返される値は、ミリ秒単位でサンプルの時間を指定します。
+戻り値は、サンプル時間をミリ秒単位で指定します。
 
-たびにクライアントが要求シグナルの statistics プロパティ、ノードは、n KSPROPERTY により示される値は最後の n ミリ秒の平均値を報告する必要があります\_BDA\_サンプル\_時間。 時刻の値が設定されていない場合、またはドライバーが KSPROPERTY をサポートしていない場合\_BDA\_サンプル\_時間、ドライバーの既定 100 ミリ秒のサンプリング時間にする必要があります。
+クライアントが "signal statistics" プロパティを要求するたびに、ノードは最後の n ミリ秒の平均値を報告する必要があります。 n は、KSK プロパティ\_BDA\_SAMPLE\_TIME によって示される値です。 時刻値が設定されていない場合、またはドライバーが KSK プロパティ\_BDA\_サンプル\_時刻をサポートしていない場合、ドライバーの既定の時間は100ミリ秒になります。
 
-ドライバーは、最近完了したサンプル期間の時刻の値を報告できます。
+ドライバーは、最近完了したサンプル期間の時刻値を報告できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -83,7 +83,7 @@ ms.locfileid: "67361139"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,11 +91,11 @@ ms.locfileid: "67361139"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
-[**KSPROPERTY\_BDA\_信号\_品質**](ksproperty-bda-signal-quality.md)
+[**KSK プロパティ\_BDA\_シグナル\_品質**](ksproperty-bda-signal-quality.md)
 
-[**KSPROPERTY\_BDA\_信号\_強度**](ksproperty-bda-signal-strength.md)
+[**KSK プロパティ\_BDA\_シグナル\_強度**](ksproperty-bda-signal-strength.md)
 
  
 

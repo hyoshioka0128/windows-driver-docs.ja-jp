@@ -1,10 +1,10 @@
 ---
 title: FsRtlEnterFileSystem 関数
-description: FsRtlEnterFileSystem マクロは、カーネル モードの通常非同期プロシージャ コール (APC) の配信を一時的に無効にします。 特殊なカーネル モードの Apc が引き続き配信されます。
+description: FsRtlEnterFileSystem マクロは、通常のカーネルモードの非同期プロシージャ呼び出し (APC) の配信を一時的に無効にします。 特別なカーネルモードの Apc は引き続き配信されます。
 date: 06/25/2019
 ms.assetid: 6aa6315d-e430-4189-8eb5-9427a2e5ba46
 keywords:
-- インストール可能なファイル システム ドライバーの FsRtlEnterFileSystem 関数
+- FsRtlEnterFileSystem 関数のインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -15,16 +15,16 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df21f165ebb51f6a55de87d375b4226696e026ff
-ms.sourcegitcommit: 61d5dccad989614313be2e59df6e08cd46364e76
+ms.openlocfilehash: 7eec3b19a4b10ce4440f35c3cbda2667d3a14e3d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67412217"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841233"
 ---
 # <a name="fsrtlenterfilesystem-function"></a>FsRtlEnterFileSystem 関数
 
-**FsRtlEnterFileSystem**マクロは、カーネル モードの通常非同期プロシージャ コール (APC) の配信を一時的に無効にします。 特殊なカーネル モードの Apc が引き続き配信されます。
+**Fsrtlenterfilesystem**マクロは、通常のカーネルモードの非同期プロシージャ呼び出し (APC) の配信を一時的に無効にします。 特別なカーネルモードの Apc は引き続き配信されます。
 
 ## <a name="syntax"></a>構文
 
@@ -40,17 +40,17 @@ VOID FsRtlEnterFileSystem(
 
 ## <a name="return-value"></a>戻り値
 
-この関数では、値は返されません。
+この関数は値を返しません。
 
 ## <a name="remarks"></a>注釈
 
-各ファイル システム ドライバーのエントリ ポイント ルーチンを呼び出す必要があります**FsRtlEnterFileSystem**すぐにファイル I/O を実行するときに必要なリソースを取得する前に要求し、呼び出す[ **FsRtlExitFileSystem**](fsrtlexitfilesystem.md)直後。 これにより、ファイル I/O 要求の実行およびその他のブロック中に、ルーチンを中断することはできません。
+すべてのファイルシステムドライバーのエントリポイントルーチンは、ファイル i/o 要求を実行するために必要なリソースを取得する直前に**Fsrtlenterfilesystem**を呼び出し、その後すぐに[**Fsrtlenterfilesystem**](fsrtlexitfilesystem.md)を呼び出す必要があります。 これにより、ルーチンを実行中に中断したり、他のファイル i/o 要求をブロックしたりすることはできません。
 
-すべての成功した呼び出し**FsRtlEnterFileSystem**後続の呼び出しによって照合される必要があります[ **FsRtlExitFileSystem**](fsrtlexitfilesystem.md)します。
+**Fsrtlenterfilesystem**の呼び出しが成功するたびに、後続の[**Fsrtlenterfilesystem**](fsrtlexitfilesystem.md)の呼び出しで一致する必要があります。
 
-ファイル システム フィルター ドライバーは、通常カーネル Apc の配信を無効に呼び出して**FsRtlEnterFileSystem**または[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)より前のバージョン[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)場合にのみ[ **FsRtlExitFileSystem** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsrtlexitfilesystem)または[ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)同じディスパッチ ルーチンでは、します。 いない呼び出す必要がある**FsRtlEnterFileSystem**または**KeEnterCriticalRegion**より前のバージョン**保留**を呼び出して**FsRtlExitFileSystem**または**KeLeaveCriticalRegion**で、*完了ルーチン*IRP の。 Driver Verifier は、この条件を捕捉しやすくルール。
+ファイルシステムフィルタードライバーは、 [**Fsrtlenterfilesystem**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsrtlexitfilesystem)または[**KeLeaveCriticalRegion が**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)の場合にのみ、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)の前に**Fsrtlenterfilesystem**または[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)を呼び出すことによって、通常のカーネル apc の配信を無効にすることができます。同じディスパッチルーチン内。 **IoCallDriver**の前に**Fsrtlenterfilesystem**または**KEENTERCRITICALREGION**を呼び出して、IRP の*完了ルーチン*で**fsrtlenterfilesystem**または**KeLeaveCriticalRegion**を呼び出すことはできません。 Driver Verifier には、この状況を検出するための規則があります。
 
-ファイル システム フィルター ドライバーは、任意のリソースを取得する前に、通常カーネル Apc を無効にする必要があります。 ファイル システム フィルター ドライバーは、次のルーチンでリソースを取得します。
+ファイルシステムフィルタードライバーは、リソースを取得する前に通常のカーネル Apc を無効にする必要があります。 ファイルシステムフィルタードライバーは、次のルーチンを使用してリソースを取得します。
 
 * [**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 * [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
@@ -59,15 +59,15 @@ VOID FsRtlEnterFileSystem(
 * [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 * [**ExAcquireSharedWaitForExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544370)
 
-代替手段として**FsRtlEnterFileSystem**、ミニフィルター ドライバーを使用できる、 [ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [ **FltAcquireResourceShared**](fltacquireresourceshared.md)、および[ **FltReleaseResource** ](fltreleaseresource.md)獲得およびリソースを解放するときに Apc を適切に処理するルーチン。
+[**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)、および[**FltReleaseResource**](fltreleaseresource.md)ルーチンは、 **fsrtlenterfilesystem**の代わりに使用できます。このルーチンでは、とを取得するときに、apc を正しく処理します。リソースを解放しています。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | - | - |
 | 対象プラットフォーム | Desktop |
-| Header | Ntifs.h (Ntifs.h を含む) |
-| IRQL | <= APC_LEVEL |
+| Header | Ntifs (Ntifs を含む) |
+| IRQL | < = APC_LEVEL |
 
 ## <a name="see-also"></a>関連項目
 
@@ -85,7 +85,7 @@ VOID FsRtlEnterFileSystem(
 
 [**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
-[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)
 
 [**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))
 
@@ -97,8 +97,8 @@ VOID FsRtlEnterFileSystem(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
 
-[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)
 
-[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)
+[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)

@@ -3,18 +3,18 @@ title: SAN NIC 通知の登録
 description: SAN NIC 通知の登録
 ms.assetid: 6a630e7c-3b1a-4f4a-b808-f6b4e2315a42
 keywords:
-- NIC 通知 WDK San
-- プロキシ ドライバー WDK San、NIC の通知
-- SAN プロキシ ドライバー WDK、NIC の通知
-- NIC の通知を登録します。
+- NIC 通知の WDK San
+- プロキシドライバー WDK San, NIC 通知
+- SAN プロキシドライバー WDK、NIC 通知
+- NIC 通知を登録しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 917a548abbea30a73ec4ca4f363bcc5f4ced8827
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8343c698a8589d2a1b34a56b53c07a31575f46a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374763"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842072"
 ---
 # <a name="registering-for-san-nic-notifications"></a>SAN NIC 通知の登録
 
@@ -22,25 +22,25 @@ ms.locfileid: "67374763"
 
 
 
-プロキシ ドライバーがドライバーの管理下にある Nic に割り当てられた IP アドレスの一覧を指定する、関連付けられている SAN サービス プロバイダーから要求を受け取ったときに、ドライバーを決定し、プロバイダーにこの一覧を渡します。
+プロキシドライバーは、関連付けられている SAN サービスプロバイダーから要求を受信して、ドライバーの制御下で Nic に割り当てられた IP アドレスの一覧を提供するときに、ドライバーが決定し、この一覧をプロバイダーに渡します。
 
-これらの IP アドレスを取得するためにプロキシ ドライバーのアドレス変更通知を受信するトランスポート ドライバー インターフェイス (TDI) で登録する必要があります。 プロキシのドライバーの呼び出し、 [ **TdiRegisterPnPHandlers** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))関数。 この呼び出しでこのプロキシ ドライバーがコールバック関数にポインターを渡す、 **AddAddressHandlerV2**と**DelAddressHandlerV2** 、TDI のメンバー\_クライアント\_インターフェイス\_情報構造体のアドレスの追加と削除のコールバック関数を指定します。 後に、 **TdiRegisterPnPHandlers**関数が正常に返された、TDI すぐにことを示しますプロキシ ドライバーでは、現在アクティブなネットワーク アドレスをすべてアドレスと、追加のコールバックを使用します。 表示には、ネットワーク アドレスとこれらのアドレスがバインドされているデバイスの識別子の両方が含まれています。
+これらの IP アドレスを取得するには、プロキシドライバーがアドレス変更通知を受信するために Transport Driver Interface (TDI) に登録する必要があります。 プロキシドライバーは、 [**TdiRegisterPnPHandlers**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))関数を呼び出します。 この呼び出しで、このプロキシドライバーは、TDI\_クライアント\_インターフェイス\_INFO 構造体の**AddAddressHandlerV2**メンバーと**DelAddressHandlerV2**メンバーのコールバック関数へのポインターを渡して、のコールバック関数を指定します。アドレスの追加と削除を行います。 **TdiRegisterPnPHandlers**関数が正常に返された後、TDI は、アドレス追加コールバックを使用して、現在アクティブなすべてのネットワークアドレスをプロキシドライバーに対して直ちに示します。 この表示には、これらのアドレスがバインドされているデバイスのネットワークアドレスと識別子の両方が含まれています。
 
-たびに TDI で呼び出しをアドレスの追加機能を示すためにこれらのコールバック関数のいずれかまたは削除、プロキシ ドライバーには、次のパラメーターが必要です。
+TDI がアドレスの追加または削除を示すためにこれらのコールバック関数のいずれかを呼び出すと、プロキシドライバーは次のパラメーターを必要とします。
 
-<a href="" id="address"></a>*アドレス*  
-TA へのポインター\_ネットワーク アドレスを記述するアドレスの構造体またはいずれかに割り当てられている NIC から削除 TCP/IP の場合このポインターは、実際には、TA へのポインター\_アドレス\_IP 構造体。
+<a href="" id="address"></a>*先*  
+NIC に割り当てられるか、NIC から削除されるネットワークアドレスを記述する TA\_アドレス構造体へのポインター。 TCP/IP の場合、このポインターは実際には TA\_アドレス\_IP 構造へのポインターです。
 
-<a href="" id="devicename"></a>*デバイス名*  
-アドレスが関連付けられている NIC-トランスポートのバインドを識別する Unicode 文字列へのポインター。 TCP/IP が発生した場合、Unicode 文字列は、次の形式があります。\\デバイス\\Tcpip\_{NIC の GUID} NIC-GUID は、ネットワーク構成のサブシステムによって NIC に割り当てられたグローバル一意識別子
+<a href="" id="devicename"></a>*DeviceName*  
+アドレスが関連付けられているトランスポートから NIC へのバインドを識別する Unicode 文字列へのポインター。 TCP/IP の場合、Unicode 文字列の形式は次のようになります。 \\デバイス\\Tcpip\_{NIC-GUID}。ここで、NIC-GUID はネットワーク構成サブシステムによって NIC に割り当てられたグローバル一意識別子です。
 
-上記の構造体の定義は、tdi.h ヘッダー ファイルで定義されます。 上記の登録とコールバック関数は、tdikrnl.h ヘッダー ファイルで定義されます。 これらのヘッダー ファイルは、Microsoft Windows ドライバー開発キット (DDK) と Windows Driver Kit (WDK) で使用できます。 TDI プラグ アンド プレイ (PnP) 通知の詳細については、次を参照してください。 [TDI クライアント コールバック](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565081(v=vs.85))と[TDI クライアント イベントと PnP 通知ハンドラー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565082(v=vs.85))します。
+前の構造体の定義は、tdi ヘッダーファイルで定義されています。 前述の登録およびコールバック関数は、tdikrnl ヘッダーファイルで定義されています。 これらのヘッダーファイルは、Microsoft Windows Driver Development Kit (DDK) および Windows Driver Kit (WDK) で使用できます。 TDI プラグアンドプレイ (PnP) 通知の詳細については、「 [Tdi クライアントコールバック](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565081(v=vs.85))と[tdi クライアントイベントおよび pnp 通知ハンドラー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565082(v=vs.85))」を参照してください。
 
-システムの起動時に TDI は現在アクティブなすべての IP アドレスを示すために、プロキシ ドライバーのアドレス追加コールバックを呼び出します。 TDI は、TCP/IP トランスポート プロトコル TDI で新しい IP アドレスを登録するときにもこのコールバックを呼び出します。 プロキシのドライバーには IP アドレスの一覧に、プロキシ ドライバーの Nic に割り当てられているアドレスのみが含まれています。 ドライバーのアドレス追加コールバック コントロールすぐに、ドライバーでの NIC が認識されない場合*DeviceName*します。
+システムの起動時に、TDI はプロキシドライバーのアドレス追加コールバックを呼び出して、現在アクティブなすべての IP アドレスを示します。 また、TDI は、TCP/IP トランスポートプロトコルが新しい IP アドレスを TDI に登録するたびに、このコールバックを呼び出します。 プロキシドライバーは、プロキシドライバーの Nic に割り当てられているアドレスのみを IP アドレスの一覧に含めます。 ドライバーが*DeviceName*の NIC を認識しない場合、ドライバーのアドレス追加コールバックは、制御を直ちに返す必要があります。
 
-TDI では、NIC が削除されている TCP/IP トランスポート プロトコルを示します TDI するたびに、プロキシ ドライバーのアドレスの削除コールバックが呼び出されます。 NIC の IP アドレスが、プロキシ ドライバーの Nic のいずれかに所属している場合、プロキシ ドライバーは、リストから IP アドレスを削除します。
+TDI は、NIC が削除されたことを TCP/IP トランスポートプロトコルが示す場合は常に、プロキシドライバーのアドレス削除コールバックを呼び出します。 NIC の IP アドレスがプロキシドライバーの Nic のいずれかに属している場合は、プロキシドライバーによって一覧から IP アドレスが削除されます。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
+Windows Vista 以降では、Microsoft Windows のバージョンでは TDI はサポートされませ**ん  。** 代わりに、 [Windows フィルタリングプラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)または[Winsock カーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を使用してください。
 
  
 

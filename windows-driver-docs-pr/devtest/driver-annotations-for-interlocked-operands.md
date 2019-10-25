@@ -4,19 +4,19 @@ description: インタロックされたオペランドのドライバー注釈
 ms.assetid: 33C85016-765B-42BF-9F38-BB682951B20C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b7655e9e8a025af3468abb105ab1a978692b8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5312d9f1aa7f94af3398ede639fbbbb867696abf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371516"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840277"
 ---
 # <a name="driver-annotations-for-interlocked-operands"></a>インタロックされたオペランドのドライバー注釈
 
 
-大規模なファミリの関数は、パラメーターの 1 つとして、インタロックされたプロセッサ命令を使用してアクセスする必要がある変数のアドレスを受け取ります。 キャッシュ リード スルーのアトミック手順では、これらし、非常に微妙なバグが発生する場合は、オペランドが正しくに使用されていません。
+大規模な関数のファミリは、インタロックされたプロセッサ命令を使用してアクセスする必要がある変数のアドレスをパラメーターの1つとして受け取ります。 これらはキャッシュ読み取り-アトミック命令です。オペランドが正しく使用されていないと、非常に微妙なバグの結果になります。
 
-インタロックされたオペランドとして識別するのにには、関数のパラメーターは、次の注釈を使用します。
+関数パラメーターに次の注釈を使用して、それをインタロックされたオペランドとして識別します。
 
 <table>
 <colgroup>
@@ -25,31 +25,31 @@ ms.locfileid: "67371516"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">インタロックされたオペランドの注釈</th>
+<th align="left">インタロックオペランド注釈</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="_Interlocked_operand_"></span><span id="_interlocked_operand_"></span><span id="_INTERLOCKED_OPERAND_"></span><em>Interlocked_operand</em></p></td>
-<td align="left"><p>注釈付きの関数パラメーターは、インタロックされた関数の 1 つのターゲットのオペランドです。 これらのオペランドは、特定の追加プロパティを持つ必要があります。</p></td>
+<td align="left"><p>注釈付き関数のパラメーターは、いずれかのインタロックされた関数のターゲットオペランドです。 これらのオペランドには、特定の追加プロパティが必要です。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-関数のパラメーターの注釈が付けられた、 \_Interlocked\_オペランド\_プロセス間で共有する必要があります。 この注釈で使用する変数である必要があります。
+\_インタロックされた\_オペランド\_ で注釈が付けられた関数パラメーターは、プロセス間で共有される必要があります。 この注釈で使用される変数は次のようにする必要があります。
 
--   宣言する**揮発性です。**
+-   Volatile として宣言さ**れています。**
 
--   ローカル変数はできません。 ローカル変数の使用は、通常の関数の目的とした、誤解を示します。 ローカル変数は何らかの方法で共有されている場合でもシステム ページング要件アドレス指定変数ように別のプロセスで問題が発生します。
+-   ローカル変数ではありません。 ローカル変数の使用は、通常、関数の意図が誤解されていることを示します。 ローカル変数が何らかの方法で共有されている場合でも、システムのページング要件によって、別のプロセスでの変数のアドレス指定が問題になります。
 
--   いない以外からはアクセス、interlocked 関数。 Interlocked 関数の明示的な使用、しなくても、操作は古いデータにアクセスする可能性があります、1 つのプロセッサのキャッシュでのみ発生する可能性があります。 またはシステムの残りの部分に遅れる可能性があります。
+-   インタロックされた関数以外ではアクセスできません。 インタロックされた関数を明示的に使用しないと、操作は古いデータにアクセスしたり、1つのプロセッサのキャッシュでのみ発生する可能性があります。また、システムの残りの部分に到達するまでに遅延が生じる可能性があります。
 
-システム指定の関数は、既にインタロックされたオペランドの注釈が付いています。
+システム指定の関数には、既にインタロックされたオペランドに注釈が付けられています。
 
-次の例では、注釈には、 [ **InterlockedExchange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedexchange)関数。 この注釈は、ターゲット パラメーターは、インタロックされた操作を使用して常にアクセスする必要がありますを指定します。
+次の例は、 [**InterlockedExchange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedexchange)関数の注釈を示しています。 この注釈は、ターゲットパラメーターに常に、インタロックされた操作を使用してアクセスする必要があることを指定します。
 
 ```
 LONG  
@@ -59,10 +59,10 @@ InterlockedExchange (
     );  
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[SAL 2.0 注釈ドライバー](sal-2-annotations-for-windows-drivers.md)
+[ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)
 
 
 

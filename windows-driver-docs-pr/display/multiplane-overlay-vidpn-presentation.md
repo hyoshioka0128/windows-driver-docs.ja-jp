@@ -1,32 +1,32 @@
 ---
 title: Multiplane オーバーレイ VidPN プレゼンテーション
 ms.assetid: BAD7FD48-905D-4547-8C69-133240B39FA3
-description: 複数のサーフェスに存在するために使用する関数に適用される要件。
+description: 複数のサーフェイスに存在するために使用される関数に適用される要件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18b93ff8e6f96e269d8cdc7215413b9e758e9d88
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06b5c799a1de5084374d27c9ce273a995133ad59
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372836"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840538"
 ---
 # <a name="multiplane-overlay-vidpn-presentation"></a>Multiplane オーバーレイ VidPN プレゼンテーション
 
 
-Multiplane オーバーレイを使用している場合は、関数が存在するネットワークのビデオ (VidPNs) 内の複数のサーフェスに存在するために使用するこれらの要件が適用されます。
+Multiplane オーバーレイが使用されている場合、これらの要件は、ビデオの現在のネットワーク (VidPNs) の複数のサーフェイスに存在する関数に適用されます。
 
-<span id="DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay"></span><span id="dxgkddisetvidpnsourceaddresswithmultiplaneoverlay"></span><span id="DXGKDDISETVIDPNSOURCEADDRESSWITHMULTIPLANEOVERLAY"></span>[*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)  
--   場合[ **DXGK\_MULTIPLANE\_オーバーレイ\_平面**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_multiplane_overlay_plane).**有効になっている**が false の場合、ディスプレイのミニポート ドライバーには、指定した平面が無効にする必要があります。
--   以前の呼び出し、平面を有効にしたかどうか[ *DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)ですが、現在の呼び出しには存在しない、ドライバーはなくプレーンを表示する続行する必要がありますこれを反転します。
--   ドライバーが複数の呼び出しを受信することは[ *DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)同じの垂直同期中に (1 回の呼び出しを 1 つの平面を反転するのには、反転する別の呼び出し、さまざまな面)。 ここでは、ドライバーは、両方の呼び出しを処理する必要があります。
--   信頼できるソースでのユーザー モードで渡されるデータを検証されている必要があります。 ただし、ディスプレイのミニポート ドライバーでは、問題が原因であることを確認するデータがチェックもする必要があります。 呼び出し、データが正しくない場合、ドライバーに失敗する可能性を**状態\_無効な\_パラメーター**適切に処理されない可能性があります、エラー コードがこのようなエラーと、オペレーティング システムまたは、いずれかのバグを示すもので、ユーザー モード ドライバー。
+<span id="DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay"></span><span id="dxgkddisetvidpnsourceaddresswithmultiplaneoverlay"></span><span id="DXGKDDISETVIDPNSOURCEADDRESSWITHMULTIPLANEOVERLAY"></span>[*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)  
+-   [**DXGK\_multiplane\_\_平面にオーバーレイ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_multiplane_overlay_plane)します。**有効**になっている場合は、ミニポートドライバーによって、指定された平面が無効になります。
+-   以前に[*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)を呼び出したときに平面が有効になっていたが、現在の呼び出しには存在しない場合、ドライバーは、反転せずに平面を表示し続ける必要があります。
+-   同じ垂直同期 (1 つの平面を反転するための1つの呼び出しと、別の平面を反転するための呼び出し) 中に、ドライバーが[*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)の複数の呼び出しを受信する可能性があります。 この場合、ドライバーは両方の呼び出しを処理する必要があります。
+-   渡されたデータは、信頼できるソースによってユーザーモードで検証されている必要があります。 ただし、ディスプレイミニポートドライバーでは、問題が発生しないことを確認するためにデータを確認する必要があります。 データが正しくない場合、ドライバーは、**状態\_無効\_パラメーター**エラーコードを含む呼び出しを失敗させる可能性がありますが、このようなエラーは適切に処理されず、オペレーティングシステムまたはユーザーモードドライバーのバグを意味します。
 
-<span id="DxgkDdiSetVidPnSourceVisibility"></span><span id="dxgkddisetvidpnsourcevisibility"></span><span id="DXGKDDISETVIDPNSOURCEVISIBILITY"></span>[*DxgkDdiSetVidPnSourceVisibility*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourcevisibility)  
-ときに[ **DXGKARG\_SETVIDPNSOURCEVISIBILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility).**表示される**に設定されている**FALSE**でこの関数の呼び出しで指定したソースは、すべてのハードウェア面する必要があります無効にする、レイヤーの主なサーフェイスでの使用を含むです。 ときに**Visible**に設定されている**TRUE**、プライマリのサーフェイスでの使用、プレーンのみを有効にする必要があります、および他のすべての平面無効のままにする必要があります。
+<span id="DxgkDdiSetVidPnSourceVisibility"></span><span id="dxgkddisetvidpnsourcevisibility"></span><span id="DXGKDDISETVIDPNSOURCEVISIBILITY"></span>[*DxgkDdiSetVidPnSourceVisibility*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourcevisibility)  
+[**Dxgkarg\_SETVIDPNSOURCEVISIBILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。この関数の呼び出しでは、指定されたソースで**Visible**が**FALSE**に設定されています。プライマリサーフェイスに使用されるレイヤーを含め、すべてのハードウェアプレーンが無効になっている必要があります。 **Visible**が**TRUE**に設定されている場合、プライマリサーフェイスに使用されている平面のみが有効になっている必要があり、その他のすべてのプレーンは無効のままにしておく必要があります。
 
 <span id="DxgkDdiSetVidPnSourceAddress"></span><span id="dxgkddisetvidpnsourceaddress"></span><span id="DXGKDDISETVIDPNSOURCEADDRESS"></span>[*DxgkDdiSetVidPnSourceAddress*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560767(v=vs.85))  
-この関数が呼び出されると、ドライバーはすべての非プライマリ オーバーレイ平面を無効にする必要があります。 使用して、プライマリの画面が反転される[ *DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay) multiplane オーバーレイ モードの場合にします。
+この関数が呼び出されると、ドライバーは非プライマリオーバーレイプレーンをすべて無効にする必要があります。 マルチ平面オーバーレイモードでは、 [*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay)を使用してプライマリサーフェイスが反転されます。
 
  
 

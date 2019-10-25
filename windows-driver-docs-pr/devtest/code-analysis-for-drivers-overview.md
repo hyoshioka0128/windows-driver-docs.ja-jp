@@ -1,76 +1,76 @@
 ---
 title: ドライバーのコード分析の概要
-description: Windows ドライバー キットは、Microsoft Visual Studio Ultimate 2012 でコード分析ツールにドライバー固有の拡張機能を提供します。
+description: Windows Driver Kit には、Microsoft Visual Studio Ultimate 2012 のコード分析ツールにドライバー固有の拡張機能が用意されています。
 ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b775f9e6a8d7ae59dfe91045577b4016bee7ae8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 692ac4ebc62b7a3ee03a83b5e44ec9d06e6104ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840295"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>ドライバーのコード分析の概要
 
 
-Windows Driver Kit にドライバー固有の拡張機能を提供する、[コード分析ツール](https://go.microsoft.com/fwlink/p/?linkid=226836)Microsoft Visual Studio でします。 Code Analysis for Drivers は、特にカーネル モード ドライバーをドライバーにのみ適用される規則が含まれています。 コード Analysis for Drivers は、コードをコンパイルするとすぐに、コードで潜在的なエラーを検出できます。
+Windows Driver Kit には、Microsoft Visual Studio の[コード分析ツール](https://go.microsoft.com/fwlink/p/?linkid=226836)に対するドライバー固有の拡張機能が用意されています。 ドライバーのコード分析には、ドライバー、特にカーネルモードドライバーにのみ適用される規則が含まれています。 コードをコンパイルするとすぐに、ドライバーのコード分析によって、コード内の潜在的なエラーが検出される可能性があります。
 
-## <a name="span-idhowthecodeanalysistoolworksspanspan-idhowthecodeanalysistoolworksspanspan-idhowthecodeanalysistoolworksspanhow-the-code-analysis-tool-works"></a><span id="How_the_Code_Analysis_tool_works"></span><span id="how_the_code_analysis_tool_works"></span><span id="HOW_THE_CODE_ANALYSIS_TOOL_WORKS"></span>コード分析ツールのしくみ
-
-
-コード分析ツールでは、標準のコンパイラでは、Cl.exe のビルド ユーティリティの呼び出しをインターセプトし、代わりに、ドライバーのソース コードを分析し、エラーと警告メッセージのログ ファイルを作成する CL 切片コンパイラを実行します。 コード分析ツールを実行するには、単独でまたはドライバーをビルドするときに実行するコード分析ツールを構成することができます。 単独でコード分析ツールを実行すると (**分析&gt;ソリューションでコード分析を実行**) コード分析のレポート ウィンドウで、結果が表示されます。 ビルドの一部としてコード分析ツールを実行して、CL 切片コンパイラ エラーと警告メッセージのログ ファイルが作成ビルド出力を生成する Cl.exe の standard バージョンを呼び出しています。 生成されるオブジェクト ファイルは、標準によって生成されたそれらのビルド コマンドと同じです。
-
-インターセプト コンパイラを実行すると Code Analysis for Drivers は、コード内の各関数を個別に調べし、一般的なドライバーのエラーと不適切なコーディング手法を探して、コードでは、すべての可能なパスの実行をシミュレートします。 コード分析ツールは大規模なドライバーは、上であっても比較的高速に実行され、正確に生成されるレポートは、疑わしいエラー ドライバー コードの行を識別します。
-
-## <a name="span-idthetypesoferrorscodeanalysiscandetectspanspan-idthetypesoferrorscodeanalysiscandetectspanspan-idthetypesoferrorscodeanalysiscandetectspanthe-types-of-errors-code-analysis-can-detect"></a><span id="The_types_of_errors_Code_Analysis_can_detect"></span><span id="the_types_of_errors_code_analysis_can_detect"></span><span id="THE_TYPES_OF_ERRORS_CODE_ANALYSIS_CAN_DETECT"></span>コード分析で検出できるエラーの種類
+## <a name="span-idhow_the_code_analysis_tool_worksspanspan-idhow_the_code_analysis_tool_worksspanspan-idhow_the_code_analysis_tool_worksspanhow-the-code-analysis-tool-works"></a><span id="How_the_Code_Analysis_tool_works"></span><span id="how_the_code_analysis_tool_works"></span><span id="HOW_THE_CODE_ANALYSIS_TOOL_WORKS"></span>コード分析ツールの動作
 
 
-コード分析は、次のカテゴリのエラーを含む、エラーのいくつかの種類を検出できます。
+コード分析ツールは、標準コンパイラ Cl.exe およびのビルドユーティリティの呼び出しをインターセプトし、その代わりに、ドライバーのソースコードを分析し、エラーメッセージと警告メッセージのログファイルを作成する CL インターセプトコンパイラを実行します。 コード分析ツールは単独で実行することも、ドライバーのビルド時に実行するようにコード分析ツールを構成することもできます。 コード分析ツールを単独で実行すると (**ソリューションでコード分析を実行 &gt;** )、コード分析レポート ウィンドウに結果が表示されます。 ビルドの一部としてコード分析ツールを実行すると、CL インターセプトコンパイラによってエラーメッセージと警告メッセージのログファイルが作成され、Cl.exe の標準バージョンが呼び出されてビルド出力が生成されます。 結果として得られるオブジェクトファイルは、標準のビルドコマンドによって生成されるものと同じです。
 
--   **メモリ:** 逆参照、メモリ リークの可能性**NULL**初期化されていないメモリ、カーネル モードのスタックの過剰な使用、およびプール タグの不適切な使用へのポインター、アクセスします。
+インターセプトコンパイラが実行されると、ドライバーのコード分析によって、コード内の各関数が独立して調査され、コードを介して可能なすべてのパスの実行がシミュレートされます。これにより、一般的なドライバーエラーと、それ以外のコーディング方法が求められます。 コード分析ツールは、大規模なドライバーでも比較的高速に実行されます。生成されたレポートでは、問題が発生していると思われるドライバーコード行が正確に特定されます。
 
--   **リソース:** など、いくつかの関数を呼び出すときに保持するリソースとその他の関数を呼び出すときに持ってはならないリソースのリソースの解放に失敗します。
-
--   **関数を使用します。** 特定の関数の不適切な可能性のある使用は、関数に引数が正しくない、可能な引数が厳密に型を特定の古い機能の考えられる用途をチェックしない関数の不一致を入力しで関数が呼び出す、可能性があります無効な IRQL します。
-
--   **浮動小数点状態:** ドライバーと、さまざまな IRQL で保存した後、浮動小数点状態を復元しようとしています。 浮動小数点演算ハードウェアの状態の保護に失敗しました。
-
--   **優先順位の規則:** C 言語のプログラミングの優先順位の規則のためのもの、プログラマとして動作しないコードです。
-
--   **カーネル モードのコーディング プラクティス:** 不透明なメモリ記述子のリスト (MDL) 構造の変更によって呼び出された関数では、一連の変数の値を確認に失敗する、安全な文字列関数ではなく、C と C++ の文字列操作関数を使用してなどのエラーを引き起こす可能性のあるコーディングのプラクティスNtstrsafe.h で定義されます。
-
--   **ドライバー固有のコーディング プラクティス:** 多くの場合、カーネル モード ドライバーでエラーの原因を特定の操作。 たとえば、メンバーを変更してで引数をコピーする代わりに引数を文字列または構造体を指すポインターを保存せず全体の I/O 要求パケット (IRP) をコピー、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
-
-## <a name="span-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>コード分析の警告
+## <a name="span-idthe_types_of_errors_code_analysis_can_detectspanspan-idthe_types_of_errors_code_analysis_can_detectspanspan-idthe_types_of_errors_code_analysis_can_detectspanthe-types-of-errors-code-analysis-can-detect"></a><span id="The_types_of_errors_Code_Analysis_can_detect"></span><span id="the_types_of_errors_code_analysis_can_detect"></span><span id="THE_TYPES_OF_ERRORS_CODE_ANALYSIS_CAN_DETECT"></span>コード分析で検出できるエラーの種類
 
 
-コード分析ツールは、プログラムまたはドライバーのコード内のエラーを識別するために、ルールに基づくモデルを使用します。 各ルールは、コード分析ツール規則の違反を検出した場合に報告される警告に関連付けられます。 ドライバー固有の警告の詳細については、次を参照してください。 [Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)します。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、次を参照してください。[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)します。
+コード分析では、次のカテゴリのエラーを含む、いくつかの種類のエラーを検出できます。
 
-## <a name="span-idannotationsspanspan-idannotationsspanspan-idannotationsspanannotations"></a><span id="Annotations"></span><span id="annotations"></span><span id="ANNOTATIONS"></span>注釈
+-   **メモリ:** メモリリークの可能性、逆参照された**NULL**ポインター、初期化されていないメモリへのアクセス、カーネルモードスタックの過剰な使用、プールタグの不適切な使用。
+
+-   **リソース:** ロック、関数の呼び出し時に保持する必要があるリソース、他の関数を呼び出すときに保持してはならないリソースなどのリソースを解放できませんでした。
+
+-   **関数の使用法:** 特定の関数が正しく使用されていない可能性があります。関数の引数の型が厳密にチェックされない関数、特定の古い関数の使用可能性がある関数、および関数呼び出しの可能性があります。IRQL が正しくありません。
+
+-   **浮動小数点の状態:** ドライバーの浮動小数点ハードウェアの状態を保護し、別の IRQL で保存した後に浮動小数点の状態を復元しようとすると失敗します。
+
+-   **優先順位の規則:** C プログラミングの優先順位規則により、プログラマが意図した動作をしない可能性のあるコード。
+
+-   **カーネルモードのコーディング方法:** 不透明なメモリ記述子リスト (MDL) 構造の変更、呼び出された関数によって設定された変数の値の検査、およびセーフ文字列ではなく C/C++文字列操作関数の使用など、エラーが発生する可能性があるコーディング手法、Ntstrsafe.h で定義されている関数。
+
+-   **ドライバー固有のコーディング方法:** 多くの場合、カーネルモードドライバーでのエラーの原因となる特定の操作。 たとえば、すべての i/o 要求パケット (IRP) をコピーするときに、 [*Driverentry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンで引数をコピーするのではなく、メンバーを変更したり、文字列または構造体の引数へのポインターを保存したりする必要はありません。
+
+## <a name="span-idcode_analysis_warningsspanspan-idcode_analysis_warningsspanspan-idcode_analysis_warningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>コード分析の警告
 
 
-コード分析ツールを提供する重要な機能の 1 つは、関数の説明と、ドライバーのソース コード内の他のエンティティの注釈を設定する機能です。 コード分析ツールには、機能内のスコープつまり、関数間の相互作用を分析します。 注釈のでは、呼び出されると、呼び出し元関数の間のコントラクトのより完全な式を提供するコード分析ツールは、コントラクトが満たされているをチェックできるようにします。 注釈の別の目的は、関数の使用方法のコードを読み取るすべてのユーザーに通知を予想される結果です。 注釈は、インターフェイスのコントラクトを宣言し、そのコントラクトを実現する方法について説明しようとはしないでください。 多くの場合、コード分析ツールを実行してから結果がない場合、適切な注釈を反映して、注釈を追加することで注釈がに関する警告を抑制すると追加のチェックが有効になっています。 詳細については、次を参照してください。 [Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)します。 詳細については、SAL 2.0 についてを参照してください[C と C++ コードの欠陥を削減する SAL 注釈を使って](https://go.microsoft.com/fwlink/p/?linkid=247283)します。 SAL 2.0 には、SAL 1.0 が置き換えられます。 WDK for Windows 8 では、SAL 2.0 を使用する必要があります。 ドライバーの SAL 1.0 についての情報を必要がある場合は、Windows 7 の WDK に同梱されているドライバーの注釈のドキュメントの PREfast を参照してください。
+コード分析ツールは、規則ベースのモデルを使用して、プログラムまたはドライバーコードのエラーを識別します。 各ルールは、コード分析ツールによってルールの違反が検出された場合に報告される警告に関連付けられています。 ドライバー固有の警告の詳細については、「 [Code Analysis For Drivers warning](prefast-for-drivers-warnings.md)」を参照してください。 Visual Studio のコード分析ツールによって報告される、警告のコアセットの詳細については、「[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)」を参照してください。
 
-## <a name="span-idinterpretingtheresultspanspan-idinterpretingtheresultspanspan-idinterpretingtheresultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>結果の解釈
+## <a name="span-idannotationsspanspan-idannotationsspanspan-idannotationsspanannotations"></a><span id="Annotations"></span><span id="annotations"></span><span id="ANNOTATIONS"></span>エンジニアリング
 
 
-ドライバーのコード分析が簡単に実行できると非常に大きなドライバーとプログラムでも、迅速に実行されます。 開発者の作業では、出力を調べる、コード分析ツールが検出されると、エラーを分析およびコード分析ツールが誤って解釈される有効なコードから実際のコーディング エラーを区別します。
+コード分析ツールに用意されている重要な機能の1つに、関数の説明や、ドライバーのソースコード内の他のエンティティに注釈を付ける機能があります。 コード分析ツールには、機能的なスコープがあります。つまり、関数間の相互作用を分析します。 注釈の目的は、呼び出された関数と呼び出し元関数の間にコントラクトの完全な式を提供して、コード分析ツールでコントラクトが満たされているかどうかを確認できるようにすることです。 注釈のもう1つの目的は、関数がどのように使用されるか、およびどのような結果が得られるかを、ユーザーに通知することです。 注釈は、インターフェイスのコントラクトを宣言し、そのコントラクトの達成方法を記述しません。 多くの場合、コード分析ツールを実行した結果、適切な注釈がないことがわかります。注釈を追加すると、不足している注釈に関する警告が抑制され、追加のチェックが有効になります。 詳細については、「 [Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)」を参照してください。 SAL 2.0 の詳細については、「 [Sal 注釈を使用C++した C/コードの欠陥の削減](https://go.microsoft.com/fwlink/p/?linkid=247283)」を参照してください。 Sal 2.0 が SAL 1.0 に置き換えられます。 SAL 2.0 は、Windows 8 用の WDK で使用する必要があります。 ドライバーの SAL 1.0 に関する情報が必要な場合は、Windows 7 用の WDK に同梱されている PREfast for Drivers の注釈に関するドキュメントを参照してください。
 
-コード分析ツールが検出される警告をすべてを説明する包括的なリファレンスを参照してください[Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)します。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、次を参照してください。[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)します。
+## <a name="span-idinterpreting_the_resultspanspan-idinterpreting_the_resultspanspan-idinterpreting_the_resultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>結果の解釈
 
-警告は、通常のコード分析を解決するには、必要に応じて、ソース コードを更新または関数のコントラクトを明確にするための注釈を追加する必要があります。 将来のすべての呼び出し元のコントラクトを強制するアナライザーは、注釈を追加し、読みやすさも向上します。
 
-場合、**コード分析結果**、慎重に調査した後、ユーザーが決定した表示エラーが有効でないし、注釈を使用しても回避することはできません、除外するか、これらの警告を抑制することもできます。 詳細については、次を参照してください。[ドライバーのコード分析を実行する方法](how-to-run-code-analysis-for-drivers.md)します。
+ドライバーのコード分析は、非常に大規模なドライバーやプログラムを使用している場合でも、簡単に実行でき、高速に実行されます。 開発者の作業は、出力の調査、コード分析ツールによって検出されたエラーの分析、およびコード分析ツールが誤って解釈した有効なコードからの実際のコーディングエラーの識別を行います。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+コード分析ツールによって検出される可能性のある各警告について説明する包括的なリファレンスについては、「[ドライバーの警告のコード分析](prefast-for-drivers-warnings.md)」を参照してください。 Visual Studio のコード分析ツールによって報告される、警告のコアセットの詳細については、「[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)」を参照してください。
+
+通常、コード分析の警告を解決するには、必要に応じてソースコードを更新するか、関数コントラクトを明確にする注釈を追加する必要があります。 注釈を追加すると、analyzer は、今後のすべての呼び出し元にコントラクトを適用できるようになり、読みやすさも向上します。
+
+**コード分析の結果**に特定のエラーが表示された場合は、慎重に検証した後に、注釈を使用しても、これらの警告を除外するか抑制するかを選択できます。 詳細については、「[ドライバーのコード分析を実行する方法](how-to-run-code-analysis-for-drivers.md)」を参照してください。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [ドライバーのコード分析を実行する方法](how-to-run-code-analysis-for-drivers.md)
 
-[Visual Studio でコード分析ツール](https://go.microsoft.com/fwlink/p/?linkid=226836)
+[Visual Studio のコード分析ツール](https://go.microsoft.com/fwlink/p/?linkid=226836)
 
-[Code Analysis for Drivers の警告](prefast-for-drivers-warnings.md)
+[ドライバーの警告のコード分析](prefast-for-drivers-warnings.md)
 
 [コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)
 

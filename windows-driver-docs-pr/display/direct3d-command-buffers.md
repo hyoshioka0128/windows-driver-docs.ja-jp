@@ -3,16 +3,16 @@ title: Direct3D コマンド バッファー
 description: Direct3D コマンド バッファー
 ms.assetid: d8c093fa-da5c-497c-9eb8-4f689eb96cbf
 keywords:
-- コマンド バッファー WDK Direct3D
-- WDK Direct3D バッファー
+- コマンドバッファー WDK Direct3D
+- WDK Direct3D のバッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5092a069e854cd7072bac69b53997e4e1f9d19d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af1c0573331cc68ae9c999a9c025158c478f2806
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384873"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839747"
 ---
 # <a name="direct3d-command-buffers"></a>Direct3D コマンド バッファー
 
@@ -20,47 +20,47 @@ ms.locfileid: "67384873"
 ## <span id="ddk_direct3d_command_buffers_gg"></span><span id="DDK_DIRECT3D_COMMAND_BUFFERS_GG"></span>
 
 
-次の図は、サンプルの論理コマンド バッファーの一部を示します。 ドライバーの[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックがコマンド バッファーへのポインターを受け取る、 **lpDDCommands**のメンバー、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体。 コマンド バッファーは、常に順番に処理されます。
+次の図は、論理コマンドのサンプルバッファーの一部を示しています。 ドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックは、 [**D3DHAL\_DRAWPRIMITIVES2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体の**lpDDCommands**メンバーのコマンドバッファーへのポインターを受け取ります。 コマンドバッファーは常に順次処理されます。
 
-![direct3d サンプルの論理コマンド バッファーの部分を示す図](images/d3dcmbuf.png)
+![direct3d サンプル論理コマンドバッファーの部分を示す図](images/d3dcmbuf.png)
 
-上記の図に示すようにコマンド バッファーを含む[ **D3DHAL\_DP2COMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造、場所、 **bCommand**各構造体のメンバーコマンドを識別します。 次のリストの可能なコマンド:
+上の図に示すように、コマンドバッファーには[**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体が含まれています。ここでは、各構造体の**bcommand**メンバーがコマンドを識別します。 使用可能なコマンドを次に示します。
 
--   D3DDP2OP\_RENDERSTATE があることを示します**wStateCount**[**D3DHAL\_DP2RENDERSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)コマンドで次の構造バッファー。 ドライバーからこれらの構造体の各状態を解析し、それに応じてそのプライベート ドライバーの状態を更新する必要があります。 ドライバーを配列内の適切な状態を更新する必要がありますも**lpdwRStates**ポイント。 ドライバーがコマンド バッファーに要求された状態をサポートしていない場合、ドライバーはサポートされているいずれかで要求された値をオーバーライドします。
+-   D3DDP2OP\_RENDERSTATE は、コマンドバッファーに続く**Wstatecount**[**D3DHAL\_DP2RENDERSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)構造体があることを示します。 ドライバーは、これらの各構造の状態を解析し、それに応じてプライベートドライバーの状態を更新する必要があります。 また、ドライバーは、 **lpdwRStates**がポイントする配列内の適切な状態を更新する必要があります。 ドライバーがコマンドバッファーで要求された状態をサポートしていない場合、ドライバーは、要求された値を、サポートされているもので上書きする必要があります。
 
--   D3DDP2OP\_TEXTURESTAGESTATE があることを示します**wStateCount**[**D3DHAL\_DP2TEXTURESTAGESTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)続く構造体コマンド バッファー。 ドライバーは、各構造体から状態を解析し、それに応じて、指定したテクスチャ ステージに関連付けられているドライバーのテクスチャの状態を更新する必要があります。 ドライバー状態をレポートしませんテクスチャ ステージ戻る Direct3D ランタイムにします。
+-   D3DDP2OP\_TEXTURESTAGESTATE は、コマンドバッファーに続く**Wstatecount**[**D3DHAL\_DP2TEXTURESTAGESTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)構造体があることを示します。 ドライバーは、これらの各構造の状態を解析し、それに応じて、指定されたテクスチャステージに関連付けられているドライバーのテクスチャの状態を更新する必要があります。 ドライバーは、テクスチャステージの状態を Direct3D ランタイムに報告しません。
 
-    ドライバーは、実際に座標の数の設定に関係なく、8 つのテクスチャ座標セットまで解析を使用して、正しく必要です。
+    ドライバーは、実際に使用する座標セットの数に関係なく、最大8つのテクスチャ座標セットを適切に解析する必要があります。
 
--   D3DDP2OP\_VIEWPORTINFO が示される 1 つ[ **D3DHAL\_DP2VIEWPORTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2viewportinfo)コマンド バッファーに続く構造体。 ドライバーは、この構造を解析し、ドライバーの内部レンダリング コンテキストに格納されている、ビューポートの情報を更新する必要があります。
+-   D3DDP2OP\_VIEWPORTINFO は、コマンドバッファーに後に続く[**D3DHAL\_DP2VIEWPORTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2viewportinfo)構造体が1つあることを示します。 ドライバーは、この構造を解析し、ドライバーの内部レンダリングコンテキストに格納されているビューポート情報を更新する必要があります。
 
--   D3DDP2OP\_WINFO が示される 1 つ[ **D3DHAL\_DP2WINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2winfo)コマンド バッファーに続く構造体。 ドライバーは、この構造を解析し、ドライバーの内部レンダリング コンテキストに格納されている w バッファー情報を更新する必要があります。
+-   D3DDP2OP\_WINFO は、コマンドバッファーに後に続く[**D3DHAL\_DP2WINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2winfo)構造体が1つあることを示します。 ドライバーは、この構造体を解析し、ドライバーの内部レンダリングコンテキストに格納されている w バッファー情報を更新する必要があります。
 
--   残りの D3DDP2OP\_*Xxx*コマンドで表示するためにコマンド バッファーには、十分なデータ次あることを示す**wPrimitiveCount** (のメンバー、 [ **D3DHAL\_DP2COMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造) プリミティブ。 プリミティブのコマンドによって、ドライバーが D3DHAL を解析する必要があります\_DP2*Xxx*コマンド バッファーと頂点に関連付けられているデータからいずれかまたは両方、頂点バッファーとコマンド バッファーからの構造体。 すべての有効な D3DDP2OP を処理しようとする必要があります、ドライバー\_*Xxx* ; コマンドは、ドライバーが定義されているプリミティブ型を無視する選択できません。 詳細については、個々 の D3DHAL を参照してください。\_DP2*Xxx*リファレンス ページを構造体。
+-   残りの D3DDP2OP\_*Xxx*コマンドは、 **wPrimitiveCount** ( [**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体のメンバー) プリミティブをレンダリングするための十分なデータがコマンドバッファーにあることを示しています。 プリミティブコマンドに応じて、ドライバーは、D3DHAL\_DP2*Xxx*構造体をコマンドバッファーから、頂点に関連付けられたデータを、頂点バッファーとコマンドバッファーのいずれかまたは両方から解析する必要があります。 ドライバーは、すべての有効な D3DDP2OP\_*Xxx*コマンドを処理しようとする必要があります。つまり、ドライバーは、定義されている特定のプリミティブ型を無視することはできません。 詳細については、個々の D3DHAL\_DP2*Xxx*の構造リファレンスページを参照してください。
 
-現在のコマンドによって、次の情報は、コマンド バッファーに格納されます。
+現在のコマンドに応じて、次の追加情報がコマンドバッファーに格納されます。
 
--   インデックスのすべての D3DDP2OP 情報\_インデックス化されて*Xxx*プリミティブ コマンド。
+-   すべての D3DDP2OP\_インデックス付き*Xxx*プリミティブコマンドのインデックス情報。
 
--   頂点データを D3DDP2OP\_TRIANGLEFAN\_IMM と D3DDP2OP\_LINELIST\_IMM プリミティブ コマンド。
+-   D3DDP2OP\_TRIANGLEFAN\_IMM および D3DDP2OP\_LINELIST の頂点データ\_IMM プリミティブコマンド。
 
--   その他の操作は D3DDP2OP としても定義\_*Xxx*でオペコード、 [ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)構造体。 これらは D3DDP2OP\_*Xxx*同じ名前の付いたコマンド。
+-   追加の操作は、 [**D3DHAL\_DP2OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)構造体の D3DDP2OP\_*Xxx*オペコードとしても定義されています。 これらは、同じ名前の D3DDP2OP\_*Xxx*コマンドと同じです。
 
-コマンド バッファーには、場合によっては Direct3D でのみ認識されるコマンドが含まれています。 場合、ドライバーの[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックは、コマンドを認識していない、ドライバーは、Direct3D を呼び出す必要があります**D3dParseUnknownCommand**しようとするコールバックそれを解析します。 ときに**D3dParseUnknownCommand**ドライバーは、解析および処理コマンド バッファーを続行する必要がありますが正常に返されます。 場合**D3dParseUnknownCommand** D3DERR を返すことによって失敗した\_コマンド\_未解析、 **D3dDrawPrimitives2**の次のメンバーを設定する必要があります、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体を返します。
+コマンドバッファーには、Direct3D でのみ認識されるコマンドが含まれている場合があります。 ドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックがコマンドを認識しない場合、ドライバーは Direct3D's **D3dParseUnknownCommand** callback を呼び出して、解析を試行します。 **D3dParseUnknownCommand**が正常に返された場合、ドライバーはコマンドバッファーの解析と処理を続行する必要があります。 D3DERR\_COMMAND\_を返さずに**D3dParseUnknownCommand**が失敗した場合、 **D3dDrawPrimitives2**は[**D3DHAL\_DRAWPRIMITIVES2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体の次のメンバーを設定し、を返します。
 
--   **DwErrorOffset**、最初のオフセットを書き込む未処理[ **D3DHAL\_DP2COMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2command)されているバッファーへの一部の構造体**lpDDCommands**ポイント。
+-   **Dwerroroffset**で、 **lpDDCommands**ポイントを格納するバッファーの一部である、最初の未処理の[**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体のオフセットを書き込みます。
 
--   設定**ddrval** D3DERR に\_コマンド\_UNPARSED します。
+-   **Ddrval**を D3DERR\_COMMAND\_未解析に設定します。
 
-初期化する方法については、 **D3dParseUnknownCommand**コールバックを参照してください[Direct3D ドライバーの初期化](direct3d-driver-initialization.md)します。
+**D3dParseUnknownCommand**コールバックを初期化する方法の詳細については、「 [Direct3D ドライバーの初期化](direct3d-driver-initialization.md)」を参照してください。
 
-実装を簡略化する**D3dDrawPrimitives2**、ドライバー作成者がから解析コードをコピー、 *Perm3*サンプル コードと、ドライバー固有の表示と状態コードのみの更新を記述します。
+**D3dDrawPrimitives2**の実装を簡単にするために、ドライバー作成者は*Perm3*サンプルコードから解析コードをコピーし、ドライバー固有のレンダリングと状態更新コードのみを記述できます。
 
-**注**   、Microsoft Windows Driver Kit (WDK) に 3 dlabs Permedia3 サンプルのディスプレイ ドライバーが含まれていません (*Perm3.h*)。 Windows Server 2003 SP1 ドライバー開発キット (DDK)、DDK - WDHC web サイトの Windows ドライバー開発キットのページからダウンロードできるこのサンプル ドライバーを取得できます。
+Microsoft Windows Driver Kit (WDK) には、3Dlabs Permedia3 sample display Driver (*Perm3*) が含まれていない  **ことに注意**してください。 このサンプルドライバーは、Windows Server 2003 SP1 Driver Development Kit (DDK) から入手できます。このドライバーは、WDHC web サイトの DDK-Windows Driver Development Kit ページからダウンロードできます。
 
  
 
-Direct3D には常に現在の表示状態の通知されません。 たとえば、実行バッファーは、ランタイムが検査されなかったドライバーに到達する前にします。 ドライバーを監視できる、レンダリング状態配列、 **lpdwRStates**のメンバー、 [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体。 これは、状態の変更が発生すると、ドライバーを最新の状態で保持する内部レンダリング状態配列へのポインターです。
+Direct3D には、常に現在のレンダリング状態が通知されるとは限りません。 たとえば、実行バッファーは、ドライバーに到着する前にランタイムによって検査されません。 ドライバーは、 [**D3DHAL\_DRAWPRIMITIVES2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)構造体の**lpdwRStates**メンバーを使用して、レンダリング状態の配列を追跡できます。 これは、状態の変更が発生したときにドライバーが最新の状態に保つための内部レンダリング状態配列へのポインターです。
 
  
 

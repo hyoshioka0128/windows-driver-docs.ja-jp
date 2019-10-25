@@ -4,12 +4,12 @@ description: WIA ミニドライバーのデバッグ
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de83d900e29497ee740d7749eb35a7445d8b9855
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0db7e17f8422d7128c767e041e06a5d6b28807fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355195"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840678"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA ミニドライバーのデバッグ
 
@@ -17,47 +17,47 @@ ms.locfileid: "67355195"
 
 
 
-WIA ドライバーは、WIA のサービス プロセス内で実行されます。 したがって、これらのドライバーのユーザー モードのデバッグを実行するには、WIA サービスにデバッガーを接続する必要があります。 これにはいくつかの方法があります。このトピックでは、そのうち 2 つを示します。 (詳細については、Microsoft Windows SDK ドキュメントでのデバッグ サービスを参照してください。)
+Wia ドライバーは、WIA サービスプロセス内で実行されます。 そのため、これらのドライバーのユーザーモードデバッグを実行するには、デバッガーを WIA サービスに接続する必要があります。 これを行うには、いくつかの方法があります。このトピックでは、その2つを紹介します。 (詳細については、Microsoft Windows SDK のドキュメントの「デバッグサービス」を参照してください)。
 
-2 つの方法のいずれかで、デバッガーを開始できます。
+デバッガーは、次の2つの方法のいずれかで起動できます。
 
--   によって自動的にデバッガーの下で、WIA サービスを開始しています。
+-   デバッガーで WIA サービスを自動的に開始します。
 
--   によって実行時に適切なプロセスにデバッガーをアタッチします。
+-   実行時に適切なプロセスにデバッガーをアタッチします。
 
-次に、2 つの点に注意してください。
+次の2つの点に注意してください。
 
-シンボルと、デバッガー内から他のファイルへのネットワーク アクセスが必要な場合これらでは、デバッガーの下で、WIA サービスを自動的に開始する場合に表示される可能性がありますできません。 WIA では、Microsoft Windows Server 2003 およびそれ以降のオペレーティング システム バージョンの Windows XP では、LocalSystem サービスとは、LocalService としてを実行し、ネットワークにアクセスする適切な特権がありません。 そのため、場合でも、コンピューター「確認」できるすべてのネットワーク上、サービスを実行してデバッガーできないことがありますに。 WIA サービスの詳細についてには、特権レベルの変更後、参照してください[WIA ドライバーに関するセキュリティの問題](security-issues-for-wia-drivers.md)します。
+デバッガー内からシンボルおよびその他のファイルへのネットワークアクセスが必要な場合、デバッガーで WIA サービスを自動的に開始すると、これらのファイルが表示されないことがあります。 WIA は、Windows XP では LocalSystem サービスとして、Microsoft Windows Server 2003 以降のバージョンのオペレーティングシステムでは LocalService として実行され、ネットワークにアクセスするための適切な特権を持っていません。 このため、コンピューターがネットワーク上のすべてを "参照" できる場合でも、サービスを実行しているデバッガーができない可能性があります。 WIA サービスの変更された特権レベルの詳細については、「 [Wia ドライバーのセキュリティの問題](security-issues-for-wia-drivers.md)」を参照してください。
 
--   ドライバーの読み込みまたはドライバーの STI 部分の初期化中に問題が発生した場合 (たとえば中、 [ **IStiUSD::Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize))、デバッガーがアタッチされている時間で、エラーが既に発生し、有用な情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが表示されないで、**マイ コンピューター**フォルダーが*は*に表示、**デバイス マネージャー**フォルダー。
+-   ドライバーのメッセージの読み込みまたは初期化中に問題が発生した場合 (例[ **: I後部 usd:: Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)の実行中)、デバッガーがアタッチされたときに、エラーが既に発生していて、役に立つ情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが**マイコンピューター**フォルダーに表示されず、**デバイスマネージャー**フォルダー*に表示さ*れることです。
 
-### <a name="starting-the-wia-service-under-a-debugger"></a>デバッガーの下で、WIA サービスの開始
+### <a name="starting-the-wia-service-under-a-debugger"></a>デバッガーでの WIA サービスの開始
 
-WIA サービスを開始すると、サービス コントロール マネージャー (SCM) は、サービス管理データベースにエントリを検索し、そのエントリが指す実行可能ファイルを起動します。 デバッガーの下で、WIA サービスを開始する簡単な方法では、デバッガーが含まれるいずれかでそのエントリを置き換えます。 エントリは、下のレジストリで見つかんだことができます。
+WIA サービスが開始されると、サービスコントロールマネージャー (SCM) がサービスコントロールデータベースのエントリを参照し、そのエントリが指す実行可能ファイルを起動します。 デバッガーで WIA サービスを開始する簡単な方法は、そのエントリをデバッガーを含むエントリに置き換えることです。 エントリは、次のレジストリにあります。
 
 **HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\ImagePath**
 
-最初に、 **ImagePath**キーは、次の文字列値に設定されます。
+最初に、 **ImagePath**キーは次の文字列値に設定されます。
 
-" **%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+" **% SystemRoot%\\System32\\svchost.exe-k imgsvc**"
 
-NTSD で WIA サービスを実行するには、よう、上記の値を変更など。
+たとえば、NTSD で WIA サービスを実行するには、前の値を次のように変更します。
 
-"**ntsd -g -G %SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+"**ntsd-g-g% SystemRoot%\\System32\\svchost.exe-k imgsvc**"
 
-この変更により、WIA サービスは、常に NTSD で開始します。 サービスが既に実行されている場合にする必要があります停止および再起動この変更を反映する前に注意してください。 参照してください[の開始と停止もイメージ サービス](starting-and-stopping-the-still-image-service.md)詳細についてはします。
+この変更により、WIA サービスは常に NTSD で開始されます。 サービスが既に実行されている場合は、この変更が有効になる前に、サービスを停止して再起動する必要があることに注意してください。 詳細について[は、「イメージサービスの開始と停止](starting-and-stopping-the-still-image-service.md)」を参照してください。
 
-デバッガーのウィンドウを表示するには、別のレジストリ キーを変更する必要があります。 このレジストリ キーへのパスは次のとおりです。
+デバッガーのウィンドウが表示されるようにするには、別のレジストリキーも変更する必要があります。 このレジストリキーへのパスは次のとおりです。
 
-**HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\Type**
+**HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\型**
 
-初期値、**型**キー、0X20、デバッガーのウィンドウが表示されないようにします。 値を変更、**型**0X120 DWORD 値をキー。
+**型**キーの初期値0x20 は、デバッガーウィンドウが表示されないようにします。 **型**キーの値を DWORD 値0X120 に変更します。
 
-### <a name="attaching-the-debugger-at-run-time"></a>実行時に、デバッガーをアタッチします。
+### <a name="attaching-the-debugger-at-run-time"></a>実行時のデバッガーのアタッチ
 
-ほとんどのデバッガーでは、プロセスが既に開始した後、それにアタッチするには、実行中のプロセスの PID が必要です。 WIA がという汎用ホスト プロセスで実行されるので*svchost.exe*の適切なインスタンスを検索*svchost.exe*が不可欠です。
+ほとんどのデバッガーでは、プロセスが既に開始された後にアタッチするために、実行中のプロセスの PID が必要になります。 WIA は*svchost.exe*と呼ばれる汎用ホスティングプロセスで実行されるため、 *svchost.exe*の正しいインスタンスを見つけることが不可欠です。
 
-デバッガー パッケージを Microsoft のサイト (www.microsoft.com) からダウンロードした場合、ユーティリティ プログラムという名前にはが含まれます*tlist.exe*します。 *Tlist.exe*実行中のすべてのプロセスが表示されます。 実行する場合*tlist.exe*のスイッチを使用して、このユーティリティも表示するサービスをホストするプロセス。 たとえば、実行している*tlist.exe-s*次のような出力が生成されます。
+Microsoft サイト (www.microsoft.com) からデバッガーパッケージをダウンロードした場合は、 *tlist.exe*という名前のユーティリティプログラムが含まれています。 *Tlist.exe*は、実行中のすべてのプロセスを表示します。 S スイッチを使用して*tlist.exe*を実行すると、このユーティリティは、どのプロセスがどのサービスをホストしているかも示します。 たとえば、 *tlist.exe-s*を実行すると、次のような出力が生成されます。
 
 ```console
    0 System Process
@@ -80,14 +80,14 @@ NTSD で WIA サービスを実行するには、よう、上記の値を変更�
 22824 tlist.exe
 ```
 
-前の例では、5 つのインスタンスで*svchost.exe*を実行しています。 WIA サービス**StiSvc** (Still Image service) を実行している、 *svchost.exe*の PID が 1076 インスタンス。 デバッグを開始する 1076 のプロセスにデバッガーをアタッチします。
+前の例では、 *svchost.exe*の5つのインスタンスが実行されています。 WIA サービスである**Stisvc** (静止イメージサービス) は、PID が1076の*svchost.exe*インスタンスで実行されています。 デバッガーをプロセス1076にアタッチして、デバッグを開始します。
 
-などのユーティリティ プログラムを使用してではなく*tlist.exe、* 複数の 1 つのインスタンスを識別するために*svchost.exe* 、インスタンスのコピーを作成することができます*svchost.exe*の名前を変更(たとえば、 *stisvc.exe*)。 次に、サービス コントロールのエントリを変更**ImagePath**のこのコピーを使用する値*svchost.exe* (ここでは名前が 1 つ*stisvc.exe*)。 たとえば、パスがあるキーを設定することができます。
+*Tlist.exe*などのユーティリティプログラムを使用して複数の*svchost.exe*インスタンスの1つのインスタンスを識別する代わりに、 *svchost.exe*のコピーを作成して名前を変更できます (たとえば、 *stisvc .exe*)。 次に、この*svchost.exe*のコピーを使用するようにサービスコントロールエントリの**ImagePath**値を変更します (名前が*stisvc .exe*であるもの)。 たとえば、次のパスを持つキーを設定できます。
 
-**HKLM\\System\\CurrentControlSet\\Control\\Services\\Stisvc\\ImagePath**
+**HKLM\\System\\CurrentControlSet\\コントロール\\サービス\\Stisvc\\ImagePath**
 
-次の文字列値。
+次の文字列値になります。
 
-" **%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
+" **% SystemRoot%\\System32\\stisvc .exe-k imgsvc**"
 
-ここで、WIA サービスの開始時に実行*stisvc.exe*の代わりに*svchost.exe*します。 インスタンスが 1 つだけがあるため、このプロセスの検索が簡単、 *stisvc.exe*します。 アプリを確認する PID を検索する必要はありません。 したがって、たとえば、Microsoft Visual Studio を使用してドライバーを開発している場合に進んで、**デバッグの開始**下にあるメニュー項目、**ビルド** メニューのをクリックして**プロセスにアタッチしています.** 、選択および*stisvc.exe*一覧にします。
+これで、WIA サービスが開始されると、 *svchost.exe*ではなく、 *stisvc .exe*の下で実行されます。 このプロセスは、 *stisvc .exe*のインスタンスが1つしかないため、簡単に見つけることができます。 PID を検索する必要はありません。 このため、Microsoft Visual Studio を使用してドライバーを開発している場合は、 **[ビルド]** メニューの **[デバッグの開始]** メニューをクリックし、 **[プロセスにアタッチ...]** をクリックして、一覧で [ *stisvc .exe* ] を選択します。

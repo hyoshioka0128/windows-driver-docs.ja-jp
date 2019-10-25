@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 119889c3e048c5a0087cb3aefa710f767eaef3d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 587bd00bdc6be1ea72dc8beff6446468825fec6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378137"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840642"
 ---
-# <a name="devpkeydevicereported"></a>DEVPKEY_Device_Reported
+# <a name="devpkey_device_reported"></a>DEVPKEY_Device_Reported
 
 
-DEVPKEY_Device_Reported デバイスのプロパティは、デバイスのインスタンスがルート列挙のデバイスで、デバイスのドライバーがプラグ アンド プレイ (PnP) manager を呼び出すことによって報告されたかどうかを示すブール値を表します[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)します。
+DEVPKEY_Device_Reported device プロパティは、デバイスインスタンスがルートで列挙されたデバイスであるかどうかを示すブール値を表します。これは、デバイスのドライバーが[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)を呼び出すことによってプラグアンドプレイ (PnP) マネージャーに報告したものです。
 
 <table>
 <colgroup>
@@ -33,20 +33,20 @@ DEVPKEY_Device_Reported デバイスのプロパティは、デバイスのイ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_Reported</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>プロパティアクセス</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>必須ではない</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,13 +56,13 @@ DEVPKEY_Device_Reported デバイスのプロパティは、デバイスのイ�
 <a name="remarks"></a>注釈
 -------
 
-PnP マネージャーでは、デバイスがデバイスのドライバーが呼び出し元 IoReportDetectedDevice によって PnP マネージャーに報告するルートで列挙されるデバイスの場合に、DEVPROP_TRUE に DEVPKEY_Device_Reported の値を設定します。 それ以外の場合、PnP マネージャーでは、DEVPROP_FALSE にプロパティの値を設定します。
+デバイスがルートで列挙されたデバイスである場合、PnP マネージャーは DEVPKEY_Device_Reported の値を DEVPROP_TRUE に設定します。これは、デバイスのドライバーが IoReportDetectedDevice を呼び出して PnP マネージャーに報告したものです。 それ以外の場合は、PnP マネージャーによってプロパティの値が DEVPROP_FALSE に設定されます。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_Reported の値を取得します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、DEVPKEY_Device_Reported の値を取得できます。
 
-Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
+Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされていません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -73,11 +73,11 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows Vista 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)
+[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

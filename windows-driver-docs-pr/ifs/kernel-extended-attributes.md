@@ -2,77 +2,77 @@
 title: カーネル拡張属性
 description: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
 keywords:
-- ファイル属性を拡張します。
-- EA のカーネル
+- 拡張ファイル属性
+- カーネル EA
 - 拡張属性
 - $Kernel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac76e5a893ce4742578315333b2710b14d882f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16b9dbe69f85ba5c1561f920803ba1a8d151c8a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841142"
 ---
 # <a name="kernel-extended-attributes"></a>カーネル拡張属性
-拡張属性のカーネル (カーネル EA) 様は、イメージ ファイルの署名の検証のパフォーマンスを向上する手段として、Windows 8 で NTFS に追加機能です。  負荷の高い操作、イメージの署名を確認することをお勧めします。 そのため、バイナリは、まだ検証されていたが変更されている、またはいないイメージが、完全署名のチェックを行う必要があるインスタンスの数を減らすかどうかについて情報を保存します。
+カーネル拡張属性 (カーネル EA) は、イメージファイル署名の検証のパフォーマンスを向上させる方法として、Windows 8 の NTFS に追加された機能です。  画像署名を検証するためのコストが高い操作です。 したがって、以前に検証されたバイナリが変更されたかどうかに関する情報を格納すると、イメージが完全な署名チェックを行う必要があるインスタンスの数が減少します。
 
 
 ## <a name="overview"></a>概要
-名前プレフィックスを持つ EA``$Kernel``カーネル モードからのみ変更できます。 この文字列で始まる任意の EA は、カーネル EA と見なされます。 必要な更新シーケンス番号 (USN) を取得する前にお勧めする**FSCTL_WRITE_USN_CLOSE_RECORD**これはコミット保留中の USN ジャーナル更新前に発生した場合、ファイルのいずれかと、1 つ目を発行します。 これを行わない、 **FileUSN**カーネル EA の設定のすぐ後の値を変更する可能性があります。
+名前プレフィックス ``$Kernel`` を持つ EA は、カーネルモードからのみ変更できます。 この文字列で始まるすべての EA は、カーネル EA と見なされます。 必要な Update Sequence Number (USN) を取得する前に、最初に**FSCTL_WRITE_USN_CLOSE_RECORD**を発行することをお勧めします。これにより、前に発生した可能性があるファイルに対して保留中の USN ジャーナル更新がコミットされます。 これを行わないと、カーネル EA の設定直後に**Fileusn**値が変更される可能性があります。
 
-カーネル EA が含まれている、少なくとも次の情報にはお勧めします。
+カーネル EA には、少なくとも次の情報が含まれていることをお勧めします。
 - USN UsnJournalID
-  - **UsnJournalID**フィールドは、USN ジャーナル ファイルの現在のバージョンを識別する GUID。  USN ジャーナルを削除し、ボリュームごとのユーザー モードから作成することができます。  新しい USN ジャーナルが作成されるたびに**UsnJournalID** GUID が生成されます。  このフィールドがあったかどうか、一定期間、USN ジャーナルが無効になっているかがわかり、再検証できます。
-    - 使用してこの値を取得できる[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)します。
+  - **UsnJournalID**フィールドは、USN ジャーナルファイルの現在の部分を識別する GUID です。  USN ジャーナルは、ボリュームごとにユーザーモードから削除および作成できます。  USN ジャーナルが作成されるたびに、新しい**UsnJournalID** GUID が生成されます。  このフィールドでは、USN ジャーナルが無効になっていて再検証できる期間があるかどうかを確認できます。
+    - この値は[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)を使用して取得できます。
 - USN FileUSN
-  - **FileUSN**値には、最後に変更をファイルにしましたが、指定されたファイルのマスター ファイル テーブル (MFT) レコード内の追跡の USN ID が含まれています。
-    - USN ジャーナルが削除されると、 **FileUSN**ゼロにリセットされます。
+  - **Fileusn**値には、ファイルに対して行われた最後の変更の USN ID が含まれており、指定されたファイルのマスターファイルテーブル (MFT) レコード内で追跡されます。
+    - USN ジャーナルが削除されると、 **Fileusn**は0にリセットされます。
 
-その他の特定の使用は、必要なと共に、この情報は、カーネル EA としてファイルに設定されます。
-
-
-## <a name="setting-a-kernel-extended-attribute"></a>拡張属性のカーネルの設定
-カーネル EA を設定するには、プレフィックスで始まる必要があります``"$Kernel."``する有効な EA 名前文字列が最後とします。 ユーザー モードからカーネル EA を設定しようとすると、自動的に無視されます。  要求が返されます**STATUS_SUCCESS**が EA の実際の変更は加えられません。 ように API を呼び出すカーネル EA を設定する[ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)または[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)のカーネル モードは不十分です。  これは、SMB、ネットワーク経由で EA の設定をサポートするサーバー上のカーネル モードからそれらの要求が発行するためです。  
-
-カーネル EA、呼び出し元の設定を設定する必要がありますも、 **IRP_MN_KERNEL_CALL** (I/O 要求パケット) IRP の MinorFunction フィールドの値。 このフィールドを設定する唯一の方法は、カスタムの IRP、ルーチンを生成することですので[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)カーネル EA を設定するサポート機能として FsRtl パッケージからエクスポートされました。
-
-通常と同じ呼び出しでカーネルの EA の設定を混在させることがありますいないを[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)します。  操作に失敗しましたが、これを行う場合**STATUS_INTERMIXED_KERNEL_EA_OPERATION**します。    カーネルの EA は生成されません設定、 **USN_REASON_EA_CHANGE**レコードの USN ジャーナルには、その結果、カーネルの EA と標準の EA では使用できません、同じ操作。  
+この情報と、特定の使用量が必要になる場合があります。その後、ファイルにカーネル EA として設定します。
 
 
-## <a name="querying-an-extended-attribute"></a>拡張属性のクエリを実行します。
-EA のユーザー モードのファイルにクエリを実行すると、両方の標準が返されますおよびカーネル EA の。 ユーザー モード アプリケーションの互換性問題を最小限に抑えるには、これらが返されます。 通常の[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)と[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)操作はユーザーとカーネル モードから標準と EA のカーネルの両方が返すされます。
+## <a name="setting-a-kernel-extended-attribute"></a>カーネル拡張属性の設定
+カーネル EA を設定するには、まずプレフィックス ``"$Kernel."`` で開始し、有効な EA 名の文字列で trailed する必要があります。 ユーザーモードからカーネル EA を設定しようとすると、警告なしで無視されます。  要求は**STATUS_SUCCESS**を返しますが、EA の実際の変更は行われません。 カーネルモードから[Zwseteafile](https://msdn.microsoft.com/library/windows/hardware/ff961908)いる API を呼び出すカーネル EA を設定するには、カーネルモード[では十分](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile)ではありません。  これは、SMB がネットワーク経由での EA の設定をサポートし、これらの要求がサーバーのカーネルモードから発行されるためです。  
 
-ときにのみ、 **FileObject**を使用して、利用[FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)カーネル モードからカーネル ea のクエリを使用するために都合があります。
+カーネル EA を設定するには、呼び出し元は、IRP (i/o 要求パケット) の MinorFunction フィールドで**IRP_MN_KERNEL_CALL**値も設定する必要があります。 このフィールドを設定する唯一の方法は、カスタムの IRP を生成することであるため、ルーチン[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)は、カーネル EA を設定するためのサポート関数として FsRtl パッケージからエクスポートされています。
+
+[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)の同じ呼び出しで、normal と kernel EA の設定を混在させることはできません。  この操作を行うと、 **STATUS_INTERMIXED_KERNEL_EA_OPERATION**で操作が失敗します。    カーネル EA を設定しても、 **USN_REASON_EA_CHANGE**レコードは USN ジャーナルに生成されません。その結果、カーネル EA と通常の EA を同じ操作で使用することはできません。  
 
 
-## <a name="querying-update-sequence-number-journal-information"></a>更新シーケンス番号の履歴情報のクエリを実行します。
-[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作が必要です**SE_MANAGE_VOLUME_PRIVILEGE**しない限り、カーネル モードから発行された場合でも、 **IRP_MN_KERNEL_CALL**値で設定されましたIRP の MinorFunction フィールドです。 ルーチン**FsRtlKernelFsControlFile**カーネル モード コンポーネントでこの USN 要求を発行するカーネルを簡単にできるように FsRtl パッケージからエクスポートされました。
+## <a name="querying-an-extended-attribute"></a>拡張属性のクエリ
+ユーザーモードから EA のファイルを照会すると、通常の EA とカーネル EA の両方が返されます。 アプリケーションの互換性の問題を最小限に抑えるために、ユーザーモードに戻ります。 通常の[Zwquerの](https://msdn.microsoft.com/library/windows/hardware/ff961907)操作では、ユーザー[モードとカーネル](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryeafile)モードの両方から、通常とカーネルの両方の EA が返されます。
 
-**注**SE_MANAGE_VOLUME_PRIVILEGE を必要と不要になった Windows 10 バージョン 1703 以降でこの操作を開始します。  
+使用できるのは、 **FileObject**だけである場合、 [FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)を使用すると、カーネル EA のカーネルモードのクエリを実行する方が便利な場合があります。
 
-## <a name="auto-deletion-of-kernel-extended-attributes"></a>カーネルの自動削除属性の拡張
-多くの問題のない理由がある変更されたファイルの USN ID は高価なできるので単純にファイルを再スキャン USN の更新プログラムは、ファイルにポスト可能性があります。  これを簡素化するには、NTFS、自動削除のカーネル EA の機能が追加されました。
 
-すべてのカーネル EA は、このシナリオで削除する必要があるために、拡張の EA プレフィックス名が使用されます。  カーネル EA が始まる場合: ``"$Kernel.Purge."`` USN ジャーナルには、次の USN 理由のいずれかが書き込まれる、NTFS が特定の名前付け構文に準拠したそのファイルに存在するすべてのカーネル EAs 削除されます。  
+## <a name="querying-update-sequence-number-journal-information"></a>更新シーケンス番号のジャーナル情報を照会しています
+[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作では、 **IRP_MN_KERNEL_CALL**値が IRP の minorfunction フィールドで設定されていない限り、カーネルモードから発行された場合でも**SE_MANAGE_VOLUME_PRIVILEGE**が必要です。 ルーチン**Fsrtlkernel Fscontrolfile**は、カーネルモードコンポーネントがこの USN 要求を簡単に発行できるように、カーネルの FsRtl パッケージからエクスポートされています。
+
+**メモ**Windows 10 以降のバージョン1703以降では、この操作に SE_MANAGE_VOLUME_PRIVILEGE が不要になりました。  
+
+## <a name="auto-deletion-of-kernel-extended-attributes"></a>カーネル拡張属性の自動削除
+ファイルの USN ID が原因でファイルを再スキャンするだけで、問題が発生しているため、USN 更新プログラムがファイルに投稿される可能性が非常に高くなります。  これを簡単にするために、カーネル EA の機能の自動削除が NTFS に追加されました。
+
+このシナリオでは、すべてのカーネル EA が削除されるとは限りません。そのため、拡張 EA プレフィックス名が使用されます。  カーネル EA が以下で始まる場合: ``"$Kernel.Purge."`` 次の USN の理由のいずれかが USN ジャーナルに書き込まれると、NTFS は、そのファイルに存在する、指定された名前付け構文に準拠しているすべてのカーネル EAs を削除します。  
 - USN_REASON_DATA_OVERWRITE
 - USN_REASON_DATA_EXTEND
 - USN_REASON_DATA_TRUNCATION
 - USN_REASON_REPARSE_POINT_CHANGE
 
-カーネル EA のこの削除は、メモリ不足の状況であっても正常になります。
+このカーネル EA の削除は、メモリ不足の状況でも成功します。
 
 ## <a name="remarks"></a>注釈
-- EA をカーネルは、ユーザー モード コンポーネントによって改ざんされることはできません。
-- EA をカーネルは、標準の EA と同じファイルに存在できます。
+- カーネル EA は、ユーザーモードのコンポーネントによって改ざんされることはありません。
+- カーネル EA は、通常の EA と同じファイルに存在できます。
 
 
-## <a name="see-also"></a>関連項目
-[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)  
-[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)  
+## <a name="see-also"></a>参照
+[Fltquerごみ箱](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryeafile)  
+[FltSetEaFile セット](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile)  
 [FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)  
 [FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)      
 [FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)  
-[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)  
-[ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)  
+[Zwquerごみ箱](https://msdn.microsoft.com/library/windows/hardware/ff961907)  
+[ZwSetEaFile セット](https://msdn.microsoft.com/library/windows/hardware/ff961908)  

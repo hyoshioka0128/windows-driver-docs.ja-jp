@@ -4,31 +4,31 @@ description: VMQ 割り込み要件
 ms.assetid: 7ECC9031-D41B-4664-963D-F1C20B297B7C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b74301b77abf9a07db2a31d6c62925f96ac1a49f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31d7e461b18cc53dbc7637815bd52b24b0f8cb8d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376403"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842945"
 ---
 # <a name="vmq-interrupt-requirements"></a>VMQ 割り込み要件
 
 
-仮想マシン キュー (VMQ) 機能をサポートしているミニポート ドライバーでは、次の割り込み配賦の要件もサポートする必要があります。
+バーチャルマシンキュー (VMQ) 機能をサポートするミニポートドライバーでは、次の割り込み割り当て要件もサポートする必要があります。
 
--   ミニポート ドライバーには、MSI をサポートする必要があります。 ドライバーを設定する必要があります、 **NDIS\_受信\_フィルター\_MSI\_X\_サポートされている**フラグ、 **SupportedQueueProperties**メンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
+-   ミニポートドライバーは、MSI-X をサポートする必要があります。 このドライバーでは、ndis **\_receive\_filter\_MSI\_X\_** supported フラグを設定する必要があります。このフラグは、Ndis の**supportedqueueproperties**メンバーで\_[**受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)によって取得されます。データ.
 
-    ドライバーはこの構造を返します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体ドライバーがその呼び出しで使用する、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
+    このドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の呼び出しでドライバーが使用する[ **\_属性の構造\_\_、NDIS\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)のこの構造体を返します。
 
--   ミニポート ドライバーを呼び出す必要があります、 [ **NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation)ベクトルの割り込みを割り当てるためのプロセッサ情報を取得します。 レジストリ キーまたは割り込み割り当ての他のソースから取得した情報に依存する必要があります。
+-   ミニポートドライバーは、割り込みベクターを割り当てるためのプロセッサ情報を取得するために、 [**NdisGetRssProcessorInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetrssprocessorinformation)関数を呼び出す必要があります。 割り込み割り当てのために、レジストリキーや他のソースから取得した情報に依存しないようにする必要があります。
 
-    [**NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation) RSS および VMQ のミニポート ドライバーが使用できるプロセッサのセットに関する情報を返します。 この情報は、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体。
+    [**NdisGetRssProcessorInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetrssprocessorinformation)は、ミニポートドライバーが RSS および VMQ に使用できるプロセッサのセットに関する情報を返します。 この情報は、 [**NDIS\_RSS\_PROCESSOR\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体に含まれています。
 
--   ミニポート ドライバーで指定されている各プロセッサの割り込みの 1 つだけのベクターを割り当てる必要があります、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体。
+-   ミニポートドライバーは、 [**NDIS\_RSS\_processor\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体で指定されている各プロセッサに対して、割り込みベクターを1つだけ割り当てる必要があります。
 
-    ミニポート ドライバーでは、他のイベントを送信または受信パケットの操作に関連していない以下の 2 つのベクトルの割り込みを割り当てる必要があります。 など、ドライバーでは、リンクのステータス イベント、IDT を割り当てる可能性があります。
+    ミニポートドライバーは、送信または受信パケット操作に関連付けられていない他のイベントに対して、2つ以上の割り込みベクターを割り当てる必要があります。 たとえば、ドライバーはリンクステータスイベントの IDT を割り当てることができます。
 
--   ミニポート ドライバーでは、次の表で定義されている MSI X 割り込みのベクトルの最小数をサポートする必要があります。
+-   ミニポートドライバーは、次の表に定義されている、最小数の MSI-X 割り込みベクターをサポートする必要があります。
 
     <table>
     <colgroup>
@@ -38,21 +38,21 @@ ms.locfileid: "67376403"
     <thead>
     <tr class="header">
     <th align="left">キューの数</th>
-    <th align="left">必要な MSI X 割り込みベクトルの最小数</th>
+    <th align="left">必要な MSI-X 割り込みベクターの最小数</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left"><p>1–16</p></td>
-    <td align="left"><p>1–16</p></td>
+    <td align="left"><p>1 ~ 16</p></td>
+    <td align="left"><p>1 ~ 16</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>17–64</p></td>
-    <td align="left"><p>16–32</p></td>
+    <td align="left"><p>17 ~ 64</p></td>
+    <td align="left"><p>16 ~ 32</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>65 以上</p></td>
-    <td align="left"><p>32 個以上</p></td>
+    <td align="left"><p>65以上</p></td>
+    <td align="left"><p>32以上</p></td>
     </tr>
     </tbody>
     </table>

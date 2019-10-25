@@ -3,15 +3,15 @@ title: 接続指向ミニポート ドライバーのクエリ
 description: 接続指向ミニポート ドライバーのクエリ
 ms.assetid: 9e9926f6-cf90-48af-885f-59725721948d
 keywords:
-- 接続指向のドライバー WDK ネットワーク
+- 接続指向ドライバー WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 690cc57b9d78e8f8df456624d5e00071f4da1d79
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0704eeca1ee5ce7934a26a951a62014c3eefa2df
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844903"
 ---
 # <a name="querying-a-connection-oriented-miniport-driver"></a>接続指向ミニポート ドライバーのクエリ
 
@@ -19,53 +19,53 @@ ms.locfileid: "67385447"
 
 
 
-バインドされているプロトコルを呼び出す接続指向のミニポート ドライバーを保持するオブジェクトの情報を照会する[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)渡します、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)を照会して、バッファーに NDIS 最終的に書き込み、必要な情報を提供するオブジェクト (OID) を指定します。 呼び出し**NdisCoOidRequest** NDIS ミニポート ドライバーを呼び出すと、 [ *MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request) NDIS に要求された情報を返す関数。 *MiniportCoOidRequest*への呼び出しでの同期または非同期で完了できます[ **NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)します。
+接続指向のミニポートドライバーによって保持される情報オブジェクトを照会するために、バインドされたプロトコルは[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)を呼び出し、クエリ対象のオブジェクト (oid) を指定する[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を渡します。とは、要求された情報を NDIS が最終的に書き込むバッファーを提供します。 **NdisCoOidRequest**を呼び出すと、ndis は、要求された情報を ndis に返すミニポートドライバーの[*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数を呼び出します。 *MiniportCoOidRequest*は、 [**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)の呼び出しを使用して同期的または非同期的に完了できます。
 
-NDIS ミニポート ドライバーを呼び出すことも[ *MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)自身が代理としての関数-たとえば、ミニポート ドライバーの後[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数が NDIS を返しました\_状態\_成功: ミニポート ドライバーの機能、状態、または統計情報を照会します。 次の図は、接続指向のミニポート ドライバーにクエリを実行します。
+また、NDIS はミニポートドライバーの[*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数を独自の方法で呼び出すこともできます。たとえば、ミニポートドライバーの[*MINIPORTINITIALIZEEX*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数から ndis\_STATUS\_が返された後に、ミニポートに対してクエリを実行します。ドライバーの機能、状態、または統計情報。 次の図は、接続指向ミニポートドライバーを照会する方法を示しています。
 
-![接続指向のミニポート ドライバーのクエリを実行するかを示す図](images/fig5-3.png)
+![接続指向ミニポートドライバーのクエリを示す図](images/fig5-3.png)
 
-接続指向のミニポート ドライバーでは、仮想とすべての接続 (VCs) の特定の NIC も VC あたりの単位でのグローバル ベースに関する情報を提供できる必要があります。 たとえば、以外の場合**NULL** *NdisVcHandle*に渡されます[ *MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)のクエリの[OID\_GEN\_CO\_受信\_CRC\_エラー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-rcv-crc-error)、指定の vc ミニポート ドライバー返します CRC エラーが発生したすべてのエラーが数を受け取ります。 同じ要求で、 **NULL** *NdisVcHandle*、ミニポート ドライバーが発生した NIC が受け取るすべての受信の CRC エラーの合計数を返します
+接続指向のミニポートドライバーは、特定の NIC のすべての仮想接続 (VCs) について、また VC ごとに、グローバルな情報を提供できる必要があります。 たとえば、 [OID\_GEN\_CO\_RCV\_crc\_ERROR](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-rcv-crc-error)のクエリに対して**NULL**以外の*NdisVcHandle*を[*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)に渡すと、ミニポートドライバーは crc エラーの数を返します。指定された VC でのすべての受信で発生した。 同じ要求に対して、 *NdisVcHandle*が NULL の場合、ミニポートドライバーは、NIC 経由で受信したすべての受信で発生した CRC エラーの合計数を返します。
 
-次の一覧には、接続指向のミニポート ドライバーに必須の一般的な運用 Oid のセットが含まれています。
+次の一覧には、接続指向ミニポートドライバーに必要な一般的な操作 Oid のセットが含まれています。
 
-[OID\_GEN\_CO\_サポートされている\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-supported-list)
+[OID\_GEN\_共同\_サポートされている\_リスト](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-supported-list)
 
 [OID\_GEN\_CO\_ハードウェア\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-hardware-status)
 
-[OID\_GEN\_CO\_メディア\_サポートされています。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-supported)
+[OID\_GEN\_CO\_メディア\_サポートされています](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-supported)
 
-[OID\_GEN\_CO\_メディア\_IN\_使用](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-in-use)
+[OID\_GEN\_CO\_メディア\_を使用して\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-in-use)
 
 [OID\_GEN\_CO\_リンク\_速度](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-link-speed)
 
-[OID\_GEN\_CO\_ベンダー\_ID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-id)
+[OID\_GEN\_共同\_ベンダ\_ID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-id)
 
-[OID\_GEN\_CO\_ベンダー\_の説明](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-description)
+[OID\_GEN\_共同\_ベンダ\_説明](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-description)
 
-[OID\_GEN\_CO\_ベンダー\_ドライバー\_バージョン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-driver-version)
+[OID\_GEN\_CO\_ベンダ\_DRIVER\_バージョン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-vendor-driver-version)
 
-[OID\_GEN\_CO\_ドライバー\_バージョン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-driver-version)
+[OID\_GEN\_CO\_DRIVER\_バージョン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-driver-version)
 
 [OID\_GEN\_CO\_MAC\_オプション](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-mac-options)
 
-[OID\_GEN\_CO\_メディア\_CONNECT\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-connect-status)
+[OID\_GEN\_CO\_メディア\_接続\_状態](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-media-connect-status)
 
 [OID\_GEN\_CO\_最小\_リンク\_速度](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-minimum-link-speed)
 
-ミニポート ドライバーの[ *MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)クエリまたは前の Oid のいずれかに、必要に応じて、セットに応答する関数を準備する必要があります。
+ミニポートドライバーの[*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数は、必要に応じて、上記の oid に応答するように準備する必要があります。
 
-ときに[ *MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request) OID を使用して呼び出した\_GEN\_CO\_MAC\_オプション、そのオプションを指定するビットマスクを返す必要がありますミニポート ドライバーを実行する操作です。 フラグのセットが含まれます。
+[*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)が OID\_GEN\_CO\_MAC\_オプションを使用して呼び出されると、ミニポートドライバーが実行するオプションの操作を指定するビットマスクを返す必要があります。 フラグのセットには、次のものが含まれます。
 
--   NDIS\_MAC\_オプション\_いいえ\_ループバックします。 このフラグを設定するとに渡されるパケットにミニポート ドライバーがないループバック[ **MiniportCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)は同じコンピューター上の受信者に送られますミニポート ドライバーNDIS ループバックを実行する必要があります。 NDIS は、パケットのループバックを実行する場合、パケットは渡されませんミニポート ドライバーに。 ミニポート ドライバーは、NIC がハードウェア ループバックを実行しない限り、常にこのフラグを設定します。
+-   NDIS\_MAC\_オプション\_\_ループバックはありません。 このフラグが設定されている場合、ミニポートドライバーは、同じコンピューター上の受信者に送信される[**Miniportcosendnetbufferlists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)に渡されるパケットをループバックしません。また、ミニポートドライバーでは、NDIS がループバックを実行することを想定しています。 NDIS がパケットのループバックを実行する場合、パケットはミニポートドライバーに渡されません。 ミニポートドライバーは、NIC がハードウェアループバックをを実行しない限り、常にこのフラグを設定します。
 
--   NDIS\_MAC\_ETOX\_を示す値。 このフラグが設定されている場合、ミニポート ドライバーでは、NIC は、パケットを送信した後にのみ、送信が完了したことを示します。
+-   NDIS\_MAC\_ETOX\_示されています。 このフラグが設定されている場合、ミニポートドライバーは、NIC がパケットを送信した後にのみ、送信が完了することを示します。
 
-ミニポート ドライバーは、NDIS を使用しないでください必要があります\_MAC\_オプション\_予約済みフラグは、NDIS 内部使用のために予約されています。
+ミニポートドライバーでは、ndis\_MAC\_オプション\_予約フラグが使用されないようにする必要があります。このフラグは、NDIS 内部で使用するために予約されています。
 
-[*MiniportCoOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)は、NIC の現在のアドレスを決定するメディア固有の OID を照会することもできます。
+また、 [*MiniportCoOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)は、メディア固有の OID を使用してクエリを実行し、NIC の現在のアドレスを特定します。
 
-詳細については、次を参照してください。 [Connection-Oriented 呼び出す管理者とクライアントの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/oids-for-connection-oriented-call-managers-and-clients)と[全般オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546510(v=vs.85))します。
+詳細については、「[接続指向コールマネージャーとクライアントの oid](https://docs.microsoft.com/windows-hardware/drivers/network/oids-for-connection-oriented-call-managers-and-clients) 」と「[一般的なオブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546510(v=vs.85))」を参照してください。
 
  
 

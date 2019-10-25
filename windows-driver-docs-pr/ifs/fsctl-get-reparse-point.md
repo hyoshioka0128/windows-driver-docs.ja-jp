@@ -1,9 +1,9 @@
 ---
 title: FSCTL_GET_REPARSE_POINT 制御コード
-description: FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイルまたはディレクトリに関連付けられている再解析ポイントのデータを取得します。
+description: FSCTL\_GET\_再解析\_ポイント制御コードは、指定したファイルまたはディレクトリに関連付けられている再解析ポイントデータを取得します。
 ms.assetid: 8d56a4c5-46c3-42b7-a532-eaf0d792b519
 keywords:
-- FSCTL_GET_REPARSE_POINT 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_GET_REPARSE_POINT 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,49 +14,49 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df0fb125365d795181ef38005880614e005f1ad0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e53ba6d929805baa9d704f532fd0d12870814851
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365038"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841306"
 ---
-# <a name="fsctlgetreparsepoint-control-code"></a>FSCTL\_取得\_再解析\_ポイント制御コード
+# <a name="fsctl_get_reparse_point-control-code"></a>FSCTL\_\_再解析\_ポイント制御コードを取得します
 
 
-FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイルまたはディレクトリに関連付けられている再解析ポイントのデータを取得します。
+FSCTL\_GET\_再解析\_ポイント制御コードは、指定したファイルまたはディレクトリに関連付けられている再解析ポイントデータを取得します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、次のパラメーターを使用して[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
-再解析ポイントと FSCTL の詳細については\_取得\_再解析\_ポイント制御コードを Microsoft Windows SDK のマニュアルを参照してください。
+再解析ポイントおよび FSCTL\_GET\_再解析\_ポイント制御コードの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
 **Parameters**
 
-<a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ファイルまたはディレクトリから、再解析ポイントのデータを取得する対象のファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+<a href="" id="fileobject"></a>*ファ*  
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 再解析ポイントデータの取得元となるファイルまたはディレクトリのファイルオブジェクトポインター。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ファイルまたはディレクトリから、再解析ポイントのデータを取得する対象のファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
+[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみ。 再解析ポイントデータの取得元となるファイルまたはディレクトリのファイルハンドル。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作の制御コード。 使用**FSCTL\_取得\_再解析\_ポイント**この操作にします。
+操作の制御コード。 この操作を行うには、FSCTL\_使用して **\_再解析\_ポイントを取得**してください。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-この操作では使用されません。設定**NULL**します。
+この操作では使用されません。を**NULL**に設定します。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-この操作では使用されません。0 に設定します。
+この操作では使用されません。を0に設定します。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-呼び出し元が割り当てたへのポインター [**再解析\_GUID\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)または[**再解析\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)再解析ポイントのデータを受信する構造体。
+再解析ポイントデータを受け取るバッファー構造体[ **\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)または[**再\_\_解析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)\_GUID を指すポインター。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-指し示されるバッファーのバイト単位のサイズ、 *OutputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_GUID\_データ\_バッファー\_ヘッダー\_のサイズの合計サイズ予想されるユーザー定義データは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_データ\_バッファー\_ヘッダー\_サイズ、さらに、ユーザー定義の予期されるデータのサイズと小さいする必要があります最大値に等しいまたはそれよりも\_再解析\_データ\_バッファー\_サイズ。
+*Outputbuffer*パラメーターが指すバッファーのサイズ (バイト単位)。 再解析\_GUID\_データ\_バッファー構造体の場合、この値には少なくとも、\_データ\_バッファー\_のデータ\_サイズ、および予期されるユーザー定義データのサイズに対する再解析\_GUID を指定する必要があります。、\_再解析\_データ\_バッファー\_サイズの最大値以下である必要があります。 再解析\_データ\_バッファー構造体の場合、この値は\_少なくともデータ\_バッファー\_のヘッダー\_サイズに加えて、予想されるユーザー定義データのサイズに加え、最大値以下である必要があり\_再解析\_データ\_バッファー\_サイズ。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
+[**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)は、次のいずれかのような状態\_SUCCESS または適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -72,26 +72,26 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_OVERFLOW</strong></p></td>
-<td align="left"><p>バッファーを<em>OutputBuffer</em>にパラメーターが指すは REPARSE_GUID_DATA_BUFFER または REPARSE_DATA_BUFFER 構造データではなく、ユーザー定義の固定部分を保持するために十分な大きさです。 再解析ポイントのデータの固定部分のみが返されるここで、 <em>OutputBuffer</em>バッファー。 <em>LengthReturned</em>パラメーターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)"> <strong>FltFsControlFile</strong> </a>返されるデータのバイト単位で実際の長さを受信します。 これは、警告コードです。</p></td>
+<td align="left"><p><em>Outputbuffer</em>パラメーターが指すバッファーは、REPARSE_GUID_DATA_BUFFER または REPARSE_DATA_BUFFER 構造体の固定部分を保持するのに十分な大きさですが、ユーザー定義データは保持できません。 この場合は、再解析ポイントデータの固定部分のみが<em>outputbuffer</em>バッファーに返されます。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>Fltfscontrolfile</strong></a>に<em>返され</em>た長さのパラメーターは、返されたデータの実際の長さをバイト単位で受け取ります。 これは警告コードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
-<td align="left"><p>バッファーを<em>OutputBuffer</em>パラメーターが指しては再解析ポイントのデータを保持するのに十分な大きさがありません。 <em>LengthReturned</em>パラメーターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)"> <strong>FltFsControlFile</strong> </a> (または<strong>情報</strong>のメンバー、 <em>IoStatus</em>パラメーターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff566462" data-raw-source="[&lt;strong&gt;ZwFsControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566462)"> <strong>ZwFsControlFile</strong></a>) 必要なバッファー サイズを受け取ります。 この場合、再解析ポイントのデータは返されません。 これは、エラー コードです。</p></td>
+<td align="left"><p><em>Outputbuffer</em>パラメーターが指すバッファーが、再解析ポイントデータを保持するのに十分な大きさではありません。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>Fltfscontrolfile</strong></a>に<em>返された長さ</em>(または、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566462" data-raw-source="[&lt;strong&gt;ZwFsControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566462)"><strong>Iowfscontrolfile</strong></a>への<em>iostatus</em>パラメーターの<strong>情報</strong>メンバー) は、必要なバッファーサイズを受け取ります。 この場合、再解析ポイントデータは返されません。 これはエラーコードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_IO_REPARSE_DATA_INVALID</strong></p></td>
-<td align="left"><p>指定されたパラメーター値のいずれかが無効です。 これは、エラー コードです。</p></td>
+<td align="left"><p>指定されたパラメーター値の1つが無効です。 これはエラーコードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_NOT_A_REPARSE_POINT</strong></p></td>
-<td align="left"><p>ファイルまたはディレクトリは、再解析ポイントではありません。 これは、エラー コードです。</p></td>
+<td align="left"><p>ファイルまたはディレクトリが再解析ポイントではありません。 これはエラーコードです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -102,7 +102,7 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h または Fltkernel.h を含む)</td>
+<td align="left">Ntifs (Ntifs または Fltkernel .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -110,31 +110,31 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IRP のパラメーター\_MJ\_ファイル\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
+[**IRP\_MJ\_ファイルの FLT\_パラメーター\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FLT\_タグ\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_tag_data_buffer)
+[**FLT\_タグ\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_tag_data_buffer)
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltuntagfile)
 
-[**FSCTL\_DELETE\_REPARSE\_POINT**](fsctl-delete-reparse-point.md)
+[**FSCTL\_\_再解析\_ポイントを削除します**](fsctl-delete-reparse-point.md)
 
-[**FSCTL\_SET\_REPARSE\_POINT**](fsctl-set-reparse-point.md)
+[**FSCTL\_設定\_再解析\_ポイント**](fsctl-set-reparse-point.md)
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 
-[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagmicrosoft)
+[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagmicrosoft)
 
-[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagnamesurrogate)
+[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[**再解析\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)
+[**データ\_バッファーの再解析\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)
 
-[**再解析\_GUID\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)
+[ **\_GUID\_データ\_バッファーの再解析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

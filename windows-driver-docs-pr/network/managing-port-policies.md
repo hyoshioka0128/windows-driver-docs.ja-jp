@@ -4,91 +4,91 @@ description: ポート ポリシーの管理
 ms.assetid: 46394916-6558-4BDA-8920-E3C5378823BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edbb3201b94a2523f0fd2ecc0fcb0cc57405e7f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70c44e036cb0d0a7f4eea4a3039e6a8dc9272221
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369184"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844115"
 ---
 # <a name="managing-port-policies"></a>ポート ポリシーの管理
 
 
-HYPER-V 拡張可能スイッチのフィルター処理および転送拡張機能は、標準とカスタム ポートのプロパティのプロパティでプロビジョニングできます。 プロビジョニング完了すると、これらの拡張機能は、拡張可能スイッチのイングレス データ パス取得したパケットをフィルター処理するときに、ポリシーを適用できます。 これらのポリシーの詳細については、次を参照してください。[ポート ポリシー](port-policies.md)します。
+Hyper-v 拡張可能スイッチのフィルターおよび転送拡張機能は、標準およびカスタムのポートプロパティのプロパティを使用してプロビジョニングできます。 プロビジョニングが完了すると、拡張可能スイッチの受信データパスで取得されたパケットをフィルター処理するときに、これらの拡張機能によってポリシーが適用されます。 これらのポリシーの詳細については、「[ポートポリシー](port-policies.md)」を参照してください。
 
-HYPER-V 拡張可能スイッチのインターフェイスは、ポートを標準とカスタム ポリシーのプロパティをフィルター処理と転送拡張機能をプロビジョニングするのに次のオブジェクト識別子 (Oid) を使用します。
+Hyper-v 拡張可能スイッチインターフェイスは、次のオブジェクト識別子 (Oid) を使用して、フィルターおよび転送拡張機能を標準およびカスタムポートポリシーのプロパティと共にプロビジョニングします。
 
 <a href="" id="oid-switch-port-property-add"></a>[OID\_スイッチ\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)  
-WMI 管理層でのプロパティの追加の拡張機能を基になるに通知する拡張可能スイッチのプロトコルの端では、この OID セットの要求が発行されます。 **InformationBuffer**の[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)構造体。
+この OID セット要求は、拡張可能なスイッチのプロトコルエッジによって発行され、WMI 管理レイヤーでプロパティの追加の基礎となる拡張機能に通知します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**には、 [**ndis\_SWITCH\_PORT\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)構造へのポインターが含まれています。
 
-**注**  でカスタム ポートのプロパティが指定された、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)列挙値の**NdisSwitchPortPropertyTypeCustom**します。 標準のポートのプロパティがで指定された、 **NDIS\_スイッチ\_ポート\_プロパティ\_型**列挙値の**NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**、および**NdisSwitchPortPropertyTypeProfile**します。
+**注**  カスタムポートのプロパティは、 [**NDIS\_スイッチ\_ポート\_プロパティ\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)列挙値**NdisSwitchPortPropertyTypeCustom**によって指定されます。 標準ポートのプロパティは、 **NDIS\_スイッチ\_ポート\_プロパティ\_TYPE**列挙値**NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**、および**によって指定されます。NdisSwitchPortPropertyTypeProfile**。
 
  
 
-<a href="" id="oid-switch-port-property-update"></a>[OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)  
-WMI 管理層でのプロパティの更新プログラムの基になる拡張機能を通知するために拡張可能スイッチのプロトコルの端では、この OID セットの要求が発行されます。 **InformationBuffer**の[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)構造体。
+<a href="" id="oid-switch-port-property-update"></a>[OID\_スイッチ\_ポート\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)  
+この OID セット要求は、拡張可能なスイッチのプロトコルエッジによって発行され、WMI 管理層でプロパティの更新の基になる拡張を通知します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**には、 [**ndis\_SWITCH\_PORT\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)構造へのポインターが含まれています。
 
 <a href="" id="oid-switch-port-property-delete"></a>[OID\_スイッチ\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete)  
-WMI 管理層でのプロパティの削除の基になる拡張機能を通知するために拡張可能スイッチのプロトコルの端では、この OID セットの要求が発行されます。 **InformationBuffer**の[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_削除\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)構造体。
+この OID セット要求は、拡張可能なスイッチのプロトコルエッジによって発行され、WMI 管理層でプロパティの削除の基になる拡張を通知します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**には、 [**ndis\_SWITCH\_PORT\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)へのポインターが含まれて\_パラメーター構造が削除されます。
 
 <a href="" id="oid-switch-port-property-enum"></a>[OID\_スイッチ\_ポート\_プロパティ\_列挙型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)  
-この OID メソッド要求は、クエリの指定したポート拡張可能スイッチに現在構成されているプロパティの拡張可能スイッチの基になるミニポート エッジに拡張機能によって送信されます。 **InformationBuffer**の[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
+この OID メソッド要求は拡張機能によって送信され、拡張可能スイッチの指定されたポートに対して現在構成されているプロパティについて、拡張可能スイッチの基になるミニポートエッジに対してクエリを実行します。 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**には、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
 
--   [ **NDIS\_スイッチ\_ポート\_プロパティ\_ENUM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)ポリシーのパラメーターを指定する構造体指定したポートの列挙体。
+-   指定されたポートのポリシー列挙のパラメーターを指定する[ **\_ポート\_プロパティ\_\_、NDIS\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)。
 
--   配列の[ **NDIS\_スイッチ\_ポート\_プロパティ\_ENUM\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体。 各構造体には、拡張可能スイッチ ポートのポリシーのプロパティに関する情報が含まれています。
+-   [**NDIS\_スイッチの配列\_ポート\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体です。 これらの各構造体には、拡張可能なスイッチポートポリシーのプロパティに関する情報が含まれています。
 
-    **注**  場合、 **NumProperties**のメンバー、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_ENUM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)構造が 0、no に設定されている[ **NDIS\_スイッチ\_ポート\_プロパティ\_ENUM\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体が返されます。
+    **注**  Ndis の**numproperties**メンバー [ **\_switch\_PORT\_プロパティ\_ENUM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)構造体が0に設定されている場合は、 [**ndis\_スイッチ\_ポートはありません\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体が返されます。
 
      
 
-**注**  の OID のセット要求を取得する必要があります、拡張機能[OID\_スイッチ\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)します。 [OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)、または[OID\_スイッチ\_ポート\_プロパティ\_DELETE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete).
+拡張機能では、Oid の OID セット要求を[\_ポート\_プロパティ\_ADD\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)生成することはできない  に**注意**してください。 [Oid\_\_ポート\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)、または[oid\_スイッチ\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete)を切り替えることができます。
 
  
 
-拡張可能スイッチ拡張機能は、の OID セット要求を処理する場合これらのガイドラインに従う必要があります[OID\_切り替える\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)、 [OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)、または[OID\_スイッチ\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete):
+拡張可能なスイッチ拡張機能は、oid の OID セット要求を処理するときに、これらのガイドラインに従う必要があります[\_スイッチ\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)、 [oid\_スイッチ\_ポート\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)、または[OID\_\_ポート\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-delete):
 
--   拡張機能は変更しないで、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[ **NDIS\_スイッチ\_ポート\_プロパティ\_削除\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters) OID 要求に関連付けられている構造体。
+-   拡張機能では、 [**ndis\_スイッチ\_ポート\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[**ndis\_スイッチ\_プロパティ\_削除\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)構造を変更することはできません。OID 要求に関連付けられています。
 
--   拡張機能は、拡張機能が、プロパティを管理する場合、これらの OID 要求を処理する必要があります。 拡張機能によっては、OID 要求の次のメンバーを調べる必要がある、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[ **NDIS\_スイッチ\_ポート\_プロパティ\_削除\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)を決定する構造体かどうか、ポートのプロパティを管理します。
+-   拡張機能がプロパティを管理する場合、拡張機能はこれらの OID 要求を処理する必要があります。 OID 要求に応じて、拡張機能は、Ndis\_スイッチの次のメンバーを検査する必要があります[ **\_ポート\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[**ndis\_スイッチ\_ポート\_プロパティ\_削除 @no_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)port プロパティを管理するかどうかを決定する _T_12_ PARAMETERS 構造体。
 
-    -   **PropertyType**メンバー。 このメンバーは、ポートのプロパティの型を指定します。 カスタム ポートのプロパティが、 **PropertyType**のメンバー値**NdisSwitchPortPropertyTypeCustom**します。 標準のポートのプロパティでは、その他のプロパティ型の値があります。 たとえば、標準的な VLAN ポート ポリシー プロパティ値を持つ型の**NdisSwitchPortPropertyTypeVlan**します。
+    -   **PropertyType**メンバーです。 このメンバーは、ポートプロパティの種類を指定します。 カスタムポートプロパティには、 **NdisSwitchPortPropertyTypeCustom**の**PropertyType**メンバー値があります。 標準ポートのプロパティには、その他のプロパティ型の値があります。 たとえば、標準 VLAN ポートポリシーのプロパティの type 値は**NdisSwitchPortPropertyTypeVlan**です。
 
-    -   **PropertyId**メンバー。 このメンバーは、カスタム ポートのプロパティの独自の GUID 値を指定します。 この GUID 値は、また、カスタムの拡張可能スイッチのプロパティの形式を定義した独立系ソフトウェア ベンダー (ISV) によって作成されます。
+    -   **PropertyId**メンバーです。 このメンバーは、カスタムポートプロパティの専用の GUID 値を指定します。 この GUID 値は、独立系ソフトウェアベンダー (ISV) によって作成され、カスタム拡張可能スイッチプロパティの形式も定義します。
 
-        **注**  拡張機能は、標準のポートのポリシーは、このメンバーを無視する必要があります。
-
-         
-
--   拡張機能を処理する必要があります、 [OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)セットの要求と一致するポートのプロパティを使用して、拡張機能を以前にプロビジョニングする場合、次のメンバー、 [ **NDIS\_スイッチ\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)構造体。
-
-    -   **PropertyType**メンバー。
-
-    -   **PropertyId**メンバー。
-
-        **注**  拡張機能は、標準のポートのポリシーは、このメンバーを無視する必要があります。
+        拡張機能では、標準ポートポリシーのこのメンバーを無視する必要がある  に**注意**してください。
 
          
 
-    -   **PropertyVersion**メンバー。 このメンバーは、ポート プロパティで、拡張機能がプロビジョニングされているのバージョンを指定します。
+-   拡張機能が以前に NDIS\_スイッチの次のメンバーと一致するポートプロパティを使用してプロビジョニングされている場合、拡張機能は、[ポート\_プロパティ\_\_ポートの\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)を処理する必要があり[ **@no__tプロパティ\_パラメーターの構造 (_s)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters) :
 
-    -   **PropertyInstanceId**メンバー。 このメンバーには、拡張機能でプロビジョニングされているポートのプロパティのインスタンスを指定します。
+    -   **PropertyType**メンバーです。
 
--   フィルター処理、または転送拡張機能は、追加や、管理しているポート ポリシーの更新を拒否できます。 拡張機能は状態が、OID 要求の完了によって\_データ\_いない\_ACCEPTED です。
+    -   **PropertyId**メンバーです。
 
-    **注**  取得拡張機能の追加またはポートのポリシーの変更しない拒否する必要があります。 代わりに、拡張可能スイッチ コントロール パスに OID 要求に転送する必要があります。
+        拡張機能では、標準ポートポリシーのこのメンバーを無視する必要がある  に**注意**してください。
+
+         
+
+    -   **Propertyversion**メンバー。 このメンバーは、拡張機能がプロビジョニングされたポートプロパティのバージョンを指定します。
+
+    -   **Propertyinstanceid**メンバー。 このメンバーは、拡張機能がプロビジョニングされたポートプロパティのインスタンスを指定します。
+
+-   フィルター処理または転送拡張機能は、管理するポートポリシーの追加または更新を拒否することができます。 この拡張機能では、状態が\_の OID 要求を完了することによってこれを実行します。データ\_\_は受け入れられません。
+
+    拡張機能をキャプチャする  、ポートポリシーの追加または更新を拒否**することは**できません。 代わりに、OID 要求を拡張可能なスイッチ制御パスに転送する必要があります。
 
      
 
--   転送拡張機能には、標準のポートのプロパティがサポートされていないか、またはプロパティ、独自のポリシー構成の競合の OID 要求が失敗します。 この場合、拡張機能は、OID 要求を完了し、エラーを報告して適切な NDIS 状態コードを返す必要があります。
+-   転送拡張機能は、サポートしていない標準ポートプロパティに対する OID 要求を失敗させたり、プロパティが独自のポリシー構成と競合したりする可能性があります。 この場合、拡張機能は OID 要求を完了し、エラーを報告するための適切な NDIS 状態コードを返す必要があります。
 
--   拡張機能は、標準ポート ポリシー OID セットの要求を正常に処理する場合は OID 要求を完了する必要があり、拡張可能スイッチ コントロール パスに転送する必要があります。
+-   拡張機能が標準ポートポリシーの OID セット要求を正常に処理した場合、OID 要求を完了しないようにし、拡張可能なスイッチ制御パスに転送する必要があります。
 
--   キャプチャまたは拡張機能を正常にフィルター処理は、カスタム ポート ポリシー OID セットの要求を処理する場合は OID 要求を完了する必要があり、拡張可能スイッチ コントロール パスに転送する必要があります。
+-   キャプチャまたはフィルター拡張によってカスタムポートポリシーの OID セット要求が正常に処理された場合、OID 要求を完了しないようにし、拡張可能なスイッチ制御パスに転送する必要があります。
 
-    転送拡張機能では、カスタム ポート ポリシー OID セットの要求が正常に処理する場合は、OID 要求を完了し、適切な NDIS を返すにする必要があります\_状態\_*Xxx*値。
+    転送拡張機能によってカスタムポートポリシーの OID セット要求が正常に処理された場合、OID 要求を完了し、適切な NDIS\_STATUS\_*Xxx*値を返す必要があります。
 
--   呼び出す必要がありますが、拡張機能が、OID セット要求を完了しない場合[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)拡張可能スイッチのドライバー スタック ダウン OID 要求を転送します。 この場合、拡張機能は、基になる拡張機能の OID 要求が失敗したかどうかを検出する OID の完了状態を監視する必要があります。
+-   拡張機能が OID セット要求を完了しない場合は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出して、拡張可能なスイッチドライバースタックから oid 要求を転送する必要があります。 この場合、拡張機能は、基になる拡張機能が OID 要求に失敗したかどうかを検出するために、OID の完了状態を監視する必要があります。
 
  
 

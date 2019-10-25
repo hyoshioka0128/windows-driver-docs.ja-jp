@@ -1,24 +1,24 @@
 ---
 title: 近接センサーのしきい値
-description: このトピックでは、センサーのしきい値が近接検索に関する情報を提供します。
+description: このトピックでは、近接センサーのしきい値について説明します。
 ms.assetid: AD93421B-4787-4E56-B01D-58027EFEAC2D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c74b23e558e490338b82963f6b06abc7e5e29b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8efc03ba23371194e488235e2d5e74f08b0f81dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330056"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841762"
 ---
 # <a name="proximity-sensor-thresholds"></a>近接センサーのしきい値
 
-近接センサーに対して定義されている構成可能なしきい値はありません。
+近接センサーには、構成可能なしきい値が定義されていません。
 
-近接センサー ドライバーは、読み取りは呼び出すことによって、センサー クラスの拡張機能サンプルを報告する必要があります[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/nf-sensorscx-sensorscxsensordataready) PKEY_SensorData_ProximityDetection 値が変更されるたびにします。
-PKEY_SensorData_ProximityDetection が変わっていなければ、近接センサー ドライバーはクラスの拡張機能に行 2 つの近接測定値で報告されませんする必要があります。
+近接センサードライバーは、PKEY_SensorData_ProximityDetection 値が変更されるたびに[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready)を呼び出すことによって、センサークラス拡張に対するサンプル読み取りを報告する必要があります。
+近接センサードライバーは、PKEY_SensorData_ProximityDetection が変更されていない限り、クラスの拡張に対して2つの近接した読み取りを報告しないようにする必要があります。
 
-ただし、近接センサー ドライバーは、センサー クラスの拡張機能の呼び出し直後に、1 つの例に読み取り常に報告する必要があります、 [EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)コールバック。 このサンプルと呼ばれると呼ばれる*サンプル読み取りの初期*します。
+ただし、センサークラスの拡張機能によって[Evtsensorstart](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)コールバックが呼び出された直後に、近接センサードライバーが1つのサンプル読み取りを常に報告する必要があります。 このサンプルは、「*最初のサンプルの読み取り*」と呼ばれています。
 
 ## <a name="related-topics"></a>関連トピック
 

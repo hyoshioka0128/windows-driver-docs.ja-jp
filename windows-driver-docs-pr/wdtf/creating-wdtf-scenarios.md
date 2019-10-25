@@ -1,40 +1,40 @@
 ---
 title: WDTF シナリオの作成
-description: WDTF シナリオでは、WDTF フレームワークを使用してカスタマイズして自動テストのデバイスに重点を置いたシナリオを構築します。
+description: WDTF のシナリオでは、WDTF framework を使用して、デバイスに焦点を合わせた自動テストおよびカスタマイズされたテストシナリオを構築します。
 ms.assetid: f9e3de20-28be-40c6-802c-f4637b3f6c20
 keywords:
-- Windows デバイスのテスト フレームワーク WDK、スクリプト
+- Windows デバイステストフレームワーク WDK、スクリプト
 - WDTF WDK、スクリプト
-- WDK WDTF スクリプト
-- テスト スクリプト WDK WDTF
-- ファントム デバイス WDK WDTF
-- 削除済みデバイス WDK WDTF
-- ホット スワップ デバイス WDK WDTF
+- スクリプト WDK WDTF
+- テストスクリプト WDK WDTF
+- ファントムデバイス WDK WDTF
+- 削除されたデバイスの WDK WDTF
+- ホットスワップデバイス WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b1dc0dc8a9659b9678b94e5a1c364217d9710bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa5a3f2573acb3d0b5983ad6940f6cea3f0cb531
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386251"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841666"
 ---
 # <a name="creating-wdtf-scenarios"></a>WDTF シナリオの作成
 
 
-インスタンスを作成して、WDTF ベースのシナリオを開始することができます、 [ **IWDTF2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)を含む集計インターフェイス[ **DeviceDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_devicedepot)と[ **SystemDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_systemdepot)プロパティ。
+WDTF ベースのシナリオを開始するには、 [**devicedepot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_devicedepot)と[**systemdepot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_systemdepot)のプロパティを含む[**IWDTF2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) aggregation インターフェイスのインスタンスを作成します。
 
-1 つまたは複数のターゲット オブジェクトを収集するには、使用、 [ **IWDTFDeviceDepot2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtfdevicedepot2)インターフェイス、および使用して、**クエリ**メソッドを[単純なデータ評価言語](simple-data-evaluation-language-overview.md) (SDEL)。
+1つ以上の対象オブジェクトを収集するには、 [**IWDTFDeviceDepot2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfdevicedepot2)インターフェイスを使用し、[単純なデータ評価言語](simple-data-evaluation-language-overview.md)(Sdel) で**クエリ**メソッドを使用します。
 
-スクリプトを使用して特定のターゲットを調べることがありますも、 [ **IWDTFTarget2::Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)メソッド。 ターゲットを選択した後はそれらを使用して制御[1 つまたは複数のアクション インターフェイス](controlling-targets.md)します。
+スクリプトでは、 [**IWDTFTarget2:: Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)メソッドを使用して特定のターゲットを調べることもできます。 ターゲットを選択した後、 [1 つまたは複数のアクションインターフェイス](controlling-targets.md)を使用してコントロールを制御します。
 
-WDTF シナリオの開発を開始する前に、WDTF をインストールする必要があります。 参照してください[WDTF クイック スタート](wdtf-quick-start-.md)詳細についてはします。
+WDTF シナリオの開発を開始する前に、WDTF をインストールする必要があります。 詳細については、「 [Wdtf クイックスタート](wdtf-quick-start-.md)」を参照してください。
 
-このトピックでは、次のセクションでは、WDTF の基本的なシナリオを作成する方法について説明します。
+このトピックの次のセクションでは、基本的な WDTF シナリオを作成する方法について説明します。
 
 ### <a name="simple-wdtf-scenario"></a>単純な WDTF シナリオ
 
-次の VBScript コード サンプル (WDTF\_Sample1.vbs) WDTF を使用して有効にして、ファントム以外のすべてのデバイスを無効にする簡単なシナリオを示しています。 A*ファントム以外のデバイス*は任意のデバイスを物理的に存在します。 完全なサンプルは、次を参照してください。[サンプル WDTF シナリオ](sample-wdtf-scenarios.md)します。
+次の VBScript コードサンプル (WDTF\_サンプル 1) は、WDTF を使用してすべての非ファントムデバイスを有効または無効にする簡略化されたシナリオを示しています。 *ファントム以外のデバイス*は、物理的に存在するデバイスです。 完全なサンプルについては、「 [WDTF のサンプルシナリオ](sample-wdtf-scenarios.md)」を参照してください。
 
 ```cpp
 Set WDTF = WScript.CreateObject("WDTF.WDTF")
@@ -48,33 +48,33 @@ For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false AND IsDisableable")
 Next
 ```
 
-このシナリオを実行するにを実行して**CScript.exe WDTF\_Sample1.vbs**します。
+このシナリオを実行するには、 **cscript.exe WDTF\_サンプル 1**を実行します。
 
-### <a name="storing-target-information-by-using-context"></a>コンテキストを使用してターゲットの情報を格納します。
+### <a name="storing-target-information-by-using-context"></a>コンテキストを使用したターゲット情報の格納
 
-VBScript などの一部のプログラミング言語のオブジェクト参照を簡単に管理しません。 WDTF でこの管理を簡素化する各ターゲットを提供します、 [**コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-put_context)など、任意のキー/値ペアを格納するのに使用できるプロパティは、アクティブなオブジェクトを参照します。 このプロパティは、後で使用できるように、アクションのインターフェイスを格納するために特に便利です。 次の VBScript コードの例のストア、 [ **IWDTFSimpleIOStressAction2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)アクション内で名前付き**コンテキスト**項目。
+VBScript などの一部のプログラミング言語では、オブジェクト参照を簡単に管理できません。 WDTF でのこの管理を簡略化するために、各ターゲットには、アクティブなオブジェクトへの参照を含む任意のキー/値のペアを格納するために使用できる[**コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context)プロパティが用意されています。 このプロパティは、後で使用できるようにアクションインターフェイスを格納する場合に特に便利です。 次の VBScript コード例では、名前付き**コンテキスト**項目内に[**IWDTFSimpleIOStressAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)アクションを格納します。
 
 ```cpp
 deviceObj.Context("IWDTFSimpleIOStressAction2") = SimpleIOObj
 ```
 
-後で、シナリオ、停止、一時停止、または再開できます、 [ **IWDTFSimpleIOStressAction2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)インターフェイスを介してアクセスして[**コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-put_context)次のコード例は、もう一度として。
+後で、次のコード例に示すように、[**コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context)を使用して再度アクセスすることで、 [**IWDTFSimpleIOStressAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)インターフェイスを停止、一時停止、または再起動することができます。
 
 ```cpp
 Device.Context("IWDTFSimpleIOStressAction2").Stop
 ```
 
-### <a name="detecting-phantom-devices"></a>ファントムのデバイスを検出します。
+### <a name="detecting-phantom-devices"></a>ファントムデバイスの検出
 
-ファントムのデバイスでは、過去のコンピューターに物理的にインストールされたデバイスしますが、現在存在ではありません。 たとえば、ファントムのデバイスでは、USB マウスを接続されていない可能性があります。 高速化をオンになってまたはデバイスを削除するコンピューターに接続されているデバイスの再インストールを簡略化は、Windows オペレーティング システムはインストールされているデバイス ドライバーを保持が、ファントムとしてマークします。
+ファントムデバイスとは、以前にコンピューターに物理的にインストールされていたが、現在は存在していないデバイスのことです。 たとえば、ファントムデバイスは、プラグを抜いた USB マウスである場合があります。 オンまたはオフになっているコンピューターに接続されているデバイスの再インストールを高速化し、簡素化するために、Windows オペレーティングシステムではデバイスドライバーがインストールされたままになりますが、デバイスはファントムとしてマークされます。
 
-デバイスの種類のターゲットには、 **IsPhantom**属性 (と**IsAttached**属性に相当は**IsPhantom**= false)、ハードウェアの物理的なを指定します。存在します。 次の VBScript コード例は、コンピューターに物理的に存在するすべてのデバイスのコレクションを一覧表示します。
+デバイスの種類のターゲットには、ハードウェアの物理的な存在を指定する**IsPhantom**属性 (および**IsPhantom**= False に相当する**isattached**属性) が含まれます。 次の VBScript コード例では、コンピューターに物理的に存在するすべてのデバイスのコレクションを一覧表示します。
 
 ```cpp
 Set NonPhantomDevices = WDTF.DeviceDepot.Query ("IsAttached")
 ```
 
-複数の属性のキーワードを参照してください。 [SDEL トークン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+属性キーワードの詳細については、「 [Sdel トークン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
  
 

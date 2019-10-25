@@ -1,45 +1,45 @@
 ---
-Description: このトピックでは、により、特定のエラー ケースをテストするクライアント ドライバーを USB 3.0 ドライバー スタックの USB クライアント ドライバーの検証の機能について説明します。
+Description: このトピックでは、クライアントドライバーが特定のエラーケースをテストできるようにする、USB 3.0 ドライバースタックの USB クライアントドライバーの検証機能について説明します。
 title: USB クライアント ドライバー検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb9af177f28c9d5acb219f4a8b5ceb914bfc7c3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 73d146a00d277b466b82117f6a3896687d399303
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363882"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837547"
 ---
 # <a name="usb-client-driver-verifier"></a>USB クライアント ドライバー検証ツール
 
 
-このトピックでは、により、特定のエラー ケースをテストするクライアント ドライバーを USB 3.0 ドライバー スタックの USB クライアント ドライバーの検証の機能について説明します。
+このトピックでは、クライアントドライバーが特定のエラーケースをテストできるようにする、USB 3.0 ドライバースタックの USB クライアントドライバーの検証機能について説明します。
 
--   [USB クライアント ドライバーの検証機能とは](#what-is-the-usb-client-driver-verifier)
--   [USB クライアント ドライバーの検証機能を有効にする方法](#how-to-enable-the-usb-client-driver-verifier)
--   [USB クライアント ドライバーの検証ツールの構成設定](#configuration-settings-for-the-usb-client-driver-verifier)
+-   [USB クライアントドライバーの検証ツールとは](#what-is-the-usb-client-driver-verifier)
+-   [USB クライアントドライバーの検証ツールを有効にする方法](#how-to-enable-the-usb-client-driver-verifier)
+-   [USB クライアントドライバーの検証ツールの構成設定](#configuration-settings-for-the-usb-client-driver-verifier)
 
-## <a name="what-is-the-usb-client-driver-verifier"></a>USB クライアント ドライバーの検証機能とは
+## <a name="what-is-the-usb-client-driver-verifier"></a>USB クライアントドライバーの検証ツールとは
 
 
-*USB クライアント ドライバーの検証ツール*Windows 8 に含まれる、USB 3.0 ドライバー スタックの機能です。 検証を有効にすると、USB ドライバー スタックは失敗または、クライアント ドライバーによって実行される特定の操作を変更します。 そのようなエラー シミュレートできない場合がありますそれ以外の場合にエラー状態を検索し、後で、望ましくない結果につながることができます。 シミュレートされたエラーでは、ドライバーがエラーを適切に処理できることを確認する機会を提供します。 クライアントでは、エラー処理コードを使用したエラーを処理したり、異なるコード パスを練習することができます。
+*Usb クライアントドライバーの検証ツール*は、Windows 8 に含まれる usb 3.0 ドライバースタックの機能です。 検証ツールが有効になっていると、USB ドライバースタックが失敗するか、クライアントドライバーによって実行される特定の操作が変更されます。 これらのエラーは、検出が困難なエラー条件をシミュレートし、後で望ましくない結果を招く可能性があります。 シミュレートされたエラーにより、ドライバーがエラーを適切に処理できるようになります。 クライアントは、エラー処理コードを使用してエラーを処理したり、別のコードパスを実行したりすることができます。
 
-たとえば、クライアント ドライバーでは、一括エンドポイントの静的なストリーム間で I/O 操作をサポートしています。 検証ツールを使用するには、そのドライバーのさまざまなホスト コント ローラーでサポートされているストリームの数に関係なくロジックをストリームすることを確認の操作を行うことができます。 このシナリオをシミュレートするには、使用することができます、 **UsbVerifierStaticStreamCountOverride** (後述) を設定します。 ドライバーの呼び出しごとに[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))ホスト コント ローラーをサポートする静的なストリームの最大数を確認するのに、ルーチンが別の値を返します。
+たとえば、クライアントドライバーは、一括エンドポイントの静的ストリームによる i/o 操作をサポートします。 検証ツールを使用すると、さまざまなホストコントローラーでサポートされているストリームの数に関係なく、ドライバーのストリームロジックが動作することを確認できます。 このシナリオをシミュレートするには、 **UsbVerifierStaticStreamCountOverride**設定を使用します (後で説明します)。 ドライバーが[**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))を呼び出して、ホストコントローラーがサポートする静的ストリームの最大数を判断するたびに、ルーチンは異なる値を返します。
 
-**重要な**  USB クライアント ドライバーの検証ツールはさまざまな xHCI コント ローラーに対して、ドライバーのみをテストします。 チェーンの MDL サポートの不足など、本質的な 2.0 コント ローラー動作の一部をシミュレートします。 ただし、USB 2.0 コント ローラーと、クライアント ドライバーのテストし、同じの代わりとしてこのツールを使用する必要がありますお勧めします。
+**重要**  USB クライアントドライバーの検証ツールは、さまざまな xHCI コントローラーに対してドライバーをテストするだけです。 この例では、チェーン化された MDL サポートがないなど、2.0 コントローラーの固有の動作の一部をシミュレートしています。 ただし、USB 2.0 コントローラーでクライアントドライバーをテストする必要があります。また、このツールを同じように交換することはできません。
 
  
 
-Windows ハードウェア認定キットには、シミュレートされたテスト_ケースを実行する自動テストが含まれています。 詳細については、次を参照してください。 [USB (USBDEX) Verifier テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998558(v=vs.85))します。
+Windows ハードウェア認定キットには、シミュレートされたテストケースを実行する自動テストが含まれています。 詳細については、「 [USB (USBDEX) 検証](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998558(v=vs.85))機能のテスト」を参照してください。
 
-## <a name="how-to-enable-the-usb-client-driver-verifier"></a>USB クライアント ドライバーの検証機能を有効にする方法
+## <a name="how-to-enable-the-usb-client-driver-verifier"></a>USB クライアントドライバーの検証ツールを有効にする方法
 
 
-USB クライアント ドライバーの検証ツールを使用するにを実行する Windows 8 でターゲット コンピューターに有効にします。 ターゲット コンピューターには、xHCI コント ローラー、USB デバイスが接続されている必要があります。
+USB クライアントドライバーの検証ツールを使用するには、Windows 8 を実行しているターゲットコンピューターで有効にします。 ターゲットコンピューターには、USB デバイスが接続されている xHCI コントローラーが必要です。
 
-有効にすると、USB クライアント ドライバーの検証ツールが自動的に有効になって、 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)クライアント ドライバー用です。 また、このレジストリ エントリを設定して、検証機能を有効にできます。
+クライアントドライバーの[ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ツールを有効にすると、USB クライアントドライバーの検証ツールが自動的に有効になります。 または、このレジストリエントリを設定して、検証を有効にすることもできます。
 
-**注**  Enabling [Windows Driver Foundation (WDF) Verifier コントロール アプリケーション (WdfVerifier.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application) USB クライアント ドライバーの検証ツールが自動的に有効にできません。
+**注**  [Windows DRIVER Foundation (WDF) の検証コントロールアプリケーション (wdfverifier)](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)を有効にしても、USB クライアントドライバーの検証ツールは自動的に有効になりません。
 
  
 
@@ -53,14 +53,14 @@ HKEY_LOCAL_MACHINE
                   UsbVerifierEnabled (DWORD)
 ```
 
-**UsbVerifierEnabled**レジストリ エントリは、DWORD 値を受け取ります。 ときに**UsbVerifierEnabled**は 1 です。 USB クライアント ドライバーの検証機能が有効になります。 0 はそれを無効にします。 場合、 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)クライアント ドライバーが有効になって、 **UsbVerifierEnabled**が 0 の場合、USB クライアント ドライバー検証機能が無効になっています。
+**UsbVerifierEnabled**レジストリエントリには、DWORD 値を指定します。 **UsbVerifierEnabled**が1の場合、USB クライアントドライバーの検証ツールが有効になります。0を無効にします。 ドライバーの[検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)がクライアントドライバーに対して有効になっていて、 **UsbVerifierEnabled**が0の場合、USB クライアントドライバーの検証ツールは無効になります。
 
-## <a name="configuration-settings-for-the-usb-client-driver-verifier"></a>USB クライアント ドライバーの検証ツールの構成設定
+## <a name="configuration-settings-for-the-usb-client-driver-verifier"></a>USB クライアントドライバーの検証ツールの構成設定
 
 
-USB ドライバー スタックには呼び出すことによって、クライアント ドライバーによって割り当てられる翻訳がの追跡、検証機能を有効にすると、 **USBD\_xxxUrbAllocate**ルーチン (を参照してください[USB ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client))。 USB ドライバー スタックでその情報を使用してでのバグチェックが発生する場合は、クライアント ドライバーでは、任意 URB をリークで、 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。 その場合を使用して、 **! usbanalyze v**リークの原因を特定するコマンド。
+検証ツールが有効になっている場合、USB ドライバースタックは、 **USBD\_Xxx UrURBs 検索**ルーチン (「 [USB ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#client)」を参照) を呼び出すことによって、クライアントドライバーが割り当てたを追跡します。 クライアントドライバーが URB をリークした場合、USB ドライバースタックはその情報を使用して、[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)でバグチェックを行います。 その場合は、 **! usbanalyze-v**コマンドを使用して、リークの原因を特定します。
 
-さらに、必要に応じて、変更または特定のルーチンが失敗してどのくらいの頻度、ルーチンが失敗する必要がありますを指定する USB クライアント ドライバーの検証機能を構成できます。 で、検証機能を構成するには、次のようにレジストリ エントリを設定します。
+また、必要に応じて、USB クライアントドライバーの検証ツールを構成して、特定のルーチンを変更または失敗させたり、ルーチンが失敗する頻度を指定したりすることもできます。 検証ツールを構成するには、次のようにレジストリエントリを設定します。
 
 ```cpp
 HKEY_LOCAL_MACHINE
@@ -72,10 +72,10 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
-*&lt;USB クライアント ドライバーの検証設定&gt;* レジストリ エントリは、DWORD 値を受け取ります。
-追加、変更、または任意の設定を削除する場合は、デバイス設定を適用するシステムを再列挙する必要があります。
+レジストリエントリ *&gt;&lt;の USB クライアントドライバーの検証の設定*には、DWORD 値を指定します。
+設定を追加、変更、または削除する場合は、設定を適用するために、システムでデバイスを再列挙する必要があります。
 
-このテーブルは、可能な値を示しています。  *&lt;USB クライアント ドライバーの検証設定&gt;* します。 設定で指定されているクライアント ドライバーを適用する、**サービス**キー。
+次の表に、&lt;の*USB クライアントドライバーの検証ツールの設定&gt;* に使用できる値を示します。 設定は、**サービス**キーの下で指定されたクライアントドライバーに適用されます。
 
 <table>
 <colgroup>
@@ -85,123 +85,123 @@ HKEY_LOCAL_MACHINE
 </colgroup>
 <thead>
 <tr class="header">
-<th>USB クライアント ドライバーの検証の設定</th>
-<th>これらの使用可能な値のいずれかを選択します。</th>
-<th>これを使用すると、シミュレートしてください.</th>
+<th>USB クライアントドライバーの検証の設定</th>
+<th>次のいずれかの値を選択します。</th>
+<th>シミュレートに使用...</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailRegistration</strong></p>
-<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗します。</p>
+<p>クライアントドライバーによるこれらのルーチンの呼び出しに失敗します。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a></li>
 </ul></td>
 <td><ul>
-<li>0:設定を無効にします。</li>
-<li>1:呼び出しは常に失敗します。</li>
-<li><em>N</em>:1 の確率で呼び出しに失敗した/<em>N</em>ここで、 <em>N</em> 0x7FF に 1 の間の 16 進値です。 たとえば場合、 <em>N</em> 10。 呼び出しでは、10 回ごとに 1 回が失敗します。</li>
+<li>0: 設定は無効になっています。</li>
+<li>1: 呼び出しは常に失敗します。</li>
+<li><em>N</em>: 呼び出しは 1/<em>N</em>の確率で失敗します。ここで、 <em>n</em>は 1 ~ 0x7ff の16進数の値です。 たとえば、 <em>N</em>が10の場合、 この呼び出しは、10回呼び出すたびに失敗します。</li>
 </ul></td>
-<td><p><strong>クライアント ドライバーの登録に失敗しました。</strong></p>
-<p>基になるドライバー スタックの登録に、クライアント ドライバーの初期化タスクの 1 つです。 いくつかの後続の呼び出しで、登録が必要です。</p>
-<p>たとえば、クライアント ドライバーが呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)"> <strong>USBD_CreateHandle</strong> </a>登録します。 たとえば、ドライバーには、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装していないことが前提としていますのでご注意ください。 ルーチンがエラー NTSTATUS コードを返した場合、ドライバーできます誤ってエラーを無視して USBD 無効なハンドルを使用して、後続の呼び出しを続行します。</p>
-<p>設定を使用すると、コード パスの障害をテストすることができるため、呼び出しが失敗することができます。</p>
-<p>登録に失敗したときに、クライアント ドライバーの動作が必要です。</p>
+<td><p><strong>クライアントドライバーの登録に失敗した。</strong></p>
+<p>クライアントドライバーの初期化タスクの1つは、基になるドライバースタックに自身を登録することです。 以降の複数の呼び出しでは、登録が必要です。</p>
+<p>たとえば、クライアントドライバーは、登録のために<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a>を呼び出します。 たとえば、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装していないとします。 ルーチンがエラー NTSTATUS コードを返す場合、ドライバーは誤ってエラーを無視し、無効な USBD ハンドルを使用して後続の呼び出しに進むことができます。</p>
+<p>この設定を使用すると、失敗コードパスをテストできるように、呼び出しを失敗させることができます。</p>
+<p>登録が失敗したときにクライアントドライバーの動作が必要:</p>
 <ul>
-<li><p>ドライバーでは引き続き通常どおりに機能を必要はありません。</p></li>
-<li><p>ドライバーがシステム クラッシュが発生するかによってこのエラーを無視する選択が応答しなくなるいない必要があります。</p></li>
+<li><p>ドライバーは想定されていませんが、通常どおりに機能します。</p></li>
+<li><p>このエラーを無視するように選択することで、ドライバーがシステムのクラッシュを引き起こしたり応答しなくなったりすることはありません。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
-<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗した呼び出し元で GUID_USB_CAPABILITY_CHAINED_MDLS が成功したとき、 <em>CapabilityType</em>パラメーター。</p>
+<p>呼び出し元が<em>CapabilityType</em>パラメーターで GUID_USB_CAPABILITY_CHAINED_MDLS を渡すと、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul></td>
 <td><ul>
-<li>0:設定を無効にします。</li>
-<li>1:呼び出しは常に失敗します。</li>
-<li><em>N</em>:1 の確率で呼び出しに失敗した/<em>N</em>ここで、 <em>N</em> 0x7FF に 1 の間の 16 進値です。 たとえば場合、 <em>N</em> 10。 呼び出しでは、10 回ごとに 1 回が失敗します。</li>
+<li>0: 設定は無効になっています。</li>
+<li>1: 呼び出しは常に失敗します。</li>
+<li><em>N</em>: 呼び出しは 1/<em>N</em>の確率で失敗します。ここで、 <em>n</em>は 1 ~ 0x7ff の16進数の値です。 たとえば、 <em>N</em>が10の場合、 この呼び出しは、10回呼び出すたびに失敗します。</li>
 </ul></td>
-<td><p><strong>サポートされていないホスト コント ローラーとの通信には、MDLs がチェーンされています。</strong></p>
-<p>クライアント ドライバーに送信するチェーン MDLs (を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/using-mdls" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-mdls)">MDL</a>)、USB ドライバー スタックとホスト コント ローラーはそれらでサポートする必要があります。</p>
-<p>この設定では、クライアント ドライバーがサポートしていないホスト コント ローラーに接続されているデバイスに連鎖 MDL 要求を送信するときに実行されるコードをテストできます。 ホスト コント ローラーが連鎖 MDLs をサポートするかどうかに関係なく、呼び出しが失敗します。</p>
-<p>USB ドライバー スタック内のチェーンの MDLs サポートの詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to Send Chained MDLs](how-to-send-chained-mdls.md)">チェーン MDLs の送信方法</a>します。</p>
-<p>ホスト コント ローラーがサポートされていないときに必要なクライアント ドライバーの動作は、MDLs を連結します。</p>
+<td><p><strong>チェーン MDLs をサポートしていないホストコントローラーとの通信。</strong></p>
+<p>クライアントドライバーがチェーン MDLs ( <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/using-mdls" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-mdls)">MDL</a>を参照) を送信するためには、USB ドライバースタックとホストコントローラーがそれらをサポートしている必要があります。</p>
+<p>この設定を使用すると、クライアントドライバーがチェーンされている MDL 要求を、サポートされていないホストコントローラーに接続されているデバイスに送信したときに実行されるコードをテストできます。 ホストコントローラーがチェーン MDLs をサポートしているかどうかに関係なく、呼び出しは失敗します。</p>
+<p>USB ドライバースタックでのチェーン MDLs のサポートの詳細については、「<a href="how-to-send-chained-mdls.md" data-raw-source="[How to Send Chained MDLs](how-to-send-chained-mdls.md)">チェーン MDLs の送信方法</a>」を参照してください。</p>
+<p>ホストコントローラーでチェーン MDLs がサポートされていない場合は、クライアントドライバーの動作が必要です。</p>
 <ul>
-<li><p>I/O の転送を連鎖 MDLs を使用せず実行を継続、ドライバーが必要です。 これにより、ことを確認することも、これらのコント ローラーはサポートされないために、ドライバーが USB 2.0 ホスト コント ローラーで動作する MDLs をチェーンします。</p></li>
-<li><p>ドライバーがシステム クラッシュが発生するかによってこのエラーを無視する選択が応答しなくなるいない必要があります。</p></li>
+<li><p>ドライバーは、チェーン MDLs を使用せずに、引き続き i/o 転送を実行します。 また、このようなコントローラーでは、チェーン MDLs がサポートされていないため、ドライバーが USB 2.0 ホストコントローラーで動作することも確認してください。</p></li>
+<li><p>このエラーを無視するように選択することで、ドライバーがシステムのクラッシュを引き起こしたり応答しなくなったりすることはありません。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
-<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗した呼び出し元で GUID_USB_CAPABILITY_STATIC_STREAMS が成功したとき、 <em>CapabilityType</em>パラメーター。</p>
+<p>呼び出し元が<em>CapabilityType</em>パラメーターで GUID_USB_CAPABILITY_STATIC_STREAMS を渡すと、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul></td>
 <td><ul>
-<li>0:設定を無効にします。</li>
-<li>1:呼び出しは常に失敗します。</li>
-<li><em>N</em>:1 の確率で呼び出しに失敗した/<em>N</em>ここで、 <em>N</em> 0x7FF に 1 の間の 16 進値です。 たとえば場合、 <em>N</em> 10。 呼び出しには、10 回ごとに 1 回は失敗します。</li>
+<li>0: 設定は無効になっています。</li>
+<li>1: 呼び出しは常に失敗します。</li>
+<li><em>N</em>: 呼び出しは 1/<em>N</em>の確率で失敗します。ここで、 <em>n</em>は 1 ~ 0x7ff の16進数の値です。 たとえば、 <em>N</em>が10の場合、 この呼び出しは、10回呼び出すたびに失敗します。</li>
 </ul></td>
-<td><p><strong>静的なストリームをサポートしないホスト コント ローラーと通信します。</strong></p>
-<p>クライアント ドライバーの一括エンドポイント静的ストリーム間で I/O の転送を送信するためには、ホスト コント ローラーは、ストリームをサポートする必要があります。</p>
-<p>場合は、デバイスは、ストリームをサポートしないホスト コント ローラーに接続し、ドライバーがストリーム I/O の転送を実行して、それらの転送は失敗します。 この設定では、このようなエラーが発生した場合、コードをテストできます。</p>
-<p>ホスト コント ローラーは静的なストリームをサポートしていない場合、クライアント ドライバーの動作が必要です。</p>
+<td><p><strong>静的ストリームをサポートしていないホストコントローラーとの通信。</strong></p>
+<p>クライアントドライバーが一括エンドポイントの静的ストリームを介して i/o 転送を送信できるようにするには、ホストコントローラーでストリームがサポートされている必要があります。</p>
+<p>デバイスがストリームをサポートしていないホストコントローラーに接続されていて、ドライバーがストリーム i/o 転送を実行しようとすると、転送は失敗します。 この設定により、このようなエラーが発生した場合にコードをテストできます。</p>
+<p>ホストコントローラーで静的ストリームがサポートされていない場合は、クライアントドライバーの動作が必要です。</p>
 <ul>
-<li><p>クライアント ドライバーは、ストリームをサポートしていない xHCI コント ローラーを使用する場合、デバイスは、一括のストリームが有効なエンドポイントを使用せずに作業できる必要があります。</p></li>
-<li><p>ドライバーがシステム クラッシュが発生するかによってこのエラーを無視する選択が応答しなくなるいない必要があります。</p></li>
+<li><p>ストリームをサポートしていない xHCI コントローラーをクライアントドライバーが使用する場合は、ストリームが有効な一括エンドポイントを使用せずにデバイスが動作できる必要があります。</p></li>
+<li><p>このエラーを無視するように選択することで、ドライバーがシステムのクラッシュを引き起こしたり応答しなくなったりすることはありません。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierStaticStreamCountOverride</strong></p>
-受信した値を変更、 <em>OutputBuffer</em> GUID_USB_CAPABILITY_STATIC_STREAMS でこれらのルーチンへのクライアントの呼び出し時にパラメーター。
+クライアントが GUID_USB_CAPABILITY_STATIC_STREAMS を使用してこれらのルーチンを呼び出す場合に、 <em>Outputbuffer</em>パラメーターで受け取った値を変更します。
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul>
-<p><em>OutputBuffer</em>値は、ホスト コント ローラーをサポートする静的なストリームの最大数を示します。</p></td>
+<p><em>Outputbuffer</em>値は、ホストコントローラーがサポートする静的ストリームの最大数を示します。</p></td>
 <td><ul>
-<li>0:設定を無効にします。</li>
-<li>1:検証方法の選択、 <em>OutputBuffer</em>値をランダムにします。 この値は、ストレス テストのための便利な<em>OutputBuffer</em>値は繰り返されません、呼び出しは複数のバリエーションでテストします。</li>
-<li><p><em>N</em>:指定します、 <em>OutputBuffer</em>値。</p>
-<p>フラグが有効な場合<em>N</em>値、 <em>N</em> USB ドライバー スタックをサポートするストリームの最大数より小さくなければなりません。 そのため、このフラグを設定する前にする必要がありますが取得した正常な呼び出しによって実際の値。</p>
-<p>場合<em>N</em>が最大数よりも大きい、ストリームの設定は無視されます。</p></li>
+<li>0: 設定は無効になっています。</li>
+<li>1: 検証ツールは<em>Outputbuffer</em>値をランダムに選択します。 この値は、 <em>Outputbuffer</em>値が繰り返されず、呼び出しがより多くのバリエーションでテストされるため、ストレステストに役立ちます。</li>
+<li><p><em>N</em>: <em>outputbuffer</em>値を指定します。</p>
+<p>フラグが<em>n</em>値で有効になっている場合、 <em>n</em>は、USB ドライバースタックがサポートするストリームの最大数よりも少なくする必要があります。 したがって、このフラグを設定する前に、正常な呼び出しによって実際の値を取得する必要があります。</p>
+<p><em>N</em>がストリームの最大数よりも大きい場合、設定は無視されます。</p></li>
 </ul></td>
-<td><p><strong>ストリームの最大数の異なる値をサポートしており、さまざまなホスト コント ローラーとの通信をします。</strong></p>
-<p>この設定を使用するには、そのドライバーのさまざまなホスト コント ローラーでサポートされているストリームの数に関係なくロジックをストリームすることを確認の操作を行うことができます。</p>
-<p>I/O の転送に使用できるストリームの数は、ホスト コント ローラーをサポートするストリームの数によって制限されます。</p>
-<p>クライアント ドライバーで静的なストリームをサポートする方法については、次を参照してください。 <a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法</a>します。</p>
-<p>ホスト コント ローラーは、エンドポイントよりも少ないストリームをサポートしている場合、クライアント ドライバーの動作が必要です。</p>
+<td><p><strong>さまざまなホストコントローラーとの通信。それぞれが、ストリームの最大数の異なる値をサポートします。</strong></p>
+<p>この設定を使用すると、さまざまなホストコントローラーでサポートされているストリームの数に関係なく、ドライバーのストリームロジックが動作することを確認できます。</p>
+<p>I/o 転送に使用できるストリームの数は、ホストコントローラーがサポートするストリームの数によって制限されます。</p>
+<p>クライアントドライバーで静的ストリームをサポートする方法の詳細については、「 <a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">USB 一括エンドポイントで静的ストリームを開いて閉じる方法</a>」を参照してください。</p>
+<p>ホストコントローラーがエンドポイントよりも多くのストリームをサポートしている場合は、クライアントドライバーの動作が必要です。</p>
 <ul>
-<li><p>ストリーム数が少ないデータの転送を実行するクライアント ドライバーを選択できます。</p></li>
-<li><p>ドライバーがシステム クラッシュが発生するかによってこのエラーを無視する選択が応答しなくなるいない必要があります。</p></li>
+<li><p>クライアントドライバーは、ストリームの数を減らすことにより、データ転送を実行することを選択できます。</p></li>
+<li><p>このエラーを無視するように選択することで、ドライバーがシステムのクラッシュを引き起こしたり応答しなくなったりすることはありません。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailEnableStaticStreams</strong></p>
-<p>クライアント ドライバーの静的なストリームのオープン要求 (URB_FUNCTION_OPEN_STATIC_STREAMS) は失敗します。</p></td>
+<p>クライアントドライバーのオープンスタティックストリーム要求 (URB_FUNCTION_OPEN_STATIC_STREAMS) に失敗します。</p></td>
 <td><ul>
-<li>0:設定を無効にします。</li>
-<li>1:要求は常に失敗します。</li>
-<li><em>N</em>:1 の確率で、要求は失敗/<em>N</em>ここで、 <em>N</em> 0x7FF に 1 の間の 16 進値です。 たとえば場合、 <em>N</em> 10。 要求では、10 回ごとに 1 回が失敗します。</li>
+<li>0: 設定は無効になっています。</li>
+<li>1: 要求は常に失敗します。</li>
+<li><em>N</em>: 要求は、1/<em>N</em>の確率で失敗します。ここで、 <em>n</em>は 1 ~ 0x7ff の16進数の値です。 たとえば、 <em>N</em>が10の場合、 要求は、10回呼び出すたびに失敗します。</li>
 </ul>
 <div class="alert">
-<strong>注</strong>場合、開いている静的ストリーム要求が失敗した前回の呼び出し<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"> <strong>USBD_QueryUsbCapability</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"> <strong>WdfUsbTargetDeviceQueryUsbCapability</strong> </a>できませんでした。
+<strong>メモ</strong> <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a>への前回の呼び出しが失敗した場合、オープンスタティックストリーム要求は失敗します。
 </div>
 <div>
  
 </div></td>
-<td><p><strong>要求が静的なストリームをサポートするホスト コント ローラーとの通信は、その他の理由で失敗します。</strong></p>
-<p>たとえば、デバイスは、ストリームをサポートするホスト コント ローラーに接続されます。 クライアント ドライバーでは、ホスト コント ローラーでサポートされているストリームの最大数を超える数 (ストリームを開く) の要求を開いているストリームを送信します。 USB ドライバー スタックは、このような要求は失敗します。</p>
-<p>この設定を使用すると、エラー処理コードを開いているストリーム要求の失敗をテストできます。</p>
-<p>オープン ストリーム要求が失敗した場合、クライアント ドライバーの動作が必要です。</p>
+<td><p><strong>静的ストリームをサポートしているが、その他の理由により要求が失敗した場合のホストコントローラーとの通信。</strong></p>
+<p>たとえば、ストリームをサポートするホストコントローラーにデバイスが接続されているとします。 クライアントドライバーは、ホストコントローラーでサポートされているストリームの最大数を超える数 (オープンストリームのストリーム) を含むオープンストリーム要求を送信します。 このような要求は、USB ドライバースタックによって失敗します。</p>
+<p>この設定を使用すると、open streams 要求エラーのエラー処理コードをテストできます。</p>
+<p>オープンストリーム要求が失敗した場合のクライアントドライバーの動作:</p>
 <ul>
-<li><p>ドライバーでは引き続き通常どおりに機能を必要はありません。</p></li>
-<li><p>ドライバーがシステム クラッシュが発生するかによってこのエラーを無視する選択が応答しなくなるいない必要があります。</p></li>
+<li><p>ドライバーは想定されていませんが、通常どおりに機能します。</p></li>
+<li><p>このエラーを無視するように選択することで、ドライバーがシステムのクラッシュを引き起こしたり応答しなくなったりすることはありません。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -210,11 +210,11 @@ HKEY_LOCAL_MACHINE
  
 
 ## <a name="related-topics"></a>関連トピック
-[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)  
+[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)  
 [**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))  
-[USB 一括エンドポイントでのオープンとクローズの静的なストリームする方法](how-to-open-streams-in-a-usb-endpoint.md)  
-[連鎖 MDLs を送信する方法](how-to-send-chained-mdls.md)  
-[USB の診断結果とテスト ガイド](usb-driver-testing-guide.md)  
+[USB 一括エンドポイントで静的ストリームを開いて閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)  
+[チェーン MDLs を送信する方法](how-to-send-chained-mdls.md)  
+[USB 診断とテストガイド](usb-driver-testing-guide.md)  
 
 
 

@@ -3,19 +3,19 @@ title: メモリ セグメントの使用の初期化
 description: メモリ セグメントの使用の初期化
 ms.assetid: 8e4cf1dc-c428-4564-9a16-925e17e6d488
 keywords:
-- メモリ セグメント WDK の表示の初期化
-- GPU のアドレス空間 WDK の表示
-- ページング バッファー WDK の表示
-- セグメントの WDK の表示
-- アドレス空間 WDK の表示
+- メモリセグメント WDK 表示、初期化
+- GPU アドレス空間 WDK ディスプレイ
+- ページングバッファーの WDK 表示
+- セグメント WDK 表示
+- アドレス空間 WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 076280f0f858acc4b20b56486e4b0790496404a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 586c210fd48a3dec00e52ff74822b5eb8a2ff91d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385181"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840367"
 ---
 # <a name="initializing-use-of-memory-segments"></a>メモリ セグメントの使用の初期化
 
@@ -23,21 +23,21 @@ ms.locfileid: "67385181"
 ## <span id="ddk_initializing_use_of_memory_segments_gg"></span><span id="DDK_INITIALIZING_USE_OF_MEMORY_SEGMENTS_GG"></span>
 
 
-Windows Vista およびそれ以降 (WDDM)、ディスプレイ ドライバー モデルのコンテキストでのメモリのセグメントの記述、グラフィックス処理ユニット (GPU) のアドレス空間を使用するビデオ メモリ マネージャー。 メモリのセグメントは、汎用化し、ビデオ メモリ リソースを仮想化します。 ハードウェアをサポートするメモリの種類に応じてメモリ セグメントが構成されている (たとえば、フレーム バッファー メモリまたはシステム メモリの開口部)。
+メモリセグメントは、Windows Vista 以降 (WDDM) の表示ドライバーモデルのコンテキストで、ビデオメモリマネージャーに対するグラフィックス処理ユニット (GPU) アドレス空間を記述します。 メモリセグメントは、ビデオメモリリソースを一般化し、仮想化します。 メモリセグメントは、ハードウェアがサポートするメモリの種類 (たとえば、フレームバッファーメモリやシステムメモリアパーチャ) に従って構成されます。
 
-Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) が表示ミニポート ドライバーを呼び出してメモリ セグメントの使用方法を初期化する[ *DxgkDdiQueryAdapterInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)関数。 メモリのセグメントに関する情報を返すディスプレイ ミニポート ドライバーに出力するため、 *DxgkDdiQueryAdapterInfo*呼び出し、グラフィックス サブシステムでは、いずれかを指定します、 **DXGKQAITYPE\_QUERYSEGMENT**または**DXGKQAITYPE\_QUERYSEGMENT3**値、**型**のメンバー、 [ **DXGKARG\_QUERYADAPTERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)構造体。
+メモリセグメントの使用方法を初期化するために、Microsoft DirectX graphics カーネルサブシステム (Dxgkrnl) は、ディスプレイミニポートドライバーの[*DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)関数を呼び出します。 ディスプレイミニポートドライバーに*DxgkDdiQueryAdapterInfo*呼び出しからメモリセグメントに関する情報を返すように指示するには、グラフィックサブシステムで**DXGKQAITYPE\_Querysegment**または DXGKQAITYPE のいずれかを指定し **\_** [**Dxgkarg\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)構造体の**型**メンバーの QUERYSEGMENT3 値。
 
-グラフィックス サブシステム呼び出しディスプレイ ミニポート ドライバーの[ *DxgkDdiQueryAdapterInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)関数セグメント情報を 2 回クリックします。 最初の呼び出し*DxgkDdiQueryAdapterInfo*を取得しますが、ドライバーと 2 番目の呼び出しでセグメントの数がサポートされる各セグメントに関する詳細情報を取得します。 呼び出しで*DxgkDdiQueryAdapterInfo*、ドライバーのポイント、 **pOutputData**のメンバー [ **DXGKARG\_QUERYADAPTERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)に設定されている[ **DXGK\_QUERYSEGMENTOUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout) (ドライバー バージョンで Windows Display Driver Model (WDDM) 1.2 より前) の構造体、またはに設定[ **DXGK\_QUERYSEGMENTOUT3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3) (WDDM 1.2 およびそれ以降のドライバー) 用の構造体。
+グラフィックスサブシステムは、セグメント情報に対してディスプレイミニポートドライバーの[*DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)関数を2回呼び出します。 *DxgkDdiQueryAdapterInfo*の最初の呼び出しでは、ドライバーでサポートされているセグメントの数を取得し、2回目の呼び出しで各セグメントに関する詳細情報を取得します。 *DxgkDdiQueryAdapterInfo*の呼び出しでは、ドライバーは、 [**Dxgkarg\_queryadapterinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)の**Poutputdata**メンバーに[ **\_DXGK QUERYSEGMENTOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)構造体を設定します (Windows より前のドライバーバージョンの場合)。ドライバーモデル (WDDM) 1.2) を表示するか、 [**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)構造体 (wddm 1.2 以降のドライバー用) を設定します。
 
-最初の呼び出しで、 **pSegmentDescriptor**のメンバー [ **DXGK\_QUERYSEGMENTOUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout) (用、および WDDM 1.2 より前のドライバー バージョン) または[ **DXGK\_QUERYSEGMENTOUT3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3) (WDDM 1.2 およびそれ以降のドライバー) 用に設定されて**NULL**します。 ドライバーがのみ入力する必要があります、 **NbSegment**のメンバー **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**の数サポートされるセグメントの種類。 この番号では、値の数も示されます[ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor) (用、および WDDM 1.2 より前のドライバー バージョン) または[ **DXGK\_SEGMENTDESCRIPTOR3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3) (WDDM 1.2 とそれ以降のドライバー) の 2 番目の呼び出しからドライバーを必要とする構造体[ *DxgkDdiQueryAdapterInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo).
+最初の呼び出しでは、 [**DXGK\_QUERYSEGMENTOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)の**PSEGMENTDESCRIPTOR**メンバー (wddm 1.2 より前のドライバーバージョンの場合) または[**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3) (wddm 1.2 以降のドライバーの場合) が**NULL**に設定されます。 ドライバーは、サポートするセグメントの種類の数と共に、 **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**の**nbsegment**メンバーだけを入力する必要があります。 この番号は、いない[**DXGK\_SEGMENTDESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)の数 (wddm 1.2 より前のドライバーバージョンの場合) または[**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3) (wddm 1.2 以降のドライバーの場合) を示します。[*DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)への2回目の呼び出し。
 
-2 番目の呼び出しでは、ドライバーはのすべてのメンバーを入力する必要があります[ **DXGK\_QUERYSEGMENTOUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[ **DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3). 2 番目の呼び出しでは、ドライバーが設定配列のサイズ**NbSegment**の[ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)または[ **DXGK\_SEGMENTDESCRIPTOR3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)内の構造体、 **pSegmentDescriptor**のメンバー **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**ドライバーがサポートするセグメントに関する情報を使用します。
+2番目の呼び出しでは、ドライバーは[**DXGK\_QUERYSEGMENTOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)のすべてのメンバーに入力する必要があります。 2番目の呼び出しでは、PSegmentDescriptor の**DXGK**メンバー内の[**DXGK\_SEGMENTDESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)または[**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)構造体の**nbsegment**のサイズが、ドライバーによって配列に設定される必要があり **\_QUERYSEGMENTOUT**または**DXGK\_** 、ドライバーがサポートするセグメントに関する情報を QUERYSEGMENTOUT3 します。
 
-両方の呼び出しで[ *DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)、 **pInputData**のメンバー [ **DXGKARG\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)を指す、 [ **DXGK\_QUERYSEGMENTIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentin) AGP の開口部のプロパティと場所に関する情報を含む構造体。 AGP 開口部が使用できない場合、またはいずれかが存在するが、適切な GART ドライバーがインストールされていない場合は、AGP aperture に関する情報は、0 に設定されます。 かどうか AGP aperture が存在しない、ディスプレイのミニポート ドライバーいないはずの**pSegmentDescriptor**の配列[ **DXGK\_QUERYSEGMENTOUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[ **DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)AGP 型の開口部セグメントをサポートしていること。 AGP 型 aperture セグメントは、このような状況に示されているが、アダプターは初期化に失敗します。
+[*DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)の両方の呼び出しで、 [**Dxgkarg\_Queryadapterinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)の**Pinputdata**メンバーは[**DXGK\_QUERYSEGMENTIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentin)構造体を指します。これには、の場所とプロパティに関する情報が含まれています。AGP アパーチャ。 使用可能な AGP アパーチャがない場合、または、適切な GART ドライバーがインストールされていない場合は、AGP アパーチャに関する情報が0に設定されます。 AGP アパーチャが存在しない場合、ディスプレイミニポートドライバーは、 [**DXGK\_QUERYSEGMENTOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)の**pSegmentDescriptor**配列で、agp 型のアパーチャセグメントをサポートしていることを示す必要はありません。 このような状況で、AGP 型のアパーチャセグメントが示されている場合、アダプターは初期化に失敗します。
 
-初期化中に、メモリが十分にある、ので、ページング バッファーのメモリは、特定のセグメントから割り当てことができます。 ビデオ メモリ マネージャーで指定されたセグメントからページング バッファーのメモリを割り当て、 **PagingBufferSegmentId**のメンバー [ **DXGK\_QUERYSEGMENTOUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[ **DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)します。 ドライバーは、2 番目の呼び出しでページング バッファー セグメントの識別子を示します[ *DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)します。 ドライバーでページング バッファーを割り当てる必要があるバイト単位でサイズを指定する必要がありますも、 **PagingBufferSize**のメンバー **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**します。
+初期化中に、メモリが十分にあるため、ページングバッファー用のメモリは特定のセグメントから割り当てることができます。 ビデオメモリマネージャーは、 [**DXGK\_QUERYSEGMENTOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout)または[**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)の**PagingBufferSegmentId**メンバーに指定されたセグメントからページングバッファーにメモリを割り当てます。 ドライバーは、 [*DxgkDdiQueryAdapterInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)への2回目の呼び出しのページングバッファーセグメントの識別子を示します。 また、ドライバーでは、 **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**の**pagingbuffersize**メンバーのページングバッファーに割り当てるサイズ (バイト単位) も指定する必要があります。
 
-セグメントのメモリとページング バッファーの使用の詳細については、次を参照してください。[メモリ セグメントの処理](handling-memory-segments.md)と[ビデオ メモリ リソースをページング](paging-video-memory-resources.md)します。
+メモリセグメントおよびページングバッファーの操作の詳細については、「[メモリセグメントの処理](handling-memory-segments.md)」および「[ビデオメモリリソースのページング](paging-video-memory-resources.md)」を参照してください。
 
  
 

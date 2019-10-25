@@ -3,15 +3,15 @@ title: コンテキストの取得
 description: コンテキストの取得
 ms.assetid: e0e659e5-6f95-4378-8764-63d96c7d07d4
 keywords:
-- ファイル システム ミニフィルターの WDK のコンテキストを取得します。
+- コンテキスト WDK ファイルシステムミニフィルター、取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f644c53e895b7283e1cc72c8ec66a06b9e0c4ea6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65b5d74ddda725c48621620076973e2550ea0277
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365898"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841229"
 ---
 # <a name="getting-contexts"></a>コンテキストの取得
 
@@ -19,9 +19,9 @@ ms.locfileid: "67365898"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-呼び出すことで、コンテキストを取得できるミニフィルター ドライバーがオブジェクトのコンテキストを設定すると、 **FltGet***Xxx***コンテキスト**ここで、 *Xxx*コンテキスト型です。
+ミニフィルタードライバーによってオブジェクトのコンテキストが設定されると、 **Fltget***xxx***コンテキスト**を呼び出すことによってコンテキストを取得できます。ここで、 *Xxx*はコンテキストの種類です。
 
-ミニフィルター ドライバーを呼び出し、SwapBuffers サンプル ミニフィルター ドライバーから取得した次のコード例で[ **FltGetVolumeContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext)ボリューム コンテキストを取得します。
+次のコード例では、SwapBuffers サンプルミニフィルタードライバーを使用して、 [**Fltgetvolumecontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetvolumecontext)を呼び出してボリュームコンテキストを取得します。
 
 ```cpp
 status = FltGetVolumeContext(
@@ -34,7 +34,7 @@ if (volCtx != NULL) {
 }
 ```
 
-場合への呼び出し[ **FltGetVolumeContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext)は成功しますが、*コンテキスト*パラメーターは、呼び出し元のボリュームのコンテキストのアドレスを受け取ります。 **FltGetVolumeContext** 、参照カウントをインクリメント、*コンテキスト*ポインター。 したがって、このポインターは必要がなくなったら、ミニフィルター ドライバーする必要がありますリリース呼び出して[ **FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)します。
+[**Fltgetvolumecontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetvolumecontext)の呼び出しが成功した場合、*コンテキスト*パラメーターは呼び出し元のボリュームコンテキストのアドレスを受け取ります。 **Fltgetvolumecontext**は、*コンテキスト*ポインターの参照カウントをインクリメントします。 このため、このポインターが不要になった場合、ミニフィルタードライバーは[**FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)を呼び出して解放する必要があります。
 
  
 

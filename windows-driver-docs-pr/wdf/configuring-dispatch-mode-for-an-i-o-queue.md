@@ -3,56 +3,56 @@ title: I/O キューのディスパッチ モードの構成
 description: I/O キューのディスパッチ モードの構成
 ms.assetid: 7603c3fd-a4cb-4174-ad14-f57efedfe9de
 keywords:
-- WDK UMDF の同期
-- キューのディスパッチ モード WDK UMDF
-- WDK UMDF モードをディスパッチします。
-- WDK UMDF の I/O キュー
-- WDK UMDF キュー
-- シーケンシャルなディスパッチ モード WDK UMDF
-- 並列ディスパッチ モード WDK UMDF
-- 手動のディスパッチ モード WDK UMDF
+- WDK の同期の UMDF
+- キューディスパッチモード WDK UMDF
+- ディスパッチモード WDK UMDF
+- I/o キュー WDK UMDF
+- キュー WDK UMDF
+- シーケンシャルディスパッチモード WDK UMDF
+- パラレルディスパッチモード WDK UMDF
+- 手動ディスパッチモード WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 222910fa7091970277e1742372ddeb549428e66f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f09c0c4bda351144b1469778101523896b8ba907
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382881"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843645"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>I/O キューのディスパッチ モードの構成
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-アプリケーションからの I/O 要求が到着したときに、フレームワークは、適切な I/O キューの各要求を配置します。 ドライバーに要求を配信する方法とタイミング、ドライバーが I/O キューのディスパッチを構成する方法、および方法によって異なります、ドライバー[コールバック関数の同期を指定します](specifying-a-callback-synchronization-mode.md)します。 I/O キューが、PnP ともやり取りし、I/O を保持するために UMDF の電源管理サブシステムは、デバイスが適切な状態に到達するまでキューに要求します。
+アプリケーションからの i/o 要求が到着すると、フレームワークは各要求を適切な i/o キューに配置します。 要求がドライバーに配信される方法とタイミングは、ドライバーが i/o キューのディスパッチを構成する方法と、ドライバーが[コールバック関数の同期を指定](specifying-a-callback-synchronization-mode.md)する方法によって異なります。 また、i/o キューは、デバイスが適切な状態になるまで、UMDF の PnP および電源管理サブシステムとやり取りして、i/o 要求をキューに保持します。
 
-**注**   I/O キューのディスパッチ モードは関連していません、[同期モード](specifying-a-callback-synchronization-mode.md)します。 I/O キューのディスパッチの構成では、表示、要求をキャンセルするイベントのコールバック関数が同時に実行を制御する同期中に、任意の時点で処理するため、ドライバーが受け入れることができる要求の数を制御します。 ただし、操作のいくつかのモードは作成[ディスパッチと同期のモードを組み合わせること](combining-dispatch-and-synchronization-modes.md)します。
+I/o キューのディスパッチモードが[同期モード](specifying-a-callback-synchronization-mode.md)に関連していない   に**注意**してください。 I/o キューのディスパッチ構成では、ドライバーが特定の時点で処理を受け入れることができる要求の数を制御します。一方、同期は、要求を表示またはキャンセルするイベントコールバック関数の同時実行を制御します。 ただし、いくつかの操作モードは、[ディスパッチモードと同期モードを組み合わせる](combining-dispatch-and-synchronization-modes.md)ことによって作成されます。
 
  
 
-ドライバーを構成、ドライバーを呼び出すときの I/O キューのディスパッチ、 [ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドの既定のキューを構成するか、セカンダリ キューを作成します。 ドライバーから値のいずれかを指定できます、 [ **WDF\_IO\_キュー\_ディスパッチ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)で列挙型、 *DispatchType*パラメーターの**IWDFDevice::CreateIoQueue**ディスパッチ モードを識別します。 [I/O キュー オブジェクト](framework-i-o-queue-object.md)次のディスパッチ モードをサポートすることができます。
+ドライバーは、 [**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して既定のキューを構成するか、セカンダリキューを作成するときに、i/o キューのディスパッチを構成します。 ドライバーでは、 [**WDF\_IO\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)の値の1つを指定して、 **Iwdfdevice:: CreateIoQueue**の*DispatchType*パラメーターに\_ディスパッチ\_型の列挙型を指定して、ディスパッチモードを識別できます。 [I/o キューオブジェクト](framework-i-o-queue-object.md)は、次のディスパッチモードをサポートできます。
 
 -   シーケンシャル
 
-    使用してシーケンシャル ディスパッチ モードを指定、 **WdfIoQueueDispatchSequential**値。 このディスパッチ モードでは、キュー処理の状態では、ドライバーでは、一度に 1 つの要求のみが処理されるようにイベントを発生させます。 キューは、ドライバーは、その現在の要求または呼び出しの処理が完了するまでに、追加の要求を遅延、 [ **IWDFIoRequest::ForwardToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)メソッドを要求をキューに再登録します。 現在の要求が完了するか、転送、ときに、キューは、次の要求を提供するイベントを発生させます。
+    順次ディスパッチモードは、 **WdfIoQueueDispatchSequential**値を使用して指定します。 このディスパッチモードでは、処理状態のキューによってイベントが発生するので、ドライバーは一度に1つの要求のみを処理します。 キューは、ドライバーが現在の要求の処理を終了するか、 [**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)メソッドを呼び出して要求をキューへするまで、追加の要求をすべて延期します。 現在の要求が完了するか転送されると、キューは次の要求を提供するためにイベントを発生させます。
 
 -   Parallel
 
-    使用して並列ディスパッチ モードを指定、 **WdfIoQueueDispatchParallel**値。 このディスパッチ モードでは、キュー処理の状態では、I/O 要求は、ドライバーの準備が整ったとすぐにイベントを発生させます。 ドライバーは、I/O 要求を受け取る、ドライバーは、次の方法のいずれかで、I/O 要求を処理できます。
+    並列ディスパッチモードは、 **WdfIoQueueDispatchParallel**値を使用して指定します。 このディスパッチモードでは、i/o 要求がドライバーで使用できるようになるとすぐに、処理状態のキューによってイベントが発生します。 ドライバーは、i/o 要求を受信すると、次のいずれかの方法で i/o 要求を処理できます。
 
-    -   ドライバーがいずれかを呼び出し、 [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドが完了するにはI/O 要求直後。 ドライバーは、I/O 要求が無効です、これまで処理されることはできません、またはバッファーまたはデータがキャッシュからデータをコピーすることによって行うことができる場合すぐに I/O 要求を完了します。
-    -   ドライバーの呼び出し、 [ **IWDFIoRequest::ForwardToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue) I/O 要求をキューに再登録するメソッド。
-    -   ドライバーの呼び出し、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)下位レベルのドライバーに、I/O 要求を渡す方法です。
--   Manual
+    -   ドライバーは、 [**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドのいずれかを呼び出して、i/o 要求を直ちに完了します。 I/o 要求が無効であるか、サービスを提供できない場合、またはデータを格納しているバッファーまたはキャッシュからデータをコピーすることによって完了できる場合、ドライバーは i/o 要求を直ちに完了します。
+    -   ドライバーは、 [**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)メソッドを呼び出して、i/o 要求をキューへします。
+    -   ドライバーは、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、i/o 要求を下位レベルのドライバーに渡します。
+-   手動
 
-    使用して、手動のディスパッチ モードを指定、 **WdfIoQueueDispatchManual**値。 このディスパッチ モードでは I/O キューに自動的に通知が送信されません、ドライバー、キューに着信した要求。 ドライバーを呼び出す必要があります、 [ **IWDFIoQueue::RetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)を取得するメソッドは、キューから手動で要求します。 これは、ポーリング モデルです。
+    手動ディスパッチモードは、 **WdfIoQueueDispatchManual**値を使用して指定します。 このディスパッチモードでは、要求がキューに到着すると、i/o キューはドライバーに自動的に通知しません。 ドライバーは、 [**Iwdfioqueue:: RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)メソッドを呼び出して、キューから要求を手動で取得する必要があります。 これはポーリングモデルです。
 
-    UMDF バージョン 1.9 以降では場合に、ドライバーは、手動のディスパッチ モードを使用して呼び出すことができます[ **IWDFIoRequest2::Requeue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-requeue)のドライバーを取得、I/O キューの先頭に、I/O 要求を返す. 呼び出した後**IWDFIoRequest2::Requeue**、ドライバーの次回の呼び出し[ **IWDFIoQueue::RetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)キューに再登録要求を取得します。
+    UMDF バージョン1.9 以降では、ドライバーが手動ディスパッチモードを使用している場合、 [**IWDFIoRequest2:: キューへ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-requeue)を呼び出して、ドライバーによって取得された i/o キューの先頭に i/o 要求を返すことができます。 **IWDFIoRequest2:: キューへ**を呼び出すと、ドライバーの次の[**Iwdfioqueue:: RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)の呼び出しで、キューの要求が取得されます。
 
-すべてのディスパッチ モード、 [I/O キュー オブジェクト](framework-i-o-queue-object.md)を受け取るし、ドライバーが要求を処理するか、要求が取り消されるまで、要求を追跡します。
+すべてのディスパッチモードでは、ドライバーが要求を処理するか、要求が取り消されるまで、 [i/o キューオブジェクト](framework-i-o-queue-object.md)は要求を受信して追跡します。
 
-ドライバーが直列または並列ディスパッチ用のキューを構成した場合、フレームワークは、ドライバーの場合、ドライバー、キューを作成するか、既定のキューを構成します、ドライバーによって登録されているコールバック関数を使用して要求を通知します。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
+ドライバーがシリアルディスパッチまたはパラレルディスパッチのためにキューを構成した場合、ドライバーがキューを作成したとき、または既定のキューを構成したときに、ドライバーによって登録されたコールバック関数を介して、要求をドライバーに通知します。 詳細については、「 [I/o キューイベントコールバック関数](i-o-queue-event-callback-functions.md)」を参照してください。
 
  
 

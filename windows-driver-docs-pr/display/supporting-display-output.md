@@ -1,72 +1,72 @@
 ---
 title: ディスプレイ出力および ACPI イベントのサポート
-description: システム構成とデバイスの電源管理に包括的なアプローチは、ACPI の仕様に基づき、Windows に組み込まれます。
+description: システム構成とデバイス電源管理の包括的なアプローチは、ACPI 仕様に基づき、Windows に組み込まれています。
 ms.assetid: CD5BC59A-4C15-4111-BF4F-13DC04F6874F
 keywords:
-- ACPI は、WDK の表示を表示します。
-- ACPI ベースの表示のホット キー WDK の表示
-- ホット キーの WDK を表示します。
-- BIOS は、WDK を表示するコントロールを表示します。
-- スイッチの自動表示 WDK の表示
+- ACPI 表示 WDK ディスプレイ
+- ACPI ベースのディスプレイホットキー WDK ディスプレイ
+- ホットキー WDK 表示の表示
+- BIOS 表示コントロール WDK 表示
+- 自動表示スイッチ WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 582c40ac08c11be025d8acce0fefec233656a215
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac923e73d8aa7f13a69a59a9c0f2ee6982743fb5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355539"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825628"
 ---
 # <a name="supporting-display-output-and-acpi-events"></a>ディスプレイ出力および ACPI イベントのサポート
 
 
-システム構成とデバイスの電源管理に包括的なアプローチは、Advanced Configuration and Power Interface (ACPI) の仕様に基づき、Windows に組み込まれます。 Windows では、ドライバーでの構成と表示の出力デバイスの電源管理に使用できる機能をサポートします。 詳細については、上、ACPI 仕様を参照してください。、 [ACPI の web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)します。
+システム構成とデバイス電源管理の包括的なアプローチは、Advanced Configuration and Power Interface (ACPI) 仕様に基づいて、Windows に組み込まれています。 Windows では、ドライバーが出力デバイスを表示する構成と機能を管理するために使用できる機能をサポートしています。 詳細については、 [acpi web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)の acpi 仕様を参照してください。
 
-## <a name="span-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanbios-requirements-to-support-display-output-devices"></a><span id="BIOS_Requirements_to_Support_Display_Output_Devices"></span><span id="bios_requirements_to_support_display_output_devices"></span><span id="BIOS_REQUIREMENTS_TO_SUPPORT_DISPLAY_OUTPUT_DEVICES"></span>ディスプレイ デバイスの出力をサポートするための BIOS 要件
-
-
-ディスプレイのミニポート ドライバーまたはシステム BIOS サポート表示出力デバイス構成によって公開されている ACPI メソッド。 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event) ACPI イベントに関するディスプレイ ミニポート ドライバーに通知する関数が呼び出されます。 出力デバイス スイッチに、ユーザーがキーボード ショートカットを押したときになど、 **DxgkDdiNotifyAcpiEvent**関数を呼び出すと ACPI\_通知\_サイクル\_表示\_DXGK のホットキー通知と、要求が入力\_ACPI\_変更\_表示\_モード。 その結果、オペレーティング システムの呼び出し、 [ **DxgkDdiRecommendFunctionalVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendfunctionalvidpn)出力デバイスを選択した表示のクエリを実行する関数。
-
-Dispmprt.h では、ACPI 表示出力には、次のエイリアスが定義されています。
-
--   ACPI\_メソッド\_表示\_DOD - ディスプレイ アダプターにアタッチされているすべてのデバイスを列挙します。 統合されたコント ローラーは、出力デバイスの切り替えをサポートしている場合、このメソッドが必要です。 これは、DOD のエイリアス名\_ACPI 仕様によって定義されるメソッド。
--   ACPI\_メソッド\_表示\_DOS - は、システム ファームウェアが自動的にアクティブな表示出力を切り替え可能なであることを示します。 これは、SOD のエイリアス名\_ACPI 仕様によって定義されるメソッド。 許可されているパラメーターを次に示します。
-    -   ACPI\_ARG\_を有効にする\_スイッチ\_イベント。 システム ファームウェア切り替える必要がありますいない自動的にアクティブな状態では、出力デバイスを表示します。 代わりに、各ディスプレイ出力デバイスに関連付けられている状態変数に、必要な変更を保存し、表示の切り替えイベントの生成にする必要があります。 オペレーティング システムは、ACPI を呼び出すことによって、デバイスのアクティブな状態を照会できます\_メソッド\_出力\_DG メソッド。
-    -   ACPI\_ARG\_を有効にする\_自動\_スイッチ。 システム ファームウェアが、アクティブなを自動的に切り替える必要がある状態は、オペレーティング システムと対話することがなく、出力デバイスを表示します。 表示の切り替えイベントは生成されません。
-    -   ACPI\_ARG\_を無効にする\_スイッチ\_イベント。 状態システム ファームウェアには、任意のアクションは実行しないでください。つまり、出力デバイスを切り替えるもオペレーティング システムに通知します。 ACPI によって返される値\_メソッド\_出力\_DG メソッドはロックされています。
--   ACPI\_メソッド\_出力\_DC のディスプレイの状態を取得する出力デバイス。 これは、CSD のエイリアス名\_ACPI 仕様によって定義されるメソッド。
--   ACPI\_メソッド\_出力\_DG のディスプレイの状態を出力デバイスがアクティブかどうかを確認します。 これは、SGD のエイリアス名\_ACPI 仕様によって定義されるメソッド。
--   ACPI\_メソッド\_出力\_DSS - 設定の表示状態の出力デバイス アクティブまたは非アクティブにします。 これは、SSD のエイリアス名\_ACPI 仕様によって定義されるメソッド。 オペレーティング システムでは、ちらつきを回避するには、この操作を管理します。
--   ACPI\_メソッド\_表示\_GPD - ビデオ デバイスがブート時に投稿を判断するのには、CMOS エントリを照会します。 これは、DPG のエイリアス名\_ACPI 仕様によって定義されるメソッド。
--   ACPI\_メソッド\_表示\_SPD - は、ビデオ デバイスがブート時に投稿を決定する CMOS エントリを更新します。 これは、DPS のエイリアス名\_ACPI 仕様によって定義されるメソッド。
--   ACPI\_メソッド\_表示\_VPO - どのようなビデオのオプションの実装を決定します。 これは、OPV のエイリアス名\_ACPI 仕様によって定義されるメソッド。
-
-## <a name="span-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanexternal-asynchronous-events"></a><span id="External_Asynchronous_Events"></span><span id="external_asynchronous_events"></span><span id="EXTERNAL_ASYNCHRONOUS_EVENTS"></span>外部の非同期イベント
+## <a name="span-idbios_requirements_to_support_display_output_devicesspanspan-idbios_requirements_to_support_display_output_devicesspanspan-idbios_requirements_to_support_display_output_devicesspanbios-requirements-to-support-display-output-devices"></a><span id="BIOS_Requirements_to_Support_Display_Output_Devices"></span><span id="bios_requirements_to_support_display_output_devices"></span><span id="BIOS_REQUIREMENTS_TO_SUPPORT_DISPLAY_OUTPUT_DEVICES"></span>出力デバイスの表示をサポートする BIOS 要件
 
 
-オペレーティング システムは、表示の出力デバイスに影響する外部の非同期のイベントについて通知する必要があります。 次の通知と関連する要求の種類が Dispmprt.h で定義されているし、で使用される、 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数。
+システム BIOS によって公開されている表示ミニポートドライバーまたは ACPI メソッドは、出力デバイス構成を表示します。 [**DxgkDdiNotifyAcpiEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数は、ACPI イベントに関するミニポートドライバーをディスプレイに通知するために呼び出されます。 たとえば、ユーザーが出力デバイススイッチのキーボードショートカットを押すと、 **DxgkDdiNotifyAcpiEvent**関数は、ACPI\_通知\_サイクル\_\_のホットキー通知と要求の種類の DXGK に表示されます。\_ACPI\_変更\_\_モードを表示します。 その結果、オペレーティングシステムは、 [**DxgkDdiRecommendFunctionalVidPn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendfunctionalvidpn)関数を呼び出して、選択した表示出力デバイスを照会します。
 
--   ACPI\_通知\_サイクル\_表示\_ホットキー - は、ユーザーのサイクルの表示のキーボード ショートカットが押されたことをオペレーティング システムに通知します。
--   ACPI\_通知\_次\_表示\_ホットキー - は、ユーザーが次の表示のキーボード ショートカットを押されたことをオペレーティング システムに通知します。
--   ACPI\_通知\_PREV\_表示\_ホットキー - は、ユーザーが以前表示のキーボード ショートカットを押されたことをオペレーティング システムに通知します。
+ACPI 表示出力の次のエイリアスは、「Dispmprt. h」で定義されています。
 
-**注**前の通知は、キーボード ショートカット キーを押すと、ユーザーによるイベントの処理に依存します。
+-   ACPI\_方法\_\_DOD-ディスプレイアダプターに接続されているすべてのデバイスを列挙します。 統合コントローラーで出力デバイスの切り替えがサポートされている場合は、この方法が必要です。 これは、ACPI 仕様で定義されている DOD\_ メソッドのエイリアス名です。
+-   ACPI\_メソッド\_表示\_DOS-システムファームウェアがアクティブな表示出力を自動的に切り替えることができることを示します。 これは、ACPI 仕様で定義されている SOD\_ メソッドのエイリアス名です。 次に、許可されるパラメーターを示します。
+    -   ACPI\_ARG\_\_スイッチ\_イベントを有効にします。 システムファームウェアがアクティブな表示出力デバイスを自動的に切り替えることができないことを示します。 代わりに、それぞれの表示出力デバイスに関連付けられている状態変数に必要な変更を保存し、表示スイッチイベントを生成する必要があります。 オペレーティングシステムは、配布の\_DG メソッド\_出力する ACPI\_メソッドを呼び出すことによって、デバイスのアクティブな状態を照会できます。
+    -   ACPI\_ARG\_\_自動\_スイッチを有効にします。 システムファームウェアがオペレーティングシステムと対話することなく、アクティブな表示出力デバイスを自動的に切り替える必要があることを示します。 表示スイッチイベントは生成されません。
+    -   ACPI\_ARG\_\_スイッチ\_イベントを無効にします。 システムファームウェアが何の操作も実行してはいけないことを示します。つまり、出力デバイスを切り替えたり、オペレーティングシステムに通知したりすることはありません。 ACPI\_メソッド\_出力\_DG メソッドによって返された値はロックされています。
+-   ACPI\_方法\_出力\_DC-表示出力デバイスの状態を返します。 これは、ACPI 仕様で定義されている CSD\_ メソッドのエイリアス名です。
+-   ACPI\_方法\_出力\_DG-表示出力デバイスの状態がアクティブかどうかを確認します。 これは、ACPI 仕様で定義されている SGD\_ メソッドのエイリアス名です。
+-   ACPI\_方法\_出力\_DSS-ディスプレイ出力デバイスの状態をアクティブまたは非アクティブに設定します。 これは、ACPI 仕様で定義されている SSD\_ メソッドのエイリアス名です。 この操作は、オペレーティングシステムによって管理され、ちらつきを回避します。
+-   ACPI\_方法\_表示\_GPD-ブート時にどのビデオデバイスがポストされるかを判断するために、CMOS エントリを照会します。 これは、ACPI 仕様で定義されている DPG\_ メソッドのエイリアス名です。
+-   ACPI\_方法\_表示\_SPD-起動時にどのビデオデバイスがポストされるかを決定する CMOS エントリを更新します。 これは、ACPI 仕様で定義されている DPS\_ メソッドのエイリアス名です。
+-   ACPI\_METHOD\_DISPLAY\_VPO-実装されているビデオオプションを決定します。 これは、ACPI 仕様で定義されている OPV\_ メソッドのエイリアス名です。
 
- 
+## <a name="span-idexternal_asynchronous_eventsspanspan-idexternal_asynchronous_eventsspanspan-idexternal_asynchronous_eventsspanexternal-asynchronous-events"></a><span id="External_Asynchronous_Events"></span><span id="external_asynchronous_events"></span><span id="EXTERNAL_ASYNCHRONOUS_EVENTS"></span>外部非同期イベント
 
-ディスプレイのミニポート ドライバーがオペレーティング システムに加えることが要求の種類を次に示します。
 
--   DXGK\_ACPI\_変更\_表示\_モード - 要求モードを開始する変更を新しいアクティブなビデオ存在するネットワーク (VidPN) をお勧めします。
--   DXGK\_ACPI\_ポーリング\_表示\_ディスプレイ アダプターの子の接続をポーリングする要求の子。
+オペレーティングシステムは、出力デバイスの表示に影響する外部の非同期イベントについて通知を受ける必要があります。 次の通知および関連する要求の種類は、 [**DxgkDdiNotifyAcpiEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数で定義されています。
 
-**注**、以前の要求の値、 *AcpiFlags*パラメーターによって返される、 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数。
+-   ACPI\_通知\_サイクル\_表示\_ホットキー-ユーザーが サイクル表示のショートカットキーを押したことをオペレーティングシステムに通知します。
+-   ACPI\_通知\_次の\_表示\_ホットキー-ユーザーが次の表示のショートカットキーを押したことをオペレーティングシステムに通知します。
+-   ACPI\_通知\_前\_表示\_ホットキー-ユーザーが前の表示のキーボードショートカットを押したことをオペレーティングシステムに通知します。
+
+**メモ** 以前の通知は、ユーザーがキーボードショートカットを押したときに発生したイベントの処理に依存しています。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+ディスプレイミニポートドライバーがオペレーティングシステムに対して行うことができる要求の種類を次に示します。
+
+-   DXGK\_ACPI\_変更\_表示\_モード-新しい推奨されるアクティブなビデオの現在のネットワーク (VidPN) にモード変更を開始する要求。
+-   DXGK\_ACPI\_ポーリング\_表示アダプターの子の接続をポーリングする\_の子要求を表示します。
+
+**メモ** 前の要求は、 [**DxgkDdiNotifyAcpiEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数によって返される*AcpiFlags*パラメーターの値です。
+
+ 
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[パネルの統合ディスプレイの明るさコントロールをサポート](supporting-brightness-controls-on-integrated-display-panels.md)
+[統合された表示パネルでの明るさコントロールのサポート](supporting-brightness-controls-on-integrated-display-panels.md)
 
  
 

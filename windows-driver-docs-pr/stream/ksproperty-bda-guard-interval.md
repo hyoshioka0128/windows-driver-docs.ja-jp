@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_GUARD\_間隔
-description: クライアントを使用して、KSPROPERTY\_BDA\_ガード\_復調器ノードのガード間隔の設定を制御する間隔。
+title: KSK プロパティ\_BDA\_ガード\_INTERVAL
+description: クライアントは、KSK プロパティ\_BDA\_GUARD\_INTERVAL を使用して、demodulator ノードのガード間隔の設定を制御します。
 ms.assetid: 7c0c6c5e-94fd-4013-9778-d41568ae9f0b
 keywords:
-- KSPROPERTY_BDA_GUARD_INTERVAL ストリーミング メディア デバイス
+- KSPROPERTY_BDA_GUARD_INTERVAL ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7667081ba0e2191f9aaef93af4b91d9ef4618c61
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18fe020a72eae161a2b2f705b5563fabac75d12f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364864"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842142"
 ---
-# <a name="kspropertybdaguardinterval"></a>KSPROPERTY\_BDA\_GUARD\_間隔
+# <a name="ksproperty_bda_guard_interval"></a>KSK プロパティ\_BDA\_ガード\_INTERVAL
 
 
-クライアントを使用して、KSPROPERTY\_BDA\_ガード\_復調器ノードのガード間隔の設定を制御する間隔。
+クライアントは、KSK プロパティ\_BDA\_GUARD\_INTERVAL を使用して、demodulator ノードのガード間隔の設定を制御します。
 
 ## <span id="ddk_ksproperty_bda_guard_interval_ks"></span><span id="DDK_KSPROPERTY_BDA_GUARD_INTERVAL_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67364864"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67364864"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>GuardInterval</p></td>
+<td><p>Guシャード間隔</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "67364864"
 <a name="remarks"></a>注釈
 -------
 
-GuardInterval 列挙型から返される値は、ガード間隔の設定を識別します。
+Guシャード間隔列挙型から返された値は、ガード間隔の設定を識別します。
 
-**NodeId** KSP のメンバー\_ノード復調器ノードの識別子を指定します。
+KSP の**NodeId**メンバー\_node は、demodulator ノードの識別子を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ GuardInterval 列挙型から返される値は、ガード間隔の設定を識
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -87,9 +87,9 @@ GuardInterval 列挙型から返される値は、ガード間隔の設定を識
 ## <a name="see-also"></a>関連項目
 
 
-[**GuardInterval**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/guardinterval)
+[**Guシャード間隔**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/guardinterval)
 
-[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

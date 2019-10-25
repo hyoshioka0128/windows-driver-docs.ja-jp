@@ -3,16 +3,16 @@ title: Storport のキュー管理
 description: Storport のキュー管理
 ms.assetid: 29fddcac-abc9-4aa4-8485-56120805ae34
 keywords:
-- Storport ドライバー WDK、キューの管理
-- WDK Storport のキュー
+- Storport ドライバー WDK、キュー管理
+- WDK Storport をキューに置いてください
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f84c0dd1a69eab9e97f7150c9030eb0708d6c8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c883d3f0ccde0b12bae7f0cb390fcde787483cd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386118"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844458"
 ---
 # <a name="storport-queue-management"></a>Storport のキュー管理
 
@@ -20,21 +20,21 @@ ms.locfileid: "67386118"
 ## <span id="ddk_storport_queue_management_kg"></span><span id="DDK_STORPORT_QUEUE_MANAGEMENT_KG"></span>
 
 
-高パフォーマンス記憶域アダプターの機能を利用するには、ミニポート ドライバーは、自分のデバイスのキューの一時停止と再開の効率を最大化するための方法でこれらのキューを制御する必要があります。
+高パフォーマンスの記憶域アダプターの機能を利用するには、ミニポートドライバーがデバイスキューを管理する必要があります。これらのキューの一時停止と再開は、効率を最大化する方法で行う必要があります。
 
-SCSI ポート キュー モデルでは、キューの管理は、ポート、ドライバーの排他ドメインです。 Storport キュー モデルでは、ポート、ドライバーは、ミニポート ドライバーに大量のキューの管理制御を提供するいくつかのキュー管理サポート ルーチンを提供します。
+SCSI ポートキューモデルでは、キュー管理はポートドライバーの排他的ドメインです。 Storport キューモデルでは、ポートドライバーに複数のキュー管理サポートルーチンが用意されています。これにより、ミニポートドライバーは大量のキュー管理制御を行うことができます。
 
-Storport キュー モデルですべての要求は lun ごとのキューでポート ドライバーでキューに登録します。 拡張の SRB サポートのない論理ユニットごとに 255 未処理の要求の最大ことができます。 それ以外の場合、キューの深さは、使用可能なシステム リソースまたはアダプターの機能によってのみ制限されます。 キューの深さが設定された制限に達すると、Storport は未処理の要求ユニットの数が最大のキューを下回るまで、その論理単位にそれ以降の要求を保持します。
+Storport キューモデルでは、すべての要求は論理ユニットごとのキューのポートドライバーでキューに登録されます。 拡張 SRB をサポートしていない場合、各論理ユニットは最大255の未処理の要求を持つことができます。 それ以外の場合、キューの深さは、使用可能なシステムリソースまたはアダプターの機能によってのみ制限されます。 キューの深さに制限が設定されている場合、その論理ユニットに対する未処理の要求の数がキューの最大値を下回るまで、Storport はその論理ユニットに対してさらに要求を保持します。
 
-アダプターが持つことができます、未処理の要求の数に Storport から定義済みの制限はありません。 たとえば、255 のキューの深さで接続して論理ユニットを 55 でアダプターでした投稿 14,025 (55 x 255) の最大要求一度に。 ポート ドライバーのキューのモデルの説明については、次の図を参照してください。
+アダプターが持つことができる未処理の要求の数には、Storport からの定義済みの制限はありません。 たとえば、55論理ユニットが接続されているアダプタで、キューの深さが255の場合、一度に最大 14025 (55 x 255) 要求が送信される可能性があります。 ポートドライバーのキューモデルの説明については、次の図を参照してください。
 
-![ポート ドライバーのキューのモデルを示す図](images/queues.png)
+![ポートドライバーのキューモデルを示す図](images/queues.png)
 
-ドライバーのキューのモデルをポートします。
+ポートドライバーのキューモデル
 
-システムに、ミニポート ドライバーの呼び出し、アダプターと論理ユニットが両方の要求を受信できる状態にある場合、 [ **HwStorBuildIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)と[ **HwStorStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)ルーチンをこの順序で。
+アダプターと論理ユニットの両方で要求を受信する準備が整っている場合、システムはミニポートドライバーの[**HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio)ルーチンと[**HwStorStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_startio)ルーチンをこの順序で呼び出します。
 
-SCSI ポートとは異なりは、Storport は、ビジー状態のポート ドライバーに通知するミニポート ドライバーを許可します。 これらの通信は、論理ユニットまたはアダプターのいずれかの一時停止またはビジー状態のシグナルのミニポート ドライバーを許可する次の 8 つルーチンによって処理されます。
+SCSI ポートとは異なり、Storport はミニポートドライバーがポートドライバーにビジー状態の状態を通知することを許可します。 これらの通信は、次の8つのルーチンによって処理されます。これにより、論理ユニットまたはアダプターが一時停止中またはビジー状態のときにミニポートドライバーが通知を行うことができます。
 
 <table>
 <colgroup>
@@ -44,50 +44,50 @@ SCSI ポートとは異なりは、Storport は、ビジー状態のポート �
 <thead>
 <tr class="header">
 <th align="left">Storport ルーチン</th>
-<th align="left">実行されるアクション</th>
+<th align="left">実行されたアクション</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpausedevice" data-raw-source="[&lt;strong&gt;StorPortPauseDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpausedevice)"><strong>StorPortPauseDevice</strong></a></p></td>
-<td align="left"><p>一定の時間には、デバイスを停止します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportpausedevice" data-raw-source="[&lt;strong&gt;StorPortPauseDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportpausedevice)"><strong>StorPortPauseDevice</strong></a></p></td>
+<td align="left"><p>指定した期間だけデバイスを一時停止します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresumedevice" data-raw-source="[&lt;strong&gt;StorPortResumeDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresumedevice)"><strong>StorPortResumeDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportresumedevice" data-raw-source="[&lt;strong&gt;StorPortResumeDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportresumedevice)"><strong>StorPortResumeDevice</strong></a></p></td>
 <td align="left"><p>一時停止しているデバイスを再開します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpause" data-raw-source="[&lt;strong&gt;StorPortPause&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpause)"><strong>StorPortPause</strong></a></p></td>
-<td align="left"><p>アダプターを一定の時間に停止します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportpause" data-raw-source="[&lt;strong&gt;StorPortPause&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportpause)"><strong>StorPortPause</strong></a></p></td>
+<td align="left"><p>指定した期間だけアダプターを一時停止します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresume" data-raw-source="[&lt;strong&gt;StorPortResume&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresume)"><strong>StorPortResume</strong></a></p></td>
-<td align="left"><p>一時停止中のアダプターを再開します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportresume" data-raw-source="[&lt;strong&gt;StorPortResume&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportresume)"><strong>StorPortResume</strong></a></p></td>
+<td align="left"><p>一時停止しているアダプターを再開します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy" data-raw-source="[&lt;strong&gt;StorPortDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy)"><strong>StorPortDeviceBusy</strong></a></p></td>
-<td align="left"><p>いることをデバイス ビジー デバイスのキューが指定された数の I/O 要求を完了するまで。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportdevicebusy" data-raw-source="[&lt;strong&gt;StorPortDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportdevicebusy)"><strong>StorPortDeviceBusy</strong></a></p></td>
+<td align="left"><p>デバイスキューが指定された数の i/o 要求を完了するまで、デバイスがビジー状態になるようにします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdeviceready" data-raw-source="[&lt;strong&gt;StorPortDeviceReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdeviceready)"><strong>StorPortDeviceReady</strong></a></p></td>
-<td align="left"><p>もう一度要求を受信する準備がビジー状態のデバイスを確認します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportdeviceready" data-raw-source="[&lt;strong&gt;StorPortDeviceReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportdeviceready)"><strong>StorPortDeviceReady</strong></a></p></td>
+<td align="left"><p>ビジー状態のデバイスで要求を再度受信できるようにします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportbusy" data-raw-source="[&lt;strong&gt;StorPortBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportbusy)"><strong>StorPortBusy</strong></a></p></td>
-<td align="left"><p>アダプター ビジー状態までように指定された数の I/O 要求が完了します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportbusy" data-raw-source="[&lt;strong&gt;StorPortBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportbusy)"><strong>StorPortBusy</strong></a></p></td>
+<td align="left"><p>指定された数の i/o 要求を完了するまで、アダプターがビジー状態になるようにします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportready" data-raw-source="[&lt;strong&gt;StorPortReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportready)"><strong>StorPortReady</strong></a></p></td>
-<td align="left"><p>もう一度要求を受信する準備がビジー状態のアダプターを確認します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportready" data-raw-source="[&lt;strong&gt;StorPortReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportready)"><strong>StorPortReady</strong></a></p></td>
+<td align="left"><p>ビジー状態のアダプターで要求を再度受信できるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-デバイスが一時停止またはビジー状態の間は、ポート ドライバーなし要求をデバイスに送信します。 ミニポート ドライバーがビジー状態で要求が完了したかどうか (SRB\_状態\_ビジーまたは SCSISTAT\_ビジー)、ポート ドライバーは、不特定数の要求が失敗するまでの時間を要求を再試行またはが完了します。
+デバイスが一時停止中またはビジー状態のとき、ポートドライバーはデバイスに要求を送信しません。 ミニポートドライバーが、ビジー状態の要求 (SRB\_STATUS\_BUSY または SCSISTAT\_BUSY) を完了した場合、ポートドライバーは要求が失敗するか、完了するまで無期限に要求を再試行します。
 
-SCSI ポートのキューのモデルでは使用できないキューの明示的な管理のルーチンのセットを提供するだけでなく、Storport キュー モデルは、SCSI ポートを使用する暗黙的なキュー管理ルーチンを使用しません。 具体的には、 **NextRequest**と**NextLuRequest**通知は無視されます。
+SCSI ポートキューモデルでは使用できない一連の明示的なキュー管理ルーチンを指定するだけでなく、Storport キューモデルでは、SCSI ポートが使用する暗黙的なキュー管理ルーチンは使用しません。 特に、 **nextrequest**と**nextlurequest**の通知は無視されます。
 
  
 

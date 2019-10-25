@@ -4,37 +4,37 @@ description: NDIS がアイドル状態のネットワーク アダプターを�
 ms.assetid: 1FF01B0B-9826-4467-8071-D26CA5E5EF4F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3603e7cf60020b438276247f05a12432a06e20
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d67604b557349bb0446fc32b4293064b0db9403
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842543"
 ---
 # <a name="how-ndis-detects-idle-network-adapters"></a>NDIS がアイドル状態のネットワーク アダプターを検出する方法
 
 
-ミニポート ドライバーが有効にした後、選択的 NDIS を中断し、そのハンドラー関数を登録、NDIS は、次のように、ネットワーク アダプターの I/O アクティビティを監視します。
+ミニポートドライバーによって NDIS のセレクティブサスペンドが有効になり、そのハンドラー機能が登録されると、NDIS は次のようにネットワークアダプターの i/o アクティビティを監視します。
 
--   NDIS ミニポート ドライバーを経由して登録される I/O ハンドラー関数の呼び出しの監視、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)と[ **NDIS\_ミニポート\_PNP\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)構造体。 たとえば、ミニポート ドライバーへの呼び出しの監視 NDIS [ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)または[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)をドライバーがパケットの I/O アクティビティに含まれるかどうかを判断します。
+-   NDIS は、ミニポートドライバーが[**ndis\_ミニポート\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics) [ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)\_ドライバーによって登録する i/o ハンドラー関数への呼び出しを監視します。構成. たとえば、NDIS はミニポートドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)または[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)の呼び出しを監視して、ドライバーがパケット i/o アクティビティに関係しているかどうかを判断します。
 
--   NDIS の呼び出しを監視することも[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)と[ **NdisDirectOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdirectoidrequest)プロトコル ドライバーに関連して行われます。
+-   また、プロトコルドライバーによって行われた[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)と[**NdisDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdirectoidrequest)の呼び出しも監視します。
 
-    **注**  NDIS はそれらのオブジェクトの NDIS によって直接処理されない識別子 (OID) 要求を基になるミニポート ドライバーのみを監視します。
+    **注**  ndis は、ndis によって直接処理されない、基になるミニポートドライバーに対するオブジェクト識別子 (OID) 要求のみを監視します。
 
      
 
-NDIS は、ネットワーク アダプターがアイドルの場合は、アイドル状態のタイムアウト期間のアダプターのすべてのアクティビティが検出されないことを判断します。 このタイムアウト期間がの値で指定された、  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードの詳細については、次を参照してください。 [NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)します。
+NDIS は、アイドルタイムアウト期間のアダプターのアクティビティが検出されない場合に、ネットワークアダプターがアイドル状態であると判断します。 このタイムアウト期間の期間は、 **\*SSIdleTimeout**標準化された INF キーワードの値によって指定されます。 このキーワードの詳細については、「 [NDIS 選択的中断の標準化](standardized-inf-keywords-for-ndis-selective-suspend.md)された INF キーワード」を参照してください。
 
-ネットワーク アダプターがアイドル状態になると後、選択的 NDIS 開始は操作を中断します。 この操作で低電力状態に遷移することによって、ネットワーク アダプターが中断されます。
+ネットワークアダプターがアイドル状態になると、NDIS はセレクティブサスペンド操作を開始します。 この操作を実行すると、ネットワークアダプターが低電力状態に移行することによって中断されます。
 
-NDIS 開始この選択的ミニポート ドライバーにアイドル状態の通知を発行して、操作を中断します。 NDIS は、ドライバーの呼び出しによって[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数。 ミニポート ドライバーはこの通知を処理する方法の詳細については、次を参照してください。 [、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)します。
+NDIS は、ミニポートドライバーにアイドル通知を発行することによって、このセレクティブサスペンド操作を開始します。 NDIS は、ドライバーの[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数を呼び出すことによってこれを行います。 ミニポートドライバーがこの通知を処理する方法の詳細については、「 [NDIS セレクティブサスペンドアイドル通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)」を参照してください。
 
-NDIS ドライバーをオーバーレイからネットワーク アダプターへの I/O 要求が発行されることを検出した場合、またはアダプターをウェイク アップ イベントを通知する場合は、NDIS はアイドル状態の通知をキャンセルします。 NDIS ミニポート ドライバーを呼び出すことによっては[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)ハンドラー関数。
+NDIS がネットワークアダプターへの i/o 要求が、オーバーレイドライバーから発行されていることを検出した場合、またはアダプターがウェイクアップイベントを通知した場合、NDIS はアイドル状態の通知をキャンセルします。 NDIS は、ミニポートドライバーの[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)ハンドラー関数を呼び出すことによってこれを行います。
 
-NDIS がアイドル状態の通知をキャンセルする方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)します。
+NDIS がアイドル状態の通知をキャンセルする方法の詳細については、「 [ndis の選択的中断のアイドル通知を取り消す](canceling-the-ndis-selective-suspend-idle-notification.md)」を参照してください。
 
-ミニポート ドライバーがアイドル状態の通知を完了する方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知の完了](completing-the-ndis-selective-suspend-idle-notification.md)します。
+ミニポートドライバーがアイドル状態の通知を完了する方法の詳細については、「 [NDIS の選択的中断のアイドル通知を完了](completing-the-ndis-selective-suspend-idle-notification.md)する」を参照してください。
 
  
 

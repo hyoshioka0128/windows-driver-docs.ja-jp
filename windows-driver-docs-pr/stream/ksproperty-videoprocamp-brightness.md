@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ビデオ プロシージャ アンプ\_明るさ
-description: KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティは、明るさの設定を制御します。 このプロパティは省略可能です。
+title: KSK プロパティ\_VIDEOPROCAMP\_輝度
+description: KSK プロパティ\_VIDEOPROCAMP\_輝度プロパティは、明るさの設定を制御します。 このプロパティは省略可能です。
 ms.assetid: 8b099ff1-e64a-4723-9834-8a42450bebd4
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS ストリーミング メディア デバイス
+- KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe3b9c1acb3526b2e13209890e07c6d54f57916a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2065eea045993ffb160142c9f0753f9ba0a89561
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381963"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844809"
 ---
-# <a name="kspropertyvideoprocampbrightness"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_明るさ
+# <a name="ksproperty_videoprocamp_brightness"></a>KSK プロパティ\_VIDEOPROCAMP\_輝度
 
 
-KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティは、明るさの設定を制御します。 このプロパティは省略可能です。
+KSK プロパティ\_VIDEOPROCAMP\_輝度プロパティは、明るさの設定を制御します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_videoprocamp_brightness_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、カメラの明るさの設定を指定する LONG が。 この値は、NTSC ソースの 100 倍して切る単位で表されます。 NTSC 以外のソースでは、ユニットと非表示を表す 0 から 10000 の純粋な空白を表す任意、です。
+プロパティ値 (操作データ) は、カメラの明るさの設定を指定する LONG です。 この値は、NTSC ソースの場合、IRE 単位で100を乗算した値になります。 NTSC 以外のソースの場合、単位は任意であり、0は、純粋な白を表す、ブランキングと1万を表します。
 
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_S 構造体を明るさを指定します。
+VIDEOPROCAMP\_S 構造体\_KSK プロパティの**値**メンバーは、明るさを指定します。
 
-明るさは、黒のレベルとも呼ばれます。 明るさの設定を変更するすべての輝度値に対して均等に全体のビデオ信号を移動します。
+明るさは、黒のレベルとも呼ばれます。 明るさの設定を変更すると、すべての明るさの値についてビデオ信号全体が均等に移動します。
 
-すべてのビデオ キャプチャ ミニドライバーには、このプロパティの値を範囲と既定値を定義する必要があります。 必要な範囲は +10000 を-10000 である必要があります。 既定値は 750 (7.5 切る) である必要があります。
+すべてのビデオキャプチャミニドライバーで、このプロパティの範囲と既定値を定義する必要があります。 必要な範囲は、-1万 ~ + 1万である必要があります。 既定値は 750 (7.5 IRE) である必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -83,7 +83,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -91,9 +91,9 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ビデオ プロシージャ アンプ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSK プロパティ\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

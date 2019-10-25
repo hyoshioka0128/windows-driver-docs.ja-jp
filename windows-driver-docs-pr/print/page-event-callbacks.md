@@ -3,20 +3,20 @@ title: ページ イベント コールバック
 description: ページ イベント コールバック
 ms.assetid: 891f62ec-d009-42c8-8143-73bfe737a946
 keywords:
-- WDK CPSUI のコールバック関数
-- 共通のプロパティ シートのユーザー インターフェイスの WDK の印刷、コールバック
-- CPSUI WDK の印刷、コールバック
-- WDK プロパティ シートのページを印刷するコールバック
-- ページ イベントのコールバックを WDK CPSUI
-- イベントのコールバック WDK CPSUI
+- コールバック関数 WDK CPSUI
+- 共通プロパティシートのユーザーインターフェイス WDK print、コールバック
+- CPSUI WDK print、コールバック
+- プロパティシートページの WDK 印刷、コールバック
+- ページイベントのコールバックの WDK CPSUI
+- イベントコールバック WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eba6807d721e6a537638c97ef38dd3f911c7e5e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a440a4f5ee9910ae982304c6739447fffcf4f4c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360718"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845048"
 ---
 # <a name="page-event-callbacks"></a>ページ イベント コールバック
 
@@ -24,13 +24,13 @@ ms.locfileid: "67360718"
 
 
 
-ユーザー プロパティ シート ページが、オペレーティング システムは、フォーカスを変更または変更された値としてこのようなウィンドウのイベントの通知を送信します。 CPSUI アプリケーションがページのウィンドウのイベントの通知を受信する方法は、アプリケーションのページの定義方法によって異なります。
+ユーザーがプロパティシートページを操作すると、操作システムは、変更されたフォーカスまたは変更された値としてそのようなウィンドウイベントの通知を送信します。 CPSUI アプリケーションがページのウィンドウイベントの通知を受信する方法は、アプリケーションでページがどのように定義されているかによって異なります。
 
--   使用して、ページが定義された場合、 [CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)を指定できます、 [CPSUI メッセージ ハンドラー](cpsui-message-handler.md)。
+-   [CPSUI が提供するページとテンプレート](cpsui-supplied-pages-and-templates.md)を使用してページが定義されている場合は、 [CPSUI メッセージハンドラー](cpsui-message-handler.md)を指定できます。
 
--   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、次を参照してください。 [ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)します。
+-   CPSUI で提供されていないカスタマイズされたページをアプリケーションで作成した場合は、ダイアログボックスの手順を提供する必要があります。 詳細については、「[ダイアログボックスのプロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)」を参照してください。
 
-呼び出すときにページ イベントのコールバックのアドレスを CPSUI CPSUI アプリケーション提供、 [ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)関数。
+CPSUI アプリケーションは、 [**ComPropSheet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet)関数を呼び出すときに、ページイベントコールバックのアドレスを CPSUI に提供します。
 
  
 

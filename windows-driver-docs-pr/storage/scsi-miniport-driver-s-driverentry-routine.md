@@ -6,18 +6,18 @@ keywords:
 - DriverEntry WDK storage
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7974ccb2076eb603466d357878ab92c192506f
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 5eba3fdcc63b2efe61b6a69ce76db741f0461bfe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252462"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842681"
 ---
 # <a name="scsi-miniport-drivers-driverentry-routine"></a>SCSI ミニポート ドライバーの DriverEntry ルーチン
 
 **Driverentry**ルーチンは、ほとんどの Microsoft Windows カーネルモードドライバーおよびすべての SCSI ミニポートドライバーの最初のエントリポイントです。 ミニポートドライバーの[**Driverentry**](driverentry-of-scsi-miniport-driver.md)ルーチンは、pvoid 型の2つの入力引数を使用して呼び出され、次の操作を行う必要があります。
 
-1. スタック上の[HW_INITIALIZATION_DATA (SCSI)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)構造体をゼロで初期化します。
+1. スタック上の[HW_INITIALIZATION_DATA (SCSI)](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_hw_initialization_data)構造体をゼロで初期化します。
 
 2. **Hwinitializationdatasize**メンバーを**sizeof**(HW_INITIALIZATION_DATA) に設定します。
 
@@ -37,4 +37,4 @@ ms.locfileid: "72252462"
 
 4. レガシミニポートドライバーでは、ドライバーによって決定された、ミニポートドライバーの*HwScsiFindAdapter*ルーチンが使用するコンテキストデータを設定します。
 
-5. **Driverentry**ルーチンに入力されたポインター、入力された HW_INITIALIZATION_DATA のアドレス、コンテキストデータのアドレス (存在する場合) を使用して、 [**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)を呼び出します。
+5. **Driverentry**ルーチンに入力されたポインター、入力された HW_INITIALIZATION_DATA のアドレス、コンテキストデータのアドレス (存在する場合) を使用して、 [**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)を呼び出します。

@@ -4,29 +4,29 @@ description: パケット結合受信フィルター
 ms.assetid: B5C17A9D-A495-4A3D-B53E-B10F53C732D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9c4c66330163114f689af403550fab6a023039
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 202b0cb15a76efe286058b3106b3c76ae2c36cda
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378662"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843719"
 ---
 #  <a name="packet-coalescing-receive-filters"></a>パケット結合受信フィルター
 
 
-NDIS 6.30、以降[NDIS 受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)パケットの結合をサポートするために拡張されています。 パケットの結合の場合は、各受信フィルターでは、次の項目を定義します。
+NDIS 6.30 以降では、パケット合体をサポートするために[ndis 受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)が拡張されています。 パケット合体の受信フィルターはそれぞれ、次のものを定義します。
 
--   ユーザー データグラム プロトコル (UDP) ヘッダーのメディア アクセス制御 (MAC) のヘッダーまたは転送先ポートの送信先アドレスなどのパケットのさまざまなプロトコル ヘッダー内のフィールドのセット。
+-   パケットのさまざまなプロトコルヘッダー内のフィールドのセット。たとえば、メディアアクセスコントロール (MAC) ヘッダーの宛先アドレスや、ユーザーデータグラムプロトコル (UDP) ヘッダーの宛先ポートなどです。
 
--   合体受信フィルターに一致するパケットがネットワーク アダプターによって結合された最大時間。 アダプターでは、この値を使用して、アダプターのハードウェアのタイマーの有効期限値の設定。 タイマーが満了するとすぐに、アダプターは、ミニポート ドライバーは、結合されたパケットを処理できるように、ホストを中断する必要があります。
+-   結合受信フィルターに一致するパケットがネットワークアダプターによって結合される最大時間。 アダプターは、この値を使用して、アダプターのハードウェアタイマーの有効期限の値を設定します。 タイマーが期限切れになると、アダプターはホストを中断して、ミニポートドライバーが結合されたパケットを処理できるようにする必要があります。
 
-    **注**  受信フィルターに一致する最初のパケットを結合すると、タイマーが起動、ネットワーク アダプターをリセットして、タイマーを再起動することがなく受信フィルターに一致する追加のパケットを結合する必要があります。
+    受信フィルターに一致する最初のパケットが結合され、タイマーが開始されるとすぐに、ネットワークアダプターは、タイマーをリセットしたり再起動したりせずに、受信フィルターに一致する追加のパケットを結合する必要があります **。  **
 
      
 
-ドライバーは、プロトコルとフィルター ドライバーなどの後続パケット結合ダウンロード受信ミニポート ドライバーにフィルターのオブジェクト識別子 (OID) のセット要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 詳細については、次を参照してください。[パケット結合受信フィルターの設定](setting-packet-coalescing-receive-filters.md)します。
+プロトコルやフィルタードライバーなどのその他のドライバーでは、オブジェクト識別子 (OID) セットの Oid 要求を発行することによって、ミニポートドライバーにパケット合体受信フィルターをダウンロードします。これにより、 [\_フィルター\_設定された\_受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)を適用します。 詳細については、「[パケット合体受信フィルターの設定](setting-packet-coalescing-receive-filters.md)」を参照してください。
 
-ドライバーの後続パケット結合クエリを受け取ることもフィルター ミニポート ドライバーをダウンロードします。 上にあるドライバーでは、これを行うの OID メソッド要求を発行して[OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)ミニポート ドライバーにします。 詳細については、次を参照してください。[クエリを実行するパケット結合受信フィルター](querying-packet-coalescing-receive-filters.md)します。
+それまでのドライバーは、ミニポートドライバーにダウンロードされたパケット合体受信フィルターを照会することもできます。 これを行うには、oid の OID メソッド要求を発行して、 [\_列挙型\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)をミニポートドライバーに受信\_フィルターを\_します。 詳細については、「[パケット合体受信フィルターのクエリ](querying-packet-coalescing-receive-filters.md)」を参照してください。
 
  
 

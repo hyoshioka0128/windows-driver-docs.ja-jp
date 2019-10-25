@@ -1,47 +1,47 @@
 ---
 title: ドライバーの検証ツールのオプション
-description: Driver Verifier のオプションとルール クラス
+description: ドライバーの検証ツールのオプションと規則クラス
 ms.assetid: f251fe07-e68e-4d93-9aa5-9a0bc818756d
 keywords:
-- Driver Verifier の WDK、オプションの一覧
-- WDK の Driver Verifier のエラー
+- Driver Verifier WDK、オプションの一覧
+- エラー WDK ドライバーの検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d29282a78aa8705d4f6e3ff7763d00c294d47e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cce9f32bc71bab128496970d053b3ef0158a6e9e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371513"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840280"
 ---
-# <a name="driver-verifier-options-and-rule-classes"></a>Driver Verifier のオプションとルール クラス
+# <a name="driver-verifier-options-and-rule-classes"></a>ドライバーの検証ツールのオプションと規則クラス
 
 
-このトピックでは、Driver Verifier 内のルール クラス、省略可能な機能について説明します。 参照してください[標準設定](#standard-settings)標準設定を使用するときに含まれるオプションの一覧についてはします。
+このトピックでは、ドライバー検証ツール内のオプションの機能および規則クラスについて説明します。 標準設定を使用する場合に含まれるオプションの一覧については、「[標準設定](#standard-settings)」を参照してください。
 
 > [!NOTE]
-> いくつか[自動チェック](automatic-checks.md)ドライバーに対しては検証されている、選択したオプションに関係なく、常に実行されます。 ドライバー不適切な IRQL でメモリを使用して、不適切な呼び出しまたはスピン ロックとメモリの割り当てを解放、不適切なスタックの切り替え、または最初の削除タイマーなしのメモリ プールを解放、Driver Verifier はこの動作を検出します。 ドライバーが読み込まれると、Driver Verifier はそのリソースが解放が正しくことを確認します。
+> どのオプションが選択されているかに関係なく、検証されるドライバーに対しては、[自動チェック](automatic-checks.md)が常に実行されます。 ドライバーが不適切な IRQL でメモリを使用している場合、スピンロックやメモリ割り当てを不適切に呼び出すか解放したり、スタックを不適切に切り替えたり、最初にタイマーを削除せずにメモリプールを解放したりすると、ドライバー検証ツールはこの動作を検出します。 ドライバーがアンロードされると、ドライバーの検証ツールは、そのリソースが正しく解放されたことを確認します。
 
-## <a name="enabling-rule-classes-with-ruleclasses"></a>/Ruleclasses ルール クラスを有効にします。
+## <a name="enabling-rule-classes-with-ruleclasses"></a>/Ruleclasses を使用したルールクラスの有効化
 
-Windows 10、17627 以降のバージョン以降、次の構文と規則クラスを有効にできます。
+Windows 10 以降のバージョン17627以降では、次の構文を使用してルールクラスを有効にすることができます。
 
 `/ruleclasses or /rc [<ruleclass_1> <ruleclass_2> ... <ruleclass_k>]`
 
-注意してください (下正の 10 進整数で表される) 複数のクラスを有効にする場合、各整数を空白文字で区切ります。 
+(下の正の10進整数で表される) 複数のクラスを有効にする場合は、各整数を空白文字で区切ります。 
 
-以下は、これらのルール クラスの説明を確認できます。
+これらの規則クラスの説明については、以下を参照してください。
 
-### <a name="standard-rule-classes"></a>標準の規則クラス
+### <a name="standard-rule-classes"></a>標準規則クラス
 
-| ルール クラス | 10 進数の ID |
+| Rule クラス | 10進数 ID |
 | -- | -- |
 | 特別なプール        | 1 |
 | 強制 IRQL 検査 | 2 |
-| プールのトラック       | 4 |
+| プールのトラック       | ホーム フォルダーが置かれているコンピューターにアクセスできない |
 | I/O の検証    | 5 |
 | デッドロックの検出  | 6 |
-| DMA のチェック | 8 |
+| DMA チェック | 8 |
 | セキュリティの検査 | 9 |
 | その他の検査 | 12 |
 | DDI 準拠の検査 | 18 |
@@ -49,135 +49,135 @@ Windows 10、17627 以降のバージョン以降、次の構文と規則クラ�
 
 ### <a name="additional-rule-classes"></a>追加の規則クラス
 
-これらのルール クラスは、特定のシナリオをテストします。 ルール クラスでマークされます (\*) I/O の検証 (5) に自動的に有効にする必要があります。 フラグが付いた (\**) 個々 のルールの無効化をサポートします。
+これらの規則クラスは、特定のシナリオのテストを目的としています。 規則クラスは、(\*) に設定されており、自動的に有効になる i/o 検証 (5) が必要です。 (\**) でマークされたフラグは、個々のルールを無効にすることをサポートします。
 
-| ルール クラス | 10 進数の ID |
+| Rule クラス | 10進数 ID |
 | -- | -- |
-| ランダム化された低リソース シミュレーション        | 3 |
-| 強制的に保留中の I/O 要求 (*) | 10 |
+| ランダム化した低リソースシミュレーション        | 3 |
+| 強制的に保留中の i/o 要求 (*) | 10 |
 | IRP ログ       | 11 |
-| 不変の MDL スタック (*) のチェック    | 14 |
-| 不変の MDL ドライバー (*) のチェック  | 15 |
-| Power framework 遅延ファジー テスト | 16 |
+| スタックに対する不変の MDL チェック (*)    | 14 |
+| ドライバーに対する不変の MDL チェック (*)  | 15 |
+| Power framework 遅延ファジー | 16 |
 | ポート/ミニポート インターフェイス チェック | 17 |
 | 体系的な低リソースのシミュレーション | 19 |
-| DDI 準拠のチェック (追加) | 20 |
+| DDI 準拠の確認 (追加) | 20 |
 | カーネル同期遅延ファジー テスト | 24 |
 | VM スイッチ検証 | 25 |
 | コードの整合性チェック | 26 |
 
-## <a name="optional-feature-and-rule-class-descriptions"></a>省略可能な機能とルール クラスの説明 
+## <a name="optional-feature-and-rule-class-descriptions"></a>オプションの機能とルールクラスの説明 
 
 [特別なプール](special-pool.md)
     
-このオプションを有効にすると、ドライバーの検証ツールは、特別なプールからほとんどのドライバーのメモリ要求を割り当てます。 この特別なプールでは、メモリ オーバーラン、メモリ アンダーラン、既に解放されたメモリへのアクセスが監視されます。
+このオプションが有効になっている場合、ドライバーの検証ツールは、ドライバーのメモリ要求の大部分を特別なプールから割り当てます。 この特別なプールでは、メモリ オーバーラン、メモリ アンダーラン、既に解放されたメモリへのアクセスが監視されます。
 
-[強制 IRQL 検査](force-irql-checking.md)
+[強制 IRQL チェック](force-irql-checking.md)
 
-このオプションを有効にすると、ドライバーの検証ツールは、ページング可能なコードを無効にすること、ドライバーでメモリ不足状態を配置します。 ドライバーが不適切な IRQL で、またはスピン ロックを保持したままでページ メモリにアクセスしようとすると、ドライバーの検証ツールはこの動作を検出します。
+このオプションが有効になっている場合、ドライバーの検証ツールは、ページング可能なコードを無効にすることで、ドライバーに極端なメモリ負荷をかけます。 ドライバーが不適切な IRQL で、またはスピン ロックを保持したままでページ メモリにアクセスしようとすると、ドライバーの検証ツールはこの動作を検出します。
 
-[低リソース シミュレーション](low-resources-simulation.md)(と呼ばれる*低リソース シミュレーションをランダム化*で Windows 8.1)
+[低リソースシミュレーション](low-resources-simulation.md)(Windows 8.1 でランダム化された*低リソースシミュレーション*と呼ばれます)
 
-このオプションを有効にすると、ドライバーの検証ツールは、プールの割り当て要求およびその他のリソース要求にランダムに失敗します。 システムでこれらの割り当てエラーを引き起こすことで、ドライバーの検証ツールはリソース不足の状況でのドライバーの能力をテストします。
+このオプションが有効になっていると、ドライバーの検証ツールは、プール割り当て要求やその他のリソース要求をランダムに失敗させることができます。 システムでこれらの割り当てエラーを引き起こすことで、ドライバーの検証ツールはリソース不足の状況でのドライバーの能力をテストします。
 
 [プールの追跡](pool-tracking.md)
 
-このオプションを有効にすると、ドライバーの検証ツールがアンロードされるときに、ドライバーがそのすべてのメモリ割り当てを解放してかどうかを確認します。 これによってメモリ リークが明らかになります。
+このオプションが有効になっている場合、ドライバーの検証ツールは、ドライバーがアンロードされるときにすべてのメモリ割り当てが解放されたかどうかを確認します。 これによってメモリ リークが明らかになります。
 
-[I/O の検証](i-o-verification.md)
+[I/o の検証](i-o-verification.md)
 
-このオプションがアクティブで、Driver Verifier はから特別なプールの場合は、ドライバーの Irp を割り当てますおよびドライバーの I/O 処理を監視します。 これによって、I/O ルーチンの不適切な使用や不整合な使用が検出されます。
+このオプションが有効になっている場合、ドライバーの検証ツールは、特殊なプールからドライバーの Irp を割り当て、ドライバーの i/o 処理を監視します。 これによって、I/O ルーチンの不適切な使用や不整合な使用が検出されます。
 
-[デッドロックの検出](deadlock-detection.md)
+[デッドロック検出](deadlock-detection.md)
 
-(Windows XP 以降)このオプションがアクティブで、Driver Verifier は、スピン ロック、ミュー テックス、および高速なミュー テックスのドライバーの使用を監視します。 これを検出したかどうか、ドライバーのコードには、ある時点で、デッドロックを発生させる可能性が。
+(Windows XP 以降)このオプションがアクティブになっている場合、ドライバーの検証ツールは、ドライバーによるスピンロック、ミューテックス、および高速ミューテックスの使用を監視します。 これにより、ドライバーのコードに、ある時点でデッドロックが発生する可能性があるかどうかが検出されます。
 
-[強化された I/O の検証](enhanced-i-o-verification.md)
+[強化された i/o 検証](enhanced-i-o-verification.md)
 
-(Windows XP 以降)このオプションがアクティブな場合は、Driver Verifier は複数の I/O マネージャー ルーチンの呼び出しを監視し、PnP Irp、電源 Irp および WMI の Irp のストレスのテストを実行します。 Windows 7 および Windows オペレーティング システムの以降のバージョンでは、強化された I/O の検証のすべての機能はの一部として含める[I/O の検証](i-o-verification.md)使用可能なもドライバーの検証ツールでこのオプションを選択するために必要ではありませんマネージャーまたはコマンドラインから。
+(Windows XP 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、複数の i/o マネージャールーチンの呼び出しを監視し、PnP Irp、停電、および WMI Irp のストレステストを実行します。 Windows 7 以降のバージョンの Windows オペレーティングシステムでは、拡張 i/o 検証のすべての機能が[I/o 検証](i-o-verification.md)の一部として含まれています。また、このオプションをドライバー検証マネージャーまたはから選択する必要もありません。コマンドライン。
 
 [DMA の検証](dma-verification.md)
 
-(Windows XP 以降)このオプションがアクティブで、Driver Verifier は、DMA ルーチンのドライバーの使用を監視します。 これによって、DMA バッファー、アダプター、マップ レジスタの不適切な使用が検出されます。
+(Windows XP 以降)このオプションがアクティブになっている場合、ドライバーの検証ツールはドライバーの DMA ルーチンの使用を監視します。 これによって、DMA バッファー、アダプター、マップ レジスタの不適切な使用が検出されます。
 
-[セキュリティ チェック](security-checks.md)
+[セキュリティチェック](security-checks.md)
 
-(Windows Vista 以降)このオプションがアクティブで、Driver Verifier は、カーネル モードのルーチンによってユーザー モード アドレスへの参照などのセキュリティの脆弱性につながる一般的なエラーを検索します。
+(Windows Vista 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、カーネルモードルーチンによるユーザーモードアドレスへの参照など、セキュリティ上の脆弱性につながる可能性がある一般的なエラーを検索します。
 
-[その他の検査](miscellaneous-checks.md)
+[その他のチェック](miscellaneous-checks.md)
 
-(Windows Vista 以降)このオプションがアクティブな場合は、Driver Verifier は、解放されたメモリの取り扱いミスなどのドライバー クラッシュの一般的な原因を探します。
+(Windows Vista 以降)このオプションがアクティブになっている場合、ドライバーの検証ツールは、解放されたメモリの mishandling など、ドライバーのクラッシュの一般的な原因を探します。
 
 [保留中の I/O 要求を強制する](force-pending-i-o-requests.md)
 
-(Windows Vista 以降)Driver Verifier テスト状態へのドライバーの応答でこのオプションがアクティブで\_保留の状態を返すことによって値を返す\_ランダムの呼び出しに対して保留[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+(Windows Vista 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)へのランダムな呼び出しの状態\_pending を返すことによって、ドライバーの状態\_保留中の戻り値をテストします。
 
 [IRP ログ](irp-logging.md)
 
-(Windows Server 2003 以降)このオプションがアクティブで、Driver Verifier は Irp のドライバーの使用を監視し、IRP の使用のログを作成します。
+(Windows Server 2003 以降)このオプションが有効になっている場合、ドライバーの検証ツールはドライバーの Irp の使用を監視し、IRP の使用のログを作成します。
 
 [ディスクの整合性チェック](disk-integrity-checking.md)
 
-(Windows Server 2003 で導入されました。 いない Windows 7 で使用できる以降。)このオプションがアクティブな場合は、Driver Verifier は、ハード ディスク アクセスを監視し、ディスクがそのデータを正しく保持するかどうかを検出します。
+(Windows Server 2003 で導入されました。 Windows 7 以降では使用できません。)このオプションがアクティブになっている場合、ドライバー検証ツールはハードディスクのアクセスを監視し、ディスクのデータが正しく保持されているかどうかを検出します。
 
-[SCSI の検証](scsi-verification.md)
+[SCSI 検証](scsi-verification.md)
 
-(Windows XP 以降)このオプションがアクティブな場合は、Driver Verifier は、SCSI ミニポート ドライバーのエクスポートされた SCSI ポート ルーチン、過剰な遅延は、不適切な使用を監視し、SCSI の不適切な処理を要求します。
+(Windows XP 以降)このオプションが有効になっている場合、ドライバーの検証ツールは SCSI ミニポートドライバーを監視して、エクスポートされた SCSI ポートルーチン、過剰な遅延、および SCSI 要求の不適切な処理を使用します。
 
-[Storport の検証](dv-storport-verification.md)
+[Storport 検証](dv-storport-verification.md)
 
-(Windows Vista 以降)このオプションがアクティブな場合は、Driver Verifier は、エクスポートされた Storport ルーチン、過剰な遅延、および Storport の要求の不適切な処理の不適切な使用の Storport ミニポート ドライバーを監視します。
+(Windows Vista 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、Storport ミニポートドライバーを監視して、エクスポートされた Storport ルーチン、過度の遅延、および Storport 要求の不適切な処理を使用します。
 
-[Power Framework 遅延ファジー テスト](concurrency-stress-test.md)
+[Power Framework 遅延ファジー](concurrency-stress-test.md)
 
-(Windows 8 以降)Driver Verifier を使用するドライバーの同時実行エラーをフラッシュ スレッドのスケジュールをランダムにこのオプションがアクティブの場合、[電源管理フレームワーク (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。 電源管理フレームワーク (PoFx) を直接利用しないドライバーでは、このオプションはお勧めできません.
+(Windows 8 以降)このオプションがアクティブになっている場合、ドライバーの検証ツールは、[電源管理フレームワーク (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)を使用するドライバーの同時実行エラーをフラッシュするのを防ぐために、スレッドのスケジュールをランダム化します。 このオプションは、電源管理フレームワーク (PoFx) を直接利用しないドライバーには推奨されません。
 
-[DDI 準拠の確認](ddi-compliance-checking.md)
+[DDI のコンプライアンスチェック](ddi-compliance-checking.md)
 
-(Windows 8 以降)このオプションがアクティブで、Driver Verifier には、一連のドライバーとオペレーティング システムのカーネル インターフェイスの適切な相互作用をチェックするデバイス ドライバー インターフェイス (DDI) ルールが適用されます。
+(Windows 8 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、ドライバーとオペレーティングシステムのカーネルインターフェイスとの間の適切な対話を確認する一連のデバイスドライバーインターフェイス (DDI) 規則を適用します。
 
 [不変な MDL のスタック用検査](invariant-mdl-checking-for-stack.md)
 
-(Windows 8 以降)[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプションは、ドライバーがドライバー スタック間で不変の MDL バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、ドライバーの検証ツールによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
+(Windows 8 以降)[インバリアントな Mdl チェックスタック](invariant-mdl-checking-for-stack.md)オプションは、ドライバーがドライバースタック全体で不変の mdl バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、ドライバーの検証ツールによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
 
 [不変な MDL のドライバー用検査](invariant-mdl-checking-for-driver.md)
 
-(Windows 8 以降)[不変な Mdl のドライバー](invariant-mdl-checking-for-driver.md)オプションは、ドライバーがドライバーごとの単位で不変の MDL バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、このオプションによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
+(Windows 8 以降)[インバリアントな Mdl チェックドライバー](invariant-mdl-checking-for-driver.md)オプションは、ドライバーがドライバー単位で不変の mdl バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、このオプションによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
 
-[スタック ベースのエラー挿入](stack-based-failure-injection.md)
+[スタックベースのエラー挿入](stack-based-failure-injection.md)
 
-(Windows 8 および WDK 8 でのみ使用可能)[スタック ベースのエラー挿入](stack-based-failure-injection.md)オプションは、カーネル モード ドライバーにリソース エラーを挿入します。 このオプションは、特別なドライバーである KmAutoFail.sys と[ドライバー検証ツール](driver-verifier.md)を使って、ドライバーのエラー処理パスに入り込みます。
+(Windows 8 および WDK 8 でのみ使用可能)[スタックベースのエラー挿入](stack-based-failure-injection.md)オプションにより、カーネルモードドライバーにリソースエラーが挿入されます。 このオプションは、特別なドライバーである KmAutoFail.sys と[ドライバー検証ツール](driver-verifier.md)を使って、ドライバーのエラー処理パスに入り込みます。
 
-[体系的な低リソース シミュレーション](systematic-low-resource-simulation.md)
+[体系的な低リソースシミュレーション](systematic-low-resource-simulation.md)
 
-(Windows 8.1 以降)[体系的な低リソース シミュレーション](systematic-low-resource-simulation.md)オプションは、カーネル モード ドライバーにリソース エラーを挿入します。
+(Windows 8.1 以降)[体系的な低リソースシミュレーション](systematic-low-resource-simulation.md)オプションは、カーネルモードドライバーにリソースエラーを挿入します。
 
 [NDIS/WIFI の検証](ndis-wifi-verification.md)
 
-(Windows 8.1 以降)このオプションがアクティブで、Driver Verifier には、一連の NDIS および NDIS ミニポート ドライバーと、オペレーティング システムのカーネルと適切な相互作用をチェックするワイヤレス LAN (WIFI) 規則が適用されます。
+(Windows 8.1 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、NDIS ミニポートドライバーとオペレーティングシステムカーネルの間の適切な対話を確認する NDIS およびワイヤレス LAN (WIFI) 規則のセットを適用します。
 
-[カーネル同期遅延ファジー テスト](kernel-synchronization-delay-fuzzing.md)
+[カーネル同期遅延ファジー](kernel-synchronization-delay-fuzzing.md)
 
-(Windows 8.1 以降)このオプションでは、ドライバーで同時実行のバグを検出するためにスレッド スケジュールはランダム化します。
+(Windows 8.1 以降)このオプションは、ドライバーの同時実行のバグを検出するために、スレッドのスケジュールをランダムにします。
 
-[VM スイッチの確認](vm-switch-verification.md)
+[VM スイッチの検証](vm-switch-verification.md)
 
-(Windows 8.1 以降)このオプションは、フィルター ドライバーを監視します。 (*拡張可能スイッチの拡張機能*) 内で実行される、 [Hyper-v 拡張可能スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)します。
+(Windows 8.1 以降)このオプションは、 [Hyper-v 拡張可能スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)内で実行されるフィルタードライバー (*拡張可能なスイッチ拡張機能*) を監視します。
 
-[ポート/ミニポート インターフェイスのチェック](port-miniport-interface-checking.md)
+[ポート/ミニポートインターフェイスのチェック](port-miniport-interface-checking.md)
 
-ポート/ミニポート インターフェイスのチェックには、Driver Verifier PortCls.sys やオーディオのミニポート ドライバーは、ks.sys AVStream ミニポート ドライバーとの間の DDI インターフェイスの検査を有効になります。 オーディオ ドライバーの AVStream ドライバーのルールおよびルールを参照してください。
+ポート/ミニポートのチェックにより、ドライバーの検証ツールは、PortCls とそのオーディオミニポートドライバーの間の DDI インターフェイスと、ks およびその AVStream のミニポートドライバーを調べることができます。 「AVStream ドライバーの規則」および「オーディオドライバーの規則」を参照してください。
 
 [コードの整合性チェック](code-integrity-checking.md)
 
-仮想化ベースのセキュリティを使用して、コードの整合性を分離する、カーネル メモリは、実行可能になることができますのみの方法は、コードの整合性の検証です。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックは、これらのコードの整合性の規則の互換性を確保し、違反を検出します。
+仮想化ベースのセキュリティを使用してコードの整合性を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、コードの整合性を検証することです。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックによって、これらのコード整合性規則の互換性が確保され、違反が検出されます。
 
 [WDF の検証](wdf-verification.md)
 
-WDF の検証は、カーネル モード ドライバーが正しく、カーネル モード ドライバー フレームワーク (KMDF) の要件に従ってがかどうかを確認します。 
+WDF 検証では、カーネルモードドライバーがカーネルモードドライバーフレームワーク (KMDF) の要件に適切に従っているかどうかを確認します。 
 
 
-## <a name="standard-settings"></a>標準の設定
+## <a name="standard-settings"></a>標準設定
 
 <table>
 <colgroup>
@@ -185,7 +185,7 @@ WDF の検証は、カーネル モード ドライバーが正しく、カー�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">標準の設定に含まれるオプション</th>
+<th align="left">標準設定に含まれるオプション</th>
 </tr>
 </thead>
 <tbody>
@@ -193,38 +193,38 @@ WDF の検証は、カーネル モード ドライバーが正しく、カー�
 <td align="left"><p><a href="special-pool.md" data-raw-source="[Special Pool](special-pool.md)">特別なプール</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="force-irql-checking.md" data-raw-source="[Force IRQL Checking](force-irql-checking.md)">強制 IRQL 検査</a></p></td>
+<td align="left"><p><a href="force-irql-checking.md" data-raw-source="[Force IRQL Checking](force-irql-checking.md)">強制 IRQL チェック</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="pool-tracking.md" data-raw-source="[Pool Tracking](pool-tracking.md)">プールの追跡</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/O の検証</a></p></td>
+<td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/o の検証</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="deadlock-detection.md" data-raw-source="[Deadlock Detection](deadlock-detection.md)">デッドロックの検出</a>(Windows XP 以降)</p></td>
+<td align="left"><p><a href="deadlock-detection.md" data-raw-source="[Deadlock Detection](deadlock-detection.md)">デッドロック検出</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="enhanced-i-o-verification.md" data-raw-source="[Enhanced I/O Verification](enhanced-i-o-verification.md)">I/O の検証の強化</a>(Windows 7 以降、このオプションは自動的にアクティブ化 I/O の検証を選択すると)</p></td>
+<td align="left"><p><a href="enhanced-i-o-verification.md" data-raw-source="[Enhanced I/O Verification](enhanced-i-o-verification.md)">拡張 I/o 検証</a>(Windows 7 以降では、[i/o 検証] を選択すると、このオプションは自動的にアクティブ化されます)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="dma-verification.md" data-raw-source="[DMA Verification](dma-verification.md)">DMA の検証</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="security-checks.md" data-raw-source="[Security Checks](security-checks.md)">セキュリティ チェック</a>(Windows XP 以降)</p></td>
+<td align="left"><p><a href="security-checks.md" data-raw-source="[Security Checks](security-checks.md)">セキュリティチェック</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="miscellaneous-checks.md" data-raw-source="[Miscellaneous Checks](miscellaneous-checks.md)">その他の検査</a>(Windows Vista 以降)</p></td>
+<td align="left"><p><a href="miscellaneous-checks.md" data-raw-source="[Miscellaneous Checks](miscellaneous-checks.md)">その他のチェック</a>(Windows Vista 以降)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="ddi-compliance-checking.md" data-raw-source="[DDI compliance checking](ddi-compliance-checking.md)">DDI 準拠の検査</a>(Windows 8 以降)</td>
+<td align="left"><a href="ddi-compliance-checking.md" data-raw-source="[DDI compliance checking](ddi-compliance-checking.md)">DDI 準拠の確認</a>(Windows 8 以降)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="driver-verifier-options-that-require-io-verification"></a>I/O の検証が必要なドライバーの検証オプション
+## <a name="driver-verifier-options-that-require-io-verification"></a>I/o 検証を必要とするドライバーの検証ツールオプション
 
 
 先に [I/O の検証](i-o-verification.md)を有効にする必要がある 4 つのオプションがあります。 I/O の検証が有効化されていない場合は、これらのオプションも有効になりません。

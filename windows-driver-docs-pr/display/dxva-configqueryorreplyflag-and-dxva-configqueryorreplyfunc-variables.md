@@ -1,43 +1,43 @@
 ---
-title: DXVA_ConfigQueryOrReplyFlag and DXVA_ConfigQueryorReplyFunc
+title: DXVA_ConfigQueryOrReplyFlag と DXVA_ConfigQueryorReplyFunc
 description: DXVA_ConfigQueryOrReplyFlag 変数と DXVA_ConfigQueryorReplyFunc 変数
 ms.assetid: bfb1a98e-b9f0-4baa-b486-b2ff33a8bac5
 keywords:
-- ビデオのデコード WDK DirectX va なので、書式設定します。
-- ビデオの WDK DirectX va なので、形式のデコード
-- WDK の DirectX va なので、形式をデコードする画像
-- WDK DirectX VA を書式設定します。
+- ビデオデコード WDK DirectX VA、形式
+- ビデオのデコード (WDK DirectX VA、形式)
+- 画像デコード WDK DirectX VA、形式
+- WDK DirectX VA の形式
 - bDXVA_Func 変数 WDK DirectX VA
 - DXVA_ConfigQueryOrReplyFlag
 - DXVA_ConfigQueryorReplyFunc
-- ビデオのデコード WDK DirectX va なので、構成のプローブとロック
-- ビデオの WDK DirectX va なので、構成のプローブとロックのデコード
-- WDK の DirectX va なので、構成のプローブとロックをデコードする画像
-- 最小限の相互運用性の構成設定の WDK DirectX VA
-- ロック構成 WDK DirectX VA
-- WDK DirectX VA の構成のプローブ
-- 構成のプローブと WDK DirectX VA のロック
+- ビデオデコード WDK DirectX VA、構成のプローブとロック
+- ビデオをデコードする WDK DirectX VA、構成のプローブとロック
+- 画像デコード WDK DirectX VA、構成のプローブとロック
+- 最小相互運用性構成セット WDK DirectX VA
+- 構成のロック WDK DirectX VA
+- 構成のプローブ (WDK DirectX VA)
+- 構成のプローブとロック (WDK DirectX VA)
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 2030cf2f5c78346e7239fe623c15f552cb178c8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 08309fc27a221f0184f12dcced5be49106443d01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375858"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838972"
 ---
-# <a name="dxvaconfigqueryorreplyflag-and-dxvaconfigqueryorreplyfunc-variables"></a>DXVA\_ConfigQueryOrReplyFlag と DXVA\_ConfigQueryorReplyFunc 変数
+# <a name="dxva_configqueryorreplyflag-and-dxva_configqueryorreplyfunc-variables"></a>DXVA\_ConfigQueryOrReplyFlag と DXVA\_ConfigQueryorReplyFunc 変数
 
-*DXVA\_ConfigQueryOrReplyFlag*変数がクエリの種類を示しますまたはプローブとロックを使用するときの応答コマンドします。 最も重要な 24 ビット、 **dwFunction**以下の構造体のメンバーが含まれています、 *DXVA\_ConfigQueryOrReplyFlag*変数。
+*DXVA\_ConfigQueryOrReplyFlag*変数は、プローブおよびロックコマンドを使用する場合のクエリまたは応答の種類を示します。 次の構造体の**Dwfunction**メンバーの中で最も重要な24ビットに、 *DXVA\_ConfigQueryOrReplyFlag*変数が含まれています。
 
-[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)圧縮された画像をデコードします。
+DXVA は、圧縮された画像デコード用の[**configpicture デコードを\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)します。
 
-[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)アルファ ブレンド データを読み込むためです。
+DXVA は、アルファブレンドデータの読み込みのための[**ConfigAlphaLoad\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphaload)ます。
 
-[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)アルファ ブレンドの組み合わせ。
+DXVA は、アルファブレンドの組み合わせに対して[**ConfigAlphaCombine\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine)ます。
 
-最上位 20 のビット、 *DXVA\_ConfigQueryOrReplyFlag*変数は、次のクエリと応答を指定します。
+*DXVA\_ConfigQueryOrReplyFlag*変数の中で最も重要なものは、次のクエリと応答を指定することです。
 
 <table>
 <colgroup>
@@ -53,38 +53,38 @@ ms.locfileid: "67375858"
 <tbody>
 <tr class="odd">
 <td align="left"><p>0xFFFF1</p></td>
-<td align="left"><p>プローブをコマンドとしてホスト デコーダーによって送信されます。</p></td>
+<td align="left"><p>プローブコマンドとしてホストデコーダーによって送信されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xFFFF5</p></td>
-<td align="left"><p>ロック コマンドとしてホスト デコーダーによって送信されます。</p></td>
+<td align="left"><p>ロックコマンドとしてホストデコーダーによって送信されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xFFFF8</p></td>
-<td align="left"><p>プローブ コマンド、プローブの構成のコピーに S_OK 応答をアクセラレータによって送信されます。</p></td>
+<td align="left"><p>プローブコマンドに対する S_OK 応答と共に、プローブされた構成のコピーと共に、アクセラレータによって送信されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xFFFF9</p></td>
-<td align="left"><p>推奨される代替の構成のプローブのコマンドに S_OK 応答をアクセラレータによって送信されます。</p></td>
+<td align="left"><p>推奨される代替構成を使用して、プローブコマンドに対する S_OK 応答と共にアクセラレータによって送信されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xFFFFC</p></td>
-<td align="left"><p>ロック コマンド、ロックされている構成のコピーに S_OK 応答をアクセラレータによって送信されます。</p></td>
+<td align="left"><p>ロックコマンドに S_OK 応答を付けてアクセラレータによって送信され、ロックされた構成のコピーが含まれます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xFFFFB</p></td>
-<td align="left"><p>推奨される代替の構成のプローブのコマンドに S_FALSE 応答をアクセラレータによって送信されます。</p></td>
+<td align="left"><p>代替構成を提案して、プローブコマンドに対する S_FALSE 応答と共にアクセラレータによって送信されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xfffff</p></td>
-<td align="left"><p>推奨される代替の構成でのロック コマンドに S_FALSE 応答をアクセラレータによって送信されます。</p></td>
+<td align="left"><p>0xFFFFF</p></td>
+<td align="left"><p>ロックコマンドに対する S_FALSE 応答と共にアクセラレータによって送信され、推奨される代替構成を使用します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-最下位 4 ビット、 *DXVA\_ConfigQueryOrReplyFlag*変数がクエリと応答の次のステータス インジケーターを指定します。
+*DXVA\_ConfigQueryOrReplyFlag*変数の最下位4ビットは、クエリと応答に対して次の状態インジケーターを指定します。
 
 <table>
 <colgroup>
@@ -93,61 +93,61 @@ ms.locfileid: "67375858"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ビット</th>
+<th align="left">16-bit</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>これは、ホスト デコーダーとアクセラレータから送信されたときに 1 が送信する場合、0 です。</p></td>
+<td align="left"><p>これは、ホストデコーダーによって送信された場合は0、アクセラレータによって送信された場合は1です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>これは、プローブ、およびロックに関連付けられている場合は 1 に関連付けられている場合は 0 です。</p></td>
+<td align="left"><p>プローブに関連付けられている場合は0、ロックに関連付けられている場合は1です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>これは、成功、0 と 1 の障害を。</p></td>
+<td align="left"><p>成功の場合は0、失敗の場合は1になります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0</p></td>
-<td align="left"><p>ときに、重複する構成構造体、および 1 は、その新しい構成構造の場合は 0 です。</p></td>
+<td align="left"><p>重複する構成構造の場合は0、新しい構成構造の場合は1になります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-最下位の 8 ビット、 **dwFunction**メンバーは、 *bDXVA\_Func*変数。 *BDXVA\_Func*を使用すると、変数*DXVA\_ConfigQueryorReplyFunc*、プローブ、およびロック操作を示しますおよび関連する構成を指定します関数。
+**Dwfunction**メンバーの最上位の8ビットは、 *bDXVA\_Func*変数です。 *DXVA\_ConfigQueryorReplyFunc*と共に使用する場合、 *bDXVA\_Func*変数はプローブおよびロック操作を示し、関連付けられている構成関数を指定します。
 
-### <a name="span-idprobingandlockingspanspan-idprobingandlockingspanspan-idprobingandlockingspanprobing-and-locking"></a><span id="Probing_and_Locking"></span><span id="probing_and_locking"></span><span id="PROBING_AND_LOCKING"></span>プローブとロック
+### <a name="span-idprobing_and_lockingspanspan-idprobing_and_lockingspanspan-idprobing_and_lockingspanprobing-and-locking"></a><span id="Probing_and_Locking"></span><span id="probing_and_locking"></span><span id="PROBING_AND_LOCKING"></span>プローブとロック
 
-ときに*bDXVA\_Func*プローブし、特定の DirectX VA 関数の構成をロックするために使用*bDXVA\_Func*最下位の 8 ビット、に*DXVA*\_*ConfigQueryorReplyFunc*変数。 *DXVA*\_*ConfigQueryorReplyFunc* Microsoft Windows SDK で指定されているアクセラレータに伝達されます。
+*BDXVA\_func*を使用して特定の DirectX VA 関数の構成をプローブおよびロックする場合、 *bDXVA\_Func*は、 *DXVA*\_*ConfigQueryorReplyFunc*変数の最下位8ビットに配置されます。 *DXVA*\_*ConfigQueryorReplyFunc*は、Microsoft Windows SDK で指定されているように、アクセラレータに伝達されます。
 
-### <a name="span-idspecifyingaconfigurationtobeprobedorlockedspanspan-idspecifyingaconfigurationtobeprobedorlockedspanspan-idspecifyingaconfigurationtobeprobedorlockedspanspecifying-a-configuration-to-be-probed-or-locked"></a><span id="Specifying_a_Configuration_To_Be_Probed_or_Locked"></span><span id="specifying_a_configuration_to_be_probed_or_locked"></span><span id="SPECIFYING_A_CONFIGURATION_TO_BE_PROBED_OR_LOCKED"></span>検出されたか、ロックの構成を指定します。
+### <a name="span-idspecifying_a_configuration_to_be_probed_or_lockedspanspan-idspecifying_a_configuration_to_be_probed_or_lockedspanspan-idspecifying_a_configuration_to_be_probed_or_lockedspanspecifying-a-configuration-to-be-probed-or-locked"></a><span id="Specifying_a_Configuration_To_Be_Probed_or_Locked"></span><span id="specifying_a_configuration_to_be_probed_or_locked"></span><span id="SPECIFYING_A_CONFIGURATION_TO_BE_PROBED_OR_LOCKED"></span>プローブまたはロックする構成の指定
 
-ときに*bDXVA\_Func*プローブまたはロックのコマンドで渡される構成構造に関連付けられている関数を指定するために使用*bDXVA\_Func*は 8 に配置されます最下位の*DXVA\_ConfigQueryorReplyFunc*変数、 **dwFunction**構成構造体を次のいずれかのメンバー。
+*BDXVA\_func*を使用して、プローブまたは lock コマンドで渡される構成構造に関連付けられた関数を指定すると、 *bDXVA\_func*が DXVA の最下位8ビットに配置され *\_* 次のいずれかの構成構造の**dwfunction**メンバーの ConfigQueryorReplyFunc 変数。
 
-[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)圧縮された画像をデコードします。
+DXVA は、圧縮された画像デコード用の[**configpicture デコードを\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)します。
 
-[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)アルファ ブレンド データを読み込むためです。
+DXVA は、アルファブレンドデータの読み込みのための[**ConfigAlphaLoad\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphaload)ます。
 
-[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)アルファ ブレンドの組み合わせ。
+DXVA は、アルファブレンドの組み合わせに対して[**ConfigAlphaCombine\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine)ます。
 
-### <a name="span-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspandxvaencryptprotocolfunc"></a><span id="DXVA_EncryptProtocolFunc"></span><span id="dxva_encryptprotocolfunc"></span><span id="DXVA_ENCRYPTPROTOCOLFUNC"></span>DXVA\_EncryptProtocolFunc
+### <a name="span-iddxva_encryptprotocolfuncspanspan-iddxva_encryptprotocolfuncspanspan-iddxva_encryptprotocolfuncspandxva_encryptprotocolfunc"></a><span id="DXVA_EncryptProtocolFunc"></span><span id="dxva_encryptprotocolfunc"></span><span id="DXVA_ENCRYPTPROTOCOLFUNC"></span>DXVA\_EncryptProtocolFunc
 
-最も重要な 24 ビット、 *DXVA\_EncryptProtocolFunc* DWORD 変数は次のように設定されます。
+*DXVA\_EncryptProtocolFunc* DWORD 変数の最上位の24ビットは、次のように設定されます。
 
--   0xFFFF00 ホスト ソフトウェア デコーダーによって送信されると、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。
+-   0xFFFF00 は、ホストソフトウェアデコーダーによって、DD の**Dwfunction**メンバーで、 [*Ddmocomprender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)への呼び出しで、 [ **\_rendermocompdata**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体によって送信されます。
 
--   0xFFFF08 でビデオ アクセラレータによって送信されたときに、 **dwFunction**のメンバー、 [ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)構造体。
+-   [**DXVA\_EncryptProtocolHeader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)構造体の**dwfunction**メンバーのビデオアクセラレータによって送信された0xffff08。
 
-最下位の 8 ビット、 *DXVA\_EncryptProtocolFunc* DWORD 変数の値を格納する*bDXVA\_Func*暗号化プロトコルに関連付けられています。 このような使用はサポートされている値だけ*bDXVA\_Func* = 1 (圧縮された画像のデコード)。
+*DXVA\_EncryptProtocolFunc* DWORD 変数の最下位8ビットには、暗号化プロトコルに関連付けられている*bDXVA\_Func*の値が含まれています。 この使用に対してサポートされている唯一の値は、 *bDXVA\_Func* = 1 (圧縮画像デコード) です。
 
-### <a name="span-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspecifying-an-operation-to-be-performed-by-ddmocomprender"></a><span id="Specifying_an_Operation_to_be_Performed_by_DdMoCompRender"></span><span id="specifying_an_operation_to_be_performed_by_ddmocomprender"></span><span id="SPECIFYING_AN_OPERATION_TO_BE_PERFORMED_BY_DDMOCOMPRENDER"></span>DdMoCompRender により実行される操作を指定します。
+### <a name="span-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspan-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspan-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspecifying-an-operation-to-be-performed-by-ddmocomprender"></a><span id="Specifying_an_Operation_to_be_Performed_by_DdMoCompRender"></span><span id="specifying_an_operation_to_be_performed_by_ddmocomprender"></span><span id="SPECIFYING_AN_OPERATION_TO_BE_PERFORMED_BY_DDMOCOMPRENDER"></span>DdMoCompRender によって実行される操作の指定
 
-ときに*bDXVA\_Func*を使用して実行する実際の操作の通知 (画像をデコード、アルファ ブレンドのデータの読み込み、アルファ ブレンドの組み合わせ、または画像が再サンプリングを圧縮) *bDXVA\_Func*のシリーズを含めることによって、アクセラレータに伝達されます*bDXVA\_Func*バイト値、 **dwFunction**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体への呼び出しで[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。 最初の*bDXVA\_Func*操作は、最上位バイトで指定されて、次の操作を指定で、[次へ] 最上位バイト、します。 残りのバイト**dwFunction**が 0 に設定します。
+*BDXVA\_func*を使用して実際の操作 (圧縮画像のデコード、アルファブレンドのデータの読み込み、アルファブレンドの組み合わせ、または画像の再サンプリング) を通知する場合、 *bDXVA\_func*は、によってアクセラレータに伝達されます。[*Ddmocomprender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)の呼び出しで、 [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体の**dwfunction**メンバー内の一連の*bDXVA\_Func* byte 値に含まれます。 最初の*bDXVA\_Func*操作は最上位バイトで指定され、次の操作は、次の最上位バイトに指定されます。 **Dwfunction**の残りのバイトは0に設定されます。
 
  
 

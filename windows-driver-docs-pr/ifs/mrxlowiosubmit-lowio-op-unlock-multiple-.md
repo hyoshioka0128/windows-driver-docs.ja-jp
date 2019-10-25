@@ -1,9 +1,9 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_UNLOCK\_MULTIPLE\ routine
-description: MRxLowIOSubmit\ LOWIO\_OP\_UNLOCK\_ネットワーク ミニ リダイレクターが、ファイル オブジェクトに保持されている複数のロックを削除することを要求する RDBSS によって複数のルーチンが呼び出されます。
+title: MRxLowIOSubmit \ LOWIO\_OP\_\_複数のルーチンのロックを解除します
+description: MRxLowIOSubmit \ LOWIO\_OP\_ロック解除\_複数ルーチンは、ファイルオブジェクトに保持されている複数のロックをネットワークミニリダイレクターが削除するように要求するために、RDBSS によって呼び出されます。
 ms.assetid: 50f7abdf-a3f7-4625-ac54-75e80807d05e
 keywords:
-- MRxLowIOSubmit LOWIO_OP_UNLOCK_MULTIPLE ルーチン インストール可能なファイル システム ドライバー
+- MRxLowIOSubmit LOWIO_OP_UNLOCK_MULTIPLE ルーチンのインストール可能なファイルシステムドライバー
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79fb5258b050a27a7cdfb3d915cfe6cc54529480
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c019eedabca0492abcd6e863830bff647494c38
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370092"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841096"
 ---
-# <a name="mrxlowiosubmitlowioopunlockmultiple-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]ルーチン
+# <a name="mrxlowiosubmitlowio_op_unlock_multiple-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\_複数\] ルーチン
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)を要求できるネットワークミニ リダイレクターは、ファイル オブジェクトに保持されている複数のロックを削除します。
+*MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* ルーチンは、ネットワークミニリダイレクターがファイルオブジェクトに保持されている複数のロックを削除するように要求するために、 [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)によって呼び出されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,13 +42,13 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 <a name="parameters"></a>パラメーター
 ----------
 
-*RxContext* \[入力、出力\]  
-RX へのポインター\_CONTEXT 構造体。 このパラメーターには、操作を要求している IRP が含まれています。
+*RxContext* \[in、out\]  
+RX\_コンテキスト構造体へのポインター。 このパラメーターには、操作を要求している IRP が含まれています。
 
 <a name="return-value"></a>戻り値
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* ステータスを返します\_次のいずれかなど、成功した場合に成功した場合、または、適切な NTSTATUS の値します。
+*MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\_複数の\]* が成功したときに成功したか、適切な NTSTATUS 値 (次のいずれか) を返します。
 
 <table>
 <colgroup>
@@ -68,23 +68,23 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>要求を完了するリソースの不足が発生しました。</p></td>
+<td align="left"><p>要求を完了するためのリソースが不足しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>無効な応答は、リモート サーバーから受信しました。</p></td>
+<td align="left"><p>リモートサーバーから無効な応答を受信しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>無効なパラメーターがで指定された<em>RxContext</em>します。</p></td>
+<td align="left"><p><em>RxContext</em>で無効なパラメーターが指定されました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_LINK_FAILED</strong></td>
-<td align="left"><p>要求を完了するリモート サーバーへの再接続に失敗しました。</p></td>
+<td align="left"><p>リモートサーバーに再接続して要求を完了できませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>このルーチンが実装されていません。</p></td>
+<td align="left"><p>このルーチンは実装されていません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_SHARING_VIOLATION</strong></td>
@@ -102,17 +102,17 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 <a name="remarks"></a>注釈
 -------
 
-RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* 受信への応答、 [ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md) IRP のコードを少し使用して要求\_MN\_UNLOCK\_すべてまたは IRP\_MN\_ロックの解除\_すべて\_BY\_キー。
+RDBSS は、 *MRxLowIOSubmit\[LOWIO\_OP\_ロック解除*を呼び出します。 IRP [ **\]MJ\_LOCK\_CONTROL**](irp-mj-lock-control.md)要求の受信に応答して、複数の\_の\_ロックが解除されます。すべてまたは IRP\_\_ロック解除すると\_キーによってすべての\_\_ロック解除\_ます。
 
-呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* 、RDBSS、RX では、次のメンバーを変更します\_CONTEXT 構造体によって示される、 *RxContext*パラメーター。
+*MRxLowIOSubmit\[LOWIO\_OP\_\_複数の\]のロックを解除*する前に、 *RxContext*パラメーターによって示される RX\_コンテキスト構造の次のメンバーを変更します。
 
-**LowIoContext.Operation** LOWIO にメンバーが設定されている\_OP\_UNLOCK\_複数。
+**Lowiocontext. Operation**メンバーは lowio\_OP\_UNLOCK\_MULTIPLE に設定されています。
 
-**LowIoContext.ResourceThreadId**メンバー RDBSS で操作を開始したプロセスのスレッドに設定されます。
+**Lowiocontext threadid**メンバーは、RDBSS で操作を開始したプロセスのスレッドに設定されます。
 
-**LowIoContext.ParamsFor.Locks.LockList** LOWIO の一覧にメンバーが設定されている\_ロック\_リストの要素。 各要素は、ロックを解除する範囲を指定します。
+**Lowiocontext. Locks. LockList**メンバーは、LOWIO\_LOCK\_list 要素のリストに設定されます。 各要素は、ロックを解除する範囲を指定します。
 
-バイト範囲は、ロックを解除するがで指定された、 **LowIoContext.ParamsFor.Locks.LockList** 、RX のメンバー\_CONTEXT 構造体。 LOWIO\_ロック\_リスト構造を次に示します。
+ロックを解除するバイト範囲は、RX の\_CONTEXT 構造体の、 **Lowiocontext** ... locklist メンバーに指定されています。 LOWIO\_ロック\_の一覧の構造は次のとおりです。
 
 ``` syntax
 typedef struct _LOWIO_LOCK_LIST {
@@ -125,11 +125,11 @@ typedef struct _LOWIO_LOCK_LIST {
 } LOWIO_LOCK_LIST, *PLOWIO_LOCK_LIST;
 ```
 
-**LowIoContext.Operation** RX のメンバー\_コンテキストを低の I/O 操作を実行するを指定します。 ネットワークのミニ リダイレクターで同じルーチンを指すため、低い I/O ルーチンのいくつかのことは、 **LowIoContext.Operation**メンバーは、要求は低の I/O 操作を区別するために使用することができます。 たとえば、ファイルのロックに関連するすべての I/O 呼び出しは、ネットワーク ミニリダイレクターで同じ低い I/O ルーチンを呼び出す可能性があり、このルーチンを使用できます、 **LowIoContext.Operation**ロックとを区別し、ロックを解除するにはメンバー要求される演算。
+RX\_CONTEXT の**Lowiocontext 操作**のメンバーは、実行する低 i/o 操作を指定します。 低 i/o ルーチンのいくつかは、ネットワークミニリダイレクターで同じルーチンを指している可能性があります。これは、要求された低 i/o 操作を区別するために、 **Lowiocontext 操作**メンバーを使用できるためです。 たとえば、ファイルロックに関連するすべての i/o 呼び出しで、ネットワークミニリダイレクターで同じ低 i/o ルーチンを呼び出すことができます。また、このルーチンは、要求されたロック操作とロック解除操作を区別するために**Lowiocontext. operation**メンバーを使用できます。
 
-場合、 *MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* ルーチン完了までに時間がかかることができます、ネットワークのミニ リダイレクター ドライバーをリリースする必要があります、FCB のネットワーク通信を開始する前に構造体。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。 中に、 *MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_複数\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RX のメンバー\_コンテキスト RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。
+*MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\_複数の\]* ルーチンの完了に長い時間がかかる場合、ネットワークミニリダイレクタードライバーはネットワークを開始する前に FCB 構造を解放する必要があります。communication. FCB 構造体は、 [**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)を呼び出すことによって解放できます。 *MRxLowIOSubmit\[lowio\_OP\_ロック解除\_複数の\]* ルーチンが処理されている間、RX\_コンテキストの**lowiocontext**スレッドメンバーは、RDBSS で操作を開始したプロセス。
 
-**LowIoContext.ResourceThreadId** RX のメンバー\_別のスレッドの代わり FCB 構造体を解放するコンテキストを使用できます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。
+RX\_コンテキストの**Lowiocontext threadid**メンバーを使用すると、別のスレッドに代わって FCB 構造体を解放できます。 非同期ルーチンが完了すると、初期スレッドから取得された FCB 構造体が解放されます。
 
 <a name="requirements"></a>要件
 ------------
@@ -146,7 +146,7 @@ typedef struct _LOWIO_LOCK_LIST {
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Mrx.h (Mrx.h を含む)</td>
+<td align="left">Mrx .h (Mrx を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -160,17 +160,17 @@ typedef struct _LOWIO_LOCK_LIST {
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_\_\_ディレクトリの変更を通知\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
 [**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_ロック解除\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_書き込み\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

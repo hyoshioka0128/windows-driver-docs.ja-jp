@@ -1,9 +1,9 @@
 ---
 title: ScsiInquiry 関数
-description: ScsiInquiry WMI メソッドでは、指定されたデバイスを照会の SCSI コマンドを送信します。
+description: ScsiInquiry WMI メソッドは、指定されたデバイスに SCSI 照会コマンドを送信します。
 ms.assetid: 31bde910-5a2a-4836-9096-d243c792e295
 keywords:
-- 記憶装置の ScsiInquiry 関数
+- ScsiInquiry function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b701c44e138fff4ccb716e07184f5eb0b22ff5ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c98ae1ff787f21d2f70b47f3a22cedf138438a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363343"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842640"
 ---
 # <a name="scsiinquiry-function"></a>ScsiInquiry 関数
 
 
-**ScsiInquiry** WMI メソッドは、指定されたデバイスに SCSI 問い合わせコマンドを送信します。
+**ScsiInquiry** WMI メソッドは、指定されたデバイスに SCSI 照会コマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -48,35 +48,35 @@ void ScsiInquiry(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 *Cdb*   
-ターゲット デバイスに送信される SCSI 照会コマンドを保持するコマンドの記述子ブロックします。 この情報は、ミニポート ドライバーに配信される、 **Cdb**のメンバー、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)構造体。
+ターゲットデバイスに送信される SCSI 照会コマンドを保持するコマンド記述子ブロック。 この情報は、構造[**内の ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)の**Cdb**メンバーのミニポートドライバーに配信されます。
 
 *HbaPortWWN*   
-ターゲットにアクセスする HBA の世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **HbaPortWWN**のメンバー、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)構造体。
+ターゲットへのアクセスに使用される HBA のワールド名。 この情報は、構造体の[**ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)の**HbaPortWWN**メンバーのミニポートドライバーに配信されます。
 
 *DiscoveredPortWWN*   
-ターゲット デバイスにアクセスするポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **DiscoveredPortWWN**のメンバー、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)構造体。
+ターゲットデバイスへのアクセスに使用するポートの世界規模の名前。 この情報は、構造体の[**ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)の**DiscoveredPortWWN**メンバーのミニポートドライバーに配信されます。
 
-*FcLun*   
-照会の SCSI コマンドを受信する論理ユニットの論理ユニットの数。 この情報は、ミニポート ドライバーに配信される、 **FcLun**のメンバー、 [ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)構造体。
+*Fclun*   
+SCSI 照会コマンドを受信する論理ユニットの論理ユニット番号。 この情報は、構造[**内の ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)の**fclun**メンバーのミニポートドライバーに配信されます。
 
-*ResponseBufferSize*   
-SCSI 問い合わせコマンドの結果を保持するバッファーのバイト サイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferSize**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+*Responsebuffersize*   
+SCSI 照会コマンドの結果を保持するバッファーのサイズ (バイト単位)。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**responsebuffersize**メンバーにこの情報を返します。
 
-*SenseBufferSize*   
-SCSI のセンス データが格納されるバッファーのバイト単位のサイズは、SCSI 問い合わせコマンドの結果です。 ミニポート ドライバーには、この情報が返されます、 **SenseBufferSize**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+*Sensebuffersize*   
+SCSI 照会コマンドの結果として生成される SCSI センスデータを保持するバッファーのサイズ (バイト単位)。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**sensebuffersize**メンバーでこの情報を返します。
 
 *ScsiStatus*   
-SCSI 問い合わせコマンドの状態。 ミニポート ドライバーには、この情報が返されます、 **ScsiStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+SCSI 照会コマンドの状態。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**ScsiStatus**メンバーにこの情報を返します。
 
-*ResponseBuffer*   
-SCSI 問い合わせコマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **ResponseBuffer**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+*Responsebuffer*   
+SCSI 照会コマンドの結果。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**responsebuffer**メンバーでこの情報を返します。
 
-*SenseBuffer*   
-照会の SCSI コマンドに起因する SCSI センス データ。 ミニポート ドライバーには、この情報が返されます、 **SenseBuffer**のメンバー、 [ **ScsiInquiry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体。
+*Sensebuffer*   
+SCSI 照会コマンドの結果として生成される SCSI sense データ。 ミニポートドライバーは、 [**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)構造体の**sensebuffer**メンバーでこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -86,7 +86,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -103,23 +103,23 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbapiwmi.h、Hbaapi.h、Hbaapi.h など)</td>
+<td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**ScsiInquiry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)
+[**ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)
 
-[**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)
+[**ScsiInquiry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)
 
  
 

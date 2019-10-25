@@ -3,80 +3,80 @@ title: ミニフィルター ドライバーで生成された I/O 要求
 description: ミニフィルター ドライバーで生成された I/O 要求
 ms.assetid: cf06dcb9-58e2-4341-8229-8f172f37c176
 keywords:
-- フィルター マネージャー WDK ファイル システム ミニフィルター ドライバーによって生成される I/O 要求
-- I/O 要求の WDK ファイル システム
-- Irp WDK ファイル システム
+- フィルターマネージャー WDK ファイルシステムミニフィルター、ドライバーによって生成された i/o 要求
+- I/o 要求 (WDK ファイルシステム)
+- Irp WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dde83f45cf2c9ff7ba6bdbe0b5a328383920e9a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc433f3de2e15430a3c63edd6cd38ce8184b3432
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375705"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841212"
 ---
 # <a name="io-requests-generated-by-the-minifilter-driver"></a>ミニフィルター ドライバーで生成された I/O 要求
 
 
-ミニフィルター ドライバーでは、生成でき、現在のボリュームまたは別のボリューム ドライバーのインスタンス、ミニフィルターのいずれかから IRP ベースの I/O 要求を送信することができます。 生成される I/O とファイル システム ミニフィルター ドライバーのインスタンスと、指定したインスタンスの下に接続されているレガシ フィルター ドライバーによってのみが表示されます。 これは、レガシ フィルター ドライバー モデルが表示され、以降、最上位のドライバーでは、全体のファイル システム スタックを介して移動する必要がある I/O レガシ フィルター ドライバーによって生成された要求で再帰 I/O に関連する多くの問題を解決します。
+ミニフィルタードライバーは、現在のボリュームまたは別のボリューム上にあるミニフィルタードライバー独自のインスタンスから、IRP ベースの i/o 要求を生成して送信することができます。 生成された i/o は、指定したインスタンスの下、およびファイルシステムによって接続された、ミニフィルタードライバーインスタンスとレガシフィルタードライバーによってのみ表示されます。 これにより、レガシフィルタードライバーモデルの再帰 i/o に関連する多くの問題が解決されます。レガシフィルタードライバーによって生成される i/o 要求は、最上位のドライバーから順にファイルシステムスタック全体を通過する必要があります。
 
-フィルター マネージャーは、その未処理の I/O 操作のすべてが完了するまで、ミニフィルター ドライバーをアンロードしません。
+フィルターマネージャーは、未処理のすべての i/o 操作が完了するまでミニフィルタードライバーをアンロードしません。
 
-### <a name="span-idfiltermanagerroutinesforiorequestsgeneratedbytheminifilterdriverspanspan-idfiltermanagerroutinesforiorequestsgeneratedbytheminifilterdriverspanspan-idfiltermanagerroutinesforiorequestsgeneratedbytheminifilterdriverspanfilter-manager-routines-for-io-requests-generated-by-the-minifilter-driver"></a><span id="Filter_Manager_Routines_for_I_O_Requests_Generated_by_the_Minifilter_Driver"></span><span id="filter_manager_routines_for_i_o_requests_generated_by_the_minifilter_driver"></span><span id="FILTER_MANAGER_ROUTINES_FOR_I_O_REQUESTS_GENERATED_BY_THE_MINIFILTER_DRIVER"></span>ミニフィルター ドライバーによって生成される I/O 要求のフィルター マネージャー ルーチン
+### <a name="span-idfilter_manager_routines_for_i_o_requests_generated_by_the_minifilter_driverspanspan-idfilter_manager_routines_for_i_o_requests_generated_by_the_minifilter_driverspanspan-idfilter_manager_routines_for_i_o_requests_generated_by_the_minifilter_driverspanfilter-manager-routines-for-io-requests-generated-by-the-minifilter-driver"></a><span id="Filter_Manager_Routines_for_I_O_Requests_Generated_by_the_Minifilter_Driver"></span><span id="filter_manager_routines_for_i_o_requests_generated_by_the_minifilter_driver"></span><span id="FILTER_MANAGER_ROUTINES_FOR_I_O_REQUESTS_GENERATED_BY_THE_MINIFILTER_DRIVER"></span>ミニフィルタードライバーによって生成される i/o 要求のフィルターマネージャールーチン
 
-フィルター マネージャーでは、作成、開く、読み取り、およびファイルの書き込みの次のサポート ルーチンを提供します。
+フィルターマネージャーには、ファイルの作成、開く、読み取り、および書き込みを行うための次のサポートルーチンが用意されています。
 
-[**FltClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltclose)
+[**FltClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltclose)
 
-[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)
 
-[**FltCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefileex)
+[**FltCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefileex)
 
-[**FltReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreadfile)
+[**FltReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreadfile)
 
-[**FltWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltwritefile)
+[**FltWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltwritefile)
 
-設定し、再解析ポイントを削除するのには、次のサポート ルーチンが用意されています。
+再解析ポイントの設定と削除には、次のサポートルーチンが用意されています。
 
-[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltuntagfile)
 
-次のサポート ルーチンは、I/O 要求を生成するために用意されています。
+I/o 要求を生成するために、次のサポートルーチンが用意されています。
 
-[*FltAllocateCallbackData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecallbackdata)
+[*FltAllocateCallbackData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecallbackdata)
 
-[**FltFreeCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreecallbackdata)
+[**FltFreeCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfreecallbackdata)
 
-[**FltPerformAsynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformasynchronousio)
+[**FltPerformAsynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformasynchronousio)
 
-[*FltPerformSynchronousIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformsynchronousio)
+[*FltPerformSynchronousIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformsynchronousio)
 
-[**FltReuseCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreusecallbackdata)
+[**FltReuseCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreusecallbackdata)
 
-ファイルのオープン要求をキャンセルして、I/O 要求を再発行の次のサポート ルーチンが提供されます。
+ファイルオープン要求をキャンセルし、i/o 要求を再発行するために、次のサポートルーチンが用意されています。
 
-[**FltCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen)
+[**FltCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)
 
-[**FltReissueSynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreissuesynchronousio)
+[**FltReissueSynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreissuesynchronousio)
 
-フィルター マネージャーは、次の汎用ルーチンを提供しています。
+フィルターマネージャーには、次の汎用ルーチンも用意されています。
 
-[**FltDeviceIoControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeviceiocontrolfile)
+[**FltDeviceIoControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeviceiocontrolfile)
 
-[**FltFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltflushbuffers)
+[**FltFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltflushbuffers)
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**FltQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryinformationfile)
+[**FltQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryinformationfile)
 
-[**FltQuerySecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltquerysecurityobject)
+[**FltQuerySecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltquerysecurityobject)
 
-[**FltQueryVolumeInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryvolumeinformationfile)
+[**FltQueryVolumeInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryvolumeinformationfile)
 
-[**FltSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinformationfile)
+[**FltSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetinformationfile)
 
-[**FltSetSecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetsecurityobject)
+[**FltSetSecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetsecurityobject)
 
  
 

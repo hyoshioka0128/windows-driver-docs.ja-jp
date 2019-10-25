@@ -3,33 +3,33 @@ title: 印刷フィルターの非同期通知
 description: 印刷フィルターの非同期通知
 ms.assetid: 52b0790b-4927-4e1b-8ae5-6e2afc7c9df6
 keywords:
-- モジュール WDK XPSDrv、XPS フィルターを表示します。
-- XPS は、WDK XPSDrv をフィルター処理します。
-- WDK XPS をフィルター処理します。
+- レンダーモジュール WDK XPSDrv、XPS フィルター
+- XPS フィルター WDK XPSDrv
+- WDK XPS をフィルター処理します
 - 非同期通知 WDK XPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff046003df234ec9a534f91d8ce359007769e3db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adf5f3fcade0fb61d2386c8bacf76d2d6a3a9641
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380709"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842308"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>印刷フィルターの非同期通知
 
 
-印刷フィルター パイプラインでは、アプリケーション用の印刷スプーラーでサポートされている非同期の通知に非常に類似した非同期の通知機能があります。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel)印刷スプーラで使用できる関数が印刷フィルターをご利用いただけません。 印刷のフィルターを使用する必要があります、 [IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory) IPrintAsyncNotify オブジェクトを作成するインターフェイス。
+印刷フィルターパイプラインには、非同期通知機能があります。この機能は、アプリケーションの印刷スプーラでサポートされている非同期通知によく似ています。 印刷スプーラーで使用できる[**RouterCreatePrintAsyncNotificationChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel)関数は、印刷フィルターでは使用できません。 印刷フィルターでは、 [IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)インターフェイスを使用して IPrintAsyncNotify オブジェクトを作成する必要があります。
 
 このトピックでは、印刷フィルターで非同期通知機能を使用する方法について説明します。
 
-**注**  v4 印刷ドライバー モデルの印刷フィルターから非同期の通知をスローすることはサポートされていません。
+**注**  印刷フィルターからの非同期通知のスローは、v4 印刷ドライバーモデルではサポートされていません。
 
  
 
 ### <a name="iprintclassobjectfactory"></a>IPrintClassObjectFactory
 
-[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)インターフェイス通知インターフェイスへのアクセスを提供します。 次のコード例では、フィルターがプロパティ バッグからこのインターフェイスを取得する方法を示しています。
+[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)インターフェイスは、通知インターフェイスへのアクセスを提供します。 次のコード例は、フィルターがプロパティバッグからこのインターフェイスを取得する方法を示しています。
 
 ```cpp
 // This interface is defined as a private member variable in the filter class
@@ -53,7 +53,7 @@ if (SUCCEEDED(hr))
 
 ### <a name="notification-channel"></a>通知チャンネル
 
-IPrintClassObjectFactory インターフェイスで、フィルターは、一方向またはフィルターのニーズに応じて、双方向の通知チャネルを作成できます。 次のコード例では、前の例から続行し、フィルターが一方向の通知チャネルを確立する方法を示しています。
+IPrintClassObjectFactory インターフェイスを使用すると、フィルターのニーズに応じて、一方向または双方向の通知チャネルをフィルターで作成できます。 次のコード例は、前の例から続き、フィルターが一方向の通知チャネルを確立する方法を示しています。
 
 ```cpp
 // Create a unidirectional notification channel
@@ -105,21 +105,21 @@ if (SUCCEEDED(hr))
 }
 ```
 
-変数、上記のコード例では`pIAsyncCallback`の呼び出し元の実装へのポインター、 [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)インターフェイス。
+前のコード例では、変数 `pIAsyncCallback` は、 [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)インターフェイスの呼び出し元の実装へのポインターです。
 
-場合によってとそれが済んだら、双方向の通知チャネルをリリースする必要があります。 これを行うには、呼び出し、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッド[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)します。 チャネルを解放する場合については、次を参照してください。[通知チャネル](notification-channel.md)します。
+場合によっては、完了後に双方向通知チャネルを解放する必要があります。 これを行うには、 [IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)で[Release](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッドを呼び出します。 チャネルを解放するタイミングの詳細については、「 [Notification channel](notification-channel.md)」を参照してください。
 
 ### <a name="impersonation-and-notification"></a>権限借用と通知
 
-IPrintAsyncNotify::CreatePrintAsyncNotifyChannel メソッドを呼び出すときに、フィルターは、ユーザー アカウントを借用しませんする必要があります。 印刷スプーラで承認メカニズムは、ローカル サービス アカウントから呼び出されることが必要です。 フィルターは、ジョブを送信したユーザーのアカウントを偽装する必要がある場合、フィルターは、CreatePrintAsyncNotifyChannel を呼び出す前にそれ自体に戻す必要があります。 呼び出しが返された後に、フィルターは、必要に応じて、ユーザー アカウントに戻すことができます。
+フィルターは、IPrintAsyncNotify:: CreatePrintAsyncNotifyChannel メソッドを呼び出すときに、ユーザーアカウントを偽装しないようにする必要があります。 印刷スプーラの承認メカニズムでは、ローカルサービスアカウントから呼び出される必要があります。 フィルターが、ジョブを送信したユーザーのアカウントの権限を借用する必要がある場合は、CreatePrintAsyncNotifyChannel を呼び出す前にフィルターをそれ自体に戻す必要があります。 呼び出しが返された後、必要に応じて、フィルターを使用してユーザーアカウントに戻すことができます。
 
-**注**  ジョブ ID のユーザーの関連付けに基づいてジョブを送信したユーザーに通知呼び出しは、ローカル サービスのコンテキストで行われますが、場合でも kPerUser の通知が送信されます
+**注**  ローカルサービスコンテキストで通知が呼び出されている場合でも、ジョブ ID のユーザー関連付けに基づいてジョブを送信したユーザーに kPerUser 通知が送信されます。
 
  
 
-### <a name="adapting-the-wdk-sample-code"></a>WDK サンプル コードを調整
+### <a name="adapting-the-wdk-sample-code"></a>WDK サンプルコードを適合させる
 
-RouterCreatePrintAsyncNotificationChannel 呼び出しを次のコード例に置き換えることにより、印刷フィルターで作業する WDK サンプル コードからの通知のサンプルを適用することができます。
+RouterCreatePrintAsyncNotificationChannel 呼び出しを次のコード例に置き換えることによって、WDK サンプルコードの通知サンプルを調整して印刷フィルターで動作させることができます。
 
 ```cpp
 IPrintAsyncNotify  *pIAsyncNotify;

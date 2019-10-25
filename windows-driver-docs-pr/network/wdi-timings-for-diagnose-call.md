@@ -1,31 +1,31 @@
 ---
-title: 診断の呼び出しのタイミング
-description: デバッグ情報を収集する診断のタイミングの要件は次のとおりです。
+title: 診断呼び出しのタイミング
+description: デバッグ情報を収集するための診断のタイミング要件は次のとおりです。
 ms.assetid: A21687FE-1398-4722-89E3-BFB511AA48E3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f853cc6890977d16cfdeaf570ae471e7c34b3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e185dbe86ef1d335a0ba1aa69d456c3260466a30
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842890"
 ---
-# <a name="timings-for-diagnose-call"></a>診断の呼び出しのタイミング
+# <a name="timings-for-diagnose-call"></a>診断呼び出しのタイミング
 
 
-デバッグ情報を収集する診断のタイミングの要件は次のとおりです。
+デバッグ情報を収集するための診断のタイミング要件は次のとおりです。
 
-レベルで**DiagnoseLevelHardwareRegisters**、LE の収集が予想されるデバイスの制御は、診断の呼び出しの出力バッファーに 1 KB を登録します。 これは、通常のリリースの製品の設定です。 デバイス制御レジスタの重要な情報を収集するためのものです。 このような情報を収集する時間の制限は 25 です。
+**DiagnoseLevelHardwareRegisters**のレベルでは、LE は、診断呼び出しの出力バッファーに 1 kb を超えるデバイスコントロールレジスタを収集することが想定されています。 これは、通常のリリース製品の設定です。 これは、デバイスコントロールレジスタの重要な情報を収集することを目的としています。 このような情報を収集するための制限時間は、25ms です。
 
-レベルで**DiagnoseLevelFirmwareImageDump**または**DiagnoseLevelDriverStateDump**、デバイス制御レジスタとファームウェアの完全なダンプを収集する、LE が必要です。 時間に余裕がある場合、LE、時間制限の対象のドライバーの状態も収集できます。 診断で収集の制御レジスタは出力バッファー、ダンプのファームウェアとドライバーの状態 %windir% で名前のファイルに保存する必要があります以外\\system32\\ドライバー。 どちらのレベルのすべてのデバッグ情報を収集する時間は、25 秒以内でなければなりません。 これらの診断レベルは、自己ホストのフェーズで使用するためのものです。
+**DiagnoseLevelFirmwareImageDump**または**DiagnoseLevelDriverStateDump**のレベルでは、LE はデバイスコントロールレジスタとファームウェアの完全ダンプを収集することが想定されています。 時間が許容される場合、LE は、制限時間に従ってドライバーの状態を収集することもできます。 診断出力バッファーに収集されたコントロールレジスタを除き、ファームウェアダンプとドライバーの状態は、% windir%\\system32\\ドライバーで選択した名前のファイルに保存する必要があります。 いずれかのレベルですべてのデバッグ情報を収集する時間は、25秒以内にする必要があります。 これらの診断レベルは、自己ホストフェーズで使用することを意図しています。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[**eDiagnoseLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-ediagnoselevel)
+[**eDiagnoseLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-ediagnoselevel)
 
-[*MiniportWdiAdapterHangDiagnose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_adapter_hang_diagnose)
+[*MiniportWdiAdapterHangDiagnose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_adapter_hang_diagnose)
 
  
 

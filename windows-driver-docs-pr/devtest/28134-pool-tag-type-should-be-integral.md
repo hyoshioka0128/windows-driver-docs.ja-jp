@@ -1,25 +1,25 @@
 ---
 title: C28134
-description: 警告 C28134 プール タグの種類 は整数、いない文字列または文字列のポインター。
+description: 警告 C28134 プールタグの型は、文字列または文字列ポインターではなく、整数である必要があります。
 ms.assetid: f61aec4c-4072-421f-aa6d-d9399d0c439c
 keywords:
-- '警告は、WDK: PREfast for Drivers を一覧表示'
-- 'エラーは、WDK: PREfast for Drivers を一覧表示'
+- ドライバーの WDK PREfast の一覧に警告が表示される
+- ドライバーの WDK PREfast の一覧にエラーが表示される
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28134
-ms.openlocfilehash: 4c08420c6f35bd65d7864175c5bc6b69b1bb61e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c266c44ad2ca609f53fe8203a454fbf9682243cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364137"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840318"
 ---
 # <a name="c28134"></a>C28134
 
 
-C28134 を警告します。プール タグの種類が整数、いない文字列または文字列ポインターにする必要があります。
+警告 C28134: プールタグの型は、文字列または文字列ポインターではなく、整数である必要があります
 
 <table>
 <colgroup>
@@ -29,24 +29,24 @@ C28134 を警告します。プール タグの種類が整数、いない文字
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>追加情報</strong></p></td>
-<td align="left"><p>文字リテラル二重引用符で文字列ではなく単一引用符 ('gaT_') を使用して、プール タグ名があります。 逆バイト順で通常は。</p></td>
+<td align="left"><p>プールタグ名は、二重引用符で囲まれた文字列ではなく、単一引用符 (' gaT_ ') を使用する文字リテラルである必要があります。 通常は、逆バイト順になります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ドライバーなど、プール タグを代入する関数の呼び出しは[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、プール タグの値を指定する単一引用符でリテラル以外の値を使用してですが。 プール タグでは、引用符で囲まれた文字列を使用しません。
+ドライバーが、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)などのプールタグを割り当てる関数を呼び出していますが、単一引用符で囲まれたリテラル以外の値を使用して、プールタグの値を指定しています。 プールタグに引用符で囲まれた文字列を使用しないでください。
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
-次のコード例では、この警告を引き起こします。
+この警告を elicits するコード例を次に示します。
 
 ```
 p = ExAllocatePoolWithTag(NonPagedPool, 30, "_Tag");
 ```
 
-次のコード例は、この警告を回避できます。
+次のコード例では、この警告を回避します。
 
 ```
 p = ExAllocatePoolWithTag(NonPagedPool, 30, 'gaT_');

@@ -4,23 +4,23 @@ description: バス ドライバーの電源切断および取り外しシーケ
 ms.assetid: 71397945-D9DB-43E2-AE06-548684F72B63
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 02277f5c689c51255a8fdbfe2c4691dd9f09f797
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1ae0aaaacd0360bfa33f5526575943605cc43b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379642"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842249"
 ---
 # <a name="power-down-and-removal-sequence-for-a-bus-driver"></a>バス ドライバーの電源切断および取り外しシーケンス
 
 
-次の図は、バスに接続されているデバイスを削除して電源をオフのときに、フレームワーク KMDF バス ドライバーのイベントのコールバック関数を呼び出す順序を示します。 シーケンスは、図の上部にある作業の電源の状態 (D0) では、運用のデバイスで始まります。
+次の図は、バスに接続されているデバイスの電源をオンにして削除するときに、フレームワークが KMDF バスドライバーのイベントコールバック関数を呼び出す順序を示しています。 シーケンスは、動作中の電源状態 (D0) にある操作デバイスを使用して、図の上部から開始します。
 
-![バス ドライバーの電源と削除の順序](images/pdo-powerdown.png)
+![バスドライバーの電源ダウンと削除シーケンス](images/pdo-powerdown.png)
 
-フレームワークでは、デバイスは、システムから物理的に削除されるまで、PDO は削除されません。 たとえば、ユーザーは、デバイス マネージャーでデバイスを無効にします。 または、ハードウェアの安全なユーティリティで停止しますが、デバイスを物理的に削除されません、フレームワークは、PDO を保持します。 デバイスが再度有効に後で場合、フレームワークは同じ PDO を使用し、呼び出すことによって、スタートアップ シーケンスを開始、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバックのように[の電源投入シーケンス物理デバイス オブジェクト](power-up-sequence-for-a-bus-driver.md)します。
+フレームワークは、デバイスがシステムから物理的に削除されるまで PDO を削除しません。 たとえば、ユーザーがデバイスマネージャーでデバイスを無効にした場合、またはハードウェアの安全な取り外しユーティリティでデバイスを停止しても、物理的にはデバイスを削除しない場合、フレームワークは PDO を保持します。 デバイスを再度有効にした場合、フレームワークは同じ PDO を使用し、「[物理デバイスオブジェクトの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)」に示されているように、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバックを呼び出すことによって起動シーケンスを開始します。
 
-**注意**:通常、フレームワークがバス ドライバーの[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数を呼び出した後、 [ *EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)すべての子デバイス ドライバーを列挙する関数。  デバイスの電源投入または電源の障害が発生して、親が発生した場合、フレームワークは、ドライバーを呼び出すことができます[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)それが呼び出される前に、 [ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)関数のすべての子デバイス。  呼び出し元を検討してください[WdfDeviceInitSetReleaseHardwareOrderOnFailure](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)をフレームワークが呼び出す、バス ドライバーのように[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック。すべての子デバイスが削除されました後でのみ。
+**注**: 通常、フレームワークは、ドライバーが列挙するすべての子デバイスに対して[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)関数を呼び出した後、バスドライバーの[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数を呼び出します。  親がデバイスの電源アップまたは停電の障害を検出した場合、フレームワークは、すべての子デバイスの[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)関数を呼び出す前に、ドライバーの[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)を呼び出す可能性があります。  [WdfDeviceInitSetReleaseHardwareOrderOnFailure](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)を呼び出して、すべての子デバイスが削除された後にのみ、フレームワークがバスドライバーの[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバックを呼び出すようにすることを検討してください。
 
 
 

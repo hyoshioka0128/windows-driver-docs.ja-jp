@@ -1,160 +1,160 @@
 ---
 title: オフロード データ転送
-description: 頻繁にファイル システムの利用状況は、コンピューター間または同じコンピューター内でデータを転送します。
+description: コンピューター間または同じコンピューター内でのデータ転送は、ファイルシステムの頻繁な動作です。
 ms.assetid: 66006CC0-8902-47CD-8E7C-187FE5BA71EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaa44e190ea34938970806c4c27410e73fdbe0b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 961cddf10dd475a6005178a924b202295984c45a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386073"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841057"
 ---
 # <a name="offloaded-data-transfers"></a>オフロード データ転送
 
 
-頻繁にファイル システムの利用状況は、コンピューター間または同じコンピューター内でデータを転送します。 標準を使用して**ReadFile**と**WriteFile**関数が機能の観点からも機能しますが、大量のデータの移動が伴いますのレベルを すべてのシステムと、ネットワーク経由で可能性があります。 転送と、システムを接続するネットワークに関連するシステムの可用性に影響を与えることができます。 多くの記憶域サブシステムで利用できる高度な機能は、データ移動の '面倒' タスクを実行するより効率的な手段を提供します。
+コンピューター間または同じコンピューター内でのデータ転送は、ファイルシステムの頻繁な動作です。 標準の**ReadFile**関数と**WriteFile**関数を使用することは、機能的な観点からは適切に機能しますが、システムのあらゆるレベルでの大量のデータ移動と、ネットワーク経由の可能性があります。 これは、転送に関係するシステムとシステムを接続するネットワークの可用性に影響を与える可能性があります。 多くのストレージサブシステムで利用できる高度な機能を使用すると、データ移動タスクをより効率的に実行できます。
 
-Windows 8 以降、アプリケーションを利用、記憶域サブシステムへのデータ移動の処理をオフロードするこれらの機能できます。 通常、ファイル システム フィルターは読み取りをインターセプトすることでこれらのアクションを監視し、ボリュームへの書き込み要求。 その他のアクションは、フィルター オフロード データ転送を意識する必要があります。
+Windows 8 以降では、アプリケーションはこれらの機能を利用して、記憶域サブシステムへのデータ移動プロセスをオフロードすることができます。 通常、ファイルシステムフィルターは、ボリュームに対する読み取りおよび書き込み要求をインターセプトすることによって、これらのアクションを監視できます。 フィルターでオフロードデータ転送を認識するには、追加のアクションが必要です。
 
-## <a name="span-idtypicaldatatransfersspanspan-idtypicaldatatransfersspanspan-idtypicaldatatransfersspantypical-data-transfers"></a><span id="Typical_Data_Transfers"></span><span id="typical_data_transfers"></span><span id="TYPICAL_DATA_TRANSFERS"></span>一般的なデータ転送
-
-
-データの移動、アプリケーションのシナリオで今日は簡単です。 読み取り作成し、ローカル メモリにデータ新しい場所にバックアップにはが含まれます。 次の図は、このシナリオを示します。
-
-このシナリオでは、インテリジェントな記憶域配列 (ISA) を通じて公開される、独自の仮想ディスクで 2 つの別々 のファイル サーバー上の 2 つの場所の間でファイルをコピーする必要があります。 発信側のシステムは、まず、ソース仮想ディスクからデータをローカル バッファーに読み取る必要があります。 その後は、パッケージ化し、いくつかのトランスポートとプロトコル (SMB over 1 gbe) のようなデータを受信すると、ローカル バッファーに出力し、2 つ目のシステム データを送信します。 次に、ターゲット システムでは、変換先の仮想ディスクにデータを書き込みます。 このシナリオでは、実行される複数回さまざまなアプリケーションで毎日データ転送の非常に典型的な読み取り/書き込みメソッドについて説明します。
-
-![一般的なデータ転送](images/odx-scenario-1.png)
-
-標準では、読み取りし、ほとんどのシナリオでも作業を書き込み、中には、同じインテリジェントな記憶域配列によって管理される仮想ディスクにコピーする目的でデータを配置する可能性があります。 これは、データが移動される、サーバー上に、配列外間でのネットワーク トランスポートには、別のサーバーに、同じ配列に、もう一度を意味します。 サーバー内やネットワーク トランスポートのデータの移動の機能が大幅にこれらのシステムの可用性に影響を与えるデータ移動のスループットがスループットとネットワークの可用性によって制限されることは言うまでもありません。
-
-## <a name="span-idoffloadeddatatransfersodxspanspan-idoffloadeddatatransfersodxspanspan-idoffloadeddatatransfersodxspanoffloaded-data-transfers-odx"></a><span id="Offloaded_Data_Transfers__ODX_"></span><span id="offloaded_data_transfers__odx_"></span><span id="OFFLOADED_DATA_TRANSFERS__ODX_"></span>オフロード データ転送 (ODX)
+## <a name="span-idtypical_data_transfersspanspan-idtypical_data_transfersspanspan-idtypical_data_transfersspantypical-data-transfers"></a><span id="Typical_Data_Transfers"></span><span id="typical_data_transfers"></span><span id="TYPICAL_DATA_TRANSFERS"></span>標準的なデータ転送
 
 
-### <a name="span-idoffloadingthedatatransferspanspan-idoffloadingthedatatransferspanspan-idoffloadingthedatatransferspanoffloading-the-data-transfer"></a><span id="Offloading_the_Data_Transfer"></span><span id="offloading_the_data_transfer"></span><span id="OFFLOADING_THE_DATA_TRANSFER"></span>データ転送のオフロード
+現在、アプリケーションのシナリオでデータを移動するのは非常に簡単です。 ローカルメモリにデータを読み取ってから、新しい場所に書き戻す必要があります。 次の図は、このシナリオを示しています。
 
-Windows 8 のオフロード データ転送メソッドを容易にするには、2 つの新しい FSCTLs が導入されました。 これは、サーバー記憶域サブシステム内で適切に行われる移動をビットにビットの移行の負担を移動します。 コマンドのセマンティクスを視覚化する最善の方法では、バッファーの読み取りとバッファーの書き込みに似ていますとして捉えることです。
+このシナリオでは、2つの異なるファイルサーバー上の2つの場所の間でファイルをコピーします。それぞれのファイルサーバーには、インテリジェントストレージアレイ (ISA) を介して公開される独自の仮想ディスクが含まれます。 開始システムは、まず、ソース仮想ディスクからローカルバッファーにデータを読み取る必要があります。 次に、何らかのトランスポートとプロトコル (1 Gbe を超える SMB など) を使用してデータをパッケージ化し、2番目のシステムに送信します。このシステムは、データを受信してローカルバッファーに出力します。 次に、ターゲットシステムによって、データが宛先仮想ディスクに書き込まれます。 このシナリオでは、毎日多くの異なるアプリケーションによって複数回実行されるデータ転送の非常に一般的な読み取り/書き込み方法について説明します。
+
+![標準的なデータ転送](images/odx-scenario-1.png)
+
+標準的な読み取りと書き込みは、ほとんどのシナリオで適切に動作しますが、コピーされるデータは、同じインテリジェントストレージアレイによって管理される仮想ディスクに配置される場合があります。 これは、データが配列からサーバーに移動され、ネットワークトランスポート経由で別のサーバーに移動し、もう一度同じ配列に戻されることを意味します。 サーバー内およびネットワークトランスポート間でデータを移動することは、これらのシステムの可用性に大きな影響を与える可能性があります。データ移動のスループットは、ネットワークのスループットと可用性によって制限されるという事実には触れません。
+
+## <a name="span-idoffloaded_data_transfers__odx_spanspan-idoffloaded_data_transfers__odx_spanspan-idoffloaded_data_transfers__odx_spanoffloaded-data-transfers-odx"></a><span id="Offloaded_Data_Transfers__ODX_"></span><span id="offloaded_data_transfers__odx_"></span><span id="OFFLOADED_DATA_TRANSFERS__ODX_"></span>オフロードデータ転送 (ODX)
+
+
+### <a name="span-idoffloading_the_data_transferspanspan-idoffloading_the_data_transferspanspan-idoffloading_the_data_transferspanoffloading-the-data-transfer"></a><span id="Offloading_the_Data_Transfer"></span><span id="offloading_the_data_transfer"></span><span id="OFFLOADING_THE_DATA_TRANSFER"></span>データ転送のオフロード
+
+Windows 8 では、データ転送のオフロード方法を容易にする2つの新しい FSCTLs が導入されています。 これにより、サーバーからのビット移動の負担が、記憶域サブシステム内でインテリジェントに発生するように変化します。 コマンドのセマンティクスを視覚化する最良の方法は、バッファーなしの読み取りとバッファーなしの書き込みに似ていると考えることです。
 
 <span id="FSCTL_OFFLOAD_READ"></span><span id="fsctl_offload_read"></span>[**FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)  
-このコントロールの要求で必要な長さおよび読み取るファイル内でオフセットを取得する、 [ **FSCTL\_オフロード\_読み取り\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)構造体。 でサポートされている場合、ファイルをホストする記憶域サブシステムがストレージ コマンドを読み取り、関連付けられているオフロードを受信し、読み取りコマンド オフロードの時に読み取られるデータの論理表現であるトークンを生成します。 呼び出し元にこのトークン文字列が返されます、 [ **FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)構造体。
+このコントロール要求は、読み取り対象のファイル内のオフセットと、 [**FSCTL\_オフロード\_読み取り\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)構造体の必要な長さを受け取ります。 サポートされている場合、ファイルをホストする記憶域サブシステムは、関連付けられているオフロード読み取りストレージコマンドを受け取り、トークンを生成します。これは、オフロード読み取りコマンドの時点で読み取られることを意図したデータの論理表現です。 このトークン文字列は、 [**FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)構造で呼び出し元に返されます。
 
 <span id="FSCTL_OFFLOAD_WRITE"></span><span id="fsctl_offload_write"></span>[**FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)  
-この制御要求の内に書き込まれるファイル、希望の長さ、書き込みと書き込まれるデータの論理表現であるトークンのオフセットを取得します。 、サポートされている場合、書き込まれるファイルをホストしている記憶域サブシステムは、関連付けられているオフロード書き込みストレージ コマンドを受け取ります。 最初に指定されたトークンを認識しようし、可能であれば、書き込み操作を実行します。 Windows では、下に、書き込み操作が完了し、そのため、ファイル システムと記憶域スタック上のコンポーネントには、データ移動表示されません。 データ移動が完了すると、呼び出し元に書き込まれたバイト数が返されます。
+この制御要求では、書き込み先のファイル内のオフセット、書き込みに必要な長さ、および書き込まれるデータの論理的な表現であるトークンが使用されます。 サポートされている場合、書き込まれるファイルをホストする記憶域サブシステムは、関連付けられているオフロード書き込みストレージコマンドを受け取ります。 まず、指定されたトークンを認識し、次に可能な場合は書き込み操作を実行します。 書き込み操作は Windows の下で完了します。そのため、ファイルシステムとストレージスタック上のコンポーネントにデータ移動は表示されません。 データの移動が完了すると、書き込まれたバイト数が呼び出し元に返されます。
 
-![オフロード データ転送](images/odx-scenario-2.png)
+![オフロードデータ転送](images/odx-scenario-2.png)
 
-最初の図と同様に、2 台のサーバー上の 2 つの仮想ディスクの間の単純なファイル コピーが表示されます。 通常の読み取りと書き込みを行うと、代わりには、記憶域配列への移行をビットの面倒をオフロードします。 最初のシステムでは、読み取り、配列の最初の仮想ディスクのリージョン内で読み取られるデータの特定の時点のビューを表すトークンを生成する要求操作オフロードを発行します。 最初のシステムは、2 番目のシステムは、さらにオフロードする問題への書き込み操作、トークンを使用して 2 つ目の仮想ディスクにトークンを送信します。 配列は、トークンを解釈し、仮想ディスク間のデータ移動を実行しようとしています。 インテリジェントな記憶域配列内で、2 つのホスト間ではなく、実際のデータ転送が発生することがわかります。 これによって、事実上、システム間のネットワーク トラフィックを排除しながら、2 つのシステムの可用性が大幅に向上します。
+最初の図と同様に、2つの異なるサーバー上の2つの仮想ディスク間の単純なファイルコピーが示されています。 通常の読み取りと書き込みを行うのではなく、ストレージアレイへのビット移動の大量の処理をオフロードします。 最初のシステムはオフロード読み取り操作を実行し、配列は、最初の仮想ディスクの領域内で読み取るデータの特定の時点のビューを表すトークンを生成するように要求します。 その後、最初のシステムはトークンを2番目のシステムに送信します。その後、トークンを使用して2番目の仮想ディスクにオフロード書き込み操作が発行されます。 次に、配列はトークンを解釈し、仮想ディスク間のデータ移動を実行しようとします。 実際のデータ転送はインテリジェントストレージアレイ内で行われ、2つのホスト間では発生しないことがわかります。 これにより、システム間のネットワークトラフィックを実質的に排除しながら、2つのシステムの可用性を大幅に向上させることができます。
 
-### <a name="span-idintegrationwiththecopyenginespanspan-idintegrationwiththecopyenginespanspan-idintegrationwiththecopyenginespanintegration-with-the-copy-engine"></a><span id="Integration_with_the_Copy_Engine"></span><span id="integration_with_the_copy_engine"></span><span id="INTEGRATION_WITH_THE_COPY_ENGINE"></span>コピー エンジンとの統合
+### <a name="span-idintegration_with_the_copy_enginespanspan-idintegration_with_the_copy_enginespanspan-idintegration_with_the_copy_enginespanintegration-with-the-copy-engine"></a><span id="Integration_with_the_Copy_Engine"></span><span id="integration_with_the_copy_engine"></span><span id="INTEGRATION_WITH_THE_COPY_ENGINE"></span>コピーエンジンとの統合
 
-Windows のコア コピー エンジンを使って**CopyFile**および関連する関数。 Windows 8 以降では、コピー エンジンに透過的にしようと従来のコピーのファイルのコード パスの前にデータ転送のオフロードを使用します。 コピー Api が、ユーティリティ、ほとんどのアプリケーションで使用される、シェルによってこれらの呼び出し元が存在する場合、既定では、ほとんど使用オフロード データ転送の機能することが後で、変更、またはユーザーの介入をコードします。
+Windows のコアコピーエンジンは、 **CopyFile**および関連する関数によって使用されます。 Windows 8 以降では、コピーエンジンは、従来のコピーファイルコードパスの前に、オフロードデータ転送を透過的に使用しようとします。 コピー Api はほとんどのアプリケーション、ユーティリティ、およびシェルによって使用されるため、これらの呼び出し元は、既定でオフロードデータ転送機能を使用することができます (コードの変更やユーザーの介入はほとんどありません)。
 
-次の手順では、コピー エンジンが、オフロード データ転送を試行する方法をまとめてください。
+次の手順は、コピーエンジンがオフロードデータ転送を試行する方法をまとめたものです。
 
-1.  コピー エンジンの問題、 [ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)読み取りトークンを取得するソース ファイル。
-2.  読み取り、トークンの取得中にエラーがあった場合、コピー エンジンは従来の読み取りにフォールバックし、(従来のコピー ファイルのコード パス) を書き込みます。 エラーは、ソース ボリュームがオフロードをサポートしていないことを示します、コピー エンジンも、プロセスごとのキャッシュのボリュームをマークします。 コピー エンジンでは、プロセスごとのキャッシュのボリュームに対して以上の負荷を軽減することは試みません。
-3.  コピー エンジンが発行しようとした場合は、トークンが正常に取得すると、 [ **FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)であるすべてのデータの大きなチャンクでターゲット ファイルをコマンド書き込まれるオフロードされたトークンによって表される論理的にします。
-4.  オフロードを実行するときにエラーで読み取りまたは書き込みの結果の読み取りと書き込み、従来のコード パスにコピー エンジンは、オフロードがパスをコードからオフ (場所、読み取りまたは書き込みが切り捨てられました) が終了しました。 エラーには、移行先ボリュームがオフロードをサポートしていないか、ソース ボリュームが回復先ボリュームに到達できないことが示されている場合、コピー エンジンは、これらのボリュームでオフロードを試行しませんので同じのプロセスごとのキャッシュを更新します。 このプロセスごとのキャッシュを定期的にリセットされます。
+1.  コピーエンジンは、読み取りトークンを取得するために、ソースファイルに対する[**読み取り\_FSCTL\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)を発行します。
+2.  読み取りトークンの取得でエラーが発生した場合、コピーエンジンは従来の読み取りと書き込み (従来のコピーファイルのコードパス) にフォールバックします。 障害が、ソースボリュームがオフロードをサポートしていないことを示している場合、コピーエンジンは、プロセスごとのキャッシュのボリュームをマークします。 コピーエンジンは、プロセスごとのキャッシュ内のボリュームに対して、オフロードを試行しません。
+3.  トークンが正常に取得された場合、コピーエンジンは[**FSCTL\_OFFLOAD\_** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)を発行しようとします。これは、トークンによって論理的に表されるすべてのデータがオフロードされるまで、サイズが大きいチャンクのターゲットファイルに対して書き込みコマンドを実行します。
+4.  オフロードの読み取りまたは書き込みを実行中にエラーが発生した場合は、コピーエンジンが読み取りと書き込みの従来のコードパスに戻り、オフロードコードパスが終了した場所から開始されます (読み取りまたは書き込みが切り捨てられた場所)。 移行先ボリュームがオフロードをサポートしていないか、ソースボリュームがターゲットボリュームに接続できないことがエラーによって示された場合、コピーエンジンは同じプロセスごとのキャッシュを更新し、これらのボリュームでオフロードを試行しないようにします。 このプロセスごとのキャッシュは定期的にリセットされます。
 
-次の関数は、オフロード データ転送をサポートします。
+次の関数は、オフロードデータ転送をサポートしています。
 
 -   **CopyFile**
 -   **CopyFileEx**
--   **MoveFile**
+-   **My.computer.filesystem.movefile**
 -   **MoveFileEx**
 -   **CopyFile2**
 
-次の関数は、サポートのオフロード データ転送しないを実行します。
+オフロードデータ転送は、次の関数ではサポートされていません。
 
 -   **CopyFileTransacted**
 -   **MoveFileTransacted**
 
-### <a name="span-idsupportedoffloaddatatransferscenariosspanspan-idsupportedoffloaddatatransferscenariosspanspan-idsupportedoffloaddatatransferscenariosspansupported-offload-data-transfer-scenarios"></a><span id="Supported_Offload_Data_Transfer_Scenarios"></span><span id="supported_offload_data_transfer_scenarios"></span><span id="SUPPORTED_OFFLOAD_DATA_TRANSFER_SCENARIOS"></span>サポートされているオフロード データ転送のシナリオ
+### <a name="span-idsupported_offload_data_transfer_scenariosspanspan-idsupported_offload_data_transfer_scenariosspanspan-idsupported_offload_data_transfer_scenariosspansupported-offload-data-transfer-scenarios"></a><span id="Supported_Offload_Data_Transfer_Scenarios"></span><span id="supported_offload_data_transfer_scenarios"></span><span id="SUPPORTED_OFFLOAD_DATA_TRANSFER_SCENARIOS"></span>サポートされているオフロードデータ転送シナリオ
 
-HYPER-V の記憶域スタックと、Windows の SMB ファイル サーバー、オフロード操作のサポートが提供されます。 呼び出し元が発行できるバッキング物理記憶域は、ODX 操作をサポートする、 [ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)と[ **FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write) Vhd 上またはリモート ファイル共有上に存在するファイルをかどうかの仮想マシンまたは物理ハードウェア上でします。 次の図は、オフロード データ転送の最も基本的なサポートされているソースと宛先ターゲットを示します。
+オフロード操作のサポートは、Hyper-v 記憶域スタックと Windows SMB ファイルサーバーに用意されています。 バッキング物理記憶域が ODX 操作をサポートする場合、呼び出し元は[**FSCTL\_オフロード\_** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)を発行できます。また、読み取りと[**FSCTL\_オフロード\_** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write) vhd またはリモートファイル共有に存在するファイルへの書き込みを、仮想マシン内から実行することもできます。コンピューターまたは物理ハードウェア上。 次の図は、オフロードデータ転送のために最も基本的にサポートされているソースとターゲットを示しています。
 
-![オフロード データ転送のシナリオ](images/odx-scenario-3.png)
+![オフロードデータ転送のシナリオ](images/odx-scenario-3.png)
 
-## <a name="span-idfilesystemfilteropt-inmodelandimpacttoapplicationsspanspan-idfilesystemfilteropt-inmodelandimpacttoapplicationsspanspan-idfilesystemfilteropt-inmodelandimpacttoapplicationsspanfile-system-filter-opt-in-model-and-impact-to-applications"></a><span id="File_System_Filter_Opt-In_Model_and_Impact_to_Applications"></span><span id="file_system_filter_opt-in_model_and_impact_to_applications"></span><span id="FILE_SYSTEM_FILTER_OPT-IN_MODEL_AND_IMPACT_TO_APPLICATIONS"></span>ファイル システム フィルター オプトイン モデルとアプリケーションへの影響
+## <a name="span-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanfile-system-filter-opt-in-model-and-impact-to-applications"></a><span id="File_System_Filter_Opt-In_Model_and_Impact_to_Applications"></span><span id="file_system_filter_opt-in_model_and_impact_to_applications"></span><span id="FILE_SYSTEM_FILTER_OPT-IN_MODEL_AND_IMPACT_TO_APPLICATIONS"></span>ファイルシステムフィルターのオプトインモデルとアプリケーションへの影響
 
 
-フィルター マネージャー、Windows 8 では、以降では、サポートされている機能としてオフロード機能を指定するフィルターできます。 ボリュームに接続されているファイル システム フィルターまとめてを調べることはありません。 または、オフロードされた特定の操作はサポートされている場合そうでない場合は、適切なエラー コードで、操作が失敗します。
+Windows 8 以降では、フィルターマネージャーを使用して、サポートされている機能としてオフロード機能を指定できます。 ボリュームにアタッチされたファイルシステムフィルターは、特定のオフロード操作がサポートされているかどうかをまとめて判断できます。そうでない場合は、適切なエラーコードで操作が失敗します。
 
-フィルターはサポートしていることを示す必要があります[ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)と[ **FSCTL\_オフロード\_書き込み** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)レジストリを通じて**DWORD**という名前の値**SupportedFeatures**、レジストリの HKEY にドライバー サービス定義にある\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\&lt;フィルター ドライバー名&gt;\\します。 この値には、ビットがどの機能がオプトイン、およびフィルターのインストール時に設定する必要がありますを決定するビット フィールドが含まれています。
+フィルターは、 [**FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)と[**FSCTL\_オフ\_ロード**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)をサポートしていることを示す必要があります。また、driver Service 定義にある**Supportedfeatures**というレジストリ**DWORD**値を使用して書き込みを行います。レジストリの HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Services\\&lt;フィルタードライバー名&gt;\\ます。 この値にはビットフィールドが含まれており、どの機能がオプトインされているかは、フィルターのインストール時に設定する必要があります。
 
-現時点では、定義済みのビットには。
+現在、定義されているビットは次のとおりです。
 
-| Flag                                               | 説明                               |
+| Flag                                               | 意味                               |
 |----------------------------------------------------|---------------------------------------|
-| サポートされている\_FS\_機能\_オフロード\_読み取り 0x00000001  | フィルターが FSCTL をサポートする\_オフロード\_読み取り  |
-| サポートされている\_FS\_機能\_オフロード\_書き込み 0x00000002 | フィルターが FSCTL をサポートする\_オフロード\_書き込み |
+| サポートされている\_FS\_機能\_オフロード\_読み取り0x00000001  | フィルターは、FSCTL\_オフロード\_読み取りをサポートします  |
+| サポートされている\_FS\_機能\_オフロード\_書き込み0x00000002 | フィルターでは、FSCTL\_オフロード\_書き込みがサポートされています |
 
  
 
-フィルター オプトイン モデルを有効にすることができます、または無効になっていますが、HKEY に存在する値に基づく\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\FileSystem\\FilterSupportedFeaturesMode レジストリ キーは、次の値があります。
+フィルターオプトインモデルを有効または無効にするには、HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control\\FileSystem\\Filtersupported機能モードレジストリに存在する値に基づいて有効または無効にします。キー。次の値が含まれます。
 
-| FilterSupportedFeaturesMode 値 | 説明                                                                             |
+| Filtersupportedのモード値 | 意味                                                                             |
 |-----------------------------------|-------------------------------------------------------------------------------------|
-| 0 (既定)                       | 通常のオプトイン処理の操作を行います。                                                        |
-| 1                                 | 決してオプトイン (と等しい設定をすべてフィルターで 0 に SupportedFeatures 接続) |
+| 0 (既定値)                       | 通常のオプトイン処理を実行します。                                                        |
+| 1                                 | オプトインしない (すべてのフィルターがアタッチされている場合に SupportedFeatures を0に設定することに相当) |
 
  
 
-### <a name="span-idtestingspanspan-idtestingspanspan-idtestingspantesting"></a><span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>テスト
+### <a name="span-idtestingspanspan-idtestingspanspan-idtestingspantesting"></a><span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>調べる
 
-スタックのサポートされる機能を確認するには、fltmc ユーティリティ内でコマンドを更新します。 実行**fltmc インスタンス – v\[ボリューム\]:** 、管理者特権でのユーザーとチェックとして、 *SprtFtrs*列。 場合、 *SprtFtrs*フィルターの値が 0 に設定されて、このボリュームでオフロード フィルターによってブロックされていることを意味します。 場合、 *SprtFtrs*フィールド 3 に設定されて、両方のオフロード操作がサポートされます。
+スタックのサポートされている機能を確認するには、fltmc ユーティリティ内に更新されたコマンドがあります。 **Fltmc instances – v \[volume\]:** 管理者特権を持つユーザーとして実行し、 *SprtFtrs*列を確認します。 フィルターの*SprtFtrs*値が0に設定されている場合は、フィルターがこのボリュームのオフロードをブロックしていることを意味します。 *SprtFtrs*フィールドが3に設定されている場合は、オフロード操作の両方がサポートされます。
 
-### <a name="span-idcheckingfeaturesupportinirpprocessingspanspan-idcheckingfeaturesupportinirpprocessingspanspan-idcheckingfeaturesupportinirpprocessingspanchecking-feature-support-in-irp-processing"></a><span id="Checking_Feature_Support_in_IRP__Processing"></span><span id="checking_feature_support_in_irp__processing"></span><span id="CHECKING_FEATURE_SUPPORT_IN_IRP__PROCESSING"></span>IRP の処理でサポートされる機能のチェック
+### <a name="span-idchecking_feature_support_in_irp__processingspanspan-idchecking_feature_support_in_irp__processingspanspan-idchecking_feature_support_in_irp__processingspanchecking-feature-support-in-irp-processing"></a><span id="Checking_Feature_Support_in_IRP__Processing"></span><span id="checking_feature_support_in_irp__processing"></span><span id="CHECKING_FEATURE_SUPPORT_IN_IRP__PROCESSING"></span>IRP 処理で機能のサポートを確認しています
 
-IRP の処理の一環として、 [ **FsRtlGetSupportedFeatures** ](https://msdn.microsoft.com/library/windows/hardware/hh920378)ルーチンを取得、集計された**SupportedFeatures**特定のボリュームに接続されているすべてのフィルターの状態スタックです。 I/O マネージャーや SRV (SMB) などのコンポーネントが検証するには、このルーチンを呼び出し、 **SupportedFeatures**スタック上のすべてのフィルターの状態。 自分をロール コンポーネント Irp をオフロードする操作のためのオプトイン サポートを検証するには、この関数を呼び出す必要があります。
+IRP 処理の一部として、 [**Fsrtlgetsupportedfeatures**](https://msdn.microsoft.com/library/windows/hardware/hh920378)ルーチンは、特定のボリュームスタックにアタッチされているすべてのフィルターについて、集計された**supportedfeatures**の状態を取得します。 I/o マネージャーや SRV (SMB) などのコンポーネントは、このルーチンを呼び出して、スタック上のすべてのフィルターについて**Supportedfeatures**の状態を検証します。 独自のオフロード Irp をロールするコンポーネントは、その操作のオプトインサポートを検証するために、この関数を呼び出す必要があります。
 
-### <a name="span-idconsiderationsforfilterdriversspanspan-idconsiderationsforfilterdriversspanspan-idconsiderationsforfilterdriversspanconsiderations-for-filter-drivers"></a><span id="Considerations_for_Filter_Drivers"></span><span id="considerations_for_filter_drivers"></span><span id="CONSIDERATIONS_FOR_FILTER_DRIVERS"></span>フィルター ドライバーに関する考慮事項
+### <a name="span-idconsiderations_for_filter_driversspanspan-idconsiderations_for_filter_driversspanspan-idconsiderations_for_filter_driversspanconsiderations-for-filter-drivers"></a><span id="Considerations_for_Filter_Drivers"></span><span id="considerations_for_filter_drivers"></span><span id="CONSIDERATIONS_FOR_FILTER_DRIVERS"></span>フィルタードライバーに関する考慮事項
 
-オフロード データ転送は、データ センターでデータを移動する新しい方法です。 既定では多くのアプリケーションはコア コピー エンジンのオフロード ロジックの統合が原因で明示的に停止せずにオフロードされたデータの移動を実行する機能があります。 その結果、フィルター開発者は、これらの新しい操作がフィルターに与える影響を理解する必要があります。 これらの操作を完全に理解していないか、新しいデータが評価されていないフローできるデータになる不整合や破損のシナリオで発生する可能性があります。 次の一覧は、一連の項目にメモしてを実行するフィルター開発者向けの負荷を軽減するアクションをまとめたものです。
+オフロードデータ転送は、データセンター内でデータを移動する新しい方法です。 コアコピーエンジンにはオフロードロジックが統合されているため、既定では、多くのアプリケーションは、明示的にオプトインせずにオフロードデータ移動を実行できます。 そのため、フィルター開発者は、これらの新しい操作がフィルターに与える影響を理解する必要があります。 これらの操作を十分に理解していない場合、または新しいデータフローを評価しない場合、データが不整合になったり破損したりする可能性があります。 次の一覧は、フィルター開発者がオフロードでメモする一連のアクション項目をまとめたものです。
 
--   新しいデータ フロー、フィルター、およびこれらのオフロードされた操作をサポートするために、フィルターの機能への影響について説明します。
--   更新、フィルターのインストーラー、レジストリを追加する\_の DWORD 値**SupportedFeatures** HKLM に\\システム\\CurrentControlSet\\サービス\\\[フィルター\]サブキー。 オフロード機能を指定することを初期化します。
--   対象とするフィルターは、操作をオフロード、更新する登録**IRP\_MJ\_ファイル\_システム\_コントロール**を処理する[ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)と[ **FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)します。
--   オフロードの操作をブロックする必要があるフィルターは、状態コードの状態を返すの\_いない\_フィルター内からサポートされています。 エンドユーザーによって変更できるため、ブロックのオフロード操作を適用するレジストリ値に依存しないでください。 フィルターは、明示的に許可またはオフロード操作を許可しないようにする必要があります。
+-   新しいデータフロー、フィルターへの影響、およびこれらのオフロード操作をサポートするフィルターの機能について理解します。
+-   フィルターインストーラーを更新して、 **Supportedfeatures**の REG\_DWORD 値を HKLM\\システム\\CurrentControlSet\\Services\\\[filter\] サブキーに追加します。 これを初期化してオフロード機能を指定します。
+-   オフロード操作に対処するフィルターについては、登録を**IRP\_MJ\_ファイル\_システム\_制御**に更新して、 [**FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)と[**FSCTL\_オフロードを処理\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)。
+-   オフロード操作をブロックする必要があるフィルターの場合は、ステータスコードの状態を返します。フィルター内からサポートされていない状態\_\_サポートされていません。 エンドユーザーが変更できるように、ブロッキングオフロード操作を強制するためにレジストリ値に依存しないでください。 フィルターでは、オフロード操作を明示的に許可または禁止する必要があります。
 
-## <a name="span-idcopytokensspanspan-idcopytokensspanspan-idcopytokensspancopy-tokens"></a><span id="Copy_Tokens"></span><span id="copy_tokens"></span><span id="COPY_TOKENS"></span>トークンをコピーします。
-
-
-オフロードされた操作は、ファイル データは、I/O スタックには表示されません。 代わりに、データの論理プロキシである 512 バイトのトークンとして、これは見られます。 このトークンは不透明な直線および一意文字列であるか、記憶域サブシステムによって生成されたベンダー固有の書式のかを (0 に論理的に相当するデータの範囲) などのデータのパターンを表すよく知られている型であることができます。 トークンのプロキシは、データへの変更は、トークンが無効のいずれかの結果または一部のベンダー固有で、元のデータを保持する記憶域サブシステムの意味 (など、スナップショット メカニズムを使用)。 後続のオフロードは、ファイルで指定した範囲に要求の一意のトークンでの結果を読み取ります。
-
-適切に定義されているデータのパターンを表すトークンのクラスがあります。 最も一般的なよく知られたトークンは、ゼロと同等である 0 トークン。 トークンが、Well Known トークンとして定義されている場合、 **TokenType**内のメンバー、**ストレージ\_オフロード\_トークン**構造体のセットをストレージ\_オフロード\_トークン\_型\_も\_呼ばれます。 このフィールドが設定されている場合、 **WellKnownPattern**トークンは、データのパターンはどのメンバーを決定します。
-
--   ときに、 **WellKnownPattern**フィールドのセットをストレージ\_オフロード\_パターン\_0 またはストレージ\_オフロード\_パターン\_0\_\_保護\_については、0 トークン示します。 このトークンがによって返されるときに、 [ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作、目的のファイルの範囲内に含まれるデータが 0 に論理的に等価なであることを示します。 このトークンを指定する場合、 [ **FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)操作に書き込まれるファイルの必要な範囲を論理的にゼロをことを示します。
--   0 トークン以外は、現在定義されているその他の既知のトークンのパターンはありません。 ユーザーが独自の Well Known トークン パターンを定義しないでください。
-
-## <a name="span-idtruncationspanspan-idtruncationspanspan-idtruncationspantruncation"></a><span id="Truncation"></span><span id="truncation"></span><span id="TRUNCATION"></span>切り捨て
+## <a name="span-idcopy_tokensspanspan-idcopy_tokensspanspan-idcopy_tokensspancopy-tokens"></a><span id="Copy_Tokens"></span><span id="copy_tokens"></span><span id="COPY_TOKENS"></span>トークンのコピー
 
 
-Windows と通信する、基になる記憶域サブシステムでは、オフロード操作に必要な少なくデータを処理できます。 これは切り捨てと呼ばれます。 読み取るオフロード、返されたトークンを表すさまざまなデータをよりも小さいが要求されたこのを意味します。 これにより、表示、 **TransferLength**内のメンバー、 [ **FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)構造体は、これは、読み取るファイルの範囲の先頭からのバイト数。 オフロード書き込み、切り捨ては、必要ながよりも低いデータが書き込まれたことを示します。 これにより、表示、 **LengthWritten**内のメンバー、 [ **FSCTL\_オフロード\_書き込み\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_output)構造体は、これは、書き込まれるファイルの範囲の先頭からのバイト数。 コマンドの処理、または、広範囲のスタックでの制限事項のエラーは、切り捨てが発生します。
+オフロード操作では、ファイルデータは i/o スタックに表示されません。 代わりに、データの論理プロキシである512バイトのトークンとして表示されます。 このトークンは、ストレージサブシステムによって生成されるベンダー固有の形式の非透過的で一意の文字列であるか、またはデータのパターンを表す既知の型 (論理的にはゼロに相当するデータ範囲) であることができます。 トークンがプロキシになっているデータを変更すると、トークンが無効になるか、またはストレージサブシステムがベンダー固有の手段 (スナップショットメカニズムなど) によって元のデータを保持するようになります。 ファイル内の指定された範囲に対するその後のオフロード要求では、一意のトークンが生成されます。
 
-読み取りまたは書き込み、NTFS をオフロードする範囲を切り捨てます 2 つのシナリオがあります。
+明確に定義されたデータのパターンを表すトークンのクラスがあります。 よく知られている最も一般的なトークンは、ゼロに相当するゼロトークンです。 トークンが既知のトークンとして定義されている場合、**ストレージ\_オフロード\_トークン**構造内の**TokenType**メンバーは、\_既知\_既知の種類\_\_\_オフロードトークンに設定されます。 このフィールドが設定されている場合、 **WellKnownPattern**メンバーによって、トークンが持つデータのパターンが決まります。
 
-1.  コピーの範囲は場合、VDL をファイル (EOF) の終了前に有効なデータの長さ (VDL) に切り捨てられます。 これは VDL を論理セクター境界に配置されていることを前提としています、それ以外の場合のシナリオを参照してください。
+-   **WellKnownPattern**フィールドが 記憶域\_オフロード\_パターン\_0 またはストレージ\_オフロード\_ゼロ\_\_保護\_情報に設定されている場合は、ゼロトークンを示します。 このトークンが[**FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作によって返された場合は、目的のファイル範囲に含まれるデータが論理的に0と等しいことを示します。 このトークンが[**FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)操作に提供された場合、書き込まれるファイルの目的の範囲を論理的にゼロにする必要があることを示します。
+-   ゼロトークン以外に、現在定義されている他の既知のトークンパターンはありません。 ユーザーが独自の既知のトークンパターンを定義することは推奨されません。
 
-    ![vdl eof する前に発生します。](images/odx-vdl-1.png)
+## <a name="span-idtruncationspanspan-idtruncationspanspan-idtruncationspantruncation"></a><span id="Truncation"></span><span id="truncation"></span><span id="TRUNCATION"></span>示さ
 
-    中に、 [ **FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作、フラグ オフロード\_読み取り\_フラグ\_すべて\_ゼロ\_超える\_現在\_範囲を設定、 [ **FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)構造を示すファイルの残りの部分にゼロが含まれていると、 **TransferLength** VDL にメンバーが切り捨てられます。
 
-2.  類似していますが VDL が論理セクターの境界では、必要な範囲に固定されていないときにシナリオの 1 には、NTFS によって、次の論理セクター境界に切り捨てられます。
+Windows が通信する基になる記憶域サブシステムでは、オフロード操作で必要だったデータを処理することができません。 これを切り捨てと呼びます。 オフロード読み取りでは、返されたトークンが、要求されたデータの範囲を下回ることを意味します。 これは、 [**FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)構造の**transferlength**メンバーによって示されます。これは、読み取るファイルの範囲の先頭からのバイト数です。 オフロード書き込みの場合、切り捨ては、意図したよりも少ないデータが書き込まれたことを示します。 この値は **、書き込まれる**ファイルの範囲の先頭からのバイト数である、 [**FSCTL\_OFFLOAD\_の書き込み\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output)構造体によって示されます。 コマンド処理のエラー、または大きな範囲のスタック内の制限により、切り捨てが発生します。
 
-    ![セクターの境界に揃っていない vdl](images/odx-vdl-2.png)
+次の2つのシナリオでは、読み取りまたは書き込みのオフロードする範囲が NTFS によって切り捨てられます。
+
+1.  VDL がファイルの末尾 (EOF) より前にある場合、コピー範囲は有効なデータ長 (VDL) に切り捨てられます。 これは、VDL が論理セクターの境界に合わせて調整されていることを前提としています。
+
+    ![eof の前に発生した vdl](images/odx-vdl-1.png)
+
+    [**FSCTL\_オフロード\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作の実行中は、フラグオフロード\_\_フラグの読み取りフラグ\_現在の\_の範囲を超える\_0\_すべての\_は、 [**FSCTL\_オフロードで設定され\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)ファイルの残りの部分にゼロが含まれており、 **transferlength**メンバーが VDL に切り捨てられていることを示す読み取り\_出力構造体。
+
+2.  シナリオ1に似ていますが、VDL が論理セクターの境界に揃っていない場合、必要な範囲は NTFS によって次の論理セクターの境界に切り捨てられます。
+
+    ![セクター境界での vdl の不整合](images/odx-vdl-2.png)
 
 ## <a name="span-idlimitationsspanspan-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="Limitations"></span><span id="limitations"></span><span id="LIMITATIONS"></span>制限事項
 
 
 -   オフロード操作は、NTFS ボリュームでのみサポートされます。
--   オフロード場合、そのリモート共有は NTFS ボリュームと、サーバーは (リモートのスタックは、オフロード操作もサポートしています。 と仮定)、Windows Server 2012 を実行している場合、リモート ファイル サーバーで操作がサポートされます。
--   NTFS は Bitlocker または NTFS 暗号化 (EFS)、重複除去ファイル、圧縮されたファイル、ファイル、スパース ファイルは、暗号化されたファイルに対して FSCTLs オフロードをサポートしていないか、TxF のトランザクションに参加しているファイルします。
--   NTFS は volsnap スナップショット内のファイルに対して FSCTLs オフロードをサポートしていません。
--   目的のファイルの範囲は、ソース デバイス上の論理セクター サイズに整列されていない場合、または目的のファイルの範囲は先デバイス上の論理セクター サイズに整列されていない場合、NTFS ではオフロード FSCTL は失敗します。 これは、非キャッシュの IO と同じセマンティクスに従います。
--   リンク先のファイルは、割り当て済みである必要があります (**SetEndOfFile**なく**SetAllocation**) する前に[ **FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write).
--   NTFS の最初の呼び出しでオフロードの読み取りと書き込みのオフロード処理、 [ **CcCoherencyFlushAndPurgeCache** ](https://msdn.microsoft.com/library/windows/hardware/ff539032)をコミットするいずれかのシステム キャッシュ内のデータを変更します。 これは、同じ IO の非キャッシュとしてセマンティックです。
+-   リモート共有が NTFS ボリュームであり、サーバーで Windows Server 2012 が実行されている場合は、リモートファイルサーバーを使用してオフロード操作がサポートされます (リモートスタックでオフロード操作もサポートされている場合)。
+-   NTFS は、Bitlocker または NTFS 暗号化 (EFS) で暗号化されたファイル、重複しないファイル、圧縮ファイル、常駐ファイル、スパースファイル、または TxF トランザクションに参加しているファイルに対して実行されるオフロード FSCTLs をサポートしていません。
+-   NTFS では、volsnap スナップショット内のファイルに対して実行されるオフロード FSCTLs はサポートされていません。
+-   目的のファイル範囲がソースデバイスの論理セクターサイズに固定されていない場合、または目的のファイル範囲がターゲットデバイスの論理セクターサイズに固定されていない場合、NTFS はオフロード FSCTL を失敗させます。 これは、キャッシュされていない IO と同じセマンティクスに従います。
+-   [**FSCTL\_オフロード\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)の前に、コピー先のファイルが事前に割り当てられている (**setendoffile**と**setallocation**ではない) 必要があります。
+-   負荷分散の読み取りとオフロードの書き込みでは、NTFS はまず[**CcCoherencyFlushAndPurgeCache**](https://msdn.microsoft.com/library/windows/hardware/ff539032)を呼び出して、変更されたデータをシステムキャッシュにコミットします。 これは、非キャッシュ IO と同じセマンティクスです。
 
  
 

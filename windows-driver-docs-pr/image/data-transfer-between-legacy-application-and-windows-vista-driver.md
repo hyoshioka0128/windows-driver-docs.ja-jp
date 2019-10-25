@@ -4,46 +4,46 @@ description: レガシ アプリケーションと Windows Vista ドライバー
 ms.assetid: 83817277-3526-4f64-8e7c-7e02c8cd77bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ef4b7699d2c7175a8e1883c24d47d26c9ec467
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05f67fd84e93d8c7662adf7c2ce69c59dc2b4c6a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360866"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840861"
 ---
 # <a name="data-transfer-between-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバー間のデータ転送
 
 
-ドライバーのイメージの処理のフィルターが常に呼び出されること、および、レガシ アプリケーションを明示的に互換性レイヤーを確認する必要がありますサポート、 **LocalService**アカウントは、データ転送を実行できます。 **LocalService**アカウントは、Microsoft Windows XP 以降のオペレーティング システムで使用します。
+互換性レイヤーでは、ドライバーのイメージ処理フィルターが常に呼び出されるようにする必要があります。また、 **LocalService**アカウントを明示的にサポートしていないレガシアプリケーションでも、データ転送を実行できます。 **LocalService**アカウントは、MICROSOFT Windows XP 以降のオペレーティングシステムで使用できます。
 
-従来、ドライバーには、少なくとも TYMED 両方を公開する必要があります\_ファイルと TYMED\_コールバックです。 ただし、Windows Vista のドライバーでは TYMED を公開しない\_コールバック (または TYMED\_マルチページ\_コールバック)。 互換レイヤーの転送部分 TYMED をレガシ アプリケーションが表示されることを確認すると、\_コールバックが、Windows Vista ドライバーは実装しません。 TYMED\_マルチページ\_コールバックは、Windows Vista ドライバーから公開しないでください。
+レガシドライバーは、少なくとも、TYMED\_ファイルと TYMED\_コールバックの両方を公開する必要があります。ただし、Windows Vista のドライバーは、TYMED\_コールバック (または TYMED\_のマルチページ\_コールバック) を公開しません。 互換性レイヤーの転送部分では、レガシアプリケーションが、Windows Vista ドライバーによって実装されていなくても、TYMED\_コールバックを参照するようにします。 TYMED\_マルチページ\_コールバックは、Windows Vista ドライバーからは公開されません。
 
-TYMED でサポートされる形式をレガシ アプリケーションが表示されます\_ファイルと TYMED\_マルチページ\_ファイル、Windows Vista ドライバーを公開します。 ため TYMED\_コールバック、レガシ アプリケーションが表示されます、同じ形式のため TYMED、ドライバーが公開して\_例外が 1 つのファイル: 公開せずに**WiaImgFmt\_BMP**、互換性レイヤー公開**WiaImgFmt\_MEMORYBMP**レガシ アプリケーションにします。 これは、これには互換性レイヤー「切片」の呼び出しを持つ[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)、Windows Vista ドライバーのすべてのフラグを追加し、\_ファイル形式 (で、例外の**WiaImgFmt\_BMP** /**WiaImgFmt\_MEMORYBMP**) ため TYMED\_コールバック。 最も重要なの互換性レイヤーでは、転送メッセージの Windows Vista と従来の転送メッセージには、そのストリームに書き込まれたデータを変換する独自の従来のコールバック オブジェクト、データ転送中に作成します。
+レガシアプリケーションでは、Windows Vista ドライバーによって公開されている、\_のマルチページ\_ファイルに対してサポートされている形式が表示されます\_。 TYMED\_コールバックの場合、レガシアプリケーションでは、ドライバーが TYMED\_ファイル用に公開するのと同じ形式が使用されます。ただし、例外が1つあります。 **wiaimgfmt\_BMP**を公開する代わりに、互換性レイヤーは**Wiaimgfmt を公開します\_MEMORYBMP**をレガシアプリケーションに適用します。 これを行うには、互換性レイヤーを使用して[**IWiaMiniDrv::D rvgetwiaformatinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)に対する呼び出しを "インターセプト" し、すべての Windows Vista ドライバーの TYMED\_ファイル形式を追加します ( **Wiaimgfmt\_BMP**は除き /**Wiaimgfmt\_MEMORYBMP**)TYMED\_コールバックの場合。 ほとんどの場合、互換性レイヤーは、データ転送時に独自のレガシコールバックオブジェクトを作成します。これにより、Windows Vista 転送メッセージとストリームに書き込まれたデータが従来の転送メッセージに変換されます。
 
-TYMED 定数の詳細についてを参照してください[理解 TYMED](understanding-tymed.md)します。
+TYMED 定数の詳細については、「 [TYMED](understanding-tymed.md)について」を参照してください。
 
-互換レイヤーは、WIA COM プロキシで 2 つのコールバック オブジェクトを作成します。 コールバックのいずれかを転送し、転送ファイルのいずれか。 WIA COM プロキシの実装、 [IWiaTransferCallback インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nn-wia_lh-iwiatransfercallback)します。 このコールバック オブジェクトは、ストリーム ベースの転送と「旧式」転送の間の変換で処理されます。 WIA 互換性レイヤーには、ドライバーの画像が互換性レイヤーのコールバック オブジェクトを渡してフィルターの処理も開始します。 したがって、イメージ処理のフィルターは、Windows Vista の転送と同様に、アプリケーションのコンテキストで実行常にされます。
+互換性レイヤーでは、2つのコールバックオブジェクトが WIA COM プロキシに作成されます。1つはコールバック転送用で、もう1つはファイル転送用です。 WIA COM プロキシは、 [Iwiatransのコールバックインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiatransfercallback)を実装します。 このコールバックオブジェクトは、ストリームベースの転送と "旧形式の" 転送の間の変換を処理します。 また、WIA 互換レイヤーでは、互換性レイヤーのコールバックオブジェクトに渡されるドライバーのイメージ処理フィルターが開始されます。 そのため、イメージ処理フィルターは、Windows Vista 転送と同様に、常にアプリケーションのコンテキストで実行されます。
 
-次の図は、Windows Vista のドライバーとレガシ アプリケーションとの互換性レイヤーは連携を示しています。
+次の図は、互換性レイヤーが Windows Vista ドライバーとレガシアプリケーションでどのように機能するかを示しています。
 
-![レガシ アプリケーションと windows vista ドライバー間データ転送を示す図](images/vistaapp-legacydrv.png)
+![レガシアプリケーションと windows vista ドライバー間のデータ転送を示す図](images/vistaapp-legacydrv.png)
 
-WIA COM プロキシ内での従来のコールバック オブジェクトは、Windows Vista のメッセージの転送と従来の転送メッセージをストリームに書き込まれたデータに変換し、データ ファイルまたはコールバックの縞模様のデータを書き込みます。
+WIA COM プロキシ内のレガシコールバックオブジェクトは、Windows Vista 転送メッセージとストリームに書き込まれたデータを従来の転送メッセージに変換し、データをファイルまたは帯状データコールバックに書き込みます。
 
-ドライバーを呼び出すによって公開されるメソッドのいずれかと、 **IStream**インターフェイスから受信した、 [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)メソッド (注、ドライバーはのみ呼び出す必要があります**IStream::Write**、 **IStream::Seek**、および**IStream::SetSize**)。 互換レイヤーがカスタムを作成するために、 **IStream**を単純にラップする実装、 **IStream** WIA COM プロキシを提供するインターフェイス。
+ドライバーが、 [**IWiaMiniDrvTransferCallback:: GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)メソッドから受信した**istream**インターフェイスによって公開されているメソッドを呼び出す場合 (注: ドライバーは**istream:: Write**、 **istream:: Seek**のみを呼び出す必要があります。**IStream:: SetSize**)。 このため、互換性レイヤーは、WIA COM プロキシが提供する**istream**インターフェイスを単にラップするカスタム**istream**実装を作成します。
 
-従来のファイル転送は簡単です。 このような転送の例は、レガシ アプリケーションを呼び出すと**IWiaDataTransfer::idtGetData**します。 互換性レイヤーでは、アプリケーションを STGMEDIUM 構造体で指定するファイルにデータ ストリームを作成します。 このストリームはフィルターに渡される、ドライバーまたはイメージ処理を呼び出すときに[ **IWiaTransferCallback::GetNextStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)し、すべての転送メッセージは従来の転送メッセージを簡単にマップします。 メッセージにマップする方法の詳細については、次を参照してください。 [WIA 互換性レイヤーのデータ転送実装](wia-compatibility-layer-message-mapping.md)します。
+レガシファイル転送は簡単です。 このような転送の例として、レガシアプリケーションが**IWiaDataTransfer:: idtGetData**を呼び出す場合があります。 互換性レイヤーは、STGMEDIUM 構造体でアプリケーションによって指定されたデータストリームをファイルに作成します。 このストリームは、 [**Iwiatransfercallback:: GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)を呼び出すときにドライバーまたはイメージ処理フィルターに渡され、すべての転送メッセージが従来の転送メッセージに簡単にマップされます。 メッセージがどのようにマップされるかの詳細については、「 [WIA Compatibility Layer データ転送の実装](wia-compatibility-layer-message-mapping.md)」を参照してください。
 
-呼び出すときに、 **IWiaDataTransfer::dtGetData メソッド**、互換性レイヤーでは、いくつかのより厳密なパラメーター チェックします。 互換レイヤーが呼び出し元を許可しないなど、 **IWiaDataTrasnfer::idtGetData**メソッド[TYMED\_ファイル](understanding-tymed.md)とするデータの転送し、上位のページ数がないです。呼び出すことが互換性レイヤーを利用、 **IWiaDataTrasnfer::idtGetData** TYMED メソッド\_ファイル カウントより大きなページがあると、1 つ。
+**IWiaDataTransfer::D tGetData メソッド**を呼び出すと、互換性レイヤーはより厳密なパラメーターチェックを実行します。 たとえば、互換性レイヤーでは、 [Tymed\_ファイル](understanding-tymed.md)では**IWiaDataTrasnfer:: idtGetData**メソッドを呼び出すことができません。また、ページ数は、互換性レイヤーを使用しないデータ転送に含まれています。**IWiaDataTrasnfer:: idtGetData**メソッドと TYMED\_ファイルがあり、1つ大きいページ数が含まれています。
 
-従来のコールバックの転送はもう少し複雑です。 Windows Vista ドライバーがサポートされていないため**WiaImgFmt\_MEMORYBMP**、従来のドライバーに必要な互換性レイヤーのコールバック オブジェクトはからの変換を処理する必要があります**WiaImgFmt\_BMP**に**WiaImgFmt\_MEMORYBMP**します。 転送メッセージの間のマッピングも簡単にできません。 互換レイヤーは、独自のストリームの実装を作成します。 互換性レイヤー送信 IT\_MSG\_への呼び出し時に、アプリケーションのコールバックをデータ メッセージ、 **IStream::Write**アプリケーションによってメソッド。
+従来のコールバック転送は少し複雑です。 Windows Vista ドライバーでは、レガシドライバーに必要な**wiaimgfmt\_MEMORYBMP**がサポートされていないため、互換性レイヤーのコールバックオブジェクトは**wiaimgfmt\_BMP**から wiaimgfmt への変換を処理する必要があり **\_MEMORYBMP**。 また、転送メッセージ間のマッピングも簡単ではありません。 互換性レイヤーによって独自のストリーム実装が作成されます。 互換性レイヤーは、アプリケーションによる**IStream:: Write**メソッドの呼び出し時に、アプリケーションのコールバックに MSG\_データメッセージ\_送信します。
 
-変更ができるしなければ、 **IWiaTransfer** ; 互換性レイヤーの実装の一部としてインターフェイス関数は、 **IWiaTransfer::EnumWIA\_形式\_情報**に追加されます**IWiaTransfer**ため TYMED\_マルチページ\_ファイル転送。 この追加は互換性レイヤーの結果はありませんが必要なを取得することはできませんので、 **IWiaDataTransfer**からインターフェイス**IWiaTransfer**インターフェイスまたは、から**IWiaItem2**へのインターフェイス、 **IWiaItem**インターフェイス。
+互換性レイヤーの実装の一部として、 **IWiaTransfer**インターフェイスに変更を加える必要がありました。関数**IWiaTransfer:: EnumWIA\_FORMAT\_INFO**が**IWiaTransfer**に追加され、TYMED\_マルチページ\_ファイル転送が可能になります。 この追加は互換性レイヤーの結果ではありませんが、 **IWiaTransfer**インターフェイスから**IWiaDataTransfer**インターフェイスを取得したり、 **IWiaItem2**インターフェイスから**iwiaitem**にアクセスしたりすることはできないため、必要になります。efi.
 
-**IWiaDataTransfer**、 **IWiaTransfer**、 **IWiaItem**、 **IWiaItem2**、および**IStream**インターフェイスと STGMEDIUM 構造体は、Microsoft Windows SDK ドキュメントで説明します。
+**IWiaDataTransfer**、 **IWiaTransfer**、 **iwiaitem**、 **IWiaItem2**、および**IStream**の各インターフェイスと STGMEDIUM 構造体については Microsoft Windows SDK のドキュメントで説明します。
 
 ## <a name="related-topics"></a>関連トピック
-[**IWiaMiniDrvTransferCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvtransfercallback)  
+[**IWiaMiniDrvTransferCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvtransfercallback)  
 
 
 

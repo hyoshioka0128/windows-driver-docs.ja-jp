@@ -3,23 +3,23 @@ title: フィルター エンジンへのコールアウトの登録
 description: フィルター エンジンへのコールアウトの登録
 ms.assetid: a5bade33-e3d1-4e1d-8503-51485097046e
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK、初期化しています
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの初期化
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの初期化
-- コールアウト WDK Windows フィルタ リング プラットフォームの登録
+- Windows フィルタリングプラットフォームのコールアウトドライバーの WDK、初期化
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、初期化
+- コールアウトドライバーの初期化 WDK Windows フィルタリングプラットフォーム
+- コールアウトの登録 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f01e15ef409c71704bbbd9b5d37d07fae01828
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34f70e1e059a685845fbcbd394cd55a808cd9927
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842080"
 ---
 # <a name="registering-callouts-with-the-filter-engine"></a>フィルター エンジンへのコールアウトの登録
 
 
-コールアウト ドライバーには、デバイス オブジェクトが作成、フィルター エンジンがそのコールアウトし登録できます。 コールアウト ドライバーを登録できます、コールアウト、フィルター エンジン、いつでも場合でも、フィルター エンジンが現在実行されていません。 コールアウト ドライバーの呼び出しに、フィルター エンジンを吹き出しを登録する、 [ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)関数。 例:
+コールアウトドライバーは、デバイスオブジェクトを作成した後、そのコールアウトをフィルターエンジンに登録できます。 コールアウトドライバーは、フィルターエンジンが現在実行されていない場合でも、いつでもフィルターエンジンにコールアウトを登録できます。 コールアウトドライバーは、コールアウトをフィルターエンジンに登録するために、 [**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)関数を呼び出します。 次に、例を示します。
 
 ```C++
 // Prototypes for the callout's callout functions
@@ -84,14 +84,14 @@ NTSTATUS
 }
 ```
 
-場合に呼び出し、 [ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)関数が成功すると、最後のパラメーターが指す変数にはコールアウトのランタイム識別子が含まれています。 このランタイム識別子は、引き出しキーに対して指定された GUID に対応します。
+[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)関数の呼び出しが成功した場合、最後のパラメーターが指す変数は、コールアウトのランタイム識別子を格納します。 この実行時識別子は、コールアウトキーに指定された GUID に対応します。
 
-1 つのコールアウト ドライバーでは、1 つ以上のコールアウトを実装できます。 呼び出すコールアウト ドライバーでは、1 つ以上のコールアウトを実装する場合、 [ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)関数をフィルター エンジンの各吹き出しを登録することをサポートする各コールアウトの 1 回です。
+1つのコールアウトドライバーでは、複数のコールアウトを実装できます。 コールアウトドライバーが複数のコールアウトを実装している場合は、フィルターエンジンで各コールアウトを登録するためにサポートされている各コールアウトに対して[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)関数が1回呼び出されます。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Classid (場合)](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

@@ -7,17 +7,17 @@ keywords:
 - HID
 - キーボード
 - マウス
-- 感覚データ
+- データの sensory
 - 加速度計
-- ジャイロスコープなどがあります。
+- ジャイロスコープ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74400481c3dc78b3f439fb4fd55ad31123d7d1a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 19cb06057b4cb9708cd87787a0b6b3c523b17be7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376011"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841576"
 ---
 # <a name="introduction-to-hid-concepts"></a>HID の概念の紹介
 
@@ -27,111 +27,111 @@ ms.locfileid: "67376011"
 ## <a name="history-of-hid"></a>HID の履歴
 
 
-HID の定義は、USB 経由でのデバイス クラスとして開始します。 その時点での目標は、ps/2 に交換を定義し、キーボード、マウス、およびゲーム コント ローラーなどの HID デバイスに対して、汎用ドライバーの作成を許可している USB 経由でインターフェイスを作成するでした。 HID、前に、デバイスは、マウスとキーボードの厳密に定義されたプロトコルに準拠する必要があります。 すべてのハードウェア技術革新には、既存のプロトコルでのデータの使用、または独自のドライバーに必要な非標準のハードウェアのオーバー ロードが必要でした。 HID のビジョンは、オペレーティング システムで「モードで起動」デバイスの基本的なサポートを提供することが、簡単にプログラミング可能な拡張可能な標準化されたインターフェイスとの差別化を提供するハードウェアのベンダーを許可する方法を見つけることを開始します。
+USB 経由でデバイスクラスとして開始された HID の定義。 この時点での目標は、PS/2 に代わるものを定義し、USB 経由のインターフェイスを作成して、キーボード、マウス、ゲームコントローラーなどの HID デバイス用の汎用ドライバーを作成できるようにすることでした。 HID より前は、デバイスは、マウスとキーボードに対して厳密に定義されたプロトコルに準拠している必要がありました。 すべてのハードウェアイノベーションは、既存のプロトコルでのデータの使用の過負荷、または独自のドライバーを必要とする標準以外のハードウェアの作成を必要としています。 HID のビジョンは、オペレーティングシステムでこれらの "ブートモード" デバイスの基本的なサポートを提供すると同時に、ハードウェアベンダーが拡張可能で標準化された、簡単にプログラミング可能なインターフェイスと区別できるようにする方法を発見しました。
 
-今日では、HID デバイスが含まれます。 英数字表示、バーコード リーダー、スピーカー/ヘッドセット、補助ディスプレイ、センサー、および MRI (はい、入院期間) 上のボリューム コントロール。 さらに、多くのハードウェア ベンダは、自社独自のデバイス用 HID を使用します。
+現在、HID デバイスには、英数字表示、バーコードリーダー、スピーカー/ヘッドセットのボリュームコントロール、補助ディスプレイ、センサー、MRI (はい、病院) が含まれています。 また、多くのハードウェアベンダーは、独自のデバイスに対して HID を使用します。
 
-HID は USB 経由で開始されましたが、最初からバスに依存しない方法で設計されました。 低待機時間向けに設計されていた、低帯域幅のデバイスが、柔軟性が高く、および、レートが基になるトランスポートによって指定されています。 1990 年代後半、承認された HID USB 経由での仕様とその後すぐに開始する追加のトランスポート経由でサポートします。 今日では、HID では、標準のプロトコルを持つ複数のトランスポートで、次のトランスポートのサポートは HID for Windows 8 でネイティブ。
+HID は USB 経由で開始されましたが、最初からバスに依存しない方法で設計されていました。 このように設計されているのは、待機時間が短く、帯域幅が狭いデバイスですが、柔軟性があり、基になるトランスポートによってレートが指定されているためです。 USB 経由の HID の仕様は、1990年代後半に批准され、その後すぐに開始される追加のトランスポートをサポートしていました。 現在、HID には複数のトランスポートに対する標準プロトコルがあり、HID の Windows 8 では次のトランスポートがネイティブでサポートされています。
 
--   USB
--   Bluetooth
+-   [USB]
+-   [Bluetooth]
 -   Bluetooth LE
--   I²C
+-   I ² C
 
-ベンダーの特定のトランスポートは、サード パーティ ベンダー固有のトランスポートのドライバーを使用しても許可されます。 詳細については、以降のセクションで提供されます。
+ベンダー固有のトランスポートは、サードパーティベンダー固有のトランスポートドライバー経由でも許可されます。 詳細については、後のセクションで説明します。
 
 ## <a name="hid-concepts"></a>HID の概念
 
 
-HID は、いくつかの基本的な概念、レポート記述子、およびレポートの上に構築します。 レポートは、デバイスとソフトウェア クライアントの間で交換される実際のデータの blob です。 レポート記述子では、形式とサポートされるデータの各 blob の意味について説明します。
+HID は、いくつかの基本的な概念、レポート記述子、およびレポートに基づいて構築されています。 レポートは、デバイスとソフトウェアクライアントの間で交換される実際のデータ blob です。 レポート記述子は、サポートする各データ blob の形式と意味を記述します。
 
 ### <a name="reports"></a>レポート
 
-アプリケーションと HID デバイスは、データを交換して、ときに、これはレポートを通じて実行されます。 次の 3 つのレポートの種類があります。出力は次のレポート、レポートを入力し、レポートの機能します。
+アプリケーションと HID デバイスがデータを交換するときは、レポートを使用して行います。 レポートの種類には、入力レポート、出力レポート、機能レポートの3種類があります。
 
 | レポートの種類    | 説明                                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------------------------|
-| 入力のレポート   | データの blob に送信される、HID デバイスから、アプリケーションでは、通常、コントロールの状態が変更されたとき。 |
-| レポートの出力  | キーボードの Led をたとえば、HID デバイスにアプリケーションから送信されるデータの blob。         |
-| 機能のレポート | データの blob を手動で読み取りや書き込みをすることができます、通常の構成情報に関連します。    |
+| 入力レポート   | 通常、コントロールの状態が変化したときに、HID デバイスからアプリケーションに送信されるデータ blob。 |
+| 出力レポート  | たとえば、キーボードの Led に対して、アプリケーションから HID デバイスに送信されるデータ blob。         |
+| 機能レポート | データ blob は、手動で読み書きすることができ、通常は構成情報に関連します。    |
 
  
 
-レポート記述子で定義されている各上位レベルのコレクションがゼロ (0) を含めることができます、または各型の他のレポート。
+レポート記述子に定義されている各最上位レベルのコレクションには、各型の0個以上のレポートを含めることができます。
 
 ### <a name="usage-tables"></a>使用状況テーブル
 
-HID のグループの操作では、HID Usage Tables を構成するドキュメントのセットを公開します。 これは、実質的に、HID デバイスに許可するについて説明しているディクショナリです。 これらの非表示に使用状況テーブルには、使用法の説明を伴う一覧が含まれます。 使用方法は、目的の意味と特定のレポート記述子で説明されている項目の使用について、アプリケーション開発者に情報を提供します。 たとえば、マウスの左ボタンに対して定義されている使用量があります。 レポートでアプリケーションをどこにマウスの左ボタンの現在の状態レポート記述子を定義できます。 使用状況テーブルは、[使い方] ページと呼ばれるいくつかの名前空間に分割されます。 使用状況の各ページには、一連のドキュメントを整理するために関連する使用状況について説明します。 使用状況 ページと使用状況の組み合わせでは、使用状況テーブル内の特定の使用を一意に識別する使用状況の ID を定義します。
+HID の作業グループは、HID の使用状況テーブルを構成する一連のドキュメントを公開します。 これは、実際には、どのような HID デバイスが許可されているかを説明するディクショナリです。 これらの HID 使用状況テーブルには、使用法の説明が記載された一覧が含まれています。 を使用すると、アプリケーションの開発者に、レポート記述子に記述されている特定の項目の意味と使用方法についての情報が提供されます。 たとえば、マウスの左ボタンに定義されている使用法があります。 レポート記述子では、アプリケーションがマウスの左ボタンの現在の状態を見つけることができるレポート内の場所を定義できます。 使用状況テーブルは、使用状況ページと呼ばれる複数の名前空間に分割されます。 各 [使用状況] ページには、ドキュメントを整理するのに役立つ、関連する使用法のセットが記述されています。 使用状況ページと使用状況の組み合わせによって、使用状況テーブルの特定の使用状況を一意に識別する使用 ID が定義されます。
 
-## <a name="the-hid-application-programming-interface-api"></a>HID アプリケーション プログラミング インターフェイス (API)
+## <a name="the-hid-application-programming-interface-api"></a>HID アプリケーションプログラミングインターフェイス (API)
 
 
-HID の Api の 3 つのカテゴリがあります。 デバイスの検出とセットアップ、データの移動、およびレポートの作成/解釈します。
+HID Api には、デバイスの検出とセットアップ、データの移動、レポートの作成/解釈という3つのカテゴリがあります。
 
 ### <a name="device-discovery-and-setup"></a>デバイスの検出とセットアップ
 
-次の一覧を使用できるアプリケーションを非表示に API を識別します。 そのデバイスと通信を確立すると、HID デバイスのプロパティを識別します。 さらに、アプリケーションできますを使用して、これらの API のいくつかの上位レベルのコレクションを識別します。
+次のリストは、アプリケーションが HID デバイスのプロパティを識別し、そのデバイスとの通信を確立するために使用できる HID API を示しています。 さらに、アプリケーションでは、これらの API の一部を使用して、最上位レベルのコレクションを識別できます。
 
--   [**HidD\_GetAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getattributes)
--   [**HidD\_GetHidGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_gethidguid)
--   [**HidD\_GetIndexedString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getindexedstring)
--   [**HidD\_GetManufacturerString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getmanufacturerstring)
--   [**HidD\_GetPhysicalDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getphysicaldescriptor)
--   [**HidD\_GetPreparsedData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getpreparseddata)
--   [**HidD\_GetProductString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getproductstring)
--   [**HidD\_GetSerialNumberString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getserialnumberstring)
--   [**HidD\_GetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getnuminputbuffers)
--   [**HidD\_SetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setnuminputbuffers)
+-   [**HidD\_GetAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getattributes)
+-   [**HidD\_GetHidGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_gethidguid)
+-   [**HidD\_GetIndexedString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getindexedstring)
+-   [**HidD\_GetManufacturerString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getmanufacturerstring)
+-   [**HidD\_GetPhysicalDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getphysicaldescriptor)
+-   [**HidD\_GetPreparsedData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getpreparseddata)
+-   [**HidD\_GetProductString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getproductstring)
+-   [**HidD\_GetSerialNumberString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getserialnumberstring)
+-   [**HidD\_GetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getnuminputbuffers)
+-   [**HidD\_SetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setnuminputbuffers)
 
 ### <a name="data-movement"></a>データの移動
 
-アプリケーションは、アプリと、選択したデバイスの間でデータを前後へ移動に使用できる非表示に API を次に示します。
+次の一覧は、アプリケーションがアプリと選択したデバイスの間でデータを移動するために使用できる HID API を示しています。
 
--   [**HidD\_GetInputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getinputreport)
--   [**HidD\_SetFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setfeature)
--   [**HidD\_SetOutputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setoutputreport)
+-   [**HidD\_GetInputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getinputreport)
+-   [**HidD\_SetFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setfeature)
+-   [**HidD\_SetOutputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setoutputreport)
 -   [ReadFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)
 -   [WriteFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)
 
 ### <a name="report-creation-and-interpretation"></a>レポートの作成と解釈
 
-独自のハードウェア用 HID アプリを作成する場合、サイズと、デバイスによって発行された各レポートの形式の既存の知識があること。 この場合、入力をキャストし、出力構造体にバッファーをレポートしてとデータを使用するアプリができますとします。
+独自のハードウェア用に HID アプリを作成する場合は、デバイスによって発行された各レポートのサイズと形式に関する知識を既に持っています。 この場合、アプリは、入力および出力レポートのバッファーを構造体にキャストし、データを使用できます。
 
-ただし、一般的な機能 (再生ボタンが押されたときを検出する必要があるミュージック アプリなど) を公開するすべてのデバイスと通信する HID アプリを作成する場合、わからない HID レポートの形式とサイズ。 このカテゴリのアプリケーションは、上位レベルの特定のコレクションと特定の使用法を理解しています。
+ただし、一般的な機能を公開するすべてのデバイスと通信する HID アプリを作成する場合 (たとえば、再生ボタンが押されたときに検出する必要がある音楽アプリ)、HID レポートのサイズと形式がわからない場合があります。 このカテゴリのアプリケーションは、特定の最上位レベルのコレクションと特定の使用状況を認識します。
 
-アプリケーションにレポート記述子を活用して、および特定の使用は、レポートでは、(可能性がある) の値の単位である場所を判別するために必要なデバイスから受信したレポートを解釈するために、または送信されるレポートを作成するには、レポートします。 これは、HID 解析が必要です。 Windows では、ドライバーおよびアプリケーション用 HID パーサーを提供します。 このパーサーは、一連の Api を公開します (HidP\_\*) デバイスでサポートされている使用法の種類を検出、レポートでは、このような使用状況の状態を判断するまたはデバイスでの使用状況の状態を変更するレポートの作成を使用できます。
+デバイスから受信したレポートを解釈したり、送信するレポートを作成したりするには、アプリケーションでレポート記述子を利用して、レポートに特定の使用状況があるかどうか、および (場合によっては) の値の単位を確認する必要があります。reports. ここで、HID 解析が必要です。 Windows には、ドライバーとアプリケーションで使用する HID パーサーが用意されています。 このパーサーは、デバイスでサポートされている使用法の種類を検出するために使用できる一連の Api (HidP\_\*) を公開します。また、レポート内での使用状況の状態を判断したり、デバイスの使用状況の状態を変更するためのレポートを作成したりするために使用できます。
 
-HID パーサー Api を次に示します。
+次の一覧は、HID パーサー Api を示しています。
 
--   [**HidP\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)
+-   [**HidP\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps)
 -   [**HidP\_GetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
 -   [**HidP\_GetButtonsEx**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
--   [**HidP\_GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getcaps)
--   [**HidP\_GetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getdata)
--   [**HidP\_GetExtendedAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getextendedattributes)
--   [**HidP\_GetLinkCollectionNodes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getlinkcollectionnodes)
--   [**HidP\_GetScaledUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getscaledusagevalue)
--   [**HidP\_GetSpecificButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)
--   [**HidP\_GetSpecificValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificvaluecaps)
--   [**HidP\_GetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusages)
--   [**HidP\_GetUsagesEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagesex)
--   [**HidP\_GetUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevalue)
--   [**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevaluearray)
--   [**HidP\_GetValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getvaluecaps)
--   [**HidP\_InitializeReportForID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_initializereportforid)
--   [**HidP\_IsSameUsageAndPage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_usage_and_page)
--   [**HidP\_MaxDataListLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_maxdatalistlength)
--   [**HidP\_MaxUsageListLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_maxusagelistlength)
+-   [**HidP\_GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getcaps)
+-   [**HidP\_GetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getdata)
+-   [**HidP\_GetExtendedAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getextendedattributes)
+-   [**HidP\_GetLinkCollectionNodes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getlinkcollectionnodes)
+-   [**HidP\_Get/Edの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getscaledusagevalue)
+-   [**HidP\_Get固有の Buttoncaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)
+-   [**HidP\_GetSpecificValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getspecificvaluecaps)
+-   [**HidP\_GetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)
+-   [**HidP\_Getの性別**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)
+-   [**HidP\_Getの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevalue)
+-   [**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray)
+-   [**HidP\_GetValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getvaluecaps)
+-   [**HidP\_初期化 Ereportforid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_initializereportforid)
+-   [**HidP\_Issameの場合とページ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_usage_and_page)
+-   [**HidP\_Maxdat/Stlength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_maxdatalistlength)
+-   [**HidP\_Max使い方 Listlength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_maxusagelistlength)
 -   [**HidP\_SetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
--   [**HidP\_setdata メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setdata)
--   [**HidP\_SetScaledUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setscaledusagevalue)
--   [**HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusages)
--   [**HidP\_SetUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusagevalue)
--   [**HidP\_SetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusagevaluearray)
+-   [**HidP\_SetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setdata)
+-   [**HidP\_Setスケール Edの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setscaledusagevalue)
+-   [**HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)
+-   [**HidP\_Setの値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevalue)
+-   [**HidP\_SetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevaluearray)
 -   [**HidP\_UnsetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
--   [**HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_unsetusages)
--   [**HidP\_UsageAndPageListDifference**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539824(v=vs.85))
--   [**HidP\_UsageListDifference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_usagelistdifference)
+-   [**HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)
+-   [**HidP\_の使い方 Andpagelist減法**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539824(v=vs.85))
+-   [**HidP\_の使い方 List相違点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_usagelistdifference)
 
  
 

@@ -1,40 +1,40 @@
 ---
 title: OID_WWAN_DRIVER_CAPS
-description: OID_WWAN_DRIVER_CAPS は、ミニポート ドライバーでサポートされている MB ドライバー モデルのバージョンを返します。
+description: OID_WWAN_DRIVER_CAPS は、ミニポートドライバーでサポートされている MB ドライバーモデルのバージョンを返します。
 ms.assetid: 2310a341-6899-44ad-8dfb-a13fd0c42dcb
 ms.date: 08/08/2017
-keywords: -OID_WWAN_DRIVER_CAPS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_DRIVER_CAPS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b378f5d8b4518b315bc865c826fe9bcc650d2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6ea5310a837756060d4f3237d1acc24a412e1685
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385495"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843847"
 ---
-# <a name="oidwwandrivercaps"></a>OID\_WWAN\_ドライバー\_キャップ
+# <a name="oid_wwan_driver_caps"></a>OID\_WWAN\_ドライバー\_CAP
 
 
-OID\_WWAN\_ドライバー\_キャップは、ミニポート ドライバーでサポートされている MB ドライバー モデルのバージョンを返します。
+OID\_WWAN\_ドライバー\_CAP は、ミニポートドライバーでサポートされている MB ドライバーモデルのバージョンを返します。
 
-要求のセットがサポートされていません。
+Set 要求はサポートされていません。
 
-ミニポート ドライバー処理 OID\_WWAN\_ドライバー\_同期的に上限を設定して、含まれた応答バッファーをすぐに完了する必要があります、 [ **NDIS\_WWAN\_ドライバー\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)クエリ要求を完了するときに、ミニポート ドライバーによって実装される MB ドライバー モデルのバージョンを記述する構造体。
+ミニポートドライバーは、OID\_WWAN\_ドライバー\_CAP を同期的に処理します。また、バージョンを示す[**NDIS\_WWAN\_DRIVER\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)構造を含む応答バッファーと共に直ちに戻る必要があります。クエリ要求の完了時にミニポートドライバーによって実装された MB ドライバーモデルの。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB ミニポート ドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)します。
+この OID の使用方法の詳細については、「 [MB ミニポートドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)」を参照してください。
 
-ミニポート ドライバーが、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでくださいクエリ操作を処理するときにします。
+クエリ操作を処理するときに、ミニポートドライバーはプロバイダーネットワークまたはサブスクライバー Id モジュール (SIM カード) にアクセスしないようにする必要があります。
 
-WWAN MB ドライバー モデルのバージョンの現在のバージョンが定義されている\_メジャー\_バージョンと WWAN\_マイナー\_バージョン\#トークンを定義します。 ミニポート ドライバーでは、MB、サービスがサポートされていない MB ドライバー モデルのバージョンを返します、MB、サービスは、デバイスを無視します。
+現在のバージョンの MB ドライバーモデルのバージョンは、WWAN\_メジャー\_バージョンおよび WWAN\_マイナー\_バージョンによって定義され \#トークンを定義します。 ミニポートドライバーが、mb サービスでサポートされていない MB ドライバーモデルのバージョンを返した場合、そのデバイスは MB サービスによって無視されます。
 
-MB サービスを初期化または再起動すると、ミニポート ドライバー既に読み込まれている可能性があります。 この場合は、MB サービスは、その他の任意の Oid を発行するために進む前に、ミニポート ドライバーによって MB ドライバー モデルの実装のバージョンを照会します。 これは、任意のセッションの開始時に発生します。
+MB サービスが初期化または再起動されると、ミニポートドライバーが既に読み込まれている可能性があります。 この場合、MB サービスは、ミニポートドライバーによって実装されている MB ドライバーモデルのバージョンを照会してから、他の Oid の発行を続行します。 これは、セッションの開始時に発生します。
 
-ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_任意の初期化エラーの場合はサポートされています。 ミニポート ドライバーは、NDIS を返す場合\_状態\_いない\_サポート、MB サービスでは、デバイスを無視しでその他の任意の Oid は続行されません。
+すべての初期化エラーが発生した場合、ミニポートドライバーは NDIS\_の状態\_返す必要があり\_サポートされていません。 ミニポートドライバーが NDIS\_STATUS を返し\_\_サポートされていない場合、MB サービスはデバイスを無視し、他の Oid は続行されません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,11 +45,11 @@ MB サービスを初期化または再起動すると、ミニポート ドラ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,9 +57,9 @@ MB サービスを初期化または再起動すると、ミニポート ドラ�
 ## <a name="see-also"></a>関連項目
 
 
-[MB ミニポート ドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
+[MB ミニポートドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
-[**NDIS\_WWAN\_ドライバー\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)
+[**NDIS\_WWAN\_ドライバー\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)
 
  
 

@@ -1,20 +1,20 @@
 ---
-title: MPIO\_コント ローラー\_情報 WMI クラス
-description: MPIO\_コント ローラー\_情報 WMI クラス
+title: MPIO\_コントローラー\_情報 WMI クラス
+description: MPIO\_コントローラー\_情報 WMI クラス
 ms.assetid: 0448e056-2bbe-4e4f-a729-a872393222e5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 61f3df09cb9d28a4f13a6e99cd8709c2090203d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f272fccb05fb5599b4e24c82f295d55f1adfbddd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386174"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844545"
 ---
-# <a name="mpiocontrollerinfo-wmi-class"></a>MPIO\_コント ローラー\_情報 WMI クラス
+# <a name="mpio_controller_info-wmi-class"></a>MPIO\_コントローラー\_情報 WMI クラス
 
 
-MPIO ドライバーは、MPIO を使用して\_コント ローラー\_記憶域コント ローラーとその関連付けられている DSM を識別する情報の WMI クラスです。
+Mpio ドライバーは、MPIO\_CONTROLLER\_INFO WMI クラスを使用して、記憶域コントローラーとそれに関連付けられている DSM を識別します。
 
 ```cpp
 class MPIO_CONTROLLER_INFO
@@ -33,7 +33,7 @@ class MPIO_CONTROLLER_INFO
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_コント ローラー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_controller_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラス定義が WMI ツールスイートによってコンパイルされると、 [**MPIO\_CONTROLLER\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_controller_info)データ構造が生成されます。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: PcPoRequestPowerIrp ルール (オーディオ)
-description: このルールは、PortCls ミニポート ドライバーが IRP を PoRequestPowerIrp を呼び出さないことを確認します。\_MN\_設定\_電源。
+description: このルールは、PortCls ミニポートドライバーが、\_の電源\_設定された IRP\_を持つ PoRequestPowerIrp を呼び出さないことを確認します。
 ms.assetid: 9AF26E98-CB8A-41F1-BF40-1B5FBFD04550
 ms.date: 05/21/2018
 keywords:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ddc433cfa323582280935dc9747926f3d62d09
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: d677e729fd9ab7facf1a9e055b4ec5f47a4ee23f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392073"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839337"
 ---
 # <a name="pcporequestpowerirp-rule-audio"></a>PcPoRequestPowerIrp ルール (オーディオ)
 
 
-このルールは、PortCls ミニポート ドライバーを呼び出さないことを確認します[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)で[ **IRP\_MN\_設定\_。POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)します。
+このルールは、PortCls ミニポートドライバーが、 [ **\_の電源\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)された IRP\_を持つ[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出さないことを確認します。
 
 |              |       |
 |--------------|-------|
@@ -30,7 +30,7 @@ ms.locfileid: "67392073"
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x0007100A) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0007100A) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -41,15 +41,15 @@ ms.locfileid: "67392073"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain オーディオ</strong>します。</p>
-<p>以下に例を示します。</p>
-<p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
+<td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 Driver Verifier コマンドを入力し、 <strong>/domain audio</strong>を指定します。</p>
+<p>次に、例を示します。</p>
+<p><strong>verifier/domain audio</strong> [<em>オプション</em>] <strong>/driver</strong> <em>&lt;ドライバー&gt;</em></p>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ description: イメージ形式のサポートの追加
 ms.assetid: 1ffa7c0d-23ec-402a-a0b5-fb5596a851bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cb2a158955cf46959f3efbfb81694938309c41
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58e9caa0c81040165bf8d948c1023cacac0a993a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375937"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840912"
 ---
 # <a name="adding-image-format-support"></a>イメージ形式のサポートの追加
 
@@ -17,21 +17,21 @@ ms.locfileid: "67375937"
 
 
 
-WIA ミニドライバー WIA サービスへのイメージ形式のレポート、 [ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)メソッド。
+WIA ミニドライバーは、 [**IWiaMiniDrv::D rvgetwiaformatinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)メソッドでイメージ形式を wia サービスに報告します。
 
-### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>Implementing IWiaMiniDrv::drvGetWiaFormatInfo
+### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>IWiaMiniDrv の実装::d rvGetWiaFormatInfo
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvGetWiaFormatInfo** WIA デバイスでサポートされているフラグと形式のペアを取得します。
+WIA サービスは**IWiaMiniDrv::D rvgetwiaformatinfo**メソッドを呼び出して、wia デバイスでサポートされている TYMED と形式のペアを取得します。
 
-(この WIA ドライバーに格納され、この WIA ドライバーによって解放される) にメモリを割り当てる必要があります、WIA ドライバー WIA の配列を含める\_形式\_情報の構造 (Microsoft Windows SDK のドキュメントで説明)。 WIA ドライバーに割り当てられたメモリへのポインターを渡す必要があります*ppwfi*します。 直接的にではがポインターにポインターを使用して、この操作は行われません。 次の例では、 *ppwfi* m のアドレスが設定されている\_WIAFormatInfo\[0\]、さらに、構造体の最初のメンバーのアドレスに評価されます。
+Wia ドライバーは、(この wia ドライバーに格納され、この WIA ドライバーによって解放される) メモリを割り当てて、WIA\_形式\_情報構造 (Microsoft Windows SDK ドキュメントで説明) の配列を含める必要があります。 WIA ドライバーで割り当てられたメモリへのポインターを*ppwfi*に渡す必要があります。 この操作は直接行われませんが、ポインターへのポインターが使用されます。 次の例では、 *ppwfi*が m\_WIAFormatInfo\[0\]のアドレスに設定されています。これは、構造体の最初のメンバーのアドレスに評価されます。
 
-WIA サービスはこのメモリを解放していないことに注意してください。 重要です。 この割り当てられたメモリを管理する WIA ドライバーの役目です。
+このメモリは、WIA サービスによって解放されないことに注意してください。 この割り当てられたメモリを管理するのは、WIA ドライバーの役割です。
 
-WIA ドライバーは、メモリ位置に割り当てられている構造体の数を書き込む必要があります、 *pcelt*パラメーター ポイント。
+WIA ドライバーは、 *pcelt*パラメーターが指すメモリ位置に割り当てられている構造体の数を書き込みます。
 
-WIA デバイスを設定する必要があります、 **guidFormatID** 、WIA のメンバー\_形式\_イメージ形式の GUID に情報の構造体。 デバイスを設定する必要があります、 **lTymed** TYMED 値にこの構造体のメンバーは、イメージ形式の GUID に関連付けられています。
+Wia デバイスでは、WIA\_形式\_INFO 構造体の**guidFormatID**メンバーをイメージ形式の GUID に設定する必要があります。 デバイスは、この構造体の**lTymed**メンバーに、イメージ形式 GUID に関連付けられている TYMED 値を設定する必要があります。
 
-有効なフラグ値 ("Media Type"とも呼ばれます) は次のとおりです。
+有効な TYMED 値 ("メディアの種類" とも呼ばれます) は次のとおりです。
 
 TYMED\_ファイル
 
@@ -41,7 +41,7 @@ TYMED\_コールバック
 
 TYMED\_マルチページ\_コールバック
 
-次の例の実装を示しています[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo):。
+次の例は、 [**IWiaMiniDrv::D rvgetwiaformatinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)の実装を示しています。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetWiaFormatInfo(

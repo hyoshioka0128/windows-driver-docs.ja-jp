@@ -1,29 +1,29 @@
 ---
-title: センサー イベントを発生させる
-description: センサー イベントを発生させる
+title: センサーイベントの発生
+description: センサーイベントの発生
 ms.assetid: a6e428f8-1613-4e8d-813d-5a54824dab82
 keywords:
-- センサー イベント
-- イベント ハンドラー (event handler)
+- センサーイベント
+- イベント ハンドラー
 - データ更新イベント
-- センサー データの更新イベント
+- センサーデータ更新イベント
 - 状態変更イベント
 - センサーの状態変更イベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a98f8cd73ff35b5e2cb58f5207fb82e757e5e289
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2eec9a30bf3b174b4f6d6b5282418315047480b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842527"
 ---
-# <a name="raising-sensor-events"></a>センサー イベントを発生させる
+# <a name="raising-sensor-events"></a>センサーイベントの発生
 
 
-センサー イベントを使用する方法についての詳細については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
+センサーイベントの動作の詳細については、「[センサードライバーイベントについ](about-sensor-driver-events.md)て」を参照してください。
 
-次のコード例では、データ更新、および状態変更イベントを発生させるクラスを示します。 クラスの名前は**CSensorManager**します。
+次のコード例は、データ更新イベントと状態変更イベントを発生させるクラスを示しています。 クラスには、 **Csensormanager**という名前が付けられます。
 
 ### <a name="member-variables"></a>メンバー変数
 
@@ -48,7 +48,7 @@ DWORD m_dwInterval;
 
 ### <a name="global-variables"></a>グローバル変数
 
-ドライバーは、このクラスで使用される次のグローバル変数を定義します。
+ドライバーは、このクラスによって使用される次のグローバル変数を定義します。
 
 ```c
 // Sensor ID
@@ -58,13 +58,13 @@ static const LPWSTR g_wszSensorID = L"My Sensor ID";
 static const DWORD g_dwDefaultInterval = 1000; // one second
 ```
 
-### <a name="lifetime-management"></a>有効期間管理
+### <a name="lifetime-management"></a>有効期間の管理
 
-コールバック クラスを実装する、CSensorDdi をという名前[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nn-sensorsclassextension-isensordriver)、最初のクライアントがイベントにサブスクライブするときに、CSampleEvents イベント クラスのインスタンスを作成します。 コールバック クラスは、クライアントは不要になったイベントをサブスクライブしている場合、CSampleEvents インスタンスを破棄します。
+[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nn-sensorsclassextension-isensordriver)を実装する CSensorDdi という名前のコールバッククラスは、最初のクライアントがイベントをサブスクライブするときに CSampleEvents イベントクラスのインスタンスを作成します。 コールバッククラスは、クライアントがイベントにサブスクライブされなくなったときに CSampleEvents インスタンスを破棄します。
 
-CSampleEvents にコールバックでは、最新のデータを取得する CSensorDdi など、クラスの拡張が使用する同じメソッドを使用して[ **ISensorDriver::OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)します。
+CSampleEvents は CSensorDdi にコールバックし、 [**ISensorDriver:: OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)など、クラス拡張で使用されるのと同じメソッドを使用して、最新のデータを取得します。
 
-次のコード例には、CSampleEvents イベント クラスのメソッドの実装が含まれています。
+次のコード例には、CSampleEvents イベントクラスのメソッドの実装が含まれています。
 
 ```c
 CSampleEvents::CSampleEvents()
@@ -195,9 +195,9 @@ HRESULT CSampleEvents::PostDataEvent(IPortableDeviceValues* pValues)
 }
 ```
 
-### <a name="thread-procedure"></a>スレッド処理
+### <a name="thread-procedure"></a>スレッドプロシージャ
 
-次のコード例では、データ更新イベントを発生させる CSampleEvents クラスを使用するスレッド プロシージャを示します。
+次のコード例は、CSampleEvents クラスを使用してデータ更新イベントを発生させるスレッドプロシージャを示しています。
 
 ```c
 DWORD WINAPI CSampleEvents::_EventThreadProc(__in LPVOID pvData)
@@ -265,7 +265,7 @@ DWORD WINAPI CSampleEvents::_EventThreadProc(__in LPVOID pvData)
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[センサー地理位置情報ドライバー サンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
+[センサーの地理位置情報ドライバーのサンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

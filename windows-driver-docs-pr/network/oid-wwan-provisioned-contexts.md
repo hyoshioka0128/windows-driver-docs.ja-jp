@@ -1,58 +1,58 @@
 ---
 title: OID_WWAN_PROVISIONED_CONTEXTS
-description: OID_WWAN_PROVISIONED_CONTEXTS の読み取りや MB デバイスまたはサブスクライバー Identity モジュール (SIM) で格納されているプロビジョニングされたコンテキストのエントリを更新します。
+description: OID_WWAN_PROVISIONED_CONTEXTS は、MB デバイスまたはサブスクライバー Id モジュール (SIM) に格納されている、プロビジョニングされたコンテキストエントリを読み取りまたは更新します。
 ms.assetid: 7634fc32-9059-4f89-a591-7aa663b0c188
 ms.date: 08/08/2017
-keywords: -OID_WWAN_PROVISIONED_CONTEXTS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_PROVISIONED_CONTEXTS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: e160dfc6b0a4bbbacdc6d6decd7094f38ea44f26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee4ef4382aa1dc7eb6007f972c0efa7df28c508c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383203"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843806"
 ---
-# <a name="oidwwanprovisionedcontexts"></a>OID\_WWAN\_プロビジョニング済み\_コンテキスト
+# <a name="oid_wwan_provisioned_contexts"></a>OID\_WWAN\_プロビジョニングされた\_コンテキスト
 
 
-OID\_WWAN\_プロビジョニング済み\_コンテキストの読み取りや MB デバイスまたはサブスクライバー Identity モジュール (SIM) で格納されているプロビジョニングされたコンテキストのエントリを更新します。
+OID\_WWAN\_プロビジョニングされた\_コンテキストは、MB デバイスまたはサブスクライバー Id モジュール (SIM) に格納されているプロビジョニング済みのコンテキストエントリを読み取りまたは更新します。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_プロビジョニング済み\_コンテキスト**](ndis-status-wwan-provisioned-contexts.md)状態通知を含む、 [ **NDIS\_WWAN\_プロビジョニング済み\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts) MB デバイスまたはデバイス セットまたはクエリの要求の完了に関係なくサブスクライバー Identity モジュール (SIM) で格納されているプロビジョニングされたコンテキストのエントリに関する情報を提供する構造体。
+ミニポートドライバーは、セットおよびクエリ要求を非同期的に処理し、最初に NDIS\_の\_状態を返し、元の要求に必要な\_を示し、後で[**ndis\_ステータス\_WWAN を送信する必要があり\_** ](ndis-status-wwan-provisioned-contexts.md)プロビジョニングされた\_コンテキストの状態通知では、プロビジョニングされたコンテキストエントリに関する情報を提供するために、 [**NDIS\_WWAN\_プロビジョニング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)された\_コンテキスト構造が含まれています。Set 要求またはクエリ要求の完了に関係なく、id モジュール (SIM)。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN パケット コンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)します。
+この OID の使用方法の詳細については、「 [WWAN パケットコンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)」を参照してください。
 
-ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_サポート MB デバイスがプロビジョニングされているコンテキストの取得をサポートしていない場合にサポートされます。
+サポートされている MB のデバイスでプロビジョニングされたコンテキストの取得がサポートされていない場合、ミニポートドライバーは NDIS\_の状態\_返す必要があり\_サポートされていません。
 
-必要に応じて、GSM ベースのデバイスはクエリをサポートし、操作を設定します。 CDMA ベースのデバイスは、クエリ操作の単純な IP のレポートをサポートできます必要に応じて (WWAN\_CTRL\_CAP\_CDMA\_単純\_IP)。
+GSM ベースのデバイスでは、必要に応じてクエリと設定操作をサポートできます。 CDMA ベースのデバイスでは、必要に応じて、簡易 IP を報告するクエリ操作 (WWAN\_CTRL\_CAPS\_CDMA\_単純\_IP) をサポートできます。
 
-MB デバイスまたは SIM に格納されているプロビジョニングされたコンテキストのエントリは、デバイスに対してローカルです。 ミニポート ドライバーは、これらのフィールドを読み取るようにネットワークに接続する必要がありますできません。
+MB デバイスまたは SIM に格納されているプロビジョニング済みのコンテキストエントリは、デバイスに対してローカルです。 ミニポートドライバーは、これらのフィールドを読み取るためにネットワークに接続しないでください。
 
-入力セットの要求の構造は、NDIS\_WWAN\_設定\_プロビジョニング済み\_このオブジェクトのコンテキストと状態を示す値は、NDIS\_状態\_WWAN\_プロビジョニング済み\_コンテキスト。
+Set 要求の入力構造は、NDIS\_WWAN\_SET\_プロビジョニングされた\_コンテキスト、およびこのオブジェクトの状態の表示は、プロビジョニングされた\_コンテキスト\_の NDIS\_STATUS\_状態を示します。
 
-プロビジョニングのコンテキストは、GPRS コンテキストの定義では、3 gpp APNs の一覧をキャッシュするのと同じではないです。 プロビジョニングのコンテキストは、接続パラメーター (AccessString、UserName、およびパスワード) はいずれかの事前にプロビジョニングされる、演算子、または、OTA デバイスによってプロビジョニングされ、デバイスのメモリまたは SIM で格納されていることができますです。 プロビジョニング済みのコンテキストによって返される接続パラメーターは、PDP アクティブ化の MB サービスによって使用されます。
+プロビジョニングされたコンテキストは、APNs の一覧をキャッシュする3GPP の GPRS コンテキスト定義と同じではありません。 プロビジョニングされたコンテキストとは、デバイスによってプロビジョニングされたオペレーターまたは OTA によって事前にプロビジョニングされた接続パラメーター (AccessString、UserName、および Password) のことで、デバイスのメモリまたは SIM のいずれかに格納できます。 プロビジョニングされたコンテキストによって返された接続パラメーターは、PDP のアクティブ化のために MB サービスによって使用されます。
 
-両方のクエリし、このオブジェクトのセットの形式が使用されます。
+このオブジェクトのクエリと set の両方の形式が使用されます。
 
-この要求の処理は、ネットワーク アクセスが必要としない、SIM または MB デバイスの補助メモリへのアクセスが必要です。
+この要求の処理にはネットワークアクセスは必要ありませんが、MB デバイスの SIM または補助メモリへのアクセスが必要です。
 
-ミニポート ドライバー送信 NDIS\_状態\_WWAN\_プロビジョニング済み\_オペレーティング システムへの通知のコンテキスト。 **ContextListHeader.ElementType**メンバーを設定するものと*WwanStructContext*します。 ミニポート ドライバーを設定する必要があります、 **ContextListHeader.ElementCount**メンバー セットの要求に対する応答で通知を送信するときは 0 にします。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_プロビジョニングされた\_コンテキストの通知をオペレーティングシステムに送信します。 **ContextListHeader**メンバーは*WwanStructContext*に設定されている必要があります。 通知が set 要求に応答して送信される場合、ミニポートドライバーは**ContextListHeader**メンバーを0に設定する必要があります。
 
-MB サービスは、任意の個々 のコンテキストのアクティブ化または非アクティブ化を実施する前に、デバイスからプロビジョニングのコンテキストの一覧を取得する必要があります。 プロビジョニングのコンテキストの一覧は、デバイスは、複数のネットワーク プロバイダー コンテキストを保存する機能を持っている場合でも、ホーム プロバイダー ネットワークのみに制限する必要があります。 コンテキストの一覧は、ホーム プロバイダー ネットワークをローミング場合でも同じ特定常にあります。
+MB サービスは、個々のコンテキストのアクティブ化または非アクティブ化を実行する前に、デバイスからプロビジョニングされたコンテキストの一覧を取得する必要があります。 プロビジョニングされたコンテキストの一覧は、デバイスに複数のネットワークプロバイダーコンテキストを格納する機能がある場合でも、ホームプロバイダーネットワークのみに制限する必要があります。 ローミングの場合でも、コンテキストリストは常にホームプロバイダーネットワーク固有である必要があります。
 
-設定の OID\_WWAN\_プロビジョニング済み\_操作のコンテキストでセットの要求で指定されているネットワーク プロバイダー コンテキストを関連付ける必要があります**ProviderId** WWANのメンバー\_設定\_CONTEXT 構造体。 プロビジョニングのコンテキストを使って格納されている設定 OID\_WWAN\_プロビジョニング済み\_コンテキストの要求は、システム全体で保持する必要がありますが再起動し、デバイスの電源をリサイクルします。
+OID\_\_プロビジョニングされた\_コンテキスト操作は、コンテキストを、WWAN\_SET\_CONTEXT 構造体の**ProviderId**メンバーの set 要求で指定されているネットワークプロバイダーに関連付ける必要があります。 Set OID\_WWAN\_\_プロビジョニングされた、プロビジョニングされたコンテキストは、システムの再起動とデバイスの電力リサイクルの間に保持する必要があります。
 
-空のすべてのコンテキストでは、ホーム プロバイダー ネットワークに適用可能なプロビジョニングのコンテキストと共にクエリに報告する必要があります。
+すべての空のコンテキストは、ホームプロバイダーネットワークに適用されるプロビジョニング済みのコンテキストと共に、クエリで報告する必要があります。
 
-SimpleIP、WWAN でのレポートが構成されている CDMA デバイス\_CTRL\_CAP\_CDMA\_単純\_WwanControlCaps で IP は、少なくとも 1 つのプロビジョニングされたコンテキストで塗りつぶさを返すことができます必要に応じて、正しい**AccessString**、 **UserName**、および**パスワード**MB サービスからのクエリ要求のメンバー。
+SimpleIP 用に構成された CDMA デバイス、WWAN でのレポート\_CTRL\_CAPS\_CDMA\_単純な\_IP を使用して、必要に応じて、適切な**Accessstring**が入力された1つ以上のプロビジョニング済みコンテキストを返すことができますMB サービスからのクエリ要求の、**ユーザー名**、および**パスワード**のメンバー。
 
-プロビジョニングのコンテキストの一覧はセット OID によって更新、デバイスの事前プロビジョニングする必要があります\_WWAN\_プロビジョニング済み\_コンテキスト操作、または SMS または OTA デバイス/演算子によって更新します。 更新してはいけない OID で提供されるコンテキスト情報に基づいて動的に\_WWAN\_MB サービスで接続操作です。
+プロビジョニングされたコンテキストリストは、デバイスで事前プロビジョニングされている必要があります。また、set OID\_WWAN\_プロビジョニングされた\_コンテキスト操作によって更新されるか、SMS または OTA を使用してデバイス/オペレーターによって更新されます。 OID\_WWAN\_の MB サービスによる接続操作で指定されたコンテキスト情報に基づいて動的に更新することはできません。
 
-MB デバイスの一覧でプロビジョニングされた各コンテキストから AccessString、UserName、およびパスワードにアクセスする方法の詳細については、次を参照してください。 [ **WWAN\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_context)します。
+リスト内のプロビジョニングされた各コンテキストについて、MB デバイスから AccessString、UserName、および Password にアクセスする方法の詳細については、「 [**WWAN\_context**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_context)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -63,11 +63,11 @@ MB デバイスの一覧でプロビジョニングされた各コンテキス�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -75,7 +75,7 @@ MB デバイスの一覧でプロビジョニングされた各コンテキス�
 ## <a name="see-also"></a>関連項目
 
 
-[WWAN パケット コンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)
+[WWAN パケットコンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)
 
  
 

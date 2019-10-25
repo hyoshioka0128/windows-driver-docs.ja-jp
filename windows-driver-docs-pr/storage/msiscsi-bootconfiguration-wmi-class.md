@@ -4,22 +4,22 @@ description: MSiSCSI\_BootConfiguration WMI クラス
 ms.assetid: 5ca350ba-8689-46c2-8313-8f523354db98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cb45546a4f2cdd22a8f319f2c404c0ca8fc28ab0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d7f0726c034ece4c09fec23a8b57aef89978224b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376694"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842523"
 ---
-# <a name="msiscsibootconfiguration-wmi-class"></a>MSiSCSI\_BootConfiguration WMI クラス
+# <a name="msiscsi_bootconfiguration-wmi-class"></a>MSiSCSI\_BootConfiguration WMI クラス
 
 
 ## <span id="ddk_msiscsi_bootconfiguration_wmi_class_kr"></span><span id="DDK_MSISCSI_BOOTCONFIGURATION_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_BootConfiguration WMI クラスは、ブート デバイスを構成する方法について説明します。
+MSiSCSI\_BootConfiguration WMI クラスでは、ブートデバイスの構成方法について説明します。
 
-このクラスが次のように定義されている*Config.mof*します。
+このクラスは、 *config.xml*で次のように定義されています。
 
 ```cpp
 class MSiSCSI_BootConfiguration {
@@ -69,7 +69,7 @@ class MSiSCSI_BootConfiguration {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_BootConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_bootconfiguration)データ構造体。
+WMI ツールスイートは、前のクラス定義をコンパイルするときに、 [**Msiscsi\_BootConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_bootconfiguration)データ構造を生成します。
 
  
 

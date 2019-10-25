@@ -1,41 +1,41 @@
 ---
 title: NVMe デバイス用ファームウェアのアップグレード
-description: NVMe の記憶域デバイスのファームウェアの更新は、そのデバイスのミニポート ドライバーに発行されます。
+description: NVMe ストレージデバイスのファームウェアに対する更新は、そのデバイスのミニポートドライバーに発行されます。
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9437d51baa99095c6381f939983757fa2e06bf3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fae5703910c981967d2ac6a416532e2ea07cc570
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386811"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844444"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>NVMe デバイス用ファームウェアのアップグレード
 
 
-NVMe の記憶域デバイスのファームウェアの更新は、そのデバイスのミニポート ドライバーに発行されます。 ファームウェアの情報を取得するためのコマンドを関数、ダウンロード、およびファームウェア イメージをアクティブ化は、ミニポートに発行されます。
+NVMe ストレージデバイスのファームウェアに対する更新は、そのデバイスのミニポートドライバーに発行されます。 ファームウェア情報を取得したり、ファームウェアイメージをダウンロードしたり、アクティブにしたりするための関数コマンドが、ミニポートに発行されます。
 
-## <a name="span-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>ファームウェアのアップグレード プロセス
-
-
-Windows 用に認定 NVMe デバイスは、デバイスが操作中にファームウェアを更新できます。 ファームウェアの更新を使用して、 [ **IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)ファームウェアが関連付けられているコントロールのデータを含む、SRB で書式設定を要求します。 更新プロセスが含まれます。
-
-1.  更新プログラムを配置する場所を特定するファームウェア スロットの情報を収集します。 ファームウェアの更新プログラムが配置を決定するときに、いくつかの考慮事項があります。
-
-    -   スロットの数があるでしょうか。
-    -   スロットの数は、更新プログラムを保持できますか。 いくつかのスロットは読み取り専用または前のイメージに戻す機能が必要な場合に保持する必要がありますイメージを格納します。
-    -   どのスロットには、現在のアクティブなファームウェア イメージ (実行中のファームウェア) が含まれていますか。
-
-    デバイスを更新するには、書き込み可能であり、現在アクティブでないスロットが選択されます。 更新プログラムが完了すると、選択したスロットのすべての既存のイメージ データが上書きされます。
-
-2.  選択したスロット用に新しいファームウェア イメージをダウンロードします。 によって、イメージのサイズには、1 つの転送操作で、または画像の部分を複数の連続する転送に発生します。 によって、イメージの一部が制限**min**(*コント ローラーの最大転送サイズ*、512 KB)。
-3.  ダウンロードしたイメージをアクティブなファームウェア イメージにするには、するにはスロットに割り当てられます。 アクティブなファームウェア スロットは、現在使用されているスロットからダウンロードしたイメージに割り当てられているスロットに切り替えられます。 、ダウンロードして、ファームウェア イメージの変更の種類に応じて、システムを再起動する必要があります。 これは、NVMe コント ローラーによって決まります。
-
-## <a name="span-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>ミニポート ファームウェア コントロール要求
+## <a name="span-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>ファームウェアのアップグレードプロセス
 
 
-各関数のコマンドで設定されて、**ファームウェア\_要求\_ブロック**構造に含まれています、 [ **SRB\_IO\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ns-ntddscsi-_srb_io_control)のバッファーで、 [ **IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)要求。 **ControlCode**のメンバー **SRB\_IO\_コントロール**に設定されている**IOCTL\_SCSI\_ミニポート\_ファームウェア**をミニポートのファームウェア操作を示します。 各関数のコマンドが後にある関連情報構造、**ファームウェア\_要求\_ブロック**します。 次の表は、各関数のコマンドとシステムのバッファーに含まれる構造体**IOCTL\_SCSI\_ミニポート**します。
+Windows 用に認定された NVMe デバイスは、デバイスの操作中にファームウェアを更新できます。 ファームウェアは、SRB でフォーマットされた関連するファームウェアコントロールデータを含む[**IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)要求を使用して更新されます。 更新プロセスは次のとおりです。
+
+1.  ファームウェアスロット情報を収集して、更新を配置する場所を決定します。 ファームウェアの更新プログラムが存在する場所を決定する際には、いくつかの考慮事項があります。
+
+    -   使用できるスロットの数を確認できます。
+    -   更新プログラムを保持できるスロットの数を確認できます。 一部のスロットは読み取り専用であるか、前のイメージに戻す機能が必要な場合に保持する必要があるイメージを保持しています。
+    -   現在アクティブなファームウェアイメージを含むスロット (実行中のファームウェア)
+
+    デバイスを更新するために、書き込み可能で現在アクティブでないスロットが選択されています。 更新が完了すると、選択したスロット内の既存のイメージデータはすべて上書きされます。
+
+2.  選択したスロットの新しいファームウェアイメージをダウンロードします。 イメージのサイズに応じて、1回の転送操作で、またはイメージの複数の部分の連続した転送で発生します。 イメージの一部は、**最小値**(コントローラーの*最大転送サイズ*である 512 KB) によって制限されます。
+3.  ダウンロードしたイメージをアクティブなファームウェアイメージにするために、スロットに割り当てられます。 アクティブなファームウェアスロットは、現在使用されているスロットから、ダウンロードしたイメージに割り当てられているスロットに切り替わります。 ダウンロードの種類とファームウェアイメージの変更によっては、システムの再起動が必要になる場合があります。 これは、NVMe コントローラーによって決定されます。
+
+## <a name="span-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>ミニポートファームウェアコントロール要求
+
+
+各関数コマンドは、**ファームウェア\_要求\_ブロック**構造で設定されます。これは、 [**IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)要求のバッファー内の[**SRB\_IO\_制御**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)に含まれています。 **SRB\_IO\_CONTROL**の**controlcode**メンバーは、ミニポートファームウェア操作を示すために、 **SCSI\_ミニポート\_ファームウェア\_IOCTL**に設定されています。 各関数コマンドには、**ファームウェア\_要求\_ブロック**の後にある関連情報構造があります。 次の表は、各関数コマンドと、 **IOCTL\_SCSI\_ミニポート**のシステムバッファーに含まれる構造体を示しています。
 
 <table>
 <colgroup>
@@ -78,12 +78,12 @@ Windows 用に認定 NVMe デバイスは、デバイスが操作中にファー
 
  
 
-ファームウェア関数と関連付けられている構造体で定義されます*ntddscsi.h*します。
+ファームウェアの関数と関連する構造体は、 *ntddscsi*で定義されています。
 
-## <a name="span-idfirmwareslotinformationspanspan-idfirmwareslotinformationspanspan-idfirmwareslotinformationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>ファームウェア スロット情報
+## <a name="span-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>ファームウェアスロットの情報
 
 
-スロットと呼ばれる場所のデバイスでは、ファームウェア イメージが維持されます。 アクティブ化すると、ダウンロードした後に存在するファームウェア イメージの使用可能なスロットを探す必要があります。 使用可能なスロットを探すには、アップグレードのユーティリティは、スロット情報の記述子を受信するデバイスに情報の照会を送信できます。 次の関数の例では、すべてのファームウェア スロットの選択の NVMe デバイスでの情報を取得する方法を示します。
+ファームウェアイメージは、デバイス上のスロットと呼ばれる場所に保持されます。 ダウンロード後にライセンス認証されたファームウェアイメージが存在する場合は、そのスロットを見つける必要があります。 使用可能なスロットを見つけるために、アップグレードユーティリティは、デバイスに情報クエリを送信して、スロット情報記述子を受け取ることができます。 次の関数の例は、選択した NVMe デバイス上のすべてのファームウェアスロットに関する情報を取得する方法を示しています。
 
 ```ManagedCPlusPlus
 // A device list item structure for an adapter
@@ -211,23 +211,23 @@ Return Value:
 }
 ```
 
-配列のスロットの情報が返されます**ストレージ\_ファームウェア\_スロット\_情報**構造体。 各構造体は、アクティブ化の状態およびファームウェア スロットの可用性を示します。 可用性のための条件は次のとおりです。
+スロット情報は、**ストレージ\_ファームウェア\_スロット\_情報**構造体の配列に返されます。 各構造体は、ファームウェアスロットのアクティブ化の状態と可用性を示します。 可用性の条件は次のとおりです。
 
--   **ReadOnly**メンバーは 0 に設定します。
--   スロットがないアクティブなスロットでスロット番号によって示される、 **ActiveSlot**のメンバー**ストレージ\_ファームウェア\_情報**します。
--   **PendingActiveSlot**のメンバー**ストレージ\_ファームウェア\_情報**記憶域に設定されている\_ファームウェア\_情報\_が無効です\_スロットです。
--   **PendingActiveSlot**のメンバー**ストレージ\_ファームウェア\_情報**目的のスロットに設定されていません。
+-   **ReadOnly**メンバーは0に設定されます。
+-   スロットが、**ストレージ\_ファームウェア\_情報**の**activeslot**メンバーのスロット番号で示されているアクティブなスロットではありません。
+-   **Storage\_ファームウェアの\_情報**の**Pendingactiveslot**のメンバーが、無効な\_スロット\_\_ファームウェア\_情報に設定されています。
+-   **ストレージ\_ファームウェア\_情報**の**Pendingactiveslot**のメンバーが目的のスロットに設定されていません。
 
-また、スロットの状態は、可用性のための条件を満たしている場合は、**情報**文字列には、0 以外のバイトである、有効なリビジョン データが含まれていますが、スロットには、有効なファームウェア イメージが含まれていますし、置き換えることができます。 すべての 0 を**情報**文字列が空のスロットを指定します。
+また、スロットの状態が可用性の条件を満たしていても、**情報**文字列に有効なリビジョンデータ (0 以外のバイト) が含まれている場合、スロットに有効なファームウェアイメージが含まれていますが、置き換えられる可能性があります。 **Info**文字列内のすべてのゼロは、空のスロットを示します。
 
-## <a name="span-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanspan-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanspan-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>例:ファームウェアのアップグレードのスロットの選択、ダウンロード、およびアクティブ化
+## <a name="span-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>例: ファームウェアのアップグレード-スロットの選択、ダウンロード、アクティブ化
 
 
-アップグレードのユーティリティでは、コント ローラーのファームウェアを更新する前に説明した 3 つの手順を実行します。 たとえば、次のアップグレードのルーチンには、プロセスの各手順のコードが含まれています。 示すように、スロット検出手順、 *DeviceGetFirmwareInfo*の例では、使用可能なスロットを選択するアップグレード ルーチンによって呼び出されます。 イメージのダウンロードとアクティブ化の手順では、スロットの選択範囲の直後を説明します。 ステップごとに関数の対応するコマンドの使用が表示されます。
+アップグレードユーティリティは、前に説明した3つの手順を実行して、コントローラーのファームウェアを更新します。 例として、次のアップグレードルーチンには、プロセスの各ステップのコードが含まれています。 *DeviceGetFirmwareInfo*の例に示すスロット検出手順は、使用可能なスロットを選択するためにアップグレードルーチンによって呼び出されます。 イメージのダウンロードとアクティブ化の手順は、スロットの選択に直接従って示されています。 各ステップ内では、対応する関数コマンドの使用方法が示されています。
 
-ダウンロードの手順の中にファームウェア イメージのファイルは、割り当てられたバッファーに読み取るし、バッファーの内容は、コント ローラーに転送されます。 ファームウェア イメージのファイルが、バッファーのサイズよりも大きい場合は、イメージ ファイルには、複数回は読み取り専用し、ファイル全体が読み取られるまで、ファームウェア イメージの部分は転送されます。
+ダウンロード手順では、割り当てられたバッファーにファームウェアイメージファイルが読み込まれ、バッファーの内容がコントローラーに転送されます。 ファームウェアイメージファイルがバッファーのサイズより大きい場合は、イメージファイルが複数回読み取られ、ファームウェアイメージのその部分がファイル全体が読み取られるまで転送されます。
 
-ファームウェア イメージのダウンロードが完了した後、アクティブ化の手順には、コント ローラーから 2 つのアクションが必要です。 最初に、ファームウェア イメージを選択したスロットが割り当てられているし、アクティブなスロットとして選択したスロットを設定する第 2 に、します。
+ファームウェアイメージのダウンロードが完了したら、ライセンス認証の手順を実行するには、コントローラーからの2つの操作が必要です。 まず、選択したスロットがファームウェアイメージに割り当てられ、2番目に選択したスロットがアクティブスロットとして設定されます。
 
 ```ManagedCPlusPlus
 VOID
@@ -579,13 +579,13 @@ Exit:
 }
 ```
 
-**注**  同時に複数のファームウェア イメージをダウンロードすることはできません。 1 つのファームウェアのダウンロードでは 1 つのファームウェアのアクティブ化を常が続きます。
+複数のファームウェアイメージを同時にダウンロードする**こと**はサポートされていません  。 1つのファームウェアのダウンロードには、常に1つのファームウェアライセンス認証が適用されます。
 
  
 
-既にスロットに常駐しているファームウェア イメージは、対応するスロット番号をアクティブ化関数のコマンドだけを使用して再びアクティブにできます。
+スロットに既に存在するファームウェアイメージを再アクティブ化するには、対応するスロット番号と共に activate function コマンドだけを使用します。
 
-**IOCTL\_SCSI\_ミニポート\_ファームウェア**SRB I/O コントロールのコントロールのコードは、Windows 8.1 以降から使用できます。
+SRB i/o コントロールの**IOCTL\_SCSI\_ミニポート\_ファームウェア**制御コードは、Windows 8.1 以降で使用できます。
 
  
 

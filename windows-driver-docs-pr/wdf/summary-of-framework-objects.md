@@ -3,56 +3,56 @@ title: フレームワーク オブジェクトの要約
 description: フレームワーク オブジェクトの要約
 ms.assetid: 799284a5-91c0-47b0-8f20-75a5f8e2284d
 keywords:
-- 一覧表示されたフレームワーク オブジェクト WDK KMDF、
-- framework オブジェクト WDK KMDF、概要
+- フレームワークオブジェクト WDK KMDF、一覧
+- フレームワークオブジェクト WDK KMDF、概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f43075b3090469d023b942d1b9d36fd51d5935
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e8f594a4f08b37538d9886b7de2b300425bfc8c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368086"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840461"
 ---
 # <a name="summary-of-framework-objects"></a>フレームワーク オブジェクトの要約
 
 
-次の表では、framework のオブジェクトのすべてを一覧表示し、各オブジェクトに関する基本的な情報を提供します。 モードの列は、オブジェクトを使用できるかどうかを示す KMDF と UMDF ドライバーまたは KMDF のみです。
+次の表に、すべてのフレームワークオブジェクトの一覧と、各オブジェクトに関する基本的な情報を示します。 [モード] 列には、オブジェクトを KMDF および UMDF ドライバー (KMDF のみ) で使用できるかどうかが示されます。
 
-一連のコールバックとメソッド、およびどのフレームワークに適用されます、次を参照してください。 [WDF のコールバックの概要とメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)します。
+コールバックとメソッドの一覧と適用可能なフレームワークについては、「 [WDF のコールバックとメソッドの概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf/)」を参照してください。
 
-|名前|ハンドル|目的|既定の親|ドライバーは既定の親をオーバーライドできますか。|Mode|リファレンス|
+|名前|ハンドル|目的|既定の親|ドライバーで既定の親を上書きできますか?|[モード]|辞書/リファレンス|
 |--- |--- |--- |--- |--- |--- |--- |
-|子リスト オブジェクト|WDFCHILDLIST|親デバイスに接続されている子デバイスの一覧を表します。|デバイス オブジェクト|X|KM|[WDF の子リスト オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/)|
-|コレクション オブジェクト|WDFCOLLECTION|オブジェクトのコレクションを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF のコレクション オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/)|
-|共通のバッファー オブジェクト|WDFCOMMONBUFFER|一般的なバッファーを表します。|DMA イネーブラー オブジェクト|X|KM|[一般的なバッファー オブジェクトの参照の WDF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcommonbuffer/)|
-|デバイス オブジェクト|WDFDEVICE|デバイスを表します。|ドライバー オブジェクト|X|KM/UM|[WDF デバイス オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/)|
-|DMA イネーブラー オブジェクト|WDFDMAENABLER|フレームワークの DMA の機能を使用するためのドライバーを有効にします。|デバイス オブジェクト|〇|KM|[WDF DMA オブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/)|
-|DMA トランザクション オブジェクト|WDFDMATRANSACTION|DMA トランザクションを表します。|DMA イネーブラー オブジェクト|X|KM|[WDF DMA オブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/)|
-|DPC オブジェクト|WDFDPC|遅延プロシージャ呼び出しを表します。|なし|〇|KM|[WDF DPC オブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/)|
-|ドライバー オブジェクト|WDFDRIVER|ドライバーを表します。|なし|X|KM/UM|[WDF ドライバー オブジェクト リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/)|
-|ファイル オブジェクト|WDFFILEOBJECT|ファイルを表します。|デバイス オブジェクト|X|KM/UM|[WDF ファイル オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/)|
-|一般的なオブジェクト|WDFOBJECT|一般的なオブジェクトを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF の一般的なオブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/)|
-|オブジェクトを中断します。|WDFINTERRUPT|ハードウェア割り込みのリソースを表します。|デバイス オブジェクト|〇|KM/UM|[WDF のオブジェクト参照を中断します。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/)|
-|I/O ターゲット オブジェクト|WDFIOTARGET|別のドライバーが I/O 要求を送信するドライバーを表します。|デバイス オブジェクト|〇|KM/UM|[WDF I/O ターゲット オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/)|
-|ルック アサイド リスト オブジェクト|WDFLOOKASIDE|ルック アサイド リストを表します。|ドライバー オブジェクト|〇|KM|[WDF メモリ オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/)|
-|メモリ オブジェクト|WDFMEMORY|メモリ バッファーを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF メモリ オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/)|
-|キュー オブジェクト|WDFQUEUE|I/O 要求を受信する I/O キューを表します。|デバイス オブジェクト|〇|KM/UM|[WDF のキュー オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/)|
-|レジストリ キー オブジェクト|WDFKEY|レジストリ キーを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF のレジストリ キー オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfregistry/)|
-|オブジェクトを要求します。|WDFREQUEST|I/O 要求を表します。|None、framework によって作成された場合。 ドライバーによって作成された場合は、ドライバー オブジェクト。|はい、ドライバーによって作成された場合です。|KM/UM|[WDF 要求オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/)|
-|リソース リスト オブジェクト|WDFCMRESLIST|リソースの一覧を表します。|ドライバー オブジェクト|X|KM/UM|[WDF のリソース オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfresource/)|
-|リソースの範囲のリスト オブジェクト|WDFIORESLIST|論理構成を表します。|リソース要件のリスト オブジェクト|X|KM|[WDF のリソース オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfresource/)|
-|リソース要件のリスト オブジェクト|WDFIORESREQLIST|リソース要件の一覧を表します。|ドライバー オブジェクト|X|KM|[WDF のリソース オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfresource/)|
-|スピン ロック オブジェクト|WDFSPINLOCK|スピン ロックを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF の同期方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfsync/)|
-|文字列オブジェクト|WDFSTRING|Unicode 文字列を表します。|ドライバー オブジェクト|〇|KM/UM|[WDF 文字列オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfstring/)|
-|タイマー オブジェクト|WDFTIMER|タイマーを表します。|なし|〇|KM/UM|[WDF タイマー オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/)|
-|USB デバイス オブジェクト|WDFUSBDEVICE|USB に接続されているデバイスを表します。|デバイス オブジェクト|X|KM/UM|[WDF の USB の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/)|
-|USB インターフェイス オブジェクト|WDFUSBINTERFACE|USB デバイスのインターフェイスを表します。|USB デバイス オブジェクト|X|KM/UM|[WDF の USB の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/)|
-|USB パイプ オブジェクト|WDFUSBPIPE|USB デバイスのパイプを表します。|USB インターフェイス オブジェクト|X|KM/UM|[WDF の USB の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/)|
-|待機ロック オブジェクト|WDFWAITLOCK|待機のロックを表します。|ドライバー オブジェクト|〇|KM/UM|[WDF の同期方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfsync/)|
-|WMI インスタンス オブジェクト|WDFWMIINSTANCE|WMI データ ブロックのインスタンスを表します。|WMI プロバイダー オブジェクト|X|KM|[WDF WMI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/)|
-|WMI プロバイダー オブジェクト|WDFWMIPROVIDER|WMI データ ブロックを表します。|デバイス オブジェクト|X|KM|[WDF WMI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/)|
-|作業項目オブジェクト|WDFWORKITEM|作業項目を表します。|なし|〇|KM/UM|[WDF の作業項目のオブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/)|
+|子リストオブジェクト|WDFCHILDLIST|親デバイスに接続されている子デバイスの一覧を表します。|デバイスオブジェクト|必須ではない|KM|[WDF の子リストオブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/)|
+|コレクションオブジェクト|WDFCOLLECTION|オブジェクトコレクションを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF Collection オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcollection/)|
+|共通バッファーオブジェクト|WDFCOMMONBUFFER|共通バッファーを表します。|DMA イネーブラーオブジェクト|必須ではない|KM|[WDF 共通バッファーオブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcommonbuffer/)|
+|デバイスオブジェクト|WDFDEVICE|デバイスを表します。|Driver オブジェクト|必須ではない|KM/UM|[WDF Device オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)|
+|DMA イネーブラーオブジェクト|WDFDMAENABLER|ドライバーがフレームワークの DMA 機能を使用できるようにします。|デバイスオブジェクト|[はい]|KM|[WDF DMA オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/)|
+|DMA トランザクションオブジェクト|WDFDMATRANSACTION|DMA トランザクションを表します。|DMA イネーブラーオブジェクト|必須ではない|KM|[WDF DMA オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/)|
+|DPC オブジェクト|WDFDPC|遅延プロシージャ呼び出しを表します。|なし|[はい]|KM|[WDF DPC オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/)|
+|Driver オブジェクト|WDFDRIVER|ドライバーを表します。|なし|必須ではない|KM/UM|[WDF Driver オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/)|
+|ファイルオブジェクト|WDFFILEOBJECT|ファイルを表します。|デバイスオブジェクト|必須ではない|KM/UM|[WDF File オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/)|
+|全般オブジェクト|WDFOBJECT|一般的なオブジェクトを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF 一般オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/)|
+|Interrupt オブジェクト|WDFINTERRUPT|ハードウェア割り込みリソースを表します。|デバイスオブジェクト|[はい]|KM/UM|[WDF Interrupt オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)|
+|I/o ターゲットオブジェクト|WDFIOTARGET|別のドライバーが i/o 要求を送信するドライバーを表します。|デバイスオブジェクト|[はい]|KM/UM|[WDF i/o ターゲットオブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/)|
+|ルックアサイドリストオブジェクト|WDFLOOKASIDE アサイド|ルックアサイドリストを表します。|Driver オブジェクト|[はい]|KM|[WDF Memory オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/)|
+|Memory オブジェクト|WDFMEMORY|メモリバッファーを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF Memory オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/)|
+|Queue オブジェクト|WDFQUEUE|I/o 要求を受信する i/o キューを表します。|デバイスオブジェクト|[はい]|KM/UM|[WDF Queue オブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/)|
+|レジストリキーオブジェクト|WDFKEY|レジストリキーを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF レジストリキーオブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfregistry/)|
+|要求オブジェクト|WDFREQUEST|I/o 要求を表します。|None (フレームワークによって作成された場合)。 ドライバーオブジェクト (ドライバーによって作成された場合)。|はい (ドライバーによって作成された場合)。|KM/UM|[WDF Request オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/)|
+|リソースリストオブジェクト|WDFCMRESLIST|リソースリストを表します。|Driver オブジェクト|必須ではない|KM/UM|[WDF リソースオブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/)|
+|リソース範囲リストオブジェクト|WDFIORESLIST|論理構成を表します。|リソース要件リストオブジェクト|必須ではない|KM|[WDF リソースオブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/)|
+|リソース要件リストオブジェクト|WDFIORESREQLIST|リソース要件の一覧を表します。|Driver オブジェクト|必須ではない|KM|[WDF リソースオブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/)|
+|スピンロックオブジェクト|WDFSPINLOCK ロック|スピンロックを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF の同期方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfsync/)|
+|String オブジェクト|WDFSTRING|Unicode 文字列を表します。|Driver オブジェクト|[はい]|KM/UM|[WDF String オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfstring/)|
+|Timer オブジェクト|WDFTIMER|タイマーを表します。|なし|[はい]|KM/UM|[WDF Timer オブジェクトリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdftimer/)|
+|USB デバイスオブジェクト|WDFUSBDEVICE|USB に接続されているデバイスを表します。|デバイスオブジェクト|必須ではない|KM/UM|[WDF USB リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/)|
+|USB インターフェイスオブジェクト|WDFUSBINTERFACE|USB デバイスインターフェイスを表します。|USB デバイスオブジェクト|必須ではない|KM/UM|[WDF USB リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/)|
+|USB パイプオブジェクト|WDFUSBPIPE|USB デバイスパイプを表します。|USB インターフェイスオブジェクト|必須ではない|KM/UM|[WDF USB リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/)|
+|Wait-オブジェクトのロック|WDFWAITLOCK|待機ロックを表します。|Driver オブジェクト|[はい]|KM/UM|[WDF の同期方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfsync/)|
+|WMI インスタンスオブジェクト|WDFWMIINSTANCE|WMI データブロックのインスタンスを表します。|WMI プロバイダーオブジェクト|必須ではない|KM|[WDF WMI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/)|
+|WMI プロバイダーオブジェクト|WDFWMIPROVIDER|WMI データブロックを表します。|デバイスオブジェクト|必須ではない|KM|[WDF WMI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/)|
+|作業項目オブジェクト|WDFWORKITEM|作業項目を表します。|なし|[はい]|KM/UM|[WDF 作業項目オブジェクトの参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfworkitem/)|
 
 
  

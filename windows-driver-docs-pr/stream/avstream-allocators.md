@@ -3,21 +3,21 @@ title: AVStream のアロケーター
 description: AVStream のアロケーター
 ms.assetid: cda90faa-d4e3-4f17-aa5a-87dcde314bfd
 keywords:
-- AVStream allocators WDK
+- AVStream アロケーター WDK
 - アロケーター WDK AVStream
-- WDK AVStream フレーム
-- データ バッファーの WDK AVStream
+- WDK AVStream のフレーム
+- データバッファー WDK AVStream
 - WDK AVStream のバッファー
-- WDK AVStream のフレームの割り当てください。
-- WDK AVStream のフレームの解放
+- フレームの割り当て WDK AVStream
+- フレームの解放 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4396c1322d131155e5494e02111db6af8b8d631
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9f7669b716be81896a880d1d07c192a1db5186c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386707"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845019"
 ---
 # <a name="avstream-allocators"></a>AVStream のアロケーター
 
@@ -25,37 +25,37 @@ ms.locfileid: "67386707"
 
 
 
-AVStream クラス ドライバーを使用して、*アロケーター*という単位でのデータ バッファーを割り当てる*フレーム*します。 フレームのサイズはを通じて仕入先が指定した継続的なメモリのチャンクは、 **AllocatorFraming**のメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex).
+AVStream クラスドライバーは、*アロケーター*を使用して、*フレーム*と呼ばれる単位でデータバッファーを割り当てます。 フレームは連続したメモリのチャンクで、 [**Kspin\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**allocatorframing**メンバーを通じてベンダーが指定したサイズです。
 
-ミニドライバー アクセスからこれらのバッファー、 [Stream ポインター](stream-pointers.md) API; 呼び出し[ **KsPinGetLeadingEdgeStreamPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)をストリームにポインターを取得します。
+ミニドライバー[ストリームポインター](stream-pointers.md) API を使用してこれらのバッファーにアクセスします。[**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出して、ストリームへのポインターを取得します。
 
-AVStream クライアントは読み取り専用プロパティを使用して、pin のフレームの要件に関する情報を取得することができます[ **KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing-ex). このプロパティは、型の構造体を返す[ **KSALLOCATOR\_フレーム\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex)暗証番号 (pin) のフレームの要件を記述します。
+AVStream クライアントは、読み取り専用プロパティの[**Ksk プロパティ\_接続\_ALLOCATORFRAMING\_EX**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing-ex)を使用して、pin のフレーム要件に関する情報を取得できます。 このプロパティは、ピンのフレーム要件を記述する[**Ksallocator\_フレーミング\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)型の構造体を返します。
 
-データが使用されて不要になったときに AVStream はアロケーターを使用して、バッファーを解放します。
+データが使用されなくなった場合、AVStream はアロケーターを使用してバッファーを解放します。
 
-AVStream では、既定のアロケーターを提供します。 既定のアロケーターで、ミニドライバーを提供するアロケーターの要件に基づいてプールのメモリを割り当てて、 **AllocatorFraming**のメンバー、 [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。
+AVStream では、既定のアロケーターが提供されます。 既定のアロケーターは、 [**Kspin\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**allocatorframing**メンバーでミニドライバーが提供するアロケーター要件に基づいて、プールメモリを割り当てます。
 
-デバイスに固有の配賦の要件と仕入先には、独自割り当てルーチンを含むミニドライバーを作成できます。 場合は、ドライバーからメモリを割り当てるアロケーターを指定できますなど、[共通 DMA バッファー](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-common-buffer-system-dma)します。
+デバイス固有の割り当て要件を持つベンダーは、独自の割り当てルーチンを含むミニドライバーを作成できます。 たとえば、ドライバーが[共通の DMA バッファー](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-common-buffer-system-dma)からメモリを割り当てる場合は、アロケーターを指定することができます。
 
-アロケーターを提供するには、指定、 [ **KSALLOCATOR\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksallocator_dispatch)次のベンダーから提供されたコールバック ルーチンへのポインターを含む構造体。
+アロケーターを提供するには、次のベンダー提供のコールバックルーチンへのポインターを含む[**Ksallocator\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksallocator_dispatch)構造体を指定します。
 
--   [*AVStrMiniInitializeAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspininitializeallocator)
+-   [*AVStrMiniInitializeAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspininitializeallocator)
 
--   [*AVStrMiniDeleteAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdeleteallocator)
+-   [*AVStrMiniDeleteAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdeleteallocator)
 
--   [*AVStrMiniAllocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdefaultallocate)
+-   [*AVStrMiniAllocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdefaultallocate)
 
--   [*AVStrMiniAllocatorFreeFrame*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdefaultfree)
+-   [*AVStrMiniAllocatorFreeFrame*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdefaultfree)
 
-このアロケーター ディスパッチ構造へのポインターを提供、**アロケーター**のメンバー、 [ **KSPIN\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)を暗証番号 (pin) を記述する構造体このアロケーターは、フレームをインスタンス化されます。
+このアロケーターがフレームをインスタンス化するピンを記述する[**Kspin\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)構造体の**アロケーター**メンバーで、このアロケーターディスパッチ構造体へのポインターを指定します。
 
-この pin ディスパッチ構造へのポインターを指定、**ディスパッチ**の対応するメンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 AVStream でディスパッチ構造に関する詳細については、「 [AVStream ディスパッチ テーブル](avstream-dispatch-tables.md)します。
+対応する[**Kspin\_DESCRIPTOR\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**ディスパッチ**メンバーで、このピンディスパッチ構造体へのポインターを指定します。 AVStream のディスパッチ構造の詳細については、 [Avstream のディスパッチテーブル](avstream-dispatch-tables.md)に関するページを参照してください。
 
-実行時に、グラフのマネージャー (たとえば、[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)モジュール) アロケーターの選択範囲を処理します。 ベンダーから提供されたアロケーター*いない*グラフ マネージャーによって選択されることが保証します。
+実行時に、graph manager ([カーネルストリーミングプロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)モジュールなど) がアロケーターの選択を処理します。 ベンダーが提供したアロケーターは、graph マネージャーによって選択されるとは限り*ません*。
 
-接続がカーネル モードの場合にのみ、カーネル モードのアロケーターが選択されます。 さらに、アロケーターの要件とアロケーターの機能に不一致がある場合は、アロケーターを拒否でした。 アロケーターが選択されていない場合、 [ *AVStrMiniInitializeAllocator* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspininitializeallocator)コールバック ルーチンは呼び出されません。
+カーネルモードアロケーターは、接続がカーネルモードの場合にのみ選択されます。 また、アロケーターの要件とアロケーターの機能が一致しない場合は、アロケーターが拒否される可能性があります。 アロケーターが選択されていない場合、 [*Avstrminiinitializeallocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspininitializeallocator)のコールバックルーチンは呼び出されません。
 
-参照してください[AVStream DMA サービス](avstream-dma-services.md)と[Stream ポインター](stream-pointers.md)します。
+「 [Avstream DMA サービス](avstream-dma-services.md)と[ストリームポインター](stream-pointers.md)」も参照してください。
 
  
 

@@ -3,18 +3,18 @@ title: DVD 704 幅の非パン スキャンの例
 description: DVD 704 幅の非パン スキャンの例
 ms.assetid: df335e5e-4f7c-440a-88ef-00f6e0f916e2
 keywords:
-- アルファ ブレンド組み合わせ WDK DirectX va なので、DVD 704 全体のパン スキャンではない例
-- ブレンド画像 WDK DirectX va なので、DVD 704 全体のパン スキャンではない例
-- DVD 704 全体パン スキャンではない例 WDK DirectX VA
-- 704 全体パン スキャンではない例 WDK DirectX VA
+- アルファブレンドの組み合わせ WDK DirectX VA、DVD 704 ワイド非パンスキャンの例
+- 画像のブレンド WDK DirectX VA、DVD 704 ワイド非パンスキャンの例
+- DVD 704 全体の非パンスキャンの例 WDK DirectX VA
+- 704全体の非パンスキャンの例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74907e4fdb08c739780ad420b8fe69a9c1b477b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b044ca93b058c5fc3671e888cfcdb091b187bec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380233"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839726"
 ---
 # <a name="dvd-704-wide-non-pan-scan-example"></a>DVD 704 幅の非パン スキャンの例
 
@@ -22,27 +22,27 @@ ms.locfileid: "67380233"
 ## <span id="ddk_dvd_704_wide_non_pan_scan_example_gg"></span><span id="DDK_DVD_704_WIDE_NON_PAN_SCAN_EXAMPLE_GG"></span>
 
 
-704 全体の画像の mpeg-2 DVD での使用をデコード済み画像の境界を超えるソース四角形が必要です (で説明されているメソッドを使用して場合[mpeg-2 パン スキャン例](mpeg-2-pan-scan-example.md))。 この場合は、DVD を指定します、*表示\_水平\_サイズ*を超える、デコードされた画像の 720 の*水平\_サイズ*704 の。 ホスト ソフトウェア デコーダーは割り当てられたソース範囲の外に到達して元の四角形をトリミングを調整する先の四角形を管理するため担当ソース四角形がデコード済み画像の境界を超えた場合トリミングします。
+704 wide 画像に対して DVD-ROM の MPEG-2 を使用するには、デコードされた画像の境界を超えるソースの四角形が必要です ( [mpeg 2 のパンスキャンの例](mpeg-2-pan-scan-example.md)で説明されている方法を使用している場合)。 この場合、DVD では、720の*水平\_サイズ\_* 、デコードされた画像の*横\_* 704 のサイズを超えるディスプレイが指定されています。 コピー元の四角形が、デコードされた画像の境界を超えている場合、ホストソフトウェアデコーダーは、割り当てられたソース領域の外への移動を維持し、変換先の四角形を管理して調整するために、ソースの四角形をトリミングします。トリミング。
 
-元の四角形がによって定義されている、 **PictureSourceRect16thPel**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)構造 (の 16 分の 1 つで、輝度サンプル間隔の解像度) で、次の値。
+ソース四角形は、次の値を使用して、 [**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体の**PictureSourceRect16thPel**メンバー (輝度サンプル間隔解像度の1番目の) によって定義されます。
 
--   **left** = 0
+-   **左**= 0
 
--   **適切な**= 16 X (**左** + *水平\_サイズ*) 11264 を =
+-   **右**= 16 X (**左** + *横\_サイズ*) = 11264
 
-画像のコピー先の四角形がによって定義されている、 **PictureDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination) (構造体輝度サンプル間隔の解像度の 16 分の 1 つ) を次の 2 つの方法の 1 つ。
+画像の変換先の四角形は、次の2つの代替手段のいずれかによって、 [**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体 (輝度サンプル間隔解像度の 1 ~ 16) の**ピクチャ destinationrect**メンバーによって定義されます。
 
-1.  次の値で四角形。
-    -   **左**= (*表示\_水平\_サイズ*âˆ'*水平\_サイズ*)/2 = 8
-    -   **適切な** = **左** + *水平\_サイズ*712 を =
+1.  次の値を持つ四角形。
+    -   **左**= (*表示\_水平\_サイズ*、ˆ '*横\_サイズ*)/2 = 8
+    -   **右** = **左** + *水平\_サイズ*= 712
 
-2.  次の値で四角形。
-    -   **left** = 0
-    -   **適切な** = **左** + *水平\_サイズ*704 を =
+2.  次の値を持つ四角形。
+    -   **左**= 0
+    -   **右** = **左** + *水平\_サイズ*= 704
 
-2 番目のケースでは、四角形がで示される、 **GraphicDestinationRect**のメンバー、 [ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)に構造体がずれている場合、左シフトの画像の保存先を補正する 8 つのサンプルです。
+2番目のケースでは、 [**DXVA\_BlendCombination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)構造体の**GraphicDestinationRect**メンバーによって示される四角形が左に8つのサンプルで置き換えられ、移動した画像の変換先が補正されます。
 
-これら 2 つの方法の 2 つ目は、表示に使用するコピー先の領域のみを作成します。
+この2つの方法のうち2番目の方法では、表示に使用されるコピー先の領域のみが作成されます。
 
  
 

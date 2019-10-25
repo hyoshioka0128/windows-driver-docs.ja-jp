@@ -3,15 +3,15 @@ title: ミニポート ドライバー バッファー管理
 description: ミニポート ドライバー バッファー管理
 ms.assetid: 3b8844e0-9b38-4030-9aec-b713643de523
 keywords:
-- バッファーの WDK NDIS ミニポート
+- バッファー WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 769e83f5650b687262ecf47da8944de31c2eacdc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec22e69bb4b068aba0959651d54a80a67626bc81
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373940"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844239"
 ---
 # <a name="miniport-driver-buffer-management"></a>ミニポート ドライバー バッファー管理
 
@@ -19,17 +19,17 @@ ms.locfileid: "67373940"
 
 
 
-通常、ミニポート ドライバーを呼び出す[ **NdisAllocateNetBufferListPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)から[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) のプールを作成するには[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 ミニポート ドライバーでは、これらの構造を使用して、受信したデータを示します。
+ミニポートドライバーは、通常、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)から[**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)を呼び出して、 [**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のプールを作成します。 ミニポートドライバーは、これらの構造体を使用して受信したデータを示します。
 
-通常、割り当て、NET ミニポート ドライバー\_バッファー\_リスト構造体を割り当て、1 つのキュー [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) そのネットワーク上の構造\_バッファー\_リスト構造体。 NET を事前に割り当てられる方が効率的です\_NET のプールを割り当てるときにバッファーが構造体\_バッファー\_NET の割り当てをリストは構造\_バッファー\_リストの構造体と NET\_バッファーが個別に構造体します。
+通常、ネットワーク\_バッファー\_リスト構造を割り当てるミニポートドライバーは、その NET\_BUFFER\_LIST 構造体に1つの[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造体を割り当て、キューに入れます。 Net\_BUFFER\_LIST 構造体と NET\_BUFFER 構造体を別々に割り当てるよりも、net\_バッファー\_リスト構造のプールを割り当てるときは、NET\_バッファー構造を事前に割り当てることをお勧めします。
 
-ミニポート ドライバーを呼び出すことができます**NdisAllocateNetBufferListPool**設定と、 *AllocateNetBuffer*パラメーターを**TRUE**ことを示す[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造が事前に割り当てられます。 この場合は、NET\_バッファーの構造が各 NET で事前に割り当てられた\_バッファー\_ドライバーはプールから割り当てリスト構造。 このようなドライバーを呼び出す必要があります[ **NdisAllocateNetBufferAndNetBufferList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist)構造体をこのプールから割り当てることです。
+ミニポートドライバーは**NdisAllocateNetBufferListPool**を呼び出し、 *Allocatenetbuffer*パラメーターを**TRUE**に設定して、 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造が事前に割り当てられていることを示すことができます。 この場合、ネットワーク\_のバッファー構造は、ドライバーがプールから割り当てた各 NET\_BUFFER\_LIST 構造体で事前に割り当てられます。 このようなドライバーは、 [**NdisAllocateNetBufferAndNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist)を呼び出して、このプールから構造体を割り当てる必要があります。
 
-通常、ミニポート ドライバーを呼び出す**NdisAllocateNetBufferAndNetBufferList**から*MiniportInitializeEx*をそれが必要とする多くのバッファーを割り当てる後続受信操作。 この場合、ドライバーは、空きバッファーの内部リストを管理します。
+通常、ミニポートドライバーは、 *MiniportInitializeEx*から**NdisAllocateNetBufferAndNetBufferList**を呼び出して、後続の受信操作に必要な数だけバッファーを割り当てます。 この場合、ドライバーは空きバッファーの内部リストを管理します。
 
-[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)関数は、返された NET を準備できます\_バッファー\_後ろに続くで再利用するためのリストの構造を示す値を受信します。 *MiniportReturnNetBufferLists*ネットを返すことができます\_バッファー\_プールにリストの構造体 (たとえば、呼び出すでした[ **NdisFreeNetBufferList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlist))、プールに返すことがなく、構造を再利用する方が効率的であることができます。
+[*Miniportreturnnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)関数は、返された NET\_BUFFER\_LIST 構造体を準備して、後続の受信通知で再利用することができます。 *Miniportreturnnetbufferlists*は、NET\_BUFFER\_LIST 構造体をプールに返すことができますが (たとえば、 [**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)を呼び出すことができます)、構造体を再利用する方が効率的です。プール。
 
-ミニポート ドライバーは、すべての NET を解放する必要があります\_バッファー\_リストの構造体と NDIS アダプターの停止時に関連付けられているデータ。 ドライバーを呼び出すことができます**NdisFreeNetBufferList**構造体を解放して、 [ **NdisFreeNetBufferListPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlistpool)ネットの解放関数\_バッファー\_プールの一覧。
+NDIS がアダプターを停止すると、ミニポートドライバーは、すべての NET\_バッファー\_リスト構造および関連データを解放する必要があります。 ドライバーは、 **NdisFreeNetBufferList**を呼び出して構造体を解放し、 [**NdisFreeNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistpool)関数を呼び出して、NET\_BUFFER\_LIST プールを解放できます。
 
  
 

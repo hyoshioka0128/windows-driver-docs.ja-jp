@@ -1,20 +1,20 @@
 ---
 title: IrpProcessing の規則セット (KMDF)
-description: これらの規則を使用すると、ドライバーが I/O 要求パケット (IRP) を正しく処理することを確認します。
+description: これらのルールを使用して、ドライバーが i/o 要求パケット (IRP) を正しく処理していることを確認します。
 ms.assetid: B403F21E-FE35-4A57-92DB-C78FDC1488BD
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18300ff5961c2708af00c3863054f727617d0316
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3167c18830eaee76975ec5136cfcafd7e42a6731
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373687"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839551"
 ---
 # <a name="irpprocessing-rule-set-kmdf"></a>IrpProcessing の規則セット (KMDF)
 
 
-これらの規則を使用すると、ドライバーが I/O 要求パケット (IRP) を正しく処理することを確認します。
+これらのルールを使用して、ドライバーが i/o 要求パケット (IRP) を正しく処理していることを確認します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -33,34 +33,34 @@ ms.locfileid: "67373687"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="kmdf-fwdirptoioqueuevalid.md" data-raw-source="[&lt;strong&gt;FwdIrpToIoQueueValid&lt;/strong&gt;](kmdf-fwdirptoioqueuevalid.md)"><strong>FwdIrpToIoQueueValid</strong></a></p></td>
-<td align="left"><p>ルール<a href="kmdf-fwdirptoioqueuevalid.md" data-raw-source="[&lt;strong&gt;FwdIrpToIoQueueValid&lt;/strong&gt;](kmdf-fwdirptoioqueuevalid.md)"> <strong>FwdIrpToIoQueueValid</strong> </a> 、I/O をドライバーが IRP を送信することを指定しますキューを使用して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue" data-raw-source="[&lt;strong&gt;WdfDeviceWdmDispatchIrpToIoQueue&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)"> <strong>WdfDeviceWdmDispatchIrpToIoQueue</strong> </a>。からいずれかのメソッド、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpDispatch&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)"> <em>EvtDeviceWdmIrpDispatch</em> </a>コールバックまたは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpPreprocess&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)"> <em>EvtDeviceWdmIrpPreprocess</em> </a>コールバック。</p></td>
+<td align="left"><p>ルール<a href="kmdf-fwdirptoioqueuevalid.md" data-raw-source="[&lt;strong&gt;FwdIrpToIoQueueValid&lt;/strong&gt;](kmdf-fwdirptoioqueuevalid.md)"><strong>FwdIrpToIoQueueValid</strong></a>は、ドライバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue" data-raw-source="[&lt;strong&gt;WdfDeviceWdmDispatchIrpToIoQueue&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)"><strong>WdfDeviceWdmDispatchIrpToIoQueue</strong></a>メソッドを使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpDispatch&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)"><em>Evtdevicewdmi ディスパッチ</em></a>コールバックまたは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpPreprocess&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)"><em>evtdevicewdmiのプリプロセス</em></a>からの IRP を i/o キューに送信することを指定します。コール.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="kmdf-setcompletionroutinefromdispatch.md" data-raw-source="[&lt;strong&gt;SetCompletionRoutineFromDispatch&lt;/strong&gt;](kmdf-setcompletionroutinefromdispatch.md)"><strong>SetCompletionRoutineFromDispatch</strong></a></p></td>
-<td align="left"><p><a href="kmdf-setcompletionroutinefromdispatch.md" data-raw-source="[&lt;strong&gt;SetCompletionRoutineFromDispatch&lt;/strong&gt;](kmdf-setcompletionroutinefromdispatch.md)"> <strong>SetCompletionRoutineFromDispatch</strong> </a>ルールから IRP の完了のルーチンは、ドライバーによって指定されていないことを確認しますその<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpDispatch&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)"> <em>EvtDeviceWdmIrpDispatch。</em></a>コールバック関数。</p></td>
+<td align="left"><p><a href="kmdf-setcompletionroutinefromdispatch.md" data-raw-source="[&lt;strong&gt;SetCompletionRoutineFromDispatch&lt;/strong&gt;](kmdf-setcompletionroutinefromdispatch.md)"><strong>SetCompletionRoutineFromDispatch</strong></a>ルールは、ドライバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch" data-raw-source="[&lt;em&gt;EvtDeviceWdmIrpDispatch&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)"><em>Evtdevicewdmi ディスパッチ</em></a>コールバック関数からの IRP で完了ルーチンを指定していないことを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="kmdf-miniportonlywdmdevice.md" data-raw-source="[&lt;strong&gt;MiniportOnlyWdmDevice&lt;/strong&gt;](kmdf-miniportonlywdmdevice.md)"><strong>MiniportOnlyWdmDevice</strong></a></p></td>
-<td align="left"><p><a href="kmdf-miniportonlywdmdevice.md" data-raw-source="[&lt;strong&gt;MiniportOnlyWdmDevice&lt;/strong&gt;](kmdf-miniportonlywdmdevice.md)"> <strong>MiniportOnlyWdmDevice</strong> </a>ルールでは、WDF のドライバーを使用する必要がありますいないことを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)"> <strong>IoCreateDevice</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)"> <strong>IoCreateDeviceSecure</strong> </a>ベア WDM デバイス オブジェクトを作成する関数。 これにより、クラッシュを IRP を WDM デバイスに送信するコンピューター。 デバイスの IRP ディスパッチ エントリは、WDF に固有のエントリに設定されますが、フレームワークは、WDF デバイスを作成していないためにです。 ただし、それらのドライバーのディスパッチのエントリ ポイントが設定されていないため、ミニポート ドライバーでは、Ddi を使用できます。</p></td>
+<td align="left"><p><a href="kmdf-miniportonlywdmdevice.md" data-raw-source="[&lt;strong&gt;MiniportOnlyWdmDevice&lt;/strong&gt;](kmdf-miniportonlywdmdevice.md)"><strong>Miniportonlywdmdevice</strong></a>ルールでは、WDF ドライバーが<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a>および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)"><strong>iocreate ec素</strong></a>関数を使用して、ベア WDM デバイスオブジェクトを作成しないように指定します。 これにより、他のユーザーが WDM デバイスに IRP を送信しようとすると、コンピューターがクラッシュします。 これは、デバイスの IRP ディスパッチエントリは WDF 固有のエントリに設定されていますが、フレームワークでは WDF デバイスが作成されていないためです。 ただし、ドライバーのディスパッチエントリポイントが設定されていないため、ミニポートドライバーは DDIs を使用できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**IrpProcessing ルールを選択するには、次のように設定します。**
+**IrpProcessing 規則セットを選択するには**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
+1.  Microsoft Visual Studio でドライバープロジェクト (.Vcxproj) を選択します。 **[ドライバー]** メニューの **[静的ドライバー検証ツールの起動]** をクリックします。
 
-2.  をクリックして、**ルール**タブ。**規則セット**、 **IrpProcessing**します。
+2.  **[ルール]** タブをクリックします。 **[ルールセット]** で **[irpprocessing]** を選択します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **IrpProcessing.sdv**で、 **/check**オプション。 例:
+    Visual Studio 開発者コマンドプロンプトウィンドウから既定の規則セットを選択するには、 **/チェック**オプションを指定して**irpprocessing. sdv**を指定します。 次に、例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:IrpProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
+    詳細については、「 [Using Static Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers) 」を参照して、ドライバーと[静的ドライバー検証コマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)で欠陥を検出してください。
 
  
 

@@ -1,34 +1,34 @@
 ---
 title: IRP_MN_QUERY_RESOURCES
-description: PnP マネージャーでは、この IRP を使用して、デバイスのブート構成リソースを取得します。バス ドライバーには、ハードウェア リソースを必要とされる子デバイスは、この要求を処理する必要があります。 関数とフィルター ドライバーでは、この IRP は処理されません。
+description: PnP マネージャーは、この IRP を使用して、デバイスのブート構成リソースを取得します。バスドライバーは、ハードウェアリソースを必要とする子デバイスに対して、この要求を処理する必要があります。 関数ドライバーとフィルタードライバーは、この IRP を処理しません。
 ms.date: 08/12/2017
 ms.assetid: b9a6f06b-07d9-4539-bd41-21cdccdc4b25
 keywords:
-- IRP_MN_QUERY_RESOURCES Kernel-Mode Driver Architecture
+- IRP_MN_QUERY_RESOURCES カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c023474cb8fbfcbb4f6ef232179f9c66a105f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df4f147781b3311c10cf5a62bf42c589995d1fda
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838567"
 ---
-# <a name="irpmnqueryresources"></a>IRP\_MN\_クエリ\_リソース
+# <a name="irp_mn_query_resources"></a>IRP\_\_クエリ\_リソース
 
 
-PnP マネージャーでは、この IRP を使用して、デバイスのブート構成リソースを取得します。
+PnP マネージャーは、この IRP を使用して、デバイスのブート構成リソースを取得します。
 
-バス ドライバーには、ハードウェア リソースを必要とされる子デバイスは、この要求を処理する必要があります。 関数とフィルター ドライバーでは、この IRP は処理されません。
+バスドライバーは、ハードウェアリソースを必要とする子デバイスに対して、この要求を処理する必要があります。 関数ドライバーとフィルタードライバーは、この IRP を処理しません。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
 ---------
 
-PnP マネージャーは、デバイスが列挙されたときに、この IRP を送信します。
+PnP マネージャーは、デバイスが列挙されたときにこの IRP を送信します。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意のスレッド コンテキストでします。
+PnP マネージャーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
@@ -38,31 +38,31 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-状態の I/O ブロックで返されます。
+I/o 状態ブロックで返されます。
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-この IRP を処理するバス ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態にします。
+この IRP を処理するバスドライバーは、 **irp&gt;iostatus. status**を STATUS\_SUCCESS または適切なエラー状態に設定します。
 
-成功した場合、バス ドライバーの設定**Irp -&gt;IoStatus.Information**へのポインターを[ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)を格納しています。要求された情報です。 バス ドライバーの設定エラーが発生、 **Irp -&gt;IoStatus.Information**をゼロにします。
+正常に完了すると、バスドライバーは、要求された情報を含む[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)へのポインターに、 **Irp&gt;iostatus**を設定します。 エラーが発生した場合、バスドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
 
 <a name="operation"></a>操作
 ---------
 
-割り当てるバス ドライバーでは、この IRP への応答でリソースの一覧が返された場合、 [ **CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)ページングされたメモリから。 PnP マネージャーは、不要になったときにバッファーを解放します。
+バスドライバーは、この IRP に応答してリソースリストを返すと、ページメモリから[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)を割り当てます。 不要になったときに、PnP マネージャーによってバッファーが解放されます。
 
-デバイスの親のバス ドライバーが IRP を完了すると、デバイスにないハードウェア リソースが必要とする場合 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) を変更しなくても**Irp-&gt;IoStatus.Status**または**Irp -&gt;IoStatus.Information**します。
+デバイスがハードウェアリソースを必要としない場合、デバイスの親バスドライバーは、 **irp&gt;IoStatus. Status**または**Irp-&gt;Iostatus. Information**を変更せずに、irp ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-関数とフィルター ドライバーは、この IRP を受信しません。
+関数ドライバーとフィルタードライバーは、この IRP を受信しません。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
-ドライバーを呼び出すことができます[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)生と翻訳の両方のフォームで、デバイスのブート構成を取得します。
+ドライバーは、 [**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出して、未加工のフォームと変換されたフォームの両方で、デバイスのブート構成を取得できます。
 
 <a name="requirements"></a>要件
 ------------
@@ -75,7 +75,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -83,9 +83,9 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 ## <a name="see-also"></a>関連項目
 
 
-[**CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)
+[**CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)
 
-[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)
 
  
 

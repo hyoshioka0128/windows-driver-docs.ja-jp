@@ -3,28 +3,28 @@ title: ディスプレイ ミニポート ドライバーの初期化
 description: ディスプレイ ミニポート ドライバーの初期化
 ms.assetid: 505dab48-7c00-4bf4-8433-487360f67b26
 keywords:
-- 初期化のミニポート ドライバー WDK で表示します。
+- ミニポートドライバー WDK 表示、初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d76e164c430840c1c7fe1261a12b79289132c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 82e7ca1f2402614a0d7107d4d9855221e9cd1045
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385190"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840373"
 ---
 # <a name="initializing-the-display-miniport-driver"></a>ディスプレイ ミニポート ドライバーの初期化
 
 
-オペレーティング システムがディスプレイのミニポート ドライバーが読み込まれた後、次の手順は、ディスプレイのミニポート ドライバーを初期化するために発生します。
+オペレーティングシステムによってディスプレイミニポートドライバーが読み込まれると、次の手順が実行され、ディスプレイミニポートドライバーが初期化されます。
 
-1.  オペレーティング システムの呼び出し、ディスプレイのミニポート ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-display-miniport-driver)関数。
+1.  オペレーティングシステムは、ディスプレイミニポートドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-display-miniport-driver)関数を呼び出します。
 
-2.  **DriverEntry**割り当てます、 [**ドライバー\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data)構造体し、設定、**バージョン**のメンバードライバー\_初期化\_DXGKDDI を使用してデータ\_インターフェイス\_バージョンとドライバーの残りのメンバー\_初期化\_表示へのポインターを使用してデータミニポート ドライバーの他のエントリ ポイント関数 (ディスプレイのミニポート ドライバーを実装する関数) です。
+2.  **Driverentry**は、[**ドライバー\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data)構造体を割り当て、ドライバー\_初期化\_データの**バージョン**メンバーを DXGKDDI\_INTERFACE\_version に設定し、ドライバー\_の残りのメンバーは、ディスプレイミニポートドライバーのその他のエントリポイント関数 (または表示ミニポートドライバーが実装する関数) へのポインターを使用して、データ\_初期化します。
 
-3.  **DriverEntry**呼び出し、 [ **DxgkInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nf-dispmprt-dxgkinitialize) Microsoft DirectX グラフィックスのカーネルのサブシステムを読み込みます (*Dxgkrnl.sys*) を指定して、DirectX グラフィックスのカーネル サブシステム、ディスプレイのミニポート ドライバーへのポインターでの他のエントリ ポイント関数です。
+3.  **Driverentry**は、 [**Dxgkinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize)関数を呼び出して Microsoft DirectX graphics カーネルサブシステム (*Dxgkrnl*) を読み込み、directx グラフィックスカーネルサブシステムにディスプレイミニポートドライバーのその他のエントリへのポインターを提供します。point 関数。
 
-4.  後**DxgkInitialize**から制御が戻る**DriverEntry**の戻り値を反映**DxgkInitialize**オペレーティング システムに戻したりします。 表示のミニポート ドライバー開発者がいることを値に関する前提条件もありません**DxgkInitialize**を返します。
+4.  **Dxgkinitialize**が返された後、 **Driverentry**は**dxgkinitialize**の戻り値をオペレーティングシステムに反映します。 表示ミニポートドライバーライターは、 **Dxgkinitialize**が返す値についての前提条件を設定しません。
 
  
 

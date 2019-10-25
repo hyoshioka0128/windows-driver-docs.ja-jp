@@ -4,67 +4,67 @@ description: DXGI プレゼンテーション パス
 ms.assetid: 3519172d-261c-4b33-b1e7-c4abf33b15f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f907f9ac6cc3dd085db32a10f347c1bc4891e26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03dac3226d65734723a6ab903ccea3de2b3b4537
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355017"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839723"
 ---
 # <a name="dxgi-presentation-path"></a>DXGI プレゼンテーション パス
 
 
-DXGI はその「なく動作します」プレゼンテーションの方法を使用してアプリケーションを提供します。 たとえば、アプリケーションでは、ウィンドウ表示モードと全画面表示モードの間を遷移する特別な操作を実行する必要はありません。 このプレゼンテーションの方法論は DXGI とユーザー モードは、組み合わせの複数のサンプル アンチ エイリアス (MSAA)、モニターの回転、戻るおよびフロント バッファー サイズと形式、相違点の間でプレゼンテーションを維持するドライバーの動作を表示します。ウィンドウ表示モードと全画面表示します。 DXGI のもう 1 つの利点は、ディスプレイ アダプター スキャン アウト MSAA する機能を制限し、「ステートレス」DDI を提供する DXGI サーフェスを回転できることです。 アダプターのドライバーは、ステートレス DDI, で、DDI 呼び出し間でデータを記録する必要はありません。
+DXGI は、"ただ動作する" プレゼンテーション方法をアプリケーションに提供します。 たとえば、アプリケーションでは、ウィンドウモードと全画面モードを切り替える特別な操作を実行する必要はありません。 このプレゼンテーション方法は、DXGI とユーザーモードの表示ドライバーが連携して、複数のサンプルのアンチエイリアシング (MSAA)、モニターのローテーション、バックとフロントバッファーのサイズと形式の違いに対するプレゼンテーションを保持しているために発生する可能性があります。と全画面表示モードを比較しています。 DXGI のもう1つの利点は、ディスプレイアダプターでは、"ステートレス" の DDI が提供されるため、MSAA と回転したサーフェイスをスキャンする機能が制限されていることです。 ステートレスな DDI では、アダプターのドライバーは、DDI 呼び出し間でデータを記録する必要はありません。
 
-プレゼンテーションの基本的なタスクは、表示するためのプライマリ画面にレンダリングされるバック バッファーからデータを移動します。 このタスクは、次のセクションで説明されているさまざまな状況で実行されます。
+プレゼンテーションの基本的なタスクは、表示されているバックバッファーから、表示のためにプライマリ画面にデータを移動することです。 このタスクは、次のセクションで説明されているさまざまな状況で実行されます。
 
-### <a name="span-idwindowedmodewithdwmonspanspan-idwindowedmodewithdwmonspanwindowed-mode-with-dwm-on"></a><span id="windowed_mode_with_dwm_on"></span><span id="WINDOWED_MODE_WITH_DWM_ON"></span>ウィンドウ表示モードを DWM と
+### <a name="span-idwindowed_mode_with_dwm_onspanspan-idwindowed_mode_with_dwm_onspanwindowed-mode-with-dwm-on"></a><span id="windowed_mode_with_dwm_on"></span><span id="WINDOWED_MODE_WITH_DWM_ON"></span>DWM がオンになっているウィンドウモード
 
-ウィンドウ モードでは、デスクトップ Windows マネージャー (DWM) での大文字と小文字、DXGI は DWM と通信し、DXGI プロデューサーのレンダー ターゲット、DWM のテクスチャにある共有リソースの表示を開きます。 バック バッファー、アプリケーションを作成するだけでなく、この共有リソースが存在します。 DXGI 呼び出してドライバーの[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)背面のいずれかからデータを移動する関数を共有するサーフェスをバッファーします。 この操作は、stretch、色の変換を必要があるし、MSAA を解決します。 ただし、この操作を決してには、サブ元とコピー先の四角形が必要です。 呼び出しで実際には、これらのサブ四角形を表現できない*BltDXGI*します。 このビット ブロック転送 (bitblt) は常に、**存在**フラグを設定、**フラグ**のメンバー、 [ **DXGI\_DDI\_ARG\_BLT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_blt)構造体、 *pBltData*パラメーターを指します。 設定、**存在**フラグは、ドライバーが、操作をアトミックに実行する必要があることを示します。 ドライバーでは、DWM が合成の共有リソースを読み取る間に分裂の可能性を最小限に抑えるためには、アトミックに bitblt 操作を実行します。
+デスクトップ Windows マネージャー (DWM) を使用したウィンドウモードの場合-DXGI は DWM と通信し、DXGI プロデューサーのレンダーターゲットである共有リソースと DWM のテクスチャのビューを開きます。 この共有リソースは、アプリケーションによって作成されるバックバッファーに加えて存在します。 DXGI は、ドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数を呼び出して、任意のバックバッファーから共有サーフェスにデータを移動します。 この操作には、stretch、カラー変換、および MSAA 解決が必要な場合があります。 ただし、この操作では、変換元と変換先のサブ四角形は必要ありません。 実際、これらのサブ四角形は*Bltdxgi*の呼び出しで表現することはできません。 このビットブロック転送 (bitblt) では、 *pBltData*パラメーターが指す[ **\_\_ARG\_DDI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_blt)の**Flags**メンバーで、**現在**のフラグが常に設定されています。 **Present**フラグを設定すると、ドライバーは操作をアトミックに実行する必要があることを示します。 ドライバーは、DWM 操作をアトミックに実行して、DWM がコンポジションの共有リソースを読み取る間に、分裂の可能性を最小限に抑えます。
 
-### <a name="span-idwindowedmodewithdwmoffspanspan-idwindowedmodewithdwmoffspanwindowed-mode-with-dwm-off"></a><span id="windowed_mode_with_dwm_off"></span><span id="WINDOWED_MODE_WITH_DWM_OFF"></span>オフ DWM とウィンドウ表示モード
+### <a name="span-idwindowed_mode_with_dwm_offspanspan-idwindowed_mode_with_dwm_offspanwindowed-mode-with-dwm-off"></a><span id="windowed_mode_with_dwm_off"></span><span id="WINDOWED_MODE_WITH_DWM_OFF"></span>DWM がオフになっているウィンドウモード
 
-DWM オフの場合とウィンドウ表示モード、DXGI 呼び出してドライバーの[ **PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数と、 **Blt**フラグを設定、**フラグ**メンバー、 [ **DXGI\_DDI\_ARG\_存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)構造体、 *pPresentData*パラメーターが指す宛先。 この*PresentDXGI*呼び出し、DXGI 指定可能な内のアプリケーションで作成されたバック バッファー、 **hSurfaceToPresent**と**SrcSubResourceIndex** DXGIのメンバー\_DDI\_ARG\_存在します。 共有画面を追加することはありません。
+DWM を使用したウィンドウモードでは、dxgi はドライバーの present[**関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)呼び出します。**このフラグは**、dxgi の FLAGS メンバー ( [ **\_DDI\_\_ARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)の**Flags**メンバーに設定されています。パラメーターがを指しています。 この現在の*dxgi*の呼び出しでは、dxgi で、アプリケーションによって作成されたバックバッファーのいずれかを、 **HSurfaceToPresent**と**srcsubresourceindex**の DXGI\_DDI\_ARG\_存在するように指定できます。 追加の共有サーフェスはありません。
 
-### <a name="span-idfullscreenmodespanspan-idfullscreenmodespanfull-screen-mode"></a><span id="full_screen_mode"></span><span id="FULL_SCREEN_MODE"></span>全画面表示モード
+### <a name="span-idfull_screen_modespanspan-idfull_screen_modespanfull-screen-mode"></a><span id="full_screen_mode"></span><span id="FULL_SCREEN_MODE"></span>全画面表示モード
 
-全画面表示の場合は、DWM とウィンドウ表示モードのオンまたはオフするより複雑です。
+全画面表示のケースは、DWM がオンまたはオフになっているウィンドウモードよりも複雑です。
 
-DXGI が全画面表示モードへの切り替えを行うと、帯域幅を減らすし、垂直同期の同期を取得するために、反転操作を悪用しようとします。 次の条件には、フリップ操作の使用を回避できます。
+DXGI が全画面表示モードに切り替わると、帯域幅を削減し、垂直同期同期を取得するために、フリップ操作を悪用しようとします。 次の条件によって、フリップ演算が使用できなくなる可能性があります。
 
--   アプリケーションは、プライマリの画面と一致するように、バック バッファーを再割り当てられませんでした。
+-   アプリケーションは、プライマリサーフェイスと一致するようにバックバッファーを再割り当てしませんでした。
 
--   ドライバーは、これはスキャン アウトされていないバック バッファー (たとえば、バック バッファーは回転かため MSAA) を指定します。
+-   ドライバーは、バックバッファーがスキャンされないことを指定しています (たとえば、バックバッファーがローテーションされているか、MSAA であるため)。
 
--   アプリケーションでは、Direct3D ランタイムが、バック バッファーの内容の破棄と (合計) チェーン内の要求された 1 つだけバッファーを受け付けられないことを指定します。 (ここでは、DXGI はバック サーフェイスおよび面のプライマリを割り当てます DXGI がドライバーのはどのように使用するただし、 *PresentDXGI*関数と、 **Blt**フラグを設定します。)。
+-   アプリケーションは、バックバッファーの内容を破棄し、チェーン内で1つのバッファー (合計) のみを要求した Direct3D ランタイムを受け入れることができないことを指定しました。 (この場合、DXGI では、バックサーフェスとプライマリサーフェイスが割り当てられます。ただし、DXGI では、 **Blt**フラグが設定されたドライバーの "存在する *" 関数が*使用されます)。
 
-フリップ操作と、ドライバーへの呼び出しを防ぐ、上記の条件のいずれかが発生したときに[ **PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数と、 **Blt**フラグが設定されても不適切 (バック バッファーでは、フロント バッファーを正確に一致しない) ため、DXGI 割り当てます、*プロキシ画面*します。 このプロキシ サーフェスでは、フロント バッファーと一致します。 そのため、プロキシの画面とフロント バッファー間の反転可能になります。 DXGI がドライバーを使用して、プロキシの画面が存在する場合は、 [ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数と、**存在**フラグは、プロキシの画面に、アプリケーションのバック バッファーをコピーする (0) をクリアします。 この*BltDXGI*呼び出し、DXGI は変換、拡大、および解決を要求可能性があります。 DXGI を呼び出してドライバーの*PresentDXGI*関数と、**反転**フラグを設定、**フラグ**のメンバー、 [ **DXGI\_DDI\_ARG\_存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)構造をスキャンするプロキシ サーフェスに移動します。
+上記のいずれかの条件が発生すると、フリップ操作が妨げられ、 **Blt**フラグが設定されたドライバーの存在しない[**関数の呼び出し**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)も適切ではありません (バックバッファーがフロントバッファーと完全に一致しないため)。DXGI は*プロキシ画面*を割り当てます。 このプロキシ画面は、フロントバッファーと一致します。 そのため、プロキシ画面とフロントバッファーの間のフリップが可能になります。 プロキシサーフェイスが存在する場合、DXGI はドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数を**現在**のフラグがオフ (0) で使用して、アプリケーションのバックバッファーをプロキシ画面にコピーします。 この*Bltdxgi*呼び出しでは、DXGI が変換、拡大、および解決を要求する場合があります。 DXGI は、Dxgi の**Flags**メンバーに設定された**フリップ**フラグを使用してドライバーの*present*関数を呼び出します。 [ **\_DDI\_ARG\_現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)の構造体を、スキャンアウトするためにプロキシ表面のビットを移動します。
 
-ドライバーでは、ユーザー モードのディスプレイ ドライバーをドライバーがスキャンからオプトアウトできますが、通知をスキャン アウト サーフェスの省略可能で、省略できないクラスのリソースの作成の呼び出しが表示されます。 省略可能なスキャン アウト サーフェスは、DXGI によって指定された\_DDI\_プライマリ\_オプションのフラグ。 非省略可能なスキャン アウト サーフェス、DXGI がない\_DDI\_プライマリ\_省略可能なフラグを設定します。 これらの種類のリソースの作成の呼び出しの詳細については、次を参照してください。[リソースの作成時に DXGI の情報を渡す](passing-dxgi-information-at-resource-creation-time.md)します。
+ドライバーがスキャンから除外できることをユーザーモードの表示ドライバーに通知するために、ドライバーは、オプションの、およびオプションでないスキャンアウトサーフェイスのクラスに対して、リソース作成呼び出しを受け取ります。 オプションのスキャンアウトサーフェイスは、DXGI\_DDI\_プライマリ\_オプションのフラグによって指定されます。 オプション以外のスキャンアウトサーフェスには、DXGI\_DDI\_プライマリ\_オプションのフラグが設定されていません。 これらの種類のリソース作成呼び出しの詳細については、「[リソースの作成時に DXGI 情報を渡す](passing-dxgi-information-at-resource-creation-time.md)」を参照してください。
 
-DXGI 設定、DXGI\_DDI\_プライマリ\_戻るすべてを作成する省略可能なフラグ バッファー サーフェス (つまり、省略可能なサーフェス) のフロント バッファーまたはプロキシ サーフェイス (つまり、省略できない画面) フラグを設定していないとします。
+DXGI\_DDI\_プライマリ\_省略可能フラグを設定して、すべてのバックバッファーサーフェイス (つまり、オプションのサーフェス) を作成し、フロントバッファーまたはプロキシ画面 (つまり、非オプションのサーフェス) にフラグを設定しません。
 
-場合 DXGI\_DDI\_プライマリ\_バック バッファー (省略可能) に設定されて、ドライバーは、DXGI を設定できる\_DDI\_プライマリ\_ドライバー\_フラグ\_ありません\_SCANOUT フラグ。 このフラグを設定する方法についての詳細については、次を参照してください。[リソースの作成時に DXGI の情報を渡す](passing-dxgi-information-at-resource-creation-time.md)します。 ドライバーは、DXGI を設定する場合\_DDI\_プライマリ\_ドライバー\_フラグ\_いいえ\_SCANOUT 省略可能なバッファーを影響を与えません以外を呼び出してドライバーの DXGI させる[**PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数と、 **Blt**フラグの設定の代わりに、**反転**フラグを設定します。
+バックバッファーに対して DXGI\_DDI\_プライマリ\_オプションが設定されている場合、ドライバーは\_SCANOUT フラグを\_せずに、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定できます。 このフラグの設定の詳細については、「[リソースの作成時に DXGI 情報を渡す](passing-dxgi-information-at-resource-creation-time.md)」を参照してください。 ドライバーが DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定している場合、オプションのバッファーに対して\_はスキャンされません。これ以外に、DXGI が**Blt**フラグを使用してドライバーの存在し[**ない関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)呼び出すことはありません。**フリップ**フラグが設定されたではなく、を設定します。
 
-場合 DXGI\_DDI\_プライマリ\_フロント バッファーまたはプロキシの画面のオプションが設定されていない、ドライバーが無効にできますスキャン アウト DXGI のエラー コードでリソースの作成の呼び出しが失敗したことで\_DDI\_ERR\_サポートされていないと設定する DXGI\_DDI\_プライマリ\_ドライバー\_フラグ\_いいえ\_SCANOUT します。
+フロントバッファーまたはプロキシ画面に [DXGI\_DDI\_プライマリ\_省略可能] が設定されていない場合でも、ドライバーはリソース作成の呼び出しに失敗し、エラーコード DXGI\_DDI\_エラー\_サポートされていないため、スキャンアウトをオプトアウトできます。また、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定すると\_\_はスキャンされません。
 
-**注**   DXGI を設定せず、作成の呼び出しを失敗\_DDI\_プライマリ\_ドライバー\_フラグ\_いいえ\_SCANOUT は実際に障害の場合、予約されていますメモリ不足など。
+**   DXGI**を設定しないで作成呼び出しに失敗した場合は\_DDI\_プライマリ\_ドライバーの\_フラグ\_、メモリ不足などの実際のエラーケース用に予約されている\_はありません。
 
  
 
-DXGI は、MSAA または回転のバック バッファーの全画面プレゼンテーション チェーンを作成しようとしたときに、このオプトアウトの方法論を悪用します。 ドライバーはスキャン アウトされていないいずれかまたは両方の型場合、ドライバーがオプトアウトします。DXGI、しようと、ドライバーは、リソースの作成を受け入れるまで、回転されていない画面、非 MSAA サーフェス、またはその両方を作成します。 そのため、DXGI はフォールバック段階的にオプションで非までフロント バッファーのフォーマット、サンプルの数、回転、およびサイズ、画面が正確に一致します。
+DXGI は、MSAA またはローテーションされたバッファーの全画面プレゼンテーションチェーンを作成しようとすると、このオプトアウト手法を悪用します。 ドライバーがこれらの種類のいずれかまたは両方をスキャンしない場合、ドライバーはオプトアウトします。次に、ドライバーがリソースの作成を受け入れるまで、DXGI は回転していない表面、MSAA 以外の画面、またはその両方を作成しようとします。 そのため、非オプションのサーフェスがフロントバッファーのフォーマット、サンプル数、ローテーション、およびサイズと完全に一致するまで、DXGI は徐々にフォールバックします。
 
-場合は、省略できない画面オプトアウトするドライバー、DXGI 必要があるプライマリのサーフェイスにバック バッファーからのビットを移動する方法。 そのため、スキャン アウト MSAA と回転をオプトアウトするドライバー場合、ドライバー opts で解決、回転、またはその両方を DXGI 呼び出すドライバーの[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数。 DXGI はプロキシ画面と呼び出しを作成、ドライバーが opts するとき**BltDXGI**バック バッファーからそのプロキシの画面にデータを移動します。 ドライバーには、オプトアウトこのプロキシのサーフェイスのプロキシは、フロント バッファーを正確に一致するために理由はありません。
+ドライバーがオプション以外の画面から外れた場合でも、DXGI では、バックバッファーからプライマリサーフェイスにビットを移動する方法が必要になります。 このため、MSAA とローテーションのスキャンアウトをドライバーがオプトアウトした場合、ドライバーは、DXGI がドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数を呼び出すと、解決、回転、またはその両方を検出します。 ドライバーが終了すると、DXGI はプロキシ画面を作成し、 **Bltdxgi**を呼び出して、バックバッファーからそのプロキシ画面にデータを移動します。 プロキシがフロントバッファーと完全に一致するため、ドライバーはこのプロキシ画面をオプトアウトする理由がありません。
 
-次の特殊な状況は、アプリケーションで再作成されない、サーフェスにするか、全画面表示モードからの移行が完了した後ときに発生します。
+全画面表示モードに切り替えた後に、アプリケーションが画面を再作成しない場合は、次のような例外的な状況が発生します。
 
--   場合は、アプリケーションは、サーフェスが全画面表示モードになったときに再作成していない、DXGI を決定しますバック バッファーには、前面のバッファーは一致しない場合でも、形式、サイズ、回転、およびサンプルの数を実際に一致しています。 この決定の理由は、オペレーティング システムが、特定のモニタをスキャンするためにタグ付けするこれらのバッファーを作成するときにバック バッファーが必要であります。 ウィンドウのバック バッファーことはできませんが明確にまだ割り当てられて、特定のモニタ モニターは全画面表示が入力したときに動的に選択されているためです。 そのため、DXGI はスキャン アウト (フリップ操作) でのドライバーにこれらのバック バッファーを送信する必要があります。 この種類のアプリケーションでは、プロキシ画面を作成する DXGI 通常強制します。
+-   全画面表示モードになったときにアプリケーションが表面を再作成しない場合は、バッファーが形式、サイズ、回転、およびサンプル数と一致する場合でも、バッファーがフロントバッファーと一致しないと判断されます。 この決定の理由は、これらのバッファーが作成されたときに、オペレーティングシステムによって、特定のモニターにスキャンアウトするように、バックバッファーにタグ付けする必要があるためです。 全画面を入力するとモニターが動的に選択されるため、ウィンドウバックバッファーを特定のモニターに明確に割り当てることはできません。 そのため、DXGI は、これらのバックバッファーを (フリップ操作によって) スキャンアウトのためにドライバーに送信することはできません。 通常、この種類のアプリケーションは、DXGI を強制的にプロキシ画面を作成します。
 
--   DXGI がドライバーを呼び出すことができる場合、アプリケーションは、バック バッファーがウィンドウ表示モードに戻ったときに再作成していない、 [ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)または[ **PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (で**Blt**設定) の反転操作を既に作成されている画面で、bitblt 関数を実行します。 このような状況では、問題をすることはできませんが、完全を期すのためここで説明されています。 アプリケーションがウィンドウ表示モードに移行するときに、DXGI がそのプロキシ サーフェスを常に破棄することに注意してください。
+-   ウィンドウモードに戻るときにアプリケーションがバックバッファーを再作成しない場合、DXGI はドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)を呼び[**出すか、または**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)( **Blt**セットを使用して) 使用して、以前にフリップ操作のために作成されたサーフェイス上で bitblt を実行する可能性があります。 この状況は問題ではありませんが、完全を期すためにここに記載されています。 アプリケーションがウィンドウモードに移行すると、DXGI は常にプロキシ画面を破棄することに注意してください。
 
-また、ことアプリケーション サイズを変更できる、バック バッファーに動的に、アプリケーションが全画面表示モードでは注意してください。 この操作では、再度発生する前の状況で説明されているロジックにより、します。 そのため、プロキシ画面を作成および破棄される可能性がありますされ、したりできない可能性があります必要な時間の経過と共に、アプリケーションは全画面表示モードのままでもオプト アウト。 アプリケーションに転送できます出力別のモニターに動的に全画面表示モードを離れることがなく。 そのため、別のモニターのアプリケーションのバック バッファーのタグ付けされたために、アプリケーションは、bitblt モードに戻すスイッチが発生します。
+また、アプリケーションが全画面表示モードの間は、アプリケーションがバッファーのサイズを動的に変更できることに注意してください。 この操作により、上記の状況で説明されているロジックが再び発生します。 そのため、プロキシ画面が作成され、破棄される可能性があります。アプリケーションが全画面表示モードのままであっても、時間の経過と共にオプトアウトが不要になることがあります。 また、全画面表示モードを終了せずに、出力を別のモニターに動的に転送することもできます。 そのため、アプリケーションのバックバッファーには別のモニターのタグが付けられているため、アプリケーションは、bitblt モードに切り替えます。
 
-最後に、MSAA スキャン アウト、ドライバーは無効にしない場合は、MSAA バック バッファーに関して発生する場合の注意する必要があります。このような状況では、ドライバーは、MSAA のスキャン アウトで opts します。 そのため、MSAA バック バッファーとを通じて MSAA フロント バッファー DXGI インターチェンジは、操作を反転し、アナログ デジタル コンバーター (DAC) と同等で解決操作を実行します。 このような状況で、アプリケーションには、ドライバーの呼び出しに切り替える DXGI を強制する全画面表示モードでは動的にバック バッファーもサイズを変更できます[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数。 フロント バッファー、バック バッファーの MSAA 特性も一致しているために、DXGI にドライバーが解決する以外、色変換する可能性があります、ストレッチ bitblt を実行することを指定します。 ドライバーする必要がありますし、レプリケートを解決することがなく、ドライバーがスキャン アウト MSAA を選択した場合に必要なフロント バッファーにマルチ サンプル。
+最後に、ドライバーで MSAA スキャンアウトがオプトアウトされない場合は、MSAA バックバッファーに関して発生する状況を認識しておく必要があります。このような状況では、ドライバーは MSAA のスキャンを行います。 そのため、DXGI は、フォールバック操作によって MSAA バックバッファーと MSAA フロントバッファーを交換し、デジタル-アナログコンバーター (DAC) に相当するものによって解決操作を実行します。 このような状況では、アプリケーションは全画面表示モードで、バッファーのサイズを動的に変更することができます。これにより、DXGI はドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数の呼び出しに強制的に切り替わります。 バックバッファーとフロントバッファーの MSAA 特性は一致しているため、DXGI は、ドライバーが解決しない、場合によっては、カラー変換される可能性があるストレッチ bitblt を実行するように指定します。 ドライバーは、フロントバッファーへのマルチサンプルを解決せずにレプリケートする必要があります。これは、ドライバーが MSAA のスキャンを選択する場合に必要です。
 
  
 

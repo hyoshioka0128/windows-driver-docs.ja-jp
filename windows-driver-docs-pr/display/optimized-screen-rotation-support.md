@@ -1,52 +1,52 @@
 ---
 title: 最適化された画面回転のサポート
-description: Windows 8 では、回転モードの変更中にグラフィックス アダプターからの出力を有効なままことを確認して、ちらつきのない画面の回転のエクスペリエンスを保証します。
+description: Windows 8 では、回転モードの変更時にグラフィックスアダプターからの出力が有効であることを保証することで、ちらつきなしの画面の回転を実現します。
 ms.assetid: CFDB4713-EC90-4FAB-B379-742C52888BB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee90d7bdf097aaa3dd3604f2cf5a47f12ce8f2b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 322fca941f1dab16e15b964000382ad05bf2f4b5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353430"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840491"
 ---
 # <a name="optimized-screen-rotation-support"></a>最適化された画面回転のサポート
 
 
-Windows 8 では、回転モードの変更中にグラフィックス アダプターからの出力を有効なままことを確認して、ちらつきのない画面の回転のエクスペリエンスを保証します。 この機能は、回転のモードをサポートするすべての Windows Display Driver Model (WDDM) 1.2 ドライバーに必要です。
+Windows 8 では、回転モードの変更時にグラフィックスアダプターからの出力が有効であることを保証することで、ちらつきなしの画面の回転を実現します。 この機能は、回転モードをサポートするすべての Windows Display Driver Model (WDDM) 1.2 ドライバーで必要です。
 
-**注**  デバイス ドライバー インターフェイス (Ddi) は Windows 8.1 Update 以降、プライマリ ディスプレイを回転したときに、複製されたモニターの最も高い解像度をサポートするために更新されます。 参照してください[パスに依存しない回転をサポートしている](supporting-path-independent-rotation.md)します。
+**注**  Windows 8.1 Update 以降では、プライマリディスプレイが回転している場合に、複製されたモニターで可能な限り高い解像度をサポートするようにデバイスドライバーインターフェイス (DDIs) が更新されます。 「[パスに依存しないローテーションのサポート](supporting-path-independent-rotation.md)」を参照してください。
 
  
 
 |                                                      |           |
 |------------------------------------------------------|-----------|
-| WDDM の最小バージョン                                 | 1.2       |
+| 最小 WDDM バージョン                                 | 1.2       |
 | Windows の最小バージョン                              | 8         |
-| ドライバーの実装: 完全なグラフィックスおよび表示のみ | 必須 |
+| ドライバーの実装—完全なグラフィックスと表示のみ | Mandatory |
 
  
 
-## <a name="span-idsmoothrotationddispanspan-idsmoothrotationddispanspan-idsmoothrotationddispansmooth-rotation-ddi"></a><span id="Smooth_rotation_DDI"></span><span id="smooth_rotation_ddi"></span><span id="SMOOTH_ROTATION_DDI"></span>滑らかな回転 DDI
+## <a name="span-idsmooth_rotation_ddispanspan-idsmooth_rotation_ddispanspan-idsmooth_rotation_ddispansmooth-rotation-ddi"></a><span id="Smooth_rotation_DDI"></span><span id="smooth_rotation_ddi"></span><span id="SMOOTH_ROTATION_DDI"></span>Smooth ローテーション DDI
 
 
-ディスプレイのミニポート ドライバーでは、これらのドライバー実装関数を呼び出すときに、パスの回転を更新をサポートする必要があります。
+これらのドライバーによって実装された関数が呼び出された場合、ディスプレイミニポートドライバーはパスローテーションの更新をサポートする必要があります。
 
--   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
--   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
+-   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
+-   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
 
-ドライバーへの呼び出しで滑らかな回転のサポートを指定する必要があります[ *DxgkDdiUpdateActiveVidPnPresentPath* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)を設定して、 [ **DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体の**SupportSmoothRotation**メンバーは、Windows 8 以降で使用されます。
-ドライバーを呼び出し中にパスの回転を設定することが常にある必要があります[ *DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)します。
+ドライバーは、Windows で使用可能な[**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体の**SupportSmoothRotation**メンバーを設定することによって、 [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)の呼び出しでスムーズローテーションのサポートを示す必要があります。8.
+ドライバーは、 [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)の呼び出し中に常にパスのローテーションを設定できる必要があります。
 
-## <a name="span-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>滑らかな回転シナリオ
+## <a name="span-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>Smooth ローテーションのシナリオ
 
 
-従来のデスクトップおよびラップトップのシステムで画面の回転は頻繁に使用されるシナリオではありません。 モバイル デバイスでは多くの場合、主流のシナリオに画面の回転。 Windows 8 では、画面の回転時に、同期の監視が有効なままことを確認するための表示インフラストラクチャの最適化を使用します。 次の条件に該当する場合、滑らかな回転遷移をエンドユーザーことができます。
+従来のデスクトップおよびラップトップシステムでは、画面の回転は頻繁に使用されるシナリオではありません。 しかし、モバイルデバイスでは、多くの場合、画面の回転はメインストリームのシナリオです。 Windows 8 では、画面の回転中にモニターの同期が有効な状態を維持するために、ディスプレイインフラストラクチャに最適化を行うことができます。 次の条件に該当する場合は、エンドユーザーがスムーズに回転することができます。
 
--   プラットフォームは、WDDM 1.2 を実行しています。
--   デスクトップ コンポジション manager では、上し、構成がアクティブにします。
--   モードの変更要求は、滑らかな回転モードへの移行に対応するように決定されます。 2 つのモードは、同じディメンション (幅と高さ) トポロジ レート、ピクセル形式、およびストライドを更新し、画面の向きだけが異なるがある場合は、互換性のある (つまり、回転) します。
+-   プラットフォームは WDDM 1.2 を実行しています。
+-   デスクトップコンポジションマネージャーはオンになっており、アクティブに作成されています。
+-   モードの変更要求は、スムーズローテーションモードの切り替えと互換性があると判断されます。 2つのモードは、同じディメンション (幅と高さ)、トポロジ、リフレッシュレート、ピクセル形式、およびストライドがある場合に互換性があり、画面の向きだけが異なります (つまり、回転されます)。
 
  
 

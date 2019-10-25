@@ -3,22 +3,22 @@ title: DirectDraw
 description: DirectDraw
 ms.assetid: b7f1194e-0f5e-444e-a71c-6a4a836547d9
 keywords:
-- DirectDraw WDK Windows 2000 の表示
-- Windows 2000 ディスプレイ ドライバー モデル WDK、DirectDraw
-- ドライバー モデル WDK Windows 2000 では、DirectDraw を表示します。
-- ヘッダー ファイルの WDK DirectDraw
-- DirectDraw WDK Windows 2000 の表示、ヘッダー ファイル
-- 描画の WDK DirectDraw
-- 描画の WDK DirectDraw、ヘッダー ファイル
-- グラフィックス WDK Windows 2000 を表示します。
+- DirectDraw WDK Windows 2000 ディスプレイ
+- Windows 2000 display driver model WDK、DirectDraw
+- ディスプレイドライバーモデル WDK Windows 2000、DirectDraw
+- ヘッダーファイルの WDK DirectDraw
+- DirectDraw WDK Windows 2000 表示、ヘッダーファイル
+- WDK DirectDraw の描画
+- WDK DirectDraw、ヘッダーファイルの描画
+- グラフィックス WDK Windows 2000 ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 331794d836eec723ffa170bf8a39e73795386540
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4264ba68e863c72f99df4da5f97451a8d0e0e639
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839736"
 ---
 # <a name="directdraw"></a>DirectDraw
 
@@ -26,31 +26,31 @@ ms.locfileid: "67353455"
 ## <span id="ddk_directdraw_gg"></span><span id="DDK_DIRECTDRAW_GG"></span>
 
 
-このセクションでは、Microsoft DirectDraw インターフェイスと、アーキテクチャについて説明し、DirectDraw ドライバー ライターの実装に関するガイドラインを提供します。 ガイドラインは、Microsoft Windows 2000 以降に書き込まれます。 リーダーは、DirectDraw Api に習熟し、あるドライバー モデルの表示、Windows 2000 を確実に把握する必要があります。
+このセクションでは、Microsoft DirectDraw のインターフェイスとアーキテクチャについて説明し、DirectDraw ドライバーライターの実装ガイドラインを示します。 このガイドラインは、Microsoft Windows 2000 以降用に記述されています。 このリーダーは、DirectDraw Api に精通しており、Windows 2000 display driver model をしっかりと把握している必要があります。
 
-Microsoft Windows 2000 以降の Microsoft DirectDraw ドライバーを作成しているドライバーの作成者は、次のヘッダー ファイルを使用してください。
+Microsoft Windows 2000 以降用の Microsoft DirectDraw ドライバーを作成するドライバーライターでは、次のヘッダーファイルを使用する必要があります。
 
--   *ddrawint.h*基本型、定数、および構造体が DirectDraw ドライバーが含まれています。
+-   ddrawint には、DirectDraw ドライバーの基本型、定数、および構造体が含まれてい*ます。*
 
--   *ddraw.h*基本型、定数、およびアプリケーションとドライバーの両方で使用する構造体が含まれています。
+-   *ddraw*には、アプリケーションとドライバーの両方で使用される基本的な型、定数、および構造体が含まれています。
 
--   *dvp.h*ドライバーは、DirectDraw ビデオ ポート拡張機能 (VPE) をサポートしているときに使用されます。
+-   *dvp*は、ドライバーが DirectDraw ビデオポート拡張 (VPE) をサポートしている場合に使用されます。
 
--   *dxmini.h*ビデオのミニポート ドライバーには、カーネル モードのビデオ トランスポート、DxApi インターフェイスのサポートが含まれていますときに使用されます (で指定された関数、 [ **DXAPI\_インターフェイス**](https://docs.microsoft.com/windows/desktop/api/dxmini/ns-dxmini-_dxapi_interface)。構造)。
+-   *dxmini .h*は、ビデオミニポートドライバーが、カーネルモードのビデオトランスポート、dxmini インターフェイス (dxmini によって指定された関数[ **\_インターフェイス**](https://docs.microsoft.com/windows/desktop/api/dxmini/ns-dxmini-_dxapi_interface)構造) をサポートしている場合に使用されます。
 
--   *ddkmapi.h*ビデオ キャプチャ ドライバーでのアクセスに使用、 [ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi)関数。 DirectDraw、DxApi インターフェイスに呼び出します。
+-   *ddkmapi .h*は、 [**dxapi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi)関数にアクセスするためにビデオキャプチャドライバーによって使用されます。 さらに、DirectDraw は、DxApi インターフェイスを呼び出します。
 
--   *dmemmgr.h*ドライバーが、DirectDraw ランタイムではなく、独自のメモリ管理を実行するときに使用されます。
+-   dmemmgr は、DirectDraw ランタイムに依存するのではなく、ドライバーが独自のメモリ管理を実行する場合に使用し*ます。*
 
--   *ddkernel.h*ドライバーには、カーネル モードのサポートが含まれています。 ときに使用されます。
+-   *ddkernel. h*は、ドライバーにカーネルモードのサポートが含まれている場合に使用されます。
 
--   *dx95type.h*により、既存の Windows 98 を簡単に移植するためにドライバー作成者/Me ドライバーを Windows 2000 以降。 このヘッダー ファイルでは、2 つのプラットフォーム上で異なる名前をマップします。
+-   *dx95type*を使用すると、ドライバーの作成者は、既存の windows 98/Me ドライバーを windows 2000 以降に簡単に移植できます。 このヘッダーファイルは、2つのプラットフォームで異なる名前をマップします。
 
-*Ddraw.h*ヘッダー ファイルは、Windows SDK に付属; 他のすべてのヘッダー ファイルが、Windows Driver Kit (WDK) に含まれています。 Windows ドライバー開発キット (DDK) には、DirectDraw ドライバーのサンプル コードも含まれています、 *p3samp*ビデオ ディスプレイのディレクトリ。
+Ddraw ヘッダーファイルには Windows SDK が付属してい*ます*。その他のすべてのヘッダーファイルは、Windows Driver Kit (WDK) に含まれています。 Windows Driver Development Kit (DDK) には、 *p3samp*ビデオ表示ディレクトリにある DirectDraw ドライバー用のサンプルコードも含まれています。
 
-DirectDraw ドライバー関数では、コールバック、ページを参照し、構造体が記載[DirectDraw ドライバー関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)と[DirectDraw ドライバー構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
+DirectDraw ドライバーの関数、コールバック、および構造体のリファレンスページについては、「 [Directdraw Driver functions](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) 」と「 [directdraw driver 構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)体」を参照してください。
 
-DirectDraw の詳細については、Windows SDK を参照してください。 DirectDraw ドライバー作成者に電子メールで質問やご意見を送信できる <em>directx@microsoft.com</em>します。
+DirectDraw の詳細については、Windows SDK を参照してください。 DirectDraw ドライバーの作成者は、 <em>directx@microsoft.com</em>に質問やコメントを電子メールで送信できます。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: AddLink 関数
-description: AddLink WMI メソッドでは、WMI プロバイダーのファブリックのリンクのイベントを WMI クライアントに通知を構成します。
+description: AddLink WMI メソッドは、wmi プロバイダーに対して、ファブリックリンクイベントの WMI クライアントを通知するように構成します。
 ms.assetid: 67c17627-3f41-429b-a0f7-ec7782f1b1f9
 keywords:
-- AddLink 関数ストレージ デバイス
+- AddLink 関数のストレージデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 76794d52dc005959f77a4094a74c4f5fb6fd18a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df71b5b3022bb1af53bed06adbf4cd46da2b638a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386283"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845115"
 ---
 # <a name="addlink-function"></a>AddLink 関数
 
 
-**AddLink** WMI メソッドの fabric リンク イベントを WMI クライアントを通知するために、WMI プロバイダーを構成します。
+**Addlink** wmi メソッドは、wmi プロバイダーに対して、ファブリックリンクイベントの wmi クライアントを通知するように構成します。
 
 <a name="syntax"></a>構文
 ------
@@ -38,8 +38,8 @@ void AddLink(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **AddLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addlink_out)構造体。
+*Hbastatus*   
+戻ると、操作の状態が格納されます。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、 [**Addlink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addlink_out)構造体の**hbastatus**メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -49,7 +49,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドが属する、 [MSFC\_EventControl WMI クラス](msfc-eventcontrol-wmi-class.md)します。
+この WMI メソッドは、 [Msfc\_EventControl WMI クラス](msfc-eventcontrol-wmi-class.md)に属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -66,15 +66,15 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h (Hbaapi.h または Hbapiwmi.h を含む)</td>
+<td align="left">Hbapiwmi (Hbaapi .h または Hbapiwmi を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**AddLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addlink_out)
+[**AddLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addlink_out)
 
  
 

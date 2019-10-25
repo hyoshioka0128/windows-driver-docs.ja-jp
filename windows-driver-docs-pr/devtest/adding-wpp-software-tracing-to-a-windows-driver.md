@@ -1,45 +1,45 @@
 ---
 title: Windows ドライバーへの WPP ソフトウェア トレースの追加
-description: カーネル モード ドライバーなど、ユーザー モード アプリケーションのトレース プロバイダーを使用して、WPP ソフトウェア トレースを使用するにはコード (またはインストルメント化) ドライバーのソース ファイルを追加およびドライバーのプロジェクトを変更する必要があります。 このセクションでは、これらの手順を説明します。
+description: カーネルモードドライバーやユーザーモードアプリケーションなど、トレースプロバイダーで WPP ソフトウェアトレースを使用するには、ドライバーのソースファイルを追加し、ドライバープロジェクトを変更する必要があります。 ここでは、これらの手順について説明します。
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1254f82b84e93eb4cfcf56a46e6decffbb85720
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db2e8fadc5ae9983cd2bd40b8a1215a6812e8355
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371688"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840304"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>Windows ドライバーへの WPP ソフトウェア トレースの追加
 
-カーネル モード ドライバーなど、ユーザー モード アプリケーションのトレース プロバイダーを使用して、WPP ソフトウェア トレースを使用するにはコードを追加する必要があります (または*インストルメント化*) ドライバーのソース ファイルとドライバーのプロジェクトを変更します。 このセクションでは、これらの手順を説明します。
+カーネルモードドライバーやユーザーモードアプリケーションなど、トレースプロバイダーで WPP ソフトウェアトレースを使用する*には、* ドライバーのソースファイルを追加し、ドライバープロジェクトを変更する必要があります。 ここでは、これらの手順について説明します。
 
-**ヒント:** WPP トレースには、ドライバーを追加する最も簡単な方法は、Visual Studio で KMDF または UMDF ドライバー テンプレートのいずれかを使用します。 テンプレートを使用する場合に追加する必要があるコードの多くは既にが行われます。 Visual Studio で、次のようにクリックします。**ファイル&gt;新規&gt;プロジェクト**、Windows Driver (ユーザー モードまたはカーネル モード) WDF プロジェクトを選択します。 WPP マクロは、プロジェクトの一部として含まれている Trace.h ヘッダー ファイルで定義されます。 テンプレートのいずれかを使用する場合に進んでかまいません[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)します。 
+**ヒント** ドライバーに WPP トレースを追加する最も簡単な方法は、Visual Studio で KMDF または UMDF ドライバーテンプレートのいずれかを使用することです。 テンプレートを使用する場合、追加する必要があるコードの多くは既に実行されています。 Visual Studio で、[**ファイル &gt; 新しい &gt; プロジェクト**] をクリックし、[Windows ドライバー (ユーザーモードまたはカーネルモード)] WDF プロジェクトを選択します。 WPP マクロは、プロジェクトの一部として含まれている Trace .h ヘッダーファイルで定義されています。 いずれかのテンプレートを使用する場合は、[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points). に進むことができます。 
 
--   [ステップ 1: コントロールの GUID とトレース フラグを定義します。](#step-1-define-the-control-guid-and-trace-flags)
--   [手順 2:使用してこれらの関数の WPP マクロを定義するトレース メッセージ機能を選択します。](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
--   [手順 3:C または C++ ソース ファイルに関連付けられているトレースのヘッダー ファイル (.h および .tmh) を含める](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
--   [手順 4:WPP を初期化してクリーンアップするには、適切なコールバック関数にマクロを追加します。](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
--   [手順 5:適切な時点でのトレース メッセージを生成するドライバーのコードをインストルメント化](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)
--   [手順 6:WPP プリプロセッサを実行し、ソリューションを構築するには、Visual Studio プロジェクトを変更します。](#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)
--   [手順 7:キャプチャし、トレース メッセージを確認します。 トレース セッションを開始します。](#step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages)
+-   [手順 1: コントロールの GUID とトレースフラグを定義する](#step-1-define-the-control-guid-and-trace-flags)
+-   [手順 2: 使用するトレースメッセージ関数を選択し、それらの関数の WPP マクロを定義する](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
+-   [手順 3: 関連するトレースヘッダーファイル (.h および tmh) を C またはC++ソースファイルに含める](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
+-   [手順 4: 適切なコールバック関数にマクロを追加して、WPP を初期化してクリーンアップする](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
+-   [手順 5: 適切なポイントでトレースメッセージを生成するためのドライバーコードのインストルメント化](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)
+-   [手順 6: WPP プリプロセッサを実行し、ソリューションをビルドするように Visual Studio プロジェクトを変更する](#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)
+-   [手順 7: トレースセッションを開始してトレースメッセージをキャプチャし、検証する](#step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages)
 
-## <a name="step-1-define-the-control-guid-and-trace-flags"></a>手順 1:コントロールの GUID とトレース フラグを定義します。
+## <a name="step-1-define-the-control-guid-and-trace-flags"></a>手順 1: コントロールの GUID とトレースフラグを定義する
 
-(ドライバー、またはユーザー モード アプリケーションの場合) などのすべてのトレース プロバイダーを一意に定義する必要があります。 追加することで、これを行う、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))コントロールの GUID、識別子、およびトレース フラグを定義するマクロです。 これは、識別して、何をトレースするときに制御できるようにします。 各ドライバーには、通常は別のコントロールの GUID が、ドライバーは Guid では、複数のコントロールがある可能性があります。 または複数のドライバーが 1 つのコントロールの GUID を共有できます。
+すべてのトレースプロバイダー (ドライバー、ユーザーモードアプリなど) は一意に定義する必要があります。 これを行うには、コントロールの GUID、識別子、およびトレースフラグを定義する、 [WPP\_control\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロを追加します。 これにより、いつ、どのようなトレースを行うかを特定して制御できるようになります。 通常、各ドライバーには個別のコントロール GUID がありますが、ドライバーは複数のコントロール guid を持つことができます。または、複数のドライバーが1つのコントロール GUID を共有できます。
 
-便宜上、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロは通常、共通のヘッダー ファイルで定義されています。 ヘッダー ファイルを含める必要があります (\#が含まれます) のトレースをインストルメント化する任意のソース ファイル。
+便宜上、 [WPP\_制御\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロは、一般的なヘッダーファイルで定義されています。 トレース用にインストルメント化するソースファイルには、ヘッダーファイル (\#インクルード) を含める必要があります。
 
-**WPP を追加する\_コントロール\_ドライバーにマクロを GUID:**
+**WPP\_CONTROL\_GUID マクロをドライバーに追加するには、次のようにします。**
 
-1.  新しい C++ ヘッダー ファイルを WPP トレース マクロを定義するために使用できる Visual Studio プロジェクトに追加します。 たとえば、ソリューション エクスプ ローラーで、ドライバーを右クリックし、クリックして**追加&gt;新しい項目の**します。 (たとえば、Trace.h) として保存します。
+1.  WPP トレースマクロC++の定義に使用できる新しいヘッダーファイルを Visual Studio プロジェクトに追加します。 たとえば、ソリューションエクスプローラーでドライバーを右クリックし、[ **&gt; 新しい項目の追加**] をクリックします。 (たとえば、トレース .h として) ファイルを保存します。
 
-2.  追加、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロと特定のトレース メッセージを修飾するために使用できるトレース フラグを定義するトレース プロバイダーのフレンドリ名を指定するには、GUID、コントロールを定義します。
+2.  [WPP\_制御\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロを追加して、トレースプロバイダーのフレンドリ名を指定し、コントロールの GUID を定義し、特定のトレースメッセージを修飾するために使用できるトレースフラグを定義します。
 
-    [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロには、次の構文。
+    [WPP\_CONTROL\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロには、次の構文があります。
 
-    **WPP 構文\_コントロール\_GUID**
+    **WPP\_制御\_GUID の構文**
 
     ```ManagedCPlusPlus
     #define WPP_CONTROL_GUIDS \
@@ -51,9 +51,9 @@ ms.locfileid: "67371688"
             WPP_DEFINE_BIT(NameOfTraceFlag31) 
     ```
 
-    たとえば、次のコードが myDriverTraceGuid としてを使用して、 *GUIDFriendlyName*します。 なお*ControlGUID* 32 桁の 16 進数の GUID の標準の形式よりもわずかに異なる形式にします。 *ControlGUID*は 5 つのフィールドがありますが、コンマで区切られた、通常ハイフンと中かっこの代わりに、かっこで囲まれています。 たとえば、指定 ( **(84bdb2e9、829e、41b3、b891、02f454bc2bd7)** {84bdb2e9-829e-41b3-b891-02f454bc2bd7} の代わりにします。
+    たとえば、次のコードでは、Guid *friendlyname*として myDriverTraceGuid を使用しています。 *Controlguid*は、32桁の16進数の guid の標準形式とは少し異なる形式であることに注意してください。 *Controlguid*には5つのフィールドがありますが、通常のハイフンや中かっこではなく、コンマで区切り、かっこで囲まれています。 たとえば、{84bdb2e9-829e-41b3-b891-02f454bc2bd7} ではなく (**84 bdb2e9、829e、41b3、b891、02f454bc2bd7)** を指定します。
 
-    **例、WPP の\_コントロール\_GUID ステートメント**
+    **WPP\_制御\_GUID ステートメントの例**
 
     ```ManagedCPlusPlus
     #define WPP_CONTROL_GUIDS                                              \
@@ -66,42 +66,42 @@ ms.locfileid: "67371688"
             )                             
     ```
 
-    **ヒント:** ヘッダー ファイルに次のコード スニペットをコピーすることができます。 コントロールの GUID とフレンドリ名を変更することを確認します。 GUIDgen.exe を使用して、コントロールの GUID を生成することができます。 Guidgen.exe は Visual Studio に含まれている (**ツール&gt;GUID の作成**)。 Visual Studio コマンド プロンプト ウィンドウからアクセスできる Uuidgen.exe ツールを使用することもできます (型**uuigen.exe/でしょうか。** 詳細については)。
+    **ヒント** このコードスニペットをヘッダーファイルにコピーできます。 コントロールの GUID とフレンドリ名を必ず変更してください。 Guidgen.exe を使用して、コントロールの GUID を生成できます。 Guidgen.exe は、Visual Studio に含まれています (**ツール &gt; 作成 GUID**)。 また、Visual Studio のコマンドプロンプトウィンドウから使用できる Uuidgen.exe ツールを使用することもできます (「 **uuigen/?」と**入力します。 を参照してください)。
 
 
 
-3.  定義、[トレース フラグ](trace-flags.md)トレース プロバイダー。
+3.  トレースプロバイダーの[トレースフラグ](trace-flags.md)を定義します。
 
-    WPP\_定義\_WPP のビット要素\_コントロール\_GUID マクロは、トレース プロバイダーのトレース フラグを定義します。 通常、フラグがしだいに詳細レポートのレベルを表しますが、トレース メッセージを生成するための条件として任意の方法としてフラグを使用することができます。 WPP\_コントロール\_GUID など、WPP\_定義\_ビットは 4 つのトレース フラグを定義します (MYDRIVER\_すべて\_情報、トレース\_ドライバーでは、トレース\_デバイス、およびトレース\_キュー)。
+    WPP\_は、WPP\_コントロール\_GUID マクロの\_ビット要素を定義して、トレースプロバイダーのトレースフラグを定義します。 通常、フラグは、より詳細なレポートレベルを表しますが、トレースメッセージを生成する条件として、フラグを使用することもできます。 WPP\_制御\_GUID の例では、WPP\_で\_ビットを定義すると、4つのトレースフラグ (MYDRIVER\_すべての\_情報、トレース\_ドライバー、トレース\_デバイス、トレース\_キュー) が定義されます。
 
-    最大 31 個のトレース フラグを定義することができます。 WPP が表示される順序、たとえば内の要素をビット値を割り当てます、ビット 0 (0x1)、ビット 1 (0x2)、ビット 2 (0x4)、ビット 3 (0x8) がこれにします。 ソース コードにトレース メッセージの関数を追加すると、トレース フラグを使用する (で説明されている[手順 5。適切な時点でのトレース メッセージを生成するドライバーのコードをインストルメント化](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points))。
+    最大31個のトレースフラグを定義できます。 WPP では、ビット値が表示される順序で要素に割り当てられます。たとえば、ビット 0 (0x1)、ビット 1 (0x2)、ビット 2 (0x4)、ビット 3 (0x8) などです。 トレースフラグは、トレースメッセージ関数をソースコードに追加するときに使用します (詳細については、「[手順 5: ドライバーコードをインストルメント化してトレースメッセージを適切な場所に生成する](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)」を参照してください)。
 
-    **注**トレース フラグの使用を制御できます (I/O 要求、またはデバイスまたはドライバーのオブジェクトのアクティビティの特定など) の特定のコンポーネントをトレースするときにします。 トレース メッセージの明細書に、トレース フラグを追加する (たとえば、`DoTraceMessage (TRACE_DRIVER, "Hello World!\n")`します。 トレース コント ローラーでトレース セッションを作成するときのような[Tracelog](tracelog.md)を指定する、 **-フラグ**そのセッションで、この場合、フラグ、トレース プロバイダーを使用するオプションは、ビット 1 (0x1)、対応します。トレースに\_ドライバー フラグ。 トレース セッションを開始するときに、トレース フラグを指定するすべてのトレース メッセージは、ログに書き込まれます。
-
-
-
-## <a name="step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions"></a>手順 2:使用してこれらの関数の WPP マクロを定義するトレース メッセージ機能を選択します。
+    **メモ** トレースフラグを使用すると、特定のコンポーネント (特定の i/o 要求、デバイスまたはドライバーオブジェクトのアクティビティなど) をトレースするタイミングを制御できます。 トレースフラグは、トレースメッセージステートメント (`DoTraceMessage (TRACE_DRIVER, "Hello World!\n")`など) に追加します。 トレースコントローラー ( [Tracelog](tracelog.md)など) を使用してトレースセッションを作成する場合は、そのセッションでトレースプロバイダーに使用する **-flag**オプションを指定します。この場合、フラグはビット 1 (0x1) です。これは、trace\_DRIVER フラグに対応します。 トレースセッションを開始すると、そのトレースフラグを指定するすべてのトレースメッセージがログに書き込まれます。
 
 
-デバッグは、関数を印刷するようにトレース メッセージの関数は、トレース メッセージを記述するコードを追加する関数 (またはマクロ)。
 
-**トレース メッセージの関数を選択します。**
+## <a name="step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions"></a>手順 2: 使用するトレースメッセージ関数を選択し、それらの関数の WPP マクロを定義する
 
-1.  既定のトレース メッセージの関数は、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロ。 使用してメッセージを生成するタイミングを制御することができます、既定の関数を使用する場合、[トレース フラグ](trace-level.md)プロバイダーの値。 トレース フラグの値は、手順 1. でコントロールの GUID を作成するときに定義するフラグです。 使用する場合**DoTraceMessage**、既定の WPP マクロが既に定義した (WPP\_レベル\_有効] と [WPP\_レベル\_ロガー) ので、この手順の残りの部分をスキップしてに移動することができます[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)します。
 
-2.  KMDF または UMDF のテンプレートのいずれかを使用している場合、 **TraceEvents**にスキップできるように、この関数を有効にする関数と必要な WPP マクロが定義済み[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)します。
+デバッグ印刷関数と同様に、トレースメッセージ関数は、トレースメッセージを記述するためにコードに追加する関数 (またはマクロ) です。
 
-3.  独自のトレース メッセージの関数を作成する、または既存のデバッグを変換する関数を印刷は、この手順の残りの部分を続行します。
+**トレースメッセージ関数の選択**
 
-**作成またはトレース メッセージの関数のカスタマイズ**
+1.  既定のトレースメッセージ関数は、 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロです。 既定の関数を使用する場合は、プロバイダーの[トレースフラグ](trace-level.md)値を使用してメッセージを生成するタイミングを制御できます。 トレースフラグの値は、手順 1. でコントロール GUID を作成したときに定義したフラグです。 **DoTraceMessage**を使用すると、既定の wpp マクロが既に定義されています (WPP\_LEVEL\_ENABLED および WPP\_LEVEL\_LOGGER)。そのため、この手順の残りの部分をスキップして、[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points). に進むことができます。
 
-1.  カスタム トレース メッセージの関数を使用している場合、またはデバッグ出力関数を変換する場合 (たとえば、 [ **KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)) トレース メッセージを生成するには、識別を有効にする WPP マクロを定義する必要があります、トレース プロバイダーでのトレース メッセージの関数。 Trace.h ヘッダー ファイルをプロジェクトに追加するには、これらのマクロを配置します。
+2.  KMDF テンプレートまたは UMDF テンプレートのいずれかを使用している場合は、 **Traceevents**関数と必要な WPP マクロが既に定義されているので、その関数を有効にするため、[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points). に進むことができます。
 
-2.  トレース機能を有効にする WPP マクロを定義します。
+3.  独自のトレースメッセージ関数を作成する場合、または既存のデバッグ印刷関数を変換する場合は、この手順の残りの部分を続行します。
 
-    使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_ *&lt;条件&gt;* \_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
+**トレースメッセージ関数の作成またはカスタマイズ**
 
-使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_ *&lt;条件&gt;* \_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
+1.  カスタムトレースメッセージ関数を使用する場合、またはデバッグ印刷関数 ( [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)など) を変換してトレースメッセージを生成する場合は、トレースプロバイダーでトレースメッセージ関数を識別および有効にする WPP マクロを定義する必要があります。 プロジェクトに追加した Trace .h ヘッダーファイルにこれらのマクロを配置します。
+
+2.  WPP マクロを定義して、trace 関数を有効にします。
+
+    使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、1組のマクロ、 **wpp\_ *&lt;条件&gt;* \_LOGGER**および**wpp\_&lt;*条件*** &gt;\_既定の WPP\_レベルで有効にし @no__tLOGGER マクロ\_\_レベルを有効にし、WPP を使用する (_c)
+
+使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、1組のマクロ、 **wpp\_ *&lt;条件&gt;* \_LOGGER**および**wpp\_&lt;*条件*** &gt;\_既定の WPP\_レベルで有効にし @no__tLOGGER マクロ\_\_レベルを有効にし、WPP を使用する (_c)
 
 <table>
 <colgroup>
@@ -110,33 +110,33 @@ ms.locfileid: "67371688"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span><strong>WPP_<em>条件</em><em>ロガー</strong></p></td>
-<td align="left"><p>トレース セッションのプロバイダーに関連付けられているし、セッション ハンドルを返しますを使用します。</p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span>LOGGER</strong><em><strong>WPP_<em>条件</em></p></td>
+<td align="left"><p>プロバイダーに関連付けられているトレースセッションを検索し、セッションへのハンドルを返すために使用します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP</em><em>条件</em>_ENABLED</strong></p></td>
-<td align="left"><p>指定した条件でログ記録が有効になっているかどうかを判断するために使用します。</p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP</em><em>条件</em>有効</strong></p></td>
+<td align="left"><p>指定された条件でログ記録が有効かどうかを判断するために使用されます。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-WPP マクロを定義する、*条件*トレース メッセージの関数をサポートするアンダー スコアで区切られた、関数のパラメーター リストに表示される順序で条件を表します。 たとえば、既定トレース メッセージの関数、 [ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))、のみをサポートする[トレース フラグ](trace-level.md)条件としてためがのみ 1 つのパラメーター (WPP マクロ名\_レベル\_有効)。
+定義する WPP マクロでは、*条件*は、関数のパラメーターリストに表示される順序で、トレースメッセージ関数がサポートする条件をアンダースコアで区切って表します。 たとえば、既定のトレースメッセージ関数[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))では、[トレースフラグ](trace-level.md)のみが条件としてサポートされているので、マクロ名にはパラメーターが1つだけ存在します (WPP\_レベル\_有効)。
 
-**注**残念ながら、デフォルトのマクロの名前 (WPP\_レベル\_有効] と [WPP\_レベル\_ロガー) ように、[トレース レベル](trace-level.md)パラメーターが、実際には、トレース フラグを参照してください。
+**メモ** 残念ながら、既定のマクロ (WPP\_レベル\_ENABLED および WPP\_レベル\_LOGGER) の名前は、[トレースレベル](trace-level.md)パラメーターを示していますが、実際にはトレースフラグを参照しています。
 
 
 
-カスタム トレース メッセージの関数を使用する場合、追加の修飾子をなど設定できます、[トレース レベル](trace-level.md)します。 トレース レベルは Evntrace.h ファイルで定義され、トレース レベルは、エラー、警告、および情報メッセージとして、トレース メッセージを分類するのに便利な方法を提供します。
+カスタムトレースメッセージ関数を使用する場合は、[トレースレベル](trace-level.md)などの追加の修飾子を設定できます。 トレースレベルは Evntrace ファイルで定義されており、トレースレベルは、エラー、警告、および情報メッセージとしてトレースメッセージを分類するための便利な方法を提供します。
 
-たとえば、プロジェクトに追加するヘッダー ファイルに次のコード スニペットを追加できます。 次のコードは、トレース メッセージ関数の両方をサポートするカスタム WPP マクロを定義します。[トレース レベル](trace-level.md)とトレース メッセージを生成する条件としてトレース フラグ パラメーター。 **WPP\_レベル\_フラグ\_有効**マクロは、指定したフラグの値のログ記録が有効になっているしが有効なレベルの値がで使用されるレベルの引数以上の場合に TRUE を返します、トレース メッセージの関数呼び出し。
+たとえば、プロジェクトに追加したヘッダーファイルに次のコードスニペットを追加できます。 トレースメッセージを生成する条件としてトレース[レベル](trace-level.md)とトレースフラグパラメーターの両方をサポートするトレースメッセージ関数のカスタム WPP マクロを定義するコードを次に示します。 指定されたフラグの値に対してログ記録が有効になっていて、enabled レベルの値がトレースメッセージの関数呼び出しで使用されているレベルの引数以上の場合、 **WPP\_LEVEL\_flags\_ENABLED**マクロは TRUE を返します。
 
 ```ManagedCPlusPlus
 #define WPP_LEVEL_FLAGS_LOGGER(lvl,flags) \
@@ -146,7 +146,7 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
            (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= lvl)
 ```
 
-次に、WPP 構成ブロックで、カスタム トレース関数を指定する必要があります (**開始\_wpp config**と**エンド\_wpp**) の例では、UMDF または KMDF、テンプレートを使用する場合Visual Studio でのドライバーのプロジェクト、テンプレートが呼び出されるカスタムのトレース メッセージの関数の WPP マクロを定義する**TraceEvents**します。 **TraceEvents**マクロ関数を使用して[トレース レベル](trace-level.md)およびメッセージを生成するための条件としてトレース フラグ。 定義している場合、 **WPP\_レベル\_フラグ\_有効**マクロ、Trace.h ヘッダー ファイルで、次のマクロ定義を追加することができます。
+次に、WPP 構成ブロックでカスタムトレース関数を指定する必要があります (**begin\_wpp config**と**end\_wpp**)。たとえば、Visual Studio で UMDF または kmdf ドライバープロジェクトのテンプレートを使用する場合、テンプレートは" **Traceevents**" というカスタムトレースメッセージ関数用の WPP マクロ。 **Traceevents**マクロ関数は、メッセージを生成するための条件として[トレースレベル](trace-level.md)とトレースフラグを使用します。 **\_レベルの\_FLAGS\_ENABLED**マクロをトレース .h ヘッダーファイルに定義している場合は、次のマクロ定義を追加できます。
 
 ```ManagedCPlusPlus
 //
@@ -159,7 +159,7 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
 //
 ```
 
-既存のデバッグの print ステートメントをトレースに変換することもできますステートメント同様、追加されたメッセージ**FUNC** WPP 構成ブロックで宣言します。 たとえば、次の例は既存を変換するコードを追加します。 [ **KdPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)ステートメント。 **FUNC**もグローバルに宣言を定義、 **KdPrint** 、指定されたトレース レベルとフラグを使用する {0} レベル トレースを =\_レベル\_情報、フラグ = トレース\_ドライバー}。 デバッガーに出力を送信する代わりに、デバッグの print ステートメントは、トレース ログに送信されます。
+また、WPP 構成ブロックに同様の**FUNC**宣言を追加することによって、既存のデバッグ印刷ステートメントをトレースメッセージステートメントに変換することもできます。 たとえば、次の例では、既存の[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)ステートメントを変換するコードを追加します。 また、 **FUNC**宣言は、指定されたトレースレベルとフラグ {LEVEL = TRACE\_LEVEL\_INFORMATION, FLAGS = TRACE\_DRIVER} を使用するように、グローバルに**定義します**。 デバッガーに出力を送信する代わりに、デバッグ印刷ステートメントがトレースログに送信されます。
 
 ```ManagedCPlusPlus
 //
@@ -173,7 +173,7 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
 //
 ```
 
-**注**変換したい場合[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)トレース メッセージの関数には、いくつかの余分な手順を実行する必要があります。 比較して[ **KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)、 **KdPrintEx**関数は 2 つの引数を受け取ります。 変換する、 **KdPrintEx**関数を定義する必要があります、 **WPP\_定義\_ビット**の*ComponentID*、カスタム定義と**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_  *&lt;条件&gt;* \_有効**マクロ。 2 番目のパラメーターを**KdPrintEx**指定のレベルに似ていますが、[トレース レベル](trace-level.md)これらを再定義は必ずしも必要であるため、値します。
+**メモ** [**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)をトレースメッセージ関数に変換する場合は、いくつかの追加の手順を実行する必要があります。 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)と比較した場合、 **KdPrintEx**関数は2つの追加の引数を受け取ります。 **KdPrintEx**関数を変換するには、 *ComponentID*に対して **\_ビットを定義**し、カスタムの**Wpp\_ *&lt;条件&gt;* LOGGER**および WPP を定義\_、wpp を定義する必要があり **\_t_12_ *&lt;condition&gt;* \_有効な**マクロです。 **KdPrintEx**の2番目のパラメーターは、のレベルが[トレースレベル](trace-level.md)の値に似ていることを指定します。そのため、必ずしもそれらを再定義する必要はありません。
 
 
 
@@ -208,12 +208,12 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
 //
 ```
 
-## <a name="step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files"></a>手順 3:C または C++ ソース ファイルに関連付けられているトレースのヘッダー ファイル (.h および .tmh) を含める
+## <a name="step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files"></a>手順 3: 関連するトレースヘッダーファイル (.h および tmh) を C またはC++ソースファイルに含める
 
 
-ヘッダー ファイル (たとえば、trace.h) で、ドライバーのコントロールの GUID とトレース フラグを定義する場合は、場所を初期化し、WPP (ステップ 4) をアンロードまたはトレース メッセージの関数、ソース ファイルのヘッダー ファイルをインクルードする必要があります。
+ドライバーのコントロール GUID とトレースフラグをヘッダーファイル (たとえば、trace) で定義した場合は、WPP を初期化およびアンロードするソースファイルにヘッダーファイルを含める必要があります (手順 4.)。または、トレースメッセージ関数を呼び出します。
 
-さらに、追加する必要があります、 **\#含める**ステートメント[トレース メッセージのヘッダー ファイル](trace-message-header-file.md)(.tmh)。 ドライバーまたはアプリケーションをビルドすると、プリプロセッサ WPP は各トレース メッセージの関数を含むソース ファイルのトレース メッセージのヘッダー ファイル (.tmh) を生成します。
+さらに、[トレースメッセージヘッダーファイル](trace-message-header-file.md)(tmh) の **\#include**ステートメントを追加する必要があります。 ドライバーまたはアプリケーションをビルドすると、WPP プリプロセッサによって、トレースメッセージ関数を含む各ソースファイルのトレースメッセージヘッダーファイル (tmh) が生成されます。
 
 ```ManagedCPlusPlus
 /* -- driver.c  - include the *.tmh file that is generated by WPP --*/
@@ -222,22 +222,22 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
 #include "driver.tmh"  /* this file is auto-generated */
 ```
 
-## <a name="step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp"></a>手順 4:WPP を初期化してクリーンアップするには、適切なコールバック関数にマクロを追加します。
+## <a name="step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp"></a>手順 4: 適切なコールバック関数にマクロを追加して、WPP を初期化してクリーンアップする
 
 
-**ドライバーのエントリで WPP を初期化するには**
+**ドライバーエントリで WPP を初期化するには**
 
--   追加、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))マクロを*DriverEntry*またはカーネル モード ドライバーまたは UMDF 2.0 のドライバーの日常的な*DLLMain*ユーザー モード ドライバーの日常的な (UMDF 1.x) またはアプリケーション。
+-   [WPP\_INIT\_TRACING](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))マクロを、カーネルモードドライバーまたは umdf 2.0 ドライバーの*driverentry*ルーチン、またはユーザーモードドライバー (umdf 1.x) またはアプリケーションの*DLLMain*ルーチンに追加します。
 
-**ドライバーの WPP リソースの終了をクリーンアップするには**
+**ドライバーの終了時に WPP リソースをクリーンアップするには**
 
--   追加、 [WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロ、ドライバーをアンロード ルーチン (たとえば、 *DriverContextCleanup*または*DriverUnload*) のカーネル モード ドライバーまたは UMDF 2.0ドライバー。
+-   カーネルモードドライバーまたは UMDF 2.0 ドライバーのドライバーのアンロードルーチン ( *Drivercontextcleanup* 、 *driverunload*など) に、 [WPP\_CLEANUP](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロを追加します。
 
-    ユーザー モード ドライバー (UMDF 1.x) またはアプリケーションを追加、 [WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロを*DLLMain*ルーチン。
+    ユーザーモードドライバー (UMDF 1.x) またはアプリケーションの場合*は、* WPP ルーチンに[WPP\_CLEANUP](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロを追加します。
 
-    追加することも必要があります、 [WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロを*DriverEntry*ルーチンの場合、 *DriverEntry*が失敗しました。 たとえば場合、 *DriverEntry*失敗した場合、ドライバーのアンロード ルーチンは呼び出されません。 呼び出しが[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)次の例です。
+    また、 *Driverentry*が失敗した場合に備えて、 *Driverentry*ルーチンに[WPP\_CLEANUP](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロを追加する必要があります。 たとえば、 *Driverentry*が失敗した場合、ドライバーのアンロードルーチンは呼び出されません。 次の例の[**Wdfdrivercreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)の呼び出しを参照してください。
 
-WPP を使用して、カーネル モード ドライバーの使用例\_INIT\_トレースと WPP\_でクリーンアップ*DriverEntry*
+WPP を使用したカーネルモードドライバーの例\_INIT\_TRACING と WPP\_*Driverentry*でのクリーンアップ
 
 ```ManagedCPlusPlus
 
@@ -290,7 +290,7 @@ DriverEntry(
 }
 ```
 
-WPP を使用して、カーネル モード ドライバーの使用例\_DriverContextCleanup でクリーンアップ
+DriverContextCleanup での WPP\_クリーンアップを使用したカーネルモードドライバーの例
 
 ```ManagedCPlusPlus
 
@@ -311,7 +311,7 @@ DriverContextCleanup(
 }
 ```
 
-WPP を使用して UMDF 2.0 ドライバーの使用例\_INIT\_DriverEntry でのトレース
+WPP を使用した UMDF 2.0 ドライバーの例\_INIT\_DriverEntry のトレース
 
 ```ManagedCPlusPlus
 
@@ -328,7 +328,7 @@ WPP を使用して UMDF 2.0 ドライバーの使用例\_INIT\_DriverEntry で�
     WPP_INIT_TRACING( MYDRIVER_TRACING_ID );
 ```
 
-WPP の 1.0 の UMDF ドライバーの使用例\_INIT\_トレースと WPP\_DLLMain のクリーンアップ マクロ
+UMDF 1.0 ドライバーでの WPP の使用例\_INIT\_トレースおよび WPP\_クリーンアップマクロ (DLLMain)
 
 ```ManagedCPlusPlus
 /
@@ -364,10 +364,10 @@ DllMain(
 }
 ```
 
-## <a name="step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points"></a>手順 5:適切な時点でのトレース メッセージを生成するドライバーのコードをインストルメント化
+## <a name="step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points"></a>手順 5: 適切なポイントでトレースメッセージを生成するためのドライバーコードのインストルメント化
 
 
-トレース メッセージの関数では、トレース フラグ、およびレベルが適切に定義されている提供された、選択すると、任意のトレース メッセージ関数を使用することができます。 既定のトレース メッセージの関数は、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロ。 このマクロは、ログ ファイルにメッセージを書き込むコードを追加できます。 次の表には、いくつかの定義済みのトレース メッセージの関数が一覧表示され、デバッグ トレース メッセージの作成に使用できる関数を印刷します。
+トレースメッセージ関数、トレースフラグ、およびレベルが適切に定義されていれば、選択したトレースメッセージ関数を使用できます。 既定のトレースメッセージ関数は、 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロです。 このマクロをコードに追加して、ログファイルにメッセージを書き込むことができます。 次の表に、トレースメッセージの作成に使用できる定義済みのトレースメッセージ関数とデバッグ印刷関数の一覧を示します。
 
 <table>
 <colgroup>
@@ -377,22 +377,22 @@ DllMain(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トレース メッセージ関数の例</th>
+<th align="left">トレースメッセージ関数の例</th>
 <th align="left">用途</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a></td>
-<td align="left"><p>これは、既定のトレース メッセージの関数です。 使用する利点<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>ですが、関数は既に定義されています。 WPP_CONFIG_GUIDS マクロで指定したトレース フラグを使用することができます。 使用する欠点<strong>DoTraceMessage</strong>関数がのみ 1 つの条件付きパラメーターは、トレース フラグを受け取ることができます。 トレース レベルを使用する場合は、エラーまたは警告メッセージのみを記録することができますを使用する<strong>DoDebugTrace</strong>マクロ、または使用<strong>TraceEvents</strong>、トレース フラグとトレース レベルの両方を使用します。</p></td>
+<td align="left"><p>これは、既定のトレースメッセージ関数です。 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a>を使用する利点は、関数が既に定義されていることです。 WPP_CONFIG_GUIDS マクロで指定するトレースフラグを使用できます。 <strong>DoTraceMessage</strong>を使用する場合の欠点は、関数が1つの条件付きパラメーター (つまり、トレースフラグ) のみを受け取ることです。 トレースレベルを使用する場合、エラーメッセージまたは警告メッセージだけを記録するには、 <strong>Dodebugtrace</strong>マクロを使用するか、トレースフラグとトレースレベルの両方を使用する<strong>traceevents</strong>を使用します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>TraceEvents</strong></td>
-<td align="left"><p>Visual Studio で WDF のテンプレートを使用して、ドライバーを作成する場合、既定のトレース メッセージの関数になります。 使用する利点<strong>TraceEvents</strong>はトレース フラグでは、トレース メッセージの関数と<a href="trace-level.md" data-raw-source="[Trace Level](trace-level.md)">トレース レベル</a>は既に定義されています。 さらに、テンプレートには、関数の開始と終了時にログ ファイルにメッセージを書き込むインストルメンテーションも含まれます。</p></td>
+<td align="left"><p>Visual Studio で WDF テンプレートを使用してドライバーを作成する場合は、これが既定のトレースメッセージ関数になります。 <strong>Traceevents</strong>を使用する利点は、トレースメッセージ関数、トレースフラグ、および<a href="trace-level.md" data-raw-source="[Trace Level](trace-level.md)">トレースレベル</a>が既に定義されていることです。 また、テンプレートには、関数の開始時と終了時にログファイルにメッセージを書き込むインストルメンテーションも含まれています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)"><strong>KdPrint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)"> <strong>KdPrintEx</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)"><strong>による DbgPrint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)"> <strong>DbgPrintEx</strong></a></td>
-<td align="left"><p>デバッグ印刷機能を使用する利点は、既存のデバッグの print ステートメントを変更する必要はありません。 ファイルにトレース メッセージを記録する、デバッガーでのメッセージの表示から簡単に切り替えることできます。 デバッグ印刷機能のいずれかに含めるトレース メッセージの関数をカスタマイズする場合より多くの作業を行う必要はありません。 Logman でトレース セッションを作成すると、または<a href="tracelog.md" data-raw-source="[Tracelog](tracelog.md)">Tracelog</a>、別のトレース コント ローラーだけを指定するフラグとレベルは、プロバイダーの。 指定した条件を満たすデバッグ print ステートメントは、ログに出力されます。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)"><strong>KdPrint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)"><strong>KdPrintEx</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)"><strong>dbgprint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)"><strong>dbgprintex</strong></a></td>
+<td align="left"><p>デバッグ印刷関数を使用する利点は、既存のデバッグ印刷ステートメントを変更する必要がないことです。 デバッガーでのメッセージの表示から簡単に切り替えて、トレースメッセージをファイルに記録することができます。 トレースメッセージ関数をカスタマイズして、いずれかのデバッグ印刷関数を含める場合は、それ以上の作業を行う必要はありません。 Logman または<a href="tracelog.md" data-raw-source="[Tracelog](tracelog.md)">Tracelog</a>または別のトレースコントローラーでトレースセッションを作成する場合は、プロバイダーのフラグとレベルを指定するだけです。 指定した条件を満たすすべてのデバッグ印刷ステートメントがログに出力されます。</p></td>
 </tr>
 </tbody>
 </table>
@@ -401,24 +401,24 @@ DllMain(
 
 <span id="using_dotracemessage"></span><span id="USING_DOTRACEMESSAGE"></span>
 
-**DoTraceMessage ステートメントを使用します。**
+**DoTraceMessage ステートメントの使用**
 
-1.  追加、 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **DoTraceMessage**マクロは 3 つのパラメーター: フラグ レベル (*TraceFlagName*)、トレース メッセージが書き込まれるときに、条件を定義する、*メッセージ*文字列省略可能な変数一覧。
+1.  デバッグ印刷ルーチンの場合と同様に、コードに[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロを追加します。 **DoTraceMessage**マクロは、3つのパラメーターを受け取ります。フラグレベル (*traceflagname*) は、トレースメッセージが書き込まれるときの条件、*メッセージ*文字列、および省略可能な変数リストを定義します。
 
     ```
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    たとえば、次 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) ステートメントを含む関数の名前を書き込み、 **DoTraceMessage** ステートメントとトレース\_ドライバー フラグ、WPP で定義されている\_コントロール\_トレース セッションの GUID が有効になっています。
+    たとえば、次の[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))ステートメントは、 **DoTraceMessage**\_ステートメントを含む関数の名前を書き込みます。このフラグは、WPP\_コントロール\_guid で定義されているように、トレースに対して有効になっています。セッション.
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );
 
     ```
 
-    例では、定義済みの文字列を使用して、現在実行中の関数 (%func!) のです。 WPP の詳細については、書式指定文字列を定義を参照してください[書式指定文字列を拡張、WPP は何ですか?。](what-are-the-wpp-extended-format-specification-strings-.md)
+    この例では、現在実行中の関数 (% FUNC!) のに定義済みの文字列を使用します。 WPP に定義された書式指定文字列の詳細については、「 [wpp 拡張書式指定文字列とは](what-are-the-wpp-extended-format-specification-strings-.md)」を参照してください。
 
-2.  トレース メッセージを生成するには、Logman を使用して、トレース プロバイダーのトレース セッションを作成または[Tracelog](tracelog.md)、トレースを設定するトレース フラグを指定して\_ドライバー フラグ (ビット 1、0x2)。
+2.  トレースメッセージを生成するには、Logman または[Tracelog](tracelog.md)を使用してトレースプロバイダーのトレースセッションを作成し、トレース\_ドライバーフラグ (ビット1、0x2) を設定するトレースフラグを指定します。
 
 ```ManagedCPlusPlus
 //
@@ -444,26 +444,26 @@ DllMain(
             dwLastError);
 ```
 
-<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span> Visual Studio で、Windows ドライバーのテンプレートを使用している場合、 **TraceEvents** Trace.h ヘッダー ファイルに自動的にマクロが定義されます。
+<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span>Visual Studio で Windows ドライバーテンプレートを使用している場合、 **Traceevents**マクロはトレース .h ヘッダーファイルに定義されています。
 
-**TraceEvents ステートメントを使用します。**
+**TraceEvents ステートメントの使用**
 
-1.  追加、 **TraceEvents**マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **TraceEvents**マクロは、次のパラメーター: トレース レベル (*レベル*) およびトレース フラグ (*フラグ*)、トレース メッセージが条件を定義します。書き込まれた、*メッセージ*文字列、および省略可能な変数一覧。
+1.  デバッグ印刷ルーチンの場合と同様に、 **Traceevents**マクロをコードに追加します。 **Traceevents**マクロは、トレースレベル (*レベル*) とトレースフラグ (*Flags*) のパラメーターを受け取ります。このフラグは、トレースメッセージが書き込まれるときの条件、*メッセージ*文字列、および省略可能な変数リストを定義します。
 
     ```
     TraceEvents(Level, Flags, Message, [VariableList... ]
     ```
 
-    たとえば、次**TraceEvents**ステートメントを含む関数の名前を書き込み、 **TraceEvents**ステートメントで指定すると、条件、 [のトレースレベル](trace-level.md)トレース フラグ パラメーターが満たされているとします。 トレース レベルは、整数値。トレース レベル以下で指定されたデータのトレース セッションを追跡することです。 トレース\_レベル\_情報 Evntrace.h で定義されているし、4 の値を持ちます。 トレース\_WPP でドライバー フラグ (ビット 1、0x2) が定義されている\_コントロール\_GUID。 場合はこのトレース\_トレース セッションのドライバーのビットが設定され、トレース レベルが 4 以上**TraceEvents**トレース メッセージを書き込みます。
+    たとえば、次の**traceevents**ステートメントは、[トレースレベル](trace-level.md)およびトレースフラグパラメーターで指定された条件が満たされた場合に、 **traceevents**ステートメントを含む関数の名前を書き込みます。 トレースレベルは整数値です。トレースセッションに対して指定されたトレースレベル以下のすべてのものがトレースされます。 トレース\_レベルの\_情報は Evntrace で定義され、値は4です。 トレース\_ドライバフラグ (ビット1、0x2) は、WPP\_制御\_GUID で定義されます。 トレースセッションに対してこのトレース\_ドライバービットが設定されており、トレースレベルが4以上の場合、 **Traceevents**はトレースメッセージを書き込みます。
 
     ```ManagedCPlusPlus
             TraceEvents(TRACE_LEVEL_INFORMATION, TRACE_DRIVER, "%!FUNC! Entry");
 
     ```
 
-    例では、定義済みの文字列を使用して、現在実行中の関数 (%func!) のです。 WPP の詳細については、書式指定文字列を定義を参照してください[書式指定文字列を拡張、WPP は何ですか?。](what-are-the-wpp-extended-format-specification-strings-.md)
+    この例では、現在実行中の関数 (% FUNC!) のに定義済みの文字列を使用します。 WPP に定義された書式指定文字列の詳細については、「 [wpp 拡張書式指定文字列とは](what-are-the-wpp-extended-format-specification-strings-.md)」を参照してください。
 
-2.  トレース メッセージを生成するには、Logman を使用して、トレース プロバイダーのトレース セッションを作成または[Tracelog](tracelog.md)します。 トレースのトレース レベルを指定\_レベル\_情報 (4) 以上の場合、トレースを設定するトレース レベルを指定して\_ドライバー ビット (ビット 1、0x2)。
+2.  トレースメッセージを生成するには、Logman または[Tracelog](tracelog.md)を使用して、トレースプロバイダーのトレースセッションを作成します。 トレースレベルを指定して\_レベル\_情報 (4) 以上をトレースし、トレース\_ドライバービット (ビット1、0x2) を設定するトレースレベルを指定します。
 
 ```ManagedCPlusPlus
 //
@@ -483,33 +483,33 @@ DllMain(
                 "Built %s %s\n", __DATE__, __TIME__);
 ```
 
-## <a name="step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution"></a>手順 6:WPP プリプロセッサを実行し、ソリューションを構築するには、Visual Studio プロジェクトを変更します。
+## <a name="step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution"></a>手順 6: WPP プリプロセッサを実行し、ソリューションをビルドするように Visual Studio プロジェクトを変更する
 
 
-WDK のサポートを提供する、 [WPP プリプロセッサ](wpp-preprocessor.md)、Visual Studio と MSBuild 環境を使用して、プリプロセッサを実行できるようにします。
+WDK は、 [WPP プリプロセッサ](wpp-preprocessor.md)をサポートしているので、Visual Studio と MSBuild 環境を使用してプリプロセッサを実行できます。
 
 **WPP プリプロセッサを実行するには**
 
-1.  ソリューション エクスプ ローラーでドライバーのプロジェクトを右クリックし、をクリックして**プロパティ。**
-2.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
-3.  **全般**設定、**実行 WPP**オプションを**はい**。
-4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
-5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
+1.  ソリューションエクスプローラーでドライバープロジェクトを右クリックし、[プロパティ] をクリックし**ます。**
+2.  プロジェクトのプロパティページで、 **[構成プロパティ]** をクリックし、 **[WPP トレース]** をクリックします。
+3.  **[全般]** で、 **[実行する WPP]** オプションを **[はい]** に設定します。
+4.  **[コマンドライン]** で、トレース動作をカスタマイズするためのオプションを追加します。 追加できる内容の詳細については、「 [WPP プリプロセッサ](wpp-preprocessor.md)」を参照してください。
+5.  ターゲットの構成とプラットフォームに合わせて、プロジェクトまたはソリューションをビルドします。 「 [WDK を使用](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)したドライバーの構築」を参照してください。
 
-ビルド プロセスの詳細については、次を参照してください。 [TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
+ビルドプロセスの詳細については、「 [Tracewpp タスク](tracewpp-task.md)」と「 [WDK と Visual Studio のビルド環境](wdk-and-visual-studio-build-environment.md)」を参照してください。
 
-TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別のプリプロセッサを実行することもできます。 このツールは、WDK の bin/x86 および x64 bin サブディレクトリにあります。
+また、TraceWPP ツール (TraceWPP) を使用して、ビルド環境とは別にプリプロセッサを実行することもできます。 このツールは、WDK の bin/x86 および bin/x64 サブディレクトリにあります。
 
-## <a name="step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages"></a>手順 7:キャプチャし、トレース メッセージを確認します。 トレース セッションを開始します。
+## <a name="step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages"></a>手順 7: トレースセッションを開始してトレースメッセージをキャプチャし、検証する
 
 
-WPP の設定を確認する正しくトレース、する必要があります、ドライバーまたはアプリケーションをテスト コンピューターにインストールして、トレース メッセージをキャプチャするトレース セッションを作成します。 トレース セッションを作成するには、Logman などの任意のトレース コント ローラーを使用して、トレース プロバイダーの[Tracelog](tracelog.md)、または[traceview で](traceview.md)します。 メッセージのログ ファイルに書き込まれるか、カーネル デバッガーに送信されることができます。 使用するトレース メッセージの関数によっては、必要がありますにするトレース フラグと、メッセージを生成するトレース レベルを指定します。
+WPP トレースを正しく設定したことを確認するには、ドライバーまたはアプリケーションをテストコンピューターにインストールし、トレースセッションを作成してトレースメッセージをキャプチャする必要があります。 Logman、 [Tracelog](tracelog.md)、 [tracelog](traceview.md)などの任意のトレースコントローラーを使用して、トレースプロバイダーのトレースセッションを作成できます。 メッセージをログファイルに書き込むか、またはカーネルデバッガーに送信することができます。 使用するトレースメッセージ関数によっては、メッセージを生成するトレースフラグとトレースレベルを必ず指定してください。
 
-Evntrace.h で定義されているトレース レベルを使用してであると、トレースをキャプチャする場合など、\_レベル\_情報 (4) 以上、またはレベルを 4 に設定する必要があります。 すべての情報 (4) は、トレース セッションのレベルを 4 に設定すると、警告 (3) エラー (2)、および重大なメッセージが (1) がキャプチャすることも、トレース フラグなど、他の条件が満たされてもと仮定するとします。
+たとえば、Evntrace で定義されているトレースレベルを使用していて、トレース\_レベル\_情報 (4) 以上をキャプチャする場合は、レベルを4に設定する必要があります。 トレースセッションのレベルを4に設定すると、トレースフラグなどの他の条件が満たされている場合に、すべての情報 (4)、警告 (3)、エラー (2)、および重大 (1) メッセージもキャプチャされます。
 
-すべてのメッセージが生成されることを確認するに場合がありますだけ設定するレベルのトレースとトレース フラグに最大値をすべてのメッセージが生成されるようにします。 トレース フラグは、ため (たとえば、0 xffffffff) のすべてのビットを設定する可能性があります (ULONG)、ビット マスクを使用します。 トレース レベルは、バイト値で表されます。 たとえば、使用する場合、Logman を指定することがの 0 xff まではすべてのレベルについて説明します。
+すべてのメッセージが生成されたことを確認するには、トレースレベルとトレースフラグを最大値に設定して、すべてのメッセージが生成されるようにします。 トレースフラグは、ビットマスク (ULONG) を使用するので、すべてのビット (たとえば 0xFFFFFFFF) を設定できます。 トレースレベルは、バイト値で表されます。 たとえば、Logman を使用している場合は、すべてのレベルをカバーするために、0xFF を指定できます。
 
-(例)Logman を使用してトレース セッションを開始します。
+ようLogman を使用したトレースセッションの開始
 
 ```
 logman create trace "myWPP_session" -p {11C3AAE4-0D88-41b3-43BD-AC38BF747E19} 0xffffffff 0xff -o c:\DriverTest\TraceFile.etl 
@@ -519,13 +519,13 @@ logman start "myWPP_session"
 logman stop "myWPP_session"
 ```
 
-(例)トレース ログを使用してトレース セッションを開始します。
+ようTraceLog を使用したトレースセッションの開始
 
 ```
 tracelog -start MyTrace -guid  MyProvider.guid -f d:\traces\testtrace.etl -flag 2 -level 0xFFFF
 ```
 
-[Tracelog](tracelog.md)コマンドが含まれています、 **-f**イベント トレース ログ ファイルの場所と名前を指定するパラメーター。 含まれています、 **-フラグ**フラグ セットを指定するパラメーター、および **-レベル**レベルの設定を指定するパラメーター。 これらのパラメーターを省略できますが、一部のトレース プロバイダー メッセージは生成されず、トレース フラグまたはレベルを設定していない場合。 [トレース レベル](trace-level.md)Evntrace.h のファイルで定義されたトレース レベルは、重要としてトレース メッセージ、エラー、警告、および情報メッセージを分類する便利な方法を提供します。
+[Tracelog](tracelog.md)コマンドには、イベントトレースログファイルの名前と場所を指定する **-f**パラメーターが含まれています。 フラグの設定を指定する **-flag**パラメーターと、レベルの設定を指定する **-level**パラメーターが含まれています。 これらのパラメーターは省略できますが、フラグまたはレベルを設定しない限り、トレースプロバイダーによってはトレースメッセージが生成されません。 トレース[レベル](trace-level.md)は Evntrace ファイルで定義されており、トレースレベルは、重要、エラー、警告、および情報メッセージとしてトレースメッセージを分類するための便利な方法を提供します。
 
 
 

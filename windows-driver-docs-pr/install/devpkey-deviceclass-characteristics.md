@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cbb109d7f021eabc6ec5cf8711a5281f97e283bc
-ms.sourcegitcommit: b67513efda02d3194f408326483dceda26733c79
+ms.openlocfilehash: a5b9c1cdb7274cc982d3b44ac21b3b874ff665ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671115"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840640"
 ---
-# <a name="devpkeydeviceclasscharacteristics"></a>DEVPKEY_DeviceClass_Characteristics
+# <a name="devpkey_deviceclass_characteristics"></a>DEVPKEY_DeviceClass_Characteristics
 
 
 DEVPKEY_DeviceClass_Characteristics device プロパティは、[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)のすべてのデバイスの既定のデバイス特性を表します。
@@ -50,14 +50,14 @@ DEVPKEY_DeviceClass_Characteristics device プロパティは、[デバイスセ
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>た?</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>必須ではない</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>Remarks
+<a name="remarks"></a>注釈
 -------
 
 DEVPKEY_DeviceClass_Characteristics は、デバイスセットアップクラスがインストールされ、後で変更されない場合にのみ設定する必要があります。 デバイスセットアップクラスをインストールし、このプロパティを設定する方法の詳細については、「 [**INF ClassInstall32」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)と、 「特殊な*方法」で提供されているレジストリエントリ値 DeviceCharacteristics に関する情報を参照してください。* [**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)の値エントリ名キーワード
@@ -89,7 +89,7 @@ Windows Server 2003 および Windows XP では、このプロパティはサポ
 ## <a name="see-also"></a>関連項目
 
 
-[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
 
 [**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 

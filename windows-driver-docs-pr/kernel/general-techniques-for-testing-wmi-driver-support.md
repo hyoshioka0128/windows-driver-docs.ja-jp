@@ -3,21 +3,21 @@ title: WMI ドライバーのサポートをテストするための一般的な
 description: WMI ドライバーのサポートをテストするための一般的な手法
 ms.assetid: 4d1a9198-2cc7-491d-a803-80f846882a6e
 keywords:
-- WMI の WDK のカーネルのテスト
-- WMI のサポートの WDK カーネルのテスト
-- WMI WDM プロバイダー ログ WDK
-- WDK WMI エラー
-- WDK の WMI プロバイダーをログします。
-- WDK の WMI イベント
-- WMI の WDK カーネルでは、エラー
+- WMI WDK カーネル、テスト
+- WMI のテストサポート WDK カーネル
+- WMI WDM プロバイダーが WDK をログに記録する
+- エラー WDK WMI
+- プロバイダーログ WDK WMI
+- イベント WDK WMI
+- WMI WDK カーネル、エラー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9735c59323a45ddd39855aff8593b97c19688452
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2aff029db061d387d185e198c99d4581ab517ad9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386591"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836695"
 ---
 # <a name="general-techniques-for-testing-wmi-driver-support"></a>WMI ドライバーのサポートをテストするための一般的な手法
 
@@ -25,44 +25,44 @@ ms.locfileid: "67386591"
 
 
 
-### <a name="wmi-client-tools"></a>WMI クライアント ツール
+### <a name="wmi-client-tools"></a>WMI クライアントツール
 
-ドライバーで WMI のサポートをテストする際のいくつかのツールがあります。
+ドライバーで WMI サポートをテストするために使用できるツールがいくつかあります。
 
 <a href="" id="wbemtest"></a>Wbemtest  
-オペレーティング システムには、WMI クラスとクラスのインスタンスに対してクエリを実行、プロパティ値を変更、execute メソッド、およびイベント通知を受信する際の GUI を提供する Wbemtest ツールが含まれています。 接続、"ルート\\wmi"ドライバーのサポートをテストする名前空間。
+オペレーティングシステムには、Wbemtest ツールが用意されています。このツールを使用すると、WMI クラスとクラスインスタンスの照会、プロパティ値の変更、メソッドの実行、およびイベント通知の受信を行うことができます。 "Root\\wmi" 名前空間に接続して、ドライバーのサポートをテストします。
 
-<a href="" id="wmic"></a>Wmic  
-Microsoft Windows XP およびそれ以降のオペレーティング システム、ドライバーをテストする WMI 関連のコマンドを発行する際のコマンド シェルを提供する Wmic ツールが含まれます。
+<a href="" id="wmic"></a>Wmic.exe  
+Microsoft Windows XP 以降のオペレーティングシステムには、WMI 関連のコマンドを発行してドライバーをテストするために使用できるコマンドシェルを提供する Wmic ツールが含まれています。
 
 <a href="" id="wmimofck"></a>Wmimofck  
-**Wmimofck**コマンドを使用して、バイナリの MOF ファイルの構文を確認できます。 使用することも、 **wmimofck t** VBScript ファイルを生成するコマンド。 このスクリプトを使用すると、WMI クラスのインスタンスのクエリのドライバーの処理をテストします。 **Wmimofck-w**コマンドには、クエリを実行およびクラスを設定、メソッドを実行し、イベントの受信をテストする web ページが生成されます。 Web ページは、複雑なパラメーターを使用して、または戻り値 (埋め込まれたクラスの配列) などを実行中のメソッドをサポートされていないことに注意してください。 このような場合は、Wbemtest を代わりに使用することができます。 参照してください[wmimofck.exe を使用して](using-wmimofck-exe.md)Wmimofck の詳細についてはします。
+**Wmimofck**コマンドを使用して、バイナリ MOF ファイルの構文を確認できます。 **Wmimofck**コマンドを使用して、VBScript ファイルを生成することもできます。 このスクリプトを使用すると、ドライバーの WMI クラスインスタンスクエリの処理をテストできます。 **Wmimofck**コマンドを実行すると、web ページが生成され、クエリを実行したり、クラスを設定したり、メソッドを実行したり、イベントを受信したりすることができます。 Web ページでは、複合パラメーターまたは戻り値 (埋め込みクラスの配列など) を使用するメソッドの実行はサポートされていないことに注意してください。 このような場合は、代わりに Wbemtest を使用できます。 Wmimofck の詳細については、「 [wmimofck の使用](using-wmimofck-exe.md)」を参照してください。
 
-テストすることもドライバーの WMI のサポートするカスタムの WMI クライアント アプリケーションを記述することで、WMI のユーザー モード API を使用します。
+また、WMI ユーザーモード API を使用して、カスタム WMI クライアントアプリケーションを作成することによって、ドライバーの WMI サポートをテストすることもできます。
 
-提供または WMI 情報を使用するアプリケーションでは、このユーザー モード API の詳細については、Windows Management Instrumentation については、Microsoft Windows SDK ドキュメントを参照してください。
+アプリケーションが WMI 情報を提供または使用できるようにする、このユーザーモード API の詳細については、Microsoft Windows SDK のドキュメントの Windows Management Instrumentation に関する情報を参照してください。
 
-WMI クライアント アプリケーションは、ドライバーをテストする次のタスクを実行します。
+WMI クライアントアプリケーションは、次のタスクを実行してドライバーをテストします。
 
 -   WMI に接続します。
 
-    WMI に接続するには、アプリケーションが、コンポーネント オブジェクト モデル (COM) 関数を呼び出すことができます**CoCreateInstance**へのポインターを取得する、**セグ: 前**インターフェイス。 その後、アプリケーションを呼び出す、 **IWbemLocator::ConnectServer** WMI に接続するメソッド。 アプリケーション、この呼び出しからへのポインターが受信、 **IWbemServices**インターフェイス。
+    WMI に接続するために、アプリケーションはコンポーネントオブジェクトモデル (COM) 関数**CoCreateInstance**を呼び出して、 **IWbemLocator**インターフェイスへのポインターを取得できます。 次に、アプリケーションは**IWbemLocator:: ConnectServer**メソッドを呼び出して、WMI に接続します。 この呼び出しから、アプリケーションは**IWbemServices**インターフェイスへのポインターを受け取ります。
 
--   ドライバーの情報にアクセスします。
+-   ドライバー内の情報にアクセスします。
 
-    情報にアクセスして、イベントを登録するには、アプリケーションがのメソッドを使用して、 **IWbemServices**インターフェイス。
+    情報にアクセスし、イベントに登録するには、アプリケーションで**IWbemServices**インターフェイスのメソッドを使用します。
 
-### <a href="" id="ddk-wmi-irps-and-the-system-event-log-kg"></a>WMI の Irp およびシステム イベント ログ
+### <a href="" id="ddk-wmi-irps-and-the-system-event-log-kg"></a>WMI Irp とシステムイベントログ
 
-カーネル モードで厳密に発生する WMI エラーは、システム イベント ログに記録されます。 イベント ビューアーを使用すると、システム イベント ログを確認します。 (を参照してください[ログ エラー](logging-errors.md)詳細についてはします)。
+厳密にカーネルモードで発生した WMI エラーは、システムイベントログに記録されます。 イベントビューアーを使用して、システムイベントログを調べることができます。 (詳細については、「[ログエラー](logging-errors.md) 」を参照してください)。
 
-このようなエラーの 2 つの主要なソース WMI 要求への形式が正しくない応答、イベント通知に不正確なパラメーターです。 たとえば、ドライバーは、正しくない形式を返します[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)への応答内のデータ構造、 [ **IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)要求、システムはをシステム イベント ログに記録されます。 システムに無効な呼び出しを記録しても[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)と[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent) WMI イベント通知を発行します。
+このようなエラーの2つの主要な原因は、WMI 要求への不適切な応答と、イベント通知への正しくないパラメーターです。 たとえば、 [**irp\_が\_reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[**irp\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)によって出力されたときに、ドライバーが間違った形式の[**wmi reginfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)データ構造を返した場合、システムイベントログに記録されます。 また、WMI イベント通知を発行するために、 [**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)および[**WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)への無効な呼び出しもログに記録されます。
 
-### <a href="" id="ddk-wmi-wdm-provider-log-kg"></a>WMI WDM プロバイダー ログ
+### <a href="" id="ddk-wmi-wdm-provider-log-kg"></a>WMI WDM プロバイダーログ
 
-WMI WDM プロバイダー (Wmiprov.dll) によって処理される際に発生する WMI エラーは、WMI WDM プロバイダー、Wmiprov.log のログ ファイルに記録されます。 これは、テキスト ファイルを %windir% で見つかります\\system32\\wbem\\ログ\\wmiprov.log します。 ここで、ドライバーの正しくないか、不足している MOF リソースなどのエラーが記録されます。 場合は、次のように不適切な MOF リソース ファイル %windir%\\system32\\mofcomp.log がエラーに関連する追加の情報を必要があります。
+Wmi WDM プロバイダー (Wmiprov) による処理中に発生した WMI エラーは、WMI WDM プロバイダー Wmiprov のログファイルに記録されます。 このテキストファイルは、% windir%\\system32\\wbem\\logs\\wmiprov にあります。 ドライバーの MOF リソースが正しくない、または見つからないなどのエラーがここに記録されます。 無効な MOF リソースの場合、ファイル% windir%\\system32\\mofcomp.exe に、エラーに関する追加情報が含まれている可能性があります。
 
-Windows Vista より前のバージョンの Windows では、Wmimgmt.msc アプリケーションを使用してすべての WMI プロバイダーのログ設定を変更できます。 (Windows 98/Wbemcntl を代わりに、使用します)。無効にする、ログ記録を再度有効にまたは、ディレクトリ、WMI のログ ファイルは、保持だけでなくこのようなファイルの最大サイズの設定を変更できます。 詳細については、次を参照してください。 [WMI ログファイル](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-log-files)します。
+Windows Vista より前のバージョンの Windows では、Wmimgmt .msc アプリケーションを使用して、すべての WMI プロバイダーのログ設定を変更できます。 (Windows 98/Me では、代わりに Wbemcntl を使用してください)。ログ記録を無効または有効にしたり、WMI ログファイルを保持するディレクトリを変更したりできます。また、このようなファイルの最大サイズを設定することもできます。 詳細については、「 [WMI ログファイル](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-log-files)」を参照してください。
 
  
 

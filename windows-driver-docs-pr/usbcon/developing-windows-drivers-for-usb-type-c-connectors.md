@@ -1,26 +1,26 @@
 ---
-Description: C-USB 型システムに埋め込みコント ローラーが含まれていない場合それ以外の場合は Microsoft 提供の UCSI ドライバーをロードするコネクタ用のドライバーを記述する必要があります。
-title: USB タイプ-c コネクタ用の Windows ドライバーの開発の概要
+Description: USB タイプ C システムに埋め込みコントローラーが含まれていない場合は、コネクタ用のドライバーを作成する必要があります。それ以外の場合は、Microsoft 提供の UCSI ドライバーを読み込むことができます。
+title: USB Type-C コネクタ用 Windows ドライバー開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bcee7d92a050eff44e096df6d79c341a369d9ba
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: c94bcc13f4f6be2654dd57ea360280bc8a199a28
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716984"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842389"
 ---
-# <a name="overview-of-developing-windows-drivers-for-usb-type-c-connectors"></a>USB タイプ-c コネクタ用の Windows ドライバーの開発の概要
+# <a name="overview-of-developing-windows-drivers-for-usb-type-c-connectors"></a>USB Type-C コネクタ用 Windows ドライバー開発の概要
 
-C-USB 型システムが PD ステート マシンを実装していないまたはステート マシンの実装が非 ACPI トランスポート経由で UCSI をサポートしていませんが、コネクタのドライバーを記述する必要があります。 その場合は、Microsoft から提供されたを読み込むことができます[UCSI ドライバー](ucsi.md)します。
+USB タイプ C システムが PD ステートマシンを実装していない場合や、ステートマシンを実装していても、非 ACPI トランスポートをサポートしていない場合は、コネクタ用のドライバーを作成する必要があります。 含まれている場合は、Microsoft 提供の[Ucsi ドライバー](ucsi.md)を読み込むことができます。
 
 **対象読者**
 
--   USB タイプ-c システムのドライバー開発ガイダンスでは、埋め込みコント ローラーは含まれません。
+-   USB タイプ C システムのドライバー開発ガイダンスには、埋め込みコントローラーは含まれていません。
 
-**最終更新日**
+**最終更新日時**
 
--   2018 の年 9 月
+-   2018年9月
 
 **Windows のバージョン**
 
@@ -29,20 +29,20 @@ C-USB 型システムが PD ステート マシンを実装していないまた
 
 **重要な API**
 
--   [USB タイプ-c ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+-   [USB タイプ-C ドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 ![ドライバー](images/drivers-c.png)
 
 
-|             ハードウェアまたはファームウェアの機能             |                                                                                                                                                    非切り離し可能                                                                                                                                                    |                                                                                                                              アドオンのカード                                                                                                                               |
+|             ハードウェア/ファームウェアの機能             |                                                                                                                                                    非切り離し                                                                                                                                                    |                                                                                                                              アドオンカード                                                                                                                               |
 |--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| USB タイプ-c コネクタには、PD ステート マシンはありません。 |        [クライアント ドライバーを書き込む UcmTcpciCx](https://docs.microsoft.com/windows-hardware/drivers/usbcon/write-a-usb-type-c-port-controller-driver)します。 <p>始まり[UcmTcpciCx ポート コント ローラーのクライアント ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmTcpciCxClientSample) </p>        | [クライアント ドライバーを書き込む UcmCx](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)します。 <p>始まり、 [UcmCx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)します。</p> |
-|         コネクタは、ACPI に UCSI-準拠。         |                                                          UcmUcsiCx.sys と UcmUcsiAcpiClient、インボックス ドライバーを読み込みます。 参照してください[USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)します。                                                           |                                                                                                                                  なし                                                                                                                                   |
-|       コネクタは ACPI せず UCSI に準拠しています。        | クライアント ドライバーは UcmUcsiCx 書き込みます。 詳細については、次を参照してください。 [UCSI クライアント ドライバーを書く](write-a-ucsi-driver.md)します。 <p>始まり[こちらのサンプル テンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)ACPI 部分を必要なバスの実装に置き換えます。 |                                                           [クライアント ドライバーを書き込む UcmCx](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)します。                                                            |
-|    PD ステート マシンが UCSI 準拠ではありません。     |                          [クライアント ドライバーを書き込む UcmCx](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)します。 <p>始まり、 [UcmCx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)します。                          | [クライアント ドライバーを書き込む UcmCx](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)<p>始まり、 [UcmCx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)します。 </p>  |
+| USB タイプ-C コネクタには、PD ステートマシンがありません。 |        [クライアントドライバーを UcmTcpciCx に書き込み](https://docs.microsoft.com/windows-hardware/drivers/usbcon/write-a-usb-type-c-port-controller-driver)ます。 <p>[Ucmtcpcicx ポートコントローラークライアントドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmTcpciCxClientSample)を使用して開始する </p>        | [クライアントドライバーを UcmCx に書き込み](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)ます。 <p>[Ucmcx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)を使用して開始します。</p> |
+|         コネクタは、ACPI に準拠しています。         |                                                          インボックスドライバー UcmUcsiCx と UcmUcsiAcpiClient を読み込みます。 「 [USB タイプ-C コネクタシステムソフトウェアインターフェイス (UCSI) ドライバー」を](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)参照してください。                                                           |                                                                                                                                  該当なし                                                                                                                                   |
+|       コネクタは、ACPI を使用せずに、UCSI に準拠しています。        | クライアントドライバーを UcmUcsiCx に書き込みます。 詳細については、「 [UCSI クライアントドライバーの記述](write-a-ucsi-driver.md)」を参照してください。 <p>[このサンプルテンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)から開始し、ACPI 部分を必要なバスの実装に置き換えます。 |                                                           [クライアントドライバーを UcmCx に書き込み](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)ます。                                                            |
+|    には PD ステートマシンがありますが、UCSI に準拠していません。     |                          [クライアントドライバーを UcmCx に書き込み](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)ます。 <p>[Ucmcx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)を使用して開始します。                          | [クライアントドライバーを UcmCx に書き込む](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)<p>[Ucmcx サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)を使用して開始します。 </p>  |
 
 ## <a name="in-this-section"></a>このセクションの内容
-実装には、前の表では、提案されたソリューションは、これらのトピックを参照します。
+前の表の提案されたソリューションを実装するには、次のトピックを参照してください。
 <table>
 <colgroup>
 <col width="50%" />
@@ -56,54 +56,54 @@ C-USB 型システムが PD ステート マシンを実装していないまた
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="architecture--usb-type-c-in-a-windows-system.md" data-raw-source="[Architecture: USB Type-C design for a Windows system](architecture--usb-type-c-in-a-windows-system.md)">アーキテクチャ:Windows システムの USB 型-C# のデザイン</a></p></td>
-<td><p>USB タイプ-c システムとハードウェア コンポーネントをサポートする Microsoft 提供のドライバーの一般的なハードウェア設計について説明します。</p></td>
+<td><p><a href="architecture--usb-type-c-in-a-windows-system.md" data-raw-source="[Architecture: USB Type-C design for a Windows system](architecture--usb-type-c-in-a-windows-system.md)">アーキテクチャ: Windows システム向けの USB タイプ C 設計</a></p></td>
+<td><p>USB タイプ C システムの一般的なハードウェア設計と、ハードウェアコンポーネントをサポートする Microsoft 提供のドライバーについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="function-controller-bringup-for-a-usb-type-c-system.md" data-raw-source="[Bring up the function controller on a USB Type-C Windows system](function-controller-bringup-for-a-usb-type-c-system.md)">USB タイプ C Windows システム関数のコント ローラーの起動します。</a></p></td>
-<td><p>関数コント ローラーのドライバーは、その型から C の USB コネクタがサポートし、課金を開始し、デバイスに描画できる現在の最大量ときにバッテリ サブシステムに通知充電中レベルの詳細について、オペレーティング システムを通知します。</p></td>
+<td><p><a href="function-controller-bringup-for-a-usb-type-c-system.md" data-raw-source="[Bring up the function controller on a USB Type-C Windows system](function-controller-bringup-for-a-usb-type-c-system.md)">USB 型の関数コントローラーを表示する-C Windows システム</a></p></td>
+<td><p>関数コントローラーのドライバーは、USB タイプ C コネクタがサポートしている充電レベルについてオペレーティングシステムに通知し、充電を開始できることと、デバイスが描画できる最大容量をバッテリサブシステムに通知します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="dual-role-controller-bringup-for-a-usb-type-c-system.md" data-raw-source="[Bring up the dual-role controller for a USB Type-C Windows system](dual-role-controller-bringup-for-a-usb-type-c-system.md)">USB タイプ C Windows システムのデュアル ロール コント ローラーの起動します。</a></p></td>
-<td><p>役割の交代の USB ドライバー (URS) は、WDF クラスの拡張機能とデュアル ロール コント ローラーの役割の交代機能を処理するクライアント ドライバーのセットです。 システムの役割のデュアル コント ローラーの場合は、システムの USB 型-c コネクタのパートナーのポートに接続されているデバイスによってシステムの役割を切り替えることができます。 これにより、ワイヤード (有線) のドッキングなど、興味深いシナリオができます。</p></td>
+<td><p><a href="dual-role-controller-bringup-for-a-usb-type-c-system.md" data-raw-source="[Bring up the dual-role controller for a USB Type-C Windows system](dual-role-controller-bringup-for-a-usb-type-c-system.md)">USB タイプのデュアルロールコントローラーを起動する-C Windows システム</a></p></td>
+<td><p>USB 役割スイッチドライバー (URS) は、一連の WDF クラス拡張機能とそのクライアントドライバーで、デュアルロールコントローラーの役割切り替え機能を処理します。 システムにデュアルロールコントローラーがある場合は、システムの USB タイプ C コネクタのパートナーポートに接続されているデバイスに応じて、システムの役割を切り替えることができます。 これにより、ワイヤード (有線) ドッキングなどの興味深いシナリオが可能になります。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">USB タイプ-c コネクタのドライバーを作成します。</a></p></td>
-<td><p>USB タイプ-c コネクタとコネクタのドライバーの想定される動作を管理する USB コネクタ マネージャ (UCM) について説明します。</p></td>
+<td><p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">USB タイプの C コネクタドライバーを作成する</a></p></td>
+<td><p>USB タイプ C コネクタと、コネクタドライバーの予期される動作を管理する USB コネクタマネージャー (UCM) について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="write-a-usb-type-c-port-controller-driver.md" data-raw-source="[Write a USB Type-C port controller driver](write-a-usb-type-c-port-controller-driver.md)">USB タイプ-c ポート コント ローラー ドライバーを作成します。</a></p></td>
-<td><p>記述する方法について説明します、せず PD ステート マシン型-C# の USB コネクタと通信する型-C# の USB ポート コント ローラー ドライバー。 </p></td>
+<td><p><a href="write-a-usb-type-c-port-controller-driver.md" data-raw-source="[Write a USB Type-C port controller driver](write-a-usb-type-c-port-controller-driver.md)">USB タイプの C ポートコントローラードライバーを作成する</a></p></td>
+<td><p>PD ステートマシンなしで USB タイプ C コネクタと通信する USB タイプ C ポートコントローラードライバーを記述する方法について説明します。 </p></td>
 
 </tr>
 <tr class="even">
 <td><p><a href="write-a-ucsi-driver.md" data-raw-source="[Write a UCSI client driver](write-a-ucsi-driver.md)">Write a UCSI client driver (UCSI クライアント ドライバーの作成)</a></p></td>
-<td><p>非 ACPI のトランスポートを使用する UCSI 準拠コント ローラー用ドライバーを記述する方法について説明します。 </p></td>
+<td><p>非 ACPI トランスポートを使用する UCSI 準拠コントローラーのドライバーを記述する方法について説明します。 </p></td>
 
 </tr>
 
 <tr>
 <tr class="odd">
 <td><a href="policy-manager-client.md" data-raw-source="[Write a USB Type-C Policy Manager client driver](policy-manager-client.md)">Write a USB Type-C Policy Manager client driver (USB Type-C ポリシー マネージャー クライアント ドライバーの作成)</a></td>
-<td>Microsoft から提供された USB 型 C ポリシー マネージャーは、USB 型-C# のコネクタのアクティビティを監視します。 Windows、バージョンは 1809 には、一連のポリシー マネージャーにクライアント ドライバーを記述するインターフェイスのプログラミングが導入されています。 クライアント ドライバーは、USB 型-C# のコネクタのポリシーの決定に参加できます。 この設定すると、エクスポート カーネル モード ドライバーまたはユーザー モード ドライバーを記述できます。 </td>
+<td>Microsoft 提供の USB タイプ C ポリシーマネージャーは、USB タイプ C コネクタのアクティビティを監視します。 Windows バージョン1809では、クライアントドライバーをポリシーマネージャーに書き込むために使用できる一連のプログラミングインターフェイスが導入されています。 クライアントドライバーは、USB タイプ C コネクタのポリシーの決定に参加できます。 このセットを使用して、カーネルモードのエクスポートドライバーまたはユーザーモードドライバーを作成できます。 </td>
 </tbody>
 </table>
 
 
 
-**関連項目**
+**関連セクション**
 
-[USB の役割の切り替え (URS) のクライアント ドライバーを記述します。 ](usb-dual-role-driver-stack-architecture.md)
+[USB 役割スイッチ (URS) クライアントドライバーの作成](usb-dual-role-driver-stack-architecture.md)
 
 [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
-[USB 関数のクライアント ドライバーを記述します。](developing-windows-drivers-for-usb-function-controllers.md)  
+[USB 関数のクライアントドライバーを作成する](developing-windows-drivers-for-usb-function-controllers.md)  
 
-[USB 関数コントローラーのプログラミング参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[USB 関数コントローラーのプログラミング参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 ## <a name="related-topics"></a>関連トピック
 
-[USB タイプ-c コネクタの Windows のサポート](oem-tasks-for-bringing-up-a-usb-typec.md)  
+[USB タイプ C コネクタの Windows サポート](oem-tasks-for-bringing-up-a-usb-typec.md)  
 
 
 

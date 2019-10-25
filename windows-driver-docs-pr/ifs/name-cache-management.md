@@ -3,22 +3,22 @@ title: 名前キャッシュ管理
 description: 名前キャッシュ管理
 ms.assetid: 3e1b1419-320e-44e0-a6c2-823517cf07c7
 keywords:
-- RDBSS WDK ファイル システム、名のキャッシュ
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、名のキャッシュ
+- RDBSS WDK ファイルシステム、名前キャッシュ
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、名前キャッシュ
 - NAME_CACHE 構造体
-- WDK RDBSS 名
-- キャッシュ WDK RDBSS
-- ファイルが見つかりませんメッセージ WDK RDBSS
-- WDK RDBSS 名のキャッシュ
+- WDK RDBSS の名前
+- WDK RDBSS をキャッシュする
+- ファイルが見つからないことを確認するメッセージ WDK RDBSS
+- 名前キャッシュ WDK RDBSS
 - NAME_CACHE_CONTROL 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7e5b965feb362a6b3ca611a4e55341b5c1b90aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f960d927fe2c7cef915e555a6a5bc8ea6f334691
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841055"
 ---
 # <a name="name-cache-management"></a>名前キャッシュ管理
 
@@ -26,21 +26,21 @@ ms.locfileid: "67386071"
 ## <span id="ddk_name_cache_management_if"></span><span id="DDK_NAME_CACHE_MANAGEMENT_IF"></span>
 
 
-名前\_キャッシュ構造キャッシュ名の文字列の最近の操作がサーバーで実行されるため、クライアントは、冗長な要求を抑制できます。 たとえば、最近「ファイルが見つかりません」メッセージで失敗しました、オープンの要求とクライアント アプリケーションは、大文字の文字列でもう一度要求をオープンを試行してネットワークのミニ リダイレクターは大文字と小文字をサポートしていません、RDBSS が失敗要求直後になしで、サーバーをヒットします。
+キャッシュ構造\_名前を指定すると、サーバーで実行された最近の操作の名前文字列がキャッシュされるため、クライアントは冗長な要求を抑制できます。 たとえば、開いている要求が最近失敗し、"ファイルが見つかりません" というメッセージが表示され、クライアントアプリケーションが大文字の文字列を使用して開いている要求を再度試行し、ネットワークミニリダイレクターが大文字と小文字を区別した名前をサポートしていない場合、RDBSS は要求を失敗させることができます。サーバーに到達することなくすぐに使用できます。
 
-名前に時間のウィンドウと操作数の上限を配置する、アルゴリズムは、一般に、\_キャッシュ エントリ。 時間枠は、通常は 2 秒です。 その場合、名前\_キャッシュ エントリが 2 秒より大きい、一致は失敗し、要求は、サーバーに移動します。 要求は、サーバーの名前でもう一度失敗\_キャッシュ エントリが別の 2 秒間ウィンドウで更新されます。 要求操作の数が一致しないかどうかは、この名前になることがサーバーに送信された 1 つまたは複数の要求\_キャッシュ エントリが無効です。 繰り返しますが、この操作は、サーバーに送信されます。
+一般に、このアルゴリズムでは、名前\_キャッシュエントリに時間枠と操作数の制限を設定します。 通常、時間枠は2秒です。 そのため、NAME\_CACHE entry が2秒を超える場合、一致は失敗し、要求はサーバーに送られます。 サーバーで要求が再度失敗した場合は、\_キャッシュエントリの名前が、別の2秒のウィンドウで更新されます。 要求操作数が一致しない場合は、1つ以上の要求がサーバーに送信されています。これにより、この名前\_キャッシュエントリが無効になる可能性があります。 ここでも、この操作はサーバーに送信されます。
 
-名前\_キャッシュ構造がネットワーク ミニ-リダイレクター、MRX に公開されるパブリック部分\_名前\_キャッシュ、および RDBSS でのみ使用するためのプライベート セクション。 ミニ リダイレクター部分がコンテキスト フィールド NTSTATUS、いくつか追加ミニリダイレクター特定ストレージの名前の割り当てを併置できますこの名前エントリおよびコンテキスト拡張機能へのポインターに以前のサーバー操作の結果の\_キャッシュの構造体。 詳細については、次を参照してください。 [ **RxNameCacheInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheinitialize)します。
+キャッシュ構造\_名前には、ネットワークミニリダイレクター、MRX\_NAME\_CACHE に公開されている部分と、RDBSS でのみ使用するプライベートセクションがあります。 ミニリダイレクターの部分には、この名前エントリに対する以前のサーバー操作の結果、および名前\_キャッシュと共同で割り当てることができる追加のミニリダイレクター固有のストレージ用のコンテキスト拡張機能ポインターのコンテキストフィールド NTSTATUS があります。データ. 詳細については、「 [**RxNameCacheInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheinitialize)」を参照してください。
 
-SMB 操作の数は MRX のコンテキストのフィールドに保存できませんでした、ミニ固有リダイレクターの状態の例を Windows ネットワークの\_名前\_キャッシュします。 ときに[ **RxNameCacheCheckEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachecheckentry)が呼び出されると、コンテキスト フィールドと名前キャッシュ内の一致の検索の一部として指定されたパラメーターの間の等価性チェックが実行されます。 名前と\_ネットワーク ミニリダイレクターのジョブ (秒) の名前でこのフィールドを有効期間の適切な値を指定すると、キャッシュ エントリが作成または更新\_キャッシュ エントリ。
+Windows ネットワークの場合、SMB 操作数はミニリダイレクター固有の状態の例です。これは、MRX\_NAME\_CACHE のコンテキストフィールドに保存できます。 [**RxNameCacheCheckEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachecheckentry)が呼び出されると、名前キャッシュ内の一致の検索の一部として、コンテキストフィールドと指定されたパラメーターの間で等価性のチェックが実行されます。 名前\_キャッシュエントリが作成または更新されると、このフィールドに適切な値を指定するためのネットワークミニリダイレクターのジョブと、NAME\_CACHE エントリの有効期間 (秒単位) が示されます。
 
-名前のプライベート RDBSS 部分\_キャッシュ構造に含まれる、名前、速度の参照名のハッシュ値を Unicode 文字列として、エントリと、サーバーが大文字と小文字をサポートしているかどうかを示すフラグの有効期限。
+名前\_キャッシュ構造体の private RDBSS 部分には、Unicode 文字列としての名前、高速参照を行う名前のハッシュ値、エントリの有効期限、およびサーバーが大文字と小文字を区別する名前をサポートするかどうかを示すフラグが含まれています。
 
-名前\_キャッシュ\_制御構造は、指定した名前キャッシュを管理します。 フリー リスト、アクティブな一覧をおよび更新を同期するロックがあります。 名前\_キャッシュ\_制御構造も名前の現在の数を格納するフィールドを持つ\_キャッシュ エントリを割り当て、割り当てられる、サイズ、追加のエントリの最大数の値それぞれの名前に使用されるネットワーク-ミニリダイレクター ストレージ\_キャッシュ エントリ、および統計情報 (キャッシュが更新された回数の合計チェック、有効な一致が返され、およびネットワーク ミニ リダイレクターがネットワーク操作を保存する場合) の値。 **MaximumEntries**フィールド名の数の制限\_プログラムを適切に動作しない場合に作成されたキャッシュ エントリが大量のメモリを消費する悪意のあるファイル名を持つオープン要求の数が多いを生成します。
+\_制御構造の名前\_キャッシュは、特定の名前キャッシュを管理します。 これには、空きリスト、アクティブリスト、および更新を同期するためのロックがあります。 \_制御構造の名前\_キャッシュには、現在割り当てられている名前\_キャッシュエントリの数、割り当てられるエントリの最大数の値、使用される追加のネットワークミニリダイレクターストレージのサイズを格納するフィールドもあります。各名前\_キャッシュエントリ、統計の値 (キャッシュが更新された回数、確認された、有効な一致が返された回数、およびネットワークミニリダイレクターがネットワーク操作を保存した時刻)。 **Maximumentries**フィールドは、不適切なプログラムが大量のメモリを消費している不適切なファイル名を持つ多数のオープン要求を生成する場合に、作成されるキャッシュエントリ\_名前の数を制限します。
 
-現在はオブジェクトの RDBSS によって管理される名前キャッシュ\_名前\_いない\_が見つかりました。 この名前キャッシュ 2 秒間ウィンドウが保持され、いずれかの操作がサーバーに送信される場合は無効にします。 これでした発生 (サンプル 1) ファイルをクライアント アプリケーションがある、サーバー上のアプリケーションが別のファイル (sample2) の作成に使用できるサーバーでを開きます。 クライアントは、(サンプル 1) 最初のファイルを読み取るし、(サンプル 2) の 2 番目のファイルがサーバーで作成されたことを学習、2 番目のファイル (sample2) に一致する名前のキャッシュのヒット エラーを返すことはできません。 この最適化は、連続するファイルを開く操作がまだ存在しないを同じファイルでの大文字と小文字のみを処理します。 このシナリオでは、Microsoft Word を使用して行われます。
+現在、オブジェクト\_名に対して RDBSS によって管理されている名前キャッシュが見つかりません\_\_。 この名前キャッシュでは、2秒のウィンドウが保持されます。これは、いずれかの操作がサーバーに送信されると無効になります。 これは、サーバー上のアプリケーションがサーバー上で別のファイル (サンプル 2) の作成を通知するために使用するファイル (サンプル 1) が開かれている場合に発生する可能性があります。 クライアントが最初のファイル (サンプル 1) を読み取って、2番目のファイル (サンプル 2) がサーバーに作成されたことを認識すると、2番目のファイル (サンプル 2) に一致する名前キャッシュのヒットがエラーを返すことはできません。 この最適化によって処理されるのは、まだ存在しない同じファイルに対して、連続したファイルのオープン操作が行われた場合のみです。 このシナリオは、Microsoft Word を使用して行われます。
 
-RDBSS 名のキャッシュ管理ルーチンを以下に示します。
+RDBSS name キャッシュ管理ルーチンには、次のものが含まれます。
 
 <table>
 <colgroup>
@@ -55,40 +55,40 @@ RDBSS 名のキャッシュ管理ルーチンを以下に示します。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheactivateentry" data-raw-source="[&lt;strong&gt;RxNameCacheActivateEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheactivateentry)"><strong>RxNameCacheActivateEntry</strong></a></p></td>
-<td align="left"><p>このルーチンは、名のキャッシュ エントリを取得し、有効期限の時間とネットワーク ミニリダイレクター コンテキストを更新します。 アクティブ リストのエントリが置かれます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheactivateentry" data-raw-source="[&lt;strong&gt;RxNameCacheActivateEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheactivateentry)"><strong>RxNameCacheActivateEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、名前キャッシュエントリを受け取り、有効期限とネットワークミニリダイレクターコンテキストを更新します。 次に、アクティブなリストにエントリを配置します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachecheckentry" data-raw-source="[&lt;strong&gt;RxNameCacheCheckEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachecheckentry)"><strong>RxNameCacheCheckEntry</strong></a></p></td>
-<td align="left"><p>このルーチンは、有効性を NAME_CACHE エントリを確認します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachecheckentry" data-raw-source="[&lt;strong&gt;RxNameCacheCheckEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachecheckentry)"><strong>RxNameCacheCheckEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、NAME_CACHE エントリの有効性を確認します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachecreateentry" data-raw-source="[&lt;strong&gt;RxNameCacheCreateEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachecreateentry)"><strong>RxNameCacheCreateEntry</strong></a></p></td>
-<td align="left"><p>このルーチンでは、割り当て、指定した名前の文字列を含む NAME_CACHE 構造体を初期化します。 呼び出し元が名前のキャッシュ コンテキストの追加のネットワーク ミニリダイレクター要素を初期化し、名前キャッシュ アクティブ リストにエントリを配置が必要です。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachecreateentry" data-raw-source="[&lt;strong&gt;RxNameCacheCreateEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachecreateentry)"><strong>RxNameCacheCreateEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、指定された名前の文字列を使用して NAME_CACHE 構造体を割り当て、初期化します。 呼び出し元は、name cache コンテキストの追加のネットワークミニリダイレクター要素を初期化し、そのエントリを name cache active list に配置する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheexpireentry" data-raw-source="[&lt;strong&gt;RxNameCacheExpireEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheexpireentry)"><strong>RxNameCacheExpireEntry</strong></a></p></td>
-<td align="left"><p>このルーチンは、フリー リストに NAME_CACHE エントリを設定します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheexpireentry" data-raw-source="[&lt;strong&gt;RxNameCacheExpireEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheexpireentry)"><strong>RxNameCacheExpireEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、NAME_CACHE エントリをフリーリストに挿入します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheexpireentrywithshortname" data-raw-source="[&lt;strong&gt;RxNameCacheExpireEntryWithShortName&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheexpireentrywithshortname)"><strong>RxNameCacheExpireEntryWithShortName</strong></a></p></td>
-<td align="left"><p>このルーチンでは、すべて名前プレフィックスには、指定した短いファイル名が一致する NAME_CACHE エントリの有効期限です。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheexpireentrywithshortname" data-raw-source="[&lt;strong&gt;RxNameCacheExpireEntryWithShortName&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheexpireentrywithshortname)"><strong>RxNameCacheExpireEntryWithShortName</strong></a></p></td>
+<td align="left"><p>このルーチンは、指定された短いファイル名と一致する名前プレフィックスを持つすべての NAME_CACHE エントリの有効期限が切れます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefetchentry" data-raw-source="[&lt;strong&gt;RxNameCacheFetchEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefetchentry)"><strong>RxNameCacheFetchEntry</strong></a></p></td>
-<td align="left"><p>このルーチンは、NAME_CACHE エントリの指定した名前の文字列での一致を検索します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefetchentry" data-raw-source="[&lt;strong&gt;RxNameCacheFetchEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefetchentry)"><strong>RxNameCacheFetchEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、NAME_CACHE エントリに対して指定された名前の文字列との一致を検索します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefinalize" data-raw-source="[&lt;strong&gt;RxNameCacheFinalize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefinalize)"><strong>RxNameCacheFinalize</strong></a></p></td>
-<td align="left"><p>このルーチンは、NAME_CACHE_CONTROL 構造に関連付けられた NAME_CACHE エントリのすべての記憶域を解放します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefinalize" data-raw-source="[&lt;strong&gt;RxNameCacheFinalize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefinalize)"><strong>RxNameCacheFinalize</strong></a></p></td>
+<td align="left"><p>このルーチンは、NAME_CACHE_CONTROL 構造体に関連付けられているすべての NAME_CACHE エントリのストレージを解放します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefreeentry" data-raw-source="[&lt;strong&gt;RxNameCacheFreeEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecachefreeentry)"><strong>RxNameCacheFreeEntry</strong></a></p></td>
-<td align="left"><p>このルーチンは NAME_CACHE エントリの記憶域を解放し、デクリメント NAME_CACHE_CONTROL 構造に関連付けられているエントリをキャッシュする NAME_CACHE の数。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefreeentry" data-raw-source="[&lt;strong&gt;RxNameCacheFreeEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecachefreeentry)"><strong>RxNameCacheFreeEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、NAME_CACHE エントリのストレージを解放し、NAME_CACHE_CONTROL 構造に関連付けられている NAME_CACHE キャッシュエントリの数を減らします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheinitialize" data-raw-source="[&lt;strong&gt;RxNameCacheInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/namcache/nf-namcache-rxnamecacheinitialize)"><strong>RxNameCacheInitialize</strong></a></p></td>
-<td align="left"><p>このルーチンでは、名前のキャッシュ (NAME_CACHE_CONTROL 構造) を初期化します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheinitialize" data-raw-source="[&lt;strong&gt;RxNameCacheInitialize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/namcache/nf-namcache-rxnamecacheinitialize)"><strong>RxNameCacheInitialize</strong></a></p></td>
+<td align="left"><p>このルーチンは、名前キャッシュ (NAME_CACHE_CONTROL 構造体) を初期化します。</p></td>
 </tr>
 </tbody>
 </table>

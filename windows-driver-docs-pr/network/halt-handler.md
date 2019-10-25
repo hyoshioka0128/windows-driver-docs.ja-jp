@@ -3,17 +3,17 @@ title: ミニポート ドライバー停止ハンドラー
 description: ミニポート ドライバー停止ハンドラー
 ms.assetid: 63b0b25e-f52f-4486-a57d-448985207fc8
 keywords:
-- MiniportHaltEx
-- WDK NDIS ハンドラーを停止します。
-- アンロードのミニポート ドライバー
+- ミニ Porthaltex
+- 停止ハンドラー WDK NDIS
+- ミニポートドライバーのアンロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc013a34451cff8c9f193cb1cfcaecf7b9ea892
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4daef1f1cd839ce1e0dea95e0cea9a519ac911a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374084"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840486"
 ---
 # <a name="miniport-driver-halt-handler"></a>ミニポート ドライバー停止ハンドラー
 
@@ -21,54 +21,54 @@ ms.locfileid: "67374084"
 
 
 
-NDIS ミニポート ドライバーを指定する必要があります、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数を[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。
+NDIS ミニポートドライバーは、 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)に[*Miniporthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数を提供する必要があります。
 
-*MiniportHaltEx*すべてを元に戻す必要がありますを[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)でした。 たとえば、NDIS ミニポート ドライバーでは次の場合があります。
+*Miniporthaltex*は、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)が行ったすべてを元に戻す必要があります。 たとえば、NDIS ミニポートドライバーは次のような場合があります。
 
--   空きポート。 (詳細については、次を参照してください[、NDIS ポートを解放](freeing-an-ndis-port.md)。)。
+-   空きポート。 (詳細については、「 [NDIS ポートの解放](freeing-an-ndis-port.md)」を参照してください)。
 
--   すべてのハードウェア リソースを解放する[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)要求。
+-   [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)によって要求されたすべてのハードウェアリソースを解放します。
 
--   割り込みのリソースを呼び出すことによって解放[ **NdisMDeregisterInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)します。
+-   [**NdisMDeregisterInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)を呼び出して、割り込みリソースを解放します。
 
--   任意のメモリを解放する[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)割り当てられます。
+-   [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)に割り当てられたメモリを解放します。
 
--   しない限り、NIC を停止、 [ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)関数が、NIC の初期状態に復元既にします。
+-   [*ミニポート Shutdownex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)関数が既に nic を初期状態に復元していない限り、nic を停止します。
 
-次の図は、ミニポート ドライバーをアンロードします。
+次の図は、ミニポートドライバーのアンロードを示しています。
 
-![ミニポート ドライバーをアンロードするかを示す図](images/207-11.png)
+![ミニポートドライバーのアンロードを示す図](images/207-11.png)
 
-*MiniportHaltEx*を返す前に、ドライバーをアンロードするために必要な操作を完了する必要があります。 受信表示の場合、ミニポート ドライバーは未解決 (つまり、受信したネットワーク データがどの NDIS NDIS までことが示されているがまだは返されません)、 *MiniportHaltEx*にこのようなデータが返されるまで戻り、ミニポート ドライバーの[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)関数。
+*ミニ Porthaltex*は、を返す前に、ドライバーをアンロードするために必要な操作を完了する必要があります。 ミニポートドライバーに未処理の受信通知がある場合 (つまり、ndis に示されているものの、どの NDIS がまだ返されていないネットワークデータを受信した場合 *)、ミニ*ポートドライバーの[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)関数。
 
-上記の図は、一連の呼び出しによって行わでした、 *MiniportHaltEx*関数。 これらの呼び出しにはできても、呼び出しのサブセットのみです。 実際の呼び出しのセットは、ミニポート ドライバーの以前の動作に依存します。 ミニポート ドライバーが作成で呼び出して同じこれら*MiniportInitializeEx*場合ハードウェアの問題のためネットワーク アダプターが正常に初期化することはできませんが、または必要なリソースを取得できないためです。 このような場合は、 *MiniportInitializeEx*先行するアクションを元に戻して、ドライバーをアンロードする必要があります。 それ以外の場合、 *MiniportHaltEx*のアクションは元に戻す*MiniportInitializeEx*します。
+上の図は、 *Miniporthaltex*関数によって実行される可能性がある一連の呼び出しを示しています。 これらの呼び出しは、可能な呼び出しのサブセットにすぎません。 実際の呼び出しのセットは、ミニポートドライバーの以前のアクションに依存します。 ハードウェアの問題が原因で、または必要なリソースを取得できないためにネットワークアダプターを正常に初期化できない場合、ミニポートドライバーは*MiniportInitializeEx*で同じ呼び出しを行うことができます。 このような場合、 *MiniportInitializeEx*は、前の操作を元に戻すことによってドライバーをアンロードする必要があります。 それ以外の場合、 *Miniporthaltex*は*MiniportInitializeEx*の操作を元に戻します。
 
-次に、ミニポート ドライバーがかかる可能性がある特定のアクションを反転させるために必要な呼び出しについて説明します。
+次の一覧では、ミニポートドライバーによって実行される可能性のある特定の操作を取り消すために必要な呼び出しについて説明します。
 
--   ミニポート ドライバーに割り込みが登録されている場合を呼び出す必要が[ **NdisMDeregisterInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)します。
+-   ミニポートドライバーで割り込みが登録されている場合は、 [**NdisMDeregisterInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)を呼び出す必要があります。
 
--   呼び出して、ミニポート ドライバーは、タイマーまたはタイマーが設定された場合、 [ **NdisCancelTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscanceltimerobject)のために作成した各タイマー。 呼び出し**NdisCancelTimerObject**失敗した場合、タイマーが既に発生しました。 ミニポート ドライバーが、タイマーのハンドラーから戻る前に完了するを待機するこの例では、 *MiniportHaltEx*します。
+-   ミニポートドライバーがタイマーまたはタイマーを設定している場合は、作成した各タイマーに対して[**NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)を呼び出す必要があります。 **NdisCancelTimerObject**の呼び出しが失敗した場合、タイマーは既に発生している可能性があります。 この場合、ミニポートドライバーは、タイマーハンドラーが完了するのを待ってから、ミニ*Porthaltex*から戻る必要があります。
 
--   ミニポート ドライバーでメモリを割り当てられた場合[ **NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatememorywithtagpriority)を呼び出す必要が[ **NdisFreeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreememory)にそのメモリを解放します。
+-   ミニポートドライバーで[**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatememorywithtagpriority)を使用してメモリが割り当てられている場合、そのメモリを解放するには[**NdisFreeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreememory)を呼び出す必要があります。
 
--   ミニポート ドライバーでメモリを割り当てられた場合[ **NdisMAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)、または[ **NdisMAllocateSharedMemoryAsyncEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemoryasyncex)、呼び出す必要があります[ **NdisMFreeSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory)そのメモリを解放します。
+-   ミニポートドライバーが[**NdisMAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemory)または[**NdisMAllocateSharedMemoryAsyncEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemoryasyncex)を使用してメモリを割り当てた場合、そのメモリを解放するには[**NdisMFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreesharedmemory)を呼び出す必要があります。
 
--   ミニポート ドライバーが割り当てられ初期化とパケットの記述子のプールの記憶域[ **NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)を呼び出す必要が[ **NdisFreeNetBufferPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferpool)をその記憶域を解放します。
+-   [**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)を使用してパケット記述子のプールに対して、ミニポートドライバーによって記憶域が割り当てられ初期化されている場合、その記憶域を解放するには[**NdisFreeNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferpool)を呼び出す必要があります。
 
--   ミニポート ドライバーでは、割り当てられたまたは任意のハードウェア リソースを予約済み、これらが返されます。 たとえば、ミニポート ドライバーに NIC での I/O ポート範囲がマップされている場合、解除する必要があるポートを呼び出して[ **NdisMDeregisterIoPortRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterioportrange)します。
+-   ミニポートドライバーにハードウェアリソースが割り当てられているか予約されている場合は、これらが返されます。 たとえば、ミニポートドライバーが NIC の i/o ポート範囲をマップした場合、 [**NdisMDeregisterIoPortRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterioportrange)を呼び出すことによってポートを解放する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ミニポート ドライバーのアダプターの状態](adapter-states-of-a-miniport-driver.md)
+[ミニポートドライバーのアダプターの状態](adapter-states-of-a-miniport-driver.md)
 
-[NDIS ポートを解放します。](freeing-an-ndis-port.md)
+[NDIS ポートの解放](freeing-an-ndis-port.md)
 
-[ミニポート アダプターを停止します。](halting-a-miniport-adapter.md)
+[ミニポートアダプターの停止](halting-a-miniport-adapter.md)
 
-[ミニポート アダプタの状態と操作](miniport-adapter-states-and-operations.md)
+[ミニポートアダプターの状態と操作](miniport-adapter-states-and-operations.md)
 
-[ミニポート ドライバーのリセットと Halt 関数](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
+[ミニポートドライバーのリセットと停止の機能](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
 
  
 

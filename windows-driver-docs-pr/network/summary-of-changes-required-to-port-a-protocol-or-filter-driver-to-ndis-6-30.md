@@ -1,52 +1,52 @@
 ---
-title: NDIS 6.3 にポート プロトコルまたはフィルター ドライバーへの変更の概要
-description: NDIS 6.30 をサポートする NDIS 6.x プロトコルまたはフィルター ドライバーを更新するには、次のセクションで説明したよう変更する必要があります。
+title: NDIS 6.3 へのポートプロトコルまたはフィルタードライバーへの変更の概要
+description: Ndis 6. x プロトコルまたはフィルタードライバーを更新して NDIS 6.30 をサポートするには、次のセクションで説明されているように変更する必要があります。
 ms.assetid: 1C6CB2E1-C129-4F3B-AF7D-357580BEE7F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b447b26d16ec8f924e5c80d4aae555bd2933d0e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c1f75ecb622a6374d28a002b3bfb7f1fa2335920
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841805"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-630"></a>プロトコルまたはフィルター ドライバーを NDIS 6.30 に移植するために必要な変更の概要
 
 
-NDIS 6.30 をサポートする NDIS 6.x プロトコルまたはフィルター ドライバーを更新するには、次のセクションで説明したよう変更する必要があります。
+Ndis 6. x プロトコルまたはフィルタードライバーを更新して NDIS 6.30 をサポートするには、次のセクションで説明されているように変更する必要があります。
 
--   [環境を構築します。](#build-environment)
--   [一般的なプロトコル ドライバーの要件の移植](#general-porting-requirements-for-protocol-drivers)
--   [[全般] のフィルター ドライバーの要件の移植](#general-porting-requirements-for-filter-drivers)
+-   [ビルド環境](#build-environment)
+-   [プロトコルドライバーの一般的な移植要件](#general-porting-requirements-for-protocol-drivers)
+-   [フィルタードライバーの一般的な移植要件](#general-porting-requirements-for-filter-drivers)
 
-## <a name="build-environment"></a>環境を構築します。
-
-
--   NDIS630 で存在する場合、NDIS60 または NDIS61 NDIS620、プリプロセッサの定義を置き換えます。
--   メジャーおよびマイナーの NDIS バージョン番号、NDIS で更新\_*Xxx*\_ドライバー\_特性構造」の説明に従って[NDIS 6.30 ドライバーを実装する](implementing-an-ndis-6-30-driver.md).
-
-## <a name="general-porting-requirements-for-protocol-drivers"></a>一般的なプロトコル ドライバーの要件の移植
+## <a name="build-environment"></a>ビルド環境
 
 
-プロトコル ドライバーが完了する必要が常に**NetEventSetPower**パケットを待つことがなく。 詳細については、以下をご覧ください。
+-   プリプロセッサ定義 NDIS60 または NDIS61 または NDIS620 (存在する場合) を NDIS630 に置き換えます。
+-   「Ndis [6.30 ドライバーの実装](implementing-an-ndis-6-30-driver.md)」で説明されているように、Ndis\_*Xxx*\_ドライバー\_特性の構造に含まれるメジャーおよびマイナーバージョン番号を更新します。
 
--   [NDIS 6.30 で電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
--   [PnP イベントの処理とプロトコル ドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-a-protocol-driver.md)
-
-NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
-
-## <a name="general-porting-requirements-for-filter-drivers"></a>[全般] のフィルター ドライバーの要件の移植
+## <a name="general-porting-requirements-for-protocol-drivers"></a>プロトコルドライバーの一般的な移植要件
 
 
-フィルター ドライバーが完了する必要が常に**NetEventSetPower**パケットを待つことがなく。 詳細については、以下をご覧ください。
+プロトコルドライバーは、常にパケットを待機せずに**NetEventSetPower**を完了する必要があります。 詳しくは、次のトピックをご覧ください。
 
--   [NDIS 6.30 で電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
--   [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)
--   [**NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)
+-   [NDIS 6.30 の電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
+-   [プロトコルドライバーでの PnP イベントと電源管理イベントの処理](handling-pnp-events-and-power-management-events-in-a-protocol-driver.md)
+
+NDIS 6.30 の機能の詳細については、「 [ndis 6.30 の概要](introduction-to-ndis-6-30.md)」を参照してください。
+
+## <a name="general-porting-requirements-for-filter-drivers"></a>フィルタードライバーの一般的な移植要件
+
+
+フィルタードライバーは、常にパケットを待機せずに**NetEventSetPower**を完了する必要があります。 詳しくは、次のトピックをご覧ください。
+
+-   [NDIS 6.30 の電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
+-   [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)
+-   [**NET\_PNP\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)
 -   [OID\_PNP\_設定\_電源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
-NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
+NDIS 6.30 の機能の詳細については、「 [ndis 6.30 の概要](introduction-to-ndis-6-30.md)」を参照してください。
 
  
 

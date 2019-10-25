@@ -3,20 +3,20 @@ title: ドライバーの登録と開始/停止制御
 description: ドライバーの登録と開始/停止制御
 ms.assetid: 66f44703-1277-49fe-a481-c8712172db0f
 keywords:
-- RDBSS WDK ファイル システムでは、コントロールの開始/停止
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、コントロールの開始/停止
-- WDK RDBSS のコントロールの開始/停止
-- RDBSS WDK ファイル システム、ドライバーの登録
-- リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、ドライバーの登録
-- ドライバー WDK RDBSS の登録
+- RDBSS WDK ファイルシステム、スタート/停止コントロール
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、開始/停止コントロール
+- スタート/停止コントロールの WDK RDBSS
+- RDBSS WDK ファイルシステム、ドライバーの登録
+- リダイレクトされたドライブバッファリングサブシステム WDK ファイルシステム、ドライバーの登録
+- ドライバーの登録 (WDK RDBSS)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9318232e9424377594eca0fb83484e9f40ba6199
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d8a1cff9b9082bf5e39a47ef60d02ff4da1fd5d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380357"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841433"
 ---
 # <a name="driver-registration-and-startstop-control"></a>ドライバーの登録と開始/停止制御
 
@@ -24,33 +24,33 @@ ms.locfileid: "67380357"
 ## <span id="ddk_driver_registration_and_start_stop_control_if"></span><span id="DDK_DRIVER_REGISTRATION_AND_START_STOP_CONTROL_IF"></span>
 
 
-オペレーティング システムを起動すると、Windows は RDBSS とレジストリの設定に基づいてネットワーク ミニ リダイレクター ドライバーを読み込みます。 Rdbsslib.lib を静的にリンクされているモノリシック ネットワーク ミニ リダイレクター ドライバーのドライバーを呼び出す必要があります、 [ **RxDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdriverentry)ルーチンからその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ネットワーク ドライバーとリンクされているルーチン RDBSSLIB ライブラリのコピーを初期化します。 ここで、 **RxDriverEntry** RDBSS 他のルーチンが呼び出され、使用前に、ルーチンを呼び出す必要があります。 独自の非モノリシック ネットワーク ミニ リダイレクター ドライバー (Microsoft SMB リダイレクター) の場合 rdbss.sys デバイス ドライバーが初期化される**DriverEntry**ルーチンが読み込まれるときにします。
+オペレーティングシステムが起動すると、Windows によって、レジストリの設定に基づいて、RDBSS およびすべてのネットワークミニリダイレクタードライバーが読み込まれます。 Rdbsslib を使用して静的にリンクされているモノリシックネットワークミニリダイレクタードライバーの場合、ドライバーは[**RxDriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry)ルーチンを[**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンから呼び出して、ネットワークにリンクされている rdbsslib ライブラリのコピーを初期化する必要があります。driver. この場合、他の RDBSS ルーチンが呼び出されて使用される前に、 **RxDriverEntry**ルーチンを呼び出す必要があります。 モノリシックではないネットワークミニリダイレクタードライバー (Microsoft SMB リダイレクター) の場合、rdbss デバイスドライバーは、読み込まれると、独自の**Driverentry**ルーチンで初期化されます。
 
-ネットワークのミニ リダイレクターは、ドライバーは、カーネルによって読み込まれ、ドライバーが読み込まれると RDBSS で登録を解除します RDBSS を登録します。 ネットワークのミニ リダイレクターに通知を呼び出して読み込まれた RDBSS [ **RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)、RDBSS から登録ルーチンをエクスポートします。 この登録プロセスの一環として、ネットワークのミニ リダイレクターにパラメーターを渡します**RxRegisterMinirdr** MINIRDR 大きな構造体へのポインターは\_ディスパッチします。 この構造体には、ネットワークのミニ リダイレクターとネットワークのミニ リダイレクター カーネル ドライバーによって実装されるコールバック ルーチンへのポインターのディスパッチ テーブルの構成情報が含まれています。 RDBSS は、このコールバック ルーチンの一覧を使ってネットワーク ミニ リダイレクター ドライバーに呼び出しを行います。
+ドライバーがカーネルによって読み込まれ、ドライバーがアンロードされたときに RDBSS で登録解除されると、ネットワークミニリダイレクターは RDBSS に登録します。 ネットワークミニリダイレクターは、RDBSS からエクスポートされた登録ルーチン[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)を呼び出すことによって読み込まれたことを RDBSS に通知します。 この登録プロセスの一環として、ネットワークミニリダイレクターは**RxRegisterMinirdr**にパラメーターを渡します。このパラメーターは、大きな構造体である minirdr\_DISPATCH へのポインターです。 この構造体には、ネットワークミニリダイレクターの構成情報と、ネットワークミニリダイレクターカーネルドライバーによって実装されるコールバックルーチンへのポインターのディスパッチテーブルが含まれています。 RDBSS は、このコールバックルーチンの一覧を使用してネットワークミニリダイレクタードライバーを呼び出します。
 
-[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)ルーチンすべてドライバーの設定、最上位レベルの RDBSS ディスパッチ ルーチンを指すネットワーク ミニ リダイレクター ドライバーのディスパッチ ルーチン[ **RxFsdDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxfsddispatch)します。 ネットワークのミニ リダイレクターは、独自のエントリ ポイントを保存し、呼び出しの後、独自のエントリ ポイントでドライバーのディスパッチをリライトしてこの動作をオーバーライドできます**RxRegisterMinirdr**を返すか、特別なパラメーターを設定してとき呼び出す**RxRegisterMinirdr**します。
+[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)ルーチンは、最上位レベルの RDBSS ディスパッチルーチン[**RxFsdDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxfsddispatch)を指すように、ネットワークミニリダイレクタードライバーのすべてのドライバーディスパッチルーチンを設定します。 ネットワークミニリダイレクターは、独自のエントリポイントを保存し、 **RxRegisterMinirdr**への呼び出しが返された後、またはを呼び出す**ときに特別なパラメーターを設定することにより、この動作をオーバーライドできます。RxRegisterMinirdr**。
 
-ネットワークのミニ リダイレクター ドライバーは開始されません操作の呼び出しを受信するまでその[ **MRxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx) 、MINIRDR でのコールバック ルーチンのいずれかのルーチン、渡された\_ディスパッチ。構造体。 **MrxStart**ネットワーク ミニリダイレクター独自ドライバー ディスパッチのエントリ ポイントを保持しない限り、操作のコールバック ルーチンを受信する場合、ネットワーク ミニ リダイレクター ドライバーによってコールバック ルーチンを実装する必要があります。 それ以外の場合、RDBSS はまでドライバーを通じて次 I/O 要求パケットのみ許可**MrxStart**正常に返されます。
+ネットワークミニリダイレクタードライバーは、 [**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)ルーチンへの呼び出しを受け取るまで、実際には操作を開始しません。これは、minirdr\_ディスパッチ構造体で渡されたコールバックルーチンの1つです。 **MrxStart**コールバックルーチンは、ネットワークミニリダイレクターが独自のドライバーディスパッチエントリポイントを保持しない限り、操作のコールバックルーチンを受信する場合は、ネットワークミニリダイレクタードライバーによって実装される必要があります。 それ以外の場合、RDBSS は、 **MrxStart**が正常に返されるまで、次の i/o 要求パケットだけをドライバーに送信できます。
 
--   IRP のデバイスの作成要求とデバイスの操作を FileObject -&gt;、IRPSP で FileName.Length は 0 と FileObject -&gt;RelatedFileObject は**NULL**します。
+-   デバイスに対する IRP 要求では、IRPSP の FileObject&gt;のファイル名の長さが0で、FileObject&gt;の関連性のある Fileobject が**NULL**のデバイス操作が作成されます。
 
-IRP 要求に対して、RDBSS にディスパッチ ルーチン[ **RxFsdDispatch** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxfsddispatch)のステータスが返されます\_リダイレクター\_いない\_開始します。
+その他の IRP 要求では、RDBSS ディスパッチルーチン[**RxFsdDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxfsddispatch)は\_開始されていない状態\_リダイレクター\_状態の状態を返します。
 
-RDBSS ディスパッチ ルーチンは、次の I/O 要求パケットのすべての要求とも失敗します。
+RDBSS ディスパッチルーチンは、次の i/o 要求パケットに対するすべての要求も失敗します。
 
--   IRP\_MJ\_作成\_"メール スロット"
+-   \_メールスロットを作成\_IRP\_MJ
 
--   IRP\_MJ\_作成\_名前付き\_パイプ
+-   IRP\_MJ\_\_パイプ\_名前を作成します
 
-[ **MrxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx) RDBSS によってネットワーク ミニリダイレクターによって実装されるコールバック ルーチンが呼び出されるときに、 [ **RxStartMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されます。 RDBSS **RxStartMinirdr**ルーチンは、通常、ファイル システムのコントロールのコード (FSCTL) の結果として呼び出されます。 または、ネットワークのミニ リダイレクターを開始するには、ユーザー モード アプリケーションまたはサービスから I/O 制御コード (IOCTL) を要求します。 呼び出し**RxStartMinirdr**から行ったことはできません、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ネットワークのミニ リダイレクターに成功した呼び出しの後の日常的な[ **RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)いくつかの処理を開始は、ドライバーの初期化が完了する必要があるためです。 1 回、 **RxStartMinirdr**呼び出しが受信される、RDBSS が呼び出すことにより、起動プロセスを完了、 **MrxStart**ネットワーク ミニ リダイレクターのルーチンです。 場合に呼び出し**MrxStart**を返します。 成功すると、RDBSS RDBSS に RDBSS でミニ リダイレクターの内部状態を設定する\_開始します。
+ネットワークミニリダイレクターによって実装される[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)コールバックルーチンは、 [**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 RDBSS **RxStartMinirdr**ルーチンは、通常、ネットワークミニリダイレクターを開始するために、ユーザーモードのアプリケーションまたはサービスからのファイルシステム制御コード (FSCTL) または i/o 制御コード (IOCTL) 要求の結果として呼び出されます。 [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)への呼び出しが成功した後、ネットワークミニリダイレクターの[**driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンから**RxStartMinirdr**を呼び出すことはできません。一部の開始処理では、ドライバーの初期化が必要になるためです。完了. **RxStartMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MrxStart**ルーチンを呼び出すことによって開始プロセスを完了します。 **MrxStart**を呼び出すと成功が返された場合、RDBSS は RDBSS 内のミニリダイレクターの内部状態を RDBSS\_開始に設定します。
 
-RDBSS、ルーチンをエクスポートして[ **RxSetDomainForMailslotBroadcast**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxsetdomainformailslotbroadcast)"メール スロット"ブロードキャスト ドメインを設定します。 このルーチンは、ネットワークのミニ リダイレクター メール スロットをサポートしている場合、登録時に使用されます。
+RDBSS は、 [**RxSetDomainForMailslotBroadcast**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxsetdomainformailslotbroadcast)のルーチンをエクスポートして、メールスロットブロードキャスト用にドメインを設定します。 このルーチンは、ネットワークミニリダイレクターが mailslots をサポートしている場合に、登録時に使用されます。
 
-利便性のためのルーチン、 [  **\_ \_RxFillAndInstallFastIoDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch)、エクスポートされた RDBSS では、すべて IRP のコピーを使用できます\_MJ\_XXX ドライバーI/O 要求の処理に匹敵する高速な I/O を処理するための日常的なポインターのベクトルのディスパッチが、このルーチンは、モノリシック以外のドライバーのみ機能します。
+RDBSS によってエクスポートされた便宜的なルーチン[ **\_\_RxFillAndInstallFastIoDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)を使用して、i/o 要求処理を同等の高速 i/o ディスパッチに処理するための、すべての IRP\_MJ\_XXX ドライバールーチンポインターをコピーできます。ベクターですが、このルーチンはモノリシックでないドライバーに対してのみ機能します。
 
-RDBSS には、ネットワークのミニ リダイレクターが開始または停止する RDBSS に通知するルーチンもエクスポートされます。 これらの呼び出しはネットワークのミニ リダイレクターには、ユーザー モードの管理サービスが含まれている場合、使用またはユーティリティ アプリケーションの開始し、停止のリダイレクターです。 このユーザー モード サービスまたはアプリケーションの場合は、ネットワークのミニ リダイレクター ドライバーを開始または停止にする必要がありますを示すために FSCTL または IOCTL のカスタム要求を送信できます。 リダイレクターは、RDBSS を呼び出すことができます[ **RxStartMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr)または[ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)ルーチンを開始または停止このネットワーク RDBSS に通知するにはミニ リダイレクター。
+また、RDBSS は、ネットワークミニリダイレクターが開始または停止していることを RDBSS に通知するルーチンもエクスポートします。 これらの呼び出しは、ネットワークミニリダイレクターに、リダイレクターを開始および停止するユーザーモード管理サービスまたはユーティリティアプリケーションが含まれている場合に使用されます。 このユーザーモードサービスまたはアプリケーションは、ネットワークミニリダイレクタードライバーにカスタム FSCTL または IOCTL 要求を送信して、開始または停止する必要があることを示すことができます。 リダイレクターは、RDBSS [**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)または[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)ルーチンを呼び出して、このネットワークミニリダイレクターを開始または停止するように RDBSS に通知できます。
 
-次の表では、ドライバーの登録と開始/停止を RDBSS 制御ルーチンを示します。
+次の表は、RDBSS ドライバーの登録と開始/停止の制御ルーチンを示しています。
 
 <table>
 <colgroup>
@@ -65,44 +65,44 @@ RDBSS には、ネットワークのミニ リダイレクターが開始また�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdriverentry" data-raw-source="[&lt;strong&gt;RxDriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdriverentry)"><strong>RxDriverEntry</strong></a></p></td>
-<td align="left"><p>このルーチンからモノリシック ネットワーク ミニ リダイレクター ドライバーによって呼び出されます。 その<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;strong&gt;DriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)"> <strong>DriverEntry</strong> </a> RDBSS の初期化ルーチン。</p>
-<p>モノリシック以外のドライバーの初期化ルーチンは等しく、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;strong&gt;DriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)"> <strong>DriverEntry</strong> </a> rbss.sys デバイス ドライバーの日常的な。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry" data-raw-source="[&lt;strong&gt;RxDriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry)"><strong>RxDriverEntry</strong></a></p></td>
+<td align="left"><p>このルーチンは、RDBSS を初期化するために、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;strong&gt;DriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)"><strong>Driverentry</strong></a>ルーチンからモノリシックネットワークミニリダイレクタードライバーによって呼び出されます。</p>
+<p>モノリシックでないドライバーの場合、この初期化ルーチンは、rbss デバイスドライバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;strong&gt;DriverEntry&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)"><strong>Driverentry</strong></a>ルーチンに相当します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr" data-raw-source="[&lt;strong&gt;RxRegisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)"><strong>RxRegisterMinirdr</strong></a></p></td>
-<td align="left"><p>このルーチンは、RDBSS で、内部の登録の表に、登録情報を追加、ドライバーに登録するネットワーク ミニ リダイレクター ドライバーによって呼び出されます。 RDBSS もネットワーク ミニリダイレクターのデバイス オブジェクトを作成します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr" data-raw-source="[&lt;strong&gt;RxRegisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)"><strong>RxRegisterMinirdr</strong></a></p></td>
+<td align="left"><p>このルーチンは、ネットワークミニリダイレクタードライバーによって呼び出され、ドライバーを RDBSS に登録します。これにより、登録情報が内部登録テーブルに追加されます。 RDBSS は、ネットワークミニリダイレクター用のデバイスオブジェクトも構築します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxsetdomainformailslotbroadcast" data-raw-source="[&lt;strong&gt;RxSetDomainForMailslotBroadcast&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxsetdomainformailslotbroadcast)"><strong>RxSetDomainForMailslotBroadcast</strong></a></p></td>
-<td align="left"><p>このルーチンは、メール スロットがドライバーによってサポートされている場合は、メール スロットのブロードキャストを使用するドメインを設定するネットワーク ミニ リダイレクター ドライバーによって呼び出されます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxsetdomainformailslotbroadcast" data-raw-source="[&lt;strong&gt;RxSetDomainForMailslotBroadcast&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxsetdomainformailslotbroadcast)"><strong>RxSetDomainForMailslotBroadcast</strong></a></p></td>
+<td align="left"><p>このルーチンは、mailslots がドライバーでサポートされている場合に、メールスロットブロードキャストに使用されるドメインを設定するために、ネットワークミニリダイレクタードライバーによって呼び出されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr" data-raw-source="[&lt;strong&gt;RxStartMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr)"><strong>RxStartMinirdr</strong></a></p></td>
-<td align="left"><p>このルーチンは、自身を登録するために呼び出さネットワーク ・ mini-リダイレクターを開始します。 ドライバーを UNC 名のサポートを示している場合 RDBSS は MUP の UNC プロバイダーとしても、ネットワークのミニ リダイレクター ドライバーを登録します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr" data-raw-source="[&lt;strong&gt;RxStartMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)"><strong>RxStartMinirdr</strong></a></p></td>
+<td align="left"><p>このルーチンは、を呼び出して自身を登録するネットワークミニリダイレクターを起動します。 また、ドライバーが UNC 名のサポートを示す場合は、RDBSS はネットワークミニリダイレクタードライバーを、MUP と共に UNC プロバイダーとして登録します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr" data-raw-source="[&lt;strong&gt;RxStopMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)"><strong>RxStopMinirdr</strong></a></p></td>
-<td align="left"><p>このルーチンは、ネットワークのミニ リダイレクター ドライバーを停止します。 停止しているドライバーは、IOCTL または FSCTL 要求を除き、新しいコマンドを受けられなくなります。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr" data-raw-source="[&lt;strong&gt;RxStopMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)"><strong>RxStopMinirdr</strong></a></p></td>
+<td align="left"><p>このルーチンは、ネットワークミニリダイレクタードライバーを停止します。 停止したドライバーは、IOCTL または FSCTL 要求を除く新しいコマンドを受信しなくなります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxpunregisterminirdr" data-raw-source="[&lt;strong&gt;RxpUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxpunregisterminirdr)"><strong>RxpUnregisterMinirdr</strong></a></p></td>
-<td align="left"><p>このルーチンは、RDBSS とドライバーの登録を解除し、内部の RDBSS 登録テーブルから登録情報を削除するネットワーク ミニ リダイレクター ドライバーによって呼び出されます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxpunregisterminirdr" data-raw-source="[&lt;strong&gt;RxpUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxpunregisterminirdr)"><strong>RxpUnregisterMinirdr</strong></a></p></td>
+<td align="left"><p>このルーチンは、ネットワークミニリダイレクタードライバーによって呼び出され、ドライバーを RDBSS に登録解除し、内部 RDBSS 登録テーブルから登録情報を削除します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxstruc/nf-rxstruc-rxunregisterminirdr" data-raw-source="[&lt;strong&gt;RxUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxstruc/nf-rxstruc-rxunregisterminirdr)"><strong>RxUnregisterMinirdr</strong></a></p></td>
-<td align="left"><p>このルーチンは、RDBSS とドライバーの登録を解除し、内部の RDBSS 登録テーブルから登録情報を削除するネットワーク ミニ リダイレクター ドライバーによって呼び出される rxstruc.h で定義されているインライン関数です。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxstruc/nf-rxstruc-rxunregisterminirdr" data-raw-source="[&lt;strong&gt;RxUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxstruc/nf-rxstruc-rxunregisterminirdr)"> <strong>RxUnregisterMinirdr</strong> </a>インライン関数を内部的に呼び出します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxpunregisterminirdr" data-raw-source="[&lt;strong&gt;RxpUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxpunregisterminirdr)"> <strong>RxpUnregisterMinirdr</strong></a>します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxstruc/nf-rxstruc-rxunregisterminirdr" data-raw-source="[&lt;strong&gt;RxUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxstruc/nf-rxstruc-rxunregisterminirdr)"><strong>RxUnregisterMinirdr</strong></a></p></td>
+<td align="left"><p>このルーチンは、rxstruc で定義されたインライン関数で、RDBSS にドライバーを登録解除し、内部 RDBSS 登録テーブルから登録情報を削除するために、ネットワークミニリダイレクタードライバーによって呼び出されます。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxstruc/nf-rxstruc-rxunregisterminirdr" data-raw-source="[&lt;strong&gt;RxUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxstruc/nf-rxstruc-rxunregisterminirdr)"><strong>RxUnregisterMinirdr</strong></a> inline 関数は、内部的に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxpunregisterminirdr" data-raw-source="[&lt;strong&gt;RxpUnregisterMinirdr&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxpunregisterminirdr)"><strong>RxpUnregisterMinirdr</strong></a>を呼び出します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"><strong>__RxFillAndInstallFastIoDispatch</strong></a></p></td>
-<td align="left"><p>このルーチンは、高速な I/O ディスパッチ ベクトル通常のディスパッチ I/O ベクターと一致するように入力し、渡されるデバイス オブジェクトに関連付けられているドライバー オブジェクトにインストールします。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"><strong>__RxFillAndInstallFastIoDispatch</strong></a></p></td>
+<td align="left"><p>このルーチンは、通常のディスパッチ i/o ベクターと同一の高速 i/o ディスパッチベクターを入力し、渡されたデバイスオブジェクトに関連付けられた driver オブジェクトにインストールします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次のマクロは、これらのルーチンの 1 つを呼び出す mrx.h ヘッダー ファイルで定義されます。 このマクロを呼び出す代わりに使用は、通常、 [  **\_ \_RxFillAndInstallFastIoDispatch** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch)直接ルーチン。
+次のマクロは、これらのルーチンの1つを呼び出す mrx .h ヘッダーファイルで定義されています。 通常、このマクロは、 [ **\_\_RxFillAndInstallFastIoDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)ルーチンを直接呼び出す代わりに使用されます。
 
 <table>
 <colgroup>
@@ -117,8 +117,8 @@ RDBSS には、ネットワークのミニ リダイレクターが開始また�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxFillAndInstallFastIoDispatch</strong>(<em>__devobj</em>, <em>__fastiodisp</em>)</p></td>
-<td align="left"><p>このマクロを呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"> <strong>__RxFillAndInstallFastIoDispatch</strong></a>通常のディスパッチ I/O ベクターとそれをドライバー オブジェクトに関連付けられているインストールと一致するよう、高速な I/O ディスパッチ ベクターの入力をデバイス オブジェクトが渡されます。</p></td>
+<td align="left"><p><strong>RxFillAndInstallFastIoDispatch</strong>(<em>__ devobj</em>, <em>__ fa</em>)</p></td>
+<td align="left"><p>このマクロは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"><strong>__RxFillAndInstallFastIoDispatch</strong></a>を呼び出して、通常のディスパッチ i/o ベクターと同一の高速 i/o ディスパッチベクターを入力し、渡されたデバイスオブジェクトに関連付けられた driver オブジェクトにインストールします。</p></td>
 </tr>
 </tbody>
 </table>

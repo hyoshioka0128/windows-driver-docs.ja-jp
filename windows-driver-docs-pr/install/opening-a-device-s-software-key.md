@@ -3,35 +3,35 @@ title: デバイスのソフトウェア キーを開く
 description: デバイスのソフトウェア キーを開く
 ms.assetid: CA9EC186-7991-4cc5-B49E-DFE87A13BCFA
 keywords:
-- ソフトウェア キーを開く、WDK デバイスのインストール
-- ソフトウェア キー WDK のデバイスのインストールを開く
+- ソフトウェアキー WDK デバイスのインストール、開く
+- ソフトウェアキーを開く WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0625240bf094b030caeae8ba7e267b399df33147
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31f5499785ed2c8894985d4e2408b6a663cddbf2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366656"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837384"
 ---
 # <a name="opening-a-devices-software-key"></a>デバイスのソフトウェア キーを開く
 
 
-デバイスを直接開く必要がありますいない*ソフトウェア キー*します。 レジストリ キーと同様に場所またはこれらのキーの形式は、Windows の異なるバージョン間変更可能性があります。
+デバイスの*ソフトウェアキー*を直接開くことはできません。 レジストリキーと同様に、これらのキーの場所または形式は、Windows のバージョンによって異なる場合があります。
 
-**注**  対応するデバイスが検出された後にのみ、デバイスのソフトウェア キーを開く必要があります。 この手順の詳細については、次を参照してください。[インストールされているデバイスを列挙する](enumerating-installed-devices.md)します。
+デバイスのソフトウェアキーは、対応するデバイスが検出された後にのみ開く必要**が  ます**。 この手順の詳細については、「[インストールされているデバイスの列挙](enumerating-installed-devices.md)」を参照してください。
 
  
 
-デバイスのソフトウェア キーを開くには、次のガイドラインに従います。
+デバイスのソフトウェアキーを開くには、次のガイドラインに従ってください。
 
--   既存のソフトウェア キーを開くには、次のように使用します。 [ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)します。 ソフトウェア キーを作成するには使用[ **SetupDiCreateDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)します。 いずれの場合も、設定する必要があります、 *KeyType* DIREG_DRV パラメーター。
+-   既存のソフトウェアキーを開くには、 [**Setupdiopendevregkey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)を使用します。 ソフトウェアキーを作成するには、 [**Setupdicreatedevregkey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)を使用します。 どちらの場合も、 *KeyType*パラメーターを DIREG_DRV に設定する必要があります。
 
-    **注**  設定する必要があります、 *samDesired*パラメーターを必要とされる最小限のアクセス許可。 KEY_ALL_ACCESS にこのパラメーターを設定する必要がありますできません。 レジストリへのアクセスのアクセス許可を指定する方法の詳細については、次を参照してください。[レジストリのキーを安全にアクセスする](accessing-registry-keys-safely.md)します。
+    必要に応じて、 *Samdesired*パラメーターを必要な最小限のアクセス許可に設定する必要**が  ます**。 このパラメーターを KEY_ALL_ACCESS に設定することはできません。 レジストリアクセスのアクセス許可を指定する方法の詳細については、「[レジストリキーに安全](accessing-registry-keys-safely.md)にアクセスする」を参照してください。
 
      
 
--   カーネル モードの呼び出し元が使用する必要があります[ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)設定と、 *DevInstKeyType* PLUGPLAY_REGKEY_DRIVER パラメーター。
+-   カーネルモードの呼び出し元は、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)を使用し、 *devinstkeytype*パラメーターを PLUGPLAY_REGKEY_DRIVER に設定する必要があります。
 
  
 

@@ -3,7 +3,7 @@ title: IRP_MJ_LOCK_CONTROL
 description: IRP\_MJ\_ロック\_コントロール
 ms.assetid: db21d779-c423-42bd-a94b-4d8c8fd1f7cb
 keywords:
-- IRP_MJ_LOCK_CONTROL インストール可能なファイル システム ドライバー
+- IRP_MJ_LOCK_CONTROL インストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,29 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3faf9fcb0c11f053cacd3f6ef87a4b6393d5d64
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2ca722f75691d1c2092e5b6d34831b09864d607d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841190"
 ---
-# <a name="irpmjlockcontrol"></a>IRP\_MJ\_ロック\_コントロール
+# <a name="irp_mj_lock_control"></a>IRP\_MJ\_ロック\_コントロール
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_ロック\_コントロール要求がや他のカーネル モード ドライバー I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。
+IRP\_MJ\_LOCK\_CONTROL 要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。
 
-## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
+## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-ファイル システム ドライバーは、抽出して、ターゲット デバイス オブジェクトが、ファイル システムの制御デバイス オブジェクトかどうかをファイル オブジェクトをデコードする必要があります。 大文字と小文字の場合は、ファイル システム ドライバーは IRP を適切なロックの要求を処理することがなく完了します。
+ファイルシステムドライバーは、ターゲットデバイスオブジェクトがファイルシステムのコントロールデバイスオブジェクトであるかどうかを判断するために、ファイルオブジェクトを抽出してデコードする必要があります。 この場合、ファイルシステムドライバーは、ロック要求を処理せずに、必要に応じて IRP を完了する必要があります。
 
-それ以外の場合で、要求が発行された場合ユーザー ファイルを表すハンドルを開く、ファイル システム ドライバーのマイナー関数のコードで示される操作を実行および IRP の完了する必要があります。 それ以外の場合は、ドライバーは IRP を失敗する必要があります。
+そうしないと、ユーザーファイルを開くハンドルに対して要求が発行された場合、ファイルシステムドライバーは、マイナー関数コードによって示された操作を実行し、IRP を完了する必要があります。 それ以外の場合、ドライバーは IRP を失敗させる必要があります。
 
-次に、有効なマイナー関数コードを示します。
+有効なマイナー関数コードを次に示します。
 
 <table>
 <colgroup>
@@ -50,48 +50,48 @@ IRP\_MJ\_ロック\_コントロール要求がや他のカーネル モード �
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_LOCK</p></td>
-<td align="left"><p>Microsoft Win32 と呼ばれる、ユーザー モード アプリケーションに代わって可能性があります、バイト範囲ロックの要求を示します<strong>ロック ファイル</strong>関数。</p></td>
+<td align="left"><p>Microsoft Win32 <strong>LockFile</strong>関数を呼び出したユーザーモードアプリケーションに代わって、バイト範囲ロック要求を示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_UNLOCK_ALL</p></td>
-<td align="left"><p>ファイルの場合、すべてのバイト範囲ロックを解除する要求を示しますファイル オブジェクトを最後の未処理のハンドルが閉じられるため、通常は。</p></td>
+<td align="left"><p>ファイルに対するすべてのバイト範囲ロックを解放する要求を示します。通常は、ファイルオブジェクトへの最後の未処理ハンドルが閉じられているためです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_UNLOCK_ALL_BY_KEY</p></td>
-<td align="left"><p>キーの値を指定してすべてのバイト範囲ロックを解除する要求を示します。</p></td>
+<td align="left"><p>指定されたキー値を持つすべてのバイト範囲ロックを解放する要求を示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_UNLOCK_SINGLE</p></td>
-<td align="left"><p>Microsoft Win32 と呼ばれる、ユーザー モード アプリケーションに代わって可能性がありますの単一のバイト範囲ロックの解放の要求を示します<strong>UnlockFile</strong>関数。</p></td>
+<td align="left"><p>Microsoft Win32 <strong>UnlockFile</strong>関数を呼び出したユーザーモードアプリケーションに代わって、1つのバイト範囲ロックを解放する要求を示します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="operation-file-system-filter-drivers"></a>操作:ファイル システム フィルター ドライバー
+## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
 
-ファイル システム フィルター ドライバーは、必要な処理を実行した後はスタック上に次の下位ドライバー IRP を渡す必要があります。
+ファイルシステムフィルタードライバーは、必要な処理を実行した後、スタック上の次の下位のドライバーに IRP を渡す必要があります。
 
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP とロック制御の要求の処理に IRP スタックの場所の次のメンバーで設定されている情報を使用できます。
+ファイルシステムまたはフィルタードライバーは、指定された IRP で[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出して、irp 内の独自の[**スタックの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)へのポインターを取得します。次の一覧には、 *irpsp*として示されています。 (IRP は、 *irp*として表示されます)。ドライバーは、ロック制御要求を処理するときに、IRP の次のメンバーと IRP スタックの場所に設定されている情報を使用できます。
 
-<a href="" id="deviceobject"></a>*デバイス オブジェクト*  
-ターゲット デバイスのオブジェクトへのポインター。
+<a href="" id="deviceobject"></a>*DeviceObject*  
+ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*  
+最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
+*DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_ロック\_コントロール、使用する必要があります。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_LOCK\_CONTROL の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
-1 つ、または、次の詳細:
+次の1つまたは複数を実行します。
 
 <table>
 <colgroup>
@@ -101,17 +101,17 @@ IRP\_MJ\_ロック\_コントロール要求がや他のカーネル モード �
 <thead>
 <tr class="header">
 <th align="left">Flag</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>SL_EXCLUSIVE_LOCK</p></td>
-<td align="left"><p>このフラグが設定されている場合は、排他バイト範囲ロックが要求されます。 それ以外の場合、共有ロックが要求されます。</p></td>
+<td align="left"><p>このフラグが設定されている場合は、排他的なバイト範囲ロックが要求されます。 それ以外の場合は、共有ロックが要求されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SL_FAIL_IMMEDIATELY</p></td>
-<td align="left"><p>このフラグが設定されている場合、すぐに許可できない場合、ロック要求は失敗します。</p></td>
+<td align="left"><p>このフラグが設定されている場合、ロック要求はすぐに許可されない場合は失敗します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -119,39 +119,39 @@ IRP\_MJ\_ロック\_コントロール要求がや他のカーネル モード �
  
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
-IRP を指定します\_MJ\_ロック\_コントロール。
+IRP\_MJ\_ロック\_コントロールを指定します。
 
 <a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
 次のいずれかを指定します。
 
--   IRP\_MN\_LOCK
--   IRP\_MN\_UNLOCK\_ALL
--   IRP\_MN\_UNLOCK\_すべて\_BY\_キー
--   IRP\_MN\_UNLOCK\_単一
+-   IRP\_\_ロック
+-   IRP\_\_ロック解除\_すべて
+-   IRP\_、\_キーによってすべての\_\_ロック解除\_
+-   IRP\_\_のロック解除\_SINGLE
 
-<a href="" id="irpsp--parameters-lockcontrol-byteoffset"></a>*IrpSp-&gt;Parameters.LockControl.ByteOffset*  
-ロックまたはロックを解除する範囲のバイトのファイル内のバイト オフセットを開始しています。
+<a href="" id="irpsp--parameters-lockcontrol-byteoffset"></a>*IrpSp-&gt;パラメーター。 LockControl. ByteOffset*  
+ロックまたはロック解除するバイト範囲のファイル内の開始バイトオフセット。
 
-<a href="" id="irpsp--parameters-lockcontrol-key"></a>*IrpSp-&gt;Parameters.LockControl.Key*  
+<a href="" id="irpsp--parameters-lockcontrol-key"></a>*IrpSp-&gt;パラメーター。 LockControl。キー*  
 バイト範囲ロックのキー。
 
-<a href="" id="irpsp--parameters-lockcontrol-length"></a>*IrpSp-&gt;Parameters.LockControl.Length*  
-長さ (バイト単位) をロックまたはロック解除するバイトの範囲。
+<a href="" id="irpsp--parameters-lockcontrol-length"></a>*IrpSp-&gt;Parameters. LockControl. Length*  
+ロックまたはロック解除するバイト範囲の長さ (バイト単位)。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)
+[**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltprocessfilelock)
 
-[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
+[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
 
-[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
  
 

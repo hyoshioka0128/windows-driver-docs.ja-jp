@@ -3,31 +3,31 @@ title: 遅延コンテキストに対するマッピング
 description: 遅延コンテキストに対するマッピング
 ms.assetid: 29c44639-ea5e-4255-8e8c-f6d5e3af0dfb
 keywords:
-- Direct3D のバージョン 11 WDK Windows 7 を表示する遅延のコンテキストのマッピング
-- Direct3D のバージョン 11 WDK Windows Server 2008 R2 を表示する遅延のコンテキストのマッピング
-- 遅延コンテキスト WDK Windows 7 のディスプレイ上のマッピング
-- 遅延コンテキスト WDK Windows Server 2008 R2 の表示、DDI 関数を除く上のマッピング
-- 遅延コンテキスト WDK Windows 7 を表示するマップ
-- 遅延コンテキスト WDK Windows Server 2008 R2 を表示するマップ
+- Direct3D version 11 WDK Windows 7 display、遅延コンテキスト、マッピング
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 の表示、遅延コンテキスト、マッピング
+- 遅延コンテキストでのマッピング WDK Windows 7 ディスプレイ
+- 遅延コンテキストでのマッピング WDK Windows Server 2008 R2 表示 (DDI 関数を除く)
+- 遅延コンテキスト WDK Windows 7 display、mapping
+- 遅延コンテキスト WDK Windows Server 2008 R2 表示、マッピング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48f9aa515f6d60a1ce5681a6ab39b12c900e0890
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4d4476c6c8e3be137235a0b949a0c4a9132ac35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370130"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840576"
 ---
 # <a name="mapping-on-deferred-contexts"></a>遅延コンテキストに対するマッピング
 
 
-このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
+このセクションは、windows 7 以降、および windows Server 2008 R2 以降のバージョンの Windows オペレーティングシステムにのみ適用されます。
 
-ランタイムは、動的なリソースをマップできます (ドライバーの呼び出しを通じて[ **ResourceMap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)関数) 遅延のコンテキストで、Direct3D とバージョン 11 API により、マップの動的の最初の使用リソースでは、以前の内容を破棄します。 最適なオプションでは、継続的に、元の動的なリソースを使用して経由で各破棄で新しい動的なリソースを作成します。 このエイリアス化されたリソースの作成が必要です、即時のタイムラインに動的な仮想リソースに行われる操作に影響する遅延のコンテキストのタイムラインに動的な仮想リソースに実行される操作を許可するにはコンテキスト。 ただし、遅延のコンテキストは最終的に、ドライバーの呼び出し中に actualized は操作の記録で単[ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数。 動的リソースの使用し、アプリケーションの元の意図は保持されますが、GPU にアクセス可能なメモリの書き込み結合は、アプリケーションに提供されます (1 つ使用するためのメモリの最適化は、CPU のアップロード) します。
+ランタイムは、遅延コンテキストで (ドライバーの[**Resourcemap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)関数の呼び出しを通じて) 動的リソースをマップできます。これは、Direct3D VERSION 11 API によって、マップされた動的リソースの最初の使用によって前の内容が破棄されるためです。 最善の方法は、元の動的リソースを使用して継続的に破棄するたびに、新しい動的リソースを作成することです。 このエイリアスが設定されたリソースの作成は、遅延コンテキストのタイムラインで仮想動的リソースに対して実行される操作が、直接のタイムラインで仮想動的リソースに対して実行される操作に影響しないようにするために必要です。関連. 遅延コンテキストは、ドライバーの[**Commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数の呼び出し中に最終的に処理される操作を記録するだけであることに注意してください。 動的リソースが使用されると、アプリケーションの本来の目的が維持され、書き込みが可能な GPU アクセス可能なメモリがアプリケーションに提供されます (つまり、メモリはシングルユースの CPU アップロード用に最適化されます)。
 
-各リソース マップには、エイリアス化されたリソースに直接ポインターを提供できます。 この型のエイリアスを実装する記録遅延のコンテキストでは負担がかかります。 たとえば、遅延のコンテキストの記録では、テクスチャのエイリアスを作成する新しいビューを必要があります。 ドライバーのエイリアスとの統合は、必要なを行うには妥当と思われます。 コマンドの一覧が実行されたときに、(マップ破棄呼び出しを満たす) にリソースを作成する最後のコンテキストでローカルとイミディ エイト コンテキストは、動的リソースをバックアップする「現在」のリソースとして代わりに使用する必要があります。
+各リソースマップは、エイリアス化されたリソースに直接ポインターを提供できます。 この種類の別名を実装するために、遅延コンテキストの記録には追加の負担があります。 たとえば、遅延コンテキストの記録では、エイリアス化されたテクスチャ用に新しいビューを作成する必要がある場合があります。 ドライバーのエイリアスとの統合が必要であり、そうでないように思えます。 コマンドリストを実行するときは、(マップの破棄呼び出しを満たすために) 最後に作成されたコンテキストローカルリソースを、イミディエイトコンテキストの動的リソースをバックする "現在" のリソースとして置き換える必要があります。
 
-ドライバーへの呼び出し[**リソース**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopy)動的リソースにリソースをコピーする関数は、マップ破棄の呼び出し後に、遅延のコンテキストと後のイミディ エイト コンテキストの両方がサポートする必要があります、ドライバーへの呼び出し[ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数の場合、遅延コンテキストのローカル リソースが「現在」のリソースのイミディ エイト コンテキストのバージョンにスワップが理想的です。 ドライバーへの呼び出し**リソース**動的リソースの変換先を持つ関数が頻繁に使用しないように、コピー オン ライト メカニズムを使用する必要があります。 場合**リソース**が呼び出されたか、動的リソース マップ破棄呼び出しの後に遅延のコンテキストか、または新しいリソースを現在コマンド一覧のローカル リソースを保持するイミディ エイト コンテキストに影響をする必要がありますが概念的には、コピーの新しい変換先を提供する割り当てられ、古いリソースを新しいリソースにコピーする必要があります (操作の場合、 [ **ResourceCopyRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopyregion))。
+動的リソースにリソースをコピーするためのドライバーの[**ResourceCopy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopy)関数への呼び出しは、遅延コンテキスト、マップの破棄呼び出しの後、およびドライバーの[**commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)の呼び出し後のイミディエイトコンテキストでもサポートされている必要があります。関数。ローカル遅延コンテキストリソースは、"現在" のリソースの直接コンテキストバージョンにスワップされるのが理想的です。 動的リソースの変換先を使用したドライバーの**ResourceCopy**関数の呼び出しは、頻繁には使用されないため、書き込み時のコピー機能を使用する必要があります。 **ResourceCopy**が呼び出された場合、マップの破棄呼び出しの後、またはコマンドリストのローカルリソースを保持しているイミディエイトコンテキストで、遅延コンテキストの動的リソースのいずれかに影響を与えます。コピーの新しいコピー先を指定し、古いリソースを新しいリソースにコピーする必要があります (操作が[**ResourceCopyRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopyregion)の場合)。
 
  
 

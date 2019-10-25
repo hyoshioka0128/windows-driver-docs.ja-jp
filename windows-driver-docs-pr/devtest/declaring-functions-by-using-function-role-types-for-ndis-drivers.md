@@ -4,33 +4,33 @@ description: NDIS ドライバーの関数役割型を使用した関数の宣�
 ms.assetid: 232c4272-0bf0-4a4e-9560-3bceeca8a3e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a813e3e039f01d709f52781ed2f88874bb0625d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e72f4f76c043180fd14416f1f3f2c0c8e27aad6b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371559"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839567"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-ndis-drivers"></a>NDIS ドライバーの関数役割型を使用した関数の宣言
 
 
-SDV NDIS ドライバーの分析を有効にするには、NDIS の関数の役割の型宣言を使用して関数を宣言する必要があります。 関数のロールの種類は、Ndis.h で定義されます。
+SDV で NDIS ドライバーを分析できるようにするには、NDIS の関数ロール型宣言を使用して関数を宣言する必要があります。 関数ロールの種類は、Ndis. h で定義されています。
 
-関数のロールの種類とその対応するイベントのコールバック関数の一覧で、次を参照してください。、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)します。
+関数ロールの種類とそれに対応するイベントコールバック関数の一覧については、「 [Static Driver Verifier の NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)」を参照してください。
 
-対応するロールの種類を指定することで、NDIS ドライバー内の各コールバック関数を宣言する必要があります。
+NDIS ドライバーの各コールバック関数は、対応するロールの種類を指定して宣言する必要があります。
 
-次のコード例の関数の役割の型宣言を示しています、 *MiniportPause*コールバック関数。 この例では、コールバック関数が呼び出されます*myMiniportPause*します。 関数のロールの種類はミニポート\_一時停止します。
+次のコード例は、 *Miniportpause*コールバック関数の関数ロール型宣言を示しています。 この例では、コールバック関数は*Myminiportpause*と呼ばれています。 関数ロールの種類は、ミニポート\_一時停止です。
 
 ```
 MINIPORT_PAUSE myMiniportPause;
 ```
 
-コールバック関数に関数のプロトタイプ宣言がある場合とロールの種類の関数の宣言、関数プロトタイプを置き換える必要があります。
+コールバック関数に関数プロトタイプ宣言がある場合は、関数プロトタイプを関数ロール型宣言に置き換える必要があります。
 
-次の例は、ヘッダー ファイル、SDV にある、MP.h から NDIS 関数の宣言が失敗する\_WDK のドライバーのサブディレクトリ。 Main.c で、関連する関数が宣言されます。
+次の例は、ヘッダーファイル MP からの NDIS 関数宣言を示しています。これは、WDK の SDV fail\_drivers サブディレクトリにあります。 関連する関数は、Main で宣言されています。
 
-\\ツール\\sdv\\サンプル\\失敗\_ドライバー\\NDIS\\失敗\_driver1 します。
+\\ツール\\sdv\\サンプル\\失敗\_\\\\NDIS\_driver1。
 
 ```
 /--------------------------------------
@@ -71,17 +71,17 @@ NDIS_TIMER_FUNCTION MpDemonstrationTimer;
 NDIS_IO_WORKITEM MPQueuedWorkItem;
 ```
 
-### <a name="span-idfunctionparametersandfunctionroletypesspanspan-idfunctionparametersandfunctionroletypesspanfunction-parameters-and-function-role-types"></a><span id="function_parameters_and_function_role_types"></span><span id="FUNCTION_PARAMETERS_AND_FUNCTION_ROLE_TYPES"></span>関数パラメーターと関数のロールの種類
+### <a name="span-idfunction_parameters_and_function_role_typesspanspan-idfunction_parameters_and_function_role_typesspanfunction-parameters-and-function-role-types"></a><span id="function_parameters_and_function_role_types"></span><span id="FUNCTION_PARAMETERS_AND_FUNCTION_ROLE_TYPES"></span>関数のパラメーターと関数のロール型
 
-C プログラミング言語で必要に応じて関数定義で使用するパラメーターの型は、関数プロトタイプのパラメーターの型と一致する必要があります。 またはこの場合、関数のロールを入力します。 SDV は、分析関数のシグネチャに依存し、一致しないシグネチャを持つ関数を無視します。
+C プログラミング言語で必要とされるように、関数定義で使用するパラメーター型は、関数プロトタイプのパラメーター型 (この場合は関数ロール型) と一致する必要があります。 SDV は分析のために関数シグネチャに依存しており、署名が一致しない関数は無視されます。
 
-たとえば、宣言する必要があります、 [ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)ミニポートを使用して機能\_ISR 関数ロールの種類。
+たとえば、ミニポート\_ISR 関数の役割の種類を使用して、 [*Miniportinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)関数を宣言する必要があります。
 
 ```
 MINIPORT_ISR myMPIsr;
 ```
 
-割り込みのルーチンを実装するときに*myMPIsr*、ミニポートによって使用されるパラメーターの型が一致する必要があります\_ISR、具体的には、NDIS\_ハンドル、PBOOLEAN、および PULONG (を参照してください、 [ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)構文の関数)。
+割り込みルーチン ( *Mympisr*) を実装する場合、パラメーターの型は、ミニポート\_ISR、つまり、NDIS\_HANDLE、pboolean、および (構文については「 [*miniportinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)関数」を参照) によって使用される型と一致する必要があります。
 
 ```
 BOOLEAN 
@@ -93,10 +93,10 @@ myMPIsr(
 }
 ```
 
-## <a name="span-idrunningcodeanalysisfordriverstoverifythefunctiondeclarationsspanspan-idrunningcodeanalysisfordriverstoverifythefunctiondeclarationsspan-running-code-analysis-for-drivers-to-verify-the-function-declarations"></a><span id="running_code_analysis_for_drivers_to_verify_the_function_declarations"></span><span id="RUNNING_CODE_ANALYSIS_FOR_DRIVERS_TO_VERIFY_THE_FUNCTION_DECLARATIONS"></span> Code Analysis for Drivers は、関数宣言を確認するを実行しています。
+## <a name="span-idrunning_code_analysis_for_drivers_to_verify_the_function_declarationsspanspan-idrunning_code_analysis_for_drivers_to_verify_the_function_declarationsspan-running-code-analysis-for-drivers-to-verify-the-function-declarations"></a><span id="running_code_analysis_for_drivers_to_verify_the_function_declarations"></span><span id="RUNNING_CODE_ANALYSIS_FOR_DRIVERS_TO_VERIFY_THE_FUNCTION_DECLARATIONS"></span>ドライバーのコード分析を実行して関数の宣言を検証する
 
 
-ソース コードを準備するかどうかを判断するために、実行[Code Analysis for Drivers](code-analysis-for-drivers.md)します。 関数の役割の型宣言に対するドライバーのチェックのコード分析とされなかった可能性が関数宣言を特定するのに役立ちますまたは関数のロールの種類の関数定義のパラメーターが一致しない場合に警告を表示します。
+ソースコードが準備されているかどうかを判断するために、[ドライバーのコード分析](code-analysis-for-drivers.md)を実行します。 ドライバーのコード分析では、関数ロールの種類の宣言をチェックします。また、関数定義のパラメーターが関数ロール型のパラメーターと一致しない場合に、失敗した可能性がある関数宣言を識別したり、警告を表示したりすることができます。
 
  
 

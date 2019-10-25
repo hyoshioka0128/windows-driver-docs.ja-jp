@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_PIN\_PHYSICALCONNECTION
-description: オーディオ アダプター ドライバーの使用、KSPROPERTY\_PIN\_ミニポート間の物理接続を示す PHYSICALCONNECTION プロパティ。
+title: KSK プロパティ\_固定\_PHYSICALCONNECTION
+description: オーディオアダプターのドライバーは、KSK プロパティ\_ピン留め\_PHYSICALCONNECTION プロパティを使用して、ミニポート間の物理的な接続を表します。
 ms.assetid: a679ce41-93d2-4b46-a26d-ce05408ec6aa
 keywords:
-- KSPROPERTY_PIN_PHYSICALCONNECTION ストリーミング メディア デバイス
+- KSPROPERTY_PIN_PHYSICALCONNECTION ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 680bbb344db406625982b6c5a6891ea96d9fbbc1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e7c18cc45c48953a7ab335fdf4bb7ad5cf9898b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361076"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838846"
 ---
-# <a name="kspropertypinphysicalconnection"></a>KSPROPERTY\_PIN\_PHYSICALCONNECTION
+# <a name="ksproperty_pin_physicalconnection"></a>KSK プロパティ\_固定\_PHYSICALCONNECTION
 
 
-オーディオ アダプター ドライバーの使用、KSPROPERTY\_PIN\_ミニポート間の物理接続を示す PHYSICALCONNECTION プロパティ。
+オーディオアダプターのドライバーは、KSK プロパティ\_ピン留め\_PHYSICALCONNECTION プロパティを使用して、ミニポート間の物理的な接続を表します。
 
 ## <span id="ddk_ksproperty_pin_physicalconnection_ks"></span><span id="DDK_KSPROPERTY_PIN_PHYSICALCONNECTION_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67361076"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67361076"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection" data-raw-source="[&lt;strong&gt;KSPIN_PHYSICALCONNECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)"><strong>KSPIN_PHYSICALCONNECTION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_physicalconnection" data-raw-source="[&lt;strong&gt;KSPIN_PHYSICALCONNECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_physicalconnection)"><strong>KSPIN_PHYSICALCONNECTION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,17 +64,17 @@ ms.locfileid: "67361076"
 <a name="remarks"></a>注釈
 -------
 
-KSP を使用してこのプロパティを指定\_暗証番号 (pin)、メンバーが、関連する pin ファクトリを指定します。
+このプロパティは、KSP\_PIN を使用して指定します。この場合、メンバーは関連するピンファクトリを指定します。
 
-KSPROPERTY\_PIN\_PHYSICALCONNECTION が型の構造体を返す[ **KSPIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)、接続先を指定する**PinId**と接続されているフィルターのシンボリック リンクの名前。
+KSK プロパティ\_ピン\_PHYSICALCONNECTION は、接続されている**Pinid**と接続されたフィルターのシンボリックリンク名を指定して、 [**KSPIN\_physicalconnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_physicalconnection)型の構造を返します。
 
-クラス ドライバーは、このプロパティを処理しませんストリームのミニドライバーは、独自の処理を提供する必要があります。
+クラスドライバーは、このプロパティを処理しません。stream ミニドライバーは、独自の処理を提供する必要があります。
 
-オーディオのアダプターのドライバーとの接続を登録する[ **PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)します。
+オーディオアダプターのドライバーは、 [**Pcregiphysicalconnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection)を使用して接続を登録します。
 
-その後、SysAudio システム ドライバー (*sysaudio.sys*) このプロパティのクエリを実行し、それに応じてグラフをビルドします。 SysAudio では、このプロパティを使用して、どのトポロジー フィルター暗証番号 (pin) を wave フィルター ピンの配置の接続を確認します。
+その後、SysAudio システムドライバー (*sysaudio .sys*) がこのプロパティに対してクエリを行い、それに応じてグラフを構築します。 SysAudio は、このプロパティを使用して、どの電波フィルターピンがどのトポロジフィルターピン留めに接続されているかを判断します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ KSPROPERTY\_PIN\_PHYSICALCONNECTION が型の構造体を返す[ **KSPIN\_PHYSIC
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,11 +93,11 @@ KSPROPERTY\_PIN\_PHYSICALCONNECTION が型の構造体を返す[ **KSPIN\_PHYSIC
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
+[**KSP\_ピン留め**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
-[**KSPIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)
+[**KSPIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_physicalconnection)
 
-[**PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)
+[**Pcregiphysicalconnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection)
 
  
 

@@ -1,59 +1,59 @@
 ---
-title: カーネル モード ドライバーでの HID レポートを送信します。
-description: カーネル モード ドライバーでの HID レポートを送信します。
+title: カーネルモードドライバーによる HID レポートの送信
+description: カーネルモードドライバーによる HID レポートの送信
 ms.assetid: ff3d090f-cf76-40a7-9215-8440a592f303
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0c60a43259e99fe597b8f23cd4df57aff73ecb6b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 266de90bb6b6505649c4a0c698492c5d023f60f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385803"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841558"
 ---
-# <a name="sending-hid-reports-by-kernel-mode-drivers"></a>カーネル モード ドライバーでの HID レポートを送信します。
+# <a name="sending-hid-reports-by-kernel-mode-drivers"></a>カーネルモードドライバーによる HID レポートの送信
 
 
-カーネル モード ドライバーを使用する必要があります[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) HID コレクションにレポート出力を継続的に送信する要求の主なアプローチとして。 ドライバーは、IOCTL を使用できますも\_HID\_設定\_*Xxx*出力レポートを送信し、機能のコレクションにレポートを要求します。 ただし、ドライバーでは、コレクションの現在の状態を設定するのにこれらの I/O 要求が使用する必要がありますのみ。 一部のデバイスをサポートしていない[ **IOCTL\_HID\_設定\_出力\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_set_output_report)され、この要求を使用する場合に応答しなくなります。
+カーネルモードドライバーでは、出力レポートを HID コレクションに継続的に送信するための主なアプローチとして、 [**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求を使用する必要があります。 また、ドライバーは IOCTL\_HID\_使用して\_*Xxx*要求を設定し、出力レポートと機能レポートをコレクションに送信することもできます。 ただし、ドライバーは、これらの i/o 要求のみを使用して、コレクションの現在の状態を設定する必要があります。 一部のデバイスでは、 [**IOCTL\_HID\_設定\_出力\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_set_output_report)がサポートされていないため、この要求が使用された場合は応答しなくなります。
 
-詳細については、次を参照してください。[を使用して IRP\_MJ\_書き込み要求](#using-irp-mj-write-requests)と[を使用して IOCTL\_HID\_設定\_Xxx 要求](#using-ioctl-hid-set-xxx-requests)します。
+詳細については、「 [IRP\_MJ を使用した\_書き込み要求](#using-irp-mj-write-requests)」と「 [IOCTL\_HID\_SET\_Xxx Requests](#using-ioctl-hid-set-xxx-requests)」を参照してください。
 
-### <a href="" id="using-irp-mj-write-requests"></a>IRP を使用して\_MJ\_書き込み要求
+### <a href="" id="using-irp-mj-write-requests"></a>IRP\_MJ\_書き込み要求の使用
 
-Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、コレクションに送信されたすべての書き込み要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法の詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)と[Irp の再利用](https://docs.microsoft.com/windows-hardware/drivers/kernel/reusing-irps)します。
+WDM 以外の Windows 2000 ドライバー、および Windows XP 以降のバージョンのドライバーでは、コレクションに送信されるすべての書き込み要求に対して単一の IRP を使用できます。 ただし、Windows 2000 WDM ドライバーは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 Irp の使用方法と再利用方法の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)と[irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/reusing-irps)の再利用」を参照してください。
 
-ドライバーを書き込み、IRP IRP の再利用かどうか[ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンは、状態の状態で要求を完了する必要があります\_詳細\_処理\_REQUIRED (および IRP を解放)。 ドライバーは IRP が不要になった必要がある場合、完了して IRP を呼び出すことによって解放[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)と[ **IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)します。 たとえば、ドライバー可能性があります通常完了し、解放で IRP その[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン、以降のデバイスを削除します。
+ドライバーが書き込み IRP を再利用する場合、IRP の[**Iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンは、状態が [状態] である要求を完了する必要があります (これにより、irp は解放されません)。\_処理\_必要が\_ます。 ドライバーが IRP を必要としなくなった場合、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)と[**Iofreeirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)を呼び出して irp を完了し、解放する必要があります。 たとえば、ドライバーは通常、[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンで IRP を完了して解放します。また、デバイスが削除された後に解放することもできます。
 
-1 つだけの書き込み要求は、IRP のドライバーが IRP を使用する場合[ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)完了し、IRP を無料し、状態を返す必要がありますルーチン\_成功します。
+ドライバーが1つの書き込み要求に対してのみ IRP を使用する場合、IRP の[**Iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが完了し、irp が解放され、状態\_SUCCESS が返されます。
 
-出力レポートを送信する前に、ドライバー、まず初期化しで説明したように、出力レポート バッファーを設定[HID レポートの初期化](initializing-hid-reports.md)します。 ドライバーは、書き込み要求の出力バッファーにレポートにマップするのに、MDL を使用する必要があります。 ドライバーを呼び出す[ **IoAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl) MDL の出力レポート、および書き込み IRP をセットの割り当てを**Irp -&gt;MdlAddress**メンバーの MDL アドレスに、レポートの出力バッファー。 ドライバーは、必要でなくなったときに、レポート バッファーと MDL を解放する必要があります。
+出力レポートを送信する前に、ドライバーはまず、「 [HID レポートの初期化](initializing-hid-reports.md)」で説明されているように、出力レポートバッファーを初期化して設定する必要があります。 ドライバーは、その後、MDL を使用して、書き込み要求の出力レポートバッファーをマップする必要があります。 ドライバーは[**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)を呼び出して、出力レポート用に mdl を割り当て、出力レポートバッファーの mdl アドレスに書き込み Irp の**Irp&gt;mdladdress**メンバーを設定します。 ドライバーが不要になった場合は、レポートバッファーと MDL を解放する必要があります。
 
-書き込みの IRP MDL アドレスを設定するには、に加えて、ドライバーは、[次へ] の下位レベルのドライバーの I/O スタックの場所にも設定する必要があります。 ドライバーを呼び出すことによって、[次へ] の下位レベルのドライバーの I/O スタックの場所へのアクセスを取得する[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)します。 ドライバーは、I/O スタックの場所の次のメンバーを設定します。
+書き込み IRP の MDL アドレスを設定するだけでなく、ドライバーは次の下位レベルのドライバーの i/o スタックの場所も設定する必要があります。 ドライバーは、 [**Iogetnextiシャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)ドの場所を呼び出すことによって、次の下位レベルのドライバーの i/o スタックの場所へのアクセスを取得します。 このドライバーは、i/o スタックの場所の次のメンバーを設定します。
 
-<a href="" id="parameters-write-length"></a>**Parameters.Write.Length**  
-レポートの出力の長さ、(バイト単位) を設定します。 これは、HID コレクションの出力レポートで指定したとおりの長さに設定する必要があります、 **OutputReportByteLength**コレクションのメンバー [ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)構造体。
+<a href="" id="parameters-write-length"></a>**Parameters. Write. Length**  
+出力レポートの長さをバイト単位で設定します。 これは、コレクションの[**Hidp\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)構造体の**OutputReportByteLength**メンバーによって指定された、HID コレクションの出力レポートの長さに設定する必要があります。
 
-<a href="" id="parameters-write-key"></a>**Parameters.Write.Key**  
-0 に設定します。
+<a href="" id="parameters-write-key"></a>**Parameters. Write. Key**  
+を0に設定します。
 
-<a href="" id="parameters-write-byteoffset-quadpart"></a>**Parameters.Write.ByteOffset.QuadPart**  
-0 に設定します。
+<a href="" id="parameters-write-byteoffset-quadpart"></a>**Parameters. ByteOffset. QuadPart**  
+を0に設定します。
 
 <a href="" id="majorfunction"></a>**MajorFunction**  
-IRP に設定\_MJ\_を記述します。
+IRP\_MJ\_WRITE に設定します。
 
-<a href="" id="fileobject"></a>**FileObject**  
-HID コレクションで、開いているファイルを表すファイル オブジェクト ポインターに設定します。
+<a href="" id="fileobject"></a>**ファ**  
+は、HID コレクションで開いているファイルを表すファイルオブジェクトポインターに設定されます。
 
-### <a href="" id="using-ioctl-hid-set-xxx-requests"></a>IOCTL を使用して\_HID\_設定\_Xxx 要求
+### <a href="" id="using-ioctl-hid-set-xxx-requests"></a>IOCTL\_HID\_使用して\_Xxx 要求を設定する
 
-ドライバーはことができますも、次の I/O 要求を使用して出力を送信して、HID コレクションにレポートを機能。
+ドライバーは、次の i/o 要求を使用して、出力と機能のレポートを HID コレクションに送信することもできます。
 
-<a href="" id="ioctl-hid-set-output-report"></a>[**IOCTL\_HID\_設定\_出力\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_set_output_report)  
-(Windows XP およびそれ以降のバージョン) のコレクションを出力レポートを送信します。
+<a href="" id="ioctl-hid-set-output-report"></a>[**IOCTL\_HID\_SET\_出力\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_set_output_report)  
+出力レポートをコレクションに送信します (Windows XP 以降のバージョン)。
 
-<a href="" id="ioctl-hid-set-feature"></a>[**IOCTL\_HID\_設定\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_set_feature)  
-コレクションには、機能のレポートを送信します。
+<a href="" id="ioctl-hid-set-feature"></a>[**IOCTL\_HID\_SET\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_set_feature)  
+機能レポートをコレクションに送信します。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_OIS
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_OIS はドライバーの光ディスク イメージの安定化 (OIS) を制御するために使用するプロパティ ID。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_OIS
+description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_OIS は、ドライバー上の光学イメージ安定化 (OIS) の制御に使用されるプロパティ ID です。
 ms.assetid: CF4F1283-1517-4F93-8554-FBD4B068A655
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_OIS ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_OIS ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fa074271d224a9309abe496dab95a2ab1fa68fd3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51f26d1ba657d335bc5b58510549ad06827836a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380322"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841594"
 ---
-# <a name="kspropertycameracontrolextendedois"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_OIS
+# <a name="ksproperty_cameracontrol_extended_ois"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_OIS
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_OIS**のドライバの光ディスク イメージの安定化 (OIS) を制御するために使用するプロパティ id。
+**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_OIS**は、ドライバー上の光学イメージ安定化 (ois) の制御に使用されるプロパティ ID です。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "63380322"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ ms.locfileid: "63380322"
 </tbody>
 </table>
 
-次のフラグを配置することができます、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー。フラグ**コントロール光ディスク イメージの安定化するフィールド。 既定値は、それ以外の場合自動がサポートされている場合、自動または ON する必要があります。
+次のフラグは、 **KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できます。** 光学式イメージの安定化を制御するフラグフィールド。 AUTO がサポートされている場合は、既定値は AUTO、それ以外の場合はになります。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_OIS_OFF   0x0000000000000000
@@ -57,13 +57,13 @@ ms.locfileid: "63380322"
 #define KSCAMERA_EXTENDEDPROP_OIS_AUTO  0x0000000000000002 
 ```
 
-OIS をサポートする必要があります、ドライバーは、このコントロールをサポートする場合\_ON および OIS\_OFF。
+ドライバーがこのコントロールをサポートしている場合は、OIS\_ON をサポートし、OIS\_OFF をサポートする必要があります。
 
-ドライバーが光学イメージの安定化をサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
+ドライバーで光学イメージの安定化がサポートされていない場合、ドライバーはこのコントロールを実装しないでください。
 
-このコントロールの設定の呼び出しも何も起こりませんビデオや写真の pin が KSSTATE とき\_の実行の状態。 ドライバーはビデオや写真のいずれかの暗証番号 (pin) が実行状態とステータスを返しますが受信設定の呼び出し元に戻す\_無効な\_デバイス\_状態。 ドライバーは、GET 呼び出しで、フラグ フィールドの現在の設定を返す必要があります。
+このコントロールの SET 呼び出しは、ビデオまたはフォトピンが KSK 状態\_実行状態の場合には効果がありません。 ビデオまたはフォト pin が実行中状態の場合、ドライバーは受信した設定呼び出しを拒否し、デバイス\_状態\_無効\_状態を返します。 GET 呼び出しでは、ドライバーは Flags フィールドの現在の設定を返します。
 
-次の表では、フラグの機能について説明します。
+次の表では、フラグ機能について説明します。
 
 <table>
 <colgroup>
@@ -79,20 +79,20 @@ OIS をサポートする必要があります、ドライバーは、このコ�
 <tbody>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_OIS_OFF</p></td>
-<td><p>これは、必須の機能です。 指定した場合、ドライバーでは、光ディスク イメージの安定化は無効になっています。</p></td>
+<td><p>これは必須の機能です。 指定した場合、ドライバーでは光学イメージの安定化が無効になります。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_OIS_ON</p></td>
-<td><p>これは、必須の機能です。 指定した場合、ドライバーでは、光ディスク イメージの安定化は有効になっています。 このフラグは OIS_AUTO と OIS_OFF フラグで相互に排他的です。</p></td>
+<td><p>これは必須の機能です。 指定すると、ドライバーで光学イメージの安定化が有効になります。 このフラグは、OIS_AUTO および OIS_OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_OIS_AUTO</p></td>
-<td><p>この機能は省略可能です。 指定した場合、このような機能をサポートするドライバーは光ディスク イメージの安定化をオンまたはオフにするかどうかを決定します。 このフラグは OIS_ON と OIS_OFF フラグで相互に排他的です。</p></td>
+<td><p>この機能は省略可能です。 指定した場合、このような機能をサポートするドライバーは、光学イメージの安定化をオンまたはオフにする必要があるかどうかを判断します。 このフラグは、OIS_ON および OIS_OFF フラグと同時に指定することはできません。</p></td>
 </tr>
 </tbody>
 </table>
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表には、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -101,34 +101,34 @@ OIS をサポートする必要があります、ドライバーは、このコ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0 xffffffff) 必要があります。</p></td>
+<td><p>これは KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>これは、sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>ビットごとの OR、サポートされている KSCAMERA_EXTENDEDPROP_OIS_ * フラグの上に定義されている必要があります。</p></td>
+<td><p>は、上で定義された、サポートされている KSCAMERA_EXTENDEDPROP_OIS_ * フラグのビットごとの OR である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された KSCAMERA_EXTENDEDPROP_OIS_ * フラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている KSCAMERA_EXTENDEDPROP_OIS_ * フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>

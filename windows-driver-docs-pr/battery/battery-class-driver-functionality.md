@@ -3,15 +3,15 @@ title: バッテリ クラス ドライバーの機能
 description: バッテリ クラス ドライバーの機能
 ms.assetid: cd7536d9-bcf1-4674-8ebf-af2b888a0f0a
 keywords:
-- バッテリ クラス ドライバー WDK、機能
+- バッテリクラスドライバー WDK、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b724319a72a710bfb3efe7e98bae3620fabf517
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f7b110d7992ab71b79cb3d354715dce38eb2ac1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364771"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829919"
 ---
 # <a name="battery-class-driver-functionality"></a>バッテリ クラス ドライバーの機能
 
@@ -19,23 +19,23 @@ ms.locfileid: "67364771"
 ## <span id="ddk_battery_class_driver_functionality_dg"></span><span id="DDK_BATTERY_CLASS_DRIVER_FUNCTIONALITY_DG"></span>
 
 
-カーネル モードのバッテリ クラス ドライバーのため、battc.sys、デバイスに依存しないバッテリのサポートを提供して、エクスポートは、すべてのデバイスに固有のバッテリ miniclass ドライバーによる使用のルーチンをサポートします。
+カーネルモードバッテリクラスドライバー battc は、デバイスに依存しないバッテリサポートを提供し、すべてのデバイス固有のバッテリ miniclass ドライバーで使用するためのサポートルーチンをエクスポートします。
 
-バッテリ クラス ドライバー miniclass ドライバーの次のタスクを行います。
+バッテリクラスドライバーは、miniclass ドライバーに関して次のタスクを実行します。
 
--   Miniclass ドライバーの初期化、miniclass ドライバーのクラスのデータ用のシステム リソースと容量の割り当てなどの大きな部分を実行します。
+-   Miniclass ドライバーの初期化の大部分を実行します。たとえば、miniclass ドライバーのクラスデータのシステムリソースと領域の割り当てを含みます。
 
--   デバイスの制御 Irp の処理 ([**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)) バッテリ クラス Ioctl を指定します。 (これらの Ioctl については、Microsoft Windows SDK を参照してください)。
+-   バッテリクラス Ioctl を指定するデバイスコントロールの Irp ([**irp\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)) を処理します。 (これらの Ioctl の詳細については、Microsoft Windows SDK を参照してください)。
 
--   バッテリのデバイスへの要求をシリアル化します。
+-   バッテリデバイスへの要求をシリアル化する
 
--   オペレーティング システムの DC 電源ポリシーの管理
+-   オペレーティングシステムの DC 電源ポリシーを管理する
 
--   Miniclass ドライバーが読み込まれている場合は、システム リソースを解放します。
+-   Miniclass ドライバーがアンロードされた場合のシステムリソースの解放
 
--   特定の標準のバッテリ WMI クラスの処理
+-   特定の標準バッテリの WMI クラスの処理
 
-参照してください[バッテリ Miniclass ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)バッテリ miniclass ドライバーにバッテリ クラス ドライバーをエクスポートするルーチンの説明についてはします。
+バッテリクラスドライバーがバッテリ Miniclass ドライバーにエクスポートするルーチンの説明については、「[バッテリ Miniclass ドライバールーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/_battery/)」を参照してください。
 
  
 

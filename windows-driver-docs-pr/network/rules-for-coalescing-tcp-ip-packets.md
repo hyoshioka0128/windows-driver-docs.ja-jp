@@ -1,28 +1,28 @@
 ---
-title: TCP/IP セグメントの結合規則
-description: このセクションでは、ミニポート ドライバーでの TCP/IP セグメントの結合規則を定義します。
+title: TCP/IP セグメントを結合するための規則
+description: このセクションでは、ミニポートドライバーで TCP/IP セグメントを結合するための規則を定義します。
 ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a17c87ad22d86e6810a35f0ee3f217eb29b4a01
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6085d3be7961565fb41a8af13bc2cd11181e6d78
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382132"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842001"
 ---
 # <a name="rules-for-coalescing-tcpip-segments"></a>TCP/IP セグメントの結合の規則
 
 
-このセクションでは、セグメント coalescing (RSC) を持つ"を受信するときに指定するルールを定義します。-対応ミニポート ドライバーを特定の TCP 接続のセグメントを結合する必要があります。 規則のいずれかに違反すると、例外が発生すると、し、ミニポート ドライバーは、セグメントの結合を中止する必要があります。
+このセクションでは、受信セグメント合体 (RSC) 対応ミニポートドライバーが特定の TCP 接続のセグメントを結合する必要がある場合に指定するルールを定義します。 いずれかの規則に違反すると、例外が生成され、ミニポートドライバーはセグメントの合体を中止する必要があります。
 
-ミニポート ドライバーは、1 つのまとめられた単位 (SCU) の ip アドレスと TCP ヘッダーを更新する必要があります。 ミニポート ドライバーは、SCU 経由で TCP および IPv4 のチェックサムが再計算し、TCP ペイロードをチェーンする必要があります。
+ミニポートドライバーは、1つの結合されたユニット (SCU) の IP ヘッダーと TCP ヘッダーを更新する必要があります。 ミニポートドライバーは、SCU 経由で TCP および IPv4 チェックサムを再計算し、TCP ペイロードをチェーンする必要があります。
 
-次の 2 つのフローチャートの最初の数値では、セグメントの結合と TCP ヘッダーの更新の規則について説明します。 このフローチャートは、有効な重複の Ack およびウィンドウの更新を区別するためのメカニズムを指します。 2 番目のフローチャートでは、これらのメカニズムについて説明します。
+次の2つのフローチャートの最初の例では、セグメントを結合し、TCP ヘッダーを更新するための規則について説明します。 このフローチャートは、有効な重複する Ack とウィンドウの更新を区別するためのメカニズムを示しています。 2番目のフローチャートは、これらのメカニズムについて説明します。
 
-これらのフローチャートは、RSC の規則を理解するための参照として提供されます。 ハードウェアの実装は、正確性が保持される限り、フローチャートを最適化できます。
+これらのフローチャートは、RSC ルールを理解するための参考資料として提供されています。 ハードウェアの実装では、正確さが維持されている限り、フローチャートを最適化できます。
 
-フローチャートで、次の用語が使用されます。
+フローチャートでは、次の用語が使用されます。
 
 <table>
 <colgroup>
@@ -37,164 +37,164 @@ ms.locfileid: "67382132"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>SEG します。SEQ</strong></p></td>
-<td align="left"><p>入力のセグメントのシーケンス番号。</p></td>
+<td align="left"><p><strong>セグメント.SEQ</strong></p></td>
+<td align="left"><p>受信セグメントのシーケンス番号。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>H.SEQ</strong></p></td>
+<td align="left"><p><strong>.H. SEQ</strong></p></td>
 <td align="left"><p>現在追跡されている SCU のシーケンス番号。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>SEG.ACK</strong></p></td>
-<td align="left"><p>受信のセグメントの受信確認番号。</p></td>
+<td align="left"><p><strong>セグメント.ファクタ</strong></p></td>
+<td align="left"><p>受信セグメントの受信確認番号。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>H.ACK</strong></p></td>
+<td align="left"><p><strong>.H</strong></p></td>
 <td align="left"><p>現在追跡されている SCU の受信確認番号。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>SEG します。WND</strong></p></td>
-<td align="left"><p>受信セグメントによって提供されるウィンドウです。</p></td>
+<td align="left"><p><strong>セグメント.WND</strong></p></td>
+<td align="left"><p>受信セグメントによって提供されるウィンドウ。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>H.WND</strong></p></td>
-<td align="left"><p>現在追跡されている SCU によって提供されるウィンドウです。</p></td>
+<td align="left"><p><strong>WND</strong></p></td>
+<td align="left"><p>現在追跡されている SCU によって提供されるウィンドウ。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>SEG.LEN</strong></p></td>
-<td align="left"><p>入力のセグメントの TCP ペイロード長。</p></td>
+<td align="left"><p><strong>セグメント.LEN</strong></p></td>
+<td align="left"><p>受信セグメントの TCP ペイロードの長さ。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>H.LEN</strong></p></td>
-<td align="left"><p>現在追跡されている SCU の TCP ペイロード長。</p></td>
+<td align="left"><p><strong>.H</strong></p></td>
+<td align="left"><p>現在追跡されている SCU の TCP ペイロードの長さ。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>SEG.NXT</strong></p></td>
-<td align="left"><p>合計<strong>SEG します。SEQ</strong>と<strong>SEG します。LEN</strong>します。</p></td>
+<td align="left"><p><strong>セグメント.NXT</strong></p></td>
+<td align="left"><p>SEG の合計<strong>。SEQ</strong>と<strong>SEG。LEN</strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>H.NXT</strong></p></td>
-<td align="left"><p>合計<strong>H.SEQ</strong>と<strong>H.LEN</strong>します。</p></td>
+<td align="left"><p><strong>.H. NXT</strong></p></td>
+<td align="left"><p><strong>SEQ</strong>と<strong>.h</strong>の合計です。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>H.DupAckCount</strong></p></td>
-<td align="left"><p>SCU に結合された重複する Ack の数。 この番号は 0 である必要があります。</p></td>
+<td align="left"><p><strong>-DupAckCount</strong></p></td>
+<td align="left"><p>SCU に結合された重複する Ack の数。 この数値は0にする必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>SEG.Tsval</strong></p></td>
-<td align="left"><p><strong>タイムスタンプ</strong>受信した現在のセグメントの値。 この値の形式が定義されている<a href="http://www.ietf.org/rfc/rfc1323.txt" data-raw-source="[RFC 1323](http://www.ietf.org/rfc/rfc1323.txt)">RFC 1323</a>します。</p></td>
+<td align="left"><p><strong>セグメント.Tsval</strong></p></td>
+<td align="left"><p>現在受信されているセグメントの<strong>タイムスタンプ</strong>値。 この値の形式は、 <a href="http://www.ietf.org/rfc/rfc1323.txt" data-raw-source="[RFC 1323](http://www.ietf.org/rfc/rfc1323.txt)">RFC 1323</a>で定義されています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>H.Tsval</strong></p></td>
-<td align="left"><p><strong>タイムスタンプ</strong>現在追跡されている SCU 内の値。</p></td>
+<td align="left"><p><strong>.H. Tsval</strong></p></td>
+<td align="left"><p>現在追跡されている SCU の<strong>タイムスタンプ</strong>値。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>SEG.TSecr</strong></p></td>
-<td align="left"><p><strong>タイムスタンプ エコー応答</strong>で受信した現在のセグメント。</p></td>
+<td align="left"><p><strong>セグメント.TSecr</strong></p></td>
+<td align="left"><p>現在受信されているセグメントの<strong>タイムスタンプエコー応答</strong>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>H.TSecr</strong></p></td>
-<td align="left"><p><strong>タイムスタンプ エコー応答</strong>現在追跡されている SCU でします。</p></td>
+<td align="left"><p><strong>.H. TSecr</strong></p></td>
+<td align="left"><p>現在追跡されている SCU の<strong>タイムスタンプエコー応答</strong>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-![セグメントの結合と tcp ヘッダーの更新の規則を記述するフローチャート](images/rsc-rules1.png)
+![セグメントを結合し、tcp ヘッダーを更新するための規則を記述するフローチャート](images/rsc-rules1.png)
 
-![有効な重複の ack およびウィンドウの更新を区別するためのメカニズムを示すフローチャート](images/rsc-rules2.png)
+![有効な重複する ack とウィンドウの更新を区別するためのメカニズムを示すフローチャート](images/rsc-rules2.png)
 
-フローチャートは、ミニポート ドライバーが ACK 数が異なるセグメントをまとめることがありますを表示します。 ただし、上記の最初のフローチャートで示すように、ミニポート ドライバーは、ACK 番号に関する次の規則に従う必要があります。
+フローチャートは、ミニポートドライバーが異なる確認番号を持つセグメントを合体する可能性があることを示しています。 ただし、上記の最初のフローチャートに示すように、ミニポートドライバーは、ACK 番号に関する次の規則に従う必要があります。
 
--   シーケンス番号の確認を実行した後は、次の条件の一方または両方を満たしている場合に純粋な受信 ACK 現在追跡されている SCU に結合可能性があります。
+-   シーケンス番号の確認を実行した後、受信した純粋 ACK が、次のいずれかまたは両方の条件を満たしている場合、現在追跡されている SCU に結合される可能性があります。
 
-    -   **H.ACK** == **SEG します。ACK**します。
-    -   追跡されている結合されたセグメント内の重複 ACK カウントには 0 です。 つまり、 **H.DupAckCount** 0 を = =。
+    -   ** == ** **SEG。** 確認。
+    -   追跡されている結合されたセグメントの重複確認カウントが0です。 言い換えると、「1. **DupAckCount** = = 0」のようになります。
 
-    つまり、重複した ACK またはウィンドウの更新ではない任意の純粋な ACK は例外をトリガーし、結合しない必要があります。 このようなすべての純粋な Ack は、個々 のセグメントとして指定する必要があります。 この規則により、RSC は、動作や Windows TCP 輻輳制御のアルゴリズムのパフォーマンスには影響しません。
+    つまり、重複する ACK またはウィンドウの更新ではない純粋な ACK は、例外をトリガーするため、結合することはできません。 このようなすべての純粋な Ack は、個別のセグメントとして示す必要があります。 この規則により、RSC は Windows TCP 輻輳制御アルゴリズムの動作またはパフォーマンスに影響しません。
 
--   入力方向のデータ セグメント (**SEG します。ACK** == **H.ACK**)、受信ピギーバック ACK または (**SEG します。ACK** &gt; **H.ACK**) の両方の次の条件が満たされた場合に、現在追跡されている SCU に結合された可能性があります。
+-   受信データセグメント (**SEG。ACK** == )、または受信豚によって保証さ**れる Ack (** **SEG。** 次の両方の条件が満たされている場合は、現在追跡されている SCU に ack &gt;) を結合でき**ます。**
 
-    -   セグメントは、シーケンスの領域で SCU に連続したです。 つまり、 **SEG します。SEQ** == **H.NXT**します。
-    -   追跡されている結合されたセグメント内の重複 ACK カウントには 0 です。 つまり、 **H.DupAckCount** 0 を = =。
+    -   セグメントは、シーケンス空間内の SCU に隣接しています。 言い換えると、 **SEG です。SEQ** == . **NXT**。
+    -   追跡されている結合されたセグメントの重複確認カウントが0です。 言い換えると、「1. **DupAckCount** = = 0」のようになります。
 
-## <a name="additional-notes-on-duplicate-ack-coalescing"></a>重複する ACK の結合についての注意事項
-
-
-### <a name="duplicate-ack-behavior"></a>ACK の動作が重複しています
-
-ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱う必要があり、合体しません。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントでは、既定で選択的受信確認 (SACK) を使用するため、重複した ACK セグメントは例外を生成可能性があります。 参照してください[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)例についてはします。 セグメントと場合、 **DupAckCount** &gt; 0 が示される、NDIS インターフェイスで、RSC が無効になります。
-
-### <a name="handling-duplicate-ack-when-tracking-a-scu-consisting-of-data-segments"></a>データ セグメントから成る SCU を追跡する場合は、重複の確認を処理
-
-SCU を追跡する場合は**H.LEN** &gt; 0 (つまり、まとめられたセグメント データを含む)、次に、その追跡 SCU は次のように終了する必要があります、重複の確認が到着した場合。
-
-1.  重複の確認以降に、新しい SCU を追跡する必要があります。
-
-2.  **DupAckCount**新しい SCU は、0 に設定する必要があります。
-
-3.  **DupAckCount**重複する追加の Ack を受信した場合にインクリメントする必要があります。
-
-この場合、 **DupAckCount** 1 未満の重複する Ack の数になります。 ホストのスタックでは、正しくカウントを処理します。
-
-### <a name="handling-duplicate-ack-when-tracking-a-scu-consisting-of-a-pure-cumulative-ack"></a>純粋な累積的な確認から成る SCU を追跡する場合は、重複の確認を処理
-
-1 つの純粋な累積的な確認 (純粋な確認を複数の結合を禁止する規則) で構成される、SCU を追跡する場合は次に、重複の確認が到着する場合は、 **DupAckCount**追跡 SCU をインクリメントする必要があります。 また重複する追加の Ack を受信した場合もインクリメントする必要があります。 この場合、 **DupAckCount**をひとまとめに重複する Ack の数と等しくなります。
-
-### <a name="when-the-first-segment-that-is-received-in-a-dpc-is-a-duplicate-ack"></a>DPC で受信する最初のセグメントが重複する ACK の場合
-
-ここでは、NIC ことはできませんかを判断、受信したセグメント、ACK が重複しているため、いずれかの状態は保持されません。 セグメントとして扱う純粋 ACK 代わりに次のようにします。
-
-1.  このセグメントで始まる新しい SCU を追跡する必要があります。
-
-2.  **DupAckCount**新しい SCU は、0 に設定する必要があります。
-
-3.  **DupAckCount**を受信した各追加重複の確認を 1 増加する必要があります。
-
-この場合、 **DupAckCount**は重複する Ack の実際の数よりも小さい 1 と等しくなります。 ホストのスタックでは、正しくカウントを処理します。
-
-### <a name="duplicate-ack-exemption"></a>ACK の除外対象が重複しています
-
-ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱うし、合体しません可能性があります。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントは、既定では、SACK を使用するため、重複した ACK セグメントは例外を生成可能性があります。 例については、次を参照してください。[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)します。 この除外は、ウィンドウの更新プログラムのセグメントには適用されません。
-
-## <a name="coalescing-segments-with-the-timestamp-option"></a>タイムスタンプ オプションを使用してセグメントを結合
+## <a name="additional-notes-on-duplicate-ack-coalescing"></a>重複する ACK の結合に関する追加の注意事項
 
 
-TCP タイムスタンプ オプションは、合法的に結合された唯一のオプションです。 このセグメントを結合オプションは、実装に固有の決定事項として残しておきます。 ミニポート ドライバーでは、タイムスタンプのオプションを使用してセグメントを連結は次のフローチャートで説明する規則を従う必要があります。
+### <a name="duplicate-ack-behavior"></a>重複する確認動作
 
-![tcp タイムスタンプ オプションを使用して結合のセグメントの規則を記述するフローチャート](images/rsc-rules3.png)
+ミニポートドライバーは、純粋な ACK と同等の重複する ACK セグメントを処理し、結合しないようにする必要があります。 この場合は、現在の SCU (存在する場合) を最終処理し、重複する ACK セグメントを個々のセグメントとして示す必要があります。 Windows クライアントでは、既定で選択的受信確認 (SACK) が使用されるため、重複する ACK セグメントでは例外が発生する可能性があります。 例については、「[受信セグメントの結合の例](examples-of-receive-segment-coalescing.md)」を参照してください。 **Dupackcount** &gt; 0 のセグメントが指定されている場合、NDIS はインターフェイスで RSC を無効にします。
 
-**注**  チェック**SEG します。TSval** &gt; =  **H.TSval** TCP シーケンス番号に使用するときと同様の 232 剰余算術演算子を使用して実行する必要があります。 参照してください[RFC 793](http://www.ietf.org/rfc/rfc793.txt)、セクション 3.3 です。
+### <a name="handling-duplicate-ack-when-tracking-a-scu-consisting-of-data-segments"></a>データセグメントで構成される SCU を追跡するときに重複する ACK を処理する
+
+&gt; 0 (つまり、データを含む結合されたセグメント) を使用して SCU を追跡する場合、重複する ACK が次に到着した場合、追跡 SCU は次の**ように完了**する必要があります。
+
+1.  新しい SCU は、重複する ACK を使用して追跡する必要があります。
+
+2.  新しい SCU の**Dupackcount**は0に設定する必要があります。
+
+3.  追加の重複する Ack を受信した場合は、 **Dupackcount**をインクリメントする必要があります。
+
+この場合、 **Dupackcount**は、重複する ack の数より1小さい値になります。 ホストスタックは、カウントを正しく処理します。
+
+### <a name="handling-duplicate-ack-when-tracking-a-scu-consisting-of-a-pure-cumulative-ack"></a>純粋な累積 ACK で構成される SCU を追跡するときに重複する ACK を処理する
+
+単一の純粋な累積 ACK で構成される SCU を追跡する場合 (複数の純粋な ack の結合を禁止するルール)、重複する ACK が次に到着した場合、追跡 SCU の**Dupackcount**を増やす必要があります。 また、追加の重複する Ack を受信した場合にもインクリメントする必要があります。 この場合、 **Dupackcount**は、結合された重複する ack の数と同じになります。
+
+### <a name="when-the-first-segment-that-is-received-in-a-dpc-is-a-duplicate-ack"></a>DPC で受信した最初のセグメントが、重複する ACK である場合
+
+この場合、NIC は状態を保持していないため、受信したセグメントが重複する ACK であるかどうかを判断できません。 そのため、セグメントは次のように、純粋な ACK として扱う必要があります。
+
+1.  このセグメントから開始して、新しい SCU を追跡する必要があります。
+
+2.  新しい SCU の**Dupackcount**は0に設定する必要があります。
+
+3.  重複する ACK を追加するたびに、 **Dupackcount**を1ずつインクリメントする必要があります。
+
+この場合、 **Dupackcount**は、重複する ack の実際の数より1小さい値になります。 ホストスタックは、カウントを正しく処理します。
+
+### <a name="duplicate-ack-exemption"></a>重複する ACK の除外
+
+ミニポートドライバーは、純粋な ACK と同等の重複する ACK セグメントを処理し、結合しないことがあります。 この場合は、現在の SCU (存在する場合) を最終処理し、重複する ACK セグメントを個々のセグメントとして示す必要があります。 Windows クライアントでは既定で SACK が使用されるため、重複する ACK セグメントでは例外が発生する可能性があります。 例については、「[受信セグメントの結合の例](examples-of-receive-segment-coalescing.md)」を参照してください。 この除外は、ウィンドウの更新セグメントには適用されません。
+
+## <a name="coalescing-segments-with-the-timestamp-option"></a>Timestamp オプションを使用した結合セグメント
+
+
+TCP タイムスタンプオプションは、合法的に結合できる唯一のオプションです。 このオプションを使用した結合セグメントは、実装固有の決定として残されます。 ミニポートドライバーがタイムスタンプオプションを使用してセグメントを結合する場合は、次のフローチャートに記載されている規則に従う必要があります。
+
+![tcp タイムスタンプオプションを使用してセグメントを結合するための規則を説明するフローチャート](images/rsc-rules3.png)
+
+Check SEG  に**注意**して**ください。TSval** &gt;= は、TCP シーケンス番号に使用されるのと同様に、剰余-232 を使用して**実行する必要**があります。 [RFC 793](http://www.ietf.org/rfc/rfc793.txt)のセクション3.3 を参照してください。
 
  
 
-設定して、次の帯域外の情報を次のように表示する必要がまとめられたセグメントを指定する際に、 **NetBufferListInfo**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)まとめられたセグメントを記述する構造体。
+結合されたセグメントを示す場合、次の帯域外情報は、結合されたセグメントを記述する[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NetBufferListInfo**メンバーを設定することによって次のように指定する必要があります。
 
--   結合されたセグメントの数を格納する必要があります、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\].**CoalescedSegCount**メンバー。 この数には、結合されたデータのセグメントのみを表します。 ACK の純粋な結合が禁止されているし、ウィンドウの更新プログラムのセグメントは、このフィールドの一部としてカウントされない必要があります。
+-   結合されたセグメントの数は、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\]に格納されている必要があります。**CoalescedSegCount**メンバー。 この数値は、結合されたデータセグメントのみを表します。 純粋 ACK の合体は禁止されているため、このフィールドの一部として、ウィンドウの更新セグメントをカウントすることはできません。
 
--   重複の確認数を格納する必要があります、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\].**DupAckCount**メンバー。 上記の最初のフローチャートは、この値を計算する方法について説明します。
+-   重複する ACK カウントは、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\]に保存する必要があります。**Dupackcount**メンバー。 上の最初のフローチャートでは、この値がどのように計算されるかを説明します。
 
--   タイムスタンプの TCP オプションを持つセグメントが 1 つにまとめ、ときに**NetBufferListInfo**\[**RscTcpTimestampDelta** \]早い絶対デルタが入力される必要がありますまとめられたセグメントのシーケンスに表示される最新の TCP タイムスタンプ値が、SCU を構成します。 SCU 自体には、まとめられたセグメントのシーケンスに表示される最新の TCP タイムスタンプ値を含める必要があります。
+-   TCP timestamp オプションを含むセグメントが結合されている場合、 **NetBufferListInfo**\[**rsctcpタイムスタンプデルタ**\] には、最も古いものから最後の TCP タイムスタンプ値までの絶対差分を格納する必要があります。SCU を構成する結合されたセグメント。 SCU 自体には、結合されたセグメントのシーケンスに見られる最新の TCP タイムスタンプ値を含める必要があります。
 
-**DupAckCount**と**RscTcpTimestampDelta**メンバーは、解釈された場合、および場合にのみ、 **CoalescedSegCount**メンバーが 0 より大きい。 場合、 **CoalescedSegCount** 0 の場合は、セグメントは、非結合以外の RSC セグメントとして扱われます。
+**CoalescedSegCount**メンバーが0より大きい場合にのみ、 **Dupackcount**メンバーと**rsctcptimestampdelta**メンバーが解釈されます。 **CoalescedSegCount**がゼロの場合、セグメントは非対応の非 RSC セグメントとして扱われます。
 
-内容については、 **NetBufferListInfo** 、メンバーを参照してください[ **NDIS\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ne-ndis-_ndis_net_buffer_list_info)と[ **NDIS\_RSC\_NBL\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_rsc_nbl_info)します。
+**NetBufferListInfo**メンバーの内容の詳細については、「 [**ndis\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_net_buffer_list_info) 」と「 [**ndis\_RSC\_NBL\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_rsc_nbl_info)」を参照してください。
 
-PSH ビットまとめられたすべてのセグメントの or 演算があります。 つまり、個々 のセグメントのいずれかで PSH ビットが設定されている場合、ミニポート ドライバーが PSH ビットを SCU でに設定する必要があります。
+すべての結合されたセグメントでは、PSH ビットを連結する必要があります。 つまり、PSH ビットが個々のセグメントのいずれかに設定されている場合、ミニポートドライバーは SCU で PSH ビットを設定する必要があります。
 
-SCU の最終処理が含まれます。
+SCU の最終処理には次のものが含まれます。
 
--   TCP を再計算し、該当する場合、IPv4 のチェックサム。
+-   TCP および (該当する場合) IPv4 チェックサムを計算します。
 
--   IP ヘッダーの更新」の説明に従って[セグメントの結合の IP ヘッダーを更新](updating-the-ip-headers-for-coalesced-segments.md)します。
+-   「結合された[セグメントの Ip ヘッダーを更新](updating-the-ip-headers-for-coalesced-segments.md)する」の説明に従って ip ヘッダーを更新します。
 
--   個々 のセグメントで設定された値と同じにし、TCP IP ヘッダーで ECN bits および ECN フィールドを設定します。
+-   TCP および IP ヘッダーの ECN のビットおよび ECN フィールドに、個々のセグメントで設定されていたのと同じ値を設定します。
 
-## <a name="handling-tcpip-ipsec-segments"></a>TCP/IP の IPsec のセグメントの処理
+## <a name="handling-tcpip-ipsec-segments"></a>TCP/IP IPsec セグメントの処理
 
 
-ネットワーク カードによって、RSC と IPsec タスク オフロード機能を報告する必要があります。 (を参照してください[、RSC、ネットワーク アダプターの機能を決定する](determining-the-rsc-capabilities-of-a-network-adapter.md))。ただし、IPsec タスク オフロードをサポートしている場合は、IPsec によって保護されているセグメントの結合が試行する必要がありますされません。
+ネットワークカードは、RSC と IPsec タスクオフロードの両方の機能を報告する場合があります。 (「[ネットワークアダプターの RSC 機能の決定](determining-the-rsc-capabilities-of-a-network-adapter.md)」を参照してください)。ただし、IPsec タスクオフロードをサポートしている場合は、IPsec によって保護されているセグメントの結合を試行することはできません。
 
  
 

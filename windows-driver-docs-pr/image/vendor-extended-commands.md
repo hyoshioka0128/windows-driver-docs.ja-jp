@@ -4,12 +4,12 @@ description: ベンダー拡張コマンド
 ms.assetid: 3d360a9f-5a65-452b-a8ad-080dc7d8c8f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 300cd6c53b26ade72f2bbfca44d0014f6c855193
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a53ae7a1f478a068540fe8cbf4a1d46086e5e9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375387"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840724"
 ---
 # <a name="vendor-extended-commands"></a>ベンダー拡張コマンド
 
@@ -17,13 +17,13 @@ ms.locfileid: "67375387"
 
 
 
-アプリケーションを使用してデバイスに任意のコマンドを送信することができます、 **IWiaItemExtras::Escape**メソッドは、Microsoft Windows SDK ドキュメントで説明します。 呼び出して**QueryInterface**ルート アイテムへのポインターを取得することができます、 **IWiaItemExtras**インターフェイス。 アプリケーションは任意のオペコードとパラメーターを使用して PTP コマンドを作成し、デバイスにこのコマンドを送信します。 アプリケーションもデータを送信したり、デバイスからデータを受信できます。
+アプリケーションは、 **Iwiaitemextras:: Escape**メソッドを使用してデバイスに任意のコマンドを送信できます。これについては、Microsoft Windows SDK のドキュメントを参照してください。 ルート項目に対して**QueryInterface**を呼び出すことによって、 **Iwiaitemextras**インターフェイスへのポインターを取得できます。 その後、アプリケーションは、任意のオペコードとパラメーターを使用して PTP コマンドを構築し、このコマンドをデバイスに送信できます。 また、アプリケーションは、デバイスとの間でデータを送受信することもできます。
 
-デバイス操作の結果をアプリケーションに通知時に、 **IWiaItemExtras::Escape**メソッドから返される応答コードと応答のパラメーターに入力し、 [ **PTP\_仕入先\_データ\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **SessionId**と**TransactionId**のメンバー、 [ **PTP\_ベンダー\_データ\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)構造は無視されます。 ドライバーは、これらの正しい値を提供します。
+デバイスは、 **Iwiaitemextras:: Escape**メソッドから制御が戻ったときに、操作の結果をアプリケーションに通知します。これにより、 [**PTP\_ベンダ\_DATA\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体に応答コードと応答パラメーターが入力されます。 構造に含まれている[**PTP\_ベンダ\_データ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_in)の**SessionId**メンバーと**transactionid**メンバーは無視されます。 ドライバーは、これらの値に適切な値を提供します。
 
-エスケープ以外のベンダー定義コマンドの\_PTP\_クリア\_区画、特別なフラグをエスケープ\_PTP\_ベンダー\_コマンドを (OR 演算子を使用して) 組み合わせる必要があります、コマンドを使用使用される、 **IWiaItemExtras::Escape**メソッド。 ベンダー定義コマンドを作成するか、次の説明フラグを使用してデバイス上のオブジェクトを削除する場合、ドライバーは追加またはその内部構造からオブジェクトを削除し、WIA イベントが生成されます。 適切な WIA インターフェイスを通じて他のすべての標準コマンドを発行する必要があります。
+エスケープ\_以外のベンダー定義コマンドについては、\_の停止を明確に\_ます。特別なフラグ、エスケープ\_PTP\_ベンダ\_のコマンドは、Iwiaitemextras で使用されるコマンドと組み合わせて (または演算子を使用して) 組み合わせる必要があります。 **:: Escape**メソッド。 ベンダー定義のコマンドが、次に示すフラグを使用してデバイス上のオブジェクトを作成または削除する場合、ドライバーはその内部構造からオブジェクトを追加または削除し、WIA イベントを生成します。 その他のすべての標準コマンドは、適切な WIA インターフェイスを使用して発行する必要があります。
 
-最初のパラメーター **IWiaItemExtras::Escape**は、次のフラグの 1 つ以上の組み合わせです。
+**Iwiaitemextras:: Escape**の最初のパラメーターは、次のフラグの1つ以上を組み合わせたものです。
 
 <table>
 <colgroup>
@@ -32,65 +32,65 @@ ms.locfileid: "67375387"
 </colgroup>
 <thead>
 <tr class="header">
-<th>エスケープ コード</th>
-<th>説明</th>
+<th>エスケープコード</th>
+<th>意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ESCAPE_PTP_ADD_OBJ_CMD</p></td>
-<td><p>オブジェクトが追加されると、オブジェクトのハンドルがコマンドのパラメーターのいずれか。</p></td>
+<td><p>オブジェクトが追加され、オブジェクトのハンドルがいずれかのコマンドパラメーターに含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>ESCAPE_PTP_REM_OBJ_CMD</p></td>
-<td><p>オブジェクトが削除されると、オブジェクトのハンドルがコマンドのパラメーターのいずれか。</p></td>
+<td><p>オブジェクトを削除しようとしています。オブジェクトのハンドルは、いずれかのコマンドパラメーターに含まれています。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ESCAPE_PTP_ADD_OBJ_RESP</p></td>
-<td><p>オブジェクトが追加されると、オブジェクトのハンドルが応答のパラメーターのいずれか。</p></td>
+<td><p>オブジェクトが追加され、オブジェクトのハンドルが応答パラメーターの1つに含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>ESCAPE_PTP_REM_OBJ_RESP</p></td>
-<td><p>オブジェクトが削除されると、オブジェクトのハンドルが応答のパラメーターのいずれか。</p></td>
+<td><p>オブジェクトを削除しています。また、オブジェクトのハンドルが応答パラメーターの1つに含まれています。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ESCAPE_PTP_ADDREM_PARM1</p></td>
-<td><p>コマンドまたは応答の最初のパラメーターが追加または削除されたオブジェクトのハンドルです。</p></td>
+<td><p>追加または削除されたオブジェクトのハンドルは、コマンドまたは応答の最初のパラメーターに含まれています。</p></td>
 </tr>
 <tr class="even">
 <td><p>ESCAPE_PTP_ADDREM_PARM2</p></td>
-<td><p>コマンドまたは応答の 2 番目のパラメーターが追加または削除されたオブジェクトのハンドルです。</p></td>
+<td><p>追加または削除されたオブジェクトのハンドルは、コマンドまたは応答の2番目のパラメーターにあります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ESCAPE_PTP_ADDREM_PARM3</p></td>
-<td><p>コマンドまたは応答の 3 番目のパラメーターが追加または削除されたオブジェクトのハンドルです。</p></td>
+<td><p>追加または削除されたオブジェクトのハンドルは、コマンドまたは応答の3番目のパラメーターにあります。</p></td>
 </tr>
 <tr class="even">
 <td><p>ESCAPE_PTP_ADDREM_PARM4</p></td>
-<td><p>コマンドまたは応答の 4 番目のパラメーターが追加または削除されたオブジェクトのハンドルです。</p></td>
+<td><p>追加または削除されたオブジェクトのハンドルは、コマンドまたは応答の4番目のパラメーターにあります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ESCAPE_PTP_ADDREM_PARM5</p></td>
-<td><p>コマンドまたは応答の 5 番目のパラメーターが追加または削除されたオブジェクトのハンドルです。</p></td>
+<td><p>追加または削除されたオブジェクトのハンドルは、コマンドまたは応答の5番目のパラメーターにあります。</p></td>
 </tr>
 <tr class="even">
 <td><p>ESCAPE_PTP_CLEAR_STALLS</p></td>
-<td><p>ベンダー拡張コマンドによるエラー状態をオフにします。 このフラグは、他のフラグのいずれかと組み合わせて使用できません。 このフラグの詳細については、次の表の後の注を参照してください。</p></td>
+<td><p>ベンダ拡張コマンドによって発生するエラー状態をすべてクリアします。 このフラグは、他のフラグと組み合わせて使用することはできません。 このフラグの詳細については、この表の後の注を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ESCAPE_PTP_VENDOR_COMMAND</p></td>
-<td><p>コマンドは、ベンダー拡張コマンドです。</p></td>
+<td><p>コマンドは、ベンダーによって拡張されたコマンドです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  アプリケーションを呼び出すと**IWiaItemExtras::Escape** 、エスケープ\_PTP\_クリア\_ドライバーには、このメソッドは、最初の引数として停止フラグ発行、PTP**デバイスの状態の取得**任意のエンドポイントは停止状態でかどうかを判断する要求。 場合、**デバイスの状態の取得**コマンドが成功すると、ドライバーの問題、 [ **IOCTL\_リセット\_パイプ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbscan/ni-usbscan-ioctl_reset_pipe)このような各エンドポイントの USB 制御コード。 場合、**デバイスの状態の取得**コマンドが失敗した、ドライバーが、PTP**デバイス リセット**要求。 **デバイスの状態を取得する**と**デバイス リセット**ピマ 15740:2000 標準、最初のエディション、およびリビジョン 1.0 USB まだイメージ キャプチャ デバイス定義の (USB SICDD) に記載されています。
+アプリケーションが**Iwiaitemextras:: escape**をエスケープ\_\_使用して、このメソッドの最初の引数として\_ストールフラグをクリアする**と  、** ドライバーは ptp **Get Device Status**要求をに発行します。停止状態にあるエンドポイントがあるかどうかを確認します。 "**デバイスの状態の取得**" コマンドが成功した場合、ドライバーは、そのようなエンドポイントごとにパイプの USB 制御コード[ **\_\_リセットする IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbscan/ni-usbscan-ioctl_reset_pipe)を発行します。 **Get Device Status**コマンドが失敗した場合、ドライバーは PTP**デバイスリセット**要求を発行します。 **デバイスの状態の取得**と**デバイスのリセット**については、Usb 静止イメージキャプチャデバイスの定義 (USB SICDD) のピマ 15740:2000 standard、First Edition、および Revision 1.0 を参照してください。
 
  
 
-次のサンプル コードは、コマンドのベンダー拡張インターフェイスを使用する方法を示しています。 コードが含まれているかどうかを必ず、 *ptpusd.h*ヘッダー エスケープ コードおよび他の定数の定義が含まれているため、および[ **PTP\_ベンダー\_データ\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)と[ **PTP\_ベンダー\_データ\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **IWiaItemExtras**インターフェイスがへの呼び出しを使用して取得した**QueryInterface**ルート項目にします。 このルート項目へのポインター *pIWiaRootItem*、取得できます、たとえばへの呼び出しによって**IWiaDevMgr::SelectDeviceDlg** (Microsoft Windows SDK のドキュメントで説明)。
+次のサンプルコードは、ベンダ拡張コマンドインターフェイスの使用方法を示しています。 コードに*ptpusd .h*ヘッダーが含まれていることを確認してください。これには、エスケープコードとその他の定数の定義が含まれています。また、 [**PTP\_\_ベンダ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_in)は、データ\_と[**ptp\_ベンダー\_データを格納していることを確認してください\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **Iwiaitemextras**インターフェイスは、ルート項目で**QueryInterface**を呼び出すことによって取得されます。 このルート項目へのポインターである*Piwiarootitem*は、たとえば、 **Iwiadevmgr:: SelectDeviceDlg**を呼び出すことによって取得できます (詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
 
 ```cpp
 //

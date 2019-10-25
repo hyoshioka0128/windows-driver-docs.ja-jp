@@ -3,17 +3,17 @@ title: コンテキストの種類の登録
 description: コンテキストの種類の登録
 ms.assetid: ddf03426-5c49-4621-b81d-59d1cb002ae9
 keywords:
-- 型の登録、コンテキスト WDK ファイル システム ミニフィルター
-- コンテキストの種類を登録します。
+- コンテキスト WDK ファイルシステムミニフィルター, 型の登録
+- コンテキスト型の登録
 - FLT_CONTEXT_REGISTRATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf643f312da061a6102562953cf988bbc0aac52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce7c9956228b33f55e7d1cdc5ccdd334e819c907
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841008"
 ---
 # <a name="registering-context-types"></a>コンテキストの種類の登録
 
@@ -21,27 +21,27 @@ ms.locfileid: "67385139"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-ミニフィルター ドライバーを呼び出すと[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)からその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンをする必要があります登録する必要が各型のコンテキストを使用します。
+ミニフィルタードライバーが[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンから[**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)を呼び出すと、使用する各種類のコンテキストを登録する必要があります。
 
-ミニフィルター ドライバーをコンテキストの種類を登録するには、可変長配列を作成します[ **FLT\_コンテキスト\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_context_registration)構造体し、配列へのポインターを格納します**ContextRegistration**のメンバー、 [ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)でミニフィルター ドライバーに合格する構造体、 *登録*パラメーターの[ **FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)します。 この配列内の要素の順序は重要ではありません。 ただし、配列内の最後の要素があります {0} FLT\_コンテキスト\_終了しました。
+コンテキストの種類を登録するために、ミニフィルタードライバーは、 [**FLT\_コンテキスト\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)構造体の可変長配列を作成し、その配列へのポインターを FLT の**contextregistration**メンバーに格納し[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration) [**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)の*登録*パラメーターでミニフィルタードライバーが渡す登録構造。 この配列内の要素の順序は関係ありません。 ただし、配列の最後の要素は {FLT\_CONTEXT\_END} である必要があります。
 
-ミニフィルター ドライバーを使用するコンテキスト種類ごとにする必要があります指定する必要が少なくとも 1 つのコンテキストの定義に、FLT の形式で\_コンテキスト\_登録構造体。 各 FLT\_コンテキスト\_登録構造型、サイズ、およびその他のコンテキスト情報を定義します。
+ミニフィルタードライバーが使用するコンテキストの種類ごとに、FLT\_コンテキスト\_登録構造の形式でコンテキスト定義を少なくとも1つ指定する必要があります。 各 FLT\_コンテキスト\_の登録構造は、コンテキストの型、サイズ、およびその他の情報を定義します。
 
-ミニフィルター ドライバーが呼び出すことによって新しいコンテキストを作成するときに[ **FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)、フィルター マネージャーを使用して、*サイズ*のパラメーター、 **FltAllocateContext**ルーチン、だけでなく**サイズ**と**フラグ**、FLT のメンバー\_コンテキスト\_登録構造を選択しますコンテキストの定義に使用します。
+[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)を呼び出すことによってミニフィルタードライバーが新しいコンテキストを作成する場合、フィルターマネージャーは**FltAllocateContext**ルーチンの*SIZE*パラメーターと、@no__t FLT の**size**および**Flags**メンバーを使用します。使用するコンテキスト定義を選択する場合は、コンテキスト\_登録構造体 (_s)。
 
-固定サイズのコンテキストの**サイズ**、FLT のメンバー\_コンテキスト\_登録構造 (ミニフィルター ドライバーで定義されているコンテキストの構造体の部分のバイト単位)、サイズを指定します。 コンテキストの最大サイズは、MAXUSHORT (64 KB) です。 0 は、有効なサイズ値です。 フィルター マネージャーは、ルック アサイド リストを使用して固定サイズのコンテキストを実装します。 フィルター マネージャーが 2 つのルック アサイド リストの各サイズの値を作成します。 1 つのページと 1 つの非ページ。
+固定サイズのコンテキストの場合、FLT\_コンテキスト\_の登録構造の**サイズ**メンバーは、ミニフィルタードライバーによって定義されるコンテキスト構造の一部のサイズをバイト単位で指定します。 コンテキストの最大サイズは MAXUSHORT (64 KB) です。 0は有効なサイズ値です。 フィルターマネージャーは、ルックアサイドリストを使用して固定サイズのコンテキストを実装します。 フィルターマネージャーは、各サイズ値に対して2つのルックアサイドリストを作成します。1つはページングされていて、もう1つはページ
 
-可変サイズのコンテキストの**サイズ**FLT にメンバーを設定する必要があります\_変数\_サイズ\_コンテキスト。 フィルター マネージャーは、ページまたは非ページ プールから直接、可変サイズのコンテキストを割り当てます。
+可変サイズのコンテキストの場合は、 **size**メンバーを FLT に設定する必要があります。\_変数\_サイズ\_コンテキストに設定します。 フィルターマネージャーは、ページングされたプールまたは非ページプールから、可変サイズのコンテキストを直接割り当てます。
 
-**フラグ**、FLT のメンバー\_コンテキスト\_登録構造、FLTFL\_コンテキスト\_登録\_いいえ\_EXACT\_サイズ\_のマッチ フラグを指定することができます。 ミニフィルター ドライバーは固定サイズのコンテキストを使用すると、このフラグが指定されて、フィルター マネージャーは、コンテキストのサイズが要求されたサイズ以上である場合、ルック アサイド リストからコンテキストを割り当てます。 それ以外の場合、コンテキストのサイズは、要求されたサイズと同じである必要があります。
+FLT\_CONTEXT\_REGISTRATION 構造体の**Flags**メンバーでは、FLTFL\_コンテキスト\_登録\_\_完全\_サイズ\_一致フラグを指定することはできません。 ミニフィルタードライバーで固定サイズのコンテキストが使用されていて、このフラグが指定されている場合、コンテキストのサイズが要求されたサイズ以上の場合、フィルターマネージャーはルックアサイドリストからコンテキストを割り当てます。 それ以外の場合は、コンテキストのサイズが要求されたサイズと同じである必要があります。
 
-ミニフィルター ドライバーには、特定のコンテキスト型の場合、それぞれに別のサイズ、最大 3 つ固定サイズのコンテキストの定義と変数サイズの 1 つの定義を指定できます。 詳細については、次を参照してください。 [ **FLT\_コンテキスト\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_context_registration)します。
+指定されたコンテキストの種類では、ミニフィルタードライバーは最大3つの固定サイズのコンテキスト定義を指定できます。それぞれ異なるサイズを持ち、1つの可変サイズの定義があります。 詳細については、「 [**FLT\_CONTEXT\_REGISTRATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)」を参照してください。
 
-ミニフィルター ドライバーは、必要に応じて、コンテキストが解放される前に呼び出されるコンテキスト クリーンアップ コールバック ルーチンを指定できます。 詳細については、次を参照してください。 [ **PFLT\_コンテキスト\_クリーンアップ\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)します。
+ミニフィルタードライバーでは、コンテキストが解放される前に呼び出されるコンテキストクリーンアップコールバックルーチンをオプションで指定できます。 詳細については、「 [**PFLT\_CONTEXT\_CLEANUP\_CALLBACK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)」を参照してください。
 
-ミニフィルター ドライバーでは、これらのタスクを実行するフィルター マネージャーではなく、コンテキストを解放したり、独自のコールバック ルーチンを必要に応じて定義できます。 ただし、この非常にまれに必要です。 詳細については、次を参照してください[ **PFLT\_コンテキスト\_ALLOCATE\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_allocate_callback)と[ **PFLT\_コンテキスト。\_無料\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_free_callback)します。
+ミニフィルタードライバーでは、必要に応じて、フィルターマネージャーに依存してこれらのタスクを実行するのではなく、コンテキストを割り当てて解放するための独自のコールバックルーチンを定義できます。 ただし、これはほとんど必要ありません。 詳細については、「 [**PFLT\_context\_ALLOCATE\_callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_context_allocate_callback) 」と「 [**PFLT\_CONTEXT\_FREE\_callback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_context_free_callback)」を参照してください。
 
-ミニフィルター ドライバーの CTX サンプルから取得されますが、次のコード例は、FLT の配列を示しています。\_コンテキスト\_インスタンス、ファイル、ストリーム、およびファイル オブジェクト (ストリームのハンドル) のコンテキストを登録するために使用する構造体を登録します。
+CTX サンプルミニフィルタードライバーから取得された次のコード例では、インスタンス、ファイル、ストリーム、およびファイルオブジェクト (ストリームハンドル) のコンテキストを登録するために使用される、FLT\_コンテキスト\_登録構造の配列が示されています。
 
 ```cpp
 const FLT_CONTEXT_REGISTRATION contextRegistration[] =

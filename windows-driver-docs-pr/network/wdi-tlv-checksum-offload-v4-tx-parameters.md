@@ -1,24 +1,24 @@
 ---
-title: WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0XD1)
-description: WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS では、IPv4 の Tx チェックサム オフロード用のパラメーターを含む TLV です。
+title: WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0xD1)
+description: WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS は、IPv4 の Tx チェックサムオフロードのパラメーターを含む TLV です。
 ms.assetid: EA862CDA-5FF4-4C5F-A522-224714640F34
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0xD1) ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0xD1) ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e9576bdaeb4e767e4c62f4bb070a67ab8923044
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 86fec65ddea471f476332c247224958d1d3ad4fe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387197"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841648"
 ---
-# <a name="wditlvchecksumoffloadv4txparameters-0xd1"></a>WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーター (0xD1)
+# <a name="wdi_tlv_checksum_offload_v4_tx_parameters-0xd1"></a>WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーター (0xD1)
 
 
-WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーターは、IPv4 の Tx チェックサム オフロード用のパラメーターを含む TLV します。
+WDI\_TLV\_CHECKSUM\_OFFLOAD\_V4\_TX\_PARAMETERS は、IPv4 の Tx チェックサムオフロードのパラメーターを含む TLV です。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
+機能の値は、「 [**NDIS\_TCP\_IP\_CHECKSUM\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)」に記載されているように報告されます。 \_サポートされておらず、NDIS\_オフロード\_を使用します。\_、 [OID\_WDI\_GET\_ADAPTER\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)を使用して機能を指定する場合にサポートされ\_。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -28,7 +28,7 @@ WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーターは、I
 ## <a name="length"></a>長さ
 
 
-含まれるすべての要素のサイズの合計をバイト単位で。
+含まれているすべての要素のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
@@ -40,37 +40,37 @@ WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーターは、I
 </colgroup>
 <thead>
 <tr class="header">
-<th>型</th>
+<th>タスクバーの検索ボックスに</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
-<td>カプセル化の設定です。 有効な値は次のとおりです。
+<td>カプセル化の設定。 有効な値は次のとおりです。
 <ul>
 <li>WDI_ENCAPSULATION_IEEE_802_11</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>IP のオプションを checksum のオフロードがサポートされているかどうかを指定します。</td>
+<td>IP オプションを使用したチェックサムのオフロードがサポートされているかどうかを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>TCP オプションを使用してチェックサムのオフロードがサポートされているかどうかを指定します。</td>
+<td>TCP オプションを使用したチェックサムのオフロードがサポートされているかどうかを指定します。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>TCP チェックサム オフロードが有効になっているかどうかを指定します。</td>
+<td>TCP チェックサムオフロードが有効かどうかを指定します。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>UDP のオフロードが有効になっているかどうかを指定します。</td>
+<td>UDP オフロードを有効にするかどうかを指定します。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>IP チェックサムが有効になっているかどうかを指定します。</td>
+<td>IP チェックサムを有効にするかどうかを指定します。</td>
 </tr>
 </tbody>
 </table>
@@ -96,7 +96,7 @@ WDI\_TLV\_チェックサム\_オフロード\_V4\_TX\_パラメーターは、I
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

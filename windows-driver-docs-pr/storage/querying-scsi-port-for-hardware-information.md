@@ -4,12 +4,12 @@ description: SCSI ポートへのハードウェア情報のクエリ
 ms.assetid: 2f3adc40-6e5a-4a70-8298-60359b77f04f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7396a044933a1a211aa8651815660b1029e5d8b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1cefec842b0c88ad27a6ffc32fa83fcfadb12c94
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386289"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842720"
 ---
 # <a name="querying-scsi-port-for-hardware-information"></a>SCSI ポートへのハードウェア情報のクエリ
 
@@ -17,13 +17,13 @@ ms.locfileid: "67386289"
 ## <span id="ddk_querying_scsi_port_for_hardware_information_kg"></span><span id="DDK_QUERYING_SCSI_PORT_FOR_HARDWARE_INFORMATION_KG"></span>
 
 
-記憶域クラスおよびその他の上位レベルのドライバーできる機能については、デバイスの SCSI ポートをクエリし、クエリ プロパティ要求を使用してホスト バス アダプター ([**IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property))。 クエリ プロパティ要求が、レガシ システムの PnP と同等の照会と機能の要求 ([**IOCTL\_SCSI\_取得\_照会\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_get_inquiry_data)と[ **IOCTL\_SCSI\_取得\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_get_capabilities))。 記憶域デバイスの場合は、SCSI ポートは記憶域デバイス記述子を返します ([**ストレージ\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_device_descriptor)) SCSI 問い合わせデータまたは非 SCSI と同等の、格納していると。ホスト アダプターの SCSI ポートは、ストレージ アダプター記述子を返します ([**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) 機能と制限事項のデータを格納しています。
+ストレージクラスドライバーおよびその他の上位レベルのドライバーは、クエリプロパティ要求 ([**IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)) を使用して、デバイスの機能とホストバスアダプターの機能に関する情報を SCSI ポートに照会できます。 クエリプロパティ要求は、レガシシステムにおける問い合わせと機能の要求に相当する PnP です ([**ioctl\_scsi\_\_の照会\_データを取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_get_inquiry_data)し、 [**ioctl\_SCSI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_get_capabilities)\_\_機能を取得します。). 記憶装置の場合、scsi の照会データまたはそれと同等ではない scsi を含む記憶装置記述子 ([**記憶域\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)) が返されます。ホストアダプターの scsi ポートでは、記憶域アダプター記述子が返されます ([**ストレージ\_アダプターの\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor))。機能と制限のデータが含まれています。
 
-高度なドライバーが渡す必要があります、 [**ストレージ\_プロパティ\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_property_query) SCSI ポート プロパティのクエリ要求に構造体。 高度なドライバーを設定した場合、 **QueryType**記憶域のメンバー\_プロパティ\_クエリ**StorageAdapterProperty**、SCSI ポートは、ストレージ アダプター記述子を返します。 上位レベルのドライバーを設定した場合、 **QueryType**メンバー **StorageDeviceProperty**、SCSI ポートは、記憶域デバイス記述子を返します。
+上位レベルのドライバーは、クエリのプロパティ要求を使用して、[**ストレージ\_プロパティ\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_property_query)構造を SCSI ポートに渡す必要があります。 上位レベルのドライバーによって、 **QueryType** MEMBER of STORAGE\_プロパティが設定されている場合\_**storageadapterproperty**にクエリを実行すると、SCSI ポートからストレージアダプター記述子が返されます。 上位レベルのドライバーで**QueryType**メンバーが**storagedeviceproperty**に設定されている場合、SCSI ポートは記憶装置記述子を返します。
 
-高度なドライバーは、クエリのプロパティを送信する場合のアダプターの FDO に IRP の要求**QueryType**設定**StorageDeviceProperty**、SCSI ポート IRP が失敗しました。 クラス ドライバーが使用したデバイスの PDO をこの IRP を送信するかどうか**QueryType**設定**StorageAdapterProperty**、SCSI ポート アダプター FDO に IRP を転送します。
+上位レベルのドライバーが、 **QueryType**が**storagedeviceproperty**に設定されているアダプターの FDO にクエリプロパティ request IRP を送信すると、SCSI ポートが irp に失敗します。 クラスドライバーが、 **QueryType**が**storageadapterproperty**に設定されたデバイスの PDO にこの irp を送信する場合、SCSI ポートは irp をアダプター FDO に転送します。
 
-記憶域デバイス記述子と記憶域アダプター記述子の詳細については、次を参照してください[記憶域クラス ドライバーいる出力ルーチン](storage-class-driver-s-getdescriptor-routine.md)、とのリファレンス ページ[**ストレージ\_。プロパティ\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_property_query)、 [**ストレージ\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_device_descriptor)、および[ **ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)します。
+ストレージデバイス記述子とストレージアダプター記述子の詳細については、[ストレージクラスドライバーの GetDescriptor ルーチン](storage-class-driver-s-getdescriptor-routine.md)に関するページと、STORAGE [ **\_プロパティ\_QUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_property_query)、 [**storage\_のリファレンスページを参照してください。デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)、および[**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)。
 
  
 

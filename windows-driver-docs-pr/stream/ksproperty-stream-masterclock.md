@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ストリーム\_MASTERCLOCK
-description: KSPROPERTY\_ストリーム\_MASTERCLOCK プロパティが省略可能なプロパティ、暗証番号 (pin) を使用またはマスターのクロックの同期に使用する場合に実装する必要があります。
+title: KSK プロパティ\_ストリーム\_MASTERCLOCK
+description: KSK プロパティ\_STREAM\_MASTERCLOCK プロパティは省略可能なプロパティであり、pin が同期に使用できるマスタークロックを使用または生成する場合に実装する必要があります。
 ms.assetid: b8fb4d7b-e2e3-498c-9f76-4075d3ae0cb2
 keywords:
-- KSPROPERTY_STREAM_MASTERCLOCK ストリーミング メディア デバイス
+- KSPROPERTY_STREAM_MASTERCLOCK ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f208b5ac166110626a663f884f4a256f8df3a40c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 49b2baac5c511e5a71a4024f3af80e1bab767b97
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376352"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844953"
 ---
-# <a name="kspropertystreammasterclock"></a>KSPROPERTY\_ストリーム\_MASTERCLOCK
+# <a name="ksproperty_stream_masterclock"></a>KSK プロパティ\_ストリーム\_MASTERCLOCK
 
 
-KSPROPERTY\_ストリーム\_MASTERCLOCK プロパティが省略可能なプロパティ、暗証番号 (pin) を使用またはマスターのクロックの同期に使用する場合に実装する必要があります。
+KSK プロパティ\_STREAM\_MASTERCLOCK プロパティは省略可能なプロパティであり、pin が同期に使用できるマスタークロックを使用または生成する場合に実装する必要があります。
 
 ## <span id="ddk_ksproperty_stream_masterclock_ks"></span><span id="DDK_KSPROPERTY_STREAM_MASTERCLOCK_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_ストリーム\_MASTERCLOCK プロパティが省略可能なプロ
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_ストリーム\_MASTERCLOCK プロパティが省略可能なプロ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>ハンドル</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>扱え</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,15 +64,15 @@ KSPROPERTY\_ストリーム\_MASTERCLOCK プロパティが省略可能なプロ
 <a name="remarks"></a>注釈
 -------
 
-プロパティを返します、 **NULL**に対してクエリを実行するときに処理します。 サポートについては、呼び出しが正常に終了するかどうかによって決まります。
+プロパティは、クエリを行うときに**NULL**ハンドルを返します。 サポートは、呼び出しが正常に返されたかどうかによって決まります。
 
-KSPROPERTY を使用する\_ストリーム\_MASTERCLOCK pin マスター クロックがサポートされているかどうかを照会するか、pin の現在のマスター時計を設定します。 通常これは、管理者として graph を通じてなど directshow です。 マスターのクロックのハンドルが取得されると別の pin にマスターの時計を設定するために使用するあるいはできますマスターのクロックのユーザー モードのプロキシとしてなど DirectShow グラフで。
+KSK プロパティ\_STREAM\_MASTERCLOCK を使用して、マスタークロックが pin によってサポートされているかどうか、またはピンの現在のマスタークロックを設定するかどうかを照会できます。 通常、これは、DirectShow のなどのグラフマネージャーを使用して行います。 マスタークロックハンドルは取得され、別の pin のマスタークロックを設定するために使用できます。また、DirectShow グラフなどのマスタークロックのユーザーモードプロキシとして使用することもできます。
 
-Pin の時計を設定すると、暗証番号 (pin)、基になるファイル オブジェクトを参照してファイル オブジェクトに対してクエリを実行できる後で。 ハンドルのクエリを実行するクライアントによって自体ファイル ハンドルを閉じる必要があります。
+Pin に時計が設定されている場合、pin は基になるファイルオブジェクトを参照し、後でそのファイルオブジェクトに対してクエリを実行できます。 ファイルハンドル自体は、ハンドルを照会したクライアントによって閉じられる必要があります。
 
-フィルターは、他のストリームとを同期する必要なく、グラフの中程のマスターのクロックの生成やコンバーター フィルターなど、いずれかを参照する必要がありますに配置する場合に、プロパティをサポートする必要はありません。 プロパティが場合も使用できます読み取り専用フィルターは、マスターのクロックが生成されますが、外部のマスター クロックを同期しません。
+フィルターでは、マスタークロックが生成されない場合や、他のストリームと同期する必要のないグラフの途中にあるコンバーターフィルターなど、プロパティをサポートする必要はありません。 また、プロパティを読み取り専用として使用することもできます。フィルターがマスタークロックを生成しても、外部のマスタークロックには同期しません。
 
-参照してください[KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)と[AVStream クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)します。
+「 [KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)」と「 [avstream クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)」も参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -85,7 +85,7 @@ Pin の時計を設定すると、暗証番号 (pin)、基になるファイル 
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ks.h (Ks.h を含む)</td>
+<td>Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,7 +93,7 @@ Pin の時計を設定すると、暗証番号 (pin)、基になるファイル 
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

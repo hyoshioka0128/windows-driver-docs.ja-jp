@@ -3,17 +3,17 @@ title: SAP の登録
 description: SAP の登録
 ms.assetid: 2b318bf0-4f0e-4db7-850b-510a9f2c7cf0
 keywords:
-- WDK いる CoNDIS のサービス アクセス ポイントします。
-- SAPs WDK いる CoNDIS
-- SAPs を登録します。
+- サービスアクセスポイント WDK の接続
+- Sap WDK の切断
+- Sap の登録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fff4b626a085a6361a4b26817732fcce738627d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed8fa8f50b6c1dbff3bbbef6fc5adb131d39d591
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385419"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842100"
 ---
 # <a name="registering-a-sap"></a>SAP の登録
 
@@ -21,25 +21,25 @@ ms.locfileid: "67385419"
 
 
 
-クライアントが、受信呼び出しを受け入れる場合、 [ **ProtocolClOpenAfCompleteEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_open_af_complete_ex)関数は、通常 1 つまたは複数の Sap をマネージャーに登録呼び出しを呼び出して[ **NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)します。
+クライアントが着信呼び出しを受け入れる場合、通常は[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)を呼び出して、呼び出しマネージャーに1つ[**以上の sap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_open_af_complete_ex)を登録します。
 
-次の図は、SAP を登録マネージャーの呼び出しのクライアントを示します。
+次の図は、SAP を登録するコールマネージャーのクライアントを示しています。
 
-![sap の登録呼び出し manager のクライアントを示す図](images/cm-02.png)
+![コールマネージャーのクライアントを示す図 (sap の登録)](images/cm-02.png)
 
-次の図は、SAP の登録、MCM ドライバーのクライアントを示します。
+次の図は、SAP を登録している MCM ドライバーのクライアントを示しています。
 
-![mcm ドライバーを使用する sap の登録](images/fig1-02.png)
+![mcm ドライバーを使用した sap の登録](images/fig1-02.png)
 
-呼び出しで**NdisClRegisterSap**クライアントが特定の SAP の着信の通知を要求します。 NDIS コール マネージャーのまたは MCM ドライバーのクライアントによって提供される SAP 情報を転送する[ **ProtocolCmRegisterSap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_reg_sap)関数を検証します。 特定の SAP が既に使用されている場合、または、コール マネージャーまたは MCM ドライバーでクライアントが指定した SAP の仕様が認識されない場合は、コール マネージャーまたは MCM ドライバーには、この要求が失敗します。
+**NdisClRegisterSap**を呼び出すと、クライアントは特定の SAP で着信呼び出しの通知を要求します。 NDIS は、検証のために、クライアントから提供された SAP 情報を呼び出しマネージャーまたは MCM ドライバーの[**Protocolcmregistersap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_reg_sap)関数に転送します。 指定された SAP が既に使用されている場合、または呼び出しマネージャーまたは MCM ドライバーがクライアントによって提供された SAP 仕様を認識しない場合、呼び出しマネージャーまたは MCM ドライバーはこの要求に失敗します。
 
-*ProtocolCmRegisterSap*、コール マネージャーまたは MCM ドライバーは、ネットワーク デバイスの制御、またはクライアントの接続指向ネットワーク上の SAP を登録するには、他のメディア固有エージェントと通信できます。 *ProtocolCmRegisterSap* NDIS 指定も格納*NdisSapHandle* SAP を表します。
+*Protocolcmregistersap*では、呼び出しマネージャーまたは mcm ドライバーがネットワーク制御デバイスやその他のメディア固有のエージェントと通信し、接続指向クライアントのネットワーク上に SAP を登録する場合があります。 *Protocolcmregistersap*には、sap を表す NDIS によって提供される*NdisSapHandle*も格納されます。
 
-*ProtocolCmRegisterSap*同期または非同期で完了できます。 非同期的に完了する、 *ProtocolCmRegisterSap*コール マネージャーの関数を呼び出す[ **NdisCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmregistersapcomplete)します。 *ProtocolCmRegisterSap* MCM ドライバーの関数を呼び出す[ **NdisMCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmregistersapcomplete)します。 呼び出し**Ndis (M) CmRegisterSapComplete**を呼び出すクライアントの NDIS と[ *ProtocolClRegisterSapComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_register_sap_complete)関数。
+*Protocolcmregistersap*は同期的または非同期的に完了できます。 非同期的に完了するために、呼び出しマネージャーの*Protocolcmregistersap*関数は[**NdisCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregistersapcomplete)を呼び出します。 MCM ドライバーの*Protocolcmregistersap*関数は、 [**NdisMCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregistersapcomplete)を呼び出します。 **Ndis (M) Cmregistersap complete**を呼び出すと、ndis によってクライアントの[*protocolclregistersap complete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_register_sap_complete)関数が呼び出されます。
 
-場合に、クライアントの呼び出し**NdisClRegisterSap**が成功すると、NDIS クライアントに返されます、SAP を表す、NdisSapHandle します。
+クライアントの**NdisClRegisterSap**への呼び出しが成功した場合、NDIS は SAP を表す NdisSapHandle をクライアントに返します。
 
-そのクライアントを呼び出すことによって、その SAP 宛て受信呼び出しオファーのコール マネージャーには、接続指向のクライアントに代わって SAP がレジスタ後に、通知[ **NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)します。 MCM にドライバーを呼び出す[ **NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall)(を参照してください[着信呼び出しを示す](indicating-an-incoming-call.md))。 SAP の登録がまだいる場合でも、クライアントは、SAP の着信を受信できる保留中です。つまり、前にその*ProtocolClRegisterSapComplete*関数が呼び出されます。
+呼び出しマネージャーは、接続指向クライアントの代わりに SAP を登録した後、 [**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)を呼び出すことによって、着信呼び出しのクライアントにその sap に転送されることを通知します。 MCM ドライバーは[**NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)を呼び出します (「[着信呼び出しを示す」を](indicating-an-incoming-call.md)参照してください)。 SAP 登録がまだ保留中であっても、クライアントは SAP で着信呼び出しを受信できます。つまり、 *Protocolclregistersap complete*関数が呼び出される前。
 
  
 

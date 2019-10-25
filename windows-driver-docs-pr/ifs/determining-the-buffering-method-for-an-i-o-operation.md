@@ -3,22 +3,22 @@ title: I/O 操作用のバッファー処理メソッドの確認
 description: I/O 操作用のバッファー処理メソッドの確認
 ms.assetid: 219378d9-a9fa-495a-b016-36595a7efb49
 keywords:
-- バッファー WDK ファイル システム ミニフィルター
-- preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、バッファー
-- postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、バッファー
-- バッファー内の I/O の WDK ファイル システム
-- ダイレクト I/O WDK ファイル システム
-- バッファーも直接 I/O WDK のファイル システム
-- データ バッファーの WDK ファイル システム ミニフィルター
-- ファイル システムの I/O の WDK
+- WDK ファイルシステムミニフィルターのバッファー
+- preoperation コールバックルーチン WDK ファイルシステムミニフィルター、バッファー
+- postoperation コールバックルーチン WDK ファイルシステムミニフィルター、バッファー
+- バッファーされた i/o WDK ファイルシステム
+- ダイレクト i/o WDK ファイルシステム
+- バッファーも直接 i/o WDK ファイルシステムもありません
+- データバッファー WDK ファイルシステムミニフィルター
+- I/o WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 184f6713ecc6e0acda8e01146e187ff4030d72a3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fb544b5f22bd583ec458fddd24ecd0744d83f05
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386104"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841439"
 ---
 # <a name="determining-the-buffering-method-for-an-io-operation"></a>I/O 操作用のバッファー処理メソッドの確認
 
@@ -26,45 +26,45 @@ ms.locfileid: "67386104"
 ## <span id="ddk_determining_the_buffering_method_for_an_io_operation_if"></span><span id="DDK_DETERMINING_THE_BUFFERING_METHOD_FOR_AN_IO_OPERATION_IF"></span>
 
 
-デバイス ドライバーのようなファイル システムはユーザー モード アプリケーションとシステムのデバイス間でデータを転送する責任を負います。 オペレーティング システムでは、データ バッファーにアクセスするため次の 3 つのメソッドを提供します。
+デバイスドライバーと同様に、ファイルシステムはユーザーモードアプリケーションとシステムデバイス間でデータを転送します。 オペレーティングシステムには、データバッファーにアクセスするための次の3つの方法が用意されています。
 
--   *I/O バッファー*、I/O マネージャーは非ページ プールから、操作をシステムのバッファーを割り当てます。 I/O マネージャーは、アプリケーションのユーザーのバッファーに、その逆の場合、I/O 操作を開始したスレッドのコンテキストで、このシステムのバッファーからデータをコピーします。
+-   *バッファー*内 i/o では、i/o マネージャーは、非ページプールから操作用のシステムバッファーを割り当てます。 I/o マネージャーは、i/o 操作を開始したスレッドのコンテキストで、このシステムバッファーからアプリケーションのユーザーバッファーにデータをコピーします。その逆も同様です。
 
--   *ダイレクト I/O*、I/O マネージャーがプローブし、ユーザーのバッファーをロックします。 メモリの記述子のリストにロックされているバッファーをマップするには、(MDL) が作成されます。 I/O マネージャーでは、I/O 操作を開始したスレッドのコンテキスト内のバッファーにアクセスします。
+-   *ダイレクト i/o*では、i/o マネージャーによってユーザーバッファーがプローブおよびロックされます。 次に、ロックされたバッファーをマップするためのメモリ記述子リスト (MDL) を作成します。 I/o マネージャーは、i/o 操作を開始したスレッドのコンテキストでバッファーにアクセスします。
 
--   *バッファーも直接 I/O*、I/O マネージャーは、システムの割り当てバッファーしはしないロックまたはユーザー バッファーをマップします。 代わりに、ファイル システムのスタックにその、単に、バッファーの元のユーザー スペースの仮想アドレスを渡します。 ドライバーは、発信側のスレッドのコンテキストで実行されていることと、バッファーのアドレスが有効であることを確認します。
+-   *バッファーも直接*i/o でも、i/o マネージャーはシステムバッファーを割り当てません。また、ユーザーバッファーをロックまたはマップしません。 代わりに、単にバッファーの元のユーザー領域の仮想アドレスをファイルシステムスタックに渡します。 ドライバーは、それらが開始スレッドのコンテキストで実行されていること、およびバッファーアドレスが有効であることを確認する役割を担います。
 
-    ミニフィルター ドライバーは、これを使用する前にユーザー領域で任意のアドレスを検証する必要があります。 I/O マネージャーとフィルター マネージャーは、このようなアドレスを検証しないとミニフィルター ドライバーに渡されるバッファーに埋め込まれているポインターを検証できません。
+    ミニフィルタードライバーを使用する前に、ユーザー領域内のアドレスを検証する必要があります。 I/o マネージャーとフィルターマネージャーでは、このようなアドレスは検証されず、ミニフィルタードライバーに渡されたバッファーに埋め込まれているポインターは検証されません。
 
-すべての標準的な Microsoft ファイル システムでは、ほとんどの I/O 処理バッファーもダイレクト I/O を使用します。
+すべての標準の Microsoft ファイルシステムでは、ほとんどの i/o 処理で、バッファーも直接 i/o も使用されません。
 
-バッファリング メソッドの詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)します。
+バッファリングメソッドの詳細については、「[データバッファーにアクセスするためのメソッド](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)」を参照してください。
 
-IRP ベースの I/O 操作では、バッファリングに使用されるメソッドは操作固有でありは、次の要因によって決まります。
+IRP ベースの i/o 操作の場合、使用されるバッファリング方法は操作に固有であり、次の要因によって決定されます。
 
--   実行されている I/O 操作の種類
+-   実行されている i/o 操作の種類
 
--   値、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)ファイル システム ボリュームの構造
+-   ファイルシステムボリュームの[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)構造の**Flags**メンバーの値
 
--   I/O 制御 (IOCTL) とファイル システム コントロール (FSCTL) 操作の値、 *TransferType* CTL に渡されたパラメーター\_IOCTL または FSCTL が定義されている場合、コードのマクロ
+-   I/o 制御 (IOCTL) 操作とファイルシステム制御 (FSCTL) 操作の場合、IOCTL または FSCTL が定義されたときに CTL\_コードマクロに渡された*Transfertype*パラメーターの値
 
-常にバッファーを持つ高速の I/O 操作では、どちらもバッファーを使用しても、ダイレクト I/O。
+バッファーを持つ高速 i/o 操作では、バッファーも直接も直接使用されません。
 
-ファイル システムのコールバック操作では、バッファーはありません。
+ファイルシステムコールバック操作にはバッファーがありません。
 
 このセクションの内容:
 
-[IRP ベースまたは高速の I/O をできる演算です。](operations-that-can-be-irp-based-or-fast-i-o.md)
+[IRP ベースまたは高速 i/o の可能性がある操作](operations-that-can-be-irp-based-or-fast-i-o.md)
 
-[デバイス オブジェクトのフラグに従う IRP ベースの I/O 操作](irp-based-i-o-operations-that-obey-device-object-flags.md)
+[デバイスオブジェクトフラグに従う IRP ベースの i/o 操作](irp-based-i-o-operations-that-obey-device-object-flags.md)
 
-[バッファー内の I/O を使用して、常に IRP ベースの I/O 操作](irp-based-i-o-operations-that-always-use-buffered-i-o.md)
+[バッファリングされた i/o を常に使用する IRP ベースの i/o 操作](irp-based-i-o-operations-that-always-use-buffered-i-o.md)
 
-[IRP ベースの I/O 操作は常にバッファーもダイレクト I/O を使用します。](irp-based-i-o-operations-that-always-use-neither-buffered-nor-direct-i.md)
+[常にバッファーも直接も直接使用する IRP ベース i/o 操作](irp-based-i-o-operations-that-always-use-neither-buffered-nor-direct-i.md)
 
-[IRP ベース IOCTL と FSCTL 操作](irp-based-ioctl-and-fsctl-operations.md)
+[IRP ベースの IOCTL および FSCTL 操作](irp-based-ioctl-and-fsctl-operations.md)
 
-[バッファーがない IRP ベースの I/O 操作](irp-based-i-o-operations-that-have-no-buffers.md)
+[バッファーを持たない IRP ベースの i/o 操作](irp-based-i-o-operations-that-have-no-buffers.md)
 
  
 

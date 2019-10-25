@@ -3,18 +3,18 @@ title: HwScsiStartIo からの戻り値
 description: HwScsiStartIo からの戻り値
 ms.assetid: e3d5e21a-4dc2-41bf-97a2-9ac2aa5a1af2
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiStartIo
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiStartIo
 - HwScsiStartIo
-- WDK SCSI の値を返す
-- 状態値は WDK SCSI
+- 戻り値 WDK SCSI
+- 状態値 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d1e5f5901d6d8a0a1840f567b421640fef556e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3178ad26c7ccac2e0ee808f1a1d898d58ca92f1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386119"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842689"
 ---
 # <a name="return-from-hwscsistartio"></a>HwScsiStartIo からの戻り値
 
@@ -22,23 +22,23 @@ ms.locfileid: "67386119"
 ## <span id="ddk_return_from_hwscsistartio_kg"></span><span id="DDK_RETURN_FROM_HWSCSISTARTIO_KG"></span>
 
 
-すべて[ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンを返す必要があります**TRUE**、入力要求が処理されたことを示します。
+すべての[**HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンは、入力要求が処理されたことを示す**TRUE**を返す必要があります。
 
-場合、 *HwScsiStartIo*ルーチンは、呼び出されると、要求された操作を実行できない*HwScsiStartIo*次を実行する必要があります。
+*HwScsiStartIo*ルーチンが呼び出されたときに要求された操作を実行できない場合、 *HwScsiStartIo*は次の操作を行う必要があります。
 
-1.  セットの入力 SRB の**SrbStatus** SRB に\_状態\_ビジーです。
+1.  入力 SRB の**Srbstatus**を SRB\_STATUS\_BUSY に設定します。
 
-2.  呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 *NotificationType * * * RequestComplete** SRB の入力を使用しています。
+2.  *NotificationType * * * RequestComplete** と入力 SRB を使用して[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)を呼び出します。
 
-3.  呼び出す**ScsiPortNotification**で、 *NotificationType * * * NextRequest** だけ完了 SRB 場合は、ドライバーは、のものと異なるターゲット論理ユニットに要求を受け入れることができます。
+3.  *NotificationType * * * nextrequest** を使用して**ScsiPortNotification**を呼び出します。ドライバーは、完了した SRB にあるものとは異なるターゲット論理ユニットへの要求を受け入れることができます。
 
-4.  返す**TRUE**します。
+4.  **TRUE**を返します。
 
-と共に返されるすべての要求ポートのドライバーを再送信、 **SrbStatus**値 SRB\_状態\_ミニポート ドライバーのビジー *HwScsiStartIo*ルーチンを後で。
+ポートドライバーは、 **Srbstatus**値 SRB\_STATUS\_で返されたすべての要求をミニポートドライバーの*HwScsiStartIo*ルーチンに後で再送信します。
 
-最終的には、すべてのミニポート ドライバーを呼び出す必要があります**ScsiPortNotification**に SRB 入力のそれぞれに対して 2 回その*HwScsiStartIo*ルーチン: 最初に、要求を完了する (*NotificationType ***RequestComplete**) とを呼び出すポート ドライバーに指示する、2 番目、 *HwScsiStartIo*次 SRB を使用して日常的な (* NotificationType ***NextRequest**または**NextLuRequest**)。
+最終的には、各ミニポートドライバーは、 *HwScsiStartIo*ルーチンへの SRB 入力ごとに**ScsiPortNotification**を2回呼び出す必要があります。まず、要求を完了するために (*NotificationType ***requestcomplete**)、2番目はポートドライバーに指示します。次の SRB (* NotificationType ***Nextrequest**または**Nextlurequest**) を使用して HwScsiStartIo ルーチンをもう一度呼び出すこと。
 
-*HwScsiStartIo*ポーリング呼び出し専用の HBA を管理するミニポート ドライバーの日常的な**ScsiPortNotification**で、 *NotificationType * * * RequestTimerCall** へのポインター、 *HwScsiTimer*ルーチン。 詳細については、 *HwScsiTimer*ルーチンを参照してください[SCSI ミニポート ドライバー HwScsiTimer ルーチン](scsi-miniport-driver-s-hwscsitimer-routine.md)します。
+ポーリングによって HBA を排他的に管理するミニポートドライバーの*HwScsiStartIo*ルーチンは、 *NotificationType * * * requesttimercall** を使用して**ScsiPortNotification**を呼び出し、 *HwScsiTimer*ルーチンへのポインターを呼び出します。 *HwScsiTimer*ルーチンの詳細については、「 [SCSI ミニポートドライバーの HwScsiTimer ルーチン](scsi-miniport-driver-s-hwscsitimer-routine.md)」を参照してください。
 
  
 

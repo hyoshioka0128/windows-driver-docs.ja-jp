@@ -4,16 +4,16 @@ description: FilterUnloadCallback ルーチンの呼び出し時期
 ms.assetid: 22a3a73e-28be-4483-a7a6-73525e74503d
 keywords:
 - FilterUnloadCallback
-- 任意のアンロード WDK ファイル システム ミニフィルター
-- 必須のアンロード WDK ファイル システム ミニフィルター
+- 必須ではないアンロード WDK ファイルシステムミニフィルター
+- 必須のアンロード WDK ファイルシステムミニフィルター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 486e4fdc67301b528378a1bc63a573d3e2a21101
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c575349d7cfca834401df1cc0abab7a8d0f97e62
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385307"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840932"
 ---
 # <a name="when-the-filterunloadcallback-routine-is-called"></a>FilterUnloadCallback ルーチンの呼び出し時期
 
@@ -21,21 +21,21 @@ ms.locfileid: "67385307"
 ## <span id="ddk_when_the_filterunloadcallback_routine_is_called_if"></span><span id="DDK_WHEN_THE_FILTERUNLOADCALLBACK_ROUTINE_IS_CALLED_IF"></span>
 
 
-フィルター マネージャー呼び出しミニフィルター ドライバーの[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンは次の方法のいずれかでミニフィルター ドライバーをアンロードする前に。
+フィルタマネージャは、次のいずれかの方法でミニフィルタドライバをアンロードする前に、ミニフィルタドライバの[**FilterUnloadCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンを呼び出します。
 
--   *非必須アンロード*します。 この種類のアンロードは、ユーザー モード アプリケーションが呼び出されたときに発生します[ **FilterUnload** ](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterunload)またはカーネル モード ドライバーが呼び出されて[ **FltUnloadFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunloadfilter)。 入力するときにも発生**fltmc unload**コマンド プロンプトでします。
+-   *必須ではないアンロード*。 この種類のアンロードは、ユーザーモードアプリケーションが[**Filterunload**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterunload)を呼び出した場合、またはカーネルモードドライバーが[**Fltunloadfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunloadfilter)を呼び出した場合に発生します。 また、コマンドプロンプトで「 **fltmc unload** 」と入力した場合にも発生します。
 
--   *必須のアンロード*します。 この種類のアンロードは、」と入力してサービスの停止要求を発行するときに発生します。 **sc stop**または**net stop**コマンド プロンプトでします。 (の詳細については、 **sc stop**と**net stop**コマンド、クリックして**ヘルプし、サポート**[スタート] メニュー)。ユーザー モード アプリケーションが Microsoft Win32 を呼び出すときにも発生**ControlService**関数をサービス\_コントロール\_として停止制御コード、 *dwControl*パラメーター。 (サービスの Win32 関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
+-   *必須のアンロード*。 この種類のアンロードは、コマンドプロンプトで「 **sc stop** 」または「 **net stop** 」と入力して、サービス停止要求を発行したときに発生します。 ( **Sc stop**コマンドと**net stop**コマンドの詳細については、スタート メニューの **ヘルプとサポート** をクリックしてください)。また、ユーザーモードアプリケーションが Microsoft Win32 **Controlservice**関数を呼び出して、サービス\_制御\_、 *dwcontrol*パラメーターとしてコントロールコードを停止した場合にも発生します。 (Win32 サービス関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
 
-任意のアンロードの場合、ミニフィルター ドライバーの*FilterUnloadCallback*ルーチンは、状態など、エラーまたは警告 NTSTATUS 値を返します\_FLT\_は\_いない\_デタッチ、フィルター マネージャーはミニフィルター ドライバーをアンロードしません。
+必須ではないアンロードの場合、ミニフィルタードライバーの*FilterUnloadCallback*ルーチンによってエラーまたは警告の NTSTATUS 値が返された場合 (STATUS\_FLT\_DO\_\_、DETACH など)、フィルターマネージャーはミニフィルターをアンロードしません。driver.
 
-フィルター マネージャーがミニフィルター ドライバーの後に、ミニフィルター ドライバーをアンロード、必須のアンロードの*FilterUnloadCallback*ルーチンが呼び出された場合でも、 *FilterUnloadCallback*ルーチンを返します、。状態など、エラーまたは警告の NTSTATUS 値\_FLT\_は\_いない\_デタッチします。
+必須のアンロードの場合、フィルタマネージャは、ミニフィルタドライバの*FilterUnloadCallback*ルーチンが呼び出された後にミニフィルタドライバをアンロードします。たとえば、 *FilterUnloadCallback*ルーチンがエラーまたは警告の NTSTATUS 値を返した場合でも、ステータス\_FLT\_DO\_\_デタッチされません。
 
-ミニフィルター ドライバーはミニフィルター ドライバーの必須のアンロードを無効にする、FLTFL を設定\_登録\_は\_いない\_サポート\_サービス\_で停止フラグ**フラグ**のメンバー、 [ **FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)ミニフィルター ドライバーは、パラメーターとして渡される構造[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)でその**DriverEntry**ルーチン。 このフラグが設定されている場合、フィルター マネージャーは通常任意のアンロード要求を処理します。 ただし、必須のアンロード要求は失敗します。 フィルター マネージャーには、ミニフィルター ドライバーは呼び出しません*FilterUnloadCallback*アンロードが失敗した要求のルーチンです。
+ミニフィルタードライバーの必須のアンロードを無効にするには、ミニフィルタードライバーによって、FLT の**Flags**メンバーで\_SERVICE\_STOP フラグが\_サポートされていない\_、FLTFL\_登録\_設定され[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)フィルタドライバーが**driverentry**ルーチン内の[**fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)にパラメーターとして渡す登録構造。 このフラグが設定されている場合、フィルターマネージャーは通常、必須ではないアンロード要求を処理します。 ただし、必須のアンロード要求は失敗します。 フィルターマネージャーは、失敗したアンロード要求に対してミニフィルタードライバーの*FilterUnloadCallback*ルーチンを呼び出しません。
 
-ミニフィルター ドライバーの場合に注意してください**DriverEntry**ルーチンは、警告またはエラー NTSTATUS の値を返します、 *FilterUnloadCallback*ルーチンは呼び出されませんフィルター マネージャーが、ミニフィルターを単にアンロード。ドライバー。
+ミニフィルタードライバーの**Driverentry**ルーチンから警告またはエラーの NTSTATUS 値が返された場合、 *FilterUnloadCallback*ルーチンは呼び出されないことに注意してください。フィルタマネージャーは、ミニフィルタードライバーを単にアンロードします。
 
-*FilterUnloadCallback*ルーチンは、システムのシャット ダウン時に呼び出されません。 シャット ダウン処理を実行する必要があるミニフィルター ドライバーは IRP の preoperation コールバック ルーチンを登録する必要があります\_MJ\_シャット ダウン操作。
+*FilterUnloadCallback*ルーチンは、システムのシャットダウン時に呼び出されません。 シャットダウン処理を実行する必要があるミニフィルタードライバーは、IRP\_MJ\_のシャットダウン操作に対して preoperation コールバックルーチンを登録する必要があります。
 
  
 

@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST
-description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST では、マルチキャストの暗号アルゴリズムの一覧を含む TLV です。
+description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST は、マルチキャスト暗号アルゴリズムの一覧を含む TLV です。
 ms.assetid: 55CDD295-6BDA-4F3A-B01F-FC9D5FB38355
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_MULTICAST_CIPHER_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_MULTICAST_CIPHER_ALGO_LIST ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f195f68b4c1d16a6cf3a2f0c9cbf1beafef7fc6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aae75b2ca8f73b478d14d475939ab6ca259f2f26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377007"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842878"
 ---
-# <a name="wditlvmulticastcipheralgolist"></a>WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_一覧
+# <a name="wdi_tlv_multicast_cipher_algo_list"></a>WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_一覧
 
 
-WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_リストは、マルチキャストの暗号アルゴリズムの一覧を含む TLV します。
+WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_LIST は、マルチキャスト暗号アルゴリズムの一覧を含む TLV です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,18 @@ WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_リストは、マルチキャス
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)構造体。 配列には、1 つ以上の要素を含める必要があります。
+[**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)構造体の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
 
-| 型                                                            | 説明                              |
+| タスクバーの検索ボックスに                                                            | 説明                              |
 |-----------------------------------------------------------------|------------------------------------------|
-| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | マルチキャストの暗号アルゴリズムの配列。 |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | マルチキャスト暗号アルゴリズムの配列。 |
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,7 +56,7 @@ WDI\_TLV\_マルチキャスト\_暗号\_ALGO\_リストは、マルチキャス
 </tr>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wditypes.hpp</td>
+<td>Wditypes</td>
 </tr>
 </tbody>
 </table>

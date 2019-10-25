@@ -3,38 +3,38 @@ title: ドライバーの開始、停止、デバイス制御
 description: ドライバーの開始、停止、デバイス制御
 ms.assetid: d3608a5f-3bf4-43b1-8c32-55a6fcd4fbe8
 keywords:
-- ミニ リダイレクター WDK、開始
-- ミニ リダイレクター WDK、停止しています
-- ミニ リダイレクター WDK、デバイスのコントロール
+- ミニリダイレクター WDK、開始
+- ミニリダイレクター WDK、停止
+- ミニリダイレクター WDK、デバイスコントロール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b53fc50e8a1b5b1c314a9e1dc239f797dfa7c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65019dffc8a5d0189a57a9666b4164fd03eea8db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386096"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841431"
 ---
 # <a name="driver-start-stop-and-device-control"></a>ドライバーの開始、停止、デバイス制御
 
 
-ドライバーの登録の処理、 **DriverEntry**ネットワーク ミニ リダイレクター ドライバーの日常的な。 ネットワークのミニ リダイレクターが初めて起動するときに (でその**DriverEntry**ルーチン)、ドライバーは、RDBSS を呼び出す必要があります[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)ルーチンは、ネットワークを登録するにはミニ リダイレクター RDBSS とします。 ネットワーク ミニリダイレクター渡します、MINIRDR\_ネットワーク ミニ リダイレクター ドライバーを実装するルーチンに構成データと日常的なポインター (ディスパッチ テーブル) のテーブルを含む構造体をディスパッチします。
+ドライバーの登録は、ネットワークミニリダイレクタードライバーの**Driverentry**ルーチンで処理されます。 ネットワークミニリダイレクターが最初に起動したとき (その**Driverentry**ルーチン内)、ドライバーは RDBSS [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)ルーチンを呼び出して、ネットワークミニリダイレクターを RDBSS に登録する必要があります。 ネットワークミニリダイレクターは、構成データと、ネットワークミニリダイレクタードライバーが実装するルーチンへのルーチンポインター (ディスパッチテーブル) のテーブルを含む MINIRDR\_ディスパッチ構造体を渡します。
 
-[ **MRxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)と[ **MRxStop** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)するドライバを許可するネットワーク ミニ リダイレクター ドライバーによってルーチンを実装する必要があります開始および停止します。
+ドライバーを開始および停止できるようにするには、 [**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)ルーチンと[**MRxStop**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)ルーチンをネットワークミニリダイレクタードライバーで実装する必要があります。
 
-シーケンスを開始または停止するネットワークのミニ リダイレクターは複雑です。 このシーケンスは通常、管理、および管理のためのドライバーを制御するには、ユーザー モード アプリケーションまたはネットワーク ミニ リダイレクター ドライバーに付属しているサービスによって開始されます。 ネットワークのミニ リダイレクターは、オペレーティング システムの起動時に自動的に開始するように構成されたサービスを使用できます。 このサービスは、オペレーティング システムが起動されるたびに、ネットワークのミニ リダイレクターが開始されることを要求できます。
+ネットワークミニリダイレクターを開始または停止する順序は複雑です。 通常、このシーケンスは、管理と管理の目的でドライバーを制御するために、ネットワークミニリダイレクタードライバーで提供されるユーザーモードアプリケーションまたはサービスによって開始されます。 ネットワークミニリダイレクターは、オペレーティングシステムの起動時に自動的に開始するように構成されているサービスを使用できます。 このサービスは、オペレーティングシステムが起動するたびにネットワークミニリダイレクターを開始するように要求できます。
 
-[**MRxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx) RDBSS によって呼び出されるときに、 [ **RxStartMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されます。 **RxStartMinirdr**ルーチンが、FSCTL または IOCTL 要求の結果としてネットワーク ミニリダイレクターを開始するには、ユーザー モード アプリケーションまたはサービスから通常呼び出されます。 呼び出し**RxStartMinirdr**から行ったことはできません、 **DriverEntry**ネットワークのミニ リダイレクターに成功した呼び出しの後の日常的な[ **RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)いくつかの処理を開始は、ドライバーの初期化が完了する必要があるためです。 1 回、 **RxStartMinirdr**呼び出しが受信される、RDBSS が呼び出すことにより、起動プロセスを完了、 **MRxStart**ネットワーク ミニ リダイレクターのルーチンです。 場合に呼び出し**MRxStart**を返します。 成功すると、RDBSS RDBSS に RDBSS でミニ リダイレクターの内部状態を設定する\_開始します。
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)は、 [**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 **RxStartMinirdr**ルーチンは、通常、ユーザーモードのアプリケーションまたはサービスからの FSCTL または IOCTL 要求の結果として、ネットワークミニリダイレクターを開始するために呼び出されます。 [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)への呼び出しが成功した後、ネットワークミニリダイレクターの**driverentry**ルーチンから**RxStartMinirdr**を呼び出すことはできません。一部の開始処理では、ドライバーの初期化が必要になるためです。完了. **RxStartMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MRxStart**ルーチンを呼び出すことによって開始プロセスを完了します。 **MRxStart**を呼び出すと成功が返された場合、RDBSS は RDBSS 内のミニリダイレクターの内部状態を RDBSS\_開始に設定します。
 
-[**MRxStop** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop) RDBSS によって呼び出されるときに、 [ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)ルーチンが呼び出されます。 RDBSS **RxStopMinirdr**ルーチンが、FSCTL または IOCTL 要求の結果としてネットワーク ミニリダイレクターを停止するには、ユーザー モード アプリケーションまたはサービスから通常呼び出されます。 オペレーティング システムによってネットワーク ミニリダイレクターからか、シャット ダウン プロセスの一部としてこの呼び出しを実行もできます。 1 回、 **RxStopMinirdr**呼び出しが受信される、RDBSS の呼び出すことによって、プロセスが完了すると、 **MRxStop**ネットワーク ミニ リダイレクターの日常的な。
+[**MRxStop**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)は、 [**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 RDBSS **RxStopMinirdr**ルーチンは、通常、ユーザーモードのアプリケーションまたはサービスからの FSCTL または IOCTL 要求の結果として、ネットワークミニリダイレクターを停止するために呼び出されます。 この呼び出しは、ネットワークミニリダイレクターから行うことも、オペレーティングシステムによるシャットダウンプロセスの一部として行うこともできます。 **RxStopMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MRxStop**ルーチンを呼び出してプロセスを完了します。
 
-[ **MRxDevFcbXXXControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile) FCB のデバイスで IOCTL または FSCTL 呼び出しを行うと、ネットワークのミニ リダイレクターを制御するには、ユーザー モード アプリケーションまたはサービスから要求を受信するルーチンを使用します。
+[**MRxDevFcbXXXControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)ルーチンは、デバイス FCB で IOCTL または FSCTL 呼び出しを行うことにより、ユーザーモードのアプリケーションまたはサービスからの要求を受信し、ネットワークミニリダイレクターを制御するために使用されます。
 
-さらに、これにはドライバー オブジェクトの IOCTL と FSCTL の操作を処理する 2 つの低 I/O ルーチンがあります。[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**  ](https://msdn.microsoft.com/library/windows/hardware/ff550709)と[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。
+また、driver オブジェクトに対して IOCTL および FSCTL 操作を処理する低 i/o ルーチンが2つあります。 [**MRxLowIOSubmit\[lowio\_OP\_FSCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550709)および[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL @no__t11_** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)
 
-ネットワークのミニ リダイレクターでは、ユーザー モード アプリケーションまたはサービスからネットワークのミニ リダイレクターの制御と管理を提供するのにこれらの低い I/O ルーチンも使用できます。
+ネットワークミニリダイレクターは、これらの低 i/o ルーチンを使用して、ユーザーモードのアプリケーションまたはサービスからネットワークミニリダイレクターの制御と管理を行うこともできます。
 
-次の表では、開始、停止、およびデバイスの管理操作のネットワーク ミニ リダイレクターで実装できるルーチンを示します。
+次の表に、開始、停止、デバイス制御操作のためにネットワークミニリダイレクターで実装できるルーチンを示します。
 
 <table>
 <colgroup>
@@ -50,15 +50,15 @@ ms.locfileid: "67386096"
 <tbody>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile" data-raw-source="[&lt;strong&gt;MRxDevFcbXXXControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)"><strong>MRxDevFcbXXXControlFile</strong></a></td>
-<td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターにデバイス FCB のコントロール要求を渡すには、このルーチンを呼び出します。 RDBSS は、FCB のデバイスで、IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL、または IRP_MJ_INTERNAL_DEVICE_CONTROL を受け取るへの応答には、この呼び出しを発行します。</p></td>
+<td align="left"><p>RDBSS はこのルーチンを呼び出して、デバイス FCB コントロール要求をネットワークミニリダイレクターに渡します。 RDBSS は、デバイス FCB で IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL、または IRP_MJ_INTERNAL_DEVICE_CONTROL を受け取る応答として、この呼び出しを発行します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
-<td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターを開始するには、このルーチンを呼び出します。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
+<td align="left"><p>RDBSS は、このルーチンを呼び出してネットワークミニリダイレクターを開始します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop" data-raw-source="[&lt;strong&gt;MRxStop&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)"><strong>MRxStop</strong></a></td>
-<td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターを停止するには、このルーチンを呼び出します。</p></td>
+<td align="left"><p>RDBSS は、このルーチンを呼び出してネットワークミニリダイレクターを停止します。</p></td>
 </tr>
 </tbody>
 </table>

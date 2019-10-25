@@ -1,9 +1,9 @@
 ---
-title: WIA\_IP\_マルチ\_フィード
-description: WIA\_IP\_マルチ\_フィードのプロパティを使用して、デバイスに複数のフィードの条件が検出されたときに、WIA ミニドライバーに行うアクションを構成します。 WIA ミニドライバーは、作成し、このプロパティを保持します。
+title: マルチ\_フィード\_WIA\_IP
+description: 複数のフィード条件がデバイスで検出された場合に、WIA ミニドライバーによって実行されるアクションを構成するには、WIA\_IP\_マルチ\_フィードのプロパティを使用します。 このプロパティは、WIA ミニドライバーによって作成および管理されます。
 ms.assetid: 8BD92273-218B-4381-BCAF-ED9D227B6B94
 keywords:
-- WIA_IPS_MULTI_FEED イメージング デバイス
+- WIA_IPS_MULTI_FEED イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,31 +14,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a32153e32c3341324042179e5bb40e5bf16428
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e19f602adf098c3f018b2872d52b245381565fe7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385309"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840686"
 ---
-# <a name="wiaipsmultifeed"></a>WIA\_IP\_マルチ\_フィード
+# <a name="wia_ips_multi_feed"></a>マルチ\_フィード\_WIA\_IP
 
 
-**WIA\_IP\_マルチ\_フィード**プロパティを使用して、デバイスに複数のフィードの条件が検出されたときに、WIA ミニドライバーに行うアクションを構成します。 WIA ミニドライバーは、作成し、このプロパティを保持します。
+複数のフィード条件がデバイスで検出された場合に、WIA ミニドライバーによって実行されるアクションを構成するには、 **wia\_ip\_マルチ\_フィード**のプロパティを使用します。 このプロパティは、WIA ミニドライバーによって作成および管理されます。
 
 
 
 
-プロパティの種類:VT\_I4
+プロパティの型: VT\_I4
 
-有効な値 :WIA\_PROP\_一覧
+有効な値: WIA\_PROP\_LIST
 
-アクセス権:[読み取り/書き込み]
+アクセス権: 読み取り/書き込み
 
 <a name="remarks"></a>注釈
 -------
 
-次の表に、有効な値、 **WIA\_IP\_マルチ\_フィード**プロパティ。
+次の表では、 **WIA\_ip\_マルチ\_フィード**のプロパティの有効な値について説明します。
 
 <table>
 <colgroup>
@@ -54,30 +54,30 @@ ms.locfileid: "67385309"
 <tbody>
 <tr class="odd">
 <td><p>WIA_MULTI_FEED_DETECT_DISABLED</p></td>
-<td><p>複数のフィードの検出を無効にします。 これは、プロパティがサポートされている場合に必要な既定値です。</p></td>
+<td><p>マルチフィード検出が無効になっています。 これは、プロパティがサポートされている場合に必要な既定値です。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MULTI_FEED_DETECT_STOP_ERROR</p></td>
-<td><p>デバイスが複数のフィードを検出し、スキャンが停止、MULTIPLE_FEED のビットを設定<a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"> <strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>、WIA_ERROR_MULTI_FEED に戻って<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"> <strong>IWiaMiniDrv::drvAcquireItemData</strong></a>します。</p></td>
+<td><p>デバイスはマルチフィードを検出し、スキャンを停止して、 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>の MULTIPLE_FEED ビットを設定し、WIA_ERROR_MULTI_FEED を<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv::d rvacquireitemdata</strong></a>に返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_MULTI_FEED_DETECT_STOP_SUCCESS</p></td>
-<td><p>デバイスが複数のフィードを検出し、スキャンが停止、MULTIPLE_FEED のビットを設定<a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"> <strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>、および<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"> <strong>IWiaMiniDrv::drvAcquireItemData</strong> </a>返しため、複数のフィードは失敗しません。</p></td>
+<td><p>デバイスは、マルチフィードを検出し、スキャンを停止し、 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>の MULTIPLE_FEED ビットを設定します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv::d rvacquireitemdata</strong></a>は、マルチフィードのために失敗しません。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MULTI_FEED_DETECT_CONTINUE</p></td>
-<td><p>デバイスで複数のフィードを検出または警告音を鳴らす (お勧めしますが、必要ありません) は、ハードウェア デバイスでの音声または画面信号が生成されます、スキャンが続行されます。</p></td>
+<td><p>デバイスは、マルチフィード、ビープ音を検出するか、ハードウェアデバイスで可聴または表示信号を生成します (推奨されますが必須ではありません)。スキャンを続行します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-このプロパティは省略可能で、フィーダー付きのデータ ソース アイテムにのみ有効です (で表される、 [ **WIA\_IPA\_項目\_カテゴリ**](wia-ipa-item-category.md)として WIAプロパティ\_カテゴリ\_フィーダー)。
+このプロパティは省略可能で、Wia データソース項目に対してのみ有効です (wia [ **\_IPA\_item\_category**](wia-ipa-item-category.md)プロパティは WIA\_CATEGORY\_フィーダーとして表示されます)。
 
-WIA ミニドライバーが、複数を設定するときに\_フィードのビットを[ **WIA\_DPS\_ドキュメント\_処理\_状態**](wia-dps-document-handling-status.md)プロパティ間もなく、ミニドライバーは、フィーダーがアンロードされての再読み込みが検出されると、新しいスキャン ジョブの開始時、ミニドライバーこのビット (フラグ) をオフにする必要があります。
+WIA ミニドライバーが[ **\_DPS\_ドキュメント\_\_STATUS**](wia-dps-document-handling-status.md)プロパティの複数の\_フィードビットを設定すると、ミニドライバーがフィーダーを認識していることを検出するとすぐに、ミニドライバーはこのビット (フラグ) をクリアする必要があります。アンロードされるか、再読み込みされるか、新しいスキャンジョブが開始されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -88,7 +88,7 @@ WIA ミニドライバーが、複数を設定するときに\_フィードの�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wiadef.h (Wiadef.h を含む)</td>
+<td>Wiadef (Wiadef を含む)</td>
 </tr>
 </tbody>
 </table>

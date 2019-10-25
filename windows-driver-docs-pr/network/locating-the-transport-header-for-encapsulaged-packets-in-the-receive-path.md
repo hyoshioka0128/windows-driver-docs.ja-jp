@@ -1,37 +1,37 @@
 ---
-title: パケットをカプセル化したトランスポート ヘッダーを検索します。
+title: 受信したカプセル化されたパケットのトランスポートヘッダーを検索する
 description: 受信パス内のカプセル化されたパケットのトランスポート ヘッダーの検索
 ms.assetid: D3BDE575-C9EB-49E3-9B61-FDB99B68ED8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 657ad67c7c7721ac8313d190dc4868555020947d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 583cddd11336ab4f3c5b44622cbe0fc6b4b27819
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356206"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844143"
 ---
 # <a name="locating-the-transport-header-for-encapsulated-packets-in-the-receive-path"></a>受信パス内のカプセル化されたパケットのトランスポート ヘッダーの検索
 
-パケットを受信するには、NIC をサポートする[Network Virtualization using Generic Routing Encapsulation (NVGRE)](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)そうである場合、パケットをカプセル化するかどうかを判断する必要があります最初にカプセル化の種類。
+パケットを受信する場合、[汎用ルーティングカプセル化 (NVGRE) を使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)をサポートする NIC では、まず、パケットがカプセル化されているかどうかを判断し、その場合はカプセル化の種類を決定する必要があります。
 
-**注**  場合、送信パスでパケットがカプセル化[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**は**TRUE**します。
+**注**  送信パスでは、 [**NDIS\_TCP\_送信\_\_追加\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)をオフロードすると、パケットがカプセル化されます。**IsEncapsulatedPacket**は**TRUE**です。
  
 
-NIC で受信パスでは、プロトコル番号を確認して、パケットがカプセル化されたかどうかを決定する必要があります、**プロトコル**IPv4 トンネル (外側) のヘッダーのフィールドまたは**NextHeader** IPv6 のフィールドトンネル (外側) のヘッダー。 割り当てられたプロトコル番号の一覧をご覧<http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml>します。
+受信パスでは、NIC は、IPv4 トンネル (外側) ヘッダーの **[プロトコル]** フィールドのプロトコル番号、または IPv6 トンネル (外部) ヘッダーの**NextHeader**フィールドのプロトコル番号を調べて、パケットがカプセル化されているかどうかを判断する必要があります。 割り当てられたプロトコル番号の一覧については、<http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml>を参照してください。
 
-パケットをカプセル化されたパケットを決定すると、NIC は、カプセル化されたパケットのプロトコルを解析することによってトランスポート (内部) の IP ヘッダーにオフセットを決定する必要があります。
+パケットがカプセル化されたパケットであると判断されると、NIC は、カプセル化されたパケットのプロトコルを解析することによって、トランスポート (内部) IP ヘッダーへのオフセットを決定する必要があります。
 
-NDIS 6.30 (Windows Server 2012) 以降、GRE IP カプセル化のみがサポートされています。 したがって、NIC が提供された機能に応じて、次を解析することがあります。
+NDIS 6.30 (Windows Server 2012) 以降では、GRE IP カプセル化のみがサポートされています。 そのため、提供された機能に応じて、NIC は次のことを解析できる必要があります。
 
--   GRE ([RFC 2784。Generic Routing Encapsulation (GRE)](https://tools.ietf.org/html/rfc2784)) ヘッダー
--   [RFC 2890:GRE をキーとシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
--   IPv4 ([RFC 791。インターネット プロトコル](https://tools.ietf.org/html/rfc791)) ヘッダー
--   IPv6 ([RFC 2460。インターネット プロトコル バージョン 6 (IPv6)](https://tools.ietf.org/html/rfc2460)) ヘッダー
+-   GRE ([RFC 2784: Generic Routing カプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)) ヘッダー
+-   [RFC 2890: GRE のキーおよびシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
+-   IPv4 ([RFC 791: Internet Protocol](https://tools.ietf.org/html/rfc791)) ヘッダー
+-   IPv6 ([RFC 2460: Internet Protocol、Version 6 (IPv6)](https://tools.ietf.org/html/rfc2460)) ヘッダー
 
-NIC には、不明なまたはサポート対象外のカプセル化プロトコルが検出されると、パケットを変更せず、ホストのスタックに渡すことが必要があります。
+NIC が不明またはサポートされていないカプセル化プロトコルを検出した場合は、パケットを変更せずにホストスタックに渡す必要があります。
 
-そのため、受信パス上ミニポート解析する必要があります (内部) の IP ヘッダーに、TCP を取得したり IP のバージョンを判断するトランスポートまたは UDP ヘッダー。 これは、NDIS 6.30 (Windows Server 2012) 以降、新しい要件です。
+このため、受信パスでは、ミニポートはトランスポート (内部) IP ヘッダーを解析して IP バージョンを判断し、TCP または UDP ヘッダーを取得する必要があります。 これは、NDIS 6.30 (Windows Server 2012) 以降の新しい要件です。
 
  
 

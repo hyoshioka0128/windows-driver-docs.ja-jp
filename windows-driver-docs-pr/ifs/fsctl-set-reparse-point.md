@@ -1,9 +1,9 @@
 ---
 title: FSCTL_SET_REPARSE_POINT 制御コード
-description: FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたはディレクトリの再解析ポイントを設定します。
+description: 再解析\_ポイント制御コード\_設定された FSCTL\_は、ファイルまたはディレクトリの再解析ポイントを設定します。
 ms.assetid: db38cc62-845e-4690-a430-a9c834382b56
 keywords:
-- FSCTL_SET_REPARSE_POINT 制御コード インストール可能なファイル システム ドライバー
+- FSCTL_SET_REPARSE_POINT 制御コードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,48 +14,48 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4d978a6c2cc57370599c020430371cf7dfd98c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8f775fab2d807a393dfcd0d8663b124eec45c45
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366237"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841244"
 ---
-# <a name="fsctlsetreparsepoint-control-code"></a>FSCTL\_設定\_再解析\_ポイント制御コード
+# <a name="fsctl_set_reparse_point-control-code"></a>FSCTL\_\_再解析\_ポイント制御コードの設定
 
 
-FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたはディレクトリの再解析ポイントを設定します。
+再解析\_ポイント制御コード\_設定された FSCTL\_は、ファイルまたはディレクトリの再解析ポイントを設定します。
 
-この操作を実行するには、呼び出す[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、次のパラメーターを使用して[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を呼び出します。
 
-ミニフィルターを使用する必要があります[ **FltTagFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile) FSCTL ではなく\_設定\_再解析\_再解析ポイントを設定するポイント。
+再解析ポイントを設定するには、FSCTL\_SET\_の代わりに[**Flttagfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)を使用して再解析\_ポイントを設定する必要があります。
 
-再解析ポイントと FSCTL の詳細については\_設定\_再解析\_ポイント制御コードを Microsoft Windows SDK のマニュアルを参照してください。
+再解析ポイントと FSCTL\_設定\_再解析\_ポイント制御コードの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
 **Parameters**
 
 <a href="" id="filehandle"></a>*FileHandle*  
-ファイルまたはディレクトリを再解析ポイントを設定する対象のファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
+再解析ポイントを設定するファイルまたはディレクトリのファイルハンドル。 このパラメーターは必須であり、 **NULL**にすることはできません。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作のコードを制御します。 FSCTL を使用して、\_設定\_再解析\_この操作にポイントします。
+操作の制御コード。 この操作では、FSCTL\_使用して、再解析\_ポイント\_設定します。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-呼び出し元が割り当てたへのポインター [**再解析\_GUID\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)または[**再解析\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)再解析ポイントのデータを含む構造体。 タグが指定された既存の再解析ポイントが変更されている場合、 **ReparseTag**この構造体のメンバーが変更される再解析ポイントのタグと一致する必要があります。 さらに、再解析ポイントがサードパーティ (Microsoft 以外の) 再解析ポイントの場合は、GUID はで指定された、 **ReparseGuid** 、構造体のメンバーは、再解析\_GUID\_データ\_バッファーの構造体変更する再解析ポイントの GUID が一致する必要があります。
+再解析ポイントデータを格納しているバッファー構造\_データ\_バッファーまたは[**再解析\_\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)を格納する、呼び出し元によって割り当てられた[**再解析\_GUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)を指すポインター。 既存の再解析ポイントが変更されている場合は、この構造体の**ReparseTag**メンバーに指定されているタグが、変更する再解析ポイントのタグと一致している必要があります。 また、再解析ポイントがサードパーティ (Microsoft 以外) の再解析ポイントである場合、構造体の**ReparseGuid**メンバーに指定されている GUID は再解析\_GUID\_データ\_バッファー構造は再解析ポイントの guid と一致している必要があります変更する。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-指し示されるバッファーのバイト単位のサイズ、 *InputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_GUID\_データ\_バッファー\_ヘッダー\_のサイズの合計サイズユーザー定義のデータとは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値がある必要があります少なくとも再解析\_データ\_バッファー\_ヘッダー\_サイズ、さらに、ユーザー定義データのサイズとする必要がありますより小さいか、最大値に等しい\_再解析\_データ\_バッファー\_サイズ。
+*InputBuffer*パラメーターによってポイントされるバッファーのサイズ (バイト単位)。 再解析\_GUID\_データ\_バッファー構造体の場合、この値には少なくとも、GUID\_データ\_バッファー\_の\_のサイズとユーザー定義データのサイズを加えた再解析\_GUID を指定する必要があります。、\_再解析\_データ\_バッファー\_サイズの最大値以下である必要があります。 再解析\_データ\_バッファー構造の場合、この値は\_少なくともデータ\_バッファー\_のヘッダー\_サイズに加え、ユーザー定義データのサイズに加えて、最大値以下である必要があり\_再解析\_データ\_バッファー\_サイズ。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-この操作では使用されません。設定**NULL**します。
+この操作では使用されません。を**NULL**に設定します。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-この操作では使用されません。0 に設定します。
+この操作では使用されません。を0に設定します。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
+[**Zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)は、次のいずれかのような状態\_SUCCESS または適切な NTSTATUS 値を返します。
 
 <table>
 <colgroup>
@@ -64,41 +64,41 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_DIRECTORY_NOT_EMPTY</strong></p></td>
-<td align="left"><p>再解析ポイントは、空でないディレクトリに設定できません。 これは、エラー コードです。</p></td>
+<td align="left"><p>空でないディレクトリに再解析ポイントを設定することはできません。 これはエラーコードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_EAS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>再解析ポイントは、この要求が、トランザクションの場合、ファイルを設定できません。 これは、エラー コードです。</p></td>
+<td align="left"><p>この要求がトランザクション内にある場合、ファイルに再解析ポイントを設定することはできません。 これはエラーコードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_IO_REPARSE_DATA_INVALID</strong></p></td>
-<td align="left"><p>指定されたパラメーター値のいずれかが無効です。 これは、エラー コードです。</p></td>
+<td align="left"><p>指定されたパラメーター値の1つが無効です。 これはエラーコードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_IO_REPARSE_TAG_MISMATCH</strong></p></td>
-<td align="left"><p>呼び出し元によって指定された再解析タグでは、変更する再解析ポイントのタグが一致しませんでした。 これは、エラー コードです。</p></td>
+<td align="left"><p>呼び出し元によって指定された再解析タグが、変更する再解析ポイントのタグと一致しませんでした。 これはエラーコードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_NOT_A_REPARSE_POINT</strong></p></td>
-<td align="left"><p>ファイルまたはディレクトリは、再解析ポイントではありません。 これは、エラー コードです。</p></td>
+<td align="left"><p>ファイルまたはディレクトリが再解析ポイントではありません。 これはエラーコードです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_REPARSE_ATTRIBUTE_CONFLICT</strong></p></td>
-<td align="left"><p>再解析ポイントは、サード パーティ製の再解析ポイントと、再解析、呼び出し元によって指定された GUID と一致しませんでした変更する再解析ポイントの GUID。 これは、エラー コードです。</p></td>
+<td align="left"><p>再解析ポイントはサードパーティの再解析ポイントであり、呼び出し元によって指定された再解析 GUID が、変更する再解析ポイントの GUID と一致しませんでした。 これはエラーコードです。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -109,7 +109,7 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h または Fltkernel.h を含む)</td>
+<td align="left">Ntifs (Ntifs または Fltkernel .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -117,25 +117,25 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_IRP のパラメーター\_MJ\_ファイル\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
+[**IRP\_MJ\_ファイルの FLT\_パラメーター\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltuntagfile)
 
-[**FSCTL\_DELETE\_REPARSE\_POINT**](fsctl-delete-reparse-point.md)
+[**FSCTL\_\_再解析\_ポイントを削除します**](fsctl-delete-reparse-point.md)
 
-[**FSCTL\_GET\_REPARSE\_POINT**](fsctl-get-reparse-point.md)
+[**FSCTL\_\_再解析\_ポイントを取得します**](fsctl-get-reparse-point.md)
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 
-[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagmicrosoft)
+[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagmicrosoft)
 
-[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagnamesurrogate)
+[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[**再解析\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)
+[**データ\_バッファーの再解析\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)
 
-[**再解析\_GUID\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)
+[ **\_GUID\_データ\_バッファーの再解析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

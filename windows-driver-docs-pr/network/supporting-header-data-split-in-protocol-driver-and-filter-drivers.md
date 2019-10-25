@@ -1,40 +1,40 @@
 ---
-title: プロトコルとフィルター ドライバーで分割ヘッダー データのサポート
-description: プロトコルおよびフィルター ドライバーでのヘッダー データの分割のサポート
+title: サポートヘッダー-プロトコルとフィルタードライバーでのデータの分割
+description: サポートヘッダー-プロトコルドライバーとフィルタードライバーでのデータの分割
 ms.assetid: ba1566f2-7da6-4472-b00b-e25bf7acc294
 keywords:
-- ヘッダー データの分割 WDK、プロトコル ドライバー
-- ヘッダー データのフィルター ドライバー WDK の分割
-- プロトコル ドライバー WDK ネットワー キング、ヘッダー データの分割
-- フィルター ドライバー WDK ネットワー キング、ヘッダー データの分割
+- ヘッダー-データ分割 WDK、プロトコルドライバー
+- ヘッダー-データ分割 WDK、フィルタードライバー
+- プロトコルドライバー WDK ネットワーク, ヘッダー-データの分割
+- フィルタードライバーの WDK ネットワーク, ヘッダー-データの分割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6b2ddf0327e6bc7f5bdad31e6ba5741aa77b54
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fcfc782692858c430ccd9559511f2d511423e36
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381188"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841798"
 ---
-# <a name="supporting-header-data-split-in-protocol-drivers-and-filter-drivers"></a>プロトコルおよびフィルター ドライバーでのヘッダー データの分割のサポート
+# <a name="supporting-header-data-split-in-protocol-drivers-and-filter-drivers"></a>サポートヘッダー-プロトコルドライバーとフィルタードライバーでのデータの分割
 
 
 
 
 
-NDIS 6.0 とそれ以降のプロトコル ドライバーとフィルター ドライバーがサポートする必要が連続していないバッファーでの受信ヘッダーとデータを表示します。
+NDIS 6.0 以降のプロトコルドライバーとフィルタードライバーでは、連続していないバッファーのヘッダーとデータを使用した受信表示をサポートする必要があります。
 
-1 つの MDL のみがあることを想定する必要があります、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 プロトコルおよびフィルター ドライバーは、特定のヘッダー データの登録の分割をサポートするために何もする必要はありません。 ただし、ドライバーの受信処理コード MDL チェーン内の 1 つ以上の MDL を処理する必要があり、MDL チェーンへのアクセスには次の NDIS MDL マクロを使用する必要があります。
+[**NET\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造に含まれる MDL が1つだけであるとは限りません。 プロトコルドライバーとフィルタードライバーは、ヘッダーデータの分割登録をサポートするために特別な処理を行う必要はありません。 ただし、ドライバーの受信処理コードは、MDL チェーン内の複数の MDL を処理する必要があります。また、MDL チェーンにアクセスするには、次の NDIS MDL マクロを使用する必要があります。
 
--   [**NET\_バッファー\_最初\_MDL**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-first-mdl)
+-   [**NET\_BUFFER\_最初\_MDL**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-first-mdl)
 
--   [**NET\_バッファー\_現在\_MDL**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl)
+-   [**現在\_MDL\_NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl)
 
--   [**NET\_バッファー\_現在\_MDL\_オフセット**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl-offset)
+-   [**NET\_BUFFER\_現在の\_MDL\_オフセット**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl-offset)
 
-分割のバッファーに、データの長さに関連付けられている、NET\_バッファーの構造 (で、 **DataLength**のメンバー、 [ **NET\_バッファー\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)構造) は複数 MDLs に分かれます。 たとえば、プロトコル ドライバーでは、データ全体の最初の MDL バッファーにアクセスしようとして、ドライバーは無効なデータをアクセスでした。
+分割バッファーを使用すると、net\_バッファー構造に関連付けられているデータ長 ( [**net\_バッファー\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)構造体の**DataLength**メンバー内) は、複数の mdls に分割されます。 たとえば、プロトコルドライバーが最初の MDL のデータバッファー全体にアクセスしようとした場合、ドライバーは無効なデータにアクセスする可能性があります。
 
-**注**  ミニポート ドライバーに受信を示す値の呼び出しが返されると、ミニポート ドライバーが MDLs ヘッダーを再利用できます。 上にあるドライバーやそのクライアントしてする必要があります、ミニポート ドライバーに受信を示す値の呼び出しが戻った後 MDLs ヘッダーはアクセスできません。 この制限がもときに、ミニポート ドライバーがいないを示す NDIS の状態で、受信したデータを適用しても\_受信\_フラグ\_リソース。
+受信通知呼び出しがミニポートドライバーに戻ると、ミニポートドライバーがヘッダー MDLs を再利用できることに**注意**してください  。 受信通知の呼び出しがミニポートドライバーに戻ると、それ以降のドライバーまたはそのクライアントはヘッダー MDLs にアクセスできません。 この制限は、ミニポートドライバーが NDIS の状態で受信したデータを示していない場合にも適用され、\_フラグ\_リソース\_受信します。
 
  
 

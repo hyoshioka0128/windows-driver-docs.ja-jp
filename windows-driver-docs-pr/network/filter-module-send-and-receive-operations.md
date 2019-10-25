@@ -3,19 +3,19 @@ title: フィルター モジュールの送信および受信操作
 description: フィルター モジュールの送信および受信操作
 ms.assetid: 208f9af6-cde4-4801-9355-daa6633d7d0b
 keywords:
-- モジュールの WDK ネットワークをフィルター処理、送信操作
-- モジュールの WDK ネットワークをフィルター処理、受信操作
-- ドライバー WDK ネットワークをフィルター処理、送信操作
-- NDIS フィルター ドライバー WDK、送信操作
-- ドライバー WDK ネットワークをフィルター処理、受信操作
+- フィルターモジュール WDK ネットワーク、送信操作
+- フィルターモジュール WDK ネットワーク, 受信操作
+- フィルタードライバーの WDK ネットワーク、送信操作
+- NDIS フィルタードライバー WDK、send 操作
+- フィルタードライバー WDK ネットワーク, 受信操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6fcdbdb89a63e36eb0a01f3abd28c98df42480d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76e930c8a7eae4d3f38f9c4596c045b65acac7ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363399"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838105"
 ---
 # <a name="filter-module-send-and-receive-operations"></a>フィルター モジュールの送信および受信操作
 
@@ -23,27 +23,27 @@ ms.locfileid: "67363399"
 
 
 
-このセクションのドキュメントは、NDIS 6.0 フィルター ドライバーの操作を送受信します。 フィルター ドライバーは、送信要求の開始し受信表示または要求およびその他のドライバーの兆候をフィルター処理できます。
+このセクションでは、NDIS 6.0 フィルタードライバーの送信および受信操作について説明します。 フィルタードライバーは、送信要求を開始し、通知を受信したり、他のドライバーの要求や表示をフィルター処理したりすることができます。
 
-フィルター モジュールは、ミニポート アダプタ上でスタックされます。 ドライバー スタックの詳細については、次を参照してください。 [NDIS 6.0 ドライバー スタック](ndis-driver-stack.md)します。
+フィルターモジュールは、ミニポートアダプター上に積み重ねられます。 ドライバースタックの詳細については、「 [NDIS 6.0 ドライバースタック](ndis-driver-stack.md)」を参照してください。
 
-ドライバー スタック内のフィルター モジュールでは、すべての送信要求をフィルター処理でき、基になるアダプターに関連付けられているインジケーターを受信することができます。 これは、すべてのプロトコル バインドをアダプターに当てはまります。 NDIS 6.0 の詳細については送信し受信操作を参照してください[送信および受信操作](send-and-receive-operations.md)します。
+ドライバースタック内のフィルターモジュールは、すべての送信要求をフィルター処理し、基になるアダプターに関連付けられている表示を受け取ることができます。 これは、アダプターへのすべてのプロトコルバインドに当てはまります。 NDIS 6.0 送受信操作の詳細については、「[送信および受信操作](send-and-receive-operations.md)」を参照してください。
 
-フィルター ドライバーはいない direct サポートは、従来の送信および受信操作に基づく、 [ **NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造体。 NDIS に変換が従来のミニポート ドライバーにからインジケーターを受信する代わりに、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 NDIS が NET に基づく送信要求からの必要な変換を処理することも、\_レガシ バッファーの構造体は、NDIS に基づく要求を送信\_パケットの構造体。
+フィルタードライバーは、 [**NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造に基づく従来の送信および受信操作を直接サポートしていません。 代わりに、NDIS は従来のミニポートドライバーからの受信通知を[**NET\_のバッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造に変換します。 また、NDIS は、NET\_バッファー構造に基づく送信要求から、NDIS\_パケット構造に基づくレガシ送信要求への必要な変換を処理します。
 
-**注**  フィルター ドライバーは、送信を変更したり、受信*FliterXxx*フィルター モジュールを動的に機能します。 詳細については、次を参照してください。[データ バイパス モード](data-bypass-mode.md)します。
+フィルタードライバーでは、フィルターモジュールの*送信関数と*受信フィルターモジュールを動的に変更できる  に**注意**してください。 詳細については、「[データバイパスモード](data-bypass-mode.md)」を参照してください。
 
  
 
-次のトピックでは、フィルター ドライバーの送信に関する追加情報を提供し、受信処理。
+次のトピックでは、フィルタードライバーの送信操作と受信操作に関する追加情報を提供します。
 
-[フィルター ドライバー バッファー管理](filter-driver-buffer-management.md)
+[フィルタードライバーのバッファー管理](filter-driver-buffer-management.md)
 
-[フィルター ドライバーからデータを送信します。](sending-data-from-a-filter-driver.md)
+[フィルタードライバーからのデータの送信](sending-data-from-a-filter-driver.md)
 
-[フィルター ドライバーでは、送信要求を取り消す](canceling-a-send-request-in-a-filter-driver.md)
+[フィルタードライバーでの送信要求のキャンセル](canceling-a-send-request-in-a-filter-driver.md)
 
-[フィルター ドライバーのデータの受信](receiving-data-in-a-filter-driver.md)
+[フィルタードライバーでのデータの受信](receiving-data-in-a-filter-driver.md)
 
  
 

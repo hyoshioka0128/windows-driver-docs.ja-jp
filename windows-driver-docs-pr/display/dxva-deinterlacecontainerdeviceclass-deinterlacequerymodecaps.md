@@ -1,11 +1,11 @@
 ---
 title: DeinterlaceQueryModeCaps メソッド
-description: サンプルの DXVA\_DeinterlaceContainerDeviceClass::DeinterlaceQueryModeCaps 関数は、特定の入力機能インター レースを解除モードとそのサポート可能性のある追加ビデオの処理を決定するドライバーをクエリモード。
+description: Sample DXVA\_DeinterlaceContainerDeviceClass::D einterlaceQueryModeCaps 関数は、ドライバーに対してクエリを実行し、特定のノンインターレースモードと、そのモードでサポートされている可能性のある追加のビデオ処理の入力機能を確認します。
 ms.assetid: 49070e57-2a93-447e-98d5-b98cded78b9c
 keywords:
-- ディスプレイ デバイスの DeinterlaceQueryModeCaps メソッド
-- DeinterlaceQueryModeCaps メソッド ディスプレイ デバイス、DXVA_DeinterlaceContainerDeviceClass インターフェイス
-- DXVA_DeinterlaceContainerDeviceClass は、DeinterlaceQueryModeCaps メソッドのディスプレイ デバイスをインターフェイスします。
+- DeinterlaceQueryModeCaps メソッドの表示デバイス
+- DeinterlaceQueryModeCaps メソッドの表示デバイス, DXVA_DeinterlaceContainerDeviceClass インターフェイス
+- DXVA_DeinterlaceContainerDeviceClass インターフェイス表示デバイス, DeinterlaceQueryModeCaps メソッド
 topic_type:
 - apiref
 api_name:
@@ -17,17 +17,17 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: b531c3cf7016d6a9a81b9850ed3afd4320c557aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7b3b2e06439e3628855432a43ce77747eb36f8f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375826"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838966"
 ---
-# <a name="dxvadeinterlacecontainerdeviceclassdeinterlacequerymodecaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::DeinterlaceQueryModeCaps メソッド
+# <a name="dxva_deinterlacecontainerdeviceclassdeinterlacequerymodecaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::D einterlaceQueryModeCaps メソッド
 
 
-サンプル**DeinterlaceQueryModeCaps**関数は、特定の入力機能インター レースを解除モードとそのモードをサポート可能性のある追加ビデオの処理を決定するドライバーをクエリします。
+Sample **DeinterlaceQueryModeCaps**関数は、ドライバーに対してクエリを実行し、特定のノンインターレースモードと、そのモードでサポートされている可能性のある追加のビデオ処理の入力機能を確認します。
 
 <a name="syntax"></a>構文
 ------
@@ -43,35 +43,35 @@ HRESULT DeinterlaceQueryModeCaps(
 <a name="parameters"></a>パラメーター
 ----------
 
-*pGuidDeinterlaceMode* \[で\]ノンインター レース化モードを指定するために使用する GUID へのポインターを提供します。
+\] の*pGuidDeinterlaceMode* \[は、ノンインターレースモードを指定するために使用される GUID へのポインターを提供します。
 
-*lpVideoDescription* \[で\]へのポインターを提供する[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc) deinterlaced するビデオの種類を定義する構造またはレート変換されます。
+\] の*Lpvideodescription* \[は、 [**DXVA\_videodesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)構造体へのポインターを提供します。この構造は、deinterlaced またはレート変換されるビデオの種類を定義します。
 
-*lpDeinterlaceCaps* \[アウト\]へのポインターを受け取る、 [ **DXVA\_DeinterlaceCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacecaps)の機能を含む構造体、インター レース モードを解除します。
+*lpDeinterlaceCaps* \[out\] は、ノンインターレースモードの機能を含む[**DXVA\_DeinterlaceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)構造体へのポインターを受け取ります。
 
 <a name="return-value"></a>戻り値
 ------------
 
-0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
+成功した場合は 0 (S\_OK または DD\_OK) を返します。それ以外の場合は、エラーコードを返します。 エラーコードの完全な一覧については、 *ddraw*を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-ドライバーを照会、 *VMR* VMR が特定のビデオ形式の使用可能なインター モードを決定した後のインター モードの機能です。 ドライバーでは、使用可能なモードを返しますへの呼び出しからその[ **DeinterlaceQueryAvailableModes** ](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数。
+ドライバーは、 *VMR*によって、VMR が特定のビデオ形式で使用可能なノンインターレースモードを特定した後に、ノンインターレースモードの機能に対して照会されます。 ドライバーは、 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数の呼び出しから使用可能なモードを返します。
 
-**DeinterlaceQueryModeCaps**関数で指定されたモードの機能の報告、 [ **DXVA\_DeinterlaceCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacecaps)構造体。
+**DeinterlaceQueryModeCaps**関数は、 [**DXVA\_DeinterlaceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)構造体の特定のモードの機能を報告します。
 
-*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)します。
+*Lpvideodescription*パラメーターをドライバーに渡して、ドライバーがソースビデオの解像度と形式をサポートできるようにします。 たとえば、ドライバーは480i コンテンツの3つのフィールドのアダプティブインターレースを実行できる場合がありますが、ボブのコンテンツしか使用できない可能性があります。 詳細については、「[ノンインターレースとフレームレート変換のビデオコンテンツ](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)」を参照してください。
 
-すべてのドライバーは、既存を使用して、bob のモードをサポートできる必要があります*ビット ブロック転送*ハードウェア。
+すべてのドライバーは、既存の*ビットブロック転送*ハードウェアを使用して、bob モードをサポートできる必要があります。
 
-**マッピングを RenderMoComp *DeinterlaceQueryModeCaps***
+**RenderMoComp から*DeinterlaceQueryModeCaps*へのマッピング**
 
-**DeinterlaceQueryModeCaps**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造体。 **RenderMoComp**メンバーが参照するディスプレイ ドライバーによって提供される関数を指す、 [ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体。
+**DeinterlaceQueryModeCaps**関数は、 [**DD\_MOTIONCOMPコールバック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造の**rendermocomp**メンバーへの呼び出しに直接マップされます。 **Rendermocomp**メンバーは、 [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)構造体を参照するディスプレイドライバーが提供する関数を指します。
 
-**RenderMoComp**ドライバーによって提供される表示せずにコールバックが呼び出されて**BeginMoCompFrame**または**EndMoCompFrame**最初に呼び出される関数。
+**Rendermocomp**コールバックは、ディスプレイドライバーが提供する**beginmocompframe**または**endmocompframe**関数が最初に呼び出されずに呼び出されます。
 
-DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
+DD\_RENDERMOCOMPDATA 構造体は、次のように入力されます。
 
 <table>
 <colgroup>
@@ -80,14 +80,14 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">メンバー</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dwNumBuffers</strong></p></td>
-<td align="left"><p>0 を返します。</p></td>
+<td align="left"><p>回.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpBufferInfo</strong></p></td>
@@ -95,22 +95,22 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwFunction</strong></p></td>
-<td align="left"><p><strong>DXVA_DeinterlaceQueryAvailableModesFnCode</strong>定数 (で定義されている<em>dxva.h</em>)。</p></td>
+<td align="left"><p><strong>DXVA_DeinterlaceQueryAvailableModesFnCode</strong>定数 ( <em>DXVA</em>で定義されています)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryModeCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequerymodecaps)"> <strong>DXVA_DeinterlaceQueryModeCaps</strong> </a>構造体。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryModeCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacequerymodecaps)"><strong>DXVA_DeinterlaceQueryModeCaps</strong></a>構造体へのポインター。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
-<td align="left"><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacecaps" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacecaps)"> <strong>DXVA_DeinterlaceCaps</strong> </a>構造体。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceCaps&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)"><strong>DXVA_DeinterlaceCaps</strong></a>構造体へのポインター。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -125,25 +125,25 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">N/A (Declared ドライバーによって提供されるヘッダー ファイル内)</td>
+<td align="left">N/A (ドライバーによって指定されたヘッダーファイルで宣言)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD\_MOTIONCOMPCALLBACKS バック**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 
 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)
 
-[**DXVA\_DeinterlaceQueryModeCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequerymodecaps)
+[**DXVA\_DeinterlaceQueryModeCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacequerymodecaps)
 
-[**DXVA\_DeinterlaceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacecaps)
+[**DXVA\_DeinterlaceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)
 
-[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)
 
  
 

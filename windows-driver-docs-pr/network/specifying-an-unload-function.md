@@ -3,31 +3,31 @@ title: アンロード関数の指定
 description: アンロード関数の指定
 ms.assetid: 3bfac8a5-1367-40bd-81b5-4a7fb9aaaece
 keywords:
-- Windows Filtering Platform コールアウト ドライバー WDK、初期化しています
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの初期化
-- コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの初期化
-- WDM ベース コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
-- WDF ベース コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
-- 関数 WDK Windows フィルタ リング プラットフォームをアンロードします。
+- Windows フィルタリングプラットフォームのコールアウトドライバーの WDK、初期化
+- コールアウトドライバー WDK Windows フィルタリングプラットフォーム、初期化
+- コールアウトドライバーの初期化 WDK Windows フィルタリングプラットフォーム
+- WDM ベースのコールアウトドライバーの WDK Windows フィルタリングプラットフォーム
+- WDF ベースのコールアウトドライバー (WDK Windows フィルタリングプラットフォーム)
+- unload 関数 WDK Windows Filtering Platform
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95526a041a191e881ce82b40685550e687e3b111
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab42a478ead3b77a2fc49b295322877f51b97670
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374711"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841872"
 ---
 # <a name="specifying-an-unload-function"></a>アンロード関数の指定
 
 
-コールアウト ドライバーでは、アンロード、関数を提供する必要があります。 オペレーティング システムは、コールアウト ドライバーがシステムからアンロードされるときに、この関数を呼び出します。 コールアウト ドライバーのアンロード関数は、コールアウト ドライバーがシステム メモリからアンロードする前に、コールアウト ドライバーのコールアウトはフィルター エンジンから登録しないことを保証する必要があります。 コールアウト ドライバーは、アンロード、関数が提供しない場合、システムからアンロードすることはできません。
+コールアウトドライバーは、unload 関数を提供する必要があります。 システムからコールアウトドライバーがアンロードされると、オペレーティングシステムはこの関数を呼び出します。 コールアウトドライバーの unload 関数は、コールアウトドライバーがシステムメモリからアンロードされる前に、フィルターエンジンからコールアウトドライバーのコールアウトが登録解除されることを保証する必要があります。 コールアウトドライバーが unload 関数を提供していない場合、システムからはそのドライバーをアンロードできません。
 
-コールアウト ドライバーが、アンロード関数を指定しますが、コールアウト ドライバーを Windows Driver Model (WDM) または Windows Driver Frameworks (WDF) に基づいているかどうかによって異なります。
+コールアウトドライバーが unload 関数を指定する方法は、コールアウトドライバーが Windows Driver Model (WDM) と Windows ドライバーフレームワーク (WDF) のどちらに基づいているかによって異なります。
 
-### <a name="wdm-based-callout-drivers"></a>WDM ベース コールアウト ドライバー
+### <a name="wdm-based-callout-drivers"></a>WDM ベースのコールアウトドライバー
 
-かどうかコールアウト ドライバーは WDM に基づいていることを示す、 [**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数でその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 例:
+コールアウトドライバーが WDM に基づいている場合は、その[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数に[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)関数を指定します。 次に、例を示します。
 
 ```C++
 VOID
@@ -50,9 +50,9 @@ NTSTATUS
 }
 ```
 
-### <a name="wdf-based-callout-drivers"></a>WDF ベース コールアウト ドライバー
+### <a name="wdf-based-callout-drivers"></a>WDF ベースのコールアウトドライバー
 
-かどうかコールアウト ドライバーは WDF に基づいていることを示す、 [ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)関数でその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 以下に例を示します。
+コールアウトドライバーが WDF に基づいている場合は、その[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)関数で[*Evtdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)関数を指定します。 次に、例を示します。
 
 ```C++
 VOID
@@ -97,7 +97,7 @@ NTSTATUS
 }
 ```
 
-コールアウト ドライバーのアンロード関数を実装する方法については、次を参照してください。[コールアウト ドライバーをアンロード](unloading-a-callout-driver.md)します。
+コールアウトドライバーの unload 関数を実装する方法の詳細については、「[コールアウトドライバーのアンロード](unloading-a-callout-driver.md)」を参照してください。
 
  
 

@@ -19,12 +19,12 @@ keywords:
 - ファームウェアに依存しないブートオプション WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25321d11ae8465ec49760b50abfe52d71f291041
-ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
+ms.openlocfilehash: c3e373a96970eb314c0a40516060f4a3659a1624
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866765"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840300"
 ---
 # <a name="overview-of-boot-options-in-windows"></a>Windows でのブート オプションの概要
 
@@ -60,7 +60,7 @@ Bcd ストアが存在するメディア以外のメディアからシステム�
 
 BCD ストアは、使い慣れたオブジェクトと要素のアーキテクチャを備えており、Guid と名前 ("Default" など) を使用して、ブート関連のアプリケーションを正確に識別します。
 
-BCD には、独自のブートオプションセットが含まれています。 これらのブートオプションの詳細については、「 [BCD ブートオプションリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)」を参照してください。
+BCD には、独自のブートオプションセットが含まれています。 これらのブートオプションの詳細については、「 [BCD ブートオプションリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
 ## <a name="editing-boot-options"></a>ブート オプションの編集
 

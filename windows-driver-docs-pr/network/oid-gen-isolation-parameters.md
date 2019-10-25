@@ -1,47 +1,47 @@
 ---
 title: OID_GEN_ISOLATION_PARAMETERS
-description: NDIS および上にあるドライバーは、マルチ テナント機能の構成の VM ネットワーク アダプターのポートに設定されている (分離) パラメーターを取得する OID_GEN_ISOLATION_PARAMETERS のオブジェクト識別子 (OID) 要求を発行します。
+description: NDIS およびそれ以降のドライバーは、VM ネットワークアダプターのポートに設定されているマルチテナント構成 (分離) のパラメーターを取得するために、OID_GEN_ISOLATION_PARAMETERS のオブジェクト識別子 (OID) 要求を発行します。
 ms.assetid: 68E89349-4907-4241-9C50-B13C75273F0D
 ms.date: 08/08/2017
-keywords: -OID_GEN_ISOLATION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_ISOLATION_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: c997b7b8e61bce6ae3f08b6fceace4af5352dc24
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8601ee40be6a20a2b4fae64d0d790a2b7d96954f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844623"
 ---
-# <a name="oidgenisolationparameters"></a>OID\_GEN\_分離\_パラメーター
+# <a name="oid_gen_isolation_parameters"></a>OID\_GEN\_分離\_パラメーター
 
 
-NDIS および上にあるドライバーは、OID のオブジェクト識別子 (OID) 要求を発行\_GEN\_分離\_パラメーター (分離) パラメーターを VM に設定されているマルチ テナント機能の構成を取得するネットワーク アダプターのポート。
+NDIS およびそれ以降のドライバーは、OID\_\_\_GEN のオブジェクト識別子 (OID) 要求を発行して、VM ネットワークアダプターのポートに設定されているマルチテナント構成 (分離) のパラメーターを取得します。
 
-各ルーティング ドメインは、ポートで個別に構成が、この OID は 1 つのクエリ、ルーティング ドメインのすべてのパラメーターを返します。
+各ルーティングドメインはポートで個別に構成されますが、この OID は1つのクエリ内のすべてのルーティングドメインのパラメーターを返します。
 
-上にある、ドライバーは、2 つの手順でこの OID を発行する必要があります。
+この OID は、次の2つの手順で発行されます。
 
-1.  Io クエリ、必要なバッファー サイズ、OID を使用してクエリを発行する、**サイズ**のメンバー、**ヘッダー**のメンバー、 [ **NDIS\_分離\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)構造体を設定**NDIS\_SIZEOF\_NDIS\_分離\_パラメーター\_リビジョン\_1**. (を参照してください**NDIS\_状態\_無効な\_長さ**以下です)。
-2.  発行の OID、 **InformationBuffer**必要なサイズ。
+1.  Io は必要なバッファーサイズを照会し、ndis\_分離の**ヘッダー**メンバーの**サイズ**メンバーで OID クエリを発行します[ **\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)構造は NDIS **\_SIZEOF\_ndis\_分離に設定され\_PARAMETERS\_REVISION\_1**です。 (「 **NDIS\_STATUS\_無効な\_の長さ**」を参照してください)。
+2.  必要なサイズの**Informationbuffer**を使用して OID を発行します。
 
-OID のクエリ要求が正常に完了した場合、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体バッファーへのポインターが含まれています。 このバッファーには、次の順序でデータが含まれています。
+OID クエリ要求が正常に完了した場合、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、バッファーへのポインターが含まれます。 このバッファーには、次のデータが順に格納されています。
 
-1.  [ **NDIS\_分離\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)構造体
+1.  [**NDIS\_分離\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)構造体
 
-2.  1 つまたは複数[ **NDIS\_ルーティング\_ドメイン\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)各ルーティング ドメインに 1 つの構造
+2.  1つまたは複数の[**NDIS\_ルーティングドメイン\_のエントリ構造\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)ルーティングドメインごとに1つ
 
-3.  1 つまたは複数[ **NDIS\_ルーティング\_ドメイン\_分離\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)ルーティング ドメインでグループ化、構造体
+3.  1つまたは複数の[**NDIS\_ルーティング\_ドメイン\_分離\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)構造をルーティングドメイン別にグループ化します。
 
-各[ **NDIS\_ルーティング\_ドメイン\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)構造、 **FirstIsolationInfoEntryOffset**メンバーが含まれています、OID 情報バッファーの先頭からのオフセット (つまり、バッファーの先頭を**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造へのポインター)、最初に[ **NDIS\_ルーティング\_ドメイン\_分離\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)そのルーティング ドメインの。 内のオフセット、 **NextIsolationInfoEntryOffset**一覧の最後の構造体のメンバーは 0 になります。
+各[**NDIS\_ルーティング\_ドメイン\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)構造体では、 **FirstIsolationInfoEntryOffset**メンバーに、OID 情報バッファーの先頭からのオフセット (つまり、**バッファーの先頭から** [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造ポイントを指す) の informationbuffer メンバーは、最初の[**NDIS\_ルーティング\_ドメイン\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)そのルーティングドメインの分離\_エントリを指します。 リスト内の最後の構造体の**Nextiの Ationinfoentryoffset**メンバーのオフセットが0です。
 
-VM のネットワーク アダプターでマルチ テナント機能の構成パラメーターが設定されていない場合、ネットワーク アダプターのミニポート ドライバーの設定、**データ。クエリ\_情報。BytesWritten**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体をゼロを返す**NDIS\_の状態\_成功**します。 この場合は、データ内で、**データ。クエリ\_INFORMATION.InformationBuffer**ミニポート ドライバーによってメンバーが変更されていません。
+VM ネットワークアダプターにマルチテナント構成パラメーターが設定されていない場合、ネットワークアダプターのミニポートドライバーはデータを設定し**ます。クエリ\_情報。BytesWritten** OID のメンバーが[ **\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体を0に指定し、 **NDIS\_STATUS\_SUCCESS**を返しました。 この場合、データ内のデータ**です。クエリ\_情報。 InformationBuffer**メンバーはミニポートドライバーによって変更されません。
 
 <a name="remarks"></a>注釈
 -------
 
-### <a name="return-status-codes"></a>リターン状態コード
+### <a name="return-status-codes"></a>ステータスコードを返す
 
-VM ネットワーク アダプターのミニポート ドライバーでは、この OID 要求の状態コードの次のいずれかを返します。
+VM ネットワークアダプターのミニポートドライバーは、この OID 要求に対して次のいずれかの状態コードを返します。
 
 <table>
 <colgroup>
@@ -57,15 +57,15 @@ VM ネットワーク アダプターのミニポート ドライバーでは、
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>OID 要求は正常に完了しました。</p></td>
+<td><p>OID 要求が正常に完了しました。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>要求された情報を返す情報バッファーの長さが小さすぎます。 VM ネットワーク アダプターのミニポート ドライバーの設定、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>最小バッファー サイズ (バイト単位) に必要な構造体。</p></td>
+<td><p>情報バッファーの長さが小さすぎて要求された情報を返すことができません。 VM ネットワークアダプターのミニポートドライバーは、データを設定し<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズ (バイト単位) に、bytesneeded 必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FAILURE</strong></p></td>
-<td><p>他の理由から、要求が失敗しました。</p></td>
+<td><p>他の理由で要求が失敗しました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,11 +83,11 @@ VM ネットワーク アダプターのミニポート ドライバーでは、
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.40 以降をサポートします。</p></td>
+<td><p>NDIS 6.40 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -95,15 +95,15 @@ VM ネットワーク アダプターのミニポート ドライバーでは、
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_分離\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)
+[**NDIS\_分離\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_ルーティング\_ドメイン\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)
+[**NDIS\_ルーティング\_ドメイン\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)
 
-[**NDIS\_ルーティング\_ドメイン\_分離\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)
+[**NDIS\_ルーティング\_ドメイン\_分離\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)
 
-[**NDIS\_状態\_分離\_パラメーター\_変更**](ndis-status-isolation-parameters-change.md)
+[**NDIS\_ステータス\_分離\_パラメーター\_変更**](ndis-status-isolation-parameters-change.md)
 
  
 

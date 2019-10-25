@@ -1,9 +1,9 @@
 ---
-title: KSMETHOD\_BDA\_作成\_トポロジ
-description: クライアントを使用して、KSMETHOD\_BDA\_作成\_トポロジ フィルターでは、既知の接続を表すリング 3 でトポロジ構造を作成します。
+title: KSK メソッド\_BDA\_\_トポロジを作成します
+description: クライアントは、KSK メソッド\_BDA\_使用して\_トポロジを作成し、フィルター内の既知の接続を反映するトポロジ構造をリング3に作成します。
 ms.assetid: 3f34c7cc-d711-478b-a017-ad2c46545a9b
 keywords:
-- KSMETHOD_BDA_CREATE_TOPOLOGY ストリーミング メディア デバイス
+- KSMETHOD_BDA_CREATE_TOPOLOGY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,30 +14,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3abed8d526536101eb54dbfacfc9fda41680943a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 72a9609f50607d6922f8f06cef01c095b2494a63
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362646"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842422"
 ---
-# <a name="ksmethodbdacreatetopology"></a>KSMETHOD\_BDA\_作成\_トポロジ
+# <a name="ksmethod_bda_create_topology"></a>KSK メソッド\_BDA\_\_トポロジを作成します
 
 
-クライアントを使用して、KSMETHOD\_BDA\_作成\_トポロジ フィルターでは、既知の接続を表すリング 3 でトポロジ構造を作成します。
+クライアントは、KSK メソッド\_BDA\_使用して\_トポロジを作成し、フィルター内の既知の接続を反映するトポロジ構造をリング3に作成します。
 
 ## <span id="ddk_ksmethod_bda_create_topology_ks"></span><span id="DDK_KSMETHOD_BDA_CREATE_TOPOLOGY_KS"></span>
 
 
-### <a name="span-idspecifyingthismethodspanspan-idspecifyingthismethodspanspan-idspecifyingthismethodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>この方法を指定します。
+### <a name="span-idspecifying_this_methodspanspan-idspecifying_this_methodspanspan-idspecifying_this_methodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>このメソッドの指定
 
-KSMETHOD、**フラグ**メンバー KSMETHOD に設定\_型\_を記述します。
+**フラグ**メンバーが ksk メソッドに設定されている ksk メソッド\_TYPE\_WRITE です。
 
-### <a name="span-idmethoddataspanspan-idmethoddataspanspan-idmethoddataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドのデータ
+### <a name="span-idmethod_dataspanspan-idmethod_dataspanspan-idmethod_dataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドデータ
 
-KSMULTIPLE\_トポロジ情報の一覧については、ヘッダーは、項目の構造体。
+KSMULTIPLE\_ITEM 構造体。これは、トポロジ情報の一覧のヘッダーです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -48,7 +48,7 @@ KSMULTIPLE\_トポロジ情報の一覧については、ヘッダーは、項�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -56,11 +56,11 @@ KSMULTIPLE\_トポロジ情報の一覧については、ヘッダーは、項�
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaMethodCreateTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)
+[**BdaMethodCreateTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatetopology)
 
 [**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 
-[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
  
 

@@ -3,16 +3,16 @@ title: SCSI ミニポート ドライバーの HwScsiInitialize ルーチン
 description: SCSI ミニポート ドライバーの HwScsiInitialize ルーチン
 ms.assetid: 2a776c0a-1bac-4f8c-beab-fd53300f68c8
 keywords:
-- SCSI ミニポート ドライバー WDK ストレージ、HwScsiInitialize
+- SCSI ミニポートドライバー WDK 記憶域、HwScsiInitialize
 - HwScsiInitialize
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ac72863ca0b2a7e5ff8a224c7c0781aec4031fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 838a9c6c57205d1bb8da201bd14ec56aa4bb4c27
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380595"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842668"
 ---
 # <a name="scsi-miniport-drivers-hwscsiinitialize-routine"></a>SCSI ミニポート ドライバーの HwScsiInitialize ルーチン
 
@@ -20,11 +20,11 @@ ms.locfileid: "67380595"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiinitialize_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIINITIALIZE_ROUTINE_KG"></span>
 
 
-それぞれに、ミニポート ドライバーによって検出された HBA がサポートされているその[ *HwScsiInitialize* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85))存在する場合に、HBA のレジスタとの初期状態を設定するルーチンが呼び出されます。
+ミニポートドライバーによって検出されたサポートされる HBA ごとに、その[*HwScsiInitialize*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85))ルーチンが呼び出され、hba のレジスタと初期状態 (存在する場合) が設定されます。
 
-場合、 *HwScsiInitialize*ルーチンでは、HBA、ミニポート ドライバーの割り込みを有効に[ **HwScsiInterrupt** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))ルーチンは、デバイスの割り込みを処理するために呼び出されます初期化中に生成されます。
+*HwScsiInitialize*ルーチンで HBA の割り込みが有効になっている場合は、初期化中にデバイスが生成するすべての割り込みを処理するために、ミニポートドライバーの[**HwScsiInterrupt**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))ルーチンが呼び出されます。
 
-HBA の初期化とバスのリセットが発生した場合、 *HwScsiInitialize*ルーチンを呼び出す必要があります[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 *NotificationType*値**ResetDetected**します。
+HBA を初期化するとバスがリセットされる場合、 *HwScsiInitialize*ルーチンは*NotificationType*値**Resetdetected 検出さ**れた[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)を呼び出す必要があります。
 
  
 

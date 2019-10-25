@@ -1,9 +1,9 @@
 ---
 title: RxAssert ルーチン
-description: インストールされている場合、カーネル デバッガーに RDBSS のチェックで、ASSERT 文字列ビルド RxAssert を送信します。 RDBSS の製品版ビルドでこのルーチンの呼び出しはチェックをバグします。
+description: RxAssert がインストールされている場合、RDBSS のチェックされたビルドに対してアサート文字列をカーネルデバッガーに送信します。 RDBSS のリテールビルドの場合、このルーチンの呼び出しによってバグチェックが行われます。
 ms.assetid: 3ef01569-74ef-4f35-acaf-9c01f2b9d9a7
 keywords:
-- RxAssert ルーチン インストール可能なファイル システム ドライバー
+- RxAssert ルーチンのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4acca9a3a22ba85bcfd529a8555f8eec4e0adbf0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7ef93d1ad010614582d93016a5bc2be761f5012
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385031"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840976"
 ---
 # <a name="rxassert-routine"></a>RxAssert ルーチン
 
 
-**RxAssert**がインストールされている場合、カーネル デバッガーに RDBSS のサブタイプでアサート文字列を送信します。 RDBSS の製品版ビルドでこのルーチンの呼び出しはチェックをバグします。
+**RxAssert**がインストールされている場合、RDBSS のチェックされたビルドに対してアサート文字列をカーネルデバッガーに送信します。 RDBSS のリテールビルドの場合、このルーチンの呼び出しによってバグチェックが行われます。
 
 <a name="syntax"></a>構文
 ------
@@ -41,17 +41,17 @@ VOID RxAssert(
 <a name="parameters"></a>パラメーター
 ----------
 
-*FailedAssertion* \[で\]  
-失敗したアサーションです。
+\] の失敗した*アサーション*\[  
+失敗したアサーション。
 
-*FileName* \[in\]  
-ファイル ソースの名前を where **RxAssert**または**RtlAssert**が呼び出されました。
+*ファイル名*\[\]  
+**RxAssert**または**rtlassert**が呼び出されたソースファイルの名前。
 
-*LineNumber* \[で\]  
-ソース内の行番号ファイル**RxAssert**または**RtlAssert**が呼び出されました。
+\] の*LineNumber* \[  
+**RxAssert**または**rtlassert**が呼び出されたソースファイル内の行番号。
 
-*メッセージ*\[で、省略可能\]  
-オプションのメッセージ。
+での*メッセージ*\[、オプションの\]  
+省略可能なメッセージ。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -61,11 +61,11 @@ VOID RxAssert(
 <a name="remarks"></a>注釈
 -------
 
-ときに、 *rxassert.h*含めるファイルを使用するもこの RxAssert ルーチンを呼び出す RtlAssert を呼び出す Windows カーネルを再定義されます。
+*Rxassert*インクルードファイルを使用すると、この rxassert ルーチンも呼び出されるように Windows カーネルの RtlAssert 呼び出しが再定義されます。
 
-製品版ビルドで**RxAssert**が呼び出す**KeBugCheckEx** 0xa55a0000 値を渡して BugCheckParamater1 と行番号の論理和。
+リテールビルドでは、 **RxAssert**は、BugCheckParamater1 として行番号を使用して、値0xa55a0000 を渡す**Keバグ checkex**を呼び出します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -80,7 +80,7 @@ VOID RxAssert(
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Rxassert.h (Rxassert.h を含む)</td>
+<td align="left">Rxassert (Rxassert を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
@@ -94,7 +94,7 @@ VOID RxAssert(
 
 [**アサート**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))
 
-[RtlAssert](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[RtlAssert](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [**RxDbgBreakPoint**](rxdbgbreakpoint.md)
 

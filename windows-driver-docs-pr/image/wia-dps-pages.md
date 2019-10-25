@@ -1,9 +1,9 @@
 ---
 title: WIA\_DPS\_ページ
-description: WIA\_DPS\_自動ドキュメント フィーダーから取得するページの現在の数がページのプロパティに含まれています。
+description: WIA の\_DPS\_ページのプロパティには、自動ドキュメントフィーダーから取得する現在のページ数が含まれます。
 ms.assetid: 51ab2eab-c7b4-4d54-bfc7-d53a8f66c7a9
 keywords:
-- WIA_DPS_PAGES イメージング デバイス
+- WIA_DPS_PAGES イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,33 +14,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca82950a5afba115b24f8e802186950a237367b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c456ebb34f89c3f12f4dd4a981e6ebfda733a4f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383771"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840714"
 ---
-# <a name="wiadpspages"></a>WIA\_DPS\_ページ
+# <a name="wia_dps_pages"></a>WIA\_DPS\_ページ
 
 
-WIA\_DPS\_自動ドキュメント フィーダーから取得するページの現在の数がページのプロパティに含まれています。
+WIA の\_DPS\_ページのプロパティには、自動ドキュメントフィーダーから取得する現在のページ数が含まれます。
 
 ## <span id="ddk_wia_dps_pages_si"></span><span id="DDK_WIA_DPS_PAGES_SI"></span>
 
 
-プロパティの種類:VT\_I4
+プロパティの型: VT\_I4
 
-有効な値 :WIA\_PROP\_範囲 (0 から 0 に設定しますスキャナーがスキャンできるページの最大数まで\[0\]を継続的にスキャンします。)。
+有効な値: WIA\_PROP\_範囲 (0 から、スキャナーがスキャンできる最大ページ数まで)。連続してスキャンする場合は 0 \[\] 0 に設定します。
 
-アクセス権:読み取り/書き込み
+アクセス権: 読み取り/書き込み
 
 <a name="remarks"></a>注釈
 -------
 
-アプリケーションの読み取り、WIA\_DPS\_ドキュメント フィーダー付きのページの容量を決定するページのプロパティ。 また、アプリケーションはこのプロパティをスキャンするページの数に設定します。 WIA ミニドライバーを作成し、維持 WIA\_DPS\_ページ。
+アプリケーションは、WIA\_DPS\_PAGES プロパティを読み取って、ドキュメントフィーダーのページ容量を決定します。 また、アプリケーションは、スキャンするページ数にこのプロパティを設定します。 WIA ミニドライバーは、WIA\_DPS\_ページを作成し、管理します。
 
-次の表は、WIA で有効な定数\_DPS\_ページのプロパティ。
+次の表では、WIA\_DPS\_PAGES プロパティで有効な定数について説明します。
 
 <table>
 <colgroup>
@@ -56,21 +56,21 @@ WIA\_DPS\_自動ドキュメント フィーダーから取得するページの
 <tbody>
 <tr class="odd">
 <td><p>ALL_PAGES</p></td>
-<td><p>WIA_PROP_RANGE をゼロ (0) に設定すると同じです。 すべてのページ。 複数のドキュメントではありませんが、ADF に渡すまで継続的にスキャンします。</p></td>
+<td><p>WIA_PROP_RANGE をゼロ (0) に設定する場合と同じです。 すべてのページ。 ADF にドキュメントが送られなくなるまで、継続的にスキャンします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  二重モードが有効になっている場合 (つまり、 [ **WIA\_DPS\_ドキュメント\_処理\_選択**](wia-dps-document-handling-select.md)プロパティがフィーダー |双方向)、WIA\_DPS\_ページは依然としてスキャンするページ数。
-1 枚の用紙が自動的に入力 2 つのページ二重モードが有効になっている場合、ページの背面にある空白である場合でもです。
+双方向モードが有効になっている場合 (つまり、 [**WIA\_DPS\_ドキュメント\_処理\_SELECT**](wia-dps-document-handling-select.md)プロパティが [フィーダー] に設定されている**場合  ** 両面)、WIA\_DPS\_ページは、スキャンするページ数と同じです。
+両面が有効になっている場合、ページの裏面が空白の場合でも、1枚の用紙に自動的に2つのページが表示されます。
 
-WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ページの側面の 1 つを処理します。 スキャナーは、二重モードでは、ページの一方だけをスキャンできない場合は、WIA を変更する必要があります\_DPS\_ページ値、 **Inc**のメンバー、 [ **WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体を 2 にします。 この値は、2 つの倍数単位のページを要求する必要がありますが、アプリケーションに通知します。 場合 WIA\_DPS\_ページが 0 は、スキャナーをスキャン*すべて*ドキュメント フィーダーに現在読み込まれているページ。
+WIA\_DPS\_ページを1に設定すると、スキャナーはページのいずれかの辺を処理します。 スキャナーが両面モードで1つのページのみをスキャンできない場合は、wia [ **\_プロパティ\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)構造体の**Inc**メンバーの [WIA\_DPS\_PAGES] の値を2に変更する必要があります。 この値は、2の倍数でページを要求する必要があることをアプリケーションに通知します。 WIA\_DPS\_ページがゼロの場合、スキャナーは現在ドキュメントフィーダーに読み込まれている*すべて*のページをスキャンします。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -81,11 +81,11 @@ WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ペ
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Microsoft Windows XP で使用できます。 Windows Vista 以降では、同じ WIA_IPS_PAGES プロパティを使用します。</p></td>
+<td><p>Microsoft Windows XP で使用できます。 Windows Vista 以降の場合は、同一の WIA_IPS_PAGES プロパティを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wiadef.h (Wiadef.h を含む)</td>
+<td>Wiadef (Wiadef を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -93,11 +93,11 @@ WIA を設定した場合\_DPS\_を 1 に、スキャナーのページは、ペ
 ## <a name="see-also"></a>関連項目
 
 
-[**WIA\_DPS\_ドキュメント\_処理\_を選択します**](wia-dps-document-handling-select.md)
+[**WIA\_DPS\_ドキュメント\_処理\_選択**](wia-dps-document-handling-select.md)
 
 [**WIA\_IP\_ページ**](wia-ips-pages.md)
 
-[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
+[**WIA\_プロパティ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

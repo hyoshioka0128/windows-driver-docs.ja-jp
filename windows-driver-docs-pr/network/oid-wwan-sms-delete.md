@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_SMS_DELETE
-description: OID_WWAN_SMS_DELETE MB デバイス、または Subscriber Identity Module (SIM カード)、またはその他の補助非揮発性メモリまたはメモリに格納されている SMS テキスト メッセージを削除します。
+description: OID_WWAN_SMS_DELETE は、MB デバイス、サブスクライバー Id モジュール (SIM カード)、またはその他の補助非揮発性メモリまたはメモリに格納されている SMS テキストメッセージを削除します。
 ms.assetid: b80fae94-35cc-4709-8346-d5a500d3fd49
 ms.date: 08/08/2017
-keywords: -OID_WWAN_SMS_DELETE ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_WWAN_SMS_DELETE ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fc2581bd6333724f5b0a618719c12f8d585a3cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee57b0347db462fd9eb94f1faeda48d64bce9d68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383176"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843785"
 ---
-# <a name="oidwwansmsdelete"></a>OID\_WWAN\_SMS\_削除
+# <a name="oid_wwan_sms_delete"></a>OID\_WWAN\_SMS\_削除
 
 
-OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カード)、またはその他の補助非揮発性メモリまたはメモリに格納されている SMS テキスト メッセージを削除します。
+OID\_WWAN\_SMS\_DELETE は、MB デバイス、サブスクライバー Id モジュール (SIM カード)、またはその他の補助非揮発性メモリまたはメモリに格納されている SMS テキストメッセージを削除します。
 
 クエリ要求はサポートされていません。
 
-セットの使用を要求する、 [ **NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)構造体。
+Set 要求では、 [**NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)構造を使用します。
 
-ミニポート ドライバーは、この OID を非同期に処理し、NDIS を返す必要があります\_状態\_INDICATION\_セットの要求に必要な作業 provisional 応答。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_WWAN\_SMS\_削除**](ndis-status-wwan-sms-delete.md)トランザクションが完了しているときを示す値。
+ミニポートドライバーは、この OID を非同期的に処理し、任意の set 要求に対して必要な一時的な応答\_通知\_NDIS\_の状態を返します。 ミニポートドライバーは、トランザクションが完了したときに[ **\_削除の通知\_\_、NDIS\_の状態**](ndis-status-wwan-sms-delete.md)を送信する必要があります。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)します。
+この OID の使用方法の詳細については、「 [WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)」を参照してください。
 
-この OID を処理するときに、ミニポート ドライバーは Subscriber Identity Module (SIM カード) にアクセスできますが、プロバイダーのネットワークにアクセスしないでください。
+この OID を処理するとき、ミニポートドライバーはサブスクライバー Id モジュール (SIM カード) にアクセスできますが、プロバイダーのネットワークにはアクセスできません。
 
-ミニポート ドライバー、インデックスに基づく SMS テキスト メッセージを削除するか、すべての SMS テキスト メッセージを削除する要求が表示されます。 削除要求は、(未読) の新しいメッセージ、メッセージの古い (読み取り)、ドラフトのメッセージまたは送信されたメッセージなどの基本的なフィルターのいずれかで構成されます。
+ミニポートドライバーは、インデックスに基づいて SMS テキストメッセージを削除したり、すべての SMS テキストメッセージを削除したりする要求を受信する場合があります。 Delete 要求は、新規 (未読) メッセージ、古い (読み取り) メッセージ、ドラフトメッセージ、送信メッセージなどの基本的なフィルターのいずれかで構成される場合があります。
 
-ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_SMS テキスト メッセージ、または SMS テキスト メッセージを削除する機能をサポートしていない場合にサポートされます。
+ミニポートドライバーは、SMS テキストメッセージをサポートしていない場合、または SMS テキストメッセージを削除する機能がサポートされていない場合は、NDIS\_の状態\_\_返す必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -45,11 +45,11 @@ OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,9 +57,9 @@ OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)
+[**NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)
 
-[WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
+[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

@@ -4,17 +4,17 @@ description: Direct3D バージョン 10 ランタイムおよびドライバー
 ms.assetid: 1e50afe1-7103-45c4-8f58-a08d51423b22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a3a1ebcc751ba8eb64412f5ba89564e192bab2e
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: c8920e6ff83f7b90aa401d6f8bec27d9b4e9d702
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716871"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839733"
 ---
 # <a name="direct3d-version-10-runtime-and-driver-handles"></a>Direct3D バージョン 10 ランタイムおよびドライバー ハンドル
 
 
-Direct3D のバージョン 10 とドライバーのランタイム ハンドルは、同じ有効期間を共有します。 Direct3D のランタイムを作成する型の関数呼び出しの間でオブジェクトの有効期間を指定します (たとえば、 [ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)) 破棄型関数の呼び出し (たとえば、 [ **DestroyResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyresource))。 ランタイムは、ランタイム ハンドルの値だけでなく、ドライバー ハンドル値を提供します。 これらのハンドルは、操作対象のオブジェクトを識別する厳密な型でラップされているポインター基本的にです。 リソースのランタイムとドライバーの処理の例を次に示します。
+Direct3D version 10 runtime と driver handle は同じ有効期間を共有します。 Direct3D ランタイムは、作成型関数の呼び出し ( [**Createresource (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)など) と破棄型関数の呼び出し (たとえば、 [**DESTROYRESOURCE (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyresource)) の間のオブジェクトの有効期間を指定します。 ランタイムは、ドライバーハンドルの値とランタイムハンドルの値を提供します。 これらのハンドルは、基本的に、操作対象のオブジェクトを識別するために厳密な型でラップされたポインターです。 リソースのランタイムハンドルとドライバーハンドルの例を次に示します。
 
 ```cpp
 // Strongly typed handle to identify a resource object to the driver: 
@@ -30,15 +30,15 @@ typedef struct D3D10DDI_HRTRESOURCE
 } D3D10DDI_HRTRESOURCE;
 ```
 
-レンダリング デバイス オブジェクトとその子オブジェクトのすべてのドライバー ハンドルには、次の 2 つのパスの作成メカニズムが行われます。
+レンダリングデバイスオブジェクトとその子オブジェクトのすべてのドライバーハンドルは、次の2つのパスの作成メカニズムを使用します。
 
-1.  ランタイム ドライバー ハンドルのポインターの値を確認するのにはまず、 _CalcPrivate_**ObjType**_サイズ_関数 (たとえば、 [ **CalcPrivateResourceSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize)関数)。 ランタイムはこの呼び出しで、作成パラメーターに渡します (たとえばへのポインター、 [ **D3D10DDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)構造)。 ランタイムにもへの呼び出しで作成パラメーターに渡す、_作成_**ObjType**関数。
+1.  ドライバーハンドルポインターの値を確認するために、ランタイムは最初に_CalcPrivate_**ObjType**_Size_関数 (たとえば、 [**CalcPrivateResourceSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize)関数) を呼び出します。 この呼び出しでは、ランタイムは作成パラメーター ( [**D3D10DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)構造体へのポインターなど) を渡します。 ランタイムは、 _Create_**ObjType**関数の呼び出しで作成パラメーターも渡します。
 
-    呼び出し中に何も割り当てに一般的には、ユーザー モードのディスプレイ ドライバーが不要_CalcPrivate_**ObjType**_サイズ_します。 ただし、ドライバーは、障害が発生したり、他の種類のエラー状態を示す必要があります、ドライバーを返すサイズ\_ハンドル作成されないようにする T (-1)。 ランタイムは戻ります E\_呼び出し元アプリケーションに OUTOFMEMORY エラー条件。
+    通常、ユーザーモードの表示ドライバーでは、 _CalcPrivate_**ObjType**_Size_の呼び出し中に何も割り当てる必要はありません。 ただし、ドライバーが失敗した場合、または他の種類のエラー条件を示す必要がある場合、ドライバーは\_T (-1) のサイズを返してハンドルの作成を防止できます。 次に、ランタイムは、OUTOFMEMORY エラー条件を呼び出し元アプリケーションに\_返します。
 
-    少なくとも、ドライバーを返す必要があります**sizeof (** void\* **)** への呼び出しから_CalcPrivate_**ObjType** _サイズ_します。
+    最小では、ドライバーは_CalcPrivate_**ObjType**_Size_の呼び出しから**sizeof (** void\* **)** を返します。
 
-2.  ランタイムは、ランタイムを呼び出し、ユーザー モードのディスプレイ ドライバーによって、サイズが必要なを満たすために十分な領域を割り当てることができる場合、_作成_**ObjType**関数 (たとえば、 [ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)) ドライバーのハンドルの新しい一意の値と共に、同じ作成パラメーターを使用します。 ドライバーのハンドルのポインター値が一意になるし、メモリの領域を指すように、ハンドルの有効期間の定数のサイズがによって返される_CalcPrivate_**ObjType** _サイズ_します。 ユーザー モードのディスプレイ ドライバーは、必要に応じてこのメモリ領域を使用できます。 ドライバーは、ランタイムによって提供されるメモリの領域に、頻繁にアクセスされるデータを配置することにより、効率化の増加を得る必要があります。
+2.  ランタイムが、ユーザーモード表示ドライバーに必要なサイズを満たすために十分な領域を割り当てることができる場合、ランタイムは、同じ作成パラメーターを使用して_Create_**ObjType**関数 (たとえば、 [**createresource (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)) を呼び出します。と共に、ドライバーハンドルの新しい一意の値を指定します。 ドライバーハンドルのポインター値は、 _CalcPrivate_**ObjType**_size_によって返されたサイズのメモリ領域を指すため、ハンドルの有効期間に対して一意であり、定数になります。 ユーザーモードの表示ドライバーでは、必要に応じてこのメモリ領域を使用できます。 頻繁にアクセスされるデータをランタイムが提供するメモリ領域に配置することにより、ドライバーの効率が向上します。
 
  
 

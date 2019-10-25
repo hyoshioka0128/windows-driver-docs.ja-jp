@@ -1,9 +1,9 @@
 ---
 title: FsRtlExitFileSystem 関数
-description: FsRtlEnterFileSystem 前の呼び出しによって無効になった通常のカーネル モード Apc の配信を再度有効に FsRtlExitFileSystem マクロ。
+description: FsRtlExitFileSystem マクロは、Fsrtlexitfilesystem の前の呼び出しによって無効にされた通常のカーネルモード Apc の配信を再度有効にします。
 ms.assetid: 763ceb1c-f614-4268-a7fe-73de0c354c71
 keywords:
-- インストール可能なファイル システム ドライバーの FsRtlExitFileSystem 関数
+- FsRtlExitFileSystem 関数のインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6363505d37a72ddd1f3bbcc874f0cc160381a611
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d10444d06d08d273171fa341d40063b34ac35d90
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365900"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841230"
 ---
 # <a name="fsrtlexitfilesystem-function"></a>FsRtlExitFileSystem 関数
 
 
-**FsRtlExitFileSystem**マクロは、前の呼び出しで無効にされたカーネル モードの通常の Apc の配信を再度有効[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)します。
+**Fsrtlexitfilesystem**マクロは、 [**Fsrtlexitfilesystem**](fsrtlenterfilesystem.md)の前の呼び出しによって無効にされた通常のカーネルモード apc の配信を再度有効にします。
 
 <a name="syntax"></a>構文
 ------
@@ -44,20 +44,20 @@ VOID FsRtlExitFileSystem(
 <a name="return-value"></a>戻り値
 ------------
 
-この関数では、値は返されません。
+この関数は値を返しません。
 
 <a name="remarks"></a>注釈
 -------
 
-各ファイル システム ドライバーのエントリ ポイント ルーチンを呼び出す必要があります[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)すぐにファイル I/O を実行するときに必要なリソースを取得する前に要求し、呼び出す**FsRtlExitFileSystem**直後。 これにより、ファイル I/O 要求の実行およびその他のブロック中に、ルーチンを中断することはできません。
+すべてのファイルシステムドライバーのエントリポイントルーチンは、ファイル i/o 要求を実行するために必要なリソースを取得する直前に[**Fsrtlenterfilesystem**](fsrtlenterfilesystem.md)を呼び出し、その後すぐに**Fsrtlenterfilesystem**を呼び出す必要があります。 これにより、ルーチンを実行中に中断したり、他のファイル i/o 要求をブロックしたりすることはできません。
 
-すべての成功した呼び出し[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)後続の呼び出しによって照合される必要があります**FsRtlExitFileSystem**します。
+[**Fsrtlenterfilesystem**](fsrtlenterfilesystem.md)の呼び出しが成功するたびに、後続の**Fsrtlenterfilesystem**の呼び出しで一致する必要があります。
 
-ローカル ファイル システムおよびネットワーク リダイレクターとは異なり、ファイル システム フィルター ドライバー、通常カーネル Apc の配信を無効にする必要がありますしないで (呼び出して[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)または[**KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion) IRQL APC を発生させることによって、または\_レベル) の呼び出しを通して[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+ローカルファイルシステムやネットワークリダイレクターとは異なり、ファイルシステムフィルタードライバーは通常のカーネル Apc の配信を無効にしないようにする必要があります。これは、 [**Fsrtlenterfilesystem**](fsrtlenterfilesystem.md)または[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)を呼び出すか、または IRQL APC の\_レベルにすることによって行います。) を呼び出して[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)します。
 
-ファイル システム フィルター ドライバーに通常のカーネルの Apc を無効にする必要がありますときのみを呼び出す前にすぐには[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)、 [ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)、 [ **ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)、 [ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)、または[ **ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)します。 呼び出した後[ **ExReleaseResource** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)または[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)、フィルター ドライバーはすぐに再有効化の配信通常カーネル Apc です。 代替手段として[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)、ミニフィルター ドライバーを使用できる、 [ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [ **FltAcquireResourceShared**](fltacquireresourceshared.md)、および[ **FltReleaseResource** ](fltreleaseresource.md)取得する際に Apc を正しく処理するルーチンとリソースを解放します。
+ファイルシステムフィルタードライバーが通常のカーネル Apc を無効にする必要があるのは、 [**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)、 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)、 [**ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)を[**呼び出す直前だけです。ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)または[**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)。 [**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)または[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)を呼び出した後、フィルタードライバーは通常のカーネル apc の配信を直ちに有効にする必要があります。 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)、および[**FltReleaseResource**](fltreleaseresource.md)ルーチンは、 [**fsrtlenterfilesystem**](fsrtlenterfilesystem.md)の代わりに使用できます。このルーチンでは、とを取得するときに、apc を正しく処理します。リソースを解放しています。
 
-呼び出す前に、通常のカーネル Apc を無効にする必要はありません[ **ExAcquireSharedWaitForExclusive** ](https://msdn.microsoft.com/library/windows/hardware/ff544370)このルーチンを呼び出すため、 [ **KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)、両方の通常の動作と特殊なカーネル Apc を無効にします。 呼び出す前に行う必要ないも[ **ExAcquireFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))または[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)のため、これらルーチンは、通常のカーネルの Apc を無効にします。
+[**ExAcquireSharedWaitForExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544370)を呼び出す前に通常のカーネル apc を無効にする必要はありません。このルーチンは[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)を呼び出します。これにより、通常のカーネル apc と特殊なカーネル apc の両方が無効になります。 また、 [**ExAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))または[**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)を呼び出す前にこれを行う必要はありません。これらのルーチンは通常のカーネル apc を無効にするためです。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ VOID FsRtlExitFileSystem(
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h (Ntifs.h を含む)</td>
+<td align="left">Ntifs (Ntifs を含む)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
@@ -102,7 +102,7 @@ VOID FsRtlExitFileSystem(
 
 [**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
-[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)
 
 [**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))
 
@@ -114,11 +114,11 @@ VOID FsRtlExitFileSystem(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
 
-[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)
 
-[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)
+[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)
 
  
 

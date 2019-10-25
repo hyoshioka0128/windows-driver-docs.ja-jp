@@ -3,17 +3,17 @@ title: NDIS インターフェイス プロバイダーでの OID クエリお�
 description: NDIS インターフェイス プロバイダーでの OID クエリおよび設定要求の処理
 ms.assetid: 9ce51fc8-426f-4d36-8ee7-0a93b7b8439c
 keywords:
-- NDIS ネットワーク インターフェイス、WDK インターフェイス プロバイダー
-- ネットワーク インターフェイス、WDK インターフェイス プロバイダー
-- インターフェイス プロバイダー WDk のネットワーク インターフェイス
+- NDIS ネットワークインターフェイス WDK、インターフェイスプロバイダー
+- ネットワークインターフェイス WDK、インターフェイスプロバイダー
+- インターフェイスプロバイダーの WDk ネットワークインターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e73f68a9bd83ba7850c7147e0b15c0184db674b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97a517111c9f25105ae97a5c3aeecf1fda78b4e8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842576"
 ---
 # <a name="handling-oid-query-and-set-requests-in-an-ndis-interface-provider"></a>NDIS インターフェイス プロバイダーでの OID クエリおよび設定要求の処理
 
@@ -21,15 +21,15 @@ ms.locfileid: "67379788"
 
 
 
-NDISIF インターフェイスは、クエリを実行または RFC 2863 内の情報に対応する設定が可能な (統計カウンターを含む) 複数のインターフェイス パラメーターを定義します。 NDIS エントリでこれらのインターフェイスのパラメーターにアクセスする呼び出し時にインターフェイス プロバイダーを定義するポイント、 [ **NdisIfRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider)関数。 インターフェイスをプロバイダーとして登録の詳細については、次を参照してください。[インターフェイス プロバイダーとして登録](registering-as-an-interface-provider.md)します。
+NDISIF インターフェイスは、RFC 2863 の情報に対応するクエリまたは設定が可能な、いくつかのインターフェイスパラメーター (統計カウンターを含む) を定義します。 NDIS は、 [**NdisIfRegisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)関数を呼び出すときにインターフェイスプロバイダーによって定義されるエントリポイントを介して、これらのインターフェイスパラメーターにアクセスします。 をインターフェイスプロバイダーとして登録する方法の詳細については、「[インターフェイスプロバイダーとし](registering-as-an-interface-provider.md)ての登録」を参照してください。
 
-インターフェイスのパラメーターは、オブジェクト識別子 (Oid) によって識別されます。 いくつかの Oid は、インターフェイスのプロバイダーに固有です。
+インターフェイスパラメーターは、オブジェクト識別子 (Oid) によって識別されます。 一部の Oid は、インターフェイスプロバイダーに固有のものです。
 
-次のトピックでは、クエリを処理し、要求インターフェイスのパラメーターを設定する方法について説明します。
+次のトピックでは、インターフェイスパラメーターのクエリと set 要求を処理する方法について説明します。
 
-[インターフェイス オブジェクト クエリ要求の処理](handling-an-interface-object-query-request.md)
+[インターフェイスオブジェクトクエリ要求の処理](handling-an-interface-object-query-request.md)
 
-[要求の設定、インターフェイス オブジェクトの処理](handling-an-interface-object-set-request.md)
+[インターフェイスオブジェクトセットの要求の処理](handling-an-interface-object-set-request.md)
 
  
 

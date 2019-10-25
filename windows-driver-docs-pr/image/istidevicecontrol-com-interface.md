@@ -4,12 +4,12 @@ description: IStiDeviceControl COM インターフェイス
 ms.assetid: 6d98f5d7-c471-4abb-8e69-dbac3d336c2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db78f1489815a71dbe223fc2ec4922416178e88
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 623cef89bce3c950bdbae3fd1cdd2f5379eaebb8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378932"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840808"
 ---
 # <a name="istidevicecontrol-com-interface"></a>IStiDeviceControl COM インターフェイス
 
@@ -17,24 +17,24 @@ ms.locfileid: "67378932"
 
 
 
-**IStiDeviceControl** COM インターフェイスを提供します[ユーザー モードのままイメージ ミニドライバー](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)内に格納された情報にアクセスして、[イメージ イベント モニターではまだ](overview-of-sti-components.md#ddk-still-image-event-monitor-si)します。 また、ミニドライバーは、静止画像エラー ログに情報を書き込むこともできます。
+**Iミニドライバー Devicecontrol** COM インターフェイスは、[静止イメージイベントモニター](overview-of-sti-components.md#ddk-still-image-event-monitor-si)内に格納されている情報にアクセスできる、[ユーザーモードの静止画像](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)を提供します。 また、ミニドライバーが静止イメージのエラーログに情報を書き込むこともできます。
 
-によって定義されたメソッド、 **IStiDeviceControl**インターフェイスには、次が含まれます。
+**Iの Devicecontrol**インターフェイスによって定義されるメソッドには、次のものがあります。
 
-<a href="" id="istidevicecontrol--addref"></a>[**IStiDeviceControl::AddRef**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-addref)  
-インクリメント、 **IStiDeviceControl**インターフェイスの参照カウントします。
+<a href="" id="istidevicecontrol--addref"></a>[**I-Devicecontrol:: AddRef**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-addref)  
+**Iの Devicecontrol**インターフェイスの参照カウントをインクリメントします。
 
-<a href="" id="istidevicecontrol--getmydeviceopenmode"></a>[**IStiDeviceControl::GetMyDeviceOpenMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceopenmode)  
-静止画像デバイスのインスタンスが作成されたときに、アプリケーションが指定されている転送モードを取得する静止画像ミニドライバーを使用できます。
+<a href="" id="istidevicecontrol--getmydeviceopenmode"></a>[**I、Devicecontrol:: GetMyDeviceOpenMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceopenmode)  
+静止イメージデバイスのインスタンスを作成したときに、アプリケーションが指定した転送モードをミニドライバーに取得できるようにします。
 
-<a href="" id="istidevicecontrol--getmydeviceportname"></a>[**IStiDeviceControl::GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)  
-デバイスのポートの名前を取得する静止画像ミニドライバーを使用できます。
+<a href="" id="istidevicecontrol--getmydeviceportname"></a>[**I、Devicecontrol:: GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)  
+静止イメージミニドライバーがデバイスのポート名を取得できるようにします。
 
-<a href="" id="istidevicecontrol--release"></a>[**IStiDeviceControl::Release**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-release)  
-定義するインスタンスの COM オブジェクトを閉じ、 **IStiDeviceControl**インターフェイス、およびインターフェイスへのアクセスを削除します。
+<a href="" id="istidevicecontrol--release"></a>[**Iの Devicecontrol:: Release**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-release)  
+**Iの Devicecontrol**インターフェイスを定義するインスタンス COM オブジェクトを閉じ、インターフェイスへのアクセスを削除します。
 
-<a href="" id="istidevicecontrol--writetoerrorlog"></a>[**IStiDeviceControl::WriteToErrorLog**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-writetoerrorlog)  
-イメージは引き続き、エラー ログにメッセージを書き込む静止画像ミニドライバーを使用できます。
+<a href="" id="istidevicecontrol--writetoerrorlog"></a>[**IStiDeviceControl:: WriteToErrorLog ログ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-writetoerrorlog)  
+静止画像ミニドライバーが静止画像エラーログにメッセージを書き込むことを許可します。
 
  
 

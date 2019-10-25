@@ -3,19 +3,19 @@ title: メッセージ シグナル割り込みを使用した RSS
 description: メッセージ シグナル割り込みを使用した RSS
 ms.assetid: 3c1776cf-f870-4910-88b2-9b5a9544cdf8
 keywords:
-- 受信側のスケーリングの WDK ネットワー キング、メッセージ シグナル割り込み
-- ネットワーク接続、メッセージ シグナル割り込み RSS WDK
-- メッセージ シグナル割り込み WDK ネットワー キング、RSS
-- Msi WDK ネットワー キング、RSS
-- MSI X WDK ネットワー キング、RSS
+- 受信側のスケーリング WDK ネットワーク、メッセージシグナル割り込み
+- RSS WDK ネットワーク、メッセージシグナル割り込み
+- メッセージシグナル割り込み、WDK ネットワーク、RSS
+- Msi WDK ネットワーク、RSS
+- MSI-X WDK ネットワーク、RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16470ce0747917f85ae9b63f491966e334d22dd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ba5edc1822a63ddbdb50785a1eb457bc90a2d43
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841996"
 ---
 # <a name="rss-with-message-signaled-interrupts"></a>メッセージ シグナル割り込みを使用した RSS
 
@@ -23,36 +23,36 @@ ms.locfileid: "67382127"
 
 
 
-ミニポート ドライバーがサポートできるメッセージ シグナル割り込み RSS のパフォーマンスを向上させるには、(Msi)。 Msi には、受信したデータを処理する CPU の割り込みを要求する NIC が有効にします。 MSI の NDIS サポートの詳細については、次を参照してください。 [NDIS Msi-x](ndis-msi-x.md)します。
+ミニポートドライバーは、RSS のパフォーマンスを向上させるために、メッセージシグナル割り込み (Msi) をサポートできます。 Msi は、受信したデータを処理する CPU の割り込みを NIC が要求できるようにします。 MSI の NDIS サポートの詳細については、「 [NDIS MSI-X](ndis-msi-x.md)」を参照してください。
 
-次の図では、RSS MSI X を示しています。
+次の図は、MSI-X の RSS を示しています。
 
-![msi x で rss を示す図](images/rssmsistack.png)
+![msi を使用した rss を示す図-x](images/rssmsistack.png)
 
-図では、破線の矢印は、別の接続での処理を表します。 MSI x RSS は、NIC の接続の適切な cpu 使用率を中断できます。
+この図では、破線の矢印は別の接続での処理を表しています。 MSI で RSS を使用すると、NIC は接続のために正しい CPU を中断できます。
 
-各割り込みに対する次のプロセスが繰り返されます。
+割り込みごとに次のプロセスが繰り返されます。
 
 1.  NIC:
-    1.  DMA を使用して、受信したデータをバッファーに入力します。
+    1.  は DMA を使用して、受信したデータをバッファーに格納します。
 
-        ミニポート ドライバーでは、初期化中に、受信バッファーを共有メモリが割り当てられます。
+        ミニポートドライバーは、初期化中に共有メモリ内に受信バッファーを割り当てていました。
 
     2.  ハッシュ値を計算します。
-    3.  CPU にバッファー キューに配置し、ミニポート ドライバーにキューの割り当てを提供します。 たとえば、NIC がいくつかのパケットが受信した後、手順 1-3 と DMA CPU 割り当ての一覧をループでした。 特定のメカニズムは、NIC の設計にままです。
-    4.  MSI X を使用して、空でないキューに関連付けられている CPU を中断します。
+    3.  バッファーを CPU に対してキューに格納し、ミニポートドライバーにキュー割り当てを提供します。 たとえば、NIC は、いくつかのパケットを受信した後に、手順1-3 と DMA の CPU 割り当ての一覧をループすることがあります。 NIC の設計には、特定のメカニズムが残されています。
+    4.  MSI-X を使用すると、空でないキューに関連付けられている CPU に割り込みます。
 
-2.  NIC を追加できる入力バッファーを受信して、いつでも、キューに追加を中断しません、CPU もう一度ミニポート ドライバーは、その CPU の割り込みを有効になるまでです。
+2.  NIC は、追加の受信バッファーを入力し、いつでもキューに追加できますが、ミニポートドライバーによってその CPU の割り込みが有効になるまで、CPU を中断しません。
 
-3.  NDIS ミニポート ドライバーの ISR の呼び出し ( [ *MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)) 現在の CPU にします。
+3.  NDIS は、現在の CPU 上でミニポートドライバーの ISR ( [*Miniportinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)) を呼び出します。
 
-4.  ISR では、現在の CPU の割り込みを無効にし、現在の CPU の DPC キューに入れます。
+4.  ISR は、現在の CPU 上の割り込みを無効にし、現在の CPU で DPC をキューに入れます。
 
-    その他の Cpu で DPC が現在の CPU で実行されているときに、中断が発生することができますも。
+    割り込みは、現在の CPU で DPC が実行されている間、他の Cpu でも発生する可能性があります。
 
-5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)の DPC キューごとに機能します。 各 DPC:
-    1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
-    2.  現在の CPU の割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 その他の Dpc の進行状況を追跡するためにアトミック操作が必要ないことに注意してください。
+5.  NDIS は、キューに置かれている DPC ごとに[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)関数を呼び出します。 各 DPC:
+    1.  キュー内の受信したすべてのバッファーの受信記述子をビルドし、ドライバースタックのデータを示します。 詳細については、「 [RSS 受信データの表示](indicating-rss-receive-data.md)」を参照してください。
+    2.  現在の CPU の割り込みを有効にします。 この割り込みは完了し、プロセスは再び開始されます。 他の Dpc の進行状況を追跡するためにアトミック操作は必要ないことに注意してください。
 
  
 

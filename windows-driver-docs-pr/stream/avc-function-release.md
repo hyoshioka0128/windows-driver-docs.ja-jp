@@ -3,7 +3,7 @@ title: AVC\_関数\_リリース
 description: AVC\_関数\_リリース
 ms.assetid: 77a35af2-ddf4-454b-a3a9-f5b7312fa64a
 keywords:
-- AVC_FUNCTION_RELEASE ストリーミング メディア デバイス
+- AVC_FUNCTION_RELEASE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da345eea7e7cd252419932284db1df28983bbf7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4731797ae0d58c954cd18a12eece016690c4428
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386733"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845074"
 ---
-# <a name="avcfunctionrelease"></a>AVC\_関数\_リリース
+# <a name="avc_function_release"></a>AVC\_関数\_リリース
 
 
 ## <span id="ddk_avc_function_release_ks"></span><span id="DDK_AVC_FUNCTION_RELEASE_KS"></span>
 
 
-**AVC\_関数\_リリース**関数のコードが*avc.sys* AVCCONNECTINFO のキャッシュされた値によって示されたすべての接続を解放します。
+**Avc\_関数\_リリース**関数のコードにより、 *avc*は、キャッシュされた avcconnectinfo 値によって提案されたすべての接続を解放します。
 
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 
-成功すると、AV/C をプロトコル ドライバーに設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+成功した場合、AV/C プロトコルドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-その他の戻り値には、考えられる。
+その他の戻り値には次のようなものがあります。
 
 <table>
 <colgroup>
@@ -47,15 +47,15 @@ ms.locfileid: "67386733"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>要求が行われたが、すべてタイムアウトするまでの応答が受信されず、再試行の処理が完了します。</p></td>
+<td><p>要求が行われましたが、すべてのタイムアウトと再試行処理が完了する前に応答が受信されませんでした。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>IRP の完了ステータスが STATUS_REQUEST_ABORTED がすぐに中止します。 これは、デバイスが削除されたかは、1394 バスで使用できなくすることを示します。</p></td>
+<td><p>IRP の完了状態が STATUS_REQUEST_ABORTED になるとすぐに中止します。 これは、デバイスが削除されたか、1394バスで使用できなくなったことを示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_*</p></td>
-<td><p>他のリターン コードでは、エラーまたは警告が発生したこと、AV/C プロトコルの範囲を超えていたことを示します。</p></td>
+<td><p>その他のリターンコードは、AV/C プロトコルの範囲を超えてエラーまたは警告が発生したことを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386733"
 
 ### <a name="comments"></a>コメント
 
-この関数を使用して、 **PinId** 、AVC のメンバー\_MULTIFUNC\_IRB 構造の下に示すようにします。
+この関数は、次に示すように、AVC\_MULTIFUNC\_IRB 構造体の**Pinid**メンバーを使用します。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -83,25 +83,25 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要件
 
-**ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
+**ヘッダー:** *Avc*で宣言されています。 *Avc. h*を含めます。
 
-### <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 入力
+### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 入力
 
-**一般的です**  
-**関数**にこのメンバーのサブメンバーを設定する必要があります**AVC\_関数\_リリース**、AVC から\_関数の列挙体。
+**的**  
+このメンバーの**関数**サブメンバーは、AVC\_関数の列挙から、 **avc\_関数\_リリース**に設定する必要があります。
 
 **PinId**  
-接続が解放される pin のオフセット (または ID) を指定します。
+接続を解放するピンのオフセット (または ID) を指定します。
 
-仮想インスタンスでは、この関数のコードはサポートされていない*avc.sys*します。
+この関数コードは、 *avc*の仮想インスタンスではサポートされていません。
 
-サブユニット ドライバーは、暗証番号 (pin) が非アクティブになったときに、この関数を使用する必要があります。
+サブユニットドライバは、ピンが非アクティブになると、この機能を使用する必要があります。
 
-これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
+これは、IRQL = パッシブ\_レベルで呼び出す必要があります。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb), [**AVC\_PIN\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_id), [**AVC\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
+[**Avc\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)、 [**avc\_PIN\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_pin_id)、 [**avc\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)
 
  
 

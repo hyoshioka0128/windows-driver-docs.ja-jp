@@ -8,12 +8,12 @@ keywords:
 - 不十分なメモリチェック (WDK ドライバー検証ツール)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58e55fc521cdcf75f91794c56e9e2fdf7292230
-ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
+ms.openlocfilehash: da811f69a57f0cdacd5e615eb43630f23bdd1379
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038075"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840129"
 ---
 # <a name="low-resources-simulation"></a>低リソースのシミュレーション
 
@@ -21,37 +21,37 @@ ms.locfileid: "72038075"
 
 低リソースシミュレーションオプション (Windows 8.1 でランダム化された*低リソースシミュレーション*と呼ばれる) がアクティブになっている場合、ドライバーの検証ツールは、ドライバーのメモリ割り当てのランダムなインスタンスを、メモリが不足しています。 これにより、ドライバーが低メモリおよびその他の低リソース状態に適切に応答するかどうかがテストされます。
 
-低リソースシミュレーションテストは、 [**Exallocatepoolwithxxx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)[**など、いくつかの異なる関数の呼び出しによって要求された割り当てに失敗します。MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)および[**Mmmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)。
+低リソースシミュレーションテストは、 [**Exallocatepoolwithxxx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)、 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)[**など、いくつかの異なる関数の呼び出しによって要求された割り当てに失敗します。MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)および[**Mmmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)。
 
-Windows Vista 以降、低リソースのシミュレーションテストでは、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)、 [**ioallocateworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)、 [**ioallocateerrorlogentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)、 [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)[**にもエラーが挿入されます。MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)、および[**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)。 さらに、Windows Vista 以降では、リソース不足のシミュレーションが有効になっている場合、 [**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)または KeWaitForSingleObject を呼び出すと *、警告可能なパラメーターを* **TRUE**に設定すると、状態が @ no__t- [**6alerted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)になります。特権のないプロセスのコンテキストで実行されている場合。 これにより、特権のない同じアプリケーション内の別のスレッドから発生する可能性のあるスレッドアラートがシミュレートされます。
+Windows Vista 以降、低リソースのシミュレーションテストでは、 [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)、 [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)、 [**ioallocateworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)、 [**ioallocateerrorlogentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateerrorlogentry)、 [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory)[**にもエラーが挿入されます。MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdl)、および[**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)。 さらに、Windows Vista 以降では、リソース不足のシミュレーションが有効になっている場合、 [**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)または[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)を呼び出すと、警告可能*なパラメーターを* **TRUE**に設定すると、\_状態が返されることがあります。特権のないプロセスのコンテキストで実行されている場合。 これにより、特権のない同じアプリケーション内の別のスレッドから発生する可能性のあるスレッドアラートがシミュレートされます。
 
-低リソースシミュレーションテストでは、次の GDI 関数にもエラーが挿入されます。[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [**brushobj @ No__t-22pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)、 [**CLIPOBJ @ No__t-25ppogetpath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
+低リソースシミュレーションテストでは、次の GDI 関数にもエラーが挿入されます: [**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [**brushobj\_Pvallocrbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)、 [**CLIPOBJ\_ppogetpath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
 
 Windows 7 以降のバージョンの Windows オペレーティングシステムでは、低リソースシミュレーションオプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
 
--   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)
 
--   [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)および i/o 要求パケット (IRP) データ構造を割り当てることができる他のルーチン
+-   [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)および i/o 要求パケット (IRP) データ構造を割り当てることができる他のルーチン
 
--   [**RtlAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイムライブラリ (RTL) 文字列ルーチン
+-   [**RtlAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイムライブラリ (RTL) 文字列ルーチン
 
--   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
 
 Windows 8.1 以降、低リソースシミュレーションオプションは、MmAllocateNodePagesForMdlEx の呼び出しによって要求された割り当てにも失敗します。 また、一部の関数では、ドライバーの検証ツールによって、割り当てられたメモリにランダムなパターンが挿入されるようになりました。 ただし、関数が初期化されていないメモリを返す場合のみです。 次のような関数があります。
 
--   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)
+-   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)
 -   MmAllocateNodePagesForMdlEx
--   [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)
--   [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)
--   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)
--   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
--   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
+-   [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory)
+-   [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)
+-   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)
+-   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)
+-   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
 ### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低リソースシミュレーションのカスタム設定
 
 Windows Vista 以降のバージョンの Windows では、次のカスタム設定を指定できます。
 
--   特定の割り当てが失敗する**確率**。 既定値は 6% です。
+-   特定の割り当てが失敗する**確率**。 既定値は6% です。
 
 -   影響を受ける**アプリケーション**。 この設定は、指定されたアプリケーションに対して、挿入に失敗した割り当てを制限します。 既定では、すべての割り当てが影響を受けます。
 
@@ -73,7 +73,7 @@ Windows 2000 以降のバージョンの Windows では、 **/volatile**パラ�
 
 -   **コマンドラインで**
 
-    コマンドラインでは、低リソースシミュレーションオプションは**ビット 2 (0x4)** で表されます。 低リソースシミュレーションをアクティブにするには、フラグ値0x4 を使用するか、フラグ値に0x4 を追加します。 以下に例を示します。
+    コマンドラインでは、低リソースシミュレーションオプションは**ビット 2 (0x4)** で表されます。 低リソースシミュレーションをアクティブにするには、フラグ値0x4 を使用するか、フラグ値に0x4 を追加します。 次に、例を示します。
 
     ```
     verifier /flags 0x4 /driver MyDriver.sys
@@ -81,13 +81,13 @@ Windows 2000 以降のバージョンの Windows では、 **/volatile**パラ�
 
     オプションは、次回の起動時にアクティブになります。
 
-    Windows Vista 以降のバージョンの Windows では、 */fault*パラメーターまたは**0x4**のフラグ値を使用して、低リソースシミュレーションをアクティブにすることができます。 リソース不足のシミュレーションの設定を変更するには、 **/障害**を使用する必要があります。 以下に例を示します。
+    Windows Vista 以降のバージョンの Windows では、 */fault*パラメーターまたは**0x4**のフラグ値を使用して、低リソースシミュレーションをアクティブにすることができます。 リソース不足のシミュレーションの設定を変更するには、 **/障害**を使用する必要があります。 次に、例を示します。
 
     ```
     verifier /faults /driver MyDriver.sys
     ```
 
-    Windows 2000 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動せずに、低リソースシミュレーションのアクティブ化と非アクティブ化を行うこともできます。 以下に例を示します。
+    Windows 2000 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動せずに、低リソースシミュレーションのアクティブ化と非アクティブ化を行うこともできます。 次に、例を示します。
 
     ```
     verifier /volatile /flags 0x4 /adddriver MyDriver.sys
@@ -95,7 +95,7 @@ Windows 2000 以降のバージョンの Windows では、 **/volatile**パラ�
 
     この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
-    Windows Vista では、 **/fault**パラメーターを使用して、 **/volatile**パラメーターを使用して低リソースシミュレーションを表すことで、再起動しなくても有効な設定を表すことができます。 設定の変更が表示されます。 以下に例を示します。
+    Windows Vista では、 **/fault**パラメーターを使用して、 **/volatile**パラメーターを使用して低リソースシミュレーションを表すことで、再起動しなくても有効な設定を表すことができます。 設定の変更が表示されます。 次に、例を示します。
 
     ```
     0>  verifier /volatile /faults /adddriver MyDriver.sys
@@ -121,7 +121,7 @@ Windows Vista 以降では、低リソースシミュレーションオプショ
 
 コマンドラインでは、これらの設定の構文は次のようになります。
 
-**検証**\[ **/volatile**\] **/障害**\[*確率*|*Pooltags*|*アプリケーション*1*delaymins*3 @ no__t-14 **/driver**6*Driverlist*8
+**verifier** \[ **/volatile**\] **/障害**\[*確率*|*pooltags*|*アプリケーション*|*delaymins*\]\[ **/driver**|*Driverlist*\]
 
 **メモ** カスタム設定のパラメーターは、表示されている順序で表示される必要があります。 値を省略する場合は、その位置を保持する引用符を入力します。
 
@@ -135,7 +135,7 @@ Windows Vista 以降では、低リソースシミュレーションオプショ
 
 - *確率*
 
-  ドライバーの検証ツールが特定の割り当てに失敗する確率を指定します。 1万での確率を表す数値 (10 進数または16進数形式) を入力します。この値を指定すると、ドライバー検証ツールが割り当てに失敗します。 既定値600は、600/10000 または 6% を意味します。
+  ドライバーの検証ツールが特定の割り当てに失敗する確率を指定します。 1万での確率を表す数値 (10 進数または16進数形式) を入力します。この値を指定すると、ドライバー検証ツールが割り当てに失敗します。 既定値600は、600/10000 または6% を意味します。
 
 - *PoolTags*
 
@@ -149,7 +149,7 @@ Windows Vista 以降では、低リソースシミュレーションオプショ
 
   ドライバー検証ツールが意図的に割り当てを失敗させない、起動後の時間 (分単位) を指定します。 この遅延により、ドライバーが読み込まれ、テストが開始される前にシステムが安定化されます。 数値 (10 進数または16進数形式) を入力します。 既定値は 8 (分) です。
 
-たとえば、次のコマンドは、確率が 10% の低リソースシミュレーションを有効にします (1000/10000)。プールタグ、Tag1 と Fred、およびアプリケーション Notepad.exe に5分の遅延があります。
+たとえば、次のコマンドは、確率が10% の低リソースシミュレーションを有効にします (1000/10000)。プールタグ、Tag1 と Fred、およびアプリケーション Notepad.exe に5分の遅延があります。
 
 ```
 verifier /faults 1000 "Tag1 Fred" Notepad.exe 5
@@ -241,7 +241,7 @@ Entry @ 8354B230 (index 74)
 
 **! Verifier**の詳細については、 *Windows 用デバッグツール*のドキュメントを参照してください。
 
-コマンドラインでレジストリの設定を表示するには、 **/querysettings**オプションを使用します。 以下に例を示します。
+コマンドラインでレジストリの設定を表示するには、 **/querysettings**オプションを使用します。 次に、例を示します。
 
 ```
 C:\>verifier /querysettings

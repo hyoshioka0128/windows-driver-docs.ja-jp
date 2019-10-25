@@ -3,24 +3,24 @@ title: モニター クラスの関数ドライバー
 description: モニター クラスの関数ドライバー
 ms.assetid: d16c3dcc-2fbf-4579-8962-1b89e6e7b347
 keywords:
-- 複数のモニター WDK
-- 関数のクラス ドライバー WDK を監視します。
-- 関数のドライバー WDK モニター
-- デバイス スタック WDK を監視します。
-- デバイス スタックの WDK モニター
-- 物理デバイス オブジェクトの WDK モニター
-- 機能のデバイス オブジェクトの WDK モニター
-- Pdo WDK モニター
-- Fdo WDK モニター
-- DOs WDK モニターをフィルター処理します。
+- 複数のモニター (WDK)
+- クラス関数ドライバー WDK の監視
+- 関数ドライバー WDK モニター
+- デバイススタックの監視 WDK
+- デバイススタック WDK モニター
+- 物理デバイスオブジェクト WDK モニタ
+- 機能デバイスオブジェクト WDK モニター
+- PDOs WDK モニター
+- FDOs WDK モニター
+- DOs WDK モニターをフィルター処理する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a46c032183e55f26c665f3e3bd40c2e6553e55a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e46a9ade660ea960ef7c447b6ee8dbbba321906
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840558"
 ---
 # <a name="monitor-class-function-driver"></a>モニター クラスの関数ドライバー
 
@@ -28,11 +28,11 @@ ms.locfileid: "63376762"
 ## <span id="ddk_monitor_class_function_driver_gg"></span><span id="DDK_MONITOR_CLASS_FUNCTION_DRIVER_GG"></span>
 
 
-各ビデオの出力に接続されているモニター ディスプレイ アダプターでは、ディスプレイ アダプターの [デバイス] ノードの子である [デバイス] ノードで表されます。
+モニターが接続されているディスプレイアダプターの各ビデオ出力は、ディスプレイアダプターのデバイスノードの子であるデバイスノードによって表されます。
 
-通常、デバイス スタックでデバイス オブジェクトを表す 2 つだけが (ビデオ出力、モニター) ペア: 物理デバイス オブジェクト (PDO) と機能のデバイス オブジェクト (FDO)。 場合によってでは、fdo のベンダーから提供されたフィルター ドライバーに関連付けられているフィルターがあります。 統合モニターは、ラップトップ コンピューターでは、組み込みのフラット パネルなど、フィルターは、Advanced Configuration and Power Interface (ACPI) ドライバーの PDO の上に関連付けられている可能性があります。
+通常、デバイススタックには、(ビデオ出力、モニター) ペアを表すデバイスオブジェクトが2つだけあります。これは、物理デバイスオブジェクト (PDO) と機能デバイスオブジェクト (FDO) です。 場合によっては、ベンダーから提供されたフィルタードライバーに関連付けられたフィルターが FDO の上にあることがあります。 ラップトップコンピューターの内蔵フラットパネルなど、統合されたモニターの場合、PDO の上位の Advanced Configuration and Power Interface (ACPI) ドライバーに関連付けられているフィルターが存在する可能性があります。
 
-次の表には、接続されているモニターを含むビデオの出力デバイス スタックが表示されます。
+次の表は、モニターが接続されているビデオ出力のデバイススタックを示しています。
 
 <table>
 <colgroup>
@@ -42,56 +42,56 @@ ms.locfileid: "63376762"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">デバイス オブジェクト</th>
+<th align="left">デバイスオブジェクト</th>
 <th align="left">必須/オプション</th>
-<th align="left">Driver (ドライバー)</th>
+<th align="left">[ドライバー]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>操作をフィルター処理します。</p></td>
-<td align="left"><p>省略可能で、通常は必要ありません。</p></td>
-<td align="left"><p>モニターのベンダーから提供されたドライバーをフィルター処理します。</p></td>
+<td align="left"><p>フィルター処理</p></td>
+<td align="left"><p>省略可能。通常は必要ありません</p></td>
+<td align="left"><p>モニタベンダーによって提供されるフィルタドライバ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>FDO</p></td>
-<td align="left"><p>必須</p></td>
-<td align="left"><p>Microsoft から提供される関数クラス ドライバー (Monitor.sys) の監視します。</p></td>
+<td align="left"><p>必須かどうか</p></td>
+<td align="left"><p>Microsoft によって提供されるクラス関数ドライバー (.sys) を監視します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>操作をフィルター処理します。</p></td>
-<td align="left"><p>統合の ACPI 表示パネルのみ必要です。</p></td>
-<td align="left"><p>Microsoft から提供される ACPI ドライバー (Acpi.sys)</p></td>
+<td align="left"><p>フィルター処理</p></td>
+<td align="left"><p>統合された ACPI ディスプレイパネルにのみ必要</p></td>
+<td align="left"><p>Microsoft によって提供される ACPI ドライバー (Acpi)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PDO</p></td>
-<td align="left"><p>必須</p></td>
-<td align="left"><p>ディスプレイ アダプターの製造元によって提供されるバス ドライバー (表示ミニポート/ポート ペア)</p></td>
+<td align="left"><p>必須かどうか</p></td>
+<td align="left"><p>ディスプレイアダプターベンダーによって指定されたバスドライバー (ミニポートとポートのペアの表示)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ユーザー モード アプリケーションでは、WMI を使用して、監視クラスの関数のドライバーのサービスを呼び出します。 これらのサービスには、モニターの id データを公開することが含まれます (ACPI ディスプレイの場合) の場合、ディスプレイの明るさを設定します。
+ユーザーモードのアプリケーションは、WMI を使用して、monitor クラスの関数ドライバーのサービスを呼び出します。 これらのサービスには、モニターの識別データの公開、(ACPI ディスプレイの場合) ディスプレイの明るさの設定などが含まれます。
 
-モニターの識別と機能の情報構造体に格納拡張表示 Identification Data (EDID)、その id、および通信の独立した機能に関する情報を持つホストを指定する、表示できる形式モニターとホスト間で使用されるプロトコル。 デバイス スタックを監視するモニターのディスプレイが EDID が関数のドライバー (Monitor.sys) によって処理されるを読み取るように、ユーザー モード アプリケーションからの要求。 モニター関数のドライバーでは、モニターのディスプレイが EDID を取得する要求を受信したときに、モニターのデバイス スタックの一番下にある物理デバイス オブジェクト (PDO) で表される表示ポート/ミニポート ドライバーのペアを要求を送信します。 ディスプレイ ポート/ミニポート ドライバーのペアでは、表示データ チャネル (DDC) プロトコルを使用してすべての標準的なモニター ケーブルに組み込まれている単純な 2 つのネットワーク バスは I²C バス経由で、モニターのディスプレイが EDID を読み取ります。
+モニターは、id と機能に関する情報を、拡張された表示識別データ (EDID) 構造で格納します。この形式は、通信に依存しない id と機能についての情報を表示するように指定します。モニタとホストの間で使用されるプロトコル。 ユーザーモードアプリケーションからモニターの EDID を読み取る要求は、そのモニターのデバイススタックの関数ドライバー (.sys) によって処理されます。 Monitor 関数ドライバーは、モニターの EDID を取得する要求を受信すると、モニターのデバイススタックの一番下にある物理デバイスオブジェクト (PDO) によって表されるディスプレイポート/ミニポートドライバーのペアに要求を送信します。 ディスプレイポート/ミニポートドライバーのペアは、ディスプレイデータチャネル (DDC) プロトコルを使用して I ² C バス上でモニターの EDID を読み取ります。これは、すべての標準モニタケーブルに組み込まれている単純な2ワイヤバスです。
 
-EDID を使用して取得できます、 [ACPI_METHOD_OUTPUT_DDC](https://docs.microsoft.com/windows-hardware/drivers/bringup/other-acpi-namespace-objects)メソッドでその別名が定義されている[Dispmprt.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/)します。 このメソッドは、統合の Lcd EDID データを返すためのもう 1 つの標準メカニズムがない必要があります。
+EDID は、 [ACPI_METHOD_OUTPUT_DDC](https://docs.microsoft.com/windows-hardware/drivers/bringup/other-acpi-namespace-objects)メソッドを使用して取得できます。このメソッドには、エイリアスが定義されてい[ます。](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/) このメソッドは、EDID データを返すための別の標準メカニズムがない統合 Lcd に必要です。
 
-ディスプレイ アダプターとモニターの間の通信の詳細については、次のトピックを参照してください。
+ディスプレイアダプターとモニター間の通信の詳細については、次のトピックを参照してください。
 
-[I2C バスとディスプレイ アダプターの子デバイス](i2c-bus-and-child-devices-of-the-display-adapter.md)
+[ディスプレイアダプターの I2C バスおよび子デバイス](i2c-bus-and-child-devices-of-the-display-adapter.md)
 
-EDID 構造体と DDC プロトコルに関する詳細については、次のビデオ Electronics Standards アソシエーション (VESA) によって発行された標準を参照してください。
+EDID 構造と DDC プロトコルの詳細については、ビデオエレクトロニクス標準の関連付け (VESA) によって発行された次の標準を参照してください。
 
--   表示データ チャネルの強化された標準 (E DDC)
+-   Enhanced Display Data Channel Standard (E-DDC)
 
--   強化された EDID 標準 (E EDID)
+-   Enhanced EDID Standard (E EDID)
 
-これらの基準をダウンロードする[vesa.org](https://vesa.org/vesa-standards/)で、*無料標準*セクション。
+これらの標準は、「 *Free 標準*」セクションの[vesa.org](https://vesa.org/vesa-standards/)からダウンロードできます。
 
-詳細については、I²C バスは、次を参照してください。、 [I²C Bus 仕様](https://www.i2c-bus.org/specification/)Philips 半導体によって発行されました。
+I ² C バスの詳細については、「[私² c バス仕様](https://www.i2c-bus.org/specification/)」を参照してください。
 
  
 

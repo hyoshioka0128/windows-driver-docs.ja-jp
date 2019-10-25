@@ -4,31 +4,31 @@ description: ストリーム出力ステージ
 ms.assetid: e3f4685f-a214-4934-a36f-92591ef99db8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d6c9d68887d412a6c068c1471acaa84cf3648d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5a38a254ed2cd613a84c62e5be78e80a96e321d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364362"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829436"
 ---
 # <a name="stream-output-stage"></a>ストリーム出力ステージ
 
 
-ストリーム出力 (、) ラスタライザーにこれらの頂点が到着する前に、ステージがメモリに頂点をストリーミングできます。 ストリーム出力は、パイプラインでのタップのように動作します。 ラスタライザーまでフローにデータが継続しても、このタップをオンにすることができます。 ストリーム出力を介して送信されるデータは、バッファーに連結されます。 これらのバッファーは、パイプラインの入力として後続のパスで再利用できます。
+ストリーム出力 (SO) ステージは、頂点をラスタライザーに到達する直前に、頂点をメモリにストリーミングできます。 ストリーム出力は、パイプラインの tap と同様に動作します。 データがラスタライザーに送られ続ける場合でも、このタップを有効にすることができます。 ストリーム出力を通じて送信されるデータは、バッファーに連結されます。 これらのバッファーは、パイプライン入力として後続のパスで使用できます。
 
-ストリームに関する制約は 1 つの出力をまとめて作成する必要があります、ジオメトリ シェーダーに関連付けられていることが (ただし、NULL 値が""「オフ」/)。 ストリーム出力する特定のメモリ バッファーではありませんが、特定のジオメトリ シェーダーとストリーム出力のペアに関連付けられています。 のみ、ジオメトリ シェーダーに関連付けられている出力ストリームにフィードする頂点データのどの部分の説明です。
+ストリームの出力に関する制約の1つは、それが geometry シェーダーに関連付けられていることです (ただし、これらを一緒に作成する必要がありますが、どちらも "NULL"/"off" にすることができます)。 ただし、にストリーミングされる特定のメモリバッファーは、特定のジオメトリシェーダーとストリーム出力のペアに関連付けられていません。 ストリーム出力にフィードする頂点データの部分の説明だけが、ジオメトリシェーダーに関連付けられています。
 
-ストリーム出力が再利用される順序付けされたパイプラインのデータを保存するために便利ですがあります。 たとえば、頂点のバッチ可能性があります「スキンにする」をパイプラインに頂点を渡すように独立したポイント (それらのすべてを 1 回アクセス) には、各頂点で「スキニング」操作の適用、メモリに結果をストリーミングしています。 「スキン」を保存した頂点は入力として使用するため、その後に使用できます。
+ストリーム出力は、再利用される順序付けされたパイプラインデータを保存する場合に便利です。 たとえば、頂点のバッチが "スキン" であるとします。これは、頂点が独立した点であるかのようにパイプラインに渡すことによって、各頂点に "スキニング" 操作を適用し、結果をメモリにストリーミングします。 その後、保存された "スキン" 頂点を入力として使用できるようになります。
 
-ストリーム出力の最後まで書き込まれた出力の量が動的であるため、新しい種類の描画、 [ **DrawAuto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)、せず、入力のアセンブラーで再利用をストリーム出力バッファーを許可する必要がありますデータの量が実際に書き込まれたかを決定する CPU 関与します。 さらに、クエリは、ストリーム出力のオーバーフローの軽減し、データの量は、ストリーム出力バッファーに書き込まれたかを取得するために必要な (D3D10DDI\_クエリ\_STREAMOVERFLOWPREDICATE と D3D10DDI\_クエリ\_STREAMOUTPUTSTATS、 [ **D3D10DDI\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3d10ddi_query)列挙型)。
+ストリーム出力によって書き込まれる出力の量は動的であるため、新しい種類の Draw ( [**Drawauto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)) が必要です。これは、ストリーム出力バッファーを入力アセンブラーで再利用できるようにするためです実際に記述されています。 また、ストリーム出力のオーバーフローを軽減し、ストリーム出力バッファーに書き込まれたデータの量を取得するためにクエリが必要になります (D3D10DDI\_QUERY\_STREAMOVERFLOWPREDICATE and D3D10DDI\_QUERY\_[**D3D10DDI\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10ddi_query)列挙型の STREAMOUTPUTSTATS)。
 
-Direct3D ランタイムでは、ストリーム出力を作成および設定には、次のドライバー関数を呼び出します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、ストリーム出力を作成および設定します。
 
-[**CalcPrivateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivategeometryshaderwithstreamoutput)
+[**CalcPrivateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivategeometryshaderwithstreamoutput)
 
-[**CreateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshaderwithstreamoutput)
+[**CreateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshaderwithstreamoutput)
 
-[**SoSetTargets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_so_settargets)
+[**SoSetTargets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_so_settargets)
 
  
 

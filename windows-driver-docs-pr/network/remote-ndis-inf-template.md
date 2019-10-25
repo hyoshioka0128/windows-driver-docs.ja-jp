@@ -3,15 +3,15 @@ title: リモート NDIS INF テンプレート
 description: リモート NDIS INF テンプレート
 ms.assetid: bbbd3aef-230f-4286-bea2-bb583789865e
 keywords:
-- リモートの NDIS WDK のネットワー キング、INF テンプレート
+- リモート NDIS WDK ネットワーク, INF テンプレート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4f072409e2ed1b618ef81b7d12a36fc3e8b2fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35d5ee9e7db90aa4e1b091acf0237f2f53cfe2f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361147"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842055"
 ---
 # <a name="remote-ndis-inf-template"></a>リモート NDIS INF テンプレート
 
@@ -19,14 +19,14 @@ ms.locfileid: "67361147"
 
 
 
-Microsoft では、NDIS ミニポート ドライバー、Rndismp.sys、リモート NDIS メッセージ セットを実装し、ジェネリック bus トランスポート ドライバーは、さらに、適切なバス ドライバーとの通信とは通信を提供します。 この NDIS ミニポート ドライバーが実装され、Microsoft によって管理されサポートされているすべての Windows バージョンの一部として配布されます。 %Systemroot% 見つかります\\System32\\ドライバー ディレクトリ。
+Microsoft では、NDIS ミニポートドライバー Rndismp を提供しています。このドライバーは、リモート NDIS メッセージセットを実装し、汎用バストランスポートドライバーと通信します。このドライバーは、適切なバスドライバーと通信します。 この NDIS ミニポートドライバーは、Microsoft によって実装および管理され、サポートされているすべての Windows バージョンの一部として配布されます。 これは% SystemRoot%\\System32\\drivers ディレクトリにあります。
 
-で USB デバイスをリモートの NDIS ドライバーを使用するには、IHV は、INF ファイルでは、次のテンプレートのいずれかを指定する必要があります。
+リモート NDIS ドライバーを USB デバイスと共に使用するには、次のいずれかのテンプレートに従って、IHV が INF ファイルを提供する必要があります。
 
--   [NDIS 5.1 RNDIS INF テンプレート (Windows XP 以降)](#rndis-inf-template-for-ndis-51-windows-xp-and-later)
--   [NDIS 6.0 (Windows 7 以降) の RNDIS INF テンプレート](#rndis-inf-template-for-ndis-60-windows-7-and-later)
+-   [NDIS 5.1 用 RNDIS INF テンプレート (Windows XP 以降)](#rndis-inf-template-for-ndis-51-windows-xp-and-later)
+-   [NDIS 6.0 の RNDIS INF テンプレート (Windows 7 以降)](#rndis-inf-template-for-ndis-60-windows-7-and-later)
 
-### <a name="rndis-inf-template-for-ndis-51-windows-xp-and-later"></a>NDIS 5.1 RNDIS INF テンプレート (Windows XP 以降)
+### <a name="rndis-inf-template-for-ndis-51-windows-xp-and-later"></a>NDIS 5.1 用 RNDIS INF テンプレート (Windows XP 以降)
 
 ```INF
 ; Remote NDIS template device setup file
@@ -101,7 +101,7 @@ RndisDevice           = "Remote NDIS based Device"
 Vista_Property        = "Optional Vista Property"
 ```
 
-### <a name="rndis-inf-template-for-ndis-60-windows-7-and-later"></a>NDIS 6.0 (Windows 7 以降) の RNDIS INF テンプレート
+### <a name="rndis-inf-template-for-ndis-60-windows-7-and-later"></a>NDIS 6.0 の RNDIS INF テンプレート (Windows 7 以降)
 
 ```INF
 ; Remote NDIS template device setup file
@@ -179,9 +179,9 @@ Rndis_Property         = "Optional RNDIS Property"
 ## <a name="related-topics"></a>関連トピック
 
 
-[リモートの NDIS (RNDIS) の概要](overview-of-remote-ndis--rndis-.md)
+[リモート NDIS の概要 (RNDIS)](overview-of-remote-ndis--rndis-.md)
 
-[Windows に含まれる USB クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[Windows に含まれる USB クラスドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

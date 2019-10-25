@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_MDL_WRITE_COMPLETE 共用体
-description: 次の共用体のコンポーネントが使用されるときに、FLT の MajorFunction フィールド\_IO\_パラメーター\_操作のブロック構造は IRP\_MJ\_MDL\_書き込み\_完了します。
+title: IRP_MJ_MDL_WRITE_COMPLETE 共用体の FLT_PARAMETERS
+description: 次の共用体コンポーネントは、FLT\_IO\_パラメーター\_のブロック構造の MajorFunction フィールドが、操作に対する IRP\_MJ\_MDL\_書き込み\_完了したときに使用されます。
 ms.assetid: 7b3806fb-b6ba-44f5-88fa-883c7896f0ad
 keywords:
-- FLT_PARAMETERS IRP_MJ_MDL_WRITE_COMPLETE 共用体インストール可能なファイル システム ドライバー
-- FLT_PARAMETERS union インストール可能なファイル システム ドライバー
-- PFLT_PARAMETERS 共用体ポインター インストール可能なファイル システム ドライバー
+- IRP_MJ_MDL_WRITE_COMPLETE union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
+- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
+- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa45f09e19e778cde3e85cc0718ca82267a8d1c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7deb556a14f83a53e370ecb9670f0a9ab8e37644
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380336"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841370"
 ---
-# <a name="fltparameters-for-irpmjmdlwritecomplete-union"></a>FLT\_IRP のパラメーター\_MJ\_MDL\_書き込み\_完全な共用体
+# <a name="flt_parameters-for-irp_mj_mdl_write_complete-union"></a>IRP\_MJ\_MDL\_書き込み\_完全な共用体の FLT\_パラメーター
 
 
-次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作は IRP を構造体\_MJ\_MDL\_書き込み\_完了します。
+次の共用体コンポーネントは、 [**FLT\_IO\_パラメーター\_のブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造の**MajorFunction**フィールドが、操作に対する IRP\_MJ\_MDL\_書き込み\_完了したときに使用されます。
 
 <a name="syntax"></a>構文
 ------
@@ -49,19 +49,19 @@ typedef union _FLT_PARAMETERS {
 次のメンバーを含む構造体。
 
 **FileOffset**  
-キャッシュされたファイル内のバイトを開始しています。
+キャッシュされたファイル内の開始バイト。
 
 **MdlChain**  
-1 つまたは複数メモリ記述子のリスト (MDL) ページを記述するが、キャッシュされたファイルに書き込まれるデータを含むチェーンへのポインターを受け取る変数へのポインター。
+キャッシュされたファイルに書き込まれるデータを含むページを記述する1つ以上のメモリ記述子リスト (MDL) のチェーンへのポインターを受け取る変数へのポインター。
 
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) IRP の構造\_MJ\_MDL\_書き込み\_完了操作にはパラメーターが含まれています、I/O を高速**MdlWriteComplete**コールバック データによって表される操作 ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+IRP\_MJ\_MDL の[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体\_書き込み\_完了操作には、コールバックデータによって表される高速 i/o **MdlWriteComplete**操作のパラメーターが含まれてい[ **\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
-IRP\_MJ\_MDL\_書き込み\_完了は、高速な I/O 操作。
+IRP\_MJ\_MDL\_書き込み\_完了は、高速な i/o 操作です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -72,7 +72,7 @@ IRP\_MJ\_MDL\_書き込み\_完了は、高速な I/O 操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
+<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -80,17 +80,17 @@ IRP\_MJ\_MDL\_書き込み\_完了は、高速な I/O 操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_は\_高速な操作\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_は\_FS\_フィルターの\_操作です。** ](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_は\_IRP\_操作です**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
  
 

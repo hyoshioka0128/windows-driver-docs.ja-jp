@@ -3,25 +3,25 @@ title: オフホスト VLD ビットストリームのデコード操作
 description: オフホスト VLD ビットストリームのデコード操作
 ms.assetid: fd339d5f-2d63-4b2f-a5dc-7ab7a6799a6d
 keywords:
-- オフホスト VLD ビット ストリームの WDK DirectX VA の処理
-- ビット ストリーム VLD WDK DirectX VA の処理
-- 量子化の逆行列の行列が WDK DirectX VA をバッファー処理します。
-- スライス コントロール WDK DirectX VA をバッファー処理します。
-- ビット ストリーム バッファーの WDK DirectX VA
-- 圧縮された画像をデコード WDK DirectX va なので、画像のマクロ ブロック指向のデコード
-- デコード WDK DirectX va なので、圧縮の画像します。
-- ビデオのデコード WDK DirectX va なので、画像の圧縮
-- 画像を圧縮されたビデオの WDK DirectX VA をデコードするには、
-- ビデオのデコード WDK DirectX va なので、オフホスト VLD ビット ストリーム処理
-- ビデオの WDK DirectX VA をデコードするには、オフホスト VLD ビット ストリーム処理
+- オフ-ホスト VLD ビットストリーム処理 WDK DirectX VA
+- ビットストリーム VLD 処理 WDK DirectX VA
+- 逆量子化行列バッファー WDK DirectX VA
+- スライスコントロールバッファーの WDK DirectX VA
+- ビットストリームバッファー WDK DirectX VA
+- 圧縮された画像で WDK DirectX VA をデコードし、マクロブロック指向の画像デコード
+- 画像デコード WDK DirectX VA、圧縮
+- ビデオデコード WDK DirectX VA、圧縮された画像
+- ビデオをデコードする WDK DirectX VA、圧縮された画像
+- ビデオデコード WDK DirectX VA、非ホスト VLD ビットストリーム処理
+- ビデオをデコードしています。 WDK DirectX VA、非ホスト VLD ビットストリーム処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a5819e50452ce4aff38a99754086ea77982093
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac233f1dd5561d0a686f517dd3a8dfdb664897ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372785"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840503"
 ---
 # <a name="off-host-vld-bitstream-decoding-operation"></a>オフホスト VLD ビットストリームのデコード操作
 
@@ -29,7 +29,7 @@ ms.locfileid: "67372785"
 ## <span id="ddk_off_host_vld_bitstream_decoding_operation_gg"></span><span id="DDK_OFF_HOST_VLD_BITSTREAM_DECODING_OPERATION_GG"></span>
 
 
-可変長の生のビット ストリーム データのデコードをアクセラレータ上で実行するとき、画像のデコードをホストによって送信されるデータは、次のバッファーの種類に分かれています。
+生のビットストリームデータの可変長デコードがアクセラレータで実行される場合、画像をデコードするためにホストによって送信されるデータは、次のバッファーの種類に分割されます。
 
 <table>
 <colgroup>
@@ -44,43 +44,43 @@ ms.locfileid: "67372785"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>量子化の逆行列のマトリックス</p></td>
-<td align="left"><p>ビット ストリーム データの量子化の逆関数を実行する方法について説明します。</p></td>
+<td align="left"><p>逆量子化行列</p></td>
+<td align="left"><p>ビットストリームデータの逆量子化を実行する方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>スライスのコントロール</p></td>
-<td align="left"><p>スタート コードと対応するビット ストリーム データ バッファー内のデータの場所に関する情報を提供します。</p></td>
+<td align="left"><p>スライスコントロール</p></td>
+<td align="left"><p>対応するビットストリームデータバッファー内の開始コードとデータの場所に関する情報を提供します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ビット ストリーム</p></td>
-<td align="left"><p>特定のビデオ コーディング仕様に従ってエンコードされたデータの生のストリームが含まれています。</p></td>
+<td align="left"><p>ビットストリーム</p></td>
+<td align="left"><p>特定のビデオコーディング仕様に従ってエンコードされた未加工のデータストリームを格納します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspaninverse-quantization-matrix-buffers"></a><span id="Inverse-Quantization_Matrix_Buffers"></span><span id="inverse-quantization_matrix_buffers"></span><span id="INVERSE-QUANTIZATION_MATRIX_BUFFERS"></span>量子化の逆行列のマトリックス バッファー
+### <a name="span-idinverse-quantization_matrix_buffersspanspan-idinverse-quantization_matrix_buffersspanspan-idinverse-quantization_matrix_buffersspaninverse-quantization-matrix-buffers"></a><span id="Inverse-Quantization_Matrix_Buffers"></span><span id="inverse-quantization_matrix_buffers"></span><span id="INVERSE-QUANTIZATION_MATRIX_BUFFERS"></span>逆量子化行列バッファー
 
-オフホスト ビット ストリームのデコードのマトリックスを逆量子化を初期化するために、行列の逆行列量子化のバッファーが送信されます。 量子化の逆行列の行列のバッファーでは、新しい行列の逆行列量子化バッファーが提供されるまで、ビット ストリームで、すべての現在およびそれ以降のビデオをデコードする方法についてを説明します。 (そのため、行列の逆行列量子化は永続的な) です。1 つの逆量子化マトリックス バッファーは、一度にアクセラレータにホストから送信できます。 [ **DXVA\_QmatrixData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_qmatrixdata)構造体は、圧縮されたビデオ画像のデコードの量子化マトリックスのデータを読み込みます。
+逆量子化行列バッファーは、オフホストのビットストリームデコードの逆量子化マトリックスを初期化するために送信されます。 逆量子行列バッファーは、新しい逆量子化行列バッファーが指定されるまで、ビットストリーム内の現在および後続のすべてのビデオをデコードする方法に関する情報を提供します。 (したがって、逆量子化行列は永続的です)。ホストから一度に1つ以上の逆量子化行列バッファーをホストからアクセラレータに送信することはできません。 [**DXVA\_QmatrixData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_qmatrixdata)構造体は、圧縮されたビデオ画像デコード用の量子化マトリックスデータを読み込みます。
 
-### <a name="span-idslice-controlbuffersspanspan-idslice-controlbuffersspanspan-idslice-controlbuffersspanslice-control-buffers"></a><span id="Slice-Control_Buffers"></span><span id="slice-control_buffers"></span><span id="SLICE-CONTROL_BUFFERS"></span>スライス コントロール バッファー
+### <a name="span-idslice-control_buffersspanspan-idslice-control_buffersspanspan-idslice-control_buffersspanslice-control-buffers"></a><span id="Slice-Control_Buffers"></span><span id="slice-control_buffers"></span><span id="SLICE-CONTROL_BUFFERS"></span>スライスコントロールバッファー
 
-スライス コントロール バッファー オフホスト VLD ビット ストリーム処理の操作を説明します。 ホスト ソフトウェア デコーダーは、ビット ストリームでスライスのレベルの再同期ポイントの場所を決定します。 スライスは、ビット ストリーム データで再同期ポイントを含む multimacroblock レイヤーに定義されます。 H.261 ビット ストリームで、H.261 グループのブロック (GOB) は、スライスと見なされます。 H.263 では、ビットを 1 つまたは複数の H.263 豊富な GOB 以降のシーケンスは、コードを起動し、追加 GOB 開始のコードが含まれていないと、スライスと見なされます。 スライス コントロール バッファーの配列を格納する[ **DXVA\_SliceInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_sliceinfo)スライス コントロールの構造は、対応するビット ストリーム データ バッファーの内容に適用されます。
+スライスコントロールバッファーは、非ホスト VLD ビットストリーム処理の操作をガイドします。 ホストソフトウェアデコーダーは、ビットストリーム内のスライスレベルの再同期ポイントの場所を決定します。 スライスは、ビットストリームデータの再同期ポイントを含む multiマクロブロックレイヤーとして定義されます。 この場合、"-261" ブロック (GOB) はスライスと見なされます。 263 bitstreams では、GOB 開始コードから始まり、追加の GOB 開始コードを含まない1つ以上の263のシーケンスがスライスと見なされます。 スライスコントロールバッファーには、対応するビットストリームデータバッファーの内容に適用される[**DXVA\_スライス Einfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_sliceinfo)スライス制御構造体の配列が含まれています。
 
-### <a name="span-idbitstreambuffersspanspan-idbitstreambuffersspanspan-idbitstreambuffersspanbitstream-buffers"></a><span id="Bitstream_Buffers"></span><span id="bitstream_buffers"></span><span id="BITSTREAM_BUFFERS"></span>ビット ストリーム バッファー
+### <a name="span-idbitstream_buffersspanspan-idbitstream_buffersspanspan-idbitstream_buffersspanbitstream-buffers"></a><span id="Bitstream_Buffers"></span><span id="bitstream_buffers"></span><span id="BITSTREAM_BUFFERS"></span>ビットストリームバッファー
 
-ビット ストリーム バッファーを使用する場合、バッファーにビデオ ビット ストリームからの生のバイトが含まれます。 この種類のバッファーは、可変長のデコードの解析中、低レベル ビット ストリームを含むオフホスト デコードに使用されます。
+ビットストリームバッファーが使用されている場合、バッファーには単にビデオビットストリームからの生バイトが含まれます。 この種類のバッファーは、可変長デコードを使用した低レベルのビットストリーム解析を含む、ホストを使用しないデコードに使用されます。
 
-特定の制限は、アクセラレータで受信したデータが認識できる、効率的な形で順序で、ビット ストリーム バッファーの内容に課されます。
+ビットストリームバッファーの内容には特定の制限が適用されます。これは、アクセラレータによって受信されるデータが認識可能で効率的な形式であることを目的としています。
 
-1.  Mpeg-1 や mpeg-2 を除く最初のビット ストリームをバッファーの各画像は、ビット ストリームで、現在の画像の最初のスライスの前にある前の図のすべてのデータの最後の存在する場合、すべてのデータを開始する必要があります (シーケンス ヘッダー、または画像のヘッダーの場合)。
+1.  MPEG-1 と MPEG 2 を除き、各画像の最初のビットストリームバッファーは、ビットストリーム内の現在の画像の最初のスライスの前にあるすべてのデータ (シーケンスヘッダーなど) の最後に続くすべてのデータから開始する必要があります。画像ヘッダー)。
 
-2.  Mpeg-1 や mpeg-2 の各図の最初のビット ストリーム バッファーは、すべての関連データが他のパラメーターで提供されるためです (たとえば、いないシーケンス ヘッダーまたは画像ヘッダー)、画像の最初のスライスのスライスの開始コードで始まらなければなりません。
+2.  MPEG-1 と MPEG-2 の場合、各画像の最初のビットストリームバッファーは、画像の最初のスライスのスライス開始コード (たとえば、シーケンスヘッダーや画像ヘッダーがない) で開始する必要があります。これは、関連するすべてのデータが他のパラメーターで提供されるためです。
 
-3.  ビット ストリーム データのスライスの開始が特定のビット ストリーム バッファー内にある場合は、そのスライスの末尾もあります同じバッファー内にあるスライスの開始を格納しているバッファー、割り当てられたサイズに達していない場合。
+3.  ビットストリームデータのスライスの開始が特定のビットストリームバッファー内にある場合、スライスの開始を含むバッファーが割り当てられたサイズに達していない限り、そのスライスの末尾は同じバッファー内に配置する必要があります。
 
-デコーダーには、1 つ以上のバッファーに 1 つのスライスのデータを配置することを回避するためにビット ストリーム バッファーの入力を管理する必要があります。
+デコーダーは、1つのスライスのデータが複数のバッファーに配置されないように、ビットストリームバッファーの入力を管理する必要があります。
 
  
 

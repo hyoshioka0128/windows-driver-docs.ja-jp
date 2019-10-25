@@ -3,30 +3,30 @@ title: DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
 description: DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
 ms.assetid: 2aef590f-2328-4175-ab60-c72b1fd83db7
 keywords:
-- Direct3D バージョン 10.1 WDK Windows 7 の表示、DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
-- 拡張形式 DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM、WDK の Windows 7 の表示
-- DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM WDK Windows 7 の表示
+- Direct3D バージョン 10.1 WDK Windows 7 display、DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
+- 拡張形式 WDK Windows 7 display、DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
+- DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM WDK Windows 7 ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d0f469421249e0a5f2849f1e54f480a045045
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5ad036b530d8443c05fd4de31ee01976a12d26d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372062"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838973"
 ---
-# <a name="dxgiformatr10g10b10xrbiasa2unorm"></a>DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM
+# <a name="dxgi_format_r10g10b10_xr_bias_a2_unorm"></a>DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM
 
 
-このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。
+このセクションは、Windows 7 以降のオペレーティングシステムにのみ適用されます。
 
-DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM 形式には、バイアスをかけた形式に関連付けられているデータの性質を認識するアプリケーションが必要です。 シェーダーが XR の対応である必要があります、次のセクションで、変換規則からわかるように、\_バイアスから読み込まれたり、DXGI に書き込まれたデータで独自のバイアスとスケールを実行する必要がありますと\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM 形式。
+DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM 形式では、アプリケーションは、形式に関連するデータのバイアスを持つ性質を認識している必要があります。 次のセクションの変換規則からわかるように、シェーダーは XR\_バイアスを認識している必要があります。また、R10G10B10\_XR\_形式で読み取りまたは\_書き込みが行われるすべてのデータに対して、独自のバイアスとスケールを行う必要があります。\_バイアス\_A2\_UNORM 形式です。
 
-スキャン アウト ハードウェアは、バイアスとスケールを適用できる必要があります。
+スキャンアウトハードウェアでは、バイアスとスケールを適用できる必要があります。
 
-DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM 形式には、表示スキャン アウト、CPU のロック可能なおよび「ビット レイアウト内でキャスト」リソースの属性のみです。 そのため、リソースをレンダリングするアプリケーション通常作成 DXGI 形式のレンダー ターゲット ビュー\_形式\_R10G10B10A2\_\*します。
+DXGI\_形式\_R10G10B10\_XR\_バイアス\_A2\_UNORM 形式には、表示スキャンアウト、CPU ロック可能、および "ビットレイアウト内でのキャスト" リソース属性のみがあります。 そのため、リソースにレンダリングするには、通常、アプリケーションでは、R10G10B10A2\_\*形式\_、DXGI\_形式のレンダーターゲットビューを作成します。
 
-すべての機能をディスプレイのミニポート ドライバーが XR をサポートする必要があります\_表示形式としてバイアス。 新しい D3DDDIFMT\_A2B10G10R10\_XR\_バイアスの値に追加された、 [ **D3DDDIFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ne-d3dukmdt-_d3dddiformat) XR の列挙体\_バイアス サポートします。
+すべての機能を使用するには、ディスプレイミニポートドライバーで、表示形式として XR\_バイアスがサポートされている必要があります。 XR\_バイアスサポートの[**D3DDDIFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddiformat)列挙に新しい D3DDDIFMT\_A2B10G10R10\_XR\_バイアス値が追加されました。
 
  
 

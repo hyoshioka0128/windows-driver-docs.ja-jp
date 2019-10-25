@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da35f4e2e61aac9bc95d11ab6caa9fd7895af21d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5ccde661bc647be33a0c395cc0d3fa7639909a1a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353263"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841764"
 ---
 # <a name="iprintoemuni3-com-interface"></a>IPrintOemUni3 COM インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "67353263"
 
 
 
-`IPrintOemUni3` COM インターフェイスは、のすべてのメソッドが含まれていての機能を拡張、 [IPrintOemUni COM インターフェイス](iprintoemuni-com-interface.md)と[IPrintOemUni2 COM インターフェイス](iprintoemuni2-com-interface.md)します。
+`IPrintOemUni3` COM インターフェイスには、のすべてのメソッドが含まれています。また、 [Iprintoemuni Com インターフェイス](iprintoemuni-com-interface.md)と[IPrintOemUni2 com インターフェイス](iprintoemuni2-com-interface.md)の機能が拡張されています。
 
-次の表とによって提供されるメソッドのすべてについて説明します、`IPrintOemUni3`インターフェイス。 プラグインをレンダリングと、一覧内のすべてのメソッドを定義する必要があります。 かどうか、メソッドは必要ありません、単に返すことができます E\_NOTIMPL します。
+次の表に、`IPrintOemUni3` インターフェイスによって提供されるすべてのメソッドとその説明を示します。 レンダリングプラグインでは、表示されているすべてのメソッドを定義する必要があります。 メソッドが不要な場合は、単に E\_NOTIMPL を返すことができます。
 
 <table>
 <colgroup>
@@ -36,23 +36,23 @@ ms.locfileid: "67353263"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern" data-raw-source="[&lt;strong&gt;IPrintOemUni3::DownloadPattern&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern)"><strong>IPrintOemUni3::DownloadPattern</strong></a></p></td>
-<td><p>パターンをプリンターにダウンロードするプラグインを使用できます。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern" data-raw-source="[&lt;strong&gt;IPrintOemUni3::DownloadPattern&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern)"><strong>IPrintOemUni3::D ownloadPattern</strong></a></p></td>
+<td><p>プラグインを使用してプリンターにパターンをダウンロードできるようにします。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemUni3::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment)"><strong>IPrintOemUni3::GetPDEVAdjustment</strong></a></td>
-<td><p>プラグインを特定のオーバーライドにより<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-pdev" data-raw-source="&lt;em&gt;PDEV&lt;/em&gt;"> <em>PDEV</em> </a>設定します。</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemUni3::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment)"><strong>IPrintOemUni3:: GetPDEVAdjustment</strong></a></td>
+<td><p>プラグインが特定の<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-pdev" data-raw-source="&lt;em&gt;PDEV&lt;/em&gt;"><em>Pdev</em></a>設定をオーバーライドできるようにします。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize" data-raw-source="[&lt;strong&gt;IPrintOemUni3::SetBandSize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize)"><strong>IPrintOemUni3::SetBandSize</strong></a></td>
-<td><p>により、印刷出力で必要なバンド サイズを指定するプラグイン</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize" data-raw-source="[&lt;strong&gt;IPrintOemUni3::SetBandSize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize)"><strong>IPrintOemUni3:: Setバンドサイズ</strong></a></td>
+<td><p>プラグインを使用して、印刷出力に必要な帯域幅を指定できるようにします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、「[プリンタドライバ COM インターフェイスの実装](implementing-printer-driver-com-interfaces.md)」を参照してください。
 
  
 

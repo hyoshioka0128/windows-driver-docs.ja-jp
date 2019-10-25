@@ -3,18 +3,18 @@ title: フィルター モジュールの一時停止
 description: フィルター モジュールの一時停止
 ms.assetid: da75b92d-b662-416a-b350-e5384b870b7f
 keywords:
-- WDK のモジュールをフィルター処理ネットワーク、一時停止
-- フィルター モジュールが一時停止
-- フィルター ドライバー WDK ネットワークは、フィルター モジュールを一時停止
-- NDIS フィルター ドライバー WDK、フィルター モジュールを一時停止
+- フィルターモジュール WDK ネットワーク、一時停止
+- フィルターモジュールの一時停止
+- フィルタードライバーの WDK ネットワーク、一時停止フィルターモジュール
+- NDIS フィルタードライバー WDK、一時停止フィルターモジュール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b6670906e5fbaa536b81adcbc6682e537b93c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 39eb86805043c4020ee254ed9df8fb8fbc746782
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384545"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843697"
 ---
 # <a name="pausing-a-filter-module"></a>フィルター モジュールの一時停止
 
@@ -22,73 +22,73 @@ ms.locfileid: "67384545"
 
 
 
-NDIS フィルター ドライバーの呼び出しを実行中のフィルター モジュールを一時停止する[ *FilterPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_pause)関数。 フィルター モジュールが入力、*一時停止中*状態での実行の開始時、 *FilterPause*関数。
+実行中のフィルターモジュールを一時停止するために、NDIS はフィルタードライバーの[*Filterpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause)関数を呼び出します。 フィルターモジュールは、 *Filterpause*関数での実行の開始時に*一時停止*状態になります。
 
-NDIS は、ドライバー スタックを一時停止するプラグ アンド プレイ操作の一部としてフィルター モジュールを一時停止します。 ドライバー スタックを一時停止の概要については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
+NDIS は、ドライバースタックを一時停止するために、プラグアンドプレイ操作の一部としてフィルターモジュールを一時停止します。 ドライバースタックの一時停止の概要については、「[ドライバースタックの一時停止](pausing-a-driver-stack.md)」を参照してください。
 
-内にあるフィルター モジュールの代わり、*一時停止中*状態では、フィルター ドライバー。
+*一時停止*中の状態にあるフィルターモジュールに代わって、フィルタードライバーは次のようになります。
 
--   いずれかが引かれていない新しいインジケーターを受信します。
+-   は、新しい受信表示を開始することはできません。
 
-    送信し、受信操作についての詳細についてを参照してください。[フィルター モジュールの送信と受信操作](filter-module-send-and-receive-operations.md)します。
+    送信操作と受信操作の詳細については、「[フィルターモジュールの送受信操作](filter-module-send-and-receive-operations.md)」を参照してください。
 
--   受信フィルター ドライバーを開始した操作が存在し、NDIS に完了しなかった場合、フィルター ドライバーはこのような操作を完了する NDIS を待つ必要があります。 NDIS 呼び出されるまでは一時停止操作が完了しない、 [ *FilterReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_return_net_buffer_lists)関数のようなすべての保留状態インジケーターを受信します。
+-   フィルタードライバーによって生成された受信操作があり、その NDIS が完了していない場合、フィルタードライバーは NDIS がこのような操作を完了するまで待機する必要があります。 すべての未処理の受信通知に対して、NDIS が[*Filterreturnnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)関数を呼び出すまで、一時停止操作は完了しません。
 
--   未解決の戻り値が表示されますがない NDIS をすぐに発生したその基になるドライバー。 ドライバー呼び出されるまでは一時停止操作が完了しない、 [ **NdisFReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)関数のような未処理受信表示します。 これらの未処理の受信がない場合は、ドライバーは、基になるドライバーから受信するバッファーをキューに存在できます。
+-   基になるドライバーがすぐに NDIS に由来する未処理の受信通知を返す必要があります。 一時停止操作が完了しないのは、ドライバーが未処理の受信通知に対して[**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)関数を呼び出したときです。 ドライバーが基になるドライバーから受信したバッファーをキューに配置する場合、これらの未処理の受信通知が存在する可能性があります。
 
--   戻り値の新しい受信呼び出してすぐに、基になるドライバーが発信する NDIS 表示をする必要があります、 **NdisFReturnNetBufferLists**関数。 かどうか、必要に応じて、ドライバーをコピーできますインジケーターを受信し、それらを返す前にキューに登録します。
+-   では、 **NdisFReturnNetBufferLists**関数を呼び出すことにより、基になるドライバーがすぐに NDIS に送信されるという新しい受信通知が返されます。 必要に応じて、ドライバーは受信の表示をコピーし、それを返す前にキューに保存できます。
 
-    **注**  [**NdisFReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists) NDIS で提示されている NBLs を呼び出されません\_受信\_フラグ\_リソース フラグが設定で、対応する[ *FilterReceiveNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_receive_net_buffer_lists)呼び出します。 このような NBLs が返されます NDIS を同期的にから返すことによって、 *FilterReceiveNetBufferLists*ルーチン。
+    **注**  [**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)は、対応する[*FilterReceiveNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)呼び出しで設定された\_フラグ\_リソースフラグを受け取るように、\_NDIS によって指定された NBLs に対しては呼び出さないでください。 このような NBLs は、 *FilterReceiveNetBufferLists*ルーチンからを返すことによって、NDIS に同期的に返されます。
 
      
 
--   新しい送信要求を元にする必要があります。
+-   新しい送信要求を開始することはできません。
 
--   送信操作、フィルター ドライバーが発生したこと、および NDIS が完了していない場合は、フィルター ドライバーはこのような操作を完了する NDIS を待つ必要があります。 NDIS 呼び出されるまでは一時停止操作が完了しない、 [ *FilterSendNetBufferListsComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists_complete)関数のようなすべての保留状態要求を送信します。
+-   フィルタードライバーによって生成された送信操作があり、その NDIS が完了していない場合、フィルタードライバーは NDIS がこのような操作を完了するまで待機する必要があります。 すべての未処理の送信要求に対して NDIS が[*FilterSendNetBufferListsComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete)関数を呼び出すまで、一時停止操作は完了しません。
 
--   すべて新規に対して行われた要求の送信を返す必要があります、 [ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)関数を呼び出すことによってすぐに、 [ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)関数。 フィルター ドライバーを設定する必要があります、**状態**各ネットワーク内のメンバー\_バッファー\_NDIS にリスト構造\_状態\_一時停止します。
+-   では、 [**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)関数を呼び出すことによって、 [*filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)関数に対して行われたすべての新しい送信要求を直ちに返す必要があります。 フィルタードライバーは、各 NET\_BUFFER\_LIST 構造体の**status**メンバーを NDIS\_status\_一時停止状態に設定する必要があります。
 
--   状態インジケーターを提供することができます、 [ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)関数。
+-   では、 [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)関数を使用して状態を示すことができます。
 
-    状態インジケーターの詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)します。
+    ステータスの表示の詳細については、「[フィルターモジュールの状態](filter-module-status-indications.md)の表示」を参照してください。
 
--   状態インジケーターを処理する必要があります、 [ *FilterStatus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)関数。
+-   では、 [*Filterstatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)関数の状態を処理する必要があります。
 
--   OID の要求を処理する必要があります、 [ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)関数。
+-   は、 [*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数で OID 要求を処理する必要があります。
 
-    OID 要求の詳細については、次を参照してください。[フィルター モジュールの OID 要求](filter-module-oid-requests.md)します。
+    OID 要求の詳細については、「[フィルターモジュール OID 要求](filter-module-oid-requests.md)」を参照してください。
 
--   OID の要求を開始できます。
+-   OID 要求を開始できます。
 
--   ドライバー、アタッチ操作中に割り当てられたリソースを解放する必要があります。
+-   アタッチ操作中にドライバーによって割り当てられたリソースを解放しないでください。
 
--   送信を停止し、受信操作に必要な場合、タイマーをキャンセルする必要があります。
+-   送信と受信の操作を停止するために必要な場合は、タイマーをキャンセルする必要があります。
 
-    タイマーの詳細については、次を参照してください。 [NDIS 6.0 タイマー サービス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
+    タイマーの詳細については、「 [NDIS 6.0 Timer Services](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)」を参照してください。
 
-フィルター ドライバーは正常に送信を一時停止し、受信操作で後、一時停止操作を完了する必要があります。 フィルター ドライバー操作を完了できる一時停止同期または非同期で NDIS を返すことによって\_状態\_成功または NDIS\_状態\_からそれぞれ PENDING [ *FilterPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_pause)します。
+フィルタードライバーは、送信操作と受信操作を正常に一時停止した後、一時停止操作を完了する必要があります。 フィルタードライバーは、NDIS\_STATUS\_SUCCESS または NDIS\_\_STATUS をそれぞれ[*Filterpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause)から返すことで、同期または非同期的に一時停止操作を完了できます。
 
-ドライバーは、NDIS を返す場合\_状態\_保留中、呼び出す必要があります、 [ **NdisFPauseComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfpausecomplete)一時停止操作が完了した後に機能します。
+ドライバーが NDIS\_STATUS\_PENDING を返した場合、一時停止操作の完了後に[**NdisFPauseComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfpausecomplete)関数を呼び出す必要があります。
 
-内にあるフィルター モジュールの代わり、 *Paused*状態では、フィルター ドライバー。
+*一時停止*状態にあるフィルターモジュールの代わりに、フィルタードライバーは次のようになります。
 
--   基にする必要があります新しいインジケーターを受信します。
+-   新しい受信表示を開始することはできません。
 
--   戻り値の新しい受信呼び出してすぐに、基になるドライバーが発信する NDIS 表示をする必要があります、 [ **NdisFReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)関数。 かどうか、必要に応じて、ドライバーをコピーできますインジケーターを受信し、それらを返す前にキューに登録します。
+-   では、 [**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)関数を呼び出すことにより、基になるドライバーがすぐに NDIS に送信されるという新しい受信通知が返されます。 必要に応じて、ドライバーは受信の表示をコピーし、それを返す前にキューに保存できます。
 
--   新しい送信要求を元にする必要があります。
+-   新しい送信要求を開始することはできません。
 
--   すべて新規に対して行われた要求の送信を返す必要があります、 [ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)関数を呼び出すことによってすぐに、 [ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)関数。 フィルター ドライバーを設定する必要があります、**状態**各ネットワーク内のメンバー\_バッファー\_NDIS にリスト構造\_状態\_一時停止します。
+-   では、 [**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)関数を呼び出すことによって、 [*filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)関数に対して行われたすべての新しい送信要求を直ちに返す必要があります。 フィルタードライバーは、各 NET\_BUFFER\_LIST 構造体の**status**メンバーを NDIS\_status\_一時停止状態に設定する必要があります。
 
--   状態インジケーターを提供することができます、 [ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)関数。
+-   では、 [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)関数を使用して状態を示すことができます。
 
--   状態インジケーターを処理する必要があります、 [ *FilterStatus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)関数。
+-   では、 [*Filterstatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)関数の状態を処理する必要があります。
 
--   OID の要求を処理する必要があります、 [ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)関数。
+-   は、 [*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数で OID 要求を処理する必要があります。
 
--   OID の要求を開始できます。
+-   OID 要求を開始できます。
 
-NDIS が他のプラグ アンド プレイ操作を開始していないなどのアタッチ、デタッチ、または再起動を要求するときに、フィルター ドライバーは、*一時停止中*状態。 NDIS を開始できるデタッチまたはフィルター ドライバーが、後の再起動要求、 *Paused*状態。 フィルター モジュールを切断する方法の詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。 フィルター モジュールを再起動する方法の詳細については、次を参照してください。[フィルター モジュールの開始](starting-a-filter-module.md)します。
+NDIS は、フィルタードライバーが*一時停止*状態にある間、他のプラグアンドプレイ操作 (アタッチ、デタッチ、再起動要求など) を開始しません。 NDIS は、フィルタードライバーが*一時停止*状態になった後に、デタッチまたは再起動要求を開始できます。 フィルターモジュールをデタッチする方法の詳細については、「[フィルターモジュールのデタッチ](detaching-a-filter-module.md)」を参照してください。 フィルターモジュールを再起動する方法の詳細については、「[フィルターモジュールを開始](starting-a-filter-module.md)する」を参照してください。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: KSMETHOD\_BDA\_コミット\_の変更
-description: クライアントを使用して、KSMETHOD\_BDA\_コミット\_の一覧をコミットする変更は、変更を要求します。
+title: KSK メソッド\_BDA\_コミット\_の変更
+description: クライアントは、KSK メソッド\_BDA\_コミット\_変更を使用して、要求された変更の一覧をコミットします。
 ms.assetid: f6572a4e-2328-4157-80f7-110e0fe58a4f
 keywords:
-- KSMETHOD_BDA_COMMIT_CHANGES ストリーミング メディア デバイス
+- KSMETHOD_BDA_COMMIT_CHANGES ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,35 +14,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9991a8477c3f9befd73e97af77e59ea1993d35a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab1034a16c59a519b7d45fffad1fdd8220674eca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370404"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842426"
 ---
-# <a name="ksmethodbdacommitchanges"></a>KSMETHOD\_BDA\_コミット\_の変更
+# <a name="ksmethod_bda_commit_changes"></a>KSK メソッド\_BDA\_コミット\_の変更
 
 
-クライアントを使用して、KSMETHOD\_BDA\_コミット\_の一覧をコミットする変更は、変更を要求します。
+クライアントは、KSK メソッド\_BDA\_コミット\_変更を使用して、要求された変更の一覧をコミットします。
 
 ## <span id="ddk_ksmethod_bda_commit_changes_ks"></span><span id="DDK_KSMETHOD_BDA_COMMIT_CHANGES_KS"></span>
 
 
-### <a name="span-idspecifyingthismethodspanspan-idspecifyingthismethodspanspan-idspecifyingthismethodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>この方法を指定します。
+### <a name="span-idspecifying_this_methodspanspan-idspecifying_this_methodspanspan-idspecifying_this_methodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>このメソッドの指定
 
-KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
+**フラグ**メンバーが ksk メソッドに設定されている ksk メソッド\_型\_NONE。
 
-### <a name="span-idmethoddataspanspan-idmethoddataspanspan-idmethoddataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドのデータ
+### <a name="span-idmethod_dataspanspan-idmethod_dataspanspan-idmethod_dataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>メソッドデータ
 
 なし
 
 <a name="remarks"></a>注釈
 -------
 
-ネットワーク プロバイダーが、KSMETHOD をにより、\_BDA\_コミット\_変更要求、変更の一覧は、基になるフィルターでコミットされた、この時点で、フィルターには、その状態がリセットされます。 新しいサイクルを開始できます。
+ネットワークプロバイダーが KSK メソッド\_BDA\_コミット\_変更要求を行うと、基になるフィルターで変更の一覧がコミットされます。この時点で、フィルターは状態をリセットし、新しいサイクルを開始できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -53,7 +53,7 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Bdamedia.h (Bdamedia.h を含む)</td>
+<td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -61,7 +61,7 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaCommitChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacommitchanges)
+[**BdaCommitChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacommitchanges)
 
 [**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 

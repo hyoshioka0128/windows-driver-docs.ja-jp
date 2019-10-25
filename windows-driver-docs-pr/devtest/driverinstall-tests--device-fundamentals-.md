@@ -1,22 +1,22 @@
 ---
 title: Driver Install テスト (Device Fundamental)
-description: 機能をインストールするドライバーのインストール テスト カテゴリには、テストするテスト アンインストールしてドライバーを何度も再インストールにはが含まれています。
+description: ドライバーインストールテストカテゴリには、ドライバーをアンインストールして、インストール機能をテストするために何度か再インストールするテストが含まれています。
 ms.assetid: 3FC00D4B-6520-45F1-805C-A5F8B6AACAC8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916b782a71f89a96d32d2662b630b508830d9510
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 025f298797753685bc541cd573239bfa9498e3f0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371394"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840275"
 ---
 # <a name="driver-install-tests-device-fundamentals"></a>Driver Install テスト (Device Fundamental)
 
 
-機能をインストールするドライバーのインストール テスト カテゴリには、テストするテスト アンインストールしてドライバーを何度も再インストールにはが含まれています。 テストでは、I/O が各を再インストールした後、ドライバーとデバイスに対してテストを開始します。 テストは、インストールし、デバイス ドライバーまたはデバイスを再インストールする必要があるエンドユーザーの全体的なエクスペリエンスを向上させるために設計されています。
+ドライバーインストールテストカテゴリには、ドライバーをアンインストールして、インストール機能をテストするために何度か再インストールするテストが含まれています。 テストでは、再インストールのたびに、ドライバーとデバイスに対して i/o テストが開始されます。 このテストは、デバイスドライバーまたはデバイスをインストールして再インストールする必要があるエンドユーザーの全体的なエクスペリエンスを向上させるように設計されています。
 
-## <a name="span-iddriverinstalltestsspanspan-iddriverinstalltestsspandriverinstall-tests"></a><span id="driverinstall_tests"></span><span id="DRIVERINSTALL_TESTS"></span>DriverInstall テスト
+## <a name="span-iddriverinstall_testsspanspan-iddriverinstall_testsspandriverinstall-tests"></a><span id="driverinstall_tests"></span><span id="DRIVERINSTALL_TESTS"></span>DriverInstall テスト
 
 
 <table>
@@ -32,11 +32,11 @@ ms.locfileid: "67371394"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Reinstall_with_IO_Before_and_After"></span><span id="reinstall_with_io_before_and_after"></span><span id="REINSTALL_WITH_IO_BEFORE_AND_AFTER"></span>前後に IO を再インストールします。</p></td>
-<td align="left"><p>このテストは、アンインストールし、選択したデバイスのドライバーを再インストールし、I/O デバイスでテストを実行します。</p>
-<p><strong>バイナリをテストします。</strong>Devfund_Reinstall_With_IO_BeforeAndAfter.wsc</p>
-<p><strong>メソッドをテストします。</strong>Reinstall_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
+<td align="left"><p><span id="Reinstall_with_IO_Before_and_After"></span><span id="reinstall_with_io_before_and_after"></span><span id="REINSTALL_WITH_IO_BEFORE_AND_AFTER"></span>IO の前後の再インストール</p></td>
+<td align="left"><p>このテストでは、選択したデバイスのドライバーをアンインストールして再インストールし、デバイスで i/o テストを実行します。</p>
+<p><strong>テストバイナリ:</strong>Devfund_Reinstall_With_IO_BeforeAndAfter</p>
+<p><strong>テストメソッド:</strong>Reinstall_With_IO_Before_And_After</p>
+<p><strong>パラメーター:</strong> - 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイスの基本テストパラメーター</a> 」を参照</p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -45,39 +45,39 @@ ms.locfileid: "67371394"
 
  
 
-## <a name="span-idaboutthereinstallwithiobeforeandaftertestspanspan-idaboutthereinstallwithiobeforeandaftertestspanspan-idaboutthereinstallwithiobeforeandaftertestspanabout-the-reinstall-with-io-before-and-after-test"></a><span id="About_the_ReInstall_with_I_O_Before_and_After_test"></span><span id="about_the_reinstall_with_i_o_before_and_after_test"></span><span id="ABOUT_THE_REINSTALL_WITH_I_O_BEFORE_AND_AFTER_TEST"></span>テストの前後で I/O の前に再インストールについて
+## <a name="span-idabout_the_reinstall_with_i_o_before_and_after_testspanspan-idabout_the_reinstall_with_i_o_before_and_after_testspanspan-idabout_the_reinstall_with_i_o_before_and_after_testspanabout-the-reinstall-with-io-before-and-after-test"></a><span id="About_the_ReInstall_with_I_O_Before_and_After_test"></span><span id="about_the_reinstall_with_i_o_before_and_after_test"></span><span id="ABOUT_THE_REINSTALL_WITH_I_O_BEFORE_AND_AFTER_TEST"></span>テストの前後の i/o を使用した再インストールについて
 
 
-このテストは、次を行います。
+このテストは次のことを行います。
 
-1.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-2.  テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-3.  テスト デバイスの使用を元のドライバを再インストール[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)メソッド。
-4.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-5.  テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-6.  場合に、システムを再起動する手順\#3 には、再起動が必要です。
-7.  NULL ドライバーをインストール、テスト デバイスを使用して[ **IWDTFDriverSetupAction2::UnInstallDriverPermanently** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-uninstalldriverpermanently)メソッドは、再起動が必要な場合に、システムを再起動します。
-8.  使用してテスト下のデバイスを元のドライバを再インストール[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)メソッド。
-9.  テスト デバイスとその子孫が、デバイスの問題のコードのレポートでされていないことを確認します。
-10. テスト デバイスとその子孫 WDTF 単純な I/O プラグインを使用して I/O をテストします。 参照してください[WDTF の単純な I/O を提供するプラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)詳細についてはします。
-11. 繰り返し何度も 1 ~ 10 をステップします。
+1.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+2.  WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+3.  [**IWDTFDriverSetupAction2:: UpdateDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)メソッドを使用して、テストデバイスに元のドライバーを再インストールします。
+4.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+5.  WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+6.  ステップ \#3 で再起動が必要な場合は、システムを再起動します。
+7.  [**IWDTFDriverSetupAction2:: UnInstallDriverPermanently**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-uninstalldriverpermanently)メソッドを使用して、テストデバイスに NULL ドライバーをインストールします。再起動が必要な場合は、システムが再起動されます。
+8.  [**IWDTFDriverSetupAction2:: UpdateDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)メソッドを使用して、テスト対象のデバイスに元のドライバーを再インストールします。
+9.  テストデバイスとその子孫がデバイスの問題コードを報告していないことを確認します。
+10. WDTF Simple i/o プラグインを使用して、テストデバイスとその子孫の i/o をテストします。 詳細については、「 [WDTF Simple i/o プラグインの提供](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)」を参照してください。
+11. 手順 1-10 を何度か繰り返します。
 
-### <a name="span-iddebuginstallationfailuresusingthesetupapilogsspanspan-iddebuginstallationfailuresusingthesetupapilogsspanspan-iddebuginstallationfailuresusingthesetupapilogsspandebug-installation-failures-using-the-setup-api-logs"></a><span id="Debug_installation_failures_using_the_Setup_API_logs"></span><span id="debug_installation_failures_using_the_setup_api_logs"></span><span id="DEBUG_INSTALLATION_FAILURES_USING_THE_SETUP_API_LOGS"></span>API のセットアップ ログを使用して、インストール エラーをデバッグします。
+### <a name="span-iddebug_installation_failures_using_the_setup_api_logsspanspan-iddebug_installation_failures_using_the_setup_api_logsspanspan-iddebug_installation_failures_using_the_setup_api_logsspandebug-installation-failures-using-the-setup-api-logs"></a><span id="Debug_installation_failures_using_the_Setup_API_logs"></span><span id="debug_installation_failures_using_the_setup_api_logs"></span><span id="DEBUG_INSTALLATION_FAILURES_USING_THE_SETUP_API_LOGS"></span>セットアップ API ログを使用してインストールエラーをデバッグする
 
-API のセットアップのログ (setupapi.app.log および setupapi.dev.log) には、このテストで記録されたドライバーのインストール エラーのデバッグに役立つ情報が含まれます。 API のセットアップ ログは %windir% あります\\inf\\テスト システムのディレクトリ。
+セットアップ API のログ (setupapi.log と setupapi.log) には、このテストで記録されたドライバーのインストールエラーをデバッグするのに役立つ情報が含まれています。 セットアップ API のログは、テストシステムの% windir%\\inf\\ ディレクトリにあります。
 
-詳細およびこれらのログの潜在的な有用性を向上させるのには、テストの再インストールを実行する前に次のレジストリ キーを 0x2000FFFF に設定します。
+これらのログの詳細度と有用性を向上させるには、再インストールテストを実行する前に、次のレジストリキーを0x2000FFFF に設定します。
 
 ```
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
-[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
+[デバイスの基本テストを選択して構成する方法](https://docs.microsoft.com/windows-hardware/drivers)
 
 [Device Fundamental のテスト](device-fundamentals-tests.md)
 

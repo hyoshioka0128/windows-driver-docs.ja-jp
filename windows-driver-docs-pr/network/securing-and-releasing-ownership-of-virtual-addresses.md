@@ -3,18 +3,18 @@ title: 仮想アドレスの所有権のセキュリティ保護と解放
 description: 仮想アドレスの所有権のセキュリティ保護と解放
 ms.assetid: e7b31c8d-fed4-43e2-bcd2-295e3e17719e
 keywords:
-- プロキシ ドライバー WDK San、仮想アドレス
-- SAN プロキシ ドライバー WDK、仮想アドレス
-- WDK の San の仮想アドレス
+- プロキシドライバー WDK San、仮想アドレス
+- SAN プロキシドライバー WDK、仮想アドレス
+- 仮想アドレス WDK San
 - WDK 仮想アドレスの所有権
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a3de75034093139cc01b1caa180c150ea2ef4fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e0bf44c3b266cb5f73045768d850d94aeaf5b4ea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382121"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841994"
 ---
 # <a name="securing-and-releasing-ownership-of-virtual-addresses"></a>仮想アドレスの所有権のセキュリティ保護と解放
 
@@ -22,15 +22,15 @@ ms.locfileid: "67382121"
 
 
 
-プロキシ ドライバーの SAN サービス プロバイダーはこれらのバッファーにキャッシュされるたびに、プロキシ ドライバーはユーザー モードのバッファーの仮想アドレスの所有権を保護する必要があります。 バッファー キャッシュの詳細については、次を参照してください。[登録されているメモリのキャッシュ](caching-registered-memory.md)します。 プロキシ ドライバーは、ユーザー モード バッファーの所有権をセキュリティで保護、アプリケーションがオペレーティング システムに戻したり、バッファーが解放された場合に Windows Sockets を切り替える、オペレーティング システムに通知するためです。 バッファーのセキュリティで保護された所有権は、プロキシ ドライバーを呼び出す必要があります、 [ **MmSecureVirtualMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmsecurevirtualmemory)関数。 この呼び出しでは、プロキシ ドライバーは、バッファーとバッファーのバイト単位のサイズの開始アドレスへのポインターを渡します。
+プロキシドライバーの SAN サービスプロバイダーがこれらのバッファーをキャッシュするたびに、プロキシドライバーはユーザーモードバッファーの仮想アドレスの所有権をセキュリティで保護する必要があります。 バッファーのキャッシュの詳細については、「[登録済みメモリのキャッシュ](caching-registered-memory.md)」を参照してください。 プロキシドライバーは、ユーザーモードバッファーの所有権をセキュリティで保護します。これにより、オペレーティングシステムは、バッファーがアプリケーションによってオペレーティングシステムに解放された場合に Windows ソケットスイッチに通知します。 バッファーの所有権をセキュリティで保護するには、プロキシドライバーが[**Mmsecurevirtualmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmsecurevirtualmemory)関数を呼び出す必要があります。 この呼び出しでは、プロキシドライバーは、バッファーの開始アドレスとバッファーのサイズ (バイト単位) へのポインターを渡します。
 
-変更するのには、キャッシュされたバッファーの仮想物理マッピングがスケジュールされている場合、に、スイッチに通知し、SAN サービス プロバイダーの呼び出し[ **WSPMemoryRegistrationCacheCallback** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566299(v=vs.85))関数SAN NIC からバッファーの登録を削除し、バッファー SAN からサービス プロバイダーのキャッシュします。 SAN サービス プロバイダーのプロキシ ドライバーでは、さらに、呼び出す必要があります、 [ **MmUnsecureVirtualMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmunsecurevirtualmemory)バッファーの所有権を解放する関数。 この呼び出しでプロキシ ドライバーは以前から返されたバッファーにハンドルを渡す、 **MmSecureVirtualMemory**呼び出します。
+キャッシュされたバッファーの仮想から物理へのマッピングが変更されるようにスケジュールされている場合、スイッチには通知され、san NIC[**からのバッファー**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566299(v=vs.85))登録と、SAN サービスプロバイダーのキャッシュからのバッファー。 さらに、SAN サービスプロバイダーのプロキシドライバーは、 [**Mmunsecurevirtualmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmunsecurevirtualmemory)関数を呼び出して、バッファーの所有権を解放する必要があります。 この呼び出しでは、プロキシドライバーは、以前に**Mmsecurevirtualmemory**呼び出しから返されたバッファーにハンドルを渡します。
 
-**注**  を呼び出すことによって保護されたユーザー モード バッファーへのアクセスを試行するドライバー **MmSecureVirtualMemory**オペレーティング システムにも低下する可能性があります。 そのため、プロキシのドライバーが、そのようなユーザー モード バッファーにアクセスする必要がありますも使用し、**試用/を除く**バッファーにアクセスするコードの周りのメカニズムです。 詳細については**試用/を除く**、Visual C のドキュメントを参照してください。
+**Mmsecurevirtualmemory**への呼び出しによってセキュリティで保護されたユーザーモードのバッファーにアクセスしようとするドライバーは、オペレーティングシステムをダウンさせる可能性**が  ます**。 したがって、プロキシドライバーは、このようなユーザーモードバッファーにアクセスするときに、バッファーにアクセスするコードの前後の**try/except**機構も使用する必要があります。 **Try/except**の詳細については、ビジュアルC++ドキュメントを参照してください。
 
  
 
-SAN サービス プロバイダーは、セキュリティで保護し、バッファーの所有権を解放するには、プロキシ ドライバーを I/O コントロール (IOCTL) 要求を送信できます。 詳細については、次を参照してください。 [SAN サービス プロバイダーの実装の Ioctl](implementing-ioctls-for-a-san-service-provider.md)します。
+SAN サービスプロバイダーは、プロキシドライバーに i/o 制御 (IOCTL) 要求を送信して、バッファーの所有権を保護および解放できます。 詳細については、「 [SAN サービスプロバイダーの ioctl の実装](implementing-ioctls-for-a-san-service-provider.md)」を参照してください。
 
  
 

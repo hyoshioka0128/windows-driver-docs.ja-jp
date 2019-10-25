@@ -1,53 +1,53 @@
 ---
 title: 不変な MDL のドライバー用検査
-description: 不変な Mdl ドライバー用検査オプションは、ドライバーがドライバーごとの単位で不変の MDL バッファーを処理する方法を監視します。
+description: インバリアントな MDL チェックドライバーオプションは、ドライバーがドライバー単位で不変の MDL バッファーを処理する方法を監視します。
 ms.assetid: 2FA69B7C-3EF4-4660-84D4-5108C97E395F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 216fd8e5dce96044a20df927a8498323015eaec9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00921ea58e2d117703df64255519ef0f525016db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373712"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839553"
 ---
 # <a name="invariant-mdl-checking-for-driver"></a>不変な MDL のドライバー用検査
 
 
-不変な Mdl ドライバー用検査オプションは、ドライバーがドライバーごとの単位で不変の MDL バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、このオプションによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
+インバリアントな MDL チェックドライバーオプションは、ドライバーがドライバー単位で不変の MDL バッファーを処理する方法を監視します。 不変の MDL バッファーに対する無効な改変が、このオプションによって検出されます。 このオプションを使うには、少なくとも 1 つのドライバーで I/O の検証を有効にする必要があります。
 
-**注**  このオプションは Windows 8 以降で使用できます。
+**注**  このオプションは、Windows 8 以降で使用できます。
 
  
 
-不変な mdl よりもより多くのフォームを実行する不変な Mdl のドライバー オプション、[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプション。 すべての呼び出しの間でバッファーの不変性が検証される不変な Mdl のドライバーがアクティブの場合、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)と[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)ルーチン。
+インバリアントな MDL チェックドライバーオプションでは、インバリアントな mdl チェック[スタック](invariant-mdl-checking-for-stack.md)オプションよりもより多くの不変の mdl チェックが実行されます。 ドライバーの不変の MDL チェックがアクティブになっている場合は、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)ルーチンと[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)ルーチンを呼び出すたびに、buffer 不変性が検証されます。
 
-IRP で新しい不変の MDL バッファーを表示するたびに Driver Verifier は、バッファーの内容の署名を計算し、その内部データベースに格納します。 Driver Verifier は、先ほど説明したが不変の MDL バッファーを検出すると、そのバッファーの内容が変更されていないこと、現在不変の MDL バッファーの内容について計算されたシグネチャを持つ、データベース内の署名を比較することでは検証します。
+新しい不変の MDL バッファーが IRP で認識されるたびに、ドライバー検証ツールはバッファーの内容の署名を計算し、内部データベースに格納します。 Driver Verifier は、前に見た不変の MDL バッファーを検出すると、データベース内の署名を現在のインバリアントな MDL バッファーの内容に対して計算された署名と比較することによって、バッファーの内容が変更されていないことを検証します。
 
-このオプションはグローバルであり、選択的には適用できません一部のドライバーです。
+このオプションはグローバルであり、一部のドライバーを選択的に適用することはできません。
 
-## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+## <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のドライバーの機能の 1 つまたは複数のドライバーをアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 不変な Mdl のドライバーのオプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーのドライバー機能に対する不変の MDL チェックをアクティブ化できます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。 コンピューターを再起動して、インバリアントな MDL チェックドライバーオプションをアクティブ化または非アクティブ化する必要があります。
 
-アクティブ化する、[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプション、する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。
+[インバリアントな MDL チェックスタック](invariant-mdl-checking-for-stack.md)オプションをアクティブにするには、 [i/o 検証](i-o-verification.md)もアクティブ化する必要があります。
 
 -   **コマンドラインで**
 
-    、コマンドラインで不変な Mdl のドライバーによって表される**verifier/flags 0x00004000** (ビット 14)。 不変な Mdl のドライバーを有効にするには、0x00004010 のフラグの値を使用して、または 0x00004010 をフラグ値に追加します。 この値には、I/O の検証 (0x10) と不変な Mdl のドライバー (0x00004000) がアクティブにします。 以下に例を示します。
+    コマンドラインでは、ドライバーの不変な MDL チェックは、 **verifier/flags 0x00004000** (ビット 14) によって表されます。 ドライバーの不変の MDL チェックをアクティブにするには、フラグ値0x00004010 を使用するか、フラグ値に0x00004010 を追加します。 この値は、i/o 検証 (0x10) とドライバーの不変の MDL チェック (0x00004000) をアクティブにします。 次に、例を示します。
 
     ```
     verifier /flags 0x00004010 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
--   **ドライバー検証マネージャーを使用します。**
-    1.  ドライバー検証マネージャーを起動します。 型**Verifier**コマンド プロンプト ウィンドウでします。
-    2.  選択 **(コード開発者) 用のカスタム設定を作成する** をクリックし、 **次へ。**
-    3.  選択**完全な一覧から個々 の設定を選択します。** します。
-    4.  選択 (チェック)[I/O の検証](i-o-verification.md)不変な Mdl のドライバーとします。
+-   **ドライバー検証マネージャーの使用**
+    1.  ドライバー検証マネージャーを起動します。 コマンドプロンプトウィンドウで「 **Verifier** 」と入力します。
+    2.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    3.  [**完全な一覧から個々の設定を選択]** を選択します。
+    4.  ドライバーの[I/o 検証](i-o-verification.md)と不変の MDL チェックを選択 (チェック) します。
     5.  コンピューターを再起動します。
 
  

@@ -3,20 +3,20 @@ title: バッファー付き I/O の使用
 description: バッファー付き I/O の使用
 ms.assetid: 69291156-babb-465a-9e80-1766f075768b
 keywords:
-- バッファー内の I/O の WDK カーネル
-- WDK の I/O バッファーのバッファー I/O
-- データ バッファー WDK の I/O バッファー内の I/O
-- WDK の I/O バッファーの非ページ システム
-- I/O 制御コード WDK カーネル、バッファー内の I/O
-- I/O WDK カーネルでは、バッファー内の I/O
+- バッファーされる i/o WDK カーネル
+- バッファー (WDK i/o、バッファー i/o)
+- データバッファー WDK i/o、バッファー i/o
+- 非ページシステムバッファー (WDK i/o)
+- I/o 制御コード WDK カーネル、バッファーされる i/o
+- I/o WDK カーネル、バッファー i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e65b280741fac4a942f6f6f26e94634b38b492
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55676be840c1f446056457cec777459a86c2104b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358195"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836031"
 ---
 # <a name="using-buffered-io"></a>バッファー付き I/O の使用
 
@@ -24,41 +24,41 @@ ms.locfileid: "67358195"
 
 
 
-対話型または低速のデバイスでは、または通常は、時に、比較的少量のデータを転送するサービスを提供するドライバーを使用する必要があります、 [I/O バッファー](methods-for-accessing-data-buffers.md)転送メソッド。 全体的な物理を向上するバッファー内の I/O を小さな、対話型の転送を使用してメモリ使用量、メモリ マネージャーが、各転送の完全な物理ページをロックダウンする必要がないため、としてを要求するドライバーに対してダイレクト I/O。 一般に、ビデオ、キーボード、マウス、シリアル ポート、および並列のドライバーがバッファー内の I/O を要求します。
+対話型または低速のデバイス、または通常は比較的少量のデータを一度に転送するドライバーは、バッファーされた[i/o](methods-for-accessing-data-buffers.md)転送方法を使用する必要があります。 バッファー内 i/o を使用して小規模な対話型転送を使用すると、物理メモリ全体の使用量が向上します。これは、ダイレクト i/o を要求するドライバーの場合と同じように、メモリマネージャーは転送ごとに完全な物理ページをロックダウンする必要がないためです。 一般に、ビデオ、キーボード、マウス、シリアル、およびパラレルのドライバーは、バッファリングされた i/o を要求します。
 
-I/O マネージャーは、I/O 操作がバッファー内の I/O を次のように使用しているかを決定します。
+I/o マネージャーは、i/o 操作で次のようにバッファーされた i/o を使用していると判断します。
 
--   [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)操作を要求します。\_バッファーに格納された\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+-   [**Irp\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)および[**irp\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求の場合は、[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)構造の**Flags**メンバーにバッファー\_IO を設定します。 詳細については、「[デバイスオブジェクトの初期化](initializing-a-device-object.md)」を参照してください。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求、IOCTL コードの値には、メソッドが含まれています。\_としてバッファリングされている、 *TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+-   [**Irp\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[**irp\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求の場合、IOCTL コードの値には、 *TRANSFERTYPE*値としてバッファーに格納されているメソッドが含まれます。IOCTL 値。 詳細については、「 [I/o 制御コードの定義](defining-i-o-control-codes.md)」を参照してください。
 
-次の図は、I/O マネージャーの設定方法を示しています、 **IRP\_MJ\_読み取り**バッファリングされる I/O を使用する転送操作の要求。
+次の図は、i/o マネージャーが、バッファー i/o を使用する転送操作の**IRP\_MJ\_読み取り**要求を設定する方法を示しています。
 
-![ユーザー バッファーのバッファー内の i/o を示す図](images/3mdlbffr.png)
+![ユーザーバッファーのバッファー i/o を示す図](images/3mdlbffr.png)
 
-図は、ドライバーの使用方法の概要を示しています、 **SystemBuffer** IRP がドライバーに入れて、デバイス オブジェクトの読み取りの要求のデータを転送するポインター**フラグ**か\_バッファー\_IO:
+次の図は、ドライバーがデバイスオブジェクトの**フラグ**と DO\_バッファリング\_IO を使用して、読み取り要求のデータを転送するときに、IRP 内の**systembuffer**ポインターを使用する方法の概要を示しています。
 
-1.  ユーザー スペースの仮想アドレスのいくつかの範囲は、現在のスレッドのバッファーを表し、ページ ベースの物理アドレス (前の図では濃い網掛け) の範囲内でそのバッファーの内容をどこかに保存する可能性があります。
+1.  一部のユーザー領域の仮想アドレスは、現在のスレッドのバッファーを表し、バッファーの内容はページベースの物理アドレスの範囲内のどこかに格納されている可能性があります (前の図では濃い網掛け)。
 
-2.  I/O マネージャー サービスの現在のスレッドの読み取り要求、対象のスレッドに渡しますユーザー領域の範囲、バッファーを表す仮想アドレス。
+2.  I/o マネージャーは、現在のスレッドの読み取り要求をサービスします。この要求は、スレッドがバッファーを表すユーザー空間の仮想アドレスの範囲を渡します。
 
-3.  I/O マネージャーは、ユーザーが指定したバッファーのアクセシビリティと呼び出しを確認します[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)非ページ システム領域バッファーを作成する (**SystemBuffer**)、。ユーザーが指定したバッファーのサイズ。
+3.  I/o マネージャーは、ユーザーが指定したバッファーにアクセシビリティがあるかどうかを確認し、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を呼び出して、ユーザーが指定したバッファーのサイズを非ページシステムスペースバッファー (**systembuffer**) で作成します。
 
-4.  I/O マネージャーは、新しく割り当てられたへのアクセスを提供します。 **SystemBuffer**で IRP がドライバーに送信します。
+4.  I/o マネージャーは、ドライバーに送信される IRP で、新しく割り当てられた**Systembuffer**にアクセスできるようにします。
 
-    場合は、図では、書き込み要求を表示、I/O マネージャーがデータ ユーザー バッファーからバッファーにコピー システム IRP がドライバーに送信する前にします。
+    図に書き込み要求が示されている場合、i/o マネージャーは、IRP をドライバーに送信する前に、ユーザーバッファーからシステムバッファーにデータをコピーします。
 
-5.  前の図に示すように、読み取り要求には、ドライバーは、システム容量のバッファーに、デバイスからデータを読み取ります。 このバッファーのメモリが非ページと、ドライバーが初めてロックすることがなく、バッファーを安全にアクセスできます。 読み取り要求が満たされたときに、ドライバーが呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP にします。
+5.  前の図に示されている読み取り要求の場合、ドライバーはデバイスからシステム領域バッファーにデータを読み込みます。 このバッファーのメモリはページングされていません。ドライバーは、最初にロックせずにバッファーに安全にアクセスできます。 読み取り要求が満たされると、ドライバーは IRP を使用して[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。
 
-6.  元のスレッドが再びアクティブとは、I/O マネージャーは、ユーザー バッファーにシステムのバッファーから読み取りでデータをコピーします。 呼び出しも[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)システム バッファーを解放します。
+6.  元のスレッドが再びアクティブになると、i/o マネージャーによって、読み込まれたデータがシステムバッファーからユーザーバッファーにコピーされます。 また、 [**Exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)を呼び出してシステムバッファーを解放します。
 
-I/O マネージャーがドライバーのシステム領域バッファーを作成した後は、要求元のユーザー モード スレッドをスワップ アウトと可能性がある別のプロセスに属するスレッドによって、別のスレッドで物理メモリを再利用することができます。 ただし、IRP で指定したシステム領域仮想アドレスの範囲が有効なドライバー呼び出されるまで[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP にします。
+I/o マネージャーによってドライバー用のシステム領域バッファーが作成された後は、要求元のユーザーモードスレッドをスワップアウトして、その物理メモリを別のスレッドで再利用できます (場合によっては、別のプロセスに属するスレッドを使用します)。 ただし、IRP に指定されたシステムスペースの仮想アドレス範囲は、ドライバーが IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出すまで有効なままです。
 
-大量のデータを同時に転送、具体的には、複数の転送を行うドライバーをドライバーが、バッファー内の I/O を使用しないようにします。 システムを実行すると非ページ プールは断片化するため、I/O マネージャーは、このようなドライバーの Irp で送信する、連続した大規模なシステム領域バッファーを割り当てることができません。
+一度に大量のデータを転送するドライバー (特に、複数ページにわたる転送を行うドライバー) は、バッファー i/o を使用しないようにする必要があります。 システムを実行すると、非ページプールが断片化されることがあります。これにより、i/o マネージャーは、このようなドライバーの Irp で送信するために、サイズの大きい連続したシステムスペースバッファーを割り当てることができなくなります。
 
-通常、ドライバーを使用してバッファー内の I/O 一部の種類の Irp でなど[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)も使用している場合でも、要求[ダイレクト I/O](methods-for-accessing-data-buffers.md)します。 通常、ダイレクト I/O を使用するドライバーだけでこれを行う[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)を要求して、場合によってドライバー定義[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)ことを要求大量のデータ転送が必要です。
+通常、ドライバーでは、i/o を[直接](methods-for-accessing-data-buffers.md)使用する場合でも、 [**irp\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求など、一部の種類の irp に対してバッファー i/o を使用します。 ダイレクト i/o を使用するドライバーは、通常、 [**irp\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)および[**irp\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求、および場合によってはドライバーで定義された[**irp\_MJ\_内部\_デバイス\_コントロールに対してのみ実行されます。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)大きなデータ転送を必要とする要求。
 
-すべて**IRP\_MJ\_デバイス\_コントロール**と**IRP\_MJ\_内部\_デバイス\_コントロール**要求には、I/O 制御コードが含まれます。 I/O 制御コードは、バッファー内の I/O を使用して、IRP をサポートする必要が示されている場合、I/O マネージャーは、ユーザー アプリケーションの入力を表し、出力バッファーに 1 つのシステムのバッファーを使用します。 ドライバー サポート、そのような I/O 制御コードする必要がありますバッファーから入力データを読み取る (ある場合) を指定し、出力データ (該当する場合)、入力データを上書きすることで。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+すべての**irp\_MJ\_デバイス\_control**および**irp\_MJ\_内部\_デバイス\_コントロール**要求には、i/o 制御コードが含まれています。 I/o 制御コードが、バッファー i/o を使用して IRP がサポートされている必要があることを示している場合、i/o マネージャーは、1つのシステムバッファーを使用して、ユーザーアプリケーションの入力バッファーと出力バッファーを表します。 このような i/o 制御コードをサポートするドライバーは、バッファーから入力データ (存在する場合) を読み取り、入力データを上書きすることによって出力データ (存在する場合) を指定する必要があります。 詳細については、「 [I/o 制御コードの定義](defining-i-o-control-codes.md)」を参照してください。
 
  
 

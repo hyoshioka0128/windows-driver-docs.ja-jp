@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_FTM_RESPONSE
-description: WDI_TLV_FTM_RESPONSE は、BSS ターゲットから正常タイミング測定 (FTM) 応答の情報を含む TLV です。
+description: WDI_TLV_FTM_RESPONSE は、BSS ターゲットからのタイミング測定 (FTM) 応答情報を含む TLV です。
 ms.assetid: 7FD63544-F7FF-4593-A525-A6BEA2A56BB7
 ms.date: 02/13/2019
 keywords:
-- WDI_TLV_FTM_RESPONSE ネットワーク ドライバーが Windows Vista 以降
+- WDI_TLV_FTM_RESPONSE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6d2b4ba9140eb8577e76af1f48bfcc458f04ebe6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b980333af5f8568c171bde94a7e0284ca4eaf53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382885"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844985"
 ---
-# <a name="wditlvftmresponse"></a>WDI_TLV_FTM_RESPONSE
+# <a name="wdi_tlv_ftm_response"></a>WDI_TLV_FTM_RESPONSE
 
-**WDI_TLV_FTM_RESPONSE** BSS ターゲットから正常タイミング測定 (FTM) 応答の情報を含む TLV です。 
+**WDI_TLV_FTM_RESPONSE**は、BSS ターゲットからのタイミング測定 (FTM) 応答情報を含む TLV です。 
 
-この TLV がのペイロード データに使用される、 [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)タスクの完了を示す値。
+この TLV は、 [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)タスクの完了を示すペイロードデータで使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,28 +26,28 @@ ms.locfileid: "63382885"
 
 ## <a name="length"></a>長さ
 
-すべてのサイズ (バイト) を合計には、TLVs が含まれています。
+含まれているすべての TLVs のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
-| TLV | 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+| TLV | タスクバーの検索ボックスに | 複数の TLV インスタンスを使用できます | オプション | 説明 |
 | --- | --- | --- | --- | --- |
-| [WDI_TLV_BSSID](wdi-tlv-bssid.md) | [**WDI_MAC_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) |  |   | この FTM 応答が所属するターゲットの BSSID します。 |
-| [WDI_TLV_FTM_RESPONSE_STATUS](wdi-tlv-ftm-response-status.md) | [**WDI_FTM_RESPONSE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_ftm_response_status) |  |   | FTM 応答状態。 成功した場合、この TLV 内のフィールドの残りの部分に存在する場合。 |
-| [WDI_TLV_RETRY_AFTER](wdi-tlv-retry-after.md)| UINT16 |  |  | このターゲットから新しい FTM を要求しようとする前に渡す必要がありますを秒単位で期間です。 |
-| [WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS](wdi-tlv-ftm-number-of-measurements.md) | UINT16 |  |   | ラウンド トリップ時間 (RTT) を提供するために使用する測定値の数。 FTM 応答の状態が、成功の場合は、このフィールドは必須です。 |
-| [WDI_TLV_BSS_ENTRY_SIGNAL_INFO](wdi-tlv-bss-entry-signal-info.md) | INT32 |   |   | FTM ターゲットから受信信号強度インジケーター (RSSI)。 これを参照して、1.0 ミリ ワット (dBm) デシベル単位の単位です。 FTM 応答の状態が、成功の場合は、このフィールドは必須です。 |
-| 行の上と同じ  | UINT32 |   |   | FTM ターゲットは、0 から 100 までのリンクの品質の値。 100 の値には、リンクの最高の品質を指定します。 FTM 応答の状態が、成功の場合は、このフィールドは必須です。 |
-| [WDI_TLV_RTT](wdi-tlv-rtt.md) | UINT32 |   |   | ピコで測定ラウンドト リップ時間 (RTT)。 FTM 応答の状態が、成功の場合は、このフィールドは必須です。 |
-| [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md) | UINT32 |   |   | 正確さ、または期待される範囲の値を true に指定された RTT 測定、近さの程度。 単位は、ピコで。 詳細については、次を参照してください。、 [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md)します。 |
-| [WDI_TLV_RTT_VARIANCE](wdi-tlv-rtt-variance.md) | UINT64 |   |   | RTT を計算するには、複数の測定を使用した場合、このフィールドは、使用される測定値の統計的分散を提供します。 |
-| [WDI_TLV_LCI_REPORT_STATUS](wdi-tlv-lci-report-status.md) | [**WDI_LCI_REPORT_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_lci_report_status) |   |   | LCI レポートが要求された場合、このフィールドは、状態の結果を提供します。 成功した場合、次のフィールドが存在し、必須にします。 |
-| [WDI_TLV_LCI_REPORT_BODY](wdi-tlv-lci-report-body.md) | TLV\<一覧\<UINT8 &GT;&GT; |   |   | 9.4.2.22.10 のセクションで定義されている、場所の構成情報 (LCI) レポート、 [802-11-2016 standard](https://standards.ieee.org/standard/802_11-2016.html)LCI サブ要素とその他のオプションのサブ要素を含めて、します。 つまり、これは、測定レポート要素の測定レポート セクション (セクション 9.4.2.22 からに従って、 [802-11-2016 standard](https://standards.ieee.org/standard/802_11-2016.html))。 |
+| [WDI_TLV_BSSID](wdi-tlv-bssid.md) | [**WDI_MAC_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) |  |   | この FTM 応答が属するターゲットの BSSID です。 |
+| [WDI_TLV_FTM_RESPONSE_STATUS](wdi-tlv-ftm-response-status.md) | [**WDI_FTM_RESPONSE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ftm_response_status) |  |   | FTM 応答の状態。 成功した場合、この TLV の残りのフィールドが存在します。 |
+| [WDI_TLV_RETRY_AFTER](wdi-tlv-retry-after.md)| UINT16 |  |  | このターゲットから新しい FTM を要求するまでに経過する必要がある時間 (秒単位)。 |
+| [WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS](wdi-tlv-ftm-number-of-measurements.md) | UINT16 |  |   | ラウンドトリップ時間 (RTT) を提供するために使用される測定値の数。 [FTM 応答の状態] が [成功] の場合、このフィールドは必須です。 |
+| [WDI_TLV_BSS_ENTRY_SIGNAL_INFO](wdi-tlv-bss-entry-signal-info.md) | INT32 |   |   | FTM ターゲットから受信した信号強度インジケーター (RSSI)。 これは、1.0 ミリワット (dBm) に参照されるデシベル単位です。 [FTM 応答の状態] が [成功] の場合、このフィールドは必須です。 |
+| 上の行と同じ  | UINT32 |   |   | FTM ターゲットのリンク品質値。 0 ~ 100 の範囲で指定します。 値が100の場合は、最高のリンク品質が指定されます。 [FTM 応答の状態] が [成功] の場合、このフィールドは必須です。 |
+| [WDI_TLV_RTT](wdi-tlv-rtt.md) | UINT32 |   |   | 測定されたラウンドトリップ時間 (RTT) (秒単位)。 [FTM 応答の状態] が [成功] の場合、このフィールドは必須です。 |
+| [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md) | UINT32 |   |   | 指定された RTT 測定値に対する真の精度または予想される近さの次数。 単位は、のようになります。 詳細については、「 [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md)」を参照してください。 |
+| [WDI_TLV_RTT_VARIANCE](wdi-tlv-rtt-variance.md) | UINT64 |   |   | RTT を計算するために複数の測定値が使用された場合、このフィールドは、使用される測定値の統計的分散を提供します。 |
+| [WDI_TLV_LCI_REPORT_STATUS](wdi-tlv-lci-report-status.md) | [**WDI_LCI_REPORT_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_lci_report_status) |   |   | LCI レポートが要求された場合、このフィールドには状態の結果が表示されます。 成功した場合、次のフィールドが存在し、必須となります。 |
+| [WDI_TLV_LCI_REPORT_BODY](wdi-tlv-lci-report-body.md) | TLV\<LIST\<UINT8 > > |   |   | 9\.4.2.22.10 [802-11-2016](https://standards.ieee.org/standard/802_11-2016.html)のセクションで定義されている場所の構成情報 (lci) レポート。 lci サブ要素や、使用可能なその他のオプションのサブ要素が含まれます。 つまり、これは、測定レポート要素の測定レポートセクションです ( [802-11-2016 標準](https://standards.ieee.org/standard/802_11-2016.html)のセクション 9.4.2.22)。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
 | サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+| サポートされている最小のサーバー | WIN ENT LTSB 2016 Estonian 64 Bits |
+| Header | Wditypes |

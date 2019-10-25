@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ
-description: この拡張プロパティのコントロールは、メタデータのバッファーの要件のドライバーを照会するクライアントによって使用されます。
+title: KSK プロパティ\_CAMERACONTROL\_拡張\_メタデータ
+description: この拡張プロパティコントロールは、メタデータバッファー要件をドライバーに照会するためにクライアントによって使用されます。
 ms.assetid: 6196DFF6-050A-4916-A188-70A89B60B5EA
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_METADATA ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_METADATA ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d60f1b9a3652ddbc5bd211f3d0ece9e7a03ed1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79ffe0217b76c22106a16b61cd66a76c24d767f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356707"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841592"
 ---
-# <a name="kspropertycameracontrolextendedmetadata"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ
+# <a name="ksproperty_cameracontrol_extended_metadata"></a>KSK プロパティ\_CAMERACONTROL\_拡張\_メタデータ
 
-この拡張プロパティのコントロールは、メタデータのバッファーの要件のドライバーを照会するクライアントによって使用されます。 標準と共にドライバーに送信される[ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造が続く、 [ **KSCAMERA\_EXTENDEDPROP\_METADATAINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo)構造体。
+この拡張プロパティコントロールは、メタデータバッファー要件をドライバーに照会するためにクライアントによって使用されます。 これは、標準の[**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と共にドライバーに送信され、その後に[**KSCAMERA\_EXTENDEDPROP\_METADATAINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo)構造体が続きます。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -35,9 +35,9 @@ ms.locfileid: "63356707"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -49,24 +49,24 @@ ms.locfileid: "63356707"
 </tbody>
 </table>
 
-配置できるメタデータ フラグを次に、 **KSCAMERA\_EXTENDEDPROP\_ヘッダー。フラグ**フィールド。
+次に示すのは、 **KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できるメタデータフラグです。Flags**フィールド。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_METADATA_SYSTEMMEMORY                     0x0000000000000001  
 #define KSCAMERA_EXTENDEDPROP_METADATA_ALIGNMENTREQUIRED                0x0000000000000100
 ```
 
-**取得**呼び出し、ドライバーは次の処理します。
+**Get**呼び出しでは、ドライバーは次のことを行います。
 
-1.  入力**KSCAMERA\_EXTENDEDPROP\_ヘッダー。機能**0。
+1.  **KSCAMERA\_EXTENDEDPROP\_ヘッダーに塗りつぶします。** 0 の機能。
 
-2.  入力 KSCAMERA\_EXTENDEDPROP\_ヘッダー。上記の KSCAMERA のいずれかの組み合わせを使用したフラグ\_EXTENDEDPROP\_メタデータ\_*XXX*メタデータのメモリ要件を示すフラグ。
+2.  Fill KSCAMERA\_EXTENDEDPROP\_ヘッダーを入力します。上のいずれかの KSCAMERA\_EXTENDEDPROP\_METADATA\_*XXX*フラグを組み合わせたフラグを使用して、メタデータのメモリ要件を示します。
 
-3.  入力 KSCAMERA\_EXTENDEDPROP\_METADATAINFO します。目的のメモリ アラインメント BufferAlignment (KSCAMERA\_EXTENDEDPROP\_MetadataAlignment\_*Xxx*)。 参照してください、 [ **KSCAMERA\_EXTENDEDPROP\_MetadataAlignment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_extendedprop_metadataalignment)使用可能な値。
+3.  Fill KSCAMERA\_EXTENDEDPROP\_METADATAINFO です。必要なメモリアラインメントによる BufferAlignment (KSCAMERA\_EXTENDEDPROP\_MetadataAlignment\_*Xxx*)。 使用可能な値については、 [**KSCAMERA\_EXTENDEDPROP\_MetadataAlignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_metadataalignment)を参照してください。
 
-4.  入力**KSCAMERA\_EXTENDEDPROP\_METADATAINFO します。MaxMetadataBufferSize**必要なメタデータのバッファー サイズ (バイト単位)。
+4.  Fill **KSCAMERA\_EXTENDEDPROP\_METADATAINFO です。MaxMetadataBufferSize**には、必要なメタデータバッファーサイズ (バイト単位) を指定します。
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)メタデータ コントロールを使用する場合は、フィールドを構造体します。
+次の表には、メタデータコントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -75,34 +75,34 @@ ms.locfileid: "63356707"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>フレームには、メタデータが含まれている pin に関連付けられた暗証番号 (pin) の ID があります。 プレビュー、レコード、およびイメージの暗証番号 (pin) のいずれかを指定できます。</p></td>
+<td><p>これは、フレームにメタデータが含まれている pin に関連付けられた Pin ID である必要があります。 これには、プレビュー、レコード、およびイメージの pin を使用できます。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>Sizeof 必要があります (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_METADATAINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo)"><strong>KSCAMERA_EXTENDEDPROP_METADATAINFO</strong></a>)、</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_METADATAINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_metadatainfo)"><strong>KSCAMERA_EXTENDEDPROP_METADATAINFO</strong></a>) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>これは、最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>これは、最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>これにより、使用されておらず、0 にする必要があります。</p></td>
+<td><p>これは使用されておらず、0である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 任意の組み合わせをられます<strong>KSCAMERA_EXTENDEDPROP_METADATA_ALIGNMENTREQUIRED</strong>または KSCAMERA_EXTENDEDPROP_METADATA_SYSTEMMEMORY します。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これは、 <strong>KSCAMERA_EXTENDEDPROP_METADATA_ALIGNMENTREQUIRED</strong>または KSCAMERA_EXTENDEDPROP_METADATA_SYSTEMMEMORY の任意の組み合わせにすることができます。</p></td>
 </tr>
 </tbody>
 </table>

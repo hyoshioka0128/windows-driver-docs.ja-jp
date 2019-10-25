@@ -3,109 +3,58 @@ title: 追加のモニター ターゲット モードの取得
 description: 追加のモニター ターゲット モードの取得
 ms.assetid: fc0e2d43-8fc2-4757-ba77-f72a01e04343
 keywords:
-- WDK の表示モードをターゲットを監視します。
+- 監視対象モード WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9411b1974edde028566bf9bc30b8a608a1466f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9481aa19a9e238df3021b6587369df9de8b2678
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372783"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840524"
 ---
 # <a name="obtaining-additional-monitor-target-modes"></a>追加のモニター ターゲット モードの取得
 
 
-Windows 7 以降、新しい監視インターフェイスが使用可能な[ **DXGK\_モニター\_インターフェイス\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface_v2)します。 元にない 2 つの追加機能を備えています[ **DXGK\_モニター\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface)インターフェイス。
+Windows 7 以降では、新しい monitor インターフェイスを使用できるようになり、 [**DXGK\_monitor\_interface\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface_v2)が提供されます。 元の[**DXGK\_MONITOR\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface)インターフェイスにはない2つの追加関数が用意されています。
 
-[**pfnGetAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)
+[**pfnGetAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)
 
-[**pfnReleaseAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)
+[**pfnReleaseAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)
 
-これらの関数は、動的かつスケーラブルなディスプレイ ミニポート ドライバー VidPN ターゲットにターゲット モードを追加する方法を提供します。 比較の場合、DXGK\_モニター\_インターフェイスのインターフェイスには、ターゲット モードの静的一覧のみが用意されています。 これらの関数を使用して、ドライバーは、それを列挙する必要があります追加モードの一覧については、オペレーティング システムに照会できます。 ドライバーは、要求されたモードを検証し、モニターがサポートされていないものを拒否できます。
+これらの関数は、表示ミニポートドライバーで、ターゲットモードを VidPN ターゲットに追加するための動的でスケーラブルな方法を提供します。 一方、DXGK\_MONITOR\_INTERFACE インターフェイスでは、ターゲットモードの静的リストのみが提供されます。 これらの関数を使用すると、ドライバーはオペレーティングシステムに対して、列挙する必要がある追加モードの一覧を照会できます。 ドライバーは、要求されたモードを検証し、モニターがサポートしていないモードを拒否することができます。
 
-ディスプレイのミニポート ドライバーがドライバー実装への呼び出しを受信すると[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 、ターゲット モードを列挙するために関数
+ディスプレイミニポートドライバーが、ドライバーによって実装された[**DxgkDdiEnumVidPnCofuncModality**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)関数への呼び出しを受信し、ターゲットモードを列挙すると、
 
-次の手順を使用して、ターゲット モードの設定に互換性のあるタイミング情報を追加するにする必要があります。
+互換性のあるタイミング情報をターゲットモードセットに追加するには、次の手順を実行する必要があります。
 
-1.  呼び出すときに取得する追加のフィルター選択されたターゲット モードを返す[ **pfnGetAdditionalMonitorModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)します。 」の説明に従って、定期的なターゲット モードを返す必要がありますもこと[Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)します。
+1.  [**Pfngetadditionalmonitormodeset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_getadditionalmonitormodeset)を呼び出すときに取得する、フィルター処理された追加のターゲットモードを返します。 また、 [Cofunctional な VidPN ソースモードとターゲットモードの列挙](enumerating-cofunctional-vidpn-source-and-target-modes.md)に関するページで説明されているように、通常のターゲットモードも返される必要があります。
 
-2.  **PfnGetAdditionalMonitorModeSet**関数は、次を返します。
-    -   *ppAdditionalModesSet*で追加のタイミングのモード一覧[ **DXGK\_TARGETMODE\_詳細\_タイミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_targetmode_detail_timing)形式。
-    -   *pNumberModes、* タイミング モードの数。
+2.  **Pfngetadditionalmonitormodeset**関数は、次の値を返します。
+    -   *Ppadditionalmodes set*。 [**DXGK\_targetmode\_詳細\_タイミング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_targetmode_detail_timing)形式の追加のタイミングモードの一覧です。
+    -   *Pnumber モードは、* タイミングモードの数です。
 
-3.  これらのタイミングのモードのすべてを反復処理します。
+3.  これらのタイミングモードをすべて反復処理します。
 
-4.  すべてのタイミングを互換性のないモードと、通常モードへの呼び出し中に既に指定されたフィルターで除外*DxgkDdiEnumVidPnCofuncModality*します。
+4.  互換性のないすべてのタイミングモードと、 *DxgkDdiEnumVidPnCofuncModality*の呼び出し中に既に指定されていた標準モードをすべて除外します。
 
-5.  変換するために、残りのタイミング モード[ **D3DKMDT\_VIDPN\_ターゲット\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode)型。
+5.  残りのタイミングモードを[**D3DKMDT\_VIDPN\_ターゲット\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode)の種類に変換します。
 
-6.  VidPN 対象モードのセットには、残りのタイミング モードのすべてを追加します。
+6.  残りのすべてのタイミングモードを、VidPN ターゲットモードセットに追加します。
 
-7.  呼び出す[ **pfnReleaseAdditionalMonitorModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)から返されたタイミング モードの一覧を解放する**pfnGetAdditionalMonitorModeSet**します。
+7.  [**Pfnreleaseadditionalmonitormodeset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_releaseadditionalmonitormodeset)を呼び出して、 **pfnreleaseadditionalmonitormodeset**から返された追加のタイミングモードの一覧を解放します。
 
-ディスプレイのミニポート ドライバーでは、VidPN ソース モードのセットと、ターゲット モードが設定するためのハードウェアでサポートされている他のすべてのタイミング モードを追加する必要があります。 表示モードのマネージャー (DMM) は、モードの一覧を生成してモニタによってサポートされていない別のタイミング モードを含む、すべての表示モード モニターによってサポートされていないと表示されていますの raw モードの一覧にのみ表示されます。 かどうかどうか、モニターが接続されてに関係なく、ミニポート ドライバーがすべて VidPN ソースとターゲット モードはサポートされているセット モニタによってを報告する必要があります。 のみモニターでサポートされているモードを報告するドライバーには、現在接続しているモニターがサポートされていないその他のモードも報告する必要があります。
+表示ミニポートドライバーは、ハードウェアによってサポートされているすべての追加のタイミングモードを、VidPN ソースモードセットとターゲットモードセットに追加する必要があります。 表示モードマネージャー (DMM) によってモードの一覧が生成されると、モニターでサポートされていない、追加のタイミングモードを含むすべての表示モードがモニターでサポートされていないと表示され、raw モードの一覧にのみ表示されます。 モニターが接続されているかどうかに関係なく、ミニポートドライバーは、モニターでサポートされているすべての VidPN ソースおよびターゲットモードセットを報告する必要があります。 監視がサポートされているモードのみを報告するドライバーは、現在接続されているモニターでサポートされていない追加のモードも報告する必要があります。
 
 ## <a name="crt-monitors"></a>CRT モニター
 
-CRT モニターでは、DMM を追加するタイミングを他のターゲット モード、640 x 480 x 60 Hz の標準的なモニターが、ビデオ Electronics Standards Association (VESA) 仕様で定義されている*VESA と業界標準とコンピューターのディスプレイのガイドラインモニター タイミング バージョン 1.0*します。
+CRT モニターの場合、DMM は追加のターゲットモードとして、ビデオエレクトロニクス標準の関連付け (VESA) 仕様で定義されている 640 x 480 x 60Hz の標準モニターのタイミングを追加します。 *vesa と業界標準のコンピューターディスプレイモニターのガイドラインタイミングバージョン 1.0*。
 
-## <a name="dtv-and-hdtv-monitors"></a>デジタル テレビおよび HDTV モニター
+## <a name="dtv-and-hdtv-monitors"></a>DTV モニターと HDTV モニター
 
-デジタル テレビ (デジタル テレビ) と高精細テレビ (HDTV) のモニターは、DMM として追加モードの他のターゲットで必要なすべての標準のデジタル テレビ モード、 [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)自動のテスト グラフィックス-0043、次に示すようにテーブル。 ディスプレイのミニポート ドライバーでは、ディスプレイ ハードウェアでサポートされていないすべてのモードを排除する必要があります。
+デジタルテレビ (DTV) モニターと高解像度テレビ (HDTV) モニターの場合、DMM は、次の表に示すように[、自動テスト](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)グラフィックス0043で必要なすべての標準 DTV モードを追加のターゲットモードとして追加します。 ディスプレイミニポートドライバーは、ディスプレイハードウェアでサポートされていないすべてのモードを排除する必要があります。
 
-**59.95 Hz デジタル テレビ システム:**
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">デジタル テレビの形式</th>
-<th align="left">HDTV の形式</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>640 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
-<td align="left"><p>640 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>720(1440) x 480i 59.94 Hz、縦横比 4:3 x</p></td>
-<td align="left"><p>720(1440) x 480i 59.94 Hz、縦横比 4:3 x</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>720(1440) x 480i 59.94 Hz、縦横比 16:9 x</p></td>
-<td align="left"><p>720(1440) x 480i 59.94 Hz、縦横比 16:9 x</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>720 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
-<td align="left"><p>720 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>720 x 480 p x 59.94 Hz、縦横比 16:9</p></td>
-<td align="left"><p>720 x 480 p x 59.94 Hz、縦横比 16:9</p></td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"><p>1280 x 720 p x 59.94 Hz、縦横比 16:9</p></td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left"><p>1920 x1080i 59.94 Hz、縦横比 16:9 x</p></td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"><p>1920 x 1080 p x 59.94 Hz、縦横比 16:9</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-**50 Hz デジタル テレビ システム:**
+**59.95 hz DTV システム:**
 
 <table>
 <colgroup>
@@ -114,58 +63,109 @@ CRT モニターでは、DMM を追加するタイミングを他のターゲッ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">デジタル テレビの形式</th>
-<th align="left">HDTV の形式</th>
+<th align="left">DTV 形式</th>
+<th align="left">HDTV 形式</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>640 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
-<td align="left"><p>640 x 480 p x 59.94 Hz、縦横比 4:3</p></td>
+<td align="left"><p>640 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
+<td align="left"><p>640 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>720(1440) x 576i 50 Hz、縦横比 4:3 x</p></td>
-<td align="left"><p>720(1440) x 576i 50 Hz、縦横比 4:3 x</p></td>
+<td align="left"><p>720 (1440) x 480i x ゲーム (59.94 Hz、縦横比4:3</p></td>
+<td align="left"><p>720 (1440) x 480i x ゲーム (59.94 Hz、縦横比4:3</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>720(1440) x 576i 50 Hz、縦横比 16:9 x</p></td>
-<td align="left"><p>720(1440) x 576i 50 Hz、縦横比 16:9 x</p></td>
+<td align="left"><p>720 (1440) x 480i x ゲーム (59.94 Hz、縦横比16:9</p></td>
+<td align="left"><p>720 (1440) x 480i x ゲーム (59.94 Hz、縦横比16:9</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>720 x 576 p x 50 Hz、縦横比 4:3</p></td>
-<td align="left"><p>720 x 576 p x 50 Hz、縦横比 4:3</p></td>
+<td align="left"><p>720 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
+<td align="left"><p>720 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>720 x 576 p x 50 Hz、縦横比 16:9</p></td>
-<td align="left"><p>720 x 576 p x 50 Hz、縦横比 16:9</p></td>
+<td align="left"><p>720 x 480p x ゲーム (59.94 Hz、縦横比16:9</p></td>
+<td align="left"><p>720 x 480p x ゲーム (59.94 Hz、縦横比16:9</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>1280 x 720 p x 50 Hz、縦横比 16:9</p></td>
+<td align="left"><p>1280 x 720p x ゲーム (59.94 Hz、縦横比16:9</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="left"><p>1920 x 1080 i x 50 Hz、縦横比 16:9</p></td>
+<td align="left"><p>1920 x1080i x ゲーム (59.94 Hz、縦横比16:9</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>1920 x 1080 p x 50 Hz、縦横比 16:9</p></td>
+<td align="left"><p>1920 x 1080p x ゲーム (59.94 Hz、縦横比16:9</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-準拠している Windows Vista を継続する必要があります用に記述されたミニポート ドライバー、 [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)テストのグラフィックス 0043 を自動化し、これらのテーブルで指定した追加のデジタル テレビ モードを追加します。 Windows 7 用のドライバーは、新しいをサポートする必要があるだけ**pfnGetAdditionalMonitorModeSet**と**pfnReleaseAdditionalMonitorModeSet**関数。
+**50Hz DTV システム:**
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">DTV 形式</th>
+<th align="left">HDTV 形式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>640 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
+<td align="left"><p>640 x 480p x ゲーム (59.94 Hz、縦横比4:3</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>720 (1440) x 576i x 50Hz、縦横比4:3</p></td>
+<td align="left"><p>720 (1440) x 576i x 50Hz、縦横比4:3</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>720 (1440) x 576i x 50Hz、縦横比16:9</p></td>
+<td align="left"><p>720 (1440) x 576i x 50Hz、縦横比16:9</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>720 x 576p x 50Hz、縦横比4:3</p></td>
+<td align="left"><p>720 x 576p x 50Hz、縦横比4:3</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>720 x 576p x 50Hz、縦横比16:9</p></td>
+<td align="left"><p>720 x 576p x 50Hz、縦横比16:9</p></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><p>1280 x 720p x 50Hz、縦横比16:9</p></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><p>1920 x 1080i x 50Hz、縦横比16:9</p></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><p>1920 x 1080p x 50Hz、縦横比16:9</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+Windows Vista 用に記述されたミニポートドライバーは、引き続き自動テストグラフィックス-0043 に準拠し[ている必要](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)があります。また、これらのテーブルに指定されている追加の DTV モードを追加します。 Windows 7 向けに作成されたドライバーは、新しい**Pfngetadditionalmonitormodeset**関数と**pfngetadditionalmonitormodeset**関数をサポートするだけで済みます。
 
 
  
 ## <a name="see-also"></a>関連項目
 
-[ディスプレイ アダプターではサポートされて、VidPN があるかどうかを決定します。](determining-whether-a-vidpn-is-supported-on-a-display-adapter.md)
+[表示アダプターでの VidPN がサポートされているかどうかの確認](determining-whether-a-vidpn-is-supported-on-a-display-adapter.md)
 
-[Cofunctional VidPN ソースとターゲット モードを列挙します。](enumerating-cofunctional-vidpn-source-and-target-modes.md)
+[Cofunctional な VidPN ソースモードとターゲットモードを列挙しています](enumerating-cofunctional-vidpn-source-and-target-modes.md)
 
-[ビデオの存在するネットワーク用語](video-present-network-terminology.md)
+[動画に関するネットワークの用語](video-present-network-terminology.md)
 
 [VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)

@@ -3,19 +3,19 @@ title: ミニポート アダプター デバイス PnP イベント通知
 description: ミニポート アダプター デバイス PnP イベント通知
 ms.assetid: b9417d5d-1f99-480e-8021-e5dd02f28c36
 keywords:
-- プラグ アンド プレイ WDK ネットワー キング、PnP イベント通知の処理
-- ミニポート アダプタの WDK ネットワー キング、プラグ アンド プレイのイベント通知
-- アダプターの WDK ネットワー キング、プラグ アンド プレイのイベント通知
+- WDK ネットワークのプラグアンドプレイ、PnP イベント通知の処理
+- ミニポートアダプター WDK ネットワーク、プラグアンドプレイイベント通知
+- WDK ネットワークのアダプター、プラグアンドプレイイベント通知
 - MiniportDevicePnPEventNotify
-- イベントの WDK ネットワーク
+- イベント WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55b2190c45a3c91d40ee39eb171fed9b6d68b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8a9dda1cd5069dc5cbbd6b83df613dca753bbf2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373972"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844256"
 ---
 # <a name="miniport-adapter-device-pnp-event-notifications"></a>ミニポート アダプター デバイス PnP イベント通知
 
@@ -23,13 +23,13 @@ ms.locfileid: "67373972"
 
 
 
-NDIS ミニポート ドライバーを呼び出す[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)プラグ アンド プレイ (PnP) イベントのドライバーに通知します。
+NDIS は、ミニポートドライバーの[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)関数を呼び出して、ドライバープラグアンドプレイ (PnP) イベントを通知します。
 
-NDIS PnP イベントを示すイベント コードを提供します。 コードには、アダプターがシステムから予期せず削除されているか、ホスト システムの電源プロファイルが変更されたことを指定できます。
+NDIS には、PnP イベントを説明するイベントコードが用意されています。 このコードは、アダプターがシステムから予期せず削除されたこと、またはホストシステムの電源プロファイルが変更されたことを示している可能性があります。
 
-イベントのコードでは、電源プロファイルが変更されたことを示します、NDIS も変更の種類を示します。 システムがバッテリ電源で実行されているか、システムが AC 電源で実行されています。
+イベントコードによって電源プロファイルが変更されたことが示された場合は、NDIS によって変更の種類も示されます。 システムがバッテリ電源で動作しているか、システムが AC 電源で実行されています。
 
-ミニポート ドライバーはアダプターの設定を調整する必要がありますそれに応じて。
+ミニポートドライバーは、それに応じてアダプターの設定を調整する必要があります。
 
  
 

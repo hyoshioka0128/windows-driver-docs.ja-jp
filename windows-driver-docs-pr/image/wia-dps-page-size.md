@@ -1,9 +1,9 @@
 ---
 title: WIA\_DPS\_ページ\_サイズ
-description: WIA\_DPS\_ページ\_サイズ プロパティには、スキャンする現在選択されているページのサイズが含まれています。
+description: WIA の\_DPS\_ページ\_SIZE プロパティには、スキャン対象として現在選択されているページのサイズが含まれます。
 ms.assetid: 16e32b83-26b8-4283-a937-9fbbe77b42b8
 keywords:
-- WIA_DPS_PAGE_SIZE イメージング デバイス
+- WIA_DPS_PAGE_SIZE イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,33 +14,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1787d958a65628e4af4440795120ce8ab46c8d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d993a8a2c32659d715aeb61cd944d3791ede2f41
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383776"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840716"
 ---
-# <a name="wiadpspagesize"></a>WIA\_DPS\_ページ\_サイズ
+# <a name="wia_dps_page_size"></a>WIA\_DPS\_ページ\_サイズ
 
 
-WIA\_DPS\_ページ\_サイズ プロパティには、スキャンする現在選択されているページのサイズが含まれています。
+WIA の\_DPS\_ページ\_SIZE プロパティには、スキャン対象として現在選択されているページのサイズが含まれます。
 
 ## <span id="ddk_wia_dps_page_size_si"></span><span id="DDK_WIA_DPS_PAGE_SIZE_SI"></span>
 
 
-プロパティの種類:VT\_I4
+プロパティの型: VT\_I4
 
-有効な値 :WIA\_PROP\_一覧
+有効な値: WIA\_PROP\_LIST
 
-アクセス権:読み取り/書き込み
+アクセス権: 読み取り/書き込み
 
 <a name="remarks"></a>注釈
 -------
 
-アプリケーションをスキャンするページの寸法を選択するには、設定の WIA\_DPS\_ページ\_サイズ。 WIA ミニドライバーは、作成し、このプロパティを保持します。
+スキャンするページのサイズを選択するために、アプリケーションでは、WIA\_DPS\_ページ\_サイズに設定します。 このプロパティは、WIA ミニドライバーによって作成および管理されます。
 
-次の表では有効な定数[ **WIA\_IP\_ページ\_サイズ**](wia-ips-page-size.md)します。
+次の表では、 [**WIA\_ip\_ページ\_サイズ**](wia-ips-page-size.md)で有効な定数について説明します。
 
 <table>
 <colgroup>
@@ -56,68 +56,68 @@ WIA\_DPS\_ページ\_サイズ プロパティには、スキャンする現在�
 <tbody>
 <tr class="odd">
 <td><p>WIA_PAGE_A4</p></td>
-<td><p>ページ サイズは、8267 × 11692 (縦向き) です。</p></td>
+<td><p>ページサイズは8267× 11692 (縦向き) です。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_PAGE_CUSTOM</p></td>
-<td><p>値によって、ページ サイズが定義されている、 <a href="wia-dps-page-height.md" data-raw-source="[&lt;strong&gt;WIA_DPS_PAGE_HEIGHT&lt;/strong&gt;](wia-dps-page-height.md)"> <strong>WIA_DPS_PAGE_HEIGHT</strong> </a>と<a href="wia-dps-page-width.md" data-raw-source="[&lt;strong&gt;WIA_DPS_PAGE_WIDTH&lt;/strong&gt;](wia-dps-page-width.md)"> <strong>WIA_DPS_PAGE_WIDTH</strong> </a>プロパティ。</p></td>
+<td><p>ページサイズは、 <a href="wia-dps-page-height.md" data-raw-source="[&lt;strong&gt;WIA_DPS_PAGE_HEIGHT&lt;/strong&gt;](wia-dps-page-height.md)"><strong>WIA_DPS_PAGE_HEIGHT</strong></a>プロパティと<a href="wia-dps-page-width.md" data-raw-source="[&lt;strong&gt;WIA_DPS_PAGE_WIDTH&lt;/strong&gt;](wia-dps-page-width.md)"><strong>WIA_DPS_PAGE_WIDTH</strong></a>プロパティの値によって定義されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_PAGE_LETTER</p></td>
-<td><p>ページ サイズは、8500 × 11000 (縦向き) です。</p></td>
+<td><p>ページサイズは8500× 11000 (縦向き) です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-値、 [ **WIA\_IP\_向き**](wia-ips-orientation.md)プロパティは、現在選択されているページの向きを決定します。 WIA\_DPS\_ページ\_幅と WIA\_DPS\_ページ\_高さのプロパティ ページのサイズをインチの部分の 1/1000 でのレポート (. 001)。 これらのプロパティの値に相当する必要があります、 [ **WIA\_IP\_XEXTENT** ](wia-ips-xextent.md)と[ **WIA\_IP\_YEXTENT** ](wia-ips-yextent.md)プロパティで、ページの寸法をピクセル単位で含めることができます。
+[ [**WIA\_ip\_の向き**](wia-ips-orientation.md)] プロパティの値によって、現在選択されているページの向きが決まります。 WIA\_DPS\_ページ\_WIDTH および WIA\_DPS\_PAGE\_HEIGHT プロパティは、ページのディメンション (約1000インチ (001)) を報告します。 これらのプロパティには、ページのディメンションをピクセル単位で含む、 [**wia\_ips\_xextent**](wia-ips-xextent.md)および[**wia\_IP\_yextent**](wia-ips-yextent.md)プロパティと同等の値が必要です。
 
-WIA\_PROP\_リストに型指定された値は、WIA の有効な設定に依存する必要があります\_IP\_ORIENTATION プロパティ。 デバイスが、WIA 横向きのドキュメントをスキャンできないかどうか\_ページ\_A4 設定、WIA\_ページ\_A4 が、wia の有効な値の一覧に表示されない\_DPS\_ページ\_SIZE プロパティと WIA\_IP\_LANSCAPE に設定されます。
+WIA\_PROP\_リスト型の値は、WIA\_IPS\_ORIENTATION プロパティの有効な設定に依存している必要があります。 Wia\_ページ\_A4 を使用している横向きのドキュメント\_\_をデバイスでスキャンできない場合、wia では、wia の有効な値の一覧には、wia\_DPS\_PAGE\_SIZE プロパティの値が表示されません。\_IP\_方向は LANSCAPE に設定されています。
 
-アプリケーションは、WIA を設定する場合\_DPS\_ページ\_サイズ WIA 以外の値を\_ページ\_カスタム、ミニドライバーは、WIA の値を調整する必要があります\_DPS\_ページ\_幅と WIA\_DPS\_ページ\_インチの部分の 1/1000 のページのサイズの高さ (. 001)。 ミニドライバーは、WIA の値を調整する必要がありますも\_IP\_XEXTENT と WIA\_IP\_YEXTENT をページの寸法をピクセル単位で。
+アプリケーションで、wia\_DPS\_ページの\_サイズを WIA\_PAGE\_CUSTOM 以外の値に設定した場合、ミニドライバーは、WIA\_DPS\_ページ\_WIDTH および WIA の値を調整する必要があり\_DPS\_ページの高さをページのサイズに\_します (1/1000)。 また、ミニドライバーでは、WIA\_IP\_XEXTENT と WIA\_\_IP の値をページのサイズ (ピクセル単位) に調整する必要があります。
 
-場合、エクステントの設定 (WIA\_IP\_XEXTENT または WIA\_IP\_YEXTENT) が値に変更が*いない*現在のページ サイズ設定と一致、ミニドライバーを変更する必要があります、値、WIA の\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタム。 ミニドライバーは、WIA を変更する必要がありますも\_DPS\_ページ\_幅または WIA\_DPS\_ページ\_新しいエクステント設定に従っての高さ。
+エクステント設定 (WIA\_IP\_XEXTENT または WIA\_IP\_YEXTENT) が、現在のページサイズ設定と一致し*ない*値に変更された場合、ミニドライバーは、WIA\_DPS\_ページの値を変更する必要があり\_SIZE プロパティを WIA\_ページ\_カスタムに設定します。 また、ミニドライバーは、新しいエクステントの設定に従って、\_WIDTH または WIA\_DPS\_ページの高さを変更するために\_ページの\_を変更する必要があります。
 
-場合 WIA\_IP\_LANSCAPE に方向が設定されている、エクステントの設定は「反転します」。 たとえば、アプリケーションは、WIA を設定\_DPS\_ページ\_WIA をサイズ\_ページ\_、A4、ミニドライバーは WIA を設定する必要があります\_DPS\_ページ\_11692 の幅とWIA\_DPS\_ページ\_8267 の高さ。 (、ミニドライバーは、WIA を設定する必要がありますも\_IP\_XEXTENT と WIA\_IP\_YEXTENT 適宜)。その場合に注意してください WIA\_DPS\_ページ\_WIA にサイズが設定されている\_ページ\_カスタム、スキャンするページの範囲の大きさは向きの設定は使用されません。
+WIA\_IP\_の方向が LANSCAPE に設定されている場合、エクステントの設定は "反転" されます。 たとえば、アプリケーションで、WIA\_DPS\_ページの\_サイズを WIA\_ページ\_A4 に設定した場合、ミニドライバーでは、WIA\_DPS\_ページ\_幅を11692および WIA\_DPS に設定する必要があり\_ページの高さを8267に\_します。 (ミニドライバーでは、必要に応じて、\_XEXTENT と WIA\_\_IP の\_も WIA を設定する必要があります)。WIA\_DPS\_ページ\_サイズが WIA\_PAGE\_CUSTOM に設定されている場合は、[向き] 設定を使用して、スキャンするページのエクステントサイズを決定することはできません。
 
-ミニドライバーことを確認します、WIA\_IP\_選択領域を現在の ORIENTATION プロパティ意見に同意します。 アプリケーションには、WIA の値が変更された場合\_IP\_向きを現在選択されているページ サイズ、ミニドライバーの有効なものは、WIA の値を変更する必要があります\_DPS\_ページ\_ページ サイズ新しい向きの値がサポートされているサイズ。
+ミニドライバーは、WIA\_IP\_の向きプロパティが現在の選択領域と一致していることを確認する必要があります。 アプリケーションで、WIA の\_IP\_方向の値が、現在選択されているページサイズに対して無効なものに変更された場合、ミニドライバーは、\_\_\_WIA の値を変更する必要があります。新しい方向の値。
 
-アプリケーション設定、WIA 場合\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタムでは、現在の選択領域が影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要がありますの現在の設定から、 [ **WIA\_IP\_XPOS** ](wia-ips-xpos.md)と[ **WIA\_IP\_YPOS** ](wia-ips-ypos.md)プロパティ。 スキャナーの外にある選択領域の場合、ページ サイズ設定、ミニドライバー、WIA の値に自動的に調整する必要があります\_IP\_XPOS と WIA\_IP\_有効 YPOS プロパティ設定。 場合、WIA\_DPS\_ページ\_サイズと WIA\_IP\_向きプロパティは同時に設定し無効な組み合わせに適用されると、ミニドライバーが失敗する必要があります、アプリケーションの設定でエラーを返すことによって、 [ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)メソッド。
+アプリケーションで、WIA\_DPS\_ページの\_サイズ プロパティを WIA\_ ページに設定している場合\_カスタム を選択した場合、現在の選択領域は影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要があります。これは、 [**wia\_ips\_XPOS**](wia-ips-xpos.md)および[**wia\_ip\_YPOS**](wia-ips-ypos.md)プロパティの現在の設定から開始します。 ページサイズの設定によって、スキャナーのベッドの外にある選択領域が表示される場合、ミニドライバーは、WIA\_IPS\_XPOS および WIA\_IP\_YPOS プロパティの値を有効な設定に自動的に調整する必要があります。 WIA\_DPS\_ページ\_SIZE と WIA\_IP\_方向のプロパティが同時に設定され、それらが組み合わせて適用される場合は無効になるため、ミニドライバーは、[**IWiaMiniDrv::D rvvalidateitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)メソッドでエラーが発生しています。
 
-次の 4 つのコード例は次の WIA を表示する\_DPS\_ページ\_サイズ シナリオ。
+次の4つのコード例は、次の WIA\_DPS\_ページ\_サイズのシナリオを示しています。
 
-1.  ドライバーは、設定を報告します。
+1.  ドライバーは設定を報告します。
 
-2.  アプリケーション設定、WIA\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_文字。
+2.  アプリケーションは、WIA の\_DPS\_ページの\_SIZE プロパティを WIA\_ページの\_文字に設定します。
 
-3.  アプリケーションの設定、 [ **WIA\_IP\_向き**](wia-ips-orientation.md) LANSCAPE するプロパティ。
+3.  アプリケーションでは、 [**WIA\_IPS\_ORIENTATION**](wia-ips-orientation.md)プロパティを LANSCAPE に設定します。
 
-4.  アプリケーションの変更、 [ **WIA\_IP\_XEXTENT** ](wia-ips-xextent.md)プロパティ値を小さくします。
+4.  アプリケーションは、 [**WIA\_ip\_XEXTENT**](wia-ips-xextent.md)プロパティを小さい値に変更します。
 
-**例 1:設定がレポート、ミニドライバー**
+**例 1: ミニドライバーが設定を報告する**
 
-次のコード例で、ミニドライバーは、アプリケーション、WIA プロパティを設定する前にカスタム選択領域を設定します。 この場合は、選択範囲は、全体のフラット ベッドを表します。
+次のコード例では、アプリケーションが WIA プロパティを設定する前に、ミニドライバーによってカスタムの選択領域が設定されます。 この場合、選択領域は、フラットベッド全体を表します。
 
-WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_WIDTH を = = 11500 WIA_DPS_PAGE_HEIGHT 14000 WIA_IPS_ORIENTATION = 縦 WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT 1150 WIA_IPS_YEXTENT = 1400 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
+WIA_DPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_DPS_PAGE_WIDTH = 11500 WIA_DPS_PAGE_HEIGHT = 14000 WIA_IPS_ORIENTATION = 縦長 WIA_IPS_XPOS = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1150 WIA_IPS_YEXTENT = 1400 WIA_IPS_XRES = 100 WIA_IPS_YRES = 100
 
-**例 2:アプリケーション設定、WIA\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_文字**
+**例 2: アプリケーションは、WIA\_DPS\_ページの\_SIZE プロパティを WIA\_ページの\_文字に設定します。**
 
-WIA_DPS_PAGE_SIZE WIA_PAGE_LETTER WIA_DPS_PAGE_WIDTH を = = 8500 WIA_DPS_PAGE_HEIGHT 11000 WIA_IPS_ORIENTATION = 縦 WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT 850 WIA_IPS_YEXTENT = 1100 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
+WIA_DPS_PAGE_SIZE = WIA_PAGE_LETTER WIA_DPS_PAGE_WIDTH = 8500 WIA_DPS_PAGE_HEIGHT = 11000 WIA_IPS_ORIENTATION = 縦長 WIA_IPS_XPOS = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 850 WIA_IPS_YEXTENT = 1100 WIA_IPS_XRES = 100 WIA_IPS_YRES = 100
 
-**例 3:アプリケーション設定、WIA\_IP\_LANSCAPE に ORIENTATION プロパティ**
+**例 3: アプリケーションで WIA\_IPS\_ORIENTATION プロパティを LANSCAPE に設定する**
 
-物理ベッドは、当初は横方向にページを取得できる必要があります。
+物理的なベッドは、もともと横向きのページを取得できる必要があります。
 
-WIA_DPS_PAGE_SIZE WIA_PAGE_LETTER WIA_DPS_PAGE_HEIGHT = 11000 WIA_DPS_PAGE_WIDTH を = = 8500 WIA_IPS_ORIENTATION LANSCAPE WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1100 WIA_IPS_YEXTENT 850 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
+WIA_DPS_PAGE_SIZE = WIA_PAGE_LETTER WIA_DPS_PAGE_HEIGHT = 11000 WIA_DPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION = LANSCAPE WIA_IPS_XPOS = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1100 WIA_IPS_YEXTENT = 850 WIA_IPS_XRES = 100 WIA_IPS_YRES = 100
 
-**例 4:アプリケーションの変更、WIA\_IP\_XEXTENT プロパティ値を小さくする**
+**例 4: アプリケーションが WIA\_IPS\_XEXTENT プロパティを小さい値に変更する**
 
-次のコード例では、アプリケーションを変更、WIA\_IP\_1000 XEXTENT プロパティ。 仮定する必要があります、ミニドライバー WIA の新しい値\_IP\_XEXTENT が、WIA を無効になった\_DPS\_ページ\_SIZE プロパティと、WIA を変更する必要がありますので\_DPS\_ページ\_サイズ WIA を\_ページ\_カスタム。 ミニドライバーを調整する必要がありますも[ **WIA\_DPS\_ページ\_幅**](wia-dps-page-width.md)します。
+次のコード例では、アプリケーションによって、WIA\_IPS\_XEXTENT プロパティが1000に変更されます。 ミニドライバーは、wia\_IP\_XEXTENT の新しい値が WIA\_DPS\_PAGE\_SIZE プロパティに対して無効になっていると想定します。これにより、WIA\_DPS\_ページのサイズを変更する必要があります。WIA\_ ページで\_カスタム を設定します。 また、ミニドライバーは、 [**WIA\_DPS\_ページ\_幅**](wia-dps-page-width.md)を調整する必要があります。
 
-WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT を = = 10000 WIA_DPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION LANSCAPE WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT 850 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
+WIA_DPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT = 1万 WIA_DPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION = LANSCAPE WIA_IPS_XPOS = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT = 850 WIA_IPS_XRES = 100 WIA_IPS_YRES = 100
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -128,26 +128,26 @@ WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT を = = 10000 WIA_DPS_PAGE
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Microsoft Windows XP で使用できます。 Windows Vista 以降では、同じ WIA_IPS_PAGE_SIZE プロパティを使用します。</p></td>
+<td><p>Microsoft Windows XP で使用できます。 Windows Vista 以降の場合は、同一の WIA_IPS_PAGE_SIZE プロパティを使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wiadef.h (Wiadef.h を含む)</td>
+<td>Wiadef (Wiadef を含む)</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>関連項目
 
-[**IWiaMiniDrv::drvValidateItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)
+[**IWiaMiniDrv::d rvValidateItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)
 
-[**WIA\_DPS\_ページ\_高さ**](wia-dps-page-height.md)
+[**WIA\_DPS\_ページ\_の高さ**](wia-dps-page-height.md)
 
 [**WIA\_DPS\_ページ\_サイズ**](wia-dps-page-size.md)
 
 [**WIA\_DPS\_ページ\_幅**](wia-dps-page-width.md)
 
-[**WIA\_IP\_向き**](wia-ips-orientation.md)
+[**WIA\_IP\_方向**](wia-ips-orientation.md)
 
 [**WIA\_IP\_ページ\_サイズ**](wia-ips-page-size.md)
 
