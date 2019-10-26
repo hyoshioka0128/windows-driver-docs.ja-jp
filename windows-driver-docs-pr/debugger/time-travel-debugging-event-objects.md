@@ -1,35 +1,36 @@
 ---
-title: TTD イベント オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられているイベント モデル オブジェクトについて説明します。
+title: TTD イベントオブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連するイベントモデルオブジェクトについて説明します。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3511933227006dc5a5fe22b8c8da99a75dbfe887
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c5a84dc57edad2eebac21fb6185fafc5595cb2
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342047"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916218"
 ---
-# <a name="ttd-event-objects"></a>TTD イベント オブジェクト
-## <a name="description"></a>説明
-*TTD イベント*オブジェクトを使用して、タイム トラベルのトレース中に発生する重要なイベントに関する情報を提供します。
+# <a name="ttd-event-objects"></a>TTD イベントオブジェクト
 
-## <a name="properties"></a>プロパティ
+## <a name="description"></a>説明
+*TTD イベント*オブジェクトは、タイムトラベルトレース中に発生した重要なイベントに関する情報を提供するために使用されます。
+
+## <a name="properties"></a>[プロパティ]
 
 | プロパティ | 説明 |
 | --- | --- |
-| 種類 | 発生したイベントの種類について説明します。 設定可能な値は、次のとおりです。ThreadCreated、ThreadTerminated、ModuleLoaded、ModuleUnloaded、例外 |
+| タスクバーの検索ボックスに | 発生したイベントの種類を示します。 使用可能な値: ThreadCreated、Threadcreated、ModuleLoaded、Moduleloaded、例外 |
 
 ## <a name="children"></a>Children
 
 | オブジェクト | 説明 |
 | --- | --- |
-| 位置 | A[位置オブジェクト](time-travel-debugging-position-objects.md)イベントが発生した位置をについて説明します。 |
-| モジュール * | A[モジュール オブジェクト](time-travel-debugging-module-objects.md)ロードまたはアンロードされたモジュールに関する情報を格納します。 |
-| スレッド * | A[スレッド オブジェクト](time-travel-debugging-thread-objects.md)が作成または終了したスレッドに関する情報を格納します。 |
-| 例外 * | [例外オブジェクト](time-travel-debugging-exception-objects.md)ヒットが発生した例外に関する情報を格納します。 |
+| 位置 | イベントが発生した位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
+| 第 | 読み込まれたモジュールまたはアンロードされたモジュールに関する情報を格納している[モジュールオブジェクト](time-travel-debugging-module-objects.md)。 |
+| レッド | 作成または終了されたスレッドに関する情報を格納している[スレッドオブジェクト](time-travel-debugging-thread-objects.md)。 |
+| 例外的 | ヒットした例外に関する情報を格納している[例外オブジェクト](time-travel-debugging-exception-objects.md)。 |
 
-\* これらの子オブジェクトの存在は、イベントの種類によって異なります。
+これらの子オブジェクトの \* は、イベントの種類によって異なります。
 
 ## <a name="example-usage"></a>使用例
 
@@ -55,12 +56,8 @@ ms.locfileid: "63342047"
 ```
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

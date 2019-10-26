@@ -1,59 +1,58 @@
 ---
-title: TTD オブジェクトを呼び出す
-description: このセクションには、呼び出しがについて説明しますタイム トラベルのデバッグに関連するオブジェクトをモデル化します。
+title: TTD 呼び出しオブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられたモデルオブジェクトを呼び出す方法について説明します。
 ms.date: 09/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9300b2b472ac0a354f9e0a08f1c1f7c5d914a8de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b3576f064e7baddd963cedb6593c7b4ac96b4e4
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366188"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916220"
 ---
-# <a name="ttd-calls-objects"></a>TTD オブジェクトを呼び出す
+# <a name="ttd-calls-objects"></a>TTD 呼び出しオブジェクト
+
 ## <a name="description"></a>説明
-*TTD 呼び出し*オブジェクトを使用して、トレースの過程で発生する関数呼び出しに関する情報を提供します。
+*TTD calls*オブジェクトは、トレースの過程で発生する関数呼び出しに関する情報を提供するために使用されます。
 
 ## <a name="parameters"></a>パラメーター
 
 | プロパティ | 説明 |
 | --- | --- |
-| 関数。シンボル | 1 つ以上に二重引用符、コンマで区切って含まれています。 たとえば dx @$ cursession します。TTD です。呼び出し ("モジュール symbol1"、"モジュール。 symbol2",...)。 |
+| プロシージャ!SymbolName | コンマで区切られた、二重引用符で囲まれた1つ以上の。 たとえば、dx @ $cursession です。TTD.呼び出し ("module! symbol1", "module! symbol2",...) |
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>[プロパティ]
 
 | プロパティ | 説明 |
 | --- | --- |
-| EventType  |  イベントの種類。 これは"Call"TTD 呼び出しのすべてのオブジェクトです。 |
-| スレッド Id   |  OS スレッドは、要求を作成したスレッドの ID。 |
-| UniqueThreadId |   トレースの間でのスレッドの一意の ID。 プロセスの有効期間にわたって正規スレッド Id を再利用を取得できますが、UniqueThreadIds ことはできません。 |
-| 関数 | 関数のシンボリック名。 |
+| EventType  |  イベントの種類。 これは、すべての TTD 呼び出しオブジェクトの "呼び出し" です。 |
+| スレッド Id   |  要求を行ったスレッドの OS スレッド ID。 |
+| UniqueThreadId |   トレース全体のスレッドの一意の ID。 通常のスレッド Id は、プロセスの有効期間にわたって再利用できますが、UniqueThreadIds することはできません。 |
+| 関数 | 関数のシンボル名。 |
 | FunctionAddress | メモリ内の関数のアドレス。 |
-| 戻り値 | 関数の戻り値。 関数が void 型の場合、このプロパティは存在できません。 |
+| ReturnValue | 関数の戻り値。 関数に void 型がある場合、このプロパティは存在しません。 |
 
 ## <a name="children"></a>Children
 
 | オブジェクト | 説明 |
 | --- | --- |
-| パラメーター | 関数に渡されるパラメーターを含む配列。 要素の数は、関数の型シグネチャによって異なります。 |
-| TimeStart | A[位置オブジェクト](time-travel-debugging-position-objects.md)呼び出しの開始位置をについて説明します。 |
-| 時刻終了 | A[位置オブジェクト](time-travel-debugging-position-objects.md)呼び出しの最後の位置をについて説明します。 |
+| パラメーター [] | 関数に渡されたパラメーターを格納している配列。 要素の数は、関数の型シグネチャによって異なります。 |
+| TimeStart | 呼び出しの開始位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
+| TimeEnd | 呼び出しの終了位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
 
 ## <a name="remarks"></a>注釈
-タイム トラベルのデバッグは、Pdb で提供されるシンボル情報を使用して、関数とその型、戻り値の型と呼び出し規則のパラメーターの数を決定します。 シンボル情報が利用できないか、シンボルは、パブリック シンボル情報が制限されていること、クエリを実行することも可能です。 タイム トラベル クエリ エンジンはこのシナリオではいくつかの想定を行います。
-* 関数に次の 4 つの 64 ビット符号なし整数パラメーターがあります。
-* 戻り値は 64 ビット符号なし整数です。
-* 関数名は、固定文字列に設定されます。"UnknownOrMissingSymbols"
+タイムトラベルデバッグでは、Pdb に用意されているシンボル情報を使用して、関数のパラメーターの数とその型、戻り値の型、および呼び出し規約を決定します。 シンボル情報が使用できない場合、またはシンボルがパブリックシンボル情報に制限されている場合でも、クエリを実行できます。 このシナリオでは、タイムトラベルクエリエンジンによっていくつかの仮定が行われます。
+* 関数には、4 64 ビットの符号なし整数パラメーターがあります
+* 戻り値は、64ビットの符号なし整数です。
+* 関数名は固定文字列 "UnknownOrMissingSymbols" に設定されます。
 
-これらの前提は、適切なシンボル情報がない場合にクエリを許可します。 ただし、最適な結果を得るには、可能な場合は、完全な PDB シンボルを使用します。
+これらの前提により、十分なシンボル情報がない場合にクエリを実行できます。 ただし、最適な結果を得るには、可能であれば完全な PDB シンボルを使用します。
 
-呼び出し関数は、計算をトレースのサイズによって実行するときにかかることに注意してください。 CPU 使用率は、計算中にスパイクし、計算が進行していることを示す値は、タスク マネージャーでは、CPU 使用率を監視します。  クエリの結果は、照会された以前の呼び出しに対する後続のクエリが大幅に高速であるために、メモリにキャッシュされます。
-
-
+呼び出し関数は計算を行い、トレースのサイズによっては実行に時間がかかる場合があることに注意してください。 CPU 使用率は、計算中にスパイクし、タスクマネージャーでの CPU 使用率を監視して、計算が進行中であることを示します。  クエリの結果はメモリにキャッシュされるため、クエリを実行した呼び出しに対する後続のクエリは大幅に高速化されます。
 
 ## <a name="example-usage"></a>使用例
 
-この例は ucrtbase の呼び出しオブジェクトを示します。 initterm します。
+この例は、ucrtbase! initterm の呼び出しオブジェクトを示しています。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("ucrtbase!initterm")
@@ -70,15 +69,8 @@ ms.locfileid: "63366188"
         Parameters
 ```
 
+## <a name="see-also"></a>参照
 
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-
-## <a name="see-also"></a>関連項目
-
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
-
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

@@ -1,38 +1,34 @@
 ---
-title: デバッグ拡張機能の移動をタイム! コマンドの配置
-description: '! 位置の拡張機能がアクティブなすべてのスレッドを現在の位置を含むを表示します。'
+title: タイムトラベルデバッグ拡張機能! 位置コマンド
+description: '! 位置拡張には、現在のすべてのスレッド (現在の位置を含む) が表示されます。'
 keywords:
-- Windows デバッグ位置
+- Windows のデバッグを配置する
 ms.date: 09/21/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 036d7057fefec0a39780ddad259079c81ac73605
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c04651c8a9c416982720a15b7b3aa2d10bef3396
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327070"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916209"
 ---
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png) 
-
 # <a name="positions"></a>! 位置
 
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png) 
 
-**! 位置**拡張機能がアクティブなすべてのスレッドをタイム トラベルのトレースで現在の位置を含むを表示します。
-
+**! 位置**拡張は、タイムトラベルトレースの現在の位置を含む、すべてのアクティブなスレッドを表示します。
 
 ```dbgcmd
 !positions 
 ```
 
-
-## <a name="span-idddkanalyzedbgspanspan-idddkanalyzedbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>パラメーター
+## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>パラメータ
 
 なし
 
-
 ## <a name="example"></a>例
 
-この出力は、4 つのスレッドを示しています。 3824 は現在のスレッドによって示される**>** 左の列にします。
+この出力は、4つのスレッドを示しています。 スレッド3824は、左側の列の **>** によって示される現在のスレッドです。
 
 ```dbgcmd
 0:000> !positions
@@ -42,26 +38,14 @@ ms.locfileid: "63327070"
  Thread ID=0x2DC4 - Position: 401:0
 ```
 
-
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-ttdext.dll
+ttdext
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
-
+この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
-[時間の移動 [デバッグ] - 拡張機能のコマンド](time-travel-debugging-extension-commands.md)
-
-
- 
-
- 
-
-
-
-
-
+[タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)

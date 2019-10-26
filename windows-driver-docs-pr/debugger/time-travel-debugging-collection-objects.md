@@ -1,20 +1,20 @@
 ---
-title: TTD コレクション オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられている範囲のモデル オブジェクトについて説明します。
+title: TTD Collection オブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられている範囲モデルオブジェクトについて説明します。
 ms.date: 09/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfe3301d049ad5b63e77b2da117332b2d3b680d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd66ce58d402f6462db2a245aee607ec99e712af
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379149"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916223"
 ---
-> [!NOTE]
-> このトピックの情報は暫定的です。 ドキュメントの今後のリリースでは、最新の情報が行われます。 
->
+# <a name="ttd-collection-objects"></a>TTD Collection オブジェクト
 
-# <a name="ttd-collection-objects"></a>TTD コレクション オブジェクト
+> [!NOTE]
+> このトピックの情報は暫定的なものです。 更新された情報は、ドキュメントの今後のリリースで提供される予定です。
+>
 
 ## <a name="description"></a>説明
 
@@ -23,39 +23,35 @@ ms.locfileid: "63379149"
 
 | オブジェクト | 説明 |
 | --- | --- |
-| MinPosition | A[位置オブジェクト](time-travel-debugging-position-objects.md)範囲に関連する最初の位置をについて説明します。 |
+| MinPosition | 範囲に関連する最も早い位置を示す[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
 
+### <a name="ttd-collection-object-methods"></a>TTD Collection オブジェクトのメソッド
 
+**Contains (otherstring)** -文字列に指定されたサブ文字列が含まれているかどうかを返すメソッドを返します。
 
+**EndsWith (OtherString)** -文字列が指定された文字列で終わるかどうかを返すメソッド。
 
-### <a name="ttd-collection-object-methods"></a>TTD コレクション オブジェクトのメソッド
+**IndexOf (OtherString)** -指定した文字列内で最初に見つかった部分文字列のインデックスを返すメソッド。  このような発生が存在しない場合は、-1 が返されます。
 
+**LastIndexOf (OtherString)** -指定された文字列内の部分文字列が最後に出現する位置のインデックスを返すメソッド。  このような発生が存在しない場合は、-1 が返されます。
 
-**Contains(OtherString)** -文字列が指定したサブ文字列を含むかどうかを返すメソッド。
+**Length** -文字列の長さを返すプロパティ。
 
-**EndsWith(OtherString)** -文字列が指定された文字列で終わるかどうかを返すメソッド。
+**Padleft (TotalWidth)** -文字列の左側にスペースを挿入して、指定した幅に文字列を配置するメソッドです。
 
-**IndexOf(OtherString)** -特定の文字列の部分文字列の最初に見つかった位置のインデックスを返すメソッド。  このような出現が存在しない場合は、-1 が返されます。
+**PadRight (TotalWidth)** -文字列の右側にスペースを挿入することによって、指定した幅に文字列を配置するメソッド。
 
-**LastIndexOf(OtherString)** -特定の文字列の部分文字列の最後に見つかった位置のインデックスを返すメソッド。  このような出現が存在しない場合は、-1 が返されます。
+**Remove (StartPos, [Length])** -文字列の指定した位置から始まるすべての文字を削除するメソッド。  省略可能な長さが指定されている場合は、開始位置よりも多くの文字が削除されます。
 
-**長さ**-文字列の長さを返すプロパティ。
+**Replace (searchstring, replacestring)** -指定された検索文字列の出現をすべて置換文字列に置き換えるメソッド。
 
-**PadLeft(TotalWidth)** -メソッドする権利は、文字列の左側にあるスペースが挿入された幅を指定する文字列を配置します。
+**StartsWith (OtherString)** -文字列が指定された文字列で始まるかどうかを返すメソッド。
 
-**PadRight(TotalWidth)** -どの左寄せで幅を指定する文字列、文字列の右側にあるスペースが挿入されたメソッド。
+**Substring (StartPos, [Length])** -指定した文字列から部分文字列を取得するメソッド。  部分文字列は、指定された文字位置から開始し、文字列の末尾または必要に応じて指定された長さに続きます。
 
-**(StartPos [長さ]) を削除**-文字列から指定した位置で始まるすべての文字を削除するメソッド。  オプションの長さを指定した場合、開始位置より後に多くの文字を削除することだけです。
+**ToLower ()** -この文字列のコピーを小文字に変換して返します。
 
-**(SearchString ReplaceString) を置き換える**-メソッドごとに出現する指定した検索文字列を置換文字列に置き換えます。
-
-**StartsWith(OtherString)** -、文字列が、指定された文字列で始まるかどうかを返すメソッド。
-
-**部分文字列 (StartPos、[長さ])** -メソッドが、指定した文字列から部分文字列を取得します。  部分文字列は、指定した文字位置から開始し、オプションで指定された長さまたは文字列の末尾に続行します。
-
-**ToLower()** -この文字列のコピーを小文字に変換して返します。
-
-**ToUpper()** -この文字列のコピーを大文字に変換して返します。
+**ToUpper ()** -この文字列のコピーを大文字に変換して返します。
 
 ## <a name="example-usage"></a>使用例
 
@@ -63,12 +59,8 @@ ms.locfileid: "63379149"
 
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

@@ -1,29 +1,30 @@
 ---
 title: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
-description: クエリ時にデータ モデルを使用する方法を説明するトレースを移動します。
+description: このセクションでは、データモデルを使用してタイムトラベルトレースをクエリする方法について説明します。
 ms.date: 04/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: be0e207ee0588cc4e4c13fbb173d8c37b44e6a75
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 80012c5dc98ad8c049ef18fb53158857ff9c4b2a
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106400"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916185"
 ---
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
+# <a name="introduction-to-time-travel-debugging-objects"></a>タイムトラベルデバッグオブジェクトの概要
 
-# <a name="introduction-to-time-travel-debugging-objects"></a>オブジェクトのタイム トラベルのデバッグの概要
-クエリ時にデータ モデルを使用する方法を説明するトレースを移動します。 これは、タイム トラベルのトレースにキャプチャされるコードの詳細については、上記のような質問に回答する強力なツールです。
-* どのような例外は、トレース内にありますか。
-* トレース内で時間のどの時点では固有のコード モジュールを読み込むか。
-* ときにスレッドを作成/終了したトレースにしますか。
-* トレース内の実行時間が最長のスレッドとは
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
-データを追加する TTD 拡張機能は、*セッション*と*プロセス*データ モデル オブジェクト。 TTD データ モデルのオブジェクトを介してアクセスできる、 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)コマンド、WinDbg プレビューのモデルの windows で JavaScript とC++します。 タイム トラベルのトレースをデバッグするときに、TTD 拡張機能が自動的に読み込まれます。
+このセクションでは、データモデルを使用してタイムトラベルトレースをクエリする方法について説明します。 これは、タイムトラベルトレースでキャプチャされたコードに関して、次のような質問に回答するための強力なツールです。
+* トレースにはどのような例外がありますか。
+* トレースの特定の時点で、特定のコードモジュールが読み込まれました。
+* トレースでスレッドを作成または終了したのはいつですか?
+* トレースで実行中の最長スレッドは何ですか?
+
+*セッション*および*プロセス*データモデルオブジェクトにデータを追加する TTD 拡張機能があります。 TTD data model オブジェクトには、 [dx (Display Debugger Object Model Expression)](dx--display-visualizer-variables-.md)コマンド、WinDbg Preview のモデルウィンドウ、JavaScript およびをC++使用してアクセスできます。 TTD 拡張機能は、タイムトラベルトレースのデバッグ時に自動的に読み込まれます。
 
 ## <a name="process-objects"></a>オブジェクトの処理
 
-追加されたプライマリ オブジェクト*プロセス*でオブジェクトが見つかりません、 *TTD*からいずれかの名前空間*プロセス*オブジェクト。 たとえば、`@$curprocess.TTD` と記述します。
+*プロセス*オブジェクトに追加されたプライマリオブジェクトは、*プロセス*オブジェクトの*TTD*名前空間にあります。 たとえば、`@$curprocess.TTD` と記述します。
 
 ```dbgcmd
 :000> dx @$curprocess.TTD
@@ -34,24 +35,24 @@ ms.locfileid: "65106400"
     SetPosition      [Sets the debugger to point to the given position on this process.]
 ```
 
-LINQ クエリとデバッガー オブジェクトの操作方法の概要については、次を参照してください。[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
+LINQ クエリおよびデバッガーオブジェクトの操作に関する一般的な情報については、「[デバッガーオブジェクトでの linq の使用](using-linq-with-the-debugger-objects.md)」を参照してください。
 
-### <a name="properties"></a>プロパティ
+### <a name="properties"></a>[プロパティ]
 
 | オブジェクト | 説明 |
 | --- | --- |
-| 有効期間 | A [TTD range オブジェクト](time-travel-debugging-range-objects.md)全体のトレースの有効期間を記述します。 |
-| スレッド数 | コレクションを含む[TTD スレッド オブジェクト](time-travel-debugging-thread-objects.md)トレースの有効期間中のすべてのスレッドの 1 つ。 |
-| イベント | コレクションを含む[TTD イベント オブジェクト](time-travel-debugging-event-objects.md)トレースにイベントごとに 1 つ。 |
+| 最短 | トレース全体の有効期間を記述する[TTD range オブジェクト](time-travel-debugging-range-objects.md)。 |
+| スレッド数 | トレースの有効期間全体にわたってスレッドごとに1つずつ、 [TTD thread オブジェクト](time-travel-debugging-thread-objects.md)のコレクションを格納します。 |
+| イベント | トレース内のすべてのイベントに対して1つずつ、 [TTD イベントオブジェクト](time-travel-debugging-event-objects.md)のコレクションを格納します。 |
 
 ### <a name="methods"></a>メソッド
 
 | メソッド | 説明 |
 | --- | --- |
-| SetPosition() | 入力として N:N 形式で 0 と 100 または文字列の間の整数を受け取り、その場所にトレースをジャンプします。 参照してください[! tt](time-travel-debugging-extension-tt.md)詳細についてはします。|
+| SetPosition () | 0 ~ 100 の整数、または N:N 形式の文字列を入力として受け取り、トレースをその場所に移動します。 詳細については、「 [! tt](time-travel-debugging-extension-tt.md) 」を参照してください。|
 
-## <a name="session-objects"></a>セッション オブジェクト
-追加されたプライマリ オブジェクト*セッション*でオブジェクトが見つかりません、 *TTD*からいずれかの名前空間*セッション*オブジェクト。 たとえば、`@$cursession.TTD` と記述します。
+## <a name="session-objects"></a>セッションオブジェクト
+*セッション*オブジェクトに追加されたプライマリオブジェクトは、*セッション*オブジェクトの*TTD*名前空間にあります。 たとえば、`@$cursession.TTD` と記述します。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD
@@ -67,21 +68,21 @@ LINQ クエリとデバッガー オブジェクトの操作方法の概要に�
 
 
 > [!NOTE]
-> 一部のオブジェクトと TTDAnalyze によって追加された拡張機能の内部の関数に使用されるメソッドがあります。 名前空間のすべては記載されていて、現在の名前空間には時間が経ちます。
+> TTDAnalyze によって追加されたオブジェクトとメソッドの中には、拡張機能の内部関数に使用されるものがあります。 すべての名前空間が文書化されているわけではなく、現在の名前空間は時間の経過と共に進化します。
 >
 
 ### <a name="methods"></a>メソッド
 
 | メソッド | 説明 |
 | --- | --- |
-| Data.Heap() | コレクション[オブジェクトのヒープ](time-travel-debugging-heap-objects.md)トレース中に割り当てることができます。 この関数は関数を実行するときにかかるため、計算を行うことに注意してください。|
-| Calls() | コレクションを返します[オブジェクトを呼び出す](time-travel-debugging-calls-objects.md)入力文字列に一致します。 入力文字列には、ワイルドカードを含めることができます。 この関数は関数を実行するときにかかるため、計算を行うことに注意してください。  |
-| Memory() | これを beginAddress、endAddress および dataAccessMask パラメーターを受け取りのコレクションを返すメソッドは、[メモリ オブジェクト](time-travel-debugging-memory-objects.md)します。 この関数は関数を実行するときにかかるため、計算を行うことに注意してください。  |
+| データヒープ () | トレース中に割り当てられた[ヒープオブジェクト](time-travel-debugging-heap-objects.md)のコレクションです。 これは計算を実行する関数であるため、実行には時間がかかります。|
+| 呼び出し () | 入力文字列に一致する[呼び出しオブジェクト](time-travel-debugging-calls-objects.md)のコレクションを返します。 入力文字列には、ワイルドカードを含めることができます。 これは計算を実行する関数であるため、実行には時間がかかります。  |
+| メモリ () | これは、beginAddress、endAddress、および dataAccessMask パラメーターを受け取り、[メモリオブジェクト](time-travel-debugging-memory-objects.md)のコレクションを返すメソッドです。 これは計算を実行する関数であるため、実行には時間がかかります。  |
 
 
-## <a name="sorting-query-output"></a>クエリの出力の並べ替え
+## <a name="sorting-query-output"></a>クエリ出力の並べ替え
 
-1 つまたは複数の列で、クエリから返される行の並べ替えに OrderBy() メソッドを使用します。 この例は、TimeStart で昇順に並べ替えます。
+OrderBy () メソッドを使用して、クエリから返された行を1つ以上の列で並べ替えます。 この例では、TimeStart で昇順に並べ替えます。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").OrderBy(c => c.TimeStart)
@@ -110,9 +111,9 @@ LINQ クエリとデバッガー オブジェクトの操作方法の概要に�
         Parameters  
 ```
 
-データ モデル オブジェクトの追加の深さは、r2 の再帰レベルのオプションを表示するには、使用されます。 Dx コマンド オプションに関する詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。
+データモデルオブジェクトの詳細を表示するには、-r2 の再帰レベルオプションを使用します。 Dx コマンドオプションの詳細については、「 [dx (デバッガーオブジェクトモデル式の表示)](dx--display-visualizer-variables-.md)」を参照してください。
 
-この例は、TimeStart で降順に並べ替えます。
+この例では、TimeStart で降順に並べ替えます。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").OrderByDescending(c => c.TimeStart)
@@ -141,9 +142,9 @@ LINQ クエリとデバッガー オブジェクトの操作方法の概要に�
         Parameters    
 ```
 
-## <a name="specifying-elements-in-a-query"></a>クエリで要素の指定
+## <a name="specifying-elements-in-a-query"></a>クエリでの要素の指定
 
-特定の要素を選択するには、クエリに、さまざまな修飾子を追加できます。 たとえば、クエリには、"kernelbase を含む最初の呼び出しが表示されます。!GetLastError"。
+特定の要素を選択するには、さまざまな修飾子をクエリに追加できます。 たとえば、クエリでは、"を含む最初の呼び出しが表示されます。GetLastError "。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Calls("kernelbase!GetLastError").First()
@@ -160,11 +161,11 @@ LINQ クエリとデバッガー オブジェクトの操作方法の概要に�
     Parameters    
 ```
 
-## <a name="filtering-in-a-query"></a>クエリでフィルター処理
+## <a name="filtering-in-a-query"></a>クエリでのフィルター処理
 
-Select() メソッドを使用して、表示され、列を変更する列の表示名を選択します。
+Select () メソッドを使用して、表示する列を選択し、列の表示名を変更します。
 
-この例では、戻り値がゼロでないと、選択時間とエラーのカスタム表示名を持つ TimeStart と戻り値の列を表示する行を返します。
+この例では、戻り値が0ではない行を返し、TimeStart 列と戻り値の列に Time と Error のカスタム表示名を指定して表示します。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c => c.ReturnValue != 0).Select(c => new { Time = c.TimeStart, Error = c.ReturnValue })
@@ -184,7 +185,7 @@ Select() メソッドを使用して、表示され、列を変更する列の�
 
 ## <a name="grouping"></a>グループ化
 
-この例のグループの構造化された結果を使用して分析を実行するのにクエリによって返されるデータのエラー番号によって時間位置をグループ化するのにには、GroupBy() メソッドを使用します。
+GroupBy () メソッドを使用して、クエリによって返されるデータをグループ化し、構造化された結果を使用して分析を実行します。この例では、時間の場所をエラー番号でグループ化します。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c => c.ReturnValue != 0).Select(c => new { Time = c.TimeStart, Error = c.ReturnValue }).GroupBy(x => x.Error)
@@ -203,17 +204,17 @@ Select() メソッドを使用して、表示され、列を変更する列の�
 ...
 ```
 
-## <a name="assigning-result-of-a-query-to-a-variable"></a>クエリの結果を変数に代入
+## <a name="assigning-result-of-a-query-to-a-variable"></a>変数へのクエリの結果の割り当て
 
-クエリの結果を変数に代入するには、この構文を使用して、 `dx @$var = <expression>`
+この構文を使用して、クエリの結果を変数に割り当て `dx @$var = <expression>`
 
-この例では、クエリの結果を myResults に割り当てます
+この例では、クエリの結果を myResults に割り当てます。
 
 ```dbgcmd
 dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c => c.ReturnValue != 0).Select(c => new { Time = c.TimeStart, Error = c.ReturnValue })
 ```
 
--G グリッドのオプションを使用して、新しく作成された変数を表示するのにには、dx コマンドを使用します。 Dx コマンドのオプションの詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。
+-G grid オプションを使用して、新しく作成された変数を表示するには、dx コマンドを使用します。 Dx コマンドオプションの詳細については、「 [dx (デバッガーオブジェクトモデル式の表示)](dx--display-visualizer-variables-.md)」を参照してください。
 
 ```dbgcmd
 0:000> dx -g @$myResults
@@ -232,9 +233,9 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
 
 ## <a name="examples"></a>例
 
-### <a name="querying-for-exceptions"></a>例外のクエリを実行します。
+### <a name="querying-for-exceptions"></a>例外のクエリ
 
-この LINQ クエリを使用して、 [TTD です。イベント オブジェクト](time-travel-debugging-event-objects.md)トレースにすべての例外を表示します。
+この LINQ クエリでは、TTD を使用し[ます。](time-travel-debugging-event-objects.md)トレース内のすべての例外を表示するイベントオブジェクト。
 
 ```dbgcmd
 0:000> dx @$curprocess.TTD.Events.Where(t => t.Type == "Exception").Select(e => e.Exception)
@@ -244,9 +245,9 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
     [0x2]            : Exception 0xE06D7363 of type CPlusPlus at PC: 0X777F51D0
 ```
 
-### <a name="querying-for-specific-api-calls"></a>特定の API 呼び出しのクエリを実行します。
+### <a name="querying-for-specific-api-calls"></a>特定の API 呼び出しのクエリ
 
-使用[TTD です。呼び出しオブジェクト](time-travel-debugging-calls-objects.md)固有の API 呼び出しを照会します。 呼び出すときに、この例ではエラーが発生しましたが*user32!MessageBoxW*、メッセージ ボックスを表示する Windows API。 関数の開始時刻を並べ替え、および最後の呼び出しを選択し MessageBoxW に対するすべての呼び出しを一覧表示。
+TTD を使用[します。](time-travel-debugging-calls-objects.md)特定の API 呼び出しを照会するためにオブジェクトを呼び出します。 この例では、user32.dll! を呼び出すときにエラーが発生しました *。* メッセージボックスを表示するための WINDOWS API である MessageBoxW。 MessageBoxW のすべての呼び出しを一覧表示し、関数の開始時刻で並べ替え、最後の呼び出しを選択します。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Calls("user32!MessageBoxW").OrderBy(c => c.TimeStart).Last()
@@ -264,9 +265,9 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
 
 ```
 
-### <a name="querying-for-the-load-event-of-a-specific-module"></a>特定のモジュールの読み込みイベントのクエリを実行します。
+### <a name="querying-for-the-load-event-of-a-specific-module"></a>特定のモジュールの読み込みイベントを照会する
 
-まず、使用して、 [lm (読み込まれたモジュールの一覧)](lm--list-loaded-modules-.md)読み込まれたモジュールを表示するコマンド。
+最初に、 [lm (リスト読み込みモジュール)](lm--list-loaded-modules-.md)コマンドを使用して、読み込まれたモジュールを表示します。
 
 ```dbgcmd
 0:000> lm
@@ -282,7 +283,7 @@ start    end        module name
 77070000 771fe000   ntdll      (private pdb symbols)
 ```
 
-Dx の次のコマンドを使用して、トレースには、どのような位置にある特定のモジュールが読み込まれた、ntdll などを参照してください。
+次に、次の dx コマンドを使用して、特定のモジュールが読み込まれたトレースの位置 (ntdll など) を確認します。
 
 ```dbgcmd
 dx @$curprocess.TTD.Events.Where(t => t.Type == "ModuleLoaded").Where(t => t.Module.Name.Contains("ntdll.dll")) 
@@ -290,20 +291,20 @@ dx @$curprocess.TTD.Events.Where(t => t.Type == "ModuleLoaded").Where(t => t.Mod
     [0x0]            : Module Loaded at position: A:0 
 ```
 
-この LINQ クエリでは、特定のモジュール読み込みイベントが表示されます。
+この LINQ クエリは、特定のモジュールの読み込みイベントを表示します。
 
 ```dbgcmd
 0:000> dx @$curprocess.TTD.Events.Where(t => t.Type == "ModuleUnloaded").Where(t => t.Module.Name.Contains("ntdll.dll")) 
 @$curprocess.TTD.Events.Where(t => t.Type == "ModuleUnloaded").Where(t => t.Module.Name.Contains("ntdll.dll"))                 
     [0x0]            : Module Unloaded at position: FFFFFFFFFFFFFFFE:0
 ```
-FFFFFFFFFFFFFFFE:0 のアドレストレースの最後を示します。 
+FFFFFFFFFFFFFFFE のアドレス: 0トレースの終了を示します。 
 
 
 
-### <a name="querying-for-all-of-the-error-checks-in-the-trace"></a>トレースに、エラーのすべてのクエリを実行するを確認します。
+### <a name="querying-for-all-of-the-error-checks-in-the-trace"></a>トレース内のすべてのエラーチェックを照会する
 
-このコマンドを使用して、エラーの数、すべてのトレースのエラー チェックの順に並べ替えます。
+このコマンドを使用すると、トレース内のエラーチェックのすべてをエラー数で並べ替えることができます。
 
 ```dbgcmd
 0:000> dx -g @$cursession.TTD.Calls("kernelbase!GetLastError").Where( x=> x.ReturnValue != 0).GroupBy(x => x.ReturnValue).Select(x => new { ErrorNumber = x.First().ReturnValue, ErrorCount = x.Count()}).OrderByDescending(p => p.ErrorCount),d
@@ -318,9 +319,9 @@ FFFFFFFFFFFFFFFE:0 のアドレストレースの最後を示します。
 = [87]            - 87              - 383        =
 ```
 
-### <a name="querying-for-the-time-position-in-the-trace-when-threads-were-created"></a>スレッドが作成されたときに、トレースの時間位置のクエリを実行します。
+### <a name="querying-for-the-time-position-in-the-trace-when-threads-were-created"></a>スレッドが作成されたときのトレース内の時間位置を照会する
 
-この dx コマンドを使用して、グリッド形式でトレースにすべてのイベントを表示する (-g)。
+この dx コマンドを使用して、トレース内のすべてのイベントをグリッド形式 (-g) で表示します。
 
 ```dbgcmd
 0:000> dx -g @$curprocess.TTD.Events
@@ -354,9 +355,9 @@ FFFFFFFFFFFFFFFE:0 のアドレストレースの最後を示します。
 ==================================================================================================================================================================================================
 ```
 
-使用して列のいずれかをクリックして、+ 記号を出力を並べ替えます。
+\+ 記号を含む任意の列をクリックすると、出力が並べ替えられます。
 
-スレッドが作成されたときに、時間位置では、トレースで、グリッド形式で表示するには、この LINQ クエリを使用 (型"ThreadCreated"= =)。
+この LINQ クエリを使用して、スレッドが作成されたときのトレース内の時間の位置 (型 = = "ThreadCreated") をグリッド形式で表示します。
 
 ```dbgcmd
 dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => t.Thread) 
@@ -369,7 +370,7 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
 ===========================================================================================================
 ```
 
-スレッドが終了したときに、グリッド形式で表示、トレース内に位置する場合は、この LINQ クエリを使用 (型"ThreadTerminated"= =)。
+この LINQ クエリを使用して、スレッドが終了したときのトレース内の時間の位置 (型 = = "ThreadTerminated") をグリッド形式で表示します。
 
 ```dbgcmd
 0:000> dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadTerminated").Select(t => t.Thread) 
@@ -382,9 +383,9 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
 ===========================================================================================================
 ```
 
-### <a name="sorting-output-to-determine-the-longest-running-threads"></a>最長の実行中のスレッドを決定する出力の並べ替え
+### <a name="sorting-output-to-determine-the-longest-running-threads"></a>実行時間の長いスレッドを特定するための出力の並べ替え
 
-トレース内の最も長い実行中のスレッドからおおよそグリッド形式で表示するには、この LINQ クエリを使用します。
+この LINQ クエリを使用して、トレース内で実行されている実行時間のおおよそのスレッドをグリッド形式で表示します。
 
 ```dbgcmd
 0:000> dx -g @$curprocess.TTD.Events.Where(e => e.Type == "ThreadTerminated").Select(e => new { Thread = e.Thread, ActiveTimeLength = e.Thread.ActiveTime.MaxPosition.Sequence - e.Thread.ActiveTime.MinPosition.Sequence }).OrderByDescending(t => t.ActiveTimeLength)
@@ -410,13 +411,13 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
 =========================================================
 ```
 
-### <a name="querying-for-read-accesses-to-a-memory-range"></a>メモリ範囲への読み取りアクセスに対してクエリを実行します。 
+### <a name="querying-for-read-accesses-to-a-memory-range"></a>メモリ範囲への読み取りアクセスのクエリ 
 
-使用して、 [TTD です。メモリ オブジェクト](time-travel-debugging-memory-objects.md)読み取りがメモリの範囲にアクセスするためのクエリにクエリを実行します。
+TTD を使用し[ます。](time-travel-debugging-memory-objects.md)メモリ範囲への読み取りアクセスをクエリするために照会するメモリオブジェクト。
 
-スレッドの状態に関するすべての情報を格納する構造体をスレッド終了) には、結果を含む GetLastError() によって返されます。 実行して、このデータ構造をクエリできます`dx @$teb`現在のスレッド。 TEB のメンバーの 1 つは、サイズが 4 バイト、LastErrorValue 変数です。 この構文を使用して TEB で LastErrorValue メンバーから参照できます。 `dx &@$teb->LastErrorValue` の順にクリックします。
+スレッド環境ブロック (TEB) は、GetLastError () によって返される結果を含む、スレッドの状態に関するすべての情報を格納する構造体です。 現在のスレッドに対して `dx @$teb` を実行することで、このデータ構造に対してクエリを実行できます。 TEB のメンバーの1つは LastErrorValue 変数で、サイズは4バイトです。 この構文を使用して、TEB の LastErrorValue メンバーを参照できます。 `dx &@$teb->LastErrorValue`」をご覧ください。
 
-例のクエリがメモリ内には、その範囲内で行うすべての読み取り操作を検索する前に発生するすべての読み取りを選択する方法を示しています、ダイアログ ボックスが作成され、最後の読み取り操作を検索する結果を並べ替えます。
+この例のクエリでは、メモリ内のその範囲で実行されたすべての読み取り操作を検索し、ダイアログを作成する前に発生したすべての読み取りを選択して、結果を並べ替えて最後の読み取り操作を検索する方法を示します。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Memory(&@$teb->LastErrorValue, &@$teb->LastErrorValue + 0x4, "r")
@@ -427,7 +428,7 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
     [0x3]     
 ```
 
-行われた場合、トレースで「ダイアログ」イベントがメモリ内には、その範囲内で行うすべての読み取り操作を検索するクエリを実行できます、ダイアログ ボックスが作成される前に発生し、最後の読み取り操作の検索結果の並べ替えをすべての読み取りを選択します。 結果として得られる時間位置に SeekTo() を呼び出すことによって時間を時間でその時点への移動し。
+トレースの "dialog" イベントが発生した場合は、クエリを実行してメモリ内のその範囲で実行されたすべての読み取り操作を検索し、ダイアログが作成される前に発生したすべての読み取りを選択して、結果を並べ替えて最後の読み取り操作を検索できます。 次に、結果の時間位置で SeekTo () を呼び出して、その時点までの時間を移動します。
 
 ```dbgcmd
 
@@ -439,40 +440,40 @@ ModLoad: 76320000 7645d000   C:\WINDOWS\System32\MSCTF.dll
 ModLoad: 76cc0000 76cce000   C:\WINDOWS\System32\MSASN1.dll
 ```
 
-## <a name="github-ttd-query-lab"></a>GitHub TTD クエリ ラボ
+## <a name="github-ttd-query-lab"></a>GitHub TTD クエリラボ
 
-デバッグする方法に関するチュートリアルについてはC++クエリを使用した問題のあるコードの実行に関する情報を問題の検索は、「タイム トラベル デバッグ記録を使用してコード https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.mdします。
+タイムトラベルのデバッグ記録を使用C++してコードをデバッグする方法に関するチュートリアルについては、クエリを使用して問題のあるコードの実行に関する情報を検索する方法については、「 https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.md 」を参照してください。
 
-ここで使用可能なすべてのラボで使用するコードが: https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sample します。
+ラボで使用されているすべてのコードは、「 https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sample 」を参照してください。
 
 
 ## <a name="troubleshooting-ttd-queries"></a>TTD クエリのトラブルシューティング
 
-### <a name="unknownormissingsymbols-as-the-function-names"></a>関数名として"UnknownOrMissingSymbols"
+### <a name="unknownormissingsymbols-as-the-function-names"></a>関数名としての "UnknownOrMissingSymbols"
 
-データ モデルの拡張機能には、関数名、パラメーター値などを提供するために完全なシンボル情報が必要があります。完全なシンボル情報が利用できない場合、デバッガーは関数名として"UnknownOrMissingSymbols"を使用します。
+関数名、パラメーター値などを提供するために、データモデル拡張機能には完全なシンボル情報が必要です。シンボルの完全な情報が使用できない場合、デバッガーは関数名として "UnknownOrMissingSymbols" を使用します。
 
-- プライベート シンボルがある場合、関数名とパラメーターの正しい一覧が表示されます。
-- パブリック シンボルがある場合は、関数名および 4 つの符号なし 64 ビット整数のパラメーターの既定のセットを取得します。
-- クエリを実行するモジュールのシンボル情報がない場合、"UnknownOrMissingSymbols"は、名前として使用されます。
+- プライベートシンボルがある場合は、関数名とパラメーターの正しいリストが取得されます。
+- パブリックシンボルがある場合は、関数名とパラメーターの既定のセット (4 つの符号なし64ビット整数) が取得されます。
+- クエリを実行するモジュールのシンボル情報がない場合は、名前として "UnknownOrMissingSymbols" が使用されます。
 
-### <a name="ttd-queries-for-calls"></a>呼び出しの TTD クエリ
+### <a name="ttd-queries-for-calls"></a>TTD の呼び出しのクエリ
 
-クエリは何も返しません DLL への呼び出しに、いくつかの理由があります。
+クエリが DLL の呼び出しに対して何も返さない場合、いくつかの理由が考えられます。
 
-- 適切としたときに、呼び出しの構文はありません。  X のコマンドを使用して呼び出し構文を確認してください。"x <call>"。 X が大文字では、モジュール名がによって返される場合、それを使用します。
-- DLL は、されませんがまだ読み込まれてされ、後でトレースに読み込まれます。 DLL が読み込まれた後のポイントにこの移動を回避し、クエリを再実行します。
-- 呼び出しはインライン化、クエリ エンジンで追跡することはないです。
-- クエリ パターンには、関数が多すぎるを返すワイルドカードが使用されます。  一致した関数の数が十分に小さいように、クエリ パターンを特定してください。
+- 呼び出しの構文が正しくありません。  X コマンド: "x <call>" を使用して、呼び出し構文を確認してみてください。 X によって返されたモジュール名が大文字の場合は、それを使用します。
+- DLL がまだ読み込まれていないため、後でトレースに読み込まれています。 この問題を回避するには、DLL が読み込まれてから、クエリを再実行します。
+- この呼び出しは、クエリエンジンが追跡できないインライン化されています。
+- クエリパターンでは、関数を返すワイルドカードを使用します。  一致する関数の数が十分に小さくなるように、クエリパターンをより明確にしてください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[デバッガー オブジェクトを LINQ で使用します。](using-linq-with-the-debugger-objects.md)
+[デバッガーオブジェクトでの LINQ の使用](using-linq-with-the-debugger-objects.md)
 
-[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)
+[dx (表示デバッガーオブジェクトモデル式)](dx--display-visualizer-variables-.md)
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 
-[旅行時間 - JavaScript のオートメーションのデバッグ](time-travel-debugging-javascript-automation.md)
+[タイムトラベルデバッグ-JavaScript オートメーション](time-travel-debugging-javascript-automation.md)
 
 ---

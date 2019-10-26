@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x1000008E KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
-description: KERNEL_MODE_EXCEPTION_NOT_HANDLED_M のバグ チェックでは、0x1000008E の値を持ちます。
+title: バグチェック 0x1000008E KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
+description: KERNEL_MODE_EXCEPTION_NOT_HANDLED_M のバグチェックの値は0x1000008E です。
 ms.assetid: 1ed1d625-685a-40d3-b97b-37480190801d
 keywords:
-- バグ チェック 0x1000008E KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
+- バグチェック 0x1000008E KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
 - KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
 ms.date: 05/23/2017
 topic_type:
@@ -13,24 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 586aa5b8dd58ce908f2ac4887739b257b8b9c2ee
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 1ec7e2c7ba01054f7147adf368550d05b3a7b0a1
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521697"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916231"
 ---
-# <a name="bug-check-0x1000008e-kernelmodeexceptionnothandledm"></a>バグ チェック 0x1000008E:カーネル\_モード\_例外\_いない\_HANDLED\_M
+# <a name="bug-check-0x1000008e-kernel_mode_exception_not_handled_m"></a>バグチェック 0x1000008E: カーネル\_モード\_例外\_\_処理されません\_M
 
 
-カーネル\_モード\_例外\_いない\_HANDLED\_M のバグ チェックが 0x1000008E の値を持ちます。 これは、カーネル モードのプログラムがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
+カーネル\_モード\_例外\_処理さ\_れませんでした\_M バグチェックには値0x1000008E があります。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
 
-バグ チェック 0x1000008E が同じ意味とパラメーターとして[**バグ チェック 0x8E** ](bug-check-0x8e--kernel-mode-exception-not-handled.md) (カーネル\_モード\_例外\_いない\_処理済み)。
+バグチェック0x1000008E には、[**バグチェック**](bug-check-0x8e--kernel-mode-exception-not-handled.md)と同じ意味とパラメーターがあります (カーネル\_モード\_例外\_\_処理されません)。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

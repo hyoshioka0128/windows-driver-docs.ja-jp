@@ -1,23 +1,23 @@
 ---
-title: タイム トラベルの拡張機能のデバッグ
-description: このセクションでは、タイム トラベル デバッガー拡張機能コマンドを使用する方法について説明します。
+title: タイムトラベルデバッグ拡張機能
+description: このセクションでは、タイムトラベルデバッガー拡張機能コマンドの使用方法について説明します。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e46b66c7beb256c32a62c49617d65d5a0fe09c5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2733796d41c77354eba462f36827e8a76f232993
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378478"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916211"
 ---
-#  <a name="time-travel-debugging-extension-commands"></a>タイム トラベルの拡張機能コマンドのデバッグ
+#  <a name="time-travel-debugging-extension-commands"></a>タイムトラベルデバッグ拡張コマンド
 
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
-このセクションでは、時間の旅行デバッガー拡張機能コマンドについて説明します。
+このセクションでは、タイムトラベルデバッガー拡張機能のコマンドについて説明します。
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -33,37 +33,29 @@ ms.locfileid: "63378478"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="time-travel-debugging-extension-tt.md" data-raw-source="[&lt;strong&gt;!tt (time travel)&lt;/strong&gt;](time-travel-debugging-extension-tt.md)"><strong>! tt (タイム トラベル)</strong></a></p></td>
-<td align="left"><p><a href="time-travel-debugging-extension-tt.md" data-raw-source="[&lt;strong&gt;!tt (time travel)&lt;/strong&gt;](time-travel-debugging-extension-tt.md)"> <strong>! Tt (タイム トラベル)</strong> </a>デバッガーの拡張機能を時間で前方と後方を移動することができます。</p></td>
+<td align="left"><p><a href="time-travel-debugging-extension-tt.md" data-raw-source="[&lt;strong&gt;!tt (time travel)&lt;/strong&gt;](time-travel-debugging-extension-tt.md)"><strong>! tt (タイムトラベル)</strong></a></p></td>
+<td align="left"><p>時間を前後に移動できるようにする、 <a href="time-travel-debugging-extension-tt.md" data-raw-source="[&lt;strong&gt;!tt (time travel)&lt;/strong&gt;](time-travel-debugging-extension-tt.md)"><strong>! tt (タイムトラベル)</strong></a>デバッガー拡張機能。</p></td>
 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="time-travel-debugging-extension-positions.md" data-raw-source="[&lt;strong&gt;!positions&lt;/strong&gt;](time-travel-debugging-extension-positions.md)"><strong>! 位置</strong></a></p></td>
-<td align="left"><p><a href="time-travel-debugging-extension-positions.md" data-raw-source="[&lt;strong&gt;!positions&lt;/strong&gt;](time-travel-debugging-extension-positions.md)"> <strong>! 位置</strong></a>拡張機能がアクティブなすべてのスレッドをタイム トラベルのトレースで現在の位置を含むを表示します。</p></td>
+<td align="left"><p><a href="time-travel-debugging-extension-positions.md" data-raw-source="[&lt;strong&gt;!positions&lt;/strong&gt;](time-travel-debugging-extension-positions.md)"><strong>! 位置</strong></a>拡張は、タイムトラベルトレースの現在の位置を含む、すべてのアクティブなスレッドを表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="time-travel-debugging-extension-index.md" data-raw-source="[&lt;strong&gt;!index&lt;/strong&gt;](time-travel-debugging-extension-index.md)"><strong>! インデックス</strong></a></p></td>
-<td align="left"><p><a href="time-travel-debugging-extension-index.md" data-raw-source="[&lt;strong&gt;!index&lt;/strong&gt;](time-travel-debugging-extension-index.md)"> <strong>! インデックス</strong></a>インデックス タイム トラベルの拡張機能は、トレースまたはインデックスの状態情報が表示されます。</p></td>
+<td align="left"><p><a href="time-travel-debugging-extension-index.md" data-raw-source="[&lt;strong&gt;!index&lt;/strong&gt;](time-travel-debugging-extension-index.md)"><strong>! インデックス</strong></a>拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。</p></td>
 </tr>
 </tbody>
 </table>
 
-### <a name="spanspan-idadditionalinformationspanadditional-information"></a></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="spanspan-idadditional_informationspanadditional-information"></a>追加<span id="ADDITIONAL_INFORMATION"></span>情報の </span>
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
+この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
 ### <a name="dll"></a>DLL
 
-時間は、コマンドが ttdext.dll で実装されているデバッガー拡張機能を移動します。 タイム トラベル コマンド dll は WinDbg のプレビューで自動的に読み込まれます。 コマンドを使用して、ロード、ttdext.dll を手動で読み込む必要はありません。
+タイムトラベルデバッガー拡張機能のコマンドは、ttdext に実装されています。 タイムトラベルコマンド dll は、WinDbg プレビューで自動的に読み込まれます。 Load コマンドを使用して、手動で ttdext を読み込む必要はありません。
  
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
-
-
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

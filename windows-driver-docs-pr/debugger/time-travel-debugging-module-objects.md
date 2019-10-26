@@ -1,39 +1,34 @@
 ---
-title: TTD モジュール オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられているモジュールのモデル オブジェクトについて説明します。
+title: TTD Module オブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられているモジュールモデルオブジェクトについて説明します。
 ms.date: 09/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e16bb0b5d5ba89741358ba79235178f74fbd76bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7f5875c1a70cf0809a98c00323d0f91810984c6
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389088"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916187"
 ---
-# <a name="ttd-module-objects"></a>TTD モジュール オブジェクト
-## <a name="description"></a>説明
-*TTD モジュール*オブジェクトを使用してロードされ、トレース セッション中にアンロードされたモジュールに関する情報を提供します。
+# <a name="ttd-module-objects"></a>TTD Module オブジェクト
 
-## <a name="properties"></a>プロパティ
+## <a name="description"></a>説明
+*TTD Module*オブジェクトは、トレースセッション中に読み込まれ、アンロードされたモジュールに関する情報を提供するために使用されます。
+
+## <a name="properties"></a>[プロパティ]
 
 | プロパティ | 説明 |
 | --- | --- |
-| 名前 | 名前とモジュールのパス。 |
+| 名前 | モジュールの名前とパス。 |
 | Address | モジュールが読み込まれたアドレス。 |
-| サイズ | (バイト単位)、モジュールのサイズ。 |
+| Size | モジュールのサイズ (バイト単位)。 |
 | チェックサム | モジュールのチェックサム。 |
-| Timestamp | モジュールのタイムスタンプ。 |
+| タイムスタンプ | モジュールのタイムスタンプ。 |
 
 *保留中の情報*
 
+## <a name="see-also"></a>参照
 
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-## <a name="see-also"></a>関連項目
-
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
-
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

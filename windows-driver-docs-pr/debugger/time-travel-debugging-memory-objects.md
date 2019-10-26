@@ -1,69 +1,70 @@
 ---
-title: TTD メモリ オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられているメモリ モデル オブジェクトについて説明します。
+title: TTD Memory オブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられているメモリモデルオブジェクトについて説明します。
 ms.date: 01/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa9dc8d392fa4f14ef5df663bd1a657c2965502
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b960859d1698518e451b555e0fce385af3bfac6
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389111"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916190"
 ---
-# <a name="ttd-memory-objects"></a>TTD メモリ オブジェクト
+# <a name="ttd-memory-objects"></a>TTD Memory オブジェクト
+
 ## <a name="description"></a>説明
-*TTD メモリ*beginAddress、endAddress および dataAccessMask パラメーターを受け取り、メモリへのアクセス情報を格納するメモリ オブジェクトのコレクションを取得するメソッドです。
+*TTD memory*は、Beginaddress、endaddress、および dataAccessMask パラメーターを受け取り、メモリアクセス情報を含むメモリオブジェクトのコレクションを返すメソッドです。
 
 ## <a name="parameters"></a>パラメーター
 
 | プロパティ | 説明 |
 | --- | --- |
-| beginAddress | 0 x で始まるメモリ オブジェクトの先頭のアドレス。|
-| endAddress| 0 x で始まるメモリ オブジェクトの終了アドレス。|
-| dataAccessMask |二重引用符に含まれるデータのアクセス マスク。 これにより、r の読み取り、書き込み、execute e と-c は変更の w できます。 |
+| beginAddress | 0x で始まるメモリオブジェクトの開始アドレス。|
+| endAddress| 0x で始まるメモリオブジェクトの終了アドレス。|
+| dataAccessMask |二重引用符で囲まれたデータアクセスマスク。 読み取りの場合は r、書き込みの場合は e、execute の場合は e、変更の場合は c を指定できます。 |
 
 
 ## <a name="children"></a>Children
 
 | オブジェクト      | 説明 |
 | ----------- | ----------- |
-| EventType  |  イベントの種類。 これは、「メモリ アクセス」のすべての TTD です。メモリ オブジェクト。 |
-| スレッド Id   |  OS スレッドは、要求を作成したスレッドの ID。 |
-| UniqueThreadId |   トレースの間でのスレッドの一意の ID。 プロセスの有効期間にわたって正規スレッド Id を再利用を取得できますが、UniqueThreadIds ことはできません。 |
-| TimeStart | A[位置オブジェクト](time-travel-debugging-position-objects.md)メモリへのアクセスが行われたときに、位置を記述します。 |
-| 時刻終了 | A[位置オブジェクト](time-travel-debugging-position-objects.md)メモリへのアクセスが行われたときに、位置を記述します。 これは、常に TTD TimeStart と同じです。メモリ オブジェクト。
-| AccessType |  アクセスの種類には、読み取り、書き込みまたはを実行します。 |
-| IP         |  メモリ アクセスが行われたコードの命令ポインター。 |
-| Address    |  読み取る/書き込む/実行アドレスの範囲内では、[beginAddress, endAddress) パラメーターから。Memory() します。  ハーフ オープンの間隔は、することに注意してください。  つまり、返されたイベントの中は endAddress に一致するアドレスが endAddress – 1 に一致するイベントが可能性があります。|
-| サイズ       |  読み取り/書き込み/実行 (バイト単位) のサイズ。 これは、通常 8 バイト未満です。 コードの実行が発生した場合、実行された命令のバイト数になります。 |
-| 値   | 読み取り、記述または実行された値。 実行の場合は、命令のコードのバイトが含まれます。 注命令のバイトは、逆アセンブラーによって、MSB の順序で並んでいるが、LSB 順序の値に格納されます。 |
+| EventType  |  イベントの種類。 これは、すべての TTD の "MemoryAccess" です。メモリオブジェクト。 |
+| スレッド Id   |  要求を行ったスレッドの OS スレッド ID。 |
+| UniqueThreadId |   トレース全体のスレッドの一意の ID。 通常のスレッド Id は、プロセスの有効期間にわたって再利用できますが、UniqueThreadIds することはできません。 |
+| TimeStart | メモリアクセスが行われたときの位置を記述する[位置オブジェクト](time-travel-debugging-position-objects.md)。 |
+| TimeEnd | メモリアクセスが行われたときの位置を記述する[位置オブジェクト](time-travel-debugging-position-objects.md)。 これは、常に TTD の TimeStart と同じです。メモリオブジェクト。
+| AccessType |  アクセスの種類 (読み取り、書き込み、または実行)。 |
+| IP         |  メモリアクセスを行ったコードの命令ポインター。 |
+| Address    |  読み取り/書き込み/実行されたアドレスであり、パラメーターの [beginAddress, endAddress) の範囲内にあります。メモリ ()。  間隔はハーフオープンであることに注意してください。  つまり、返されたイベントのいずれにも endAddress に一致するアドレスはありますが、endAddress –1と一致するイベントが存在する可能性があります。|
+| Size       |  読み取り/書き込み/実行のサイズ (バイト単位)。 通常、これは8バイト以下です。 コード実行の場合、これは実行された命令のバイト数です。 |
+| Value   | 読み取り、書き込み、または実行された値。 実行の場合は、命令のコードバイトが含まれます。 命令バイトは逆アセンブラーによって MSB 順序で一覧表示されますが、値には LSB 順序で格納されることに注意してください。 |
 
 
 ## <a name="remarks"></a>注釈
 
-次のアクセスの種類は、TTD で許可されます。メモリ クエリ:
+TTD では、次のアクセスの種類を使用できます。メモリクエリ:
 
--   r: 読み取り
+-   r-読み取り
 -   w-書き込み
--   rw: 読み取り/書き込み
--   e-実行します。
--   rwe - 読み取り/書き込み/実行
--   ec - execute /change
+-   rw-読み取り/書き込み
+-   e-実行
+-   rwe-読み取り/書き込み/実行
+-   ec-/change を実行する
 
-この関数は関数を実行するときにかかるため、計算を行うことに注意してください。 
+これは計算を実行する関数であるため、実行には時間がかかります。 
 
 
 ## <a name="example-usage"></a>使用例
 
-この例では、グリッドの表示、トレースすべての位置を 0x00a4fca0 から始まるメモリの 4 バイトが読み取りアクセス権をどこまでの発生を示します。 メモリ アクセスの発生するたびにドリルダウンする任意のエントリをクリックします。
+この例では、トレース内のすべての位置をグリッドで表示しています。これは、0x00a4fca0 で始まる4バイトのメモリが読み取りアクセスであったことを示しています。 任意のエントリをクリックすると、メモリアクセスが発生するたびにドリルダウンされます。
 
 ```dbgcmd
 dx -g @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")
 ```
 
-![メモリ オブジェクト dx 例グリッド出力](images/ttd-time-travel-memory-object-dx-output.png) 
+![メモリオブジェクト dx のサンプルグリッドの出力](images/ttd-time-travel-memory-object-dx-output.png) 
 
-グリッド画面で、そのイベントの情報を表示するイベントのいずれかで TimeStart フィールドをクリックすることができます。 
+グリッド表示のいずれかのイベントで TimeStart フィールドをクリックすると、そのイベントに関する情報が表示されます。 
 
 ```dbgcmd
 0:000> dx -r1 @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")[16].TimeStart
@@ -72,7 +73,7 @@ dx -g @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")
     Steps            : 0x113
 ```
 
-トレース イベントが発生した位置に移動するには、[タイム トラベル] をクリックします。
+イベントが発生したトレース内の位置に移動するには、[タイムトラベル] をクリックします。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")[16].TimeStart.SeekTo()
@@ -86,7 +87,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
 690795e5 ffb604040000    push    dword ptr [esi+404h] ds:002b:00a4fca0=00000000
 ```
 
-この例には、すべてメモリ 0x1bf7d0 から始まる 4 バイトが読み取り/書き込みアクセスをどこまで、トレース内の位置の表示されます。 メモリ アクセスの発生するたびにドリルダウンする任意のエントリをクリックします。
+この例では、0x1bf7d0 で始まる4バイトのメモリを持つトレース内のすべての位置が、読み取り/書き込みにアクセスされたことが示されています。 任意のエントリをクリックすると、メモリアクセスが発生するたびにドリルダウンされます。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Memory(0x1bf7d0,0x1bf7d4, "rw")
@@ -97,7 +98,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
     [0x3]           
      ...
 ```
-この例では次の項目の実行と変更アクセス 0x13a1710 から始まるメモリの 4 バイトのトレース内の位置をすべて表示されます。 メモリ アクセスのそれぞれについてドリルダウンを出現している箇所をクリックします。  
+この例では、0x13a1710 で始まる4バイトのメモリが実行され、変更がアクセスされたトレースのすべての poアッドが一覧表示されています。 任意の項目をクリックしてドリルダウンすると、メモリアクセスの各発生に関する追加情報が表示されます。  
 
 ```dbgcmd
 0:000> dx -r1 @$cursession.TTD.Memory(0x13a1710,0x13a1714, "ec")[0]
@@ -114,14 +115,9 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
     Value            : 0x55
 ```
 
+## <a name="see-also"></a>参照
 
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-## <a name="see-also"></a>関連項目
-
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
-
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 

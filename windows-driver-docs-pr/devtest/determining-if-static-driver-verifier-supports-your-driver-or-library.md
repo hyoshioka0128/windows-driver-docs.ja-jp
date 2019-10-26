@@ -4,12 +4,12 @@ description: 静的ドライバー検証ツール (SDV) は、WDM、KMDF、NDIS�
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f57ab972746eff63b2fa4cf04425696855960c25
-ms.sourcegitcommit: 8fdbd7d16dd2393e5df0a87388aed91d2898cd71
+ms.openlocfilehash: 22f409b0f5c75d672e7fa9bd30f20abcdb6f7c95
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72165028"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916104"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
 
@@ -17,12 +17,16 @@ ms.locfileid: "72165028"
 
 ## <a name="driver-or-library-requirements"></a>ドライバーまたはライブラリの要件
 
-ドライバーまたはライブラリが次のいずれかの条件を満たしている場合は、SDV 分析ツールですべてのルールセットを実行できます。
+ドライバーまたはライブラリが次のいずれか**の条件を満たし、** [以下に示すクラスフレームワークライブラリ](#class-framework-libraries)にリンクしていない場合は、sdv 分析ツールですべてのルールを実行できます。
 
-- WDM ドライバーまたはライブラリがあり、ドライバーまたはライブラリがクラスフレームワーク (つまり、Microsoft が提供するライブラリ) にリンクしていない。 詳細については、「[クラスフレームワークライブラリ](#class-framework-libraries)」を参照してください。
+- WDM ドライバーまたはライブラリがあります。
 - WdfLdr または WdfDriverEntry にリンクするドライバーまたはライブラリがあります。
 - このドライバーまたはライブラリを使用して、NDIS .lib にリンクしています。
 - Storport にリンクするドライバーまたはライブラリがある。
+
+上記の条件に該当しないドライバーがある場合、SDV はドライバー "generic" を考慮して、限られたチェックのセットを実行します。
+
+また、SDV によって検証されるライブラリは、一般的な C やC++ライブラリではなく、カーネルモードのドライバーライブラリである必要があることに注意してください。  
 
 静的ドライバーの検証ツールは、ドライバーまたはライブラリが複数の[ユーティリティライブラリ](#utility-libraries)にリンクされている場合でも、これらの条件を渡すドライバーまたはライブラリをサポートします。
 

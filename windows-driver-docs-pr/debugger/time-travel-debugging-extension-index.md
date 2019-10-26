@@ -1,27 +1,27 @@
 ---
-title: デバッグ拡張機能の移動をタイム! コマンドのインデックス
-description: '! タイム トラベル トレースまたはインデックスの状態情報を表示拡張機能のインデックスのインデックスを作成します。'
+title: タイムトラベルデバッグ拡張機能! index コマンド
+description: '! インデックス拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。'
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b6875e29a47074688c39d1398e121607f107aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 044410ba9e7ac93c2f27c589a8f30bfb00d95d9a
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327124"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916214"
 ---
 #  <a name="index"></a>! インデックス
 
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
-**! インデックス**インデックス タイム トラベルの拡張機能は、トレースまたはインデックスの状態情報が表示されます。
+**! インデックス**拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。
 
 ```dbgsyntax
 !index [-status] [-force] 
 ```
 
 
-使用`!index`現在のトレースでインデックス作成のパスを実行するためです。 
+現在のトレースに対してインデックス作成パスを実行するには、`!index` を使用します。 
 
 ```dbgcmd
 0:000> !index
@@ -30,7 +30,7 @@ Indexed 14/14 keyframes
 Successfully created the index in 535ms.
 ```
 
-現在のトレースが既にインデックス化されている場合、! index コマンドは、何も行われません。
+現在のトレースにインデックスが既に作成されている場合、! index コマンドでは何も実行されません。
 
 ```dbgcmd
 0:000> !index
@@ -39,19 +39,19 @@ Successfully created the index in 0ms.
 
 
 
-## <a name="span-idddkanalyzedbgspanspan-idddkanalyzedbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>パラメーター
+## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>パラメータ
 
 **-状態**
 
-使用`!index -status`トレース インデックスの状態を報告します。
+トレースインデックスの状態をレポートするには、`!index -status` を使用します。
 
 ```dbgcmd
 0:000> !tt.index -status
 Index file loaded.
 ```
-**-強制**
+**-force**
 
-使用`!index -force`に読み込めないインデックス ファイルがディスク上に存在する場合でも、トレースを再作成します。
+読み込めないインデックスファイルがディスク上に存在する場合でも、`!index -force` を使用してトレースのインデックスを再作成します。
 
 ```dbgcmd
 0:000> !tt.index -force
@@ -61,23 +61,12 @@ Successfully created the index in 152ms.
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-ttdext.dll
+ttdext
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
-
+この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
-[時間の移動 [デバッグ] - 拡張機能のコマンド](time-travel-debugging-extension-commands.md)
-
-
--------
-
- 
-
-
-
-
-
+[タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)

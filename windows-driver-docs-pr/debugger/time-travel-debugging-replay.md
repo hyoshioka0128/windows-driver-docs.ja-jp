@@ -1,43 +1,43 @@
 ---
 title: Time Travel Debugging - トレースの再生
-description: 時間を再生する方法を説明するトレースを移動します。
+description: このセクションでは、タイムトラベルトレースを再生する方法について説明します。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9eb21ef930c66b3995e4afbd587a347049b880
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2639b5e4654a2e52554295243aa0ada484b8b1a3
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364774"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916139"
 ---
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png) 
+# <a name="time-travel-debugging---replay-a-trace"></a>Time Travel Debugging - トレースの再生
 
-# <a name="time-travel-debugging---replay-a-trace"></a>Time Travel Debugging - トレースの再生 
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png) 
 
-時間の直接的および下位タイム トラベルを再生するトレース、転送を移動する方法について説明します。
+このセクションでは、時間旅行トレースを再生し、前後を移動する方法について説明します。
 
-## <a name="command-time-travel-navigation"></a>コマンドに旅行ナビゲーション
+## <a name="command-time-travel-navigation"></a>コマンドタイムトラベルナビゲーション
 
-次のコマンドで、末尾の負符号を使用して、時点に戻り。
+次のコマンドで末尾のマイナス記号を使用して、時間をさかのぼって移動します。
 
 | コマンド  | 
 |----------------|
-| p – (バックアップの手順) | 
-| t-(さかのぼって)| 
-| g: (戻る)   |
+| p-(ステップバック) | 
+| t-(トレースバック)| 
+| g-(戻る)   |
 
-詳細については、次を参照してください。[タイム トラベルのデバッグ - ナビゲーション コマンド](time-travel-debugging-navigation-commands.md)します。 
+詳細については、「[タイムトラベルのデバッグ-ナビゲーションコマンド](time-travel-debugging-navigation-commands.md)」を参照してください。 
 
-## <a name="ribbon-button-time-travel-navigation"></a>リボン ボタン タイム トラベル ナビゲーション
+## <a name="ribbon-button-time-travel-navigation"></a>リボンボタンのタイムトラベルナビゲーション
 
-代わりに、リボン ボタンを使用して、トレースに移動します。
+または、リボンのボタンを使用してトレース内を移動します。
 
-![チェック ボックスをオンの記録の開始を示す WinDbg プレビューのスクリーン ショット](images/ttd-ribbon-buttons.png)
+![記録の開始チェックボックスが表示されている WinDbg プレビューのスクリーンショット](images/ttd-ribbon-buttons.png)
 
 
-## <a name="example-ttd-trace-replay"></a>例 TTD トレースの再生
+## <a name="example-ttd-trace-replay"></a>TTD トレース再生の例
 
-G コマンドを使用して、イベントを実行する下位まで、または TTD トレースの先頭に到達します。 旧バージョンとの実行を停止するイベントとフォワード実行が停止すると同じです。 この例では、トレースの開始に到達します。
+TTD トレースのイベントまたは先頭に到達するまで、コマンドを使用して後方に実行します。 逆方向の実行を停止できるイベントは、実行を停止するイベントと同じです。 この例では、トレースの開始に達しています。
 
 
 ```dbgcmd
@@ -49,7 +49,7 @@ ntdll!ZwTestAlert+0x14:
 00007ffc`61f789d4 c3              ret
 ```
 
-使用して、 [p (ステップ)](https://docs.microsoft.com/windows-hardware/drivers/debugger/p--step-) TTD トレースでステップ前進するコマンド。 
+[P (ステップ)](https://docs.microsoft.com/windows-hardware/drivers/debugger/p--step-)コマンドを使用して、TTD トレースでステップフォワードします。 
 
 ```dbgcmd
 0:000> p
@@ -75,7 +75,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 7774f83c 0f8450e8ffff    je      ntdll!LdrpInitializeProcess+0x42f (7774e092) [br=1]
 ```
 
-使用しても、 [t (トレース)](https://docs.microsoft.com/windows-hardware/drivers/debugger/t--trace-)トレース内を移動するコマンド。
+また、 [t (trace)](https://docs.microsoft.com/windows-hardware/drivers/debugger/t--trace-)コマンドを使用してトレース内を移動することもできます。
 
 ```dbgcmd
 0:000> t
@@ -95,7 +95,7 @@ ntdll!LdrpInitializeProcess+0x431:
 ```
 
 
-P コマンドを使用して、後退 TTD トレースします。 
+TTD トレースで前に進むには、p-コマンドを使用します。 
 
 ```dbgcmd
 0:000> p-
@@ -114,27 +114,27 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 7774f83c 0f8450e8ffff    je      ntdll!LdrpInitializeProcess+0x42f (7774e092) [br=1]
 ```
 
-戻る操作を t コマンドを使用することもできます。
+また、t-sql を使用して、時間をさかのぼって移動することもできます。
 
 
-## <a name="tt-navigation-commands"></a>! tt ナビゲーション コマンド
+## <a name="tt-navigation-commands"></a>! tt ナビゲーションコマンド
 
-使用して、!、トレース内の指定位置にスキップすることで、前方または後方を移動する tt コマンド。 
+! Tt コマンドを使用して、トレース内の特定の位置にスキップすることにより、時間の前後に移動します。 
 
 ! tt [位置]
 
-時間の点に移動する次の形式のいずれかの時間位置を指定します。
+その時点に移動するには、次のいずれかの形式で時刻の位置を指定します。
            
-- [位置] が 0 から 100 までの 10 進数である場合は、トレースに約その % に移動します。 たとえば`!tt 50`が途中で、トレースに移動します。
+- [Position] が0から100までの10進数である場合、トレースに約そのパーセント移動します。 たとえば `!tt 50` は、トレースを通じて中間に移動します。
 
-- {0} 位置} が # である場合: #, # は、16 進数、送信するときにその位置にします。 たとえば、 `!tt 1A0:12F` 1A0:12F をトレースに位置に移動します。
+- {Position} が #: # の場合 (# は16進数)、その位置に移動します。 たとえば、`!tt 1A0:12F` はトレースで 1A0: 12F の位置に移動します。
 
-詳細については、次を参照してください。[時のデバッグ出張 -! tt (タイム トラベル)](time-travel-debugging-extension-tt.md)します。
+詳細については、「[タイムトラベルデバッグ-! tt (タイムトラベル)](time-travel-debugging-extension-tt.md)」を参照してください。
 
 
 ## <a name="positions"></a>! 位置
 
-使用`!positions`アクティブなすべてのスレッドをトレース内の位置を含むを表示します。 詳細については、次を参照してください。[時のデバッグ出張 -! 位置 (タイム トラベル)](time-travel-debugging-extension-positions.md)します。
+`!positions` を使用すると、トレース内のすべてのアクティブなスレッドを表示できます。 詳細については、「[タイムトラベルデバッグ-! 位置 (タイムトラベル)](time-travel-debugging-extension-positions.md)」を参照してください。
 
 ```dbgcmd
 0:000> !positions
@@ -147,15 +147,15 @@ ntdll!LdrpInitializeProcess+0x1bd9:
  Thread ID=0x32B4 - Position: C87:0
  Thread ID=0x337C - Position: DF1:0
 ```
-この例では、現在の位置にある 8 つのスレッドがあることを示します。 現在のスレッドが付いている 3604 ' >'。  
+この例は、現在の位置に8つのスレッドがあることを示しています。 現在のスレッドは3604で、' > ' でマークされています。  
 
 > [!TIP] 
-> 現在のスレッドとそれらの位置の一覧を表示する別の方法では、データ モデルの dx コマンドを使用します。
+> 現在のスレッドの一覧とその位置を表示するもう1つの方法は、データモデルの dx コマンドを使用することです。
 >
 > `dx -g @$curprocess.Threads.Select(t => new { IsCurrent = t.Id == @$curthread.Id, ThreadId = t.Id, Position = t.TTD.Position })`
 >
 
-ユーザー モードを使用して、 [~ (スレッド ステータス)](---thread-status-.md)コマンドは、同じ 8 個のスレッドを表示しで現在のスレッドをマーク '.'。
+User mode [~ (スレッドの状態)](---thread-status-.md)コマンドを使用すると、同じ8つのスレッドが表示され、現在のスレッドに '. ' がマークされます。
 
 ```dbgcmd
 0:000> ~
@@ -169,7 +169,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-内の 3 番目のスレッド (3FFC) の横にあるリンクをクリックして、! 200:0 は、トレース内の位置をタイム トラベルへの出力を配置します。
+! Position 出力の3番目のスレッド (3FFC) の横にあるリンクをクリックして、トレースのその位置 (200:0) に移動します。
 
 ```dbgcmd
 0:002> !ttdext.tt 200:0
@@ -183,7 +183,7 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 7775396c c21400          ret     14h
 ```
 
-使用して、 [~ (スレッド ステータス)](---thread-status-.md)コマンドをしましたが、3ffc、3 番目のスレッドで今すぐ配置されていることを確認します。
+[~ (スレッドの状態)](---thread-status-.md)コマンドを使用して、現在、3番目のスレッド3ffc に配置されていることを確認します。
 
 ```dbgcmd
 0:002> ~
@@ -199,28 +199,21 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 
 
 > [!NOTE]
-> *~ S #* ここで、 *#* もスイッチを特定のスレッドで、スレッドの番号ですが、トレース内の現在位置は変更されません。  ときに *! tt*が別のスレッドの位置への移動にかかる時間を使用して、(およびデバッガー) がメモリから読み取られた値を検索する位置にします。 スレッドを切り替えるときに *~ s #* デバッガーは現在位置を変更内部的には、メモリのすべてのクエリに使用されます。 この方法が主にこれは、動作を *~ s #* デバッガーの内側のループをリセットする必要はありません。
+> *~ S #* では、 *#* はスレッド番号ですが、指定されたスレッドにも切り替わりますが、トレースの現在位置は変更されません。  *! Tt*を使用して別のスレッドの位置に時間を移動すると、メモリから読み取られた値 (およびデバッガー) がその位置で検索されます。 *~ S #* のスレッドを切り替えると、デバッガーは現在の位置を内部で変更しません。これは、すべてのメモリクエリに使用されます。 これは主に、 *~ s #* でデバッガーの内側のループをリセットする必要がないため、この方法で動作します。
 
 
-## <a name="time-travel-debugging-extension-commands"></a>タイム トラベルの拡張機能コマンドのデバッグ
+## <a name="time-travel-debugging-extension-commands"></a>タイムトラベルデバッグ拡張コマンド
 
-については、 `!tt`、`!positions`と`!index`コマンドを参照してください[タイム トラベルのデバッグ - 拡張コマンド](time-travel-debugging-extension-commands.md)します。
+`!tt`の詳細については `!index` `!positions`、「[タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)」を参照してください。
 
  
 ## <a name="see-also"></a>参照
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 
-[タイム トラベル デバッグ - トレースの記録](time-travel-debugging-record.md)
+[タイムトラベルデバッグ-トレースを記録する](time-travel-debugging-record.md)
 
-[タイム トラベル デバッグ - トレース ファイルの使用](time-travel-debugging-trace-file-information.md)
+[タイムトラベルデバッグ-トレースファイルの操作](time-travel-debugging-trace-file-information.md)
 
-[旅行のデバッグ時間 - サンプル アプリのチュートリアル](time-travel-debugging-walkthrough.md)
-
----
-
-
-
-
-
+[タイムトラベルデバッグ-サンプルアプリのチュートリアル](time-travel-debugging-walkthrough.md)
 

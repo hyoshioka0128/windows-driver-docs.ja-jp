@@ -1,38 +1,40 @@
 ---
-title: TTD スレッド オブジェクト
-description: このセクションでは、タイム トラベルのデバッグに関連付けられているスレッド モデル オブジェクトについて説明します。
+title: TTD Thread オブジェクト
+description: このセクションでは、タイムトラベルデバッグに関連付けられているスレッドモデルオブジェクトについて説明します。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5694c648acd00d3933db17cac8e46e661b8f0211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d38085e78f03dc80ee63facaf3a16dab87c6b4e
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330956"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916137"
 ---
-# <a name="ttd-thread-objects"></a>TTD スレッド オブジェクト
-## <a name="description"></a>説明
-*スレッドの TTD*についてスレッドとその有効期間を時間帯に出張のトレース情報を提供するオブジェクトを使用します。
+# <a name="ttd-thread-objects"></a>TTD Thread オブジェクト
 
-## <a name="properties"></a>プロパティ
+## <a name="description"></a>説明
+
+*TTD Thread*オブジェクトは、タイムトラベルトレース中にスレッドとその有効期間に関する情報を提供するために使用されます。
+
+## <a name="properties"></a>[プロパティ]
 
 | プロパティ | 説明 |
 | --- | --- |
-| 一意の Id | トレースの間でのスレッドの一意の ID。 |
-| ID | スレッド TID します。 |
+| UniqueId | トレース全体のスレッドの一意の ID。 |
+| Id | スレッドの TID。 |
 
 
 ## <a name="children"></a>Children
 
 | オブジェクト | 説明 |
 | --- | --- |
-| 有効期間 | A [TTD range オブジェクト](time-travel-debugging-range-objects.md)スレッドの有効期間をについて説明します。 |
-| ActiveTime | A [TTD range オブジェクト](time-travel-debugging-range-objects.md)スレッドがアクティブだった時間をについて説明します。 |
+| 最短 | スレッドの有効期間を記述する[TTD range オブジェクト](time-travel-debugging-range-objects.md)。 |
+| ActiveTime | スレッドがアクティブであった時刻を示す[TTD range オブジェクト](time-travel-debugging-range-objects.md)。 |
 
 
 ## <a name="example-usage"></a>使用例
 
-配列内のすべてのスレッドを表示するのにには、この dx コマンドを使用します。
+この dx コマンドを使用して、配列内のすべてのスレッドを表示します。
 
 ```dbgcmd
 0:0:000> dx -g @$curprocess.TTD.Threads
@@ -50,7 +52,7 @@ ms.locfileid: "63330956"
 =================================================================================================================
 ```
 
-配列の最初のスレッドに関する情報を表示するのにには、この dx コマンドを使用します。
+この dx コマンドを使用して、配列内の最初のスレッドに関する情報を表示します。
 
 ```dbgcmd
 0:0:000 dx -r2 @$curprocess.TTD.Threads[0]
@@ -65,7 +67,7 @@ ms.locfileid: "63330956"
         MaxPosition      : 6F0C4:0 [Time Travel]
 ```
 
-[タイム トラベル] リンクでは、スレッドがアクティブなときに、SeekTo() へのリンクがトレースに特定の位置までに提供します。 
+[タイムトラベル] リンクを使用すると、スレッドがアクティブであったときのトレース内の特定の位置に対する SeekTo () へのリンクが提供されます。 
 
 ```dbgcmd
 0:0:000> dx @$curprocess.TTD.Threads[0].@"ActiveTime".@"MinPosition".SeekTo()
@@ -78,12 +80,8 @@ ntdll!NtTestAlert+0x14:
 ```
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
+[タイムトラベルデバッグ-タイムトラベルデバッグオブジェクトの概要](time-travel-debugging-object-model.md)
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

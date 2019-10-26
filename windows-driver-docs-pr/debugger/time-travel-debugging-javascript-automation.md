@@ -1,31 +1,24 @@
 ---
 title: Time Travel Debugging - JavaScript オートメーション
-description: このセクションでは、TTD トレースを分析するために JavaScript のオートメーションを使用する方法について説明します。
+description: このセクションでは、JavaScript オートメーションを使用して TTD トレースを分析する方法について説明します。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a61fb69b82440c74e82480afc722d147604b8e41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f680527217ac64cdde0046c3086709a1617c5375
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389104"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916204"
 ---
-![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
 #  <a name="time-travel-debugging---javascript-automation"></a>Time Travel Debugging - JavaScript オートメーション
 
-保留中のコンテンツします。
+保留中のコンテンツ
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
-
----
-
-
-
-
-
+[タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 
