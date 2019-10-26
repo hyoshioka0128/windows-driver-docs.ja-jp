@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
-description: BC_BTHMINI_VERIFIER_FAULT のバグ チェックでは、0x00000BFF の値を持ちます。 これは、Bluetooth ミニポート拡張可能なドライバーの検証ツールが違反をキャッチすることを示します。
+title: バグチェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
+description: BC_BTHMINI_VERIFIER_FAULT のバグチェックの値は0x00000BFF です。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
 ms.assetid: 4BB54209-89EA-455D-B850-CC2A96A43C87
 keywords:
-- バグ チェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
+- バグチェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
 - BC_BTHMINI_VERIFIER_FAULT
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c41bc7ecb9b1f81bbcaf3486d40e3a3804907727
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 014ce8979258d37187c8733570e559491febeb41
+ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518973"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72892684"
 ---
-# <a name="bug-check-0xbff-bcbthminiverifierfault"></a>バグ チェック 0xBFF:BC\_BTHMINI\_VERIFIER\_エラー
+# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>バグチェック 0xBFF: BC\_BTHMINI\_検証ツール\_エラー
 
 
-ビジネス継続性\_BTHMINI\_VERIFIER\_フォールトのバグ チェックが 0x00000BFF の値を持ちます。 これは、Bluetooth ミニポート拡張可能なドライバーの検証ツールが違反をキャッチすることを示します。
+BC\_BTHMINI\_VERIFIER\_の不具合のバグチェックには、0x00000BFF という値があります。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bcbthminiverifierfault-parameters"></a>BC\_BTHMINI\_VERIFIER\_フォールト パラメーター
+## <a name="bc_bthmini_verifier_fault-parameters"></a>BC\_BTHMINI\_VERIFIER\_FAULT パラメーター
 
 
 <table>
@@ -46,7 +46,7 @@ ms.locfileid: "67518973"
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>Bluetooth の検証エラーのサブタイプ。</p>
+<td align="left"><p>Bluetooth 検証ツールのエラーのサブタイプ。</p>
 <div class="code">
 <code>0x1 : An attempt was made to return a packet with type that mis-matched its original request.
                   2 - Returned packet type
@@ -64,25 +64,26 @@ ms.locfileid: "67518973"
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="even">
-<td align="left">4</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-パラメーター 1 では、種類の違反について説明します。 不適切な動作のドライバーを特定の呼び出し履歴を確認します。
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+パラメーター1は違反の種類を示します。 呼び出し履歴を調べて、動作が不適切なドライバーを特定します。
 
 
 
