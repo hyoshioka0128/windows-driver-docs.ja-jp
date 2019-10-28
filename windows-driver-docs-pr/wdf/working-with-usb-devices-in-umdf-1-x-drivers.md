@@ -4,74 +4,74 @@ description: UMDF 1.x ドライバーでの USB デバイスの操作
 ms.assetid: 144898a2-c4e1-495f-a6ca-72d9f09bda90
 keywords:
 - UMDF WDK、USB デバイス
-- ユーザー モード ドライバー フレームワーク WDK、USB デバイス
-- ユーザー モード ドライバー WDK UMDF、USB デバイス
-- WDK UMDF の USB デバイス
+- ユーザーモードドライバーフレームワーク WDK、USB デバイス
+- ユーザーモードドライバー WDK UMDF、USB デバイス
+- USB デバイス WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b7b0bb17739bdb397d8c4c7f50f818aa426d0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31f7eeee25f2866d41d88d0dbcb78b8b260e50e9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383979"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842786"
 ---
 # <a name="working-with-usb-devices-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでの USB デバイスの操作
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークは、フレームワークの USB デバイス オブジェクトとして各 USB デバイスを表します。 UMDF ドライバーは、ドライバーが USB I/O ターゲット フレームワークのサポートにアクセスできる前に、フレームワークの USB デバイス オブジェクトを作成する必要があります。 UMDF は、UMDF ドライバーを有効にする USB デバイス オブジェクトのメソッドを提供します。
+フレームワークは、各 USB デバイスをフレームワークの USB デバイスオブジェクトとして表します。 UMDF ドライバーは、ドライバーが USB i/o ターゲットに対するフレームワークのサポートにアクセスする前に、フレームワークの USB デバイスオブジェクトを作成する必要があります。 UMDF には、UMDF ドライバーが次のことを行うための USB デバイスオブジェクトメソッドが用意されています。
 
--   [UMDF USB デバイス オブジェクトを作成します。](#creating-a-umdf-usb-device-object)
+-   [UMDF USB デバイスオブジェクトを作成する](#creating-a-umdf-usb-device-object)
 
--   [デバイス情報を取得します。](#obtaining-umdf-usb-device-information)
+-   [デバイス情報の取得](#obtaining-umdf-usb-device-information)
 
--   [コントロールの転送を送信します。](#send-a-control-transfer-to-a-umdf-usb-device-object)
+-   [制御転送を送信する](#send-a-control-transfer-to-a-umdf-usb-device-object)
 
 -   [電源ポリシーの設定](#set-power-policy-for-a-umdf-usb-device-object)
 
-### <a name="creating-a-umdf-usb-device-object"></a>UMDF USB デバイス オブジェクトを作成します。
+### <a name="creating-a-umdf-usb-device-object"></a>UMDF USB デバイスオブジェクトの作成
 
-フレームワークの USB I/O ターゲット機能を使用する UMDF ドライバーを入手へのポインター、 [IWDFUsbTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetfactory)インターフェイス。 ポインターを取得するには、ドライバーを呼び出す必要があります、 **QueryInterface**メソッド、デバイスの[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)インターフェイス。 次のコード例は、呼び出す方法を示しています。 **QueryInterface**ポインターを取得します。
+フレームワークの USB i/o ターゲット機能を使用するには、まず、UMDF ドライバーが[IWDFUsbTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetfactory)インターフェイスへのポインターを取得する必要があります。 ポインターを取得するには、ドライバーはデバイスの[Iwdfdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスの**QueryInterface**メソッドを呼び出す必要があります。 次のコード例は、 **QueryInterface**を呼び出してポインターを取得する方法を示しています。
 
 ```cpp
 hr = pdevice->QueryInterface(IID_IWDFUsbTargetFactory, (LPVOID*)&ppUsbTargetFactory);
 ```
 
-ドライバーが次に呼び出す必要があります、 [ **IWDFUsbTargetFactory::CreateUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)デバイスの USB I/O ターゲット オブジェクトを作成します。 ドライバーが USB I/O ターゲットを作成した後、ドライバーは、I/O ターゲットに要求を送信できます。 通常、ドライバー呼び出し**IWDFUsbTargetFactory::CreateUsbTargetDevice**内から、 [ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数。
+次に、ドライバーは[**IWDFUsbTargetFactory:: CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)メソッドを呼び出して、デバイスの USB i/o ターゲットオブジェクトを作成する必要があります。 ドライバーは、USB i/o ターゲットを作成した後、i/o ターゲットに要求を送信できます。 通常、ドライバーは、 [**IPnpCallbackHardware:: OnIWDFUsbTargetFactory ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数内から **:: CreateUsbTargetDevice**を呼び出します。
 
-ドライバーの呼び出し後**IWDFUsbTargetFactory::CreateUsbTargetDevice**、ドライバーは[USB デバイスの情報を取得](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices-in-umdf-1-x-drivers#obtaining-umdf-usb-device-information)(たとえば、USB ディスクリプター デバイス、USB インターフェイス、およびインターフェイスエンドポイントの場合)。 USB 記述子は、USB 仕様で説明します。
+ドライバーが**IWDFUsbTargetFactory:: CreateUsbTargetDevice**を呼び出すと、ドライバーは[usb デバイス情報](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices-in-umdf-1-x-drivers#obtaining-umdf-usb-device-information)(デバイスの usb 記述子、usb インターフェイス、およびインターフェイスエンドポイントなど) を取得できます。 Usb 記述子については、USB 仕様で説明されています。
 
-### <a name="obtaining-umdf-usb-device-information"></a>UMDF USB デバイスの情報を取得します。
+### <a name="obtaining-umdf-usb-device-information"></a>UMDF USB デバイス情報の取得
 
-UMDF ドライバーを呼び出してから、 [ **IWDFUsbTargetFactory::CreateUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice) UMDF USB ターゲット デバイスを作成するメソッドがオブジェクト、ドライバーは、USB デバイスを対象とする、次のメソッドを呼び出すことができますUSB デバイスに関する情報を取得するためにオブジェクトを定義します。
+UMDF ドライバーは、 [**IWDFUsbTargetFactory:: CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)メソッドを呼び出して、umdf usb ターゲットデバイスオブジェクトを作成した後、usb ターゲットデバイスオブジェクトが usb に関する情報を取得するために定義する次のメソッドを呼び出すことができます。ドライブ
 
-<a href="" id="iwdfusbtargetdevice--retrievedescriptor"></a>[**IWDFUsbTargetDevice::RetrieveDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)  
-デバイスの USB デバイスの記述子を取得します。
+<a href="" id="iwdfusbtargetdevice--retrievedescriptor"></a>[**IWDFUsbTargetDevice::RetrieveDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)  
+デバイスの USB デバイス記述子を取得します。
 
-<a href="" id="iwdfusbtargetdevice--getnuminterfaces"></a>[**IWDFUsbTargetDevice::GetNumInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getnuminterfaces)  
-デバイスをサポートする USB インターフェイスの数を取得します。
+<a href="" id="iwdfusbtargetdevice--getnuminterfaces"></a>[**IWDFUsbTargetDevice:: GetNumInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getnuminterfaces)  
+デバイスがサポートしている USB インターフェイスの数を取得します。
 
-<a href="" id="iwdfusbtargetdevice--retrieveusbinterface"></a>[**IWDFUsbTargetDevice::RetrieveUsbInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrieveusbinterface)  
-ポインターを取得、 [IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)いずれかのデバイスをサポートする USB インターフェイスを公開するインターフェイス。
+<a href="" id="iwdfusbtargetdevice--retrieveusbinterface"></a>[**IWDFUsbTargetDevice::RetrieveUsbInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrieveusbinterface)  
+デバイスがサポートするいずれかの USB インターフェイスを公開する[IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)インターフェイスへのポインターを取得します。
 
-<a href="" id="iwdfusbtargetdevice--retrievedeviceinformation"></a>[**IWDFUsbTargetDevice::RetrieveDeviceInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedeviceinformation)  
-USB デバイスに関連付けられている機能の情報を取得します。
+<a href="" id="iwdfusbtargetdevice--retrievedeviceinformation"></a>[**IWDFUsbTargetDevice::RetrieveDeviceInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedeviceinformation)  
+USB デバイスに関連付けられている機能情報を取得します。
 
-<a href="" id="iwdfusbtargetdevice--retrievepowerpolicy"></a>[**IWDFUsbTargetDevice::RetrievePowerPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievepowerpolicy)  
+<a href="" id="iwdfusbtargetdevice--retrievepowerpolicy"></a>[**IWDFUsbTargetDevice::RetrievePowerPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievepowerpolicy)  
 WinUsb 電源ポリシーを取得します。
 
-<a href="" id="iwdfusbtargetdevice--getwinusbhandle"></a>[**IWDFUsbTargetDevice::GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getwinusbhandle)  
-I/O のターゲット デバイス オブジェクトに関連付けられている WinUsb インターフェイスのハンドルを取得します。
+<a href="" id="iwdfusbtargetdevice--getwinusbhandle"></a>[**IWDFUsbTargetDevice:: GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-getwinusbhandle)  
+I/o ターゲットデバイスオブジェクトに関連付けられている WinUsb インターフェイスハンドルを取得します。
 
-### <a href="" id="send-a-control-transfer-to-a-umdf-usb-device-object"></a>UMDF USB デバイス オブジェクトをコントロールの転送を送信します。
+### <a href="" id="send-a-control-transfer-to-a-umdf-usb-device-object"></a>UMDF USB デバイスオブジェクトへの制御転送の送信
 
-UMDF ドライバーを呼び出すことができます、 [ **IWDFUsbTargetDevice::FormatRequestForControlTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer) standard では、デバイスにクラスに固有の説明する I/O 要求の書式を指定するメソッドまたはベンダー固有の USBコントロールの転送。 ドライバーを呼び出して、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)同期または非同期要求を送信するメソッド。
+UMDF ドライバーは、 [**IWDFUsbTargetDevice:: FormatRequestForControlTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)メソッドを呼び出して、標準、デバイスクラス固有、またはベンダー固有の USB 制御転送を記述する i/o 要求をフォーマットできます。 ドライバーは、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、同期または非同期で要求を送信できます。
 
-### <a href="" id="set-power-policy-for-a-umdf-usb-device-object"></a>UMDF USB デバイスの電源ポリシーの設定
+### <a href="" id="set-power-policy-for-a-umdf-usb-device-object"></a>UMDF USB デバイスの電源ポリシーを設定する
 
-UMDF ドライバーを呼び出すことができます、 [ **IWDFUsbTargetDevice::SetPowerPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy) USB デバイス WinUsb によって使用される電源ポリシーを設定します。 USB デバイスの電源ポリシー効果の変更、デバイスの電源管理の状態にします。
+UMDF ドライバーは、 [**IWDFUsbTargetDevice:: SetPowerPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy)メソッドを呼び出して、WINUSB が usb デバイス用に使用する電源ポリシーを設定できます。 USB デバイスの電源ポリシーによって、デバイスの電源管理の状態が変わります。
 
  
 

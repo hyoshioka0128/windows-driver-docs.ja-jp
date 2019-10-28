@@ -3,23 +3,23 @@ title: CPSUI 指定のページとテンプレート
 description: CPSUI 指定のページとテンプレート
 ms.assetid: de33cb29-3941-4232-bd61-d36fb04d69d3
 keywords:
-- 共通のプロパティ シートのユーザー インターフェイスの WDK、印刷テンプレート
-- CPSUI WDK、印刷テンプレート
-- WDK のプロパティ シート ページが印刷テンプレート
-- 共通のプロパティ シートのユーザー インターフェイスの WDK 印刷、定義済みのページ
-- 定義済みページの印刷、CPSUI WDK
-- WDK プロパティ シートのページを印刷する定義済みページ
-- 定義済みのプロパティ シート ページ WDK CPSUI
-- WDK CPSUI テンプレート
-- treeview は、WDK CPSUI をページします。
+- 一般的なプロパティシートのユーザーインターフェイス WDK 印刷、テンプレート
+- CPSUI WDK print、テンプレート
+- プロパティシートページの WDK 印刷、テンプレート
+- 共通プロパティシートのユーザーインターフェイス WDK 印刷、定義済みページ
+- CPSUI WDK print、事前に定義されたページ
+- プロパティシートページ WDK 印刷、定義済みページ
+- 事前定義されたプロパティシートページ (WDK CPSUI)
+- テンプレート WDK CPSUI
+- treeview ページの WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 937d7192ced24d4bd33c22a52f37868197ea9536
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5f869ec3ce350aefcf4d3d160e5cbf9cf999786
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372449"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843059"
 ---
 # <a name="cpsui-supplied-pages-and-templates"></a>CPSUI 指定のページとテンプレート
 
@@ -27,25 +27,25 @@ ms.locfileid: "67372449"
 
 
 
-CPSUI には、次の 3 つのページ テンプレートと共に、定義済みのプロパティ シートのページのセットが用意されています。 定義済みのプロパティ シートのページを以下に示します。
+CPSUI は、3つのページテンプレートと共に、定義済みのプロパティシートページのセットを提供します。 定義済みのプロパティシートのページには、次のものがあります。
 
--   一連の 3 つのページのタブのタイトルと**レイアウト**、**用紙/品質**、および**詳細**します。 これらのページは、プリンターのドキュメント プロパティが含まれるものし、プリンターのインターフェイス内で DLL からプロパティ シートを作成するために使用できます[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。
+-   **レイアウト**のタブタイトル、**用紙/品質**、および**高度**な3ページのセット。 これらのページは、プリンターのドキュメントプロパティを格納することを目的としており、プリンターインターフェイス DLL の[**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)関数内からプロパティシートを作成するために使用できます。
 
--   タブのタイトルと、1 つのページ**詳細**します。 ページのプリンターなどのドキュメント プロパティを格納するためのものが、もう一度とプリンターのインターフェイス内で DLL からプロパティ シートを作成するために使用できます[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。
+-   タブタイトルが **[詳細**] の単一ページ。 ここでも、このページはプリンターのドキュメントプロパティを格納することを意図しており、プリンターインターフェイス DLL の[**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)関数内からプロパティシートを作成するために使用できます。
 
--   タブのタイトルと、1 つのページ**デバイス設定**します。 このページは、プリンターのプロパティが含まれるものでは、プリンターのインターフェイス内で DLL からプロパティ シートを作成するために使用できる[ **DrvDevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicepropertysheets)関数。
+-   **デバイス設定**のタブタイトルを持つ単一のページ。 このページは、プリンターのプロパティを格納するためのものであり、プリンターインターフェイス DLL の[**DrvDevicePropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)関数内からプロパティシートを作成するために使用できます。
 
--   定義済みのタイトルなしで 1 つの一般的なツリー ビュー ページ。 任意の CPSUI アプリケーションには、このページを使用できます。
+-   定義済みのタイトルのない単一の汎用 treeview ページ。 CPSUI アプリケーションでは、このページを使用できます。
 
-定義済みのページを使用するアプリケーション特定する必要がありますを使用して、 **pDlgPage**のメンバー、 [ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)構造体。
+定義済みページを使用するには、アプリケーションで、 [**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)構造体の**pDlgPage**メンバーを使用して識別する必要があります。
 
-CPSUI には、次の 3 つの定義済みページ テンプレートも用意されています。 CPSUI は、その定義済みのページを作成するため、これらのテンプレートを使用します。 アプリケーションはそれらも使用できます。 次のテンプレートが構成されます。
+CPSUI には、3つの定義済みページテンプレートも用意されています。 CPSUI は、これらのテンプレートを使用して、定義済みページを作成します。 また、アプリケーションで使用することもできます。 テンプレートは、次の要素で構成されています。
 
--   CPSUI は定義済みの作成を使用して treeview ページのテンプレート**詳細**と**デバイス設定**ページ。 このテンプレートは各ノードを格納する treeview コントロールの構成[プロパティ シート オプション](property-sheet-options.md)します。 コンテキスト メニューは、ツリーの各ノードに関連付けられます。 各ノードのコンテキスト メニューは、ユーザーがオプションの値を変更する手段を提供します。 CPSUI このテンプレートは、すべての Windows メッセージを処理するためのダイアログ ボックス プロシージャを提供する、 [CPSUI でサポートされているウィンドウ コントロール](cpsui-supported-window-controls.md)します。
+-   Treeview ページテンプレート。 CPSUI は、定義済みの **[詳細**設定] ページと **[デバイスの設定]** ページを作成するために使用します。 このテンプレートは、各[プロパティシートオプション](property-sheet-options.md)のノードを含む treeview コントロールで構成されています。 コンテキストメニューは、ツリーの各ノードに関連付けられています。 各ノードのコンテキストメニューには、ユーザーがオプションの値を変更するための手段が用意されています。 CPSUI は、 [CPSUI でサポートされているすべてのウィンドウコントロール](cpsui-supported-window-controls.md)の Windows メッセージを処理する、このテンプレートのダイアログボックスプロシージャを提供します。
 
--   2 つ CPSUI は定義済みの作成を使用して複数のコントロール テンプレート、**レイアウト**と**用紙/品質**ページ。 CPSUI には、このテンプレートでは、すべてのウィンドウの CPSUI でサポートされているコントロールの Windows メッセージを処理のダイアログ ボックス プロシージャが用意されています。
+-   2つの複数のコントロールテンプレート。 CPSUI を使用して、定義済みの**レイアウト**と**用紙/品質**のページを作成します。 CPSUI は、CPSUI でサポートされているすべてのウィンドウコントロールの Windows メッセージを処理する、このテンプレートのダイアログボックスプロシージャを提供します。
 
-定義済みのページのテンプレートを使用するアプリケーション特定する必要がありますを使用して、 **DlgTemplateID**のメンバー、 [ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)構造体。
+定義済みのページテンプレートを使用するには、アプリケーションで、 [**dlgpage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)構造体の**DlgTemplateID**メンバーを使用して識別する必要があります。
 
  
 

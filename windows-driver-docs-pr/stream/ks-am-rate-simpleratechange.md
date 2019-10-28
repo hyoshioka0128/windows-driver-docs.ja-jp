@@ -1,9 +1,9 @@
 ---
-title: KS\_AM\_レート\_SimpleRateChange
-description: KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間スタンプの率を設定します。
+title: KS\_AM\_率\_SimpleRateChange
+description: KS\_AM\_RATE\_SimpleDataRate プロパティは、フィルターのタイムスタンプレートを設定します。
 ms.assetid: 07399986-de5a-42fc-975e-05ea57570f58
 keywords:
-- KS_AM_RATE_SimpleRateChange ストリーミング メディア デバイス
+- KS_AM_RATE_SimpleRateChange ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1a147444a2f06a7c4ed8399531949784af264f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 88adb8027d1a32fd5ef1978c3e1312e3d3d1a52c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382537"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843449"
 ---
-# <a name="ksamratesimpleratechange"></a>KS\_AM\_レート\_SimpleRateChange
+# <a name="ks_am_rate_simpleratechange"></a>KS\_AM\_率\_SimpleRateChange
 
 
-KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間スタンプの率を設定します。
+KS\_AM\_RATE\_SimpleDataRate プロパティは、フィルターのタイムスタンプレートを設定します。
 
 ## <span id="ddk_ks_am_rate_simpleratechange_ks"></span><span id="DDK_KS_AM_RATE_SIMPLERATECHANGE_KS"></span>
 
@@ -41,7 +41,7 @@ KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange" data-raw-source="[&lt;strong&gt;KS_AM_SimpleRateChange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange)"><strong>KS_AM_SimpleRateChange</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_simpleratechange" data-raw-source="[&lt;strong&gt;KS_AM_SimpleRateChange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_simpleratechange)"><strong>KS_AM_SimpleRateChange</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、KS\_AM\_mpeg-2 ストリーム、早送りまたは巻き戻しなどの単純な料金の変更を記述する SimpleRateChange 構造体。
+プロパティ値 (操作データ) は、高速転送や巻き戻しなど、MPEG 2 ストリームの単純なレート変更を記述する KS\_AM\_SimpleRateChange 構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -74,7 +74,7 @@ KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間�
 ## <a name="see-also"></a>関連項目
 
 
-[**KS\_AM\_SimpleRateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange)
+[**KS\_AM\_SimpleRateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_simpleratechange)
 
  
 

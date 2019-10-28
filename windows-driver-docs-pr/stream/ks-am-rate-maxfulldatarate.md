@@ -1,9 +1,9 @@
 ---
-title: KS\_AM\_レート\_MaxFullDataRate
-description: KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛けた値、最大値、完全なデータ レートを取得します。
+title: KS\_AM\_率\_MaxFullDataRate
+description: KS\_AM\_RATE\_MaxFullDataRate プロパティは、最大データレートを 1万 (10 進数) で乗算して取得します。
 ms.assetid: 2a331ecd-0b40-4dd9-90f0-7585cd36c41e
 keywords:
-- KS_AM_RATE_MaxFullDataRate ストリーミング メディア デバイス
+- KS_AM_RATE_MaxFullDataRate ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 715d5ab6480bb979e656095233ec3755db5a3cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96bde05b1b909c9b17dd2b8c8b2a36a76808d4c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354754"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843451"
 ---
-# <a name="ksamratemaxfulldatarate"></a>KS\_AM\_レート\_MaxFullDataRate
+# <a name="ks_am_rate_maxfulldatarate"></a>KS\_AM\_率\_MaxFullDataRate
 
 
-KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛けた値、最大値、完全なデータ レートを取得します。
+KS\_AM\_RATE\_MaxFullDataRate プロパティは、最大データレートを 1万 (10 進数) で乗算して取得します。
 
 ## <span id="ddk_ks_am_rate_maxfulldatarate_ks"></span><span id="DDK_KS_AM_RATE_MAXFULLDATARATE_KS"></span>
 
@@ -41,7 +41,7 @@ KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_AM_MaxFullDataRate</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛�
 
  
 
-プロパティの値 (データの操作) は、KS\_AM\_MaxFullDataRate (型定義は長い)。
+プロパティ値 (操作データ) は、\_AM\_MaxFullDataRate (型定義の LONG 型) です。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ KS\_AM\_レート\_MaxFullDataRate プロパティは 10000 (10 進数) を掛�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>

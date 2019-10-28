@@ -6,16 +6,16 @@ keywords:
 - OID_CO_DELETE_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a97b7e8faa3781c48b36281b8bfe7e327fdd13e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01098387d069bf42f92fb8e5c028f18e8c9689ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384385"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843265"
 ---
-# <a name="oidcodeletepvc"></a>OID_CO_DELETE_PVC
+# <a name="oid_co_delete_pvc"></a>OID_CO_DELETE_PVC
 
-OID_CO_DELETE_PVC OID は、構成されている Pvc のコール マネージャーの一覧から永続的な接続 (PVC) を削除する、クライアントが、コール マネージャーに送信されます。 PVC 形式は次のように定義されている CO_PVC 構造体としてです。
+OID_CO_DELETE_PVC OID は、構成された Pvc の呼び出しマネージャーの一覧から永続的な仮想接続 (PVC) を削除するために、クライアントから呼び出しマネージャーに送信されます。 PVC は、次のように定義された CO_PVC 構造体として書式設定されます。
 
 ```c++
 typedef struct _CO_PVC {
@@ -24,20 +24,20 @@ typedef struct _CO_PVC {
 } CO_PVC, *PCO_PVC;
 ``` 
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **NdisAfHandle**  
-によって返される NDIS が指定したハンドルを指定します[NdisClOpenAddressFamilyEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)します。
+[NdisClOpenAddressFamilyEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)によって返される NDIS 提供のハンドルを指定します。
 
 **PvcParameters**  
-書式設定された[CO_SPECIFIC_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)構造体。 この構造体には、PVC を記述するプロトコル固有のパラメーターが含まれています。
+書式設定された[CO_SPECIFIC_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)構造体。 この構造体には、PVC を説明するプロトコル固有のパラメーターが含まれています。
 
-PVC は、管理者によって手動で削除されます。 このようなアクティビティを監視するクライアントでは、この OID をコール マネージャーに送信することによって削除された PVC のコール マネージャーに通知します。
+PVC は、管理者によって手動で削除されます。 このようなアクティビティを監視するクライアントは、この OID を呼び出しマネージャーに送信することによって削除された PVC の呼び出しマネージャーに通知します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 

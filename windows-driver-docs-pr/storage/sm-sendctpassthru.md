@@ -1,9 +1,9 @@
 ---
 title: SM\_SendCTPassThru 関数
-description: SM\_SendCTPassThru WMI メソッドは、指定されたポートに一般的なトランスポート (CT) パススルー コマンドを送信します。
+description: SM\_SendCTPassThru WMI メソッドは、指定されたポートに common transport (CT) パススルーコマンドを送信します。
 ms.assetid: 437f0c79-78f6-406e-8774-79de4425bfe8
 keywords:
-- 記憶装置の SM_SendCTPassThru 関数
+- SM_SendCTPassThru function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f93a07a8e4efc80a30fc2d5139e9bfd0b07aaf99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d33f65e26d17829f2e018bc8fbcecbe757898e8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384289"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845463"
 ---
-# <a name="smsendctpassthru-function"></a>SM\_SendCTPassThru 関数
+# <a name="sm_sendctpassthru-function"></a>SM\_SendCTPassThru 関数
 
 
-SM\_SendCTPassThru WMI メソッドは、指定されたポートに一般的なトランスポート (CT) パススルー コマンドを送信します。
+SM\_SendCTPassThru WMI メソッドは、指定されたポートに common transport (CT) パススルーコマンドを送信します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,28 +46,28 @@ void SM_SendCTPassThru(
 ----------
 
 *HbaPortWWN*   
-ターゲットにアクセスする HBA の世界中の名 (WWN)。 この情報は、SendCTPassThru の PortWWN メンバーのミニポート ドライバーに配信\_構造体。
+ターゲットへのアクセスに使用される HBA のワールド名 (WWN)。 この情報は、PortWWN の SendCTPassThru\_のメンバーであるミニポートドライバーに配信されます。
 
-*InRespBufferMaxSize*   
+*In火炎 Buffermaxsize*   
 応答バッファーの最大サイズ。
 
-*RequestBufferSize*   
-一般的なトランスポート コマンドの結果を保持するバッファーのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の RequestBufferSize メンバー\_SendCTPassThru\_構造体。
+*Requestbuffersize*   
+Common transport コマンドの結果を保持するバッファーのサイズ (バイト単位)。 ミニポートドライバーは、構造内の SM\_SendCTPassThru\_の RequestBufferSize メンバーにこの情報を返します。
 
-*RequestBuffer*   
-一般的なトランスポート コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の RequestBuffer メンバー\_SendCTPassThru\_構造体。
+*Requestbuffer*   
+Common transport コマンドの結果。 この情報は、ミニポートドライバーによって、SM\_SendCTPassThru\_構造内の RequestBuffer メンバーに返されます。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendCTPassThru\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_SendCTPassThru\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
-*TotalResponseBufferSize*   
-結果の一般的なトランスポート コマンドのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalResponseBufferSize メンバー\_SendCTPassThru\_構造体。
+*Totalresponsebuffersize*   
+結果の共通トランスポートコマンドのサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendCTPassThru\_OUT 構造体の TotalResponseBufferSize メンバーにこの情報を返します。
 
-*ActualResponseBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の ActualResponseBufferSize メンバー\_SendCTPassThru\_構造体。
+*Actualresponsebuffersize*   
+実際に取得されたデータのサイズ (バイト単位)。 ミニポートドライバーは、SM\_SendCTPassThru\_OUT 構造体の ActualResponseBufferSize メンバーでこの情報を返します。
 
-*ResponseBuffer*   
-一般的なトランスポート コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の ResponseBuffer メンバー\_SendCTPassThru\_構造体。
+*Responsebuffer*   
+Common transport コマンドの結果。 ミニポートドライバーは、SM\_SendCTPassThru\_OUT 構造体の ResponseBuffer メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -77,7 +77,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -94,19 +94,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_SendCTPassThru\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_in)
+[**SM\_SendCTPassThru\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_in)
 
-[**SM\_SendCTPassThru\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_out)
+[**SM\_SendCTPassThru\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_out)
 
  
 

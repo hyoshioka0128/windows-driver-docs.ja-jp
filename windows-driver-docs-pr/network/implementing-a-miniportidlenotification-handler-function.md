@@ -4,33 +4,33 @@ description: MiniportIdleNotification ハンドラー関数の実装
 ms.assetid: F2F8C98F-D8B3-49A6-819D-BC0EC936F41E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df78fec150d9532912512517ae3909f8e127e90
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe85f744696038eba9f94d782445f2b3f9fce084
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377070"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843439"
 ---
 # <a name="implementing-a-miniportidlenotification-handler-function"></a>MiniportIdleNotification ハンドラー関数の実装
 
 
-NDIS ミニポート ドライバーの呼び出す[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)選択的にネットワーク アダプターを中断するためにハンドラー関数。 NDIS アダプターは、低電力状態を遷移するときに、アダプターが中断されます。
+NDIS は、ネットワークアダプターを選択的に中断するために、ミニポートドライバーの[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) handler 関数を呼び出します。 NDIS がアダプターを低電力状態に移行すると、アダプターは中断されます。
 
-ネットワーク アダプターがまだ使用されている場合、ミニポート ドライバーがアイドル状態の通知を拒否することができます。 NDIS を返すことによってこのドライバーでは\_状態\_から時間、 [ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数。
+ネットワークアダプターがまだ使用されている場合、ミニポートドライバーはアイドル状態の通知を拒否することがあります。 ドライバーは、 [*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) handler 関数から NDIS\_STATUS\_BUSY を返すことによってこれを行います。
 
-**注**  ミニポート ドライバーはアイドル状態の通知を拒否できない場合、 *ForceIdle*のパラメーター、 [ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数に設定されている**TRUE**します。
-
- 
-
-ミニポート ドライバーがアイドル状態の通知を拒否しては場合は、基になるバス ドライバーをバスに固有の I/O 要求パケット (Irp) を発行する必要があります。 これらの Irp では、アダプターのアイドル状態と、アダプターは、低電力状態に移行することを確認する要求について、バス ドライバーに通知します。
-
-たとえば、 [ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)を呼び出すと、USB ミニポート ドライバーは、USB アイドル状態の要求の I/O 要求パケット (IRP) を準備します ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))。 、ミニポート ドライバーが IRP を準備するとき、コールバック関数を指定する必要があります。 ドライバーでは、呼び出す必要がありますも[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)または[ **IoSetCompletionRoutineEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)完了ルーチンを指定するにはIRP します。 ミニポート ドライバーを呼び出して[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) USB バス ドライバーに IRP を発行します。
-
-**注**  USB バス ドライバーが IRP をすぐに完了しません。 IRP が低電力の移行を保留中状態のままにします。 ミニポート ドライバーによって取り消されるか、USB ハブからのネットワーク アダプターの突然の削除などのハードウェア イベントが発生した場合にのみ、バス ドライバーは IRP を完了します。
+[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) handler 関数の*ForceIdle*パラメーターが**TRUE**に設定されている場合、ミニポートドライバーはアイドル状態の通知を拒否できない  に**注意**してください。
 
  
 
-例を次に、 [ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification) USB ミニポート ドライバーのハンドラー関数。 この例では、基になる USB ドライバーを USB アイドル状態の要求 IRP の発行に関連する手順を示します。 この例も示す方法で以前に割り当てられた IRP のリソース[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)IRP の再利用できます。
+ミニポートドライバーがアイドル状態の通知を拒否しない場合、基盤となるバスドライバーにバス固有の i/o 要求パケット (Irp) を発行することが必要になる場合があります。 これらの Irp は、アダプターのアイドル状態についてバスドライバーに通知し、アダプターが低電力状態に移行できることを確認するように要求します。
+
+たとえば、 [*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)が呼び出されると、usb ミニポートドライバーは、usb アイドル要求に対して i/o 要求パケット (IRP) を準備します ([**IOCTL\_内部\_usb\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))。 ミニポートドライバーは、IRP を準備するときに、コールバック関数を指定する必要があります。 また、ドライバーは、 [**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)または[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)を呼び出して、IRP の完了ルーチンを指定する必要があります。 次に、ミニポートドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、IRP を USB バスドライバーに発行します。
+
+USB バスドライバー  IRP はすぐに完了しない**ことに注意**してください。 IRP は、低電力の移行によって保留中の状態のままになります。 バスドライバーは、ミニポートドライバーによって取り消された場合、またはハードウェアイベントが発生した場合にのみ、IRP を完了します。たとえば、USB ハブからネットワークアダプターが突然削除された場合などです。
+
+ 
+
+次に、USB ミニポートドライバーの[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) handler 関数の例を示します。 この例では、基になる USB ドライバーへの USB アイドル要求 IRP の発行に関連する手順を示します。 この例では、以前に[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)で割り当てられた irp リソースを irp に再利用できる方法も示しています。
 
 ```C++
 //
@@ -78,7 +78,7 @@ NDIS_STATUS MiniportIdleNotification(
 }
 ```
 
-USB アイドル要求 IRP のコールバック ルーチンの実装のガイドラインについては、次を参照してください。 [USB のアイドル状態要求 IRP のコールバック ルーチンを実装する](implementing-a-usb-idle-request-irp-callback-routine.md)します。
+USB アイドル要求 IRP のコールバックルーチンの実装に関するガイドラインについては、「 [Usb アイドル要求の Irp コールバックルーチンの実装](implementing-a-usb-idle-request-irp-callback-routine.md)」を参照してください。
 
  
 

@@ -1,96 +1,96 @@
 ---
 title: OID_GEN_MAC_OPTIONS
-description: OID_GEN_MAC_OPTIONS OID として、クエリには、基になるドライバーまたは NIC の省略可能なプロパティを定義するビットマスクを指定します
+description: クエリとして、OID_GEN_MAC_OPTIONS OID は、基になるドライバーまたは NIC のオプションのプロパティを定義するビットマスクを指定します。
 ms.assetid: 2a093bcb-ae6f-491c-a596-03e6f47b0b86
 ms.date: 08/08/2017
-keywords: -OID_GEN_MAC_OPTIONS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_MAC_OPTIONS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bd0808748c52707354155a052c832c2e51b8ea9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e3435c5e38f4196af19ff364a3e6abb8ce947ac4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369058"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843073"
 ---
-# <a name="oidgenmacoptions"></a>OID\_GEN\_MAC\_オプション
+# <a name="oid_gen_mac_options"></a>OID\_GEN\_MAC\_オプション
 
 
-クエリ、OID として\_GEN\_MAC\_オプション OID を基になるドライバーまたは NIC の省略可能なプロパティを定義するビットマスクを指定します
+クエリとして、OID\_GEN\_MAC\_オプション OID は、基になるドライバーまたは NIC のオプションのプロパティを定義するビットマスクを指定します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず.
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+必ず.
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、NDIS 6.0 とそれ以降のミニポート ドライバーのこの OID を処理します。
+Ndis は、この OID を NDIS 6.0 以降のミニポートドライバー用に処理します。
 
-A プロトコルのが開始され次のクエリを調べるフラグの基になるドライバーの設定、およびそれらのオプションで利用できます。
+このクエリを開始するプロトコルによって、基になるドライバーによって設定されているフラグが決定され、必要に応じてそれらを利用できます。
 
-次のフラグは現在定義されています。
+現在、次のフラグが定義されています。
 
 <a href="" id="ndis-mac-option-copy-lookahead-data"></a>NDIS\_MAC\_オプション\_コピー\_先読み\_データ  
-プロトコル ドライバーには任意の方法で指定されたデータにアクセスできます。 一部の高速コピー関数では、オンボード デバイス メモリへのアクセスに問題があります。 マップされているデバイスのメモリ不足データを示す、ミニポート ドライバーでは、このフラグは設定しないでください必要があります。 ミニポート ドライバーはこのフラグを設定する場合は、fast コピー関数の制限を緩和します。
+プロトコルドライバーは、指定されたデータに任意の方法でアクセスできます。 一部の高速コピー関数では、オンボードデバイスのメモリにアクセスできません。 マップされたデバイスメモリからデータを示すミニポートドライバーでは、このフラグを設定しないようにしてください。 ミニポートドライバーによってこのフラグが設定されている場合は、高速コピー関数の制限が緩和されます。
 
-<a href="" id="ndis-mac-option-receive-serialized"></a>NDIS\_MAC\_オプション\_受信\_シリアル化  
-ミニポート ドライバーでは、順番にパケットを示します。 つまり、このようなドライバーが入力されていない新しい、いずれかが完了した場合は、前の受信までを示す値を受信します。
+<a href="" id="ndis-mac-option-receive-serialized"></a>NDIS\_MAC\_オプション\_シリアル化された\_  
+ミニポートドライバーは、パケットをシリアル方式で示します。 つまり、このようなドライバーは、前の受信 (存在する場合) が完了するまで、新しい受信を通知しません。
 
-<a href="" id="ndis-mac-option-transfers-not-pend"></a>NDIS\_MAC\_オプション\_転送\_いない\_保留  
-ミニポート ドライバーが完了しない問題を非同期的に受信します。
+<a href="" id="ndis-mac-option-transfers-not-pend"></a>NDIS\_MAC\_オプション\_転送\_\_非保留  
+ミニポートドライバーは、受信表示を非同期に完了しません。
 
-示すミニポート ドライバーでの操作の受信、 [ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数は、このフラグを設定する必要があります。
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数を使用した受信操作を示すミニポートドライバーは、このフラグを設定する必要があります。
 
-<a href="" id="ndis-mac-option-no-loopback"></a>NDIS\_MAC\_オプション\_いいえ\_ループバック  
-NDIS は、このドライバーに代わってループバックするを管理するため、NIC は内部のループバックのサポートがありません。 NIC にハードウェア ループバックのサポートがない限り、すべてのミニポート ドライバーでこのフラグを設定する必要がありますので、ミニポート ドライバーは、独自のソフトウェアのループバックを NDIS、として効率的に提供できません。 WAN ミニポート ドライバーでは、このフラグを設定する必要があります。
+<a href="" id="ndis-mac-option-no-loopback"></a>NDIS\_MAC\_オプション\_\_ループバックなし  
+NIC には内部ループバックがサポートされていないため、NDIS はこのドライバーに代わってループバックをを管理します。 ミニポートドライバーは、独自のソフトウェアループバックを NDIS として効率的に提供できないので、NIC でハードウェアループバックがサポートされていない限り、すべてのミニポートドライバーはこのフラグを設定する必要があります。 WAN ミニポートドライバーは、このフラグを設定する必要があります。
 
-<a href="" id="ndis-mac-option-full-duplex"></a>NDIS\_MAC\_オプション\_完全\_双方向  
-ミニポート ドライバーがサポートする完全な双方向の送信と SMP のプラットフォームで表示します。
+<a href="" id="ndis-mac-option-full-duplex"></a>NDIS\_MAC\_オプション\_完全\_二重  
+ミニポートドライバーでは、SMP プラットフォームでの全二重の送信とインジケーターがサポートされています。
 
-**注**  NDIS 5.0 およびそれ以降のミニポート ドライバーで使用するためこのフラグは非推奨です。 NDIS 5.0 以降では、このフラグは無視されます。
+このフラグは、NDIS 5.0 以降のミニポートドライバーで使用するために非推奨とされ**て  ます**。 NDIS 5.0 以降では、このフラグは無視されます。
 
  
 
-<a href="" id="ndis-mac-option-eotx-indication"></a>NDIS\_MAC\_オプション\_EOTX\_を示す値  
-このフラグは廃止されています。
+<a href="" id="ndis-mac-option-eotx-indication"></a>NDIS\_MAC\_オプション\_EOTX\_表示  
+このフラグは互換性のために残されています。
 
-<a href="" id="ndis-mac-option-8021p-priority"></a>NDIS\_MAC\_オプション\_8021 P\_優先順位  
-NIC とそのドライバーは、802.1 p のパケットの優先順位をサポートします。 詳細については、次を参照してください。[パケットの優先順位](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562331(v=vs.85))します。 パケットの優先度の値がで受信した[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)上位レイヤー ドライバーからの構造体。 適切な情報がパケットの MAC ヘッダーで生成され、ネットワーク経由で送信します。 さらに、この NIC とそのドライバーは、ネットワークから受信したパケットの MAC ヘッダーから適切な情報の抽出をサポートします。 NET でこの情報が転送される\_上位層のドライバーにバッファーの構造体。
+<a href="" id="ndis-mac-option-8021p-priority"></a>NDIS\_MAC\_オプション\_8021P\_PRIORITY  
+NIC とそのドライバーは、802.1 p パケット優先度をサポートしています。 詳細については、「[パケットの優先順位](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562331(v=vs.85))」を参照してください。 パケット優先順位の値は、上位層のドライバーから[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造体で受信します。 適切な情報は、パケットの MAC ヘッダーに生成され、ネットワーク経由で送信されます。 さらに、この NIC とそのドライバーは、ネットワークから受信したパケットの MAC ヘッダーからの適切な情報の抽出をサポートしています。 この情報は、ネットワーク\_のバッファー構造で上位層のドライバーに転送されます。
 
-**注**  NDIS 6.0 と以降およびそれ以降、およびそれ以降のミニポート ドライバーは、NDIS を設定する必要があります\_MAC\_オプション\_8021 P\_優先順位フラグ。
+  NDIS 6.0 以降およびそれ以降のミニポートドライバーでは、NDIS\_MAC\_オプション\_8021P\_PRIORITY フラグを設定する必要がある**ことに注意**してください。
 
  
 
 <a href="" id="ndis-mac-option-supports-mac-address-overwrite"></a>NDIS\_MAC\_オプション\_サポート\_MAC\_アドレス\_上書き  
-NDIS は、ミニポート ドライバーを呼び出すときにこのフラグを設定、 [ **NdisReadNetworkAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)関数。
+ミニポートドライバーが[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress)関数を呼び出すと、NDIS によってこのフラグが設定されます。
 
-<a href="" id="ndis-mac-option-receive-at-dpc"></a>NDIS\_MAC\_オプション\_受信\_で\_DPC  
-このフラグは廃止されています。
+<a href="" id="ndis-mac-option-receive-at-dpc"></a>\_DPC で\_を受信\_NDIS\_MAC\_オプション  
+このフラグは互換性のために残されています。
 
 <a href="" id="ndis-mac-option-8021q-vlan"></a>NDIS\_MAC\_オプション\_8021Q\_VLAN  
-ミニポート ドライバーでは、割り当てるでき、パケットの MAC ヘッダーで VLAN 識別子 (ID) マーキングを削除することができます。 ドライバーは、ドライバーを処理する各 NIC の構成済みの VLAN ID を保持します。 受信パケットを NIC が関連付けられているし、VLAN ID を持つ送信パケットをマークの VLAN に属していないドライバーをフィルター処理します。 ドライバーの中に[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)特定の NIC ドライバーの関数が最初に、NIC の VLAN ID を 0 に設定します。 ドライバーの*MiniportInitializeEx*関数し、レジストリから次の構成パラメーターを読み取るし、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
+ミニポートドライバーは、パケットの MAC ヘッダーで VLAN 識別子 (ID) のマーキングを割り当てたり削除したりすることができます。 ドライバーは、ドライバーが処理する各 NIC に対して構成された VLAN ID を保持します。 ドライバーは、NIC が関連付けられている VLAN に属していない着信パケットを除外し、送信パケットを VLAN ID でマークします。 ドライバーの特定の NIC に対する[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数の実行中に、ドライバーは最初に NIC の VLAN ID をゼロに設定します。 次に、ドライバーの*MiniportInitializeEx*関数は、レジストリから次の構成パラメーターを読み取ります。また、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
 
 ```syntax
 VlanId, REG_DWORD
 ```
 
 <a href="" id="ndis-mac-option-reserved"></a>NDIS\_MAC\_オプション\_予約済み  
-NDIS 内部使用のために予約されています。
+NDIS の内部使用のために予約されています。
 
-**注**  設定、NDIS ミニポート ドライバー\_MAC\_オプション\_8021Q\_VLAN フラグは、NDIS を設定する必要がありますも\_MAC\_オプション\_8021 P\_優先順位フラグ。 つまり、802.1 q をサポートしているミニポート ドライバーは、802.1 p もサポートする必要があります。
+**注**  NDIS\_MAC\_オプションを設定するミニポートドライバー\_8021Q\_VLAN フラグでは、NDIS\_MAC\_オプション\_8021P\_PRIORITY フラグも設定する必要があります。 言い換えると、802.1 Q をサポートするミニポートドライバーも 802.1 p をサポートする必要があります。
 
  
 
@@ -105,7 +105,7 @@ NDIS 内部使用のために予約されています。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -113,11 +113,11 @@ NDIS 内部使用のために予約されています。
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)
 
-[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)
+[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress)
 
-[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)
+[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)
 
  
 

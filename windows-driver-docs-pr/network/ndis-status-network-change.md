@@ -1,50 +1,50 @@
 ---
 title: NDIS_STATUS_NETWORK_CHANGE
-description: NDIS_STATUS_NETWORK_CHANGE 状態では、後続のネットワーク アドレスの再ネゴシエーションを開始するドライバーを許可するネットワークの変更を示します。
+description: NDIS_STATUS_NETWORK_CHANGE の状態は、ネットワークの変更によってネットワークアドレスの再ネゴシエーションが開始されることを示します。
 ms.assetid: feb6bb71-7147-43dd-b09d-cb41404164eb
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_NETWORK_CHANGE ネットワーク ドライバーが Windows Vista 以降
+- NDIS_STATUS_NETWORK_CHANGE ネットワークドライバー (Windows Vista 以降)
 ms.localizationpriority: medium
-ms.openlocfilehash: 476c6043a9890efd30e37ba02e5e1fdafc938491
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 89616ed87053ec21377793efa7dffa6ce1a4baf5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368566"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842784"
 ---
-# <a name="ndisstatusnetworkchange"></a>NDIS\_状態\_ネットワーク\_変更
+# <a name="ndis_status_network_change"></a>NDIS\_の状態\_ネットワーク\_の変更
 
 
-NDIS\_状態\_ネットワーク\_状態の変更が後続のネットワーク アドレスの再ネゴシエーションを開始するドライバーを許可するネットワークの変更を示します。
+NDIS\_状態\_ネットワーク\_の状態の変更は、ネットワークが変更されたことを示します。これにより、その後のドライバーがネットワークアドレスの再ネゴシエーションを開始できるようになります。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS ミニポート ドライバーでは、レイヤー 3 つのアドレスを再ネゴシエートする上位のプロトコルのドライバーを入手するには、この状態表示を生成できます。
+NDIS ミニポートドライバーは、このステータス表示を生成して、レイヤー3のアドレスを再ネゴシエートするプロトコルドライバーを要求することができます。
 
-NDIS 生成 NDIS\_状態\_ネットワーク\_古い 802.1 X の変更状態インジケーターのワイヤレス 802.3 をエミュレートするミニポート ドライバー。 これらのミニポート ドライバーがメディアの種類を報告**NdisMedium802\_3**の物理メディア タイプと**NdisPhysicalMediumWirelessLan**します。 このようなミニポート ドライバーが生成するとき、 [ **NDIS\_状態\_メディア\_CONNECT** ](ndis-status-media-connect.md)に接続された状態を示す値と関連付けられているミニポート アダプターが状態では、NDIS 生成、NDIS\_状態\_ネットワーク\_ミニポート アダプターの状態表示を変更します。
+NDIS では、802.3 をエミュレートする古い 802.1 X ワイヤレスミニポートドライバーの状態を\_ネットワーク\_NDIS\_状態が生成されます。 これらのミニポートドライバーは、メディアの種類として**NdisMedium802\_3** 、物理メディアの種類として**NdisPhysicalMediumWirelessLan**を報告します。 このようなミニポートドライバーによって、 [**ndis\_状態\_メディア\_接続**](ndis-status-media-connect.md)状態が表示され、関連するミニポートアダプターが接続状態になった場合、NDIS は NDIS\_ステータス\_ネットワーク\_変更を生成します。ミニポートアダプターの状態を示します。
 
-NDIS 6.0 とそれ以降のミニポート ドライバーは、NDIS を生成する必要があります\_状態\_ネットワーク\_ネットワーク データを処理する準備ができた後にのみ変更状態を示す値。 たとえば、ネイティブの 802.11 でこの状態を示す値が生成されます認証が正常に完了し、完全なレイヤー 2 接続が実現されます。
+NDIS 6.0 以降のミニポートドライバーでは、ネットワークデータを処理する準備ができた後にのみ、NDIS\_の状態\_ネットワーク\_変更する必要があります。 たとえば、ネイティブ802.11 では、認証が正常に完了し、全レイヤーの2つの接続が確立した後に、この状態が生成されます。
 
-**注**  - ミニポート アダプターがネットワークのデータを送受信することが状態としてこの状態を疎定義メディアが接続された状態は正確に定義されていません。 メディア接続は直接関係ありません認証の状態をリンクします。 ネイティブ WiFi 802.3 インターフェイスは、リンクが認証された後、までパケットを送受信できません。 この場合は、メディアが接続された状態はネイティブの 802.11 のリンクで認証された状態と一致します。
+**注**  メディア接続状態は正確に定義されていませんが、この状態は、ミニポートアダプターがネットワークデータを送受信できる状態として、大まかに定義できます。 メディア接続は、リンク認証ステータスに直接関連していません。 ネイティブ WiFi 802.3 インターフェイスは、リンクが認証されるまでパケットを送受信できません。 この場合、メディアに接続された状態は、ネイティブ802.11 でリンク認証された状態と一致します。
 
  
 
-NDIS が次のいずれかを提供する NDIS\_ネットワーク\_変更\_で値型、 **StatusBuffer**のメンバー、 [ **NDIS\_の状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。
+Ndis は、次のいずれかの NDIS\_ネットワーク\_、 [**ndis\_ステータス\_示さ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)れる構造体の**statusbuffer**メンバーの\_型の値を変更します。
 
 <a href="" id="ndispossiblenetworkchange"></a>**NdisPossibleNetworkChange**  
-ミニポート ドライバーでは、ネットワークの変更が存在する可能性が検出されました。 ここでは、上にあるプロトコルは、存在する場合は、ネットワークの変更を検出し、必要に応じて、アドレスの再ネゴシエーションする必要があります。
+ミニポートドライバーによって、ネットワークの変更が検出されたことが検出されました。 この場合、それ以降のプロトコルはネットワークの変更を検出し、必要に応じてアドレスを再ネゴシエーションする必要があります。
 
-NDIS は、NDIS を生成するときもこの値を使って\_状態\_ネットワーク\_変更の状態インジケーターの古い 802.1 X ワイヤレス 802.3 をエミュレートするミニポート ドライバー。 ただし、NDIS 使用**NdisNetworkChangeFromMediaConnect**の代わりに**NdisPossibleNetworkChange**同じイベントを変換、ときに Windows Management Instrumentation (WMI)。
+また、NDIS では、802.3 をエミュレートする古い 802.1 X ワイヤレスミニポートドライバーの状態を\_ネットワーク\_NDIS\_状態を生成するときにもこの値が使用されます。 ただし、NDIS は、Windows Management Instrumentation (WMI) に対して同じイベントを変換するときに、 **NdisPossibleNetworkChange**ではなく**NdisNetworkChangeFromMediaConnect**を使用します。
 
 <a href="" id="ndisdefinitelynetworkchange"></a>**NdisDefinitelyNetworkChange**  
-上にあるプロトコルは、アドレスを再ネゴシエートする必要がありますのでネットワークの変更が認識されているミニポート ドライバーが検出されました。
+ミニポートドライバーはネットワークが変更されていることを検出したため、それ以降のプロトコルはアドレスを再ネゴシエーションする必要があります。
 
 <a href="" id="ndisnetworkchangefrommediaconnect"></a>**NdisNetworkChangeFromMediaConnect**  
-古い 802.1 X ワイヤレスのミニポート ドライバー生成 802.3 をエミュレートする、 [ **NDIS\_状態\_メディア\_CONNECT** ](ndis-status-media-connect.md)状態表示になっていた、接続の状態。 WMI イベント通知では、この値が使用される[GUID\_NDIS\_状態\_ネットワーク\_変更](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-status-network-change)します。 **NdisNetworkChangeFromMediaConnect** NDIS で使用されていない\_状態\_ネットワーク\_変更状態を示す値。
+802.3 をエミュレートする古い 802.1 X ワイヤレスミニポートドライバーは、 [**NDIS\_ステータス\_メディア\_接続**](ndis-status-media-connect.md)状態になったときに、接続状態が表示されたことを示します。 この値は、 [GUID\_NDIS\_状態\_ネットワーク\_の変更](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-status-network-change)に関する WMI イベント通知で使用されます。 **NdisNetworkChangeFromMediaConnect**は、NDIS\_状態\_ネットワーク\_の状態の表示を変更するためには使用されません。
 
-**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication) sizeof に構造体が設定されている (NDIS\_ネットワーク\_変更\_型)。
+[**Ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffersize**メンバーが SIZEOF (NDIS\_NETWORK\_CHANGE\_TYPE) に設定されています。
 
 <a name="requirements"></a>要件
 ------------
@@ -57,11 +57,11 @@ NDIS は、NDIS を生成するときもこの値を使って\_状態\_ネット
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 以降をサポートします。</p></td>
+<td><p>NDIS 6.0 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h (Ndis.h を含む)</td>
+<td>Ndis .h (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ NDIS は、NDIS を生成するときもこの値を使って\_状態\_ネット
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
 [**NDIS\_状態\_メディア\_接続**](ndis-status-media-connect.md)
 

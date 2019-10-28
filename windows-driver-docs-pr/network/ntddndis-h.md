@@ -1,30 +1,30 @@
 ---
 title: Ntddndis.h
-description: このセクションには、カーネル モードのネットワーク ドライバーに関する Ntddndis.h ヘッダーが含まれています。
+description: このセクションには、Ntddndis ヘッダーのカーネルモードネットワークドライバーに関するトピックが含まれています。
 ms.assetid: EC2CD8C5-A2E9-4CA3-9229-BF0A955E6F53
 keywords:
-- Ntddndis.h ネットワーク ドライバー
+- Ntddndis ネットワークドライバー
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdf469406016b48e8bffbf123e717015e7cf314b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c876f6de98c8eb177795c6b1e05aea5c691fddd9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843273"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
 
-このセクションには、カーネル モードのネットワーク ドライバーに関する Ntddndis.h ヘッダーが含まれています。 このヘッダーは、ユーザー モードのアプリケーション ネットワークと共有されても、Windows SDK に含まれます。
+このセクションには、Ntddndis ヘッダーのカーネルモードネットワークドライバーに関するトピックが含まれています。 このヘッダーは、ユーザーモードネットワークアプリケーションとも共有されているため、Windows SDK に含まれています。
 
-Ntddndis.h ヘッダーには、定数の定義とネットワーク ドライバーとのインターフェイスの型が含まれています。
+Ntddndis ヘッダーには、ネットワークドライバーとのやり取りに使用する定数と型の定義が含まれています。
 
 > [!NOTE]
-> このセクションのトピックには、定義とネットワーク ドライバー DDI 参照の一部ではないの Oid のページが含まれています。 
+> このセクションのトピックでは、ネットワークドライバーの DDI リファレンスに含まれていない定義と Oid のページについて説明します。 
 >
-> DDI リファレンスこのヘッダーについては、次を参照してください。 [ntddndis.h ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis)します。
+> このヘッダーの DDI 参照については、 [ntddndis ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

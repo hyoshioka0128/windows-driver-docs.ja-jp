@@ -1,9 +1,9 @@
 ---
 title: SM\_GetLUNStatistics 関数
-description: SMHBA\_GetLUNStatistics メソッドは、特定のローカル HBA を FCP プロトコルまたは SSP のプロトコルを使用して提供される特定の SCSI 論理ユニットのトラフィック統計情報を返します。
+description: SMHBA\_GetLUNStatistics メソッドは、特定のローカル HBA で FCP プロトコルまたは SSP プロトコルを使用して提供されている特定の SCSI 論理ユニットのトラフィック統計を返します。
 ms.assetid: c4e85c59-8b8d-4b68-9ab7-adf1e12fc50c
 keywords:
-- 記憶装置の SM_GetLUNStatistics 関数
+- SM_GetLUNStatistics function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb6e6fa06c220b001f993fa8b4416e2afa27d77e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 040ae128405d41e6f00a769819ec072098afc327
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845485"
 ---
-# <a name="smgetlunstatistics-function"></a>SM\_GetLUNStatistics 関数
+# <a name="sm_getlunstatistics-function"></a>SM\_GetLUNStatistics 関数
 
 
-SMHBA\_GetLUNStatistics メソッドは、特定のローカル HBA を FCP プロトコルまたは SSP のプロトコルを使用して提供される特定の SCSI 論理ユニットのトラフィック統計情報を返します。
+SMHBA\_GetLUNStatistics メソッドは、特定のローカル HBA で FCP プロトコルまたは SSP プロトコルを使用して提供されている特定の SCSI 論理ユニットのトラフィック統計を返します。
 
 <a name="syntax"></a>構文
 ------
@@ -41,13 +41,13 @@ void SM_GetLUNStatistics(
 ----------
 
 *Lunit*   
-型の構造体[ **HBA\_ScsiId** ](https://msdn.microsoft.com/library/windows/hardware/ff557191) SCSI 論理ユニットを識別するために、オペレーティング システムによって使用される情報を格納します。
+SCSI 論理ユニットを識別するためにオペレーティングシステムによって使用される情報を含む[**HBA\_ScsiId**](https://msdn.microsoft.com/library/windows/hardware/ff557191)の構造。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_GetLUNStatistics\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM の HBAStatus メンバー\_GetLUNStatistics\_OUT 構造体にこの情報を返します。
 
-*ProtocolStatistics*   
-型の構造体[ **MS\_SMHBA\_PROTOCOLSTATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_protocolstatistics)ポートでプロトコルのトラフィックの統計情報をレポートに使用されます。
+*Protocolstatistics*   
+ポートのプロトコルトラフィックの統計情報をレポートするために使用される、 [**MS\_SMHBA\_protocolstatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_protocolstatistics)型の構造。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -57,7 +57,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_TargetInformationMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_TargetInformationMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,19 +74,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_GetLUNStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_in)
+[**SM\_GetLUNStatistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_in)
 
-[**SM\_GetLUNStatistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_out)
+[**SM\_GetLUNStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_out)
 
  
 

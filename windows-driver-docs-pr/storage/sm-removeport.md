@@ -1,9 +1,9 @@
 ---
 title: SM\_RemovePort 関数
-description: SM\_RemovePort WMI メソッドを WMI クライアントに指定されたポートに関連付けられているイベントを渡すことを停止するように、WMI プロバイダーを構成します。
+description: SM\_RemovePort WMI メソッドは、指定されたポートに関連付けられているイベントが WMI クライアントに渡されるのを停止するように WMI プロバイダーを構成します。
 ms.assetid: aa868e5d-32d3-4bb0-9128-5f213bf62146
 keywords:
-- 記憶装置の SM_RemovePort 関数
+- SM_RemovePort function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 148989e8ba7bcbd2d18c7bfb109432bdb2377aac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75f639a6a4170228457508ffa4a204de6d0fb634
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384302"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845473"
 ---
-# <a name="smremoveport-function"></a>SM\_RemovePort 関数
+# <a name="sm_removeport-function"></a>SM\_RemovePort 関数
 
 
-SM\_RemovePort WMI メソッドを WMI クライアントに指定されたポートに関連付けられているイベントを渡すことを停止するように、WMI プロバイダーを構成します。
+SM\_RemovePort WMI メソッドは、指定されたポートに関連付けられているイベントが WMI クライアントに渡されるのを停止するように WMI プロバイダーを構成します。
 
 <a name="syntax"></a>構文
 ------
@@ -41,13 +41,13 @@ void SM_RemovePort(
 ----------
 
 *PortWWN*   
-イベントは、WMI クライアントに報告するポートの一覧から削除するポートを示す世界中名 (WWN)。
+イベントが WMI クライアントに報告されるポートの一覧から削除するポートを示すワールドワイド名 (WWN)。
 
-*イベントの種類*   
-イベントの種類。 このメンバーに割り当てることができる値は、イベントによって定義されます\_型\_修飾子の WMI クラスの修飾子。
+*EventType*   
+イベントの種類。 このメンバーに割り当てることができる値は、イベント\_の種類\_修飾子 WMI クラス修飾子によって定義されます。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_RemovePort\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_RemovePort\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -57,7 +57,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_EventControl WMI クラスです。
+この WMI メソッドは、MS\_SM\_EventControl WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,19 +74,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_RemovePort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removeport_in)
+[**SM\_RemovePort\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removeport_in)
 
-[**SM\_RemovePort\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removeport_out)
+[**SM\_RemovePort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removeport_out)
 
  
 

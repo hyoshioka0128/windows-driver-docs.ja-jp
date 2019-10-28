@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_自動\_露出\_優先順位
-description: KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバイスでフレーム レートを動的に変更できるかどうかを指定します。
+title: KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先度
+description: KSK プロパティ\_CAMERACONTROL\_AUTO\_露光\_PRIORITY プロパティは、デバイスがフレームレートを動的に変化させることができるかどうかを指定します。
 ms.assetid: 0e20a4ee-b672-4c9a-9003-c2defd378e7c
 keywords:
-- KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac256ac2046ddf82155c2a300cf0eecce6a1e4e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3e40dc4c4f7b5affe9ca8af05d134d5573720614
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355414"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843251"
 ---
-# <a name="kspropertycameracontrolautoexposurepriority"></a>KSPROPERTY\_CAMERACONTROL\_自動\_露出\_優先順位
+# <a name="ksproperty_cameracontrol_auto_exposure_priority"></a>KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先度
 
 
-KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバイスでフレーム レートを動的に変更できるかどうかを指定します。
+KSK プロパティ\_CAMERACONTROL\_AUTO\_露光\_PRIORITY プロパティは、デバイスがフレームレートを動的に変化させることができるかどうかを指定します。
 
 ### <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -38,7 +38,7 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -47,10 +47,10 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>, <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 
  
 
-プロパティの値 (データの操作) は、デバイスでフレーム レートを動的に変化するかどうかを指定する ULONG です。
+プロパティ値 (操作データ) は、フレームレートがデバイスによって動的に変化するかどうかを指定する ULONG です。
 
 <table>
 <colgroup>
@@ -74,11 +74,11 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 <tbody>
 <tr class="odd">
 <td><p>0</p></td>
-<td><p>フレーム レートは定数である必要があります。</p></td>
+<td><p>フレームレートは一定である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>1</p></td>
-<td><p>デバイスにより、フレーム レートが動的に変更できます。</p></td>
+<td><p>フレームレートは、デバイスによって動的に変化することがあります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,19 +88,19 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 <a name="remarks"></a>注釈
 -------
 
-自動露出の優先順位は、カメラで照明条件に応じて、フレーム レートを動的に変更できるかどうかを判断します。
+自動露出の優先順位は、カメラが照明条件に応じてフレームレートを動的に変化させることができるかどうかを決定します。
 
-露出度の自動せず、フレーム レートが 30 fps の場合は公開期間を超えることはできません 33 ms。
+自動露出を使用しない場合、たとえば、フレームレートが 30 fps の場合、露出時間は33ミリ秒を超えることはできません。
 
-、優先度が露出度の自動ただし、カメラでした補正光の低フレーム レートが減少します。 たとえば、カメラは 25 fps のために 40 ミリ秒の露出時間を長くフレーム レートを減らすことができます。
+ただし、自動露出優先度を使用すると、カメラはフレームレートを下げることによって低照明を補正できます。 たとえば、カメラはフレームレートを 25 fps に減らすことができるため、公開時間が40ミリ秒に短縮されます。
 
-KSPROPERTY\_CAMERACONTROL\_自動\_露出\_に優先順位のマップ、**光量不足の補正**USB ビデオ クラスのプロパティ ページ チェック ボックス。
+KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先順位は、USB ビデオクラスのプロパティページの**低光の補正**チェックボックスにマップされます。
 
-KSPROPERTY を使用するには\_CAMERACONTROL\_自動\_露出\_、優先順位を設定する必要がある[ **KSPROPERTY\_CAMERACONTROL\_露出**](ksproperty-cameracontrol-exposure.md)を auto にします。つまり、カメラは、有効なオプションを使用する優先順位の露出自動モードの露出度の自動モードでなければなりません。
+KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先度を使用するには、 [**Ksk プロパティ\_CAMERACONTROL\_露出**](ksproperty-cameracontrol-exposure.md)を auto に設定する必要があります。つまり、自動露出優先度モードが有効なオプションになるように、カメラが自動露出モードになっている必要があります。
 
-KSPROPERTY の既定値\_CAMERACONTROL\_自動\_露出\_優先順位は 0 です。
+KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先度の既定値は0です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -111,11 +111,11 @@ KSPROPERTY の既定値\_CAMERACONTROL\_自動\_露出\_優先順位は 0 です
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+<td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -123,9 +123,9 @@ KSPROPERTY の既定値\_CAMERACONTROL\_自動\_露出\_優先順位は 0 です
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
+[**KSK プロパティ\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
+[**KSPROPERTY\_CAMERACONTROL\_NODE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
 
  
 

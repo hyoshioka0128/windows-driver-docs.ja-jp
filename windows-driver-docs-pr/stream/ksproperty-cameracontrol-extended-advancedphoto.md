@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御、ドライバーで flash、および超低ライト fusion flash なしに使用されます。 これは、暗証番号 (pin) レベルの制御の写真のピン留めだけです。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_の詳細写真
+description: KSK プロパティ\_CAMERACONTROL\_拡張\_詳細写真を使用して、ドライバーの写真 HDR、flash no flash、および ultra low light fusion を制御します。 これは、フォト pin の pin レベルコントロールです。
 ms.assetid: 88C14C9E-8675-42BF-A606-64232ABD4FD1
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_ADVANCEDPHOTO ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_ADVANCEDPHOTO ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 840fa4452e61c1725555dcbfdcc1725204c93c3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c33639634aa3be42a932e01fd0b7911e2bc0944
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348043"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843246"
 ---
-# <a name="kspropertycameracontrolextendedadvancedphoto"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO
+# <a name="ksproperty_cameracontrol_extended_advancedphoto"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_の詳細写真
 
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御、ドライバーで flash、および超低ライト fusion flash なしに使用されます。 これは、暗証番号 (pin) レベルの制御の写真のピン留めだけです。
+KSK プロパティ\_CAMERACONTROL\_拡張\_詳細写真を使用して、ドライバーの写真 HDR、flash no flash、および ultra low light fusion を制御します。 これは、フォト pin の pin レベルコントロールです。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,9 +37,9 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Scope</th>
+<th>適用範囲</th>
 <th>コントロール</th>
-<th>種類</th>
+<th>タスクバーの検索ボックスに</th>
 </tr>
 </thead>
 <tbody>
@@ -53,7 +53,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御�
 
  
 
-次に、KSCAMERA に配置できるフラグ\_EXTENDEDPROP\_ヘッダー。コントロールの写真、HDR に flags フィールドには、flash、および超低ライト fusion flash ありません。 既定値は KSCAMERA をする必要があります\_EXTENDEDPROP\_ADVANCEDPHOTO\_OFF。
+次に示すのは、KSCAMERA\_EXTENDEDPROP\_ヘッダーに配置できるフラグです。[フラグ] フィールドを指定して、写真の HDR、flash no flash、および超低光 fusion を制御します。 既定値は、KSCAMERA\_EXTENDEDPROP\_アドバンスフォト\_オフにする必要があります。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_OFF             0x0000000000000000
@@ -63,13 +63,13 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御�
 #define KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ULTRALOWLIGHT   0x0000000000000008
 ```
 
-KSCAMERA をサポートする必要があります、ドライバーは、このコントロールをサポートする場合\_EXTENDEDPROP\_ADVANCEDPHOTO\_OFF。
+ドライバーがこのコントロールをサポートしている場合は、KSCAMERA\_EXTENDEDPROP\_アドバンスフォト\_オフをサポートする必要があります。
 
-ドライバーがサポートされていない場合は、高度な写真のいずれかをキャプチャ、ドライバーは、このコントロールを実装しないでください。
+ドライバーが高度な写真キャプチャをサポートしていない場合、ドライバーはこのコントロールを実装しないでください。
 
-このコントロールの設定の呼び出しも何も起こりません写真の暗証番号 (pin) が KSSTATE\_の実行の状態。 ドライバーは写真の暗証番号 (pin) が実行状態とステータスを返しますが受信設定の呼び出し元に戻す\_無効な\_デバイス\_状態。 ドライバーは、GET 呼び出しで、フラグ フィールドの現在の設定を返す必要があります。
+フォト pin が KSK 状態\_実行状態である場合、このコントロールの SET 呼び出しは効果がありません。 このドライバーは、フォト pin が実行中の状態である場合に受信した設定呼び出しを拒否し、デバイス\_状態\_無効\_状態を返します。 GET 呼び出しでは、ドライバーは Flags フィールドの現在の設定を返します。
 
-次の表では、フラグの機能について説明します。
+次の表では、フラグ機能について説明します。
 
 <table>
 <colgroup>
@@ -85,30 +85,30 @@ KSCAMERA をサポートする必要があります、ドライバーは、こ�
 <tbody>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_OFF</p></td>
-<td><p>これは、必須の機能です。 指定すると、ドライバーで高度な写真を実行する必要がありますはありません。</p></td>
+<td><p>これは必須の機能です。 指定した場合、ドライバーで高度な写真を実行する必要はありません。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_AUTO</p></td>
-<td><p>この機能は省略可能です。 単独で指定した場合、このような機能をサポートするドライバーは写真 HDR、Flash Flash や超低ライト fusion は実行されませんが、シーンの分析に基づくかどうかを決定します。 このフラグは OFF フラグで相互に排他的では、他のフラグで使用できます。</p></td>
+<td><p>この機能は省略可能です。 単独で指定した場合、このような機能をサポートするドライバーは、写真の HDR、Flash no Flash、または超低光 fusion をシーン分析に基づいて実行する必要があるかどうかを判断します。 このフラグは、OFF フラグと同時に指定することはできません。また、他のフラグと共に使用することもできます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_HDR</p></td>
-<td><p>この機能は省略可能です。 単独で指定した場合、このような機能をサポートするドライバーは写真 HDR を実行します。 このフラグは、自動を除くその他のフラグで相互に排他的です。 自動と共に指定した場合、ドライバーは写真 HDR を実行する必要がありますが、シーンの分析に基づくかどうかを決定します。</p></td>
+<td><p>この機能は省略可能です。 このような機能をサポートするドライバーは、単独で指定した場合、写真の HDR を実行します。 このフラグは、AUTO 以外の他のフラグと同時には指定できません。 AUTO と共に指定した場合、ドライバーは、シーン分析に基づいてフォト HDR を実行するかどうかを決定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_FNF</p></td>
-<td><p>この機能は省略可能です。 このような機能の実行をサポートしていますが flash をフラッシュしないドライバーを単独で、指定した場合。 このフラグは、自動を除くその他のフラグで相互に排他的です。 自動と共に指定した場合、ドライバーはフラッシュのフラッシュを実行できませんが、シーンの分析に基づくかどうかを決定します。</p></td>
+<td><p>この機能は省略可能です。 単独で指定すると、そのような機能をサポートするドライバーは flash no flash を実行します。 このフラグは、AUTO 以外の他のフラグと同時には指定できません。 AUTO と共に指定した場合、ドライバーは、シーン分析に基づいて flash no flash を実行するかどうかを決定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ULTRALOWLIGHT</p></td>
-<td><p>この機能は省略可能です。 単独で指定した場合、このような機能をサポートするドライバーは超低ライト fusion を実行します。 このフラグは、自動を除くその他のフラグで相互に排他的です。 自動と共に指定した場合、ドライバーは超低ライト fusion をシーン分析に基づいて実行するかどうかを決定します。</p></td>
+<td><p>この機能は省略可能です。 単独で指定した場合、このような機能をサポートするドライバーは、非常に低い軽 fusion を実行します。 このフラグは、AUTO 以外の他のフラグと同時には指定できません。 AUTO と共に指定すると、ドライバーは、シーン分析に基づいて超低光 fusion を実行するかどうかを決定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
+次の表には、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの説明と要件が含まれています。
 
 <table>
 <colgroup>
@@ -117,34 +117,34 @@ KSCAMERA をサポートする必要があります、ドライバーは、こ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
+<th>メンバー</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>これは、1 でなければなりません。</p></td>
+<td><p>これは1である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必要がありますが、暗証番号 (pin) の ID に関連付けられている写真の暗証番号 (pin)。</p></td>
+<td><p>は、フォト pin に関連付けられている Pin ID である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>サイズ</p></td>
-<td><p>これは、sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
+<td><p>Size</p></td>
+<td><p>これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
-<td><p>最後の設定操作のエラーの結果を示します。 設定操作が行われていない場合は必ず 0。</p></td>
+<td><p>最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>ビットごとの OR、サポートされている KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * フラグの上に定義されている必要があります。</p></td>
+<td><p>は、上で定義された、サポートされている KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * フラグのビットごとの OR である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 上記で定義された KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * フラグのいずれかにできます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,31 +1,31 @@
 ---
 title: OID_GEN_LINK_PARAMETERS
-description: セットとして NDIS および上にあるドライバーはミニポート アダプターの現在のリンク状態を設定するのに OID_GEN_LINK_PARAMETERS OID を使用します。 ミニポート ドライバーでは、NDIS_LINK_PARAMETERS 構造体で双方向の状態、リンク速度、および一時停止の関数を受け取ります。
+description: セットとして、NDIS およびそれ以降のドライバーは、OID_GEN_LINK_PARAMETERS OID を使用して、ミニポートアダプターの現在のリンクの状態を設定します。 ミニポートドライバーは、NDIS_LINK_PARAMETERS 構造体の双方向の状態、リンク速度、および一時停止の各機能を受け取ります。
 ms.assetid: 6a8ee5b1-ac68-424f-b749-45b085ca1d75
 ms.date: 08/08/2017
-keywords: -OID_GEN_LINK_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_LINK_PARAMETERS ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4ddf0d0f5a3132cf6365dc1edd8a17e142a92f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c100faed784a0bbb121aacbce077ef120862cc4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369102"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843072"
 ---
-# <a name="oidgenlinkparameters"></a>OID\_GEN\_リンク\_パラメーター
+# <a name="oid_gen_link_parameters"></a>OID\_GEN\_LINK\_パラメーター
 
 
-セットとして NDIS と関連付けたドライバー使用 OID\_GEN\_リンク\_ミニポート アダプターの現在のリンク状態を設定するパラメーターの OID。 ミニポート ドライバーでは、NDIS で双方向の状態、リンク速度、および一時停止機能が受信\_リンク\_パラメーター構造体。
+セットとして、NDIS およびそれ以降のドライバーは OID\_GEN\_リンク\_PARAMETERS OID を使用して、ミニポートアダプターの現在のリンクの状態を設定します。 ミニポートドライバーは、NDIS\_リンク\_PARAMETERS 構造体の双方向の状態、リンク速度、および一時停止の各機能を受け取ります。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-必須。
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+必ず.
 
-NDIS\_リンク\_パラメーター構造は次のように定義されます。
+NDIS\_LINK\_PARAMETERS 構造体は、次のように定義されています。
 
 ```ManagedCPlusPlus
     typedef struct _NDIS_LINK_PARAMETERS {
@@ -41,60 +41,60 @@ NDIS\_リンク\_パラメーター構造は次のように定義されます。
 
 
 
-この構造体には、次のメンバーが含まれています。
+この構造体には、次のメンバーが含まれます。
 
-<a href="" id="header"></a>**ヘッダー**  
-[ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) NDIS 構造\_リンク\_パラメーター構造体。 設定、**型**、構造体のメンバーを**ヘッダー**を使用する NDIS\_オブジェクト\_型\_既定では、**リビジョン**NDIS メンバー\_リンク\_パラメーター\_リビジョン\_1、および**サイズ**NDIS メンバー\_SIZEOF\_リンク\_パラメーター\_リビジョン\_1。
+<a href="" id="header"></a>**項目**  
+Ndis [ **\_オブジェクト\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header) 、NDIS\_LINK\_PARAMETERS 構造体のヘッダー構造です。 **ヘッダー**で指定されている構造体の**型**メンバーを ndis\_オブジェクトに設定します\_Type\_DEFAULT、 **REVISION**メンバーを NDIS\_LINK\_\_のリビジョン\_1、および**サイズ**メンバーを NDIS\_SIZEOF\_\_パラメーター\_リビジョン\_1 にリンクします。
 
 <a href="" id="mediaduplexstate"></a>**MediaDuplexState**  
-メディアの双方向状態。 この値は、によって返される値と同じ、 [OID\_GEN\_メディア\_双方向\_状態](oid-gen-media-duplex-state.md)OID。
+メディアの双方向の状態。 この値は、 [oid\_GEN\_MEDIA\_DUPLEX\_状態](oid-gen-media-duplex-state.md)oid によって返される値と同じです。
 
 <a href="" id="xmitlinkspeed"></a>**XmitLinkSpeed**  
-1 秒あたりのビット単位で送信リンク速度。
+送信リンク速度 (ビット/秒)。
 
 <a href="" id="rcvlinkspeed"></a>**RcvLinkSpeed**  
-1 秒あたりのビット単位の受信リンク速度。
+受信リンク速度 (ビット/秒)。
 
 <a href="" id="pausefunctions"></a>**PauseFunctions**  
-IEEE 802.3 pause フレームのサポートの種類。 このメンバーは、次の一時停止機能の 1 つを指定する必要があります。
+IEEE 802.3 の一時停止フレームのサポートの種類。 このメンバーは、次の一時停止関数のいずれかである必要があります。
 
-<a href="" id="ndispausefunctionsunsupported"></a>**NdisPauseFunctionsUnsupported**  
-アダプターまたはリンクのパートナーは、一時停止のフレームをサポートしていません。
+<a href="" id="ndispausefunctionsunsupported"></a>**Ndispauseモジュールはサポートされていません**  
+アダプターまたはリンクパートナーは、一時停止フレームをサポートしていません。
 
 <a href="" id="ndispausefunctionssendonly"></a>**NdisPauseFunctionsSendOnly**  
-アダプターとリンク パートナー サポートのみ一時停止のフレームをアダプターからリンク パートナーに送信します。
+アダプターおよびリンクパートナーは、アダプターからリンクパートナーへの一時停止フレームの送信のみをサポートしています。
 
-<a href="" id="ndispausefunctionsreceiveonly"></a>**NdisPauseFunctionsReceiveOnly**  
-のみ一時停止のフレームをリンクのパートナーからアダプターに送信アダプターとリンク パートナーのサポート
+<a href="" id="ndispausefunctionsreceiveonly"></a>**Ndispauseモジュール Receiveonly**  
+アダプターおよびリンクパートナーは、リンクパートナーからアダプターへの一時停止フレームの送信のみをサポートしています。
 
 <a href="" id="ndispausefunctionssendandreceive"></a>**NdisPauseFunctionsSendAndReceive**  
-アダプターとリンク パートナーは、送信し、方向の受信の両方でフレームを一時停止を送受信することをサポートします。
+アダプターおよびリンクパートナーは、送信と受信の両方向の一時停止フレームの送受信をサポートしています。
 
 <a href="" id="autonegotiationflags"></a>**AutoNegotiationFlags**  
-ミニポート アダプターの自動ネゴシエーション設定します。 このメンバーは、次のフラグのビットごとの OR から作成されます。
+ミニポートアダプターの自動ネゴシエーション設定。 このメンバーは、次のフラグのビットごとの OR から作成されます。
 
-<a href="" id="ndis-link-state-xmit-link-speed-auto-negotiated"></a>NDIS\_リンク\_状態\_XMIT\_リンク\_速度\_自動\_NEGOTIATED  
-アダプターは自動ネゴシエーション送信リンクの速度リンク パートナーと。 ミニポート ドライバーがで指定されている値に送信リンクの速度を設定する必要がありますこのフラグが設定されていない場合、 **XmitLinkSpeed**メンバー。
+<a href="" id="ndis-link-state-xmit-link-speed-auto-negotiated"></a>NDIS\_LINK\_STATE\_XMIT\_LINK\_自動\_ネゴシエートされる\_  
+アダプターは、リンクパートナーとの間で送信リンク速度を自動ネゴシエートする必要があります。 このフラグが設定されていない場合、ミニポートドライバーは、送信リンク速度を**XmitLinkSpeed**メンバーに指定されている値に設定する必要があります。
 
-<a href="" id="ndis-link-state-rcv-link-speed-auto-negotiated"></a>NDIS\_リンク\_状態\_受信\_リンク\_速度\_自動\_NEGOTIATED  
-アダプターが自動ネゴシエーション受信リンクの速度リンク パートナーと。 ミニポート ドライバーがで指定されている値に受信リンクの速度を設定する必要がありますこのフラグが設定されていない場合、 **RcvLinkSpeed**メンバー。
+<a href="" id="ndis-link-state-rcv-link-speed-auto-negotiated"></a>NDIS\_LINK\_STATE\_RCV\_LINK\_AUTO\_ネゴシエート  
+アダプターは、リンクパートナーとの間で受信リンク速度を自動ネゴシエートする必要があります。 このフラグが設定されていない場合、ミニポートドライバーは、受信リンク速度を**Rcvlinkspeed**メンバーで指定された値に設定する必要があります。
 
-<a href="" id="ndis-link-state-duplex-auto-negotiated"></a>NDIS\_リンク\_状態\_双方向\_自動\_NEGOTIATED  
-アダプターが自動ネゴシエーションが双方向の状態リンク パートナーと。 ミニポート ドライバーがで指定されている値に双方向の状態を設定する必要がありますこのフラグが設定されていない場合、 **MediaDuplexState**メンバー。
+<a href="" id="ndis-link-state-duplex-auto-negotiated"></a>NDIS\_リンク\_状態\_双方向\_自動\_ネゴシエートされる  
+アダプターは、リンクパートナーと双方向の状態を自動的にネゴシエートする必要があります。 このフラグが設定されていない場合、ミニポートドライバーは、 **MediaDuplexState**メンバーに指定されている値に双方向の状態を設定する必要があります。
 
-<a href="" id="ndis-link-state-pause-functions-auto-negotiated"></a>NDIS\_リンク\_状態\_一時停止\_関数\_自動\_NEGOTIATED  
-ミニポート ドライバーが自動ネゴシエーションもう一方の end で一時停止のフレームのサポート。 ミニポート ドライバーがで指定されている一時停止のフレームのサポートを使用する必要がありますこのフラグが設定されていない場合、 **PauseFunctions**メンバー。
+<a href="" id="ndis-link-state-pause-functions-auto-negotiated"></a>NDIS\_リンク\_状態\_自動\_ネゴシエートさ\_\_関数を一時停止します。  
+ミニポートドライバーは、もう一方の端にある一時停止フレームのサポートを自動ネゴシエートする必要があります。 このフラグが設定されていない場合、ミニポートドライバーは、 **PauseFunctions**メンバーで指定されている pause フレームサポートを使用する必要があります。
 
 <a name="remarks"></a>注釈
 -------
 
-**注**設定 OID\_GEN\_リンク\_パラメーター接続の損失が発生することができます。 この OID が設定されている場合に、ミニポート ドライバーはミニポート アダプターを再構成する必要があります。 たとえば、ミニポート ドライバーでは、ミニポート アダプターの既存の接続が失われるとをリセットできます。 再構成の特定のメカニズムは、アプリケーションに依存します。
+**メモ** OID\_GEN\_LINK\_パラメーターを設定すると、接続が失われる可能性があります。 ミニポートドライバーは、この OID が設定されている場合に、ミニポートアダプターを再構成する必要があります。 たとえば、ミニポートドライバーは、既存の接続が失われた場合にミニポートアダプターをリセットできます。 再構成の特定のメカニズムは、アプリケーションに依存します。
 
 
 
-OID のためのミニポート アダプターのリンクの状態が変更された場合\_GEN\_リンク\_パラメーターが要求を設定、ミニポート ドライバーを生成する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) NDIS と新しいリンクの状態の上にあるドライバーを通知する状態を示す値。
+OID\_GEN\_LINK\_PARAMETERS set request のために、ミニポートアダプターのリンクの状態が変化した場合、ミニポートドライバーは、通知を行うために\_状態の状態を示す[ **\_リンクを\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)生成する必要があります。新しいリンク状態の NDIS およびそれ以降のドライバー。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -105,7 +105,7 @@ OID のためのミニポート アダプターのリンクの状態が変更さ
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -113,7 +113,7 @@ OID のためのミニポート アダプターのリンクの状態が変更さ
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
+[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
 
 [**NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_CAMERAANGLEOFFSET
-description: カメラの角度オフセット プロパティでは、読み取り専用のカメラの位置のピッチ、ヨー角度に関する情報を提供します。 ピッチ、ヨー角度を定義して、水平および垂直の軸からのオフセットします。
+title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_CAMERAANGLEOFFSET
+description: "\"カメラアングルオフセット\" プロパティは、カメラの位置のピッチとヨーの角度に関する読み取り専用の情報を提供します。 ピッチとヨー角度は、水平軸と垂直軸からのオフセットとして定義されます。"
 ms.assetid: 06F62EB9-DAF7-486F-9940-24EA2224BCB0
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_CAMERAANGLEOFFSET ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXTENDED_CAMERAANGLEOFFSET ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ae39693bc962ecc1ca5fb1c1a99a00cea1fe71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c6a51073eaffb8f834f1836e0df1580f1b17748
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331664"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843243"
 ---
-# <a name="kspropertycameracontrolextendedcameraangleoffset"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_CAMERAANGLEOFFSET
+# <a name="ksproperty_cameracontrol_extended_cameraangleoffset"></a>KSK プロパティ\_CAMERACONTROL\_EXTENDED\_CAMERAANGLEOFFSET
 
-カメラの角度オフセット プロパティでは、読み取り専用のカメラの位置のピッチ、ヨー角度に関する情報を提供します。 ピッチ、ヨー角度を定義して、水平および垂直の軸からのオフセットします。
+"カメラアングルオフセット" プロパティは、カメラの位置のピッチとヨーの角度に関する読み取り専用の情報を提供します。 ピッチとヨー角度は、水平軸と垂直軸からのオフセットとして定義されます。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -37,7 +37,7 @@ ms.locfileid: "63331664"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -46,34 +46,34 @@ ms.locfileid: "63331664"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>[はい]</p></td>
+<td><p>必須ではない</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造と[ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)構造体。
+プロパティ値 (操作データ) には、 [**KSCAMERA\_extendedprop\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体と、FIELDOFVIEW 構造体の[**KSCAMERA\_extendedprop\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)が含まれています。
 
-プロパティの合計データ サイズが**sizeof**(KSCAMERA\_EXTENDEDPROP\_ヘッダー) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW)。 **サイズ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)はこのプロパティの合計データ サイズに設定します。
+プロパティデータの合計サイズは**sizeof**(KSCAMERA\_extendedprop\_HEADER) + **sizeof**(KSCAMERA\_extendedprop\_FIELDOFVIEW) です。 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**size**メンバーは、この total property データサイズに設定されます。
 
-**機能**と**フラグ**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)は使用されませんこのプロパティ。
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**機能**と**フラグ**のメンバーは、このプロパティには使用されません。
 
-ドライバーは、カメラの適切な視野を特定できない場合、ドライバーにはこのプロパティのサポートをする必要があります示しません。
+ドライバーがカメラの正しいビューのフィールドを判別できない場合、ドライバーはこのプロパティのサポートを示すことはできません。
 
-このプロパティのコントロールは、同期およびないキャンセル可能なは。
+このプロパティコントロールは同期であり、キャンセルできません。
 
 ## <a name="remarks"></a>注釈
 
-カメラ センサーおよびジャイロ センサーを同じ物理シャーシ内に保存された場合、は、カメラのドライバーが 0 度があります。 適切なオフセット角度を報告することをお勧めします。 カメラ センサーおよびジャイロ センサーは、同じ物理シャーシに収容されていない、ドライバーはこのプロパティのサポートは指定するお勧めします。
+カメラセンサーとジャイロセンサーが両方とも同じ物理シャーシに格納されている場合は、カメラドライバーが適切なオフセット角度を報告することをお勧めします。これは0°にすることをお勧めします。 カメラセンサーとジャイロセンサーが同じ物理シャーシに置かれていない場合は、このプロパティのサポートを示さないようにドライバーを使用することをお勧めします。
 
-### <a name="getting-the-property"></a>プロパティを取得
+### <a name="getting-the-property"></a>プロパティを取得する
 
-KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバーの設定、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)に、次の場合。
+\_GET 要求の種類\_KSK プロパティに応答すると、ドライバーは、 [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)のメンバーを次のように設定します。
 
 <table>
 <colgroup>
@@ -82,8 +82,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Member</th>
-<th>値</th>
+<th>メンバー</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -93,11 +93,11 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </tr>
 <tr class="even">
 <td>PinId</td>
-<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0 XFFFFFFFF) です。</td>
+<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF)。</td>
 </tr>
 <tr class="odd">
-<td>サイズ</td>
-<td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_CAMERAOFFSET)</p></td>
+<td>Size</td>
+<td><p>sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_CAMERAOFFSET)</p></td>
 </tr>
 <tr class="even">
 <td>結果</td>
@@ -116,7 +116,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
  
 
-ドライバーの角度オフセットの設定、 [ **KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)構造体。
+ドライバーは、 [**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)構造体の角度オフセットを設定します。
 
 ## <a name="requirements"></a>要件
 
@@ -128,17 +128,17 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>Windows 8.1 以降を利用できます。</p></td>
+<td><p>Windows 8.1 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>関連項目
 
-[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
+[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)
+[**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)

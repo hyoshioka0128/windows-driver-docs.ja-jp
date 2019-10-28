@@ -3,24 +3,24 @@ title: データグラム ソケット経由でのデータの受信
 description: データグラム ソケット経由でのデータの受信
 ms.assetid: 650b7688-967e-4ce6-80ad-8f7b6e1ec009
 keywords:
-- データグラムの受信
-- データグラム ソケット WDK Winsock カーネル
+- 受信データグラム
+- データグラムソケット WDK Winsock カーネル
 - WskReceiveFrom
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a96a47bd3ac477a57cf85e24665c9979945f0f95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a7f0ab3dfd8cc4760239a192b01091dec8e7200
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353294"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843468"
 ---
 # <a name="receiving-data-over-a-datagram-socket"></a>データグラム ソケット経由でのデータの受信
 
 
-Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスにデータグラム ソケットをバインドした後、ソケットを使ってデータグラムを受信できます。 WSK アプリケーション データグラム ソケット経由で呼び出すことによって、データグラムを受信する、 [ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)関数。
+Winsock カーネル (WSK) アプリケーションは、データグラムソケットをローカルトランスポートアドレスにバインドした後、ソケット上でデータグラムを受信できます。 WSK アプリケーションは、 [**WskReceiveFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from)関数を呼び出すことによって、データグラムソケットを介してデータグラムを受信します。
 
-次のコード例では、データグラム ソケット経由で、WSK アプリケーションがデータグラムを受信する方法を示します。
+次のコード例は、WSK アプリケーションがデータグラムソケット経由でデータグラムを受信する方法を示しています。
 
 ```C++
 // Prototype for the receive datagram IoCompletion routine
@@ -129,9 +129,9 @@ NTSTATUS
 }
 ```
 
-呼び出す代わりとして、 [ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)データグラム ソケット経由で各データグラムを受信する関数を WSK アプリケーションを有効にすることができます、 [ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskReceiveFromEvent*データグラム ソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskReceiveFromEvent*たびに新しいイベントのコールバック関数データグラムは、ソケットで受信されます。 データグラム ソケットの有効化の詳細については*WskReceiveFromEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
+[**WskReceiveFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from)関数を呼び出してデータグラムソケット経由で各データグラムを受信する代わりに、wsk アプリケーションでは、ソケットで[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)イベントコールバック関数を有効にすることができます。 WSK アプリケーションで、データグラムソケットで*WskReceiveFromEvent*イベントコールバック関数が有効になっている場合、wsk サブシステムは、ソケットで新しいデータグラムを受信するたびに、ソケットの*WskReceiveFromEvent*イベントコールバック関数を呼び出します。 データグラムソケットの*WskReceiveFromEvent*イベントコールバック関数を有効にする方法の詳細については、「[イベントコールバック関数の有効化と無効化](enabling-and-disabling-event-callback-functions.md)」を参照してください。
 
-コード例を次に示す方法 WSK アプリケーションで受信できますデータグラム WSK サブシステム データグラム ソケットを呼び出すことによって*WskReceiveFromEvent*イベント コールバック関数。
+次のコード例は、WSK アプリケーションが、データグラムソケットの*WskReceiveFromEvent*イベントコールバック関数を呼び出すことによって wsk サブシステムによってデータグラムを受信する方法を示しています。
 
 ```C++
 // A datagram socket's WskReceiveFromEvent
@@ -172,7 +172,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-データグラム ソケットの場合[ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)イベント コールバック関数は取得できません、データグラムのすべての一覧から[ **WSK\_データグラム\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_datagram_indication)によって示される構造体、 *DataIndication*パラメーターの状態を返すことによってさらに処理するためのリストを保持して\_保留します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))関数解放 WSK の一覧を\_データグラム\_を示す値構造体にバックアップした後、WSK サブシステムこれには、データグラムのすべてを一覧内の構造体から取得が完了しました。
+データグラムソケットの[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)イベントコールバック関数が、 *DataIndication*パラメーターによって示されている[ **\_\_の wsk**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_datagram_indication)のリストからすべてのデータグラムを取得していない場合は、ステータス\_PENDING を返すことで、さらに処理するためにリストを保持します。 このような状況では、WSK アプリケーションは[**Wskrelease**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))関数を呼び出して、wsk\_\_データグラムのリストを wsk サブシステムに解放する必要があります。これは、次の構造からすべてのデータグラムの取得が完了した後です。リスト。
 
  
 

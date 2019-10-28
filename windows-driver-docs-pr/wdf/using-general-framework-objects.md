@@ -3,43 +3,43 @@ title: 一般フレームワーク オブジェクトの使用
 description: 一般フレームワーク オブジェクトの使用
 ms.assetid: d3356d3f-8110-44dd-b4a2-36265f5a1714
 keywords:
-- フレームワークの WDK KMDF、一般的なオブジェクトします。
-- 一般的なフレームワーク オブジェクト WDK KMDF
+- フレームワークオブジェクト WDK KMDF、全般
+- 一般的なフレームワークオブジェクト WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3e4b147e065be7965a59d2ee52d6005c75e3d56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c8c2c310b79638b54f20b99ed77456e1af7b29e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372252"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843077"
 ---
 # <a name="using-general-framework-objects"></a>一般フレームワーク オブジェクトの使用
 
 
-*一般的なフレームワーク オブジェクト*オブジェクトを派生する他のタイプのフレームワークからフレームワーク オブジェクトです。
+*一般的なフレームワーク*オブジェクトは、他のすべての種類のフレームワークオブジェクトの派生元であるフレームワークオブジェクトです。
 
-フレームワークの他のオブジェクトのような一般的なオブジェクトをサポートして参照カウントをコンテキストの領域、コールバック関数の削除、および親オブジェクトでは」の説明に従って[Framework オブジェクトの概要](introduction-to-framework-objects.md)します。
+他のフレームワークオブジェクトと同様に、一般的なオブジェクトでは、「 [Framework オブジェクトの概要](introduction-to-framework-objects.md)」で説明されているように、参照カウント、コンテキストスペース、削除コールバック関数、および親オブジェクトがサポートされています。
 
-ドライバーでは、作成でき、一般的なフレームワーク オブジェクトを使用することができます。 ドライバーを呼び出す場合[ **WdfObjectCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectcreate)ドライバーができる一般的なオブジェクトを作成します。
+ドライバーは、一般的なフレームワークオブジェクトを作成して使用できます。 ドライバーが[**Wdfobjectcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectcreate)を呼び出して一般的なオブジェクトを作成する場合、ドライバーは次のことができます。
 
--   一般的なオブジェクトごとに 1 つまたは複数のコンテキストのスペースを作成します。
+-   一般的なオブジェクトごとに1つまたは複数のコンテキストスペースを作成します。
 
-    オブジェクト コンテキストの領域を使用すると、一般的なオブジェクトに関連付けるシステム リソースに関する情報を格納します。
+    オブジェクトコンテキスト領域を使用すると、一般的なオブジェクトに関連付けるシステムリソースに関する情報を格納できます。
 
-    コンテキストの領域に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
+    コンテキスト空間の詳細については、「[フレームワークオブジェクトコンテキスト空間](framework-object-context-space.md)」を参照してください。
 
--   一般的なオブジェクトの親を割り当てます。
+-   一般オブジェクトに親を割り当てます。
 
-    親オブジェクトが削除されたときに、一般的なオブジェクトが削除されます。 たとえばには、ドライバーは、その一般的なオブジェクトの 1 つの親オブジェクトとして、framework デバイス オブジェクトを指定する場合、デバイス オブジェクトを削除するとき、フレームワークは、一般的なオブジェクト削除されます。
+    一般オブジェクトは、親オブジェクトが削除されると削除されます。 たとえば、ドライバーで、一般的なオブジェクトの1つの親オブジェクトとしてフレームワークデバイスオブジェクトを指定した場合、フレームワークは、デバイスオブジェクトを削除するときに、一般的なオブジェクトを削除します。
 
-    ドライバーを設定して、オブジェクトの親オブジェクトを指定する、 **ParentObject**オブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
+    ドライバーでオブジェクトの親オブジェクトを指定するには、オブジェクトの[**WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体の**ParentObject**メンバーを設定します。
 
--   削除コールバック関数を提供します。
+-   削除コールバック関数を指定します。
 
-    ドライバーが提供できる[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)と[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)関数で、システム リソースの割り当てを解除できます一般的なオブジェクトが作成されたときに、ドライバーが割り当てられます。 たとえば、ドライバーと呼ばれる[ **ExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool) 、クリーンアップ、一般的なオブジェクトを作成またはコールバック関数を破棄する場合に呼び出すことができます[ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool).
+    ドライバーは、標準オブジェクトの作成時にドライバーによって割り当てられたシステムリソースの割り当てを解除できる[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)関数と[*evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)関数を提供できます。 たとえば、ドライバーが汎用オブジェクトを作成したときに[**Exallocatepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)という名前の場合、クリーンアップまたは destroy コールバック関数は[**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)を呼び出すことができます。
 
-一般的なオブジェクトを使用して、ドライバーに割り当てられたリソースを管理する便利な方法が指定できます。 たとえばより高度なドライバーは、ドライバーは、複数のデバイスに、要求を送信します。 または、いくつかの小さな要求に分割する場合、受信した I/O 要求を処理する複数のメモリ割り当てを必要があります。 ドライバーが受信した I/O 要求の子である 1 つまたは複数の一般的なオブジェクトを作成し、一般的なオブジェクトのコンテキストの領域に、メモリの割り当てに関する情報が格納されることができます。
+一般的なオブジェクトを使用すると、ドライバーで割り当てられたリソースを簡単に管理できます。 たとえば、高レベルのドライバーでは、受信した i/o 要求を処理するために複数のメモリ割り当てが必要になる場合があります。この場合、ドライバーが複数のデバイスに要求を送信するか、または要求を複数の小さなデバイスに分割します。 ドライバーは、受信 i/o 要求の子である1つまたは複数の一般的なオブジェクトを作成できます。また、メモリ割り当てに関する情報を一般的なオブジェクトのコンテキスト空間に格納できます。
 
  
 

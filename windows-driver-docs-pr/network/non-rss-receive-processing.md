@@ -3,17 +3,17 @@ title: 非 RSS 受信処理
 description: 非 RSS 受信処理
 ms.assetid: 9fe262c3-9ce5-4625-8d29-ff7dc4ccb90a
 keywords:
-- 受信側のスケーリング WDK ネットワーク、非 RSS の受信処理
-- RSS の WDK ネットワーク、非 RSS の受信処理
-- RSS 以外は受信 WDK RSS の処理
+- 受信側のスケーリング WDK ネットワーク、RSS 以外の受信処理
+- RSS WDK ネットワーク、RSS 以外の受信処理
+- RSS 以外の受信処理 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03f0397ab37d1be760e76b5e1b348777d36142d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 176e41c7c2df6e5f68e7a6e7dd1799bd5120b40a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371208"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842769"
 ---
 # <a name="non-rss-receive-processing"></a>非 RSS 受信処理
 
@@ -21,37 +21,37 @@ ms.locfileid: "67371208"
 
 
 
-このトピックの説明に従って、RSS のハンドルをサポートしていないミニポート ドライバーは処理を受信します。
+このトピックで説明されているように、RSS ハンドル受信処理をサポートしないミニポートドライバー。
 
-次の図は、RSS 以外の処理を受信します。
+次の図は、RSS 以外の受信処理を示しています。
 
-![rss を使用しない処理の送受信方法を示す図](images/rsslessstack.png)
+![rss を使用しない送信処理と受信処理を示す図](images/rsslessstack.png)
 
-図では、破線のパスは、送信のための代替パスを表すし、受信処理します。 システムでは、スケーリングを制御するため、処理は、最適なパフォーマンスを提供する、CPU 上で常に発生しません。 接続は、偶然でのみ、同じ CPU に、連続する割り込み経由で処理されます。
+この図では、破線パスは送信処理と受信処理の代替パスを表しています。 システムではスケーリングが制御されるため、最適なパフォーマンスを提供する CPU 上では常に処理が行われるわけではありません。 接続は、確率によってのみ、連続した割り込みで同じ CPU で処理されます。
 
-非 RSS 割り込みのサイクルごとに、次のプロセスが繰り返されます。
+次のプロセスは、RSS 以外の割り込みサイクルごとに繰り返されます。
 
-1.  NIC は、DMA を使用して、受信したデータをバッファーに入力して、システムの割り込みです。
+1.  NIC は DMA を使用して、受信したデータをバッファーに格納し、システムに割り込みます。
 
-    ミニポート ドライバーでは、初期化中に、受信バッファーを共有メモリが割り当てられます。
+    ミニポートドライバーは、初期化中に共有メモリ内に受信バッファーを割り当てていました。
 
-2.  NIC が塗りつぶしの追加を続行できますこの割り込みサイクルでいつでも受信バッファー。 ただし、ミニポート ドライバー割り込みを有効にするまでは、NIC は再度中断されることはされません。
+2.  NIC は、この割り込みサイクルでいつでも追加の受信バッファーを使用できます。 ただし、ミニポートドライバーで割り込みが有効になるまで、NIC は再び中断しません。
 
-    システムを 1 つの割り込みのサイクルで処理する受信バッファーは、多くのさまざまなネットワーク接続を関連付けることができます。
+    1つの割り込みサイクルでシステムが処理する受信バッファーは、さまざまなネットワーク接続に関連付けることができます。
 
-3.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)関数 (ISR) システムで決定された CPU にします。
+3.  NDIS は、システムによって決定された CPU でミニポートドライバーの[*Miniportinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)関数 (ISR) を呼び出します。
 
-    理想的には、ISR は、少なくともビジー状態の CPU に移動する必要があります。 ただし、一部のシステムで、システムは、使用可能な CPU または NIC に関連付けられている CPU に ISR を割り当てます
+    理想的には、ISR は最も負荷の低い CPU にアクセスする必要があります。 ただし、システムによっては、使用可能な CPU または NIC に関連付けられている CPU に ISR が割り当てられます。
 
-4.  ISR には、割り込みと NDIS を要求を受信したデータの処理に遅延プロシージャ呼び出し (DPC) のキューが無効にします。
+4.  ISR は割り込みを無効にし、受信したデータを処理するために遅延プロシージャ呼び出し (DPC) をキューに送信するように NDIS に要求します。
 
-5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)現在の CPU に (DPC) の関数。
+5.  NDIS は、現在の CPU で[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)関数 (DPC) を呼び出します。
 
-6.  DPC ビルドでは、すべての受信バッファーの記述子が表示され、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。[ネットワーク データの受信](receiving-network-data.md)します。
+6.  DPC は、受信したすべてのバッファーの受信記述子を作成し、ドライバースタックのデータを示します。 詳細については、「[ネットワークデータの受信](receiving-network-data.md)」を参照してください。
 
-    複数の接続の多くのバッファーがあり、多くの処理を完了する可能性があります。 その他の Cpu では、後続の割り込みサイクルに関連付けられている受信したデータを処理できます。 特定のネットワーク接続の処理、送信は、別の CPU にも実行できます。
+    多くの異なる接続に対して多くのバッファーが存在し、処理が大量に完了する可能性があります。 後続の割り込みサイクルに関連付けられている受信データは、他の Cpu で処理できます。 また、特定のネットワーク接続の送信処理は、別の CPU でも実行できます。
 
-7.  DPC は、割り込みを使用できます。 この割り込みサイクルが完了し、プロセスが再び開始します。
+7.  DPC によって割り込みが有効になります。 この割り込みサイクルは完了し、プロセスは再び開始されます。
 
  
 

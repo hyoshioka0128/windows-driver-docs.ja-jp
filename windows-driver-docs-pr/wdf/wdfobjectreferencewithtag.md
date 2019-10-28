@@ -1,24 +1,24 @@
 ---
 title: WdfObjectReferenceWithTag マクロ
-description: WdfObjectReferenceWithTag マクロは、指定のフレームワーク オブジェクトの参照カウントをインクリメントし、参照に、ドライバーの現在のファイル名と行番号を割り当てます。 マクロは、参照にもタグ値を割り当てます。
+description: WdfObjectReferenceWithTag マクロは、指定されたフレームワークオブジェクトの参照カウントをインクリメントし、ドライバーの現在のファイル名と行番号を参照に割り当てます。 このマクロでは、参照にタグ値も割り当てられます。
 ms.assetid: f0206238-c745-48b3-84d0-9f6d6ec9c2e0
 keywords:
 - WdfObjectReferenceWithTag マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bad0b0f240ddc155a457e6193a0cc7ae068ab5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85ac98cb6c57f9d448428b39626dd668fea1be63
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354436"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843075"
 ---
 # <a name="wdfobjectreferencewithtag-macro"></a>WdfObjectReferenceWithTag マクロ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-**WdfObjectReferenceWithTag**マクロがフレームワークの指定したオブジェクトの参照カウントをインクリメントし、参照に、ドライバーの現在ファイル名と行番号を割り当てます。 マクロは、参照にもタグ値を割り当てます。
+**Wdfobjectreferencewithtag**マクロは、指定されたフレームワークオブジェクトの参照カウントをインクリメントし、ドライバーの現在のファイル名と行番号を参照に割り当てます。 このマクロでは、参照にタグ値も割り当てられます。
 
 <a name="syntax"></a>構文
 ------
@@ -33,34 +33,34 @@ VOID WdfObjectReferenceWithTag(
 <a name="parameters"></a>パラメーター
 ----------
 
-*処理*\[で\]  
-Framework のオブジェクトへのハンドル。
+\] での \[の*処理*  
+フレームワークオブジェクトへのハンドル。
 
-*タグ*\[で\]  
-フレームワークは、オブジェクト参照の識別タグとして格納するドライバーの定義済みの値。
+\] 内の*タグ*\[  
+フレームワークがオブジェクト参照の識別タグとして格納するドライバー定義の値。
 
 <a name="return-value"></a>戻り値
 ------------
 
 なし。
 
-バグ チェックでは、ドライバー、無効なオブジェクトのハンドルを提供する場合に発生します。
+バグチェックは、ドライバーが無効なオブジェクトハンドルを提供した場合に発生します。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバーを呼び出す場合**WdfObjectReferenceWithTag**参照カウントをインクリメントするドライバーを呼び出す必要があります[ **WdfObjectDereferenceWithTag** ](wdfobjectdereferencewithtag.md)カウントをデクリメントします。
+ドライバーが**Wdfobjectreferencewithtag**を呼び出して参照カウントをインクリメントする場合、ドライバーは[**WdfObjectDereferenceWithTag**](wdfobjectdereferencewithtag.md)を呼び出してカウントをデクリメントする必要があります。
 
-呼び出す[ **WdfObjectReferenceActual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual)または**WdfObjectReferenceWithTag**の代わりに[ **WdfObjectReference**](wdfobjectreference.md) Microsoft デバッガーに追加の情報 (タグの値、行番号、およびファイル名) を提供します。 **WdfObjectReferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectReferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
+[**Wdfobjectreference**](wdfobjectreference.md)ではなく[**Wdfobjectreferenceactual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)または**wdfobjectreferencewithtag**を呼び出すと、追加情報 (タグ値、行番号、ファイル名) が Microsoft デバッガーに提供されます。 **Wdfobjectreferenceactual**を使用すると、ドライバーは行番号とファイル名を指定でき、 **Wdfobjectreferencewithtag**はドライバーの現在の行番号とファイル名を使用します。
 
-使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)します。
+**! Wdftagtracker**デバッガー拡張機能を使用して、タグ、行番号、およびファイル名の値を表示できます。 デバッガー拡張機能は、ポインターと一連の文字の両方としてタグ値を表示します。 デバッガー拡張機能の詳細については、「 [KMDF ドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)」を参照してください。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)します。
+オブジェクト参照カウントの詳細については、「[フレームワークオブジェクトのライフサイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、オブジェクトの参照カウントをインクリメントし、参照にタグの値を割り当てます。
+次のコード例では、オブジェクトの参照カウントをインクリメントし、タグ値を参照に割り当てます。
 
 ```cpp
 WdfObjectReferenceWithTag(
@@ -92,11 +92,11 @@ WdfObjectReferenceWithTag(
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Wdfobject.h (Wdf.h を含む)</td>
+<td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 <tr class="odd">
 <td><p>Library</p></td>
-<td>Wdf01000.sys (KMDF)。WUDFx02000.dll (UMDF)</td>
+<td>Wdf01000 (KMDF);WUDFx02000 (UMDF)</td>
 </tr>
 <tr class="even">
 <td><p>IRQL</p></td>

@@ -1,9 +1,9 @@
 ---
 title: SM\_RemoveLink 関数
-description: SM\_RemoveLink WMI メソッドを WMI クライアント fabric リンク イベント情報を渡すことを停止するように、WMI プロバイダーを構成します。
+description: SM\_RemoveLink WMI メソッドは、wmi プロバイダーを構成して、ファブリックリンクイベント情報が WMI クライアントに渡されなくなるようにします。
 ms.assetid: 25f6b807-f921-44b6-b087-e5c6ec8c72ec
 keywords:
-- 記憶装置の SM_RemoveLink 関数
+- SM_RemoveLink function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b355b97c6d467b7d55a518f1cb92bfc0ec52f99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1fd09179248ee66dbee3ef9586c9fb9d687c7f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384303"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845477"
 ---
-# <a name="smremovelink-function"></a>SM\_RemoveLink 関数
+# <a name="sm_removelink-function"></a>SM\_RemoveLink 関数
 
 
-SM\_RemoveLink WMI メソッドを WMI クライアント fabric リンク イベント情報を渡すことを停止するように、WMI プロバイダーを構成します。
+SM\_RemoveLink WMI メソッドは、wmi プロバイダーを構成して、ファブリックリンクイベント情報が WMI クライアントに渡されなくなるようにします。
 
 <a name="syntax"></a>構文
 ------
@@ -38,8 +38,8 @@ void SM_RemoveLink(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_RemoveLink\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_RemoveLink\_OUT 構造体の HBAStatus メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -49,7 +49,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_EventControl WMI クラスです。
+この WMI メソッドは、MS\_SM\_EventControl WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -66,17 +66,17 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_RemoveLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removelink_out)
+[**SM\_RemoveLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removelink_out)
 
  
 

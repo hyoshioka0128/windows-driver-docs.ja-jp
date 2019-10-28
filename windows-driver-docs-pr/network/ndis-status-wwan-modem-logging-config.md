@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
-description: ミニポート ドライバーでは、モバイル ブロード バンド (MB) のサービスに以前 OID_WWAN_MODEM_LOGGING_CONFIG クエリまたは一連の要求の完了を通知するために、NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG 通知を使用します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG 通知を使用して、以前の OID_WWAN_MODEM_LOGGING_CONFIG クエリまたは設定要求の完了をモバイルブロードバンド (MB) サービスに通知します。
 ms.assetid: 0370C672-B7A7-4ECE-94F6-FC04407959E4
 ms.date: 04/11/2019
-keywords: -NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG ネットワークドライバー
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d20ccc643575337460d0fb88ca713be132c8ad47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20c4c129c40b7696e7df4e3d53435e3a8c52c281
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354172"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843275"
 ---
-# <a name="ndisstatuswwanmodemloggingconfig"></a>NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
+# <a name="ndis_status_wwan_modem_logging_config"></a>NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
 
-ミニポート ドライバーを使用して、 **NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG**モバイル ブロード バンド (MB) のサービスに前回の完了を通知するために通知[OID_WWAN_MODEM_LOGGING_CONFIG](oid-wwan-modem-logging-config.md)クエリまたは要求を設定します。
+ミニポートドライバーは、 **NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG**通知を使用して、以前の[OID_WWAN_MODEM_LOGGING_CONFIG](oid-wwan-modem-logging-config.md)クエリまたは設定要求の完了をモバイルブロードバンド (MB) サービスに通知します。
 
-ミニポート ドライバーは、モデムが内部変更について、OS に通知する必要があるシナリオで不要なイベントとしてこの通知を送信します。 現時点では、Windows 10、バージョンが 1903 年でこれらのシナリオは発生しません。
+ミニポートドライバーは、モデムが内部の変更について OS に通知する必要がある場合に、この通知を要請されていないイベントとして送信します。 現時点では、Windows 10 バージョン1903では、これらのシナリオは発生しません。
 
-この通知を使用して、 [ **NDIS_WWAN_MODEM_LOGGING_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_logging_config)構造体。
+この通知では、 [**NDIS_WWAN_MODEM_LOGGING_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_logging_config)構造体が使用されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
-[DSS で MB モデムのログ記録](mb-modem-logging-with-dss.md)
+[DSS でのモデムログ (MB)](mb-modem-logging-with-dss.md)
 
 [OID_WWAN_MODEM_LOGGING_CONFIG](oid-wwan-modem-logging-config.md)
 
-[**NDIS_WWAN_MODEM_LOGGING_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_logging_config)
+[**NDIS_WWAN_MODEM_LOGGING_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_logging_config)

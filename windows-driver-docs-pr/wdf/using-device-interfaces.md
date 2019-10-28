@@ -3,18 +3,18 @@ title: デバイス インターフェイスの使用
 description: デバイス インターフェイスの使用
 ms.assetid: 98199220-947e-462e-a50c-85d81ca50108
 keywords:
-- デバイスは、WDK KMDF をインターフェイスします。
-- WDK KMDF インターフェイスのデバイスを登録します。
-- WDK KMDF を要求するデバイスのインターフェイス アクセス権を受け取る
-- デバイスのインターフェイスは、WDK KMDF をクラスします。
+- デバイスインターフェイス WDK KMDF
+- デバイスインターフェイス WDK KMDF の登録
+- デバイスインターフェイスアクセス要求の受信 (WDK KMDF)
+- デバイスインターフェイスクラス WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4bed3b95c1030e5db8ac30bae55063ddd8b52e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1187deb89c8e665b4a44e67dbb184589b5784419
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372266"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843089"
 ---
 # <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 
@@ -22,39 +22,39 @@ ms.locfileid: "67372266"
 
 
 
-A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へのシンボリック リンクは、デバイス、デバイスにアクセスするアプリケーションで使用できます。 ユーザー モード アプリケーションは、Microsoft Win32 などの API 要素に、インターフェイスのシンボリック リンクの名前を渡すことができます**CreateFile**関数。 ユーザー モード アプリケーションを呼び出して、デバイス インターフェイスのシンボリック リンクの名前を取得する**SetupDi**関数。 詳細については**SetupDi**関数を参照してください[デバイス インターフェイスの関数を使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)します。
+*デバイスインターフェイス*は、アプリケーションがデバイスにアクセスするために使用できるプラグアンドプレイ (PnP) デバイスへのシンボリックリンクです。 ユーザーモードアプリケーションは、インターフェイスのシンボリックリンク名を API 要素 (Microsoft Win32 **CreateFile**関数など) に渡すことができます。 デバイスインターフェイスのシンボリックリンク名を取得するために、ユーザーモードアプリケーションは**Setupdi**関数を呼び出すことができます。 **Setupdi**関数の詳細については、「[デバイスインターフェイス関数の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)」を参照してください。
 
-各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)します。
+各デバイスインターフェイスは、*デバイスインターフェイスクラス*に属しています。 たとえば、CD-ROM デバイスのドライバースタックは、GUID\_DEVINTERFACE\_CDROM クラスに属するインターフェイスを提供する場合があります。 CD-ROM デバイスのドライバーの1つで、GUID のインスタンス\_DEVINTERFACE\_CDROM クラスが登録され、CD-ROM デバイスが使用可能であることをシステムとアプリケーションに通知します。 デバイスインターフェイスクラスの詳細については、「[デバイスインターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)」を参照してください。
 
-### <a name="registering-a-device-interface"></a>デバイスのインターフェイスを登録します。
+### <a name="registering-a-device-interface"></a>デバイスインターフェイスの登録
 
-デバイスのインターフェイス クラスのインスタンスを登録するフレームワーク ベースのドライバーを呼び出すことができます[ **WdfDeviceCreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)内からその[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。 ドライバーでは、インターフェイスの複数のインスタンスをサポートする場合は、各インスタンスに一意の参照文字列を割り当てることができます。
+デバイスインターフェイスクラスのインスタンスを登録するために、フレームワークベースのドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数内から[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出すことができます。 ドライバーがインターフェイスの複数のインスタンスをサポートしている場合は、一意の参照文字列を各インスタンスに割り当てることができます。
 
-ドライバーを呼び出すことができます、ドライバーがデバイスのインターフェイスを登録すると、 [ **WdfDeviceRetrieveDeviceInterfaceString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedeviceinterfacestring)システムが、デバイス インターフェイスに割り当てられているシンボリック リンクの名前を取得するには.
+ドライバーがデバイスインターフェイスを登録した後、ドライバーは[**WdfDeviceRetrieveDeviceInterfaceString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedeviceinterfacestring)を呼び出して、システムがデバイスインターフェイスに割り当てたシンボリックリンク名を取得できます。
 
-ドライバーがデバイスのインターフェイスを登録できるその他の方法については、次を参照してください。[デバイス インターフェイス クラスを登録する](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-device-interface-class)します。
+ドライバーによるデバイスインターフェイスの登録方法の詳細については、「[デバイスインターフェイスクラスの登録](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-device-interface-class)」を参照してください。
 
-### <a name="enabling-and-disabling-a-device-interface"></a>有効にして、デバイスのインターフェイスを無効化
+### <a name="enabling-and-disabling-a-device-interface"></a>デバイスインターフェイスを有効または無効にする
 
-ドライバーを呼び出してから[ **WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)フレームワークが自動的に有効すべてのデバイスのインターフェイスと、デバイスがその稼働状態になるし、インターフェイスを無効にしますときに、。デバイスの稼働状態のままです。 呼び出されたときに、ドライバーで物理デバイス オブジェクト (PDO) が指定されてかどうか**WdfDeviceCreateDeviceInterface**、無効になっているデバイスが再度有効にする場合に、フレームワークがデバイスのインターフェイスに再度有効にします。
+ドライバーが[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出した後、デバイスが動作状態になると、フレームワークはデバイスのすべてのインターフェイスを自動的に有効にし、デバイスが動作状態のままになったときにインターフェイスを無効にします。 ドライバーが**WdfDeviceCreateDeviceInterface**を呼び出したときに物理デバイスオブジェクト (PDO) を指定した場合、無効になっているデバイスが再度有効にされた場合、フレームワークによってデバイスのインターフェイスが再度有効になります。
 
-ドライバーでは、無効にでき、必要な場合に、デバイスのインターフェイスを再度有効にすることができます。 たとえば、ドライバーは、そのデバイスが応答を停止したことを判断した場合、ドライバー呼び出すことができます[ **WdfDeviceSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestate)デバイスのインターフェイスを無効にしてからアプリケーションを禁止します。インターフェイスに新しいハンドルを取得します。 (既存のハンドルをインターフェイスには影響はありません)。ドライバーを呼び出すことができます、デバイスが後で使用可能なになると、 **WdfDeviceSetDeviceInterfaceState**インターフェイスを再度有効にするには、もう一度です。
+ドライバーは、必要に応じて、デバイスインターフェイスを無効にしてから再度有効にすることができます。 たとえば、ドライバーがデバイスの応答を停止したと判断した場合、ドライバーは[**Wdfdevicesetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestate)を呼び出してデバイスのインターフェイスを無効にし、アプリケーションがインターフェイスに新しいハンドルを取得できないようにします。 (インターフェイスに対する既存のハンドルは影響を受けません)。後でデバイスが使用可能になった場合、ドライバーは**Wdfdevicesetdeviceinterfacestate**を再度呼び出して、インターフェイスを再び有効にすることができます。
 
-### <a name="receiving-requests-to-access-a-device-interface"></a>デバイス インターフェイスへのアクセス要求の受信
+### <a name="receiving-requests-to-access-a-device-interface"></a>デバイスインターフェイスへのアクセス要求を受信する
 
-ドライバーのフレームワーク、アプリケーションまたはカーネル モード コンポーネントは、ドライバーのデバイス インターフェイスへのアクセスを要求するときに[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)コールバック関数。 ドライバーを呼び出すことができます[ **WdfFileObjectGetFileName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)デバイスやアプリケーションとカーネル モード コンポーネントにアクセスしているファイルの名前を取得します。 オペレーティング システムにはファイルに参照文字列が含まれています、ドライバーで、デバイス インターフェイスが登録されているときに参照文字列を指定する場合、またはデバイス名を**WdfFileObjectGetFileName**を返します。
+アプリケーションまたはカーネルモードのコンポーネントがドライバーのデバイスインターフェイスへのアクセスを要求すると、フレームワークはドライバーの[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create) callback 関数を呼び出します。 ドライバーは、 [**Wdffileobjectgetfilename**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/nf-wdffileobject-wdffileobjectgetfilename)を呼び出して、アプリケーションまたはカーネルモードコンポーネントがアクセスしているデバイスまたはファイルの名前を取得できます。 ドライバーがデバイスインターフェイスを登録するときに参照文字列を指定した場合、オペレーティングシステムには、 **Wdffileobjectgetfilename**から返されるファイル名またはデバイス名に参照文字列が含まれます。
 
-### <a name="accessing-another-drivers-device-interface"></a>別のドライバーのデバイス インターフェイスへのアクセス
+### <a name="accessing-another-drivers-device-interface"></a>別のドライバーのデバイスインターフェイスへのアクセス
 
-ここでの追加の通知または別のドライバーによって提供されるデバイス インターフェイスの削除用のカーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 のドライバーを登録する方法を示していて、作成、[リモートしました/O ターゲット](general-i-o-targets-in-umdf.md)デバイス インターフェイスによって表されるデバイスと通信します。
+このセクションでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーまたはユーザーモードドライバーフレームワーク (UMDF) バージョン2ドライバーが、別のドライバーによって提供されるデバイスインターフェイスの到着または削除の通知を登録し、[リモート i/o ターゲットを作成する方法について説明します。](general-i-o-targets-in-umdf.md)デバイスインターフェイスによって表されるデバイスと通信する。
 
-バージョン 1 の UMDF ドライバーでこれを行う方法については、次を参照してください。 [UMDF ドライバーでデバイスのインターフェイスを使用して](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)します。
+UMDF バージョン1のドライバーでこれを行う方法については、「 [Umdf ドライバーでのデバイスインターフェイスの使用](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)」を参照してください。
 
-KMDF ドライバーを呼び出してデバイス インターフェイスのイベントの通知に登録する[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)2 の UMDF ドライバーを呼び出す、 [ **CM\_登録\_通知**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)します。 どちらの場合から適切なルーチンを呼び出すと、ドライバー、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+デバイスインターフェイスイベントの通知を登録するために、KMDF ドライバーは[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出しますが、UMDF 2 ドライバーは\_CM を呼び出して[ **\_通知を登録**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)します。 どちらの場合も、ドライバーは[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数から適切なルーチンを呼び出します。
 
-次のコード例では、ローカルの 2 の UMDF ドライバーが通知を登録する方法を示していて、リモートの I/O ターゲットを開きます。
+次のコード例は、ローカルの UMDF 2 ドライバーが通知を登録してから、リモート i/o ターゲットを開く方法を示しています。
 
-1.  リモートのドライバーを呼び出すことによってデバイス インターフェイスの登録[ **WdfDeviceCreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)から[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add).
+1.  リモートドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)から[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出すことによって、デバイスインターフェイスを登録します。
     ```cpp
         UNICODE_STRING ref;
         RtlInitUnicodeString(&ref, MY_HID_FILTER_REFERENCE_STRING);
@@ -71,7 +71,7 @@ KMDF ドライバーを呼び出してデバイス インターフェイスの�
 
     ```
 
-2.  ローカル ドライバー呼び出し[ **CM\_登録\_通知**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)から[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)にデバイスのインターフェイスが使用可能な通知に登録します。 デバイスのインターフェイスが使用可能な場合にフレームワークから呼び出される通知コールバック ルーチンへのポインターを提供します。
+2.  ローカルドライバーは CM を呼び出して、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)からの[ **\_通知を登録**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)して、デバイスインターフェイスが使用可能な場合に通知を受け取るように\_します。 デバイスインターフェイスが使用可能な場合にフレームワークが呼び出す通知コールバックルーチンへのポインターを提供します。
     ```cpp
     DWORD cmRet;
         CM_NOTIFY_FILTER cmFilter;
@@ -94,7 +94,7 @@ KMDF ドライバーを呼び出してデバイス インターフェイスの�
         }   
     ```
 
-3.  システムでは、指定したデバイスのインターフェイスが到着したかが削除されたたびに、ローカル ドライバーの通知コールバック ルーチンを呼び出します。 コールバック ルーチンを調べることができます、 *EventData*デバイス インターフェイスを決定するパラメーターのお知らせします。 デバイスのインターフェイスを開くの作業項目はキューに可能性があります。
+3.  システムは、指定されたデバイスインターフェイスが到着するか削除されるたびに、ローカルドライバーの通知コールバックルーチンを呼び出します。 コールバックルーチンは、 *EventData*パラメーターを調べて、どのデバイスインターフェイスに到達したかを判断できます。 その後、作業項目をキューに置いて、デバイスインターフェイスを開くことができます。
     ```cpp
     DWORD 
     MyCmInterfaceNotification(
@@ -141,11 +141,11 @@ KMDF ドライバーを呼び出してデバイス インターフェイスの�
     ```
 
 
-4.  ローカル ドライバー作業項目のコールバック関数からを呼び出す[ **WdfIoTargetCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate)リモートのターゲットを作成して[ **WdfIoTargetOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)をリモートの I/O ターゲットを開きます。
+4.  ローカルドライバーは、作業項目のコールバック関数から、 [**Wdfiotargetcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate)を呼び出してリモートターゲットを作成し、 [**WdfIoTargetOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)を呼び出してリモート i/o ターゲットを開きます。
 
-    呼び出すときに[ **WdfIoTargetOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)、必要に応じて、ドライバー、登録、 [ *EvtIoTargetQueryRemove* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)を受信するコールバック関数削除を拒否する機会と共に削除通知します。 ドライバーが提供されていない場合*EvtIoTargetQueryRemove*フレームワークは、デバイスが削除されたときに I/O ターゲットを閉じます。
+    [**WdfIoTargetOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)を呼び出す場合、ドライバーは必要に応じて、削除通知を受け取るために[*Evtiotargetqueryremove*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)コールバック関数を登録し、削除を拒否する機会を提供します。 ドライバーで*Evtiotargetqueryremove*が提供されていない場合、デバイスが削除されると、フレームワークは i/o ターゲットを閉じます。
 
-    まれに、2 の UMDF ドライバーを呼び出すことができます[ **CM\_登録\_通知**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)デバイスの削除の通知の登録に、2 番目の時間。 ドライバーを呼び出す場合など、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)デバイス インターフェイスへのハンドルを取得するには、その必要があります通知の登録デバイスの削除の削除の試行をクエリに適切に応答できるようにします。 ほとんどの場合、2 の UMDF ドライバー呼び出し**CM\_登録\_通知**1 回だけ WDF デバイスの削除のサポートに依存しています。
+    まれに、UMDF 2 ドライバーが CM を呼び出して、デバイスの削除通知を登録するために2回目の[ **\_通知を\_登録**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)できる場合があります。 たとえば、ドライバーが[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)を呼び出してデバイスインターフェイスへのハンドルを取得する場合、デバイスの削除の通知に登録して、クエリの削除試行に適切に応答できるようにする必要があります。 ほとんどの場合、UMDF 2 ドライバーは CM を呼び出し **\_\_通知**を1回だけ登録し、デバイスの削除に WDF サポートを利用します。
 
     ```cpp
     VOID 
@@ -163,4 +163,4 @@ KMDF ドライバーを呼び出してデバイス インターフェイスの�
 
 ## <a name="related-topics"></a>関連トピック
 
-[デバイス インターフェイスの到着とデバイスの削除の通知を登録します。](https://docs.microsoft.com/windows-hardware/drivers/install/registering-for-notification-of-device-interface-arrival-and-device-removal)
+[デバイス インターフェイスの到着とデバイスの削除の通知の登録](https://docs.microsoft.com/windows-hardware/drivers/install/registering-for-notification-of-device-interface-arrival-and-device-removal)

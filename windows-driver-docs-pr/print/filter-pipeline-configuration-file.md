@@ -3,33 +3,33 @@ title: フィルター パイプライン構成ファイルに関するページ
 description: フィルター パイプライン構成ファイルに関するページ
 ms.assetid: 586247bd-6d06-4728-a5f0-ee3fe1d09321
 keywords:
-- XPSDrv プリンター ドライバー WDK、モジュールを表示します。
-- WDK XPSDrv モジュールを表示、フィルター パイプライン構成ファイル
-- フィルター パイプライン構成ファイルを WDK XPSDrv
-- プライベート キーワード WDK XPSDrv
-- パイプラインのプロパティ バッグ WDK XPSDrv をフィルター処理します。
-- プロパティ バッグ WDK フィルター パイプライン
+- XPSDrv プリンタードライバー WDK、render モジュール
+- レンダーモジュール WDK XPSDrv、フィルターパイプライン構成ファイル
+- フィルターパイプライン構成ファイル WDK XPSDrv
+- プライベートキーワード WDK XPSDrv
+- フィルターパイプラインプロパティバッグ WDK XPSDrv
+- プロパティバッグ WDK フィルターパイプライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3998e550f4abf47a937242617042c5bc7d0a0a46
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 341e1db13c2957bdd33cc5d26db92c5c4da5c65e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843259"
 ---
 # <a name="filter-pipeline-configuration-file"></a>フィルター パイプライン構成ファイルに関するページ
 
 
-*フィルター パイプライン構成ファイル*は、次を定義する XML ファイルです。
+*フィルターパイプライン構成ファイル*は、次のものを定義する XML ファイルです。
 
--   パイプライン内のフィルターの順序。 この順序は、フィルター パイプライン構成ファイル内の XML 要素の順序によって定義されます。
+-   パイプライン内のフィルターの順序。 この順序は、フィルターパイプライン構成ファイル内の XML 要素の順序によって定義されます。
 
--   インターフェイスをフィルター処理します。 これらのインターフェイスは、フィルター パイプライン構成ファイル内の XML 属性によって定義されます。
+-   インターフェイスをフィルター処理します。 これらのインターフェイスは、フィルターパイプライン構成ファイルの XML 属性によって定義されます。
 
--   各フィルターの入力と出力の形式。 これらの形式は、フィルター パイプライン構成ファイル内の XML 要素によって定義されます。
+-   各フィルターの入力形式と出力形式。 これらの形式は、フィルターパイプライン構成ファイルの XML 要素によって定義されます。
 
-次のコード例では、一般的なフィルター パイプライン構成ファイルを示します。
+次のコード例は、一般的なフィルターパイプライン構成ファイルを示しています。
 
 ```xml
 <Filters>
@@ -66,17 +66,17 @@ ms.locfileid: "67382585"
 </Filters>
 ```
 
-### <a name="private-keywords"></a>Private キーワード
+### <a name="private-keywords"></a>プライベートキーワード
 
-[XPSDrv 構成モジュール](xpsdrv-configuration-module.md)配置できる*プライベート キーワード*PrintTicket のエントリを処理する際に、 [XPS ドライバーのドキュメント イベント](xps-driver-document-events.md)中に、 [ **DrvDocumentEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)関数呼び出し。 これらの PrintTicket エントリは、フィルターは、PrintTicket の読み取り中に印刷フィルター パイプラインで処理フィルターによって読み取られます。
+[XPSDrv 構成モジュール](xpsdrv-configuration-module.md)は、 [**DrvDocumentEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent)関数呼び出し中に[XPS ドライバードキュメントイベント](xps-driver-document-events.md)を処理するときに、PrintTicket エントリに*プライベートキーワード*を含めることができます。 これらの PrintTicket エントリは、フィルターが PrintTicket を読み取っている間に、印刷フィルターパイプラインの処理フィルターによって読み取られます。
 
-### <a name="filter-pipeline-property-bag"></a>パイプラインのプロパティ バッグをフィルター処理します。
+### <a name="filter-pipeline-property-bag"></a>フィルターパイプラインプロパティバッグ
 
-構成モジュールを使用することも、*フィルター パイプラインのプロパティ バッグ*データを格納するか、フィルター パイプラインに情報を渡します。 プロパティ バッグを使用して、構成サービスを公開するには構成モジュールをエクスポートする必要があります、 **DrvPopulateFilterServices**メソッド。 さらに、フィルター パイプライン構成ファイルを含める必要があります、 **&lt;FilterServiceProvider&gt;** サービスごとの要素。 プロバイダーのモジュールを実装およびエクスポートする必要があります、 **DllCanUnloadNow**関数。 通常、これらのプロバイダーは、プロパティ バッグ内の COM インターフェイスを公開します。 プロバイダーは、これらのインターフェイスが使用中にアンロードする必要があります維持します。
+構成モジュールは、*フィルターパイプラインプロパティバッグ*を使用してデータを格納したり、フィルターパイプラインに情報を渡したりすることもできます。 プロパティバッグを使用して構成サービスを公開するには、構成モジュールで**DrvPopulateFilterServices**メソッドをエクスポートする必要があります。 また、フィルターパイプライン構成ファイルには、各サービスの **&lt;FilterServiceProvider&gt;** 要素が含まれている必要があります。 プロバイダーモジュールは、 **DllCanUnloadNow**関数を実装してエクスポートする必要があります。 通常、これらのプロバイダーは、プロパティバッグに COM インターフェイスを公開します。 これらのインターフェイスを使用している間は、プロバイダーを読み込む必要があります。
 
-別の要素、  **&lt;OptionalFilterServiceProvider&gt;** 、により、パイプラインをサービス プロバイダーの dll が利用できない場合は、印刷ジョブを続行するマネージャー。 個別のフィルターは、省略可能なサービス プロバイダーがない場合、動作を定義する必要があります。 の場合 **&lt;FilterServiceProvider&gt;** されると、dll を読み込むことができません、ジョブが失敗します。 **&lt;OptionalFilterServiceProvider&gt;** 要素は、Windows 7 以降でサポートされています。
+もう1つの要素である、&lt;の [ **&gt;** ] を選択すると、サービスプロバイダーの dll が使用できない場合に、パイプラインマネージャーで印刷ジョブを続行できます。 個々のフィルターは、オプションのサービスプロバイダーが存在しない場合にその動作を定義する必要があります。 そうしないと **&lt;FilterServiceProvider&gt;** が使用され、dll を読み込めない場合、ジョブは失敗します。 **&lt;の&gt;** 要素は、Windows 7 以降でサポートされています。
 
-次のコード例は、 **DrvPopulateFilterServices**関数。
+次のコード例は、 **DrvPopulateFilterServices**関数を示しています。
 
 ```cpp
 HRESULT
@@ -85,9 +85,9 @@ DrvPopulateFilterServices(
     );
 ```
 
-前の関数の詳細については、次を参照してください。 [ **DrvPopulateFilterServices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-drvpopulatefilterservices)します。
+前の関数の詳細については、「 [**DrvPopulateFilterServices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-drvpopulatefilterservices)」を参照してください。
 
-次のコード例の XML 構文を示しています、 **&lt;FilterServiceProvider&gt;** フィルター パイプライン構成ファイル内の要素。
+次のコード例は、フィルターパイプライン構成ファイルの **&lt;FilterServiceProvider&gt;** 要素の XML 構文を示しています。
 
 ```xml
 <Filters>
@@ -97,11 +97,11 @@ DrvPopulateFilterServices(
 </Filters>
 ```
 
-### <a name="interleaving-mode-for-the-output-device"></a>出力デバイスのモードをインターリーブ
+### <a name="interleaving-mode-for-the-output-device"></a>出力デバイスのインターリーブモード
 
-*インターリーブ*FixedPage のドキュメント パーツと共に、XPS ドキュメントの個々 のリソース部分をストリーミングする方法を参照します。 フィルター パイプラインは、パイプライン内の XPS ドキュメントのインターフェイスを持つ最初のフィルターは、XPS ドキュメント オブジェクト モデルを作成するとき、XPS スプール ファイルのインターリーブの順序の後に不要になった。 ただし、XPS ドキュメントのインターフェイスを使用して、パイプラインで最後のフィルターは、XPS コンテンツをシリアル化時に使用するパイプラインのフィルターの構成ファイルでインターリーブの順序を指定できます。 出力デバイスまたは出力ファイルで最も互換性のあるインターリーブの順序を選択すると、ドキュメントの後続の処理のパフォーマンスを向上させることができます。
+*インターリーブ*とは、XPS ドキュメントの個々のリソース部分を、FixedPage ドキュメントパーツと共にストリーム配信する方法を指します。 フィルターパイプラインによって、パイプラインで XPS ドキュメントインターフェイスを使用した最初のフィルター用の XPS ドキュメントオブジェクトモデルが作成されると、XPS スプールファイルのインターリーブ順序が適用されなくなります。 ただし、XPS ドキュメントインターフェイスを使用するパイプラインの最後のフィルターでは、XPS コンテンツをシリアル化するときにパイプラインが使用する、フィルター構成ファイルのインターリーブ順序を指定できます。 出力デバイスまたは出力ファイルと最も互換性のあるインターリーブ順序を選択すると、後続のドキュメント処理のパフォーマンスが向上します。
 
-次のフィルターの例は、インターリーブのオプションを使用する方法について説明するように変更されている前の例フィルター構成ファイルから抜粋です。 この例では、説明のために両方のインターリーブ オプションでは、実際のフィルターの構成ファイルが、1 つだけ **&lt;Interleaving&gt;** フィルターの定義内の要素。
+次のフィルターの例は、前の例のフィルター構成ファイルからの抜粋であり、インターリーブオプションの使用方法を示すために変更されています。 この例では、例として、両方のインターリーブオプションを示していますが、実際のフィルター構成ファイルには、フィルター定義内の **&lt;インターリーブ&gt;** 要素が1つだけあります。
 
 ```xml
     <Filter     dll="XDNUp.dll"
@@ -114,17 +114,17 @@ DrvPopulateFilterServices(
     </Filter>
 ```
 
-フィルター パイプラインには、次のインターリーブ注文がサポートされています。
+フィルターパイプラインでは、次のインターリーブ順序がサポートされています。
 
--   **ResourcesFirst** FixedPage リソースに依存する前に依存する各リソースのストリームの順序をインターリーブします。 このインターリーブの順序はコンテンツにレンダリングするテキストとページ レンダリングが開始する前に、プリンターが必要なフォントおよびイメージ リソースを提供するための使用量が直接プリンターとプリンター ドライバーの適切です。
+-   **Resourcesfirst**インターリーブ順序は、リソースに依存する FixedPage の前に依存する各リソースをストリームします。 このインターリーブ順序は、プリンタードライバーや直接使用プリンターの場合に適しています。これは、レンダリングが開始される直前に、プリンターがテキストとページのコンテンツをレンダリングするために必要なフォントおよびイメージリソースを提供するためです。
 
--   **MarkupFirst**ドキュメントのテキストとマークアップと実際のリソースをストリームする前のリソースの使用方法については、ストリームの順序をインターリーブします。 このインターリーブの順序は、アーカイブ ファイルの送信先やオンライン ドキュメントを表示するアプリケーションに最適なは。
+-   **MarkupFirst**インターリーブ順序は、ドキュメントのテキストとマークアップ、およびリソースが使用されてから実際のリソースをストリーミングする方法に関する情報をストリームします。 このインターリーブ順序は、アーカイブファイルの保存先と、ドキュメントをオンラインで表示するアプリケーションに最適です。
 
-### <a name="archive-optimized-xps-output"></a>XPS のアーカイブ用に最適化された出力
+### <a name="archive-optimized-xps-output"></a>アーカイブに最適化された XPS 出力
 
-この機能は、印刷ドライバー操作のスプール ファイルとして XPS のアーカイブ用に最適化された出力を明示的に要求を使用できます。 Windows 8 で、Microsoft XPS Document Writer v4 (MXDW) のみ MXDW Microsoft XPS ドキュメント コンバーター (MXDC) で使用可能なコード パスを経由してこのアーカイブ可能な XPS の出力を生成します。 したがって、印刷ドライバーでは、MXDC からこのアーカイブに最適化された XPS を生成できます。
+この機能により、印刷ドライバーはアーカイブ最適化 XPS 出力をスプールファイルとして明示的に要求できます。 Windows 8 では、Microsoft XPS ドキュメントライター v4 (MXDW) は、Microsoft XPS Document Converter (MXDC) の MXDW でのみ使用できるコードパスを使用して、このアーカイブ対応 XPS 出力を生成します。 そのため、印刷ドライバーは、このアーカイブ最適化 XPS を MXDC から生成できます。
 
-次のコード例を使用する XML 構文を示しています、&lt;アーカイブ&gt;この機能を有効にするフィルター パイプライン構成ファイル内の要素。
+次のコード例は、フィルターパイプライン構成ファイルで &lt;Archive&gt; 要素を使用してこの機能を有効にする XML 構文を示しています。
 
 ```xml
 <Filters>

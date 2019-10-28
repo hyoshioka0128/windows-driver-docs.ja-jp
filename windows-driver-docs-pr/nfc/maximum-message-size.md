@@ -1,6 +1,6 @@
 ---
-title: NFP 最大メッセージ サイズ
-description: 各プロバイダーの実装では、パブリケーションおよびサブスクリプションのメッセージの最大サイズを指定できます。 Windows では、このプロバイダーでサポートされているメッセージの最大サイズが 10 KB 以上である必要があります。
+title: NFP メッセージの最大サイズ
+description: 各プロバイダーの実装では、パブリケーションとサブスクリプションの最大メッセージサイズを指定できます。 Windows では、プロバイダーがサポートするメッセージの最大サイズを 10 KB 未満にする必要があります。
 ms.assetid: 9806130F-AB9D-4265-8D9E-72CED49BF2C2
 keywords:
 - NFC
@@ -10,21 +10,21 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9c34577ab2a3627e97760591eace51e9586109
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 04b16307f6d8585f45e267bd57a9390beca15ee6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375104"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843457"
 ---
-# <a name="nfp-maximum-message-size"></a>NFP 最大メッセージ サイズ
+# <a name="nfp-maximum-message-size"></a>NFP メッセージの最大サイズ
 
 
-各プロバイダーの実装では、パブリケーションおよびサブスクリプションのメッセージの最大サイズを指定できます。 Windows では、このプロバイダーでサポートされているメッセージの最大サイズが 10 KB 以上である必要があります。
+各プロバイダーの実装では、パブリケーションとサブスクリプションの最大メッセージサイズを指定できます。 Windows では、プロバイダーがサポートするメッセージの最大サイズを 10 KB 未満にする必要があります。
 
 
 ## <a name="related-topics"></a>関連トピック
-[IOCTL\_NFP\_GET\_MAX\_MESSAGE\_BYTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[IOCTL\_NFP\_\_最大\_メッセージ\_バイトの取得](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
+[NFC デバイスドライバーインターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近距離無線近接 DDI リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

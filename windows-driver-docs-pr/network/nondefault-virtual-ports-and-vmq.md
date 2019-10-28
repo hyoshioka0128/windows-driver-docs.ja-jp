@@ -4,57 +4,57 @@ description: 既定以外の仮想ポートおよび VMQ
 ms.assetid: 5F6F5378-2CA7-491D-953C-6F98B855B51A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 721b3b7b508dcb3547f4c4d7e883d7f9a97cb42f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e2f09cfd9d19cb78bac6e7b5d536c128490c1ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354541"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842765"
 ---
 # <a name="nondefault-virtual-ports-and-vmq"></a>既定以外の仮想ポートおよび VMQ
 
 
-既定の NIC の切り替えは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするネットワーク アダプターのコンポーネントです。 スイッチに、PCI Express (PCIe) 物理機能 (PF) 既定の仮想ポート (VPort) が常にアタッチします。 スイッチは、PF. に 1 つまたは複数の既定以外拡張をアタッチすることができます。 詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
+既定の NIC スイッチは、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートするネットワークアダプターのコンポーネントです。 スイッチは常に既定の仮想ポート (VPort) を PCI Express (PCIe) 物理機能 (PF) にアタッチします。 スイッチは、1つまたは複数の既定以外の VPorts を PF に接続できます。 詳細については、「[仮想ポートの作成](creating-a-virtual-port.md)」を参照してください。
 
-仮想化スタックは、HYPER-V 親パーティションの管理オペレーティング システムで実行されます。 このスタックは、オブジェクト識別子 (OID) をメソッド要求を発行して拡張を作成します。 [OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。 ただし、スタックの OID メソッド要求を使用するリソースが割り当て済みのアクティブな PCIe 仮想機能 (Vf) の数よりも多くの拡張を作成できます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)します。
+仮想化スタックは、Hyper-v の親パーティションの管理オペレーティングシステムで実行されます。 このスタックは、Oid\_NIC\_スイッチのオブジェクト識別子 (OID) メソッド要求を発行して VPorts を作成し[\_\_vports を作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)ます。 ただし、スタックでは、Oid による oid メソッド要求[oid\_\_\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)使用してリソースが割り当てられているアクティブな PCIe 仮想関数 (VFs) の数よりも多くの vports を作成できます。
 
-ネットワーク アダプターで SR-IOV が有効な場合、VMQ のすべての機能を無効にする必要があります。 ただし、既定以外、PF にアタッチされ、VF に関連付けられていないされる拡張では、仮想マシン キュー (VMQ) インターフェイスと同じ機能を提供できます。 次の点では、拡張が VMQ のようなパケット転送のハードウェア アクセラレータを使用したデータ パスを提供する方法について説明します。
+ネットワークアダプターで sr-iov が有効になっている場合は、完全な VMQ 機能を無効にする必要があります。 ただし、PF にアタッチされ、VF に接続されていない既定以外の VPorts は、バーチャルマシンキュー (VMQ) インターフェイスと同じ機能を提供できます。 次の点で、VPorts が VMQ に似たパケット転送用にハードウェアアクセラレータのデータパスを提供する方法について説明します。
 
--   VMQ は、メディアでの VM へのアクセス制御 (MAC) のハードウェアでフィルター処理の対象を決定します。 これは、仮想化スタックでは、ターゲット VM を決定するオーバーヘッドを回避できます。
+-   VMQ は、ハードウェアでメディアアクセス制御 (MAC) フィルタリングを使用してターゲット VM を決定します。 これにより、仮想化スタック内のターゲット VM を決定する際のオーバーヘッドを回避できます。
 
-    Windows Server 2012 以降では、仮想化スタック受信フィルターの構成、VPort の OID メソッド要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter). この OID 要求に対して、仮想化スタックに渡し、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) MAC アドレスを指定する構造と仮想仮想ネットワーク アダプターに関連付けられている LAN (VLAN) の識別子です。 VMQ と同様に、これを構成できます複数の MAC アドレスと VLAN ID のペア、VPort。 仮想化スタックでは、受信フィルターを設定するターゲット VPort も指定します。
+    Windows Server 2012 以降では、仮想化スタックは、Oid の OID メソッド要求を発行することによって、VPort の受信フィルターを構成[\_フィルター\_設定して、\_フィルターを受信\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 この OID 要求では、仮想化スタックは、仮想ネットワークアダプターに関連付けられている MAC アドレスと仮想 LAN (VLAN) 識別子を指定する、 [ **\_フィルター\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)を渡します。 VMQ と同様に、VPort に複数の MAC アドレスと VLAN ID のペアを構成することができます。 また、仮想化スタックでは、受信フィルターを設定するターゲットの VPort も指定します。
 
-    SR-IOV 対応ネットワーク アダプターのようなハードウェア フィルター処理を実行で指定されたフィルター条件に基づいて、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)要求。 ハードウェアでパケットを受信したときに、VPort のキューの受信、ミニポート ドライバーのアウト オブ バンド (OOB) データでソース VPort 識別子を指定します、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)パケットの構造体。 仮想化スタックは、VPort 識別子に基づいて、ターゲット VM を決定を VM で実行されているネットワーク スタックのパケットを示します。
+    SR-IOV ネットワークアダプターは、OID によって指定されたフィルター条件に基づいて、同様のハードウェアフィルター処理を実行します。このフィルターの条件は、フィルターの要求[\_フィルター\_設定された OID\_受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)です。 パケットが VPort のハードウェア受信キューで受信されると、ミニポートドライバーは、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の帯域外 (OOB) データのソース vport 識別子を指定します。 仮想化スタックは、VPort 識別子に基づいてターゲット VM を決定し、VM で実行されるネットワークスタックへのパケットを示します。
 
-    同様に、仮想化スタック識別子を指定します、ターゲット VPort の OOB データ、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)送信パケットの構造体。 ドライバーでは、パケットの送信要求を処理する場合は、指定した VPort のハードウェアの送信キューでパケットを配置します。
+    同様に、仮想化スタックは、送信パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の OOB データ内のターゲット vport 識別子を指定します。 ドライバーは、パケットの送信要求を処理するときに、指定された VPort のハードウェア転送キューにパケットを置きます。
 
-    使用して、パケットの OOB データから VPort 識別子を取得できます、 [ **NET\_バッファー\_一覧\_受信\_フィルター\_VPORT\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)マクロ。
+    VPort id はパケットの OOB データから取得できます。そのためには、 [**NET\_BUFFER\_LIST を使用して\_FILTER\_VPORT\_ID マクロを受信\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)ます。
 
-    このプロセスの詳細については、次を参照してください。[仮想ポート経由でのパケット フロー](packet-flow-over-a-virtual-port.md)します。
+    このプロセスの詳細については、「[仮想ポート経由のパケットフロー](packet-flow-over-a-virtual-port.md)」を参照してください。
 
-    受信側のフィルター処理、SR-IOV ネットワーク アダプターの要件の詳細については、次を参照してください。[受信フィルタ リング機能を決定する](determining-receive-filtering-capabilities.md)します。
+    SR-IOV ネットワークアダプターの受信フィルター処理の要件の詳細については、「[受信フィルター機能の決定](determining-receive-filtering-capabilities.md)」を参照してください。
 
--   VMQ は、割り込みと DPC の同時実行制御を提供します。
+-   VMQ は、割り込みと DPC の同時実行を提供します。
 
-    NDIS 6.30 および Windows Server 2012 以降、PF にアタッチされている VPort は、特定の CPU アフィニティを構成できます。 仮想化スタックを VPort の OID メソッド要求を使用して、CPU アフィニティおよび割り込みモデレートのパラメーターを構成する[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)または[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)します。 これにより、仮想化スタックは VMQ の割り込みと DPC の同時実行のような割り込みベースのパラメーターを構成します。
+    NDIS 6.30 および Windows Server 2012 以降では、特定の CPU アフィニティを持つように PF に接続された VPort を構成できます。 仮想化スタックは、Oid の OID メソッド要求 Oid\_使用して、VPort の CPU アフィニティと割り込みモデレーションのパラメーターを構成します。 [\_スイッチ\_\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)または[oid\_nic\_スイッチを作成\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 これにより、仮想化スタックは、割り込みおよび DPC 同時実行のための VMQ と同様の割り込みベースのパラメーターを構成します。
 
-    など、SR-IOV ネットワーク アダプターでは、特定の CPU 関係が構成されている VPort 上のパケットを受信すると、アダプターは、指定した CPU の割り込みを生成します。 ミニポート ドライバーでは、その CPU の NDIS と仮想化スタックにパケットを受信したことを示します。
+    たとえば、SR-IOV ネットワークアダプターが特定の CPU アフィニティを持つように構成された VPort でパケットを受信する場合、アダプターは、指定された CPU に割り込みを生成します。 ミニポートドライバーは、NDIS に対して受信したパケットとその CPU の仮想化スタックを示します。
 
-PF のミニポート ドライバーへの呼び出しのコンテキスト内でその SR-IOV 機能をアドバタイズする[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)します。 ドライバーの初期化、 [ **NDIS\_SRIOV\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)その機能と呼び出しを使用した構造[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)その機能を登録します。 詳細については、次を参照してください。 [SR-IOV 機能を決定する](determining-sr-iov-capabilities.md)します。
+PF ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)の呼び出しのコンテキスト内で sr-iov 機能をアドバタイズします。 このドライバーは、その機能を使用して[**NDIS\_SRIOV\_capabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造体を初期化し、その機能を登録するために[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出します。 詳細については、「 [Sr-iov 機能の決定](determining-sr-iov-capabilities.md)」を参照してください。
 
-次のメンバー、 [ **NDIS_NIC_SWITCH_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造が割り当てられている拡張方法に影響します。
+[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体の次のメンバーは、vports の割り当て方法に影響します。
 
--   **MaxNumVPorts**、ネットワーク アダプター上に作成できる拡張の最大数を指定します。
+-   **Maxnumvports**。ネットワークアダプターに作成できる vports の最大数を指定します。
 
--   **MaxNumVFs**、ネットワーク アダプターに割り当てることができる VFs の最大数を指定します。
+-   **Maxnumvfs**。ネットワークアダプターに割り当てることができる vfs の最大数を指定します。
 
-NDIS 6.30 以降、ときに、ミニポート ドライバーを初期化します、 [ **NDIS_NIC_SWITCH_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造、NDIS に設定\_NIC\_スイッチ\_CAP\_単一\_VPORT\_プール フラグ、 **NicSwitchCapabilities**メンバー。 このフラグは、既定以外拡張を作成できること、ネットワーク アダプターで VPort プールから引当方法でを指定します。 これにより、使用可能な既定以外の作成と、PF として必要な場合に割り当てられていると VFs を割り当てられている拡張できます。 既定以外の PF に割り当てられている拡張である VMQ インターフェイスが VM のこともでき、ネットワーク アダプターがサポートでは、キューが表示されます。 場合、
+NDIS 6.30 以降では、ミニポートドライバーによって[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体が初期化されるときに、NDIS\_NIC\_スイッチ\_CAP\_1 つの\_VPORT\_プールフラグ**を設定できます。NicSwitchCapabilities**メンバー。 このフラグは、既定以外の VPorts をネットワークアダプターの Vports プールから予約されていない方法で作成できることを指定します。 これにより、使用可能な既定以外の VPorts を作成し、必要に応じて PF と割り当てられた VFs に割り当てることができます。 ネットワークアダプターが VMQ インターフェイスをサポートしている場合、PF に割り当てられている既定以外の VPorts は VM の受信キューにも使用できます。
 
-場合、NDIS\_NIC\_スイッチ\_CAP\_1 つ\_VPORT\_プール フラグが設定すると、使用可能な既定以外拡張の作成し、PF に割り当てられているされ VFs を割り当てられています。 作成して、PF に割り当てることができます拡張の最大数は同じ値で、ドライバーを報告する、 **MaxNumVPorts**メンバー。 ミニポート ドライバーが VPort、PF. に割り当てられている既定値として使用する 1 つ VPort を予約する必要があります。 その結果、キューの受信、PF に割り当てられているおよび VM に使用できる拡張を既定以外の最大数は (**MaxNumVPorts**– 1)。
+NDIS\_NIC\_スイッチ\_CAP\_単一\_VPORT\_POOL フラグが設定されている場合は、使用可能な既定以外の Vport が作成され、PF と割り当てられた VFs に割り当てられます。 作成して PF に割り当てることができる VPorts の最大数は、ドライバーが**Maxnumvports**メンバーで報告するのと同じ値です。 ミニポートドライバーは、PF に割り当てられている既定の VPort として使用する VPort を1つ予約する必要があります。 その結果、PF に割り当てて VM 受信キューに使用できる既定以外の VPorts の最大数は、(**Maxnumvports**– 1) です。
 
 > [!NOTE]
-> このフラグが設定されている場合 作成と拡張を既定以外の割り当ては VF の割り当てに予約されていません。 その結果、状況は、場所、VF 割り当てることはできません、VPort 使用可能な拡張、プールが使い果たされた場合が発生した可能性があります。 
+> このフラグが設定されている場合、既定以外の VPorts の作成と割り当ては、VF 割り当て用に予約されていません。 その結果、プールに使用可能な Vport がなくなった場合に、VF に VPort が割り当てられない状況が発生する可能性があります。 
 
-場合は、NDIS\_NIC\_スイッチ\_CAP\_単一\_VPORT\_プール フラグがセットの作成と割り当ての既定以外の拡張は VF の割り当てのため予約されています。 既定以外を追加作成し、PF に割り当てられているおよび VM 用に使用できる拡張の最大数の受信キューが (**MaxNumVPorts**–**MaxNumVFs**)。
+NDIS\_NIC\_スイッチ\_CAP\_単一\_VPORT\_POOL フラグが設定されていない場合、既定以外の Vport の作成と割り当ては、VF 割り当て用に予約されています。 作成し、PF に割り当てて VM 受信キューに使用できる既定以外の追加の VPorts の最大数は、(**Maxnumvports**–**maxnumvfs**) です。
 
-VMQ の詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
+VMQ の詳細については、「[仮想マシンキュー (vmq)](virtual-machine-queue--vmq-.md)」を参照してください。

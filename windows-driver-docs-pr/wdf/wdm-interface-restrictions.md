@@ -4,29 +4,29 @@ description: WDM インターフェイスの制限
 ms.assetid: 89f3793e-8561-4d8a-a01a-1ff7aecca64a
 keywords:
 - KMDF WDK、WDM
-- カーネル モード ドライバー フレームワーク、WDK WDM
+- カーネルモードドライバーフレームワーク WDK、WDM
 - WDM ドライバー WDK KMDF
-- フレームワークに基づいたドライバー WDK KMDF、WDM
+- フレームワークベースのドライバー WDK KMDF、WDM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9261cc1a0d48b4b79a0782bb623fe6cff2f50fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aa7ed080c118df0c0fb4974384207a9c9eae944c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372082"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842794"
 ---
 # <a name="wdm-interface-restrictions"></a>WDM インターフェイスの制限
 
 
-\[KMDF にのみ適用されます。\]
+\[は KMDF にのみ適用され\]
 
 
 
 
-フレームワークに基づくドライバーが WDM インターフェイスにアクセスする場合、次の制限があります。
+フレームワークベースのドライバーが WDM インターフェイスにアクセスする場合は、次の制限事項に注意する必要があります。
 
--   フレームワーク ベースのドライバーが使用する必要があります、 **Tail.Overlay.DriverContext**のメンバー、 [ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)フレームワークはこのメンバーを使用するために、構造体します。
+-   フレームワークがこのメンバーを使用するため、フレームワークベースのドライバーは、 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)構造体の**末尾のオーバーレイ**を使用することはできません。
 
  
 
