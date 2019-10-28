@@ -1,59 +1,59 @@
 ---
-title: センサー ドライバーのベスト プラクティス
-description: センサー ドライバーのベスト プラクティス
+title: センサードライバーのベストプラクティス
+description: センサードライバーのベストプラクティス
 ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 08bbeaf79f0cb6e91fc0ee847df4b1211c8644bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63794fd8792f6220e4ff04a54a34c29e10821faf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368854"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845500"
 ---
-# <a name="sensor-driver-best-practices"></a>センサー ドライバーのベスト プラクティス
+# <a name="sensor-driver-best-practices"></a>センサードライバーのベストプラクティス
 
 
-このセクションでは、センサー ドライバーのベスト プラクティスについて説明します。
+このセクションでは、センサードライバーのベストプラクティスについて説明します。
 
-## <a name="windows-hardware-certification-program-requirements"></a>Windows ハードウェア認定プログラム要件
+## <a name="windows-hardware-certification-program-requirements"></a>Windows ハードウェア認定プログラムの要件
 
-Windows ハードウェア認定プログラムには、ハードウェアの製造元を自分のデバイスが Windows を操作するための必要な基準を満たす証明書を受信するができます。 プログラムでは、すべてのセンサーの要件と場所のセンサーと周辺光センサーの特定の要件を提供します。 すべての Windows ハードウェア認定プログラム要件を満たすには、センサー ドライバーをする必要があります。
+Windows ハードウェア認定プログラムを使用すると、ハードウェアの製造元は、デバイスが Windows を操作するために必要な標準を満たしていることを証明する認定を受けることができます。 このプログラムは、すべてのセンサーの要件と、位置センサーとアンビエント光センサーの特定の要件を提供します。 センサードライバーをすべての Windows ハードウェア認定プログラムの要件に準拠させる必要があります。
 
-一般に、この WDK ドキュメントの推奨事項では、プログラムの要件と一致します。 ただし、証明書を送信するセンサー ドライバーを作成するときに、Windows ハードウェア認定プログラムの公式ドキュメントを確認する必要があります。 Windows ハードウェア認定プログラムに関する詳細については、次を参照してください。、 [Windows Hardware Developer Central](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) web サイト。
+一般に、この WDK ドキュメントに記載されている推奨事項は、プログラムの要件と一致します。 ただし、認定のために送信するセンサードライバーを作成する場合は、Windows ハードウェア認定プログラムの公式プログラムに関するドキュメントを参照する必要があります。 Windows ハードウェア認定プログラムの詳細については、 [Windows Hardware Developer Central](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85))の web サイトを参照してください。
 
 ## <a name="performance"></a>パフォーマンス
 
-Location API とセンサーの API を使用する場合は、センサーのパフォーマンスを最適化するためにこれらの推奨事項に従います。
+Location API とセンサー API を使用する場合は、次の推奨事項に従ってセンサーのパフォーマンスを最適化します。
 
--   呼び出しを使用して、 [ **ISensorDriver::OnClientSubscribeToEvents** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)と[ **ISensorDriver::OnClientUnsubscribeFromEvents** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientunsubscribefromevents)にすべてのプログラムはイベントを監視するかどうかを追跡。 クライアントがサブスクライブしていないときのイベントの発生を停止します。
+-   [**ISensorDriver:: OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)と[**ISensorDriver:: OnClientUnsubscribeFromEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientunsubscribefromevents)の呼び出しを使用して、どのプログラムがイベントを監視しているかを追跡します。 クライアントがサブスクライブされていない場合にイベントの発生を停止します。
 
--   センサーの指定された値を使用して、\_プロパティ\_現在\_レポート\_多くの場合、イベントを発生させる方法のヒントとしての間隔。 中にのみ、またはお使いのドライバーのデータのフィルター処理を防ぐために推奨される間隔の後にイベントを発生させます。
+-   イベントを発生させる頻度のヒントとして、センサーの\_プロパティ\_現在の\_レポート\_間隔の値を使用します。 推奨される間隔の間だけイベントを発生させて、ドライバーが提供するデータのフィルター処理を防止します。
 
--   現在のレポート間隔を設定する方法の詳細については、次を参照してください。、[データのフィルター処理](filtering-data.md)トピック。
+-   現在のレポート間隔の設定の詳細については、「[データのフィルター選択](filtering-data.md)」を参照してください。
 
--   これを行うことができる場合、要求された最短のレポート間隔よりもしないより頻繁にイベントを発生させます。
+-   この操作を実行できる場合は、要求された最短のレポート間隔よりも頻繁にイベントを発生させないようにします。
 
--   要求されたときにデータを提供します。 プログラムは、データのポーリングによって控えることをお勧め、Api はこれらの同期要求が制限されません。 適切なタイミングは、キャッシュされたデータを行うことができます。
+-   要求されたときにデータを提供します。 プログラムでデータのポーリングを実行しないことをお勧めしますが、Api ではこれらの同期要求が制限されません。 適切な場合は、キャッシュされたデータを提供できます。
 
-## <a name="properties-and-data-fields"></a>プロパティとデータ フィールド
+## <a name="properties-and-data-fields"></a>プロパティとデータフィールド
 
-プロパティとデータ フィールドに、次の要件が適用されます。
+プロパティとデータフィールドには、次の要件が適用されます。
 
--   ドライバーは、設定、または、返す場合は、正しい型を使用する必要があります、[プロパティ](sensor-properties.md)します。
+-   [プロパティ](sensor-properties.md)を設定または返す場合、ドライバーは正しい型を使用する必要があります。
 
--   返すときに、ドライバーが適切な型を使用する必要があります、[データ フィールド](sensor-categories--types--and-data-fields.md)します。
+-   [データフィールド](sensor-categories--types--and-data-fields.md)を返すには、ドライバーで正しい種類を使用する必要があります。
 
 ## <a name="events"></a>イベント
 
-センサーのイベントに次の推奨事項が適用されます。
+センサーイベントには、次の推奨事項が適用されます。
 
--   データ更新イベント、現在のレポート間隔が経過し、感度の変更を超えた場合にのみ発生します。 これは、デバイスのファームウェアの関数ではほとんどです。 ただし、ドライバーは、複数のクライアント間で判別する必要があります。 詳細については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
+-   現在のレポートの間隔が経過し、変更の感度が超過した場合にのみ、データ更新イベントを発生させます。 これは、デバイスのファームウェアの機能の大部分です。 ただし、ドライバーは複数のクライアントを判別する必要があります。 詳細については、「[センサードライバーイベントについて](about-sensor-driver-events.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
-[場所のセンサー ドライバーの記述](https://docs.microsoft.com/windows-hardware/drivers/gnss/writing-a-location-sensor-driver)
-[環境光センサーをサポートしている](supporting-ambient-light-sensors.md)
-[センサー地理位置情報ドライバー サンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
+センサーの[場所センサー](https://docs.microsoft.com/windows-hardware/drivers/gnss/writing-a-location-sensor-driver)ドライバーの書き込み[
+センサー](supporting-ambient-light-sensors.md) [の地理位置情報ドライバーのサンプル
+します](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)。
 
 
 
