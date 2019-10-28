@@ -3,113 +3,113 @@ title: 制御デバイス オブジェクトの使用
 description: 制御デバイス オブジェクトの使用
 ms.assetid: 6367954f-6916-46df-a5a0-e80f045b69e5
 keywords:
-- デバイス オブジェクト WDK KMDF を制御します。
-- デバイス オブジェクト WDK KMDF
-- フレームワークは、WDK KMDF、デバイスのコントロール オブジェクトをオブジェクトします。
-- 従来のハードウェア デバイス WDK KMDF
-- ソフトウェア専用の仮想デバイス WDK KMDF
-- システム シャット ダウンの通知 WDK KMDF
-- WDK KMDF シャット ダウンの通知
-- WDK KMDF の通知
+- デバイスオブジェクトの管理 (WDK KMDF)
+- デバイスオブジェクト WDK KMDF
+- フレームワークオブジェクト WDK KMDF、デバイスオブジェクトの制御
+- レガシハードウェアデバイス WDK KMDF
+- ソフトウェアのみの仮想デバイス WDK KMDF
+- システムシャットダウン通知 WDK KMDF
+- シャットダウン通知 WDK KMDF
+- 通知 WDK KMDF
 - WDK KMDF の名前
-- WDK KMDF、デバイス オブジェクトを名前します。
+- WDK KMDF、デバイスオブジェクトの名前
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83bc1fd27e08a5127927bfe70635a03da503b2e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2ad389ff85a4ec918802dcf30d5f389edd20ff7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372275"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843094"
 ---
 # <a name="using-control-device-objects"></a>制御デバイス オブジェクトの使用
 
 
-A*制御デバイス オブジェクト*プラグ アンド プレイ (PnP) や電源管理操作をサポートしないフレームワーク デバイス オブジェクトです。 ドライバーは、デバイス オブジェクトのコントロールを使用して、ソフトウェアのみの仮想デバイスを表すまたは*レガシ ハードウェア デバイス*(つまり、デバイスを提供しない PnP や電源管理機能)。
+*コントロールデバイスオブジェクト*は、プラグアンドプレイ (PnP) 操作または電源管理操作をサポートしないフレームワークデバイスオブジェクトです。 ドライバーは、コントロールデバイスオブジェクトを使用して、ソフトウェアのみの仮想デバイスまたは*レガシハードウェアデバイス*(つまり、PnP または電源管理機能を提供しないデバイス) を表すことができます。
 
-また通常コントロール デバイス オブジェクトを作成するドライバーでは、デバイス オブジェクトのシンボリック リンクを作成します。 アプリケーションは Microsoft Win32 などの API 要素にシンボリック リンクの名前を渡すことによって制御デバイス オブジェクトを I/O 要求を送信することができます[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。
+コントロールデバイスオブジェクトを作成するドライバーも、通常、デバイスオブジェクトのシンボリックリンクを作成します。 アプリケーションは、Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数などの API 要素にシンボリックリンク名を渡すことによって、コントロールデバイスオブジェクトに i/o 要求を送信できます。
 
-フレームワークにコントロールのデバイス オブジェクトをアタッチできません、[デバイス スタック](wdm-concepts-for-kmdf-drivers.md#device-stacks)します。 そのため、アプリケーションは、コントロールのデバイス オブジェクトに、I/O 要求を送信するときに、I/O マネージャーは、オブジェクトを作成した、コントロール デバイスの代わりに、スタックの上部にあるドライバーをドライバーに直接要求を提供します。 (ただし、追加のドライバーを呼び出すことができます[ **IoAttachDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevice)コントロール デバイス オブジェクトの上のデバイス オブジェクトをアタッチします。 この場合、追加のドライバー最初に受け取ります I/O 要求。)
+フレームワークは、[デバイススタック](wdm-concepts-for-kmdf-drivers.md#device-stacks)にコントロールデバイスオブジェクトをアタッチしません。 このため、アプリケーションからコントロールデバイスオブジェクトに i/o 要求を送信すると、i/o マネージャーは、スタックの一番上にあるドライバーではなく、コントロールデバイスオブジェクトを作成したドライバーに要求を直接配信します。 (ただし、追加のドライバーは[**Ioattachdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)を呼び出して、コントロールデバイスオブジェクトの上にデバイスオブジェクトをアタッチできます。 この場合、追加のドライバーは最初に i/o 要求を受け取ります)。
 
-### <a name="uses-of-control-device-objects"></a>デバイス オブジェクトをコントロールの使用
+### <a name="uses-of-control-device-objects"></a>コントロールデバイスオブジェクトの使用
 
-デバイスの制御の 2 つの一般的な用途は次のとおりです。
+コントロールデバイスの一般的な用途は次の2つです。
 
-1.  PnP デバイスの場合、ドライバーは、一連のアプリケーションを使用するためのカスタムの I/O 制御コードをサポートしている場合のフィルター ドライバー。
+1.  アプリケーションが使用するカスタム i/o 制御コードのセットをドライバーがサポートしている場合は、PnP デバイス用のフィルタードライバー。
 
-    アプリケーションが、ドライバー スタックの先頭に、カスタムの I/O 制御コードを送信しようとしています場合 (のシンボリック リンク名などを使用して、[デバイス インターフェイス](using-device-interfaces.md))、場合、ドライバー、フィルター ドライバーの上の I/O 要求が失敗するドライバー。カスタムの I/O 制御コードを認識できませんでした。 この問題を回避するには、フィルター ドライバーは、制御デバイス オブジェクトを作成できます。 アプリケーションでは、フィルター ドライバーに直接 I/O 制御コードを送信するのに制御デバイス オブジェクトのシンボリック リンクの名前を使用できます。
+    アプリケーションがカスタム i/o 制御コードをドライバースタックの一番上に送信しようとした場合 (たとえば、[デバイスインターフェイス](using-device-interfaces.md)のシンボリックリンク名を使用して)、フィルタードライバーの上にあるドライバーは、ドライバーが次を認識しなかった場合に i/o 要求を失敗させる可能性があります。カスタム i/o 制御コード。 この問題を回避するには、フィルタードライバーでコントロールデバイスオブジェクトを作成します。 アプリケーションでは、コントロールデバイスオブジェクトのシンボリックリンク名を使用して、フィルタードライバーに i/o 制御コードを直接送信できます。
 
-    (問題を回避するために、フィルター ドライバーのより良い方法は、バス ドライバーとして機能するので注意して[列挙](enumerating-the-devices-on-a-bus.md)raw モードで動作する子デバイス。 つまり、フィルター ドライバーがサポートする各デバイス ドライバーは、関数のドライバーを必要としないオブジェクト (PDO) の物理デバイスを作成できます。 ドライバー呼び出し[ **WdfPdoInitAssignRawDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)と[ **WdfDeviceInitAssignName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)これらのデバイスとアプリケーションの各によって識別できますデバイス名カスタム I/O 制御コードを送信するとき。)
+    (フィルタードライバーが問題を回避するには、バスドライバーとして機能し、raw モードで動作する子デバイスを[列挙](enumerating-the-devices-on-a-bus.md)する方が適切な方法であることに注意してください。 つまり、フィルタードライバーがサポートするデバイスごとに、ドライバーは、関数ドライバーを必要としない物理デバイスオブジェクト (PDO) を作成できます。 ドライバーは、これらの各デバイスに対して[**Wdfpdoinit割り当て Rawdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)と[**wdfdeviceinit割り当て名**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出します。アプリケーションは、カスタム i/o 制御コードを送信するときに、名前を指定してデバイスを識別できます。
 
-2.  PnP がサポートされていないデバイス用のドライバーです。
+2.  PnP をサポートしていないデバイスのドライバー。
 
-    このようなドライバーは、このようなデバイスのデバイス オブジェクトがデバイス スタックに存在していない、PnP 機能を提供しないためコントロール デバイス オブジェクトを使用する必要があります。 非 PnP デバイスのサポートの詳細については、次を参照してください。[非 PnP ドライバーとカーネル モード ドライバー フレームワークを使用して](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)します。
+    このようなドライバーでは、コントロールデバイスオブジェクトを使用する必要があります。これは、このようなデバイスのデバイスオブジェクトがデバイススタックに存在せず、PnP 機能を提供しないためです。 非 PnP デバイスのサポートの詳細については、「[カーネルモードドライバーフレームワークと非 Pnp ドライバーの使用](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)」を参照してください。
 
-### <a name="creating-a-control-device-object"></a>コントロールのデバイス オブジェクトを作成します。
+### <a name="creating-a-control-device-object"></a>コントロールデバイスオブジェクトの作成
 
-コントロールのデバイス オブジェクトを作成するには、ドライバーが必要です。
+コントロールデバイスオブジェクトを作成するには、ドライバーが次の操作を行う必要があります。
 
-1.  呼び出す[ **WdfControlDeviceInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)を取得する、 [ **WDFDEVICE\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。
+1.  [**Wdfcontroldeviceinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)を呼び出して、 [**wdfdevice\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体を取得します。
 
-2.  オブジェクトの初期化メソッドを呼び出し、WDFDEVICE を初期化するために、必要に応じて\_INIT 構造体。 ドライバーは、次の初期化メソッドのみを呼び出すことができます。
-    -   [**WdfControlDeviceInitSetShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitsetshutdownnotification)
-    -   [**WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)
-    -   [**WdfDeviceInitAssignSDDLString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)
-    -   [**WdfDeviceInitAssignWdmIrpPreprocessCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback)
-    -   [**WdfDeviceInitSetCharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetcharacteristics)
-    -   [**WdfDeviceInitSetDeviceClass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)
-    -   [**WdfDeviceInitSetExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)
-    -   [**WdfDeviceInitSetFileObjectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)
-    -   [**WdfDeviceInitSetIoInCallerContextCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetioincallercontextcallback)
-    -   [**WdfDeviceInitSetIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)
-    -   [**WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)
+2.  必要に応じて、オブジェクトの初期化メソッドを呼び出して、WDFDEVICE\_INIT 構造体を初期化します。 ドライバーは、次の初期化メソッドのみを呼び出すことができます。
+    -   [**WdfControlDeviceInitSetShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitsetshutdownnotification)
+    -   [**Wdfdeviceinit割り当て名**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)
+    -   [**Wdfdeviceinit割り当て Sddlstring**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)
+    -   [**Wdfdeviceinit割り当て Wdmirpq Preprocesscallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback)
+    -   [**WdfDeviceInitSetCharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetcharacteristics)
+    -   [**WdfDeviceInitSetDeviceClass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)
+    -   [**WdfDeviceInitSetExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetexclusive)
+    -   [**WdfDeviceInitSetFileObjectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)
+    -   [**WdfDeviceInitSetIoInCallerContextCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetioincallercontextcallback)
+    -   [**WdfDeviceInitSetIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)
+    -   [**WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)
 
-3.  呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)、WDFDEVICE の内容を使用する\_framework デバイス オブジェクトを作成する構造体を初期化します。
+3.  [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出します。これは、WDFDEVICE\_INIT 構造体の内容を使用して、フレームワークデバイスオブジェクトを作成します。
 
-4.  次の初期化の操作を行います。
-    -   [既定の I/O キューを作成する](creating-i-o-queues.md)のいずれかが必要な場合は、デバイス。
-    -   呼び出す[ **WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)必要な場合、します。
-    -   呼び出す[ **WdfDeviceCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)コントロール デバイスへのアクセスを使用するアプリケーションをシンボリック リンク名を作成します。
+4.  次の初期化操作を完了します。
+    -   デバイスの[既定の i/o キューを作成](creating-i-o-queues.md)します (必要な場合)。
+    -   必要に応じて、 [**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)を呼び出します。
+    -   [**WdfDeviceCreateSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)を呼び出して、アプリケーションがコントロールデバイスにアクセスするために使用できるシンボリックリンク名を作成します。
 
-5.  呼び出す[ **WdfControlFinishInitializing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontrolfinishinitializing)します。
+5.  [**Wdfcontrolfinish**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontrolfinishinitializing)を呼び出します。
 
-### <a name="rules-for-using-control-device-objects"></a>デバイス オブジェクトをコントロールの使用に関する規則
+### <a name="rules-for-using-control-device-objects"></a>コントロールデバイスオブジェクトを使用するための規則
 
-デバイス オブジェクトにコントロールを作成するドライバーは、次の規則に従う必要があります。
+コントロールデバイスオブジェクトを作成するドライバーは、次の規則に従う必要があります。
 
--   ドライバーできません制御デバイス オブジェクトのハンドル メソッドに渡すフレームワークを[列挙子デバイス](enumerating-the-devices-on-a-bus.md)します。
+-   ドライバーは、[子デバイスを列挙](enumerating-the-devices-on-a-bus.md)するフレームワークメソッドにコントロールデバイスオブジェクトのハンドルを渡すことはできません。
 
--   ドライバーが制御デバイス オブジェクトのハンドルをサポートするフレームワーク メソッドに渡すことはできません[デバイス インターフェイス](using-device-interfaces.md)します。
+-   ドライバーは、[デバイスインターフェイス](using-device-interfaces.md)をサポートするフレームワークメソッドにコントロールデバイスオブジェクトのハンドルを渡すことはできません。
 
--   フレームワークでは、キューをすることはできませんが、ドライバーが I/O キューを作成して、キューの要求ハンドラーの登録を[電源管理対象](using-power-managed-i-o-queues.md)します。
+-   ドライバーは、i/o キューを作成し、キューの要求ハンドラーを登録できますが、このフレームワークでは、キューの[電源管理](using-power-managed-i-o-queues.md)を許可していません。
 
--   ドライバーを作成できます[ファイル オブジェクト](framework-file-objects.md)デバイス オブジェクトを制御します。
+-   ドライバーは、コントロールデバイスオブジェクトの[ファイルオブジェクト](framework-file-objects.md)を作成できます。
 
-### <a name="naming-a-control-device-object"></a>コントロールのデバイス オブジェクトの名前を付ける
+### <a name="naming-a-control-device-object"></a>コントロールデバイスオブジェクトの名前付け
 
-コントロールのすべてのデバイス オブジェクトを指定する必要があります。 通常、ドライバーを呼び出す[ **WdfDeviceInitAssignName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)デバイス名を割り当てし、呼び出す[ **WdfDeviceCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)オブジェクトへのアクセスを使用するアプリケーションをシンボリック リンク名を作成します。
+すべてのコントロールデバイスオブジェクトに名前を付ける必要があります。 通常、ドライバーは[**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出してデバイス名を割り当て、次に[**WdfDeviceCreateSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)を呼び出して、アプリケーションがオブジェクトにアクセスするために使用できるシンボリックリンク名を作成します。
 
-ドライバーが要求されていない場合[ **WdfDeviceInitAssignName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)デバイス名を割り当てるには、フレームワークに自動的が生成されますが制御デバイスの名前をドライバーを呼び出すことはできません[ **WdfDeviceCreateSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)します。
+ドライバーが[**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出してデバイス名を割り当てない場合、フレームワークはコントロールデバイスの名前を自動的に生成しますが、ドライバーは[**WdfDeviceCreateSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)を呼び出すことができません。
 
-ドライバーを呼び出すことができます[ **WdfDeviceInitSetDeviceClass** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)を指定する、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)制御デバイスです。 デバイス セットアップ クラスは、デバイス セットアップ クラスに属しているについて管理者が指定した情報を含むレジストリのセクションを識別します。 呼び出し元の詳細については[ **WdfDeviceInitSetDeviceClass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)を参照してください[Framework ベースのドライバーでのデバイス アクセスの制御](controlling-device-access-in-kmdf-drivers.md)します。
+ドライバーは、 [**Wdfdeviceinitsetdeviceclass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)を呼び出して、コントロールデバイスの[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)を指定できます。 デバイスセットアップクラスは、セットアップクラスに属するデバイスに関する管理者によって提供される情報を含むレジストリのセクションを識別します。 [**Wdfdeviceinitsetdeviceclass**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)の呼び出しの詳細については、「[フレームワークベースのドライバーでデバイスアクセスを制御](controlling-device-access-in-kmdf-drivers.md)する」を参照してください。
 
-### <a name="receiving-notification-of-system-shutdown"></a>システムのシャット ダウンの通知を受け取る
+### <a name="receiving-notification-of-system-shutdown"></a>システムシャットダウンの通知を受信しています
 
-デバイス オブジェクトのコントロールをサポートしていない PnP ため、ドライバーは、デバイスの電源の状態が変更されたときに、ドライバーに通知するコールバック関数を登録できません。 ただし、ドライバーを呼び出すことができます[ **WdfControlDeviceInitSetShutdownNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitsetshutdownnotification)を登録する、 [ *EvtDeviceShutdownNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nc-wdfcontrol-evt_wdf_device_shutdown_notification)コールバック関数。 このコールバック関数は、システムがその能力が失われると、ドライバーを通知します。
+コントロールデバイスオブジェクトでは PnP がサポートされていないため、デバイスの電源状態が変化したときにドライバーに通知するコールバック関数をドライバーで登録することはできません。 ただし、ドライバーは、 [**Wdfcontroldeviceinitsetshutdownnotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitsetshutdownnotification)を呼び出して、 [*evtdeviceの通知*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nc-wdfcontrol-evt_wdf_device_shutdown_notification)コールバック関数を登録できます。 このコールバック関数は、システムの電源が切れようとしていることをドライバーに通知します。
 
-### <a name="deleting-a-control-device-object"></a>コントロールのデバイス オブジェクトを削除します。
+### <a name="deleting-a-control-device-object"></a>コントロールデバイスオブジェクトの削除
 
-一部のドライバーは、次のように、ドライバーがアンロードする前に、コントロールのデバイス オブジェクトを削除する必要があります。
+ドライバーによっては、次のように、ドライバーがアンロードされる前にコントロールデバイスオブジェクトを削除する必要があります。
 
--   かどうか (これは PnP または電源の管理をサポートしない) デバイス オブジェクト、コントロールを作成するには、ドライバーとドライバーが最終的に呼び出す必要があります、ドライバーは、PnP、電源管理をサポートするデバイス オブジェクト フレームワークを作成することも場合、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) IRQL = パッシブ\_レベル コントロールのデバイス オブジェクトを削除します。
+-   ドライバーがコントロールデバイスオブジェクト (PnP または電源管理をサポートしていない) を作成し、PnP と電源管理をサポートするフレームワークデバイスオブジェクトもドライバーによって作成されている場合、ドライバーは最終的に IRQL = PASSIVE で[**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出す必要があります。コントロールデバイスオブジェクトを削除する\_レベル。
 
-    ドライバーでは、両方の種類のデバイス オブジェクトを作成する場合、オペレーティング システムは、ドライバーの管理のデバイス オブジェクトが削除されるまでには、ドライバーをアンロードできません。
+    ドライバーが両方の種類のデバイスオブジェクトを作成した場合、ドライバーがコントロールデバイスオブジェクトを削除するまで、オペレーティングシステムはドライバーをアンロードできません。
 
-    ただし、フレームワークがその他のデバイス オブジェクトを削除した後、ドライバーはまでコントロール デバイス オブジェクトを削除しない必要があります。 フレームワークがその他のデバイス オブジェクトを削除する場合を判断するには、ドライバーが提供する必要があります[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)それらのオブジェクトに対して機能します。
+    ただし、その他のデバイスオブジェクトがフレームワークによって削除されるまで、ドライバーはコントロールデバイスオブジェクトを削除しないでください。 他のデバイスオブジェクトがフレームワークによって削除されたことを確認するには、ドライバーがこれらのオブジェクトに対して[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)関数を提供する必要があります。
 
--   ドライバーがコントロール デバイス オブジェクトを作成しますが、オブジェクトを作成しません framework デバイスを PnP サポートし、電源管理、ドライバーがコントロールのデバイス オブジェクトを削除します。
+-   ドライバーがコントロールデバイスオブジェクトを作成しても、PnP と電源管理をサポートするフレームワークデバイスオブジェクトを作成しない場合、ドライバーはコントロールデバイスオブジェクトを削除する必要はありません。
 
-    ドライバーの後に、フレームワークがコントロールのデバイス オブジェクトを削除するこの場合、 [ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)コールバック関数を返します。
+    この場合、ドライバーの[*Evtdriverunload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)コールバック関数から制御が戻った後に、フレームワークによってコントロールデバイスオブジェクトが削除されます。
 
  
 

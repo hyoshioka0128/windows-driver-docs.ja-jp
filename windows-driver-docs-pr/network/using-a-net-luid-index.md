@@ -3,35 +3,35 @@ title: NET_LUID インデックスの使用
 description: NET_LUID インデックスの使用
 ms.assetid: 21e0a73b-a02c-4ab4-b7c2-efcb8bfc806d
 keywords:
-- NDIS ネットワーク インターフェイス、WDK NET_LUID
-- ネットワーク インターフェイス、WDK NET_LUID
+- NDIS ネットワークインターフェイス WDK、NET_LUID
+- ネットワークインターフェイス WDK、NET_LUID
 - NET_LUID
-- インデックス操作の WDK のネットワーク インターフェイス
-- WDK ネットワーク インターフェイスのローカル一意識別子
+- インデックス操作の WDK ネットワークインターフェイス
+- ローカル一意識別子 WDK ネットワークインターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0cabd3b8de4ffe4dea357b3f56ace763c8874f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12ee658713e52918ffb996c01e74e3066ffa287f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360753"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842995"
 ---
-# <a name="using-a-netluid-index"></a>NET を使用して\_LUID インデックス
+# <a name="using-a-net_luid-index"></a>NET\_LUID インデックスの使用
 
 
 
 
 
-NDIS の割り当てし、解放する機能を提供する、 [ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) NET の作成に必要なインデックス\_LUID 値。 NET を割り当てる必要があります、NDIS インターフェイス プロバイダー\_インターフェイスを登録する LUID 値。
+NDIS には、NET\_LUID 値を作成するために必要な[**net\_luid**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)インデックスを割り当てて解放する機能が用意されています。 NDIS インターフェイスプロバイダーは、インターフェイスを登録するために、NET\_LUID 値を割り当てる必要があります。
 
-割り当てる、NET\_LUID インデックス、インターフェイス プロバイダーを呼び出し、 [ **NdisIfAllocateNetLuidIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifallocatenetluidindex)関数。 インターフェイス プロバイダーを呼び出し、インデックスを割り当てたら、 [ **NDIS\_ように\_NET\_LUID** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-make-net-luid)ネットを構築するマクロ\_LUID 値。 解放、NET\_LUID インデックス、インターフェイス プロバイダーを呼び出し、 [ **NdisIfFreeNetLuidIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiffreenetluidindex)関数。
+NET\_LUID インデックスを割り当てるには、インターフェイスプロバイダーは[**NdisIfAllocateNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifallocatenetluidindex)関数を呼び出します。 インデックスを割り当てた後、インターフェイスプロバイダーは、net\_LUID 値を構築するために[ **\_net\_luid**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-make-net-luid)マクロを作成するために、NDIS\_呼び出します。 NET\_LUID インデックスを解放するために、インターフェイスプロバイダーは[**NdisIfFreeNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiffreenetluidindex)関数を呼び出します。
 
-**NdisIfAllocateNetLuidIndex**で呼び出し元が指定されているインターフェイス型に関連付けられている 24 ビットの値を割り当てようとする、 *IfType*パラメーターは、ローカル コンピューターに固有です。 インデックスの割り当てが成功すると、 **NdisIfAllocateNetLuidIndex** NDIS を返します\_状態\_成功し、NET を提供します\_LUID インデックスで提供されているアドレスで、  *。pNetLuidIndex*パラメーター。 NDIS が無料 NET を検索できないかどうか\_LUID インデックス、 **NdisIfAllocateNetLuidIndex**返します NDIS\_状態\_リソース。 **NdisIfAllocateNetLuidIndex** NDIS 内で内部エラーを示す他の NDIS 状態の値を返すことができます。 NDIS は、その後、コンピューターが再起動したときのこのインデックスの割り当てを記録します。 NDIS には使用されません特定のインデックス、今後の呼び出し元コンピューターの再起動後もそのインデックスに割り当てられているインターフェイス プロバイダーを呼び出すまで、 **NdisIfFreeNetLuidIndex**関数のインデックス。
+**NdisIfAllocateNetLuidIndex**は、呼び出し元が*iftype*パラメーターで指定したインターフェイス型に関連付けられている、24ビット値を割り当てようとします。これは、ローカルコンピューターに対して一意です。 インデックス割り当てが成功した場合、 **NdisIfAllocateNetLuidIndex**は NDIS\_STATUS\_SUCCESS を返し、 *Pnetluidindex*パラメーターに指定されているアドレスに NET\_LUID インデックスを提供します。 NDIS が無料の NET\_LUID インデックスを見つけることができない場合、 **NdisIfAllocateNetLuidIndex**は NDIS\_STATUS\_リソースを返します。 **NdisIfAllocateNetLuidIndex**は、ndis 内の内部エラーを示すために他の ndis ステータス値を返すことができます。 NDIS は、後でコンピューターを再起動するときに、このインデックスの割り当てを記録します。 NDIS では、コンピューターの再起動後でも、そのインデックスに割り当てられたインターフェイスプロバイダーがそのインデックスの**NdisIfFreeNetLuidIndex**関数を呼び出すまで、特定のインデックスを使用しません。
 
-[**NdisIfFreeNetLuidIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiffreenetluidindex)以前に割り当てられた解放[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) NDIS に別のインターフェイスには、そのインデックスが再割り当てできます可能性がありますようにインデックスを作成します。 呼び出し元がで同一のインターフェイス型で渡す必要があります*IfType*呼び出されたときに、呼び出し元が使用[ **NdisIfAllocateNetLuidIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifallocatenetluidindex)ネットを割り当てる\_LUID のインデックス。 無料の操作が成功すると、 **NdisIfFreeNetLuidIndex** NDIS を返します\_状態\_成功します。 場合に呼び出し**NdisIfFreeNetLuidIndex**失敗した場合、インターフェイス プロバイダーは、NET に関連する永続的ストレージに保存されているすべての情報を削除する必要があります\_LUID のインデックス。 情報を削除するには、プロバイダーがすべてのコンピューターを再起動した後は、既に解放されているインデックスを解放して保持はいない保証されます。 呼び出した後**NdisIfFreeNetLuidIndex**、呼び出し元は、NET を使用する必要があります\_LUID の値を呼び出す場合を除き、もう一度**NdisIfAllocateNetLuidIndex**同種インターフェイス用にもう一度受け取ると、同じ NET\_LUID が解放されることをインデックスします。
+[**NdisIfFreeNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiffreenetluidindex)は、以前に割り当てられた[**NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)インデックスを解放して、NDIS がそのインデックスを別のインターフェイスに再割り当てできる可能性があります。 呼び出し元は、 [**NdisIfAllocateNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifallocatenetluidindex)を呼び出して NET\_LUID インデックスを割り当てるときに、呼び出し元が使用する*iftype*で同じインターフェイス型を渡す必要があります。 解放操作が成功した場合、 **NdisIfFreeNetLuidIndex**は NDIS\_STATUS\_SUCCESS を返します。 **NdisIfFreeNetLuidIndex**の呼び出しが失敗した場合、インターフェイスプロバイダーは、NET\_LUID インデックスに関連付けられている永続的なストレージに保存されたすべての情報を削除する必要があります。 情報を削除すると、すべてのコンピューターの再起動後に既に解放されているインデックスをプロバイダーが解放しようとすることがなくなります。 **NdisIfFreeNetLuidIndex**を呼び出した後、呼び出し元は、同じインターフェイス型に対して**NdisIfAllocateNetLuidIndex**を再度呼び出し、解放された同じ NET\_luid インデックスを受け取るまで、NET\_LUID 値を再度使用することはできません。
 
-ネットワーク インターフェイスに登録するインターフェイスをプロバイダーが有効な NET を渡す必要があります\_LUID の値を[ **NdisIfRegisterInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)関数。 ネットワーク インターフェイスの登録の詳細については、次を参照してください。[ネットワーク インターフェイスを登録する](registering-a-network-interface.md)します。
+ネットワークインターフェイスを登録するには、インターフェイスプロバイダーが有効な NET\_LUID 値を[**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)関数に渡す必要があります。 ネットワークインターフェイスの登録の詳細については、「[ネットワークインターフェイスの登録](registering-a-network-interface.md)」を参照してください。
 
  
 

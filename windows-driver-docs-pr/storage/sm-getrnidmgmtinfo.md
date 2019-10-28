@@ -1,9 +1,9 @@
 ---
 title: SM\_GetRNIDMgmtInfo 関数
-description: SM\_GetRNIDMgmtInfo WMI メソッド、ファイバー チャネル アダプターに関連付けられている FC3 管理情報を取得します。
+description: SM\_GetRNIDMgmtInfo WMI メソッドは、ファイバーチャネルアダプターに関連付けられている FC3 管理情報を取得します。
 ms.assetid: 0d414701-6e60-4d9d-85ae-f82b742ee907
 keywords:
-- 記憶装置の SM_GetRNIDMgmtInfo 関数
+- SM_GetRNIDMgmtInfo function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 477a1af3ba754dafa024713ecc84ddb59c2fe683
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69296d89c49a54f5a0e43cf8560af3bc5fe8d58c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384308"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845481"
 ---
-# <a name="smgetrnidmgmtinfo-function"></a>SM\_GetRNIDMgmtInfo 関数
+# <a name="sm_getrnidmgmtinfo-function"></a>SM\_GetRNIDMgmtInfo 関数
 
 
-SM\_GetRNIDMgmtInfo WMI メソッド、ファイバー チャネル アダプターに関連付けられている FC3 管理情報を取得します。
+SM\_GetRNIDMgmtInfo WMI メソッドは、ファイバーチャネルアダプターに関連付けられている FC3 管理情報を取得します。
 
 <a name="syntax"></a>構文
 ------
@@ -39,11 +39,11 @@ void SM_GetRNIDMgmtInfo(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HBAStatus*   
-操作の状態を示す WMI 修飾子の値。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_GetRNIDMgmtInfo\_構造体。
+*Hbastatus*   
+操作の状態を示す WMI 修飾子値。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 この情報は、ミニポートドライバーによって、SM\_GetRNIDMgmtInfo\_OUT 構造の HBAStatus メンバーに返されます。
 
 *MgmtInfo*   
-HBAFC3MgmtInfo、ファイバー チャネル アダプターに関連付けられている FC3 管理情報を保持する型の構造体。
+ファイバーチャネルアダプターに関連付けられている FC3 管理情報を保持する HBAFC3MgmtInfo 型の構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -53,7 +53,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_FabricAndDomainManagementMethods WMI クラスです。
+この WMI メソッドは、MS\_SM\_FabricAndDomainManagementMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -70,17 +70,17 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_GetRNIDMgmtInfo\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getrnidmgmtinfo_out)
+[**SM\_GetRNIDMgmtInfo\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getrnidmgmtinfo_out)
 
  
 

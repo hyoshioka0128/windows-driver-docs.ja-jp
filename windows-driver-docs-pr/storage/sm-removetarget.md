@@ -1,9 +1,9 @@
 ---
 title: SM\_RemoveTarget 関数
-description: SM\_RemoveTarget WMI メソッドを WMI クライアントに指定されたターゲットに関連付けられているイベントを渡すことを停止するように、WMI プロバイダーを構成します。
+description: SM\_RemoveTarget WMI メソッドを使用すると、指定されたターゲットに関連付けられているイベントが WMI クライアントに渡されなくなるように WMI プロバイダーが構成されます。
 ms.assetid: 9be2a40c-299a-4d92-b9a2-ef60eb6d90e9
 keywords:
-- 記憶装置の SM_RemoveTarget 関数
+- SM_RemoveTarget function Storage デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21ff7bacbebb76a7f10a361a05be93ea36b6de1e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c1b05b21b799385f821fa961068c5dfbcf09562
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384305"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845472"
 ---
-# <a name="smremovetarget-function"></a>SM\_RemoveTarget 関数
+# <a name="sm_removetarget-function"></a>SM\_RemoveTarget 関数
 
 
-SM\_RemoveTarget WMI メソッドを WMI クライアントに指定されたターゲットに関連付けられているイベントを渡すことを停止するように、WMI プロバイダーを構成します。
+SM\_RemoveTarget WMI メソッドを使用すると、指定されたターゲットに関連付けられているイベントが WMI クライアントに渡されなくなるように WMI プロバイダーが構成されます。
 
 <a name="syntax"></a>構文
 ------
@@ -42,16 +42,16 @@ void SM_RemoveTarget(
 ----------
 
 *HbaPortWWN*   
-64 ビット世界名 (WWN) イベントは、WMI クライアントに報告するポートの一覧から削除するローカル ポートを一意に識別します。 世界中の名の詳細については、T11 委員会を参照してください。*ファイバー チャネル HBA API*仕様。
+イベントが WMI クライアントに報告されるポートの一覧から削除するローカルポートを一意に識別する、64ビットのワールドワイド名 (WWN)。 全世界の名前の詳細については、T11 委員会の*ファイバーチャネル HBA API*仕様を参照してください。
 
 *DiscoveredPortWWN*   
-イベントは、WMI クライアントに報告するポートの一覧から削除するか、リモート検出されたポートを示す世界中名 (WWN)。
+イベントが WMI クライアントに報告されるポートの一覧から削除する必要がある、リモートで検出されたポートを示すワールドワイド名 (WWN)。
 
-*AllTargets*   
-レポートを停止するイベントです。 このメンバーがゼロの場合、WMI プロバイダーのクライアントは DiscoveredPortWWN で示されたポートに関連付けられているイベントの報告を停止します。 このメンバーが 0 以外の場合は、WMI プロバイダーは、すべてのイベントには、どのターゲットが関連付けられているレポートを停止します。
+*Alltargets*   
+レポートを停止するイベント。 このメンバーがゼロの場合、WMI プロバイダークライアントは、DiscoveredPortWWN によって示されたポートに関連付けられているイベントの報告を停止します。 このメンバーが0以外の場合、WMI プロバイダーは、すべてのターゲットに関連付けられているすべてのイベントの報告を停止します。
 
-*HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_RemoveTarget\_構造体。
+*Hbastatus*   
+操作の状態。 許可される値とその説明の一覧については、「 [HBA\_STATUS](hba-status.md)」を参照してください。 ミニポートドライバーは、SM\_RemoveTarget\_OUT 構造の HBAStatus メンバーにこの情報を返します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -61,7 +61,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この WMI メソッドは、ミリ秒に属する\_SM\_EventControl WMI クラスです。
+この WMI メソッドは、MS\_SM\_EventControl WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------
@@ -78,19 +78,19 @@ WMI メソッドには適用されません。
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[HBA\_状態](hba-status.md)
+[HBA\_の状態](hba-status.md)
 
-[**SM\_RemoveTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removetarget_in)
+[**SM\_RemoveTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_in)
 
-[**SM\_RemoveTarget\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removetarget_out)
+[**SM\_RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_out)
 
  
 

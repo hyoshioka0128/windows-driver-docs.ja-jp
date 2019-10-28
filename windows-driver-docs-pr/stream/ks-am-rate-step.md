@@ -1,9 +1,9 @@
 ---
-title: KS\_AM\_レート\_手順
-description: KS\_AM\_レート\_ステップごとのプロパティはまだ実装されていません。
+title: KS\_AM\_率\_ステップ
+description: KS\_AM\_RATE\_Step プロパティはまだ実装されていません。
 ms.assetid: fc3e3369-335b-4403-876f-c55d4616e290
 keywords:
-- KS_AM_RATE_Step ストリーミング メディア デバイス
+- KS_AM_RATE_Step ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dabb9f0c97067cd48b038643bf40dcee82e6ba69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05b7f3850b16494286c4b4bd3a086e7c89bfbee4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362248"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843447"
 ---
-# <a name="ksamratestep"></a>KS\_AM\_レート\_手順
+# <a name="ks_am_rate_step"></a>KS\_AM\_率\_ステップ
 
 
-KS\_AM\_レート\_ステップごとのプロパティはまだ実装されていません。
+KS\_AM\_RATE\_Step プロパティはまだ実装されていません。
 
 ## <span id="ddk_ks_am_rate_step_ks"></span><span id="DDK_KS_AM_RATE_STEP_KS"></span>
 
@@ -41,7 +41,7 @@ KS\_AM\_レート\_ステップごとのプロパティはまだ実装されて�
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,10 +50,10 @@ KS\_AM\_レート\_ステップごとのプロパティはまだ実装されて�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>X</p></td>
-<td><p>〇</p></td>
+<td><p>必須ではない</p></td>
+<td><p>[はい]</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_AM_Step</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ KS\_AM\_レート\_ステップごとのプロパティはまだ実装されて�
 
  
 
-プロパティの値 (データの操作) は、KS\_AM\_手順 (つまり DWORD 型定義)
+プロパティ値 (操作データ) は、KS\_AM\_ステップ (型定義の DWORD) です。
 
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは常にステータスを返します\_いない\_実装されていません。
+このプロパティは、\_実装されていない状態\_常に返します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ KS\_AM\_レート\_ステップごとのプロパティはまだ実装されて�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_露出
-description: ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_露出プロパティを取得またはデジタル カメラの露出時間を設定します。 このプロパティは省略可能です。
+title: KSK プロパティ\_CAMERACONTROL\_の公開
+description: ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_露光プロパティを使用して、デジタルカメラの露出時間を取得または設定します。 このプロパティは省略可能です。
 ms.assetid: e9ad7a82-0c2d-46e5-a5d5-9f33848f129c
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXPOSURE ストリーミング メディア デバイス
+- KSPROPERTY_CAMERACONTROL_EXPOSURE ストリーミングメディアデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e51e3473799bcbece8b53f5146a0e5fba2efd516
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c3d723b1ea0c50afdaba409a58d75ae38065967
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355387"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843247"
 ---
-# <a name="kspropertycameracontrolexposure"></a>KSPROPERTY\_CAMERACONTROL\_露出
+# <a name="ksproperty_cameracontrol_exposure"></a>KSK プロパティ\_CAMERACONTROL\_の公開
 
 
-ユーザー モードのクライアントの使用、KSPROPERTY\_CAMERACONTROL\_露出プロパティを取得またはデジタル カメラの露出時間を設定します。 このプロパティは省略可能です。
+ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_露光プロパティを使用して、デジタルカメラの露出時間を取得または設定します。 このプロパティは省略可能です。
 
 ## <span id="ddk_ksproperty_cameracontrol_exposure_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_EXPOSURE_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "67355387"
 </colgroup>
 <thead>
 <tr class="header">
-<th>取得</th>
+<th>[購入]</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,20 +50,20 @@ ms.locfileid: "67355387"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
+<td><p>[はい]</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティの値 (データの操作) は、危険度の長さを指定する LONG が。
+プロパティ値 (操作データ) は、公開の長さを指定する LONG です。
 
-この値が 2 秒ベースのログで表される、したがって、値が 0 未満、の露出時間は、1/2 n 秒。 正の値と 0 の場合は、公開期間は 2 n 秒です。 次に、例を示します。
+この値は、ログベース2秒で表されます。したがって、0未満の値の場合、公開時間は 1/2n 秒になります。 正の値およびゼロの場合、公開時間は2n 秒になります。 次に、例を示します。
 
 <table>
 <colgroup>
@@ -90,7 +90,7 @@ ms.locfileid: "67355387"
 <td><p>1/32</p></td>
 </tr>
 <tr class="even">
-<td><p>-4</p></td>
+<td><p>20-4</p></td>
 <td><p>1/16</p></td>
 </tr>
 <tr class="odd">
@@ -121,9 +121,9 @@ ms.locfileid: "67355387"
 <a name="remarks"></a>注釈
 -------
 
-**値**、KSPROPERTY のメンバー\_CAMERACONTROL\_構造が露出の長さを指定します。
+CAMERACONTROL\_S 構造体\_KSK プロパティの**値**メンバーは、公開の長さを指定します。
 
-このプロパティをサポートするすべてのビデオ キャプチャ ミニドライバーは、このプロパティの独自の範囲と既定値を定義する必要があります。
+このプロパティをサポートするすべてのビデオキャプチャミニドライバーは、このプロパティの独自の範囲と既定値を定義する必要があります。
 
 <a name="requirements"></a>要件
 ------------
@@ -136,7 +136,7 @@ ms.locfileid: "67355387"
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ksmedia.h (Ksmedia.h を含む)</td>
+<td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -144,9 +144,9 @@ ms.locfileid: "67355387"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
+[**KSK プロパティ\_CAMERACONTROL\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)
 
  
 

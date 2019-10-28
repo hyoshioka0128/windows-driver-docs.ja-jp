@@ -3,33 +3,33 @@ title: 印刷ドライバーに印刷チケット サポートを追加する
 description: 印刷ドライバーに印刷チケット サポートを追加する
 ms.assetid: ef4db930-2b4c-40b9-b1f4-85767b7f6855
 keywords:
-- プリンター ドライバーの WDK、印刷チケットをカスタマイズします。
-- プリンター ドライバー WDK、印刷チケットをカスタマイズします。
+- WDK、印刷チケットをカスタマイズするプリンタードライバー
+- プリンタードライバーのカスタマイズ WDK、印刷チケット
 - 印刷チケット WDK、サポートの追加
 - IPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd0e2a6657da1a73fb24fda799d8750c5dab632
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75be180509e4c22a8d1436eb2ed6ffb6745cb968
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372476"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843262"
 ---
 # <a name="adding-print-ticket-support-to-print-drivers"></a>印刷ドライバーに印刷チケット サポートを追加する
 
 
-完全にサポートするために、[印刷チケットと印刷機能のテクノロジ](print-ticket-and-print-capabilities-technologies.md)、印刷ドライバーにする必要があります。
+印刷[チケットと印刷機能のテクノロジ](print-ticket-and-print-capabilities-technologies.md)を完全にサポートするには、次の印刷ドライバーが必要です。
 
--   サポート、 [IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))を提供する、必要に応じて、[印刷機能](print-capabilities.md)プリンターのドキュメント。
+-   必要に応じて、プリンターの[印刷機能](print-capabilities.md)ドキュメントを提供するために、 [IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))をサポートします。
 
--   サポート、 [IPrintOemPrintTicketProvider インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintoemprintticketprovider)で印刷ドライバーにプラグインします。
+-   印刷ドライバープラグインの[IPrintOemPrintTicketProvider インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider)をサポートします。
 
--   使用して、[印刷チケット](print-ticket.md)については、印刷ジョブを処理するときにします。
+-   印刷ジョブを処理するときに、[印刷チケット](print-ticket.md)情報を使用します。
 
-IPrintTicketProvider インターフェイスをサポートする印刷ドライバーでは、上記のリストの最初の 2 つの項目の実行が、最後の項目は扱いません。 印刷ドライバーの読み込みし、これらの設定が印刷されるドキュメントに影響するために、XPS ドキュメントの印刷チケットの設定を処理する必要があります。 このサポートの実装の詳細については、次を参照してください。 [XPSDrv 表示モジュールでサポートして印刷チケット](print-ticket-support-in-the-xpsdrv-render-module.md)します。
+IPrintTicketProvider インターフェイスをサポートする印刷ドライバーは、前の一覧の最初の2つの項目を行いますが、最後の項目には対応しません。 印刷ドライバーは、XPS ドキュメント内の印刷チケットの設定を読み取って処理し、これらの設定が印刷されたドキュメントに影響を与えるようにする必要があります。 このサポートの実装の詳細については、 [XPSDrv Render モジュールでの印刷チケットのサポートに関するページ](print-ticket-support-in-the-xpsdrv-render-module.md)を参照してください。
 
-**注**   GDI ベース バージョン 3 の印刷ドライバー必要はありません、印刷サブシステムは、それと等価な PrintTicket オブジェクトを変換するため、ドライバーに印刷チケットのサポートを追加する[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)印刷ドライバーの構造体。
+**注**   GDI ベース、バージョン3の印刷ドライバーでは、ドライバーに印刷チケットサポートを追加する必要はありません。これは、印刷サブシステムが、PrintTicket オブジェクトを、印刷ドライバーの同等の[**devmodew**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造に変換するためです。
 
  
 

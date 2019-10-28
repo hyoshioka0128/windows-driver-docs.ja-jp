@@ -1,47 +1,47 @@
 ---
 title: OID_GEN_MACHINE_NAME
-description: セットとして OID_GEN_MACHINE_NAME OID はミニポート ドライバーをローカル コンピューターの名前を示します。
+description: セットとして、OID_GEN_MACHINE_NAME OID はミニポートドライバーへのローカルコンピューター名を示します。
 ms.assetid: 771d21ff-e989-4717-8f3e-28f4b8afe274
 ms.date: 08/08/2017
-keywords: -OID_GEN_MACHINE_NAME ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降の OID_GEN_MACHINE_NAME ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5874b3ad7e02d0953b7ab2b86bd68cb46d0ea8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 74d92e7df9a4d41bb4cd95620a4084a34c034638
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369067"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843069"
 ---
-# <a name="oidgenmachinename"></a>OID\_GEN\_マシン\_名
+# <a name="oid_gen_machine_name"></a>OID\_GEN\_マシン\_名
 
 
-OID、セットとして\_GEN\_マシン\_名の OID がミニポート ドライバーをローカル コンピューター名を示します。
+設定として、OID\_GEN\_マシン\_名前 OID は、ミニポートドライバーへのローカルコンピューター名を示します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
 (省略可能)。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-任意。
+<a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 ミニポートドライバー  
+(省略可能)。
 
 <a name="remarks"></a>注釈
 -------
 
-この要求で渡された情報バッファーには、ローカル コンピューターの名前を表す Unicode 文字の配列が含まれています。 **InformationBufferLength**に用意されている値、 [ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数をこの配列の長さを指定します (バイト単位)、NULL は含まないターミネータ。
+この要求で渡される情報バッファーには、ローカルコンピューター名を表す Unicode 文字の配列が含まれています。 [*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数に指定された**informationbufferlength**値は、この配列の長さをバイト単位で指定します。 NULL 終端文字は含まれません。
 
-NDIS 設定 OID\_GEN\_マシン\_ミニポート ドライバーが初期化が完了した後に名前を 1 回だけです。 Windows XP で NDIS 動的に通知が送信されません、コンピューター名の変更のミニポート ドライバー。 コンピューター名を変更した後、ユーザーは NDIS ミニポート ドライバーの新しいコンピューター名を通知するようにコンピューターを再起動する必要があります。
+ミニポートドライバーの初期化が完了した後に1回だけ、NDIS は OID\_\_\_GEN に設定します。 Windows XP では、NDIS はコンピューター名の変更をミニポートドライバーに動的に通知しません。 コンピューター名を変更した後、NDIS がミニポートドライバーに新しいコンピューター名を通知するように、ユーザーはコンピューターを再起動する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -52,7 +52,7 @@ NDIS 設定 OID\_GEN\_マシン\_ミニポート ドライバーが初期化が�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +60,7 @@ NDIS 設定 OID\_GEN\_マシン\_ミニポート ドライバーが初期化が�
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
 
  
 

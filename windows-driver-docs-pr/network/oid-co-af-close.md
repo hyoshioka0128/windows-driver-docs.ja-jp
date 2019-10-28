@@ -6,29 +6,29 @@ keywords:
 - OID_CO_AF_CLOSE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f721fe5a63f4859ded6bf76744a6f3c605569dfa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc1c52ef2ef5f263db973010894657359cb87990
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357667"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843268"
 ---
-# <a name="oidcoafclose"></a>OID_CO_AF_CLOSE
+# <a name="oid_co_af_close"></a>OID_CO_AF_CLOSE
 
-OID_CO_AF_CLOSE OID は、基になるミニポート ドライバーからの自体をバインド解除する必要がありますをコール マネージャーによって送信されます。 自体をバインド解除、ミニポート ドライバーから、前に、コール マネージャーは、この OID をコール マネージャーで開き、アドレス ファミリを持つ各クライアントに送信します。 応答、クライアントは、以下を実行します。
+OID_CO_AF_CLOSE OID は、基になるミニポートドライバーから自身をバインド解除する必要がある呼び出しマネージャーによって送信されます。 コールマネージャーは、ポートをミニポートドライバーからバインド解除する前に、呼び出しマネージャーでアドレスファミリが開かれている各クライアントにこの OID を送信します。 応答として、クライアントは次の操作を行う必要があります。
 
-1. クライアントに multipoint のアクティブな接続がある場合は、呼び出す[NdisClDropParty](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscldropparty)として 1 つのパーティのみが、各 multipoint VC のアクティブなままになるまでに必要な回数
+1. クライアントにアクティブな multipoint 接続がある場合は、各 multipoint VC で1つのパーティだけがアクティブなままになるまで、必要な回数だけ[NdisClDropParty](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscldropparty)を呼び出します。
 
-2. 呼び出す[NdisClCloseCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)を閉じる必要な回数呼び出しはすべてまだ開いての呼び出しでマネージャー
+2. 呼び出しマネージャーで開いたままになっているすべての呼び出しを閉じるには、必要な回数だけ[NdisClCloseCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)を呼び出します。
 
-3. 呼び出す[NdisClDeregisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclderegistersap)コール マネージャーで、クライアントが登録されているすべての Sap の登録を解除するために必要なだけ多くの回数
+3. クライアントが呼び出しマネージャーに登録したすべての Sap の登録を解除するために、必要な回数だけ[NdisClDeregisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap)を呼び出します。
 
-4. 呼び出す[NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclcloseaddressfamily) OID_CO_AF_CLOSE に含まれている要求で NdisAfHandle によって参照されるアドレス ファミリを閉じる
+4. [NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)を呼び出して、OID_CO_AF_CLOSE を含む要求で NdisAfHandle によって参照されているアドレスファミリを閉じます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |
 | バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
