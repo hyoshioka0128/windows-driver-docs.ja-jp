@@ -1,22 +1,24 @@
 ---
-title: SR-IOV 状態インジケーター
-description: このセクションでは、Single Root I/O Virtualization (SR-IOV) の状態インジケーターについて説明します。
+title: Sr-iov ステータスのインジケーター
+description: このセクションでは、シングルルート i/o 仮想化 (SR-IOV) の状態のインジケーターについて説明します。
 keywords:
-- SR-IOV 状態インジケーター
-- シングル ルート I/O 仮想化の状態インジケーター
-- WDK SR-IOV 状態インジケーター
-- SR-IOV オブジェクト識別子
+- Sr-iov ステータスのインジケーター
+- シングルルート i/o 仮想化の状態のインジケーター
+- WDK SR-IOV の状態のインジケーター
+- Sr-iov オブジェクト識別子
 ms.assetid: B13FECA3-FBD1-4B95-8400-ECDDC3FD09FC
 ms.date: 08/21/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b004611835036611865b78a8c1ddba16f50e746
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6b0dde7e6d0605db5c60da64a912799f65e0b1a
+ms.sourcegitcommit: f8ef49aa583f63edeab42001af8dfb41031ab622
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346019"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998633"
 ---
-このセクションには、Single Root I/O Virtualization (SR-IOV) で使用される NDIS 状態インジケーターが含まれています。
+# <a name="ndis-status-indications"></a>NDIS ステータスの示さ
+
+このセクションには、シングルルート i/o 仮想化 (SR-IOV) で使用される NDIS 状態の説明が含まれています。
 
 [NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES](ndis-status-nic-switch-current-capabilities.md)
 

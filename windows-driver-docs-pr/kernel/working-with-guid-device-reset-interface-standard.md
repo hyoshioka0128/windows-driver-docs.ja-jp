@@ -5,12 +5,12 @@ keywords:
 - GUID_DEVICE_RESET_INTERFACE_STANDARD
 ms.date: 11/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61bbadf3bfb675452887a40345984406a2da2882
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3b326cfab0ac2cff63f0387f2e2c1b68b4085fc9
+ms.sourcegitcommit: f8ef49aa583f63edeab42001af8dfb41031ab622
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835629"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998635"
 ---
 # <a name="working-with-the-guid_device_reset_interface_standard"></a>GUID_DEVICE_RESET_INTERFACE_STANDARD の操作
 
@@ -139,7 +139,7 @@ Asl <test>.asl
 4. テストシステムでテスト署名を有効にします。 
 
 ```console
-bcdedit /set GUID_DEVICE_RESET_INTERFACE_STANDARD testsigning on
+bcdedit /set testsigning on
 ```
 
 5. テストシステムを再起動します。 
