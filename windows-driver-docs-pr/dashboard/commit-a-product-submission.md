@@ -6,12 +6,12 @@ ms.author: balapv
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7683ab3a5f070fab756b98b040981d228eecdb85
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f7cc124bd47eff2d298c98e9cb477039699fc898
+ms.sourcegitcommit: f8ef49aa583f63edeab42001af8dfb41031ab622
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337277"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998637"
 ---
 # <a name="commit-a-product-submission"></a>製品申請のコミット
 
@@ -80,6 +80,6 @@ Authorization: Bearer <your access token>
 
 詳細については、「[エラー コード](get-product-data.md#error-codes)」を参照してください。
 
-# <a name="see-also"></a>関連項目
+## <a name="see-also"></a>関連項目
 
 [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)
