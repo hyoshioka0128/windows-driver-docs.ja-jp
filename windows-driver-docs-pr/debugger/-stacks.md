@@ -1,5 +1,5 @@
 ---
-title: スタック
+title: stacks
 description: スタックの拡張機能では、カーネル スタックに関する情報が表示されます。
 ms.assetid: f0777609-4785-4a6b-a6f5-9efaeb608df7
 keywords:
@@ -22,7 +22,7 @@ ms.locfileid: "63334237"
 # <a name="stacks"></a>!stacks
 
 
-**! スタック**拡張機能は、カーネル スタックに関する情報を表示します。
+**!stacks**拡張機能は、カーネル スタックに関する情報を表示します。
 
 構文
 
@@ -33,8 +33,8 @@ ms.locfileid: "63334237"
 ## <a name="span-idddkstacksdbgspanspan-idddkstacksdbgspanparameters"></a><span id="ddk__stacks_dbg"></span><span id="DDK__STACKS_DBG"></span>パラメーター
 
 
-<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span> *詳細*   
-表示に使用する詳細レベルを指定します。 次の表に、有効な値*詳細*します。
+<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span> *Detail*   
+表示に使用する詳細レベルを指定します。 次の表に、有効な値*Detail*します。
 
 <table>
 <colgroup>
@@ -73,11 +73,11 @@ Kdexts.dll
 <a name="remarks"></a>注釈
 -------
 
-**! スタック**拡張機能がすべてのスレッドの状態の概要を示します。 代わりにこの拡張機能を使用することができます、 [ **! プロセス**](-process.md)リソースの競合やデッドロックなどのマルチ スレッドの問題をデバッグする場合は特に、システムの簡単な概要を取得する拡張機能。
+**!stacks**拡張機能がすべてのスレッドの状態の概要を示します。 代わりにこの拡張機能を使用することができます、 [ **!process**](-process.md)リソースの競合やデッドロックなどのマルチ スレッドの問題をデバッグする場合は特に、システムの簡単な概要を取得する拡張機能。
 
-[ **! Findstack** ](-findstack.md)ユーザー モードの拡張機能では、特定のスタックに関する情報も表示されます。
+[ **!findstack** ](-findstack.md)ユーザー モードの拡張機能では、特定のスタックに関する情報も表示されます。
 
-最も簡単な例を次に示します **! スタック**表示。
+最も簡単な例を次に示します **!stacks**表示。
 
 ```dbgcmd
 kd> !stacks 0
@@ -102,7 +102,7 @@ Proc.Thread  .Thread  ThreadState  Blocker
 
 4 番目の列には、スレッドのスタックに最上位のアドレスが表示されます。
 
-より詳細な例を示します **! スタック**出力。
+より詳細な例を示します **!stacks**出力。
 
 ```dbgcmd
 kd> !stacks 1
