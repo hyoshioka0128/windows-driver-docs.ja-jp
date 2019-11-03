@@ -22,7 +22,7 @@ ms.locfileid: "63336609"
 # <a name="gatom"></a>!gatom
 
 
-**! Gatom**拡張機能には、グローバル atom テーブルが表示されます。
+**!gatom**拡張機能には、グローバル atom テーブルが表示されます。
 
 ```dbgcmd
 !gatom 
