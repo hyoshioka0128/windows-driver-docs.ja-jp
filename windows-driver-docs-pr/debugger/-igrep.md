@@ -1,6 +1,6 @@
 ---
 title: igrep
-description: Igrep 拡張機能は、逆アセンブリ内のパターンを検索します。
+description: igrep 拡張機能は、逆アセンブリ内のパターンを検索します。
 ms.assetid: f76aa84b-6d52-4b36-b2d0-d4a8d47d510e
 keywords:
 - Windows デバッグ igrep
@@ -22,7 +22,7 @@ ms.locfileid: "63336449"
 # <a name="igrep"></a>!igrep
 
 
-**! Igrep**逆アセンブリ内のパターンの拡張機能を検索します。
+**!igrep**逆アセンブリ内のパターンの拡張機能を検索します。
 
 ```dbgcmd
 !igrep [Pattern [StartAddress]] 
