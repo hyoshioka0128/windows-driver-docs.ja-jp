@@ -42,26 +42,26 @@ ms.locfileid: "72838066"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>セット</th>
-<th>的を絞る</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>対応</p></td>
+<td><p>対応</p></td>
 <td><p>ピン留めまたはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>BOOL</p></td>
+<td><p>型</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 KSP の**NodeId**メンバー\_node は、コントロールノードの識別子を指定します。または、pin を指定するために−1に設定されています。
@@ -72,7 +72,7 @@ RF チューナーノードが**TRUE**を返した場合、通常、フェーズ
 
 Demodulator ノードが**TRUE**を返した場合、少なくとも20% の信号品質が示されます。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -82,7 +82,7 @@ Demodulator ノードが**TRUE**を返した場合、少なくとも20% の信�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>

@@ -42,16 +42,16 @@ KSK プロパティ\_EXTXPORT\_CAPABILITIES プロパティは、外部デバイ
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>セット</th>
-<th>的を絞る</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
+<td><p>対応</p></td>
+<td><p>X</p></td>
 <td><p>デバイス</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>ULONG</p></td>
@@ -63,12 +63,12 @@ KSK プロパティ\_EXTXPORT\_CAPABILITIES プロパティは、外部デバイ
 
 プロパティ値 (操作データ) は、外部トランスポートの機能を指定する ULONG です。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 KSK プロパティ\_EXTXPORT\_S 構造体の**機能**メンバーには、トランスポート固有の機能が記述されています。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -78,7 +78,7 @@ KSK プロパティ\_EXTXPORT\_S 構造体の**機能**メンバーには、ト�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>

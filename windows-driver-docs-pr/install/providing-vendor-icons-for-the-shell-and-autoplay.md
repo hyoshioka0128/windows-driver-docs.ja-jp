@@ -1,6 +1,6 @@
 ---
-title: シェルと自動再生のベンダアイコンの提供
-description: シェルと自動再生のベンダアイコンの提供
+title: シェルと自動再生用のベンダー アイコンの提供
+description: シェルと自動再生用のベンダー アイコンの提供
 ms.assetid: 2e3afbf6-57f6-4b83-b10a-c33d9b1c1731
 keywords:
 - 自動再生アイコン WDK
@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837377"
 ---
-# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生のベンダアイコンの提供
+# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生用のベンダー アイコンの提供
 
 
 

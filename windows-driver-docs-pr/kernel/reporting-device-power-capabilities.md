@@ -1,6 +1,6 @@
 ---
-title: レポートデバイスの電源機能
-description: レポートデバイスの電源機能
+title: デバイスの電源機能のレポート
+description: デバイスの電源機能のレポート
 ms.assetid: 67a504d0-2c41-4c74-a912-4f0771885f7d
 keywords:
 - レポートデバイスの電源機能
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838452"
 ---
-# <a name="reporting-device-power-capabilities"></a>レポートデバイスの電源機能
+# <a name="reporting-device-power-capabilities"></a>デバイスの電源機能のレポート
 
 
 

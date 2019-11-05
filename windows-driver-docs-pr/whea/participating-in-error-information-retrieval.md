@@ -1,6 +1,6 @@
 ---
-title: エラー情報の取得に参加しています
-description: エラー情報の取得に参加しています
+title: エラー情報の取得への参加
+description: エラー情報の取得への参加
 ms.assetid: ed0ad20b-d978-4650-b3a0-6b0795323c77
 keywords:
 - Windows ハードウェアエラーアーキテクチャ WDK、エラー情報の取得
@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838823"
 ---
-# <a name="participating-in-error-information-retrieval"></a>エラー情報の取得に参加しています
+# <a name="participating-in-error-information-retrieval"></a>エラー情報の取得への参加
 
 
 エラー情報の取得に参加するには、次のコールバック関数を実装する必要があります。

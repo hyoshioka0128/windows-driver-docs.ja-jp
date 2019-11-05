@@ -39,16 +39,16 @@ ms.locfileid: "72838067"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>セット</th>
-<th>的を絞る</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
+<td><p>対応</p></td>
+<td><p>X</p></td>
 <td><p>ピン留めまたはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bdamedia/ne-bdamedia-_bdalocktype" data-raw-source="[&lt;strong&gt;BDA_LockType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdamedia/ne-bdamedia-_bdalocktype)"><strong>BDA_LockType</strong></a>型の値のビットごとの or を含む32ビット値</p></td>
@@ -58,7 +58,7 @@ ms.locfileid: "72838067"
 
  
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 KSP の**NodeId**メンバー\_node は、コントロールノードの識別子を指定します。または、pin を指定するために−1に設定されています。
@@ -67,7 +67,7 @@ KSP の**NodeId**メンバー\_node は、コントロールノードの識別�
 
 RF チューナーノードは、この表示を提供する必要があります。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ RF チューナーノードは、この表示を提供する必要がありま�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>

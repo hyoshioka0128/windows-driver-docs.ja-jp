@@ -42,19 +42,19 @@ ms.locfileid: "72837884"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>セット</th>
-<th>的を絞る</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>いいえ</p></td>
-<td><p>はい</p></td>
-<td><p>filter</p></td>
+<td><p>X</p></td>
+<td><p>対応</p></td>
+<td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
-<td><p>LONG</p></td>
+<td><p>長い</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,14 +63,14 @@ ms.locfileid: "72837884"
 
 プロパティ値 (操作データ) は、新しいキーフレームの画像番号を指定する LONG です。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、キーフレームにするフレームの番号を指定します。
 
 このプロパティは、video capture ミニドライバーではサポートされていません。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -80,7 +80,7 @@ KSK プロパティの**値**メンバー\_videocompression\_S 構造体は、�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>

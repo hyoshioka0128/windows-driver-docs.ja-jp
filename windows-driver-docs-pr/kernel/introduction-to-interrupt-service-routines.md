@@ -1,6 +1,6 @@
 ---
-title: 割り込みサービスルーチンの概要
-description: 割り込みサービスルーチンの概要
+title: 割り込みサービス ルーチンの概要
+description: 割り込みサービス ルーチンの概要
 ms.assetid: e83eb873-7cdf-4faf-9a6e-cc5954ebf1d6
 keywords:
 - 割り込みサービスルーチンの WDK カーネル、Isr について
@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838623"
 ---
-# <a name="introduction-to-interrupt-service-routines"></a>割り込みサービスルーチンの概要
+# <a name="introduction-to-interrupt-service-routines"></a>割り込みサービス ルーチンの概要
 
 
 割り込みを受け取る物理デバイスのドライバーは、割り込みを処理するために1つまたは複数の割り込みサービスルーチン (ISR) を登録します。 システムは、その割り込みを受信するたびに ISR を呼び出します。

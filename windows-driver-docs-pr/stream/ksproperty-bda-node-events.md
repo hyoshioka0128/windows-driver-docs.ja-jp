@@ -42,17 +42,17 @@ ms.locfileid: "72833687"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>セット</th>
-<th>的を絞る</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
-<td><p>filter</p></td>
+<td><p>対応</p></td>
+<td><p>X</p></td>
+<td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>Guid の一覧</p></td>
 </tr>
@@ -61,14 +61,14 @@ ms.locfileid: "72833687"
 
  
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 ノードでサポートされるイベントの一覧は、Guid の一覧です。
 
 ネットワークプロバイダーは、このプロパティを使用して、BDA テンプレート接続リスト内の各ノードの機能を照会します。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -78,7 +78,7 @@ ms.locfileid: "72833687"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (Bdamedia を含む)</td>
 </tr>
 </tbody>
