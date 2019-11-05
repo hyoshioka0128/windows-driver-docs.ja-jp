@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xE NO_USER_MODE_CONTEXT
-description: NO_USER_MODE_CONTEXT のバグ チェックが非常に少ない回数が表示される確認 0x0000000E.This バグの値を持ちます。
+title: バグチェック 0xE NO_USER_MODE_CONTEXT
+description: NO_USER_MODE_CONTEXT のバグチェックには0x0000000E の値が含まれています。このバグチェックは非常にまれです。
 ms.assetid: 0c3b3da9-c9e6-443d-9087-9bee9aa1e41a
 keywords:
-- バグ チェック 0xE NO_USER_MODE_CONTEXT
+- バグチェック 0xE NO_USER_MODE_CONTEXT
 - NO_USER_MODE_CONTEXT
 ms.date: 06/21/2019
 topic_type:
@@ -13,18 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b6853e768a0a8263072fb98ef0b89da9c3556d61
-ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
+ms.openlocfilehash: 02a3f23810eafc9b2b0e1cbcc556bd292cba0d9a
+ms.sourcegitcommit: 5f22002ceaf9dccd0d761327a1bb1edce4fe94f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492537"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567185"
 ---
-# <a name="bug-check-0xe-nousermodecontext"></a>バグ チェック 0xE:いいえ\_ユーザー\_モード\_コンテキスト
+# <a name="bug-check-0xe-no_user_mode_context"></a>バグチェック 0xE: NO\_USER\_MODE\_CONTEXT
 
-いいえ、\_ユーザー\_モード\_コンテキストのバグ チェックが 0x0000000E の値を持ちます。
+NO\_USER\_MODE\_コンテキストのバグチェックには、0x0000000E の値が含まれています。
 
-システム スレッドを開始するには、処理中、最初のスレッド プロシージャから制御が戻りますバグ チェックが発生します。
+システムスレッドを開始するプロセスでは、最初のスレッドプロシージャから制御が戻ると、バグチェックが実行されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
+
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。

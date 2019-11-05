@@ -1,199 +1,181 @@
 ---
 title: WinDbg プレビューを使用したデバッグ
-description: ここでは、WinDbg preview デバッガーを使用して基本的なデバッグタスクを実行する方法について説明します。
+description: このセクションでは、WinDbg プレビュー デバッガーを使用して基本的なデバッグ タスクを実行する方法について説明します。
 ms.date: 04/03/2019
 ms.localizationpriority: High
-ms.openlocfilehash: 7d81b172213ebccffd0b126e9ed0432bcbfc9424
-ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.openlocfilehash: 5ccb2cdbfe47bfbbdcdb54cb9c361da899e41aa5
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72007579"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916235"
 ---
-![Windbg プレビューの小さいロゴ](images/windbgx-preview-logo.png) 
-
 # <a name="debugging-using-windbg-preview"></a>WinDbg プレビューを使用したデバッグ 
 
-WinDbg Preview は、最新のビジュアルと、拡張可能なデバッガーデータモデルの front と center を使用して構築された本格的なスクリプト作成エクスペリエンスを備えた、新しいバージョンの WinDbg です。 WinDbg Preview は、現在の WinDbg と同じ基になるエンジンを使用しています。したがって、使用しているすべてのコマンド、拡張機能、ワークフローは、以前と同じように動作します。
+![WinDbg プレビューの小さなロゴ](images/windbgx-preview-logo.png) 
 
-デバッガー開発チームの最新のニュース、ヒント、コツについては、デバッガーツールチームのブログを参照してください。
+WinDbg プレビューは、最新の外観、高速なウィンドウ、本格的なスクリプトの操作性を備え、拡張可能なデバッガー データモデルを中心に構築された WinDbg の新しいバージョンです。 WinDbg プレビューは、現行の WinDbg と同じ基本エンジンを使用しているため、使い慣れたすべてのコマンド、拡張機能、ワークフローがこれまでどおり動作します。
+
+デバッガー開発チームからの最新のニュース、ヒント、コツについては、デバッガー ツール チームのブログを参照してください。
 [https://blogs.msdn.microsoft.com/windbg/](https://blogs.msdn.microsoft.com/windbg/)
-
 
 ## <a name="major-features-of-windbg-preview"></a>WinDbg プレビューの主な機能
 
-ここでは、変更された、または新機能を紹介します。
+変更または新たに追加された主な点を次に説明します。
 
 ![デバッガーのメイン画面](images/windbgx-main-menu.png)
 
+### <a name="general-features"></a>全般的な機能
 
-### <a name="general-features"></a>一般的な機能
+- **より簡単になった接続設定と呼び出し** - WinDbg プレビューは、前のセッション構成情報を呼び出す機能を備えています。
 
-- **接続の設定と再呼び出しが簡単**-WinDbg プレビューには、前のセッション構成情報を再呼び出しする機能が含まれています。
+![デバッガーのメイン画面のスクリーン ショット](images/windbgx-start-debugging-menu.png)
 
-![デバッガーのメイン画面のスクリーンショット](images/windbgx-start-debugging-menu.png)
+- **簡単なフィードバック チャネル** - お客様からのフィードバックは、開発を進める助けになります。 詳細については、「[フィードバックの提供](#providing-feedback)」を参照してください
 
-- **簡単なフィードバックチャネル**-今後の開発作業についてのご意見をお寄せください。 詳細については、「[フィードバックの提供](#providing-feedback)」を参照してください。
+- **ダンプ ファイル プロセッサ検出** - プロセッサ アーキテクチャを自動検出できるので、デバッグの管理が容易になります。
 
-- **ダンプファイルプロセッサの検出**-マネージデバッグを容易にするためのプロセッサアーキテクチャを自動検出します。
-
-- **パフォーマンスの向上**Windows が非同期的に読み込まれ、取り消すことができるようになりました。別のコマンドを実行すると、WinDbg Preview によって、ローカル、ウォッチ、またはその他のウィンドウの読み込みが停止します。
+- **パフォーマンスの向上** ウィンドウが非同期で読み込まれるようになり、キャンセルできるようになりました - ユーザーが別のコマンドを実行すると、WinDbg プレビューはローカル、ウォッチ、またはその他のウィンドウの読み込みを停止します。
 
 ### <a name="windowing-improvements"></a>ウィンドウの機能強化
 
-- **逆アセンブリウィンドウの機能強化**-[逆アセンブル] ウィンドウも改善され、現在の命令の強調表示はスクロール時の状態のままになります。 
+- **逆アセンブリ ウィンドウの機能強化** - 逆アセンブリ ウィンドウも改善されました。現在の命令の強調表示は、スクロールしても元の位置のままになります。 
 
-    ![デバッガーでのウィンドウの逆アセンブリ](images/windbgx-disassembly.png)
-
-
-- [**メモリウィンドウの改善]** -[メモリ] ウィンドウのスクロールが強調表示され、改善されました。
-
-- **ローカルおよびウォッチデータモデルの視覚化**-[ローカル] ウィンドウと [ウォッチ] ウィンドウは、どちらも dx コマンドによって使用されるデータモデルに基づいています。 つまり、[ローカル] ウィンドウと [ウォッチ] ウィンドウでは、読み込まれた NatVis または JavaScript の拡張機能を利用できます。また、dx コマンドと同様に、完全な LINQ クエリをサポートすることもできます。 
-
-- **ログ**-これは、WinDbg プレビューの内部のログの下にあります。 トラブルシューティングのために、または実行時間の長いプロセスを監視するために表示できます。 
-
-詳細については、「 [WinDbg プレビュー-表示メニュー](windbg-view-preview.md)」を参照してください。
-
-- **コマンドウィンドウ**-[コマンド] ウィンドウを使用すると、DML の切り替えとデバッガーコマンドウィンドウのクリアに簡単にアクセスできます。 現在のすべてのデバッガーコマンドはと互換性があり、引き続き WinDbg Preview で動作します。
+    ![デバッガーの逆アセンブリ ウィンドウ](images/windbgx-disassembly.png)
 
 
-### <a name="dark-theme"></a>ダーク テーマ 
+- **メモリ ウィンドウの機能強化** - メモリ ウィンドウに強調表示機能が加わり、スクロールも改善されました。
 
-**ファイル** >  の**設定**を使用して、ダークテーマを有効にします。
+- **ローカルおよびウォッチのデータ モデルの視覚化** - ローカル ウィンドウとウォッチ ウィンドウは、どちらも dx コマンドによって使用されるデータ モデルに基づいて表示されます。 このため、ローカル ウィンドウとウォッチ ウィンドウは、dx コマンドと同様に、ユーザーが読み込んだ任意の NatVis 拡張機能や JavaScript 拡張機能を利用でき、完全な LINQ クエリをサポートすることもできます。 
 
-![ダークテーマを示すスクリーンショット](images/windbgx-dark-theme.png)
+- **ログ** - これは、WinDbg プレビュー内部の内部ログです。 これは、トラブルシューティングや長時間実行されるプロセスを監視する目的で表示できます。 
 
+詳細については、「[WinDbg プレビュー - [表示] メニュー](windbg-view-preview.md)」を参照してください。
 
-### <a name="ribbon-quick-access"></a>リボンクイックアクセス
-
-最もよく使用するボタンをピン留めするだけで、リボンを折りたたんで画面の不動産を保存することができます。 
- 
-![ピン留めされた項目を含む ribon を示すスクリーンショット](images/windbgx-quick-access.png)
+- **コマンド ウィンドウ** - コマンド ウィンドウを使用すると、DML の切り替えや、デバッガー コマンド ウィンドウのクリアを簡単に実行できます。 現在のすべてのデバッガー コマンドは WinDbg プレビューと互換性があり、引き続き WinDbg Preview で動作します。
 
 
+### <a name="dark-theme"></a>濃色テーマ 
 
-### <a name="source-window"></a>ソースウィンドウ
+濃色テーマを有効にするには、**ファイル** > **設定** を使用します。
 
-ソースウィンドウは、最新のエディターを使用して、より多くの行に更新されています。 
+![濃色テーマを示すスクリーン ショット](images/windbgx-dark-theme.png)
 
-![デバッガーの [スクリプト] メニューのスクリーンショット](images/windbgx-source-window.png)
+### <a name="ribbon-quick-access"></a>リボン クイック アクセス
 
+最もよく使用するボタンをピン留めすることにより、リボンを折りたたんで画面領域を節約できます。 
 
-### <a name="highlighting"></a>ペン
+![ピン留めされた項目を含むリボンを示すスクリーン ショット](images/windbgx-quick-access.png)
 
-[コマンド] ウィンドウには、2つの新しい強調表示機能があります。 テキストを選択すると、そのテキストの他のインスタンスに対して微妙な強調表示が行われます。 強調表示を維持するには、[強調表示/強調表示解除] または Ctrl + Alt + H を押します。 
+### <a name="source-window"></a>ソース ウィンドウ
 
-![黄色で強調表示されている列を示すスクリーンショット](images/windbgx-highlighting.gif)
+最新のエディターに合うように、ソース ウィンドウが更新されました。 
 
+![デバッガーのスクリプト作成メニューのスクリーン ショット](images/windbgx-source-window.png)
 
-### <a name="better-keyboard-navigation"></a>キーボードナビゲーションの向上
+### <a name="highlighting"></a>強調表示
 
-Ctrl + Tab キーを押すだけで、キーボードだけでウィンドウ間を簡単に移動できます。 
+コマンド ウィンドウに、2 つの新しい強調表示機能が追加されました。 任意のテキストを選択すると、そのテキストの他のすべてのインスタンスがわずかに強調表示されます。 次に、[Highlight/Un-highlight (強調表示/強調表示解除)] または Ctrl + Alt + H を押すと、強調表示を保持できます。 
 
-![Ctrl tab メニューが表示されているスクリーンショット](images/windbgx-ctrl-tab.gif)
+![列が黄色で強調表示されていることを示すスクリーン ショット](images/windbgx-highlighting.gif)
 
+### <a name="better-keyboard-navigation"></a>改善されたキーボード ナビゲーション
 
-### <a name="integrated-time-travel-debugging-ttd"></a>統合タイムトラベルデバッグ (TTD)
+Ctrl + Tab を押すだけで、キーボードだけでウィンドウ間を簡単に移動できます。 
 
-アプリケーションの TTD トレースが必要な場合は、起動時またはアタッチ時に [タイムトラベルによるプロセスの記録] ボックスをオンにするだけです。 WinDbgNext は、TTD に設定し、記録が完了したらトレースを開きます。
+![Ctrl Tab メニューを示すスクリーン ショット](images/windbgx-ctrl-tab.gif)
 
-![Ctrl tab メニューが表示されているスクリーンショット](images/windbgx-ttd.png)
+### <a name="integrated-time-travel-debugging-ttd"></a>統合された Time Travel Debugging (TTD)
 
-詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
+アプリケーションを TTD トレースする必要がある場合は、起動時またはアタッチ時に、[Record process with Time Travel Debugging (Time Travel Debugging でプロセスを記録)] ボックスをオンにします。 WinDbgNext がこれを TTD に設定し、記録が完了するとトレースを開きます。
 
+![Ctrl Tab メニューを示すスクリーン ショット](images/windbgx-ttd.png)
 
-### <a name="debugging-app-packages"></a>アプリケーションパッケージのデバッグ
+詳細については、「[Time Travel Debugging - 概要](time-travel-debugging-overview.md)」を参照してください。
 
-ユニバーサルアプリまたはバックグラウンドタスクのデバッグが1回のクリックになりました。
+### <a name="debugging-app-packages"></a>アプリ パッケージのデバッグ
 
-![[アプリパッケージアプリケーション] タブを起動し、3つのアプリが一覧表示された [検索] ボックスに cal を表示します。](images/windbgx-launch-app-package.png)
+ユニバーサルアプリやバックグラウンド タスクのデバッグを、シングル クリックで実行できるようになりました。
 
-詳細については、「[アプリパッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)」を参照してください。
+![検索ボックスに「cal」と入力され 3 つのアプリが一覧表示されている [Launch App Package (アプリ パッケージの起動)] の [アプリケーション] タブ](images/windbgx-launch-app-package.png)
 
+詳細については、「[アプリ パッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)」を参照してください。
 
-### <a name="attach-to-a-process"></a>プロセスにアタッチする
+### <a name="attach-to-a-process"></a>プロセスへのアタッチ
 
-[アタッチ] ダイアログの方が高速で、より詳細で、使いやすくなります。
+アタッチ ダイアログが、従来より高速でより詳細になり、使いやすくなりました。
 
-![プロセスにアタッチダイアログ](images/windbgx-attach-to-a-process-zoomed.png)
+![プロセスへのアタッチのダイアログ](images/windbgx-attach-to-a-process-zoomed.png)
 
+### <a name="enhanced-breakpoint-tracking"></a>強化されたブレークポイント追跡  
 
-### <a name="enhanced-breakpoint-tracking"></a>拡張されたブレークポイントの追跡  
-
-- **ブレークポイントの有効化/無効化**-[ブレークポイント] ウィンドウには、現在のすべてのブレークポイントが表示され、それらを有効または無効にするための簡単なアクセスを提供します。 
-- **ヒットカウント**-ブレークポイントにヒットするたびに、ブレークポイント ウィンドウには実行中の合計が保持されます。
+- **ブレークポイントの有効化/無効化** - ブレークポイント ウィンドウに現在のすべてのブレークポイントが表示され、それらを簡単に有効化または無効化できます。 
+- **ヒット カウント** - ブレークポイント ウィンドウには、ブレークポイントにヒットするたびにそれまでの合計が表示されます。
 
 詳細については、「[ブレークポイント](windbg-breakpoints-preview.md)」を参照してください。
 
 
-### <a name="enhanced-data-model-support"></a>強化されたデータモデルのサポート
+### <a name="enhanced-data-model-support"></a>強化されたデータ モデルのサポート
 
-- **組み込みのデータモデルサポート**-WinDbg Preview は、組み込みのデータモデルサポートを使用して記述されており、データモデルはデバッガーを通じて利用できます。
-- **モデルウィンドウ**-[モデル] ウィンドウには、"dx" と "dx" という拡張可能でブラウズ可能なバージョンが用意されており、NatVis、JAVASCRIPT、LINQ クエリの上に強力なテーブルを作成できます。 
+- **組み込みデータ モデルのサポート** - WinDbg プレビューは、組み込みのデータ モデルがサポートされて作成されており、そのデータ モデルをデバッガーを通じて利用できます。
+- **モデル ウィンドウ** - モデル ウィンドウを使用すると、dx や dx -g を展開表示することができ、NatVis、JavaScript、LINQ のクエリを基に強力なテーブルを作成できます。 
 
-詳細については、「 [WinDbg Preview-Data model](windbg-data-model-preview.md)」を参照してください。
+詳細については、「[WinDbg プレビュー - データ モデル](windbg-data-model-preview.md)」を参照してください。
 
-![デバッガーの [データモデル] メニューのスクリーンショット](images/windbgx-data-model-menu.png)
+![デバッガーのデータ モデル メニューのスクリーン ショット](images/windbgx-data-model-menu.png)
 
+### <a name="new-scripting-development-ui"></a>新しいスクリプト開発 UI
 
-### <a name="new-scripting-development-ui"></a>新しいスクリプト開発 UI 
+- **スクリプト開発 UI** - エラーの強調表示と IntelliSense により JavaScript スクリプトや NatVis スクリプトの開発を簡単にする、専用のスクリプト作成ウィンドウが用意されました。
 
-- **スクリプト開発 UI** -NatVis スクリプトを作成するためのスクリプトウィンドウが作成されました。これにより、エラーの強調表示と IntelliSense を使用して JavaScript およびスクリプトを簡単に開発できます。
+![デバッガーのスクリプト作成メニューのスクリーン ショット](images/windbgx-scripting-intellisense.png)
 
-![デバッガーの [スクリプト] メニューのスクリーンショット](images/windbgx-scripting-intellisense.png)
+詳細については、「[WinDbg プレビュー - スクリプト](windbg-scripting-preview.md)」を参照してください。
 
-詳細については、「 [WinDbg Preview-Scripting](windbg-scripting-preview.md)」を参照してください。
+### <a name="backwards-compatibility"></a>下位互換性 
 
-### <a name="backwards-compatibility"></a>旧バージョンとの互換性 
-
-このデバッガーエンジンは同じであるため、以前のすべてのデバッガーコマンドとデバッガー拡張機能は引き続き動作します。
+基になるデバッガー エンジンは同じなので、従来のデバッガー コマンドやデバッガー拡張機能はすべて引き続き動作します。
 
 ## <a name="span-idproviding-feedbackspanproviding-feedback"></a><span id="providing-feedback"></span>フィードバックの提供
 
-お客様のご意見をお寄せいただくと、今後の WinDbg 開発に役立ちます。 
+お客様からのフィードバックは、WinDbg の開発を進める助けになります。 
 
-- 実際に表示する機能や、何らかの問題が発生するバグなどのフィードバックがある場合は、フィードバックハブを使用してください。
+- 実現を希望される機能や問題の原因となっているバグなどのフィードバックがある場合は、フィードバック Hub をご利用ください。
 
-![[新しいフィードバックの追加] ボタンを含むフィードバックオプションを示すフィードバックハブのスクリーンショット](images/windbgx-feedback.png)
+![[新しいフィードバックの追加] ボタンを含むフィードバック オプションを示すフィードバック Hub のスクリーンショット](images/windbgx-feedback.png)
 
 ## <a name="videos"></a>ビデオ
 
-この2回の[最適化ツール](https://channel9.msdn.com/Shows/Defrag-Tools)が表示されているので、Windbg のプレビューが動作しています。  
-- [デフラグツール #182](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-182-WinDbg-Preview-Part-1) -Tim、チャド、Andy では、WinDbg Preview の基本と一部の機能について紹介します。
-- [デフラグツール #183](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-183-WinDbg-Preview-Part-2) -チャド、Tim、およびでは、WinDbg Preview を使用して、簡単なデモを見ていきます。
-- [デフラグツール #184](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-184-JavaScript-in-WinDbg-Preview) -Bill and Andrew では、WinDbg Preview のスクリプト機能について説明しています。
-- [デフラグツール #185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) -James と Ivette は、タイムトラベルデバッグを提供し、概要を説明します。
-- [デフラグツール #186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) -JAMES および jcab では、高度なタイムトラベルデバッグについて説明しています。
+[デフラグ ツール](https://channel9.msdn.com/Shows/Defrag-Tools) ショーの次のエピソードから、Windbg プレビューの実際の動作をご覧いただけます。  
+- [デフラグ ツール #182](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-182-WinDbg-Preview-Part-1) - Tim、Chad、Andy による、WinDbg プレビューの基本と一部の機能の紹介。
+- [デフラグ ツール #183](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-183-WinDbg-Preview-Part-2) - Nick、Tim、Chad による、WinDbg プレビューを使用した簡単なデモ。
+- [デフラグ ツール #184](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-184-JavaScript-in-WinDbg-Preview) - Bill と Andrew による、WinDbg プレビューのスクリプト機能の紹介。
+- [デフラグ ツール #185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) - James と Ivette による、Time Travel Debugging の紹介。
+- [デフラグ ツール #186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) - James と JCAB による、Time Travel Debugging の高度な使用方法の説明。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-最新のリリースの新機能については、「 [WinDbg Preview-新機能](windbg-what-is-new-preview.md)」を参照してください。
+最新リリースの新機能については、「[WinDbg プレビュー - 新機能](windbg-what-is-new-preview.md)」を参照してください。
 
-これらのトピックを確認して、WinDbg Preview のインストールと構成を行います。
+WinDbg プレビューをインストールして構成するには、次のトピックをご確認ください。
 
-- [WinDbg プレビュー–インストール](windbg-install-preview.md)
-- [WinDbg プレビュー–コマンドラインスタートアップオプション](windbg-command-line-preview.md)
-- [WinDbg プレビュー–設定とワークスペース](windbg-setup-preview.md)
-- [WinDbg プレビュー–キーボードショートカット](windbg-keyboard-shortcuts-preview.md)
+- [WinDbg プレビュー - インストール](windbg-install-preview.md)
+- [WinDbg プレビュー - コマンド ライン スタートアップ オプション](windbg-command-line-preview.md)
+- [WinDbg プレビュー - 設定とワークスペース](windbg-setup-preview.md)
+- [WinDbg プレビュー - キーボード ショートカット](windbg-keyboard-shortcuts-preview.md)
 
-これらのトピックでは、デバッグする環境に接続する方法について説明します。 
+デバッグする環境に接続する方法については、以下のトピックで説明されています。 
 
-- [WinDbg Preview –ユーザーモードセッションを開始する](windbg-user-mode-preview.md)
-- [WinDbg Preview –カーネルモードセッションを開始する](windbg-kernel-mode-preview.md)
+- [WinDbg プレビュー - ユーザーモード セッションの開始](windbg-user-mode-preview.md)
+- [WinDbg プレビュー - カーネルモード セッションの開始](windbg-kernel-mode-preview.md)
 
-これらのトピックでは、いくつかの一般的なタスクについて、メニュータブ別に説明します。
+いくつかの一般的なタスクについては、メニュー タブ別に以下のトピックで説明されています。
 
-- [WinDbg プレビュー-[ファイル] メニュー](windbg-file-preview.md)
-- [WinDbg プレビュー–ホームメニュー](windbg-home-preview.md)
-- [WinDbg プレビュー-[表示] メニュー](windbg-view-preview.md)
-- [WinDbg プレビュー–ブレークポイント](windbg-breakpoints-preview.md)
-- [WinDbg プレビュー–データモデル](windbg-data-model-preview.md)
-- [WinDbg プレビュー–スクリプト](windbg-scripting-preview.md)
+- [WinDbg プレビュー - ファイル メニュー](windbg-file-preview.md)
+- [WinDbg プレビュー – ホーム メニュー](windbg-home-preview.md)
+- [WinDbg プレビュー – 表示メニュー](windbg-view-preview.md)
+- [WinDbg プレビュー – ブレークポイント](windbg-breakpoints-preview.md)
+- [WinDbg プレビュー - データ モデル](windbg-data-model-preview.md)
+- [WinDbg プレビュー - スクリプト](windbg-scripting-preview.md)
 
-
---- 
-
-
-
-
-
+---

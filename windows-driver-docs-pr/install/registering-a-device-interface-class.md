@@ -1,6 +1,6 @@
 ---
-title: デバイスインターフェイスクラスの登録
-description: デバイスインターフェイスクラスの登録
+title: デバイス インターフェイス クラスの登録
+description: デバイス インターフェイス クラスの登録
 ms.assetid: 1518570d-1cfb-498e-91f7-35f9cc11aff5
 keywords:
 - インターフェイスクラス WDK デバイスのインストール
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837372"
 ---
-# <a name="registering-a-device-interface-class"></a>デバイスインターフェイスクラスの登録
+# <a name="registering-a-device-interface-class"></a>デバイス インターフェイス クラスの登録
 
 
 
