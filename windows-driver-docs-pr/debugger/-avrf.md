@@ -47,20 +47,20 @@ ms.locfileid: "66813563"
     !avrf -skp [ Start End | dll Module | all | Time ] 
 ```
 
-## <a name="span-idddkavrfdbgspanspan-idddkavrfdbgspanparameters"></a><span id="ddk__avrf_dbg"></span><span id="DDK__AVRF_DBG"></span>パラメーター
+## <a name="span-idddk__avrf_dbgspanspan-idddk__avrf_dbgspanparameters"></a><span id="ddk__avrf_dbg"></span><span id="DDK__AVRF_DBG"></span>パラメーター
 
 
 <span id="-vs___Length___-a_Address__"></span><span id="-vs___length___-a_address__"></span><span id="-VS___LENGTH___-A_ADDRESS__"></span> **-vs {** *Length* **| -a** *Address* **}**  
-仮想空間操作ログを表示します。 *長さ*以降、最新では、表示するレコードの数を指定します。 *アドレス*仮想のアドレスを指定します。 この仮想アドレスを含む仮想操作のレコードが表示されます。
+仮想空間操作ログを表示します。 *Length* は、最新のものから順に、表示するレコードの数を指定します。 *アドレス*仮想のアドレスを指定します。 この仮想アドレスを含む仮想操作のレコードが表示されます。
 
 <span id="-hp___Length___-a_Address__"></span><span id="-hp___length___-a_address__"></span><span id="-HP___LENGTH___-A_ADDRESS__"></span> **-hp {** *長さ* **|-** *アドレス* **}**  
 ヒープ操作ログを表示します。 *アドレス*ヒープのアドレスを指定します。 このヒープ アドレスが含まれているヒープ操作のレコードが表示されます。
 
 <span id="-cs___Length___-a_Address__"></span><span id="-cs___length___-a_address__"></span><span id="-CS___LENGTH___-A_ADDRESS__"></span> **-cs {** *長さ* **|-** *アドレス* **}**  
-クリティカル セクションの削除ログを表示します。 *長さ*以降、最新では、表示するレコードの数を指定します。 *アドレス*クリティカル セクションのアドレスを指定します。 特定のクリティカル セクションのレコードが表示されるとき*アドレス*を指定します。
+クリティカル セクションの削除ログを表示します。 *Length* は、最新のものから順に、表示するレコードの数を指定します。 *Address* は、クリティカル セクションのアドレスを指定します。 *Address* を指定すると、特定のクリティカル セクションのレコードが表示されます。
 
 <span id="-dlls___Length__"></span><span id="-dlls___length__"></span><span id="-DLLS___LENGTH__"></span> **-dll \[**  *長さ* **\]**  
-DLL の読み込み/アンロード ログを表示します。 *長さ*以降、最新では、表示するレコードの数を指定します。
+DLL のロード/アンロード ログを表示します。 *Length* は、最新のものから順に、表示するレコードの数を指定します。
 
 <span id="-trm"></span><span id="-TRM"></span> **-trm**  
 すべての終了および中断されたスレッドのログを表示します。
@@ -116,7 +116,7 @@ BSTR。BSTR の割り当てを表示します
 
 exts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 アプリケーション検証ツールとドキュメント、ダウンロードしてインストールする方法については、次を参照してください。 [Application Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)します。
 
