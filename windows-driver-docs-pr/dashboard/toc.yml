@@ -90,7 +90,7 @@
                       items:
                         - name: グラフィックス ドライバーのバイナリにおけるクラッシュによってブルー スクリーンが表示された、ディスクリート GPU の無数のマシン
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard.md
-                        - name: グラフィックス ドライバーのバイナリにおけるクラッシュによってブルー スクリーンが表示された、統合 GPU の無数のマシン
+                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-standard.md
                         - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
                           href: myriad-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-standard.md
@@ -230,6 +230,8 @@
               href: create-a-new-shipping-label.md
             - name: 配送先住所ラベルの更新
               href: update-a-shipping-label.md
+            - name: 配送先住所ラベルの取り消し
+              href: cancel-a-shipping-label.md
         - name: 対象ユーザー データの取得
           href: get-audience-data.md
         - name: ドライバー パッケージ メタデータ
