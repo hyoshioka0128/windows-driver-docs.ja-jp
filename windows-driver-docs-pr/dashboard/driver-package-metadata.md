@@ -5,16 +5,18 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: e3f4022d4715fc8d76b3c749df74db56ba5cf4d1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7906f735d41a063b329ca2b66ad0bf2a95721654
+ms.sourcegitcommit: 257850d61aa5d1db707dc2f30721319b650e47f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337249"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73801164"
 ---
 # <a name="driver-package-metadata"></a>ドライバー パッケージ メタデータ
 
 ドライバー メタデータ パッケージは、申請に関連付けられているファイルです。 メタデータ パッケージには、ドライバー パッケージまたはバンドル内の各 INF ファイルに関する詳細が含まれています。 このファイルは、[Get a submission](get-a-submission.md) メソッドを使用してダウンロードすることができます。 そのファイルは、[リンク オブジェクト](get-product-data.md#link-object)の *rel* - **driverMetadata** で使用できます。 
+
+自身が発行元であり、共有を介して申請を受け取った場合、[発行元メタデータの作成](create-publisher-metadata.md)メソッドを実行して、その申請用のドライバー メタデータの生成が必要になることがあります。
 
 ## <a name="driver-metadata-structure"></a>ドライバー メタデータの構造
 

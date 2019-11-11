@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 707d055d55d43bac288758c6ff3c1ff4e9ffb9a7
-ms.sourcegitcommit: 7fc38dedccceadccfbf493f4c66aa6def436f1d5
+ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
+ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896277"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73589234"
 ---
 # <a name="get-a-code-signing-certificate"></a>コード署名証明書の取得
 
@@ -32,7 +32,7 @@ ms.locfileid: "69896277"
 
 - [Certum の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=843061)
 
-- [Entrust の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=843068)
+- [Entrust の EV コード署名証明書を購入する](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
 
 - [GlobalSign の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/p/?LinkId=620888)
 
@@ -57,14 +57,15 @@ ms.locfileid: "69896277"
 
 - 新しいパートナー センター アカウントを設定する場合は、「[ハードウェア プログラムの登録](register-for-the-hardware-program.md)」の手順を実行します。
 
-- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、「[コード署名証明書の追加または更新](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)」の手順を実行します。
+- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、「[コード署名証明書の追加または更新](update-a-code-signing-certificate.md)」の手順を実行します。
 
 ## <a name="code-signing-faq"></a>コード署名 FAQ
 
 ここでは、Windows 10 のコード署名についてよく寄せられる質問に対してお答えします。 その他のコード署名情報は、Windows ハードウェア認定に関するブログでご確認いただけます。
 
-- [Windows 10 のドライバー署名の変更点に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
-- [Sysdev EV 証明書要件の更新に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+- [Windows 10 のドライバー署名の変更点に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Driver-Signing-changes-in-Windows-10/ba-p/364859)
+- [Windows 10 バージョン 1607 のドライバー署名の変更点](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Driver-Signing-changes-in-Windows-10-version-1607/ba-p/364894)
+- [Sysdev EV 証明書要件の更新に関するページ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Update-on-Sysdev-EV-Certificate-requirement/ba-p/364879)
 
 ### <a name="hlk-tested-and-dashboard-signed-drivers"></a>HLK テスト済みのダッシュボードで署名されたドライバー
 
@@ -78,7 +79,7 @@ ms.locfileid: "69896277"
 
 ### <a name="windows-10-earlier-certificate-transition-signing"></a>Windows 10 以前での証明書移行署名
 
-- 以下は、Windows 10 1803 以前にのみ適用されます。  Windows 10 1809 以降では、これらは動作しません。 
+- 以下は、Windows 10 1803 以前にのみ適用されます。  Windows 10 1809 以降では、これらは動作しません。
 - Windows 10 では、2015 年 7 月 29 日より後に発行されたいずれかの証明書を使って署名されたタイムスタンプ付きのドライバーは推奨されません。
 - 2015 年 7 月 29 日より後に有効期限が切れるいずれかの証明書を使って署名されたタイムスタンプなしのドライバーは、証明書の有効期限が切れるまで Windows 10 で機能します。
 

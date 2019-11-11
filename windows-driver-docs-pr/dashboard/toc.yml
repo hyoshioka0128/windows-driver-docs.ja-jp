@@ -236,6 +236,9 @@
           href: get-audience-data.md
         - name: ドライバー パッケージ メタデータ
           href: driver-package-metadata.md
+          items:
+            - name: 発行元ドライバー メタデータの作成
+              href: create-publisher-metadata.md
     - name: LSA プラグインと UEFI ファームウェアのファイル署名
       href: lsa-and-uefi-file-signing.md
     - name: ダッシュボードの管理

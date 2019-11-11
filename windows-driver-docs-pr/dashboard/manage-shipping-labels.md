@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: 8a8681daed14aafba673a74e93795ad60b3372fb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 77685442d72be8a397e18d6215386d0495c2a222
+ms.sourcegitcommit: e1f02bc9a982eefa1e326c95d3aca5ecc68581ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337177"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721620"
 ---
 # <a name="manage-shipping-labels"></a>配送先住所ラベルを管理する
 
@@ -26,6 +26,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/sub
 |:--|:--|:--|
 |[新しい配送先住所ラベルを作成する](create-a-new-shipping-label.md)|POST|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels`|
 |[配送先住所ラベルを更新する](update-a-shipping-label.md)|PATCH|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId}`|
+|[配送先住所ラベルの取り消し](cancel-a-shipping-label.md)|PUT|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId/cancel}`|
 
 ## <a name="create-a-new-shipping-label"></a>新しい配送先住所ラベルを作成する
 
