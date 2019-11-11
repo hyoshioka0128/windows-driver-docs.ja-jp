@@ -22,7 +22,7 @@ ms.locfileid: "63336449"
 # <a name="igrep"></a>!igrep
 
 
-**!igrep**逆アセンブリ内のパターンの拡張機能を検索します。
+**!igrep** 逆アセンブリ内のパターンの拡張機能を検索します。
 
 ```dbgcmd
 !igrep [Pattern [StartAddress]] 
