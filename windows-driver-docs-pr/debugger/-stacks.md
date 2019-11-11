@@ -30,11 +30,13 @@ ms.locfileid: "63334237"
 !stacks [Detail [FilterString]] 
 ```
 
-## <a name="span-idddkstacksdbgspanspan-idddkstacksdbgspanparameters"></a><span id="ddk__stacks_dbg"></span><span id="DDK__STACKS_DBG"></span>パラメーター
+## <a name="span-idddk__stacks_dbgspanspan-idddk__stacks_dbgspanparameters"></a><span id="ddk__stacks_dbg"></span><span id="DDK__STACKS_DBG"></span>パラメーター
 
 
 <span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span> *Detail*   
+
 表示に使用する詳細レベルを指定します。次の表に、*Detail* の有効な値を示します。
+
 
 <table>
 <colgroup>
@@ -66,16 +68,18 @@ ms.locfileid: "63334237"
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-カーネル スタックの詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
+カーネル スタックの詳細については、次を参照してください。 *Microsoft Windows internals 』* 、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------
 
+
 **!stacks** 拡張機能ではすべてのスレッドの状態の概要が示されます。リソースの競合やデッドロックなどのマルチ スレッドの問題をデバッグする場合は特に、この拡張機能を [**!process**](-process.md) 拡張機能の代わりに使用することによって、システムの簡単な概要を取得することができます。
 
 [**!findstack**](-findstack.md) ユーザー モードの拡張機能では、特定のスタックに関する情報も表示されます。
+
 
 最も簡単な **!stacks** 表示の例を次に示します。
 

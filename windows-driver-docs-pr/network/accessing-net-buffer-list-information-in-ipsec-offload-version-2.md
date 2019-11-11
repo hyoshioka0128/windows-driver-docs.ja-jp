@@ -1,6 +1,6 @@
 ---
 title: IPsec オフロードバージョン2での NET_BUFFER_LIST 情報へのアクセス
-description: IPsec オフロードバージョン2での NET_BUFFER_LIST 情報へのアクセス
+description: IPsec Offload Version 2 での NET_BUFFER_LIST 情報へのアクセス
 ms.assetid: 0c27b594-2c61-4459-96df-1d7445100bc5
 keywords:
 - IPsecOV2 WDK TCP/IP transport, NET_BUFFER_LIST 情報

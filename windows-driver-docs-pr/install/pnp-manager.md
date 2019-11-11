@@ -1,6 +1,6 @@
 ---
-title: プラグアンドプレイマネージャー
-description: プラグアンドプレイマネージャー
+title: プラグ アンド プレイ マネージャー
+description: プラグ アンド プレイ マネージャー
 ms.assetid: b1890b3c-fc7b-4a2e-b48a-8266f237c9b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,14 +11,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837381"
 ---
-# <a name="plug-and-play-manager"></a>プラグアンドプレイマネージャー
+# <a name="plug-and-play-manager"></a>プラグ アンド プレイ マネージャー
 
 
 プラグアンドプレイ (PnP) マネージャーは、Windows の PnP 機能のサポートを提供し、次の PnP 関連のタスクを担当します。
 
 -   システムの起動中のデバイスの検出と列挙
 
--   システムの実行中にデバイスを追加または削除する
+-   システムの実行中のデバイスの追加または削除
 
 カーネルモードの PnP マネージャーは、新しいデバイスがシステムに存在すること、およびインストールされている必要があることをユーザーモードの PnP マネージャーに通知します。
 

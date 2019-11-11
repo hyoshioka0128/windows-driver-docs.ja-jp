@@ -1,16 +1,18 @@
 ---
-title: UMDF 1 の廃止
+title: UMDF 1 の非推奨
 author: tedhudek
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 924c999aec01677272887aa40c5f30da6e8d71d1
-ms.sourcegitcommit: 3314d9337e41004aed97d5c589e96749a2bcf691
+ms.openlocfilehash: 0752755ca03b343bc4d48164721c25da867f2881
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229615"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445869"
 ---
+# 
+
 > [!WARNING]
-> UMDF 2 UMDF の最新バージョンであり UMDF 1 よりも優先されます。  すべての新しい UMDF ドライバーは、UMDF 2 を使用して作成する必要があります。  UMDF 1 の新機能を追加しないと、UMDF 1 の新しいバージョンの Windows 10 での制限付きサポートがあります。  ユニバーサル Windows ドライバーでは、UMDF 2 を使用する必要があります。
+> UMDF 2 は最新バージョンの UMDF で、UMDF 1 を置き換えます。  すべての新しい UMDF ドライバーは、UMDF 2 を使用して作成する必要があります。  新しい機能は、UMDF 1 に追加されません。また、新しいバージョンの Windows 10 では、UMDF 1 のサポートが制限されています。  ユニバーサル Windows ドライバーでは、UMDF 2 を使用する必要があります。
 >
-> 詳細については、次を参照してください。 [UMDF 入門](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)します。
+> 詳細については、「[はじめにと UMDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)」を参照してください。

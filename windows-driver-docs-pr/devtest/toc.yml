@@ -2406,6 +2406,18 @@
           href: about-event-tracing-for-drivers.md
         - name: カーネル モード ドライバーへのイベント トレーシングの追加
           href: adding-event-tracing-to-kernel-mode-drivers.md
+    - name: Windows 上の DTrace
+      items:
+        - name: Windows 上の DTrace
+          href: dtrace.md
+        - name: DTrace プログラミング
+          href: dtrace-programming.md
+        - name: DTrace コード サンプル
+          href: dtrace-code-samples.md
+        - name: DTrace ETW
+          href: dtrace-etw.md
+        - name: DTrace ライブ ダンプ
+          href: dtrace-live-dump.md
     - name: TraceLogging API
       items:
         - name: TraceLogging API

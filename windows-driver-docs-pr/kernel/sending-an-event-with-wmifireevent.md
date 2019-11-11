@@ -1,6 +1,6 @@
 ---
-title: WmiFireEvent を使用したイベントの送信
-description: WmiFireEvent を使用したイベントの送信
+title: WmiFireEvent でのイベントの送信
+description: WmiFireEvent でのイベントの送信
 ms.assetid: f9cf8491-0f5a-4d83-849f-3edb77488092
 keywords:
 - WMI WDK カーネル、イベント追跡
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838437"
 ---
-# <a name="sending-an-event-with-wmifireevent"></a>WmiFireEvent を使用したイベントの送信
+# <a name="sending-an-event-with-wmifireevent"></a>WmiFireEvent でのイベントの送信
 
 
 

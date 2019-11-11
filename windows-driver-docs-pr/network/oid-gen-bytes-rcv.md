@@ -1,36 +1,38 @@
 ---
 title: OID_GEN_BYTES_RCV
-description: クエリとして NDIS および上にあるドライバーはミニポート アダプターが受信したバイトの合計数を決定するのに OID_GEN_BYTES_RCV OID を使用します。
+description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_BYTES_RCV OID を使用して、ミニポートアダプターが受信した合計バイト数を確認します。
 ms.assetid: e613e155-e4ff-48e4-8087-20ecad3c4644
-ms.date: 08/08/2017
-keywords: -OID_GEN_BYTES_RCV ネットワーク ドライバーが Windows Vista 以降
+ms.date: 11/01/2019
+keywords: -Windows Vista 以降の OID_GEN_BYTES_RCV ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bc492c7c2a3605925401dbc0cb0b16a375a1f96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0df977f94e4ae3fd7ce85f45609f0049322bc6cc
+ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323583"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73443007"
 ---
-# <a name="oidgenbytesrcv"></a>OID\_GEN\_バイト\_受信
+# <a name="oid_gen_bytes_rcv"></a>OID\_GEN\_BYTES\_RCV
 
 
-クエリ、NDIS と関連付けたドライバーを使用、OID\_GEN\_バイト\_ミニポート アダプターが受信したバイトの合計数を決定する受信の OID。
+クエリとして、NDIS およびそれ以降のドライバーは、\_GEN\_バイト\_RCV OID を使用して、ミニポートアダプターが受信した合計バイト数を決定します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。 (「解説」を参照してください セクション)
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。 (「解説」を参照してください)
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 参照してください、 [OID\_GEN\_統計](oid-gen-statistics.md)統計情報の詳細については OID。
+NDIS は、この OID をミニポートドライバー用に処理します。 統計の詳細については、 [oid\_GEN\_statistics](oid-gen-statistics.md) oid を参照してください。
 
-合計バイト数は、受信主導のバイト数、受信マルチキャスト バイト数およびブロードキャストの受信バイト数の合計です。 この値は、によって返される値の合計と同じ、 [OID\_GEN\_ダイレクト\_バイト\_受信](oid-gen-directed-bytes-rcv.md)、 [OID\_GEN\_マルチキャスト\_バイト\_受信](oid-gen-multicast-bytes-rcv.md)、および[OID\_GEN\_ブロードキャスト\_バイト\_受信](oid-gen-broadcast-bytes-rcv.md)Oid。
+合計バイト数は、受信方向のバイト数、受信マルチキャストのバイト数、および受信/ブロードキャストのバイト数の合計です。 この値は、Oid\_GEN によって返される値の合計と同じであり、 [\_バイト\_rcv](oid-gen-directed-bytes-rcv.md)、 [oid\_GEN\_マルチキャスト\_バイト\_RCV](oid-gen-multicast-bytes-rcv.md)\_送られます。、および[OID\_GEN\_ブロードキャスト\_バイト\_RCV](oid-gen-broadcast-bytes-rcv.md) oid です。
+
+このカウントは、RFC 2863 で説明されている*ifInOctets*カウンターと同じです。
 
 <a name="requirements"></a>要件
 ------------
@@ -43,7 +45,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -51,13 +53,13 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_GEN\_ブロードキャスト\_バイト\_受信](oid-gen-broadcast-bytes-rcv.md)
+[OID\_GEN\_ブロードキャスト\_バイト\_RCV](oid-gen-broadcast-bytes-rcv.md)
 
-[OID\_GEN\_ダイレクト\_バイト\_受信](oid-gen-directed-bytes-rcv.md)
+[OID\_GEN\_ダイレクト\_バイト\_RCV](oid-gen-directed-bytes-rcv.md)
 
-[OID\_GEN\_マルチキャスト\_バイト\_受信](oid-gen-multicast-bytes-rcv.md)
+[OID\_GEN\_マルチキャスト\_バイト\_RCV](oid-gen-multicast-bytes-rcv.md)
 
-[OID\_GEN\_統計情報](oid-gen-statistics.md)
+[OID\_GEN\_の統計情報](oid-gen-statistics.md)
 
  
 

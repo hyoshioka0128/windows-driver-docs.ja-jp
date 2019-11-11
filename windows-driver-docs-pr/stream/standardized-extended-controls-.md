@@ -1,5 +1,5 @@
 ---
-title: 拡張カメラコントロール
+title: 拡張カメラ コントロール
 description: 拡張コントロールは、KSK プロパティ機構を使用して、カメラコントロールをアプリケーションに公開します。
 ms.assetid: B480C007-7DCA-4CFB-9169-BE2D0B2D2137
 ms.date: 04/20/2017
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837693"
 ---
-# <a name="extended-camera-controls"></a>拡張カメラコントロール
+# <a name="extended-camera-controls"></a>拡張カメラ コントロール
 
 拡張コントロールは、 **Ksk プロパティ**機構を使用して、カメラコントロールをアプリケーションに公開します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "72837693"
 - [整数 ISO](#integer-iso)
 - [高度なフォーカス](#advanced-focus)
 - [『](#flash)
-- [Zoom](#zoom)
+- [倍率](#zoom)
 - [シーンモード](#scene-mode)
 
 一部のコントロールは非同期コントロールとしてアプリケーションに公開され、他のコントロールは同期コントロールとして公開されます。
@@ -88,10 +88,10 @@ Ksk プロパティ[ **\_CAMERACONTROL\_拡張\_メタデータ**](https://docs.
 
 次の IMFAttributes は、 **mfapi .h**で定義されています。 これらは、MF キャプチャパイプラインおよび WinRT で必要です。 MFT0 は、フォト確認フレームが DevProxy を超えてフローしないため、フォト確認用の IMFAttributes を設定しないことに注意してください。
 
-| 属性 (GUID)                            | データ型 |
+| 属性 (GUID)                            | データの種類 |
 |---------------------------------------------|-----------|
 | **MF\_キャプチャ\_のメタデータ\_FOCUSSTATE**       | UINT32    |
-| **MF\_キャプチャ\_のメタデータ\_FACEROIS**         | Blob      |
+| **MF\_キャプチャ\_のメタデータ\_FACEROIS**         | バイナリ      |
 | **MF\_\_メタデータ\_フレーム\_RAWSTREAM のキャプチャ** | IUnknown  |
 
 **MF\_CAPTURE\_メタデータ\_フレーム\_RAWSTREAM** imfattributes が作成され、IMFMediaBuffer へのポインターが含まれている devproxy によって**CaptureMetadata\_** にアタッチされます。未加工のメタデータバッファーに関連付けられたインターフェイス (**Ksk ストリーム\_メタデータ\_情報。データ**)。
@@ -151,7 +151,7 @@ FOCUSSTATE プロパティ ID [ **\_\_\_Ksk プロパティ**](https://docs.micr
 
 エンコーダーオプションのプロパティバッグには、使用可能なエンコードオプションのプロパティを指定する PROPBAG2 構造体の配列が含まれています。 ハードウェア JPEG エンコーダーに設定されている EXIF エンコーダーオプションは、encoder option プロパティバッグの次のプロパティによって識別されます。
 
-| プロパティ名      | VARTYPE         | 値                                                                                                                                                       | 適用可能なコーデック |
+| プロパティ名      | VARTYPE         | Value                                                                                                                                                       | 適用可能なコーデック |
 |--------------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | **SampleMetaData** | **VT\_不明** | EXIF データを含む OEM サブ属性を含む CaptureMetaData attribute bag **\_** の IMFAttributes インターフェイスへのポインター。 | JPEG              |
 
@@ -173,7 +173,7 @@ MFT0 から HW JPEG エンコーダーに EXIF データを渡すために、パ
 
 2. Oem exif サブ属性の GUID とデータ型に基づいて EXIF データ blob を取得するために、前の手順で取得したインターフェイスから、OEM EXIF サブ属性に対して**Getblob**または**getunknown**を呼び出します。
 
-## <a name="thumbnail"></a>サムネイル
+## <a name="thumbnail"></a>Thumbnail
 
 MFT0 は、カメラドライバーのサムネイルを生成するためには必要ありません。 カメラアプリは、独自のサムネイルを生成することが想定されています。 サムネイルは、写真の確認画像、HW JPEG エンコーダー、またはフルサイズのイメージのサイズ変更から生成されます。 これはアプリの開発者にとってです。 Windows 8.1 アプリとの API およびアプリの互換性を維持するには、カメラドライバーが **\_CAMERACONTROL\_拡張\_PHOTOTHUMBNAIL コントロールに Ksk プロパティ**を実装してはなりません。
 
@@ -185,11 +185,11 @@ MFT0 は、カメラドライバーのサムネイルを生成するためには
 
 [**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusmode)プロパティ ID は、整数 ISO DDI に関連付けられている唯一の制御です。
 
-## <a name="flash"></a>点滅
+## <a name="flash"></a>Flash
 
 [**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FLASHMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-flashmode)プロパティ ID は、flash DDI に関連付けられている唯一の制御です。
 
-## <a name="zoom"></a>Zoom
+## <a name="zoom"></a>ズーム
 
 [**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_zoom**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-zoom)プロパティ ID は、zoom DDI に関連付けられている唯一のコントロールです。
 

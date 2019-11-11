@@ -1,5 +1,5 @@
 ---
-title: Mobile ブロードバンド (MBB) WDF クラス拡張機能の概要 (MBBCx)
+title: モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx) の概要
 description: モバイルブロードバンド (MBB) WDF クラス拡張の概要 (MBBCx)。
 ms.assetid: FA4D1C2D-270B-40C4-A922-8ABDDE4D8444
 keywords:
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72835535"
 ---
-# <a name="introduction-to-the-mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>Mobile ブロードバンド (MBB) WDF クラス拡張機能の概要 (MBBCx)
+# <a name="introduction-to-the-mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx) の概要
 
 [!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
@@ -34,6 +34,6 @@ MBB アダプタークライアントドライバーは、フレームワーク�
 
 このセクションのトピックでは、基本的な NIC 用に NetAdapterCx クライアントドライバーを記述する方法が既にわかっていることを前提としているため、MBBCx 固有のコードにのみ焦点を当てます。
 
-このセクションは、次のトピックで構成されています。
+ここでは、次のトピックについて説明します。
 
-- [MBBCx クライアントドライバーの作成](writing-an-mbbcx-client-driver.md)
+- [Writing an MBBCx client driver (MBBCx クライアント ドライバーの作成)](writing-an-mbbcx-client-driver.md)

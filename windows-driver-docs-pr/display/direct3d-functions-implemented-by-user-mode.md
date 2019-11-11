@@ -1,5 +1,5 @@
 ---
-title: ユーザーモード表示ドライバーによって実装される Direct3D 関数
+title: ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
 description: このトピックでは、ユーザーモード表示ドライバーによって実装され、Microsoft Direct3D ランタイムに提供され、オペレーティングシステムから呼び出すことができる関数について説明します。
 ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 10/12/2018
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839009"
 ---
-# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザーモード表示ドライバーによって実装される Direct3D 関数
+# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
 
 このトピックでは、ユーザーモード表示ドライバーによって実装され、Microsoft Direct3D ランタイムに提供され、オペレーティングシステムから呼び出すことができる関数について説明します。
 
@@ -101,7 +101,7 @@ Direct3D ランタイムは、 **D3DDDI_ADAPTERFUNCS**の*PfnCreateDevice*メン
 
 このセクションでは、ユーザーモードの表示ドライバー関数によって使用される構造について説明します。 Microsoft Direct3D ランタイムは、ユーザーモードの表示ドライバー関数のパラメーターでこれらの構造体へのポインターを渡します。
 
-| 構成 ||
+| 構造体 ||
 |:---|:---|
 |D3DDDIARG_AUTHENTICATEDCHANNELKEYEXCHANGE|D3DDDIARG_BLT|
 |D3DDDIARG_BUFFERBLT|D3DDDIARG_BUFFERBLT1|

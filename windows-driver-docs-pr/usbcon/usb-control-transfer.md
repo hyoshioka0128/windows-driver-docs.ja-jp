@@ -1,103 +1,103 @@
 ---
-Description: このトピックでは、制御転送の構造と、クライアントドライバーがデバイスにコントロール要求を送信する方法について説明します。
+Description: このトピックでは、コントロール転送の構造についてと、クライアント ドライバーでデバイスに制御要求を送信する方法について説明します。
 title: USB コントロール転送の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 6b36ef04e75ced0c51a1c145024ee67db01ddfee
-ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.openlocfilehash: 23cf718b0797d6ca04ea4f96a91b59b1564e3d39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72007592"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844834"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>USB コントロール転送の送信方法
 
 
-このトピックでは、制御転送の構造と、クライアントドライバーがデバイスにコントロール要求を送信する方法について説明します。
+このトピックでは、コントロール転送の構造についてと、クライアント ドライバーでデバイスに制御要求を送信する方法について説明します。
 
 このトピックの内容:
 
 -   [既定のエンドポイントについて](#about-the-default-endpoint)
 -   [コントロール転送のレイアウト](#layout-of-a-control-transfer)
--   [サポートされているドライバーモデル](#supported-driver-models)
+-   [サポートされているドライバー モデル](#supported-driver-models)
     -   [関連テクノロジ](#related-technologies)
 -   [前提条件](#prerequisites)
--   [制御転送要求を送信するための Microsoft 定義のメソッド](#microsoft-defined-methods-for-sending-control-transfer-requests)
--   [ベンダコマンドの制御転送を送信する方法-KMDF](#how-to-send-a-control-transfer-for-vendor-commands---kmdf)
--   [GET @ no__t-1STATUS-UMDF の制御転送を送信する方法](#how-to-send-a-control-transfer-for-get_status---umdf)
+-   [コントロール転送要求を送信するための Microsoft 定義メソッド](#microsoft-defined-methods-for-sending-control-transfer-requests)
+-   [ベンダー コマンドのコントロール転送を送信する方法 - KMDF](#how-to-send-a-control-transfer-for-vendor-commands---kmdf)
+-   [GET\_STATUS のコントロール転送を送信する方法 - UMDF](#how-to-send-a-control-transfer-for-get_status---umdf)
 
 ## <a name="about-the-default-endpoint"></a>既定のエンドポイントについて
 
 
-すべての USB デバイスは、*既定のエンドポイント*と呼ばれるエンドポイントを少なくとも1つサポートする必要があります。 既定のエンドポイントを対象とする転送は、*制御転送*と呼ばれます。 制御転送の目的は、ホストがデバイス情報を取得したり、デバイスを構成したり、デバイスに固有の制御操作を実行したりできるようにすることです。
+すべての USB デバイスで、*既定のエンドポイント*と呼ばれているエンドポイントを少なくとも 1 つサポートする必要があります。 既定のエンドポイントを対象とする転送は、*コントロール転送*と呼ばれています。 コントロール転送の目的は、ホストがデバイス情報を取得したり、デバイスを構成したり、デバイスに固有のコントロール操作を実行したりできるようにすることです。
 
-まず、既定のエンドポイントの特性について説明します。
+まず、既定のエンドポイントの特性について調べることから始めます。
 
--   既定のエンドポイントのアドレスは0です。
--   既定のエンドポイントは双方向です。つまり、ホストはエンドポイントにデータを送信し、1つの転送内のデータを受信できます。
--   既定のエンドポイントはデバイスレベルで使用でき、デバイスのインターフェイスには定義されていません。
--   既定のエンドポイントは、ホストとデバイス間の接続が確立されるとすぐにアクティブになります。 構成が選択される前でもアクティブになります。
--   既定のエンドポイントの最大パケットサイズは、デバイスのバス速度によって異なります。 低速度、8バイト。完全かつ高速、64バイト。SuperSpeed、512バイト。
+-   既定のエンドポイントのアドレスは 0 です。
+-   既定のエンドポイントは双方向です。つまり、ホストでは、1 回の転送内でエンドポイントにデータを送信し、エンドポイントからデータを受信できます。
+-   既定のエンドポイントはデバイス レベルで利用できます。デバイスのインターフェイスには定義されていません。
+-   既定のエンドポイントは、ホストとデバイスの間の接続が確立された直後にアクティブになります。 構成が選択される前でもアクティブになります。
+-   既定のエンドポイントの最大パケット サイズは、デバイスのバス速度によって異なります。 低速、8 バイト。全速/高速、64 バイト。SuperSpeed、512 バイト。
 
 ## <a name="layout-of-a-control-transfer"></a>コントロール転送のレイアウト
 
 
-制御転送は優先度の高い転送であるため、一定量の帯域幅が、ホストによってバスに予約されます。 低および全速度のデバイスの場合、帯域幅の 10%高および SuperSpeed では 20% がデバイスを転送します。 次に、コントロール転送のレイアウトを見てみましょう。
+コントロール転送は優先度の高い転送であるため、一定量の帯域幅がホストによってバスに予約されます。 低速転送と全速転送のデバイスの場合、帯域幅の 10% が、高速転送と SuperSpeed 転送のデバイスの場合、20% が予約されます。 次に、コントロール転送のレイアウトを見てみましょう。
 
-![usb 制御の転送](images/control-transfer.png)
+![USB コントロール転送](images/control-transfer.png)
 
-制御転送は、*セットアップトランザクション*、*データトランザクション*、および*ステータストランザクション*の3つのトランザクションに分割されます。 各トランザクションには、*トークンパケット*、*データパケット*、および*ハンドシェイクパケット*の3種類のパケットが含まれています。
+コントロール転送は、"*セットアップ トランザクション*"、"*データ トランザクション*"、"*ステータス トランザクション*" の 3 つのトランザクションに分けられます。 各トランザクションには、"*トークン パケット*"、"*データ パケット*"、"*ハンドシェイク パケット*" という 3 種類のパケットが含まれています。
 
-一部のフィールドは、すべてのパケットに共通です。 これらのフィールドは次のとおりです。
+一部のフィールドはすべてのパケットに共通しています。 これらのフィールドを次に示します。
 
--   パケットの先頭を示す同期フィールドです。
--   パケットの種類、トランザクションの方向を示すパケット識別子 (PID)、およびハンドシェイクパケットの場合は、トランザクションの成功または失敗を示します。
+-   パケットの先頭を示す同期フィールド。
+-   パケットの種類、トランザクションの方向、ハンドシェイク パケットの場合はトランザクションの成功または失敗を示すパケット識別子 (PID)。
 -   EOP フィールドは、パケットの末尾を示します。
 
 その他のフィールドは、パケットの種類によって異なります。
 
--   **トークンパケット**
+-   **トークン パケット**
 
-    すべてのセットアップトランザクションは、トークンパケットで開始されます。 パケットの構造を次に示します。 ホストは常にトークンパケットを送信します。
+    すべてのセットアップ トランザクションは、トークン パケットから始まります。 パケットの構造を次に示します。 ホストは常にトークン パケットを送信します。
 
-    ![トークンのパケットレイアウト](images/token.png)
+    ![トークン パケット レイアウト](images/token.png)
 
-    PID 値は、トークンパケットの種類を示します。 有効な値は次のとおりです。
+    PID 値は、トークン パケットの種類を示します。 設定できる値は次のとおりです。
 
-    -   セットアップ制御転送のセットアップトランザクションの開始を示します。
-    -   からホストがデバイスからのデータを要求している (ケース読み取り) ことを示します。
-    -   入出力ホストがデバイスにデータを送信している (書き込みケース) ことを示します。
-    -   ディメンジョンフレームの開始を示します。 この種類のトークンパケットには、11ビットのフレーム番号が含まれています。 ホストは、SOF パケットを送信します。 このパケットが送信される頻度は、バス速度によって異なります。 全速度で、ホストは1ミリ秒ごとにパケットを送信します。高速バス上の125マイクロ秒ごと。
-
-<!-- -->
-
--   **データパケット**
-
-    トークンパケットの直後には、ペイロードを含むデータパケットが表示されます。 各データパケットが格納できるバイト数は、既定のエンドポイントの最大パケットサイズによって異なります。 データパケットは、転送の方向に応じて、ホストまたはデバイスによって送信できます。
-
-    ![データパケットのレイアウト](images/data.png)
+    -   SETUP:コントロール転送のセットアップ トランザクションの開始を示します。
+    -   IN:ホストがデバイスにデータを要求していることを示します (読み取りの場合)。
+    -   OUT:ホストによってデバイスにデータが送信されていることを示します (書き込みの場合)。
+    -   SOF:フレームの開始を示します。 この種類のトークン パケットには、11 ビットのフレーム番号が含まれています。 ホストから SOF パケットが送信されます。 このパケットが送信される頻度は、バス速度によって異なります。 全速の場合、ホストは 1 ミリ秒ごとにパケットを送信します。高速バスの場合、125 マイクロ秒ごとです。
 
 <!-- -->
 
--   **ハンドシェイクパケット**
+-   **データ パケット**
 
-    データパケットの直後には、ハンドシェイクパケットがあります。 パケットの PID は、パケットがホストまたはデバイスによって受信されたかどうかを示します。 ハンドシェイクパケットは、転送の方向に応じて、ホストまたはデバイスによって送信できます。
+    トークン パケットの直後に続くのが、ペイロードを含むデータ パケットです。 各データ パケットで格納できるバイト数は、既定のエンドポイントの最大パケット サイズによって異なります。 データ パケットは、転送の方向に応じてホストまたはデバイスによって送信されます。
 
-    ![ハンドシェイクパケットレイアウト](images/handshake.png)
+    ![データ パケット レイアウト](images/data.png)
 
-トランザクションとパケットの構造は、Beagle、Ellisys、LeCroy USB プロトコルアナライザーなどの任意の USB アナライザーを使用して確認できます。 Analyzer デバイスは、ネットワーク経由で USB デバイスとの間でデータを送受信する方法を示しています。 この例では、LeCroy USB アナライザーによってキャプチャされたトレースをいくつか確認してみましょう。 この例は、情報のみを対象としています。 これは Microsoft が保証するものではありません。
+<!-- -->
 
--   **セットアップトランザクション**
+-   **ハンドシェイク パケット**
 
-    ホストは常に制御転送を開始します。 これは、セットアップトランザクションを送信することによって行われます。 このトランザクションには、*セットアップトークン*と呼ばれるトークンパケットと、その後に8バイトのデータパケットが含まれます。 このスクリーンショットは、セットアップトランザクションの例を示しています。
+    データ パケットの直後に続くのがハンドシェイク パケットです。 パケットの PID は、パケットがホストによって受信されたのか、デバイスによって受信されたのかを示します。 ハンドシェイク パケットは、転送の方向に応じてホストまたはデバイスによって送信されます。
 
-    ![セットアップトランザクションのトレース。](images/setup-trans.png)
+    ![ハンドシェイク パケット レイアウト](images/handshake.png)
 
-    前のトレースでは、ホストはセットアップトークンパケット \#434 を送信することによって、コントロールの転送を開始します ( **H ↓**によって示されます)。 PID によってセットアップトークンを示すセットアップが指定されていることに注意してください。 PID の後に、デバイスアドレスとエンドポイントのアドレスが続きます。 制御転送の場合、そのエンドポイントアドレスは常に0です。
+トランザクションとパケットの構造は、Beagle、Ellisys、LeCroy USB プロトコル アナライザーなど、あらゆる USB アナライザーを使用して確認できます。 アナライザー デバイスには、通信回線経由で USB デバイスとの間でデータを送受信する方法が示されます。 この例では、LeCroy USB アナライザーによってキャプチャされたトレースをいくつか確認してみましょう。 この例は、情報提供目的のみで用意されています。 Microsoft がこの製品を推薦するものではありません。
 
-    次に、ホストはデータパケット \#435 を送信します。 PID は DATA0 であり、その値はパケットシーケンスに使用されます (説明されています)。 PID の後には、この要求に関する主要な情報を含む8バイトが続きます。 これらの8バイトは、要求の種類と、デバイスが応答を書き込むバッファーのサイズを示します。
+-   **セットアップ トランザクション**
 
-    すべてのバイトは逆順に受信されます。 セクション9.3 で説明したように、次のフィールドと値が表示されます。
+    ホストから常にコントロール転送が開始されます。 これはセットアップ トランザクションを送信することによって行われます。 このトランザクションには "*セットアップ トークン*" と呼ばれているトークン パケットが含まれ、その後に 8 バイトのデータ パケットが続きます。 このスクリーンショットでは、セットアップ トランザクションの例を示しています。
+
+    ![セットアップ トランザクションのトレース。](images/setup-trans.png)
+
+    前のトレースでは、セットアップ トークン パケット \#434 を送信することによってホストによりコントロール転送が開始されます (**H↓** がそれを示しています)。 PID によってセットアップ トークンを示す SETUP が指定されることにご注意ください。 PID の後に、デバイス アドレスとエンドポイントのアドレスが続きます。 コントロール転送の場合、そのエンドポイント アドレスは常に 0 です。
+
+    次に、ホストからデータ パケット \#435 が送信されます。 PID は DATA0 であり、その値はパケット シーケンスに使用されます (これについては、これから説明します)。 PID の後には、この要求に関する主要な情報を含む 8 バイトが続きます。 これらの 8 バイトは、要求の種類と、デバイスがその応答を書き込むバッファーのサイズを示します。
+
+    すべてのバイトは逆順で受信されます。 セクション 9.3 で説明したように、次のフィールドと値が表示されます。
 
     <table>
     <colgroup>
@@ -110,189 +110,189 @@ ms.locfileid: "72007592"
     <tr class="header">
     <th>フィールド</th>
     <th>サイズ</th>
-    <th>値</th>
+    <th>Value</th>
     <th>説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td><strong>bmrequesttype</strong> (「9.3.1 bmrequesttype」を参照)</td>
+    <td><strong>bmRequestType</strong> (「9.3.1 bmRequestType」を参照)</td>
     <td>1</td>
     <td>0x80</td>
-    <td><p>データ転送方向は、デバイスからホスト (D7 は 1) です。</p>
-    <p>要求は標準要求 (D6...D5 は 0)</p>
-    <p>要求の受信者がデバイスである (D4 が 0)</p></td>
+    <td><p>データ転送方向はデバイスからホストです (D7 は 1 です)</p>
+    <p>要求は標準要求です (D6...D5 は 0)</p>
+    <p>要求の受信者はデバイスです (D4 は 0)</p></td>
     </tr>
     <tr class="even">
-    <td><strong>Brequest</strong> (「9.3.2 and Table 9-4」を参照)</td>
+    <td><strong>bRequest</strong> (セクション 9.3.2 と表 9-4 を参照)</td>
     <td>1</td>
     <td>0x06</td>
     <td>要求の種類は GET_DESCRIPTOR です。</td>
     </tr>
     <tr class="odd">
-    <td><strong>Wvalue</strong> (表9-5 を参照)</td>
+    <td><strong>wValue</strong> (表 9-5 参照)</td>
     <td>2</td>
     <td>0x0100</td>
-    <td>要求値は、記述子の種類がデバイスであることを示します。</td>
+    <td>要求値は、記述子の種類が DEVICE であることを示します。</td>
     </tr>
     <tr class="even">
-    <td><strong>wIndex</strong>(セクション9.3.4 を参照)</td>
+    <td><strong>wIndex</strong>(セクション 9.3.4 を参照)</td>
     <td>2</td>
     <td>0x0000</td>
-    <td><p>ホストからデバイス (D7 は 1) までの方向です。</p>
-    <p>エンドポイント番号が0です。</p></td>
+    <td><p>方向はホストからデバイスです (D7 は 1)。</p>
+    <p>エンドポイント番号は 0 です。</p></td>
     </tr>
     <tr class="odd">
-    <td><strong>Wlength</strong> (セクション9.3.5 を参照)</td>
+    <td><strong>wLength</strong> (セクション 9.3.5 を参照)</td>
     <td>2</td>
     <td>0x0012</td>
-    <td>要求では18バイトを取得します。</td>
+    <td>要求は 18 バイトを取得することです。</td>
     </tr>
     </tbody>
     </table>
 
-    このため、この制御 (読み取り) 転送では、ホストはデバイス記述子を取得する要求を送信し、その記述子を保持するために、転送の長さとして18バイトを指定します。 デバイスが18バイトを送信する方法は、既定のエンドポイントが1つのトランザクションで送信できるデータの量によって異なります。 この情報は、データトランザクション内のデバイスによって返されるデバイス記述子に含まれています。
+    そのため、このコントロール (読み取り) 転送では、ホストがデバイスの記述子を取得する要求を送信し、その記述子を保持するため、転送長として 18 バイトを指定するものと結論付けることができます。 デバイスが 18 バイトを送信する方法は、既定のエンドポイントが 1 回のトランザクションで送信できるデータの量によって異なります。 その情報は、データ トランザクションでデバイスによって返されるデバイスの記述子に含まれます。
 
-    応答として、デバイスは、 **↓**によって示されるハンドシェイクパケット (\#436) を送信します。 PID 値が ACK (ACK パケット) であることに注意してください。 これは、デバイスがトランザクションを受信確認したことを示します。
+    応答の中で、デバイスからハンドシェイク パケットが送信されます (\#436、**D↓** で示されます)。 PID 値が ACK (ACK パケット) であることにご注意ください。 これは、デバイスがトランザクションを受信確認したことを示します。
 
--   **データトランザクション**
+-   **データ トランザクション**
 
-    次に、要求に応答してデバイスが返す内容を見てみましょう。 実際のデータは、データトランザクションで転送されます。
+    次に、要求に応答してデバイスから返される内容を見てみましょう。 実際のデータは、データ トランザクションで転送されます。
 
-    データトランザクションのトレースを次に示します。
+    データ トランザクションのトレースは次のようになります。
 
-    ![データトランザクション例のトレース。](images/datra-trans.png)
+    ![サンプル データ トランザクションのトレース。](images/datra-trans.png)
 
-    ACK パケットを受信すると、ホストはデータトランザクションを開始します。 トランザクションを開始するには、(トークン内で呼び出された) のように方向を持つトークンパケット (\#450) を送信します。
+    ACK パケットを受信すると、ホストではデータ トランザクションが開始されます。 トランザクションを開始するために、IN 方向でトークン パケット (\#450) が送信されます (IN トークンと呼ばれています)。
 
-    応答として、デバイスは、トークン内のの後に続くデータパケット (\#451) を送信します。 このデータパケットには、実際のデバイス記述子が含まれています。 最初のバイトは、デバイス記述子の長さ (18 バイト) を示します (0x12)。 このデータパケットの最後のバイトは、既定のエンドポイントでサポートされる最大パケットサイズを示します。 この場合は、デバイスが既定のエンドポイントを使用して一度に8バイトを送信できることがわかります。
+    応答の中で、IN トークンに続くデータ パケット (\#451) がデバイスから送信されます。 このデータ パケットには、実際のデバイス記述子が含まれています。 最初のバイトはデバイス記述子の長さ、18 バイト (0x12) を示します。 このデータ パケットの最後のバイトは、既定のエンドポイントでサポートされる最大パケット サイズを示します。 この例の場合、デバイスが既定のエンドポイントを使用して一度に 8 バイトを送信できることがわかります。
 
-    **メモ** 既定のエンドポイントの最大パケットサイズは、デバイスの速度によって異なります。 高速デバイスの既定のエンドポイントは64バイトです。低速度のデバイスは8バイトです。
+    **注記** 既定のエンドポイントの最大パケット サイズは、デバイスの速度によって異なります。 高速デバイスの既定のエンドポイントは 64 バイトです。低速デバイスの場合は 8 バイトです。
 
-    ホストは、ACK パケット (\#452) をデバイスに送信することによって、データトランザクションを確認します。
+    ホストでは ACK パケット (\#452) をデバイスに送信することでデータ トランザクションを受信確認します。
 
-    返されるデータの量を計算してみましょう。 セットアップトランザクションのデータパケット (\#435) の**Wlength**フィールドで、ホストから18バイトが要求されました。 データトランザクションでは、デバイス記述子の最初の8バイトだけがデバイスから受信されていることがわかります。 ホストは、残りの10バイトに格納されている情報をどのように受信するのでしょうか。 デバイスは、次の2つのトランザクションで実行します。8バイトと最後の2バイト。
+    返されるデータの量を計算しましょう。 セットアップ トランザクションのデータ パケット (\#435) の **wLength** フィールドで、ホストから 18 バイトが要求されました。 データ トランザクションで、デバイス記述子の最初の 8 バイトだけがデバイスから受信されたことがわかります。 それでは、残りの 10 バイトに保存されている情報をホストはどのように受信するのでしょうか。 デバイスではそれが次の 2 つのトランザクションで行われます。8 バイトと最後の 2 バイトです。
 
-    ホストが既定のエンドポイントの最大パケットサイズを認識したので、ホストは新しいデータトランザクションを開始し、パケットサイズに基づいて次の部分を要求します。
+    これで、既定のエンドポイントの最大パケット サイズがホストに認識されたので、ホストでは、新しいデータ トランザクションを開始し、パケット サイズに基づいて次の部分を要求します。
 
-    次のデータトランザクションは次のようになります。
+    次のデータ トランザクションはこのようになります。
 
-    ![データトランザクション例のトレース。](images/datra-trans2.png)
+    ![サンプル データ トランザクションのトレース。](images/datra-trans2.png)
 
-    ホストは、トークン (\#463) を送信し、デバイスから次の8バイトを要求することによって、前のデータトランザクションを開始します。 デバイスは、デバイス記述子の次の8バイトを含むデータパケット (\#464) で応答します。
+    ホストでは、IN トークン (\#463) を送信し、デバイスに次の 8 バイトを要求することで前述のデータ トランザクションを開始します。 デバイスは、デバイス記述子の次の 8 バイトを含むデータパケット (\#464) で応答します。
 
-    8バイトが受信されると、ホストはデバイスに ACK パケット (\#465) を送信します。
+    8 バイトが受信されると、ホストからデバイスに ACK パケット (\#465) が送信されます。
 
-    次に、ホストは、別のデータトランザクションの最後の2バイトを次のように要求します。
+    次に、ホストでは、次のように別のデータ トランザクションで最後の 2 バイトを要求します。
 
-    ![データトランザクション例のトレース。](images/datra-trans3.png)
+    ![サンプル データ トランザクションのトレース。](images/datra-trans3.png)
 
-    そのため、18バイトをデバイスからホストに転送する場合、ホストは、転送されたバイト数と、3つのデータトランザクション (8 + 8 + 2) を開始したバイト数を追跡します。
+    結果的に、デバイスからホストに 18 バイトを転送するために、ホストでは転送されたバイト数を追跡記録し、3 回のデータ トランザクション (8+8+2) を開始したことがわかります。
 
-    **メモ**  データトランザクション19、23、26におけるデータパケットの PID に注意してください。 PID は DATA0 と DATA1 の間で交互に切り替わります。 このシーケンスは、データの切り替えと呼ばれます。 複数のデータトランザクションがある場合は、データ切り替えを使用してパケットシーケンスが検証されます。 このメソッドを使用すると、データパケットが重複したり失われたりしないようにすることができます。
+    **注記** データ トランザクション 19、23、26 のデータ パケットの PID にご注意ください。 PID は DATA0 と DATA1 の間で交互に切り替わります。 このシーケンスはデータ切り替えと呼ばれています。 複数のデータ トランザクションが存在するとき、パケットのシーケンスを確認する目的でデータ切り替えが利用されます。 この手法により、データ パケットが重複したり、失われたりすることはありません。
 
-    統合データパケットをデバイス記述子の構造にマップすることによって (表9-8 を参照)、次のフィールドと値が表示されます。
+    統合データ パケットをデバイス記述子の構造にマップすることで (表 9-8 参照)、次のフィールドと値が表示されます。
 
-    | フィールド                  | サイズ | 値  | 説明                                                                       |
+    | フィールド                  | サイズ | Value  | 説明                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | デバイス記述子の長さ (18 バイト)。                               |
-    | **B記述子の種類**    | 1    | 0x01   | 記述子の種類は device です。                                                    |
-    | **bcdUSB**             | 2    | 0x0100 | 仕様のバージョン番号は1.00 です。                                         |
-    | **bDeviceClass**       | 1    | 0x00   | デバイスクラスは0です。 構成内の各インターフェイスには、クラス情報があります。 |
-    | **bDeviceSubClass**    | 1    | 0x00   | Device クラスが0であるため、サブクラスは0です。                                          |
-    | **bProtocol**          | 1    | 0x00   | プロトコルは0です。 このデバイスはクラス固有のプロトコルを使用しません。             |
-    | **bMaxPacketSize0**    | 1    | 0x08   | エンドポイントの最大パケットサイズは8バイトです。                               |
+    | **bDescriptorType**    | 1    | 0x01   | 記述子の種類はデバイスです。                                                    |
+    | **bcdUSB**             | 2    | 0x0100 | 仕様バージョン番号は 1.00 です。                                         |
+    | **bDeviceClass**       | 1    | 0x00   | デバイス クラスは 0 です。 構成内の各インターフェイスにはクラス情報が与えられます。 |
+    | **bDeviceSubClass**    | 1    | 0x00   | デバイス クラスが 0 のため、サブクラスは 0 です。                                          |
+    | **bProtocol**          | 1    | 0x00   | プロトコルは 0 です。 このデバイスでは、いかなるクラス固有プロトコルも使用されません。             |
+    | **bMaxPacketSize0**    | 1    | 0x08   | エンドポイントの最大パケット サイズは 8 バイトです。                               |
     | **idVendor**           | 2    | 0x0562 | テレックス通信。                                                             |
     | **idProduct**          | 2    | 0x0002 | USB マイク。                                                                   |
     | **bcdDevice**          | 2    | 0x0100 | デバイスのリリース番号を示します。                                              |
-    | **iManufacturer**      | 1    | 0x01   | 製造元の文字列。                                                              |
+    | **iManufacturer**      | 1    | 0x01   | 製造元文字列。                                                              |
     | **iProduct**           | 1    | 0x02   | 製品文字列。                                                                   |
     | **iSerialNumber**      | 1    | 0x03   | シリアル番号。                                                                    |
     | **bNumConfigurations** | 1    | 0x01   | 構成の数。                                                         |
 
 
 
-    これらの値を調べることによって、デバイスに関する予備情報がいくつかあります。 デバイスは、低速の USB マイクです。 既定のエンドポイントの最大パケットサイズは8バイトです。 デバイスは、1つの構成をサポートします。
+    これらの値を調べることで、デバイスに関する予備情報を得られます。 このデバイスは低速の USB マイクです。 既定のエンドポイントの最大パケット サイズは 8 バイトです。 このデバイスでは、1 つの構成がサポートされます。
 
--   **状態トランザクション**
+-   **ステータス トランザクション**
 
-    最後に、ホストは最後のトランザクション status transaction を開始することで、コントロールの転送を完了します。
+    最後に、ホストでは、最後のトランザクションであるステータス トランザクションを開始し、コントロール転送を完了とします。
 
-    ![データトランザクション例のトレース。](images/status-trans.png)
+    ![サンプル データ トランザクションのトレース。](images/status-trans.png)
 
-    ホストは、OUT トークンパケット (\#481) を使用してトランザクションを開始します。 このパケットの目的は、デバイスが要求されたすべてのデータを送信したことを確認することです。 この状態トランザクションで送信されたデータパケットはありません。 デバイスは ACK パケットで応答します。 エラーが発生した場合、PID は NAK または停止のいずれかになります。
+    ホストは、OUT トークン パケット (\#481) でトランザクションを開始します。 このパケットの目的は、要求されたすべてのデータをデバイスが送信したことを確認することです。 このステータス トランザクションで送信されたデータ パケットはありません。 デバイスは ACK パケットで応答します。 エラーが発生した場合、PID は NAK か STALL になります。
 
-## <a name="supported-driver-models"></a>サポートされているドライバーモデル
+## <a name="supported-driver-models"></a>サポートされているドライバー モデル
 
 
 ### <a name="related-technologies"></a>関連テクノロジ
 
 -   [カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
--   [ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
+-   [ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [WinUSB](winusb.md)
 
 ## <a name="prerequisites"></a>前提条件
 
 
-クライアントドライバーがパイプを列挙できるようにするには、次の要件が満たされていることを確認します。
+クライアント ドライバーでパイプを列挙するには、次の要件が満たされている必要があります。
 
--   クライアントドライバーによって、フレームワークの USB ターゲットデバイスオブジェクトが作成されている必要があります。
+-   クライアント ドライバーによって、フレームワーク USB ターゲット デバイス オブジェクトが作成されている必要があります。
 
-    Microsoft Visual Studio Professional 2012 で提供されている USB テンプレートを使用している場合は、テンプレートコードによってそれらのタスクが実行されます。 テンプレートコードは、ターゲットデバイスオブジェクトへのハンドルを取得し、デバイスコンテキストに格納します。
+    Microsoft Visual Studio Professional 2012 に付属する USB テンプレートを使用している場合、テンプレート コードでこれらのタスクが実行されます。 テンプレート コードによりターゲット デバイス オブジェクトのハンドルが取得され、デバイス コンテキストに格納されます。
 
-    \* * KMDF クライアントドライバー: * *
+    **KMDF クライアント ドライバー: **
 
-    KMDF クライアントドライバーは、 [**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)メソッドを呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります。 詳細については、「 [USB クライアントドライバーのコード構造 (KMDF)](understanding-the-kmdf-template-code-for-usb.md)について」の「デバイスのソースコード」を参照してください。
+    KMDF クライアント ドライバーでは、[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) メソッドを呼び出すことで WDFUSBDEVICE ハンドルを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (KMDF)](understanding-the-kmdf-template-code-for-usb.md)」の「デバイスのソース コード」を参照してください。
 
-    \* * UMDF client driver: * *
+    **UMDF クライアント ドライバー: **
 
-    UMDF クライアントドライバーは、フレームワークのターゲットデバイスオブジェクトを照会することによって、 [**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)ポインターを取得する必要があります。 詳細については、「 [usb クライアントドライバーコード構造 (UMDF)](understanding-the-umdf-template-code-for-usb.md)について」の「[**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)の実装と usb 固有のタスク」を参照してください。
+    UMDF クライアント ドライバーは、フレームワーク ターゲット デバイス オブジェクトを問い合わせることで、[**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) ポインターを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (UMDF)](understanding-the-umdf-template-code-for-usb.md)」の「[**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 実装と USB 固有のタスク」を参照してください。
 
--   制御転送の最も重要な側面は、セットアップトークンを適切にフォーマットすることです。 要求を送信する前に、次の一連の情報を収集します。
+-   コントロール転送の最も重要な側面は、セットアップ トークンを正しくフォーマットすることです。 要求を送信する前に、次の一連の情報を収集します。
 
-    -   要求の方向: ホストからデバイスまたはデバイスへのホスト。
-    -   要求の受信者: デバイス、インターフェイス、エンドポイント、またはその他。
-    -   要求のカテゴリ: 標準、クラス、またはベンダー。
-    -   GET @ no__t-0DESCRIPTPOR 要求などの要求の種類。 詳細については、USB 仕様のセクション9.5 を参照してください。
-    -   **Wvalue**と**wIndex**の値。 これらの値は、要求の種類によって異なります。
+    -   要求の方向: ホストからデバイス、またはデバイスからホスト。
+    -   要求の受信者: デバイス、インターフェイス、エンドポイント、その他。
+    -   要求のカテゴリ: 標準、クラス、ベンダー。
+    -   要求の種類 (GET\_DESCRIPTPOR 要求など)。 詳細については、USB 仕様のセクション 9.5 を参照してください。
+    -   **wValue** 値と **wIndex** 値。 これらの値は、要求の種類によって異なります。
 
-    すべての情報は、公式の USB 仕様から入手できます。
+    この情報はすべて、公式の USB 仕様から入手できます。
 
--   UMDF ドライバーを作成する場合は、OSR USB Fx2 Learning Kit の UMDF サンプルドライバーから、ヘッダーファイルである Usb @ no__t を取得します。 このヘッダーファイルには、制御転送用のセットアップパケットを書式設定するための便利なマクロと構造が含まれています。
+-   UMDF ドライバーを記述している場合、UMDF Sample Driver for OSR USB Fx2 Learning Kit から Usb\_hw というヘッダー ファイルを取得します。 このヘッダー ファイルには、コントロール転送用のセットアップ パケットをフォーマットするための便利なマクロと構造体が含まれています。
 
-    すべての UMDF ドライバーは、デバイスとの間でデータを送受信するために、カーネルモードドライバーと通信する必要があります。 USB UMDF ドライバーの場合、カーネルモードドライバーは常に Microsoft が提供するドライバー [winusb](winusb.md) (winusb .sys) です。
+    UMDF ドライバーはすべて、デバイスとの間でデータを送受信するために、カーネルモード ドライバーと通信する必要があります。 USB UMDF ドライバーの場合、カーネルモード ドライバーは常に Microsoft 提供ドライバー [WinUSB](winusb.md) (Winusb.sys) になります。
 
-    UMDF ドライバーが USB ドライバースタックの要求を行うたびに、Windows i/o マネージャーが WinUSB に要求を送信します。 WinUSB は要求を受信すると、要求を処理するか、USB ドライバースタックに転送します。
+    UMDF ドライバーから USB ドライバー スタックが要求されるたびに、Windows I/O マネージャーでは、WinUSB に要求を送信します。 WinUSB は要求を受信すると、要求を処理するか、USB ドライバー スタックに転送します。
 
-## <a name="microsoft-defined-methods-for-sending-control-transfer-requests"></a>制御転送要求を送信するための Microsoft 定義のメソッド
+## <a name="microsoft-defined-methods-for-sending-control-transfer-requests"></a>コントロール転送要求を送信するための Microsoft 定義メソッド
 
 
-ホスト上の USB クライアントドライバーは、デバイスに関する情報を取得したり、デバイスを構成したり、ベンダ制御コマンドを送信したりするために、ほとんどの制御要求を開始します。 これらの要求はすべて、次のカテゴリに分類できます。
+ホスト上の USB クライアント ドライバーでは、デバイスに関する情報を取得するか、デバイスを構成するか、ベンダー コントロール コマンドを送信する目的でほとんどの制御要求を開始します。 このような要求はすべて、次に分類できます。
 
--   標準要求-標準要求は、USB 仕様で定義されています。 これらの要求を送信する目的は、デバイス、その構成、インターフェイス、およびエンドポイントに関する情報を取得することです。 各要求の受信者は、要求の種類によって異なります。 受信者は、デバイス、インターフェイス、エンドポイントのどちらでもかまいません。
+-   標準要求 - 標準要求は USB 仕様で定義されています。 この要求を送信する目的は、デバイス、その構成、インターフェイス、エンドポイントに関する情報を取得することです。 各要求の受信者は、要求の種類によって異なります。 受信者には、デバイス、インターフェイス、エンドポイントがあります。
 
-    **メモ** 制御転送のターゲットは常に既定のエンドポイントです。 受信者は、ホストが関心のある情報 (記述子、状態など) を持つデバイスのエンティティです。
+    **注記** コントロール転送の転送先は常に既定のエンドポイントです。 受信者は、ホストがその情報 (記述子やステータスなど) に関心を持っているデバイスのエンティティです。
 
-    これらの要求は、構成要求、機能要求、およびステータス要求にさらに分類できます。
+    以上の要求はさらに、構成要求、機能要求、ステータス要求に分類できます。
 
-    -   構成要求は、デバイスから情報を取得するために送信されます。これにより、ホストは GET @ no__t-0DESCRIPTOR 要求などの情報を構成できます。 これらの要求は、デバイスで特定の構成または別の設定を設定するためにホストによって送信される書き込み要求でもあります。
-    -   機能要求は、デバイス、インターフェイス、またはエンドポイントでサポートされている特定のブール型デバイス設定を有効または無効にするために、クライアントドライバーによって送信されます。
-    -   USB デバイスは、デバイス、エンドポイント、またはインターフェイスの USB 定義ステータスビットを取得または設定するための状態要求をサポートします。
+    -   構成要求は、ホストでそれを構成できるよう、デバイスから情報を取得する目的で送信されます。たとえば、GET\_DESCRIPTOR 要求です。 この要求は、デバイスで特定または代替の構成を設定する目的でホストにより送信される書き込み要求になることもあります。
+    -   機能要求は、デバイス、インターフェイス、またはエンドポイントでサポートされている特定のブール値デバイス設定を有効または無効にする目的で、クライアント ドライバーにより送信されます。
+    -   USB デバイスは、デバイス、インターフェイス、またはエンドポイントの USB 定義ステータス ビットをホストで取得または設定できるよう、ステータス要求に対応しています。
 
-    詳細については、「USB 仕様 (バージョン 2.0)」のセクション9.4 を参照してください。 標準の要求の種類は、ヘッダーファイルである Usbspec. h に定義されています。
+    詳細については、USB 仕様バージョン 2.0 のセクション 9.4 を参照してください。 標準要求の種類は、Usbspec.h というヘッダー ファイルに定義されています。
 
--   クラス要求: 特定のデバイスクラス仕様によって定義されます。
--   仕入先の要求-ベンダーによって提供され、デバイスでサポートされている要求に依存します。
+-   クラス要求: 特定のデバイス クラス仕様によって定義されます。
+-   ベンダー要求: ベンダーにより提供され、デバイスでサポートされている要求によって異なります。
 
-Microsoft 提供の USB スタックは、前のトレースに示されているように、デバイスとのすべてのプロトコル通信を処理します。 ドライバーは、クライアントドライバーがさまざまな方法で制御転送を送信できるようにするデバイスドライバーインターフェイス (DDIs) を公開します。 クライアントドライバーが Windows Driver Foundation (WDF) ドライバーの場合、ルーチンを直接呼び出して、一般的な種類のコントロール要求を送信できます。 WDF は、KMDF と UMDF の両方の制御転送を本質的にサポートしています。
+Microsoft 提供の USB スタックでは、前述のトレースで確認できるように、デバイスとのあらゆるプロトコル通信が処理されます。 ドライバーからは、クライアント ドライバーからさまざまな方法でコントロール転送を送信することを可能にするデバイス ドライバー インターフェイス (DDI) が公開されます。 クライアント ドライバーが Windows Driver Foundation (WDF) ドライバーの場合、ルーチンを直接呼び出し、一般的な種類の制御要求を送信できます。 WDF は、KMDF と UMDF の両方のコントロール転送を本質的にサポートしています。
 
-特定の種類のコントロール要求は、WDF を介して公開されません。 これらの要求については、クライアントドライバーは WDF ハイブリッドモデルを使用できます。 このモデルを使用すると、クライアントドライバーは WDM の URB スタイルの要求をビルドしてフォーマットし、WDF framework オブジェクトを使用してそれらの要求を送信できます。 ハイブリッドモデルは、カーネルモードドライバーにのみ適用されます。
+特定の種類の制御要求は、WDF 経由で公開されません。 そのような要求の場合、クライアント ドライバーでは WDF ハイブリッド モデルを使用できます。 このモデルでは、クライアント ドライバーで WDM URB スタイルの要求を作成し、フォーマットし、WDF フレームワーク オブジェクトで送信することが可能になります。 ハイブリッド モデルは、カーネルモード ドライバーにのみ適用されます。
 
 **UMDF ドライバーの場合:**
 
-Usb @ no__t に定義されているヘルパーマクロと構造体を使用します。 このヘッダーは、OSR USB Fx2 Learning Kit の UMDF サンプルドライバーに含まれています。
+usb\_hw.h に定義されているヘルパー マクロと構造体を使用します。 このヘッダーは UMDF Sample Driver for OSR USB Fx2 Learning Kit に付属しています。
 
-この表を使用して、制御要求を USB ドライバースタックに送信するための最適な方法を決定します。 このテーブルを表示できない場合は、[このトピック](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)の表を参照してください。
+この表を利用し、制御要求を USB ドライバー スタックに送信するための最適な方法を決定します。 この表を表示できない場合、[こちらのトピック](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)の表を参照してください。
 
 <table>
 <colgroup>
@@ -303,33 +303,33 @@ Usb @ no__t に定義されているヘルパーマクロと構造体を使用�
 </colgroup>
 <thead>
 <tr class="header">
-<th>コントロール要求を送信するには...</th>
-<th>KMDF ドライバーの場合は、次の KMDF DDIs を使用します。</th>
-<th>UMDF ドライバーの場合は、次の UMDF メソッドを使用します...</th>
-<th>WDM ドライバーの場合は、URB 構造 (ヘルパールーチン) をビルドします。</th>
+<th>制御要求を送信するには...</th>
+<th>KMDF ドライバーの場合、次の KMDF DDI を使用して...</th>
+<th>UMDF ドライバーの場合、次の UMDF メソッドを使用して...</th>
+<th>WDM ドライバーの場合、URB 構造体 (ヘルパー ルーチン) を構築します。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>CLEAR_FEATURE:デバイス、その構成、インターフェイス、エンドポイントで特定の機能設定を無効にします。 USB 仕様の「9.4.1」セクションを参照してください。</td>
+<td>CLEAR_FEATURE:デバイス、その構成、インターフェイス、エンドポイントで特定の機能設定を無効にします。 USB 仕様のセクション 9.4.1 を参照してください。</td>
 <td><ol>
-<li>セットアップパケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a>構造体を参照してください。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong></a>を呼び出して、セットアップパケットを初期化します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a>で定義されている受取人の値を指定します。</li>
-<li>機能セレクター (<strong>Wvalue</strong>) を指定します。 「USB_FEATURE_XXX constants in Usbspec を参照してください。 USB 仕様の表9-6 も参照してください。</li>
-<li><em>Setfeature</em>を<strong>FALSE</strong>に設定します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a>を呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a> 構造体を参照してください。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong></a> を呼び出してセットアップ パケットを初期化します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a> に定義されている受信者値を指定します。</li>
+<li>機能セレクターを指定します (<strong>wValue</strong>)。 Usbspec.h の「USB_FEATURE_XXX 定数」セクションを参照してください。 USB 仕様の表 9-6 も参照してください。</li>
+<li><em>SetFeature</em> を <strong>FALSE</strong> に設定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
 <td><ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>Usb_hw で定義されているヘルパーマクロ<strong>WINUSB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong>を呼び出して、セットアップパケットを初期化します。</li>
-<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong>で定義されている受取人の値を指定します。</li>
-<li>機能セレクター (<strong>Wvalue</strong>) を指定します。 「 <strong>USB_FEATURE_XXX</strong> Constants in usbspec を参照してください。 USB 仕様の表9-6 も参照してください。</li>
-<li><em>Setfeature</em>を<strong>FALSE</strong>に設定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>usb_hw.h に定義されている <strong>WINUSB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong> というヘルパー マクロを呼び出してセットアップ パケットを初期化します。</li>
+<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong> に定義されている受信者値を指定します。</li>
+<li>機能セレクターを指定します (<strong>wValue</strong>)。 Usbspec.h の「<strong>USB_FEATURE_XXX</strong> 定数」セクションを参照してください。 USB 仕様の表 9-6 も参照してください。</li>
+<li><em>SetFeature</em> を <strong>FALSE</strong> に設定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_feature_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_FEATURE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_feature_request)"><strong>_URB_CONTROL_FEATURE_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_feature_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_FEATURE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_feature_request)"><strong>_URB_CONTROL_FEATURE_REQUEST</strong></a></p>
 <p>(<a href="https://docs.microsoft.com/previous-versions/ff538932(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildFeatureRequest&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff538932(v=vs.85))"><strong>UsbBuildFeatureRequest</strong></a>)</p>
 <p>URB_FUNCTION_CLEAR_FEATURE_TO_DEVICE</p>
 <p>URB_FUNCTION_CLEAR_FEATURE_TO_INTERFACE</p>
@@ -337,139 +337,139 @@ Usb @ no__t に定義されているヘルパーマクロと構造体を使用�
 <p>URB_FUNCTION_CLEAR_FEATURE_TO_OTHER</p></td>
 </tr>
 <tr class="even">
-<td>GET_CONFIGURATION:現在の USB 構成を取得します。 USB 仕様の「9.4.2」セクションを参照してください。</td>
-<td><p>既定では、KMDF によって最初の構成が選択されます。 デバイス定義の構成番号を取得するには、次のようにします。</p>
+<td>GET_CONFIGURATION:現在の USB 構成を取得します。 USB 仕様のセクション 9.4.2 を参照してください。</td>
+<td><p>KMDF では、既定で最初の構成が選択されます。 デバイス定義の構成番号を取得するには:</p>
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a>の書式を設定し、 <strong>Brequest</strong>メンバーを<strong>USB_REQUEST_GET_CONFIGURATION</strong>に設定します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a>を呼び出して要求を送信します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a> をフォーマットし、その <strong>bRequest</strong> メンバーを <strong>USB_REQUEST_GET_CONFIGURATION</strong> に設定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
-<td><p>既定では、UMDF によって最初の構成が選択されます。 デバイス定義の構成番号を取得するには、次のようにします。</p>
+<td><p>UMDF では、既定で最初の構成が選択されます。 デバイス定義の構成番号を取得するには:</p>
 <ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>Usb_hw で定義されているヘルパーマクロ<strong>WINUSB_CONTROL_SETUP_PACKET_INIT</strong>を呼び出して、セットアップパケットを初期化します。</li>
-<li>方向として<strong>Bmrequesttodevice</strong>を、受信者として<strong>bmrequesttodevice</strong>を、要求として<strong>USB_REQUEST_GET_CONFIGURATION</strong>を指定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
-<li>転送バッファー内の構成番号を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory)"><strong>Iwdfmemory</strong></a>メソッドを呼び出して、そのバッファーにアクセスします。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>usb_hw.h に定義されている <strong>WINUSB_CONTROL_SETUP_PACKET_INIT</strong> というヘルパー マクロを呼び出してセットアップ パケットを初期化します。</li>
+<li>方向として <strong>BmRequestToDevice</strong> を、受信者として <strong>BmRequestToDevice</strong> を、要求として <strong>USB_REQUEST_GET_CONFIGURATION</strong> を指定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
+<li>転送バッファー内の構成番号を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)"><strong>IWDFMemory</strong></a> メソッドを呼び出してそのバッファーにアクセスします。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_configuration_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_configuration_request)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_configuration_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_configuration_request)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong></a></p>
 <p>URB_FUNCTION_GET_CONFIGURATION</p></td>
 </tr>
 <tr class="odd">
-<td>GET_DESCRIPTOR:デバイス、構成、インターフェイス、およびエンドポイント記述子を取得します。 USB 仕様の「9.4.3」セクションを参照してください。
-<p>詳細については、「 <a href="usb-descriptors.md" data-raw-source="[USB Descriptors](usb-descriptors.md)">USB 記述子</a>」を参照してください。</p></td>
-<td><p>次のメソッドを呼び出します。</p>
+<td>GET_DESCRIPTOR:デバイス、構成、インターフェイス、エンドポイント記述子を取得します。 USB 仕様のセクション 9.4.3 を参照してください。
+<p>詳細については、「<a href="usb-descriptors.md" data-raw-source="[USB Descriptors](usb-descriptors.md)">USB 記述子</a>」を参照してください。</p></td>
+<td><p>以下のメソッドを呼び出します。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceGetDeviceDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)"><strong>WdfUsbTargetDeviceGetDeviceDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor)"><strong>WdfUsbInterfaceGetDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetEndpointInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation)"><strong>WdfUsbInterfaceGetEndpointInformation</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeGetInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)"><strong>WdfUsbTargetPipeGetInformation</strong></a>。 このメソッドは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information" data-raw-source="[&lt;strong&gt;WDF_USB_PIPE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)"><strong>WDF_USB_PIPE_INFORMATION</strong></a>構造体のエンドポイント記述子フィールドを返します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceGetDeviceDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)"><strong>WdfUsbTargetDeviceGetDeviceDescriptor</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor)"><strong>WdfUsbInterfaceGetDescriptor</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetEndpointInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation)"><strong>WdfUsbInterfaceGetEndpointInformation</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeGetInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)"><strong>WdfUsbTargetPipeGetInformation</strong></a>。 このメソッドでは、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information" data-raw-source="[&lt;strong&gt;WDF_USB_PIPE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)"><strong>WDF_USB_PIPE_INFORMATION</strong></a> 構造体でエンドポイント記述子フィールドが返されます。</li>
 </ul></td>
-<td><p>次のメソッドを呼び出します。</p>
+<td><p>以下のメソッドを呼び出します。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::RetrieveDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)"><strong>IWDFUsbTargetDevice::RetrieveDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::GetInterfaceDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor)"><strong>IWDFUsbInterface:: GetInterfaceDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation" data-raw-source="[&lt;strong&gt;IWDFUsbTargetPipe::GetInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)"><strong>IWDFUsbTargetPipe:: GetInformation</strong></a>。 このメソッドは、 <a href="https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information" data-raw-source="[&lt;strong&gt;WINUSB_PIPE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)"><strong>WINUSB_PIPE_INFORMATION</strong></a>構造体のエンドポイント記述子フィールドを返します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::RetrieveDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)"><strong>IWDFUsbTargetDevice::RetrieveDescriptor</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::GetInterfaceDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor)"><strong>IWDFUsbInterface::GetInterfaceDescriptor</strong></a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation" data-raw-source="[&lt;strong&gt;IWDFUsbTargetPipe::GetInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)"><strong>IWDFUsbTargetPipe::GetInformation</strong></a>。 このメソッドでは、<a href="https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information" data-raw-source="[&lt;strong&gt;WINUSB_PIPE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)"><strong>WINUSB_PIPE_INFORMATION</strong></a> 構造体でエンドポイント記述子フィールドが返されます。</li>
 </ul></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a></p>
-<p>(<a href="https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildGetDescriptorRequest&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))"><strong>Usbbuildget記述子要求</strong></a>)</p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a></p>
+<p>(<a href="https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildGetDescriptorRequest&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))"><strong>UsbBuildGetDescriptorRequest</strong></a>)</p>
 <p>URB_FUNCTION_GET_DESCRIPTOR_FROM_DEVICE</p>
 <p>URB_FUNCTION_GET_DESCRIPTOR_FROM_ENDPOINT</p>
 <p>URB_FUNCTION_GET_DESCRIPTOR_FROM_INTERFACE</p></td>
 </tr>
 <tr class="even">
-<td>GET_INTERFACE:インターフェイスの現在の代替設定を取得します。 USB 仕様の「9.4.4」セクションを参照してください。</td>
+<td>GET_INTERFACE:インターフェイスの現在の代替設定を取得します。 USB 仕様のセクション 9.4.4 を参照してください。</td>
 <td><p></p>
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceGetInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface)"><strong>WdfUsbTargetDeviceGetInterface</strong></a>メソッドを呼び出して、ターゲットインターフェイスオブジェクトへの WDFUSBINTERFACE ハンドルを取得します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetConfiguredSettingIndex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex)"><strong>WdfUsbInterfaceGetConfiguredSettingIndex</strong></a>メソッドを呼び出します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceGetInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface)"><strong>WdfUsbTargetDeviceGetInterface</strong></a> メソッドを呼び出し、ターゲット インターフェイス オブジェクトの WDFUSBINTERFACE ハンドルを取得します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceGetConfiguredSettingIndex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex)"><strong>WdfUsbInterfaceGetConfiguredSettingIndex</strong></a> メソッドを呼び出します。</li>
 </ol></td>
 <td><ol>
-<li>ターゲットインターフェイスオブジェクトへの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface" data-raw-source="[&lt;strong&gt;IWDFUsbInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)"><strong>IWDFUsbInterface</strong></a>ポインターを取得します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::GetConfiguredSettingIndex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex)"><strong>IWDFUsbInterface:: GetConfiguredSettingIndex</strong></a>メソッドを呼び出します。</li>
+<li>ターゲット インターフェイス オブジェクトへの <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface" data-raw-source="[&lt;strong&gt;IWDFUsbInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)"><strong>IWDFUsbInterface</strong></a> ポインターを取得します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::GetConfiguredSettingIndex&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getconfiguredsettingindex)"><strong>IWDFUsbInterface::GetConfiguredSettingIndex</strong></a> メソッドを呼び出します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_interface_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_INTERFACE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_interface_request)"><strong>_URB_CONTROL_GET_INTERFACE_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_interface_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_INTERFACE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_interface_request)"><strong>_URB_CONTROL_GET_INTERFACE_REQUEST</strong></a></p>
 <p>URB_FUNCTION_GET_INTERFACE</p></td>
 </tr>
 <tr class="odd">
-<td>GET_STATUS:デバイス、エンドポイント、またはインターフェイスから状態ビットを取得します。 「9.4.5」を参照してください。 USB 仕様の。</td>
+<td>GET_STATUS:デバイス、エンドポイント、またはインターフェイスからステータス ビットを取得します。 USB 仕様のセクション 9.4.5 を ご覧ください。</td>
 <td><ol>
-<li>セットアップパケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a>構造体を参照してください。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_get_status" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_GET_STATUS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_get_status)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_GET_STATUS</strong></a>を呼び出して、セットアップパケットを初期化します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a>で定義されている受取人の値を指定します。</li>
-<li>取得する状態 (デバイス、インターフェイス、またはエンドポイント) (<strong>wIndex</strong>) を指定します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a>を呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a> 構造体を参照してください。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_get_status" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_GET_STATUS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_get_status)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_GET_STATUS</strong></a> を呼び出してセットアップ パケットを初期化します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a> に定義されている受信者値を指定します。</li>
+<li>デバイス、インターフェイス、またはエンドポイントのどのステータスを取得するかを指定します (<strong>wIndex</strong>)。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
 <td><ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>Usb_hw で定義されているヘルパーマクロ<strong>WINUSB_CONTROL_SETUP_PACKET_INIT_GET_STATUS</strong>を呼び出して、セットアップパケットを初期化します。</li>
-<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong>で定義されている受取人の値を指定します。</li>
-<li>取得する状態 (デバイス、インターフェイス、またはエンドポイント) (<strong>wIndex</strong>) を指定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
-<li>転送バッファーの状態値を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory)"><strong>Iwdfmemory</strong></a>メソッドを呼び出して、そのバッファーにアクセスします。</li>
-<li>状態が自己電源付きのリモートウェイクアップであるかどうかを判断するには、 <strong>WINUSB_DEVICE_TRAITS</strong>列挙で定義されている値を使用します。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>usb_hw.h に定義されている <strong>WINUSB_CONTROL_SETUP_PACKET_INIT_GET_STATUS</strong> というヘルパー マクロを呼び出してセットアップ パケットを初期化します。</li>
+<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong> に定義されている受信者値を指定します。</li>
+<li>デバイス、インターフェイス、またはエンドポイントのどのステータスを取得するかを指定します (<strong>wIndex</strong>)。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
+<li>転送バッファーのステータス値を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)"><strong>IWDFMemory</strong></a> メソッドを呼び出してそのバッファーにアクセスします。</li>
+<li>ステータスにより自己供給のリモートウェイクアップが示されるかどうかを判断するには、<strong>WINUSB_DEVICE_TRAITS</strong> 列挙型に定義されている値を使用します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_status_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_STATUS_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_get_status_request)"><strong>_URB_CONTROL_GET_STATUS_REQUEST</strong></a></p>
-<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbbuildgetstatusrequest" data-raw-source="[&lt;strong&gt;UsbBuildGetStatusRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbbuildgetstatusrequest)"><strong>Usbbuildgetstatusrequest</strong></a>)</p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_status_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_STATUS_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_get_status_request)"><strong>_URB_CONTROL_GET_STATUS_REQUEST</strong></a></p>
+<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbbuildgetstatusrequest" data-raw-source="[&lt;strong&gt;UsbBuildGetStatusRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbbuildgetstatusrequest)"><strong>UsbBuildGetStatusRequest</strong></a>)</p>
 <p>URB_FUNCTION_GET_STATUS_FROM_DEVICE</p>
 <p>URB_FUNCTION_GET_STATUS_FROM_INTERFACE</p>
 <p>URB_FUNCTION_GET_STATUS_FROM_ENDPOINT</p>
-<p>URB_FUNCTION_GET_STATUS_FROM_OTHER.</p></td>
+<p>URB_FUNCTION_GET_STATUS_FROM_OTHER</p></td>
 </tr>
 <tr class="even">
-<td>SET_ADDRESS:「9.4.6 in USB specification」セクションを参照してください。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
+<td>SET_ADDRESS:USB 仕様のセクション 9.4.6 を参照してください。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
 </tr>
 <tr class="odd">
-<td>SET_CONFIGURATION:構成を設定します。 「9.4.7 in USB specification」セクションを参照してください。
-<p>詳細については、「 <a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>」を参照してください。</p></td>
-<td>既定では、KMDF は各インターフェイスの既定の構成と最初の代替設定を選択します。 クライアントドライバーは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfigType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype)"><strong>WdfUsbTargetDeviceSelectConfigType</strong></a>メソッドを呼び出し、要求オプションとして<strong>WdfUsbTargetDeviceSelectConfigTypeUrb</strong>を指定することによって、既定の構成を変更できます。 次に、この要求の URB をフォーマットし、USB ドライバースタックに送信する必要があります。</td>
-<td>既定では、UMDF は、各インターフェイスの既定の構成と最初の代替設定を選択します。 クライアントドライバーは、構成を変更できません。</td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_select_configuration" data-raw-source="[&lt;strong&gt;_URB_SELECT_CONFIGURATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_select_configuration)"><strong>構成 (_C)</strong></a></p>
-<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectConfigUrbAllocateAndBuild&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)"><strong>USBD_SelectConfigUrbAllocateAndBuild</strong></a>)</p>
+<td>SET_CONFIGURATION:構成を設定します。 USB 仕様のセクション 9.4.7 を参照してください。
+<p>詳細については、「<a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイス用の構成の選択方法</a>」を参照してください。</p></td>
+<td>KMDF では既定で、既定の構成と各インターフェイスにおける最初の代替設定が選択されます。 クライアント ドライバーでは、<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfigType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype)"><strong>WdfUsbTargetDeviceSelectConfigType</strong></a> メソッドを呼び出し、<strong>WdfUsbTargetDeviceSelectConfigTypeUrb</strong> を要求オプションとして指定することで既定の構成を変更できます。 次に、この要求の URB をフォーマットし、それを USB ドライバー スタックに提出する必要があります。</td>
+<td>UMDF では既定で、既定の構成と各インターフェイスにおける最初の代替設定が選択されます。 クライアント ドライバーでは、構成を変更できません。</td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_configuration" data-raw-source="[&lt;strong&gt;_URB_SELECT_CONFIGURATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_configuration)"><strong>_URB_SELECT_CONFIGURATION</strong></a></p>
+<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectConfigUrbAllocateAndBuild&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)"><strong>USBD_SelectConfigUrbAllocateAndBuild</strong></a>)</p>
 <p>URB_FUNCTION_SELECT_CONFIGURATION</p></td>
 </tr>
 <tr class="even">
-<td>SET_DESCRIPTOR:既存のデバイス、構成、または文字列記述子を更新します。 「9.4.8 in USB specification」セクションを参照してください。
-<p>この要求は一般的には使用されません。 ただし、USB ドライバースタックは、クライアントドライバーからのこのような要求を受け入れます。</p></td>
+<td>SET_DESCRIPTOR:既存のデバイス、構成、または文字列記述子を更新します。 USB 仕様のセクション 9.4.8 を参照してください。
+<p>この要求は一般的には使用されません。 ただし、USB ドライバー スタックは、クライアント ドライバーからこのような要求を受け取ります。</p></td>
 <td><ol>
-<li>要求の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)"><strong>URB</strong></a>を割り当てて作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a>構造体の転送情報を指定します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForUrb&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb)"><strong>WdfUsbTargetDeviceFormatRequestForUrb</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendUrbSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)"><strong>WdfUsbTargetDeviceSendUrbSynchronously</strong></a>を呼び出して要求を送信します。</li>
+<li>要求の <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> を割り当て、構築します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a> 構造体で転送情報を指定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForUrb&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb)"><strong>WdfUsbTargetDeviceFormatRequestForUrb</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendUrbSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)"><strong>WdfUsbTargetDeviceSendUrbSynchronously</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
 <td><ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>USB 仕様に従って、転送情報を指定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>USB 仕様に従って転送情報を指定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a></p>
 <p>URB_FUNCTION_SET_DESCRIPTOR_TO_DEVICE</p>
 <p>URB_FUNCTION_SET_DESCRIPTOR_TO_ENDPOINT</p>
 <p>URB_FUNCTION_SET_DESCRIPTOR_TO_INTERFACE</p></td>
 </tr>
 <tr class="odd">
-<td>SET_FEATURE:デバイス、その構成、インターフェイス、エンドポイントで特定の機能設定を有効にします。 USB 仕様の「9.4.9」セクションを参照してください。</td>
+<td>SET_FEATURE:デバイス、その構成、インターフェイス、エンドポイントで特定の機能設定を有効にします。 USB 仕様のセクション 9.4.9 を参照してください。</td>
 <td><ol>
-<li>セットアップパケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a>構造体を参照してください。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong></a>を呼び出して、セットアップパケットを初期化します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a>で定義されている受取人の値 (デバイス、インターフェイス、エンドポイント) を指定します。</li>
-<li>機能セレクター (<strong>Wvalue</strong>) を指定します。 「USB_FEATURE_XXX constants in Usbspec を参照してください。 USB 仕様の表9-6 も参照してください。</li>
-<li><em>Setfeature</em>を<strong>TRUE</strong>に設定します</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a>を呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a> 構造体を参照してください。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_feature)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong></a> を呼び出してセットアップ パケットを初期化します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a> に定義されている受信者値 (デバイス、インターフェイス、エンドポイント) を指定します。</li>
+<li>機能セレクターを指定します (<strong>wValue</strong>)。 Usbspec.h の「USB_FEATURE_XXX 定数」セクションを参照してください。 USB 仕様の表 9-6 も参照してください。</li>
+<li><em>SetFeature</em> を <strong>TRUE</strong> に設定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
 <td><ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>Usb_hw で定義されているヘルパーマクロ<strong>WINUSB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong>を呼び出して、セットアップパケットを初期化します。</li>
-<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong>で定義されている受取人の値を指定します。</li>
-<li>機能セレクター (<strong>Wvalue</strong>) を指定します。 「 <strong>USB_FEATURE_XXX</strong> Constants in usbspec を参照してください。 USB 仕様の表9-6 も参照してください。</li>
-<li><em>Setfeature</em>を<strong>TRUE</strong>に設定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>usb_hw.h に定義されている <strong>WINUSB_CONTROL_SETUP_PACKET_INIT_FEATURE</strong> というヘルパー マクロを呼び出してセットアップ パケットを初期化します。</li>
+<li><strong>WINUSB_BMREQUEST_RECIPIENT</strong> に定義されている受信者値を指定します。</li>
+<li>機能セレクターを指定します (<strong>wValue</strong>)。 Usbspec.h の「<strong>USB_FEATURE_XXX</strong> 定数」セクションを参照してください。 USB 仕様の表 9-6 も参照してください。</li>
+<li><em>SetFeature</em> を <strong>TRUE</strong> に設定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_feature_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_FEATURE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_feature_request)"><strong>_URB_CONTROL_FEATURE_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_feature_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_FEATURE_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_feature_request)"><strong>_URB_CONTROL_FEATURE_REQUEST</strong></a></p>
 <p>(<a href="https://docs.microsoft.com/previous-versions/ff538932(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildFeatureRequest&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff538932(v=vs.85))"><strong>UsbBuildFeatureRequest</strong></a>)</p>
 <p>URB_FUNCTION_SET_FEATURE_TO_DEVICE</p>
 <p>URB_FUNCTION_SET_FEATURE_TO_INTERFACE</p>
@@ -477,45 +477,45 @@ Usb @ no__t に定義されているヘルパーマクロと構造体を使用�
 <p>URB_FUNCTION_SET_FEATURE_TO_OTHER</p></td>
 </tr>
 <tr class="even">
-<td>SET_INTERFACE:インターフェイスの代替設定を変更します。 USB 仕様の「9.4.9」セクションを参照してください。
-<p>詳細については、「 <a href="select-a-usb-alternate-setting.md" data-raw-source="[How to select an alternate setting in a USB interface](select-a-usb-alternate-setting.md)">USB インターフェイスで別の設定を選択する方法</a>」を参照してください。</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfig&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)"><strong>WdfUsbTargetDeviceSelectConfig</strong></a>
+<td>SET_INTERFACE:インターフェイスの代替設定を変更します。 USB 仕様のセクション 9.4.9 を参照してください。
+<p>詳細については、「<a href="select-a-usb-alternate-setting.md" data-raw-source="[How to select an alternate setting in a USB interface](select-a-usb-alternate-setting.md)">USB インターフェイスにおける代替設定の選択方法</a>」を参照してください。</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfig&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)"><strong>WdfUsbTargetDeviceSelectConfig</strong></a>
 <p></p>
 <ol>
-<li>ターゲットインターフェイスオブジェクトへの WDFUSBINTERFACE ハンドルを取得します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceSelectSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting)"><strong>WdfUsbInterfaceSelectSetting</strong></a>メソッドを呼び出します。</li>
+<li>ターゲット インターフェイス オブジェクトへの WDFUSBINTERFACE ハンドルを取得します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting" data-raw-source="[&lt;strong&gt;WdfUsbInterfaceSelectSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting)"><strong>WdfUsbInterfaceSelectSetting</strong></a> メソッドを呼び出します。</li>
 </ol></td>
 <td><ol>
-<li>ターゲットインターフェイスオブジェクトへの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface" data-raw-source="[&lt;strong&gt;IWDFUsbInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)"><strong>IWDFUsbInterface</strong></a>ポインターを取得します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::SelectSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting)"><strong>IWDFUsbInterface:: SelectSetting</strong></a>メソッドを呼び出します。</li>
+<li>ターゲット インターフェイス オブジェクトへの <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface" data-raw-source="[&lt;strong&gt;IWDFUsbInterface&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)"><strong>IWDFUsbInterface</strong></a> ポインターを取得します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::SelectSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-selectsetting)"><strong>IWDFUsbInterface::SelectSetting</strong></a> メソッドを呼び出します。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_select_interface" data-raw-source="[&lt;strong&gt;_URB_SELECT_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_select_interface)"><strong>_URB_SELECT_INTERFACE</strong></a></p>
-<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectInterfaceUrbAllocateAndBuild&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)"><strong>USBD_SelectInterfaceUrbAllocateAndBuild</strong></a>)</p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface" data-raw-source="[&lt;strong&gt;_URB_SELECT_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface)"><strong>_URB_SELECT_INTERFACE</strong></a></p>
+<p>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectInterfaceUrbAllocateAndBuild&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)"><strong>USBD_SelectInterfaceUrbAllocateAndBuild</strong></a>)</p>
 <p>URB_FUNCTION_SELECT_INTERFACE</p></td>
 </tr>
 <tr class="odd">
-<td>SYNC_FRAME:Set と get、およびエンドポイントの同期フレーム番号。 USB 仕様の「9.4.10」セクションを参照してください。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
-<td>この要求は、USB ドライバースタックによって処理されます。クライアントドライバーはこの操作を実行できません。</td>
+<td>SYNC_FRAME:エンドポイントの同期フレーム番号を設定し、取得します。 USB 仕様のセクション 9.4.10 を参照してください。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
+<td>この要求は USB ドライバーによって処理されます。クライアント ドライバーではこの操作を実行できません。</td>
 </tr>
 <tr class="even">
-<td>デバイスクラス固有の要求とベンダーコマンド。</td>
+<td>デバイス クラス固有の要求とベンダーコマンド用。</td>
 <td><ol>
-<li>セットアップパケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a>構造体を参照してください。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_class" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_CLASS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_class)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_CLASS</strong></a>固有の要求を呼び出すか、ベンダーのコマンドに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_vendor" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_VENDOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_vendor)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_VENDOR</strong></a>を呼び出して、セットアップパケットを初期化します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a>で定義されている受取人の値 (デバイス、インターフェイス、エンドポイント) を指定します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a>を呼び出して要求を送信します。</li>
+<li>セットアップ パケットを宣言します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)"><strong>WDF_USB_CONTROL_SETUP_PACKET</strong></a> 構造体を参照してください。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_class" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_CLASS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_class)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_CLASS</strong></a> 固有要件または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_vendor" data-raw-source="[&lt;strong&gt;WDF_USB_CONTROL_SETUP_PACKET_INIT_VENDOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_control_setup_packet_init_vendor)"><strong>WDF_USB_CONTROL_SETUP_PACKET_INIT_VENDOR</strong></a> (ベンダー コマンド用) を呼び出し、セットアップ パケットを初期化します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient" data-raw-source="[&lt;strong&gt;WDF_USB_BMREQUEST_RECIPIENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ne-wdfusb-_wdf_usb_bmrequest_recipient)"><strong>WDF_USB_BMREQUEST_RECIPIENT</strong></a> に定義されている受信者値 (デバイス、インターフェイス、エンドポイント) を指定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSendControlTransferSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)"><strong>WdfUsbTargetDeviceSendControlTransferSynchronously</strong></a> または <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceFormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)"><strong>WdfUsbTargetDeviceFormatRequestForControlTransfer</strong></a> を呼び出して要求を送信します。</li>
 </ol></td>
 <td><ol>
-<li>セットアップパケットを宣言します。 Usb_hw で宣言されている<strong>WINUSB_CONTROL_SETUP_PACKET</strong>構造体を参照してください。</li>
-<li>Usb_hw で定義されているヘルパーマクロ<strong>WINUSB_CONTROL_SETUP_PACKET_INIT_CLASS</strong>または<strong>WINUSB_CONTROL_SETUP_PACKET_INIT_VENDOR</strong>を呼び出して、セットアップパケットを初期化します。</li>
-<li>クラスまたはハードウェアの仕様に従って、方向 ( <strong>WINUSB_BMREQUEST_DIRECTION</strong>列挙体を参照)、受信者 ( <strong>WINUSB_BMREQUEST_RECIPIENT</strong>列挙体を参照)、および要求を指定します。</li>
-<li>初期化されたセットアップパケットをフレームワーク要求オブジェクトに関連付け、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice:: FormatRequestForControlTransfer</strong></a>メソッドを呼び出すことによって転送バッファーに要求を作成します。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest:: Send</strong></a>メソッドを呼び出して要求を送信します。</li>
-<li>転送バッファー内のデバイスから情報を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory)"><strong>Iwdfmemory</strong></a>メソッドを呼び出して、そのバッファーにアクセスします。</li>
+<li>セットアップ パケットを宣言します。 usb_hw.h で宣言されている <strong>WINUSB_CONTROL_SETUP_PACKET</strong> を参照してください。</li>
+<li>usb_hw.h に定義されている <strong>WINUSB_CONTROL_SETUP_PACKET_INIT_CLASS</strong> または <strong>WINUSB_CONTROL_SETUP_PACKET_INIT_VENDOR</strong> というヘルパー マクロを呼び出してセットアップ パケットを初期化します。</li>
+<li>クラスまたはハードウェア仕様の説明を参照し、方向 (<strong>WINUSB_BMREQUEST_DIRECTION</strong> 列挙型を参照)、受信者 (<strong>WINUSB_BMREQUEST_RECIPIENT</strong> 列挙型を参照)、要求を指定します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::FormatRequestForControlTransfer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)"><strong>IWDFUsbTargetDevice::FormatRequestForControlTransfer</strong></a> メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求を作成します。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest::Send</strong></a> メソッドを呼び出して要求を送信します。</li>
+<li>転送バッファー内のデバイスから情報を受信します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[&lt;strong&gt;IWDFMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)"><strong>IWDFMemory</strong></a> メソッドを呼び出してそのバッファーにアクセスします。</li>
 </ol></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_vendor_or_class_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_VENDOR_OR_CLASS_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_vendor_or_class_request)"><strong>_URB_CONTROL_VENDOR_OR_CLASS_REQUEST</strong></a></p>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_vendor_or_class_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_VENDOR_OR_CLASS_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_vendor_or_class_request)"><strong>_URB_CONTROL_VENDOR_OR_CLASS_REQUEST</strong></a></p>
 <p>(<a href="https://docs.microsoft.com/previous-versions/ff538986(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildVendorRequest&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff538986(v=vs.85))"><strong>UsbBuildVendorRequest</strong></a>)</p>
 <p>URB_FUNCTION_VENDOR_DEVICE</p>
 <p>URB_FUNCTION_VENDOR_INTERFACE</p>
@@ -531,27 +531,27 @@ Usb @ no__t に定義されているヘルパーマクロと構造体を使用�
 
 
 
-## <a name="how-to-send-a-control-transfer-for-vendor-commands---kmdf"></a>ベンダコマンドの制御転送を送信する方法-KMDF
+## <a name="how-to-send-a-control-transfer-for-vendor-commands---kmdf"></a>ベンダー コマンドのコントロール転送を送信する方法 - KMDF
 
 
-この手順では、クライアントドライバーが制御転送を送信する方法を示します。 この例では、クライアントドライバーは、デバイスからファームウェアのバージョンを取得するベンダコマンドを送信します。
+この手順からは、クライアント ドライバーでコントロール転送を送信するしくみがわかります。 この例では、クライアント ドライバーからベンダー コマンドが送信され、そのコマンドでデバイスからファームウェア バージョンが取得されます。
 
-1.  Vendor コマンドの定数を宣言します。 ハードウェアの仕様を調べ、使用するベンダコマンドを決定します。
-2.  [**WDF @ no__t-2MEMORY @ no__t-3descriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/ns-wdfmemory-_wdf_memory_descriptor)構造体を宣言し、 [**WDF @ NO__T-6memory @ NO__T-7descriptor @ NO__T-8init @ NO__T-9buffer**](https://msdn.microsoft.com/library/windows/hardware/ff552392_init_buffer)マクロを呼び出して初期化します。 この構造は、USB ドライバーが要求を完了した後に、デバイスからの応答を受信します。
-3.  要求を同期または非同期のどちらで送信するかに応じて、送信オプションを指定します。
-    -   [**WdfUsbTargetDeviceSendControlTransferSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)を呼び出して要求を同期的に送信する場合は、タイムアウト値を指定します。 この値は、タイムアウトがないとスレッドを無期限にブロックできるため、重要です。
+1.  ベンダー コマンドの定数を宣言します。 ハードウェア仕様を調べ、使用するベンダー コマンドを決めます。
+2.  [**WDF\_MEMORY\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/ns-wdfmemory-_wdf_memory_descriptor) 構造体を宣言し、[**WDF\_MEMORY\_DESCRIPTOR\_INIT\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff552392_init_buffer) マクロを呼び出してそれを初期化します。 この構造は、USB ドライバーで要求が完了した後、デバイスから応答を受信します。
+3.  要求の送信を同期にするのか、非同期にするのかに合わせて送信オプションを指定します。
+    -   [**WdfUsbTargetDeviceSendControlTransferSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously) を呼び出して要求を同期で送信する場合、タイムアウト値を指定します。 タイムアウトなしでは、スレッドが無限にブロックされる可能性があるため、この値は重要です。
 
-        この場合は、 [**WDF @ no__t-2REQUEST @ no__t-3SEND @ no__t-4options**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_send_options)構造体を宣言し、 [**WDF @ NO__T-7request @ NO__T-8send @ NO__T-9options @ NO__T-10init**](https://msdn.microsoft.com/library/windows/hardware/ff552491_init)マクロを呼び出して初期化します。 オプションを**WDF @ no__t-1REQUEST @ no__t-2SEND @ no__t-3OPTION @ no__t-4TIMEOUT**として指定します。
+        そのため、[**WDF\_REQUEST\_SEND\_OPTIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options) 構造体を宣言し、[**WDF\_REQUEST\_SEND\_OPTIONS\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552491_init) マクロを呼び出してそれを初期化します。 オプションとして **WDF\_REQUEST\_SEND\_OPTION\_TIMEOUT** を指定します。
 
-        次に、 [**WDF @ no__t-2REQUEST @ no__t-3SEND @ no__t-4OPTIONS @ no__t-5SET @ no__t-6timeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdf_request_send_options_set_timeout)マクロを呼び出して、タイムアウト値を設定します。
+        次に、[**WDF\_REQUEST\_SEND\_OPTIONS\_SET\_TIMEOUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdf_request_send_options_set_timeout) マクロを呼び出し、タイムアウト値を設定します。
 
-    -   要求を非同期に送信する場合は、完了ルーチンを実装します。 完了ルーチンで割り当てられているすべてのリソースを解放します。
+    -   要求を非同期で送信する場合は、完了ルーチンを実装します。 完了ルーチンで、割り当てられているすべてのリソースを解放します。
 
-4.  [**WDF @ no__t-2USB @ no__t-3CONTROL @ no__t-4SETUP @ no__t-5PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet)構造体を宣言してセットアップトークンを格納し、構造体の形式を設定します。 これを行うには、 [**WDF @ no__t-2USB @ no__t-3CONTROL @ no__t-4SETUP @ no__t-5PACKET @ no__t-6INIT @ no__t-7VENDOR**](https://msdn.microsoft.com/library/windows/hardware/ff552568_init_vendor)マクロを呼び出して、セットアップパケットの形式を設定します。 呼び出しで、要求の方向、受信者、送信要求オプション (手順3で初期化)、および vendor コマンドの定数を指定します。
-5.  [**WdfUsbTargetDeviceSendControlTransferSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously)または[**WdfUsbTargetDeviceFormatRequestForControlTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer)を呼び出して要求を送信します。
-6.  フレームワークによって返された NTSTATUS 値を確認し、受信した値を調べます。
+4.  セットアップ トークンを含める [**WDF\_USB\_CONTROL\_SETUP\_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_control_setup_packet) 構造体を宣言し、構造体をフォーマットします。 これを行うには、[**WDF\_USB\_CONTROL\_SETUP\_PACKET\_INIT\_VENDOR**](https://msdn.microsoft.com/library/windows/hardware/ff552568_init_vendor) マクロを呼び出し、セットアップ パケットをフォーマットします。 呼び出しで、要求の方向、受信者、要求送信オプション (手順 3 で初期化)、ベンダー コマンドの定数を指定します。
+5.  [**WdfUsbTargetDeviceSendControlTransferSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendcontroltransfersynchronously) または [**WdfUsbTargetDeviceFormatRequestForControlTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcontroltransfer) を呼び出して要求を送信します。
+6.  フレームワークによって返された NTSTATUS 値を確認して受信した値を調べます。
 
-このコード例では、制御転送要求を USB デバイスに送信して、ファームウェアのバージョンを取得します。 要求は同期的に送信され、クライアントドライバーは、相対タイムアウト値を5秒 (100 ナノ秒単位) で指定します。 ドライバーは、受信した応答をドライバーによって定義されたデバイスコンテキストに格納します。
+このコード例では、コントロール転送要求が USB デバイスに送信され、そのファームウェア バージョンが取得されます。 要求は同期で送信され、クライアント ドライバーにより、5 秒 (100 ナノ秒単位) という相対的タイムアウト値が指定されます。 ドライバーにより、受信した応答がドライバー定義のデバイス コンテキストに格納されます。
 
 ```cpp
 enum {   
@@ -648,23 +648,23 @@ VOID  GetFirmwareVersion(
 }  
 ```
 
-##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>GET @ no__t-1STATUS-UMDF の制御転送を送信する方法
+##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>GET\_STATUS のコントロール転送を送信する方法 - UMDF
 
 
-この手順では、クライアントドライバーが GET @ no__t-0STATUS コマンドの制御転送を送信する方法について説明します。 要求の受信者はデバイスであり、要求はビット D1-D0 で情報を取得します。 詳細については、「USB 仕様」の図9-4 を参照してください。
+この手順からは、GET\_STATUS コマンドの場合にクライアント ドライバーでコントロール転送を送信するしくみがわかります。 要求の受信者はデバイスであり、要求によりビット D1-D0 の情報が取得されます。 詳細については、USB 仕様の図 9-4 を参照してください。
 
-1.  OSR USB Fx2 Learning Kit 用の UMDF サンプルドライバーで利用できるヘッダーファイル Usb @ no__t をインクルードします。
-2.  **Winusb @ no__t-1CONTROL @ no__t-2SETUP @ no__t-3PACKET**構造体を宣言します。
-3.  ヘルパーマクロを呼び出して、セットアップパケットを初期化します。 **Winusb @ no__t-1CONTROL @ no__t-2SETUP @ no__t-3PACKET @ no__t-4INIT @ no__t-5GET @ no__t-6STATUS**.
-4.  受信者として**Bmrequesttodevice**を指定します。
-5.  *インデックス*値に0を指定します。
-6.  要求を同期的に送信するために、ヘルパーメソッド SendControlTransferSynchronously 同期的に呼び出します。
+1.  UMDF Sample Driver for OSR USB Fx2 Learning Kit に付属する Usb\_hw.h というヘッダー ファイルを含めます。
+2.  **WINUSB\_CONTROL\_SETUP\_PACKET** 構造体を宣言します。
+3.  **WINUSB\_CONTROL\_SETUP\_PACKET\_INIT\_GET\_STATUS** というヘルパー マクロを呼び出し、セットアップ パケットを初期化します。
+4.  受信者として **BmRequestToDevice** を指定します。
+5.  *Index* 値に 0 を指定します。
+6.  ヘルパー メソッド SendControlTransferSynchronously を呼び出し、要求を同期で送信します。
 
-    ヘルパーメソッドは、 [**IWDFUsbTargetDevice:: FormatRequestForControlTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer)メソッドを呼び出すことによって、初期化されたセットアップパケットをフレームワークの要求オブジェクトと転送バッファーに関連付けることによって、要求をビルドします。 ヘルパーメソッドは、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出すことによって要求を送信します。 メソッドから制御が戻った後、返された値を調べます。
+    ヘルパー メソッドが [**IWDFUsbTargetDevice::FormatRequestForControlTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-formatrequestforcontroltransfer) メソッドを呼び出し、フレームワーク要求オブジェクトと転送バッファーを初期化されたセットアップ パケットに関連付けることで要求が作成されます。 次に、ヘルパー メソッドが [**IWDFIoRequest::Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send) メソッドを呼び出して要求が送信されます。 メソッドが戻ったら、返された値を調べます。
 
-7.  状態が自己電源付きのリモートウェイクアップであるかどうかを判断するには、 **Winusb @ no__t-1DEVICE @ no__t-2TRAITS**列挙で定義されている次の値を使用します。
+7.  ステータスにより自己供給のリモートウェイクアップが示されるかどうかを判断するには、**WINUSB\_DEVICE\_TRAITS** 列挙型に定義されている値を使用します。
 
-このコード例では、デバイスの状態を取得するために、コントロール転送要求をに送信します。 この例では、SendControlTransferSynchronously いう名前のヘルパーメソッドを同期的に呼び出して、要求を同期的に送信します。
+このコード例では、デバイスのステータスを取得する目的でコントロール転送要求が送信されます。 この例では、SendControlTransferSynchronously という名前のヘルパー メソッドを呼び出すことで要求が同期で送信されます。
 
 ```cpp
 HRESULT  
@@ -717,7 +717,7 @@ CDevice::GetDeviceStatus ()
  }
 ```
 
-次のコード例は、SendControlTransferSynchronously いう名前のヘルパーメソッドを同期的に実装する方法を示しています。 このメソッドは、要求を同期的に送信します。
+次のコード例では、SendControlTransferSynchronously という名前のヘルパー メソッドの実装を確認できます。 このメソッドでは、要求が同期で送信されます。
 
 ```cpp
 HRESULT  
@@ -800,10 +800,10 @@ CDevice::SendControlTransferSynchronously(
 }  
 ```
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
-デバイスの関数ドライバーとして Winusb .sys を使用している場合は、アプリケーションから制御転送を送信できます。 WinUSB でセットアップパケットをフォーマットするには、このトピックの表に記載されている UMDF helper マクロと構造体を使用します。 要求を送信するには、 [**Winusb @ no__t-2ControlTransfer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_controltransfer)関数を呼び出します。
+デバイスの関数ドライバーとして Winusb.sys を使用している場合、アプリケーションからコントロール転送を送信できます。 WinUSB のセットアップ パケットをフォーマットするには、このトピックの表で説明されている、UMDF のヘルパー マクロと構造体を使用します。 要求を送信するには、[**WinUsb\_ControlTransfer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_controltransfer) 関数を呼び出します。
 
 
 

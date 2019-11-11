@@ -4,55 +4,55 @@ description: サービス メタデータの作成に関する開発者向けガ
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 963dba2a9f72c638d40b216fdb3150cd0deb2614
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 28de135945016ac249a7a0a19951dcb822b72b3a
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381547"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445359"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>サービス メタデータの作成に関する開発者向けガイド
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 
-このガイドは Sysdev と呼ばれる以前、Windows デベロッパー センター ハードウェア ダッシュ ボードのサービス メタデータ パッケージを作成するプロセスを説明します (<http://sysdev.microsoft.com>)。 ハードウェア デバイスにモバイル ブロード バンドのアプリを接続するには、サービス メタデータが必要です。 ユーザーには、自分のコンピューターにモバイル ブロード バンド デバイスが接続されるためと関連付けられているサービスのメタデータをダウンロードするモバイル ブロード バンドのアプリを自動的にダウンロードし。
+このガイドでは、以前の Sysdev (<https://sysdev.microsoft.com>) と呼ばれる、Windows デベロッパーセンターハードウェアダッシュボードでサービスメタデータパッケージを作成する手順について説明します。 モバイルブロードバンドアプリをハードウェアデバイスに接続するには、サービスメタデータが必要です。 ユーザーがモバイルブロードバンドデバイスをコンピューターに接続すると、関連付けられているサービスメタデータがダウンロードされ、モバイルブロードバンドアプリが自動的にダウンロードされます。
 
-Windows と緊密に統合されたエクスペリエンスを作成するサービス メタデータを活用することができます。 サービス メタデータ パッケージのブランド アイコンなどの情報と、オペレーター名を含める、設定と SIM ハードウェアと個人用のホット スポットにアクセスするためのアクセス許可を構成することを許可して、モバイル ブロード バンドを使用するモバイル ブロード バンドのアプリのプロビジョニングデバイスです。
+サービスメタデータを活用して、Windows と緊密に統合されたエクスペリエンスを作成することができます。 サービスメタデータパッケージを使用すると、アイコンやオペレーター名などのブランド情報を含めたり、SIM ハードウェアや個人用ホットスポットにアクセスするための設定とアクセス許可を構成したり、モバイルブロードバンドアプリをプロビジョニングしてモバイルブロードバンドで動作することができます。ドライブ.
 
 **注:**  
-モバイル ブロード バンド アプリが自動的にインストールされているにもかかわらず、ユーザー必要がありますにピン留め Start 画面で、手動でします。
+モバイルブロードバンドアプリが自動的にインストールされている場合でも、ユーザーは手動でスタート画面にピン留めする必要があります。
 
 
 
-## <a name="span-idgettingstartedspanspan-idgettingstartedspanspan-idgettingstartedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>作業の開始
+## <a name="span-idgetting_startedspanspan-idgetting_startedspanspan-idgetting_startedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>はじめに
 
 
-正常にサービス メタデータ パッケージを作成するには、このセクションでは含まれている手順を行う必要があります。
+サービスメタデータパッケージを正常に作成するには、このセクションに記載されている手順を完了する必要があります。
 
-### <a name="span-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>Windows デベロッパー センター ハードウェア ダッシュ ボードで、会社を登録します。
+### <a name="span-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>Windows デベロッパーセンターのハードウェアダッシュボードを使用して会社を登録する
 
--   会社では、Windows デベロッパー センター ハードウェア ダッシュ ボードで、アクティブなアカウントを持ちます。 会社が、Windows デベロッパー センター ハードウェア ダッシュ ボード上にアカウントを持たない場合は、新しいアカウントを作成し、あなたの会社にユーザー アカウントを追加します。 詳細については、次を参照してください。[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)、Windows デベロッパー センター ハードウェア ダッシュ ボードのヘルプ。
+-   会社には、Windows デベロッパーセンターハードウェアダッシュボードにアクティブなアカウントがあります。 会社が Windows デベロッパーセンターのハードウェアダッシュボードにアカウントを持っていない場合は、新しいアカウントを作成し、ユーザーアカウントを会社に追加することができます。 詳細については、Windows デベロッパーセンターのハードウェアダッシュボードヘルプの「[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)」を参照してください。
 
--   会社では、署名、パッケージの署名に証明書 VeriSign コードがあります。
+-   会社は、パッケージに署名するための VeriSign コード署名証明書を持っています。
 
-### <a name="span-idservicemetadatawizardaccessandserviceidentifiersregistrationspanspan-idservicemetadatawizardaccessandserviceidentifiersregistrationspanspan-idservicemetadatawizardaccessandserviceidentifiersregistrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>サービス メタデータ ウィザードへのアクセスとサービスの識別子の登録
+### <a name="span-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>サービスメタデータウィザードのアクセスとサービス識別子の登録
 
-MNOs と MVNOs は、サービス メタデータ パッケージを作成する前に、次の手順を完了する必要があります。
+MNOs と MVNOs は、サービスメタデータパッケージを作成する前に、次の手順を完了する必要があります。
 
--   サービス メタデータのウィザードへのアクセスを要求します。
+-   サービスメタデータウィザードへのアクセスの要求
 
--   登録、サービスの id
+-   サービス id を登録する
 
-上記の手順を完了するには電子メールを送信する必要がありますsysdev@microsoft.com次の情報を使用します。
+上記の手順を完了するには、次の情報を含む sysdev@microsoft.com に電子メールを送信する必要があります。
 
--   Windows デベロッパー センター ハードウェア ダッシュ ボードに登録したときに使用される組織名。
+-   Windows デベロッパーセンターハードウェアダッシュボードに登録したときに使用された組織名。
 
--   かどうか、モバイル ネットワーク オペレーターまたはモバイルの仮想ネットワークの演算子であります。
+-   モバイルネットワークオペレーターとモバイル仮想ネットワークオペレーターのどちらであるか。
 
--   Web サイトおよび理由でサービス メタデータ パッケージを作成する必要がある理由。
+-   サービスメタデータパッケージを作成する必要がある理由を web サイトで確認できます。
 
-該当する場合は、次のサービス識別子が含まれます。
+必要に応じて、次のサービス識別子を含めます。
 
 -   GSM プロバイダー Id の一覧
 
@@ -62,232 +62,232 @@ MNOs と MVNOs は、サービス メタデータ パッケージを作成する
 
 -   CDMA プロバイダー名の一覧
 
-要求を受信した 24 時間で、受信確認の電子メールを受信する必要があります。 ただし、要求を処理する最大 5 営業日かかる可能性があります。 競合がある場合お知らせする追加情報を求める電子メール。
+要求を受け取った24時間の受信確認メールを受信する必要があります。 ただし、要求の処理には最大5営業日かかることがあります。 競合がある場合は、追加情報を求める電子メールをお送りします。
 
-### <a name="span-idmobilebroadbandappspanspan-idmobilebroadbandappspanspan-idmobilebroadbandappspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>モバイル ブロード バンド アプリ
+### <a name="span-idmobile_broadband_appspanspan-idmobile_broadband_appspanspan-idmobile_broadband_appspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>モバイルブロードバンドアプリ
 
-サービス メタデータ パッケージを作成する前に、モバイル ブロード バンド アプリが開発されているし、Microsoft Store に関連付けられていることを確認します。 このアプリは、プランを購入、データの使用状況、ヘルプとサポートに加え、演算子からの付加価値サービスを強調表示などのキーのエクスペリエンスを提供する必要があります。 モバイル ブロード バンドのアプリを作成する方法の詳細については、次のリンクを参照してください。
+サービスメタデータパッケージを作成する前に、モバイルブロードバンドアプリが開発され、Microsoft Store に関連付けられていることを確認します。 このアプリは、プランの購入、データの使用状況、ヘルプ、サポートなどの主要なエクスペリエンスを提供すると共に、オペレーターから付加価値のあるサービスを強調表示する必要があります。 モバイルブロードバンドアプリの作成の詳細については、次のリンクを参照してください。
 
--   [モバイル ブロード バンド WinRT API の概要](mobile-broadband-winrt-api-overview.md)
+-   [モバイルブロードバンド WinRT API の概要](mobile-broadband-winrt-api-overview.md)
 
--   [通信事業者ハードウェアの概要](mobile-operator-hardware-overview.md)
+-   [携帯電話会社のハードウェアの概要](mobile-operator-hardware-overview.md)
 
--   [UWP のモバイル ブロード バンド アプリ](uwp-mobile-broadband-apps.md)
+-   [UWP モバイルブロードバンドアプリ](uwp-mobile-broadband-apps.md)
 
 **注:**  
-サービス メタデータはテストが完了し、外部で発行する準備が整うまで、Microsoft Store に発行するモバイル ブロード バンド アプリはありません。 サービス メタデータ パッケージは、プレビュー モードのテストを経過した後にのみ、アプリが Microsoft Store に公開されていることをお勧めします。
+サービスメタデータがテストされ、外部で公開する準備が整うまで、モバイルブロードバンドアプリを Microsoft Store に発行する必要はありません。 サービスメタデータパッケージがプレビューモードのテストに合格した後にのみ、アプリを Microsoft Store に発行することをお勧めします。
 
 
 
-## <a name="span-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>サービス メタデータ パッケージの作成
+## <a name="span-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>サービスメタデータパッケージの作成
 
 
-サービス メタデータ パッケージの作成は、Windows デベロッパー センター ハードウェア ダッシュ ボードで利用可能なサービスのメタデータのウィザードを開始します。 サービス メタデータのウィザードの詳細については、次を参照してください。[手順 2 - サービス メタデータ パッケージを作成する](#2-create-the-service-metadata-package)します。 新規作成または既存のサービス メタデータ パッケージを編集するサービス メタデータのウィザードを使用することができます。 ウィザードの値を入力すると、ウィザードが検証し、エラーまたは警告を通知します。 この検証には、フィールドが見つからないか正しくない、サービスの識別子の所有権、Microsoft Store でモバイル ブロード バンド アプリが存在することの確認が含まれています。
+サービスメタデータパッケージの作成は、Windows デベロッパーセンターハードウェアダッシュボードで使用できるサービスメタデータウィザードから開始します。 サービスメタデータウィザードの詳細については、「[手順 2-サービスメタデータパッケージの作成](#2-create-the-service-metadata-package)」を参照してください。 サービスメタデータウィザードを使用して、既存のサービスメタデータパッケージを作成または編集できます。 ウィザードを実行して値を入力すると、ウィザードによって検証が行われ、エラーまたは警告が通知されます。 この検証には、不足または不適切なフィールド、サービス識別子の所有権、Microsoft Store 内のモバイルブロードバンドアプリの有無などの確認が含まれます。
 
-パッケージを送信するかのオプションがある最後の確認 ページと送信の準備完了したらで**開発者**モードまたは**プレビュー**モード。
+最終的な確認ページが表示され、送信する準備ができたら、**開発者**モードまたは**プレビュー**モードでパッケージを提出することができます。
 
--   **開発者モード**の目的は、単にサービス メタデータ パッケージを作成し、オフライン テスト目的で使用するときに、初期の段階で使用します。 このモードでは、パッケージが署名されていないと、手動でダウンロードし、検証のためのテスト コンピューターにインストールする必要があります。 このモードは、作成し、サービス メタデータ パッケージを確認する迅速かつ迅速な方法が、デバイスで動作するように表示できます。
+-   **開発者モード**サービスメタデータパッケージを作成し、オフラインのテスト目的で使用することが目的である場合に、初期段階で使用されます。 このモードでは、パッケージは署名されず、検証のために手動でダウンロードしてテストコンピューターにインストールする必要があります。 このモードは、デバイスで動作するサービスメタデータパッケージを迅速かつ迅速に作成および検証する方法として表示できます。
 
--   **プレビュー モード**パッケージが正しく作成し、エンド ツー エンド テストを送信する準備が確信できる場合に使用します。 このモードで、パッケージは、Windows デベロッパー センター ハードウェア ダッシュ ボードで署名して、マシンのテストが自動的にダウンロードを取得、テスト マシンが正常にプロビジョニングが提供されています。
+-   **プレビューモード**パッケージが正しく作成され、エンドツーエンドテスト用の送信準備が整っていると確信できる場合に使用します。 このモードでは、パッケージは Windows デベロッパーセンターハードウェアダッシュボードによって署名され、テストコンピューターが正しくプロビジョニングされていれば、テストコンピューターに自動的にダウンロードされます。
 
-場合テスト、プレビューを完了し、パッケージがすべてのシナリオで動作し、ライブにパッケージを発行することを確認します。
+プレビューテストを完了し、パッケージがすべてのシナリオで動作することを確認したら、パッケージをライブに発行できます。
 
-次の図では、ワークフローについて説明します。
+次の図は、ワークフローについて説明しています。
 
-![サービス メタデータ パッケージを作成します。](images/mbae-sxs81-createpackageworkflow.png)
+![サービスメタデータパッケージの作成](images/mbae-sxs81-createpackageworkflow.png)
 
-新しいサービス メタデータ パッケージを作成するを参照してください。[サービス メタデータ パッケージを作成するための手順](#steps-for-creating-a-service-metadata-package)します。
+新しいサービスメタデータパッケージを作成するには、「[サービスメタデータパッケージを作成するための手順](#steps-for-creating-a-service-metadata-package)」を参照してください。
 
-既存のサービス メタデータ パッケージを編集するを参照してください。[サービス メタデータ パッケージを編集するための手順](#steps-for-editing-a-service-metadata-package)します。
+既存のサービスメタデータパッケージを編集するには、「[サービスメタデータパッケージを編集する手順](#steps-for-editing-a-service-metadata-package)」を参照してください。
 
-## <a name="steps-for-creating-a-service-metadata-package"></a>サービス メタデータ パッケージを作成するための手順
+## <a name="steps-for-creating-a-service-metadata-package"></a>サービスメタデータパッケージを作成する手順
 
 
-Windows デベロッパー センター ハードウェア ダッシュ ボードにサービス メタデータ パッケージを作成するのにには、次の手順を使用します。
+Windows デベロッパーセンターハードウェアダッシュボードでサービスメタデータパッケージを作成するには、次の手順に従います。
 
--   [サービス メタデータ パッケージの必要な情報を 1/ギャザー](#1-gather-the-required-information-for-the-service-metadata-package)
+-   [1-サービスメタデータパッケージに必要な情報を収集します。](#1-gather-the-required-information-for-the-service-metadata-package)
 
--   [2-サービス メタデータ パッケージの作成](#2-create-the-service-metadata-package)
+-   [2-サービスメタデータパッケージを作成する](#2-create-the-service-metadata-package)
 
--   [Microsoft Store のデバイスのアプリへの挿入の 3 ストア マニフェスト ファイル](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
+-   [3-Microsoft Store デバイスアプリにストアマニフェストファイルを挿入する](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
 
--   [サービス メタデータ パッケージのテスト-4](#4-test-the-service-metadata-package)
+-   [4-サービスメタデータパッケージをテストする](#4-test-the-service-metadata-package)
 
--   [5-サービス メタデータ パッケージの発行](#5-publish-the-service-metadata-package)
+-   [5-サービスメタデータパッケージを発行する](#5-publish-the-service-metadata-package)
 
-### <a name="1-gather-the-required-information-for-the-service-metadata-package"></a>サービス メタデータ パッケージの必要な情報を 1/ギャザー
+### <a name="1-gather-the-required-information-for-the-service-metadata-package"></a>1-サービスメタデータパッケージに必要な情報を収集します。
 
-このトピックの手順 2. でサービス メタデータのウィザードの手順を進めるときは、いくつかのデバイスに関連付けられているモバイル ブロード バンド アプリ プロジェクトの package.appxmanifest ファイルに格納されている情報が必要です。 このトピックの手順 2 の準備ができるように情報を収集するのにには、次の手順を使用します。
+このトピックの手順2のサービスメタデータウィザードの手順を実行すると、デバイスに関連付けたいモバイルブロードバンドアプリプロジェクトの package.appxmanifest ファイルに格納されているいくつかの情報が必要になります。 次の手順に従って情報を収集し、このトピックの手順2で使用できるようにします。
 
 **注意**  
-この手順で値を収集する前に、モバイル ブロード バンド アプリが Microsoft Store を関連付ける必要があります。 モバイル ブロード バンドのアプリを関連付けると、パッケージ マニフェスト ファイル内の値は、Microsoft Store の開発者アカウントから情報を使用して更新されます。 ただし、モバイル ブロード バンド アプリは Microsoft Store に発行する必要はありません。 サービス メタデータ パッケージを発行する準備ができるまで、ローカル開発環境で維持できます。
+この手順の値を収集する前に、モバイルブロードバンドアプリが Microsoft Store に関連付けられている必要があります。 モバイルブロードバンドアプリを関連付けると、パッケージマニフェストファイルの値が、Microsoft Store 開発者アカウントの情報を使用するように更新されます。 ただし、モバイルブロードバンドアプリを Microsoft Store に発行する必要はありません。 サービスメタデータパッケージを発行する準備が整うまで、ローカルの開発環境にとどまります。
 
 
 
-**UWP デバイス アプリの情報を収集するには**
+**UWP デバイスアプリ情報を収集するには**
 
-1.  Visual Studio 2013 を使用して、モバイル ブロード バンド アプリ プロジェクトを開きます。
+1.  Visual Studio 2013 を使用して、モバイルブロードバンドアプリプロジェクトを開きます。
 
-2.  右側のウィンドウで右クリックし、 **Package.appxmanifest**ファイルを開き、をクリックし、**コードの表示**します。
+2.  右側のウィンドウで、 **package.appxmanifest**ファイルを右クリックし、 **[コードの表示]** をクリックします。
 
-3.  Package.appxmanifest ファイルから、次の属性を収集します。
+3.  Package.appxmanifest ファイルから次の属性を収集します。
 
-    -   **Identity**要素、**名前**属性に使用される、**パッケージ名**サービス メタデータのウィザードのフィールド。
+    -   **Id**要素から、サービスメタデータウィザードの **[パッケージ名]** フィールドには**name**属性が使用されます。
 
-    -   **Identity**要素、**パブリッシャー**属性に使用される、**パブリッシャー**サービス メタデータのウィザードのフィールド。
+    -   **Id**要素からは、サービスメタデータウィザードの **[発行元]** フィールドに **[パブリッシャー]** 属性が使用されます。
 
-    -   **アプリケーション**要素、 **Id**属性を**アプリケーション**子要素に使用される、**アプリ ID**フィールドで、サービス メタデータのウィザード。
+    -   **Applications**要素から、**アプリケーション**の子要素の**Id**属性がサービスメタデータウィザードの **[アプリ Id]** フィールドに使用されます。
 
 4.  Package.appxmanifest ファイルを閉じます。
 
-![コード ビューで、package.appxmanifest ファイル](images/mbae-sxs-appxmanifest.png)
+![コードビューの package.appxmanifest ファイル](images/mbae-sxs-appxmanifest.png)
 
-次の手順を実行して Visual Studio 2013 を使用することがなくこれを実行できます。
+また、次の手順を実行して、Visual Studio 2013 を使用せずにこれを完了することもできます。
 
-**Visual Studio 2013 を使用せずにモバイル ブロード バンド アプリ情報を収集するには**
+**Visual Studio 2013 を使用せずにモバイルブロードバンドアプリ情報を収集するには**
 
-1.  モバイル ブロード バンド アプリの package.appxmanifest ファイルに移動します。
+1.  モバイルブロードバンドアプリの package.appxmanifest ファイルに移動します。
 
-2.  ファイルを右クリックし、をクリックし、**プログラムから開く**します。
+2.  ファイルを右クリックし、[ファイルを**開くアプリケーション**の選択] をクリックします。
 
-3.  クリア、**このアプリを使用して、すべての .appxmanifest ファイル** チェック ボックスをクリックします**より多くのオプション**、順にクリックします**メモ帳**します。
+3.  **[このアプリケーションをすべての package.appxmanifest ファイルに使用する]** チェックボックスをオフにし、 **[その他のオプション]** をクリックして、 **[メモ帳]** をクリックします。
 
-4.  Package.appxmanifest ファイルから、次の属性を収集します。
+4.  Package.appxmanifest ファイルから次の属性を収集します。
 
-    -   **Identity**要素、**名前**属性に使用される、**パッケージ名**サービス メタデータのウィザードのフィールド。
+    -   **Id**要素から、サービスメタデータウィザードの **[パッケージ名]** フィールドには**name**属性が使用されます。
 
-    -   **Identity**要素、**パブリッシャー**属性に使用される、**パブリッシャー**サービス メタデータのウィザードのフィールド。
+    -   **Id**要素からは、サービスメタデータウィザードの **[発行元]** フィールドに **[パブリッシャー]** 属性が使用されます。
 
-    -   **アプリケーション**要素、 **Id**属性を**アプリケーション**子要素に使用される、**アプリ ID**フィールドで、サービス メタデータのウィザード。
+    -   **Applications**要素から、**アプリケーション**の子要素の**Id**属性がサービスメタデータウィザードの **[アプリ Id]** フィールドに使用されます。
 
-5.  保存して、package.appxmanifest ファイルを閉じます。
+5.  Package.appxmanifest ファイルを保存して閉じます。
 
-### <a name="2-create-the-service-metadata-package"></a>2-サービス メタデータ パッケージの作成
+### <a name="2-create-the-service-metadata-package"></a>2-サービスメタデータパッケージを作成する
 
-サービス メタデータは、Windows デベロッパー センター ハードウェア ダッシュ ボードで、サービス メタデータのウィザードを使用して作成されます。
+サービスメタデータは、Windows デベロッパーセンターハードウェアダッシュボードのサービスメタデータウィザードを使用して作成されます。
 
-**サービス メタデータ パッケージを作成するには**
+**サービスメタデータパッケージを作成するには**
 
-1.  <http://sysdev.microsoft.com> に移動します。
+1.  <https://sysdev.microsoft.com> に移動します。
 
-2.  下、**デバイス メタデータ**クリックして**モバイル ブロード バンド エクスペリエンスを作成**です。
+2.  **[デバイスメタデータ]** 見出しの下にある **[モバイルブロードバンドエクスペリエンスの作成]** をクリックします。
 
-    ![これは、ダッシュ ボードのランディング ページです。](images/mbae-sxs81-dashboard.png)
+    ![これは、ダッシュボードのランディングページです。](images/mbae-sxs81-dashboard.png)
 
-3.  **サービスの情報** ページで次のフィールドに入力してをクリックし、**次**します。
+3.  **[サービス情報]** ページで、次のフィールドを入力し、 **[次へ]** をクリックします。
 
-    -   **Windows ネットワークの選択 UI で使用されるネットワークの名前を入力**– ネットワークの名前をお客様には、Windows 接続マネージャーに表示されます。
+    -   **Windows ネットワークの選択 UI で使用するネットワークの名前**(Windows 接続マネージャーで顧客に表示されるネットワークの名前) を入力します。
 
-    -   **サービス番号を入力する**– GUID、プロビジョニングのメタデータ内の通信事業者の ID フィールドに一致する必要があります。 Visual Studio 2013 を使用して GUID を作成することができます。 GUID を作成する方法の詳細については、次を参照してください。 [GUID の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070)します。
+    -   **サービス番号を入力**します。これは、プロビジョニングメタデータの "carrier ID" フィールドと一致する必要がある GUID です。 GUID を作成するには、Visual Studio 2013 を使用します。 GUID を作成する方法の詳細については、「 [guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070)」を参照してください。
 
-    -   **Windows ネットワークの選択 UI に表示されるアイコンのアップロード**– クリックして**参照**、し Windows 接続マネージャーでのお客様に表示されるアイコンを選択します。
+    -   **Windows ネットワークの選択 UI に表示されるアイコンをアップロード**します。 **[参照]** をクリックし、windows 接続マネージャーで顧客に表示されるアイコンを選択します。
 
-    -   **Windows 通知のイベント ハンドラーを入力します (以下の権利チェックが必要な場合を除き、省略可能) アプリで**– これは、モバイル ブロード バンド アプリで登録された通知ハンドラー。
+    -   **アプリに Windows notification イベントハンドラーを入力します (以下の権利チェックが必要な場合を除きます)** 。これは、モバイルブロードバンドアプリに登録されている通知ハンドラーです。
 
-    -   **ユーザーのモバイル ブロード バンド接続 (個人用ホット スポット) を共有できますか。** 有効なオプションは**常に許可する**、**権利チェック (Windows notification イベント ハンドラーに必要な) でのみ許可する**、および**を決して許可**します。 既定のオプションでは、常に許可します。
+    -   **ユーザーがモバイルブロードバンド接続 (個人用ホットスポット) を共有できるようにしますか?** -可能なオプションは**常に [許可**]、[**権利チェックのみを許可する] (Windows 通知イベントハンドラーが必要)** 、 **[許可しない]** です。 既定のオプションでは、常にを許可します。
 
-    -   **システムを必要とする Sim に暗証番号 (pin) を実行するには、管理者権限がロックを解除しますか?** – SIM カードのロックを解除暗証番号 (pin) をシステム管理者特権を必要とする場合は、をクリックして、**はい**オプション。
+    -   **SIMs で PIN のロック解除を実行するためにシステム管理者特権を必要としますか?** – SIM カードの固定を解除するためにシステム管理者特権を必要とする場合は、 **[はい]** をクリックします。
 
-    ![ウィザードの サービス情報手順](images/mbae-sxs81-serviceinfostep.png)
+    ![ウィザードの [サービス情報] ステップ](images/mbae-sxs81-serviceinfostep.png)
 
-4.  **ハードウェア情報** ページで、お客様のエクスペリエンスを識別するために使用する情報を選択します。 チェック ボックスを選択すると、適切なネットワークの範囲を追加できます。 生成された ID は、適切なサブスクライバーが識別されるように、Windows APN データベースに存在する必要があります。 APN データベースの詳細については、次を参照してください。 [COSA/APN データベース送信](cosa-apn-database-submission.md)します。
+4.  **[ハードウェア情報]** ページで、エクスペリエンスを識別するために使用する必要がある情報を選択します。 チェックボックスをオンにすると、適切なネットワーク範囲を追加できます。 生成された ID は、適切なサブスクライバーが識別されるように、Windows APN データベースに存在する必要があります。 APN データベースの詳細については、「 [Cosa/apn データベースの送信](cosa-apn-database-submission.md)」を参照してください。
 
-    -   GSM プロバイダー、International Mobile IMSI (Subscriber Identity) を使用する場合は、選択、 **IMSI**下のチェック ボックス、 **GSM**見出し。 **プロバイダー ID**ボックスに、GSM サービス プロバイダーの ID を入力します。 下、 **IMSI/ICCID 範囲**、範囲を入力し、クリックして、見出し**追加**します。
+    -   国際モバイル加入者 Id (IMSI) を使用する GSM プロバイダーの場合は、 **gsm**の見出しの下にある**imsi**チェックボックスをオンにします。 **[プロバイダー id]** ボックスに、GSM サービスプロバイダー id を入力します。 **[Imsi/ICCID 範囲]** 見出しの下に範囲を入力し、 **[追加]** をクリックします。
 
-    -   GSM プロバイダー integrated 回線カード識別子 (ICCID) を使用する場合は、選択、 **SIM ICC ID**下のチェック ボックス、 **GSM**見出し。 下、**プロバイダーの ID と ICC の ID 範囲を入力**、範囲を入力し、クリックして、見出し**追加**します。
+    -   統合回線カード識別子 (ICCID) を使用する GSM プロバイダーの場合は、 **gsm**の見出しの下にある **[SIM ICC ID]** チェックボックスをオンにします。 **[プロバイダー ID と ICC id の範囲を入力]** してください の見出しの下に範囲を入力し、 **[追加]** をクリックします。
 
-    -   GSM プロバイダー ホーム プロバイダー名を使用する場合は、選択、**ホーム プロバイダー名**下のチェック ボックス、 **GSM**見出し。 下、**ホーム プロバイダー名を入力するか、プロバイダー ID (MCC + mnc も) を入力して**見出しで、プロバイダーの ID とプロバイダーの名前を入力し、順にクリックします**追加**します。
+    -   ホームプロバイダー名を使用する GSM プロバイダーの場合は、 **[gsm]** 見出しの下にある **[ホームプロバイダー名]** チェックボックスをオンにします。 **[ホームプロバイダー名を入力するか、プロバイダー id (MCC + MNC) を入力]** してください という見出しの下に、プロバイダー id とプロバイダー名を入力し、 **[追加]** をクリックします。
 
-    -   SID を使用する CDMA プロバイダーの場合は、選択、 **SID**下のチェック ボックス、 **CDMA**見出し。 **SID を入力**ボックスに、CDMA SID を入力します。
+    -   SID を使用する CDMA プロバイダーの場合は、 **Cdma**の見出しの下にある **[sid]** チェックボックスをオンにします。 [ **Sid を入力**してください] ボックスに、CDMA sid を入力します。
 
-    -   プロバイダー名を使用する CDMA プロバイダーの場合は、選択、**プロバイダー名**下のチェック ボックス、 **CDMA**見出し。 **プロバイダー名の入力**ボックス CDMA サービス プロバイダーの名前を入力します。
+    -   プロバイダー名を使用する CDMA プロバイダーの場合は、 **[Cdma]** 見出しの下にある **[プロバイダー名]** チェックボックスをオンにします。 **[プロバイダー名の入力]** ボックスに、cdma サービスプロバイダー名を入力します。
 
     -   **[次へ]** をクリックします。
 
-    ![これは、ウィザードのハードウェア情報 手順です。](images/mbae-sxs81-hardwareinfostep.png)
+    ![これは、ウィザードの [ハードウェア情報] 手順です。](images/mbae-sxs81-hardwareinfostep.png)
 
-5.  **App info**  ページで、このトピックの手順 1 で収集した情報を入力します。 追加の特権を持つアプリを追加する場合は、クリックして**追加**、し、最大 7 以上を入力します。 すべての特権を持つアプリを入力すると、クリックして**次**します。
+5.  **[アプリ情報]** ページで、このトピックの手順1で収集した情報を入力します。 特権アプリをさらに追加する場合は、**追加** をクリックし、最大 7 をクリックします。 すべての特権アプリを入力したら、 **[次へ]** をクリックします。
 
-    ![これは、ウィザードのアプリ情報 手順です。](images/mbae-sxs81-appinfostep.png)
+    ![これは、ウィザードの [アプリ情報] 手順です。](images/mbae-sxs81-appinfostep.png)
 
-6.  **確認** ページで、情報が正しいことを確認します。 選択、**開発者モード**または**プレビュー モード**オプションをクリックして**送信**します。
+6.  **[確認]** ページで、情報が正しいことを確認します。 **[開発者モード]** または **[プレビューモード]** オプションを選択し、 **[送信]** をクリックします。
 
-    -   **開発者モード**パッケージが署名されていません: しする必要があります手動でダウンロードして各コンピューターにインストールします。 このオプションは、オフライン開発用にパッケージを保存する場合に使います。
+    -   **開発者モード**–パッケージは署名されていないため、手動でダウンロードしてすべてのコンピューターにインストールする必要があります。 このオプションは、オフライン開発用にパッケージを保存する場合に使います。
 
-    -   **プレビュー モード**– パッケージに署名し、自動的に構成されている適切なレジストリ設定をテスト コンピューターに Microsoft からダウンロードします。 プレビュー モードは、モバイル ブロード バンド アプリが Microsoft Store に公開されていることを確認するのにはチェックされません。
+    -   **プレビューモード**–パッケージは署名され、適切なレジストリ設定が構成されているコンピューターをテストするために、Microsoft から自動的にダウンロードされます。 プレビューモードでは、モバイルブロードバンドアプリが Microsoft Store に発行されているかどうかは確認されません。
 
-    ![これは、ウィザードの確認手順です。](images/mbae-sxs81-confirm.png)
+    ![これは、ウィザードの [確認] 手順です。](images/mbae-sxs81-confirm.png)
 
-### <a name="3-insert-the-store-manifest-file-into-the-microsoft-store-device-app"></a>Microsoft Store のデバイスのアプリへの挿入の 3 ストア マニフェスト ファイル
+### <a name="3-insert-the-store-manifest-file-into-the-microsoft-store-device-app"></a>3-Microsoft Store デバイスアプリにストアマニフェストファイルを挿入する
 
-ストア マニフェスト ファイルは、UWP デバイスのアプリに含める必要があります。 サービス メタデータ パッケージ ストア マニフェスト ファイルをダウンロードして、モバイル ブロード バンド アプリ プロジェクトに挿入するには、次の手順を使用します。
+ストアマニフェストファイルは、UWP デバイスアプリに含まれている必要があります。 サービスメタデータパッケージからストアマニフェストファイルをダウンロードし、モバイルブロードバンドアプリプロジェクトに挿入するには、次の手順に従います。
 
-**ストア マニフェスト ファイルを挿入します。**
+**ストアマニフェストファイルを挿入する**
 
-1.  サービス メタデータ パッケージのエクスペリエンスの管理 ページで、Windows デベロッパー センター ハードウェア ダッシュ ボードで、サービス メタデータ パッケージをクリックし、クリックして**StoreManifest.xml**ストア マニフェスト ファイルをダウンロードします。
+1.  Windows デベロッパーセンターのハードウェアダッシュボードで、サービスメタデータパッケージの エクスペリエンスの管理 ページの サービスメタデータパッケージ をクリックし、 **StoreManifest** をクリックしてストアマニフェストファイルをダウンロードします。
 
-    ![ストア マニフェスト ファイルをダウンロードします。](images/mbae-sxs81-storemanifest.png)
+    ![ストアマニフェストファイルをダウンロードする](images/mbae-sxs81-storemanifest.png)
 
-2.  Visual Studio 2013 を使用して、モバイル ブロード バンド アプリ プロジェクトを開きます。
+2.  Visual Studio 2013 を使用して、モバイルブロードバンドアプリプロジェクトを開きます。
 
-3.  プロジェクトを右クリックし、をクリックして**追加**、 をクリックし、**既存項目の**します。
+3.  プロジェクトを右クリックし、 **[追加]** をクリックして、 **[既存の項目]** をクリックします。
 
-4.  ダウンロードしたストア マニフェスト ファイルを参照してクリックして**追加**します。
+4.  ダウンロードしたストアマニフェストファイルを参照し、 **[追加]** をクリックします。
 
-5.  モバイル ブロード バンドのアプリを再コンパイルし、もう一度 Microsoft Store に発行します。
+5.  モバイルブロードバンドアプリを再コンパイルし、Microsoft Store に再度発行します。
 
-### <a name="4-test-the-service-metadata-package"></a>サービス メタデータ パッケージのテスト-4
+### <a name="4-test-the-service-metadata-package"></a>4-サービスメタデータパッケージをテストする
 
-サービス メタデータ パッケージをテストするには、モバイル ブロード バンド デバイスとサービス メタデータ パッケージのファイルが必要です。 テスト システムを構成し、サービス メタデータ パッケージをインストールする手順は、パッケージのモードによって異なります。
+サービスメタデータパッケージをテストするには、モバイルブロードバンドデバイスとサービスメタデータパッケージファイルが必要です。 テストシステムを構成し、サービスメタデータパッケージをインストールする手順は、パッケージのモードによって異なります。
 
-### <a name="span-idtestaservicemetadatapackageindevelopermodespanspan-idtestaservicemetadatapackageindevelopermodespanspan-idtestaservicemetadatapackageindevelopermodespantest-a-service-metadata-package-in-developer-mode"></a><span id="Test_a_service_metadata_package_in_developer_mode"></span><span id="test_a_service_metadata_package_in_developer_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_DEVELOPER_MODE"></span>開発者モードでのサービス メタデータ パッケージをテストします。
+### <a name="span-idtest_a_service_metadata_package_in_developer_modespanspan-idtest_a_service_metadata_package_in_developer_modespanspan-idtest_a_service_metadata_package_in_developer_modespantest-a-service-metadata-package-in-developer-mode"></a><span id="Test_a_service_metadata_package_in_developer_mode"></span><span id="test_a_service_metadata_package_in_developer_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_DEVELOPER_MODE"></span>開発者モードでのサービスメタデータパッケージのテスト
 
-手動でパッケージをダウンロードし、正常に動作するシナリオの正しい場所にインストールする必要があります。 開発者モード パッケージは、新しいパッケージまたは既存のパッケージを作成するかどうかに応じて 2 つの異なるエントリ ポイントからアクセスする必要があります。
+シナリオを正しく動作させるには、パッケージを手動でダウンロードして適切な場所にインストールする必要があります。 開発者モードのパッケージには、新しいパッケージを作成したか既存のパッケージを作成したかに応じて、2つの異なるエントリポイントからアクセスする必要があります。
 
-Windows デベロッパー センター ハードウェア ダッシュ ボードで、新しいパッケージを作成した場合はクリックして**管理エクスペリエンス**、順にクリックします**Dev パッケージが関連付けられていない**(の最初のエントリ、**管理エクスペリエンス**テーブル)。 次の図は、例を示します。
+新しいパッケージを作成した場合は、Windows デベロッパーセンターのハードウェアダッシュボードで **[エクスペリエンスの管理]** をクリックし、関連付けられていない **[開発パッケージ]** (**エクスペリエンスの管理**テーブルの最初のエントリ) をクリックします。 次の図に例を示します。
 
-![サービス メタデータ パッケージをダウンロードします。](images/mbae-sxs81-managedevpackages.png)
+![サービスメタデータパッケージのダウンロード](images/mbae-sxs81-managedevpackages.png)
 
-エクスペリエンスに関連付けられている既存のサービス メタデータ パッケージを編集した場合のエクスペリエンスを選択、**管理エクスペリエンス**して、テーブルで開発者モード パッケージが表示されます、**メタデータパッケージ**テーブル。 クリックして**ダウンロード MBAE Zip パッケージを編集**をダウンロードします。
+既にエクスペリエンスに関連付けられている既存のサービスメタデータパッケージを編集した場合は、 **[エクスペリエンスの管理]** テーブルからエクスペリエンスを選択すると、 **[メタデータパッケージ]** テーブルに developer mode パッケージが表示されます。 **[MBAE Zip パッケージの編集]** をクリックしてダウンロードします。
 
-![サービス メタデータ パッケージをダウンロードします。](images/mbae-sxs81-manageassociatedpackages.png)
+![サービスメタデータパッケージのダウンロード](images/mbae-sxs81-manageassociatedpackages.png)
 
-サービス メタデータ パッケージをダウンロードした後は、サービス メタデータ パッケージは署名されていないため、テスト署名を有効する必要があります。 テスト署名を有効にする**bcdedit を実行 – testsigning を設定**管理者特権でコマンド プロンプトから、コンピューターを再起動します。
+サービスメタデータパッケージをダウンロードした後、サービスメタデータパッケージが署名されていないため、テスト署名を有効にする必要があります。 テスト署名を有効にするには、管理者特権のコマンドプロンプトから**bcdedit – set testsigning オンを実行**し、コンピューターを再起動します。
 
-テスト署名を有効にすると、コピー、 \*.devicemetadata ms が次の場所にサービス メタデータ パッケージからファイル: **%programdata%\\Microsoft\\Windows\\DeviceMetadataStore\\** <em>カルチャ</em>ここで、*カルチャ*は、コンピューターの現在のカルチャ コード。
+テスト署名を有効にした後、サービスメタデータパッケージから devicemetadata-ms ファイルを次の場所に \*コピーします: **% Programdata%\\Microsoft\\Windows\\DeviceMetadataStore\\** <em>culture</em>。ここで、 *culture*はコンピューターの現在のカルチャコードです。
 
-### <a name="span-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>プレビュー モードでのサービス メタデータ パッケージをテストします。
+### <a name="span-idtest_a_service_metadata_package_in_preview_modespanspan-idtest_a_service_metadata_package_in_preview_modespanspan-idtest_a_service_metadata_package_in_preview_modespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>プレビューモードでのサービスメタデータパッケージのテスト
 
-サービス メタデータ パッケージは、プレビュー モードでは場合、は、テスト コンピューターに PreviewKey レジストリ エントリを作成する必要があります。 PreviewKey のレジストリ エントリを構成する方法の詳細については、次を参照してください。[プレビュー パッケージを作成する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)します。
-
-**注:**  
-テスト プレビュー モードでは、サービス メタデータ パッケージをテストする署名を有効にすることはありません。
-
-
-
-PreviewKey のレジストリ エントリが作成されると、モバイル ブロード バンド デバイスに接続し、ネットワーク一覧に表示されることを確認します。 そうでない場合は、次を参照してください。、[トラブルシューティング](#troubleshooting)詳細セクション。
-
-### <a name="span-idcleartheexistingservicemetadataspanspan-idcleartheexistingservicemetadataspanspan-idcleartheexistingservicemetadataspanclear-the-existing-service-metadata"></a><span id="Clear_the_existing_service_metadata"></span><span id="clear_the_existing_service_metadata"></span><span id="CLEAR_THE_EXISTING_SERVICE_METADATA"></span>既存のサービス メタデータをクリアします。
-
-サービス メタデータは、PC にインストールするときに、メタデータに含まれる値は、レジストリ、メタデータのキャッシュ、メタデータ ストア、WWAN プロファイル開発ノードなど、さまざまな場所に格納されます。 これは、ために、同じまたは異なるメタデータ パッケージを使用した複数のテストを繰り返します。 サービス メタデータが正しくインストールされていることを確認するには、既存のサービス メタデータをクリアする必要があります。 既存のサービス メタデータをクリアするには、すべてのトレースを削除する PowerShell スクリプトを実行するテスト コンピューターのセットアップします。 最初に、テスト コンピューターに、環境を設定する必要があります。
+サービスメタデータパッケージがプレビューモードの場合は、テストコンピューターにプレビューキーレジストリエントリを作成する必要があります。 Preview Key レジストリエントリの構成の詳細については、「[プレビューパッケージの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)」を参照してください。
 
 **注:**  
-これは、Windows RT デバイスでは機能しません。 Windows RT を実行しているデバイス上のサービス メタデータをクリア"するには"という名前のプロシージャでの手順を使用します。
+プレビューモードのサービスメタデータパッケージをテストするために、テスト署名を有効にする必要はありません。
 
 
 
-**サービス メタデータをクリアするための環境をセットアップするには**
+プレビューキーのレジストリエントリが作成されたら、モバイルブロードバンドデバイスに接続し、[ネットワーク] の一覧に表示されていることを確認します。 そうでない場合は、[トラブルシューティング](#troubleshooting)のセクションで詳細を確認してください。
 
-1.  Psexec.exe をダウンロード (<https://go.microsoft.com/fwlink/p/?linkid=330071>)、し、そのフォルダーに抽出します。
+### <a name="span-idclear_the_existing_service_metadataspanspan-idclear_the_existing_service_metadataspanspan-idclear_the_existing_service_metadataspanclear-the-existing-service-metadata"></a><span id="Clear_the_existing_service_metadata"></span><span id="clear_the_existing_service_metadata"></span><span id="CLEAR_THE_EXISTING_SERVICE_METADATA"></span>既存のサービスメタデータをクリアする
 
-2.  ダウンロードして Windows ドライバー キット Windows 8.1 のインストール (<https://go.microsoft.com/fwlink/?LinkId=330072>)。
+サービスメタデータが PC にインストールされている場合、メタデータに含まれる値は、レジストリ、メタデータキャッシュ、メタデータストア、WWAN プロファイル、開発ノードなどのさまざまな場所に格納されます。 これにより、同じまたは異なるメタデータパッケージを使用して複数のテストを繰り返すことが困難になる場合があります。 サービスメタデータが正しくインストールされていることを確認するには、既存のサービスメタデータをクリアする必要があります。 すべてのトレースを削除する PowerShell スクリプトを実行するようにテストコンピューターを設定することにより、既存のサービスメタデータを消去できます。 まず、テストコンピューターで環境を設定する必要があります。
 
-3.  WDK ファイルのインストール場所に移動します。 既定の場所は**c:\\Program Files (x86)\\Windows キット\\8.1\\ツール**します。 テスト用コンピューターで x86 が実行されている場合は、x86 から devcon.exe をコピー psexec.exe と同じフォルダーにフォルダー。 テスト用コンピューターで x64 が実行されている場合は、x64 から devcon.exe をコピー フォルダー。
+**注:**  
+これは、Windows RT デバイスでは機能しません。 「Windows RT を実行しているデバイスのサービスメタデータを消去するには」の手順に従います。
 
-4.  Devcon.exe と PsExec.exe と同じフォルダーに MetadataRemovalScript.ps1 としては、次のスクリプトを保存します。
+
+
+**サービスメタデータを消去するための環境を設定するには**
+
+1.  Psexec (<https://go.microsoft.com/fwlink/p/?linkid=330071>) をダウンロードし、フォルダーに抽出します。
+
+2.  Windows Driver Kit Windows 8.1 (<https://go.microsoft.com/fwlink/?LinkId=330072>) をダウンロードしてインストールします。
+
+3.  WDK ファイルがインストールされている場所に移動します。 既定の場所は、 **C:\\Program Files (x86)\\Windows kit\\8.1\\Tools**です。 テストコンピューターで x86 が実行されている場合は、x86 フォルダーから psexec と同じフォルダーに devcon をコピーします。 テストコンピューターで x64 が実行されている場合は、x64 フォルダーから devcon をコピーします。
+
+4.  次のスクリプトを、MetadataRemovalScript と PsExec と同じフォルダーに保存します。
 
     **注:**  
-    **型として保存**ボックスに、選択することを確認**すべてのファイル (\*.\*)** ファイルを保存する前にします。
+    **[保存の種類]** ボックスで、ファイルを保存する前に [**すべてのファイル (\*\*)** ] を選択してください。
 
 
 
@@ -467,170 +467,170 @@ Write-Host "END"
 ```
 
 
-環境を設定した後は、既存のサービス メタデータをオフにするたびに、次の手順を実行します。
+環境がセットアップされたら、既存のサービスメタデータを消去するたびに、次の手順を実行します。
 
-**サービス メタデータをクリアするには**
+**サービスメタデータを消去するには**
 
-1.  モバイル ブロード バンド デバイスが、テスト コンピューターに接続されていることを確認します。
+1.  モバイルブロードバンドデバイスがテストコンピューターに接続されていることを確認します。
 
-2.  管理者特権でコマンド プロンプトで、psexec.exe、抽出したフォルダーに移動および実行し、 **psexec/s/i powershell**
+2.  管理者特権でのコマンドプロンプトで、psexec を展開したフォルダーに移動し、 **psexec/s/i powershell**を実行します。
 
-3.  PowerShell コマンド プロンプトで、psexec.exe を抽出したフォルダーに移動します。
+3.  PowerShell コマンドプロンプトで、psexec を抽出したフォルダーに移動します。
 
-4.  型**set-executionpolicy unrestricted**し、Enter キーを押します。
+4.  「 **Set-set-executionpolicy 無制限**」と入力し、enter キーを押します。
 
-5.  型**Y**しを入力します。
+5.  「 **Y** 」と入力し、「」と入力します。
 
-6.  型 **.\\MetadataRemovalScript.ps1**し、Enter キーを押します。
+6.  **\\MetadataRemovalScript**を入力し、enter キーを押します。
 
-7.  メッセージが表示されたら、モバイル ブロード バンド デバイスを削除し、Enter キーを押します。
+7.  メッセージが表示されたら、モバイルブロードバンドデバイスを削除し、enter キーを押します。
 
-8.  テスト用コンピューターから、サービス メタデータをクリアするたびに次の手順を繰り返します。
+8.  テストコンピューターからサービスメタデータを消去するたびに、この手順を繰り返します。
 
-**Windows RT を実行しているデバイス上のサービス メタデータをクリア**
+**Windows RT を実行しているデバイスのサービスメタデータを消去するには**
 
-1. ソフトウェア デバイス ノードを削除します。
+1. ソフトウェアデバイスノードを削除します。
 
-   1.  デバイス マネージャーで、**ビュー**、 をクリックし、**非表示のデバイスを表示する**します。
+   1.  デバイスマネージャーで、 **[表示]** をクリックし、非表示の **[デバイスの表示]** をクリックします。
 
-   2.  デバイスのソフトウェアを展開します。
+   2.  [ソフトウェアデバイス] を展開します。
 
-   3.  以下のデバイス ノードを右クリックし、をクリックし、**アンインストール**:**Windows.Devices.Sms.SmsDevice**と**Windows.Networking/NetworkOperators.MobileBroadbandAccount**
+   3.  次のデバイスノードを右クリックし、 **[アンインストール]** をクリックします。 **windows. Devices. Smsdevice**と**Windows. network operators. MobileBroadbandAccount**
 
-2. すべてのインターフェイスからすべてのモバイル ブロード バンド プロファイルを削除します。
+2. すべてのインターフェイスからすべてのモバイルブロードバンドプロファイルを削除します。
 
-   1. 管理者特権でコマンド プロンプトで、次のように入力します**netsh mbn 表示 pro i =。\\** *
+   1. 管理者特権のコマンドプロンプトで、「 **netsh mbn 表示 (pro i =\\** 」と入力し*
 
-   2. プロファイルのそれぞれについて、次のように入力します。 **netsh mbn 削除プロファイル名 ="、ここにプロファイル名"は =\\** * し、Enter キーを押します。
+   2. 各プロファイルについて、「 **netsh mbn delete profile name = "ここにプロファイル名" i =\\*」** と入力し、enter キーを押します。
 
-3. すべてのモバイル ブロード バンド アダプターを無効にします。
+3. すべてのモバイルブロードバンドアダプターを無効にします。
 
-   1.  デバイス マネージャーで、展開**ネットワーク アダプター**します。
+   1.  デバイスマネージャーで、 **[ネットワークアダプター]** を展開します。
 
-   2.  各モバイル ブロード バンド デバイスを右クリックし、をクリックし、**を無効にする**します。
+   2.  各モバイルブロードバンドデバイスを右クリックし、 **[無効にする]** をクリックします。
 
-4. 管理者特権でコマンド プロンプトで、」と入力して、DSM のサービスを停止**sc stop dsmsvc**し、Enter キーを押します。
+4. 管理者特権のコマンドプロンプトで、「 **sc stop dsmsvc** 」と入力して DSM サービスを停止し、enter キーを押します。
 
-5. サービス メタデータ パッケージを含む任意のフォルダーを削除することによって、デバイスのメタデータ ストアから、サービス メタデータ パッケージを削除 **%programdata%\\Microsoft\\Windows\\DeviceMetadataStore**. MobileBroadbandInfo.xml ファイルを探すことによって、サービス メタデータ パッケージを識別できます。
+5. サービスメタデータパッケージを含むフォルダーを、 **% Programdata%\\Microsoft\\Windows\\DeviceMetadataStore**から削除することで、デバイスメタデータストアからサービスメタデータパッケージを削除します。 サービスメタデータパッケージを特定するには、MobileBroadbandInfo ファイルを検索します。
 
-6. WWAN SVC MBAE のすべてのレジストリ エントリを削除します。
+6. すべての WWAN SVC MBAE レジストリエントリを削除します。
 
-   1.  レジストリ エディターでは、次のレジストリ エントリとすべての子エントリを削除します。HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts します。
+   1.  レジストリエディターで、次のレジストリエントリとすべての子エントリを削除します。 HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts。
 
-   2.  レジストリ エントリを削除へのアクセスを持っていない場合はフル コントロール アクセス許可を付与自分でする必要があります。
+   2.  レジストリエントリを削除するためのアクセス権がない場合は、フルコントロールアクセス許可を自分に付与する必要があります。
 
-7. すべてのモバイル ブロード バンド アダプターを有効にします。
+7. すべてのモバイルブロードバンドアダプターを有効にします。
 
-   1.  デバイス マネージャーで、展開**ネットワーク アダプター**します。
+   1.  デバイスマネージャーで、 **[ネットワークアダプター]** を展開します。
 
-   2.  各モバイル ブロード バンド デバイスを右クリックし、をクリックし、**を有効にする**します。
+   2.  各モバイルブロードバンドデバイスを右クリックし、 **[有効]** をクリックします。
 
-### <a name="5-publish-the-service-metadata-package"></a>5-サービス メタデータ パッケージの発行
+### <a name="5-publish-the-service-metadata-package"></a>5-サービスメタデータパッケージを発行する
 
-サービス メタデータ パッケージが正しく動作することを確認できたら後の最後の手順は、パッケージをリリースするがします。 クリックして、特定のエクスペリエンスにアタッチされているパッケージを選択して、パッケージをリリースすることができます、**リリース** ボタン、次のようです。
+サービスメタデータパッケージが正常に動作することを確認したら、最後の手順としてパッケージを解放します。 次に示すように、 **[リリース]** ボタンをクリックして、特定のエクスペリエンスにアタッチされているパッケージを選択することにより、パッケージを解放できます。
 
-![サービス メタデータ パッケージをリリースします。](images/mbae-sxs81-releasetolive.jpg)
+![サービスメタデータパッケージをリリースする](images/mbae-sxs81-releasetolive.jpg)
 
-## <a name="steps-for-editing-a-service-metadata-package"></a>サービス メタデータ パッケージを編集するための手順
-
-
-サービス メタデータ パッケージを編集するには、Windows デベロッパー センター ハードウェア ダッシュ ボードのエクスペリエンスの管理ページを使用します。
-
-![エクスペリエンスの管理 ページ](images/mbae-sxs81-manageexperience.png)
-
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="steps-for-editing-a-service-metadata-package"></a>サービスメタデータパッケージを編集する手順
 
 
-ネットワークの一覧を開き、モバイル ブロード バンド ネットワークを確認します。 サービス メタデータ パッケージで使用したアイコンと名前を使用して、ネットワークが表示されている場合**ServiceInfo.xml**ファイル、パッケージが正しく解析します。 同じ名前とアイコンを持っている、サービス メタデータ パッケージを更新する場合、または名前またはアイコンが約 1 分の詳細については、後のリストに表示されていない場合は、ここで説明したように、追加の手順を実行する必要があります。
+サービスメタデータパッケージを編集するには、Windows デベロッパーセンターハードウェアダッシュボードの [エクスペリエンスの管理] ページを使用します。
 
--   メタデータ更新を強制します。
+![[エクスペリエンスの管理] ページ](images/mbae-sxs81-manageexperience.png)
 
--   メタデータ キャッシュを確認してください。
+## <a name="troubleshooting"></a>[トラブルシューティング]
 
--   レジストリを確認してください。
 
--   WWAN ログを確認してください。
+[ネットワーク] の一覧を開き、モバイルブロードバンドネットワークを探します。 サービスメタデータパッケージ**Serviceinfo .xml**ファイルで使用した名前とアイコンを使用してネットワークが表示されている場合は、パッケージが正しく解析されます。 同じ名前とアイコンを持つサービスメタデータパッケージを更新する場合、または約1分後に名前またはアイコンがリストに表示されない場合は、次の手順に従って追加の手順を実行する必要があります。
 
-### <a name="span-idforcemdrefspanspan-idforcemdrefspanforce-a-metadata-refresh"></a><span id="forcemdref"></span><span id="FORCEMDREF"></span>メタデータ更新を強制します。
+-   メタデータの更新を強制する
 
-メタデータとシステムのモバイル ブロード バンドのアプリの一部は失敗し、一貫性のない状態でコンピューターを残すことができるネットワーク アクセスに依存します。 この場合、サービス メタデータがインストールされていない、またはモバイル ブロード バンド アプリがインストールされていないが発生することができます。 システムは、定期的に電源を節約するためには、問題を解決するには、再試行はかなり頻繁に (数回だけ 1 日)。 次の再試行を待機しているのではなく、更新をすぐに実行を手動で適用できます。 これを行うには、次の手順を実行します。
+-   メタデータキャッシュを確認する
 
-1.  デスクトップを開く **コントロール パネルの** します。
+-   レジストリを確認する
 
-2.  開いている**デバイスとプリンター**します。
+-   WWAN ログを確認する
 
-3.  **ビュー**  メニューのをクリックして**更新**、キーを押すか、 **F5**キー。 この操作によって、メタデータを再解析され、バック グラウンド イベントを再登録します。
+### <a name="span-idforcemdrefspanspan-idforcemdrefspanforce-a-metadata-refresh"></a><span id="forcemdref"></span><span id="FORCEMDREF"></span>メタデータの更新を強制する
+
+メタデータとモバイルブロードバンドアプリシステムの一部はネットワークアクセスに依存していますが、これは失敗し、コンピューターが不整合な状態のままになる可能性があります。 このような場合は、サービスメタデータがインストールされていないか、モバイルブロードバンドアプリがインストールされていない状況が発生する可能性があります。 システムは定期的に状況を修復しようとしますが、電力を節約するために、再試行は非常にまれです (1 日に数回だけ)。 次の再試行を待つのではなく、手動で強制的に更新を強制することができます。 これを行うには、次の手順を実行します。
+
+1.  デスクトップの**コントロールパネル**を開きます。
+
+2.  [**デバイスとプリンター] を**開きます。
+
+3.  **[表示]** メニューの **[最新]** の状態に更新 をクリックするか、 **F5**キーを押します。 この操作により、メタデータが再解析され、バックグラウンドイベントが再登録されます。
 
 **重要**  
-サービス メタデータ パッケージは既に正常に解析、システムは、メタデータの更新プログラムとしてこの更新を扱います。 この場合、メタデータ パッケージとがありますのファイル名に異なる GUID の更新のタイムスタンプ、 [LastModifiedDate](lastmodifieddate.md)要素の**PackageInfo.xml**します。
+サービスメタデータパッケージが既に正常に解析されている場合、システムはこの更新をメタデータの更新として扱います。 この場合、メタデータパッケージのファイル名には別の GUID が、 **Packageinfo .xml**の[LastModifiedDate](lastmodifieddate.md)要素に更新されたタイムスタンプが含まれている必要があります。
 
 
 
-### <a name="span-idcheckmdcachespanspan-idcheckmdcachespancheck-the-metadata-cache"></a><span id="checkmdcache"></span><span id="CHECKMDCACHE"></span>メタデータ キャッシュを確認してください。
+### <a name="span-idcheckmdcachespanspan-idcheckmdcachespancheck-the-metadata-cache"></a><span id="checkmdcache"></span><span id="CHECKMDCACHE"></span>メタデータキャッシュを確認する
 
-メタデータの更新では、問題が解決しないが、サービス メタデータ パッケージが有効であると、正しいハードウェア Id があることを確認します。 これを行うには、次の手順を実行します。
+メタデータの更新で問題が解決しなかった場合は、サービスメタデータパッケージが有効であること、および正しいハードウェア Id があることを確認してください。 これを行うには、次の手順を実行します。
 
-1. 移動します **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>カルチャ</em>ここで、 *カルチャ*はテスト用コンピューターの現在のカルチャのカルチャ コード (たとえば、 **en-ご**または **、es-es**)。
+1. **% Programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>culture</em>に移動します。ここで、 *culture*はテストコンピューターの現在のカルチャのカルチャコード (たとえば、**en-us**または**es**)。
 
-2. メタデータ パッケージと同じ名前を持つフォルダーを探します (なし、 **.devicemetadata ms**拡張機能)。 このディレクトリが存在しない場合、次の 4 つのいずれかに意味があります。
+2. メタデータパッケージと同じ名前のフォルダーを探します ( **devicemetadata**拡張子は使用しません)。 このディレクトリが存在しない場合は、次の4つのいずれかを意味します。
 
-   -   サービス メタデータ パッケージが壊れています。
+   -   サービスメタデータパッケージが破損しています。
 
-   -   サービス メタデータ パッケージには、正しいハードウェア Id がありません。
+   -   サービスメタデータパッケージに正しいハードウェア Id がありません。
 
-   -   モバイル ブロード バンド デバイスは、メタデータをダウンロードできる、またはサービス メタデータ パッケージをコピーする前に、デバイスに接続した状態でないです。
+   -   モバイルブロードバンドデバイスは、メタデータをダウンロードできる状態ではなく、サービスメタデータパッケージをコピーする前にデバイスに接続している状態でもありません。
 
-   -   メタデータ パッケージのデジタル署名を確認するときに問題が発生しました。 これは通常、テスト署名をテスト コンピューターに有効でないことにより発生します。
+   -   メタデータパッケージのデジタル署名を確認しているときに問題が発生しました。 これは通常、テストコンピューターでテスト署名が有効になっていないことが原因で発生します。
 
-パッケージが壊れていないことと、最初に接続したモバイル ブロード バンド デバイス サービス メタデータ パッケージをコピーした後を確認する場合は、IMSI 範囲を確認します。 入力が多すぎるか少なすぎます 0 または 9 で非常に簡単になります。 確認するか、これらの項目を修正した後、問題が解決しない場合は、レジストリを確認する必要があります。
+パッケージが破損していないことと、サービスメタデータパッケージをコピーした後にモバイルブロードバンドデバイスに最初に接続したことが確実である場合は、IMSI の範囲を確認します。 非常に簡単に入力できるのは、数が多すぎる、または、数が少なすぎるか、または少なくなっています。 これらの項目を確認または修正した後も問題が解決しない場合は、レジストリを確認する必要があります。
 
-### <a name="span-idcheckregspanspan-idcheckregspancheck-the-registry"></a><span id="checkreg"></span><span id="CHECKREG"></span>レジストリを確認してください。
+### <a name="span-idcheckregspanspan-idcheckregspancheck-the-registry"></a><span id="checkreg"></span><span id="CHECKREG"></span>レジストリを確認する
 
 **警告**  
-絶対に必要である場合を除き、アプリケーションに属していないレジストリ データは編集しないでください。 レジストリにエラーがある場合、システムが正しく機能しない可能性があります。 削除しないでください、どのような状況下で、 **MobileBroadbandAccounts**レジストリ キー。 Windows は再作成しないと、機能が中断されます。
+本当に必要な場合を除き、アプリケーションに属していないレジストリデータは編集しないでください。 レジストリにエラーがある場合は、システムが正常に機能しない可能性があります。 そうでない場合は、どのような状況でも、 **MobileBroadbandAccounts**レジストリキーを削除します。 Windows では再作成されず、機能が無効になります。
 
 
 
-レジストリを確認するには、次の手順に従います。
+レジストリを確認するには、次の手順を実行します。
 
 1.  レジストリ エディターを開きます。
 
-2.  移動して**HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**します。
+2.  **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**にアクセスします。
 
-3.  このレジストリ キー内の他の 3 つのキーを探します。**アカウント**、 **NetworkInterfaceBindings**、および**データ**します。 既定では、これらのキーが存在しません。初めてモバイル ブロード バンド デバイスが挿入されたか、有効で、または、接続されていることに自動的に作成されます。
+3.  このレジストリキー内で、 **Accounts**、 **Networkinterfacebindings**、 **Data**の3つのキーを探します。 既定では、これらのキーは存在しません。モバイルブロードバンドデバイスの挿入、電源オン、または接続が初めて行われるときに、自動的に作成されます。
 
-4.  場合、**アカウント**または**NetworkInterfaceBindings**キーが存在しないと、電源に接続されて既にまたは WWAN ログを確認して、モバイル ブロード バンドのアダプターでは、有効にします。
+4.  **アカウント**または**networkinterfacebindings**キーが存在せず、既にモバイルブロードバンドアダプターに接続されているか、オンになっている場合は、WWAN ログを確認します。
 
-5.  これらのキーの一部またはすべてが存在する場合は、展開、**アカウント**キー、**ツリー**ビュー。 Guid のような名前を持つ 1 つまたは複数のレジストリ キーは、その内に存在する必要があります。 レジストリ ツリー エントリはレジストリ ツリーの下に表示されるようになります。
+5.  これらのキーの一部またはすべてが存在する場合は、**ツリー**ビューで **[アカウント]** キーを展開します。 Guid に類似した名前を持つ1つ以上のレジストリキーが、その中に存在する必要があります。 レジストリツリーのエントリは、次に示すレジストリツリーのようになります。
 
-    ![解析されたアカウントのレジストリ エントリ](images/fig2-registryentries-for-parsedmobilebroadbandaccount.png)
+    ![解析されたアカウントのレジストリエントリ](images/fig2-registryentries-for-parsedmobilebroadbandaccount.png)
 
-    (値の名前は若干によって異なるかどうか、アカウントが GSM または CDMA ネットワーク) 上の図のような場合は、レジストリ キー、およびネットワークの一覧のアイコンが表示されない場合、イベント ログを見てください。
+    レジストリキーが上の図のように見える場合 (値の名前は、アカウントが GSM または CDMA ネットワーク上にあるかどうかによって多少異なります)、[ネットワーク] の一覧にアイコンが表示されない場合は、イベントログを確認する必要があります。
 
-    モバイル ブロード バンド アダプターが、デバイスのメタデータ ストアにサービス メタデータ パッケージのコピー、サービス メタデータ パッケージが破損している場合、またはハードウェア Id が正しくない前に挿入されたことになります、レジストリ エントリが次の図のような場合は、. 電源接続時またはデバイス メタデータ パッケージのメタデータ ストアにコピーする前に有効にした位置の状況を解決するには、メタデータの更新で、手順を実行します。 それ以外の場合、チェック WWAN ログ」の手順に従ってください。
+    レジストリエントリが次の図のようになっている場合は、サービスメタデータパッケージがデバイスメタデータストアにコピーされる前にモバイルブロードバンドアダプターが挿入された、サービスメタデータパッケージが破損している、またはハードウェア Id が正しくないことを示します. メタデータパッケージをメタデータストアにコピーする前にデバイスに接続している、または電源をオンにした状況を解決するには、「メタデータの更新を強制する」の手順を実行します。 それ以外の場合は、「WWAN ログの確認」の手順に従います。
 
-    ![未解析のアカウントのレジストリ エントリ](images/fig1-registryentries-for-unparsedmobilebroadbandaccount.png)
+    ![未解析アカウントのレジストリエントリ](images/fig1-registryentries-for-unparsedmobilebroadbandaccount.png)
 
-### <a name="span-idcheckwwanlogsspanspan-idcheckwwanlogsspancheck-the-wwan-logs"></a><span id="checkwwanlogs"></span><span id="CHECKWWANLOGS"></span>WWAN ログを確認してください。
+### <a name="span-idcheckwwanlogsspanspan-idcheckwwanlogsspancheck-the-wwan-logs"></a><span id="checkwwanlogs"></span><span id="CHECKWWANLOGS"></span>WWAN ログを確認する
 
-ある場合ありません**アカウント**または**NetworkInterfaceBindings**下のレジストリ キー **HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**、または完全に作成されていないエントリがある場合は、WWAN ログを参照する必要があります。 次の手順では、コンピューターを既知の状態にリセットします。
+**HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**の下に**アカウント**または**networkinterfacebindings**のレジストリキーがない場合、または完全に設定されていないエントリがある場合は、WWAN ログを確認する必要があります。 次の手順を実行すると、コンピューターが既知の状態にリセットされます。
 
-1.  取り外す、または、モバイル ブロード バンド デバイスを無効に (デバイスが埋め込まれている場合は無効で、**デバイス マネージャー**)。
+1.  モバイルブロードバンドデバイスを取り外します (デバイスが埋め込まれている場合は、**デバイスマネージャー**で無効にします)。
 
-2.  次のレジストリ キーを削除します。
+2.  次のレジストリキーを削除します。
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\Accounts**
+    -   **HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\アカウント**
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\NetworkInterfaceBindings**
+    -   **HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\NetworkInterfaceBindings**
 
     **警告**  
-    削除しないでください、どのような状況下で、 **HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\** レジストリ キー。 Windows は再作成しないと、機能が中断されます。
+    それ以外の状況では、 **HKLM\\ソフトウェア\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\** レジストリキーを削除します。 Windows では再作成されず、機能が無効になります。
 
 
 
-ログに関心のあるエントリの 2 種類があります。 アカウント管理 WWAN サービス エントリのログ エントリ、および作業項目のパーサー。 最初の型は、ネットワークのハードウェアの問題によって引き起こされる問題をデバッグでき、2 番目の型は、メタデータの解析に関する問題をデバッグできます。
+ログには、アカウント管理の WWAN サービスエントリログエントリとパーサータスクエントリという2種類のエントリがあります。 最初の型は、ネットワークハードウェアの問題によって発生する問題をデバッグするのに役立ちます。2つ目の型は、メタデータの解析に関する問題をデバッグするのに役立ちます。
 
-管理 WWAN サービス エントリのログ エントリが正常に処理されるネットワーク アカウントは、次に似ています。
+正常に処理されたネットワークのアカウント管理の WWAN サービスエントリのログエントリは、次のようになります。
 
 ```syntax
 [0]02CC.0CD0::‎2012‎-‎01‎-‎04 09:22:26.567 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater started for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861. 
@@ -644,9 +644,9 @@ Write-Host "END"
 [0]02CC.0CD0::‎2012‎-‎01‎-‎04 09:22:26.707 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater finished for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861}.
 ```
 
-ログでこれらのエントリを検索できます**アカウント管理**します。 最も重要なエントリは、この場合、**データ ストアの作成/更新開始**と**データ ストアの作成/更新が完了**します。 これらのエントリは、存在され、エラー メッセージがない、ハードウェアが正しく動作します。 (ここで説明されているレジストリ キーを格納する参照されるデータ ストアは、レジストリをチェックします)。
+これらのエントリは、ログで**アカウント管理**を検索することで見つけることができます。 この場合、最も重要なエントリは、**データストアの作成/更新が開始**され、**データストアの作成/更新が完了**したことです。 これらのエントリが存在し、エラーメッセージがない場合は、ハードウェアが正常に動作しています。 (ここで参照されるデータストアには、「レジストリの確認」で説明されているレジストリキーが含まれています)。
 
-これに対し、SIM の削除、デバイス、エントリ通常になります次のように。
+これに対し、SIM が削除されたデバイスでは、通常、エントリは次のようになります。
 
 ```syntax
 [0]02CC.03E4::‎2012‎-‎01‎-‎04 09:29:50.309 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater started for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861}. 
@@ -657,11 +657,11 @@ Write-Host "END"
 ```
 
 **注:**  
-後者の例でのエントリがない**データ ストアの作成/更新開始**または**データ ストアの作成/更新が完了**します。 SIM に格納された情報は、アカウント管理プロセスに不可欠であるため、SIM がないデバイスには、必要な関連付けられているメタデータはありません。
+後者の例では、**データストアの作成/更新が開始**されたエントリや、**データストアの作成/更新が完了**したエントリはありません。 SIM に格納されている情報はアカウント管理プロセスにとって重要であるため、SIM がないデバイスには、関連するメタデータは必要ありません。
 
 
 
-ハードウェアが正常に処理されたネットワーク一覧で、ロゴまたは名前が表示されない場合は、メタデータ パッケージの問題である可能性があります。 これは、ログ パーサーの作業項目を使用して、調査することができます。 これらのエントリを検索する検索**パーサー タスク**します。 正常に解析のログ エントリは、通常、次のようになります。
+ハードウェアが正常に処理されていても、[ネットワーク] の一覧にロゴまたは名前が表示されない場合は、メタデータパッケージに問題がある可能性があります。 これは、ログ内のパーサータスクエントリを使用して調査できます。 これらのエントリを検索するには、「**パーサー-タスク**」を検索します。 正常に解析されたログエントリは、通常、次のようになります。
 
 ```syntax
 [0]0DA8.0A2C::‎2012‎-‎01‎-‎04 09:22:32.007 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]Parser task started. 
@@ -689,9 +689,9 @@ Write-Host "END"
 [0]0DA8.0A2C::‎2012‎-‎01‎-‎04 09:22:33.017 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]MbaeParserTask completed successfully. 
 ```
 
-これらのログを表示する、 **MobileBroadbandInfo.xml**ファイルが正しく解析された、(と共に、WWAN サービスのログ プロファイルが正常に更新する)、WWAN プロファイルとするパーサーのタスクを適用するパーサーのタスク説明されている、信頼できるプロビジョニング証明書を設定**MobileBroadbandInfo.xml**します。
+これらのログは、MobileBroadbandInfo ファイルが正しく解析されたこと、パーサータスクが、プロファイルを正常に更新した WWAN サービスのログと共に適用したこと、およびパーサータスクによって信頼されたを設定したことを示してい**ます。** **MobileBroadbandInfo**に記載されている証明書をプロビジョニングします。
 
-プロセスの一部が失敗した場合は、そのエラーが記録されます。 たとえば、サービス プロバイダーのアイコン ファイルのデジタル署名のチェックが失敗すると、ログ エントリは通常、次のようになります。
+プロセスのいずれかの部分が失敗した場合、そのエラーはログに記録されます。 たとえば、デジタル署名の確認がサービスプロバイダーアイコンファイルで失敗した場合、通常、ログエントリは次のようになります。
 
 ```syntax
 [0]0F24.0C70::‎2012‎-‎01‎-‎04 10:09:49.271 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]Parser task started. 
@@ -706,18 +706,18 @@ Write-Host "END"
 [0]0F24.0C70::‎2012‎-‎01‎-‎04 10:09:49.692 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]MbaeParserTask did not complete successfully.  Error is 0x80070306: One or more errors occurred while processing the request. 
 ```
 
-1 つ以上のセットを参照してくださいが通常パーサーのタスクを 1 つ以上の時間を実行するため、`[Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]`ログ エントリ。 この場合、エントリのセットは、通常と同じ - 一時的な問題を示している可能性が同じでない場合。
+パーサータスクが複数回実行される場合は正常であるため、複数の `[Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]` ログエントリが表示されることがあります。 この場合、エントリのセットは通常同じです。同じでない場合は、断続的な問題を示している可能性があります。
 
-## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
+## <a name="span-idadditional_resourcesspanspan-idadditional_resourcesspanspan-idadditional_resourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
-Windows 8.1 および Windows 10 におけるモバイル ブロード バンドの詳細については、次のリンクを使用します。
+Windows 8.1 と Windows 10 のモバイルブロードバンドの詳細については、次のリンクを使用してください。
 
--   [モバイル ブロード バンドの概要](overview-of-mobile-broadband.md)
+-   [モバイルブロードバンドの概要](overview-of-mobile-broadband.md)
 
 -   [APN データベースの概要](apn-database-overview.md)
 
--   [サービス メタデータ](service-metadata.md)
+-   [サービスメタデータ](service-metadata.md)
 
 
 

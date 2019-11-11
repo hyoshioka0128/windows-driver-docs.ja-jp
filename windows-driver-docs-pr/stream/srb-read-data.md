@@ -40,7 +40,7 @@ ms.locfileid: "72837711"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状態\_IO\_デバイス\_エラー  
 ハードウェア障害が発生したことを示します。
 
-### <a name="comments"></a>説明
+### <a name="comments"></a>コメント
 
 *PSrb*の値-**commanddata**&gt;ます。**DataBufferArray**は、データバッファーについて説明する[**KSK ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)構造体の配列を指します。 *PSrb*ポインターは、 [ **\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)構造体を指す HW\_ストリームを指します。 *pSrb*-**commanddata**&gt;ます。**Numberofbuffers**は配列のサイズを指定します。
 
