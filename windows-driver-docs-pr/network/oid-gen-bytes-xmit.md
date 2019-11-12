@@ -1,38 +1,40 @@
 ---
 title: OID_GEN_BYTES_XMIT
-description: クエリとして NDIS および上にあるドライバーはミニポート アダプターが送信された合計バイト数を決定するのに OID_GEN_BYTES_XMIT OID を使用します。
+description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_BYTES_XMIT OID を使用して、ミニポートアダプターが送信した合計バイト数を確認します。
 ms.assetid: 95b89a01-39e0-4e13-b960-32923e47a88d
-ms.date: 08/08/2017
-keywords: -OID_GEN_BYTES_XMIT ネットワーク ドライバーが Windows Vista 以降
+ms.date: 11/01/2019
+keywords: -Windows Vista 以降の OID_GEN_BYTES_XMIT ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f59d11ee505a0477b08f1172fdc393df6c6635
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ae58ebd9f7456278d14968911348aaf66294302
+ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323653"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442985"
 ---
-# <a name="oidgenbytesxmit"></a>OID\_GEN\_バイト\_XMIT
+# <a name="oid_gen_bytes_xmit"></a>OID\_GEN\_BYTES\_XMIT
 
 
-クエリ、NDIS と関連付けたドライバーを使用、OID\_GEN\_バイト\_ミニポート アダプターが送信された合計バイト数を決定する XMIT OID。
+クエリとして、NDIS およびそれ以降のドライバーは、XMIT OID\_OID\_GEN\_バイトを使用して、ミニポートアダプターが送信した合計バイト数を特定します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 サポートされています。
 
-<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-要求されません。 (「解説」を参照してください セクション)
+<a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
+要求されていません。 (「解説」を参照してください)
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 参照してください、 [OID\_GEN\_統計](oid-gen-statistics.md)統計情報の詳細については OID。
+NDIS は、この OID をミニポートドライバー用に処理します。 統計の詳細については、 [oid\_GEN\_statistics](oid-gen-statistics.md) oid を参照してください。
 
-合計バイト数は、転送送信バイト数、送信マルチキャスト バイト数およびブロードキャスト送信バイト数の合計です。 この値は、によって返される値の合計と同じ、 [OID\_GEN\_ダイレクト\_バイト\_XMIT](oid-gen-directed-bytes-xmit.md)、 [OID\_GEN\_マルチキャスト\_バイト\_XMIT](oid-gen-multicast-bytes-xmit.md)、および[OID\_GEN\_ブロードキャスト\_バイト\_XMIT](oid-gen-broadcast-bytes-xmit.md) Oid。
+合計バイト数は、送信方向のバイト数、送信/マルチキャストのバイト数、および送信/ブロードキャストのバイト数の合計です。 この値は、Oid\_GEN によって返される値の合計と同じになります。これは、XMIT、 [oid\_gen\_マルチキャスト\_bytes\_XMIT](oid-gen-multicast-bytes-xmit.md)に指定された[\_バイト\_転送\_](oid-gen-directed-bytes-xmit.md)ます。、および[oid\_GEN\_ブロードキャスト\_バイト\_XMIT](oid-gen-broadcast-bytes-xmit.md) oid です。
 
-<a name="requirements"></a>必要条件
+このカウントは、RFC 2863 で説明されている*ifOutOctets*カウンターと同じです。
+
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -43,7 +45,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +59,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 [OID\_GEN\_マルチキャスト\_バイト\_XMIT](oid-gen-multicast-bytes-xmit.md)
 
-[OID\_GEN\_統計情報](oid-gen-statistics.md)
+[OID\_GEN\_の統計情報](oid-gen-statistics.md)
 
  
 

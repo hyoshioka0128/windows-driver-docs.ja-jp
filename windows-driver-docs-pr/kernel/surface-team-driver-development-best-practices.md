@@ -6,12 +6,12 @@ keywords:
 - ドライバー開発のベストプラクティス
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d4abb27a906755867643f34b14f8a7105b1e5a60
-ms.sourcegitcommit: 340fffb04a0a36fe951e78cbfdfb814cf58383aa
+ms.openlocfilehash: 6be9e8980f754dcf8623597fb5373a33e1e3d2e5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658194"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838399"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface Team ドライバー開発ベスト プラクティス
 
@@ -29,15 +29,15 @@ ms.locfileid: "69658194"
 2. ユーザースレッドまたはランダムスレッドコンテキストのコンテキストでブロッキング i/o を実行します。 「[カーネルディスパッチャーオブジェクトの概要」を](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)参照してください。
 3. 同期 i/o を別のドライバーに送信すると、タイムアウトはありません。 「 [I/o 要求を同期的に送信](https://docs.microsoft.com/windows-hardware/drivers/wdf/sending-i-o-requests-synchronously)する」を参照してください。
 4. セキュリティへの影響を理解せずに、io Ioctl を使用しません。 「[バッファーと直接 i/o の両方を使用する」を](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)参照してください。
-5. [Wdfrequestforwardtoioqueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)の戻り値の状態を確認していないか、エラーを正しく処理しなかったため、WDFREQUESTs が破棄されました。
+5. [Wdfrequestforwardtoioqueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)の戻り値の状態を確認していないか、エラーを正しく処理しなかったため、WDFREQUESTs が破棄されました。
 6. キャンセル不可能な状態で、WDFREQUEST をキューの外部に保持します。 I/o[キューの管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/managing-i-o-queues)、 [I/o 要求の完了](https://docs.microsoft.com/windows-hardware/drivers/wdf/completing-i-o-requests)、および[i/o 要求のキャンセル](https://docs.microsoft.com/windows-hardware/drivers/wdf/canceling-i-o-requests)に関する記事をご覧ください。
 7. IoQueues を使用する代わりに、Mark/UnmarkCancelable を使用してキャンセルを管理しようとしています。 「[フレームワークキューオブジェクト](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-queue-objects)」を参照してください。
 8. ファイルハンドルのクリーンアップ操作と終了操作の違いを知ることはできません。 「[クリーンアップおよび終了操作の処理中のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-handling-cleanup-and-close-operations)」を参照してください。
 9. 見落としの可能性を再帰、i/o の完了と完了ルーチンからの再送信を行います。
-10. WDFQUEUEs の電源管理属性については、明示的ではありません。 電源管理の選択を明確に文書化することはできません。 これは、バグチェック 0x9f [の主な原因です。WDF\_ドライバー\_でドライバー](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)の電源状態\_のエラーが発生しています。 デバイスが削除されると、フレームワークは、削除プロセスのさまざまな段階で、電源管理キューと非電源管理キューから IO を削除します。 非電力管理キューは、最後の IRP\_\_の最終削除\_デバイスを受信したときに削除されます。 そのため、非電力管理キューで i/o を保持している場合は、デッドロックを避けるために、 [EvtDeviceSelfManagedIoFlush](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)のコンテキストで i/o を明示的に消去することをお勧めします。
+10. WDFQUEUEs の電源管理属性については、明示的ではありません。 電源管理の選択を明確に文書化することはできません。 これは、WDF ドライバーでのバグチェック0x9F の主な原因です[。ドライバー\_電源\_状態\_エラー](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)です。 デバイスが削除されると、フレームワークは、削除プロセスのさまざまな段階で、電源管理キューと非電源管理キューから IO を削除します。 非電力管理キューは、最後の IRP\_が\_削除\_デバイスを受信したときに消去されます。 そのため、非電力管理キューで i/o を保持している場合は、デッドロックを避けるために、 [EvtDeviceSelfManagedIoFlush](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)のコンテキストで i/o を明示的に消去することをお勧めします。
 11. Irp を処理する規則に従っていません。 「[クリーンアップおよび終了操作の処理中のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-handling-cleanup-and-close-operations)」を参照してください。
 
-### <a name="synchronization"></a>Synchronization
+### <a name="synchronization"></a>同期
 
 1. 保護を必要としないコードに対してロックを保持します。 一部の操作だけを保護する必要がある場合は、関数全体のロックを保持しないでください。
 2. ロックが保持されているドライバーを呼び出します。 これは、デッドロックの主な原因です。
@@ -45,7 +45,7 @@ ms.locfileid: "69658194"
 4. ロックダウンを使用して、何らかの種類のパッシブロックが適切になるようにします。 「[高速ミューテックスと保護](https://docs.microsoft.com/windows-hardware/drivers/kernel/fast-mutexes-and-guarded-mutexes)されたミューテックスおよび[イベントオブジェクト](https://docs.microsoft.com/windows-hardware/drivers/kernel/event-objects)」を参照してください。 ロックに関するその他のパースペクティブについては、OSR の記事「[同期の状態](https://www.osr.com/nt-insider/2015-issue3/the-state-of-synchronization/)」を確認してください。
 5. 影響について完全に理解していない状態で、WDF の同期と実行レベルのモデルにオプトインします。 「 [Framework のロックの使用」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-locks)参照してください。 ドライバーがハードウェアと直接通信するモノリシックトップレベルドライバーでない限り、再帰に起因するデッドロックが発生する可能性があるため、WDF 同期を無効にしないでください。
 6. 重大な領域を入力せずに、複数のスレッドのコンテキストで KEVENT、セマフォ、、UnsafeFastMutex を取得しています。 この操作を行うと、これらのロックを保持しているスレッドが中断される可能性があるため、DOS 攻撃につながる可能性があります。 「[同期の手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/synchronization-techniques)」を参照してください。
-7. イベントがまだ使用されている間に、スレッドスタックで KEVENT を割り当てて呼び出し元に戻す。 通常は、 [IoBuildSyncronousFsdRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)または[IoBuildDeviceIoControlRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)と共に使用します。 これらの呼び出しの呼び出し元は、IRP が完了したときに i/o マネージャーがイベントを通知するまで、スタックからアンワインドされないようにする必要があります。
+7. イベントがまだ使用されている間に、スレッドスタックで KEVENT を割り当てて呼び出し元に戻す。 通常は、 [IoBuildSyncronousFsdRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)または[IoBuildDeviceIoControlRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)と共に使用します。 これらの呼び出しの呼び出し元は、IRP が完了したときに i/o マネージャーがイベントを通知するまで、スタックからアンワインドされないようにする必要があります。
 8. ディスパッチルーチンで無期限に待機しています。 一般に、ディスパッチルーチンのあらゆる種類の待機は、悪い方法です。
 9. オブジェクトを削除する前に、オブジェクトの有効性を不適切に確認しています (blah = = NULL の場合)。 これは、通常、作成者が、オブジェクトの有効期間を制御するコードを完全に理解していないことを意味します。
 
@@ -54,19 +54,19 @@ ms.locfileid: "69658194"
 1. WDF オブジェクトを明示的に親にできません。 「[フレームワークオブジェクトの概要」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)参照してください。
 2. 有効期間の管理を向上させ、メモリ使用量を最適化するオブジェクトとの親子関係ではなく、WDF オブジェクトを WDFDRIVER にします。
 たとえば、IOTARGET ではなく WDFREQUEST に親の WDFREQUEST を使用します。 「[一般的なフレームワークオブジェクトの使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-general-framework-objects)」、「フレームワーク[オブジェクトのライフサイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)」、および「[フレームワークオブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/summary-of-framework-objects)」を参照してください。
-3. ドライバー間でアクセスされる共有メモリリソースのランダウン防止を実行していません。 「 [Exinitializer Erundownprotection 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializerundownprotection)」を参照してください。
-4. 前の作業項目が既にキューに存在するか、既に実行中であるときに、同じ作業項目を誤ってキューに登録します。 これは、キューに入れられたすべての作業項目が実行されることをクライアントが想定する場合に、問題になる可能性があります。 「 [Framework workitem の使用」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-work-items)参照してください。 作業項目のキューの詳細については、「ドライバーモジュールフレームワーク ( <https://github.com/Microsoft/DMF>dmf) プロジェクト」の「 [dmf\_QueuedWorkitem](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_QueuedWorkItem.md)モジュール」を参照してください。
+3. ドライバー間でアクセスされる共有メモリリソースのランダウン防止を実行していません。 「 [Exinitializer Erundownprotection 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializerundownprotection)」を参照してください。
+4. 前の作業項目が既にキューに存在するか、既に実行中であるときに、同じ作業項目を誤ってキューに登録します。 これは、キューに入れられたすべての作業項目が実行されることをクライアントが想定する場合に、問題になる可能性があります。 「 [Framework workitem の使用」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-work-items)参照してください。 作業項目のキューの詳細については、「ドライバーモジュールフレームワーク (DMF) プロジェクト <https://github.com/Microsoft/DMF>」の「 [dmf\_QueuedWorkitem](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_QueuedWorkItem.md)モジュール」を参照してください。
 5. タイマーが処理することが予想されるメッセージを送信する前にタイマーをキューに置いています。 「[タイマーの使用」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-timers)参照してください。
 6. 作業項目で操作を実行します。この操作は、完了までに時間がかかるか、無期限に実行されます。
 7. 大量の作業項目がキューに格納されるようなソリューションを設計する。 悪意のある人がアクションを制御できる場合 (たとえば、i/o ごとに新しい作業項目をキューに追加するドライバーに i/o をポンプする場合)、システムまたは DOS 攻撃が応答しなくなる可能性があります。 「 [Framework 作業項目の使用」を](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-work-items)参照してください。
-8. オブジェクトを削除する前に、作業項目の DPC コールバックが完了するまで実行されているとは限りません。 「 [DPC ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/guidelines-for-writing-dpc-routines)と[WdfDpcCancel 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nf-wdfdpc-wdfdpccancel)の記述に関するガイドライン」を参照してください。
+8. オブジェクトを削除する前に、作業項目の DPC コールバックが完了するまで実行されているとは限りません。 「 [DPC ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/guidelines-for-writing-dpc-routines)と[WdfDpcCancel 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpccancel)の記述に関するガイドライン」を参照してください。
 9. 短時間でも非ポーリングタスクでも作業項目を使用するのではなく、スレッドを作成します。 「[システムワーカースレッド](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-worker-threads)」を参照してください。
-10. ドライバーを削除またはアンロードする前に、スレッドが完了まで実行されていることを確認してください。 スレッドランダウン同期の詳細については、ドライバーモジュールフレームワーク (DMF) プロジェクト https://github.com/Microsoft/DMF の[DMF_Thread](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_Thread.md)モジュールに関連付けられているコードを参照してください。 
+10. ドライバーを削除またはアンロードする前に、スレッドが完了まで実行されていることを確認してください。 スレッドランダウン同期の詳細については、ドライバーモジュールフレームワーク (DMF) プロジェクト https://github.com/Microsoft/DMFの[DMF_Thread](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_Thread.md)モジュールに関連付けられているコードを参照してください。 
 11. 1つのドライバーを使用して、異なるが相互に依存し、グローバル変数を使用して情報を共有するデバイスを管理します。
 
-### <a name="memory"></a>Memory
+### <a name="memory"></a>メモリ
 
-1. 可能であれば、受動実行コードをページング可能なものとしてマークしないでください。 ドライバーコードのページングにより、ドライバーのコードフットプリントのサイズを小さくすることができるため、他の用途のためにシステム領域が解放されます。 Irql \>= ディスパッチ\_レベルを発生させるか、または発生した irql で呼び出すことができるコードをページングにマークするように注意してください。 [コードとデータをページング可能に](https://docs.microsoft.com/windows-hardware/drivers/kernel/when-should-code-and-data-be-pageable-)し、[ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)をページング可能にして、[ページングできるコードを検出](https://docs.microsoft.com/windows-hardware/drivers/kernel/detecting-code-that-can-be-pageable)するタイミングについては、「」を参照してください。
+1. 可能であれば、受動実行コードをページング可能なものとしてマークしないでください。 ドライバーコードのページングにより、ドライバーのコードフットプリントのサイズを小さくすることができるため、他の用途のためにシステム領域が解放されます。 IRQL \>= ディスパッチ\_レベルを発生させるか、または発生した IRQL で呼び出すことができるコードは、慎重にマークしてください。 [コードとデータをページング可能に](https://docs.microsoft.com/windows-hardware/drivers/kernel/when-should-code-and-data-be-pageable-)し、[ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)をページング可能にして、[ページングできるコードを検出](https://docs.microsoft.com/windows-hardware/drivers/kernel/detecting-code-that-can-be-pageable)するタイミングについては、「」を参照してください。
 2. スタックで大きな構造体を宣言する場合は、代わりにヒープ/poolinstead 使用する必要があります。 「[カーネルスタックの使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-the-kernel-stack)」および「[システム領域メモリの割り当て](https://docs.microsoft.com/windows-hardware/drivers/kernel/allocating-system-space-memory)」を参照してください。
 3. WDF オブジェクトコンテキストを不必要にゼロにする。 これは、メモリが自動的にゼロになるタイミングを明確に把握できないことを示している可能性があります。
 
@@ -76,7 +76,7 @@ ms.locfileid: "69658194"
 2. 必要でない場合は、FDOs に名前を付け、シンボリックリンクを作成します。 「[ドライバーアクセス制御の管理](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist#manage-driver-access-control)」を参照してください。
 3. サンプルドライバーから、Guid とその他の定数値をコピーして使用します。
 4. ドライバープロジェクトで、ドライバーモジュールフレームワーク (DMF) オープンソースコードを使用することを検討してください。 DMF は、WDF ドライバー開発者に追加機能を有効にする WDF の拡張機能です。 「[ドライバーモジュールフレームワークの概要](https://blogs.windows.com/windowsdeveloper/2018/08/15/introducing-driver-module-framework/)」を参照してください。
-5. レジストリをプロセス間通知メカニズムとして使用するか、メールボックスとして使用します。 別の方法については、dmf プロジェクトで使用できる[dmf\_notifyuserwithevent](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithEvent.md)および<https://github.com/Microsoft/DMF> [dmf\_notifyuserwithevent](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithRequest.md)モジュールに関する記載を参照してください。
+5. レジストリをプロセス間通知メカニズムとして使用するか、メールボックスとして使用します。 別の方法については、dmf プロジェクト <https://github.com/Microsoft/DMF>で使用できる[dmf\_NotifyUserWithEvent](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithEvent.md)および[Dmf\_Notifyuserwithevent](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithRequest.md)モジュールを参照してください。
 6. システムの初期ブートフェーズ中に、レジストリのすべての部分がアクセスできることを前提としています。
 7. 別のドライバーまたはサービスの読み込み順序に依存しています。 読み込み順序はドライバーの制御外で変更される可能性があるため、これによって最初に動作するドライバーが生成されますが、それ以降は予測できないパターンで失敗します。
 8. WDF など、既に使用可能なドライバーライブラリを再作成する場合は、「ドライバー[での pnp と電源管理のサポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver)」で説明されている pnp や、「[ドライバーのバスインターフェイスを使用した OSR」の記事で説明されているように、バスインターフェイスで提供される pnp を提供します。ドライバー通信](https://www.osr.com/nt-insider/2014-issue2/using-bus-interfaces-driver-driver-communication/)。
@@ -91,9 +91,9 @@ ms.locfileid: "69658194"
 6. ドライバーがアンロードされないことを前提としています。 「 [PnP ドライバーのアンロードルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/pnp-driver-s-unload-routine)」を参照してください。
 7. 擬似インターフェイスの到着通知を処理していません。 このような状況が発生する可能性があり、ドライバーはこの状態を安全に処理することが期待されます。
 8. S0 アイドル電源ポリシーを実装していません。これは、DRIPS の制約または子であるデバイスにとって重要です。 「[アイドル状態の電源ダウンをサポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-idle-power-down)する」を参照してください。
-9. [WdfDeviceStopIdle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle) の戻り値を確認しないと、WdfDeviceStopIdle/ResumeIdle 不均衡が発生し、最終的にバグチェックが9F されるため、電源参照のリークにつながります。
-10. リソースの再調整によって、ハードウェア/ReleaseHardware を複数回呼び出すことができることは不明です。 これらのコールバックは、ハードウェアリソースの初期化に制限する必要があります。 「 [.Evt\_WDF\_DEVICE\_PREPAREHARDWARE」を参照してください。\_](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)
-11. ソフトウェアリソースの割り当てには、ハードウェア/ReleaseHardware を使用します。 デバイスに対する静的ソフトウェアリソース割り当ては、AddDevice または SelfManagedIoInit で、ハードウェアとの対話が必要なリソースの割り当てを行う場合に実行する必要があります。 「 [.Evt\_WDF\_DEVICESELF\_マネージ\_IOINIT」を参照してください。\_\_](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)
+9. [WdfDeviceStopIdle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle) の戻り値を確認しないと、WdfDeviceStopIdle/ResumeIdle 不均衡が発生し、最終的にバグチェックが9F されるため、電源参照のリークにつながります。
+10. リソースの再調整によって、ハードウェア/ReleaseHardware を複数回呼び出すことができることは不明です。 これらのコールバックは、ハードウェアリソースの初期化に制限する必要があります。 「 [.Evt\_WDF\_デバイス\_\_ハードウェアを準備](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)する」を参照してください。
+11. ソフトウェアリソースの割り当てには、ハードウェア/ReleaseHardware を使用します。 デバイスに対する静的ソフトウェアリソース割り当ては、AddDevice または SelfManagedIoInit で、ハードウェアとの対話が必要なリソースの割り当てを行う場合に実行する必要があります。 「 [.Evt\_WDF\_デバイス\_SELF\_マネージ\_IO\_INIT](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)」を参照してください。
 
 ### <a name="coding-guidelines"></a>コーディングのガイドライン
 
@@ -134,5 +134,5 @@ ms.locfileid: "69658194"
 2. ドライバーまたはデバイスクラスで DevFund テストが実行されていません。ドライバーは、高度な検証機能の設定が有効になっているの一部です。 「[コマンドラインを使用して DevFund テストを実行する方法」を](https://docs.microsoft.com/windows-hardware/drivers/devtest/run-devfund-tests-via-the-command-line)参照してください。
 3. ドライバーが HVCI に準拠しているかどうかを確認していません。 「 [HVCI ドライバーの互換性を評価](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/use-device-guard-readiness-tool)する」を参照してください。
 4. ユーザーモードドライバーの開発およびテスト中に、WUDFhost .exe で AppVerifier を実行しないでください。 「[アプリケーション検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)」を参照してください。
-5. WDF オブジェクトが破棄されないようにするために、 [ \!実行時に wdfpoolusage](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfpoolusage)デバッガー拡張機能を使用してメモリの使用状況を確認していません。 メモリ、要求、作業項目は、これらの問題の一般的な被害を受けます。
-6. Wdfkd デバッガー拡張機能を使用して[ \!](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)オブジェクトツリーを検査し、オブジェクトの親が正しく設定されていることを確認し、wdfkd、wdfkd、IO などの主要なオブジェクトの属性を確認することはできません。
+5. WDF オブジェクトが破棄されないように\!、実行時に[wdfpoolusage](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfpoolusage)デバッガー拡張機能を使用してメモリの使用状況をチェックしません。 メモリ、要求、作業項目は、これらの問題の一般的な被害を受けます。
+6. [\!wdfkd](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)デバッガー拡張機能を使用してオブジェクトツリーを検査し、オブジェクトの親が正しく設定されていることを確認し、WDFKD、WDFKD、IO などの主要なオブジェクトの属性を確認することはできません。

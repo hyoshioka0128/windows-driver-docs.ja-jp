@@ -42,19 +42,19 @@ KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティは�
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">セット</th>
-<th align="left">的を絞る</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>ピン</p></td>
+<td align="left"><p>対応</p></td>
+<td align="left"><p>対応</p></td>
+<td align="left"><p>Pin</p></td>
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p>LONG</p></td>
+<td align="left"><p>長い</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティは�
 
 KSK プロパティ\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 DirectSound 3D バッファーのコーン外部サウンドボリュームの詳細については、Microsoft Windows SDK のドキュメントで次を参照してください。
@@ -76,7 +76,7 @@ DirectSound 3D バッファーのコーン外部サウンドボリュームの�
 
 -   **IDirectSound3DBuffer:: GetOutsideVolume**メソッドと**IDirectSound3DBuffer:: SetOutsideVolume**メソッド。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -86,7 +86,7 @@ DirectSound 3D バッファーのコーン外部サウンドボリュームの�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ヘッダー</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>

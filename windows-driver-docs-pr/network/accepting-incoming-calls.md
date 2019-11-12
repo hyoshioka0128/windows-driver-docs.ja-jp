@@ -1,6 +1,6 @@
 ---
-title: 受信呼び出しの受け入れ
-description: 受信呼び出しの受け入れ
+title: 着信呼び出しの受け入れ
+description: 着信呼び出しの受け入れ
 ms.assetid: bca837dc-b3de-4aca-9fc2-aed2faab1377
 keywords:
 - CoNDIS WAN ドライバー WDK ネットワーク、着信呼び出し
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838255"
 ---
-# <a name="accepting-incoming-calls"></a>受信呼び出しの受け入れ
+# <a name="accepting-incoming-calls"></a>着信呼び出しの受け入れ
 
 
 

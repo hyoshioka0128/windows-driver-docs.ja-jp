@@ -1,17 +1,19 @@
 ---
-title: ARM または ARM64 プロセッサ上で NDIS DMA の使用を防ぐために注意してください。
+title: ARM/ARM64 プロセッサでの NDIS DMA の使用を防ぐために注意してください
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bacadff06277b9cfb4816cdde57c0653775ea863
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4712128bba51a6bc1c12586b40b49a0b7a86849a
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539865"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445871"
 ---
+# 
+
 > [!CAUTION]
-> ARM および ARM64 のプロセッサでは、NDIS ドライバー作成者が NDIS スキャッター/ギャザー DMA ではなく、WDF DMA または WDM DMA を使用することを強くお勧めします。 
+> ARM および ARM64 プロセッサの場合、NDIS ドライバーライターは NDIS スキャッター/Gather DMA ではなく WDF DMA または WDM DMA を使用することを強くお勧めします。 
 >
-> WDF DMA の詳細については、[KMDF ドライバーで DMA 操作を処理](../wdf/handling-dma-operations-in-kmdf-drivers.md)を参照してください。
+> WDF DMA の詳細については、「 [KMDF ドライバーでの Dma 操作の処理](../wdf/handling-dma-operations-in-kmdf-drivers.md)」を参照してください。
 >
-> WDM DMA の詳細については、の子の DMA に関連するトピックを参照して[ドライバーの入力/出力を管理する](../kernel/managing-input-output-for-drivers.md)します。
+> WDM DMA の詳細については、「[ドライバーの入出力の管理](../kernel/managing-input-output-for-drivers.md)」の dma 関連の子トピックを参照してください。

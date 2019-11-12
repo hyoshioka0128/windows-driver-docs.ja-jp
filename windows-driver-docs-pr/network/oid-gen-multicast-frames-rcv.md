@@ -1,43 +1,45 @@
 ---
 title: OID_GEN_MULTICAST_FRAMES_RCV
-description: クエリとして OID_GEN_MULTICAST_FRAMES_RCV OID にはエラーなしで受信したパケットがマルチキャスト/機能の数を指定します。
+description: クエリとして、OID_GEN_MULTICAST_FRAMES_RCV OID は、エラーを発生させずに受信するマルチキャスト/機能パケットの数を指定します。
 ms.assetid: 6001dc07-43ab-420d-b29b-1138485ce218
-ms.date: 08/08/2017
-keywords: -OID_GEN_MULTICAST_FRAMES_RCV ネットワーク ドライバーが Windows Vista 以降
+ms.date: 11/01/2019
+keywords: -Windows Vista 以降の OID_GEN_MULTICAST_FRAMES_RCV ネットワークドライバー
 ms.localizationpriority: medium
-ms.openlocfilehash: a007403031d92841832d5795f2f0c2f8fc6ed6a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5718f41362a33176887c93432183b4d237372c23
+ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379404"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73443020"
 ---
-# <a name="oidgenmulticastframesrcv"></a>OID\_GEN\_マルチキャスト\_フレーム\_受信
+# <a name="oid_gen_multicast_frames_rcv"></a>OID\_GEN\_マルチキャスト\_フレーム\_RCV
 
 
-クエリ、OID として\_GEN\_マルチキャスト\_フレーム\_受信 OID がエラーなしで受信したパケットがマルチキャスト/機能の数を指定します。
+クエリとして、OID\_GEN\_マルチキャスト\_フレーム\_RCV OID は、エラーなしで受信されるマルチキャスト/機能パケットの数を指定します。
 
 **バージョン情報**
 
-<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista および Windows の以降のバージョン  
+<a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 以降のバージョンの Windows  
 使われていません。
 
-<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 とそれ以降のドライバー  
-要求されません。 使用[OID\_GEN\_統計](oid-gen-statistics.md)代わりにします。
+<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 以降のドライバー  
+要求されていません。 代わりに、 [OID\_GEN\_の統計](oid-gen-statistics.md)を使用してください。
 
-<a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
+<a href="" id="ndis-5-1-drivers"></a>NDIS 5.1 ドライバー  
 (省略可能)。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
-<a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
+<a href="" id="ndis-5-1-drivers"></a>NDIS 5.1 ドライバー  
 (省略可能)。
 
 <a name="remarks"></a>注釈
 -------
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
+この OID からのカウントと、 [OID_GEN_BROADCAST_FRAMES_RCV](oid-gen-broadcast-frames-rcv.md)からのカウントは、RFC 2863 で説明されている*ifInNUcastPkts*カウンターと同じです。
+
+統計の Oid に関する一般的な情報については、「 [General statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -50,7 +52,7 @@ Oid の統計に関する概要については、次を参照してください�
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -58,7 +60,7 @@ Oid の統計に関する概要については、次を参照してください�
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_GEN\_統計情報](oid-gen-statistics.md)
+[OID\_GEN\_の統計情報](oid-gen-statistics.md)
 
  
 

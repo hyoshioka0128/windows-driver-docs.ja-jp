@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838993"
 ---
-# <a name="display-class"></a>表示クラス
+# <a name="display-class"></a>ディスプレイ クラス
 
 Windows Display Driver Model (WDDM) では、表示クラス関数のいずれかを再入可能な方法で呼び出すことは許可されていません。 つまり、最大で1つのスレッドは、特定の時点で次のいずれかの関数内で実行できます。
 

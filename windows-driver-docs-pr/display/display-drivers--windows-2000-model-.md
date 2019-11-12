@@ -1,6 +1,6 @@
 ---
-title: ディスプレイドライバー (Windows 2000 モデル)
-description: ディスプレイドライバー (Windows 2000 モデル)
+title: ディスプレイ ドライバー (Windows 2000 モデル)
+description: ディスプレイ ドライバー (Windows 2000 モデル)
 ms.assetid: 9d49f4e7-5153-417e-8f15-42b3dcdf3fa6
 keywords:
 - ディスプレイドライバーモデル WDK Windows 2000、ドライバーの表示
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838991"
 ---
-# <a name="display-drivers-windows-2000-model"></a>ディスプレイドライバー (Windows 2000 モデル)
+# <a name="display-drivers-windows-2000-model"></a>ディスプレイ ドライバー (Windows 2000 モデル)
 
 
 ## <span id="ddk_display_drivers_windows_2000_model__gg"></span><span id="DDK_DISPLAY_DRIVERS_WINDOWS_2000_MODEL__GG"></span>

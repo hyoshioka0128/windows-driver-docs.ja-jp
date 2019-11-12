@@ -1,5 +1,5 @@
 ---
-title: DirectX グラフィックスカーネルサブシステム
+title: DirectX グラフィックス カーネル サブシステム
 description: Microsoft DirectX グラフィックスカーネルサブシステム (Dxgkrnl) は、ディスプレイミニポートドライバーによって呼び出される関数を実装します。
 ms.assetid: 7601c761-bdab-4d18-8a84-7d69a71ec41c
 ms.date: 10/30/2018

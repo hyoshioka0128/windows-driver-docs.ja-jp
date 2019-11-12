@@ -1,52 +1,52 @@
 ---
-title: Using a Universal INF File (ユニバーサル INF ファイルの使用)
-description: ユニバーサルまたはモバイルのドライバー パッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。
+title: ユニバーサル INF ファイルの使用
+description: ユニバーサルまたはモバイルのドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5404dcfd2b5d342fafaf4122d8ae08108e30e2ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 517479adc9d31562812a27e2555839c2c55435e0
+ms.sourcegitcommit: 7aa0dc2d0465f815438dcbb5335fd6a77a0fd630
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384775"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73432669"
 ---
-# <a name="using-a-universal-inf-file"></a>Using a Universal INF File (ユニバーサル INF ファイルの使用)
+# <a name="using-a-universal-inf-file"></a>ユニバーサル INF ファイルの使用
 
-ユニバーサルまたはモバイルのドライバー パッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。 デスクトップのドライバー パッケージを作成する場合、ユニバーサル INF ファイルを使用する必要はありませんが、ため実行がパフォーマンス上の利点のため推奨は。
+ユニバーサルまたはモバイルのドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。 デスクトップドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要はありませんが、パフォーマンス上の利点があるため、この方法をお勧めします。
 
-ユニバーサル INF ファイルのサブセットを使用して、 [INF 構文](inf-file-sections-and-directives.md)Windows ドライバーを使用します。 ユニバーサル INF ファイルは、ドライバーをインストールし、デバイスのハードウェアを構成しますが、共同インストーラーを実行するなど、他の任意の操作は実行されません。
+ユニバーサル INF ファイルでは、Windows ドライバーで使用できる[inf 構文](inf-file-sections-and-directives.md)のサブセットを使用します。 ユニバーサル INF ファイルは、ドライバーをインストールし、デバイスハードウェアを構成しますが、他の操作 (共同インストーラーの実行など) を実行しません。
 
-## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>Windows のデスクトップ以外のエディションで必要なユニバーサル INF ファイルはなぜですか。
+## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>Windows のデスクトップ以外のエディションではユニバーサル INF ファイルが必要なのはなぜですか。
 
-Windows、Windows 10 Mobile などの一部のエディションは、ドライバーのインストールのプラグ アンド プレイのメカニズムをサポートしていません。 そのため、ドライバーのインストールには、ターゲット システムのオフライン イメージに対して行われます。 Microsoft Visual Studio では、このようなターゲット システム用にドライバーをビルド、すべてのレジストリ設定を適用するを含む XML ベースの構成ファイルを生成します。 その結果に INF ファイルは、このようなシステムは、システムの実行時の動作に依存しない加法操作のみを実行する必要があります。 このような制限付きの構文を使用して、INF ファイルには、ユニバーサル INF ファイルは呼び出されます。
+Windows 10 Mobile など、Windows の一部のエディションでは、ドライバーのインストールにプラグアンドプレイメカニズムがサポートされていません。 そのため、ドライバーのインストールは、ターゲットシステムのオフラインイメージで実行されます。 Microsoft Visual Studio は、このようなターゲットシステムのドライバーをビルドするときに、適用されるすべてのレジストリ設定を含む XML ベースの構成ファイルを生成します。 そのため、このようなシステムの INF ファイルでは、システムの実行時の動作に依存しない加法操作のみを実行する必要があります。 このような制限された構文を含む INF ファイルは、universal INF ファイルと呼ばれます。
 
-ユニバーサル INF ファイルは、毎回同じ結果を予測的にインストールします。 インストールの結果は、システムの実行時の動作に依存しません。 たとえば、共同インストーラーの参照はオフラインのシステムで追加 DLL でのコードを実行できないため、ユニバーサル INF ファイルでは無効です。
+ユニバーサル INF ファイルは、毎回同じ結果を使用して、予想どおりにインストールされます。 インストールの結果は、システムの実行時の動作に依存しません。 たとえば、追加の DLL 内のコードはオフラインシステムで実行できないため、ユニバーサル INF ファイルでは、共同インストーラー参照は無効です。
 
-その結果、ユニバーサル INF ファイルを使用してドライバー パッケージを事前に構成されているし、オフライン システムに追加します。
+その結果、ユニバーサル INF ファイルを使用したドライバーパッケージを事前に構成して、オフラインシステムに追加することができます。
 
-使用することができます、 [InfVerif](../devtest/infverif.md)ドライバーの INF ファイルに汎用場合をテストするためのツール。
+[InfVerif](../devtest/infverif.md)ツールを使用すると、ドライバーの INF ファイルが universal であるかどうかをテストできます。
 
-## <a name="which-inf-sections-are-invalid-in-a-universal-inf-file"></a>INF セクションがユニバーサル INF ファイルでは無効です。
+## <a name="which-inf-sections-are-invalid-in-a-universal-inf-file"></a>ユニバーサル INF ファイルでは、どの INF セクションも無効ですか。
 
-任意の INF セクションは、次を除くユニバーサル INF ファイルで使用できます。
+次の場合を除き、ユニバーサル INF ファイルでは任意の INF セクションを使用できます。
 
 -   [**INF ClassInstall32 セクション**](inf-classinstall32-section.md)
--   [**INF DDInstall.CoInstallers セクション**](inf-ddinstall-coinstallers-section.md)
--   [**INF DDInstall.FactDef Section**](inf-ddinstall-factdef-section.md)
--   [**INF DDInstall.LogConfigOverride Section**](inf-ddinstall-logconfigoverride-section.md)
+-   [**INF DDInstall. CoInstallers セクション**](inf-ddinstall-coinstallers-section.md)
+-   [**INF DDInstall. FactDef セクション**](inf-ddinstall-factdef-section.md)
+-   [**INF DDInstall. LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)
 
-[ **INF 製造元セクション**](inf-manufacturer-section.md)は有効な限り、 **TargetOSVersion**装飾が含まれていない、 **ProductType**フラグまたは**SuiteMask**フラグ。
+**TargetOSVersion**デコレーションに**ProductType**フラグまたは**suitemask**フラグが含まれていない限り、 [**INF の製造元セクション**](inf-manufacturer-section.md)は有効です。
 
-## <a name="which-inf-directives-are-invalid-in-a-universal-inf-file"></a>どの INF ディレクティブがユニバーサル INF ファイルでは無効ですか。
+## <a name="which-inf-directives-are-invalid-in-a-universal-inf-file"></a>ユニバーサル INF ファイルでは、どの INF ディレクティブも無効ですか。
 
 
-任意の INF ディレクティブは、次を除くユニバーサル INF ファイルで使用できます。
+次の場合を除き、ユニバーサル INF ファイルでは任意の INF ディレクティブを使用できます。
 
 -   [**INF BitReg ディレクティブ**](inf-bitreg-directive.md)
 -   [**INF DelFiles ディレクティブ**](inf-delfiles-directive.md)
 -   [**INF DelProperty ディレクティブ**](inf-delproperty-directive.md)
--   [**INF DelReg Directive**](inf-delreg-directive.md)
+-   [**INF DelReg ディレクティブ**](inf-delreg-directive.md)
 -   [**INF DelService ディレクティブ**](inf-delservice-directive.md)
 -   [**INF Ini2Reg ディレクティブ**](inf-ini2reg-directive.md)
 -   [**INF LogConfig ディレクティブ**](inf-logconfig-directive.md)
@@ -57,28 +57,28 @@ Windows、Windows 10 Mobile などの一部のエディションは、ドライ�
 -   [**INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)
 -   [**INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)
 
-次のディレクティブでは、いくつかの注意事項で有効です。
+次のディレクティブは、いくつかの注意事項があります。
 
--   [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)は有効な場合、指定したエントリ*追加レジストリ セクション*が、 *reg ルート*の値**HKR**、または、次の場合。
-    -   登録の[コンポーネント オブジェクト モデル](https://docs.microsoft.com/windows/desktop/com)(COM) オブジェクト、キーは、書き込むことができます。
+-   [**INF AddReg ディレクティブ**](inf-addreg-directive.md)は、指定された*レジストリセクション*のエントリに**hkr**の*reg ルート*値がある場合、または次の場合に有効です。
+    -   [コンポーネントオブジェクトモデル](https://docs.microsoft.com/windows/desktop/com)(COM) オブジェクトの登録の場合、キーは次のように記述できます。
         -   HKCR
-        -   Hklm \software\classes
-    -   作成の[ハードウェア Media Foundation 変換](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-transforms)(仕様) キーは、書き込むことができます。
-        -   HKLM\SOFTWARE\Microsoft\Windows Media Foundation
-        -   HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation
-        -   HKLM\SOFTWARE\WOW3232Node\Microsoft\Windows メディア ファンデーション
+        -   HKLM\SOFTWARE\Classes
+    -   [ハードウェアメディアファンデーション変換](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-transforms)(mfts) を作成する場合、キーは次のように記述できます。
+        -   HKLM\SOFTWARE\Microsoft\Windows メディアファンデーション
+        -   HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows メディアファンデーション
+        -   HKLM\SOFTWARE\WOW3232Node\Microsoft\Windows メディアファンデーション
 
--   [**INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)は有効な場合にのみ、[先ディレクトリ](inf-destinationdirs-section.md)は、次のいずれか。
+-   [**INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)は、[コピー先のディレクトリ](inf-destinationdirs-section.md)が次のいずれかの場合にのみ有効です。
 
-    -   11 (%windir% に対応する\\System32)
-    -   12 (%windir% に対応する\\System32\\ドライバー)
-    -   13 (%windir% の下のディレクトリに対応する\\System32\\DriverStore\\FileRepository ドライバーが格納されている)  
-            **注:** CopyFiles は、対象のファイル名の変更は使用できません**DestinationDirs**が含まれています*dirid* 13。 また、 *dirid* 13 のみデバイス インストールのシナリオの限定されたサブセット用の Windows 10 製品に有効です。  詳細については、特定のデバイス クラスのガイダンスとサンプルを参照してください。
-    -   10、SysWOW64 (%windir% に対応する\\SysWOW64)
-    -   10、*ベンダー固有のサブディレクトリの名前*  
-            **注:** Windows 10、バージョン 1709 を使用してで*dirid*ベンダー固有のサブディレクトリの名前を持つ 10 を使用する測定とユニバーサル INF で有効では、 [InfVerif](../devtest/infverif.md)ツール。  今後のリリースで、この値をサポートしない可能性があります。  移行をお勧めします。 *dirid* 13。
+    -   11 (% WINDIR%\\System32) に対応
+    -   12 (% WINDIR%\\System32\\ドライバー) に対応
+    -   13 (ドライバーが格納されている% WINDIR%\\System32\\DriverStore\\FileRepository の下のディレクトリに対応)  
+            **注:** CopyFiles は、 **Destinationdirs**に*dirid* 13 が含まれているファイルの名前を変更するために使用することはできません。 また、 *dirid* 13 は、デバイスのインストールシナリオの限られたサブセットについてのみ、Windows 10 製品で有効です。  詳細については、特定のデバイスクラスのガイダンスとサンプルを参照してください。
+    -   10、SysWOW64 (% WINDIR%\\SysWOW64 に対応)
+    -   10、*ベンダー固有のサブディレクトリ名*  
+            **注:** Windows 10 バージョン1709では、ベンダー固有のサブディレクトリ名で*dirid* 10 を使用することは、 [InfVerif](../devtest/infverif.md)ツールを使用して測定されたユニバーサル INF で有効です。  今後のリリースでは、この値はサポートされない可能性があります。  *Dirid* 13 に移行することをお勧めします。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-* [ユニバーサル Windows ドライバーをインストールします。](https://docs.microsoft.com/windows-hardware/drivers)
+* [ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)
 * [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)

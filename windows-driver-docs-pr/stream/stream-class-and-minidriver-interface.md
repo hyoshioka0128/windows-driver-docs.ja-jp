@@ -1,6 +1,6 @@
 ---
-title: Stream クラスとミニドライバーインターフェイス
-description: Stream クラスとミニドライバーインターフェイス
+title: ストリーム クラスとミニドライバーのインターフェイス
+description: ストリーム クラスとミニドライバーのインターフェイス
 ms.assetid: d85510e6-1fd7-442a-bd88-f32b6c13ff75
 keywords:
 - .Sys クラスドライバー WDK Windows 2000 カーネル、ストリームクラスインターフェイス
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837691"
 ---
-# <a name="stream-class-and-minidriver-interface"></a>Stream クラスとミニドライバーインターフェイス
+# <a name="stream-class-and-minidriver-interface"></a>ストリーム クラスとミニドライバーのインターフェイス
 
 
 

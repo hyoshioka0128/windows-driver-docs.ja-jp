@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源ダウン Irp の処理
-description: デバイスの電源ダウン Irp の処理
+title: デバイスの電源切断 IRP の処理
+description: デバイスの電源切断 IRP の処理
 ms.assetid: 2f4591d6-5bd0-45db-b02d-cf9dd59c3888
 keywords:
 - パワー Irp WDK カーネル
@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72836588"
 ---
-# <a name="handling-device-power-down-irps"></a>デバイスの電源ダウン Irp の処理
+# <a name="handling-device-power-down-irps"></a>デバイスの電源切断 IRP の処理
 
 
 

@@ -20,7 +20,7 @@ ms.locfileid: "72834659"
 
 また、ミニポートドライバーは、 [NDIS\_WWAN\_USSD\_イベント](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_event)構造を使用して、この通知を使用して要請されていないイベントを送信し、USSD イベントの性質を説明することもできます。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -34,7 +34,7 @@ ms.locfileid: "72834659"
 <td><p>Windows 8 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Ndis. h</td>
 </tr>
 </tbody>

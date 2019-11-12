@@ -1,13 +1,15 @@
 ---
-title: MBAE 非推奨の警告
+title: MBAE の非推奨の警告
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f9d5fb5ab8df2c40f6165e6569468fb378276486
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07587bc6e3ff3002af15cd1faa0f3985b8ceb1b6
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570045"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445357"
 ---
+# 
+
 > [!IMPORTANT]
-> Windows 10、バージョン 1803、以降、MO UWP アプリによって、MBAE アプリ エクスペリエンスが置き換えられます。 月の UWP アプリの詳細については、[UWP モバイル ブロード バンド アプリ](uwp-mobile-broadband-apps.md)を参照してください。
+> Windows 10 バージョン1803以降では、MBAE アプリのエクスペリエンスは MO UWP アプリに置き換えられています。 MO UWP アプリの詳細については、「 [uwp モバイルブロードバンドアプリ](uwp-mobile-broadband-apps.md)」を参照してください。

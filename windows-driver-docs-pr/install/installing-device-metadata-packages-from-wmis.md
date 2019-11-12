@@ -4,35 +4,35 @@ description: WMIS からのデバイス メタデータ パッケージのイン
 ms.assetid: e2466b8a-c9c7-4d0d-9ce7-4648c83fc272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb0f72b149433dfa980fa4d0135dae4e09b28d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e902643aa9c9198dc981157871ba037b598ddba9
+ms.sourcegitcommit: 134bbe010add8cf161a82d9cccac084bb6931d32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387220"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914925"
 ---
 # <a name="installing-device-metadata-packages-from-wmis"></a>WMIS からのデバイス メタデータ パッケージのインストール
 
 
-呼ばれるオンライン サービスに照会し、オペレーティング システムが新しいデバイスを検出、 [Windows メタデータとインターネット サービス](windows-metadata-and-internet-services.md)(WMIS) ためのデバイス メタデータ パッケージ。 デバイス メタデータ パッケージを使用できる場合、デバイス メタデータの取得クライアント (DMRC)、ローカル コンピューターで実行されているは WMIS からパッケージをダウンロードし、ローカル コンピューターにパッケージをインストールします。
+オペレーティングシステムは、新しいデバイスを検出すると、 [Windows メタデータおよびインターネットサービス](windows-metadata-and-internet-services.md)(WMIS) と呼ばれるオンラインサービスに対して、デバイスのメタデータパッケージを照会します。 デバイスメタデータパッケージが使用可能な場合、ローカルコンピューター上で実行されるデバイスメタデータ取得クライアント (DMRC) は、WMIS からパッケージをダウンロードし、ローカルコンピューターにパッケージをインストールします。
 
-**注**  WMIS からは、現在のユーザーが組み込みのゲスト アカウントなどのゲスト特権のみを任意のアカウントを使用してログインしている場合デバイス メタデータ パッケージはダウンロードされません。
-
- 
-
-デバイス メタデータ パッケージを提出する場合は[Windows Quality Online Services (Winqual)](https://go.microsoft.com/fwlink/p/?linkid=62651)送信するとき、[ドライバー パッケージ](driver-packages.md)を[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)では、デジタル署名、パッケージは Windows 7 および Windows の以降のバージョンを実行しているコンピューターで DMRC によって行われるダウンロード要求の使用可能 WMIS になります。
-
-**重要な**  Oem が WMIS を介してのみ、デバイス メタデータ パッケージを配布することを強くお勧めします。 デバイス メタデータの配布パッケージの WMIS サポートを通じて、*ハードウェア最初*インストール シナリオです。 このシナリオで、ドライバーの前に、新しいデバイスがインストールされているし、デバイスのデバイスに固有のソフトウェアがインストールされています。 このシナリオの詳細については、次を参照してください。[ハードウェア最初インストール](hardware-first-installation.md)します。
+**注**  現在のユーザーが、組み込みの guest アカウントなどの guest 特権のみを持つアカウントを使用してログインしている場合は、WMIS からデバイスメタデータパッケージがダウンロードされないことに注意してください。
 
  
 
-デバイス メタデータ パッケージは、次のように WMIS を通じてインストールされます。
+[ドライバーパッケージ](driver-packages.md)を[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)に送信してデジタル署名する場合に、デバイスメタデータパッケージを[Windows Quality Online Services (winqual)](https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/winqual-submission-tool--winqualexe-)に送信すると、Windows 7 以降のバージョンの windows を実行している任意のコンピューターで DMRC によって行われたダウンロード要求に対して、WMIS がパッケージを使用できるようになります。
 
-1.  ユーザーがデバイスとプリンターのユーザー インターフェイスのギャラリー ビュー ウィンドウを開いたときに、[デバイス メタデータの取得のクライアント](device-metadata-retrieval-client.md)(DMRC) は、デバイスのデバイス メタデータを取得しようとしているデバイスとプリンターのユーザー インターフェイス表示されます。
+**重要**  OEM は WMIS を使用してのみデバイスメタデータパッケージを配布することを強くお勧めします。 WMIS を使用したデバイスメタデータパッケージの配布では、*ハードウェア優先*のインストールシナリオがサポートされます。 このシナリオでは、デバイスのドライバーとデバイス固有のソフトウェアがインストールされる前に、新しいデバイスがインストールされます。 このシナリオの詳細については、「[ハードウェア優先インストール](hardware-first-installation.md)」を参照してください。
 
-    DMRC はまず、ローカル コンピューターの[デバイス メタデータのキャッシュ](device-metadata-cache.md)と[デバイス メタデータ ストア](device-metadata-store.md)デバイス メタデータ。 デバイスが新しくインストールした場合、またはデバイスが、定期的なメタデータの更新のスケジュールされている場合は、DMRC は、デバイスの使用可能なメタデータ パッケージの WMIS を照会します。
+ 
 
-2.  デバイス メタデータ パッケージを使用できる場合 DMRC 自動的に WMIS からダウンロードしたパッケージ、パッケージのデバイスのメタデータ コンポーネントを抽出および内でそれらを保存、[デバイス メタデータのキャッシュ](device-metadata-cache.md)します。
+デバイスメタデータパッケージは、次の方法で WMIS を介してインストールされます。
+
+1.  ユーザーがデバイスとプリンターのユーザーインターフェイスの [ギャラリー] ビューウィンドウを開くと、[デバイスメタデータ取得クライアント](device-metadata-retrieval-client.md)(DMRC) は、デバイスとプリンターのユーザーインターフェイスに表示されるデバイスのデバイスメタデータを取得しようとします。
+
+    DMRC は、まず、ローカルコンピューターの[デバイスメタデータキャッシュ](device-metadata-cache.md)とデバイスメタデータ[ストア](device-metadata-store.md)でデバイスメタデータを検索します。 デバイスが新しくインストールされた場合、または定期的なメタデータ更新のためにデバイスがスケジュールされている場合、DMRC は、デバイスの利用可能なメタデータパッケージを WMIS に照会します。
+
+2.  デバイスメタデータパッケージが使用可能な場合、DMRC は WMIS からパッケージを自動的にダウンロードし、パッケージのデバイスメタデータコンポーネントを抽出して、[デバイスメタデータキャッシュ](device-metadata-cache.md)内に保存します。
 
  
 

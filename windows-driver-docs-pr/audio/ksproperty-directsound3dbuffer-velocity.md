@@ -42,17 +42,17 @@ KSK プロパティ\_DIRECTSOUND3DBUFFER\_ベロシティプロパティは、3D
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">セット</th>
-<th align="left">的を絞る</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>ピン</p></td>
+<td align="left"><p>対応</p></td>
+<td align="left"><p>対応</p></td>
+<td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ds3dvector" data-raw-source="[&lt;strong&gt;DS3DVECTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ds3dvector)"><strong>DS3DVECTOR</strong></a></p></td>
 </tr>
@@ -67,7 +67,7 @@ KSK プロパティ\_DIRECTSOUND3DBUFFER\_ベロシティプロパティは、3D
 
 KSK プロパティ\_DIRECTSOUND3DBUFFER\_ベロシティプロパティ要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 DirectSound 3D バッファーの速度の詳細については、Microsoft Windows SDK のドキュメントで次の情報を参照してください。
@@ -76,7 +76,7 @@ DirectSound 3D バッファーの速度の詳細については、Microsoft Wind
 
 -   **IDirectSound3DBuffer:: getvelocity**メソッドと**IDirectSound3DBuffer:: getvelocity**メソッド。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -86,7 +86,7 @@ DirectSound 3D バッファーの速度の詳細については、Microsoft Wind
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ヘッダー</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>

@@ -25,7 +25,7 @@ ms.locfileid: "72834567"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 以降のミニポートドライバー  
 要求されていません。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、マルチキャストアドレス一覧に追加する6バイトのアドレスが含まれています。
@@ -40,7 +40,7 @@ NDIS ミニポートドライバーは、この OID 要求を直接受信しま�
 
 以前に追加したマルチキャストアドレスを削除するには、 [oid\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)oid を持つ set 要求を作成します。 このドライバーは、指定されたマルチキャストアドレスを複数回追加できます。 指定されたマルチキャストアドレスの最初の add 要求が NDIS によって成功した場合、NDIS はそのアドレスに対する後続の追加要求すべてを成功させます。 複数回追加されたマルチキャストアドレスを削除するには、そのアドレスを追加したときと同じ回数だけアドレスを削除する必要があります。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -50,7 +50,7 @@ NDIS ミニポートドライバーは、この OID 要求を直接受信しま�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>

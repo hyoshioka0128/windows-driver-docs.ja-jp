@@ -4,7 +4,7 @@ description: 型
 ms.assetid: 234f4f36-ccd3-426a-a361-33727e9ece5a
 keywords:
 - シンボル、型
-- types
+- 種類
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 671b0f5145e2f53fe9b50828dc62737445bd220b

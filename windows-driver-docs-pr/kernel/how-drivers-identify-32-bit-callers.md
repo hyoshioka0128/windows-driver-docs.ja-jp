@@ -1,6 +1,6 @@
 ---
-title: ドライバーが32ビットの呼び出し元を識別する方法
-description: ドライバーが32ビットの呼び出し元を識別する方法
+title: ドライバーで 32 ビットの呼び出し元を識別する方法
+description: ドライバーで 32 ビットの呼び出し元を識別する方法
 ms.assetid: 9bfe9024-60f1-41ad-a034-160caaaa7801
 keywords:
 - 32ビット i/o は、32ビット呼び出し元を識別する WDK 64 ビットをサポートします。
@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72836477"
 ---
-# <a name="how-drivers-identify-32-bit-callers"></a>ドライバーが32ビットの呼び出し元を識別する方法
+# <a name="how-drivers-identify-32-bit-callers"></a>ドライバーで 32 ビットの呼び出し元を識別する方法
 
 
 

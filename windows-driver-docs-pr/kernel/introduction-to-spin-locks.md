@@ -1,6 +1,6 @@
 ---
-title: スピンロックの概要
-description: スピンロックの概要
+title: スピン ロックの概要
+description: スピン ロックの概要
 ms.assetid: a37c0db4-ff9c-4958-a9f4-62b671458d03
 keywords:
 - KSPIN_LOCK
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838621"
 ---
-# <a name="introduction-to-spin-locks"></a>スピンロックの概要
+# <a name="introduction-to-spin-locks"></a>スピン ロックの概要
 
 
 
