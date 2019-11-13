@@ -6,12 +6,12 @@ keywords:
 - フィルター条件フラグネットワークドライバー
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a2e9d66de6685c8a5ed0bf221c600953c8e9c6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0fbc8a4ae58efaa504f66ca6ec4a984d84f057c0
+ms.sourcegitcommit: 9567e4f4f4e97bacc60320770b9d42212b7cba06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823698"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019626"
 ---
 # <a name="filtering-condition-flags"></a>フィルター条件フラグ
 
@@ -235,7 +235,7 @@ ms.locfileid: "72823698"
 <p>0x00000100</p>
 </td>
 <td>
-<p>パケットがまだ ALE 受信/受け入れレイヤー (FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4 または FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6) に到達しておらず、その接続状態が追跡されることを示します。</p>
+<p>パケットがまだ ALE 受信/受け入れレイヤー (FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4 または FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6) に到達していないことを示します。この層では、接続状態が追跡されます。</p>
 <p>このフラグは、次のフィルター処理レイヤーで適用できます。<dl>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V4</dd>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V6</dd>
@@ -337,7 +337,7 @@ ms.locfileid: "72823698"
 <p>0x00020000</p>
 </td>
 <td>
-<p>このフラグは、以前に承認されたソケットで<a href="https://docs.microsoft.com/windows/desktop/WinSock/ipv6-protection-level">IPV6_PROTECTION_LEVEL</a> socket オプションが設定されている場合に設定されます。</p>
+<p>このフラグは、以前に承認されたソケットに<a href="https://docs.microsoft.com/windows/desktop/WinSock/ipv6-protection-level">IPV6_PROTECTION_LEVEL</a> socket オプションが設定されている場合に設定されます。</p>
 <p>このフラグは、次のフィルター処理レイヤーで適用できます。<dl>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6</dd>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6_DISCARD</dd>
@@ -472,7 +472,7 @@ ms.locfileid: "72823698"
 <p>0x02000000</p>
 </td>
 <td>
-<p>指定したホストに接続するために、リダイレクトされたユニバーサル Windows アプリの目的を受け入れるために現在の分類が実行されていることを示します。 このような分類には、アプリがリダイレクトされなかった場合と同じ classifiable フィールド値が含まれます。 フラグは、有効なリダイレクト先に一致するように、将来の分類が呼び出されることも示します。 アプリが検査のためにプロキシサービスにリダイレクトされる場合は、プロキシ接続で将来の分類が呼び出されることも意味します。 コールアウトドライバーは、一般にこの分類を許可する必要があります。</p>
+<p>指定したホストに接続するために、リダイレクトされたユニバーサル Windows アプリの目的を受け入れるために現在の分類が実行されていることを示します。 このような分類には、アプリがリダイレクトされなかった場合と同じ classifiable フィールド値が含まれます。 フラグは、有効なリダイレクト先に一致するように、将来の分類が呼び出されることも示します。 アプリが検査のためにプロキシサービスにリダイレクトされる場合は、プロキシ接続で将来の分類が呼び出されることも意味します。 コールアウトは FWPS_FIELD_ALE_AUTH_CONNECT_V4_ALE_ORIGINAL_APP_ID を使用して、リダイレクトされた (元の) 接続の appid を検索する必要があります。</p>
 <p>このフラグは、windows Server 2012、Windows 8、およびそれ以降のバージョンの Windows で、次のフィルターレイヤーに適用できます。<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
