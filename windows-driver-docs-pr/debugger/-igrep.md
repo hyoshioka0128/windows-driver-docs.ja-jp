@@ -28,7 +28,7 @@ ms.locfileid: "63336449"
 !igrep [Pattern [StartAddress]] 
 ```
 
-## <a name="span-idddkigrepdbgspanspan-idddkigrepdbgspanparameters"></a><span id="ddk__igrep_dbg"></span><span id="DDK__IGREP_DBG"></span>パラメーター
+## <a name="span-idddk__igrep_dbgspanspan-idddk__igrep_dbgspanparameters"></a><span id="ddk__igrep_dbg"></span><span id="DDK__IGREP_DBG"></span>パラメーター
 
 
 <span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *パターン*   
