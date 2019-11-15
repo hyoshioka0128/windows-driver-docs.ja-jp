@@ -82,6 +82,26 @@
                       href: camera-photo-failure-rate.md
                     - name: カメラのビデオおよびストリーム エラー率
                       href: camera-video-and-stream-failure-rate.md
+                - name: ファームウェア
+                  items:
+                    - name: ファームウェアの測定値
+                      href: firmware-measures.md
+                    - name: ESRT から正常にファームウェアがインストールされたことを報告しているマシンの割合
+                      href: ESRT-pct-machines-reporting-successful-firmware-installation.md
+                    - name: ESRT からのファームウェアの最大再試行回数の上限を超えたマシンの割合
+                      href: ESRT-pct-machines-exceed-max-retry.md
+                    - name: ファームウェアのインストール後に WHEA エラーが発生したマシンの割合
+                      href: ESRT-pct-machines-WHEA-error.md
+                    - name: バグチェックまたは電源ボタンによるものではない異常なシャットダウンが発生したマシンの割合
+                      href: ESRT-pct-machines-ABS.md
+                    - name: 7日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
+                      href: ESRT-7-day-brick-detector.md
+                    - name: 14日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
+                      href: ESRT-14-day-brick-detector.md
+                    - name: Bitlocker のリスクが原因で、ファームウェアの更新が保留中のマシンの割合
+                      href: ESRT-pct-machines-blocked-bitlocker.md
+                    - name: 更新され、Bitlocker 回復が正常にロック解除されたマシンの割合
+                      href: ESRT-pct-machines-entered-bitlocker-recovery.md
                 - name: グラフィックス
                   items:
                     - name: グラフィックスの計測値
@@ -110,6 +130,10 @@
                           href: user-mode-reliability-for-crashes-in-windows-components.md
                         - name: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
                           href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                        - name: UWP ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
+                          href: graphics-game-reliability-uwp-crashes-hangs-by-usage.md
+                        - name: Win32 ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
+                          href: graphics-game-reliability-win32-crashes-hangs-by-usage.md
                     - name: エコシステム対象ユーザーの測定値
                       items:
                         - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
