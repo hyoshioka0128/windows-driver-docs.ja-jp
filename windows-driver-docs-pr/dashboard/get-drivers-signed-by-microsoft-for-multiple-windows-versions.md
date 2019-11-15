@@ -20,7 +20,7 @@ ms.locfileid: "68446388"
 
 ダッシュボード申請を Windows 10 以前のバージョンの Windows に適用するには、次の 2 つの方法があります。
 
-1. Windows 10 に対する申請をテストする場合は Hardware Lab Kit (HCK) を使い、Windows 10 より古いバージョンの Windows に対してテストする場合はハードウェア認定キット (HLK) を使います。 次に、[マージした HLK/HCK テスト結果](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)すべてを含むダッシュボード申請を作成します。 申請処理中は、このトピックの後半に示すように、Windows Vista と Windows XP の無料の署名を取得するためにオプトインすることができます。 Windows Server 2008 についてオプトインするには、[Windows Logo Kit (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 申請の申請 ID を指定します。 この方法でのみ、申請をすべての Windows バージョンに適用できます。
+1. Windows 10 に対する申請をテストする場合は Hardware Lab Kit (HLK) を使い、Windows 10 より古いバージョンの Windows に対してテストする場合は Hardware Certification Kit (HCK) を使います。 次に、[マージした HLK/HCK テスト結果](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)すべてを含むダッシュボード申請を作成します。 申請処理中は、このトピックの後半に示すように、Windows Vista と Windows XP の無料の署名を取得するためにオプトインすることができます。 Windows Server 2008 についてオプトインするには、[Windows Logo Kit (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 申請の申請 ID を指定します。 この方法でのみ、申請をすべての Windows バージョンに適用できます。
 2. HLK と HCK でテストする代わりに、ドライバーに自分で[クロス署名](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)し、Windows 10 でも動作するようにダッシュボードに[構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)を申請することもできます。 この方法のほうが複雑ですが、有効な選択肢です。 ドライバーに構成証明署名する方法について詳しくは、「[一般リリースのためのカーネル ドライバーへの構成証明署名](attestation-signing-a-kernel-driver-for-public-release.md)」をご覧ください。
     > [!IMPORTANT]
     > パートナー センターからドライバーの署名を入手できるようになるまで、[ハードウェア デベロッパー センター (Sysdev)](dashboard-services.md) でドライバーに構成証明署名する必要があります。
