@@ -4,12 +4,12 @@ description: 追加のパラメーターの作成の概要
 ms.assetid: e32aeec6-1a0a-4d21-8358-89d9fc0a15eb
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8691bf43f0f2b1f8a3a1d08ae7c31de77256b50c
+ms.openlocfilehash: 06e6d4f7265eb3e688af1f1e6ddea105720d169c
 ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128464"
+ms.locfileid: "74135162"
 ---
 # <a name="introduction-to-extra-create-parameters"></a>追加のパラメーターの作成の概要
 
@@ -17,7 +17,7 @@ ms.locfileid: "74128464"
 
 また、ドライバーは、次の状況で、ECPs を使用して、追加情報を処理したり、ファイルの IRP_MJ_CREATE 操作に関連付けたりすることもできます。
 
-- カーネルモードドライバーが[**FltCreateFileEx2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefileex2)または[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefileex)ルーチンを呼び出してファイルを作成または開くとき
+- カーネルモードドライバーが[**FltCreateFileEx2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefileex2)または[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)ルーチンを呼び出してファイルを作成または開くとき
 
 - ファイルシステムフィルタードライバーがファイルの[**IRP_MJ_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作を処理する場合
 
@@ -25,7 +25,7 @@ ms.locfileid: "74128464"
 
 [カーネルモードドライバーが開始した IRP_MJ_CREATE 操作への ECPs のアタッチ](attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md)
 
-[ECPs を使用したファイルシステムフィルタードライバーでの IRP_MJ_CREATE 操作の処理](using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md)
+[ECPs を使用したファイルシステムの IRP_MJ_CREATE 操作の処理ミニフィルター](using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md)
 
 [ユーザー定義の ECPs](user-defined-ecps.md)
 

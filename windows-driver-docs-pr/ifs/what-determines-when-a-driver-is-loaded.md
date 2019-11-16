@@ -3,96 +3,84 @@ title: ドライバーのロード時期の決定方法
 description: ドライバーのロード時期の決定方法
 ms.assetid: fe0f27e4-84d4-483e-8b4e-69c39ae332de
 keywords:
-- フィルター ドライバー WDK ファイル システム、ドライバーの読み込み
-- ファイル システム フィルター ドライバー WDK、ドライバーの読み込み
-- ドライバー WDK ファイル システムの読み込み
-- ドライバー WDK ファイル システムの読み込み
-- ドライバー開始の種類の WDK ファイル システム
-- 型の WDK ファイル システムを起動します。
-- 注文グループ WDK ファイル システムを読み込む
+- フィルタードライバー WDK ファイルシステム、ドライバーの読み込み
+- ファイルシステムフィルタードライバー WDK、ドライバーの読み込み
+- WDK ファイルシステムの読み込み中のドライバー
+- ドライバー WDK ファイルシステムを読み込んでいます
+- ドライバーの開始の種類 WDK ファイルシステム
+- WDK ファイルシステムの種類の開始
+- 読み込み順序グループ WDK ファイルシステム
 - SERVICE_BOOT_START
 - SERVICE_SYSTEM_START
 - SERVICE_AUTO_START
 - SERVICE_DEMAND_START
 - SERVICE_DISABLED
-- ブート ドライバー WDK ファイル システム
-- ブート開始ドライバー WDK ファイル システム
-ms.date: 04/20/2017
+- ブートドライバー WDK ファイルシステム
+- ブート開始ドライバー WDK ファイルシステム
+ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 65617157d8ff04db9dc73a6fd06b0121cf1b0bc2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eaab9ad4ffc1ecd107dade126a9fa3b13152fee6
+ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380265"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128465"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>ドライバーのロード時期の決定方法
 
+> [!NOTE]
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
-## <span id="ddk_what_determines_when_a_driver_is_loaded_if"></span><span id="DDK_WHAT_DETERMINES_WHEN_A_DRIVER_IS_LOADED_IF"></span>
+システムのブートシーケンス中にファイルシステムドライバーが読み込まれるタイミングと方法を調べる前に、ドライバーの開始の種類と読み込み順序のグループについて理解しておく必要があります。
 
+## <a name="driver-start-types"></a>ドライバーの開始の種類
 
-調べる前にするタイミングと方法、ファイル システム ドライバーは、システムの起動シーケンス中に読み込まれる必要があるドライバーのスタートアップの種類を理解し、注文のグループを読み込めません。
+カーネルモードドライバーの開始の*種類*では、ドライバーがシステムの起動時または起動後に読み込まれるかどうかを指定します。 次の5つの開始の種類があります。
 
-### <a name="span-idddkdriverstarttypesifspanspan-idddkdriverstarttypesifspandriver-start-types"></a><span id="ddk_driver_start_types_if"></span><span id="DDK_DRIVER_START_TYPES_IF"></span>ドライバーのスタートアップの種類
+- SERVICE_BOOT_START (0x00000000)  
+  オペレーティングシステム (OS) ローダーによって開始されたドライバーを示します。 ファイルシステムフィルタードライバーは、通常、この開始の種類または SERVICE_DEMAND_START を使用します。 Microsoft Windows XP およびそれ以降のシステムでは、新しい[ファイルシステムフィルターの読み込み順序グループ](load-order-groups-for-file-system-filter-drivers.md)を利用するために、フィルターでこのスタートアップの種類を使用する必要があります。
 
-カーネル モード ドライバーの*開始の種類*ドライバーがシステム起動時に読み込まれるかどうかを指定します。 開始の 5 つの種類があります。
+- SERVICE_SYSTEM_START (0x00000001)  
+  OS の初期化中にドライバーが開始されたことを示します。 この開始の種類は、ファイルシステムレコグナイザーによって使用されます。 "SERVICE_DISABLED" の下に一覧表示されているファイルシステムを除き、ファイルシステム (ネットワークファイルシステムコンポーネントを含む) は、通常、この種類の開始または SERVICE_DEMAND_START を使用します。 このスタートアップの種類は、システムの初期化中に列挙され、システムの読み込みには必要ない PnP デバイスのデバイスドライバーによっても使用されます。
 
-<span id="SERVICE_BOOT_START__0x00000000_"></span><span id="service_boot_start__0x00000000_"></span><span id="SERVICE_BOOT_START__0X00000000_"></span>サービス\_ブート\_開始 (0x00000000)  
-(OS) のオペレーティング システム ローダーによって開始ドライバーを示します。 ファイル システム フィルター ドライバーは、この開始の種類またはサービスによく使用\_デマンド\_を開始します。 Microsoft Windows XP およびそれ以降のシステムでのフィルターは、新しいを利用するにはこの開始の種類を使用する必要があります[ファイル システム フィルター ロード順序グループ](load-order-groups-for-file-system-filter-drivers.md)します。
+- SERVICE_AUTO_START (0x00000002)  
+  システムの起動時にサービスコントロールマネージャーによって開始されたドライバーを示します。 ほとんど使用されません。
 
-<span id="SERVICE_SYSTEM_START__0x00000001_"></span><span id="service_system_start__0x00000001_"></span><span id="SERVICE_SYSTEM_START__0X00000001_"></span>サービス\_システム\_開始 (0x00000001)  
-OS の初期化中に、ドライバーの開始を示します。 この開始の種類は、ファイル システムの認識エンジンによって使用されます。 下に示すファイル システムを除く"サービス\_無効にすると、"ファイル システム (ネットワーク ファイル システムのコンポーネントを含む) この開始の種類またはサービスを使用して、一般的\_デマンド\_を開始します。 この開始の種類は、システムの初期化中に列挙がシステムを読み込むため不要の PnP デバイスのデバイス ドライバーによっても使用されます。
+- SERVICE_DEMAND_START (0x00000003)  
+  PnP マネージャー (デバイスドライバーの場合) またはサービスコントロールマネージャー (ファイルシステムとファイルシステムフィルタードライバーの場合) のいずれかによって、要求時にドライバーが開始されたことを示します。
 
-<span id="SERVICE_AUTO_START__0x00000002_"></span><span id="service_auto_start__0x00000002_"></span><span id="SERVICE_AUTO_START__0X00000002_"></span>サービス\_自動\_開始 (0x00000002)  
-システムの起動時にサービス コントロール マネージャーでの開始ドライバーを示します。 ほとんど使用しません。
+- SERVICE_DISABLED (0x00000004)  
+  OS ローダー、サービスコントロールマネージャー、または PnP マネージャーによって開始されていないドライバーを示します。 ファイルシステムレコグナイザー (ブートファイルシステムの場合を除く) または (EFS の場合) 別のファイルシステムによって読み込まれるファイルシステムによって使用されます。 このようなファイルシステムには、CDFS、EFS、FastFat、NTFS、UDF などがあります。 デバッグ中にドライバーを一時的に無効にするためにも使用されます。
 
-<span id="SERVICE_DEMAND_START__0x00000003_"></span><span id="service_demand_start__0x00000003_"></span><span id="SERVICE_DEMAND_START__0X00000003_"></span>サービス\_デマンド\_開始 (0x00000003)  
-(デバイス ドライバーの PnP マネージャー、または (ファイル システムとファイル システム フィルター ドライバー) のサービス コントロール マネージャーによって、オンデマンドで開始ドライバーを示します。
+## <a name="specifying-start-type"></a>指定 (開始の種類を)
 
-<span id="SERVICE_DISABLED__0x00000004_"></span><span id="service_disabled__0x00000004_"></span><span id="SERVICE_DISABLED__0X00000004_"></span>SERVICE\_DISABLED (0x00000004)  
-サービス コントロール マネージャー、または PnP マネージャー、OS ローダーによって開始されていないドライバーを示します。 (ときに、ブート ファイル システム) を除くファイル システムの認識エンジンによって読み込まれるファイル システムで使用される (EFS) の場合、または別のファイル システムでします。 このようなファイル システムには、cdfs を含む、EFS、FastFat、NTFS、および UDF が含まれます。 デバッグ中にドライバーを一時的に無効にも使用されます。
+ドライバーライターは、次のいずれかの方法で、インストール時にドライバーの開始の種類を指定できます。
 
-### <a name="span-idddkspecifyingstarttypeifspanspan-idddkspecifyingstarttypeifspanspecifying-start-type"></a><span id="ddk_specifying_start_type_if"></span><span id="DDK_SPECIFYING_START_TYPE_IF"></span>開始の種類を指定します。
+- ドライバーの INF ファイルの[**addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブによっ*て参照さ*れている、 **starttype**エントリの開始の種類を指定します。 この方法については、「ServiceInstall」セクションを参照してください。
 
-ドライバー開発者は、次の方法のいずれかでインストール時に開始ドライバーの種類を指定できます。
+- ユーザーモードインストールプログラムから**CreateService**または**ChangeServiceConfig**を呼び出すときに、 *dwstarttype*パラメーターに必要な開始の種類を渡します。 このメソッドについては、Microsoft Windows SDK のドキュメントの**CreateService**と**ChangeServiceConfig**のリファレンスエントリを参照してください。
 
--   必要な開始の種類を指定することによって、 **StartType**内のエントリ、*サービス-インストール セクション*によって参照される、 [ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ドライバーの INF ファイルでディレクティブです。 このメソッドは、ServiceInstall セクションで説明されています。
+## <a name="driver-load-order-groups"></a>ドライバーの読み込み順序グループ
 
--   目的を渡すことによって開始の種類、 *dwStartType*パラメーターを呼び出すときに**CreateService**または**changeserviceconfig が**ユーザー モードのインストール プログラムから。 このメソッドが参照のエントリで説明されている**CreateService**と**changeserviceconfig が**Microsoft Windows SDK ドキュメント。
+SERVICE_BOOT_START および SERVICE_SYSTEM_START の開始の種類では、ドライバーが読み込まれる相対的な順序は、各ドライバーの*読み込み順序グループ*によって指定されます。
 
-### <a name="span-idddkdriverloadordergroupsifspanspan-idddkdriverloadordergroupsifspandriver-load-order-groups"></a><span id="ddk_driver_load_order_groups_if"></span><span id="DDK_DRIVER_LOAD_ORDER_GROUPS_IF"></span>ドライバーの読み込み順序グループ
+開始の種類が SERVICE_BOOT_START のドライバーは、*ブート (ブート開始) ドライバー*と呼ばれます。 Microsoft Windows 2000 以前のシステムでは、ブートドライバーであるほとんどのフィルターは "フィルター" グループに属しています。 Microsoft Windows XP 以降のシステムでは、通常、ブートドライバーであるフィルターは、新しい FSFilter の読み込み順序グループの1つに属しています。 これらの負荷順序グループの詳細については、「[ファイルシステムフィルタードライバーの読み込み順序グループ](load-order-groups-for-file-system-filter-drivers.md)」を参照してください。
 
-サービス内で\_ブート\_開始とサービス\_システム\_スタートでは、型、ドライバーが読み込まれる相対順序は各ドライバーのによって指定されます*ロード順序グループ*します。
+開始の種類が SERVICE_SYSTEM_START であるドライバーも、それらが属する読み込み順序グループの順序で読み込まれます。 ただし、すべてのブートドライバーが読み込まれるまで、システム開始ドライバーは読み込まれません。
 
-ドライバーはサービスの開始型を持つ\_ブート\_START が呼び出される*ブート (またはブート開始) ドライバー*します。 Microsoft Windows 2000 およびそれ以前のシステムでは、ブート ドライバーであるほとんどのフィルターは、「フィルター」グループに属しています。 Microsoft Windows XP およびそれ以降のシステムでは、一般的に、ブート ドライバーは新しい FSFilter のいずれかに属している、フィルターは、注文のグループを読み込めません。 これらのロード順序グループがで詳しく説明されている[順序グループをファイル システム フィルター ドライバーの読み込み](load-order-groups-for-file-system-filter-drivers.md)します。
+> [!NOTE]
+> 開始の種類が SERVICE_AUTO_START、SERVICE_DEMAND_START、または SERVICE_DISABLED であるドライバーでは、読み込み順序グループは無視されます。
 
-ドライバーはサービスの開始型を持つ\_システム\_開始もロード順序グループが所属する順序で読み込まれます。 ただし、システム開始ドライバーが読み込まれていないまですべてのブート ドライバーが読み込まれた後です。
+読み込み順序グループの完全な順序付きリストは、 **HKEY_LOCAL_MACHINE \system\currentcontrolset\control**レジストリキーの**ServiceGroupOrder**サブキーの下にあります。
 
-**注**  はサービスの開始型を持つドライバーの読み込み順序グループは無視されます\_自動\_開始、サービス\_デマンド\_開始、またはサービス\_無効になっています。
+SERVICE_BOOT_START および SERVICE_SYSTEM_START のドライバーには、同じ負荷グループの順序が使用されます。 ただし、すべての SERVICE_BOOT_START ドライバーは、SERVICE_SYSTEM_START ドライバーが読み込まれる前に読み込まれて起動されます。
 
- 
+## <a name="specifying-load-order-group"></a>読み込み順序グループの指定
 
-ロード順序グループの完全な順序付きリストが見つかりません、 **ServiceGroupOrder**次のレジストリ キーのサブキー。
+ドライバーライターは、次のいずれかの方法で、インストール時にドライバーの読み込み順序グループを指定できます。
 
-**HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control**
+- ドライバーの INF ファイルの**addservice**ディレクティブによっ*て参照さ*れている、 **loadordergroup**エントリに対して目的の読み込み順序グループを指定する。 この方法については、「ServiceInstall」セクションを参照してください。
 
-サービスの使用は、同じロード グループの順序付け\_ブート\_開始とサービス\_システム\_開始ドライバー。 ただし、すべての SERVICE\_ブート\_開始ドライバーが読み込まれ、任意のサービスの前に開始\_システム\_開始ドライバーが読み込まれます。
+- ユーザーモードのインストールプログラムから**CreateService**または**ChangeServiceConfig**を呼び出すときに、 *l*のパラメーターに必要な開始の種類を渡します。 このメソッドについては、Microsoft Windows SDK のドキュメントの**CreateService**と**ChangeServiceConfig**のリファレンスエントリを参照してください。
 
-### <a name="span-idddkspecifyingloadordergroupifspanspan-idddkspecifyingloadordergroupifspanspecifying-load-order-group"></a><span id="ddk_specifying_load_order_group_if"></span><span id="DDK_SPECIFYING_LOAD_ORDER_GROUP_IF"></span>ロード順序グループを指定します。
-
-ドライバー開発者は、次の方法のいずれかでインストール時にドライバーをロード順序グループを指定できます。
-
--   目的のロード順序グループを指定して、 **LoadOrderGroup**内のエントリ、*サービス-インストール セクション*によって参照される、 **AddService**ドライバーの INF ディレクティブファイルです。 このメソッドは、ServiceInstall セクションで説明されています。
-
--   目的を渡すことによって開始の種類、 *lpLoadOrderGroup*パラメーターを呼び出すときに**CreateService**または**changeserviceconfig が**ユーザー モードのインストール プログラムから。 このメソッドが参照のエントリで説明されている**CreateService**と**changeserviceconfig が**Microsoft Windows SDK ドキュメント。
-
-ドライバーに関する一般的な情報の読み込み順序と読み込み順グループを参照してください[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)します。
-
- 
-
- 
-
-
-
-
+ドライバーの読み込み順序と読み込み順序のグループの一般的な情報については、「[ドライバーの読み込み順序の指定](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)」を参照してください。

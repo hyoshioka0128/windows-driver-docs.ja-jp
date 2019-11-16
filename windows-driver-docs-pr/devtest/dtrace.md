@@ -11,14 +11,14 @@ keywords:
 - ソフトウェアトレース WDK, 書式設定メッセージ
 - WDK のトレース、DTrace
 - トレースメッセージフォーマットファイル WDK
-ms.date: 11/04/2019
+ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f7c163c2fff8077d9d152f8c8950db14692baa
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 33c0c4c513d3c1a65db4da128850bd33256ddc80
+ms.sourcegitcommit: 79490c5067a50727f928f213c16c5f8f62898b60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592435"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74119513"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上の DTrace
 
@@ -72,7 +72,6 @@ Windows で使用可能なプロバイダーとその機能を次に示します
 ### <a name="syscall"></a>SYSCALL
 
 SYSCALL は、システム呼び出しごとにプローブのペアを提供します。システムコールが入力される前に起動されるエントリプローブと、システム呼び出しが完了した後、制御がユーザーレベルに戻される前に発生する戻りプローブです。 すべての SYSCALL プローブでは、関数名はインストルメント化されたシステム呼び出しの名前に設定され、モジュール名は関数が存在するモジュールになります。 SYSCALL プロバイダーによって提供されるシステム呼び出しの名前は、コマンドプロンプトから `dtrace.exe -l -P syscall` コマンドを入力することによって見つけることができます。 プローブ名は、大文字と小文字を区別しないことに注意してください。 コマンド `dtrace -ln syscall:::` には、syscall プロバイダーから取得できるすべてのプローブとそのパラメーターも表示されます。
-
 
 ```dtrace
 C:\> dtrace -ln syscall:::
@@ -177,7 +176,13 @@ Traceext (trace extension) は、Windows カーネル拡張機能ドライバー
 
 ## <a name="installing-dtrace-under-windows"></a>Windows での DTrace のインストール
 
-1. Microsoft ダウンロードセンターから MSI インストールファイルをインストールする- [Windows で DTrace をダウンロード](https://www.microsoft.com/download/details.aspx?id=100441)します。
+1. サポートされているバージョンの Windows を実行していることを確認してください。 DTrace の現在のダウンロードは、バージョン18980および Windows Server Insider Preview ビルド18975後の 20H1 Windows の Insider ビルドでサポートされています。 *このバージョンの DTrace を古いバージョンの Windows にインストールすると、システムが不安定になり、推奨されません。*
+
+   アーカイブされたバージョンの DTrace on 19H1 は、「 [Windows 上の Dtrace ダウンロード DTrace](https://www.microsoft.com/en-us/download/58091)」で入手できます。 このバージョンの DTrace はサポートされなくなったことに注意してください。
+
+
+1. MSI インストールファイルは、Microsoft ダウンロードセンターからダウンロードしてください。 [Windows で DTrace をダウンロード](https://www.microsoft.com/download/details.aspx?id=100441)してください。
+
 
 2. 完全なインストールを選択します。
 
@@ -196,15 +201,15 @@ bcdedit /set dtrace ON
 > [!NOTE]
 > BitLocker を使用している場合は、ブート値を変更するときに無効にします。 この操作を行わないと、BitLocker 回復キーの入力を求められる場合があります。 この状況から回復する方法の1つとして、回復コンソールを起動して、bcdedit の値を `bcdedit /set {default} dtrace on`復元する方法があります。 OS 更新プログラムによって値が削除され、に追加された場合、OS を回復するには、bcdedit を使用して値を削除し、`bcdedit /deletevalue {default} dtrace`します。 次に、BitLocker を無効にしてから、`bcdedit /set dtrace ON`を再度有効にします。
 
-"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" を1に設定して、VSM とセキュリティ保護を有効にすることにより、コンピューター上で VSM (仮想セキュアモード) を構成します。カーネル.
+"HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" を1に設定して、VSM と Secure を有効にすることで、カーネル関数境界トレース (FBT) を有効にするために、コンピューターで VSM (仮想セキュアモード) を構成します。カーネル.
 
 これを行うには、次のように REG Add コマンドを使用します。
 
 ```cmd
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\ /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 1 
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\ /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 1
 ```
 
-一部の DTrace コマンドでは、Windows シンボルを使用します。 これらのシンボルを使用するには、シンボルディレクトリを作成し、シンボルパスを設定します。  
+一部の DTrace コマンドでは、Windows シンボルを使用します。 Windows シンボルを使用するには、シンボルディレクトリを作成し、シンボルパスを設定します。  
 
 ```cmd
 mkdir c:\symbols
@@ -229,7 +234,7 @@ VM をサポートする PC を再起動します。
 
 管理者として Windows コマンドプロンプトを開き、DTrace コマンドを入力します。
 
-```dtrace 
+```dtrace
 C:\> dtrace -l
 
 ...

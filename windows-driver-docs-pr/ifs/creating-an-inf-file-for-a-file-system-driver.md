@@ -3,133 +3,103 @@ title: ファイル システム ドライバー用の INF ファイルの作成
 description: ファイル システム ドライバー用の INF ファイルの作成
 ms.assetid: 4b67159f-a5a5-46da-9500-a9c6b6995da4
 keywords:
-- INF ファイル WDK ファイル システムを作成します。
-- SetupAPI WDK ファイル システム
-- 文字列は、WDK のファイル システムをセクションします。
-- DefaultUninstall セクション WDK ファイル システム
-- ServiceInstall セクション WDK ファイル システム
-- DefaultInstall セクション WDK ファイル システム
-- SourceDisksNames セクション WDK ファイル システム
-- DestinationDirs セクション WDK ファイル システム
-- WDK のファイル システムのバージョン
-- ファイル システムの WDK INF ファイルを作成します。
-ms.date: 04/20/2017
+- INF ファイル WDK ファイルシステム、作成
+- Setupapi.log WDK ファイルシステム
+- 文字列セクション WDK ファイルシステム
+- DefaultUninstall セクション WDK ファイルシステム
+- ServiceInstall セクション WDK ファイルシステム
+- DefaultInstall セクション WDK ファイルシステム
+- SourceDisksNames セクション WDK ファイルシステム
+- DestinationDirs セクション WDK ファイルシステム
+- バージョンセクション WDK ファイルシステム
+- INF ファイルの作成 (WDK ファイルシステム)
+ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e3acb192c5972cc7c9507646c1a873eb9e10882
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 06340df1d9191a9c1375f999d546ba1e38174a97
+ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393214"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128486"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>ファイル システム ドライバー用の INF ファイルの作成
 
+Windows セットアップおよびデバイスインストーラーサービス (総称して「 [setupapi.log](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)」といいます) は、Windows セットアップとドライバーのインストールを制御する機能を提供します。 インストールプロセスは INF ファイルによって制御されます。
 
-## <span id="ddk_creating_an_inf_file_for_a_file_system_filter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
+ファイルシステムドライバーの INF ファイルには、Setupapi.log がドライバーのインストールに使用する指示が記載されています。 INF ファイルは、ドライバーを実行するために必要なファイル、およびドライバーファイルのソースディレクトリと宛先ディレクトリを指定するテキストファイルです。 INF ファイルには、Setupapi.log によってレジストリに格納されるドライバー構成情報 (ドライバーの開始の種類や読み込み順序グループなど) も含まれています。
 
+INF ファイルとその作成方法の詳細については、「 [Inf ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)および inf ファイルの作成」[セクションと「ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)」を参照してください。 ドライバーの署名に関する一般的な情報については、「[ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)」を参照してください。
 
-Windows セットアップとデバイスのインストーラー サービスと総称[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)Windows のセットアップとドライバーのインストールを制御する機能を提供します。 インストール プロセスは、INF ファイルによって制御されます。
+1つの INF ファイルを作成して、複数のバージョンの Windows オペレーティングシステムにドライバーをインストールすることができます。 このような INF ファイルの作成の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の Inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)」および「[国際対応の Inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-international-inf-files)」を参照してください。
 
-ファイル システム ドライバーの INF ファイルでは、SetupAPI を使用してドライバーをインストールする手順を説明します。 INF ファイルは、ドライバー ファイルをドライバーを実行し、ソースと変換先のディレクトリに存在する必要があるファイルを指定するテキスト ファイルです。 INF ファイルには、SetupAPI がレジストリに格納するドライバーの構成情報も含まれていますなど、ドライバーのスタートアップの種類および順序グループをロードします。
+64ビットバージョンの Windows Vista 以降では、ファイルシステムドライバー (ファイルシステム、レガシフィルター、ミニフィルタードライバー) などの非 PnP (プラグアンドプレイ) ドライバーを含むすべてのカーネルモードコンポーネントが、読み込んで実行するために署名されている必要があります。 これらのバージョンの Windows オペレーティングシステムでは、次の一覧に、ファイルシステムドライバーに関連する情報を示します。
 
-INF ファイルとの作成方法の詳細については、次を参照してください。 [INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)と[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。 ドライバーの署名の詳細については、次を参照してください。[ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)します。
+- ファイルシステムドライバーを含む、PnP 以外のドライバーの INF ファイルには、\[の製造元\] または \[モデル\] セクションを含める必要はありません。
 
-Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 このような INF ファイルを作成する方法の詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)と[International INF ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-international-inf-files)です。
+- [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンドラインツール (WDK インストールディレクトリの \bin\SelfSign ディレクトリにあります) を使用して、ドライバー SYS 実行可能ファイルに "sign" を直接埋め込むことができます。 パフォーマンス上の理由から、ブート開始ドライバーには、埋め込み署名が含まれている必要があります。
 
-以降では、64 ビット バージョンの Windows Vista では、すべてのカーネル モード コンポーネントでは、ファイル システム ドライバー (ファイル システム、従来のフィルターおよびミニフィルター ドライバー) などの非 PnP (プラグ アンド プレイ) ドライバーを含む署名が必要読み込みおよび実行するためにします。 これらの Windows オペレーティング システムのバージョンでは、次の一覧には、ファイル システム ドライバーに関連する情報が含まれます。
+- INF ファイルを指定すると、 [**Inf2Cat**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)コマンドラインツールを使用して、ドライバーパッケージのカタログ (.cat) ファイルを作成できます。 [WHQL](https://go.microsoft.com/fwlink/p/?linkid=8705)ロゴ署名を受け取ることができるのは、カタログファイルだけです。
 
--   ファイル システム ドライバーなど、非 PnP ドライバーの INF ファイルを格納する必要はありません\[製造元\]または\[モデル\]セクション。
+- 管理者特権では、署名されていないドライバーを Windows Vista 以降の x64 ベースのシステムにインストールすることができます。 ただし、ドライバーは署名されていないため (そのため実行) に失敗します。
 
--   [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)にある、コマンド ライン ツール、 \\bin\\WDK のインストール ディレクトリの SelfSign ディレクトリを直接「記号を埋め込む」を使用するドライバー SYS実行可能ファイルです。 パフォーマンス上の理由から、ブート開始ドライバーが埋め込みの署名を含める必要があります。
+- 64ビットバージョンの Windows Vista の運転署名プロセスを含む、運転署名プロセスの詳細については、「[カーネルモードコード署名チュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)」を参照してください。
 
--   INF ファイルでは、指定された、 [ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)コマンド ライン ツールは、ドライバー パッケージのカタログ (.cat) ファイルを作成するために使用できます。 カタログ ファイルのみを受信できる[WHQL](https://go.microsoft.com/fwlink/p/?linkid=8705)ロゴ署名します。
+- カスタムカーネルモードの開発ツールを含む、すべてのカーネルモードコンポーネントに署名する必要があります。 詳細については、「[開発およびテスト中のドライバーへの署名 (Windows Vista 以降)](https://docs.microsoft.com/windows-hardware/drivers/install/signing-drivers-during-development-and-test--windows-vista-and-later-)」を参照してください。
 
--   管理者特権で未署名のドライバを Windows Vista 以降の x64 ベース システムでインストールもできます。 ドライバーを読み込む (およびため、実行する) に失敗するただし、署名されていないためです。
+INF ファイルを使用してレジストリから情報を読み取ったり、ユーザーモードアプリケーションを起動したりすることはできません。
 
--   運転署名プロセスの詳細については、運転、署名の 64 ビット バージョンの Windows Vista では、プロセスを参照してください[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)します。
+INF ファイルを作成した後、通常はセットアップアプリケーションのソースコードを記述します。 セットアップアプリケーションは、ユーザーモードのセットアップ関数を呼び出して、INF ファイル内の情報にアクセスし、インストール操作を実行します。
 
--   カスタム カーネル モード開発ツールを含むすべてのカーネル モード コンポーネントに署名する必要があります。 詳細については、次を参照してください。[開発およびテスト (Windows Vista 以降) の中にドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/signing-drivers-during-development-and-test--windows-vista-and-later-)します。
+独自のファイルシステムドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ツールを使用して、INF ファイルの構文を確認できます。
 
-レジストリから情報を読み取る、またはユーザー モード アプリケーションを起動する INF ファイルを使用できません。
+一般に、ファイルシステムドライバーの INF ファイルには、次のセクションが含まれています。
 
-INF ファイルを作成するには後、は、セットアップ アプリケーションの通常のソース コードを記述します。 セットアップ アプリケーションは、ユーザー モードに INF ファイルの情報にアクセスし、インストール操作を実行するセットアップ関数を呼び出します。
+- バージョン (必須)
 
-独自ファイル システム ドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 使用することができます、 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf) INF ファイルの構文を確認するためのツール。
+- DestinationDirs (省略可能ですが推奨)
 
-ファイル システム ドライバーの INF ファイルには、次のセクションでは、一般に含まれています。
+- SourceDisksNames (必須)
 
--   バージョン (必須)
+- SourceDisksFiles (必須)
 
--   DestinationDirs (推奨されるが、省略可能)
+- DefaultInstall (必須)
 
--   SourceDisksNames (必須)
+- DefaultInstall (必須)
 
--   SourceDisksFiles (必須)
+- ServiceInstall (必須)
 
--   DefaultInstall (必須)
+- DefaultUninstall (省略可能)
 
--   DefaultInstall.Services (必須)
+- DefaultUninstall. Services (省略可能)
 
--   ServiceInstall (必須)
+- 文字列 (必須)
 
--   DefaultUninstall (省略可能)
+### <a name="version-section-required"></a>Version セクション (必須)
 
--   DefaultUninstall.Services (省略可能)
-
--   文字列 (必須)
-
-### <a name="span-idversionsectionrequiredspanspan-idversionsectionrequiredspanspan-idversionsectionrequiredspanversion-section-required"></a><span id="Version_Section__required_"></span><span id="version_section__required_"></span><span id="VERSION_SECTION__REQUIRED_"></span>バージョンのセクション (必須)
-
-[**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)セクションでは、次のコード例に示すように、ドライバーのバージョン情報を指定します。
+[[**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)] セクションでは、次のコード例に示すように、ドライバーのバージョン情報を指定します。
 
 ```cpp
 [Version]
 Signature   = "$WINDOWS NT$"
 Provider    = %Msft%
 DriverVer   = 08/28/2000,1.0.0.1
-CatalogFile = 
+CatalogFile =
 ```
 
-次の表は、値で、ファイル システム フィルター ドライバーを指定する必要があります、 [**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)セクション。
+次の表に、[[**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)] セクションでファイルシステムフィルタードライバーによって指定される値を示します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">入力</th>
-<th align="left">[値]</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><strong>署名</strong></p></td>
-<td align="left"><p>「$WINDOWS NT $」</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>Provider</strong></p></td>
-<td align="left"><p>INF ファイルでは、Microsoft 以外のプロバイダーを指定してください。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>DriverVer</strong></p></td>
-<td align="left"><p>参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive" data-raw-source="[&lt;strong&gt;INF DriverVer directive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)"> <strong>INF DriverVer ディレクティブ</strong></a>します。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>CatalogFile</strong></p></td>
-<td align="left"><p>このエントリは空白のままにします。 今後、署名されたドライバーの WHQL が指定したカタログ ファイルの名前が含まれます。</p></td>
-</tr>
-</tbody>
-</table>
+| エントリ | Value |
+| ----- | ----- |
+| **折本** | "$WINDOWS NT $" |
+| **Provider** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
+| **DriverVer** | 「 [ **INF DriverVer ディレクティブ**」を参照してください。](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive) |
+| **CatalogFile** | このエントリを空白のままにします。 将来、署名されたドライバーの WHQL が提供したカタログファイルの名前が含まれます。 |
 
- 
+### <a name="destinationdirs-section-optional-but-recommended"></a>DestinationDirs セクション (省略可能ですが推奨)
 
-### <a name="span-iddestinationdirssectionoptionalbutrecommendedspanspan-iddestinationdirssectionoptionalbutrecommendedspanspan-iddestinationdirssectionoptionalbutrecommendedspandestinationdirs-section-optional-but-recommended"></a><span id="DestinationDirs_Section__optional_but_recommended_"></span><span id="destinationdirs_section__optional_but_recommended_"></span><span id="DESTINATIONDIRS_SECTION__OPTIONAL_BUT_RECOMMENDED_"></span>DestinationDirs セクション (推奨されるが、省略可能)
+[**Destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションでは、ファイルシステムドライバーファイルのコピー先のディレクトリを指定します。
 
-[ **DestinationDirs** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションでは、ファイル システム ドライバー ファイルのコピー先ディレクトリを指定します。
-
-このセクションで、 **ServiceInstall** セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、次を参照してください。 [ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)します。 次のコード例では、「12」の値はドライバー ディレクトリを指します (%windir%\\system32\\ドライバー)。
+このセクションと**Serviceinstall**セクションでは、システム定義の数値を使用して、既知のシステムディレクトリを指定できます。 これらの値の一覧については、「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください。 次のコード例では、値 "12" は Drivers ディレクトリ (%windir%\system32\drivers) を参照します。
 
 ```cpp
 [DestinationDirs]
@@ -137,39 +107,38 @@ DefaultDestDir = 12
 ExampleFileSystem.DriverFiles = 12
 ```
 
-### <a name="span-idsourcedisksnamessectionrequiredspanspan-idsourcedisksnamessectionrequiredspanspan-idsourcedisksnamessectionrequiredspansourcedisksnames-section-required"></a><span id="SourceDisksNames_Section__required_"></span><span id="sourcedisksnames_section__required_"></span><span id="SOURCEDISKSNAMES_SECTION__REQUIRED_"></span>(必須) SourceDisksNames セクション
+### <a name="sourcedisksnames-section-required"></a>SourceDisksNames セクション (必須)
 
-[ **SourceDisksNames** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)セクションを使用する配布メディアを指定します。
+[**Sourcedisksnames**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)セクションでは、使用する配布メディアを指定します。
 
-次のコード例で、 [ **SourceDisksNames** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)セクションには、ファイル システム ドライバー用の 1 つの配布メディアが一覧表示されます。 メディアの一意の識別子には 1 です。 定義されているディスク 1% % トークンによって、メディアの名前が指定されて、**文字列**INF ファイルのセクション。
+次のコード例では、 [**Sourcedisksnames**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)セクションに、ファイルシステムドライバー用の1つの配布メディアが一覧表示されます。 メディアの一意の識別子は1です。 メディアの名前は、INF ファイルの**Strings**セクションで定義されている% Disk1% トークンによって指定されます。
 
 ```cpp
 [SourceDisksNames]
 1 = %Disk1%
 ```
 
-### <a name="span-idsourcedisksfilessectionrequiredspanspan-idsourcedisksfilessectionrequiredspanspan-idsourcedisksfilessectionrequiredspansourcedisksfiles-section-required"></a><span id="SourceDisksFiles_Section__required_"></span><span id="sourcedisksfiles_section__required_"></span><span id="SOURCEDISKSFILES_SECTION__REQUIRED_"></span>(必須) SourceDisksFiles セクション
+### <a name="sourcedisksfiles-section-required"></a>SourceDisksFiles セクション (必須)
 
-[ **SourceDisksFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)セクションは、コピーするファイルの名前と場所を指定します。
+[**Sourcedisksfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)セクションでは、コピーするファイルの場所と名前を指定します。
 
-次のコード例で、 [ **SourceDisksFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)セクションは、ファイル システム ドライバーをコピーするファイルを一覧表示し、ファイルにある一意の識別子を持つ 1 (これは、メディアを指定します。識別子が定義されて、 [ **SourceDisksNames** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section) INF ファイルのセクションです)。
+次のコード例では、[ [**Sourcedisksfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section) ] セクションに、ファイルシステムドライバー用にコピーするファイルが一覧表示され、一意の識別子が 1 (この識別子は INF ファイルの[**Sourcedisksfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)セクションで定義されています) であるメディアでファイルが見つかることを指定します。
 
 ```cpp
 [SourceDisksFiles]
 examplefilesystem.sys = 1
 ```
 
-### <a name="span-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspandefaultinstall-section-required"></a><span id="DefaultInstall_Section__required_"></span><span id="defaultinstall_section__required_"></span><span id="DEFAULTINSTALL_SECTION__REQUIRED_"></span>(必須) DefaultInstall セクション
+### <a name="defaultinstall-section-required"></a>DefaultInstall セクション (必須)
 
-[ **DefaultInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section) セクションで、 [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、先に、ファイル システム ドライバーのドライバー ファイルをコピーします。指定された、 [ **DestinationDirs** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクション。
+[**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)セクションでは、 [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブによって、 [**destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションで指定された宛先にファイルシステムドライバーのドライバーファイルがコピーされます。
 
-**注**   、 [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブが、カタログ ファイルまたは INF ファイル自体を参照する必要がありますSetupAPI では、これらのファイルが自動的にコピーします。
+> [!NOTE]
+> [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、カタログファイルまたは INF ファイル自体を参照することはできません。これらのファイルは、Setupapi.log によって自動的にコピーされます。
 
- 
+1つの INF ファイルを作成して、複数のバージョンの Windows オペレーティングシステムにドライバーをインストールすることができます。 この種類の INF ファイルは、オペレーティングシステムのバージョンごとに、追加の[**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)、 [**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)、 **Defaultuninstall**、および**defaultuninstall. services**セクションを作成することによって作成されます。 各セクションには、適用されるオペレーティングシステムのバージョンを指定する*装飾*(例、. ntx86、. ntia64、または nt) が付いています。 この種類の INF ファイルの作成の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の Inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)」を参照してください。
 
-Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 この種類の INF ファイルを作成して追加する[ **DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)、 [ **DefaultInstall.Services**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)、 **DefaultUninstall**、および**DefaultUninstall.Services**セクションの各オペレーティング システムのバージョン。 各セクションのラベルでは、*装飾*(.ntx86、.ntia64、または .nt など) を適用するオペレーティング システムのバージョンを指定します。 この種類の INF ファイルを作成する方法の詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)します。
-
-次のコード例で、 [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、INF ファイルの ExampleFileSystem.DriverFiles セクションに記載されているファイルをコピーします。
+次のコード例では、 [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブを使用して、INF ファイルの "ファイルシステム. driverfiles" セクションに一覧表示されているファイルをコピーします。
 
 ```cpp
 [DefaultInstall]
@@ -180,22 +149,22 @@ CopyFiles = ExampleFileSystem.DriverFiles
 examplefilesystem.sys
 ```
 
-### <a name="span-iddefaultinstallservicessectionrequiredspanspan-iddefaultinstallservicessectionrequiredspanspan-iddefaultinstallservicessectionrequiredspandefaultinstallservices-section-required"></a><span id="DefaultInstall.Services_Section__required_"></span><span id="defaultinstall.services_section__required_"></span><span id="DEFAULTINSTALL.SERVICES_SECTION__REQUIRED_"></span>(必須) DefaultInstall.Services セクション
+### <a name="defaultinstallservices-section-required"></a>DefaultInstall セクション (必須)
 
-[ **DefaultInstall.Services** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)セクションが含まれています、 [ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)方法とタイミングを制御するディレクティブのサービスを特定のドライバーが読み込まれます。
+DefaultInstall セクションには、特定のドライバーのサービスが読み込まれる方法とタイミングを制御する[**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブが含まれてい[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
-次のコード例で、 [ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブは、オペレーティング システムにファイル システムのサービスを追加します。 %Servicename% トークンにはで定義されているサービス名の文字列が含まれています、**文字列**INF ファイルのセクション。 ExampleFileSystem.Service ファイル システムのドライバーの名前は、 **ServiceInstall**セクション。
+次のコード例では、 [**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブによってファイルシステムサービスがオペレーティングシステムに追加されます。 % ServiceName% トークンには、INF ファイルの**Strings**セクションで定義されているサービス名の文字列が含まれています。 例 Filesystem. Service は、ファイルシステムドライバーの**Serviceinstall**セクションの名前です。
 
 ```cpp
 [DefaultInstall.Services]
 AddService = %ServiceName%,,ExampleFileSystem.Service
 ```
 
-### <a name="span-idddkserviceinstallsectionifspanspan-idddkserviceinstallsectionifspanserviceinstall-section-required"></a><span id="ddk_serviceinstall_section_if"></span><span id="DDK_SERVICEINSTALL_SECTION_IF"></span>(必須) ServiceInstall セクション
+### <a name="serviceinstall-section-required"></a>ServiceInstall セクション (必須)
 
-**ServiceInstall**セクションでは、サブキーを追加します。 または、値をレジストリに名前と値を設定します。 名前、 **ServiceInstall**にセクションを表示する必要があります、 [ **AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)で、 [ **DefaultInstall.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section).
+**Serviceinstall**セクションでは、レジストリにサブキーまたは値の名前を追加し、値を設定します。 **Serviceinstall**セクションの名前は、 [**DefaultInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)の[**addservice ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)に含まれている必要があります。
 
-次のコード例は、 **ServiceInstall**ファイル システム ドライバーのセクション。
+次のコード例は、ファイルシステムドライバーの**Serviceinstall**セクションを示しています。
 
 ```cpp
 [ExampleFileSystem.Service]
@@ -209,147 +178,64 @@ LoadOrderGroup = "File System"
 AddReg         = ExampleFileSystem.AddRegistry
 ```
 
-**DisplayName**エントリは、サービスの名前を指定します。 定義されている %servicename% トークンによって前の例では、サービス名の文字列が指定されて、**文字列**INF ファイルのセクション。
+**DisplayName**エントリは、サービスの名前を指定します。 前の例では、サービス名の文字列は、INF ファイルの**Strings**セクションで定義されている% ServiceName% トークンによって指定されています。
 
-**説明**エントリは、サービスを説明する文字列を指定します。 定義されている %servicedesc% トークンによって前の例では、この文字列が指定された、**文字列**INF ファイルのセクション。
+**Description**エントリは、サービスを説明する文字列を指定します。 前の例では、この文字列は、INF ファイルの**Strings**セクションで定義されている% servicedesc% token によって指定されています。
 
-**ServiceBinary**エントリは、サービスの実行可能ファイルへのパスを指定します。 前の例では、値 12 は、ドライバーのディレクトリを指します (%windir%\\system32\\ドライバー)。
+**Servicebinary**エントリは、サービスの実行可能ファイルへのパスを指定します。 前の例では、値12は Drivers ディレクトリ (%windir%\system32\drivers) を表しています。
 
-**ServiceType**エントリは、サービスの種類を指定します。 次の表に、可能な値**ServiceType**とその対応するサービスの種類。
+**ServiceType**エントリは、サービスの種類を指定します。 次の表に、 **ServiceType**に使用できる値と、対応するサービスの種類を示します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">[値]</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>0x00000001</p></td>
-<td align="left"><p>SERVICE_KERNEL_DRIVER (デバイス ドライバー サービス)</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_FILE_SYSTEM_DRIVER (ファイル システムまたはファイル システム フィルター ドライバー サービス)</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>0x00000010</p></td>
-<td align="left"><p>SERVICE_WIN32_OWN_PROCESS (独自のプロセスで実行されている Microsoft Win32 サービス)</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000020</p></td>
-<td align="left"><p>SERVICE_WIN32_SHARE_PROCESS (プロセスを共有する Win32 サービス)</p></td>
-</tr>
-</tbody>
-</table>
+| Value | 説明 |
+| ----- | ----------- |
+| 0x00000001 | SERVICE_KERNEL_DRIVER (デバイスドライバーサービス) |
+| 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (ファイルシステムまたはファイルシステムフィルタードライバーサービス) |
+| 0x00000010 | SERVICE_WIN32_OWN_PROCESS (独自のプロセスで実行される Microsoft Win32 サービス) |
+| 0x00000020 | SERVICE_WIN32_SHARE_PROCESS (プロセスを共有する Win32 サービス) |
 
- 
+**ServiceType**エントリは、ファイルシステムドライバーの場合は常に SERVICE_FILE_SYSTEM_DRIVER に設定する必要があります。
 
-**ServiceType**エントリは、サービスに常に設定する必要があります\_ファイル\_システム\_ファイル システム ドライバー用のドライバーです。
+**Starttype**エントリは、サービスをいつ開始するかを指定します。 次の表に、 **Starttype**とそれに対応する開始の種類に使用できる値を示します。
 
-**StartType**エントリでは、サービスを開始するタイミングを指定します。 次の表に、可能な値**StartType**とそれに対応する型を開始します。
+| Value | 説明 |
+| ----- | ----------- |
+| ― | SERVICE_BOOT_START |
+| 0x00000001 | SERVICE_SYSTEM_START |
+| 0x00000002 | SERVICE_AUTO_START |
+| 0x00000003 | SERVICE_DEMAND_START |
+| 0x00000004 | SERVICE_DISABLED |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">[値]</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>0x00000000</p></td>
-<td align="left"><p>SERVICE_BOOT_START</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000001</p></td>
-<td align="left"><p>SERVICE_SYSTEM_START</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_AUTO_START</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000003</p></td>
-<td align="left"><p>SERVICE_DEMAND_START</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>0x00000004</p></td>
-<td align="left"><p>SERVICE_DISABLED</p></td>
-</tr>
-</tbody>
-</table>
+これらの開始の種類の詳細については、「[ドライバーが読み込まれるタイミング](what-determines-when-a-driver-is-loaded.md)を決定するには」を参照してください。
 
- 
+X64 ベースの Windows Vista システム以降では、ブート開始ドライバーのバイナリイメージファイル (開始の種類が SERVICE_BOOT_START のドライバー) には、埋め込まれた署名が含まれている必要があります。 この要件により、システムブートのパフォーマンスが最適になります。 詳細については、「[カーネルモードコード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)」を参照してください。
 
-どれが、ファイル システム ドライバーの適切なは、これらの詳細については、型を確認するをスタートを参照してください[何を決定しますと、ドライバーが読み込まれる](what-determines-when-a-driver-is-loaded.md)します。
+ドライバーが読み込まれるタイミングを、 **Starttype**および**loadordergroup**のエントリがどのように決定するかについては、「[ドライバーが読み込まれるタイミング](what-determines-when-a-driver-is-loaded.md)を確認する方法」を参照してください。
 
-Windows Vista の x64 ベース システム以降、ブート開始ドライバーのバイナリ イメージ ファイル (サービスの開始型を持つドライバー\_ブート\_開始) 埋め込みの署名を含める必要があります。 この要件により、起動パフォーマンスの最適なシステムです。 詳細については、次を参照してください。[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)します。
+**Errorcontrol**エントリは、システムの起動時にサービスを開始できなかった場合に実行するアクションを指定します。 次の表に、 **errorcontrol**に使用できる値と、それに対応するエラー制御値の一覧を示します。
 
-方法については**StartType**と**LoadOrderGroup**エントリが特定のドライバーが読み込まれるときを参照してください[何を決定しますと、ドライバーが読み込まれる](what-determines-when-a-driver-is-loaded.md)します。
+| Value | 説明 |
+| ----- | ----------- |
+| ― | SERVICE_ERROR_IGNORE (エラーをログに記録し、システムの起動を続行します。) |
+| 0x00000001 | SERVICE_ERROR_NORMAL (エラーをログに記録し、ユーザーにメッセージを表示して、システムの起動を続行します)。 |
+| 0x00000002 | SERVICE_ERROR_SEVERE (レジストリの [前回の制御セット] に切り替え、システムの起動を続行します。 |
+| 0x00000003 | SERVICE_ERROR_CRITICAL (システムスタートアップがレジストリの正常でないコントロールセットを使用していない場合は、[正常起動時] に切り替えて、もう一度やり直してください。 まだ起動できない場合は、バグチェックルーチンを実行します。 システムを起動するために必要なドライバーだけが、INF ファイルにこの値を指定する必要があります。) |
 
-**ErrorControl**エントリは、システムの起動時に開始するサービスが失敗した場合に実行されるアクションを指定します。 次の表に、可能な値**ErrorControl**とその対応するエラーの値を制御します。
+ファイルシステムドライバーの場合は、 **Loadordergroup**エントリを常に "file system" に設定する必要があります。 これは、ファイルシステムフィルタードライバーまたはファイルシステムミニフィルタードライバーに対して指定されているものとは異なります。この場合、 **Loadordergroup**エントリは、ファイルシステムフィルターの読み込み順序グループのいずれかに設定されます。 ファイルシステムフィルタードライバーとファイルシステムミニフィルタードライバーに使用される読み込み順序グループの詳細については、「[ファイルシステムフィルタードライバーの読み込み順序](load-order-groups-for-file-system-filter-drivers.md)グループ」および「[ミニフィルタードライバーの](load-order-groups-and-altitudes-for-minifilter-drivers.md)ための負荷の増加」を参照してください。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">[値]</th>
-<th align="left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>0x00000000</p></td>
-<td align="left"><p>SERVICE_ERROR_IGNORE (、エラーを記録およびシステムの起動を続行します)。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000001</p></td>
-<td align="left"><p>SERVICE_ERROR_NORMAL (、エラーを記録、ユーザーにメッセージを表示およびシステムの起動を続行します)。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_ERROR_SEVERE (レジストリの前回正常起動時に切り替えコントロール セットと、システムの起動を続行します)。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>0x00000003</p></td>
-<td align="left"><p>SERVICE_ERROR_CRITICAL (場合、システムの起動時には、レジストリの前回正常起動時のコントロール セット、前回正常起動時をもう一度お試しくださいスイッチを使用していません。 起動が失敗した場合は、バグ チェック ルーチンを実行します。 システムが起動するために必要なドライバーのみがこの値を指定、INF ファイルにします。)</p></td>
-</tr>
-</tbody>
-</table>
+[**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)は、新しくインストールされたサービスのレジストリに格納される情報を含む、1つまたは複数の INF ライターで定義された**addregistry**セクションを参照します。
 
- 
-
-**LoadOrderGroup**ファイル システム ドライバーのエントリが"File System"に設定する常にする必要があります。 これは、ファイル システム フィルター ドライバーのファイル システム ミニフィルター ドライバーに対して指定されているものと異なる場所、 **LoadOrderGroup**エントリ ファイル システム フィルター ロード順序グループのいずれかに設定されます。 ロード順序グループがファイル システム フィルター ドライバーとファイル システム ミニフィルター ドライバーの使用の詳細については、次を参照してください[順序グループをファイル システム フィルター ドライバーの読み込み](load-order-groups-for-file-system-filter-drivers.md)と[ロード順序グループと高度。ミニフィルター ドライバー](load-order-groups-and-altitudes-for-minifilter-drivers.md)します。
-
-[ **AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ライター定義されている 1 つまたは複数の INF を指す**AddRegistry**のレジストリに格納される情報が含まれているセクションで、新しくサービスをインストールします。
-
-**注**   INF ファイルも使用する場合は、最初のインストールに含まれるエントリの後に、ドライバーをアップグレードするため、 **AddRegistry**セクションは、0x00000002 を指定する必要があります (FLG\_ADDREG\_NOCLOBBER) フラグ。 このフラグを指定するには、HKLM レジストリ エントリが保持されます。\\CurrentControlSet\\サービスの後続のファイルがインストールされている場合。 以下に例を示します。
-
- 
+**注**   初期インストール後に、ドライバーのアップグレードに INF ファイルが使用される場合は、 **addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 次に、例を示します。
 
 ```cpp
 [ExampleFileSystem.AddRegistry]
 HKR,Parameters,ExampleParameter,0x00010003,1
 ```
 
-### <a name="span-iddefaultuninstallsectionoptionalspanspan-iddefaultuninstallsectionoptionalspanspan-iddefaultuninstallsectionoptionalspandefaultuninstall-section-optional"></a><span id="DefaultUninstall_Section__optional_"></span><span id="defaultuninstall_section__optional_"></span><span id="DEFAULTUNINSTALL_SECTION__OPTIONAL_"></span>DefaultUninstall セクション (省略可能)
+### <a name="defaultuninstall-section-optional"></a>DefaultUninstall セクション (省略可能)
 
-**DefaultUninstall**セクションは省略可能ですが、ドライバーをアンインストールする場合はお勧めします。 含まれている[ **DelFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)と[**して**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブをファイルおよびレジストリ エントリを削除します。
+**Defaultuninstall**セクションは省略可能ですが、ドライバーをアンインストールできる場合は推奨されます。 このファイルには、ファイルとレジストリエントリを削除するための[**Delfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)ディレクティブと[**delfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブが含まれています。
 
-次のコード例で、 [ **DelFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)ディレクティブは、INF ファイルの ExampleFileSystem.DriverFiles セクションに記載されているファイルを削除します。
+次のコード例では、 [**delfiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delfiles-directive)ディレクティブを使用して、INF ファイルの "ファイルシステム. driverfiles" セクションに一覧表示されているファイルを削除します。
 
 ```cpp
 [DefaultUninstall]
@@ -357,32 +243,30 @@ DelFiles   = ExampleFileSystem.DriverFiles
 DelReg     = ExampleFileSystem.DelRegistry
 ```
 
-[**して**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブを指すライター定義されている 1 つまたは複数の INF **DelRegistry**セクションでは、サービスのレジストリから削除する情報が含まれています。アンインストールしています。
+[**Delreg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブは、アンインストールするサービスのレジストリから削除する情報を含む、1つまたは複数の INF ライターで定義された**delreg**セクションを参照します。
 
-### <a name="span-iddefaultuninstallservicessectionoptionalspanspan-iddefaultuninstallservicessectionoptionalspanspan-iddefaultuninstallservicessectionoptionalspandefaultuninstallservices-section-optional"></a><span id="DefaultUninstall.Services_Section__optional_"></span><span id="defaultuninstall.services_section__optional_"></span><span id="DEFAULTUNINSTALL.SERVICES_SECTION__OPTIONAL_"></span>DefaultUninstall.Services セクション (省略可能)
+### <a name="defaultuninstallservices-section-optional"></a>DefaultUninstall. Services セクション (省略可能)
 
-**DefaultUninstall.Services**セクションは省略可能ですが、ドライバーをアンインストールする場合はお勧めします。 含まれている[ **DelService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブをファイル システム ドライバーのサービスを削除します。
+**Defaultuninstall. Services**セクションは省略可能ですが、ドライバーをアンインストールできる場合は推奨されます。 ファイルシステムドライバーのサービスを削除するための[**Delservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブが含まれています。
 
-次のコード例で、 [ **DelService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブは、オペレーティング システムからファイル システム ドライバーのサービスを削除します。
+次のコード例では、 [**Delservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブを使用して、ファイルシステムドライバーのサービスをオペレーティングシステムから削除します。
 
 ```cpp
 [DefaultUninstall.Services]
 DelService = %ServiceName%,0x200
 ```
 
-**注**   、 [ **DelService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブは、0x200 を常に指定する必要があります (SPSVCINST\_STOPSERVICE) が削除される前に、サービスを停止するフラグ。
+> [!NOTE]
+> [**Delservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delservice-directive)ディレクティブは、削除前にサービスを停止するように、常に 0x200 (SPSVCINST_STOPSERVICE) フラグを指定する必要があります。
 
- 
+> [!NOTE]
+> ファイルシステム製品には、完全にはアンインストールできない特定のクラスがあります。 このような状況では、アンインストールできる製品のコンポーネントをアンインストールして、アンインストールできないコンポーネントをインストールしたままにすることができます。 このような製品の例として、Microsoft 単一インスタンスストア (SIS) 機能があります。
 
-**注**  を完全にアンインストールできない場合、ファイル システムの製品の特定のクラスがあります。 このような状況で許容だけをアンインストールして、インストールされている製品をアンインストールできない場合のコンポーネントのままにしている製品のコンポーネントをアンインストールするのには。 このような製品の例は、Microsoft 単一インスタンス ストア (SIS) 機能です。
+### <a name="strings-section-required"></a>Strings セクション (必須)
 
- 
+[**Strings**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)セクションでは、INF ファイルで使用される% strkey% トークンを定義します。
 
-### <a name="span-idstringssectionrequiredspanspan-idstringssectionrequiredspanspan-idstringssectionrequiredspanstrings-section-required"></a><span id="Strings_Section__required_"></span><span id="strings_section__required_"></span><span id="STRINGS_SECTION__REQUIRED_"></span>文字列のセクション (必須)
-
-[**文字列**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)セクションは、INF ファイルで使用されている各 %strkey% トークンを定義します。
-
-たとえば、ファイル システム ドライバーは、INF ファイルで次の文字列を定義します。
+たとえば、ファイルシステムドライバーでは、次の文字列が INF ファイルに定義されています。
 
 ```cpp
 [Strings]
@@ -393,12 +277,4 @@ ParameterPath = "SYSTEM\CurrentControlSet\Services\ExampleFileSystem\Parameters"
 Disk1       = "Example File System Driver CD"
 ```
 
-1 つの国際 INF ファイルを作成するにはロケールに固有の追加を作成して**文字列**。<em>LanguageID</em> INF ファイルのセクション。 国際対応の INF ファイルの詳細については、次を参照してください。 [International INF ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-international-inf-files)です。
-
- 
-
- 
-
-
-
-
+ロケール固有の**文字列**を追加することで、単一の国際 INF ファイルを作成できます。INF ファイルの*LanguageID*セクション。 国際対応の INF ファイルの詳細については、「[国際対応の Inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-international-inf-files)」を参照してください。
