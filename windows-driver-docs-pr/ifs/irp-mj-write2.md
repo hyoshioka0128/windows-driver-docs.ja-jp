@@ -1,106 +1,26 @@
 ---
-title: IRP_MJ_WRITE 操作の Oplock の状態を確認
-description: IRP_MJ_WRITE 操作の Oplock の状態を確認
+title: IRP_MJ_WRITE 操作の Oplock 状態を確認しています
+description: IRP_MJ_WRITE 操作の Oplock 状態を確認しています
 ms.assetid: 04d09810-f157-4140-8bfb-c780a65cdf77
-ms.date: 04/20/2017
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f0933098d31497029f47e57097b9a646def7e60e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 636a394cdc3cfb216efba43bbcf6f30795bd26db
+ms.sourcegitcommit: dac02b6af84c75e31038dae3fccc25f026a97758
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324276"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166140"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjwrite-operation"></a>IRP_MJ_WRITE 操作の Oplock の状態を確認
+# <a name="checking-the-oplock-state-of-an-irp_mj_write-operation"></a>IRP_MJ_WRITE 操作の Oplock 状態を確認しています
 
+次の条件は、*ストリーム*が書き込まれていて、書き込みがページング i/o ではない場合にのみ適用されます。
 
-次の場合のみ適用されます、*ストリーム*が書き込まれると、書き込みがページング I/O ではありません。
+- **レベル 2**の oplock の種類では、常に [なし] になります。 確認は必要ありません。操作は直ちに続行されます。
 
-<table>
-<tr>
-<th>要求の種類</th>
-<th>条件</th>
-</tr>
-<tr>
-<td rowspan="2">
-<p>レベル 1</p>
-<p>Batch (バッチ)</p>
-<p>フィルター</p>
-<p>読み取りハンドル</p>
-<p>読み取り/書き込み</p>
-<p>書き込みハンドルの読み取り</p>
-</td>
-<td>
-<p>IRP_MJ_WRITE で壊れている場合。</p>
-<ul>
-<li>
-<p> 書き込み操作では、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Oplock が破損している場合。</p>
-<ul>
-<li>
-<p> [なし] に中断します。</p>
-</li>
-<li>
-<p> ハンドルの読み取り要求。中断の受信確認は必須ですが、すぐに (受信確認を待機することがなくなど) の操作が続行します。</p>
-</li>
-<li>
-<p> 他のすべての要求タイプ。操作を続行する前に、受信確認を受信する必要があります。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td rowspan="2">
-<p>Read</p>
-</td>
-<td>
-<p>IRP_MJ_WRITE で壊れている場合。</p>
-<ul>
-<li>
-<p> 書き込み操作では、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Oplock が破損している場合。</p>
-<ul>
-<li>
-<p> [なし] に中断します。</p>
-</li>
-<li>
-<p> 受信確認は必要ありません、すぐに、操作を続行します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>レベル 2</p>
-</td>
-<td>
-<ul>
-<li>
-<p> [なし] に常に中断します。</p>
-</li>
-<li>
-<p> 受信確認は必要ありません、すぐに、操作を続行します。</p>
-</li>
-</ul>
-</td>
-</tr>
-</table>
- 
+- その他のすべての oplock の種類は、oplock を所有する FILE_OBJECT とは異なる oplock キーを持つ FILE_OBJECT で書き込み操作が行われた場合にのみ、IRP_MJ_WRITE で破損します。 Oplock が解除されている場合は、None に中断します。 確認の要件は次のとおりです。
 
- 
-
-
-
-
+  - **Read** oplock: 確認は必要ありません。操作は直ちに続行されます。
+  
+  - **読み取りハンドル**oplock: 中断の確認が必要ですが、操作はすぐに続行されます (たとえば、受信確認を待たずに)。
+  
+  - **レベル 1**、**バッチ**、**フィルター**、**読み取り/書き込み**、および**読み取り/書き込みハンドル**の Oplock: 操作を続行する前に受信確認を受け取る必要があります。
