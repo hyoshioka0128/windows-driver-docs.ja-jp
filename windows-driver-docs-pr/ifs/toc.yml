@@ -1,121 +1,88 @@
 - name: ファイル システム ドライバー設計ガイド
+  href: index.md
   items:
-    - name: ファイル システム ドライバー設計ガイド
-      href: index.md
     - name: ファイル システム ドライバー
       items:
-        - name: ファイル システム ドライバー
-          href: file-system-drivers.md
+        - name: ファイル システム ドライバーについて
+          href: about-file-system-drivers.md
         - name: ファイル システム ドライバーのインストール
-          items:
-            - name: ファイル システム ドライバーのインストール
-              href: installing-a-file-system-driver.md
-            - name: ファイル システム ドライバー用の INF ファイルの作成
-              href: creating-an-inf-file-for-a-file-system-driver.md
-        - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
-          items:
-            - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
-              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
-            - name: カーネルモード ドライバーが開始した IRP_MJ_CREATE 操作に ECP をアタッチする
-              href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
-            - name: ファイル システム フィルター ドライバーで ECP を使用して IRP_MJ_CREATE 操作を処理する
-              href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md
-            - name: ユーザー定義の ECP
-              href: user-defined-ecps.md
-            - name: システム定義の ECP
-              href: system-defined-ecps.md
+          href: installing-a-file-system-driver.md
     - name: ファイル システム フィルター ドライバー
       items:
-        - name: ファイル システム フィルター ドライバー
-          href: file-system-filter-drivers.md
-        - name: ファイル システムの基礎
+        - name: ファイル システム フィルター ドライバーについて
+          href: about-file-system-filter-drivers.md
+        - name: ファイル システム フィルター ドライバーとデバイス ドライバーの類似点
+          href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
+        - name: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
+          href: how-file-system-filter-drivers-are-different-from-device-drivers.md
+    - name: ファイル システム レガシ フィルター ドライバー
+      items:
+        - name: ファイル システム レガシ フィルター ドライバーについて
+          href: about-file-system-legacy-filter-drivers.md
+        - name: レガシ フィルター ドライバーのファイル システム ドライバーの概念
           items:
-            - name: ファイル システムの基礎
-              href: file-system-fundamentals.md
             - name: ドライバーのロード時期の決定方法
               href: what-determines-when-a-driver-is-loaded.md
             - name: システム起動時のファイル システムの状態
               href: what-happens-to-file-systems-during-system-boot.md
             - name: ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
-              items:
-                - name: ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
-                  href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
-                - name: ストレージ デバイス スタック
-                  href: storage-device-stacks.md
-                - name: ストレージ ボリューム
-                  href: storage-volumes.md
-                - name: ファイル システム スタック
-                  href: file-system-stacks.md
+              href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
             - name: ボリュームのマウント
               items:
-                - name: ボリュームのマウント
-                  href: mounting-a-volume.md
+                - name: ボリュームの認識方法
+                  href: how-the-volume-is-recognized.md
                 - name: ボリュームのマウント方法
                   href: how-the-volume-is-mounted.md
                 - name: ボリュームのマウントの例
                   href: volume-mount-example.md
-        - name: ファイル システム フィルター ドライバーの概要
+        - name: レガシ フィルター ドライバーのインストール
           items:
-            - name: ファイル システム フィルター ドライバーの概要
-              href: introduction-to-file-system-filter-drivers.md
-            - name: ファイル システム フィルター ドライバーについて
-              href: what-is-a-file-system-filter-driver-.md
-            - name: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
-              items:
-                - name: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
-                  href: file-system-filter-drivers-are-not-device-drivers.md
-                - name: ファイル システム フィルター ドライバーとデバイス ドライバーの類似点
-                  href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
-                - name: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
-                  href: how-file-system-filter-drivers-are-different-from-device-drivers.md
             - name: ファイル システム フィルター ドライバーのインストール
-              items:
-                - name: ファイル システム フィルター ドライバーのインストール
-                  href: installing-a-file-system-filter-driver.md
-                - name: ファイル システム フィルター ドライバー用の INF ファイルの作成
-                  href: creating-an-inf-file-for-a-file-system-filter-driver.md
-                - name: 'ファイル システム フィルター ドライバー用のロード順序グループ '
-                  href: load-order-groups-for-file-system-filter-drivers.md
-                - name: ファイル システム フィルター ドライバー クラスとクラス GUID
-                  href: file-system-filter-driver-classes-and-class-guids.md
-                - name: INF ファイルを使用したファイル システム フィルター ドライバーのインストール
-                  href: using-an-inf-file-to-install-a-file-system-filter-driver.md
-                - name: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
-                  href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
+              href: installing-a-file-system-filter-driver.md
+            - name: ファイル システム フィルター ドライバー用の INF ファイルの作成
+              href: creating-an-inf-file-for-a-file-system-filter-driver.md
+            - name: 'ファイル システム フィルター ドライバー用のロード順序グループ '
+              href: load-order-groups-for-file-system-filter-drivers.md
+            - name: ファイル システム フィルター ドライバー クラスとクラス GUID
+              href: file-system-filter-driver-classes-and-class-guids.md
+            - name: INF ファイルを使用したファイル システム フィルター ドライバーのインストール
+              href: using-an-inf-file-to-install-a-file-system-filter-driver.md
+            - name: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
+              href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
+        - name: ファイル システム フィルター ドライバーの初期化
+          items:
             - name: ファイル システム フィルター ドライバーの初期化
-              items:
-                - name: ファイル システム フィルター ドライバーの初期化
-                  href: initializing-a-file-system-filter-driver.md
-                - name: コントロール デバイス オブジェクトの作成
-                  href: creating-the-control-device-object.md
-                - name: IRP ディスパッチ ルーチンの登録
-                  href: registering-irp-dispatch-routines.md
-                - name: 高速 I/O ディスパッチ ルーチンの登録
-                  href: registering-fast-i-o-dispatch-routines.md
-                - name: FsFilter コールバック ルーチンの登録
-                  href: registering-fsfilter-callback-routines.md
-                - name: その他必要な初期化の実行
-                  href: performing-any-other-needed-initialization.md
-                - name: '省略可能] コールバック ルーチンの登録'
-                  href: '-optional--registering-callback-routines.md'
-                - name: '省略可能] レジストリ パス文字列のコピーの保存'
-                  href: '-optional--saving-a-copy-of-the-registry-path-string.md'
-                - name: 返される状態
-                  href: returning-status.md
+              href: initializing-a-file-system-filter-driver.md
+            - name: コントロール デバイス オブジェクトの作成
+              href: creating-the-control-device-object.md
+            - name: IRP ディスパッチ ルーチンの登録
+              href: registering-irp-dispatch-routines.md
+            - name: 高速 I/O ディスパッチ ルーチンの登録
+              href: registering-fast-i-o-dispatch-routines.md
+            - name: FsFilter コールバック ルーチンの登録
+              href: registering-fsfilter-callback-routines.md
+            - name: その他必要な初期化の実行
+              href: performing-any-other-needed-initialization.md
+            - name: '省略可能] コールバック ルーチンの登録'
+              href: '-optional--registering-callback-routines.md'
+            - name: '省略可能] レジストリ パス文字列のコピーの保存'
+              href: '-optional--saving-a-copy-of-the-registry-path-string.md'
+            - name: 返される状態
+              href: returning-status.md
+        - name: ファイル システムまたはボリュームへのフィルターのアタッチ
+          items:
             - name: ファイル システムまたはボリュームへのフィルターのアタッチ
-              items:
-                - name: ファイル システムまたはボリュームへのフィルターのアタッチ
-                  href: attaching-a-filter-to-a-file-system-or-volume.md
-                - name: フィルター デバイス オブジェクトの作成
-                  href: creating-the-filter-device-object.md
-                - name: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
-                  href: attaching-the-filter-device-object-to-the-target-device-object.md
-                - name: DO_BUFFERED_IO と DO_DIRECT_IO フラグの伝達
-                  href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
-                - name: FILE_DEVICE_SECURE_OPEN フラグの伝達
-                  href: propagating-the-file-device-secure-open-flag.md
-                - name: DO_DEVICE_INITIALIZING フラグのクリア
-                  href: clearing-the-do-device-initializing-flag.md
+              href: attaching-a-filter-to-a-file-system-or-volume.md
+            - name: フィルター デバイス オブジェクトの作成
+              href: creating-the-filter-device-object.md
+            - name: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
+              href: attaching-the-filter-device-object-to-the-target-device-object.md
+            - name: DO_BUFFERED_IO と DO_DIRECT_IO フラグの伝達
+              href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
+            - name: FILE_DEVICE_SECURE_OPEN フラグの伝達
+              href: propagating-the-file-device-secure-open-flag.md
+            - name: DO_DEVICE_INITIALIZING フラグのクリア
+              href: clearing-the-do-device-initializing-flag.md
         - name: IRP と高速 I/O のフィルタリング
           items:
             - name: IRP と高速 I/O のフィルタリング
@@ -142,7 +109,7 @@
               href: passing-the-irp-down-to-lower-level-drivers.md
             - name: ディスパッチ ルーチンから返される状態
               href: returning-status-from-dispatch-routines.md
-            - name: 以下に例を示します。完了ルーチンを設定せずに IRP を渡す
+            - name: '例:完了ルーチンを設定せずに IRP を渡す'
               href: example--passing-the-irp-down-without-setting-a-completion-routine.md
             - name: ディスパッチ ルーチンに関する制約
               href: constraints-on-dispatch-routines.md
@@ -158,7 +125,7 @@
               href: checking-the-pendingreturned-flag.md
             - name: 完了ルーチンから返される状態
               href: returning-status-from-completion-routines.md
-            - name: 以下に例を示します。ディスパッチと完了間のシンプルなパススルー
+            - name: '例:ディスパッチと完了間のシンプルなパススルー'
               href: example--simple-pass-through-dispatch-and-completion.md
             - name: 完了ルーチンに関する制約
               href: constraints-on-completion-routines.md
@@ -334,28 +301,16 @@
                   href: accessing-user-buffers-in-a-postoperation-callback-routine.md
         - name: ミニフィルター ドライバーでのコンテキストの管理
           items:
-            - name: ミニフィルター ドライバーでのコンテキストの管理
-              href: managing-contexts-in-a-minifilter-driver.md
-            - name: コンテキストの種類の登録
-              href: registering-context-types.md
-            - name: コンテキストの作成
-              href: creating-contexts.md
-            - name: コンテキストの設定
-              href: setting-contexts.md
-            - name: コンテキストの取得
-              href: getting-contexts.md
-            - name: コンテキストの参照
-              href: referencing-contexts.md
-            - name: コンテキストのリリース
-              href: releasing-contexts.md
-            - name: コンテキストの削除
-              href: deleting-contexts.md
-            - name: コンテキストの解放
-              href: freeing-contexts.md
-            - name: ファイル システムによるコンテキストのサポート
-              href: file-system-support-for-contexts.md
-            - name: ベスト プラクティス
-              href: best-practices.md
+            - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
+              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
+            - name: カーネルモード ドライバーが開始した IRP_MJ_CREATE 操作に ECP をアタッチする
+              href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
+            - name: ファイル システム ミニフィルターで ECP を使用して IRP_MJ_CREATE 操作を処理する
+              href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md
+            - name: ユーザー定義の ECP
+              href: user-defined-ecps.md
+            - name: システム定義の ECP
+              href: system-defined-ecps.md
     - name: ネットワーク リダイレクター ドライバー
       items:
         - name: ネットワーク リダイレクター ドライバー
@@ -662,9 +617,9 @@
           href: locating-disk-images-correctly.md
         - name: 重複するボリューム名がある場合のボリュームの列挙について
           href: understanding-volume-enumerations-with-duplicate-volume-names.md
-    - name: リファレンス
+    - name: 参照先
       items:
-        - name: その他の参照情報
+        - name: 参照の概要
           href: ifs-reference.md
         - name: CcIsThereDirtyLoggedPages
           href: ccistheredirtyloggedpages.md

@@ -1,3 +1,16 @@
+---
+title: 配送先住所ラベルの取り消し
+description: Microsoft による承認または段階的なロールアウトで配送先住所ラベルの取り消しを要求するには、Microsoft ハードウェア API のこのメソッドを使用します。
+ms.topic: article
+ms.date: 11/13/2019
+ms.localizationpriority: medium
+ms.openlocfilehash: 6be0ee5bc80f1258f5ddf278a9b63f346740796f
+ms.sourcegitcommit: 67335434c02f122f29468420ce2e076b51b493ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74056055"
+---
 # <a name="cancel-a-shipping-label"></a>配送先住所ラベルの取り消し
 
 Microsoft による承認または段階的なロールアウトで配送先住所ラベルの取り消しを要求するには、"*Microsoft ハードウェア API*" のこのメソッドを使用します。 このメソッドを使用する前に、配送先住所ラベルが Microsoft による承認または段階的なロールアウトにあることを確認してください。 配送先住所ラベルの取得について詳しくは、[新しい配送先住所ラベルの取得](get-a-shipping-label.md)に関する記事をご覧ください。

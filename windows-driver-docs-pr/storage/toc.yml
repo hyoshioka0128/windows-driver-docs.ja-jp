@@ -398,6 +398,8 @@
               href: error-handling-in-storport-miniport-drivers.md
             - name: Storport ミニポート ドライバーのインタロックされた操作
               href: interlocked-operations-in-storport-miniport-drivers.md
+            - name: NVMe ストレージ ドライバー
+              href: nvme-storage-driver.md
             - name: NVMe デバイス用ファームウェアのアップグレード
               href: upgrading-firmware-for-an-nvme-device.md
             - name: StorPort ミニポート ドライバーのレジストリ エントリ
@@ -496,7 +498,7 @@
           href: definitions.md
         - name: 要件
           href: requirements.md
-        - name: Architecture
+        - name: アーキテクチャ
           href: architecture.md
     - name: CD-ROM ドライバー
       items:
