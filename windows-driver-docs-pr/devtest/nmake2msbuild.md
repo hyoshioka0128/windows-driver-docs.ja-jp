@@ -1,31 +1,31 @@
 ---
 title: Nmake2MsBuild
-description: Nmake2MsBuild ユーティリティでは、ドライバーがドライバーのソース コード ファイル、および変換元、ディレクトリ、および makefile.inc ファイルから以前のバージョンの WDK を使用して構築された Visual Studio プロジェクトが生成されます。
+description: The Nmake2MsBuild utility generates a Visual Studio project for a driver that was built using a previous version of the WDK from your driver's source code files, and from the sources, dirs, and makefile.inc files.
 ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f2a375228b58ede3c61a27ed920ff2b79a883a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 633294c2ae1067ed3a5c597b9fcbb42d7d4c9b04
+ms.sourcegitcommit: fc7e9b273277a91076b914095f4ee6f1eef7014a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355027"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196985"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 
 
-**注**Nmake2MsBuild ツールは、Windows 10、バージョン 1511 以降、WDK から削除されました。
+**Note**  The Nmake2MsBuild tool was removed from the WDK starting in Windows 10, version 1511.
 
 
 
-Nmake2MsBuild ユーティリティとドライバーのソース コード ファイルから以前のバージョンの WDK を使用して構築されたドライバー用の Visual Studio プロジェクトの生成、*ソース*、*ディレクトリ*、および*makefile.inc*ファイル。 ユーティリティでは、Visual Studio のプロジェクト ファイルを作成、既存のと同じディレクトリに*ソース*ファイル。 このユーティリティは、ソース コードや、以前のビルド ファイルには変更されません。
+The Nmake2MsBuild utility generates a Visual Studio project for a driver that was built using a previous version of the WDK from your driver's source code files, and from the *sources*, *dirs*, and *makefile.inc* files. The utility creates the Visual Studio project file in the same directory as your existing *sources* files. The utility does not alter your source code or your earlier build files.
 
-ユーティリティの使用方法の詳細については、次を参照してください。 [、WDK を変換するファイルを Visual Studio プロジェクトをソース](converting-a-wdk-sources-file-to-a-visual-studio-project.md)します。
+For information about using the utility, see [Converting a WDK sources file to a Visual Studio project](converting-a-wdk-sources-file-to-a-visual-studio-project.md).
 
-## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
+## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>Syntax
 
 
-Nmake2MsBuild.exe ユーティリティには、次の構文があります。
+The Nmake2MsBuild.exe utility has the following syntax:
 
 ```
 NMake2MSBuild.exe  < sources [<sources>...] | dirs >
@@ -39,7 +39,7 @@ NMake2MSBuild.exe  < sources [<sources>...] | dirs >
                           [-SafeMode]
 ```
 
-変換ツールは、%programfiles% 内にある\\Windows キット\\8.0\\ツール\\x86\\ディレクトリ。
+The conversion tool is located in the %PROGRAMFILES%\\Windows Kits\\8.0\\tools\\x86\\ directory.
 
 <table>
 <colgroup>
@@ -48,71 +48,71 @@ NMake2MSBuild.exe  < sources [<sources>...] | dirs >
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><em>ソース</em></td>
-<td align="left"><p>パスを指定します、<em>ソース</em>WDK の以前のバージョンでビルドされたドライバーのファイル。 指定した場合、<em>ソース</em>ユーティリティ ファイルを解析する<em>ソース</em>ファイルと、対応する<em>makefile.inc</em>し、Visual Studio のプロジェクト ファイルを生成します。 Visual Studio のプロジェクト ファイルと同じディレクトリに配置、<em>ソース</em>ファイル。</p>
-<p>1 つ以上指定できます<em>ソース</em>一度にファイル。 結果として得られるすべてのプロジェクトは、同じソリューションとプロジェクトのパッケージ共有します。</p></td>
+<td align="left"><em>sources</em></td>
+<td align="left"><p>Specifies the path to the <em>sources</em> file for a driver built with the previous version of the WDK. If you specify a <em>sources</em> file, the utility parses that <em>sources</em> file and the corresponding <em>makefile.inc</em> and generates a Visual Studio project file. The Visual Studio project file is placed in the same directory as the <em>sources</em> file.</p>
+<p>You can specify more than one <em>sources</em> files at a time. All resulting projects will share the same Solution and Package Project.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><em>ディレクトリ</em></td>
-<td align="left"><p>パスを指定します、<em>ディレクトリ</em>WDK の以前のバージョンでビルドされたドライバーのファイル。 指定した場合、<em>ディレクトリ</em>ファイルをユーティリティはディレクトリ ツリー内のすべての<em>ソース</em>ファイルおよび対応する makefile.inc ファイルし、それぞれの Visual Studio プロジェクト ファイルが生成されます。</p></td>
+<td align="left"><em>dirs</em></td>
+<td align="left"><p>Specifies the path to the <em>dirs</em> file for a driver built with the previous version of the WDK. If you specify a <em>dirs</em> file, the utility looks in the directory tree for all <em>sources</em> files and the corresponding makefile.inc files and generates a Visual Studio project files for each one.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>パッケージ:</strong><em>&lt;を生成するパッケージ ファイルへのパス&gt;</em></td>
-<td align="left">ドライバー パッケージのプロジェクト ファイルのカスタム名を指定します。</td>
+<td align="left"><strong>-Package:</strong><em>&lt;Path to Package file to generate&gt;</em></td>
+<td align="left">Specifies a custom name for the driver package project file.</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>-解決方法:</strong><em>&lt;を生成するソリューション ファイルへのパス&gt;</em></td>
-<td align="left">ドライバーのソリューション ファイル (.sln) のカスタム名を指定します。</td>
+<td align="left"><strong>-Solution:</strong><em>&lt;Path to Solution file to generate&gt;</em></td>
+<td align="left">Specifies a custom name for the driver solution file (.sln).</td>
 </tr>
 <tr class="odd">
 <td align="left">-<strong>Log:[</strong><em>&lt;LogFile&gt;</em><strong>]:[</strong><em>&lt;Verbosity&gt;</em><strong>]</strong></td>
-<td align="left">ログ ファイルの名前を指定し、ログ記録のレベルを指定します (を参照してください<em>詳細度</em>)。</td>
+<td align="left">Specifies a name for the Log file, and specifies the level of logging (see <em>Verbosity</em>).</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>-ConsoleLog:</strong><em>&lt;詳細度&gt;</em></td>
-<td align="left">コンソールのログ ファイルの名前を指定し、ログ記録のレベルを指定します (を参照してください<em>詳細度</em>)。</td>
+<td align="left"><strong>-ConsoleLog:</strong><em>&lt;Verbosity&gt;</em></td>
+<td align="left">Specifies a name for the Console log file, and specifies the level of logging (see <em>Verbosity</em>).</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>名前:</strong><em>&lt;出力プロジェクトの名前&gt;</em></p></td>
-<td align="left"><p>生成される VcxProj ファイルのカスタム名を指定します。 また場合、<em>ディレクトリ</em>ファイルが変換される、生成されたソリューションの名前を指定するこのパラメーターを使用します。</p></td>
+<td align="left"><p><strong>-Name:</strong><em>&lt;Name of output project&gt;</em></p></td>
+<td align="left"><p>Specifies a custom name for the VcxProj file that will be generated. Alternatively, if a <em>dirs</em> file is being converted, this parameter is used to specify the name of the generated solution.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><em>詳細度</em></td>
-<td align="left">ログ ファイルとコンソールのログ記録の既定のログ記録レベルは<strong>Verbose</strong>と<strong>情報</strong>それぞれします。 <em>詳細度</em>の 1 つ<strong>System.Diagnostics.SourceLevels</strong>します。</td>
+<td align="left"><em>Verbosity</em></td>
+<td align="left">The default logging levels for Log file and Console logging are <strong>Verbose</strong> and <strong>Information</strong> respectively. <em>Verbosity</em> is one of <strong>System.Diagnostics.SourceLevels</strong>.</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>-セーフ モード</strong></td>
-<td align="left">セーフ モードでは、NMAKE のターゲットの IDE/UI サポートは提供されませんが、(nmake の) ターゲットをより正確な変換を提供できます。 プロジェクトの (nmake の) ターゲットで実行されていたビルド ステップ中に問題が発生した場合のみ、セーフ モードを指定します。</td>
+<td align="left"><strong>-SafeMode</strong></td>
+<td align="left">SafeMode does not provide IDE/UI support for NMAKE targets, but could provide a more accurate conversion for NMAKE targets. Only specify -SafeMode if you experience issues during build steps that were previously performed in your project's NMAKE targets.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>コメント
+## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>Comments
 
 
-変換ツールは、%programfiles% 内にある\\Windows キット\\8.0\\ツール\\x86\\ディレクトリ。
+The conversion tool is located in the %PROGRAMFILES%\\Windows Kits\\8.0\\tools\\x86\\ directory.
 
-応答 (します。Rsp) ファイルは、コマンド ライン パラメーターを指定するためにサポートされます。 別の行には、各パラメーターを指定する必要があります。
+Response (.Rsp) files are supported for specifying command line parameters. Each parameters should be specified on a separate line.
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example
 
 
-(Build.exe とソースとディレクトリのファイルを使用)、WDK の以前のバージョンで構築されたドライバーのプロジェクトをビルドする必要があります最初に変換して、します。Nmake2MsBuild.exe 変換ユーティリティを使用して VcxProj プロジェクトです。
+To build a driver project that was built with a previous version of the WDK (using Build.exe and a sources and dirs file), you must first convert it to a .VcxProj project using Nmake2MsBuild.exe conversion utility.
 
-たとえば、MyDriver と呼ばれる、Windows 7 WDK で以前に構築されているドライバーの変換を初めて開く、 **Visual Studio コマンド プロンプト**ウィンドウ。 ディレクトリに移動またはを含むディレクトリへのパスを指定、*ソース*または*ディレクトリ*構成ファイルを構築します。 たとえば、次のコマンドと同じフォルダーに MyDriver.Vcxproj ファイルを生成、*ソース*ファイル。
+For example, to convert a driver that was previously built with the Windows 7 WDK, called MyDriver, you first open a **Visual Studio Command Prompt** window. Browse to the directory or supply the path to the directory that contains the *sources* or *dirs* build configuration file. For example, the following command generates the MyDriver.Vcxproj file in the same folder as the *sources* file.
 
 ```
 nmake2msbuild.exe  .\myDriver\sources
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[WDK のソース ファイルを Visual Studio プロジェクトに変換します。](converting-a-wdk-sources-file-to-a-visual-studio-project.md)
+[Converting a WDK sources file to a Visual Studio project](converting-a-wdk-sources-file-to-a-visual-studio-project.md)
 
-[既にあるソース ファイルからのドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers)
+[既にあるソース ファイルからのドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-from-existing-source-files)
 
 
 
