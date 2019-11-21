@@ -3,31 +3,31 @@ title: KMDF および UMDF ドライバーのインストールのトラブル�
 description: KMDF および UMDF ドライバーのインストールのトラブルシューティング
 ms.assetid: b0b71adc-cb6e-4b84-a5bf-bd1269bcf315
 keywords:
-- カーネル モード ドライバー フレームワーク WDK は、ドライバーをインストールします。
-- フレームワーク ベースのドライバー WDK KMDF をインストールします。
+- カーネルモードドライバーフレームワーク WDK、ドライバーのインストール
+- フレームワークベースのドライバー WDK KMDF, インストール
 - INF ファイル WDK KMDF、デバッグ
-- ドライバー WDK KMDF、インストールのデバッグ
-- ドライバー WDK KMDF のデバッグ
+- ドライバーのデバッグ WDK KMDF、インストール
+- WDK KMDF ドライバーのデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feece70c877750a49b073899156b711c97c6f803
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 411840c0587fc347baaddacc7fdcb5aba055b9d8
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377482"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261439"
 ---
 # <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>KMDF および UMDF ドライバーのインストールのトラブルシューティング
 
 
-フレームワークの共同インストーラーは、デバッグ メッセージを作成します。 Windows のチェック ビルドを実行している場合、デバッガーでこれらのメッセージを確認できます。
+フレームワークの共同インストーラーによって、デバッグメッセージが作成されます。 これらのメッセージは、デバッガーで確認できます。
 
-さらに、共同インストーラーが、デバッグ メッセージを書き込みます、[セットアップ アクション ログ](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi-text-logs)( *%windir%\\setupact.log*) ファイル。 セットアップの操作ログには、共同インストーラーと、ドライバーの INF ファイルで指定されたドライバーのバージョンが含まれています。 期待どおりにあることを確認する必要があります。
+また、共同インストーラーによって、デバッグメッセージが[セットアップアクションログ](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi-text-logs)( *% windir%\\setupact .log*) に書き込まれます。 セットアップアクションログには、ドライバーの INF ファイルで指定されているバージョンの共同インストーラーとドライバーが含まれています。 これらが想定どおりであることを確認する必要があります。
 
-## <a name="examining-kmdf-installation"></a>KMDF インストールの確認
+## <a name="examining-kmdf-installation"></a>KMDF のインストールを確認しています
 
 
-セットアップの操作ログに次の出力は、KMDF ドライバーのインストールの成功からです。
+セットアップアクションログの次の出力は、KMDF ドライバーが正常にインストールされた場合のものです。
 
 ```cpp
 WdfCoInstaller: DIF_INSTALLDEVICE: Pre-Processing
@@ -40,9 +40,9 @@ WdfCoInstaller: DIF_INSTALLDEVICE: Update is not required. The on-disk KMDF vers
 WdfCoInstaller: DIF_INSTALLDEVICE: Post-Processing
 ```
 
-上記のシナリオでは、更新プログラムがないために必要なため、ディスク上のバージョンとメモリ内のフレームワーク バージョンは、KMDF 1.9 共同インストーラーの同じバージョンであります。
+上記のシナリオでは、更新は必要ありませんでした。これは、ディスク上のバージョンとメモリ内のフレームワークのバージョンが KMDF 1.9 であり、これは同じバージョンの共同インストーラーです。
 
-次の出力をインストールが失敗の詳細を示すを検討してください。
+次の出力について考えてみます。これは、インストールが失敗したことを示します。
 
 ```cpp
 WdfCoInstaller: ReadComponents:  WdfSection for Driver Service ECHO using KMDF lib version Major 0x1, minor 0x9  
@@ -58,14 +58,14 @@ WdfCoInstaller: The update process returned error code :error(265) <no error tex
 WdfCoInstaller: For additional information please look at the log files %windir%\windowsupdate.log and %windir%\Logs\CBS\CBS.log
 ```
 
-このシナリオで更新と再起動の両方が必要なメモリ内のバージョンおよび KMDF ランタイムのディスク上のバージョンが共同インストーラーのバージョンよりも古いため。 ただし、更新に失敗しました。 共同インストーラーは、障害の詳細が得られる追加のログ ファイルを指します。
+このシナリオでは、KMDF ランタイムのメモリ内バージョンとディスク上のバージョンが共同インストーラーのバージョンよりも古いため、更新と再起動の両方が必要でした。 ただし、更新は失敗しました。 共同インストーラーは、エラーに関する詳細情報が記載されている追加のログファイルを参照します。
 
-ランタイム ライブラリを KMDF ドライバーの動的バインドに関連するエラーのシステム イベント ログを確認することもできます。 このようなエラーが発生する**Wdf**&lt;*MajorVersionNumber*&gt;&lt;*MinorVersionNumber* &gt;内のエントリシステム イベント ログ。 この場合、コンピューターを再起動します。 削除することによって、KMDF ランタイムの再インストールを強制することもできます**Wdf**&lt;*MajorVersionNumber*&gt;&lt;*MinorVersionNumber*&gt; **.sys**から、 *%windir%\\system32\\ドライバー*フォルダー。
+また、システムイベントログで、KMDF ドライバーのランタイムライブラリへの動的バインドに関連するエラーを確認することもできます。 このようなエラーが発生すると、システムイベントログに**Wdf**&lt;*MajorVersionNumber*&gt;&lt;*minorversionnumber,* &gt; エントリが生成されることがあります。 この場合は、コンピューターを再起動します。 また、 *% windir%\\system32\\drivers*フォルダーから**Wdf**&lt;*MajorVersionNumber*&gt;&lt;*minorversionnumber,* **&gt;を削除**して、kmdf ランタイムを強制的に再インストールすることもできます。
 
-## <a name="examining-umdf-installation"></a>UMDF インストールの確認
+## <a name="examining-umdf-installation"></a>UMDF インストールの検証
 
 
-セットアップの操作ログに次の出力には、成功した UMDF ドライバーのインストールについて説明します。
+セットアップアクションログの次の出力は、UMDF ドライバーのインストールが成功したことを示しています。
 
 ```cpp
 WudfUpdate: installing version (1,9,0,7100).
@@ -84,9 +84,9 @@ WudfCoInstaller: Service WudfSvc is already running.
 WudfCoInstaller: Final status: error(0) The operation completed successfully.
 ```
 
-上記のシナリオでは、更新プログラムは必要ありませんディスク上のバージョンのランタイムは、UMDF 1.9 共同インストーラーのバージョンと同じであるためです。
+上記のシナリオでは、更新は必要ありません。これは、ランタイムのディスク上のバージョンが UMDF 1.9 であるためです。これは、共同インストーラーのバージョンと同じです。
 
-次の出力をインストールが失敗の詳細を示すを検討してください。
+次の出力について考えてみましょう。インストールの失敗について詳しく説明します。
 
 ```cpp
 WudfUpdate: installing version (1,9,0,7100).
@@ -111,7 +111,7 @@ WudfUpdate: Cleaning up update.
 WudfUpdate: Error updating UMDF - error(22) The device does not recognize the command. Aborting installation.
 ```
 
-このシナリオでは、UMDF ランタイムのディスク上のバージョンを共同インストーラーのバージョンよりも古かった。 ただし、この場合、更新に失敗しました。 共同インストーラーは、失敗の原因に関する詳細情報が得られる追加のログ ファイルを指します。
+このシナリオでは、UMDF runtime のディスク上のバージョンが、共同インストーラーのバージョンより古いバージョンでした。 ただし、この場合、更新は失敗しました。 共同インストーラーは、エラーの原因に関する詳細情報が記載されている追加のログファイルを参照します。
 
 
 

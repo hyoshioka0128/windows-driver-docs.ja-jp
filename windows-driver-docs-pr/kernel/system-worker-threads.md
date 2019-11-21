@@ -13,12 +13,12 @@ keywords:
 - コールバックルーチン WDK ワーカースレッド
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ae05f02067fe6097b1cf0b95f9935b78fab2624
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df678188abc431fe7ce9de7aa567173c9bff41b5
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838392"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261433"
 ---
 # <a name="system-worker-threads"></a>システム ワーカー スレッド
 
@@ -52,7 +52,7 @@ ms.locfileid: "72838392"
 
 システムワーカースレッドのプールは限られたリソースなので、 *WorkItem*と*workitemex*ルーチンは、短時間で実行される操作に対してのみ使用できます。 これらのルーチンの1つが長時間実行されている (たとえば、無限ループが含まれている) 場合や、長時間待機している場合は、システムでデッドロックが発生する可能性があります。 そのため、ドライバーが遅延処理の長い時間を必要とする場合は、代わりに[**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)を呼び出して、独自のシステムスレッドを作成する必要があります。
 
-既にキューにある作業項目をキューに登録するには、 **Ioqueueworkitem**または**Ioqueueworkitemex**を呼び出さないでください。 チェックされたビルドでは、このエラーによってバグチェックが発生します。 リテールビルドでは、エラーは検出されませんが、システムデータ構造が破損する可能性があります。 ドライバーが特定のドライバールーチンを実行するたびに同じ作業項目をキューに登録している場合は、次の方法を使用して、既にキューにある場合に、作業項目が2回目にキューに登録されないようにすることができます。
+既にキューにある作業項目をキューに登録するには、 **Ioqueueworkitem**または**Ioqueueworkitemex**を呼び出さないでください。 これにより、システムデータ構造が破損する可能性があります。 ドライバーが特定のドライバールーチンを実行するたびに同じ作業項目をキューに登録している場合は、次の方法を使用して、既にキューにある場合に、作業項目が2回目にキューに登録されないようにすることができます。
 
 -   このドライバーは、ワーカールーチンのタスクの一覧を保持します。
 -   このタスク一覧は、ワーカールーチンに提供されているコンテキストで使用できます。 タスク一覧を変更するワーカールーチンとドライバールーチンは、そのアクセスをリストに同期します。

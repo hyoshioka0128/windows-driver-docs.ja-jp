@@ -8,15 +8,15 @@ keywords:
 - PnP ディスパッチルーチン WDK カーネル
 - Irp WDK カーネル、プラグアンドプレイディスパッチルーチン
 - プラグアンドプレイディスパッチルーチン WDK カーネル
-- IRP_MJ_PNP i/o 関数のコード
+- IRP_MJ_PNP i/o 関数コード
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba19c14b474574161fc5f48db3dc90b418679fad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 251f5d5b45a037b91b3c88ec47b18bb4054bfef9
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836849"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261429"
 ---
 # <a name="dispatchpnp-routines"></a>DispatchPnP ルーチン
 
@@ -66,7 +66,6 @@ ms.locfileid: "72836849"
 
     ほとんどの PnP Irp は PnP マネージャーによって送信されますが、ドライバーによって送信される場合があります (たとえば、 [**IRP\_\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface))。 ドライバーは、デバイススタックの一番上にあるドライバーに PnP IRP を送信する必要があります。 [**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)を呼び出して、デバイススタックの一番上にあるドライバーのデバイスオブジェクトへのポインターを取得します。
 
-オペレーティングシステムのチェックされたビルドを使用して、ドライバーをテストする必要があります。 システムのチェックされたビルドは、ドライバーが上記の PnP ルールの多くに準拠しているかどうかを確認します。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - デバッガーの中断 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dfcd119c25ef6dd25ff6fb94e62cc9159beeea0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c883264ea99f46048cc65b118ebc0308210cb692
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845510"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261441"
 ---
 # <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>KMDF ドライバーからのデバッガーへの割り込み
 
@@ -31,7 +31,7 @@ ms.locfileid: "72845510"
 
 -   [**Dbgprintex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)関数と[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)関数は、表示可能なテキストメッセージをデバッガーに提供します。
 
-WDFVERIFY と VERIFY\_のコードは、ドライバーをリリースまたはデバッグ構成 (無料のビルド環境またはチェックされたビルド環境と呼びます) でビルドするときにドライバーに含まれる\_IRQL\_パッシブ\_レベルのマクロです。Windows 7 以前)。 ASSERT マクロと ASSERTMSG マクロのコードは、デバッグ構成でドライバーをビルドする場合にのみ、ドライバーに含まれます。
+WDFVERIFY と VERIFY\_のコードは\_IRQL\_パッシブ\_レベルのマクロがリリースまたはデバッグ構成でドライバーをビルドするときにドライバーに含まれています。 ASSERT マクロと ASSERTMSG マクロのコードは、デバッグ構成でドライバーをビルドする場合にのみ、ドライバーに含まれます。
 
 プロジェクト構成の詳細については、「[ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)」を参照してください。
 

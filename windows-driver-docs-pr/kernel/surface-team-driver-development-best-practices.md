@@ -6,12 +6,12 @@ keywords:
 - ドライバー開発のベストプラクティス
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be9e8980f754dcf8623597fb5373a33e1e3d2e5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 31961b6f47067d7c5702d65de5b6212821677e54
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838399"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261432"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface Team ドライバー開発ベスト プラクティス
 
@@ -117,7 +117,7 @@ ms.locfileid: "72838399"
 3. NTSTATUS マクロを使用して、システム関数の返された状態を確認することはできません。
 4. 必要に応じて、状態変数またはフラグをアサートしません。
 5. 競合状態を回避するためにポインターが有効かどうかを確認しています。
-6. NULL ポインターに対してアサートします。 メモリにアクセスするために NULL ポインターを使用しようとすると、バグチェックが行われます。 バグチェックのパラメーターは、null ポインターを修正するために必要な情報を提供します。 超過の場合、コードに不要な ASSERT ステートメントが多数追加されると、メモリを消費し、システムが遅くなり、チェックされたビルドバイナリを使用できなくなります。 アサートは無料のリテールビルドには含まれていないことに注意してください。
+6. NULL ポインターに対してアサートします。 メモリにアクセスするために NULL ポインターを使用しようとすると、バグチェックが行われます。 バグチェックのパラメーターは、null ポインターを修正するために必要な情報を提供します。 [超過] を使用すると、コードに不要な ASSERT ステートメントが多数追加されると、メモリが消費され、システムが遅くなります。
 7. オブジェクトコンテキストポインターでアサートします。 ドライバーフレームワークは、オブジェクトが常にコンテキストで割り当てられることを保証します。
 
 ### <a name="tracing"></a>トレース
