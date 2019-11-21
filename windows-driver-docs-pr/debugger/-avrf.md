@@ -53,10 +53,10 @@ ms.locfileid: "66813563"
 <span id="-vs___Length___-a_Address__"></span><span id="-vs___length___-a_address__"></span><span id="-VS___LENGTH___-A_ADDRESS__"></span> **-vs {** *Length* **| -a** *Address* **}**  
 仮想空間操作ログを表示します。 *Length* は、最新のものから順に表示するレコードの数を指定します。 *Address* は、仮想アドレスを指定します。 この仮想アドレスを含む仮想操作のレコードが表示されます。
 
-<span id="-hp___Length___-a_Address__"></span><span id="-hp___length___-a_address__"></span><span id="-HP___LENGTH___-A_ADDRESS__"></span> **-hp {** *長さ* **|-** *アドレス* **}**  
+<span id="-hp___Length___-a_Address__"></span><span id="-hp___length___-a_address__"></span><span id="-HP___LENGTH___-A_ADDRESS__"></span> **-hp {** *Length* **|-** *Address* **}**  
 ヒープ操作ログを表示します。 *Address* は、ヒープのアドレスを指定します。 このヒープ アドレスが含まれているヒープ操作のレコードが表示されます。
 
-<span id="-cs___Length___-a_Address__"></span><span id="-cs___length___-a_address__"></span><span id="-CS___LENGTH___-A_ADDRESS__"></span> **-cs {** *長さ* **|-** *アドレス* **}**  
+<span id="-cs___Length___-a_Address__"></span><span id="-cs___length___-a_address__"></span><span id="-CS___LENGTH___-A_ADDRESS__"></span> **-cs {** *Length* **|-** *Address* **}**  
 クリティカル セクションの削除ログを表示します。 *Length* は、最新のものから順に表示するレコードの数を指定します。 *アドレス*クリティカル セクションのアドレスを指定します。 特定のクリティカル セクションのレコードが表示されるとき*アドレス*を指定します。
 
 <span id="-dlls___Length__"></span><span id="-dlls___length__"></span><span id="-DLLS___LENGTH__"></span> **-dll \[**  *Length* **\]**  
@@ -65,7 +65,7 @@ DLL の読み込み/アンロード ログを表示します。 *Length* は、�
 <span id="-trm"></span><span id="-TRM"></span> **-trm**  
 すべての終了および中断されたスレッドのログを表示します。
 
-<span id="-ex___Length__"></span><span id="-ex___length__"></span><span id="-EX___LENGTH__"></span> **-ex \[**  *長さ* **\]**  
+<span id="-ex___Length__"></span><span id="-ex___length__"></span><span id="-EX___LENGTH__"></span> **-ex \[**  *Length* **\]**  
 例外のログを表示します。 Application Verifier は、アプリケーション内のすべての例外を追跡します。
 
 <span id="-threads___ThreadID__"></span><span id="-threads___threadid__"></span><span id="-THREADS___THREADID__"></span> **-threads\[**  *ThreadID* **\]**  
