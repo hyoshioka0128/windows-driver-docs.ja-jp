@@ -4,12 +4,12 @@ title: Visual Studio を使って実行時にドライバーをテストする�
 description: Visual Studio の WDK 拡張機能を使うと、ネットワーク上のテスト コンピューターで簡単にドライバーのビルド、展開、インストール、テストを実行できます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cad70926d45baf1d07436d86a26448ec1b1db5
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: e4f024d689ef60087d854418cb247c8ff28e0265
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020625"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261417"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>Visual Studio を使って実行時にドライバーをテストする方法
 
@@ -19,7 +19,7 @@ WDK 拡張機能は Visual Studio にドライバー テスト インターフ�
 
 -   インストールの準備ができているドライバー パッケージ。 まずドライバーを作ってビルドし、次にインストール用のドライバー パッケージを作る必要があります。 詳しくは、「[ドライバーのビルド](building-a-driver.md)」と「[ドライバー パッケージの作成](creating-a-driver-package.md)」をご覧ください。
 -   ドライバーはテスト署名されている必要があります。 詳しくは、「[ドライバーへの署名](signing-a-driver.md)」をご覧ください。
--   テスト コンピューター。 テスト コンピューターは、開発に使ったコンピューターと同じネットワーク上にある必要があります。 両方のコンピューターが同じドメインまたは同じワークグループのネットワークに接続されている必要があります。 テスト コンピューターでは、テスト対象のバージョンの Windows が実行されている必要があります。 テストとデバッグ用に、Windows の[チェック ビルド (またはチェック ビルドの一部) をインストール](https://docs.microsoft.com/windows-hardware/drivers/devtest/installing-the-checked-build)することもできます。
+-   テスト コンピューター。 テスト コンピューターは、開発に使ったコンピューターと同じネットワーク上にある必要があります。 両方のコンピューターが同じドメインまたは同じワークグループのネットワークに接続されている必要があります。 テスト コンピューターでは、テスト対象のバージョンの Windows が実行されている必要があります。 
 -   テスト対象のデバイス。
 -   (*推奨*) テスト コンピューターへのカーネル モード デバッグ接続を設定します。 カーネル モード デバッグ用のネットワーク接続を使うには、ターゲット コンピューターで Windows 8 が実行されている必要があります。 Windows 7 または Windows Vista が実行されているコンピューターでは、カーネル モード デバッグ用に USB、1394、シリアル接続を設定できます。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」をご覧ください。
 

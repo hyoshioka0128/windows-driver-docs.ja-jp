@@ -4,12 +4,12 @@ title: ドライバー コードとドライバー パッケージのテスト�
 description: テストを開始するタイミング。 ドライバーの要件がある場合はすぐに、テスト ケースの設計を開始して、重要な要件が実装されていることをテストできます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d87219f107954890359a79e613281d014498edd7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840321"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261420"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント
 
@@ -53,7 +53,6 @@ ms.locfileid: "72840321"
 -   展開に使うテスト コンピューターで、ドライバーの検証ツールを有効にします。「[ドライバー プロジェクトのドライバーの検証ツール プロパティ](driver-verifier-properties-for--driver-projects.md)」をご覧ください。 [[DDI 準拠の検査]](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking) オプションを選択します。 DDI 準拠の検査でドライバーが失敗した場合は、[静的ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)ツールを実行して、失敗の原因となったルールを明確にします。 静的ドライバー検証ツールは、ソース ファイル内でバグの原因を見つけるのに役立ちます。
 -   できる限り多くの異なるハードウェア構成で、ドライバーとデバイスをテストします。 さまざまなハードウェアを使うと、デバイス間の競合や、デバイス操作でのその他のエラーを見つけるのに役立ちます。 たとえば、プロセッサ アーキテクチャが異なる複数のコンピューターや、32 ビット バージョンと 64 ビット バージョンの Windows がそれぞれ動作するコンピューターで、ドライバーとデバイスをテストする必要があります。
 
--   [Windows のチェック ビルド](https://docs.microsoft.com/windows-hardware/drivers/devtest/checked-build-of-windows)を使って、ドライバーとデバイスをテストします。 Windows のチェック ビルド (またはチェック済みのオペレーティング システムと HAL のみ) でドライバーを実行すると、他のツールでのテストではわからないエラーを検出するのに役立ちます。 ドライバーの開発とテストでは、カーネル デバッガーと共にチェック ビルドを使った実行を標準の手法として含める必要があります。
 -   マルチプロセッサ システムで、ドライバーとデバイスをテストします。 他では見つからない競合条件やその他のタイミングの問題が、マルチプロセッサ システムでは明らかになります。 「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」と「[複数のプロセッサ グループをサポートするためのテスト ドライバーのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)」をご覧ください。
 
 -   特定のシステムとハードウェアの条件、特に周辺条件について、ドライバーとデバイスをテストします。 たとえば、"D3 hot (D3 ホット)" や "D3 cold (D3 コールド)" などの条件があります。 デバイスの電源状態 "D3 hot (D3 ホット)" (電源が失われていない) と "D3 cold (D3 コールド)" (電源がデバイスから削除されている) から、ドライバーとデバイスが適切に復帰することを確認します。 詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。

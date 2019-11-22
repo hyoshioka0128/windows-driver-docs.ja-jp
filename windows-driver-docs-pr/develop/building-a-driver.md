@@ -4,12 +4,12 @@ title: WDK を使ったドライバーのビルド
 description: このトピックでは、Windows Driver Kit (WDK) でドライバーをビルドする方法について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b6c010104bb893610e4c6bbce365f65da098fa
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393326"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261422"
 ---
 # <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>Visual Studio と WDK でのドライバーのビルド
 
@@ -36,7 +36,7 @@ Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を
 
 ビルド構成の管理と編集について詳しくは、「[Visual Studio でのビルド](https://go.microsoft.com/fwlink/p/?linkid=227872)」をご覧ください。
 
-既定のソリューション ビルド構成は、 **[デバッグ]** と **[Win32]** です。 Windows 8 より前のバージョンの WDK では、このビルド構成は、 **[x86 Checked Build Environment (x86 チェック ビルド環境)]** を使ってドライバーをビルドすることに相当します。
+既定のソリューション ビルド構成は、 **[デバッグ]** と **[Win32]** です。 
 
 **構成を選択してドライバーをビルドするには**
 
