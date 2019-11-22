@@ -3,17 +3,17 @@ title: デバイス電源ポリシー オーナーからの PoStartNextPowerIrp 
 description: デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
 ms.assetid: 58576ff8-638e-4928-9a2d-337ac3f4d2d8
 keywords:
-- Irp WDK カーネル、PoStartNextPowerIrp を電源します。
+- 電源 Irp WDK カーネル、PoStartNextPowerIrp
 - PoStartNextPowerIrp
 - デバイスの電源ポリシー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae50f955a22e1a06951b2008fdc9307289abb17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c23c92bbd28f8be5d236c75f8dde30224d048cf4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385265"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828584"
 ---
 # <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
 
@@ -21,7 +21,7 @@ ms.locfileid: "67385265"
 
 
 
-Windows Vista 以降、通話[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)は必要ありませんし、このルーチンの呼び出しには電源管理操作は実行されません。 ただしで Windows Server 2003、Windows XP、および Windows 2000 では、電源ポリシーがデバイスを所有している関数ドライバー呼び出す必要があります**PoStartNextPowerIrp**に対して 1 回ごと[ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)または[ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)ドライバーが受信した要求。 呼び出しが発生したときは、要求とは、ドライバーの失敗または、要求が次の表は成功を収めるかどうかの種類によって異なります。
+Windows Vista 以降では、 [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出す必要はなく、このルーチンの呼び出しによって電源管理操作は実行されません。 ただし、Windows Server 2003、Windows XP、および Windows 2000 では、デバイスの電源ポリシーを所有している関数ドライバーは、すべての[**IRP\_\_クエリ\_電力**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)または\_irp に対しては、ドライバーが受信する[ **\_の電力要求\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)されている場合に、 **postartnextpowerirp**を1回呼び出す必要があります。 呼び出しが発生するタイミングは、次の表に示すように、要求の種類と、ドライバーが失敗するか要求を成功させるかによって異なります。
 
 <table>
 <colgroup>
@@ -32,30 +32,30 @@ Windows Vista 以降、通話[ **PoStartNextPowerIrp** ](https://docs.microsoft.
 <thead>
 <tr class="header">
 <th>要求の種類</th>
-<th>ドライバーには、要求が成功すると、呼び出しが発生します。</th>
-<th>ドライバーには、要求が失敗した場合、呼び出しが発生します。</th>
+<th>ドライバーが要求を成功させると、次の呼び出しが行われます。</th>
+<th>ドライバーが要求に失敗した場合、次の呼び出しが行われます。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>IRP_MN_QUERY_POWER</strong> (デバイスの電源の状態)</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)"> <em>IoCompletion</em> </a>ルーチンを返す前に、すぐにします。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch" data-raw-source="[&lt;em&gt;DispatchPower&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)"> <em>DispatchPower</em> </a>ルーチンを呼び出す前に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)"> <strong>IoCompleteRequest</strong></a>します。</p></td>
+<td><p><strong>IRP_MN_QUERY_POWER</strong> (デバイスの電源状態)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)"><em>Iocompletion</em></a>ルーチンで、を返す直前。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch" data-raw-source="[&lt;em&gt;DispatchPower&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)"><em>DispatchPower</em></a>ルーチンで、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a>を呼び出す前。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>IRP_MN_QUERY_POWER</strong> (システム電源の状態)</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)"> <strong>PoRequestPowerIrp</strong> </a>システム IRP を完了する前に、すぐに関連するデバイス、IRP のコールバック ルーチン。</p></td>
-<td><p><em>DispatchPower</em>ルーチンを呼び出す前に<strong>IoCompleteRequest</strong>します。</p></td>
+<td><p>関連するデバイスの IRP の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)"><strong>PoRequestPowerIrp</strong></a>コールバックルーチンで、システムの irp を完了する直前。</p></td>
+<td><p><em>DispatchPower</em>ルーチンで、 <strong>IoCompleteRequest</strong>を呼び出す前。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>IRP_MN_SET_POWER</strong> (デバイスの電源の状態)</p></td>
-<td><p><em>IoCompletion</em>ルーチンを返す前に、すぐにします。</p></td>
-<td><p>許可されていません。</p></td>
+<td><p><strong>IRP_MN_SET_POWER</strong> (デバイスの電源状態)</p></td>
+<td><p><em>Iocompletion</em>ルーチンで、を返す直前。</p></td>
+<td><p>許可しない。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>IRP_MN_SET_POWER</strong> (システム電源の状態)</p></td>
-<td><p><strong>PoRequestPowerIrp</strong>システム IRP を完了する前に、すぐに関連するデバイス、IRP のコールバック ルーチン。</p></td>
-<td><p>許可されていません。</p></td>
+<td><p>関連するデバイスの IRP の<strong>PoRequestPowerIrp</strong>コールバックルーチンで、システムの irp を完了する直前。</p></td>
+<td><p>許可しない。</p></td>
 </tr>
 </tbody>
 </table>

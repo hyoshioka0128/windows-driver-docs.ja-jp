@@ -3,89 +3,78 @@ title: VSync 制御による労力の低減
 description: VSync 制御による労力の低減
 ms.assetid: d7ee7461-0d2a-4103-9225-57ca10a75a7a
 keywords:
-- ディスプレイ ドライバー モデル WDK Windows Vista、エネルギーを節約します。
-- Windows Vista のディスプレイ ドライバー モデル WDK、エネルギーを節約します。
-- ドライバー モデル WDK Windows Vista では、コントロールの垂直同期の表示します。
-- Windows Vista ディスプレイ ドライバー モデル、WDK VSync コントロール
-ms.date: 04/20/2017
+- ドライバーモデルの表示 WDK Windows Vista, エネルギーの節約
+- Windows Vista display driver model WDK、省電力
+- ディスプレイドライバーモデル WDK Windows Vista、垂直コントロール
+- Windows Vista display driver model WDK、垂直コントロール
+ms.date: 10/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f713b413cd37f7b9d716d9b392b81ffe62268da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 262fb190a782b5b42606a00d47a02f7cb6951161
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365584"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829521"
 ---
 # <a name="saving-energy-with-vsync-control"></a>VSync 制御による労力の低減
 
+コンピューターの電源を節約するために、カーネルモードディスプレイドライバーを使用すると、垂直のモニター更新割り込みの発生回数を減らすことができます。
 
-コンピューターで電力を節約するには、カーネル モードのディスプレイ ドライバーが発生した VSync モニターの更新の割り込みの数を減らすことができます。
+多くの場合、コンピューターシステムがアイドル状態のときに電力を節約するために、オペレーティングシステムで動作する新しいプロセッサとプラットフォームが使用されます。 ただし、割り込みの発生などの定期的なシステムアクティビティによって、ピーク時の電力使用率が発生し、コンピューターシステムが電力を節約する一時的なスリープ状態にならない可能性があります。
 
-新しいプロセッサとプラットフォームは、多くの場合、コンピューター システムがアイドル状態のときに、エネルギーを節約するために、オペレーティング システムで作業します。 ただし、割り込みの発生など、定期的なシステムの使用状況はピーク時の電力使用状況の原因し、コンピューター システムが電力を節約は一時的なスリープ状態を入力するを防ぐことができます。
+Windows Vista Service Pack 1 (SP1) および Windows Server 2008 以降では、オペレーティングシステムは、画面が新しいグラフィックスやマウスの操作から更新されていない場合に、定期的な垂直の割り込みカウントをオフにすることができます。 同期されていない割り込み間隔を制御することにより、ドライバーは大量のエネルギーを節約できます。
 
-オペレーティング システムは Windows Vista Service Pack 1 (SP1)、Windows Server 2008 以降では、定期的な VSync 割り込みがカウントに画面を新しいグラフィックスやマウスのアクティビティから更新されていないときに無効にできます。 垂直同期の割り込みの間隔を制御することで、ドライバーは、大幅なエネルギーを節約できます。
+Windows Server 2008 以降のバージョンの Windows Driver Kit (WDK) を使用して Windows Display Driver Model (WDDM) ドライバーを再構築することで、この機能を利用できます。
 
-この機能を行うには、Windows Server 2008 またはそれ以降のバージョンの Windows Driver Kit (WDK) を使用して Windows Display Driver Model (WDDM) ドライバーを再構築します。
+## <a name="windowsvista-with-sp1-driver-changes-for-vsync-control"></a>Windows Vista with SP1 ドライバーの変更 (垂直コントロール)
 
-### <a name="span-iddriverchangesforvsynccontrolspanspan-iddriverchangesforvsynccontrolspanwindowsvista-with-sp1-driver-changes-for-vsync-control"></a><span id="driver_changes_for_vsync_control"></span><span id="DRIVER_CHANGES_FOR_VSYNC_CONTROL"></span>Windows Vista SP1 のドライバーを使用したのコントロールの垂直同期の変更します。
+ドライバーがこの機能を利用するには、Windows Vista SP1 で導入された[DXGK_VIDSCHCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)構造の**Vsyncpowersaveaware**メンバーをサポートする必要があります。 WDDM に従う既存のドライバーは、Windows Server 2008 以降のバージョンの WDK を使用して、 **Vsyncpowersaveaware**メンバーで再コンパイルする必要があります。
 
-ドライバーはこの機能を活用するために、それらをサポートする必要があります、 **VSyncPowerSaveAware**内のメンバー、 [ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)が構造Windows Vista SP1 で導入されました。 WDDM に従って既存のドライバーを再コンパイルする必要があります、 **VSyncPowerSaveAware**メンバーは、Windows Server 2008 またはそれ以降のバージョンの WDK を使用します。
+この機能をサポートするドライバーがインストールされている Windows Vista SP1 以降のシステムでは、1/垂直 (垂直同期) がモニターのリフレッシュレートである10の連続した期間に GPU アクティビティが発生しない場合、垂直割り込みのカウント機能が無効になります。 垂直速度が60ヘルツ (Hz) の場合、垂直の割り込みは16ミリ秒ごとに1回発生します。 したがって、画面の更新が存在しない場合、垂直同期割り込みは160ミリ秒後にオフになります。 GPU アクティビティが再開されると、垂直の割り込みが再び有効になり、画面が更新されます。
 
-Windows Vista sp1 または以降のシステム、ドライバー、WDDM が続くし、この機能をサポートするには、GPU アクティビティが発生しない場合の 1/Vsync の 10 個の継続的な期間モニターのリフレッシュ レートの垂直同期が垂直同期の割り込みのカウントの機能は、オフになります。 垂直同期レートが 60 ヘルツ (Hz) の場合は、垂直同期の割り込みは 16 ミリ秒ごとに 1 回を発生します。 したがって、画面の更新プログラムがない場合、垂直同期割り込み無効になって 160 ミリ秒後にします。 GPU アクティビティが再開されると、垂直同期の割り込みが有効にもう一度画面を更新します。
+## <a name="display-only-vsync-requirements-for-windows-8-and-later-versions"></a>Windows 8 以降のバージョンでは、表示専用の垂直同期の要件
 
-### <a name="span-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanwindows8-display-only-vsync-requirements"></a><span id="Windows_8_Display-Only_VSync_Requirements"></span><span id="windows_8_display-only_vsync_requirements"></span><span id="WINDOWS_8_DISPLAY-ONLY_VSYNC_REQUIREMENTS"></span>Windows 8 の表示専用の垂直同期の要件
+Windows 8 以降のバージョンの Windows オペレーティングシステムでは、次のように、同期機能をサポートするための[カーネルモード表示専用ドライバー (KMDOD)](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)では省略可能です。
 
-Windows 8 以降は省略可能、[カーネル モード表示専用ドライバー (KMDOD)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)次のように、垂直同期機能をサポートするために。
+- **表示専用ドライバーは、垂直同期コントロールをサポートします**
 
-<span id="Display-only_driver_supports_VSync_control"></span><span id="display-only_driver_supports_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_SUPPORTS_VSYNC_CONTROL"></span>表示専用ドライバーは、コントロールの垂直同期をサポートしています。  
-両方に実装する必要があります、KMDOD 垂直同期の制御機能をサポートする場合[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)と[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)関数し、でこれらの関数の両方に有効な関数ポインターを提供する必要があります、 [ **KMDDOD\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)構造体。
+  KMDOD が垂直同期コントロール機能をサポートしている場合は、 [*DxgkDdiControlInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)と[*DxgkDdiGetScanLine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)の両方の関数を実装する必要があります。また、 [KMDDOD_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_kmddod_initialization_data)構造体の両方の関数への有効な関数ポインターを提供する必要があります。
 
-この場合、KMDOD を実装する必要がありますも、 [ *DxgkDdiInterruptRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)と[ *DxgkDdiDpcRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_dpc_routine)関数にはオペレーティング システムには、垂直同期の割り込みを報告します。
+  この場合、KMDOD は、垂直方向の割り込みをオペレーティングシステムに報告するために、 [*DxgkDdiInterruptRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)関数と[*DxgkDdiDpcRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_dpc_routine)関数も実装する必要があります。
 
-さらの値、 **PixelRate**、 **hSyncFreq**、および**vSyncFreq**のメンバー、 [ **DISPLAYCONFIG\_ビデオ\_信号\_情報**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)構造にすることはできません**D3DKMDT\_頻度\_NOTSPECIFIED**します。
+  さらに、 [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)構造体の**ピクセル**単位の比率、 **hSyncFreq**、および**vSyncFreq**メンバーの値を**D3DKMDT_FREQUENCY_NOTSPECIFIED**することはできません。
 
-<span id="Display-only_driver_does_not_support_VSync_control"></span><span id="display-only_driver_does_not_support_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_DOES_NOT_SUPPORT_VSYNC_CONTROL"></span>表示専用ドライバーがコントロールの垂直同期をサポートしていません  
-場合は、KMDOD 垂直同期の制御機能をサポートしていない必要がありますを実装していないか[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)または[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)関数し、でこれらの関数のいずれかに有効な関数ポインターを指定しないで、 [ **KMDDOD\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)構造体。
+- **表示専用ドライバーは、垂直同期コントロールをサポートしていません**
 
-ここで、Microsoft DirectX グラフィックスのカーネル サブシステムは、垂直同期の割り込みと現在のモードとシミュレートされた最後の垂直同期の時刻に基づくスキャン ラインの値をシミュレートします。
+  KMDOD が垂直同期コントロール機能をサポートしていない場合は、 [*DxgkDdiControlInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)または[*DxgkDdiGetScanLine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)関数を実装することはできず、 [KMDDOD_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_kmddod_initialization_data)構造体のいずれかの関数への有効な関数ポインターを提供することはできません。
 
-さらの値、 **PixelRate**、 **hSyncFreq**、および**vSyncFreq**のメンバー、 [ **DISPLAYCONFIG\_ビデオ\_信号\_情報**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)に構造体を設定する必要があります**D3DKMDT\_頻度\_NOTSPECIFIED**します。
+  この場合、Microsoft DirectX graphics カーネルサブシステムは、現在のモードおよび最後にシミュレートされた垂直同期の時間に基づいて、垂直の割り込みの値をシミュレートし、行をスキャンします。
 
-これらの条件が満たされない場合でも、DirectX グラフィックスのカーネル サブシステムでは、KMDOD は読み込まれません。
+  さらに、 [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)構造体の**ピクセル**単位の比率、 **hSyncFreq**、および**vSyncFreq**メンバーの値を**D3DKMDT_FREQUENCY_NOTSPECIFIED**に設定する必要があります。
 
-### <a name="span-idregistrycontrolspanspan-idregistrycontrolspan-registry-control"></a><span id="registry_control"></span><span id="REGISTRY_CONTROL"></span> レジストリの制御
+これらの条件が満たされていない場合、DirectX グラフィックスのカーネルサブシステムは KMDOD を読み込みません。
 
-Windows Vista SP1 と以降のバージョンの Windows オペレーティング システムでは、既定の垂直同期のアイドル タイムアウトは 10 個の垂直同期の期間です。 必要に応じて、テスト目的は、タイムアウト値をレジストリ設定を使用して制御できます。
+## <a name="registry-control"></a>レジストリコントロール
 
-**重要な**  アプリケーション互換性の問題を回避するためには変わりません運用ドライバーの既定のレジストリ設定します。
+Windows Vista SP1 以降のバージョンの Windows オペレーティングシステムでは、既定の垂直同期アイドルタイムアウトは10個の垂直同期期間です。 必要に応じて、テスト目的で、レジストリ設定を使用してタイムアウトを制御できます。
 
- 
+> [!IMPORTANT]
+> アプリケーションの互換性の問題を回避するには、実稼働ドライバーで既定のレジストリ設定を変更しないでください。
 
-<span id="Key_Path_"></span><span id="key_path_"></span><span id="KEY_PATH_"></span>キーのパス:  
-**RTL\_レジストリ\_コントロール\\GraphicsDrivers\\スケジューラ**
+キーのパス:  
+**RTL_REGISTRY_CONTROL \GraphicsDrivers\Scheduler**
 
 完全なパス:  
-**[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\\Scheduler]**
+**[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler]**
 
-<span id="Key_Value_"></span><span id="key_value_"></span><span id="KEY_VALUE_"></span>キーの値:  
+キーの値:  
 **VsyncIdleTimeout**
 
-<span id="ValueType_"></span><span id="valuetype_"></span><span id="VALUETYPE_"></span>ValueType:  
-**REG\_DWORD**
+ValueType  
+**REG_DWORD**
 
-<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>値:  
+値:  
 10 = 既定値
 
-<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>値:  
-0 = コントロールの垂直同期を無効にする (同じ動作を生成します Windows Vista と同じ)。
-
-
-
- 
-
- 
-
-
-
-
-
+値:  
+0 = 垂直同期コントロールを無効にします (Windows Vista と同じ動作を生成します)

@@ -3,18 +3,18 @@ title: DPC ルーチンの記述に関するガイドライン
 description: DPC ルーチンの記述に関するガイドライン
 ms.assetid: 570219be-d152-4826-855a-737bbed67ffd
 keywords:
-- 遅延プロシージャ呼び出しの WDK カーネル
+- 遅延プロシージャ呼び出し WDK カーネル
 - Dpc WDK カーネル
 - DpcForIsr
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a957d8888e3730e39f10264f734f6111491b4e9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b13fe14e4e891198ece076914c961f0f1754dd98
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385255"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838682"
 ---
 # <a name="guidelines-for-writing-dpc-routines"></a>DPC ルーチンの記述に関するガイドライン
 
@@ -22,45 +22,45 @@ ms.locfileid: "67385255"
 
 
 
-書き込み時に、次の点を留意してください、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
+[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)または[*customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンを記述するときは、次の点に注意してください。
 
--   A *DpcForIsr*または*CustomDpc*ルーチンは、物理デバイスへのアクセスを同期する必要があり、共有状態の情報やリソースにドライバーを使用したドライバーでが維持されるのでその他のルーチンを同じデバイスまたはメモリの場所にアクセスします。
+-   *DpcForIsr*または*customdpc*ルーチンは、物理デバイスへのアクセス、およびドライバーによって保持されている共有の状態情報またはリソースへのアクセスを同期する必要があります。また、ドライバーのその他のルーチンは、同じデバイスまたはメモリの場所にアクセスします。
 
-    場合、 *DpcForIsr*または*CustomDpc*ルーチン ISR と、デバイスや状態を共有する、呼び出す必要があります[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)、提供ドライバーによって提供されるアドレス[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンをデバイスのプログラムや、共有状態にアクセスします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+    *DpcForIsr*または*customdpc*ルーチンがデバイスまたは状態を ISR と共有している場合は、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を呼び出して、デバイスをプログラムしたり、共有状態にアクセスしたりするドライバーによって提供される[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンのアドレスを指定する必要があります。 詳細については、「[クリティカルセクションの使用](using-critical-sections.md)」を参照してください。
 
-    場合、 *DpcForIsr*または*CustomDpc*共有状態またはを使用したリソースのどちらを保護する必要があります日常的な共有状態や、インター ロックされたキューまたは ISR、以外のルーチンのタイマー オブジェクトなどのリソースをドライバー初期化 executive スピン ロックします。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+    *DpcForIsr*または*customdpc*ルーチンが、非インタロックキューやタイマーオブジェクトなどの状態またはリソースを、ISR 以外のルーチンを使用して共有している場合、ドライバーで初期化された executive スピンロックで共有状態またはリソースを保護する必要があります。 詳細については、「[スピンロック](spin-locks.md)」を参照してください。
 
--   *DpcForIsr*と*CustomDpc* IRQL でルーチンの実行のディスパッチを =\_レベルで、呼び出すことができますサポート ルーチンのセットを制限します。
+-   *DpcForIsr*および*customdpc*ルーチンは、IRQL = ディスパッチ\_レベルで実行されます。これにより、呼び出し可能な一連のサポートルーチンが制限されます。
 
-    たとえば、 *DpcForIsr*と*CustomDpc*待つことができないルーチンはアクセスも、ページング可能なメモリの割り当てと[カーネルのディスパッチャー オブジェクト](kernel-dispatcher-objects.md)に設定する、状態を通知します。 取得し、executive スピン ロックのドライバーのリリースの一方で、 [ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)と[ **KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)これよりも高速実行**KeAcquireSpinLock**と**KeReleaseSpinLock**します。
+    たとえば、 *DpcForIsr*および*customdpc*ルーチンは、ページング可能なメモリにアクセスしたり割り当てたりすることはできません。また、[カーネルディスパッチャーオブジェクト](kernel-dispatcher-objects.md)がシグナル状態に設定されるのを待機することもできません。 その一方で、 [**KeAcquireSpinLockAtDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)と[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)を使用してドライバーの executive スピンロックを取得して解放することができます。この場合、 **KeAcquireSpinLock**と**KeReleaseSpinLock**よりも高速に実行されます。
 
-    実行する作業項目をキューできます DPC ルーチンでは、ブロッキング呼び出しを行うことはできません、[システム ワーカー スレッド](system-worker-threads.md)IRQL で実行される = パッシブ\_レベル。 作業項目には、ディスパッチャー オブジェクトを待機しているブロックの電話をかけることができます。 作業項目をキューに、 *DpcForIsr*ルーチンで、ルーチンをなど、呼び出す通常[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)、および*CustomDpc*ルーチン通常、 [ **ExQueueWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exqueueworkitem)ルーチン。
+    DPC ルーチンはブロック呼び出しを行うことができませんが、IRQL = パッシブ\_レベルで実行される[システムワーカースレッド](system-worker-threads.md)で実行されるように、作業項目をキューにすることができます。 作業項目は、ディスパッチャーオブジェクトを待機するブロック呼び出しを行うことができます。 *DpcForIsr*ルーチンは、通常、作業項目をキューに置いて、 [**ioqueueworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)などのルーチンを呼び出します。また、 *customdpc*ルーチンは、通常、 [**exqueueworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exqueueworkitem)ルーチンを呼び出します。
 
--   *DpcForIsr*と*CustomDpc*ルーチンは、通常、デバイスで、[次へ] の I/O 操作を開始します。
+-   *DpcForIsr*と*customdpc*ルーチンは、通常、デバイスで次の i/o 操作を開始します。
 
-    使用して、ダイレクト I/O を使用する最下位レベルの物理的なデバイス ドライバーからこの役割に含めることができます、 [ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンを満たすために多くのデータを転送するデバイスのプログラムをドライバーの呼び出しの前に現在の IRP [**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)します。
+    ダイレクト i/o を使用する最下位レベルの物理デバイスドライバーでは、 [*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンを使用して、ドライバーが[**Iostartnextpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)を呼び出す前に、現在の IRP を満たすために、より多くのデータを転送するようにデバイスをプログラミングすることができます。
 
--   *DpcForIsr*と*CustomDpc*ルーチンで、簡単な期間に対してのみ実行する必要があります、ワーカー スレッドにできるだけ多くの処理を委任する必要があります。
+-   *DpcForIsr*と*customdpc*ルーチンは短時間だけ実行する必要があり、ワーカースレッドにできるだけ多くの処理を委任する必要があります。
 
-    プロセッサの DPC ルーチンの実行中のすべてのスレッドは、同じプロセッサで実行できなくなります。 その他のキューに置かれ、実行する準備ができている DPC ルーチンは、現在 DPC ルーチンが完了するまで実行をブロックできます。 システムの応答性を低下させることを避けるためには、一般的な DPC ルーチンと呼ばれますありませんそれぞれ 100 を超えるマイクロ秒に実行する必要があります。 タスクが 100 マイクロ秒を超える必要があります、IRQL で実行する必要がある場合は、ディスパッチを =\_レベル、DPC ルーチンは 100 マイクロ秒単位と 1 つまたは複数のスケジュールの後に終了する必要があります[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)後でタスクを完了するルーチン。 詳細については*CustomTimerDpc*ルーチンを参照してください[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)します。
+    DPC ルーチンはプロセッサ上で実行されますが、すべてのスレッドが同じプロセッサで実行されることはありません。 キューに登録され、実行準備ができているその他の DPC ルーチンは、現在の DPC ルーチンが終了するまで実行をブロックできます。 システムの応答性が低下しないように、一般的な DPC ルーチンは、呼び出されるたびに100マイクロ秒以内に実行する必要があります。 タスクに100マイクロ秒より長い時間が必要であり、IRQL = ディスパッチ\_レベルで実行する必要がある場合、DPC ルーチンは100マイクロ秒後に終了し、1つ以上の[*Customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンが後でタスクを完了するようにスケジュールを設定します。 *Customtimerdpc*ルーチンの詳細については、「 [Timer オブジェクトと dpc](timer-objects-and-dpcs.md)」を参照してください。
 
-    DPC ルーチンがディスパッチを実行する必要があるタスクのみを実行する必要があります\_レベル、および委任します IRQL で実行しているスレッドに割り込みに関連する残りのすべての作業 = パッシブ\_レベル。 DPC ルーチンがで実行する作業項目をキューなど、[システム ワーカー スレッド](system-worker-threads.md)します。
+    DPC ルーチンは、ディスパッチ\_レベルで実行する必要があるタスクだけを実行し、残りの割り込み関連の作業を IRQL = パッシブ\_レベルで実行されるスレッドに委任する必要があります。 たとえば、DPC ルーチンは、作業項目をキューに置いて、[システムワーカースレッド](system-worker-threads.md)で実行できます。
 
-    DPC ルーチンを呼び出す、 [ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)実行を遅延させるルーチンが 100 を超えるマイクロ秒の遅延を指定する必要があります。
+    [**Kestallexecutionprocessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor)ルーチンを呼び出して実行を遅延させる DPC ルーチンでは、100マイクロ秒を超える遅延を指定することはできません。
 
-    WDK のパフォーマンス分析ツールを使用して、DPC ルーチンの実行時間を評価します。 使用する例については、 [Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)を参照してください DPC 実行時間を監視するためのツール[例 15。/ISR DPC 時間の計測](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-15--measuring-dpc-isr-time)します。
+    WDK のパフォーマンス分析ツールを使用して、DPC ルーチンの実行時間を評価します。 [トレースログ](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)ツールを使用して dpc の実行時間を監視する例については、「[例 15: Dpc/ISR 時間の測定](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-15--measuring-dpc-isr-time)」を参照してください。
 
--   ドライバーは、DMA を使用している場合、その[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチンを返します**KeepObject**または**DeallocateObjectKeepRegisters** (それによって。保持 DMA コント ローラーのチャネルをシステムまたはその他の転送操作のバス マスターのアダプター)、 *DpcForIsr*または*CustomDpc*ルーチンは、アダプターを解放します。オブジェクトまたはマップに登録[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)または[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)現在完了前にコントロールの IRP を返します。
+-   ドライバーが DMA を使用し、その[*Adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンが**KeepObject**または**DeallocateObjectKeepRegisters**を返した場合 (これにより、追加の転送操作のためにシステム DMA コントローラーチャネルまたはバスマスターアダプターが保持されます)、 *DpcForIsr*または*customdpc*ルーチンは、現在の IRP を完了して制御を返す前に、アダプターオブジェクトを解放するか、レジスタを[**Freeadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)または[**FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers)にマップします。
 
--   最下位レベルの物理的なデバイス ドライバーが設定したかどうか、[コント ローラー オブジェクト](using-controller-objects.md)に接続されているデバイスは、コント ローラーからの I/O 操作を同期するその*DpcForIsr*または*CustomDpc*ルーチンは、コント ローラーを使用してオブジェクトを解放[ **IoFreeController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iofreecontroller)前に、現在の IRP が完了すると、コントロールを返します。
+-   最低レベルの物理デバイスドライバーでコントローラー[オブジェクト](using-controller-objects.md)を設定して、コントローラーを介して接続されているデバイスに i/o 操作を同期させる場合は、その*DpcForIsr*または*customdpc*ルーチンがコントローラーオブジェクトを解放する必要があります。現在の IRP を完了する前に[**IoFreeController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iofreecontroller)を使用して、制御を返します。
 
--   *DpcForIsr*と*CustomDpc*ルーチンは、一般に必要であり、可能な場合、現在の要求を再試行して、指定した要求の処理中に発生したデバイスのエラーをログに記録状態の I/O ブロックを設定し、呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)現在 IRP の。
+-   *DpcForIsr*および*customdpc*ルーチンは、通常、特定の要求の処理中に発生したデバイスエラーをログに記録し、必要に応じて現在の要求を再試行し、i/o 状態ブロックを設定します。現在の IRP に対して[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出しています。
 
--   ドライバーとデバイスは、重複 I/O 操作をサポートしている場合、ドライバーがの規則に従う必要があります[オーバー ラップ I/O 操作の処理](handling-overlapped-i-o-operations.md)します。
+-   ドライバーとデバイスが重複 i/o 操作をサポートしている場合、ドライバーは、重複 i/o[操作を処理](handling-overlapped-i-o-operations.md)するための規則に従う必要があります。
 
--   *DpcForIsr*または*CustomDpc*任意のドライバーのルーチンの通常のみ、ドライバーをサポートする必要があります public I/O 制御のサブセットは、そのコードの I/O の処理が終了します。 具体的には、DPC ルーチンでは、次の特性を持つデバイス制御要求の処理が実行されます。
-    -   物理デバイスの状態を変更要求
-    -   本質的に揮発性については、物理デバイスの戻り値を必要とする要求
+-   通常、任意のドライバーの*DpcForIsr*または*customdpc*ルーチンは、ドライバーがサポートする必要がある公開 i/o 制御コードのサブセットについてのみ、i/o 処理を完了します。 特に、DPC ルーチンは、次の特性を持つデバイスコントロール要求の操作を完了します。
+    -   物理デバイスの状態を変更する要求
+    -   物理デバイスに関する本質的に不安定な情報を返す必要がある要求
 
  
 

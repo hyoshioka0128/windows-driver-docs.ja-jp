@@ -1,53 +1,53 @@
 ---
 title: 近接センサー データ フィールド
-description: このトピックでは、近接センサーに固有のデータ フィールドに関する情報を提供します。
+description: このトピックでは、近接センサーに固有のデータフィールドについて説明します。
 ms.assetid: 03B561DB-FAF2-4404-AA49-6A0DA139AA11
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e502155193fa29a7f1ff00d4c76110f81e10f727
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e54cd2c045a773deb46a66133db61cc92e0e2f35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330102"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842334"
 ---
 # <a name="proximity-sensor-data-fields"></a>近接センサー データ フィールド
 
 
-このトピックでは、近接センサーに固有のデータ フィールドに関する情報を提供します。
+このトピックでは、近接センサーに固有のデータフィールドについて説明します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表は、データフィールドを示しています。 [型] 列に表示される型の詳細については、「 [Propvariant 構造体](https://go.microsoft.com/fwlink/p/?linkid=313395)」を参照してください。
 
-|プロパティのキー|種類|必須/オプション|説明|
+|プロパティキー|種類|必須/オプション|説明|
 |--|--|--|--|
-|PKEY_SensorData_ProximityDetection|VT_BOOL|必須|オブジェクトが、センサーの近接度内にあることを示しています。|
-|PKEY_SensorData_ProximityDistanceMillimeters|VT_UI4|省略可能|ミリメートル単位で、検出されたオブジェクト間の距離。|
+|PKEY_SensorData_ProximityDetection|VT_BOOL|必須|オブジェクトがセンサーの近くにあることを示します。|
+|PKEY_SensorData_ProximityDistanceMillimeters|VT_UI4|省略可能|検出されたオブジェクトへの距離 (ミリメートル単位)。|
 
  
 
 ## <a name="remarks"></a>注釈
 
 
-センサーをサポートしている場合、**鍵\_SensorData\_ProximityDistanceMillimeters**からの呼び出しに応答しでのデータ フィールド[EvtSensorGetDataFieldProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)用、**鍵\_SensorData\_ProximityDistanceMillimeters**データ フィールドに、センサーは、次のデータ フィールドをレポートする必要があります*プロパティ*:
+センサーが**PKEY\_sensordata\_ProximityDistanceMillimeters**データフィールドをサポートしている場合、 **PKEY\_sensordata\_ProximityDistanceMillimeters** data フィールドの[EvtSensorGetDataFieldProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)からの呼び出しに応答して、センサーは次のデータフィールド*プロパティ*を報告する必要があります。
 
-|データ フィールドのプロパティ|種類|必須/オプション|説明|
+|データフィールドプロパティ|種類|必須/オプション|説明|
 |--|--|--|--|
-|PKEY_SensorDataField_RangeMinimum|VT_R4 (float)|必須|(包括) ミリメートル単位のセンサーの検出が有効な範囲の下限の境界を示します。|
-|PKEY_SensorDataField_RangeMaximum|VT_R4 (float)|必須|ミリメートル単位のセンサーの検出が有効な範囲の (包括) の上限の境界を示します。|
+|PKEY_SensorDataField_RangeMinimum|VT_R4 (float)|必須|センサーの有効な検出範囲 (ミリメートル単位) の下限 (両端を含む) を示します。|
+|PKEY_SensorDataField_RangeMaximum|VT_R4 (float)|必須|センサーの有効な検出範囲 (ミリメートル単位) の上限 (両端を含む) を示します。|
 
  
 
 >[!NOTE]
-> 検出の有効な範囲は、オブジェクトに、センサーからの直線距離です。 センサーをポイントすると、し、実際の境界を含めたが軸に沿った距離が測定されます。
+> 有効な検出範囲は、センサーからオブジェクトまでの直線距離です。 この距離は、センサーが指している軸に沿って測定され、実際の境界を含みます。
 
  
 
-ドライバーは、これらのデータ フィールドのプロパティをレポートに失敗した場合、アプリは WinRT API を使用して近接センサーを検出できます。 ただし、これらのアプリが、サポートされている範囲、センサーの登録されていないと、センサーを使用しないように指定します。
+ドライバーがこれらのデータフィールドプロパティを報告できなかった場合でも、アプリは WinRT API を使用して近接センサーを検出できます。 ただし、これらのアプリはセンサーのサポート範囲を認識しないため、センサーを使用しないことを決定する場合があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[EvtSensorGetDataFieldProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+[EvtSensorGetDataFieldProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 [PROPVARIANT 構造体](https://go.microsoft.com/fwlink/p/?linkid=313395)
 

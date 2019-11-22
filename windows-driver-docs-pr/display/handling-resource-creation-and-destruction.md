@@ -3,51 +3,51 @@ title: リソースの作成および破棄の処理
 description: リソースの作成および破棄の処理
 ms.assetid: d443bdc3-1c5a-4372-9e6a-b8a4d21499b9
 keywords:
-- WDK の表示のリソースの作成
-- リソースの破棄 WDK の表示
-- WDK を表示するリソースを破棄します。
+- リソース作成の WDK 表示
+- リソース破棄の WDK 表示
+- リソースの破棄 WDK 表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaefd1d31f75ce9b05d9103e4fe8a34e9556f8a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd8df9e3466305c02a0a9a94055b3299f3983eb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369870"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838901"
 ---
 # <a name="handling-resource-creation-and-destruction"></a>リソースの作成および破棄の処理
 
 
-Microsoft DirectX のグラフィックスを有効にするには、カーネル サブシステム リソースの有効期間を適切に追跡し、メモリのディスプレイ ドライバーをオペレーティング システム、ユーザー モードでのリークを防ぐためが正しく作成し、リソースを破棄する必要があります。
+Microsoft DirectX graphics カーネルサブシステムがリソースの有効期間を適切に追跡し、オペレーティングシステムのメモリリークを回避できるようにするには、ユーザーモードの表示ドライバーがリソースを適切に作成および破棄する必要があります。
 
-マイクロソフトの Direct3D ランタイムは、次のユーザー モード ユーザー モードのリソースを作成する、ディスプレイ ドライバー関数を呼び出します。
+Microsoft Direct3D ランタイムは、ユーザーモードのリソースを作成するために、次のユーザーモードの display driver 関数を呼び出します。
 
--   [**CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)新しい共有または共有リソースを作成します。
+-   [**Createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)新しい共有リソースまたは共有されていないリソースを作成します。
 
--   [**OpenResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openresource)既存の共有リソースへのビューが開きます。
+-   [**Openresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openresource)は、既存の共有リソースのビューを開きます。
 
-両方の呼び出しでは、Direct3D ランタイム渡します一意*ユーザー モードのランタイム リソース ハンドル*ユーザー モードのディスプレイ ドライバーが、ランタイムにコールバックを使用します。 ときに*CreateResource*または*OpenResource*ユーザー モードのディスプレイ ドライバーは、リソースを表す一意のユーザー モードのハンドルを返しますが正常に返されます。 このハンドルは、*ユーザー モード ドライバー リソース ハンドル*します。 ランタイムは、ドライバーの後続の呼び出しで、ユーザー モード ドライバー リソース ハンドルを使用します。
+どちらの呼び出しでも、Direct3D ランタイムは、ユーザーモードの表示ドライバーがランタイムにコールバックするために使用する一意の*ユーザーモードランタイムリソースハンドル*を渡します。 *Createresource*または*openresource*が正常に返された場合、ユーザーモード表示ドライバーは、リソースを表す一意のユーザーモードハンドルを返します。 このハンドルは、*ユーザーモードドライバーリソースハンドル*です。 ランタイムは、後続のドライバー呼び出しでユーザーモードドライバーリソースハンドルを使用します。
 
-ユーザー モードのランタイム リソース ハンドルと、ユーザー モード ドライバー リソース ハンドルの間に一対一の対応が存在します。 Direct3D ランタイムとユーザー モード ドライバーの exchange を介して処理するユーザー モードのランタイムとドライバーのリソースを表示、 **hResource**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)と[ **D3DDDIARG\_OPENRESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openresource)構造体。
+1対1の対応は、ユーザーモードのランタイムリソースハンドルとユーザーモードドライバーリソースハンドルの間に存在します。 Direct3D ランタイムとユーザーモードのディスプレイドライバーは、 [**D3DDDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)と[**D3DDDIARG\_Openresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openresource)の**hresource**メンバーを介して、ユーザーモードのランタイムとドライバーのリソースハンドルを交換します。構成.
 
-ユーザー モードのディスプレイ ドライバーが Direct3D のランタイムを呼び出すときに[ **pfnAllocateCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)ユーザー モード リソースの割り当てを作成する関数をドライバーは、ユーザー モードのランタイム リソースを指定する必要があります処理、 **hResource**のメンバー、 [ **D3DDDICB\_ALLOCATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)構造体、 *pData*パラメーターを指します。 Direct3D ランタイムがリソースを識別する一意のカーネル モードのハンドルを生成し、ユーザー モードに渡すことでドライバーを表示する、 **hKMResource** D3DDDICB のメンバー\_割り当て。 ユーザー モードのディスプレイ ドライバーは、後で使用するディスプレイのミニポート ドライバーのコマンドのストリーム内で、カーネル モードのリソース ハンドルを挿入できます。
+ユーザーモード表示ドライバーが Direct3D ランタイムの[**Pfnallocatecb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)関数を呼び出してユーザーモードリソースの割り当てを作成する場合、ドライバーは、D3DDDICB の**hresource**メンバーにあるユーザーモードのランタイムリソースハンドルを指定する必要があります。このリソースハンドルは、 *pData*パラメーターが指す構造体[ **\_割り当て**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)ます。 Direct3D ランタイムは、リソースへの一意のカーネルモードハンドルを生成し、\_D3DDDICB の**Hkmresource**メンバー内のユーザーモードの表示ドライバーに渡します。 ユーザーモードの表示ドライバーは、後で使用するディスプレイミニポートドライバーをコマンドストリームに挿入できます。
 
-**注**  ユーザー モード リソース ハンドルは、各ユーザー モード リソースの作成に固有では常に、カーネル モードのリソース ハンドルが常に一意でないです。 Direct3D のランタイムがユーザー モードのディスプレイ ドライバーを呼び出すときに[ **OpenResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openresource)関数を既存のビューを開くには共有リソース、ランタイムは、でリソースのカーネルモードのハンドルを渡します**hKMResource**のメンバー、 [ **D3DDDIARG\_OPENRESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openresource)構造体、 *pResource*パラメーターポインター。 ランタイムが以前、ランタイムがユーザー モードのディスプレイ ドライバーの呼び出された後にこのカーネル モードのハンドルが作成[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数。
+**メモ**   ユーザーモードのリソースハンドルは、ユーザーモードのリソースの作成ごとに常に一意ですが、カーネルモードのリソースハンドルは必ずしも一意ではありません。 Direct3D ランタイムがユーザーモードの表示ドライバーの[**openresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openresource)関数を呼び出して、既存の共有リソースへのビューを開くと、ランタイムは D3DDDIARG の**hkmresource**メンバー内にあるリソースのカーネルモードハンドルを渡し[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openresource) *Presource*パラメーターが指す openresource 構造体。 ランタイムは、ランタイムがユーザーモードの display ドライバーの[**Createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数を呼び出した後に、このカーネルモードハンドルを以前に作成しました。
 
  
 
-ユーザー モード リソースを破棄する*CreateResource*または*OpenResource* Direct3D ランタイムを作成では、ユーザー モード ドライバー リソース ハンドルを渡します、 *hResource*ユーザー モードのディスプレイ ドライバーの呼び出しでパラメーター [ **DestroyResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyresource)関数。 ユーザー モードのディスプレイ ドライバーがユーザー モードのランタイム リソース ハンドルを渡す、カーネル モードのリソース ハンドルとそのすべてのユーザー モード リソースに関連付けられている割り当てを解放する、 **hResource** のメンバー[**D3DDDICB\_DEALLOCATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_deallocate)構造体、 *pData*への呼び出しでパラメーターが指す、 [ *pfnDeallocateCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)関数。
+*Createresource*または*openresource*で作成されたユーザーモードリソースを破棄するために、Direct3D ランタイムは、ユーザーモードの表示ドライバーの[**Destroyresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyresource)関数の呼び出しで*hresource*パラメーターにユーザーモードドライバーリソースハンドルを渡します。 カーネルモードのリソースハンドルと、ユーザーモードのリソースに関連付けられているすべての割り当てを解放するために、ユーザーモードの表示ドライバーは、 [ **\_D3DDDICB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_deallocate)の**hresource**メンバー内のユーザーモードのランタイムリソースハンドルを渡します。このリソースハンドルは、 [*Pfndeallocatecb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)関数への呼び出しで、 *pData*パラメーターが指す構造体です。
 
-ユーザー モードのディスプレイ ドライバーが作成し、リソースを破棄するときは、次の項目を考慮してください。
+ユーザーモードのディスプレイドライバーによってリソースが作成および破棄される場合は、次の点を考慮してください。
 
--   共有リソースへの応答でユーザー モードのディスプレイ ドライバーを作成する割り当て (への応答は、 [ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)を呼び出し、 **SharedResource**ビット フィールドのフラグ設定、**フラグ**のメンバー [ **D3DDDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource))、ドライバーを割り当てる必要があります以外**NULL**値を**hResource**のメンバー [ **D3DDDICB\_ALLOCATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)します。
+-   ユーザーモード表示ドライバーが共有リソースへの応答として作成する割り当ての場合 (つまり、D3DDDIARG の**Flags**メンバーに**sharedresource**ビットフィールドフラグが設定された[**createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)呼び出しへの応答) [ **\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource))。ドライバーは、D3DDDICB の**hresource**メンバーに対して**NULL**以外の値を割り当てる必要があります。[**割り当て\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)です。
 
--   非共有リソースへの応答でユーザー モードのディスプレイ ドライバーを作成する割り当て、ドライバーは必要ありませんを割り当てる以外に**NULL**値を**hResource** D3DDDICB のメンバー\_割り当て。 場合、ドライバーを割り当てる**NULL**に**hResource**割り当ては、デバイスとしない、特定のリソース (およびカーネル モードのリソース ハンドル) に関連付けられました。 ただし、この割り当ては本当に、リソースに関係する場合、ドライバーはそのリソースを割り当てを関連付ける必要があります。
-    **注**  ユーザー モード ドライバーのセットを表示する場合にのみ、カーネル モードのリソース ハンドルが作成された、 **hResource** D3DDDICB のメンバー\_ユーザー モードのランタイムのリソースへの配賦を処理する、ドライバーから受信した、 **hResource**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体への呼び出しで[ **CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)します。
+-   共有されていないリソースへの応答としてユーザーモード表示ドライバーによって作成される割り当ての場合、ドライバーは、D3DDDICB\_割り当ての**Hresource**メンバーに**NULL**以外の値を割り当てる必要はありません。 ドライバーが**Hresource**に**NULL**を割り当てる場合、割り当ては特定のリソース (およびカーネルモードのリソースハンドル) ではなく、デバイスに関連付けられます。 ただし、割り当てがリソースに実際に関係している場合、ドライバーは割り当てをそのリソースに関連付けます。
+    カーネルモードのリソースハンドルは、ユーザーモードの表示ドライバーで D3DDDICB の**Hresource**メンバーが設定されている場合にのみ作成されます。これは、 [**D3DDDIARG\_createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体の**Hresource**メンバーから、 [**createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)への呼び出しで受信したドライバーが、ユーザーモードのランタイムリソースハンドルに割り当て\_ます **。  **
 
      
 
--   ときに[ **DestroyResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyresource)と呼ばれる、ユーザー モードを非共有リソースを破棄するには、ユーザー モードのディスプレイ ドライバーが呼び出すことができます[ *pfnDeallocateCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)で、 **hResource**のメンバー [ **D3DDDICB\_DEALLOCATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_deallocate)設定**NULL**場合にのみ、ドライバーでは、リソースに割り当てを関連付けられていることはありません。 ドライバーを呼び出す必要がある場合は、ユーザー モードのディスプレイ ドライバーには、リソースに割り当てが関連付けられている、 **pfnDeallocateCb**で、 **hResource** D3DDDICB のメンバー\_DEALLOCATE 非-に設定**NULL**値。 それ以外の場合、メモリ リークが発生します。
+-   共有されていないユーザーモードリソースを破棄するために[**Destroyresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyresource)が呼び出されると、ユーザーモード表示ドライバーは、 [ **\_D3DDDICB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_deallocate)の**Hresource**メンバーと共に[*pfndeallocatecb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)を呼び出すことができます。この場合、ドライバーがリソースに割り当てられていない場合にのみ、割り当てが**NULL**に設定されます。 ユーザーモードでリソースに関連付けられている割り当てを表示する場合、ドライバーは\_D3DDDICB の**Hresource**メンバーを**NULL**以外の値に設定して、 **Pfndeallocatecb**を呼び出す必要があります。それ以外の場合は、メモリリークが発生します。
 
  
 

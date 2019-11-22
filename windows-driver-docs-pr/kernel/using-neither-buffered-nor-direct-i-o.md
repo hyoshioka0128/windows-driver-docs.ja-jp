@@ -3,17 +3,17 @@ title: バッファー付き I/O とダイレクト I/O のどちらも使用し
 description: バッファー付き I/O とダイレクト I/O のどちらも使用しない
 ms.assetid: e85af2e0-e532-47ca-918e-087e7aff859e
 keywords:
-- バッファー WDK の I/O バッファーもダイレクト I/O
-- データ バッファーの WDK I/O、バッファーもダイレクト I/O
-- バッファーも直接 I/O WDK カーネル
+- WDK i/o をバッファーします。バッファーも直接 i/o もありません。
+- データバッファー WDK i/o (バッファーも直接 i/o もありません)
+- バッファーも直接 i/o もない WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 775518a5a4e41faeab385d281fee24a099d04f0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5a962faa7b874494e9c54b4d562ef8b029ca10f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381612"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838351"
 ---
 # <a name="using-neither-buffered-nor-direct-io"></a>バッファー付き I/O とダイレクト I/O のどちらも使用しない
 
@@ -21,26 +21,26 @@ ms.locfileid: "67381612"
 
 
 
-バッファーも直接 I/O ドライバーを使用している場合、I/O マネージャー元のユーザー スペースの仮想アドレスで渡します Irp がドライバーに送信します。 これらのバッファーを安全にアクセスするには、呼び出し元のスレッドのコンテキストで、ドライバーを実行する必要があります。 通常、そのため、fsd に対して表示されるなどの最上位レベル ドライバー メソッド使用できますこのバッファーにアクセスするため。
+ドライバーがバッファーも直接 i/o も使用していない場合、i/o マネージャーは、ドライバーに送信される Irp 内の元のユーザー領域の仮想アドレスを渡します。 これらのバッファーに安全にアクセスするには、呼び出し元のスレッドのコンテキストでドライバーが実行されている必要があります。 そのため、通常は、FSDs などの最上位レベルのドライバーのみが、このメソッドを使用してバッファーにアクセスできます。
 
-中級以上の最下位レベルのドライバーは、この条件を満たす常にことはできません。 たとえば、要求元のスレッドが I/O 要求の完了を待機している場合、または場合より高度なドライバー上に構築された、中級以上の最下位レベルのドライバー、下位レベルのドライバーのルーチンは、要求元のスレッドのコンテキストで呼び出される可能性がありますが。
+中間または最下位レベルのドライバーは、常にこの条件を満たすことはできません。 たとえば、要求元のスレッドが i/o 要求の完了を待機している場合、または上位レベルのドライバーが中間レベルまたは最下位のドライバーを中心としている場合、下位レベルのドライバーのルーチンは、要求元のスレッドのコンテキストでは呼び出されない可能性があります。
 
-I/O マネージャーは、I/O 操作がバッファーもダイレクト I/O を次のように使用しているかを決定します。
+I/o マネージャーは、次のように、i/o 操作がバッファリングされていないか、または直接 i/o を使用していると判断します。
 
--   [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求どちらの操作を行います\_バッファーに格納された\_IO も DO\_直接\_で IO が設定されて、**フラグ**のメンバー、 [**デバイス\_オブジェクト** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+-   [**Irp\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)および[**irp\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求では、バッファー\_i/o も\_直接\_io も、[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)構造の**Flags**メンバーで設定されません。\_ 詳細については、「[デバイスオブジェクトの初期化](initializing-a-device-object.md)」を参照してください。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求、IOCTL コードの値には、メソッドが含まれています。\_どちらとして、 *TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+-   [**Irp\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[**irp\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求の場合、IOCTL コードの値には*transfertype*値としてのメソッド\_含まれません。IOCTL 値。 詳細については、「 [I/o 制御コードの定義](defining-i-o-control-codes.md)」を参照してください。
 
-ドライバーでは、バッファーもダイレクト I/O を使用して、I/O 操作を指定する IRP を受信すると、次の操作する必要があります。
+ドライバーが、バッファリングされていない i/o 操作を指定する IRP を受信した場合は、次の操作を行う必要があります。
 
-1.  ユーザー バッファーのアドレス範囲の有効性を確認し、確認するかどうか、適切な読み取りまたは書き込みアクセスは許可されてを使用して、 [ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)ルーチンをサポートします。 ユーザー スレッドは、ドライバーは、メモリへのアクセス中に、バッファーのアクセス権を変更できないように、ドライバーは、ドライバーが指定した例外ハンドラー内のバッファーのアドレス範囲へのアクセスを囲む必要があります。 プローブでは、例外が発生した場合、ドライバーはエラーを返す必要があります。 ドライバーは、I/O 要求を行ったスレッドのコンテキスト内でこれらのルーチンを呼び出す必要があります。そのためより高度なドライバーだけでは、このタスクを実行できます。
+1.  ユーザーバッファーのアドレス範囲が有効であることを確認し、 [**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)および[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)サポートルーチンを使用して、適切な読み取りまたは書き込みアクセスが許可されているかどうかを確認します。 ドライバーが提供する例外ハンドラー内で、バッファーのアドレス範囲へのアクセスを囲む必要があります。これにより、ドライバーがメモリにアクセスしている間に、ユーザースレッドがバッファーのアクセス権を変更できなくなります。 プローブが例外を発生させた場合、ドライバーはエラーを返します。 ドライバーは、i/o 要求を行ったスレッドのコンテキスト内でこれらのルーチンを呼び出す必要があります。そのため、このタスクを実行できるのは、上位レベルのドライバーだけです。
 
-2.  次の方法のいずれかでバッファーとメモリの操作を管理します。
-    -   バッファー内の I/O を使用するドライバーは、I/O マネージャーのように、独自のダブル バッファリングの操作を実行します。 詳細については、次を参照してください。[を使用してバッファー I/O](using-buffered-i-o.md)します。
-    -   独自の MDLs を作成し、I/O マネージャーがダイレクト I/O を使用するドライバーに対しては、メモリ マネージャーのサポートのルーチンを呼び出すことにより、バッファーをロックダウンします。 詳細については、次を参照してください。[を使用して直接 I/O](using-direct-i-o.md)します。
-    -   呼び出し元のスレッドのコンテキストで直接ユーザー バッファー上のすべての必要な操作を実行します。 場合は、ドライバーは、メモリへのアクセス中に、バッファーのアクセス権またはバッファー内のデータのいずれかをユーザー スレッドが変更、ドライバーは、ドライバーが指定した例外ハンドラー内でバッファーへのアクセスをラップする必要があります。 詳細については、次を参照してください。[例外処理](handling-exceptions.md)します。
+2.  バッファーとメモリ操作は、次のいずれかの方法で管理します。
+    -   I/o マネージャーがバッファー i/o を使用するドライバーに対して実行するので、独自のダブルバッファリング操作を実行します。 詳細については、「[バッファー i/o の使用](using-buffered-i-o.md)」を参照してください。
+    -   I/o マネージャーが直接 i/o を使用するドライバーに対して行うように、メモリマネージャーのサポートルーチンを呼び出すことによって、独自の MDLs を作成し、バッファーをロックダウンします。 詳細については、「 [Direct i/o の使用](using-direct-i-o.md)」を参照してください。
+    -   ユーザーバッファーに対して必要なすべての操作を、呼び出し元のスレッドのコンテキストで直接実行します。 ドライバーが提供する例外ハンドラー内でバッファーへのアクセスをラップする必要があります。これは、ユーザースレッドが、ドライバーがメモリにアクセスしている間にバッファーのアクセス権またはバッファー内のデータを変更した場合に発生します。 詳細については、「[例外の処理](handling-exceptions.md)」を参照してください。
 
-実際には、ドライバーする必要があります IRP あたりごとに呼び出し元のスレッドのコンテキストでは、バッファー内の I/O、ダイレクト I/O、または I/O を実行するかどうか選び、ユーザー モード スレッドのコンテキストで発生した例外を処理する必要があります。 ドライバーには、独自のユーザー バッファーへのアクセス、ダブル バッファリングの操作および I/O マネージャーがドライバーに対するこれらの操作を処理できるようにすることではなく、必要に応じて、メモリ マッピングを管理する必要があります。
+実際には、ドライバーは、バッファー i/o、ダイレクト i/o、または i/o を呼び出し元スレッドのコンテキストで実行するかどうかを、IRP ごとに選択する必要があり、ユーザーモードスレッドコンテキストで発生する可能性のある例外を処理する必要があります。 ドライバーは、i/o マネージャーがドライバーの操作を処理するのではなく、独自のユーザーバッファーアクセス、ダブルバッファリング操作、およびメモリマッピングを必要に応じて管理する必要があります。
 
  
 

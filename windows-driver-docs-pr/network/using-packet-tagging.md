@@ -4,54 +4,54 @@ description: パケット タグ付けの使用
 ms.assetid: a151256b-d69f-4abb-bf68-644f157dfdd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b87cfd5336ae8ac3d1b8c6cce9eeb66107f345d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe6218d4bb52bb21a042c5a4162035482346af26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371775"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842979"
 ---
 # <a name="using-packet-tagging"></a>パケット タグ付けの使用
 
 
-コールアウト ドライバーは、関心のあるパケットをタグ付けし、タグ付きパケットに発生するイベントの通知を受信できます。 Windows 7 および Windows の以降のバージョンでは、パケットがタグ付けがサポートされています。
+コールアウトドライバーは、関心のあるパケットにタグを付け、タグ付けされたパケットに発生するイベントの通知を受け取ることができます。 パケットタグ付けは、windows 7 以降のバージョンの Windows でサポートされています。
 
-パケットがタグ付けを使用する、コールアウト ドライバーを実装する必要があります、 [ *FWPS\_NET\_バッファー\_一覧\_通知\_FN0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)または[*FWPS\_NET\_バッファー\_一覧\_通知\_FN1* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)コールバック関数。 この関数は、すべてのタグ付きパケットのステータス通知に表示されます。 コールアウト ドライバーが、特別なコンテキスト タグを呼び出すことによって取得する必要があります前に、個々 のパケットをタグ付けすることができます、 [ **FwpsNetBufferListGetTagForContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistgettagforcontext0)します。 コールアウト ドライバーでは、タグ付きパケットの一部またはすべてを同じコンテキストのタグを使用できます。 たとえば、別のコンテキストのタグを使用してタグ付きパケットの種類とコールアウト ドライバーを区別可能性があります。
+パケットタグ付けを使用するには、コールアウトドライバーは[*fwps\_net\_buffer\_list*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)を実装する必要があります\_通知\_FN0 または[*FWPS\_net\_buffer\_LIST*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)\_\_FN1 callback に通知プロシージャ. この関数は、タグ付けされたパケットのすべての状態通知を受け取ります。 個々のパケットにタグを付けるには、 [**FwpsNetBufferListGetTagForContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistgettagforcontext0)を呼び出して、コールアウトドライバーが特別なコンテキストタグを取得する必要があります。 コールアウトドライバーは、タグ付けされたパケットの一部またはすべてに対して同じコンテキストタグを使用できます。 たとえば、コールアウトドライバーは、異なるコンテキストタグを使用して、タグ付けされたパケットの種類を区別する場合があります。
 
-タグをパケット、コールアウト ドライバーの使用に[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 コールアウト ドライバーへの呼び出しは、 [ **FwpsNetBufferListAssociateContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0)タグを個々 に**NET\_バッファー\_一覧**構造体。 コールアウト ドライバーがパケットを関連付けますコンテキストは、任意の符号なし 64 ビット値です。 イベントがトリガーされたときに、 [ *FWPS\_NET\_バッファー\_一覧\_通知\_FN0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)または[ *FWPS\_NET\_バッファー\_一覧\_通知\_FN1* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)コールアウト ドライバーが実行できるように、コールバックが入力パラメーターとしてコンテキストを渡します個々 のタグ付きパケットを識別します。 コンテキストの使用し、フィルター処理エンジンによって評価されます。 のみ渡されますコールバックに使用するため、コールアウト ドライバーによって。
+パケットにタグを付けるために、コールアウトドライバーは[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体を使用します。 コールアウトドライバーは、 [**FwpsNetBufferListAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0)を呼び出して個々の**NET\_BUFFER\_LIST**構造体にタグを付けます。 コールアウトドライバーによってパケットに関連付けられるコンテキストは、任意の符号なし64ビット値です。 イベントがトリガーされると、 [*fwps\_net\_buffer\_list\_notify\_FN0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)または[*FWPS\_net\_buffer\_list\_通知\_FN1*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1) callback は、コンテキストをとして渡します。入力パラメーター。コールアウトドライバーが個別のタグ付きパケットを識別できるようにします。 コンテキストは、フィルター処理エンジンによって使用または評価されません。 コールバックに渡されるのは、コールアウトドライバーによって使用される場合だけです。
 
-パケットがスタックを離れるときにコンテキストがタグ付きパケットから自動的に削除されます。 ただし、パケット、TCP/IP スタックを入力しない場合などの場合は、NDIS フィルター ドライバーの — コンテキストは呼び出すことによって手動で削除する必要があります[ **FwpsNetBufferListRemoveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)で*netBufferList*パラメーターに設定**NULL**します。
+パケットがスタックを離れると、コンテキストはタグ付きパケットから自動的に削除されます。 ただし、パケットが TCP/IP スタックに入力されない場合 (たとえば、NDIS フィルタードライバーの場合)、 *netBufferList*パラメーターを**NULL**に設定して[**FwpsNetBufferListRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)を呼び出すことによって、コンテキストを手動で削除する必要があります。
 
-コンテキストを呼び出すことで削除できる吹き出しは、早期にタグ付けの操作を中止する必要がある場合、 [ **FwpsNetBufferListRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)します。 一般に、コンテキストを削除するトリガーを**FWPS\_NET\_バッファー\_一覧\_コンテキスト\_から削除された**イベント。 トリガーできるイベントの詳細については、次を参照してください、 [ **FWPS\_NET\_バッファー\_一覧\_イベント\_TYPE0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_net_buffer_list_event_type0_) 。列挙体です。 イベントが発生しない場合によっては、パケットことはありませんが入ったとき、TCP/IP などの処理をスタックします。
+コールアウトでタグ付け操作を早期に中止する必要がある場合は、 [**FwpsNetBufferListRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)を呼び出すことによってコンテキストを削除できます。 コンテキストを削除すると、通常は**Fwps\_NET\_BUFFER\_LIST\_context\_削除さ**れたイベントがトリガーされます。 トリガーできるイベントの詳細については、 [**Fwps\_NET\_BUFFER\_LIST\_EVENT\_TYPE0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_net_buffer_list_event_type0_)列挙体を参照してください。 場合によっては、パケットが処理のために TCP/IP スタックに入っていないなど、イベントがトリガーされないことがあります。
 
-タグ付きパケットを複製すると、コールアウト ドライバーが移動または複製パケットをコンテキストにコピーできます。 コールアウト ドライバーを呼び出す必要があります (複製) の場合、コンテキストに移動する[ **FwpsNetBufferListRetrieveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)で、 *removeContext* にパラメーターが設定**TRUE**します。 コンテキストは、新しいパケットを関連付けることができます。 (重複) の場合、コンテキストをコピーするためのプロセスは、同じことを除いて、 *removeContext*パラメーターの**FwpsNetBufferListRetrieveContext0**に設定する必要があります**FALSE**.
+タグ付けされたパケットが複製されると、コールアウトドライバーは、そのコンテキストを複製パケットに移動またはコピーできます。 コンテキストを移動するには (複製の場合)、コールアウトドライバーは*Removecontext*パラメーターを**TRUE**に設定して[**FwpsNetBufferListRetrieveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)を呼び出す必要があります。 その後、コンテキストを新しいパケットに関連付けることができます。 コンテキストをコピーするプロセス (重複の場合) は、 **FwpsNetBufferListRetrieveContext0**の*Removecontext*パラメーターを**FALSE**に設定する必要がある点を除いて同じです。
 
-TCP/IP のレイヤーからタグ付きパケットから取得できる、 [NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。 この逆も当てはまります。 パケットがタグ付けは、パケットが示されていないデータ セグメントを除くのストリーム レイヤーから使用できません。
+TCP/IP レイヤーからタグ付けされたパケットは、 [NDIS フィルタードライバー](ndis-filter-drivers2.md)から取得できます。 この逆も当てはまります。 パケットタグ付けは、データセグメントを除くパケットが指定されていないストリームレイヤーからは使用できません。
 
-コールアウト ドライバーは、外側のパケットのコンテキストを取得できます、 [ *FWPS\_NET\_バッファー\_一覧\_通知\_FN0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)または[ *FWPS\_NET\_バッファー\_一覧\_通知\_FN1* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)関数を呼び出して[ **FwpsNetBufferListRetrieveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)します。 コールアウト ドライバーがコンテキストを取得する通常、その[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールバック。
+コールアウトドライバは、 [*fwps\_net\_buffer\_リスト*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)の外部にあるパケットのコンテキストを取得し\_\_FN0 または[*FWPS\_net\_buffer\_list\_通知\_通知*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1) [**FwpsNetBufferListRetrieveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)を呼び出して関数を FN1 します。 通常、コールアウトドライバーは、その[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)によってコンテキストを取得します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Classid (場合)](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[**FWPS\_NET\_バッファー\_一覧\_イベント\_TYPE0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_net_buffer_list_event_type0_)
+[**FWPS\_NET\_BUFFER\_LIST\_イベント\_TYPE0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_net_buffer_list_event_type0_)
 
-[*FWPS\_NET\_バッファー\_一覧\_通知\_FN0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)
+[*FWPS\_NET\_BUFFER\_LIST\_通知\_FN0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0)
 
-[*FWPS\_NET\_バッファー\_一覧\_通知\_FN1*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)
+[*FWPS\_NET\_BUFFER\_LIST\_通知\_FN1*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1)
 
-[**FwpsNetBufferListAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0)
+[**FwpsNetBufferListAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0)
 
-[**FwpsNetBufferListGetTagForContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistgettagforcontext0)
+[**FwpsNetBufferListGetTagForContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistgettagforcontext0)
 
-[**FwpsNetBufferListRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)
+[**FwpsNetBufferListRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0)
 
-[**FwpsNetBufferListRetrieveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)
+[**FwpsNetBufferListRetrieveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)
 
-[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
 
-[NDIS フィルター ドライバー](ndis-filter-drivers2.md)
+[NDIS フィルタードライバー](ndis-filter-drivers2.md)
 
  
 

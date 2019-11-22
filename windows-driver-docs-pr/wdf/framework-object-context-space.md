@@ -3,17 +3,17 @@ title: フレームワーク オブジェクトのコンテキスト領域
 description: フレームワーク オブジェクトのコンテキスト領域
 ms.assetid: 21a46e04-2330-4a3d-ba72-c04295bfbb3c
 keywords:
-- framework オブジェクト WDK KMDF、コンテキストの領域
-- コンテキスト領域 WDK KMDF
-- オブジェクト コンテキスト空間 WDK KMDF
+- フレームワークオブジェクト WDK KMDF、コンテキスト空間
+- コンテキスト空間 WDK KMDF
+- オブジェクトコンテキスト空間 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe473ae62b35430a65c7c83a0eb0d1d10f00c5d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af45e878f07d08e7b7f5c190870d06b901216498
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382872"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845303"
 ---
 # <a name="framework-object-context-space"></a>フレームワーク オブジェクトのコンテキスト領域
 
@@ -21,60 +21,60 @@ ms.locfileid: "67382872"
 
 
 
-*オブジェクト コンテキスト領域*余分な非ページング、メモリ容量、ドライバーの割り当てとオブジェクトに割り当てることができます。 各フレームワーク ベースのドライバーがドライバーの受信または作成するすべての framework オブジェクトの 1 つまたは複数のオブジェクト固有のコンテキストのスペースを作成できます。
+*オブジェクトコンテキスト空間*は、ドライバーが割り当ててオブジェクトに割り当てることができる、追加の非ページングのメモリ領域です。 各フレームワークベースのドライバーは、ドライバーが受信または作成するすべてのフレームワークオブジェクトに対して、1つまたは複数のオブジェクト固有のコンテキストスペースを作成できます。
 
-フレームワーク ベースのドライバーは、値またはポインターの場合、データが所属するオブジェクトのコンテキスト空間内のいずれか、すべてのオブジェクトに固有のデータを格納する必要があります。
+フレームワークベースのドライバーは、データが属するオブジェクトのコンテキスト空間内で、オブジェクト固有のすべてのデータを値またはポインターによって格納する必要があります。
 
-たとえば、USB デバイス用のドライバーでは、そのフレームワークのデバイス オブジェクトのコンテキストの領域を作成します。 コンテキストの領域で、ドライバーは、デバイスのとしてこのようなデバイスに固有の情報を格納可能性があります[ **USB\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)と[ **USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)構造体とを識別するハンドルを[コレクション オブジェクト](framework-object-collections.md)デバイス インターフェイスのパイプを表します。
+たとえば、USB デバイスのドライバーによって、フレームワークのデバイスオブジェクトのコンテキスト空間が作成する場合があります。 コンテキスト空間では、デバイスの[**usb\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)と[**usb\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)の構造体、デバイスインターフェイスのパイプを表す[コレクションオブジェクト](framework-object-collections.md)へのハンドルといった、デバイス固有の情報がドライバーに格納される場合があります。
 
-フレームワークは渡さない framework オブジェクト 1 つのドライバーから、ために 2 つのドライバーの間でデータを渡すオブジェクトのコンテキストの領域を使用することはできません。
+フレームワークは、あるドライバーから別のドライバーにフレームワークオブジェクトを渡すのではなく、オブジェクトのコンテキスト空間を使用して2つのドライバー間でデータを渡すことはできません。
 
-オブジェクトのコンテキストの領域を定義するには、1 つまたは複数の構造を作成する必要があります。 各構造体は、別のコンテキストの領域を表します。 ドライバーでは、各構造体メンバーを使用して、特定のオブジェクトに固有の情報を格納します。 さらに、ドライバーが生成するためにフレームワークを求める必要があります、*アクセサー メソッド*の各構造体。 このアクセサー メソッドは、入力としてオブジェクトのハンドルを受け取り、オブジェクトのコンテキストの領域のアドレスを返します。
+オブジェクトのコンテキスト空間を定義するには、1つまたは複数の構造体を作成する必要があります。 各構造体は、個別のコンテキスト空間を表します。 ドライバーは、各構造体メンバーを使用して、オブジェクト固有の情報の一部を格納します。 また、ドライバーは、各構造体の*アクセサーメソッド*を生成するようにフレームワークに要求する必要があります。 このアクセサーメソッドは、入力としてオブジェクトハンドルを受け取り、オブジェクトのコンテキスト空間のアドレスを返します。
 
-たびに、オブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)メソッドは、コンテキストの領域を必要に応じて割り当てます。 省略可能なすべてのオブジェクトの作成方法を受け入れる[ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)入力として構造体します。 この構造体には、コンテキストの空間オブジェクトを割り当てるために、フレームワークですがについて説明します。
+[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)などのオブジェクトの作成方法をドライバーが呼び出すたびに、メソッドは必要に応じてコンテキスト空間を割り当てることができます。 すべてのオブジェクト作成メソッドは、省略可能な[**WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造を入力として受け取ります。 この構造体は、フレームワークがオブジェクトに割り当てるコンテキスト空間を記述します。
 
-ドライバーが、オブジェクトの作成メソッドを呼び出した後、オブジェクトに追加のコンテキストの領域を追加するにはドライバーを呼び出すことができます、 [ **WdfObjectAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)メソッド--などのオブジェクトを作成します。メソッドは、 [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)入力として構造体します。
+ドライバーがオブジェクトの作成メソッドを呼び出した後、オブジェクトにコンテキスト空間を追加するには、ドライバーは[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)メソッドを呼び出すことができます。このメソッドは、オブジェクトの作成メソッドと同様に、 [**WDF\_オブジェクトを受け取り\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)入力としての属性の構造。
 
-フレームワークは、オブジェクト コンテキストの領域を割り当てますときに、も 0 に初期化コンテキスト領域。
+フレームワークは、オブジェクトのコンテキスト空間を割り当てるときに、コンテキスト空間をゼロ初期化します。
 
-フレームワークまたはドライバー フレームワーク オブジェクトを削除したときに、フレームワークはすべてのオブジェクトのコンテキストの領域を削除します。
+フレームワークまたはドライバーがフレームワークオブジェクトを削除すると、フレームワークによって、オブジェクトのすべてのコンテキスト空間が削除されます。
 
-ドライバー、ドライバーを提供する必要があります、オブジェクトの作成時に、ドライバーによって割り当てられるバッファーへのポインターを格納するコンテキストの領域を使用している場合、 [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)の割り当てを解除する関数、オブジェクトが削除された場合のバッファー。
+ドライバーがオブジェクトの作成時にドライバーによって割り当てられるバッファーへのポインターを格納するためにコンテキスト空間を使用する場合、ドライバーは、オブジェクトが削除されたときにバッファーを解放する[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)関数を提供する必要があります。
 
-オブジェクトのコンテキストの領域の構造とをドライバーで作成されるオブジェクトのアクセサー メソッドを定義するには、ドライバーは、次の手順を使用する必要があります。
+ドライバーが作成するオブジェクトのコンテキスト空間構造とアクセサーメソッドを定義するには、ドライバーで次の手順を実行する必要があります。
 
-1.  保存するデータを記述する構造体を定義します。 たとえば、ドライバーのデバイス オブジェクトのコンテキスト データを作成する場合は、ドライバー定義 MY と呼ばれる構造体\_デバイス\_コンテキスト。
+1.  格納するデータを記述する構造体を定義します。 たとえば、ドライバーのデバイスオブジェクトのコンテキストデータを作成する場合は、ドライバーが "MY\_DEVICE\_CONTEXT" という構造を定義することがあります。
 
-2.  いずれかを使用して、 [ **WDF\_DECLARE\_コンテキスト\_型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type)マクロまたは[ **WDF\_DECLARE\_コンテキスト\_型\_WITH\_名前**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)マクロ。 これらのマクロの両方を以下に示します。
+2.  [**WDF\_declare\_context\_type**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type)マクロまたは\_WDF を使用して\_NAME マクロで\_\_[**型\_を宣言**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)します。 これらのマクロはどちらも次のことを行います。
 
-    -   作成し、初期化、 [ **WDF\_オブジェクト\_コンテキスト\_型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_context_type_info)構造体。
-    -   オブジェクトのコンテキストの領域にアクセスするには、ドライバーを後で使用するアクセサー メソッドを定義します。 アクセサー メソッドの戻り値は、オブジェクトのコンテキストの領域へのポインターです。
+    -   [**コンテキスト\_型\_INFO 構造体\_、WDF\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_context_type_info)を作成し、初期化します。
+    -   後でオブジェクトのコンテキスト空間にアクセスするためにドライバーが使用するアクセサーメソッドを定義します。 アクセサーメソッドの戻り値は、オブジェクトのコンテキスト空間へのポインターです。
 
-    WDF\_DECLARE\_コンテキスト\_マクロは、構造体の名前からアクセサー メソッドの名前を作成します。 たとえば、コンテキスト構造体の名前は MY\_デバイス\_コンテキスト、マクロを作成するアクセサー メソッドの名前は**WdfObjectGet\_MY\_デバイス\_コンテキスト**.
+    WDF\_DECLARE\_CONTEXT\_TYPE マクロは、構造体の名前からアクセサーメソッドの名前を作成します。 たとえば、コンテキスト構造の名前が MY\_DEVICE\_CONTEXT の場合、マクロは**Wdfobjectget\_my\_DEVICE\_context**という名前のアクセサーメソッドを作成します。
 
-    WDF\_DECLARE\_コンテキスト\_型\_WITH\_名マクロを使用して、アクセサー メソッドの名前を指定できます。 たとえば、指定する場合があります**GetMyDeviceContext**デバイス オブジェクトのコンテキストのアクセサー メソッドの名前として。
+    WDF\_は、\_NAME マクロを使用して\_CONTEXT\_TYPE\_を宣言することで、アクセサーメソッドの名前を指定できます。 たとえば、デバイスオブジェクトのコンテキストアクセサーメソッドの名前として、 **Getmydevicecontext**を指定することができます。
 
-3.  呼び出す[ **WDF\_オブジェクト\_属性\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)オブジェクトの初期化に[ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
+3.  [**WDF\_オブジェクト\_\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)を呼び出して、オブジェクトの[**WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体を初期化します。
 
-4.  使用して、 [ **WDF\_オブジェクト\_属性\_設定\_コンテキスト\_型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-set-context-type)マクロを設定する、 **ContextTypeInfo** 、WDF のメンバー\_オブジェクト\_属性の構造体、WDF のアドレスに\_オブジェクト\_コンテキスト\_型\_情報構造体。
+4.  [**WDF\_オブジェクト\_属性\_設定\_CONTEXT\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-set-context-type)マクロを使用して、WDF\_オブジェクト\_属性構造の**CONTEXTTYPEINFO**メンバーを WDF\_オブジェクトのアドレスに設定します。\_コンテキスト\_型\_INFO 構造体です。
 
-5.  など、オブジェクトの作成メソッドを呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+5.  [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)などのオブジェクトの作成メソッドを呼び出します。
 
-ドライバーを呼び出すことができます、ドライバーには、オブジェクトが作成、 [ **WdfObjectAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)いつでも、オブジェクトに追加のコンテキストの領域を追加します。
+ドライバーは、オブジェクトを作成した後、いつでも[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)を呼び出して、オブジェクトにコンテキスト空間を追加できます。
 
-手順 1. および 2. では、グローバル データ構造を定義し、ドライバーから呼び出し可能なルーチンを作成、ためには、ドライバーは--ヘッダー ファイルでは通常のグローバルなデータを宣言するドライバーの領域で手順を完了する必要があります。 ドライバーのルーチン内から、これらの手順を完了しない必要があります。
+手順 1. と 2. では、グローバルデータ構造を定義し、ドライバー呼び出し可能ルーチンを作成するため、ドライバーは、グローバルデータを宣言するドライバーの領域 (通常はヘッダーファイル) でこれらの手順を完了する必要があります。 これらの手順は、ドライバーのルーチン内からは完了できません。
 
-ドライバーは、3、4、およびなど、オブジェクトを作成するドライバー ルーチン内から 5 の手順を完了する必要があります、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+ドライバーは、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数などのオブジェクトを作成するドライバールーチン内から、手順3、4、および5を完了する必要があります。
 
-フレームワークには、2 種類のドライバーに代わって--framework 要求オブジェクトと framework ファイル オブジェクト - のオブジェクトを作成できます。 ドライバーは、呼び出すことによってこれらのオブジェクト コンテキストの領域を登録できます[ **WdfDeviceInitSetRequestAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)と[ **WdfDeviceInitSetFileObjectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)、それぞれします。 ドライバーを呼び出すことも[ **WdfObjectAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)にこれらのオブジェクトをコンテキストの領域を割り当てられません。
+フレームワークでは、ドライバーに代わって、フレームワークの要求オブジェクトとフレームワークファイルオブジェクトという2種類のオブジェクトを作成できます。 ドライバーは、 [**Wdfdeviceinitsetrequestattributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)と[**Wdfdeviceinitsetfileobjectconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)をそれぞれ呼び出して、これらのオブジェクトのコンテキスト空間を登録できます。 また、ドライバーは[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)を呼び出して、これらのオブジェクトのコンテキスト空間を割り当てることもできます。
 
-オブジェクトが作成された後、ドライバーは、次の手法のいずれかを使用して、オブジェクトのコンテキストの領域へのポインターを取得できます。
+オブジェクトが作成された後、ドライバーは、次のいずれかの方法を使用して、オブジェクトのコンテキスト空間へのポインターを取得できます。
 
--   いずれかを使用して、前の手順では、手順 2. で作成したコンテキストのアクセサー メソッドを呼び出して、 [ **WDF\_DECLARE\_コンテキスト\_型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type)または、 [**WDF\_DECLARE\_コンテキスト\_型\_WITH\_名前**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)マクロ。
+-   前の手順の手順2で作成したコンテキストアクセサーメソッドを呼び出します。これには、 [**WDF\_declare\_context\_type**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type)または WDF を使用します。これにより、\_の\_[**型\_\_宣言\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)マクロ。
 
--   呼び出す[ **WdfObjectGetTypedContext**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectgettypedcontext)、ドライバーによって定義されたコンテキストの構造の名前を指定します。
+-   [**WdfObjectGetTypedContext**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectgettypedcontext)を呼び出して、ドライバーで定義されたコンテキスト構造の名前を指定します。
 
-呼び出してコンテキスト領域が属するオブジェクトを見つけることができます、ドライバーに領域のコンテキスト ポインターがある場合は、 [ **WdfObjectContextGetObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectcontextgetobject)します。
+ドライバーにコンテキスト空間ポインターがある場合は、 [**Wdfobjectcontextgetobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectcontextgetobject)を呼び出すことによって、コンテキスト空間が属しているオブジェクトを見つけることができます。
 
  
 

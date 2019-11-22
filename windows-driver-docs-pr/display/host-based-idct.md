@@ -3,21 +3,21 @@ title: ホストベース IDCT
 description: ホストベース IDCT
 ms.assetid: 9f44e734-8cbc-4317-bd72-66d4ac7cd4de
 keywords:
-- マクロ ブロック WDK DirectX va なので、IDCT
+- マクロが WDK DirectX VA、IDCT をブロックする
 - 低レベルの IDCT WDK DirectX VA
-- ホスト ベース IDCT WDK DirectX VA
-- 逆コサイン不連続変換 WDK DirectX VA
+- ホストベースの IDCT WDK DirectX VA
+- 逆余弦変換-WDK DirectX VA
 - IDCT WDK DirectX VA
-- 16 ビットのホスト ベース IDCT WDK DirectX VA
-- 8-8 オーバーフロー ホストベース IDCT WDK DirectX VA
+- 16ビットホストベースの IDCT WDK DirectX VA
+- 8-8 オーバーフローホストベース IDCT WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d505da2aa4c3729768de28e84442189de43b3bc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d875951e373ed931631077bd0741e1771902751a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380207"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839651"
 ---
 # <a name="host-based-idct"></a>ホストベース IDCT
 
@@ -25,57 +25,57 @@ ms.locfileid: "67380207"
 ## <span id="_host_based_idct"></span><span id="_HOST_BASED_IDCT"></span>
 
 
-IDCT は空間ドメインでの DirectX VA API を介して渡された結果をホストで実行できます。 アクセラレータにホストから、結果を送信するための 2 つのサポートされている方法はあります。16 ビット版と 8-8 オーバーフローします。 **BConfigSpatialResid8**のメンバー、 [ **DXVA\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体を使用する方法を示します。
+IDCT はホスト上で実行され、結果は空間ドメインの DirectX VA API を介して渡されます。 ホストからアクセラレータへの結果の送信には、16ビットと8-8 のオーバーフローの2つのメソッドがサポートされています。 [**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**bConfigSpatialResid8**メンバーは、どのメソッドが使用されているかを示します。
 
-### <a name="span-id16-bithost-basedidctprocessingspanspan-id16-bithost-basedidctprocessingspanspan-id16-bithost-basedidctprocessingspan16-bit-host-based-idct-processing"></a><span id="16-bit_Host-Based_IDCT_Processing"></span><span id="16-bit_host-based_idct_processing"></span><span id="16-BIT_HOST-BASED_IDCT_PROCESSING"></span>16 ビットのホスト ベース IDCT 処理
+### <a name="span-id16-bit_host-based_idct_processingspanspan-id16-bit_host-based_idct_processingspanspan-id16-bit_host-based_idct_processingspan16-bit-host-based-idct-processing"></a><span id="16-bit_Host-Based_IDCT_Processing"></span><span id="16-bit_host-based_idct_processing"></span><span id="16-BIT_HOST-BASED_IDCT_PROCESSING"></span>16ビットホストベースの IDCT 処理
 
-16 ビットのホスト ベース残存違いデコードで使用マクロ ブロックの制御構造は[ **DXVA\_MBctrl\_は\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)と[ **DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)します。
+16ビットホストベースの残差のデコードに使用されるマクロブロック制御構造は[**DXVA\_mbctrl\_I\_hostresiddiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)および[**DXVA\_Mbctrl\_P\_hostresiddiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1).
 
-ドメイン空間残存の違いを 16 ビット メソッドを使用してデータを送信する場合は、16 ビットのデータのブロックが順番に送信されます。 ドメイン空間データの各ブロックは、64 の 16 ビット整数で構成されます。
+16ビット方式を使用して空間ドメインの残留差データを送信する場合、16ビットデータのブロックは順番に送信されます。 空間ドメインデータの各ブロックは、64 16 ビットの整数で構成されます。
 
-場合*BPP*から派生した、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体を 8 よりも大きい 16 ビット メソッドのみを使用できます。 場合、 **bPicIntra**メンバーは、DXVA の\_PictureParameters 構造体が 1 と*BPP*が 8 の場合、8-8 オーバーフロー メソッドを使用します。 場合*IntraMacroblock*がゼロ、16 ビットの残存差サンプルは動き補償の予測値に追加する符号付きの数量として送信されます。 場合*IntraMacroblock*は 1 です。 16 ビットのサンプルを次のように送信されます。
+[**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体から派生した*BPP*が8より大きい場合、16ビットのメソッドのみを使用できます。 DXVA\_ピクチャパラメーター構造体の**b**のメンバーが1で、 *BPP*が8の場合、8-8 overflow メソッドが使用されます。 *IntraMacroblock*がゼロの場合、16ビットの残差のサンプルは、モーション補正予測値に追加される符号付きの数量として送信されます。 *IntraMacroblock*が1の場合、16ビットのサンプルは次のように送信されます。
 
--   場合、 **bConfigIntraResidUnsigned**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体が 1 のサンプルは、符号なし数量として送信されます場合、0 の定数参照の値を基準にします。 たとえば、中程度の灰色を Y = 2 として示されます<sup>(BPP 1)</sup>、Cb = 2<sup>(BPP 1)</sup>、Cr = 2<sup>(BPP 1)</sup>します。
+-   [**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**Bconfigに**よって署名されていないメンバーが1である場合、サンプルは定数参照値0から相対的に符号なしの数量として送信されます。 たとえば、中間レベルの灰色は、Y = 2<sup>(bpp-1)</sup>、Cb = 2<sup>(bpp-1)</sup>、Cr = 2<sup>(bpp-1)</sup>として表されます。
 
--   場合、 **bConfigIntraResidUnsigned**メンバーは、DXVA の\_ConfigPictureDecode 構造が 0 で、サンプルが 2 の符号付きの数量の定数参照の値を基準として送信される<sup>(BPP 1)</sup>. たとえば、中程度の灰色を Y = 0、Cb として示されます 0、Cr の = = 0。
+-   DXVA\_Configピクチャデコード構造体の**Bconfig**メンバーが0の場合、サンプルは、定数参照値 2<sup>(BPP-1)</sup>を基準として、符号付きの数量として送信されます。 たとえば、中間レベルの灰色は Y = 0、Cb = 0、Cr = 0 と表示されます。
 
-データのブロックがスキャンで指定された順序で順番に送信される、 **wPatternCode**の値の最上位ビットから最下位ビットの 1 ビットのマクロ ブロックのコントロール構造体のメンバー。
+データのブロックは、マクロブロックコントロール構造の**Wpattern コード**メンバーをスキャンすることによって指定された順序で順番に送信されます。これにより、最上位ビットから最下位ビットまでの値が1になるビットが返されます。
 
-残存の相違点の値のクリッピングと想定できなし、ホストで実行された場合を除き、 **bConfigSpatialHost8or9Clipping**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体は 1 です。 だけですが、 *BPP*+1 のビットの範囲が、ドメイン空間データをいくつかの出力を十分に表すために必要な[IDCT](low-level-idct-processing-elements.md)実装でない限り、この範囲外の数値が生成されます切り取られます。
+[**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**bConfigSpatialHost8or9Clipping**メンバーが1の場合を除き、残存差の値のクリッピングはホストで実行されていると想定できます。 空間ドメインの相違データを適切に表現するために必要なのは、 *BPP*+ 1 ビット範囲のみですが、一部の[idct](low-level-idct-processing-elements.md)実装の出力では、クリッピングされない限り、この範囲を超えて数値が生成されます。
 
-**注**  アクセラレータは、値の少なくとも 15 ビット範囲を使用する必要があります。 ビデオ コーディング標準は、通常、予測値 (サンプルあたり 8 ビットのビデオでは、9 ビット クリッピング) に追加する前に、difference 値のクリップを指定していますが、この段階でクリッピングは、その結果に影響があるないために、実際に必要なデコード済み出力の画像。 しない限り、このクリッピングが発生すること、想定されませんアクセラレータ ハードウェアで示されているために必要な**bConfigSpatialHost8or9Clipping**メンバーは、DXVA の\_ConfigPictureDecode 構造体が 1 に設定されています。
+アクセラレータは、少なくとも15ビットの値の範囲で動作する必要がある   に**注意**してください。 通常、ビデオコーディング標準では、予測値に追加する前に差の値のクリッピングが指定されていますが (つまり、8ビットのサンプルビデオでは9ビットのクリッピング)、このクリッピングステージは、結果に影響を与えないため、実際には不要です。出力画像をデコードします。 DXVA\_Configピクチャデコード構造体の**bConfigSpatialHost8or9Clipping**メンバーによって示されているように、アクセラレータハードウェアに必要な場合を除き、このクリッピングが発生するとは見なされません。
 
  
 
-### <a name="span-id8-8overflowhost-basedidctprocessingspanspan-id8-8overflowhost-basedidctprocessingspanspan-id8-8overflowhost-basedidctprocessingspan8-8-overflow-host-based-idct-processing"></a><span id="8-8_Overflow_Host-Based_IDCT_Processing_"></span><span id="8-8_overflow_host-based_idct_processing_"></span><span id="8-8_OVERFLOW_HOST-BASED_IDCT_PROCESSING_"></span>8-8 オーバーフロー IDCT のホスト ベースの処理
+### <a name="span-id8-8_overflow_host-based_idct_processing_spanspan-id8-8_overflow_host-based_idct_processing_spanspan-id8-8_overflow_host-based_idct_processing_span8-8-overflow-host-based-idct-processing"></a><span id="8-8_Overflow_Host-Based_IDCT_Processing_"></span><span id="8-8_overflow_host-based_idct_processing_"></span><span id="8-8_OVERFLOW_HOST-BASED_IDCT_PROCESSING_"></span>8-8 オーバーフローホストベースの IDCT 処理
 
-8-8 オーバーフロー残存違いのホスト ベースのデコードで使用するマクロ ブロックの制御構造は[ **DXVA\_MBctrl\_は\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)と[ **DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)します。
+8-8 で使用するマクロブロックコントロール構造体は、 [**DXVA\_mbctrl\_I\_hostresiddiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)および[**DXVA\_Mbctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1).
 
-場合、 *BPP*から派生した変数、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造は、8、8-8 のオーバーフロー ドメイン空間残存違いメソッドがありますこのオプションを使用するとします。 場合、使用する必要が、 **bPicIntra**この構造体のメンバーが 1 と*BPP*は 8 です。 この場合、各ドメイン空間値は、8 ビットのみを使用して表されます。 8-8 のオーバーフロー メソッドを使用してデータを送信するときに、8 ビットのデータのブロックが順番に送信されます。 8 ビット ドメイン空間残存違いデータは、従来のラスター内のデータの値を含む 64 バイトの各ブロックは、(2 番目の行、およびなどの要素の後に、順序の最初の行の要素) の順序をスキャンします。
+[**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体から派生した*BPP*変数が8の場合は、8-8 のオーバーフロー空間ドメイン残留差法を使用できます。 この構造体の**B絵文字**のメンバーが1で、 *BPP*が8の場合は、使用する必要があります。 この場合、各空間ドメインの差の値は、8ビットのみを使用して表されます。 8-8 overflow メソッドを使用してデータを送信する場合、8ビットデータのブロックは順番に送信されます。 8ビットの空間ドメインの残留差データの各ブロックは、64バイトで構成されます。これには、従来のラスタースキャン順序 (最初の行の要素、2番目の行の要素など) のデータ値が含まれます。
 
-場合*IntraMacroblock*マクロ ブロック コントロールのコマンドは、0、8 ビット ドメイン空間残存差サンプルは、加算または減算する符号付きの相違点 (から決定される、 **bConfigResid8Subtraction**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造とサンプルは、最初に、かどうかがブロックまたはオーバーフロー ブロックを渡す)動き補正の予測値を基準にします。
+マクロブロックコントロールコマンドの*IntraMacroblock*がゼロの場合、8ビットの空間ドメインの残余差のサンプルは、モーション補正予測値を基準にして、追加または削除する符号付きの相違 ( [**DXVA\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)の構造体の**bConfigResid8Subtraction**メンバーと、そのサンプルが最初のパスブロックまたはオーバーフローブロックにあるかどうか) を示します。
 
-場合*IntraMacroblock* (ビット 0 で、 **wMBtype**マクロ ブロック構造体のメンバー) は 0、ブロック内のいくつかのピクセルが大きすぎて表す 8 ビットのみを使用して表される差秒8 ビット ドメイン空間残存差サンプルのオーバーフロー ブロックが送信されます。
+*IntraMacroblock* (マクロブロック構造体の**wmbtype**メンバーのビット 0) が0で、ブロック内の一部のピクセルに対して表される差が、8ビットのみを使用して表すには大きすぎる (8 ビット空間ドメインの2番目のオーバーフローブロック)残余差のサンプルが送信されます。
 
-場合*IntraMacroblock* (ビット 0 で、 **wMBtype**マクロ ブロック構造体のメンバー) は 1、8 ビット ドメイン空間残存差サンプルを次のように設定されます。
+*IntraMacroblock* (マクロブロック構造の**wmbtype**メンバーのビット 0) が1の場合、8ビットの空間ドメインの残留差のサンプルは次のように設定されます。
 
--   場合、 **bConfigIntraResidUnsigned**メンバーは、DXVA の\_ConfigPictureDecode 構造体が 1 の場合のサンプルは、8 ビットが 0 の定数参照の値を基準とした符号なし数量として送信されます。 たとえば、中程度の灰色を Y = 2 として示されます<sup>(BPP 1)</sup>、Cb = 2<sup>(BPP 1)</sup>、Cr = 2<sup>(BPP 1)</sup>します。
+-   DXVA\_Configピクチャデコード構造体の**Bconfigに**よって署名されていないメンバーが1である場合、8ビットのサンプルは、定数参照値0から相対的に符号なしの数量として送信されます。 たとえば、中間レベルの灰色は、Y = 2<sup>(bpp-1)</sup>、Cb = 2<sup>(bpp-1)</sup>、Cr = 2<sup>(bpp-1)</sup>として表されます。
 
--   場合、 **bConfigIntraResidUnsigned**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造が 0 で、8 ビットのサンプルは、符号付きの数量として送信されます2 の定数参照の値を基準<sup>(BPP 1)</sup>します。 たとえば、中程度の灰色を Y = 0、Cb として示されます 0、Cr の = = 0。
+-   [**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**Bconfig の sidunsigned**メンバーがゼロの場合、8ビットのサンプルは、定数参照値 2<sup>(BPP-1)</sup>を基準とした符号付きの数量として送信されます。 たとえば、中間レベルの灰色は Y = 0、Cb = 0、Cr = 0 と表示されます。
 
-IntraMacroblock が 1 の場合は、8 ビット オーバーフロー ブロックは送信されません。
+IntraMacroblock が1の場合、8ビットのオーバーフローブロックは送信されません。
 
-データのブロックがスキャンで指定された順序で順番に送信される、 **wPatternCode**から最下位に最上位の 1 の値を持つビットのマクロ ブロック コントロール コマンドのメンバー。 すべての必要な 8 ビット オーバーフロー ブロックが、送信で指定された、 **wPC\_オーバーフロー**マクロ ブロック コントロール コマンドのメンバー。 このようなオーバーフロー ブロックが追加された場合ではなく減算されて、 **bConfigResid8Subtraction**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造1。 各 nonintra マクロ ブロックの 8 ビットの相違点の最初のパスが追加されます。 場合、 **bPicOverflowBlocks**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造は、0 または*IntraMacroblock*マクロ ブロック コントロール コマンドのメンバーは 1、2 番目のパスはありません。 場合**bPicOverflowBlocks**は 1 です*IntraMacroblock*ゼロと**bConfigResid8Subtraction**各 nonintra マクロ ブロックは 1、2 番目のパスの 8 ビットの相違点は、。減算します。 場合**bPicOverflowBlocks**は 1 です*IntraMacroblock*ゼロと**bConfigResid8Subtraction**がゼロの場合は、各 nonintra マクロ ブロックは、8 ビットの相違点の 2 つ目のパス。追加されます。
+データのブロックは、マクロブロックコントロールコマンドの**Wpattern コード**メンバーをスキャンすることによって指定された順序で順番に送信されます。 その後、必要なすべての8ビットオーバーフローブロックが、 **Wpc\_overflow**メンバーによって指定されたとおりにマクロブロックコントロールコマンドによって送信されます。 このようなオーバーフローブロックは加算ではなく減算されます。これは、 [**DXVA\_Configピクチャデコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)構造体の**bConfigResid8Subtraction**メンバーが1である場合に加算されます。 マクロブロック以外の各ブロックについて、8ビットの相違点の最初のパスが追加されます。 [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体の**bPicOverflowBlocks**メンバーがゼロの場合、またはマクロブロックコントロールコマンドの*IntraMacroblock*メンバーが1の場合、2番目のパスはありません。 **BPicOverflowBlocks**が1の場合、 *IntraMacroblock*が0で、 **bConfigResid8Subtraction**が1の場合は、非マクロブロックごとに8ビットの相違の2番目のパスが減算されます。 **BPicOverflowBlocks**が1、 *IntraMacroblock*が0、 **bConfigResid8Subtraction**がゼロの場合は、マクロブロック以外の各ブロックについて8ビットの相違点の2番目のパスが追加されます。
 
-すべてのサンプルは、および対応する 8 ビット オーバーフロー ブロックで、両方の元の 8 ビット ブロックで、0 以外の場合は、次の規則が適用されます。
+元の8ビットブロックと対応する8ビットオーバーフローブロックの両方で、いずれかのサンプルが0以外の場合は、次の規則が適用されます。
 
--   場合**bConfigResid8Subtraction** 0 の場合は、サンプルの符号は両方のブロックで同じである必要があります。
+-   **BConfigResid8Subtraction**が0の場合、両方のブロックでサンプルの符号が同じである必要があります。
 
--   場合**bConfigResid8Subtraction** 1 に設定されて、元の 8 ビット ブロックでサンプルの符号は、対応するオーバーフロー ブロックでサンプルの 1 回の値を負の符号と同じである必要があります。
+-   **BConfigResid8Subtraction**が1の場合、元の8ビットブロックのサンプルの符号は、対応するオーバーフローブロックのサンプルの値の負の1倍の符号と同じである必要があります。
 
-これらの規則は、2 つの各経過した後、結果の 8 ビットのクリッピングと予測の画像に追加するサンプルを使用できます。
+これらの規則により、2つのパスのそれぞれの後に、結果の8ビットのクリッピングでサンプルを予測図に追加できます。
 
-**注**  オーバーフローのブロックと相違点を使用して 8 ビット**bConfigResid8Subtraction**は残余を表すことはできません (オーバーフロー ブロックごとに 2 つの 8 ビットの相違点の追加の結果) を 0 に等しい場合 +255 の値の差。 *IntraMacroblock*は 0 です。 (この方法を表すことができますの差の最大値は、127 + 127 = 254)。これにより、8-8 オーバーフロー IDCT ホスト ベースのメソッドは、ビデオ コーディング標準に厳密に準拠していないときに**bConfigResid8Subtraction**は 0 です。 ただしは一部の既存の実装で使用、画像を表すために必要なデータの量の観点から 16 ビットのサンプルの使用よりも効率的ですし、意味のあるビデオ品質の低下に一般的にならないため、この形式がサポートされています。
+**BConfigResid8Subtraction**が0に等しいオーバーフローブロックと8ビットの違いを使用します (オーバーフローブロックごとに8ビットの違いが2つ追加されます)。  **ただし**、次の場合*は、+ 255 の残余差の値を表すことはできません。IntraMacroblock*は0です。 (この方法で表すことができる最大の差の値は、127 + 127 = 254 です)。これにより、 **bConfigResid8Subtraction**がゼロの場合、8-8 overflow のホストベースの idct メソッドがビデオコーディング標準に厳密に準拠していないようになります。 ただし、この形式は、既存のいくつかの実装で使用されているためサポートされています。これは、画像を表すために必要なデータ量の観点から16ビットのサンプルを使用するよりも効率的であり、通常はビデオ品質の意味のある劣化を招くことはありません。
 
  
 

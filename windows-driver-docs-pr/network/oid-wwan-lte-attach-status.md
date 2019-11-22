@@ -1,40 +1,40 @@
 ---
 title: OID_WWAN_LTE_ATTACH_STATUS
-description: OID_WWAN_LTE_ATTACH_STATUS が最後に使用される LTE の OS の接続コンテキストを通知するために使用されます。
+description: OID_WWAN_LTE_ATTACH_STATUS は、最後に使用された LTE アタッチコンテキストを OS に通知するために使用されます。
 ms.assetid: 394650CF-5410-40C6-8749-D941DF68D303
 ms.date: 08/23/2018
-keywords: -OID_WWAN_LTE_ATTACH_STATUS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_LTE_ATTACH_STATUS
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1355569f886c606cbf9c5e3cef5710a81a8303
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ba8296f592e77cd98f1a7b64ba09fd80446345a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353712"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843837"
 ---
-# <a name="oidwwanlteattachstatus"></a>OID_WWAN_LTE_ATTACH_STATUS
+# <a name="oid_wwan_lte_attach_status"></a>OID_WWAN_LTE_ATTACH_STATUS
 
-OID_WWAN_LTE_ATTACH_STATUS は LTE 接続コンテキストを最後に使用される既定の OS に通知するために使用されます。
+OID_WWAN_LTE_ATTACH_STATUS は、最後に使用された既定の LTE アタッチコンテキストを OS に通知するために使用されます。
 
-ミニポート ドライバーが非同期的に、最初に、元の要求に NDIS_STATUS_INDICATION_REQUIRED を返すこと、後で送信する前にクエリ要求を処理する必要があります、 [NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)通知含む、 [ **NDIS_WWAN_LTE_ATTACH_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)最後に使用される既定 LTE を記述する構造体は、コンテキストをアタッチします。
+ミニポートドライバーは、クエリ要求を非同期的に処理し、その後、最後に使用された既定の LTE アタッチコンテキストを記述する[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)構造を含む[NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)通知を送信する前に、最初に元の要求に NDIS_STATUS_INDICATION_REQUIRED を返す必要があります。
 
-要求のセットには適用されません。
+Set 要求は適用できません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
-詳細については、この OID を使用して、次を参照してください。 [MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)します。
+この OID の使用方法の詳細については、「 [MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)」を参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
 | バージョン | Windows 10 Version 1703 |
-| Header | Ntddndis.h (include Ndis.h) |
+| Header | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
-[MB LTE アタッチの操作](mb-lte-attach-operations.md)
+[MB LTE アタッチ操作](mb-lte-attach-operations.md)
 
 [NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)
 
-[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)
+[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)

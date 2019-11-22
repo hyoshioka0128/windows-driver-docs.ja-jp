@@ -1,24 +1,24 @@
 ---
 title: WDFDEVICE_INIT 構造体
-description: WDFDEVICE_INIT 構造体で定義され、フレームワークによって割り当てられた非透過構造です。
+description: WDFDEVICE_INIT 構造体は、フレームワークによって定義および割り当てられる不透明な構造体です。
 ms.assetid: 38a8d316-6d66-4c1a-bb1c-93e2893542e8
 keywords:
 - WDFDEVICE_INIT 構造体
 ms.date: 02/23/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 26d6a182eb9223512eeaf190ea7ef9f23dfdff5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5398fd39d785a2ff8602f7081bce12c164def7ed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390838"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845411"
 ---
-# <a name="wdfdeviceinit-structure"></a>WDFDEVICE_INIT 構造体
+# <a name="wdfdevice_init-structure"></a>WDFDEVICE_INIT 構造体
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-**WDFDEVICE_INIT**構造体で定義され、フレームワークによって割り当てられた非透過構造体。
+**WDFDEVICE_INIT**構造体は、フレームワークによって定義および割り当てられる不透明な構造体です。
 
 <a name="syntax"></a>構文
 ------
@@ -29,25 +29,25 @@ struct WDFDEVICE_INIT {
 };
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 ----------
 
-関数とフィルター ドライバーへの入力としてこの構造体へのポインターを受け取る、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数、またはからの戻り値として[ **WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)します。
+関数ドライバーとフィルタードライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数への入力として、または[**Wdfcontroldeviceinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)からの戻り値として、この構造体へのポインターを受け取ります。
 
-バス ドライバーでは、構造体のポインターを受け取るへの入力として、 [ *EvtChildListCreateDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)コールバック関数、またはからの戻り値として[ **WdfPdoInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallocate).
+バスドライバーは、 [*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)コールバック関数への入力として、または[**Wdfpdoinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)からの戻り値として構造体ポインターを受け取ります。
 
-ドライバーを受信した後、 **WDFDEVICE_INIT**構造体の初期化関数に構造体のポインターを渡されます。
-これらの関数を使用して、 **WDFDEVICE_INIT** framework デバイス オブジェクトを作成するために、フレームワークを使用する情報を格納する構造体。
+ドライバーは、 **WDFDEVICE_INIT**構造体を受け取ると、構造体ポインターを初期化関数に渡します。
+これらの関数は、フレームワークがフレームワークデバイスオブジェクトを作成するために使用する情報を格納するために、 **WDFDEVICE_INIT**構造体を使用します。
 
-初期化メソッドをデバイスのドキュメントを見つけるを参照してください。 [wdfdevice.h ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/)します。
+デバイスの初期化方法に関するドキュメントについては、「 [wdfdevice. h ヘッダー](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)」を参照してください。
 
-初期化関数を呼び出した後、ドライバーを呼び出す必要があります[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate) framework デバイス オブジェクトを作成します。
+初期化関数を呼び出した後、ドライバーは[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、フレームワークデバイスオブジェクトを作成する必要があります。
 
-ドライバーが受信した場合、 **WDFDEVICE_INIT**構造体への呼び出しから[ **WdfPdoInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)または[ **WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)、ドライバーは、初期化関数の呼び出しからエラーを受け取る場合、ドライバーを呼び出す必要がありますと[ **WdfDeviceInitFree** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)の代わりに[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+ドライバーが[**Wdfpdoinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)または[**Wdfcontroldeviceinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)の呼び出しから**WDFDEVICE_INIT**構造体を受信し、ドライバーが初期化関数の呼び出しからエラーを受信した場合、ドライバーは[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)ではなく[**wdfpdoinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)を呼び出す必要があります。
 
-ドライバーを呼び出してはならない[ **WdfDeviceInitFree** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)に成功した呼び出しの後に[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
+[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)への呼び出しが成功した後、ドライバーは[**Wdfdeviceinitfree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)を呼び出さないでください。
 
-**WDFDEVICE_INIT**構造体がバージョン 1.0 および KMDF の以降のバージョンで使用できます。
+**WDFDEVICE_INIT**構造は、バージョン1.0 以降の kmdf で使用できます。
 
 
 <a name="requirements"></a>要件
@@ -61,7 +61,7 @@ struct WDFDEVICE_INIT {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdftypes.h (Wdftypes.h を含む)</td>
+<td>Wdftypes .h (Wdftypes. h を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -1,45 +1,45 @@
 ---
 title: IRP_MN_ENABLE_EVENTS
-description: 1 つまたは複数のイベント ブロックを登録する任意の WMI ドライバーでは、この IRP を処理する必要があります。
+description: 1つ以上のイベントブロックを登録するすべての WMI ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 35b95ba0-efd0-420a-abe0-664fc6311d02
 keywords:
-- IRP_MN_ENABLE_EVENTS Kernel-Mode Driver Architecture
+- IRP_MN_ENABLE_EVENTS カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 84874bbd689040f0580393ce0f79b59317775eed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0395173ac5d7b52f109d3b98ac55e345f7ea074b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353367"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838582"
 ---
-# <a name="irpmnenableevents"></a>IRP\_MN\_を有効にする\_イベント
+# <a name="irp_mn_enable_events"></a>IRP\_\_\_イベントを有効にする
 
 
-1 つまたは複数のイベント ブロックを登録する任意の WMI ドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
+1つ以上のイベントブロックを登録するすべての WMI ドライバーは、この IRP を処理する必要があります。 ドライバーは、wmi Irp を処理できます。詳細につい[**ては、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 「 [Wmi 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)」を参照してください。
 
-ドライバーを呼び出す場合[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)処理するために、 **IRP\_MN\_を有効にする\_イベント**WMI がさらに呼び出しを要求します。ドライバーの[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)ルーチン。
+ドライバーが、 **\_EVENTS 要求\_有効**にするために、wmi[**コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)を呼び出して、イベントの要求を有効にすると、WMI はその[*ドライバーの機能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)の\_を呼び出します。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)送信されるときに
+[**IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)送信時
 ---------
 
-WMI では、この IRP データ コンシューマーがイベントの通知を要求したことをドライバーに通知を送信します。
+WMI は、データコンシューマーがイベントの通知を要求したことをドライバーに通知するために、この IRP を送信します。
 
-WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテキストでします。
+WMI は、任意のスレッドコンテキストで、IRQL = パッシブ\_レベルでこの IRP を送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.WMI.ProviderId**要求に応答する必要がありますドライバーのデバイス オブジェクトを指します。 このポインターは、ドライバーの IRP で I/O スタックの場所にあります。
+**Parameters. WMI. ProviderId**は、要求に応答する必要があるドライバーのデバイスオブジェクトを指します。 このポインターは、IRP 内のドライバーの i/o スタックの場所にあります。
 
-**Parameters.WMI.DataPath**を有効にする、イベント ブロックを識別する GUID を指します。
+**データパス**は、有効にするイベントブロックを識別する GUID を指します。
 
-**Parameters.WMI.BufferSize** nonpaged、バッファーのサイズを示します**Parameters.WMI.Buffer**、以上にする必要があります、 **sizeof**(**れた WNODE\_ヘッダー**)。 ドライバーのトレースのブロックを登録できません (WMIREG\_フラグ\_追跡\_GUID) このパラメーターは無視してかまいません。
+**パラメーター.** Wmi. BufferSize は、非ページバッファーのサイズを示します。この**バッファー**は**SIZEOF**(**wnode\_HEADER**) 以上である必要があります。 トレースブロックが登録されていないドライバー (\_WMI\_GUID\_) は、このパラメーターを無視できます。
 
-**Parameters.WMI.Buffer**を指す、**れた WNODE\_ヘッダー**イベントをトレースするかどうかを示す (WMI\_フラグ\_追跡\_GUID) と、ハンドルを提供しますシステムのログにします。 ドライバーのトレースのブロックを登録できません (WMIREG\_フラグ\_追跡\_GUID) このパラメーターは無視してかまいません。
+**パラメーター。 wmi**は、イベントをトレースする (WMI\_FLAGS\_トレースされた\_GUID) かどうかを示す**WNODE\_ヘッダー**を指し、システムロガーへのハンドルを提供します。 トレースブロックが登録されていないドライバー (\_WMI\_GUID\_) は、このパラメーターを無視できます。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -49,36 +49,36 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
+ドライバーが、wmi[**コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)を呼び出すことによって irp を処理する場合、WMI は、i/o 状態ブロック内の**irp&gt;Iostatus. Status**と**Irp&gt;iostatus. 情報**を設定します。
 
-それ以外の場合、ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態、次のように。
+それ以外の場合、ドライバーは**Irp&gt;iostatus. status**を STATUS\_SUCCESS に、または次のような適切なエラー状態に設定します。
 
-ステータス\_WMI\_GUID\_いない\_が見つかりました
+ステータス\_WMI\_GUID\_見つかりませんでした\_
 
-ステータス\_無効な\_デバイス\_要求
+デバイス\_要求\_状態\_無効です
 
-成功した場合、ドライバーの設定**Irp -&gt;IoStatus.Information**をゼロにします。
+成功した場合、ドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
 
 <a name="operation"></a>操作
 ---------
 
-ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
+ドライバーは、wmi Irp を処理できます。詳細につい[**ては、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 「 [Wmi 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)」を参照してください。
 
-ドライバーが呼び出すことによって WMI Irp を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、ドライバーが、ルーチンを呼び出す[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)ルーチン状態を取得または\_ドライバーは、ルーチンを定義していない場合は成功します。
+ドライバー[**が、この**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)ルーチンを呼び出して WMI irp を処理する場合、そのルーチンは、[*ドライバーの設定*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)を呼び出します。または、ドライバーがルーチンを定義していない場合は、状態\_SUCCESS を返します。
 
-ドライバーが処理する場合、 **IRP\_MN\_を有効にする\_イベント**要求自体には、その方がよい場合にのみ**Parameters.WMI.ProviderId**として同じデバイス オブジェクトを指し示すドライバーに渡されたポインター [ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。 それ以外の場合、ドライバーでは、次の下位のドライバーに要求を転送する必要があります。
+ドライバーが IRP\_を処理し、\_イベントの要求自体を**有効に\_** 場合は、ドライバーが[**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)に渡されたポインターと同じデバイスオブジェクトを指す場合にのみ、そのように**します。** それ以外の場合、ドライバーは、要求を次の下位のドライバーに転送する必要があります。
 
-ドライバーは、要求を処理する前に確認する必要があるかどうか**Parameters.WMI.DataPath**ドライバーがサポートする GUID を指します。 そうでない、ドライバーが IRP が失敗する必要があり、状態を返す場合\_WMI\_GUID\_いない\_が見つかりました。
+ドライバーが要求を処理する前に、**データパス**がドライバーでサポートされている GUID を指しているかどうかを判断する必要があります。 それ以外の場合は、ドライバーが IRP を失敗させ、ステータスを返す必要があります。 WMI\_GUID\_見つかりませ\_ん\_ます。
 
-ドライバーは、イベント ブロックをサポートする場合は、そのデータ ブロックのすべてのインスタンスのイベントを使用できます。
+ドライバーでイベントブロックがサポートされている場合、そのデータブロックのすべてのインスタンスに対してイベントが有効になります。
 
-WMI は、最初のデータ コンシューマーがイベントを有効に、イベント ブロックを有効にする 1 つの要求を送信するため、イベントがイベント ブロックを有効既にかどうかを確認するドライバーの必要はありません。 WMI は、その前の要求を無効にすることがなく有効にする別の要求を送信しません。
+イベントブロックに対してイベントが既に有効になっているかどうかをドライバーが確認する必要はありません。これは、最初のデータコンシューマーがイベントを有効にするときに、イベントブロックに対してを有効にする単一の要求を送信するからです。 WMI は、介在する無効化要求なしに、有効にする別の要求を送信しません。
 
-トレースのブロックを登録するドライバー (WMIREG\_フラグ\_追跡\_GUID) も WMI またはシステムのログにトレースのイベントを送信するかどうかを決定する必要があります。 トレースが要求された場合**Parameters.WMI.Buffer**を指す、 [**れた WNODE\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)構造の**フラグ**はれた WNODE セット\_フラグ\_追跡\_GUID と**HistoricalContext**ロガーへのハンドルが含まれています。
+トレースブロック\_(\_トレース\_GUID) を登録するドライバーは、WMI にイベントを送信するか、トレース用にシステムロガーに送信するかを決定する必要もあります。 トレースが要求された場合、パラメーターは[**wnode\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-_wnode_header)構造体をポイントし**ます。** この構造では、**フラグ**が WNODE\_フラグ\_\_トレースされます。これにより、GUID と**HistoricalContext**には、lnm.
 
-イベント ブロックを定義する方法については、送信側のイベント、およびトレースを参照してください[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)します。
+イベントブロックの定義、イベントの送信、およびトレースの詳細については、「 [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)」を参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -89,7 +89,7 @@ WMI は、最初のデータ コンシューマーがイベントを有効に、
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -97,19 +97,19 @@ WMI は、最初のデータ コンシューマーがイベントを有効に、
 ## <a name="see-also"></a>関連項目
 
 
-[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)
+[ *\N 関数コントロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)
 
-[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**IRP\_MN\_を無効にする\_イベント**](irp-mn-disable-events.md)
+[**IRP\_\_\_イベントを無効にする**](irp-mn-disable-events.md)
 
-[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
+[**WMB\_のコンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
+[**Wmi コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**れた WNODE\_イベント\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_item)
+[**WNODE\_イベント\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_item)
 
-[**れた WNODE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)
+[**WNODE\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-_wnode_header)
 
  
 

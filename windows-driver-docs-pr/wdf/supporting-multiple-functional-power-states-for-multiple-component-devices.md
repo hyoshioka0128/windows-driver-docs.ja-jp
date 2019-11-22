@@ -1,38 +1,38 @@
 ---
-title: 複数コンポーネントのデバイス、1 つまたは複数の機能の電力状態
+title: 複数コンポーネントのデバイス、1つまたは複数の機能力状態
 description: 1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
 ms.assetid: D601A0F6-A035-4161-879A-D495518E7EC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f561c851486b2148b687f119383b7c73a44c648
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41094f0608b3bdc87b25cbca6158680517ad1c26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368078"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831739"
 ---
 # <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
 
 
-\[KMDF にのみ適用されます。\]
+\[は KMDF にのみ適用され\]
 
-複数コンポーネントのデバイスの KMDF ドライバーでは、各コンポーネントの 1 つまたは複数の機能の電源状態を定義できます。
+複数コンポーネントのデバイス用の KMDF ドライバーでは、コンポーネントごとに1つまたは複数の機能力状態を定義できます。
 
-この場合、ドライバーは、電源管理フレームワーク (PoFx) と直接登録します。 呼び出し、WDF 登録しないでください、PoFx でドライバーを指定するのには[ **WdfDeviceAssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)で、 **IdleTimeoutType**のメンバー、 [**WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体を設定**DriverManagedIdleTimeout**. 通常、ドライバーはからには、このメソッドを呼び出してその[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+この場合、ドライバーは、電源管理フレームワーク (PoFx) に直接登録します。 WDF が PoFx に登録されないように指定するには、ドライバーは[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)を呼び出します。これは、WDF\_\_デバイスの**IdleTimeoutType**メンバーで、[**電源\_ポリシー\_アイドル\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体が**DriverManagedIdleTimeout**に設定されていることを示します。 通常、ドライバーは、 [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数からこのメソッドを呼び出します。
 
-次に、ドライバーは、PoFx を登録する必要があります。 そのためをドライバーの呼び出しに[ **PoFxRegisterDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregisterdevice)し[ **PoFxStartDevicePowerManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxstartdevicepowermanagement)します。 デバイスが初めて起動したときに、ドライバーが PoFx を 1 回だけ登録する必要があります。 ドライバーによって提供されるからこれらのルーチンを呼び出すことではこれを行う方法の 1 つ[ *EvtDeviceSelfManagedIoInit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)関数。 *EvtDeviceSelfManagedIoInit*最初にデバイスを起動するときにのみと呼びます。
+次に、ドライバーを PoFx に登録する必要があります。 これを行うために、ドライバーは[**Pofxregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice)を呼び出し、次に[**Pofxstartdevicepowermanagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxstartdevicepowermanagement)を呼び出します。 デバイスが最初に起動されたときに、ドライバーを PoFx に登録する必要があります。 これを行う1つの方法として、ドライバーによって提供される[*Evtdeviceselfmanagedioinit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)関数からこれらのルーチンを呼び出すことができます。 *Evtdeviceselfmanagedioinit*は、デバイスが初めて起動されたときにのみ呼び出されます。
 
-デバイスを削除すると、ドライバーで呼び出す必要があります[ **PoFxUnregisterDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxunregisterdevice) PoFx からデバイスの登録を解除します。 1 回をお勧めドライバー呼び出しからドライバーによって提供されるこのルーチンのみの登録を解除する[ *EvtDeviceSelfManagedIoFlush* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)関数。 *EvtDeviceSelfManagedIoFlush*デバイスが削除されるときにのみ呼び出されます。 登録を解除して*EvtDeviceSelfManagedIoFlush*ドライバーは、スリープ中に電源登録を保持、および再調整は、遷移し、保留状態のまま I/O 要求の電源の参照を維持する必要はありませんこれらの中に遷移します。
+デバイスが削除されると、ドライバーは[**Pofxunregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxunregisterdevice)を呼び出して、pofx からデバイスの登録を解除する必要があります。 1回だけ登録を解除するには、ドライバーが提供する[*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)関数からこのルーチンを呼び出すことをお勧めします。 *EvtDeviceSelfManagedIoFlush*は、デバイスが削除されるときにのみ呼び出されます。 *EvtDeviceSelfManagedIoFlush*の登録を解除することにより、ドライバーはスリープ中に電源の登録を維持し、切り替え効果を再調整します。また、これらの移行中に保留状態にある i/o 要求の電源参照を維持する必要もありません。
 
-ドライバーを呼び出すと[ *PoFxRegisterDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_post_po_fx_register_device)を受け取るように、次のトピックで説明されている、PoFx と直接対話に使用できる電源登録ハンドル (POHANDLE)。
+ドライバーは、 [*Pofxregisterdevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_post_po_fx_register_device)を呼び出すと、次のトピックで説明するように、pofx と直接やり取りするために使用できる電源登録ハンドル (pohandle) を受け取ります。
 
--   [コンポーネントの電源状態の I/O 要求の調整](coordinating-i-o-requests-with-component-power-state.md)
--   [デバイスの電源オン S0 にシステムが返されるときにレポートの作成](reporting-device-powered-on.md)
--   [複数コンポーネントのデバイスでのアイドル状態の電源のサポート](supporting-idle-power-down-on-multiple-component-devices.md)
+-   [コンポーネントの電源状態で i/o 要求を調整する](coordinating-i-o-requests-with-component-power-state.md)
+-   [システムが S0 に戻ったときに電源がオンになっているレポートデバイス](reporting-device-powered-on.md)
+-   [複数コンポーネントのデバイスでのアイドル状態の電源をサポートする](supporting-idle-power-down-on-multiple-component-devices.md)
 
-さらに、ドライバーを呼び出すことができます[framework ルーチンの電源を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)power control の要求を送信して、待機時間の指定に直接保存場所、およびウェイク要件。
+さらに、ドライバーは、power [framework ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を直接呼び出して、電源管理要求を送信し、待機時間、常駐状態、およびウェイクアップ要件を指定できます。
 
-PoFx の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。
+PoFx の詳細については、「[電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)」を参照してください。
 
  
 

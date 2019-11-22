@@ -1,30 +1,30 @@
 ---
 title: OID_GEN_HD_SPLIT_PARAMETERS
-description: セットとして NDIS と関連付けたドライバーまたはユーザー モード アプリケーションは、現在のヘッダー データ ミニポート アダプターの分割の設定を設定するのに OID_GEN_HD_SPLIT_PARAMETERS OID を使用します。
+description: セットとして、NDIS およびそれ以降のドライバーまたはユーザーモードアプリケーションは OID_GEN_HD_SPLIT_PARAMETERS OID を使用して、ミニポートアダプターの現在のヘッダーデータ分割設定を設定します。
 ms.assetid: 1b33c601-4302-4f63-8265-b75889b42d42
 ms.date: 08/08/2017
-keywords: -OID_GEN_HD_SPLIT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_HD_SPLIT_PARAMETERS
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d527c7f431dd9986945395ed31afeecfc496f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9d9387232d4ce872a64517758121a4691a46bf0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369106"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843019"
 ---
-# <a name="oidgenhdsplitparameters"></a>OID\_GEN\_HD\_分割\_パラメーター
+# <a name="oid_gen_hd_split_parameters"></a>OID\_GEN\_HD\_SPLIT\_パラメーターの分割
 
 
-セットとして NDIS と関連付けたドライバーまたはユーザー モード アプリケーションで、OID が使用\_GEN\_HD\_分割\_を現在のヘッダー データを設定するパラメーターの OID がミニポート アダプターの設定を分割します。 NDIS 6.1 と以降のミニポート ドライバー ヘッダー データの分割サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
+セットとして、NDIS およびそれ以降のドライバーまたはユーザーモードアプリケーションでは、OID\_GEN\_HD\_分割\_パラメーター OID を使用して、ミニポートアダプターの現在のヘッダーデータ分割設定を設定します。 ヘッダーデータ分割サービスが提供する NDIS 6.1 およびそれ以降のミニポートドライバーは、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
 
 <a name="remarks"></a>注釈
 -------
 
-**InformationBuffer**のメンバー [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [ **NDIS\_HD\_分割\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)構造体。
+[**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_HD\_SPLIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)構造体が含まれています。
 
-NDIS 設定 OID\_GEN\_HD\_分割\_、NDIS 5 時にパラメーターの OID *。x*プロトコル ドライバーは、NDIS 6.1 ミニポートにバインドします。 ミニポート アダプターの更新の NDIS ミニポート ドライバーに渡す前にこの OID を処理および **\*HeaderDataSplit**必要な場合は、キーワードを標準化します。 ヘッダー データの分割が無効になっている場合は、NDIS はミニポート アダプターにこの OID を送信しません。
+Ndis では、NDIS 5 の場合、OID\_GEN\_HD\_SPLIT\_PARAMETERS OID が設定されることがあります。*x*プロトコルドライバーは NDIS 6.1 ミニポートにバインドされます。 NDIS は、この OID をミニポートドライバーに渡す前に処理し、必要に応じて、ミニポートアダプターの **\*HeaderDataSplit**標準化されたキーワードを更新します。 ヘッダーデータの分割が無効になっている場合、NDIS はこの OID をミニポートアダプターに送信しません。
 
-NDIS この OID に送付ミニポート ドライバーで NDIS ヘッダー データの分割が有効になっている場合にのみ\_HD\_分割\_を有効にする\_ヘッダー\_データ\_分割フラグ、 [**NDIS\_HD\_分割\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)ミニポートの初期化中に構造体。
+Ndis は、ヘッダーデータの分割が ndis\_HD\_\_SPLIT で有効になっている場合にのみ、この OID をミニポートドライバーに送信します。この場合、ミニポートの初期化時に、 [**ndis\_hd\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_hd_split_attributes) split\_の分割フラグが\_有効になります。\_\_
 
 <a name="requirements"></a>要件
 ------------
@@ -37,11 +37,11 @@ NDIS この OID に送付ミニポート ドライバーで NDIS ヘッダー �
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.1 以降をサポートします。</p></td>
+<td><p>NDIS 6.1 以降でサポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ntddndis.h (include Ndis.h)</td>
+<td>Ntddndis (Ndis .h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -49,11 +49,11 @@ NDIS この OID に送付ミニポート ドライバーで NDIS ヘッダー �
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_HD\_分割\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)
+[**NDIS\_HD\_SPLIT\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_hd_split_attributes)
 
-[**NDIS\_HD\_分割\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)
+[**NDIS\_HD\_SPLIT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)
 
-[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
  
 

@@ -3,37 +3,37 @@ title: Bluetooth プロファイル ドライバーのデバッグ
 description: Bluetooth プロファイル ドライバーのデバッグ
 ms.assetid: 3c04017e-7f5c-49d4-ad7e-36c7405133a1
 keywords:
-- プロファイル ドライバー WDK Bluetooth のデバッグ
-- Bluetooth の WDK、プロファイルのドライバーのデバッグ
-- ドライバー WDK Bluetooth のデバッグ
-- ドライバー WDK の Bluetooth のプロファイルのデバッグ
+- プロファイルドライバーのデバッグ WDK Bluetooth
+- Bluetooth WDK、デバッグプロファイルドライバー
+- ドライバーのデバッグ WDK Bluetooth
+- プロファイルドライバー WDK Bluetooth、デバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e28755c13871a4982affb5ebb396c893d7e41323
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 274fd22c31a334ae9c4b19a335574231939146c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833853"
 ---
 # <a name="debugging-bluetooth-profile-drivers"></a>Bluetooth プロファイル ドライバーのデバッグ
 
 
-使用することができます、Bluetooth プロファイル ドライバーを開発するときに[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)のデバッグが支援します。
+Bluetooth プロファイルドライバーを開発するときに、ドライバーの[検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)を使用して、デバッグを支援することができます。
 
-必要な検証チェックを有効にする[Bthusb.sys の Driver Verifier を有効にする](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-drivers-to-be-verified)します。 これを行わない場合は、検証チェックが無効になります。
+検証チェックを有効にするには、 [Bthusb. sys のドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-drivers-to-be-verified)機能を有効にする必要があります。 この操作を行わない場合、検証チェックは無効になります。
 
-検証を利用するチェック完全には、確認、Bluetooth 要求ブロック (BRB) 割り当てルーチンを使用すると、たとえば、 [ **BthAllocateBrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_allocate_brb)と[ **BthInitializeBrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_initialize_brb)、Bluetooth ドライバー スタックが用意されている[ビルドおよび送信 BRBs](building-and-sending-a-brb.md)します。 これらのルーチンには、プロファイルのドライバーのデバッグに役立つ追加の機能が含まれます。
+検証チェックを完全に利用するには、bluetooth 要求ブロック (BRB) の割り当てルーチン (たとえば、 [**Bthallocatebrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_allocate_brb)や[**Bthinitializebrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_initialize_brb)など[) を使用](building-and-sending-a-brb.md)します。これは、bluetooth ドライバースタックによって提供されます。 これらのルーチンには、プロファイルドライバーのデバッグに役立つ追加機能が含まれています。
 
-検証チェックは、次のようなエラーをキャッチできます。
+検証チェックは、次の種類のエラーをキャッチするのに役立ちます。
 
--   完了する前に、BRB を再送信しようとしています。
+-   完了前に BRB を再送信しようとします
 
--   割り当てるか、無効な BRB を初期化する試行を入力します。
+-   無効な BRB 型の割り当てまたは初期化を試行します
 
--   無効なサイズの BRB を送信しようとしています。
+-   無効なサイズの BRB の送信を試みます
 
-プロファイルには、ドライバー、デバッグ中に使用することができます、 **! 分析 v** BC 後のデバッガー コマンド\_BLUETOOTH\_VERIFIER\_障害エラーの説明を取得します。
+プロファイルドライバーをデバッグしているときに、エラーの説明を取得するために、BC\_BLUETOOTH\_検証ツール\_エラーの後に、 **! analyze-v**デバッガーコマンドを使用できます。
 
  
 

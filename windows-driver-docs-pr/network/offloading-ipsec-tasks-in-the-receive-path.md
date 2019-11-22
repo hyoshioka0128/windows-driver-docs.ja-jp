@@ -3,32 +3,32 @@ title: 受信パスでの IPsec タスクのオフロード
 description: 受信パスでの IPsec タスクのオフロード
 ms.assetid: d1dff4fa-7354-4c8c-8591-223c6b524619
 keywords:
-- WDK IPsec オフロード、ESP により保護されたパケットの受信パスのオフロード
-- WDK IPsec オフロード、AH で保護されたパケットの受信パスのオフロード
-- パスをオフロード WDK IPsec オフロードします。
+- ESP で保護されたパケットの WDK IPsec オフロード、受信パスオフロード
+- AH で保護されたパケット WDK IPsec オフロード、受信パスオフロード
+- 受信パスオフロード WDK IPsec オフロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b19d31dcc8d61ac2efcc7390b9338f90f7db568
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24bcb84fbd67fdf61f255fb8dbde9c5d220d4065
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368504"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834633"
 ---
 # <a name="offloading-ipsec-tasks-in-the-receive-path"></a>受信パスでの IPsec タスクのオフロード
 
-\[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
+\[IPsec タスクオフロード機能は非推奨とされているため、使用しないでください。\]
 
 
 
 
-NIC は、インターネット プロトコル セキュリティ (IPsec) の受信パケットの処理を実行するときに復号化パケット パケットは、ESP ペイロードが含まれています、AH または ESP 暗号化チェックサム (あるいはその両方) を計算する場合、パケットの。 示す前に、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) TCP/IP トランスポート、ミニポート ドライバーの呼び出しまでパケットの構造、 [ **NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロが、  *\_Id*の**IPsecOffloadV1NetBufferListInfo**を取得する、 [ **NDIS\_IPSEC\_オフロード\_V1\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v1_net_buffer_list_info)パケットに関連付けられている構造体。
+NIC は、受信パケットでインターネットプロトコルセキュリティ (IPsec) 処理を実行します。パケットに ESP ペイロードが含まれている場合は、パケットの暗号化を解除し、パケットに対して AH または ESP の暗号化チェックサム (またはその両方) を計算します。 パケットに関連付けられているパケットの[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造を指定する前に、ポートの\_*Id*が**IPsecOffloadV1NetBufferListInfo**の[**net\_buffer\_list\_info**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロを呼び出して、 [**NDIS\_IPSEC\_オフロード\_V1\_NET\_BUFFER\_LIST\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v1_net_buffer_list_info)構造体を取得します。
 
-ミニポート ドライバーのセット、 **CryptoDone** NDIS フラグ\_IPSEC\_オフロード\_V1\_NET\_バッファー\_一覧\_情報構造体NIC が IPsec 受信パケット内の少なくとも 1 つの IPsec ペイロードのチェックを実行することを示します。 ミニポート ドライバーにも設定 NIC は、IPsec の受信パケットのトンネルおよびトランスポートの両方の部分でチェックを実行している場合、 **NextCryptoDone** NDIS フラグ\_IPSEC\_オフロード\_V1\_NET\_バッファー\_一覧\_情報構造体。 ミニポートのドライバー セット**NextCryptoDone**パケット トンネルおよびトランスポートの両方の IPsec ペイロードがある場合のみです。 それ以外の場合、ミニポート ドライバーの設定**NextCryptoDone**をゼロにします。 IPsec チェックの結果を示すために、ミニポート ドライバーする必要がありますも値を指定、 **CryptoStatus** NDIS でメンバー\_IPSEC\_オフロード\_V1\_NET\_バッファー\_一覧\_情報構造体。 かどうか、NIC には、チェックサム エラーまたは暗号化解除エラーが検出された、ミニポート ドライバーが示す必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)あらゆる形式の受信パケットの構造適切なを指定して**CryptoStatus**値。
+ミニポートドライバーは、NDIS\_IPSEC\_オフロード\_V1\_NET\_BUFFER\_LIST\_INFO 構造体の**Cryptodone**フラグを設定して、NIC が少なくとも1つの ipsec ペイロードに対して ipsec チェックを実行したことを示します。受信パケット内。 NIC が受信パケットのトンネルとトランスポートの両方の部分に対して IPsec チェックを実行した場合、ミニポートドライバーは、NDIS\_IPSEC\_OFFLOAD\_V1\_NET\_BUFFER\_LIST にある**Nextcryptodone**フラグも設定します。\_情報構造体。 ミニポートドライバーは、パケットにトンネルとトランスポートの両方の IPsec ペイロードがある場合にのみ、 **Nextcryptodone**を設定します。 それ以外の場合、ミニポートドライバーは**Nextcryptodone**を0に設定します。 IPsec チェックの結果を示すために、ミニポートドライバーは、NDIS\_IPSEC\_オフロード\_V1\_NET\_BUFFER\_LIST\_INFO 構造体の**Cryptostatus**メンバーの値も指定する必要があります。 NIC がチェックサムの失敗または復号化の失敗を検出した場合、ミニポートドライバーは、受信パケットの[ **\_リスト構造\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)を任意の形式で示し、適切な**cryptostatus**値を指定する必要があります。
 
-注、ミニポート ドライバーは、着信パケットを復号化しないが場合に、消去される両方、 **CryptoDone**と**NextCryptoDone**フラグ。 ミニポート ドライバーでは、これはすべての受信パケットの復号化ではありませんが、パケットは、AH または ESP で保護されているかどうかに関係なく。 ミニポートのドライバー セット**CryptoStatus** CRYPTO に\_成功パケットの解読されません。
+ミニポートドライバーが受信パケットを復号化していない場合は、 **cryptodone**フラグと**nextcryptodone**フラグの両方がクリアされます。 ミニポートドライバーは、パケットが AH で保護されているか、または ESP で保護されているかに関係なく、暗号化を解除しないすべての受信パケットに対してこれを行います。 ミニポートドライバーは、暗号化を解除しないすべてのパケットに対して、 **Cryptostatus**を CRYPTO\_に設定します。
 
-ミニポート後は、ドライバーは、NET を示します\_バッファー\_リスト構造体は、TCP/IP トランスポートを実行するには、NIC が、パケットのシーケンス番号をチェックする IPsec チェックの結果を検査と動作を決定します。パケットに対して行うには、チェックサムまたはシーケンス処理のテストが失敗しました。
+ミニポートドライバーによって、ネットワーク\_バッファー\_一覧構造が TCP/IP トランスポートに示された後、トランスポートは、NIC が実行した IPsec チェックの結果を調べ、パケットのシーケンス番号を確認して、チェックサムテストまたはシーケンステストに失敗したパケット。
 
  
 

@@ -4,12 +4,12 @@ description: 静止画像デバイス用のカーネル モード ドライバ�
 ms.assetid: f9216d3c-4930-4c26-8eac-6ee500b038e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db5e704c0f1ecb28ad585b705af2c9975452296
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a1ae8d4ced83e66e002c6007f339fecf72614001
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375954"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840916"
 ---
 # <a name="accessing-kernel-mode-drivers-for-still-image-devices"></a>静止画像デバイス用のカーネル モード ドライバーへのアクセス
 
@@ -17,11 +17,11 @@ ms.locfileid: "67375954"
 
 
 
-Microsoft では、まだ SCSI、USB バスに接続されているイメージのデバイスをサポートするために WDM ベースのカーネル モード ドライバーを提供します。 両方のドライバーがプラグ アンド プレイ デバイスをサポートし、追加、削除、開始、停止、およびプラグ アンド プレイ デバイスのレジストリ エントリを作成するためのサービスを提供します。 さらに、両方のドライバーが中断し、電源管理をサポートするデバイスの操作の再開を提供します。
+Microsoft では、SCSI および USB バスに接続された静止イメージデバイスをサポートするために、WDM ベースのカーネルモードドライバーを提供しています。 どちらのドライバーもプラグアンドプレイデバイスをサポートし、プラグアンドプレイデバイスのレジストリエントリを追加、削除、開始、停止、および作成するためのサービスを提供します。 また、どちらのドライバーも、電源管理をサポートするデバイスの中断と再開の操作を提供します。
 
-ユーザー モード静止画像ミニドライバーはこれらのカーネル モード ドライバーを呼び出すことによってアクセスできる[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**と[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (Microsoft Windows SDK のドキュメントで説明)。 **ReadFile**と**WriteFile**ブロック データ転送に使用されます。 具体的には、 **ReadFile**イメージ データを取得するために呼び出されると**WriteFile**データ ストリームとしてのコマンドを使用してデバイスにコマンドを送信するために使用します。
+ユーザーモード静止画像ミニドライバーは、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**、および[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を呼び出すことによって、これらのカーネルモードドライバーにアクセスできます (Microsoft Windows SDK のドキュメントを参照)。 **ReadFile**と**WriteFile**は、データの転送をブロックするために使用されます。 具体的には、 **ReadFile**はイメージデータを取得するために呼び出され、 **WriteFile**は、データストリームとしてコマンドを受け取るデバイスにコマンドを送信するために使用されます。
 
-呼び出しの前に**ReadFile**、 **Writefile**または[ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)、呼び出す必要があります、ミニドライバー [ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)デバイスのポートの名前を取得し、そのポートの名前へのパラメーターとして[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)します。
+**ReadFile**、 **Writefile** 、または[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を呼び出す前に、ミニドライバーは[**istidevicecontrol:: GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)を呼び出してデバイスのポート名を取得し、そのポート名を[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)のパラメーターとして使用する必要があります。
 
 [SCSI ドライバー](scsi-driver.md)
 

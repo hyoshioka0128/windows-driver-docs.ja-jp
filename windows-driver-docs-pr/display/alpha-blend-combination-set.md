@@ -3,15 +3,15 @@ title: アルファ ブレンドの結合セット
 description: アルファ ブレンドの結合セット
 ms.assetid: e7a11459-4f81-4b6d-a30f-04f4260d0df9
 keywords:
-- アルファ ブレンド組み合わせ WDK DirectX VA を設定します。
+- アルファブレンドの組み合わせの設定 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3b3d0c86b6c0b2468c308b0b1ba3266ee876ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 884e67856708a52d0accac242347daadafa82032
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370334"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839831"
 ---
 # <a name="alpha-blend-combination-set"></a>アルファ ブレンドの結合セット
 
@@ -19,7 +19,7 @@ ms.locfileid: "67370334"
 ## <span id="ddk_alpha_blend_combination_set_gg"></span><span id="DDK_ALPHA_BLEND_COMBINATION_SET_GG"></span>
 
 
-アルファ ブレンドの組み合わせから成るに、最小限の相互運用性の設定、 **bConfigBlendType**のメンバー、 [ **DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)構造体に、さまざまな値による、[制限プロファイル](restricted-profiles.md)に実装されています。
+アルファブレンドの組み合わせの最小相互運用性構成セットは、実装されている[制限プロファイル](restricted-profiles.md)に従って値を選択できる、 [**DXVA\_ConfigAlphaCombine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine)構造体の**bconfigblendtype 端**点のメンバーで構成されます。
 
  
 

@@ -1,20 +1,20 @@
 ---
 title: GPU プリエンプション
-description: 新しい GPU 優先権モデルでは、Windows 8 以降で使用できます。
+description: 新しい GPU プリエンプションモデルは、Windows 8 以降で使用できます。
 ms.assetid: 9382786E-2E1E-408F-A9E9-04EEEA1CC34A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bf94e85471af20e5db953f9d330796f658b138
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c68650e59950e295258f9a8a5d12c6241a625cdc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379953"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839673"
 ---
 # <a name="gpu-preemption"></a>GPU プリエンプション
 
 
-新しい GPU 優先権モデルでは、Windows 8 以降で使用できます。 このモデルではオペレーティング システムされなく GPU ダイレクト メモリの優先を無効にする、アクセス (DMA) パケットでは、割り込み要求する前に、GPU に送信されることが保証されます、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)プロセスが開始されます。
+新しい GPU プリエンプションモデルは、Windows 8 以降で使用できます。 このモデルでは、オペレーティングシステムで GPU ダイレクトメモリアクセス (DMA) パケットのプリエンプションを無効にすることができなくなりました。また、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)プロセスが開始される前に、プリエンプト要求が gpu に送信されることを保証します.
 
 <table>
 <colgroup>
@@ -31,76 +31,76 @@ ms.locfileid: "67379953"
 <td align="left">8</td>
 </tr>
 <tr class="odd">
-<td align="left">ドライバーの実装: 完全なグラフィックスとレンダリングのみ</td>
+<td align="left">ドライバーの実装—完全なグラフィックスとレンダーのみ</td>
 <td align="left">必須</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a>要件とテスト</td>
-<td align="left"><p><strong>Device.Graphics.プリエンプションのテスト</strong></p>
-<p><strong>Device.Graphics.FlipOnVSyncMmIo</strong></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">必要条件</a>とテスト</td>
+<td align="left"><p><strong>デバイス...プリエンプションテスト</strong></p>
+<p><strong>デバイス...FlipOnVSyncMmIo</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-長時間実行されるパケットが正常に割り込まれることはできません、デスクトップ ウィンドウ マネージャー (DWM) によって必要な作業などの優先度の高い GPU 作業が遅れて、ウィンドウの切り替えやアニメーションの中にエラーになります。 また、TDR プロセスを繰り返し、GPU をリセットする可能性が割り込まれることはできません、実行時間の長い GPU パケット、システムでバグチェックを最終的に発生することができます。
+長時間実行されているパケットが正常に割り込まれない場合は、デスクトップウィンドウマネージャー (DWM) で必要な作業など、優先順位の高い GPU 作業が遅延する可能性があります。これにより、ウィンドウの切り替えとアニメーションの実行中に問題が発生します。 また、横取りできない長時間実行されている GPU パケットは、TDR プロセスによって GPU が繰り返しリセットされる可能性があり、最終的にシステムのバグチェックが発生する可能性があります。
 
-**注**   WDDM 1.2 がすべて表示ミニポート ドライバーが Windows 8 優先権モデルをサポートする必要があります。 ただし、操作の場合および WDDM 1.2 ドライバーも Windows 8 のプリエンプション モデルを拒否でき Microsoft DirectX グラフィックスのカーネル サブシステム スケジューラによって、Windows 7 の動作を維持できます。
+**注**   すべての WDDM 1.2 表示ミニポートドライバーで、Windows 8 のプリエンプションモデルがサポートされている必要があります。 ただし、操作中は、WDDM 1.2 ドライバーが Windows 8 のプリエンプションモデルを拒否し、Microsoft DirectX graphics カーネルサブシステムスケジューラによって Windows 7 の動作を保持することもできます。
 
  
 
-## <a name="span-idgpupreemptiondevicedriverinterfacesddisspanspan-idgpupreemptiondevicedriverinterfacesddisspanspan-idgpupreemptiondevicedriverinterfacesddisspangpu-preemption-device-driver-interfaces-ddis"></a><span id="GPU_preemption_device_driver_interfaces__DDIs_"></span><span id="gpu_preemption_device_driver_interfaces__ddis_"></span><span id="GPU_PREEMPTION_DEVICE_DRIVER_INTERFACES__DDIS_"></span>GPU 優先権デバイス ドライバー インターフェイス (Ddi)
+## <a name="span-idgpu_preemption_device_driver_interfaces__ddis_spanspan-idgpu_preemption_device_driver_interfaces__ddis_spanspan-idgpu_preemption_device_driver_interfaces__ddis_spangpu-preemption-device-driver-interfaces-ddis"></a><span id="GPU_preemption_device_driver_interfaces__DDIs_"></span><span id="gpu_preemption_device_driver_interfaces__ddis_"></span><span id="GPU_PREEMPTION_DEVICE_DRIVER_INTERFACES__DDIS_"></span>GPU プリエンプションデバイスドライバーインターフェイス (DDIs)
 
 
-次のデバイス ドライバー インターフェイス (Ddi)、Windows 8 の GPU 優先権モデルを実装するためにディスプレイのミニポート ドライバーを利用できます。
+Windows 8 GPU プリエンプションモデルを実装するために、ディスプレイミニポートドライバーでは、次のデバイスドライバーインターフェイス (DDIs) を使用できます。
 
--   [*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)
--   [*DxgkCbDestroyContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation)
--   [*pfnSetPriorityCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setprioritycb)
--   [Dxgkrnl インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
--   [**DXGKRNL\_INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgkrnl_interface)
--   [**D3DKMDT\_コンピューティング\_優先権\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)
--   [**D3DKMDT\_グラフィックス\_優先権\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity)
--   [**D3DKMDT\_優先権\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)
--   [**D3DKMT\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)
--   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
--   [**DXGK\_SUBMITCOMMANDFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)
--   [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)
--   [**DXGKARGCB\_CREATECONTEXTALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_createcontextallocation)
+-   [*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)
+-   [*DxgkCbDestroyContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation)
+-   [*Pfnset優先度 Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setprioritycb)
+-   [Dxgkrnl インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [**DXGKRNL\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgkrnl_interface)
+-   [**D3DKMDT\_計算\_プリエンプション\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)
+-   [**D3DKMDT\_グラフィックス\_プリエンプション\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity)
+-   [**D3DKMDT\_プリエンプション\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)
+-   [**D3DKMT\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK\_SUBMITCOMMANDFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)
+-   [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)
+-   [**DXGKARGCB\_CREATECONTEXTALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkargcb_createcontextallocation)
 
-## <a name="span-iddisplayminiportdriverimplementationspanspan-iddisplayminiportdriverimplementationspanspan-iddisplayminiportdriverimplementationspandisplay-miniport-driver-implementation"></a><span id="Display_miniport_driver_implementation"></span><span id="display_miniport_driver_implementation"></span><span id="DISPLAY_MINIPORT_DRIVER_IMPLEMENTATION"></span>ミニポート ドライバーの実装を表示します。
-
-
-ディスプレイ ミニポート ドライバーでは、Windows 8 の GPU 優先権モデルを実装する一般的な手順に従います。
-
-1.  コンパイル、ドライバーを持つヘッダーに対して**DXGKDDI\_インターフェイス\_バージョン** &gt; =  **DXGKDDI\_インターフェイス\_バージョン\_WIN8**します。
-2.  設定して、Windows 8 の GPU 優先権モデルのサポートを宣言、 **PreemptionAware**と**MultiEngineAware**のメンバー、 [ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)構造体を 1 にします。 Windows 7 の優先モデルをサポートするために次のように設定します。 **PreemptionAware**をゼロにします。
-3.  プリエンプションの粒度でのサポートされているレベルを指定、 [ **D3DKMDT\_優先権\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)構造体、定数値を取ります、 [ **D3DKMDT\_グラフィックス\_優先権\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity)と[ **D3DKMDT\_コンピューティング\_優先権\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)列挙体。
-4.  ハードウェアでは、遅延のコンテキストの切り替えをサポートする場合に長さ 0 のバッファーを送信、 [ *DxgkDdiSubmitCommand* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)機能、設定、 *pSubmitCommand* - &gt;**フラグ**-&gt;**ContextSwitch**メンバーを 1 にします。 」の説明に注意してください、 **ContextSwitch**のメンバー、 [ **DXGK\_SUBMITCOMMANDFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)構造体。
-5.  GPU コンテキスト、デバイス コンテキストの割り当てを呼び出すことによって設定、 [ *DxgkCbCreateContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)関数。 具体的な手順と、関数の「解説」で指定された制限に注意してください。
-6.  呼び出す、 [ *DxgkCbDestroyContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation) GPU コンテキストで作成されたデバイス コンテキストの割り当てを破棄[ *DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)します。
-7.  DMA バッファーへの呼び出しに応答を準備するときに、 [ *DxgkDdiBuildPagingBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数を入力することで、コンテキストのリソースを初期化、 **InitContextResource**内での内部構造、 [ **DXGKARG\_BUILDPAGINGBUFFER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)構造体。 コンテキストのリソースは削除または再配置は、ビデオ メモリ マネージャーのコンテキストのリソースのコンテンツが保持されます。
-8.  ドライバーは、[次へ] の垂直方向の同期時にメモリ マップ I/O フリップをサポートする必要があります。Windows 8、GPU のスケジューラは反転が保留になっている場合でも、ハードウェアを切断しようとします。 そのため、ティアリングとの成果物をレンダリングを防ぐため、ドライバー、メモリ マップ I/O のフリップ モデルをサポートする必要があり、設定する必要があります、 **FlipOnVSyncMmIo**のメンバー、 [ **DXGK\_FLIPCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_flipcaps)構造体を 1 とで説明されている操作をサポートして**FlipOnVSyncMmIo**します。
-
-### <a name="span-idmemorymappingconsiderationsinyourimplementationspanspan-idmemorymappingconsiderationsinyourimplementationspanspan-idmemorymappingconsiderationsinyourimplementationspanmemory-mapping-considerations-in-your-implementation"></a><span id="Memory_mapping_considerations_in_your_implementation"></span><span id="memory_mapping_considerations_in_your_implementation"></span><span id="MEMORY_MAPPING_CONSIDERATIONS_IN_YOUR_IMPLEMENTATION"></span>実装でメモリ マッピングに関する注意点
-
-Windows 8 の GPU 優先権モデルをサポートし、このガイダンスに従って、高品質なユーザー エクスペリエンスを提供する堅牢なドライバーを作成します。
-
--   DirectX グラフィックスのカーネル (Dxgkrnl) スケジューラが優先コマンドを送信する GPU から DMA mid バッファー優先権を要求します。 DMA mid バッファー プリエンプションの粒度の細かいのあるハードウェア デバイスでは、カスタマー エクスペリエンスの向上を生成する必要があります。
--   コマンドのフェンスを再利用の Id のページングを許可する: スケジューラが再送信 Dxgkrnl に同じフェンス、およびページングに使用された元の Id とページング コマンドが割り込まれたハードウェア キューでページング コマンドの優先が発生した割り込み要求場合、コマンドは、そのエンジンの他のコマンドの前にスケジュールされます。 新しく割り当てられたフェンス Id では、非ページング コマンドを再送信されます。
--   分割 DMA バッファーの修正プログラムの場所の一覧を提供するを参照してください[DMA バッファーを分割](splitting-a-dma-buffer.md)します。
--   バインド リークの検出と呼ばれる、認証モードが使用できるは、更新プログラムの場所を見ていきますが一覧表示し、パケットをアンバインドしないまたはを各パケットの分割の割り当てを再設定されませんを拒否します。 一部のハードウェアは、この検証が不要の間接参照の追加のレベルを許可、仮想のアドレスをサポートします。 このような場合は、ドライバーがオプトアウト検証モードを示す、設定、 **NoDmaPatching**のメンバー、 [ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)構造体を 1 にします。
--   Windows 7 を別のレンダリング コンテキストを切り替えずに順番にスケジューラと同じに対応するすべての分割 DMA パケットがコマンドを表示することを保証 Dxgkrnl が実行されます。 モデルでは、Windows 8 優先、スケジューラは同じレンダリング コマンドに対応する 2 つの分割パケットの間、別のコンテキストからレンダリング パケットを実行できます。 その結果は優先権を意識してドライバーを正規の完全なパケットの送信と同じ方法で分割と部分的な DMA パケットの送信を処理します。 具体的には、GPU の状態を保存または、このような送信の境界で復元される必要があります。
--   プリエンプション対応ドライバー仮想 GPU を高速化、1 つを形成する複数の物理 Gpu をリンク先をリンクの表示アダプター (LDA) モードで複数のアダプターにブロードキャストされる分割の DMA バッファーの内容は変更されませんする必要があります。 これは、モデルでは、Windows 8 優先、Dxgkrnl スケジューラ不要になったことを保証分割パケットの順序の同期の実行を別のコンテキストを切り替えずにためにです。 分割 DMA パケットの内容が変更されたドライバーには、パケットが別のエンジンで実行された場合と同じ DMA バッファー データのコピーの動作はためパケットのデータの整合性が損なわれます。
--   Windows 8 の GPU 優先権モデルでは、Dxgkrnl スケジューラは、「信号を送信」の同期プリミティブに関連付けられているパケットの優先を使用できます。 デバイスで使用する場合は、ハードウェア ベースと組み合わせて「信号を送信」の同期プリミティブの待機状態、待機条件が満たされる前に待機命令を切断する機能をサポートする必要があります。
-
-## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
+## <a name="span-iddisplay_miniport_driver_implementationspanspan-iddisplay_miniport_driver_implementationspanspan-iddisplay_miniport_driver_implementationspandisplay-miniport-driver-implementation"></a><span id="Display_miniport_driver_implementation"></span><span id="display_miniport_driver_implementation"></span><span id="DISPLAY_MINIPORT_DRIVER_IMPLEMENTATION"></span>ミニポートドライバーの実装を表示する
 
 
-この機能を実装するときにハードウェア デバイスが満たす必要のある要件については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で**Device.Graphics.プリエンプション テスト**と**Device.Graphics.FlipOnVSyncMmIo**します。
+ディスプレイミニポートドライバーに Windows 8 GPU プリエンプションモデルを実装するには、次の一般的な手順に従います。
 
-参照してください[WDDM 1.2 機能](wddm-v1-2-features.md)に Windows 8 で追加された機能の説明。
+1.  **Dxgkddi\_interface\_version** &gt;= **DXGKDDI\_interface\_version\_WIN8**を持つヘッダーに対してドライバーをコンパイルします。
+2.  [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)構造体の**PreemptionAware**メンバーと**MultiEngineAware**メンバーを1に設定して、Windows 8 GPU プリエンプションモデルのサポートを宣言します。 Windows 7 のプリエンプションモデルをサポートするには、 **PreemptionAware**を0に設定します。
+3.  [**D3DKMDT\_プリエンプション\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)構造体でサポートされている優先権レベルを指定します。これは、D3DKMDT\_グラフィックスから定数値を取得し[ **\_プリエンプション\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity) [**D3DKMDT\_\_プリエンプション\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)列挙体を計算します。
+4.  ハードウェアが遅延コンテキストの切り替えをサポートしている場合は、長さ0のバッファーを[*DxgkDdiSubmitCommand*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)関数に送信し、 *psubmitcommand*-&gt;**Flags**-&gt;**contextswitch**メンバーを1に設定します。 [**DXGK\_SUBMITCOMMANDFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)構造体の**contextswitch**メンバーの説明に注意してください。
+5.  [*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)関数を呼び出して、GPU コンテキストの割り当てとデバイスコンテキストの割り当てを設定します。 関数の解説に記載されている具体的な指示と制限に注意してください。
+6.  [*Dxgkcbdestroycontextallocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation)関数を呼び出して、 [*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)で作成された GPU コンテキストの割り当てとデバイスコンテキストの割り当てを破棄します。
+7.  [*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数の呼び出しに応答して DMA バッファーを準備するときに、 [**Dxgkarg\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)構造体内に**initcontextresource**内部構造体を入力して、コンテキストリソースを初期化します。 コンテキストリソースが削除または再配置されると、ビデオメモリマネージャーによってコンテキストリソースの内容が保持されます。
+8.  ドライバーは、次の垂直方向の同期で、メモリマップト i/o フリップをサポートする必要があります。Windows 8 では、フリップが保留中の場合でも、GPU スケジューラはハードウェアのプリエンプトを試行します。 そのため、分裂とレンダリングのアーティファクトを防ぐには、ドライバーがメモリマップト i/o フリップモデルをサポートしている必要があります。また、 [**DXGK\_FLIPCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_flipcaps)構造体の**FlipOnVSyncMmIo**メンバーを1に設定し、「」で説明されている操作をサポートする必要があります。**FlipOnVSyncMmIo**。
+
+### <a name="span-idmemory_mapping_considerations_in_your_implementationspanspan-idmemory_mapping_considerations_in_your_implementationspanspan-idmemory_mapping_considerations_in_your_implementationspanmemory-mapping-considerations-in-your-implementation"></a><span id="Memory_mapping_considerations_in_your_implementation"></span><span id="memory_mapping_considerations_in_your_implementation"></span><span id="MEMORY_MAPPING_CONSIDERATIONS_IN_YOUR_IMPLEMENTATION"></span>実装におけるメモリマッピングに関する考慮事項
+
+Windows 8 GPU プリエンプションモデルをサポートする堅牢なドライバーを作成し、次のガイダンスに従って品質の高いユーザーエクスペリエンスを提供します。
+
+-   DirectX グラフィックスカーネル (Dxgkrnl) スケジューラがプリエンプションコマンドを送信するときに、GPU から DMA バッファープリエンプションを要求します。 DMA バッファープリエンプションの粒度が細かいハードウェアデバイスでは、より優れたカスタマーエクスペリエンスが得られます。
+-   ページングコマンドフェンス Id を再利用できるようにする: プリエンプション要求によってハードウェアキュー内のインメモリコマンドが先取りされた場合、Dxgkrnl scheduler は、最初に使用されたものと同じフェンス Id を使用して割り込まれたページングコマンドを再送信し、ページングを行います。コマンドは、そのエンジンの他のコマンドの前にスケジュールされます。 ページング以外のコマンドは、新たに割り当てられたフェンス Id で再送信されます。
+-   分割した DMA バッファーのパッチの場所の一覧を指定します。「 [Dma バッファーの分割](splitting-a-dma-buffer.md)」を参照してください。
+-   バインドリーク検出と呼ばれる検証モードを利用できます。このモードでは、パッチの場所の一覧を参照し、バインド解除されていないパケットを拒否します。または、分割された各パケットの割り当てを更新しません。 一部のハードウェアでは仮想アドレスがサポートされているため、この検証を不要にする追加のレベルの間接参照が可能になります。 このような場合、ドライバーが検証モードを終了することを示すには、 [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)構造体の**NoDmaPatching**メンバーを1に設定します。
+-   Windows 7 では、Dxgkrnl scheduler は、同じ render コマンドに対応するすべての分割された DMA パケットが、別のレンダリングコンテキストに切り替えずに順番に実行されることを保証します。 Windows 8 のプリエンプションモデルでは、scheduler は、同じ render コマンドに対応する2つの分割パケット間で異なるコンテキストからレンダーパケットを実行できます。 その結果、プリエンプションを認識しているドライバーは、通常の完全なパケット送信と同じ方法で、分割または部分的な DMA パケットの送信を処理する必要があります。 特に、GPU 状態は、このような送信のために境界で保存または復元する必要があります。
+-   複数の物理 Gpu がリンクされた1つの高速な仮想 GPU を形成するためにリンクされている場合、LDA (リンクされたディスプレイアダプター) モードで複数のアダプターにブロードキャストするときに、プリエンプション対応ドライバーは分割された DMA バッファーの内容を変更しないようにする必要があります。 これは、Windows 8 のプリエンプションモデルでは、Dxgkrnl scheduler によって、別のコンテキストに切り替えずに、分割パケットシーケンスの同期実行が保証されなくなったためです。 分離された DMA パケットの内容を変更したドライバーは、パケットが別のエンジンで実行された場合、同じコピーの DMA バッファーデータで動作するため、パケットのデータの整合性を損なう可能性があります。
+-   Windows 8 GPU プリエンプションモデルでは、Dxgkrnl scheduler によって "signal on submit" 同期プリミティブが関連付けられているパケットのプリエンプションが有効になります。 デバイスがハードウェアベースの待機状態と共に "送信時に通知" 同期プリミティブを使用する場合、待機条件が満たされる前に待機命令を切断する機能をサポートする必要があります。
+
+## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定の要件
+
+
+ハードウェアデバイスがこの機能を実装するときに満たす必要がある要件の詳細[について](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)は、**デバイス...プリエンプションテスト**と**デバイス...FlipOnVSyncMmIo**。
+
+Windows 8 で追加された機能の確認については、「 [WDDM 1.2 の機能](wddm-v1-2-features.md)」を参照してください。
 
  
 

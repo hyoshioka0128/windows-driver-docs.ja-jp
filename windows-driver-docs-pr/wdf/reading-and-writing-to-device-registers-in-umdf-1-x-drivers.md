@@ -4,21 +4,21 @@ description: UMDF 1.x ドライバーでのデバイス レジスターの読み
 ms.assetid: A0640E60-B0DF-4CAD-B292-CC1875EF7F7D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fccf6f0d5b01bc470479d6145c30b019584772c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2070778a2e61c2065ace8c129abcb54fd2a495ad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376309"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842228"
 ---
 # <a name="reading-and-writing-to-device-registers-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのデバイス レジスターの読み取りと書き込み
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-フレームワークは UMDF バージョン 1.11 以降、メモリの容量と I/O ポートの領域でのレジスタにアクセスするルーチンのセットを提供します。 [UMDF 登録/ポート アクセス ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/)カーネル モード ドライバーで使用される HAL ルーチンとよく似ています。 」の説明に従って、ドライバーのレジスタがマップする後[UMDF ドライバーでのハードウェア リソースのマッピングの検索と](https://docs.microsoft.com/windows-hardware/drivers/wdf/finding-and-mapping-hardware-resources-in-umdf-1-x-drivers)、ドライバーは、読み取り/書き込みを使用\_登録\_読み取りし、書き込みを個別に Xxx ルーチン登録します。 I/O ポート、ドライバーの呼び出し、読み取り/書き込み\_ポート\_Xxx ルーチン。
+UMDF バージョン1.11 以降、フレームワークには、メモリ領域と i/o ポート領域のレジスタにアクセスするためのルーチンのセットが用意されています。 [UMDF register/port アクセスルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/)は、カーネルモードドライバーによって使用される HAL ルーチンとよく似ています。 「 [UMDF ドライバーでのハードウェアリソースの検索とマッピング](https://docs.microsoft.com/windows-hardware/drivers/wdf/finding-and-mapping-hardware-resources-in-umdf-1-x-drivers)」で説明されているように、ドライバーによってレジスタがマップされた後、ドライバーは読み取り/書き込み\_REGISTER\_Xxx ルーチンを使用して個々のレジスタの読み取りと書き込みを行います。 I/o ポートの場合、ドライバーは読み取り/書き込み\_ポート\_Xxx ルーチンを呼び出します。
 
-この例では、メモリ マップト レジスタに書き込む方法を示します。
+この例では、メモリマップトレジスタに書き込む方法を示します。
 
 ```cpp
 VOID
@@ -36,9 +36,9 @@ CMyQueue::WriteToDevice(
 }
 ```
 
-既定では、UMDF は内部的にメモリ領域で、または I/O ポートの領域にマップされているレジスタにアクセスするのにシステム コールを使用します。 I/O ポートの領域でのレジスタは常にシステム呼び出しを通じてアクセスします。 ただし、メモリ マップト レジスタへのアクセスを UMDF ドライバーが原因 INF ディレクティブを設定してユーザー モード アドレス空間にメモリ マップト レジスタにマップするためにフレームワーク**UmdfRegisterAccessMode**に**RegisterAccessUsingUserModeMapping**します。 一部のドライバーは、このパフォーマンス上の理由に対して行う必要があります。 参照してください[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)UMDF INF ディレクティブの完全な一覧についてはします。
+既定では、UMDF は、内部的にシステム呼び出しを使用して、メモリ領域または i/o ポート領域にマップされているレジスタにアクセスします。 I/o ポート領域への登録には、常にシステムコールを使用してアクセスします。 ただし、メモリマップトレジスタにアクセスする場合、UMDF driver は、INF ディレクティブ**Umdfregisteraccessmode**を**RegisterAccessUsingUserModeMapping**に設定することによって、フレームワークがメモリマップトレジスタをユーザーモードアドレス空間にマップすることがあります。 一部のドライバーでは、パフォーマンス上の理由により、この操作が必要になる場合があります。 UMDF INF ディレクティブの完全な一覧については、「 [WDF ディレクティブを INF ファイルに指定する](specifying-wdf-directives-in-inf-files.md)」を参照してください。
 
-ドライバーは、読み取り/書き込みを使用する必要があります\_登録\_Xxx ルーチンがユーザー モードにレジスタがマップされた場合でもです。 これらのルーチンでは、ドライバーの入力を検証し、ドライバーが無効な場所へのアクセスを要求しないことを確認します。 まれには、ドライバーは、ユーザー モードでマップされているレジスタを直接、これらのルーチンを使用せずにアクセスする必要があります。 ドライバーは、ユーザー モードを取得します。 そのためには、呼び出すことでアドレスをマップ[ **IWDFDevice3::GetHardwareRegisterMappedAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice3-gethardwareregistermappedaddress)にマップされたベース アドレス。 UMDF は読み取りを検証し、この方法で実行するアクセスの書き込みありません、ため、この手法はレジスタへのアクセスは推奨されません。
+ドライバーは、レジスタがユーザーモードにマップされている場合でも、読み取り/書き込み\_を\_Xxx ルーチンに登録する必要があります。 これらのルーチンは、ドライバーの入力を検証し、ドライバーが無効な場所へのアクセスを要求しないようにします。 ほとんどの場合、ドライバーは、これらのルーチンを使用せずに、ユーザーモードでマップされたレジスタに直接アクセスする必要があります。 これを行うには、マップされたベースアドレスで[**IWDFDevice3:: GetHardwareRegisterMappedAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-gethardwareregistermappedaddress)を呼び出すことによって、ドライバーがユーザーモードでマップされたアドレスを取得します。 UMDF では、この方法で実行される読み取りアクセスと書き込みアクセスは検証されないため、登録アクセスにはこの手法を使用しないことをお勧めします。
 
  
 

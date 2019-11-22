@@ -3,88 +3,88 @@ title: コマンド リストのサポート
 description: コマンド リストのサポート
 ms.assetid: 7bede247-680d-4fd3-a10b-6ef63f0a88ec
 keywords:
-- Direct3D のバージョン 11 WDK Windows 7 の表示、コマンドを一覧表示します。
-- Direct3D のバージョン 11 WDK Windows Server 2008 R2 の表示、コマンドを一覧表示します。
-- コマンド一覧 WDK Windows 7 のサポートを表示をします
-- コマンドには、WDK の Windows 7 のサポートの表示、Direct3D のバージョン 11 が一覧表示します
-- コマンド一覧は、WDK Windows 2008 R2 の表示をサポートします。
-- コマンド一覧は、WDK Windows 2008 R2 の表示、Direct3D のバージョン 11 をサポートします。
+- Direct3D バージョン 11 WDK Windows 7 display、コマンドリスト
+- Direct3D バージョン 11 WDK Windows Server 2008 R2 display、コマンドリスト
+- コマンド一覧は、WDK Windows 7 の表示をサポートしています
+- コマンド一覧は、WDK Windows 7 display、Direct3D version 11 をサポートしています。
+- コマンド一覧は、WDK Windows 2008 R2 の表示をサポートしています
+- コマンド一覧は、WDK Windows 2008 R2 display、Direct3D version 11 をサポートしています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e801e3729c926995f2a251cd32f3f27a47a05cc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d8b6bd7aa77754b836f5f9f3bf5e1215736ad6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385947"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825674"
 ---
 # <a name="supporting-command-lists"></a>コマンド リストのサポート
 
 
-このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows にのみ適用されます。
+このセクションは、windows 7 以降、および windows Server 2008 R2 以降のバージョンの Windows にのみ適用されます。
 
-Direct3D のランタイムは、コマンド一覧の次の Direct3D 11 DDI を使用します。
+Direct3D ランタイムは、次の Direct3D 11 DDI for コマンドリストを使用します。
 
--   [ **CalcPrivateCommandListSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)関数は、コマンドの一覧については、メモリのユーザー モードのディスプレイ ドライバーのプライベート領域のサイズを決定します。
+-   [**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)関数は、コマンドリストのメモリのユーザーモード表示ドライバーのプライベート領域のサイズを決定します。
 
--   [ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)関数は、コマンドの一覧を作成します。
+-   [**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)関数は、コマンドリストを作成します。
 
--   [ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数は、コマンドの一覧をリサイクルします。
+-   [**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数は、コマンドリストをリサイクルします。
 
--   [ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数は、コマンドの一覧を作成し、により、以前使用されていない DDI ハンドルをもう一度完全に有効です。
+-   [**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数は、コマンドリストを作成し、以前に使用されていない DDI ハンドルを完全に再び有効にします。
 
--   [ **DestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数は、コマンドの一覧を破棄します。
+-   [**Destroycommandlist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数は、コマンドリストを破棄します。
 
--   [ **RecycleDestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数は、コマンドの一覧の軽量の破棄が必要である、ドライバーに通知します。
+-   [**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数は、コマンド一覧の軽量な破棄が必要であることをドライバーに通知します。
 
--   [ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数は、コマンドの一覧を実行します。
+-   [**Commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数は、コマンドリストを実行します。
 
-ドライバーのためのセマンティクス[ **CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)、 [ **CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)、 [ **CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)、および[ **DestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数はほとんどの場合、その他の同様の DDI 機能と API に基づく、一目瞭然対応する DDI のドキュメントです。
+ドライバーの[**Commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)、 [**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)、 [**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)、および[**destroycommandlist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数のセマンティクスは、他の同様の DDI 関数や API に基づいて、ほとんどの場合、対応する DDI のドキュメント。
 
-Direct3D の後にランタイムが正常に呼び出す、ドライバーの[ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)または[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数遅延のコンテキストで指定されている、 **hDeferredContext**のメンバー、 [ **D3D11DDIARG\_CREATECOMMANDLIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createcommandlist)構造体*pCreateCommandList*パラメーターが指す、Direct3D ランタイムは、遅延のコンテキストで次の破棄の順序を実行します。
+Direct3D ランタイムは、 *CreateCommandList*パラメーターが指す[**D3D11DDIARG\_pCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createcommandlist)構造体の**hDeferredContext**メンバーに指定されている遅延コンテキストでドライバーの[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)または[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数を正常に呼び出した後、遅延コンテキストで次の破棄シーケンスを実行します。
 
-1.  Direct3D ランタイムは、遅延オブジェクトのすべての開いているハンドルを「閉じる」。 これらのハンドルが遅延のコンテキストにバインドされている表示も可能性がありますに注意してください。
+1.  Direct3D ランタイムは、開いているすべての遅延オブジェクトハンドルを閉じます。 これらのハンドルは、遅延コンテキストにバインドされたままになっている可能性があります。
 
-2.  ランタイムは、遅延のコンテキストを破棄します。
+2.  ランタイムは、遅延コンテキストを破棄します。
 
-呼び出し中に[ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)または[ **RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)ドライバーが、に呼び出し[DDI コールバック関数の状態の更新](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)遅延コンテキストの現在の状態を引き出したりする続行します。 ただし、"closing"と遅延のコンテキストの破棄、中に状態更新 DDI への呼び出しを反映 nothing がバインドされている (つまり、呼び出しの後すぐに*CreateCommandList*または*RecycleCreateCommandList*、暗黙的にバインドされているすべてのものが)。
+[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)または[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)の呼び出し中に、ドライバーが[状態更新 DDI コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)に対して行うすべての呼び出しは、遅延コンテキストの現在の状態を引き続き公開します。 ただし、遅延コンテキストの "終了" と破棄中は、状態更新 DDI への呼び出しによって、何もバインドされていないことが反映されます (つまり、 *CreateCommandList*または*RecycleCreateCommandList*の呼び出しの直後になります)。暗黙的にバインド解除)。
 
-API またはドライバーによって、アプリケーションによって明示的にまたはエラー状態が原因のいずれか遅延コンテキストを破棄もできます。 このような場合は、Direct3D のランタイムは、次のシーケンスを実行します。
+遅延コンテキストは、アプリケーションによって明示的に破棄することも、API またはドライバーによるエラー状態によって破棄することもできます。 このような場合、Direct3D ランタイムは次のシーケンスを実行します。
 
-1.  Direct3D ランタイムが呼び出す、ドライバーの[ **AbandonCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)関数。
+1.  Direct3D ランタイムは、ドライバーの[**AbandonCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)関数を呼び出します。
 
-2.  ランタイムは、1 つずつの遅延のコンテキストからのハンドルをバインド解除します。
+2.  ランタイムは、遅延コンテキストから1つずつハンドルをバインド解除します。
 
-3.  ランタイムは、遅延オブジェクトのすべての開いているハンドルを「閉じる」。
+3.  ランタイムは、開いている遅延オブジェクトハンドルをすべて閉じます。
 
-4.  ランタイムか recyles または遅延のコンテキストを破棄します。
+4.  ランタイムは、遅延コンテキストを破棄するか、破棄します。
 
-上記の順序は、イミディ エイト コンテキストの破棄の順序に似ています。 ドライバーへの呼び出し[ **AbandonCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)関数は、どのようなドライバーを希望に状態を適用するドライバーの機会を提供します。
+前のシーケンスは、即時コンテキストの破棄シーケンスに似ています。 ドライバーの[**AbandonCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)関数を呼び出すことにより、ドライバーが任意のドライバーに状態を適用する機会を得ることができます。
 
-呼び出し中に、ドライバーの[ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数の場合、ドライバーは、デバイスが作成されたときの状態にするようにする遅延のコンテキストの状態を変更する必要があります。 この操作は、状態のクリア操作でとも呼ばれます。 呼び出し中に、ドライバーの**CommandListExecute**関数、ただし、すべての呼び出しを発行するドライバー、 [DDI コールバック関数の状態の更新](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)も中にバインドされた内容の状態を反映、最後の DDI ドライバー関数の呼び出しです。 ドライバー関数に次の DDI 呼び出し中に状態更新 DDI コールバック関数に、ドライバーは、すべての呼び出しを表示する現在の状態と完全に空から暗黙的に状態遷移を反映する**CommandListExecute**. このファクトは、一般的なセマンティクスの状態更新 DDI のコールバック関数の動作と若干異なります。 ドライバーでの呼び出し中に、ドライバーのいずれかの状態更新 DDI のコールバック関数が呼び出されてかどうか*SetShader*関数、状態更新 DDI のコールバック関数が表示に既にバインドされている新しいシェーダーにバインドされています。 この食い違い DDI コールバック動作の状態更新の中に以前の状態を反映するようにドライバーに柔軟性を提供する**CommandListExecute**します。
+ドライバーの[**Commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)関数の呼び出し中に、ドライバーは、デバイスが作成されたときの状態と同等になるように、遅延コンテキストの状態を遷移させる必要があります。 この操作は、クリア状態の操作とも呼ばれます。 ただし、ドライバーの**Commandlistexecute**関数を呼び出しているときに、ドライバーが[状態更新 DDI コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)に対して行う呼び出しは、ドライバー関数への最後の DDI 呼び出しの間にバインドされたものの状態を反映しています。 ドライバー関数への次の DDI 呼び出しでは、ドライバーが状態更新 DDI コールバック関数に対して行うすべての呼び出しについて、現在の状態が完全に空として表示されます。これは、 **Commandlistexecute**からの暗黙的な状態遷移を反映しています。 この事実は、状態更新 DDI コールバック関数の一般的なセマンティクスと動作とは若干異なります。 ドライバーの*Setshader*関数のいずれかの呼び出し中に、ドライバーが状態更新 ddi コールバック関数を呼び出した場合、状態更新 ddi のコールバック関数は、バインドされている新しいシェーダーが既にバインドされているものとして表示されます。 状態更新 DDI のコールバック動作のこのような違いにより、 **Commandlistexecute**時の古い状態を反映するために、ドライバーの柔軟性が向上します。
 
-Direct3D のバージョン 11 API により、クエリが操作されているどちらもありません (つまり、必要がある[ **QueryBegin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querybegin)または[ **QueryEnd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_queryend)の呼び出し) コマンドの一覧でされてのみ「が開始した」コマンド リストを実行しようとするコンテキストとします。 API は、同じリソースが現在割り当てられているコンテキストで動的リソースのマップを記録するコマンドの一覧が実行されていないことも確認します。 アプリケーションを呼び出す前に、 **FinishCommandList**関数、Direct3D ランタイムは、ドライバーの**QueryEnd**と[ **ResourceUnmap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap)DDI 関数クエリまたはまだ開始されてクエリを保持する動的リソースまたはマッピングされたリソースのため、開く**FinishCommandList**暗黙的にクエリの範囲を終了し、マッピングされたリソースの割り当てを解除します。
+Direct3D version 11 API では、コマンド一覧によってクエリが操作されていない (つまり、 [**Querybegin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querybegin)または[**querybegin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_queryend)が呼び出されている) こと、およびコマンドリストを実行しようとしたコンテキストによってのみ "開始" されていることを確認します。 また、API は、動的リソースのマップを記録するコマンドリストが、現在マップされている同じリソースを持つコンテキストで実行されないようにします。 アプリケーションが**Finish Commandlist**関数を呼び出す前に、Direct3D ランタイムは、開始されたクエリまたはマップされたリソースを開いたままになっている任意のクエリまたは動的リソースに対して、ドライバーの**Queryend**および[**resourceunmap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap) DDI 関数を呼び出します。**Finish Commandlist**は、暗黙的にクエリ範囲を終了し、マップされたリソースを解除します。
 
-### <a name="span-idoptimizationforsmallcommandlistsspanspan-idoptimizationforsmallcommandlistsspan-optimization-for-small-command-lists"></a><span id="optimization_for_small_command_lists"></span><span id="OPTIMIZATION_FOR_SMALL_COMMAND_LISTS"></span> 小規模なコマンド一覧の最適化
+### <a name="span-idoptimization_for_small_command_listsspanspan-idoptimization_for_small_command_listsspan-optimization-for-small-command-lists"></a><span id="optimization_for_small_command_lists"></span><span id="OPTIMIZATION_FOR_SMALL_COMMAND_LISTS"></span>小さいコマンドリストの最適化
 
-小規模メモリの量のコマンド一覧のメモリのリサイクルの最適化が重要なは、コマンド一覧 DDI 関数呼び出しの間で競合を減らすと、コマンド一覧の必要な呼び出しの処理のオーバーヘッドを削減できます。 各コマンドの一覧で inherant は処理のオーバーヘッドは重要です。 この最適化は、コマンドの一覧に必要な処理オーバーヘッドがコマンドの一覧に必要な CPU 時間とメモリ容量よりも優位コマンドの一覧。 小規模メモリの量のコマンドの一覧はたとえば、CopyResource などの単一のグラフィックス コマンドです。 CopyResource に必要なメモリの量は、2 つのポインターです。 ただし、CopyResource 同量のメモリ量では大規模なコマンドのリストとして処理コマンド一覧の呼び出しも必要です。 ドライバーの呼び出しに、その処理のオーバーヘッドが、ランタイムの必要な高頻度で小さなメモリサイズ コマンド一覧が生成されると、 [ **CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)、 [ **DestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [ **CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)、および[ **DestroyDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroydevice) (コンテキストの遅延) の機能がますます重要になります。 ここでは、メモリは、DDI ハンドルのメモリを含むデータ構造では、ドライバーを保持するシステム メモリです。
+小さなメモリ量のコマンド一覧に対するメモリリサイクルの最適化は、コマンドリストの DDI 関数呼び出し間の競合を軽減し、コマンドリストに必要な呼び出し処理のオーバーヘッドを減らすために重要です。 各コマンド一覧で inherant されている処理のオーバーヘッドは重要です。 この最適化は、コマンド一覧に必要な処理オーバーヘッドが、コマンド一覧に必要な CPU 時間とメモリ領域をより大きくするコマンドリストを対象としています。 小さいメモリ量のコマンド一覧は、たとえば、CopyResource のような1つのグラフィックスコマンドです。 CopyResource に必要なメモリの量は2つのポインターです。 ただし、CopyResource では、大量のメモリを持つコマンドリストと同じ量のコマンド一覧呼び出し処理が必要になります。 小メモリ量のコマンドリストが高頻度で生成される場合、ランタイムがドライバーの[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)、 [**destroycommandlist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [**CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)、およびを[**呼び出すために必要な処理オーバーヘッド。破棄デバイス (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroydevice)関数 (遅延コンテキスト) はますます重要になります。 ここで参照されるメモリは、DDI ハンドルのメモリを含むドライバーデータ構造を保持するシステムメモリです。
 
-ドライバーの[ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数する必要がありますドライバーとドライバーのハンドルはアウト規約を参照してください (ただし、まだ削除されていない)、および通知と以前使用されていないドライバーのハンドルが再利用されます。 この通知は、コマンド一覧と遅延コンテキストの両方のハンドルに適用されます。 ドライバーをリサイクルする必要がありますのみメモリは、DDI へのポインターを処理するメモリです。 目的を while **RecycleCommandList**効率、ドライバーが完全な柔軟性をリサイクルするには、どのメモリを選択して、ハンドルに関連付けられているメモリを再利用します。 ドライバーは、イミディ エイト コンテキスト コマンドの一覧がポイントを処理するメモリの領域のサイズを変更できません。 このサイズの戻り値は、 [ **CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)します。 また、ドライバーは、コンテキストのコマンド一覧のローカル ポイントの処理をメモリの領域のサイズを変更できません。このサイズの戻り値は、 [ **CalcDeferredContextHandleSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)します。
+ドライバーの[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数は、ドライバーハンドルが使用されなくなった (ただし、まだ削除されていない) 場合、および以前に未使用のドライバーハンドルが再利用された場合に、ドライバーに通知する必要があります。 この通知は、コマンドリストと遅延コンテキストの両方のハンドルに適用されます。 ドライバーがリサイクルする必要があるメモリは、DDI ハンドルが指すメモリだけです。 **RecycleCommandList**の目的は、ハンドルに関連付けられているメモリをリサイクルすることですが、効率を上げるために、ドライバーは、リサイクルするメモリを選択して選択するための柔軟な柔軟性を備えています。 ドライバーは、直接コンテキストのコマンドリストハンドルがポイントするメモリ領域のサイズを変更できません。 このサイズは、 [**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)の戻り値です。 また、このドライバーは、コンテキストコマンドリストのローカルハンドルが指すメモリ領域のサイズを変更することもできません。このサイズは、 [**CalcDeferredContextHandleSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)の戻り値です。
 
-ドライバーの[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)と[ **RecycleCreateDeferredContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatedeferredcontext) DDI 関数は、メモリ不足を返す必要がありますエラー コードとして E\_OUTOFMEMORY HRESULT 値。 これらの関数の呼び出しを通じてこのようなエラー コードを指定しない、 [ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)関数。 このドライバーの要件は、ランタイムをデバイス全体の同期を使用して、これらの型が作成ドライバー関数からイミディ エイト コンテキスト エラーを監視することを防ぎます。 これらの監視のエラーは、小規模メモリの量のコマンド一覧の壊滅的な競合の原因になります。
+ドライバーの[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)および[**RecycleCreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatedeferredcontext) DDI 関数は、OUTOFMEMORY HRESULT 値 E\_としてメモリ不足エラーコードを返す必要があります。 これらの関数は、 [**pfnSetErrorCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)関数の呼び出しによって、このようなエラーコードを提供しません。 このドライバーの要件により、ランタイムは、デバイス全体の同期を使用して、これらの作成タイプドライバー関数からのコンテキストエラーを即座に監視する必要がなくなります。 これらのエラーを監視することは、小規模メモリのコマンド一覧の致命的な競合の原因になります。
 
-ドライバーの間の違い[ **RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [ **RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)、および[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数は重要です。 その機能を以下に示します。
+ドライバーの[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)、 [**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)の各関数の違いは重要です。 これらの機能には、次のものがあります。
 
-<span id="RecycleDestroyCommandList"></span><span id="recycledestroycommandlist"></span><span id="RECYCLEDESTROYCOMMANDLIST"></span>[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)  
-ランタイムが呼び出す、ドライバーの[ **RecycleDestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)軽量の破棄が必要である、ドライバーに通知します。 つまり、ドライバーする必要がありますいないまだ割り当てを解除 DDI コマンド一覧ハンドルのメモリ。 ドライバーの*RecycleDestroyCommandList*関数は、ドライバーのと同じようにフリー スレッド**DestroyCommandList**関数。
+<span id="RecycleDestroyCommandList"></span><span id="recycledestroycommandlist"></span><span id="RECYCLEDESTROYCOMMANDLIST"></span>[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)  
+ランタイムは、ドライバーの[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)関数を呼び出して、軽量の破棄が必要であることをドライバーに通知します。 つまり、ドライバーは、DDI コマンドリストハンドルのメモリの割り当てを解除しないようにする必要があります。 ドライバーの*RecycleDestroyCommandList*関数は、ドライバーの**destroycommandlist**関数と同様にフリースレッドです。
 
-<span id="RecycleCommandList"></span><span id="recyclecommandlist"></span><span id="RECYCLECOMMANDLIST"></span>[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)  
-ドライバーの[ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数は、ランタイムが遅延コンテキスト キャッシュに再度コマンド一覧のハンドルを統合することをドライバーに通知します。 関数には、ドライバーを遅延コンテキスト キャッシュには、コマンドの一覧に関連付けられているメモリを統合する機会を提供します。 ランタイムが呼び出す、ドライバーの**RecycleCommandList**遅延コンテキストのスレッドからの関数。 **RecycleCommandList** DDI 関数は、ドライバーが、独自の同期を実行するための必要性を軽減します。
+<span id="RecycleCommandList"></span><span id="recyclecommandlist"></span><span id="RECYCLECOMMANDLIST"></span>[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)  
+ドライバーの[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)関数は、コマンドリストを処理するランタイムが遅延コンテキストキャッシュに戻されたことをドライバーに通知します。 次に、関数は、コマンドリストに関連付けられているメモリを遅延コンテキストキャッシュに戻す機会をドライバーに提供します。 ランタイムは、遅延コンテキストスレッドからドライバーの**RecycleCommandList**関数を呼び出します。 **RecycleCommandList** DDI 関数を使用すると、ドライバーが自身の同期を実行する必要性が軽減されます。
 
-<span id="RecycleCreateCommandList"></span><span id="recyclecreatecommandlist"></span><span id="RECYCLECREATECOMMANDLIST"></span>[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)  
-ランタイムが呼び出す、ドライバーの[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数をもう一度完全に有効にするには、以前使用されていない DDI ハンドルにします。
+<span id="RecycleCreateCommandList"></span><span id="recyclecreatecommandlist"></span><span id="RECYCLECREATECOMMANDLIST"></span>[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)  
+ランタイムは、ドライバーの[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)関数を呼び出して、以前に使用されていない DDI ハンドルを再び完全に有効にします。
 
-DDI 関数をリサイクルこれらは、小規模メモリの量のコマンド一覧のリソースをリサイクルする最適化の機会を提供します。 次の疑似コードは、フロー DDI API から関数呼び出しのランタイムの実装を示しています。
+これらのリサイクル DDI 関数は、小規模メモリのコマンド一覧のリソースをリサイクルするための最適化の機会を提供します。 次の擬似コードは、API から DDI への関数呼び出しのフローを通じてランタイムを実装する方法を示しています。
 
 ```cpp
 ::FinishCommandList()
@@ -119,9 +119,9 @@ CommandList::Destroy()
 }
 ```
 
-次の状態図は、イミディ エイト コンテキスト DDI コマンド一覧ハンドルの有効性を示します。 緑色の状態で使用できるハンドルを表す[ **CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)します。
+次の状態の図は、即時コンテキストの DDI コマンドリストハンドルの有効性を示しています。 緑の状態は、 [**Commandlistexecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)で使用できるハンドルを表します。
 
-![コマンド リストのハンドルの有効性の状態を示す図](images/d3d11ddi2.png)
+![コマンドリストハンドルの有効性の状態を示す図](images/d3d11ddi2.png)
 
  
 

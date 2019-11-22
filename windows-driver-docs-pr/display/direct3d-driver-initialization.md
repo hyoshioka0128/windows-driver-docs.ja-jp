@@ -3,18 +3,18 @@ title: Direct3D ドライバーの初期化
 description: Direct3D ドライバーの初期化
 ms.assetid: ef37a570-a94e-4021-b84f-4436aa454ac5
 keywords:
-- Direct3D のドライバーの初期化
-- Direct3D WDK Windows 2000 の表示、初期化
+- Direct3D ドライバーの初期化
+- Direct3D WDK Windows 2000 display、initialization
 - DrvGetDirectDrawInfo
 - DdGetDriverInfo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a02056b4feddb290f8c6106d281e8af9f6d71971
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebfaa21273c0d73df8ba8bbe50d264e639ae0948
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384869"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839011"
 ---
 # <a name="direct3d-driver-initialization"></a>Direct3D ドライバーの初期化
 
@@ -22,11 +22,11 @@ ms.locfileid: "67384869"
 ## <span id="ddk_direct3d_driver_initialization_gg"></span><span id="DDK_DIRECT3D_DRIVER_INITIALIZATION_GG"></span>
 
 
-ときに、ドライバーの[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)関数は、DirectDraw サポートを初期化するために Microsoft DirectDraw ランタイムによって呼び出される、ドライバーは、マイクロソフトの Direct3D を示すためには、次を行う必要があります機能:
+ドライバーの[**DrvGetDirectDrawInfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)関数が microsoft directdraw runtime によって呼び出されて directdraw サポートが初期化されると、ドライバーは次の処理を実行して microsoft Direct3D 機能を示す必要があります。
 
--   設定、DDCAPS\_で 3D のフラグ、 **ddCaps.dwCaps**のメンバー、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体をドライバーのハードウェアが 3D であることを示す高速化します。
+-   [**DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体の Ddcaps **. dwcaps**メンバーで、ddcaps\_3d フラグを設定して、ドライバーのハードウェアに3d アクセラレーションがあることを示します。
 
--   設定、DDSCAPS\_*Xxx*のフラグ、 **ddCaps.ddsCaps** 、DD のメンバー\_ドライバーのビデオ メモリ領域の 3D 機能を記述する HALINFO 構造体。 フラグは、次の表に一覧表示されます。
+-   HALINFO 構造体\_の DDSCAPS\_*Xxx*フラグを**設定します。このメンバーは**、ドライバーのビデオメモリサーフェイスの3d 機能を記述します。 次の表に、フラグを示します。
 
     <table>
     <colgroup>
@@ -42,15 +42,15 @@ ms.locfileid: "67384869"
     <tbody>
     <tr class="odd">
     <td align="left"><p>DDSCAPS_3DDEVICE</p></td>
-    <td align="left"><p>ドライバーの表面を 3D レンダリング先として使用できることを示します。</p></td>
+    <td align="left"><p>ドライバーの表面を3D レンダリングの宛先として使用できることを示します。</p></td>
     </tr>
     <tr class="even">
     <td align="left"><p>DDSCAPS_TEXTURE</p></td>
-    <td align="left"><p>ドライバーの表面を 3D テクスチャ マッピングに使用できることを示します。</p></td>
+    <td align="left"><p>ドライバーの表面を3D テクスチャマッピングに使用できることを示します。</p></td>
     </tr>
     <tr class="odd">
     <td align="left"><p>DDSCAPS_ZBUFFER</p></td>
-    <td align="left"><p>ドライバーの表面を Z バッファーとして使用できることを示します。</p></td>
+    <td align="left"><p>ドライバーのサーフェイスを Z バッファーとして使用できることを示します。</p></td>
     </tr>
     </tbody>
     </table>
@@ -59,36 +59,36 @@ ms.locfileid: "67384869"
 
 <!-- -->
 
--   設定、 **GetDriverInfo**のメンバー、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体をポイントして、ドライバーの[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)コールバック。 ドライバーは、DDHALINFO を設定する必要がありますも\_GETDRIVERINFOSET フラグ、 **dwFlags** 、DD のメンバー\_HALINFO 構造が実装されていることを示す、 **DdGetDriverInfo**コールバック。
+-   ドライバーの[**Ddgetdriverinfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)コールバックを指すように、 [**DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)構造体の**getdriverinfo**メンバーを設定します。 また、ドライバーは、DD\_HALINFO 構造体の**dwFlags**メンバーで DDHALINFO\_GETDRIVERINFOSET フラグを設定して、 **Ddgetdriverinfo**コールバックが実装されていることを示す必要があります。
 
--   割り当ておよびのメンバーの初期化、 [ **D3DHAL\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_callbacks)でこの構造体を返す構造体であり、 **lpD3DHALCallbacks** DD のメンバー\_HALINFO 構造体。
+-   [**D3DHAL\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks)構造体のメンバーを割り当てて初期化し、DD\_HALINFO 構造体の**lpD3DHALCallbacks**メンバーにこの構造体を返します。
 
--   割り当ておよびのメンバーの初期化、 [ **D3DHAL\_GLOBALDRIVERDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)でこの構造体を返す構造体であり、 **lpD3DGlobalDriverData**メンバーDD の\_HALINFO 構造体。
+-   [**D3DHAL\_GLOBALDRIVERDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)構造体のメンバーを割り当てて初期化し、DD\_HALINFO 構造体の**lpD3DGlobalDriverData**メンバーにこの構造体を返します。
 
-ドライバーが Microsoft DirectX 7.0 で対応可能であることを示す、以下を実行します。
+ドライバーが Microsoft DirectX 7.0 を使用できることを示すには、次の手順を実行します。
 
--   含める、D3DDEVCAPS\_DRAWPRIMITIVES2EX フラグ、 **dwDevCaps**のメンバー、 [ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)に報告する構造体マイクロソフトの Direct3D のドライバーの初期化中に
+-   Microsoft Direct3D ドライバーの初期化中に報告される[**D3DDEVICEDESC\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)構造体の**dwdevcaps**メンバーに D3DDEVCAPS\_DRAWPRIMITIVES2EX フラグを含めます。
 
--   GUID に対応\_で Miscellaneous2Callbacks GUID **DdGetDriverInfo**コールバックを設定して、 **GetDriverState**、 **CreateSurfaceEx**、および**DestroyDDLocal**のメンバー、 [ **DD\_MISCELLANEOUS2CALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_miscellaneous2callbacks)構造体。 Direct3D のドライバーとの or 演算の適切なコールバックをポイントするこれらの設定は、 **dwFlags** 、DDHAL を持つメンバー\_MISC2CB32\_CREATESURFACEEX、DDHAL\_MISC2CB32\_GETDRIVERSTATE、および DDHAL\_MISC2CB32\_DESTROYDDLOCAL ビットをそれぞれします。
+-   **CREATESURFACEEX**Miscellaneous2Callbacks 構造体[ **\_** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_miscellaneous2callbacks)の**getdriverstate**、、および**destroyddlocal**メンバーを設定して、 **Ddgetdriverinfo**コールバックの guid\_Miscellaneous2Callbacks guid に応答します。 これらは、Direct3D ドライバーの適切なコールバックをポイントするように設定され、MISC2CB32\_CREATESURFACEEX、DDHAL\_MISC2CB32\_GETDRIVERSTATE、および DDHAL\_MISC2CB32 を使用し\_て、 **dwFlags**メンバーの中にあります。\_DESTROYDDLOCAL bit をそれぞれ破棄します。
 
-後[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)返します、GDI の呼び出し、ドライバーの[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)コールバック異なる Guid を複数回ドライバーの初期化を完了します。 **DdGetDriverInfo** Direct3D をサポートする次の Guid にコールバックが応答する必要があります。
+[**DrvGetDirectDrawInfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)が返された後、GDI はドライバーの初期化を完了するために、ドライバーの[**Ddgetdriverinfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)コールバックをさまざまな guid に対して複数回呼び出します。 **Ddgetdriverinfo**コールバックは、Direct3D をサポートするために次の guid に応答する必要があります。
 
 <span id="GUID_D3DCallbacks3"></span><span id="guid_d3dcallbacks3"></span><span id="GUID_D3DCALLBACKS3"></span>GUID\_D3DCallbacks3  
-ドライバーの割り当てし、のメンバーを初期化する必要があります、 [ **D3DHAL\_CALLBACKS3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_callbacks3)でこの構造体を返す構造体であり、 **lpvData**のメンバー、[ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)構造体。
+ドライバーは、 [**D3DHAL\_CALLBACKS3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks3)構造体のメンバーを割り当てて初期化し、 [**DD\_getdriverinfodata**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)構造体の**lpvdata**メンバーでこの構造体を返します。
 
 <span id="GUID_Miscellaneous2Callbacks"></span><span id="guid_miscellaneous2callbacks"></span><span id="GUID_MISCELLANEOUS2CALLBACKS"></span>GUID\_Miscellaneous2Callbacks  
-ドライバーの割り当てし、のメンバーを初期化する必要があります、 [ **DD\_MISCELLANEOUS2CALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_miscellaneous2callbacks)でこの構造体を返す構造体であり、 **lpvData**メンバー、DD の\_GETDRIVERINFODATA 構造体。
+ドライバーは、 [**dd\_MISCELLANEOUS2CALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_miscellaneous2callbacks)構造体のメンバーを割り当てて初期化し、DD\_GETDRIVERINFODATA 構造体の**lpvdata**メンバーでこの構造体を返す必要があります。
 
 <span id="GUID_D3DExtendedCaps"></span><span id="guid_d3dextendedcaps"></span><span id="GUID_D3DEXTENDEDCAPS"></span>GUID\_D3DExtendedCaps  
-ドライバーの割り当てし、の適切なメンバーを初期化する必要があります、 [ **D3DHAL\_D3DEXTENDEDCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)でこの構造体を返す構造体であり、 **lpvData**、DD のメンバー\_GETDRIVERINFODATA 構造体。
+ドライバーは、 [**D3DHAL\_D3DEXTENDEDCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)構造体の適切なメンバーを割り当てて初期化し、DD\_GETDRIVERINFODATA 構造体の**lpvdata**メンバーにこの構造体を返します。
 
-<span id="GUID_ZPixelFormats"></span><span id="guid_zpixelformats"></span><span id="GUID_ZPIXELFORMATS"></span>GUID\_ZPixelFormats  
-ドライバーの割り当てし、の適切なメンバーを初期化する必要があります、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)をドライバーがサポートしでこれらの構造体を返すすべての Z バッファー形式の構造、 **lpvData** 、DD のメンバー\_GETDRIVERINFODATA 構造体。 ドライバーは、D3DDP2OP をサポートしている場合にこの GUID に対応する必要が\_の実装でクリア操作コード[ **D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)します。
+<span id="GUID_ZPixelFormats"></span><span id="guid_zpixelformats"></span><span id="GUID_ZPIXELFORMATS"></span>GUID\_Zピクセル形式  
+ドライバーは、ドライバーがサポートするすべての Z バッファー形式に対して、 [**Ddピクセル形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)の構造体の適切なメンバーを割り当てて初期化し、DD\_GETDRIVERINFODATA の**lpvdata**メンバーでこれらの構造体を返します。データ. ドライバーが[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)の実装で D3DDP2OP\_CLEAR 操作コードをサポートしている場合は、この GUID に応答する必要があります。
 
 <span id="GUID_D3DParseUnknownCommandCallback"></span><span id="guid_d3dparseunknowncommandcallback"></span><span id="GUID_D3DPARSEUNKNOWNCOMMANDCALLBACK"></span>GUID\_D3DParseUnknownCommandCallback  
-ドライバーは、Direct3D ランタイムへのポインターを格納する必要があります**D3DParseUnknownCommand**コールバック。 ポインターがドライバーに渡される、 **lpvData** 、DD のメンバー\_GETDRIVERINFODATA 構造体。 ドライバーの[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックの呼び出し、 **D3DParseUnknownCommand**ドライバーが認識されないコマンドを解析するコールバック。
+ドライバーは、Direct3D ランタイムの**D3DParseUnknownCommand**コールバックへのポインターを格納する必要があります。 ポインターは、DD\_GETDRIVERINFODATA 構造体の**Lpvdata**メンバーのドライバーに渡されます。 ドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックは、ドライバーで認識されないコマンドを解析するために**D3DParseUnknownCommand**コールバックを呼び出します。
 
-詳細については、次を参照してください。 [DirectDraw ドライバーの初期化](directdraw-driver-initialization.md)します。
+詳細については、「 [DirectDraw ドライバーの初期化](directdraw-driver-initialization.md)」を参照してください。
 
  
 

@@ -1,81 +1,81 @@
 ---
-title: 仮想 HID フレームワーク (VHF) を使用して、HID ソース ドライバーを作成します。
-description: オペレーティング システムに HID ソース ドライバー HID レポート データの記述方法について説明します。
+title: 仮想 HID フレームワーク (VHF) を使用して HID ソースドライバーを作成する
+description: HID データをオペレーティングシステムに報告する HID ソースドライバーの作成について説明します。
 ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ac6bfb70a75049627fb3fadd12732af74d4bd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f3b3a5431ccaf2ffeb49bae33551c4f5b23ea3da
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385789"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841549"
 ---
-# <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>仮想 HID フレームワーク (VHF) を使用して、HID ソース ドライバーを作成します。
+# <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>仮想 HID フレームワーク (VHF) を使用して HID ソースドライバーを作成する
 
 **要約**
 
--   オペレーティング システムに読み取りの HID レポートを送信するカーネル モード ドライバー フレームワーク (KMDF) HID ソース ドライバーを記述します。
--   仮想の HID デバイス スタックの HID ソース ドライバーには、下位のフィルターとして VHF ドライバーを読み込みます。
+-   HID 読み取りレポートをオペレーティングシステムに送信するカーネルモードドライバーフレームワーク (KMDF) HID ソースドライバーを記述します。
+-   VHF ドライバーを、仮想 HID デバイススタック内の HID ソースドライバーに対する下位フィルターとして読み込みます。
 
 **適用対象**
 
 -   Windows 10
--   HID デバイスのドライバー開発者向け
+-   HID デバイスのドライバー開発者
 
 **重要な API**
 
--   [仮想 HID Framework コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
--   [仮想 HID Framework メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
--   [仮想 HID フレームワークの構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [仮想 HID フレームワークのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [仮想 HID フレームワークのメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [仮想 HID フレームワークの構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-オペレーティング システムに HID ソース ドライバー HID レポート データの記述方法について説明します。
+HID データをオペレーティングシステムに報告する HID ソースドライバーの作成について説明します。
 
-HID の入力デバイスでは、次のように – キーボード、マウス、ペン、タッチ、またはボタン、さまざまなレポートを送信しますオペレーティング システム、デバイスの目的を理解し、必要なアクションを実行できるようにします。 レポートは、の形式で[HID コレクション](opening-hid-collections.md)と[HID の使用](hid-usages.md)します。 デバイスなど、Windows でサポートされるうちいくつかのさまざまなトランスポート経由でそれらのレポートを送信する[I2C 経由で非表示に](hid-over-i2c-guide.md)と[USB 経由で HID](hid-over-usb.md)します。 場合によっては、トランスポートは、Windows でサポートされていない可能性があります。 またはレポートが実際のハードウェアに直接マップがいません。 非 GPIO ボタンやセンサーなどの仮想ハードウェアの別のソフトウェア コンポーネントによって送信される HID 形式のデータのストリームがあります。 たとえば、加速度計データから、携帯電話、PC にワイヤレス接続で送信しながら、ゲーム コント ローラーとして動作するかを検討してください。 別の例では、コンピューターをリモートから入力を受け取り Miracast デバイス UIBC プロトコルを使用しています。
+キーボード、マウス、ペン、タッチ、ボタンなどの HID 入力デバイスは、さまざまなレポートをオペレーティングシステムに送信して、デバイスの目的を理解し、必要なアクションを実行できるようにします。 レポートの形式は、 [hid コレクション](opening-hid-collections.md)と[hid usage](hid-usages.md)です。 デバイスは、これらのレポートをさまざまなトランスポートに[送信します。この](hid-over-usb.md)ようなレポートは、Windows によってサポートされています。このようなものは、Windows でサポートさ[れてい](hid-over-i2c-guide.md)ます。 場合によっては、トランスポートが Windows でサポートされていないか、レポートが実際のハードウェアに直接マップされていない可能性があります。 非 GPIO ボタンやセンサーのために、などの仮想ハードウェア用の別のソフトウェアコンポーネントによって送信される、HID 形式のデータストリームにすることができます。 たとえば、ゲームコントローラーとして動作し、PC にワイヤレスで送信される電話のデータを加速度計することを検討してください。 別の例では、コンピューターが UIBC プロトコルを使用して Miracast デバイスからリモート入力を受信できます。
 
-Windows の以前のバージョンで新しいトランスポート (実際のハードウェアまたはソフトウェア) をサポートするために記述しなければ、 [HID トランスポート ミニドライバー](transport-minidrivers.md) Hidclass.sys、Microsoft 提供のインボックス クラス ドライバーにバインドします。 など、クラス/ミニ ドライバー ペアに、HID コレクションが提供されている[最上位のコレクション](top-level-collections.md)上位レベルのドライバーとアプリケーションのユーザー モードにします。 モデルでは、課題は、書き込み、ミニドライバーは、複雑な作業をすることができます。
+以前のバージョンの Windows では、新しいトランスポート (実際のハードウェアまたはソフトウェア) をサポートするために、 [HID トランスポートミニドライバー](transport-minidrivers.md)を作成し、Microsoft が提供するインボックスクラスドライバー Hidclass にバインドする必要がありました。 クラス/ミニドライバーのペアでは、[最上位](top-level-collections.md)レベルのコレクションなど、HID コレクションが上位レベルのドライバーやユーザーモードアプリケーションに提供されています。 このモデルでは、困難な作業になる可能性があるミニドライバーを記述しています。
 
-Windows 10 以降、新しい仮想 HID フレームワーク (VHF) トランスポート ミニドライバーを記述する必要はありません。 代わりにか WDM、KMDF のプログラミング インターフェイスを使用して、HID ソース ドライバーを作成することができます。 フレームワークは、ドライバーによって使用されるプログラミング要素を公開するための Microsoft から提供された静的ライブラリで構成されます。 1 つまたは複数の子デバイスを列挙し、構築して仮想 HID ツリーの管理を実行する Microsoft 提供のインボックス ドライバーも含まれています。
+Windows 10 以降では、新しい仮想 HID フレームワーク (VHF) により、トランスポートミニドライバーを作成する必要がなくなります。 代わりに、KMDF または WDM プログラミングインターフェイスを使用して、HID ソースドライバーを作成できます。 フレームワークは、ドライバーによって使用されるプログラミング要素を公開する、Microsoft 提供のスタティックライブラリで構成されています。 また、1つまたは複数の子デバイスを列挙し、仮想 HID ツリーの構築と管理を進める、Microsoft が提供するインボックスドライバーも含まれています。
 
-**注**  VHF をこのリリースでは、カーネル モードでのみ HID ソース ドライバーをサポートしています。
+**注**  このリリースでは、VHF では、カーネルモードでのみ HID ソースドライバーがサポートされています。
 
-このトピックでは、フレームワーク、仮想の HID デバイス ツリー、および構成シナリオのアーキテクチャについて説明します。
+このトピックでは、フレームワークのアーキテクチャ、仮想 HID デバイスツリー、および構成シナリオについて説明します。
 
-## <a name="virtual-hid-device-tree"></a>仮想の HID デバイス ツリー
+## <a name="virtual-hid-device-tree"></a>仮想 HID デバイスツリー
 
-この図では、デバイス ツリーは、ドライバーとその関連するデバイス オブジェクトを示します。
+このイメージの [デバイス] ツリーには、ドライバーとそれに関連付けられているデバイスオブジェクトが表示されます。
 
-![仮想の hid デバイス ツリー](images/vhf.png)
+![仮想 hid デバイスツリー](images/vhf.png)
 
-**HID ソース ドライバー (ドライバー)**
+**HID ソースドライバー (お使いのドライバー)**
 
-HID のソースのドライバーは Vhfkm.lib へのリンクし、Vhf.h にはそのビルド プロジェクトが含まれています。 いずれかを使用して、ドライバーを記述できます[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) の一部であるカーネル モード ドライバー フレームワーク (KMDF)、または、 [Windows Driver Frameworks (WDF)](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)します。 ドライバー、フィルター ドライバーまたはデバイス スタックの関数のドライバーとして読み込むことができます。
+HID ソースドライバーは Vhfkm にリンクし、ビルドプロジェクトに Vhf を含めます。 ドライバーは、 [Windows ドライバーフレームワーク (WDF)](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)の一部である[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) またはカーネルモードドライバーフレームワーク (kmdf) のいずれかを使用して書き込むことができます。 ドライバーは、フィルタードライバーまたは関数ドライバーとしてデバイススタックに読み込むことができます。
 
-**VHF スタティック ライブラリ (vhfkm.lib)**
+**VHF スタティックライブラリ (vhfkm)**
 
-スタティック ライブラリには、Windows 10 用 Windows Driver Kit (WDK) では含まれます。 ライブラリは、ルーチンには、HID ソース ドライバーによって使用されているコールバック関数などのプログラミング インターフェイスを公開します。 ドライバーが関数を呼び出すときに、スタティック ライブラリは、要求を処理する VHF ドライバーに要求を転送します。
+スタティックライブラリは、windows 10 用の Windows Driver Kit (WDK) に含まれています。 ライブラリは、HID ソースドライバーによって使用されるルーチンやコールバック関数などのプログラミングインターフェイスを公開します。 ドライバーが関数を呼び出すと、スタティックライブラリは要求を処理する VHF ドライバーに要求を転送します。
 
-**VHF ドライバー (Vhf.sys)**
+**VHF ドライバー (Vhf)**
 
-Microsoft 提供のインボックス ドライバー。 このドライバーは HID ソース デバイス スタックで、ドライバーの下に下位のフィルター ドライバーとして読み込む必要があります。 動的に VHF ドライバーは、子デバイスを列挙し、HID ソースのドライバーで指定されている 1 つまたは複数の HID デバイスの物理デバイス オブジェクト (PDO) を作成します。 列挙子のデバイスのトランスポートの HID ミニ ドライバー機能も実装します。
+Microsoft が提供するインボックスドライバー。 このドライバーは、HID ソースデバイススタックのドライバーの下に、下位のフィルタードライバーとして読み込む必要があります。 VHF ドライバーは、子デバイスを動的に列挙し、HID ソースドライバーによって指定された1つまたは複数の HID デバイス用に物理デバイスオブジェクト (PDO) を作成します。 また、列挙された子デバイスの HID トランスポートミニドライバー機能も実装します。
 
-**HID クラス ドライバーのペア (Hidclass.sys、Mshidkmdf.sys)**
+**HID クラスドライバーのペア (Hidclass、Mshidkmdf)**
 
-Hidclass/Mshidkmdf ペアを列挙[最上位のコレクション (TLC)](top-level-collections.md)実際の HID デバイスのこれらのコレクションを列挙する方法に似ています。 HID クライアントは、要求および実際の HID デバイスと同じよう TLCs の使用を続行できます。 このドライバーのペアは、デバイス スタックの関数のドライバーとしてインストールされます。
+Hidclass/Mshidkmdf ペアは、実際の HID デバイスのコレクションを列挙する方法と同様に、[最上位レベルのコレクション (TLC)](top-level-collections.md)を列挙します。 HID クライアントは、実際の HID デバイスと同様に、TLCs の要求と使用を続行できます。 このドライバーペアは、関数ドライバーとしてデバイススタックにインストールされます。
 
-**注**  一部のシナリオでは HID クライアント HID データのソースを識別する必要があります。 など、システムを組み込みセンサーして、同じ種類のリモートのセンサーからデータを受信します。 システムは、信頼性を 1 つのセンサーを選択する場合があります。 2 つのセンサーを区別するためには、コンテナー id が、TLC の HID クライアント クエリ、システムに接続されています。 この場合は、HID ソースのドライバーは VHF によって仮想 HID デバイスのコンテナーの ID として報告されるコンテナー ID を提供できます。
+**注**  一部のシナリオでは、hid クライアントが hid データのソースを特定する必要がある場合があります。 たとえば、システムには組み込みのセンサーがあり、同じ種類のリモートセンサーからデータを受信します。 システムでは、1つのセンサーをより信頼性の高いものにすることができます。 システムに接続されている2つのセンサーを区別するために、HID クライアントは TLC のコンテナー ID を照会します。 この場合、HID ソースドライバーはコンテナー ID を提供できます。これは、VHF によって仮想 HID デバイスのコンテナー ID として報告されます。
 
 **HID クライアント (アプリケーション)**
 
-クエリを実行し、HID デバイス スタックによって報告される TLCs を使用します。
+HID デバイススタックによって報告される TLCs を照会して使用します。
 
 ## <a name="header-and-library-requirements"></a>ヘッダーとライブラリの要件
 
-この手順では、オペレーティング システムにそのレポート ヘッドセット ボタンの単純な HID ソース ドライバーを記述する方法について説明します。 ここでは、このコードを実装するドライバーは VHF を使用して、ヘッドセット ボタンを報告する HID ソースとして機能するように変更されている既存の KMDF オーディオ ドライバーを指定できます。
+この手順では、ヘッドセットボタンをオペレーティングシステムに報告する単純な HID ソースドライバーを記述する方法について説明します。 この場合、このコードを実装するドライバーは、VHF を使用して HID ソースレポートヘッドセットボタンとして機能するように変更された既存の KMDF オーディオドライバーにすることができます。
 
-1.  Windows 10 の WDK に含まれる Vhf.h が含まれます。
-2.  WDK に含まれる vhfkm.lib にリンクします。
-3.  デバイスがオペレーティング システムに報告する HID レポート記述子を作成します。 この例では、HID レポート記述子には、ヘッドセット ボタンがについて説明します。 レポートには、HID 入力レポート、サイズ 8 ビット (1 バイト) を指定します。 最初の 3 つのビットはヘッドセットのミドル ネーム、ボリュームをおよびボリューム ダウン ボタンです。 残りのビットは、使用されません。
+1.  Vhf をインクルードします。これは、Windows 10 用の WDK に含まれています。
+2.  WDK に含まれている vhfkm にリンクします。
+3.  デバイスがオペレーティングシステムに報告する HID レポート記述子を作成します。 この例では、HID レポート記述子にヘッドセットボタンが記述されています。 このレポートでは、HID 入力レポート (8 ビット (1 バイト)) が指定されています。 最初の3つのビットは、ヘッドセットの中央、ボリュームアップ、およびボリュームダウンのボタンです。 残りのビットは使用されません。
 
 ```cpp
 UCHAR HeadSetReportDescriptor[] = {
@@ -98,46 +98,46 @@ UCHAR HeadSetReportDescriptor[] = {
 };
 ```
 
-## <a name="create-a-virtual-hid-device"></a>仮想 HID デバイスを作成します。
+## <a name="create-a-virtual-hid-device"></a>仮想 HID デバイスを作成する
 
-初期化を[ **VHF\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)構造を呼び出すことによって、 [ **VHF\_CONFIG\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhf_config_init)マクロと、呼び出し、 [ **VhfCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)メソッド。 ドライバーを呼び出す必要があります**VhfCreate**パッシブで\_後レベル、 [ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)呼び出し、通常、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
+[**VHF\_config\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhf_config_init)マクロを呼び出し、 [**VhfCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate)メソッドを呼び出すことによって、 [**VHF\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)構造体を初期化します。 ドライバーは、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)呼び出しの後 (通常はドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数で)、 **VhfCreate**をパッシブ\_レベルで呼び出す必要があります。
 
-[ **VhfCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)呼び出し、ドライバーは非同期的に処理されたか、設定のデバイス情報 (ベンダーと製品 Id) にする必要がある操作など、特定の構成オプションを指定できます。
+[**VhfCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate)の呼び出しでは、ドライバーは、非同期的に処理する必要がある操作や、デバイス情報 (ベンダ/製品 id) を設定する操作など、特定の構成オプションを指定できます。
 
-たとえば、アプリケーションは、TLC を要求します。 ペアが要求の種類を決定し、適切な作成 HID クラス ドライバーのペアは、その要求を受信したときに[HID ミニドライバー IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)要求および VHF に転送します。 IOCTL 要求を取得するには、時に VHF 要求を処理、処理に HID ソース ドライバーに依存したり、ステータスの要求を完了\_いない\_サポートされています。
+たとえば、アプリケーションが TLC を要求したとします。 HID クラスドライバーペアがその要求を受信すると、ペアは要求の種類を決定し、適切な[HID ミニドライバー IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)要求を作成して VHF に転送します。 VHF は、IOCTL 要求を取得するときに、要求を処理するか、HID ソースドライバーを使用して処理するか\_サポートされていない状態\_要求を完了することができます。
 
-VHF では、これらの Ioctl を処理します。
+VHF は、これらの Ioctl を処理します。
 
--   [**IOCTL\_HID\_取得\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_string)
--   [**IOCTL\_HID\_取得\_デバイス\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_device_attributes)
--   [**IOCTL\_HID\_取得\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_device_descriptor)
--   [**IOCTL\_HID\_取得\_レポート\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_report_descriptor)
+-   [**IOCTL\_HID\_\_文字列を取得します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_get_string)
+-   [**IOCTL\_HID\_\_デバイス\_属性を取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_get_device_attributes)
+-   [**IOCTL\_HID\_\_デバイス\_記述子を取得します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_get_device_descriptor)
+-   [**IOCTL\_HID\_\_レポート\_記述子を取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_get_report_descriptor)
 
-要求が場合**GetFeature**、 **SetFeature**、 **WriteReport**、または**GetInputReport**、HID ソース ドライバーが登録されている、対応するコールバック関数、VHF では、コールバック関数を呼び出します。 その関数内で、HID ソース ドライバーは、取得または HID データ HID 仮想デバイスを設定します。 VHF の状態で要求が完了すると、ドライバーがコールバックを登録しない場合\_いない\_サポートされています。
+要求が**Getfeature**、 **setfeature**、 **WriteReport**、または**getinputreport**で、HID ソースドライバーが対応するコールバック関数を登録した場合、VHF はコールバック関数を呼び出します。 その関数内で、hid ソースドライバーは hid 仮想デバイスの HID データを取得または設定できます。 ドライバーでコールバックが登録されていない場合、VHF はステータスステータスの要求を完了し\_\_サポートされていません。
 
-VHF は、これらの Ioctl の HID ソース ドライバー実装イベントのコールバック関数を呼び出します。
+VHF は、これらの Ioctl に対して、HID ソースドライバーによって実装されたイベントコールバック関数を呼び出します。
 
--   [**IOCTL\_HID\_読み取り\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_read_report)
+-   [**IOCTL\_HID\_読み取り\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_read_report)
 
-    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_ready_for_next_read_report) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、次を参照してください。[入力の HID レポートを提出](#submit-the-hid-input-report)します。
+    HID 入力レポートを取得するためにバッファーを送信するときに、ドライバーがバッファリングポリシーを処理する必要がある場合は、 [*EvtVhfReadyForNextReadReport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_ready_for_next_read_report)を実装し、 **EvtVhfAsyncOperationGetInputReport**メンバーにポインターを指定する必要があります。 詳細については、「 [HID 入力レポートを送信する](#submit-the-hid-input-report)」を参照してください。
 
--   [**IOCTL\_HID\_取得\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_feature)または[ **IOCTL\_HID\_設定\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_set_feature)
+-   [**Ioctl\_hid\_\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_get_feature)または[ **IOCTL\_HID\_設定\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_set_feature)
 
-    取得または機能を非表示にレポートを非同期的に設定する場合、ドライバーは、ドライバーを実装する必要があります、 [ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)関数 get へのポインターを指定するかで実装関数を設定します**EvtVhfAsyncOperationGetFeature**または**EvtVhfAsyncOperationSetFeature**のメンバー [ **VHF\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config).
+    ドライバーが HID 機能レポートを非同期に取得または設定する必要がある場合、ドライバーは[*EvtVhfAsyncOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_async_operation)関数を実装し、 **EvtVhfAsyncOperationGetFeature**の get または**set 実装関数へのポインターを指定する必要があります。** [**VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)の EvtVhfAsyncOperationSetFeature メンバー。
 
--   [**IOCTL\_HID\_取得\_入力\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_input_report)
+-   [**IOCTL\_HID\_\_入力\_レポートを取得します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_get_input_report)
 
-    ドライバーを実装する必要があります、ドライバーは、入力を非表示にレポートを非同期的に取得する必要がある場合、 [ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)関数を指定の関数へのポインター、 **EvtVhfAsyncOperationGetInputReport**のメンバー [ **VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)します。
+    ドライバーが HID 入力レポートを非同期に取得する必要がある場合、ドライバーは[*EvtVhfAsyncOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_async_operation)関数を実装し、 [**VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)の**EvtVhfAsyncOperationGetInputReport**メンバーにある関数へのポインターを指定する必要があります。
 
--   [**IOCTL\_HID\_書き込み\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_write_report)
+-   [**IOCTL\_HID\_書き込み\_レポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidport/ni-hidport-ioctl_hid_write_report)
 
-    ドライバーは、書き込みの入力を非表示にレポートを非同期的に取得する必要がある場合、ドライバーを実装する必要があります、 [ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)関数を指定の関数へのポインター、 **EvtVhfAsyncOperationWriteReport**のメンバー [ **VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)します。
+    ドライバーが HID 入力レポートを非同期的に書き込む必要がある場合、ドライバーは[*EvtVhfAsyncOperation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_async_operation)関数を実装し、 [**VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)の**EvtVhfAsyncOperationWriteReport**メンバー内の関数へのポインターを指定する必要があります。
 
-その他の[HID ミニドライバー IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、VHF 状態要求が完了すると\_いない\_サポートされています。
+その他の[HID ミニドライバー IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)では、VHF はサポートされて\_いない状態\_要求を完了します。
 
-呼び出すことによって仮想 HID デバイスが削除された、 [ **VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)します。 [ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)ドライバーでは、仮想の HID デバイスのリソースが割り当てられている場合は、callback は必須です。 ドライバーを実装する必要があります、 *EvtVhfCleanup*関数し、その関数へのポインターを指定、 **EvtVhfCleanup**のメンバー [ **VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config). *EvtVhfCleanup*する前に呼び出される、 **VhfDelete**呼び出しが完了します。 詳細については、次を参照してください。[仮想 HID デバイスを削除](#delete-the-virtual-hid-device)します。
+仮想 HID デバイスは、 [**VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfdelete)を呼び出すことによって削除されます。 ドライバーが仮想 HID デバイスにリソースを割り当てた場合、 [*EvtVhfCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_cleanup)コールバックが必要です。 ドライバーは、 *EvtVhfCleanup*関数を実装し、 [**VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)の**EvtVhfCleanup**メンバーでその関数へのポインターを指定する必要があります。 *EvtVhfCleanup*は、 **VhfDelete**の呼び出しが完了する前に呼び出されます。 詳細については、「[仮想 HID デバイスを削除する](#delete-the-virtual-hid-device)」を参照してください。
 
-**注**  非同期の操作の完了後、ドライバーを呼び出す必要があります[ **VhfAsyncOperationComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfasyncoperationcomplete)操作の結果を設定します。 または、コールバックから戻った後に後で、イベント コールバックからメソッドを呼び出すことができます。
+**注**  非同期操作が完了した後、ドライバーは[**VhfAsyncOperationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfasyncoperationcomplete)を呼び出して操作の結果を設定する必要があります。 イベントコールバックから、またはコールバックから戻った後に、メソッドを呼び出すことができます。
 
 ```cpp
 NTSTATUS
@@ -188,13 +188,13 @@ Error:
 }
 ```
 
-## <a name="submit-the-hid-input-report"></a>HID 入力レポートを送信します。
+## <a name="submit-the-hid-input-report"></a>HID 入力レポートを送信する
 
-レポートを送信する HID 入力呼び出して[ **VhfReadReportSubmit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfreadreportsubmit)します。
+[**VhfReadReportSubmit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfreadreportsubmit)を呼び出して、HID 入力レポートを送信します。
 
-通常、HID デバイスでは、割り込みを介して入力のレポートを送信して状態の変更に関する情報を送信します。 たとえば、ヘッドセット デバイス ボタンの状態が変更されたときに、レポートを送信可能性があります。 このようなイベントでは、ドライバーの割り込みサービス ルーチン (ISR) が呼び出されます。 ルーチン、ドライバーは遅延プロシージャ呼び出し (DPC) を入力のレポートを処理し、オペレーティング システムに情報を送信する、VHF に送信をスケジュール可能性があります。 既定では、VHF バッファーのレポートとでやり取りされるように入力の HID レポートを送信する HID ソースのドライバーを開始できます。 これは、複雑な同期を実装する HID ソース ドライバーの必要がありません。
+通常、HID デバイスは、割り込みを介して入力レポートを送信することによって、状態の変化に関する情報を送信します。 たとえば、ヘッドセットデバイスは、ボタンの状態が変化したときにレポートを送信する場合があります。 このようなイベントでは、ドライバーの割り込みサービスルーチン (ISR) が呼び出されます。 このルーチンでは、ドライバーは、入力レポートを処理して VHF に送信する遅延プロシージャ呼び出し (DPC) をスケジュールすることがあります。これにより、情報がオペレーティングシステムに送信されます。 既定では、VHF によってレポートがバッファーされます。 HID ソースドライバーは、表示されているときに HID 入力レポートの送信を開始できます。 これにより、HID ソースドライバーが複雑な同期を実装する必要がなくなります。
 
-HID ソースのドライバーでは、保留中のレポートのバッファリング ポリシーを実装することで、入力のレポートを送信できます。 重複するバッファリングを避けるためには、HID ソースのドライバーを実装できます、 [ *EvtVhfReadyForNextReadReport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_ready_for_next_read_report) VHF にこのコールバックが呼び出されるかどうかのコールバック関数と保持を追跡します。 HID のソースのドライバーを呼び出すことができる場合、呼び出された以前[ **VhfReadReportSubmit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfreadreportsubmit)レポートを送信します。 待機する*EvtVhfReadyForNextReadReport*を呼び出すことができる前に呼び出される**VhfReadReportSubmit**もう一度です。
+HID ソースドライバーは、保留中のレポートに対してバッファリングポリシーを実装することによって、入力レポートを送信できます。 バッファーの重複を回避するために、HID ソースドライバーは[*EvtVhfReadyForNextReadReport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_ready_for_next_read_report) callback 関数を実装し、VHF がこのコールバックを呼び出したかどうかを追跡できます。 以前に呼び出されていた場合、HID ソースドライバーは[**VhfReadReportSubmit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfreadreportsubmit)を呼び出してレポートを送信できます。 **VhfReadReportSubmit**を再度呼び出す前に、 *EvtVhfReadyForNextReadReport*が呼び出されるまで待機する必要があります。
 
 ```cpp
 VOID
@@ -220,18 +220,18 @@ MY_SubmitReadReport(
 }
 ```
 
-## <a name="delete-the-virtual-hid-device"></a>仮想の HID デバイスを削除します。
+## <a name="delete-the-virtual-hid-device"></a>仮想 HID デバイスを削除します。
 
-呼び出すことにより、仮想の HID デバイスを削除[ **VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)します。
+[**VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfdelete)を呼び出して、仮想 HID デバイスを削除します。
 
-[**VhfDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)同期呼び出すことができるまたは Wait パラメーターの値を非同期的を指定します。 同期呼び出しでは、パッシブに、メソッドを呼び出す必要があります\_からなど、レベル、 [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)のデバイス オブジェクト。 **VhfDelete**仮想 HID デバイスを削除した後に返されます。 ドライバーを呼び出す場合**VhfDelete** VHF を呼び出すし、すぐに返されます。 非同期的に[ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)削除操作が完了した後。 ディスパッチの最大のメソッドを呼び出すことができます\_レベル。 この場合、ドライバーを登録して、実装がある必要があります、 *EvtVhfCleanup*コールバック関数が、以前に呼び出されたときに[ **VhfCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)します。 HID のソースのドライバーが仮想の HID デバイスを削除するときのイベントのシーケンスを次に示します。
+[**VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfdelete)は、Wait パラメーターを指定することによって、同期または非同期で呼び出すことができます。 同期呼び出しの場合、メソッドは、デバイスオブジェクトの[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)など、パッシブ\_レベルで呼び出す必要があります。 **VhfDelete**は、仮想 HID デバイスを削除した後にを返します。 ドライバーが非同期に**VhfDelete**を呼び出した場合は、直ちに制御が戻り、削除操作の完了後に VHF が[*EvtVhfCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_cleanup)を呼び出します。 メソッドは、最大ディスパッチ\_レベルで呼び出すことができます。 この場合、ドライバーは、以前に[**VhfCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate)を呼び出したときに*EvtVhfCleanup* callback 関数を登録し、実装する必要があります。 HID ソースドライバーが仮想 HID デバイスを削除する場合のイベントのシーケンスを次に示します。
 
-1.  VHF への呼び出しを開始する HID ソース ドライバーを停止します。
-2.  HID ソース呼び出し[ **VhfDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)で*待機*を FALSE に設定します。
-3.  VHF は、HID ソース ドライバーによって実装されるコールバック関数の呼び出しを停止します。
-4.  VHF PnP マネージャーに存在しないデバイスをレポート作成を開始します。 この時点では、VhfDelete 呼び出しを返す可能性があります。
-5.  デバイスが紛失したデバイスとして報告されると、VHF を呼び出す[ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup) HID ソースのドライバーには、その実装が登録されている場合。
-6.  後[ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)返します、VHF のクリーンアップを実行します。
+1.  HID ソースドライバーは、VHF への呼び出しの開始を停止します。
+2.  HID ソースは*Wait*を FALSE に設定して[**VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfdelete)を呼び出します。
+3.  VHF は、HID ソースドライバーによって実装されているコールバック関数の呼び出しを停止します。
+4.  VHF は、デバイスが PnP マネージャーに存在しないと報告を開始します。 この時点で、VhfDelete の呼び出しでが返される場合があります。
+5.  デバイスが不足しているデバイスとして報告された場合、VHF は、HID ソースドライバーの実装が登録されている場合は[*EvtVhfCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_cleanup)を呼び出します。
+6.  [*EvtVhfCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/nc-vhf-evt_vhf_cleanup)が返された後、VHF はクリーンアップを実行します。
 
 ```cpp
 VOID
@@ -255,9 +255,9 @@ _In_ WDFOBJECT DeviceObject
 }
 ```
 
-## <a name="install-the-hid-source-driver"></a>HID ソース ドライバーをインストールします。
+## <a name="install-the-hid-source-driver"></a>HID ソースドライバーをインストールする
 
-HID ソースのドライバーをインストールする INF ファイルで宣言すること Vhf.sys 低いフィルター ドライバーとして HID ソース ドライバーを使用することを確認、 [ **AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
+HID ソースドライバーをインストールする INF ファイルで、 [**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を使用して、VHF を hid ソースドライバーの下位フィルタードライバーとして宣言していることを確認します。
 
 ```cpp
 [HIDVHF_Inst.NT.HW]
@@ -268,5 +268,5 @@ HKR,,"LowerFilters",0x00010000,"vhf"
 ```
 
 ## <a name="related-topics"></a>関連トピック
-[ヒューマン インターフェイス デバイス](https://developer.microsoft.com/windows/hardware)
+[ヒューマンインターフェイスデバイス](https://developer.microsoft.com/windows/hardware)
 

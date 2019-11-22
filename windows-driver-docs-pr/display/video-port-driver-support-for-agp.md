@@ -3,17 +3,17 @@ title: AGP のビデオ ポート ドライバー サポート
 description: AGP のビデオ ポート ドライバー サポート
 ms.assetid: 445dbe4a-7f7b-4dcc-9891-17fd8fb03a6c
 keywords:
-- ビデオのミニポート ドライバー WDK Windows 2000、AGP
-- AGP WDK ビデオのミニポート
-- メモリ WDK ビデオのミニポート
+- ビデオミニポートドライバー WDK Windows 2000、AGP
+- AGP WDK ビデオミニポート
+- メモリ WDK ビデオミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0170a9ebfc96a914200dfafbdf842e15c208983
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3dc7eef25283568b407dc5d62b08cfcb3d8882a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825278"
 ---
 # <a name="video-port-driver-support-for-agp"></a>AGP のビデオ ポート ドライバー サポート
 
@@ -21,53 +21,53 @@ ms.locfileid: "67353823"
 ## <span id="ddk_video_port_driver_support_for_agp_gg"></span><span id="DDK_VIDEO_PORT_DRIVER_SUPPORT_FOR_AGP_GG"></span>
 
 
-ビデオ ポート ドライバーでは、高速化グラフィックス ポート (AGP) をサポートするために、次の関数を実装します。
+ビデオポートドライバーは、高速グラフィックスポート (AGP) をサポートするために、次の機能を実装しています。
 
-[**AgpReservePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_physical)
+[**AgpReservePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_physical)
 
-[**AgpCommitPhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_physical)
+[**AgpCommitPhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_physical)
 
-[**AgpReserveVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_virtual)
+[**AgpReserveVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_virtual)
 
-[**AgpCommitVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_virtual)
+[**AgpCommitVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_virtual)
 
-[**AgpFreeVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_free_virtual)
+[**AgpFreeVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_virtual)
 
-[**AgpReleaseVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_release_virtual)
+[**AgpReleaseVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_release_virtual)
 
-[**AgpFreePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_free_physical)
+[**AgpFreePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_physical)
 
-[**AgpReleasePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_release_physical)
+[**AgpReleasePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_release_physical)
 
-[**AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_set_rate)
+[**AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_set_rate)
 
-呼び出すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、関数を呼び出す上記の一覧で、前に[ **VideoPortQueryServices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueryservices)します。 AGP 関数へのポインターを取得する方法の詳細については、次を参照してください。 [AGP ビデオ ポート ドライバーによって関数が実装されている](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/)します。
+ビデオミニポートドライバーは、前の一覧の関数を呼び出す前に、 [**Videoportqueryservices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportqueryservices)を呼び出して関数ポインターを取得する必要があります。 AGP 関数へのポインターの取得の詳細については、「[ビデオポートドライバーによって実装される Agp 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/)」を参照してください。
 
-ビデオのミニポート ドライバーでは、予約し、ディスプレイ アダプターがシステム メモリをアクセス AGP aperture の一部をコミットするには、次の手順を実行します。
+ビデオミニポートドライバーは、ディスプレイアダプターがシステムメモリにアクセスできるようにするために、次の手順を実行して AGP アパーチャの一部を予約およびコミットします。
 
-1.  呼び出す[ **AgpReservePhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_physical) AGP aperture の物理アドレスの連続する範囲を予約します。
+1.  [**AgpReservePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_physical)を呼び出して、AGP アパーチャに連続した範囲の物理アドレスを予約します。
 
-2.  呼び出す[ **AgpCommitPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_physical)によって返されるアドレスの範囲の一部 (またはすべて) にマップする*AgpReservePhysical*システム メモリ内のページにします。 システム メモリ内のページは、ロックされたが、必ずしも連続していません。 ビデオのミニポート ドライバーが呼び出せる*AgpCommitPhysical*何回か 1 つの大きな 1 つではなく、いくつかの小規模なコミットメントを行う。 ただし、ドライバーは、既にコミットされている範囲をコミットする必要があります試行されません。
+2.  *AgpReservePhysical*によって返されるアドレス範囲の一部 (またはすべて) をシステムメモリ内のページにマップするには、 [**Agpcommitphysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_physical)を呼び出します。 システムメモリ内のページはロックされていますが、必ずしも連続しているわけではありません。 ビデオミニポートドライバーは、 *Agpcommitphysical*を複数回呼び出して、1つの大きなものではなく、いくつかの小さなコミットメントを行うことができます。 ただし、ドライバーは既にコミットされている範囲をコミットしようとすることはできません。
 
-次に、表示され、システム メモリ内でコミットされたページを使用できるアプリケーションは、ビデオのミニポート ドライバーは、次の手順を実行します。
+その後、アプリケーションがコミットされたページをシステムメモリ内で表示して使用できるようにするために、ビデオミニポートドライバーは次の手順を実行します。
 
-1.  呼び出す[ **AgpReserveVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_virtual)アプリケーションのアドレス空間内の仮想アドレスの範囲を予約します。 ビデオのミニポート ドライバーを渡す必要があります*AgpReserveVirtual*ハンドルによって以前返さを*AgpReservePhysical*予約済みの仮想アドレスの範囲を物理アドレスに関連付けできるように、によって作成された範囲*AgpReservePhysical*します。
+1.  [**AgpReserveVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_virtual)を呼び出して、アプリケーションのアドレス空間に仮想アドレスの範囲を予約します。 ビデオミニポートドライバーは、 *AgpReservePhysical*によって以前に返されたハンドルを*AgpReserveVirtual*に渡す必要があります。これにより、予約済みの仮想アドレス範囲を*AgpReservePhysical*によって作成された物理アドレス範囲に関連付けることができます。
 
-2.  呼び出す[ **AgpCommitVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_virtual)によって返される仮想アドレスの範囲の一部をマップする*AgpReserveVirtual*システム メモリ内のページにします。 ページを*AgpCommitVirtual*マップする必要がありますマップされている以前の呼び出しによって*AgpCommitPhysical*します。 によってさらに、そのマッピングが確立されている*AgpCommitPhysical*する必要がある現在; は、これらのページする必要がありますが解放されていない呼び出しによって[ **AgpFreePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_free_physical)。
+2.  *AgpReserveVirtual*によって返された仮想アドレス範囲の一部をシステムメモリ内のページにマップするには、 [**Agpcommitvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_virtual)を呼び出します。 *Agpcommitvirtual* map のページは、 *Agpcommitvirtual*への呼び出しによって以前にマップされている必要があります。 さらに、 *Agpcommitphysical*によって確立されたマッピングは、現在も最新である必要があります。つまり、これらのページは、 [**Agpfreephysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_physical)の呼び出しによって解放されていない必要があります。
 
-**注**   AGP 関数を使用してコミットするか、(物理または仮想) のアドレス範囲を予約するたびに、範囲のサイズが 64 キロバイトの倍数をある必要があります。
+**  、** AGP 機能を使用してアドレス範囲 (物理または仮想) をコミットまたは予約するたびに、範囲のサイズは64キロバイトの倍数である必要があります。
 
  
 
-ビデオのミニポート ドライバーは予約されている、次の関数を呼び出すことでコミットことのすべてのメモリを解放するためです。
+ビデオミニポートドライバーは、次の関数を呼び出すことによって予約およびコミットされたすべてのメモリの解放と解放を担当します。
 
--   [**AgpFreeVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_free_virtual)前回の呼び出しによって、システム メモリにマップされている仮想アドレスの割り当てを解除[ **AgpCommitVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_virtual)します。
+-   [**Agpfreevirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_virtual)の前の呼び出しによってシステムメモリにマップされた[**agpfreevirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_virtual)解除の仮想アドレス。
 
--   [**AgpReleaseVirtual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_release_virtual)前回の呼び出しによって予約されている仮想アドレスの解放[ **AgpReserveVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_virtual)します。
+-   [**Agpreleasevirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_release_virtual)は、 [**AgpReserveVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_virtual)の前の呼び出しで予約された仮想アドレスを解放します。
 
--   [**AgpFreePhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_free_physical)前回の呼び出しによって、システム メモリにマップされている物理アドレスの割り当てを解除[ **AgpCommitPhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_commit_physical)します。
+-   [**Agpfreephysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_physical)の前の呼び出しによってシステムメモリにマップされた[**agpfreephysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_physical)解除物理アドレス。
 
--   [**AgpReleasePhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_release_physical)前回の呼び出しによって予約されている物理アドレスを解放[ **AgpReservePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_reserve_physical)します。
+-   [**Agpreleasephysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_release_physical) 、 [**AgpReservePhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_physical)の前の呼び出しで予約された物理アドレスを解放します。
 
  
 

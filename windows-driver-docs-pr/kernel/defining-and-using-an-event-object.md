@@ -3,18 +3,18 @@ title: イベント オブジェクトの定義と使用
 description: イベント オブジェクトの定義と使用
 ms.assetid: 4b7807f0-bbea-4402-b028-9ac73724717f
 keywords:
-- イベント オブジェクトの WDK カーネル
-- イベント オブジェクトを待機しています。
+- イベントオブジェクト WDK カーネル
+- イベントオブジェクトを待機しています
 - 同期イベントの WDK カーネル
 - 通知イベントの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4726b782b71c784f60f1e5b682647c4671cb31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 186d9fc358ff298d74d54169a44baecee662c9db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377119"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828425"
 ---
 # <a name="defining-and-using-an-event-object"></a>イベント オブジェクトの定義と使用
 
@@ -22,53 +22,53 @@ ms.locfileid: "67377119"
 
 
 
-イベント オブジェクトを使用する任意のドライバーを呼び出す必要があります[ **KeInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)、 [ **IoCreateNotificationEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatenotificationevent)、または[**IoCreateSynchronizationEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesynchronizationevent)設定待機している、前に、クリア、またはイベントをリセットします。 次の図は、同期、スレッドのドライバーがイベント オブジェクトを使用する方法を示します。
+イベントオブジェクトを使用するドライバーは、イベントを待機、設定、クリア、またはリセットする前に[**Keinitializeevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent)、 [**IoCreateNotificationEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent)、または[**IoCreateSynchronizationEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent)を呼び出す必要があります。 次の図は、スレッドを使用するドライバーが同期にイベントオブジェクトを使用する方法を示しています。
 
-![イベント オブジェクトの待機を示す図](images/3evntobj.png)
+![イベントオブジェクトを待機していることを示す図](images/3evntobj.png)
 
-前の図に示すように、このようなドライバーは、イベント オブジェクトは、常駐である必要があります、記憶域を提供する必要があります。 ドライバーを使用して、[デバイス拡張機能](device-extensions.md)コント ローラーの拡張機能を使用する場合、デバイスのドライバーが作成したオブジェクトの[コント ローラー オブジェクト](using-controller-objects.md)、または、ドライバーによって割り当てられた非ページ プール。
+上の図に示すように、このようなドライバーでは、イベントオブジェクトのストレージを提供する必要があります。これは常駐している必要があります。 ドライバーによって作成されたデバイスオブジェクトの[デバイス拡張機能](device-extensions.md)、コントローラー[オブジェクト](using-controller-objects.md)を使用している場合はコントローラー拡張機能、ドライバーによって割り当てられた非ページプールを使用できます。
 
-ドライバーを呼び出すと**KeInitializeEvent**、イベント オブジェクトのドライバーの常駐ストレージへのポインターを渡す必要があります。 さらに、呼び出し元は、初期を指定する必要があります (シグナルまたはシグナル状態にならない) の状態イベント オブジェクト。 呼び出し元は、イベントの種類は、次のいずれかを指定する必要があります。
+ドライバーが**Keinitializeevent**を呼び出す場合、そのイベントオブジェクトのドライバーの常駐ストレージへのポインターを渡す必要があります。 また、呼び出し元は、イベントオブジェクトの初期状態 (シグナル状態または未シグナル) を指定する必要があります。 また、呼び出し元は、次のいずれかのイベントの種類も指定する必要があります。
 
--   **SynchronizationEvent**
+-   **同期イベント**
 
-    ときに、*同期イベント*設定されているシグナルされた状態にリセットする Not シグナルされたイベントを待機している 1 つのスレッドが実行の対象となり、イベントの状態が Not シグナルされたに自動的にリセットします。
+    *同期イベント*がシグナル状態に設定されている場合、イベントが非シグナル状態にリセットされるのを待機している1つのスレッドが実行の対象となり、イベントの状態が自動的に not シグナル状態にリセットされます。
 
-    この種類のイベントとも呼ばれます、 *autoclearing イベント*のシグナルされた状態は、待機が満たされるたびに自動的にリセットするため、します。
+    この種類のイベントは、待機が完了するたびにシグナル状態が自動的にリセットされるため、 *autoclearing イベント*と呼ばれることがあります。
 
 -   **NotificationEvent**
 
-    ときに、*通知イベント*はシグナルされた状態に設定すると、Not シグナルされたにリセットされるイベントを待機していたすべてのスレッド実行の対象になり、明示的にリセットするまで、イベントがシグナルされた状態のままNot シグナルが発生します: への呼び出しがある、 [ **KeClearEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keclearevent)または[ **KeResetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keresetevent)で、指定された*イベント*ポインター。
+    *通知イベント*がシグナル状態に設定されている場合、イベントを非シグナル状態にリセットするのを待機しているすべてのスレッドが実行の対象となり、シグナル状態になっていないことを明示的にリセットするまで、イベントはシグナル状態のままになります。つまり、指定された*イベント*ポインターを使用して、 [**Keclearevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keclearevent)または[**KeResetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keresetevent)が呼び出されています。
 
-いくつかのデバイスまたは中間ドライバーは、一連の共有リソースを保護するイベントを待機して、操作を同期する場合がありますのスレッドではおろか、1 つのドライバー専用スレッドがあります。
+デバイスまたは中間のドライバーの中には、ドライバー専用のスレッドが1つしかないものがあります。共有リソースを保護するイベントを待機することによって、操作を同期できるスレッドのセットだけを使用します。
 
-イベント オブジェクトを使用して、I/O 操作の完了に設定、入力を待機するほとんどのドライバー*型*に**NotificationEvent** 、呼び出すときに**KeInitializeEvent**します。 イベント オブジェクトが、ドライバーを作成する Irp を設定する[ **IoBuildSynchronousFsdRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)または[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)として初期化されるほとんどの場合に、 **NotificationEvent**呼び出し元が 1 つまたは複数の下位レベルのドライバーによって、その要求が満たされている通知のイベントを待つためです。
+I/o 操作の完了を待機するためにイベントオブジェクトを使用するほとんどのドライバーは、 **Keinitializeevent**を呼び出すと、入力の*種類*を**notificationevent**に設定します。 [**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)または[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)でドライバーによって作成される irp 用に設定されたイベントオブジェクトは、呼び出し元がイベントを待機するため、ほとんどの場合、 **notificationevent**として初期化されます。1つ以上の下位レベルのドライバーによって要求が満たされていることを通知します。
 
-ドライバーが初期化自体、ドライバー専用のスレッドでは、存在する場合と、イベントでは、その操作を同期できるは、その他のルーチン。 たとえば、システム フロッピー コント ローラー ドライバーなどの Irp でキューを管理するスレッドによるドライバーで前の図に示すように IRP のイベントの処理を同期する可能性があります。
+ドライバーが自身で初期化された後、ドライバー専用のスレッド (存在する場合) とその他のルーチンがイベントに対する操作を同期できます。 たとえば、システムのフロッピーコントローラードライバーなどの Irp のキューを管理するスレッドがあるドライバーでは、前の図に示すように、イベントの IRP 処理が同期される場合があります。
 
-1.  デバイスでの処理の IRP がデキュー、スレッドを呼び出す[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)初期化イベント オブジェクトのドライバーが指定した記憶域へのポインター。
+1.  デバイスでの処理のために IRP をデキューしたスレッドは、初期化されたイベントオブジェクトのドライバー提供のストレージへのポインターを使用して[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)を呼び出します。
 
-2.  デバイス、IRP を満たすし、これらの操作が完了、ドライバーに必要な I/O 操作を他のドライバー ルーチン実行[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチンの呼び出し[ **KeSetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent)スレッドのイベント オブジェクトへのポインター、ドライバーが決定の優先度を向上させる (*インクリメント*前の図に示すように、)、およびブール値*待機*設定**FALSE**します。 呼び出す**KeSetEvent**イベント オブジェクトを待機しているスレッドの状態を準備完了状態に変更され、シグナルされた状態に設定します。
+2.  その他のドライバールーチンは、IRP を満たすために必要な i/o 操作をデバイスで実行します。これらの操作が完了すると、ドライバーの[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンは、イベントオブジェクトへのポインターを使用して[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)を呼び出します。ドライバーによって決定された優先順位です。スレッド (前の図で示されているように*インクリメント*) のブーストと、ブール値の*待機*が**FALSE**に設定されます。 **KeSetEvent**を呼び出すと、イベントオブジェクトがシグナル状態に設定され、待機中のスレッドの状態が [準備完了] に変わります。
 
-3.  カーネルは、プロセッサが使用可能なすぐにスレッドの実行をディスパッチします。 つまり、優先度が高いその他のスレッドは現在準備完了状態で、より高い IRQL で実行されるルーチンをカーネル モードではありません。
+3.  カーネルは、プロセッサが使用可能になるとすぐにスレッドをディスパッチします。つまり、優先度の高い他のスレッドは現在準備完了状態であり、カーネルモードルーチンが上位の IRQL で実行されることはありません。
 
-    スレッドようになりましたことができます IRP を完了する場合、 *DpcForIsr*が呼び出されていない**IoCompleteRequest**既に、IRP におよびデバイスでの処理を別の IRP をデキューすることができます。
+    *DpcForIsr*が既に Irp で**IoCompleteRequest**を呼び出していない場合、スレッドは irp を完了できるようになりました。また、デバイス上で別の irp をデキューして処理することができます。
 
-呼び出す**KeSetEvent**で、*待機*パラメーターに設定**TRUE**を直ちに呼び出す呼び出し元の意図を示す、 [ **Kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)または[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)から返された場合、ルーチンをサポート**KeSetEvent**します。
+*Wait*パラメーターを**TRUE**に設定して**KeSetEvent**を呼び出すと、 **KeSetEvent**から戻ったときに、呼び出し元が[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)または[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)サポートルーチンをすぐに呼び出すことを示します。
 
-**設定の次のガイドラインを考慮して、***待機***パラメーター toKeSetEvent:**
+*****Wait***パラメーター toKeSetEvent を設定する際には、次のガイドラインを考慮してください。**
 
-ページング可能なスレッドまたは IRQL で実行されているページング可能なドライバー ルーチン&lt;ディスパッチ\_レベルは呼び出さないで**KeSetEvent**で、*待機*パラメーターに設定**は TRUE。** . 呼び出し元がページ アウト呼び出しの間に発生した場合、このような呼び出しにより、致命的なページ フォールト**KeSetEvent**と**kewaitforsingleobject の 1**または**KeWaitForMultipleObjects**します。
+IRQL &lt; ディスパッチ\_レベルで実行されるページング可能なスレッドまたはページング可能なドライバールーチンは、 *Wait*パラメーターを**TRUE**に設定して**KeSetEvent**を呼び出すことはできません。 このような呼び出しでは、 **KeSetEvent**と**KeWaitForSingleObject**または**KeWaitForMultipleObjects**の呼び出しの間に呼び出し元がページアウトされた場合に、致命的なページフォールトが発生します。
 
-IRQL で実行されている任意の標準のドライバー ルーチン = ディスパッチ\_システム停止することがなくすべてのディスパッチャー オブジェクトに対するレベルを 0 以外の値の間隔を待機できません。 ただし、このようなルーチンを呼び出すことができます**KeSetEvent**ディスパッチに少ないの IRQL で実行中に\_レベル。
+IRQL = ディスパッチ\_レベルで実行される標準のドライバールーチンは、システムを停止することなく、任意のディスパッチャーオブジェクトで0以外の間隔を待機することはできません。 ただし、このようなルーチンは、ディスパッチ\_レベル以下の IRQL で実行中に**KeSetEvent**を呼び出すことができます。
 
-実行する標準のドライバー ルーチンで Irql の概要については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
+標準のドライバールーチンを実行する IRQLs の概要については、「[ハードウェアの優先順位の管理](managing-hardware-priorities.md)」を参照してください。
 
-**KeResetEvent**の以前の状態を返します、指定された*イベント*: かどうかが設定されているシグナルされたかどうかと呼び出し**KeResetEvent**が発生しました。 **KeClearEvent**の状態を設定するだけ、指定された*イベント*Not シグナル状態にします。
+**KeResetEvent**は、指定された*イベント*の以前の状態を返します。これは、 **KeResetEvent**への呼び出しが発生したときに、シグナル状態に設定されたかどうかにかかわらず発生します。 **Keclearevent**は、指定された*イベント*の状態を非シグナル状態に設定するだけです。
 
-**上記のサポート ルーチンを呼び出すタイミングについては、次のガイドラインを考慮してください。**
+**上記のサポートルーチンを呼び出すタイミングについては、次のガイドラインを考慮してください。**
 
-パフォーマンスの向上のため、すべてのドライバーを呼び出す必要があります**KeClearEvent** 、呼び出し元によって返される情報を必要がない限り**KeResetEvent**を次に行うことを確認します。
+パフォーマンスを向上させるには、呼び出し元が**KeResetEvent**から返された情報を取得して次に行う処理を決定しない限り、すべてのドライバーが**Keclearevent**を呼び出す必要があります。
 
  
 

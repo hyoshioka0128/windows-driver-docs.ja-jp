@@ -1,135 +1,135 @@
 ---
-title: ネットワーク アダプターの VMQ 機能を判断します。
-description: ネットワーク アダプターの VMQ 機能を判断します。
+title: ネットワークアダプターの VMQ 機能の決定
+description: ネットワークアダプターの VMQ 機能の決定
 ms.assetid: a8efc393-60fd-4ff8-ba9a-53846f5fbba4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4fa06ce35631fe5e039cc0455027165636764b0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc349c4f8e011e78ad9f9cb2649a66a5af186c7d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381394"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834897"
 ---
-# <a name="determining-the-vmq-capabilities-of-a-network-adapter"></a>ネットワーク アダプターの VMQ 機能を判断します。
+# <a name="determining-the-vmq-capabilities-of-a-network-adapter"></a>ネットワークアダプターの VMQ 機能の決定
 
 
 
 
 
-NDIS はなど、ネットワーク アダプターの VMQ 機能を決定するインターフェイスを提供します。
+NDIS には、ネットワークアダプターの VMQ 機能を決定するインターフェイスが用意されています。次に例を示します。
 
--   ネットワーク アダプターの汎用的な機能をフィルター処理します。
+-   ネットワークアダプターの汎用的なフィルター処理機能。
 
--   サポートされている VM のキュー機能。
+-   サポートされている VM キュー機能。
 
--   2 つの独立したバッファーに、ネットワーク、メモリ データの分割を許可する先読みをサポートします。
+-   先読みサポートにより、ネットワークデータメモリを2つの異なるバッファーに分割できるようになります。
 
-    **注**  NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。
+    **注**  NDIS 6.30 以降では、パケットデータを個別の先読みバッファーに分割することはサポートされなくなりました。
 
      
 
-ミニポート ドライバーでは、ネットワーク アダプターの初期化中に、NDIS に次の情報を提供します。
+ミニポートドライバーは、ネットワークアダプターの初期化中に次の情報を NDIS に提供します。
 
--   ネットワーク アダプターをサポートできる VMQ ハードウェア機能。
+-   ネットワークアダプターがサポートできる VMQ ハードウェア機能。
 
--   現在有効になっている VMQ 機能します。
+-   現在有効になっている VMQ 機能。
 
--   グローバルなネットワーク アダプターを無効または有効にするフィルターの機能が表示されます。
+-   ネットワークアダプターで有効または無効にされているグローバル受信フィルター機能。
 
-ドライバーとアプリケーションに関連すると、ネットワーク アダプターの機能を取得するのに OID の次のクエリ要求が使用できます。
+その後のドライバーとアプリケーションは、次の OID クエリ要求を使用して、ネットワークアダプターの機能を取得できます。
 
-[OID\_受信\_フィルター\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)
+[OID\_ハードウェア\_機能\_\_フィルターを受け取る](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)
 
-[OID\_受信\_フィルター\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)
+[OID\_現在の\_機能\_受信\_フィルター処理](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)
 
-[OID\_RECEIVE\_FILTER\_GLOBAL\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters)
+[グローバル\_パラメーター\_\_フィルターを受け取る OID\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters)
 
-NDIS は、ミニポート ドライバーにこれらの OID クエリ要求を処理します。 そのため、クエリは、ミニポート ドライバーは要求されません。 NDIS は、初期化中に、現在有効になっている受信機能のネットワーク アダプターで VMQ 機能を報告します。 そのため、上にあるドライバーは、これらの Oid をクエリにはありません。
+NDIS は、ミニポートドライバーに対するこれらの OID クエリ要求を処理します。 そのため、このクエリはミニポートドライバーには要求されません。 NDIS は、初期化中に、ネットワークアダプターの現在有効な受信 VMQ 機能を報告します。 そのため、それ以上のドライバーでは、これらの Oid に対してクエリを実行する必要はありません。
 
-[ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体は、ネットワーク アダプターのフィルター処理機能を指定します。 この構造体は、次の方法で使用されます。
+[**NDIS\_RECEIVE\_FILTER\_capabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体は、ネットワークアダプターのフィルター機能を指定します。 この構造体は、次の方法で使用されます。
 
--   NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数、ミニポート ドライバーが初期化することにより、フィルター処理機能を登録、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 ドライバーを設定し、 **HardwareReceiveFilterCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_ASSIST\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体を指す、 **NDIS\_受信\_フィルター\_機能**構造体。 ドライバーの次の呼び出し、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数を設定、 *MiniportAttributes*パラメーターへのポインターを**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**構造体。
+-   NDIS が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すと、ミニポートドライバーは、\_ndis を初期化することによってフィルター機能を登録し、 [ **\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造を受信します。 次に、ドライバーは[**ndis\_ミニポート\_\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)の**HardwareReceiveFilterCapabilities**メンバーを設定し、\_属性構造を提供して ndis\_RECEIVE をポイントするように\_支援 **\_\_機能**の構造をフィルター処理します。 次に、ドライバーは[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出した後、 *miniportattributes*パラメーターを NDIS\_ミニポート\_アダプターへのポインターに設定します **\_ハードウェア\_支援\_属性**構造体。
 
--   上位のプロトコル ドライバーの受信、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters) NDIS ドライバーを呼び出すときに[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数。
+-   プロトコルドライバーは ndis [ **\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造を受け取り、ndis\_がドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)を呼び出したときに、 [ **\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造をバインドします。プロシージャ.
 
--   後続のフィルター ドライバーの受信、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters) NDIS ドライバーを呼び出すときに[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)関数。
+-   前のフィルタードライバーは ndis [ **\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の\_構造を受け取り、ndis がドライバーの[*filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数を呼び出したときに[ **\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)構造をアタッチ\_ます。
 
--   上にあるドライバーが表示される、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)を発行して構造体クエリ要求を OID を[OID\_受信\_フィルター\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)または[OID\_受信\_フィルター\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)します。 **HardwareReceiveFilterCapabilities**と**CurrentReceiveFilterCapabilities**メンバーを指す、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。
+-   これまでのドライバーでは、 [**NDIS\_ミニポート\_アダプター\_ハードウェア\_\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)の構造を受け取るために、OID の oid クエリ要求を発行することによって\_\_を受信\_[フィルター\_現在機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)または[OID\_\_フィルター\_ハードウェア\_機能を受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)します。 **HardwareReceiveFilterCapabilities**および**currentreceivefiltercapabilities**メンバーは、 [**NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造を指します。
 
-[ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体には、次の情報が含まれています。
+[**NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造には、次の情報が含まれています。
 
 <a href="" id="enabledfiltertypes"></a>**EnabledFilterTypes**  
-サポートされている受信フィルターの種類。 NDIS\_受信\_フィルター\_VMQ\_フィルター\_有効フラグは、仮想マシン キュー (VMQ) フィルターが有効になっていることを指定します。
+サポートされている受信フィルターの種類。 [NDIS\_RECEIVE\_FILTER\_VMQ\_FILTERS]\_ENABLED フラグは、バーチャルマシンキュー (VMQ) フィルターが有効であることを指定します。
 
 <a href="" id="enabledqueuetypes"></a>**EnabledQueueTypes**  
-型がサポートされているキューを受信します。 NDIS\_受信\_フィルター\_VM\_キュー\_有効フラグは、仮想マシン (VM) のキューが有効になっていることを指定します。
+サポートされている受信キューの種類。 NDIS\_RECEIVE\_FILTER\_VM\_QUEUE\_ENABLED フラグは、仮想マシン (VM) キューが有効であることを指定します。
 
 <a href="" id="numqueues"></a>**NumQueues**  
-ネットワーク アダプターをサポートする受信キューの数。 VMQ をサポートするためにこの数に等しくないか、NIC をサポートするユニキャスト MAC アドレスの数よりも小さいする必要があります。 この数は、既定のキューを含めることはできません。
+ネットワークアダプターがサポートする受信キューの数。 VMQ をサポートするには、NIC がサポートしているユニキャスト MAC アドレスの数と同じかそれより小さい値を指定する必要があります。 この数には、既定のキューを含めないでください。
 
-**注**  ユニキャスト MAC アドレスまたはネットワーク アダプターをサポートする VM のキューの数に関連付けられている NIC の MAC アドレスが含まれません
+ネットワークアダプターがサポートしているユニキャスト MAC アドレスまたは VM キューの数には、関連付けられている NIC の MAC アドレスが含まれていないことに**注意**してください  。
 
  
 
 <a href="" id="supportedqueueproperties"></a>**SupportedQueueProperties**  
-ネットワーク アダプターをサポートするキューのプロパティ。 NDIS\_受信\_フィルター\_VM\_キュー\_サポートされているフラグは、ネットワーク アダプターが VMQ がフィルター処理をサポートする最小要件を提供することを指定します。 VMQ 対応の NIC は、受信キューごとに、MSI X テーブルのエントリを提供する必要があります。 そのため、VMQ のミニポート ドライバーは、NDIS を設定する必要があります\_受信\_フィルター\_MSI\_X\_サポートされているフラグ。
+ネットワークアダプターがサポートするキュープロパティ。 NDIS\_RECEIVE\_FILTER\_VM\_QUEUE\_supported フラグは、ネットワークアダプターが VMQ フィルターをサポートするための最小要件を提供することを指定します。 VMQ 対応の NIC は、各受信キューに対して MSI-X テーブルエントリを提供する必要があります。 したがって、VMQ ミニポートドライバーでは、NDIS\_RECEIVE\_FILTER\_MSI\_X\_supported フラグが設定されている必要があります。
 
 <a href="" id="supportedfiltertests"></a>**SupportedFilterTests**  
-ミニポート ドライバーがサポートするフィルターのテスト操作。 たとえば、ネットワーク アダプターは、指定された値と等しいかどうかを選択したヘッダー フィールドをテストをサポートします。 VMQ のミニポート ドライバーは、NDIS を設定する必要があります\_受信\_フィルター\_テスト\_ヘッダー\_フィールド\_等しい\_サポートされているフラグ。
+ミニポートドライバーがサポートするフィルターテスト操作。 たとえば、ネットワークアダプターは、選択されたヘッダーフィールドのテストをサポートして、指定された値と等しいかどうかを判断します。 VMQ ミニポートドライバーでは、NDIS\_RECEIVE\_FILTER\_TEST\_HEADER\_FIELD\_supported\_supported フラグが設定されている必要があります。
 
 <a href="" id="supportedheaders"></a>**SupportedHeaders**  
-ミニポート ドライバーを検査できるネットワーク パケット ヘッダーの種類。 たとえば、ネットワーク アダプターは、ネットワーク パケットの MAC ヘッダーを検査できます。 MAC ヘッダーには、パケットの種類、変換先およびソース MAC アドレス、VLAN 識別子、および優先順位のタグのフィールドが含まれています。 VMQ のミニポート ドライバーは、NDIS を設定する必要があります\_受信\_フィルター\_MAC\_ヘッダー\_サポートされているフラグ。
+ミニポートドライバーが検査できるネットワークパケットヘッダーの種類。 たとえば、ネットワークアダプターはネットワークパケットの MAC ヘッダーを調べることができます。 MAC ヘッダーには、パケットの種類、宛先とソースの MAC アドレス、VLAN 識別子、および優先度タグのフィールドが含まれています。 VMQ ミニポートドライバーでは、NDIS\_RECEIVE\_FILTER\_MAC\_HEADER\_supported フラグが設定されている必要があります。
 
 <a href="" id="supportedmacheaderfields"></a>**SupportedMacHeaderFields**  
-ミニポート ドライバーを検査できる MAC ヘッダー フィールドの種類。 VMQ のミニポート ドライバーは、NDIS を設定する必要があります\_受信\_フィルター\_MAC\_ヘッダー\_DEST\_ADDR\_サポートされているフラグ。
+ミニポートドライバーが調べることができる MAC ヘッダーフィールドの種類。 VMQ ミニポートドライバーでは、NDIS\_受信\_フィルター\_MAC\_ヘッダー\_DEST\_ADDR\_サポートされているフラグを設定する必要があります。
 
 <a href="" id="maxmacheaderfilters"></a>**MaxMacHeaderFilters**  
-ミニポート ドライバーがサポートする MAC ヘッダー フィルターの最大数。 少なくとも数のヘッダー フィルター VM キューがある必要があります。
+ミニポートドライバーがサポートする MAC ヘッダーフィルターの最大数。 少なくとも1つのヘッダーフィルターが VM キューの数と同じである必要があります。
 
 <a href="" id="maxqueuegroups"></a>**MaxQueueGroups**  
-このメンバーは、NDIS 用に予約されています。
+このメンバーは NDIS 用に予約されています。
 
 <a href="" id="maxqueuesperqueuegroup"></a>**MaxQueuesPerQueueGroup**  
-このメンバーは、NDIS 用に予約されています。
+このメンバーは NDIS 用に予約されています。
 
-<a href="" id="minlookaheadsplitsize"></a>**MinLookaheadSplitSize**  
-バイト単位の先読みパケットのセグメントのネットワーク アダプターをサポートする最小サイズ。
+<a href="" id="minlookaheadsplitsize"></a>**Minfeel Splitsize**  
+ネットワークアダプターが先読みパケットセグメントに対してサポートする最小サイズ (バイト単位)。
 
-**注**  NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。 NDIS 6.30 以降をサポートするミニポート ドライバーは、このメンバーを 0 に設定する必要があります。
-
- 
-
-<a href="" id="maxlookaheadsplitsize"></a>**MaxLookaheadSplitSize**  
-先読みパケットのセグメントのネットワーク アダプターをサポートするには、バイトの最大サイズ。
-
-**注**  NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。 NDIS 6.30 以降をサポートするミニポート ドライバーは、このメンバーを 0 に設定する必要があります。
+**注**  NDIS 6.30 以降では、パケットデータを個別の先読みバッファーに分割することはサポートされなくなりました。 NDIS 6.30 以降のバージョンをサポートするミニポートドライバーでは、このメンバーを0に設定する必要があります。
 
  
 
-正常に戻った後、 [OID\_受信\_フィルター\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)OID のクエリ、 **InformationBuffer**のメンバー[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造には、NDIS へのポインターが含まれる\_受信\_フィルター\_機能の構造体。 これらの機能は、INF ファイルの設定、または、現在無効になっている VMQ ハードウェア機能を含めることができます、**詳細**プロパティ ページ。 VMQ INF の詳細については、設定をファイルを参照してください。 [VMQ の標準的な INF エントリ](https://docs.microsoft.com/windows-hardware/drivers/network/standardized-inf-keywords-for-vmq)します。
+<a href="" id="maxlookaheadsplitsize"></a>**Maxlook Aヘッド Splitsize**  
+ネットワークアダプターが先読みパケットセグメントに対してサポートする最大サイズ (バイト単位)。
 
-NDIS ミニポート ドライバーの初期化中に受信フィルタ リングのハードウェア機能を提供する、 **HardwareReceiveFilterCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
+**注**  NDIS 6.30 以降では、パケットデータを個別の先読みバッファーに分割することはサポートされなくなりました。 NDIS 6.30 以降のバージョンをサポートするミニポートドライバーでは、このメンバーを0に設定する必要があります。
 
-正常に戻った後、 [OID\_受信\_フィルター\_現在\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)OID のクエリ、 **InformationBuffer**のメンバー、[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体。 これらの機能には、現在有効になっている VMQ 機能が含まれます。
+ 
 
-NDIS ミニポート ドライバーの装置の初期化中にフィルター処理機能が表示される現在有効になっている、 **CurrentReceiveFilterCapabilities**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
+Oid から正常に返された後[\_フィルター\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)の oid クエリを受け取る\_、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーにはポインターが含まれていますNDIS\_\_フィルター\_機能の構造を受け取ることができます。 これらの機能には、現在 INF ファイル設定で無効になっている VMQ ハードウェア機能や、 **[詳細設定**] プロパティページがあります。 VMQ の INF ファイルの設定の詳細については、「 [Vmq STANDARD Inf Entries](https://docs.microsoft.com/windows-hardware/drivers/network/standardized-inf-keywords-for-vmq)」を参照してください。
 
-NDIS は、現在有効な受信でプロトコル ドライバーに関連する、基になるネットワーク アダプターのフィルター処理機能を報告、 **ReceiveFilterCapabilities**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)バインド操作中に構造体。
+NDIS ミニポートドライバーは、Ndis\_ミニポート\_アダプターの**HardwareReceiveFilterCapabilities**メンバーである初期化中に、受信フィルターのハードウェア機能を提供し[ **\_ハードウェア\_支援\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
 
-[ **NDIS\_受信\_フィルター\_GLOBAL\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)で構造が使用される、 [OID\_受信\_フィルター\_GLOBAL\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters)クエリの現在のグローバルを取得する OID がフィルターの設定を受信します。
+Oid から正常に返された後[\_フィルター\_現在の\_機能の](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)oid クエリを受け取る\_、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーにはポインターが含まれています[**NDIS\_\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造を受け取ることができます。 これらの機能には、現在有効になっている VMQ 機能が含まれます。
 
-NDIS\_受信\_フィルター\_GLOBAL\_パラメーターには、次の情報が含まれています。
+NDIS ミニポートドライバーは、Ndis\_ミニポート\_アダプター\_ハードウェア\_アシストの**Currentreceivefiltercapabilities**メンバーでの初期化中に、現在有効になっている受信フィルター機能を提供[ **@no__ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。\_
+
+NDIS は、バインド操作中に、基になるネットワークアダプターの現在有効に**なっている**受信フィルター機能を、 [**ndis\_bind\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造内のプロトコルドライバーに報告します。
+
+[ **\_フィルター\_グローバル\_パラメーターの構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)は、グローバル[\_パラメーターを受信\_フィルター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters) 、現在のグローバル受信フィルターを取得するために、oid で使用されます。設定。\_
+
+NDIS\_は、グローバル\_パラメーター\_\_フィルターを受け取ると、次の情報が含まれます。
 
 <a href="" id="enabledfiltertypes"></a>**EnabledFilterTypes**  
-有効になっている種類のフィルターを受信します。 NDIS\_受信\_フィルター\_VMQ\_フィルター\_有効フラグは、仮想マシン キュー (VMQ) フィルターが有効になっていることを指定します。
+有効な受信フィルターの種類。 [NDIS\_RECEIVE\_FILTER\_VMQ\_FILTERS]\_ENABLED フラグは、バーチャルマシンキュー (VMQ) フィルターが有効であることを指定します。
 
 <a href="" id="enabledqueuetypes"></a>**EnabledQueueTypes**  
-型が有効になっているキューを受信します。 NDIS\_受信\_フィルター\_VM\_キュー\_有効フラグは、仮想マシン (VM) のキューが有効になっていることを指定します。
+有効な受信キューの種類。 NDIS\_RECEIVE\_FILTER\_VM\_QUEUE\_ENABLED フラグは、仮想マシン (VM) キューが有効であることを指定します。
 
-正常に戻った後、 [OID\_受信\_フィルター\_GLOBAL\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters) OID のクエリ、 **InformationBuffer**のメンバー、[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_GLOBAL\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)構造体。 NDIS\_受信\_フィルター\_GLOBAL\_パラメーター構造体は、ネットワーク アダプターで有効または無効にする受信フィルタ リング機能を指定します。
+Oid から正常に返された後、[グローバル\_パラメーターの\_を受け取る\_フィルターを受け取る](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters)oid クエリ\_、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、[**NDIS\_は、グローバル\_パラメーター構造\_\_フィルターを受信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)します。 NDIS\_RECEIVE\_FILTER\_GLOBAL\_PARAMETERS 構造体は、ネットワークアダプターで有効または無効になっている受信フィルター機能を指定します。
 
-NDIS プロトコル ドライバーを使用して、OID\_受信\_フィルター\_GLOBAL\_パラメーターの現在のグローバル構成パラメーターをクエリには、ネットワーク アダプターでフィルター処理を受信します。 プロトコル ドライバーがこの OID を使用して、受信の種類をフィルター処理するかどうかを判断または受信するなど、キューを有効または無効にします。
+NDIS プロトコルドライバーは、OID\_使用して、グローバル\_パラメーター\_受信\_フィルター処理し、ネットワークアダプターの受信フィルター処理のために現在のグローバル構成パラメーターを照会します。 たとえば、プロトコルドライバーは、この OID を使用して、受信フィルターの種類または受信キューを有効にするか無効にするかを決定できます。
 
  
 

@@ -4,12 +4,12 @@ description: Oplock の破損の確認
 ms.assetid: ea5bcd1e-d22c-4f80-89e4-1a61e43959dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3603a6bda469762262ef24b6cb0722756f6c45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 990be83f5b82e089aabc7304df4ff82cacee51d0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841496"
 ---
 # <a name="acknowledging-oplock-breaks"></a>Oplock の破損の確認
 
@@ -17,32 +17,32 @@ ms.locfileid: "67379354"
 ## <span id="oplock_break_conditions"></span><span id="OPLOCK_BREAK_CONDITIONS"></span>
 
 
-Oplock の所有者を返すことができる受信確認のさまざまな種類があります。 ような[要求を許可](granting-oplocks.md)、ファイル システムの制御コードとしてこれらの受信確認が送信されます (つまり、 [FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)秒)。 それらは以下のとおりです。
+Oplock の所有者は、さまざまな種類の受信確認を返すことができます。 [Grant 要求](granting-oplocks.md)と同様に、これらの受信確認はファイルシステム制御コード (つまり[FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)s) として送信されます。 それらは以下のとおりです。
 
--   FSCTL\_OPLOCK\_中断\_ACKNOWLEDGE
-    -   この FSCTL では、oplock の所有者には、ストリームの同期が完了したこと、およびレベル (レベル 2 または None) の分割、oplock を承諾することを示します。
--   FSCTL\_OPLOCK\_中断\_ACK\_いいえ\_2
-    -   この FSCTL は、oplock の所有者がストリームの同期は完了しましたが、レベル 2 oplock はしないことを示します。 代わりに、oplock を None に壊れたにする (つまり、oplock が完全に解除される)。
--   FSCTL\_OPBATCH\_ACK\_閉じる\_PENDING
-    -   Oplock の所有者がストリームの同期が完了し、oplock を完全に放棄はレベル 1 の oplock のこの FSCTL を示します (レベル 2 oplock 可能性がないこの受信確認)。
+-   FSCTL\_OPLOCK\_中断\_確認
+    -   この FSCTL は、oplock 所有者がストリーム同期を完了し、oplock が解除されたレベル (レベル2または None のいずれか) を受け入れることを示します。
+-   FSCTL\_OPLOCK\_中断\_ACK\_NO\_2
+    -   この FSCTL は、oplock 所有者がストリーム同期を完了したが、レベル2の oplock を必要としないことを示します。 代わりに、oplock は None に分割する必要があります (つまり、oplock は完全に放棄)。
+-   FSCTL\_OPBATCH\_ACK\_終了\_保留中
+    -   レベル1の oplock の場合、この FSCTL は oplock の所有者がストリームの同期を完了し、oplock が完全に保っままされていることを示します (この確認によってレベル2の oplock が生成されることはありません)。
 
     <!-- -->
 
-    -   バッチまたはフィルターの oplock の場合は、この FSCTL oplock の所有者が、oplock が付与されたストリームのハンドルを終了しようとしたことを示します。 Oplock の受信確認を待機しています。 ブロックされている操作は、oplock の所有者のハンドルが閉じられるまでの待機に進みます。
+    -   バッチまたはフィルターの oplock の場合、この FSCTL は oplock 所有者が oplock が付与されたストリームハンドルを閉じることを示します。 Oplock 解除の確認を待機している操作がブロックされた場合は、oplock 所有者のハンドルが閉じられるまで待機し続けます。
 -   FSCTL\_要求\_OPLOCK
-    -   要求を指定することによって\_OPLOCK\_入力\_フラグ\_で ACK、**フラグ**メンバー要求の\_OPLOCK\_入力\_バッファーとして渡された構造体、 *lpInBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)、この FSCTL は Windows 7 の各 oplock の区切りを確認するために使用します。 受信確認は必要な場合にのみ要求\_OPLOCK\_出力\_フラグ\_ACK\_必須フラグが設定されて、**フラグ**要求のメンバー\_OPLOCK\_出力\_として渡されたバッファーの構造、 *lpOutBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)をカーネル モードから Windows 7 の各 oplock のことを確認するために使用できます。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)します。
+    -   要求\_OPLOCK を指定することによって、要求の**Flags**メンバーで\_入力\_フラグ\_ACK を指定することにより、 [DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)の*lpinbuffer*パラメーターとして渡される入力\_バッファー構造体\_この FSCTL を使用して、Windows 7 の oplock が解除されたことを確認します。\_ 受信確認が必要なのは、要求の Flags メンバーで\_出力\_フラグ\_ACK\_必要フラグが設定されている場合にのみ、要求の**フラグ**メンバー\_OPLOCK\_出力\_バッファー構造として渡される\_[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)の*lpoutbuffer*パラメーター。 同様の方法で、 [**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)と[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を使用して、カーネルモードからの Windows 7 の oplock を確認することができます。 詳細については、「 [**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)」を参照してください。
 
-A 関連 FSCTL コードは FSCTL\_OPLOCK\_中断\_に通知します。 このコードは、呼び出し元が指定のストリームに oplock が完了したときに通知するときに使用されます。 この呼び出しはブロック可能性があります。 ときに FSCTL\_OPLOCK\_中断\_通知呼び出しのステータスを返します\_成功した場合、このことを示します、次のいずれか。
+関連する FSCTL コードは FSCTL\_OPLOCK\_中断\_通知します。 このコードは、指定されたストリームで oplock の解除が完了したときに呼び出し元が通知を受け取る場合に使用されます。 この呼び出しはブロックされる可能性があります。 FSCTL\_OPLOCK\_中断\_通知呼び出しが成功\_ステータスを返した場合は、次のいずれかが返されます。
 
--   Oplock が与えられていません。
+-   Oplock は付与されません。
 
--   Oplock されなかった進行中の呼び出し時にします。
+-   呼び出し時に oplock 解除が実行されていませんでした。
 
--   進行中であった任意 oplock が完了しました。
+-   進行中の oplock の中断がすべて完了しました。
 
-受信確認の送信には、エラーと受信確認の状態と FSCTL IRP が失敗受信確認が必要ない場合は\_無効な\_OPLOCK\_プロトコル。
+受信確認が想定されていないときに受信確認を送信すると、エラーが発生し、受信確認 FSCTL IRP が失敗し、状態\_無効\_OPLOCK\_プロトコルになります。
 
-Oplock が要求されるファイルのハンドルを閉じると、中断が暗黙的に確認されます。 共有違反の oplock の場合、oplock の所有者は、oplock が承認されると、ファイルのハンドルを閉じるし、ファイルの他のユーザーの共有違反を防ぐため。
+Oplock 解除が要求されたファイルのハンドルを閉じると、暗黙的に中断が認識されます。 Oplock が共有違反に対して中断された場合、oplock 所有者は oplock 解除を確認し、ファイルの他のユーザーの共有違反を防ぐファイルハンドルを閉じることができます。
 
  
 

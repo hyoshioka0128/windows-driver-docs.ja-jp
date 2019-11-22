@@ -4,16 +4,16 @@ description: IPowerNotify の実装
 ms.assetid: 8bd8b4c8-1961-41ea-ba98-41e3a732ed37
 keywords:
 - IPowerNotify インターフェイス
-- 通知の WDK オーディオ
-- 電源状態変更通知の WDK オーディオ
+- 通知 WDK オーディオ
+- 電源状態の変更通知の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 559b830207ff7a65025910eb8207b3e4678e7a1f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ccd4decdec6ff9322a576f227580fcb468656c6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359899"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833233"
 ---
 # <a name="implementing-ipowernotify"></a>IPowerNotify の実装
 
@@ -21,15 +21,15 @@ ms.locfileid: "67359899"
 ## <span id="implementing_ipowernotify"></span><span id="IMPLEMENTING_IPOWERNOTIFY"></span>
 
 
-場合、ドライバーのミニポート オブジェクト (を参照してください[オーディオ ミニポート オブジェクト インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-object-interfaces)) またはオブジェクトをストリーム (を参照してください[オーディオ Stream オブジェクト インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-stream-object-interfaces))、をサポートする電源状態の変更について知っておく必要があります[IPowerNotify](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipowernotify)インターフェイスでその**QueryInterface**メソッドと電源の変更が発生するたびに、PortCls システム ドライバーからの通知を受信します。
+ドライバーのミニポートオブジェクト ([オーディオミニポートオブジェクトインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-object-interfaces)を参照) またはストリームオブジェクト (「[オーディオストリームオブジェクトインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-stream-object-interfaces)」を参照) が電源状態の変更について知る必要がある場合は、 **QueryInterface**メソッドで[ipowernotify](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-ipowernotify)インターフェイスをサポートし、電源変更が発生するたびに PortCls システムドライバーから通知を受け取ることができます。
 
-電源状態の変更、PortCls を呼び出すと、 [ **IPowerNotify::PowerChangeNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-ipowernotify-powerchangenotify)オブジェクトをサポートするのに個別に各ミニポートとストリームを通知するメソッド、 **IPowerNotify**インターフェイス。 中に、 **PowerChangeNotify**を呼び出すと、ミニポート オブジェクトは、新しいデバイスの電源状態をキャッシュする必要があります。 中に、 **CAdapterCommon::Init**呼び出し (たとえば、Microsoft Windows ドライバー キット Msvad サンプル アダプターの実装を参照してください\[WDK\])、ミニポート ドライバーは、キャッシュされた電源状態を設定する必要がありますPowerDeviceD0 初期値。
+電源状態が変化すると、PortCls は[**ipowernotify::P owerchangenotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-ipowernotify-powerchangenotify)メソッドを呼び出して、 **ipowernotify**インターフェイスをサポートする各ミニポートおよびストリームオブジェクトを個別に通知します。 **PowerChangeNotify**の呼び出し中に、ミニポートオブジェクトが新しいデバイスの電源状態をキャッシュする必要があります。 **Cadaptercommon:: Init**の呼び出し中に (たとえば、Microsoft Windows Driver KIT \[WDK\])、ミニポートドライバーは、キャッシュされた電源状態を初期値 PowerDeviceD0 に設定する必要があります.
 
-呼び出しの前に**PowerChangeState**電源、PortCls 呼び出しを**IPowerNotify::PowerChangeNotify**ミニポート ドライバーに任意の必要なデバイス コンテキストを保存する機会を提供します。 このコンテキストには、たとえば現在フィルター トポロジとミキサー行の設定を具現化するハードウェア レジスタの値が含まれます。 呼び出した後**PowerChangeState** PortCls 呼び出しの電源を投入**PowerChangeNotify**ミニポート ドライバーが保存されたコンテキストを復元できるようにします。
+**PowerChangeState**を呼び出して電源を切る前に、PortCls は**ipowernotify::P owerchangenotify**を呼び出して、ミニポートドライバーに必要なデバイスコンテキストを保存する機会を与えます。 このコンテキストには、現在のフィルタートポロジとミキサーライン設定を具体化したハードウェアレジスタ値が含まれる場合があります (たとえば、)。 **PowerChangeState**を呼び出して電源を入れた後、PortCls は**PowerChangeNotify**を呼び出して、ミニポートドライバーが保存されたコンテキストを復元できるようにします。
 
-PortCls に呼び出す前に、アクティブなオーディオ データ ストリームが一時停止、電源と**PowerChangeNotify**します。 電源投入 PortCls 呼び出し**PowerChangeNotify**オーディオ データ ストリームを一時停止、再起動する前にします。
+電源を切ると、PortCls は、 **PowerChangeNotify**を呼び出す前に、アクティブなオーディオデータストリームを一時停止します。 PortCls は、電源をオンにすると、一時停止しているオーディオデータストリームを再起動する前に**PowerChangeNotify**を呼び出します。
 
-ミニポート ドライバーのミニポートおよびストリーム オブジェクトのクラスから継承できます、 **IPowerNotify**インターフェイスし、では、このインターフェイスをサポート、 **NonDelegatingQueryInterface**メソッド。 実装を使用する\_ヘッダー ファイルの関数の宣言を追加する Portcls.h から IPowerNotify 定義、 **PowerChangeNotify**ドライバーのミニポートおよびストリーム オブジェクトのクラス定義にメソッド。
+ミニポートドライバーのミニポートおよびストリームオブジェクトクラスは、 **Ipowernotify**インターフェイスから継承でき、 **NonDelegatingQueryInterface**メソッドでこのインターフェイスをサポートします。 ヘッダーファイル Portcls からの IMP\_IPowerNotify 定義を使用して、 **PowerChangeNotify**メソッドの関数宣言を、ドライバーのミニポートオブジェクトとストリームオブジェクトのクラス定義に追加できます。
 
  
 

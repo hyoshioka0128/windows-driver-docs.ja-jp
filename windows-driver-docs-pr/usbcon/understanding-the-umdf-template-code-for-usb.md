@@ -1,30 +1,30 @@
 ---
-Description: UMDF ベースの USB クライアント ドライバーのソース コードについて説明します。
-title: USB クライアント ドライバー コードの構造 (UMDF)
+Description: UMDF ベースの USB クライアントドライバーのソースコードについて説明します。
+title: USB クライアントドライバーコードの構造 (UMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a258f7ba9c01dc76d054a66804ff1b2d7467dcd7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 48218236c5567ce49ec8cf747113e6c051cd3b35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368764"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844331"
 ---
-# <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアント ドライバー コード構造 (UMDF) を理解します。
+# <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアントドライバーのコード構造 (UMDF) について
 
 
-このトピックでは、UMDF に基づく USB クライアント ドライバーのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー** Microsoft Visual Studio 2019 に含まれているテンプレートです。 テンプレート コードでは、Active Template Library (ATL) を使用して、COM インフラストラクチャを生成します。 ATL と、クライアント ドライバーで COM 実装の詳細については、ここで説明しません。
+このトピックでは、UMDF ベースの USB クライアントドライバーのソースコードについて説明します。 このコード例は、Microsoft Visual Studio 2019 に含まれている**USB ユーザーモードドライバー**テンプレートによって生成されます。 このテンプレートコードは、Active Template Library (ATL) を使用して COM インフラストラクチャを生成します。 ATL とクライアントドライバーでの COM 実装の詳細については、ここでは説明しません。
 
-UMDF のテンプレート コードを生成する方法については、次を参照してください。 [、最初の USB クライアント ドライバー (UMDF) を書き込む方法](implement-driver-entry-for-a-usb-driver--umdf-.md)します。 テンプレート コードは、これらのセクションについて説明します。
+UMDF テンプレートコードを生成する手順については、「[最初の USB クライアントドライバー (umdf) を作成する方法](implement-driver-entry-for-a-usb-driver--umdf-.md)」を参照してください。 テンプレートコードについては、次のセクションで説明します。
 
--   [ドライバーのコールバックのソース コード](#driver-callback-source-code)
--   [デバイスのコールバックのソース コード](#device-callback-source-code)
--   [キュー ソース コード](#queue-source-code)
--   [ドライバーのエントリのソース コード](#driver-entry-source-code)
+-   [ドライバーコールバックのソースコード](#driver-callback-source-code)
+-   [デバイスコールバックのソースコード](#device-callback-source-code)
+-   [キューのソースコード](#queue-source-code)
+-   [ドライバーエントリのソースコード](#driver-entry-source-code)
 
-テンプレート コードの詳細を説明する前に、UMDF ドライバーの開発に関連するヘッダー ファイル (Internal.h) 内のいくつかの宣言を見てみましょう。
+テンプレートコードの詳細について説明する前に、UMDF ドライバー開発に関連するヘッダーファイル (内部 .h) のいくつかの宣言を見てみましょう。
 
-Internal.h には、Windows Driver Kit (WDK) で含まれている、これらのファイルが含まれています。
+内部 .h には、Windows Driver Kit (WDK) に含まれている次のファイルが含まれています。
 
 ```ManagedCPlusPlus
 #include "atlbase.h"
@@ -34,13 +34,13 @@ Internal.h には、Windows Driver Kit (WDK) で含まれている、これら�
 #include "wudfusb.h"
 ```
 
-Atlbase.h と atlcom.h ATL サポートの宣言が含まれます。 クライアント ドライバーによって実装される各クラス実装 ATL クラスのパブリック CComObjectRootEx します。
+Atlbase .h および atlbase には、ATL サポートの宣言が含まれています。 クライアントドライバーによって実装される各クラスは、ATL クラスパブリック CComObjectRootEx を実装します。
 
-Wudfddi.h は常に UMDF ドライバーの開発に含まれています。 ヘッダー ファイルには、さまざまな宣言とメソッドおよび UMDF ドライバーをコンパイルする必要のある構造体の定義が含まれています。
+Wudfddi. h は、常に UMDF ドライバー開発のために含まれています。 ヘッダーファイルには、UMDF ドライバーをコンパイルするために必要なメソッドと構造体のさまざまな宣言と定義が含まれています。
 
-Wudfusb.h には、UMDF 構造と、フレームワークによって提供される USB I/O ターゲット オブジェクトと通信するために必要なメソッドの宣言および定義が含まれています。
+Wudfusb. h には、フレームワークによって提供される USB i/o ターゲットオブジェクトと通信するために必要な、UMDF 構造体およびメソッドの宣言と定義が含まれています。
 
-Internal.h の次のブロックは、デバイス インターフェイスの GUID 定数を宣言します。 アプリケーションは、この GUID を使用して、使用して、デバイスを識別するハンドルを開く**SetupDiXxx** Api。 GUID は、フレームワークは、デバイス オブジェクトを作成した後に登録されます。
+内部 .h の次のブロックは、デバイスインターフェイスの GUID 定数を宣言します。 アプリケーションでは、この GUID を使用して、 **Setupdixxx** api を使用してデバイスへのハンドルを開くことができます。 GUID は、フレームワークがデバイスオブジェクトを作成した後に登録されます。
 
 ```ManagedCPlusPlus
 // Device Interface GUID
@@ -50,7 +50,7 @@ DEFINE_GUID(GUID_DEVINTERFACE_MyUSBDriver_UMDF_,
     0xf74570e5,0xed0c,0x4230,0xa7,0xa5,0xa5,0x62,0x64,0x46,0x55,0x48);
 ```
 
-次の部分では、トレース マクロとトレース GUID を宣言します。 注トレース GUID。これは、トレースを有効にするために必要があります。
+次の部分では、トレースマクロとトレース GUID を宣言します。 トレース GUID をメモします。トレースを有効にするために必要になります。
 
 ```ManagedCPlusPlus
 #define WPP_CONTROL_GUIDS                                              \
@@ -77,7 +77,7 @@ DEFINE_GUID(GUID_DEVINTERFACE_MyUSBDriver_UMDF_,
            (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= lvl)
 ```
 
-フォワード Internal.h で [次へ] 行は、コールバックのキュー オブジェクトのクライアント ドライバー実装クラスを宣言します。 テンプレートによって生成された他のプロジェクト ファイルも含まれています。 このトピックの後半では、実装とプロジェクトのヘッダー ファイルがについて説明します。
+内部 .h の次の行は、キューコールバックオブジェクトのクライアントドライバーで実装されたクラスを宣言します。 また、テンプレートによって生成されるその他のプロジェクトファイルも含まれます。 実装とプロジェクトのヘッダーファイルについては、このトピックで後ほど説明します。
 
 ```ManagedCPlusPlus
 // Forward definition of queue.
@@ -91,28 +91,28 @@ typedef class CMyIoQueue *PCMyIoQueue;
 #include "IoQueue.h"
 ```
 
-クライアント ドライバーをインストールした後、Windows は、クライアント ドライバーとは、ホスト プロセスのインスタンスのフレームワークを読み込みます。 ここでは、フレームワークは、読み込みをクライアント ドライバーを初期化します。 フレームワークは、これらのタスクを実行します。
+クライアントドライバーをインストールすると、Windows によって、クライアントドライバーとフレームワークがホストプロセスのインスタンスに読み込まれます。 ここから、フレームワークによってクライアントドライバーが読み込まれ、初期化されます。 フレームワークは、次のタスクを実行します。
 
-1.  作成、*ドライバー オブジェクト*framework を表すには、クライアント ドライバー。
-2.  要求、 [IDriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)クラス ファクトリからインターフェイス ポインター。
-3.  作成、*デバイス オブジェクト*framework。
-4.  PnP マネージャーは、デバイスを起動した後、デバイス オブジェクトを初期化します。
+1.  クライアントドライバーを表す*ドライバーオブジェクト*をフレームワークに作成します。
+2.  クラスファクトリから[Idriverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)インターフェイスポインターを要求します。
+3.  フレームワークに*デバイスオブジェクト*を作成します。
+4.  PnP マネージャーがデバイスを起動した後に、デバイスオブジェクトを初期化します。
 
-ドライバーは、読み込みと初期化が、いくつかのイベントが発生して、フレームワークにより、それらを処理に参加するクライアント ドライバー。 クライアント ドライバーの側では、ドライバーは、これらのタスクを実行します。
+ドライバーの読み込み中および初期化中に、いくつかのイベントが発生し、フレームワークによってクライアントドライバーが処理に参加できるようになります。 クライアントドライバー側では、ドライバーは次のタスクを実行します。
 
-1.  実装し、エクスポート、 [ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)クライアント ドライバーのモジュールから関数のフレームワークは、ドライバーへの参照を取得できます。
-2.  実装するコールバック クラスを提供します、 [IDriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス。
-3.  実装するコールバック クラスを提供します**IPnpCallbackXxx**インターフェイス。
-4.  デバイス オブジェクトへの参照を取得し、クライアント ドライバーの要件に従って構成します。
+1.  フレームワークがドライバーへの参照を取得できるように、クライアントドライバーモジュールから[**DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)関数を実装してエクスポートします。
+2.  [Idriverentry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)インターフェイスを実装するコールバッククラスを提供します。
+3.  **IPnpCallbackXxx**インターフェイスを実装するコールバッククラスを提供します。
+4.  デバイスオブジェクトへの参照を取得し、クライアントドライバーの要件に従って構成します。
 
-## <a name="driver-callback-source-code"></a>ドライバーのコールバックのソース コード
+## <a name="driver-callback-source-code"></a>ドライバーコールバックのソースコード
 
 
-フレームワークを作成、*ドライバー オブジェクト*、Windows によって読み込まれるクライアント ドライバーのインスタンスを表します。 クライアント ドライバーでは、少なくとも 1 つのドライバー コールバック フレームワーク、ドライバーに登録を提供します。
+フレームワークは、Windows によって読み込まれるクライアントドライバーのインスタンスを表す*driver オブジェクト*を作成します。 クライアントドライバーは、ドライバーをフレームワークに登録する少なくとも1つのドライバーコールバックを提供します。
 
-ドライバーのコールバックの完全なソース コードは、Driver.h と Driver.c です。
+ドライバーコールバックの完全なソースコードは、Driver. .h と Driver. c にあります。
 
-クライアント ドライバーが実装するドライバー コールバック クラスを定義する必要があります[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)と[ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス。 ヘッダー ファイル、Driver.h、という CMyDriver、ドライバーのコールバックを定義するクラスを宣言します。
+クライアントドライバーは、 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)インターフェイスと[**Idriverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)インターフェイスを実装するドライバーコールバッククラスを定義する必要があります。 ヘッダーファイル Driver .h は、ドライバーコールバックを定義する CMyDriver というクラスを宣言します。
 
 ```ManagedCPlusPlus
 EXTERN_C const CLSID CLSID_Driver;
@@ -175,22 +175,22 @@ public:
 OBJECT_ENTRY_AUTO(CLSID_Driver, CMyDriver)
 ```
 
-ドライバーのコールバックはつまり、実装する必要があります、COM クラスである必要があります[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)と関連するメソッド。 テンプレート コードで ATL クラス CComObjectRootEx と CComCoClass を含む、 **IUnknown**メソッド。
+ドライバーコールバックは COM クラスである必要があります。これは、 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)と関連メソッドを実装する必要があることを意味します。 テンプレートコードでは、ATL クラス CComObjectRootEx と CComCoClass に**IUnknown**メソッドが含まれています。
 
-Windows は、ホスト プロセスをインスタンス化した後、フレームワークには、ドライバー オブジェクトが作成されます。 フレームワークが、ドライバー コールバック クラスの呼び出しのドライバーの実装のインスタンスを作成するためには、 [ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) (で説明した、[ドライバー エントリのソース コード](#driver-entry-source-code)セクション) と、クライアント ドライバーの入手[ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス ポインター。 その呼び出しは、フレームワーク ドライバー オブジェクトをドライバーのコールバック オブジェクトを登録します。 登録が成功は、フレームワークは、特定のドライバー固有のイベントが発生したときにクライアント ドライバーの実装を呼び出します。 フレームワークを呼び出す最初のメソッドは、 [ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)メソッド。 クライアント ドライバーの実装で**IDriverEntry::OnInitialize**、クライアント ドライバーがドライバーのグローバル リソースを割り当てることができます。 これらのリソースを解放する必要があります[ **IDriverEntry::OnDeinitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)クライアント ドライバーをアンロードする準備中である直前に、フレームワークによって呼び出されます。 テンプレート コードの最小限の実装を提供する、 **OnInitialize**と**OnDeinitialize**メソッド。
+Windows によってホストプロセスがインスタンス化されると、フレームワークによってドライバーオブジェクトが作成されます。 これを行うには、フレームワークによってドライバーコールバッククラスのインスタンスが作成され、 [**DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) ([ドライバーエントリのソースコード](#driver-entry-source-code)セクションで説明) のドライバーの実装が呼び出され、クライアントドライバーの[**idriverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)が取得されます。インターフェイスポインター。 この呼び出しによって、ドライバーコールバックオブジェクトがフレームワークドライバーオブジェクトに登録されます。 正常に登録されると、特定のドライバー固有のイベントが発生したときに、フレームワークによってクライアントドライバーの実装が呼び出されます。 フレームワークが呼び出す最初のメソッドは、 [**Idriverentry:: OnInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)メソッドです。 クライアントドライバーによる**Idriverentry:: OnInitialize**の実装では、クライアントドライバーがグローバルドライバーリソースを割り当てることができます。 これらのリソースは、クライアントドライバーのアンロードを準備する直前に、フレームワークによって呼び出される[**Idriverentry:: OnDeinitialize**](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)でリリースされる必要があります。 このテンプレートコードは、 **oninitialize**メソッドと**ondeinitialize**メソッドに対して最小限の実装を提供します。
 
-最も重要なメソッド[ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)は[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeviceadd)します。 ドライバーのフレームワークでは、(次のセクションで説明) framework デバイス オブジェクトを作成する前に呼び出す**IDriverEntry::OnDeviceAdd**実装します。 メソッドを呼び出すと、フレームワークに渡します、 [ **IWDFDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver)ドライバー オブジェクトへのポインターと[ **IWDFDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)ポインター。 クライアント ドライバーを呼び出すことができます**IWDFDeviceInitialize**メソッドを特定の構成オプションを指定します。
+[**Idriverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)の最も重要な方法は、 [**Idriverentry:: ondeviceadd**](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeviceadd)です。 フレームワークは、フレームワークデバイスオブジェクト (次のセクションで説明します) を作成する前に、ドライバーの**Idriverentry:: OnDeviceAdd**実装を呼び出します。 メソッドを呼び出すと、フレームワークは[**Iwdfdriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)ポインターを driver オブジェクトと[**Iwdfdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)ポインターに渡します。 クライアントドライバーは、 **Iwdfdeviceinitialize**メソッドを呼び出して、特定の構成オプションを指定できます。
 
-通常、クライアント ドライバーはで、次のタスクを実行します。 その[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)実装。
+通常、クライアントドライバーは、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)実装で次のタスクを実行します。
 
--   デバイス オブジェクトを作成するための構成情報を指定します。
--   ドライバーのデバイス コールバック クラスをインスタンス化します。
--   Framework デバイス オブジェクトを作成し、デバイス、そのコールバック オブジェクトをフレームワークに登録します。
--   フレームワークのデバイス オブジェクトを初期化します。
--   デバイスのインターフェイス、クライアント ドライバーの GUID を登録します。
+-   作成するデバイスオブジェクトの構成情報を指定します。
+-   ドライバーのデバイスコールバッククラスをインスタンス化します。
+-   フレームワークデバイスオブジェクトを作成し、そのデバイスコールバックオブジェクトをフレームワークに登録します。
+-   フレームワークデバイスオブジェクトを初期化します。
+-   クライアントドライバーのデバイスインターフェイス GUID を登録します。
 
-テンプレート コードで**IDriverEntry::OnDeviceAdd**静的メソッドを呼び出す、CMyDevice::CreateInstanceAndInitialize、デバイス コールバック クラスで定義されています。 静的メソッドでは、まず、クライアント ドライバーのデバイス コールバック クラスをインスタンス化され、フレームワークのデバイス オブジェクトが作成されます。 デバイスのコールバック クラスには、上記のリストに記載されている残りのタスクを実行する構成をという名前のパブリック メソッドも定義します。 デバイスのコールバック クラスの実装は、次のセクションで説明します。
-次のコード例は、 [ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)テンプレート コードで実装します。
+テンプレートコードでは、 **Idriverentry:: OnDeviceAdd**は、デバイスコールバッククラスで定義されている静的メソッド CMyDevice:: CreateInstanceAndInitialize を呼び出します。 静的メソッドは、まずクライアントドライバーのデバイスコールバッククラスをインスタンス化し、次にフレームワークデバイスオブジェクトを作成します。 デバイスコールバッククラスは、前の一覧で説明した残りのタスクを実行する Configure という名前のパブリックメソッドも定義します。 デバイスコールバッククラスの実装については、次のセクションで説明します。
+次のコード例は、テンプレートコードでの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)実装を示しています。
 
 ```ManagedCPlusPlus
 HRESULT
@@ -215,7 +215,7 @@ CMyDriver::OnDeviceAdd(
 }
 ```
 
-次のコード例では、Device.h でデバイス クラスの宣言を示します。
+次のコード例は、Device. h でのデバイスクラスの宣言を示しています。
 
 ```ManagedCPlusPlus
 class CMyDevice :
@@ -293,40 +293,40 @@ public:
 };
 ```
 
-## <a name="device-callback-source-code"></a>デバイスのコールバックのソース コード
+## <a name="device-callback-source-code"></a>デバイスコールバックのソースコード
 
 
-*Framework デバイス オブジェクト*クライアント ドライバーのデバイス スタックに読み込まれるデバイス オブジェクトを表す framework クラスのインスタンスです。 デバイス オブジェクトの機能については、次を参照してください。[デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/debugger/device-node-and-stack-debugger-commands)します。
+*Framework device オブジェクト*は、クライアントドライバーのデバイススタックに読み込まれるデバイスオブジェクトを表すフレームワーククラスのインスタンスです。 デバイスオブジェクトの機能の詳細については、「[デバイスノードとデバイススタック](https://docs.microsoft.com/windows-hardware/drivers/debugger/device-node-and-stack-debugger-commands)」を参照してください。
 
-デバイス オブジェクトの完全なソース コードは Device.h と Device.c にあります。
+デバイスオブジェクトの完全なソースコードは、デバイス .h と Device .c にあります。
 
-Framework デバイス クラスの実装、 [ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)インターフェイス。 クライアント ドライバーがドライバーの実装でそのクラスのインスタンスを作成する責任を負います[ **IDriverEntry::OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)します。 クライアント ドライバーを取得しますが、オブジェクトの作成後、 **IWDFDevice**デバイス オブジェクトの操作を管理するには、そのインターフェイスの新しいオブジェクトと呼び出しメソッドへのポインター。
+Framework device クラスは、 [**Iwdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスを実装します。 クライアントドライバーは、ドライバーの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)の実装で、そのクラスのインスタンスを作成します。 オブジェクトが作成されると、クライアントドライバーは、新しいオブジェクトへの**Iwdfdevice**ポインターを取得し、そのインターフェイスでメソッドを呼び出して、デバイスオブジェクトの操作を管理します。
 
-**IDriverEntry::OnDeviceAdd 実装**
+**IDriverEntry:: OnDeviceAdd 実装**
 
-クライアント ドライバーを実行するタスクの説明について簡単に、前のセクションで[ **IDriverEntry::OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)します。 これらのタスクの詳細を次に示します。 クライアント ドライバー:
+前のセクションでは、クライアントドライバーが[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)で実行するタスクについて簡単に見てきました。 これらのタスクの詳細については、こちらを参照してください。 クライアントドライバー:
 
--   デバイス オブジェクトを作成するための構成情報を指定します。
+-   作成するデバイスオブジェクトの構成情報を指定します。
 
-    フレームワークのクライアント ドライバーの実装を呼び出して、 [ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)フレームワークは、メソッドに渡します、 [ **IWDFDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)ポインター。 クライアント ドライバーでは、このポインターを使用して、デバイス オブジェクトを作成するための構成情報を指定します。 たとえば、クライアント ドライバーでは、クライアント ドライバーが、フィルターまたは関数のドライバーがかどうかを指定します。 フィルター ドライバーとしてクライアント ドライバーを識別するために呼び出す[ **IWDFDeviceInitialize::SetFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556965_setfilter)します。 その場合は、フレームワークはフィルター デバイス オブジェクト (FiDO); を作成します。それ以外の場合、関数のデバイス オブジェクト (FDO) が作成されます。 設定できるもう 1 つのオプションは、呼び出すことによって同期モードを[ **IWDFDeviceInitialize::SetLockingConstraint**](https://msdn.microsoft.com/library/windows/hardware/ff556965_setlockingconstraint)します。
+    フレームワークは、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドのクライアントドライバーの実装に対する呼び出しで、 [**Iwdfdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)ポインターを渡します。 クライアントドライバーは、このポインターを使用して、作成するデバイスオブジェクトの構成情報を指定します。 たとえば、クライアントドライバーは、クライアントドライバーがフィルターと関数ドライバーのどちらであるかを指定します。 クライアントドライバーをフィルタードライバーとして識別するには、 [**Iwdfdeviceinitialize:: SetFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556965_setfilter)を呼び出します。 その場合は、フレームワークによってフィルターデバイスオブジェクト (FiDO) が作成されます。それ以外の場合は、関数デバイスオブジェクト (FDO) が作成されます。 もう1つの方法として、 [**Iwdfdeviceinitialize:: Setロック制約**](https://msdn.microsoft.com/library/windows/hardware/ff556965_setlockingconstraint)を呼び出して同期モードを設定することもできます。
 
--   呼び出し、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドを渡すことによって、 [ **IWDFDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイス ポインター、 [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)デバイス コールバック オブジェクト、およびポインターのポインターの参照[ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)変数。
+-   [**Iwdfdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスポインター、デバイスコールバックオブジェクトの[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)参照、およびポインターからポインターへの[**iwdfdriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)変数を渡すことによって、 [**iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドを呼び出します。
 
-    場合、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)呼び出しが成功するとします。
+    [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)の呼び出しが成功した場合は、次のようになります。
 
-    -   フレームワークは、デバイス オブジェクトを作成します。
-    -   フレームワークは、フレームワークをデバイス コールバックを登録します。
+    -   フレームワークは、デバイスオブジェクトを作成します。
+    -   フレームワークは、デバイスコールバックをフレームワークに登録します。
 
-        デバイス コールバックを組み合わせる framework デバイス オブジェクトを使用すると後、は、PnP 状態などの特定のイベントを処理フレームワークと、クライアント ドライバーと、電源状態の変更。 たとえば、PnP のマネージャーは、デバイスを起動するときに、フレームワークに通知されます。 フレームワークが呼び出され、デバイス コールバックの[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)実装します。 すべてのクライアント ドライバーでは、少なくとも 1 つのデバイスのコールバック オブジェクトを登録する必要があります。
+        デバイスのコールバックがフレームワークのデバイスオブジェクトとペアリングされると、フレームワークとクライアントドライバーが特定のイベント (PnP 状態や電源状態の変化など) を処理します。 たとえば、PnP マネージャーがデバイスを起動すると、フレームワークに通知されます。 次に、フレームワークは、デバイスコールバックの[**IPnpCallbackHardware:: On ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)の実装を呼び出します。 すべてのクライアントドライバーは、少なくとも1つのデバイスコールバックオブジェクトを登録する必要があります。
 
-    -   クライアント ドライバーは、デバイスの新しいオブジェクトのアドレスを受け取る、 [ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)変数。 フレームワークのデバイス オブジェクトへのポインターを受け取ると、クライアント ドライバーは、I/O のフローのキューの設定や、デバイス インターフェイスの GUID を登録するなどの初期化タスクを開始できます。
+    -   クライアントドライバーは、 [**Iwdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)変数に新しいデバイスオブジェクトのアドレスを受け取ります。 フレームワークデバイスオブジェクトへのポインターを受け取ると、クライアントドライバーは初期化タスクを続行できます。たとえば、i/o フローのキューの設定や、デバイスインターフェイス GUID の登録などです。
 
--   呼び出し[ **IWDFDevice::CreateDeviceInterface** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinterfacea)デバイス インターフェイス、クライアント ドライバーの GUID を登録します。 アプリケーションは、GUID を使用して、クライアント ドライバーに要求を送信できます。 GUID 定数は、Internal.h で宣言されます。
--   デバイスからの I/O の転送キューを初期化します。
+-   [**Iwdfdevice:: CreateDeviceInterface**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinterfacea)を呼び出して、クライアントドライバーのデバイスインターフェイス GUID を登録します。 アプリケーションでは、GUID を使用してクライアントドライバーに要求を送信できます。 GUID 定数は内部 .h で宣言されています。
+-   デバイスとの間で i/o 転送を行うキューを初期化します。
 
-テンプレート コードでは、初期化、構成情報を指定し、デバイス オブジェクトを作成するヘルパー メソッドを定義します。
+このテンプレートコードは、構成情報を指定し、デバイスオブジェクトを作成するヘルパーメソッド初期化を定義します。
 
-次のコード例では、初期化の実装を示します。
+次のコード例は、Initialize の実装を示しています。
 
 ```ManagedCPlusPlus
 HRESULT
@@ -378,19 +378,19 @@ Exit:
 }
 ```
 
-前のコード例では、クライアント ドライバーは、デバイス オブジェクトを作成し、そのデバイス コールバックを登録します。 デバイス オブジェクトを作成する前に、ドライバーはメソッドを呼び出すことによって、構成の基本設定を指定します、 [ **IWDFDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイス ポインター。 その以前のクライアント ドライバーの呼び出しで、フレームワークによって渡された同じポインターは[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッド。
+前のコード例では、クライアントドライバーはデバイスオブジェクトを作成し、デバイスのコールバックを登録します。 デバイスオブジェクトを作成する前に、ドライバーは[**Iwdfdeviceinitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスポインターでメソッドを呼び出すことによって、構成設定を指定します。 これは、クライアントドライバーの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドの前の呼び出しでフレームワークによって渡されたポインターと同じです。
 
-クライアント ドライバーでは、デバイス オブジェクトの電源ポリシー所有者になるを指定します。 電源ポリシー所有者は、クライアント ドライバーはシステムの電源状態が変更されたときに、デバイスが入力する適切な電源状態を判断します。 電源の状態遷移を実行するには、デバイスに関連する要求を送信するため、ドライバーもします。 既定ではない、電源ポリシー所有者に UMDF ベースのクライアント ドライバーです。フレームワークは、すべての電源の状態遷移を処理します。 フレームワークでは、デバイスを自動的に送信されます**D3** 、システムがスリープ状態とは逆に、デバイスに**D0** 、システムの稼働状態に入ったとき**S0**. 詳細については、次を参照してください。 [UMDF で電源ポリシー所有権](https://docs.microsoft.com/windows-hardware/drivers/wdf/power-policy-ownership-in-umdf)します。
+クライアントドライバーは、デバイスオブジェクトの電源ポリシー所有者であることを指定します。 クライアントドライバーは、電源ポリシーの所有者として、システムの電源状態が変化したときにデバイスが入力する適切な電源の状態を決定します。 また、ドライバーは、電源状態を移行するために、関連する要求をデバイスに送信する役割も担います。 既定では、UMDF ベースのクライアントドライバーは、電源ポリシーの所有者ではありません。フレームワークは、すべての電源状態遷移を処理します。 システムがスリープ状態になると、フレームワークによってデバイスが**D3**に自動的に送信され、その逆に、システムが**S0**の状態になったときにデバイスが**D0**に戻されます。 詳細については、「 [UMDF の電源ポリシーの所有権](https://docs.microsoft.com/windows-hardware/drivers/wdf/power-policy-ownership-in-umdf)」を参照してください。
 
-別の構成オプションでは、クライアント ドライバーが、フィルター ドライバーまたはデバイスの機能のドライバーがかどうかを指定します。 コード例では、クライアント ドライバーに明示的に指定していないことの優先順位に注意してください。 つまり、クライアント ドライバーは、関数ドライバー、フレームワークは、デバイス スタックで FDO を作成する必要があります。 かどうかには、クライアント ドライバーは、フィルター ドライバーを希望していますし、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize::SetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)メソッド。 その場合は、フレームワークは、デバイス スタックで、FiDO を作成します。
+もう1つの構成オプションは、クライアントドライバーがフィルタードライバーであるか、デバイスの関数ドライバーであるかを指定することです。 このコード例では、クライアントドライバーが明示的に設定を指定していないことに注意してください。 これは、クライアントドライバーが関数ドライバーであり、フレームワークがデバイススタックに FDO を作成する必要があることを意味します。 クライアントドライバーがフィルタードライバーである場合、ドライバーは[**Iwdfdeviceinitialize:: SetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)メソッドを呼び出す必要があります。 その場合は、フレームワークによってデバイススタックに FiDO が作成されます。
 
-クライアント ドライバーでは、クライアント ドライバーのコールバックにフレームワークのいずれもが同期されるも指定します。 クライアント ドライバーでは、すべての同期タスクを処理します。 クライアント ドライバーの呼び出し、その設定を指定する、 [ **IWDFDeviceInitialize::SetLockingConstraint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)メソッド。
+クライアントドライバーは、クライアントドライバーのコールバックに対するフレームワークの呼び出しが同期されていないことも指定します。 クライアントドライバーは、すべての同期タスクを処理します。 この設定を指定するために、クライアントドライバーは[**Iwdfdeviceinitialize:: Setロック制約**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)メソッドを呼び出します。
 
-次に、クライアント ドライバーを取得、 [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)呼び出すことによって、デバイス コールバック クラスへのポインター [ **iunknown::queryinterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))します。 クライアント ドライバーの呼び出し、その後、 [ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)、framework デバイス オブジェクトを作成しを使用して、クライアント ドライバーのデバイスのコールバックを登録する**IUnknown**ポインター。
+次に、クライアントドライバーは、 [**iunknown:: QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))を呼び出すことによって、デバイスコールバッククラスへの[**iunknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)ポインターを取得します。 その後、クライアントドライバーは[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出します。これにより、フレームワークデバイスオブジェクトが作成され、 **IUnknown**ポインターを使用してクライアントドライバーのデバイスコールバックが登録されます。
 
-クライアント ドライバーがデバイス オブジェクトのアドレスを格納することに注意してください (経由で受信した、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)呼び出し)、デバイス コールバック クラスのプライベート データ メンバーにし、解放します。DriverSafeRelease (Internal.h で定義されたインライン関数) を呼び出すことによって参照されます。 デバイス オブジェクトの有効期間が、framework によって追跡されるためです。 そのため、クライアント ドライバーでは、デバイス オブジェクトの追加の参照カウントを保持する必要はありません。
+クライアントドライバーは、デバイスコールバッククラスのプライベートデータメンバーに ( [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)呼び出しを通じて受信された) デバイスオブジェクトのアドレスを格納し、DriverSafeRelease を呼び出してその参照を解放することに注意してください (inline関数は内部 .h で定義されています)。 これは、デバイスオブジェクトの有効期間がフレームワークによって追跡されるためです。 そのため、デバイスオブジェクトの追加の参照カウントを保持するために、クライアントドライバーは必要ありません。
 
-テンプレート コードでは、パブリック メソッドの構成では、デバイス インターフェイスの GUID を登録し、キューの設定を定義します。 次のコード例では、デバイス コールバック クラス CMyDevice で、Configure メソッドの定義を示します。 構成によって呼び出される[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) framework デバイス オブジェクトを作成した後。
+テンプレートコードは、デバイスインターフェイス GUID を登録し、キューを設定するパブリックメソッド構成を定義します。 次のコード例は、デバイスコールバッククラス CMyDevice の Configure メソッドの定義を示しています。 Configure は、フレームワークデバイスオブジェクトが作成された後に、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)によって呼び出されます。
 
 ```ManagedCPlusPlus
 CMyDevice::Configure(
@@ -440,42 +440,42 @@ Exit:
 }
 ```
 
-クライアント ドライバーを前のコード例には、2 つの主要なタスクを実行します。 I/O フローのキューを初期化し、デバイスを登録するインターフェイスの GUID。
+前のコード例では、クライアントドライバーは主に2つのタスクを実行します。 i/o フローのキューの初期化と、デバイスインターフェイス GUID の登録です。
 
-キューが作成され、CMyIoQueue クラスで構成されています。 最初のタスクでは、CreateInstanceAndInitialize をという名前の静的メソッドを呼び出すことによってそのクラスのインスタンスを作成します。 クライアント ドライバーでは、キューを初期化するために構成を呼び出します。 CreateInstanceAndInitialize と構成は、CMyIoQueue、これについては、このトピックの説明で宣言されます。
+キューは、CMyIoQueue クラスで作成され、構成されます。 最初のタスクでは、CreateInstanceAndInitialize という名前の静的メソッドを呼び出して、そのクラスをインスタンス化します。 クライアントドライバーは、キューを初期化するように構成を呼び出します。 CreateInstanceAndInitialize と Configure は CMyIoQueue で宣言されています。これについては、このトピックの後半で説明します。
 
-クライアント ドライバーの呼び出しも[ **IWDFDevice::CreateDeviceInterface** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinterfacea)デバイス インターフェイス、クライアント ドライバーの GUID を登録します。 アプリケーションは、GUID を使用して、クライアント ドライバーに要求を送信できます。 GUID 定数は、Internal.h で宣言されます。
+また、クライアントドライバーは、 [**Iwdfdevice:: CreateDeviceInterface**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinterfacea)を呼び出して、クライアントドライバーのデバイスインターフェイス GUID を登録します。 アプリケーションでは、GUID を使用してクライアントドライバーに要求を送信できます。 GUID 定数は内部 .h で宣言されています。
 
-**IPnpCallbackHardware 実装と USB の特定のタスク**
+**IPnpCallbackHardware の実装と USB 固有のタスク**
 
-次の実装を見て、 [ **IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware) Device.cpp のインターフェイス。
+次に、 [**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)でのインターフェイスの実装について説明します。
 
-すべてのデバイス コールバック クラスを実装する必要があります、 [ **IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)インターフェイス。 このインターフェイスでは、2 つの方法があります。[**IPnpCallbackHardware::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764_onpreparehardware)と[ **IPnpCallbackHardware::OnReleaseHardware**](https://msdn.microsoft.com/library/windows/hardware/ff556764_onreleasehardware)します。 フレームワークでは、これらのメソッドを呼び出す 2 つのイベントに応答: PnP マネージャーでのデバイスとデバイスを削除するときの開始時です。 場合は、デバイスが起動して、ハードウェアへの通信が確立されているが、デバイスは稼働状態に入っていません (**D0**)。 したがって、 **IPnpCallbackHardware::OnPrepareHardware**クライアント ドライバーは、ハードウェアからデバイス情報を取得、リソースの割り当て、およびドライバーの有効期間中に必要なフレームワーク オブジェクトを初期化します。 PnP マネージャーでは、デバイスを削除するときに、ドライバーは、システムからアンロードされます。 フレームワークは、クライアント ドライバーの**IPnpCallbackHardware::OnReleaseHardware**それらのリソースおよび framework オブジェクトのドライバーはリリースの実装。
+すべてのデバイスコールバッククラスは、 [**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)インターフェイスを実装する必要があります。 このインターフェイスには、 [**IPnpCallbackHardware:: OnIPnpCallbackHardware hardware**](https://msdn.microsoft.com/library/windows/hardware/ff556764_onpreparehardware)と[ **:: onpreparehardware**](https://msdn.microsoft.com/library/windows/hardware/ff556764_onreleasehardware)の2つのメソッドがあります。 このフレームワークは、PnP マネージャーがデバイスを起動したときと、デバイスを削除したときの2つのイベントに応答して、これらのメソッドを呼び出します。 デバイスが起動すると、ハードウェアへの通信が確立されますが、デバイスが動作状態 (**D0**) に入っていません。 このため、 **IPnpCallbackHardware:: On hardware**では、クライアントドライバーは、ハードウェアからデバイス情報を取得し、リソースを割り当て、ドライバーの有効期間中に必要なフレームワークオブジェクトを初期化することができます。 PnP マネージャーによってデバイスが削除されると、ドライバーはシステムからアンロードされます。 このフレームワークは、ドライバーがこれらのリソースとフレームワークオブジェクトを解放できる、クライアントドライバーの**IPnpCallbackHardware:: OnReleaseHardware**実装を呼び出します。
 
-PnP マネージャーでは、その他の種類の PnP 状態の変更に起因するイベントを生成できます。 フレームワークは、既定のこれらのイベントの処理を提供します。 クライアント ドライバーは、これらのイベントの処理に参加を選択できます。 USB デバイスが、ホストから切り離されたシナリオを検討してください。 PnP マネージャーでは、そのイベントを認識し、フレームワークに通知します。 クライアント ドライバーは、イベントへの応答に追加のタスクを実行する必要がある場合、ドライバーを実装する必要があります、 [ **IPnpCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)インターフェイスと、関連[ **IPnpCallback: OnSurpriseRemoval** ](https://msdn.microsoft.com/library/windows/hardware/ff556762_onsurpriseremoval)デバイス コールバック クラスのメソッド。 それ以外の場合、フレームワークは、そのイベントの既定の処理を続行します。
+Pnp マネージャーは、PnP 状態の変更によって発生する他の種類のイベントを生成できます。 フレームワークは、これらのイベントに対して既定の処理を提供します。 クライアントドライバーは、これらのイベントの処理に参加することを選択できます。 USB デバイスがホストから切断されているシナリオを考えてみましょう。 PnP マネージャーはそのイベントを認識し、フレームワークに通知します。 クライアントドライバーがイベントに応答して追加のタスクを実行する必要がある場合、ドライバーは、デバイスコールバッククラスの[**IPnpCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback)インターフェイスと関連する[**IPnpCallback:: OnSurpriseRemoval**](https://msdn.microsoft.com/library/windows/hardware/ff556762_onsurpriseremoval)メソッドを実装する必要があります。 それ以外の場合、フレームワークはイベントの既定の処理を続行します。
 
-USB クライアント ドライバーは、サポートされているインターフェイス、代替の設定とエンドポイントに関する情報を取得し、データ転送のすべての I/O 要求を送信する前にようを構成する必要があります。 UMDF は、さまざまなクライアント ドライバーの構成タスクを簡略化する専用の I/O ターゲット オブジェクトを提供します。 USB デバイスを構成するには、クライアント ドライバーには、PnP マネージャーは、デバイスを起動した後にのみ利用可能なデバイス情報が必要です。
+USB クライアントドライバーは、サポートされているインターフェイス、代替設定、およびエンドポイントに関する情報を取得し、データ転送の i/o 要求を送信する前にそれらを構成する必要があります。 UMDF には、クライアントドライバーの多くの構成タスクを簡略化する、特殊な i/o ターゲットオブジェクトが用意されています。 USB デバイスを構成するには、PnP マネージャーがデバイスを起動した後にのみ使用可能なデバイス情報がクライアントドライバーに必要です。
 
-このテンプレート コードでこれらのオブジェクトを作成し、 [ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッド。
+このテンプレートコードは、 [**IPnpCallbackHardware:: On hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッドでこれらのオブジェクトを作成します。
 
-通常、クライアント ドライバー (デバイスの設計) に応じてこれらの構成タスクの 1 つ以上を実行します。
+通常、クライアントドライバーは、デバイスの設計に応じて、次の1つまたは複数の構成タスクを実行します。
 
-1.  インターフェイスの数など、現在の構成に関する情報を取得します。 フレームワークは、USB デバイスで最初の構成を選択します。 クライアント ドライバーでは、複数の構成のデバイスの場合、別の構成を選択できません。
+1.  インターフェイスの数など、現在の構成に関する情報を取得します。 フレームワークは、USB デバイスの最初の構成を選択します。 複数構成のデバイスの場合、クライアントドライバーで別の構成を選択することはできません。
 2.  エンドポイントの数などのインターフェイスに関する情報を取得します。
-3.  インターフェイスは、1 つ以上の設定をサポートしている場合は、各インターフェイスの代替設定を変更します。 既定では、フレームワークは、USB デバイスで最初の構成の各インターフェイスの最初の代替設定を選択します。 クライアント ドライバーは、代替の設定を選択できます。
+3.  インターフェイスが複数の設定をサポートしている場合は、各インターフェイス内の代替設定を変更します。 既定では、フレームワークは、USB デバイスの最初の構成で各インターフェイスの最初の代替設定を選択します。 クライアントドライバーは、別の設定を選択することができます。
 4.  各インターフェイス内のエンドポイントに関する情報を取得します。
 
-これらのタスクを実行するには、クライアント ドライバーは、WDF によって提供される専用の USB I/O ターゲット オブジェクトのこれらの型を使用できます。
+これらのタスクを実行するために、クライアントドライバーは、WDF によって提供されるこれらの特殊な USB i/o ターゲットオブジェクトを使用できます。
 
-| USB I/O ターゲット オブジェクト     | 説明                                                                                                                                                                                                                                                                                                                               | UMDF インターフェイス                                  |
+| USB i/o ターゲットオブジェクト     | 説明                                                                                                                                                                                                                                                                                                                               | UMDF インターフェイス                                  |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| *ターゲット デバイス オブジェクト*    | USB デバイスを表し、デバイス記述子を取得し、デバイスに対する制御要求を送信するためのメソッドを提供します。                                                                                                                                                                                                             | [IWDFUsbTargetDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice) |
-| *ターゲット インターフェイス オブジェクト* | 個別のインターフェイスを表し、代替の設定を選択し、設定に関する情報を取得するクライアント ドライバーを呼び出すことができるメソッドを提供します。                                                                                                                                                                          | [IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)       |
-| *パイプ オブジェクトのターゲット*      | インターフェイスの現在の代替設定で構成されているエンドポイントの個別のパイプを表します。 USB バス ドライバーでは、選択した構成の各インターフェイスを選択し、インターフェイス内で各エンドポイントへの通信チャネルを設定します。 USB 用語では、その通信チャネルと呼ばれる、*パイプ*します。 | [IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)     |
+| *ターゲットデバイスオブジェクト*    | USB デバイスを表し、デバイス記述子を取得し、デバイスに制御要求を送信するためのメソッドを提供します。                                                                                                                                                                                                             | [IWDFUsbTargetDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) |
+| *ターゲットインターフェイスオブジェクト* | 個々のインターフェイスを表し、クライアントドライバーが別の設定を選択して設定に関する情報を取得するために呼び出すことができるメソッドを提供します。                                                                                                                                                                          | [IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)       |
+| *ターゲットパイプオブジェクト*      | インターフェイスの現在の代替設定で構成されているエンドポイントの個々のパイプを表します。 USB バスドライバーは、選択された構成内の各インターフェイスを選択し、インターフェイス内の各エンドポイントへの通信チャネルを設定します。 USB 用語では、その通信チャネルは*パイプ*と呼ばれます。 | [IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)     |
 
 
 
-次のコード例の実装を示しています。 [ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)します。
+次のコード例は、 [**IPnpCallbackHardware:: On hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)の実装を示しています。
 
 ```ManagedCPlusPlus
 HRESULT
@@ -526,20 +526,20 @@ Exit:
 }
 ```
 
-フレームワークの USB I/O ターゲット オブジェクトを使用するには、クライアント ドライバーはまず、USB ターゲット デバイス オブジェクトを作成する必要があります。 Framework のオブジェクト モデルでは、USB ターゲットのデバイス オブジェクトは、USB デバイスを表すデバイス オブジェクトの子です。 USB ターゲットのデバイス オブジェクトは、framework によって実装され、構成の選択などの USB デバイスのすべてのデバイス レベルのタスクを実行します。
+フレームワークの USB i/o ターゲットオブジェクトを使用するには、まず、クライアントドライバーで USB ターゲットデバイスオブジェクトを作成する必要があります。 フレームワークオブジェクトモデルでは、USB ターゲットデバイスオブジェクトは、USB デバイスを表すデバイスオブジェクトの子です。 USB ターゲットデバイスオブジェクトは、フレームワークによって実装され、構成の選択など、USB デバイスのすべてのデバイスレベルのタスクを実行します。
 
-前のコード例でクライアント ドライバー フレームワークのデバイス オブジェクトに照会し、取得、 [ **IWDFUsbTargetFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetfactory) USB ターゲットのデバイス オブジェクトを作成するクラス ファクトリへのポインター。 クライアント ドライバーを呼び出してそのポインターを使用して、 [ **IWDFUsbTargetDevice::CreateUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560387_createusbtargetdevice)メソッド。 メソッドは、USB ターゲットのデバイス オブジェクトを作成しへのポインターを返します、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)インターフェイス。 メソッドは、既定値 (最初) の構成とその構成で各インターフェイスの場合は 0 を設定する代替も選択します。
+前のコード例では、クライアントドライバーは、フレームワークデバイスオブジェクトに対してクエリを行い、USB ターゲットデバイスオブジェクトを作成するクラスファクトリへの[**IWDFUsbTargetFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetfactory)ポインターを取得します。 クライアントドライバーは、そのポインターを使用して[**IWDFUsbTargetDevice:: CreateUsbTargetDevice**](https://msdn.microsoft.com/library/windows/hardware/ff560387_createusbtargetdevice)メソッドを呼び出します。 メソッドは、USB ターゲットデバイスオブジェクトを作成し、 [**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice)インターフェイスへのポインターを返します。 また、メソッドは、既定 (最初) の構成と、その構成内の各インターフェイスの代替設定0を選択します。
 
-テンプレート コードが、USB ターゲット デバイス オブジェクトのアドレスを格納 (経由で受信した、 [ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)呼び出し)、デバイス コールバック クラスのプライベート データ メンバーにし、解放します。DriverSafeRelease を呼び出すことによって参照されます。 USB のターゲット デバイス オブジェクトの参照カウントは、フレームワークによって保持されます。 オブジェクトが、デバイス オブジェクトが生きている限り有効です。 クライアント ドライバーは、への参照を解放する必要があります[ **IPnpCallbackHardware::OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)します。
+テンプレートコードは、デバイスコールバッククラスのプライベートデータメンバーで ( [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)呼び出しを通じて受信された) USB ターゲットデバイスオブジェクトのアドレスを格納し、DriverSafeRelease を呼び出してその参照を解放します。 USB ターゲットデバイスオブジェクトの参照カウントは、フレームワークによって管理されます。 オブジェクトは、デバイスオブジェクトが生きている間は生きています。 クライアントドライバーは、 [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)内の参照を解放する必要があります。
 
-ドライバーを呼び出すクライアント ドライバーでは、USB ターゲットのデバイス オブジェクトが作成されたら、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)これらのタスクを実行するメソッド。
+クライアントドライバーは、USB ターゲットデバイスオブジェクトを作成した後、次のタスクを実行する[**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice)メソッドを呼び出します。
 
--   デバイス、構成、インターフェイスの記述子、およびデバイスの速度などの他の情報を取得します。
--   書式を設定し、コントロールの I/O 要求を既定のエンドポイントに送信します。
--   全体の USB デバイスの電源ポリシーを設定します。
+-   デバイス、構成、インターフェイス記述子、およびデバイス速度などのその他の情報を取得します。
+-   書式設定し、i/o 制御要求を既定のエンドポイントに送信します。
+-   USB デバイス全体の電源ポリシーを設定します。
 
-詳細については、次を参照してください。 [UMDF で USB デバイスを使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices-in-umdf-1-x-drivers)します。
-次のコード例の実装を示しています。 [ **IPnpCallbackHardware::OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)します。
+詳細については、「 [UMDF での USB デバイスの操作](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices-in-umdf-1-x-drivers)」を参照してください。
+次のコード例は、 [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)の実装を示しています。
 
 ```ManagedCPlusPlus
 HRESULT
@@ -561,14 +561,14 @@ CMyDevice::OnReleaseHardware(
 }
 ```
 
-## <a name="queue-source-code"></a>キュー ソース コード
+## <a name="queue-source-code"></a>キューのソースコード
 
 
-*Framework キュー オブジェクト*特定のフレームワークのデバイス オブジェクトの I/O キューを表します。 キュー オブジェクトの完全なソース コードは、IoQueue.h と IoQueue.c です。
+*Framework queue オブジェクト*は、特定のフレームワークデバイスオブジェクトの i/o キューを表します。 Queue オブジェクトの完全なソースコードは、IoQueue. h と IoQueue .c にあります。
 
-**IoQueue.h**
+**IoQueue. h**
 
-IoQueue.h ヘッダー ファイルは、キューのコールバック クラスを宣言します。
+ヘッダーファイル IoQueue. h は、キューコールバッククラスを宣言します。
 
 ```ManagedCPlusPlus
 class CMyIoQueue :
@@ -640,7 +640,7 @@ private:
 };
 ```
 
-上記のコード例では、クライアント ドライバーは、キューのコールバック クラスを宣言します。 インスタンス化する場合は、クライアント ドライバーにディスパッチ要求が処理するフレームワークのキュー オブジェクトとオブジェクトが働いてきました。 クラスは、作成し、フレームワークのキュー オブジェクトを初期化する 2 つのメソッドを定義します。 CreateInstanceAndInitialize 静的メソッドでは、キューのコールバック クラスをインスタンス化を作成し、フレームワークのキュー オブジェクトを初期化する Initialize メソッドを呼び出します。 また、キュー オブジェクトのディスパッチ オプションも指定します。
+前のコード例では、クライアントドライバーがキューコールバッククラスを宣言しています。 インスタンス化されると、オブジェクトは、要求がクライアントドライバーにディスパッチされる方法を処理するフレームワークキューオブジェクトと提携します。 クラスは、フレームワークキューオブジェクトを作成および初期化する2つのメソッドを定義します。 静的メソッド CreateInstanceAndInitialize は、キューコールバッククラスをインスタンス化し、その後、フレームワークキューオブジェクトを作成および初期化する Initialize メソッドを呼び出します。 また、queue オブジェクトのディスパッチオプションも指定します。
 
 ```ManagedCPlusPlus
 HRESULT 
@@ -686,7 +686,7 @@ Exit:
 }
 ```
 
-次のコード例では、Initialize メソッドの実装を示します。
+Initialize メソッドの実装を次のコード例に示します。
 
 ```ManagedCPlusPlus
 HRESULT
@@ -756,37 +756,37 @@ Exit:
 }
 ```
 
-上記のコード例では、クライアント ドライバーは、フレームワークのキュー オブジェクトを作成します。 フレームワークは、クライアント ドライバーに要求のフローを処理するために、キュー オブジェクトを提供します。
+前のコード例では、クライアントドライバーがフレームワークキューオブジェクトを作成します。 フレームワークには、クライアントドライバーへの要求フローを処理するキューオブジェクトが用意されています。
 
-ドライバーの呼び出し、オブジェクトは、クライアントを作成する[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)上、 [ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)で取得した参照、以前の呼び出し[ **IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)します。
+オブジェクトを作成するために、クライアントドライバーは、Iwdfdevice [ **:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を以前に呼び出したときに[**取得した**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)Iwdfdevice [ **:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)を呼び出します。
 
-[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)呼び出し、クライアント ドライバー特定の構成オプションを指定します、フレームワークは、キューを作成する前にします。 これらのオプションは、キューに電源管理は、し、長さ 0 の要求を許可し、ドライバーの既定のキューとして機能するかどうかを決定します。 クライアント ドライバーは、この一連の情報を提供します。
+[**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)呼び出しでは、フレームワークがキューを作成する前に、クライアントドライバーが特定の構成オプションを指定します。 これらのオプションは、キューが電源管理されているかどうかを判断し、長さがゼロの要求を許可し、ドライバーの既定のキューとして機能します。 クライアントドライバーは、次の一連の情報を提供します。
 
--   そのキュー コールバック クラスへの参照
+-   キューコールバッククラスへの参照
 
-    指定します、 [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)そのキュー コールバック クラスへのポインター。 これは、フレームワークのキュー オブジェクトと、クライアント ドライバーのキューのコールバック オブジェクトの間のパートナーシップを作成します。 I/O マネージャーは、アプリケーションから新しい要求を受信したときに、フレームワークに通知します。 フレームワークを使用して、 **IUnknown**キューのコールバック オブジェクトによって公開されるパブリック メソッドの呼び出しへのポインター。
+    キューコールバッククラスへの[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)ポインターを指定します。 これにより、フレームワークキューオブジェクトとクライアントドライバーのキューコールバックオブジェクトの間のパートナーシップが作成されます。 I/o マネージャーは、アプリケーションから新しい要求を受信すると、フレームワークに通知します。 次に、フレームワークは**IUnknown**ポインターを使用して、キューコールバックオブジェクトによって公開されているパブリックメソッドを呼び出します。
 
--   既定のインスタンスまたはセカンダリ キュー
+-   既定のキューまたはセカンダリキュー
 
-    キューは、既定のキューまたはセカンダリ キューのいずれかである必要があります。 フレームワークのキュー オブジェクトは、既定のキューとして動作している場合、すべての要求はキューに追加されます。 セカンダリ キューには、特定の種類の要求は専用です。 クライアント ドライバーは、セカンダリ キューを要求する場合、ドライバーは呼び出す必要がありますも、 [ **IWDFDevice::ConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-configurerequestdispatching)メソッドでフレームワークを配置する必要がありますの要求の種類を示すために、指定されたキューです。 テンプレートのコードでは、クライアント ドライバーに FALSE を渡します。、 *bDefaultQueue*パラメーター。 セカンダリ キューと既定のキューを作成する方法を指示するとします。 後で呼び出す**IWDFDevice::ConfigureRequestDispatching**をキューにデバイス I/O 制御のみを持つ必要があるかを示す要求 (このセクションのコード例を参照してください)。
+    キューは、既定のキューまたはセカンダリキューのいずれかである必要があります。 フレームワークキューオブジェクトが既定のキューとして機能する場合は、すべての要求がキューに追加されます。 セカンダリキューは、特定の種類の要求専用です。 クライアントドライバーがセカンダリキューを要求する場合、ドライバーは[**Iwdfdevice:: ConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-configurerequestdispatching)メソッドを呼び出して、フレームワークが指定されたキューに配置する必要がある要求の種類を示す必要もあります。 テンプレートコードでは、クライアントドライバーは*Bdefaultqueue*パラメーターに FALSE を渡します。 これは、既定のキューではなく、セカンダリキューを作成するようにメソッドに指示します。 後で**Iwdfdevice:: ConfigureRequestDispatching**を呼び出して、キューにデバイス i/o 制御要求のみが必要であることを示します (このセクションのコード例を参照してください)。
 
 -   ディスパッチの種類
 
-    キュー オブジェクトのディスパッチの型は、クライアント ドライバーに、フレームワークが要求を配信する方法を決定します。 並列、またはクライアント ドライバーで定義されたカスタムのメカニズムによって、順次配信メカニズムは使用できます。 シーケンシャルなキューの場合、クライアント ドライバーが、前回の要求を完了するまで、要求は配信されません。 ディスパッチを並列モードでは、フレームワークは、I/O マネージャーから到着すると、すぐに、要求を転送します。 これは、クライアント ドライバーが別の処理中に要求を受信できることを意味します。 カスタムのメカニズムで、クライアントでは、ドライバーが処理する準備ができたとき、framework のキュー オブジェクトから、次の要求が手動で取得します。 テンプレート コードで並列ディスパッチ モードのクライアント ドライバーを要求します。
+    キューオブジェクトのディスパッチ型によって、フレームワークがクライアントドライバーに要求を配信する方法が決まります。 配信メカニズムは、順次、並列、またはクライアントドライバーによって定義されたカスタムメカニズムによって実現できます。 順次キューの場合、クライアントドライバーが前の要求を完了するまで、要求は配信されません。 並列ディスパッチモードでは、フレームワークは、i/o マネージャーから到着するとすぐに要求を転送します。 これは、クライアントドライバーが別の要求を処理している間に要求を受信できることを意味します。 カスタムメカニズムでは、クライアントは、ドライバーが処理できるようになったときに、フレームワークキューオブジェクトから次の要求を手動でプルします。 テンプレートコードでは、クライアントドライバーはパラレルディスパッチモードを要求します。
 
--   電源管理対象のキュー
+-   電源管理キュー
 
-    フレームワークのキュー オブジェクトは、デバイスの PnP と電源の状態と同期する必要があります。 作業状態のデバイスでない場合は、すべての要求のディスパッチ フレームワークのキュー オブジェクトが停止します。 動作状態では、ディスパッチ、キュー オブジェクトが再開します。 電源管理対象のキューでは、フレームワークにより、同期を実行します。それ以外の場合、クライアント ドライブは、そのタスクを処理する必要があります。 テンプレート コードでは、クライアントは、電源管理対象のキューを要求します。
+    フレームワークキューオブジェクトは、デバイスの PnP と電源の状態と同期する必要があります。 デバイスが動作状態でない場合、フレームワークキューオブジェクトはすべての要求のディスパッチを停止します。 デバイスが動作中の状態になると、キューオブジェクトがディスパッチを再開します。 電源管理キューでは、同期はフレームワークによって実行されます。それ以外の場合、クライアントドライブはそのタスクを処理する必要があります。 テンプレートコードでは、クライアントは電源管理キューを要求します。
 
--   許可される長さ 0 の要求
+-   長さ0の要求が許可されています
 
-    クライアント ドライバーは、キューに配置するのではなくバッファーに長さ 0 の I/O 要求を完了するためにフレームワークに指示できます。 テンプレート コードでは、クライアントは、このような要求を完了するためにフレームワークを要求します。
+    クライアントドライバーは、バッファーをキューに配置するのではなく、長さが0のバッファーで i/o 要求を完了するようにフレームワークに指示できます。 テンプレートコードでは、クライアントは、このような要求を完了するようにフレームワークに要求します。
 
-1 つのフレームワークのキュー オブジェクトは、いくつかの種類の読み取り、書き込み、およびデバイスの I/O のコントロールなどの要求を処理しにできます。 テンプレート コードに基づくクライアント ドライバーでは、デバイス I/O 制御の要求のみを処理できます。 クライアント ドライバーのキューのコールバック クラスを実装、そのため、 [ **IQueueCallbackDeviceIoControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)インターフェイスとその[ **IQueueCallbackDeviceIoControl::OnDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852_ondeviceiocontrol)メソッド。 これにより、クライアントを呼び出すために、フレームワークのドライバーの実装**IQueueCallbackDeviceIoControl::OnDeviceIoControl**フレームワークがデバイスの I/O 制御要求を処理する場合。
+1つのフレームワークキューオブジェクトは、読み取り、書き込み、デバイス i/o 制御など、いくつかの種類の要求を処理できます。 テンプレートコードに基づくクライアントドライバーは、デバイスの i/o 制御要求のみを処理できます。 そのために、クライアントドライバーのキューコールバッククラスは、 [**IQueueCallbackDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)インターフェイスとその[**IQueueCallbackDeviceIoControl:: OnDeviceIoControl**](https://msdn.microsoft.com/library/windows/hardware/ff556852_ondeviceiocontrol)メソッドを実装します。 これにより、フレームワークがデバイス i/o 制御要求を処理するときに、フレームワークは**IQueueCallbackDeviceIoControl:: OnDeviceIoControl**のクライアントドライバーの実装を呼び出すことができます。
 
-対応する他の種類の要求では、クライアント ドライバーを実装する必要があります**IQueueCallbackXxx**インターフェイス。 たとえば、クライアント ドライバーは、読み取り要求を処理する必要がある場合、キュー コールバック クラス、 [ **IQueueCallbackRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackread)インターフェイスとその[ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556872_onread)メソッド。 要求とコールバック インターフェイスの種類については、次を参照してください。 [I/O キュー イベントのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/wdf/i-o-queue-event-callback-functions)します。
+その他の種類の要求では、クライアントドライバーは対応する**Iqueuecallbackxxx**インターフェイスを実装する必要があります。 たとえば、クライアントドライバーが読み取り要求を処理する場合、キューコールバッククラスは[**iqueuecallbackread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackread)インターフェイスとその[**Iqueuecallbackread:: onread**](https://msdn.microsoft.com/library/windows/hardware/ff556872_onread)メソッドを実装する必要があります。 要求とコールバックインターフェイスの種類の詳細については、「 [I/o キューイベントコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/wdf/i-o-queue-event-callback-functions)」を参照してください。
 
-次のコード例は、 [ **IQueueCallbackDeviceIoControl::OnDeviceIoControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)実装します。
+次のコード例は、 [**IQueueCallbackDeviceIoControl:: OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)の実装を示しています。
 
 ```ManagedCPlusPlus
 VOID
@@ -832,25 +832,25 @@ Exit:
 }
 ```
 
-キュー メカニズムのしくみを見てみましょう。 USB デバイスと通信して、アプリケーション最初にデバイスを識別するハンドルが開きを呼び出してデバイス I/O 制御要求を送信、 [ **DeviceIoControl** ](https://docs.microsoft.com/previous-versions/windows/desktop/api/deviceaccess/nn-deviceaccess-ideviceiocontrol)関数の特定のコントロールのコード。 、コントロールのコードの種類に応じて、アプリケーションは、その呼び出しの入力と出力バッファーを指定できます。 呼び出しは、I/O マネージャーによって、フレームワークに通知を最終的に受信されます。 フレームワークはフレームワーク要求オブジェクトを作成し、フレームワークのキュー オブジェクトに追加します。 テンプレート コードでは、キュー オブジェクトが作成された WdfIoQueueDispatchParallel フラグが、コールバックが呼び出される、要求がキューに追加されるとすぐにします。
+キューメカニズムのしくみを見てみましょう。 アプリケーションは、USB デバイスと通信するために、まずデバイスへのハンドルを開き、特定の制御コードを使用して[**DeviceIoControl**](https://docs.microsoft.com/previous-versions/windows/desktop/api/deviceaccess/nn-deviceaccess-ideviceiocontrol)関数を呼び出すことによって、デバイスの i/o 制御要求を送信します。 コントロールコードの種類に応じて、アプリケーションはその呼び出しで入力バッファーと出力バッファーを指定できます。 この呼び出しは、最終的には、フレームワークに通知する i/o マネージャーによって受信されます。 フレームワークは、フレームワークの要求オブジェクトを作成し、フレームワークの queue オブジェクトに追加します。 テンプレートコードでは、キューオブジェクトは WdfIoQueueDispatchParallel フラグを使用して作成されているので、要求がキューに追加されるとすぐにコールバックが呼び出されます。
 
-要求 (およびその入力と出力のバッファー) を保持している framework 要求オブジェクトにハンドルを渡すために、フレームワークが、クライアント ドライバーのイベントのコールバックを呼び出すと、アプリケーションによって送信されます。 さらに、その要求を含むフレームワークのキュー オブジェクトへのハンドルを送信します。 イベントのコールバックでは、クライアント ドライバーが要求を処理に応じて。 テンプレート コードは、単に、要求を完了します。 クライアント ドライバーより複雑なタスクを実行できます。 たとえば、アプリケーションでは、特定のデバイス情報を要求している場合イベントのコールバック、クライアント ドライバーを USB 制御の要求を作成し、送信要求されたデバイス情報を取得する USB ドライバー スタックに。 USB 制御の要求は、後ほど[USB 制御転送](usb-control-transfer.md)します。
+フレームワークは、クライアントドライバーのイベントコールバックを呼び出すときに、アプリケーションによって送信された要求 (およびその入力バッファーと出力バッファー) を保持するフレームワークの要求オブジェクトにハンドルを渡します。 さらに、その要求を含むフレームワークキューオブジェクトへのハンドルを送信します。 イベントコールバックでは、クライアントドライバーは必要に応じて要求を処理します。 テンプレートコードは単に要求を完了します。 クライアントドライバーは、さらに複雑なタスクを実行できます。 たとえば、アプリケーションが特定のデバイス情報を要求した場合、イベントコールバックでは、クライアントドライバーは USB コントロール要求を作成し、USB ドライバースタックに送信して、要求されたデバイス情報を取得できます。 Usb 制御の要求については、「 [Usb 制御転送](usb-control-transfer.md)」で説明します。
 
-## <a name="driver-entry-source-code"></a>ドライバーのエントリのソース コード
+## <a name="driver-entry-source-code"></a>ドライバーエントリのソースコード
 
 
-テンプレート コードでは、driver エントリは、Dllsup.cpp に実装されます。
+テンプレートコードでは、ドライバーエントリは Dllsup に実装されています。
 
-**Dllsup.cpp**
+**Dllsup .cpp**
 
-含めるセクションの後に、クライアント ドライバーの GUID 定数が宣言されています。 GUID は、ドライバーのインストール ファイル (INF) の GUID と一致する必要があります。
+Include セクションの後に、クライアントドライバーの GUID 定数が宣言されています。 この GUID は、ドライバーのインストールファイル (INF) の GUID と一致している必要があります。
 
 ```ManagedCPlusPlus
 const CLSID CLSID_Driver =
 {0x079e211c,0x8a82,0x4c16,{0x96,0xe2,0x2d,0x28,0xcf,0x23,0xb7,0xff}};
 ```
 
-次のコード ブロックは、クライアント ドライバーのクラス ファクトリを宣言します。
+次のコードブロックでは、クライアントドライバーのクラスファクトリを宣言します。
 
 ```ManagedCPlusPlus
 class CMyDriverModule :
@@ -861,9 +861,9 @@ class CMyDriverModule :
 CMyDriverModule _AtlModule;
 ```
 
-テンプレート コードでは、ATL のサポートを使用して、複雑な COM コードをカプセル化します。 クラス ファクトリは、テンプレート クラスは、クライアント ドライバーを作成するために必要なすべてのコードを含む CAtlDllModuleT を継承します。
+テンプレートコードは ATL サポートを使用して、複雑な COM コードをカプセル化します。 クラスファクトリは、クライアントドライバーを作成するために必要なすべてのコードを含む、テンプレートクラス CAtlDllModuleT を継承します。
 
-次のコード スニペットは、DllMain の実装を示しています。
+次のコードスニペットは、DllMain の実装を示しています。
 
 ```ManagedCPlusPlus
 extern "C"
@@ -889,11 +889,11 @@ DllMain(
 }
 ```
 
-クライアント ドライバーが実装されている場合、 [ *DllMain* ](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)関数は、Windows と見なします*DllMain*クライアント ドライバー モジュールのエントリ ポイントであります。 Windows の呼び出し*DllMain* WUDFHost.exe のクライアント ドライバーのモジュールを読み込んだ後。 Windows の呼び出し*DllMain* Windows は、メモリ内のクライアント ドライバーをアンロードする前にもう一度だけです。 *DllMain*を割り当て、ドライバー レベルでグローバル変数を解放できます。 テンプレート コードでは、クライアント ドライバーを初期化します、WPP トレースに必要なリソースを解放し、ATL クラスの DllMain の実装を呼び出します。
+クライアントドライバーで[*dllmain*](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)関数が実装されている場合、Windows は、 *dllmain*をクライアントドライバーモジュールのエントリポイントと見なします。 Windows は、WUDFHost .exe でクライアントドライバーモジュールを読み込んだ後に、 *DllMain*を呼び出します。 Windows は、Windows がクライアントドライバーをメモリにアンロードする直前に、 *DllMain*を再度呼び出します。 *DllMain*は、ドライバーレベルでグローバル変数を割り当てて解放できます。 テンプレートコードでは、クライアントドライバーは、WPP トレースに必要なリソースを初期化して解放し、ATL クラスの DllMain 実装を呼び出します。
 
-記述する方法については、 [ *DllMain*](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)を参照してください[DllMain の実装](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/implementing-dllmain)します。
+[*Dllmain*](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)の記述方法については、「 [dllmain の実装](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/implementing-dllmain)」を参照してください。
 
-次のコード スニペットでは、DllGetClassObject の実装を示します。
+次のコードスニペットは、DllGetClassObject の実装を示しています。
 
 ```ManagedCPlusPlus
 STDAPI
@@ -907,17 +907,17 @@ DllGetClassObject(
 }
 ```
 
-コード テンプレートでは、クラス ファクトリと[ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) ATL で実装されます 上記のコード スニペットは、ATL を呼び出すだけ**DllGetClassObject**実装します。 一般に、 **DllGetClassObject**次のタスクを実行する必要があります。
+テンプレートコードでは、クラスファクトリと[**DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)が ATL に実装されています。 上記のコードスニペットは、単純に ATL **DllGetClassObject**実装を呼び出します。 一般に、 **DllGetClassObject**では次のタスクを実行する必要があります。
 
-1.  フレームワークによって渡された CLSID が、クライアント ドライバーの GUID であることを確認します。 フレームワークは、ドライバーの INF ファイルからのクライアント ドライバーの CLSID を取得します。 検証するには、中に指定された GUID が、INF で指定したものと一致することを確認します。
-2.  クライアント ドライバーによって実装される、クラス ファクトリをインスタンス化します。 テンプレート コードでこれは ATL クラスによってカプセル化します。
-3.  ポインターを取得、 [ **IClassFactory** ](https://docs.microsoft.com/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory)クラス ファクトリと、フレームワークに戻る、取得したポインターのインターフェイス。
+1.  フレームワークによって渡される CLSID がクライアントドライバーの GUID であることを確認します。 フレームワークは、ドライバーの INF ファイルからクライアントドライバーの CLSID を取得します。 検証中に、指定した GUID が INF で指定した GUID と一致していることを確認します。
+2.  クライアントドライバーによって実装されたクラスファクトリをインスタンス化します。 テンプレートコードでは、これは ATL クラスによってカプセル化されます。
+3.  クラスファクトリの[**IClassFactory**](https://docs.microsoft.com/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory)インターフェイスへのポインターを取得し、取得したポインターをフレームワークに返します。
 
-クライアント ドライバーのモジュールがメモリに読み込まれた後、フレームワーク ドライバーによって提供される[ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)関数。 フレームワークの呼び出しで**DllGetClassObject**、フレームワークは、CLSID をクライアント ドライバーを識別し、要求へのポインターに渡します、 [ **IClassFactory** ](https://docs.microsoft.com/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory)クラス ファクトリのインターフェイスです。 クライアント ドライバーをドライバー コールバックの作成を容易にするクラス ファクトリを実装します。 そのため、クライアント ドライバーでは、少なくとも 1 つのクラス ファクトリを含める必要があります。 フレームワーク[ **IClassFactory::CreateInstance** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iclassfactory-createinstance)を要求し、 [ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)ドライバー コールバックへのポインタークラス。
+クライアントドライバーモジュールがメモリに読み込まれた後、フレームワークはドライバーによって提供された[**DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)関数を呼び出します。 フレームワークによる**DllGetClassObject**の呼び出しでは、クライアントドライバーを識別する CLSID を渡し、クラスファクトリの[**IClassFactory**](https://docs.microsoft.com/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory)インターフェイスへのポインターを要求します。 クライアントドライバーは、ドライバーコールバックの作成を容易にするクラスファクトリを実装します。 したがって、クライアントドライバーは、少なくとも1つのクラスファクトリを含んでいる必要があります。 次に、フレームワークは[**IClassFactory:: CreateInstance**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iclassfactory-createinstance)を呼び出し、ドライバーコールバッククラスへの[**Idriverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)ポインターを要求します。
 
-**Exports.def**
+**.Def をエクスポートします。**
 
-呼び出すために、フレームワークの順序で[ **DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)、クライアント ドライバーは、.def ファイルから関数をエクスポートする必要があります。 ファイルには既に Visual Studio プロジェクトが含まれます。
+フレームワークが[**DllGetClassObject**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)を呼び出すためには、クライアントドライバーが .def ファイルから関数をエクスポートする必要があります。 ファイルは既に Visual Studio プロジェクトに含まれています。
 
 ```ManagedCPlusPlus
 ; Exports.def : Declares the module parameters.
@@ -928,7 +928,7 @@ EXPORTS
         DllGetClassObject   PRIVATE
 ```
 
-ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)エクスポート します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://www.microsoft.com/download/details.aspx?id=55984)します。
+ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject)エクスポート します。 詳細については、「 [DEF ファイルを使用した DLL からのエクスポート](https://www.microsoft.com/download/details.aspx?id=55984)」を参照してください。
 
 
 

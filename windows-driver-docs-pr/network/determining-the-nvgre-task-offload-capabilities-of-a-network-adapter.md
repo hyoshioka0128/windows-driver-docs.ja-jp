@@ -1,49 +1,49 @@
 ---
 title: ネットワーク アダプターの NVGRE タスク オフロード機能の判断
-description: このセクションは、ネットワーク アダプターの NVGRE タスク オフロード機能を決定する方法を説明します
+description: このセクションでは、ネットワークアダプターの NVGRE タスクオフロード機能を確認する方法について説明します。
 ms.assetid: 1F9C5E7D-5488-47C1-BEDC-D7C640F57511
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b63c6222f98f1f1f08d8a8a1bbffb2344c479d4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e73c3c66ed85679352edcf0c64ea747ddae6502c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381396"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834899"
 ---
 # <a name="determining-the-nvgre-task-offload-capabilities-of-a-network-adapter"></a>ネットワーク アダプターの NVGRE タスク オフロード機能の判断
 
 
-サポートしているミニポート ドライバー [Network Virtualization using Generic Routing Encapsulation (NVGRE) タスク オフロード](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)によってこの機能の報告、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体の[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数に渡します[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes).
+[汎用ルーティングカプセル化 (NVGRE) タスクオフロードを使用したネットワーク仮想化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)をサポートするミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を使用する[**NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造を使用してこの機能を報告します。[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)に渡します。
 
-## <a name="reporting-nvgre-task-offload-capability"></a>レポートの NVGRE タスク オフロード機能
+## <a name="reporting-nvgre-task-offload-capability"></a>NVGRE タスクオフロード機能のレポート
 
 
-[ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造、**ヘッダー**メンバーを次のように設定する必要があります。
+[**NDIS\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体では、次のように**ヘッダー**メンバーを設定する必要があります。
 
--   **リビジョン**にメンバーを設定する必要があります**NDIS\_オフロード\_リビジョン\_3**します。
--   **サイズ**にメンバーを設定する必要があります**NDIS\_SIZEOF\_NDIS\_オフロード\_リビジョン\_3**します。
+-   **リビジョン**メンバーを**NDIS\_OFFLOAD\_revision\_3**に設定する必要があります。
+-   **Size**メンバーは、 **ndis\_SIZEOF\_ndis\_OFFLOAD\_REVISION\_3**に設定する必要があります。
 
-NVGRE タスク オフロードのサポートを報告するには、ミニポート ドライバー、次のメンバーを設定、 [ **NDIS\_カプセル化\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload) 、構造体に格納されている、 **EncapsulatedPacketTaskOffloadGre**のメンバー、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体ミニポート ドライバーの[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数に渡します[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes):
+NVGRE タスクオフロードのサポートを報告するために、ミニポートドライバーは、 [ **\_パケット\_タスク\_\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)されている次のメンバーを、ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が[**NDISMSETMINIPORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)に渡す[**ndis\_offload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体の**EncapsulatedPacketTaskOffloadGre**メンバーに格納されています。
 
--   設定、 **MaxHeaderSizeSupported**ヘッダーの最大サイズを内部 TCP または UDP ペイロード (TCP または UDP の内部ヘッダーの最後のバイト) これらのタスクのすべての NIC をサポートする必要がありますの先頭に、パケットの先頭からのメンバーオフロードします。 カプセル化の結合がヘッダーがこのサイズを超えるパケットの処理をオフロードできませんプロトコル ドライバーが必要です。
+-   **MaxHeaderSizeSupported**メンバーを、パケットの先頭から内部 TCP または udp ペイロードの先頭までの最大ヘッダーサイズ (tcp または udp 内部ヘッダーの最後のバイト) に設定します。これにより、NIC は、これらすべてのタスクオフロードに対してサポートする必要があります。 プロトコルドライバーは、結合されたカプセル化ヘッダーがこのサイズを超えているパケットの処理をオフロードすることは想定されていません。
 
-    **注**  256 バイトは、すべての可能なケースが適用される適切な既定値。
+    **注**  256 バイトは、可能なすべてのケースに対応するための適切な既定値です。
 
      
 
--   タスクの種類のオフロード、ミニポート ドライバーがカプセル化されたパケットのサポートを示すその他のメンバーを設定します。 これらのメンバーを設定できるフラグの一覧は、の「解説」を参照してください。 [ **NDIS\_カプセル化\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)します。
+-   他のメンバーを設定して、カプセル化されたパケットに対してミニポートドライバーがサポートするタスクオフロードの種類を指定します。 これらのメンバーに対して設定できるフラグの一覧については、「 [**NDIS\_カプセル化された\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)」の「解説」を参照してください。
 
-## <a name="querying-nvgre-task-offload-capability"></a>NVGRE タスク オフロード機能のクエリを実行します。
+## <a name="querying-nvgre-task-offload-capability"></a>NVGRE タスクオフロード機能のクエリを実行しています
 
 
-ミニポート ドライバーが NVGRE タスク オフロードをサポートしているかどうかを判断するプロトコルとフィルター ドライバーが発行できる、 [OID\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)OID の要求返された、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体。
+ミニポートドライバーが NVGRE タスクオフロードをサポートしているかどうかを判断するために、プロトコルとフィルタードライバーは、 [**NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造を返す[oid\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)の oid 要求を発行できます。
 
-**注**  ミニポート ドライバーの NVGRE の機能が現在有効になっているかどうかを調べるには、 [OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)OID 要求」の説明に従って[クエリの実行と変更 NVGRE タスク オフロード状態](querying-and-changing-nvgre-task-offload-state.md)します。
+**注  :** ポートドライバーの nvgre 機能が現在有効になっているかどうかを判断するには、「Nvgre タスクのクエリと変更」の説明に従って、[現在\_構成 Oid 要求の oid\_TCP\_オフロード\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)を使用します。 [オフロードの状態](querying-and-changing-nvgre-task-offload-state.md)。
 
  
 
-**注**  を有効または、ミニポート ドライバーの NVGRE の機能を無効にする、使用、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) 」の説明に従って、OID要求[クエリを実行して、NVGRE タスク オフロードの状態を変更する](querying-and-changing-nvgre-task-offload-state.md)します。
+**注:** ミニポートドライバーの nvgre 機能を有効または無効にするには  「 [Nvgre タスクオフロード状態のクエリと変更](querying-and-changing-nvgre-task-offload-state.md)」の説明に従って、 [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)の oid 要求を使用します。
 
  
 

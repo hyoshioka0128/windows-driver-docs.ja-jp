@@ -1,62 +1,62 @@
 ---
-title: スピンを使用する例をロックします。
-description: スピンを使用する例をロックします。
+title: スピンロックの使用例
+description: スピンロックの使用例
 ms.assetid: 0f3cd7fe-d3e6-4024-9b2f-7140c6ddd1ea
 keywords:
-- スピン ロック WDK カーネル
-- 割り込みスピン ロック WDK カーネル
+- スピンロック WDK カーネル
+- 割り込みスピンロックの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 753cf01bf1ca655b5b5abfbb5d3d4b17d328bba4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfe8f37aed5dc5ee1ba8f4c86805beef34281d75
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838335"
 ---
-# <a name="using-spin-locks-an-example"></a>スピン ロックの使用: 例
+# <a name="using-spin-locks-an-example"></a>スピンロックの使用: 例
 
 
 
 
 
-ドライバーは、スピン ロックの全体的なシステムとドライバーの両方のパフォーマンスが大幅に向上を保持する時間を最小限に抑えます。 たとえば、次の図は、割り込みのスピン ロックで ISR 間で共有されるデバイス固有のデータを保護する方法を示していますと[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)と[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine) SMP マシンでルーチン。
+ドライバーがスピンロックを保持する時間を最小限に抑えることで、ドライバーとシステム全体の両方のパフォーマンスを大幅に向上させることができます。 たとえば、次の図について考えてみます。これは、割り込みスピンロックが、ISR と、SMP コンピューターの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)および[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチン間で共有する必要があるデバイス固有のデータを保護する方法を示しています。
 
-![割り込みスピン ロックを使用する方法を示す図](images/16ispnlk.png)
+![割り込みスピンロックの使用を示す図](images/16ispnlk.png)
 
-1.  ドライバーの ISR の DIRQL で 1 つのプロセッサで実行中にその*StartIo*ディスパッチで実行されるルーチン\_2 つ目のプロセッサのレベル。 カーネルの割り込みハンドラーは、ドライバーのデバイスの拡張機能のドライバーの ISR、(SynchronizeContext) を登録すると、状態、デバイスへのポインターなど、アクセス、デバイス固有の保護されたデータを InterruptSpinLock を保持します。 *StartIo* SynchronizeContext にアクセスする準備ができたら、ルーチンを呼び出す[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)割り込みが関連付けられているオブジェクトへのポインターを渡して、共有 SynchronizeContext、およびドライバーの[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチン (前の図の AccessDevice)。
+1.  ドライバーの ISR は、1つのプロセッサ上の DIRQL で実行されますが、 *StartIo*ルーチンは、2番目のプロセッサでディスパッチ\_レベルで実行されます。 カーネル割り込みハンドラーは、ドライバーの ISR の InterruptSpinLock を保持します。この ISR は、ドライバーのデバイス拡張機能で、デバイスレジスタ (SynchronizeContext) などの保護されたデバイス固有のデータにアクセスします。 SynchronizeContext にアクセスする準備が整った*StartIo*ルーチンは、 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)を呼び出し、関連付けられている割り込みオブジェクト、共有 SynchronizeContext、およびドライバーの[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)ルーチンへのポインターを渡します (前の図の AccessDevice)。
 
-    ドライバーの InterruptSpinLock、解放 ISR が返されるまで **KeSynchronizeExecution * * * をスピン*AccessDevice が SynchronizeContext をタッチするを防ぐ、2 つ目のプロセッサ上。 ただし、 **KeSynchronizeExecution**も IRQL AccessDevice できるようにするため、そのプロセッサの発生を防ぐもう 1 つのデバイスの割り込み、中断オブジェクトの SynchronizeIrql に 2 つ目のプロセッサ上で発生します。DIRQL ISR を返し、すぐに実行します。 ただし、他のデバイス、クロック割り込み、および電源障害の割り込みの高い DIRQL 割り込みは、まだいずれかのプロセッサで発生します。
+    ISR が戻るまで、ドライバーの InterruptSpinLock を解放すると、**KeSynchronizeExecution * ** * は2番目のプロセッサで回転し、Accessdevice が SynchronizeContext にタッチするのを防ぎます。 ただし、 **KeSynchronizeExecution**は、2番目のプロセッサで割り込みオブジェクトの SynchronizeIrql に対して IRQL を発生させます。これにより、そのプロセッサで別のデバイスの割り込みが発生するのを防ぐことができます。これにより、accessdevice は、ISR はを返します。 ただし、その他のデバイスに対する DIRQL 割り込みが高い場合、クロック割り込みが発生し、電源障害が発生しても、どちらのプロセッサでも発生する可能性があります。
 
-2.  ときに、ドライバーのキュー、ISR *DpcForIsr* SynchronizeContext にアクセスして、割り込みが関連付けられているオブジェクトの SynchronizeIrql に、2 つ目のプロセッサで実行されている AccessDevice を返します。 その一方で、 *DpcForIsr*ディスパッチに別のプロセッサ上で実行\_IRQL のレベル。 *DpcForIsr*も呼び出すように SynchronizeContext にアクセスする準備ができては**KeSynchronizeExecution**同じパラメーターを使用している、 *StartIo*ルーチンは、手順 1. ででした。
+2.  ISR がドライバーの*DpcForIsr*をキューに入れ、を返した場合、accessdevice は、関連付けられている割り込みオブジェクトの SynchronizeIrql にある2番目のプロセッサで実行され、SynchronizeContext にアクセスします。 一方、 *DpcForIsr*はディスパッチ\_レベル IRQL で別のプロセッサで実行されます。 また、 *DpcForIsr*は SynchronizeContext にアクセスする準備が整っているため、手順 1. で*StartIo*ルーチンが行ったのと同じパラメーターを使用して**KeSynchronizeExecution**を呼び出します。
 
-    ときに**KeSynchronizeExecution**スピン ロックを取得し、AccessDevice の代理での実行、 *StartIo*ルーチン、AccessDevice がへの排他アクセスを与え、ドライバーによって提供される同期ルーチンSynchronizeContext します。 AccessDevice 実行されるため、SynchronizeIrql で、ドライバーの ISR はスピン ロックの取得し、AccessDevice の実行中にデバイスが別のプロセッサの割り込み場合でも、スピン ロックが解放されるまで、同じ領域にアクセスできません。
+    **KeSynchronizeExecution**がスピンロックを取得し、 *StartIo*ルーチンの代わりに accessdevice を実行すると、ドライバーによって指定された同期ルーチン accessdevice に SynchronizeContext への排他アクセスが付与されます。 AccessDevice は SynchronizeIrql で実行されるので、デバイスが AccessDevice の実行中に別のプロセッサで割り込みを行う場合でも、ドライバーの ISR はスピンロックを取得して同じ領域にアクセスすることはできません。
 
-3.  AccessDevice を返します、スピン ロックを解放します。 *StartIo*ルーチンの再開をディスパッチで実行されている\_2 つ目のプロセッサのレベル。 **KeSynchronizeExecution** AccessDevice SynchronizeContext の代理でアクセスできるように、3 つ目のプロセッサで実行できるよう、 *DpcForIsr*します。 ただし、前にデバイスの割り込みが発生した場合、 *DpcForIsr*と呼ばれる**KeSynchronizeExecution**する前に別のプロセッサで実行 ISR ステップ 2 で**KeSynchronizeExecution**スピン ロックの取得し、AccessDevice を 3 つ目のプロセッサで実行できます。
+3.  AccessDevice が戻ると、スピンロックが解除されます。 *StartIo*ルーチンは、2番目のプロセッサでディスパッチ\_レベルで実行を再開します。 **KeSynchronizeExecution**は3番目のプロセッサで accessdevice を実行するようになったため、 *DpcForIsr*に代わって SynchronizeContext にアクセスできるようになりました。 ただし、手順 2. で**KeSynchronizeExecution**という*DpcForIsr*が呼び出される前にデバイスの割り込みが発生していた場合は、 **KeSynchronizeExecution**がスピンロックを取得して、accessdevice を3番目のプロセッサ。
 
-前の図に示す 1 つのプロセッサで実行されているルーチンは、スピン ロックを保持している間、そのスピン ロックを取得しようとしています。 その他のすべてのルーチンの作業がないです。 単に、スピンを既に保持されているロックの取得を日常的な各試行しても、所有者は、スピン ロックを解放するまで、現在のプロセッサ上が回転します。 1 つだけのルーチンがそれを取得できます、スピン ロックが解放されると、同じスピン ロックを取得しようとして現在の他のすべてのルーチンは、スピンし続けます。
+前の図に示すように、1つのプロセッサで実行されているルーチンはスピンロックを保持していますが、そのスピンロックを取得しようとしている他のすべてのルーチンは処理を行いません。 既に保持されているスピンロックを取得しようとする各ルーチンは、その所有者がスピンロックを解放するまで、現在のプロセッサを単にスピンさせます。 スピンロックが解放されると、1つのルーチンだけが取得できるようになります。現在同じスピンロックを取得しようとしている他のすべてのルーチンは、引き続きスピンを行います。
 
-発生した IRQL でスピン ロックの所有者が実行されます: のいずれかでディスパッチ\_executive スピン ロックでは、または、DIRQL 割り込みスピン ロックのレベル。 呼び出し元[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)と**KeAcquireInStackQueuedSpinLock**ディスパッチ時に実行\_レベルを呼び出すまで[ **KeReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)または**KeReleaseInStackQueuedSpinLock**ロックを解除します。 呼び出し元[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)呼び出し元が指定されるまで、現在のプロセッサに割り込みオブジェクトの SynchronizeIrql の IRQL を自動的に発生*SynchCritSection*ルーチンが終了し、 **KeSynchronizeExecution**コントロールを返します。 詳細については、次を参照してください。[呼び出しサポート ルーチンを使用してスピン ロック](calling-support-routines-that-use-spin-locks.md)します。
+任意のスピンロックの所有者は、発生した IRQL で実行されます。たとえば、executive スピンロックの場合はディスパッチ\_レベル、割り込みスピンロックの場合は DIRQL です。 [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)と**KeAcquireInStackQueuedSpinLock**の呼び出し元は、 [**KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)または**KeReleaseInStackQueuedSpinLock**を呼び出してロックを解除するまで、ディスパッチ\_レベルで実行されます。 [**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)の呼び出し元は、呼び出し元が指定した*SynchCritSection*ルーチンが終了し、 **KeSynchronizeExecution**が返されるまで、割り込みオブジェクトの SynchronizeIrql に対して現在のプロセッサの IRQL を自動的に発生させます。制御. 詳細については、「[スピンロックを使用するサポートルーチンの呼び出し](calling-support-routines-that-use-spin-locks.md)」を参照してください。
 
-**スピン ロックの使用の詳細については、次の点に注意してください。**
+**スピンロックの使用については、次の点に注意してください。**
 
-低い IRQL で実行されるすべてのコードでは、すべて同じスピン ロックを取得しようとしています。 その他のルーチンとスピン ロック所有者によって占有されているプロセッサのセットでの作業を取得できません。
+低い IRQL で実行されるすべてのコードは、スピンロックの所有者と、同じスピンロックを取得しようとする他のルーチンによって実行されるプロセッサセットに対して実行される処理を取得できません。
 
-その結果、ドライバーは、スピンを保持する時間を最小限に抑えることでドライバーのパフォーマンスが著しく向上結果をロックし、システム全体のパフォーマンスが向上に大きく貢献します。
+その結果、ドライバーがスピンロックを保持する時間を最小限に抑えると、ドライバーのパフォーマンスが大幅に向上し、システム全体のパフォーマンスが大幅に向上します。
 
-前の図に示すように、カーネルの割り込みハンドラーは、先着順では、マルチプロセッサ コンピューターで同じ IRQL で実行されているルーチンを実行します。 また、カーネルは、次は。
+前の図に示すように、カーネル割り込みハンドラーは、最初に提供された、マルチプロセッサコンピューターで同じ IRQL で実行されるルーチンを実行します。 カーネルは次のことも行います。
 
--   ドライバーのルーチンを呼び出すと**KeSynchronizeExecution**、カーネルがドライバーの*SynchCritSection*元となる、同じプロセッサで実行するルーチンの呼び出し**KeSynchronizeExecution** (手順 1. と 3. を参照してください) が発生しました。
+-   ドライバールーチンが**KeSynchronizeExecution**を呼び出すと、カーネルによって、ドライバーの*SynchCritSection*ルーチンが**KeSynchronizeExecution**の呼び出しが発生したのと同じプロセッサ上で実行されます (手順1と3を参照)。
 
--   ときにドライバーの ISR キューその*DpcForIsr*、カーネルによりを IRQL を下回るディスパッチ最初の利用可能なプロセッサ上で実行する DPC\_レベル。 これは必ずしも元となる同じプロセッサ、 [ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)呼び出しでは、(手順 2 参照) が発生しました。
+-   ドライバーの ISR がその*DpcForIsr*をキューに入れた場合、カーネルは、IRQL がディスパッチ\_レベルを下回る最初の使用可能なプロセッサ上で DPC を実行します。 これは、必ずしも[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)呼び出しが発生したプロセッサと同じではありません (手順2を参照)。
 
-ドライバーの割り込み駆動の I/O 操作が単一プロセッサのコンピューターでシリアル化する傾向がありますが、同じ操作を SMP マシンで完全に非同期にすることができます。 前に、SMP コンピューターでドライバーの ISR を CPU4 で実行できる前の図に示すようにその*DpcForIsr*を ISR は既に処理 CPU1 でデバイスの割り込み IRP の処理を開始します。
+ドライバーの割り込みドリブン i/o 操作は、ユニプロセッサコンピューターではシリアル化される傾向がありますが、SMP コンピューターでは、同じ操作を実際に非同期に行うことができます。 前の図に示されているように、ドライバーの ISR は、SMP コンピューターの CPU4 で実行され、ISR が CPU1 のデバイス割り込みを既に処理している IRP の処理を開始する前に、その*DpcForIsr*が SMP マシンで実行される可能性があります。
 
-つまり、ことを想定しないでくださいが割り込み、スピン ロックは、ISR を保存する前に別のプロセッサでデバイスの割り込みが発生したときの ISR によって上書きされない 1 つのプロセッサの実行時に操作に固有のデータを保護できる、 *DpcForIsr*または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンを実行します。
+つまり、 *DpcForIsr*の前に別のプロセッサでデバイスの割り込みが発生したときに、isr が1つのプロセッサで実行したときに、isr によって上書きされない操作固有のデータを、割り込みスピンロックで保護できると想定しないでください。または[*Customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンが実行されています。
 
-ドライバーは、ISR によって収集されたデータを保持するために割り込み駆動 I/O 操作すべてをシリアル化しようとする可能性があります、そのドライバーは非常に高速ユニプロセッサ コンピューターよりも、SMP マシンで実行されません。 ユニプロセッサおよびマルチプロセッサ プラットフォームにわたって抑えながら、最適なドライバー パフォーマンス ポータブルを取得するドライバーは、による後続処理の ISR によって取得操作に固有のデータを保存する別の手法を使用する必要があります、 *DpcForIsr*します。
+ドライバーは、すべての割り込みドリブン i/o 操作をシリアル化して、ISR によって収集されたデータを保持することもできますが、SMP コンピューターでは、そのドライバーはユニプロセッサコンピューターよりもはるかに高速に実行されません。 ユニプロセッサおよびマルチプロセッサプラットフォーム間で移植性を維持したまま、最適なドライバーパフォーマンスを得るには、ドライバーは他の手法を使用して、 *DpcForIsr*による後続の処理のために ISR によって取得された操作固有のデータを保存する必要があります。
 
-ISR に渡す IRP の操作に固有のデータを保存するなど、 *DpcForIsr*します。 この手法の洗練化を実装するためには、 *DpcForIsr* count ISR が指定したデータを使用して Irp の処理や、カウントを返す前に 0 にリセットする ISR 拡張の数を調べます。 もちろん、カウントする必要があります、ドライバーの割り込みスピン ロックで保護するための ISR、 *SynchCritSection*はその値を動的に保持します。
+たとえば、ISR は、 *DpcForIsr*に渡す IRP に操作固有のデータを保存できます。 この手法を改良することは、ISR によって強化された数を調べ、ISR が提供するデータを使用して Irp の数を処理し、カウントをゼロにリセットしてから戻る前に、 *DpcForIsr*を実装することです。 もちろん、このカウントは、ISR と*SynchCritSection*が動的に値を維持するため、ドライバーの割り込みスピンロックによって保護されている必要があります。
 
  
 
