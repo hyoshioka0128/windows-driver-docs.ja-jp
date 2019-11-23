@@ -67,7 +67,7 @@ ms.locfileid: "72038091"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、デバイスのセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>は、デバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
 また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
@@ -75,7 +75,7 @@ ms.locfileid: "72038091"
 
 デバイスが既に無効になっている場合でも、DevCon はデバイスを無効にします。 デバイスを無効にする前と後に、[ [**DevCon status**](devcon-status.md) ] 操作を使用してデバイスの状態を確認します。
 
-デバイスを無効にするために ID パターンを使用する前に、影響を受けるデバイスを決定します。 これを行うには、 **devcon STATUS USB @ no__t-1*** または * * DEVCON hwids USB @ no__t * * * のように、表示コマンドでパターンを使用します。
+デバイスを無効にするために ID パターンを使用する前に、影響を受けるデバイスを決定します。 これを行うには、 **devcon STATUS USB\\** * または * * DEVCON hwids USB\\* * * のように、表示コマンドでパターンを使用します。
 
 この変更を有効にするには、システムを再起動する必要がある場合があります。 システムを DevCon で再起動するには、条件付き再起動パラメーター (/r) をコマンドに追加します。
 
@@ -89,6 +89,6 @@ devcon /r disable =printer
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 30:ID パターンでデバイスを無効にする @ no__t-0
+[例 30: デバイスを ID パターンで無効にする](devcon-examples.md#ddk_example_30_disable_devices_by_an_id_pattern_tools)
 
-[Example 31:デバイスインスタンス ID @ no__t でデバイスを無効にする
+[例 31: デバイスインスタンス ID でデバイスを無効にする](devcon-examples.md#ddk_example_31_disable_devices_by_device_instance_id_tools)

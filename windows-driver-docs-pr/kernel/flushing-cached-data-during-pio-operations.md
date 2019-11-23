@@ -1,6 +1,6 @@
 ---
-title: PIO 操作中のキャッシュされたデータのフラッシュ
-description: PIO 操作中のキャッシュされたデータのフラッシュ
+title: PIO 操作中のキャッシュ データのフラッシュ
+description: PIO 操作中のキャッシュ データのフラッシュ
 ms.assetid: 8b15f1c4-d3c9-4d61-be37-ee1593f9d5e5
 keywords:
 - キャッシュされたデータのフラッシュ
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838687"
 ---
-# <a name="flushing-cached-data-during-pio-operations"></a>PIO 操作中のキャッシュされたデータのフラッシュ
+# <a name="flushing-cached-data-during-pio-operations"></a>PIO 操作中のキャッシュ データのフラッシュ
 
 
 

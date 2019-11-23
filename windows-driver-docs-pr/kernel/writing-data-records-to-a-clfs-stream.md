@@ -189,11 +189,11 @@ CLFS ストリームにデータレコードを書き込むには、 [**ClfsCrea
 </tr>
 <tr class="even">
 <td><p><em>plsnUndoNext</em></p></td>
-<td><p>CLFS_LSN_INVALID または元に戻すチェーン内の前のレコードの LSN。 元に戻すチェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
+<td><p>元に戻すチェーン内の前のレコードの CLFS_LSN_INVALID または LSN。 元に戻すチェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>plsnPrevious</em></p></td>
-<td><p>CLFS_LSN_INVALID または前の LSN チェーン内の前のログレコードの LSN。 前の LSN チェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
+<td><p>前の LSN チェーン内の前のログレコードの CLFS_LSN_INVALID または LSN。 前の LSN チェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>cReserveRecords</em></p></td>
@@ -250,11 +250,11 @@ CLFS ストリームにデータレコードを書き込むには、 [**ClfsCrea
 </tr>
 <tr class="odd">
 <td><p><em>plsnUndoNext</em></p></td>
-<td><p>CLFS_LSN_INVALID または元に戻すチェーン内の前のレコードの LSN。 元に戻すチェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
+<td><p>元に戻すチェーン内の前のレコードの CLFS_LSN_INVALID または LSN。 元に戻すチェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>plsnPrevious</em></p></td>
-<td><p>CLFS_LSN_INVALID または前の LSN チェーン内の前のログレコードの LSN。 前の LSN チェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
+<td><p>前の LSN チェーン内の前のログレコードの CLFS_LSN_INVALID または LSN。 前の LSN チェーンの詳細については、「 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS Log Sequence Numbers</a>」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cReserveRecords</em></p></td>

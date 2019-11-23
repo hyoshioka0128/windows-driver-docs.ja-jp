@@ -26,9 +26,9 @@ ms.locfileid: "72839373"
 
 |              |      |
 |--------------|------|
-| ドライバーモデル | NDIS |
+| ドライバー モデル | NDIS |
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>

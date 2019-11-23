@@ -29,7 +29,7 @@ ms.locfileid: "72038047"
 
 ## <a name="span-idddk_devcon_sethwid_toolsspanspan-idddk_devcon_sethwid_toolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
@@ -67,13 +67,13 @@ ms.locfileid: "72038047"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、ルートで列挙されたデバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>は、ルートで列挙されたデバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
 また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
 <span id="_______HardwareIDs______"></span><span id="_______hardwareids______"></span><span id="_______HARDWAREIDS______"></span>*ハードウェア id*1つ以上のハードウェア Id を指定します。
 
-ハードウェア id の前にシンボルパラメーター ( **+** 、 **-** 、 **=** 、 **!** ) が指定されていない場合、[DevCon] は指定されたハードウェア id の一覧の末尾に指定された順序で追加または移動します。 これは、-パラメーターと同じです。
+ハードウェア id の前にシンボルパラメーター ( **+** 、 **-** 、 **=** 、 **!** ) が指定されていない場合は、指定された順序でデバイスのハードウェア id の一覧の末尾に、指定したハードウェア id が追加または移動されます。 これは、-パラメーターと同じです。
 
 <span id="_"></span>=  
 指定された順序で、指定したハードウェア Id を持つデバイスのハードウェア Id の一覧を置き換えます。
@@ -87,7 +87,7 @@ ms.locfileid: "72038047"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-*ルート列挙*デバイスは、ルートレジストリサブキーに表示されるデバイスです (HKEY @ NO__T-1local @ NO__T-2machine @ No__t-3system @ no__t-4*ControlSet*\\ENUM @ no__t-7root)。
+*ルートで列挙*されたデバイスとは、ルートレジストリサブキー (HKEY\_LOCAL\_MACHINE\\System\\*ControlSet*\\Enum\\root) に表示されるデバイスです。
 
 各コマンドに複数のハードウェア Id を指定できます。 **!** (delete) パラメーターは、プレフィックスとして指定されているハードウェア ID にのみ適用されます。 その他のシンボルパラメーターは、コマンドの次のシンボルパラメーターまで続くすべてのハードウェア Id に適用されます。
 
@@ -107,12 +107,12 @@ devcon sethwid @ROOT\LEGACY_BEEP\0000 := !beep legacy
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 40:レガシデバイスにハードウェア ID を割り当てる @ no__t-0
+[例 40: レガシデバイスにハードウェア ID を割り当てる](devcon-examples.md#ddk_example_40_assign_a_hardware_id_to_a_legacy_device_tools)
 
-[Example 41:リモートコンピューター上のすべてのレガシデバイスにハードウェア ID を追加する @ no__t-0
+[例 41: リモートコンピューター上のすべてのレガシデバイスにハードウェア ID を追加する](devcon-examples.md#ddk_example_41_add_a_hardware_id_to_all_legacy_devices_on_a_remote_com)
 
-[Example 42:リモートコンピューター上のすべてのレガシデバイスからハードウェア ID を削除する @ no__t-0
+[例 42: リモートコンピューター上のすべてのレガシデバイスからハードウェア ID を削除する](devcon-examples.md#ddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remot)
 
-[Example 43:ハードウェア Id の追加、削除、および置換 @ no__t-0
+[例 43: ハードウェア Id を追加、削除、交換する](devcon-examples.md#ddk_example_43_add_delete_and_replace_hardwareids_tools)
 
-[Example 44:HAL @ no__t を強制的に更新します。
+[例 44: HAL を強制的に更新する](devcon-examples.md#ddk_example_44_forcibly_update_the_hal_tools)

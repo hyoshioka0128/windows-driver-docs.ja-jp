@@ -17,9 +17,9 @@ ms.locfileid: "72835389"
 
 
 
-構成パラメーターの初期セットを使用してキューを割り当てるには、後のドライバーが\_キューメソッド OID 要求を[割り当てる\_\_フィルターを受け取る oid を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、最初に[**ndis\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体へのポインターが含まれています。 OID メソッド要求から正常に復帰した後、 **ndis\_oid\_要求**構造の**informationbuffer**メンバーには、 **ndis\_RECEIVE\_QUEUE\_パラメーター**へのポインターが含まれています。新しいキュー識別子と MSI-X テーブルエントリを持つ構造体。
+構成パラメーターの初期セットを使用してキューを割り当てるには、後のドライバーが\_キューメソッド OID 要求を[割り当てる\_\_フィルターを受け取る oid を\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、最初に[**ndis\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体へのポインターが含まれています。 OID メソッド要求から正常に戻った後、 **ndis\_oid\_要求**構造の**informationbuffer**メンバーには、新しいキュー識別子と MSI-X テーブルエントリを持つ**ndis\_RECEIVE\_queue\_PARAMETERS**構造体へのポインターが含まれています。
 
-[**NDIS\_receive\_queue\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体を使用して\_キュー OID の[割り当て\_フィルター\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)を受け取る oid、および[oid\_フィルター\_キューを受け取る\_を受信します。\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters) OID。 VM キューのパラメーターの詳細については、「 [Vm キューのパラメーターの取得と更新](obtaining-and-updating-vm-queue-parameters.md)」を参照してください。
+[**NDIS\_receive\_queue\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体は、\_キュー OID の[割り当て\_フィルターを受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)\_、oid\_\_[フィルター\_キュー\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters) oid を受け取る oid\_で使用されます。 VM キューのパラメーターの詳細については、「 [Vm キューのパラメーターの取得と更新](obtaining-and-updating-vm-queue-parameters.md)」を参照してください。
 
 前のドライバーは、次のキュー構成パラメーターを使用して、 [ **\_キュー\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)を初期化します。
 
@@ -35,7 +35,7 @@ ms.locfileid: "72835389"
 
      
 
-\_キューの\_パラメーター\_受信\_通知と NDIS\_受信\_キュー\_のパラメーターを受け取ることができるように、このドライバーでは、NDIS\_を設定  ことに**注意**してください\__t_12_ 先読み\_、\_NDIS の**flags**メンバー内の必須フラグ\_分割され、 [ **\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体を受け取ることができます。 その他のフラグは、キューの割り当てには使用されません。
+このような場合は、\_キュー\_パラメーターを受け取るように[ **、ndis を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)\_設定できます。**これ  、** \_キュー\_受信\_キューに\_を受信\_パラメーターを受け取る\_、\_の\_を受信\_\_の**フラグ**のメンバーで\_必要なフラグを\_\_受信に渡す必要があります。 その他のフラグは、キューの割り当てには使用されません。
 
  
 
@@ -61,7 +61,7 @@ Ndis は、この OID 要求をミニポートドライバーに送信する前�
 
 ミニポートドライバーが OID を受信した後\_フィルター\_キュー\_割り当て OID 要求を受信して正常に処理する\_、キューは*割り当て済み*の状態になります。 キューの状態の詳細については、「[キューの状態と操作](queue-states-and-operations.md)」を参照してください。
 
-1つ以上の受信キューが割り当てられた後、(必要に応じて初期フィルターを設定して) 1 つ以上の受信キューが割り当てられた後、oid を\_\_発行して[\_キュー\_割り当てを完了し\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)に通知するための oid 要求を完了する必要があります。受信キューの現在のバッチに割り当てが完了したことを示すミニポートドライバー。
+1つ以上の受信キューが割り当てられた後に、必要に応じて最初のフィルターを設定した後は、Oid を発行して、受信キューの現在のバッチの割り当てが完了したことをミニポートドライバーに通知するために、Oid 要求の[\_フィルター\_キュー\_\_割り当てを\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)必要があります。
 
 そのキューにフィルターが設定されていない場合、ミニポートドライバーは受信キューにあるパケットを保持しないようにする必要があります。 キューにフィルターが設定されていない場合、またはすべてのフィルターがオフになっている場合は、キューを空にして、すべてのパケットを破棄する必要があります。 つまり、ドライバースタックが示されていないか、キューに保持されていません。
 

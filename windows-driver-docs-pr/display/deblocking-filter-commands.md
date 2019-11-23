@@ -24,7 +24,7 @@ ms.locfileid: "72839763"
 
 Deblocking フィルターコマンドバッファーには、次の2種類があります。
 
--   現在の deblocking フィルターコマンドバッファーの外部にあるマクロブロックの再構築されたサンプルの値のアクセスと変更を必要とするバッファー ( [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)の**B絵文字 deblock限定**メンバーの場合)構造体はゼロ)。
+-   現在の deblocking フィルターコマンドバッファーの外部にあるマクロブロックの再構築されたサンプルの値のアクセスと変更を必要とするバッファー ( [**DXVA\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体が**0 の場合**)。
 
 -   現在の deblocking フィルターコマンドバッファーの外部にあるマクロブロックの再構築されたサンプルの値のアクセスと変更を必要としないバッファー ( **B絵文字 Deblock限定**が1の場合)。
 

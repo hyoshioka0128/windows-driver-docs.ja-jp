@@ -61,9 +61,9 @@ ms.locfileid: "72839349"
 --------
 
 [一般的な接続操作のガイドライン](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
-[NDIS\_の状態\_dot11\_接続\_開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
-[OID\_Dot11](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)\_\_要求
-[NDIS\_状態\_DOT11\_ローミング\_開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)
+[NDIS\_の状態\_dot11\_接続\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
+[の\_の](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)\_\_の
+の\_\_[の\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)の
  
 
  

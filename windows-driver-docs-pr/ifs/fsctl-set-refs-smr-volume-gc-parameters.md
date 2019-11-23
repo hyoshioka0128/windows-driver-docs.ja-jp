@@ -3,7 +3,7 @@ title: FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 制御コード
 description: FSCTL\_SET\_REFS\_SMR\_ボリューム\_GC\_PARAMETERS 制御コードは、Shingled 磁気記録 (SMR) ボリュームでガベージコレクションを制御します。
 ms.assetid: 782542C4-CFC5-4BF7-AF38-3247A3AC6AB9
 keywords:
-- FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:

@@ -4,7 +4,7 @@ description: Irql\_Interrupt\_関数規則は、割り込みのための NDIS �
 ms.assetid: a71eaa14-b1f8-4ef6-8dc4-5c0c0d168685
 ms.date: 05/21/2018
 keywords:
-- Irql_Interrupt_Function rule (ndis)
+- Irql_Interrupt_Function 規則 (ndis)
 topic_type:
 - apiref
 api_name:

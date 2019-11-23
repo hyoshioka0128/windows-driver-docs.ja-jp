@@ -4,7 +4,7 @@ description: WDI_TLV_P2P_SERVICE_TYPE_HASH は、サービスの種類のハッ�
 ms.assetid: A475C2E3-F558-47EC-9708-87887AE2D8AF
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_SERVICE_TYPE_HASH ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_P2P_SERVICE_TYPE_HASH
 ms.localizationpriority: medium
 ms.openlocfilehash: cd2c6d3ef612cbe57dcced5bd5d06422ea87ea23
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -35,7 +35,7 @@ WDI\_TLV\_P2P\_SERVICE\_TYPE\_HASH は、サービスの種類のハッシュを
 ## <a name="values"></a>値
 
 
-| タスクバーの検索ボックスに                                                                    | 説明               |
+| 種類                                                                    | 説明               |
 |-------------------------------------------------------------------------|---------------------------|
 | [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | サービスの種類のハッシュ。 |
 

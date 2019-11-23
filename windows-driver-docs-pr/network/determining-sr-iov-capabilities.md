@@ -14,7 +14,7 @@ ms.locfileid: "72834907"
 # <a name="determining-sr-iov-capabilities"></a>SR-IOV 機能の判断
 
 
-このトピックでは、NDIS およびそれ以降のドライバーがネットワークアダプターのシングルルート i/o 仮想化 (SR-IOV) 機能をどのように決定するかについて説明します。 このトピックには、次の情報が含まれています。
+このトピックでは、NDIS およびそれ以降のドライバーがネットワークアダプターのシングルルート i/o 仮想化 (SR-IOV) 機能をどのように決定するかについて説明します。 このトピックの内容は次のとおりです。
 
 [*MiniportInitializeEx*中の sr-iov 機能の報告](#reporting-sr-iov-capabilities-during-miniportinitializeex)
 
@@ -35,7 +35,7 @@ NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.m
 
 1. ミニポートドライバーは、**ヘッダー**メンバーを初期化します。 ドライバーは、**ヘッダー**の**type**メンバーを、既定\_\_型の NDIS\_OBJECT に設定します。
 
-   NDIS 6.30 以降では、ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_SRIOV\_機能 \_リビジョン\_1、**サイズ**メンバーを ndis\_SIZEOF\_SRIOV に設定\_機能\_REVISION\_1 です。
+   NDIS 6.30 以降では、ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_SRIOV\_機能 \_リビジョン\_1、 **SIZE**メンバーを NDIS\_SIZEOF\_SRIOV\_機能\_リビジョン\_1 に設定します。
 
 2. このミニポートドライバーは、SR-IOV 機能を報告するために**Sriの機能**メンバーに適切なフラグを設定します。
 
@@ -46,7 +46,7 @@ NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.m
    -   NDIS\_SRIOV\_CAP\_PF\_ミニポート
 
    > [!NOTE]
-   >ネットワークアダプターの PCIe 仮想機能 (VF) のミニポートドライバー  、NDIS\_SRIOV\_CAPS\_VF\_ミニポートフラグと NDIS\_SRIOV\_CAPS\_SRIOV の両方を設定する必要があり\_サポートされているフラグ。    
+   >ネットワークアダプターの PCIe 仮想機能 (VF) のミニポートドライバー  、NDIS\_SRIOV\_CAPS\_VF\_ミニポートフラグと NDIS\_SRIOV\_CAPS\_SRIOV\_supported フラグの両方を設定する必要があります。    
 
 NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すと、ドライバーは次の手順に従ってネットワークアダプターの sr-iov 機能を登録します。
 
@@ -73,7 +73,7 @@ NDIS は、ネットワークアダプターの現在有効な SR-IOV 機能を�
 
 -   NDIS が、プロトコルドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出すと、Ndis は*bindparameters*パラメーターを使用してネットワークアダプターの sr-iov 機能を渡します。 このパラメーターには、\_PARAMETERS 構造体を[**アタッチ\_ための NDIS\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)へのポインターが含まれています。 この構造体の**SriSRIOV capabilities**メンバーには、 [**NDIS\_\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造体へのポインターが含まれています。
 
-また、NDIS は、Oid のオブジェクト識別子 (OID) クエリ要求を処理するときに、 [**ndis\_SRIOV\_capabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造を返します[\_SRIOV\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-hardware-capabilities)および[oid\_SRIOV\_現在の\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-current-capabilities)プロトコルまたはフィルタードライバーによって発行された機能。
+また、NDIS は、 [SRIOV\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-hardware-capabilities)および oid\_のオブジェクト識別子 (oid) クエリ要求を処理するときに、 [**ndis\_SRIOV\_capabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)構造体を返します。これは、プロトコルまたはフィルタードライバーによって発行される[現在の\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-current-capabilities)です。\_\_
 
  
 

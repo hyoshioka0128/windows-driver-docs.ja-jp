@@ -24,7 +24,7 @@ ms.locfileid: "72837171"
 
 I/o 制御コードは、 [**irp\_MJ\_デバイス\_control**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)および[**irp\_MJ\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求に含まれています。 I/o マネージャーは、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (Microsoft Windows SDK のドキュメントで説明されています) と[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出した結果として、これらの要求を作成します。
 
-[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)と**IoBuildDeviceIoControlRequest**は入力バッファーと出力バッファーの両方を引数として受け取るため、すべての**IRP\_MJ\_デバイス\_CONTROL**および**irp\_MJ\_INTERNAL @no__tデバイス\_制御**要求は、入力バッファーと出力バッファーの両方を提供します。 (_s) システムがこれらのバッファーを記述する方法は、データ転送の種類によって異なります。 転送の種類は、IOCTL コード値を作成する[**CTL の\_コード**](defining-i-o-control-codes.md)マクロの*transfertype*値によって指定されます。
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)と**IoBuildDeviceIoControlRequest**は入力バッファーと出力バッファーの両方を引数として受け取るため、すべての**irp\_MJ\_デバイス\_control**および**irp\_MJ\_内部\_デバイス\_制御**要求が入力バッファーと出力バッファーの両方を提供します。 システムがこれらのバッファーを記述する方法は、データ転送の種類によって異なります。 転送の種類は、IOCTL コード値を作成する[**CTL の\_コード**](defining-i-o-control-codes.md)マクロの*transfertype*値によって指定されます。
 
 システムは、各*Transfertype*値のバッファーを次のように記述します。
 

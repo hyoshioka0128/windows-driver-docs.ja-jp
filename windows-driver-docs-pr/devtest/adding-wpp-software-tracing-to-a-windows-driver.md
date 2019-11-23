@@ -99,9 +99,9 @@ ms.locfileid: "72840304"
 
 2.  WPP マクロを定義して、trace 関数を有効にします。
 
-    使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、1組のマクロ、 **wpp\_ *&lt;条件&gt;* \_LOGGER**および**wpp\_&lt;*条件*** &gt;\_既定の WPP\_レベルで有効にし @no__tLOGGER マクロ\_\_レベルを有効にし、WPP を使用する (_c)
+    使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、既定の WPP\_レベル&lt;ENABLED および WPP&gt;LEVEL\_LOGGER マクロの観点では、\_LOGGER および Wpp の **\_ *&lt;条件&gt;* logger**および wpp **\_\_*条件*\_有効**にするマクロのペアを定義します。\_
 
-使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、1組のマクロ、 **wpp\_ *&lt;条件&gt;* \_LOGGER**および**wpp\_&lt;*条件*** &gt;\_既定の WPP\_レベルで有効にし @no__tLOGGER マクロ\_\_レベルを有効にし、WPP を使用する (_c)
+使用する各トレースメッセージ関数には、対応するマクロペアが必要です。 これらのマクロは、トレースプロバイダーを識別し、メッセージを生成する条件を指定します。 通常、既定の WPP\_レベル&lt;ENABLED および WPP&gt;LEVEL\_LOGGER マクロの観点では、\_LOGGER および Wpp の **\_ *&lt;条件&gt;* logger**および wpp **\_\_*条件*\_有効**にするマクロのペアを定義します。\_
 
 <table>
 <colgroup>
@@ -116,11 +116,11 @@ ms.locfileid: "72840304"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span>LOGGER</strong><em><strong>WPP_<em>条件</em></p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span>LOGGER<em><strong>WPP_<em>条件</em></strong></p></td>
 <td align="left"><p>プロバイダーに関連付けられているトレースセッションを検索し、セッションへのハンドルを返すために使用します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP</em><em>条件</em>有効</strong></p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP</em><em>条件</em>_ENABLED</strong></p></td>
 <td align="left"><p>指定された条件でログ記録が有効かどうかを判断するために使用されます。</p></td>
 </tr>
 </tbody>
@@ -146,7 +146,7 @@ ms.locfileid: "72840304"
            (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= lvl)
 ```
 
-次に、WPP 構成ブロックでカスタムトレース関数を指定する必要があります (**begin\_wpp config**と**end\_wpp**)。たとえば、Visual Studio で UMDF または kmdf ドライバープロジェクトのテンプレートを使用する場合、テンプレートは" **Traceevents**" というカスタムトレースメッセージ関数用の WPP マクロ。 **Traceevents**マクロ関数は、メッセージを生成するための条件として[トレースレベル](trace-level.md)とトレースフラグを使用します。 **\_レベルの\_FLAGS\_ENABLED**マクロをトレース .h ヘッダーファイルに定義している場合は、次のマクロ定義を追加できます。
+次に、WPP 構成ブロック (**begin\_wpp config**と**end\_wpp**) でカスタムトレース関数を指定する必要があります。たとえば、Visual Studio で UMDF または kmdf ドライバープロジェクトのテンプレートを使用する場合、テンプレートは**traceevents**というカスタムトレースメッセージ関数の WPP マクロを定義します。 **Traceevents**マクロ関数は、メッセージを生成するための条件として[トレースレベル](trace-level.md)とトレースフラグを使用します。 **\_レベルの\_FLAGS\_ENABLED**マクロをトレース .h ヘッダーファイルに定義している場合は、次のマクロ定義を追加できます。
 
 ```ManagedCPlusPlus
 //
@@ -173,7 +173,7 @@ ms.locfileid: "72840304"
 //
 ```
 
-**メモ** [**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)をトレースメッセージ関数に変換する場合は、いくつかの追加の手順を実行する必要があります。 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)と比較した場合、 **KdPrintEx**関数は2つの追加の引数を受け取ります。 **KdPrintEx**関数を変換するには、 *ComponentID*に対して **\_ビットを定義**し、カスタムの**Wpp\_ *&lt;条件&gt;* LOGGER**および WPP を定義\_、wpp を定義する必要があり **\_t_12_ *&lt;condition&gt;* \_有効な**マクロです。 **KdPrintEx**の2番目のパラメーターは、のレベルが[トレースレベル](trace-level.md)の値に似ていることを指定します。そのため、必ずしもそれらを再定義する必要はありません。
+**メモ** [**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)をトレースメッセージ関数に変換する場合は、いくつかの追加の手順を実行する必要があります。 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)と比較した場合、 **KdPrintEx**関数は2つの追加の引数を受け取ります。 **KdPrintEx**関数を変換するには、 *ComponentID*に対して **\_ビットを定義**し、カスタムの**wpp\_ *&lt;条件*** &gt;\_LOGGER および WPP\_&lt;&gt;**有効になっている**マクロを定義\_必要があります。\_ **KdPrintEx**の2番目のパラメーターは、のレベルが[トレースレベル](trace-level.md)の値に似ていることを指定します。そのため、必ずしもそれらを再定義する必要はありません。
 
 
 
@@ -403,13 +403,13 @@ DllMain(
 
 **DoTraceMessage ステートメントの使用**
 
-1.  デバッグ印刷ルーチンの場合と同様に、コードに[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロを追加します。 **DoTraceMessage**マクロは、3つのパラメーターを受け取ります。フラグレベル (*traceflagname*) は、トレースメッセージが書き込まれるときの条件、*メッセージ*文字列、および省略可能な変数リストを定義します。
+1.  追加、 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **DoTraceMessage**マクロは、3つのパラメーターを受け取ります。フラグレベル (*traceflagname*) は、トレースメッセージが書き込まれるときの条件、*メッセージ*文字列、および省略可能な変数リストを定義します。
 
     ```
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    たとえば、次の[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))ステートメントは、 **DoTraceMessage**\_ステートメントを含む関数の名前を書き込みます。このフラグは、WPP\_コントロール\_guid で定義されているように、トレースに対して有効になっています。セッション.
+    たとえば、次 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) ステートメントを含む関数の名前を書き込み、 **DoTraceMessage** ステートメントとトレース\_ドライバー フラグ、WPP で定義されている\_コントロール\_トレース セッションの GUID が有効になっています。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );

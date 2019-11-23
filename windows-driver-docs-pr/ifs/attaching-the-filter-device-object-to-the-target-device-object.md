@@ -1,6 +1,6 @@
 ---
-title: フィルターデバイスオブジェクトをターゲットデバイスオブジェクトにアタッチしています
-description: フィルターデバイスオブジェクトをターゲットデバイスオブジェクトにアタッチしています
+title: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
+description: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
 ms.assetid: 1df293db-417a-4fee-afb8-06ab527331fb
 keywords:
 - フィルタードライバー WDK ファイルシステム、フィルターのアタッチ
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841487"
 ---
-# <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>フィルターデバイスオブジェクトをターゲットデバイスオブジェクトにアタッチしています
+# <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
 
 
 ## <span id="ddk_attaching_the_filter_device_object_to_the_target_device_object_if"></span><span id="DDK_ATTACHING_THE_FILTER_DEVICE_OBJECT_TO_THE_TARGET_DEVICE_OBJECT_IF"></span>
@@ -55,7 +55,7 @@ if (NT_SUCCESS(status)) {
 
 [**Iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)への呼び出しが成功した場合、ファイルシステムフィルタードライバーは、 [**Ioattachdevicetodevicestacksafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)を呼び出して、返されたコントロールデバイスオブジェクトにアタッチできます。
 
-**注**   コントロールデバイスオブジェクトポインター (*rawDeviceObject*) に加えて、 [**iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)は、ユーザーモードでデバイスオブジェクトを表すファイルオブジェクト (*fileObject*) へのポインターを返します。 上記のコードスニペットでは、ファイルオブジェクトは必要ないため、 [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出すことによって閉じられます。 **Iogetdeviceobjectpointer**によって返されるファイルオブジェクトの参照カウントをデクリメントすると、デバイスオブジェクトの参照カウントもデクリメントされることに注意する必要があります。 そのため、デバイスオブジェクトの参照カウントがの追加の呼び出し[**によってインクリメントされていない限り、この ObDereferenceObject を呼び出した後に、fileObject ポインターと rawDeviceObject ポインターの両方が無効であると見なされる必要があります。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject) **ObDereferenceObject**がファイルオブジェクトに対して呼び出される前に、obreferenceobject が呼び出されます。
+**注**   コントロールデバイスオブジェクトポインター (*rawDeviceObject*) に加えて、 [**iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)は、ユーザーモードでデバイスオブジェクトを表すファイルオブジェクト (*fileObject*) へのポインターを返します。 上記のコードスニペットでは、ファイルオブジェクトは必要ないため、 [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出すことによって閉じられます。 **Iogetdeviceobjectpointer**によって返されるファイルオブジェクトの参照カウントをデクリメントすると、デバイスオブジェクトの参照カウントもデクリメントされることに注意する必要があります。 したがって、ObDereferenceObject が呼び出される前に、 **ObDereferenceObject**を呼び出した後に、 *fileObject*と*rawDeviceObject*のポインターは両方とも無効と見なされる必要があります。ただし、デバイスオブジェクトの参照カウントが、ファイルオブジェクトに対してが呼び出される前に、 [**obreferenceobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)に対する追加の呼び出しによってインクリメントされる場合は除きます。
 
  
 

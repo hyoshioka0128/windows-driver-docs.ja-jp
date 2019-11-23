@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY
-description: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY は、ASP2 のアドバタイズされたサービスエントリを含む TLV です。
+description: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY は、ASP2 で提供されるサービスエントリを含む TLV です。
 ms.assetid: CF7ED750-1987-4784-9E61-516EBBA22B9B
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY
 ms.localizationpriority: medium
 ms.openlocfilehash: f62ba25ea795025f3bdda4345e008e76da3c5823
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -16,7 +16,7 @@ ms.locfileid: "72840326"
 # <a name="wdi_tlv_p2p_asp2_advertised_service_entry"></a>WDI\_TLV\_P2P\_ASP2\_アドバタイズされる\_サービス\_エントリ
 
 
-WDI\_TLV\_P2P\_ASP2\_アドバタイズされたサービス\_エントリは、ASP2 提供サービスエントリを含む TLV です。
+WDI\_TLV\_P2P\_ASP2\_アドバタイズされたサービス\_エントリは、ASP2 提供サービスエントリを含む TLV です。\_
 
 この TLV は、Windows 10 バージョン1607、WDI version 1.0.21 で追加された  に**注意**してください。
 
@@ -35,7 +35,7 @@ WDI\_TLV\_P2P\_ASP2\_アドバタイズされたサービス\_エントリは、
 ## <a name="values"></a>値
 
 
-| タスクバーの検索ボックスに                                                                           | 複数の TLV インスタンスを使用できます | オプション | 説明                                                                                                                                                                                                                                                                              |
+| 種類                                                                           | 複数の TLV インスタンスを使用できます | 省略可能 | 説明                                                                                                                                                                                                                                                                              |
 |--------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_サービス\_型**](wdi-tlv-p2p-service-type.md)               |                                |          | サービスのサービスの種類 (UTF-8) (最大21バイト)。                                                                                                                                                                                                                                     |
 | [**WDI\_TLV\_P2P\_サービス\_型\_HASH**](wdi-tlv-p2p-service-type-hash.md)    |                                |          | サービスの種類のハッシュ。                                                                                                                                                                                                                                                                    |
@@ -44,7 +44,7 @@ WDI\_TLV\_P2P\_ASP2\_アドバタイズされたサービス\_エントリは、
 | [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md) |                                | X        | サービスのサービス情報。                                                                                                                                                                                                                                                     |
 | [**WDI\_TLV\_P2P\_サービス\_の状態**](wdi-tlv-p2p-service-status.md)           |                                |          | サービスのサービスの状態。                                                                                                                                                                                                                                                           |
 | [**WDI\_TLV\_P2P\_提供情報\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | サービスインスタンスを一意に識別する ID。                                                                                                                                                                                                                                     |
-| [**WDI\_TLV\_P2P\_CONFIG\_メソッド**](wdi-tlv-p2p-config-methods.md)           |                                |          | [**WDI\_WPS\_構成\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)で定義されている構成方法。 **WDI\_wps\_configuration\_メソッド\_表示**、 **WDI\_wps\_構成\_メソッド\_キーパッド**、および**WDI\_wps\_構成\_方法のみ @no既定では、\_既定値**が適用されます。 |
+| [**WDI\_TLV\_P2P\_CONFIG\_メソッド**](wdi-tlv-p2p-config-methods.md)           |                                |          | [**WDI\_WPS\_構成\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)で定義されている構成方法。 **WDI\_wps\_構成\_方法\_表示**、 **WDI\_wps\_構成\_メソッド\_キーパッド**、および**WDI\_wps\_構成\_方法\_既定値**が適用されます。\_ |
 
  
 
