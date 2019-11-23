@@ -17,7 +17,7 @@ ms.locfileid: "72323654"
 
 サービスメタデータパッケージのハードウェア ID 値を生成するには、Windows 8.1 と Windows 10 の SDK の一部である MBIDGenerator コマンドラインツールを使用できます。
 
-**注**: Windows 8 MBIDGenerator .exe の    は、WDK に含まれていました。
+Windows 8 MBIDGenerator**の   は**、WDK に含まれていました。
 
  
 
@@ -30,7 +30,7 @@ MBIDGenerator は、次のパラメーターを受け入れます。
 MBIDGenerator.exe [/Test] <input file> [<output file>]
 ```
 
-**注**  *テスト*パラメーターはハッシュされていない出力を提供するため、Windows デベロッパーセンターのダッシュボードに送信するためのハードウェア id の生成には使用しないでください。
+*テスト*パラメーターは、ハッシュされていない出力を提供**する  、** Windows デベロッパーセンターのダッシュボードに送信するためのハードウェア id の生成には使用しないでください。
 
  
 

@@ -48,7 +48,7 @@ NDIS が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/dri
 
     Sr-iov キーワードの詳細については、「sr-iov[用の標準化](standardized-inf-keywords-for-sr-iov.md)された INF キーワード」を参照してください。
 
-    **注**  sr-iov の設定用にミニポートドライバーが構成されている場合は、RSS の標準化されたキーワードを読み取ることができません。 ただし、ドライバーは VMQ **\*VMQVlanFiltering**標準化されたキーワードを読み取る必要があります。 このキーワードは、ミニポートドライバーが、メディアアクセスコントロール (MAC) ヘッダーの仮想 VLAN (VLAN) 識別子を使用してネットワークパケットをフィルター処理できるようにするかどうかを指定します。 ミニポートドライバーは、ndis\_受信\_フィルター\_MAC\_ヘッダー\_VLAN\_ID\_Ndis の**SupportedMacHeaderFields**メンバーでサポートされているフラグを設定することによって、この機能を報告し[ **\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造です。 **\*VMQVlanFiltering**の標準化されたキーワードの詳細については、「 [VMQ の標準化](standardized-inf-keywords-for-vmq.md)された INF キーワード」を参照してください。
+    **注**  sr-iov の設定用にミニポートドライバーが構成されている場合は、RSS の標準化されたキーワードを読み取ることができません。 ただし、ドライバーは VMQ **\*VMQVlanFiltering**標準化されたキーワードを読み取る必要があります。 このキーワードは、ミニポートドライバーが、メディアアクセスコントロール (MAC) ヘッダーの仮想 VLAN (VLAN) 識別子を使用してネットワークパケットをフィルター処理できるようにするかどうかを指定します。 この機能は、ミニポートドライバーによって報告されます。 ndis\_RECEIVE\_FILTER\_MAC\_HEADER\_VLAN\_ID\_サポートされているフラグを[**ndis**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の**SupportedMacHeaderFields**メンバーに設定します。\_\_\_ **\*VMQVlanFiltering**の標準化されたキーワードの詳細については、「 [VMQ の標準化](standardized-inf-keywords-for-vmq.md)された INF キーワード」を参照してください。
 
      
 

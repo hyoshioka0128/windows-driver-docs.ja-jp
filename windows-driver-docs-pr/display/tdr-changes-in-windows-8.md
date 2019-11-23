@@ -34,7 +34,7 @@ Windows 8 以降では、GPU タイムアウト検出と復旧 (TDR) の動作�
 </tr>
 <tr class="odd">
 <td align="left">ドライバーの実装—完全なグラフィックスとレンダーのみ</td>
-<td align="left">Mandatory</td>
+<td align="left">必須</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">必要条件</a>とテスト</td>
@@ -145,7 +145,7 @@ GPU スケジューラに示されているように、正常にエンジンが�
 
 ハードウェアが無効な状態であるため、またはハードウェアがノードをリセットできないためにリセット操作を実行できない場合は、ドライバーがエラー状態コードを返す必要があります。 GPU スケジューラは、エラー状態コードを受信すると、Windows 8 より前の[TDR 動作](timeout-detection-and-recovery.md)に従って、アダプター全体のリセットと再起動操作を実行します。
 
-ドライバーが Windows 8 の TDR 動作をオプトインしている場合でも、GPU スケジューラが論理アダプター全体のリセットと再起動を要求する場合があります。 そのため、ドライバーは[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数と[*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)関数を実装する必要があり、そのセマンティクスは Windows 8 よりも前と同じです。 [*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)を使用して物理アダプターをリセットしようとすると、論理アダプターがリセットされます。 Windows デバッガーの [分析] コマンドを実行すると、TDR recovery コンテキストの**tdrreason**値が新しい値に設定されていることが示されます **。** **TdrEngineTimeoutPromotedToAdapterReset** = 9。
+ドライバーが Windows 8 の TDR 動作をオプトインしている場合でも、GPU スケジューラが論理アダプター全体のリセットと再起動を要求する場合があります。 そのため、ドライバーは[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)関数と[*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)関数を実装する必要があり、そのセマンティクスは Windows 8 よりも前と同じです。 [*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)を使用して物理アダプターをリセットしようとすると、論理アダプターがリセットされます。 Windows デバッガーの **[分析]** コマンドを実行すると、TDR Recovery コンテキストの**Tdrreason**値が**TdrEngineTimeoutPromotedToAdapterReset** = 9 の新しい値に設定されていることが示されます。
 
 ## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定の要件
 

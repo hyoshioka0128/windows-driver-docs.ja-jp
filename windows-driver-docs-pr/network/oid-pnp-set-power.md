@@ -3,7 +3,7 @@ title: OID_PNP_SET_POWER
 description: OID_PNP_SET_POWER
 ms.assetid: 21232db2-7484-4878-a2f9-5131c18ecf57
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PNP_SET_POWER ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PNP_SET_POWER
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bfd40a8c88918d5fe2c29a84b657dfc03f8ee0
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -29,7 +29,7 @@ POWER request\_設定されている OID\_PNP\_の前に、 [\_PNP\_クエリ\_�
 
 Ndis 6.30 以降、次の条件に該当する場合、NDIS は電源状態の移行中にドライバースタック内の NDIS ドライバーを一時停止して再起動しません。
 
--   基になるミニポートドライバーは、ndis\_ミニポート\_アダプター\_登録\_の\_**SUSPEND フラグ\_\_、ndis\_ミニポート\_属性**を設定[ **\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 ドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の呼び出しで、この構造体へのポインターを渡します。
+-   基になるミニポートドライバーは、ndis [ **\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造の\_**SUSPEND フラグに\_一時停止\_\_、NDIS\_ミニポート\_属性**を設定します。 ドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の呼び出しで、この構造体へのポインターを渡します。
 
 -   ミニポートドライバーに関連付けられているすべてのフィルタードライバーは、NDIS 6.30 以降のバージョンの NDIS をサポートしています。
 
@@ -71,7 +71,7 @@ Ndis 6.30 以降のバージョンの NDIS をサポートするミニポート�
 
 ### <a name="transitioning-to-the-full-power-state-d0"></a>フルパワー状態への移行 (D0)
 
-ミニポートドライバーが OID\_設定要求を処理するときに、電源が完全な状態に移行する\_電力\_設定する場合、ネットワークアダプターの受信エンジンを、アダプターの前の受信エンジンと同じ状態に復元する必要があります。低電力状態に遷移します。
+ミニポートドライバーが OID\_\_PNP の set 要求を処理するときに、電源\_電力状態に移行するように設定されている場合は、アダプターが低電力状態に遷移する前に、ネットワークアダプターの受信エンジンを受信エンジンと同じ状態に復元する必要があります。
 
 ミニポートドライバーは、保留中の受信確認に関連付けられているすべての受信バッファーにアクセスしたり、変更したりすることはできない  に**注意**してください。
 

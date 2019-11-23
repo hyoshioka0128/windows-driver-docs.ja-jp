@@ -1,9 +1,9 @@
 ---
 title: OID_SRIOV_READ_VF_CONFIG_BLOCK
-description: このドライバーは、指定された PCI Express (PCIe) 仮想関数 (VF) 構成ブロックからデータを読み取るために、OID_SRIOV_READ_VF_CONFIG_BLOCK のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: 前のドライバーは、指定された PCI Express (PCIe) 仮想関数 (VF) 構成ブロックからデータを読み取るために、OID_SRIOV_READ_VF_CONFIG_BLOCK のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: A7AC7A18-5DA2-4EE8-B635-04616ABFE08C
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SRIOV_READ_VF_CONFIG_BLOCK ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SRIOV_READ_VF_CONFIG_BLOCK
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad76974bc7f1140279e63aaef1646449c840e16
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -21,7 +21,7 @@ ms.locfileid: "72843984"
 
 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、呼び出し元が割り当てたバッファーへのポインターが含まれています。 このバッファーは、次のものが含まれるように書式設定されます。
 
--   NDIS\_SRIOV は、この構造体の先頭からデータを格納しているバッファー内の位置までのオフセット (バイト単位) を格納する[ **\_\_VF\_CONFIG\_BLOCK\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)構造体を読み取ります。これは、VF 構成ブロックから読み込まれます。
+-   [**NDIS\_SRIOV\_読み取り\_vf\_CONFIG\_ブロック\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)構造体は、この構造体の先頭から、vf 構成ブロックから読み取られるデータを格納するバッファー内の位置までのバイト単位のオフセットを格納します。
 
 -   指定された VF 構成ブロックから読み取るデータ用の追加のバッファー領域。
 
@@ -34,7 +34,7 @@ VF 構成ブロックは、PF および VF ミニポートドライバー間の�
 
  
 
-Oid\_oid の OID メソッド要求を発行する前に、SRIOV\_VF\_CONFIG\_BLOCK\_読み取るために、前のドライバーでは、NDIS\_SRIOV のメンバーを設定する必要があり[ **\_の読み取り\_vf\_config\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)は、次のように\_PARAMETERS 構造体をブロックします。
+Oid\_oid の OID メソッド要求を発行する前に\_\_VF\_CONFIG\_ブロックでは、次のように、の\_の\_の\_を読み取るために、次のように、このドライバーは[**NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters) SRIOV のメンバーを設定する必要があります。\_\_
 
 -   **VFId**メンバーに、情報の読み取り元となる VF の識別子を設定します。
 
@@ -46,7 +46,7 @@ Oid\_oid の OID メソッド要求を発行する前に、SRIOV\_VF\_CONFIG\_BL
 
 Oid\_oid の OID メソッド要求を処理するときに、\_VF\_CONFIG\_BLOCK\_読み取るために、PF ミニポートドライバーは次のガイドラインに従う必要があります。
 
--   PF ミニポートドライバーは、NDIS\_SRIOV の**VFId**メンバーによって指定された vf の[ **\_\_vf\_CONFIG\_BLOCK\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)構造体で指定されていることを確認し、以前のリソースがあることを確認する必要があります。済み. PF ミニポートドライバーは、oid の OID メソッド要求中に、 [\_NIC\_スイッチによって\_vf\_割り当てら](oid-nic-switch-allocate-vf.md)れるため、vf のリソースを割り当てます。 指定された VF のリソースが割り当てられていない場合、ドライバーは OID 要求を失敗させる必要があります。
+-   PF ミニポートドライバーは、NDIS\_SRIOV の**VFId**メンバーによって指定された VF [ **\_CONFIG\_BLOCK\_PARAMETERS 構造体\_読み取り\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters) 、以前に割り当てられたリソースがあることを確認する必要があります。 PF ミニポートドライバーは、oid の OID メソッド要求中に、 [\_NIC\_スイッチによって\_vf\_割り当てら](oid-nic-switch-allocate-vf.md)れるため、vf のリソースを割り当てます。 指定された VF のリソースが割り当てられていない場合、ドライバーは OID 要求を失敗させる必要があります。
 
 -   PF ミニポートドライバーは、 [**NDIS\_SRIOV\_READ\_VF\_CONFIG\_block\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)構造体の**ブロック id**メンバーが有効な vf 構成ブロックを指定していることを確認する必要があります。 それ以外の場合、ドライバーは OID 要求を失敗させる必要があります。
 
@@ -82,7 +82,7 @@ PF ミニポートドライバーは、OID\_SRIOV\_READ\_VF\_CONFIG\_BLOCK の�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

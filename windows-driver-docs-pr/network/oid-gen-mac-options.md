@@ -3,7 +3,7 @@ title: OID_GEN_MAC_OPTIONS
 description: クエリとして、OID_GEN_MAC_OPTIONS OID は、基になるドライバーまたは NIC のオプションのプロパティを定義するビットマスクを指定します。
 ms.assetid: 2a093bcb-ae6f-491c-a596-03e6f47b0b86
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_MAC_OPTIONS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_MAC_OPTIONS
 ms.localizationpriority: medium
 ms.openlocfilehash: e3435c5e38f4196af19ff364a3e6abb8ce947ac4
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

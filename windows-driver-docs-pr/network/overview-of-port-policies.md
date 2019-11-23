@@ -26,9 +26,9 @@ NDIS 6.30 以降では、Hyper-v 拡張可能スイッチポートで次の種�
 <a href="" id="standard-port-policies"></a>標準ポートポリシー  
 標準ポートポリシーでは、セキュリティ、プロファイル、または仮想 LAN (VLAN) のプロパティを指定します。 これらのプロパティは、拡張可能スイッチのプロトコルエッジによって発行されたオブジェクト識別子 (OID) 要求によってプロビジョニングされます。 拡張可能なスイッチのデータパスに転送拡張機能がインストールされていない場合、これらのポリシーは、基になる拡張可能スイッチのミニポートエッジによって適用されます。 そうしないと、ポリシーをプロビジョニングできる場合、転送拡張機能によってこれらのポリシーが適用されます。
 
-標準ポートのプロパティは、 [**NDIS\_スイッチ\_ポート\_プロパティ\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)列挙値**NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**、および**によって指定されます。NdisSwitchPortPropertyTypeProfile**。
+標準ポートのプロパティは、 [**NDIS\_スイッチ\_ポート\_プロパティ\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)列挙値**NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**、および**NdisSwitchPortPropertyTypeProfile**によって指定されます。
 
-**注**  転送拡張機能が VLAN ポートのプロパティを管理または適用しない場合は、 [OID\_スイッチ\_ポート\_プロパティ\_ADD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)およびを使用して\_データ\_\_状態を返す必要があります。OID\_、プロパティを追加または更新する[\_ポート\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)要求を切り替えます。 VLAN ポートのプロパティには、 **NdisSwitchPortPropertyTypeVlan**のプロパティの種類があります。
+**注**  転送拡張機能が VLAN ポートのプロパティを管理または適用しない場合は、 [oid\_スイッチ\_ポート\_プロパティ\_add](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)および[oid\_switch\_port](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)\_プロパティ\_プロパティを追加または更新する更新要求に対して\_\_\_データを返す必要があります。 VLAN ポートのプロパティには、 **NdisSwitchPortPropertyTypeVlan**のプロパティの種類があります。
 
  
 

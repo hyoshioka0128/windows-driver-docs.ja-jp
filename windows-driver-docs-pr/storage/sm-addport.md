@@ -3,7 +3,7 @@ title: SM\_AddPort 関数
 description: SM\_AddPort WMI メソッドは、指定されたポートに関連付けられているイベントを WMI クライアントに通知するように WMI プロバイダーを構成します。
 ms.assetid: 1667487e-80b1-47eb-9f3c-2f5e1909c73b
 keywords:
-- SM_AddPort function Storage デバイス
+- SM_AddPort 関数記憶装置
 topic_type:
 - apiref
 api_name:

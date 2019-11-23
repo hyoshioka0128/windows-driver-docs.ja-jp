@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_NIC_SAVE
-description: 'Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートとそのネットワークアダプター接続の実行時データを保存する操作中に、オブジェクト識別子 (OID: object identifier) メソッドの OID_SWITCH_NIC_SAVE 要求を発行します。'
+description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートとそのネットワークアダプター接続の実行時データを保存する操作中に、OID_SWITCH_NIC_SAVE のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: FE2F9767-7186-42FF-85C1-2A8203FEF629
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_NIC_SAVE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_NIC_SAVE
 ms.localizationpriority: medium
 ms.openlocfilehash: 124188f6bf80e4de7c10462789d4db71b583bfef
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -26,7 +26,7 @@ Oid の OID メソッド要求を受信すると\_スイッチ\_NIC\_保存す�
 
 -   拡張機能は、 [**NDIS\_スイッチ\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)内のデータを保存します。これにより、構造体の先頭から*SaveDataOffset*バイトを開始位置として\_状態構造が保存されます。
 
--   指定された*Savedatasize*が、必要な保存データを保持するのに十分な大きさではない場合、拡張機能によって、メソッド構造の*BYTESNEEDED*フィールドが NDIS\_SIZEOF\_NDIS\_スイッチ\_NIC\_保存\_状態に設定されます。リビジョン\_1 に加えて、保存データを保持するために必要なバッファーの量を加算し\_、NDIS\_ステータス\_バッファー\_短時間\_している OID を完了します。 OID は必要なサイズで再発行されます。
+-   指定された*Savedatasize*が、必要な保存データを保持するのに十分な大きさでない場合は、拡張機能によって、メソッド構造体の*BYTESNEEDED*フィールドが NDIS\_SIZEOF\_NDIS\_スイッチ\_NIC\_\_状態\_リビジョン\_1 に保存し、保存データを保持するために必要なバッファーの量を加算して、ndis\_STATUS\_\_\_ OID は必要なサイズで再発行されます。
 
 -   拡張機能は、 *Extensionid*および*extensionid*フィールドに独自の識別子と名前を設定し、NDIS\_STATUS\_SUCCESS による OID メソッド要求を完了します。 これにより、拡張可能なスイッチのプロトコルエッジで別の OID メソッド要求が発行され、拡張機能によってより多くの保存データが返されるか、他の拡張機能によって独自のデータが保存されます。
 
@@ -58,7 +58,7 @@ OID\_スイッチ\_\_NIC の OID メソッド要求は、最終的に、拡張�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_BUFFER_TOO_SHORT</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_NIC_SAVE_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)"><strong>NDIS_SWITCH_NIC_SAVE_STATE</strong></a>とそれに関連付けられたランタイムデータに対して、情報バッファーの長さが小さすぎます。拡張可能なスイッチ拡張機能では、データを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_NIC_SAVE_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)"><strong>NDIS_SWITCH_NIC_SAVE_STATE</strong></a>には、情報バッファーの長さが小さすぎるため、拡張可能なスイッチ拡張機能でデータを設定する必要があり<strong>ます。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_SUCCESS</p></td>

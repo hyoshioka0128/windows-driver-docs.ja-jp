@@ -11,7 +11,7 @@ keywords:
 - DefaultInstall セクション WDK ファイルシステム
 - SourceDisksNames セクション WDK ファイルシステム
 - DestinationDirs セクション WDK ファイルシステム
-- バージョンセクション WDK ファイルシステム
+- WDK のファイル システムのバージョン
 - INF ファイルの作成 (WDK ファイルシステム)
 ms.date: 10/16/2019
 ms.localizationpriority: medium
@@ -99,7 +99,7 @@ CatalogFile =
 
 [**Destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションでは、ファイルシステムドライバーファイルのコピー先のディレクトリを指定します。
 
-このセクションと**Serviceinstall**セクションでは、システム定義の数値を使用して、既知のシステムディレクトリを指定できます。 これらの値の一覧については、「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください。 次のコード例では、値 "12" は Drivers ディレクトリ (%windir%\system32\drivers) を参照します。
+このセクションで、 **ServiceInstall** セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧については、「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください。 次のコード例では、値 "12" は Drivers ディレクトリ (%windir%\system32\drivers) を参照します。
 
 ```cpp
 [DestinationDirs]
@@ -131,7 +131,7 @@ examplefilesystem.sys = 1
 
 ### <a name="defaultinstall-section-required"></a>DefaultInstall セクション (必須)
 
-[**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)セクションでは、 [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブによって、 [**destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションで指定された宛先にファイルシステムドライバーのドライバーファイルがコピーされます。
+[ **DefaultInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section) セクションで、 [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、先に、ファイル システム ドライバーのドライバー ファイルをコピーします。指定された、 [ **DestinationDirs** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクション。
 
 > [!NOTE]
 > [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、カタログファイルまたは INF ファイル自体を参照することはできません。これらのファイルは、Setupapi.log によって自動的にコピーされます。

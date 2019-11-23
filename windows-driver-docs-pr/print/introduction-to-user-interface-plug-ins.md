@@ -1,6 +1,6 @@
 ---
-title: ユーザーインターフェイスプラグインの概要
-description: ユーザーインターフェイスプラグインの概要
+title: ユーザー インターフェイス プラグインの概要
+description: ユーザー インターフェイス プラグインの概要
 ms.assetid: 7f01bd14-bcc5-4c26-a9b8-a12aa1ffe242
 keywords:
 - ユーザーインターフェイスプラグイン WDK print、ユーザーインターフェイスプラグインについて
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839637"
 ---
-# <a name="introduction-to-user-interface-plug-ins"></a>ユーザーインターフェイスプラグインの概要
+# <a name="introduction-to-user-interface-plug-ins"></a>ユーザー インターフェイス プラグインの概要
 
 
 

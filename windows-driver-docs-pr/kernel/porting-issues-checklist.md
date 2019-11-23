@@ -20,7 +20,7 @@ ms.locfileid: "72827662"
 
 
 
-### <a name="general"></a>[全般]
+### <a name="general"></a>全般的な情報
 
 -   新しい64ビットセーフな Windows データ型を使用します。
 

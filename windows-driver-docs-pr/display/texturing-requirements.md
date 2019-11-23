@@ -30,11 +30,11 @@ ms.locfileid: "72829330"
 
 2.  ハードウェアのテクスチャに縦横比の制限がある場合、その比率は D3DDEVICEDESC7 構造体の**dwMaxTextureAspectRatio**メンバーに存在する必要があります。
 
-3.  デバイスが2の累乗であるテクスチャ寸法のみをサポートしている場合は、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**Dwtexturecaps**メンバー\_を設定して、適切なプリミティブ型 (行または三角形)。
+3.  デバイスが2の累乗のテクスチャ寸法のみをサポートしている場合は、適切なプリミティブ型 (線または三角形) の D3DPTEXTURECAPS\_POW2 フラグを含むように、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**Dwtexturecaps**メンバーを設定する必要があります。
 
-4.  テクスチャステージのテクスチャアドレッシングモードが D3DTADDRESS\_クランプに設定されている場合、デバイスが任意のサイズの2次元 (2D) テクスチャをサポートできる場合は、テクスチャステージのテクスチャの折り返しが無効になります (D3DRENDERSTATE\_WRAP*n*を0に設定)、MIP マッピングが使用されていない場合は、D3DPTEXTURECAPS\_NONPOW2CONDITIONAL フラグを設定する必要があります。
+4.  デバイスが2次元 (2D) のテクスチャをサポートできる場合 (つまり、ボリュームまたはキューブテクスチャではありません。テクスチャステージのテクスチャアドレッシングモードが D3DTADDRESS\_クランプに設定されている場合、テクスチャステージのテクスチャの折り返しが無効になっている (D3DRENDERSTATE が0に*設定され*ている) 場合、MIP マッピングが使用\_されていない場合は、D3DPTEXTURECAPS\_NONPOW2CONDITIONAL フラグを設定する必要があります。
 
-5.  デバイスが、次元が等しいテクスチャのみをサポートしている場合は、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造\_体の**Dwtexturecaps**メンバーを設定して、適切なプリミティブ型 (行または三角形)。
+5.  デバイスが、次元が等しいテクスチャのみをサポートしている場合は、 [**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の**Dwtexturecaps**メンバーに、適切なプリミティブ型 (線または三角形) の D3DPTEXTURECAPS\_SQUAREONLY フラグが含まれるように設定する必要があります。
 
 1番目と2番目の要件に記載されているもの以外の制限なく、任意のサイズのテクスチャがサポートされる場合は、3番目、4番目、および5番目の要件で説明されているフラグを設定しないようにする必要があります。
 
@@ -54,9 +54,9 @@ ms.locfileid: "72829330"
 
 ### <a name="span-ididirect3ddevice7_validatedevicespanspan-ididirect3ddevice7_validatedevicespanidirect3ddevice7validatedevice"></a><span id="idirect3ddevice7_validatedevice"></span><span id="IDIRECT3DDEVICE7_VALIDATEDEVICE"></span>IDirect3DDevice7:: ValidateDevice
 
-デバイスが1回のパスでのテクスチャステージ状態のブレンド操作とオペランドの特定の組み合わせをサポートしている場合、デバイスは**IDirect3DDevice7:: ValidateDevice**メソッドの呼び出しから DD\_OK を返す必要があります (「Direct3D SDK」で説明しています)。ドキュメント) を参照してください。
+デバイスが1回のパスでのテクスチャステージ状態のブレンド操作とオペランドの特定の組み合わせをサポートしている場合、デバイスは、そのような組み合わせごとに**IDirect3DDevice7:: ValidateDevice**メソッド (Direct3D SDK ドキュメントで説明) の呼び出しから DD\_OK を返す必要があります。
 
-1つのパスでのテクスチャステージ状態のブレンド操作の特定の組み合わせがデバイスでサポートされていない場合、または1つ以上のブレンド操作またはオペランドがサポートされていない場合は、IDirect3DDevice7 で使用できるエラーコードの1つを返す必要があり**ます。: ValidateDevice**メソッド。 無効なブレンド操作では、 **IDirect3DDevice7:: ValidateDevice**メソッドをサイレントに失敗させることはできません。
+1つのパスでのテクスチャステージ状態のブレンド操作の特定の組み合わせがデバイスでサポートされていない場合、または1つ以上のブレンド操作またはオペランドがサポートされていない場合は、 **IDirect3DDevice7:: ValidateDevice**メソッドで使用できるエラーコードの1つを返す必要があります。 無効なブレンド操作では、 **IDirect3DDevice7:: ValidateDevice**メソッドをサイレントに失敗させることはできません。
 
  
 

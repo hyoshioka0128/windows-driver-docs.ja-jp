@@ -1,9 +1,9 @@
 ---
-title: usb3kd デバイス (_c)
-description: Usb3kd 拡張機能は、usb デバイスに関する情報を USB 3.0 ツリーに表示します。 表示は、UcxVersion. sys によって管理されるデータ構造に基づいています。
+title: ucx_device usb3kd
+description: Ucx_device usb3kd 拡張機能は、usb デバイスに関する情報を USB 3.0 ツリーに表示します。 表示は、UcxVersion. sys によって管理されるデータ構造に基づいています。
 ms.assetid: 7AC3DBBF-1D62-492E-B46E-C193579DE1E3
 keywords:
-- usb3kd Windows のデバッグ (_c)
+- usb3kd Windows デバッグの ucx_device
 ms.date: 05/23/2017
 topic_type:
 - apiref
