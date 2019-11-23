@@ -19,9 +19,9 @@ ms.locfileid: "72323729"
 
 パッケージは、次のハードウェア ID を持つサービス用です。
 
-MBAE:0:L9@E}} DT2。 \*F65MQA57Y + L
+MBAE:0:L9@E}} DT2。\*F65MQA57Y + L
 
-**注**: packageinfo .xml に含まれる1つのハードウェア id には、"doid:" プレフィックスが追加されている必要があります。 @no__t
+**注**packageinfo .xml に含まれているハードウェア id には、"doid:" プレフィックスが追加されている必要があり  。
 
  
 

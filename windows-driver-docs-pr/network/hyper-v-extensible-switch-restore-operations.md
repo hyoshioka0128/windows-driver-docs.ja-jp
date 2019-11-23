@@ -16,7 +16,7 @@ ms.locfileid: "72823837"
 
 Hyper-v の子パーティションが停止またはライブマイグレーションされた後に再起動されると、パーティションの実行時の状態が復元されます。 復元操作中、Hyper-v 拡張可能スイッチ拡張機能ドライバーは、拡張可能なスイッチネットワークアダプター (NIC) に関する実行時データを復元できます。
 
-Hyper-v の子パーティションに対して復元操作を実行すると、拡張可能なスイッチインターフェイスは、拡張可能スイッチのプロトコルエッジに対して、 [oid\_スイッチ\_NIC\_の復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)に関する oid セット要求を発行するように通知します。 OID\_\_スイッチの[ **\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、nic\_\_の\_スイッチへのポインターが含まれています。 [**t_13_ STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造体。
+Hyper-v の子パーティションに対して復元操作を実行すると、拡張可能なスイッチインターフェイスは、拡張可能スイッチのプロトコルエッジに対して、 [oid\_スイッチ\_NIC\_の復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)に関する oid セット要求を発行するように通知します。 OID\_SWITCH\_NIC\_復元要求の**Informationbuffer**メンバーは、\_状態構造を保存するための[**ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)へのポインターを含んでいます。 [ **\_\_oid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)スイッチに対して、nic\_の構成を\_します。
 
 この OID 要求を処理すると、拡張機能によって、ネットワークアダプターのランタイムデータが復元されます。 このランタイムデータは、以前 oid の oid 要求を使用して保存されています[\_スイッチ\_nic\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)と OID\_スイッチ\_NIC\_保存\_完了します。
 
@@ -41,7 +41,7 @@ Hyper-v の子パーティションに対して復元操作を実行すると、
 
 この OID 要求の詳細については、「 [oid\_SWITCH\_NIC\_復元\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)」を参照してください。
 
-実行時データの復元操作中に、拡張可能スイッチのプロトコルエッジによって oid の oid 要求が[\_切り替わり\_nic\_復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)および[OID\_スイッチ\_nic\_復元\_完了します。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)hyper-v 子パーティションのネットワークインターフェイスが接続されています。 複数の Hyper-v 子パーティションが復元されると、プロトコルエッジによって個別の OID セットが発行され\_スイッチ\_NIC\_復元と OID\_切り替わり\_NIC\_各ネットワークインターフェイスの完全な要求\_復元します。接続.
+実行時データの復元操作では、拡張可能スイッチのプロトコルエッジによって oid の oid 要求が[\_切り替わり\_nic\_復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)および[oid\_スイッチ\_nic\_復元](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)\_hyper-v 子パーティションのネットワークインターフェイスの接続が完了します。 複数の Hyper-v 子パーティションが復元されると、プロトコルエッジによって個別の OID セットが発行されます。\_スイッチ\_NIC\_復元と OID\_切り替え\_NIC\_、各ネットワークインターフェイス接続に対する要求の完了を\_します。
 
 拡張可能スイッチのプロトコルエッジでは、同じ NIC の実行時データの復元操作がインターリーブされない  に**注意**してください。 プロトコルエッジは、同じ NIC で前回の復元操作が完了した後にのみ、NIC に対して実行時のデータ復元操作を開始します。 ただし、別の NIC で別の復元操作が実行されている間に、プロトコルエッジが NIC の復元操作を開始する場合があります。 このため、拡張機能では非インターリーブ方式で復元操作を実行することを強くお勧めします。 たとえば、拡張機能では、別の nic に対して進行中の復元操作が完了する前に、別の NIC で新しい復元操作を開始できないと想定しないでください。
 

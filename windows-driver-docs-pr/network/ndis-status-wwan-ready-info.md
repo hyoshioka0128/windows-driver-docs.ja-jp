@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_READY_INFO
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_READY_INFO 通知を使用して、OID_WWAN_READY_INFO \ 160; クエリ要求に応じて、デバイスの準備完了状態の変更を MB サービスに通知します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_READY_INFO 通知を使用して、OID_WWAN_READY_INFO \ 160; クエリ要求に応答してデバイスの準備完了状態の変更を MB サービスに通知します。
 ms.assetid: 92ddf95f-8829-4259-b53a-c7ce56ee53f0
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_READY_INFO ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_READY_INFO
 ms.localizationpriority: medium
 ms.openlocfilehash: a8ac58f7e0c8680c9ec0a9fe6c34b30a15c503b8
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -24,7 +24,7 @@ ms.locfileid: "72844651"
 <a name="remarks"></a>注釈
 -------
 
-ミニポートドライバーは、デバイスの準備が完了しているすべての変更を一方的なイベントとして報告する必要があります。 ミニポートドライバーが MB デバイスを初期化すると、ミニポートドライバーは、WWAN\_READY\_INFO **ReadyState**メンバーを**WwanReadyStateOff**に設定する必要があります。 その後、ミニポートドライバーは、この通知を使用して、デバイスの準備完了状態の変更を MB サービスに報告する必要があります。 たとえば、ミニポートドライバーは、 **ReadyState**メンバーが**WwanReadyStateOff**から**WwanReadyStateDeviceLocked**または**WwanReadyStateBadSim** **に変更された場合に、デバイスの準備完了状態の変更を報告する必要があります。WwanReadyStateSimNotInserted**、またはその他のさまざまなデバイスの準備完了状態。
+ミニポートドライバーは、デバイスの準備が完了しているすべての変更を一方的なイベントとして報告する必要があります。 ミニポートドライバーが MB デバイスを初期化すると、ミニポートドライバーは、WWAN\_READY\_INFO **ReadyState**メンバーを**WwanReadyStateOff**に設定する必要があります。 その後、ミニポートドライバーは、この通知を使用して、デバイスの準備完了状態の変更を MB サービスに報告する必要があります。 たとえば、ミニポートドライバーは、 **ReadyState**メンバーが**WwanReadyStateOff**から**WwanReadyStateDeviceLocked**、 **WwanReadyStateBadSim**、または**WwanReadyStateSimNotInserted**に変更された場合、またはその他のデバイスの準備完了状態になった場合に、デバイスの準備完了状態の変更を報告する必要があります。
 
 デバイスの準備が完了しているほとんどの変更は、デバイスがラジオスタックと SIM カードを初期化したときに発生します (必要な場合)。 また、MB サービスとミニポートドライバー (ユーザーが SIM カードを変更するなど) の間のセッション中にも、変更が発生する可能性があります。 MB サービスの動作は、新しいデバイスの準備完了状態に応じて変更されます。
 

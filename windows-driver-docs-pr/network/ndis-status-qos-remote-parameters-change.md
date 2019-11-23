@@ -1,10 +1,10 @@
 ---
 title: NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE
-description: NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、リモート NDIS QoS パラメーターがピアから受信されたとき、または後で変更されたときに、NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 状態を示します。
+description: NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、リモート NDIS QoS パラメーターがピアから最初に受信されたとき、または後で変更されたときに、NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 状態を示します。
 ms.assetid: 3DA5F4FA-193F-4716-8678-7B6FB833E68E
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE
 ms.localizationpriority: medium
 ms.openlocfilehash: 80746117e4c132f9af3598438a4c273f11dbbf48
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -16,7 +16,7 @@ ms.locfileid: "72843527"
 # <a name="ndis_status_qos_remote_parameters_change"></a>NDIS\_ステータス\_QOS\_リモート\_パラメーター\_変更
 
 
-NDIS Quality of Service (QoS) をサポートするミニポートドライバーでは、 **ndis\_の状態\_qos\_リモート\_\_パラメーター**に関する問題が発生し、そのリモート NDIS QoS パラメーターがピアから受信されたときに状態が示されます。初めての場合、または後で変更する場合。 ミニポートドライバーは、IEEE 802.1 Qaz Data Center ブリッジング Exchange (DCBX) プロトコルを使用して、リモートピアからこれらの QoS パラメーターを受信します。
+NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、 **ndis\_ステータス\_qos\_リモート\_\_パラメーター**を使用して、リモート NDIS QoS パラメーターがピアから最初に受信されたとき、または後で変更されたときに、ステータス表示を変更します。 ミニポートドライバーは、IEEE 802.1 Qaz Data Center ブリッジング Exchange (DCBX) プロトコルを使用して、リモートピアからこれらの QoS パラメーターを受信します。
 
 ミニポートドライバーによってこの状態が示されると、 [**ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーが、 [**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体へのポインターに設定されます。 ドライバーは、リモート NDIS QoS パラメーターを使用して、この構造体を初期化します。
 
@@ -43,7 +43,7 @@ NDIS Quality of Service (QoS) をサポートするミニポートドライバ�
 
 -   この初期状態を示すと、ミニポートドライバーは、リモートピアの QoS 設定の変更を判断したときに、 **\_qos\_リモート\_\_パラメーターの NDIS\_状態**のみを発行する必要があります。
 
-    **注**  ミニポートドライバーでは、 **NDIS\_の状態\_QOS\_リモート\_のパラメーター**を発行しないでください。リモート NDIS QOS のパラメーターに変更がない場合は、状態の表示を変更します。 ドライバーがこの種類の状態を示している場合、NDIS は、このような指示を後続のドライバーに渡すことはできません。
+    **注**  ミニポートドライバーでは、 **NDIS\_の状態\_QOS\_リモート\_のパラメーター**を発行しないでください。リモート NDIS QOS のパラメーターに変更がない場合は、状態の表示を変更します。\_ ドライバーがこの種類の状態を示している場合、NDIS は、このような指示を後続のドライバーに渡すことはできません。
 
      
 

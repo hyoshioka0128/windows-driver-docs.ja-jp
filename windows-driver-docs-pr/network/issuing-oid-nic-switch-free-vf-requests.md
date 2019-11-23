@@ -30,7 +30,7 @@ ms.locfileid: "72844151"
 
 あるドライバーが VF のリソース割り当てを要求した後、そのドライバーは、同じ VF のリソースの解放を要求できる唯一のコンポーネントです。 この後のドライバーは、oid\_NIC の OID セット要求を発行する必要があります。これは、 [\_空き\_vf の\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)によって、vf リソースが解放されます。 前のドライバーを停止する前に、ドライバーの[OID\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)によって割り当てられた各 vf のリソースを解放して\_VF 要求の割り当て\_する必要があります。
 
-**注**  、その後のドライバーが OID の oid メソッド要求を発行すると[\_NIC\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)によって、vf のリソースを割り当てるために\_vf が割り当てられます。そのドライバーは、の解放を要求できる唯一のコンポーネントです。同じ VF のリソース。 この後のドライバーは、oid\_NIC の OID セット要求を発行する必要があります。これは、 [\_空き\_vf の\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)によって、vf リソースが解放されます。 前のドライバーを停止する前に、ドライバーの OID\_NIC\_スイッチによって割り当てられた各 VF のリソースを解放して\_VF 要求の割り当て\_する必要があります。
+**注**   OID [\_NIC\_\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)の oid メソッド要求を発行すると、vf のリソースを割り当てるために、そのドライバーは、同じ vf のリソースの解放を要求できる唯一のコンポーネントとなります。 この後のドライバーは、oid\_NIC の OID セット要求を発行する必要があります。これは、 [\_空き\_vf の\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)によって、vf リソースが解放されます。 前のドライバーを停止する前に、ドライバーの OID\_NIC\_スイッチによって割り当てられた各 VF のリソースを解放して\_VF 要求の割り当て\_する必要があります。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS 制御コード
-description: SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS socket i/o control 操作を使用すると、Winsock クライアントは、リダイレクトされた接続のリダイレクトレコードを取得できます。
+description: SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS ソケット i/o 制御操作により、Winsock クライアントは、リダイレクトされた接続のリダイレクトレコードを取得できます。
 ms.assetid: D04C63B8-DD08-4943-9F83-B5D05F4F2CCF
 ms.date: 08/08/2017
-keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS Windows Vista 以降のコードネットワークドライバーの制御
+keywords: -Windows Vista 以降でコードネットワークドライバーを SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS 制御する
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b7dcd6d5a977c535623eb3881ab62c10987d277
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -19,7 +19,7 @@ ms.locfileid: "72841904"
 
 WFP リダイレクトレコードは、リダイレクトされた接続と元の接続が論理的に関連するように、WFP が送信プロキシ接続に対して設定する必要がある不透明なデータのバッファーです。
 
-**注**  **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**クエリは、接続が fwps\_レイヤーでリダイレクトされた場合にのみ使用でき\_**ALE\_接続\_リダイレクト\_V4**または**fwps\_レイヤー\_ALE\_接続\_** 、WFP クライアントによって\_V6 レイヤーをリダイレクトします。
+**注**  **SIO\_クエリ\_wfp\_接続\_リダイレクト\_レコード**クエリは、接続が**fwps\_レイヤー**でリダイレクトされた場合にのみ使用できます。\_Ale\_接続\_\_V4 または**FWPS\_レイヤー\_ale\_接続\_** 、wfp クライアントが\_V6 レイヤーをリダイレクトします。
 
  
 
@@ -48,7 +48,7 @@ WFP リダイレクトレコードは、リダイレクトされた接続と元�
 <td><p><strong>SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>平準</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -82,8 +82,8 @@ WFP リダイレクトレコードは、リダイレクトされた接続と元�
 
 呼び出し元は、次のいずれかの方法でこのクエリを実行できます。
 
--   出力*バッファー*は、サイズが約 1 KB の大きなバッファーに設定できます。 出力バッファーのサイズが十分でない場合は、 [**Wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)は**状態\_バッファー\_** を返します。\_小さ、 *outputsizereturned*にはバッファーに必要なサイズが含まれます。 その後、より大きなバッファーを割り当てることができます。また、 **SIO\_クエリ\_WFP\_\_接続** **を使用し**て、もう一度呼び出されます。これにより、\_RECORDS 要求と*outputbuffer*が大きなバッファーに設定されます。
--   または、 *Outputsize*パラメーターを0に設定し、 *OUTPUTSIZE*を NULL に設定して、 [**wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)を呼び出すこともできます。 完了時に、 **Wskcontrolsocket**関数は*Outputsizereturned*パラメーターの出力バッファーサイズ (バイト単位) を取得します。 適切にサイズ設定されたバッファーを割り当てることができます。また、 **SIO\_クエリ\_WFP\_\_接続** **を使用し**て再び呼び出される場合は、\_レコードの要求と*outputbuffer*がバッファーに設定されます.
+-   出力*バッファー*は、サイズが約 1 KB の大きなバッファーに設定できます。 出力バッファー サイズが十分でない場合[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)が返されます、**状態\_バッファー\_すぎます\_小さな** *OutputSizeReturned*必要なバッファーのサイズが含まれます。 その後、より大きなバッファーを割り当てることができます。また、 **SIO\_クエリ\_WFP\_\_接続** **を使用し**て、もう一度呼び出されます。これにより、\_RECORDS 要求と*outputbuffer*が大きなバッファーに設定されます。
+-   または、 *Outputsize*パラメーターを0に設定し、 *OUTPUTSIZE*を NULL に設定して、 [**wskcontrolsocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)を呼び出すこともできます。 完了時に、 **Wskcontrolsocket**関数は*Outputsizereturned*パラメーターの出力バッファーサイズ (バイト単位) を取得します。 適切にサイズ設定されたバッファーを割り当てることができます。また、 **SIO\_クエリ\_WFP\_\_接続** **を使用し**て再び呼び出される場合は、\_レコードの要求と*outputbuffer*がバッファーに設定されます。
 
 **注**  [ **\_クエリ\_WFP\_接続\_リダイレクト\_レコード (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))を使用して、ユーザーモードアプリケーションでこのクエリを実行することもできます。
 
@@ -93,7 +93,7 @@ WFP リダイレクトレコードは、リダイレクトされた接続と元�
 
 WSK サブシステムが IRP を完了するまで、Winsock クライアントは割り当てられたバッファーを解放しないようにする必要があります。 WSK サブシステムが IRP を完了すると、完了ルーチンを呼び出すことによってクライアントに通知します。 そのバッファーへの参照は、完了ルーチンの*コンテキスト*パラメーターで wsk サブシステムによってクライアントに渡されます。 バッファーのサイズは、 *Irp&gt;IoStatus. 情報*に格納されます。
 
-クライアントは、 *irp&gt;IoStatus. status*をチェックすることによって、irp の状態を取得できます。 *Irp&gt;iostatus。* 要求が成功した場合、状態は **成功\_正常**に設定されます。 それ以外の場合は、**状態\_整数\_オーバーフロー**、**状態\_\_見つかりません**、**ステータス\_バッファー\_小さすぎる**、または**状態**\_バッファー\_\_小さ、呼び出しは成功しません。
+クライアントは、 *irp&gt;IoStatus. status*をチェックすることによって、irp の状態を取得できます。 *Irp&gt;iostatus。* 要求が成功した場合、状態は **成功\_正常**に設定されます。 それ以外の場合は、**状態\_整数\_オーバーフロー**、**状態\_\_見つかりません**、**ステータス\_バッファー\_小さすぎる**、または状態\_バッファー\_が小さすぎます。または、呼び出しが成功しなかった場合は、**状態\_アクセス拒否**されます。
 
 <a name="requirements"></a>要件
 ------------

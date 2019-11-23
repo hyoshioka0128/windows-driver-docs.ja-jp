@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0x1E KMODE_EXCEPTION_NOT_HANDLED
-description: KMODE_EXCEPTION_NOT_HANDLED のバグチェックの値は、0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
+description: KMODE_EXCEPTION_NOT_HANDLED バグチェックの値は0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
 ms.assetid: 4a30b770-b2c4-4fdd-b431-95f2b40ef5f7
 keywords:
 - バグチェック 0x1E KMODE_EXCEPTION_NOT_HANDLED
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359587"
 ---
-# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグチェック 0x1E: KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED
+# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>バグチェック 0x1E: KMODE\_例外\_\_処理されません
 
 
-KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値は0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
+KMODE\_EXCEPTION\_、処理されたバグチェック\_は値0x0000001E です。 これは、カーネルモードプログラムが、エラーハンドラーがキャッチしなかった例外を生成したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="kmode_exception_not_handled-parameters"></a>KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED パラメーター
+## <a name="kmode_exception_not_handled-parameters"></a>KMODE\_例外\_処理されたパラメーター\_ません
 
 
 <table>
@@ -57,7 +57,7 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 <td align="left"><p>例外のパラメーター0。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>例外のパラメーター1。</p></td>
 </tr>
 </tbody>
@@ -71,15 +71,15 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 
 一般的な例外コードは次のとおりです。
 
--   0x80000002: STATUS @ no__t-0DATATYPE @ no__t-1MISALIGNMENT
+-   0x80000002: STATUS\_DATATYPE\_ミスアライメント
 
     整列されていないデータ参照が見つかりました。
 
--   0x80000003: STATUS @ no__t-0BREAKPOINT ポイント
+-   0x80000003: 状態\_ブレークポイント
 
     カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
--   0xC0000005: STATUS @ no__t-0ACCESS @ no__t-1VIOLATION
+-   0xC0000005: 状態\_アクセス\_違反
 
     メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
@@ -105,7 +105,7 @@ KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED バグチェックの値�
 
 このメッセージを生成するエラーは、Windows セットアップ中に最初に再起動した後、またはセットアップが完了した後に発生する可能性があります。 このエラーの原因として、システム BIOS との互換性がないことが考えられます。 BIOS の問題は、システムの BIOS のバージョンをアップグレードすることで解決できます。
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 この問題のデバッグを計画している場合は、スタックトレースを取得するのが困難な場合があります。 例外アドレス (パラメーター 2) は、この問題の原因となったドライバーまたは機能を特定する必要があります。

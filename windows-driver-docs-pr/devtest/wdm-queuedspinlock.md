@@ -22,7 +22,7 @@ ms.locfileid: "72839883"
 # <a name="queuedspinlock-rule-wdm"></a>QueuedSpinLock ルール (wdm)
 
 
-**QueuedSpinLock**規則は、ドライバーが[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)を呼び出す前に[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))を呼び出し、ドライバーが**KeReleaseInStackQueuedSpinLock**を呼び出す前に、後続の**KeAcquireInStackQueuedSpinLock**の呼び出し。
+**QueuedSpinLock**規則は、ドライバーが[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)を呼び出す前に[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))を呼び出し、その後の**KeAcquireInStackQueuedSpinLock**呼び出しの前に**KeReleaseInStackQueuedSpinLock**を呼び出すことを指定します。
 
 入れ子になった呼び出しは、異なるリソースを取得して解放する場合に許可されます。 同じリソースを取得または解放するための入れ子になった呼び出しは、この規則に違反します。
 

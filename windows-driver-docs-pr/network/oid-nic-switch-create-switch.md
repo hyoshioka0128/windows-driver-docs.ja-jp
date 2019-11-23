@@ -1,9 +1,9 @@
 ---
 title: OID_NIC_SWITCH_CREATE_SWITCH
-description: NDIS は、ネットワークアダプターに NIC スイッチを作成するために、OID_NIC_SWITCH_CREATE_SWITCH のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: NDIS は、ネットワークアダプターに NIC スイッチを作成するために OID_NIC_SWITCH_CREATE_SWITCH のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: 16FFC6A4-11A6-45A1-ABCF-8C1EBE3FD953
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_CREATE_SWITCH ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_CREATE_SWITCH
 ms.localizationpriority: medium
 ms.openlocfilehash: 185eb66205c98cef3e6df73e078db59395d8c8bb
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -40,7 +40,7 @@ OID\_\_スイッチの oid メソッド要求を受信すると\_スイッチ\_�
 
 3.  PF ミニポートドライバーは、NIC スイッチの既定の VPort に必要なハードウェアおよびソフトウェアリソースを割り当てる必要があります。
 
-    既定の VPort は、oid 要求 oid\_NIC\_スイッチを使用して作成され**た  、** oid\_の oid 要求を使用して\_\_の\_\_[削除\_削除スイッチ](oid-nic-switch-delete-switch.md)。 Oid\_の OID 要求、 [nic\_スイッチ\_\_vport](oid-nic-switch-create-vport.md)と[oid\_nic\_\_の削除\_vport](oid-nic-switch-delete-vport.md)を使用して、nic スイッチで既定以外の vport を作成および削除します。
+    既定の VPort は常に oid 要求 oid\_NIC の要求を使用して作成され**ます  \_** スイッチ\_作成\_、oid\_の oid 要求を使用して\_スイッチ\_削除\_スイッチ[削除](oid-nic-switch-delete-switch.md)します。 Oid\_の OID 要求、 [nic\_スイッチ\_\_vport](oid-nic-switch-create-vport.md)と[oid\_nic\_\_の削除\_vport](oid-nic-switch-delete-vport.md)を使用して、nic スイッチで既定以外の vport を作成および削除します。
 
      
 
@@ -90,7 +90,7 @@ PF ミニポートドライバーは、oid\_NIC\_スイッチの OID メソッ�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)"><strong>NDIS_NIC_SWITCH_PARAMETERS</strong></a>) 未満です。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)"><strong>NDIS_NIC_SWITCH_PARAMETERS</strong></a>) 未満です。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

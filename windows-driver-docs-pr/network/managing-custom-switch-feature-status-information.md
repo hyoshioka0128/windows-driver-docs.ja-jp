@@ -29,7 +29,7 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のオブジェ
 
 -   拡張可能なスイッチポートに割り当てられているカスタムプロパティに関するステータス情報を格納する、 [ **\_の機能\_\_状態の NDIS\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)。
 
-    拡張可能スイッチのプロトコルエッジが[OID\_スイッチ\_機能\_状態\_クエリ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-feature-status-query)要求を発行すると、 **Featurestatuscustombufferlength**と**featurestatuscustombufferlength**が設定されます。機能の状態情報を返すために拡張機能が使用できる**Informationbuffer**メンバー内の場所へのメンバー。
+    拡張可能スイッチのプロトコルエッジが[\_機能\_状態\_クエリ要求の OID\_切り替える](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-feature-status-query)と、 **Featurestatuscustombufferlength**メンバーと**featurestatuscustombufferlength**メンバーが、機能の状態情報を返すために使用できる**informationbuffer**メンバー内の場所に設定されます。
 
 拡張可能なスイッチ拡張機能で oid メソッドの要求を受け取ったときに、次のガイドラインに従う必要があります[\_スイッチ\_機能\_状態\_クエリ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-feature-status-query):
 

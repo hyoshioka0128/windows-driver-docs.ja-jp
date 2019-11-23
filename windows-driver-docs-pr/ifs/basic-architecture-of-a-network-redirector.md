@@ -1,6 +1,6 @@
 ---
-title: ネットワークリダイレクターの基本アーキテクチャ
-description: ネットワークリダイレクターの基本アーキテクチャ
+title: ネットワーク リダイレクターの基本的なアーキテクチャ
+description: ネットワーク リダイレクターの基本的なアーキテクチャ
 ms.assetid: 60a7c79d-b89f-4c8b-9619-bd48c9e1efac
 keywords:
 - ネットワークリダイレクター WDK、アーキテクチャ
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841491"
 ---
-# <a name="basic-architecture-of-a-network-redirector"></a>ネットワークリダイレクターの基本アーキテクチャ
+# <a name="basic-architecture-of-a-network-redirector"></a>ネットワーク リダイレクターの基本的なアーキテクチャ
 
 
 ## <span id="ddk_basic_architecture_of_a_network_redirector_if"></span><span id="DDK_BASIC_ARCHITECTURE_OF_A_NETWORK_REDIRECTOR_IF"></span>

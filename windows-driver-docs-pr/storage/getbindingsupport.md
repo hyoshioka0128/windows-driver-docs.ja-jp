@@ -58,7 +58,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-この**Getbindingsupport**メソッドは、現在有効になっているバインディング機能を返します。一方、 [**getbindingsupport**](getbindingcapability.md)メソッドは、特定のバインドが有効になっているかどうかを参照せずに、ポートのバインディング機能を示します。じゃない。
+この**Getbindingsupport**メソッドは、現在有効になっているバインディング機能を返します。一方、 [**getbindingsupport**](getbindingcapability.md)メソッドは、特定のバインディングが有効かどうかを参照せずに、ポートのバインディング機能を示します。
 
 この WMI メソッドは、 [Msfc\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)に属しています。
 

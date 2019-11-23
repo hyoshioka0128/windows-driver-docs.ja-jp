@@ -3,7 +3,7 @@ title: FSCTL_GET_RETRIEVAL_POINTERS 制御コード
 description: FSCTL\_GET\_取得\_ポインター制御コードは、特定のファイルのディスク上の割り当てと場所を記述する可変サイズのデータ構造を取得します。
 ms.assetid: d77790c8-9fe6-4b36-995e-40a7ea54c18a
 keywords:
-- FSCTL_GET_RETRIEVAL_POINTERS 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_GET_RETRIEVAL_POINTERS コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -30,7 +30,7 @@ ms.locfileid: "72841303"
 
 再解析ポイントおよび FSCTL\_GET\_取得\_ポインターコントロールコードの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*ファ*  
 [**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)のみ。 FSCTL\_GET\_取得\_ポインターがマッピングを取得する代替ストリーム、ファイル、またはディレクトリのファイルオブジェクトポインター。 このパラメーターは必須であり、 **NULL**にすることはできません。
@@ -94,7 +94,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
 *Outputbuffer*パラメーターが指すバッファーのサイズ (バイト単位)。
 
-<a name="status-block"></a>状態ブロック
+<a name="status-block"></a>ステータス ブロック
 ------------
 
 [**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)と[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)はどちらも STATUS\_SUCCESS または適切な NTSTATUS エラー値を返します。
@@ -103,12 +103,12 @@ VCN/extents マップが*Outputbuffer*に収まらない場合、どちらのル
 
 **StartingVcn**で指定された値がファイルの末尾を越えている場合は、\_ファイルの\_end\_が返されます。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 FastFAT と exFAT デバイスでは、 **FSCTL\_GET\_取得\_ポインター**制御コードを使用できます。 この機能は、フラッシュドライブなどのデバイスでの BitLocker の使用をサポートしています。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -118,7 +118,7 @@ FastFAT と exFAT デバイスでは、 **FSCTL\_GET\_取得\_ポインター**�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ヘッダー</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs (Ntifs を含む)</td>
 </tr>
 </tbody>

@@ -111,104 +111,104 @@ Windows 10 用の GNSS ドライバーを開発する際に考慮すべき要件
 <th>機能</th>
 <th>すべてのプラットフォームの要件</th>
 <th>電話に関する特定の要件</th>
-<th>注意</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>GNSS_DEVICE_CAPABILITIES を正確に報告する</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td><p>最小限の機能要件。</p></td>
 </tr>
 <tr class="even">
 <td><p>多重セッションのサポート</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td><p>GNSS アダプターではサポートされていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>多重 Appsessions のサポート</p></td>
-<td><p>おすすめ</p></td>
+<td><p>推奨</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>GNSS アシスタンスサポート (IHV 固有)</p></td>
-<td><p>おすすめ</p></td>
-<td><p>Mandatory</p></td>
+<td><p>推奨</p></td>
+<td><p>必須</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Microsoft による GNSS support サポートの取得 (Agss_inject Ioctl の使用)</p></td>
-<td><p>おすすめ</p></td>
+<td><p>推奨</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>完全な GNSS_FixData 構造のサポート</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>ワンショットセッション</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>時間ベースの追跡セッションのネイティブサポート</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td><p>サポートされている場合は、セッションパラメーターを変更するためのサポートを含める必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>距離ベースの追跡セッションのネイティブサポート</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td><p>サポートされている場合は、セッションパラメーターを変更するためのサポートを含める必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>最後の正常な既知のセッション</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>ジオフェンシングネイティブサポート</p></td>
-<td><p>オプション</p></td>
-<td><p>おすすめ</p></td>
+<td><p>省略可能</p></td>
+<td><p>推奨</p></td>
 <td><p>ジオフェンスのみが必要で、サポートされています。</p></td>
 </tr>
 <tr class="even">
 <td><p>ChipsetInfo の提供</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td><p>GNSS_ChipsetInfo を使用します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>エラーの報告</p></td>
-<td><p>おすすめ</p></td>
+<td><p>推奨</p></td>
 <td></td>
-<td><p>GNSS_ErrorInfo を使用する</p></td>
+<td><p>GNSS_ErrorInfo の使用</p></td>
 </tr>
 <tr class="even">
 <td><p>NMEA 経由のレポート</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>製造テストのサポート (キャリア波または自己テスト)</p></td>
-<td><p>オプション</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>MBB との統合によるコントロールプレーンの位置</p></td>
 <td><p>モバイルオペレーターが必要とする場合にのみ必須</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td><p>通常、音声サポートを備えたデバイスでは、モバイルオペレーターが必要とします。 ほとんどの場合、電話に必要です。</p></td>
 </tr>
 <tr class="odd">
@@ -221,7 +221,7 @@ Windows 10 用の GNSS ドライバーを開発する際に考慮すべき要件
 <tr class="even">
 <td><p>SUPL 2.x</p></td>
 <td><p>モバイルオペレーターが必要とする場合にのみ必須</p></td>
-<td><p>Mandatory</p></td>
+<td><p>必須</p></td>
 <td><p>通常、音声サポートを備えたデバイスでは、モバイルオペレーターが必要とします。 ほとんどの場合、電話に必要です。</p>
 <p>完全なクライアントミーティングのモバイルオペレーター要件の実装、ddi を介した構成、ddi を介した OS への NI イベントの報告、MBB との統合などが含まれます。</p></td>
 </tr>
@@ -233,74 +233,74 @@ Windows 10 用の GNSS ドライバーを開発する際に考慮すべき要件
 <p>含まれる内容: 完全なクライアントミーティングのモバイルオペレーター要件、DDI による構成、DDI による OS への NI イベントの報告、MBB との統合。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_SetLocationServiceEnabled driver コマンド</p></td>
-<td><p>Mandatory</p></td>
+<td><p>GNSS_SetLocationServiceEnabled ドライバーコマンド</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_SetLocationNIRequestAllowed driver コマンド</p></td>
+<td><p>GNSS_SetLocationNIRequestAllowed ドライバーコマンド</p></td>
 <td><p>SUPL がサポートされていて、携帯電話会社で必要な場合にのみ必須</p></td>
 <td></td>
 <td><p>これは、既知の携帯電話では不要です。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_ForceSatelliteSystem driver コマンド</p></td>
-<td><p>おすすめ</p></td>
+<td><p>GNSS_ForceSatelliteSystem ドライバーコマンド</p></td>
+<td><p>推奨</p></td>
 <td></td>
 <td><p>テスト目的に適しています。 一部のモバイルオペレーターまたは Oem は、これをテストに必要とする場合があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_ForceOperationMode driver コマンド</p></td>
+<td><p>GNSS_ForceOperationMode ドライバーコマンド</p></td>
 <td><p>SUPL がサポートされている場合にのみ必須</p></td>
 <td></td>
 <td><p>一部のモバイルオペレーターは、テストのために必要になる場合があります。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_ResetEngine driver コマンド</p></td>
-<td><p>Mandatory</p></td>
+<td><p>GNSS_ResetEngine ドライバーコマンド</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td><p>テスト目的で使用します。</p></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_ClearAgnssData driver コマンド</p></td>
-<td><p>Mandatory</p></td>
+<td><p>GNSS_ClearAgnssData ドライバーコマンド</p></td>
+<td><p>必須</p></td>
 <td></td>
 <td><p>テスト目的で使用します。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_SetNMEALogging driver コマンド</p></td>
-<td><p>オプション</p></td>
+<td><p>GNSS_SetNMEALogging ドライバーコマンド</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td><p>テスト目的で、モバイルオペレーターまたは Oem が必要とする場合にのみ、この操作が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_SetSuplVersion driver コマンド</p></td>
+<td><p>GNSS_SetSuplVersion ドライバーコマンド</p></td>
 <td><p>SUPL がサポートされている場合にのみ必須</p></td>
 <td></td>
 <td><p>SUPL の場合は必須です。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_SetUplServerAccessInterval driver コマンド</p></td>
+<td><p>GNSS_SetUplServerAccessInterval ドライバーコマンド</p></td>
 <td><p>SUPL がサポートされていて、携帯電話会社で必要な場合にのみ必須</p></td>
 <td></td>
 <td><p>携帯電話会社によって要求された場合のみ。</p></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_SetNiTimeoutInterval driver コマンド</p></td>
+<td><p>GNSS_SetNiTimeoutInterval ドライバーコマンド</p></td>
 <td><p>SUPL がサポートされていて、携帯電話会社で必要な場合にのみ必須</p></td>
 <td></td>
 <td><p>携帯電話会社によって要求された場合のみ。</p></td>
 </tr>
 <tr class="even">
-<td><p>GNSS_ResetGeofencesTracking driver コマンド</p></td>
+<td><p>GNSS_ResetGeofencesTracking ドライバーコマンド</p></td>
 <td><p>ジオフェンシングがサポートされている場合にのみ必須</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>GNSS_CustomCommand driver コマンド</p></td>
-<td><p>オプション</p></td>
+<td><p>GNSS_CustomCommand ドライバーコマンド</p></td>
+<td><p>省略可能</p></td>
 <td></td>
 <td></td>
 </tr>

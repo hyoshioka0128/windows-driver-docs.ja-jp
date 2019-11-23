@@ -3,7 +3,7 @@ title: SM\_ScsiReportLuns 関数
 description: SM\_ScsiReportLuns WMI メソッドは、指定されたデバイスに SCSI レポート Lun コマンドを送信します。
 ms.assetid: 846efe8a-dc36-4601-882d-aeb9c53d09dc
 keywords:
-- SM_ScsiReportLuns function Storage デバイス
+- SM_ScsiReportLuns 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -1,6 +1,6 @@
 ---
 title: ACPI_METHOD_NEXT_ARGUMENT マクロ
-description: ACPI_METHOD_NEXT_ARGUMENT 構造体は、ACPI_METHOD_ARGUMENT 構造体の配列内の次の ACPI_METHOD_ARGUMENT 構造体へのポインターを返します。
+description: ACPI_METHOD_NEXT_ARGUMENT 構造体は ACPI_METHOD_ARGUMENT 構造体の配列内の次の ACPI_METHOD_ARGUMENT 構造体へのポインターを返します。
 ms.assetid: c723b11b-1657-4a78-a6a1-26bd916604a4
 keywords:
 - ACPI_METHOD_NEXT_ARGUMENT マクロ ACPI デバイス
@@ -16,7 +16,7 @@ ms.locfileid: "72824064"
 # <a name="acpi_method_next_argument-macro"></a>ACPI\_メソッド\_NEXT\_ARGUMENT マクロ
 
 
-ACPI\_メソッド\_次の\_引数構造体は、次の[**acpi\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)へのポインターを返します。このメソッドは、ACPI\_メソッド\_引数構造体の配列にあります。
+ACPI\_メソッド\_次の\_引数構造体は、次の[**acpi\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)へのポインターを返します。このメソッドは、ACPI\_メソッド\_引数構造体の配列にあります。\_
 
 <a name="syntax"></a>構文
 ------

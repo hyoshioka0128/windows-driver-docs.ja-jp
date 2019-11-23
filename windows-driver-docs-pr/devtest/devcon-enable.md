@@ -87,6 +87,6 @@ devcon /r enable =printer
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 28:特定のデバイスを有効にする @ no__t-0
+[例 28: 特定のデバイスを有効にする](devcon-examples.md#ddk_example_28_enable_a_particular_device_tools)
 
-[Example 29:クラス @ no__t でデバイスを有効にする-0
+[例 29: クラスによってデバイスを有効にする](devcon-examples.md#ddk_example_29_enable_devices_by_class_tools)

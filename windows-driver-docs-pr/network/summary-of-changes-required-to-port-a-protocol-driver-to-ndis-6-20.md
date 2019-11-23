@@ -44,7 +44,7 @@ NDIS 6.20 環境をサポートするようにプロトコルドライバーを�
     64を超えるプロセッサをサポートする方法の詳細については、「 [NDIS 6.20 で64を超えるプロセッサをサポートする](support-for-more-than-64-processors-in-ndis-6-20.md)」を参照してください。
 
 <a href="" id="driver-initialization-------"></a>**ドライバーの初期化**   
--   Ndis [ **\_プロトコル\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)の構造の**MajorNdisVersion**および**MinorNdisVersion**メンバーで、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)に渡される ndis のバージョンを6.20 に設定します。プロシージャ.
+-   Ndis [ **\_プロトコル\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)の構造の**MajorNdisVersion**および**MinorNdisVersion**メンバーで、 [**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)関数に渡される ndis のバージョンを6.20 に設定します。
 
 -   NDIS\_プロトコル\_ドライバー\_特性の構造体のプロトコルドライバーの**バージョンを、** 適切なドライバー固有の値に**設定します**。
 

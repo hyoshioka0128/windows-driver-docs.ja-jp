@@ -36,7 +36,7 @@ void GetFC3MgmtInfo(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>パラメーター
 ----------
 
 *Hbastatus*   
@@ -50,12 +50,12 @@ void GetFC3MgmtInfo(
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 この WMI メソッドは、 [Msfc\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)に属しています。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -65,11 +65,11 @@ WMI メソッドには適用されません。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ターゲットプラットフォーム</p></td>
-<td align="left">デスクトップ</td>
+<td align="left"><p>対象プラットフォーム</p></td>
+<td align="left">Desktop</td>
 </tr>
 <tr class="even">
-<td align="left"><p>ヘッダー</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 </tbody>

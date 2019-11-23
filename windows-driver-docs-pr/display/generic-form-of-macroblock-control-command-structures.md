@@ -1,6 +1,6 @@
 ---
-title: マクロブロックコントロールの汎用形式のコマンド構造
-description: マクロブロックコントロールの汎用形式のコマンド構造
+title: マクロブロック制御コマンド構造の一般的なフォーム
+description: マクロブロック制御コマンド構造の一般的なフォーム
 ms.assetid: 44009238-0a8e-4018-9b50-06729640f5e4
 keywords:
 - マクロは WDK DirectX VA、汎用コマンド構造をブロックします
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839675"
 ---
-# <a name="generic-form-of-macroblock-control-command-structures"></a>マクロブロックコントロールの汎用形式のコマンド構造
+# <a name="generic-form-of-macroblock-control-command-structures"></a>マクロブロック制御コマンド構造の一般的なフォーム
 
 
 ## <span id="ddk_generic_form_of_macroblock_control_command_structures_gg"></span><span id="DDK_GENERIC_FORM_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURES_GG"></span>

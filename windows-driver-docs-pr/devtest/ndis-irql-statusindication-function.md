@@ -4,7 +4,7 @@ description: Irql\_StatusIndication\_関数規則は、ミニポートドライ�
 ms.assetid: 0e0630f7-3f7b-455f-9763-f0cd5128ef69
 ms.date: 05/21/2018
 keywords:
-- Irql_StatusIndication_Function rule (ndis)
+- Irql_StatusIndication_Function 規則 (ndis)
 topic_type:
 - apiref
 api_name:

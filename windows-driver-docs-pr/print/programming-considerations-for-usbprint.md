@@ -1,6 +1,6 @@
 ---
-title: USBPRINT のプログラミングに関する考慮事項
-description: USBPRINT のプログラミングに関する考慮事項
+title: USBPRINT のプログラミング考慮事項
+description: USBPRINT のプログラミング考慮事項
 ms.assetid: 351b3124-d584-4817-a5ce-09e16b54d41b
 keywords:
 - プリンタードライバー WDK、USB
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840426"
 ---
-# <a name="programming-considerations-for-usbprint"></a>USBPRINT のプログラミングに関する考慮事項
+# <a name="programming-considerations-for-usbprint"></a>USBPRINT のプログラミング考慮事項
 
 
 

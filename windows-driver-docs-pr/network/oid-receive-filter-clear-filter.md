@@ -3,7 +3,7 @@ title: OID_RECEIVE_FILTER_CLEAR_FILTER
 description: これまでのドライバーは、ネットワークアダプターの受信フィルターをクリアするために、OID_RECEIVE_FILTER_CLEAR_FILTER の OID セット要求を発行します。
 ms.assetid: 5e92a11a-468e-431d-b4e5-7b0da3847e8a
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_CLEAR_FILTER ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_RECEIVE_FILTER_CLEAR_FILTER
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f9791eca2fbabaac7db3b92aa75fc49a9dcdf3
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

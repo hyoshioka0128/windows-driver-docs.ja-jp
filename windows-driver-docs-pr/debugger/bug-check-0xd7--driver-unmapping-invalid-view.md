@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
-description: DRIVER_UNMAPPING_INVALID_VIEW のバグチェックの値は0x000000D7 です。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
+description: DRIVER_UNMAPPING_INVALID_VIEW バグチェックの値は0x000000D7 です。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
 ms.assetid: 68075aa7-f579-49c7-a30a-a21312625ff9
 keywords:
 - バグチェック 0xD7 DRIVER_UNMAPPING_INVALID_VIEW
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/08/2019
 ms.locfileid: "72041336"
 ---
-# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>バグ チェック 0xD7:DRIVER @ NO__T-0UNMAPPING 解除 @ NO__T-1INVALID @ NO__T-2VIEW
+# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>バグチェック 0xD7: ドライバー\_\_無効な\_ビューのマッピング解除
 
 
-ドライバー @ no__t-0UNMAPPING 解除 @ no__t-1INVALID @ no__t-2VIEW bug check の値は0x000000D7 です。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
+ドライバー\_マッピング解除\_無効\_ビューのバグチェックの値が0x000000D7 になっています。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_unmapping_invalid_view-parameters"></a>DRIVER @ no__t-0UNMAPPING 解除 @ no__t-1INVALID @ no__t-2VIEW Parameters
+## <a name="driver_unmapping_invalid_view-parameters"></a>無効な\_ビューパラメーター\_マップ解除\_
 
 
 <table>
@@ -66,7 +66,7 @@ ms.locfileid: "72041336"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 [ [**Kb (スタックバックトレースの表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-) ] コマンドを使用してスタックトレースを取得します。エラーの原因となったドライバーは、スタックトレースから特定できます。

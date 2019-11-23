@@ -24,7 +24,7 @@ ms.locfileid: "72839527"
 
 制御 Devicedeleted ルールは、PnP ドライバーがコントロールデバイスオブジェクトを作成する場合、ドライバーは、ドライバーがアンロードされる前に、いずれかのクリーンアップコールバック関数でコントロールデバイスオブジェクトを削除する必要があることを指定します。
 
-FDO またはフィルタードライバーがコントロールデバイスオブジェクトの[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す場合、ドライバーは、WDFDEVICE オブジェクトのドライバーのクリーンアップコールバック関数からコントロールデバイスオブジェクトに対して[**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出す必要があります。破棄コールバックWDFDEVICE オブジェクトの関数、または[*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)イベントコールバック関数。
+FDO またはフィルタードライバーがコントロールデバイスオブジェクトに対して[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す場合、ドライバーは、WDFDEVICE オブジェクトのドライバーのクリーンアップコールバック関数、wdfdevice オブジェクトの破棄コールバック関数、または[*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)イベントコールバック関数から、コントロールデバイスオブジェクトに対して[**wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出す必要があります。
 
 |              |      |
 |--------------|------|

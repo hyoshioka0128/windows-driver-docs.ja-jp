@@ -50,7 +50,7 @@ NDK コンシューマーは、SMB サーバーやクライアントなどのカ
 
  
 
-NDK コンシューマーは、プロバイダーの*Ndkopenadapter* ([*OPEN\_NDK\_adapter\_HANDLER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler)) コールバック関数を呼び出して、アダプターオブジェクトと*ndkopenadapter* ([*ndk\_FN\_CLOSE を作成\_オブジェクト*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) を閉じます。 プロバイダーがアダプターオブジェクトを作成すると、コンシューマーは他のプロバイダーコールバック関数を呼び出して、追加の NDK オブジェクトを作成します。
+NDK コンシューマーは、プロバイダーの*Ndkopenadapter* ([*OPEN\_NDK\_adapter\_HANDLER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler)) コールバック関数を呼び出して、アダプターオブジェクトと*ndkopenadapter* ([*ndk\_FN\_close\_object*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) を作成して閉じます。 プロバイダーがアダプターオブジェクトを作成すると、コンシューマーは他のプロバイダーコールバック関数を呼び出して、追加の NDK オブジェクトを作成します。
 
 NDK コンシューマーは、NDK プロバイダーによって呼び出される[Ndkpi コンシューマーコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)を実装します。
 

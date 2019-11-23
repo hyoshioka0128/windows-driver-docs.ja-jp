@@ -3,7 +3,7 @@ title: FSCTL_QUERY_VOLUME_NUMA_INFO 制御コード
 description: FSCTL\_QUERY\_VOLUME\_NUMA\_INFO control code は、ボリュームの現在の Non-uniform Memory Architecture (NUMA) ノードインデックスを検索します。
 ms.assetid: ADDA4A8C-0BF3-45F1-AFE5-956CE5D1FC01
 keywords:
-- FSCTL_QUERY_VOLUME_NUMA_INFO 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_QUERY_VOLUME_NUMA_INFO コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:

@@ -3,7 +3,7 @@ title: IRP_MJ_CREATE
 description: IRP\_MJ\_CREATE
 ms.assetid: fdcc81f0-e571-4194-88cd-d0956ca1577e
 keywords:
-- IRP_MJ_CREATE インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_CREATE
 topic_type:
 - apiref
 api_name:
@@ -25,27 +25,27 @@ ms.locfileid: "72841180"
 ## <a name="when-sent"></a>送信時
 
 
-I/o マネージャーは、新しいファイルまたはディレクトリが作成されているとき、または既存のファイル、デバイス、ディレクトリ、またはボリュームが開かれているときに、IRP\_MJ\_CREATE 要求を送信します。 通常、この IRP は、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)などの Microsoft Win32 関数を呼び出したユーザーモードアプリケーションの代わりに、または[**iocreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**iocreatefilを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)呼び出したカーネルモードコンポーネントの代わりに送信されます。、 [**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)、または[**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)。 作成要求が正常に完了した場合、アプリケーションまたはカーネルモードコンポーネントは、ファイルオブジェクトへのハンドルを受け取ります。
+I/o マネージャーは、新しいファイルまたはディレクトリが作成されているとき、または既存のファイル、デバイス、ディレクトリ、またはボリュームが開かれているときに、IRP\_MJ\_CREATE 要求を送信します。 通常、この IRP は、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)などの Microsoft Win32 関数を呼び出したユーザーモードアプリケーションの代わりに送信されるか、 [**iocreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**iocreatefilcreatedevice、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint) [**Zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)、または[**zwcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)と呼ばれるカーネルモードコンポーネントの代わりに送信されます。 作成要求が正常に完了した場合、アプリケーションまたはカーネルモードコンポーネントは、ファイルオブジェクトへのハンドルを受け取ります。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
 
-ターゲットデバイスオブジェクトがファイルシステムのコントロールデバイスオブジェクトである場合、 *irp&gt;IoStatus. Status*および*irp-&gt;を設定した後に、ファイルシステムドライバーのディスパッチルーチンが irp を完了し、適切な NTSTATUS 値を返す必要があります。IoStatus. 情報*に適切な値を指定します。
+ターゲットデバイスオブジェクトがファイルシステムのコントロールデバイスオブジェクトである場合、 *irp-&gt;iostatus. Status*と*Irp-&gt;Iostatus. 情報*を適切な値に設定した後で、ファイルシステムドライバーのディスパッチルーチンが irp を完了し、適切な NTSTATUS 値を返す必要があります。
 
 それ以外の場合、ファイルシステムドライバーは作成要求を処理する必要があります。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
 
-ターゲットデバイスオブジェクトがフィルタードライバーのコントロールデバイスオブジェクトである場合、 *irp&gt;iostatus. Status*および*irp-&gt;を設定した後、フィルタードライバーのディスパッチルーチンが irp を完了し、適切な NTSTATUS 値を返す必要があります。IoStatus. 情報*に適切な値を指定します。
+ターゲットデバイスオブジェクトがフィルタードライバーのコントロールデバイスオブジェクトである場合、フィルタードライバーのディスパッチルーチンは、irp を完了し、適切な値に設定した後に、適切な NTSTATUS 値を返す必要があります。これには、 *irp&gt;iostatus. Status*と*Irp-&gt;Iostatus. 情報*を指定します。
 
 それ以外の場合、フィルタードライバーは必要な処理を実行し、フィルターの性質に応じて、IRP を完了するか、スタック上の次の下位のドライバーに渡します。
 
 一般に、フィルタードライバーは、 **IRP\_MJ\_CREATE**に応答して、**状態\_PENDING**を返さないようにする必要があります。 ただし、下位レベルのドライバーから**status\_PENDING**が返された場合、フィルタードライバーはこの状態の値をドライバーチェーンに渡す必要があります。
 
-ファイルシステムフィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)によって[**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)要求がボリュームのファイルシステムドライバースタックに送信されることに注意してください。 ファイルシステムは、 **IRP\_MJ\_create**以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 したがって、フィルタードライバーは、以前に表示されていないファイルオブジェクトに対して、 **irp\_MJ\_CLEANUP**および[**IRP\_\_MJ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)を受け取ることを予期しています。 [**IocreatestreamfileMJ Tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)の場合、 **IRP\_\_クリーンアップ**要求は送信されません。
+ファイルシステムフィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)によって[**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)要求がボリュームのファイルシステムドライバースタックに送信されることに注意してください。 ファイルシステムは、 **IRP\_MJ\_create**以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 フィルター ドライバーを受信することはそのため**IRP\_MJ\_クリーンアップ**と[**IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)未知のファイル オブジェクトを要求します。 場合に[**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)、 **IRP\_MJ\_クリーンアップ**要求は送信されません。
 
-&gt; \[!注\] &gt; レガシフィルタードライバーが作成後のコールバックで作成を再発行するときは、その再解析ポイント (補助バッファー) に関連付けられているバッファーを**NULL**に設定する必要があります。 レガシフィルタードライバーがこのバッファーを解放せず、 **NULL**に設定した場合、ドライバーはメモリをリークします。 フィルタマネージャはこれを実行するため、ミニフィルタドライバはこれを行う必要はありません。
+&gt; \[!注\]&gt;とレガシ フィルター ドライバーを再実行の作成 をコールバックを作成後、リリースしに、再解析ポイント (補助バッファー) に関連付けられているバッファーを設定する必要がありますが**NULL**します。 レガシフィルタードライバーがこのバッファーを解放せず、 **NULL**に設定した場合、ドライバーはメモリをリークします。 フィルタマネージャはこれを実行するため、ミニフィルタドライバはこれを行う必要はありません。
 
  
 
@@ -142,9 +142,9 @@ IRP\_同期\_API
 
 ファイル\_完了し\_場合、事前作成 (ディスパッチ) パスで\_OPLOCKED フラグが設定されていると、oplock が失われる可能性があるため、次のいずれの種類の操作も開始できません。
 
-IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_LOCK\_CONTROL IRP\_MJ\_READ IRP\_MJ\_SET\_INFORMATION IRP\_MJ\_\_の場合、フィルターまたはミニフィルターでファイルを受け入れることができない場合は書き込み\_\_OPLOCKED フラグは、IRP\_MJ\_CREATE 要求を完了する必要があります。状態\_共有\_違反です。
+IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_ロック\_コントロール IRP\_MJ\_読み取り IRP\_MJ\_設定\_情報 IRP\_MJ\_\_の場合、フィルターまたはミニフィルターがファイルを受け入れない場合は書き込み\_@no__OPLOCKED フラグ t_23_、IRP\_MJ\_CREATE 要求を完了する必要があります。状態は\_共有\_違反です。\_
 
-ファイル\_完了 (作成後) パスで\_OPLOCKED フラグが設定されている場合\_ファイルが完了した場合、フィルターは、ファイルシステムが*Irp-&gt;iostatus. status*に設定されているかどうかを確認する必要があります\_OPLOCK\_@no__t\_進行状況の状態の値 (_s)。 この状態値が設定されていない場合は、フィルターがファイルに対して上記の操作のいずれかを開始することが安全です。 この状態値が設定されている場合、oplock はまだ解除されていないため、oplock 解除を引き起こす可能性がある操作をフィルターで開始することはできません。 したがって、次のいずれかの条件が満たされるまで、ファイルに対する上記のすべての操作をフィルターで延期する必要があります。
+\_完了 (作成後) パスで\_OPLOCKED フラグが設定されている場合\_ファイルが完了した場合、フィルターは、ファイルシステムが*Irp-&gt;iostatus. status*に設定されているかどうかを確認する必要があります\_oplock\_\_進行状況の状態の値。\_ この状態値が設定されていない場合は、フィルターがファイルに対して上記の操作のいずれかを開始することが安全です。 この状態値が設定されている場合、oplock はまだ解除されていないため、oplock 解除を引き起こす可能性がある操作をフィルターで開始することはできません。 したがって、次のいずれかの条件が満たされるまで、ファイルに対する上記のすべての操作をフィルターで延期する必要があります。
 
 -   Oplock の所有者は、ファイルシステムに対して、FSCTL\_OPLOCK\_中断\_確認要求を送信します。
 -   フィルターまたはミニフィルター以外のシステムコンポーネントは、oplock の解除が完了するまで待機する必要がある i/o 要求をファイルシステムに送信します (IRP\_MJ\_READ または IRP\_MJ\_WRITE など)。 フィルターまたはミニフィルターは、この新しい操作のディスパッチ (または事前操作コールバック) ルーチンから上記の操作のいずれかを開始できます。これは、ディスパッチまたは preoperation コールバックルーチンが、oplock の解除が完了するまで待機状態になるためです。
@@ -178,13 +178,13 @@ IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コント�
 
 [**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)
 
-[**Iocreatefilの場合は、デバイスを Ioint にします。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)
+[**IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)
 
 [**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)
 
 [**Iocreatestreamfileite Tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

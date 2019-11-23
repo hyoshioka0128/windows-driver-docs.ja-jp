@@ -66,7 +66,7 @@ Wi-fi Direct のペアリングは、NFC フォーラムの標準化された接
 | フィールド                 | Value                                            | 説明                                                               |
 |-----------------------|--------------------------------------------------|---------------------------------------------------------------------------|
 | TNF                   | 0x02                                             | 次に続く型フィールドの形式。 RFC 2046 で定義されているメディアの種類。 |
-| タスクバーの検索ボックスに                  | ' application/vnd. ms-windows '             | このシナリオに対して定義する新しい型の文字列。                              |
+| 種類                  | 'application/vnd.ms-windows.wfd.oob'             | このシナリオに対して定義する新しい型の文字列。                              |
 | OOB データのサイズ      | テキスト                                             | 最大 64 KB の OOB データがサポートされています。                                        |
 | Wi-fi ダイレクト OOB データ | 前のフィールドによって示されるサイズの &lt;blob&gt; | 以下で定義されている wi-fi ダイレクト OOB データ。                                   |
 
@@ -88,7 +88,7 @@ Wi-fi Direct のペアリングは、NFC フォーラムの標準化された接
 <th align="left">属性</th>
 <th align="left">属性 ID</th>
 <th align="left">必須/オプション</th>
-<th align="left">注意:</th>
+<th align="left">注</th>
 </tr>
 </thead>
 <tbody>
@@ -96,28 +96,28 @@ Wi-fi Direct のペアリングは、NFC フォーラムの標準化された接
 <td align="left"><p>OOB ヘッダー</p>
 <p>「OOB ヘッダー属性の形式の表」を参照してください。</p></td>
 <td align="left">該当なし</td>
-<td align="left">必須かどうか</td>
+<td align="left">必須</td>
 <td align="left">OOB ヘッダー属性は、P2P OOB データ blob 内に存在する必要があり、その OOB の種類の値は "OOB の単方向プロビジョニングデータ" に設定されている必要があります。</td>
 </tr>
 <tr class="even">
 <td align="left"><p>OOB デバイス情報</p>
 <p>「OOB デバイス情報属性フォーマットテーブル」を参照してください。</p></td>
 <td align="left">1</td>
-<td align="left">必須かどうか</td>
+<td align="left">必須</td>
 <td align="left">この属性は存在する必要があります。 この情報は、この P2P デバイスに関する情報を提供します。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>OOB プロビジョニング情報</p>
 <p></p></td>
 <td align="left">2</td>
-<td align="left">必須かどうか</td>
+<td align="left">必須</td>
 <td align="left">この属性は存在する必要があります。 このデバイスは、この P2P デバイスが使用することを想定しているプロビジョニング情報を提供します。</td>
 </tr>
 <tr class="even">
 <td align="left"><p>OOB 構成のタイムアウト</p>
 <p></p></td>
 <td align="left">5</td>
-<td align="left">必須かどうか</td>
+<td align="left">必須</td>
 <td align="left">この属性は存在する必要があります。 このメッセージは、この P2P デバイスが Wi-fi ダイレクトに対する応答を待機する時間に関する情報を提供します。</td>
 </tr>
 </tbody>
@@ -260,7 +260,7 @@ Wi-fi Direct のペアリングは、NFC フォーラムの標準化された接
 | プロビジョニング設定ビットマップ | 1             | 変数                | プロビジョニング*設定の表に*定義されている一連のプロビジョニング設定オプション。                                                                                   |
 | 選択された構成方法       | 2             | P2P 仕様で定義されているとおり。 | この P2P デバイスによってプロビジョニングのために選択された WSC メソッド。                                                                                                   |
 | Pin の長さ                   | 1             | 0 - 8                   | 次の PIN データフィールドのバイト数。 このフィールドを0に設定すると、追加の PIN データは表示されません。                                                                  |
-| データをピン留めする                     | 変数      | n                       | このフィールドはオプションです。 このフィールドは、PIN の長さフィールドが0以外の場合にのみ存在し、プロビジョニングに使用する PIN を表すオクテットの配列が含まれています。 |
+| データをピン留めする                     | 変数      | n                       | このフィールドは省略可能です。 このフィールドは、PIN の長さフィールドが0以外の場合にのみ存在し、プロビジョニングに使用する PIN を表すオクテットの配列が含まれています。 |
 
  
 
@@ -276,7 +276,7 @@ Wi-fi Direct のペアリングは、NFC フォーラムの標準化された接
 <tr class="header">
 <th align="left">ビット</th>
 <th align="left">情報</th>
-<th align="left">注意</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -342,8 +342,8 @@ Windows デバイスのペアリングレコードは、NDEF 仕様に従って�
 <td align="left">次に続く型フィールドの形式。 RFC 2046 で定義されているメディアの種類。</td>
 </tr>
 <tr class="even">
-<td align="left">タスクバーの検索ボックスに</td>
-<td align="left">' application/vnd. ms-windows '</td>
+<td align="left">種類</td>
+<td align="left">'application/vnd.ms-windows.devicepairing'</td>
 <td align="left">0x28 バイト数</td>
 <td align="left">このシナリオに対して定義する新しい型の文字列。</td>
 </tr>
@@ -375,7 +375,7 @@ Windows デバイスのペアリングレコードは、NDEF 仕様に従って�
 <tr class="even">
 <td align="left">デバイスのフレンドリ名の長さ</td>
 <td align="left">デバイスのフレンドリ名フィールドの長さ。</td>
-<td align="left">1バイト</td>
+<td align="left">1 バイト</td>
 <td align="left">デバイスのフレンドリ名の長さ。</td>
 </tr>
 <tr class="odd">
@@ -806,7 +806,7 @@ Windows デバイスのペアリングレコードは、NDEF 仕様に従って�
 <tr class="odd">
 <td align="left">228</td>
 <td align="left">0x00 0x01 0x00</td>
-<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td align="left">4</td>
 <td align="left">バージョン: Major = 1、Minor = 0</td>
 </tr>
 <tr class="even">

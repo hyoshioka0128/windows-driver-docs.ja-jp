@@ -44,7 +44,7 @@ I/o キューのディスパッチモードが[同期モード](specifying-a-cal
     -   ドライバーは、 [**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドのいずれかを呼び出して、i/o 要求を直ちに完了します。 I/o 要求が無効であるか、サービスを提供できない場合、またはデータを格納しているバッファーまたはキャッシュからデータをコピーすることによって完了できる場合、ドライバーは i/o 要求を直ちに完了します。
     -   ドライバーは、 [**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)メソッドを呼び出して、i/o 要求をキューへします。
     -   ドライバーは、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、i/o 要求を下位レベルのドライバーに渡します。
--   手動
+-   Manual
 
     手動ディスパッチモードは、 **WdfIoQueueDispatchManual**値を使用して指定します。 このディスパッチモードでは、要求がキューに到着すると、i/o キューはドライバーに自動的に通知しません。 ドライバーは、 [**Iwdfioqueue:: RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)メソッドを呼び出して、キューから要求を手動で取得する必要があります。 これはポーリングモデルです。
 

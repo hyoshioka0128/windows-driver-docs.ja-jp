@@ -103,7 +103,7 @@ NDIS によって提供される WMI Guid を示します。
 <span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
 ミニポートの参照の内訳を表示します。
 
-<span id="_______-log______"></span><span id="_______-LOG______"></span> *-ログ*   
+<span id="_______-log______"></span><span id="_______-LOG______"></span> *-log*   
 PnP および電源イベントログを表示します。
 
 <span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-grovel*   
@@ -279,11 +279,11 @@ HANDLERS
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワーク経由でのカーネルデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)
 
-[ **! ndiskd ミニドライバー**](-ndiskd-minidriver.md)
+[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
 
 

@@ -17,7 +17,7 @@ ms.locfileid: "72323663"
 
 ModelIDList 要素は、1つまたは複数の Guid を指定します。 各 GUID は、 [Modelid](modelid.md)要素によって指定され、デバイスメタデータパッケージ内で指定された物理デバイスを識別します。
 
-**注意**   ModelIDList と[modelid](modelid.md)の要素は、サービスメタデータパッケージではサポートされていません。 代わりに、[ハードウェア Id リスト](hardwareidlist.md)と[HardwareID](hardwareid.md)要素を使用する必要があります。
+**注意**   ModelIDList 要素と[Modelid](modelid.md)要素は、サービスメタデータパッケージではサポートされていません。 代わりに、[ハードウェア Id リスト](hardwareidlist.md)と[HardwareID](hardwareid.md)要素を使用する必要があります。
 
  
 
@@ -105,7 +105,7 @@ ModelIDList 要素は、1つまたは複数の Guid を指定します。 各 GU
 
 ModelIDList 要素は、 [Metadatakey](metadatakey.md)要素では、[ハードウェア id リスト](hardwareidlist.md)要素が指定されていない場合にのみ必要です。 指定されている場合、ModelIDList 要素には1つ以上の[Modelid](modelid.md)要素が含まれている必要があります。 デバイスメタデータパッケージで複数のデバイスモデルまたはモデル Id がサポートされている場合は、各デバイスモデルに対して ModelID 要素を指定できます。
 
-**注意**   ModelIDList と[modelid](modelid.md)の要素は、サービスメタデータパッケージではサポートされていません。 代わりに、[ハードウェア Id リスト](hardwareidlist.md)と[HardwareID](hardwareid.md)要素を使用する必要があります。
+**注意**   ModelIDList 要素と[Modelid](modelid.md)要素は、サービスメタデータパッケージではサポートされていません。 代わりに、[ハードウェア Id リスト](hardwareidlist.md)と[HardwareID](hardwareid.md)要素を使用する必要があります。
 
  
 

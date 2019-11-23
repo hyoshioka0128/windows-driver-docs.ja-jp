@@ -29,7 +29,7 @@ MINIDRV\_TRANSFER\_CONTEXT 構造体の**Bclassdrvallocbuf**メンバーが**TRU
 
 ミニドライバーは、 **CoTaskMemAlloc**関数 (Microsoft Windows SDK のドキュメントで説明) を使用してメモリを割り当てる必要があります。 ミニドライバーは、 **Ptransferbuffer**内のメモリ位置へのポインターと、 **lbuffersize** (バイト単位) のメモリのサイズを格納する必要があります。
 
-**Bclassdrvallocbuff**メンバーが**FALSE**に設定されるのは、 [**wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)プロパティが tymed\_file または tymed\_MULTIPAGE\_file、および[**wia\_IPA\_ITEM に設定されている場合のみ\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)プロパティが0に設定されています。
+**Bclassdrvallocbuff**メンバーが**FALSE**に設定されるのは、 [**wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)プロパティが tymed\_file または TYMED\_MULTIPAGE\_file に設定されていて、 [**wia\_IPA\_ITEM\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)プロパティが0に設定されている場合のみです。
 
 ミニドライバーは、 **Ptransferbuffer**メンバーが指すバッファーをオーバーフィルしないように注意する必要があります。 これを回避するには、 **Lbuffersize**メンバーに格納されている値以下の量のデータを書き込みます。
 
@@ -37,7 +37,7 @@ MINIDRV\_TRANSFER\_CONTEXT 構造体の**Bclassdrvallocbuf**メンバーが**TRU
 
 Wia ミニドライバーは、データ転送中に使用されるメモリの量を制御できます。これを行うには、 [**wia\_IPA\_ITEM\_size**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)および[**wia\_IPA\_BUFFER\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)プロパティを設定します。
 
-WIA アプリケーションでは、WIA\_IPA\_BUFFER\_SIZE プロパティを使用して、メモリ転送中に要求する転送バッファーの最小サイズを決定します。 この値が大きいほど、要求された帯域幅が大きくなります。 Wia アプリケーションが、WIA\_IPA\_BUFFER\_SIZE プロパティの値よりも小さいサイズのバッファーを要求した場合、WIA サービスはこの要求されたサイズを無視し、wia ミニドライバーに対して wia\_IPA のバッファーを要求し\_バッファー\_サイズのバイト数。 Wia サービスは、wia ミニドライバーに対して、少なくとも WIA\_IPA\_バッファー\_サイズバイト単位のバッファーを要求します。
+WIA アプリケーションでは、WIA\_IPA\_BUFFER\_SIZE プロパティを使用して、メモリ転送中に要求する転送バッファーの最小サイズを決定します。 この値が大きいほど、要求された帯域幅が大きくなります。 Wia アプリケーションが、WIA\_IPA\_BUFFER\_SIZE プロパティの値よりも小さいサイズのバッファーを要求した場合、WIA サービスはこの要求されたサイズを無視し、wia ミニドライバーに対して、wia\_IPA\_バッファーのサイズ (バイト単位) であるバッファーを要求します。\_ Wia サービスは、wia ミニドライバーに対して、少なくとも WIA\_IPA\_バッファー\_サイズバイト単位のバッファーを要求します。
 
 **   "** WIA\_IPA\_BUFFER\_SIZE" プロパティに含まれる値は、アプリケーションが任意の時点で要求できるデータの最小量です。 バッファーサイズが大きいほど、デバイスに対する要求が大きくなります。 バッファーサイズが小さすぎると、データ転送のパフォーマンスが低下する可能性があります。
 

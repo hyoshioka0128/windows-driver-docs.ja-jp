@@ -21,7 +21,7 @@ ms.locfileid: "72840724"
 
 デバイスは、 **Iwiaitemextras:: Escape**メソッドから制御が戻ったときに、操作の結果をアプリケーションに通知します。これにより、 [**PTP\_ベンダ\_DATA\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体に応答コードと応答パラメーターが入力されます。 構造に含まれている[**PTP\_ベンダ\_データ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_in)の**SessionId**メンバーと**transactionid**メンバーは無視されます。 ドライバーは、これらの値に適切な値を提供します。
 
-エスケープ\_以外のベンダー定義コマンドについては、\_の停止を明確に\_ます。特別なフラグ、エスケープ\_PTP\_ベンダ\_のコマンドは、Iwiaitemextras で使用されるコマンドと組み合わせて (または演算子を使用して) 組み合わせる必要があります。 **:: Escape**メソッド。 ベンダー定義のコマンドが、次に示すフラグを使用してデバイス上のオブジェクトを作成または削除する場合、ドライバーはその内部構造からオブジェクトを追加または削除し、WIA イベントを生成します。 その他のすべての標準コマンドは、適切な WIA インターフェイスを使用して発行する必要があります。
+エスケープ\_以外のベンダー定義コマンドについては、\_停止を明確に\_します。また、特殊なフラグ、エスケープ\_PTP\_VENDOR\_コマンドを、 **Iwiaitemextras:: ESCAPE**メソッドで使用されるコマンドと組み合わせて使用する必要があります (または演算子を使用します)。 ベンダー定義のコマンドが、次に示すフラグを使用してデバイス上のオブジェクトを作成または削除する場合、ドライバーはその内部構造からオブジェクトを追加または削除し、WIA イベントを生成します。 その他のすべての標準コマンドは、適切な WIA インターフェイスを使用して発行する必要があります。
 
 **Iwiaitemextras:: Escape**の最初のパラメーターは、次のフラグの1つ以上を組み合わせたものです。
 
@@ -86,11 +86,11 @@ ms.locfileid: "72840724"
 
  
 
-アプリケーションが**Iwiaitemextras:: escape**をエスケープ\_\_使用して、このメソッドの最初の引数として\_ストールフラグをクリアする**と  、** ドライバーは ptp **Get Device Status**要求をに発行します。停止状態にあるエンドポイントがあるかどうかを確認します。 "**デバイスの状態の取得**" コマンドが成功した場合、ドライバーは、そのようなエンドポイントごとにパイプの USB 制御コード[ **\_\_リセットする IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbscan/ni-usbscan-ioctl_reset_pipe)を発行します。 **Get Device Status**コマンドが失敗した場合、ドライバーは PTP**デバイスリセット**要求を発行します。 **デバイスの状態の取得**と**デバイスのリセット**については、Usb 静止イメージキャプチャデバイスの定義 (USB SICDD) のピマ 15740:2000 standard、First Edition、および Revision 1.0 を参照してください。
+アプリケーションが**Iwiaitemextras:: escape**をエスケープ\_\_使用して、このメソッドの最初の引数として\_ストールフラグをクリアする**場合  、** ドライバーは ptp **Get Device Status**要求を発行して、いずれかのエンドポイントが停止状態にあるかどうかを判断します。 "**デバイスの状態の取得**" コマンドが成功した場合、ドライバーは、そのようなエンドポイントごとにパイプの USB 制御コード[ **\_\_リセットする IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbscan/ni-usbscan-ioctl_reset_pipe)を発行します。 **Get Device Status**コマンドが失敗した場合、ドライバーは PTP**デバイスリセット**要求を発行します。 **デバイスの状態の取得**と**デバイスのリセット**については、Usb 静止イメージキャプチャデバイスの定義 (USB SICDD) のピマ 15740:2000 standard、First Edition、および Revision 1.0 を参照してください。
 
  
 
-次のサンプルコードは、ベンダ拡張コマンドインターフェイスの使用方法を示しています。 コードに*ptpusd .h*ヘッダーが含まれていることを確認してください。これには、エスケープコードとその他の定数の定義が含まれています。また、 [**PTP\_\_ベンダ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_in)は、データ\_と[**ptp\_ベンダー\_データを格納していることを確認してください\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造体。 **Iwiaitemextras**インターフェイスは、ルート項目で**QueryInterface**を呼び出すことによって取得されます。 このルート項目へのポインターである*Piwiarootitem*は、たとえば、 **Iwiadevmgr:: SelectDeviceDlg**を呼び出すことによって取得できます (詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
+次のサンプルコードは、ベンダ拡張コマンドインターフェイスの使用方法を示しています。 コードに*ptpusd .h*ヘッダーが含まれていることを確認してください。これには、エスケープコードとその他の定数の定義が含まれています。また、 [**ptp\_ベンダ\_データ\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_in) 、および[**ptp\_ベンダー\_データ\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ptpusd/ns-ptpusd-_ptp_vendor_data_out)構造を格納していることを確認してください。 **Iwiaitemextras**インターフェイスは、ルート項目で**QueryInterface**を呼び出すことによって取得されます。 このルート項目へのポインターである*Piwiarootitem*は、たとえば、 **Iwiadevmgr:: SelectDeviceDlg**を呼び出すことによって取得できます (詳細については、Microsoft Windows SDK のドキュメントを参照してください)。
 
 ```cpp
 //

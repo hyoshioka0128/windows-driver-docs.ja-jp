@@ -4,7 +4,7 @@ description: Init\_RegisterSG rule は、初期化プロセスで何らかの問
 ms.assetid: c4d00be1-b44b-4769-bbe6-6128a742d088
 ms.date: 05/21/2018
 keywords:
-- Init_RegisterSG rule (ndis)
+- Init_RegisterSG 規則 (ndis)
 topic_type:
 - apiref
 api_name:

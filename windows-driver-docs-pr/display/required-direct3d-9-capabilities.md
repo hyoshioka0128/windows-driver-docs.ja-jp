@@ -61,7 +61,7 @@ ms.locfileid: "72825923"
 </tr>
 <tr class="even">
 <td align="left"><strong>Texturecaps</strong>
-<p>(注を参照)。</p></td>
+<p>(以下の「メモ」を参照)。</p></td>
 <td align="left"><p>D3DPTEXTURECAPS_ALPHA</p>
 <p>D3DPTEXTURECAPS_CUBEMAP</p>
 <p>D3DPTEXTURECAPS_MIPMAP</p>
@@ -297,7 +297,7 @@ ms.locfileid: "72825923"
 </tr>
 <tr class="odd">
 <td align="left"><strong>NumSimultaneousRTs</strong></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>PS20Caps</strong>-&gt;<strong>NumInstructionSlots</strong></td>
@@ -317,7 +317,7 @@ ms.locfileid: "72825923"
 </tr>
 <tr class="even">
 <td align="left"><strong>VertexShaderVersion</strong></td>
-<td align="left"><p>D3DVS_VERSION (3, 0) (注を参照してください。)</p></td>
+<td align="left"><p>D3DVS_VERSION (3, 0) (注を参照)。</p></td>
 </tr>
 </tbody>
 </table>

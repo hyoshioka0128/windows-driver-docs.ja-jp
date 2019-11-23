@@ -93,9 +93,9 @@ NETWORK STACK REPORT
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[ **! ndiskd ndiskd**](-ndiskd-nbllog.md)
+[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
 [NIC チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
 

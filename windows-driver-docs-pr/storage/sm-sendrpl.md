@@ -3,7 +3,7 @@ title: SM\_SendRPL 関数
 description: SM\_SendRPL WMI メソッドは、指定されたポートを介して、指定された宛先ポートに読み取りポートリスト (RPL) コマンドを送信します。
 ms.assetid: 9297d5eb-f8c4-48f3-8536-a94c66917e66
 keywords:
-- SM_SendRPL function Storage デバイス
+- SM_SendRPL 関数記憶装置
 topic_type:
 - apiref
 api_name:

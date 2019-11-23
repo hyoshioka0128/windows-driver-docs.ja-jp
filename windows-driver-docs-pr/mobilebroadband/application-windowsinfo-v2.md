@@ -36,17 +36,17 @@ Application 要素は、アプリのアプリケーション ID を指定しま�
 </colgroup>
 <thead>
 <tr class="header">
-<th>備わっている</th>
-<th>タスクバーの検索ボックスに</th>
-<th>必須かどうか</th>
+<th>属性</th>
+<th>種類</th>
+<th>必須</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Id</p></td>
+<td><p>ID</p></td>
 <td><p>tns: ApplicationIdType</p></td>
-<td><p>[はい]</p></td>
+<td><p>〇</p></td>
 <td><p>アプリケーション ID。 「解説」で説明されているように、アプリケーションマニフェストからこの値をコピーします。</p></td>
 </tr>
 </tbody>
@@ -103,9 +103,9 @@ Application 要素は、アプリのアプリケーション ID を指定しま�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
-アプリケーション要素の構造体は、アプリケーションマニフェスト内の @no__t 0Application @ no__t 要素の構造に対応します。 アプリマニフェストの Id 属性から Id 値の値をコピーします。
+アプリケーション要素の構造体は、アプリケーションマニフェスト内の &lt;アプリケーション&gt; 要素の構造に対応します。 アプリマニフェストの Id 属性から Id 値の値をコピーします。
 
-@No__t 0Applications @ no__t 要素をアプリケーションマニフェスト内で構造化する方法の例を次に示します。
+アプリマニフェスト内で &lt;Applications&gt; 要素を構造化する方法の例を次に示します。
 
 ``` syntax
 <Applications>

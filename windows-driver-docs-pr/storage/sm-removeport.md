@@ -3,7 +3,7 @@ title: SM\_RemovePort 関数
 description: SM\_RemovePort WMI メソッドは、指定されたポートに関連付けられているイベントが WMI クライアントに渡されるのを停止するように WMI プロバイダーを構成します。
 ms.assetid: aa868e5d-32d3-4bb0-9128-5f213bf62146
 keywords:
-- SM_RemovePort function Storage デバイス
+- SM_RemovePort 関数記憶装置
 topic_type:
 - apiref
 api_name:

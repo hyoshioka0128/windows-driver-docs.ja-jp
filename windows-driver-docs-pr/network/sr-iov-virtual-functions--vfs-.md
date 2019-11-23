@@ -1,6 +1,6 @@
 ---
-title: Sr-iov 仮想機能 (VFs)
-description: Sr-iov 仮想機能 (VFs)
+title: SR-IOV 仮想機能 (VF)
+description: SR-IOV 仮想機能 (VF)
 ms.assetid: 92EFC8C3-A610-46EB-A1BC-750715378077
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841854"
 ---
-# <a name="sr-iov-virtual-functions-vfs"></a>Sr-iov 仮想機能 (VFs)
+# <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 仮想機能 (VF)
 
 
 PCI Express (PCIe) 仮想関数 (VF) は、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプター上の軽量の PCIe 機能です。 VF はネットワークアダプターの PCIe 物理機能 (PF) に関連付けられており、ネットワークアダプターの仮想化インスタンスを表します。 各 VF には、独自の PCI 構成領域があります。 また、各 VF は、外部ネットワークポートなど、ネットワークアダプター上の1つ以上の物理リソースを、PF とその他の VFs と共有します。

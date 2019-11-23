@@ -3,7 +3,7 @@ title: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 制御コード
 description: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS socket i/o control 操作を使用すると、Winsock クライアントは、最終的な宛先に接続するために使用する新しい TCP ソケットにリダイレクトレコードを指定できます。
 ms.assetid: 51FC55BB-FD7A-4FDE-B1FC-02745AC03E33
 ms.date: 08/08/2017
-keywords: -SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS Windows Vista 以降のコードネットワークドライバーの制御
+keywords: -Windows Vista 以降でコードネットワークドライバーを SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 制御する
 ms.localizationpriority: medium
 ms.openlocfilehash: b3617d012cff3a28638a0c8991ba039b5c3f7a14
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -44,7 +44,7 @@ WFP リダイレクトレコードは、リダイレクトされた接続と元�
 <td><p><strong>SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>平準</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">

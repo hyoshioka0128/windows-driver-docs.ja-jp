@@ -3,7 +3,7 @@ title: SM\_GetLUNStatistics 関数
 description: SMHBA\_GetLUNStatistics メソッドは、特定のローカル HBA で FCP プロトコルまたは SSP プロトコルを使用して提供されている特定の SCSI 論理ユニットのトラフィック統計を返します。
 ms.assetid: c4e85c59-8b8d-4b68-9ab7-adf1e12fc50c
 keywords:
-- SM_GetLUNStatistics function Storage デバイス
+- SM_GetLUNStatistics 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -64,7 +64,7 @@ ms.locfileid: "72838476"
 
      
 
-**KeSetTimer**と**Kesettimerex**に指定できる最小の時間間隔は約10ミリ秒であるため、ドライバーは[*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンよりも短い間隔で、 *customtimerdpc*ルーチンを使用できます。は1秒に1回実行され、はを処理できます。
+**KeSetTimer**と**Kesettimerex**に指定できる最小の時間間隔は約10ミリ秒であるため、ドライバーは、1秒間に1回実行される[*iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンよりも小さな間隔でタイミングを設定するときに、 *customtimerdpc*ルーチンを使用できます。
 
 任意の時点で、特定のタイマーオブジェクトのインスタンス化を1つだけキューに入れることができます。 同じ*タイマー*オブジェクトポインターを使用して**KeSetTimer**または**kesettimerex**を再度呼び出すと、キューに入っているタイマーオブジェクトが取り消され、リセットされます。
 

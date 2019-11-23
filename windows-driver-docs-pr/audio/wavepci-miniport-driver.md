@@ -35,7 +35,7 @@ WavePci ミニポートドライバーは、次の2つのインターフェイ�
 
 ミニポートインターフェイス[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)は、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)インターフェイスのメソッドを継承します。 IMiniportWavePci には、次の追加のメソッドが用意されています。
 
-[**IMiniportWavePci:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init)
+[**IMiniportWavePci::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init)
 
 ミニポートオブジェクトを初期化します。
 

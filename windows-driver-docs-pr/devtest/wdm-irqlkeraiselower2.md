@@ -64,7 +64,7 @@ ms.locfileid: "72839917"
 --------
 
 [**IrqlKeDispatchLte**](wdm-irqlkedispatchlte.md)
-[ **Irqlkeraiselower**](wdm-irqlkeraiselower.md)
+[**IrqlKeRaiseLower**](wdm-irqlkeraiselower.md)
  
 
  

@@ -1,5 +1,5 @@
 ---
-title: ATA ポートドライバーのサポートルーチン
+title: ATA ポート ドライバーのサポート ルーチン
 description: ATA ポートドライバーのルーチンについて説明します。
 ms.assetid: 59222e82-8abb-4ef6-b58d-f70470c2def0
 keywords:
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/10/2019
 ms.locfileid: "72256322"
 ---
-# <a name="ata-port-driver-support-routines"></a>ATA ポートドライバーのサポートルーチン
+# <a name="ata-port-driver-support-routines"></a>ATA ポート ドライバーのサポート ルーチン
 
 このページでは、システム指定の ATA ポートドライバーによって提供されるサポートルーチンを分類します。
 
@@ -145,9 +145,9 @@ ATA ポートドライバーは、次のポートを提供し、アクセスの�
 | ------- | ----------- |
 | **AtaPortRegistryAllocateBuffer** | レジストリ操作用のバッファーを割り当てます。 |
 | **AtaPortRegistryFreeBuffer** | **AtaPortRegistryAllocateBuffer**を使用して割り当てられたレジストリバッファーを解放します。 |
-| **AtaPortRegistryControllerKeyRead** | 指定された値の名前に関連付けられているデータを読み取るレジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*n*( *N*はコントローラーの番号)。 |
-| **AtaPortRegistryContrlollerKeyWrite** | は、指定された値の名前に、レジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*に書き込みます。ここで、 *N*はコントローラーの番号です。 |
-| **AtaPortRegistryControllerKeyWriteDeferred** | は、指定された値の名前に、レジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*にデータを非同期的に書き込みます。ここで、 *N*はコントローラーの番号です。 |
-| **AtaPortRegistryChannelSubKeyRead** | は、指定された値名に関連付けられているデータを読み取ります。レジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\ Channel*M*,、 *N*はcontroller と*M*は、チャネルの番号です。 |
-| **AtaPortRegistryChannelSubKeyWrite** | は、レジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\ Channel*M*の下に、指定した値の名前にデータを書き込みます。ここで、 *N*はコントローラーと M の番号です。チャネルの番号を指定します。 |
-| **AtaPortRegistryChannelSubKeyWriteDeferred** | は、指定された値の名前に、レジストリキー HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\ Channel*M*の下にデータを非同期的に書き込みます。ここで、 *N*はcontroller と*M*は、チャネルの番号です。 |
+| **AtaPortRegistryControllerKeyRead** | は、指定された値名に関連付けられているデータをレジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ コントローラー*N*で読み取ります。ここで、 *n*はコントローラーの番号です。 |
+| **AtaPortRegistryContrlollerKeyWrite** | レジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ controller*N*の下にある値名にデータを書き込みます。ここで、 *n*はコントローラーの番号です。 |
+| **AtaPortRegistryControllerKeyWriteDeferred** | レジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ コントローラー*N*で、指定された値の名前にデータを非同期的に書き込みます。ここで、 *n*はコントローラーの番号です。 |
+| **AtaPortRegistryChannelSubKeyRead** | は、指定された値名に関連付けられているデータをレジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ コントローラー*N*\ チャネル*M*で読み取ります。ここで、 *N*はコントローラーの番号、 *m*はチャネルの番号です。 |
+| **AtaPortRegistryChannelSubKeyWrite** | は、指定された値の名前にデータを書き込みます。レジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ コントローラー*N*\ チャネル*M*。ここで、 *N*はコントローラーの番号、 *m*はチャネルの番号です。 |
+| **AtaPortRegistryChannelSubKeyWriteDeferred** | レジストリキー HKLM\\CurrentControlSet\\Services\\&lt;サービス名&gt;\ コントローラー*N*\ チャネル*M*で、指定された値の名前にデータを非同期的に書き込みます。ここで、 *N*はコントローラーの番号、 *m*はチャネルの番号です。 |

@@ -3,7 +3,7 @@ title: OID_GEN_LINK_STATE
 description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_LINK_STATE OID を使用して、ミニポートアダプターの現在のリンクの状態を判断します。
 ms.assetid: 75a30054-8700-4b79-902c-c8382a25c0a2
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_LINK_STATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_LINK_STATE
 ms.localizationpriority: medium
 ms.openlocfilehash: 20d1c7b8b2b11fc5e4d51ee3b7fddb6be105e3a2
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ ms.locfileid: "72844617"
 
 ミニポートドライバーは、初期化中にリンク状態を提供し、状態を示す更新プログラムを提供します。
 
-リンクの状態を指定するには、NDIS\_ミニポートの MediaConnectState、 **MediaDuplexState**、 **XmitLinkSpeed**、 **rcvlinkspeed**、 **PauseFunctions**、および**AutoNegotiationFlags**の各メンバーを設定し[ **@no__t\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)ミニポートドライバーが[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数に渡す一般的な\_属性の構造体。
+リンクの状態を指定するには **、MediaConnectState**、 **MediaDuplexState**、 **XmitLinkSpeed**、 **rcvlinkspeed**、 **PauseFunctions**、および**AutoNegotiationFlags**のメンバーを、ミニポートドライバーが[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数に渡す、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体に設定します。
 
 ミニポートドライバーでこの OID がサポートされていない場合、ドライバーは、サポートされて\_いない\_の NDIS\_状態を返します。 この OID がミニポートドライバーによってサポートされている場合は、 [**NDIS\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造の接続状態、双方向の状態、およびリンク速度が返されます。
 

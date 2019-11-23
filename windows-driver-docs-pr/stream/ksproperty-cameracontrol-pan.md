@@ -3,7 +3,7 @@ title: KSK プロパティ\_CAMERACONTROL\_PAN
 description: ユーザーモードのクライアントは、KSK プロパティ\_CAMERACONTROL\_PAN プロパティを使用して、カメラのパン設定を取得または設定します。 このプロパティは省略可能です。
 ms.assetid: 765eecbf-ecde-4268-9ab5-c0c099c06d2f
 keywords:
-- KSPROPERTY_CAMERACONTROL_PAN ストリーミングメディアデバイス
+- ストリーミングメディアデバイスの KSPROPERTY_CAMERACONTROL_PAN
 topic_type:
 - apiref
 api_name:
@@ -41,7 +41,7 @@ ms.locfileid: "72843345"
 </colgroup>
 <thead>
 <tr class="header">
-<th>[購入]</th>
+<th>取得</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72843345"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>[はい]</p></td>
-<td><p>[はい]</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>

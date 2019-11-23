@@ -49,9 +49,9 @@ ms.locfileid: "72838040"
 
 -   AVStream ミニドライバー [**KsRegisterFilterWithNoKSPins**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksregisterfilterwithnokspins)関数を呼び出して、フィルターを DirectShow に登録します。
 
--   また、ミニドライバーが BDA モデルに従っていて、特定の[**Ksfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)構造の下にある特定の[**KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造の複数のインスタンスが同じカーネルストリーミングカテゴリ[**に登録されている場合は、KsFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterfactoryupdatecachedata) (または[**BdaFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) 関数は、フィルターを DirectShow に登録します。
+-   または、ミニドライバーが BDA モデルに従っており、特定の[**Ksfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)構造の下にある特定の[**KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造の複数のインスタンスが同じカーネルストリーミングカテゴリに登録されている場合は、 [**KsFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterfactoryupdatecachedata) (または[**BdaFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) 関数を呼び出して、フィルターを DirectShow に登録します。
 
-SRB\_GET\_STREAM\_INFO (ストリームクラスミニドライバーの場合)、または KSPIN\_記述子\_EX (AVStream ミニドライバーの場合) から返される KSPIN\_MEDIUM 構造体は、KSPIN\_MEDIUM メンバーと一致している必要があります。次のプロパティで返されます。
+SRB\_GET\_STREAM\_INFO (Stream クラスミニドライバーの場合)、または KSPIN\_DESCRIPTOR\_EX (AVStream ミニドライバーの場合) から返される KSPIN\_MEDIUM 構造体は、次のプロパティで返される KSPIN\_MEDIUM メンバーと一致する必要があります。
 
 -   Ksk プロパティの**Medium**メンバーは、 [**KSK プロパティ\_クロスバー\_pininfo**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-pininfo)の[ **\_クロスバー\_pininfo\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_pininfo_s)構造体を持ちます。 メディアが一致しない場合、グラフの作成はミニドライバーのフィルターとグラフ内の隣接するフィルターの間で失敗する可能性があります。
 

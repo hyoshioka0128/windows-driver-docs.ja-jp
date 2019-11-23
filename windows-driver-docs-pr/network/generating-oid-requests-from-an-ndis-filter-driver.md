@@ -29,7 +29,7 @@ ms.locfileid: "72842184"
 
 同期的に完了するには、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)によって、NDIS\_STATUS\_SUCCESS または error status が返されます。 非同期的に完了するために、 **NdisFOidRequest**は NDIS\_STATUS\_PENDING を返します。
 
-基になるドライバーによって正常に処理された情報を調べるには、oid 要求を発行するフィルタードライバーが、oid 要求の後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。型. NDIS バージョン情報の詳細については、「 [Ndis バージョン情報の指定](specifying-ndis-version-information.md)」を参照してください。
+基になるドライバーによって正常に処理された情報を確認するには、oid 要求を発行するフィルタードライバーが、oid 要求が返された後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。 NDIS バージョン情報の詳細については、「 [Ndis バージョン情報の指定](specifying-ndis-version-information.md)」を参照してください。
 
 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)が NDIS\_STATUS\_PENDING を返した場合、ndis は基になるドライバーが OID 要求を完了した後に、 [*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete)関数を呼び出します。 この場合、NDIS は*FilterOidRequestComplete*の*OidRequest*パラメーターに要求の結果を渡します。 NDIS は、 *FilterOidRequestComplete*の*status*パラメーターに要求の最終状態を渡します。
 

@@ -68,7 +68,7 @@ NDIS プロトコルドライバーでは、ドライバーが管理する各バ
 <th align="left">右山</th>
 <th align="left">一時停止</th>
 <th align="left">再起動</th>
-<th align="left">Running</th>
+<th align="left">実行中</th>
 <th align="left">一時停止</th>
 </tr>
 </thead>
@@ -159,7 +159,7 @@ NDIS プロトコルドライバーでは、ドライバーが管理する各バ
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -180,7 +180,7 @@ NDIS プロトコルドライバーでは、ドライバーが管理する各バ
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +190,7 @@ NDIS プロトコルドライバーでは、ドライバーが管理する各バ
 <td align="left"><p>右山</p></td>
 <td align="left"><p>一時停止</p></td>
 <td align="left"><p>再起動</p></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 </tbody>

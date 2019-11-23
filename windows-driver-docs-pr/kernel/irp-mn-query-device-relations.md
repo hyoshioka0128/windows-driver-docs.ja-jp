@@ -34,7 +34,7 @@ PnP マネージャーは、この要求を送信して、デバイス間の特�
 
 PnP マネージャーは、指定されたデバイスとの関係を持つデバイスに関する情報を収集するために、この IRP を送信します。
 
-PnP マネージャーは、デバイスが列挙されたとき、デバイスがアクティブになっている間にデバイスの**Busrelations** (子デバイス) を照会します。たとえば、ドライバーが[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチンを呼び出して、子デバイスに到着した。
+PnP マネージャーは、デバイスが列挙されたとき、デバイスがアクティブになっている間に、デバイスの**Busrelations** (子デバイス) に対してクエリを実行します。たとえば、ドライバーが[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチンを呼び出して子デバイスが到着したかどうかを示している場合などです。
 
 PnP マネージャーは、デバイスのドライバーを削除する前に、デバイスの**RemovalRelations**を照会します。 PnP マネージャーは、デバイスを取り出す前に**RemovalRelations**と**EjectionRelations**を照会します。
 
@@ -42,7 +42,7 @@ PnP マネージャーは、ドライバーまたはユーザーモードアプ�
 
 PnP マネージャーは、デバイスのドライバーが**IoInvalidateDeviceRelations**を呼び出して、このデバイスが暗黙的な電源管理関係を持つデバイスのセットが変更されたことを示す場合に、デバイスの**powerrelations**を照会します。 **Powerrelations**要求は Windows 7 以降でサポートされています。
 
-**Busrelations**、 **RemovalRelations**、 **EjectionRelations**、および**powerrelations**要求の場合、PnP マネージャーは、IRQL = PASSIVE で **\_関係\_デバイス関係する IRP\_\_** を送信し\_システムスレッドのコンテキストでのレベル。
+**Busrelations**、 **RemovalRelations**、 **EjectionRelations**、および**powerrelations**要求の場合、PnP マネージャーは、システムスレッドのコンテキストで、IRQL = パッシブ\_レベルで **\_クエリ\_デバイス\_関係を持つ IRP\_** を送信します。
 
 **TargetDeviceRelation**要求の場合、PnP マネージャーは、任意のスレッドコンテキストで、IRQL = パッシブ\_レベルでこの IRP を送信します。
 
@@ -75,7 +75,7 @@ typedef struct _DEVICE_RELATIONS {
 <a name="operation"></a>操作
 ---------
 
-ドライバーが、この IRP\_に応答して、**デバイス\_関係\_\_クエリ**を実行した場合に関係を返す場合、 **\_** ドライバーは、カウントを含むページメモリと適切なデバイスオブジェクトポインターの数。 不要になったときに、PnP マネージャーによって構造が解放されます。 別のドライバーによって割り当てられた**デバイス\_関係**構造をドライバーが置き換える場合、ドライバーは前の構造体を解放する必要があります。
+ドライバーが、この IRP\_に応答して、**デバイス\_の関係\_\_クエリ**を実行した場合、ドライバーは、カウントおよび適切な数のデバイスオブジェクトポインターを含むページングされたメモリから**デバイス\_の関係**構造を割り当てます。 不要になったときに、PnP マネージャーによって構造が解放されます。 別のドライバーによって割り当てられた**デバイス\_関係**構造をドライバーが置き換える場合、ドライバーは前の構造体を解放する必要があります。
 
 ドライバーは、この IRP ([**Obreferenceobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)) で報告されるすべてのデバイスの PDO を参照する必要があります。 必要に応じて、PnP マネージャーによって参照が削除されます。
 
@@ -147,13 +147,13 @@ Windows 7 以降では、 **Powerrelations**クエリを使用すると、ドラ
 
 PnP マネージャーは、デバイスのドライバーが[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチンを呼び出し、 **Powerrelations**の*型*パラメーター値を指定すると、デバイスの**powerrelations**クエリを発行します。
 
-このクエリに応答して、ターゲットデバイスのドライバー (つまり、クエリの対象となるデバイス) は、電源マネージャーによってオンにする必要があるその他のデバイスの PDOs へのポインターを含む**デバイス\_の関係**構造を提供します。ターゲットデバイスの電源をオンにする前。 逆に、これらの他のデバイスは、ターゲットデバイスがオフになった後にのみオフにする必要があります。 Power manager は、クエリの情報を使用して、これらのデバイスが正しい順序でオンまたはオフになっていることを保証します。
+このクエリに対する応答として、ターゲットデバイスのドライバー (つまり、クエリの対象となるデバイス) は、ターゲットデバイスの電源をオンにする前に電源マネージャーによってオンにする必要があるその他のデバイスの PDOs へのポインターを含む**デバイス\_リレーション**構造を提供します。 逆に、これらの他のデバイスは、ターゲットデバイスがオフになった後にのみオフにする必要があります。 Power manager は、クエリの情報を使用して、これらのデバイスが正しい順序でオンまたはオフになっていることを保証します。
 
 この順序保証は、グローバルシステムスリープ状態遷移にのみ適用されます。これには、S1、S2、S3 (*スリープ*)、S4 (*休止*)、および S5 (*シャットダウン*) システム電源の状態への移行が含まれます。 **Powerrelations**の順序保証は、システムが S0 (実行中) システム状態のままになっている間に、システムが S0 (*実行中*) システム状態のままである間は、Dx[デバイスの電源](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)状態遷移には適用されません。
 
-ターゲットデバイスが特殊ファイル (ページングファイル、休止ファイル、クラッシュダンプファイルなど) のデバイスパスにある場合は、ターゲットデバイスのドライバーが、デバイス\_使用されている IRP\_\_を処理するときに追加の手順を実行する必要があり[ **@no__t_5**](irp-mn-device-usage-notification.md) **Inpath**が**TRUE**である _ NOTIFICATION IRP。 このドライバーは、 **Powerrelations**クエリに対して pdos が提供されているデバイスが、特別なファイルのデバイスパスにあることもサポートしている必要があります。 このサポートを確認するには、ターゲットデバイスのドライバーが、最初に**IRP\_\_デバイス\_USAGE\_NOTIFICATION** irp をこれらの各デバイスに送信する必要があります。また、この irp は、次のように同じ UsageNotification を指定する必要があり**ます。** ターゲットデバイス。 この IRP を受信するすべてのデバイスが正常な状態コードを使用して IRP を完了した場合にのみ、ターゲットデバイスのドライバーが Irp\_完了し、**デバイス\_使用状況\_NOTIFICATION** IRP が正常に完了したことを\_ます。 それ以外の場合、このドライバーはエラー状態コードを使用してこの IRP を完了する必要があります。
+ターゲットデバイスが、特殊なファイル (ページングファイル、休止ファイル、クラッシュダンプファイルなど) のデバイスパスにある場合、ターゲットデバイスのドライバーは、 **Inpath**が**TRUE**の\_NOTIFICATION irp を使用して、 [**irp\_\_\_** ](irp-mn-device-usage-notification.md)を処理するときに追加の手順を実行する必要があります。 このドライバーは、 **Powerrelations**クエリに対して pdos が提供されているデバイスが、特別なファイルのデバイスパスにあることもサポートしている必要があります。 このサポートを確認するには、ターゲットデバイスのドライバーが、最初に**IRP\_\_デバイス\_USAGE\_NOTIFICATION** irp をこれらの各デバイスに送信する必要があります。また、この irp はターゲットデバイスと同じ**UsageNotification**を指定する必要があります。 この IRP を受信するすべてのデバイスが正常な状態コードを使用して IRP を完了した場合にのみ、ターゲットデバイスのドライバーが Irp\_完了し、**デバイス\_使用状況\_NOTIFICATION** IRP が正常に完了したことを\_ます。 それ以外の場合、このドライバーはエラー状態コードを使用してこの IRP を完了する必要があります。
 
-この同じドライバーが\_、 **Inpath**が**FALSE**の **\_デバイス\_使用状況\_通知**irp を処理する場合、ドライバーは、 **irp\_\_デバイス\_使用状況を送信する必要があり\_** **Inpath**が**TRUE**の場合と同じ依存デバイスのセットに対する通知 IRP。 ただし、 **Inpath**が**FALSE**の場合、ドライバーはこの IRP を失敗状態コードで完了させないようにする必要があります。
+この同じドライバーが、 **inpath**が**FALSE**に設定されている **\_デバイス\_使用状況\_通知**irp を\_処理する場合、ドライバーは、 **inpath**が**TRUE**の場合と同じ依存デバイスのセットに対して、 **irp\_\_デバイス\_使用状況\_** を送信する必要があります。 ただし、 **Inpath**が**FALSE**の場合、ドライバーはこの IRP を失敗状態コードで完了させないようにする必要があります。
 
 **Powerrelations クエリに**応答するドライバーは、 **Powerrelations**クエリに pdos が提供されているすべてのデバイスで、ターゲットデバイスの変更通知を登録する必要があります。 これらの通知に登録するために、ドライバーは[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)ルーチンを呼び出し、 *Eventcategory* **targetdevicechange**の eventcategory パラメーター値を指定できます。
 
@@ -201,11 +201,11 @@ PnP マネージャーは、デバイスのドライバーが[**IoInvalidateDevi
 
 ドライバーは、 **TargetDeviceRelation**のデバイススタックを照会できます。 Irp の送信の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)」を参照してください。 次の手順は、この IRP に特に適用されます。
 
--   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction** **\_を\_クエリ\_デバイス\_の関係**、set **QueryDeviceRelations**を**TargetDeviceRelation**に設定し、 **Irp&gt;FileObject**を有効なファイルオブジェクトに設定します。
+-   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction** **\_を\_クエリ\_デバイス\_の関係**に設定し、 **QueryDeviceRelations**を**TargetDeviceRelation**に設定し、 **IRP-&gt;FileObject**を有効なファイルオブジェクトに設定します。
 
 -   **Iostatus を初期化します。** 状態は状態に\_\_サポートされていません。
 
-ドライバーが Irp\_に応答してこの IRP を送信し、ドライバーが受信した**TargetDeviceRelation**の **\_クエリ\_デバイス\_関係**にある場合、ドライバーは pdo を報告し、返されたを解放します。IRP が完了したときのリレーション構造。 ドライバーが別の理由でこの IRP を開始した場合、IRP が完了すると、ドライバーはリレーション構造を解放し、不要になったときに PDO を逆参照します。
+ドライバーが irp\_に応答してこの IRP を送信し、ドライバーが受信した**TargetDeviceRelation**の **\_クエリ\_デバイス\_関係**にある場合、ドライバーは pdo を報告し、irp の完了時に返されたリレーション構造を解放します。 ドライバーが別の理由でこの IRP を開始した場合、IRP が完了すると、ドライバーはリレーション構造を解放し、不要になったときに PDO を逆参照します。
 
 <a name="requirements"></a>要件
 ------------
@@ -218,7 +218,7 @@ PnP マネージャーは、デバイスのドライバーが[**IoInvalidateDevi
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>

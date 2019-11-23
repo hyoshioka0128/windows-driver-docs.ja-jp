@@ -18,7 +18,7 @@ ms.locfileid: "72831465"
 
 次のコード例では、2つの同期 IOCTL\_ACPI\_ENUM\_CHILDREN 要求を送信して、要求が送信される親デバイスのすべての子デバイスを再帰的に列挙する方法を示します。 このコードは、最初の要求を処理するために、次の一連の操作を実行します。
 
-1.  最初の要求の入力バッファーを設定します。 入力バッファーは、 [ **\_子\_入力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)構造に\_設定されている、子の\_列挙型の列挙型に設定されています **。また、** 署名が列挙型に設定**されて**います。\_の子\_複数レベルです。
+1.  最初の要求の入力バッファーを設定します。 入力バッファーは、 [ **\_子\_入力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)構造**に設定された、** 子の\_列挙型の子を列挙します。また、シグネチャと**Flags**は\_列挙型に設定されます。\_\_\_\_\_
 
 2.  最初の要求の出力バッファーを設定します。 出力バッファーは、 [**ACPI\_列挙型\_子\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)構造に設定されます。 この出力バッファーには、デバイスの名前を返すには十分な大きさではない、1つの[**ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)構造体だけが含まれています。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72831465"
 
 4.  ACPI ドライバーがステータス\_バッファー\_オーバーフローに設定したかどうかを確認します。 別の状態が返された場合は、エラーが発生したことを示し、コードは終了します。
 
-5.  ACPI ドライバーによって**署名**メンバーが acpi\_列挙型に設定されていることを確認します。\_\_子には、出力\_バッファー\_署名を設定し、 **numberofchildren**の値を**sizeof**(acpi @no__t_ の値以上に設定します。8_ ENUM\_子\_出力\_BUFFER) です。 両方が true の場合、 **Numberofchildren**の値は、要求された子オブジェクト名を格納するために必要な出力バッファーのサイズ (バイト単位) になります。
+5.  ACPI ドライバーによって**署名**メンバーが acpi\_列挙型に設定されていることを確認します。\_子は\_出力\_バッファー\_署名を出力し、 **sizeof**と等しいかそれ以上の値に**numberofchildren**を設定します (ACPI\_列挙\_子\_出力\_バッファー)。 両方が true の場合、 **Numberofchildren**の値は、要求された子オブジェクト名を格納するために必要な出力バッファーのサイズ (バイト単位) になります。
 
 コード例では、出力バッファーに必要なサイズを取得した後、次の一連の操作を実行して2番目の要求を処理します。これにより、要求された子オブジェクトのパスと名前が返されます。
 
@@ -34,7 +34,7 @@ ms.locfileid: "72831465"
 
 2.  ドライバーが提供する**Senddownstreamirp**関数を呼び出して、2番目の要求を親デバイスに同期的に送信します。
 
-3.  ACPI ドライバーが**署名**メンバーを ACPI\_ENUM に設定していることを確認します。\_子は\_出力\_バッファー\_署名により、 **numberofchildren**を1つ以上のオブジェクトのパスと名前を示します。が返されました)。 [**IO\_STATUS\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)の**情報**メンバーを、出力バッファーに割り当てられたサイズに設定します。
+3.  ACPI ドライバーが**署名**メンバーを ACPI\_ENUM に設定していることを確認します。\_子は\_出力\_バッファー\_署名により、 **numberofchildren**を1つ以上 (少なくとも1つのオブジェクトのパスと名前が返されたことを示す) に設定し、 [**IO\_STATUS\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)の**情報**メンバーを、割り当てられた出力バッファーのサイズ
 
 4.  出力バッファー内の子オブジェクト名の配列を処理します。
 

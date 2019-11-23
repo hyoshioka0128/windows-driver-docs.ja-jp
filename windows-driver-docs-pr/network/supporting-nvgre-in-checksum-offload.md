@@ -20,11 +20,11 @@ NDIS 6.30 (Windows Server 2012) では、[汎用ルーティングカプセル�
 
  
 
-[**NDIS\_TCP\_送信\_\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)のオフロード。**IsEncapsulatedPacket**が**TRUE**で、 **TCPIPCHECKSUMNETBUFFERLISTINFO**の帯域外 (OOB) 情報が有効であることを示します。これは、nvgre のサポートが必要であり、NIC がトンネル (外部) IP のチェックサムを計算する必要があることを示します。ヘッダー、トランスポート (内部) IP ヘッダー、TCP または UDP ヘッダー。
+[**NDIS\_TCP\_送信\_\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)のオフロード。**IsEncapsulatedPacket**は**TRUE**で、 **TCPIPCHECKSUMNETBUFFERLISTINFO**の帯域外 (OOB) 情報が有効であることを示します。これは、nvgre のサポートが必要であり、NIC がトンネル (外部) ip ヘッダー、トランスポート (内部) ip ヘッダー、および TCP または UDP ヘッダーのチェックサムを計算する必要があることを示します。
 
 [**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体の**IsIPv4**および**IsIPv6**フラグは、トンネル (外部) ip ヘッダーの ip ヘッダーバージョンを示します。 NIC は、トランスポート (内部) IP ヘッダーを解析して、そのヘッダーの IP バージョンを判断する必要があります。 混合モードパケットは許可されているため (「 [**NDIS\_カプセル化\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload))」を参照してください。そのため、NIC では、内部と外部の ip ヘッダーが同じ ip ヘッダーバージョンであると想定することはできません。
 
-Nic およびミニポートドライバーでは、NDIS\_TCP\_送信\_オフロード\_補足の**innerフレームオフセット**、 **TransportIpHeaderRelativeOffset**、および TcpHeaderRelativeOffset の値を使用できます。 [ **\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体です。 NIC またはミニポートドライバーは、これらのオフセットを検証するために、トンネル (外部) IP ヘッダーまたはそれ以降のヘッダーに対して必要なヘッダーチェックを実行する場合があります。
+Nic およびミニポートドライバーでは、 [**NDIS\_TCP\_送信\_オフロード\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体の**innerフレームオフセット**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset**の値を使用できます。 NIC またはミニポートドライバーは、これらのオフセットを検証するために、トンネル (外部) IP ヘッダーまたはそれ以降のヘッダーに対して必要なヘッダーチェックを実行する場合があります。
 
 [**NDIS\_TCP\_送信\_、\_補足\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)にオフロードすることに注意してください。**IsEncapsulatedPacket**が TRUE の場合、既存のヘッダーオフセットフィールドである[**NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)ます。**LsoV2Transmit**。**Tcpheaderoffset**および[**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)。**送信**。**Tcpheaderoffset**は正しい値を持たず、NIC またはドライバーでは使用できません。
 
@@ -35,9 +35,9 @@ Nic およびミニポートドライバーでは、NDIS\_TCP\_送信\_オフロ
 
 NVGRE のチェックサムの検証は、それ以外の場合とほぼ同じです。
 
-ミニポートが Oid を受信すると[\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)の oid 要求を送信し、NDIS\_カプセル化のために、\_**GRE\_MAC の型\_** ます (「 [**ndis\_オフロード」を参照してください\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)) では、NIC はトンネル (外部) ip ヘッダー、トランスポート (内部) ip ヘッダー、TCP または UDP ヘッダーに対してチェックサム検証を実行する必要があります。
+ミニポートが Oid を受信し[\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)の oid 要求を受け取り、それを**NDIS\_カプセル化**( [**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)を参照) に対して成功させる場合、NIC はトンネル (外部) ip ヘッダー、トランスポート (内部) IP ヘッダー、TCP または UDP ヘッダーに対してチェックサム検証を実行する必要があります。\_\_\_
 
-IPv4 トンネル (外側) ヘッダーと IPv4 トランスポート (内部) ヘッダーを持つカプセル化されたパケットの場合、ミニポートドライバーは、 [**NDIS\_TCP\_IP\_CHECKSUM\_NET に IpChecksumSucceeded フラグを設定する必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)IP ヘッダーのチェックサム検証が正常に完了した場合にのみ、バッファー\_\_情報の構造を一覧表示します。 トンネル (外部) IPv4 ヘッダーとトランスポート (内部) IPv4 ヘッダーの両方を持つカプセル化されたパケットの場合、いずれかの IP ヘッダーチェックサム検証が失敗した場合、ミニポートドライバーは**IpChecksumFailed**フラグを設定する必要があります。
+IPv4 トンネル (外側) ヘッダーと IPv4 トランスポート (内部) ヘッダーを持つカプセル化されたパケットの場合、 **IpChecksumSucceeded**フラグは、ip ヘッダーのチェックサム検証が正常に完了した場合にのみ、 [**NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体に設定する必要があります。 トンネル (外部) IPv4 ヘッダーとトランスポート (内部) IPv4 ヘッダーの両方を持つカプセル化されたパケットの場合、いずれかの IP ヘッダーチェックサム検証が失敗した場合、ミニポートドライバーは**IpChecksumFailed**フラグを設定する必要があります。
 
  
 

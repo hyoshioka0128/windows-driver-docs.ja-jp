@@ -1,6 +1,6 @@
 ---
-title: Cofunctional な VidPN ソースモードとターゲットモードを列挙しています
-description: Cofunctional な VidPN ソースモードとターゲットモードを列挙しています
+title: Cofunctional VidPN ソースおよびターゲット モードの列挙
+description: Cofunctional VidPN ソースおよびターゲット モードの列挙
 ms.assetid: f1aa6277-7af6-4ba0-8ff1-d562f7029540
 keywords:
 - ビデオの現在のネットワーク WDK ディスプレイ、列挙ターゲットモードとソースモード
@@ -26,7 +26,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839705"
 ---
-# <a name="enumerating-cofunctional-vidpn-source-and-target-modes"></a>Cofunctional な VidPN ソースモードとターゲットモードを列挙しています
+# <a name="enumerating-cofunctional-vidpn-source-and-target-modes"></a>Cofunctional VidPN ソースおよびターゲット モードの列挙
 
 
 このトピックでは、video present network (VidPN) マネージャーと表示ミニポートドライバーが連携して、ビデオの現在のソースとターゲットで使用可能なモードを列挙する方法について説明します。 この資料を読む前に、次のトピックで説明されている内容について理解しておく必要があります。
@@ -119,7 +119,7 @@ ms.locfileid: "72839705"
 
 ### <a name="adjusting-rotation-support-flags"></a>回転のサポートフラグの調整
 
-パスの回転サポートフラグの調整は、パスのスケーリングサポートフラグの調整に似ています。 *Vpnpath*が、\_パス構造の D3DKMDT\_VIDPN\_存在すると仮定します。 *Vpnpath*の場合。**Contenttransformation. ローテーション**は、 **D3DKMDT\_VPPR\_IDENTITY**、 **D3DKMDT\_vppr\_ROTATE90**、 **D3DKMDT\_Vppr\_ROTATE180**、または**D3DKMDT\_vppr @no__t_ に設定され13_ ROTATE270**、パスの回転変換はピン留めされています。\_ それ以外の場合、回転変換はピン留めされません。 ローテーションサポートフラグは、 *Vpnpath*に含まれています。**Contenttransformation. RotationSupport**。
+パスの回転サポートフラグの調整は、パスのスケーリングサポートフラグの調整に似ています。 *Vpnpath*が、\_パス構造の D3DKMDT\_VIDPN\_存在すると仮定します。 *Vpnpath*の場合。**Contenttransformation. ローテーション**は、 **D3DKMDT\_VPPR\_IDENTITY**、 **D3DKMDT\_vppr\_ROTATE90**、 **D3DKMDT\_Vppr\_ROTATE180**、または**D3DKMDT\_vppr\_ROTATE270**に設定されます。その後、パスの回転変換はピン留めされます。 それ以外の場合、回転変換はピン留めされません。 ローテーションサポートフラグは、 *Vpnpath*に含まれています。**Contenttransformation. RotationSupport**。
 
 ### <a name="span-idreporting_multisampling_methodsspanspan-idreporting_multisampling_methodsspanreporting-multisampling-methods"></a><span id="reporting_multisampling_methods"></span><span id="REPORTING_MULTISAMPLING_METHODS"></span>マルチサンプリングメソッドのレポート
 

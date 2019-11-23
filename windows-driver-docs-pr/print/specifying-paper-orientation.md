@@ -1,6 +1,6 @@
 ---
-title: 用紙の向きの指定
-description: 用紙の向きの指定
+title: 用紙の向きを指定する
+description: 用紙の向きを指定する
 ms.assetid: 2d62e1ff-965b-4fd7-922c-319ec1bc39a5
 keywords:
 - Unidrv、用紙の向き
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840407"
 ---
-# <a name="specifying-paper-orientation"></a>用紙の向きの指定
+# <a name="specifying-paper-orientation"></a>用紙の向きを指定する
 
 
 

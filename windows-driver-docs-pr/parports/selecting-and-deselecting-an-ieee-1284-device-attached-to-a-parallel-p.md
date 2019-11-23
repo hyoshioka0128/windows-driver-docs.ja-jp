@@ -34,7 +34,7 @@ ms.locfileid: "72842324"
 
 パラレルポートが別のクライアントによって割り当てられている場合は、並列ポート用のシステム提供の関数ドライバーによってクライアントの select 要求がキューに配置されるため、select 要求はクライアントによる処理が少なくて済みます。 パラレルポート関数ドライバーによって select 要求がデキューされると、ポートの割り当てと IEEE 1284.3 デバイスの選択が試行されます。 クライアントは、許容できるタイムアウト遅延またはその他のデバイス固有の状態が原因で、いつでも選択要求を取り消すことができます。
 
-**注**   クライアントが pparallel\_のみを使用している場合は、 [ **[\_ルーチンコールバック] を選択し\_て**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_try_select_routine)並列デバイスを選択しようとすると、他のクライアントがパラレルポートに対して競合している (システムによって提供される関数ドライバー)。パラレルポートの場合、クライアントにポートが割り当てられないことがあります。 正常に完了するには、クライアントは[**IOCTL\_内部\_[\_デバイス要求] を選択**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_select_device)する必要があります。 (パラレルポート関数ドライバーはキューに配置され、その後プロセスによって要求が処理されます。また、デバイスの選択要求は、選択したデバイスの要求を受信する順序で処理されます)。
+クライアントが Pparallel\_のみを使用している場合は、 [ **[\_ルーチンコールバック] を選択して**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_try_select_routine)並列デバイスを選択しようとしてい\_て、他のクライアントがパラレルポートに対して競合している**場合   パラレル**ポート用のシステム提供の関数ドライバーがクライアントにポートを割り当てないことがあります。 正常に完了するには、クライアントは[**IOCTL\_内部\_[\_デバイス要求] を選択**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_select_device)する必要があります。 (パラレルポート関数ドライバーはキューに配置され、その後プロセスによって要求が処理されます。また、デバイスの選択要求は、選択したデバイスの要求を受信する順序で処理されます)。
 
  
 

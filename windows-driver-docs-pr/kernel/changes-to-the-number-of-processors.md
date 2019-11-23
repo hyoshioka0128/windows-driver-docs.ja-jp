@@ -46,7 +46,7 @@ ms.locfileid: "72828545"
 
 ハードウェアパーティション内の現在のアクティブなプロセッサ数を取得するには、デバイスドライバーが[**Kequeryactiveprocessorcount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessorcount)関数を呼び出す必要があります。 デバイスドライバーは、現在のプロセッサのアフィニティ値を取得するために、 [**Kequeryactiveprocessors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors)関数または**Kequeryactiveprocessorcount**関数のいずれかを呼び出すことができます。
 
-デバイスドライバーによってハードウェアパーティション内のアクティブな各プロセッサのデータ構造が割り当てられ、新しいプロセッサのデータ構造のメモリ割り当てが失敗した場合にデバイスドライバーが失敗する場合は、デバイスドライバーが割り当てることができることに**注意**してください  ドライバーの初期化時に、オペレーティングシステムがサポートするプロセッサの最大数を処理するのに十分なデータ構造があります。 このような状況では、新しいプロセッサをハードウェアパーティションに追加するときに、デバイスドライバーが新しいデータ構造を割り当てる必要はありません。 ただし、これらのデータ構造のサイズが非常に小さい場合を除き、メモリリソースの使用効率が悪くなる可能性があります。 デバイスドライバーは、 [**Kequerymaximumprocessorcount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount)関数を呼び出すことによって、オペレーティングシステムがサポートするプロセッサの最大数を照会できます。
+デバイスドライバーによってハードウェアパーティションにアクティブな各プロセッサのデータ構造が割り当てられ、新しいプロセッサのデータ構造のメモリ割り当てが失敗した場合、デバイスドライバーは、ドライバーの初期化中に、オペレーティングシステムがサポートするプロセッサの最大数を処理するのに十分なデータ構造を割り当てることが**できることを  し**ます。 このような状況では、新しいプロセッサをハードウェアパーティションに追加するときに、デバイスドライバーが新しいデータ構造を割り当てる必要はありません。 ただし、これらのデータ構造のサイズが非常に小さい場合を除き、メモリリソースの使用効率が悪くなる可能性があります。 デバイスドライバーは、 [**Kequerymaximumprocessorcount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount)関数を呼び出すことによって、オペレーティングシステムがサポートするプロセッサの最大数を照会できます。
 
  
 

@@ -43,9 +43,9 @@ NDIS プロトコルとフィルタードライバーは、ハードウェアオ
 
 -   [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_SA を追加\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)
 
--   [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa-ex)
+-   [OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa-ex)
 
--   [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA の削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)
+-   [OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_DELETE\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)
 
 -   [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_更新\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-update-sa)
 
@@ -68,7 +68,7 @@ IPsec ハードウェアオフロードテクノロジのバージョン2の詳�
 
 -   [OID\_受信\_フィルター\_移動\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)
 
-転送拡張機能は、Oid\_の oid 要求を拒否することができます。 [nic\_スイッチ\_割り当て\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)と[oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)を使用して要求を完了することで\_vport を作成\_NDIS\_STATUS\_SUCCESS。 ただし、拡張機能は他の SR-IOV OID 要求を拒否することはできません。
+転送拡張機能は、 [oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)の oid 要求を拒否し、\_VF と[oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)に割り当て\_、NDIS\_status\_SUCCESS 以外のステータスコードで要求を完了することによって\_vport を作成\_ます。 ただし、拡張機能は他の SR-IOV OID 要求を拒否することはできません。
 
 SR-IOV ハードウェアオフロードテクノロジの詳細については、「[シングルルート I/o 仮想化 (sr-iov)](single-root-i-o-virtualization--sr-iov-.md)」を参照してください。
 
@@ -85,7 +85,7 @@ SR-IOV ハードウェアオフロードテクノロジの詳細については�
 
 -   [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)
 
-転送拡張機能は、Oid の OID 要求を拒否することができます[\_\_フィルターを受け取る\_\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)と OID の割り当て\_フィルター\_設定\_フィルター\_[設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)して、要求の状態を完了します。NDIS\_STATUS 以外のコード\_成功します。 ただし、拡張機能は他の VMQ OID 要求を拒否することはできません。
+転送拡張機能は、Oid の OID 要求を拒否することができます[\_\_フィルターを受信し\_\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)および OID を割り当てることができます\_フィルター\_[設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)\_、NDIS\_status\_SUCCESS 以外のステータスコードで要求を完了します。\_ ただし、拡張機能は他の VMQ OID 要求を拒否することはできません。
 
 VMQ ハードウェアオフロードテクノロジの詳細については、「[仮想マシンキュー (vmq)](virtual-machine-queue--vmq-.md)」を参照してください。
 
@@ -101,25 +101,25 @@ VMQ ハードウェアオフロードテクノロジの詳細については、�
 
 -   拡張機能は、オフロードリソースの割り当てをクリア、解放、または完了するために、ハードウェアオフロード OID 要求を変更または失敗させないようにする必要があります。 たとえば、拡張機能は oid 要求の OID 要求に失敗しないようにする必要があります。 [\_受信\_フィルター\_クリア\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter)または[oid\_NIC\_スイッチ\_\_VPORT を削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)します。 拡張可能なスイッチインターフェイスは、これらのリソースの状態情報をクリーンアップするために、これらの OID 要求を処理する必要があります。
 
-    拡張機能は、ハードウェアオフロードの OID 要求を変更または失敗させて、オフロードリソースの割り当て、移動、または設定を行うことができます。 たとえば、拡張機能は[oid\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)の oid 要求を失敗または変更することができます。\_\_VF または[oid\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)。
+    拡張機能は、ハードウェアオフロードの OID 要求を変更または失敗させて、オフロードリソースの割り当て、移動、または設定を行うことができます。 たとえば、拡張機能は[oid\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)の oid 要求を失敗または変更することができます。\_\_VF または[oid\_TCP\_タスク\_IPSEC\_オフロード\_V2\_\_SA を追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)します。
 
 -   拡張機能は、ハードウェアオフロード Oid を基になる物理ネットワークアダプターに送信できます。 ただし、拡張機能が割り当てられなかったオフロードリソースをクリアまたは解放するハードウェアオフロード OID を生成することはできません。
 
-    たとえば、拡張機能は、oid\_のハードウェアオフロード OID 要求を開始しないようにする必要があります。この場合、 [\_\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)を受信した場合は、\_フィルターを使用して、\_[割り当て\_フィルター\_\_を受け取ることができ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)同じキューの要求をキューに置いています。
+    たとえば、拡張機能は、ハードウェアオフロード OID 要求の\_Oid を生成しないようにする必要があります。この場合、 [\_キュー\_\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)を受け取ると、同じキューの[\_キュー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)要求\_割り当て\_ます。\_
 
     拡張機能は、それまでのドライバーによって発行されたものと同じ OID 要求をフィルター処理している場合にのみ、独自のカプセル化されたハードウェアオフロード OID 要求を生成**する  ます**。 この場合、拡張機能は元の OID 要求を転送することはできません。 代わりに、この要求を完了するために、この拡張機能は[**NdisFOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequestcomplete)を呼び出す必要があります。 NDIS が[*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete)を呼び出して、生成された OID 要求を完了します。
 
      
 
--   拡張機能がハードウェアオフロード OID 要求を基になる物理ネットワークアダプターに転送している場合は、NDIS\_スイッチの**DestinationNicIndex**メンバー [ **\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造に設定する必要があります。アダプターの0以外のインデックス値。 これらのインデックス値の詳細については、「[ネットワークアダプターのインデックス値](network-adapter-index-values.md)」を参照してください。
+-   拡張機能がハードウェアオフロード OID 要求を基になる物理ネットワークアダプターに転送している場合は、 [**NDIS\_スイッチ\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造体の**DestinationNicIndex**メンバーが、アダプターの0以外のインデックス値に設定されている必要があります。 これらのインデックス値の詳細については、「[ネットワークアダプターのインデックス値](network-adapter-index-values.md)」を参照してください。
 
     また、 **DestinationPortId**メンバーは、外部ネットワークアダプターが接続される拡張可能なスイッチポートの識別子に設定されている必要があります。
 
--   拡張機能が、Hyper-v 子パーティションにリソースを割り当てるためのハードウェアオフロード OID 要求の発行元である場合、 [**NDIS\_スイッチ\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造の**SourcePortId**メンバーは、パーティションが接続されている拡張可能なスイッチポートの識別子。
+-   拡張機能が、Hyper-v 子パーティションのリソースを割り当てるハードウェアオフロード OID 要求の発行元である場合、 [**NDIS\_スイッチ\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造の**SourcePortId**メンバーは、パーティションが接続される拡張可能なスイッチポートの識別子に設定する必要があります。
 
     **Sourcenicindex**メンバーは、**既定\_\_NIC\_インデックス**に設定する必要があります\_に設定する必要があります。
 
--   拡張機能が OID 要求を転送するために[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す場合は、 *OidRequest*パラメーターを設定して、OID\_スイッチ\_NIC の[**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造へのポインターを設定する必要があり[\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)OID 要求を要求します。
+-   拡張機能が OID 要求を転送するために[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す場合は、 *OidRequest*パラメーターを、 [oid\_SWITCH\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)oid 要求の[ **\_要求構造\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)へのポインターに設定する必要があります。
 
 拡張機能が OID 要求をフィルター処理する方法の詳細については、「 [NDIS フィルタードライバーでの Oid 要求のフィルター処理](filtering-oid-requests-in-an-ndis-filter-driver.md)」を参照してください。
 

@@ -3,7 +3,7 @@ title: NDIS_STATUS_WWAN_PREFERRED_PROVIDERS
 description: ミニポートドライバーは、NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 通知を使用して、優先プロバイダーリスト (PPL) が変更されたことを MB サービスに通知します。
 ms.assetid: b0c06db9-82ca-4f94-80e6-3cf13197abf5
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_PREFERRED_PROVIDERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_PREFERRED_PROVIDERS
 ms.localizationpriority: medium
 ms.openlocfilehash: ef3a982061a1ddd75c3aca9d7d669c3bd091e766
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

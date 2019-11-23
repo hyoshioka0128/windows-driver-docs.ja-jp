@@ -1,9 +1,9 @@
 ---
 title: OID_GEN_MEDIA_SUPPORTED
-description: クエリとして、OID_GEN_MEDIA_SUPPORTED OID は、nic がサポートできるメディアの種類を指定しますが、NIC が現在使用しているメディアの種類は必ずしも使用しません。
+description: クエリとして、OID_GEN_MEDIA_SUPPORTED OID は、NIC がサポートできるメディアの種類を指定しますが、NIC が現在使用しているメディアの種類は必ずしも使用しません。
 ms.assetid: e7b8d2b1-4e84-416f-aeb3-75591ed44b22
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_MEDIA_SUPPORTED ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_MEDIA_SUPPORTED
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a5f3f54eed66f8762b8e051a5d558f6486e2092
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

@@ -198,7 +198,7 @@ DATAPATH QUEUES
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 

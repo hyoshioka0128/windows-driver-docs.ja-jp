@@ -46,11 +46,11 @@ DirectSound が有効になり、カスタムプロパティセットをドラ�
 
 -   **なし**
 
--   **基本的な**
+-   **基本**
 
 -   **標準**
 
--   **全角**
+-   **Full**
 
 カスタムプロパティセットは、スライダーが**Full**に設定されている場合にのみ有効になります。 詳細については、「 [DirectSound のハードウェアアクセラレータおよび SRC スライダー](directsound-hardware-acceleration-and-src-sliders.md)」を参照してください。
 

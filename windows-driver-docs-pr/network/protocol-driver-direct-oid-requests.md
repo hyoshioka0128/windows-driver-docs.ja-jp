@@ -20,7 +20,7 @@ ms.locfileid: "72844913"
 
 
 
-直接 OID 要求パスをサポートするために、プロトコルドライバーは、Ndis\_プロトコルの*Protocolxxx*関数のエントリポイントを提供します[ **\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)の構造と**ndis は、** プロトコルドライバー。
+直接 OID 要求パスをサポートするために、プロトコルドライバーは、Ndis\_プロトコルの*Protocolxxx*関数のエントリポイントを提供します[ **\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)の構造と ndis は、プロトコルドライバー用の**ndis * Xxx*** 関数を提供します。
 
 *直接 oid 要求インターフェイス*は、標準の oid 要求インターフェイスに似ています。 たとえば、 [**NdisDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdirectoidrequest)関数と[**Protocoltoidrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_direct_oid_request_complete)関数は、 [**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)関数と[**ProtocolOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_oid_request_complete)関数に似ています。
 

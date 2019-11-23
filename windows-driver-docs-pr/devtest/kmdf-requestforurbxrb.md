@@ -22,7 +22,7 @@ ms.locfileid: "72840173"
 # <a name="requestforurbxrb-rule-kmdf"></a>RequestForUrbXrb ルール (kmdf)
 
 
-クライアントドライバーが[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)を呼び出し、クライアントコントラクトバージョン USBD\_client\_602\_\_contract を指定した場合、WDF\_USB\_デバイス\_を作成 @no__t(Windows 8 の USB ドライバースタックの新機能を使用するために) 構成構造を使用する場合は、次のいずれかの事前条件が適用される場合にのみ、DDIs が内部*で urb を*使用することになります。
+クライアントドライバーが[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)を呼び出して、クライアントコントラクトの\_\_バージョンを指定している場合は、WDF\_USB\_デバイスで\_バージョン\_602 を指定し\_構成構造を作成\_(Windows 8 用の usb ドライバースタックの新機能を使用するため)、内部的に urb を使用する DDIs は、次のいずれかの事前条件が適用さ*れる場合に*
 
 -   要求パラメーターの親オブジェクトツリーに Wdf デバイスがあります。
 -   要求は i/o キューを介して表されます。

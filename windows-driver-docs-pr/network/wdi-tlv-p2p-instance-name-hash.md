@@ -4,7 +4,7 @@ description: WDI_TLV_P2P_INSTANCE_NAME_HASH は、"インスタンス名, サー
 ms.assetid: A29D0339-93A8-43EB-8C22-DD7A7DC2147C
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_INSTANCE_NAME_HASH ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_P2P_INSTANCE_NAME_HASH
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d09bd603504b959b4d640a26dc4c29a40488493
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -35,7 +35,7 @@ WDI\_TLV\_P2P\_インスタンス\_名前\_ハッシュは、"インスタンス
 ## <a name="values"></a>値
 
 
-| タスクバーの検索ボックスに                                                                    | 説明                                |
+| 種類                                                                    | 説明                                |
 |-------------------------------------------------------------------------|--------------------------------------------|
 | [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | "インスタンス名, サービスの種類" のハッシュ。 |
 

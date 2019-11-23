@@ -50,7 +50,7 @@ MB のミニポートドライバーは、中間状態が変化していない�
 
 MB ミニポートドライバーは、現在接続されているデータクラスの最大データレートを報告する必要があります。 接続中のデータクラスの変更は、報告された対応するデータレートを使用して接続状態を示す必要があります。 この規則の推奨される実装は次のとおりです。
 
-1.  この仕様に準拠している MB のミニポートドライバーは、 [**ndis\_status\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を使用して\_状態をリンクする必要があります。これにより、NDIS\_STATUS\_MEDIA\_CONNECT、NDIS\_status の代わりに接続状態の変化を示すことが\_MEDIA\_DISCONNECT、または NDIS\_STATUS\_リンク\_速度\_変更 (NDIS 5.1 のように) 接続状態の情報を示します。
+1.  この仕様に準拠している MB のミニポートドライバーは、ndis\_の状態[ **\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を使用して、NDIS\_ステータス\_MEDIA\_CONNECT、NDIS\_STATUS\_MEDIA\_DISCONNECT、または ndis\_STATUS\_LINK\_CHANGE (ndis 5.1 のように) 接続状態の表示に応じて、接続状態の変更を示す必要があります。\_
 
 2.  [**Ndis\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)構造体の**XmitLinkSpeed**および**rcvlinkspeed**メンバーは、ndis\_リンクの\_速度\_不明であることをレポートすることはできません。 ミニポートドライバーは、次の表の情報を使用して速度を報告する必要があります。
 

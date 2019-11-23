@@ -25,7 +25,7 @@ NDIS プロトコルドライバーは、IPv6 近隣要請 (NS) オフロード�
 
  
 
-**PowMgmtNDIS**や**ImplementWakeOnWLAN**など、一部の Windows ハードウェア認定要件は、ミニポートアダプターが少なくとも2つの NS をサポートしている必要があることを指定**し  。** オフロード要求。 (つまり、これらの要件を満たすには、 **NumNSOffloadIPv6Addresses**の値が2以上である必要があります)。詳細については、「 [Windows 8 のハードウェア認定の要件](https://go.microsoft.com/fwlink/p/?linkid=268621)」を参照してください。
+**注  :** **PowMgmtNDIS**や**ImplementWakeOnWLAN**など、一部の Windows ハードウェア認定要件は、ミニポートアダプターが少なくとも2つの NS オフロード要求をサポートする必要があることを指定します。 (つまり、これらの要件を満たすには、 **NumNSOffloadIPv6Addresses**の値が2以上である必要があります)。詳細については、「 [Windows 8 のハードウェア認定の要件](https://go.microsoft.com/fwlink/p/?linkid=268621)」を参照してください。
 
  
 
@@ -35,7 +35,7 @@ NDIS プロトコルドライバーは、IPv6 近隣要請 (NS) オフロード�
 
 ### <a name="example"></a>例
 
-ミニポートドライバーによって、 **NumNSOffloadIPv6Addresses**構造体の[**ndis\_pm\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)メンバーが3に設定されている場合、ndis は最大3つの[OID\_pm を送信し\_\_プロトコル\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)要求を追加します。「 **NdisPMProtocolOffloadIdIPv6NS**」と入力します。 各 OID\_PM\_追加\_プロトコル\_オフロード要求には、 [**NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造の**TargetIPv6Addresses**メンバー内のアドレスが1つまたは2つだけ含まれる場合があります。 そのため、ミニポートでは、3 x 2 = 6 個のターゲットアドレスがサポートされている必要があります。
+ミニポートドライバーによって、 **NumNSOffloadIPv6Addresses**構造体の[**ndis\_pm\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)メンバーが3に設定されている場合、ndis は**NdisPMProtocolOffloadIdIPv6NS**型の[\_プロトコル\_オフロード要求を追加\_最大 3 OID\_pm](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)を送信することがあります。 各 OID\_PM\_追加\_プロトコル\_オフロード要求には、 [**NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造の**TargetIPv6Addresses**メンバー内のアドレスが1つまたは2つだけ含まれる場合があります。 そのため、ミニポートでは、3 x 2 = 6 個のターゲットアドレスがサポートされている必要があります。
 
 ミニポートは、各ターゲットアドレスのユニキャストとマルチキャストの両方の NS メッセージに一致する必要があるため、ミニポートは、合計 6 x 2 = 12 の NS メッセージパターンと一致している必要があります。
 
@@ -54,7 +54,7 @@ NS メッセージ形式は、 [RFC 4861](https://go.microsoft.com/fwlink/p/?lin
 <tr class="header">
 <th align="left">フィールド</th>
 <th align="left">一致する値</th>
-<th align="left">注意</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -126,7 +126,7 @@ NS メッセージ形式は、 [RFC 4861](https://go.microsoft.com/fwlink/p/?lin
 <tr class="header">
 <th align="left">フィールド</th>
 <th align="left">Value</th>
-<th align="left">注意</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

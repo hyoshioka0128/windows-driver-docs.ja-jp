@@ -3,7 +3,7 @@ title: OID_WWAN_NETWORK_IDLE_HINT
 description: OID_WWAN_NETWORK_IDLE_HINT は、データがアクティブであるか、またはインターフェイスでアイドル状態であることが予想されるかについて、ネットワークインターフェイスにヒントを送信します。
 ms.assetid: 1FE758C1-543A-45B4-A377-336A1307689F
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_WWAN_NETWORK_IDLE_HINT ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_NETWORK_IDLE_HINT
 ms.localizationpriority: medium
 ms.openlocfilehash: 939db61fdaa8139b7363a5ba8515161016e22d56
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -19,7 +19,7 @@ OID\_WWAN\_ネットワーク\_アイドル状態の\_ヒントは、データ�
 
 クエリ要求はサポートされていません。
 
-ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_\_状態を返し、元の要求に必要な\_を示し、その後、 [**ndis\_WWAN\_ネットワークを使用して要求を完了する必要があり @no__t_ネットワークアイドルヒントを示す 7_ IDLE\_HINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)構造体。
+ミニポートドライバーは、set 要求を非同期に処理し、最初に NDIS\_ステータス\_を返し、元の要求に必要な\_を示します。その後、 [**ndis\_WWAN\_ネットワーク\_アイドル\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)構造を使用してネットワークアイドルヒントを示す要求を完了します。
 
 <a name="requirements"></a>要件
 ------------

@@ -29,7 +29,7 @@ ms.locfileid: "72038044"
 
 ## <a name="span-idddk_devcon_findall_toolsspanspan-idddk_devcon_findall_toolsspanparameters"></a><span id="ddk_devcon_findall_tools"></span><span id="DDK_DEVCON_FINDALL_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。
 
@@ -87,4 +87,4 @@ devcon resources @pci*
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
-[Example 22:セットアップクラスですべてのデバイスを検索 (& a) @ no__t-0
+[例 22: セットアップクラスですべてのデバイスを検索 (および検索する)](devcon-examples.md#ddk_example_22_find_and_find_all_devices_in_a_setup_class_tools)

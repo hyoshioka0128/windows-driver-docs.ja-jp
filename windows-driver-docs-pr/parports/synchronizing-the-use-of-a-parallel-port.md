@@ -38,7 +38,7 @@ ms.locfileid: "72842316"
 
 -   **Freeport**メンバーは、 [*PPARALLEL\_フリー\_ルーチン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)コールバックへのポインターであり、パラレルポートを解放します。
 
-パラレルポートを使用している場合は、並列ポートに対して、システムによって提供される関数ドライバーがクライアントの要求をキューに配置します[ **\_\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)既に割り当てられています。 関数ドライバーは、ポートがクライアントに割り当てられた後、status\_status という状態の割り当て要求を完了します。 クライアントは、許容できないタイムアウト遅延またはその他のデバイス固有の状態が原因で、保留中の割り当て要求をいつでも取り消すことができます。
+パラレルポートが既に割り当てられている場合、並列ポート用のシステム提供の関数ドライバーがクライアントの要求をキューに配置するため、 [**IOCTL\_内部\_パラレル\_ポート\_の割り当て**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)要求では、クライアントによる処理が少なくて済みます。 関数ドライバーは、ポートがクライアントに割り当てられた後、status\_status という状態の割り当て要求を完了します。 クライアントは、許容できないタイムアウト遅延またはその他のデバイス固有の状態が原因で、保留中の割り当て要求をいつでも取り消すことができます。
 
 [**Pparallel\_TRY\_割り当て\_ルーチン**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))コールバックが直ちに返される   に**注意**してください (は非ブロッキング)。 クライアントが**Pparallel\_** のみを使用する場合は、\_ルーチンコールバックを割り当てて、他のクライアントが競合しているパラレルポートの割り当てを試みる\_、パラレルポート関数ドライバーがクライアントにポートを割り当てないことがあります。 正常に完了するには、クライアントがパラレルポート割り当て要求を使用する必要があります。 (パラレルポート関数ドライバーはキューをキューに配置し、その後、ポート割り当てとデバイス選択の要求を受信した順序で処理します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72842316"
 
 パラレルポート関数ドライバーがクライアントにパラレルポートを割り当てると、クライアントはそのポートに排他的にアクセスできるようになります。 クライアントは、 [**Pparallel\_フリー\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)コールバックを呼び出して、ポートを解放する必要があります。 クライアントがポートを解放した後、パラレルポート関数ドライバーは、次の要求 (ポートの割り当てまたはデバイスの選択要求) をポートの作業キューから削除し、要求を完了します。
 
-クライアントは、 [**pparallel\_クエリ\_待機処理\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)コールバックを使用して、他のクライアントがパラレルポートを待機しているかどうかを判断する必要があります。 長時間にわたってポートを割り当てる必要があるクライアントは、 **Pparallel\_クエリ\_待機処理\_ルーチン**コールバックを定期的に呼び出して、他のクライアントがポートの取得を待機しているかどうかを判断し、クライアントが待機中です。できるだけ早くポートを解放してください。
+クライアントは、 [**pparallel\_クエリ\_待機処理\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)コールバックを使用して、他のクライアントがパラレルポートを待機しているかどうかを判断する必要があります。 長時間にわたってポートを割り当てる必要があるクライアントは、 **Pparallel\_クエリ\_待機処理\_ルーチン**コールバックを定期的に呼び出して、他のクライアントがポートの取得を待機しているかどうかを確認し、クライアントが待機している場合はできるだけ早くポートを解放する必要があります。
 
  
 

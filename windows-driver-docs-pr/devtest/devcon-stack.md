@@ -29,7 +29,7 @@ ms.locfileid: "72038080"
 
 ## <a name="span-idddk_devcon_stack_toolsspanspan-idddk_devcon_stack_toolsspanparameters"></a><span id="ddk_devcon_stack_tools"></span><span id="DDK_DEVCON_STACK_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
@@ -88,8 +88,8 @@ devcon stack =multifunction
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 14:記憶装置のドライバースタックを表示する @ no__t-0
+[例 14: 記憶装置のドライバースタックを表示する](devcon-examples.md#ddk_example_14_display_the_driver_stack_for_storage_devices_tools)
 
-[Example 15:デバイスのセットアップクラスを検索する @ no__t-0
+[例 15: デバイスのセットアップクラスを検索する](devcon-examples.md#ddk_example_15_find_the_setup_class_of_a_device_tools)
 
-[Example 16:リモートコンピューター上の関連するデバイスのスタックを表示する @ no__t-0
+[例 16: リモートコンピューター上の関連するデバイスのスタックを表示する](devcon-examples.md#ddk_example_16_display_the_stack_for_related_devices_on_a_remote_compu)

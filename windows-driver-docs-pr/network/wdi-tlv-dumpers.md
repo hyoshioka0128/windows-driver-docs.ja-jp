@@ -58,7 +58,7 @@ WPP トレースのみが必要な場合は、トレース Api を使用して�
 
 解析 Api と同様に、 *Pbuffer*ポインターと*bufferlength*パラメーターでは、ヘッダーを除外し、最初の TLV を直接ポイントする必要があります。
 
-Api のメッセージバリアントには、TLV をより明確に区別するためのメッセージ ID とメッセージの方向が含まれます。 これは、コンテキストに応じて異なる方法で同じ TLV ID をデコードできるため便利です。 たとえば、 [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)には、 [OID\_WDI\_タスク\_スキャン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)の一部の場合に[**WDI\_mac\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)を直接含めることができます。また、WDI\_mac の一覧を含めることもでき **\_** WDI\_TLV の一部の場合は、 [**P2P\_属性\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)ます。
+Api のメッセージバリアントには、TLV をより明確に区別するためのメッセージ ID とメッセージの方向が含まれます。 これは、コンテキストに応じて異なる方法で同じ TLV ID をデコードできるため便利です。 たとえば、 [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)には、 [OID\_WDI\_タスク\_スキャン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)の一部の場合に[**WDI\_mac\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)を直接含めることができます。また、 [**WDI\_WDI\_P2P\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)の一部である場合は、 **TLV\_mac\_アドレス**の一覧を含めることもできます。
 
  
 

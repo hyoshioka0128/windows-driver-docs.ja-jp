@@ -31,10 +31,10 @@ WOL パケットの種類を指定する[**NDIS\_PM\_wol\_packet**](https://docs
 には、ユーザーが判読できる WOL パケットの説明を含む[**文字列構造\_\_カウントされる NDIS\_PM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)が含まれています。
 
 <a href="" id="patternid"></a>**PatternId**  
-WOL パターンを識別する、NDIS によって提供される値が含まれています。 NDIS\_PM を送信する前に、基になる NDIS ドライバーに[\_WOL\_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern) oid 要求を追加するか、またはそれ以降のドライバーに要求を完了する\_、ndis は、WOL 内で一意の値に**PatternId**を設定します。ネットワークアダプターのパターン。
+WOL パターンを識別する、NDIS によって提供される値が含まれています。 NDIS\_\_PM を送信する前に、基になる NDIS ドライバーに[\_WOL\_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern) oid 要求を追加するか、またはそれ以降のドライバーへの要求を完了するために、ndis はネットワークアダプターの WOL パターン間で一意の値に**PatternId**を設定します。
 
 <a href="" id="nextwolpatternoffset"></a>**NextWoLPatternOffset**  
-Oid の一覧で、1つの[**ndis\_pm\_wol\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造の、次の NDIS\_PM\_WOL\_パターン構造に対するオフセット (oid 要求情報**バッファー**の先頭からのオフセット) を格納します。 [\_PM\_WOL\_PATTERN\_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-wol-pattern-list) OID です。 OID\_PM\_WOL\_パターン\_リストの詳細については、「 [Wol パターンの現在の設定の取得](obtaining-the-current-settings-of-wol-patterns.md)」を参照してください。
+1つの[**ndis\_pm\_wol\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造の、OID [\_pm\_wol\_pattern\_list](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-wol-pattern-list) oid のリストに含まれる次の NDIS\_PM\_wol\_パターン構造に対するオフセット (oid 要求情報**バッファー**の先頭からのオフセット) を格納します。 OID\_PM\_WOL\_パターン\_リストの詳細については、「 [Wol パターンの現在の設定の取得](obtaining-the-current-settings-of-wol-patterns.md)」を参照してください。
 
 <a href="" id="wolpattern"></a>**WoLPattern**  
 共用体の**IPv4TcpSynParameters**、 **IPv6TcpSynParameters**、 **EapolRequestIdMessageParameters**、または**WoLBitMapPattern**構造体のいずれかが含まれています。
@@ -57,7 +57,7 @@ NDIS は、ネットワークアダプターに固有の識別子をすべての
 
 ユーザーモードアプリケーションでは、GUID\_PM\_使用して\_WOL\_PATTERN WMI GUID を削除し、以前に追加された WOL パターンをネットワークアダプターから削除します。 NDIS は、この WMI 要求を oid\_PM の oid セット要求に変換し\_ネットワークアダプターの[\_WOL\_パターンを削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-remove-wol-pattern)します。 NDIS は、ネットワークアダプターを停止する前に、アプリケーションがネットワークアダプターから追加した WOL パターンをすべて削除します。
 
-NDIS を使用すると、複数の NDIS プロトコルドライバーで同じネットワークアダプターに WOL パターンを追加できます。 要求された wol パターンの数がネットワークアダプターでサポートできるものよりも大きい場合に、WOL パターンの適切なセットが設定されていることを確認するために、プロトコルドライバーは、NDIS の**優先順位**メンバーで要求された各 WOL パターンに優先順位を割り当て\_PM\_WOL\_PATTERN 構造体。 ネットワークアダプターにリソースが不足しているために、NDIS が新しい優先順位の WOL パターンを追加できない場合、NDIS は優先順位の低いパターン (存在する場合) のいずれかを削除し、優先順位の高いパターンをもう一度追加しようとします。
+NDIS を使用すると、複数の NDIS プロトコルドライバーで同じネットワークアダプターに WOL パターンを追加できます。 要求された wol パターンの数がネットワークアダプターでサポートできるものよりも大きい場合に、WOL パターンの適切なセットが設定されていることを確認するために、プロトコルドライバーは、NDIS\_PM\_WOL\_パターン構造の**優先順位**メンバーで、要求された各 wol パターンに優先順位を割り当てます。 ネットワークアダプターにリソースが不足しているために、NDIS が新しい優先順位の WOL パターンを追加できない場合、NDIS は優先順位の低いパターン (存在する場合) のいずれかを削除し、優先順位の高いパターンをもう一度追加しようとします。
 
 ミニポートドライバーが、パターンの追加要求を失敗させ、ndis\_PM\_WOL\_パターン\_リスト\_完全な状態コードを\_返すことによって、NDIS でパターンの優先順位を再設定できるように  する必要がある**ことに注意**してください。
 
@@ -65,7 +65,7 @@ NDIS を使用すると、複数の NDIS プロトコルドライバーで同じ
 
 NDIS が優先順位の低いパターンの1つを削除すると、そのドライバーは、削除されたパターンに[**ndis\_状態\_PM\_WOL\_パターン\_拒否**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)状態の表示を設定するように通知します。 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーは、拒否された wol パターンの WOL パターン識別子の ULONG を含みます。 NDIS では、 [**ndis\_PM\_wol\_pattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造体の**PATTERNID**メンバーに wol パターン識別子が指定されています。
 
-インフラストラクチャ要素を使用してインフラストラクチャ間をローミングするときに、インフラストラクチャ要素を使用してパターンをオフロードするワイヤレスネットワークアダプターの場合、新しいインフラストラクチャ要素で同じ機能がサポートされていない可能性があり、ミニポートドライバーが NDIS を送信することがあり[ **\_ステータス\_PM\_WOL\_パターン\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected) 、適切な状態コードを含む、拒否された状態を示します。
+インフラストラクチャ要素を使用して、インフラストラクチャ内をローミングするときに、インフラストラクチャ要素を使用してパターンをオフロードするワイヤレスネットワークアダプターの場合、新しいインフラストラクチャ要素で同じ機能がサポートされていない可能性があります。\_また、適切な状態コードを使用して、 [ **\_PM\_WOL\_パターン\_拒否**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)された状態が示されます。
 
  
 

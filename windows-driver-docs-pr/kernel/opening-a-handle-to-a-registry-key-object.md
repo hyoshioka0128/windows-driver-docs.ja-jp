@@ -1,6 +1,6 @@
 ---
-title: レジストリキーオブジェクトへのハンドルを開く
-description: レジストリキーオブジェクトへのハンドルを開く
+title: レジストリ キー オブジェクトのハンドルを開く
+description: レジストリ キー オブジェクトのハンドルを開く
 ms.assetid: 451e36a1-1cc2-469e-9f54-c02fef7b1666
 keywords:
 - レジストリ WDK カーネル、オブジェクトルーチン
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838526"
 ---
-# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリキーオブジェクトへのハンドルを開く
+# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルを開く
 
 
 

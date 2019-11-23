@@ -20,7 +20,7 @@ ms.locfileid: "72843471"
 
  
 
-[*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)の呼び出しによって開始される関連付け後の操作を実行すると、オペレーティングシステムは[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数を呼び出して、を通じて受信した hv 拡張 DLL にパケットを転送します。ワイヤレス LAN (WLAN) アダプター。 関連付け後の操作の詳細については、「[関連付け後の操作](post-association-operations.md)」を参照してください。
+[*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)の呼び出しによって開始される関連付け後の操作を実行すると、オペレーティングシステムは[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数を呼び出して、ワイヤレス LAN (WLAN) アダプター経由で受信した hv 拡張 DLL にパケットを転送します。 関連付け後の操作の詳細については、「[関連付け後の操作](post-association-operations.md)」を参照してください。
 
 パケットを受信するために、IHV 拡張 DLL は[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)を呼び出して、1つ以上の IEEE EtherTypes の一覧を登録する必要があります。 この一覧のエントリと一致する EtherType を使用してパケットを受信すると、オペレーティングシステムは[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数を呼び出し、関数の*pvInBuffer*パラメーターを使用してパケットバッファーを渡します。
 
@@ -28,7 +28,7 @@ DLL が事前関連付け操作を完了する前に、IHV 拡張 DLL が[**Dot1
 
  
 
-[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)が呼び出されると、 *pvInBuffer*パラメーターは、802.11 パケット全体を含むオペレーティングシステムによって割り当てられたバッファーを指します。これには、メディアアクセスコントロール (MAC) ヘッダー、必要に応じて、が含まれます。およびペイロードデータ。
+[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)が呼び出されると、 *pvInBuffer*パラメーターは、802.11 パケット全体を含むオペレーティングシステムによって割り当てられたバッファーを指します。これには、メディアアクセスコントロール (MAC) ヘッダー、接続のカプセル化 (必要な場合)、およびペイロードデータが含まれます。
 
 IHV 拡張 DLL は、 [*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)の呼び出し内から受信パケットに応答を送信できます。 この場合、DLL は「[送信操作](send-operations.md)」で説明されているガイドラインに従う必要があります。
 

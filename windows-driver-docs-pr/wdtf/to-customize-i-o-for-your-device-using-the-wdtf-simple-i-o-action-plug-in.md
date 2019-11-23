@@ -28,7 +28,7 @@ Visual Studio テストテンプレートを使用して作成したデバイス
 ### <a href="" id="create-a-project-for-a-wdtf-simple-i-o-action-plug-in-"></a>手順 1: WDTF Simple i/o Action プラグイン用のプロジェクトを作成する
 
 1. **[ファイル]** メニューの **[新規作成] &gt; [プロジェクト]** をクリックします。
-2. **[新しいプロジェクト]** ダイアログボックスのインストールされているテンプレートの一覧から、[ **Visual C++&gt;Windows Driver&gt;テスト]&gt;Wdtf Simple i/o Action プラグイン**を選択します。
+2. **[新しいプロジェクト]** ダイアログボックスのインストールされているテンプレートの一覧から、[ **Visual C++ &gt; Windows Driver &gt; テスト] &gt; Wdtf Simple i/o Action プラグイン**を選択します。
 3. 単純な i/o プロジェクトと場所の名前を指定します (または既定値を使用します)。
 4. プロジェクトテンプレートによって、Visual Studio ソリューションが生成されます。 このソリューションには、デバイスの単純な i/o プラグインを作成するために必要なすべてのファイルが含まれています。 ファイルの名前は、WDTF<em>&lt;project&gt;</em>SimpleIoAction\*の形式になります。 単純な i/o プロジェクトの既定の名前は (Devicetype です。
 5. このテンプレートは、プロジェクトの WDTF Simple i/o Action インターフェイスを作成します。 インターフェイスは、IWDTFTarget2 インターフェイスのインスタンスに対して動作します。

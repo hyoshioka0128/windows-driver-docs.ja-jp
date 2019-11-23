@@ -26,7 +26,7 @@ ms.locfileid: "72841834"
 
 ドライバーが[*Filtersetmoduleoptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)のエントリポイントを提供した場合、ドライバーはフィルターモジュールの部分特性を変更できます。 詳細については、「[データバイパスモード](data-bypass-mode.md)」を参照してください。
 
-フィルタードライバーの[*Filterrestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)関数を呼び出すと、ndis は、NDIS\_フィルターの**RestartAttributes**メンバー内のドライバーをフィルター処理するために、\_ndis にポインターを渡して[ **\_属性構造を再起動**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)し[ **\_\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_restart_parameters)構造体を再起動します。 フィルタードライバーは、基になるドライバーで指定されている再起動属性を変更できます。 再起動属性を変更する方法の詳細については、「 *Filterrestart*」を参照してください。
+フィルタードライバーの[*Filterrestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)関数を呼び出すと、ndis は、ndis\_にポインターを渡して、NDIS\_Filter の**RestartAttributes**メンバー内のドライバーにフィルターを適用して[ **\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)構造を[**再起動し、\_パラメーター構造を再起動\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_restart_parameters)ます。 フィルタードライバーは、基になるドライバーで指定されている再起動属性を変更できます。 再起動属性を変更する方法の詳細については、「 *Filterrestart*」を参照してください。
 
 **注**  ndis は、スタック内の任意のフィルターモジュールに対して[*filterrestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)関数を呼び出す前に、スタック内のすべてのフィルターモジュールに対して[*filtersetmoduleoptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)を呼び出します。
 

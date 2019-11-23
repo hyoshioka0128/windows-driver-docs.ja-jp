@@ -38,7 +38,7 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のオブジェ
 
 -   [**ENUM\_INFO 構造体\_、NDIS\_SWITCH\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)の配列。 これらの各構造体には、スイッチポリシーのプロパティに関する情報が含まれています。
 
-    **注**  [**ndis\_switch\_プロパティ\_列挙型\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)構造体の**numproperties**メンバーが0に設定されている場合、 [**NDIS\_switch\_プロパティ\_列挙型\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)構造体が返されます。
+    **注**  [**ndis\_switch\_プロパティ\_列挙型\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)構造体の**numproperties**メンバーが0に設定されている場合は、 [**ndis\_SWITCH\_プロパティ\_enum\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)構造体が返されません。
 
      
 
@@ -46,15 +46,15 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のオブジェ
 
  
 
-拡張可能なスイッチ拡張機能は、oid の設定要求を処理するときに、これらのガイドラインに従う必要があります[\_スイッチ\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)、OID [\_スイッチ\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)、または[oid\_スイッチ削除\_\_プロパティ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete):
+拡張可能なスイッチ拡張機能は、oid\_スイッチの OID セット要求を処理するときに、次のガイドラインに従う必要があります。これは、プロパティ[\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)、OID [\_スイッチ\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)、または[oid\_スイッチ\_プロパティ\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)\_ます。
 
--   拡張機能では、OID 要求に関連付けられている\_パラメーター構造を削除\_プロパティ\_パラメーターまたは[**ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters) [ **\_プロパティ、ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)を変更することはできません。
+-   拡張機能では、OID 要求に関連付けられている\_パラメーター構造を削除\_プロパティ\_パラメーターまたは[**ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters) [ **\_プロパティ、ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)を変更することはできません。\_
 
--   拡張機能は、 [oid\_スイッチ\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)または[OID\_\_switch](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)プロパティを処理する必要があります。この拡張機能が以前に設定されているスイッチプロパティを使用して、は、Ndis\_スイッチの次のメンバーと一致します[ **\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[**ndis\_スイッチ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)の\_パラメーター構造を削除\_します。
+-   拡張機能では、 [oid\_スイッチ\_プロパティ\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)または[oid\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)を処理する必要があります。この拡張機能が以前にプロビジョニングされている場合は、次のような[**ndis\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)のメンバーに一致するスイッチプロパティ\_プロパティ\_パラメーターまたは[**NDIS\_スイッチ\_プロパティ\_\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)構造を削除します。\_\_
 
     -   スイッチプロパティの型を指定する**PropertyType**メンバー。
 
-        **注**  Ndis 6.30 以降では、 **NdisSwitchPropertyTypeCustom**のスイッチプロパティのみが、 [**ndis\_スイッチ\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[**ndis\_スイッチによって指定され\_プロパティ\_\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)構造体を削除します。
+        **注**  Ndis 6.30 以降では、 **NdisSwitchPropertyTypeCustom**のスイッチプロパティのみが指定されています。これは、 [**ndis\_スイッチ\_プロパティ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)または[**ndis\_スイッチ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)によって指定されます。\_パラメーター構造は削除\_ます。
 
          
 

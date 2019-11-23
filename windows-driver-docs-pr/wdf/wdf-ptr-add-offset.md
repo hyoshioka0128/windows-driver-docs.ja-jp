@@ -31,10 +31,10 @@ PVOID WDF_PTR_ADD_OFFSET(
 <a name="parameters"></a>パラメーター
 ----------
 
-*ptr  (_s)*  
+*_ptr*   
 アドレスを指定します。
 
-*オフセット  (_c)*  
+*_offset*   
 オフセット値をバイト単位で指定します。
 
 <a name="return-value"></a>戻り値

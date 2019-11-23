@@ -1,6 +1,6 @@
 ---
 title: ndiskd nbl
-description: Nbl 拡張機能は、NET_BUFFER_LIST (NBL) 構造体に関する情報を表示します。
+description: Nbl 拡張機能には、NET_BUFFER_LIST (NBL) 構造に関する情報が表示されます。
 ms.assetid: 1806ac7c-b438-4c28-bab0-1b65dba651ea
 keywords:
 - nbl Windows デバッグ
@@ -60,7 +60,7 @@ Netmon キャプチャを保存するパスを指定します。
 <span id="_______-overwrite______"></span><span id="_______-OVERWRITE______"></span> *-上書き*   
 キャプチャファイルが既に存在する場合は上書きできます。
 
-<span id="_______-log______"></span><span id="_______-LOG______"></span> *-ログ*   
+<span id="_______-log______"></span><span id="_______-LOG______"></span> *-log*   
 NBL 履歴ログが有効になっている場合は、NBL log を表示します。
 
 <span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-スタック*   
@@ -110,15 +110,15 @@ NET_BUFFER ffffdf8014952610
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
-[ **! ndiskd ndiskd**](-ndiskd-nbllog.md)
+[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
-[ **! ndiskd nb**](-ndiskd-nb.md)
+[ **!ndiskd.nb**](-ndiskd-nb.md)
 
  
 

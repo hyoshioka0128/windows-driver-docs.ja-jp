@@ -3,7 +3,7 @@ title: OID_SRIOV_PF_LUID
 description: このドライバーは、ネットワークアダプターの PCI Express (PCIe) 物理機能 (PF) に関連付けられているローカル一意識別子 (LUID) を受信するために、OID_SRIOV_PF_LUID のオブジェクト識別子 (OID) クエリ要求を発行します。
 ms.assetid: 363D308D-CE88-4F3B-81FF-37A2D86CB7BC
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SRIOV_PF_LUID ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SRIOV_PF_LUID
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c796a33f2597068cb385af660a68a960dcf8e5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -56,7 +56,7 @@ NDIS が\_SRIOV\_PF\_LUID 要求を処理すると、次のいずれかのステ
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。QUERY_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>

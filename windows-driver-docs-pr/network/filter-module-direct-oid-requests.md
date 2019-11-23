@@ -20,7 +20,7 @@ ms.locfileid: "72834688"
 
 
 
-直接 OID 要求パスをサポートするために、フィルタードライバーは、 [**ndis\_フィルター\_ドライバー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)の*filterxxx*関数のエントリポイントを提供します。\_特性の構造と NDIS は、フィルター用の**NdisF * Xxx*** 関数を提供します。ドライバ.
+直接 OID 要求パスをサポートするために、フィルタードライバーは、 [**ndis\_フィルター\_ドライバー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)の*filterxxx*関数のエントリポイントを提供します。\_の特性の構造と ndis は、フィルタードライバー用の**NdisF * Xxx*** 関数を提供します。
 
 *直接 oid 要求インターフェイス*は、標準の oid 要求インターフェイスに似ています。 たとえば、 [**NdisFDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfdirectoidrequest)関数と[*Filterdirectoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_direct_oid_request)関数は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)関数と[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数に似ています。
 

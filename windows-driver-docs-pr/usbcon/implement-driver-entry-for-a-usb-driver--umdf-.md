@@ -1,6 +1,6 @@
 ---
 Description: Microsoft Visual Studio に用意されている USB ユーザーモードドライバーテンプレートを使用して、UMDF クライアントドライバーを作成します。
-title: 最初の USB クライアントドライバー (UMDF) を作成する方法
+title: 初めての USB クライアント ドライバーの記述方法 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: bfbe42db344877684761a07c1d1c92e2fcb96969
@@ -10,7 +10,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838827"
 ---
-# <a name="how-to-write-your-first-usb-client-driver-umdf"></a>最初の USB クライアントドライバー (UMDF) を作成する方法
+# <a name="how-to-write-your-first-usb-client-driver-umdf"></a>初めての USB クライアント ドライバーの記述方法 (UMDF)
 
 
 このトピックでは、Microsoft Visual Studio 2019 に用意されている**USB ユーザーモードドライバー**テンプレートを使用して、ユーザーモードドライバーフレームワーク (UMDF) ベースのクライアントドライバーを記述します。 クライアントドライバーをビルドしてインストールした後、**デバイスマネージャー**でクライアントドライバーを表示し、デバッガーでドライバーの出力を表示します。
@@ -51,12 +51,12 @@ USB ドライバーの開発を初めて行う場合は、OSR USB FX2 learning k
 **推奨資料**
 
 -   [すべてのドライバー開発者向けの概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)
--   [デバイスノードとデバイススタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
+-   [デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
 -   [Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)
--   [ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)
+-   [ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)
 -   *Windows Driver Foundation でのドライバーの開発*。これは、少額 Orwick と Guy Smith によって記述されています。 詳細については、「 [WDF を使用したドライバーの開発](https://go.microsoft.com/fwlink/p/?linkid=617702)」を参照してください。
 
-<a name="instructions"></a>このサンプルについての指示
+<a name="instructions"></a>手順
 ------------
 
 ### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2019-usb-driver-template"></a>手順 1: Visual Studio 2019 の USB ドライバーテンプレートを使用して UMDF ドライバーコードを生成する
@@ -216,9 +216,9 @@ INF AddReg ディレクティブが、UMDF 再配布可能な共同インスト�
 2. 左側のウィンドウで、[**構成プロパティ] &gt; [ドライバー] [インストール &gt; の展開**] の順に移動します。
 3. [展開の有効化] チェックボックスをオンにし、[ドライバーストアへのインポート] をオンにします。
 4. **[リモートコンピューター名]** に、対象のコンピューターの名前を指定します。
-5. **[インストールと確認]** を選択します。
+5. **[Install and Verify (インストールと確認)]** を選びます。
 6. **[OK]** をクリックします。
-7. **[デバッグ]** メニューの **[デバッグの開始]** をクリックするか、キーボードの**F5**キーを押します。
+7. **[デバッグ]** メニューの **[デバッグ開始]** をクリックするか、キーボードで **F5** キーを押します。
 
 **注**  **ハードウェア Id ドライバーの更新プログラム**では、デバイスのハードウェア id*を指定しないでください*。 ハードウェア ID は、ドライバーの情報 (INF) ファイルでのみ指定する必要があります。
 
@@ -229,7 +229,7 @@ INF AddReg ディレクティブが、UMDF 再配布可能な共同インスト�
 <a href="" id="devicemanager"></a>
 1.  次のコマンドを入力して、**デバイスマネージャー**を開きます。
 
-    **devmgmt.msc**
+    **devmgmt**
 
 2.  **デバイスマネージャー**に次のノードが表示されていることを確認します。
 
@@ -258,7 +258,7 @@ INF AddReg ディレクティブが、UMDF 再配布可能な共同インスト�
 [1]0744.05F0::00/00/0000-00:00:00.000 [MyUSBDriver_UMDF_]CMyDevice::Configure Exit
 ```
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 フレームワークとクライアントドライバーがどのように連携して Windows とやり取りし、USB デバイスに送信された要求を処理するかを見てみましょう。 次の図は、UMDF ベースの USB クライアントドライバー用にシステムに読み込まれたモジュールを示しています。
@@ -283,7 +283,7 @@ INF AddReg ディレクティブが、UMDF 再配布可能な共同インスト�
 ## <a name="related-topics"></a>関連トピック
 [USB クライアントドライバーの UMDF テンプレートコードについて](understanding-the-umdf-template-code-for-usb.md)  
 [USB デバイスの UMDF ドライバーで USB セレクティブサスペンドとシステムウェイクを有効にする方法](https://go.microsoft.com/fwlink/p/?linkid=617587)  
-[USB クライアントドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 
 
 

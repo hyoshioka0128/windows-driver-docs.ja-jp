@@ -84,4 +84,4 @@ devcon restart =printer *desk*
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
-[Example 38:デバイスを再起動する @ no__t-0
+[例 38: デバイスを再起動する](devcon-examples.md#ddk_example_38_restart_a_device_tools)

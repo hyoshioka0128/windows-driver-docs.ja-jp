@@ -21,7 +21,7 @@ NDIS は、実行時の TCP/IP チェックサムタスクのオフロードを�
 > [!NOTE]
 > チェックサムオフロード帯域外 (OOB) データは、 [**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)情報配列に格納されます。 OOB データの詳細については、「 [Tcp/ip オフロード NET\_BUFFER\_LIST 情報へのアクセス](accessing-tcp-ip-offload-net-buffer-list-information.md)」を参照してください。
 
-ミニポートドライバーに渡す前に、ミニポートドライバーがチェックサムタスクを実行するパケットの NET\_BUFFER\_LIST 構造体を、TCP/IP トランスポートは、NET\_バッファーに関連付けられているチェックサム情報を指定し @no__ 形式のリスト構造。 この情報は、 [**NDIS\_TCP\_IP\_CHECKSUM\_net\_buffer\_list\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体によって指定されます。これは、NET\_BUFFER\_list 情報の一部です (帯域外データ)。これは、NET\_BUFFER\_LIST 構造体に関連付けられています。
+ミニポートドライバーに渡す前に、ミニポートドライバーがチェックサムタスクを実行するパケットの NET\_BUFFER\_LIST 構造体を指定します。 TCP/IP トランスポートでは、NET\_BUFFER\_LIST 構造に関連付けられているチェックサム情報を指定します。 この情報は、 [**NDIS\_TCP\_IP\_CHECKSUM\_net\_buffer\_list\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体によって指定されます。この構造は、net\_buffer\_list 構造に関連付けられている NET\_BUFFER\_list 情報 (帯域外データ) の一部です。
 
 Tcp パケットのチェックサム計算をオフロードする前に、tcp/ip トランスポートは TCP 擬似ヘッダーの1の補数の合計を計算します。 TCP/IP トランスポートは、擬似ヘッダー内のすべてのフィールドの1の補数の合計を計算します。これには、送信元 IP アドレス、宛先 IP アドレス、プロトコル、TCP パケットの TCP の長さが含まれます。 Tcp/ip トランスポートは、TCP ヘッダーの Checksum フィールドに、擬似ヘッダーの1の補数合計を入力します。
 
@@ -34,7 +34,7 @@ TCP/IP トランスポートでは、パケットが基になるミニポート�
 
 ミニポート[*sendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数または[**Miniportcosendnetbufferlists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)関数で NET\_BUFFER\_LIST 構造を受け取ると、通常、ミニポートドライバーは次のチェックサム処理を実行します。
 
-1.  ミニポートドライバーは、 *\_Id*が**TcpIpChecksumNetBufferListInfo**の[**net\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロを呼び出して、 [**NDIS\_TCP\_IP\_CHECKSUM\_net を取得します。\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体です。
+1.  ミニポートドライバーは、 *\_Id*が**TcpIpChecksumNetBufferListInfo**の[**net\_BUFFER\_list\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロを呼び出して、 [**NDIS\_TCP\_IP\_チェックサム\_net\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)構造体を取得します。
 
 2.  ミニポートドライバーは、NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO 構造体の**IsIPv4**および**IsIPv6**フラグをテストします。 **IsIPv4**と**IsIPv6**の両方のフラグが設定されていない場合、NIC はパケットに対してチェックサム操作を実行しません。
 
@@ -42,7 +42,7 @@ TCP/IP トランスポートでは、パケットが基になるミニポート�
 
 4.  ミニポートドライバーは、パケットを NIC に渡します。これにより、パケットの適切なチェックサムが計算されます。 パケットにトンネル IP ヘッダーとトランスポート IP ヘッダーの両方がある場合、IP チェックサムのオフロードをサポートする NIC は、トンネルヘッダーでのみ IP チェックサムタスクを実行します。 TCP/IP トランスポートは、トランスポート IP ヘッダーで IP チェックサムタスクを実行します。
 
-チェックサムタスクを実行する受信パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造を示す前に、ミニポートドライバーは適切なチェックサムを検証し、適切な*Xxx ** * * ChecksumFailed * または*xxx * * を設定します。* ChecksumSucceeded** NDIS\_TCP\_IP\_チェックサム\_NET\_BUFFER\_LIST\_INFO 構造体のフラグ。
+ミニポートドライバーは、チェックサムタスクを実行する受信パケットの[**net\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造を示す前に、適切なチェックサムを検証し、NDIS\_TCP\_IP\_CHECKSUM\_NET\_BUFFER\_LIST\_INFO 構造体の適切な*xxx * ** * * ChecksumFailed * または*xxx ** * * ChecksumSucceeded * フラグを設定します。
 
 サイズの大きい送信オフロード (LSO) が有効になっている場合に、アドレスチェックサムのオフロードをオフにしても、ミニポートドライバーは、LSO 機能によって生成されたパケットにチェックサムを計算して挿入することはできません。 この場合、アドレスチェックサムのオフロードを無効にするには、ユーザーは LSO も無効にする必要があります。
 

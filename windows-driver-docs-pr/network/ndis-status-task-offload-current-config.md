@@ -1,10 +1,10 @@
 ---
 title: NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
-description: ミニポートドライバーは、NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 状態表示を使用して、NIC のタスクオフロード構成が変更されたことを NDIS およびそれ以降のドライバーに通知します。
+description: ミニポートドライバーは、NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 状態の表示を使用して、NIC のタスクオフロード構成が変更されたことを NDIS およびそれ以降のドライバーに通知します。
 ms.assetid: 8a098dff-409e-4168-a3aa-372851aa999d
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
 ms.localizationpriority: medium
 ms.openlocfilehash: e4dfff15f00209884b882ab74ce996dd2815b273
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,10 +23,10 @@ ms.locfileid: "72843509"
 
 ミニポートドライバーは、現在の機能が変更されたときに、現在の\_構成の状態を示す **\_タスク\_オフロード\_\_** 、現在の機能を使用して、現在の機能を報告する必要があります。 この状態の表示により、すべてのプロトコルドライバーが新機能の情報で更新されます。 次の場合に、この状態を示すミニポートドライバーが必要です。
 
-1.  ミニポートドライバーが[\_TCP\_オフロード\_parameters](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) set 要求の OID を受信する場合、現在有効になっているタスクオフロードを更新するには、 [**NDIS\_offload\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体の内容を使用する必要があります機能.
-2.  ミニポートドライバーが[OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)セット要求を受信する場合、現在有効になっているタスクオフロードを更新するには、 [**NDIS\_オフロード\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)構造の内容を使用する必要があります機能.
+1.  ミニポートドライバーが[\_TCP\_オフロード\_parameters](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) set 要求の OID を受信する場合、現在有効になっているタスクオフロード機能を更新するには、 [**NDIS\_offload\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体の内容を使用する必要があります。
+2.  ミニポートドライバーが[OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)セット要求を受信する場合、現在有効になっているタスクオフロード機能を更新するには、 [**NDIS\_オフロード\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)構造の内容を使用する必要があります。
 
-[**Ndis\_ステータス\_示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体の**statusbuffer**メンバーには、 [**ndis\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体が含まれています。 **Ndis\_status\_タスク**を発行するときに、現在の\_構成の状態を示す\_オフロード\_、ミニポートドライバーでは、現在のタスクオフロード構成を報告するために、 **ndis\_offload**構造体を使用する必要があります。NIC の。
+[**Ndis\_ステータス\_示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体の**statusbuffer**メンバーには、 [**ndis\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体が含まれています。 **Ndis\_status\_タスク**を発行するときに、現在の\_構成の状態を示す\_オフロード\_、ミニポートドライバーは**ndis\_offload**構造体を使用して、NIC の現在のタスクオフロード構成を報告する必要があります。
 
 [**NDIS\_のオフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造の内容は、実際のハードウェア機能ではなく、NIC の現在のタスクオフロード構成のみを反映している  に**注意**してください。
 

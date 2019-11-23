@@ -74,7 +74,7 @@ ms.locfileid: "72839693"
 <tbody>
 <tr class="odd">
 <td align="left"><p>左上</p></td>
-<td align="left"><p>回</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右上</p></td>
@@ -113,8 +113,8 @@ ms.locfileid: "72839693"
 <tbody>
 <tr class="odd">
 <td align="left"><p>15 ~ 12</p></td>
-<td align="left"><p><em>MvertFieldSel_3</em> (ビット15、最も重要) は、 <em>Mvertfieldsel</em>0 (ビット 12) を使用します。</p>
-<p>次の表で指定されているように、後でマクロブロックコントロールコマンドで送信される対応するモーションベクターの垂直方向のフィールド選択を指定します。 フレームの画像構造を使用したフレームベースのモーションの場合 (たとえば、たとえば、たとえば、-261 と-263)、これらのビットはすべてゼロである必要があります。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2、</em>および<em>MvertFieldSel_3</em>のビットは、mpeg-2 のセクション motion_vertical_field_select の 6.3.17.2 [r] [s] のビットに対応しています。</p></td>
+<td align="left"><p><em>Mvertfieldsel</em>0 (ビット 12) を使用して<em>MvertFieldSel_3</em> (ビット15、最上位)</p>
+<p>次の表で指定されているように、後でマクロブロックコントロールコマンドで送信される対応するモーションベクターの垂直方向のフィールド選択を指定します。 フレームの画像構造を使用したフレームベースのモーションの場合 (たとえば、たとえば、たとえば、-261 と-263)、これらのビットはすべてゼロである必要があります。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2、</em>および<em>MvertFieldSel_3</em>のビットは、6.3.17.2 のセクションの [r] [s] ビット motion_vertical_field_select に対応しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>11</p></td>
@@ -129,7 +129,7 @@ ms.locfileid: "72839693"
 <td align="left"><p>9と8</p></td>
 <td align="left"><p><em>MotionType</em></p>
 <p>画像のモーションの種類を指定します。 たとえば、フレーム画像構造を使用したフレームベースのモーションの場合 (例: のように)、ビット9は1、ビット8は0にする必要があります。</p>
-<p>これらのビットを使用することは、mpeg-2 ビットストリームにこれらのビットが含まれている場合に、6-18 6-17 6.3.17.1 ビデオ標準の<em>frame_motion_type</em>または<em>field_motion_type</em>ビットを使用することに直接対応します。 これらのビットの使用方法については、次の表で詳しく説明します。</p></td>
+<p>これらのビットは、MPEG-2 ビットストリームにこれらのビットが含まれている場合に、セクション6.3.17.1 と、MPEG-2 ビデオ標準の表6-17 および6-18 での<em>frame_motion_type</em>または<em>field_motion_type</em>の使用に直接対応します。 これらのビットの使用方法については、次の表で詳しく説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>7および6</p></td>
@@ -150,10 +150,10 @@ ms.locfileid: "72839693"
 <td align="left"><p>5</p></td>
 <td align="left"><p><em>FieldResidual</em></p>
 <p>残存差ブロックが MPEG-2 で指定されたフィールド IDCT 構造体を使用するかどうかを示します。</p>
-<p><strong>B絵文字構造</strong>が1または2の場合、このフラグは1にする必要があります。 Mpeg-2 構文の<em>frame_pred_frame_DCT</em>フラグが1の場合、このフラグは mpeg-2 で使用する場合は0にする必要があります。 <em>Dct_type</em>がマクロブロックに指定されている場合、このフラグは mpeg-2 構文の<em>dct_type</em>要素と同じである必要があります。</p></td>
+<p><strong>B絵文字構造</strong>が1または2の場合、このフラグは1にする必要があります。 Mpeg-2 構文の<em>frame_pred_frame_DCT</em>フラグが1の場合、mpeg-2 に対してこのフラグが0に設定されている必要があります。 マクロブロックに<em>dct_type</em>が存在する場合、このフラグは mpeg-2 構文の<em>dct_type</em>要素と同じである必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p><em>H261LoopFilter</em></p>
 <p>現在のマクロブロック予測に対して、3.2.3 ループフィルター (セクションの .H) がアクティブかどうかを指定します。 -261 ループフィルターは、分離可能な1/4、1/2、1/4 フィルターであり、水平方向と垂直方向の両方に適用されます。ただし、ブロックエッジでは、タップの1つがブロックの外側にあります。 このような場合は、係数が0、1、0になるようにフィルターが変更されます。 完全な算術精度は、2-d フィルター処理の出力時に8ビットの整数に丸められて保持されます (半整数またはそれより大きい値が切り上げられます)。</p></td>
 </tr>
@@ -165,7 +165,7 @@ ms.locfileid: "72839693"
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><em>MotionBackward</em></p>
-<p>この変数は、MPEG-2 の対応する<em>macroblock_motion_backward</em>パラメーターに指定されたとおりに使用されます。 DXVA_PictureParameters 構造体の<strong>bPicBackwardPrediction</strong>メンバーが0の場合、 <em>motionbackward</em>を0にする必要があります。</p></td>
+<p>この変数は、MPEG-2 の対応する<em>macroblock_motion_backward</em>パラメーターに指定されているとおりに使用されます。 DXVA_PictureParameters 構造体の<strong>bPicBackwardPrediction</strong>メンバーがゼロの場合、 <em>motionbackward</em>を0にする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
@@ -185,7 +185,7 @@ ms.locfileid: "72839693"
 
 マクロブロックが predictively によってコード化されている場合は、モーションベクター値が関連付けられています。 値は、フィールドコードまたはフレームによってコード化された画像にマクロブロックが使用されているかどうかに基づいて生成されます。 すべての実装で、使用されているすべてのマクロブロック型 (特に、フィールド構造化画像またはデュアルプライムモーション) を適切に考慮することが重要です。
 
-このセクションの次の2つの表は、 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、および**mvector** (フレームコードとフィールドコード) の有効な組み合わせを示しています。写真. **Mvector**には、モーションベクターの水平方向と垂直方向のコンポーネントが含まれています。 残りの変数とフラグは、モーションベクター演算を指定します。 これは、処理されたマクロブロックの種類と、フレームコードまたはフィールドでコード化された画像にマクロブロックが使用されているかどうかによって決まります。
+このセクションの次の2つの表は、 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、および**mvector** (フレームコードおよびフィールドでコード化された画像) の有効な組み合わせを示しています。 **Mvector**には、モーションベクターの水平方向と垂直方向のコンポーネントが含まれています。 残りの変数とフラグは、モーションベクター演算を指定します。 これは、処理されたマクロブロックの種類と、フレームコードまたはフィールドでコード化された画像にマクロブロックが使用されているかどうかによって決まります。
 
 次の表に示す値 (このセクションの) は、次の条件で発生します。
 
@@ -193,7 +193,7 @@ ms.locfileid: "72839693"
 
 -   、 **B絵文字構造**が 2 (下のフィールド) でない限り、*ピクチャ*は0になります。 この例では、 *"ピクチャ" フィールド*は1です。
 
-**Mvector**は、 [**DXVA\_mbctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)および[**DXVA\_Mbctrl\_P\_offhostidct\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体のメンバーです。 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、 *H261LoopFilter*、および*Motion4MV*の各フラグと変数は、 **wmbtype**に含まれています。DXVA のメンバー\_MBctrl\_P\_HostResidDiff\_1 および DXVA\_MBctrl\_P\_OffHostIDCT\_1 構造体です。 **BDXVA Obmc**は、 [ **\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体のメンバーです。 DXVA\_ピクチャパラメーターの**B絵文字構造体**から派生した、画像形式の*フィールド*です。
+**Mvector**は、 [**DXVA\_mbctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)および[**DXVA\_Mbctrl\_P\_offhostidct\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体のメンバーです。 *IntraMacroblock*、 *motionforward*、 *motionforward*、 *motionforward*、 *mvertfieldsel*、、および*Motion4MV*の各フラグと変数は、DXVA\_MBctrl\_P\_Hostresiddiff\_1 および DXVA\_mbctrl\_P\_offhostidct\_1 構造体に含ま**れてい**ます。 **BDXVA Obmc**は、 [ **\_ピクチャパラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)構造体のメンバーです。 DXVA\_ピクチャパラメーターの**B絵文字構造体**から派生した、画像形式の*フィールド*です。
 
 このセクションの次の表を確認する場合は、次の点に注意してください。
 
@@ -224,10 +224,10 @@ ms.locfileid: "72839693"
 <tr class="header">
 <th align="left">IntraMacroblock、MotionForward、Motionforward</th>
 <th align="left">MotionType (画像の種類によって異なります)</th>
-<th align="left">MVector [0] MvertFieldSel_0 (1、dir1)</th>
+<th align="left">MVector [0] MvertFieldSel_0 (1 番目、dir1)</th>
 <th align="left">MVector [1] MvertFieldSel_1 (1、dir2)</th>
-<th align="left">MVector [2] MvertFieldSel_2 (2, dir1)</th>
-<th align="left">MVector [3] MvertFieldSel_3 (2, dir2)</th>
+<th align="left">MVector [2] MvertFieldSel_2 (2 番目、dir1)</th>
+<th align="left">MVector [3] MvertFieldSel_3 (2 番目、dir2)</th>
 </tr>
 </thead>
 <tbody>
@@ -375,10 +375,10 @@ ms.locfileid: "72839693"
 <tr class="header">
 <th align="left">IntraMacroblock、MotionForward、Motionforward</th>
 <th align="left">MotionType (画像の種類によって異なります)</th>
-<th align="left">MVector [0] MvertFieldSel_0 (1、dir1)</th>
+<th align="left">MVector [0] MvertFieldSel_0 (1 番目、dir1)</th>
 <th align="left">MVector [1] MvertFieldSel_1 (1、dir2)</th>
-<th align="left">MVector [2] MvertFieldSel_2 (2, dir1)</th>
-<th align="left">MVector [3] MvertFieldSel_3 (2, dir2)</th>
+<th align="left">MVector [2] MvertFieldSel_2 (2 番目、dir1)</th>
+<th align="left">MVector [3] MvertFieldSel_3 (2 番目、dir2)</th>
 </tr>
 </thead>
 <tbody>

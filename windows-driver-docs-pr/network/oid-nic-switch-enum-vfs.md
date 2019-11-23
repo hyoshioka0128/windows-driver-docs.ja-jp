@@ -3,7 +3,7 @@ title: OID_NIC_SWITCH_ENUM_VFS
 description: 前のドライバーまたはユーザーモードアプリケーションが、配列を取得するために OID_NIC_SWITCH_ENUM_VFS のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: ABACB70C-9307-4560-93DD-0475AD1FFF10
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_ENUM_VFS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_ENUM_VFS
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e9acf7303d8f3f5af0d6ca11ce589116ac6f8be
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ ms.locfileid: "72844087"
 
 -   [**VF\_INFO 構造体\_の NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)の配列。 これらの各構造体には、ネットワークアダプターの NIC スイッチ上の単一の VF に関する情報が含まれています。 VF は、Oid による oid メソッドの要求を介して NIC スイッチに接続されます。 [\_nic\_スイッチによって\_vf が割り当て\_](oid-nic-switch-allocate-vf.md)ます。
 
-    **注**  ネットワークアダプターの nic スイッチに VFs が接続されていない場合は、NDIS\_NIC\_スイッチの**numelements**メンバー [ **\_VF\_INFO\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)構造体が0に設定され、NDIS がありません[ **\_NIC\_スイッチ\_VF\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造が返されます。
+    **注**  ネットワークアダプターの nic スイッチに VFs が接続されていない場合は、NDIS\_NIC\_スイッチの**numelements**メンバー [ **\_vf\_info\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)構造が0に設定され、NDIS\_[**NIC\_スイッチ\_vf\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)構造体が返されます。
 
      
 
@@ -34,7 +34,7 @@ ms.locfileid: "72844087"
 
 ドライバーまたはアプリケーションが OID 要求を発行する前に、要求と共に渡される、 [**VF\_INFO\_配列の構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)を初期化する必要があります。 ドライバーまたはアプリケーションは、 **NDIS\_NIC\_スイッチ\_VF\_情報\_配列**構造体を初期化するときに、次のガイドラインに従う必要があります。
 
--   NDIS\_NIC\_スイッチ\_VF\_情報\_配列\_特定の\_スイッチフラグが**Flags**メンバーで設定されている場合では、ドライバーまたはアプリケーションが**Switchid**メンバーを sr-iov ネットワークアダプターの NIC スイッチ識別子に設定する必要があります。 この方法でこれらのメンバーを設定することにより、SR-IOV ネットワークアダプターの指定された NIC スイッチに対してのみ VF 情報が返されます。
+-   NDIS\_NIC\_SWITCH\_VF\_INFO\_ARRAY\_\_特定の\_スイッチフラグが**Flags**メンバーで設定されている場合、ドライバーまたはアプリケーションは、sr-iov ネットワークアダプターの nic スイッチ識別子に**switchid**メンバーを設定する必要があります。\_ この方法でこれらのメンバーを設定することにより、SR-IOV ネットワークアダプターの指定された NIC スイッチに対してのみ VF 情報が返されます。
 
     [\_列挙型\_スイッチ、oid\_nic\_スイッチ](oid-nic-switch-enum-switches.md)の oid クエリ要求を発行することによって、後続のドライバーおよびユーザーモードアプリケーションが nic スイッチ識別子を**取得  こと**ができます。
 
@@ -80,7 +80,7 @@ NDIS が OID\_NIC を処理するときに、\_列挙\_型の VFS 要求\_スイ
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

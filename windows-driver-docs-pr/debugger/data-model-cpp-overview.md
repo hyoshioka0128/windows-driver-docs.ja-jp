@@ -73,7 +73,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 ![データモデルのアーキテクチャビュー](images/data-model-simple-architectural-view.png)
 
 
-### <a name="object-model"></a>オブジェクトモデル
+### <a name="object-model"></a>オブジェクト モデル
 
 デバッガーデータモデルの中心にあるのは、すべてが IModelObject インターフェイスのインスタンスである、統一されたオブジェクト表現です。  このようなオブジェクトは、組み込み (たとえば、整数値) または別のデータモデルインターフェイスを表す場合がありますが、多くの場合、動的オブジェクト (キー/値/メタデータタプルのディクショナリ) と、抽象動作を記述する一連の概念を表します。   
 
@@ -150,7 +150,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IRawEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-irawenumerator) 
 
-[Imodelkeyreference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
+[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
 
 *概念インターフェイス*
 

@@ -95,7 +95,7 @@ CEA-861-D 標準の結果として、CEA デバイスでサポートされてい
 </tr>
 <tr class="even">
 <td align="left"><p>0x0f</p></td>
-<td align="left"><p>未使用.</p></td>
+<td align="left"><p>未使用。</p></td>
 <td align="left"><p>予約済み</p></td>
 </tr>
 </tbody>

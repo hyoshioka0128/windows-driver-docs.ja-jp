@@ -4,7 +4,7 @@ description: Init\_DeRegisterInterrupt ルールでは、MPInitilize 中に Ndis
 ms.assetid: C7436321-43DD-4B38-A0A3-9888CFDDA284
 ms.date: 05/21/2018
 keywords:
-- Init_DeRegisterInterrupt rule (ndis)
+- Init_DeRegisterInterrupt 規則 (ndis)
 topic_type:
 - apiref
 api_name:

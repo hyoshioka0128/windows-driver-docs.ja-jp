@@ -3,7 +3,7 @@ title: SM\_GetBindingCapability 関数
 description: SM\_GetBindingCapability メソッドは、指定されたポートのバインド機能を取得します。
 ms.assetid: 11b7df8b-2694-4c49-a97a-ed475f3e841f
 keywords:
-- SM_GetBindingCapability function Storage デバイス
+- SM_GetBindingCapability 関数記憶装置
 topic_type:
 - apiref
 api_name:
@@ -61,7 +61,7 @@ WMI メソッドには適用されません。
 <a name="remarks"></a>注釈
 -------
 
-SM\_GetBindingSupport メソッドは、現在有効になっているバインド機能を返します。一方、SM\_Getbindingsupport 機能メソッドは、特定のバインドが有効になっているかどうかを参照せずに、ポートのバインド機能を示します。またはできません。 この WMI メソッドは、MS\_SM\_TargetInformationMethods WMI クラスに属しています。
+SM\_GetBindingSupport メソッドは、現在有効になっているバインド機能を返します。一方、SM\_Getbindingsupport 機能メソッドは、特定のバインドが有効かどうかを参照せずに、ポートのバインド機能を示します。 この WMI メソッドは、MS\_SM\_TargetInformationMethods WMI クラスに属しています。
 
 <a name="requirements"></a>要件
 ------------

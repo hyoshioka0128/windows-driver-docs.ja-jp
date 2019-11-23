@@ -17,13 +17,13 @@ ms.locfileid: "72842939"
 
 
 
-送信要求の場合、このドライバーは[**NET\_BUFFER\_LIST を使用して\_queue\_ID マクロを受信\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id) 、送信データの発信キューのキュー識別子を設定します **。** OOB 情報を NetBufferListFilteringInfo します。 **NetBufferListFilteringInfo**情報は、 [**NDIS\_NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)で指定され、\_INFO 構造体のフィルター選択\_ます。
+送信要求の場合、このドライバーは[**NET\_BUFFER\_LIST\_RECEIVE\_queue\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)マクロを使用して、送信データの発信キューのキュー識別子を**NetBufferListFilteringInfo** OOB 情報で設定します。 **NetBufferListFilteringInfo**情報は、 [**NDIS\_NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)で指定され、\_INFO 構造体のフィルター選択\_ます。
 
 NDIS ドライバーでは、 [**net\_buffer\_list\_受信\_queue\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)マクロを使用して、 [**net\_buffer\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のキュー識別子を設定または取得できます。 キューグループに複数の VM キューが含まれている場合は、送信パケットのキュー識別子が、グループ内の任意の VM キューのキュー識別子に設定されている可能性があります。
 
-プロトコルドライバーは、 [**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)関数の*sendflags*パラメーターで\_フラグ\_1 つの\_QUEUE ビットに送信するように NDIS\_設定し、すべての送信 NET\_BUFFER\_LIST を示すように設定します。呼び出しの構造体は、同じ送信キューを対象としています。
+プロトコルドライバーは、 [**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)関数の*sendflags*パラメーターで\_フラグ\_1 つの\_QUEUE ビットに送信するように NDIS\_設定します。これにより、呼び出し内のすべての送信 NET\_BUFFER\_LIST 構造体が同じ送信キューにあることが示されます。
 
-ミニポートドライバーは、すべての NET\_を示すために、 [**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数の*sendcompleteflags*パラメーターで\_完全な\_フラグ\_1 つの\_キュービットを送信するように NDIS\_設定します。呼び出しのバッファー\_リストが同じ送信キューに送信されました。
+ミニポートドライバーは、 [**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)関数の*sendcompleteflags*パラメーターで\_完全な\_フラグ\_1 つの\_キュービットを送信するように NDIS\_設定します。これにより、呼び出し内のすべての NET\_BUFFER\_リストが同じ送信キューに送信されたことを示します。
 
 フィルターテストの詳細については、「 [VMQ フィルター操作](vmq-filter-operations.md)」を参照してください。
 

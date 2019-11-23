@@ -3,7 +3,7 @@ title: DIF_INSTALLINTERFACES
 description: DIF_INSTALLINTERFACES
 ms.assetid: fd3eb56b-f73e-4699-accf-6bf70e2e54f8
 keywords:
-- DIF_INSTALLINTERFACES デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DIF_INSTALLINTERFACES
 topic_type:
 - apiref
 api_name:
@@ -24,7 +24,7 @@ ms.locfileid: "72828825"
 # <a name="dif_installinterfaces"></a>DIF_INSTALLINTERFACES
 
 
-DIF_INSTALLINTERFACES 要求を使用すると、インストーラーはデバイスのデバイスインターフェイスの登録に参加できます。
+DIF_INSTALLINTERFACES 要求では、インストーラーはデバイスのデバイスインターフェイスの登録に参加できます。
 
 ### <a name="when-sent"></a>送信時
 
@@ -80,7 +80,7 @@ DIF_INSTALLINTERFACES 要求を使用すると、インストーラーはデバ�
 
 クラスインストーラーがこの要求を正常に処理し、 [**Setupdicallclassinstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)がその後既定のハンドラーを呼び出す必要がある場合、クラスインストーラーは ERROR_DI_DO_DEFAULT を返します。
 
-クラスインストーラーが、既定のハンドラーを直接呼び出すなど、この要求を正常に処理した場合、クラスインストーラーは NO_ERROR を返し、 **Setupdicallclassinstaller**はその後、既定のハンドラーを再び呼び出します。
+クラスインストーラーが、既定のハンドラーを直接呼び出すなど、この要求を正常に処理した場合、クラスインストーラーは NO_ERROR を返す必要があります。また、 **Setupdicallclassinstaller**は、その後、既定のハンドラーを再度呼び出すことはありません。
 
 クラスインストーラーでは既定のハンドラーを直接呼び出すことができますが、クラスインストーラーでは既定のハンドラーの操作を置き換えないようにする必要**が  ます**。
 
@@ -96,7 +96,7 @@ DIF_INSTALLINTERFACES 要求を使用すると、インストーラーはデバ�
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-DIF_INSTALLINTERFACES 要求に応答して、インストーラーは、インターフェイスを INF ファイルから登録する代わりに、プログラムによってデバイスインターフェイスを登録する場合があります。 通常、ベンダーから提供されたインストーラーは、この差分要求を処理しません。
+DIF_INSTALLINTERFACES 要求に応答して、インストーラーは、インターフェイスを INF ファイルから登録するのではなく、プログラムによってデバイスインターフェイスを登録する場合があります。 通常、ベンダーから提供されたインストーラーは、この差分要求を処理しません。
 
 DI_NOFILECOPY フラグが設定されていない限り、この差分要求を処理するインストーラーは、デバイスインターフェイスに必要なファイルをコピーする必要があります。
 

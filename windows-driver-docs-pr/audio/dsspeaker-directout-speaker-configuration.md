@@ -3,7 +3,7 @@ title: DSSPEAKER_DIRECTOUT スピーカー構成
 description: DSSPEAKER_DIRECTOUT スピーカー構成
 ms.assetid: a4198fb7-157f-40e3-8cca-5a9e392087d2
 keywords:
-- DSSPEAKER_DIRECTOUT スピーカーの構成 WDK オーディオ
+- DSSPEAKER_DIRECTOUT スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c43f4bfa8f6213b9293433bb71b67f2e5d8ffe2
@@ -23,7 +23,7 @@ ms.locfileid: "72833420"
 
  
 
-アプリケーションプログラムでは、スピーカー構成パラメーターを DSSPEAKER\_DIRECTOUT に設定して**Idirectsound:: SetSpeakerConfig**メソッドを呼び出すことにより、DirectSound スピーカー構成を direct out モードに変更できます (「Microsoft Windows」を参照してください)。SDK ドキュメント)。 これにより、speakerless 構成が指定されます。この構成では、アプリケーションからの再生ストリーム内のチャネルは、スピーカーの位置として解釈されることなくオーディオアダプターに直接出力されます。 ただし、入力ストリームは、チャネルへのスピーカーの割り当てに関する想定を必要としない、サンプルレート変換、減衰、フィルター処理、およびその他の種類の処理によって変更できます。
+アプリケーションプログラムでは、スピーカー構成パラメーターを DSSPEAKER\_DIRECTOUT に設定して**Idirectsound:: SetSpeakerConfig**メソッドを呼び出すことにより、DirectSound スピーカー構成を direct out モードに変更できます (Microsoft Windows SDK のドキュメントを参照してください)。 これにより、speakerless 構成が指定されます。この構成では、アプリケーションからの再生ストリーム内のチャネルは、スピーカーの位置として解釈されることなくオーディオアダプターに直接出力されます。 ただし、入力ストリームは、チャネルへのスピーカーの割り当てに関する想定を必要としない、サンプルレート変換、減衰、フィルター処理、およびその他の種類の処理によって変更できます。
 
 これが有効になると、DSSPEAKER\_DIRECTOUT スピーカー構成設定がグローバルになり、オーディオデバイス全体に影響します。 その後に実行されるすべてのオーディオアプリケーションは、DirectSound によって設定が再度変更されるまで、新しい設定の対象になります。
 
@@ -55,9 +55,9 @@ ms.locfileid: "72833420"
 
 この種の未加工オーディオデータでは、スピーカーの位置は無意味であり、入力ストリームまたは出力ストリームにスピーカーの位置を割り当てると、望ましくない副作用が発生する可能性があります。 たとえば、KMixer などのコンポーネントは、3D 仮想化や Dolby サラウンド Pro ロジックエンコードなどのスピーカー固有の効果をストリームに適用することで、不適切な介入を行う可能性があります。 生データチャネルの数は、チャネルマスクのビット数によって制限されないことに注意してください。
 
-特にオーディオ編集専用に設計されていないデバイスでも、通常は[**Ksk プロパティ\_、オーディオ\_チャネル\_構成**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)セットプロパティの要求を受け取り、そのスピーカー構成を ksproperty\_スピーカーに変更する必要があり\_DIRECTOUT。 一般に、デバイスは、その出力がスピーカーに接続されていることを何らかの方法で確認できない限り、要求が失敗するのを防ぐ必要があります。また、外部ミキサーへの入力として、他の目的で外部に使用することはできません。
+特にオーディオ編集専用に設計されていないデバイスでも、通常は[**Ksk プロパティ\_使用し、オーディオ\_チャネル\_構成**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)セットプロパティの要求を受け取ります。これにより、スピーカーの構成を ksk AUDIO\_スピーカー\_directout に変更できます。 一般に、デバイスは、その出力がスピーカーに接続されていることを何らかの方法で確認できない限り、要求が失敗するのを防ぐ必要があります。また、外部ミキサーへの入力として、他の目的で外部に使用することはできません。
 
-ダイレクトアウトモードを使用するアプリケーションは、通常、特定のハードウェアデバイス用に作成されます。 これにより、アプリケーションは、チャネルの数やチャネル内のデータをどのように解釈するかなど、デバイスでサポートされている直接のデータ形式を事前に知ることができます。 この情報が必要なのは、direct out モードで構成されているデバイスでアプリケーションが**Idirectsound:: GetSpeakerConfig**を呼び出したときに、デバイスがこのモードであることを確認するだけであるためです。これは、direct out モードでサポートされているストリーム形式のチャネル数に関する追加情報を提供しません。 ただし、この情報が得られる可能性があります。この情報は、\_レベル\_CAPS のプロパティの取得要求を、デバイスのミキサーピンのスーパーミキサーノードに[**ミックス\_ミックスプロパティ\_** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)送信することによって行われます。「 [DirectSound ノード順序の要件」を参照してください。](directsound-node-ordering-requirements.md).)
+ダイレクトアウトモードを使用するアプリケーションは、通常、特定のハードウェアデバイス用に作成されます。 これにより、アプリケーションは、チャネルの数やチャネル内のデータをどのように解釈するかなど、デバイスでサポートされている直接のデータ形式を事前に知ることができます。 この情報が必要なのは、direct out モードで構成されているデバイスでアプリケーションが**Idirectsound:: GetSpeakerConfig**を呼び出したときに、デバイスがこのモードであることを確認するだけであるためです。これは、direct out モードでサポートされているストリーム形式のチャネル数に関する追加情報を提供しません。 (ただし、この情報が得られる可能性があります。この情報は、 [ **\_レベル\_CAPS プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)の取得要求をデバイスのミキサーピンのスーパーミキサーノードにミックス\_ミックスプロパティを\_しています。「 [DirectSound ノード順序の要件](directsound-node-ordering-requirements.md)」を参照してください)。
 
 ダイレクトアウトストリームの wave 形式を指定する場合、アプリケーションでは、 [**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)構造体の**dwchannelmask**メンバーを、値 ksaudio\_スピーカ\_directout (0) に設定する必要があります。 チャネルマスクが0の場合は、スピーカーの位置が定義されていないことを示します。 常に、ストリーム内のチャネルの数は、 **. nChannels**メンバーという形式で指定されます。
 

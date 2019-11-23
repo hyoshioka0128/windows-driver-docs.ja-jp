@@ -3,7 +3,7 @@ title: DSSPEAKER_SURROUND スピーカー構成
 description: DSSPEAKER_SURROUND スピーカー構成
 ms.assetid: de8f861b-f190-4915-b3f0-95d39965b612
 keywords:
-- DSSPEAKER_SURROUND スピーカーの構成 WDK オーディオ
+- DSSPEAKER_SURROUND スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51594299afbd6dfb932e938903f38864e136957b

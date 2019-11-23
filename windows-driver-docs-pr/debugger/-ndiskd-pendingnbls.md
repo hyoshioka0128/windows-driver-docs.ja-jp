@@ -1,6 +1,6 @@
 ---
 title: ndiskd pendingnbls
-description: Pendingnbls 拡張機能は、転送中の保留中の NBLs (NET_BUFFER_LISTs) を表示します。
+description: Pendingnbls 拡張機能には、転送中の保留中の NBLs (NET_BUFFER_LISTs) が表示されます。
 ms.assetid: 9137B995-FCCA-4E25-85D3-FCB5B717EBDF
 keywords:
 - pendingnbls Windows デバッグ
@@ -127,13 +127,13 @@ Search complete.
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [ **! ndiskd netadapter**](-ndiskd-netadapter.md)
 
-[ **! ndiskd ミニドライバー**](-ndiskd-minidriver.md)
+[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
 [**bp、bu、bm (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)
 

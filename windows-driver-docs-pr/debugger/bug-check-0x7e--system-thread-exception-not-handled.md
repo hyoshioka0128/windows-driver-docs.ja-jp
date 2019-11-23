@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359580"
 ---
-# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグチェック 0x7E: SYSTEM @ no__t-0THREAD @ no__t-1EXCEPTION @ no__t-2NOT @ no__t-3HANDLED
+# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグチェック 0x7E: システム\_スレッド\_例外\_\_処理されていません
 
 
-システムの @ no__t-0THREAD @ no__t-1EXCEPTION @ no__t-2NOT @ no__t-3HANDLED @ のバグチェックの値は0x0000007E です。 このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
+システム\_スレッド\_例外\_\_処理されていないバグチェックの値は0x0000007E です。 このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="system_thread_exception_not_handled-parameters"></a>システム @ no__t-0THREAD @ no__t 例外 @ no__t-2NOT @ no__t-3HANDLED されたパラメーター
+## <a name="system_thread_exception_not_handled-parameters"></a>システム\_スレッド\_例外\_処理されたパラメーター\_ありません
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ ms.locfileid: "72359580"
 <td align="left"><p>例外レコードのアドレス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>コンテキストレコードのアドレス。</p></td>
 </tr>
 </tbody>
@@ -69,16 +69,16 @@ ms.locfileid: "72359580"
 
 一般的な例外コードは次のとおりです。
 
-- 0x80000002: STATUS @ no__t-0DATATYPE @ no__t-1MISALIGNMENT は、整列されていないデータ参照が検出されたことを示します。
+- 0x80000002: STATUS\_DATATYPE\_ミスアライメントは、整列されていないデータ参照が検出されたことを示します。
 
-- 0x80000003: STATUS @ no__t-0BREAKPOINT ポイントは、カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントが検出されたことを示します。
+- 0x80000003: STATUS\_は、カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生したことを示します。
 
-- 0xC0000005: STATUS @ no__t-0ACCESS @ no__t-1 違反は、メモリアクセス違反が発生したことを示します。
+- 0xC0000005: 状態\_アクセス\_違反は、メモリアクセス違反が発生したことを示します。
 
 例外コードの完全な一覧については、「 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)」を参照してください。 例外コードは、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)によって提供されるヘッダーファイルである、 *ntstatus*で定義されています。 (詳細については、「 [Windows Driver Kit のヘッダーファイル](../gettingstarted/header-files-in-the-windows-driver-kit.md)」を参照してください)。 
 
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 この問題のデバッグを計画している場合は、例外アドレス (パラメーター 2) で、この問題の原因となったドライバーまたは機能を特定する必要があります。

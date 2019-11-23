@@ -3,7 +3,7 @@ title: OID_SWITCH_PARAMETERS
 description: Hyper-v 拡張可能スイッチ拡張機能は、拡張可能なスイッチの構成データを取得するために、OID_SWITCH_PARAMETERS のオブジェクト識別子 (OID) クエリ要求を発行します。
 ms.assetid: F2CA0BE5-ED21-4ACF-B26A-4F512D4B15C7
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: d14c6e4dcdb57d21ecab84906d566232c70021be
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -22,7 +22,7 @@ OID クエリ要求が正常に完了した場合、 [**ndis\_oid\_要求**](htt
 <a name="remarks"></a>注釈
 -------
 
-返された[**ndis\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)構造体を拡張機能が処理するときに、 **ndis\_スイッチ**のさまざまな文字列メンバーが**SWITCHNAME**などの\_パラメーター構造を持つと想定しないでください。は null で終了します。 これらの文字列メンバーのデータ型は、で[**文字列構造\_カウントされる\_場合**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)に、によって型定義されます。 拡張機能は、この構造体の**length**メンバーの値から文字列の長さを決定する必要があります。
+返された[**ndis\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)構造体を拡張して処理するときに、 **NDIS\_\_スイッチ**のさまざまな文字列メンバー ( **switchname**など) が null で終わると想定してはいけません。 これらの文字列メンバーのデータ型は、で[**文字列構造\_カウントされる\_場合**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)に、によって型定義されます。 拡張機能は、この構造体の**length**メンバーの値から文字列の長さを決定する必要があります。
 
 **注**  文字列が null で終わる場合は、**長さ**のメンバーに終端の null 文字を含めることはできません。
 
@@ -50,7 +50,7 @@ OID クエリ要求が正常に完了した場合、 [**ndis\_oid\_要求**](htt
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが小さすぎて、OID クエリ要求の OID_SWITCH_PARAMETERS 構造体を返すことができません。 拡張可能スイッチの基になるミニポートエッジによってデータが設定され<strong>ます。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーの長さが小さすぎて、OID クエリ要求の OID_SWITCH_PARAMETERS 構造を返すことができません。 拡張可能スイッチの基になるミニポートエッジによってデータが設定され<strong>ます。QUERY_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

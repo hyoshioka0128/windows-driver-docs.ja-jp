@@ -3,7 +3,7 @@ title: SM\_GetBindingSupport 関数
 description: SM\_GetBindingSupport メソッドは、指定されたポートに対して現在有効なバインド機能を取得します。
 ms.assetid: 0ca24cdf-b589-4096-a490-2acfdd576a91
 keywords:
-- SM_GetBindingSupport function Storage デバイス
+- SM_GetBindingSupport 関数記憶装置
 topic_type:
 - apiref
 api_name:

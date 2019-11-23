@@ -33,10 +33,10 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 <a name="parameters"></a>パラメーター
 ----------
 
-*属性  (_c)*  
+*_attributes*   
 オブジェクトの[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体へのポインター。
 
-  の*種類 (_c)*  
+*_contexttype*   
 オブジェクトのコンテキスト空間の内容を記述するドライバー定義の構造体の構造体型の名前。
 
 <a name="return-value"></a>戻り値
@@ -49,7 +49,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 
 [**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)を呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります。
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用方法の詳細については、「[フレームワークオブジェクトコンテキスト空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)」を参照してください。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用方法の詳細については、「 [Framework オブジェクトコンテキスト空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)」を参照してください。
 
 このマクロを使用するコード例については、「 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)」を参照してください。
 

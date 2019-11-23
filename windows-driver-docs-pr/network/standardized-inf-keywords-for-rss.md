@@ -100,7 +100,7 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p>
+<td align="left"><p>4</p>
 <p>EnterprisePublishing</p></td>
 <td align="left"><p><strong>Numascalingstatic</strong>: RSS プロセッサの選択は、動的な負荷分散を使用しない NUMA スケーラビリティの場合と同じです。</p></td>
 </tr>
@@ -122,7 +122,7 @@ NDIS 6.30 では **\*RSSProfile**のサポートが追加されました。
 <a href="" id="---------rssbaseprocgroup"></a> **\*RssBaseProcGroup**  
 **\*RssBaseProcNumber**キーワードに指定されているプロセッサ番号のプロセッサグループの番号。
 
-<a href="" id="---------numanodeid"></a> **\*Num/Deid**  
+<a href="" id="---------numanodeid"></a> **\*NumaNodeId**  
 ネットワークアダプターのメモリ割り当てに使用される優先 NUMA ノード。 また、オペレーティングシステムは、優先 NUMA ノードからの Cpu を最初に RSS に使用しようとします。
 
 PCI 拡張カードのドライバーは、そのドライブが接続されている PCI スロットによって最も近いノードであるため、その INF で NUMA ノード ID を静的に指定しないでください。  ネットワークアダプターがシステムに統合されていて、NUMA ノードが事前に認識されていて、実行時に ACPI を照会することによってノードを判別できない場合は、 **\*numonly Deid**のみを指定します。
@@ -150,8 +150,8 @@ RSS キューの数。
 
 <a href="" id="---------rssmaxprocgroup"></a> **\*RssMaxProcGroup**RSS インターフェイスの最大プロセッサグループ。
 
-**RssBaseProcGroup**と **\*RSSBASEPROCNUMBER**は、RSS で使用できる最小プロセッサ数を識別する PROCESSOR_NUMBER 構造体を形成します。\*
-**RssMaxProcGroup**と **\*RSSMAXPROCNUMBER**は、RSS で使用できるプロセッサの最大数を識別する PROCESSOR_NUMBER 構造体を形成します。\*
+**RssBaseProcGroup**を **\*RssBaseProcNumber**と共に\*と、RSS で使用できる最小のプロセッサ数を特定する PROCESSOR_NUMBER 構造が形成されます。
+**\*RssMaxProcGroup**と **\*RSSMAXPROCNUMBER**は、RSS で使用できるプロセッサの最大数を識別する PROCESSOR_NUMBER 構造を形成します。
 
 たとえば、 **RssBaseProcGroup**が1に設定されていて、 **\*RssBaseProcNumber**が\*16 に設定されていて、 **RssMaxProcGroup**が3に設定されていて、 **\*RssMaxProcNumber**が8に設定されている場合\*とします。
 <group>:<processor> 表記を使用した場合、基本プロセッサは1:16、最大プロセッサ数は3:8 です。
@@ -198,9 +198,9 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">タスクバーの検索ボックスに</th>
+<th align="left">種類</th>
 <th align="left">既定値</th>
-<th align="left">最小</th>
+<th align="left">Min</th>
 <th align="left">最大</th>
 </tr>
 </thead>
@@ -208,15 +208,15 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="odd">
 <td align="left"><p><strong><em>RssBaseProcGroup</strong></p></td>
 <td align="left"><p>RSS 基本プロセッサグループ</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>MAXIMUM_GROUPS-1</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong></em>Num/Deid</strong></p></td>
+<td align="left"><p><strong></em>NumaNodeId</strong></p></td>
 <td align="left"><p>優先 NUMA ノード</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>65535 (任意のノード)</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>システム固有-65534 を超えることはできません</p></td>
@@ -224,7 +224,7 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="odd">
 <td align="left"><p><strong><em>RssBaseProcNumber</strong></p></td>
 <td align="left"><p>RSS ベースプロセッサ番号</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>MAXIMUM_PROC_PER_GROUP-1</p></td>
@@ -232,7 +232,7 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="even">
 <td align="left"><p><strong></em>MaxRssProcessors</strong></p></td>
 <td align="left"><p>RSS プロセッサの最大数</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>Windows Server 2008 の既定値:</p>
 <p>x 1G または低速のアダプターの場合は8、10G アダプターの場合は16</p>
 <p>Windows 8 の既定値:</p>
@@ -244,15 +244,15 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="odd">
 <td align="left"><p><strong><em>RssMaxProcNumber</strong></p></td>
 <td align="left"><p>RSS プロセッサの最大数</p></td>
-<td align="left"><p>整数</p></td>
-<td align="left"><p>MAXIMUM_PROC_PER_GROUP-1 (既定値)</p></td>
+<td align="left"><p>Int</p></td>
+<td align="left"><p>MAXIMUM_PROC_PER_GROUP-1 (既定)</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>MAXIMUM_PROC_PER_GROUP-1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em>NumRSSQueues</strong></p></td>
 <td align="left"><p>RSS キューの最大数</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>デバイス固有</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>デバイス固有</p></td>
@@ -260,7 +260,7 @@ SubkeyName に関連付けられている表示テキスト。
 <tr class="odd">
 <td align="left"><p><strong>*RSSMaxProcGroup</strong></p></td>
 <td align="left"><p>RSS 最大プロセッサグループ</p></td>
-<td align="left"><p>整数</p></td>
+<td align="left"><p>Int</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>MAXIMUM_GROUPS-1</p></td>

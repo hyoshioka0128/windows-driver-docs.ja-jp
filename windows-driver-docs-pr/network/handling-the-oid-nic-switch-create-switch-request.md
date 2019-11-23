@@ -24,7 +24,7 @@ NDIS は、Oid\_\_のオブジェクト識別子 (OID) メソッドの要求を�
 
     PF ミニポートドライバーが静的 NIC スイッチの作成をサポートしていない場合、ミニポートドライバーはリソースを割り当て、OID 要求で指定されたパラメーターに基づいてスイッチを作成します。
 
-PF ミニポートドライバーは、NDIS がドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すときに、sr-iov インターフェイスのサポートをアドバタイズします。 PF ミニポートドライバーが sr-iov をサポートしている場合、NDIS はレジストリから NIC スイッチの構成を読み取ります。 NDIS は oid\_oid の OID メソッド要求を発行する前に、 [\_スイッチを作成\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch) 、PF ミニポートドライバーへのスイッチを\_作成します。 ndis では、 [**ndis\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)を設定し\_パラメーター構造をレジストリに設定します。次の方法で情報を参照してください。
+PF ミニポートドライバーは、NDIS がドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出すときに、sr-iov インターフェイスのサポートをアドバタイズします。 PF ミニポートドライバーが sr-iov をサポートしている場合、NDIS はレジストリから NIC スイッチの構成を読み取ります。 NDIS が oid を発行する前に、oid の OID メソッド要求[\_NIC\_スイッチ\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)して、PF ミニポートドライバーへのスイッチを\_作成します。次のように、ndis は、 [**ndis\_NIC\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)\_のパラメーター構造をレジストリ情報に設定します。
 
 -   NDIS は、 **switchtype**メンバーを NIC スイッチの種類に設定します。
 
@@ -52,7 +52,7 @@ Oid\_\_スイッチの oid メソッド要求を受信すると[\_スイッチ\_
 
 3.  PF ミニポートドライバーは、NIC スイッチの既定の VPort に必要なハードウェアおよびソフトウェアリソースを割り当てる必要があります。
 
-    既定の VPort は、oid 要求 oid [\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)を使用して作成され**た  、** oid\_の oid 要求を使用して\_\_の\_を[削除\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。 Oid\_の OID 要求、 [nic\_スイッチ\_\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)と[oid\_nic\_\_の削除\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)を使用して、nic スイッチで既定以外の vport を作成および削除します。
+    既定の VPort は常に oid 要求 oid\_NIC の要求を使用して作成され**ます  ** [\_スイッチ\_作成\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch) 、oid\_の oid 要求を使用して\_スイッチ\_削除\_スイッチ[削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)します。 Oid\_の OID 要求、 [nic\_スイッチ\_\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)と[oid\_nic\_\_の削除\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)を使用して、nic スイッチで既定以外の vport を作成および削除します。
 
      
 

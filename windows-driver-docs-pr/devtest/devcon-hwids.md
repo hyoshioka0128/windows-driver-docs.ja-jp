@@ -29,7 +29,7 @@ ms.locfileid: "72038025"
 
 ## <a name="span-idddk_devcon_hwids_toolsspanspan-idddk_devcon_hwids_toolsspanparameters"></a><span id="ddk_devcon_hwids_tools"></span><span id="DDK_DEVCON_HWIDS_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72038025"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong> @ no__t) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong></em></strong>) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -92,8 +92,8 @@ devcon hwids =usb
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 1:すべてのハードウェア Id を検索する @ no__t-0
+[例 1: すべてのハードウェア Id を検索する](devcon-examples.md#ddk_example_1_find_all_hardware_ids_tools)
 
-[Example 2:パターン @ no__t を使用してハードウェア Id を検索します。
+[例 2: パターンを使用してハードウェア Id を検索する](devcon-examples.md#ddk_example_2_find_hardware_ids_by_using_a_pattern_tools)
 
-[Example 3:クラス @ no__t を使用してハードウェア Id を検索する
+[例 3: クラスを使用してハードウェア Id を検索する](devcon-examples.md#ddk_example_3_find_hardware_ids_by_using_a_class_tools)

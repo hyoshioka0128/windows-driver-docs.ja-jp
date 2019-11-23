@@ -1,9 +1,9 @@
 ---
 title: OID_NDK_STATISTICS
-description: クエリとして、NDIS およびそれ以降のドライバーまたはユーザーモードのアプリケーションは、OID_NDK_STATISTICS OID を使用して、ミニポートアダプターの NDK 統計情報を取得します。
+description: クエリとして、NDIS およびそれ以降のドライバーまたはユーザーモードアプリケーションは OID_NDK_STATISTICS OID を使用して、ミニポートアダプターの NDK 統計情報を取得します。
 ms.assetid: 30F16DEC-AEE6-49D4-8599-95374ACBD446
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NDK_STATISTICS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NDK_STATISTICS
 ms.localizationpriority: medium
 ms.openlocfilehash: 24373920041a5b176ec6036f37458e07582d95b1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

@@ -3,7 +3,7 @@ title: SM\_SendLIRR 関数
 description: SM\_SendLIRR WMI メソッドは、指定されたローカルポートを介して、指定されたリモートポートにリンクインシデントレコード登録 (LIRR) コマンドを送信します。
 ms.assetid: 52564ec3-4a42-4df0-b89f-2a8415404172
 keywords:
-- SM_SendLIRR function Storage デバイス
+- SM_SendLIRR 関数記憶装置
 topic_type:
 - apiref
 api_name:

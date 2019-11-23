@@ -3,7 +3,7 @@ title: OID_QOS_REMOTE_PARAMETERS
 description: このドライバーは、リモートピアの NDIS Quality of Service (QoS) パラメーターを取得するために、OID_QOS_REMOTE_PARAMETERS のオブジェクト識別子 (OID) クエリ要求を発行します。
 ms.assetid: F9DA87FF-577F-4E06-929B-4AD65105B2F0
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_QOS_REMOTE_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_QOS_REMOTE_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b2ded1c4f44ccea3969828ff7aa0138e6d53724
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -26,13 +26,13 @@ OID クエリ要求から正常に戻った後、 [**ndis\_oid\_要求**](https:
 <a name="remarks"></a>注釈
 -------
 
-NDIS では、OID の OID 要求\_QOS\_リモート\_パラメータによって処理されます。これは、以前の[**ndis\_ステータス\_qos\_リモートからキャッシュされたリモート NDIS QOS パラメータを返し\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change) 、ミニポートドライバーによって発行された状態の表示を変更します。 ドライバーは、この状態の通知を発行して、リモート NDIS QoS パラメーターの初期セットを報告します。 また、このドライバーは、リモート NDIS QoS パラメーターが変更されるたびに、この状態を示します。
+NDIS が\_OID の OID 要求を処理するときに、\_リモート\_パラメーターが正常に処理された場合は、以前の[**ndis\_ステータス\_qos\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)からキャッシュしていたリモート NDIS QOS パラメーターを返します。これは、ミニポートドライバーによって発行された\_変更の状態を示します。 ドライバーは、この状態の通知を発行して、リモート NDIS QoS パラメーターの初期セットを報告します。 また、このドライバーは、リモート NDIS QoS パラメーターが変更されるたびに、この状態を示します。
 
 NDIS は、次の方法で初期化される[**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体を返します。
 
--   ミニポートドライバーによって以前に Ndis\_の状態が発行された場合[ **\_qos\_リモート\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)の状態を示す\_、Ndis は[**ndis\_QOS PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)データをキャッシュし、このデータを返します。oid\_の oid クエリ要求では、リモート\_パラメーター\_ます。
+-   ミニポートドライバーによって以前に Ndis\_の状態が発行された場合は[ **\_qos\_リモート\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)の状態を示します。 Ndis は[**ndis\_QOS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)\_のパラメーターデータをキャッシュし、OID\_QOS\_リモート\_パラメーターの oid クエリ要求に対してこのデータを返します。
 
--   ミニポートドライバーが[**ndis\_status\_qos\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行しなかった場合\_変更の状態を示す\_、ndis はすべてのメンバーと共に[**ndis\_QOS PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造を返します (**ヘッダー**メンバーを除く) を0に設定します。
+-   ミニポートドライバーが[**ndis\_status\_QOS\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行していない場合\_変更状態を示す\_、ndis は、すべてのメンバー (**ヘッダー**メンバーを除く) を0に設定して、 [**ndis\_QOS PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体を返します。
 
 リモート NDIS QoS パラメーターの詳細については、「 [Ndis Qos パラメーターの概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)」を参照してください。
 
@@ -62,7 +62,7 @@ NDIS は、次のいずれかの状態コードを返します。
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>) 未満です。 NDIS はデータを設定<strong>します。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>) 未満です。 NDIS はデータを設定<strong>します。QUERY_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>

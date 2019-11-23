@@ -3,7 +3,7 @@ title: SM\_ScsiReadCapacity 関数
 description: SM\_ScsiReadCapacity WMI メソッドは、指定されたデバイスに SCSI 読み取り容量コマンドを送信します。
 ms.assetid: 2b9bc0b0-1a4f-4a65-a009-1d92fa6c3fa0
 keywords:
-- SM_ScsiReadCapacity function Storage デバイス
+- SM_ScsiReadCapacity 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -3,7 +3,7 @@ title: SM\_SendRNID 関数
 description: SM\_SendRNID WMI メソッドは、要求ノード識別データ (RNID) コマンドを指定されたポートに送信します。
 ms.assetid: 160e2dc7-8195-4f8a-bc59-854e5283cf6f
 keywords:
-- SM_SendRNID function Storage デバイス
+- SM_SendRNID 関数記憶装置
 topic_type:
 - apiref
 api_name:

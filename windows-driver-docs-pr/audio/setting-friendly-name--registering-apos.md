@@ -16,9 +16,9 @@ ms.locfileid: "72830125"
 
 [フレンドリ名の設定]、[APOs topic の登録] で、ポートクラスの Bluetooth sideband audio driver がデバイスインターフェイスのフレンドリ名を設定する方法と、Bluetooth デバイスで使用されるオーディオ処理オブジェクト (APO) を登録する方法について説明します。
 
-有効な GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスに対して、ポートクラスオーディオドライバー (PortCls) は通常、Pcregiのサブデバイス関数を呼び出します。これにより、PnP デバイスインターフェイスが登録されます。オーディオアダプターのサブデバイスを表します。 一般的なオーディオドライバーの設計では、オーディオドライバーは "wave" サブデバイスと "トポロジ" サブデバイスに対して Pcregiを呼び出し、その後、他のポートクラス関数を呼び出して接続します。
+有効な GUID\_DEVINTERFACE\_BLUETOOTH\_HFP\_SCO\_HCIバイパスインターフェイスに対して、ポートクラス audio driver (PortCls) は通常、Pcregi サブデバイス関数を呼び出します。これにより、オーディオアダプターのサブデバイスを表す PnP デバイスインターフェイスが登録されます。 一般的なオーディオドライバーの設計では、オーディオドライバーは "wave" サブデバイスと "トポロジ" サブデバイスに対して Pcregiを呼び出し、その後、他のポートクラス関数を呼び出して接続します。
 
-"トポロジ" サブデバイスに対して PcregiKSCATEGORY サブデバイスを呼び出す前に、ドライバーは、「[プロパティとレジストリ値の設定](setting-properties-and-registry-values.md)」で説明されている手順に従って、\_インターフェイスのプロパティとレジストリ値を設定します。講義. 以下のセクションでは、特定のプロパティとレジストリ値について説明します。
+"トポロジ" サブデバイスに対して PcRegisterSubdevice を呼び出す前に、ドライバーは、「[プロパティとレジストリ値の設定](setting-properties-and-registry-values.md)」で説明されている手順に従って、KSCATEGORY\_AUDIO インターフェイスクラスのインターフェイスにプロパティとレジストリ値を設定します。 以下のセクションでは、特定のプロパティとレジストリ値について説明します。
 
 ## <a name="span-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespandevpkey_deviceinterface_friendlyname"></a><span id="DEVPKEY_DeviceInterface_FriendlyName"></span><span id="devpkey_deviceinterface_friendlyname"></span><span id="DEVPKEY_DEVICEINTERFACE_FRIENDLYNAME"></span>DEVPKEY\_DeviceInterface\_FriendlyName
 

@@ -1,9 +1,9 @@
 ---
 title: OID_PM_ADD_WOL_PATTERN
-description: セットとして、NDIS プロトコルドライバーは OID_PM_ADD_WOL_PATTERN OID を使用して、電源管理 wake on LAN パターンをネットワークアダプターに追加します。 NDIS_OID_REQUEST 構造体の InformationBuffer メンバーには、NDIS_PM_WOL_PATTERN 構造体へのポインターが含まれています。
+description: セットとして、NDIS プロトコルドライバーは、OID_PM_ADD_WOL_PATTERN OID を使用して、電源管理 wake on LAN パターンをネットワークアダプターに追加します。 NDIS_OID_REQUEST 構造体の InformationBuffer メンバーには、NDIS_PM_WOL_PATTERN 構造体へのポインターが含まれています。
 ms.assetid: 1005cebb-8ead-4d16-b3ea-5a74da0b054f
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PM_ADD_WOL_PATTERN ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PM_ADD_WOL_PATTERN
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b3b9c374da2a89a2260fb72f6b766afdbecf935
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

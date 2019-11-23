@@ -16,7 +16,7 @@ ms.locfileid: "72826003"
 
 Direct3D ランタイムでは、出力のレンダーターゲットまたは出力頂点バッファー以外の GPU (graphics processing unit) の情報が必要になる場合があります。 GPU は CPU と並行して実行されるため、ユーザーモードのディスプレイドライバーは、GPU との非同期通信の性質を効率的に公開する関数を提供する必要があります。
 
-Query オブジェクトは、ランタイムとドライバーが非同期通知に使用するリソースです。 クエリオブジェクトを作成するために、ランタイムはまずドライバーの[**CalcPrivateQuerySize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatequerysize)関数を呼び出します。これにより、ドライバーがクエリオブジェクトに必要なメモリ領域のサイズを指定できるようになります。 次に、ランタイムはドライバーの[**createquery (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createquery)関数を呼び出して、query オブジェクトを作成します。 *CalcPrivateQuerySize*と*CREATEQUERY (D3D10)* の呼び出しでは、ランタイムは[**D3D10DDIARG\_Createquery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createquery)の**query**メンバーの[**D3D10DDI\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10ddi_query)列挙からクエリ型の値を提供します。*Pcreatequery*パラメーターが指す構造体。
+Query オブジェクトは、ランタイムとドライバーが非同期通知に使用するリソースです。 クエリオブジェクトを作成するために、ランタイムはまずドライバーの[**CalcPrivateQuerySize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatequerysize)関数を呼び出します。これにより、ドライバーがクエリオブジェクトに必要なメモリ領域のサイズを指定できるようになります。 次に、ランタイムはドライバーの[**createquery (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createquery)関数を呼び出して、query オブジェクトを作成します。 *CalcPrivateQuerySize*と*CREATEQUERY (D3D10)* の呼び出しでは、ランタイムは、 *Pcreatequery*パラメーターが指す[**D3D10DDIARG\_Createquery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createquery)構造体の**クエリ**メンバーの[**D3D10DDI\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10ddi_query)列挙体からクエリ型の値を提供します。
 
 各クエリオブジェクトインスタンスは、*ビルド*、*発行*、および*通知*の3つの状態のいずれかに存在します。 ランタイムは、ドライバーの[**Querybegin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querybegin)関数を呼び出して、クエリオブジェクトをビルド状態に遷移させることができます。
 
@@ -26,9 +26,9 @@ Query オブジェクトは、ランタイムとドライバーが非同期通�
 
 ランタイムは、ドライバーの[**Queryend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_queryend)関数を呼び出して、query オブジェクトを発行済み状態に遷移させることができます。 シグナル状態への遷移は、後でしばらく非同期に行われます。 ランタイムは、ドライバーの[**Querygetdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querygetdata)関数を呼び出して、クエリがシグナル状態に遷移したかどうかを検出します。 クエリがシグナル状態の場合、 *Querygetdata*は、 *pData*パラメーターが指すメモリ領域内のクエリに適用されるデータを返すことができます。
 
-同じ種類のすべてのクエリオブジェクトは、FIFO (先入れ先出し) です。 たとえば、D3D10DDI\_型のすべての query オブジェクトは、発行された順序に基づいて、FIFO の順序で\_イベントを完了します。 ただし、異なる種類のクエリオブジェクトは、重複した順序で完了または通知を行うことができます。 たとえば、D3D10DDI\_QUERY\_イベント型のクエリを実行\_\_する前に、ランタイムによって D3D10DDI\_QUERY\_イベントクエリが発行された場合でも、ランタイムがD3D10DDI\_クエリ\_オクルージョンクエリ。
+同じ種類のすべてのクエリオブジェクトは、FIFO (先入れ先出し) です。 たとえば、D3D10DDI\_型のすべての query オブジェクトは、発行された順序に基づいて、FIFO の順序で\_イベントを完了します。 ただし、異なる種類のクエリオブジェクトは、重複した順序で完了または通知を行うことができます。 たとえば、D3D10DDI\_QUERY\_イベント型のクエリを実行する前に、ランタイムが D3D10DDI\_QUERY\_オク query を発行した後に D3D10DDI\_QUERY\_イベントクエリを発行した場合でも、クエリ\_オクルー型\_のクエリの前に完了できます。
 
-ランタイムが query オブジェクトを必要としなくなった場合、ランタイムは、そのオブジェクトに対して以前に割り当てられたメモリ領域を解放し、ドライバーの[**Destroyquery (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyquery)関数を呼び出して、ドライバーがアクセスできなくなったことをドライバーに通知します。このメモリ領域。
+ランタイムが query オブジェクトを必要としなくなった場合、ランタイムは、そのオブジェクトに対して以前に割り当てられたメモリ領域を解放し、ドライバーの[**Destroyquery (D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyquery)関数を呼び出して、ドライバーがこのメモリ領域にアクセスできなくなったことをドライバーに通知します。
 
  
 

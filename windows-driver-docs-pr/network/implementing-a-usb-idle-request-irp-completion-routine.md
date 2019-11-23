@@ -14,7 +14,7 @@ ms.locfileid: "72843436"
 # <a name="implementing-a-usb-idle-request-irp-completion-routine"></a>USB アイドル要求 IRP 完了ルーチンの実装
 
 
-[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)が呼び出されると、usb ミニポートドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、usb アイドル要求に対して I/O 要求パケット (IRP) を発行します ([**IOCTL\_内部\_usb\_送信\_アイドル状態\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) を基になる USB バスドライバーに通知します。 ミニポートドライバーは、ネットワークアダプターがアイドル状態で、中断する必要があることを USB バスドライバーに通知するために、この IRP を発行します。
+[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)が呼び出されると、usb ミニポートドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出して、usb アイドル\_要求に対して I/O 要求パケット (IRP) を発行します。これは、基になる usb バスドライバーに[ **\_アイドル\_通知を送信\_ための、内部\_usb を送信**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)します。 ミニポートドライバーは、ネットワークアダプターがアイドル状態で、中断する必要があることを USB バスドライバーに通知するために、この IRP を発行します。
 
 Usb ミニポートドライバーは、USB アイドル要求の IRP に対して完了ルーチンを登録するために、 [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)を呼び出す必要もあります。 Usb バスドライバーは、USB ミニポートドライバーによってキャンセルされた後に IRP が完了すると、完了ルーチンを呼び出します。 [*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)を呼び出すことによって、NDIS がアイドル通知をキャンセルすると、USB ミニポートドライバーは IRP をキャンセルします。
 

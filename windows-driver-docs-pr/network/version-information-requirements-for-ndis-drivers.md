@@ -33,14 +33,14 @@ Ndis は、*現在のバージョン*の ndis (つまり、コンピューター
 
 -   以前のバージョンの構造体 (つまり、ドライバーがサポートする NDIS バージョンに関連付けられている数よりも低いリビジョン番号を持つ構造体) の場合は、次のようになります。
     -   ドライバーは、ヘッダーの**サイズ**の値が正しいことを確認する必要があります。 **Revision**値です。 たとえば、NDIS\_SIZEOF\_Xxx\_REVISION\_1 の値は、Xxx\_REVISION\_1 に対しては適切ですが、Xxx\_REVISION\_2 には小さすぎます。
-    -   ヘッダーのサイズ値は、NDIS\_SIZEOF\_Xxx\_REVISION\_Nn ( *nn*はドライバーが使用している構造体のリビジョン番号) 以上である必要があり**ます。** また、ドライバーは、構造内の情報は、そのリビジョンに適しています。
+    -   **ヘッダーのサイズ**値は、NDIS\_SIZEOF\_XXX\_Revision\_Nn (ここで、 *nn*はドライバーが使用している構造体のリビジョン番号) 以上である必要があります。また、ドライバーは、そのリビジョンに適した構造体の情報を正しく処理する必要があります。
 -   より新しいバージョン構造 (つまり、ドライバーがサポートする NDIS バージョンに関連付けられている数よりもリビジョン番号が高い構造体) の場合、ドライバーは構造体の古いリビジョンと同様に構造体を使用できます。 より新しいバージョンの構造は、常に古いバージョンと互換性があります。
 
--   ドライバーは、登録されている NDIS バージョンのドライバーについて、構造の正しいリビジョンを使用する必要があります。 たとえば、ndis 6.1 ドライバーは、ndis [ **\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造のメンバーを設定して、NDIS\_オフロード\_リビジョンを示すことによって、NDIS [ **\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造のオフロード機能を報告する必要があり @no__ _ _ 2. ただし、ドライバーは、NDIS\_オフロード\_リビジョン\_2 に含まれるすべての機能をサポートする必要はありません。
+-   ドライバーは、登録されている NDIS バージョンのドライバーについて、構造の正しいリビジョンを使用する必要があります。 たとえば、ndis 6.1 ドライバーは、ndis [ **\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)構造のメンバーを設定して、NDIS\_オフロード\_リビジョン\_2 を示すことによって、NDIS [ **\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造のオフロード機能を報告する必要があります。 ただし、ドライバーは、NDIS\_オフロード\_リビジョン\_2 に含まれるすべての機能をサポートする必要はありません。
 
 -   OID セット要求を正常に処理するドライバーは、OID セット要求から戻ったときに、 [**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体で**supportedrevision**メンバーを設定する必要があります。 **Supportedrevision**メンバーは、ドライバーがサポートしているリビジョンの要求をイニシエーターに通知します。 たとえば、ミニポートドライバーでは、Xxx\_REVISION\_2 の構造を作成し、Xxx\_REVISION\_1 構造に適切な値を指定して、構造体の残りの部分に0を設定できます。 ミニポートドライバーは、 **supportedrevision**メンバーで XXX\_REVISION\_1 を報告します。 この場合、Xxx\_リビジョン\_2 をサポートするプロトコルドライバーでは、ミニポートドライバーがサポートする Xxx\_リビジョン\_1 の情報が使用されます。
 
--   基になるドライバーによって正常に処理された情報を調べるには、oid 要求を発行するドライバーが、oid 要求の後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。型.
+-   基になるドライバーによって正常に処理された情報を確認するために、OID 要求を発行するドライバーは、oid 要求が返された後に、NDIS\_OID\_要求構造の**Supportedrevision**メンバーの値を確認する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 

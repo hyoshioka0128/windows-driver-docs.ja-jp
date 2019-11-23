@@ -1,6 +1,6 @@
 ---
-title: 強化された i/o 検証
-description: 強化された i/o 検証
+title: 拡張 I/O 検証
+description: 拡張 I/O 検証
 ms.assetid: ce8a0b22-fa27-45e5-b013-b3accf604ed4
 keywords:
 - 拡張 i/o 検証機能 (WDK Driver Verifier)
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840268"
 ---
-# <a name="enhanced-io-verification"></a>強化された i/o 検証
+# <a name="enhanced-io-verification"></a>拡張 I/O 検証
 
 
 この機能は、windows XP 以降のバージョンの Windows オペレーティングシステムでのみ使用できます。
@@ -69,7 +69,7 @@ Windows Vista および Windows XP では、拡張 i/o 検証は[I/o 検証](i-o
 
 -   **コマンドラインで**
 
-    コマンドラインでは、拡張 i/o 検証オプションは**ビット 6 (0x40)** で表されます。 拡張 i/o 検証をアクティブ化するには、フラグ値0x40 を使用するか、フラグ値に0x40 を追加します。 例:
+    コマンドラインでは、拡張 i/o 検証オプションは**ビット 6 (0x40)** で表されます。 拡張 i/o 検証をアクティブ化するには、フラグ値0x40 を使用するか、フラグ値に0x40 を追加します。 次に、例を示します。
 
     ```
     verifier /flags 0x40 /driver MyDriver.sys
@@ -77,7 +77,7 @@ Windows Vista および Windows XP では、拡張 i/o 検証は[I/o 検証](i-o
 
     この機能は、次回の起動時にアクティブになります。
 
-    Windows Vista 以降のバージョンの Windows では、コマンドに **/volatile**パラメーターを追加することによって、コンピューターを再起動せずに拡張 i/o 検証をアクティブ化および非アクティブ化することもできます。 例:
+    Windows Vista 以降のバージョンの Windows では、コマンドに **/volatile**パラメーターを追加することによって、コンピューターを再起動せずに拡張 i/o 検証をアクティブ化および非アクティブ化することもできます。 次に、例を示します。
 
     ```
     verifier /volatile /flags 0x40 /adddriver MyDriver.sys

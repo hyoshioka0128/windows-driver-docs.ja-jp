@@ -1,6 +1,6 @@
 ---
-title: WIA デバイス用の INF ファイル
-description: WIA デバイス用の INF ファイル
+title: WIA デバイスの INF ファイル
+description: WIA デバイスの INF ファイル
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840822"
 ---
-# <a name="inf-files-for-wia-devices"></a>WIA デバイス用の INF ファイル
+# <a name="inf-files-for-wia-devices"></a>WIA デバイスの INF ファイル
 
 
 静止イメージデバイスの既定のクラスインストーラーである*sti\_、ci .dll*は、特殊な一連の INF ファイルエントリを認識します。 INF ファイル内では、これらのエントリはデバイスの[**Inf DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)内に配置する必要があります。 次の表で、エントリについて説明します。
@@ -25,8 +25,8 @@ ms.locfileid: "72840822"
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>値</th>
-<th>説明</th>
+<th>Value</th>
+<th>コメント</th>
 </tr>
 </thead>
 <tbody>
@@ -36,7 +36,7 @@ ms.locfileid: "72840822"
 <td><p>必須</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>(Devicetype</strong></p></td>
+<td><p><strong>DeviceType</strong></p></td>
 <td><p>スキャナーの場合は1</p>
 <p>2 (カメラの場合)</p>
 <p>3ストリーミングビデオの場合</p></td>
@@ -48,17 +48,17 @@ ms.locfileid: "72840822"
 <td><p>省略可能</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Connection</strong></p></td>
+<td><p><strong>[接続]</strong></p></td>
 <td><p>シリアルポートまたはパラレルポートに接続されている非プラグアンドプレイデバイスの場合、これは、インストール時にユーザーが選択できるポートを制限するために、シリアルまたは並列にすることができます。</p></td>
 <td><p>省略可能</p>
 <p>指定しない場合、ユーザーは任意のシリアルポートまたはパラレルポートを選択できます。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Capabilities</strong></p></td>
+<td><p><strong>機能</strong></p></td>
 <td><p>デバイスの機能を識別するビットフラグに変換される数値を指定します。 これらのフラグはレジストリに格納され、STI_DEV_CAPS 構造体を使用して、STI コンポーネントで使用できます。</p>
 <p>ビット 0: STI_DEV_CAPS の STI_GENCAP_NOTIFICATIONS を設定/クリアします。</p>
 <p>ビット 1: STI_DEV_CAPS で STI_GENCAP_POLLING_NEEDED を設定/クリアします。</p>
-<p>ビット 2: STI_DEV_CAPS で STI_GENCAP_GENERATE_ARRIVALEVENT を設定/クリアします。</p>
+<p>ビット 2: STI_DEV_CAPS の STI_GENCAP_GENERATE_ARRIVALEVENT を設定/クリアします。</p>
 <p>ビット 3: STI_DEV_CAPS で STI_GENCAP_AUTO_PORTSELECT を設定/クリアします。</p>
 <p>ビット 4: STI_DEV_CAPS で STI_GENCAP_WIA を設定/クリアします。</p>
 <p>ビット 5: STI_DEV_CAPS で STI_GENCAP_SUBSET を設定/クリアします。</p></td>
@@ -130,8 +130,8 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>値</th>
-<th>説明</th>
+<th>Value</th>
+<th>コメント</th>
 </tr>
 </thead>
 <tbody>
@@ -148,13 +148,13 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
 <tr class="even">
 <td><p><strong>USDClass</strong></p></td>
 <td><p>ミニドライバーの GUID を示します。</p></td>
-<td><p>省略可能。</p>
+<td><p>(省略可能)。</p>
 <p><strong>Usdclass</strong>および<strong>CLSID</strong>エントリの guid は、ミニドライバーの<strong>DllGetClassObject</strong>関数で使用されている guid と一致する必要があります。 マイクロドライバを作成する場合、値は BB6CF8E2-1511-40bd-91BA-80D43C53064E にする必要があります。 それ以外の場合は、を使用して新しい GUID を生成する必要があります (例、 <em>genguid .exe</em>)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>CLSID</strong></p></td>
 <td><p>ミニドライバーの GUID を示します。</p></td>
-<td><p>省略可能。</p>
+<td><p>(省略可能)。</p>
 <p><strong>Usdclass</strong>エントリの直前のコメントを確認します。</p></td>
 </tr>
 </tbody>
@@ -177,7 +177,7 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
     <thead>
     <tr class="header">
     <th>デバイスの種類</th>
-    <th>Include (含める)</th>
+    <th>Include</th>
     <th>要望</th>
     </tr>
     </thead>
@@ -220,7 +220,7 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
     <thead>
     <tr class="header">
     <th>デバイスの種類</th>
-    <th>Include (含める)</th>
+    <th>Include</th>
     <th>要望</th>
     </tr>
     </thead>
@@ -263,13 +263,13 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>値</th>
-<th>説明</th>
+<th>Value</th>
+<th>コメント</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>サーバー</strong></p></td>
+<td><p><strong>[サーバー]</strong></p></td>
 <td><p>ローカル</p></td>
 <td><p>デバイスをローカルデバイスとして指定します。 これはオプションであり、ベンダーがエントリ値を指定していない場合、デバイスはローカルであると見なされます。 つまり、WIA_DIP_SERVER_NAME プロパティは Local に設定されます。</p></td>
 </tr>
@@ -286,7 +286,7 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
 <tr class="even">
 <td><p><strong>UI クラス ID</strong></p></td>
 <td><p>ベンダ提供のデバイスクラス識別子</p></td>
-<td><p>ベンダーから提供されたユーザーインターフェイスがサポートできるデバイスクラスを示します。 これは省略可能であり、ベンダーがエントリ値を指定していない場合は、WIA_DIP_UI_CLSID プロパティが GUID_NULL に設定され、既定の WIA UI が使用されます。</p></td>
+<td><p>ベンダーから提供されたユーザーインターフェイスがサポートできるデバイスクラスを示します。 これは省略可能であり、ベンダーがエントリ値を指定していない場合、WIA は WIA_DIP_UI_CLSID プロパティを GUID_NULL に設定し、既定の WIA UI が使用されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ICMProfiles</strong></p></td>
@@ -302,7 +302,7 @@ PropertyPages の場合、WIA ドライバーでは、プロパティページ�
 
 ユーザーインターフェイス (UI) のエントリは、ベンダーがイメージングデバイス用のカスタムユーザーインターフェイスを提供している場合にのみ必要です。
 
-**解説**
+**注釈**
 
 スキャナー用の INF ファイルを開発している場合は、 [MICROSOFT OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))を使用して互換性 ID 機能を有効にすることができます。 これを行うと、1つのスキャナードライバーに複数のスキャナーモデルとの互換性を持たせることができます。
 

@@ -90,7 +90,7 @@ WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wm
 <td align="left"><p>アダプター構成をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>送信</p></td>
+<td align="left"><p>SEND</p></td>
 <td align="left"><p>ネットワーク経由でデータを送信するトレース。</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wm
 <td align="left"><p>メモリ管理をトレースします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>フィルター</p></td>
+<td align="left"><p>FILTER</p></td>
 <td align="left"><p>フィルター操作をトレースします。</p></td>
 </tr>
 <tr class="even">
@@ -138,7 +138,7 @@ WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wm
 <td align="left"><p>電源管理操作をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>開き</p></td>
+<td align="left"><p>OPEN</p></td>
 <td align="left"><p>参照オブジェクトを開く操作をトレースします。</p></td>
 </tr>
 <tr class="odd">
@@ -146,7 +146,7 @@ WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wm
 <td align="left"><p>ロック操作をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>解除</p></td>
+<td align="left"><p>RESET</p></td>
 <td align="left"><p>リセット操作をトレースします。</p></td>
 </tr>
 <tr class="odd">
@@ -186,13 +186,13 @@ Ndiskd .dll
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[ **! ndiskd ndis**](-ndiskd-ndis.md)
+[ **!ndiskd.ndis**](-ndiskd-ndis.md)
 
 [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)
 
-[ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
+[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 
 [WMI トレース拡張機能 (Wmitrace)](https://docs.microsoft.com/windows-hardware/drivers/debugger/wmi-tracing-extensions--wmitrace-dll-)
 

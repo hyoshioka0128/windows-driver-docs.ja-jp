@@ -1,9 +1,9 @@
 ---
 title: OID_NIC_SWITCH_DELETE_SWITCH
-description: NDIS は、OID_NIC_SWITCH_DELETE_SWITCH のオブジェクト識別子 (OID) セット要求を発行して、ネットワークアダプターから NIC スイッチを削除します。
+description: NDIS は、ネットワークアダプターから NIC スイッチを削除するために OID_NIC_SWITCH_DELETE_SWITCH のオブジェクト識別子 (OID) セット要求を発行します。
 ms.assetid: 5785B30F-B67F-4D5A-A93A-243D33B9CAE8
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_DELETE_SWITCH ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_DELETE_SWITCH
 ms.localizationpriority: medium
 ms.openlocfilehash: 7199d00167497b89a4f4a92d06f72d872289aaaf
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -115,7 +115,7 @@ NDIS は、この要求に対して次のいずれかの状態コードを返し
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS はデータを設定<strong>します。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS はデータを設定<strong>します。SET_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 </tbody>
 </table>

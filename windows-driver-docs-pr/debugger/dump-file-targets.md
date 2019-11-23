@@ -1,6 +1,6 @@
 ---
-title: ダンプ-ファイルターゲット
-description: ダンプ-ファイルターゲット
+title: ダンプファイル ターゲット
+description: ダンプファイル ターゲット
 ms.assetid: 83fb6753-a6c1-4899-9b06-a6331b3c31a8
 keywords:
 - ターゲット、ダンプファイル
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837764"
 ---
-# <a name="dump-file-targets"></a>ダンプ-ファイルターゲット
+# <a name="dump-file-targets"></a>ダンプファイル ターゲット
 
 
 ## <span id="ddk_dump_file_targets_dbx"></span><span id="DDK_DUMP_FILE_TARGETS_DBX"></span>

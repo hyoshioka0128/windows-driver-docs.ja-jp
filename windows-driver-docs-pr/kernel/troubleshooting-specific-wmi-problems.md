@@ -56,7 +56,7 @@ ms.locfileid: "72836111"
 
 6. Wbemtest でエラーが返された場合は、 **[詳細情報]** ボタンをクリックし、**説明**のプロパティでエラーの説明を確認します。
 
-7. メソッドについては、ドライバーが[**irp\_の\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)をサポートしていることを確認します。これは、すべての\_データを\_、irp\_、メソッドの GUID に対する[**単一の\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)要求を\_します。 WMI は、メソッドを実行する前に、これら2つの要求のいずれかを常に実行します。
+7. メソッドについては、ドライバーが[**irp\_の\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)をサポートしていることを確認します。これは、すべての\_データを\_、irp\_、メソッドの GUID に対する[**単一の\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)要求を\_します。\_ WMI は、メソッドを実行する前に、これら2つの要求のいずれかを常に実行します。
 
 ### <a name="drivers-wmi-events-are-not-being-received"></a>ドライバーの WMI イベントが受信されていません
 

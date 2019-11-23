@@ -1,6 +1,6 @@
 ---
 title: IrqlExApcLte3 ルール (wdm)
-description: IrqlExApcLte3 ルールは、ドライバーが IRQL APC_LEVEL でのみ次の executive サポートルーチンを呼び出すことを指定します。
+description: IrqlExApcLte3 規則は、ドライバーが IRQL APC_LEVEL でのみ次の executive サポートルーチンを呼び出すことを指定します。
 ms.assetid: 80668699-dfca-4fb9-8ffe-d20be00542dc
 ms.date: 05/21/2018
 keywords:
@@ -162,7 +162,7 @@ ProcessRequest (
 [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 [**ExAcquireSharedWaitForExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544370)
 [**ExConvertExclusiveToSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544558)
-[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)関連項目
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)参照
 --------
 
 [スピンロックの使用中に発生するエラーとデッドロックを防ぐ](https://docs.microsoft.com/windows-hardware/drivers/kernel/preventing-errors-and-deadlocks-while-using-spin-locks)

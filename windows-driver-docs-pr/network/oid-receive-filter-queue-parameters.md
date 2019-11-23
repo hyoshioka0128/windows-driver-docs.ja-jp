@@ -1,9 +1,9 @@
 ---
 title: OID_RECEIVE_FILTER_QUEUE_PARAMETERS
-description: 後続のドライバーは、受信キューの現在の構成パラメーターを取得するために、OID_RECEIVE_FILTER_QUEUE_PARAMETERS のオブジェクト識別子 (OID) メソッドの要求を発行します。
+description: 後続のドライバーは、RECEIVE キューの現在の構成パラメーターを取得するために、OID_RECEIVE_FILTER_QUEUE_PARAMETERS のオブジェクト識別子 (OID) メソッドの要求を発行します。
 ms.assetid: f6cd7896-0811-4029-b1d8-8cf800d7813e
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_QUEUE_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_RECEIVE_FILTER_QUEUE_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: e291b519fe6248f65238f320b75479b77717ac64
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843997"
 # <a name="oid_receive_filter_queue_parameters"></a>OID\_\_フィルター\_\_キューのパラメーターを受け取る
 
 
-後続のドライバーは、オブジェクト識別子 (OID) のメソッドの要求を OID\_受信\_フィルター\_キュー\_パラメーターを受け取って、受信キューの現在の構成パラメーターを取得します。 Ndis [ **\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、NDIS [ **\_RECEIVE\_queue\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)型のキュー識別子を持つパラメーター構造へのポインターが含まれてい **\_\_キュー\_ID を受信**します。 OID メソッド要求から正常に復帰した後、 **ndis\_oid\_要求**構造の**informationbuffer**メンバーには、 **ndis\_RECEIVE\_QUEUE\_パラメーター**へのポインターが含まれています。データ.
+後続のドライバーは、オブジェクト識別子 (OID) のメソッドの要求を OID\_受信\_フィルター\_キュー\_パラメーターを受け取って、受信キューの現在の構成パラメーターを取得します。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、NDIS [ **\_receive\_queue\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体へのポインターが含まれています。これには、ndis 型のキュー id として\_**キュー\_ID**が使用されます。\_ OID メソッド要求から正常に戻った後、 **ndis\_oid\_要求**構造の**informationbuffer**メンバーには、 **ndis\_RECEIVE\_QUEUE\_PARAMETERS**構造体へのポインターが含まれています。
 
 後続のドライバーは、OID の OID セット要求を発行し、キューの現在の構成パラメーターを変更するために、キュー\_パラメーターを受信\_フィルター\_\_します。 このドライバーは、ndis [ **\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバー内の[ **\_キュー\_パラメーターの構造を受け取る ndis\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)を指すポインターを提供します。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72843997"
 
 先行するドライバーは、以前の Oid からキュー識別子の入力値を取得し、\_QUEUE メソッド OID 要求を[割り当てる\_\_フィルターを受け取る\_](oid-receive-filter-allocate-queue.md)ます。
 
-後続のドライバーによってキューが割り当てられた後、**フラグ**メンバーでは、対応する変更フラグ (NDIS\_RECEIVE\_QUEUE\_PARAMETER\_*Xxx*\_CHANGED) を持つ構成パラメーターを変更できます。[ **\_QUEUE\_PARAMETERS 構造体を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters) 。 ただし、キューが割り当てられた後、それ以降のドライバーは、対応する変更フラグが設定されていない構成パラメーターを変更することはできません。
+後のドライバーによってキューが割り当てられた後、 [**ndis\_receive\_queue\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体の**Flags**メンバーで、対応する変更フラグ (NDIS\_RECEIVE\_Queue\_PARAMETER\_*Xxx*\_CHANGED) を持つ構成パラメーターを変更できます。 ただし、キューが割り当てられた後、それ以降のドライバーは、対応する変更フラグが設定されていない構成パラメーターを変更することはできません。
 
 ### <a name="return-status-codes"></a>ステータスコードを返す
 
@@ -58,7 +58,7 @@ NDIS は、oid の OID メソッド要求を処理します。これは、ミニ
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが短すぎます。 NDIS は<strong>データ</strong>を設定します。<strong>METHOD_INFORMATION</strong>。NDIS_OID_REQUEST 構造体の中で必要とされる最小バッファーサイズに対して、 <strong>Bytesneeded 必要</strong>です。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS は<strong>データ</strong>を設定します。<strong>METHOD_INFORMATION</strong>。<strong>Bytesneeded</strong>必要な最小バッファーサイズに NDIS_OID_REQUEST 構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_PARAMETER</strong></p></td>

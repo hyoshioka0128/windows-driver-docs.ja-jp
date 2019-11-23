@@ -38,7 +38,7 @@ ms.locfileid: "72824295"
 | --- | --- |
 | SENSOR_EVENT_DATA_UPDATED | 新しいデータが使用可能であることを示します。
 | SENSOR_EVENT_PROPERTY_CHANGED| プロパティ値が変更されたことを示します。|
-| SENSOR_EVENT_STATE_CHANGED| SENSOR_STATE_INITIALIZING から SENSOR_STATE_READY など、操作状態が変更されたことを示します。|
+| SENSOR_EVENT_STATE_CHANGED| SENSOR_STATE_INITIALIZING から SENSOR_STATE_READY へなど、操作状態が変更されたことを示します。|
 
 
 **センサーイベントの PROPERTYKEYs**
@@ -52,7 +52,7 @@ ms.locfileid: "72824295"
 
 ## <a name="other-events"></a>その他のイベント
 
-センサードライバーは、センサークラス拡張の[**ISensorClassExtension::P ostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)メソッドを呼び出すことによって、他のすべての種類のイベントを発生させます。 このメソッドは、動作状態に関係のないセンサーイベントを生成するための、汎用的な拡張可能な方法を提供します。 **Postevent**への各呼び出しには、 [Iportabledevicevaluescollection](https://go.microsoft.com/fwlink/p/?linkid=131487)へのポインターが含まれています。 このコレクション内の各[Iportabledevicevalues](https://go.microsoft.com/fwlink/p/?linkid=131486)オブジェクトには、センサー\_イベント\_パラメーター\_イベントの種類を識別するイベント\_ID プロパティの**GUID**値、およびオプションのデータフィールド値が含まれています。イベントデータを格納します。 たとえば、新しい都市データを含む GPS ドライバーでは、センサー\_イベント\_データ\_更新されたイベント ID を使用し、センサー\_データ\_CITY プロパティキーの文字列値を指定します。
+センサードライバーは、センサークラス拡張の[**ISensorClassExtension::P ostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)メソッドを呼び出すことによって、他のすべての種類のイベントを発生させます。 このメソッドは、動作状態に関係のないセンサーイベントを生成するための、汎用的な拡張可能な方法を提供します。 **Postevent**への各呼び出しには、 [Iportabledevicevaluescollection](https://go.microsoft.com/fwlink/p/?linkid=131487)へのポインターが含まれています。 このコレクション内の各[Iportabledevicevalues](https://go.microsoft.com/fwlink/p/?linkid=131486)オブジェクトには、イベントの種類を識別する\_イベント\_パラメーター\_イベント\_ID プロパティの**GUID**値、およびイベントデータを含むオプションのデータフィールド値が含まれています。 たとえば、新しい都市データを含む GPS ドライバーでは、センサー\_イベント\_データ\_更新されたイベント ID を使用し、センサー\_データ\_CITY プロパティキーの文字列値を指定します。\_
 
 ドライバーによってイベントがポストされると、センサークラスの拡張機能によって、イベントとそれに関連付けられているすべてのデータがセンサー API に転送されます。
 
@@ -62,7 +62,7 @@ ms.locfileid: "72824295"
 
 ドライバーがイベント要求を受け入れる前に、イベントを生成してポストするための別のスレッドを作成する必要があります。 スレッドを使用すると、データ要求のコールバックなどの同期プロシージャを頻繁に発生させないようにすることができます。 データ更新イベントを発生させるスレッドクラスの例については、「[データ更新イベントの発生](raising-events.md)」を参照してください。
 
-少なくとも1つのクライアントアプリケーションがイベント通知を要求している場合にのみ、センサーでイベントを発生させる必要があります。 アプリケーションが状態変更イベントなどのイベント通知を要求すると、センサークラスの拡張機能は[**ISensorDriver:: OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)を使用してドライバーに通知します。 このメソッドは、アプリケーションを識別する[Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)ポインターと、アプリケーションがイベント通知を要求しているセンサーを識別する文字列を提供します。 IWDFFile ポインターを一意の識別子として使用すると、イベントにサブスクライブしているアプリケーションを追跡できます。 センサーは特定のクライアント向けのイベントを発生させることはできませんが、センサー\_プロパティ\_現在の\_レポート\_間隔などの特定のプロパティの値を設定することが必要になる場合もあります。センサー\_プロパティ\_\_の感度を変更します。
+少なくとも1つのクライアントアプリケーションがイベント通知を要求している場合にのみ、センサーでイベントを発生させる必要があります。 アプリケーションが状態変更イベントなどのイベント通知を要求すると、センサークラスの拡張機能は[**ISensorDriver:: OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)を使用してドライバーに通知します。 このメソッドは、アプリケーションを識別する[Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)ポインターと、アプリケーションがイベント通知を要求しているセンサーを識別する文字列を提供します。 IWDFFile ポインターを一意の識別子として使用すると、イベントにサブスクライブしているアプリケーションを追跡できます。 センサーは特定のクライアント向けのイベントを発生させることはできませんが、センサー\_プロパティ\_現在\_レポート\_間隔またはセンサー\_プロパティなどの特定のプロパティの値を設定して、\_の感度を変更することが必要になる場合があります。\_
 
 たとえば、複数のクライアントアプリケーションでセンサー\_プロパティに異なる値が設定されている場合\_現在の\_レポート\_間隔では、イベントの頻度を、要求された最短の間隔に設定するルールを適用できます。 ただし、新しいクライアントがイベントまたは既存のクライアントアンサブスクライブにサブスクライブするたびに、センサーで間隔を調整することが必要になる場合があります。 コード例を含むレポート間隔の詳細については、「[データのフィルター選択](filtering-data.md)」を参照してください。
 

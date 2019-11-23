@@ -24,7 +24,7 @@ ms.locfileid: "72842097"
 
 ### <a name="wsk-client-object-registration"></a>WSK クライアントオブジェクトの登録
 
-Winsock カーネル (WSK) アプリケーションは、 [**Wskregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)関数を呼び出すことによって wsk クライアントとして登録する必要があります。 **Wskregister**では、wsk アプリケーションを初期化し、wsk クライアントの[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)( [**WSK\_client\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_npi)構造体) と wsk 登録オブジェクト (wsk\_に渡す必要があります。 [**登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_registration)構造体) が正常に返されたときに、 **Wskregister**によって初期化されます。
+Winsock カーネル (WSK) アプリケーションは、 [**Wskregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)関数を呼び出すことによって wsk クライアントとして登録する必要があります。 **Wskregister**では、wsk クライアントの[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)( [**WSK\_client\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_npi)構造) と wsk 登録オブジェクト (wsk [ **\_registration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_registration)構造体) へのポインターを渡す必要があります。これは、正常に返されたときに**wskregister**によって初期化されます。
 
 WSK アプリケーションを WSK クライアントとして登録する方法を次のコード例に示します。
 
@@ -92,13 +92,13 @@ Wsk アプリケーションが WSK プロバイダー NPI をキャプチャし
 
 -   *Waittimeout*がその他の値の場合、関数は wsk サブシステムが準備できたとき、または待機時間 (ミリ秒単位) が*waittimeout*の値 (どちらか早い方) に達したときに、を返します。
 
-**重要**  他のドライバーやサービスの開始に悪影響を及ぼさないようにするために、 **Driverentry**関数から**WskCaptureProviderNPI**を呼び出す Wsk アプリケーションでは、 *waittimeout*パラメーターを wsk に設定しないでください。\_無限\_待機または過剰な待機時間。 また、WSK アプリケーションがシステム開始フェーズの初期段階で開始された場合、WSK サブシステムが**Driverentry**が実行されているものとは別のワーカースレッドで準備されるまで待機する必要があります。
+**重要**  他のドライバーやサービスの開始に悪影響を及ぼさないようにするために、 **driverentry**関数から**WskCaptureProviderNPI**を呼び出す Wsk アプリケーションでは、 *waittimeout*パラメーターを wsk\_無限\_待機または過剰な待機時間に設定しないでください。 また、WSK アプリケーションがシステム開始フェーズの初期段階で開始された場合、WSK サブシステムが**Driverentry**が実行されているものとは別のワーカースレッドで準備されるまで待機する必要があります。
 
  
 
 **WskCaptureProviderNPI**の呼び出しがステータス\_nointerface で失敗した場合、wsk アプリケーションは[**Wskqueryprovidercharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskqueryprovidercharacteristics)関数を使用して wsk サブシステムでサポートされている wsk NPI バージョンの範囲を見つけることができます。 WSK アプリケーションは、 **Wskderegister**を呼び出して現在の登録インスタンスの登録を解除してから、サポートされている WSK NPI バージョンを使用する別の[**WSK\_クライアント\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_dispatch)インスタンスを使用して再度登録できます。
 
-**WskCaptureProviderNPI**が正常に返されると、その*WskProviderNpi*パラメーターは wsk プロバイダー NPI ( [**WSK\_provider\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_npi)) をポイントし、wsk アプリケーションで使用できるようになります。 WSK\_PROVIDER\_NPI 構造体には、wsk クライアントオブジェクト ( [**wsk\_client**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) へのポインター、wsk アプリケーションが作成に使用できる wsk 関数の[**WSK\_PROVIDER\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)ディスパッチテーブルへのポインターが含まれています。Wsk ソケットと WSK クライアントオブジェクトに対するその他の操作を実行します。 Wsk\_PROVIDER\_ディスパッチ関数を使用して WSK アプリケーションを終了した後は、 [**WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi)を呼び出して wsk プロバイダー NPI を解放する必要があります。
+**WskCaptureProviderNPI**が正常に返されると、その*WskProviderNpi*パラメーターは wsk プロバイダー NPI ( [**WSK\_provider\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_npi)) をポイントし、wsk アプリケーションで使用できるようになります。 WSK\_PROVIDER\_NPI 構造体には、wsk クライアントオブジェクト ( [**wsk\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) へのポインターと wsk 関数の[**WSK\_PROVIDER\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)ディスパッチテーブルへのポインターが含まれています。 wsk アプリケーションは wsk ソケットの作成や wsk クライアントオブジェクトに対するその他の操作を実行するために使用できます。 Wsk\_PROVIDER\_ディスパッチ関数を使用して WSK アプリケーションを終了した後は、 [**WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi)を呼び出して wsk プロバイダー NPI を解放する必要があります。
 
 WSK アプリケーションが WSK プロバイダー NPI をキャプチャし、それを使用してソケットを作成してから解放する方法を次のコード例に示します。
 

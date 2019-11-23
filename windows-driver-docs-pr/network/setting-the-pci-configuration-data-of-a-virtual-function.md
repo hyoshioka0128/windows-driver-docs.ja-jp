@@ -16,9 +16,9 @@ ms.locfileid: "72841930"
 
 PCI Express (PCIe) 仮想機能 (VF) 用のミニポートドライバーは、Hyper-v 子パーティションのゲストオペレーティングシステムで実行されます。 このため、VF ミニポートドライバーは、VF の PCI 構成領域などのハードウェアリソースに直接アクセスすることはできません。 VF の PCI 構成領域にアクセスできるのは、PCIe 物理機能 (PF) のミニポートドライバーだけです。 PF ミニポートドライバーは、Hyper-v 親パーティションの管理オペレーティングシステムで実行され、VF リソースへの特権アクセスを持ちます。
 
-仮想化スタックなど、それまでのドライバーは、VF ミニポートドライバーが[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)を呼び出してその PCI への書き込みを行うときに、 [\_\_vf\_\_\_SRIOV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-space)の oid セット要求を発行します。構成領域。
+仮想化スタックなどの前のドライバーは、\_SRIOV\_の oid セット要求を発行します。これは、VF ミニポートドライバーが[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)を呼び出して PCI 構成領域に書き込むときに、 [\_vf\_CONFIG\_領域に書き込む](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-space)ことができます。
 
-この OID セット要求を発行する前に、次のように、前のドライバーによって、[ **\_VF\_CONFIG\_SPACE\_PARAMETERS 構造を書き込む\_\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)のメンバーを設定する必要があります。:
+この OID セット要求を発行する前に、次のように、前のドライバーによって、[ **\_VF\_CONFIG\_SPACE\_PARAMETERS 構造を書き込む\_\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)のメンバーを設定する必要があります。
 
 -   **VFId**メンバーに、情報を書き込む VF の識別子を設定します。
 

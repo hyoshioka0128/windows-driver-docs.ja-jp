@@ -22,7 +22,7 @@ USB 複合デバイスは、1つの USB デバイス内の複数の関数 (機�
 
 ただし、Windows Vista 以降のバージョンの Windows では、次のレジストリ値を追加して、選択する構成を指定できます。
 
-| レジストリ キー               | タスクバーの検索ボックスに       | Value                                                                                                          | 既定値 |
+| レジストリ キー               | 種類       | Value                                                                                                          | 既定値 |
 |----------------------------|------------|----------------------------------------------------------------------------------------------------------------|---------------|
 | OriginalConfigurationValue | REG\_DWORD | USB 構成インデックス。 Usbccgp は、最初に OriginalConfigurationValue を使用して、選択構成要求を行います。 | 0             |
 | AltConfigurationValue      | REG\_DWORD | OriginalConfigurationValue を指定した構成要求が失敗した場合に使用する構成インデックス。      | 0             |
@@ -35,7 +35,7 @@ USB 複合デバイスは、1つの USB デバイス内の複数の関数 (機�
 
 このレジストリ設定を使用すると、CCGP ドライバーで別の構成を選択できます。
 
-前の表で説明されているレジストリ値は、USB 定義の構成インデックスに対応しています。これは、構成記述子の**Bconfigurationvalue**メンバー ([**usb\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)) によって示されます。デバイスの構成記述子で報告される**Bconfigurationnum**の値ではありません。 まず、Usbccgp は、OriginalConfigurationValue で指定された USB 構成インデックスを使用して、親 USB バスドライバー (Usbhub) に選択構成要求を送信します。 要求が失敗した場合、Usbccgp は AlternateConfigurationValue で指定された値を使用しようとします。 AlternateConfigurationValue または OriginalConfigurationValue が無効である場合、Usbccgp は既定値を使用します。
+前の表で説明されているレジストリ値は、USB 定義の構成インデックスに対応しています。これは、デバイスの構成記述子で報告される**Bconfigurationvalue**の値では*なく*、構成記述子の**bconfigurationvalue**メンバー ([**usb\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)) によって示されます。 まず、Usbccgp は、OriginalConfigurationValue で指定された USB 構成インデックスを使用して、親 USB バスドライバー (Usbhub) に選択構成要求を送信します。 要求が失敗した場合、Usbccgp は AlternateConfigurationValue で指定された値を使用しようとします。 AlternateConfigurationValue または OriginalConfigurationValue が無効である場合、Usbccgp は既定値を使用します。
 
 構成の選択要求は、さまざまな理由で失敗する可能性があります。 最も一般的なエラーは、デバイスが要求に対して適切に応答しない場合、または**Bmaxpower**値 (要求された構成で必要な電力) がハブポートでサポートされている電力値を超えた場合に発生します。 たとえば、(OriginalConfigurationValue で指定された) 特定の構成の**Bmaxpower**は 100 milliamperes ですが、ハブポートは 50 milliamperes しか提供できません。 Usbccgp がその構成の選択構成要求を送信すると、USB ドライバースタック (具体的には USB ポートドライバー) が要求に失敗します。 Usbccgp は、AltConfigurationValue で指定された構成を指定することによって、別の選択構成要求を送信します。 代替構成で 50 milliamperes 以下が必要であり、その他の問題が発生しない場合は、選択構成要求が正常に完了します。
 
@@ -44,7 +44,7 @@ USB 複合デバイスは、1つの USB デバイス内の複数の関数 (機�
 複合デバイスの機能のクライアントドライバーで複合デバイスの構成を選択できない場合でも、クライアントドライバーは Usbccgp に対して選択的な構成要求を送信できます。 要求を作成する方法の詳細については、「 [how To Select a Configuration for a USB Device](how-to-select-a-configuration-for-a-usb-device.md)」を参照してください。 Usbccgp は、クライアントドライバーから選択構成要求を受け取った後、次のタスクを実行します。
 
 1.  は、選択した構成要求を検証するために、USB ポートドライバーによって使用されるのと同じ基準を使用して、受信した要求を検証します。
-2.  要求で、現在の設定とは異なるインターフェイスまたはパイプの設定が指定されている場合、Usbccgp は、種類が URB\_関数の URB を送信することによって、選択インターフェイスの要求を発行し\_既存のものを変更するには\_インターフェイスを選択します。新しいインターフェイスとパイプの設定に対する設定。
+2.  要求で、現在の設定とは異なるインターフェイスまたはパイプの設定が指定されている場合、Usbccgp は、種類が URB\_関数の URB を送信することによって、選択インターフェイス要求を発行し\_\_インターフェイスを選択して既存の設定を新しいインターフェイスおよびパイプの設定に変更します。
 3.  [**USBD\_インターフェイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)のキャッシュされたコンテンツと[**パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)の構造\_を URB にコピーします。
 4.  URB を完了します。
 

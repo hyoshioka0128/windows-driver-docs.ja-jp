@@ -4,7 +4,7 @@ description: WDI_TLV_PHY_DATA_RATE_LIST は、データレートの一覧を含�
 ms.assetid: FFD28866-4983-4C0B-A74D-4EF9A819571E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PHY_DATA_RATE_LIST ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_PHY_DATA_RATE_LIST
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b91d79caa6614493e4a67f2f6b530a6e6bdcd60
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -35,7 +35,7 @@ WDI の配列のサイズ (バイト単位)\_リストの要素の\_データ\_�
 ## <a name="values"></a>値
 
 
-| タスクバーの検索ボックスに                      | 説明                                                                                             |
+| 種類                      | 説明                                                                                             |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | WDI\_DATA\_RATE\_LIST\[\] | データ速度の配列。 配列内の各データレートには、データレートフラグとデータレート値が含まれている必要があります。 |
 
@@ -43,7 +43,7 @@ WDI の配列のサイズ (バイト単位)\_リストの要素の\_データ\_�
 
 WDI\_DATA\_RATE\_リストは、次の要素で構成されています。
 
-| タスクバーの検索ボックスに   | 説明                                                                                   |
+| 種類   | 説明                                                                                   |
 |--------|-----------------------------------------------------------------------------------------------|
 | UINT8  | [**WDI\_data\_rate\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_data_rate_flags)に定義されているデータレートフラグ。 |
 | UINT16 | データ速度の値。                                                                          |

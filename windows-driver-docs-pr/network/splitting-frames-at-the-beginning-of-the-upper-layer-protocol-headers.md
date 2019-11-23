@@ -32,7 +32,7 @@ NIC が tcp または UDP のペイロードで TCP フレームと UDP フレ�
 
  
 
-ヘッダーデータの分割プロバイダーが上位層のプロトコルヘッダーの先頭にフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、\_を分割\_に、NDIS\_NBL\_フラグを設定する必要があり\_UPPER\_レイヤー\_プロトコル\_ヘッダーフラグが**Nblflags**メンバーに設定されています。 ヘッダーの設定の詳細については、「ネットワーク\_バッファー\_リストフラグの設定」を参照してください。[ネットワーク\_バッファーの設定\_リストの情報](setting-net-buffer-list-information.md)
+ヘッダーデータの分割プロバイダーが上位層プロトコルのヘッダーの先頭にフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、 **nblflags**メンバーで設定された\_上\_レイヤー\_プロトコル\_ヘッダーフラグに\_を分割\_するように、NDIS\_NBL\_フラグが設定されている必要があります。 ヘッダーの設定の詳細については、「ネットワーク\_バッファー\_リストフラグの設定」を参照してください。[ネットワーク\_バッファーの設定\_リストの情報](setting-net-buffer-list-information.md)
 
 結果のヘッダーバッファーの長さが最大ヘッダーサイズよりも長い場合、NIC はフレームを分割しないでください。 ヘッダーの最大サイズを超えたときのフレームの分割の詳細については、「[ヘッダーバッファーの割り当て](allocating-the-header-buffer.md)」を参照してください。
 

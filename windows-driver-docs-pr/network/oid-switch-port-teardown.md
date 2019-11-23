@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PORT_TEARDOWN
-description: Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セットの要求を発行し、拡張可能なスイッチの拡張機能が削除プロセスを開始することを OID_SWITCH_PORT_TEARDOWN に通知します。
+description: Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セット要求を発行して、拡張可能なスイッチポートが削除プロセスを開始することを、基になる拡張可能なスイッチ拡張機能に通知 OID_SWITCH_PORT_TEARDOWN します。
 ms.assetid: 94FA23AC-2064-40C8-B99C-D8D3DC10BFF9
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_TEARDOWN ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_TEARDOWN
 ms.localizationpriority: medium
 ms.openlocfilehash: 34e0375582c8ca1193cc19515985d1b8d77da67f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843923"
 # <a name="oid_switch_port_teardown"></a>OID\_スイッチ\_ポート\_破棄
 
 
-Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セットの OID\_\_\_の要求を発行します。これにより、拡張可能なスイッチポートによって削除が開始される、基になる拡張可能なスイッチ拡張機能に通知します。process. このプロセスは、プロトコルドライバーが oid セットの oid 要求を発行すると、 [\_スイッチ\_ポート\_削除](oid-switch-port-delete.md)されると開始されます。
+Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_、スイッチ\_\_ポートを破棄して、拡張可能スイッチポートが削除プロセスを開始することを、基になる拡張可能なスイッチ拡張機能に通知します。 このプロセスは、プロトコルドライバーが oid セットの oid 要求を発行すると、 [\_スイッチ\_ポート\_削除](oid-switch-port-delete.md)されると開始されます。
 
 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SWITCH\_PORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造体へのポインターが含まれています。
 
@@ -30,7 +30,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェク
 
 拡張可能スイッチのプロトコルエッジは、\_ポート\_破棄\_の oid セット要求を発行し、拡張可能スイッチからポートが削除されていることを拡張機能に通知します。 この OID 要求が発行される前に、ポートにアクティブなネットワークアダプター接続がある場合は、拡張スイッチのプロトコルエッジで以前に次の Oid が発行されています。
 
--   [OID\_スイッチ\_NIC\_切断](oid-switch-nic-disconnect.md)。これにより、ネットワークアダプターが NDIS\_スイッチで指定されているポートに接続されなくなったことが、基になる拡張機能に通知され[ **\_ポート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)データ.
+-   [OID\_スイッチ\_NIC\_切断](oid-switch-nic-disconnect.md)。これにより、ネットワークアダプターが[**NDIS\_スイッチ\_ポート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造に指定されているポートに接続されなくなったことが、基になる拡張に通知されます。
 
 -   [OID\_スイッチ\_NIC\_削除](oid-switch-nic-delete.md)。ネットワークアダプターと拡張可能なスイッチポートの間のネットワーク接続が削除されたことを基になる拡張機能に通知します。
 

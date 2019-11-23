@@ -28,7 +28,7 @@ IPsec オフロードバージョン 2 (IPsecOV2) の機能を指定するため
 
  
 
-[現在の\_CONFIG\_の OID\_TCP\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)のクエリに応答して、ndis では、ndis によって返される NDIS\_[**オフ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)ロード構造に、NDIS\_IPSEC\_オフロード\_V2 構造が含まれています。[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバー。 NDIS は、ミニポートドライバーによって提供された情報を使用します。
+[\_現在の\_構成に対する OID\_TCP\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)のクエリへの応答として、ndis には ndis\_の[**oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーに含まれる ndis\_[**OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)構造体に、ndis\_IPSEC\_offload 構造体が含まれています。\_ NDIS は、ミニポートドライバーによって提供された情報を使用します。
 
  
 

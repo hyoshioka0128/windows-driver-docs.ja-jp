@@ -81,9 +81,9 @@ ms.locfileid: "72845494"
 <p>読み取り/書き込み。 センサーデータ型名とそれに関連付けられている変更感度値を格納する<strong>Iportabledevicevalues</strong>オブジェクト。 秘密度の値を変更すると、SENSOR_EVENT_DATA_UPDATED イベントが発生する前にデータフィールドが変更される量に関する要求が示されます。</p>
 <p>機密値は、データフィールドと同じ単位を使用して表されます (特に記載のない場合を除く)。</p>
 <p>センサーによっては、変更の感度は実際の値として解釈されます。 たとえば、SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS の変更感度値が2の場合、正または負の2°の感度を表します。</p>
-<p>アンビエント光センサー (ALS) のような他のセンサーの場合、変更の感度はパーセントとして解釈されます。 そのため、SENSOR_DATA_TYPE_LIGHT_LEVEL_LUX の2の変更感度は、LUX のプラスまたはマイナス2% を表します。</p>
+<p>アンビエント光センサー (ALS) のような他のセンサーの場合、変更の感度はパーセントとして解釈されます。 したがって、SENSOR_DATA_TYPE_LIGHT_LEVEL_LUX の2の変更感度は、LUX のプラスまたはマイナス2% を表します。</p>
 <p>この値は、特定の変更の感度を要求するように設定できますが、複数のアプリケーションが同じセンサーを使用する可能性があります。 そのため、センサーは、内部ロジックに基づいて、真の変化感度を判断します。 たとえば、センサーは、アプリケーションによって要求された最小の変更感度を常に使用する場合があります。</p>
-<p>アプリケーションがこのプロパティを VT_NULL に設定する場合、デバイスドライバーは SENSOR_PROPERTY_CHANGE_SENSITIVITY を既定値にリセットする必要があります。</p></td>
+<p>アプリケーションでこのプロパティを VT_NULL に設定すると、デバイスドライバーは SENSOR_PROPERTY_CHANGE_SENSITIVITY を既定値にリセットする必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_CONNECTION_TYPE"></span><span id="sensor_property_connection_type"></span>
@@ -130,7 +130,7 @@ ms.locfileid: "72845494"
 <td><span id="SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY"></span><span id="sensor_property_location_desired_accuracy"></span>
 <strong>SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY</strong> (PID = 19)</td>
 <td><p><strong>VT_UI4</strong></p>
-<p>読み取り/書き込み。 クライアントアプリケーションによって要求された精度の処理の種類を示す<a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>列挙の値です。</p>
+<p>読み取り/書き込み。 クライアントアプリケーションによって要求された精度の処理の種類を示す<a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>列挙の値。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_DEFAULT</strong> (0) は、センサーが電力使用を最適化するための精度と、その他のコストに関する考慮事項を使用する必要があることを示します。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> (1) は、センサーが最も正確なレポートを提供する必要があることを示します。 これには、料金を支払う可能性のあるサービスや、より高いレベルのバッテリ電力または接続帯域幅を消費するサービスの使用が含まれます。</p></td>
 </tr>

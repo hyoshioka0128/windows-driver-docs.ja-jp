@@ -24,7 +24,7 @@ DXGI は、"ただ動作する" プレゼンテーション方法をアプリケ
 
 ### <a name="span-idwindowed_mode_with_dwm_offspanspan-idwindowed_mode_with_dwm_offspanwindowed-mode-with-dwm-off"></a><span id="windowed_mode_with_dwm_off"></span><span id="WINDOWED_MODE_WITH_DWM_OFF"></span>DWM がオフになっているウィンドウモード
 
-DWM を使用したウィンドウモードでは、dxgi はドライバーの present[**関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)呼び出します。**このフラグは**、dxgi の FLAGS メンバー ( [ **\_DDI\_\_ARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)の**Flags**メンバーに設定されています。パラメーターがを指しています。 この現在の*dxgi*の呼び出しでは、dxgi で、アプリケーションによって作成されたバックバッファーのいずれかを、 **HSurfaceToPresent**と**srcsubresourceindex**の DXGI\_DDI\_ARG\_存在するように指定できます。 追加の共有サーフェスはありません。
+DWM を使用したウィンドウモードでは、dxgi はドライバーの present[**関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)呼び出します。**このフラグは**、dxgi の**Flags**メンバー ( [ **\_DDI\_ARG\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present) *ppresent data*パラメーターが指す構造体) に設定されています。 この現在の*dxgi*の呼び出しでは、dxgi で、アプリケーションによって作成されたバックバッファーのいずれかを、 **HSurfaceToPresent**と**srcsubresourceindex**の DXGI\_DDI\_ARG\_存在するように指定できます。 追加の共有サーフェスはありません。
 
 ### <a name="span-idfull_screen_modespanspan-idfull_screen_modespanfull-screen-mode"></a><span id="full_screen_mode"></span><span id="FULL_SCREEN_MODE"></span>全画面表示モード
 
@@ -38,15 +38,15 @@ DXGI が全画面表示モードに切り替わると、帯域幅を削減し、
 
 -   アプリケーションは、バックバッファーの内容を破棄し、チェーン内で1つのバッファー (合計) のみを要求した Direct3D ランタイムを受け入れることができないことを指定しました。 (この場合、DXGI では、バックサーフェスとプライマリサーフェイスが割り当てられます。ただし、DXGI では、 **Blt**フラグが設定されたドライバーの "存在する *" 関数が*使用されます)。
 
-上記のいずれかの条件が発生すると、フリップ操作が妨げられ、 **Blt**フラグが設定されたドライバーの存在しない[**関数の呼び出し**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)も適切ではありません (バックバッファーがフロントバッファーと完全に一致しないため)。DXGI は*プロキシ画面*を割り当てます。 このプロキシ画面は、フロントバッファーと一致します。 そのため、プロキシ画面とフロントバッファーの間のフリップが可能になります。 プロキシサーフェイスが存在する場合、DXGI はドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数を**現在**のフラグがオフ (0) で使用して、アプリケーションのバックバッファーをプロキシ画面にコピーします。 この*Bltdxgi*呼び出しでは、DXGI が変換、拡大、および解決を要求する場合があります。 DXGI は、Dxgi の**Flags**メンバーに設定された**フリップ**フラグを使用してドライバーの*present*関数を呼び出します。 [ **\_DDI\_ARG\_現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)の構造体を、スキャンアウトするためにプロキシ表面のビットを移動します。
+上記のいずれかの条件が発生すると、フリップ操作を防止できます。また、 **Blt**フラグが設定されているドライバーの使用中の[**DXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数の呼び出しも適切ではありません (バックバッファーがフロントバッファーと完全に一致しないため)。 DXGI は*プロキシ画面*を割り当てます。 このプロキシ画面は、フロントバッファーと一致します。 そのため、プロキシ画面とフロントバッファーの間のフリップが可能になります。 プロキシサーフェイスが存在する場合、DXGI はドライバーの[**Bltdxgi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)関数を**現在**のフラグがオフ (0) で使用して、アプリケーションのバックバッファーをプロキシ画面にコピーします。 この*Bltdxgi*呼び出しでは、DXGI が変換、拡大、および解決を要求する場合があります。 DXGI は、Dxgi の**Flags**メンバーに設定された**フリップ**フラグを使用してドライバーの*present*関数を呼び出します。 [ **\_DDI\_ARG\_現在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)の構造体を、スキャンアウトするためにプロキシ表面のビットを移動します。
 
 ドライバーがスキャンから除外できることをユーザーモードの表示ドライバーに通知するために、ドライバーは、オプションの、およびオプションでないスキャンアウトサーフェイスのクラスに対して、リソース作成呼び出しを受け取ります。 オプションのスキャンアウトサーフェイスは、DXGI\_DDI\_プライマリ\_オプションのフラグによって指定されます。 オプション以外のスキャンアウトサーフェスには、DXGI\_DDI\_プライマリ\_オプションのフラグが設定されていません。 これらの種類のリソース作成呼び出しの詳細については、「[リソースの作成時に DXGI 情報を渡す](passing-dxgi-information-at-resource-creation-time.md)」を参照してください。
 
 DXGI\_DDI\_プライマリ\_省略可能フラグを設定して、すべてのバックバッファーサーフェイス (つまり、オプションのサーフェス) を作成し、フロントバッファーまたはプロキシ画面 (つまり、非オプションのサーフェス) にフラグを設定しません。
 
-バックバッファーに対して DXGI\_DDI\_プライマリ\_オプションが設定されている場合、ドライバーは\_SCANOUT フラグを\_せずに、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定できます。 このフラグの設定の詳細については、「[リソースの作成時に DXGI 情報を渡す](passing-dxgi-information-at-resource-creation-time.md)」を参照してください。 ドライバーが DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定している場合、オプションのバッファーに対して\_はスキャンされません。これ以外に、DXGI が**Blt**フラグを使用してドライバーの存在し[**ない関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)呼び出すことはありません。**フリップ**フラグが設定されたではなく、を設定します。
+バックバッファーに対して DXGI\_DDI\_プライマリ\_オプションが設定されている場合、ドライバーは\_SCANOUT フラグを\_せずに、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定できます。 このフラグの設定の詳細については、「[リソースの作成時に DXGI 情報を渡す](passing-dxgi-information-at-resource-creation-time.md)」を参照してください。 ドライバーで DXGI\_DDI\_プライマリ\_ドライバー\_フラグが設定されている場合、オプションのバッファーに対して\_はスキャンされません。これに対して、は、**フリップ**フラグが設定されているのではなく、 **Blt**フラグが設定されたドライバーの存在[**する関数を**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)dxgi が呼び出すこと以外は無効です。\_
 
-フロントバッファーまたはプロキシ画面に [DXGI\_DDI\_プライマリ\_省略可能] が設定されていない場合でも、ドライバーはリソース作成の呼び出しに失敗し、エラーコード DXGI\_DDI\_エラー\_サポートされていないため、スキャンアウトをオプトアウトできます。また、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定すると\_\_はスキャンされません。
+フロントバッファーまたはプロキシ画面に DXGI\_DDI\_プライマリ\_オプションが設定されていない場合でも、ドライバーはリソース作成の呼び出しを失敗させることによってスキャンアウトをオプトアウトできます。エラーコード DXGI\_DDI\_サポートされていません。また、DXGI\_DDI\_プライマリ\_ドライバー\_フラグを設定します。\_\_\_
 
 **   DXGI**を設定しないで作成呼び出しに失敗した場合は\_DDI\_プライマリ\_ドライバーの\_フラグ\_、メモリ不足などの実際のエラーケース用に予約されている\_はありません。
 

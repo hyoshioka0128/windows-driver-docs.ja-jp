@@ -112,7 +112,7 @@ Hyper-v 拡張可能スイッチへの各ネットワーク接続は、ポート
 <a href="" id="dereferenceswitchport"></a>[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)  
 拡張可能なスイッチ拡張機能は、この関数を呼び出して、ポートの参照カウンターをデクリメントします。
 
-この拡張機能は、ポートで実行されている操作が完了した後に[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)を呼び出す必要があります。 たとえば、\_Oid を発行する*前に*、DereferenceSwitchPort を指定した拡張機能を使用して、 [\_ポート\_プロパティ\_列挙型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)要求を発行した場合、拡張機能は oid 要求の後にを呼び出す必要があります。完了.
+この拡張機能は、ポートで実行されている操作が完了した後に[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)を呼び出す必要があります。 たとえば、\_Oid を発行する*前に*、DereferenceSwitchPort を指定した拡張機能を使用して、 [\_ポート\_プロパティ\_ENUM](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)要求を発行した場合、この拡張機能は oid 要求の完了後にを呼び出す必要があります。
 
   NDIS ポートと拡張可能なスイッチポートは異なるオブジェクトである**ことに注意**してください。 拡張可能なスイッチのデータパスを経由して移動するパケットは、常に **\_ndis ポート番号 (既定\_ポート\_番号**) に割り当てられます。 ただし、パケットの発信元と宛先の拡張可能スイッチのポート番号には、 **NDIS\_スイッチ\_既定\_ポート\_ID**以上の値を指定できます。 詳細については、「 [Hyper-v 拡張可能スイッチのデータパス](hyper-v-extensible-switch-data-path.md)」を参照してください。
 

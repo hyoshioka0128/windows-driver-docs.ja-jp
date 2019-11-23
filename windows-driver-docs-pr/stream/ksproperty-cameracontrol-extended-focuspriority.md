@@ -3,7 +3,7 @@ title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSPRIORITY
 description: Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FOCUSPRIORITY プロパティ ID で定義されている\_CAMERACONTROL\_拡張\_プロパティ列挙を使用して、フォーカスの優先度を構成します。
 ms.assetid: 7E3558A1-0D0D-4470-B9C9-61EA359E92C5
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSPRIORITY ストリーミングメディアデバイス
+- ストリーミングメディアデバイスの KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSPRIORITY
 topic_type:
 - apiref
 api_name:
@@ -37,9 +37,9 @@ Ksk プロパティ **\_CAMERACONTROL\_extended\_FOCUSPRIORITY**プロパティ 
 </colgroup>
 <thead>
 <tr class="header">
-<th>適用範囲</th>
+<th>Scope</th>
 <th>コントロール</th>
-<th>タスクバーの検索ボックスに</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>
@@ -89,8 +89,8 @@ Ksk プロパティ **\_CAMERACONTROL\_extended\_FOCUSPRIORITY**プロパティ 
 <td><p>これは KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF) である必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + Sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) である必要があります。</p></td>
+<td><p>サイズ</p></td>
+<td><p>これは sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) である必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>結果</p></td>
@@ -102,7 +102,7 @@ Ksk プロパティ **\_CAMERACONTROL\_extended\_FOCUSPRIORITY**プロパティ 
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義されている KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_Xxx フラグのいずれかを指定できます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義した KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_Xxx フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>

@@ -14,7 +14,7 @@ ms.locfileid: "72842036"
 # <a name="reporting-wake-reason-status-indication-capabilities"></a>NDIS ウェイク理由状態表示機能のレポート
 
 
-NDIS 6.30 以降では、次のいずれかが原因で発生したウェイクアップイベントを報告するために、ミニポートドライバーは NDIS wake reason ステータスを示す ([**ndis\_status\_PM\_wake\_reason**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)) を発行できるかどうかを報告する必要があります。:
+NDIS 6.30 以降、ミニポートドライバーは、次のいずれかの原因で発生したウェイクアップイベントを報告するために、NDIS wake reason ステータスを示す ([**ndis\_status\_PM\_wake\_reason**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)) を発行できるかどうかを報告する必要があります。
 
 -   ネットワークアダプターが wake on LAN (WOL) パターンに一致するパケットを受信しました。 これには、オブジェクト識別子 (OID) set 要求によって指定された受信フィルターに一致するパケットの受信が含まれます[\_GEN\_現在の\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)です。
 
@@ -36,8 +36,8 @@ NDIS がドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/wi
 
     Wake reason status 兆候のサポートを有効にするには、ミニポートドライバーで、次のように[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造のメンバーを設定する必要があります。
 
-    -   ミニポートドライバーでは、 [**ndis\_pm\_機能\_リビジョン\_2 および ndis\_SIZEOF\_ndis\_pm\_機能\_リビジョン\_2 を指定する必要があります。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体の**ヘッダー**メンバー内にある NDIS\_PM\_機能構造体。
-    -   ネットワークアダプターが、システムウェイクアップイベントの原因となった受信パケットを格納できる場合、ミニポートドライバーは、このの**Flags**メンバー内で、NDIS\_PM\_WAKE\_パケット\_表示\_サポートされているフラグを設定します。データ.
+    -   ミニポートドライバーでは、ndis\_PM\_機能\_リビジョン\_2 および NDIS\_SIZEOF\_NDIS\_PM\_機能を指定する必要があります。また、構造体の**ヘッダー**メンバー内にある[**ndis\_pm\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造のリビジョンと長さには、リビジョン\_2 を指定する必要があります。\_
+    -   システムウェイクアップイベントの原因となった受信パケットをネットワークアダプターが格納できる場合、ミニポートドライバーは、この構造体の**Flags**メンバー内でサポートされているフラグ\_、NDIS\_PM\_WAKE\_パケット\_を設定します。
 
         このフラグが設定されている場合、ネットワークアダプターは、アダプターがウェイクアップイベントを生成する原因となった受信パケットを保存できる必要があります。 さらに、ネットワークアダプターがフルパワー状態に移行した後、このパケットでミニポートドライバーが次の操作を実行できる必要があります。
 
@@ -53,7 +53,7 @@ NDIS がドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/wi
 
     -   ミニポートドライバーは、ネットワークアダプターがサポートするメディア固有のウェイクアップイベントに**MediaSpecificWakeUpEvents**を設定します。 これらのイベントには、802.11 アダプターが AP との関連付けが解除されたときのウェイクアップイベントの生成が含まれます。
 
-2.  ミニポートドライバーは、 [**ndis\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体を初期化し、初期化された NDIS\_PM のアドレスに**PowerManagementCapabilitiesEx**メンバーを設定[ **\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。
+2.  ミニポートドライバーは、 [**ndis\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体を初期化し、**PowerManagementCapabilitiesEx**メンバーを、初期化された[**ndis\_PM\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体のアドレスに設定します。
 
 3.  ミニポートドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出して、その電源管理機能を登録します。 ミニポートドライバーは、この関数を呼び出すと、 *Miniportattributes*パラメーターを[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造のアドレスに設定します。
 

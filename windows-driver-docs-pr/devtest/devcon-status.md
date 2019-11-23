@@ -29,7 +29,7 @@ ms.locfileid: "72038031"
 
 ## <a name="span-idddk_devcon_status_toolsspanspan-idddk_devcon_status_toolsspanparameters"></a><span id="ddk_devcon_status_tools"></span><span id="DDK_DEVCON_STATUS_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
@@ -105,8 +105,8 @@ devcon status =printer
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 17:ローカルコンピューター上のすべてのデバイスの状態を表示する @ no__t-0
+[例 17: ローカルコンピューター上のすべてのデバイスの状態を表示する](devcon-examples.md#ddk_example_17_display_the_status_of_all_devices_on_the_local_computer)
 
-[Example 18:デバイスインスタンス ID @ no__t でデバイスの状態を表示します。
+[例 18: デバイスインスタンス ID によってデバイスの状態を表示する](devcon-examples.md#ddk_example_18_display_the_status_of_a_device_by_device_instance_id_to)
 
-[Example 19:リモートコンピューターの関連デバイスの状態を表示する @ no__t-0
+[例 19: リモートコンピューター上の関連するデバイスの状態を表示する](devcon-examples.md#ddk_example_19_display_the_status_of_related_devices_on_a_remote_compu)

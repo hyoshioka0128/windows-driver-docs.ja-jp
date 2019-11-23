@@ -32,7 +32,7 @@ ms.locfileid: "71959203"
 ## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*ドライバー*の    
+<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*ドライバー*の   
 ドライバーの名前。 .sys 拡張子は含まれません。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
@@ -43,7 +43,7 @@ Address が指定されている場合、このコマンドは、指定された
 
 Rcdrkd .dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例は、 **! rcdrlogdump**コマンドの出力の一部を示しています。

@@ -29,7 +29,7 @@ ms.locfileid: "72038085"
 
 ## <a name="span-idddk_devcon_find_toolsspanspan-idddk_devcon_find_toolsspanparameters"></a><span id="ddk_devcon_find_tools"></span><span id="DDK_DEVCON_FIND_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセスは使用できません。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72038085"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、デバイスのセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>は、デバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
 また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
@@ -92,6 +92,6 @@ devcon find @*hub*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 20:デバイスをハードウェア ID パターンで検索する @ no__t-0
+[例 20: ハードウェア ID パターン別にデバイスを検索する](devcon-examples.md#ddk_example_20_find_devices_by_hardware_id_pattern_tools)
 
-[Example 21:デバイスインスタンス ID またはクラス @ no__t でデバイスを検索する-0
+[例 21: デバイスインスタンス ID またはクラスを使用してデバイスを検索する](devcon-examples.md#ddk_example_21_find_devices_by_device_instance_id_or_class_tools)

@@ -29,13 +29,13 @@ SAN サービスプロバイダーは、ローカルまたはリモートのア�
 
 ### <a name="caching-rdma-buffers-exposed-for-local-access"></a>ローカルアクセス用に公開された RDMA バッファーのキャッシュ
 
-Windows ソケットスイッチは、アプリケーションに代わって SAN サービスプロバイダーの[**WSPRegisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 関数を呼び出して、 [**WSPRdmaRead**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566304(v=vs.85))拡張機能の呼び出しでローカルの受信 RDMA バッファーのいずれかとして機能するすべてのデータバッファーを登録します。[**WSPRdmaWrite**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566306(v=vs.85)) extension 関数の呼び出しでの関数またはローカル RDMA ソース。 この登録プロセスの一環として、SAN サービスプロバイダーはこれらのバッファーを物理メモリの領域にロックダウンし、SAN NIC に登録する必要があります。 これらの操作はどちらもリソースを集中的に消費します。 そのため、SAN サービスプロバイダーはキャッシュを使用して、これらの登録のオーバーヘッドを軽減する必要があります。 SAN サービスプロバイダーがキャッシュを使用する場合、データ転送のためにバッファーを再利用するアプリケーションのパフォーマンスが向上します。
+Windows ソケットスイッチは、アプリケーションに代わって SAN サービスプロバイダーの[**WSPRegisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 関数を呼び出して、 [**WSPRdmaWrite**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566306(v=vs.85))拡張機能関数の呼び出しで、ローカルの受信 RDMA バッファーとして機能するすべてのデータバッファーを[**WSPRdmaRead**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566304(v=vs.85)) extension 関数またはローカル RDMA ソースのいずれかとして登録します。 この登録プロセスの一環として、SAN サービスプロバイダーはこれらのバッファーを物理メモリの領域にロックダウンし、SAN NIC に登録する必要があります。 これらの操作はどちらもリソースを集中的に消費します。 そのため、SAN サービスプロバイダーはキャッシュを使用して、これらの登録のオーバーヘッドを軽減する必要があります。 SAN サービスプロバイダーがキャッシュを使用する場合、データ転送のためにバッファーを再利用するアプリケーションのパフォーマンスが向上します。
 
 SAN サービスプロバイダーは、次の一覧に示すように、ローカルアクセス用に公開されている RDMA バッファーをキャッシュおよび解放する必要があります。
 
 1.  スイッチが[**WSPDeregisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566279(v=vs.85)) extension 関数を呼び出してバッファーを解放すると、san サービスプロバイダーは、バッファーを san NIC に登録し、物理メモリの領域にロックダウンする必要があります。 また、次のリスト項目で説明されているように、その後の RDMA 操作でバッファーが再度使用される場合に備えて、登録されたバッファーのキャッシュにバッファーを追加する必要があります。
 
-2.  SAN サービスプロバイダーは、仮想アドレスに基づいてメモリ登録をキャッシュします。 SAN サービスプロバイダーがバッファーの登録をキャッシュする場合、SAN サービスプロバイダーのプロキシドライバーは、 [**Mmsecurevirtualmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmsecurevirtualmemory)関数を呼び出して、登録されたバッファーの所有をセキュリティで保護する必要があります。これにより、オペレーティングシステムは、バッファーが解放されます (たとえば、アプリケーションが**VirtualFree**関数を呼び出して仮想アドレス範囲を解放し、オペレーティングシステムに戻す場合など)。
+2.  SAN サービスプロバイダーは、仮想アドレスに基づいてメモリ登録をキャッシュします。 SAN サービスプロバイダーがバッファーの登録をキャッシュする場合、SAN サービスプロバイダーのプロキシドライバーは、 [**Mmsecurevirtualmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmsecurevirtualmemory)関数を呼び出して、バッファーが解放されたときにオペレーティングシステムによってスイッチに通知されるようにします (たとえば、アプリケーションが**VirtualFree**関数を呼び出して仮想アドレス範囲をオペレーティングシステムに解放する場合など)。
 
 3.  その後、スイッチが**WSPRegisterMemory**を呼び出してバッファーを登録すると、SAN サービスプロバイダーはそのキャッシュを確認して、バッファーが既に登録されているかどうかを確認する必要があります。 SAN サービスプロバイダーがキャッシュ内のバッファーを検出した場合、SAN サービスプロバイダーは、それ以上の登録操作を実行することはできません。
 
@@ -49,7 +49,7 @@ SAN サービスプロバイダーは、次の一覧に示すように、ロー�
 
 ### <a name="caching-rdma-buffers-exposed-for-remote-access"></a>リモートアクセス用に公開されている RDMA バッファーのキャッシュ
 
-Windows ソケットスイッチは、SAN サービスプロバイダーの[**WSPRegisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566313(v=vs.85)) extension 関数を呼び出して、リモート**WSPRdmaWrite**呼び出しのリモート rdma ターゲットまたはリモート**rdma ソースとして機能するすべてのデータバッファーを登録します。WSPRdmaRead**呼び出し。 つまり、スイッチは、リモートピアによるアクセスのためにこれらのバッファーを公開します。 これらのバッファーからのデータ転送が完了すると、スイッチは SAN サービスプロバイダーの[**WSPDeregisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566281(v=vs.85)) extension 関数を呼び出してこれらのバッファーを解放し、リモートピアからアクセスできなくなります。
+Windows ソケットスイッチは、SAN サービスプロバイダーの[**WSPRegisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566313(v=vs.85)) extension 関数を呼び出して、リモート**WSPRdmaWrite**呼び出しのリモート rdma ターゲットまたはリモート**WSPRdmaRead**呼び出しのリモート rdma ソースとして機能するすべてのデータバッファーを登録します。 つまり、スイッチは、リモートピアによるアクセスのためにこれらのバッファーを公開します。 これらのバッファーからのデータ転送が完了すると、スイッチは SAN サービスプロバイダーの[**WSPDeregisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566281(v=vs.85)) extension 関数を呼び出してこれらのバッファーを解放し、リモートピアからアクセスできなくなります。
 
 SAN サービスプロバイダーは、次の一覧に示すように、リモートアクセス用に公開されている RDMA バッファーをキャッシュする必要があります。
 

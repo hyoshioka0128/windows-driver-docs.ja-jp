@@ -20,7 +20,7 @@ ms.locfileid: "72841044"
 ## <span id="ddk_passing_an_io_operation_down_the_minifilter_instance_stack_if"></span><span id="DDK_PASSING_AN_IO_OPERATION_DOWN_THE_MINIFILTER_INSTANCE_STACK_IF"></span>
 
 
-ミニフィルタードライバーの[**preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)または作業ルーチンによってフィルターマネージャーに i/o 操作が返された場合、フィルターマネージャーは、ミニフィルタードライバーインスタンスの現在のミニフィルタードライバーの下にあるミニフィルタードライバーに操作を送信します。さらに処理するために、従来のフィルターとファイルシステムにスタックしていること。
+ミニフィルタードライバーの[**preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)または作業ルーチンがフィルターマネージャーに i/o 操作を返すと、フィルターマネージャーは、ミニフィルタードライバーインスタンススタック内の現在のミニフィルタードライバーの下にあるミニフィルタードライバーに操作を送信します。
 
 ミニフィルタードライバーの preoperation コールバックルーチンは、次のいずれかの状態値を返すことによって、後続の処理のために i/o 操作をフィルターマネージャーに返します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "72841044"
 
  
 
-別の方法として、preoperation コールバックルーチンで保留されていた操作の作業ルーチンが、を呼び出すときに、前の状態の値のいずれかをコール[**バックステータスパラメーターに渡して、i/o 操作をフィルターマネージャーに返します。FltCompletePendedPreOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)は、保留中の i/o 操作の処理を再開します。
+別の方法として、preoperation コールバックルーチンで保留されていた操作の作業ルーチンが、 [**Fltcompletependedpreoperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)を呼び出して、保留中の i/o 操作の処理を再開するときに、その前の状態値の1つをコールバック*ステータス*パラメーターに渡すことによって、フィルターマネージャーに i/o 操作を返します。
 
 このセクションの内容:
 

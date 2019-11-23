@@ -34,7 +34,7 @@ PF ミニポートドライバーで動的な NIC スイッチの作成がサポ
 
 2.  ミニポートドライバーは、 [**NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization)を呼び出して sr-iov を有効にし、ネットワークアダプターの VFs の数を設定します。 この関数は、アダプターの PCI 構成領域で sr-iov 拡張機能を構成します。 この関数が NDIS\_STATUS\_SUCCESS を返した場合、SR-IOV が有効になり、VFs が PCIe インターフェイスを介して公開されます。
 
-[Oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)を処理する方法の詳細については\_\_スイッチ要求の作成に関する詳細については、「 [oid\_Nic\_を処理](handling-the-oid-nic-switch-create-switch-request.md)する\_スイッチ要求を作成する」を参照してください。
+[Oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)を処理する方法の詳細については\_\_スイッチ要求の作成に関する詳細については、「 [oid\_Nic\_を処理](handling-the-oid-nic-switch-create-switch-request.md)する\_スイッチ要求を作成する」を参照してください。\_
 
  
 

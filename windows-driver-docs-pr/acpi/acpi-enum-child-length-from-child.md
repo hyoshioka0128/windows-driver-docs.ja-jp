@@ -16,7 +16,7 @@ ms.locfileid: "72824127"
 # <a name="acpi_enum_child_length_from_child-macro"></a>ACPI\_列挙型\_子\_\_子マクロからの長さ\_
 
 
-ACPI\_ENUM\_子\_の子マクロからの長さ\_は、可変長の[**ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)構造体のサイズをバイト単位で計算します。
+ACPI\_ENUM\_子\_の子マクロからの長さ\_は、可変長の[**ACPI\_列挙型\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)構造体のサイズをバイト単位で計算します。\_
 
 <a name="syntax"></a>構文
 ------

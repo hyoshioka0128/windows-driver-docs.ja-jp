@@ -33,10 +33,10 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 <a name="parameters"></a>パラメーター
 ----------
 
-*属性  (_c)*  
+*_attributes*   
 [**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体へのポインター。
 
-  の*種類 (_c)*  
+*_contexttype*   
 オブジェクトのコンテキスト空間の内容を記述するドライバー定義の構造体の構造体型の名前。
 
 <a name="return-value"></a>戻り値
@@ -54,7 +54,7 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 <a name="examples"></a>例
 --------
 
-次のコード例では、WDM_NDIS_REQUEST context 構造体を定義します。 次に、この例では、 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)マクロを呼び出して構造体を登録し、コンテキストアクセサーメソッドに**requestgetmycontext**という名前を指定します。 次に、関数で、この例では[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体を割り当て、 **WDF_OBJECT_ATTRIBUTES**構造体を初期化します。
+次のコード例では、WDM_NDIS_REQUEST コンテキスト構造を定義します。 次に、この例では、 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)マクロを呼び出して構造体を登録し、コンテキストアクセサーメソッドに**Requestgetmycontext**という名前を付けます。 次に、関数で、この例では[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体を割り当て、 **WDF_OBJECT_ATTRIBUTES**構造体を初期化します。
 
 ```cpp
 typedef struct _WDM_NDIS_REQUEST

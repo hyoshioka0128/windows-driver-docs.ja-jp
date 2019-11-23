@@ -168,7 +168,7 @@ Ioctl でのバッファーの使用の詳細については、「[データバ�
 
 - 可変長バッファーを適切に検証します。 詳細については、「[可変長バッファーの検証の失敗](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-variable-length-buffers)」を参照してください。
 
-- バッファーされた i/o を使用する場合は、 [IO_STATUS_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) structure Information フィールドに出力バッファーに適切な長さを指定してください。  読み取り要求から直接長さを直接返すだけではありません。  たとえば、ユーザー空間から返されたデータが4K バッファーがあることを示しているとします。  ドライバーが実際には200バイトのみを返す必要があるが、代わりに情報フィールドで4K が返されるだけの場合は、情報漏えいの脆弱性が発生しています。 この問題は、以前のバージョンの Windows では、i/o マネージャーがバッファー i/o に使用するバッファーがゼロになっていないために発生します。  このため、ユーザーアプリは、元の200バイトのデータと、バッファー (非ページプールのコンテンツ) にあるものをすべて 4K ~ 200 バイトに戻します。 このシナリオは、Ioctl だけでなく、バッファリングされた i/o を使用する場合にも発生する可能性があります。
+- バッファーされた i/o を使用する場合は、[ [IO_STATUS_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造情報] フィールドに出力バッファーの適切な長さを指定してください。  読み取り要求から直接長さを直接返すだけではありません。  たとえば、ユーザー空間から返されたデータが4K バッファーがあることを示しているとします。  ドライバーが実際には200バイトのみを返す必要があるが、代わりに情報フィールドで4K が返されるだけの場合は、情報漏えいの脆弱性が発生しています。 この問題は、以前のバージョンの Windows では、i/o マネージャーがバッファー i/o に使用するバッファーがゼロになっていないために発生します。  このため、ユーザーアプリは、元の200バイトのデータと、バッファー (非ページプールのコンテンツ) にあるものをすべて 4K ~ 200 バイトに戻します。 このシナリオは、Ioctl だけでなく、バッファリングされた i/o を使用する場合にも発生する可能性があります。
 
 **IOCTL direct i/o のエラー**
 
@@ -338,7 +338,7 @@ AC (Application Container)
 
 **WDM の詳細な IOCTL セキュリティ制御**
 
-ユーザーモードの呼び出し元によって Ioctl が送信されるときにセキュリティをさらに管理するために、ドライバーコードには[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)関数を含めることができます。 この関数を使用すると、ドライバーはアクセス権を確認できます。 IOCTL を受け取ると、ドライバーは FILE_READ_ACCESS、FILE_WRITE_ACCESS、またはその両方を指定して[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)を呼び出すことができます。 
+ユーザーモードの呼び出し元によって Ioctl が送信されるときにセキュリティをさらに管理するために、ドライバーコードには[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)関数を含めることができます。 この関数を使用すると、ドライバーはアクセス権を確認できます。 IOCTL を受け取ると、ドライバーは、FILE_READ_ACCESS、FILE_WRITE_ACCESS、またはその両方を指定して[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)を呼び出すことができます。 
 
 詳細な IOCTL セキュリティ制御を実装しても、上記の手法を使用したドライバーアクセスの管理は不要になります。
 
@@ -469,7 +469,7 @@ Visual Studio のコード分析機能を使用して、コード内のセキュ
 
 2. Visual Studio で、ソリューション内の各プロジェクトについて、目的の規則セットを使用するようにプロジェクトのプロパティを変更します。 例: プロジェクト &gt;&gt; プロパティ &gt;&gt; コード分析 &gt;&gt; 全般 で、*推奨されるドライバー規則* を選択します。 Recommenced ドライバーの規則を使用するだけでなく、"*推奨されるネイティブ規則*" 規則セットを使用します。
 
-3. ソリューションでコード分析を実行&gt; には、[ビルド &gt;] を選択します。
+3. ソリューションでコード分析を実行 &gt; には、[ビルド &gt;] を選択します。
 
 4. Visual Studio の ビルド出力 ウィンドウの **エラー一覧** タブで警告を表示します。
 
@@ -480,7 +480,7 @@ Visual Studio のコード分析機能を使用して、コード内のセキュ
 コードを変更する必要があるかどうか、またはコード分析エンジンがコードの意図に適切に従うために注釈を追加する必要があるかどうかを判断します。 コード注釈の詳細については、「 [Sal 注釈を使用しC++ ](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)て、Windows ドライバーの C/コードの欠陥と[Sal 2.0 の注釈](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)を減らす」を参照してください。
 
 SAL に関する一般的な情報については、OSR から入手できるこの記事を参照してください。
-[https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/ )
+https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>静的ドライバー検証ツールを使用して脆弱性を確認する
 
@@ -498,7 +498,7 @@ SDV の詳細については、サンプルドライバー (たとえば、お�
 
 3. Visual Studio で、ビルド &gt;&gt; ソリューションのビルド を選択します。
 
-4. Visual Studio で、[ドライバー &gt;] を選択し&gt; [静的ドライバー検証ツール] を起動します。
+4. Visual Studio で、[ドライバー &gt;] を選択し &gt; [静的ドライバー検証ツール] を起動します。
 
 5. SDV の [*規則*] タブで、[*規則セット*] の下の [*既定*] を選択します。
 
@@ -601,7 +601,7 @@ All Scanned Items
 
 上記で説明した[Visual Studio Code 分析](#use-code-analysis)、[静的ドライバー検証ツール](#sdv)、 [binscope](#binscope)に加えて、次のツールを使用して、開発プロセスで欠落しているギャップを調査します。
 
-**ドライバー検証ツール**
+**ドライバーの検証ツール**
 
 ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモードドライバーとグラフィックスドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
@@ -751,13 +751,13 @@ Windows ドライバーのクラスルームトレーニングは、次のよう
 
 -   最小限の特権の原則を適用します。
 
-    」を参照します。  厳格な SDDL 文字列を使用して、ドライバーへのアクセスを制限する
+    a.  厳格な SDDL 文字列を使用して、ドライバーへのアクセスを制限する
 
     b.  個々の IOCTL をさらに制限する 
 
 -   攻撃ベクトルを識別するための脅威モデルを作成し、さらに何かを制限できるかどうかを検討します。
 -   モードでは、埋め込みポインターが使用されていることに注意してください。 このような場合は、プローブして、try の内部でアクセスする必要があります。また、バッファーの値がキャプチャされ、比較される場合を除き、使用時間 (ToCToU) の問題を確認することができます。
--   ご不明な点がある場合は、IOCTL バッファリング方式として METHOD_BUFFERED を使用してください。
+-   わからない場合は、METHOD_BUFFERED を IOCTL バッファリング方法として使用します。
 -   コードスキャンユーティリティを使用して既知のコードの脆弱性を検索し、特定された問題を修復します。
 -   知識のあるコードレビュー担当者に相談して、問題が発生した可能性のある問題を探します。
 -   ドライバー検証を使用し、コーナーケースを含む複数の入力でドライバーをテストします。

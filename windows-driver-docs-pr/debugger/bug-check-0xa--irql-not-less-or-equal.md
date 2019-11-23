@@ -1,9 +1,9 @@
 ---
-title: バグチェック 0xA IRQL_NOT_LESS_OR_EQUAL
-description: IRQL_NOT_LESS_OR_EQUAL のバグチェックの値は0x0000000A です。
+title: バグチェックの 0xA IRQL_NOT_LESS_OR_EQUAL
+description: IRQL_NOT_LESS_OR_EQUAL バグチェックの値は0x0000000A です。
 ms.assetid: a32b80f5-9822-41af-8668-836a70b05c0f
 keywords:
-- バグチェック 0xA IRQL_NOT_LESS_OR_EQUAL
+- バグチェックの 0xA IRQL_NOT_LESS_OR_EQUAL
 - IRQL_NOT_LESS_OR_EQUAL
 ms.date: 05/23/2017
 topic_type:
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359589"
 ---
-# <a name="bug-check-0xa-irql_not_less_or_equal"></a>バグチェック 0xA: IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL
+# <a name="bug-check-0xa-irql_not_less_or_equal"></a>バグチェックの 0xA: IRQL\_\_より少ない\_または\_等しい
 
 
-IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL bug check の値は0x0000000A です。 これは、Microsoft Windows またはカーネルモードドライバーが、発生した割り込み要求レベル (IRQL) で、無効なアドレスのページメモリにアクセスしたことを示します。 これは通常、無効なポインターまたは pageability の問題の結果です。
+IRQL\_\_が少ない\_または\_等しいバグチェックの値が0x0000000A になっています。 これは、Microsoft Windows またはカーネルモードドライバーが、発生した割り込み要求レベル (IRQL) で、無効なアドレスのページメモリにアクセスしたことを示します。 これは通常、無効なポインターまたは pageability の問題の結果です。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="irql_not_less_or_equal-parameters"></a>IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL パラメーター
+## <a name="irql_not_less_or_equal-parameters"></a>IRQL\_より少ない\_または\_等値のパラメーターを\_ない
 
 
 <table>
@@ -47,13 +47,13 @@ IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL bug check の値は0x
 <tr class="odd">
 <td><p>1</p></td>
 <td align="left"><p>アクセスできなかった仮想メモリアドレス。</p>
-<p>このアドレスで<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">! pool</a></strong>を使用して、ページプールであるかどうかを確認してください。 これらのコマンドは、エラーに関する情報の収集にも役立ちます。 <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">! pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">! address</a></strong>、<strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln @ no__t (最も近いシンボルを一覧表示)</a>。</p></td>
+<p>このアドレスで<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">! pool</a></strong>を使用して、ページプールであるかどうかを確認してください。 これらのコマンドは、エラーに関する情報を収集する場合にも役立ちます。 <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">! pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">! address</a></strong>、<strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln</strong> (最も近いシンボルを一覧表示)</a>です。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
 <td align="left"><p>障害発生時の IRQL。</p>
 <p>値</p>
-<ul><li><p><strong>2</strong>: IRQL は、エラーの時点で DISPATCH_LEVEL でした。</p></li></ul></td>
+<ul><li><p><strong>2</strong>: IRQL は、エラー発生時に DISPATCH_LEVEL されました。</p></li></ul></td>
 </tr>
 <tr class="odd">
 <td><p>3</p></td>
@@ -81,9 +81,9 @@ IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL bug check の値は0x
 </td>
 </tr>
 <tr class="even">
-<td><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td><p>4</p></td>
 <td align="left"><p>エラー発生時の命令ポインター。</p>
-<p>関数の名前を確認するには、このアドレスに対して <strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln @ no__t (一番近くのシンボルの一覧表示)</a>コマンドを使用します。</p></td>
+<p>関数の名前を確認するには、このアドレスに対して <strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln</strong> (一番近いシンボルの一覧表示)</a>コマンドを使用します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -107,10 +107,10 @@ IRQL @ no__t-0NOT @ no__t-1LESS @ no__t-2OR @ no__t-3EQUAL bug check の値は0x
 - それ以外の場合、これは不適切なポインターである可能性があります。これは、使用が不要な場合や、ビットを反転する場合に発生する可能性があります。 パラメーター1で[ **! pte**](-pte.md)、 [ **! address**](-address.md)、および[ **ln** (最も近いシンボルを一覧表示)](ln--list-nearest-symbols-.md)の有効性を調べます。
 
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
-カーネルデバッガーが使用可能な場合は、スタックトレースを取得します。 まず、 [ **! analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッガー拡張機能を実行して、バグチェックに関する情報を表示します。 ( **! Analyze**拡張機能は、根本原因を特定するのに役立ちます)。次に、いずれかの[ **k @ no__t** (スタックバックトレースの表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを入力して、呼び出し履歴を表示します。
+カーネルデバッガーが使用可能な場合は、スタックトレースを取得します。 まず、 [ **! analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッガー拡張機能を実行して、バグチェックに関する情報を表示します。 ( **! Analyze**拡張機能は、根本原因を特定するのに役立ちます)。次に、いずれかの[ **k\*** (スタックバックトレースの表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを入力して、呼び出し履歴を表示します。
 
 ### <a name="gather-information"></a>情報の収集
 

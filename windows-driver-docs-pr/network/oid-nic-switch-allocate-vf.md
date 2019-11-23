@@ -1,9 +1,9 @@
 ---
 title: OID_NIC_SWITCH_ALLOCATE_VF
-description: 前のドライバーは、PCI Express (PCIe) 仮想関数 (VF) のリソースを割り当てるために、OID_NIC_SWITCH_ALLOCATE_VF のオブジェクト識別子 (OID) メソッド要求を発行します。
+description: 前のドライバーは、PCI Express (PCIe) 仮想関数 (VF) にリソースを割り当てるために、OID_NIC_SWITCH_ALLOCATE_VF のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: CB88CE0C-705F-406B-90FE-FB206D6F4864
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_ALLOCATE_VF ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_ALLOCATE_VF
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da9ace40d3bfb1b7458475446dc645e6ca20af2
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -62,7 +62,7 @@ PF ミニポートドライバーは、oid\_NIC\_スイッチの OID メソッ�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>) 未満です。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーの長さが sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>) 未満です。 PF ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

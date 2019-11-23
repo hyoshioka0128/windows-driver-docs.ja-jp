@@ -51,10 +51,10 @@ NET\_BUFFER\_リスト内のすべてのフレームが TCP フレームです�
 ヘッダーとデータは、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造に関連付けられているすべてのイーサネットフレームに分割されます。
 
 <a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-header"></a>NDIS\_NBL\_FLAGS\_\_上位\_レイヤー\_プロトコル\_ヘッダーに分割\_  
-NET\_BUFFER\_LIST 構造体のすべてのフレームは、[上位層のプロトコルヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)に分割されます。 このフラグが設定されている場合、NDIS\_NBL\_FLAGS\_は\_IPV4 または NDIS\_NBL\_フラグ\_IPV6 を設定する必要があります。 また、NDIS\_NBL\_FLAGS\_は\_TCP または NDIS\_NBL\_フラグ\_\_UDP を設定できます。 および NDIS\_NBL\_FLAGS\_\_上位\_レイヤーでの分割\_\_プロトコル\_ペイロードを設定することはできません。
+NET\_BUFFER\_LIST 構造体のすべてのフレームは、[上位層のプロトコルヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)に分割されます。 このフラグが設定されている場合、NDIS\_NBL\_FLAGS\_は\_IPV4 または NDIS\_NBL\_フラグ\_IPV6 を設定する必要があります。\_ また、NDIS\_NBL\_FLAGS\_は\_TCP または NDIS\_NBL\_フラグ\_\_UDP を設定できます。 および NDIS\_NBL\_FLAGS\_\_上位\_レイヤーでの分割\_\_プロトコル\_ペイロードを設定することはできません。
 
 <a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-payload"></a>NDIS\_NBL\_FLAGS\_\_上位\_レイヤー\_プロトコル\_ペイロードに分割\_  
-NET\_BUFFER\_LIST 構造体のすべてのフレームは、 [TCP ペイロードの開始](splitting-frames-at-the-tcp-payload.md)時または[UDP ペイロードの開始](splitting-frames-at-the-udp-payload.md)時に分割されます。 このフラグが設定されている場合、NDIS\_NBL\_FLAGS\_は\_IPV4 または NDIS\_NBL\_フラグ\_IPV6 を設定する必要があります。 NDIS\_NBL\_FLAGS\_は\_TCP または NDIS\_NBL\_フラグ\_\_UDP を設定する必要があります。 また、NDIS\_NBL\_FLAGS\_\_分割され\_上位\_レイヤーで\_プロトコル\_ヘッダーを設定することはできません。
+NET\_BUFFER\_LIST 構造体のすべてのフレームは、 [TCP ペイロードの開始](splitting-frames-at-the-tcp-payload.md)時または[UDP ペイロードの開始](splitting-frames-at-the-udp-payload.md)時に分割されます。 このフラグが設定されている場合、NDIS\_NBL\_FLAGS\_は\_IPV4 または NDIS\_NBL\_フラグ\_IPV6 を設定する必要があります。\_ NDIS\_NBL\_FLAGS\_は\_TCP または NDIS\_NBL\_フラグ\_\_UDP を設定する必要があります。 また、NDIS\_NBL\_FLAGS\_\_分割され\_上位\_レイヤーで\_プロトコル\_ヘッダーを設定することはできません。
 
 ヘッダーデータの分割プロバイダーでフレームが分割されない場合は、 **Nblflags**で次のフラグがクリアされた状態でフレームが示される必要があります。
 

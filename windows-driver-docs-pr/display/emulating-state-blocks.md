@@ -1,6 +1,6 @@
 ---
-title: エミュレート (状態ブロックを)
-description: エミュレート (状態ブロックを)
+title: 状態ブロックのエミュレート
+description: 状態ブロックのエミュレート
 ms.assetid: 1ede9f1c-f5bb-4f41-8152-63d8663fd99e
 keywords:
 - エミュレート状態ブロック WDK ディスプレイ
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839707"
 ---
-# <a name="emulating-state-blocks"></a>エミュレート (状態ブロックを)
+# <a name="emulating-state-blocks"></a>状態ブロックのエミュレート
 
 
 Microsoft Direct3D ランタイムで状態ブロックをエミュレートできるようにするには、次の方法でレジストリを構成します。

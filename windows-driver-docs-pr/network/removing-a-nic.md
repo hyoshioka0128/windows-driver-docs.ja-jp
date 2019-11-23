@@ -42,9 +42,9 @@ ms.locfileid: "72842068"
 
     この場合、NDIS は NIC にバインドされているすべてのプロトコルドライバーの[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventQueryRemoveDevice**のイベントコードを指定します。
 
-5.  プロトコルドライバーがエラー\_\_コード NetEventQueryRemoveDevice を返すことによってイベントが失敗した場合は、ndis または PnP マネージャーがエラーを無視し、その後、 [**ProtocolNetPnPEvent によって失敗します。IRP\_\_クエリ\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)要求を削除します。 したがって、プロトコルドライバーは**NetEventQueryRemoveDevice**イベントに失敗した場合でも、NIC の削除を処理できるように準備する必要があります。
+5.  プロトコルドライバーがエラー\_\_コード NetEventQueryRemoveDevice を返すことによってイベントが失敗した場合、 *ProtocolNetPnPEvent*からエラーが発生した場合は、ndis または PnP マネージャーがエラーを無視し、その後[**IRP\_完了\_クエリ\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)要求を削除することができます。 したがって、プロトコルドライバーは**NetEventQueryRemoveDevice**イベントに失敗した場合でも、NIC の削除を処理できるように準備する必要があります。
 
-6.  PnP マネージャーは、 [**irp\_を\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)して、NIC または\_irp のソフトウェア表現 (デバイスオブジェクトなど) を削除するために、\_デバイスの要求を削除します。 [ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)を削除\_取り消し\_保留中の削除を取り消すように要求します。 \_デバイスの要求\_削除される IRP\_は、常に IRP\_が発生していないことに注意してください\_デバイスの要求を削除\_ます。
+6.  PnP マネージャーは、 [**irp\_を完了\_、\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)の要求を削除して、NIC または[ **\_IRP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)に対するソフトウェアの表現 (デバイスオブジェクトなど) を削除するための\_をキャンセル\_削除する\_デバイスの要求を削除します。 \_デバイスの要求\_削除される IRP\_は、常に IRP\_が発生していないことに注意してください\_デバイスの要求を削除\_ます。\_
 
 7.  PnP マネージャーが IRP\_を\_して、\_デバイスの要求の削除\_取り消す場合、NDIS はドライバースタック内の NIC に接続されている最も低いフィルタードライバーの[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)関数を呼び出します。 この呼び出しで、NDIS は**NetEventCancelRemoveDevice**のイベントコードを指定します。
 

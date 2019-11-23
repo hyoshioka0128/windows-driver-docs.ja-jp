@@ -1,5 +1,5 @@
 ---
-title: 値 (TCP/IP)
+title: Value (TCP/IP)
 description: TCP/IP 値の構成体を使用すると、特定の MIB オブジェクトからデータを取得するクエリを使用して、bidi 通信スキーマを拡張できます。
 ms.assetid: 46b24830-10a1-405b-9c12-b5804f76d668
 keywords:
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840397"
 ---
-# <a name="value-tcpip"></a>値 (TCP/IP)
+# <a name="value-tcpip"></a>Value (TCP/IP)
 
 
 TCP/IP `Value` コンストラクトを使用すると、特定の MIB オブジェクトからデータを取得するクエリを使用して、bidi 通信スキーマを拡張できます。 `Value` コンストラクトは、Tcpbidi で定義されています。
@@ -25,7 +25,7 @@ TCP/IP `Value` コンストラクトを使用すると、特定の MIB オブジ
 </colgroup>
 <thead>
 <tr class="header">
-<th>Attribute</th>
+<th>属性</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -48,7 +48,7 @@ TCP/IP `Value` コンストラクトを使用すると、特定の MIB オブジ
 </tr>
 <tr class="odd">
 <td><p><strong>refreshInterval</strong></p></td>
-<td><p>Optionalポーリング間隔の値 (秒単位)。 既定値は600秒です。</p></td>
+<td><p>Optionalポーリング間隔の値 (秒単位)。 既定値は、600 秒です。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>

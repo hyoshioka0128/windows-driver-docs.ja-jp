@@ -86,15 +86,15 @@ I/o 状態ブロックで返されます。
 
 **BusQueryDeviceID と Busquerydeviceid の指定**
 
-バスドライバーが BusQueryDeviceID に提供する値と Busquerydeviceid を使用すると、オペレーティングシステムは、コンピューター上の他のデバイスとデバイスを区別できます。 オペレーティングシステムは、Irp に返されたデバイス ID とインスタンス ID を使用します。この id は、irp **\_\_クエリ\_ID** IRP と、\_irp に返された一意の ID フィールドで、 [ **\_クエリ\_機能**](irp-mn-query-capabilities.md)の irp によって返されます。デバイスのレジストリ情報。
+バスドライバーが BusQueryDeviceID に提供する値と Busquerydeviceid を使用すると、オペレーティングシステムは、コンピューター上の他のデバイスとデバイスを区別できます。 オペレーティングシステムは、Irp に返されたデバイス ID とインスタンス ID を使用します。この id は、irp **\_\_クエリ\_ID** IRP に返されます。また、\_irp に返される一意の ID フィールドには、そのデバイスのレジストリ情報を検索するための\_[**クエリ\_機能**](irp-mn-query-capabilities.md)irp があります。
 
 **Busquerydeviceid**の場合、バスドライバーはデバイスの*デバイス ID*を提供します。 デバイス ID には、可能な場合は、列挙子の名前と製造元、デバイス、リビジョン、パッケージャー、およびパッケージ化された製品を識別する文字列を組み込んで、可能な限り具体的なデバイスの説明を含める必要があります。 たとえば、PCI バスドライバーは、PCI\\VEN\_xxxx & DEV\_xxxx & SUBSYS\_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx & REV\_xx という形式のデバイス Id で応答し、上記で説明した5つのすべての項目をエンコードします。 ただし、デバイス ID には、同一の2つのデバイスを区別するための十分な情報が含まれていてはなりません。 この情報は、インスタンス ID でエンコードする必要があります。
 
 BusQueryInstanceID の場合、バスドライバーは、デバイスの*インスタンス ID*を含む文字列を提供する必要があります。 セットアップとバスドライバーは、コンピューター上の2つの同一のデバイスを区別するために、インスタンス ID とその他の情報を使用します。 インスタンス ID は、コンピューター全体で一意であるか、デバイスの親バス上で一意であるかのいずれかです。
 
-インスタンス ID がバス上でのみ一意である場合、バスドライバーは BusQueryInstanceID の文字列を指定しますが、 [**IRP\_\_\_** ](irp-mn-query-capabilities.md)に応答して、 **UniqueID**の値を**FALSE**に指定します。デバイス。 **UniqueID**が**FALSE**の場合、PnP マネージャーは、デバイスの親に関する情報を追加することによってインスタンス id を拡張します。これにより、コンピューター上で一意の id が作成されます。 この場合、バスドライバーは、デバイスのインスタンス Id をグローバルに一意にするための追加の手順を実行する必要はありません。適切な機能情報を返すだけで、オペレーティングシステムによって処理されます。
+インスタンス ID がバス上でのみ一意である場合、バスドライバーは BusQueryInstanceID にその文字列を指定しますが、IRP\_に応答し**て、デバイス**に対する[**クエリ\_機能**](irp-mn-query-capabilities.md)**の要求**\_クエリを実行します。 **UniqueID**が**FALSE**の場合、PnP マネージャーは、デバイスの親に関する情報を追加することによってインスタンス id を拡張します。これにより、コンピューター上で一意の id が作成されます。 この場合、バスドライバーは、デバイスのインスタンス Id をグローバルに一意にするための追加の手順を実行する必要はありません。適切な機能情報を返すだけで、オペレーティングシステムによって処理されます。
 
-バスドライバーがシリアル番号などの各子デバイスに対してグローバルに一意な ID を提供できる場合、バスドライバーは、BusQueryInstanceID に対してこれらの文字列を指定し、IRP の\_に応答して、 **UniqueID**の値として**TRUE**を指定し[ **\_** ](irp-mn-query-capabilities.md)各デバイスに対するクエリ\_機能要求。
+バスドライバーがシリアル番号などの各子デバイスに対してグローバル一意 ID を指定できる場合、バスドライバーは BusQueryInstanceID に対してこれらの文字列を指定し、各デバイスに対する[ **\_クエリ\_機能**](irp-mn-query-capabilities.md)要求に対する IRP\_の応答として、 **UniqueID**の値として**TRUE**を指定します。
 
 **Busqueryハードウェア Id と Busqueryの Id の指定**
 
@@ -132,7 +132,7 @@ Windows 7 以降では、バスドライバーは、デバイスの[コンテナ
 
 Irp の送信の詳細については、「 [irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)」を参照してください。 次の手順は、この IRP に特に適用されます。
 
--   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction**を "IRP\_\_QUERY\_ID" に設定し、QueryId をに **設定します。BusQueryInstanceID**。
+-   IRP の次の i/o スタックの場所の値を設定します: set **MajorFunction**を[**irp\_MJ\_PNP**](irp-mj-pnp.md)に設定し、 **minorfunction**を "IRP\_\_QUERY\_ID" に設定し、QueryId を**busqueryinstanceid**に設定します **。**
 
 -   **Iostatus を設定します。** 状態\_サポートされていません\_。
 
@@ -151,7 +151,7 @@ IRP が完了し、ドライバーが ID で終了すると、ドライバーは
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@ title: OID_PNP_CAPABILITIES
 description: OID_PNP_CAPABILITIES OID は、ミニポートドライバーに対して、ネットワークアダプターのウェイクアップ機能を返すか、中間ドライバーのウェイクアップ機能を返すための中間ドライバーを要求します。
 ms.assetid: f2e3a867-d7d2-4d09-b84b-e8f8610b8535
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PNP_CAPABILITIES ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PNP_CAPABILITIES
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e74bb683c85ca09deecb9190bfd741c459b663
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -96,17 +96,17 @@ typedef struct _NDIS_PM_WAKE_UP_CAPABILITIES {
 
 ミニポートドライバーが、OID\_PNP\_機能のクエリに対して**ndis\_STATUS\_SUCCESS**を返した場合、ndis はミニポートドライバーを PM 対応と見なします。 ミニポートドライバーが**ndis\_STATUS を返し\_\_サポートされていない**場合、ndis ではミニポートドライバーが、PM 非対応のレガシミニポートドライバーであると見なされます。
 
-[**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))を呼び出すと、ウェイクアップ機能をサポートしていないが、電源状態の移行中にそのネットワークアダプターの状態を保存および復元できるミニポートドライバーは、 **NDIS\_属性\_[いいえ] に設定でき\_\_SUSPEND フラグの\_を停止**します。 このフラグを設定すると、システムが低電力 (スリープ状態) 状態に移行する前に、NDIS がドライバーの*Miniporthalt*関数を呼び出すことができなくなります。 ただし、ミニポートドライバーが、クエリ OID\_PNP\_機能に応答し**て\_サポートされていない ndis\_ステータス\_** 返された場合、Ndis は NDIS\_属性を無視し\_\_停止\_は**ありません。** システムが低電力状態になった場合は、中断フラグを\_し、ネットワークアダプターを停止します。
+[**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))を呼び出すときに、ウェイクアップ機能をサポートしていないが、電源状態の遷移を通じてネットワークアダプターの状態を保存および復元できるミニポートドライバーは、 **\_SUSPEND フラグの\_\_停止しない\_、NDIS\_属性**を設定できます。 このフラグを設定すると、システムが低電力 (スリープ状態) 状態に移行する前に、NDIS がドライバーの*Miniporthalt*関数を呼び出すことができなくなります。 ただし、ミニポートドライバーが、クエリ OID\_PNP\_機能に応答し**て\_サポートされていない ndis\_ステータス\_** 返された場合、ndis は\_**SUSPEND フラグで ndis\_属性**を無視し\_\_停止し、システムが低電力状態になるとネットワークアダプターを停止します。\_
 
 ミニポートドライバーのネットワークアダプターは、ウェイクアップイベントなど、ウェイクアップイベントの任意の組み合わせをサポートできます。 ミニポートドライバーは、ネットワークアダプターがウェイクアップイベントを通知できない場合でも、電源管理を引き続きサポートできます。 この場合、OID\_PNP\_機能に加えてミニポートドライバーがサポートする唯一の電源管理 Oid は、 [\_pnp\_クエリ\_power](oid-pnp-query-power.md)および[oid\_pnp\_設定\_電力](oid-pnp-set-power.md)です。
 
-ミニポートドライバーのネットワークアダプターで特定のウェイクアップイベントがサポートされていない場合、ミニポートドライバーは、 [**NDIS\_デバイス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)のウェイクアップイベントの**NdisDeviceStateUnspecified**の電源\_状態の値を示す必要があります。**NDIS\_PM\_ウェイクアップ\_\_機能**の構造です。
+ミニポートドライバーのネットワークアダプターで特定のウェイクアップイベントがサポートされていない場合は、 **ndis\_PM\_wake\_up\_CAPABILITIES**構造のウェイクアップイベントについて、 **NdisDeviceStateUnspecified**の[**電源\_状態値\_、ndis\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)がミニポートドライバーによって示される必要があります。
 
 OID\_PNP\_機能は、ミニポートドライバーのネットワークアダプターのウェイクアップ機能のみを示します。このような機能は有効になりません。 [OID\_PNP\_有効にする\_ウェイクアップ\_up](oid-pnp-enable-wake-up.md)を使用して、ネットワークアダプターのウェイクアップ機能を有効にします。
 
 **中間ドライバーの場合**
 
-基になるネットワークアダプターが PM 対応の場合、中間ドライバーは、OID\_PNP\_機能のクエリに対して、 **NDIS\_STATUS\_SUCCESS**を返す必要があります。 この OID によって返される**NDIS\_PM\_wake\_\_機能**の構造では、中間ドライバーは、各ウェイクアップ機能について**NdisDeviceStateUnspecified**のデバイスの電源状態を指定する必要があります ( **MinMagicPacketWakeUp**または**Minpattern ウェイクアップ**)。 このような応答は、中間ドライバーが PM 対応であり、物理デバイスを管理していないことを示します。
+基になるネットワークアダプターが PM 対応の場合、中間ドライバーは、OID\_PNP\_機能のクエリに対して、 **NDIS\_STATUS\_SUCCESS**を返す必要があります。 この OID によって返される**NDIS\_PM\_wake\_UP\_機能**の構造では、中間ドライバーは、各ウェイクアップ機能 ( **MinMagicPacketWakeUp**または**minpattern ウェイクアップ**) に対して**NdisDeviceStateUnspecified**のデバイスの電源状態を指定する必要があります。 このような応答は、中間ドライバーが PM 対応であり、物理デバイスを管理していないことを示します。
 
 基になるネットワークアダプターが PM を認識していない場合、中間ドライバーは、OID\_PNP\_機能のクエリで**サポート\_されていない NDIS\_の状態\_** 返す必要があります。
 
@@ -125,7 +125,7 @@ OID\_PNP\_機能は、ミニポートドライバーのネットワークアダ�
 <tbody>
 <tr class="odd">
 <td><p>バージョン</p></td>
-<td><p>NDIS 6.0 および NDIS 6.1 でサポートされています。 NDIS 6.20 以降では、代わりに<a href="oid-pm-current-capabilities.md" data-raw-source="[OID_PM_CURRENT_CAPABILITIES](oid-pm-current-capabilities.md)">OID_PM_CURRENT_CAPABILITIES</a>を使用してください。</p></td>
+<td><p>NDIS 6.0 および NDIS 6.1 でサポートされています。 NDIS 6.20 以降では、代わりに<a href="oid-pm-current-capabilities.md" data-raw-source="[OID_PM_CURRENT_CAPABILITIES](oid-pm-current-capabilities.md)">OID_PM_CURRENT_CAPABILITIES</a>を使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>

@@ -37,7 +37,7 @@ Hyper-v 拡張可能スイッチのデータパスを通過する各パケット
 <a href="" id="ndis-switch-port-destination"></a>[**NDIS\_スイッチ\_ポート\_宛先**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)  
 この構造体は、パケットの宛先ポートを定義します。 1つの宛先ポートを持つパケットの場合、宛先ポートアレイには、 [**NDIS\_スイッチ\_port\_destination**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)要素が1つだけあります。 複数の宛先ポートを持つパケットの場合、配列にはこれらの要素が1つ以上含まれています。
 
-拡張可能なスイッチ拡張機能が[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)を呼び出してパケットの宛先ポート配列を取得した後、 [**NDIS\_スイッチ\_ポート\_宛先を使用して、配列内の個々の要素にアクセスできます。インデックスマクロ\_\_配列で\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-switch-port-destination-at-array-index)します。
+拡張可能なスイッチ拡張機能が[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)を呼び出してパケットの宛先ポート配列を取得した後は、 [ **\_array\_INDEX マクロで、NDIS\_スイッチ\_port\_destination\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-switch-port-destination-at-array-index)を使用して、配列内の個々の要素にアクセスできます。
 
  
 

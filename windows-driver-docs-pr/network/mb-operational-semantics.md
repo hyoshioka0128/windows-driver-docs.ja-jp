@@ -30,7 +30,7 @@ MB サービスによって使用される*設定*および*クエリ*OID 要求
 
 3方向ハンドシェイクは、*クエリ*と*set*要求の両方で同じです。
 
-[Oid\_WWAN\_ドライバー\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)の場合を除き、他のすべての MB 固有の oid 要求は、ミニポートドライバーと MB サービス間の情報交換に関する非同期トランザクション機構に従います。その他の注意事項を次に示します。:
+[Oid\_WWAN\_ドライバー\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)の場合を除き、他のすべての MB 固有の oid 要求は、ミニポートドライバーと MB サービス間の情報交換に関する非同期トランザクション機構に従います。その他の注意事項を次に示します。
 
 -   ミニポートドライバーは、無効な OID 要求など、エラー状態に関する OID 要求を直ちに失敗させる必要があります。
 
@@ -48,7 +48,7 @@ MB サービスによって使用される*設定*および*クエリ*OID 要求
 
 ### <a name="asynchronous-response"></a>非同期応答
 
-(Windows Vista でリリースされた) *ndis 6.0 仕様*では、ミニポートドライバーが、トランザクションの非同期の性質をミニポートの MB サービスに伝達するために、新しいステータスコード、NDIS\_ステータス\_表示\_必要であることを示していました。OID 要求に対するドライバーの一時的な応答。
+(Windows Vista でリリースされた) *ndis 6.0 仕様*では、新しいステータスコード、NDIS\_ステータス\_通知\_必要であることが発表されました。ミニポートドライバーでは、トランザクションの非同期の性質を、ミニポートドライバーの OID 要求に対する一時的な応答として、MB サービスに伝達します。
 
 [「Mb インターフェイスの概要](mb-interface-overview.md)」で説明したように、mb サービスは、mb のミニポートドライバーによって割り当てられたカーネルモードのメモリに直接アクセスすることはできません。 カーネルモードメモリに格納されている実行結果は、WMI や[NDIS フィルタードライバー](ndis-filter-drivers2.md)など、一部の仲介によって、MB サービスで使用できるようになります。 そのため、 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)関数の呼び出しがトランザクションの通知で返された後、割り当てられたカーネルモードのメモリをミニポートドライバーが解放できます。
 
@@ -157,7 +157,7 @@ MB サービスは、開いているトランザクションを閉じること�
 
 ### <a name="status-indication-structure"></a>状態を示す構造
 
-指定された OID 要求と要請されていないイベント通知構造の非同期応答の両方で、 *statusbuffer*パラメーターの**statusbuffer**メンバーが指す次の構造体メンバーをに[**共有します。NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex):
+指定された OID 要求と要請されていないイベント通知構造の非同期応答の両方で、 *statusbuffer*パラメーターの**statusbuffer**メンバーが指す次の構造体メンバーを[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)に共有します。
 
 ```C++
 typedef struct _NDIS_WWAN_XXX {
@@ -245,7 +245,7 @@ NDIS\_ステータス\_示す構造体の**RequestId**メンバーの値が0の�
 
 同様のロジックは、CDMA ベースのネットワークにも適用する必要があります。 ただし、CDMA ベースのネットワークエラーコードには標準はありません。 CDMA ベースのデバイスでは、ネットワーク固有またはデバイス固有のエラーコードを使用する必要があります。
 
-ミニポートドライバーが OID 要求に対して非同期応答を行う場合、NDIS の\_ステータス\_表示構造体の**RequestId**メンバーは、*セット*またはクエリの一部としてミニポートドライバーに渡された0以外の数値になります。要求。 ミニポートドライバーは、必要に応じて**uStatus**メンバーに入力する必要があります。 たとえば、次のセクションに示すように、WWAN\_STATUS\_SUCCESS、または適切なエラー値が表示されます。 さらに、ミニポートドライバーは、適切であり、使用可能な場所に**uNwError**メンバーを入力する必要があります。
+ミニポートドライバーが OID 要求に対して非同期応答を行う場合、NDIS\_ステータス\_表示構造体の**RequestId**メンバーは、*セット*または*クエリ*要求の一部としてミニポートドライバーに渡された0以外の数値です。 ミニポートドライバーは、必要に応じて**uStatus**メンバーに入力する必要があります。 たとえば、次のセクションに示すように、WWAN\_STATUS\_SUCCESS、または適切なエラー値が表示されます。 さらに、ミニポートドライバーは、適切であり、使用可能な場所に**uNwError**メンバーを入力する必要があります。
 
 ### <a name="event-notification-status"></a>イベント通知の状態
 
@@ -388,7 +388,7 @@ NDIS\_ステータス\_示す構造体の**RequestId**メンバーの値が0の�
 </tr>
 <tr class="odd">
 <td align="left"><p>WWAN_STATUS_SMS_INVALID_MEMORY_INDEX</p></td>
-<td align="left"><p>無効なメモリインデックスが原因で SMS 操作が失敗しました-- <em>Wwansmsflagindex</em> for OID_WWAN_SMS_READ。</p></td>
+<td align="left"><p>無効なメモリインデックスが原因で SMS 操作が失敗しました--OID_WWAN_SMS_READ の<em>Wwansmsflagindex</em> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WWAN_STATUS_SMS_UNKNOWN_SMSC_ADDRESS</p></td>

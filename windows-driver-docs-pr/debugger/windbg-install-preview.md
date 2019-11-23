@@ -17,7 +17,8 @@ ms.locfileid: "72007564"
 
 ここでは、WinDbg Preview デバッガーをインストールする方法について説明します。
 
-WinDbg Preview デバッガーは、Microsoft Store で使用できます。 インストールするには、Windows 10 周年記念の更新プログラムが必要です。 インストールするには、Microsoft Store を開き、"WinDbg Preview" を検索するか、[@no__t] をクリックします。 @ no__t-1 をクリックします。
+WinDbg Preview デバッガーは、Microsoft Store で使用できます。 インストールするには、Windows 10 周年記念の更新プログラムが必要です。 インストールするには、Microsoft Store を開き、"WinDbg Preview" を検索するか、[ここ](
+https://www.microsoft.com/store/apps/9pgjgd53tn86)をクリックします。
 
 アプリが見つかったら、それをクリックしてダウンロードし、インストールします。
 
@@ -38,7 +39,7 @@ WinDbg Preview デバッガーは、Microsoft Store で使用できます。 イ
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)
 

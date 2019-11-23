@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_DELETE
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートの削除について拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_PORT_DELETE に発行します。
 ms.assetid: D8893395-3D33-4777-B8F0-4DD6BE9B8A37
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_DELETE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_DELETE
 ms.localizationpriority: medium
 ms.openlocfilehash: cc6a6dc81687bc9eb29d8b2b27c26e751c312c67
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェ
 
 -   プロトコルエッジは oid セット要求[\_\_\_oid](oid-switch-nic-disconnect.md)を発行して、ネットワークアダプターと拡張可能なスイッチポートとの間の接続が削除中であることを拡張機能に通知します。
 
--   指定された拡張可能なスイッチポートのすべての保留中パケットが取り消されたか、完了すると、プロトコルエッジは oid セット要求を発行して、 [\_\_NIC](oid-switch-nic-delete.md)に対する接続を拡張に通知\_します。ネットワークアダプターと拡張可能なスイッチポートが削除されました。
+-   指定された拡張可能なスイッチポートのすべての保留中パケットが取り消されたか、完了すると、プロトコルエッジは oid セット要求を発行して、ネットワークアダプターと拡張可能なスイッチポートの間の接続が削除されたことを拡張に通知します。 [\_\_\_](oid-switch-nic-delete.md)は、oid を設定します。
 
     この時点で、プロトコルエッジはポートの削除を開始できます。
 
@@ -38,7 +38,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェ
 
 2.  プロトコルエッジは、拡張可能なスイッチポートに対するすべての OID 要求が完了した後に、oid\_スイッチ\_ポートの oid セット要求を発行して、削除\_ます。
 
-    **注**  拡張機能が、ポートの参照カウンターをインクリメントするために参照として以前に[*参照を参照*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)していた場合は、プロトコルのエッジが OID を発行する前に[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)を呼び出す必要があり[\_スイッチ\_NIC\_の削除](oid-switch-nic-delete.md)要求です。
+    **注**  拡張機能が、ポートの参照カウンターをインクリメントするために参照として以前に[*参照を参照*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)していた場合は、プロトコルのエッジが OID を発行する前に[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)を呼び出す必要があります。これにより、 [\_NIC\_DELETE 要求\_切り替わり](oid-switch-nic-delete.md)ます。
 
      
 

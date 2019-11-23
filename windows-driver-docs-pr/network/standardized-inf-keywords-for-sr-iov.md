@@ -51,7 +51,7 @@ INF ファイルで指定する必要があるキーワードの名前。 この
 <a href="" id="paramdesc"></a>ParamDesc  
 **Subkeyname**キーワードに関連付けられている表示テキスト。
 
-独立系ハードウェアベンダー (IHV) では、SubkeyName の説明文を定義できる  に**注意**してください。
+**注**   独立系ハードウェア ベンダー (IHV) は、SubkeyName のわかりやすいテキストを定義できます。
 
  
 
@@ -141,7 +141,7 @@ INF ファイルで指定する必要があるキーワードの名前。 この
 <th align="left">SubkeyName</th>
 <th align="left">データ値</th>
 <th align="left">データの種類</th>
-<th align="left">注意</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

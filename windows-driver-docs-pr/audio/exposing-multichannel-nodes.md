@@ -39,7 +39,7 @@ Windows XP より前のバージョンの Microsoft Windows では、WDM オー�
 
 [**KSNODETYPE\_声調**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-tone)
 
-特に、ノードに対してサポートされているチャネルの数を明示的に照会するメカニズムは存在しません。 この問題に対する回避策はありますが、欠点があります。 たとえば、クライアントは、 [**Ksk プロパティ\_AUDIO\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)プロパティを使用して、各チャネルのボリュームレベル ([**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) を反復的に照会することができます。これは、要求がこれ以上チャネルが存在しないことを示すエラー。 ただし、この手法では複数のクエリが必要であり、より新しいマルチチャネルオーディオデバイスの処理には効率が悪くなります。 Windows XP 以降のオペレーティングシステムでは、この制限は、 [**Ksk プロパティ\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)構造体の**Flags**メンバーに2つの追加のフラグビットを定義することによって解決されます。これは、プロパティハンドラーがに応答して出力します。基本-サポートクエリ:
+特に、ノードに対してサポートされているチャネルの数を明示的に照会するメカニズムは存在しません。 この問題に対する回避策はありますが、欠点があります。 たとえば、クライアントは、 [**Ksk プロパティ\_AUDIO\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)プロパティを使用して、各チャネルのボリュームレベル ([**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) に対して反復的にクエリを実行することができます。これにより、要求が、チャネルがこれ以上存在しないことを示すエラーを返します。 ただし、この手法では複数のクエリが必要であり、より新しいマルチチャネルオーディオデバイスの処理には効率が悪くなります。 Windows XP 以降のオペレーティングシステムでは、この制限は、次の2つのフラグビットを[**ksk\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)の**Flags**メンバーに定義することによって解決されます。この構造は、プロパティハンドラーが基本サポートクエリに応答して出力します。
 
 -   KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネル
 
@@ -47,13 +47,13 @@ Windows XP より前のバージョンの Microsoft Windows では、WDM オー�
 
 -   KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM
 
-    ハンドラーは、このフラグビットと KSK プロパティ\_メンバーの間でビットごとの OR を実行し、1つのプロパティ値がノード内のすべてのチャネルで一様に適用されることを示す\_BASICSUPPORT\_マルチチャネルフラグビットを\_します。 たとえば、ハードウェアがすべてのチャネルに対して1つのボリュームレベルの制御のみを提供している場合、そのボリュームノードの基本サポートハンドラーによって、KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM フラグが設定されます。よる. このフラグが設定されていない場合、各チャネルのボリュームレベルは、他のチャネルのボリュームレベルとは別に制御できます。
+    ハンドラーは、このフラグビットと KSK プロパティ\_メンバーの間でビットごとの OR を実行し、1つのプロパティ値がノード内のすべてのチャネルで一様に適用されることを示す\_BASICSUPPORT\_マルチチャネルフラグビットを\_します。 たとえば、ハードウェアがすべてのチャネルに対して1つのボリュームレベルの制御のみを提供する場合、この制限を示すために、ボリュームノードの基本サポートハンドラーは、KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM flag を設定します。 このフラグが設定されていない場合、各チャネルのボリュームレベルは、他のチャネルのボリュームレベルとは別に制御できます。
 
     **   KSK**プロパティ\_メンバー\_フラグ\_basicsupport\_UNIFORM FLAG は、Windows Vista オペレーティングシステムでは使用されません。
 
      
 
-Windows XP 以降のミニポートドライバーでは、マルチチャネルボリュームノードのプロパティハンドラーが ksk プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネルビットを設定して、KSK プロパティ\_オーディオに応答する必要があり\_VOLUMELEVEL basic-サポートクエリ。 ハンドラーは、1つの\_\_ノードによって公開されている各チャネルに対して1つずつ、\_長い**構造体**をステップ実行[ **\_、ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)の配列を返します。 各配列要素には、チャネルの最小ボリュームレベルと最大ボリュームレベル、および範囲内の連続する値間の差分が記述されます。 個々のチャネルに対して異なる範囲を指定して、一様でない範囲のチャネルを正しく公開できるようにすることができます。 たとえば、サブウーハーチャネルは、他のチャネルとは異なる範囲を持つ場合があります。
+Windows XP 以降のミニポートドライバーでは、マルチチャネルボリュームノードのプロパティハンドラーは、KSK プロパティ\_AUDIO\_VOLUMELEVEL クエリに応答して、\_BASICSUPPORT\_マルチチャネルビットに\_フラグを\_設定する必要があります。 ハンドラーは、1つの\_\_ノードによって公開されている各チャネルに対して1つずつ、\_長い**構造体**をステップ実行[ **\_、ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)の配列を返します。 各配列要素には、チャネルの最小ボリュームレベルと最大ボリュームレベル、および範囲内の連続する値間の差分が記述されます。 個々のチャネルに対して異なる範囲を指定して、一様でない範囲のチャネルを正しく公開できるようにすることができます。 たとえば、サブウーハーチャネルは、他のチャネルとは異なる範囲を持つ場合があります。
 
 次のコード例では、一様でないプロパティ値を使用して、[オーディオプロパティの基本サポートクエリ](basic-support-queries-for-audio-properties.md)を処理する方法を示します。 次のコードの最初の行の変数 pDescription は、ハンドラーが基本サポート情報を書き込むデータバッファーの先頭にある[**Ksk プロパティ\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)構造体を指します。
 
@@ -94,7 +94,7 @@ Windows XP 以降のミニポートドライバーでは、マルチチャネル
 
 **Memberssize** \* **memberssize**
 
-この例では、KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM flag が設定されている場合、ハンドラーは、配列内のすべての ksproperty プロパティを同じ範囲に設定します。
+この例では、KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM flag が設定されている場合、ハンドラーは、配列内のすべての ksproperty プロパティを同じ範囲に設定します。\_\_
 
 トーンノードの[**Ksk プロパティ\_audio\_低音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-bass)、 [**KSK プロパティ\_オーディオ\_高音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-treble)、または[**KSK プロパティ\_オーディオ\_MID**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mid)プロパティの基本サポートハンドラーは同様の方法で動作します。
 
@@ -133,11 +133,11 @@ Windows XP 以降のミニポートドライバーでは、マルチチャネル
 
 前のコード例では、FOR ループで 0 (0) と 1 (1) を使用して、チャネルごとの範囲の最小値と最大値を設定することに注意してください。 これは、' BOOL ' 型のチャネルごとのプロパティ値を使用してマルチチャネルノードを構成しているためです。
 
-チャネルプロパティが一様である場合は、KSK プロパティ\_メンバーの間でビットごとの OR 演算を実行でき\_フラグ\_BASICSUPPORT\_UNIFORM FLAG、および KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネルフラグと、pMembers-&gt;Flags メンバーに割り当てられた結果。 この値は、ハードウェアによって、ノード内のすべてのチャネルで同じプロパティ値が一様に適用されることを示すために使用されます。
+チャネルプロパティが一様である場合は、KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM FLAG、および KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネルフラグ、および pMembers-&gt;Flags メンバーに割り当てられた結果に対して、ビットごとの OR 演算を実行できます。 この値は、ハードウェアによって、ノード内のすべてのチャネルで同じプロパティ値が一様に適用されることを示すために使用されます。
 
-KSK プロパティ\_メンバー\_フラグ\_UNIFORM および KSK プロパティ\_メンバー\_フラグを使用すると、チャネルをペアにグループ化し、の各ペアに対して個別のステレオボリュームノードを公開する必要がなくなります。チャネルは、Windows Driver Kit (WDK) の Ac97 サンプルドライバーで実行されます。 Windows XP より前のバージョンの Windows では、これらのフラグがサポートされていないため、ドライバーの基本サポートハンドラーは[Iportclsversion](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsversion)インターフェイスを使用して Portcls のバージョンを照会し、これらのフラグを使用するかどうかを判断する必要があります。
+KSK プロパティ\_メンバー\_フラグ\_UNIFORM と KSK プロパティ\_メンバー\_フラグを使用すると、チャネルをペアにグループ化して、チャネルのペアごとに個別のステレオボリュームノードを公開する必要がなくなります。これは、Windows Driver Kit (WDK) の Ac97 サンプルドライバーで行われます。\_ Windows XP より前のバージョンの Windows では、これらのフラグがサポートされていないため、ドライバーの基本サポートハンドラーは[Iportclsversion](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsversion)インターフェイスを使用して Portcls のバージョンを照会し、これらのフラグを使用するかどうかを判断する必要があります。
 
-(カーネルモード[WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)の WDMAud の) トポロジパーサーは、WDM オーディオドライバーからオーディオデバイスのトポロジを取得します。 パーサーは、従来の Windows マルチメディア**ミキサー** API を使用して、そのデバイスを従来のミキサーデバイスとして公開します。 Windows XP 以降では、WDMAud は KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネルフラグを使用して、MIXERLINE 構造体の**Cchannels**メンバーで報告するチャネルの数を決定します。 また、ノードの基本サポートハンドラーで KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM flag が指定されている場合、WDMAud は対応するに MIXERCONTROL\_CONTROLF\_UNIFORM フラグを設定します。MIXERCONTROL 構造体。 このフラグを使用すると、アプリケーションでは、各チャネルを個別に調整できるか、すべてのチャネルをマスタコントロールを通じて一様に調整できるかを判断できます。 MIXERCONTROL、MIXERLINE、および**ミキサ**API の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+(カーネルモード[WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)の WDMAud の) トポロジパーサーは、WDM オーディオドライバーからオーディオデバイスのトポロジを取得します。 パーサーは、従来の Windows マルチメディア**ミキサー** API を使用して、そのデバイスを従来のミキサーデバイスとして公開します。 Windows XP 以降では、WDMAud は KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_マルチチャネルフラグを使用して、MIXERLINE 構造体の**Cchannels**メンバーで報告するチャネルの数を決定します。 さらに、ノードの基本サポートハンドラーで KSK プロパティ\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM flag が指定されている場合、WDMAud は対応する MIXERCONTROL 構造体の MIXERCONTROL\_CONTROLF\_UNIFORM フラグを設定します。 このフラグを使用すると、アプリケーションでは、各チャネルを個別に調整できるか、すべてのチャネルをマスタコントロールを通じて一様に調整できるかを判断できます。 MIXERCONTROL、MIXERLINE、および**ミキサ**API の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
 Windows XP 以降では、次の図に示すように、SndVol32 volume control プログラム (「 [SysTray と SndVol32](systray-and-sndvol32.md)」を参照) によってマルチチャネルデバイスのコントロールが表示されます。
 
@@ -151,7 +151,7 @@ SndVol32 が3つを超えるチャネルを持つ行を検出すると、通常�
 
 たとえば、デバイスが1行に4つのチャンネルを公開し、ユーザーが "Quadraphonic 講演" を選択した場合、チャネル名は、前の図に示すように、"Left" (channel 0)、"Right" (channel 1)、"Back Left" (channel 2)、および "Back Right" (channel 3) になります。 スピーカーの構成を "サラウンドサウンドスピーカー" に変更すると、"左" (チャネル 0)、"右" (チャネル 1)、"フロントセンター" (チャネル 2)、および "バックセンター" (チャネル 3) のチャネルマッピングが発生します。
 
-ドライバーレベルでは、KSK プロパティ\_AUDIO\_CHANNEL\_CONFIG プロパティは、quadraphonic またはサラウンドスピーカーを表すために、のマスク値が KSPROPERTY\_スピーカ\_QUAD または KSPROPERTY\_スピーカー\_囲まれています。構成。 ヘッダーファイル Ksmedia. h は、これらの値を次のように定義します。
+ドライバーレベルでは、KSK プロパティ\_AUDIO\_CHANNEL\_CONFIG プロパティでは、1つのマスク値が使用されています。\_スピーカー\_QUAD または KSPROPERTY\_スピーカー\_、quadraphonic またはサラウンドスピーカー構成を表します。 ヘッダーファイル Ksmedia. h は、これらの値を次のように定義します。
 
 ```cpp
   #define KSAUDIO_SPEAKER_QUAD      (SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | \

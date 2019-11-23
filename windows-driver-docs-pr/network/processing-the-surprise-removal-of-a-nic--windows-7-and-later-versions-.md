@@ -61,7 +61,7 @@ Windows 7 と Windows Server 2008 R2 以降では、NDIS は、以前のバー�
 
 7.  すべてのプロトコルドライバーとフィルタードライバーがバインド解除され、NIC から切断されると、NDIS はミニポートドライバーのミニ[*Porthaltex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)関数を呼び出します。 NDIS は、 *Miniporthaltex*の*HaltAction*パラメーターを**NdisHaltDeviceSurpriseRemoved**に設定します。
 
-8.  NDIS は、IRP\_\_、突然\_削除要求をスタック内の次に小さいデバイスオブジェクトに送信します。 スタック内の次の下位のデバイスオブジェクトから、返された IRP\_\_が完了したことを予期しない\_削除要求を受け取った後、NDIS は予期しない\_の削除要求を実行して IRP\_を完了します。
+8.  NDIS は、IRP\_\_、突然\_削除要求をスタック内の次に小さいデバイスオブジェクトに送信します。 スタック内の次の下位のデバイスオブジェクトから、返された IRP\_\_が完了したことを予期しない\_削除要求を受け取った後、NDIS は予期しない\_の削除要求を実行して IRP\_を完了します。\_
 
 9.  PnP マネージャーは、IRP\_を発行し、 [ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)の要求を削除して、NIC のソフトウェア表現 (デバイスオブジェクトなど) を削除する\_します。
 

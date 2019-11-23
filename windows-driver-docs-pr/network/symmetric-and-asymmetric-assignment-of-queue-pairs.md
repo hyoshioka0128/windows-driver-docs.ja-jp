@@ -18,7 +18,7 @@ ms.locfileid: "72841788"
 
 既定以外の各 VPort は、異なる数のキューペアを持つように構成できます。 これは、キューペアの*非対称割り当て*と呼ばれます。 ミニポートドライバーで非対称割り当てがサポートされていない場合、既定以外の各 VPort は、同じ数のキューペアを持つように構成されます。 これは、キューペアの*対称割り当て*と呼ばれます。
 
-ミニポートドライバーは、 [**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造を使用して、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)中に vport とキューのペア機能をアドバタイズします。 ドライバーは、\_の既定以外の\_VPORT に対して、NDIS\_NIC\_スイッチ\_CAP\_非対称\_キュー\_のペアを設定することによって、キューペアの非対称割り当てのサポートをアドバタイズ\_この構造体の**NicSwitchCapabilities**メンバーでサポートされているフラグ。
+ミニポートドライバーは、 [**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造を使用して、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)中に vport とキューのペア機能をアドバタイズします。 このドライバーは、この構造体の**NicSwitchCapabilities**メンバーで\_既定以外の\_vport\_サポートされているフラグを\_するために、NDIS\_NIC\_スイッチ\_CAPS\_非対称\_キュー\_ペアを設定することにより、キューペアの非対称割り当てのサポートをアドバタイズします。
 
 ミニポートドライバーで非対称キューペアの割り当てがサポートされている場合、仮想化スタックによって、異なる数のキューペアを持つ既定以外の各 VPort が構成されます。 ミニポートドライバーで対称キューペアの割り当てがサポートされている場合、仮想化スタックは、同じ数のキューペアを使用して各 VPort を構成します。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72841788"
 
  
 
-キューのペアの構成は、Oid 要求の oid 要求を使用して既定以外の VPort を作成または更新するときに指定されます[\_nic\_スイッチ\_\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)と[oid\_nic\_スイッチ\_vport\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 構成パラメーターは、両方の OID 要求に関連付けられた[**VPORT\_parameters 構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)で指定されます。
+キューのペア構成は、既定以外の VPort を oid 要求によって作成または更新するときに指定します[\_nic\_スイッチ\_\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)および[oid\_nic\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を作成します。 構成パラメーターは、両方の OID 要求に関連付けられた[**VPORT\_parameters 構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)で指定されます。
 
 たとえば、次のように、 [**NDIS\_nic\_スイッチ\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体の次のメンバーを設定することによって、nic スイッチで vports とキューペアの構成をアドバタイズするとします。
 

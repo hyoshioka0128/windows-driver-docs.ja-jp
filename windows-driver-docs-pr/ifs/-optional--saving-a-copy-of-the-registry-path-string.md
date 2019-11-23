@@ -25,7 +25,7 @@ ms.locfileid: "72841516"
 
  
 
-入力として**Driverentry**に渡された*RegistryPath*文字列のコピーを保存します。 このパラメーターは、ドライバーのレジストリキーへのパスを指定する、カウントされた Unicode 文字列を指しています。 **\\レジストリ\\マシン\\System\\CurrentControlSet\\Services\\** *ドライバー名ドライバー名を指定*します。 後で*RegistryPath*文字列が必要になった場合、driverentry**は driverentry ルーチンが**返された後にポインターが無効になるため、 **driverentry**はポインターだけではなく、そのコピーを保存する必要があります。 [**RtlCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring)ルーチンを使用して、 *RegistryPath*ソース文字列をコピー先の文字列にコピーできます。
+入力として**Driverentry**に渡された*RegistryPath*文字列のコピーを保存します。 このパラメーターは、ドライバーのレジストリキーへのパスを指定する、*カウントされ*た Unicode 文字列を指しています。 **\\registry\\Machine\\System\\CurrentControlSet\\Services\\** ドライバー名です。ここ<em>で、ドライバー</em>名はドライバーの名前です。 後で*RegistryPath*文字列が必要になった場合、driverentry**は driverentry ルーチンが**返された後にポインターが無効になるため、 **driverentry**はポインターだけではなく、そのコピーを保存する必要があります。 [**RtlCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring)ルーチンを使用して、 *RegistryPath*ソース文字列をコピー先の文字列にコピーできます。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: デバイスを Unplugs するユーザー
-description: デバイスを Unplugs するユーザー
+title: ユーザーがデバイスを取り外す
+description: ユーザーがデバイスを取り外す
 ms.assetid: d0c8fd6d-b356-4048-aa97-ebe331d23361
 keywords:
 - 電源管理のシナリオ WDK UMDF、デバイスの取り外し
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841676"
 ---
-# <a name="a-user-unplugs-a-device"></a>デバイスを Unplugs するユーザー
+# <a name="a-user-unplugs-a-device"></a>ユーザーがデバイスを取り外す
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

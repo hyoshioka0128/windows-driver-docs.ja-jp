@@ -16,7 +16,7 @@ ms.locfileid: "72824070"
 # <a name="acpi_method_argument_length_from_argument-macro"></a>ACPI\_メソッド\_引数\_\_引数マクロからの長さ\_
 
 
-ACPI\_メソッド\_引数\_\_引数マクロからの長さ\_は、 [**acpi\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)のデータ配列に格納されているデータのサイズ (バイト単位) を計算します。
+ACPI\_メソッド\_引数\_\_引数マクロからの長さ\_は、 [**acpi\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)のデータ配列に格納されているデータのサイズ (バイト単位) を計算します。\_
 
 <a name="syntax"></a>構文
 ------

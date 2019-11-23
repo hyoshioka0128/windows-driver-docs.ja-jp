@@ -3,9 +3,9 @@ title: IRP_MJ_QUERY_INFORMATION 共用体の FLT_PARAMETERS
 description: FLT\_IO\_パラメーター\_操作のブロック構造の MajorFunction フィールドが IRP\_MJ\_クエリ\_情報である場合に使用される共用体コンポーネント。
 ms.assetid: 7fcd6881-1b6e-46eb-8476-d766f6fea7ef
 keywords:
-- IRP_MJ_QUERY_INFORMATION union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
-- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
-- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
+- IRP_MJ_QUERY_INFORMATION ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- PFLT_PARAMETERS 共用体ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -126,7 +126,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>注釈
 -------
 
-IRP\_MJ\_クエリ\_情報操作の[**FLT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT\_callback\_data**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) によって表されるクエリ情報操作のパラメーターが含まれています。データ. これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
+IRP\_MJ\_クエリ\_情報操作の[**FLT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT\_callback\_data**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造によって表されるクエリ情報操作のパラメーターが含まれています。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
 IRP\_MJ\_クエリ\_情報は、IRP ベースの操作でも、高速な i/o 操作でもかまいません。
 

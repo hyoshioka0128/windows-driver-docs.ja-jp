@@ -65,7 +65,7 @@ Microsoft ソースコード注釈言語 (SAL) には、Windows ドライバー�
 <tr class="even">
 <td align="left"><p><strong><em>Kernel_clear_do_init</em></strong></p></td>
 <td align="left"><a href="do-device-initializing-annotation-for-drivers.md" data-raw-source="[DO_DEVICE_INITIALIZING annotation](do-device-initializing-annotation-for-drivers.md)">DO_DEVICE_INITIALIZING 注釈</a></td>
-<td align="left"><p><em>Kernel_clear_do_init</em>注釈を使用して、注釈付き関数がデバイスオブジェクトの Flags フィールドの DO_DEVICE_INITIALIZING ビットをクリアするかどうかを指定します。</p></td>
+<td align="left"><p><em>Kernel_clear_do_init</em>注釈を使用して、注釈が付けられた関数がデバイスオブジェクトの Flags フィールドの DO_DEVICE_INITIALIZING ビットをクリアする必要があるかどうかを指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>Kernel_IoGetDmaAdapter</em></strong></p></td>
@@ -85,17 +85,17 @@ Microsoft ソースコード注釈言語 (SAL) には、Windows ドライバー�
 <tr class="even">
 <td align="left"><p><strong><em>Flt_CompletionContext_Outptr</em></strong></p></td>
 <td align="left"><a href="-flt-completioncontext-outptr--annotation.md" data-raw-source="[_Flt_CompletionContext_Outptr_ Annotation](-flt-completioncontext-outptr--annotation.md)"><em>Flt_CompletionContext_Outptr</em>ゴム</a></td>
-<td align="left"><p>ファイルシステムミニ操作のコールバック関数 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>) を宣言する場合は、 <strong><em>Flt_CompletionContext_Outptr</em></strong>注釈を使用します。 この注釈を<em>完了パラメーターに配置します</em>。 この注釈は、コード分析ツールに対して、FLT_PREOP_CALLBACK_STATUS 戻り値の完了<em>後の値が正しい</em>ことを確認するように指示します。</p></td>
+<td align="left"><p>ファイルシステムミニ操作のコールバック関数 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>) を宣言する場合は、 <strong><em>Flt_CompletionContext_Outptr</em></strong>注釈を使用します。 この注釈を<em>完了パラメーターに配置します</em>。 この注釈は、コード分析ツールに対して、FLT_PREOP_CALLBACK_STATUS の戻り値につい<em>て、完了した</em>かどうかを確認するように指示します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連項目
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[SAL 注釈を使用した CC++ /コード障害の軽減](https://go.microsoft.com/fwlink/p/?linkid=247283)
+[C/C++ コードの欠陥を減らすための SAL 注釈の使用](https://go.microsoft.com/fwlink/p/?linkid=247283)
 
  
 

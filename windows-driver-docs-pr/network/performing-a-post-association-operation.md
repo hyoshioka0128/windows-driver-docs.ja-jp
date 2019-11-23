@@ -20,7 +20,7 @@ ms.locfileid: "72843691"
 
  
 
-ワイヤレス LAN (WLAN) アダプターがアクセスポイント (AP) と802.11 の関連付け操作を正常に完了すると、ネイティブ802.11 ミニポートドライバーは、\_DOT11\_関連付けを使用して、 [NDIS の\_状態を作成することによってオペレーティングシステムに通知します。完了](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-completion)を示す\_ます。 アソシエーション操作の詳細については、「[アソシエーション操作](association-operations.md)」を参照してください。
+ワイヤレス LAN (WLAN) アダプターがアクセスポイント (AP) と802.11 の関連付け操作を正常に完了すると、ネイティブ802.11 ミニポートドライバーは、 [\_DOT11\_関連付け\_完了](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-completion)を示すように、NDIS\_状態を作成することによって、オペレーティングシステムに通知します。 アソシエーション操作の詳細については、「[アソシエーション操作](association-operations.md)」を参照してください。
 
 **注**  Windows Vista では、IHV 拡張 DLL は、インフラストラクチャの基本サービスセット (BSS) ネットワークのみをサポートしています。
 
@@ -50,7 +50,7 @@ ms.locfileid: "72843691"
 
 -   AP からセキュリティパケットを受信します。 オペレーティングシステムは、WLAN アダプターによって受信された各セキュリティパケットに対して[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数を呼び出します。
 
-    受信した各セキュリティパケットは、WLAN アダプターから受信した順序でシリアル化され、示されます。 オペレーティングシステムは、 [*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数のみを呼び出して、IEEE EtherTypes の一覧のエントリに一致する受信したセキュリティパケットを示します。これは、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)関数。
+    受信した各セキュリティパケットは、WLAN アダプターから受信した順序でシリアル化され、示されます。 オペレーティングシステムは、 [*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)関数を呼び出して、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)関数の呼び出しによって IHV 拡張 DLL によって指定された、IEEE EtherTypes の一覧のエントリと一致する受信したセキュリティパケットを示します。
 
     セキュリティパケットを受信する方法の詳細については、「[受信操作](receive-operations.md)」を参照してください。
 

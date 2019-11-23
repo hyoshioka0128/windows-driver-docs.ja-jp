@@ -1,6 +1,6 @@
 ---
-title: デバッグセッションと実行モデル
-description: デバッグセッションと実行モデル
+title: デバッグ セッションと実行モデル
+description: デバッグ セッションと実行モデル
 ms.assetid: 1cc2c055-447c-44cd-94d4-ae3dfa8243fb
 keywords:
 - デバッガーエンジン、実行モデル
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837768"
 ---
-# <a name="debugging-session-and-execution-model"></a>デバッグセッションと実行モデル
+# <a name="debugging-session-and-execution-model"></a>デバッグ セッションと実行モデル
 
 
 デバッガーエンジンでは、複数のターゲットを同時にデバッグできます。 *デバッグセッション*は、エンジンがターゲットを取得し、すべてのターゲットが破棄されるまで続行します。 現在のターゲットが中断されているときに、ターゲットの実行中に*アクセスでき*ても、デバッグセッションにアクセスすることは*できませ*ん。 エンジンは、セッションにアクセスできる間、ターゲットのチェックと操作にのみ使用できます。

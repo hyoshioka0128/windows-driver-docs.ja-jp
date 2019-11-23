@@ -28,9 +28,9 @@ ms.locfileid: "72845039"
 
 また、ストレージクラスドライバーは、基になるストレージポートドライバーに IRP\_MJ\_SCSI 要求を渡します。 このような要求は、[ストレージフィルタードライバー](storage-filter-drivers.md)から発生することがあります。
 
-IOCTL\_SCSI\_は、 [Scsi パススルー要求の処理](handling-scsi-pass-through-requests.md)に関するページで説明されているように、要求に[**よって\_渡す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)ことがあります。クラスドライバーは、 **MINORFUNCTION**コードを IRP\_MJ\_デバイスに設定する必要があり @no__t_[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用してポートドライバー\_制御要求を送信する前に、ポートドライバーの i/o スタック位置を制御します。これにより、\_MJ が\_irp に渡されます。
+[**IOCTL\_scsi\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)では、 [scsi パススルー要求の処理](handling-scsi-pass-through-requests.md)に関するページで説明されているように、ポートドライバーの I/o スタック位置で**minorfunction**コードを IRP\_MJ\_デバイス\_制御する必要があります。これは、 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して、irp\_MJ\_device\_control 要求をポートドライバーに渡す前に行います。
 
-各ストレージクラスドライバーは、基になる HBA の機能を超える転送要求 (IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込み) を分割する役割を担います。 そのため、ほとんどのクラスドライバーは、 [Storage Class Driver の SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)で説明されている内部の*splittransferrequest*ルーチンを呼び出すか、または読み取りと書き込みのためにディスパッチルーチンで同じ機能を実装します。要求.
+各ストレージクラスドライバーは、基になる HBA の機能を超える転送要求 (IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込み) を分割する役割を担います。 その結果、ほとんどのクラスドライバーは、 [Storage Class Driver の SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)で説明されている内部の*splittransferrequest*ルーチンを呼び出すか、または読み取りおよび書き込み要求のディスパッチルーチンで同じ機能を実装します。
 
 ストレージ周辺機器に対する要求の処理の詳細については、次のトピックを参照してください。
 

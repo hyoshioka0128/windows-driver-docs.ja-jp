@@ -3,7 +3,7 @@ title: OID_GEN_CURRENT_PACKET_FILTER
 description: クエリとして、OID_GEN_CURRENT_PACKET_FILTER OID は、ミニポートドライバーから受信した通知のネットワークパケットの種類を報告します。
 ms.assetid: d5a32626-caff-4708-a134-d80a845dee91
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_CURRENT_PACKET_FILTER ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_CURRENT_PACKET_FILTER
 ms.localizationpriority: medium
 ms.openlocfilehash: 2192a7a9733e1cdf18d0d788d371b7b25d0dd8a1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -89,11 +89,11 @@ FDDI NIC が受信する SMT パケット。
 
 セットの場合、指定したパケットフィルターによって、バインドの前のパケットフィルターが置き換えられます。 ミニポートドライバーで以前にパケットの種類が有効になっていても、プロトコルドライバーでその種類が新しいフィルターで指定されていない場合、プロトコルドライバーはこの種類のパケットを受信しません。
 
-メディアの種類が**NdisMedium802\_3**または**NdisMedium802\_5**のミニポートアダプターの場合、このクエリに対する応答として、ミニポートドライバーが特定のパケットの種類に対してビットを設定していないと、プロトコルドライバーはそのパケットを受信しません。各種. その結果、プロトコルドライバーは、0のフィルターを使用して[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)または[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)関数を呼び出すことにより、パケットの受信を無効にすることができます。
+メディアの種類が**NdisMedium802\_3**または**NdisMedium802\_5**のミニポートアダプターの場合、このクエリに応答して、ミニポートドライバーが特定のパケットの種類に対してビットを設定していないと、プロトコルドライバーはその種類のパケットを受信しません。 その結果、プロトコルドライバーは、0のフィルターを使用して[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)または[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)関数を呼び出すことにより、パケットの受信を無効にすることができます。
 
 他のすべてのメディアの種類を使用するミニポートアダプターの場合、NDIS はパケットの種類を確認しません。 これらのメディアの種類では、フィルター0を指定することによって、プロトコルドライバーでパケットの受信を無効にすることはできません。
 
-ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が呼び出されたときに、ミニポートドライバーのパケットフィルターを0に設定する必要があります。 パケットフィルターが0の場合、受信通知は無効になります。 ミニポートドライバーの*MiniportInitializeEx*関数が返された後、プロトコルドライバーでは、OID\_GEN\_現在の\_パケット\_フィルターを0以外の値に設定して、ミニポートドライバーが受信したことを示すことができます。そのプロトコルに対するパケット。
+ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数が呼び出されたときに、ミニポートドライバーのパケットフィルターを0に設定する必要があります。 パケットフィルターが0の場合、受信通知は無効になります。 ミニポートドライバーの*MiniportInitializeEx*関数が返された後、プロトコルドライバーでは、OID\_GEN\_現在の\_パケット\_フィルターを0以外の値に設定できます。これにより、ミニポートドライバーは、そのプロトコルに対して受信したパケットを示すことができます。
 
 \_パケット\_種類\_無作為検出を使用してプロミスカスモードが有効になっている場合、送信元のネットワークノードがパケットを受信していない場合でも、プロトコルドライバーはパケットを受信し続けます。 次に、NDIS は、NIC が受信するすべてのパケットをプロトコルドライバーに送信します。
 
@@ -142,7 +142,7 @@ MPDU フラグメントが暗号化されている場合、そのフラグメン
 <a href="" id="ndis-packet-type-802-11-raw-mgmt"></a>NDIS\_PACKET\_TYPE\_802\_11\_RAW\_管理  
 802.11 MPDU 管理フレーム。802.11 ステーションによって受信される形式のすべてのデータが含まれています。 このフィルターが設定されている場合、ドライバーは、MPDU フラグメントから再構築された MAC 管理プロトコルデータユニット (MMPDU) パケットを示す前に、変更されていないすべての MPDU フラグメントを示す必要があります。
 
-有効になっている場合、このフィルターの種類は、NDIS\_PACKET\_TYPE\_802\_11\_有向\_管理または NDIS\_パケット\_型\_802 @no__t_ など、他の802.11 管理パケットフィルターにのみ影響し9_ 11\_マルチキャスト\_管理。
+有効にした場合、このフィルターの種類は、NDIS\_PACKET\_TYPE\_802\_11\_有向\_管理または NDIS\_パケット\_型\_802\_11\_マルチキャスト\_管理など、他の802.11 管理パケットフィルターにのみ影響します。
 
 生の802.11 管理パケットを示すメソッドの詳細については、「 [raw 802.11 パケットを示す](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-raw-802-11-packets)」を参照してください。
 
@@ -167,9 +167,9 @@ MPDU フラグメントが暗号化されている場合、そのフラグメン
 
 -   NDIS\_PACKET\_TYPE\_802\_11\_無作為検出\_CTRL
 
-NetMon 以外の他のネイティブ802.11 モードで動作するミニポートドライバーは、これらのパケットフィルター設定を有効にすることはできません。ただし、NDIS\_PACKET\_TYPE\_802\_11\_無作為検出\_CTRL を使用する必要があります。 NetMon モードで動作していないミニポートドライバーでは、必要に応じて、NDIS\_パケット\_の種類\_802\_11\_無作為検出を有効にすることができます。パケット\_フィルター。
+NetMon 以外の他のネイティブ802.11 モードで動作するミニポートドライバーは、これらのパケットフィルター設定を有効にすることはできません。ただし、NDIS\_PACKET\_TYPE\_802\_11\_無作為検出\_CTRL を使用する必要があります。 NetMon モードで動作していないミニポートドライバーでは、必要に応じて、NDIS\_PACKET\_TYPE\_802\_11\_無作為検出を有効にすることができます。\_\_\_\_\_
 
-**注:** ミニポートドライバーが NetMon 以外のネイティブ802.11 モードであり、OID\_GEN\_現在の\_パケット\_フィルターが設定されている場合、無作為検出または未加工のフィルター設定があると、ドライバーは set 要求を失敗させることはできません  OID データで有効になります。
+**注  :** ミニポートドライバーが NetMon 以外のネイティブ802.11 モードであり、OID\_GEN\_現在の\_パケット\_フィルターが設定されている場合、oid データで無作為検出または未加工のフィルター設定が有効になっていると、ドライバーは set 要求を失敗させないようにする必要があります。
 
  
 

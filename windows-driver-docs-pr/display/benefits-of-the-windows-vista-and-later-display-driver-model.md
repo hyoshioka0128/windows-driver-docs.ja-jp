@@ -1,6 +1,6 @@
 ---
-title: Windows Display Driver Model (WDDM) の利点
-description: Windows Display Driver Model (WDDM) の利点
+title: Windows Display Driver Model (WDDM) のメリット
+description: Windows Display Driver Model (WDDM) のメリット
 ms.assetid: 0e8cd1a9-7137-4fd2-91ab-56768713c9f1
 keywords:
 - ドライバーモデルの表示 WDK Windows Vista、特典
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839825"
 ---
-# <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) の利点
+# <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のメリット
 
 
 ## <span id="ddk_benefits_of_the_longhorn_display_driver_model_gg"></span><span id="DDK_BENEFITS_OF_THE_LONGHORN_DISPLAY_DRIVER_MODEL_GG"></span>

@@ -4,7 +4,7 @@ description: NDIS Quality of Service (QoS) をサポートするミニポート�
 ms.assetid: 15D2B139-1AEA-4252-8599-0EA4ED2E3733
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e537e9f05b1705aa252503b880e5ec670e1a7e1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -16,7 +16,7 @@ ms.locfileid: "72843529"
 # <a name="ndis_status_qos_operational_parameters_change"></a>NDIS\_ステータス\_QOS\_操作\_パラメーター\_変更
 
 
-NDIS Quality of Service (QoS) をサポートするミニポートドライバーでは、 **ndis\_の状態\_qos\_操作\_\_パラメーター**に関する問題が発生しています。また、動作している ndis QoS パラメーターが解決されると、状態が変化します初めての場合、または後で変更した場合。 ミニポートドライバーは、これらの操作パラメーターを使用してネットワークアダプターを構成し、QoS パケット転送を実行します。
+NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、 **ndis\_の状態\_qos\_操作\_\_パラメーター**を使用して、動作している ndis qos パラメーターが最初に解決されるか、後で変更されたときに、状態の表示を変更します。 ミニポートドライバーは、これらの操作パラメーターを使用してネットワークアダプターを構成し、QoS パケット転送を実行します。
 
 ミニポートドライバーによってこの状態が示されると、 [**ndis\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーが、 [**ndis\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体へのポインターに設定されます。 この構造体は、動作する NDIS QoS パラメーターを使用して初期化されます。
 
@@ -29,7 +29,7 @@ NDIS Quality of Service (QoS) をサポートするミニポートドライバ�
 
 ミニポートドライバーは、次の条件に従って、 **QOS\_操作\_\_パラメーター\_、NDIS\_の状態**を発行して、変更の状態を示します。
 
--   ミニポートドライバーは、 **ndis\_の状態\_QOS\_操作\_パラメーター**を発行する必要があります。また、動作している ndis qos パラメーターを最初に解決してネットワークを構成した後に、状態の表示を変更\_ます。アダプターを使用します。
+-   ミニポートドライバーは、 **ndis\_の状態\_QOS\_操作\_パラメーター**を発行する必要があります。また、動作している ndis qos パラメーターを最初に解決してネットワークアダプターを構成した後に、状態の表示を変更\_ます。
 
 -   この初期状態を示すと、ミニポートドライバーは、 **ndis\_ステータス\_QOS\_操作\_\_パラメーター**を発行する必要があります。また、動作している ndis QOS パラメーターが変更された場合は、状態が変化します。 これは、ローカルまたはリモートの NDIS QoS パラメーターが変更された場合に発生する可能性があります。
 

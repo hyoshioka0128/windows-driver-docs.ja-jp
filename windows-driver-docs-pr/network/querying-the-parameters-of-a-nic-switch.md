@@ -22,7 +22,7 @@ ms.locfileid: "72844877"
 
  
 
-この OID メソッド要求から正常に復帰した後、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)へのポインターが含まれ\_PARAMETERS 構造体がます. この構造体には、指定されたスイッチのパラメーターが含まれます。
+この OID メソッド要求から正常に戻った後、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体へのポインターが含まれています。 この構造体には、指定されたスイッチのパラメーターが含まれます。
 
 NDIS は、ミニポートドライバーに対する[\_の\_スイッチ\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)要求の OID を処理します。 NDIS は、次のソースから、管理するデータの内部キャッシュから情報を返します。
 

@@ -32,7 +32,7 @@ ms.locfileid: "72841864"
 
 上位層のプロトコルヘッダーの先頭にフレームを分割する方法の詳細については、「[上位層のプロトコルヘッダーの先頭にフレームを分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)する」を参照してください。
 
-ヘッダーデータの分割プロバイダーが TCP ペイロードでフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、\_TCP および NDIS\_NBL\_フラグ\_NBL\_フラグが\_設定されている必要があり\_SPLIT は、 **Nblflags**メンバーで設定された\_上位\_レイヤー\_プロトコル\_ペイロードフラグを\_分割します。 ヘッダーの設定の詳細については、「ネットワーク\_バッファー\_リストフラグの設定」を参照してください。[ネットワーク\_バッファーの設定\_リストの情報](setting-net-buffer-list-information.md)
+ヘッダーデータの分割プロバイダーが TCP ペイロードでフレームを分割する場合、指定された[**NET\_BUFFER\_の一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)\_\_構造には、\_TCP および NDIS\_NBL\_フラグ\_\_\_上\_\_\_\_上に分割されています。 ヘッダーの設定の詳細については、「ネットワーク\_バッファー\_リストフラグの設定」を参照してください。[ネットワーク\_バッファーの設定\_リストの情報](setting-net-buffer-list-information.md)
 
  
 

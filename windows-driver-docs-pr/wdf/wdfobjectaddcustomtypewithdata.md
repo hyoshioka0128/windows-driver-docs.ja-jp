@@ -33,23 +33,23 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>パラメーター
 ----------
 
-  の*処理 (_d)*  
+*_handle*   
 フレームワークオブジェクトへのハンドル。
 
 *_type*   
 カスタム型のドライバー定義名。
 
 *_data*   
-ドライバーによって提供されるデータバッファーへのポインター、または NULL。 このパラメーターは省略可能です。
+ドライバーによって提供されるデータバッファーへのポインター、または NULL。 このパラメーターはオプションです。
 
-*クリーンアップ  (_r)*  
-ドライバーの[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバック関数へのポインター、または NULL。 このパラメーターは省略可能です。
+*_cleanup*   
+ドライバーの[*Evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバック関数へのポインター、または NULL。 このパラメーターはオプションです。
 
-  の*破棄 (_s)*  
-ドライバーの[*Evtdestroycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数へのポインター、または NULL。 このパラメーターは省略可能です。
+*_destroy*   
+ドライバーの[*Evtdestroycallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数へのポインター、または NULL。 このパラメーターはオプションです。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -63,7 +63,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 </colgroup>
 <thead>
 <tr class="header">
-<th>リターンコード</th>
+<th>リターン コード</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -89,7 +89,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 
  
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 ドライバーがデータバッファーへのポインターを使用して**WdfObjectAddCustomTypeWithData**を呼び出す場合、ドライバーは、オブジェクトが削除されるときにメモリバッファーの割り当てを解除するための[*evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)または[*evtcleanupcallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数を提供できます。
@@ -98,7 +98,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 
 コード例については、「 [**Wdfobjectaddcustomtype**](wdfobjectaddcustomtype.md)」を参照してください。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -108,19 +108,19 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ターゲットプラットフォーム</p></td>
+<td><p>対象プラットフォーム</p></td>
 <td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">ユニバーサル</a></td>
 </tr>
 <tr class="even">
-<td><p>KMDF の最小バージョン</p></td>
+<td><p>最小 KMDF バージョン</p></td>
 <td><p>1.11</p></td>
 </tr>
 <tr class="odd">
-<td><p>UMDF の最小バージョン</p></td>
+<td><p>最小 UMDF バージョン</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject .h (Wdf を含む)</td>
 </tr>
 </tbody>

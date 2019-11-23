@@ -3,7 +3,7 @@ title: OID_GEN_SUPPORTED_GUIDS
 description: クエリとして、OID_GEN_SUPPORTED_GUIDS OID は、NDIS_GUID 型の構造体の配列を返すようにミニポートドライバーに要求します。
 ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_SUPPORTED_GUIDS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_SUPPORTED_GUIDS
 ms.localizationpriority: medium
 ms.openlocfilehash: d3c119c128f511a4c749aa374a9ef6d85279006d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

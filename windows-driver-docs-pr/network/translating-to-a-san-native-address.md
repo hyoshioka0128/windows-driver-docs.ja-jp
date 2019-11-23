@@ -7,7 +7,7 @@ keywords:
 - SAN プロキシドライバー WDK、ネイティブアドレス変換
 - ネイティブアドレス変換 WDK San
 - ネイティブアドレス WDK San の変換
-- AF_INET が WDK San に対応
+- WDK San に AF_INET アドレス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0720b6679dbc66ecbb2e017a3ed6769359d6cde6

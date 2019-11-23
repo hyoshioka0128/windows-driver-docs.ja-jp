@@ -28,19 +28,19 @@ ms.locfileid: "72844890"
 
 NDIS はミニポートドライバーに対してこれらの OID 要求を処理し、要求された QoS パラメーターを[**ndis\_qos\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体内で返します。 NDIS は、次の方法でこれらの OID 要求を処理します。
 
--   NDIS は、Oid の oid クエリ要求を処理するときに、 [\_qos\_操作\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)を処理します。これにより、前の\_ndis からキャッシュされた Operational ndis qos パラメーターが返され[ **\_qos\_operational が返されます。\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change) 、ミニポートドライバーによって発行された状態の表示を変更します。 このドライバーは、動作する QoS パラメーターが最初に解決されるか、後で変更されるときに、この状態を示します。
+-   NDIS は、Oid の oid クエリ要求を処理するときに、 [\_qos\_操作\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)を処理します。これは、以前の[**ndis\_ステータス\_qos\_操作\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)\_、ミニポートドライバーによって発行された変更の状態を示します。 このドライバーは、動作する QoS パラメーターが最初に解決されるか、後で変更されるときに、この状態を示します。
 
-    前のドライバーが OID クエリ要求を発行する前に、ミニポートドライバーが[**ndis の\_ステータス\_QOS\_操作\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)の状態を示している場合、Ndis は[**ndis\_QOS を返し @no__** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)すべてのメンバーを含む T_10_ PARAMETERS 構造体 (**ヘッダー**メンバーを除く) が0に設定されています。
+    ミニポートドライバーが Ndis\_の状態を発行する前に、それより前のドライバーが OID クエリ要求を発行すると[ **\_QOS\_操作\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)の状態を示す\_、ndis は、すべてのメンバー (**ヘッダー**メンバーを除く) を0に設定して、 [**ndis\_QOS PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体を返します。
 
-    また、 **ndis  、** ミニポートドライバーが[**NDIS\_の状態\_qos\_操作\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)を発行し、ndis\_qos を使用して状態の表示を変更\_場合にも、この構造が返され[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)メンバー (**ヘッダー**メンバーを除く) が0に設定されているパラメーター構造体。
+    また **、  ndis**は、ミニポートドライバーが ndis\_の状態を発行する場合にも、この構造を返します。 [**qos\_操作\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change) 、 [**ndis\_Qos\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造 (**ヘッダー**メンバーを除く) が0に設定されています。\_
 
      
 
--   NDIS は、Oid の oid クエリ要求を処理するときに、[リモート\_のパラメーター\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)、以前の\_ndis からキャッシュされたリモートの ndis qos パラメーターを返します[**qos\_リモート\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change) 、ミニポートドライバーによって発行された状態の表示を変更します。 ドライバーは、リモート QoS パラメーターが最初に解決されるか、後で変更されるときに、この状態を示します。
+-   NDIS が oid クエリ要求を処理するときに、 [oid\_qos\_リモート\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)は、以前の[**ndis\_ステータス\_qos\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)からキャッシュされたリモート NDIS QOS パラメーターを返します。これは、ミニポートドライバーによって発行された\_変更の状態を示します。 ドライバーは、リモート QoS パラメーターが最初に解決されるか、後で変更されるときに、この状態を示します。
 
-    前のドライバーが OID クエリ要求を発行する前に、ミニポートドライバーが[**ndis\_ステータス\_QOS\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行して、状態の表示を変更\_、Ndis は[**ndis\_QOS を返し\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)すべてのメンバーを含むパラメーター構造 (**ヘッダー**メンバーを除く) が0に設定されます。
+    ミニポートドライバーが[**ndis\_ステータス\_qos\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行する前に、そのドライバーが OID クエリ要求を発行した場合\_変更の状態を示す\_、ndis は、すべてのメンバー (**ヘッダー**メンバーを除く) を0に設定して、 [**ndis\_QOS PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体を返します。
 
-    また、 **ndis  、** ミニポートドライバーが[**NDIS\_の状態\_qos\_操作\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)を発行し、ndis\_qos を使用して状態の表示を変更\_場合にも、この構造が返され[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)メンバー (**ヘッダー**メンバーを除く) が0に設定されているパラメーター構造体。
+    また **、  ndis**は、ミニポートドライバーが ndis\_の状態を発行する場合にも、この構造を返します。 [**qos\_操作\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change) 、 [**ndis\_Qos\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造 (**ヘッダー**メンバーを除く) が0に設定されています。\_
 
      
 

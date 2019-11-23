@@ -1,6 +1,6 @@
 ---
-title: Hyper-v 拡張可能スイッチポートにパケットを転送する
-description: Hyper-v 拡張可能スイッチポートにパケットを転送する
+title: Hyper-V 拡張可能スイッチ ポートへのパケットの転送
+description: Hyper-V 拡張可能スイッチ ポートへのパケットの転送
 ms.assetid: C8DA9064-21EE-45F4-BE6D-D24851C5480B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839647"
 ---
-# <a name="forwarding-packets-to-hyper-v-extensible-switch-ports"></a>Hyper-v 拡張可能スイッチポートにパケットを転送する
+# <a name="forwarding-packets-to-hyper-v-extensible-switch-ports"></a>Hyper-V 拡張可能スイッチ ポートへのパケットの転送
 
 
 このページでは、Hyper-v 拡張可能スイッチ転送拡張機能が1つまたは複数のポートにパケットを転送する方法について説明します。 この種類の拡張機能では、拡張可能スイッチの外部ネットワークアダプターに接続されている個々のネットワークアダプターにパケットを転送することもできます。

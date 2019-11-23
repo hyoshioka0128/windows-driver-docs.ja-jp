@@ -65,36 +65,36 @@ symchk [/v | /q ] /om Manifest /it TextFileList
 Quiet モードを有効にします。 すべての出力が抑制されます ( **/ot**オプションが含まれていない場合)。
 
 <span id="_______FileNames______"></span><span id="_______filenames______"></span><span id="_______FILENAMES______"></span>*ファイル名*   
-シンボルがチェックされるプログラムファイルを指定します。 絶対パス、相対パス、および UNC パスを使用できます。 アスタリスク ( **\*** ) ワイルドカードを使用できます。 \* ファイル名</em>の末尾にスラッシュが付いている場合は、ディレクトリ名として使用され、そのディレクトリ内のすべてのファイルがチェックされます。 *ファイル名*にスペースが含まれている場合は、引用符で囲む必要があります。
+シンボルがチェックされるプログラムファイルを指定します。 絶対パス、相対パス、および UNC パスを使用できます。 アスタリスク ( **\*** ) ワイルドカードを使用できます。 \* ファイル名</em> がスラッシュで終わる場合は、ディレクトリ名として使用され、そのディレクトリ内のすべてのファイルがチェックされます。 *ファイル名*にスペースが含まれている場合は、引用符で囲む必要があります。
 
-<span id="________ie_______ExeFile______"></span><span id="________ie_______exefile______"></span><span id="________IE_______EXEFILE______"></span> **/ie***Exefile*   
+<span id="________ie_______ExeFile______"></span><span id="________ie_______exefile______"></span><span id="________IE_______EXEFILE______"></span> **/ie** *exefile*   
 現在実行中のプログラムの名前を指定します。 このプログラムのシンボルがチェックされます。 *Exefile*には、ファイル拡張子とファイル拡張子 (通常は .exe) の名前を含める必要がありますが、パス情報は含まれません。 同じ名前を持つ2つの異なる実行可能ファイルがある場合、このオプションは推奨されません。 *Exefile*には、カーネルモードドライバーを含む任意のプログラムを指定できます。 *Exefile*が1つのアスタリスク ( **\*** ) の場合、symchk は、実行中のすべてのプロセス (ドライバーを含む) のシンボルをチェックします。
 
-<span id="________id_______DumpFile______"></span><span id="________id_______dumpfile______"></span><span id="________ID_______DUMPFILE______"></span> **/id***ダンプファイル*   
+<span id="________id_______DumpFile______"></span><span id="________id_______dumpfile______"></span><span id="________ID_______DUMPFILE______"></span> **/Id** *ダンプファイル*   
 メモリダンプファイルを指定します。 このダンプファイルのシンボルがチェックされます。
 
-<span id="________ih_______HotFixFile______"></span><span id="________ih_______hotfixfile______"></span><span id="________IH_______HOTFIXFILE______"></span> **/ih***HotFixFile*   
+<span id="________ih_______HotFixFile______"></span><span id="________ih_______hotfixfile______"></span><span id="________IH_______HOTFIXFILE______"></span> **/Ih** *HotFixFile*   
 自己解凍形式の修正プログラム CAB ファイルを指定します。
 
-<span id="________ip_______ProcessID______"></span><span id="________ip_______processid______"></span><span id="________IP_______PROCESSID______"></span> **/ip***ProcessID*   
+<span id="________ip_______ProcessID______"></span><span id="________ip_______processid______"></span><span id="________IP_______PROCESSID______"></span> **/Ip** *ProcessID*   
 現在実行中のプログラムのプロセス ID を指定します。 このプログラムのシンボルがチェックされます。 *ProcessID*は10進数として指定する必要があります。 次の2つの特殊なワイルドカードがサポートされています。
 
 - *ProcessID*がゼロ ( **0** ) の場合、symchk は実行中のすべてのドライバーのシンボルをチェックします。
 
 - *ProcessID*が1つのアスタリスク ( **\*** ) の場合、symchk は、実行中のすべてのプロセス (ドライバーを含む) のシンボルをチェックします。
 
-<span id="________it_______TextFileList______"></span><span id="________it_______textfilelist______"></span><span id="________IT_______TEXTFILELIST______"></span> **/it***Textfilelist*   
-プログラムファイルの一覧を含むテキストファイルを指定します。 これらのプログラムのシンボルがすべてチェックされます。 *Textfilelist*は、ファイルを1つだけ指定する必要があります (相対パス、絶対パス、または UNC パスで、ワイルドカードは使用できません)。空白が含まれている場合は、引用符で囲む必要があります。 このファイル内では、各行がプログラムファイル (相対パス、絶対パス、または UNC パス) を示し、アスタリスク **\*** のワイルドカード () が許可されています。 ただし、このワイルドカードを使用するすべての行は、相対パスを使用する必要があります。
+<span id="________it_______TextFileList______"></span><span id="________it_______textfilelist______"></span><span id="________IT_______TEXTFILELIST______"></span> **/It** *textfilelist*   
+プログラムファイルの一覧を含むテキストファイルを指定します。 これらのプログラムのシンボルがすべてチェックされます。 *Textfilelist*は、ファイルを1つだけ指定する必要があります (相対パス、絶対パス、または UNC パスで、ワイルドカードは使用できません)。空白が含まれている場合は、引用符で囲む必要があります。 このファイル内では、各行がプログラムファイル (相対パス、絶対パス、または UNC パス) を示し、アスタリスクのワイルドカード ( **\*** ) が許可されています。 ただし、このワイルドカードを使用するすべての行は、相対パスを使用する必要があります。
 
 このファイルの行にスペースが含まれている場合は、引用符で囲む必要があります。 このファイル内のセミコロンは、コメント文字です。セミコロンと行末のすべてが無視されます。
 
-<span id="________im_______ManifestList______"></span><span id="________im_______manifestlist______"></span><span id="________IM_______MANIFESTLIST______"></span> **/im***Manifestlist*   
+<span id="________im_______ManifestList______"></span><span id="________im_______manifestlist______"></span><span id="________IM_______MANIFESTLIST______"></span> **/Im** *manifestlist*   
 コマンドへの入力が、 **/om**パラメーターを使用して以前に作成されたマニフェストファイルであることを指定します。 マニフェストファイルには、シンボルを取得する対象のファイルに関する情報が含まれています。 マニフェストファイルの使用方法の詳細については、「 [SymChk でのマニフェストファイルの使用](using-a-manifest-file-with-symchk.md)」を参照してください。
 
-<span id="________om_______Manifest______"></span><span id="________om_______manifest______"></span><span id="________OM_______MANIFEST______"></span> **/om***マニフェスト*   
+<span id="________om_______Manifest______"></span><span id="________om_______manifest______"></span><span id="________OM_______MANIFEST______"></span> **/om** *マニフェスト*   
 マニフェストファイルを作成することを指定します。 マニフェストファイルには、後で **/im**パラメーターを使用して、シンボルを取得する一連のファイルに関する情報が含まれています。
 
-<span id="________s_Opts__SymbolPath"></span><span id="________s_opts__symbolpath"></span><span id="________S_OPTS__SYMBOLPATH"></span> **/s**パスの*パス*(i) \[\]  
+<span id="________s_Opts__SymbolPath"></span><span id="________s_opts__symbolpath"></span><span id="________S_OPTS__SYMBOLPATH"></span> **/s**\[ *\]* *シンボルパス*を持つ  
 シンボルを含むディレクトリを指定します。 絶対パス、相対パス、および UNC パスを使用できます。 任意の数のディレクトリを指定できます。複数のディレクトリをセミコロンで区切る必要があります。 *シンボルパス*にスペースが含まれている場合は、引用符で囲む必要があります。 このパス内にシンボルサーバーを指定する場合は、次のいずれかの構文を使用する必要があります。
 
 ```dbgcmd
@@ -102,7 +102,7 @@ srv*DownstreamStore*\\Server\Share
 srv*\\Server\Share
 ```
 
-**/S**\[のシンボルパスパラメーターは省略しないことをお勧めしますが、省略した場合、symchk は次の既定のパスを使用してパブリックシンボルストアをポイントします。\]
+**/S** *\[Optin*\] *symbol path*パラメーターを省略することは推奨されませんが、省略した場合、symchk は次の既定のパスを使用してパブリックシンボルストアをポイントします。
 
 ```dbgcmd
 srv*%SystemRoot%\symbols*https://msdl.microsoft.com/download/symbols
@@ -123,7 +123,7 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 パブリック (分割) シンボルを強制的にチェックします。 プライベートシンボルは一致しないものとして扱われます。 **S**オプションは**e**と**u**を意味し、 **p**では使用できません。
 
 <span id="r"></span><span id="R"></span> **\r\n\r\n**  
-パスの詳細検索を実行するために、指定したパス内のすべての非シンボルサーバー要素を展開します。 注: このオプションは、指定されたシンボルパスを変更するため、デバッガー内では発生しない一致を生成する場合があります。
+パスの詳細検索を実行するために、指定したパス内のすべての非シンボルサーバー要素を展開します。 メモ: このオプションは、指定されたシンボルパスを変更するため、デバッガー内では発生しない一致を生成する場合があります。
 
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
@@ -138,7 +138,7 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">構成方法</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -172,7 +172,7 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 <td align="left"><p>シンボルの完全パスは、すべての出力メッセージに含まれます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>/oc</strong><em>ディレクトリ</em></p></td>
+<td align="left"><p><strong>/oc</strong> <em>ディレクトリ</em></p></td>
 <td align="left"><p>SymChk は、チェックされたすべてのシンボルファイルの一覧を含む従来のシンボルツリー<em>を directory ディレクトリ</em>に作成します。</p></td>
 </tr>
 <tr class="odd">
@@ -180,7 +180,7 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 <td align="left"><p>SymChk は、チェックされたバイナリのバージョン情報も出力します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>/ol</strong><em>ファイル</em></p></td>
+<td align="left"><p><strong>/ol</strong> <em>ファイル</em></p></td>
 <td align="left"><p>標準出力に送信されるメッセージに加えて、シンボルチェックを通過するすべてのバイナリとそのシンボルのコンマ区切りの一覧を含むファイルを作成します。</p></td>
 </tr>
 </tbody>
@@ -197,14 +197,14 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">構成方法</th>
 <th align="left">効果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>/ds</strong></p></td>
-<td align="left"><p>SymChk は、dbg 情報が実行可能ファイルから削除されたことを確認し、dbg ファイルにのみ表示され、実行可能ファイルが dbg ファイルを指していることを確認します。 プログラムが dbg シンボルファイルなしでビルドされた場合、このオプションによる影響はありません。 既定値です。</p></td>
+<td align="left"><p>SymChk は、dbg 情報が実行可能ファイルから削除されたことを確認し、dbg ファイルにのみ表示され、実行可能ファイルが dbg ファイルを指していることを確認します。 プログラムが dbg シンボルファイルなしでビルドされた場合、このオプションによる影響はありません。 これが既定値です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/de</strong></p></td>
@@ -228,14 +228,14 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">構成方法</th>
 <th align="left">効果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>/pf</strong></p></td>
-<td align="left"><p>SymChk は .pdb ファイルの内容をチェックしません。ファイルが存在し、バイナリに一致することを確認するだけです。 既定値です。</p></td>
+<td align="left"><p>SymChk は .pdb ファイルの内容をチェックしません。ファイルが存在し、バイナリに一致することを確認するだけです。 これが既定値です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/ps</strong></p></td>
@@ -259,13 +259,13 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">構成方法</th>
 <th align="left">効果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>/fm</strong><em>モジュール</em></p></td>
+<td align="left"><p><strong>/Fm</strong> <em>モジュール</em></p></td>
 <td align="left"><p>SymChk は、指定されたモジュールに関連付けられているダンプファイルまたはプロセスのみをチェックします。 <em>モジュール</em>には完全なファイル名を含める必要がありますが、ディレクトリパスの一部を含めることはできません。</p></td>
 </tr>
 </tbody>
@@ -282,7 +282,7 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">オプション</th>
+<th align="left">構成方法</th>
 <th align="left">効果</th>
 </tr>
 </thead>
@@ -296,11 +296,11 @@ SymChk は、すべてのパスを一度に確認するのではなく、各パ�
 <td align="left"><p>SymChk が修正プログラムの CAB ファイルをチェックしている場合、cab 内のシンボルは検索されません。 (既定では、SymChk は、指定されたシンボルパスだけでなく、cab でもシンボルを検索します)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>/ea</strong><em>ファイル</em></p></td>
+<td align="left"><p><strong>/ea</strong> <em>ファイル</em></p></td>
 <td align="left"><p>SymChk は、指定したファイルに一覧表示されているプログラムのシンボルを検証しません。 これにより、特定のプログラムが検証されないように拒否することができます。 <em>ファイル</em>は、ファイルを1つだけ指定する必要があります (相対パス、絶対パス、または UNC パスで、ワイルドカードは使用できません)。空白が含まれている場合は、引用符で囲む必要があります。 <em>ファイル</em>内では、各行は、相対パス、絶対パス、または UNC パスによってプログラムファイルを示します。ワイルドカードは使用できません。 このファイル内の行にスペースが含まれている場合は、引用符で囲む必要があります。 このファイル内のセミコロンは、コメント文字です。セミコロンと行末のすべてが無視されます。 シンボルサーバーが使用されている場合、これらのプログラムのシンボルは下流ストアにコピーされません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>/ee</strong><em>ファイル</em></p></td>
+<td align="left"><p><strong>/ee</strong> <em>ファイル</em></p></td>
 <td align="left"><p>指定したファイルに記載されているプログラムのエラーメッセージは表示されません。 "Success" メッセージと "ignore" メッセージは通常どおり表示され、シンボルファイルは通常どおり下流ストアにコピーされます。 <em>ファイル</em>の形式とその内容の形式は、 <strong>/ea</strong> <em>ファイル</em>の形式と同じです。</p></td>
 </tr>
 </tbody>

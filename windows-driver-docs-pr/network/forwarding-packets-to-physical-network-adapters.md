@@ -37,7 +37,7 @@ ms.locfileid: "72842123"
 
 転送拡張機能の[*Filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)関数が呼び出されると、 *NetBufferList*パラメーターには、 [**NET\_BUFFER\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体のリンクリストへのポインターが含まれます。 これらの各構造体は、受信データパスから取得したパケットを指定します。 各パケットの**NET\_BUFFER\_LIST**構造体の OOB データ内では、宛先ポートのデータが NDIS\_\_スイッチに格納され、[**転送先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造\_転送されます。 拡張機能は、 [*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)を呼び出すことによって\_宛先\_配列構造とその要素を**転送\_、NDIS\_スイッチ**を取得します。
 
-**注**  パフォーマンスを向上させるために、転送拡張機能は[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)の代わりに[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数を呼び出して、 [**NDIS\_スイッチへのポインターを取得\_転送先\_配列構造体\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)しています。 この拡張機能は、パケットの OOB データに追加の配列要素が必要であると判断した場合に、これを行います。 詳細については、「[拡張可能スイッチの宛先ポートデータをパケットに追加](adding-extensible-switch-destination-port-data-to-a-packet.md)する」を参照してください。
+**注**  パフォーマンスを向上させるために、転送拡張機能は、 [*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)の代わりに[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)関数を呼び出して、NDIS\_スイッチへのポインターを取得し[ **\_\_送信先\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)構造を転送できます。 この拡張機能は、パケットの OOB データに追加の配列要素が必要であると判断した場合に、これを行います。 詳細については、「[拡張可能スイッチの宛先ポートデータをパケットに追加](adding-extensible-switch-destination-port-data-to-a-packet.md)する」を参照してください。
 
  
 
@@ -59,7 +59,7 @@ ms.locfileid: "72842123"
 
     -   複数の物理ネットワークアダプターが外部ネットワークアダプターにバインドされている場合、拡張機能は**NicIndex**メンバーを拡張可能なスイッチチームの宛先ネットワークアダプターの0以外のインデックス値に設定する必要があります。
 
-    **注**  外部ネットワークアダプターが接続されている拡張可能なスイッチポートを**ポート id**メンバーが指定していない場合、拡張機能では**NICINDEX**メンバーを**NDIS\_switch\_DEFAULT に設定する必要があり\_NIC\_インデックス**。
+    **注**  外部ネットワークアダプターが接続されている拡張可能なスイッチポートを**ポート id**メンバーが指定していない場合、拡張機能は**NICINDEX**メンバーを**NDIS\_スイッチ\_既定\_NIC\_インデックス**に設定する必要があります。
 
      
 

@@ -3,7 +3,7 @@ title: SM\_AddTarget 関数
 description: SM\_AddTarget WMI メソッドは、指定されたターゲットに関連付けられているイベントを WMI クライアントに通知するように WMI プロバイダーを構成します。
 ms.assetid: 78e19496-1eb0-4d05-8637-f2e6d123208b
 keywords:
-- SM_AddTarget function Storage デバイス
+- SM_AddTarget 関数記憶装置
 topic_type:
 - apiref
 api_name:

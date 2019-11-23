@@ -48,7 +48,7 @@ LLDP の詳細については、「IEEE 802.1 AB-2005 標準」を参照して�
 
 ローカルの DCBX 受け入れビットと TLVs の詳細については、「IEEE 802.1 Qaz draft standard」を参照してください。
 
-**注**  Windows Server 2012 以降では、PowerShell コマンドレットを使用して、DCB コンポーネントを構成し、 **NDIS\_qos\_パラメーター\_** 、OID\_qos を発行するときにフラグを設定または解除することができ[\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)要求。 これにより、ミニポートドライバーは、ローカルの DCBX の状態をそれぞれ有効または無効にします。
+**注**  Windows Server 2012 以降では、PowerShell コマンドレットを使用して DCB コンポーネントを構成することによって、 [OID\_qos\_parameters](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)要求を発行するときに、 **\_qos\_のパラメーター\_** 使用フラグを設定または解除できます。 これにより、ミニポートドライバーは、ローカルの DCBX の状態をそれぞれ有効または無効にします。
 
  
 

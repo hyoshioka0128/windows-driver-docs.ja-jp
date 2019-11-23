@@ -29,7 +29,7 @@ ENCAPIPARAM\_ビットレートプロパティは、デバイスのエンコー�
 </colgroup>
 <thead>
 <tr class="header">
-<th>[購入]</th>
+<th>取得</th>
 <th>設定</th>
 <th>対象</th>
 <th>プロパティ記述子の型</th>
@@ -38,18 +38,18 @@ ENCAPIPARAM\_ビットレートプロパティは、デバイスのエンコー�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>[はい]</p></td>
-<td><p>[はい]</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (操作データ) は、 **Propertyitem. Values**メンバーで指定された VT\_I4 値です。値は、ksk プロパティの値のメンバーであり、videoencoder\_ビットレートからのサポートされている値の個別のリストを使用して、構造体[ **\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set) [ **@no__t8_ モード列挙体 (_s)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-videoencoder_bitrate_mode) 。
+プロパティ値 (操作データ) は、 **Propertyitem. Values** [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)メンバーで指定された VT\_I4 値です。値の値は、 [**videoencoder\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)の列挙から、サポートされている値の個別のリストを使用します。
 
 ### <a name="comments"></a>コメント
 

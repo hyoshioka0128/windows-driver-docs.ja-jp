@@ -1,5 +1,5 @@
 ---
-title: データオフセット位置
+title: データ オフセット位置
 description: このセクションでは、Windows フィルタリングプラットフォームのコールアウトドライバーのデータオフセット位置について説明します。
 ms.assetid: cf4656cf-b978-4539-9fff-8f0aa5de1b5e
 keywords:
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838162"
 ---
-# <a name="data-offset-positions"></a>データオフセット位置
+# <a name="data-offset-positions"></a>データ オフセット位置
 
 フィルターエンジンは、コールアウトドライバーの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数を呼び出すと、*レイヤーデータ*パラメーターの構造体へのポインターを渡します。 パケットデータをフィルター処理するレイヤーの場合、ポインターは[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体を参照します。 *Classid*が使用されているフィルター処理レイヤーに応じて、レイヤーデータ * パラメーターには、次のいずれかの構造体へのポインターが渡されます。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72838162"
 > [!NOTE]
 > レイヤー*データ*パラメーターは、フィルター処理されているレイヤーによっては NULL になる場合があります。また、ドライバーの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)に使用される、コールアウト関数が呼び出される条件も異なります。
  
-[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体には、 [NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造体のリンクリストが含まれています。 各**NET_BUFFER**構造体の[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)構造体内では、 **DataOffset**メンバーはパケットデータ内の特定の位置を指します。 **DataOffset**メンバーが指す位置は、フィルターエンジンがコールアウトドライバーの*classid*関数を呼び出すフィルターレイヤーに依存します。 
+[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体には、 [NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造体のリンクリストが含まれています。 各**NET_BUFFER**構造の[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)構造内では、 **DataOffset**メンバーはパケットデータ内の特定の位置を指します。 **DataOffset**メンバーが指す位置は、フィルターエンジンがコールアウトドライバーの*classid*関数を呼び出すフィルターレイヤーに依存します。 
 
 各フィルターレイヤーに対して、 **DataOffset**メンバーによって指定されたパケットデータ内の位置は、次のように定義されます。
 
@@ -217,7 +217,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_ALE_RESOURCE_ASSIGNMENT_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -226,7 +226,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_ALE_RESOURCE_ASSIGNMENT_V6_DISCARD</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -235,7 +235,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_ALE_AUTH_LISTEN_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -244,7 +244,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_ALE_AUTH_LISTEN_V6_DISCARD</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -322,7 +322,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_IPSEC_KM_DEMUX_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -331,7 +331,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_IPSEC_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -340,7 +340,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_IKEEXT_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -348,7 +348,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_RPC_UM</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -356,7 +356,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_RPC_EPMAP</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -364,7 +364,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_RPC_EP_ADD</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -372,7 +372,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_RPC_PROXY_CONN</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -380,7 +380,7 @@ ms.locfileid: "72838162"
 <p>FWPS_LAYER_RPC_PROXY_IF</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -394,7 +394,7 @@ ms.locfileid: "72838162"
 FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -403,7 +403,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_ALE_RESOURCE_RELEASE_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -412,7 +412,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>
@@ -421,8 +421,8 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_ALE_CONNECT_REDIRECT_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
-<div class="alert"><b>メモ</b> これらのフィルター処理レイヤーでは、レイヤー<i><em>データ</em></i>パラメーターに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0"><b>FWPS_CONNECT_REQUEST0</b></a>構造体へのポインターが含まれています。 この構造体は、パケットデータを記述する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>構造体を参照しません。</div>
+<p>適用できません。</p>
+<div class="alert"><b>メモ</b> これらのフィルターレイヤーでは、レイヤー<i><em>データ</em></i>パラメーターに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0"><b>FWPS_CONNECT_REQUEST0</b></a>構造体へのポインターが含まれています。 この構造体は、パケットデータを記述する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>構造体を参照しません。</div>
 <div> </div>
 </td>
 </tr>
@@ -432,8 +432,8 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_ALE_BIND_REDIRECT_V6</p>
 </td>
 <td>
-<p>適用不可。</p>
-<div class="alert"><b>メモ</b> これらのフィルター処理レイヤーでは、レイヤー<i><em>データ</em></i>パラメーターに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0"><b>FWPS_BIND_REQUEST0</b></a>構造体へのポインターが含まれています。 この構造体は、パケットデータを記述する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>構造体を参照しません。</div>
+<p>適用できません。</p>
+<div class="alert"><b>メモ</b> これらのフィルターレイヤーでは、レイヤー<i><em>データ</em></i>パラメーターに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0"><b>FWPS_BIND_REQUEST0</b></a>構造体へのポインターが含まれています。 この構造体は、パケットデータを記述する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>構造体を参照しません。</div>
 <div> </div>
 </td>
 </tr>
@@ -452,7 +452,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
-<p>適用不可。</p>
+<p>適用できません。</p>
 </td>
 </tr>
 <tr>

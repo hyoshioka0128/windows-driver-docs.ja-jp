@@ -4,7 +4,7 @@ description: WSK_TDI_DEVICENAME_MAPPING
 ms.assetid: 7636fa80-3908-4808-8fb8-6227ec6e023b
 ms.date: 07/18/2017
 keywords:
-- WSK_TDI_DEVICENAME_MAPPING ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WSK_TDI_DEVICENAME_MAPPING
 ms.localizationpriority: medium
 ms.openlocfilehash: 60fc5c3785c25c0e58b60f504bde2680c0489525
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -52,15 +52,15 @@ WSK アプリケーションで WSK\_TDI\_DEVICENAME\_を使用している場�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>Irp</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 </tbody>
 </table>

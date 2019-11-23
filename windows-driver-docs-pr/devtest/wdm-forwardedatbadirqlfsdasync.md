@@ -1,6 +1,6 @@
 ---
 title: ForwardedAtBadIrqlFsdAsync ルール (wdm)
-description: ForwardedAtBadIrqlFsdAsync ルールでは、送信される IRP メジャー関数コードが\_MJ\_POWERIRP\_MJ のいずれかである場合を除いて、ドライバーが IRQL ディスパッチ\_レベルで呼び出すことを指定してい @no__t(4_ READIRP\_MJ\_WRITEIRP\_MJ\_デバイス\_コントロール LIRP\_MJ\_内部\_デバイス\_コントロールです。
+description: ForwardedAtBadIrqlFsdAsync ルールでは、ドライバーが IoCallDriver と PoCallDriver を IRQL ディスパッチ\_レベルで呼び出すことを指定します。ただし、転送される IRP メジャー関数コードは、次のいずれかの IRP\_MJ\_POWERIRP\_MJ\_READIRP\_MJ\_WRITEIRP\_MJ\_デバイス\_LIRP\_MJ\_内部\_デバイス\_コントロールです。
 ms.assetid: 9961AE5F-0B36-4E04-A349-CA0461B3E3DC
 ms.date: 05/21/2018
 keywords:

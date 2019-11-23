@@ -55,14 +55,14 @@ ms.locfileid: "72824338"
 <td><p></em><strong>OutputOrderReversed ですか?</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>。複数ページのドキュメントが最後のページから最初のページに並べ替えられるかどうかを示します。</p></td>
 <td><p>(省略可能)。 指定しない場合、既定値は<strong>FALSE</strong>になります。</p>
-<p>EXTERN_GLOBAL シンボルを <em><strong>Outputorderreversed?</strong>と共に使用することはできません。</p></td>
+<p>EXTERN_GLOBAL シンボルは、<em><strong>Outputorderreversed?</strong>では使用できません。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>ReselectFont</strong></p></td>
 <td><p></p>
-Unidrv が現在のフォントを再選択する必要がある操作を示す定数の一覧。 は、次のいずれかになります: AFTER_GRXDATA-After CmdSend<em>Xxxx</em>data<a href="raster-data-emission-commands.md" data-raw-source="[raster data emission commands](raster-data-emission-commands.md)">ラスターデータ排出コマンド</a>。
+Unidrv が現在のフォントを再選択する必要がある操作を示す定数の一覧。 には、次のいずれかを指定できます。 AFTER_GRXDATA-CmdSend<em>Xxxx</em>data<a href="raster-data-emission-commands.md" data-raw-source="[raster data emission commands](raster-data-emission-commands.md)">ラスターデータ排出コマンド</a>。
 AFTER_XMOVE-任意の x 移動<a href="cursor-commands.md" data-raw-source="[cursor commands](cursor-commands.md)">カーソルコマンド</a>の後。
-AFTER_FF-CmdFF コマンドの後。</td>
+CmdFF コマンドの後に AFTER_FF します。</td>
 <td><p>(省略可能)。 指定しない場合、Unidrv はフォントを再選択しません。</p></td>
 </tr>
 <tr class="odd">
@@ -89,7 +89,7 @@ AFTER_FF-CmdFF コマンドの後。</td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>TextCaps</strong></p></td>
-<td><p>プリンターのテキスト機能を示す定数の一覧。 は、TC_<em>xxx</em>の1つ以上のフラグで構成され、 <strong>GetDeviceCaps</strong>につい Windows SDK てのドキュメントの説明に記載されています。</p></td>
+<td><p>プリンターのテキスト機能を示す定数の一覧。 は、Microosft Windows SDK ドキュメントの<strong>GetDeviceCaps</strong>の説明に記載されている1つ以上の TC_<em>xxx</em>フラグで構成されます。</p></td>
 <td><p>(省略可能)。 指定しない場合、Unidrv ではテキスト機能がサポートされていないと見なされます。</p></td>
 </tr>
 </tbody>

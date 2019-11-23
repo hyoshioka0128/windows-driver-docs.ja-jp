@@ -109,9 +109,9 @@ WMI メソッドには適用されません。
 
 [HBA\_の状態](hba-status.md)
 
-[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
+[**SendRNIDV2\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
 
-[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
+[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
 
  
 

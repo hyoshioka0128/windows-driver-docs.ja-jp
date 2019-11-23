@@ -19,7 +19,7 @@ NDK 機能を有効または無効にするために、NDIS は\_状態 oid 要�
 ## <a name="determining-whether-ndk-functionality-can-be-enabled"></a>NDK 機能を有効にするかどうかを判断する
 
 
-**\*NetworkDirect**キーワードは、ミニポートドライバーの NDK 機能を有効にできるかどうかを決定します。
+**\*NetworkDirect** キーワードは、ミニポート ドライバーの NDK 機能を有効にするかどうかを判断します。
 
 このキーワード値が 1 ("Enabled") に設定されている場合、NDK 機能を有効にすることができます。
 
@@ -43,7 +43,7 @@ NDK 機能を有効または無効にするために、NDIS は\_状態 oid 要�
 
 NDK 機能を有効または無効にするには、ミニポートドライバーが NDIS に**NetEventNDKEnable**または**NetEventNDKDisable**プラグアンドプレイ (PnP) イベントを送信する必要があります。
 
-PnP イベントを送信するために、ミニポートドライバー[**は NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)関数を呼び出し、 *NetPnPEvent*パラメーターを指定して、 [**NET\_PnP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)構造体の**NetPnPEvent**メンバーを設定します。次のようにを指します。
+PnP イベントを送信するために、ミニポートドライバー[**は NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)関数を呼び出します。このとき、 *NetPnPEvent*パラメーターが指す[**NET\_PnP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)構造体の**NetPnPEvent**メンバーを次のように設定します。
 
 -   NDK 機能が有効になっている場合は**NetEventNDKEnable** 。
 

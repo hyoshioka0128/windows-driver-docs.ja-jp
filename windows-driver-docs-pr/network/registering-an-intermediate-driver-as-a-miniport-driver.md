@@ -1,6 +1,6 @@
 ---
-title: ミニポートドライバーとしての中間ドライバーの登録
-description: ミニポートドライバーとしての中間ドライバーの登録
+title: 中間ドライバーのミニポート ドライバーとしての登録
+description: 中間ドライバーのミニポート ドライバーとしての登録
 ms.assetid: a01bc0f4-4a03-4d44-88c0-7029042d6953
 keywords:
 - 中間ドライバーの登録
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72842108"
 ---
-# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>ミニポートドライバーとしての中間ドライバーの登録
+# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>中間ドライバーのミニポート ドライバーとしての登録
 
 
 

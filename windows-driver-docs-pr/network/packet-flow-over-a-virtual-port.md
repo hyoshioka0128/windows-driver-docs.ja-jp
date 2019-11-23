@@ -26,11 +26,11 @@ ms.locfileid: "72843717"
 
      
 
--   PF ミニポートドライバーは、VPort から受信したパケットを示すために[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出します。 PF ミニポートドライバーは、 **NdisMIndicateReceiveNetBufferLists**を呼び出す前に、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造にある帯域外 (OOB) データの vport 識別子を設定する必要があります。 このドライバーは、 [**NET\_BUFFER\_LIST を使用して、VPORT\_ID マクロ\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)を使用してこれを行います。
+-   PF ミニポートドライバーは、VPort から受信したパケットを示すために[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出します。 PF ミニポートドライバーは、 **NdisMIndicateReceiveNetBufferLists**を呼び出す前に、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造にある帯域外 (OOB) データの vport 識別子を設定する必要があります。 このドライバーは、 [**NET\_BUFFER\_LIST を使用して、VPORT\_ID マクロ\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)を使用してこれを行います。\_
 
 -   仮想化スタックは[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)を呼び出して、パケットを vport に送信します。 仮想化スタックは**NdisSendNetBufferLists**を呼び出す前に、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造にある OOB データの vport 識別子を設定します。
 
-    ミニポートドライバーは\_、vport [ **\_id マクロ\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)を使用して、vport 識別子を取得\_ます。
+    ミニポートドライバーは\_、vport [ **\_id マクロ\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)を使用して、vport 識別子を取得\_ます。\_
 
     ミニポートドライバーは、指定された VPort のハードウェア転送キューで送信パケットをキューに入れます。
 

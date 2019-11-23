@@ -30,7 +30,7 @@ ms.locfileid: "72844876"
 
      
 
-OID メソッド要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、ndis\_\_NIC へのポインターが含まれ[ **\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体。 この構造体には、指定された VF の構成パラメーターが含まれています。
+OID メソッド要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体へのポインターが含まれています。 この構造体には、指定された VF の構成パラメーターが含まれています。
 
 NDIS は、ミニポートドライバーの\_VF\_PARAMETERS 要求を使用して、 [OID\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vf-parameters)を処理します。 NDIS は、次のソースを検査して、管理するデータの内部キャッシュから情報を返します。
 

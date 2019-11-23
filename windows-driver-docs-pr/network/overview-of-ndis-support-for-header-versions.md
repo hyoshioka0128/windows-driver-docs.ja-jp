@@ -35,7 +35,7 @@ ms.locfileid: "72843735"
 
      
 
--   NDIS ドライバーは、常に定義済みのリビジョン値を使用する必要があります。 Ndis では、このような定義を Xxx\_REVISION\_Nn という形式で提供し、NDIS\_SIZEOF\_Xxx\_REVISION\_Nn を提供しています。これは、 [**ndis\_OBJECT\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)の**リビジョン**と**Size**メンバーです。4.3. また、Xxx は構造体の名前を表し、Nn はリビジョン番号です。 たとえば、Ndis\_フィルターの1番目のリビジョンのリビジョンとサイズ[ **\_部分的な\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics)の構造\_は、\_リビジョン\_1 およびNDIS\_SIZEOF\_フィルター\_\_REVISION\_1 の部分\_特性です。
+-   NDIS ドライバーは、常に定義済みのリビジョン値を使用する必要があります。 Ndis は、このような定義を Xxx\_REVISION\_Nn という形式で提供し、NDIS\_SIZEOF\_Xxx\_REVISION\_Nn を提供します。これには、それぞれ[**ndis\_OBJECT\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)の**リビジョン**と**Size**メンバーが含まれます。 また、Xxx は構造体の名前を表し、Nn はリビジョン番号です。 たとえば、Ndis\_フィルターの最初のリビジョンのリビジョンとサイズ[ **\_部分的な\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics)の構造は、\_リビジョン\_1 および NDIS\_SIZEOF\_フィルター\_部分的\_な\_の特性\_リビジョン\_1 に\_ます。\_
 
 -   **ヘッダーのサイズ**値は、 **header. Revision**値と一致している必要があります。 つまり、**リビジョン**メンバーに XXX\_revision\_1 が含まれている場合、 **Size**メンバーの値は、NDIS\_SIZEOF\_Xxx\_Revision\_1 と同じかそれ以上である必要があります。
 

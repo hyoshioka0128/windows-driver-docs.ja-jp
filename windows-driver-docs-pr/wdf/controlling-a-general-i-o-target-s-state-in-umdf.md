@@ -33,7 +33,7 @@ ms.locfileid: "72843644"
 I/o ターゲットが開いている (つまり、UMDF ドライバーによって使用可能になっている) と、ドライバーは i/o ターゲットに i/o 要求を送信できます。 フレームワークは、適切なドライバーに要求を配信します。
 
 <a href="" id="stopped"></a>**なく**  
-I/o ターゲットは開かれていますが、UMDF ドライバーが i/o ターゲットに i/o 要求を送信できません。ただし、ドライバーが WDF\_REQUEST\_SEND\_\_オプションを渡すと、\_ターゲット\_状態フラグが*Flags*パラメーターに設定されます。[**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出します。
+I/o ターゲットは開かれていますが、 [**IWDFIoRequest:: send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出すと、ドライバーが WDF\_\_要求を渡し、\_オプションを送信して、\_ターゲット\_状態フラグを\_*フラグ*パラメーターに渡すことができない限り、i/o ターゲットに i/o 要求を送信することはできません。
 
 フレームワークは、適切なドライバーへの要求の配信を停止します。
 
@@ -66,7 +66,7 @@ I/o ターゲットのデバイスは削除されています。
 
 リモート i/o ターゲットのデバイスが削除されると、フレームワークは自動的に i/o ターゲットを停止して閉じ、次のイベントコールバック関数をドライバーが登録しない限り、ターゲットのキューにあるすべての i/o 要求をキャンセルします。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetqueryremove--------"></a>[**Iremotetargetの削除:: OnRemoteTargetQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetqueryremove)  
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetqueryremove--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetqueryremove)  
 リモート i/o ターゲットのデバイスが削除される可能性があることをドライバーに通知します。 ドライバーがデバイスの削除を許可する場合は、ドライバーが[**Iwdfremotetarget:: CloseForQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-closeforqueryremove)を呼び出す必要があります。
 
 <a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecomplete--------"></a>[**IremotetargetOnRemoteTargetRemoveComplete の削除::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecomplete)  

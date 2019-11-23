@@ -3,7 +3,7 @@ title: SM\_AddLink 関数
 description: SM\_AddLink WMI メソッドは、wmi プロバイダーに対して、ファブリックリンクイベントの WMI クライアントを通知するように構成します。
 ms.assetid: 29ddfdb7-232a-4715-bf36-5f64554ee608
 keywords:
-- SM_AddLink function Storage デバイス
+- SM_AddLink 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -50,7 +50,7 @@ NIC スイッチの仮想ポート (VPort) に設定されているすべての�
 
      
 
-Oid の OID メソッド要求から正常に返された後、 [ENUM\_フィルター\_列挙型フィルターを\_受け取る\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、更新された[**ndis\_へのポインター\_情報\_配列の構造を受け取る\_フィルターを取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)します。この後に1つ以上の ndis\_、\_[**フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info)構造体を受け取ります。 各**NDIS\_受信\_フィルター\_情報**構造は、指定された vport に設定されている受信フィルターの一意の識別子を指定します。
+Oid の OID メソッド要求から正常に返された後[\_フィルター\_列挙\_フィルターを受け取る\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)、 [**ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、更新された NDIS [ **\_receive\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info) [**filter\_info\_ARRAY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_info_array)構造体へのポインターが含まれます。\_\_\_ 各**NDIS\_受信\_フィルター\_情報**構造は、指定された vport に設定されている受信フィルターの一意の識別子を指定します。
 
 ## <a name="querying-a-specific-receive-filter"></a>特定の受信フィルターのクエリ
 
@@ -63,7 +63,7 @@ Oid の OID メソッド要求から正常に返された後、 [ENUM\_フィル
 
 -   **Filterid**メンバーは、パラメーターが返されるフィルターの0以外の識別子の値に設定する必要があります。
 
-    これまでのドライバーでは、以前の OID メソッドの Oid の要求からフィルター識別子を取得した  [\_受信\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)されている**ことに注意**してください\_フィルター\_[列挙\_列挙\_列挙 @no__ フィルター (_s)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters) アプリケーションでフィルター識別子を取得できるのは、以前の oid メソッドの OID の要求からだけで、列挙\_フィルター\_列挙型の\_フィルターを受け取る\_です。
+    これまでのドライバーでは、以前の OID メソッドの Oid 要求からフィルター識別子を取得した  [\_受信\_フィルター\_設定さ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)れている**ことに注意**してください\_フィルター\_列挙\_フィルター\_列挙\_フィルター[列挙](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。 アプリケーションでフィルター識別子を取得できるのは、以前の oid メソッドの OID の要求からだけで、列挙\_フィルター\_列挙型の\_フィルターを受け取る\_です。
 
      
 
@@ -75,7 +75,7 @@ Oid の OID メソッド要求から正常に返された後、 [ENUM\_フィル
 
     -   Oid\_NIC の以前の OID メソッド要求から、[列挙型\_VPORTS\_スイッチ\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)ます。
 
-NDIS は、 [\_フィルター\_列挙型\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)フィルターおよび OID を受け取る oid\_、ミニポートドライバーに対して\_パラメーターメソッド oid 要求を[受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)処理します。 NDIS は、oid から受信したデータの内部キャッシュから情報を取得し、 [\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)して oid 要求\_フィルター処理\_ます。
+NDIS は、 [\_フィルター\_列挙型\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)フィルターおよび OID を受け取る oid\_、ミニポートドライバーに対して\_パラメーターメソッド oid 要求を[受信\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)処理します。\_ NDIS は、oid から受信したデータの内部キャッシュから情報を取得し、 [\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)して oid 要求\_フィルター処理\_ます。
 
  
 

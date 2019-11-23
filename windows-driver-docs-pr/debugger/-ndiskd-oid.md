@@ -52,7 +52,7 @@ Ndiskd .dll
 <a name="remarks"></a>注釈
 -------
 
-**! ndiskd oid**は、システム上のすべての保留中の oid の一覧を一度に表示します。これにより、システムのハングや[0x9f バグチェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)の状況 (ドライバー\_電源\_状態\_エラー) のデバッグに役立ちます。 たとえば、架空の0x9F バグチェックを分析すると、システムが IRP でハングし、NDIS を待機していたことが判明したとします。 NDIS では、OS からの Irp は電源遷移を含む Oid に変換されるため、 **! ndiskd oid**を実行すると、スタックの一番下にあるデバイスが[oid\_PNP\_セットに clinging されている可能性があり\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)スタックの残りの部分をパワーし、ハングします。 NDIS ドライバーでは、OID を1秒以上保留しないようにする必要があります。そのため、デバイスの OID が長時間保留になっている原因を調査して、問題を解決することができます。
+**! ndiskd oid**は、システム上のすべての保留中の oid の一覧を一度に表示します。これにより、システムのハングや[0x9f バグチェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)の状況 (ドライバー\_電源\_状態\_エラー) のデバッグに役立ちます。 たとえば、架空の0x9F バグチェックを分析すると、システムが IRP でハングし、NDIS を待機していたことが判明したとします。 NDIS では、OS からの Irp は、電源遷移を含む Oid に変換されます。そのため、 **! ndiskd oid**を実行すると、スタックの一番下にあるデバイスが、 [\_電源に設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)されていて、スタックの残りの部分がハング\_\_れることがあります。 NDIS ドライバーでは、OID を1秒以上保留しないようにする必要があります。そのため、デバイスの OID が長時間保留になっている原因を調査して、問題を解決することができます。
 
 <a name="examples"></a>例
 --------
@@ -134,7 +134,7 @@ ALL PENDING OIDs
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [0x9F バグチェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
 

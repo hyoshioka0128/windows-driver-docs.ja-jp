@@ -14,7 +14,7 @@ ms.locfileid: "72834913"
 # <a name="determining-nic-switch-capabilities"></a>NIC スイッチ機能の判断
 
 
-このトピックでは、NDIS およびそれ以降のドライバーが、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの NIC スイッチ機能をどのように決定するかについて説明します。 このトピックには、次の情報が含まれています。
+このトピックでは、NDIS およびそれ以降のドライバーが、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの NIC スイッチ機能をどのように決定するかについて説明します。 このトピックの内容は次のとおりです。
 
 [*MiniportInitializeEx*中の NIC スイッチ機能の報告](#reporting-nic-switch-capabilities-during-miniportinitializeex)
 
@@ -41,9 +41,9 @@ NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.m
 
 1.  ミニポートドライバーは、**ヘッダー**メンバーを初期化します。 ドライバーは、**ヘッダー**の**type**メンバーを、既定\_\_型の NDIS\_OBJECT に設定します。
 
-    NDIS 6.30 以降では、ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_NIC\_スイッチ\_機能\_リビジョン\_2 および**SIZE**メンバーを ndis\_SIZEOF\_nic に設定します。\_スイッチ\_の機能\_リビジョン\_2。
+    NDIS 6.30 以降では、ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_NIC\_スイッチ\_機能\_リビジョン\_2 および**SIZE**メンバーを NDIS\_SIZEOF\_NIC\_スイッチ\_\_\_リビジョン2に設定します。
 
-2.  ミニポートドライバーは、 [**NDIS\_nic**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の**NicSwitchCapabilities**メンバーの適切なフラグを、SR-IOV ネットワークアダプターの nic スイッチ機能に\_の機能構造\_切り替えます。 たとえば、ミニポートドライバーは、各仮想ポートでの割り込みモデレーションを NIC スイッチがサポートしている場合、NDIS\_NIC\_スイッチ\_CAP\_\_を設定します。VPort) を作成します。
+2.  ミニポートドライバーは、 [**NDIS\_nic**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の**NicSwitchCapabilities**メンバーの適切なフラグを、SR-IOV ネットワークアダプターの nic スイッチ機能に\_の機能構造\_切り替えます。 たとえば、スイッチ上で作成された各仮想ポート (VPort) で NIC スイッチが割り込みのモデレーションをサポートする場合、ミニ\_ポートドライバーは、NDIS\_NIC\_スイッチ\_CAP\_を設定します。\_\_\_
 
 3.  ミニポートドライバーは、 [**NDIS\_nic\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造体の他のメンバーを、sr-iov ネットワークアダプターの nic スイッチ機能の値の範囲に設定します。 たとえば、ミニポートドライバーは、アダプターがサポートできる VFs と VPorts の最大数に**Maxnumvfs**および**maxnumvports**メンバーを設定します。
 
@@ -78,7 +78,7 @@ NDIS 6.60 以降のミニポートドライバーは、SR-IOV が有効になっ
         - VMQ キューが最初に作成された場合、ミニポートドライバーは VMQ キュー割り当てに成功し、NIC スイッチ割り当て呼び出しが失敗します。
     - NIC スイッチが削除されるか、すべての VMQ キューが削除されると、ミニポートドライバーが初期状態に戻り、これらのモードのいずれかに再度アクセスできるようになります。
 
-SR-IOV を使用せずに NIC スイッチを作成できることを提供するために、ミニポートドライバーは、NDIS\_NIC の**NicSwitchCapabilities**メンバーの**NDIS_NIC_SWITCH_CAPS_NIC_SWITCH_WITHOUT_IOV_SUPPORTED**フラグを設定し[ **\_\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造を切り替えます。
+SR-IOV を使用せずに NIC スイッチを作成できることを提供するために、ミニポートドライバーは、 [**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造の**NicSwitchCapabilities**メンバーの**NDIS_NIC_SWITCH_CAPS_NIC_SWITCH_WITHOUT_IOV_SUPPORTED**フラグを設定します。
 
 ## <a name="querying-nic-switch-capabilities-by-overlying-drivers"></a>それまでのドライバーによる NIC スイッチ機能のクエリ
 
@@ -89,7 +89,7 @@ NDIS は、ネットワークアダプターの現在有効な NIC スイッチ�
 
 -   NDIS がプロトコルドライバーの[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を呼び出すと、Ndis は*bindparameters*パラメーターを使用してネットワークアダプターの NIC スイッチ機能を渡します。 このパラメーターには、\_PARAMETERS 構造体を[**アタッチ\_ための NDIS\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)へのポインターが含まれています。 この構造体の**NicSwitchCapabilities**メンバーには、 [**NDIS\_NIC\_SWITCH\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体へのポインターが含まれています。
 
-また、NDIS は、オブジェクト識別子 (OID) のクエリ要求を処理するときに、 [**ndis\_nic\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造を返します。これは、ハードウェア\_の機能および oid を\_[\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-hardware-capabilities)です。 [\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-current-capabilities)によって、プロトコルまたはフィルタードライバーによって発行された現在の\_機能\_ます。
+また、NDIS では、 [**ndis\_nic\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)の構造が返されます。 oid のオブジェクト識別子 (oid) クエリ要求を処理するときに、nic\_\_の\_の\_、 [\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-hardware-capabilities)の\_、\_の\_によって発行された[現在の機能切り替え](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-current-capabilities)ます。
 
  
 

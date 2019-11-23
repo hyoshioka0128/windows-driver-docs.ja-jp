@@ -20,7 +20,7 @@ NDIS 6.30 (Windows Server 2012) では、[汎用ルーティングカプセル�
 
  
 
-ミニポートドライバーでカプセル化されたパケットの RSS および VMQ がサポートされている場合 、 [**NDIS\_\_パケット\_タスクをカプセル化して、それらの機能をアドバタイズする必要があり\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)構造。 ミニポートがこれらの機能を提供し、oid [\_TCP\_オフロード\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求、および oid に成功した場合、NIC は、アドバタイズされたカプセル化されたパケットの種類で RSS と VMQ を実行する必要があります。
+ミニポートドライバーでカプセル化されたパケットの RSS と VMQ がサポートされている場合は、 [**NDIS\_\_パケット\_タスク\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)構造体にカプセル化**さ** **れたこれら**の機能をアドバタイズする必要があります。 ミニポートがこれらの機能を提供し、oid [\_TCP\_オフロード\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求、および oid に成功した場合、NIC は、アドバタイズされたカプセル化されたパケットの種類で RSS と VMQ を実行する必要があります。
 
 解析可能なサポートされているカプセル化パケットの場合、NIC は、内部 MAC ヘッダーのトランスポート (内部) IP ヘッダーおよび VMQ のペイロードで、TCP または UDP ヘッダーで RSS を実行する必要があります。
 

@@ -1,6 +1,6 @@
 ---
-title: 状態管理の高速化
-description: 状態管理の高速化
+title: 高速化状態管理
+description: 高速化状態管理
 ms.assetid: 276d3cdb-34bf-49e8-aae5-94315746c5ff
 keywords:
 - 高速状態管理 WDK Direct3D
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839835"
 ---
-# <a name="accelerated-state-management"></a>状態管理の高速化
+# <a name="accelerated-state-management"></a>高速化状態管理
 
 
 ## <span id="ddk_accelerated_state_management_gg"></span><span id="DDK_ACCELERATED_STATE_MANAGEMENT_GG"></span>
@@ -38,7 +38,7 @@ D3DHAL\_DP2STATESET 構造体の**Dwoperation**メンバーが D3DHAL\_STATESETB
 
 状態のグループ化を使用して、さまざまなレンダリングシナリオで若干変更できる汎用状態ブロックを作成します。 これらの定義済みのグループ (DirectX SDK ドキュメントの D3DSTATEBLOCKTYPE に列挙されています) では、定期的なレンダリングのシナリオに合わせて、後で状態の変更によって変更できるジェネリック状態ブロックを定義します。 たとえば、ドライバーは、100の汎用の定義済み状態ブロックを作成し、それぞれを少し変更して、異なるレンダリングシナリオに対応する場合があります。 状態ブロックの型は、D3DHAL\_DP2STATESET 構造体の**sbType**メンバーに渡されます。
 
-**SbType**メンバーは、D3DHAL\_STATESETBEGIN および D3DHAL\_statesetbegin に対してのみ有効で、次のいずれかの D3DSTATEBLOCKTYPE 列挙型で定義済みの状態ブロック型を指定します。 NULL の場合は**NULL** 、D3DSBT @no__t_すべての状態の場合は 4_ ALL、ピクセル状態の場合は D3DSBT\_ピクセル、頂点状態の場合は D3DSBT\_VERTEXSTATE。\_
+**SbType**メンバーは、D3DHAL\_STATESETBEGIN および D3DHAL\_statesetbegin に対してのみ有効で、次のいずれかの D3DSTATEBLOCKTYPE 列挙型を使用して定義済みの状態ブロック型を指定します。 NULL の場合は NULL\_、すべての状態の場合は**NULL** 、ピクセル状態の場合は D3DSBT\_ピクセル状態、D3DSBT\_vertexstate。
 
 ドライバーは、レンダー状態拡張機能を実装していない限り、**sbType**メンバーを無視する必要があります。 ドライバーが拡張レンダリング状態を実装している場合 (つまり、Direct3D ランタイムが提供するもの以外の状態をレンダリングする場合) は、 **sbType**を使用して、使用されている定義済みのレンダー状態の種類を判断できます。 この情報から、状態ブロックを適切に追加して、拡張機能をサポートする方法を決定できます。
 

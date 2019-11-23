@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_CREATE
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートの作成について拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_PORT_CREATE に発行します。
 ms.assetid: 579D51CD-0594-4A06-998E-3886E7325D97
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_CREATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_CREATE
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c72c4e09af8f2bc6aa2de2319a69fa111cd9d13
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -38,9 +38,9 @@ Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェ
 
 -   この OID セット要求を転送するために拡張機能が[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す場合、拡張機能はこの oid 要求の完了状態を監視する必要があります。 拡張機能は、拡張可能なスイッチドライバースタック内の基になる拡張機能がポート作成通知を拒否したかどうかを検出します。
 
--   OID 要求が転送され、正常に完了すると、拡張機能は、oid\_SWITCH の OID 要求が発生するまで、 [oid\_スイッチ\_ポート\_プロパティ\_列挙型](oid-switch-port-property-enum.md)などの、ポートに対する oid 要求を発行でき[\_破棄](oid-switch-port-teardown.md)が発行さ\_ポート。 この OID 要求は、ポートが拡張可能スイッチから削除プロセスを開始することを拡張機能に通知します。
+-   OID 要求が転送されて正常に完了すると、拡張機能はそのポートに対する oid 要求 (oid [\_スイッチ\_ポート\_プロパティ\_列挙型](oid-switch-port-property-enum.md)など) を発行することができます。これにより、OID [\_スイッチ\_ポートの破棄](oid-switch-port-teardown.md)が発行されます。\_ この OID 要求は、ポートが拡張可能スイッチから削除プロセスを開始することを拡張機能に通知します。
 
--   拡張機能は、 [**NDIS\_スイッチ\_ポート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造の指定されたポートにパケットを転送することができません。 [oid\_スイッチ\_NIC](oid-switch-nic-connect.md)の設定要求が実行され、接続が完了します。なく.
+-   拡張機能は、 [**NDIS\_スイッチ\_ポート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造の指定されたポートにパケットを転送することはできません。 [oid\_スイッチ\_NIC](oid-switch-nic-connect.md)の設定要求が発行され、正常に完了します。\_
 
 **注**  拡張機能では、OID の oid セット要求を発行しないでください\_スイッチ\_ポート\_作成します。
 

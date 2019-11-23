@@ -26,11 +26,11 @@ ms.locfileid: "72841932"
 
      
 
--   適切な NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_変更したフラグが**フラグ**メンバーで設定されます。 [**Ndis\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体のメンバーは、対応する NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_changed フラグが Ntddndis で定義されている場合にのみ変更できます.
+-   適切な NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_変更したフラグが**フラグ**メンバーで設定されます。 [**Ndis\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体のメンバーは、対応する NDIS\_NIC\_スイッチ\_パラメーター\_*Xxx*\_changed フラグが Ntddndis で定義されている場合にのみ変更できます。
 
--   Ndis [ **\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体は、NDIS\_NIC\_スイッチ\_パラメーターに対応しています\_*Xxx*\_**フラグ**に設定されている変更フラグメンバーは、変更される NIC スイッチの構成パラメーターで設定されます。
+-   Ndis [ **\_nic\_スイッチ\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造体は、NDIS\_NIC\_スイッチに対応しています。\_\_*Xxx*\_**フラグ**メンバーで設定されている変更されたフラグは、変更される NIC スイッチの構成パラメーターで設定されます。
 
-    **注**  Windows Server 2012 以降では、OID\_NIC の oid セット要求を使用して変更できるのは、 [**NDIS\_nic\_スイッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造の**switchname**メンバーだけです[\_\_パラメーターを切り替え](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)ます。
+    **注**  Windows Server 2012 以降では、 [**NDIS\_nic\_スイッチ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)構造の**switchname**メンバーのみを変更できます。 oid の Oid セット要求では、 [oid\_nic\_スイッチ\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)を使用して変更できます。
 
      
 

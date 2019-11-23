@@ -3,7 +3,7 @@ title: SM\_RemoveLink 関数
 description: SM\_RemoveLink WMI メソッドは、wmi プロバイダーを構成して、ファブリックリンクイベント情報が WMI クライアントに渡されなくなるようにします。
 ms.assetid: 25f6b807-f921-44b6-b087-e5c6ec8c72ec
 keywords:
-- SM_RemoveLink function Storage デバイス
+- SM_RemoveLink 関数記憶装置
 topic_type:
 - apiref
 api_name:

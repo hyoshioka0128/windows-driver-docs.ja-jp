@@ -135,7 +135,7 @@ ms.locfileid: "72845299"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
-<td><p>クライアントが<strong>FindNextPrinterChangeNotification</strong>を呼び出した場合、ルーターによって呼び出されます (Microsoft Windows SDK のドキュメントを参照)。 PRINTER_NOTIFY_OPTIONS_REFRESH フラグが設定されています。</p></td>
+<td><p>クライアントが<strong>FindNextPrinterChangeNotification</strong>を呼び出した場合 (Microsoft Windows SDK のドキュメントを参照)、PRINTER_NOTIFY_OPTIONS_REFRESH フラグが設定されている場合、ルーターによって呼び出されます。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>

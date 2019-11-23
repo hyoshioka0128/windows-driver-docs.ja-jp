@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_CONFIGURATION
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_CONFIGURATION 通知を使用して、以前の OID_WWAN_SMS_CONFIGURATION \ 160、クエリまたは set 要求の完了、または SMS の変更の場合のイベント通知を MB サービスに通知します。configuration. ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。この通知では、NDIS_WWAN_SMS_CONFIGURATION 構造体が使用されます。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_CONFIGURATION 通知を使用して、以前の OID_WWAN_SMS_CONFIGURATION \ 160、クエリまたは set 要求の完了、または SMS の変更の場合のイベント通知を MB サービスに通知します。configuration. ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。この通知では、NDIS_WWAN_SMS_CONFIGURATION 構造を使用します。
 ms.assetid: 86dfe2dc-070b-43d9-b6fa-54dee985c65d
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_SMS_CONFIGURATION ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_SMS_CONFIGURATION
 ms.localizationpriority: medium
 ms.openlocfilehash: e017232daa44e5c6f772dfec8394b8e9684e5fbe
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72844637"
 # <a name="ndis_status_wwan_sms_configuration"></a>NDIS\_ステータス\_WWAN\_SMS\_構成
 
 
-ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_構成通知を使用して、以前の[OID\_wwan\_sms\_構成](oid-wwan-sms-configuration.md)の完了を、MB サービスに伝え クエリまたはセット要求、または SMS 構成が変更された場合のイベント通知。
+ミニポートドライバーは、NDIS の\_ステータス\_WWAN\_SMS\_構成通知を使用して、以前の[OID\_wwan\_configuration](oid-wwan-sms-configuration.md)\_のクエリまたは set 要求の完了、または sms 構成の変更の場合のイベント通知のいずれかを MB サービスに通知します。 
 
 ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 

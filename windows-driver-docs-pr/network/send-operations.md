@@ -58,7 +58,7 @@ ms.locfileid: "72841982"
     </tr>
     <tr class="even">
     <td align="left"><p>フレームコントロール</p></td>
-    <td align="left"><p>タスクバーの検索ボックスに</p></td>
+    <td align="left"><p>種類</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
@@ -148,7 +148,7 @@ ms.locfileid: "72841982"
     </tr>
     <tr class="odd">
     <td align="left"><p>シーケンスコントロール</p></td>
-    <td align="left"><p>シーケンス番号</p></td>
+    <td align="left"><p>Sequence Number</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>

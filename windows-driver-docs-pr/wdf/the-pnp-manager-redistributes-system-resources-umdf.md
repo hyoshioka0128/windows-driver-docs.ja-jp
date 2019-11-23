@@ -23,7 +23,7 @@ ms.locfileid: "72831615"
 
 このプロセスの間、PnP マネージャーはデバイスを停止し、動作 (D0) 状態から除外します。 その後、新しいリソースリストがデバイスに配信され、新しいリソースを使用して再起動できるようになります。
 
-リソースを再配布するときに、デバイスの UMDF ベースのドライバーのいずれかで[**IPnpCallback:: OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)コールバック関数が提供され、コールバック関数が再割り当てを拒否した場合、PnP マネージャーはデバイスのリソース割り当てを変更しません.
+リソースを再配布するときに、デバイスの UMDF ベースのドライバーのいずれかで[**IPnpCallback:: OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)コールバック関数が提供され、コールバック関数が再割り当てを拒否した場合、PnP マネージャーはデバイスのリソース割り当てを変更しません。
 
 <a href="" id="power-down-sequence"></a>**電源ダウンシーケンス**  
 各 UMDF ベースの関数とフィルタードライバーが停止しているデバイスをサポートしている場合、フレームワークは、ドライバースタックの最上位にあるドライバーから、一度に1つのドライバーを順番に実行します。

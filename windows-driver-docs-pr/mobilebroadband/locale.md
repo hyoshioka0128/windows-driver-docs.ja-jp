@@ -1,6 +1,6 @@
 ---
-title: Locale
-description: Locale
+title: ロケール
+description: ロケール
 ms.assetid: 1cf8d075-a1b3-4554-83d5-71fd5059c1c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72323629"
 ---
-# <a name="locale"></a>Locale
+# <a name="locale"></a>ロケール
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
@@ -39,9 +39,9 @@ Locale 要素は、サービスメタデータパッケージのロケールを�
 </colgroup>
 <thead>
 <tr class="header">
-<th>備わっている</th>
-<th>タスクバーの検索ボックスに</th>
-<th>必須かどうか</th>
+<th>属性</th>
+<th>種類</th>
+<th>必須</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -49,7 +49,7 @@ Locale 要素は、サービスメタデータパッケージのロケールを�
 <tr class="odd">
 <td><p><strong>既定</strong></p></td>
 <td><p>xs:boolean</p></td>
-<td><p>[はい]</p></td>
+<td><p>〇</p></td>
 <td><p>True (1) または false (0) にする必要があります。 Default 属性が true に設定されている場合、オペレーティングシステムは、このデバイスメタデータパッケージをコンピューターの現在のロケールの既定値として使用します。</p></td>
 </tr>
 </tbody>
@@ -108,11 +108,11 @@ Locale 要素は、サービスメタデータパッケージのロケールを�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
--   Locale 要素には *&lt;Language @ no__t-2*- *&lt;region @ no__t-6* (en-us など) または *&lt;LANGUAGE @ no__t* (en など) を指定できます。 *@No__t-1Language @ no__t*が設定されている場合、パッケージはすべて *&lt;language @ no__t-5*ロケールに適用されます。 たとえば、en は EN-US と EN に適用されます。
+-   Locale 要素には *&lt;言語&gt;* - *&lt;REGION&gt;* (en-us など) または *&lt;言語&gt;* (en など) を指定できます。 *&lt;言語&gt;* が設定されている場合、パッケージはすべての *&lt;言語&gt;* ロケールに適用されます。 たとえば、en は EN-US と EN に適用されます。
 
 -   コンピューターの現在のロケールの既定値としてメタデータパッケージを指定するには、 **default**属性を**true** (1) に設定します。
 
-    **注**   サービスに対して1つのメタデータパッケージのみが**既定**の属性を**true** (1) に設定する必要があります。 それ以外の場合、オペレーティングシステムはサービスのメタデータパッケージをランダムに選択します。
+    **注意**  **既定**の属性を**true** (1) に設定する必要があるのは、サービスのメタデータパッケージ1つだけです。 それ以外の場合、オペレーティングシステムはサービスのメタデータパッケージをランダムに選択します。
 
      
 
@@ -120,9 +120,9 @@ Locale 要素は、サービスメタデータパッケージのロケールを�
 
     1.  オペレーティングシステムは、システムの優先言語と地域を取得します。 通常、これは Windows セットアップ中に構成されます。
 
-    2.  サービスメタデータパッケージの Locale 要素がシステムの優先言語と地域に一致する場合、オペレーティングシステムはサービスのパッケージを選択し、その言語に対応する icon と**ServiceProvider**の値 (serviceinfo .xml) を使用します。およびリージョン。
+    2.  サービスメタデータパッケージの Locale 要素がシステムの優先言語と地域に一致する場合、オペレーティングシステムはサービスのパッケージを選択し、その言語と地域に一致する icon と**ServiceProvider**の値 (serviceinfo .xml) を使用します。
 
-    3.  サービスメタデータパッケージに、システムの優先言語と一致する Locale 要素がない場合、オペレーティングシステムは、のルートに格納されている言語に依存しないアイコンと**ServiceProvider**の値 (serviceinfo .xml) を適用します。サービスメタデータパッケージ。
+    3.  サービスメタデータパッケージに、システムの優先言語と一致する Locale 要素がない場合、オペレーティングシステムでは、サービスメタデータパッケージのルートに格納されている言語に依存しないアイコンと**ServiceProvider**の値 (serviceinfo .xml) が適用されます。
 
 Locale 要素が必要です。
 

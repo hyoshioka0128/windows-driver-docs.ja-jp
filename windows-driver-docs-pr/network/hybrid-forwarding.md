@@ -31,7 +31,7 @@ NDIS 6.40 (Windows Server 2012 R2 以降の Hyper-v 拡張可能スイッチア�
 ## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>スイッチを介した NVGRE パケットと NVGRE 以外のパケットのフロー
 
 
-受信データパスでは、拡張機能のキャプチャとフィルター処理の後、転送拡張機能の前に、パケットが NVGRE パケットの場合、拡張可能スイッチは NDIS\_スイッチに**NativeForwardingRequired**フラグを設定し[ **\_\_詳細\_NET\_\_BUFFER に転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)し、パケットの\_情報構造を一覧表示します。 この構造体は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NetBufferListInfo**メンバーに含まれています。
+受信データパスでは、拡張機能のキャプチャとフィルター処理の後、転送拡張機能の前に、パケットが NVGRE パケットの場合、拡張可能スイッチは NDIS\_スイッチの**NativeForwardingRequired**フラグを設定して、パケットの[ **\_詳細\_NET\_BUFFER\_LIST\_情報構造を転送\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)ます。 この構造体は、パケットの[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体の**NetBufferListInfo**メンバーに含まれています。
 
 [**NET\_バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)の**NetBufferListInfo**メンバーは、パケットの "帯域外 (OOB) データ" と呼ば**れることが**あります。  
 

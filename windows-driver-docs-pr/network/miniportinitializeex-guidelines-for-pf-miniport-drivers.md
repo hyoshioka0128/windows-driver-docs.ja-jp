@@ -64,7 +64,7 @@ PF ミニポートドライバーは、その[*MiniportInitializeEx*](https://do
 
     詳細については、「 [NIC スイッチの静的作成](static-creation-of-a-nic-switch.md)」を参照してください。
 
-    **注  :** ミニポートドライバーで動的な nic スイッチの作成がサポートされている場合は、スイッチを作成し、オブジェクト識別子 (oid) のメソッドの要求を処理するときに仮想化を有効に[\_NIC\_スイッチ\_作成\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)。 詳細については、「 [NIC スイッチの動的作成](dynamic-creation-of-a-nic-switch.md)」を参照してください。
+    **注  :** ミニポートドライバーで動的な nic スイッチの作成がサポートされている場合は、スイッチを作成して仮想化を有効にします。これにより、\_nic\_のオブジェクト識別子 (oid) メソッドの要求を処理するときに、 [\_スイッチ\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)されます。 詳細については、「 [NIC スイッチの動的作成](dynamic-creation-of-a-nic-switch.md)」を参照してください。
 
      
 

@@ -28,7 +28,7 @@ WPT を使用すると、パフォーマンスに関する洞察を得たり、�
 -   指定されたコールバックのどのインスタンスに長い時間がかかっているかを判断します。 次に、サンプリングされた CPU 使用率を調べて、その理由を理解します。
 -   デバイスの電源の切り替えが、D0 の電源状態との間で頻繁に行われているかどうかを確認します。
 
-## <a name="getting-started"></a>開始するには
+## <a name="getting-started"></a>概要
 
 
 WPT は、Windows アセスメント & amp; デプロイメントキット (ADK) の一部です。 ADK は、 [Windows ハードウェアツール](https://developer.microsoft.com/windows/featured/hardware/windows-10-hardware-preview-tools)のサイトからインストールできます。
@@ -139,7 +139,7 @@ I/o 要求が完了したことを確認するために、次のようにドラ�
 
 -   [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)
 -   [**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)
--   [**Wdfrequestcompletewith優先順位ブースト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)
+-   [**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)
 
 最後に、PnP/電源コールバックのコールバック時間を決定するために、次のドライバーによって提供されるコールバックルーチンと完了時に、フレームワークによってが記録されます。
 

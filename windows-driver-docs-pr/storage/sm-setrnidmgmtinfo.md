@@ -3,7 +3,7 @@ title: SM\_SetRNIDMgmtInfo 関数
 description: SM\_SetRNIDMgmtInfo WMI メソッドは、ファイバーチャネルアダプターに関連付けられている FC3 管理情報を設定します。
 ms.assetid: 235beb52-0e09-402d-ace1-0543ad3ee74f
 keywords:
-- SM_SetRNIDMgmtInfo function Storage デバイス
+- SM_SetRNIDMgmtInfo 関数記憶装置
 topic_type:
 - apiref
 api_name:

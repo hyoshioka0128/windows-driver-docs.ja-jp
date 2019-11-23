@@ -39,7 +39,7 @@ ms.locfileid: "72842548"
 
 ミニポートドライバーは、マルチキャストアドレス、パケットフィルター、タスクオフロード設定、およびウェイクアップパターンを除き、デバイスのハードウェア状態を復元する役割を担います。 これらの設定は、ミニポートドライバーまたは NDIS によって復元されます。 このミニポートドライバーは、 *Addressingreset*パラメーターでブール値を返すことによって、これらの設定を復元する担当者を決定します。
 
-アドレスポートドライバーが*Addressingreset*パラメーターで**FALSE**を返す場合、ミニポートドライバーは、マルチキャストアドレス、パケットフィルター、タスクオフロード設定、およびウェイクアップパターンを初期状態に復元します。 このミニポートドライバーが*Addressingreset*で**TRUE**を返した場合、NDIS は、コネクションレスのミニポートドライバーの[*miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数または接続指向ミニポートドライバーの[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数を呼び出して、次の構成設定:
+アドレスポートドライバーが*Addressingreset*パラメーターで**FALSE**を返す場合、ミニポートドライバーは、マルチキャストアドレス、パケットフィルター、タスクオフロード設定、およびウェイクアップパターンを初期状態に復元します。 このミニポートドライバーが*Addressingreset*で**TRUE**を返した場合、NDIS はコネクションレスミニポートドライバーの[*miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数または接続指向ミニポートドライバーの[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)関数を呼び出して、次の構成設定を設定します。
 
 -   OID\_GEN の set 要求を使用したネットワークパケットフィルターは、[現在の\_パケット\_フィルター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)ます。
 

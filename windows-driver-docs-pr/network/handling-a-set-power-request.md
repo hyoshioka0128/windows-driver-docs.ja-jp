@@ -103,7 +103,7 @@ ms.locfileid: "72842115"
 
 -   仮想ミニポートとその基になるミニポートアダプターの両方が D0 にある場合を除き、ドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)関数は失敗します。
 
--   ドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、常に\_PNP\_クエリ\_電源に成功する必要があります。これにより、ドライバーは、その後、電源要求\_設定された後続の OID\_PNP を受け取ることができます。
+-   ドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は、常に\_PNP\_クエリ\_電源に成功する必要があります。これにより、ドライバーは、その後、電源要求\_設定された後続の OID\_PNP を受け取ることができます。\_
 
 -   仮想ミニポートが D0 にない場合、またはスタンドアロンが**TRUE**の場合、ドライバーの[*Miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数は失敗します。 それ以外の場合は、基になるミニポートドライバーが D0 にない場合は、単一の要求をキューに置いてください。 基になるミニポートドライバーの状態が D0 になると、キューに登録された要求を処理する必要があります。
 

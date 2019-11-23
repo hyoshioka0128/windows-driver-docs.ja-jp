@@ -21,7 +21,7 @@ ms.locfileid: "72840598"
 # <a name="locking-swizzled-allocations"></a>スウィズル割り当てのロック
 
 
-ビデオメモリマネージャーは、スィズルされた割り当てへの直接の CPU アクセス (つまり、ディスプレイミニポートドライバーの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数が**フラグ**の**スィズル**フラグを設定する割り当て) への特別なサポートを提供します。[**DXGK\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の割り当て情報構造体) のメンバー。
+ビデオメモリマネージャーでは、スィズルされた割り当てへの直接 CPU アクセス (つまり、ディスプレイミニポートドライバーの[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数によって、 [ **\_DXGK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)の**Flags**メンバーにある**スィズル**フラグが設定される割り当て) に対して特別なサポートを提供します。
 
 ビデオメモリマネージャーが、ドライバーによってマークされていない CPU アクセス可能な割り当てをメモリセグメントから見つけした場合、ディスプレイミニポートドライバーは、常にそれらを線形形式で格納する必要があります。 そのため、このような割り当ては、アパーチャセグメントに配置されている間はスィズルできません。また、ドライバーの[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数によって常にスィズルまたはスィズル解除される必要があります。
 

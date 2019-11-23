@@ -41,7 +41,7 @@ NDIS が*FilterSendNetBufferListsComplete*を呼び出すまでは、送信要�
 
 *FilterSendNetBufferListsComplete*は、送信操作を完了するために必要なすべての後処理を実行します。
 
-NDIS が*FilterSendNetBufferListsComplete*を呼び出すと、フィルタードライバーは、 *NetBufferLists*パラメーターで指定されている、NET\_BUFFER\_リスト構造に関連付けられているすべてのリソースの所有権を取得します。 *FilterSendNetBufferListsComplete*では、これらのリソースを解放できます (たとえば、 [**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)関数と[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)関数を呼び出して)。または、後続のへ**の呼び出しで再利用できるように準備します。NdisFSendNetBufferLists**。
+NDIS が*FilterSendNetBufferListsComplete*を呼び出すと、フィルタードライバーは、 *NetBufferLists*パラメーターで指定されている、NET\_BUFFER\_リスト構造に関連付けられているすべてのリソースの所有権を取得します。 *FilterSendNetBufferListsComplete*は、これらのリソース (たとえば、 [**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)関数と[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)関数を呼び出して) を解放するか、 **NdisFSendNetBufferLists**への後続の呼び出しで再利用できるように準備することができます。
 
 NDIS は、フィルターによって指定されたネットワークデータを、 **NdisFSendNetBufferLists**に渡されたフィルタードライバーによって決まる順序で、基になるドライバーに常に送信します。 ただし、指定された順序でデータを送信した後は、基になるドライバーが任意の順序でバッファーを返すことができます。
 
@@ -83,7 +83,7 @@ NDIS は、フィルタードライバーの[*Filtersendnetbufferlists*](https:/
 
 *Filtersendnetbufferlists*関数を提供しないフィルタードライバーでも、送信要求を開始できます。 このようなドライバーが送信要求を開始する場合は、 *FilterSendNetBufferListsComplete*関数を提供する必要があり、完全なイベントをドライバースタックに渡すことはできません。
 
-フィルタードライバーは、後続のドライバーのループバック要求に対して、パススルーまたはフィルター処理を行うことができます。 ループバック要求を渡す場合、NDIS set NDIS\_によって\_フラグ\_送信される場合、 *Filtersendnetbufferlists*の*sendflags*パラメーターで\_ループバックの\_を確認すると、フィルタードライバーは NDIS\_SEND を設定し\_FLAGS\_、 **NdisFSendNetBufferLists**を呼び出すときに、 *sendflags*パラメーターの\_ループバックの\_を確認します。 NDIS は、送信データを含む受信パケットを示します。
+フィルタードライバーは、後続のドライバーのループバック要求に対して、パススルーまたはフィルター処理を行うことができます。 ループバック要求を渡す場合は、NDIS set NDIS\_によって\_フラグ\_送信されます。 *Filtersendnetbufferlists*の*sendflags*パラメーターで\_ループバックの\_を確認します。フィルタードライバーは、 **NdisFSendNetBufferLists**を呼び出すときに、 *sendflags*パラメーターの\_ループバックに対して、\_の\_を確認\_に送信\_フラグを設定します。 NDIS は、送信データを含む受信パケットを示します。
 
 一般に、NDIS が標準サービス (ループバックなど) を提供できないような方法でフィルタードライバーが動作を変更した場合、フィルタードライバーは NDIS 用にそのサービスを提供する必要があります。 たとえば、ハードウェアアドレスの要求を変更するフィルタードライバー ( [OID\_802\_3\_現在の\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-current-address)) は、新しいハードウェアアドレスに送られるバッファーのループバックを処理する必要があります。 この場合、NDIS は、フィルターによってアドレスが変更されたため、通常提供するループバックサービスを提供できません。 また、フィルタードライバーで無作為検出モードが設定されている場合 (「 [OID\_GEN\_現在の\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter))」を参照してください。これにより、その後のドライバーに受信する追加のデータを渡すことはできません。
 

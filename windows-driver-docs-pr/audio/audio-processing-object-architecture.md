@@ -21,7 +21,7 @@ Windows では、Oem およびサードパーティのオーディオハード�
 
 オーディオ処理オブジェクト (APOs) は、Windows オーディオストリームに対してソフトウェアベースのデジタル信号処理を提供します。 APO は、特定のデジタル信号処理 (DSP) 効果を提供するために記述されたアルゴリズムを含む COM ホストオブジェクトです。 この機能は、"オーディオ効果" として非公式に知られています。 APOs には、グラフィック equalizers、リバーブ、tremolo、音響エコーキャンセル (AEC)、自動ゲイン制御 (AGC) などがあります。 APOs は、COM ベースのリアルタイムのインプロセスオブジェクトです。
 
-このドキュメントに記載されている説明と用語は、ほとんどの場合、出力デバイスを指し**て    ます**。 ただし、テクノロジは対称であり、基本的には入力デバイスに対して逆に機能します。
+このドキュメントに記載されている説明と用語は、ほとんどの場合、出力デバイスを指し**て   ます**。 ただし、テクノロジは対称であり、基本的には入力デバイスに対して逆に機能します。
 
 **ソフトウェア APOs とハードウェア DSP**
 
@@ -35,8 +35,8 @@ Windows では、Oem およびサードパーティのオーディオハード�
 
 ハードウェア DSP に適用されたすべての効果は、プロキシ APO 経由でアドバタイズされる必要があります。 Microsoft では、既定のプロキシ APO (MsApoFxProxy) を提供しています。 Microsoft が提供する APO を使用するには、このプロパティセットとプロパティがサポートされている必要があります。
 
--   [KSPROPSETID \_AudioEffectsDiscovery](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
--   [KSK プロパティ \_AUDIOEFFECTSDISCOVERY \_EFFECTSLIST](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
+-   [KSPROPSETID\_Audioの効果の検出](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
+-   [KSK プロパティ\_AUDIO効果 DISCOVERY\_の効果リスト](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
 必要に応じて、独自のプロキシ APO を実装することもできます。
 
@@ -117,7 +117,7 @@ APOs のサポートに関するオーディオの要件については、「[�
 
 ![複数のアプリケーションが、ストリーム、モード、およびエンドポイントの apo 効果の複数の組み合わせにアクセスする方法を示す図](images/audio-apo-software-effects-1.png)
 
-このページの一番下にあるスクロールバーを使用して、この図のすべてを**表示   You こと**ができます。
+このページの一番下にあるスクロールバーを使用して、この図をすべて**表示  こと**ができます。
 
 **レンダリングとキャプチャのためのソフトウェアモード効果とハードウェアエンドポイント効果**
 

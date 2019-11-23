@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_NIC_RESTORE
-description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートとそのネットワークアダプターに対して復元できるランタイムデータを拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_NIC_RESTORE に発行します。接続.
+description: Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セット要求を発行して、拡張可能なスイッチポートとそのネットワークアダプターに対して復元できる実行時データについて、拡張可能なスイッチ拡張機能に通知 OID_SWITCH_NIC_RESTORE します。接続.
 ms.assetid: 252FB1D2-932F-4FB8-83D6-2690171D746D
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_NIC_RESTORE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_NIC_RESTORE
 ms.localizationpriority: medium
 ms.openlocfilehash: 224a73a8433f4dbc84b34d9ed499678e429438e2
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843949"
 # <a name="oid_switch_nic_restore"></a>OID\_スイッチ\_NIC\_復元
 
 
-Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セットの OID\_の要求を発行します。これにより、拡張可能なスイッチポートに対して復元できる実行時のデータについて、拡張可能なスイッチ拡張機能に通知\_\_ます。とそのネットワークアダプター接続があります。
+Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セットの OID\_の要求を発行します。これは、拡張可能なスイッチポートとそのネットワークアダプターの接続のために復元できるランタイムデータについて、拡張可能なスイッチ拡張機能に対して、拡張可能なスイッチ拡張機能に通知するために\_NIC\_復元です。
 
 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、ndis\_\_スイッチへのポインターが含まれています。これには、 [**NIC\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)構造が保存されます。 この構造体は、拡張可能スイッチのプロトコルエッジによって割り当てられます。
 

@@ -54,32 +54,32 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[要求の種類]</th>
+<th align="left">要求の種類</th>
 <th align="left">条件</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>レベル1</p>
-<p>filter</p>
-<p>Batch</p></td>
+<td align="left"><p>レベル 1</p>
+<p>フィルター</p>
+<p>Batch (バッチ)</p></td>
 <td align="left"><p>次のすべての条件に該当する場合にのみ許可されます。</p>
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます (同期 i/o 要求に対して oplock は付与されません)。</li>
+<li>同期アクセスのために開かれた場合は STATUS_OPLOCK_NOT_GRANTED が返されます (同期 i/o 要求に対して oplock は付与されません)。</li>
 </ul></li>
 <li>ファイルのストリームには<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager" data-raw-source="[TxF](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager)">TxF</a>トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ストリームには他に開いているものはありません (同じスレッドでも)。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 </ul>
 <p>現在の oplock 状態がである場合は、次の点に注意してください。</p>
@@ -90,24 +90,24 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Level 2</p></td>
+<td align="left"><p>レベル 2</p></td>
 <td align="left"><p>次のすべての条件に該当する場合にのみ許可されます。</p>
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>同期アクセスのために開かれた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ファイルに TxF トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ストリームに現在のバイト範囲ロックがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 <li>Windows 7 より前のオペレーティングシステムでは、バイト範囲ロックが最後に開かれてからストリームに存在していたかどうかが確認され、要求が失敗した場合はエラーが発生します。</li>
 </ul></li>
 </ul>
@@ -116,30 +116,30 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <li><p>No Oplock: 要求が許可されます。</p></li>
 <li>レベル2または読み取り: 要求が付与されます。 同じストリームに対して複数のレベル 2/読み取り oplock を同時に許可することができます。 同じハンドルに複数のレベル 2 (読み取り不可) oplock を存在させることもできます。
 <ul>
-<li>読み取り oplock が既に許可されているハンドルで読み取り oplock が要求された場合、2番目の読み取り oplock が付与される前に、STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で最初の読み取り oplock の IRP が完了します。</li>
+<li>読み取り oplock が既に許可されているハンドルで読み取り oplock が要求されると、2番目の読み取り oplock が付与される前に、最初の読み取り oplock の IRP が STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了します。</li>
 </ul></li>
 <li><p>レベル1、バッチ、フィルター、読み取りハンドル、読み取り/書き込み、読み取り/書き込みハンドル: STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>読み取り</p></td>
+<td align="left"><p>Read</p></td>
 <td align="left"><p>次のすべての条件に該当する場合にのみ許可されます。</p>
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>同期アクセスのために開かれた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ファイルに TxF トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ストリームに現在のバイト範囲ロックがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 </ul>
 <p>現在の oplock 状態がである場合は、次の点に注意してください。</p>
@@ -147,11 +147,11 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <li><p>No Oplock: 要求が許可されます。</p></li>
 <li>レベル2または読み取り: 要求が付与されます。 同じストリームに対して複数のレベル 2/読み取り oplock を同時に許可することができます。
 <ul>
-<li>また、既存の oplock に新しい要求と同じ oplock キーがある場合、その IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE を使用して完了します。</li>
+<li>また、既存の oplock に新しい要求と同じ oplock キーがある場合、その IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了します。</li>
 </ul></li>
 <li>読み取りハンドルおよび既存の oplock には、新しい要求とは異なる oplock キーがあります。要求が許可されます。 複数の読み取りと読み取りハンドルの oplock を同じストリームに共存させることができます (この表の後の注を参照してください)。
 <ul>
-<li>それ以外 (oplock キーは同じ) STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 (oplock キーは同じ) STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li><p>レベル1、バッチ、フィルター、読み取り/書き込み、読み取り/書き込みハンドル: STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
 </ul></td>
@@ -162,19 +162,19 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>同期アクセスのために開かれた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ファイルに TxF トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ストリームに現在のバイト範囲ロックがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 </ul>
 <p>現在の oplock 状態がである場合は、次の点に注意してください。</p>
@@ -182,7 +182,7 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <li><p>No Oplock: 要求が許可されます。</p></li>
 <li>Read: 要求が付与されます。
 <ul>
-<li>既存の読み取り oplock に新しい要求と同じ oplock キーがある場合、その IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE を使用して完了します。 これは、oplock が Read から Read Handle にアップグレードされることを意味します。</li>
+<li>既存の読み取り oplock に新しい要求と同じ oplock キーがある場合、その IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了します。 これは、oplock が Read から Read Handle にアップグレードされることを意味します。</li>
 <li>新しい要求と同じ oplock キーを持たない既存の読み取り oplock は、変更されずに残ります。</li>
 </ul></li>
 <li><p>レベル2、レベル1、バッチ、フィルター、読み取り/書き込み、読み取り/書き込みハンドル: STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
@@ -194,27 +194,27 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>同期アクセスのために開かれた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ファイルに TxF トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>(同じスレッドでも) ストリームに他のオープンがある場合は、同じ oplock キーを持つ必要があります。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 </ul>
 <p>現在の oplock 状態がである場合は、次の点に注意してください。</p>
 <ul>
 <li><p>No Oplock: 要求が許可されます。</p></li>
-<li>読み取りまたは読み取り/書き込み、既存の oplock には、要求と同じ oplock キーがあります。既存の oplock の IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了し、要求は許可されます。
+<li>読み取りまたは読み取り/書き込み、既存の oplock には、要求と同じ oplock キーがあります。既存の oplock の IRP が STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了し、要求が付与されます。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li><p>レベル2、レベル1、バッチ、フィルター、読み取りハンドル、読み取り/書き込みハンドル: STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
 </ul></td>
@@ -225,19 +225,19 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <ul>
 <li>要求は、ファイルの指定されたストリームを対象としています。
 <ul>
-<li>ディレクトリの場合は、STATUS_INVALID_PARAMETER が返されます。</li>
+<li>ディレクトリの場合、STATUS_INVALID_PARAMETER が返されます。</li>
 </ul></li>
 <li>ストリームは非同期アクセス用に開かれています。
 <ul>
-<li>同期アクセスのために開いた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>同期アクセスのために開かれた場合、STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>ファイルに TxF トランザクションがありません。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li>(同じスレッドでも) ストリームに他のオープン要求がある場合は、同じ oplock キーを持つ必要があります。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 </ul>
 <p>現在の oplock 状態がである場合は、次の点に注意してください。</p>
@@ -245,7 +245,7 @@ NTFS ファイルシステムでは、ファイル\_予約\_OPFILTER 作成オ�
 <li><p>No Oplock: 要求が許可されます。</p></li>
 <li>読み取り、読み取りハンドル、読み取り/書き込み、または読み取り/書き込みハンドル。既存の oplock には、要求と同じ oplock キーがあります。既存の oplock の IRP は STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で完了し、要求は許可されます。
 <ul>
-<li>Else STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
+<li>それ以外の場合 STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
 <li><p>レベル2、レベル1、バッチ、フィルター: STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
 </ul></td>

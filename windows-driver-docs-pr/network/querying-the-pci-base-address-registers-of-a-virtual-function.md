@@ -37,7 +37,7 @@ Oid **  oid**要求\_SRIOV\_BAR\_リソースは、NDIS によってのみ発�
 
  
 
-OID\_SRIOV\_調査された\_バーのクエリ要求には、\_\_情報構造を調査した[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)が含まれています。 PF ミニポートドライバーがこの OID を処理する場合、ドライバーは、 **NDIS\_\_\_\_SRIOV**の**BaseRegisterValuesOffset**メンバーによって参照される配列内の PCI バーの値を返す必要があります。 PF ミニポートドライバーは、配列内のオフセットごとに、物理ネットワークアダプターの PCI 構成領域内の同じオフセットにあるバーの ULONG 値に配列要素を設定する必要があります。
+OID\_SRIOV\_調査された\_バーのクエリ要求には、\_\_情報構造を調査した[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)が含まれています。\_ PF ミニポートドライバーがこの OID を処理する場合、ドライバーは、 **NDIS\_\_\_\_SRIOV**の**BaseRegisterValuesOffset**メンバーによって参照される配列内の PCI バーの値を返す必要があります。 PF ミニポートドライバーは、配列内のオフセットごとに、物理ネットワークアダプターの PCI 構成領域内の同じオフセットにあるバーの ULONG 値に配列要素を設定する必要があります。
 
 ドライバーによって返される各棒値は、管理オペレーティングシステムで実行されている PCI ドライバーによって実行される PCI バークエリに続くものと同じ値である必要があります。 この情報を確認するために、PF ミニポートドライバーは[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)を呼び出すことができます。
 

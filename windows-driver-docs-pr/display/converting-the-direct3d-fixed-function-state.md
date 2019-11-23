@@ -1,6 +1,6 @@
 ---
-title: Direct3D の固定関数の状態の変換
-description: Direct3D の固定関数の状態の変換
+title: Direct3D の固定機能状態の変換
+description: Direct3D の固定機能状態の変換
 ms.assetid: bc93d65e-ac16-470d-8c52-db8b1cc74456
 keywords:
 - ユーザーモードディスプレイドライバー WDK Windows Vista、Direct3D 固定関数の状態の変換
@@ -21,7 +21,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839789"
 ---
-# <a name="converting-the-direct3d-fixed-function-state"></a>Direct3D の固定関数の状態の変換
+# <a name="converting-the-direct3d-fixed-function-state"></a>Direct3D の固定機能状態の変換
 
 
 ユーザーモードの表示ドライバーがシェーダーの種類ごとにバージョン2.0 以降をサポートしている場合、Microsoft Direct3D ランタイムは、Direct3D の固定関数の状態を頂点またはピクセルシェーダーバージョン2.0 に変換します。 ただし、ランタイムではシェーダーのバージョンが変換されません。 たとえば、アプリケーションで頂点シェーダーバージョン1.1 を使用している場合、ドライバーでシェーダーバージョン2.0 以降がサポートされているかどうかに関係なく、バージョン1.1 は、ユーザーモードの表示ドライバーに変換されずに渡されます。 フレキシブル頂点フォーマット (FVF) コードは、固定関数処理で使用されます。

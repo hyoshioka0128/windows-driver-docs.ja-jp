@@ -41,7 +41,7 @@ void GetFcpTargetMapping(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>パラメーター
 ----------
 
 *HbaPortWWN\[8\]*    
@@ -67,12 +67,12 @@ HBA に関連付けられている永続的なバインドの合計数を示し�
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 この WMI メソッドは、 [Msfc\_HBAFCPInfo WMI クラス](msfc-hbafcpinfo-wmi-class.md)に属しています。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -82,15 +82,15 @@ WMI メソッドには適用されません。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ターゲットプラットフォーム</p></td>
-<td align="left">デスクトップ</td>
+<td align="left"><p>対象プラットフォーム</p></td>
+<td align="left">Desktop</td>
 </tr>
 <tr class="even">
-<td align="left"><p>ヘッダー</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi (Hbapiwmi、Hbaapi. h、または Hbaapi .h を含む)</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ライブラリ</p></td>
+<td align="left"><p>Library</p></td>
 <td align="left">Hbaapi .lib</td>
 </tr>
 </tbody>

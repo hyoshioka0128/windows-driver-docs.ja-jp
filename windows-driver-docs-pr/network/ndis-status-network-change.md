@@ -4,7 +4,7 @@ description: NDIS_STATUS_NETWORK_CHANGE の状態は、ネットワークの変�
 ms.assetid: feb6bb71-7147-43dd-b09d-cb41404164eb
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_NETWORK_CHANGE ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_NETWORK_CHANGE
 ms.localizationpriority: medium
 ms.openlocfilehash: 89616ed87053ec21377793efa7dffa6ce1a4baf5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ NDIS\_状態\_ネットワーク\_の状態の変更は、ネットワークが�
 
 NDIS ミニポートドライバーは、このステータス表示を生成して、レイヤー3のアドレスを再ネゴシエートするプロトコルドライバーを要求することができます。
 
-NDIS では、802.3 をエミュレートする古い 802.1 X ワイヤレスミニポートドライバーの状態を\_ネットワーク\_NDIS\_状態が生成されます。 これらのミニポートドライバーは、メディアの種類として**NdisMedium802\_3** 、物理メディアの種類として**NdisPhysicalMediumWirelessLan**を報告します。 このようなミニポートドライバーによって、 [**ndis\_状態\_メディア\_接続**](ndis-status-media-connect.md)状態が表示され、関連するミニポートアダプターが接続状態になった場合、NDIS は NDIS\_ステータス\_ネットワーク\_変更を生成します。ミニポートアダプターの状態を示します。
+NDIS では、802.3 をエミュレートする古い 802.1 X ワイヤレスミニポートドライバーの状態を\_ネットワーク\_NDIS\_状態が生成されます。 これらのミニポートドライバーは、メディアの種類として**NdisMedium802\_3** 、物理メディアの種類として**NdisPhysicalMediumWirelessLan**を報告します。 このようなミニポートドライバーによって、 [ **\_メディア\_接続**](ndis-status-media-connect.md)状態が表示され、関連するミニポートアダプターが接続状態になっている場合は、ndis によって NDIS\_ステータス\_ネットワーク\_、ミニポートアダプターの状態が変更されたことを示す\_状態が生成されます。
 
 NDIS 6.0 以降のミニポートドライバーでは、ネットワークデータを処理する準備ができた後にのみ、NDIS\_の状態\_ネットワーク\_変更する必要があります。 たとえば、ネイティブ802.11 では、認証が正常に完了し、全レイヤーの2つの接続が確立した後に、この状態が生成されます。
 

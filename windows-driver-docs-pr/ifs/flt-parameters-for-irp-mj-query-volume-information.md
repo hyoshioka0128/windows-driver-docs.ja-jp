@@ -3,9 +3,9 @@ title: IRP_MJ_QUERY_VOLUME_INFORMATION 共用体の FLT_PARAMETERS
 description: FLT\_IO\_パラメーターの MajorFunction フィールドが操作の\_ブロック構造体である場合に使用される共用体コンポーネントは、IRP\_MJ\_クエリ\_ボリューム\_情報です。
 ms.assetid: fc790885-a378-40dc-829d-94e75a7c6f13
 keywords:
-- IRP_MJ_QUERY_VOLUME_INFORMATION union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
-- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
-- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
+- IRP_MJ_QUERY_VOLUME_INFORMATION ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- PFLT_PARAMETERS 共用体ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -85,22 +85,22 @@ typedef union _FLT_PARAMETERS {
 <tr class="even">
 <td align="left"><a href="" id="filefsdriverpathinformation"></a>
 <strong>FileFsDriverPathInformation</strong></td>
-<td align="left"><p>指定されたドライバーがボリュームの i/o パスにあるかどうかに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_DRIVER_PATH_INFORMATION</strong></a>構造体を返します。 IRP_MJ_QUERY_VOLUME_INFORMATION 要求の発信者は、IRP をファイルシステムボリュームのデバイススタックに送信する前に、ドライバーの名前を FILE_FS_DRIVER_PATH_INFORMATION 構造体に格納する必要があります。</p></td>
+<td align="left"><p>指定されたドライバーがボリュームの i/o パスにあるかどうかに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_DRIVER_PATH_INFORMATION</strong></a>構造体を返します。 IRP_MJ_QUERY_VOLUME_INFORMATION 要求の発信者は、IRP をファイルシステムボリュームのデバイススタックに送信する前に、そのドライバーの名前を FILE_FS_DRIVER_PATH_INFORMATION 構造体に格納する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="" id="filefsfullsizeinformation"></a>
 <strong>FileFsFullSizeInformation</strong></td>
-<td align="left"><p>ボリュームで使用可能な領域の合計に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)"><strong>FILE_FS_FULL_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>ボリューム上で使用可能な領域の合計量に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)"><strong>FILE_FS_FULL_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><a href="" id="filefsobjectidinformation"></a>
 <strong>FileFsObjectIdInformation</strong></td>
-<td align="left"><p>ボリュームのファイルシステム固有のオブジェクト ID 情報が格納されている<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>構造体を返します。 これは、オペレーティングシステムによって割り当てられる (グローバル一意識別子 (GUID) ベースの) 一意のボリューム名と同じではないことに注意してください。</p></td>
+<td align="left"><p>ボリュームのファイルシステム固有のオブジェクト ID 情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>構造体を返します。 これは、オペレーティングシステムによって割り当てられる (グローバル一意識別子 (GUID) ベースの) 一意のボリューム名と同じではないことに注意してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="" id="filefssizeinformation"></a>
 <strong>FileFsSizeInformation</strong></td>
-<td align="left"><p>IRP_MJ_QUERY_VOLUME_INFORMATION 要求を発信したスレッドに関連付けられているユーザーが使用できるボリューム上の領域の量に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)"><strong>FILE_FS_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>IRP_MJ_QUERY_VOLUME_INFORMATION 要求を発信したスレッドに関連付けられているユーザーが使用できるボリューム上の領域の量に関する情報を格納する<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)"><strong>FILE_FS_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><a href="" id="filefsvolumeinformation"></a>
@@ -110,7 +110,7 @@ typedef union _FLT_PARAMETERS {
 <tr class="odd">
 <td align="left"><a href="" id="filefssectorsizeinformation"></a>
 <strong>FileFsSectorSizeInformation</strong></td>
-<td align="left"><p>ボリュームの物理的および論理的なセクターのサイズに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>ボリュームの物理的および論理的なセクターサイズに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -123,7 +123,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>注釈
 -------
 
-IRP\_MJ\_クエリ\_ボリューム\_情報操作の[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータで表される irp ベースのクエリボリューム情報操作のパラメーターが含まれています ([**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
+IRP\_MJ\_クエリ\_ボリューム\_情報操作の[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT\_callback\_data**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造によって表される、irp ベースのクエリボリューム情報操作のパラメーターが含まれています。 これは、FLT\_IO\_パラメーター\_ブロック構造体に含まれています。
 
 IRP\_MJ\_クエリ\_ボリューム\_情報は、IRP ベースの操作です。
 

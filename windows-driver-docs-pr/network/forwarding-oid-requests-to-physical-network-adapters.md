@@ -73,7 +73,7 @@ ms.locfileid: "72842126"
 
 1.  転送拡張機能が OID 要求の発信元である場合は、要求に関連する情報を使用して、拡張機能によって割り当てられた[**NDIS\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体を初期化する必要があります。
 
-    拡張機能が OID 要求を転送する場合、 [*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数の*OidRequest*パラメーターによって参照される既存の[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を変更することはできません。 代わりに、拡張機能は[**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)を呼び出して新しい**ndis\_oid\_要求**構造にメモリを割り当て、既存の**ndis\_oid\_要求**からすべての情報をコピーする必要があります。データ.
+    拡張機能が OID 要求を転送する場合、 [*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)関数の*OidRequest*パラメーターによって参照される既存の[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を変更することはできません。 代わりに、拡張機能は[**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)を呼び出して新しい**ndis\_oid\_要求**構造にメモリを割り当て、既存の**ndis\_oid\_要求**構造からすべての情報をコピーする必要があります。
 
 2.  拡張機能によって割り当てられた[**NDIS\_スイッチ\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造体のメンバーを次の値に設定します。
 
@@ -109,7 +109,7 @@ ms.locfileid: "72842126"
 
      
 
-5.  転送拡張機能が Hyper-v 子パーティションに対してハードウェアオフロード OID 要求を発信している場合は、参照用のファイルを呼び出して、関連付けられているソースネットワークアダプター接続のインデックスの参照[*カウンターをインクリメント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)します。partition. これにより、拡張可能なスイッチインターフェイスでは、参照カウンターが0以外の場合に、物理ネットワークアダプターの接続が削除されません。
+5.  転送拡張機能が Hyper-v 子パーティションのハードウェアオフロード OID 要求の発信元である場合は、参照[*を参照すること*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)もできます。この場合、パーティションに関連付けられているソースネットワークアダプター接続のインデックスの参照カウンターが増加します。 これにより、拡張可能なスイッチインターフェイスでは、参照カウンターが0以外の場合に、物理ネットワークアダプターの接続が削除されません。
 
     拡張機能では[ *、* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) *SwitchPortId*パラメーターが、 **SourcePortId**メンバーに対して指定された値に設定されます。 また、この拡張機能は、 *SwitchNicIndex*パラメーターを**Sourcenicindex**メンバーに指定された値に設定します。
 

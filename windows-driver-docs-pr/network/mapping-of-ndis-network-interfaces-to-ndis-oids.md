@@ -171,27 +171,27 @@ Ndis インターフェイスオブジェクトの要求に応答するために
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-permanent-address" data-raw-source="[OID_802_3_PERMANENT_ADDRESS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-permanent-address)">OID_802_3_PERMANENT_ADDRESS</a></p></td>
 <td align="left"><p>OID_802_3_PERMANENT_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-interface-info" data-raw-source="[OID_GEN_INTERFACE_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-interface-info)">OID_GEN_INTERFACE_INFO</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status-ex" data-raw-source="[OID_GEN_MEDIA_CONNECT_STATUS_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status-ex)">OID_GEN_MEDIA_CONNECT_STATUS_EX</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-duplex-state" data-raw-source="[OID_GEN_MEDIA_DUPLEX_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-duplex-state)">OID_GEN_MEDIA_DUPLEX_STATE</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics" data-raw-source="[OID_GEN_STATISTICS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)">OID_GEN_STATISTICS</a></p></td>
 <td align="left"></td>
 </tr>

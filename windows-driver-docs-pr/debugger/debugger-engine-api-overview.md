@@ -1,6 +1,6 @@
 ---
-title: デバッガーエンジン API の概要
-description: デバッガーエンジン API の概要
+title: デバッガー エンジン API の概要
+description: デバッガー エンジン API の概要
 ms.assetid: ea8beca6-93b7-4537-af89-78d599b8b982
 keywords:
 - デバッガーエンジン API, 概要
@@ -13,13 +13,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837775"
 ---
-# <a name="debugger-engine-api-overview"></a>デバッガーエンジン API の概要
+# <a name="debugger-engine-api-overview"></a>デバッガー エンジン API の概要
 
 
 ## <span id="ddk_debugger_engine_overview_dbx"></span><span id="DDK_DEBUGGER_ENGINE_OVERVIEW_DBX"></span>
 
 
-このセクションの内容は次のとおりです。
+このセクションの内容:
 
 [エンジンとの対話](interacting-with-the-engine.md)
 

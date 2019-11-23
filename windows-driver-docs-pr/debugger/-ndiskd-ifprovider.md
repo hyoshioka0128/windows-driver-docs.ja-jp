@@ -94,7 +94,7 @@ HANDLERS
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [インターフェイスプロバイダーとして登録する](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)
 

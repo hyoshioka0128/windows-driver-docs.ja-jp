@@ -14,7 +14,7 @@ ms.locfileid: "72831895"
 # <a name="ndkpi-listeners-connectors-and-endpoints"></a>NDKPI リスナー、コネクタ、およびエンドポイント
 
 
-NDK コンシューマーは、 *Ndkconnect* ([*ndk\_fn\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) または*Ndkconnectwithsharedendpoint* ([*ndk\_FN\_CONNECT\_と\_共有\_を呼び出すことにより、ndk コネクタに接続します。エンドポイント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 関数。
+NDK コンシューマーは、 *Ndkconnect* ([*ndk\_fn\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) または*Ndkconnectwithsharedendpoint* ([*ndk\_FN\_CONNECT\_と\_SHARED\_ENDPOINT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 関数を呼び出すことによって、ndk コネクタに接続します。
 
 接続された状態の各コネクタには、確立された NDK 接続のローカルエンドを表す基になるエンドポイントもあります。
 

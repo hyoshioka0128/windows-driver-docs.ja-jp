@@ -3,7 +3,7 @@ title: OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES
 description: 後続のドライバーは、ネットワークアダプターの受信フィルター処理ハードウェア機能を取得するために、OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES の OID クエリ要求を発行します。
 ms.assetid: 2b80944e-5309-4cb0-a69a-331f8fd3f7a4
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES
 ms.localizationpriority: medium
 ms.openlocfilehash: 596f198e3252a7a365d07a436dabd1cc1ce893c5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -17,7 +17,7 @@ ms.locfileid: "72844007"
 
 これまでのドライバーは oid クエリ要求 oid を発行\_、ハードウェア\_機能を受信\_フィルター\_処理して、ネットワークアダプターの受信フィルター処理ハードウェア機能を取得します。
 
-OID クエリ要求から正常に返された後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、[**ndis\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)へのポインターが含まれています。データ.
+OID クエリ要求から正常に戻った後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、[**ndis\_RECEIVE\_FILTER\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体へのポインターが含まれています。
 
 <a name="remarks"></a>注釈
 -------
@@ -32,7 +32,7 @@ NDIS 受信フィルターは、次の NDIS インターフェイスで使用さ
 
 [**NDIS\_受信\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造には、ネットワークアダプターの受信フィルターハードウェア機能に関する情報が含まれています。 これらの機能には、現在 INF ファイルの設定によって無効になっているハードウェア機能や、 **[詳細設定**] プロパティページがあります。
 
-**注**  ネットワークアダプターのすべての受信フィルター処理ハードウェア機能が返されるのは、機能がであるかどうかに関係なく、\_フィルター\_ハードウェア\_機能を受け取る oid\_の oid クエリ要求によって返されます。有効または無効にします。
+**注**  ネットワークアダプターのすべての受信フィルター処理ハードウェア機能は、機能が有効になっているか無効になっているかに関係なく、\_フィルター\_ハードウェア\_機能\_受信する oid クエリ要求によって返されます。
 
  
 
@@ -40,9 +40,9 @@ NDIS 6.20 以降、ミニポートドライバーは、 [*MiniportInitializeEx*]
 
 1.  このドライバーは、受信フィルター処理ハードウェア機能を使用して、 [ **\_フィルター\_機能の構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)を初期化します。
 
-2.  このドライバーは、 [**ndis\_ミニポート\_アダプター\_ハードウェア\_サポートし\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造を提供し、 **Currentreceivefiltercapabilities**メンバーを[**ndis\_RECEIVE へのポインターに設定します。\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造です。
+2.  このドライバーは、 [**ndis\_ミニポート\_アダプター\_ハードウェア\_サポートし\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)の構造体を初期化し、 **Currentreceivefiltercapabilities**メンバーを[**ndis\_RECEIVE\_FILTER\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)構造体へのポインターに設定します。
 
-3.  ミニポートドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、 *miniportattributes*パラメーターを NDIS\_ミニポート\_アダプターへのポインターに設定します[ **\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)データ.
+3.  ミニポートドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数を呼び出し、 *miniportattributes*パラメーターを[**NDIS\_ミニポート\_アダプター\_ハードウェア\_サポート\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造へのポインターに設定します。
 
 ### <a name="return-status-codes"></a>ステータスコードを返す
 

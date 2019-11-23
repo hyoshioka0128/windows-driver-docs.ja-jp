@@ -21,7 +21,7 @@ WIA では、システムに用意されているダイアログボックスに�
 
 **IwiNOTIMPL iextension**インターフェイスを実装し、システム UI を置き換えたくない場合は、 [**iwi iextension::D evicedialog**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))メソッドに対して E\_を返す必要があります。 その他の戻り値は、デバイスの [デバイス] ダイアログボックスを非表示にします。
 
-[デバイス] ダイアログボックスは、インプロセス COM サーバーにモーダルダイアログとして実装し、 *Pdevicedialogdata* -&gt;*hwndParent* **を、親のプロパティ関数に**渡す必要があります (「Windows SDK」を参照してください)。ドキュメント)。 [デバイス] ダイアログボックスで、成功した場合は [OK]、S\_ユーザーがダイアログボックスをキャンセルした場合は [FALSE]、他のエラーの場合は [COM エラー HRESULT] が\_返されます。
+[デバイス] ダイアログボックスは、インプロセス COM サーバーのモーダルダイアログとして実装する必要があります。 *Pdevicedialogdata* -&gt;*hwndParent*を (Windows SDK のドキュメントで説明さ**れている**ように)、親のプロパティ関数に渡します。 [デバイス] ダイアログボックスで、成功した場合は [OK]、S\_ユーザーがダイアログボックスをキャンセルした場合は [FALSE]、他のエラーの場合は [COM エラー HRESULT] が\_返されます。
 
 [**Devicedialogdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiadevd/ns-wiadevd-tagdevicedialogdata)構造体には、カスタムデバイスダイアログの実装に必要なすべてのデータが含まれています。
 

@@ -1,9 +1,9 @@
 ---
-title: usb3kd エンドポイント (_d)
-description: Usb3kd コマンドを実行すると、usb 3.0 ツリーの USB デバイスのエンドポイントに関する情報が表示されます。 表示は、UcxVersion. sys によって保持されているデータに基づいています。
+title: ucx_endpoint usb3kd
+description: Usb3kd コマンドは、usb 3.0 ツリーの USB デバイスのエンドポイントに関する情報を表示し ucx_endpoint ます。 表示は、UcxVersion. sys によって保持されているデータに基づいています。
 ms.assetid: 37667665-ACA1-48D3-B79E-5B9BBD689034
 keywords:
-- usb3kd Windows デバッグ (_r)
+- usb3kd Windows デバッグの ucx_endpoint
 ms.date: 05/23/2017
 topic_type:
 - apiref

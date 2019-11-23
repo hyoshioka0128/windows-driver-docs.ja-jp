@@ -39,7 +39,7 @@ ms.locfileid: "72843479"
 
 5.  ミニポートドライバーが正常に初期化された場合、NDIS は**NdisDevicePnPEventSurpriseRemoved**のイベントコードを使用して[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)関数を呼び出します。 ミニポートドライバーは、デバイスが物理的に取り外されていることを確認する必要があります。 ミニポートドライバーが NDIS WDM ドライバーの場合は、基になるバスドライバーに送信された保留中の Irp をキャンセルする必要があります。 ミニポートドライバーが正常に初期化されなかった場合は、処理が続行されます。
 
-6.  NDIS は、IRP\_\_、突然\_削除要求をスタック内の次に小さいデバイスオブジェクトに送信します。 スタック内の次の下位のデバイスオブジェクトから、返された IRP\_\_が完了したことを予期しない\_削除要求を受け取った後、NDIS は予期しない\_の削除要求を実行して IRP\_を完了します。
+6.  NDIS は、IRP\_\_、突然\_削除要求をスタック内の次に小さいデバイスオブジェクトに送信します。 スタック内の次の下位のデバイスオブジェクトから、返された IRP\_\_が完了したことを予期しない\_削除要求を受け取った後、NDIS は予期しない\_の削除要求を実行して IRP\_を完了します。\_
 
 7.  PnP マネージャーは、IRP\_を発行し、 [ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)の要求を削除して、NIC のソフトウェア表現 (デバイスオブジェクトなど) を削除する\_します。
 

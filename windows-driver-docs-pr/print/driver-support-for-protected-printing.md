@@ -77,7 +77,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Jobpass Codeminlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最小文字数。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。</p></td>
-<td>ルート</td>
+<td>Root</td>
 <td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
 <td></em>Jobpass Codeminlength: 4</td>
 </tr>
@@ -85,7 +85,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Jobpass Codemaxlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最大長。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。 <strong></em>Jobpass Codeminlength</strong>値以上である必要があります。</p></td>
-<td>ルート</td>
+<td>Root</td>
 <td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
 <td>\* Jobpass Codemaxlength: 9</td>
 </tr>
@@ -118,7 +118,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Msjobpass Codeminlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最小文字数。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。</p></td>
-<td>ルート</td>
+<td>Root</td>
 <td><p>"int" (QuotedValue)</p>
 <p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
 <td></em>Msjobpass Codeminlength: "4"</td>
@@ -127,7 +127,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Msjobpass Codemaxlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最大長。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。 <strong></em>Msjobpass Codeminlength</strong>値以上である必要があります。</p></td>
-<td>ルート</td>
+<td>Root</td>
 <td><p>"int" (QuotedValue)</p>
 <p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
 <td>\* Msjobpass Codemaxlength: "9"</td>

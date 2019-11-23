@@ -89,7 +89,7 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 
 NdisPacketTcpChecksum が**TRUE**の場合、TCP 送信操作はオフロードされます。 ChecksumInfo が**TRUE**の場合は、UDP 送信操作はオフロードされますが、
 
-Windows Vista Service Pack 1 (SP1) および Windows Server 2008 では、Inメタ値-&gt;headerIncludeHeaderLength が0より大きい場合、発信パケットは IP ヘッダーを含む未加工の送信再挿入です。 Windows Vista SP1 および Windows Server 2008 の IP ヘッダーを含む RAW send reinjections を実行するには、複製されたパケットを Inメタ値-&gt;headerIncludeHeaderLength の量で&gt;し、Inメタ値をコピーする必要があります。新しく拡張された領域に対する headerIncludeHeader。 次に、FwpsInjectTransportSendAsync0 をパケットの net buffer リストと共に使用し、FWPS\_TRANSPORT\_SEND\_PARAMS0 パラメーターを**NULL**に設定したままにします。 Net buffer リストの retreat 操作の詳細については、「 [Retreat 操作と](retreat-and-advance-operations.md)詳細な操作」を参照してください。
+Windows Vista Service Pack 1 (SP1) および Windows Server 2008 では、Inメタ値-&gt;headerIncludeHeaderLength が0より大きい場合、発信パケットは IP ヘッダーを含む未加工の送信再挿入です。 Windows Vista SP1 および Windows Server 2008 の IP ヘッダーを含む RAW send reinjections を実行するには、複製されたパケットを Inメタ値-&gt;headerIncludeHeaderLength の値で終了し、Inメタ値-&gt;headerIncludeHeader を新しく拡張された領域にコピーする必要があります。 次に、FwpsInjectTransportSendAsync0 をパケットの net buffer リストと共に使用し、FWPS\_TRANSPORT\_SEND\_PARAMS0 パラメーターを**NULL**に設定したままにします。 Net buffer リストの retreat 操作の詳細については、「 [Retreat 操作と](retreat-and-advance-operations.md)詳細な操作」を参照してください。
 
 **注**  未加工の送信操作では、net buffer リストには1つの net バッファーのみを含める必要があります。 Net バッファーの一覧に複数の net バッファーが含まれている場合は、net buffer リストを一連の net buffer リストに変換し、各シリーズの各に1つの net バッファーを含める必要があります。 Net buffer リスト管理の詳細については、「 [net\_のバッファーアーキテクチャ](net-buffer-architecture.md)」を参照してください。
 

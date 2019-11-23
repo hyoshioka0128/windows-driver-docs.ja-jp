@@ -175,7 +175,7 @@ Check SEG  に**注意**して**ください。TSval** &gt;= は、TCP シー�
 
 -   重複する ACK カウントは、 **NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\]に保存する必要があります。**Dupackcount**メンバー。 上の最初のフローチャートでは、この値がどのように計算されるかを説明します。
 
--   TCP timestamp オプションを含むセグメントが結合されている場合、 **NetBufferListInfo**\[**rsctcpタイムスタンプデルタ**\] には、最も古いものから最後の TCP タイムスタンプ値までの絶対差分を格納する必要があります。SCU を構成する結合されたセグメント。 SCU 自体には、結合されたセグメントのシーケンスに見られる最新の TCP タイムスタンプ値を含める必要があります。
+-   TCP timestamp オプションを含むセグメントが結合されている場合、 **NetBufferListInfo**\[**Rsctcpタイムスタンプデルタ**\] には、scu で構成される連結されたセグメントのシーケンスで見られる最も古いと最新の TCP タイムスタンプ値の間の絶対差分を格納する必要があります。 SCU 自体には、結合されたセグメントのシーケンスに見られる最新の TCP タイムスタンプ値を含める必要があります。
 
 **CoalescedSegCount**メンバーが0より大きい場合にのみ、 **Dupackcount**メンバーと**rsctcptimestampdelta**メンバーが解釈されます。 **CoalescedSegCount**がゼロの場合、セグメントは非対応の非 RSC セグメントとして扱われます。
 

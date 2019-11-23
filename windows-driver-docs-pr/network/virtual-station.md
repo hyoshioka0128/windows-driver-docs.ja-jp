@@ -40,7 +40,7 @@ IHV 拡張 DLL は、 **Dot11ExtRequestVirtualStation**関数を呼び出した�
 -   ExtAP に使用されているポートが常に機能を維持できるかどうかをオペレーティングシステムに通知します。 特に、ドライバーは、適切な状態コード ( [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示-&gt;**StatusCode**) と理由コードを使用して、extap ポートで次の状態の表示を発行する必要があります。
 
     <a href="" id="ndis-status-dot11-stop-ap"></a>[NDIS\_STATUS\_DOT11\_\_AP の停止](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-stop-ap)  
-    AP 機能を ExtAP ポートで維持できないことを示します。 この場合は、 [**dot11\_stop\_ap\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/windot11/ns-windot11-_dot11_stop_ap_parameters)-&gt; **ULREASON**を DOT11\_停止\_AP\_\_をアクティブにします。 次の状況で、この状態の表示を発行します。
+    AP 機能を ExtAP ポートで維持できないことを示します。 この場合は、 [**dot11\_stop\_ap\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/windot11/ns-windot11-_dot11_stop_ap_parameters)-&gt; **ULREASON**を DOT11\_停止\_AP\_\_をアクティブにします。\_ 次の状況で、この状態の表示を発行します。
 
     -   仮想ステーションポートが、同時仮想ステーションと ExtAP 接続をブロックする共有リソースの使用を開始する前
     -   ExtAP ポートが ExtAP INIT 状態に遷移し、仮想ステーションのリソース使用によって ExtAP ポートが正常に初期化されない場合。

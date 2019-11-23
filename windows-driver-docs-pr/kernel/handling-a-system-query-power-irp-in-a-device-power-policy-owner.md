@@ -20,7 +20,7 @@ ms.locfileid: "72838679"
 
 
 
-デバイスの電源ポリシー所有者がシステム電源状態の[**irp\_\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)を受信すると、クエリを渡し、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンで irp\_完了した\_クエリを送信することによって応答し **@no__t_** デバイスの電源状態の場合は10_ パワー。 スタック内のすべてのドライバーがデバイスクエリを完了すると、デバイスの電源ポリシー所有者はシステムクエリを完了します。
+デバイスの電源ポリシー所有者がシステム電源状態の[**irp\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)を受信すると、クエリを渡し、 [*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンで、デバイスの電源状態に対して、\_ **\_クエリ**を実行すると、irp\_正常に送信されます。\_ スタック内のすべてのドライバーがデバイスクエリを完了すると、デバイスの電源ポリシー所有者はシステムクエリを完了します。
 
 デバイスの電源ポリシー所有者は、 [DispatchPower ルーチン](dispatchpower-routines.md)で次の手順を実行して、システムクエリに応答する必要があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "72838679"
 
 4.  ドライバーがコールバックルーチンでシステムクエリの IRP の処理を完了できるようにするために必要な\_処理\_の状態\_返します。
 
-IRP が完了し、IRP 処理中に設定されたすべての*Iocompletion*ルーチンが実行されると、電源マネージャーは、i/o マネージャーを介して、電源ポリシーマネージャーのコールバックルーチン ( **PoRequestPowerIrp**)。 さらに、コールバックルーチンは、次の操作を行う必要があります。
+IRP が完了し、IRP 処理中に設定されたすべての*Iocompletion*ルーチンが実行されると、電源マネージャーは、i/o マネージャーを介して、電源ポリシーマネージャーのコールバックルーチン ( **PoRequestPowerIrp**への入力候補*関数*パラメーター) を呼び出します。 さらに、コールバックルーチンは、次の操作を行う必要があります。
 
 1.  [**Postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出して、次の電源 IRP を開始します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ)。
 

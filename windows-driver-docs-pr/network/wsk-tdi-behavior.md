@@ -4,7 +4,7 @@ description: WSK_TDI_BEHAVIOR
 ms.assetid: 84e4c8c3-2c31-4db5-bb25-309c6bb176ff
 ms.date: 07/18/2017
 keywords:
-- WSK_TDI_BEHAVIOR ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの WSK_TDI_BEHAVIOR
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c18ae7179a59379c3e1e04a20682c392a67f438
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -56,15 +56,15 @@ WSK サブシステムがネットワーク i/o を TDI トランスポートに
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>Irp</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 </tbody>
 </table>

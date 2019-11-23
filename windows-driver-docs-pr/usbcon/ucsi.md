@@ -13,7 +13,7 @@ ms.locfileid: "72007630"
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB Type-C Connector System Software Interface (UCSI) ドライバー
 
 
-**概要**
+**要約**
 
 -   組み込みコントローラーを備えた USB タイプ C システム用の組み込みの UCSI ドライバー。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72007630"
 
 -   [UCSI の Intel BIOS 実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)
 -   [USB タイプ-C コネクタシステムソフトウェアインターフェイスの仕様](https://go.microsoft.com/fwlink/p/?LinkId=703713)
--   @no__t 0Hardware の設計:埋め込みコントローラー @ no__t を持つシステムの USB タイプ-C コンポーネント
+-   [ハードウェア設計: 内蔵コントローラーを備えたシステム用の USB タイプ C コンポーネント](hardware-design-of-a-usb-type-c-system.md#emb)
 
 
 Microsoft は、ACPI トランスポート用の USB タイプ C コネクタシステムソフトウェアインターフェイス (UCSI) 仕様準拠のドライバーを提供しています。 設計に ACPI トランスポートが組み込まれたコントローラーが含まれている場合は、システムの BIOS/EC に UCSI を実装し、インボックス UCSI ドライバー (UcmUcsiCx および UcmUcsiAcpiClient) を読み込みます。
@@ -57,7 +57,7 @@ UCSI 準拠のハードウェアが ACPI 以外のトランスポートを使用
 
     USB ホスト側ドライバーは、EHCI または XHCI 準拠の USB ホストコントローラーで動作するドライバーのセットです。 ドライバーは、役割スイッチドライバーがホストの役割を列挙した場合に読み込まれます。 ホストコントローラーが仕様に準拠していない場合は、 [USB ホストコントローラー拡張 (UCX) プログラミングインターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))を使用してカスタムドライバーを作成できます。 詳細については、「 [USB ホストコントローラー用の Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)」を参照してください。
 
-    **注**   Windows 10 Mobile では、[すべての USB デバイスクラス](supported-usb-classes.md)がサポートされているわけではありません。
+    **注**  Windows 10 Mobile では、[一部の USB デバイスクラス](supported-usb-classes.md)がサポートされていないことに注意してください。
 
      
 
@@ -74,13 +74,13 @@ UCSI 準拠のハードウェアが ACPI 以外のトランスポートを使用
 
 "Required" とマークされているコマンドに加えて、Windows には次のコマンドが必要です。
 
--   GET @ NO__T-0ALTERNATE @ NO__T モード
--   GET @ NO__T-0CAM @ NO__T-1 SUPPORTED
--   GET @ NO__T-0PDOS
--   SET @ NO__T-0NOTIFICATION @ NO__T-1 ENABLE:システムまたはコントローラーは、SET @ no__t-0NOTIFICATION @ no__t-1ENABLE で次の通知をサポートする必要があります。
+-   代替\_モードの取得\_
+-   サポートされている\_CAM\_を取得する
+-   \_PDOS を取得する
+-   設定\_NOTIFICATION\_有効にする: システムまたはコントローラーは、SET\_NOTIFICATION で次の通知をサポートする必要があります\_有効にします。
     -   サポートされているプロバイダーの機能の変更
     -   ネゴシエートされる電源レベルの変更
--   GET @ NO__T-0CONNECTOR @ NO__T-1STATUS:システムまたはコントローラーは、GET @ no__t-0CONNECTOR @ no__t-1STATUS でこれらのコネクタの状態の変更をサポートする必要があります。
+-   \_コネクタの\_の状態を取得する: システムまたはコントローラーは、GET\_CONNECTOR\_の状態で、これらのコネクタの状態の変更をサポートする必要があります。
     -   サポートされているプロバイダーの機能の変更
     -   ネゴシエートされる電源レベルの変更
 
@@ -95,7 +95,7 @@ BIOS で UCSI を実装するために必要なタスクの詳細については
 
 1.  USB タイプ-C ハードウェア/ファームウェアはデバイスアタッチイベントを検出し、最初に Windows 10 システムの DRP システムが UFP ロールになります。
     1.  ファームウェアは、コネクタが変更されたことを示す通知を送信します。
-    2.  UCSI ドライバーは、GET @ no__t-0CONNECTOR @ no__t-1STATUS 要求を送信します。
+    2.  UCSI ドライバーは、GET\_CONNECTOR\_STATUS 要求を送信します。
     3.  ファームウェアによって、Connect Status = 1 および Connector Partner Type = DFP という応答が返されます。 
 2.  USB 関数スタック内のドライバーは、列挙体に応答します。
 3.  USB コネクタマネージャークラス拡張は、USB 関数スタックが読み込まれたことを認識しているため、システムの状態が正しくありません。 このメソッドは、設定された USB 操作の役割を送信し、電源の方向の役割要求をファームウェアに設定するように UCSI ドライバーに指示します。
@@ -106,7 +106,7 @@ BIOS で UCSI を実装するために必要なタスクの詳細については
 1.  USB タイプ-C ハードウェア/ファームウェアは、チャージャーが接続されていることを検出し、既定の電源コントラクトをネゴシエートします。 また、チャージャーがシステムに十分な電力を供給していないことを観察します。
 2.  USB タイプ-C ハードウェア/ファームウェアは、低速充電ビットを設定します。
     1.  ファームウェアは、コネクタが変更されたことを示す通知を送信します。
-    2.  UCSI ドライバーは、GET @ no__t-0CONNECTOR @ no__t-1STATUS 要求を送信します。
+    2.  UCSI ドライバーは、GET\_CONNECTOR\_STATUS 要求を送信します。
     3.  ファームウェアは、Connect Status = 1、Connector Partner Type = DFP、およびバッテリの充電状態 = 低速/トリクルで応答します。
     
 3.  USB コネクタマネージャークラス拡張は、充電の不一致のトラブルシューティングメッセージを表示するために、UI に通知を送信します。
@@ -126,7 +126,7 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
 4.  レジストリ エディター (regedit.exe) を開きます。
 5.  このキーの下にあるデバイスインスタンスのパスに移動します。
 
-    HKEY @ no__t-0LOCAL @ no__t-1MACHINE @ no__t-2System @ no__t-3CurrentControlSet @ no__t-4Enum @ no__t-5 @ no__t-6device--path @ no__t-7 @ no__t-8Device Parameters
+    HKEY\_ローカル\_マシン\\System\\CurrentControlSet\\列挙型\\&lt;デバイスパラメーター&gt;デバイスパラメーター\\
 
 6.  **Testinterfaceenabled**という名前の DWORD 値を作成し、値を0x1 に設定します。
 7.  デバイスマネージャーのデバイスノードで **[無効]** オプションを選択し、 **[有効に]** する を選択して、デバイスを再起動します。 または、単に PC を再起動することもできます。
@@ -153,14 +153,14 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
 </tr>
 <tr class="even">
 <td>コネクタのリセット</td>
-<td><p>ソフトリセット:<strong>UcsiControl Send 0 10003</strong></p>
-<p>ハードリセット:<strong>UcsiControl Send 0 810003</strong></p></td>
+<td><p>ソフトリセット: <strong>UcsiControl Send 0 10003</strong></p>
+<p>ハードリセット: <strong>UcsiControl Send 0 810003</strong></p></td>
 </tr>
 <tr class="odd">
 <td>通知の有効化の設定</td>
-<td><p>すべての通知:<strong>UcsiControl Send 0 ffff0005</strong></p>
-<p>コマンドの完了のみ:<strong>UcsiControl Send 0 00010005</strong></p>
-<p>通知なし:<strong>UcsiControl Send 0 00000005</strong></p></td>
+<td><p>すべての通知: <strong>UcsiControl Send 0 ffff0005</strong></p>
+<p>コマンドの完了のみ: <strong>UcsiControl Send 0 00010005</strong></p>
+<p>通知なし: <strong>UcsiControl Send 0 00000005</strong></p></td>
 </tr>
 <tr class="even">
 <td>機能の取得</td>
@@ -172,28 +172,28 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
 </tr>
 <tr class="even">
 <td>UOM の設定</td>
-<td><p>@NO__T-セーフ FP:UcsiControl Send 0 810008 @ no__t-0</p>
-<p><strong>UFP:UcsiControl Send 0 1010008 @ no__t-0</p>
-<p><strong>DRP:UcsiControl Send 0 2010008 @ no__t-0</p></td>
+<td><p><strong>DFP: UcsiControl Send 0 810008</strong></p>
+<p><strong>UFP: UcsiControl Send 0 1010008</strong></p>
+<p><strong>DRP: UcsiControl Send 0 2010008</strong></p></td>
 </tr>
 <tr class="odd">
 <td>UOR を設定する</td>
-<td><p>@NO__T-セーフ FP:UcsiControl Send 0 810009 @ no__t-0</p>
-<p><strong>UFP:UcsiControl Send 0 1010009 @ no__t-0</p>
-<p><strong>Accept:UcsiControl Send 0 2010009 @ no__t-0</p></td>
+<td><p><strong>DFP: UcsiControl Send 0 810009</strong></p>
+<p><strong>UFP: UcsiControl Send 0 1010009</strong></p>
+<p><strong>Accept: UcsiControl Send 0 2010009</strong></p></td>
 </tr>
 <tr class="even">
 <td>民主共和国の設定</td>
-<td><p><strong>Provider:UcsiControl Send 0 81000B @ no__t-0</p>
-<p><strong>Consumer:UcsiControl Send 0 101000B @ no__t-0</p>
-<p><strong>Accept:UcsiControl Send 0 201000B @ no__t-0</p></td>
+<td><p><strong>プロバイダー: UcsiControl Send 0 81000B</strong></p>
+<p><strong>コンシューマー: UcsiControl Send 0 101000B</strong></p>
+<p><strong>承諾: UcsiControl Send 0 201000B</strong></p></td>
 </tr>
 <tr class="odd">
 <td>PDOs を取得する</td>
-<td><p><strong>Local ソース:UcsiControl Send 7 00010010 @ no__t-0</p>
-<p><strong>Local シンク:UcsiControl Send 3 00010010 @ no__t-0</p>
-<p><strong>Remote Source:UcsiControl Send 7 00810010 @ no__t-0</p>
-<p><strong>Remote Sink:UcsiControl Send 3 00810010 @ no__t-0</p></td>
+<td><p><strong>ローカルソース: UcsiControl Send 7 00010010</strong></p>
+<p><strong>ローカルシンク: UcsiControl Send 3 00010010</strong></p>
+<p><strong>リモートソース: UcsiControl Send 7 00810010</strong></p>
+<p><strong>リモートシンク: UcsiControl Send 3 00810010</strong></p></td>
 </tr>
 <tr class="even">
 <td>コネクタの状態の取得</td>
@@ -209,7 +209,7 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
  
 
 ## <a name="related-topics"></a>関連トピック
-[Architecture:Windows システムの USB タイプ-C の設計 @ no__t-0  
+[アーキテクチャ: Windows システム向けの USB タイプ C 設計](architecture--usb-type-c-in-a-windows-system.md)  
 
 
 

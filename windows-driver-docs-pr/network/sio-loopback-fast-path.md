@@ -1,9 +1,9 @@
 ---
 title: SIO_LOOPBACK_FAST_PATH 制御コード
-description: SIO_LOOPBACK_FAST_PATH socket i/o 制御コードを使用すると、WSK アプリケーションは、ループバックインターフェイスの操作を高速化するために TCP ソケットを構成できます。
+description: SIO_LOOPBACK_FAST_PATH ソケット i/o 制御コードを使用すると、WSK アプリケーションは、ループバックインターフェイスの操作を高速化するために TCP ソケットを構成できます。
 ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
-keywords: -SIO_LOOPBACK_FAST_PATH Windows Vista 以降のコードネットワークドライバーの制御
+keywords: -Windows Vista 以降でコードネットワークドライバーを SIO_LOOPBACK_FAST_PATH 制御する
 ms.localizationpriority: medium
 ms.openlocfilehash: 4362a8a503cb4b8cd314c936e46421ee36fb51d6
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -44,7 +44,7 @@ ms.locfileid: "72841912"
 <td><p><strong>SIO_LOOPBACK_FAST_PATH</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>平準</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -61,11 +61,11 @@ ms.locfileid: "72841912"
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>空白</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p>Irp</p></td>

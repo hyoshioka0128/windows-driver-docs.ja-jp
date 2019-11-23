@@ -3,7 +3,7 @@ title: OID_GEN_SUPPORTED_PACKET_FILTERS
 description: NDIS およびそれ以降のドライバーは、ミニポートアダプターが初期化中にフィルター処理できるネットパケットの種類を取得します。
 ms.assetid: c19cecf3-ae47-4fd1-b5dc-1f3de469e548
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_SUPPORTED_PACKET_FILTERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_SUPPORTED_PACKET_FILTERS
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b105a29f91604fe1f64f3960c1e7fb957216753
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -34,7 +34,7 @@ NDIS およびそれ以降のドライバーは、ミニポートアダプター
 
 ミニポートドライバーは、初期化中にサポートされているパケットフィルターを提供します。
 
-サポートされているパケットフィルターを指定するために、ミニポートドライバーは、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造の**supportedpacketfilters**メンバーを設定し、構造体[**をNdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数。
+サポートされているパケットフィルターを指定するために、ミニポートドライバーは、 [**NDIS\_ミニポート\_アダプター\_GENERAL\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体の**supportedpacketfilters**メンバーを設定し、構造体を[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数に渡します。
 
 NDIS は、 [**ndis\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)構造体の**supportedpacketfilters**メンバーのプロトコルドライバーに情報を渡します。
 

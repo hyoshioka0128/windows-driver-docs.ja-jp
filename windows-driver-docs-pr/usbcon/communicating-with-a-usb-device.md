@@ -17,9 +17,9 @@ ms.locfileid: "72831803"
 
 ユニバーサルシリアルバス (USB) クライアントドライバーが、デバイスと直接通信することはできません。 代わりに、クライアントドライバーは要求を作成し、処理のために USB ドライバースタックに送信します。 各要求内で、クライアントドライバーは、 *USB 要求ブロック (URB)* と呼ばれる可変長データ構造を提供します。 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体は、要求の詳細を記述します。また、完了した要求の状態に関する情報も含まれます。 クライアントドライバーは、URBs を介して、データ転送を含む、デバイス固有のすべての操作を実行します。 クライアントドライバーは、USB ドライバースタックに送信する前に、要求に関する情報を使用して URB を初期化する必要があります。 Microsoft は、特定の種類の要求について、 **urb**構造体を割り当て、クライアントドライバーによって提供される詳細を使用して、 **urb**構造体に必要なメンバーを埋めるヘルパールーチンとマクロを提供します。
 
-各 URB は、要求された操作の種類を識別する目的を持つ標準の固定サイズのヘッダー ([ **\_URB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_header)) で開始されます。 **\_urb\_HEADER**の**Length**メンバーは、urb のサイズ (バイト単位) を指定します。 **関数**メンバーは、一連のシステム定義の URB\_関数\_XXX 定数の1つである必要があり、要求される操作の種類を決定します。 たとえば、データ転送の場合、このメンバーは転送の種類を示します。 関数コード URB\_関数\_制御\_転送、URB\_関数\_一括\_または\_割り込み\_転送、および URB\_関数\_ISOCH\_TRANSFER は制御を示します、バルク/割り込み、およびアイソクロナス転送それぞれ。 USB ドライバースタックは、 **status**メンバーを使用して、usb 固有のステータスコードを返します。
+各 URB は、要求された操作の種類を識別する目的を持つ標準の固定サイズのヘッダー ([ **\_URB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_header)) で開始されます。 **\_urb\_HEADER**の**Length**メンバーは、urb のサイズ (バイト単位) を指定します。 **関数**メンバーは、一連のシステム定義の URB\_関数\_XXX 定数の1つである必要があり、要求される操作の種類を決定します。 たとえば、データ転送の場合、このメンバーは転送の種類を示します。 関数コード URB\_関数\_制御\_転送、URB\_関数\_一括\_または\_割り込み\_転送、および URB\_関数\_ISOCH\_TRANSFER は、それぞれ制御、一括/割り込み、およびアイソクロナス転送を示します。 USB ドライバースタックは、 **status**メンバーを使用して、usb 固有のステータスコードを返します。
 
-URB を送信するために、クライアントドライバーは[**IOCTL\_内部\_USB\_submit\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)要求を使用します。この要求は、i/o 要求パケット (irp) 型の[**irp\_MJ\_internal @no__t_ によってデバイスに配信され10_ デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)。
+クライアントドライバーは、URB を送信するために、 [ **\_内部\_USB\_送信\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)要求を使用します。この要求は、i/o 要求パケット (irp) 型の[**irp\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)によってデバイスに配信されます。
 
 USB ドライバースタックが URB の処理を完了すると、ドライバースタックは[**urb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体の**status**メンバーを使用して、usb 固有のステータスコードを返します。
 

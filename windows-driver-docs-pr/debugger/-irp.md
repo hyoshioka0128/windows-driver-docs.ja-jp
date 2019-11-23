@@ -37,7 +37,7 @@ ms.locfileid: "72837601"
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
 IRP の16進数のアドレスを指定します。
 
-<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span>*詳細*   
+<span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span> *Detail*   
 このパラメーターが1などの任意の値に含まれている場合、出力には、IRP の状態、メモリ記述子リスト (MDL) のアドレス、所有スレッド、そのすべての i/o スタックのスタック情報、および IRP の各スタックの場所に関する情報が含まれます。メジャー関数コードの16進数バージョンとマイナー関数コードを含みます。 このパラメーターを省略した場合、出力には情報の概要のみが含まれます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-ドライバー名の横にある完了ルーチンはスタックの場所に設定され、次の行のドライバーによって設定されていることに注意してください。 前の例では、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**が**Ntfs\\\\ファイルシステム**によって設定されていました。 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**の上の**完了コンテキスト**エントリ ( **847 eeed0-829e2ba8**) は、完了ルーチンのアドレスと、ntfs に渡されるコンテキストを示します **。NtfsMasterIrpSyncCompletionRoutine**。 これにより、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**のアドレスが**847 eeed0**であることがわかります。このルーチンが呼び出されたときにこのルーチンに渡されるコンテキストは**829e2ba8**です。
+ドライバー名の横にある完了ルーチンはスタックの場所に設定され、次の行のドライバーによって設定されていることに注意してください。 前の例では、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**が**Ntfs\\\\ファイルシステム**によって設定されていました。 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**, **847 eeed0-829e2ba8**の上にある**完了コンテキスト**エントリは、完了ルーチンのアドレスと、 **ntfs! NtfsMasterIrpSyncCompletionRoutine**に渡されるコンテキストを示します。 これにより、 **Ntfs! NtfsMasterIrpSyncCompletionRoutine**のアドレスが**847 eeed0**であることがわかります。このルーチンが呼び出されたときにこのルーチンに渡されるコンテキストは**829e2ba8**です。
 
 **IRP 主要関数コード**
 

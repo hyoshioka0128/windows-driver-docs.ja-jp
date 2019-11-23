@@ -81,7 +81,7 @@ NDIS 6.30 以降では、ミニポートドライバーが[**ndis\_status\_PM\_W
 
 詳細については、「 [NDIS Wake Reason Status 兆候](ndis-wake-reason-status-indications.md)」を参照してください。
 
-**注:** ミニポートドライバーが[ **\_ステータス\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)  を発行する場合は、 [**ndis\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)を発行する前に、この操作を行う必要があります。状態を示します。
+**注:** ミニポートドライバーが[ **\_ステータス\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)  を発行する場合は、 [**ndis\_status\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)の状態の表示を発行する前に、この操作を行う必要があります。
 
  
 

@@ -43,7 +43,7 @@ SDEL は、属性トークンを使用して一致を実行し、データを取
 
 ### <a name="comparison-operations"></a>比較操作
 
-SDEL では、さまざまな比較演算子が属性トークンに従うことができます。 比較の時点で、演算子の左側にある属性の実際の値は、 **VariantChangeType**メソッドを使用して、演算子の右側にあるテスト値と同じ型になります (これについては、「」を参照してください Microsoft Windows SDKドキュメント)。 次の表は、SDEL がサポートするさまざまな比較演算子を示しています。
+SDEL では、さまざまな比較演算子が属性トークンに従うことができます。 比較の時点で、演算子の左側にある属性の実際の値は、 **VariantChangeType**メソッド (Microsoft Windows SDK のドキュメントで説明されています) を使用して、演算子の右側にあるテスト値と同じ型になります。 次の表は、SDEL がサポートするさまざまな比較演算子を示しています。
 
 比較演算子の意味等値 (=)
 
@@ -157,7 +157,7 @@ Next
 
 ### <a name="boolean-logic-in-sdel"></a>SDEL のブール型ロジック
 
-[**IWDTFTarget2:: GetRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)メソッドはブール型の**or**演算子のみを受け取ることができますが、 [**IWDTFTargets2:: Query**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2:: Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)、および[**IWDTFTarget2:: GetValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)の各メソッドの呼び出しではブール値を使用できます。and 演算子**または OR**演算子。 **クエリ**メソッドと**Eval**メソッドでは、演算子は通常のブール演算子と同じように動作し、結果が期待どおりに返されます。 ただし、 **GetValue**メソッドの場合は、**と**がそれ自体の両側で値を構成します。**または**、が見つかった最初の値 (左側から) のみを返します。
+[**IWDTFTarget2:: GetRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)メソッドはブール型の**or**演算子のみを受け取ることができますが、 [**IWDTFTargets2:: Query**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2:: Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)、および[**IWDTFTarget2:: GetValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)の各メソッドの呼び出しでは **、ブール型の and 演算子**と**OR**演算子を使用できます。 **クエリ**メソッドと**Eval**メソッドでは、演算子は通常のブール演算子と同じように動作し、結果が期待どおりに返されます。 ただし、 **GetValue**メソッドの場合は、**と**がそれ自体の両側で値を構成します。**または**、が見つかった最初の値 (左側から) のみを返します。
 
 ### <a name="parentheses-in-sdel"></a>SDEL のかっこ
 

@@ -41,7 +41,7 @@ ms.locfileid: "72841442"
 
 ファイルストリームを閉じたり削除したりすると、ファイルシステムによってファイルストリームのストリームコンテキストが解放されます。 この時点でも、ファイルシステムは[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)を呼び出し、そのファイルストリームのコンテキストのグローバルリストに含まれるすべてのストリームコンテキストに対して登録されている[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)ルーチンを呼び出します。 ( **FreeCallback**ルーチンは、フィルタードライバーが[**Fsrtlinitperstreamcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinitperstreamcontext)を呼び出してストリームごとのコンテキスト構造を初期化するときに登録されます。 詳細については、「 **FSRTL\_PER\_STREAM\_CONTEXT**」を参照してください)。
 
-**注**   フィルタードライバーによって[**Fsrtlinsertperstreamcontext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)が呼び出され、ストリームごとのコンテキスト構造がファイルストリームに関連付けられている場合は、ファイルシステムによって、 [**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)ルーチンがストリームへの開いている参照がなくなったときに、フィルターのストリームごとのコンテキストが呼び出されます。
+**注**   フィルタードライバーが[**Fsrtlinsertperstreamcontext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)を呼び出してストリームごとのコンテキスト構造をファイルストリームに関連付けると、ファイルシステムは、ストリームへの開いている参照がなくなったときに、フィルターのストリームごとのコンテキストの[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)ルーチンが呼び出されることを保証します。
 
  
 

@@ -31,7 +31,7 @@ ms.locfileid: "72837384"
 
      
 
--   カーネルモードの呼び出し元は、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)を使用し、 *devinstkeytype*パラメーターを PLUGPLAY_REGKEY_DRIVER に設定する必要があります。
+-   カーネルモードの呼び出し元は、 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)を使用して、 *devinstkeytype*パラメーターを PLUGPLAY_REGKEY_DRIVER に設定する必要があります。
 
  
 

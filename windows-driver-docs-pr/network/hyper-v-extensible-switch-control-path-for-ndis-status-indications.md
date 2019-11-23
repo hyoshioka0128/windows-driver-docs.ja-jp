@@ -42,9 +42,9 @@ ms.locfileid: "72823927"
 
     転送拡張機能は、この表示を受け取ると、カプセル化されたデータを変更するように指示を複製できます。 これにより、転送拡張機能は、基になる拡張可能なスイッチチームの指定された状態または機能を変更できます。
 
--   チーミングプロバイダーとして動作する転送拡張機能は、 [**NDIS\_の状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)の情報が関連付けられています。オフロードテクノロジ。
+-   チーム化プロバイダーとして動作する転送拡張機能は、ハードウェアのオフロードを行うために、アダプターチームの構成に参加できます。そのためには、 [**NDIS\_status\_スイッチ\_NIC\_ステータスの状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)のインジケーターを開始します。
 
-    たとえば、プロバイダーは Ndis\_の状態を開始できます[ **\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)をカプセル化された NDIS\_状態で\_\_を[**受信\_フィルター\_現在**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)アダプターチームの仮想マシンキュー (VMQ) のオフロード機能を変更する機能を示します。
+    たとえば、プロバイダーは、 [**ndis\_ステータス\_切り替え\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)表示をカプセル化された[**ndis\_ステータス\_受信\_フィルター\_現在の\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)を使用して、アダプターチームの仮想マシンキュー (VMQ) のオフロード機能を変更することができます。
 
 -   また、チーミングプロバイダーは、 [**NDIS\_の状態\_切り替え\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)の表示を開始して、拡張可能なスイッチチーム以外のネットワークアダプター構成を変更することもできます。
 

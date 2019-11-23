@@ -25,7 +25,7 @@ ms.locfileid: "72841867"
 
  
 
-ヘッダーデータ分割プロバイダーがヘッダーデータの分割要件に対応してフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、NDIS\_NBL\_フラグ\_HD\_分割フラグが設定されている必要があります。**Nblflags**メンバー。 ヘッダーデータの分割プロバイダーでフレームが分割されない場合は、 **Nblflags**で次のフラグがクリアされた状態でフレームが示される必要があります。
+ヘッダーデータ分割プロバイダーがヘッダーデータの分割要件に対応してフレームを分割する場合、指定された[**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造には、 **nblflags**メンバーで設定された HD\_SPLIT フラグ\_、NDIS\_NBL\_フラグが設定されている必要があります。 ヘッダーデータの分割プロバイダーでフレームが分割されない場合は、 **Nblflags**で次のフラグがクリアされた状態でフレームが示される必要があります。
 
 -   NDIS\_NBL\_フラグ\_HD\_SPLIT
 

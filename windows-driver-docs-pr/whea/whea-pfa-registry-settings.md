@@ -33,7 +33,7 @@ WHEA PFA 構成設定は、次のレジストリキーにあります。
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WHEA\Policy
 ```
 
-  WHEA **\_ローカル\_コンピューター\\システム\\CurrentControlSet\\コントロール\\whea\\ポリシーの値が存在しない場合は、pfa レジストリ値の既定の設定を使用することに注意してください。** .
+  WHEA では、値が**HKEY\_ローカル\_コンピューター\\システム\\CurrentControlSet\\コントロール\\WHEA\\ポリシー**に存在しない場合、pfa レジストリ値の既定の設定が使用されていることに**注意**してください。
 
  
 

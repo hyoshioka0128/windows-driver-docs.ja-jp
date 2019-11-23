@@ -1,6 +1,6 @@
 ---
 title: ndiskd nb
-description: Ndiskd nb 拡張機能には、NET_BUFFER (NB) 構造に関する情報が表示されます。
+description: Ndiskd nb 拡張子は、NET_BUFFER (NB) 構造に関する情報を表示します。
 ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
 - ndiskd nb Windows デバッグ
@@ -96,13 +96,13 @@ NET_BUFFER ffffdf8014952610
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[ **! ndiskd nbl**](-ndiskd-nbl.md)
+[ **!ndiskd.nbl**](-ndiskd-nbl.md)
 
  
 

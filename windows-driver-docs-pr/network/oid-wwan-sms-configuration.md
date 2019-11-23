@@ -1,9 +1,9 @@
 ---
 title: OID_WWAN_SMS_CONFIGURATION
-description: OID_WWAN_SMS_CONFIGURATION は、MB デバイスの SMS テキストメッセージ構成を設定または返します。
+description: OID_WWAN_SMS_CONFIGURATION によって、MB デバイスの SMS テキストメッセージ構成が設定または返されます。
 ms.assetid: 3292a91d-4aa8-4c57-9223-d7d984dc5d69
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_WWAN_SMS_CONFIGURATION ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_SMS_CONFIGURATION
 ms.localizationpriority: medium
 ms.openlocfilehash: 95ad11e107489620a7037e5e23a8327b970c210b
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -17,7 +17,7 @@ ms.locfileid: "72843787"
 
 OID\_WWAN\_SMS\_構成を設定するか、MB デバイスの SMS テキストメッセージ構成を返します。
 
-ミニポートドライバーは、セットおよびクエリ要求を非同期的に処理し、最初に NDIS\_の\_状態を返し、元の要求に対して必要な\_を示し、後で[**ndis\_ステータス\_WWAN\_SMS に送信する必要があり @no__t**](ndis-status-wwan-sms-configuration.md)set 要求またはクエリ要求の完了に関係なく、構成状態通知 (_s)
+ミニポートドライバーは、セット要求とクエリ要求を非同期的に処理し、最初に NDIS\_ステータス\_返して、元の要求に必要な\_を示します。その後、set 要求またはクエリ要求の完了に関係なく、 [ **\_の状態\_WWAN\_構成**](ndis-status-wwan-sms-configuration.md)状態通知を送信します。\_
 
 クエリ要求では、デバイスまたはサブスクライバー Id モジュール (SIM) カードに格納されている、デバイスの現在の SMS テキストメッセージ構成が返されます。
 

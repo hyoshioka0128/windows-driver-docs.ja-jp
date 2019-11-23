@@ -1,6 +1,6 @@
 ---
-title: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープコード
-description: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープコード
+title: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープ コード
+description: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープ コード
 ms.assetid: 99b9f180-018b-47c4-ab8d-dc037e3f637a
 ms.date: 04/20/2017
 ms.localizationpriority: medium

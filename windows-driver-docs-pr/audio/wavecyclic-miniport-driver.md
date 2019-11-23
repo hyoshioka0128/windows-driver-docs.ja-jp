@@ -41,7 +41,7 @@ WaveCyclic ミニポートドライバーは、次の2つのインターフェ�
 
 ミニポートインターフェイス[IMiniportWaveCyclic](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic)は、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)インターフェイスのメソッドを継承します。 IMiniportWaveCyclic には、次の追加のメソッドが用意されています。
 
-[**IMiniportWaveCyclic:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-init)
+[**IMiniportWaveCyclic::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-init)
 
 ミニポートオブジェクトを初期化します。
 

@@ -31,16 +31,16 @@ devcon [/m:\\computer] [/r] command [arguments]
 ## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>パラメータ
 
 
-**注デバイスの**状態または構成を変更するには、コンピューターの Administrators グループのメンバーである必要があります。  
+**注**  デバイスの状態または構成を変更するには、コンピューターの Administrators グループのメンバーである必要があります。
 
  
 
 DevCon コマンドのパラメーターは、構文に示されている順序で表示される必要があります。 パラメーターの順序が正しくない場合、DevCon はそれらを無視しますが、構文エラーは表示されません。 代わりに、残りのパラメーターを使用してコマンドを処理します。
 
-コマンド構文のヘルプを表示するには、コマンドプロンプトウィンドウで次のコマンドを使用します。**Devcon ヘルプ**または**devcon ヘルプ***コマンド*。
+コマンド構文のヘルプを表示するには、コマンドプロンプトウィンドウで「 **devcon help** 」または「 **devcon** help *command*」コマンドを使用します。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\コンピューターは、指定されたリモートコンピューターでコマンドを実行します。\\** 円記号が必要です。
-**注:**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+**注**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、リモートコンピューターでプラグアンドプレイサービスを実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
 
  
 
@@ -102,9 +102,9 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 [**DevCon ClassFilter**](devcon-classfilter.md)
 
-[**DevCon Dp\_の追加**](devcon-dp-add.md)
+[**DevCon Dp\_追加**](devcon-dp-add.md)
 
-[**DevCon Dp\_の削除**](devcon-dp-delete.md)
+[**DevCon Dp\_削除**](devcon-dp-delete.md)
 
 <span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span>*引数*DevCon コマンドの引数を指定します。
 
@@ -120,15 +120,15 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 DevCon は、コンピューター名、ハードウェア ID、互換性のある ID、デバイスインスタンス ID、デバイスセットアップクラスなどによってデバイスを識別します。
 
-コマンドに複数の id または id パターン (ワイルドカード文字 (\*) を含む id) が含まれている場合、DevCon は、id または id パターンのいずれかに一致する id を持つデバイスを返します。 つまり、ID 引数の間に "or" があることを前提としています。
+コマンドに複数の ID または ID パターン (ワイルドカード文字 (\*) を含む ID) が含まれている場合、DevCon は、id または ID パターンのいずれかに一致する id を持つデバイスを返します。 つまり、ID 引数の間に "or" があることを前提としています。
 
-たとえば、 **devcon hwids \*pnp\* \*mou\*** は、ハードウェア id または互換性のある id に "pnp" または "mou" のいずれかを含むデバイスを返します。
+たとえば、 **devcon hwids \*pnp\* \*mou\*** は、ハードウェア id または互換性のある id に "pnp" または "mou" を含むデバイスを返します。
 
 コマンドにデバイスセットアップクラスが含まれている場合、DevCon は最初に検索をセットアップクラスに限定してから、クラス内の任意の ID パターンに一致するデバイスを返します。つまり、クラスと Id の間に "and" を、それぞれの ID 引数の間に "or" を指定します。
 
-たとえば、 **devcon hwids \*= media pnp\* \*microsoft\*** は、ハードウェア id または互換性 id に "pnp" または "microsoft" を含むメディアデバイスセットアップクラスのデバイスを返します。
+たとえば、 **devcon hwids = media \*pnp\* \*microsoft\*** は、ハードウェア id または互換性 id に "pnp" または "microsoft" を含むメディアデバイスセットアップクラスのデバイスを返します。
 
-**注:**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
+**注**   リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、リモートコンピューターでプラグアンドプレイサービスを実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモートアクセス機能を使用できません。
 
  
 
@@ -144,7 +144,7 @@ DevCon には、オペレーティングシステムを再起動する方法と�
 
 ### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon リターンコード
 
-DevCon は、DevCon コマンドが成功したかどうかを判断するためにプログラムおよびスクリプトで使用できる整数を返します (たとえば、 **return = DevCon hwids \*** )。
+DevCon は、プログラムとスクリプトで、DevCon コマンドが成功したかどうかを判断するために使用できる整数を返します (たとえば、 **return = DevCon hwids \*** )。
 
 次の表に、リターンコードとその説明を示します。
 
@@ -156,7 +156,7 @@ DevCon は、DevCon コマンドが成功したかどうかを判断するため
 <thead>
 <tr class="header">
 <th align="left">リターン コード</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>

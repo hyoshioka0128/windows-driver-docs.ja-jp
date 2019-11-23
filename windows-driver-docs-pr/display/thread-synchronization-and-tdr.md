@@ -30,9 +30,9 @@ ms.locfileid: "72825501"
 
 -   ドライバーは、割り当てが削除されたことを通知するために呼び出されます。
 
-    たとえば、割り当てがメモリセグメントにページングされている場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は、 [**Dxgkarg\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)構造体を DXGK\_操作に設定して、**操作**メンバーと共に呼び出されます。\_転送し、**転送サイズ**のメンバーを0に設定して、ドライバーに削除を通知します。 リセット中にコンテンツが失われたため、コンテンツの転送が行われないことに注意してください。
+    たとえば、割り当てがメモリセグメントにページングされている場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は、 [**Dxgkarg\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)構造体を DXGK\_operation\_transfer に設定**し、** **transfer. Size**メンバーを0に設定して、ドライバーに削除について通知します。 リセット中にコンテンツが失われたため、コンテンツの転送が行われないことに注意してください。
 
-    割り当てがアパーチャセグメントにページングされている場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は DXGKARG の**操作**メンバー\_BUILDPAGINGBUFFER を DXGK\_operation に設定し、マップを解除\_\_アパーチャ\_セグメントは、割り当てを絞りからマップ解除するようにドライバーに通知します。
+    割り当てがアパーチャセグメントにページングされていた場合、ドライバーの[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)関数は、DXGKARG の**操作**メンバー\_BUILDPAGINGBUFFER を DXGK\_operation に設定して、\_アパーチャ\_セグメントのマップを解除\_、割り当てを絞り込みからマップ解除するようにドライバーに通知します。
 
 -   ドライバーの[*DxgkDdiReleaseSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)関数は、unswizzling アパーチャとセグメントの絞りの範囲を解放するために呼び出されます。
 

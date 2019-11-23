@@ -1,6 +1,6 @@
 ---
-title: ボリューム名が重複するボリュームの列挙について
-description: ボリューム名が重複するボリュームの列挙について
+title: 重複するボリューム名がある場合のボリュームの列挙について
+description: 重複するボリューム名がある場合のボリュームの列挙について
 ms.assetid: c05982dc-4124-4f9a-93b8-0e56ac296d1b
 keywords:
 - ボリューム WDK ファイルシステム、重複する名前
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840946"
 ---
-# <a name="understanding-volume-enumerations-with-duplicate-volume-names"></a>ボリューム名が重複するボリュームの列挙について
+# <a name="understanding-volume-enumerations-with-duplicate-volume-names"></a>重複するボリューム名がある場合のボリュームの列挙について
 
 
 ボリュームを列挙するときに、結果のボリューム情報の一覧に重複するボリューム名が表示される可能性があります。

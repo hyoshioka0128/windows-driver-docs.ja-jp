@@ -89,7 +89,7 @@ NDIS がミニポートドライバーの[*MiniportInitializeEx*](https://docs.m
 
     QoS ハードウェアと現在の機能を登録する方法の詳細については、「 [NDIS Qos 機能の登録](registering-ndis-qos-capabilities.md)」を参照してください。
 
-    ミニポートドライバーは、常に NDIS\_の状態を発行する必要が**あり  ** [ **\_qos\_操作\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)と[**NDIS\_の状態\_QOS\_リモート\_のパラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change) 、その NDIS QoS ハードウェア機能が現在有効になっているかどうかを示します。 Windows Server 2012 以降では、これらの状態は、それぞれ現在の operational および remote QoS パラメーターの設定に関するレポートを示しています。 これらの表示により、システム管理者は、Microsoft DCB server 機能がインストールされているかどうかに関係なく、NDIS QoS および DCB 設定を表示できます。 詳細については、「 [NDIS QoS パラメーターの状態を示す](indicating-ndis-qos-parameter-status.md)」を参照してください。
+    **注:** ミニポートドライバーは、常に Ndis\_の状態を発行する必要があり  [ **\_qos\_操作\_のパラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)と[**NDIS\_のステータス\_QOS\_リモート\_のパラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change) 、その ndis QOS ハードウェア機能が現在有効になっている場合は状態の確認を変更します。 Windows Server 2012 以降では、これらの状態は、それぞれ現在の operational および remote QoS パラメーターの設定に関するレポートを示しています。 これらの表示により、システム管理者は、Microsoft DCB server 機能がインストールされているかどうかに関係なく、NDIS QoS および DCB 設定を表示できます。 詳細については、「 [NDIS QoS パラメーターの状態を示す](indicating-ndis-qos-parameter-status.md)」を参照してください。
 
      
 

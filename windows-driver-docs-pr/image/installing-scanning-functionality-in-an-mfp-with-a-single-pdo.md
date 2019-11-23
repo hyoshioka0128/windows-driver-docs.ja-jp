@@ -1,6 +1,6 @@
 ---
-title: 1つの PDO を使用して、MFP にスキャン機能をインストールする
-description: 1つの PDO を使用して、MFP にスキャン機能をインストールする
+title: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
+description: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
 ms.assetid: 002ff319-42f9-4034-9bdd-c1e771ed2ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840814"
 ---
-# <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>1つの PDO を使用して、MFP にスキャン機能をインストールする
+# <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
 
 
 

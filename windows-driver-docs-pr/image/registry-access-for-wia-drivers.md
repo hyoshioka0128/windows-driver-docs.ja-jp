@@ -1,6 +1,6 @@
 ---
-title: WIA ドライバーのレジストリアクセス
-description: WIA ドライバーのレジストリアクセス
+title: WIA ドライバーのレジストリ アクセス
+description: WIA ドライバーのレジストリ アクセス
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840758"
 ---
-# <a name="registry-access-for-wia-drivers"></a>WIA ドライバーのレジストリアクセス
+# <a name="registry-access-for-wia-drivers"></a>WIA ドライバーのレジストリ アクセス
 
 
 

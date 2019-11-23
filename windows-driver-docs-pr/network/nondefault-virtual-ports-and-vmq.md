@@ -36,7 +36,7 @@ ms.locfileid: "72842765"
 
 -   VMQ は、割り込みと DPC の同時実行を提供します。
 
-    NDIS 6.30 および Windows Server 2012 以降では、特定の CPU アフィニティを持つように PF に接続された VPort を構成できます。 仮想化スタックは、Oid の OID メソッド要求 Oid\_使用して、VPort の CPU アフィニティと割り込みモデレーションのパラメーターを構成します。 [\_スイッチ\_\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)または[oid\_nic\_スイッチを作成\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 これにより、仮想化スタックは、割り込みおよび DPC 同時実行のための VMQ と同様の割り込みベースのパラメーターを構成します。
+    NDIS 6.30 および Windows Server 2012 以降では、特定の CPU アフィニティを持つように PF に接続された VPort を構成できます。 仮想化スタックは、oid\_NIC\_スイッチの OID メソッド要求を使用して、vport の CPU アフィニティと割り込みモデレーションのパラメーターを構成[\_\_vport](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)または[oid\_nic\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を作成します。 これにより、仮想化スタックは、割り込みおよび DPC 同時実行のための VMQ と同様の割り込みベースのパラメーターを構成します。
 
     たとえば、SR-IOV ネットワークアダプターが特定の CPU アフィニティを持つように構成された VPort でパケットを受信する場合、アダプターは、指定された CPU に割り込みを生成します。 ミニポートドライバーは、NDIS に対して受信したパケットとその CPU の仮想化スタックを示します。
 
@@ -48,7 +48,7 @@ PF ミニポートドライバーは、 [*MiniportInitializeEx*](https://docs.mi
 
 -   **Maxnumvfs**。ネットワークアダプターに割り当てることができる vfs の最大数を指定します。
 
-NDIS 6.30 以降では、ミニポートドライバーによって[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体が初期化されるときに、NDIS\_NIC\_スイッチ\_CAP\_1 つの\_VPORT\_プールフラグ**を設定できます。NicSwitchCapabilities**メンバー。 このフラグは、既定以外の VPorts をネットワークアダプターの Vports プールから予約されていない方法で作成できることを指定します。 これにより、使用可能な既定以外の VPorts を作成し、必要に応じて PF と割り当てられた VFs に割り当てることができます。 ネットワークアダプターが VMQ インターフェイスをサポートしている場合、PF に割り当てられている既定以外の VPorts は VM の受信キューにも使用できます。
+NDIS 6.30 以降では、ミニポートドライバーによって[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造が初期化されたときに、 **NicSwitchCapabilities**メンバーの\_の単一\_vport\_プールフラグ\_cap、NDIS\_NIC\_スイッチを設定できます。 このフラグは、既定以外の VPorts をネットワークアダプターの Vports プールから予約されていない方法で作成できることを指定します。 これにより、使用可能な既定以外の VPorts を作成し、必要に応じて PF と割り当てられた VFs に割り当てることができます。 ネットワークアダプターが VMQ インターフェイスをサポートしている場合、PF に割り当てられている既定以外の VPorts は VM の受信キューにも使用できます。
 
 NDIS\_NIC\_スイッチ\_CAP\_単一\_VPORT\_POOL フラグが設定されている場合は、使用可能な既定以外の Vport が作成され、PF と割り当てられた VFs に割り当てられます。 作成して PF に割り当てることができる VPorts の最大数は、ドライバーが**Maxnumvports**メンバーで報告するのと同じ値です。 ミニポートドライバーは、PF に割り当てられている既定の VPort として使用する VPort を1つ予約する必要があります。 その結果、PF に割り当てて VM 受信キューに使用できる既定以外の VPorts の最大数は、(**Maxnumvports**– 1) です。
 

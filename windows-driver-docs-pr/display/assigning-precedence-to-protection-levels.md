@@ -1,6 +1,6 @@
 ---
-title: 保護レベルに優先順位を割り当てる
-description: 保護レベルに優先順位を割り当てる
+title: 保護レベルへの優先順位の割り当て
+description: 保護レベルへの優先順位の割り当て
 ms.assetid: 87a63d30-4aa2-4835-87bc-1acb062bde26
 keywords:
 - 保護レベル WDK 表示、優先順位の割り当て
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839827"
 ---
-# <a name="assigning-precedence-to-protection-levels"></a>保護レベルに優先順位を割り当てる
+# <a name="assigning-precedence-to-protection-levels"></a>保護レベルへの優先順位の割り当て
 
 
 それぞれの保護の種類について、各保護レベルに優先順位値が割り当てられます。 これにより、2つ以上の保護された出力が物理出力に関連付けられていて、保護された各出力の保護レベルが異なる場合に、物理出力でどの保護レベルを使用するかを決定できます。
@@ -40,7 +40,7 @@ Microsoft DirectX graphics カーネルサブシステム (*Dxgkrnl*) は、デ�
 <thead>
 <tr class="header">
 <th align="left">ACP の保護レベルの値</th>
-<th align="left">優先順位</th>
+<th align="left">優先度</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +77,7 @@ Microsoft DirectX graphics カーネルサブシステム (*Dxgkrnl*) は、デ�
 <thead>
 <tr class="header">
 <th align="left">CGMS-保護レベルの値</th>
-<th align="left">優先順位</th>
+<th align="left">優先度</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +122,7 @@ Microsoft DirectX graphics カーネルサブシステム (*Dxgkrnl*) は、デ�
 <thead>
 <tr class="header">
 <th align="left">HDCP の保護レベルの値</th>
-<th align="left">優先順位</th>
+<th align="left">優先度</th>
 </tr>
 </thead>
 <tbody>
@@ -151,7 +151,7 @@ Microsoft DirectX graphics カーネルサブシステム (*Dxgkrnl*) は、デ�
 <thead>
 <tr class="header">
 <th align="left">% CP 保護レベルの値</th>
-<th align="left">優先順位</th>
+<th align="left">優先度</th>
 </tr>
 </thead>
 <tbody>

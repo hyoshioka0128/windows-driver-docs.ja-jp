@@ -81,7 +81,7 @@ DATAPATH QUEUES
     NETRXQUEUE         ffffd1022cc7b0d0
 ```
 
-NETTXQUEUE のハンドルをクリックするか、コマンドラインで **! ndiskd netqueue-handle**コマンドを入力すると、このキューの詳細を確認できます。これには、コンパニオン WDF オブジェクトへのハンドル、リングバッファーへのハンドル、登録されたコールバック。
+NETTXQUEUE のハンドルをクリックするか、コマンドラインで **! ndiskd**ハンドルコマンドを入力することにより、このキューの詳細を確認できます。これには、コンパニオン WDF オブジェクトへのハンドル、リングバッファーへのハンドル、および登録されているコールバックの関数ポインターが含まれます。
 
 ```console
 0: kd> !ndiskd.netqueue ffffd1022f512700
@@ -108,7 +108,7 @@ NETTXQUEUE のハンドルをクリックするか、コマンドラインで **
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 

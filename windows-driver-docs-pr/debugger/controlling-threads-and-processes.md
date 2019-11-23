@@ -25,7 +25,7 @@ ms.locfileid: "72837818"
 
 ### <a name="span-idimplicit_threads_and_processesspanspan-idimplicit_threads_and_processesspanimplicit-threads-and-processes"></a><span id="implicit_threads_and_processes"></span><span id="IMPLICIT_THREADS_AND_PROCESSES"></span>暗黙のスレッドとプロセス
 
-カーネルモードのデバッグでは、デバッガーエンジンは*暗黙的なプロセス*を使用して、仮想から物理アドレスへの変換を実行するときに使用する仮想アドレス空間を決定します。たとえば、 [**virtualtophysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)メソッドや[**ReadVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)。 イベントが発生すると、暗黙のプロセスが現在のプロセスに設定されます。
+カーネルモードのデバッグでは、デバッガーエンジンは*暗黙的なプロセス*を使用して、仮想から物理アドレスへの変換を実行するときに使用する仮想アドレス空間を決定します。たとえば、 [**virtualtophysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)や[**readvirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)などです。 イベントが発生すると、暗黙のプロセスが現在のプロセスに設定されます。
 
 暗黙のプロセスは、 [**SetImplicitProcessDataOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-setimplicitprocessdataoffset)を使用して変更できます。 暗黙的なプロセスを特定するには、 [**GetImplicitProcessDataOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-getimplicitprocessdataoffset)を使用します。
 

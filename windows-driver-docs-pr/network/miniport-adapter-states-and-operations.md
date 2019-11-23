@@ -69,7 +69,7 @@ ms.locfileid: "72844245"
 <th align="left">初期化</th>
 <th align="left">一時停止</th>
 <th align="left">再起動</th>
-<th align="left">Running</th>
+<th align="left">実行中</th>
 <th align="left">一時停止</th>
 </tr>
 </thead>
@@ -130,7 +130,7 @@ ms.locfileid: "72844245"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -181,7 +181,7 @@ ms.locfileid: "72844245"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 <tr class="even">
@@ -191,7 +191,7 @@ ms.locfileid: "72844245"
 <td align="left"></td>
 <td align="left"><p>一時停止</p></td>
 <td align="left"><p>再起動</p></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>実行中</p></td>
 <td align="left"><p>一時停止</p></td>
 </tr>
 </tbody>

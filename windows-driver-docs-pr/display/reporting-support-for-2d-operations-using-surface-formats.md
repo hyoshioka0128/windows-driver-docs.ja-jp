@@ -26,11 +26,11 @@ ms.locfileid: "72829595"
 
 たとえば、ドライバーは、D3DFORMAT\_OP\_OFFSCREENPLAIN フラグを設定することによって、画面の間でコピーや塗りつぶしを行うことができることを示すことができます。
 
-ドライバーがベンダーから提供されたコードまたは D3DFORMAT 列挙型のコードを使用して、 **Ddfourcc 形式の dwfourcc**メンバーを設定し、surface の形式を割り当てる場合、ドライバーは D3DFORMAT\_OP\_使用して\_をに変換することもでき @no__t(4_ ARGB および D3DFORMAT\_MEMBEROFGROUP\_、ソースとターゲットの両方のサーフェス間でカラー変換を実行できるかどうかを示すための ARGB フラグです。 つまり、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグが設定されているターゲットサーフェイスは、D3DFORMAT\_\_OP を持つ任意のソースサーフェイスから、\_を\_ARGB フラグセットに変換するために、その色の形式を変換できることを示します。
+ドライバーがベンダーから提供されたコードまたは D3DFORMAT 列挙型のコードを使用して、 **Ddfourcc 形式の dwfourcc**メンバーを設定し、サーフェイスの形式を割り当てる場合、ドライバーは D3DFORMAT\_OP\_を使用して\_を\_ARGB および D3DFORMAT\_MEMBEROFGROUP\_argb フラグに変換して、ソースとターゲットの両方のサーフェス間でカラー変換を実行 つまり、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグが設定されているターゲットサーフェイスは、D3DFORMAT\_\_OP を持つ任意のソースサーフェイスから、\_を\_ARGB フラグセットに変換するために、その色の形式を変換できることを示します。
 
 ドライバーで指定できるのは、チャネルごとに少なくとも5ビットの色情報が含まれているターゲットサーフェス形式に対して、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグのみです。 つまり、DDピクセル形式の**Dwfourcc**メンバーで設定されている D3DFMT\_A1R5G5B5 形式が有効です。 ただし、D3DFMT\_A4R4G4B4 形式は無効です。 また、D3DFORMAT\_OP\_指定すると、ドライバーは特定のソースサーフェイス形式に制限され、\_を\_ARGB フラグに変換できます。 ソース形式は、D3DFORMAT\_MEMBEROFGROUP\_ARGB フラグまたは*FOURCC*の表面形式に対して有効な任意の形式にすることができます。
 
-D3DFORMAT\_OP\_\_を\_ARGB および D3DFORMAT\_MEMBEROFGROUP に変換することはできますが、argb 形式が使用されていることに注意してください。このランタイムでは、XRGB 形式のサーフェイスを指定することもできます (たとえば、、D3DFMT\_X1R5G5B5)。 ドライバーで D3DFORMAT\_MEMBEROFGROUP\_ARGB または D3DFORMAT\_OP\_指定した場合、\_を無効な形式で\_に変換すると、ランタイムによって Direct3D HAL が読み込まれなくなります。
+D3DFORMAT\_OP\_\_を\_ARGB および D3DFORMAT\_MEMBEROFGROUP に変換しても、argb 形式が使用されますが、ランタイムでは、XRGB 形式 (たとえば、D3DFMT\_X1R5G5B5) でサーフェイスを指定することもできます。\_ ドライバーで D3DFORMAT\_MEMBEROFGROUP\_ARGB または D3DFORMAT\_OP\_指定した場合、\_を無効な形式で\_に変換すると、ランタイムによって Direct3D HAL が読み込まれなくなります。
 
  
 

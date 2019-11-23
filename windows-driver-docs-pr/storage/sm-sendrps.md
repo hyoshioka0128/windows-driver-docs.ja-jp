@@ -3,7 +3,7 @@ title: SM\_SendRPS 関数
 description: SM\_SendRPS WMI メソッドは、指定されたポートまたはドメインコントローラーに読み取りポート状態ブロック (RPS) 要求を送信します。
 ms.assetid: a64983ef-c665-43db-ad29-0a6f14421ab8
 keywords:
-- SM_SendRPS function Storage デバイス
+- SM_SendRPS 関数記憶装置
 topic_type:
 - apiref
 api_name:

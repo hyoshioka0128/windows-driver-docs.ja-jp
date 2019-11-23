@@ -13,7 +13,7 @@ ms.locfileid: "72007545"
 # <a name="overview-of-developing-windows-applications-for-usb-devices"></a>USB デバイス用 Windows アプリケーション開発の概要
 
 
-**概要**
+**要約**
 
 -   適切なプログラミングモデルを選択するためのガイドライン
 -   UWP アプリとデスクトップアプリの開発者エクスペリエンス
@@ -36,11 +36,11 @@ Windows には、カスタム USB デバイスと通信するアプリの作成�
 
 -   [USB デバイス用の UWP アプリ](writing-usb-device-companion-apps-for-microsoft-store.md)
 
-    Windows 8.1 は、新しい名前空間を提供します。[**Windows. デバイス. Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)。 名前空間は、以前のバージョンの Windows では使用できません。 その他の Microsoft Store リソースは次のとおりです。[UWP アプリ](https://msdn.microsoft.com/windows/apps)。
+    Windows 8.1 には、新しい名前空間が用意されています。 [**Windows. Devices**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb). 名前空間は、以前のバージョンの Windows では使用できません。 その他の Microsoft Store リソースは、 [UWP アプリ](https://msdn.microsoft.com/windows/apps)です。
 
 -   [USB デバイス用の Windows デスクトップアプリ](windows-desktop-app-for-a-usb-device.md)
 
-    Windows 8.1 する前に、 [Winusb](winusb-installation.md)を介して通信していたアプリは、 [winusb 機能](using-winusb-api-to-communicate-with-a-usb-device.md)を使用して作成されたデスクトップアプリでした。 Windows 8.1 では、API セットが拡張されています。 その他の Windows デスクトップアプリリソースは次のとおりです。[Windows デスクトップアプリ](https://developer.microsoft.com/windows/desktop)。
+    Windows 8.1 する前に、 [Winusb](winusb-installation.md)を介して通信していたアプリは、 [winusb 機能](using-winusb-api-to-communicate-with-a-usb-device.md)を使用して作成されたデスクトップアプリでした。 Windows 8.1 では、API セットが拡張されています。 その他の Windows デスクトップアプリのリソースについては、 [windows デスクトップアプリ](https://developer.microsoft.com/windows/desktop)に関するページを参照してください。
 
 最適なプログラミングモデルを選択するための戦略は、さまざまな要因によって異なります。
 
@@ -144,7 +144,8 @@ Windows には、カスタム USB デバイスと通信するアプリの作成�
 <td><p>Microsoft Visual Studio 2013</p>
 <p>Windows 8.1 用 Microsoft Windows ソフトウェア開発キット (SDK)</p></td>
 <td><p>Visual Studio (Ultimate または Professional) および Windows Driver Kit (WDK) 8 に含まれる<strong>Winusb アプリケーション</strong>テンプレートを使用する</p>
-<div class="alert"></strong> アイソクロナス転送の場合は @ no__t-1、Windows ドライバーキット (WDK) 8.1 では Visual Studio 2013
+<div class="alert">
+<strong>メモ</strong> アイソクロナス転送の場合、Windows Driver Kit (WDK) 8.1 を使用して Visual Studio 2013 します。
 </div>
 <div>
 
@@ -153,7 +154,7 @@ Windows には、カスタム USB デバイスと通信するアプリの作成�
 <tr class="even">
 <td>プログラミング言語</td>
 <td>C#、VB.NET、 C++、JavaScript</td>
-<td>40U-CC++</td>
+<td>40u-cC++</td>
 </tr>
 </tbody>
 </table>
@@ -215,7 +216,7 @@ Windows には、カスタム USB デバイスと通信するアプリの作成�
 </tr>
 <tr class="even">
 <td>USB アイソクロナス転送の送信</td>
-<td>サポートされていません。</td>
+<td>サポートされません。</td>
 <td><p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)"><strong>WinUsb_ReadIsochPipe</strong></a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipeAsap&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)"><strong>WinUsb_ReadIsochPipeAsap</strong></a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_WriteIsochPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)"><strong>WinUsb_WriteIsochPipe</strong></a></p>

@@ -34,9 +34,9 @@ SDP レコードを検索するには、クライアントプロファイルド�
 
 -   [**IOCTL\_BTH\_sdp\_サービス\_検索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_search)では、リモートデバイスに sdp 要求を発行し、特定のサービスクラスまたはクラスの sdp レコードへのハンドルを要求します。
 
--   [**Ioctl\_bth\_sdp\_サービス\_属性\_検索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_attribute_search)では、ioctl\_BTH\_SDP\_属性\_、検索と ioctl\_BTH\_SDP\_SERVICE が結合され\_属性\_検索を実行し、1回の操作で使用可能な SDP レコードストリームを返します。
+-   [**Ioctl\_bth\_sdp\_サービス\_属性\_検索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_attribute_search)では、IOCTL\_BTH\_SDP\_属性\_検索および ioctl\_BTH\_SDP\_SERVICE\_属性\_検索し、1回の操作で使用可能な sdp レコードストリームを返します。
 
-プロファイルドライバーは、IOCTL\_BTH\_SDP\_サービス\_検索および IOCTL\_の SDP\_属性\_検索を使用して、Bluetooth リンクを介して送信される SDP トラフィックの量を減らし、最大転送単位 (Mtu) を少なくすることによって必要な情報を指定します。 これらの問題がどちらも問題にならない場合は、プロファイルドライバーが IOCTL\_BTH\_SDP\_サービス\_属性\_検索を呼び出すと便利です。
+プロファイルドライバーは、IOCTL\_BTH\_SDP\_サービス\_検索および IOCTL\_の SDP\_属性\_検索を使用して、Bluetooth リンクを介して送信される SDP トラフィックの量を減らし、少数の最大転送単位 (Mtu) を使用して必要な情報を抽出することができます。\_ これらの問題がどちらも問題にならない場合は、プロファイルドライバーが IOCTL\_BTH\_SDP\_サービス\_属性\_検索を呼び出すと便利です。
 
 プロファイルドライバーは、目的のサービスの*動的*プロトコル/サービスマルチプレクサー (PSM) を取得した後、 **BRB\_L2CA\_OPEN\_CHANNEL** brb を使用してリモートサービスに接続できます。
 

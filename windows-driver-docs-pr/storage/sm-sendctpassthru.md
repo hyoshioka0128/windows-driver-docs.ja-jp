@@ -3,7 +3,7 @@ title: SM\_SendCTPassThru 関数
 description: SM\_SendCTPassThru WMI メソッドは、指定されたポートに common transport (CT) パススルーコマンドを送信します。
 ms.assetid: 437f0c79-78f6-406e-8774-79de4425bfe8
 keywords:
-- SM_SendCTPassThru function Storage デバイス
+- SM_SendCTPassThru 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_PROPERTY_UPDATE
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートポリシーのプロパティの更新について拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_PORT_PROPERTY_UPDATE に発行します。
 ms.assetid: 674CA5EB-BF11-47E8-A2AC-6C789CA4FDB5
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_PROPERTY_UPDATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_PROPERTY_UPDATE
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5afb7fa0c236c97d84cf5198ae2843ad859bf8
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843925"
 # <a name="oid_switch_port_property_update"></a>OID\_スイッチ\_ポート\_プロパティ\_更新
 
 
-Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_スイッチ\_ポート\_プロパティ\_更新を使用して、拡張可能なスイッチ拡張機能のプロパティの更新に関する通知を行います。スイッチポートポリシー。
+Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_スイッチ\_ポート\_プロパティ\_UPDATE によって、拡張可能なスイッチポートポリシーのプロパティの更新について拡張可能スイッチ拡張機能に通知します。
 
 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
 
@@ -56,7 +56,7 @@ Oid の OID セット要求を処理する方法に関するガイドライン�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが小さすぎて、構造体のプロパティバッファー内の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)"><strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong></a>構造とデータを処理できません。 拡張機能はデータを設定し<strong>ます。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーの長さが小さすぎて、構造体のプロパティバッファー内の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)"><strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong></a>構造とデータを処理できません。 拡張機能はデータを設定し<strong>ます。SET_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_DATA_NOT_ACCEPTED</p></td>

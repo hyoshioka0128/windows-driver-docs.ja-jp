@@ -3,7 +3,7 @@ title: OID_SWITCH_PROPERTY_UPDATE
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポリシープロパティのパラメーターの更新について拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_PROPERTY_UPDATE に発行します。
 ms.assetid: AEC32AD8-B353-4D58-9111-D70C2FFA9F66
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PROPERTY_UPDATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PROPERTY_UPDATE
 ms.localizationpriority: medium
 ms.openlocfilehash: e589054fa32875e03584576fe66f0316c9a80f45
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843913"
 # <a name="oid_switch_property_update"></a>OID\_スイッチ\_プロパティ\_更新
 
 
-Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セットの OID\_スイッチ\_プロパティ\_更新を発行して拡張可能スイッチの拡張機能に、拡張可能なスイッチポリシーのパラメーターの更新について通知します。".
+Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_スイッチ\_プロパティ\_更新を発行して拡張可能スイッチの拡張機能に、拡張可能なスイッチポリシープロパティのパラメーターの更新について通知します。
 
 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、バッファーへのポインターが含まれています。 このバッファーには、次のデータが含まれています。
 
@@ -23,7 +23,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェク
 
 -   拡張可能なスイッチポリシーのパラメーターを格納しているプロパティバッファー。 プロパティバッファーには、NDIS\_スイッチの**PropertyType**メンバーに基づく構造体が含まれています[ **\_プロパティ\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)構造体です。
 
-    **注**  Windows Server 2012 以降では、 **PropertyType**メンバーを**NdisSwitchPropertyTypeCustom**に設定し、プロパティバッファーに[**NDIS\_SWITCH\_プロパティ\_カスタム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)を含める必要があることに注意してください。データ.
+    **注**  Windows Server 2012 以降では、 **PropertyType**メンバーを**NdisSwitchPropertyTypeCustom**に設定し、プロパティバッファーに[**NDIS\_SWITCH\_プロパティ\_カスタム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)構造体を含める必要があります。
 
      
 

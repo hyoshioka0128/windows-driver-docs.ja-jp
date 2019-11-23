@@ -20,28 +20,28 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/08/2019
 ms.locfileid: "72038100"
 ---
-# <a name="bug-check-0x141-video_engine_timeout_detected"></a>バグ チェック 0x141:VIDEO @ NO__T-0ENGINE @ NO__T-1TIMEOUT @ NO__T-2DETECTED
+# <a name="bug-check-0x141-video_engine_timeout_detected"></a>バグチェック 0x141: ビデオ\_エンジン\_タイムアウト\_検出されました
 
 
-ビデオ @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED されたバグチェックの値は0x00000141 です。 これは、表示エンジンの1つが適切なタイミングで応答に失敗したことを示します。
+ビデオ\_エンジン\_タイムアウト\_検出されたバグチェックの値は0x00000141 です。 これは、表示エンジンの1つが適切なタイミングで応答に失敗したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="video_engine_timeout_detected-parameters"></a>VIDEO @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED されたパラメーター
+## <a name="video_engine_timeout_detected-parameters"></a>ビデオ\_エンジン\_タイムアウト\_検出されたパラメーター
 
 
 | パラメーター | 説明                                                                 |
 |-----------|-----------------------------------------------------------------------------|
-| 1         | TDR の内部復旧コンテキストへのポインター (TDR @ no__t-0RECOVERY @ no__t-1CONTEXT)。 |
+| 1         | 内部 TDR 復旧コンテキスト (TDR\_RECOVERY\_CONTEXT) へのポインター (省略可能)。 |
 | 2         | 責任を持つデバイスドライバーモジュール (所有者タグなど) へのポインター。          |
 | 3         | セカンダリドライバー固有のバケットキー。                                |
 | 4         | 省略可能な内部コンテキスト依存データ。                                   |
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。

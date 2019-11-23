@@ -3,7 +3,7 @@ title: SM\_SendRLS 関数
 description: SM\_SendRLS WMI メソッドは、指定されたローカルポートを介して読み取りリンクステータス (RLS) を送信します。 この RLS は、リモートポートに関連付けられているリンクエラー状態ブロックを取得するために、示されたリモートポートに送信されます。
 ms.assetid: 4498edde-1249-43b8-b581-37e24f8bd2d3
 keywords:
-- SM_SendRLS function Storage デバイス
+- SM_SendRLS 関数記憶装置
 topic_type:
 - apiref
 api_name:

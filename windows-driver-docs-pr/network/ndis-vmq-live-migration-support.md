@@ -33,7 +33,7 @@ NDIS は、VMQ 受信キューを解放するようにミニポートドライ�
 
 1.  ネットワークアダプターは、受信キューに関連付けられているバッファーを受信するために、データの DMA 転送を停止します。その後、キューは DMA 停止状態になる必要があります。 ネットワークアダプターは、Oid を受信したときに DMA アクティビティを停止したことがあります。 [\_受信\_\_フィルターをクリア\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter) oid 要求を受信して、受信キューの最後の set フィルターをクリアします。
 
-2.  ミニポートドライバーによって、ndis\_の状態[ **\_受信\_\_キュー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)の状態が表示されます。これには、 [**ndis\_receive\_queue\_state**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state) Structure set の**queuestate**メンバーが含まれます。**NdisReceiveQueueOperationalStateDmaStopped**に、DMA 転送が停止されたことを NDIS に通知します。
+2.  ミニポートドライバーは、ndis [ **\_ステータス\_受信\_キュー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)の状態を示すメッセージを生成します。この状態は、Ndis の**queuestate**メンバーに設定されています\_[**状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)構造体は、 **NdisReceiveQueueOperationalStateDmaStopped**に設定され、DMA 転送が停止したことを ndis に通知します。\_\_
 
 3.  ミニポートドライバーは、そのキューのすべての受信パケットがミニポートドライバーに返されるまで待機します。
 

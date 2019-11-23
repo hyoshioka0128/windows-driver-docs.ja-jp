@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_NIC_CREATE
-description: Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セット要求を発行して、拡張可能なスイッチポートとの間に新しい接続が確立されていることを、基になる拡張可能なスイッチ拡張機能に通知します。外部または仮想ネットワークアダプター。 接続が完全に確立された後、拡張可能スイッチのプロトコルエッジは、OID_SWITCH_NIC_CONNECT の OID セット要求を発行します。
+description: Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェクト識別子 (OID) セット要求を発行して、拡張可能なスイッチポートとの間に新しい接続が確立されていることを、基になる拡張可能なスイッチ拡張機能に通知 OID_SWITCH_NIC_CREATE します。外部または仮想ネットワークアダプター。 接続が完全に確立されると、拡張可能スイッチのプロトコルエッジは OID_SWITCH_NIC_CONNECT の OID セット要求を発行します。
 ms.assetid: 1D6B2C6B-A63E-4A20-B534-AF12714F5FB5
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_NIC_CREATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_NIC_CREATE
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bbb07902faf3d85eefd456f0cd7c814af03a372
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843959"
 # <a name="oid_switch_nic_create"></a>OID\_スイッチ\_NIC の作成\_
 
 
-Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_の要求を発行します。これにより、\_作成され、基になる拡張可能なスイッチ拡張機能に、新しい接続が確立されていることを通知\_ます。拡張可能なスイッチポートと外部または仮想ネットワークアダプター。 接続が完全に確立された後、拡張可能スイッチのプロトコルエッジは、oid の OID セット要求を発行し[\_スイッチ\_NIC\_接続](oid-switch-nic-connect.md)します。
+Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セットの OID\_スイッチ\_\_NIC を作成して、拡張可能なスイッチポートと外部または仮想ネットワークアダプターとの間に新しい接続が確立されていることを基になる拡張可能なスイッチ拡張機能に通知します。 接続が完全に確立された後、拡張可能スイッチのプロトコルエッジは、oid の OID セット要求を発行し[\_スイッチ\_NIC\_接続](oid-switch-nic-connect.md)します。
 
 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_SWITCH\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)構造体へのポインターが含まれています。
 

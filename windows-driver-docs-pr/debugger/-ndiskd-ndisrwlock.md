@@ -1,6 +1,6 @@
 ---
 title: ndiskd ndisrwlock
-description: Ndisrwlock 拡張機能は、NDIS_RW_LOCK_EX ロック構造に関する情報を表示します。
+description: Ndisrwlock 拡張機能には、NDIS_RW_LOCK_EX ロック構造に関する情報が表示されます。
 ms.assetid: 853CBAFE-3899-4983-BFC7-933D3BC7ADA1
 keywords:
 - ndisrwlock Windows デバッグ
@@ -92,7 +92,7 @@ NDIS READ-WRITE LOCK
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [**NDIS\_RW\_LOCK\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
 

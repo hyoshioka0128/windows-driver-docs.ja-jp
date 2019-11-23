@@ -27,9 +27,9 @@ Ip 転送が、コンピューターに割り当てられているアドレス�
 
 転送層で示される[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体は、完全な ip パケット、ip パケットフラグメント、または ip パケットフラグメントグループを記述できます。 IP パケットフラグメントは、転送レイヤーを通過しますが、コールアウトに2回 (最初はフラグメントとして、もう1つはフラグメントグループ内のフラグメントとして) 示されます。
 
-フラグメントグループが指定されている場合、 **\_フラグ\_の .fwp\_条件は\_フラグメント\_グループ**フラグは、受信した値としてコールアウトドライバーの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数に渡されます。 この場合、 *NetBufferList*パラメーターによって示される[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体は、各**net\_Buffer\_LIST**を含む**net\_buffer\_リスト**チェーンの最初のノードになります。パケットフラグメントを記述します。
+フラグメントグループが指定されている場合、 **\_フラグ\_の .fwp\_条件は\_フラグメント\_グループ**フラグは、受信した値としてコールアウトドライバーの[*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)関数に渡されます。 この場合、 *NetBufferList*パラメーターによって示される[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体は、各**net\_buffer\_list**がパケットフラグメントを記述したリストチェーン **\_\_** の最初のノードになります。
 
-事前に挿入されたパケットは、どの WFP レイヤーにも表示されません。 挿入されたパケットは、コールアウトドライバーに再度示すことができます。 無限ループを防ぐために、ドライバーはまず、 [**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数を呼び出してから、 *classid*の関数の呼び出しを続行する必要があります。また、ドライバーは挿入状態[**のパケットを許可する必要があります。FWPS\_パケット\_挿入\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_) **fwps\_パケット\_\_self**または FWPS\_パケット\_によって挿入される\_自己または**fwps\_パケット\_\_SELF によって挿入される**変更せずに渡す場合は。
+事前に挿入されたパケットは、どの WFP レイヤーにも表示されません。 挿入されたパケットは、コールアウトドライバーに再度示すことができます。 無限ループを防ぐには、ドライバーはまず、 [**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数を呼び出してから、 *classid*の関数の呼び出しを続行する必要があります。また、ドライバーは、挿入状態[**fwps\_wps に\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_)\_セットを含むパケットを許可する必要があります。これは\_**self**または**fwps\_パケット\_によって\_挿入され\_** 変更せずに渡す場合は。\_\_\_\_
 
 次のコマンドを使用して、システムの現在の "グループの転送されたフラグメント" 設定を表示できます: **netsh interface {ipv4 | ipv6} show global**.
 
@@ -42,7 +42,7 @@ Ip 転送が、コンピューターに割り当てられているアドレス�
 2. "元のフラグメント" ごとに1つの表示 (4 つの分類)
 3. 最終再構築 IP パケットの1つの表示 (1 分類)
 
-フィルター条件を追加するときに、 **\_フラグ\_NONE\_SET**は、[\_] を選択して、2番目の表示を回避するために\_**フラグメント**フラグと共に使用できます。 これらの条件フラグは、コールアウトドライバーが考慮しない分類を防ぐことを目的としています。 コールアウトが完全なパケットだけを検査する必要がある場合 (フラグメント化および再構築されていない場合)、ip パケットとして示されているフラグメントの処理を回避するために、IP ヘッダーを解析する必要があります。 コールアウトは、次の手順を実行してこれを実現できます。
+フィルター条件を追加するときに、 **\_フラグ\_NONE\_SET**は、[\_] を選択して、2番目の表示を回避するために\_**フラグメント**フラグと共に使用できます。\_\_\_ これらの条件フラグは、コールアウトドライバーが考慮しない分類を防ぐことを目的としています。 コールアウトが完全なパケットだけを検査する必要がある場合 (フラグメント化および再構築されていない場合)、ip パケットとして示されているフラグメントの処理を回避するために、IP ヘッダーを解析する必要があります。 コールアウトは、次の手順を実行してこれを実現できます。
 
 1. More Fragment (MF) フラグが設定されているかどうか、またはフラグメントオフセットフィールドが0でないことを確認して、最初の表示をスキップします。
 2. **FWP_CONDITION_FLAG_IS_FRAGMENT**が設定されているすべての分類を許可するフィルターを作成します。
@@ -77,7 +77,7 @@ IPsec 処理と共存できるようにするには、受信トランスポー�
 <td align="left"><p>該当なし</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[接続]</p></td>
+<td align="left"><p>接続</p></td>
 <td align="left"><p>パケットがありません</p></td>
 <td align="left"><p>最初の UDP パケット (送信)</p></td>
 </tr>

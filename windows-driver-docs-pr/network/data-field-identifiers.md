@@ -318,7 +318,7 @@ FWPS_LAYER_ALE_BIND_REDIRECT_V4</p>
 <dl>
 <dt><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_bind_redirect_v4_"><b>FWPS_FIELDS_ALE_BIND_REDIRECT_V4</b></a></dt>
 <dt>
-<div class="alert"><b>Note</b>  windows 7 以降のバージョンの Windows でサポートされています。</div>
+<div class="alert"><b>Note</b>  、windows 7 以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </dt>
 </dl>

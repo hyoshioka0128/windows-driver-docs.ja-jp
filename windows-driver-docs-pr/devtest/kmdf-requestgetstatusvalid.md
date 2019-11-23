@@ -29,9 +29,9 @@ ms.locfileid: "72839441"
 
 |              |      |
 |--------------|------|
-| ドライバーモデル | KMDF |
+| ドライバー モデル | KMDF |
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>

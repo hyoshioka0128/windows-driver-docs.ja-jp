@@ -39,7 +39,7 @@ ms.locfileid: "72838245"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>的</strong></p></td>
-<td align="left"><p>プロトコルオフロードの優先順位を格納します。 プロトコルのオフロードに使用できるリソースがないときに、追加のドライバーで優先度の高いプロトコルオフロードが追加された場合、NDIS はリソースを解放するために低優先度のプロトコルオフロードを削除することがあります。 ミニポートドライバーは、このメンバーを無視する必要があります。 プロトコルドライバーは、NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_LOWEST から NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_HIGHEST までの定義済みの範囲内の任意の値を提供できます。</p></td>
+<td align="left"><p>プロトコルオフロードの優先順位を格納します。 プロトコルのオフロードに使用できるリソースがないときに、追加のドライバーで優先度の高いプロトコルオフロードが追加された場合、NDIS はリソースを解放するために低優先度のプロトコルオフロードを削除することがあります。 ミニポートドライバーは、このメンバーを無視する必要があります。 プロトコルドライバーは、NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_LOWEST から NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_HIGHEST まで、定義済みの範囲内の任意の値を提供できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadType</strong></p></td>
@@ -47,15 +47,15 @@ ms.locfileid: "72838245"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>フレンドリ</strong></p></td>
-<td align="left"><p>低電力プロトコルオフロードのユーザーが判読できる説明を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a>構造体が含まれます。</p></td>
+<td align="left"><p>低電力プロトコルオフロードのユーザーが判読できる説明を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a>構造体を格納します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadId</strong></p></td>
-<td align="left"><p>オフロードプロトコルを識別する、NDIS によって提供される値が含まれます。 Ndis では、 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)">OID_PM_ADD_PROTOCOL_OFFLOAD</a>の OID 要求を基になる ndis ドライバーに送信する前、またはそれ以降のドライバーへの要求を完了する前に、 <strong>ProtocolOffloadId</strong>によって、プロトコルのオフロードで一意の値に設定されます。ネットワークアダプター。</p></td>
+<td align="left"><p>オフロードプロトコルを識別する、NDIS によって提供される値が含まれます。 NDIS では、ProtocolOffloadId の OID 要求が基になる NDIS ドライバーに送信されるか、またはそれ以降のドライバーへ<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)">OID_PM_ADD_PROTOCOL_OFFLOAD</a>の要求が完了する前に、ndis によってがネットワークアダプターのプロトコルオフロードで一意の値に設定されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>NextProtocolOffloadOffset</strong></p></td>
-<td align="left"><p>OID 要求<em>Informationbuffer</em>の先頭であるオフセットを、 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list)">OID_PM_PROTOCOL_OFFLOAD_LIST</a> oid のリスト内の次の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>構造体に格納します。 OID_PM_PROTOCOL_OFFLOAD_LIST の詳細については、「<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">低電力プロトコルオフロードの現在のパラメーター設定を取得する</a>」を参照してください。</p></td>
+<td align="left"><p>OID 要求<em>Informationbuffer</em>の先頭であるオフセットを、 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list)">OID_PM_PROTOCOL_OFFLOAD_LIST</a> oid の一覧の次の<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>構造体に格納します。 OID_PM_PROTOCOL_OFFLOAD_LIST の詳細については、「<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">低電力プロトコルオフロードの現在のパラメーター設定を取得する</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadParameters</strong></p></td>
@@ -100,11 +100,11 @@ NDIS は、ネットワークアダプターに固有の識別子をすべての
 
 NDIS では、複数の NDIS プロトコルドライバーで、同じネットワークアダプターにプロトコルオフロードを追加できます。 要求されたオフロードプロトコルの数がネットワークアダプターでサポートできる量より多い場合に、適切なプロトコルセットがネットワークアダプターにオフロードされるようにするため、プロトコルドライバーは各オフロードプロトコルに優先順位を割り当てます。 ネットワークアダプターにリソースが不足しているために、NDIS が新しい優先度のプロトコルをオフロードできない場合、NDIS は優先順位の低いオフロードプロトコル (存在する場合) のいずれかを削除し、優先度の高いプロトコルのオフロードを再試行します。
 
-ミニポートドライバーは、低電力プロトコルのオフロードの追加要求を失敗させ、ndis\_PM\_プロトコル\_\_完全な状態コード\_一覧を\_返して、NDIS によっ**て  ** プロトコルのオフロード。
+ミニポートドライバーは、低電力プロトコルのオフロードの追加要求を失敗させて、ndis がプロトコルのオフロードを再優先できるようにするために、\_NDIS\_PM\_プロトコル\_\_完全な状態コード\_  を返す必要がある**ことに注意**してください。
 
  
 
-優先順位の低いプロトコルのオフロードの結果として、低優先度のオフロードプロトコルのいずれかが削除された場合、NDIS は、 [**ndis\_status\_PM\_オフロード\_拒否**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)状態の通知を送信します。削除されたプロトコルオフロードを設定します。 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーには、拒否されたプロトコルオフロードのプロトコルオフロード識別子が含まれています。 NDIS は、 [**ndis\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造体の**ProtocolOffloadId**メンバーにプロトコルオフロード識別子を提供しました。
+優先順位の低いプロトコルのオフロードの結果として、優先順位の低いオフロードプロトコルのいずれかが削除された場合、NDIS は、削除されたプロトコルオフロードを設定するドライバーに通知するために、 [**ndis\_status\_PM\_オフロード\_拒否**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)状態の通知を送信します。 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体の**statusbuffer**メンバーには、拒否されたプロトコルオフロードのプロトコルオフロード識別子が含まれています。 NDIS は、 [**ndis\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造体の**ProtocolOffloadId**メンバーにプロトコルオフロード識別子を提供しました。
 
  
 

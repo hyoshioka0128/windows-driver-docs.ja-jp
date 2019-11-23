@@ -47,7 +47,7 @@ UMDF 1.11 以前では、フレームワークの検証ツールは常にオン�
 ## <a name="enabling-and-disabling-umdf-verifier"></a>UMDF 検証機能の有効化と無効化
 
 
-**VerifierOn**を手動で有効にするには、ドライバーの [ **\\パラメーター** ] に0以外の値を設定します。 **HKEY\_ローカル\_コンピューター\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\&lt;ドライバー名&gt;** レジストリキー。
+\_**ローカル\_コンピューター\\ソフトウェア\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services\\&lt;ドライバー名&gt;** レジストリキーの**VerifierOn**を、ドライバーの **\\パラメーター**の0以外の値に設定することによって、UMDF Verifier を手動で有効にすることができます。
 
 **VerifierOn**値の存在がゼロに設定されていても、アプリケーション検証ツールとのリンケージがオーバーライドさ  **ことに注意**してください。 そのため、値を0に設定するのではなく、強制的に使用しない場合は、値を削除することをお勧めします。
 
@@ -69,23 +69,23 @@ UMDF 検証機能が有効になっているかどうかを判断するには、
 <a href="" id="verifydownlevel--------------reg-dword-"></a>**Verifydownlevel レベル**(**REG\_DWORD**)  
 **Verifydownlevel レベル**が0以外の値に設定されていて、現在のバージョンより古いバージョンのフレームワークを使用してドライバーがビルドされている場合、フレームワークの検証ツールには、ドライバーのビルド後に追加されたテストが含まれます。 この値が存在しない場合、または0に設定されている場合、フレームワークの検証ツールには、ドライバーがビルドされたときに存在していたテストのみが含まれます。
 
-たとえば、ドライバーがバージョン1.7 のフレームワークでビルドされ、コンピューターに framework のバージョン1.9 がインストールされている場合、 **Verifydownlevel レベル**を0以外に設定すると、検証ツールのバージョン1.9 に追加されたテストが検証ツールに含まれるようになります。ドライバーの実行時。
+たとえば、ドライバーがバージョン1.7 のフレームワークでビルドされ、コンピューターに framework のバージョン1.9 がインストールされている場合、 **Verifydownlevel レベル**を0以外に設定すると、検証ツールは、ドライバーの実行時に、検証ツールのバージョン1.9 に追加されたテストを含むようになります。
 
-この値は、 **HKEY\_ローカル\_コンピューター\\ソフトウェア\\MICROSOFT\\Windows NT\\CurrentVersion\\Wudf\\Services\\Wdf のパラメーター\\サブキーにあります。ドライバー**1 * レジストリキー。
+この値は、 **HKEY\_ローカル\_コンピューター\\ソフトウェア\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services\\*** Wdf * レジストリキーの**パラメーター\\** サブキーにあります。
 
 <a href="" id="trackobjects-----------------------------reg-dword-"></a>**Trackobjects** (**REG\_DWORD**)  
 **Trackobjects**が0以外の値に設定されている場合、フレームワークは、(削除されていない) フレームワークベースのオブジェクトが[リーク](determining-if-a-driver-leaks-framework-objects.md)した場合に、ドライバーがアンロードされたときにデバッガーに入ります。
 
 通常のテストでは、 **TrackRefCounts**ではなく**trackobjects**を有効にする必要があります。 検証ツールによって、ドライバーがフレームワークオブジェクトをリークしていることが報告された場合は、コントロールアプリケーションを使用して、 **TrackRefCounts** verifier オプションを有効にします。
 
-この値は、 **HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services**レジストリキーの*Defaulthostprocessguid*サブキーにあります。では、 *Defaulthostprocessguid*は、 **HKEY\_ローカル\_コンピューター\\ソフトウェア\\MICROSOFT\\Windows NT\\CurrentVersion\\wudf**サブキーで確認できる値です。
+この値は、 **hkey\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WINDOWS nt\\CurrentVersion\\wudf\\Services**レジストリキーの*defaulthostprocessguid*サブキーにあります。ここで、 *DEFAULTHOSTPROCESSGUID*は、 **hkey\_local\_MACHINE\\SOFTWARE\\Microsoft\\windows nt\\CurrentVersion\\wudf**サブキーで見つけることができる値です。
 
 <a href="" id="trackrefcounts-----------------------------reg-dword-"></a>**TrackRefCounts** (**REG\_DWORD**)  
 **TrackRefCounts**が0以外の値に設定されている場合、フレームワークは各フレームワークベースのオブジェクトへの参照の数を保持します。 [! Wudfrefhist](using-umdf-debugger-extensions.md)デバッガー拡張機能を使用して、オブジェクトの参照カウントの変更を表示できます。
 
 **TrackRefCounts**を0以外の値に設定すると、ドライバーのパフォーマンスが低下するため、オブジェクトの削除に関するバグをデバッグする場合を除き、値を0のままにしておく必要があります。
 
-この値は、 **HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services**レジストリキーの*Defaulthostprocessguid*サブキーにあります。では、 *Defaulthostprocessguid*は、 **HKEY\_ローカル\_コンピューター\\ソフトウェア\\MICROSOFT\\Windows NT\\CurrentVersion\\wudf**サブキーで確認できる値です。
+この値は、 **hkey\_ローカル\_マシン\\ソフトウェア\\Microsoft\\WINDOWS nt\\CurrentVersion\\wudf\\Services**レジストリキーの*defaulthostprocessguid*サブキーにあります。ここで、 *DEFAULTHOSTPROCESSGUID*は、 **hkey\_local\_MACHINE\\SOFTWARE\\Microsoft\\windows nt\\CurrentVersion\\wudf**サブキーで見つけることができる値です。
 
 上記のレジストリ値に加えて、UMDF 2.0 以降のドライバーでは、 [「KMDF Verifier の使用](using-kmdf-verifier.md)」に示されている多くのレジストリ値を使用することもできます。
 

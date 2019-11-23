@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0xC000021A WINLOGON_FATAL_ERROR
-description: WINLOGON_FATAL_ERROR のバグチェックの値は0xC000021A です。 これは、Winlogon プロセスが予期せず終了したことを意味します。
+description: WINLOGON_FATAL_ERROR バグチェックの値は0xC000021A です。 これは、Winlogon プロセスが予期せず終了したことを意味します。
 ms.assetid: d46e2948-ff18-49e0-a738-7b90ab54d333
 keywords:
 - バグチェック 0xC000021A WINLOGON_FATAL_ERROR
@@ -20,14 +20,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359577"
 ---
-# <a name="bug-check-0xc000021a-winlogon_fatal_error"></a>バグチェック 0xC000021A: WINLOGON @ no__t-0FATAL @ no__t-1 エラー
+# <a name="bug-check-0xc000021a-winlogon_fatal_error"></a>バグチェック 0xC000021A: WINLOGON\_致命的な\_エラー
 
-WINLOGON @ no__t-0FATAL @ no__t エラーのバグチェックには、0xC000021A という値が指定されています。 これは、Winlogon プロセスが予期せず終了したことを意味します。
+WINLOGON\_致命的な\_エラーのバグチェックには、0xC000021A という値が指定されています。 これは、Winlogon プロセスが予期せず終了したことを意味します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="winlogon_fatal_error-parameters"></a>WINLOGON @ no__t-0FATAL @ no__t-1ERROR Parameters
+## <a name="winlogon_fatal_error-parameters"></a>WINLOGON\_致命的な\_のエラーパラメーター
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ WINLOGON @ no__t-0FATAL @ no__t エラーのバグチェックには、0xC000021
 <td align="left"><p>予約済み</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>予約済み</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ WINLOGON @ no__t-0FATAL @ no__t エラーのバグチェックには、0xC000021
 
 システムファイルが一致しないと、このエラーが発生することもあります。 この不一致は、バックアップからハードディスクを復元した場合に発生する可能性があります。 一部のバックアッププログラムでは、使用中のシステムファイルの復元をスキップする場合があります。
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 この状況では、ユーザーモードプロセスで実際のエラーが発生したため、カーネルデバッガーを実行しても役に立たない場合があります。
@@ -105,6 +105,6 @@ WINLOGON @ no__t-0FATAL @ no__t エラーのバグチェックには、0xC000021
 
 トラブルシューティングのために要素を分離し、必要に応じて Windows を使用するには、セーフモードを使用することを検討してください。 セーフモードを使用すると、Windows の起動時に最小限必要なドライバーとシステムサービスのみが読み込まれます。
 
-セーフモードに移行するには、設定 で **更新とセキュリティ** を使用します。 メンテナンスモードで起動するには、[**回復**&nbsp; @ no__t **] を選択**します。 生成されたメニューで、 **[トラブルシューティング]** を選択し &nbsp; @ No__t の**詳細オプション**&nbsp; @ no__t**スタートアップ設定**&nbsp; @ no__t を**再起動**します。 Windows が再起動し、 **[スタートアップの設定]** 画面が表示されたら、オプション4、5、または6を選択してセーフモードで起動します。
+セーフモードに移行するには、設定 で **更新とセキュリティ** を使用します。 **回復**&nbsp; を選択して、メンテナンスモードで起動する &gt;**詳細なスタートアップ** を選択します。 生成されたメニューで **トラブルシューティング** を選択し、&nbsp;&gt;**詳細オプション**&nbsp;&gt;**スタートアップ設定**&nbsp;&gt;**再起動** を選択します。 Windows が再起動し、 **[スタートアップの設定]** 画面が表示されたら、オプション4、5、または6を選択してセーフモードで起動します。
 
 セーフモードは、起動時にファンクションキーを押すことによって使用することもできます。たとえば、F8 キーを押します。 特定のスタートアップオプションについては、コンピューターの製造元の情報を参照してください。

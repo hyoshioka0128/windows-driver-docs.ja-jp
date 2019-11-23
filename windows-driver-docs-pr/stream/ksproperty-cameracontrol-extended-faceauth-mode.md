@@ -3,7 +3,7 @@ title: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_モード
 description: KSK プロパティ\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_MODE は、顔認証を有効または無効にするために使用されるプロパティ ID です。
 ms.assetid: 240AABDB-585B-462E-B391-1CB55BA563D5
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE ストリーミングメディアデバイス
+- ストリーミングメディアデバイスの KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE
 topic_type:
 - apiref
 api_name:
@@ -36,9 +36,9 @@ ms.locfileid: "72843237"
 </colgroup>
 <thead>
 <tr class="header">
-<th>適用範囲</th>
+<th>Scope</th>
 <th>コントロール</th>
-<th>タスクバーの検索ボックスに</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>
@@ -81,12 +81,12 @@ ms.locfileid: "72843237"
 </tr>
 <tr class="even">
 <td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong></p></td>
-<td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>がサポートされていない場合は、必須の機能です。</p>
-<p>指定する場合は、フレームメタデータで説明されている各サンプルに<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>を設定することが必須です。 このフラグは、 <strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>および<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED</strong>フラグと同時に指定することはできません。 このモードでは、キャプチャされたフレームごとに IR ストロボが交互にオン/オフになることが予想されます。</p></td>
+<td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>がサポートされていない場合の必須機能。</p>
+<p>指定する場合は、フレームメタデータの説明に従って各サンプルに<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>を設定することが必須です。 このフラグは、 <strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>および<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED</strong>フラグと同時に指定することはできません。 このモードでは、キャプチャされたフレームごとに IR ストロボが交互にオン/オフになることが予想されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong></p></td>
-<td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>がサポートされていない場合は、必須の機能です。</p>
+<td><p><strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>がサポートされていない場合の必須機能。</p>
 <p>このフラグは、 <strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>および<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED</strong>フラグと同時に指定することはできません。 このモードでは、バックグラウンドアンビエント IR 光が減算された赤外線イメージを作成する必要があります。</p></td>
 </tr>
 </tbody>
@@ -94,11 +94,11 @@ ms.locfileid: "72843237"
 
  
 
-既定では、ドライバーは**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_mode**が**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_mode**に設定されている必要があります (一般的な場合)。目的の IR カメラ。 それ以外の場合は、 **KSCAMERA\_extendedprop\_FACEAUTH\_モード\_バックグラウンド\_減算**または**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_代替 @no__t_ を設定する必要があり11_ フレーム\_照明**。
+既定では、ドライバーは**Ksk プロパティ\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_mode**が**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード**に設定されている必要があります (汎用 IR カメラの場合)。\_ それ以外の場合は、 **KSCAMERA\_extendedprop\_FACEAUTH\_モード\_バックグラウンド\_減算**または**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_代替\_フレーム\_照明**に設定する必要があります。
 
 IR カメラは、Windows Hello 以外の一般的なシナリオで動作することが予想される場合に、 **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_\_モード**をアドバタイズする必要があります。
 
-顔ログインに使用される IR カメラは、 **KSCAMERA\_extendedprop\_FACEAUTH\_モード\_代替\_フレーム\_照明**または**KSCAMERA\_EXTENDEDPROP\_FACEAUTH をサポートする必要があり @no__t\_バックグラウンド\_の減算**機能の場合は、これらのフラグのいずれか1つだけをサポートする必要があります。
+顔ログインに使用される IR カメラでは、 **KSCAMERA\_extendedprop\_FACEAUTH\_モード\_代替\_フレーム\_照明**または**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード**のいずれかをサポートする必要があります。これらのフラグのいずれかだけをサポートする必要があります。\_\_
 
 次の表に、コントロールを使用する場合の[**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体のフィールドの説明と要件を示します。
 
@@ -120,10 +120,10 @@ IR カメラは、Windows Hello 以外の一般的なシナリオで動作する
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>は、フィルターの1つのピンでのみアドバタイズする必要があります。 Pin は<strong>PINNAME_VIDEO_CAPTURE</strong>または<strong>PINNAME_VIDEO_PREVIEW</strong>型である必要があり、IR センサーデータを生成する必要があり、frameserver で共有可能とマークされている必要があります。</p></td>
+<td><p>は、フィルターの1つのピンでのみアドバタイズする必要があります。 Pin は、型<strong>PINNAME_VIDEO_CAPTURE</strong>または<strong>PINNAME_VIDEO_PREVIEW</strong>である必要があります。また、IR センサーデータを生成し、frameserver で共有可能としてマークする必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
+<td><p>サイズ</p></td>
 <td><p>これは<strong>sizeof</strong>(<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + <strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) である必要があります。</p></td>
 </tr>
 <tr class="even">
@@ -132,12 +132,12 @@ IR カメラは、Windows Hello 以外の一般的なシナリオで動作する
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>は、前の手順で定義したように、サポートされている<strong>KSCAMERA_EXTENDEDPROP_ FACEAUTH_MODE_xxx</strong>フラグのビット単位である必要があります。</p>
-<p>ドライバーでは、 <strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>と<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>の両方をアドバタイズしないでください。</p></td>
+<td><p>は、前に定義したように、サポートされている<strong>KSCAMERA_EXTENDEDPROP_ FACEAUTH_MODE_xxx</strong>フラグのビット単位またはサポートされている必要があります。</p>
+<p>ドライバーは、 <strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>と<strong>KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION</strong>の両方をアドバタイズしないようにする必要があります</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
-<td><p>これは、読み取り/書き込みフィールドです。 これには、上で定義した<strong>KSCAMERA_EXTENDEDPROP_ FACEAUTH_MODE_xxx</strong>フラグのいずれかを指定できます。</p></td>
+<td><p>これは、読み取り/書き込みフィールドです。 これには、上記で定義された<strong>KSCAMERA_EXTENDEDPROP_ FACEAUTH_MODE_xxx</strong>フラグのいずれかを指定できます。</p></td>
 </tr>
 </tbody>
 </table>

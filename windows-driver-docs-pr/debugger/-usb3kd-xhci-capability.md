@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_capability
-description: Usb3kd 拡張機能には、USB 3.0 ホストコントローラーの機能が表示されます。
+title: xhci_capability usb3kd
+description: Xhci_capability usb3kd 拡張機能には、USB 3.0 ホストコントローラーの機能が表示されます。
 ms.assetid: 72D3919A-C111-4B16-8A52-B439429DFFCC
 keywords:
-- usb3kd xhci_capability Windows デバッグ
+- usb3kd Windows デバッグの xhci_capability
 ms.date: 05/23/2017
 topic_type:
 - apiref

@@ -100,7 +100,7 @@ WIA サービスは、イメージングアプリケーションと WIA ミニ�
 
 ### <a name="wia-utility-library"></a>WIA ユーティリティ ライブラリ
 
-[WIA ユーティリティライブラリ](wia-utility-library.md)には、デバッグ機能 (**wi/dbg * * * Xxx*)、一般的なユーティリティヘルパー関数のコレクション、3つのクラス ( **cwi/Dbgfn**クラス、 **cwi/formatconverter**クラス、および) が含まれています。**Cwi/Propertylist**クラス。
+[WIA ユーティリティライブラリ](wia-utility-library.md)には、一連のデバッグ機能 (**wi/dbg * * * Xxx*)、一般的なユーティリティヘルパー関数のコレクション、および Cwi/ **Dbgfn**クラス、 **Cwi/Formatconverter**クラス、 **cwiて propertylist**クラスが含まれています。
 
 ### <a name="wia-minidrivers"></a>WIA ミニドライバー
 

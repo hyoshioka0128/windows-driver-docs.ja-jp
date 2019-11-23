@@ -142,13 +142,13 @@ ServiceBinary=path-to-service
 *説明文字列*は、わかりやすくするために十分な長さである必要がありますが、それほど厄介ではありません。 *説明文字列*に%*strkey*% トークンが含まれている場合、各トークンは最大511文字を表すことができます。 文字列トークンの置換後の合計文字列は、1024文字を超えないようにする必要があります。
 
 <a href="" id="servicetype-type-code"></a>**ServiceType**=*タイプコード*  
-カーネルモードデバイスドライバーの種類コードは、0x00000001 (SERVICE_KERNEL_DRIVER) に設定する必要があります。
+カーネルモードデバイスドライバーの種類コードを 0x00000001 (SERVICE_KERNEL_DRIVER) に設定する必要があります。
 
 デバイスにインストールされている Microsoft Win32 サービスの*種類コード*は、 **0x00000010** (SERVICE_WIN32_OWN_PROCESS) または**0x00000020** (SERVICE_WIN32_SHARE_PROCESS) に設定する必要があります。 Win32 サービスがデスクトップと対話できる場合は、型コードの値を**0x00000100** (SERVICE_INTERACTIVE_PROCESS) と組み合わせる必要があります。
 
 リダイレクター、ファイルシステムドライバーなど、最高レベルのネットワークドライバーの*種類コード*は、 **0x00000002** (SERVICE_FILE_SYSTEM_DRIVER) に設定する必要があります。
 
-SERVICE_xxxx 定数は、 *Wdm*と*Ntddk*で定義されています。
+SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 
 <a href="" id="starttype-start-code"></a>**Starttype**=*の開始コード*  
 次の一覧に示されているように、10進表記またはのいずれかで表される、次の数値のいずれかとしてドライバーを開始するタイミングを指定します。
@@ -205,7 +205,7 @@ SERVICE_xxxx 定数は、 *Wdm*と*Ntddk*で定義されています。
 *Dirid*番号は、カスタムディレクトリ識別子、または「 [Dirid の使用](using-dirids.md)」で説明されているシステム定義のディレクトリ識別子のいずれかです。 指定されたファイル*名*によって、ソース配布メディアからターゲットコンピューター上のそのディレクトリに転送されたファイル ( [**INF の CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を参照) が指定されます。
 
 <a href="" id="startname-driver-object-name"></a>**StartName**=*driver-オブジェクト名*  
-この省略可能なエントリは、このデバイス/ドライバーを表すドライバーオブジェクトの名前を指定します。 *型コード*で**1** (SERVICE_KERNEL_DRIVER) または**2** (SERVICE_FILE_SYSTEM_DRIVER) が指定されている場合、この名前は、i/o マネージャーがドライバーの読み込みに使用するドライバーオブジェクトの名前になります。
+この省略可能なエントリは、このデバイス/ドライバーを表すドライバーオブジェクトの名前を指定します。 *型コード*で**1** (SERVICE_KERNEL_DRIVER) または**2** (SERVICE_FILE_SYSTEM_DRIVER) が指定されている場合、この名前は、i/o マネージャーがドライバーを読み込むために使用するドライバーオブジェクトの名前になります。
 
 <a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**= *\[* 、レジストリセクション\]**を**<em>追加</em>します...  
 新しくインストールされたサービスに関連するレジストリ情報が設定されている、1つまたは複数の INF ライターで定義された*レジストリセクション*を参照します。 このような*add registry セクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーが指定されています。 詳細については、「 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)」を参照してください。
@@ -246,26 +246,26 @@ SERVICE_xxxx 定数は、 *Wdm*と*Ntddk*で定義されています。
 オペレーティングシステムは、次のように、*サービスのインストールセクション*の  **starttype**値に従ってドライバーを読み込みます。
 
 -   システムブートの開始段階では、オペレーティングシステムはすべての**0x0** (SERVICE_BOOT_START) ドライバーを読み込みます。
--   システムの開始フェーズでは、オペレーティングシステムは、PnP マネージャーがレジストリ内のデバイスノード (*devnodes*) を検出するすべての WDM および pnp ドライバーを最初に読み込み**ます。\\列挙**ツリー (INF ファイルで SERVICE_ に**0x01**が指定されているかどうかを示します。SYSTEM_START または**0X03** SERVICE_DEMAND_START)。その後、オペレーティングシステムは、残りのすべての SERVICE_SYSTEM_START ドライバーを読み込みます。
--   システムの自動開始フェーズでは、オペレーティングシステムは残りのすべての SERVICE_AUTO_START ドライバーを読み込みます。
+-   システムの開始フェーズでは、オペレーティングシステムはまず、PnP マネージャーがレジストリ内のデバイスノード (*devnodes*) を検出するすべての WDM および pnp ドライバーを読み込み**ます。\\列挙**ツリー (INF ファイルで、SERVICE_DEMAND_START の SERVICE_SYSTEM_START または**0x03**に**0x01**が指定されているかどうか)。その後、オペレーティングシステムは、残りのすべての SERVICE_SYSTEM_START ドライバーを読み込みます。
+-   システムの自動開始フェーズでは、オペレーティングシステムによって残りのすべての SERVICE_AUTO_START ドライバーが読み込まれます。
 
 **依存関係**の詳細については、「[ドライバーの読み込み順序の指定](specifying-driver-load-order.md)」を参照してください。
 
 ### <a name="promoting-a-drivers-starttype-at-boot-depending-on-boot-scenario"></a>ブート時にドライバーの StartType を昇格する (ブートシナリオに応じて)
 
-ブートシナリオに応じて、 **Bootflags**レジストリ値を使用して、オペレーティングシステムがドライバーの**starttype**値を 0x0 (SERVICE_BOOT_START) に昇格させるタイミングを制御できます。 16進数値として表現される次の数値の1つ以上 (論理和) を指定できます。
+ブートシナリオに応じて、 **Bootflags**レジストリ値を使用して、オペレーティングシステムがドライバーの**starttype**値を 0x0 (SERVICE_BOOT_START) に昇格するタイミングを制御できます。 16進数値として表現される次の数値の1つ以上 (論理和) を指定できます。
 
--   0x1 (CM_SERVICE_NETWORK_BOOT_LOAD) は、ネットワークから起動した場合にドライバーを昇格させる必要があることを示します。
+-   0x1 (CM_SERVICE_NETWORK_BOOT_LOAD) ネットワークから起動する場合は、ドライバーを昇格させる必要があることを示します。
 
--   0x2 (CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD) は、VHD から起動する場合にドライバーを昇格する必要があることを示します。
+-   0x2 (CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD) VHD から起動する場合は、ドライバーを昇格する必要があることを示します。
 
--   0x4 (CM_SERVICE_USB_DISK_BOOT_LOAD) は、USB ディスクから起動する場合に、ドライバーをに昇格させる必要があることを示します。
+-   0x4 (CM_SERVICE_USB_DISK_BOOT_LOAD) USB ディスクから起動する場合は、ドライバーをに昇格させる必要があることを示します。
 
 -   0x8 (CM_SERVICE_SD_DISK_BOOT_LOAD) SD ストレージから起動した場合、ドライバーを昇格させる必要があることを示します。
 
 -   0x10 (CM_SERVICE_USB3_DISK_BOOT_LOAD) は、USB 3.0 コントローラー上のディスクから起動する場合に、ドライバーを昇格させる必要があることを示します。
 
--   0x20 (CM_SERVICE_MEASURED_BOOT_LOAD) は、測定されたブートが有効になっているときにブートする場合にドライバーを昇格する必要があることを示します。
+-   0x20 (CM_SERVICE_MEASURED_BOOT_LOAD) は、測定されたブートが有効になっているときに起動時にドライバーを昇格させる必要があることを示します。
 
 -   0x40 (CM_SERVICE_VERIFIER_BOOT_LOAD) は、検証ツールの起動が有効になっている場合にドライバーを昇格させる必要があることを示します。
 
@@ -295,7 +295,7 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-一般的なデバイス/ドライバーの INF ファイルの場合、 **AddReg**ディレクティブのみを使用してドライバーのイベントログメッセージファイルを*設定します*。 **CurrentControlSet\\Services\\EventLog\\** <em>EventLogType</em> **\\** EventName に HKLM\\システム\\*を指定する* **hkr**仕様レジストリキー。 このイベントログの*追加-セクション*には、次の一般的な形式があります。
+一般的なデバイス/ドライバーの INF ファイルの場合、 **AddReg**ディレクティブのみを使用してドライバーのイベントログメッセージファイルを*設定します*。 **CurrentControlSet\\Services\\EventLog\\** <em>EventLogType</em> **\\** <em>EventName</em>レジストリキー*を指定する*と、によって、\\System の\\HKLM **r**仕様が指定されます。 このイベントログの*追加-セクション*には、次の一般的な形式があります。
 
 ```ini
 [drivername_EventLog_AddReg]
@@ -305,17 +305,17 @@ HKR,,TypesSupported,0x00010001,7
 
 特に、次のように、デバイス/ドライバー用に作成されたレジストリサブキーに2つの値エントリを追加します。
 
--   **EventMessageFile**という名前の値のエントリは、FLG_ADDREG_TYPE_EXPAND_SZ 値**0x00020000**によって指定された、 [REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。 二重引用符 (") で囲まれた値は、システムによって提供される*Iologmsg .dll*を関連付けます (ただし、別のログ dll に関連付けることもできます)。 通常、これらの各ファイルへのパスは次のように指定されます。
+-   **EventMessageFile**という名前の値のエントリは、FLG_ADDREG_TYPE_EXPAND_SZ 値の**0x00020000**によって指定された[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。 二重引用符 (") で囲まれた値は、システムによって提供される*Iologmsg .dll*を関連付けます (ただし、別のログ dll に関連付けることもできます)。 通常、これらの各ファイルへのパスは次のように指定されます。
 
-    *%% SystemRoot%%\\System32\\IoLogMsg .dll*
+    *%%SystemRoot%%\\System32\\IoLogMsg.dll*
 
-    *%% SystemRoot%%\\System32\\ドライバー\\driver .sys*
+    *%%SystemRoot%%\\System32\\drivers\\driver.sys*
 
 -   **サポートさ**れている名前付きの値のエントリは、FLG_ADDREG_TYPE_DWORD 値**0x00010001**で指定されている[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。
 
-    ドライバーの場合、この値は**7**にする必要があります。 この値は、EVENTLOG_AUDIT_*XXX*ビットを設定せずに、EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE、および EVENTLOG_INFORMATION_TYPE のビットごとの or に相当します。
+    ドライバーの場合、この値は**7**にする必要があります。 この値は、EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE、および EVENTLOG_INFORMATION_TYPE のビットごとの OR に相当します。これは、EVENTLOG_AUDIT_*XXX*ビットを設定する必要はありません。
 
-また、既存の**EventMessageFile**と**タイプでサポートさ**れている値のエントリを明示的に削除することによって、既にインストールされているイベントログメッセージファイルを削除するには、 [**delreg**](inf-delreg-directive.md)ディレクティブを使用*します。* ドライバーバイナリは、新しくインストールされたドライバーによって置き換えられています。 (「 [**INF DelService ディレクティブ**](inf-delservice-directive.md)」も参照してください)。
+また、ドライバーバイナリが新しくインストールされたドライバーによって置き換えられている場合は、既存の**EventMessageFile**と**タイプがサポートさ**れている値のエントリを明示的に削除することによって、以前にインストールされたイベントログメッセージファイルを削除するために、 [**delreg**](inf-delreg-directive.md)ディレクティブを使用すること*もできます*。 (「 [**INF DelService ディレクティブ**](inf-delservice-directive.md)」も参照してください)。
 
 [**Bitreg**](inf-bitreg-directive.md)ディレクティブは、INF ライターで定義された*イベントログのインストール*-*セクション*内でも有効ですが、デバイスドライバーのイベントログの標準値のエントリはビットマスクではないため、ほとんど使用されません。
 
@@ -378,9 +378,9 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[***Ddinstall *.HW**](inf-ddinstall-hw-section.md)
+[* **DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
 
-[***Ddinstall *.サービス**](inf-ddinstall-services-section.md)
+[* **DDInstall *。サービス**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 

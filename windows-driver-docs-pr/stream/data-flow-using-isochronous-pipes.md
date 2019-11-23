@@ -42,7 +42,7 @@ USBCAMD2 は、32パケットの2つの転送を要求することによって�
 
 1.  USBCAMD2 は、USB バスドライバーから USBCAMD2 が受信するすべてのパケットについて、カメラミニドライバーの[*CamProcessUSBPacketEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)コールバック関数 (IRQL = ディスパッチ\_レベル) を呼び出します。 カメラミニドライバーは、エラー状態の場合に適切なエラーフラグを設定する必要があります。 **CamProcessUSBPacketEx**の*FrameComplete*パラメーターを使用して新しいビデオフレームの先頭が検出された場合、ミニドライバーは新しいビデオフレームフラグも設定する必要があります。
 
-2.  カメラミニドライバーがビデオフレームが完了したと判断した後、USBCAMD2 は、(ワーカースレッドのコンテキストから) カメラミニドライバーの[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)コールバック関数を呼び出して、ビデオフレームを処理します。色空間の変換または圧縮解除。 USBCAMD2 は、ミニドライバークラスドライバーに完了した未加工のフレームを返し*ます。これ*は、カメラによって処理され、IRQL = パッシブ\_レベルで実行されます。 フレームデータが不足している場合や、不適切なデータが原因で圧縮解除中にエラーが発生した場合などは、 **CamProcessRawVideoFrameEx**に*返された bytesreturned*を0に設定する必要があります。
+2.  カメラミニドライバーがビデオフレームが完了したと判断した後、USBCAMD2 は、(ワーカースレッドのコンテキストから) カメラミニドライバーの[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)コールバック関数を呼び出して、色空間の変換または圧縮解除を実行する必要がある場合にビデオフレームを処理します。 USBCAMD2 は、ミニドライバークラスドライバーに完了した未加工のフレームを返し*ます。これ*は、カメラによって処理され、IRQL = パッシブ\_レベルで実行されます。 フレームデータが不足している場合や、不適切なデータが原因で圧縮解除中にエラーが発生した場合などは、 **CamProcessRawVideoFrameEx**に*返された bytesreturned*を0に設定する必要があります。
 
  
 

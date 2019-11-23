@@ -3,7 +3,7 @@ title: OID_PM_PARAMETERS
 description: クエリとして、プロトコルドライバーは OID_PM_PARAMETERS OID を使用して、現在有効になっているネットワークアダプターの電源管理ハードウェア機能を照会できます。
 ms.assetid: c3431724-1b5f-4634-8b1e-27fed9031f01
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PM_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PM_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ecb2b2704a3e8c92f8b5d6882b3eda2fb3c3169
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ NDIS 6.20 以降では、プロトコルおよびフィルタードライバー�
 
 現在有効になっている機能は、ハードウェアがサポートする機能のサブセットにすることができます。 ハードウェアがサポートする機能の詳細については、「 [OID\_PM\_ハードウェア\_機能](oid-pm-hardware-capabilities.md)」を参照してください。
 
-**  ndis** [ **\_pm\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の**WakeUpFlags**メンバーで、NDIS\_PM\_選択的\_SUSPEND\_ENABLED フラグが設定されている場合、oid の oid セット要求が発行され\_PM は、パラメーターをミニポートドライバーに直接\_します。 これにより、NDIS はネットワークドライバースタック内のドライバーをフィルター処理することによって処理をバイパスできます。
+**  ndis** [ **\_pm\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の**WakeUpFlags**メンバーで、NDIS\_PM\_選択的\_SUSPEND\_ENABLED フラグが設定されている場合は、OID\_pm\_パラメーターの oid セット要求を直接ミニポートドライバーに発行します。 これにより、NDIS はネットワークドライバースタック内のドライバーをフィルター処理することによって処理をバイパスできます。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: ACPI_METHOD_ARGUMENT_LENGTH マクロ
-description: ACPI_METHOD_ARGUMENT_LENGTH マクロは、指定されたサイズのデータを格納する可変長 ACPI_METHOD_ARGUMENT 構造体のサイズをバイト単位で計算します。
+description: ACPI_METHOD_ARGUMENT_LENGTH マクロは、指定されたサイズのデータを格納する可変長 ACPI_METHOD_ARGUMENT 構造体のバイト単位のサイズをバイト単位で計算します。
 ms.assetid: 8329c2eb-a787-4590-8de9-95078bbb85da
 keywords:
 - ACPI_METHOD_ARGUMENT_LENGTH マクロ ACPI デバイス

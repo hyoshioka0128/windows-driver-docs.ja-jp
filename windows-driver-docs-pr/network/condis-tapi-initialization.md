@@ -38,17 +38,17 @@ ms.locfileid: "72835053"
 
 -   **Informationbuffer**メンバーで返される TAPI 機能情報を保持するバッファー
 
-NDPROXY ドライバーによって CoNDIS WAN ミニポートドライバーに送信されるすべてのクエリは、同期的または非同期的に完了できます。 CoNDIS WAN ミニポートドライバーがクエリをすぐに完了できないと判断した場合は、単に NDIS\_\_STATUS を返し、その内から[**NdisMCmOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)関数を呼び出すことができます。クエリが完了したときに機能します。
+NDPROXY ドライバーによって CoNDIS WAN ミニポートドライバーに送信されるすべてのクエリは、同期的または非同期的に完了できます。 CoNDIS WAN ミニポートドライバーがクエリをすぐに完了できないと判断した場合は、単に NDIS\_\_STATUS を返し、クエリの完了時にその関数内から[**NdisMCmOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)関数を呼び出すことができます。
 
-Condis WAN ミニポートドライバーが、 [condis tapi の登録](condis-tapi-registration.md)で指定されている新しいアドレスファミリの登録について ndproxy に通知した後、ndproxy は次の oid を照会して、condis wan ミニポートドライバーの TAPI 固有の機能を決定します。およびミニポートドライバーの NIC です。
+Condis WAN ミニポートドライバーが、 [condis TAPI の登録](condis-tapi-registration.md)で指定された新しいアドレスファミリの登録について ndproxy に通知した後、ndproxy は次の oid を照会して、condis wan ミニポートドライバーとミニポートドライバーの NIC の TAPI 固有の機能を決定します。
 
 -   NDPROXY は、ミニポートドライバーに[OID\_CO\_tapi\_CM\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-cm-caps)を照会して、ミニポートドライバーのデバイス (tapi サービスを提供するデバイス) でサポートされる行の数を決定します。 また、この OID は、これらの行の線の機能が異なるかどうかを示すためにミニポートドライバーに要求します。
 
 -   NDPROXY next は、ミニポートドライバーに[OID\_CO\_TAPI\_ライン\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-line-caps)を照会し、指定された回線のテレフォニー機能を決定します。 また、この OID は、この行のアドレスが異なるアドレス機能を持つかどうかを示すためにミニポートドライバーに要求します。
-    -   前に示した OID\_CO\_TAPI\_CM\_CAP で、ミニポートドライバーのデバイスが1つの行しかサポートしていないことが示された場合、またはデバイスが同じ回線機能を持つ複数の行をサポートしている場合は、NDPROXY は OID を照会する必要があり\_デバイスの回線機能を取得するには、\_TAPI\_ライン\_キャップを1回だけ実行します。 この場合、ミニポートドライバーによって返される回線機能は、デバイス上のすべての行に適用されます。
+    -   前に示した OID\_CO\_TAPI\_CM\_CAP が、ミニポートドライバーのデバイスでサポートされている行が1行だけであることが示された場合、またはデバイスが同じ回線機能を持つ複数の行をサポートしている場合は、NDPROXY は、デバイスの回線機能を取得するために、OID\_CO\_TAPI\_\_ この場合、ミニポートドライバーによって返される回線機能は、デバイス上のすべての行に適用されます。
     -   デバイスで回線機能が異なる複数の行がサポートされている場合、NDPROXY では、各行の行の機能を取得するために、1行につき1回、\_TAPI\_\_ラインを使用して\_OID を照会する必要があります。
 -   最後に、NDPROXY は、ミニポートドライバーに[OID\_CO\_TAPI\_アドレス\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-address-caps)を照会して、指定された行の指定されたアドレスのテレフォニー機能を特定します。
-    -   OID\_CO\_TAPI\_LINE\_CAP の前のクエリで、回線が1つのアドレスのみをサポートしていること、または回線上のすべてのアドレスが同じアドレス機能を持つことが示された場合、NDPROXY は OID\_CO\_TAPI @no__t_ を照会し6_ アドレス\_キャップは、その行のすべてのアドレスの機能を決定するために1回だけです。
+    -   OID\_CO\_TAPI\_LINE\_CAP の前のクエリで、回線が1つのアドレスしかサポートしていないことが示された場合、または、行のすべてのアドレスが同じアドレス機能を持つことが示された場合は、NDPROXY は\_OID を照会します。\_\_\_
     -   1つの回線が異なる機能を持つ複数のアドレスをサポートしている場合、NDPROXY は OID を照会して、回線上の各アドレスに対して1回ずつ、\_TAPI\_\_アドレスを\_します。
 
 NDPROXY ドライバーは、次の操作を行うために、TAPI 列挙 Oid で取得した情報を使用します。

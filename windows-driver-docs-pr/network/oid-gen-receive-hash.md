@@ -1,9 +1,9 @@
 ---
 title: OID_GEN_RECEIVE_HASH
-description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_RECEIVE_HASH OID を使用して、ミニポートアダプターの現在の受信ハッシュ計算設定を取得します。
+description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_RECEIVE_HASH OID を使用して、ミニポートアダプターの現在の受信ハッシュ計算の設定を取得します。
 ms.assetid: be120dab-c98d-418f-8777-e2fb37b774a1
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_RECEIVE_HASH ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_RECEIVE_HASH
 ms.localizationpriority: medium
 ms.openlocfilehash: c2d5d3c6fc63a37d3fcd552855d81e243e392158
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ NDIS ミニポートドライバーの場合、クエリは要求されません
 
 後のドライバーでは、OID\_GEN\_使用して\_ハッシュ OID を受け取ることができます。これにより、RSS を有効にしなくても、受信したフレームでハッシュ計算を有効化および構成できます。
 
-**注**  プロトコルドライバーでは、RSS を有効にする前に、受信ハッシュ計算を無効にする必要があります。 RSS が有効になっている場合、受信ハッシュ計算を有効にする前に、プロトコルドライバーが RSS を無効にします。 ミニポートドライバーは、 **NDIS\_状態\_無効\_oid**または**NDIS\_ステータス\_** 無効になっているため、OID [\_GEN\_が受信した場合にハッシュの計算を有効にすることはできません\_\_SCALE\_パラメーター](oid-gen-receive-scale-parameters.md)が現在有効になっています。
+**注**  プロトコルドライバーでは、RSS を有効にする前に、受信ハッシュ計算を無効にする必要があります。 RSS が有効になっている場合、受信ハッシュ計算を有効にする前に、プロトコルドライバーが RSS を無効にします。 ミニポートドライバーは、 **NDIS\_状態\_無効\_oid**または NDIS\_の状態を使用して要求を失敗させる[必要があり](oid-gen-receive-scale-parameters.md)ます。この\_サポートされ**ていません**。\_\_\_\_\_
 
  
 

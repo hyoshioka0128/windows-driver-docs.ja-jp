@@ -29,7 +29,7 @@ ms.locfileid: "72038041"
 
 ## <a name="span-idddk_devcon_resources_toolsspanspan-idddk_devcon_resources_toolsspanparameters"></a><span id="ddk_devcon_resources_tools"></span><span id="DDK_DEVCON_RESOURCES_TOOLS"></span>パラメータ
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m: \\ @ no__t**<em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>コンピューター</em>は、指定されたリモートコンピューターでコマンドを実行します。 円記号が必要です。
 
 **メモ**  リモートコンピューターで DevCon コマンドを実行するには、グループポリシー設定で、プラグアンドプレイサービスをリモートコンピューターで実行できるようにする必要があります。 Windows Vista 以降のバージョンの Windows を実行しているコンピューターでは、グループポリシーによって、サービスへのリモートアクセスが既定で無効になります。
 
@@ -87,6 +87,6 @@ devcon resources =class @port*(by class and device instance ID)
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 12:デバイスのクラスのリソースを一覧表示する @ no__t-0
+[例 12: デバイスのクラスのリソースを一覧表示する](devcon-examples.md#ddk_example_12_list_resources_of_a_class_of_devices_tools)
 
-[Example 13:リモートコンピューター上のデバイスのリソースを一覧表示する ID @ no__t-0
+[例 13: リモートコンピューター上のデバイスのリソースを ID で一覧表示する](devcon-examples.md#ddk_example_13_list_resources_of_device_on_a_remote_computer_by_id_too)

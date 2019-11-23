@@ -3,7 +3,7 @@ title: SM\_ScsiInquiry 関数
 description: SM\_ScsiInquiry WMI メソッドは、指定されたデバイスに SCSI 照会コマンドを送信します。
 ms.assetid: 7af1c25a-1823-49e0-a2c5-6533bd22f606
 keywords:
-- SM_ScsiInquiry function Storage デバイス
+- SM_ScsiInquiry 関数記憶装置
 topic_type:
 - apiref
 api_name:

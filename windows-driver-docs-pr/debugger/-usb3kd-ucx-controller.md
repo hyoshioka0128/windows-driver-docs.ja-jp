@@ -1,9 +1,9 @@
 ---
-title: usb3kd コントローラー (_l)
-description: Usb3kd コマンドは、USB 3.0 ホストコントローラーに関する情報を表示します。 表示は、UcxVersion. sys によって管理されるデータ構造に基づいています。
+title: ucx_controller usb3kd
+description: Ucx_controller usb3kd コマンドは、USB 3.0 ホストコントローラーに関する情報を表示します。 表示は、UcxVersion. sys によって管理されるデータ構造に基づいています。
 ms.assetid: A2768E47-C8D7-4A01-80AC-98FB5AAA17BD
 keywords:
-- usb3kd Windows のデバッグ (_l)
+- usb3kd Windows デバッグの ucx_controller
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -31,7 +31,7 @@ ms.locfileid: "72837841"
 ## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______UcxControllerPrivContext______"></span><span id="_______ucxcontrollerprivcontext______"></span><span id="_______UCXCONTROLLERPRIVCONTEXT______"></span>*Ucxコントローラー Privcontext*   
+<span id="_______UcxControllerPrivContext______"></span><span id="_______ucxcontrollerprivcontext______"></span><span id="_______UCXCONTROLLERPRIVCONTEXT______"></span> *UcxControllerPrivContext*   
 コントローラーを表す \_UCXCONTROLLER\_PRIVCONTEXT 構造体のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL

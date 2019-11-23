@@ -1,6 +1,6 @@
 ---
-title: 受信フィルター処理機能の決定
-description: 受信フィルター処理機能の決定
+title: 受信フィルター機能の判断
+description: 受信フィルター機能の判断
 ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,10 +11,10 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838144"
 ---
-# <a name="determining-receive-filtering-capabilities"></a>受信フィルター処理機能の決定
+# <a name="determining-receive-filtering-capabilities"></a>受信フィルター機能の判断
 
 
-このトピックでは、NDIS およびそれ以降のドライバーが、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの受信フィルター処理機能をどのように決定するかについて説明します。 このトピックには、次の情報が含まれています。
+このトピックでは、NDIS およびそれ以降のドライバーが、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターの受信フィルター処理機能をどのように決定するかについて説明します。 このトピックの内容は次のとおりです。
 
 [*MiniportInitializeEx*中の受信フィルター機能の報告](#reporting-receive-filtering-capabilities-during-miniportinitializeex)
 
@@ -45,7 +45,7 @@ NDIS が PF ミニポートドライバーの[*MiniportInitializeEx*](https://do
 
     -   [NDIS パケット合体](ndis-packet-coalescing.md)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「[パケット合体受信フィルターの管理](managing-packet-coalescing-receive-filters.md)」を参照してください。
 
-    -   [仮想マシンキュー (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「 [VMQ フィルターの設定とクリア](setting-and-clearing-vmq-filters.md)」を参照してください。
+    -   [仮想マシン キュー (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)。 このインターフェイスで受信フィルターを使用する方法の詳細については、「 [VMQ フィルターの設定とクリア](setting-and-clearing-vmq-filters.md)」を参照してください。
 
     ミニポートドライバーがこれらのインターフェイスのいずれかをサポートしている場合は、 [**NDIS\_receive\_FILTER\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造体のメンバーに、インターフェイスに固有の受信フィルター機能の値の範囲を設定する必要があります。 たとえば、ドライバーが NDIS パケット合体と sr-iov をサポートしている場合は、次のように、 **\_既定の\_キューフラグに\_サポートされている\_を\_フィルター\_パケット\_合体するように ndis\_受信するように設定する必要があります。SupportedQueueProperties**メンバー。
 

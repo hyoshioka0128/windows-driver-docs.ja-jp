@@ -1,5 +1,5 @@
 ---
-title: WPP ソフトウェアのトレース
+title: WPP ソフトウェア トレース
 description: このセクションでは、Windows software trace プリプロセッサ (WPP) を使用して、ソフトウェアコンポーネントトレースプロバイダーの操作をトレースする方法について説明します。
 ms.assetid: dab776b3-bac9-4157-a530-6e48868ba900
 keywords:
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839083"
 ---
-# <a name="wpp-software-tracing"></a>WPP ソフトウェアのトレース
+# <a name="wpp-software-tracing"></a>WPP ソフトウェア トレース
 
 
 このセクションでは、 *Windows software trace プリプロセッサ*(WPP) を使用して、ソフトウェアコンポーネント ([トレースプロバイダー](trace-provider.md)) の操作をトレースする方法について説明します。 トレースプロバイダーは、次のいずれかになります。

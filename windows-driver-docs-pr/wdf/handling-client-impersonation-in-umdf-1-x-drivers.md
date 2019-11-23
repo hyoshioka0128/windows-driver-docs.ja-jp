@@ -55,7 +55,7 @@ UMDF では、ドライバーの**Onimpersonate**コールバック関数がフ�
 
 ドライバーが[**Wdfrequestcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_type)によって型指定された i/o 要求を受信すると、ドライバーが i/o 要求をドライバースタックからカーネルモードドライバーに転送する場合があります。 カーネルモードドライバーには、 **IWDFIoRequest:: Impersonate**が UMDF ベースのドライバーに提供する偽装機能がありません。
 
-したがって、カーネルモードドライバーがクライアントのユーザー資格情報 ([ドライバーホストプロセス](umdf-driver-host-process.md)の資格情報) を受信するようにするには、ドライバーで[**WDF\_REQUEST\_SEND\_オプションを IMPERSONATE\_IMPERSONATE に設定する必要があり\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)フラグ。 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を呼び出して、作成要求を i/o ターゲットに送信します。 この**メソッドで**は、偽装の試行が失敗した場合に、エラーコードが返されます。ただし、ドライバーが WDF\_\_要求を設定している場合は、 **\_オプション\_偽装\_無視\_エラー**フラグが無視されます。
+したがって、カーネルモードドライバーがクライアントのユーザー資格情報 ([ドライバーホストプロセス](umdf-driver-host-process.md)の資格情報) を受信するようにするには、ドライバーが[**IWDFIoRequest:: send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を呼び出して i/o ターゲットに create 要求を送信するときに、 [**WDF\_REQUEST\_SEND\_\_\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)を設定する必要があります。 この**メソッドで**は、偽装の試行が失敗した場合に、エラーコードが返されます。ただし、ドライバーが WDF\_\_要求を設定している場合は、 **\_オプション\_偽装\_無視\_エラー**フラグが無視されます。
 
 ドライバーは、要求を i/o ターゲットに送信する前に**IWDFIoRequest:: Impersonate**を呼び出す必要はありません。
 

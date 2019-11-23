@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_PROPERTY_ENUM
 description: Hyper-v 拡張可能スイッチ拡張機能は、配列を取得するために、OID_SWITCH_PORT_PROPERTY_ENUM のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: 5C391B82-FCA6-4A95-992F-EDB5DF6183C7
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_PROPERTY_ENUM ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_PROPERTY_ENUM
 ms.localizationpriority: medium
 ms.openlocfilehash: 801b7a5116d7dad1280ba71368abc363da8f3e4e
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ Hyper-v 拡張可能スイッチ拡張機能は、OID のオブジェクト識�
 
 -   [**NDIS\_スイッチの配列\_ポート\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体です。 これらの各構造体には、拡張可能なスイッチポートポリシーのプロパティに関する情報が含まれています。
 
-    **注**  Ndis の**numproperties**メンバー [ **\_switch\_PORT\_プロパティ\_ENUM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)構造体が0に設定されている場合は、 [**ndis\_スイッチ\_ポートはありません\_プロパティ\_列挙型\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体が返されます。
+    **注**  Ndis の**numproperties**メンバー [ **\_switch\_PORT\_プロパティ\_enum\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)構造体が0に設定されている場合は、 [**ndis\_switch\_PORT\_プロパティ\_enum\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)構造体が返されません。
 
      
 
@@ -32,7 +32,7 @@ Hyper-v 拡張可能スイッチ拡張機能は、OID のオブジェクト識�
 
 Oid の OID メソッド要求を発行する前に、\_スイッチ\_ポート\_プロパティ\_列挙型では、拡張可能なスイッチ拡張機能は次のガイドラインに従う必要があります。
 
--   拡張機能は、拡張可能なスイッチのプロトコルエッジが[oid\_スイッチ\_ポート\_作成](oid-switch-port-create.md)要求を発行した後、\_ポート\_プロパティを発行するために、OID\_スイッチの\_プロパティを[OID\_\_ポート\_破棄](oid-switch-port-teardown.md)要求に切り替えます。
+-   拡張機能は、拡張可能なスイッチのプロトコルエッジが[oid\_](oid-switch-port-create.md)スイッチ\_ポート\_作成要求を発行した後、OID\_[スイッチ\_ポート\_破棄](oid-switch-port-teardown.md)要求を発行する前に、ENUM 要求\_\_ポート\_プロパティの\_スイッチを発行します。
 
 -   拡張機能は、 [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出して OID\_スイッチ\_ポート\_プロパティ\_ENUM 要求に対して発行する前に、[*を呼び出す*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)必要があります。 これにより、OID 要求が完了するまで、指定したポートは削除されません。
 

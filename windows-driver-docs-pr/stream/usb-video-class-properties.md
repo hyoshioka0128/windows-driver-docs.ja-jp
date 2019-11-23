@@ -24,7 +24,7 @@ USB Video クラスのクライアントは、次のビデオキャプチャの�
 [Propsetid\_VIDCAP\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)
 [PROPSETID\_VIDCAP\_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp) 、USB ビデオクラスのクライアントは、フィルターまたは個々のノードで要求を行うことができます。 ノードベースのプロパティの機能は、事前 USB Video クラスのフィルターベースのプロパティと同じです。
 
-ノードベースのプロパティを指定するには、プロパティ記述子の構造に含まれている[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)構造体の Flags メンバー (たとえば、 [**KSK プロパティ\_CAMERACONTROL @no__t_7 に、KSK プロパティ\_TYPE\_トポロジフラグを設定します。_ ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)。
+ノードベースのプロパティを指定するには、プロパティ記述子の構造に含まれている[**Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)構造体の Flags メンバー (たとえば、 [**KSPROPERTY\_CAMERACONTROL\_node\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)) で、ksk プロパティ\_TYPE\_TOPOLOGY フラグに設定します。
 
 クライアントは1つのフィルター上の複数のノードに対応できるため、USB ビデオクラスを使用すると、複数の独立したレンズがあるカメラをサポートできます。
 

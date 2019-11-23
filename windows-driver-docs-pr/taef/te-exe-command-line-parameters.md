@@ -25,15 +25,15 @@ ms.locfileid: "71705403"
 
 #### <a name="teexe-test1dll"></a>te test1
 
-**割り当てる**Test1 ですべてのテストを実行します。
+**解釈:** Test1 ですべてのテストを実行します。
 
 #### <a name="teexe-test1dll-test2dll-test3dll"></a>al.exe test1 test3 を実行します。
 
-**割り当てる**Test1、test2、および test3 のすべてのテストを実行します。
+**解釈:** Test1、test2、および test3 のすべてのテストを実行します。
 
-#### <a name="teexe-dll"></a>\*te .dll
+#### <a name="teexe-dll"></a>te \*.dll
 
-**割り当てる**現在のディレクトリにあるすべての dll のすべてのテストを実行します。
+**解釈:** 現在のディレクトリにあるすべての dll のすべてのテストを実行します。
 
 ### <a name="coloredconsoleoutputtruefalse"></a>/coloredconsoleoutput:\<true/false >
 
@@ -43,19 +43,19 @@ TAEF が色分けされたコンソールテキストを出力するかどうか
 
 ### <a name="consoleoptionnamevalue"></a>/console:\<optionName > =\<値 >
 
-TE でのコンソールの使用を構成するためのオプションを提供します。 次のオプションを使用できます。
+TE でのコンソールの使用を構成するためのオプションを提供します。 次のオプションが使用できます。
 
 #### <a name="consoleflushwrites"></a>/console: flushWrites
 
 すべての行が書き込まれた後にコンソール出力がフラッシュされるようにします。 .exe の出力がリダイレクトされるときに便利です。
 
-#### <a name="consolepositionxy--current-"></a>/console: position =\[x、y | current\]
+#### <a name="consolepositionxy--current-"></a>/console: position =\[x, y |現在の \]
 
 プライマリモニターの隅を基準とした、コンソールウィンドウの位置 (ピクセル単位) を設定します。 **[現在]** の値を使用して、再起動から再開するときに現在のコンソールの位置を保存して使用するように指定します。
 
-#### <a name="consolesize-xy--current-"></a>/console: size =\[ \<x、y\> | current\]
+#### <a name="consolesize-xy--current-"></a>/console: size =\[ \<x、y\> |現在の \]
 
-コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 Current**の値**を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
+コンソールウィンドウのサイズを文字単位で設定します。 必要に応じて、ウィンドウのサイズに合わせて画面バッファーサイズが増加します。 **Current の値**を使用して、再起動から再開するときに現在のコンソールサイズを格納して使用することを指定します。
 
 #### <a name="consoletopmost"></a>/console: 最上位
 
@@ -86,7 +86,7 @@ TAEF テストの実行時に使用される分離の最小レベルを指定し
 
 ### <a name="list"></a>/list
 
-すべての[テスト\_バイナリ](#test_binaries)の名前とその中のクラスとメソッドの一覧を表示します。 選択条件が指定されている場合は、条件を満たす名前だけが一覧表示されます。
+すべての[テスト\_バイナリ](#test_binaries)とその中のクラスおよびメソッドの名前を一覧表示します。 選択条件が指定されている場合は、条件を満たす名前だけが一覧表示されます。
 
 ```cpp
  te.exe test1.dll test2.dll /list
@@ -114,7 +114,7 @@ TAEF テストの実行時に使用される分離の最小レベルを指定し
 
 ### <a name="listproperties"></a>/listProperties
 
-すべてのテスト\_バイナリの名前とプロパティ、およびそれらのクラスとメソッドを、セットアップおよび破棄の関数名 (使用可能な場合) と共に一覧表示します。 選択条件が指定されている場合は、条件を満たす名前だけが一覧表示されます。
+すべてのテスト\_バイナリの名前とプロパティ、およびそれらのクラスとメソッドを、セットアップおよび破棄関数の名前と共に一覧表示します (使用可能な場合)。 選択条件が指定されている場合は、条件を満たす名前だけが一覧表示されます。
 
 ```cpp
  te.exe test1.dll test2.dll /listProperties
@@ -158,19 +158,19 @@ TAEF テストの実行時に使用される分離の最小レベルを指定し
 
 ### <a name="nametestname"></a>/name:\<testname >
 
-テスト名に基づく選択は、"/select:@Name= '&lt;testname&gt;'" に代わる簡単な方法です。 Testname &lt;\*には、ワイルドカード文字 ("" および "?") を含めることができますが、単一引用符で囲むことはできません。&gt; コマンドプロンプトで/select と/name both の両方を指定した場合、/select クエリが優先され、/name は無視されます。
+テスト名に基づく選択は、"/select:@Name= '&lt;testname&gt;'" に代わる簡単な方法です。 &lt;testname&gt; には、ワイルドカード文字 ("\*" および "?") を含めることができますが、単一引用符内に含めることはできません。 コマンドプロンプトで/select と/name both の両方を指定した場合、/select クエリが優先され、/name は無視されます。
 
 te test1/name:\*TestToLower  
 
-**割り当てる**Test1 で、メソッド名が ' TestToLower ' で終わるすべてのテストを実行します。 同じを、選択基準を使用して/select:@Name= '\*TestToLower ' として表すことができます。
+**解釈:** Test1 で、メソッド名が ' TestToLower ' で終わるすべてのテストを実行します。 同じを /select:@Name= '\*TestToLower ' として選択条件を使用して表すことができます。
 
-te test1/name:\*stringtest\*  
+te test1/name:\*StringTest\*  
 
-**割り当てる**名前空間、クラス、またはメソッド名に ' StringTest ' という語句が含まれている、test1 内のすべてのテストを実行します。
+**解釈:** 名前空間、クラス、またはメソッド名に ' StringTest ' という語句が含まれている、test1 内のすべてのテストを実行します。
 
 ### <a name="outputfolderfoldername"></a>/outputfolder:\<folderName >
 
-生成されたすべてのファイルを配置するフォルダーを指定します。 既定値は、現在のディレクトリです。 環境変数を使用できます。次に例を示します。
+生成されたすべてのファイルを配置するフォルダーを指定します。 既定値は現在のディレクトリです。 環境変数を使用できます。次に例を示します。
 
 `te.exe test1.dll /outputFolder:%TEMP%\\MyOutput`
 
@@ -205,7 +205,7 @@ te test1/name:\*stringtest\*
 
 ### <a name="pictoptionnameoptionvalue"></a>/pict:\<OptionName > =\<OptionValue >
 
-Pict[データソース](pict-data-source.md)を使用してテスト用に呼び出された場合に、pict を制御するオプションを提供します。 これらのオプションのいずれかを設定すると、コード内の関連するすべてのメタデータが上書きされます。 次のオプションを使用できます。
+Pict[データソース](pict-data-source.md)を使用してテスト用に呼び出された場合に、pict を制御するオプションを提供します。 これらのオプションのいずれかを設定すると、コード内の関連するすべてのメタデータが上書きされます。 次のオプションが使用できます。
 
 /Pict: 順序 = 3  
 の値を使用して、組み合わせの順序を設定する、/o コマンドオプションを指定します。
@@ -232,27 +232,27 @@ PICT の/r コマンドオプションを使用して値を渡すことによっ
 True に設定すると、/c コマンドオプションを PICT に渡すことによって、大文字小文字の区別が有効になります。
 
 /Pict: Timeout = 00:01:30  
-プロセスを強制終了する前に、PICT が終了するまで待機する時間を設定します。 値の形式\[は Day です。\]時\[: 分\[: 秒\[。FractionalSeconds\]。\]\]
+プロセスを強制終了する前に、PICT が終了するまで待機する時間を設定します。 値の形式は \[Day です。\]時間\[: 分\[: 2 番目の\[。FractionalSeconds\]\]\]。
 
-### <a name="runasrunastype"></a>/runas:\<runastype >
+### <a name="runasrunastype"></a>/runas:\<RunAsType
 
 指定された環境でテストを実行します。 使用方法の詳細については、 [RunAs](runas.md)のドキュメントを参照してください。
 
-\*te .dll/runas: System  
+te \*.dll/runas: System  
 
-**割り当てる**すべてのテストをシステムとして実行します。
+**解釈:** すべてのテストをシステムとして実行します。
 
-te .dll/runas: 昇格された\*  
+te \*.dll/runas: 昇格  
 
-**割り当てる**すべてのテストを管理者特権を持つユーザーとして実行します。
+**解釈:** すべてのテストを管理者特権を持つユーザーとして実行します。
 
-\*te .dll/runas: 制限付き  
+te \*.dll/runas: Restricted  
 
-**割り当てる**すべてのテストを、管理者特権ではないユーザーとして実行します。
+**解釈:** すべてのテストを、管理者特権ではないユーザーとして実行します。
 
-\*te .dll/runas: lowil  
+te \*.dll/runas: LowIL  
 
-**割り当てる**低整合性プロセスですべてのテストを実行します。
+**解釈:** 低整合性プロセスですべてのテストを実行します。
 
 ### <a name="runignoredtests"></a>/runignoredtests
 
@@ -262,32 +262,36 @@ te .dll/runas: 昇格された\*
 
 指定されたコンピューターでテストをリモートで実行します。 TAEF は、テストを実行するために必要なバイナリを認証、承認、および展開し、すべての情報を元のコンソールに記録します。 使用方法の詳細については、[クロスマシンのテスト実行](cross-machine-execution.md)に関するドキュメントを参照してください。
 
-\*te .dll/runon: TestMachine1
+al.exe \*. .dll: TestMachine1
 
-**割り当てる**"TestMachine1" ですべてのテストをリモートで実行します。
+**解釈:** "TestMachine1" ですべてのテストをリモートで実行します。
 
 ### <a name="selectquery"></a>/select:\<クエリ >
 
 各テストバイナリからテストを選択するときに使用する選択条件。 選択条件は、次の1つ以上で構成されます。
 
-@ @ no__t-1property name @ no__t-2 @ no__t @ no__t-4value as string @ no__t-5 @ no__t-6 @ no__t-7property name @ no__t-8 &gt; @ no__t-10 @ no__t-11 値を float または整数として @ no__t @ @ no__t-14property name @ no__t-15 \[6 7value as float または整数 @ no__t @ no__t @ no__t-20property name @ no__t-21 \]2 @ no__t-23 @ no__t-24 値を float または整数として-23 @ no__t-25 @ no__t-26 @ no__t-27property name @ no__t-28 9  = 0value を float または整数 @ no__t-31
+\[プロパティ名\] = \[値を文字列として @\]
+@プロパティ名 \[\] &gt;= 値を float または整数に \[\]
+@プロパティ名 \[\] &gt; 値を float または整数として \[\]値を float または整数 
+@\[\]プロパティ名\] &lt; \[値を float または整数として指定\]&lt;= \[\]
+@\[
 
 * *文字列としてのプロパティ値は、単一引用符で囲む必要があります。*
 * *複合選択条件は、"and"、"or"、および "not" を使用して指定できます (大文字と小文字は区別されません)。*
-* *プロパティ文字列値は、"\*" および "?" 文字を使用したワイルドカード文字をサポートしています。*
-* *Float 型と整数型の値の\*場合、"" という文字を ' exists ' として使用することもできますが、部分一致に使用することはできません。* 例: **/select: "@Priority\*="** は有効ですが、 **/select: "@Priority= 4\*"** は有効ではありません。
+* *プロパティ文字列値は、"\*" と "?" の文字を使用したワイルドカード文字をサポートします。*
+* *Float 値と整数値の場合、"\*" 文字を ' exists ' として使用することもできますが、部分一致には使用できません。* 例: **/select: "@Priority=\*"** は有効ですが、 **/select: "@Priority= 4\*"** は有効ではありません。
 
-te test1@Name/select: "(= '\*TestToLower ' or @Owner= ' c2 ') and not (@Priority &lt; 3)"
+te test1/select: "(@Name= '\*TestToLower ' or @Owner= ' C2 ') and not (@Priority &lt; 3)"
 
-**割り当てる**Test1 内のすべてのテストを実行します。メソッド名の末尾が ' TestToLower ' であるか、所有者が ' C2 ' です。ここで、Priority は3未満ではありません。
+**解釈:** Test1 内のすべてのテストを実行します。メソッド名の末尾が ' TestToLower ' であるか、所有者が ' C2 ' です。ここで、Priority は3未満ではありません。
 
-al.exe test1 (test2 /select:@Priority) =\*
+al.exe test1 /select:@Priority=\* のようになります。
 
-**割り当てる**テストメタデータに優先順位が指定されている test1 および test2 のすべてのテストを実行します。
+**解釈:** テストメタデータに優先順位が指定されている test1 および test2 のすべてのテストを実行します。
 
-te test1 /select:@Name= '\*stringtest\*'  
+te test1 /select:@Name= '\*StringTest\*'  
 
-**割り当てる**名前空間、クラス、またはメソッド名に ' StringTest ' という語句が含まれている、test1 内のすべてのテストを実行します。
+**解釈:** 名前空間、クラス、またはメソッド名に ' StringTest ' という語句が含まれている、test1 内のすべてのテストを実行します。
 
 ### <a name="sessiontimeoutvalue"></a>/sessionTimeout:\<値 >
 
@@ -333,9 +337,9 @@ te test1/sessionTimeout: 1.2
 
 [クロスマシンテストの実行](cross-machine-execution.md)を使用するときに配置する追加のテスト依存関係を指定します。 完全なパスが指定されていない限り、TAEF はテストディレクトリではなく、現在のディレクトリを基準として検索します。
 
-te .dll/runon: TestMachine1/TestDependencies\*: test.txt; file1. doc \*  
+TestMachine1/runon:/TestDependencies: test\*: test; file1. doc \*  
 
-**割り当てる**"TestMachine1" ですべてのテストをリモートで実行し、\*テストを実行する前に ' test.txt ' と ' file1 ' をリモートコンピューターにコピーします。 各ファイルの指定には、1つ以上のファイルに\*一致するワイルドカード文字 (test.txt、test .dll など) を含めることができます。
+**解釈:** "TestMachine1" ですべてのテストをリモートで実行し、テストを実行する前に、"test\*. .jpg" と "file1" をリモートコンピューターにコピーします。 各ファイル指定には、1つ以上のファイルに一致するワイルドカード文字 (test.txt、test\*.dll など) を含めることができます。
 
 ### <a name="testtimeoutvalue"></a>/testTimeout:\<値 >
 
@@ -373,7 +377,7 @@ te test1/testTimeout: 1.2
 
 ### <a name="unicodeoutputtruefalse"></a>/unicodeOutput:\<true/false >
 
-TE がテキストファイルにパイプされると、既定で unicode が出力されます。 この例外は、('&gt;&gt;' 経由で) 既存の ANSII ファイルに追加するように要求した場合です。
+TE がテキストファイルにパイプされると、既定で unicode が出力されます。 この例外は、('&gt;&gt;' を使用して) 既存の ANSII ファイルに追加するように要求した場合です。
 
 この動作をオーバーライドするには、/unicodeOutput: false を指定します。 これにより、TE は常に ANSII をファイルに出力します。
 
@@ -387,7 +391,7 @@ WTT ログ記録が有効になっていると、は上書きするのではな�
 
 te test1/enableWttLogging/appendWttLogging  
 
-テストの実行が完了すると、が作成されるか、または拡張子がのログファイルに追加されます。
+テストの実行が完了すると、が作成されるか、または拡張子がのログファイルに追加さ*れます。*
 
 ### <a name="enablewttlogging"></a>/enableWttLogging
 
@@ -409,7 +413,7 @@ al.exe 管理されている .exe/defaultappdomain
 
 `te.exe test1.dll /disableConsoleLogging /enableWttLogging`
 
-### <a name="logfilename"></a>/logFile:\<名前 >
+### <a name="logfilename"></a>/logFile:\<名 >
 
 Wtt ログファイルとして使用する名前を指定します。[/enableWttLogging](#enablewttlogging)と組み合わせて使用する必要があります。
 
@@ -419,12 +423,12 @@ te test1/logFile: myCustomLogFile .xml/enableWttLogging
 
 ### <a name="logoutputmode"></a>/logoutput:\<モード >
 
-Logger の出力レベルを設定します。 有効な値は、
+Logger の出力レベルを設定します。 有効な値は次のとおりです。
 
-* *高*:すべてのトレースの横にタイムスタンプを印刷するなど、追加のコンソール出力を有効にします。
-* *低*:コアイベント (開始、終了グループなど) およびエラーのみを出力します。 ログファイルには、エラーのコンテキストを提供するためにエラーが発生する前の優先度の低い詳細が含まれます。
-* *Lowwithconsolebuffering*:*低*と同じですが、ログファイルとコンソールの両方の出力にエラーのコンテキストが含まれています。
-* *最低*:[*低*] と同じですが、コンソールの出力には、エラー、テストの失敗、および実行の概要が含まれます。
+* [*高*]: すべてのトレースの横にタイムスタンプを印刷するなど、いくつかの追加のコンソール出力を有効にします。
+* *Low*: コアイベント (開始、終了グループなど) とエラーのみを出力します。 ログファイルには、エラーのコンテキストを提供するためにエラーが発生する前の優先度の低い詳細が含まれます。
+* *Lowwithconsolebuffering*:*低*と同じですが、ログファイルとコンソール出力の両方にエラーのコンテキストが含まれます。
+* *最低*:*低*と同じですが、コンソール出力にはエラー、テストの失敗、および実行の概要が含まれます。
 
 ### <a name="version"></a>/version
 
@@ -516,20 +520,20 @@ TAEF がテスト dll の読み込みに失敗した場合に、エラーの説�
 
 2つの変数*Loop*と*LoopTest*を使用して実行を制御できます。
 
-* *ループ*:実行全体を実行する回数を制御します。 既定値は1です。
-* *LoopTest*:個々のテストを実行する回数を制御します。 既定値は10です。
+* *Loop*: 実行全体を実行する回数を制御します。 既定値は1です。
+* *LoopTest*: 個々のテストを実行する回数を制御します。 既定値は10です。
 
 te test1/testmode: Loop  
 
-**割り当てる**Test1 内のすべてのテストを10回実行します ( *LoopTest*の既定値)。 実行全体が1回だけ実行されます (*ループ*の既定値)。
+**解釈:** Test1 内のすべてのテストを10回実行します ( *LoopTest*の既定値)。 実行全体が1回だけ実行されます (*ループ*の既定値)。
 
 /testmode: Loop/loop: 3/LoopTest: 1 のようになります。  
 
-**割り当てる**Test1 と test2 のすべてのテストを1回実行します ( *LoopTest*によって決定されます)。 実行全体 (test1 と test2 のすべての組み合わせのテスト) は、*ループ*によって決定される3回実行されます。
+**解釈:** Test1 と test2 のすべてのテストを1回実行します ( *LoopTest*によって決定されます)。 実行全体 (test1 と test2 のすべての組み合わせのテスト) は、*ループ*によって決定される3回実行されます。
 
 ### <a name="testmodestress"></a>/testmode: ストレス
 
-' ストレス ' テストモードでは、Ctrl + C キーが入力されるか、または WM\_CLOSE メッセージが taef の非表示ウィンドウに送信されるまで、taef はテストを無期限に実行します。 /testmode: ストレスは、 [/inproc](#inproc)と組み合わせて実行する必要があります。
+' ストレス ' テストモードでは、Ctrl + C キーが入力されるか、または WM\_閉じるメッセージが TAEF の非表示ウィンドウに送信されるまで、TAEF はテストを無期限に実行します。 /testmode: ストレスは、 [/inproc](#inproc)と組み合わせて実行する必要があります。
 
 `te.exe test1.dll /testmode:Stress /inproc`
 

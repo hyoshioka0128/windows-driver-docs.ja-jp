@@ -20,7 +20,7 @@ ms.locfileid: "72841142"
 
 
 ## <a name="overview"></a>概要
-名前プレフィックス ``$Kernel`` を持つ EA は、カーネルモードからのみ変更できます。 この文字列で始まるすべての EA は、カーネル EA と見なされます。 必要な Update Sequence Number (USN) を取得する前に、最初に**FSCTL_WRITE_USN_CLOSE_RECORD**を発行することをお勧めします。これにより、前に発生した可能性があるファイルに対して保留中の USN ジャーナル更新がコミットされます。 これを行わないと、カーネル EA の設定直後に**Fileusn**値が変更される可能性があります。
+名前プレフィックス ``$Kernel`` を持つ EA は、カーネルモードからのみ変更できます。 この文字列で始まるすべての EA は、カーネル EA と見なされます。 必要な Update Sequence Number (USN) を取得する前に、最初に発行することを**FSCTL_WRITE_USN_CLOSE_RECORD**お勧めします。これにより、前に発生した可能性があるファイルに対する保留中の USN ジャーナル更新がコミットされます。 これを行わないと、カーネル EA の設定直後に**Fileusn**値が変更される可能性があります。
 
 カーネル EA には、少なくとも次の情報が含まれていることをお勧めします。
 - USN UsnJournalID
@@ -36,9 +36,9 @@ ms.locfileid: "72841142"
 ## <a name="setting-a-kernel-extended-attribute"></a>カーネル拡張属性の設定
 カーネル EA を設定するには、まずプレフィックス ``"$Kernel."`` で開始し、有効な EA 名の文字列で trailed する必要があります。 ユーザーモードからカーネル EA を設定しようとすると、警告なしで無視されます。  要求は**STATUS_SUCCESS**を返しますが、EA の実際の変更は行われません。 カーネルモードから[Zwseteafile](https://msdn.microsoft.com/library/windows/hardware/ff961908)いる API を呼び出すカーネル EA を設定するには、カーネルモード[では十分](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile)ではありません。  これは、SMB がネットワーク経由での EA の設定をサポートし、これらの要求がサーバーのカーネルモードから発行されるためです。  
 
-カーネル EA を設定するには、呼び出し元は、IRP (i/o 要求パケット) の MinorFunction フィールドで**IRP_MN_KERNEL_CALL**値も設定する必要があります。 このフィールドを設定する唯一の方法は、カスタムの IRP を生成することであるため、ルーチン[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)は、カーネル EA を設定するためのサポート関数として FsRtl パッケージからエクスポートされています。
+カーネル EA を設定するには、呼び出し元は、IRP (i/o 要求パケット) の MinorFunction フィールドの**IRP_MN_KERNEL_CALL**値も設定する必要があります。 このフィールドを設定する唯一の方法は、カスタムの IRP を生成することであるため、ルーチン[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)は、カーネル EA を設定するためのサポート関数として FsRtl パッケージからエクスポートされています。
 
-[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)の同じ呼び出しで、normal と kernel EA の設定を混在させることはできません。  この操作を行うと、 **STATUS_INTERMIXED_KERNEL_EA_OPERATION**で操作が失敗します。    カーネル EA を設定しても、 **USN_REASON_EA_CHANGE**レコードは USN ジャーナルに生成されません。その結果、カーネル EA と通常の EA を同じ操作で使用することはできません。  
+[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)の同じ呼び出しで、normal と kernel EA の設定を混在させることはできません。  この操作を実行すると、 **STATUS_INTERMIXED_KERNEL_EA_OPERATION**で操作が失敗します。    カーネル EA を設定しても、USN ジャーナルに**USN_REASON_EA_CHANGE**レコードは生成されません。その結果、カーネル EA と通常の EA を同じ操作で使用することはできません。  
 
 
 ## <a name="querying-an-extended-attribute"></a>拡張属性のクエリ
@@ -48,9 +48,9 @@ ms.locfileid: "72841142"
 
 
 ## <a name="querying-update-sequence-number-journal-information"></a>更新シーケンス番号のジャーナル情報を照会しています
-[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作では、 **IRP_MN_KERNEL_CALL**値が IRP の minorfunction フィールドで設定されていない限り、カーネルモードから発行された場合でも**SE_MANAGE_VOLUME_PRIVILEGE**が必要です。 ルーチン**Fsrtlkernel Fscontrolfile**は、カーネルモードコンポーネントがこの USN 要求を簡単に発行できるように、カーネルの FsRtl パッケージからエクスポートされています。
+[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作では、IRP の MinorFunction フィールドに**IRP_MN_KERNEL_CALL**値が設定されていない限り、カーネルモードから発行された場合でも**SE_MANAGE_VOLUME_PRIVILEGE**が必要です。 ルーチン**Fsrtlkernel Fscontrolfile**は、カーネルモードコンポーネントがこの USN 要求を簡単に発行できるように、カーネルの FsRtl パッケージからエクスポートされています。
 
-**メモ**Windows 10 以降のバージョン1703以降では、この操作に SE_MANAGE_VOLUME_PRIVILEGE が不要になりました。  
+**メモ**Windows 10 以降のバージョン1703以降では、この操作を SE_MANAGE_VOLUME_PRIVILEGE する必要がなくなりました。  
 
 ## <a name="auto-deletion-of-kernel-extended-attributes"></a>カーネル拡張属性の自動削除
 ファイルの USN ID が原因でファイルを再スキャンするだけで、問題が発生しているため、USN 更新プログラムがファイルに投稿される可能性が非常に高くなります。  これを簡単にするために、カーネル EA の機能の自動削除が NTFS に追加されました。

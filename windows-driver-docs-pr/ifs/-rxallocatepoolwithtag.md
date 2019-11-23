@@ -3,7 +3,7 @@ title: '\_RxAllocatePoolWithTag 関数'
 description: '\_RxAllocatePoolWithTag は、メモリ trashing のインスタンスをキャッチするために使用できる、ブロックの先頭に4バイトのタグがあるプールからメモリを割り当てます。'
 ms.assetid: 5e999d06-ebcf-433a-a714-f340a1c74be1
 keywords:
-- _RxAllocatePoolWithTag 関数のインストール可能なファイルシステムドライバー
+- 関数のインストール可能なファイルシステムドライバーの _RxAllocatePoolWithTag
 topic_type:
 - apiref
 api_name:

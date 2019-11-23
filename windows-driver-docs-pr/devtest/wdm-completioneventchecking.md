@@ -26,9 +26,9 @@ Completion **Event検査**規則は、同じ IRP の完了ルーチンで、ド�
 
 |              |     |
 |--------------|-----|
-| ドライバーモデル | WDM |
+| ドライバー モデル | WDM |
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>

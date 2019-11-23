@@ -63,7 +63,7 @@ APO を実装するには、カスタムクラスの基本クラスを使用し�
 
 - カスタム APOs は IAudioProcessingObjectVBR インターフェイスを公開できません。
 
-**注**  For 必要なインターフェイスの詳細については、Windows キット \\ &lt;build 番号 &gt; \\Include \\um フォルダーにある Audioenginebaseapo ファイルと Audioenginebaseapo ファイルを参照してください。
+**注**  必要なインターフェイスの詳細については、Windows キット\\&lt;ビルド番号&gt;\\um フォルダーを含める」を参照してください。\\
 
  
 
@@ -82,21 +82,21 @@ Sysvad audio サンプルは次の場所で参照できます。
 
 SYSVAD サンプルをダウンロードして開くには、次の手順に従います。
 
-」を参照します。 GitHub ツールを使用して、サンプルを操作できます。 また、ユニバーサルドライバーのサンプルを1つの zip ファイルにダウンロードすることもできます。
+a. GitHub ツールを使用して、サンプルを操作できます。 また、ユニバーサルドライバーのサンプルを1つの zip ファイルにダウンロードすることもできます。
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
 b. マスター .zip ファイルをローカルハードドライブにダウンロードします。
 
-c. *Windows-driver-samples-master*を右クリックし、 **[すべて展開]** を選択します。 新しいフォルダーを指定するか、抽出されたファイルを格納する既存のフォルダーを参照します。 たとえば、ファイルが抽出される新しいフォルダーとして、 *C: \\DriverSamples \\* を指定できます。
+c. *Windows-driver-samples-master*を右クリックし、 **[すべて展開]** を選択します。 新しいフォルダーを指定するか、抽出されたファイルを格納する既存のフォルダーを参照します。 たとえば、 *C:\\DriverSamples\\* を、ファイルを抽出する新しいフォルダーとして指定できます。
 
 d. ファイルが抽出されたら、次のサブフォルダーに移動します。
 
-*C: \\DriverSamples \\Audio \\Sysvad*
+*C:\\DriverSamples\\Audio\\Sysvad*
 
 **Visual Studio でドライバーソリューションを開く**
 
-Microsoft Visual Studio で、 **[ファイル]** をクリックして &gt;**プロジェクト/ソリューション...** &gt;**開き**、抽出したファイルが格納されているフォルダー (たとえば、 *C: \\DriverSamples \\Audio \\Sysvad*) に移動します。 *Sysvad*ソリューションファイルをダブルクリックして開きます。
+Microsoft Visual Studio で、[&gt;**ファイル**] をクリックして &gt;**プロジェクト/ソリューション...** を**開き**、抽出したファイルが格納されているフォルダー (たとえば、 *C:\\driversamples\\Audio\\Sysvad*) に移動します。 *Sysvad*ソリューションファイルをダブルクリックして開きます。
 
 Visual Studio で、ソリューションエクスプローラーを見つけます。 (まだ開いていない場合は、 **[表示]** メニューの **[ソリューションエクスプローラー]** をクリックします)。ソリューションエクスプローラーには、6つのプロジェクトを持つソリューションが1つ表示されます。
 
@@ -106,7 +106,7 @@ SYSVAD サンプルには5つのプロジェクトがあります。そのうち
 
 |                    |                                       |
 |--------------------|---------------------------------------|
-| **作品**        | **説明**                       |
+| **プロジェクト**        | **説明**                       |
 | SwapAPO            | APO の例のサンプルコードです。       |
 
  
@@ -115,7 +115,7 @@ Sysvad サンプル内の他のプロジェクトは、以下にまとめられ�
 
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| **作品**            | **説明**                            |
+| **プロジェクト**            | **説明**                            |
 | 電話のオーディオサンプル       | モバイルオーディオドライバーのサンプルコードです。     |
 | TabletAudioSample      | 代替オーディオドライバーのサンプルコードです。 |
 | KeywordDetectorAdapter | キーワード検出アダプターのサンプルコード |
@@ -197,7 +197,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 }
 ```
 
-**@No__t_1The** **Cbaseaudioprocessingobject**からクラスが継承するその他のインターフェイスとメソッドについては、Audioenginebaseapo ファイルで詳細に説明されています。
+クラスが**Cbaseaudioprocessingobject**から継承する残りのインターフェイスとメソッドについては、Audioenginebaseapo ファイルで詳しく説明されています **。  **
 
  
 
@@ -248,7 +248,7 @@ Visual Studio で APOs を使用する場合は、各 APO プロジェクトに�
 
 Windows 10 を対象とするドライバーは、ユニバーサル CRT に動的にリンクする必要があります。
 
-Windows 8、1をサポートする必要がある場合は、プロジェクトのプロパティを C/C++、コード生成で設定して、静的リンクを有効にします。 リリースビルドの場合は "Runtime Library" を */mt*に、デバッグビルドの場合は */MTd*に設定します。 この変更が加えられました。ドライバーの場合、MSVCRT.DLL &lt;n &gt; バイナリに再配布するのは困難です。 この解決策は、libcmt.lib を静的にリンクすることです。 詳細については[、「/md、/mt、/ld (ランタイムライブラリの使用)](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 」を参照してください。
+Windows 8、1をサポートする必要がある場合は、プロジェクトのプロパティを C/C++、コード生成で設定して、静的リンクを有効にします。 リリースビルドの場合は "Runtime Library" を */mt*に、デバッグビルドの場合は */MTd*に設定します。 この変更が加えられました。ドライバーの場合、MSVCRT.DLL&lt;n&gt;バイナリに再配布するのは困難です。 この解決策は、libcmt.lib を静的にリンクすることです。 詳細については[、「/md、/mt、/ld (ランタイムライブラリの使用)](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 」を参照してください。
 
 **埋め込みマニフェストの使用を無効にする**
 
@@ -272,40 +272,40 @@ Sysvad サンプルに含まれている tabletaudiosample および audiosample
 
 各 APO INF ファイル設定の詳細については、次のリファレンストピックを参照してください。
 
-[PKEY \_FX \_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
+[PKEY\_FX\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
 
-[PKEY \_FX \_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
+[PKEY\_FX\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
 
-[PKEY \_FX \_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
+[PKEY\_FX\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
 
-[PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
+[PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされている\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
 
-[PKEY \_MFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
+[PKEY\_MFX\_ProcessingModes\_\_Streaming でサポートされている\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
 
-[PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
+[PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
 
 次の INF ファイルのサンプルは、特定のモードのオーディオ処理オブジェクト (APOs) を登録する方法を示しています。 これらの例では、この一覧から使用可能な組み合わせを示します。
 
--   PKEY \_FX \_StreamEffectClsid と PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
--   PKEY \_FX \_ModeEffectClsid と PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
--   PKEY \_FX \_ModeEffectClsid のない PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
--   PKEY \_FX \_EndpointEffectClsid のない PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
+-   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+-   PKEY\_FX\_PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+-   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 これらのサンプルでは、有効な組み合わせが1つ追加されています。
 
--   PKEY \_FX \_EndpointEffectClsid と PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid と PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
 **SYSVAD タブレットマルチモードストリーミング効果 APO INF サンプル**
 
 このサンプルでは、SYSVAD タブレット INF ファイルの AddReg エントリを使用して登録されているマルチモードのストリーミング効果を示します。
 
-このサンプルコードは、SYSVAD audio サンプルから入手でき、GitHub: <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> にあります。
+このサンプルコードは、SYSVAD audio サンプルから入手でき、GitHub: <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>にあります。
 
 このサンプルでは、次のシステム効果の組み合わせを示します。
 
--   PKEY \_FX \_StreamEffectClsid と PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
--   PKEY \_FX \_ModeEffectClsid と PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
 ```inf
 [SWAPAPO.I.Association0.AddReg]
@@ -329,13 +329,13 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 ;HKR,FX\0,%PKEY_EFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 ```
 
-サンプルの INF ファイルでは、オーディオ処理がそのレイヤー上のカーネルモードに切り替えられたため、EFX の \_Streaming プロパティがコメントアウトされていることに注意してください。これにより、ストリーミングプロパティは必要なくなり、使用されなくなります。 検出を目的として PKEY \_FX \_EndpointEffectClsid を指定することは有効ですが、\_Supported \_For \_Streaming \_ProcessingModes \_EFX を指定するとエラーになります。 これは、モードミックス/t がスタックの下位に発生し、エンドポイント APO を挿入できないためです。
+サンプルの INF ファイルでは、"EFX\_Streaming" プロパティがコメントアウトされています。これは、オーディオ処理がそのレイヤー上のカーネルモードに遷移したためです。ストリーミングプロパティは必要なく、使用されません。 検出を目的として PKEY\_FX\_EndpointEffectClsid を指定することは有効ですが、\_ストリーミングでサポートされている\_\_PKEY\_EFX\_ProcessingModes を指定するとエラーになります。 これは、モードミックス/t がスタックの下位に発生し、エンドポイント APO を挿入できないためです。
 
 **コンポーネント APO のインストール**
 
 Windows 10 以降のリリース1809では、オーディオエンジンによる APO 登録で、コンポーネント化されたオーディオドライバーモデルが使用されています。 Audio コンポーネント化を使用すると、より滑らかで信頼性の高いインストールエクスペリエンスが実現し、コンポーネントサービスのサポートが強化されます。 詳細については、「[コンポーネント化オーディオドライバーのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)」を参照してください。
 
-次のコード例は、パブリック ComponentizedAudioSampleExtension と ComponentizedApoSample から抽出されます。 @No__t_0 については、GitHub で入手できる SYSVAD audio サンプルを参照してください。
+次のコード例は、パブリック ComponentizedAudioSampleExtension と ComponentizedApoSample から抽出されます。 <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>については、GitHub で入手できる SYSVAD audio サンプルを参照してください。
  
 オーディオエンジンへの APO の登録は、新しく作成された APO デバイスを使用して行われます。 オーディオエンジンで新しい APO デバイスを使用するには、オーディオデバイスの PNP 子 (オーディオエンドポイントの兄弟) である必要があります。 新しいコンポーネントの APO 設計では、APO がグローバルに登録され、複数の異なるドライバーによって使用されることは許可されていません。 各ドライバーは独自の APO のを登録する必要があります。
 
@@ -380,9 +380,9 @@ HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%S
 
 このサンプルでは、次のシステム効果の組み合わせを示します。
 
--   PKEY \_FX \_StreamEffectClsid と PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
--   PKEY \_FX \_ModeEffectClsid と PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
 このサンプルコードでは、Bluetooth ハンズフリーおよびステレオデバイスがサポートされています。
 
@@ -416,11 +416,11 @@ AUDIO_SIGNALPROCESSINGMODE_DEFAULT = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
 
 このサンプル INF ファイルは、次のシステム効果の組み合わせを示しています。
 
--   PKEY \_FX \_StreamEffectClsid と PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
--   PKEY \_FX \_ModeEffectClsid と PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
--   PKEY \_FX \_EndpointEffectClsid のない PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 ```inf
 [MyDevice.Interfaces]
@@ -444,13 +444,13 @@ HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNA
 
 **カスタム APO および CLSID APO INF サンプルを定義する**
 
-このサンプルでは、カスタム APO 用に独自の CLSID を定義する方法を示します。 このサンプルでは、MsApoFxProxy CLSID {ABAD-4004-BF0A-BC7BB825E166} を使用します。 この GUID を CoCreate すると、MsApoFxProxy 内のクラスがインスタンス化されます。このクラスは IAudioProcessingObject インターフェイスを実装し、基になるドライバーに KSK PROPSETID \_AudioEffectsDiscovery プロパティセットを使用してクエリを行います。
+このサンプルでは、カスタム APO 用に独自の CLSID を定義する方法を示します。 このサンプルでは、MsApoFxProxy CLSID {ABAD-4004-BF0A-BC7BB825E166} を使用します。 この GUID を CoCreate すると、MsApoFxProxy 内のクラスがインスタンス化されます。このクラスは IAudioProcessingObject インターフェイスを実装し、基になるドライバーに対して KSK PROPSETID\_Audio Discovery プロパティセットを使用してクエリを行います。
 
-この INF ファイルのサンプルでは、\[BthHfAud \] セクションを示します。このセクションでは、PKEY \[BthHfAud を登録する AddReg \] から \[MsApoFxProxy 登録 \] を取得し \_FX7EndpointEffectClsid は、MsApoFxProxy の既知の CLSID として使用されます。
+この INF ファイルのサンプルでは、\[BthHfAud\] セクションを示します。このセクションでは \[MsApoFxProxy\] を wdmaudio. BthHfAud \[から取得します。これにより、AddReg\]FX\_PKEY が EndpointEffectClsid の既知の CLSID として登録されます。\_
 
 この INF ファイルのサンプルでは、このシステム効果の組み合わせの使用方法も示しています。
 
--   PKEY \_FX \_EndpointEffectClsid のない PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 ```inf
 ;wdma_bt.inf
@@ -471,7 +471,7 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 #endif
 ```
 
-このサンプル INF ファイルでは、\[MsApoFxProxy \] および \[MsApoFxProxy の \] セクションを示します。 これにより、\[MsApoFxProxy の \] セクションを使用して、既知の GUID が COM に登録されます。 このセクションでは、MsApoFxProxy を C: \\Windows \\system32 にコピーします。
+このサンプル INF ファイルでは、\[の MsApoFxProxy\] と \[MsApoFxProxy\] セクションを示します。 これにより、\[の MsApoFxProxy\] セクションを使用して、既知の GUID が COM に登録されます。 このセクションでは、MsApoFxProxy を C:\\Windows\\system32 にコピーします。
 
 ```inf
 ; wdmaudio.inf – this is where WmaLfxGfxDsp.dll is registered
@@ -515,26 +515,26 @@ APO 登録は、重み付け計算を使用してエンドポイントへの効�
 エンドポイントプロパティに重み付けを格納する
 
 1. 特定の KSNODETYPE を持つ FX
-2. KSNODETYPE \_ANY の FX
+2. KSNODETYPE を使用した FX\_任意
 3. 特定の KSNODETYPE を持つ MSFX
-4. KSNODETYPE \_ANY を使用した MSFX
+4. KSNODETYPE を使用した MSFX\_任意
 
 Effects プロパティストアの重み付け
 
 1. 特定の KSNODETYPE を使用した EP
-2. KSNODETYPE \_ANY での EP
+2. KSNODETYPE を使用した EP\_任意
 3. 特定の KSNODETYPE を持つ MSEP
-4. MSEP と KSNODETYPE \_ANY
+4. MSEP と KSNODETYPE\_任意
 
-番号は0から順番に増加する必要があります: MSEP \\0、MSEP \\1、...、MSEP \\n (たとえば) EP \\3 がない場合、Windows は EP \\n の検索を停止し、EP は表示されません \\4(存在する場合でも)
+数値は0から順番に増加する必要があります: MSEP\\0、MSEP\\1、...、MSEP\\n (たとえば) EP\\3 がない場合、Windows は EP\\n の検索を停止し、EP\\4 (存在する場合でも) は表示されません。
 
-PKEY \_FX \_Association (効果プロパティストアの場合) または PKEY \_EP \_Association (エンドポイントプロパティストアの場合) の値が KSPINDESCRIPTOR と比較されます。カーネルストリーミングによって公開されるシグナルパスのハードウェア終端のピンファクトリのカテゴリ値。
+PKEY\_FX\_Association (効果プロパティストアの場合) または PKEY\_EP\_アソシエーション (エンドポイントプロパティストアの場合) の値が KSPINDESCRIPTOR と比較されます。カーネルストリーミングによって公開されるシグナルパスのハードウェア終端のピンファクトリのカテゴリ値。
 
 Microsoft 受信トレイクラスドライバー (サードパーティの開発者がラップできるドライバー) のみ、MSEP と MSFX を使用する必要があります。すべてのサードパーティのドライバーは、EP と FX を使用する必要があります。
 
 **APO ノード型の互換性**
 
-次の INF ファイルのサンプルでは、PKEY \_FX \_Association キーを、APO に関連付けられている GUID に設定する方法を示します。
+次の INF ファイルのサンプルでは、PKEY\_FX\_Association キーを、APO に関連付けられている GUID に設定しています。
 
 ```inf
 ;; Property Keys
@@ -547,7 +547,7 @@ PKEY_FX_Association = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
 HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%
 ```
 
-オーディオアダプターは複数の入力と出力をサポートすることができるため、カスタム APO に互換性がある種類のカーネルストリーミング (KS) ノードタイプを明示的に指定する必要があります。 前の INF ファイルフラグメントでは、APO は% KSNODETYPE \_ANY% の KS ノード型に関連付けられています。 この INF ファイルの後半では、KSNODETYPE \_ANY は次のように定義されています。
+オーディオアダプターは複数の入力と出力をサポートすることができるため、カスタム APO に互換性がある種類のカーネルストリーミング (KS) ノードタイプを明示的に指定する必要があります。 前の INF ファイルフラグメントでは、APO は% KSNODETYPE\_の KS ノードタイプに関連付けられています。 この INF ファイルでは、KSNODETYPE\_ANY は次のように定義されています。
 
 ```inf
 [Strings]
@@ -558,7 +558,7 @@ KSNODETYPE_SPEAKER  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
 ...
 ```
 
-KSNODETYPE \_ANY の値が**NULL**の場合は、この APO が任意の型の KS ノード型と互換性があることを意味します。 たとえば、APO が KSNODETYPE \_SPEAKER の KS ノード型とのみ互換性があることを示すために、INF ファイルでは次のように KS ノードの種類と APO の関連付けが表示されます。
+KSNODETYPE の値が**NULL**の場合\_any は、この APO が任意の型の KS ノード型と互換性があることを意味します。 たとえば、APO が KSNODETYPE\_スピーカーの KS ノードタイプとのみ互換性があることを示すために、INF ファイルでは次のように KS ノードの種類と APO の関連付けが表示されます。
 
 ```inf
 ;; Key value pairs
@@ -596,7 +596,7 @@ HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
 
 -   APO の名前が変更されたか、改ざんされています。
 
-また、SFX、MFX、または EFX APO の失敗数の値がシステム指定の制限に達した場合、SFX、MFX、および EFX APOs は、PKEY \_Endpoint \_Disable \_SysFx レジストリキーを ' 1 ' に設定することによって無効になります。 システム指定の制限は、現在、10の値です。
+また、SFX、MFX、または EFX APO の失敗数の値がシステムによって指定された制限に達した場合、SFX、MFX、および EFX APOs は、PKEY\_エンド\_ポイントを設定することによって無効にし、SysFx レジストリキー\_を ' 1 ' に設定することによって無効にします。 システム指定の制限は、現在、10の値です。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

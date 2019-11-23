@@ -48,7 +48,7 @@ NTSTATUS 値は、成功値、情報値、警告、およびエラー値の4種�
 <a href="" id="nt-error-status-"></a>NT\_エラー (*状態*)  
 *Status*によって指定された戻り値がエラーの種類 (0XC0000000-0xffffffff) である場合、 **TRUE**に評価されます。
 
-たとえば、ドライバーが[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出してデバイスインターフェイスを登録するとします。 ドライバーが NT\_SUCCESS マクロを使用して戻り値をチェックした場合、ルーチンが SUCCESS\_STATUS を返した場合、エラーがないこと、または情報ステータスステータス\_オブジェクトが返された場合、マクロは**TRUE**と評価され @no__tデバイスインターフェイスが既に登録されていることを示す 4_ NAME\_EXISTS (_s)\_
+たとえば、ドライバーが[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出してデバイスインターフェイスを登録するとします。 ドライバーが NT\_SUCCESS マクロを使用して戻り値をチェックした場合、ルーチンが SUCCESS\_(エラーがないことを示す) 状態を返した場合、またはデバイスインターフェイスが既に登録されていることを示す情報ステータスステータス\_オブジェクト\_名前\_存在する場合、マクロは**TRUE**と評価されます。
 
 別の例として、ドライバーが[**ZwEnumerateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)を呼び出して、指定されたレジストリキーのサブキーを列挙するとします。 NT\_SUCCESS マクロが**FALSE**と評価された場合、ルーチンがステータス\_無効な\_パラメーターを返したか、エラーコードであるか、またはルーチンが\_status を返して\_のエントリがそれ以上\_ないことが原因である可能性があります。これは警告コードです。
 

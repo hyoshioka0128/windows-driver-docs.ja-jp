@@ -1,6 +1,6 @@
 ---
-title: AV/C コマンドのビルドと送信
-description: AV/C コマンドのビルドと送信
+title: AV/C コマンドの構築と送信
+description: AV/C コマンドの構築と送信
 ms.assetid: 0f5bb205-7ffe-4007-bb66-a77889af2eed
 keywords:
 - Avc 関数ドライバー WDK、コマンドのビルドと送信
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840610"
 ---
-# <a name="building-and-sending-an-avc-command"></a>AV/C コマンドのビルドと送信
+# <a name="building-and-sending-an-avc-command"></a>AV/C コマンドの構築と送信
 
 次の手順では、AV/C コマンドをビルドして送信するプロセスの概要を示します。
 
@@ -68,7 +68,7 @@ ms.locfileid: "72840610"
     AvcIrb->Operand[0] = Operand;
     ```
 
-3. サブユニットドライバーは、IRP の**MajorFunction**と**DeviceIoControl**のメンバー、および手順 2. で割り当てられた IRB へのポインターを指定する必要があります。 オペレーティングシステムから IRP を割り当てた後、対応する IRB に対して非ページメモリを割り当て、IRB のパラメーターを設定した後、IRB を IRP に関連付ける必要があります。 IRB の関数コードによっては、IRP で正しいディスパッチルーチンを指定する必要があります。 IOCTL\_AVC\_クラスに対応する AV/C 関数コードの場合 (つまり、 **DeviceIoControl コード**メンバーが IOCTL\_AVC\_クラスに設定されている)、IRP\_\_内部\_デバイス @no__t割り当てられた IRP の**MajorFunction**値として、8_ コントロールを指定する必要があります。\_ IOCTL\_\_AVC など、 *avc*でサポートされているその他のすべての AV/C 関数コードは[ **\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)、 [**IOCTL\_Avc\_\_仮想\_サブユニットを削除\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)、 [**IOCTL\_AVC\_BUS\_RESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)) では、割り当てられた irp の**MajorFunction**値として、irp\_MJ\_デバイス\_コントロールを指定する必要があります。
+3. サブユニットドライバーは、IRP の**MajorFunction**と**DeviceIoControl**のメンバー、および手順 2. で割り当てられた IRB へのポインターを指定する必要があります。 オペレーティングシステムから IRP を割り当てた後、対応する IRB に対して非ページメモリを割り当て、IRB のパラメーターを設定した後、IRB を IRP に関連付ける必要があります。 IRB の関数コードによっては、IRP で正しいディスパッチルーチンを指定する必要があります。 IOCTL\_AVC\_クラスに対応する AV/C 関数コード (つまり、 **DeviceIoControl**を使用して\_AVC\_クラス) に対応する場合は、irp\_\_内部\_デバイス\_デバイスコントロールを割り当てられた Irp の**MajorFunction**値として指定する必要があります。 IOCTL\_\_AVC など、 *avc*でサポートされているその他のすべての AV/C 関数コードは[ **\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)、 [**IOCTL\_Avc\_\_仮想\_サブユニットを削除\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)、 [**IOCTL\_AVC\_BUS\_RESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)) では、割り当てられた irp の**MajorFunction**値として、irp\_MJ\_デバイス\_コントロールを指定する必要があります。
 
     次のコードサンプルは、Avc の IRP で処理するように設定する方法を示して*い*ます。
 
@@ -114,7 +114,7 @@ ms.locfileid: "72840610"
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -125,10 +125,10 @@ ms.locfileid: "72840610"
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>要求が行われましたが、すべてのタイムアウトと再試行処理が完了する前に応答が受信されませんでした。 前の要求がまだ処理されている場合、ターゲットの AV/C デバイスは要求を無視します。 一部の AV/C デバイスは、連続して複数回試行された後でも、100-ミリ秒間のタイムアウト時間内に応答しなくなります。 AVC_COMMAND_IRB 構造体を使用すると、既定の<strong>タイムアウト</strong>と<strong>再試行</strong>のメンバー (それぞれ100ミリ秒と9ミリ秒) を調整できますが、これらの既定の設定はすべての既知の実装に対して十分です。</p></td>
+<td><p>要求が行われましたが、すべてのタイムアウトと再試行処理が完了する前に応答が受信されませんでした。 前の要求がまだ処理されている場合、ターゲットの AV/C デバイスは要求を無視します。 一部の AV/C デバイスは、連続して複数回試行された後でも、100-ミリ秒間のタイムアウト時間内に応答しなくなります。 AVC_COMMAND_IRB 構造では、既定の<strong>タイムアウト</strong>と<strong>再試行</strong>のメンバー (それぞれ100ミリ秒と9ミリ秒) を調整できますが、これらの既定の設定はすべての既知の実装に対して十分です。</p></td>
 </tr>
 <tr class="odd">
-<td><p>あります</p></td>
+<td><p>STATUS_PENDING</p></td>
 <td><p>要求が行われ、中間応答が受信されました。 サブユニットドライバーの i/o 完了ルーチンは、最終的な応答を処理し、IRP および IRB リソースを解放する必要があります。</p></td>
 </tr>
 <tr class="even">
@@ -142,7 +142,7 @@ ms.locfileid: "72840610"
 </tbody>
 </table>
 
-**IoCallDriver**からのその他の戻り値は、AV/C プロトコルの範囲を超えたエラーが発生したことを示します。 例:
+**IoCallDriver**からのその他の戻り値は、AV/C プロトコルの範囲を超えたエラーが発生したことを示します。 次に、例を示します。
 
 <table>
 <colgroup>
@@ -151,7 +151,7 @@ ms.locfileid: "72840610"
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>説明</th>
 </tr>
 </thead>

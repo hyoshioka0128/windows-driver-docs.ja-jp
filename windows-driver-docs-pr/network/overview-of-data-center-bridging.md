@@ -45,7 +45,7 @@ DCBX は、DCB (TLV) の設定で構成されます。この設定は、リン�
 
  
 
-各トラフィッククラスと PFC 構成設定は、IEEE 802.1 p 優先度レベルに関連付けられています。 優先度レベルは、パケットの 802.1 Q タグ内の3ビット値として指定されます。 NDIS パケットの場合、802.1 p 優先度レベルは、パケットの Net\_に関連付けられている[**ndis\_NET\_BUFFER\_LIST\_8021Q\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造体の**userpriority**メンバーによって指定され[**バッファー\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体。
+各トラフィッククラスと PFC 構成設定は、IEEE 802.1 p 優先度レベルに関連付けられています。 優先度レベルは、パケットの 802.1 Q タグ内の3ビット値として指定されます。 NDIS パケットの場合、802.1 p 優先度レベルは、パケットの[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造に関連付けられている[**ndis\_net\_buffer\_List\_8021Q\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造体の**userpriority**メンバーによって指定されます。
 
 優先度レベルの詳細については、「 [IEEE 802.1 p Priority levels](ieee-802-1p-priority-levels.md)」を参照してください。
 

@@ -26,7 +26,7 @@ USB ビデオクラスドライバーは、拡張ユニットを USB Video KS �
 
 個々の拡張機能ユニットコントロールは、1から最大値*n*まで連続して番号が付けられている必要があります。 これらのコントロールは、拡張機能のプロパティセットのプロパティ識別子 (IDs) に直接マップされ、 [Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)を介して標準の ksk プロパティ要求を使用してアクセスできます。
 
-アプリケーションからのプロパティ要求に応答して、UVC ドライバーは、ksk プロパティの**Membersflags**メンバーを持つプロパティ値を返します。 [ **\_membersflags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)構造体は、ksk プロパティ\_メンバーに排他的に設定され\_キャスト. UVC では、任意の長さの、階段状の範囲や拡張単位の既定値はサポートされません。
+アプリケーションからのプロパティ要求に対する応答として、UVC ドライバーは、Ksproperty の**Membersflags**メンバーを持つプロパティ値を返します。このプロパティ[ **\_membersflags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)構造体は、ksk プロパティ\_メンバー\_範囲に排他的に設定されます。 UVC では、任意の長さの、階段状の範囲や拡張単位の既定値はサポートされません。
 
 拡張機能のプロパティをアプリケーションに公開するには、COM API を公開するユーザーモードのプラグイン DLL を記述します。 この API を実装するには、 **Ikscontrol**インターフェイスを使用して、KS プロパティセットに対して要求を行います。 *Vidcap.ax*は、特定のレジストリエントリに基づいてノードインターフェイスプラグインを自動的に読み込みます。 アプリケーションは、 **IKsTopologyInfo:: Creat Deinstance**の後に node オブジェクトで**QueryInterface**を呼び出して必要な COM API を取得することによって、インターフェイスにアクセスできます。
 
@@ -34,7 +34,7 @@ USB ビデオクラスドライバーは、拡張ユニットを USB Video KS �
 
 - 拡張機能の単体 API と IKsNodeControl という名前のインターフェイスを実装するヘッダーと cpp ファイル。 Vidcap.ax は IKsNodeControl インターフェイスを使用して、拡張ノード識別子のプラグインを通知し、Iksk コントロールのインスタンスを提供します。 これらのファイルのサンプルコードは、「[サンプルの拡張機能単体プラグイン DLL](sample-extension-unit-plug-in-dll.md)」に記載されています。
 
-- HKLM\\システムの下にノードインターフェイスとクラス Id (Clsid) を登録する *.rgs*ファイル **\\CCS\\コントロール\\nodeinterfaces\\** <em>プロパティ\_GUID</em>レジストリサブキーを設定します。 このレジストリサブキーのエントリには、インターフェイス ID (IID) と CLSID のバイナリ値が含まれています。 詳細については、「 [UVC 拡張機能ユニットのサンプルレジストリエントリ](sample-registry-entry-for-uvc-extension-units.md)」を参照してください。
+- HKLM\\システムの下にノードインターフェイスとクラス Id (Clsid) を登録する *.rgs*ファイル **\\CCS\\コントロール\\nodeinterfaces\\** <em>プロパティ\_GUID</em>レジストリサブキーを設定します。\_ このレジストリサブキーのエントリには、インターフェイス ID (IID) と CLSID のバイナリ値が含まれています。 詳細については、「 [UVC 拡張機能ユニットのサンプルレジストリエントリ](sample-registry-entry-for-uvc-extension-units.md)」を参照してください。
 
 - このインターフェイスを呼び出すアプリケーション。 アプリケーションでは、最初に IKsTopologyInfo:: Creat Deinstance を使用して、正しいノード ID を持つノードインスタンスを作成します。 次に、アプリケーションはノードインスタンスで**QueryInterface**を呼び出して、必要な拡張機能の単位インターフェイスを取得します。 詳細については、「 [UVC 拡張機能ユニットのサンプルアプリケーション](sample-application-for-uvc-extension-units.md)」および「[拡張機能ユニットを使用した自動更新イベントのサポート](supporting-autoupdate-events-with-extension-units.md)」を参照してください。
 

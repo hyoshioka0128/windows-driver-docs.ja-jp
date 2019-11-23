@@ -31,7 +31,7 @@ ms.locfileid: "72826124"
  _FOO            control method
 ```
 
-[**Ioctl\_acpi\_eval\_メソッド\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)または[**IOCTL\_acpi\_ASYNC\_eval\_メソッド\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)を使用するには、デバイスのドライバーによってコントロールメソッドのパスと名前が渡されます。ACPI 名前空間。 デバイスとデバイスの子オブジェクトのパスと名前を取得するために、Windows では、 [**IOCTL\_ACPI\_ENUM\_CHILDREN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)要求がサポートされています。 例として、このセクションで提供されている簡易 ACPI 名前空間を参照すると、デバイス ' ABCD ' のデバイススタック内のドライバーは、この要求を使用して次の操作を行うことができます。
+[**Ioctl\_acpi\_eval\_メソッド\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)または[**IOCTL\_acpi\_ASYNC\_eval\_メソッド\_ex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)を使用する場合、デバイスのドライバーによって、acpi 名前空間にコントロールメソッドのパスと名前が指定されます。 デバイスとデバイスの子オブジェクトのパスと名前を取得するために、Windows では、 [**IOCTL\_ACPI\_ENUM\_CHILDREN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)要求がサポートされています。 例として、このセクションで提供されている簡易 ACPI 名前空間を参照すると、デバイス ' ABCD ' のデバイススタック内のドライバーは、この要求を使用して次の操作を行うことができます。
 
 -   ' Abcd ' のデバイス ' ABCD ' と直接の子デバイスを列挙します。 たとえば、要求を使用して '\\ABCD, ' '\\ABCD を返すことができます。CHL1、' および '\\ABCD です。CHL2.'
 
@@ -39,7 +39,7 @@ ms.locfileid: "72826124"
 
 -   指定された名前の ' ABCD ' のすべての子孫子オブジェクトを再帰的に列挙します。 指定された名前は、同じ名前を持つ子オブジェクトだけが列挙されるように、フィルターとして機能します。 たとえば、指定された名前 '\_FOO, ' に対して、要求を使用して '\\ABCD を返すことができます。\_FOO ' と '\\ABCD.CHL2.CHL3.\_FOO. '
 
-ドライバーは、コントロールメソッドのパスと名前を取得した後、IOCTL\_ACPI\_EVAL\_メソッド\_EX または IOCTL\_、ACPI\_ASYNC\_EVAL @no__t_ に入力としてパスと名前を指定でき7_ メソッド\_EX (「 [ACPI 制御メソッドを同期的に評価](evaluating-acpi-control-methods-synchronously.md)する」の説明を参照)。
+ドライバーは、コントロールメソッドのパスと名前を取得した後、「acpi[制御メソッドを同期的に評価](evaluating-acpi-control-methods-synchronously.md)する」で説明されているように、ACPI\_ASYNC\_\_EVAL\_METHOD\_メソッド\_ex または ioctl に\_\_入力としてパスと名前を指定できます。\_
 
 [**IOCTL\_ACPI\_enum\_children**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)要求では、入力として、ドライバーによって割り当てられた可変長[**ACPI\_列挙型\_子\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)次のメンバーを含む入力\_バッファー構造を受け取ります。
 
@@ -64,7 +64,7 @@ ACPI ドライバーが列挙するデバイスの ACPI 名前空間内のオブ
 <a href="" id="name"></a>**指定**  
 NULL で終わる4文字の ASCII 配列。これは、ACPI ドライバーが子オブジェクトの列挙を同じ名前のオブジェクトに制限するために使用する子オブジェクトの名前を格納します。
 
-IOCTL\_ACPI\_ENUM\_CHILDREN 要求は、ドライバーによって割り当てられた可変長 ACPI\_列挙型\_子オブジェクトのパスと名前を返します。:
+IOCTL\_ACPI\_ENUM\_CHILDREN 要求は、ドライバーによって割り当てられた可変長\_ACPI の子オブジェクトのパスと名前を返します。これは、次のメンバーを含む\_\_出力\_バッファーに格納されます。
 
 <a href="" id="signature"></a>**折本**  
 出力バッファーの署名。 ACPI\_列挙型\_子に設定する必要があります。これは、\_出力\_バッファー\_署名に設定する必要があります。
@@ -75,6 +75,6 @@ IOCTL\_ACPI\_ENUM\_CHILDREN 要求は、ドライバーによって割り当て�
 <a href="" id="children"></a>**子供**  
 ACPI\_列挙型\_子の要素の配列。 ACPI\_列挙型\_子構造体の**name**メンバーには、子オブジェクトのパスと名前が含まれます。 **Flags**メンバーは、子オブジェクトに子オブジェクトがあるかどうかを示します。
 
-ドライバーによって割り当てられる出力バッファーが、列挙されたすべての子名を返すのに十分な大きさではない場合、ACPI ドライバーは子名を返しません。また、要求の状態\_ブロックの IO\_状態**のメンバーを**\_バッファーに設定します。\_オーバーフローです。 この場合、出力バッファーのサイズ (バイト単位) が少なくとも**sizeof**(acpi\_列挙型\_子\_出力\_バッファー\_署名) である場合、ACPI ドライバーもそのサイズに**numberofchildren**を設定します。要求されたパスと名前を取得するために必要な (バイト単位)。
+ドライバーによって割り当てられる出力バッファーが、列挙されたすべての子名を返すのに十分な大きさではない場合、ACPI ドライバーは子名を返しません。また、要求については、IO\_状態\_ブロックの**状態**メンバーを\_バッファー\_オーバーフローに設定します。 この場合、出力バッファーのサイズ (バイト単位) が少なくとも**sizeof**(acpi\_列挙型\_子\_出力\_バッファー\_署名) である場合、ACPI ドライバーは、要求されたパスと名前を取得するために必要なサイズ (バイト単位) に**numberofchildren**を設定します。
 
 子デバイスを列挙する方法の詳細については、「 [IOCTL\_ACPI\_ENUM\_CHILDREN 要求](sending-an-ioctl-acpi-enum-children-request.md)」を参照してください。

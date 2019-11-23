@@ -59,7 +59,7 @@ ms.locfileid: "72824706"
 <a href="" id="initializing"></a>初期化  
 NDIS は、ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数を呼び出して、アダプターを初期化します。 アダプターの初期化中に、ミニポートドライバーは次のガイドラインに従う必要があります。
 
--   *MiniportInitializeEx*から戻った後、ミニポートドライバーがメディア接続の状態を示していない場合、Ndisは[**NDIS\_ミニポート\_アダプターの MediaConnectState メンバーの値を使用して\_全般\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体を指定して、メディア接続の状態を確認します。 ドライバーが*MiniportInitializeEx*関数から[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出すと、ミニポートドライバーはこの構造を使用して NDIS を提供します。
+-   *MiniportInitializeEx*から復帰した後、ミニポートドライバーがメディア接続の状態を示していない場合、Ndis は[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造の**MediaConnectState**メンバーの値を使用して、メディアの接続状態を確認します。 ドライバーが*MiniportInitializeEx*関数から[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)を呼び出すと、ミニポートドライバーはこの構造を使用して NDIS を提供します。
 
     **注**  **MediaConnectState**メンバーが MediaConnectStateUnknown に設定されている場合、NDIS はアダプターが切断されているかのように処理を続行します。
 
@@ -85,7 +85,7 @@ NDIS は、ミニポートドライバーの[*MiniportInitializeEx*](https://doc
 
 スリープ解除後のメディア接続状態がスリープ状態の場合と同じである場合、ミニポートドライバーはメディア接続状態の変更を示すことはできません。 接続状態が変更された場合は、スリープ解除してから2秒以内に新しい接続状態をミニポートドライバーが示す必要があります。
 
-スリープ状態のときに、ミニポートドライバーでは、OID\_GEN\_MEDIA\_接続\_状態または OID\_の生成\_の CO\_メディア\_非同期に接続する必要があります。 ミニポートドライバーは、接続状態を確認するまで、このような要求を完了することはできません。
+スリープ状態のときに、ミニポートドライバーでは、OID\_GEN\_MEDIA\_接続\_状態または OID\_の生成\_の CO\_メディア\_非同期に接続する必要があります。\_ ミニポートドライバーは、接続状態を確認するまで、このような要求を完了することはできません。
 
  
 

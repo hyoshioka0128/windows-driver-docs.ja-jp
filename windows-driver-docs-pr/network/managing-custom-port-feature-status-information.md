@@ -29,11 +29,11 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のオブジェ
 
 -   [**NDIS\_スイッチ\_ポート\_機能\_状態\_カスタム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom)構造には、拡張可能なスイッチポートに割り当てられているカスタムプロパティに関するステータス情報が含まれています。
 
-    拡張可能スイッチのプロトコルエッジが[OID\_スイッチ\_ポート\_機能\_状態\_クエリ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query)要求を発行すると、 **Featurestatuscustombufferlength** **が設定され、FeatureStatusCustomBufferOffset**メンバーは、機能の状態情報を返すために拡張機能が使用できる**informationbuffer**メンバー内の場所を指定します。
+    拡張可能スイッチのプロトコルエッジが[OID\_スイッチ\_ポート\_機能\_状態\_クエリ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query)要求を発行すると、 **Featurestatuscustombufferlength**メンバーと**featurestatuscustombufferlength**メンバーが、機能の状態情報を返すために拡張で使用できる**informationbuffer**メンバー内の場所に設定されます。
 
 拡張可能なスイッチ拡張機能は、oid の OID メソッド要求を受信するときに、次のガイドラインに従う必要があります。 [\_スイッチ\_ポート\_機能\_状態\_クエリ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query):
 
--   拡張機能は、 [**NDIS\_スイッチ\_ポート\_\_\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)の**featurestatusid**メンバーと一致するカスタム拡張可能なスイッチポートプロパティを管理する場合に、OID 要求を処理する必要があります。データ.
+-   拡張機能は、NDIS\_スイッチの**Featurestatusid**メンバーと一致するカスタム拡張可能スイッチポートプロパティを管理する必要があります。このプロパティは、 [ **\_ポート\_機能\_状態\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)構造体です。
 
 -   拡張機能が OID メソッド要求を処理する場合は、NDIS\_スイッチで指定されたパラメーターに一致する機能の状態情報を返す必要があります[ **\_ポート\_機能\_状態\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)構造です。
 

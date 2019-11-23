@@ -3,7 +3,7 @@ title: OID_PACKET_COALESCING_FILTER_MATCH_COUNT
 description: NDIS は、OID_PACKET_COALESCING_FILTER_MATCH_COUNT の OID クエリ要求を発行して、ネットワークアダプターでキャッシュまたは結合されたパケットの数を取得します。
 ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PACKET_COALESCING_FILTER_MATCH_COUNT ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PACKET_COALESCING_FILTER_MATCH_COUNT
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e3cee607f632cebe14ac4b508106e2de71cc88d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

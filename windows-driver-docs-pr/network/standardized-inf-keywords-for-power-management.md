@@ -144,7 +144,7 @@ SubkeyName に関連付けられている表示テキスト。
 <td align="left"><p>有効</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong></em>Pmwi焼討 Keyoffload</strong></p></td>
+<td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
 <td align="left"><p>WiFi のキー更新のオフロード</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>無効</p></td>

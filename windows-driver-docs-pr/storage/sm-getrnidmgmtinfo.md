@@ -3,7 +3,7 @@ title: SM\_GetRNIDMgmtInfo 関数
 description: SM\_GetRNIDMgmtInfo WMI メソッドは、ファイバーチャネルアダプターに関連付けられている FC3 管理情報を取得します。
 ms.assetid: 0d414701-6e60-4d9d-85ae-f82b742ee907
 keywords:
-- SM_GetRNIDMgmtInfo function Storage デバイス
+- SM_GetRNIDMgmtInfo 関数記憶装置
 topic_type:
 - apiref
 api_name:

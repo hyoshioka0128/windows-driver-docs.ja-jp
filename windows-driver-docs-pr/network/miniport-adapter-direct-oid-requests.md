@@ -20,7 +20,7 @@ ms.locfileid: "72844253"
 
 
 
-直接 OID 要求パスをサポートするために、ミニポートドライバーは、 [**ndis\_ミニポート\_\_ドライバー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の*miniportxxx*関数のエントリポイント**を提供**しています。また、この構成では、ndis は、ミニポートドライバー。
+直接 OID 要求パスをサポートするために、ミニポートドライバーは、 [**ndis\_ミニポート\_ドライバー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)の*miniportxxx*関数のエントリポイントを提供します。また、\_特性の構造と NDIS は、ミニポートドライバー用の**ndism * Xxx*** 関数を提供します。
 
 *直接 oid 要求インターフェイス*は、標準の oid 要求インターフェイスに似ています。 たとえば、 [**NdisMDirectOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismdirectoidrequestcomplete)関数と[*Miniportdirectoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_direct_oid_request)関数は、 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)および[*miniportoidrequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)関数に似ています。
 

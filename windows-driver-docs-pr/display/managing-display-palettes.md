@@ -28,6 +28,6 @@ ms.locfileid: "72283737"
 
 **DrvSetPalette**関数は、ドライバーへの*pdev*へのハンドルを提供し、そのデバイスのパレットを認識するようにドライバーに要求します。 ドライバーは、指定されたパレットのエントリとできるだけ一致するようにハードウェアパレットを設定する必要があります。
 
-このエントリポイントは、デバイスが設定できるパレットをサポートしている場合に必要であり、それ以外の場合は指定しないでください。 ディスプレイドライバーは、Drno__t- **0FlGraphicsCaps**を設定することによって、そのデバイスに設定可能なパレットがあることを指定します。このビットは、 [**Dr**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)の[DEVINFO](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devinfo)構造体のフィールドに設定します。
+このエントリポイントは、デバイスが設定できるパレットをサポートしている場合に必要であり、それ以外の場合は指定しないでください。 ディスプレイドライバーは、 [**DrflGraphicsCaps**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)で返された[DEVINFO](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devinfo)構造体のフィールドで gcaps\_ではない値を指定して、そのデバイスに設定可能なパレットがあることを指定します。
 
-サービスルーチン[PALOBJ_cGetColors](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)を使用して、ドライバーを表示できます。 この関数は、インデックス付きパレットから RGB 色をダウンロードし、 *DrvSetPalette*の実装内から呼び出す必要があります。
+サービスルーチン[PALOBJ_cGetColors](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)は、ドライバーを表示するために使用できます。 この関数は、インデックス付きパレットから RGB 色をダウンロードし、 *DrvSetPalette*の実装内から呼び出す必要があります。

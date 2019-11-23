@@ -55,7 +55,7 @@ DAC ノードと ADC ノードは、アナログ/デジタル変換を表しま�
 **KSK プロパティ\_ジャック\_の説明**
 
 このプロパティは、 [**Ksk ジャック\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)構造体を返します。 オーディオドライバーでは、次のように[**Ksk プロパティ\_JACK\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)フィールドを設定する必要があります。
-ChannelMapping = KSAUDIO\_スピーカー\_MONO Color = 0 ConnectionType = eConnTypeOtherDigital 位置情報 = eGeoLocNotApplicable GenLocation = Egeolocnotapplicable = &lt;*ブール値の場合は BOOL です。接続の状態*&gt; **ksk プロパティ\_ジャック\_DESCRIPTION2**
+ChannelMapping = KSAUDIO\_スピーカ\_MONO Color = 0 ConnectionType = eConnTypeOtherDigital 位置情報 = eGeoLocNotApplicable GenLocation = Egeolocnotapplicable &lt;=*現在の接続の状態のブール*値&gt; **KSAUDIO\_JACK\_** 。
 
 このプロパティは、 [**DESCRIPTION2 構造体\_Ksk ジャック**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)を返します。 オーディオドライバーでは、次のように[**Ksk プロパティ\_JACK\_DESCRIPTION2**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description2)フィールドを設定する必要があります。
 DeviceStateInfo = 0 JackCapabilities = JACKDESC2\_プレゼンス\_検出\_機能**Ksproperty\_ONESHOT\_再接続**

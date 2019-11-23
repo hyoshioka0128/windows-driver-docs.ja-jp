@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PROPERTY_ADD
-description: Hyper-v 拡張可能スイッチのプロトコルエッジは、OID_SWITCH_PROPERTY_ADD のオブジェクト識別子 (OID) セット要求を発行して、スイッチポリシープロパティの追加について拡張可能なスイッチ拡張機能に通知します。
+description: Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェクト識別子 (OID) セット OID_SWITCH_PROPERTY_ADD 要求を発行して、スイッチポリシープロパティの追加について拡張可能なスイッチ拡張機能を通知します。
 ms.assetid: 63A6D2BE-81F4-4D27-B5DF-68466EFF306E
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PROPERTY_ADD ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PROPERTY_ADD
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a84d1816bacbc067de057c1e4e51e8c04caee65
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジは、オブジェク
 
 -   拡張可能なスイッチポリシーのパラメーターを格納しているプロパティバッファー。 プロパティバッファーには、NDIS\_スイッチの**PropertyType**メンバーに基づく構造体が含まれています[ **\_プロパティ\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)構造体です。
 
-    **注**  Windows Server 2012 以降では、 **PropertyType**メンバーを**NdisSwitchPropertyTypeCustom**に設定し、プロパティバッファーに[**NDIS\_SWITCH\_プロパティ\_カスタム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)を含める必要があることに注意してください。データ.
+    **注**  Windows Server 2012 以降では、 **PropertyType**メンバーを**NdisSwitchPropertyTypeCustom**に設定し、プロパティバッファーに[**NDIS\_SWITCH\_プロパティ\_カスタム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)構造体を含める必要があります。
 
      
 

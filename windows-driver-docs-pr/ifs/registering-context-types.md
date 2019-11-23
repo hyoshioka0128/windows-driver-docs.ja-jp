@@ -23,11 +23,11 @@ ms.locfileid: "72841008"
 
 ミニフィルタードライバーが[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンから[**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)を呼び出すと、使用する各種類のコンテキストを登録する必要があります。
 
-コンテキストの種類を登録するために、ミニフィルタードライバーは、 [**FLT\_コンテキスト\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)構造体の可変長配列を作成し、その配列へのポインターを FLT の**contextregistration**メンバーに格納し[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration) [**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)の*登録*パラメーターでミニフィルタードライバーが渡す登録構造。 この配列内の要素の順序は関係ありません。 ただし、配列の最後の要素は {FLT\_CONTEXT\_END} である必要があります。
+コンテキスト型を登録するために、ミニパスドライバーは、 [**FLT\_コンテキスト\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)構造体の可変長配列を作成し、その配列へのポインターを、ミニフィルタードライバーが[**Fltregisterfilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)の*登録*パラメーターに渡す[**FLT\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)構造体の**contextregistration**メンバーに格納します。 この配列内の要素の順序は関係ありません。 ただし、配列の最後の要素は {FLT\_CONTEXT\_END} である必要があります。
 
 ミニフィルタードライバーが使用するコンテキストの種類ごとに、FLT\_コンテキスト\_登録構造の形式でコンテキスト定義を少なくとも1つ指定する必要があります。 各 FLT\_コンテキスト\_の登録構造は、コンテキストの型、サイズ、およびその他の情報を定義します。
 
-[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)を呼び出すことによってミニフィルタードライバーが新しいコンテキストを作成する場合、フィルターマネージャーは**FltAllocateContext**ルーチンの*SIZE*パラメーターと、@no__t FLT の**size**および**Flags**メンバーを使用します。使用するコンテキスト定義を選択する場合は、コンテキスト\_登録構造体 (_s)。
+ミニフィルタードライバーで[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)を呼び出すことによって新しいコンテキストを作成する場合、フィルターマネージャー**は FltAllocateContext**ルーチンの*size*パラメーターと、FLT\_Context\_REGISTRATION 構造体の**size**および**Flags**メンバーを使用して、使用するコンテキスト定義を選択します。
 
 固定サイズのコンテキストの場合、FLT\_コンテキスト\_の登録構造の**サイズ**メンバーは、ミニフィルタードライバーによって定義されるコンテキスト構造の一部のサイズをバイト単位で指定します。 コンテキストの最大サイズは MAXUSHORT (64 KB) です。 0は有効なサイズ値です。 フィルターマネージャーは、ルックアサイドリストを使用して固定サイズのコンテキストを実装します。 フィルターマネージャーは、各サイズ値に対して2つのルックアサイドリストを作成します。1つはページングされていて、もう1つはページ
 

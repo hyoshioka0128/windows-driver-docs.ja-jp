@@ -1,6 +1,6 @@
 ---
-title: FVF (フレキシブル頂点形式)
-description: FVF (フレキシブル頂点形式)
+title: FVF (柔軟な頂点形式)
+description: FVF (柔軟な頂点形式)
 ms.assetid: 206f4275-bcb8-4e8e-9c11-c6fb5d9c561d
 keywords:
 - 頂点形式 WDK Direct3D
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838937"
 ---
-# <a name="fvf-flexible-vertex-format"></a>FVF (フレキシブル頂点形式)
+# <a name="fvf-flexible-vertex-format"></a>FVF (柔軟な頂点形式)
 
 
 ## <span id="ddk_fvf_gg"></span><span id="DDK_FVF_GG"></span>

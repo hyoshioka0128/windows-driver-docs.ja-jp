@@ -24,7 +24,7 @@ PnP マネージャーは、この IRP をデバイススタックに送信し�
 
 上位フィルターと下位フィルタードライバーは、この IRP を処理しません。
 
-<a name="major-code"></a>主要なコード
+<a name="major-code"></a>主要コード
 ----------
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
@@ -46,10 +46,10 @@ PnP マネージャーは、任意のスレッドのコンテキストで、こ�
 
 I/o 状態ブロックで返されます。
 
-## <a name="io-status-block"></a>I/o 状態ブロック
+## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-関数ドライバーがこの IRP を処理する場合、IRP がスタックをバックアップする方法で処理します。 関数ドライバーが IRP を正常に処理する場合は、 **irp&gt;iostatus. status**を STATUS\_SUCCESS に設定し、 **Irp&gt;Iostatus. 情報**を[**IO\_リソース\_の要件へのポインターに設定 @no__t**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)フィルター処理されたリソース要件を含む一覧 (_s)\_ フィルター選択されたリソースリストの設定の詳細については、後述の「操作」セクションを参照してください。 この IRP を処理するときに関数ドライバーがエラーを検出した場合、 **irp&gt;IoStatus. Status**にエラーが設定されます。 関数ドライバーがこの IRP を処理しない場合は、 [**Ioskipを**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)使用して、irp をそのままスタックに渡します。
+関数ドライバーがこの IRP を処理する場合、IRP がスタックをバックアップする方法で処理します。 関数ドライバーが IRP を正常に処理する場合は、 **irp&gt;iostatus. status**を STATUS\_SUCCESS に設定し、 **Irp&gt;Iostatus. 情報**を、フィルター処理されたリソース要件を含む[**IO\_リソース\_要件\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)へのポインターに設定します。 フィルター選択されたリソースリストの設定の詳細については、後述の「操作」セクションを参照してください。 この IRP を処理するときに関数ドライバーがエラーを検出した場合、 **irp&gt;IoStatus. Status**にエラーが設定されます。 関数ドライバーがこの IRP を処理しない場合は、 [**Ioskipを**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)使用して、irp をそのままスタックに渡します。
 
 上位フィルターと下位フィルタードライバーは、この IRP を処理しません。 このようなドライバーは**Ioskipfinalentiの場所**を呼び出し、次のドライバーに irp を渡します。 Irp **&gt;iostatus**を変更することはできず、irp を完了することはできません。
 
@@ -86,7 +86,7 @@ PnP マネージャーは、この IRP を送信するときに、ドライバ�
 
 システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -96,8 +96,8 @@ PnP マネージャーは、この IRP を送信するときに、ドライバ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>ヘッダー</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td><p>Header</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>

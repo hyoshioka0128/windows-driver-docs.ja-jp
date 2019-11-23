@@ -17,7 +17,7 @@ ms.locfileid: "71955786"
 
 **ヘッダーファイル:** *fltkernel .h*
 
-** プレフィックス:Flt @ no__t-0_Xxx_
+**プレフィックス: Flt**_Xxx_
 
 | 関数またはマクロ | 説明 |
 | ----------------- | ----------- |
@@ -82,7 +82,7 @@ ms.locfileid: "71955786"
 | **FltCreateSystemVolumeInformationFolder** | ファイルシステムボリュームに "システムボリューム情報" フォルダーが存在することを確認します。 フォルダーが存在しない場合は、フォルダーが作成されます。 |
 | **FltCurrentBatchOplock** | ファイルにバッチまたはフィルター便宜的ロック (oplock) があるかどうかを判断します。 |
 | **FltCurrentOplock** | ファイルに便宜的ロック (oplock) があるかどうかを判断します。 |
-| **FltCurrentOplockH** | ファイルに CACHE_HANDLE_LEVEL 便宜ロック (oplock) があるかどうかを判断します。 |
+| **FltCurrentOplockH** | ファイルに CACHE_HANDLE_LEVEL 便宜的ロック (oplock) があるかどうかを判断します。 |
 | **FltDecodeParameters** | I/o 操作のメモリ記述子リスト (MDL) アドレス、バッファーポインター、バッファー長、および必要なアクセスパラメーターへのポインターを返します。 このようにすると、フィルター処理ドライバーによって、MDL のアドレス、バッファーポインター、バッファーの長さ、および複数の操作の種類に対する必要なアクセスにアクセスするヘルパールーチン内のこれらのパラメーターの位置を検索する switch ステートメントが保存されます。 |
 | **FltDeleteContext** | 指定されたコンテキストを削除対象としてマークします。 |
 | **FltDeleteExtraCreateParameterLookasideList** | 追加のパラメーター (ECP) ルックアサイドリストを解放します。 |
@@ -172,7 +172,7 @@ ms.locfileid: "71955786"
 | **FltGetVolumeName ボリューム** | 指定されたボリュームのボリューム名を取得します。 |
 | **FltGetVolumeProperties** | 指定されたボリュームのボリュームプロパティ情報を返します。 |
 | **FltInitExtraCreateParameterLookasideList** | 固定サイズの1つ以上の追加の作成パラメーターコンテキスト構造 (ECPs) の割り当てに使用される、ページ分割または非ページプールのルックアサイドリストを初期化します。 |
-| **FltInitializeFileLock** | 呼び出し元がページプールから割り当てた、不透明な FILE_LOCK 構造体を初期化します。 |
+| **FltInitializeFileLock** | 呼び出し元がページプールから割り当てた非透過 FILE_LOCK 構造体を初期化します。 |
 | **FltInitializeOplock** | 便宜的ロック (oplock) ポインターを初期化します。 |
 | **FltInitializePushLock** | プッシュロック変数を初期化します。 |
 | **FltInsertExtraCreateParameter** | 追加の作成パラメーター (ECP) のコンテキスト構造を ECP リストに挿入します。 |
@@ -184,17 +184,17 @@ ms.locfileid: "71955786"
 | **FltIsFltMgrVolumeDeviceObject** | 指定されたデバイスオブジェクトがフィルターマネージャーに属しているかどうか、およびデバイスオブジェクトがボリュームデバイスオブジェクトであるかどうかを判断します。 |
 | **FltIsIoCanceled** | IRP ベースの操作が取り消されたかどうかを確認します。 |
 | **FltIsIoRedirectionAllowed** | 指定したソースフィルターインスタンスから、指定した別のフィルターインスタンスに i/o をリダイレクトできるかどうかを判断します。 |
-| **FltIsIoRedirectionAllowedForOperation** | 指定した FLT_CALLBACK_DATA 構造体に関連付けられているフィルターインスタンスから、指定したフィルターインスタンスに i/o をリダイレクトできるかどうかを判断します。 |
-| **FltIsOperationSynchronous** | 指定されたコールバックデータ構造 (FLT_CALLBACK_DATA) が、同期または非同期の i/o 操作を表すかどうかを判断します。 |
+| **FltIsIoRedirectionAllowedForOperation** | 指定した FLT_CALLBACK_DATA 構造に関連付けられているフィルターインスタンスから、指定したフィルターインスタンスに i/o をリダイレクトできるかどうかを判断します。 |
+| **FltIsOperationSynchronous** | 特定のコールバックデータ構造 (FLT_CALLBACK_DATA) が、同期または非同期の i/o 操作を表すかどうかを判断します。 |
 | **FltIsVolumeSnapshot** | ボリュームまたはミニフィルタードライバーインスタンスがスナップショットボリュームにアタッチされているかどうかを判断します。 |
 | **FltIsVolumeWritable** | ボリュームまたはミニフィルタードライバーインスタンスに対応するディスクデバイスが書き込み可能かどうかを指定します。 |
 | **FltLoadFilter** | 現在実行中のシステムにミニフィルタードライバーを動的に読み込みます。 |
 | **FltLockUserBuffer** | 指定された i/o 操作のユーザーバッファーをロックします。 |
-| **FltNotifyFilterChangeDirectory** | IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作の notify 構造体を作成し、指定した通知リストに追加します。 |
+| **FltNotifyFilterChangeDirectory** | IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作の通知構造体を作成し、指定した通知リストに追加します。 |
 | **FltObjectDereference 参照** | 非透過のフィルター、インスタンス、またはボリュームポインターからランダウン参照を削除します。 |
 | **FltObjectReference** | 非透過のフィルター、インスタンス、またはボリュームポインターにランダウン参照を追加します。 |
 | **FltOpenVolume** | 指定されたミニフィルタードライバーインスタンスがアタッチされているファイルシステムボリュームのハンドルおよびファイルオブジェクトポインターを返します。 |
-| **FltOplockBreakH** | CACHE_HANDLE_LEVEL 便宜ロック (oplock) を解除します。 |
+| **FltOplockBreakH** | 便宜的ロック (oplock) CACHE_HANDLE_LEVEL 中断します。 |
 | **FltOplockBreakToNone** | Oplock キーに関係なく、すべての便宜的ロック (oplock) を直ちに中断します。 |
 | **FltOplockBreakToNoneEx** | Oplock キーに関係なく、すべての便宜的ロック (oplock) を直ちに中断します。 |
 | **FltOplockFsctrl** | ミニフィルタードライバーの代わりにさまざまな便宜的ロック (oplock) 操作を実行します。 |
@@ -266,7 +266,7 @@ ms.locfileid: "71955786"
 | **FltSupportsStreamContexts** | 指定されたファイルオブジェクトでストリームコンテキストがサポートされているかどうかを判断します。 |
 | **FltSupportsStreamHandleContexts** | 指定されたファイルオブジェクトでストリームハンドルコンテキストがサポートされているかどうかを判断します。 |
 | **FltTagFile** | ファイルまたはディレクトリに再解析タグを設定します。 |
-| **FltUninitializeFileLock** | 初期化前 FILE_LOCK 構造体。 |
+| **FltUninitializeFileLock** | FILE_LOCK 構造体を初期化前します。 |
 | **FltUninitializeOplock** | 初期化前を便宜的ロック (oplock) ポインターにします。 |
 | **FltUnloadFilter** | **Fltloadfilter**を呼び出してサポートミニフィルタードライバーを読み込んだミニフィルタードライバーは、 **Fltloadfilter**を呼び出してミニフィルタードライバーをアンロードできます。 |
 | **FltUnregisterFilter** | 登録されているミニフィルタードライバーは、フィルターマネージャーが i/o 操作を処理するためにそれを呼び出すことができないように、 **Fltunregisterfilter**を呼び出して自身を登録解除します。 |

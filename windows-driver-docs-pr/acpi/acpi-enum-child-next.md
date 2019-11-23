@@ -31,7 +31,7 @@ void ACPI_ENUM_CHILD_NEXT(
 ----------
 
 *子*   
-ACPI\_列挙型の変数へのポインター\_子の場合は、固定されていないポインターを次の ACPI\_\_列挙型 ACPI の配列内の子構造体に返す、列挙型\_子構造体。
+ACPI\_列挙型の変数へのポインター\_子の場合は、固定されていないポインターを次の ACPI\_\_列挙型 ACPI の配列内の子構造体に返す、列挙型\_子構造体。\_
 
 <a name="return-value"></a>戻り値
 ------------
@@ -41,7 +41,7 @@ ACPI\_列挙型の変数へのポインター\_子の場合は、固定されて
 <a name="remarks"></a>注釈
 -------
 
-ドライバーが IOCTL を使用して[ **\_acpi\_enum\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)デバイス名の配列を取得するために、子\_子デバイス\_名の配列を取得することを要求\_[**出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)要求では、このマクロを使用して、出力バッファーに格納されている**子**配列内の可変長 ACPI\_列挙型\_子構造体へのポインターのシーケンスを決定できます。
+ドライバーが[**IOCTL\_\_acpi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)を使用して\_子デバイス名の配列を取得するために、acpi\_で子デバイス名の配列を取得することを要求した後、 [ **\_の出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)要求で、ドライバーはこのマクロを使用して、出力バッファーに格納されている**子**配列内の可変長の acpi に対するポインターのシーケンスを決定します\_\_\_
 
 <a name="requirements"></a>要件
 ------------

@@ -3,7 +3,7 @@ title: SM\_GetTargetMapping 関数
 description: SM\_GetTargetMapping WMI メソッドは、オペレーティングシステムの一連の論理ユニットとこれらの論理ユニットのファイバーチャネルプロトコル (FCP) 識別子を一意に識別する情報間のマッピングを取得します。
 ms.assetid: db18920c-327d-4349-8821-6d7fb68eccbd
 keywords:
-- SM_GetTargetMapping function Storage デバイス
+- SM_GetTargetMapping 関数記憶装置
 topic_type:
 - apiref
 api_name:

@@ -28,7 +28,7 @@ ms.locfileid: "72832119"
 
 サブスクリプションは、 [**IOCTL\_NFP\_有効に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_enable)することで再び有効にすることができます。
 
-## <a name="handles"></a>ハンドル数
+## <a name="handles"></a>ハンドル
 
 
 メッセージ型をサブスクライブするクライアントは、まずドライバーへの新しいハンドルを開きます。 以前のパブリケーションやサブスクリプションなどのハンドルを再利用することはできません。 これらが不要になった場合は、適切に動作するクライアントによって閉じられます。
@@ -86,11 +86,11 @@ ms.locfileid: "72832119"
 ## <a name="unresponsive-or-misbehaving-clients"></a>クライアントの応答不能または誤動作
 
 
-要求された IOCTL\_NFP の送信に失敗したため、クライアントが "受信済み" キューのドレインを停止した場合は、10 ~ 20 秒\_10-20sec \[のサブスクライブされた[ **\]メッセージ要求を取得\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)ドライバーは、クライアントが削除されたと想定する必要があります。 通常の状況では、クライアントは1秒 \[1s\]内の要求を適切に更新する必要があります。 この場合、ドライバーは "CompleteEventImmediately" カウンターを0に設定し、クライアントがウェイクアップして必要な IRP を送信するまでカウンターを増やさないようにする必要があります。
+クライアントが、必要な IOCTL\_\_NFP を送信できないことによって "受信済み" キューのドレインを停止した場合は、10 ~ 20 秒\_10-20sec の \[の[**サブスクリプション\]メッセージ要求を\_\_取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)し、クライアントが削除されたと想定する必要があります。 通常の状況では、クライアントは1秒 \[1s\]内の要求を適切に更新する必要があります。 この場合、ドライバーは "CompleteEventImmediately" カウンターを0に設定し、クライアントがウェイクアップして必要な IRP を送信するまでカウンターを増やさないようにする必要があります。
 
 ### <a name="required-actions"></a>必要なアクション
 
-ドライバーは、"CompleteEventImmediately" カウンターを0に設定する必要があります。また、クライアントが置換された\_IOCTL を送信しなかった場合は、10-20 秒以内に[ **\_次\_サブスクライブされた\_メッセージ\_取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)するように、カウンターを増やさないでください。以前の IOCTL 完了の。
+ドライバーは、"CompleteEventImmediately" カウンターを0に設定する必要があります。これにより、クライアントが置換された 10-20 [ **\_\_\_\_\_ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)を送信しなかった場合に、カウンターを増やさないようにする必要があります
 
 ## <a name="malformed-messages"></a>間違った形式のメッセージ
 

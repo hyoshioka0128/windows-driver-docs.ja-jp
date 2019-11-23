@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL
-description: DRIVER_IRQL_NOT_LESS_OR_EQUAL のバグチェックの値は0x000000D1 です。 これは、カーネルモードドライバーが、高すぎるプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
+description: DRIVER_IRQL_NOT_LESS_OR_EQUAL バグチェックの値は0x000000D1 です。 これは、カーネルモードドライバーが、高すぎるプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
 ms.assetid: 26cfd881-cc6e-4cc3-b464-e67d75700b96
 keywords:
 - バグチェック 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359585"
 ---
-# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>バグチェック 0xD1: DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL
+# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>バグチェック 0xD1: DRIVER\_IRQL\_\_少ない\_または\_等しい
 
 
-DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL bug check の値は0x000000D1 です。 これは、カーネルモードドライバーが、プロセス IRQL が高すぎるときに、ページング可能なメモリにアクセスしようとしたことを示します。 
+ドライバー\_IRQL\_\_\_が少ないか、\_バグチェックの値が0x000000D1 になっています。 これは、カーネルモードドライバーが、プロセス IRQL が高すぎるときに、ページング可能なメモリにアクセスしようとしたことを示します。 
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_irql_not_less_or_equal-parameters"></a>DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL パラメーター
+## <a name="driver_irql_not_less_or_equal-parameters"></a>DRIVER\_IRQL\_\_\_または同等のパラメーターで\_はありません
 
 <table>
 <colgroup>
@@ -61,7 +61,7 @@ DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL bug c
 </td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>参照されたメモリをアドレスします。 関数の名前を表示するには、このアドレスに<a href="./ln--list-nearest-symbols-.md"> <strong>ln</strong> (一番近くにあるシンボルの一覧)</a>を使用します。</p></td>
 </tr>
 </tbody>
@@ -73,13 +73,13 @@ DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL bug c
 
 通常、このエラーが発生した場合、ドライバーは、割り込み要求レベル (IRQL) が高すぎたときに、ページング可能な (または完全に無効な) アドレスにアクセスしようとしました。 これは次のような事項が原因で発生します。
 
- - DISPATCH_LEVEL 以降の実行中に無効なポインター (NULL や解放されたポインターなど) を逆参照しています。
+ - DISPATCH_LEVEL 以上の実行中に無効なポインター (NULL または解放されたポインターなど) を逆参照しています。
 
  - DISPATCH_LEVEL 以上のページング可能なデータへのアクセス。
 
  - DISPATCH_LEVEL 以上のページング可能なコードを実行しています。
 
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE @ no__t-0STRING) **KiBugCheckDriver**に格納されます。 Dx KiBugCheckDriver を使用すると、デバッガーコマンドである[ **dx** (display debugger object model expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)を使用して、 **dx**を表示できます。
+エラーの原因となっているドライバーを識別できる場合は、その名前がブルースクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver**に格納されます。 Dx KiBugCheckDriver を使用すると、デバッガーコマンドである[ **dx** (display debugger object model expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)を使用して、 **dx**を表示できます。
 
 このバグチェックは通常、不適切なメモリアドレスを使用したドライバーによって発生します。
 
@@ -92,7 +92,7 @@ DRIVER @ no__t-0IRQL @ no__t-1NOT @ no__t-2LESS @ no__t-3OR @ no__t-4EQUAL bug c
 - 無効なポインターであった関数ポインターを使用して関数が呼び出されました。
 
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 開発中のドライバーが問題の原因である場合は、バグチェックの時点で実行されていた関数が (1) ページング可能としてマークされていないことを確認します。または、(2) は、ページングされている他のインライン関数を呼び出しません。

@@ -1,9 +1,9 @@
 ---
-title: バグチェック 0x3B SYSTEM_SERVICE_EXCEPTION
-description: SYSTEM_SERVICE_EXCEPTION のバグチェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
+title: 0x3B SYSTEM_SERVICE_EXCEPTION のバグチェック
+description: SYSTEM_SERVICE_EXCEPTION バグチェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 ms.assetid: 0e2c230e-d942-4f32-ae8e-7a54aceb4c19
 keywords:
-- バグチェック 0x3B SYSTEM_SERVICE_EXCEPTION
+- 0x3B SYSTEM_SERVICE_EXCEPTION のバグチェック
 - SYSTEM_SERVICE_EXCEPTION
 ms.date: 03/24/2019
 topic_type:
@@ -20,15 +20,15 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359581"
 ---
-# <a name="bug-check-0x3b-system_service_exception"></a>バグチェック 0x3B: SYSTEM @ no__t-0SERVICE @ no__t-1 例外
+# <a name="bug-check-0x3b-system_service_exception"></a>バグチェック 0x3B: システム\_サービス\_例外
 
-システムの @ no__t-0SERVICE @ no__t 例外チェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
+システム\_サービス\_例外のバグチェックの値は0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="system_service_exception-parameters"></a>SYSTEM @ no__t-0SERVICE @ no__t-1 例外パラメーター
+## <a name="system_service_exception-parameters"></a>システム\_サービス\_の例外パラメーター
 
 <table>
 <colgroup>
@@ -55,7 +55,7 @@ ms.locfileid: "72359581"
 <td align="left"><p>バグチェックの原因となった例外のコンテキストレコードのアドレス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 </tbody>
@@ -71,15 +71,15 @@ ms.locfileid: "72359581"
 
 一般的な例外コードは次のとおりです。
 
-- 0x80000003: STATUS @ no__t-0BREAKPOINT ポイント
+- 0x80000003: 状態\_ブレークポイント
 
     カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生しました。
 
-- 0xC0000005: STATUS @ no__t-0ACCESS @ no__t-1VIOLATION
+- 0xC0000005: 状態\_アクセス\_違反
 
     メモリアクセス違反が発生しました。 (バグチェックのパラメーター4は、ドライバーがアクセスしようとしたアドレスです)。
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 この問題をデバッグするには、パラメーター3を指定した[ **cxr** (コンテキストレコードの表示)](-cxr--display-context-record-.md)コマンドを使用し、 [ **kb** (スタックバックトレースの表示)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)を使用します。 また、この stop コードの前にあるコードにブレークポイントを設定し、エラーが発生したコードへのシングルステップフォワードを試行することもできます。 アセンブリプログラムコードを表示するには、 [ **u**、 **ub**、 **uu** (unassemble)](u--unassemble-.md)の各コマンドを使用します。
@@ -106,7 +106,7 @@ WinDbg と **! analyze**の詳細については、次のトピックを参照�
 
 ### <a name="identify-the-driver"></a>ドライバーを識別する
 
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE @ no__t-0STRING) **KiBugCheckDriver**に格納されます。 [ **Dx** (display debugger object model expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)、デバッガーコマンドを使用して、次のように表示できます。 `dx KiBugCheckDriver`.
+エラーの原因となっているドライバーを識別できる場合は、その名前がブルースクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver**に格納されます。 [デバッガー] コマンドである[ **dx** (display debugger object model expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)を使用して、`dx KiBugCheckDriver`を表示できます。
 
 パラメーター1の例外コードに関する情報を表示するには、 [ **! error**](-error.md)拡張機能を使用します。 次に示すのは、 **! error**からの出力の例です。
 

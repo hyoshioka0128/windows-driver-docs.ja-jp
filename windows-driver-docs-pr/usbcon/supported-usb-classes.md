@@ -18,7 +18,7 @@ ms.locfileid: "72007645"
 - 複合デバイスの場合は、各機能に物理デバイスオブジェクト (PDOs) を作成する[USB 汎用親ドライバー (Usbccgp)](usb-common-class-generic-parent-driver.md)を使用します。
 - 非複合デバイスまたは複合デバイスの機能については、 [winusb (winusb .sys)](winusb.md)を使用します。
 
-**USB ドライバーをインストールする場合:** USB デバイスクラスドライバーをダウンロードする必要はありません。 これらは自動的にインストールされます。 これらのドライバーとそのインストールファイルは、Windows に含まれています。 これらのファイルは、@no__t 0Windows @ no__t-1System32 @ no__t-2DriverStore @ no__t-3FileRepository フォルダーにあります。 ドライバーは Windows Update によって更新されます。
+**USB ドライバーをインストールする場合:** USB デバイスクラスドライバーをダウンロードする必要はありません。 これらは自動的にインストールされます。 これらのドライバーとそのインストールファイルは、Windows に含まれています。 これらのファイルは、\\Windows\\System32\\DriverStore\\FileRepository フォルダーにあります。 ドライバーは Windows Update によって更新されます。
 
 **カスタムドライバーを作成する場合は、次のようにします。** USB デバイス用のドライバーを作成する前に、Microsoft 提供のドライバーがデバイス要件を満たしているかどうかを確認します。 デバイスが属する USB デバイスクラスで Microsoft 提供のドライバーを使用できない場合は、汎用ドライバーである Winusb. sys または Usbccgp を使用することを検討してください。 必要な場合にのみドライバーを記述します。 [USB クライアントドライバーを開発するためのドライバーモデルの選択](winusb-considerations.md)には、さらに多くのガイドラインが含まれています。
 
@@ -40,9 +40,9 @@ Microsoft では、ほとんどのデバイスのセットアップクラスを�
 
 USB デバイス用の2つの重要なデバイスセットアップクラスは次のとおりです。
 
-- **Usbdevice** {88 Bae032-5a81-49F0-bc3de4ff138216d6}:Ihv は、別のクラスに属していないカスタムデバイスに対して、このクラスを使用する必要があります。 このクラスは、USB ホストコントローラーおよびハブでは使用されません。
+- **Usbdevice** {88 Bae032-5a81-49F0-bc3d-a4ff138216d6}: ihv は、別のクラスに属していないカスタムデバイスに対してこのクラスを使用する必要があります。 このクラスは、USB ホストコントローラーおよびハブでは使用されません。
 
-- **USB** {36fc9e60-c465-11cf-8056-444553540000}:Ihv は、カスタムデバイスにこのクラスを使用することはできません。 これは、USB ホストコントローラーおよび USB ハブ用に予約されています。
+- **USB** {36fc9e60-c465-11cf-8056-444553540000}: ihv は、このクラスをカスタムデバイスに使用することはできません。 これは、USB ホストコントローラーおよび USB ハブ用に予約されています。
 
 デバイスのセットアップクラスは、前に説明した USB デバイスクラスとは異なります。 たとえば、オーディオデバイスは、その記述子に01h という USB デバイスクラスコードを持っています。 システムに接続されている場合、Windows は、Microsoft が提供する、Usbaudio を読み込みます。 デバイスマネージャーでは、デバイスは **[サウンド、ビデオ、およびゲームコントローラー]** の下に表示されます。これは、デバイスセットアップクラスがメディアであることを示します。
 
@@ -63,7 +63,7 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
       <td>オーディオ (01h)</td>
       <td><strong>メディア</strong></br>
 {4d36e96c-e325-11ce-bfc1-08002be10318}</td>
-      <td>Usbaudio. sys<p>Wdma\_usb.inf</p></td>
+      <td>Usbaudio. sys<p>Wdma\_usb .inf</p></td>
       <td>Windows 10 デスクトップ エディション (Home、Pro、Enterprise、Education)</br>Windows 10 Mobile</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft では、Usbaudio ドライバーを使用して USB オーディオデバイスクラスをサポートしています。 詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">カーネルモード WDM オーディオコンポーネント</a>」の「Usbaudio クラスシステムドライバー」を参照してください。 Windows audio のサポートの詳細については、Windows web サイト<a href="https://go.microsoft.com/fwlink/p/?linkid=8751">のオーディオデバイステクノロジ</a>に関する web サイトを参照してください。</td>
     </tr>
@@ -77,10 +77,10 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
       </tr>
       <tr>
         <td><strong>内蔵</strong></br>{4D36E96D-E325-11CE-BFC1-08002BE10318}<p>
-        <strong>Note @ no__t はサブクラス 02h (ACM) をサポートしています</td>
+        <strong>メモ</strong>  サブクラス 02h (ACM) をサポートします。</td>
         <td>Usbser</br>Mdmcpq を参照するカスタム INF</td>
         <td>Windows 10 デスクトップ エディション</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-        <td>Windows 8.1 以前のバージョンでは、Usbser は自動的には読み込まれません。 ドライバーを読み込むには、モデム INF (mdmcpq) を参照する INF を作成する必要があります。この INF には、@no__t 0Install @ no__t-1 と \[Needs が必要です。<p>Windows Vista 以降では、「<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md">ワイヤレスモバイル通信デバイスクラスのサポート</a>」で説明されているように、レジストリ値を設定して Cdc および WIRELESS Mobile CDC (wmcdc) のサポートを有効にすることができます。<p>CDC サポートが有効になっている場合、 <a href="usb-common-class-generic-parent-driver.md">USB 共通クラスの汎用親ドライバー</a>は、CDC および Wmcdc 制御モデルに対応するインターフェイスコレクションを列挙し、物理デバイスオブジェクト (PDO) をこれらのコレクションに割り当てます。</td>
+        <td>Windows 8.1 以前のバージョンでは、Usbser は自動的には読み込まれません。 ドライバーを読み込むには、モデムの INF (mdmcpq) を参照する INF を作成する必要があります。また、\] セクションに \[インストール\] と \[必要があります。<p>Windows Vista 以降では、「<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md">ワイヤレスモバイル通信デバイスクラスのサポート</a>」で説明されているように、レジストリ値を設定して Cdc および WIRELESS Mobile CDC (wmcdc) のサポートを有効にすることができます。<p>CDC サポートが有効になっている場合、 <a href="usb-common-class-generic-parent-driver.md">USB 共通クラスの汎用親ドライバー</a>は、CDC および Wmcdc 制御モデルに対応するインターフェイスコレクションを列挙し、物理デバイスオブジェクト (PDO) をこれらのコレクションに割り当てます。</td>
       </tr>
       <tr>
         <td><strong>Net</strong></br>{4d36e972-e325-11ce-bfc1-08002be10318}</br><strong>メモ</strong>  サブクラス 0Eh (MBIM) をサポートします。</td>
@@ -101,19 +101,19 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>推奨されるドライバー:<a href="winusb.md">Winusb (winusb .sys)</a>
+        <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a>
 </td>
       </tr>
     <tr>
       <td>イメージ (06h)</td>
-      <td><strong>イメージ</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
+      <td><strong>画像</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
       <td>Usbscan .sys</br>Sti</td>
       <td>Windows 10 デスクトップ エディション</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft では、Windows XP 以降のオペレーティングシステムの USB デジタルカメラとスキャナーを管理する Usbscan .sys ドライバーを提供しています。 このドライバーは、Windows Imaging Architecture (WIA) の USB コンポーネントを実装しています。 WIA の詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers">Windows イメージ取得ドライバー</a> 」および「 <a href="https://go.microsoft.com/fwlink/p/?linkid=8768">windows Imaging Component</a> 」 web サイトを参照してください。 WIA で再生されるロールの詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-core-components">Wia コアコンポーネント</a>」を参照してください。</td>
     </tr>
     <tr>
       <td>プリンター (07h)</td>
-      <td><strong>USB</strong><p><strong>注</strong>   usbprint は、デバイスセットアップクラスでプリンターデバイスを列挙します。<strong>業者</strong><p> {4d36e979-e325-11ce-bfc1-08002be10318}.</td>
+      <td><strong>USB</strong><p><strong>  </strong> usbprint は、デバイスセットアップクラス: <strong>printer</strong>の下にあるプリンターデバイスを列挙します。<p> {4d36e979-e325-11ce-bfc1-08002be10318}.</td>
       <td>Usbprint .sys</br>Usbprint .inf</td>
       <td>Windows 10 デスクトップ エディション</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft には、USB プリンターを管理する Usbprint .sys クラスドライバーが用意されています。 Windows での printer クラスの実装の詳細については、「<a href="https://go.microsoft.com/fwlink/p/?linkid=8764">印刷-アーキテクチャとドライバーのサポート</a>」 web サイトを参照してください。</td>
@@ -131,7 +131,7 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
          <td>サブクラス (06) とプロトコル (62)</br>Uaspstor</br>Uaspstor</td>
          <td>Windows 10 デスクトップ エディション</br>Windows 10 Mobile</br>Windows 8.1</br>Windows 8</td>
          <td>Uaspstor は、一括ストリームエンドポイントをサポートする SuperSpeed USB デバイス用のクラスドライバーです。 詳しくは、次のトピックをご覧ください。 <ul>
-           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">XHCI で UASP ストレージドライバーをクラスドライバーとして読み込む</a></li><li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">USB 接続 SCSI (UAS) の Windows 8 のベストプラクティス</li></ul></td>
+           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">XHCI で UASP ストレージドライバーをクラスドライバーとして読み込む</a></li><li>Windows 8 の <a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">USB 接続 SCSI (UAS) のベストプラクティス</li></ul></td>
         </tr>
     </tr>
     <tr>
@@ -154,7 +154,7 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推奨されるドライバー:<a href="winusb.md">WinUSB (Winusb .sys)</a></td>
+      <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a></td>
     </tr>
      <tr>
       <td rowspan="3">スマートカード (0Bh)</td>
@@ -164,7 +164,7 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
           <td>Windows 10 デスクトップ エディション</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
           <td>Microsoft は、USB スマートカードリーダーを管理するための Usbccid のミニクラスドライバーを提供しています。 Windows のスマートカードドライバーの詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/smartcard/index">スマートカード設計ガイド</a>」を参照してください。
           <p>Windows Server 2003、Windows XP、および Windows 2000 では、オペレーティングシステムよりも後にリリースされている可能性があるため、このドライバーを読み込むには特別な指示が必要です。<p>
-          <strong>Note @ no__t-1 Usbccid. sys ドライバーは、UMDF driver, WUDFUsbccidDriver に置き換えられました。</td>
+          <strong>メモ</strong>  Usbccid .sys ドライバーは、UMDF driver, WUDFUsbccidDriver に置き換えられました。</td>
           </tr>
          <tr>
            <td>WUDFUsbccidDriver</br>WUDFUsbccidDriver</td>
@@ -177,12 +177,12 @@ USB デバイス用の2つの重要なデバイスセットアップクラスは
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推奨されるドライバー:<a href="usb-common-class-generic-parent-driver.md">USB 汎用親ドライバー (Usbccgp)</a>。 一部のコンテンツセキュリティ機能は、Usbccgp で実装されています。 「 <a href="content-security-features-in-the-composite-client-generic-parent-drive.md">Usbccgp のコンテンツセキュリティ機能」を</a>参照してください。</td>
+      <td>推奨されるドライバー: <a href="usb-common-class-generic-parent-driver.md">USB 汎用親ドライバー (Usbccgp)</a>。 一部のコンテンツセキュリティ機能は、Usbccgp で実装されています。 「 <a href="content-security-features-in-the-composite-client-generic-parent-drive.md">Usbccgp のコンテンツセキュリティ機能」を</a>参照してください。</td>
         </tr>
     </tr>
      <tr>
       <td>ビデオ (0Eh)</td>
-      <td><strong>イメージ</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
+      <td><strong>画像</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
       <td>Usbvideo. sys<p>
 Usbvideo-.inf</td>
       <td>Windows 10 デスクトップ エディション<p>Windows Vista</td>
@@ -194,7 +194,7 @@ Usbvideo-.inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推奨されるドライバー:<a href="winusb.md">WinUSB (Winusb .sys)</a></td>
+      <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a></td>
      </tr>
      <tr>
       <td>オーディオ/ビデオデバイス (10h)</td>
@@ -207,9 +207,9 @@ Usbvideo-.inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推奨されるドライバー:<a href="winusb.md">WinUSB (Winusb .sys)</a></td>
+      <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a></td>
     </tr>     <tr>
-      <td>ワイヤレスコントローラー (E0h) <p><strong>注</strong>   ではサブクラス01h とプロトコル01h がサポートされています</td>
+      <td>ワイヤレスコントローラー (E0h) <p>  サブクラス01h とプロトコル01h がサポートされている<strong>ことに注意</strong>してください。</td>
       <td>Bluetooth<p>{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}</td>
       <td>Bthusb .sys<p>Bth .inf</td>
       <td>Windows 10 デスクトップ エディション</br>Windows 10 Mobile</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
@@ -217,7 +217,7 @@ Usbvideo-.inf</td>
     </tr>     <tr>
       <td>その他 (EFh)</td>
       <td><strong>Net</strong><p>
-{4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>注</strong>   ではサブクラス04h とプロトコル01h がサポートされています</td>
+{4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>メモ</strong>  ではサブクラス04h とプロトコル01H がサポートされています。</td>
       <td>Rndismp</br>Rndismp</td>
       <td>Windows 10 デスクトップ エディション</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
       <td>Windows Vista より前の場合、CDC のサポートは、ベンダー固有のプロトコル (<strong>Binterfaceprotocol</strong>) 値が0Xff の抽象コントロールモデル (ACM) の RNDIS 固有の実装に限定されます。 RNDIS 施設は、すべての802スタイルのネットワークカードの管理を1つのクラスドライバー Rndismp にセンターで行います。 リモート NDIS の詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">リモート ndis の概要</a>」を参照してください。 リモート NDIS から USB へのマッピングは、Usb8023 ドライバーに実装されています。 Windows でのネットワークサポートの詳細については、「<a href="https://go.microsoft.com/fwlink/p/?linkid=8759">ネットワークとワイヤレステクノロジ</a>」 web サイトを参照してください。</td>
@@ -227,14 +227,14 @@ Usbvideo-.inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推奨されるドライバー:<a href="winusb.md">WinUSB (Winusb .sys)</a></td>
+      <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a></td>
     </tr>
      <tr>
       <td>ベンダー固有 (FFh)</td>
       <td>-</td>
       <td>-</td>
       <td>Windows 10 デスクトップ エディション</br>Windows 10 Mobile</td>
-      <td>推奨されるドライバー:<a href="winusb.md">WinUSB (Winusb .sys)</a></td>
+      <td>推奨されるドライバー: <a href="winusb.md">winusb (winusb .sys)</a></td>
     </tr>
   </tbody>
 </table>

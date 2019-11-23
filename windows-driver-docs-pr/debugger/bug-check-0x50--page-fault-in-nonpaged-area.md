@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0x50 PAGE_FAULT_IN_NONPAGED_AREA
-description: PAGE_FAULT_IN_NONPAGED_AREA のバグチェックの値は0x00000050 です。 これは、無効なシステムメモリが参照されていることを示します。
+description: PAGE_FAULT_IN_NONPAGED_AREA バグチェックの値は0x00000050 です。 これは、無効なシステムメモリが参照されていることを示します。
 ms.assetid: 63b4ab82-f7a9-4e14-bf7c-707a22d7e251
 keywords:
 - バグチェック 0x50 PAGE_FAULT_IN_NONPAGED_AREA
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025327"
 ---
-# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグ チェック 0x50:PAGE @ NO__T-0FAULT @ NO__T-2NONPAGED @ NO__T-3AREA
+# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグチェック 0x50:\_の\_ていない\_領域のページ\_エラー
 
 
-ページ @ no__t-0FAULT @ no__t-1-2NONPAGED @ no__t-3AREA bug check の値は0x00000050 です。 これは、無効なシステムメモリが参照されていることを示します。 通常、メモリアドレスが間違っているか、メモリアドレスが解放されたメモリを指しています。
+ページの\_\_\_非ページ\_領域のバグチェックの値が0x00000050 になっています。 これは、無効なシステムメモリが参照されていることを示します。 通常、メモリアドレスが間違っているか、メモリアドレスが解放されたメモリを指しています。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="page_fault_in_nonpaged_area-parameters"></a>PAGE @ no__t-0FAULT @ no__t-2NONPAGED @ no__t-3AREA パラメーター
+## <a name="page_fault_in_nonpaged_area-parameters"></a>ページ\_\_\_の非ページ\_領域のパラメーター
 
 
 <table>
@@ -51,23 +51,23 @@ ms.locfileid: "70025327"
 <tr class="even">
 <td align="left"><p>2</p></td>
 <td align="left">
-<p><i>Windows 1507 (TH1) バージョン-x64 </i> </p>
-<p><strong>0</strong>読み取り操作</p>
+<p><i>Windows 1507 (TH1) バージョン-x64  の後</i></p>
+<p><strong>0:</strong>読み取り操作</p>
 <p><strong>2:</strong>書き込み操作</p>
-<p><strong>種類</strong>操作の実行</p>
+<p><strong>10:</strong>操作の実行</p>
 
 <p><i>Windows 1507 (TH1) バージョンの後-x86</i></p>
-<p><strong>0</strong>読み取り操作</p>
+<p><strong>0:</strong>読み取り操作</p>
 <p><strong>2:</strong>書き込み操作</p>
-<p><strong>種類</strong>操作の実行</p>
+<p><strong>10:</strong>操作の実行</p>
 
 <p><i>Windows 1507 (TH1) バージョンの後-ARM</i></p>
-<p><strong>0</strong>読み取り操作</p>
+<p><strong>0:</strong>読み取り操作</p>
 <p><strong>1:</strong>書き込み操作</p>
-<p><strong>8</strong>操作の実行</p>
+<p><strong>8:</strong>操作の実行</p>
 
 <p><i>Windows 1507 (TH1) バージョン x64/x86 より前</i></p>
-<p><strong>0</strong>読み取り操作</p>
+<p><strong>0:</strong>読み取り操作</p>
 <p><strong>1:</strong>書き込み操作</p>
 </td>
 </tr>
@@ -78,7 +78,7 @@ ms.locfileid: "70025327"
 <tr class="even">
 <td align="left"><p>4</p></td>
 <td align="left"><p>ページフォールトの種類</p>
-<p>NONPAGED_BUGCHECK_WRONG_SESSION-セッション領域アドレスへの参照が、セッションを持たないプロセスのコンテキストで行われました。  通常、これは、適切なプロセスへのオブジェクト参照を適切に取得して最初にアタッチせずに、呼び出し元がセッションアドレスに不適切にアクセスしようとすることを意味します。 このバグチェック & サブタイプは、Windows 10 RS3 で最後に使用されました。  Windows 10 RS4 以降では、このエラーは代わりに 0x02 (NONPAGED_BUGCHECK_NOT_PRESENT_PAGE_TABLE) として表示されます。</p>
+<p>0x03-NONPAGED_BUGCHECK_WRONG_SESSION-セッション領域アドレスへの参照が、セッションを持たないプロセスのコンテキストで行われました。  通常、これは、適切なプロセスへのオブジェクト参照を適切に取得して最初にアタッチせずに、呼び出し元がセッションアドレスに不適切にアクセスしようとすることを意味します。 このバグチェック & サブタイプは、Windows 10 RS3 で最後に使用されました。  Windows 10 RS4 以降では、このエラーは、代わりに 0x02 (NONPAGED_BUGCHECK_NOT_PRESENT_PAGE_TABLE) として表示されます。</p>
 <p>0x04-NONPAGED_BUGCHECK_VA_NOT_CANONICAL-非正規 (無効) 仮想アドレス (パラメーター 1) への参照が試行されました。  呼び出し元は、このアドレスにアクセスしようとすることはできません。</p>
 </td>
 </tr>
@@ -86,7 +86,7 @@ ms.locfileid: "70025327"
 </table>
 
  
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE @ no__t-0STRING) **KiBugCheckDriver**に格納されます。 デバッガーの dx コマンドを使用して、この-`dx KiBugCheckDriver` を表示できます。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリに格納されます (PUNICODE\_STRING) **KiBugCheckDriver**。 デバッガーの dx コマンドを使用して、この `dx KiBugCheckDriver`を表示できます。
 
 <a name="cause"></a>原因
 -----
@@ -96,7 +96,7 @@ ms.locfileid: "70025327"
 また、障害が発生したハードウェアをインストールした後、またはインストールされたハードウェアの障害が発生した場合にも発生する可能性があります (通常は、欠陥のある RAM、メインメモリ、L2 RAM キャッシュ、またはビデオ RAM)。
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 ----------
 
 **イベントログ:** エラーの原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。 詳細については、「 [Open イベントビューアー](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)」を参照してください。 ブルースクリーンと同じ時間枠内に発生したシステムログの重大なエラーを探します。
@@ -143,7 +143,7 @@ Arg4: 000000000000000c, (reserved)
 
 この例では、パラメーター2は、メモリ領域が読み取られたときにバグチェックが発生したことを示します。
 
-すべての! analyze 出力を調べて、バグチェックが発生したときの状況に関する情報を取得します。 モジュール名: と FAULTING_MODULE: を調べて、無効なシステムメモリの参照に関係するコードを確認します。
+すべての! analyze 出力を調べて、バグチェックが発生したときの状況に関する情報を取得します。 MODULE_NAME: および FAULTING_MODULE: 無効なシステムメモリの参照に関係するコードを確認します。
 
 エラーが発生したときに実行されていたことに関する手掛かりについては、スタックテキストを参照してください。 複数のダンプファイルが使用可能な場合は、情報を比較して、スタック内の共通コードを探します。
 
@@ -155,7 +155,7 @@ TRAP_FRAME:  fffff98112e8b3d0 -- (.trap 0xfffff98112e8b3d0)
 
  [**Kb (スタックバックトレースの表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)などのデバッガーコマンドを使用して、エラーが発生しているコードを調査します。
 
-メモリに読み込まれているモジュールの一覧を表示するには、`lm t n` を使用します。
+メモリに読み込まれているモジュールを一覧表示するには、`lm t n` を使用します。
 
 パラメーター1とパラメーター3によって参照されるメモリ領域を調べるには、 [d、da、db、dc、dd、dd、df、dp、dq、du、dw (Display Memory)](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)コマンドを使用します。
 
@@ -200,7 +200,7 @@ fffff802`40d3230b c3              ret
 fffff802`40d3230c c3              ret
 ```
 
-指定されたアドレスから後方に `ub` を使用します。
+`ub` を使用して、指定されたアドレスから後方に逆アセンブルします。
 
 [ [R (レジスタ)](r--registers-.md) ] コマンドを使用して、システムバグがチェックされたときに実行された内容を確認します。 
 
@@ -219,11 +219,11 @@ nt!RtlSubtreePredecessor+0x9:
 fffff802`40d322f9 488b4810        mov     rcx,qword ptr [rax+10h] ds:ffffffff`00000090=????????????????
 ```
 
-この場合 `fffff80240d322f9` は、命令ポインターレジスタである rip です。
+この場合、`fffff80240d322f9` は命令ポインター register, rip にあります。
 
-@No__t-0 および `!pool` コマンドを使用してメモリを調べることもできます。
+`!pte` と `!pool` のコマンドを使用してメモリを調べることもできます。
 
-@No__t-0 およびを使用して、システムメモリの全般的な状態を確認します。 
+`!memusage` およびを使用して、システムメモリの全般的な状態を確認します。 
 
 **ドライバーの検証ツール**
 

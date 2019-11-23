@@ -1,9 +1,9 @@
 ---
 title: OID_SRIOV_READ_VF_CONFIG_SPACE
-description: ネットワークアダプターの指定された PCIe 仮想機能 (VF) に対して PCI Express (PCIe) の構成領域からデータを読み取るために、OID_SRIOV_READ_VF_CONFIG_SPACE のオブジェクト識別子 (OID) メソッドの要求が、それに関連するドライバーによって発行されます。
+description: ネットワークアダプターの指定された PCIe 仮想機能 (VF) に対して PCI Express (PCIe) の構成領域からデータを読み取るために、OID_SRIOV_READ_VF_CONFIG_SPACE のオブジェクト識別子 (OID) メソッドの要求が、その後のドライバーによって発行されます。
 ms.assetid: 48CD54F5-F18F-4BC1-A93A-A824EC041605
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SRIOV_READ_VF_CONFIG_SPACE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SRIOV_READ_VF_CONFIG_SPACE
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7850e6b3abf5a44b5c720376a4c5438297d00d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,11 +15,11 @@ ms.locfileid: "72843981"
 # <a name="oid_sriov_read_vf_config_space"></a>OID\_SRIOV\_読み取り\_VF\_CONFIG\_SPACE
 
 
-それより前のドライバーは、オブジェクト識別子 (OID) のメソッド要求を OID\_SRIOV\_読み取り\_VF\_CONFIG の\_領域から、指定された PCIe 仮想機能 (VF) のデータを読み取ります。ネットワークアダプター。
+それより後のドライバーは、\_OID のオブジェクト識別子 (OID) メソッド要求を発行します。 SRIOV は、ネットワークアダプター上の指定された PCIe 仮想機能 (VF) に対して、PCI Express (PCIe) 構成領域からデータを読み取るために\_VF\_CONFIG\_SPACE を読み取り\_ます。
 
 この OID メソッド要求から正常に戻った後、 [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、呼び出し元が割り当てたバッファーへのポインターが含まれます。 このバッファーは、次のものが含まれるように書式設定されます。
 
--   NDIS\_SRIOV は、VF の PCI 構成領域の読み取り操作のためのパラメーターを格納する[ **\_vf\_CONFIG\_\_を読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)ます。
+-   NDIS\_SRIOV は、VF の PCI 構成領域の読み取り操作のためのパラメーターを格納する[ **\_vf\_CONFIG\_\_を読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)ます。\_
 
 -   PCI 構成領域から読み取るデータ用の追加のバッファー領域。
 
@@ -30,7 +30,7 @@ VF ミニポートドライバーは、Hyper-v 子パーティションのゲス
 
 VF PCI 構成領域を読み取るために、管理オペレーティングシステムで実行されているドライバーが oid\_oid の OID メソッド要求を発行し、\_VF\_CONFIG\_SPACE を PF ミニポートドライバーに読み取り\_ます。 この OID メソッド要求は、シングルルート i/o 仮想化 (SR-IOV) インターフェイスをサポートする PF ミニポートドライバーに必要です。
 
-たとえば、管理オペレーティングシステムで実行されている仮想化スタックは、VF ミニポートドライバーが[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)に対して\_SRIOV を呼び出したときに、\_VF\_CONFIG\_領域を読み取る oid メソッド\_要求を発行します。VF PCI 構成領域から読み取ります。
+たとえば、管理オペレーティングシステムで実行されている仮想化スタックは、vf ミニポートドライバーが[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)を呼び出して vf PCI 構成領域から読み取るときに、oid\_\_\_\_\_SRIOV の oid メソッド要求を発行します。
 
 Oid\_oid の OID メソッド要求を処理するときに、\_VF\_CONFIG\_SPACE\_読み取るために、PF ミニポートドライバーは次のガイドラインに従う必要があります。
 
@@ -77,7 +77,7 @@ PF ミニポートドライバーは、oid\_SRIOV の OID メソッド要求に�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが短すぎます。 ミニポートドライバーはデータを設定する必要があり<strong>ます。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

@@ -1,6 +1,6 @@
 ---
-title: GDI サポートサービス
-description: GDI サポートサービス
+title: GDI サポート サービス
+description: GDI サポート サービス
 ms.assetid: a5521f9f-ddf6-4892-bf6d-aebb7936df11
 keywords:
 - GDI WDK Windows 2000 display、service ルーチン
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839678"
 ---
-# <a name="gdi-support-services"></a>GDI サポートサービス
+# <a name="gdi-support-services"></a>GDI サポート サービス
 
 
 ## <span id="ddk_gdi_support_services_gg"></span><span id="DDK_GDI_SUPPORT_SERVICES_GG"></span>

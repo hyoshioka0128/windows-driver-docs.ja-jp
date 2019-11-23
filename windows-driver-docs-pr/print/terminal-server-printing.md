@@ -73,7 +73,7 @@ Windows 2000 以降のプリンターミニドライバーまたはドライバ�
 
 -   [**DrvDevicePropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)関数と[**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)関数。プロパティページを作成します。
 
--   [**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)関数。プリンターイベントを識別するイベントコードを受け取ります。 関数は、PRINTER\_イベントに対してのみユーザーインターフェイスを表示できることに注意してください\_接続とプリンターの\_イベント\_追加して\_接続イベントコードを削除します。
+-   [**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)関数。プリンターイベントを識別するイベントコードを受け取ります。 関数は、PRINTER\_イベントに対してのみユーザーインターフェイスを表示できることに注意してください\_接続とプリンターの\_イベント\_追加して\_接続イベントコードを削除します。\_
 
 その他のすべてのプリンタードライバーコードは、スプーラのコンテキストで実行されます。 このコンテキストでは、 **MessageBox**または**messageboxex**を呼び出すことができますが、MB\_サービス\_通知を設定する必要があります。 これらの関数については、Windows SDK のドキュメントを参照してください。
 

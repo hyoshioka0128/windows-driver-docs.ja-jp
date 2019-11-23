@@ -46,7 +46,7 @@ IHV 拡張 DLL では、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microso
 
     IHV 拡張 DLL が[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)を呼び出さない場合、オペレーティングシステムは既定では、任意の802.11 の AP との関連付けについて、登録済みの EtherTypes の空の一覧になります。
 
--   [**Dot11ExtPreAssociateCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_pre_associate_completion)を呼び出して、IHV 拡張 DLL が事前関連付け操作を完了した後、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)の呼び出しで指定されたプライバシーの除外と EtherType の登録の一覧は、基本サービスセット (BSS) ネットワークに接続している間に、WLAN アダプターによって行われたすべての802.11 アソシエーションに適用されます。
+-   [**Dot11ExtPreAssociateCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_pre_associate_completion)を呼び出すことによって、IHV 拡張 DLL が事前関連付け操作を完了すると、 [**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)の呼び出しによって指定されたプライバシー除外と EtherType 登録の一覧が、基本サービスセット (BSS) ネットワークに接続しているときに、WLAN アダプターによって行われた802.11 アソシエーションすべてに適用されます。
 
 -   オペレーティングシステムは、 [*Dot11ExtIhvAdapterReset*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)を呼び出す前に、プライバシーの除外と EtherType の登録の一覧をクリアします。
 

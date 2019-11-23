@@ -72,7 +72,7 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
-レジストリエントリ *&gt;&lt;の USB クライアントドライバーの検証の設定*には、DWORD 値を指定します。
+*&lt;USB クライアント ドライバーの検証設定&gt;* レジストリ エントリは、DWORD 値を受け取ります。
 設定を追加、変更、または削除する場合は、設定を適用するために、システムでデバイスを再列挙する必要があります。
 
 次の表に、&lt;の*USB クライアントドライバーの検証ツールの設定&gt;* に使用できる値を示します。 設定は、**サービス**キーの下で指定されたクライアントドライバーに適用されます。
@@ -105,7 +105,7 @@ HKEY_LOCAL_MACHINE
 </ul></td>
 <td><p><strong>クライアントドライバーの登録に失敗した。</strong></p>
 <p>クライアントドライバーの初期化タスクの1つは、基になるドライバースタックに自身を登録することです。 以降の複数の呼び出しでは、登録が必要です。</p>
-<p>たとえば、クライアントドライバーは、登録のために<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a>を呼び出します。 たとえば、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装していないとします。 ルーチンがエラー NTSTATUS コードを返す場合、ドライバーは誤ってエラーを無視し、無効な USBD ハンドルを使用して後続の呼び出しに進むことができます。</p>
+<p>たとえば、クライアントドライバーは、登録のために<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a>を呼び出します。 たとえば、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装しないとします。 ルーチンがエラー NTSTATUS コードを返す場合、ドライバーは誤ってエラーを無視し、無効な USBD ハンドルを使用して後続の呼び出しに進むことができます。</p>
 <p>この設定を使用すると、失敗コードパスをテストできるように、呼び出しを失敗させることができます。</p>
 <p>登録が失敗したときにクライアントドライバーの動作が必要:</p>
 <ul>
@@ -115,7 +115,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
-<p>呼び出し元が<em>CapabilityType</em>パラメーターで GUID_USB_CAPABILITY_CHAINED_MDLS を渡すと、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
+<p>呼び出し元が<em>CapabilityType</em>パラメーターに GUID_USB_CAPABILITY_CHAINED_MDLS を渡したときに、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -137,7 +137,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
-<p>呼び出し元が<em>CapabilityType</em>パラメーターで GUID_USB_CAPABILITY_STATIC_STREAMS を渡すと、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
+<p>呼び出し元が<em>CapabilityType</em>パラメーターに GUID_USB_CAPABILITY_STATIC_STREAMS を渡したときに、クライアントドライバーがこれらのルーチンを呼び出すことができません。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -158,7 +158,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierStaticStreamCountOverride</strong></p>
-クライアントが GUID_USB_CAPABILITY_STATIC_STREAMS を使用してこれらのルーチンを呼び出す場合に、 <em>Outputbuffer</em>パラメーターで受け取った値を変更します。
+クライアントが GUID_USB_CAPABILITY_STATIC_STREAMS でこれらのルーチンを呼び出すと、 <em>Outputbuffer</em>パラメーターで受け取った値を変更します。
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>

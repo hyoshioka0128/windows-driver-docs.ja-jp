@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_PIN_INFO
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_PIN_INFO 通知を使用して OID クエリに応答し、OID_WWAN_PIN の要求を設定します。 ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。この通知では、NDIS_WWAN_PIN_INFO 構造体が使用されます。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PIN_INFO 通知を使用して、OID クエリに応答し、OID_WWAN_PIN の要求を設定します。 ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。この通知では、NDIS_WWAN_PIN_INFO 構造を使用します。
 ms.assetid: fa3c2467-2240-423b-b91b-f7e19d5be353
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_PIN_INFO ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_PIN_INFO
 ms.localizationpriority: medium
 ms.openlocfilehash: dce91e3403f90a928cb65706bea5409108c6257b
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -52,9 +52,9 @@ ms.locfileid: "72844787"
 
 **WwanPinOperationEnable、Wwanpinoperationenable、または Wwanpinoperationenable 要求への応答**
 
-ミニポートドライバーが NDIS\_ステータス\_\_WWAN を使用する場合、\_情報通知をピン留めして、 **Wwanpinoperationenable**、 **wwanpinoperationenable**、および**wwanpinoperationenable**に応答するには、操作は次のとおりです。
+ミニポートドライバーが NDIS\_ステータス\_WWAN\_\_を使用して、 **Wwanpinoperationenable**、 **wwanpinoperationenable**、および**wwanpinoperationenable**に応答する場合は、次の操作を実装する必要があります。
 
--   要求が成功した場合、ミニポートドライバーは**uStatus**を WWAN\_ステータス\_SUCCESS に設定する必要があります。 WWAN_PIN_INFO のその他のメンバーについては、次の状況を参照してください。
+-   要求が成功した場合、ミニポートドライバーは**uStatus**を WWAN\_ステータス\_SUCCESS に設定する必要があります。 WWAN_PIN_INFO の他のメンバーについては、次の状況を参照してください。
 
 -   ミニポートドライバーは、PIN が既に要求された状態にあるときに、pin の有効化と PIN の無効化の操作に対して、 **uStatus**を WWAN\_状態\_設定する必要があります。 ミニポートドライバーでは、 **Pintype**を**Wwanpintypenone**に設定する必要があります。 他のメンバーは無視されます。
 
@@ -78,7 +78,7 @@ ms.locfileid: "72844787"
 
      
 
--   PIN のブロック解除: **AttemptsRemaining**が0の場合、pin はブロックされます。 PIN のブロックを解除するために、該当する場合は、対応する PUK が MB デバイスによって要求されることがあります。 この場合、ミニポートドライバーは、 **uStatus**を WWAN\_ステータス\_エラー、 **pintype**を対応する Wwanpintype*Xxx*PUK、 **PinState** To **wwanpinstateenter**、 **AttemptsRemaining**に設定する必要があります。には、有効な PUK を入力するために許可されている試行回数が含まれている必要があります。
+-   PIN のブロック解除: **AttemptsRemaining**が0の場合、pin はブロックされます。 PIN のブロックを解除するために、該当する場合は、対応する PUK が MB デバイスによって要求されることがあります。 この場合、ミニポートドライバーでは、 **uStatus**を WWAN\_ステータス\_エラー、 **pintype**を対応する Wwanpintype*Xxx*PUK、 **PinState**を**Wwanpinstateenter**に設定し、 **AttemptsRemaining**に有効な PUK を入力する試行回数を指定する必要があります。
 
     MB のデバイスまたは SIM がブロックされた場合は、ミニポートドライバーが、 **ReadyState**を**WwanReadyStateDeviceLocked**に設定してイベント通知を送信する必要があります。
 

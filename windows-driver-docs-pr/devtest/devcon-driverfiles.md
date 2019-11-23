@@ -49,7 +49,7 @@ ms.locfileid: "72038092"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong> @ no__t) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong></em></strong>) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -63,7 +63,7 @@ ms.locfileid: "72038092"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **=** <em>クラス</em>は、デバイスのセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>は、デバイスのデバイスセットアップクラスを指定します。 等号 ( **=** ) は、文字列をクラス名として識別します。
 
 また、クラス名の後に、ハードウェア Id、互換性のある Id、デバイスインスタンス Id、または ID パターンを指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定された Id に一致するデバイスをクラスで検索します。
 
@@ -82,6 +82,6 @@ devcon driverfiles =media isapnp*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 8:すべてのドライバーファイルを一覧表示する @ no__t-0
+[例 8: すべてのドライバーファイルを一覧表示する](devcon-examples.md#ddk_example_8_list_all_driver_files_tools)
 
-[Example 9:特定のデバイスのドライバーファイルを一覧表示する @ no__t-0
+[例 9: 特定のデバイスのドライバーファイルを一覧表示する](devcon-examples.md#ddk_example_9_list_the_driver_files_of_a_particular_device_tools)

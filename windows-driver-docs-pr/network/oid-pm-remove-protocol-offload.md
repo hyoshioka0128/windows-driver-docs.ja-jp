@@ -1,9 +1,9 @@
 ---
 title: OID_PM_REMOVE_PROTOCOL_OFFLOAD
-description: NDIS ドライバーとプロトコルドライバーは、セット要求として OID_PM_REMOVE_PROTOCOL_OFFLOAD OID を使用して、ネットワークアダプターから電源管理プロトコルオフロードを削除します。
+description: NDIS ドライバーとプロトコルドライバーは、セット要求として、OID_PM_REMOVE_PROTOCOL_OFFLOAD OID を使用して、ネットワークアダプターから電源管理プロトコルオフロードを削除します。
 ms.assetid: efca3018-28bf-4d91-b698-4b1c9e02f6e3
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PM_REMOVE_PROTOCOL_OFFLOAD ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PM_REMOVE_PROTOCOL_OFFLOAD
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3d78133e8d79eb2b42824a3cade7658545068f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -22,7 +22,7 @@ ms.locfileid: "72844049"
 
 NDIS およびプロトコルドライバーは、OID\_PM\_使用して\_プロトコル\_オフロード OID を削除し、基になるネットワークアダプターからプロトコルオフロードを削除します。
 
-**データ。\_情報を設定します。** [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の informationbuffer メンバーは、以前に追加されたプロトコルオフロード識別子の**ULONG**値をポイントする必要があります。 Ndis は、ndis [ **\_pm\_\_プロトコル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)の**ProtocolOffloadId**メンバーで、 [\_プロトコルの追加\_前の OID\_pm が送信されたときに、このプロトコルオフロード識別子を設定\_](oid-pm-add-protocol-offload.md)基になるネットワークアダプターに対して OID 要求をオフロードします。
+**データ。\_情報を設定します。** [**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の informationbuffer メンバーは、以前に追加されたプロトコルオフロード識別子の**ULONG**値をポイントする必要があります。 Ndis は、ndis [ **\_pm\_\_プロトコル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)の**ProtocolOffloadId**メンバーにこのプロトコルオフロード識別子を設定します。 ndis は、前の oid\_PM を送信したときに\_[プロトコル\_オフロード](oid-pm-add-protocol-offload.md)OID 要求を基になるネットワークアダプターに追加します。\_
 
 ### <a name="remarks-for-miniport-driver-writers"></a>ミニポートドライバーライターの解説
 

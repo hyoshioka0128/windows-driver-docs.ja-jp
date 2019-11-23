@@ -50,9 +50,9 @@ ms.locfileid: "72843759"
 
 -   シングル ルート I/O 仮想化 (SR-IOV)。
 
-また、転送拡張機能は、カプセル化された NDIS 状態のインジケーターを生成して、Hyper-v 子パーティションに割り当てられているハードウェアオフロードリソースを変更することもできます。 NDIS 6.30 以降では、拡張機能は、カプセル化された NDIS\_状態を発行して[ **\_\_\_ポート\_切り替え**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)ます。これにより、VM ネットワークアダプターと PCI Express (PCIe) 仮想関数 (VF)。 VF は、[シングルルート i/o 仮想化 (sr-iov)](single-root-i-o-virtualization--sr-iov-.md)インターフェイスをサポートする、基になる物理ネットワークアダプターによって公開およびサポートされます。
+また、転送拡張機能は、カプセル化された NDIS 状態のインジケーターを生成して、Hyper-v 子パーティションに割り当てられているハードウェアオフロードリソースを変更することもできます。 NDIS 6.30 以降では、拡張機能は、カプセル化された NDIS\_の状態を発行して[ **\_\_ポート\_切り替え**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)ます。これにより、VM ネットワークアダプターと PCI Express (PCIe) 仮想関数 (vf) との間のバインドを削除するために、vf\_が削除されます。 VF は、[シングルルート i/o 仮想化 (sr-iov)](single-root-i-o-virtualization--sr-iov-.md)インターフェイスをサポートする、基になる物理ネットワークアダプターによって公開およびサポートされます。
 
-転送拡張機能が、基になる物理アダプターのハードウェアオフロードリソースについて、カプセル化された NDIS 状態を示すものである場合は、Ndis\_スイッチのメンバーを設定する必要があります[ **\_NIC\_状態\_表示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体は次のようになります。
+転送拡張機能が、基になる物理アダプターのハードウェアオフロードリソースに対してカプセル化された NDIS 状態を示す場合は、次の方法で、 [**ndis\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造体のメンバーを設定する必要があります。
 
 -   **DestinationPortId**メンバーは、**既定\_ポート\_ID に\_スイッチ\_、NDIS**に設定する必要があります。
 -   DestinationNicIndex メンバーは、**既定\_NIC\_インデックス\_** 、\_に設定する必要があります。
@@ -67,7 +67,7 @@ ms.locfileid: "72843759"
 
 -   **Statusindication**メンバーは、 [**NDIS\_ステータス\_示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターに設定する必要があります。 この構造体には、カプセル化された NDIS 状態を示すデータが含まれます。
 
-転送拡張機能が、Hyper-v 子パーティションのハードウェアオフロードリソースに対して NDIS 状態を示すものである場合、 [**ndis\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造のメンバーを設定する必要があります。次のようにします。
+転送拡張機能が、Hyper-v 子パーティションのハードウェアオフロードリソースに対して NDIS 状態を示すものである場合は、次の方法で、 [**ndis\_スイッチ\_NIC\_状態\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)表示構造のメンバーを設定する必要があります。
 
 -   **DestinationPortId**メンバーと**DestinationNicIndex**メンバーは、パーティションによって使用されるネットワーク接続のポートおよびネットワークアダプターインデックスの対応する値に設定されている必要があります。
 

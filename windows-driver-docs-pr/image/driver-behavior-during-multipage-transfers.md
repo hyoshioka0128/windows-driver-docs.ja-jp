@@ -14,7 +14,7 @@ ms.locfileid: "72840853"
 # <a name="driver-behavior-during-multipage-transfers"></a>複数ページ転送中のドライバーの動作
 
 
-ドライバーは、フォルダーの取得を直接サポートする必要はありません。 ドライバーでサポートされていない場合、WIA サービスは項目ツリーを再帰的にウォークし、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)を呼び出します。これは、 [**wia\_IPA\_item\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)で**wiaitemtypetransfer**ビットが設定されているすべての項目に対して行われます。".
+ドライバーは、フォルダーの取得を直接サポートする必要はありません。 ドライバーでサポートされていない場合、WIA サービスは項目ツリーを再帰的にウォークし、 [**IWiaMiniDrv::D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)を呼び出します。これは、 [**wia\_IPA\_item\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)プロパティで**wiaitemtypetransfer**ビットが設定されているすべての項目に対して行われます。
 
 フォルダー取得をサポートするドライバーは、フォルダー項目の [ [**WIA\_ip\_転送\_機能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-transfer-capabilities)] プロパティを公開する必要があります。 このプロパティはフラグプロパティであり、フォルダー取得機能が直接サポートされていることを示すために、\_子\_対応ビットを取得\_には、WIA\_転送する必要があります。 このサポートは、ドライバー自体がツリーをウォークして関連する項目を転送し、WIA サービスがフォルダーで**IWiaMiniDrv::D rvacquireitemdata**を呼び出すだけであることを意味します。 ドライバーでは、通常の転送要求とフォルダー取得要求を区別できます。これを行うには、WIA\_転送の*Lflags*パラメーターをテストして\_の子ビットを取得\_ます。
 

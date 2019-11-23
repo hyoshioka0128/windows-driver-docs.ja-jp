@@ -40,9 +40,9 @@ NDIS 6.30 以降では、ミニポートドライバーによって、ndis wake 
 
 ### <a name="ndis-no-pause-on-suspend"></a>中断されていない NDIS
 
-Ndis 6.30 以降では、ミニポートドライバーは、Ndis\_ミニポート\_アダプターで属性フラグ (**ndis\_ミニポート\_属性\_\_一時停止**\_) を指定でき[ **\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造体。 ドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の呼び出しで、この構造体へのポインターを渡します。
+Ndis 6.30 以降では、ミニポートドライバーで属性フラグ (**ndis\_ミニポート\_属性\_\_** 指定できます。この属性は、 [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)構造に\_ます。\_ ドライバーは、 [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)関数の呼び出しで、この構造体へのポインターを渡します。
 
-ミニポートで Ndis\_ミニポート\_属性が設定されている場合、 **\_SUSPEND 属性フラグの\_\_一時停止\_** 、ndis では、オブジェクト識別子の前にミニポートドライバーの[*miniportpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)関数が呼び出されません (OID) [\_PNP\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)されている\_電源がドライバーに発行されていることを要求します。 ミニポートドライバーは OID 要求を処理するときに、低電力状態に移行するためにミニポートアダプターを準備するときに、以前は一時停止していたと想定してはいけません。
+ミニポートで**ndis\_ミニポート\_\_属性**が設定されている場合、\_SUSPEND 属性フラグの\_\_一時停止\_はありませんが、ndis はミニポートドライバーの[*miniportpause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)関数を呼び出しません。この関数は、oid のオブジェクト識別子 (oid) の要求が、ドライバーに対して[\_PNP\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)されます。 ミニポートドライバーは OID 要求を処理するときに、低電力状態に移行するためにミニポートアダプターを準備するときに、以前は一時停止していたと想定してはいけません。
 
 詳細については、「 [**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)」を参照してください。
 

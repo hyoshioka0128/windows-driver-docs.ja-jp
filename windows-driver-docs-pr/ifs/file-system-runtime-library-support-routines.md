@@ -17,7 +17,7 @@ ms.locfileid: "71955784"
 
 **ヘッダーファイル:** *ntifs*
 
-** プレフィックス:FsRtl * Xxx @ no__t-0 @ no__t-1
+**Prefix: FsRtl * Xxx***
 
 | 関数またはマクロ | 説明 |
 | ----------------- | ----------- |
@@ -56,7 +56,7 @@ ms.locfileid: "71955784"
 | **FsRtlCreateSectionForDataScan** | セクションオブジェクトを作成します。 このルーチンは細心の注意を払って使用してください。 |
 | **FsRtlCurrentBatchOplock** | ファイルシステムまたはフィルタードライバーは、このルーチンを呼び出して、ファイルにバッチまたはフィルターの便宜的ロック (oplock) があるかどうかを判断します。 |
 | **FsRtlCurrentOplock** | ファイルシステムまたはフィルタードライバーは、このルーチンを呼び出して、ファイルに便宜的ロック (oplock) があるかどうかを判断します。 |
-| **FsRtlCurrentOplockH** | ファイルシステムまたはフィルタードライバーは、このルーチンを呼び出して、ファイルに CACHE_HANDLE_LEVEL 便宜ロック (oplock) があるかどうかを判断します。 |
+| **FsRtlCurrentOplockH** | ファイルシステムまたはフィルタードライバーは、このルーチンを呼び出して、ファイルに CACHE_HANDLE_LEVEL 便宜的ロック (oplock) があるかどうかを判断します。 |
 | **FsRtlDeleteExtraCreateParameterLookasideList** | 追加のパラメーター (ECP) ルックアサイドリストを解放します。 |
 | **FsRtlDeleteKeyFromTunnelCache** | 削除されるディレクトリ内のファイルのトンネルキャッシュエントリを削除します。 |
 | **FsRtlDeleteTunnelCache** | トンネルキャッシュを削除します。 |
@@ -133,7 +133,7 @@ ms.locfileid: "71955784"
 | **FsRtlLookupLastLargeMcbEntryAndIndex** | 指定されたマップコントロールブロック (MCB) に格納されている最後のマッピングエントリを取得します。 |
 | **Fsrtlstmcbentry** | 使われていません。 |
 | **FsRtlLookupMcbEntry** | 使われていません。 |
-| **FsRtlLookupPerFileContext** | 指定されたファイルに関連付けられている FSRTL_PER_FILE_CONTEXT オブジェクトへのポインターを返します。 |
+| **FsRtlLookupPerFileContext** | 指定したファイルに関連付けられている FSRTL_PER_FILE_CONTEXT オブジェクトへのポインターを返します。 |
 | **FsRtlLookupPerFileObjectContext** | "レガシ" ファイルシステムフィルタードライバーの場合、この関数は、以前にファイルオブジェクトに関連付けられたコンテキスト情報を取得します。 |
 | **FsRtlLookupPerStreamContext** | ファイルストリームのストリームごとのコンテキスト構造を取得します。 |
 | **FsRtlLookupPerStreamContextInternal** | システム用に予約されています。 |
@@ -146,7 +146,7 @@ ms.locfileid: "71955784"
 | **FsRtlNormalizeNtstatus** | 任意の例外を、例外フィルターによって処理される状態値に変換します。 |
 | **FsRtlNotifyCleanup** | ファイルオブジェクトへの最後のハンドルが解放されると、このルーチンは、指定された通知リストからファイルオブジェクトの通知構造 (存在する場合) を削除します。 |
 | **FsRtlNotifyCleanupAll** | 指定された通知リストのすべてのメンバーを表示します。 |
-| **FsRtlNotifyFilterChangeDirectory** | IRP_MN_NOTIFY_CHANGE_DIRECTORY 要求の notify 構造体を作成し、指定した通知リストに追加します。 |
+| **FsRtlNotifyFilterChangeDirectory** | IRP_MN_NOTIFY_CHANGE_DIRECTORY 要求の通知構造体を作成し、指定した通知リストに追加します。 |
 | **FsRtlNotifyFilterReportChange** | 指定された通知リストで保留中の IRP_MN_NOTIFY_CHANGE_DIRECTORY 要求を完了します。 |
 | **FsRtlNotifyFullChangeDirectory** | 通知要求の通知構造を作成し、指定した通知リストに追加します。 |
 | **FsRtlNotifyFullReportChange** | 保留中の通知変更 Irp を完了します。 |
@@ -156,7 +156,7 @@ ms.locfileid: "71955784"
 | **FsRtlNotifyVolumeEventEx** | ボリュームイベントが発生していることを登録済みのアプリケーションに通知します。 ボリュームイベントには、ロック、ロック解除、マウント、または読み取り専用のボリュームが含まれます。 |
 | **FsRtlNumberOfRunsInLargeMcb** | マップコントロールブロック (MCB) 内の実行の数を返します。 |
 | **FsRtlNumberOfRunsInMcb** | 使われていません。 |
-| **FsRtlOplockBreakH** | CACHE_HANDLE_LEVEL 便宜ロック (oplock) を解除します。 |
+| **FsRtlOplockBreakH** | 便宜的ロック (oplock) CACHE_HANDLE_LEVEL 中断します。 |
 | **FsRtlOplockBreakToNone** | 使われていません。 |
 | **FsRtlOplockBreakToNoneEx** | Oplock キーに関係なく、すべての便宜的ロック (oplock) を直ちに中断します。 |
 | **FsRtlOplockFsctrl** | ファイルシステムまたはフィルタードライバーの代わりに、さまざまな便宜的ロック (oplock) 操作を実行します。 |
@@ -180,12 +180,12 @@ ms.locfileid: "71955784"
 | **FsRtlRemoveExtraCreateParameter** | Ecp リストで ECP コンテキスト構造を検索します。見つかった場合は、ecp リストから切り離します。 |
 | **FsRtlRemoveLargeMcbEntry** | マップコントロールブロック (MCB) から1つ以上のマッピングを削除します。 |
 | **FsRtlRemoveMcbEntry** | 使われていません。 |
-| **FsRtlRemovePerFileContext** | ファイルに関連付けられている**FSRTL_PER_FILE_CONTEXT オブジェクト**へのポインターを返します。 **Fsrtlremoveperfilecontext**は、関連するドライバー固有のコンテキスト情報と共に、使用しているリストから**FSRTL_PER_FILE_CONTEXT**オブジェクトを削除します。 |
+| **FsRtlRemovePerFileContext** | ファイルに関連付けられている**FSRTL_PER_FILE_CONTEXT オブジェクト**へのポインターを返します。 **Fsrtlremoveperfilecontext**は、関連するドライバー固有のコンテキスト情報と共に、使用するリストから**FSRTL_PER_FILE_CONTEXT**オブジェクトを削除します。 |
 | **FsRtlRemovePerFileObjectContext** | "従来の" ファイルシステムフィルタードライバーの場合、この関数は、ファイルごとのオブジェクトコンテキスト情報の構造体を、以前にファイルオブジェクトに関連付けられたファイル単位オブジェクトコンテキストのリストから解除します。 |
 | **FsRtlRemovePerStreamContext** | ストリームごとのコンテキスト構造体を、ファイルストリームに関連付けられたストリームごとのコンテキストのリストから削除します。 |
 | **FsRtlResetLargeMcb** | マップコントロールブロック (MCB) 構造体を切り捨て、ゼロのマッピングペアを格納します。 マッピングペアの配列は圧縮されません。 |
 | **FsRtlSetEcpListIntoIrp** | 余分な create parameter (ECP) コンテキスト構造リストを IRP_MJ_CREATE 操作にアタッチします。 |
-| **Fsrtlsetupadvanced ヘッダー** | フィルターコンテキストで使用するために、ファイルシステムによって * * FSRTL_ADVANCED_FCB_HEADER 構造体を初期化するために使用されます。 |
+| **Fsrtlsetupadvanced ヘッダー** | フィルターコンテキストで使用する * * FSRTL_ADVANCED_FCB_HEADER 構造体を初期化するために、ファイルシステムによって使用されます。 |
 | **Fsrtlsetupadvanced Headerex** | を初期化するためにファイルシステムによって使用されます。 | ストリームとファイルコンテキストの両方で使用する**FSRTL_ADVANCED_FCB_HEADER**構造体。 |
 | **FsRtlSplitLargeMcb** | マップコントロールブロック (MCB) 内のマッピングに穴を挿入します。 |
 | **FsRtlSupportsPerFileContexts** | 指定した FILE_OBJECT に関連付けられているファイルシステムで、ファイルごとのコンテキスト情報がサポートされているかどうかを確認します。 |
@@ -195,7 +195,7 @@ ms.locfileid: "71955784"
 | **FsRtlTestAnsiCharacter** | ANSI 文字または2バイト文字セット (DBCS) 文字が、指定された条件を満たすかどうかを判断します。 |
 | **FsRtlTruncateLargeMcb** | 大きなマップコントロールブロック (MCB) を切り捨てます。 |
 | **FsRtlTruncateMcb** | 使われていません。 |
-| **FsRtlUninitializeFileLock** | 初期化前 FILE_LOCK 構造体。 |
+| **FsRtlUninitializeFileLock** | FILE_LOCK 構造体を初期化前します。 |
 | **Fsrtlun初期化 Elarge** | 初期化前は、大きなマップコントロールブロック (MCB) を指定します。 |
 | **Fsrtlunの初期化 (Emc b)** | 使われていません。 |
 | **FsRtlUninitializeOplock** | 初期化前を便宜的ロック (oplock) ポインターにします。 |

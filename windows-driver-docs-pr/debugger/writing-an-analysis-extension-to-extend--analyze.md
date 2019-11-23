@@ -33,7 +33,7 @@ BugCheckCode   0xA
 BugCheckCode   0xE2
 ```
 
-エントリ `BugCheckCode  0x0A` は、このプラグインがバグチェック0xA の分析に参加する必要があることを指定します。そのため、分析エンジンは、MyAnalyzer .dll (MyAnalyzer と同じディレクトリに存在する必要があります) を読み込み、 [ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)を呼び出します。プロシージャ.
+エントリ `BugCheckCode  0x0A` は、このプラグインがバグチェック0xA の分析に参加する必要があることを指定します。そのため、分析エンジンは、MyAnalyzer .dll (MyAnalyzer と同じディレクトリに存在する必要があります) を読み込み、 [ **\_EFN\_Analyze**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)関数を呼び出します。
 
 **  メタ**データファイルの最後の行は、改行文字で終わる必要があります。
 

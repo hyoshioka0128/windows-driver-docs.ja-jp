@@ -31,7 +31,7 @@ Hyper-v 拡張可能スイッチのデータパスを経由して移動するパ
 
 NDIS が[*Filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)を呼び出すと、拡張スイッチ拡張インターフェイスが同じソースポートから複数のパケットをグループ化している場合に、このフラグが設定されます。 最適なパフォーマンスを得るために、拡張機能ではこのグループ化を維持し、 [**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を呼び出すときにこのフラグを設定する必要があります。 拡張機能では、一覧内の他のパケットと同じ送信元ポートが使用されている場合に、作成または複製されたパケットを、 [**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストに追加することもできます。
 
-[ **\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストに含まれる各パケットが同じソースポートを使用している場合は、拡張機能によって、 **NDIS\_送信\_完了\_フラグ\_スイッチが設定されることに  \_** 送信要求が完了したときの[**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)の*SENDCOMPLETEFLAGS*パラメーターの単一\_ソースフラグ。
+[ **\_\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)のリンクリストに含まれる各パケットが同じ送信元ポートを使用している**場合  、** 送信要求が完了したときに[**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)の*sendcompleteflags*パラメーターに、\_\_\_ **\_送信**\_\_のを送信するように構成する必要があります。
 
  
 
@@ -59,7 +59,7 @@ NDIS が[*Filtersendnetbufferlists*](https://docs.microsoft.com/windows-hardware
 
 NDIS が[*FilterReceiveNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)を呼び出すと、拡張可能スイッチが同じ発信元ポートから複数のパケットをグループ化している場合に、このフラグが設定されます。 最適なパフォーマンスを得るために、拡張機能ではこのグループ化を維持し、 [**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出すときにこのフラグを設定する必要があります。 また、パケットのソースポートが一覧内の他のパケットと同じである場合は、拡張機能によって、生成または複製されたパケットを、 [**NET\_BUFFER\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストに追加する必要があります。
 
-[ **\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造のリンクリストに含まれる各パケットで同じソースポートが使用されている場合は、拡張機能によって**NDIS\_返される\_フラグ\_スイッチ\_SINGLE\_を設定する必要があり  ** 受信要求が完了したときの[*Filterreturnnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)の*RETURNFLAGS*パラメーターの SOURCE フラグ。 拡張機能は、 [**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)を呼び出して発信または複製されなかったパケットを返す場合、 *returnflags*パラメーターにこのフラグを設定する必要があります。
+**注**  [**NET\_\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)のリンクリストの各パケットで同じソースポートが使用されている場合、拡張機能では、受信要求が完了したときに、 [*Filterreturnnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)の*returnflags*パラメーターに、\_\_ **\_を返す\_フラグ\_スイッチ**設定する必要があります。 拡張機能は、 [**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)を呼び出して発信または複製されなかったパケットを返す場合、 *returnflags*パラメーターにこのフラグを設定する必要があります。
 
  
 

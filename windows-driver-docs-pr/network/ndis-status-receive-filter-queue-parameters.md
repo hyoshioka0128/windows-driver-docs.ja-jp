@@ -3,7 +3,7 @@ title: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
 description: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS の状態は、ネットワークアダプターで現在の仮想マシン (VM) キューのパラメーターが変更されたことを、NDIS およびそれ以降のドライバーに示します。
 ms.assetid: 30782C77-578F-4533-8B6B-9D2F64EE6189
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fda407edcca4ff5814de5cabc0891694784505
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,14 +28,14 @@ ms.locfileid: "72843522"
 
 ミニポートドライバーが NDIS\_の状態を発行し **\_\_フィルター\_キューの\_パラメーター**の状態が表示されたら、次の手順に従う必要があります。
 
-1.  ミニポートドライバーは、ネットワークアダプターの現在の VM キューパラメーターを使用して、 [ **\_キュー\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)初期化します。 また、ドライバーは、この構造体の**フラグ**メンバーを適切な NDIS\_RECEIVE\_queue に設定する必要があります。\_*Xxx*\_変更されたフラグを、 **ndis\_receive\_queue のレポートに\_し @no__t**変更されたパラメーターのメンバー値 (_s)。
+1.  ミニポートドライバーは、ネットワークアダプターの現在の VM キューパラメーターを使用して、 [ **\_キュー\_パラメーター構造を受け取る NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)初期化します。 また、ドライバーは、この構造体の**フラグ**メンバーを適切な NDIS\_receive\_\_queue に設定する必要があります。これは、変更された**ndis\_receive\_queue\_parameters**メンバー値を報告するように、変更されたフラグ\_*Xxx*\_変更されたフラグです。
 
     **メモ** NDIS 6.30 以降では、ミニポートドライバーは、 **InterruptCoalescingDomainId**メンバーへの変更についてレポートするための **\_キュー\_パラメーターの状態を受信\_\_、NDIS\_の状態**のみを発行できます。
 
 
 
 
-ミニポートドライバーは、この構造体の**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_DEFAULT に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_RECEIVE\_QUEUE\_パラメーター\_リビジョン\_2 および**SIZE**メンバーを NDIS\_SIZEOF\_receive\_queue に設定します。\_パラメーター\_REVISION\_2 です。
+ミニポートドライバーは、この構造体の**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_DEFAULT に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_受信\_キュー\_パラメーター\_リビジョン\_2、 **SIZE**メンバーを NDIS\_SIZEOF\_受信\_キュー\_パラメーター\_リビジョン\_2 に設定します。
 
 
 2.  ミニポートドライバーは、次の方法で[**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体を初期化します。

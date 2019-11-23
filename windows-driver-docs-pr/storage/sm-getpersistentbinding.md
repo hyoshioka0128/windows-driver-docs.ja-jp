@@ -3,7 +3,7 @@ title: SM\_GetPersistentBinding 関数
 description: SM\_GetPersistentBinding メソッドは、HBA ミニポートドライバーが使用するバインドを取得します。 これらのバインドは、OS 固有の LUN 情報を論理ユニットのファイバーチャネルプロトコル (FCP) 識別子にマップします。
 ms.assetid: 74a67e91-c3b3-462a-8810-a9eae64e02a7
 keywords:
-- SM_GetPersistentBinding function Storage デバイス
+- SM_GetPersistentBinding 関数記憶装置
 topic_type:
 - apiref
 api_name:

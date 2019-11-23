@@ -20,14 +20,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025315"
 ---
-# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>(開発者向けコンテンツ)バグチェック 0x9F:DRIVER @ NO__T-0POWER @ NO__T-1STATE @ NO__T-2FAILURE
+# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>(開発者向けコンテンツ)バグチェック 0x9F: ドライバー\_電源\_状態\_エラー
 
-DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE バグチェックには、0x0000009F という値が指定されています。 このバグチェックは、ドライバーの電源状態が矛盾しているか、無効であることを示します。
+ドライバー\_電源\_状態\_エラーのバグチェックには、0x0000009F の値が含まれています。 このバグチェックは、ドライバーの電源状態が矛盾しているか、無効であることを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="driver_power_state_failure-parameters"></a>DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE Parameters
+## <a name="driver_power_state_failure-parameters"></a>ドライバー\_電源\_状態\_エラーパラメーター
 
 パラメーター1は違反の種類を示します。
 
@@ -66,7 +66,7 @@ DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE バグチェックには�
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>スタックの物理デバイスオブジェクト (PDO)</p></td>
-<td align="left"><p>スタックの機能デバイスオブジェクト (FDO)。 Windows 7 以降、nt!TRIAGE_9F_POWER.</p></td>
+<td align="left"><p>スタックの機能デバイスオブジェクト (FDO)。 Windows 7 以降、nt!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>ブロックされた IRP</p></td>
 <td align="left"><p>デバイスオブジェクトが IRP を長時間ブロックしています。</p></td>
 </tr>
@@ -74,7 +74,7 @@ DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE バグチェックには�
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>タイムアウト値 (秒単位)。</p></td>
 <td align="left"><p>現在、プラグアンドプレイ (PnP) ロックを保持しているスレッド。</p></td>
-<td align="left"><p>Windows 7 以降、nt!TRIAGE_9F_POWER.</p></td>
+<td align="left"><p>Windows 7 以降、nt!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>PnP サブシステムとの同期を待機中に、電源状態の移行がタイムアウトしました。</p></td>
 </tr>
 <tr class="odd">
@@ -97,7 +97,7 @@ DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE バグチェックには�
 
 **パラメーター1が0x3 の場合のバグチェック0x9F のデバッグ**
 
-- カーネルデバッガーでは、 [ **! analyze-v**](-analyze.md)コマンドを使用して、バグチェックの初期分析を実行します。 詳細分析では、nt のアドレスが表示されます **。トリアージ @ no__t-19F @ no__t-2POWER** structure。 Arg3 にあります。
+- カーネルデバッガーでは、 [ **! analyze-v**](-analyze.md)コマンドを使用して、バグチェックの初期分析を実行します。 詳細分析では、nt のアドレスが表示されます **。トリアージ\_9F\_の電源**構造は、Arg3 にあります。
 
 ```dbgcmd
 kd>!analyze -v
@@ -116,9 +116,9 @@ kd>!analyze -v
     Arg4: fffffa800ab61bd0, The blocked IRP
 ```
 
-Nt!トリアージ @ no__t-09F @ no__t-1POWER structure には、このバグチェックの原因を特定するのに役立つ追加のバグチェック情報が含まれています。 構造体は、すべての未処理の電源 Irp の一覧、すべての power IRP ワーカースレッドの一覧、および遅延システムワーカーキューへのポインターを提供します。
+Nt!9F\_の\_のトリアージでは、このバグチェックの原因を特定するのに役立つ追加のバグチェック情報が提供されます。 構造体は、すべての未処理の電源 Irp の一覧、すべての power IRP ワーカースレッドの一覧、および遅延システムワーカーキューへのポインターを提供します。
 
-- [**Dt (Display Type)** ](dt--display-type-.md)コマンドを使用し、nt! を指定します。Arg3 からのアドレスを使用して @ no__t-29F @ no__t-3POWER structure をトリアージします。
+- [**Dt (Display Type)** ](dt--display-type-.md)コマンドを使用し、nt! を指定します。Arg3 のアドレスを使用して、9F\_の電源構造をトリアージ\_ます。
 
 ```dbgcmd
     0: kd> dt nt!TRIAGE_9F_POWER fffff8000386c3d8
@@ -129,7 +129,7 @@ Nt!トリアージ @ no__t-09F @ no__t-1POWER structure には、このバグチ
        +0x018 DelayedWorkQueue : 0xfffff800`01c6d2d8 _TRIAGE_EX_WORK_QUEUE
 ```
 
-[ [**Dt (Display Type)** ](dt--display-type-.md) ] コマンドを実行すると、構造が表示されます。 さまざまなデバッガーコマンドを使用して、一覧の @ no__t-0ENTRY フィールドに従って、未処理の Irp と power IRP ワーカースレッドの一覧を調べることができます。
+[ [**Dt (Display Type)** ](dt--display-type-.md) ] コマンドを実行すると、構造が表示されます。 さまざまなデバッガーコマンドを使用して、リスト\_エントリフィールドに従って、未処理の Irp と power IRP ワーカースレッドの一覧を確認できます。
 
 - [ **! Irp**](-irp.md)コマンドを使用して、ブロックされた irp を調べます。 この IRP のアドレスは、Arg4 にあります。
 
@@ -233,9 +233,9 @@ Nt!トリアージ @ no__t-09F @ no__t-1POWER structure には、このバグチ
 
 - KMDF ドライバーを使用している場合は、 [Windows Driver Framework Extensions](kernel-mode-driver-framework-extensions--wdfkd-dll-.md) (! wdfkd) を使用して追加情報を収集します。
 
-  [ **! Wdfkd. wdflogdump**](-wdfkd-wdflogdump.md) &lt;your driver name @ no__t-3 を使用して、kmdf が保留中の要求を確認するのを待機しているかどうかを確認します。
+  [ **! Wdfkd. wdflogdump**](-wdfkd-wdflogdump.md)を使用して、ドライバー名&gt;&lt;し、kmdf が保留中の要求を確認するまで待機しているかどうかを確認します。
 
-  [ **! Wdfkd. wdfdevicequeues**](-wdfkd-wdfdevicequeues.md) &lt;wdfdevice @ no__t-3 を使用して、すべての未処理の要求とその状態を確認します。
+  すべての未処理の要求とその状態を確認するには、wdfkd[**キュー**](-wdfkd-wdfdevicequeues.md)を使用して、wdfkd&gt; を使用します。&lt;
 
 - [ **! Stacks**](-stacks.md)拡張機能を使用して、すべてのスレッドの状態を確認し、電源状態の遷移を保持している可能性のあるスレッドを探します。
 
@@ -249,7 +249,7 @@ Nt!トリアージ @ no__t-09F @ no__t-1POWER structure には、このバグチ
 
 **パラメーター1が0x4 に等しい場合のバグチェック0x9F のデバッグ**
 
-- カーネルデバッガーでは、 [ **! analyze-v**](-analyze.md)コマンドを使用して、バグチェックの初期分析を実行します。 詳細分析では、nt のアドレスが表示されます **。トリアージ @ no__t-19F @ no__t-2PNP**構造体。パラメーター 4 (arg4) にあります。
+- カーネルデバッガーでは、 [ **! analyze-v**](-analyze.md)コマンドを使用して、バグチェックの初期分析を実行します。 詳細分析では、nt のアドレスが表示されます **。トリアージ\_** 、パラメーター 4 (arg4) にある 9F\_PNP 構造を指定します。
 
 ```dbgcmd
     kd> !analyze -v
@@ -270,9 +270,9 @@ Nt!トリアージ @ no__t-09F @ no__t-1POWER structure には、このバグチ
 
 ```
 
-Nt!トリアージ @ no__t-09F @ no__t-1PNP 構造では、エラーの原因を特定するのに役立つ追加のバグチェック情報が提供されます。 Nt!トリアージ @ no__t-09F @ no__t-1PNP 構造体へのポインターを提供します。この構造体には、ディスパッチされた (未完了の) PnP Irp の一覧が含まれ、遅延システムワーカーキューへのポインターが提供されます。
+Nt!トリアージ\_9F\_PNP 構造により、エラーの原因を特定するのに役立つ追加のバグチェック情報が提供されます。 Nt!トリアージ\_9F\_PNP 構造体は、ディスパッチされた (未完了の) PnP Irp の一覧を含む構造体へのポインターを提供し、遅延したシステムワーカーキューへのポインターを提供します。
 
-- [**Dt (Display Type)** ](dt--display-type-.md)コマンドを使用し、nt! を指定します **。トリアージ @ no__t-39F @ no__t-4PNP**構造と Arg4 で見つかったアドレス。
+- [**Dt (Display Type)** ](dt--display-type-.md)コマンドを使用し、nt! を指定します **。9F\_PNP**構造と、Arg4 で見つかったアドレスをトリアージ\_ます。
 
 ```dbgcmd
     kd> dt nt!TRIAGE_9F_PNP 82931b24
@@ -283,7 +283,7 @@ Nt!トリアージ @ no__t-09F @ no__t-1PNP 構造では、エラーの原因を
 
 ```
 
-[ [**Dt (Display Type)** ](dt--display-type-.md) ] コマンドを実行すると、構造が表示されます。 デバッガーコマンドを使用して、一覧の @ no__t-0ENTRY フィールドに従って、未処理の PnP Irp の一覧を確認できます。
+[ [**Dt (Display Type)** ](dt--display-type-.md) ] コマンドを実行すると、構造が表示されます。 デバッガーコマンドを使用して、一覧の\_入力フィールドに従って、未処理の PnP Irp の一覧を確認できます。
 
 エラーの原因を特定するには、次の点を考慮してください。
 
@@ -293,7 +293,7 @@ Nt!トリアージ @ no__t-09F @ no__t-1PNP 構造では、エラーの原因を
 
 - 前述の「パラメーター0x3」で説明されている追加の手法を参照してください。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 ----------
 
 上記の手法を使用してこの問題をデバッグすることができない場合は、いくつかの基本的なトラブルシューティング手法を使用できます。

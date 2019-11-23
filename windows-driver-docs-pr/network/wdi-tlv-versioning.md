@@ -35,7 +35,7 @@ WDI ベースのシングルバイナリドライバーが古いバージョン�
 
 XML は、containerRefs で許可されている2つの属性 ( *Versionadded*および*versionadded*) を使用して、このバージョン管理をサポートするように強化されています。 これは、パーサーとジェネレーターが、ピアバージョンに応じてバイトストリームを調整するためのものです。
 
-**  パーサー**とジェネレーターは、常に最新の状態\_\_バージョンとリンクされていることを前提としています。 このミニポートは、 [**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)を呼び出すときに、 [**NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)::**WDIVERSION**の\_バージョン\_最新の WDI を常に渡す必要があります。WDI\_VERSION\_1\_0 のような特定のバージョンを使用する場合は、もう一方の終端が予期しないバイトストリームを送信する可能性があるため、1 0 のようになります。
+**  パーサー**とジェネレーターは、常に最新の状態\_\_バージョンとリンクされていることを前提としています。 このミニポートは、WDI\_VERSION\_1\_0 のような特定のバージョンを使用するのではなく、 [**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)を呼び出すと、WDI\_VERSION\_LATEST を常に最新[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)の状態に渡す必要があります。これは、他のエンドが予期しないバイト**ストリームを送信**する可能性があるためです。\_\_
 
  
 

@@ -132,7 +132,7 @@ ms.locfileid: "72828674"
 
         **機能し**ている場合は、 **IRP\_\_クエリ\_機能**については**TRUE**として返されます。デバイスの一意の ID は、システム全体で一意です。 そうでない場合は、システム全体で一意になるように、PnP マネージャーによって ID が変更されます。
 
-        PnP マネージャーによって、 **HKLM\\System\\CurrentControlSet\\Enum\\** &lt;*enumerator* **&gt;\\** &lt;*deviceID*&gt;という名前のサブキーが作成され **\\** *instanceID*&gt;を&lt;します。
+        PnP マネージャーは、 **HKLM\\System\\CurrentControlSet\\Enum\\** &lt;*列挙子* **&gt;\\&lt;** *deviceID* **&gt;\\&lt;** *instanceID*&gt;という名前のサブキーを作成します。
 
     -   PnP マネージャーは、デバイスに関する情報をデバイスインスタンスのサブキーに書き込みます。
 
@@ -231,7 +231,7 @@ ms.locfileid: "72828674"
 
 GUID_PNP_LOCATION_INTERFACE インターフェイスは、デバイスの SPDRP_LOCATION_PATHS プラグアンドプレイ (PnP) デバイスプロパティを提供します。
 
-このインターフェイスをドライバーに実装するには、InterfaceType = GUID_PNP_LOCATION_INTERFACE を使用して IRP_MN_QUERY_INTERFACE IRP を処理します。 ドライバーは、インターフェイスの個々のルーチンへのポインターを含む PNP_LOCATION_INTERFACE 構造体へのポインターを提供します。 [PnpGetLocationString ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pget_location_string)は、デバイスの SPDRP_LOCATION_PATHS プロパティのデバイス固有の部分を提供します。
+このインターフェイスをドライバーに実装するには、InterfaceType = GUID_PNP_LOCATION_INTERFACE で IRP_MN_QUERY_INTERFACE IRP を処理します。 ドライバーは、インターフェイスの個々のルーチンへのポインターを含む PNP_LOCATION_INTERFACE 構造体へのポインターを提供します。 [PnpGetLocationString ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pget_location_string)は、デバイスの SPDRP_LOCATION_PATHS プロパティのデバイス固有の部分を提供します。
 
 
 

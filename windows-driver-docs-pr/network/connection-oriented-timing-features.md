@@ -1,6 +1,6 @@
 ---
-title: 接続指向のタイミング機能
-description: 接続指向のタイミング機能
+title: 接続指向タイミング機能
+description: 接続指向タイミング機能
 ms.assetid: 73b005c2-39bd-4931-89cd-7ea3db9068ca
 keywords:
 - 接続指向の NDIS WDK、タイミング機能
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838177"
 ---
-# <a name="connection-oriented-timing-features"></a>接続指向のタイミング機能
+# <a name="connection-oriented-timing-features"></a>接続指向タイミング機能
 
 
 

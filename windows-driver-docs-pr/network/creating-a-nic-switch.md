@@ -30,7 +30,7 @@ NIC スイッチは、 [\_スイッチ\_作成する oid\_nic\_スイッチ](htt
 
 この方法の詳細については、「 [NIC スイッチの動的作成](dynamic-creation-of-a-nic-switch.md)」を参照してください。
 
-[Oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)を処理する方法の詳細については\_\_スイッチ要求の作成に関する詳細については、「 [oid\_Nic\_を処理](handling-the-oid-nic-switch-create-switch-request.md)する\_スイッチ要求を作成する」を参照してください。
+[Oid\_nic\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)を処理する方法の詳細については\_\_スイッチ要求の作成に関する詳細については、「 [oid\_Nic\_を処理](handling-the-oid-nic-switch-create-switch-request.md)する\_スイッチ要求を作成する」を参照してください。\_
 
 Sr-iov ネットワークアダプターの NIC スイッチの詳細については、「 [Nic スイッチ](nic-switches.md)」を参照してください。
 

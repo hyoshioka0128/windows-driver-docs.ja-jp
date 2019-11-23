@@ -3,7 +3,7 @@ title: OID_NIC_SWITCH_ENUM_VPORTS
 description: 前のドライバーまたはユーザーモードアプリケーションが、配列を取得するために OID_NIC_SWITCH_ENUM_VPORTS のオブジェクト識別子 (OID) メソッド要求を発行します。
 ms.assetid: 4B9587E0-3CA9-46AF-A80E-969E6D563922
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_ENUM_VPORTS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_ENUM_VPORTS
 ms.localizationpriority: medium
 ms.openlocfilehash: 612f5be262fbd7960ec2da9cd43970d7843b48fe
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ ms.locfileid: "72844085"
 
 -   [**NDIS\_NIC\_スイッチ\_VPORT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体の配列。 これらの各構造体には、ネットワークアダプターの NIC スイッチの VPort に関する情報が含まれています。
 
-    **注**  ネットワークアダプターに vports が作成されていない場合、ドライバーは NDIS\_NIC\_スイッチの**numelements**メンバーを設定[ **\_VPORTS\_INFO\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)構造を0に設定し、NDIS を設定しません。 [ **\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造が返されます。
+    **注**  ネットワークアダプターに vports が作成されていない場合、ドライバーは[**ndis\_NIC\_\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)の**numelements**メンバーを0に設定し、 [**NDIS\_NIC\_スイッチ\_vports\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体が返されます。\_\_
 
      
 
@@ -34,13 +34,13 @@ ms.locfileid: "72844085"
 
 ドライバーまたはアプリケーションが OID 要求を発行する前に、要求と共に渡される、 [**VPORT\_INFO\_配列の構造\_、NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)を初期化する必要があります。 **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**構造体を初期化するときは、ドライバーまたはアプリケーションが次のガイドラインに従う必要があります。
 
--   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_\_特定の\_スイッチフラグが**Flags**メンバーに設定されている場合は、指定された NIC スイッチで作成されたすべての VPorts に関する情報を返します。 NIC スイッチは、その構造体の**Switchid**メンバーによって指定されます。
+-   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_特定の\_スイッチフラグが**Flags**メンバーで設定されている場合は、指定された NIC スイッチで作成されたすべての vport に関する情報が返されます。\_\_ NIC スイッチは、その構造体の**Switchid**メンバーによって指定されます。
 
     **注**  Windows Server 2012 以降では、sr-iov インターフェイスはネットワークアダプターの既定の NIC スイッチのみをサポートしています。 **Flags**メンバーで設定されているフラグに関係なく、 **SWITCHID**メンバーを NDIS\_既定\_スイッチ\_ID に設定する必要があります。
 
      
 
--   NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列\_特定の\_関数フラグが**Flags**メンバーで設定されている場合は、指定された PCI Express (PCIe) 物理機能 (PF) またはネットワークアダプター上の仮想機能 (VF) に接続されているすべての VPorts に関する情報を返します。 PF または VF は、その構造体の**AttachedFunctionId**メンバーによって指定されます。
+-   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_特定の\_関数フラグが**Flags**メンバーで設定されている場合は、ネットワークアダプターの指定された PCI Express (PCIe) 物理機能 (PF) または仮想関数 (VF) に接続されているすべての vport について情報が返されます。\_\_ PF または VF は、その構造体の**AttachedFunctionId**メンバーによって指定されます。
 
     **AttachedFunctionId**メンバーが NDIS\_PF\_関数\_ID に設定されている場合、ネットワークアダプターの pf に接続されているすべての vports (既定の vports を含む) に関する情報が返されます。 **AttachedFunctionId**メンバーが有効な vf 識別子に設定されている場合は、指定された vf のすべての vports に関する情報が返されます。
 
@@ -84,7 +84,7 @@ NDIS が OID\_\_NIC を処理するときに、列挙型\_VPORTS の要求\_、�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の中で必要とされる最小バッファーサイズに対して、bytesneeded 必要です。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS はデータを設定<strong>します。METHOD_INFORMATION。BytesNeeded</strong>必要な最小バッファーサイズに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体のメンバーが必要です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

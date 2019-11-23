@@ -85,7 +85,7 @@ ms.locfileid: "70025160"
 
 [ **! Memusage**](-memusage.md)拡張コマンドを使用すると、物理メモリの使用量を分析できます。 メモリ管理の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *フラグ*が1の場合に生成される短い出力の例を次に示します。
@@ -131,7 +131,7 @@ kd> !vm 1
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>

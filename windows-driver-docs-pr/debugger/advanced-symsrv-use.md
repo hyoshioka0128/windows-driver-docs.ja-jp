@@ -82,7 +82,7 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 set _NT_SYMBOL_PATH= symsrv*symsrv.dll*\\mybuilds\mysymbols
 ```
 
-シンボルパスを設定して、デバッガーが \\上のシンボルストアからシンボルファイルをコピーするようにするには\\mybuilds をローカルディレクトリ c:\\localsymbols に\\、次のように使用します。
+シンボルパスを設定して、デバッガーが \\上のシンボルストアからシンボルファイルをコピーするようにするには \\mybuilds をローカルディレクトリ c:\\localsymbols に\\、次のように使用します。
 
 ```console
 set _NT_SYMBOL_PATH=symsrv*symsrv.dll*c:\localsymbols*\\mybuilds\mysymbols
@@ -154,7 +154,7 @@ HTTP は、SRV\* プレフィックス (symsrv .dll シンボルハンドラー�
 
 **HTTP および SMB 共有シンボルサーバーのシナリオ例**
 
-一般的な UNC のみの展開には、すべてのファイル (\\\\MainOffice\\シンボル) をホストする中央オフィス、サブセットをキャッシュするブランチオフィス (\\\\BranchOfficeA\\シンボル)、デスクトップ (C:\\シンボル) が含まれます。参照するファイルをキャッシュする。
+一般的な UNC のみの展開には、すべてのファイル (\\\\MainOffice\\シンボル) をホストする中央オフィス、サブセットをキャッシュするブランチオフィス (\\\\BranchOfficeA\\シンボル)、デスクトップ (C:\\シンボル) が参照するファイルをキャッシュすることが含まれます。
 
 ```console
 srv*C:\Symbols*\\BranchOfficeA\Symbols*\\MainOffice\Symbols
@@ -187,11 +187,11 @@ srv*C:\Symbols*\\MachineName\Symbols*https://SymProxyName/Symbols
 srv*C:\Symbols*\\Machine1\Symbols*https://SymProxyName/Symbols;srv*C:\WebSymbols* https://msdl.microsoft.com/download/symbols
 ```
 
-### <a name="span-idcache_localsymbolcachespanspan-idcache_localsymbolcachespancachelocalsymbolcache"></a><span id="cache_localsymbolcache"></span><span id="CACHE_LOCALSYMBOLCACHE"></span>キャッシュ\**localシンボルキャッシュ*
+### <a name="span-idcache_localsymbolcachespanspan-idcache_localsymbolcachespancachelocalsymbolcache"></a><span id="cache_localsymbolcache"></span><span id="CACHE_LOCALSYMBOLCACHE"></span>cache\**localsymbolcache*
 
 シンボルのローカルキャッシュを作成するもう1つの方法は、シンボルパスで**キャッシュ\\** <em>* localsymbol cache</em>文字列を使用することです。 これは、シンボルサーバー要素の一部ではなく、シンボルパス内の個別の要素です。 デバッガーは、指定されたディレクトリ*localsymbol キャッシュ*を使用して、この文字列の右側のシンボルパスに出現する任意の要素から読み込まれたすべてのシンボルを格納します。 これにより、シンボルサーバーによってダウンロードされたシンボルだけでなく、任意の場所からダウンロードしたシンボルに対してローカルキャッシュを使用できます。
 
-たとえば、次のシンボルパスでは、 *\\\\someshare*から取得したシンボルはキャッシュされません。 これは、c:\\mysymbols を使用して *\\\\* 別の共有から取得されたシンボルをキャッシュします。これは、 *\\\\* 別の共有で始まる要素がキャッシュの右側にある ( **c:\*mysymbols) ためです。** 要素。 また、c:\\mysymbols を使用して、Microsoft パブリックシンボルストアから取得したシンボルをキャッシュします。これは、シンボルサーバーで使用される通常の構文 (2 つ以上のアスタリスクを持つ**srv** ) が原因です。 さらに、後で[**sympath +** ](-sympath--set-symbol-path-.md)コマンドを使用してこのパスに場所を追加すると、これらの新しい要素もキャッシュされます。これは、パスの右側に追加されるためです。
+たとえば、次のシンボルパスでは、 *\\\\someshare*から取得したシンボルはキャッシュされません。 このメソッドは、c:\\mysymbols を使用して *\\\\* 別の共有から取得されたシンボルをキャッシュします。これは、 *\\\\* 別の共有で始まる要素は、**キャッシュ\*c:\\mysymbols**要素の右側に表示されるためです。 また、c:\\mysymbols を使用して、Microsoft パブリックシンボルストアから取得したシンボルをキャッシュします。これは、シンボルサーバーで使用される通常の構文 (2 つ以上のアスタリスクを持つ**srv** ) が原因です。 さらに、後で[**sympath +** ](-sympath--set-symbol-path-.md)コマンドを使用してこのパスに場所を追加すると、これらの新しい要素もキャッシュされます。これは、パスの右側に追加されるためです。
 
 ```console
 _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl.microsoft.com/download/symbols;cache*c:\mysymbols;\\anothershare\that\gets\cached

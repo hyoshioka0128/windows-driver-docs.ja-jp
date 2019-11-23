@@ -3,7 +3,7 @@ title: SM\_SetBindingSupport 関数
 description: SM\_SetBindingSupport メソッドは、指定されたポートのバインド機能を設定します。
 ms.assetid: 31a37fa5-db3c-4944-bf93-e221fb42dc6d
 keywords:
-- SM_SetBindingSupport function Storage デバイス
+- SM_SetBindingSupport 関数記憶装置
 topic_type:
 - apiref
 api_name:

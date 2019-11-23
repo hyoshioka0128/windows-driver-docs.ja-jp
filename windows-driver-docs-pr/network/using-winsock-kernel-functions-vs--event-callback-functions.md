@@ -22,7 +22,7 @@ ms.locfileid: "72842961"
 # <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>Winsock カーネル関数とイベントコールバック関数の使用
 
 
-特定のソケット操作の場合、Winsock カーネル (WSK) アプリケーションは、ソケットの WSK 関数のいずれかを呼び出して操作を実行したり、[イベントが発生](winsock-kernel-events.md)したときに wsk サブシステムが呼び出すソケットに対してイベントコールバック関数を実装および有効にしたりすることができます。操作に関連付けられているが発生します。 たとえば、接続指向のソケットでデータを受信する場合、WSK アプリケーションはソケットの[**Wskreceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)関数を呼び出すか、またはソケットに対して[*wskreceiveevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数を実装および有効にすることができます。 WSK アプリケーションの要件によって、アプリケーションで使用する方法が決まります。 2つの方法の使用例については、WSK のドキュメントを参照してください。
+特定のソケット操作の場合、Winsock カーネル (WSK) アプリケーションは、ソケットの WSK 関数のいずれかを呼び出して操作を実行するか、または操作に関連付けられた[イベント](winsock-kernel-events.md)が発生したときに wsk サブシステムが呼び出すソケットに対してイベントコールバック関数を実装し、有効にすることができます。 たとえば、接続指向のソケットでデータを受信する場合、WSK アプリケーションはソケットの[**Wskreceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)関数を呼び出すか、またはソケットに対して[*wskreceiveevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数を実装および有効にすることができます。 WSK アプリケーションの要件によって、アプリケーションで使用する方法が決まります。 2つの方法の使用例については、WSK のドキュメントを参照してください。
 
 次の一覧は、各方法の重要なポイントをまとめたものです。
 

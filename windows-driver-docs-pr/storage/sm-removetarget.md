@@ -3,7 +3,7 @@ title: SM\_RemoveTarget 関数
 description: SM\_RemoveTarget WMI メソッドを使用すると、指定されたターゲットに関連付けられているイベントが WMI クライアントに渡されなくなるように WMI プロバイダーが構成されます。
 ms.assetid: 9be2a40c-299a-4d92-b9a2-ef60eb6d90e9
 keywords:
-- SM_RemoveTarget function Storage デバイス
+- SM_RemoveTarget 関数記憶装置
 topic_type:
 - apiref
 api_name:

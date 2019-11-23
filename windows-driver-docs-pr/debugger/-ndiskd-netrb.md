@@ -1,6 +1,6 @@
 ---
 title: ndiskd netrb
-description: NET_RING 構造体に関する情報が表示されます。
+description: Ndiskd netrb 拡張機能には、NET_RING 構造に関する情報が表示されます。
 ms.assetid: 2D749E7E-00A5-422B-B785-B8DB3393A74F
 keywords:
 - ndiskd netrb Windows デバッグ
@@ -82,7 +82,7 @@ NET\_RING\_BUFFER のハンドルを取得するには、次の手順を実行�
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-リングバッファーのハンドルをクリックするか、またはコマンドラインで **! ndiskd. netrb-handle**コマンドを入力して、この NET\_RING\_バッファーの詳細を確認できます。これには、含まれている要素の数や、その Begin と End のアドレスも含まれます。連想.
+リングバッファーのハンドルをクリックするか、またはコマンドラインで **! ndiskd. netrb-handle**コマンドを入力して、この NET\_RING\_バッファーの詳細を確認できます。これには、含まれている要素の数や、その開始インデックスと終了インデックスのアドレスも含まれます。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
@@ -132,7 +132,7 @@ NET\_RING\_BUFFER のハンドルを取得するには、次の手順を実行�
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
@@ -144,7 +144,7 @@ NET\_RING\_BUFFER のハンドルを取得するには、次の手順を実行�
 
 [ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)
 
-[ **! ndiskd netqueue**](-ndiskd-netqueue.md)
+[ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
  
 

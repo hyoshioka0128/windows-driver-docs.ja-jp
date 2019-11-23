@@ -26,7 +26,7 @@ Windows Vista ドライバーは、アプリケーションが転送を取り消
 
 -   ドライバーは、 [**IWiaMiniDrv::D rvnotifypnpevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)の呼び出しを、WIA\_イベント\_、\_IO イベントにキャンセルします。 すべてのカーネルモードの読み取り操作または書き込み操作で重複 i/o を使用することをお勧めします。 *即時*キャンセルを保証するには、この手順を使用する必要があります。
 
--   S @ no__t_0_ FALSE は、 **IWiaMiniDrvTransferCallback:: GetNextStream**と[**IWiaMiniDrvTransferCallback:: SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)の2つのコールバック関数から返されます。
+-   S\_FALSE は、 **IWiaMiniDrvTransferCallback:: GetNextStream**と[**IWiaMiniDrvTransferCallback:: SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)の2つのコールバック関数から返されます。
 
 アプリケーションで**IWiaTransfer:: cancel**を呼び出す場合は、 **IWiaMiniDrv::d rvnotifypnpevent**メソッドを、WIA\_イベント\_使用してドライバーに呼び出し、IO\_をキャンセルする必要があります。 また、 [**IWiaMiniDrvTransferCallback:: GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)および**IWiaMiniDrvTransferCallback:: SendMessage**コールバック関数は、転送が取り消された後、常に S\_FALSE を返す必要があります。
 

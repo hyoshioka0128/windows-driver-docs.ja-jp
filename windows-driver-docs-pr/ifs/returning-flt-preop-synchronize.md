@@ -20,11 +20,11 @@ ms.locfileid: "72840993"
 ## <span id="ddk_returning_flt_preop_synchronize_if"></span><span id="DDK_RETURNING_FLT_PREOP_SYNCHRONIZE_IF"></span>
 
 
-ミニフィルタードライバーの[**preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)が、FLT\_preoperation\_SYNCHRONIZE を返すことで i/o 操作を同期する場合、フィルターマネージャーは、i/o 中にミニフィルタードライバーの[**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)を呼び出します。完了.
+ミニフィルタードライバーの[**preoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)が、FLT\_preoperation\_SYNCHRONIZE を返すことによって i/o 操作を同期する場合、フィルターマネージャーは、i/o の完了時にミニフィルタードライバーの[**postoperation コールバックルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)を呼び出します。
 
 フィルターマネージャーは、呼び出し元が preoperation コールバックと同じスレッドコンテキストでミニフィルタードライバーの postoperation コールバックルーチンを呼び出します (IRQL &lt;= APC\_LEVEL)。 (このスレッドコンテキストは、必ずしも元のスレッドのコンテキストではないことに注意してください)。
 
-ミニフィルタードライバーの preoperation コールバックルーチンから FLT\_PREOPERATION\_SYNCHRONIZE が返されても、ミニフィルタードライバーによって操作の postoperation コールバックルーチンが登録されていない**場合  、** システムはビルドを確認しました。
+ミニフィルタードライバーの preoperation コールバックルーチンから FLT\_PREOPERATION\_SYNCHRONIZE が返されても、ミニフィルタードライバーが操作の postoperation コールバックルーチンを登録していない場合は、チェックされたビルドに対してシステムが**アサート   ます**。
 
  
 
@@ -32,13 +32,13 @@ ms.locfileid: "72840993"
 
 ミニフィルタードライバーの preoperation コールバックルーチンは、IRP ベースの i/o 操作の場合にのみ、FLT\_PREOPERATION\_SYNCHRONIZE を返す必要があります。 ただし、この状態値は、他の種類の操作でも返すことができます。 IRP ベースの i/o 操作ではない i/o 操作に対して返された場合、フィルターマネージャーは、この戻り値を\_コールバックと共に\_PREOP\_成功\_として扱います。 操作が IRP ベースの i/o 操作であるかどうかを判断するには、 [**FLT\_is\_irp\_operation**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))マクロを使用します。
 
-ミニフィルタードライバーは、create 操作に対して FLT\_PREOP\_SYNCHRONIZE を返さないようにする必要があります。これらの操作は既にフィルターマネージャーによって同期されているためです。 ミニフィルタードライバーによって、IRP\_\_MJ の preoperation および postoperation コールバックルーチンが登録されている場合、作成後のコールバックルーチンは、事前作成と同じスレッドコンテキストで、IRQL = パッシブ\_レベルで呼び出されます。コールバックルーチン。
+ミニフィルタードライバーは、create 操作に対して FLT\_PREOP\_SYNCHRONIZE を返さないようにする必要があります。これらの操作は既にフィルターマネージャーによって同期されているためです。 ミニフィルタードライバーで、IRP\_\_MJ の preoperation および postoperation コールバックルーチンが登録されている場合、作成後のコールバックルーチンは、作成前のコールバックルーチンと同じスレッドコンテキストで、IRQL = パッシブ\_レベルで呼び出されます。
 
 ミニフィルタードライバーは、非同期の読み取り操作または書き込み操作のために、FLT\_PREOP\_SYNCHRONIZE を返さないようにする必要があります。 このようにすると、ミニフィルタードライバーとシステムのパフォーマンスが著しく低下し、変更されたページライタースレッドがブロックされた場合などにデッドロックが発生する可能性もあります。 IRP ベースの読み取り操作または書き込み操作に対して FLT\_PREOP\_SYNCHRONIZE を返す前に、ミニフィルタードライバーは、 [**FltIsOperationSynchronous**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltisoperationsynchronous)を呼び出して、操作が同期されていることを確認する必要があります。
 
 次の種類の i/o 操作は同期できません。
 
--   Oplock ファイルシステム制御 (FSCTL) 操作 (**MajorFunction**は IRP\_MJ\_ファイル\_システム\_コントロール;**Fscontrolcode**は[**FSCTL\_request\_FILTER\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-filter-oplock)、 [**FSCTL\_request\_BATCH\_oplock**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-batch-oplock)、 [**FSCTL\_request\_OPLOCK\_LEVEL\_1**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock-level-1)、または[**FSCTL\_要求\_OPLOCK\_レベル\_2**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock-level-2))。
+-   Oplock ファイルシステム制御 (FSCTL) 操作 (**MajorFunction**は IRP\_MJ\_ファイル\_システム\_コントロール;**Fscontrolcode**は[**FSCTL\_request\_FILTER\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-filter-oplock)、 [**FSCTL\_request\_BATCH\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-batch-oplock)、 [**FSCTL\_request\_oplock\_level\_1**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock-level-1)、または[**FSCTL\_request\_oplock\_level\_2**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock-level-2)) です。
 
 -   ディレクトリの変更操作を通知する (**MajorFunction** is IRP\_MJ\_DIRECTORY\_CONTROL;**Minorfunction**は、\_\_ディレクトリの変更を通知\_通知を\_します。)
 

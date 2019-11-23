@@ -25,7 +25,7 @@ Ndis 6.1 以前のミニポートドライバーが NDIS 6.20 プロトコルド
 
 ミニポートドライバーによって報告されるハードウェア機能は、INF ファイル設定で有効または無効にすることができます。 電源管理の INF ファイル設定の詳細については、「 [Power management の標準化](standardized-inf-keywords-for-power-management.md)された inf キーワード」を参照してください。
 
-ミニポートの初期化中に、ミニポートドライバーは、基盤となるハードウェアの電源管理機能を使用して、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造を初期化します。 ミニポートドライバーは、ndis **\_PM\_機能**を指すように、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の構造体の**PowerManagementCapabilitiesEx**メンバーを設定します。データ.
+ミニポートの初期化中に、ミニポートドライバーは、基盤となるハードウェアの電源管理機能を使用して、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造を初期化します。 ミニポートドライバーは、ndis **\_PM\_機能**の構造を指すように、 [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体の**PowerManagementCapabilitiesEx**メンバーを設定します。
 
 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造には、次の情報が含まれています。
 

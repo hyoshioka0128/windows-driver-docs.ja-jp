@@ -62,14 +62,14 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 
 *レジストリセクション*には、任意の数のエントリを含めることができます。各エントリは個別の行にあります。 INF には、1つまたは複数のオプションの<em>add レジストリセクション</em>を含めることもでき**ます。セキュリティ**セクションでは、それぞれのセキュリティ記述子を指定します。これらのセクションには、指定した*レジストリ*値で記述されているすべてのレジストリ値に適用されます。
 
-## <a name="entries"></a>Entries
+## <a name="entries"></a>エントリ
 
 
 <a href="" id="reg-root"></a>*reg-ルート*  
 このエントリに指定されている他の値のレジストリツリーのルートを識別します。 値は次のいずれかになります。
 
 <a href="" id="hkcr"></a>**HKCR**  
-**HKEY_CLASSES_ROOT**の略称
+**HKEY_CLASSES_ROOT**の省略形
 
 <a href="" id="hkcu"></a>**HKCU**  
 **HKEY_CURRENT_USER**の省略形
@@ -99,7 +99,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 **HKEY_LOCAL_MACHINE**ルートの下に格納されているドライバー情報の詳細については、「[デバイスとドライバーのレジストリツリーとキー](registry-trees-and-keys.md)」を参照してください。
 
 <a href="" id="subkey"></a>*サブキー*  
-この省略可能な値。 INF の[**Strings**](inf-strings-section.md)セクションで定義された%*strkey*% token として、または指定された*reg ルート*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) の下のレジストリパスとして形成されます。では、次のいずれかを指定します。
+この省略可能な値は、INF の[**Strings**](inf-strings-section.md)セクションで定義された%*strkey*% トークンとして、または指定された*reg ルート*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) の下のレジストリパスとして形成され、次のいずれかを指定します。
 
 -   指定されたレジストリパスの最後にレジストリに追加される新しいサブキー。
 -   このエントリに指定されている追加の値が書き込まれる既存のサブキー (場合によっては、指定されたサブキーの既存の名前付きの値エントリの値を置き換えることがあります)。
@@ -143,26 +143,26 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 (Windows XP 以降のバージョンの Windows)。32ビットレジストリで、指定された変更を行います。 指定しない場合、ネイティブレジストリに変更が加えられます。
 
 <a href="" id="0x00000000--flg-addreg-type-sz-"></a>**0x00000000** (FLG_ADDREG_TYPE_SZ)  
-指定された値のエントリまたは値は、 [REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型になります。
+指定された値のエントリまたは値は[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。
 
 この値は、指定された値エントリの既定の型である  **ことに注意**してください。したがって、この型の値のエントリに対して動作する、 *add registry-section*では、flags 値を任意の r (*ルート = 行)* から省略できます。
 
  
 
 <a href="" id="0x00010000--flg-addreg-type-multi-sz-"></a>**0x00010000** (FLG_ADDREG_TYPE_MULTI_SZ)  
-指定された値のエントリまたは値は、レジストリの種類が[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。 次の値フィールドは、コンマで区切られた文字列のリストにすることができます。 この仕様では、特定の文字列値に対して NULL 終端文字は必要ありません。
+指定された値のエントリまたは値は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)レジストリの種類です。 次の値フィールドは、コンマで区切られた文字列のリストにすることができます。 この仕様では、特定の文字列値に対して NULL 終端文字は必要ありません。
 
 <a href="" id="0x00020000--flg-addreg-type-expand-sz--"></a>**0x00020000** (FLG_ADDREG_TYPE_EXPAND_SZ)   
-指定された*値-エントリ名*または*値*は、レジストリの種類[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
+指定された*値-エントリ名*または*値*は、 [REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)レジストリの種類です。
 
 <a href="" id="0x00010001--flg-addreg-type-dword---flg-addreg-type-dword-"></a>**0x00010001** (FLG_ADDREG_TYPE_DWORD) (FLG_ADDREG_TYPE_DWORD)  
-指定された*値-エントリ名*または*値*は、レジストリの種類[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
+指定された*値-エントリ名*または*値*は、 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)レジストリの種類です。
 
 <a href="" id="0x00020001--flg-addreg-type-none-"></a>**0x00020001** (FLG_ADDREG_TYPE_NONE)  
-指定された*値-エントリ名*または*値*は、レジストリの種類[REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)です。
+指定された*値-エントリ名*または*値*は、 [REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)レジストリの種類です。
 
 <a href="" id="value"></a>*数値*  
-必要に応じて、指定されたレジストリキーに追加する、指定された*値-エントリ名*の新しい値を指定します。 このよう*な値*には、既存のキーに含まれる既存の名前付きの値のエントリの "置換" 値、既存のキーの既存の名前付きの[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値のエントリに追加する値 (*フラグ*値**0x00010008**)、新しい値を指定できます。既存のキーに書き込むエントリ、またはレジストリに追加する新しい*サブキー*の初期値のエントリ。
+必要に応じて、指定されたレジストリキーに追加する、指定された*値-エントリ名*の新しい値を指定します。 このような*値*には、既存のキーの既存の名前付きの値エントリの "置換" 値、既存のキーの既存の名前付きの[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値のエントリに追加する値 (*フラグ*値**0x0001000**)、既存のキーに書き込む新しい値のエントリ、またはレジストリに追加する新しい*サブキー*の初期値のエントリを指定できます。
 
 このような*値*の式は、次のように、*フラグ*に指定されたレジストリの種類によって異なります。
 
@@ -185,7 +185,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 
 セキュリティ記述子を指定する方法の詳細については、「セキュリティ[で保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>注釈
 -------
 
 **AddReg**ディレクティブは、上記の仮構文ステートメントに示されているいずれかのセクションの下で指定できます。 このディレクティブは、次の INF ライターで定義されたセクションのいずれかで指定することもできます。
@@ -200,13 +200,13 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 
  
 
-定義済みの REG_*XXX*型以外の種類のレジストリを表すには、小さい単語の FLG_ADDREG_BINVALUETYPE と共に、*フラグ*の上位ワードに新しい型番号を指定します。 このような*値*のデータは、コンマで区切られたバイトのシーケンスとしてバイナリ形式で指定する必要があります。 たとえば、新しいレジストリデータ型の16バイトのデータ (0x38 など) を値エントリとして格納する場合、[レジストリの追加] セクションのエントリは次のようになります。
+定義済みの REG_*XXX*型の1つ以外の種類のレジストリを表すには、小さい単語で FLG_ADDREG_BINVALUETYPE と共に、*フラグ*の上位ワードに新しい型番号を指定します。 このような*値*のデータは、コンマで区切られたバイトのシーケンスとしてバイナリ形式で指定する必要があります。 たとえば、新しいレジストリデータ型の16バイトのデータ (0x38 など) を値エントリとして格納する場合、[レジストリの追加] セクションのエントリは次のようになります。
 
 ```ini
 HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 ```
 
-この手法は、値に対して新しいレジストリの種類を定義するために使用できますが、 [REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、または[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値には使用できません。 これらの型の詳細については、「[レジストリ値の型](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)」を参照してください。
+この手法を使用すると、 [REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、 [REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)、または[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型の値に対してではなく、数値の新しいレジストリの種類を定義できます。 これらの型の詳細については、「[レジストリ値の型](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)」を参照してください。
 
 ### <a name="special-value-entry-name-keywords"></a>特別な*値-エントリ名*のキーワード
 
@@ -228,7 +228,7 @@ HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 次に、これらの特殊なキーワードを使用する HKR **AddReg**のエントリについて説明します。
 
 <a href="" id="devicecharacteristics"></a>**DeviceCharacteristics**  
-**DeviceCharacteristics** Hkr **AddReg**エントリは、デバイスの特性を指定します。 *特性*値は、FILE_ および*Ntddk*で定義されている1つ*以上の*\* ファイル特性値に対して or を使用した結果の数値です。
+**DeviceCharacteristics** Hkr **AddReg**エントリは、デバイスの特性を指定します。 *特性*値は、 *Ntddk および*で定義されている1つ*以上の FILE_* \* ファイル特性の値に対してまたはを使用した結果として得られる数値です。
 
 INF で指定できる値は次のとおりです。
 
@@ -290,7 +290,7 @@ INF で指定できる値は次のとおりです。
 <a name="examples"></a>例
 --------
 
-**AddReg**ディレクティブは、この例の (SCSI) Miniport_EventLog_AddReg セクションを参照しています。この例では、 <em>Ddinstall</em>で**addservice**ディレクティブによって参照されている INF ライター定義セクションの下に**あります。** この INF のサービスセクション。
+**AddReg**ディレクティブは、この例の (SCSI) Miniport_EventLog_AddReg セクションを参照しています。この例では、 <em>Ddinstall</em>で**addservice**ディレクティブによって参照される、INF ライターで定義されたセクションの下に**あります。** この INF のサービスセクション。
 
 ```ini
 [Miniport_EventLog_AddReg]
@@ -314,13 +314,13 @@ HKR,,TypesSupported,0x00010001,7
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***Ddinstall *.CoInstallers**](inf-ddinstall-coinstallers-section.md)
+[* **DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
 
-[***Ddinstall *.HW**](inf-ddinstall-hw-section.md)
+[* **DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
 
-[***Ddinstall *.インターフェイス**](inf-ddinstall-interfaces-section.md)
+[* **DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)
 
-[***Ddinstall *.サービス**](inf-ddinstall-services-section.md)
+[* **DDInstall *。サービス**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 

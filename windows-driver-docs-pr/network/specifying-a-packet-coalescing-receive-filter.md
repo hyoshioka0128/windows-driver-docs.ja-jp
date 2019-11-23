@@ -49,7 +49,7 @@ ms.locfileid: "72841875"
 
 -  それまでのドライバーが既存の受信フィルターを変更している場合は、 **filterid**メンバーを受信フィルターの0以外のフィルター id に設定する必要があります。 その後のドライバーは、 [ENUM\_フィルター\_列挙型の\_フィルターを受け取る oid\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)oid メソッド要求を発行するときに、受信フィルターのフィルター ID を取得します。 受信フィルターを変更する方法の詳細については、「[パケット合体受信フィルターの変更](modifying-packet-coalescing-receive-filters.md)」を参照してください。
 
--   [**NDIS\_受信\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体の**FieldParametersArrayElementSize**メンバーは、**を定義**するように設定する必要が**あります。** フィールドパラメーターの配列。 配列の各要素は、受信フィルターのヘッダーフィールドテストのパラメーターを指定する、 [ **\_フィルター\_フィールド\_パラメーター構造を受け取る NDIS\_を受け取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)ます。
+-   [**NDIS\_受信\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体の**FieldParametersArrayElementSize** **メンバーは、** フィールドパラメーターの配列を定義するように設定する必要があります。 配列の各要素は、受信フィルターのヘッダーフィールドテストのパラメーターを指定する、 [ **\_フィルター\_フィールド\_パラメーター構造を受け取る NDIS\_を受け取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)ます。
 
 -   **Requestedfilteridbitcount**メンバーを0に設定する必要があります。
 
@@ -66,19 +66,19 @@ ms.locfileid: "72841875"
 
 ネットワークアダプターのフィルター処理を最適化するために、ヘッダーフィールドのテストは、パケットデータ内のバイトオフセット/長さの指定ではなく、標準化されたヘッダーフィールド名に基づいています。 ヘッダー/フィールド名を使用することにより、ネットワークアダプターのハードウェアまたはファームウェアは、受信したパケットに対して複数のヘッダーフィールドテストを実行する方法を最適化できます。
 
-各受信フィルターには、 [**NDIS\_receive\_filter\_field\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)構造体によって指定された1つ以上のヘッダーフィールドテストを含めることができます。 各**NDIS\_受信\_フィルター\_フィールド\_パラメーター**構造は、 **FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、およびによって参照されるフィールドパラメーター配列の要素です。および**FieldParametersArrayElementSize**のメンバーは、 [**NDIS\_\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体を受け取ります。
+各受信フィルターには、 [**NDIS\_receive\_filter\_field\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)構造体によって指定された1つ以上のヘッダーフィールドテストを含めることができます。 各**ndis\_受信\_フィルター\_フィールド\_パラメーター**構造は、Ndis の**FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、および**FieldParametersArrayElementSize**メンバーによって参照されるフィールドパラメーター配列の要素であり、[**受信\_フィルター\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体\_受け取ります。
 
 ミニポートドライバーは、oid の OID メソッド要求を処理するときに、次のガイドラインに従う必要があります。 [\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter):
 
--   **Ndis\_\_フィルター\_フィールドを受信した場合\_MAC\_ヘッダー\_VLAN\_タグなし\_、または\_ゼロ**フラグが NDIS\_Receive の**Flags**メンバーで設定され[ **\_フィルター\_フィールド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)の構造では、ネットワークアダプターは、一致する MAC アドレスを持つ受信パケット、タグなしのパケット、または VLAN 識別子が0のパケットのみを示す必要があります。 つまり、ネットワークアダプターは、MAC アドレスが一致し、0以外の VLAN 識別子を持つパケットを示すことはできません。
+-   **Ndis\_が\_フィルター\_フィールドを受信する場合\_MAC\_ヘッダー\_vlan\_タグなし\_または\_ゼロ**フラグが、 [**ndis**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)の**Flags**メンバーで設定されています。これは、mac アドレスが一致し、タグが付けられていないパケット、または VLAN 識別子が0のパケットで受信したパケットだけです。\_\_\_\_ つまり、ネットワークアダプターは、MAC アドレスが一致し、0以外の VLAN 識別子を持つパケットを示すことはできません。
 
--   **NDIS\_が\_フィルター\_フィールドを受信する場合\_MAC\_ヘッダー\_vlan\_タグなし\_または\_ゼロ**フラグが設定されておらず、OID セットによって構成された VLAN 識別子フィルターがありません[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)を要求した場合、ミニポートドライバーは次のいずれかの操作を行う必要があります。
+-   **NDIS\_が\_フィルター\_フィールドを受信した場合\_MAC\_ヘッダー\_vlan\_タグなし\_または\_ゼロ**フラグが設定されておらず、OID の oid セット要求によって構成された vlan 識別子フィルターが\_フィルター [\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)されていない場合、ミニポートドライバーは次のいずれかを実行する必要があります。\_\_
 
     -   ミニポートドライバーで NDIS 6.20 がサポートされている場合は、oid 要求の oid 要求の失敗状態を返す必要があります。 [\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)です。
 
     -   ミニポートドライバーで ndis 6.30 以降のバージョンの NDIS がサポートされている場合は、指定した MAC アドレスフィールドを検査してフィルター処理するようにネットワークアダプターを構成する必要があります。 受信パケットに VLAN タグがある場合、ネットワークアダプターはパケットデータから VLAN タグを削除する必要があります。 ミニポートドライバーは、パケットの[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造に関連付けられている[**8021Q\_INFO\_、NDIS\_net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)に VLAN タグを配置する必要があります。
 
--   前のドライバーによって、MAC アドレスフィルターと、Ndis 内の VLAN 識別子フィルターが設定されている場合、 [ **\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造を受け取ると、 **ndis\_受信\_フィルター\_フィールド\_MAC\_設定されません。\_ヘッダー\_VLAN\_のいずれかのフィルターフィールドにタグなし\_または\_ゼロ**フラグを付けます。 この場合、ミニポートドライバーは、指定された MAC アドレスと VLAN 識別子の両方に一致するパケットを示す必要があります。 つまり、ミニポートドライバーは、VLAN 識別子がゼロまたはタグなしのパケットで一致する MAC アドレスを持つパケットを示すことはできません。
+-   前のドライバーによって MAC アドレスフィルターと VLAN 識別子フィルターが Ndis で設定されている場合、 [ **\_受信\_フィルター\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体では、いずれかのフィルターフィールドに、\_\_\_ **\_、mac\_ヘッダー\_VLAN\_タグなし\_または\_ゼロフラグが**設定されます。 この場合、ミニポートドライバーは、指定された MAC アドレスと VLAN 識別子の両方に一致するパケットを示す必要があります。 つまり、ミニポートドライバーは、VLAN 識別子がゼロまたはタグなしのパケットで一致する MAC アドレスを持つパケットを示すことはできません。
 
  
 

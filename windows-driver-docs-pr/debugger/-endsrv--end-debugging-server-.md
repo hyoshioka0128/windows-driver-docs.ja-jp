@@ -45,7 +45,7 @@ ms.locfileid: "72837603"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
 <td align="left"><p>ユーザーモードのみ</p></td>
 </tr>
 <tr class="even">
@@ -53,7 +53,7 @@ ms.locfileid: "72837603"
 <td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>・</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>

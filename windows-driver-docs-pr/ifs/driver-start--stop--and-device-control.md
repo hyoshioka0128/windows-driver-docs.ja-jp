@@ -24,13 +24,13 @@ ms.locfileid: "72841431"
 
 ネットワークミニリダイレクターを開始または停止する順序は複雑です。 通常、このシーケンスは、管理と管理の目的でドライバーを制御するために、ネットワークミニリダイレクタードライバーで提供されるユーザーモードアプリケーションまたはサービスによって開始されます。 ネットワークミニリダイレクターは、オペレーティングシステムの起動時に自動的に開始するように構成されているサービスを使用できます。 このサービスは、オペレーティングシステムが起動するたびにネットワークミニリダイレクターを開始するように要求できます。
 
-[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)は、 [**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 **RxStartMinirdr**ルーチンは、通常、ユーザーモードのアプリケーションまたはサービスからの FSCTL または IOCTL 要求の結果として、ネットワークミニリダイレクターを開始するために呼び出されます。 [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)への呼び出しが成功した後、ネットワークミニリダイレクターの**driverentry**ルーチンから**RxStartMinirdr**を呼び出すことはできません。一部の開始処理では、ドライバーの初期化が必要になるためです。完了. **RxStartMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MRxStart**ルーチンを呼び出すことによって開始プロセスを完了します。 **MRxStart**を呼び出すと成功が返された場合、RDBSS は RDBSS 内のミニリダイレクターの内部状態を RDBSS\_開始に設定します。
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)は、 [**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 **RxStartMinirdr**ルーチンは、通常、ユーザーモードのアプリケーションまたはサービスからの FSCTL または IOCTL 要求の結果として、ネットワークミニリダイレクターを開始するために呼び出されます。 [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)への呼び出しが成功した後、ネットワークミニリダイレクターの**driverentry**ルーチンから**RxStartMinirdr**の呼び出しを行うことはできません。一部の開始処理では、ドライバーの初期化が完了する必要があるためです。 **RxStartMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MRxStart**ルーチンを呼び出すことによって開始プロセスを完了します。 **MRxStart**を呼び出すと成功が返された場合、RDBSS は RDBSS 内のミニリダイレクターの内部状態を RDBSS\_開始に設定します。
 
 [**MRxStop**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)は、 [**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)ルーチンが呼び出されたときに RDBSS によって呼び出されます。 RDBSS **RxStopMinirdr**ルーチンは、通常、ユーザーモードのアプリケーションまたはサービスからの FSCTL または IOCTL 要求の結果として、ネットワークミニリダイレクターを停止するために呼び出されます。 この呼び出しは、ネットワークミニリダイレクターから行うことも、オペレーティングシステムによるシャットダウンプロセスの一部として行うこともできます。 **RxStopMinirdr**呼び出しが受信されると、RDBSS はネットワークミニリダイレクターの**MRxStop**ルーチンを呼び出してプロセスを完了します。
 
 [**MRxDevFcbXXXControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)ルーチンは、デバイス FCB で IOCTL または FSCTL 呼び出しを行うことにより、ユーザーモードのアプリケーションまたはサービスからの要求を受信し、ネットワークミニリダイレクターを制御するために使用されます。
 
-また、driver オブジェクトに対して IOCTL および FSCTL 操作を処理する低 i/o ルーチンが2つあります。 [**MRxLowIOSubmit\[lowio\_OP\_FSCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550709)および[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL @no__t11_** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)
+また、driver オブジェクトに対して IOCTL および FSCTL 操作を処理する低 i/o ルーチンが2つあります。 [**MRxLowIOSubmit\[lowio\_OP\_FSCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550709)および[**MRxLowIOSubmit\[LOWIO\_op\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。
 
 ネットワークミニリダイレクターは、これらの低 i/o ルーチンを使用して、ユーザーモードのアプリケーションまたはサービスからネットワークミニリダイレクターの制御と管理を行うこともできます。
 
@@ -50,7 +50,7 @@ ms.locfileid: "72841431"
 <tbody>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile" data-raw-source="[&lt;strong&gt;MRxDevFcbXXXControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)"><strong>MRxDevFcbXXXControlFile</strong></a></td>
-<td align="left"><p>RDBSS はこのルーチンを呼び出して、デバイス FCB コントロール要求をネットワークミニリダイレクターに渡します。 RDBSS は、デバイス FCB で IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL、または IRP_MJ_INTERNAL_DEVICE_CONTROL を受け取る応答として、この呼び出しを発行します。</p></td>
+<td align="left"><p>RDBSS はこのルーチンを呼び出して、デバイス FCB コントロール要求をネットワークミニリダイレクターに渡します。 RDBSS は、デバイス FCB で IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL、または IRP_MJ_INTERNAL_DEVICE_CONTROL を受信する応答として、この呼び出しを発行します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>

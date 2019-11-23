@@ -4,7 +4,7 @@ description: SO_WSK_EVENT_CALLBACK
 ms.assetid: cb697103-20ef-4667-8823-060a68d904c8
 ms.date: 07/18/2017
 keywords:
-- SO_WSK_EVENT_CALLBACK ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの SO_WSK_EVENT_CALLBACK
 ms.localizationpriority: medium
 ms.openlocfilehash: 8630f6f4c041dadae0874f22a2f81f54246bc2b7
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -32,7 +32,7 @@ WSK アプリケーションがこのソケットオプションを使用して�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -80,7 +80,7 @@ WSK アプリケーションが**Wskcontrolsocket**を呼び出してイベン�
 
 -   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出したときに無効になっているイベントコールバック関数への呼び出しが実行されていない場合、イベントコールバック関数は無効になり、 **WSKCONTROLSOCKET**関数は状態を返し @no成功します。\_ WSK アプリケーションで IRP が指定されている場合、IRP は成功の状態で完了します。
 
--   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出し、wsk アプリケーションで IRP が指定されているときに、無効になっているイベントコールバック関数への呼び出しが進行中の場合、 **WSKCONTROLSOCKET**関数は状態を返し @no__t_2行わ.\_ WSK サブシステムは、イベントコールバック関数を無効にし、イベントコールバック関数に対するすべての実行中の呼び出しが返された後に、IRP を完了します。
+-   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出し、wsk アプリケーションで IRP が指定されているときに、無効になっているイベントコールバック関数への呼び出しが進行中の場合、 **WSKCONTROLSOCKET**関数は状態\_PENDING を返します。 WSK サブシステムは、イベントコールバック関数を無効にし、イベントコールバック関数に対するすべての実行中の呼び出しが返された後に、IRP を完了します。
 
 -   WSK アプリケーションが**Wskcontrolsocket**関数を呼び出し、wsk アプリケーションで IRP が指定されていない場合に、無効になっているイベントコールバック関数への呼び出しが進行中の場合、 **WSKCONTROLSOCKET**関数は状態を返し\_イベント\_保留中です。 WSK サブシステムは、イベントコールバック関数に対するすべての実行中の呼び出しが返された後に、イベントコールバック関数を無効にします。
 
@@ -173,7 +173,7 @@ WSK アプリケーションが**Wskcontrolsocket**を呼び出してイベン�
 
 ソケットのイベントコールバック関数の有効化と無効化の詳細については、「[イベントコールバック関数の有効化と無効化](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)」を参照してください。
 
-<a name="requirements"></a>前提条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -187,7 +187,7 @@ WSK アプリケーションが**Wskcontrolsocket**を呼び出してイベン�
 <td><p>Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。</p></td>
 </tr>
 <tr class="even">
-<td><p>ヘッダー</p></td>
+<td><p>Header</p></td>
 <td>Wsk .h (Wsk .h を含む)</td>
 </tr>
 </tbody>

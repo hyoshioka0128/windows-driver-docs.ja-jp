@@ -24,7 +24,7 @@ Windows 8 では、回転モードの変更時にグラフィックスアダプ�
 |------------------------------------------------------|-----------|
 | 最小 WDDM バージョン                                 | 1.2       |
 | Windows の最小バージョン                              | 8         |
-| ドライバーの実装—完全なグラフィックスと表示のみ | Mandatory |
+| ドライバーの実装—完全なグラフィックスと表示のみ | 必須 |
 
  
 
@@ -36,7 +36,7 @@ Windows 8 では、回転モードの変更時にグラフィックスアダプ�
 -   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
 -   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
 
-ドライバーは、Windows で使用可能な[**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体の**SupportSmoothRotation**メンバーを設定することによって、 [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)の呼び出しでスムーズローテーションのサポートを示す必要があります。8.
+ドライバーは、Windows 8 以降で使用可能な[**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)構造体の**SupportSmoothRotation**メンバーを設定することによって、 [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)の呼び出しにおける smooth ローテーションのサポートを示す必要があります。
 ドライバーは、 [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)の呼び出し中に常にパスのローテーションを設定できる必要があります。
 
 ## <a name="span-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>Smooth ローテーションのシナリオ

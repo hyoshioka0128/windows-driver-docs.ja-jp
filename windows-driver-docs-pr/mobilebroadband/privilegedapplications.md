@@ -47,7 +47,7 @@ PrivilegedApplications 要素は、特権のあるモバイルブロードバン
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="package-privapps.md" data-raw-source="[Package](package-privapps.md)">Package</a></p></td>
+<td><p><a href="package-privapps.md" data-raw-source="[Package](package-privapps.md)">[パッケージ]</a></p></td>
 <td><p>特権のあるモバイルブロードバンドインターフェイスにアクセスできる必要があるアプリ。</p></td>
 </tr>
 </tbody>
@@ -99,7 +99,7 @@ PrivilegedApplications 要素は、特権のあるモバイルブロードバン
 
 -   PrivilegedApplications 要素を使用すると、指定したアプリは、特権アクセス権を持つモバイルブロードバンドおよび SMS Api にアクセスできます。
 
--   パッケージ[id](identity-privapps.md)の構造は、アプリケーションマニフェスト構造内の &lt;identity @ no__t-2 要素と同じです。 アプリケーションマニフェストから要素をコピーする必要があります。
+-   パッケージ[id](identity-privapps.md)の構造は、アプリケーションマニフェスト構造の &lt;id&gt; 要素と同じです。 アプリケーションマニフェストから要素をコピーする必要があります。
 
 -   複数のパッケージを指定するには、PrivilegedApplications 要素内の複数の[Package](package-privapps.md)要素を一覧表示します。
 

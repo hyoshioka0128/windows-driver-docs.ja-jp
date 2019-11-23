@@ -27,14 +27,14 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 
 ドライバーは、次のカーネルモード関数、MIB 構造体、および MIB と Network Layer (NL) 列挙を使用して、ローカルコンピューター上の伝送制御プロトコル/インターネットプロトコル (TCP/IP) トランスポートの構成設定を取得および変更できます。
 
-**メモドライバーコード**を開発している場合は、ヘッダーファイルを含めるための手順に従って[ください。](including-header-files-for-ip-helper.md)   
+**注**  ドライバーコードを開発するときは、[ヘッダーファイルを含める](including-header-files-for-ip-helper.md)ための手順に従ってください。
 
  
 
 ### <a name="interface-conversion-functions"></a>インターフェイス変換関数
 
 <table>  
-<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">関数</th>
@@ -139,7 +139,7 @@ IETF RFC ドキュメントでは、*インターフェイス*は、リンクへ
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554883(v=vs.85)" data-raw-source="[&lt;strong&gt;InitializeIpInterfaceEntry&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554883(v=vs.85))"><strong>初期化 Eipinterfaceentry</strong></a></p></td>
-<td align="left"><p>既定値を使用して<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85)" data-raw-source="[&lt;strong&gt;MIB_IPINTERFACE_ROW&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))"><strong>MIB_IPINTERFACE_ROW</strong></a> structure エントリのメンバーを初期化します。</p></td>
+<td align="left"><p>既定値を使用して<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85)" data-raw-source="[&lt;strong&gt;MIB_IPINTERFACE_ROW&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))"><strong>MIB_IPINTERFACE_ROW</strong></a>構造体エントリのメンバーを初期化します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570774(v=vs.85)" data-raw-source="[&lt;strong&gt;SetIpInterfaceEntry&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570774(v=vs.85))"><strong>Se? Interfaceentry</strong></a></p></td>

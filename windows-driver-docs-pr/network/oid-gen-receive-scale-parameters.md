@@ -1,9 +1,9 @@
 ---
 title: OID_GEN_RECEIVE_SCALE_PARAMETERS
-description: クエリとして、NDIS およびそれ以降のドライバーは OID_GEN_RECEIVE_SCALE_PARAMETERS OID を使用して、NIC の現在の RECEIVE side scaling (RSS) パラメーターを照会できます。
+description: クエリとして、NDIS およびそれ以降のドライバーは、OID_GEN_RECEIVE_SCALE_PARAMETERS OID を使用して、NIC の現在の RECEIVE side scaling (RSS) パラメーターを照会できます。
 ms.assetid: a54190f7-0d2e-4f85-84c2-05fc9ec4994a
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_GEN_RECEIVE_SCALE_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_GEN_RECEIVE_SCALE_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: d1a045daf09cf3cf5804aa12871f29b83871335a
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -20,7 +20,7 @@ ms.locfileid: "72844605"
 セットとして、NDIS およびそれ以降のドライバーでは、OID\_GEN\_受信\_スケール\_パラメーター OID を使用して、NIC の現在の RSS パラメーターを設定します。 ミニポートドライバーは、RSS パラメーターを定義する NDIS\_RECEIVE\_SCALE\_PARAMETERS 構造体を受け取ります。
 
 > [!NOTE]
-> RSSv2 では、この OID は、指定されたスケーリングエンティティの現在の RSS パラメーターに対してのみクエリを実行するために使用されます。 RSSv2 をサポートするミニポートドライバーについては、間接テーブル以外の RSS パラメーターを設定する[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)を参照してください。
+> RSSv2 では、この OID は、指定されたスケーリングエンティティの現在の RSS パラメーターに対してのみクエリを実行するために使用されます。 RSSv2 をサポートするミニポートドライバーについては、「 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) 」を参照してください。間接テーブル以外の RSS パラメーターを設定できます。
 
 <a name="remarks"></a>注釈
 -------
@@ -35,7 +35,7 @@ TCP/IP ドライバーは、OID\_GEN の1つの OID セット要求を使用し�
 
  
 
-  プロトコルドライバーは、RSS を有効にする前に、受信ハッシュ計算 ([OID\_GEN\_receive\_hash](oid-gen-receive-hash.md)) を無効にする必要がある**ことに注意**してください。 RSS が有効になっている場合、受信ハッシュ計算を有効にする前に、プロトコルドライバーが RSS を無効にします。 ミニポートドライバーは、 **NDIS\_状態\_無効\_oid**または NDIS\_の状態にあるセット要求を失敗させる必要があります\_ハッシュが有効になっ**ていません**。enabled.
+  プロトコルドライバーは、RSS を有効にする前に、受信ハッシュ計算 ([OID\_GEN\_receive\_hash](oid-gen-receive-hash.md)) を無効にする必要がある**ことに注意**してください。 RSS が有効になっている場合、受信ハッシュ計算を有効にする前に、プロトコルドライバーが RSS を無効にします。 ミニポートドライバーは、 **NDIS\_状態\_無効\_oid**または NDIS\_の状態にある要求を失敗させる必要があります\_ハッシュが有効になっ**ていません**。\_\_\_\_
 
  
 

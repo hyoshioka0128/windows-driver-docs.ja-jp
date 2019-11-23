@@ -44,10 +44,10 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 | SpeedDuplex 値 | 結果の速度 |
 | ---| ---|
-| 1000 | 1 Gbps |
+| 1,000 | 1 Gbps |
 | 10,000 | 10 Gbps |
 | 25000 | 25 Gbps |
-| 5万 | 50 Gbps |
+| 50,000 | 50 Gbps |
 | 10万 | 100 Gbps |
 
 <a href="" id="-flowcontrol"></a> **\*FlowControl**  
@@ -83,7 +83,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 送信パスで Tx フラグが有効になっている場合、ミニポートドライバーは次の操作を実行します。
 
 -   各送信パケットに 802.1 Q ヘッダーを挿入し、OOB のデータを入力します (OOB にゼロ以外のデータが存在する場合)。
--   [**Ndis\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の適切な**macoptions**を提供\_全般\_属性 (**ndis\_mac\_オプション\_8021P\_PRIORITY**および**NDIS\_mac\_オプション\_8021Q\_VLAN**)。
+-   [**Ndis\_ミニポート\_アダプター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)の適切な**macoptions**を提供\_全般\_属性 (**ndis\_mac\_オプション\_8021P\_PRIORITY**および**Ndis\_mac\_オプション\_8021q\_VLAN**)。
 
 それ以外の場合、Tx フラグが無効になっている場合は、次のようになります。
 
@@ -207,7 +207,7 @@ INF ファイルで指定する必要があり、レジストリに表示され�
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>100 Mbps 全二重</p></td>
 </tr>
 <tr class="even">
@@ -273,7 +273,7 @@ INF ファイルで指定する必要があり、レジストリに表示され�
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>自動ネゴシエーション</p></td>
 </tr>
 <tr class="odd">

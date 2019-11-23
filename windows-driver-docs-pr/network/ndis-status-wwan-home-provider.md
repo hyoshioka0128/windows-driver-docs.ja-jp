@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_HOME_PROVIDER
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_HOME_PROVIDER 通知を使用して、MB サービスに OID_WWAN_HOME_PROVIDER \ 160 の完了を通知します。クエリ要求。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_HOME_PROVIDER 通知を使用して、MB サービスに OID_WWAN_HOME_PROVIDER \ 160; の完了を通知します。クエリ要求。
 ms.assetid: a5733c62-be4e-4f86-9639-6addd31baf0c
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_HOME_PROVIDER ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_HOME_PROVIDER
 ms.localizationpriority: medium
 ms.openlocfilehash: 67cbe24dbbefe26027dfdca97cc178f8275a22dc
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ ms.locfileid: "72843027"
 
     SIM カードのファイルシステムの詳細については、3GPP TS 11.11 の仕様を参照してください。 プロバイダー id がサブスクライバー Id モジュール (SIM カード) でプロビジョニングされていない場合、ミニポートドライバーは、\_の失敗\_、WWAN\_ステータスを返す必要があります。
 
--   CDMA ベースのデバイス: ホームプロバイダー名を返すことは必須です。 ネットワークのパーソナル化の一環として、この情報をデバイスに提供することをお勧めします。 プロバイダー id が使用できない場合、CDMA ベースのプロバイダーのミニポートドライバーは、NDIS\_WWAN\_HOME\_プロバイダー構造の**プロバイダーの ProviderId**メンバーを、既定の\_cdma\_に設定する必要があり\_プロバイダー\_ID。
+-   CDMA ベースのデバイス: ホームプロバイダー名を返すことは必須です。 ネットワークのパーソナル化の一環として、この情報をデバイスに提供することをお勧めします。 プロバイダー id が使用できない場合、CDMA ベースのプロバイダーのミニポートドライバーは、NDIS\_WWAN\_HOME\_プロバイダー構造の**プロバイダーの ProviderId**メンバー\_を、既定\_プロバイダー\_ID に設定する必要があります。\_
 
 ミニポートドライバーは、デバイスの準備完了状態が**WwanReadyStateInitialized**に変更されたときにこの情報を返す必要があります。また、必要に応じて、WWAN\_プロバイダー構造のすべてのメンバーをフォーマットします。
 

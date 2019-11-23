@@ -22,13 +22,13 @@ ms.locfileid: "72829402"
 
 明るさの制御は、オペレーティングシステムによって提供されるモニタードライバーである Monitor に実装されます。 モニタードライバーは、Windows Management Instrumentation (WMI) インターフェイスを実装して、アプリケーション (オペレーティングシステムの明るさスライダーなど) が輝度レベルと対話できるようにします。 モニタードライバーはデバイスの電源ポリシーエンジン (供給された PE) に登録して、明るさのレベルが電源ポリシーの変化に反応するようにします。 モニタードライバーは、ACPI ベースの明るさのショートカットキーを処理するために、Advanced Configuration and Power Interface (ACPI) に登録します。 [Windows 2000 Display Driver モデル](windows-2000-display-driver-model-design-guide.md)との互換性を確保するために、モニタードライバーは IOCTL ベースの明るさコントロールを実装します。
 
-システムの基本入出力システム (BIOS) によって公開されている表示ミニポートドライバーまたは ACPI メソッドは、統合された表示パネルの明るさの変更をサポートできます。 コンピューター ([**D3DKMDT\_VOT\_内部**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)) に接続する出力テクノロジとしてマークされている最初のビデオターゲットの場合、モニタードライバーはディスプレイミニポートドライバーの[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数を呼び出します。GUID によって識別される[輝度制御インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を照会するには\_devinterface\_輝度\_2 および DXGK\_明るさ\_インターフェイス\_バージョン\_1、[輝度コントロールInterface v. 2 (アダプティブおよび Smooth 輝度コントロール)](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) 。 GUID\_DEVINTERFACE\_輝度と DXGK\_輝度\_インターフェイス\_バージョン\_2 によって識別されます。 ディスプレイミニポートドライバーで少なくとも輝度制御インターフェイスがサポートされていない場合、モニタードライバーは ACPI を使用して、子デバイスの \_BCL、\_BCM、および \_BQC の各メソッドを照会します。 これらの方法の詳細については、 [acpi web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)の acpi 仕様を参照してください。
+システムの基本入出力システム (BIOS) によって公開されている表示ミニポートドライバーまたは ACPI メソッドは、統合された表示パネルの明るさの変更をサポートできます。 [ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)コンピューター内で内部的に接続される出力テクノロジを持つとマークされている最初のビデオターゲットでは、モニタードライバーはディスプレイミニポートドライバーの[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数を呼び出して、GUID\_devinterface\_輝度\_2 および DXGK\_輝度\_インターフェイス\_バージョン\_1、および明るさの制御によって識別される[輝度制御インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を照会します。 [Interface v. 2 (アダプティブおよび Smooth 輝度コントロール)](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) 。 GUID\_DEVINTERFACE\_輝度と DXGK\_輝度\_インターフェイス\_バージョン\_2 によって識別されます。 ディスプレイミニポートドライバーで少なくとも輝度制御インターフェイスがサポートされていない場合、モニタードライバーは ACPI を使用して、子デバイスの \_BCL、\_BCM、および \_BQC の各メソッドを照会します。 これらの方法の詳細については、 [acpi web サイト](https://go.microsoft.com/fwlink/p/?linkid=57185)の acpi 仕様を参照してください。
 
 **注**   Windows Display Driver MODEL (WDDM) では、統合された表示パネルを識別するために ACPI 識別子は使用されません。 これは、id が0x0110 の表示パネルのみをサポートする[Windows 2000 Display Driver モデル](windows-2000-display-driver-model-design-guide.md)とは異なります。
 
  
 
-[ミニポートドライバーの表示] または [BIOS で公開されている ACPI] メソッドで明るさの制御がサポートされている場合、モニタードライバーは、明るさのショートカットキーの ACPI 通知を登録します。 ショートカットキーの通知についてモニタードライバーに通知するための代替手段はありません。 モニタドライバーが輝度制御メカニズムを使用できない場合、またはディスプレイミニポートドライバーが[輝度制御インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を提供しても、 [**DxgkDdiGetPossibleBrightness**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)関数の呼び出しに失敗した場合、モニタードライバーは明るさの制御をサポートします。
+[ミニポートドライバーの表示] または [BIOS で公開されている ACPI] メソッドで明るさの制御がサポートされている場合、モニタードライバーは、明るさのショートカットキーの ACPI 通知を登録します。 ショートカットキーの通知についてモニタードライバーに通知するための代替手段はありません。 モニタドライバーが輝度制御メカニズムを使用できない場合、またはディスプレイミニポートドライバーで[輝度制御インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)が提供されているが、 [**DxgkDdiGetPossibleBrightness**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)関数の呼び出しに失敗した場合、モニタードライバーは明るさの制御をサポートしていません。
 
 ### <a name="span-idbrightness_levelsspanspan-idbrightness_levelsspanspan-idbrightness_levelsspanbrightness-levels"></a><span id="Brightness_Levels"></span><span id="brightness_levels"></span><span id="BRIGHTNESS_LEVELS"></span>明るさのレベル
 
@@ -72,7 +72,7 @@ ms.locfileid: "72829402"
 
     これらのショートカットキーの通知は、ACPI 3.0 仕様の新しいものであり、セクション B-1 で説明されています。 通常、ラップトップコンピューターは、これらのショートカットキーの通知をすべてサポートしているわけではありません。
 
-    ACPI\_のモニタードライバーの既定の動作\_INC.\_の明るさ\_ホットキーおよび ACPI\_通知\_10 月\_の明るさ\_の明るさを上げる (またはデクリメントする)次に使用可能な5% 以上のステップレベルに到達するまで、以前の明るさレベルより少なくとも 5% (またはそれ未満) の割合で表示されます (5、10、15、...、95、100)。 ショートカットキーを使用してインクリメントまたはデクリメントを行うと、次の例に示すように、非対称パターンが輝度レベルで作成される場合があります。
+    ACPI\_に対するモニタードライバーの既定の動作\_INC\_の明るさ\_ホットキーおよび ACPI\_通知\_10 月\_の明るさ\_を通知の明るさを下げる (または、前の明るさのレベルより少なくとも5% 以上)。次に使用可能な5% のステップレベルに到達するまで (5、10、15、...、95、100)。 ショートカットキーを使用してインクリメントまたはデクリメントを行うと、次の例に示すように、非対称パターンが輝度レベルで作成される場合があります。
 
     -   使用可能な \_BCL 輝度制御レベル0、1、5、10、...、95、100
 

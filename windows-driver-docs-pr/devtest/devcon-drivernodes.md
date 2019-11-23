@@ -46,7 +46,7 @@ ms.locfileid: "72038063"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong> @ no__t) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
+<td align="left"><p>任意の文字または文字を検索しません。 ワイルドカード文字 (<strong></em></strong>) を使用して、<strong><em>ディスク</em></strong>などの ID パターンを作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -80,6 +80,6 @@ devcon drivernodes =usb pci* usb*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 10:ドライバーパッケージをハードウェア ID パターン @ no__t で一覧表示する
+[例 10: ハードウェア ID パターン別にドライバーパッケージを一覧表示する](devcon-examples.md#ddk_example_10_list_driver_packages_by_hardware_id_pattern_tools)
 
-[Example 11:デバイスインスタンス ID パターンを使ってドライバーパッケージを一覧表示する @ no__t-0
+[例 11: デバイスインスタンス ID パターン別にドライバーパッケージを一覧表示する](devcon-examples.md#ddk_example_11_list_driver_packages_by_device_instance_id_pattern_tool)

@@ -1,6 +1,6 @@
 ---
-title: ネットワークインターフェイスの登録解除
-description: ネットワークインターフェイスの登録解除
+title: ネットワーク インターフェイスの登録解除
+description: ネットワーク インターフェイスの登録解除
 ms.assetid: 8d290a6a-008d-434b-bcbf-c4efade3d017
 keywords:
 - NDIS ネットワークインターフェイス WDK、登録解除
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72838160"
 ---
-# <a name="deregistering-a-network-interface"></a>ネットワークインターフェイスの登録解除
+# <a name="deregistering-a-network-interface"></a>ネットワーク インターフェイスの登録解除
 
 
 

@@ -56,7 +56,7 @@ WIA の\_DPS\_ページのプロパティには、自動ドキュメントフィ
 <tbody>
 <tr class="odd">
 <td><p>ALL_PAGES</p></td>
-<td><p>WIA_PROP_RANGE をゼロ (0) に設定する場合と同じです。 すべてのページ。 ADF にドキュメントが送られなくなるまで、継続的にスキャンします。</p></td>
+<td><p>設定と同様に、をゼロ (0) に WIA_PROP_RANGE ます。 すべてのページ。 ADF にドキュメントが送られなくなるまで、継続的にスキャンします。</p></td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@ title: FSCTL_QUERY_REFS_SMR_VOLUME_INFO 制御コード
 description: FSCTL\_クエリ\_REFS\_SMR\_ボリューム\_情報制御コードは、領域とガベージコレクションアクティビティの現在の状態を Shingled 磁気記録 (SMR) ボリュームに照会します。
 ms.assetid: 1318CF90-2449-407E-8C9E-825E571F4CDD
 keywords:
-- FSCTL_QUERY_REFS_SMR_VOLUME_INFO 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_QUERY_REFS_SMR_VOLUME_INFO コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:

@@ -22,7 +22,7 @@ ms.locfileid: "72841958"
 
 IHV Extensions DLL は、 [**Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)関数を呼び出して、通知に登録されているサービスまたはアプリケーションに通知を送信します。 通知を受信するには、サービスまたはアプリケーションが**WlanRegisterNotification**関数を呼び出すことによって、Auto CONFIGURATION MANAGER (ACM) に登録する必要があります。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-サービスまたはアプリケーションは、ソース値が L2\_NOTIFICATION\_SOURCE\_WLAN\_IHV の通知を登録して、の呼び出しから通知を受け取る  に**注意**し[**てください。Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)関数。
+[**Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)関数の呼び出しを通じて通知を受信するには、サービスまたはアプリケーションが、source 値が L2\_NOTIFICATION\_SOURCE\_WLAN\_IHV の通知に登録する必要が**あり  ます**。
 
  
 

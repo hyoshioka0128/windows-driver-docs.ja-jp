@@ -1,6 +1,6 @@
 ---
 title: ndiskd netpacket
-description: Ndiskd netpacket 拡張機能には、NET_PACKET 構造体に関する情報が表示されます。
+description: Ndiskd netpacket 拡張機能には、NET_PACKET 構造に関する情報が表示されます。
 ms.assetid: 304BA2CF-B6BC-452C-8543-9B872054AA9E
 keywords:
 - ndiskd netpacket Windows デバッグ
@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72837575"
 ---
-# <a name="ndiskdnetpacket"></a>! ndiskd netpacket
+# <a name="ndiskdnetpacket"></a>!ndiskd.netpacket
 
 
 **! Ndiskd netpacket**拡張機能には、 [NET\_パケット](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet)構造に関する情報が表示されます。
@@ -156,7 +156,7 @@ NET\_パケットのハンドルを取得するには、次の手順を実行し
 
 [**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
@@ -168,9 +168,9 @@ NET\_パケットのハンドルを取得するには、次の手順を実行し
 
 [ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)
 
-[ **! ndiskd netqueue**](-ndiskd-netqueue.md)
+[ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
-[ **! ndiskd netrb**](-ndiskd-netrb.md)
+[ **!ndiskd.netrb**](-ndiskd-netrb.md)
 
  
 

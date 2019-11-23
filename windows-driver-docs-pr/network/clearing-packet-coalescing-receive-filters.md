@@ -24,7 +24,7 @@ ms.locfileid: "72835173"
 
      
 
--   フィルタ**ID**メンバーは、ミニポートドライバーでクリアされるフィルターの0以外の識別子 (id) 値に設定する必要があります。 これまでのドライバーは、以前の OID メソッドの Oid 要求からフィルター ID を取得し、フィルターの\_または Oid を設定\_フィルターまたは Oid を受信\_フィルター\_[列挙型\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)フィルターを受け取るように設定して[\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)ます。
+-   フィルタ**ID**メンバーは、ミニポートドライバーでクリアされるフィルターの0以外の識別子 (id) 値に設定する必要があります。 これまでのドライバーは、以前の OID メソッドの Oid 要求からフィルター ID を取得し、フィルターの\_または Oid を設定\_フィルターまたは Oid を受信\_フィルター\_[列挙型\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)フィルターを受け取るように設定して[\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)ます。\_
 
     **注**  パケット合体受信フィルターを設定した後のドライバーだけがクリアできます。
 

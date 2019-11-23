@@ -96,7 +96,7 @@ Microsoft では、次の一連のドライバーを提供しています。
 ## <a name="microsoft-provided-usb-device-class-drivers"></a>Microsoft 提供の USB デバイスクラスドライバー
 
 
-Microsoft では、USB によって承認された複数の USB デバイスクラス用のドライバーを提供しています-IF。 これらのドライバーとそのインストールファイルは、Windows に含まれています。 これらのファイルは、@no__t 0Windows @ no__t-1System32 @ no__t-2DriverStore @ no__t-3FileRepository フォルダーにあります。
+Microsoft では、USB によって承認された複数の USB デバイスクラス用のドライバーを提供しています-IF。 これらのドライバーとそのインストールファイルは、Windows に含まれています。 これらのファイルは、\\Windows\\System32\\DriverStore\\FileRepository フォルダーにあります。
 
 「 [Windows に含まれる USB デバイスクラスドライバー](supported-usb-classes.md)」を参照してください。
 

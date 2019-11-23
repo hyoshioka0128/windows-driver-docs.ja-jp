@@ -21,7 +21,7 @@ ms.locfileid: "72844189"
 
  
 
-オペレーティングシステムは、ネイティブ802.11 ミニポートドライバーからの NDIS\_状態\_DOT11\_関連付け\_完了を受信した後、 [*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)関数を呼び出して、IHV 拡張 DLL による関連付け後の操作です。
+オペレーティングシステムは、ネイティブ802.11 ミニポートドライバーからの\_DOT11\_アソシエーション\_完了を示す\_状態を受信した後、 [*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)関数を呼び出して、IHV 拡張 DLL による関連付け後の操作を開始します。
 
 関連付け後の操作を実行するとき、または操作が完了した後に、IHV 拡張 DLL は、オペレーティングシステムでサポートされている拡張認証プロトコル (EAP) アルゴリズムを使用して、アクセスポイントでユーザーを認証することができます。(AP)。 この状況では、IHV 拡張 DLL は、EAP over LAN (EAPOL) 形式で AP によって送信された EAP パケットの処理のために、ネイティブ802.11 フレームワークの 802.1 X モジュールとインターフェイスします。
 
@@ -40,7 +40,7 @@ EAPOL 形式の詳細については、IEEE 802.1 X-2001 標準の句7を参照�
 -   関連付け後の操作を実行している間、IHV 拡張 DLL は[**Dot11ExtStartOneX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_onex_start)関数を呼び出して 802.1 x 認証操作を開始します。 この関数が呼び出されると、オペレーティングシステムは次の処理を実行します。
 
     -   802.1 X 認証の構成のプロパティページを表示します。 この情報には、認証に使用される EAP アルゴリズムが含まれます。
-    -   ユーザーに資格情報の入力を求めます。
+    -   ユーザーに資格情報を要求する。
     -   802.1 X 認証を開始するには、EAPOL 開始パケットを AP に送信します。
 
     IHV 拡張 DLL は、 [*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)の呼び出し内、または関数呼び出しが返された後に、 **Dot11ExtStartOneX**を呼び出すことができます。
@@ -58,7 +58,7 @@ EAPOL 形式の詳細については、IEEE 802.1 X-2001 標準の句7を参照�
 
 -   802.1 X 認証操作が完了すると、オペレーティングシステムは[*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result) IHV ハンドラー関数を呼び出します。 この関数が呼び出された後、IHV 拡張 DLL は、暗号キーの派生に使用される EAPOL キーパケットなど、AP から受信したすべての EAPOL パケットを処理します。
 
--   802.1 X 認証操作が正常に完了した場合、オペレーティングシステムは*pDot11MsOneXResultParams*によってポイントされている[**DOT11\_MSONEX onex の結果\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)構造に MPPE-送信キーの値を渡します。[*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)のパラメーター。 DOT11\_MSONEX\_RESULT\_PARAMS の**pbMPPESendKey**メンバーによってポイントされる MPPE-送信キーの値は、認証プロセスを通じて派生し、EAPOL キーパケットを AP に送信するときに IHV 拡張 DLL によって使用されます。 このキーは暗号化されており、Windows SDK に記載されている**CryptUnprotectData**関数を呼び出すことによって暗号化を解除する必要があります。
+-   802.1 X 認証操作が正常に完了した場合、オペレーティングシステムは、 [*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)の*pDot11MsOneXResultParams*パラメーターによって示された\_PARAMS 構造体に、MPPE-送信キーの値[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)を渡します。 DOT11\_MSONEX\_RESULT\_PARAMS の**pbMPPESendKey**メンバーによってポイントされる MPPE-送信キーの値は、認証プロセスを通じて派生し、EAPOL キーパケットを AP に送信するときに IHV 拡張 DLL によって使用されます。 このキーは暗号化されており、Windows SDK に記載されている**CryptUnprotectData**関数を呼び出すことによって暗号化を解除する必要があります。
 
 -   暗号キーの派生に使用されるアルゴリズムは、独立系ハードウェアベンダー (IHV) の実装に依存します。 IHV 拡張 DLL は、IEEE 802.11 の i-2004 標準の句8.5 で定義されているアルゴリズムなどの標準キー派生アルゴリズムをサポートできます。また、独自のキー派生アルゴリズムをサポートすることもできます。
 

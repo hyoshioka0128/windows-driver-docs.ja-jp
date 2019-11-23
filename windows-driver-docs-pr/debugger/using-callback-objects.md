@@ -23,7 +23,7 @@ ms.locfileid: "72834251"
 # <a name="using-callback-objects"></a>コールバック オブジェクトの使用
 
 
-エンジンによって使用されるコールバック COM インターフェイスには、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)によってエンジンまたはターゲットに対する変更[の通知、](debugger-extensions.md)入力要求の[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 、出力を送信するための[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 。
+エンジンによって使用されるコールバック COM インターフェイスには、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)によってエンジンまたはターゲットに対する変更[の通知、](debugger-extensions.md)入力を要求するための[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 、出力を送信するための[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks)の3つがあります。
 
 コールバックオブジェクトは、クライアントに登録されます。 最大で、3つのコールバックインターフェイスの1つのインスタンスを各クライアントに登録できます (同じインターフェイスとして、インターフェイス数の Unicode および ASCII バージョン)。
 

@@ -4,7 +4,7 @@ description: OID_WDI_SET_CONNECTION_QUALITY は、特定の仮想ポートに対
 ms.assetid: 753e25c5-44b5-4afa-8769-49f693472aa9
 ms.date: 07/18/2017
 keywords:
-- OID_WDI_SET_CONNECTION_QUALITY ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの OID_WDI_SET_CONNECTION_QUALITY
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 55b26e6ee5a8045d395845570bb6eb9af8f82bf4
@@ -19,9 +19,9 @@ ms.locfileid: "72843875"
 
 OID\_WDI\_SET\_CONNECTION\_QUALITY は、特定の仮想ポートの接続品質を適用するために、IHV コンポーネントにヒントを提供します。 このヒントを使用すると、ポートはさまざまなシナリオでチャネルの使用を最適化できます。
 
-| 適用範囲 | タスクでシリアル化された設定 | 通常の実行時間 (秒) |
+| Scope | タスクでシリアル化された設定 | 通常の実行時間 (秒) |
 |-------|--------------------------|---------------------------------|
-| ポート  | [はい]                      | 1                               |
+| ポート  | 〇                      | 1                               |
 
  
 
@@ -32,7 +32,7 @@ OID\_WDI\_SET\_CONNECTION\_QUALITY は、特定の仮想ポートの接続品質
 ## <a name="set-property-parameters"></a>プロパティパラメーターの設定
 
 
-| TLV                                                                                                                       | 複数の TLV インスタンスを使用できます | オプション | 説明                                                                                                                                                                                    |
+| TLV                                                                                                                       | 複数の TLV インスタンスを使用できます | 省略可能 | 説明                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_接続\_品質\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-quality-parameters)                           |                                |          | 必要な Wi-fi 接続品質ヒント。                                                                                                                                                     |
 | [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters) |                                | X        | 低待機時間の接続品質の動作。 これは、接続の品質が WDI に設定されている場合にのみ必要です。 [ **\_接続\_品質\_低\_待機時間**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint)です。 |

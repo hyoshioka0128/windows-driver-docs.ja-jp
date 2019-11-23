@@ -3,7 +3,7 @@ title: SM\_SendSRL 関数
 description: SM\_SendSRL WMI メソッドは、指定されたポートを使用して、指定されたドメインコントローラーに scan remote loop (SRL) コマンドを送信します。
 ms.assetid: 44090e8d-ffb2-48a9-a574-5bf067ffa952
 keywords:
-- SM_SendSRL function Storage デバイス
+- SM_SendSRL 関数記憶装置
 topic_type:
 - apiref
 api_name:

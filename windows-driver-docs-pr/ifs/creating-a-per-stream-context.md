@@ -1,6 +1,6 @@
 ---
-title: ストリームごとのコンテキストの作成
-description: ストリームごとのコンテキストの作成
+title: ストリーム別コンテキストの作成
+description: ストリーム別コンテキストの作成
 ms.assetid: e33dba3b-50f7-43d8-b7e8-b7c2c9034d51
 keywords:
 - フィルタードライバー WDK ファイルシステム、ストリームごとのコンテキスト追跡
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841451"
 ---
-# <a name="creating-a-per-stream-context"></a>ストリームごとのコンテキストの作成
+# <a name="creating-a-per-stream-context"></a>ストリーム別コンテキストの作成
 
 
 ## <span id="ddk_creating_a_per_stream_context_if"></span><span id="DDK_CREATING_A_PER_STREAM_CONTEXT_IF"></span>

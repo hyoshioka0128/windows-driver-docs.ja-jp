@@ -22,19 +22,19 @@ ms.locfileid: "72834767"
 
 -   [**NDIS\_NIC\_スイッチ\_VPORT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体の配列。 これらの各構造体には、ネットワークアダプターの NIC スイッチの VPort に関する情報が含まれています。
 
-    **注**  ネットワークアダプターに vports が作成されていない場合、ドライバーは NDIS\_NIC\_スイッチの**numelements**メンバーを設定[ **\_VPORTS\_INFO\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)構造を0に設定し、NDIS を設定しません。 [ **\_NIC\_スイッチ\_VPORT\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造が返されます。
+    **注**  ネットワークアダプターに vports が作成されていない場合、ドライバーは[**ndis\_NIC\_\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)の**numelements**メンバーを0に設定し、 [**NDIS\_NIC\_スイッチ\_vports\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)構造体が返されます。\_\_
 
      
 
-それまでのドライバーまたはユーザーアプリケーションが[OID\_nic\_スイッチ\_列挙\_VPORTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)要求を発行する前に、 [**NDIS\_nic\_スイッチ\_VPORTS\_INFO\_配列を初期化する必要があります。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)要求と共に渡される構造体。 **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**構造体を初期化するときは、ドライバーまたはアプリケーションが次のガイドラインに従う必要があります。
+前のドライバーまたはユーザーアプリケーションが[OID\_nic\_スイッチ\_列挙\_VPORTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)要求を発行する前に、要求と共に渡される[**NDIS\_nic\_スイッチ\_VPORTS\_INFO\_ARRAY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)構造体を初期化する必要があります。 **NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列**構造体を初期化するときは、ドライバーまたはアプリケーションが次のガイドラインに従う必要があります。
 
--   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_\_特定の\_スイッチフラグが**Flags**メンバーに設定されている場合は、指定された NIC スイッチで作成されたすべての VPorts に関する情報を返します。 NIC スイッチは、その構造体の**Switchid**メンバーによって指定されます。
+-   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_特定の\_スイッチフラグが**Flags**メンバーで設定されている場合は、指定された NIC スイッチで作成されたすべての vport に関する情報が返されます。\_\_ NIC スイッチは、その構造体の**Switchid**メンバーによって指定されます。
 
     **注**  Windows Server 2012 以降では、sr-iov インターフェイスはネットワークアダプター上で1つの NIC スイッチのみをサポートしています。 このスイッチは*既定の NIC スイッチ*と呼ばれ、NDIS\_既定\_スイッチ\_ID 識別子によって参照されます。 **Flags**メンバーで設定されているフラグに関係なく、 **SWITCHID**メンバーを NDIS\_既定\_スイッチ\_ID に設定する必要があります。
 
      
 
--   NDIS\_NIC\_スイッチ\_VPORT\_情報\_配列\_特定の\_関数フラグが**Flags**メンバーで設定されている場合は、指定された PCI Express (PCIe) 物理機能 (PF) またはネットワークアダプター上の仮想機能 (VF) に接続されているすべての VPorts に関する情報を返します。 PF または VF は、その構造体の**AttachedFunctionId**メンバーによって指定されます。
+-   NDIS\_NIC\_スイッチ\_VPORT\_INFO\_ARRAY\_特定の\_関数フラグが**Flags**メンバーで設定されている場合は、ネットワークアダプターの指定された PCI Express (PCIe) 物理機能 (PF) または仮想関数 (VF) に接続されているすべての vport について情報が返されます。\_\_ PF または VF は、その構造体の**AttachedFunctionId**メンバーによって指定されます。
 
     **AttachedFunctionId**メンバーが NDIS\_PF\_関数\_ID に設定されている場合、すべての vports に関する情報が返されます。 これには、PF に接続されている既定の VPort が含まれます。 **AttachedFunctionId**メンバーが有効な vf 識別子に設定されている場合、指定された vf に接続されているすべての vports に関する情報が返されます。
 

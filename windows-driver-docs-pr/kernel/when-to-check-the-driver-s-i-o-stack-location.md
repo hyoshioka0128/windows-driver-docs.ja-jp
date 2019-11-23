@@ -29,15 +29,15 @@ ms.locfileid: "72835745"
 
 -   ディスパッチルーチンは、特定の主要な関数コードの一連のマイナー関数コードを処理する必要があります。 マイナー関数コードを持つ Irp には、 [**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と[**irp\_MJ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)、および SCSI ポートドライバーとファイルシステムドライバーが処理する必要がある特定の irp が含まれます。
 
--   デバイスドライバーまたは密接に結合された上位レベルのドライバーのディスパッチルーチンは、 [**irp\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)または[**irp\_MJ\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求を処理します。 i/o 制御コードのセットが関連付けられています。
+-   デバイスドライバーまたは密接に結合された上位レベルのドライバーのディスパッチルーチンは、 [**irp\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)または[**irp\_MJ\_内部\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求を処理します。これには、i/o 制御コードのセットが関連付けられています。
 
 ドライバーの i/o スタックの場所へのポインターを取得するには、そのディスパッチルーチンが[**Iogetlocation entiを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)呼び出します。
 
-上位レベルのドライバーのディスパッチルーチンは、常に**Iogetlocation entiを**呼び出します。また、 [**Iogetnextiシャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)ドの場所を呼び出して、次に低いドライバー用に設定されている irp の次に小さいドライバーの i/o スタックの場所へのポインターを取得します。[irp をドライバースタックに渡す](passing-irps-down-the-driver-stack.md)場合。
+上位レベルのドライバーのディスパッチルーチンは、常に**Iogetシャー**ドを呼び出します。また、 [**Iogetnextiシャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)ドの場所を呼び出して、次に小さいドライバーの i/o スタックの場所へのポインターを取得します。これは、 [irp がドライバースタックを通過](passing-irps-down-the-driver-stack.md)するときに、次の下位のドライバーに対して設定されます。
 
-デバイスドライバーの[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンまたは[*DispatchInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン (または、密接に結合されたクラスドライバー) は、ドライバーの i/o スタックの場所**に設定されている i/o 制御コードを特定する必要があります。** 各要求に対して DeviceIoControl コードを使用します。 I/o 制御コードは、ドライバーの i/o スタックの場所に含まれています。
+デバイスドライバーの[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンまたは[*DispatchInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン (場合によっては、密接に結合されたクラスドライバー) は、各要求の**DeviceIoControl**にあるドライバーの i/o スタックの場所に設定されている i/o 制御コードを判断する必要があります。 I/o 制御コードは、ドライバーの i/o スタックの場所に含まれています。
 
-ほとんどの場合、上位レベルのドライバーの*DispatchDeviceControl*または*DispatchInternalDeviceControl*ルーチンは、 **irp\_MJ\_デバイス\_CONTROL**または**irp\_MJ\_INTERNAL @no__t_ を渡し9_ デバイス**は、IRP でスタック位置を設定した後、次の下位のドライバーに対して要求を制御\_ます。 ただし、scsi クラスドライバーは、特定の[Scsi ポートの i/o 制御コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を確認してから、これらの要求に渡す前に scsi ポートドライバーの i/o スタックの場所を正しく設定できるようにする必要があります。
+ほとんどの場合、上位レベルのドライバーの*DispatchDeviceControl*または*DispatchInternalDeviceControl*ルーチンは、irp 内のスタック位置を設定した後に、 **irp\_MJ\_デバイス\_CONTROL**または**irp\_MJ\_内部\_デバイス\_** の制御要求を次の下位のドライバーに渡します。 ただし、scsi クラスドライバーは、特定の[Scsi ポートの i/o 制御コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)を確認してから、これらの要求に渡す前に scsi ポートドライバーの i/o スタックの場所を正しく設定できるようにする必要があります。
 
  
 

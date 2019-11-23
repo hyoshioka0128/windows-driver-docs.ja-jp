@@ -69,7 +69,7 @@ UMDF ドライバーが、レジスタ、ポート、割り込み、[汎用 i/o]
 
 **注**   umdf バージョン2.15 以降、umdf ドライバーでは、 [*EvtdeviceAllowDirectHardwareAccess ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバックルーチンでハードウェアリソースリストを受信するために、ハードウェアリソースリストを指定する必要はありません。 指定しない場合、ドライバーは、これらのリソースを使用するためのアクセス権を持っていません。ただし、次の1つの例外があります。
 
-デバイスに1つ以上の接続リソース (**CmResourceTypeConnection**) と1つ以上の割り込みリソース (**Cmresourcetypeinterrupt**) が割り当てられている場合、ドライバーは[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) [*をEvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) callback ルーチン (ただし、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)からは除く)。
+デバイスに1つ以上の接続リソース (**CmResourceTypeConnection**) と1つ以上の割り込みリソース (**Cmresourcetypeinterrupt**) が割り当てられている場合、ドライバー[*は evtdevice ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバックルーチンから[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)を呼び出すことができます (ただし、 [*evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)からは呼び出せません)。
 
  
 
@@ -147,7 +147,7 @@ UmdfDispatcher=NativeUSB
 UMDF バージョン1.9 以降では、 **Umdfカーネル Modeclientpolicy**ディレクティブがサポートされています。 以前のバージョンの UMDF でカーネルモードドライバーがユーザーモードドライバーより上に読み込まれるようにするには、[以前のバージョンの umdf でのカーネルモードクライアントのサポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers#kernel-mode-client-support-in-earlier-umdf-versions)に関する説明を参照してください。
 
 <a href="" id="umdffileobjectpolicy----rejectnullandunknownfileobjects---allownullandunknownfileobjects--"></a>**Umdffileobjectpolicy** = &lt;**RejectNullAndUnknownFileObjects** | **AllowNullAndUnknownFileObjects**&gt;   
-フレームワークで、ファイルオブジェクト ([Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)) に関連付けられていない、または不明なファイルオブジェクト (ドライバーが使用していないファイルオブジェクト) に関連付けられている i/o 要求 ([IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)) の処理を許可する必要があるかどうかを示します。以前に作成要求が見つかりました。
+フレームワークで、ファイルオブジェクト ([Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)) に関連付けられていない、または不明なファイルオブジェクト (ドライバーが以前に作成要求を検出していないファイルオブジェクト) に関連付けられている i/o 要求 ([IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)) の処理を許可する必要があるかどうかを示します。
 
 **Umdffileobjectpolicy**が**RejectNullAndUnknownFileObjects**に設定されている場合、フレームワークは、NULL または不明なファイルオブジェクトに関連付けられている要求の処理を許可しません。
 
@@ -201,9 +201,9 @@ Umdf ドライバーのクラス識別子 (CLSID) について、UMDF に通知�
 
 <a href="" id=" umdfextensions-----cxservicename--"></a>Microsoft によって提供されるクラス拡張機能ドライバーと通信するドライバーには、 **Umdfextensions** = &lt;cxservicename&gt; 必要です。  CxServiceName パラメーターは、クラス拡張ドライバーバイナリに関連付けられているサービスに対応しています。
 
-クラス拡張ドライバーのサービス名は、次のレジストリキーの下のサブキーとして指定できます: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services**
+クラス拡張ドライバーのサービス名は、次のレジストリキーの下にサブキーとして配置されている可能性があります: **HKEY_LOCAL_MACHINE \Software\microsoft\windows NT\CurrentVersion\WUDF\Services**
 
-Windows 8.1 以前のバージョンでは、UMDF ドライバーを更新するときに再起動が必要になるのを避けるために、次の例に示すように、ドライバーの INF ファイルの[**CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)で [\_名前の変更] フラグを**使用\_に**は、\_を指定します。:
+Windows 8.1 以前のバージョンでは、UMDF ドライバーを更新するときに必要な再起動を回避するために、次の例に示すように、ドライバーの INF ファイルの[**CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)で [\_名前の変更] フラグを使用して、 **COPYFLG\_\_** を指定します。
 
 ```cpp
 [VirtualSerial_Install.NT]

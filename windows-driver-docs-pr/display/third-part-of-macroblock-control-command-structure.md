@@ -41,19 +41,19 @@ ms.locfileid: "72829328"
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0</p></td>

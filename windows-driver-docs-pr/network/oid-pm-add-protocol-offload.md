@@ -3,7 +3,7 @@ title: OID_PM_ADD_PROTOCOL_OFFLOAD
 description: セットとして、NDIS プロトコルドライバーは OID_PM_ADD_PROTOCOL_OFFLOAD OID を使用して、電源管理のプロトコルオフロードをネットワークアダプターに追加します。
 ms.assetid: 418f4ce8-64af-4e1e-877a-4cc606f63747
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_PM_ADD_PROTOCOL_OFFLOAD ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_PM_ADD_PROTOCOL_OFFLOAD
 ms.localizationpriority: medium
 ms.openlocfilehash: 71afaee5046ece17be585c6ba55b434577d85db7
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -26,7 +26,7 @@ NDIS 6.20 以降のプロトコルドライバーでは、OID\_PM\_\_プロト�
 
 NDIS および同じミニポートアダプターにバインドされているその他のプロトコルドライバーの競合状態を回避するために、NDIS がネットワークアダプターを低電力状態に設定しようとすると、そのネットワークアダプターに対する別のプロトコルのオフロードは失敗します。 たとえば、NDIS プロトコルドライバーが、そのネットワークアダプターの**NetEventSetPower**イベント通知を処理するコンテキストでプロトコルのオフロードを試みると、ndis は要求を失敗させます。
 
-NDIS がこの OID 要求を基になる NDIS ドライバーに送信するか、またはそれ以降のドライバーへの要求を完了する前に、ndis [ **\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造の ULONG **ProtocolOffloadId**メンバーをに設定します。一意の値。 プロトコルドライバーと NDIS は、このプロトコルオフロード識別子を OID\_PM と共に使用して[\_プロトコル\_オフロード oid 要求\_削除](oid-pm-remove-protocol-offload.md)し、基になるネットワークアダプターからプロトコルオフロードを削除します。
+NDIS がこの OID 要求を基になる NDIS ドライバーに送信するか、またはそれ以降のドライバーへの要求を完了する前に、 [**ndis\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造の ULONG **ProtocolOffloadId**メンバーを一意の値に設定します。 プロトコルドライバーと NDIS は、このプロトコルオフロード識別子を OID\_PM と共に使用して[\_プロトコル\_オフロード oid 要求\_削除](oid-pm-remove-protocol-offload.md)し、基になるネットワークアダプターからプロトコルオフロードを削除します。
 
 **  プロトコル**オフロード識別子は、ネットワークアダプターに設定されているプロトコルオフロードごとに一意の値です。 ただし、プロトコルオフロード識別子は、すべてのネットワークアダプターでグローバルに一意ではありません。
 

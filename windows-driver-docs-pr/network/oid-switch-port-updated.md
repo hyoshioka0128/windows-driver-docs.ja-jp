@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_UPDATED
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、拡張可能なスイッチポートの更新について拡張可能なスイッチ拡張機能に通知するために、オブジェクト識別子 (OID) セット要求を OID_SWITCH_PORT_UPDATED に発行します。
 ms.assetid: 7FDC963A-92E4-49B2-AB77-FA9C92EEBC25
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_PORT_UPDATED ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_PORT_UPDATED
 ms.localizationpriority: medium
 ms.openlocfilehash: 85ca05120af6b5e93967db03b59fad6a1613684c
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

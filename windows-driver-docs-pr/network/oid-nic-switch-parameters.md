@@ -1,9 +1,9 @@
 ---
 title: OID_NIC_SWITCH_PARAMETERS
-description: ネットワークアダプター上で指定された NIC スイッチの現在の構成パラメーターを取得するために、OID_NIC_SWITCH_PARAMETERS のオブジェクト識別子 (OID) メソッドの要求が、後続のドライバーによって発行されます。
+description: ネットワークアダプター上の指定した NIC スイッチの現在の構成パラメーターを取得するために、OID_NIC_SWITCH_PARAMETERS のオブジェクト識別子 (OID) メソッドの要求が、後のドライバーによって発行されます。
 ms.assetid: 3F2FF2C0-8710-4243-8583-CD80F244FCFB
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NIC_SWITCH_PARAMETERS ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NIC_SWITCH_PARAMETERS
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f0b640dae8975c188fd0a0b6dd82076dbb7b58
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -80,7 +80,7 @@ NDIS または PF ミニポートドライバーは、OID\_NIC\_スイッチ\_�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが短すぎます。 NDIS または PF ミニポートドライバーは、データを設定し<strong>ます。METHOD_INFORMATION.BytesNeeded な</strong>メンバー (OID メソッド要求の場合) または<strong>データ。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の BYTESNEEDED メンバー (OID セット要求の場合) が必要な最小バッファーサイズに設定されている必要があります。</p></td>
+<td><p>情報バッファーが短すぎます。 NDIS または PF ミニポートドライバーは、データを設定し<strong>ます。METHOD_INFORMATION。BytesNeeded な</strong>メンバー (OID メソッド要求の場合) または<strong>データ。SET_INFORMATION。</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>構造体の bytesneeded メンバー (OID セット要求の場合) が、必要な最小バッファーサイズに設定されている必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_REINIT_REQUIRED</p></td>

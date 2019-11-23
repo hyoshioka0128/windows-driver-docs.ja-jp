@@ -31,7 +31,7 @@ OID 要求を取り消すには、 [**NdisCancelOidRequest**](https://docs.micro
 
 中間ドライバー自体が、基になるミニポートに設定要求を渡すのではなく、OID の設定を処理する場合は、設定する値を検証する必要があります。 中間ドライバーが、設定する値が範囲外であると判断した場合、設定された要求は失敗します。
 
-**注**  中間のドライバーが、基盤となるミニポートドライバーに転送する tcp ネットワークデータの内容を変更して、ネットワークデータで tcp オフロード機能を実行できない場合は、中間ドライバーが応答する必要があることに注意してください。[OID\_TCP\_オフロード\_現在の\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)クエリの状態は、NDIS\_status\_は、要求を基になるミニポートに渡すのではなく、\_サポートされていません。
+**注**  中間のドライバーが、基になるミニポートドライバーに転送される tcp ネットワークデータの内容を変更して、tcp オフロード機能をネットワークデータで実行できない場合は、中間ドライバーは、要求を基になるミニポートに渡すのではなく、 [\_TCP\_オフロード\_現在の\_構成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)クエリに応答します。\_\_\_
 
  
 

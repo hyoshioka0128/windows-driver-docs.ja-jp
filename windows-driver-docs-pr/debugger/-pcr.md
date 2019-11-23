@@ -64,7 +64,7 @@ PCR 情報を取得するプロセッサを指定します。 *プロセッサ*�
 
 PCR と PRCB の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 プロセッサ制御ブロック (PRCB) は、PCR の拡張機能です。 これは、 [ **! prcb**](-prcb.md)拡張機能と共に表示できます。

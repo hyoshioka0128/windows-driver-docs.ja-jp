@@ -25,9 +25,9 @@ ms.locfileid: "72826051"
 
 ドライバーは、コマンドストリームで後に続く D3DDP2OP\_TEXTURESTAGESTATE operation コードと[**D3DHAL\_DP2TEXTURESTAGESTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)構造体を使用して、テクスチャステージの状態への変更を処理します。 ドライバーが操作コードを処理する方法の詳細については、「[コマンドストリーム](command-stream.md)」を参照してください。
 
-たとえば、操作コードが D3DDP2OP\_TEXTURESTAGESTATE で、 [**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体の**wstatecount**メンバーの値が7の場合、7 D3DHAL\_DP2TEXTURESTAGESTATE 構造体次の D3DHAL\_DP2COMMAND 命令に到達する前にフォローします。 各 D3DHAL\_DP2TEXTURESTAGESTATE 構造体には、テクスチャ描画パイプラインのどのステージにテクスチャ状態を変更する必要があるかを指定する**Dwstage**メンバーが含まれています。 同じ構造体の**Tsstate**メンバーは、設定する D3DTEXTURESTAGESTATETYPE 列挙型の状態を指定します。また、\_D3DHAL の DP2TEXTURESTAGESTATE 構造体の**dwValue**メンバーには、指定したの値が含まれます。状態を設定する必要があります。
+たとえば、操作コードが D3DDP2OP\_TEXTURESTAGESTATE で、 [**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体の**wstatecount**メンバーの値が7の場合、次の D3DHAL\_DP2TEXTURESTAGESTATE 命令に到達する前に、7つの D3DHAL\_DP2COMMAND 構造体に従います。 各 D3DHAL\_DP2TEXTURESTAGESTATE 構造体には、テクスチャ描画パイプラインのどのステージにテクスチャ状態を変更する必要があるかを指定する**Dwstage**メンバーが含まれています。 同じ構造体の**tsstate**メンバーは、設定する D3DTEXTURESTAGESTATETYPE 列挙型の状態を指定します。また、D3DHAL\_DP2TEXTURESTAGESTATE 構造体の**dwValue**メンバーには、指定された状態を設定する必要がある値が含まれます。
 
-このプロセスは、すべてのレンダリング状態、または他の種類の命令で同じです。 [**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体の**BCOMMAND**メンバーが D3DDP2OP\_renderstate の場合、従う構造は[**D3DHAL\_DP2RENDERSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)構造体であり、その構造体の情報を使用してを設定します。それに応じたレンダリング状態。
+このプロセスは、すべてのレンダリング状態、または他の種類の命令で同じです。 [**D3DHAL\_DP2COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2command)構造体の**BCOMMAND**メンバーが D3DDP2OP\_renderstate の場合、従う構造は[**D3DHAL\_DP2RENDERSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)構造体であり、その構造体の情報を使用してレンダリング状態が適切に設定されます。
 
 個々のブール値のレンダリング状態を使用して座標を制御するのではなく、各レンダリング状態の値は、D3DWRAP\_で構成される一連のフラグ ( *d3dtypes*で定義されている)\_V フラグで構成されます。 この変更は、より高い次元のテクスチャとの互換性のために行われました。
 

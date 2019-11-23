@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_RECEIVE
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_RECEIVE 通知を使用して、OID_WWAN_SMS_READ \ 160; クエリ要求による前の読み取り要求の完了、またはからの新しいクラス-0 (フラッシュ/アラート) メッセージの到着を MB サービスに通知します。イベント通知としてのネットワークプロバイダー。 ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。この通知では、NDIS_WWAN_SMS_RECEIVE 構造体が使用されます。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_SMS_RECEIVE 通知を使用して、MB サービスに対して、OID_WWAN_SMS_READ \ 160; クエリ要求による前回の読み取り要求の完了、またはネットワークプロバイダーからのイベント通知としての新しい class-0 (flash/alert) メッセージの到着を知らせます。 ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。この通知では、NDIS_WWAN_SMS_RECEIVE 構造を使用します。
 ms.assetid: fc1c3587-8bba-4ffd-9561-4140c307c705
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の NDIS_STATUS_WWAN_SMS_RECEIVE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_SMS_RECEIVE
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bef42d6826fe96369f866fdcff38bcc6c9f2f6f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72844635"
 # <a name="ndis_status_wwan_sms_receive"></a>NDIS\_ステータス\_WWAN\_SMS\_受信
 
 
-ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_を使用して、MB サービスに対して、 [OID\_wwan\_sms](oid-wwan-sms-read.md)\_の読み取りに関する前の読み取り要求の完了を通知し クエリ要求、またはネットワークプロバイダーからのイベント通知としての新しい class-0 (flash/alert) メッセージの到着。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_SMS\_を使用して、MB サービスに対して以前の読み取り要求の完了に関する情報を MB サービスに通知します。これには、 [OID\_WWAN\_sms](oid-wwan-sms-read.md)\_のクエリ要求の読み取り、またはネットワークプロバイダーからの新しいクラス 0 (フラッシュ/アラート) メッセージのイベント通知が返されます。 
 
 ミニポートドライバーは、この通知を使用して、要請されていないイベントも送信できます。
 

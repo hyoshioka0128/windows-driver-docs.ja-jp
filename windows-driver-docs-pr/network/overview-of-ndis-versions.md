@@ -23,7 +23,7 @@ ms.locfileid: "72843734"
 この一連の設計ガイドドキュメントは、Windows Vista 以降のオペレーティングシステムおよび NDIS 6.0 以降のドライバーを対象としています。 以前のバージョンの Windows と NDIS のドキュメントは、ドキュメントの前のリリースに含まれています。 Windows XP および NDIS 5.1 のドキュメントについては、「 [windows 2000 および WINDOWS XP ネットワーク設計ガイド](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565849(v=vs.85))」を参照してください。
 
 > [!NOTE]
-> ドライバーは、*キーワード*Parameter を**NdisVersion**に設定して[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)関数を呼び出すことによって、NDIS バージョンに対してクエリを実行できます。 
+> ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration) 関数と、 *キーワード* パラメーターに設定 **NdisVersion**. 
 
 次の表では、windows オペレーティングシステム、Microsoft Windows Driver Kit (WDK)、およびドライバー開発キット (DDK) バージョンの NDIS バージョンサポート、および ndis バージョン間での主要な NDIS 機能のサポートについて説明します。
 
@@ -66,7 +66,7 @@ ms.locfileid: "72843734"
 | Windows 10 バージョン 1511 | 「 [Windows ハードウェア開発キットのダウンロード」を](https://go.microsoft.com/fwlink/p/?linkid=239721)参照してください。 | 6.51 | X | X | X |
 | Windows 10、バージョン1607、および Windows Server 2016 | 「 [Windows ハードウェア開発キットのダウンロード」を](https://go.microsoft.com/fwlink/p/?linkid=239721)参照してください。 | 6.60 | X | X | X |
 |   |   | NDIS 6.60 の機能の詳細については、「 [ndis 6.60 の概要](introduction-to-ndis-6-60.md)」を参照してください。 | 
-| Windows 10 バージョン 1703 | 「 [Windows ハードウェア開発キットのダウンロード」を](https://go.microsoft.com/fwlink/p/?linkid=239721)参照してください。 | 6.70 | X | X | X |
+| Windows 10 Version 1703 | 「 [Windows ハードウェア開発キットのダウンロード」を](https://go.microsoft.com/fwlink/p/?linkid=239721)参照してください。 | 6.70 | X | X | X |
 |   |   | NDIS 6.70 coincided には、ネットワークアダプター WDF クラス拡張のプレビューリリースがあります。 [NetAdapterCx](../netcx/index.md)。<p>NDIS 6.70 の機能の詳細については、「 [ndis 6.70 の概要](introduction-to-ndis-6-70.md)」を参照してください。</p> |
 | Windows 10 バージョン 1709 | 「 [Windows ハードウェア開発キットのダウンロード」を](https://go.microsoft.com/fwlink/p/?linkid=239721)参照してください。 | 6.80 | X | X | X |
 |   |   | NDIS 6.80 の機能の詳細については、「 [ndis 6.80 の概要](introduction-to-ndis-6-80.md)」を参照してください。 | 

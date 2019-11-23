@@ -1,6 +1,6 @@
 ---
-title: デバイススタックがダブルの操作フロー
-description: デバイススタックがダブルの操作フロー
+title: ダブル デバイス スタックでの操作フロー
+description: ダブル デバイス スタックでの操作フロー
 ms.assetid: a717b9c0-b24a-4347-8b0a-254a17238b5f
 keywords:
 - 操作フロー WDK UMDF
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840393"
 ---
-# <a name="operation-flow-with-double-device-stack"></a>デバイススタックがダブルの操作フロー
+# <a name="operation-flow-with-double-device-stack"></a>ダブル デバイス スタックでの操作フロー
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

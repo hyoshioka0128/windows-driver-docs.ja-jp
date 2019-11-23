@@ -24,13 +24,13 @@ ms.locfileid: "72844217"
 
 -   VF は、ゲストオペレーティングシステムがまだ実行されている Hyper-v 子パーティションからデタッチされています。 この場合、前のドライバーは OID セット要求を発行して、VM ネットワークアダプターの受信フィルターを既定以外の VPort から、PF に接続されている既定の VPort に移動します。 この場合、パケットトラフィックは合成データパスに戻ります。
 
-受信フィルターを1つの VPort から別の VPort に移動するには、その後のドライバーが oid セットの oid 要求を発行[\_、\_フィルター\_移動\_フィルターを受け取り](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)ます。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)\_\_パラメーター構造へのポインターが含まれています。
+受信フィルターを1つの VPort から別の VPort に移動するには、その後のドライバーが oid セットの oid 要求を発行[\_、\_フィルター\_移動\_フィルターを受け取り](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)ます。 [**Ndis\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体の**informationbuffer**メンバーには、 [**ndis\_受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)\_\_パラメーター構造へのポインターが含まれています。\_
 
-それより前のドライバーが[\_\_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)を発行する前に、フィルター要求\_フィルター要求\_移動するために、NDIS を初期化する必要があります\_\_を[**受信\_フィルター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)\_\_ののを移動ます。構造体は次のようになります。
+それ以降のドライバーは、 [\_フィルターを受け取る OID\_受信](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)する前に、フィルター要求\_フィルター要求\_移動\_\_の受信\_フィルター\_、次のように\_のパラメーター構造を[**移動**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)する必要があります。
 
 -   このドライバーは、 **Filterid**メンバーを、以前に割り当てられた受信フィルターの識別子の識別子に設定します。
 
-    これまでのドライバーでは、以前の OID メソッドの Oid の要求からフィルター識別子を取得した  [\_受信\_フィルター\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)されている**ことに注意**してください\_フィルター\_[列挙\_列挙\_列挙 @no__ フィルター (_s)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)
+    これまでのドライバーでは、以前の OID メソッドの Oid 要求からフィルター識別子を取得した  [\_受信\_フィルター\_設定さ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)れている**ことに注意**してください\_フィルター\_列挙\_フィルター\_列挙\_フィルター[列挙](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)します。
 
      
 

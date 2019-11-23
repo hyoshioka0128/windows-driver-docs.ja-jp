@@ -26,11 +26,11 @@ ms.locfileid: "72837234"
 
 ドライバーは、デバイスの[拡張機能](device-extensions.md)内のシステム割り当て領域を、デバイス固有の情報のグローバルストレージ領域として使用できます。 ドライバーは、カーネルスタックのみを使用して、少量のデータを内部ルーチンに渡すことができます。 一部のドライバーでは、多くの場合、i/o バッファー用に追加の大量のシステム領域メモリを割り当てる必要があります。
 
-I/o バッファー領域を割り当てるには、使用する最適なメモリ割り当てルーチンは、 [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) (ドライバーのデバイスでバスマスタ dma またはシステム DMA が使用されている場合) です。コントローラーの自動初期化モード)、または[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)。
+I/o バッファー領域を割り当てるには、使用する最適なメモリ割り当てルーチンは、 [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) (ドライバーのデバイスでバスマスタ dma またはシステム dma コントローラーの自動初期化モードが使用されている場合)、または[**exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)です。
 
 通常、非ページプールはシステムの実行中に断片化されます。そのため、ドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)ルーチンは、これらのルーチンを呼び出して、ドライバーが必要とするすべての長期的な i/o バッファーを設定する必要があります。 これらの各ルーチン ( [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)を除く) は、最適なパフォーマンスを提供するために、プロセッサ固有の境界 (プロセッサのデータキャッシュラインサイズによって決まります) にアラインされたメモリを割り当てます。
 
-非ページプールメモリはシステムリソースが限られているので、ドライバーは可能な限り経済的に i/o バッファーを割り当てる必要があります。 通常、ドライバーでは、これらのサポートルーチンを繰り返し呼び出して、ページ\_サイズ未満の割り当てを要求することを回避する必要があります。これは、ページ\_サイズよりも小さい割り当てには、内部管理に使用されるプールヘッダーも付属しているためです。割当て.
+非ページプールメモリはシステムリソースが限られているので、ドライバーは可能な限り経済的に i/o バッファーを割り当てる必要があります。 通常、ドライバーでは、これらのサポートルーチンを繰り返し呼び出して、ページ\_サイズ未満の割り当てを要求することを回避する必要があります。これは、ページ\_サイズより小さい割り当てにも、割り当てを内部で管理するために使用されるプールヘッダーが付属しているためです。
 
 ### <a name="tips-for-allocating-driver-buffer-space-economically"></a>ドライバーのバッファー領域を経済的に割り当てるためのヒント
 

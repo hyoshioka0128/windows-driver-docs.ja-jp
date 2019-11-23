@@ -3,7 +3,7 @@ title: FSCTL_FIND_FILES_BY_SID 制御コード
 description: '\_SID 制御コードによって\_された\_ファイルを検索\_は、指定した SID に一致するクリエーターと所有者があるファイルをディレクトリで検索します。'
 ms.assetid: fe0953d3-a009-431b-b03b-5d827dc732a1
 keywords:
-- FSCTL_FIND_FILES_BY_SID 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_FIND_FILES_BY_SID コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:

@@ -32,7 +32,7 @@ PF ミニポートドライバーは、Hyper-v の親パーティションの管
 
 その後のドライバーは、oid の OID メソッド要求を発行することによって、VF のソフトウェアリソースの割り当てを要求できます。そのためには[\_vf\_割り当てるために、oid\_NIC\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)を使用します。 OID 要求の[ **\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体へのポインターが含まれています。
 
-OID 要求から正常に復帰した後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)へのポインターが含まれ\_VF\_パラメーターデータ. この構造体には、アダプター固有の VF 識別子と PCI 要求元識別子 (RID) があります。 これらの識別子は、次の方法で使用されます。
+OID 要求から正常に返された後、 [**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造の**informationbuffer**メンバーには、 [**ndis\_NIC\_スイッチ\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)構造体へのポインターが含まれています。 この構造体には、アダプター固有の VF 識別子と PCI 要求元識別子 (RID) があります。 これらの識別子は、次の方法で使用されます。
 
 -   この後のドライバーは、次のように、VF に関連するアクションで VF 識別子を使用します。
 
@@ -46,7 +46,7 @@ OID 要求から正常に復帰した後、 [**ndis\_oid\_要求**](https://docs
 
 追加のドライバーが[oid\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)を発行する方法の詳細については\_スイッチを使用して\_\_vf メソッド要求を割り当てる方法については、「OID\_nic\_の発行」を参照して[\_VF 要求の割り当て](issuing-oid-nic-switch-allocate-vf-requests.md)\_ます。
 
-PF ミニポートドライバーが[oid\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)を処理する方法の詳細については\_スイッチを使用して\_\_vf メソッド要求を割り当てる方法については、「OID\_NIC の処理」を参照して\_[VF 要求の割り当て](handling-oid-nic-switch-allocate-vf-requests.md)\_ます。
+PF ミニポートドライバーが[oid\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)を処理する方法の詳細については\_スイッチを使用して\_\_vf メソッド要求を割り当てる方法については、「OID\_NIC の処理」を参照して\_[VF 要求の割り当て](handling-oid-nic-switch-allocate-vf-requests.md)\_ます。\_
 
 \_\_NIC の OID メソッド要求を使用して vf のリソースが割り当てられた後に  、 [\_\_vf の割り当て](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)、vf のリソースパラメーターを動的に変更**することは**できません。
 

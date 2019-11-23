@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0x93 INVALID_KERNEL_HANDLE
-description: INVALID_KERNEL_HANDLE のバグチェックの値は、0x00000093 です。 このバグチェックは、無効または保護されたハンドルが NtClose に渡されたことを示します。
+description: INVALID_KERNEL_HANDLE バグチェックの値は0x00000093 です。 このバグチェックは、無効または保護されたハンドルが NtClose に渡されたことを示します。
 ms.assetid: c8564da7-cdbf-40f5-94f4-b1fac23b8b42
 keywords:
 - バグチェック 0x93 INVALID_KERNEL_HANDLE
@@ -20,15 +20,15 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/10/2019
 ms.locfileid: "72258414"
 ---
-# <a name="bug-check-0x93-invalid_kernel_handle"></a>バグ チェック 0x93:@ NO__T-0KERNEL @ NO__T ハンドルが無効です。
+# <a name="bug-check-0x93-invalid_kernel_handle"></a>バグチェック 0x93: 無効な\_カーネル\_ハンドル
 
 
-無効な @ no__t-0KERNEL @ no__t ハンドルのバグチェックには、値0x00000093 が指定されています。 このバグチェックは、無効または保護されたハンドルが**Ntclose**に渡されたことを示します。
+無効な\_カーネル\_ハンドルのバグチェックには、0x00000093 という値が指定されています。 このバグチェックは、無効または保護されたハンドルが**Ntclose**に渡されたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="invalid_kernel_handle-parameters"></a>@ No__t-0KERNEL @ no__t ハンドルパラメーターが無効です。
+## <a name="invalid_kernel_handle-parameters"></a>\_カーネル\_ハンドルパラメーターが無効です
 
 |パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
@@ -38,7 +38,7 @@ ms.locfileid: "72258414"
 
 ## <a name="cause"></a>原因
 
-INVALID_KERNEL_HANDLE のバグチェックは、一部のカーネルコード (サーバー、リダイレクター、または他のドライバーなど) が無効なハンドルまたは保護ハンドルを閉じようとしたことを示します。
+INVALID_KERNEL_HANDLE のバグチェックは、一部のカーネルコード (サーバー、リダイレクター、その他のドライバーなど) が無効なハンドルまたは保護ハンドルを閉じようとしたことを示します。
 
 パラメーター4の値が1の場合は、無効なカーネルハンドルの参照中にエラーが発生し、無効なハンドル検出が有効になったことを示します。
 

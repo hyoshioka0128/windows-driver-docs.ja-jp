@@ -19,9 +19,9 @@ ms.locfileid: "72844899"
 ## <a name="querying-nvgre-task-offload-state"></a>NVGRE タスクオフロードの状態を照会しています
 
 
-ミニポートドライバーの現在の NVGRE タスクオフロード状態を照会するために、NDIS プロトコルまたはフィルタードライバーは、現在の\_CONFIG oid 要求の[\_TCP\_オフロード\_の oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)を使用します。 これにより、ndis [ **\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_offload_handle)構造が返されます。この構造体は、 **EncapsulatedPacketTaskOffloadGre**メンバーが、NDIS を含む[ **\_パケット\_タスク\_オフロード構造\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)されてい **\_の\_オフ**ロードは、GRE でカプセル化されたパケットに対して現在有効になっている場合はサポートされて\_います。それ以外の場合は、 **NDIS\_offload\_** サポートされません。 NDIS はこの OID を処理し、ミニポートには渡しません。
+ミニポートドライバーの現在の NVGRE タスクオフロード状態を照会するために、NDIS プロトコルまたはフィルタードライバーは、現在の\_CONFIG oid 要求の[\_TCP\_オフロード\_の oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)を使用します。 これにより、ndis [ **\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_offload_handle)構造が返されます。これは、 **EncapsulatedPacketTaskOffloadGre**メンバーが、 [ **\_パケット\_タスク\_\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)されています。これらのオフロードが、GRE でカプセル化されたパケットに対して現在有効になっている場合は、**サポート**されて**いません**。\_\_\_\_\_ NDIS はこの OID を処理し、ミニポートには渡しません。
 
-**注  :** ミニポートドライバーで nvgre タスクオフロードがサポートされているかどうかを判断するには、「Nvgre タスクオフロードの決定」の説明に従って、 [\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)の oid 要求を使用してください。 [ネットワークアダプターの機能](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)。
+**注**  ミニポートドライバーが nvgre タスクオフロードをサポートしているかどうかを判断するには、[ネットワークアダプターの Nvgre タスクオフロード機能の決定](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)に関するページで説明されているように、 [\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)の oid 要求を使用します。
 
  
 
@@ -59,9 +59,9 @@ NDIS プロトコルまたはフィルタードライバーは、 [oid\_TCP\_オ
 
  
 
-ミニポートドライバーは、 [\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求の oid を処理した後で、 [**NDIS\_ステータス\_タスク\_オフロード\_現在の\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態表示を発行する必要があります。を更新し、オフロード状態にします。
+ミニポートドライバーは、 [\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求の oid を処理した後で、 [**NDIS\_ステータス\_タスク**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)を発行する必要があります。また、現在の\_構成状態を更新し、更新されたオフロード状態を示します。\_\_
 
-ミニポートドライバーが[oid\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求を受信すると、 **NDIS\_オフロード\_SET\_OFF**フラグが指定されている場合、ドライバーは既存のカプセル化を示す必要があります。タスク用に部分的に処理されたパケットは、OID 要求を完了する前にスタックをオフロードします。
+ミニポートドライバーが[oid\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) oid 要求を受信したときに、 **NDIS\_オフロード\_SET\_OFF**フラグが指定されている場合、ドライバーは、oid 要求を完了する前に、タスクに対して部分的に処理されるすべてのカプセル化されたパケットに対してスタックをオフロードします。
 
 標準パケットの基本タスク[オフロードは、oid\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)や\_oid などの既存の oid によって有効になり[\_キュー\_割り当て\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)ます。 **EncapsulatedPacketTaskOffload**メンバー設定は、これらの oid を補完し、カプセル化されたパケットのオフロードも行うように NIC に指示します。
 

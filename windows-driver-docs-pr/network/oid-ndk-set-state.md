@@ -3,7 +3,7 @@ title: OID_NDK_SET_STATE
 description: NDIS およびそれ以降のドライバーは、set 要求として、OID_NDK_SET_STATE OID を使用して、ミニポートアダプターの NDK 機能の状態を設定します。
 ms.assetid: 5BA49F42-FE37-4860-B68F-92A7F4007639
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_NDK_SET_STATE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_NDK_SET_STATE
 ms.localizationpriority: medium
 ms.openlocfilehash: 017e0e4a059b37e0e9b0470366b510ea34af4650
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

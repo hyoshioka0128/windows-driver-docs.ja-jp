@@ -33,25 +33,25 @@ ms.locfileid: "72844841"
 
 すべての NET\_BUFFER\_LIST 構造体をリンクした後、ミニポートドライバーは、リスト内の最初の NET\_BUFFER\_LIST 構造体へのポインターを**NdisMIndicateReceiveNetBufferLists**関数に渡します。 NDIS は、NET\_BUFFER\_LIST 構造体を調べ、NET\_BUFFER\_リスト構造に関連付けられている各プロトコルドライバーの[**ProtocolReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_receive_net_buffer_lists)関数を呼び出します。 NDIS は、各プロトコルドライバーへの適切なバインドに関連付けられている NET\_BUFFER\_LIST 構造のみを含むリストのサブセットを渡します。 NDIS は、NET\_BUFFER\_LIST 構造体で指定されている**NetBufferListFrameType**値を、各プロトコルドライバーが登録するフレームの種類に一致させることができます。
 
-プロトコルドライバーの*ProtocolReceiveNetBufferLists*関数に渡される*receiveflags*パラメーターで\_フラグ\_リソースフラグを受け取る ndis\_が設定されている場合、ndis は NET の所有権を取り戻す[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) *ProtocolReceiveNetBufferLists*呼び出しが返された直後に、バッファー\_リスト構造体。
+プロトコルドライバーの*ProtocolReceiveNetBufferLists*関数に渡される*receiveflags*パラメーターで\_FLAGS\_RESOURCES フラグを受け取る ndis\_が設定されている場合、ndis は、 *ProtocolReceiveNetBufferLists*呼び出しが返された直後に、 [**NET\_BUFFER の\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造の所有権を取得します。
 
 **注**  NDIS\_\_フラグ\_リソースフラグが設定されている場合、プロトコルドライバーは、リンクリストの元の NET\_BUFFER\_リスト構造を保持する必要があります。 たとえば、このフラグが設定されている場合、ドライバーは構造体を処理し、一度に1つずつスタックを示しますが、関数から制御が戻る前に、元のリンクリストを復元する必要があります。
 
  
 
-プロトコルドライバーの*ProtocolReceiveNetBufferLists*関数に渡される*receiveflags*パラメーターで\_フラグ\_リソースフラグを受け取る NDIS\_が設定されていない場合、プロトコルドライバーは NET の所有権を保持することができます。\_バッファー\_リスト構造体。 この場合、プロトコルドライバーは、 [**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)関数を呼び出すことによって、NET\_BUFFER\_LIST 構造体を返す必要があります。
+プロトコルドライバーの*ProtocolReceiveNetBufferLists*関数に渡される*receiveflags*パラメーターで\_フラグ\_リソースフラグを受け取る NDIS\_が設定されていない場合、プロトコルドライバーは、NET\_BUFFER\_リスト構造の所有権を保持できます。 この場合、プロトコルドライバーは、 [**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)関数を呼び出すことによって、NET\_BUFFER\_LIST 構造体を返す必要があります。
 
 ミニポートドライバーで受信リソースが不足している場合は、 **NdisMIndicateReceiveNetBufferLists**の呼び出しの*receiveflags*パラメーターで、NDIS\_RECEIVE\_FLAGS\_resources フラグを設定できます。 この場合、ドライバーは、 **NdisMIndicateReceiveNetBufferLists**がを返すとすぐに、指定されたすべての[**net\_buffer\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造と埋め込みの[**net\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)構造の所有権を再利用できます。 NDIS\_受信\_フラグ\_リソースフラグが設定された NET\_バッファー構造を指定すると、プロトコルドライバーによってデータが強制的にコピーされるため、回避する必要があります。 ミニポートドライバーは、受信リソースが不足していることを検出し、この状況を回避するために必要な手順を実行します。
 
 NDIS は、プロトコルドライバーが**NdisReturnNetBufferLists**を呼び出すと、ミニポートドライバーの[*Miniportreturnnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)関数を呼び出します。
 
-  ミニポートドライバーによって、NDIS\_RECEIVE\_FLAGS\_RESOURCES フラグが設定された、\_バッファー\_のリスト構造が示されている場合には、NDIS が NET\_BUFFER\_LIST を示しているわけではないことに**注意**してください。同じ状態のプロトコルドライバーへの構造。 たとえば、NDIS は、NDIS\_RECEIVE\_FLAGS\_RESOURCES フラグを設定して、NET\_BUFFER\_LIST 構造体をコピーし、フラグがクリアされた状態でプロトコルドライバーへのコピーを示すことができます。
+  ミニポートドライバーによって、\_NDIS によって\_バッファー\_の一覧構造が指定されている場合は、\_リソースフラグが設定されていることを**確認**します。これは、ndis が同じ状態のプロトコルドライバーに対して NET\_BUFFER\_LIST 構造を示すという意味ではありません。\_ たとえば、NDIS は、NDIS\_RECEIVE\_FLAGS\_RESOURCES フラグを設定して、NET\_BUFFER\_LIST 構造体をコピーし、フラグがクリアされた状態でプロトコルドライバーへのコピーを示すことができます。
 
  
 
-NDIS は、任意の順序で任意の組み合わせで、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体をミニポートドライバーに返すことができます。 つまり、 *Miniportreturnnetbufferlists*関数の呼び出しによってミニポートドライバーに返される、NET\_BUFFER\_list 構造体のリンクリストは、前のさまざまな呼び出しからのネットワーク\_バッファー\_リスト構造を持つことができます。を**NdisMIndicateReceiveNetBufferLists**にします。
+NDIS は、任意の順序で任意の組み合わせで、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)構造体をミニポートドライバーに返すことができます。 つまり、 *Miniportreturnnetbufferlists*関数の呼び出しによってミニポートドライバーに返された、NET\_BUFFER\_list 構造体のリンクリストは、以前に**NdisMIndicateReceiveNetBufferLists**を呼び出したときのネットワーク\_バッファー\_リスト構造を持つことができます。
 
-ミニポートドライバーでは、NET\_BUFFER\_LIST 構造体の**Sourcehandle**メンバーを、NDIS が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数のミニポートドライバーに提供する*miniportadapterhandle*に設定する必要があります。 フィルタードライバーは、フィルタードライバーが[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)のフィルタードライバーに提供したフィルターの**NdisFilterHandle**に由来する、各 NET\_BUFFER\_LIST 構造体の**sourcehandle**メンバーを設定する必要があります。プロシージャ. フィルタードライバーは、フィルタードライバーによって送信されていないすべての NET\_BUFFER\_リスト構造の**Sourcehandle**メンバーを変更することはできません。
+ミニポートドライバーでは、NET\_BUFFER\_LIST 構造体の**Sourcehandle**メンバーを、NDIS が[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数のミニポートドライバーに提供する*miniportadapterhandle*に設定する必要があります。 フィルタードライバーは、フィルタードライバーが[*Filterattach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)関数のフィルタードライバーに渡されたフィルターの**NdisFilterHandle**に由来する、各 NET\_BUFFER\_LIST 構造体の**sourcehandle**メンバーを設定する必要があります。 フィルタードライバーは、フィルタードライバーによって送信されていないすべての NET\_BUFFER\_リスト構造の**Sourcehandle**メンバーを変更することはできません。
 
 また、中間ドライバーは、NET\_BUFFER\_LIST 構造体の**Sourcehandle**メンバーを、 *MiniportInitializeEx*関数の中間ドライバーに提供された*miniportadapterhandle*値に設定します。 中間ドライバーが受信通知を転送する場合、ドライバー**は sourcehandle メンバーに**書き込む前に、基になるドライバーが提供した**sourcehandle**値を保存する必要があります。 NDIS が転送された NET\_BUFFER\_LIST 構造体を中間ドライバーに返す場合、中間ドライバーは、保存した**Sourcehandle**を復元する必要があります。
 

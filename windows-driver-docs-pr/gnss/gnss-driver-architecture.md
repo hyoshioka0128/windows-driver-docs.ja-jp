@@ -34,9 +34,9 @@ GNSS UMDF 2.0 ドライバーアーキテクチャと i/o に関する考慮事�
 -   **Gnss アダプター:** これは、 **Ignssadapter** COM インターフェイスを実装するシングルトン com オブジェクトです。 テストアプリケーションとロケーションサービスの内部コンポーネントは、このオブジェクトをインスタンス化し、 **Ignssadapter**インターフェイスを介して gnss デバイスを使用します。 ロケーションサービスの GNSS ポジショニングエンジンコンポーネントは、 **Ignssadapter**インターフェイスを公開する COM クラスを実装します。 ロケーションサービスは、場所サービス内で GNSS adapter COM クラスのシングルトン COM オブジェクトをインスタンス化するために、テストおよびその他のアウトプロセスアプリケーションをテストするファクトリメカニズムを公開します。 アウトプロセスアプリケーションは、COM インターフェイスポインターを使用して、GNSS ドライバーに対してプログラムを実行します。
 
     > [!NOTE]
-    > COM はアウトプロセスアプリケーションへのインターフェイスポインターを処理します。これにより、アプリケーションは、プロセス内 COM オブジェクトとして**Ignssadapter**インターフェイスポインターを処理しますが、呼び出しは実際には、ロケーションサービス。
+    > COM はアウトプロセスアプリケーションへのインターフェイスポインターを処理します。これにより、アプリケーションは**Ignssadapter**インターフェイスポインターをインプロセス COM オブジェクトとして処理しますが、呼び出しは実際にロケーションサービス内のシングルトン gnss アダプターオブジェクトによって処理されます。
 
-    GNSS ポジショニングエンジンは、location service に場所固有の機能を提供するために、内部の GNSS アダプターオブジェクトを使用します。 GNSS アダプターは、 **CreateFile** API を使用して gnss ドライバーへのファイルハンドルを開き、gnss ネイティブ api 呼び出しを適切な**DeviceIoControl**呼び出しにラップして、gnss ドライバーオブジェクトを使用してステートマシンを管理し、上位層からのさまざまな受信要求。 このコンポーネントは、このドキュメントで定義されているパブリック GNSS IOCTL インターフェイスを介して、基になる GNSS デバイススタックと直接やり取りします。 GNSS デバイスは、論理的に排他的なリソースとして扱われるため、シングルトンのデバイスへのすべてのアクセスを制御します。
+    GNSS ポジショニングエンジンは、location service に場所固有の機能を提供するために、内部の GNSS アダプターオブジェクトを使用します。 GNSS アダプターは、 **CreateFile** API を使用して gnss ドライバーへのファイルハンドルを開き、gnss ネイティブ api 呼び出しを適切な**DeviceIoControl**呼び出しにラップして、gnss ドライバーオブジェクトを使用してステートマシンを保持し、上位層からのさまざまな受信要求の状態を維持します。 このコンポーネントは、このドキュメントで定義されているパブリック GNSS IOCTL インターフェイスを介して、基になる GNSS デバイススタックと直接やり取りします。 GNSS デバイスは、論理的に排他的なリソースとして扱われるため、シングルトンのデバイスへのすべてのアクセスを制御します。
 
     > [!NOTE]
     >特定のホワイトボックスドライバーテストアプリケーションでは、gnss プライベート Api を介して gnss アダプターを使用するのではなく、非運用環境で、GNSS ドライバーの IOCTL インターフェイスを直接使用することもでき  。 ただし、これらのテストアプリケーションでは、GNSS アダプターの特定の機能を模倣するために、独自のステートマシンと処理を実装する必要があります。
@@ -91,7 +91,7 @@ GNSS アダプターと GNSS ドライバー間の相互作用は、次のカテ
 
 Windows プラットフォームでの GNSS スタックの拡張性と適応性をサポートするために、GNSS アダプターと GNSS ドライバーは、基になる GNSS スタックの明確に定義されたさまざまな機能に加えて、Windows プラットフォーム。 機能の側面は、この GNSS インターフェイス定義の一部として Microsoft によって適切に定義されています。また、GNSS でのイノベーションが続き、市場でさまざまなチップセット/ドライバーが登場していくにつれて進化します。 GNSS アダプターは、初期化時または必要に応じて、基になる GNSS ドライバー/デバイスのさまざまな機能を照会し、それに従って、GNSS ドライバーとの対話を最適化します。
 
-GNSS アダプターと GNSS ドライバー間の機能情報交換は、 [ **\_プラットフォーム\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability)および ioctl\_\_を送信することによって、 [ **\_デバイスを取得することにより、\_の制御コードを使用して実行されます。\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)。
+GNSS アダプターと GNSS ドライバーとの間の機能情報交換は、 [ **\_プラットフォーム\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability)および ioctl\_\_を送信することによって、[**デバイス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)の\_機能を取得するという制御コード\_使用します。\_
 
 ### <a name="gnss-driver-command-and-configuration"></a>GNSS ドライバーのコマンドと構成
 
@@ -194,7 +194,7 @@ GNSS ドライバーは自身の上位層への要求を開始できないため
 
 ドライバーからの通知は、共通のイベントモデルを通じて処理されます。 たとえば、GNSS アシスタンスの場合、GNSS アダプターは、gnss [ **\_リッスン\_AGNSS を\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss)使用して、gnss ドライバーからの AGNSS 要求を受信します。 その後、GNSS アダプターは AGNSS アシスタンスデータをフェッチし、AGNSS を挿入して、gnss ドライバーにデータをプッシュする[ **\_を挿入\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss)します。
 
-この通知メカニズムは、ジオフェンスに関連するアラートデータとステータスの更新を受信するためにも使用されます。 このアダプターでは、 [ **\_\_ジオフェンス\_警告**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)を使用して個々のジオフェンスアラートを受信するように\_、また[**ioctl\_GNSS\_listen\_ジオフェンス\_trackingstatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)という制御コード ioctl を使用します。ジオフェンス追跡の全体的な状態の変更を受信します。
+この通知メカニズムは、ジオフェンスに関連するアラートデータとステータスの更新を受信するためにも使用されます。 このアダプターでは、ジオフェンスのアラートを受信するためのコントロールコード[**IOCTL\_\_リッスン\_ジオフェンス\_アラート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)を使用します。また、 [**ioctl\_GNSS\_リッスン\_ジオフェンス\_trackingstatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)を使用して、ジオフェンス追跡の全体的な状態の変更を受信します。
 
 ### <a name="gnss-driver-logging"></a>GNSS ドライバーのログ記録
 
@@ -529,7 +529,7 @@ GNSS アダプターは、追跡セッションを要求した1つまたは複�
 <td><p>モデムを使用したセッションは、TBT 間隔と同じになるように、新しい間隔に更新されます。 必要に応じて、モデムセッションを再起動します。</p></td>
 <td><p>SS セッションの動作:</p>
 <ul>
-<li><p>適用なし</p></li>
+<li><p>該当なし</p></li>
 </ul>
 <p>TBT セッションの動作:</p>
 <ul>
@@ -602,29 +602,29 @@ GNSS アダプターは、追跡セッションを要求した1つまたは複�
 <tr class="odd">
 <td><p>ケース1</p></td>
 <td><p>中/低--&gt; 高</p></td>
-<td><p>適用なし</p></td>
+<td><p>該当なし</p></td>
 <td><p>中/低--&gt; 高</p></td>
 <td><p><strong>SS セッションの動作:</strong>GNSS デバイスとのセッションが更新されるか再起動され、高精度の結果が得られます。 中級者向けの修正プログラムは、使用可能な場合に提供されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>ケース2</p></td>
 <td><p>高--&gt; 中/低</p></td>
-<td><p>適用なし</p></td>
+<td><p>該当なし</p></td>
 <td><p>高--&gt; 中/低</p></td>
 <td><p><strong>SS セッションの動作:</strong>GNSS デバイスとのセッションが更新または再起動され、中/低精度の結果を取得します。 要件を満たす修正プログラムが既に提供されている場合は、最終的な修正プログラムとして返されます。 それ以外の場合は、中間の修正プログラムが利用可能になったときに HLOS に提供されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ケース3</p></td>
 <td><p>中/低--&gt; 高</p></td>
-<td><p>[高]</p></td>
-<td><p>[高]</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
 <td><p><strong>SS セッションの動作:</strong>DBT または TBT セッションに対して高精度のセッションが既に存在する場合、SS セッションでは、最終的な精度が得られるまで、または最終修正が取得されるまで、HLOS に対してさらに詳細な修正が提供されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>ケース4</p></td>
 <td><p>高--&gt; 中/低</p></td>
-<td><p>[高]</p></td>
-<td><p>[高]</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
 <td><p><strong>SS セッションの動作:</strong>DBT または TBT セッションに対して高精度のセッションが既に存在する場合、SS セッションでは、最終的な精度が得られるまで、または最終修正が取得されるまで、HLOS に対してさらに詳細な修正が提供されます。</p></td>
 </tr>
 <tr class="odd">
@@ -644,28 +644,28 @@ GNSS アダプターは、追跡セッションを要求した1つまたは複�
 </tr>
 <tr class="odd">
 <td><p>ケース7</p></td>
-<td><p>適用なし</p></td>
+<td><p>該当なし</p></td>
 <td><p>中/低--&gt; 高</p></td>
 <td><p>中/低--&gt; 高</p></td>
 <td><p><strong>DBT または TBT セッションの動作:</strong>GNSS デバイスとのセッションは、高精度の結果を得るために更新または再起動されます。 中級者向けの修正プログラムは、使用可能な場合に提供されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>ケース8</p></td>
-<td><p>適用なし</p></td>
+<td><p>該当なし</p></td>
 <td><p>高--&gt; 中/低</p></td>
 <td><p>高--&gt; 中/低</p></td>
 <td><p><strong>DBT または TBT セッションの動作:</strong>GNSS デバイスとのセッションが更新または再起動され、中/低精度の結果を取得します。 要件を満たす修正プログラムが既に提供されている場合は、最終的な修正プログラムとして返されます。 それ以外の場合は、中間の修正プログラムが利用可能になったときに HLOS に提供されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ケース9</p></td>
-<td><p>[高]</p></td>
+<td><p>高</p></td>
 <td><p>中/低--&gt; 高</p></td>
-<td><p>[高]</p></td>
+<td><p>高</p></td>
 <td><p><strong>DBT または TBT セッションの動作:</strong>セッションは既に精度の高い修正プログラムまたは中間の修正プログラムを取得しているため、変更はありません。</p></td>
 </tr>
 <tr class="even">
 <td><p>ケース10</p></td>
-<td><p>[高]</p></td>
+<td><p>高</p></td>
 <td><p>高--&gt; 中/低</p></td>
 <td><p>その後、SS セッションが完了した後、高/低に変更されます。</p></td>
 <td><p><strong>DBT または TBT セッションの動作:</strong>セッションは、SS セッションが完了するまで、高精度の修正または中間の修正を引き続き取得できます。 その後、中/低精度の修正に変更されます。</p></td>

@@ -65,9 +65,9 @@ Id のモーフィングを示すモバイルブロードバンドデバイス�
 
 次のサブトピックで詳細に説明されている、MB のインターフェイスモデル。
 
-[Mb インターフェイス使用条件](mb-interface-terms.md)
-[mb 共用体関数記述子](mb-union-function-descriptors.md)
-[mb id モーフィング](mb-identity-morphing.md)
+[Mb インターフェイス用語](mb-interface-terms.md)
+[Mb 和集合関数記述子](mb-union-function-descriptors.md)
+[Mb Id のモーフィング](mb-identity-morphing.md)
 [mb インターフェイスモデル補助](mb-interface-model-supplement.md)
  
 

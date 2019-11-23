@@ -14,7 +14,7 @@ ms.locfileid: "72824722"
 # <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>リモート NDIS QoS パラメーターへの変更の表示
 
 
-NDIS Quality of Service (QoS) をサポートするミニポートドライバーでは、 [**ndis\_の状態\_qos\_リモート\_\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)に関する問題が発生し、そのリモート NDIS QoS パラメーターがピアから受信されたときに状態が示されます。初めての場合、または後で変更する場合。 ミニポートドライバーは、IEEE 802.1 Qaz Data Center ブリッジング Exchange (DCBX) プロトコルを使用して、リモートピアからこれらの QoS パラメーターを受信します。
+NDIS Quality of Service (QoS) をサポートするミニポートドライバーは、 [**ndis\_ステータス\_qos\_リモート\_\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を使用して、リモート NDIS QoS パラメーターがピアから最初に受信されたとき、または後で変更されたときに、ステータス表示を変更します。 ミニポートドライバーは、IEEE 802.1 Qaz Data Center ブリッジング Exchange (DCBX) プロトコルを使用して、リモートピアからこれらの QoS パラメーターを受信します。
 
 ミニポートドライバーは、次のガイドラインに従って、 [**NDIS\_ステータス\_QOS\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行して、状態の表示を変更\_必要があります。
 
@@ -24,7 +24,7 @@ NDIS Quality of Service (QoS) をサポートするミニポートドライバ�
 
     **メモ** ネットワークアダプターがピアからリモート QoS パラメーター設定を受信してから、ドライバーのローカル QoS パラメーターが設定されている場合、ミニポートドライバーはこの状態を発行する必要があります。 詳細については、「[ローカル NDIS QoS パラメーターの設定](setting-local-ndis-qos-parameters.md)」を参照してください。
 
--   この初期状態を示すと、ミニポートドライバーでは、 [**NDIS\_ステータス\_qos\_リモート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)のみを発行する必要があり、リモートで qos 設定が変更された場合は、状態の表示を変更\_家.
+-   この初期状態を示すと、ミニポートドライバーは、リモートピアの QoS 設定の変更を判断したときに、 [ **\_qos\_リモート\_\_パラメーターの NDIS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)のみを発行する必要があります。
 
     **メモ** ミニポートドライバーは、リモートの NDIS QoS パラメーターが変更されていない場合に、 [**QOS\_リモート\_\_パラメーター\_、ndis\_の状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行しないようにする必要があります。 ドライバーがこの種類の状態を示している場合、NDIS は、このような指示を後続のドライバーに渡すことはできません。
 
@@ -45,15 +45,15 @@ NDIS Quality of Service (QoS) をサポートするミニポートドライバ�
 
 2.  ミニポートは、 [**ndis\_qos\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体をリモート ndis qos パラメーターを使用して初期化します。 ドライバーは、リモートピアによって送信された DCBX フレームから受信したリモートパラメーターの完全なセットを提供する必要があります。
 
-    ミニポートドライバーは、**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_QOS\_PARAMETERS に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_QOS\_パラメーター\_リビジョン\_1、 **SIZE**メンバーを NDIS\_SIZEOF\_qos\_パラメーター\_リビジョンに設定します。\_1 です。
+    ミニポートドライバーは、**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**TYPE**メンバーを NDIS\_OBJECT\_type\_QOS\_PARAMETERS に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_QOS\_パラメーター\_リビジョン\_1、 **SIZE**メンバーを NDIS\_SIZEOF\_qos\_パラメーター\_リビジョン\_1 に設定します。
 
-    対応するメンバーに、以前に Ndis を発行した後に変更されたデータが含まれている場合、ミニポートドライバーは、適切な**NDIS\_QOS\_パラメーター\_*XXX*\_変更さ**れたフラグを設定し[ **@no__t状態\_QOS\_リモート\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状態の表示を変更する (_s)
+    ミニポートドライバーでは、適切な**ndis\_qos\_パラメーター\_*XXX*\_変更**されたフラグが設定されます。対応するメンバーには、以前に[**ndis\_status**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)を発行した後で変更されたデータが含まれています。\_\_\_\_
 
-    **メモ**  これらの**NDIS\_QOS\_パラメーターの設定\_*XXX*\_変更された**フラグは省略可能です。 Ndis は常に、前の[**ndis\_の状態\_qos\_リモート\_パラメーターを変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)していない場合でも、 [**ndis\_qos\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)のメンバーが指定されていることを前提としています。状態を示します。
+    **メモ**  これらの**NDIS\_QOS\_パラメーターの設定\_*XXX*\_変更された**フラグは省略可能です。 Ndis は常に、ndis の[ **\_qos\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)のメンバーが、以前の[**ndis\_の\_\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)から変更されていない場合でも指定されていることを前提としています。\_\_
 
     ミニポートドライバーは、**フラグ**メンバーを設定して、 [**NDIS\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体のメンバーに含まれるデータの状態情報を指定します。
 
-    たとえば、ミニポートドライバーは、適切な**NDIS\_QOS\_パラメーター\_*XXX*\_変更**されたデータを格納しているメンバーの**フラグ**メンバーのフラグを変更します。以前に、 [**NDIS\_の状態\_QOS\_リモート\_\_パラメータ**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)に発行され、状態の表示が変更されました。
+    たとえば、ミニポートドライバーによって、適切な**ndis\_qos\_パラメーター\_*XXX*\_変更**されたデータを含むメンバーの**フラグ**が設定されています。これらのメンバーには、以前に[**ndis\_状態\_qos\_リモート\_パラメーター\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)されたデータが含まれています。
 
     **Flags**メンバーを設定する方法の詳細については、「 [ **flags**メンバーを設定するためのガイドライン](#guidelines-for-setting-the-flags-member)」を参照してください。
 
@@ -148,7 +148,7 @@ NDIS Quality of Service (QoS) をサポートするミニポートドライバ�
 
 1.  ミニポートドライバーは有効なリモート NDIS QoS パラメーターを報告しないため、最初に[**ndis\_QoS\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体にゼロを入力する必要があります。
 
-    ミニポートドライバーは、この構造体の**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**型**メンバーを NDIS\_OBJECT\_type\_QOS\_PARAMETERS に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_QOS\_パラメーター\_リビジョン\_1、 **SIZE**メンバーを NDIS\_SIZEOF\_qos\_パラメーター\_リビジョンに設定します。\_1 です。
+    ミニポートドライバーは、この構造体の**ヘッダー**メンバーを初期化するときに、**ヘッダー**の**型**メンバーを NDIS\_OBJECT\_type\_QOS\_PARAMETERS に設定します。 ミニポートドライバーは、**ヘッダー**の**リビジョン**メンバーを NDIS\_QOS\_パラメーター\_リビジョン\_1、 **SIZE**メンバーを NDIS\_SIZEOF\_qos\_パラメーター\_リビジョン\_1 に設定します。
 
     ミニポートドライバーでは、適切な**NDIS\_QOS\_パラメーター\_*XXX*\_変更された**フラグを**フラグ**メンバーに設定します。
 

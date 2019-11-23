@@ -3,7 +3,7 @@ title: SM\_SetPersistentBinding 関数
 description: SM\_SetPersistentBinding メソッドは、OS 固有の LUN 情報を論理ユニットのファイバーチャネルプロトコル (FCP) 識別子にマップするために、HBA ミニポートドライバーによって使用されるバインドを設定します。
 ms.assetid: 722f7216-9ff4-4f12-a4fe-e1f8f9e594e1
 keywords:
-- SM_SetPersistentBinding function Storage デバイス
+- SM_SetPersistentBinding 関数記憶装置
 topic_type:
 - apiref
 api_name:

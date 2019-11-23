@@ -14,7 +14,7 @@ ms.locfileid: "72841750"
 # <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>Hyper-V 子パーティションからの OID 要求の転送
 
 
-Oid\_802\_3 を含むマルチキャストオブジェクト識別子 (OID) 要求[\_\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)および[OID\_802\_3\_削除\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)は、次のように実行されるプロトコルとフィルタードライバーによって発行されます。
+[Oid\_802\_3\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)のマルチキャストオブジェクト識別子 (oid) 要求。\_マルチキャスト\_アドレスおよび[oid\_802\_3\_削除\_マルチキャスト\_アドレス](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)は、次のように実行されるプロトコルとフィルタードライバーによって発行されます。
 
 -   Hyper-v の親パーティションで実行されている管理オペレーティングシステム。
 

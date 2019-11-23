@@ -87,6 +87,6 @@ devcon /r remove =printer *deskj*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-[Example 35:デバイスインスタンス ID パターンを使ってデバイスを削除する @ no__t-0
+[例 35: デバイスインスタンス ID パターン別にデバイスを削除する](devcon-examples.md#ddk_example_35_remove_devices_by_device_instance_id_pattern_tools)
 
-[Example 36:特定のネットワークデバイスを削除する @ no__t-0
+[例 36: 特定のネットワークデバイスを削除する](devcon-examples.md#ddk_example_36_remove_a_particular_network_device_tools)

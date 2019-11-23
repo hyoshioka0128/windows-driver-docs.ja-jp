@@ -18,7 +18,7 @@ ms.locfileid: "72839795"
 
 ディスプレイミニポートドライバーは、グラフィックスアダプターの物理出力コネクタに関連付けられている保護された出力を構成する要求を受信できます。 表示ミニポートドライバーの[**DxgkDdiOPMConfigureProtectedOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output)関数には、 [**Dxgkmdt\_OPM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_configure_parameters)へのポインターが渡され、保護された出力の構成方法を指定する\_PARAMETERS 構造\_構成します。 DXGKMDT\_OPM の**Guidsetting**および**abparameters**メンバーは、構成要求を指定し\_パラメーターを構成\_ます。
 
-**DxgkDdiOPMConfigureProtectedOutput**が返される前に、表示ミニポートドライバーは、 **omac**に指定されているワンキー暗号ブロックチェーン (CBC) モードのメッセージ認証コード (omac) を確認する必要があります **。  ** DXGKMDT\_OPM のメンバー\_\_パラメーターが正しいことを確認します。 OMAC の検証の詳細については、「 [omac-1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)」を参照してください。 また、ドライバーは、DXGKMDT\_\_\_OPM の**ulSequenceNumber**メンバーに指定されているシーケンス番号が、ドライバーに現在格納されているシーケンス番号と一致することを確認する必要があります。 次に、ドライバーは、格納されているシーケンス番号をインクリメントする必要があります。
+**DxgkDdiOPMConfigureProtectedOutput**が返される前に、表示ミニポートドライバーは、DXGKMDT の**omac**メンバーに指定されている1つの暗号ブロックチェーン (CBC) モードのメッセージ認証コード (omac) が、\_のパラメーターを構成\_\_、**正しいことを**確認する必要があります。   OMAC の検証の詳細については、「 [omac-1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)」を参照してください。 また、ドライバーは、DXGKMDT\_\_\_OPM の**ulSequenceNumber**メンバーに指定されているシーケンス番号が、ドライバーに現在格納されているシーケンス番号と一致することを確認する必要があります。 次に、ドライバーは、格納されているシーケンス番号をインクリメントする必要があります。
 
  
 

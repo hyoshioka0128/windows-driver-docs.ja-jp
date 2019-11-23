@@ -36,9 +36,9 @@ OID セット要求を正常に処理するフィルタードライバーは、O
 
 *FilterOidRequest*が NDIS\_STATUS\_SUCCESS を返した場合、 [**ndis\_OID\_request**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造体のクエリ要求の結果が、 *OidRequest*パラメーターに返されます。 この場合、ドライバーは**NdisFOidRequestComplete**関数を呼び出しません。
 
-OID 要求を基になるドライバーに転送するために、フィルタードライバーは[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)関数を呼び出します。 要求を基になるドライバーに転送しない場合、フィルタードライバーは要求を直ちに完了できます。 転送せずに要求を完了するために、ドライバーは*FilterOidRequest*から NDIS\_STATUS\_SUCCESS (またはエラー状態) を返すことができます。また、ndis\_の状態を返した後に、 **NdisFOidRequestComplete**を呼び出すこともでき\_行わ.
+OID 要求を基になるドライバーに転送するために、フィルタードライバーは[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)関数を呼び出します。 要求を基になるドライバーに転送しない場合、フィルタードライバーは要求を直ちに完了できます。 転送せずに要求を完了するために、ドライバーは*FilterOidRequest*から NDIS\_STATUS\_SUCCESS (またはエラー状態) を返すことができます。また、NDIS\_STATUS\_PENDING を返した後に、 **NdisFOidRequestComplete**を呼び出すこともできます。
 
-**注**  ドライバーが[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す前に、ドライバーは[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を割り当て、を呼び出し[**て、要求情報を新しい構造に転送する必要があります。NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)。
+**注**  ドライバーが[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)を呼び出す前に、ドライバーは[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を割り当て、 [**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)を呼び出して要求情報を新しい構造に転送する必要があります。
 
  
 

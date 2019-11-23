@@ -37,36 +37,36 @@ GPD ファイルにはプリプロセッサディレクティブを含めるこ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><em><strong>定義</strong>:<em>SymbolName</em></p></td>
+<td><p><em><strong>定義</strong>: <em>SymbolName</em></p></td>
 <td><p>シンボルを定義します。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Undefine-1:<em>SymbolName</em></p></td>
+<td><p></em><strong>の未定義</strong>: <em>SymbolName</em></p></td>
 <td><p>以前に定義したシンボルを削除します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em><strong>Ifdef</strong> :<em>SymbolName</em></p></td>
+<td><p><em><strong>Ifdef</strong> : <em>SymbolName</em></p></td>
 <td><p>GPD file エントリのブロックの先頭を示します。</p>
 <p>指定されたシンボルが定義されている場合、このディレクティブと次の *<strong>Ifdef</strong>、*<strong>Elseifdef</strong>、*<strong>Else</strong>、または *<strong>Endif</strong>ディレクティブの間の GPD ファイルのエントリは、GPD パーサーによって処理されます。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Elseifdef @ no__t-1:<em>SymbolName</em></p></td>
-<td><p>指定されたシンボルが定義されていて、前の <em><strong>Ifdef</strong>または *<strong>Elseifdef</strong>ディレクティブで指定されたシンボルが未定義の場合、このディレクティブと次の *<strong>ifdef</strong>の間の GPD ファイルエントリ、*<strong>Elseifdef</strong>、*<strong>Else</strong>、、または *<strong>Endif</strong>ディレクティブは、GPD パーサーによって処理されます。</p></td>
+<td><p></em><strong>Elseifdef</strong>: <em>SymbolName</em></p></td>
+<td><p>指定したシンボルが定義されていて、前の <em><strong>Ifdef</strong>または *<strong>Elseifdef</strong>ディレクティブで指定されたシンボルが定義されていない場合、このディレクティブと次<strong>の *</strong><strong>ifdef</strong>ディレクティブ<strong>の</strong>間の GPD ファイルエントリは、GPD パーサーによって処理されます。</p></td>
 </tr>
 <tr class="odd">
-<td><p></em><strong>Else @ no__t:</p></td>
-<td><p>前の <em><strong>Ifdef</strong>または *<strong>Elseifdef</strong>ディレクティブで指定されたシンボルが定義されていない場合、このディレクティブと次の *<strong>ifdef</strong>または *<strong>Endif</strong>ディレクティブの間にある GPD ファイルのエントリは、GPD パーサーによって処理されます。</p></td>
+<td><p></em><strong>他の</strong>:</p></td>
+<td><p>前の <em><strong>Ifdef</strong>または *<strong>Elseifdef</strong>ディレクティブで指定されたシンボルが定義されていない場合、このディレクティブと次の *<strong>Ifdef</strong>または *<strong>Endif</strong>ディレクティブの間にある GPD ファイルのエントリは、GPD パーサーによって処理されます。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Endif @ no__t:</p></td>
+<td><p></em><strong>Endif</strong>:</p></td>
 <td><p>GPD file エントリのブロックの末尾を示します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em> に<strong>含ま</strong>れます。"<em>FileName</em>"</p></td>
+<td><p><em><strong>インクルード</strong>: "<em>FileName</em>"</p></td>
 <td><p>追加の GPD ファイルの名前を指定します。 「<a href="using-multiple-gpd-files-in-a-minidriver.md" data-raw-source="[Using Multiple GPD Files in a Minidriver](using-multiple-gpd-files-in-a-minidriver.md)">ミニドライバーでの複数の GPD ファイルの使用」を</a>参照してください。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>SetPPPrefix @ no__t-1:<em>PrefixString</em></p></td>
+<td><p></em><strong>SetPPPrefix</strong>: <em>PrefixString</em></p></td>
 <td><p>プリプロセッサディレクティブに付加されたプレフィックス文字列を変更します。 「<strong>プリプロセッサディレクティブプレフィックスの変更</strong>」セクションを参照してください。</p></td>
 </tr>
 </tbody>
@@ -76,31 +76,31 @@ GPD ファイルにはプリプロセッサディレクティブを含めるこ�
 
 条件付きプリプロセッサディレクティブは入れ子にすることができます。 各入れ子レベルでは、条件付きプリプロセッサディレクティブを使用する順序は次のとおりです。
 
-\***Ifdef**:*Symbol1*GPD file セクション
+\***Ifdef**: *Symbol1* GPD file セクション
 
-\***Elseifdef**:*Symbol2*GPD file セクション
+\***Elseifdef**: *Symbol2* GPD file セクション
 
-\***Elseifdef**:*Symbol3*GPD file セクション
+\***Elseifdef**: *Symbol3* GPD file セクション
 
-\***Elseifdef**:*Symbol4*GPD file セクション
+\***Elseifdef**: *Symbol4* GPD file セクション
 
 ...
 
-\***Else**:GPD file セクション
+\***Else**: GPD file セクション
 
 \***Endif**:
 
-使用する \***Ifdef**ディレクティブごとに、\***Endif**が必要です。 @No__t-0**Elseifdef**ディレクティブと \***Else**ディレクティブは省略可能です。 各 GPD file セクションには、GPD ファイルエントリ、および必要に応じて、条件付きプリプロセッサディレクティブの入れ子になったシーケンスを含めることができます。
+使用する \***Ifdef**ディレクティブごとに、\***Endif**が必要です。 \***Elseifdef**ディレクティブと \***Else**ディレクティブは省略可能です。 各 GPD file セクションには、GPD ファイルエントリ、および必要に応じて、条件付きプリプロセッサディレクティブの入れ子になったシーケンスを含めることができます。
 
-@No__t-0 の**定義**を使用して定義されたすべてのシンボルは、@no__t の**未定義**を使用して明示的に未定義になるまで定義されたままです
+\***定義**を使用して定義されたすべてのシンボルは、\*の無効化を使用して明示的に未定義になるまで**定義した**
 
-@No__t-0**Include**ディレクティブを使用すると、追加の GPD ファイルの名前を指定できます。 詳細については、「[ミニドライバーでの複数の GPD ファイルの使用](using-multiple-gpd-files-in-a-minidriver.md)」を参照してください。
+\***Include**ディレクティブを使用すると、追加の GPD ファイルの名前を指定できます。 詳細については、「[ミニドライバーでの複数の GPD ファイルの使用](using-multiple-gpd-files-in-a-minidriver.md)」を参照してください。
 
-プリプロセッサは GPD パーサーの前に実行されるため、@no__t 0IgnoreBlock GPD エントリはプリプロセッサディレクティブには影響しないことに注意してください。
+プリプロセッサは GPD パーサーの前に実行されるため、\*IgnoreBlock GPD エントリはプリプロセッサディレクティブには影響しないことに注意してください。
 
 ### <a href="" id="ddk-changing-the-preprocessor-directive-prefix-gg"></a>プリプロセッサディレクティブのプレフィックスを変更する
 
-@No__t-0**Setppprefix**ディレクティブを使用すると、プリプロセッサディレクティブで使用されるプレフィックスを変更できます。 つまり、このディレクティブを使用すると、プリプロセッサディレクティブの前にあるアスタリスク (\*) 文字を別の文字または文字列に置き換えることができます。
+\***Setppprefix**ディレクティブを使用すると、プリプロセッサディレクティブで使用されるプレフィックスを変更できます。 つまり、このディレクティブを使用すると、プリプロセッサディレクティブの前にあるアスタリスク (\*) 文字を別の文字または文字列に置き換えることができます。
 
 たとえば、GPD ファイルに次のディレクティブが含まれているとします。
 
@@ -108,7 +108,7 @@ GPD ファイルにはプリプロセッサディレクティブを含めるこ�
 *SetPPPrefix: #SpecialPrefix#
 ```
 
-次に、プリプロセッサは **\*** で始まるプリプロセッサディレクティブの検索を停止し、代わりに **\#特別なプレフィックス @ no__t から**始まるディレクティブを検索します。 次のシーケンスは、プリプロセッサプリフィックスを一時的に **\#no__t-2**に変更し、その後 **\*** に復元します。
+次に、プリプロセッサは **\*** で始まるプリプロセッサディレクティブの検索を停止し、代わりに **\#特別なプレフィックス\#** で始まるディレクティブを検索します。 次のシーケンスでは、プリプロセッサプレフィックスを **\#特別プレフィックス\#** に一時的に変更し、 **\*** に復元します。
 
 ```cpp
 *SetPPPrefix: #SpecialPrefix#
@@ -144,7 +144,7 @@ Microsoft では、次のプリプロセッサシンボルを定義していま�
 </colgroup>
 <thead>
 <tr class="header">
-<th>シンボル</th>
+<th>記号</th>
 <th>定義された場所</th>
 <th>定義</th>
 </tr>
@@ -166,7 +166,7 @@ Microsoft では、次のプリプロセッサシンボルを定義していま�
 <td><p>環境は Windows NT 4.0 です。</p></td>
 </tr>
 <tr class="even">
-<td><p>PARSER_VER_ 1.0</p></td>
+<td><p>PARSER_VER_1。0</p></td>
 <td><p>GPD プリプロセッサ for Windows NT 4.0、Windows 2000、および Windows XP</p></td>
 <td><p>GPD パーサーバージョン1.0</p></td>
 </tr>
@@ -175,7 +175,7 @@ Microsoft では、次のプリプロセッサシンボルを定義していま�
 
  
 
-WINNT @ no__t-040、WINNT @ no__t-150、および WINNT @ no__t-251 シンボルは、Windows NT 4.0、Windows 2000、および Windows XP と互換性のある GPD ファイルを作成する場合に便利です。 たとえば、Windows XP で Windows 2000 でサポートされていないプリンター機能がサポートされている場合、\***Ifdef**によって制限された GPD file セクション内でその機能を指定できます。WINNT @ no__t-051 と \***Endif**ディレクティブ。
+Windows NT 4.0、Windows 2000、および Windows XP と互換性のある GPD ファイルを作成するには、WINNT\_40、WINNT\_50、および WINNT\_51 シンボルが役立ちます。 たとえば、Windows XP が Windows 2000 でサポートされていないプリンター機能をサポートしている場合は、\***Ifdef**: WINNT\_51 および \***Endif**ディレクティブによって制限される GPD file セクション内でその機能を指定できます。
 
  
 

@@ -21,7 +21,7 @@ ms.locfileid: "72840602"
 
 OpenGL ランタイムはレジストリにアクセスして、読み込む OpenGL インストール可能なクライアントドライバー (ICD) を決定します。 Opengl ICD、OpenGL ランタイムを読み込むには、次のようにします。
 
--   D3DKMT の**Type**メンバーで設定された KMTQAITYPE\_UMOPENGLINFO value を使用して[**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)関数を呼び出すことにより、OpenGL ICD に関連付けられている名前、バージョン、およびフラグを決定し[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo) *PData*パラメーターが指す queryadapterinfo 構造体。
+-   [**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)関数を呼び出して、OpenGL ICD に関連付けられている名前、バージョン、およびフラグを決定します。 KMTQAITYPE\_UMOPENGLINFO 値は、 *pData*パラメーターが指す[**D3DKMT\_Queryadapterinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)構造体の**Type**メンバーで設定されています。
 
 -   OpenGL ICD のバージョンを検証するために**D3DKMTQueryAdapterInfo**が返す opengl icd のバージョン番号を確認します。
 

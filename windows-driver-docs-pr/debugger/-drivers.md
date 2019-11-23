@@ -71,7 +71,7 @@ Lm のコマンドでは、古い **! drivers**拡張子とよく似た形式で
 
 この拡張機能コマンドのアプリケーションについては、「[プラグアンドプレイデバッグ](plug-and-play-debugging.md)」を参照してください。 ドライバーとそのメモリ使用量の詳細については、「Windows Driver Kit (WDK)」ドキュメントと「 *Microsoft windows の内部構造*(Mark Russinovich と David ソロモン)」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドの表示については、次の表で説明します。
@@ -83,8 +83,8 @@ Lm のコマンドでは、古い **! drivers**拡張子とよく似た形式で
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[列]</th>
-<th align="left">説明</th>
+<th align="left">列</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>

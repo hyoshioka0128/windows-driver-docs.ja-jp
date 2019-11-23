@@ -48,7 +48,7 @@ ms.locfileid: "72843757"
 
 -   拡張機能によって新しいパケットが作成されると、パケットデータは、Hyper-v の親パーティションの親オペレーティングシステムのローカルまたは*信頼さ*れたメモリに配置されます。 このメモリには、子パーティションからアクセスできません。 そのため、そのパーティションで実行されているゲストオペレーティングシステムによる同期されていない更新からは、"安全" と見なされます。
 
-    拡張機能は、Net\_BUFFER\_LIST\_スイッチを使用して、新しいパケットの[ **\_詳細\_net\_buffer\_list\_\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)するために、NDIS\_スイッチを取得する必要があります。 [ **\_\_詳細**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)マクロを転送します。 拡張機能では、 **IsPacketDataSafe**メンバーを TRUE に設定する必要があります。 これは、すべてのパケットデータが信頼できるメモリ内にあることを指定します。
+    拡張機能は、 [**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)\_\_\_\_detail マクロを使用して、新しいパケットの\_[ **\_詳細\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)するために、NDIS\_スイッチを取得する必要があります。\_\_ 拡張機能では、 **IsPacketDataSafe**メンバーを TRUE に設定する必要があります。 これは、すべてのパケットデータが信頼できるメモリ内にあることを指定します。
 
 -   拡張機能が[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)を呼び出してパケットを受信データパスに挿入するときは、 *Flags*パラメーターに適切な拡張可能なスイッチフラグ設定を設定する必要があります。 これらのフラグ設定の詳細については、「 [Hyper-v 拡張可能スイッチの送信フラグと受信フラグ](hyper-v-extensible-switch-send-and-receive-flags.md)」を参照してください。
 

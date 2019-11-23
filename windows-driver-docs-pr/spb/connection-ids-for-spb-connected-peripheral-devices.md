@@ -37,8 +37,8 @@ SPB 接続周辺機器への論理接続を開くには、UMDF ドライバー�
 
 接続 Id を使用して SPB 接続周辺機器への論理接続を開く、UMDF と KMDF のコード例については、次のトピックを参照してください。
 
-[ユーザーモードの周辺機器ドライバーのハードウェアリソース](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)[カーネルモード spb 周辺機器のドライバー](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers)
-ユーザーモードアプリケーションが、SPB に接続されている周辺機器への論理接続を開くことができません。 i/o を送信することはできません。これらのデバイスに直接要求します。
+[ユーザーモードの周辺機器ドライバーのハードウェアリソース](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)[カーネルモード Spb 周辺機器ドライバーのハードウェアリソース](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers)
+ユーザーモードアプリケーションでは、SPB に接続されている周辺機器への論理接続を開くことができず、これらのデバイスに i/o 要求を直接送信することはできません。
 
 1つのドライバーのみが、SPB に接続されている周辺機器への開いている論理接続を保持できます。 別のドライバーによる同じデバイスへの2番目の接続を開こうとして失敗します。
 

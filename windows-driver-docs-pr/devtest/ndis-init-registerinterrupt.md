@@ -4,7 +4,7 @@ description: Init\_RegisterInterrupt 規則は、初期化プロセスで何ら�
 ms.assetid: f12cc1b9-396b-4351-ad13-c1750b54b709
 ms.date: 05/21/2018
 keywords:
-- Init_RegisterInterrupt rule (ndis)
+- Init_RegisterInterrupt 規則 (ndis)
 topic_type:
 - apiref
 api_name:

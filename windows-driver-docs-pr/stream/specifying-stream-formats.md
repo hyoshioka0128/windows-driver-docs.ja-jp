@@ -43,7 +43,7 @@ typedef struct  _AMMediaType    {
 
 名前付け規則の違いにかかわらず、カーネルモード KSK の KSDATAFORMAT/とユーザーモード\_\_AM の両方で使用される Guid は同じです。
 
-**注**  : KSDATAFORMAT 構造体の**subformat**メンバーの下位4バイト (AM\_メディア\_TYPE ユーザーモード構造の**サブタイプ**メンバーに似ています) は、使用されている FOURCC 値と一致している必要があります[**KS\_BITMAPINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)構造体の**biCompression**メンバー。 これらのバイトは、形式を逆の順序で記述する16進 ASCII 文字を保持します。
+**注**  : KSDATAFORMAT 構造体の**subformat**メンバーの下位4バイト (AM\_メディア\_TYPE ユーザーモード構造体の**サブタイプ**メンバーに似ています) は、 [**KS\_bitmapinfoheader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)構造体の**biCompression**メンバーで使用される FOURCC 値と一致している必要があります。 これらのバイトは、形式を逆の順序で記述する16進 ASCII 文字を保持します。
 
 たとえば、次の GUID は、YVU9 FOURCC ビデオ形式に対応しています。
 

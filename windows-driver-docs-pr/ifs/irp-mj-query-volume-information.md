@@ -3,7 +3,7 @@ title: IRP_MJ_QUERY_VOLUME_INFORMATION
 description: IRP\_MJ\_クエリ\_ボリューム\_情報
 ms.assetid: 1e762c75-70bd-4397-b244-df97b317b3bf
 keywords:
-- IRP_MJ_QUERY_VOLUME_INFORMATION インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_QUERY_VOLUME_INFORMATION
 topic_type:
 - apiref
 api_name:
@@ -49,7 +49,7 @@ FileFsVolumeInformation
 ## <a name="operation-network-redirect-drivers"></a>操作: ネットワークリダイレクトドライバー
 
 
-FileFsDeviceInformation の要求を受信するネットワークリダイレクターには、ファイル [ **\_FS\_デバイスの DeviceCharacteristics メンバーのオプションの1つとして、file\_REMOTE\_device を含める必要があり\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information)返された情報構造。
+FileFsDeviceInformation の要求を受信するネットワークリダイレクターは、ファイル[ **\_FS\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information)構造の**DeviceCharacteristics**メンバーのオプションの1つとして、ファイル\_リモート\_デバイスを含める必要があります。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作: ファイルシステムフィルタードライバー
 
@@ -127,19 +127,19 @@ FileFsVolumeFlagsInformation クラスと関連付けられている[**ファイ
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsDriverPathInformation</strong></p></td>
-<td align="left"><p>指定されたドライバーがボリュームの i/o パスにあるかどうかに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_DRIVER_PATH_INFORMATION</strong></a>構造体を返します。 <strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>要求の発信者は、IRP をファイルシステムボリュームのデバイススタックに送信する前に、ドライバーの名前を<strong>FILE_FS_DRIVER_PATH_INFORMATION</strong>構造体に格納する必要があります。</p></td>
+<td align="left"><p>指定されたドライバーがボリュームの i/o パスにあるかどうかに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_DRIVER_PATH_INFORMATION</strong></a>構造体を返します。 <strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>要求の発信者は、IRP をファイルシステムボリュームのデバイススタックに送信する前に、そのドライバーの名前を<strong>FILE_FS_DRIVER_PATH_INFORMATION</strong>構造体に格納する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsFullSizeInformation</strong></p></td>
-<td align="left"><p>ボリュームで使用可能な領域の合計に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)"><strong>FILE_FS_FULL_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>ボリューム上で使用可能な領域の合計量に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)"><strong>FILE_FS_FULL_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsObjectIdInformation</strong></p></td>
-<td align="left"><p>ボリュームのファイルシステム固有のオブジェクト ID 情報が格納されている<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>構造体を返します。 これは、オペレーティングシステムによって割り当てられる (GUID ベースの) 一意のボリューム名と同じではないことに注意してください。</p></td>
+<td align="left"><p>ボリュームのファイルシステム固有のオブジェクト ID 情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>構造体を返します。 これは、オペレーティングシステムによって割り当てられる (GUID ベースの) 一意のボリューム名と同じではないことに注意してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsSizeInformation</strong></p></td>
-<td align="left"><p><strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>要求を送信したスレッドに関連付けられているユーザーが使用できるボリューム上の領域の量に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)"><strong>FILE_FS_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p><strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>要求を発信したスレッドに関連付けられているユーザーが使用できるボリューム上の領域の量に関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)"><strong>FILE_FS_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsVolumeInformation</strong></p></td>
@@ -147,7 +147,7 @@ FileFsVolumeFlagsInformation クラスと関連付けられている[**ファイ
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsSectorSizeInformation</strong></p></td>
-<td align="left"><p>ボリュームの物理的および論理的なセクターのサイズに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information)"><strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>ボリュームの物理的および論理的なセクターサイズに関する情報を含む<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information)"><strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,7 +180,7 @@ FileFsVolumeFlagsInformation クラスと関連付けられている[**ファイ
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

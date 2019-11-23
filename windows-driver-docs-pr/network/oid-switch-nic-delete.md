@@ -3,7 +3,7 @@ title: OID_SWITCH_NIC_DELETE
 description: Hyper-v 拡張可能スイッチのプロトコルエッジは、OID_SWITCH_NIC_DELETE のオブジェクト識別子 (OID) セット要求を拡張可能なスイッチドライバースタックに発行します。
 ms.assetid: 7564EA39-09F5-45A3-81A0-F8DD2B23B639
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_SWITCH_NIC_DELETE ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_SWITCH_NIC_DELETE
 ms.localizationpriority: medium
 ms.openlocfilehash: b192b27fecb423aa450be4de6323f082fc517f6b
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ Hyper-v 拡張可能スイッチのプロトコルエッジでは、オブジェ
 
 拡張可能スイッチのプロトコルエッジが OID\_スイッチ\_NIC\_DELETE 要求を発行する前に、指定されたネットワークアダプター接続に対するすべての保留中の送信または受信パケット要求が完了したことを保証します。 また、プロトコルエッジは、アダプター接続に対するすべての保留中の OID 要求が完了していること、およびアダプター接続の拡張可能なスイッチ参照カウンターの値が0であることも保証します。
 
-**注**  拡張機能によって、参照によってネットワークアダプターの拡張可能なスイッチ参照カウンターがインクリメントされた場合[*は、参照*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)時に OID\_スイッチ\_NIC\_削除要求が発行されません。counter が0以外です。 拡張機能は、 [*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)を呼び出すことによって拡張可能なスイッチ参照カウンターをデクリメントします。
+**注**  拡張機能によって参照用のスイッチ参照カウンターがネットワークアダプターに対してインクリメントされている場合[*は、参照*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)カウンターが0以外の場合、OID\_スイッチ\_NIC\_DELETE 要求は発行されません。 拡張機能は、 [*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)を呼び出すことによって拡張可能なスイッチ参照カウンターをデクリメントします。
 
  
 

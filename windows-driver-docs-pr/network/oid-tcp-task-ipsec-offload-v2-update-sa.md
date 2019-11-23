@@ -3,7 +3,7 @@ title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA
 description: セットとして、TCP/IP トランスポートは OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA OID を使用して、ミニポートドライバーが NIC 上の指定されたセキュリティアソシエーション (SAs) を更新するように要求します。
 ms.assetid: 22849103-9148-4621-b78f-b9f34f2c7ac1
 ms.date: 08/08/2017
-keywords: -Windows Vista 以降の OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA ネットワークドライバー
+keywords: -Windows Vista 以降のネットワークドライバーの OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA
 ms.localizationpriority: medium
 ms.openlocfilehash: a11b334360a2028f0d6342b2097e96750f0fbad0
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ IPsec オフロードバージョン 2 (IPsecOV2) をサポートするすべて
 
 ミニポートドライバーがこの要求を受信すると、ドライバーは NIC の指定された SAs を更新する必要があります。 SA が見つからない場合、または ESN がサポートされていない場合、ミニポートドライバーはこの要求を失敗させることができます。 この場合、返される状態は、"NDIS\_STATUS\_INVALID\_PARAMETER" になります。
 
-ミニポートドライバーは、 [**ipsec\_オフロード\_V2\_更新\_プログラム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)に関する情報と、次の IPSEC\_オフロード\_V2\_update\_へのポインターに関する情報が含まれている ipsec SA 構造を受け取ります。リンクリスト内の構造体。
+ミニポートドライバーは、 [**ipsec\_オフロード\_V2\_更新プログラム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)に関する情報と、リンクリスト内の次の IPSEC\_オフロード\_V2\_更新\_sa 構造へのポインターを含む更新\_SA 構造体を受け取ります。
 
 <a name="requirements"></a>要件
 ------------

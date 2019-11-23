@@ -16,7 +16,7 @@ ms.locfileid: "72842971"
 # <a name="using-tdi-transports"></a>TDI トランスポートの使用
 
 
-Winsock カーネル (WSK) サブシステムでは、 [TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポートの使用がサポートされています。 WSK[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)を介して tdi トランスポートを使用するには、wsk アプリケーションで、使用する各 tdi トランスポートのアドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、それぞれの tdi の関連付けられたデバイス名にマップする必要があります。プロトコル. WSK アプリケーションは、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、 [**wsk\_tdi\_DEVICENAME\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)クライアントコントロール操作を使用して、tdi トランスポートのデバイス名にマップします。
+Winsock カーネル (WSK) サブシステムでは、 [TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポートの使用がサポートされています。 WSK[ネットワークプログラミングインターフェイス (NPI)](network-programming-interface.md)を介して tdi トランスポートを使用するには、wsk アプリケーションで、使用する各 tdi トランスポートのアドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、それぞれの tdi トランスポートの関連付けられたデバイス名にマップする必要があります。 WSK アプリケーションは、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、 [**wsk\_tdi\_DEVICENAME\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)クライアントコントロール操作を使用して、tdi トランスポートのデバイス名にマップします。
 
 次のコード例は、WSK アプリケーションで、アドレスファミリ、ソケットの種類、およびプロトコルの組み合わせを、TDI トランスポートのデバイス名にマップする方法を示しています。
 

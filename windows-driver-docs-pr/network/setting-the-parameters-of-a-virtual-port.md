@@ -16,7 +16,7 @@ ms.locfileid: "72841928"
 
 1つ上のドライバーでは、シングルルート i/o 仮想化 (SR-IOV) をサポートするネットワークアダプターで、NIC スイッチの仮想ポート (VPort) のパラメーターを変更できます。 このドライバーは、オブジェクト識別子 (OID) set 要求の[oid\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)を発行して、これらのパラメーターを変更します。
 
-それまでのドライバーは、この OID セット要求を発行する前に、vport\_パラメーター構造\_VPORT で変更されるパラメーターを使用して、 [**NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)を初期化する必要があります。 次に、このドライバーは、OID 要求の[**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を初期化し、 **Informationbuffer**メンバーを**ndis\_NIC\_スイッチへのポインター (vport\_パラメーター** ) に設定します。データ.
+それまでのドライバーは、この OID セット要求を発行する前に、vport\_パラメーター構造\_VPORT で変更されるパラメーターを使用して、 [**NDIS\_NIC\_スイッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)を初期化する必要があります。 次に、このドライバーは、OID 要求の[**ndis\_oid\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)構造を初期化し、 **Informationbuffer**メンバーを**ndis\_NIC\_スイッチ\_vport\_PARAMETERS**構造体へのポインターに設定します。
 
 VPort の構成パラメーターの一部だけを変更できます。 前のドライバーでは、 [**NDIS\_NIC\_スイッチ\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体の次のメンバーを設定することによって、変更するパラメーターを指定します。
 
@@ -32,11 +32,11 @@ VPort の構成パラメーターの一部だけを変更できます。 前の�
 
     -   Oid\_NIC の以前の OID メソッド要求から、[列挙型\_VPORTS\_スイッチ\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)ます。
 
--   適切な NDIS\_NIC\_スイッチ\_VPORT\_PARAMS\_*Xxx*\_変更されたフラグを**フラグ**メンバーで設定する必要があります。 [**Ndis\_nic\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体のメンバーは、対応する NDIS\_NIC\_スイッチ\_VPORT\_PARAMS\_*Xxx*の場合にのみ変更でき\_CHANGED フラグは Ntddndis で定義されています。
+-   適切な NDIS\_NIC\_スイッチ\_VPORT\_PARAMS\_*Xxx*\_変更されたフラグを**フラグ**メンバーで設定する必要があります。 [**Ndis\_nic\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体のメンバーは、対応する NDIS\_NIC\_スイッチ\_VPORT\_PARAMS\_*Xxx*\_changed フラグが Ntddndis で定義されている場合にのみ変更できます。
 
--   [**Ndis\_nic\_スイッチのメンバーは、vport\_パラメーター構造\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)ます。これは、NDIS\_NIC\_スイッチ\_VPORT\_PARAMS\_*Xxx*\_変更フラグに対応します。**Flags**メンバーに設定すると、変更する vport 構成パラメーターが設定されます。
+-   [**Ndis\_nic\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体は、NDIS\_NIC\_スイッチに対応しています。この構造は、 **flags**メンバーで設定されて*いる\_変更*されたフラグを設定し、変更する vport 構成パラメーターを使用して設定します。\_\_\_
 
-Windows Server 2012 以降では、 [**NDIS\_nic\_スイッチ\_vport\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体の次のメンバーのみが、 [oid\_nic\_スイッチ\_vport を使用して変更できます。\_のパラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters):
+Windows Server 2012 以降では、 [**NDIS\_nic\_スイッチ\_vport\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体の次のメンバーだけが、 [oid\_nic\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)の oid セット要求を使用して変更できます。
 
 <a href="" id="portname"></a>**PortName**  
 このメンバーには、VPort についてのわかりやすい説明が含まれています。
@@ -72,7 +72,7 @@ Windows Server 2012 以降では、 [**NDIS\_nic\_スイッチ\_vport\_PARAMETER
 
 -   VPort がアクティブ化された状態の場合、非アクティブ化することはできません。 PF ミニポートドライバーは、アクティブな状態の場合にのみ、VPort からパケットを受信して送信することができます。また、対応する MAC フィルターが VPort に設定されている必要があります。 ただし、oid\_\_NIC の oid セット要求を使用して VPort を削除した後[\_VPORT を削除\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)には、ドライバーは vport に割り当てられたリソースを解放する必要があります。 また、ドライバーは、VPort のパケットに対する保留中の送信操作または受信操作をすべてキャンセルする必要があります。
 
-PF ミニポートドライバーが oid\_NIC の OID セット要求を受信した後、 [VPORT\_パラメーター\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)は、構成パラメーターを使用してハードウェアを構成します。 ドライバーは、ndis\_NIC によって識別される構成パラメーターのみを変更できます\_スイッチ\_VPORT\_パラメーター\_*Xxx*\_変更したフラグを NDIS\_Nic の**フラグ**メンバーで[ **@no__t11_ スイッチ\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体に切り替えます。
+PF ミニポートドライバーが oid\_NIC の OID セット要求を受信した後、 [VPORT\_パラメーター\_\_スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)は、構成パラメーターを使用してハードウェアを構成します。 ドライバーは、NDIS\_NIC\_スイッチ\_VPORT\_パラメーター\_*Xxx*\_変更されたフラグを変更することができます。これらの構成パラメーターは、 [**ndis\_NIC\_スイッチ\_VPORT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体の**flags**メンバーにあります。
 
  
 

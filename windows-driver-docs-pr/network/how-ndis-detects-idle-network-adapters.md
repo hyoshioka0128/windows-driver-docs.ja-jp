@@ -16,7 +16,7 @@ ms.locfileid: "72842543"
 
 ミニポートドライバーによって NDIS のセレクティブサスペンドが有効になり、そのハンドラー機能が登録されると、NDIS は次のようにネットワークアダプターの i/o アクティビティを監視します。
 
--   NDIS は、ミニポートドライバーが[**ndis\_ミニポート\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics) [ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)\_ドライバーによって登録する i/o ハンドラー関数への呼び出しを監視します。構成. たとえば、NDIS はミニポートドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)または[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)の呼び出しを監視して、ドライバーがパケット i/o アクティビティに関係しているかどうかを判断します。
+-   NDIS は、ミニポートドライバーが[**ndis\_ミニポート\_ドライバー\_の特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)と[**NDIS\_ミニポート\_PNP\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)の構造を通じて登録する i/o ハンドラー関数の呼び出しを監視します。 たとえば、NDIS はミニポートドライバーの[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)または[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)の呼び出しを監視して、ドライバーがパケット i/o アクティビティに関係しているかどうかを判断します。
 
 -   また、プロトコルドライバーによって行われた[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)と[**NdisDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdirectoidrequest)の呼び出しも監視します。
 

@@ -21,7 +21,7 @@ ms.locfileid: "72844803"
 
 
 
-カーネルモードクライアントは、 [**IOCTL\_内部\_並列\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_connect_interrupt)して、割り込みサービスルーチンと*遅延ポートチェックルーチン*をパラレルポート関数の操作に接続するために、割り込み要求を接続\_ます。driver.
+カーネルモードのクライアントは、 [**IOCTL\_内部\_並列\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_connect_interrupt)して、割り込みサービスルーチンと*遅延ポートチェックルーチン*をパラレルポート関数ドライバーの操作に接続するために、割り込み要求\_接続します。
 
 Microsoft   クライアントが指定した割り込みルーチンを使用し**ないことを**お勧めします。 割り込みを使用すると、システムが不安定になる可能性があります。 既定では、IOCTL\_INTERNAL\_PARALLEL\_CONNECT\_INTERRUPT 要求は無効になっています。
 

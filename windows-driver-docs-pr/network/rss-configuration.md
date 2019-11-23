@@ -31,7 +31,7 @@ RSS の構成情報を取得するために、1つ前のドライバーが Oid\_
 
 NDIS は OID\_GEN を処理してから、ミニポートドライバーに渡す前に\_\_パラメーターを受信\_し、必要に応じて、ミニポートアダプターの \*RSS 標準化されたキーワードを更新します。 **\*rss**キーワードの詳細については、「 [Rss 用の標準化](standardized-inf-keywords-for-rss.md)された INF キーワード」を参照してください。
 
-OID\_GEN を受信した後\_\_\_rss\_PARAM\_フラグを使用して[\_スケール\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)セット要求を受け取ります。\_rss フラグセットを無効にでは、初期化後に、ミニポートドライバーによって NIC の RSS 状態が NIC の初期状態に設定されます。 したがって、ミニポートドライバーがそれ以降の OID\_GEN を受信する場合は\_\_拡張\_パラメーター set request for NDIS\_RSS\_PARAM\_フラグ\_無効\_RSS フラグをオフにします。では、すべてのパラメーターの値が、ミニポートドライバーが\_GEN\_生成した後に設定された値と同じである必要があります。これは、ミニポートアダプターが初期化された後に初めて\_スケール\_パラメーターセットの要求を受信します。
+OID\_GEN を受信した後\_\_\_rss\_PARAM\_フラグが設定された[\_スケール\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)セット要求を受け取ります。\_rss フラグセットを無効にすると、ミニポートドライバーは、初期化後に NIC の RSS 状態を nic の初期状態に設定する必要があります。 したがって、ミニポートドライバーがそれ以降の OID\_\_GEN を受け取る場合は、\_スケール\_パラメーターセット要求を NDIS\_RSS\_\_に設定する必要があります。\_RSS フラグをオフにすると、すべてのパラメーターには、ミニポートアダプターが初期化された後に初めて\_\_を受け取るように設定されます。\_\_\_
 
 後のドライバーでは、 [oid\_GEN\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-hash)使用して\_ハッシュ OID を受け取ることができます。これにより、RSS を有効にしなくても、受信したフレームでハッシュ計算を有効化および構成できます。 また、この OID を照会して現在の受信ハッシュ設定を取得することもできます。
 

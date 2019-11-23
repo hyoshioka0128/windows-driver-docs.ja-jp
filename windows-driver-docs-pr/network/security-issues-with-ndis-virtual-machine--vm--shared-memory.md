@@ -83,7 +83,7 @@ Windows Server 2012 以降、VSP は、VMQ 受信バッファー用に VM から
 
 Windows Server 2012 以降のバージョンの Windows で実行される VMQ ミニポートドライバーには、次の点が適用されます。
 
--   NDIS 6.20 VMQ ミニポートドライバーの場合、変更は必要ありません。 ただし、VSP が oid (オブジェクト識別子) メソッドの Oid 要求を発行して VM キューを割り当てるときに、 [\_キューを割り当てる\_\_フィルターを受け取る\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)、NDIS の**Look aヘッドサイズ**のメンバーが設定され[ **\_キュー\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造を0に\_受信します。 これにより、ミニポートドライバーはパケットを事前先読みバッファーと先読みバッファーに分割しません。
+-   NDIS 6.20 VMQ ミニポートドライバーの場合、変更は必要ありません。 ただし、VSP が oid (オブジェクト識別子) メソッドの\_Oid 要求を発行することによって VM キューを割り当てたときに、 [\_キューを割り当てる\_\_フィルターを受け取る](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)と、 [**NDIS\_receive\_queue\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)構造体の**look aヘッドのサイズ**メンバーが0に設定されます。 これにより、ミニポートドライバーはパケットを事前先読みバッファーと先読みバッファーに分割しません。
 
 -   NDIS 6.30 以降では、VMQ ミニポートドライバーは、パケットデータを事前先読みバッファーと先読みバッファーに分割するためのサポートをアドバタイズしないようにする必要があります。 ミニポートドライバーは VMQ 機能を登録するときに、次の規則に従って、 [ **\_フィルター\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)の構造を受け取るように NDIS\_受信します。
 

@@ -38,7 +38,7 @@ NTSTATUS
     );
 ```
 
-デバイスドライバーは、 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)関数を呼び出して非同期通知を登録します。各デバイスドライバーのコールバック関数では *、次の guid のいずれかへのポインターを指定します。Eventカテゴリデータ*パラメーター:
+デバイスドライバーは、 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)関数を呼び出して非同期通知を登録します。各デバイスドライバーのコールバック関数では、 *eventカテゴリデータ*パラメーターの次の guid のいずれかへのポインターを指定します。
 
 <a href="" id="guid-device-processor"></a>GUID\_デバイス\_プロセッサ  
 プロセッサがハードウェアパーティションに動的に追加されたときに通知されるように登録します。

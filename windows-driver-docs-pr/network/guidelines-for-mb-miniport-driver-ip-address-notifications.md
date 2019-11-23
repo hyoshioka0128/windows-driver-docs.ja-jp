@@ -28,7 +28,7 @@ IP ヘルパー関数をカーネルモードで使用するには、ミニポ�
 
 IP ヘルパー API を使用して設定された IP アドレスと既定のゲートウェイは、ネットワーク接続イベントまたは切断イベント、あるいはその両方を保持します。 したがって、新しい IP アドレスまたはデフォルトゲートウェイ、またはその両方が現在設定されている値と異なる場合は、ネットワーク接続イベントで新しい値を設定する前に、ミニポートドライバーで前の値をクリアする必要があります。
 
-**注**  ミニポートドライバーは、 [**NDIS\_ミニポート\_INIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)構造体の**netluid**または**IfIndex**メンバーから、MB インターフェイスの**LUID**と**インデックス**を見つけることができます。ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数に渡されます。
+**注**  ミニポートドライバーは、ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数に渡される[**NDIS\_ミニポート\_INIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)構造体の**NETLUID**または**IfIndex**メンバーから、MB インターフェイスの**LUID**と**インデックス**を見つけることができます。
 
  
 
@@ -40,14 +40,14 @@ TCP/IP スタックに対する特定の変更 (必須のフィルタードラ�
 
 1.  **ドライバーの初期化**中に、ミニポートドライバーでは、 [**NotifyIpInterfaceChange**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85))を使用して、IP インターフェイスの変更通知に登録するコールバック関数を指定する必要があります。 Windows は、IP インターフェイスが追加、削除、または変更された場合でも、関数を呼び出します。
 
-2.  **アダプターの初期化**中に、ミニポートドライバーはミニポートドライバーのローカルアダプターコンテキストに保存する必要があります。これは、ミニポートに渡される[**NDIS\_ミニポート\_INIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)構造からの**LUID**値です。ドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数。 値には、通知コールバックで使用されるアダプターのインターフェイスを識別する*Netluid*が含まれます。
+2.  **アダプターの初期化**中に、ミニポートドライバーはミニポートドライバーのローカルアダプターコンテキストに保存する必要があります。これは、ミニポートドライバーの[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数に渡される[**NDIS\_ミニポート\_INIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)構造からの**LUID**値です。 値には、通知コールバックで使用されるアダプターのインターフェイスを識別する*Netluid*が含まれます。
 
 3.  **通知コールバック**で、Windows は次のパラメーターを[**NotifyIpInterfaceChange**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85))に登録されている通知関数に渡します。
 
     -   \_行構造の[**MIB\_IPINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))へのポインター。これには、ミニポートアダプターのインターフェイスの*netluid*が含まれます。
     -   通知の種類。 **Mibaddinstance**、 **mibdeleteinstance** 、 **mibaddinstance**を指定できます。
 
-    ミニポートドライバーは、アダプターが接続状態であり、通知の種類が**Mibaddinstance**で、MIB の*NETLUID* [ **\_ipinterface\_行**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))がいずれかの値に対応している場合に、IP アドレスとゲートウェイアドレスをリセットする必要があります。アダプターの初期化中に保存されたミニポートドライバーのアダプター。
+    ミニポートドライバーは、アダプターが接続状態で、通知の種類が**Mibaddinstance**で、 [ **\_\_MIB**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))の*netluid*がアダプターの初期化中に保存されたいずれかのミニポートドライバーのアダプターに対応している場合に、IP アドレスとゲートウェイアドレスをリセットする必要があります。
 
     ミニポートドライバーは、MB インターフェイスの IP アドレスを設定し、既定のゲートウェイアドレスを設定する手順に従って、各アドレスをリセットする必要があります。
 
@@ -79,7 +79,7 @@ IPv4 ゲートウェイアドレスを設定するには、次の手順を使用
 
 1.  [**GetIpForwardTable2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552536(v=vs.85)) IP ヘルパー関数を使用して、システム内のすべてのルーティングエントリを取得します。
 
-2.  **InterfaceLuid**値が MB インターフェイスの**InterfaceLuid**値に一致し、 **destinationprefix**が "0.0.0.0/0" である各エントリについて、 [**DeleteIpForwardEntry2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546365(v=vs.85)) IP ヘルパー関数を呼び出してルートを削除します (NextHop の場合)。が新しいゲートウェイアドレスと等しくありません。 それ以外の場合、ルーティングエントリはシステム内に既に存在します。
+2.  **InterfaceLuid**値が MB インターフェイスの**InterfaceLuid**値に一致し、 **destinationprefix**が "0.0.0.0/0" である各エントリについて、 **NextHop**が新しいゲートウェイアドレスと等しくない場合は、 [**DeleteIpForwardEntry2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546365(v=vs.85)) IP ヘルパー関数を呼び出してルートを削除します。 それ以外の場合、ルーティングエントリはシステム内に既に存在します。
 
 3.  ミニポートドライバーが、前のループで必要なルーティングエントリを見つけられなかった場合は、ROW2 構造体[ **\_の MIB\_IPFORWARD**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559245(v=vs.85))を初期化するために、初期化機能を[**使用して**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554882(v=vs.85))新しいエントリを追加する必要があります。 構造体の次のメンバーを初期化します。
 

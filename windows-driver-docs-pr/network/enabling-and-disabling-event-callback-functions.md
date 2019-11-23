@@ -23,9 +23,9 @@ ms.locfileid: "72834788"
 
 Winsock カーネル (WSK) アプリケーションでは、WSK サブシステムが非同期に呼び出して、特定の[イベント](winsock-kernel-events.md)がソケットで発生したときにアプリケーションに通知するイベントコールバック関数を実装できます。 WSK アプリケーションは、ソケットを作成するとき、またはリスニングソケット上のソケットを受け入れるたびに、クライアント[ディスパッチテーブル](winsock-kernel-dispatch-tables.md)構造を wsk サブシステムに提供できます。 このディスパッチテーブルには、新しいソケットの WSK アプリケーションのイベントコールバック関数へのポインターが含まれています。 WSK アプリケーションが特定のソケットに対してイベントコールバック関数を実装していない場合、そのソケットの WSK サブシステムにクライアントディスパッチテーブル構造を提供する必要はありません。
 
-ソケットの[*WskInspectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)および[*Wskabortevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)イベントコールバック関数を除き、ソケットのすべてのイベントコールバック関数を有効または無効にするには、 [ **\_WSK\_イベント\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)を使用します。socket オプション。 WSK アプリケーションでは、複数のイベントコールバック関数を1つのソケットで同時に有効にすることができます。 ただし、WSK アプリケーションでは、各イベントコールバック関数を個別に無効にする必要があります。
+リッスンソケットの[*WskInspectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)および[*Wskabortevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)イベントコールバック関数を除く、ソケットのすべてのイベントコールバック関数を有効または無効にするには、 [ **\_WSK\_イベント\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)ソケットオプションを使用します。 WSK アプリケーションでは、複数のイベントコールバック関数を1つのソケットで同時に有効にすることができます。 ただし、WSK アプリケーションでは、各イベントコールバック関数を個別に無効にする必要があります。
 
-次のコード例は、WSK アプリケーションで\_WSK\_イベント\_コールバックソケットオプションを使用して、接続指向で[*Wskdisconnectevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)イベントコールバック関数と[*wskdisconnectevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数を有効にする方法を示しています。socket.
+次のコード例では、WSK アプリケーションで\_WSK\_イベント\_コールバックソケットオプションを使用して、接続指向のソケットで[*Wskno event*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)イベントコールバック関数と[*wskdisconnectevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数を有効にする方法を示しています。
 
 ```C++
 // Function to enable the WskDisconnectEvent and WskReceiveEvent
@@ -196,9 +196,9 @@ NTSTATUS
 
 リッスンソケットは、リッスンしているソケットの[*Wskacceptevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)イベントコールバック関数によって受け入れられる接続指向のソケットに対して、イベントコールバック関数を自動的に有効にすることができます。 WSK アプリケーションは、リッスンしているソケットで接続指向のソケットイベントコールバック関数を有効にすることで、これらのコールバック関数を自動的に有効にします。 このプロセスの詳細については、「 [ **\_WSK\_イベント\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)」を参照してください。
 
-WSK アプリケーションで、作成するすべてのソケットで特定のイベントコールバック関数が常に有効になっている場合、アプリケーションで wsk サブシステムを構成し、 [**wsk\_SET\_STATIC を使用してイベントコールバック関数を自動的に有効にすることができ @no__tイベント\_コールバッククライアントコントロール操作 (_s)** ](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-set-static-event-callbacks) 。 この方法で有効になっているイベントコールバック関数は常に有効になり、後で WSK アプリケーションで無効にしたり再度有効にしたりすることはできません。 WSK アプリケーションで、作成するすべてのソケットで特定のイベントコールバック関数が常に有効になっている場合、アプリケーションはこのメソッドを使用して、これらのイベントコールバック関数を自動的に有効にする必要があります。これにより、パフォーマンスが大幅に向上します。
+WSK アプリケーションで、作成するすべてのソケットで特定のイベントコールバック関数が常に有効になっている場合、アプリケーションで wsk サブシステムを構成して、 [**wsk\_SET\_静的\_イベント\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-set-static-event-callbacks)クライアントコントロール操作を使用して、これらのイベントコールバック関数を自動的に有効にすることができます。 この方法で有効になっているイベントコールバック関数は常に有効になり、後で WSK アプリケーションで無効にしたり再度有効にしたりすることはできません。 WSK アプリケーションで、作成するすべてのソケットで特定のイベントコールバック関数が常に有効になっている場合、アプリケーションはこのメソッドを使用して、これらのイベントコールバック関数を自動的に有効にする必要があります。これにより、パフォーマンスが大幅に向上します。
 
-次のコード例では、WSK アプリケーションが WSK\_設定\_静的\_イベント\_コールバッククライアントコントロール操作を使用して、データグラムで[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)イベントコールバック関数を自動的に有効にする方法を示します。接続指向のソケットでのソケットおよび[*Wskreceiveevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数。
+次のコード例では、WSK アプリケーションで WSK\_SET\_静的\_イベント\_コールバッククライアントコントロール操作を使用して、データグラムソケットで[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)イベントコールバック関数を自動的に有効にする方法と、接続指向のソケットで[*Wskreceiveevent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)イベントコールバック関数を有効にする方法を示します。
 
 ```C++
 // Function to set static event callbacks

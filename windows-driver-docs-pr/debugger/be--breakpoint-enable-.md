@@ -30,7 +30,7 @@ be Breakpoints
 ## <a name="span-idddk_cmd_breakpoint_enable_dbgspanspan-idddk_cmd_breakpoint_enable_dbgspanparameters"></a><span id="ddk_cmd_breakpoint_enable_dbg"></span><span id="DDK_CMD_BREAKPOINT_ENABLE_DBG"></span>パラメータ
 
 <span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span>*ブレークポイント*   
-有効にするブレークポイントの ID 番号を指定します。 任意の数のブレークポイントを指定できます。 複数の Id は、スペースまたはコンマで区切る必要があります。 ブレークポイント Id の範囲を指定するには、ハイフン (-) を使用します。 アスタリスク (\*) を使用すると、すべてのブレークポイントを指定できます。 ID に[数値式](numerical-expression-syntax.md)を使用する場合は、角かっこ (\[ \]) で囲みます。 [ワイルドカード文字を含む文字列](string-wildcard-syntax.md)をブレークポイントのシンボル名と一致させるには、引用符 ("") で囲みます。
+有効にするブレークポイントの ID 番号を指定します。 任意の数のブレークポイントを指定できます。 複数の Id は、スペースまたはコンマで区切る必要があります。 ブレークポイント Id の範囲を指定するには、ハイフン (-) を使用します。 すべてのブレークポイントを示すには、アスタリスク (\*) を使用できます。 ID に[数値式](numerical-expression-syntax.md)を使用する場合は、角かっこ (\[ \]) で囲みます。 [ワイルドカード文字を含む文字列](string-wildcard-syntax.md)をブレークポイントのシンボル名と一致させるには、引用符 ("") で囲みます。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
@@ -59,7 +59,7 @@ be Breakpoints
 
 ブレークポイントの使用方法の詳細と例、ブレークポイントを制御するその他のブレークポイントコマンドと方法、カーネルデバッガーからユーザー空間にブレークポイントを設定する方法の詳細については、「[ブレークポイントの使用](using-breakpoints.md)」を参照してください。 条件付きブレークポイントの詳細については、「[条件付きブレークポイントの設定](setting-a-conditional-breakpoint.md)」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ [**Bl (ブレークポイントの一覧)** ](bl--breakpoint-list-.md) ] コマンドを使用すると、既存のすべてのブレークポイント、その ID 番号、およびそれらの状態を一覧表示できます。

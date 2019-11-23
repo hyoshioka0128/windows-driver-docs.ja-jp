@@ -3,7 +3,7 @@ title: SM\_RemovePersistentBinding 関数
 description: SM\_RemovePersistentBinding メソッドは、指定されたアダプターポートについて、指定された SCSI Id に対して1つ以上の永続的なバインドを削除します。
 ms.assetid: 475c2f5f-4a1c-48b4-9a43-81d03b1b737d
 keywords:
-- SM_RemovePersistentBinding function Storage デバイス
+- SM_RemovePersistentBinding 関数記憶装置
 topic_type:
 - apiref
 api_name:

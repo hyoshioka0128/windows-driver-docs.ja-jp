@@ -34,17 +34,17 @@ Bluetooth ドライバースタックは、プロファイルドライバーが 
 <tbody>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_SDP_NODE_INTERFACE</p></td>
-<td align="left"><p>サービス検索プロトコル (SDP) レコードの作成を許可する関数へのポインターを取得するための GUID_BTHDDI_SDP_NODE_INTERFACE のプロファイルドライバークエリ。</p>
+<td align="left"><p>プロファイルドライバーのクエリを使用して GUID_BTHDDI_SDP_NODE_INTERFACE、サービス検出プロトコル (SDP) レコードを作成する関数へのポインターを取得します。</p>
 <p>このインターフェイスは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)"><strong>BTHDDI_SDP_NODE_INTERFACE</strong></a>構造体に対応します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE</p></td>
-<td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE のプロファイルドライバークエリを使用して、SDP レコードを解析する関数へのポインターを取得します。</p>
+<td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE のプロファイルドライバークエリを使用して、SDP レコードを解析できるようにする関数へのポインターを取得します。</p>
 <p>このインターフェイスは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)"><strong>BTHDDI_SDP_PARSE_INTERFACE</strong></a>構造体に対応します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_PROFILE_DRIVER_INTERFACE</p></td>
-<td align="left"><p>プロファイルドライバーのクエリを使用して、BTHDDI_PROFILE_DRIVER_INTERFACE に対して、作成、割り当て、再利用、および無料の機能へのポインターを取得します。</p>
+<td align="left"><p>プロファイルドライバーのクエリを使用して、BTHDDI_PROFILE_DRIVER_INTERFACE を作成、割り当て、再利用、および解放するための関数へのポインターを取得します。</p>
 <p>このインターフェイスは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_profile_driver_interface" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_profile_driver_interface)"><strong>BTH_PROFILE_DRIVER_INTERFACE</strong></a>構造体に対応します。</p></td>
 </tr>
 </tbody>
