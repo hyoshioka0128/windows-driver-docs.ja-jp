@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
-description: DRIVER_PORTION_MUST_BE_NONPAGED のバグ チェックでは、0x000000D3 の値を持ちます。 これは、システムがプロセスが高すぎる IRQL でページング可能なメモリへのアクセスを試行したことを示します。
+title: バグチェック 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
+description: DRIVER_PORTION_MUST_BE_NONPAGED バグチェックの値は0x000000D3 です。 これは、システムが高すぎたプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
 ms.assetid: 8b33dd20-9faa-4c02-96b7-89f55e69aeec
 keywords:
-- バグ チェック 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
+- バグチェック 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
 - DRIVER_PORTION_MUST_BE_NONPAGED
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f46421d0ec1a557dd43267541f12662070161b7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: fc8576fb13e085fa76a031f57bee0902f365cebd
+ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518882"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74411167"
 ---
-# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>バグ チェック 0xD3:ドライバー\_部分\_する必要があります\_BE\_非ページ
+# <a name="bug-check-0xd3-driver_portion_must_be_nonpaged"></a>バグチェック 0xD3: ドライバー\_部分\_は非ページ\_\_必要があります
 
 
-ドライバー\_部分\_する必要があります\_BE\_NONPAGED バグ チェックが 0x000000D3 の値を持ちます。 これは、システムがプロセスが高すぎる IRQL でページング可能なメモリへのアクセスを試行したことを示します。
+\_ドライバーの\_部分は、非ページ化されたバグチェックの値が0x000000D3 になっている\_\_必要があります。 これは、システムが高すぎたプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driverportionmustbenonpaged-parameters"></a>ドライバー\_部分\_する必要があります\_BE\_NONPAGED パラメーター
+## <a name="driver_portion_must_be_nonpaged-parameters"></a>ドライバー\_部分\_は、非ページパラメーター\_\_必要があります
 
 
 <table>
@@ -50,33 +50,33 @@ ms.locfileid: "67518882"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>IRQL の参照時に</p></td>
+<td align="left"><p>参照時の IRQL</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p><strong>0:</strong>Read</p>
-<p><strong>1:</strong>書き込み</p></td>
+<td align="left"><p><strong>0:</strong>込ん</p>
+<p><strong>1:</strong>企画</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>4</p></td>
-<td align="left"><p>メモリ アドレス</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>参照されたメモリのアドレス</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-その名前がブルー スクリーンに印刷され、場所のメモリに格納されているドライバーのエラーの原因が識別できる場合 (PUNICODE\_文字列) **KiBugCheckDriver**します。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリに格納されます (PUNICODE\_STRING) **KiBugCheckDriver**。
 
 <a name="cause"></a>原因
 -----
 
-このバグ チェックは通常が誤ってマークされていない独自のコードやデータをページング可能としてドライバーで発生します。
+このバグチェックは通常、独自のコードまたはデータをページング可能としてマークしていないドライバーによって発生します。
 
 <a name="resolution"></a>解決方法
 ----------
 
-デバッグを開始するには、カーネル デバッガーを使用して、スタック トレースを取得します。
+デバッグを開始するには、カーネルデバッガーを使用してスタックトレースを取得します。この拡張機能で[**は、バグ**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)チェックに関する情報を表示し、根本原因を特定し、 [**Kb (スタックバックトレースの表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを使用してスタックトレースを取得します。
 
  
 

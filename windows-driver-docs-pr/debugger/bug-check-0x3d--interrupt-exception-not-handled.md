@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x3D INTERRUPT_EXCEPTION_NOT_HANDLED
-description: INTERRUPT_EXCEPTION_NOT_HANDLED のバグ チェックが非常に少ない回数が表示される確認 0x0000003D.This バグの値を持ちます。
+title: バグチェック 0x3D INTERRUPT_EXCEPTION_NOT_HANDLED
+description: INTERRUPT_EXCEPTION_NOT_HANDLED のバグチェックの値が0x0000003D になっています。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 4fcdd7b9-c9be-46b1-aa10-3a31e61e4a6d
 keywords:
-- バグ チェック 0x3D INTERRUPT_EXCEPTION_NOT_HANDLED
+- バグチェック 0x3D INTERRUPT_EXCEPTION_NOT_HANDLED
 - INTERRUPT_EXCEPTION_NOT_HANDLED
 ms.date: 05/23/2017
 topic_type:
@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 422bc8f19fafb2d551e16cd4c0ab6bfa9a90ab7b
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0e7a079472a34fe7c0751a33beb0630a1494e925
+ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519475"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74411175"
 ---
-# <a name="bug-check-0x3d-interruptexceptionnothandled"></a>バグ チェック 0x3D:割り込み\_例外\_いない\_処理済み
+# <a name="bug-check-0x3d-interrupt_exception_not_handled"></a>バグチェック 0x3D: 割り込み\_例外\_\_ハンドルされていません
 
 
-割り込み\_例外\_いない\_処理済みのバグ チェックが 0x0000003D の値を持ちます。
+割り込み\_例外\_、処理されたバグチェック\_値が0x0000003D になっています。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
- 
-
+## <a name="resolution"></a>解決方法 
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 
