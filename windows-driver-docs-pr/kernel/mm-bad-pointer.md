@@ -4,12 +4,12 @@ description: Windows カーネルのマクロ
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b242a3fa79a07ae3c5a0332ef54ac287ebf79ac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0f94bf92abf3fbc300ce0cf0362b5b9d47743503
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827845"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261437"
 ---
 # <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
@@ -448,7 +448,7 @@ _Mdl [in]_
 
 このマクロは、[**IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) ルーチンの呼び出しで _TargetMdl_ パラメーターとして同じ割り当て済み MDL を繰り返し使用するドライバーで使用します。 **MmPrepareMdlForReuse** の呼び出しで、指定した部分的な MDL に、システム アドレス空間に対するマッピングが関連付けられている場合、**MmPrepareMdlForReuse** によってマッピングが解放され、MDL を再利用できるようになります。
 
-**MmPrepareMdlForReuse** では、**IoBuildPartialMdl**によって作成された部分的な MDL のみが受け入れられます。 **MmPrepareMdlForReuse** に、システム アドレス空間にマップされているが **IoBuildPartialMdl** によって作成されていない MDL が渡された場合、**MmPrepareMdlForReuse** によってマッピングは解放されず、チェック ビルドではアサーションが失敗します。
+**MmPrepareMdlForReuse** では、**IoBuildPartialMdl**によって作成された部分的な MDL のみが受け入れられます。 **MmPrepareMdlForReuse** に、システム アドレス空間にマップされているが **IoBuildPartialMdl** によって作成されていない MDL が渡された場合、**MmPrepareMdlForReuse** によってマッピングは解放さません。
 
 部分的な MDL の詳細については、「[MDL の使用](using-mdls.md)」を参照してください。
 
