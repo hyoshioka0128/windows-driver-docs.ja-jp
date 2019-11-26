@@ -58,7 +58,7 @@ ms.locfileid: "74411167"
 <p><strong>1:</strong>企画</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>参照されたメモリのアドレス</p></td>
 </tr>
 </tbody>

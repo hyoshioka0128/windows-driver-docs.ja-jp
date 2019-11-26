@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x55 DATA_COHERENCY_EXCEPTION
-description: The DATA_COHERENCY_EXCEPTION bug check has a value of 0x00000055.This bug check appears very infrequently.
+title: バグチェック 0x55 DATA_COHERENCY_EXCEPTION
+description: DATA_COHERENCY_EXCEPTION バグチェックの値は0x00000055 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: f7b585ec-5b76-44eb-b3fa-17684152156d
 keywords:
-- Bug Check 0x55 DATA_COHERENCY_EXCEPTION
+- バグチェック 0x55 DATA_COHERENCY_EXCEPTION
 - DATA_COHERENCY_EXCEPTION
 ms.date: 05/23/2017
 topic_type:
@@ -20,19 +20,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74411169"
 ---
-# <a name="bug-check-0x55-data_coherency_exception"></a>Bug Check 0x55: DATA\_COHERENCY\_EXCEPTION
+# <a name="bug-check-0x55-data_coherency_exception"></a>バグチェック 0x55: データ\_一貫性\_例外
 
 
-The DATA\_COHERENCY\_EXCEPTION bug check has a value of 0x00000055.
+データ\_一貫性\_例外のバグチェックには、値0x00000055 が指定されています。
 
-This bug check appears very infrequently.
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="resolution"></a>解像度 
-The [ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) debug extension displays information about the bug check and can be helpful in determining the root cause.
+## <a name="resolution"></a>解決方法 
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

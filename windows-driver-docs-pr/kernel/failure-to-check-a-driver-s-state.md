@@ -3,12 +3,12 @@ title: ドライバーの状態の確認エラー
 description: ドライバーの状態の確認エラー
 ms.assetid: 963f79f6-2282-41bd-9cf4-bd5bc02a510e
 keywords:
-- reliability WDK kernel , driver state checking
-- checking driver states
-- driver state checking
-- verifying driver states
-- correct device states WDK kernel
-- device states WDK kernel
+- 信頼性 WDK カーネル、ドライバーの状態チェック
+- ドライバーの状態の確認
+- ドライバーの状態の確認
+- ドライバーの状態の確認
+- 正しいデバイスの状態 WDK カーネル
+- 'デバイスの状態: WDK カーネル'
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2f67b5b97a2eae9fdba1545fd1c6586cc25b8c6
@@ -24,7 +24,7 @@ ms.locfileid: "74308544"
 
 
 
-In the following example, the driver uses the **ASSERT** macro to check for the correct device state in a debug version of a driver image, but does not check device state in the retail build of the same driver source:
+次の例では、ドライバーは**ASSERT**マクロを使用して、ドライバーイメージのデバッグバージョンで正しいデバイスの状態を確認しますが、同じドライバーソースのリテールビルドではデバイスの状態を確認しません。
 
 ```cpp
    case IOCTL_WAIT_FOR_EVENT:
@@ -35,9 +35,9 @@ In the following example, the driver uses the **ASSERT** macro to check for the 
       status = STATUS_PENDING;
 ```
 
-In the debug driver image, if the driver already holds the IRP pending, the system will assert. In a retail build, however, the driver does not check for this error. Two calls to the same IOCTL cause the driver to lose track of an IRP.
+デバッグドライバーのイメージでは、ドライバーが保留中の IRP を既に保持している場合、システムはをアサートします。 ただし、リテールビルドでは、ドライバーはこのエラーをチェックしません。 同じ IOCTL の2つの呼び出しにより、ドライバーが IRP を追跡しなくなります。
 
-On a multiprocessor system, this code fragment might cause additional problems. Assume that on entry this routine has ownership of (the right to manipulate) this IRP. When the routine saves the **Irp** pointer in the global structure at **Extension-&gt;WaitEventIrp**, another thread can get the IRP address from that global structure and perform operations on the IRP. To prevent this problem, the driver should mark the IRP pending before it saves the IRP and should include both the call to [**IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) and the assignment in an interlocked sequence. A [*Cancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) routine for the IRP might also be necessary.
+マルチプロセッサシステムでは、このコード片によって追加の問題が発生する可能性があります。 このルーチンには、この IRP の所有権 (操作する権利) があることを前提としています。 ルーチンが**irp**ポインターを**拡張&gt;WaitEventIrp**のグローバル構造に保存すると、別のスレッドがそのグローバル構造から irp アドレスを取得し、irp に対して操作を実行できるようになります。 この問題を回避するには、ドライバーは irp を保存する前に保留中の IRP をマークし、 [**Iomarkirppending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)の呼び出しと、インタロックされたシーケンス内の割り当ての両方を含める必要があります。 また、IRP の[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)ルーチンが必要になる場合もあります。
 
  
 
