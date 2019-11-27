@@ -1,123 +1,34 @@
 ---
-title: IRP_MJ_READ 操作の Oplock の状態を確認
-description: IRP_MJ_READ 操作の Oplock の状態を確認
+title: IRP_MJ_READ 操作の Oplock 状態を確認しています
+description: IRP_MJ_READ 操作の Oplock 状態を確認しています
 ms.assetid: 9b4d1ba9-0838-44f1-8328-f60bfb3910ee
-ms.date: 04/20/2017
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4faf6bd530b129604bdf79e84b9e59f6d1e8d9bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de28ee85404764aa586b12a2e80b8b14d65990e7
+ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324322"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543045"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjread-operation"></a>IRP_MJ_READ 操作の Oplock の状態を確認
+# <a name="checking-the-oplock-state-of-an-irp_mj_read-operation"></a>IRP_MJ_READ 操作の Oplock 状態を確認しています
 
+*ストリーム*を読み取るときには、次の[oplock ブレーク](https://docs.microsoft.com/windows-hardware/drivers/ifs/breaking-oplocks)条件が適用されます。 TxF のトランザクションリーダーが読み取りを実行する場合、トランザクションリーダーがライターを除外するため、このチェックは行われません (つまり、oplock を保持するライターはまったく存在できません)。
 
-次の場合のみ適用されます、*ストリーム*は読み取られています。 TxF トランザクション リーダーの読み取りを実行する、トランザクション リーダー、ライター (つまり、oplock ことはできませんのすべてを保持しているライター) を除外するため、このチェックが行われていません。
-<table>
-<tr>
-<th>要求の種類</th>
-<th>条件</th>
-</tr>
-<tr>
-<td rowspan="2">
-<p>レベル 1</p>
-<p>Batch (バッチ)</p>
-</td>
-<td>
-<p>IRP_MJ_READ で壊れている場合。</p>
-<ul>
-<li>
-<p> 読み取り操作では、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Oplock が破損している場合。</p>
-<ul>
-<li>
-<p> レベル 2 にブレークします。</p>
-</li>
-<li>
-<p> 操作を続行する前に、受信確認を受信する必要があります。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td rowspan="2">
-<p>読み取り/書き込み</p>
-</td>
-<td>
-<p>IRP_MJ_READ で壊れている場合。</p>
-<ul>
-<li>
-<p> 読み取り操作では、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Oplock が破損している場合。</p>
-<ul>
-<li>
-<p> 読み取り専用に中断します。</p>
-</li>
-<li>
-<p> 操作を続行する前に、受信確認を受信する必要があります。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td rowspan="2">
-<p>書き込みハンドルの読み取り</p>
-</td>
-<td>
-<p>IRP_MJ_READ で壊れている場合。</p>
-<ul>
-<li>
-<p> 読み取り操作では、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Oplock が破損している場合。</p>
-<ul>
-<li>
-<p> 読み取りハンドルを中断します。</p>
-</li>
-<li>
-<p> 操作を続行する前に、受信確認を受信する必要があります。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>レベル 2</p>
-<p>フィルター</p>
-<p>Read</p>
-<p>読み取りハンドル</p>
-</td>
-<td>
-<ul>
-<li>
-<p> Oplock は破損していない、受信確認は不要ですが、および、操作をすぐに続行します。</p>
-</li>
-</ul>
-</td>
-</tr>
-</table>
+### <a name="conditions-for-level-2-filter-read-and-read-handle-request-types"></a>レベル2、フィルター、読み取り、および読み取りハンドルの要求の種類の条件
 
- 
+- Oplock が破損していません。
 
+- 確認は必要ありません。操作は直ちに続行されます。
 
+### <a name="conditions-for-level-1-batch-read-write-and-read-write-handle-request-types"></a>レベル1、バッチ、読み取り/書き込み、および読み取り/書き込みハンドルの要求の種類の条件
 
+- Oplock を所有する FILE_OBJECT のキーとは異なる oplock キーを持つ FILE_OBJECT で読み取り操作が発生した場合に IRP_MJ_READ を中断します。 Oplock が解除された場合は、次のようになります。
 
+  - レベル1とバッチ要求がレベル2に分割されます。
+
+  - 読み取り/書き込み要求が読み取りに対して中断します。
+
+  - 読み取り/書き込みハンドル要求が読み取りハンドルに分割されます。
+
+- 操作を続行するには、受信確認を受信する必要があります。

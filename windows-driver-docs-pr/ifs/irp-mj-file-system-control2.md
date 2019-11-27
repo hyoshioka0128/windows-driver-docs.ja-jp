@@ -1,28 +1,38 @@
 ---
-title: IRP_MJ_FILE_SYSTEM_CONTROL の Oplock の状態をチェック
-description: IRP_MJ_FILE_SYSTEM_CONTROL 操作の Oplock の状態を確認
+title: IRP_MJ_FILE_SYSTEM_CONTROL の Oplock 状態を確認しています
+description: IRP_MJ_FILE_SYSTEM_CONTROL 操作の Oplock 状態を確認しています
 ms.assetid: 3651d9ed-6b6f-4b60-9dfa-1c5c0c78b1a1
-ms.date: 04/20/2017
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 146acf363d8c9cc363a135f88ab98efb4a69532d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 907018a1f5a007611cb66ee977486f372b942135
+ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324319"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543043"
 ---
-# <a name="checking-the-oplock-state-of-irpmjfilesystemcontrol"></a>IRP_MJ_FILE_SYSTEM_CONTROL の Oplock の状態をチェック
+# <a name="checking-the-oplock-state-of-irp_mj_file_system_control"></a>IRP_MJ_FILE_SYSTEM_CONTROL の Oplock 状態を確認しています
 
-IRP_MJ_FILE_SYSTEM_CONTROL の特定の操作では、oplock の状態を確認します。 次の処理は、このチェックを実行します。
+次の IRP_MJ_FILE_SYSTEM_CONTROL 操作の oplock の状態を確認します。
+
 - **FSCTL_SET_ZERO_DATA**
 
-この情報は、呼び出し元が、指定したストリームの現在の内容は 0 たい場合に適用されます。
+この情報は、呼び出し元が指定されたストリームの現在の内容をゼロにする必要がある場合に適用されます。
 
-|要求の種類|条件|
-|---|---|
-|レベル 1<br>Batch (バッチ)<br>フィルター<br>読み取りハンドル<br>読み取り/書き込み<br>書き込みハンドルの読み取り|(FSCTL_SET_ZERO_DATA) をときに IRP_MJ_FILE_SYSTEM_CONTROL に分かれます。<ul><li>操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</ul></li><hr>Oplock が破損している場合。<ul><li>[なし] に中断します。</li><li>ハンドルの読み取り要求。中断の受信確認は必須ですが、すぐに (受信確認を待機することがなくなど) の操作が続行します。</li><li>他のすべての要求タイプ。操作を続行する前に、受信確認を受信する必要があります。</li></ul>|
-|Read|(FSCTL_SET_ZERO_DATA) をときに IRP_MJ_FILE_SYSTEM_CONTROL に分かれます。<ul><li>操作は、oplock を所有する FILE_OBJECT から別の oplock のキーを持つ、FILE_OBJECT で発生します。</ul></li><hr>Oplock が破損している場合。<ul><li>[なし] に中断します。</li><li>受信確認は必要ありません、すぐに、操作を続行します。</li></ul>|
-|レベル 2|<ul><li>[なし] に常に中断します。</li><li>受信確認は必要ありません、すぐに、操作を続行します。</li></ul>|
+### <a name="conditions-for-a-level-2-request-type"></a>レベル2の要求の種類の条件:
 
+- 常に [なし] になります。
 
+- 確認は必要ありません。操作は直ちに続行されます。
 
+### <a name="conditions-for-all-other-request-types"></a>他のすべての要求の種類の条件:
+
+- Oplock を所有する FILE_OBJECT のキーとは異なる oplock キーを持つ FILE_OBJECT で操作が行われた場合に、IRP_MJ_FILE_SYSTEM_CONTROL (FSCTL_SET_ZERO_DATA) で中断します。 Oplock が解除されている場合は、None に中断します。
+
+- 確認の要件は次のとおりです。
+
+  - 読み取り要求: 確認は必要ありません。操作は直ちに続行されます。
+  
+  - 読み取りハンドル要求: 中断の確認が必要ですが、操作はすぐに続行されます (たとえば、受信確認を待たずに)。
+  
+  - レベル1、バッチ、フィルター、読み取り/書き込み、および読み取り/書き込みハンドル要求: 操作を続行する前に受信確認を受信する必要があります。
